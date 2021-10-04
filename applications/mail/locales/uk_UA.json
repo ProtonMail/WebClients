@@ -59,12 +59,6 @@
       "Request timed out.": [
         "Час очікування запиту завершився."
       ],
-      "Signature verification failed": [
-        "Неможливо перевірити підпис"
-      ],
-      "Could not find address ${ email }.": [
-        "Неможливо знайти адресу ${ email }."
-      ],
       "Missing signature": [
         "Відсутній підпис"
       ],
@@ -79,6 +73,12 @@
       ],
       "The key properties for ${ emailAddress } could not be extracted": [
         "Не вдається видобути властивості ключа для ${ emailAddress }"
+      ],
+      "Signature verification failed": [
+        "Неможливо перевірити підпис"
+      ],
+      "Could not find address ${ email }.": [
+        "Неможливо знайти адресу ${ email }."
       ],
       "Address primary private key not found": [
         "Основний приватний ключ адреси не знайдено"
@@ -101,17 +101,17 @@
       "Authentication error.": [
         "Помилка автентифікації."
       ],
-      "Email address invalid": [
-        "Недійсна адреса електронної пошти"
-      ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "Браузер, яким ви користуєтеся, не дозволяє повністю авторизувати платіж. Скористайтеся іншим браузером або увійдіть через комп’ютер."
-      ],
       "The composer failed to load.": [
         "Не вдалося завантажити редактор."
       ],
       "Please refresh the page.": [
         "Будь ласка, оновіть сторінку."
+      ],
+      "Email address invalid": [
+        "Недійсна адреса електронної пошти"
+      ],
+      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
+        "Браузер, яким ви користуєтеся, не дозволяє повністю авторизувати платіж. Скористайтеся іншим браузером або увійдіть через комп’ютер."
       ],
       "Incorrect mailbox password. Please try again": [
         "Неправильний пароль поштової скриньки. Спробуйте знову"
@@ -383,8 +383,8 @@
       "Your emails cannot be decrypted due to a recent password reset. If you remember your previous password, you can ${ reActivateKeyLink } in order to access your messages. ${ learnMoreLink }": [
         "Ваші електронні листи неможливо розшифрувати через нещодавнє скидання пароля. Якщо ви пам'ятаєте свій попередній пароль, можете ${ reActivateKeyLink }, щоб отримати доступ до своїх повідомлень. ${ learnMoreLink }"
       ],
-      "Your emails cannot be decrypted due to a recent password reset. ${ learnMoreLink }": [
-        "Ваші електронні листи неможливо розшифрувати через нещодавнє скидання пароля. ${ learnMoreLink }"
+      "Your emails cannot be decrypted. This may be due to a password reset. ${ learnMoreLink }": [
+        "Ваші електронні листи неможливо розшифрувати. Це може бути спричинено скиданням пароля. ${ learnMoreLink }"
       ],
       "Too many active filters. Please upgrade to a paid plan to activate more filters": [
         "Забагато активних фільтрів. Перейдіть на платний тарифний план, щоб активувати більше фільтрів"
@@ -563,30 +563,6 @@
       "No results found": [
         "Результатів не знайдено"
       ],
-      "Week": [
-        "Тиждень"
-      ],
-      "(${ memberCount } member)": [
-        "(${ memberCount } учасник)",
-        "(${ memberCount } учасники)",
-        "(${ memberCount } учасників)",
-        "(${ memberCount } учасників)"
-      ],
-      "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Це посилання може бути гомографічною атакою і його не можна відкрити в браузерах Internet Explorer чи Edge. Якщо ви впевнені, що це надійне посилання, відкрийте його в іншому браузері."
-      ],
-      "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
-        "Це посилання може бути гомографічною атакою. Впевніться, що це саме те посилання, яке ви хочете відвідати, або не відкривайте його."
-      ],
-      "You are about to open another browser tab and visit:": [
-        "Ви збираєтесь відкрити іншу вкладку браузера й відвідати:"
-      ],
-      "Learn more": [
-        "Докладніше"
-      ],
-      "Loading": [
-        "Завантаження"
-      ],
       "Insert image": [
         "Вставити зображення"
       ],
@@ -662,6 +638,30 @@
       "Plain text": [
         "Звичайний текст"
       ],
+      "Week": [
+        "Тиждень"
+      ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } учасник)",
+        "(${ memberCount } учасники)",
+        "(${ memberCount } учасників)",
+        "(${ memberCount } учасників)"
+      ],
+      "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
+        "Це посилання може бути гомографічною атакою і його не можна відкрити в браузерах Internet Explorer чи Edge. Якщо ви впевнені, що це надійне посилання, відкрийте його в іншому браузері."
+      ],
+      "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
+        "Це посилання може бути гомографічною атакою. Впевніться, що це саме те посилання, яке ви хочете відвідати, або не відкривайте його."
+      ],
+      "You are about to open another browser tab and visit:": [
+        "Ви збираєтесь відкрити іншу вкладку браузера й відвідати:"
+      ],
+      "Learn more": [
+        "Докладніше"
+      ],
+      "Loading": [
+        "Завантаження"
+      ],
       "Drop the file here to upload": [
         "Для завантаження файлу перетягніть його сюди"
       ],
@@ -689,12 +689,6 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Якщо ви не можете знайти лист у вхідних повідомленнях, перевірте свою теку спаму."
       ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
-        "Натисніть \"Запитати новий код\", щоб отримати новий код перевірки на ${ strong }. Якщо ця адреса е-пошти неправильна, натисніть \"Змінити\" для її виправлення."
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
-        "Натисніть \"Запитати новий код\", щоб отримати новий код перевірки на ${ strong }. Якщо цей номер телефону неправильний, натисніть \"Змінити\" для його виправлення."
-      ],
       "To fight spam and abuse, please verify you are human.": [
         "З метою протидії спаму та зловживанням, будь ласка, підтвердьте, що ви людина."
       ],
@@ -706,6 +700,12 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Якщо у вас виникли труднощі під час створення облікового запису, подайте запит на запрошення і ми відповімо протягом одного робочого дня."
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
+        "Натисніть \"Запитати новий код\", щоб отримати новий код перевірки на ${ strong }. Якщо ця адреса е-пошти неправильна, натисніть \"Змінити\" для її виправлення."
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
+        "Натисніть \"Запитати новий код\", щоб отримати новий код перевірки на ${ strong }. Якщо цей номер телефону неправильний, натисніть \"Змінити\" для його виправлення."
       ],
       "No contacts added yet": [
         "Контактів ще не додано"
@@ -1839,11 +1839,6 @@
         "Скануйте цей QR-код за допомогою свого мобільного пристрою, або відвідайте ${ link }."
       ]
     },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "Адресу е-пошти не знайдено серед ідентифікаторів користувачів, визначених у ключі надсилання (${ keyUserIds })"
-      ]
-    },
     "Default display name vcard": {
       "Unknown": [
         "Невідомо"
@@ -1888,6 +1883,11 @@
       ],
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
         "Виникла помилка при прочитанні вашого файлу ${ formattedFilename }. Файл має неправильний формат."
+      ]
+    },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "Адресу е-пошти не знайдено серед ідентифікаторів користувачів, визначених у ключі надсилання (${ keyUserIds })"
       ]
     },
     "Keyboard shortcut section name": {
@@ -2066,11 +2066,11 @@
       ]
     },
     "Calendar status": {
-      "Not synced": [
-        "Не синхронізовано"
-      ],
       "Syncing": [
         "Синхронізація"
+      ],
+      "Not synced": [
+        "Не синхронізовано"
       ]
     },
     "Calendar subscription not synced error": {
@@ -2105,6 +2105,12 @@
       ],
       "Unsupported event": [
         "Непідтримувана подія"
+      ],
+      "Empty ICS file": [
+        "Порожній файл ICS"
+      ],
+      "Unsupported calendar component": [
+        "Непідтримуваний компонент календаря"
       ],
       "Invalid method": [
         "Недійсний спосіб"
@@ -2779,38 +2785,8 @@
       "Close": [
         "Закрити"
       ],
-      "More info: ${ safeTitle }": [
-        "Докладніше: ${ safeTitle }"
-      ],
-      "Confirm": [
-        "Підтвердити"
-      ],
       "Cancel": [
         "Скасувати"
-      ],
-      "Submit": [
-        "Відправити"
-      ],
-      "Close modal": [
-        "Закрити вікно"
-      ],
-      "Use “${ label }” setting": [
-        "Використовувати налаштування“${ label }”"
-      ],
-      "Remove": [
-        "Вилучити"
-      ],
-      "Next month": [
-        "Наступний місяць"
-      ],
-      "Previous month": [
-        "Минулий місяць"
-      ],
-      "Load image": [
-        "Завантажити зображення"
-      ],
-      "Confirm opening of link ${ link }": [
-        "Підтвердити відкриття посилання ${ link }"
       ],
       "Save": [
         "Зберегти"
@@ -2874,6 +2850,36 @@
       ],
       "Underline": [
         "Підкреслення"
+      ],
+      "More info: ${ safeTitle }": [
+        "Докладніше: ${ safeTitle }"
+      ],
+      "Confirm": [
+        "Підтвердити"
+      ],
+      "Submit": [
+        "Відправити"
+      ],
+      "Close modal": [
+        "Закрити вікно"
+      ],
+      "Use “${ label }” setting": [
+        "Використовувати налаштування“${ label }”"
+      ],
+      "Remove": [
+        "Вилучити"
+      ],
+      "Next month": [
+        "Наступний місяць"
+      ],
+      "Previous month": [
+        "Минулий місяць"
+      ],
+      "Load image": [
+        "Завантажити зображення"
+      ],
+      "Confirm opening of link ${ link }": [
+        "Підтвердити відкриття посилання ${ link }"
       ],
       "Go to panel ${ index }": [
         "Перейти до панелі ${ index }"
@@ -3494,7 +3500,7 @@
         "Показати"
       ],
       "Show less": [
-        "Меньше"
+        "Згорнути"
       ],
       "Never show": [
         "Ніколи не показувати"
@@ -3663,11 +3669,11 @@
       "Open actions dropdown": [
         "Випадне меню дій"
       ],
-      "Link confirmation": [
-        "Підтвердження посилання"
-      ],
       "Expand content": [
         "Розгорнути вміст"
+      ],
+      "Link confirmation": [
+        "Підтвердження посилання"
       ],
       "Keyboard Shortcuts": [
         "Комбінації клавіш"
@@ -3689,9 +3695,6 @@
       ],
       "Invalid verification code": [
         "Недійсний код підтвердження"
-      ],
-      "Request new code": [
-        "Запитати новий код"
       ],
       "Human verification": [
         "Перевірка \"Я не робот\""
@@ -4184,6 +4187,138 @@
       ],
       "Welcome": [
         "Вітаємо"
+      ]
+    },
+    "Placeholder": {
+      "Link": [
+        "Посилання"
+      ],
+      "Fill in the URL link and text to test your link": [
+        "Введіть посилання URL і текст, щоб перевірити ваше посилання"
+      ],
+      "Email address": [
+        "Адреса е-пошти"
+      ],
+      "Fill in the email address and text to test your link": [
+        "Введіть адресу е-пошти і текст, щоб перевірити ваше посилання"
+      ],
+      "Phone number": [
+        "Номер телефону"
+      ],
+      "Fill in the phone number and text to test your link": [
+        "Введіть номер телефону і текст, щоб перевірити ваше посилання"
+      ],
+      "Text": [
+        "Текст"
+      ],
+      "E.g., ": [
+        "Наприклад, "
+      ],
+      "Mailbox password": [
+        "Пароль поштової скриньки"
+      ],
+      "Start typing an email address": [
+        "Почніть вводити адресу е-пошти"
+      ],
+      "Image URL": [
+        "URL-адреса зображення"
+      ],
+      "Search name, email or group": [
+        "Пошук імені, е-пошти чи групи"
+      ],
+      "Filter groups": [
+        "Фільтр груп"
+      ],
+      "Search for name or email": [
+        "Пошук за іменем чи е-поштою"
+      ],
+      "Search for group name": [
+        "Шукати назву групи"
+      ],
+      "Name": [
+        "Назва"
+      ],
+      "OS name": [
+        "Назва ОС"
+      ],
+      "OS version": [
+        "Версія ОС"
+      ],
+      "Proton username": [
+        "Ім'я користувача Proton"
+      ],
+      "A way to contact you": [
+        "Спосіб зв'язку з вами"
+      ],
+      "Please describe the problem and include any error messages": [
+        "Опишіть проблему та додайте повідомлення про помилку"
+      ],
+      "Browser name": [
+        "Назва браузера"
+      ],
+      "Browser version": [
+        "Версія браузера"
+      ],
+      "e.g. Julia Smith": [
+        "наприклад, Джулія Сміт"
+      ],
+      "ZIP": [
+        "Поштовий індекс"
+      ],
+      "Postal code": [
+        "Поштовий індекс"
+      ],
+      "Gift code": [
+        "Подарунковий код"
+      ],
+      "Type text or keyword": [
+        "Введіть текст чи ключове слово"
+      ],
+      "Subject": [
+        "Тема"
+      ],
+      "Write your message": [
+        "Напишіть повідомлення"
+      ],
+      "Password": [
+        "Пароль"
+      ],
+      "Confirm Password": [
+        "Підтвердити пароль"
+      ],
+      "Hint": [
+        "Підказка"
+      ],
+      "Search Messages": [
+        "Шукати повідомлення"
+      ],
+      "Start date": [
+        "Дата початку"
+      ],
+      "End date": [
+        "Дата завершення"
+      ],
+      "Name or email address": [
+        "Назва чи адреса е-пошти"
+      ],
+      "Search messages": [
+        "Шукати повідомлення"
+      ],
+      "Filter folders": [
+        "Фільтр тек"
+      ],
+      "Filter labels": [
+        "Фільтр міток"
+      ]
+    },
+    "Font Face Default": {
+      "Default": [
+        "Типовий"
+      ]
+    },
+    "Font Size Default": {
+      "Default": [
+        "Типовий"
       ]
     },
     "PGP key encryption warning": {
@@ -4717,128 +4852,6 @@
         "Також архівувати"
       ]
     },
-    "Placeholder": {
-      "E.g., ": [
-        "Наприклад, "
-      ],
-      "Link": [
-        "Посилання"
-      ],
-      "Fill in the URL link and text to test your link": [
-        "Введіть посилання URL і текст, щоб перевірити ваше посилання"
-      ],
-      "Email address": [
-        "Адреса е-пошти"
-      ],
-      "Fill in the email address and text to test your link": [
-        "Введіть адресу е-пошти і текст, щоб перевірити ваше посилання"
-      ],
-      "Phone number": [
-        "Номер телефону"
-      ],
-      "Fill in the phone number and text to test your link": [
-        "Введіть номер телефону і текст, щоб перевірити ваше посилання"
-      ],
-      "Text": [
-        "Текст"
-      ],
-      "Mailbox password": [
-        "Пароль поштової скриньки"
-      ],
-      "Start typing an email address": [
-        "Почніть вводити адресу е-пошти"
-      ],
-      "Image URL": [
-        "URL-адреса зображення"
-      ],
-      "Search name, email or group": [
-        "Пошук імені, е-пошти чи групи"
-      ],
-      "Filter groups": [
-        "Фільтр груп"
-      ],
-      "Search for name or email": [
-        "Пошук за іменем чи е-поштою"
-      ],
-      "Search for group name": [
-        "Шукати назву групи"
-      ],
-      "Name": [
-        "Назва"
-      ],
-      "OS name": [
-        "Назва ОС"
-      ],
-      "OS version": [
-        "Версія ОС"
-      ],
-      "Proton username": [
-        "Ім'я користувача Proton"
-      ],
-      "A way to contact you": [
-        "Спосіб зв'язку з вами"
-      ],
-      "Please describe the problem and include any error messages": [
-        "Опишіть проблему та додайте повідомлення про помилку"
-      ],
-      "Browser name": [
-        "Назва браузера"
-      ],
-      "Browser version": [
-        "Версія браузера"
-      ],
-      "e.g. Julia Smith": [
-        "наприклад, Джулія Сміт"
-      ],
-      "ZIP": [
-        "Поштовий індекс"
-      ],
-      "Postal code": [
-        "Поштовий індекс"
-      ],
-      "Gift code": [
-        "Подарунковий код"
-      ],
-      "Type text or keyword": [
-        "Введіть текст чи ключове слово"
-      ],
-      "Subject": [
-        "Тема"
-      ],
-      "Write your message": [
-        "Напишіть повідомлення"
-      ],
-      "Password": [
-        "Пароль"
-      ],
-      "Confirm Password": [
-        "Підтвердити пароль"
-      ],
-      "Hint": [
-        "Підказка"
-      ],
-      "Search Messages": [
-        "Шукати повідомлення"
-      ],
-      "Start date": [
-        "Дата початку"
-      ],
-      "End date": [
-        "Дата завершення"
-      ],
-      "Name or email address": [
-        "Назва чи адреса е-пошти"
-      ],
-      "Search messages": [
-        "Шукати повідомлення"
-      ],
-      "Filter folders": [
-        "Фільтр тек"
-      ],
-      "Filter labels": [
-        "Фільтр міток"
-      ]
-    },
     "Time unit": {
       "${ hours } hour": [
         "${ hours } година",
@@ -4886,16 +4899,6 @@
         "Знайдено ${ items.length } пропозиції. Використовуйте клавіатуру для вибору.",
         "Знайдено ${ items.length } пропозицій. Використовуйте клавіатуру для вибору.",
         "Знайдено ${ items.length } пропозицій. Використовуйте клавіатуру для вибору."
-      ]
-    },
-    "Font Face Default": {
-      "Default": [
-        "Типовий"
-      ]
-    },
-    "Font Size Default": {
-      "Default": [
-        "Типовий"
       ]
     },
     "Storage": {
@@ -5649,6 +5652,11 @@
         "${ totalImported }/${ totalToImport } контактів зашифровано та додано до вашого списку контактів"
       ]
     },
+    "Select files": {
+      "Upload": [
+        "Вивантажити"
+      ]
+    },
     "Label to change density": {
       "Comfortable": [
         "Комфортний"
@@ -5671,11 +5679,6 @@
       ],
       "Maximized": [
         "Розгорнутий"
-      ]
-    },
-    "Select files": {
-      "Upload": [
-        "Вивантажити"
       ]
     },
     "Loading info": {
@@ -6091,7 +6094,7 @@
         "Захист від витоку DNS"
       ],
       "Kill Switch / Always-on VPN": [
-        "Kill Switch / Always-on VPN"
+        "Kill Switch / Постійна VPN"
       ],
       "Perfect Forward Secrecy (PFS)": [
         "Захист від зворотного читання (Perfect Forward Secrecy)"
@@ -6879,7 +6882,7 @@
         "Ви вже прийняли це запрошення."
       ],
       "You already tentatively accepted this invitation.": [
-        "Ви вже попередньо прийняли це запрошення."
+        "Ви вже із сумнівом прийняли це запрошення."
       ],
       "You already declined this invitation.": [
         "Ви вже відхилили це запрошення."
@@ -7097,10 +7100,10 @@
         "Організатор:"
       ],
       "${ totalAttendees } Participant": [
-        "${ totalAttendees } Учасник",
-        "${ totalAttendees } Учасників",
-        "${ totalAttendees } Учасників",
-        "${ totalAttendees } Учасник(ів)"
+        "${ totalAttendees } учасник",
+        "${ totalAttendees } учасники",
+        "${ totalAttendees } учасників",
+        "${ totalAttendees } учасників"
       ],
       "Repeats": [
         "Повторювання"
@@ -7109,7 +7112,7 @@
         "Календар"
       ],
       "Location": [
-        "Місцезнаходження"
+        "Розташування"
       ],
       "Participants": [
         "Учасники"

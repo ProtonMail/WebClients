@@ -5,161 +5,13 @@
   },
   "contexts": {
     "": {},
-    "Error": {
-      "Unknown error": [
-        "Galat tak diketahui"
-      ],
-      "Checkout expired, please try again.": [
-        "Pembayaran kedaluwarsa, silakan coba lagi."
-      ],
-      "Invalid code": [
-        "Kode tidak valid"
-      ],
-      "Error connecting to the Bitcoin API.": [
-        "Gagal sambung ke API Bitcoin."
-      ],
-      "Amount below minimum.": [
-        "Jumlah di bawah minimal."
-      ],
-      "Amount above the maximum.": [
-        "Jumlah di atas maksimal."
-      ],
-      "The minimum amount that can be donated is ${ price }": [
-        "Sumbangan minimal ${ price }"
-      ],
-      "The minimum amount of credit that can be added is ${ _price }": [
-        "Tambahan kredit minimal ${ _price }"
-      ],
-      "The minimum payment we accept is ${ _price2 }": [
-        "Pembayaran minimal ${ _price2 }"
-      ],
-      "Process aborted": [
-        "Proses dibatalkan"
-      ],
-      "Payment process cancelled": [
-        "Proses pembayaran dibatalkan"
-      ],
-      "Payment process failed": [
-        "Proses pembayaran gagal"
-      ],
-      "Payment process consumed": [
-        "Proses pembayaran terlalu lama"
-      ],
-      "Payment process not supported": [
-        "Proses pembayaran tidak didukung"
-      ],
-      "Unknown payment token status": [
-        "Status token pembayaran tidak dikenal"
-      ],
-      "Tab closed": [
-        "Tab ditutup"
-      ],
-      "Name on card required": [
-        "Wajib isi nama di kartu"
-      ],
-      "Invalid expiration date": [
-        "Tanggal kedaluwarsa tidak valid"
-      ],
-      "Invalid card number": [
-        "Nomor kartu tidak valid"
-      ],
-      "Invalid ${ name } code": [
-        "Kode ${ name } tidak valid"
-      ],
-      "Invalid postal code": [
-        "Kode pos tidak valid"
-      ],
-      "Please generate keys before you try to change your password.": [
-        "Mohon hasilkan kunci sebelum Anda mengubah kata sandi."
-      ],
-      "Please set a recovery/notification email first": [
-        "Harap setel surel pemulihan/notifikasi terlebih dahulu"
-      ],
-      "Please set a recovery phone number first": [
-        "Harap setel nomor telepon pemulihan terlebih dahulu"
-      ],
-      "Payments are currently not available, please try again later": [
-        "Pembayaran tidak bisa dilakukan. Coba lagi nanti"
-      ],
-      "You have no invoices.": [
-        "Tidak ada tagihan."
-      ],
-      "Your account or organization currently has an overdue invoice. Please pay all unpaid invoices.": [
-        "Ada tagihan yang lewat jatuh tempo. Mohon lunasi semua tagihan."
-      ],
-      "File has no contents to preview": [
-        "Berkas ini kosong"
-      ],
-      "Incorrect mailbox password. Please try again": [
-        "Sandi kotak surat salah. Silakan coba lagi"
-      ],
-      "Incorrect login credentials. Please try again": [
-        "Kredensial masuk salah. Silakan coba lagi"
-      ],
-      "Can't validate email, try again later": [
-        "Tidak dapat memvalidasi surel, coba lagi nanti"
-      ],
-      "Can't validate phone, try again later": [
-        "Tidak dapat memvalidasi telepon, coba lagi nanti"
-      ],
-      "Enter 6 digits": [
-        "Masukan 6 digit"
-      ],
-      "Invalid verification code": [
-        "Kode verifikasi tidak valid"
-      ],
-      "Email address invalid": [
-        "Alamat surel tidak valid"
-      ],
-      "Please enter '${ dangerWord }'": [
-        "Silakan masukkan '${ dangerWord }'"
-      ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Ada yang salah, mohon ${ refresh } untuk melanjutkan. Jika Anda masih melihat pesan kesalahan ini silahkan hubungi ${ supportTeam } kami."
-      ],
-      "This field is required": [
-        "Bagian ini wajib isi"
-      ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "Peramban yang Anda gunakan tidak mengizinkan pembayaran secara penuh diotorisasi. Sila gunakan peramban lain atau masuk via komputer."
-      ],
-      "This field requires a minimum of ${ minimumLength } characters.": [
-        "Kolom ini membutuhkan minimal { minimumLength } karakter."
-      ],
-      "Email is not valid": [
-        "Surel tidak valid"
-      ],
-      "Not a valid number": [
-        "Bukan nomor yang valid"
-      ],
-      "Passwords do not match": [
-        "Sandi tidak sama"
-      ],
-      "Signature verification failed": [
-        "Verifikasi tanda tangan gagal"
-      ],
-      "Request timed out.": [
-        "Terlalu lama memuat."
-      ],
-      "Code wrong or not valid anymore": [
-        "Kode salah atau sudah tidak valid"
-      ],
-      "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
-        "Jika saat di TV Anda kedaluwarsa, klik Segarkan pada TV Anda dan masukkan kode lagi."
-      ],
-      "Invalid invitation link": [
-        "Tautan undangan tidak valid"
-      ],
-      "Can't check username, try again later": [
-        "Gagal periksa nama pengguna. Coba lagi nanti"
-      ]
-    },
-    "Error notification in the bug report modal when the user upload file": {
-      "No image selected": [
-        "Tidak ada gambar yang dipilih"
-      ]
-    },
     "Info": {
+      "No results found": [
+        "Tidak ada hasil ditemukan"
+      ],
+      "Loading": [
+        "Memuat"
+      ],
       "Screenshot(s) attached": [
         "Tangkapan layar terlampir"
       ],
@@ -742,12 +594,6 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Jika Anda tidak menemukan surel di kotak masuk, mohon periksa folder spam Anda."
       ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
-        "Klik \"Minta kode baru\" untuk mendapatkan kode verifikasi baru yang dikirim ke ${ strong }. Jika alamat surel ini salah, klik \"Edit\" untuk mengoreksi."
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
-        "Klik \"Minta kode baru\" untuk mendapatkan kode verifikasi baru yang dikirim ke ${ strong }. Jika nomor telepon ini salah, klik \"Edit\" untuk mengoreksi."
-      ],
       "To fight spam and abuse, please verify you are human.": [
         "Untuk melawan spam dan penyalahgunaan, mohon verifikasi Anda memang manusia."
       ],
@@ -759,6 +605,12 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Jika Anda menemui masalah saat membuat akun, silakan minta undangan dan kami akan merespon dalam satu hari kerja."
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
+        "Klik \"Minta kode baru\" untuk mendapatkan kode verifikasi baru yang dikirim ke ${ strong }. Jika alamat surel ini salah, klik \"Edit\" untuk mengoreksi."
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
+        "Klik \"Minta kode baru\" untuk mendapatkan kode verifikasi baru yang dikirim ke ${ strong }. Jika nomor telepon ini salah, klik \"Edit\" untuk mengoreksi."
       ],
       "Enter your recovery email address, and we'll send you your username(s). (This is usually the email address you provided during signup.)": [
         "Masukkan alamat surel pemulihan Anda, dan kami akan mengirim nama pengguna Anda. (Biasanya ini alamat surel yang Anda isikan saat mendaftar.)"
@@ -798,12 +650,6 @@
       ],
       "support team": [
         "tim dukungan"
-      ],
-      "No results found": [
-        "Tidak ada hasil ditemukan"
-      ],
-      "Loading": [
-        "Memuat"
       ],
       "Session timed out.": [
         "Sesi habis."
@@ -875,628 +721,16 @@
         "Membuat akun anda"
       ]
     },
-    "Action": {
-      "Clear": [
-        "Bersihkan"
-      ],
-      "Add screenshot(s)": [
-        "Tambah tangkapan layar"
-      ],
-      "Submit": [
-        "Kirim"
-      ],
-      "Hide info": [
-        "Sembunyikan info"
-      ],
-      "Show info": [
-        "Tampilkan info"
-      ],
-      "Copy email to clipboard": [
-        "Salin surel ke papan klip"
-      ],
-      "${ BRAND_NAME } introduction": [
-        "Pengenalan ${ BRAND_NAME }"
-      ],
-      "Chat with us": [
-        "Mengobrol dengan kami"
-      ],
-      "I have a question": [
-        "Saya punya pertanyaan"
-      ],
-      "Request a feature": [
-        "Minta fitur"
-      ],
-      "Report a problem": [
-        "Laporkan masalah"
-      ],
-      "${ BRAND_NAME } shop": [
-        "Toko ${ BRAND_NAME }"
-      ],
-      "Switch account": [
-        "Ganti akun"
-      ],
-      "Sign out": [
-        "Keluar"
-      ],
-      "Get started": [
-        "Mulai"
-      ],
-      "Next": [
-        "Selanjutnya"
-      ],
-      "Start setup": [
-        "Mulai penyetelan"
-      ],
-      "Skip": [
-        "Lewati"
-      ],
-      "Done": [
-        "Selesai"
-      ],
-      "Back": [
-        "Kembali"
-      ],
-      "Use ${ label } theme": [
-        "Gunakan tema ${ label }"
-      ],
-      "Signing out": [
-        "Keluar"
-      ],
-      "Close": [
-        "Tutup"
-      ],
-      "refresh the page": [
-        "segarkan halaman"
-      ],
-      "Remove bonuses": [
-        "Hapus bonus"
-      ],
-      "Select plan": [
-        "Pilih paket"
-      ],
-      "Compare all features": [
-        "Bandingkan semua fitur"
-      ],
-      "${ boldSave } by switching to annual billing": [
-        "${ boldSave } dengan beralih ke penagihan tahunan"
-      ],
-      "Continue": [
-        "Lanjut"
-      ],
-      "Confirm": [
-        "Konfirmasi"
-      ],
-      "Pay": [
-        "Bayar"
-      ],
-      "Apply": [
-        "Terapkan"
-      ],
-      "Open ${ CALENDAR_APP_NAME } settings": [
-        "Buka pengaturan ${ CALENDAR_APP_NAME }"
-      ],
-      "OK": [
-        "OK"
-      ],
-      "Upgrade to Plus": [
-        "Tingkatkan ke Plus"
-      ],
-      "Upgrade to Professional": [
-        "Tingkatkan ke Professional"
-      ],
-      "Activate": [
-        "Aktifkan"
-      ],
-      "Customize subscription": [
-        "Sesuaikan langganan"
-      ],
-      "Cancel subscription": [
-        "Batalkan langganan"
-      ],
-      "Remove gift code": [
-        "Hapus kode hadiah"
-      ],
-      "annual billing": [
-        "penagihan tahunan"
-      ],
-      "Compare plans": [
-        "Bandingkan paket"
-      ],
-      "Decrease": [
-        "Kurangi"
-      ],
-      "Increase": [
-        "Tingkatkan"
-      ],
-      "Downgrade": [
-        "Turunkan"
-      ],
-      "Top up": [
-        "Isi ulang"
-      ],
-      "Add credits": [
-        "Tambahkan kredit"
-      ],
-      "Save": [
-        "Simpan"
-      ],
-      "Cancel": [
-        "Batal"
-      ],
-      "Add PayPal payment method": [
-        "Tambahkan metode pembayaran PayPal"
-      ],
-      "Retry": [
-        "Coba lagi"
-      ],
-      "Loading verification": [
-        "Memuat verifikasi"
-      ],
-      "Try again": [
-        "Coba lagi"
-      ],
-      "Verify": [
-        "Verifikasikan"
-      ],
-      "Use a different card": [
-        "Gunakan kartu lain"
-      ],
-      "Use a different payment method": [
-        "Gunakan metode pembayaran lainnya"
-      ],
-      "enable desktop notifications": [
-        "mengaktifkan pemberitahuan desktop"
-      ],
-      "here": [
-        "di sini"
-      ],
-      "Refresh the page": [
-        "Segarkan halaman"
-      ],
-      "Close this banner": [
-        "Tutup spanduk ini"
-      ],
-      "Change password": [
-        "Ubah kata sandi"
-      ],
-      "Ok": [
-        "Ya"
-      ],
-      "Download": [
-        "Unduh"
-      ],
-      "Yes": [
-        "Ya"
-      ],
-      "Change mailbox password": [
-        "Ganti kata sandi kotak pesan"
-      ],
-      "Delete": [
-        "Hapus"
-      ],
-      "Delete your account": [
-        "Hapus akun Anda"
-      ],
-      "Hide": [
-        "Sembunyikan"
-      ],
-      "Show": [
-        "Tampilkan"
-      ],
-      "Reset credentials": [
-        "Atur ulang kredensial"
-      ],
-      "Upgrade": [
-        "Tingkatkan"
+    "Label": {
+      "Reveal password": [
+        "Perlihatkan sandi"
+      ],
+      "Hide password": [
+        "Sembunyikan sandi"
       ],
       "Copy": [
         "Salin"
       ],
-      "Download all configurations": [
-        "Unduh semua konfigurasi"
-      ],
-      "Get ProtonVPN Plus": [
-        "Dapatkan ProtonVPN Plus"
-      ],
-      "Update": [
-        "Perbarui"
-      ],
-      "Create new recovery phrase": [
-        ""
-      ],
-      "Copy to clipboard": [
-        ""
-      ],
-      "Create new recovery phrase?": [
-        ""
-      ],
-      "Enter password to continue": [
-        ""
-      ],
-      "Disable recovery phrase?": [
-        ""
-      ],
-      "Disable recovery phrase": [
-        ""
-      ],
-      "Edit": [
-        "Sunting"
-      ],
-      "Mark as default": [
-        "Tandai sebagai standar"
-      ],
-      "Add credit / debit card": [
-        "Tambah kartu kredit / debit"
-      ],
-      "Add PayPal": [
-        "Tambahkan PayPal"
-      ],
-      "View": [
-        "Lihat"
-      ],
-      "User": [
-        "Pengguna"
-      ],
-      "Organization": [
-        "Organisasi"
-      ],
-      "Customize": [
-        "Sesuaikan"
-      ],
-      "Details": [
-        "Rincian"
-      ],
-      "Share via link": [
-        "Bagikan via tautan"
-      ],
-      "Sharing options": [
-        "Pilihan Berbagi"
-      ],
-      "Zoom out": [
-        "Perkecil"
-      ],
-      "Reset zoom": [
-        "Ukuran semula"
-      ],
-      "Zoom in": [
-        "Perbesar"
-      ],
-      "Previous": [
-        "Sebelumnya"
-      ],
-      "Log in": [
-        "Masuk"
-      ],
-      "View invoice": [
-        "Lihat tagihan"
-      ],
-      "Get verification code": [
-        "Dapatkan kode verifikasi"
-      ],
-      "Try another method": [
-        "Coba metode lain"
-      ],
-      "Request new code": [
-        "Minta kode baru"
-      ],
-      "Did not receive the code?": [
-        "Tidak menerima kode?"
-      ],
-      "Edit email address": [
-        "Edit alamat surel"
-      ],
-      "Edit phone number": [
-        "Edit nomor telepon"
-      ],
-      "Email me my username(s)": [
-        "Kirim surel nama pengguna saya"
-      ],
-      "Get a new password": [
-        "Buat kata sandi baru"
-      ],
-      "Reset password": [
-        "Atur ulang kata sandi"
-      ],
-      "Reset my password": [
-        "Atur ulang kata sandi saya"
-      ],
-      "Close navigation": [
-        "Tutup navigasi"
-      ],
-      "Open navigation": [
-        "Buka navigasi"
-      ],
-      "More info: ${ safeTitle }": [
-        "Info lebih lanjut: ${ safeTitle }"
-      ],
-      "Go to panel ${ index }": [
-        "Ke panel ${ index }"
-      ],
-      "Close modal": [
-        "Tutup jendela"
-      ],
-      "Report bug": [
-        "Laporkan bug"
-      ],
-      "Activate my coupon": [
-        "Aktifkan kupon saya"
-      ],
-      "Hide additional features": [
-        "Sembunyikan fitur tambahan"
-      ],
-      "Select": [
-        "Pilih"
-      ],
-      "Verify code again": [
-        "Verifikasi kode lagi"
-      ],
-      "Verify code": [
-        "Verifikasi kode"
-      ],
-      "Create account": [
-        "Buat akun"
-      ],
-      "Go to login": [
-        "Ke halaman Masuk"
-      ],
-      "View full plan comparison": [
-        "Lihat perbandingan paket lengkap"
-      ],
-      "Send": [
-        "Kirim"
-      ],
-      "Resend": [
-        "Kirim ulang"
-      ],
-      "Use another verification method": [
-        "Gunakan metode verifikasi lainnya"
-      ],
-      "Confirm payment": [
-        "Konfirmasi pembayaran"
-      ],
-      "Pay annually and save 20%": [
-        "Bayar tahunan dan hemat 20%"
-      ],
-      "Try ${ upsellPlan.title } for only ${ totalMonthlyText }": [
-        "Cobalah ${ upsellPlan.title } hanya dengan ${ totalMonthlyText }"
-      ],
-      "Homepage": [
-        "Beranda"
-      ]
-    },
-    "Bug category": {
-      "Sign in problem": [
-        "Masalah masuk"
-      ],
-      "Sign up problem": [
-        "Masalah pendaftaran"
-      ],
-      "Payments problem": [
-        "Masalah pembayaran"
-      ],
-      "Custom domain problem": [
-        "Masalah domain khusus"
-      ],
-      "Bridge problem": [
-        "Masalah bridge"
-      ],
-      "Import / export problem": [
-        "Masalah impor / ekspor"
-      ],
-      "Connection problem": [
-        "Masalah koneksi"
-      ],
-      "Slow speed problem": [
-        "Masalah kecepatan lambat"
-      ],
-      "Calendar problem": [
-        "Masalah kalender"
-      ],
-      "Contacts problem": [
-        "Masalah kontak"
-      ],
-      "Drive problem": [
-        "Masalah Drive"
-      ],
-      "Mail problem": [
-        "Masalah Mail"
-      ],
-      "VPN problem": [
-        "Masalah VPN"
-      ],
-      "Feature request": [
-        "Permintaan fitur"
-      ],
-      "Other": [
-        "Lainnya"
-      ],
-      "Signup problem": [
-        "Masalah pendaftaran"
-      ],
-      "Installation problem": [
-        "Masalah instalasi"
-      ],
-      "Update problem": [
-        "Masalah pemutakhiran"
-      ],
-      "Application problem": [
-        "Masalah aplikasi"
-      ],
-      "Speed problem": [
-        "Masalah kecepatan"
-      ],
-      "Manual setup problem": [
-        "Masalah pemasangan manual"
-      ],
-      "Website access problem": [
-        "Masalah akses situs"
-      ],
-      "Streaming problem": [
-        "Masalah pengaliran"
-      ]
-    },
-    "Group": {
-      "Account": [
-        "Akun"
-      ],
-      "Apps": [
-        "Aplikasi"
-      ],
-      "Network": [
-        "Jaringan"
-      ],
-      "Services": [
-        "Layanan"
-      ],
-      "Other category": [
-        "Kategori lain"
-      ]
-    },
-    "Action to select a title for the bug report modal": {
-      "Select": [
-        "Pilih"
-      ]
-    },
-    "Link": {
-      "clearing your browser cache": [
-        "membersihkan tembolok peramban Anda"
-      ],
-      "Upgrade": [
-        "Tingkatkan"
-      ],
-      "Go to subscription plans": [
-        "Ke paket langganan"
-      ],
-      "Add a gift code": [
-        "Tambah kode hadiah"
-      ],
-      "click here": [
-        "klik di sini"
-      ],
-      "Pay invoice": [
-        "Bayar tagihan"
-      ],
-      "Upgrade account": [
-        "Tingkatkan akun"
-      ],
-      "Not activated": [
-        "Belum diaktifkan"
-      ],
-      "View guide": [
-        "Lihat panduan"
-      ],
-      "What is the difference between UDP and TCP protocols?": [
-        "Apa bedanya protokol UDP dan TCP?"
-      ],
-      "Learn more": [
-        "Pelajari lebih lanjut"
-      ],
-      "Request an invite": [
-        "Minta undangan"
-      ],
-      "Back to login": [
-        "Kembali ke masuk"
-      ],
-      "here": [
-        "di sini"
-      ],
-      "Upgrade now": [
-        "Tingkatkan sekarang"
-      ],
-      "Sign up for free": [
-        "Daftar gratis"
-      ],
-      "protonvpn.com": [
-        "protonvpn.com"
-      ],
-      "Don't have an account yet? Sign up for free!": [
-        "Masih belum memiliki akun? Mendaftarlah dengan gratis!"
-      ],
-      "Reset password": [
-        "Atur ulang kata sandi"
-      ],
-      "Forgot username?": [
-        "Lupa nama pengguna?"
-      ],
-      "Common login problems": [
-        "Masalah umum proses masuk"
-      ],
-      "Contact support": [
-        "Hubungi dukungan"
-      ],
-      "Terms of Service": [
-        "Ketentuan Layanan"
-      ],
-      "Privacy Policy": [
-        "Kebijakan Privasi"
-      ],
-      "Log in": [
-        "Masuk"
-      ],
-      "Close": [
-        "Tutup"
-      ]
-    },
-    "Success": {
-      "Bug reported": [
-        "Bug dilaporkan"
-      ],
-      "Email address copied to clipboard": [
-        "Alamat surel disalin ke papan klip"
-      ],
-      "You have successfully unsubscribed": [
-        "Anda telah berhenti berlangganan"
-      ],
-      "Credits added": [
-        "Kredit ditambahkan"
-      ],
-      "Gift code applied": [
-        "Kode hadiah berhasil digunakan"
-      ],
-      "Payment method updated": [
-        "Metode pembayaran berhasil diperbarui"
-      ],
-      "Payment method added": [
-        "Metode pembayaran berhasil ditambahkan"
-      ],
-      "Password updated": [
-        "Kata sandi diperbarui"
-      ],
-      "Account deleted. Logging out...": [
-        "Akun dihapus. Keluar akun..."
-      ],
-      "Locale updated": [
-        "Bahasa diperbarui"
-      ],
-      "${ server.Domain } copied in your clipboard": [
-        "${ server.Domain } tersalin di papan klip Anda"
-      ],
-      "Email updated": [
-        "Surel berhasil diperbarui"
-      ],
-      "Phone number updated": [
-        "Nomor telepon telah diperbarui"
-      ],
-      "Payment method deleted": [
-        "Metode pembayaran berhasil dihapus"
-      ],
-      "Invoice paid": [
-        "Faktur dibayar"
-      ],
-      "Invoice customized": [
-        "Tagihan berhasil disesuaikan"
-      ],
-      "Code sent to ${ methodTo }": [
-        "Kode dikirim ke ${ methodTo }"
-      ],
-      "Verification successful": [
-        "Verifikasi berhasil"
-      ],
-      "If you entered a valid notification email we will send you an email with your usernames in the next minute.": [
-        "Apabila surel pemberitahuan yang Anda masukkan terdaftar, nama pengguna Anda akan dikirimkan via surel."
-      ]
-    },
-    "Label": {
       "Operating system": [
         "Sistem operasi"
       ],
@@ -1773,15 +1007,6 @@
       "Danger": [
         "Bahaya"
       ],
-      "Copy": [
-        "Salin"
-      ],
-      "Reveal password": [
-        "Perlihatkan sandi"
-      ],
-      "Hide password": [
-        "Sembunyikan sandi"
-      ],
       "Back to:": [
         "Kembali ke:"
       ],
@@ -1819,90 +1044,651 @@
         "Harga total (dua tahun)"
       ]
     },
-    "Placeholder": {
-      "OS name": [
-        "Nama Sistem Operasi"
+    "Action": {
+      "Close navigation": [
+        "Tutup navigasi"
       ],
-      "OS version": [
-        "Versi Sistem Operasi"
+      "Open navigation": [
+        "Buka navigasi"
       ],
-      "Proton username": [
-        "Nama Pengguna Proton"
+      "More info: ${ safeTitle }": [
+        "Info lebih lanjut: ${ safeTitle }"
       ],
-      "A way to contact you": [
-        "Cara menghubungi Anda"
+      "Go to panel ${ index }": [
+        "Ke panel ${ index }"
       ],
-      "Please describe the problem and include any error messages": [
-        "Mohon uraikan masalah dan sertakan pesan galat apapun"
-      ],
-      "Browser name": [
-        "Nama Peramban"
-      ],
-      "Browser version": [
-        "Versi peramban"
-      ],
-      "e.g. Julia Smith": [
-        "cth. Julia Smith"
-      ],
-      "Gift code": [
-        "Kode hadiah"
-      ],
-      "Feedback": [
-        "Umpan balik"
-      ],
-      "Other": [
-        "Lainnya"
-      ],
-      "Add gift code": [
-        "Tambah kode hadiah"
-      ],
-      "ZIP": [
-        "ZIP"
-      ],
-      "Postal code": [
-        "Kode Pos"
-      ],
-      "Password": [
-        "Kata Sandi"
-      ],
-      "Two-factor authentication code": [
-        "Kode otentikasi dua faktor"
+      "Close": [
+        "Tutup"
       ],
       "Confirm": [
         "Konfirmasi"
       ],
-      "Email address": [
-        "Alamat Surel"
+      "Cancel": [
+        "Batal"
       ],
-      "Mailbox password": [
-        "Kata sandi kotak pesan"
+      "Submit": [
+        "Kirim"
       ],
-      "Email": [
-        "Surel"
+      "Close modal": [
+        "Tutup jendela"
       ],
-      "Username": [
-        "Nama Pengguna"
+      "Clear": [
+        "Bersihkan"
       ],
-      "Recovery email": [
-        "Alamat Surel untuk Pemulihan"
+      "Add screenshot(s)": [
+        "Tambah tangkapan layar"
       ],
-      "Reset code": [
-        "Set ulang kode"
+      "Hide info": [
+        "Sembunyikan info"
       ],
-      "Enter the word '${ dangerWord }' here": [
-        "Masukkan kata '${ dangerWord }' di sini"
+      "Show info": [
+        "Tampilkan info"
       ],
-      "Choose a new password": [
-        "Tentukan kata sandi baru"
+      "Copy email to clipboard": [
+        "Salin surel ke papan klip"
       ],
-      "Enter coupon code": [
-        "Masukkan kode kupon"
+      "${ BRAND_NAME } introduction": [
+        "Pengenalan ${ BRAND_NAME }"
       ],
-      "Confirm password": [
-        "Konfirmasi sandi"
+      "Chat with us": [
+        "Mengobrol dengan kami"
+      ],
+      "I have a question": [
+        "Saya punya pertanyaan"
+      ],
+      "Request a feature": [
+        "Minta fitur"
+      ],
+      "Report a problem": [
+        "Laporkan masalah"
+      ],
+      "${ BRAND_NAME } shop": [
+        "Toko ${ BRAND_NAME }"
+      ],
+      "Switch account": [
+        "Ganti akun"
+      ],
+      "Sign out": [
+        "Keluar"
+      ],
+      "Get started": [
+        "Mulai"
+      ],
+      "Next": [
+        "Selanjutnya"
+      ],
+      "Start setup": [
+        "Mulai penyetelan"
+      ],
+      "Skip": [
+        "Lewati"
+      ],
+      "Done": [
+        "Selesai"
+      ],
+      "Back": [
+        "Kembali"
+      ],
+      "Use ${ label } theme": [
+        "Gunakan tema ${ label }"
+      ],
+      "Signing out": [
+        "Keluar"
+      ],
+      "refresh the page": [
+        "segarkan halaman"
+      ],
+      "Remove bonuses": [
+        "Hapus bonus"
+      ],
+      "Select plan": [
+        "Pilih paket"
+      ],
+      "Compare all features": [
+        "Bandingkan semua fitur"
+      ],
+      "${ boldSave } by switching to annual billing": [
+        "${ boldSave } dengan beralih ke penagihan tahunan"
+      ],
+      "Continue": [
+        "Lanjut"
+      ],
+      "Pay": [
+        "Bayar"
+      ],
+      "Apply": [
+        "Terapkan"
+      ],
+      "Open ${ CALENDAR_APP_NAME } settings": [
+        "Buka pengaturan ${ CALENDAR_APP_NAME }"
+      ],
+      "OK": [
+        "OK"
+      ],
+      "Upgrade to Plus": [
+        "Tingkatkan ke Plus"
+      ],
+      "Upgrade to Professional": [
+        "Tingkatkan ke Professional"
+      ],
+      "Activate": [
+        "Aktifkan"
+      ],
+      "Customize subscription": [
+        "Sesuaikan langganan"
+      ],
+      "Cancel subscription": [
+        "Batalkan langganan"
+      ],
+      "Remove gift code": [
+        "Hapus kode hadiah"
+      ],
+      "annual billing": [
+        "penagihan tahunan"
+      ],
+      "Compare plans": [
+        "Bandingkan paket"
+      ],
+      "Decrease": [
+        "Kurangi"
+      ],
+      "Increase": [
+        "Tingkatkan"
+      ],
+      "Downgrade": [
+        "Turunkan"
+      ],
+      "Top up": [
+        "Isi ulang"
+      ],
+      "Add credits": [
+        "Tambahkan kredit"
+      ],
+      "Save": [
+        "Simpan"
+      ],
+      "Add PayPal payment method": [
+        "Tambahkan metode pembayaran PayPal"
+      ],
+      "Retry": [
+        "Coba lagi"
+      ],
+      "Loading verification": [
+        "Memuat verifikasi"
+      ],
+      "Try again": [
+        "Coba lagi"
+      ],
+      "Verify": [
+        "Verifikasikan"
+      ],
+      "Use a different card": [
+        "Gunakan kartu lain"
+      ],
+      "Use a different payment method": [
+        "Gunakan metode pembayaran lainnya"
+      ],
+      "enable desktop notifications": [
+        "mengaktifkan pemberitahuan desktop"
+      ],
+      "here": [
+        "di sini"
+      ],
+      "Refresh the page": [
+        "Segarkan halaman"
+      ],
+      "Close this banner": [
+        "Tutup spanduk ini"
+      ],
+      "Change password": [
+        "Ubah kata sandi"
+      ],
+      "Ok": [
+        "Ya"
+      ],
+      "Download": [
+        "Unduh"
+      ],
+      "Yes": [
+        "Ya"
+      ],
+      "Change mailbox password": [
+        "Ganti kata sandi kotak pesan"
+      ],
+      "Delete": [
+        "Hapus"
+      ],
+      "Delete your account": [
+        "Hapus akun Anda"
+      ],
+      "Hide": [
+        "Sembunyikan"
+      ],
+      "Show": [
+        "Tampilkan"
+      ],
+      "Reset credentials": [
+        "Atur ulang kredensial"
+      ],
+      "Upgrade": [
+        "Tingkatkan"
+      ],
+      "Copy": [
+        "Salin"
+      ],
+      "Download all configurations": [
+        "Unduh semua konfigurasi"
+      ],
+      "Get ProtonVPN Plus": [
+        "Dapatkan ProtonVPN Plus"
+      ],
+      "Update": [
+        "Perbarui"
+      ],
+      "Create new recovery phrase": [
+        ""
+      ],
+      "Copy to clipboard": [
+        ""
+      ],
+      "Create new recovery phrase?": [
+        ""
+      ],
+      "Enter password to continue": [
+        ""
+      ],
+      "Disable recovery phrase?": [
+        ""
+      ],
+      "Disable recovery phrase": [
+        ""
+      ],
+      "Edit": [
+        "Sunting"
+      ],
+      "Mark as default": [
+        "Tandai sebagai standar"
+      ],
+      "Add credit / debit card": [
+        "Tambah kartu kredit / debit"
+      ],
+      "Add PayPal": [
+        "Tambahkan PayPal"
+      ],
+      "View": [
+        "Lihat"
+      ],
+      "User": [
+        "Pengguna"
+      ],
+      "Organization": [
+        "Organisasi"
+      ],
+      "Customize": [
+        "Sesuaikan"
+      ],
+      "Details": [
+        "Rincian"
+      ],
+      "Share via link": [
+        "Bagikan via tautan"
+      ],
+      "Sharing options": [
+        "Pilihan Berbagi"
+      ],
+      "Zoom out": [
+        "Perkecil"
+      ],
+      "Reset zoom": [
+        "Ukuran semula"
+      ],
+      "Zoom in": [
+        "Perbesar"
+      ],
+      "Previous": [
+        "Sebelumnya"
+      ],
+      "Log in": [
+        "Masuk"
+      ],
+      "View invoice": [
+        "Lihat tagihan"
+      ],
+      "Get verification code": [
+        "Dapatkan kode verifikasi"
+      ],
+      "Try another method": [
+        "Coba metode lain"
+      ],
+      "Request new code": [
+        "Minta kode baru"
+      ],
+      "Did not receive the code?": [
+        "Tidak menerima kode?"
+      ],
+      "Edit email address": [
+        "Edit alamat surel"
+      ],
+      "Edit phone number": [
+        "Edit nomor telepon"
+      ],
+      "Email me my username(s)": [
+        "Kirim surel nama pengguna saya"
+      ],
+      "Get a new password": [
+        "Buat kata sandi baru"
+      ],
+      "Reset password": [
+        "Atur ulang kata sandi"
+      ],
+      "Reset my password": [
+        "Atur ulang kata sandi saya"
+      ],
+      "Report bug": [
+        "Laporkan bug"
+      ],
+      "Activate my coupon": [
+        "Aktifkan kupon saya"
+      ],
+      "Hide additional features": [
+        "Sembunyikan fitur tambahan"
+      ],
+      "Select": [
+        "Pilih"
+      ],
+      "Verify code again": [
+        "Verifikasi kode lagi"
+      ],
+      "Verify code": [
+        "Verifikasi kode"
+      ],
+      "Create account": [
+        "Buat akun"
+      ],
+      "Go to login": [
+        "Ke halaman Masuk"
+      ],
+      "View full plan comparison": [
+        "Lihat perbandingan paket lengkap"
+      ],
+      "Send": [
+        "Kirim"
+      ],
+      "Resend": [
+        "Kirim ulang"
+      ],
+      "Use another verification method": [
+        "Gunakan metode verifikasi lainnya"
+      ],
+      "Confirm payment": [
+        "Konfirmasi pembayaran"
+      ],
+      "Pay annually and save 20%": [
+        "Bayar tahunan dan hemat 20%"
+      ],
+      "Try ${ upsellPlan.title } for only ${ totalMonthlyText }": [
+        "Cobalah ${ upsellPlan.title } hanya dengan ${ totalMonthlyText }"
+      ],
+      "Homepage": [
+        "Beranda"
+      ]
+    },
+    "Storage": {
+      "Your current storage:": [
+        "Penyimpanan Anda saat ini:"
+      ],
+      "Upgrade storage": [
+        "Tingkatkan penyimpanan"
+      ],
+      "Release notes": [
+        "Catatan rilis"
+      ]
+    },
+    "Link": {
+      "Learn more": [
+        "Pelajari lebih lanjut"
+      ],
+      "clearing your browser cache": [
+        "membersihkan tembolok peramban Anda"
+      ],
+      "Upgrade": [
+        "Tingkatkan"
+      ],
+      "Go to subscription plans": [
+        "Ke paket langganan"
+      ],
+      "Add a gift code": [
+        "Tambah kode hadiah"
+      ],
+      "click here": [
+        "klik di sini"
+      ],
+      "Pay invoice": [
+        "Bayar tagihan"
+      ],
+      "Upgrade account": [
+        "Tingkatkan akun"
+      ],
+      "Not activated": [
+        "Belum diaktifkan"
+      ],
+      "View guide": [
+        "Lihat panduan"
+      ],
+      "What is the difference between UDP and TCP protocols?": [
+        "Apa bedanya protokol UDP dan TCP?"
+      ],
+      "Request an invite": [
+        "Minta undangan"
+      ],
+      "Back to login": [
+        "Kembali ke masuk"
+      ],
+      "here": [
+        "di sini"
+      ],
+      "Upgrade now": [
+        "Tingkatkan sekarang"
+      ],
+      "Sign up for free": [
+        "Daftar gratis"
+      ],
+      "protonvpn.com": [
+        "protonvpn.com"
+      ],
+      "Don't have an account yet? Sign up for free!": [
+        "Masih belum memiliki akun? Mendaftarlah dengan gratis!"
+      ],
+      "Reset password": [
+        "Atur ulang kata sandi"
+      ],
+      "Forgot username?": [
+        "Lupa nama pengguna?"
+      ],
+      "Common login problems": [
+        "Masalah umum proses masuk"
+      ],
+      "Contact support": [
+        "Hubungi dukungan"
+      ],
+      "Terms of Service": [
+        "Ketentuan Layanan"
+      ],
+      "Privacy Policy": [
+        "Kebijakan Privasi"
+      ],
+      "Log in": [
+        "Masuk"
+      ],
+      "Close": [
+        "Tutup"
+      ]
+    },
+    "Error": {
+      "Email address invalid": [
+        "Alamat surel tidak valid"
+      ],
+      "This field is required": [
+        "Bagian ini wajib isi"
+      ],
+      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
+        "Peramban yang Anda gunakan tidak mengizinkan pembayaran secara penuh diotorisasi. Sila gunakan peramban lain atau masuk via komputer."
+      ],
+      "Unknown error": [
+        "Galat tak diketahui"
+      ],
+      "Checkout expired, please try again.": [
+        "Pembayaran kedaluwarsa, silakan coba lagi."
+      ],
+      "Invalid code": [
+        "Kode tidak valid"
+      ],
+      "Error connecting to the Bitcoin API.": [
+        "Gagal sambung ke API Bitcoin."
+      ],
+      "Amount below minimum.": [
+        "Jumlah di bawah minimal."
+      ],
+      "Amount above the maximum.": [
+        "Jumlah di atas maksimal."
+      ],
+      "The minimum amount that can be donated is ${ price }": [
+        "Sumbangan minimal ${ price }"
+      ],
+      "The minimum amount of credit that can be added is ${ _price }": [
+        "Tambahan kredit minimal ${ _price }"
+      ],
+      "The minimum payment we accept is ${ _price2 }": [
+        "Pembayaran minimal ${ _price2 }"
+      ],
+      "Process aborted": [
+        "Proses dibatalkan"
+      ],
+      "Payment process cancelled": [
+        "Proses pembayaran dibatalkan"
+      ],
+      "Payment process failed": [
+        "Proses pembayaran gagal"
+      ],
+      "Payment process consumed": [
+        "Proses pembayaran terlalu lama"
+      ],
+      "Payment process not supported": [
+        "Proses pembayaran tidak didukung"
+      ],
+      "Unknown payment token status": [
+        "Status token pembayaran tidak dikenal"
+      ],
+      "Tab closed": [
+        "Tab ditutup"
+      ],
+      "Name on card required": [
+        "Wajib isi nama di kartu"
+      ],
+      "Invalid expiration date": [
+        "Tanggal kedaluwarsa tidak valid"
+      ],
+      "Invalid card number": [
+        "Nomor kartu tidak valid"
+      ],
+      "Invalid ${ name } code": [
+        "Kode ${ name } tidak valid"
+      ],
+      "Invalid postal code": [
+        "Kode pos tidak valid"
+      ],
+      "Please generate keys before you try to change your password.": [
+        "Mohon hasilkan kunci sebelum Anda mengubah kata sandi."
+      ],
+      "Please set a recovery/notification email first": [
+        "Harap setel surel pemulihan/notifikasi terlebih dahulu"
+      ],
+      "Please set a recovery phone number first": [
+        "Harap setel nomor telepon pemulihan terlebih dahulu"
+      ],
+      "Payments are currently not available, please try again later": [
+        "Pembayaran tidak bisa dilakukan. Coba lagi nanti"
+      ],
+      "You have no invoices.": [
+        "Tidak ada tagihan."
+      ],
+      "Your account or organization currently has an overdue invoice. Please pay all unpaid invoices.": [
+        "Ada tagihan yang lewat jatuh tempo. Mohon lunasi semua tagihan."
+      ],
+      "File has no contents to preview": [
+        "Berkas ini kosong"
+      ],
+      "Incorrect mailbox password. Please try again": [
+        "Sandi kotak surat salah. Silakan coba lagi"
+      ],
+      "Incorrect login credentials. Please try again": [
+        "Kredensial masuk salah. Silakan coba lagi"
+      ],
+      "Can't validate email, try again later": [
+        "Tidak dapat memvalidasi surel, coba lagi nanti"
+      ],
+      "Can't validate phone, try again later": [
+        "Tidak dapat memvalidasi telepon, coba lagi nanti"
+      ],
+      "Enter 6 digits": [
+        "Masukan 6 digit"
+      ],
+      "Invalid verification code": [
+        "Kode verifikasi tidak valid"
+      ],
+      "Please enter '${ dangerWord }'": [
+        "Silakan masukkan '${ dangerWord }'"
+      ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "Ada yang salah, mohon ${ refresh } untuk melanjutkan. Jika Anda masih melihat pesan kesalahan ini silahkan hubungi ${ supportTeam } kami."
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Kolom ini membutuhkan minimal { minimumLength } karakter."
+      ],
+      "Email is not valid": [
+        "Surel tidak valid"
+      ],
+      "Not a valid number": [
+        "Bukan nomor yang valid"
+      ],
+      "Passwords do not match": [
+        "Sandi tidak sama"
+      ],
+      "Signature verification failed": [
+        "Verifikasi tanda tangan gagal"
+      ],
+      "Request timed out.": [
+        "Terlalu lama memuat."
+      ],
+      "Code wrong or not valid anymore": [
+        "Kode salah atau sudah tidak valid"
+      ],
+      "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
+        "Jika saat di TV Anda kedaluwarsa, klik Segarkan pada TV Anda dan masukkan kode lagi."
+      ],
+      "Invalid invitation link": [
+        "Tautan undangan tidak valid"
+      ],
+      "Can't check username, try again later": [
+        "Gagal periksa nama pengguna. Coba lagi nanti"
       ]
     },
     "Title": {
+      "Open actions dropdown": [
+        "Buka menu tindakan"
+      ],
+      "Previous": [
+        "Sebelumnya"
+      ],
+      "Open pagination": [
+        "Buka paginasi"
+      ],
+      "Next": [
+        "Selanjutnya"
+      ],
+      "What's new": [
+        "Apa yang baru"
+      ],
       "Report a problem": [
         "Laporkan masalah"
       ],
@@ -2053,9 +1839,6 @@
       "Sign in again to continue": [
         "Masuk lagi untuk melanjutkan"
       ],
-      "Open actions dropdown": [
-        "Buka menu tindakan"
-      ],
       "1. Select platform": [
         "1. Pilih platform"
       ],
@@ -2107,26 +1890,11 @@
       "Invalid verification code": [
         "Kode verifikasi tidak valid"
       ],
-      "Request new code": [
-        "Minta kode baru"
-      ],
       "Human verification": [
         "Pembuktian manusia"
       ],
       "Confirm reset password": [
         "Konfirmasikan penyetelan ulang kata sandi"
-      ],
-      "Previous": [
-        "Sebelumnya"
-      ],
-      "Open pagination": [
-        "Buka paginasi"
-      ],
-      "Next": [
-        "Selanjutnya"
-      ],
-      "What's new": [
-        "Apa yang baru"
       ],
       "Upgrade": [
         "Tingkatkan"
@@ -2286,6 +2054,246 @@
       ],
       "Settings": [
         "Pengaturan"
+      ]
+    },
+    "Error notification in the bug report modal when the user upload file": {
+      "No image selected": [
+        "Tidak ada gambar yang dipilih"
+      ]
+    },
+    "Bug category": {
+      "Sign in problem": [
+        "Masalah masuk"
+      ],
+      "Sign up problem": [
+        "Masalah pendaftaran"
+      ],
+      "Payments problem": [
+        "Masalah pembayaran"
+      ],
+      "Custom domain problem": [
+        "Masalah domain khusus"
+      ],
+      "Bridge problem": [
+        "Masalah bridge"
+      ],
+      "Import / export problem": [
+        "Masalah impor / ekspor"
+      ],
+      "Connection problem": [
+        "Masalah koneksi"
+      ],
+      "Slow speed problem": [
+        "Masalah kecepatan lambat"
+      ],
+      "Calendar problem": [
+        "Masalah kalender"
+      ],
+      "Contacts problem": [
+        "Masalah kontak"
+      ],
+      "Drive problem": [
+        "Masalah Drive"
+      ],
+      "Mail problem": [
+        "Masalah Mail"
+      ],
+      "VPN problem": [
+        "Masalah VPN"
+      ],
+      "Feature request": [
+        "Permintaan fitur"
+      ],
+      "Other": [
+        "Lainnya"
+      ],
+      "Signup problem": [
+        "Masalah pendaftaran"
+      ],
+      "Installation problem": [
+        "Masalah instalasi"
+      ],
+      "Update problem": [
+        "Masalah pemutakhiran"
+      ],
+      "Application problem": [
+        "Masalah aplikasi"
+      ],
+      "Speed problem": [
+        "Masalah kecepatan"
+      ],
+      "Manual setup problem": [
+        "Masalah pemasangan manual"
+      ],
+      "Website access problem": [
+        "Masalah akses situs"
+      ],
+      "Streaming problem": [
+        "Masalah pengaliran"
+      ]
+    },
+    "Group": {
+      "Account": [
+        "Akun"
+      ],
+      "Apps": [
+        "Aplikasi"
+      ],
+      "Network": [
+        "Jaringan"
+      ],
+      "Services": [
+        "Layanan"
+      ],
+      "Other category": [
+        "Kategori lain"
+      ]
+    },
+    "Action to select a title for the bug report modal": {
+      "Select": [
+        "Pilih"
+      ]
+    },
+    "Success": {
+      "Bug reported": [
+        "Bug dilaporkan"
+      ],
+      "Email address copied to clipboard": [
+        "Alamat surel disalin ke papan klip"
+      ],
+      "You have successfully unsubscribed": [
+        "Anda telah berhenti berlangganan"
+      ],
+      "Credits added": [
+        "Kredit ditambahkan"
+      ],
+      "Gift code applied": [
+        "Kode hadiah berhasil digunakan"
+      ],
+      "Payment method updated": [
+        "Metode pembayaran berhasil diperbarui"
+      ],
+      "Payment method added": [
+        "Metode pembayaran berhasil ditambahkan"
+      ],
+      "Password updated": [
+        "Kata sandi diperbarui"
+      ],
+      "Account deleted. Logging out...": [
+        "Akun dihapus. Keluar akun..."
+      ],
+      "Locale updated": [
+        "Bahasa diperbarui"
+      ],
+      "${ server.Domain } copied in your clipboard": [
+        "${ server.Domain } tersalin di papan klip Anda"
+      ],
+      "Email updated": [
+        "Surel berhasil diperbarui"
+      ],
+      "Phone number updated": [
+        "Nomor telepon telah diperbarui"
+      ],
+      "Payment method deleted": [
+        "Metode pembayaran berhasil dihapus"
+      ],
+      "Invoice paid": [
+        "Faktur dibayar"
+      ],
+      "Invoice customized": [
+        "Tagihan berhasil disesuaikan"
+      ],
+      "Code sent to ${ methodTo }": [
+        "Kode dikirim ke ${ methodTo }"
+      ],
+      "Verification successful": [
+        "Verifikasi berhasil"
+      ],
+      "If you entered a valid notification email we will send you an email with your usernames in the next minute.": [
+        "Apabila surel pemberitahuan yang Anda masukkan terdaftar, nama pengguna Anda akan dikirimkan via surel."
+      ]
+    },
+    "Placeholder": {
+      "OS name": [
+        "Nama Sistem Operasi"
+      ],
+      "OS version": [
+        "Versi Sistem Operasi"
+      ],
+      "Proton username": [
+        "Nama Pengguna Proton"
+      ],
+      "A way to contact you": [
+        "Cara menghubungi Anda"
+      ],
+      "Please describe the problem and include any error messages": [
+        "Mohon uraikan masalah dan sertakan pesan galat apapun"
+      ],
+      "Browser name": [
+        "Nama Peramban"
+      ],
+      "Browser version": [
+        "Versi peramban"
+      ],
+      "e.g. Julia Smith": [
+        "cth. Julia Smith"
+      ],
+      "Gift code": [
+        "Kode hadiah"
+      ],
+      "Feedback": [
+        "Umpan balik"
+      ],
+      "Other": [
+        "Lainnya"
+      ],
+      "Add gift code": [
+        "Tambah kode hadiah"
+      ],
+      "ZIP": [
+        "ZIP"
+      ],
+      "Postal code": [
+        "Kode Pos"
+      ],
+      "Password": [
+        "Kata Sandi"
+      ],
+      "Two-factor authentication code": [
+        "Kode otentikasi dua faktor"
+      ],
+      "Confirm": [
+        "Konfirmasi"
+      ],
+      "Email address": [
+        "Alamat Surel"
+      ],
+      "Mailbox password": [
+        "Kata sandi kotak pesan"
+      ],
+      "Email": [
+        "Surel"
+      ],
+      "Username": [
+        "Nama Pengguna"
+      ],
+      "Recovery email": [
+        "Alamat Surel untuk Pemulihan"
+      ],
+      "Reset code": [
+        "Set ulang kode"
+      ],
+      "Enter the word '${ dangerWord }' here": [
+        "Masukkan kata '${ dangerWord }' di sini"
+      ],
+      "Choose a new password": [
+        "Tentukan kata sandi baru"
+      ],
+      "Enter coupon code": [
+        "Masukkan kode kupon"
+      ],
+      "Confirm password": [
+        "Konfirmasi sandi"
       ]
     },
     "Warning": {
@@ -3461,17 +3469,6 @@
         "Konfirmasi sandi baru"
       ]
     },
-    "Storage": {
-      "Your current storage:": [
-        "Penyimpanan Anda saat ini:"
-      ],
-      "Upgrade storage": [
-        "Tingkatkan penyimpanan"
-      ],
-      "Release notes": [
-        "Catatan rilis"
-      ]
-    },
     "file size format": {
       "bytes": [
         "byte"
@@ -3492,11 +3489,11 @@
       ]
     },
     "Calendar status": {
-      "Not synced": [
-        ""
-      ],
       "Syncing": [
         "Menyinkronkan"
+      ],
+      "Not synced": [
+        ""
       ]
     },
     "Calendar subscription not synced error": {

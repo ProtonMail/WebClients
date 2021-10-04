@@ -84,6 +84,24 @@
       "Confirm": [
         "Potvrdi"
       ],
+      "Delete": [
+        "Izbriši"
+      ],
+      "Close": [
+        "Zatvori"
+      ],
+      "Next month": [
+        "Sljedeći mjesec"
+      ],
+      "Previous month": [
+        "Prethodni mjesec"
+      ],
+      "Show less": [
+        "Prikaži manje"
+      ],
+      "Show more": [
+        "Prikaži više"
+      ],
       "Close navigation": [
         "Zatvori navigaciju"
       ],
@@ -93,47 +111,20 @@
       "More info: ${ safeTitle }": [
         "Više informacija: ${ safeTitle }"
       ],
-      "Close": [
-        "Zatvori"
-      ],
-      "Delete": [
-        "Izbriši"
-      ],
       "Go to panel ${ index }": [
         "Idi na ${ index } panel"
       ],
-      "Show less": [
-        "Prikaži manje"
-      ],
-      "Show more": [
-        "Prikaži više"
-      ],
-      "Next month": [
-        "Sljedeći mjesec"
-      ],
-      "Previous month": [
-        "Prethodni mjesec"
-      ],
       "Remove": [
         "Ukloni"
+      ],
+      "Select timezone": [
+        "Odaberite vremensku zonu"
       ],
       "Submit": [
         "Pošalji"
       ],
       "Close modal": [
         "Zatvori skočni prozor"
-      ],
-      "Select timezone": [
-        "Odaberite vremensku zonu"
-      ],
-      "Activate ${ Name }@pm.me": [
-        "Aktiviraj ${ Name }@pm.me"
-      ],
-      "Upgrade": [
-        "Nadogradnja"
-      ],
-      "Show shortcuts": [
-        "Prikaži prečace"
       ],
       "Continue import": [
         "Nastavi uvoz"
@@ -213,6 +204,15 @@
       "Use ${ label } theme": [
         "Koristi ${ label } temu"
       ],
+      "Activate ${ Name }@pm.me": [
+        "Aktiviraj ${ Name }@pm.me"
+      ],
+      "Upgrade": [
+        "Nadogradnja"
+      ],
+      "Show shortcuts": [
+        "Prikaži prečace"
+      ],
       "Import contacts": [
         "Uvezi kontakte"
       ],
@@ -249,53 +249,11 @@
       "Get ProtonVPN Plus": [
         "Nabavite ProtonVPN Plus"
       ],
-      "Add user": [
-        "Dodaj korisnika"
+      "Yes": [
+        "Da"
       ],
-      "Add address": [
-        "Dodaj adresu"
-      ],
-      "Done": [
-        "Gotovo"
-      ],
-      "Review": [
-        "Pregled"
-      ],
-      "Set catch-all": [
-        "Postavi dohvati-sve"
-      ],
-      "Add domain": [
-        "Dodaj domenu"
-      ],
-      "Refresh status": [
-        "Osvježi status"
-      ],
-      "Copy email to clipboard": [
-        "Kopiraj adresu e-pošte u međuspremnik"
-      ],
-      "${ BRAND_NAME } introduction": [
-        "${ BRAND_NAME } predstavljanje"
-      ],
-      "Chat with us": [
-        ""
-      ],
-      "I have a question": [
-        "Imam pitanje"
-      ],
-      "Request a feature": [
-        "Zatraži značajku"
-      ],
-      "Report a problem": [
-        "Prijavi problem"
-      ],
-      "${ BRAND_NAME } shop": [
-        "${ BRAND_NAME } dućan"
-      ],
-      "Switch account": [
-        "Promijeni račun"
-      ],
-      "Sign out": [
-        "Odjava"
+      "No": [
+        "Ne"
       ],
       "Update": [
         "Ažuriraj"
@@ -348,33 +306,6 @@
       "Delete link": [
         "Izbriši poveznicu"
       ],
-      "Get started": [
-        "Započnite"
-      ],
-      "Start setup": [
-        "Započni postavljanje"
-      ],
-      "Skip": [
-        "Preskoči"
-      ],
-      "Clear": [
-        "Očisti"
-      ],
-      "Add screenshot(s)": [
-        "Dodaj snimku(e) zaslona"
-      ],
-      "Hide info": [
-        "Sakrij informacije"
-      ],
-      "Show info": [
-        "Prikaži informacije"
-      ],
-      "Signing out": [
-        "Odjavljivanje"
-      ],
-      "refresh the page": [
-        "osvježi stranicu"
-      ],
       "Reactivate keys": [
         "Ponovna aktivacija ključeva"
       ],
@@ -393,9 +324,6 @@
       "Export key": [
         "Izvezi ključ"
       ],
-      "No": [
-        "Ne"
-      ],
       "Warning": [
         "Upozorenje"
       ],
@@ -404,6 +332,135 @@
       ],
       "Export private key": [
         "Izvoz privatnog ključa"
+      ],
+      "Add user": [
+        "Dodaj korisnika"
+      ],
+      "Add address": [
+        "Dodaj adresu"
+      ],
+      "Done": [
+        "Gotovo"
+      ],
+      "Review": [
+        "Pregled"
+      ],
+      "Set catch-all": [
+        "Postavi dohvati-sve"
+      ],
+      "Add domain": [
+        "Dodaj domenu"
+      ],
+      "Refresh status": [
+        "Osvježi status"
+      ],
+      "Copy email to clipboard": [
+        "Kopiraj adresu e-pošte u međuspremnik"
+      ],
+      "${ BRAND_NAME } introduction": [
+        "${ BRAND_NAME } predstavljanje"
+      ],
+      "Chat with us": [
+        ""
+      ],
+      "I have a question": [
+        "Imam pitanje"
+      ],
+      "Request a feature": [
+        "Zatraži značajku"
+      ],
+      "Report a problem": [
+        "Prijavi problem"
+      ],
+      "${ BRAND_NAME } shop": [
+        "${ BRAND_NAME } dućan"
+      ],
+      "Switch account": [
+        "Promijeni račun"
+      ],
+      "Sign out": [
+        "Odjava"
+      ],
+      "Get started": [
+        "Započnite"
+      ],
+      "Start setup": [
+        "Započni postavljanje"
+      ],
+      "Skip": [
+        "Preskoči"
+      ],
+      "Preview": [
+        "Pregled"
+      ],
+      "Create label": [
+        "Stvori oznaku"
+      ],
+      "Create folder": [
+        "Stvori mapu"
+      ],
+      "Remove this label": [
+        "Ukloni ovu oznaku"
+      ],
+      "Add condition": [
+        "Dodaj uvjet"
+      ],
+      "label emails as": [
+        "označi e-poštu kao"
+      ],
+      "move emails to": [
+        "premjesti e-poštu u"
+      ],
+      "mark emails as": [
+        "označi e-poštu kao"
+      ],
+      "send auto-reply email": [
+        "pošalji automatski odgovor"
+      ],
+      "Edit sieve": [
+        "Uredi Sieve filtar"
+      ],
+      "Add filter": [
+        "Dodaj filtar"
+      ],
+      "Add sieve filter": [
+        "Dodaj Sieve filtar"
+      ],
+      "Add": [
+        "Dodaj"
+      ],
+      "Move to Block List": [
+        "Premjesti u popis nedopuštenih"
+      ],
+      "Move to Allow List": [
+        "Premjesti u popis dopuštenih"
+      ],
+      "Clear": [
+        "Očisti"
+      ],
+      "Add screenshot(s)": [
+        "Dodaj snimku(e) zaslona"
+      ],
+      "Hide info": [
+        "Sakrij informacije"
+      ],
+      "Show info": [
+        "Prikaži informacije"
+      ],
+      "Add folder": [
+        "Dodaj mapu"
+      ],
+      "Sort": [
+        "Sortiranje"
+      ],
+      "Add label": [
+        "Dodaj oznaku"
+      ],
+      "Signing out": [
+        "Odjavljivanje"
+      ],
+      "refresh the page": [
+        "osvježi stranicu"
       ],
       "Remove bonuses": [
         "Ukloni bonuse"
@@ -504,9 +561,6 @@
       "Ok": [
         "U redu"
       ],
-      "Yes": [
-        "Da"
-      ],
       "Change mailbox password": [
         "Promijeni lozinku sandučića e-pošte"
       ],
@@ -530,6 +584,12 @@
       ],
       "Disable recovery phrase": [
         ""
+      ],
+      "Save address": [
+        "Spremi adresu"
+      ],
+      "activate": [
+        "aktiviraj"
       ],
       "Revoke all other sessions": [
         "Opozovi sve ostale sesije"
@@ -582,50 +642,23 @@
       "Previous": [
         "Prethodno"
       ],
-      "Preview": [
-        "Pregled"
+      "Enable multi-user support": [
+        "Omogući podršku za više korisnika"
       ],
-      "Create label": [
-        "Stvori oznaku"
+      "Reset keys": [
+        "Ponovno postavljanje ključeva"
       ],
-      "Create folder": [
-        "Stvori mapu"
+      "Change organization keys": [
+        "Promijeni organizacijske ključeve"
       ],
-      "Remove this label": [
-        "Ukloni ovu oznaku"
+      "Reset organization keys": [
+        "Poništi organizacijske ključeve"
       ],
-      "Add condition": [
-        "Dodaj uvjet"
+      "Restore administrator privileges": [
+        "Vraćanje administratorskih ovlasti"
       ],
-      "label emails as": [
-        "označi e-poštu kao"
-      ],
-      "move emails to": [
-        "premjesti e-poštu u"
-      ],
-      "mark emails as": [
-        "označi e-poštu kao"
-      ],
-      "send auto-reply email": [
-        "pošalji automatski odgovor"
-      ],
-      "Edit sieve": [
-        "Uredi Sieve filtar"
-      ],
-      "Add filter": [
-        "Dodaj filtar"
-      ],
-      "Add sieve filter": [
-        "Dodaj Sieve filtar"
-      ],
-      "Add": [
-        "Dodaj"
-      ],
-      "Move to Block List": [
-        "Premjesti u popis nedopuštenih"
-      ],
-      "Move to Allow List": [
-        "Premjesti u popis dopuštenih"
+      "Activate organization key": [
+        "Aktivirajte ključ organizacije"
       ],
       "View invoice": [
         "Prikaži fakturu"
@@ -647,39 +680,6 @@
       ],
       "Edit phone number": [
         "Uredi broj telefona"
-      ],
-      "Add folder": [
-        "Dodaj mapu"
-      ],
-      "Sort": [
-        "Sortiranje"
-      ],
-      "Add label": [
-        "Dodaj oznaku"
-      ],
-      "Enable multi-user support": [
-        "Omogući podršku za više korisnika"
-      ],
-      "Reset keys": [
-        "Ponovno postavljanje ključeva"
-      ],
-      "Change organization keys": [
-        "Promijeni organizacijske ključeve"
-      ],
-      "Reset organization keys": [
-        "Poništi organizacijske ključeve"
-      ],
-      "Restore administrator privileges": [
-        "Vraćanje administratorskih ovlasti"
-      ],
-      "Activate organization key": [
-        "Aktivirajte ključ organizacije"
-      ],
-      "Save address": [
-        "Spremi adresu"
-      ],
-      "activate": [
-        "aktiviraj"
       ],
       "Upgrade now": [
         "Nadogradi sada"
@@ -803,17 +803,23 @@
       "Name": [
         "Naziv"
       ],
-      "yourdomain.com": [
-        "vasadomena.hr"
-      ],
       "Add a calendar name": [
         "Dodaj naziv kalendara"
       ],
       "Add a calendar description": [
         "Dodaj opis kalendara"
       ],
+      "Password": [
+        "Lozinka"
+      ],
+      "yourdomain.com": [
+        "vasadomena.hr"
+      ],
       "e.g. Julia Smith": [
         "npr. Ana Horvat"
+      ],
+      "Type text or keyword": [
+        "Unesite tekst ili ključnu riječ"
       ],
       "OS name": [
         "Naziv OS-a"
@@ -835,9 +841,6 @@
       ],
       "Browser version": [
         "Verzija preglednika"
-      ],
-      "Password": [
-        "Lozinka"
       ],
       "Feedback": [
         "Povratne informacije"
@@ -863,8 +866,11 @@
       "Confirm": [
         "Potvrdi"
       ],
-      "Type text or keyword": [
-        "Unesite tekst ili ključnu riječ"
+      "Choose display name": [
+        "Odaberite zaslonski naziv"
+      ],
+      "Choose address": [
+        "Odaberite adresu"
       ],
       "Choose a name": [
         "Odaberite naziv"
@@ -880,12 +886,6 @@
       ],
       "Search users": [
         "Pretraživanje korisnika"
-      ],
-      "Choose address": [
-        "Odaberite adresu"
-      ],
-      "Choose display name": [
-        "Odaberite zaslonski naziv"
       ]
     },
     "Error": {
@@ -952,14 +952,8 @@
       "Invalid name": [
         "Nevažeći naziv"
       ],
-      "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
-        "Prestali smo s potpisivanjem DKIM-a zbog problema s vašim DNS postavkama. Slijedite dolje navedene upute za nastavak potpisivanja."
-      ],
-      "Verification did not succeed, please try again in an hour.": [
-        "Provjera nije uspjela, pokušajte ponovo za sat vremena."
-      ],
-      "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.": [
-        "Pogrešan kôd za provjeru. Provjerite jeste li ispravno kopirali kôd za provjeru i pokušajte ponovo. Može potrajati do 24 sata kako bi promjene stupile na snagu."
+      "Automatic replies is a paid feature. Please upgrade to a paid account to use this feature.": [
+        "Automatski odgovori su plaćena značajka. Nadogradite na plaćeni račun da biste koristili ovu značajku."
       ],
       "Name required": [
         "Naziv je obavezan"
@@ -969,12 +963,6 @@
       ],
       "Primary address key is not decrypted.": [
         "Primarni ključ adrese e-pošte nije dešifriran."
-      ],
-      "Automatic replies is a paid feature. Please upgrade to a paid account to use this feature.": [
-        "Automatski odgovori su plaćena značajka. Nadogradite na plaćeni račun da biste koristili ovu značajku."
-      ],
-      "Primary address key is not decrypted": [
-        "Primarni ključ adrese e-pošte nije dešifriran"
       ],
       "Incorrect password": [
         "Nevažeća lozinka"
@@ -988,8 +976,47 @@
       "Uploaded files are not valid private keys. Please verify and try again.": [
         ""
       ],
+      "Primary address key is not decrypted": [
+        "Primarni ključ adrese e-pošte nije dešifriran"
+      ],
       "Invalid private key file": [
         "Nevažeća datoteka privatnog ključa"
+      ],
+      "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
+        "Prestali smo s potpisivanjem DKIM-a zbog problema s vašim DNS postavkama. Slijedite dolje navedene upute za nastavak potpisivanja."
+      ],
+      "Verification did not succeed, please try again in an hour.": [
+        "Provjera nije uspjela, pokušajte ponovo za sat vremena."
+      ],
+      "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.": [
+        "Pogrešan kôd za provjeru. Provjerite jeste li ispravno kopirali kôd za provjeru i pokušajte ponovo. Može potrajati do 24 sata kako bi promjene stupile na snagu."
+      ],
+      "Empty condition": [
+        "Prazan uvjet"
+      ],
+      "Condition incomplete": [
+        "Uvjet je nepotpun"
+      ],
+      "Filter with this name already exists": [
+        "Filtar s ovim nazivom već postoji"
+      ],
+      "Error in one of the conditions": [
+        "Pogreška u jednom od uvjeta"
+      ],
+      "Require at least one condition": [
+        "Zahtijeva najmanje jedan uvjet"
+      ],
+      "Require at least one action": [
+        "Zahtijeva najmanje jednu radnju"
+      ],
+      "Filter with this name already exist": [
+        "Filtar s ovim nazivom već postoji"
+      ],
+      "Invalid Sieve code": [
+        "Nevažeći Sieve kôd"
+      ],
+      "Invalid domain": [
+        "Nevažeća domena"
       ],
       "Checkout expired, please try again.": [
         "Naplata je istekla, pokušajte ponovo."
@@ -1063,6 +1090,18 @@
       "Wrong recovery phrase. Try again or use another recovery method.": [
         ""
       ],
+      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Addresses > Short domain (pm.me)": [
+        "${ Local } je vaše korisničko ime. Da biste stvorili ${ Local }@${ Domain }, molimo idite u Postavke > Adrese > Kratka domena (pm.me)"
+      ],
+      "The organization key must be activated first.": [
+        "Prvo se mora aktivirati organizacijski ključ."
+      ],
+      "Error": [
+        "Pogreška"
+      ],
+      "Organization key is not decrypted.": [
+        "Organizacijski ključ nije dešifriran."
+      ],
       "Payments are currently not available, please try again later": [
         "Plaćanje trenutno nije dostupno, pokušajte ponovo kasnije"
       ],
@@ -1075,45 +1114,6 @@
       "File has no contents to preview": [
         "Datoteka nema sadržaja za pregled"
       ],
-      "Empty condition": [
-        "Prazan uvjet"
-      ],
-      "Condition incomplete": [
-        "Uvjet je nepotpun"
-      ],
-      "Filter with this name already exists": [
-        "Filtar s ovim nazivom već postoji"
-      ],
-      "Error in one of the conditions": [
-        "Pogreška u jednom od uvjeta"
-      ],
-      "Require at least one condition": [
-        "Zahtijeva najmanje jedan uvjet"
-      ],
-      "Require at least one action": [
-        "Zahtijeva najmanje jednu radnju"
-      ],
-      "Filter with this name already exist": [
-        "Filtar s ovim nazivom već postoji"
-      ],
-      "Invalid Sieve code": [
-        "Nevažeći Sieve kôd"
-      ],
-      "Invalid domain": [
-        "Nevažeća domena"
-      ],
-      "Can't validate email, try again later": [
-        "Nije moguće potvrditi e-poštu, pokušajte ponovo kasnije"
-      ],
-      "Can't validate phone, try again later": [
-        "Nije moguće potvrditi broj telefona, pokušajte ponovo kasnije"
-      ],
-      "Enter 6 digits": [
-        "Unesite 6 znamenki"
-      ],
-      "Invalid verification code": [
-        "Nevažeći kôd za provjeru"
-      ],
       "Passwords do not match": [
         "Lozinke se ne poklapaju"
       ],
@@ -1123,17 +1123,11 @@
       "You must privatize all users before generating new organization keys": [
         ""
       ],
-      "Organization key is not decrypted.": [
-        "Organizacijski ključ nije dešifriran."
-      ],
       "You have lost access to your organization keys. Without restoration you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Izgubili ste pristup ključevima organizacije. Bez obnove nećete moći stvarati nove korisnike, dodavati adrese postojećim korisnicima niti pristupati privatnim korisničkim računima."
       ],
       "You must activate your organization keys. Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Morate aktivirati ključeve vaše organizacije. Bez aktivacije nećete moći stvarati nove korisnike, dodavati adrese postojećim korisnicima niti pristupati neprivatnim korisničkim računima."
-      ],
-      "The organization key must be activated first.": [
-        "Prvo se mora aktivirati organizacijski ključ."
       ],
       "Permission denied, administrator privileges have been restricted.": [
         "Pristup odbijen, administratorske ovlasti su ograničene."
@@ -1165,11 +1159,17 @@
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "Sav prostor za pohranu je dodijeljen. Molimo smanjite prostor za pohranu dodijeljen ostalim korisnicima."
       ],
-      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Addresses > Short domain (pm.me)": [
-        "${ Local } je vaše korisničko ime. Da biste stvorili ${ Local }@${ Domain }, molimo idite u Postavke > Adrese > Kratka domena (pm.me)"
+      "Can't validate email, try again later": [
+        "Nije moguće potvrditi e-poštu, pokušajte ponovo kasnije"
       ],
-      "Error": [
-        "Pogreška"
+      "Can't validate phone, try again later": [
+        "Nije moguće potvrditi broj telefona, pokušajte ponovo kasnije"
+      ],
+      "Enter 6 digits": [
+        "Unesite 6 znamenki"
+      ],
+      "Invalid verification code": [
+        "Nevažeći kôd za provjeru"
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Nešto je pošlo po zlu. Molimo ${ refresh } kako biste nastavili. Ako i dalje vidite ovu poruku o pogrešci, kontaktirajte naš ${ supportTeam }."
@@ -1195,6 +1195,15 @@
       "Unknown error": [
         "Nepoznata pogreška"
       ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Ovo polje zahtjeva najmanje ${ minimumLength } znakova."
+      ],
+      "Email is not valid": [
+        "Adresa e-pošte nije važeća"
+      ],
+      "Not a valid number": [
+        "Broj telefona nije važeći"
+      ],
       "Missing signature": [
         "Nedostaje potpis"
       ],
@@ -1204,14 +1213,8 @@
       "Signature not verified": [
         "Potpis nije ovjeren"
       ],
-      "This field requires a minimum of ${ minimumLength } characters.": [
-        "Ovo polje zahtjeva najmanje ${ minimumLength } znakova."
-      ],
-      "Email is not valid": [
-        "Adresa e-pošte nije važeća"
-      ],
-      "Not a valid number": [
-        "Broj telefona nije važeći"
+      "Request timed out.": [
+        "Zahtjev je istekao."
       ],
       "Signature verification failed": [
         "Potvrda potpisa je neuspješna"
@@ -1227,9 +1230,6 @@
       ],
       "Calendar primary private key is not decrypted": [
         "Primarni, privatni ključ kalendara nije dešifriran"
-      ],
-      "Request timed out.": [
-        "Zahtjev je istekao."
       ],
       "The session has expired. Please sign in again.": [
         "Sesija je istekla. Prijavite se ponovo."
@@ -1256,18 +1256,6 @@
       ],
       "Do not ask again": [
         "Ne pitaj ponovno"
-      ],
-      "Date format": [
-        "Format datuma"
-      ],
-      "Default language": [
-        "Zadani jezik"
-      ],
-      "Time format": [
-        "Format vremena"
-      ],
-      "Week start": [
-        "Početak tjedna"
       ],
       "From: ${ fromEmailAddress }": [
         "Od: ${ fromEmailAddress }"
@@ -1323,6 +1311,18 @@
       "Manage folders": [
         "Upravljanje mapama"
       ],
+      "Date format": [
+        "Format datuma"
+      ],
+      "Default language": [
+        "Zadani jezik"
+      ],
+      "Time format": [
+        "Format vremena"
+      ],
+      "Week start": [
+        "Početak tjedna"
+      ],
       "Automatically save contacts": [
         "Automatsko spremanje kontakata"
       ],
@@ -1356,20 +1356,56 @@
       "OpenVPN / IKEv2 password": [
         "OpenVPN / IKEv2 lozinka"
       ],
-      "Domain name": [
-        "Naziv domene"
+      "Timezone": [
+        "Vremenska zona"
       ],
-      "Please add the following TXT record. Note, DNS records can take several hours to update.": [
-        "Dodajte sljedeći TXT zapis. Napomena, ažuriranje DNS zapisa može trajati nekoliko sati."
+      "Days of the week": [
+        "Dani u tjednu"
       ],
-      "Please add all 3 of the following CNAME records. Note, DNS records can take several hours to update.": [
-        "Dodajte sva tri CNAME zapisa. Napomena, ažuriranje DNS zapisa može trajati nekoliko sati."
+      "Duration": [
+        "Trajanje"
       ],
-      "Please add the following MX record. Note, DNS records can take several hours to update.": [
-        "Dodajte sljedeći MX zapis. Napomena, ažuriranje DNS zapisa može trajati nekoliko sati."
+      "Start day of month": [
+        "Prvi dan u mjesecu"
       ],
-      "Here is a basic DMARC record that does nothing except email you reports.": [
-        "Ovo je osnovni DMARC zapis koji ne radi ništa osim slanja izvješća vama putem e-pošte."
+      "Start time": [
+        "Vrijeme početka"
+      ],
+      "End day of month": [
+        "Zadnji dan u mjesecu"
+      ],
+      "End time": [
+        "Vrijeme završetka"
+      ],
+      "Start weekday": [
+        "Početak vikenda"
+      ],
+      "End weekday": [
+        "Kraj vikenda"
+      ],
+      "Start date": [
+        "Početni datum"
+      ],
+      "End date": [
+        "Krajnji datum"
+      ],
+      "Message": [
+        "Poruka"
+      ],
+      "Auto reply": [
+        "Automatski odgovori"
+      ],
+      "Prompt to trust keys": [
+        "Prozor za potvrdu valjanosti ključa"
+      ],
+      "Sign external messages": [
+        "Potpisivanje izlaznih poruka"
+      ],
+      "Attach public key": [
+        "Pridodajte javni ključ"
+      ],
+      "Default PGP settings": [
+        "Zadane PGP postavke"
       ],
       "Name": [
         "Naziv"
@@ -1419,75 +1455,6 @@
       "Your calendar URL label": [
         "Oznaka URL-a vašeg kalendara"
       ],
-      "Display name": [
-        "Zaslonski naziv"
-      ],
-      "Timezone": [
-        "Vremenska zona"
-      ],
-      "Days of the week": [
-        "Dani u tjednu"
-      ],
-      "Duration": [
-        "Trajanje"
-      ],
-      "Start day of month": [
-        "Prvi dan u mjesecu"
-      ],
-      "Start time": [
-        "Vrijeme početka"
-      ],
-      "End day of month": [
-        "Zadnji dan u mjesecu"
-      ],
-      "End time": [
-        "Vrijeme završetka"
-      ],
-      "Start weekday": [
-        "Početak vikenda"
-      ],
-      "End weekday": [
-        "Kraj vikenda"
-      ],
-      "Start date": [
-        "Početni datum"
-      ],
-      "End date": [
-        "Krajnji datum"
-      ],
-      "Message": [
-        "Poruka"
-      ],
-      "Auto reply": [
-        "Automatski odgovori"
-      ],
-      "Operating system": [
-        "Operativni sustav"
-      ],
-      "Operating system version": [
-        "Verzija operativnog sustava"
-      ],
-      "Proton username": [
-        "Proton korisničko ime"
-      ],
-      "Email address": [
-        "Adresa e-pošte"
-      ],
-      "Category": [
-        "Kategorija"
-      ],
-      "What happened?": [
-        "Što se dogodilo?"
-      ],
-      "System information": [
-        "Informacije o sustavu"
-      ],
-      "Browser": [
-        "Preglednik"
-      ],
-      "Browser version": [
-        "Verzija preglednika"
-      ],
       "Delete": [
         ""
       ],
@@ -1515,226 +1482,23 @@
       "Please select files to upload": [
         "Odaberi datoteke za učitavanje"
       ],
-      "${ n } VPN connection available": [
-        "${ n } VPN veza dostupna",
-        "${ n } VPN veze dostupne",
-        "${ n } VPN veza dostupno"
+      "Domain name": [
+        "Naziv domene"
       ],
-      "${ UsedMembers } of ${ MaxMembers } user": [
-        "",
-        "",
-        ""
+      "Please add the following TXT record. Note, DNS records can take several hours to update.": [
+        "Dodajte sljedeći TXT zapis. Napomena, ažuriranje DNS zapisa može trajati nekoliko sati."
       ],
-      "${ UsedAddresses } of ${ MaxAddresses } email address": [
-        "",
-        "",
-        ""
+      "Please add all 3 of the following CNAME records. Note, DNS records can take several hours to update.": [
+        "Dodajte sva tri CNAME zapisa. Napomena, ažuriranje DNS zapisa može trajati nekoliko sati."
       ],
-      "${ UsedDomains } of ${ MaxDomains } custom domain": [
-        "",
-        "",
-        ""
+      "Please add the following MX record. Note, DNS records can take several hours to update.": [
+        "Dodajte sljedeći MX zapis. Napomena, ažuriranje DNS zapisa može trajati nekoliko sati."
       ],
-      "Using ${ humanUsedSpace } of ${ humanMaxSpace }": [
-        ""
+      "Here is a basic DMARC record that does nothing except email you reports.": [
+        "Ovo je osnovni DMARC zapis koji ne radi ništa osim slanja izvješća vama putem e-pošte."
       ],
-      "What is the main reason you are cancelling?": [
-        "Koji je glavni razlog zbog kojeg otkazujete?"
-      ],
-      "How likely are you to recommend ${ BRAND_NAME } to others?": [
-        "Kolika je vjerojatnost da će te preporučiti ${ BRAND_NAME } drugima?"
-      ],
-      "0 - Not at all likely": [
-        "0 - Nimalo vjerojatno"
-      ],
-      "10 - Extremely likely": [
-        "10 - Vrlo vjerojatno"
-      ],
-      "How do you think we could improve our products or service in the future?": [
-        "Što mislite kako bismo mogli poboljšati svoje proizvode ili usluge u budućnosti?"
-      ],
-      "Total (${ countdown })": [
-        "Ukupno (${ countdown })"
-      ],
-      "Total": [
-        "Ukupno"
-      ],
-      "Proration": [
-        "Proration"
-      ],
-      "extra storage": [
-        "dodatni prostor za pohranu"
-      ],
-      "bonus storage": [
-        "bonus prostor za pohranu"
-      ],
-      "Subtotal": [
-        "Suma stavki"
-      ],
-      "Discount": [
-        "Popust"
-      ],
-      "Other amount": [
-        "Ostali iznos"
-      ],
-      "Amount": [
-        "Iznos"
-      ],
-      "Gift code": [
-        "Darovni kôd"
-      ],
-      "Name on card": [
-        "Ime na kartici"
-      ],
-      "Card number": [
-        "Broj kreditne kartice"
-      ],
-      "Expiry date": [
-        "Datum isteka"
-      ],
-      "CVV code": [
-        "CVV kôd"
-      ],
-      "Country": [
-        "Država"
-      ],
-      "Select your country": [
-        "Odaberite vašu državu"
-      ],
-      "ZIP": [
-        "Poštanski broj"
-      ],
-      "Postal code": [
-        "Poštanski broj"
-      ],
-      "BTC amount:": [
-        "BTC iznos:"
-      ],
-      "BTC address:": [
-        "BTC adresa:"
-      ],
-      "Select a method": [
-        "Odaberite način plaćanja"
-      ],
-      "Your password (admin)": [
-        "Vaša lozinka (administrator)"
-      ],
-      "User's new password": [
-        "Nova lozinka za korisnika"
-      ],
-      "Confirm new password": [
-        "Potvrdi novu lozinku"
-      ],
-      "Old password": [
-        "Stara lozinka"
-      ],
-      "New password": [
-        "Nova lozinka"
-      ],
-      "Confirm password": [
-        "Potvrdi lozinku"
-      ],
-      "Old login password": [
-        "Stara lozinka za prijavu"
-      ],
-      "New login password": [
-        "Nova lozinka za prijavu"
-      ],
-      "Confirm login password": [
-        "Potvrdi lozinku za prijavu"
-      ],
-      "New mailbox password": [
-        "Nova lozinka sandučića e-pošte"
-      ],
-      "Confirm mailbox password": [
-        "Potvrdi lozinku za sandučić e-pošte"
-      ],
-      "Two-factor authentication code": [
-        "Kôd dvofaktorske autentikacije"
-      ],
-      "Key": [
-        "Ključ"
-      ],
-      "Interval": [
-        "Interval"
-      ],
-      "Digits": [
-        "Znamenke"
-      ],
-      "Two-factor authentication": [
-        "Dvofaktorska autentikacija"
-      ],
-      "Two-password mode": [
-        "Način rada s dvije lozinke"
-      ],
-      "Mailbox password": [
-        "Lozinka sandučića e-pošte"
-      ],
-      "What is the main reason you are deleting your account?": [
-        "Koji je glavni razlog brisanja računa?"
-      ],
-      "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
-        "Žao nam je što odlazite. Molimo vas da objasnite zašto odlazite kako bi nam pomogli da se poboljšamo."
-      ],
-      "Login password": [
-        "Lozinka za prijavu"
-      ],
-      "Yes, I want to permanently delete this account and all its data.": [
-        "Da, želim trajno izbrisati ovaj račun i sve njegove podatke."
-      ],
-      "Allow recovery by email": [
-        "Omogući oporavak putem adrese e-pošte"
-      ],
-      "Daily email notifications": [
-        "Dnevne obavijesti e-pošte"
-      ],
-      "Allow recovery by phone": [
-        "Omogući oporavak putem broja telefona"
-      ],
-      "Allow recovery by recovery phrase": [
-        ""
-      ],
-      "Recovery phrase": [
-        ""
-      ],
-      "Your recovery phrase": [
-        ""
-      ],
-      "Recovery phrase contains 12 words": [
-        ""
-      ],
-      "Cash": [
-        "Gotovina"
-      ],
-      "Card holder": [
-        "Vlasnik kartice"
-      ],
-      "Expires": [
-        "Ističe"
-      ],
-      "Payer": [
-        "Platitelj"
-      ],
-      "Prompt to trust keys": [
-        "Prozor za potvrdu valjanosti ključa"
-      ],
-      "Sign external messages": [
-        "Potpisivanje izlaznih poruka"
-      ],
-      "Attach public key": [
-        "Pridodajte javni ključ"
-      ],
-      "Default PGP settings": [
-        "Zadane PGP postavke"
-      ],
-      "Credits used": [
-        "Iskorišteni kredit"
-      ],
-      "Amount due": [
-        "Dospjeli iznos"
-      ],
-      "Customize invoices": [
-        "Prilagodite fakture"
+      "Display name": [
+        "Zaslonski naziv"
       ],
       "Filter Name": [
         "Naziv filtra"
@@ -1841,14 +1605,32 @@
       "Want to add": [
         "Želite dodati"
       ],
-      "Phone number": [
-        "Broj telefona"
+      "Operating system": [
+        "Operativni sustav"
       ],
-      "Verification code": [
-        "Kôd za provjeru"
+      "Operating system version": [
+        "Verzija operativnog sustava"
       ],
-      "Enter the 6-digit code": [
-        "Unesite 6-znamenkasti kôd"
+      "Proton username": [
+        "Proton korisničko ime"
+      ],
+      "Email address": [
+        "Adresa e-pošte"
+      ],
+      "Category": [
+        "Kategorija"
+      ],
+      "What happened?": [
+        "Što se dogodilo?"
+      ],
+      "System information": [
+        "Informacije o sustavu"
+      ],
+      "Browser": [
+        "Preglednik"
+      ],
+      "Browser version": [
+        "Verzija preglednika"
       ],
       "Folder location": [
         "Lokacija mape"
@@ -1861,6 +1643,245 @@
       ],
       "Inherit color from parent folder": [
         "Naslijedi boju iz roditeljske mape"
+      ],
+      "${ n } VPN connection available": [
+        "${ n } VPN veza dostupna",
+        "${ n } VPN veze dostupne",
+        "${ n } VPN veza dostupno"
+      ],
+      "${ UsedMembers } of ${ MaxMembers } user": [
+        "",
+        "",
+        ""
+      ],
+      "${ UsedAddresses } of ${ MaxAddresses } email address": [
+        "",
+        "",
+        ""
+      ],
+      "${ UsedDomains } of ${ MaxDomains } custom domain": [
+        "",
+        "",
+        ""
+      ],
+      "Using ${ humanUsedSpace } of ${ humanMaxSpace }": [
+        ""
+      ],
+      "What is the main reason you are cancelling?": [
+        "Koji je glavni razlog zbog kojeg otkazujete?"
+      ],
+      "How likely are you to recommend ${ BRAND_NAME } to others?": [
+        "Kolika je vjerojatnost da će te preporučiti ${ BRAND_NAME } drugima?"
+      ],
+      "0 - Not at all likely": [
+        "0 - Nimalo vjerojatno"
+      ],
+      "10 - Extremely likely": [
+        "10 - Vrlo vjerojatno"
+      ],
+      "How do you think we could improve our products or service in the future?": [
+        "Što mislite kako bismo mogli poboljšati svoje proizvode ili usluge u budućnosti?"
+      ],
+      "Total (${ countdown })": [
+        "Ukupno (${ countdown })"
+      ],
+      "Total": [
+        "Ukupno"
+      ],
+      "Proration": [
+        "Proration"
+      ],
+      "extra storage": [
+        "dodatni prostor za pohranu"
+      ],
+      "bonus storage": [
+        "bonus prostor za pohranu"
+      ],
+      "Subtotal": [
+        "Suma stavki"
+      ],
+      "Discount": [
+        "Popust"
+      ],
+      "Other amount": [
+        "Ostali iznos"
+      ],
+      "Amount": [
+        "Iznos"
+      ],
+      "Gift code": [
+        "Darovni kôd"
+      ],
+      "Name on card": [
+        "Ime na kartici"
+      ],
+      "Card number": [
+        "Broj kreditne kartice"
+      ],
+      "Expiry date": [
+        "Datum isteka"
+      ],
+      "CVV code": [
+        "CVV kôd"
+      ],
+      "Country": [
+        "Država"
+      ],
+      "Select your country": [
+        "Odaberite vašu državu"
+      ],
+      "ZIP": [
+        "Poštanski broj"
+      ],
+      "Postal code": [
+        "Poštanski broj"
+      ],
+      "BTC amount:": [
+        "BTC iznos:"
+      ],
+      "BTC address:": [
+        "BTC adresa:"
+      ],
+      "Select a method": [
+        "Odaberite način plaćanja"
+      ],
+      "Auto-load remote content": [
+        "Automatski prikaži udaljeni sadržaj"
+      ],
+      "Auto-load embedded images": [
+        "Automatsko prikazivanje ugrađenih slika"
+      ],
+      "Keep messages in Sent/Drafts": [
+        "Zadrži poruke u Poslano/Skice"
+      ],
+      "Link confirmation": [
+        "Potvrda poveznice"
+      ],
+      "Undo send": [
+        "Poništi slanje"
+      ],
+      "Your password (admin)": [
+        "Vaša lozinka (administrator)"
+      ],
+      "User's new password": [
+        "Nova lozinka za korisnika"
+      ],
+      "Confirm new password": [
+        "Potvrdi novu lozinku"
+      ],
+      "Old password": [
+        "Stara lozinka"
+      ],
+      "New password": [
+        "Nova lozinka"
+      ],
+      "Confirm password": [
+        "Potvrdi lozinku"
+      ],
+      "Old login password": [
+        "Stara lozinka za prijavu"
+      ],
+      "New login password": [
+        "Nova lozinka za prijavu"
+      ],
+      "Confirm login password": [
+        "Potvrdi lozinku za prijavu"
+      ],
+      "New mailbox password": [
+        "Nova lozinka sandučića e-pošte"
+      ],
+      "Confirm mailbox password": [
+        "Potvrdi lozinku za sandučić e-pošte"
+      ],
+      "Two-factor authentication code": [
+        "Kôd dvofaktorske autentikacije"
+      ],
+      "Key": [
+        "Ključ"
+      ],
+      "Interval": [
+        "Interval"
+      ],
+      "Digits": [
+        "Znamenke"
+      ],
+      "Two-factor authentication": [
+        "Dvofaktorska autentikacija"
+      ],
+      "Two-password mode": [
+        "Način rada s dvije lozinke"
+      ],
+      "Mailbox password": [
+        "Lozinka sandučića e-pošte"
+      ],
+      "What is the main reason you are deleting your account?": [
+        "Koji je glavni razlog brisanja računa?"
+      ],
+      "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
+        "Žao nam je što odlazite. Molimo vas da objasnite zašto odlazite kako bi nam pomogli da se poboljšamo."
+      ],
+      "Login password": [
+        "Lozinka za prijavu"
+      ],
+      "Yes, I want to permanently delete this account and all its data.": [
+        "Da, želim trajno izbrisati ovaj račun i sve njegove podatke."
+      ],
+      "Allow recovery by email": [
+        "Omogući oporavak putem adrese e-pošte"
+      ],
+      "Daily email notifications": [
+        "Dnevne obavijesti e-pošte"
+      ],
+      "Allow recovery by phone": [
+        "Omogući oporavak putem broja telefona"
+      ],
+      "Allow recovery by recovery phrase": [
+        ""
+      ],
+      "Keyboard shortcuts": [
+        "Tipkovni prečaci"
+      ],
+      "Recovery phrase": [
+        ""
+      ],
+      "Your recovery phrase": [
+        ""
+      ],
+      "Recovery phrase contains 12 words": [
+        ""
+      ],
+      "Signature": [
+        "Potpis"
+      ],
+      "ProtonMail footer": [
+        "ProtonMail podnožje"
+      ],
+      "User": [
+        "Korisnik"
+      ],
+      "Address": [
+        "Adresa"
+      ],
+      "Cash": [
+        "Gotovina"
+      ],
+      "Card holder": [
+        "Vlasnik kartice"
+      ],
+      "Expires": [
+        "Ističe"
+      ],
+      "Payer": [
+        "Platitelj"
+      ],
+      "Credits used": [
+        "Iskorišteni kredit"
+      ],
+      "Amount due": [
+        "Dospjeli iznos"
+      ],
+      "Customize invoices": [
+        "Prilagodite fakture"
       ],
       "Organization name": [
         "Naziv organizacije"
@@ -1892,44 +1913,23 @@
       "Addresses": [
         "Adrese"
       ],
-      "Address": [
-        "Adresa"
-      ],
       "Key strength": [
         "Jačina ključa"
-      ],
-      "User": [
-        "Korisnik"
-      ],
-      "Signature": [
-        "Potpis"
-      ],
-      "ProtonMail footer": [
-        "ProtonMail podnožje"
-      ],
-      "Auto-load remote content": [
-        "Automatski prikaži udaljeni sadržaj"
-      ],
-      "Auto-load embedded images": [
-        "Automatsko prikazivanje ugrađenih slika"
-      ],
-      "Keep messages in Sent/Drafts": [
-        "Zadrži poruke u Poslano/Skice"
-      ],
-      "Link confirmation": [
-        "Potvrda poveznice"
-      ],
-      "Undo send": [
-        "Poništi slanje"
-      ],
-      "Keyboard shortcuts": [
-        "Tipkovni prečaci"
       ],
       "Cancel": [
         "Poništi"
       ],
       "Submit": [
         "Pošalji"
+      ],
+      "Phone number": [
+        "Broj telefona"
+      ],
+      "Verification code": [
+        "Kôd za provjeru"
+      ],
+      "Enter the 6-digit code": [
+        "Unesite 6-znamenkasti kôd"
       ],
       "Recovery email": [
         "Adresa e-pošte za oporavak"
@@ -1966,6 +1966,9 @@
       "Open actions dropdown": [
         "Otvorite padajući izbornik radnji"
       ],
+      "Keyboard Shortcuts": [
+        "Tipkovni prečaci"
+      ],
       "Previous": [
         "Prethodno"
       ],
@@ -1977,12 +1980,6 @@
       ],
       "What's new": [
         "Što je novo"
-      ],
-      "Keyboard Shortcuts": [
-        "Tipkovni prečaci"
-      ],
-      "Enable keyboard shortcuts": [
-        "Omogući tipkovne prečace"
       ],
       "Start import process": [
         "Započni uvoz"
@@ -2007,6 +2004,9 @@
       ],
       "Start a new import": [
         "Započni novi uvoz"
+      ],
+      "Enable keyboard shortcuts": [
+        "Omogući tipkovne prečace"
       ],
       "Exporting contacts": [
         "Izvoz kontakata"
@@ -2041,23 +2041,8 @@
       "Get ProtonVPN Plus to access all servers": [
         "Nabavite ProtonVPN Plus za pristup svim poslužiteljima"
       ],
-      "Edit domain": [
-        "Uredi domenu"
-      ],
-      "Add domain": [
-        "Dodaj domenu"
-      ],
-      "Catch-All address": [
-        "Dohvati-sve adrese e-pošte"
-      ],
-      "Delete ${ domain.DomainName }": [
-        "Izbriši ${ domain.DomainName }"
-      ],
-      "Open help menu": [
-        "Otvori izbornik pomoći"
-      ],
-      "Back": [
-        "Natrag"
+      "Automatically sign outgoing messages?": [
+        "Automatsko potpisivanje odlaznih poruka?"
       ],
       "Error": [
         "Pogreška"
@@ -2095,9 +2080,6 @@
       "Your calendar link": [
         "Poveznica vašeg kalendara"
       ],
-      "Report a problem": [
-        "Prijavi problem"
-      ],
       "Reactivate keys": [
         ""
       ],
@@ -2121,6 +2103,75 @@
       ],
       "Import key": [
         "Uvezi ključ"
+      ],
+      "Edit domain": [
+        "Uredi domenu"
+      ],
+      "Add domain": [
+        "Dodaj domenu"
+      ],
+      "Catch-All address": [
+        "Dohvati-sve adrese e-pošte"
+      ],
+      "Delete ${ domain.DomainName }": [
+        "Izbriši ${ domain.DomainName }"
+      ],
+      "Open help menu": [
+        "Otvori izbornik pomoći"
+      ],
+      "Back": [
+        "Natrag"
+      ],
+      "Edit filter": [
+        "Uredi filtar"
+      ],
+      "Add filter": [
+        "Dodaj filtar"
+      ],
+      "Are you sure you want to close?": [
+        "Jeste li sigurni da želite zatvoriti?"
+      ],
+      "Edit Sieve filter": [
+        "Uredi Sieve filtar"
+      ],
+      "Add Sieve filter": [
+        "Dodaj Sieve filtar"
+      ],
+      "Delete ${ filter.Name }": [
+        "Izbriši ${ filter.Name }"
+      ],
+      "Allow List": [
+        "Popis dopuštenih"
+      ],
+      "Block List": [
+        "Popis nedopuštenih"
+      ],
+      "Add to Block List": [
+        "Dodaj na popis nedopuštenih"
+      ],
+      "Add to Allow List": [
+        "Dodaj na popis dopuštenih"
+      ],
+      "Edit Block List": [
+        "Uredi popis nedopuštenih"
+      ],
+      "Edit Allow List": [
+        "Uredi popis dopuštenih"
+      ],
+      "Report a problem": [
+        "Prijavi problem"
+      ],
+      "Delete ${ Name } folder": [
+        "Izbriši ${ Name } mapu"
+      ],
+      "Delete ${ Name } label": [
+        "Izbriši ${ Name } oznaku"
+      ],
+      "Sort folders alphabetically": [
+        "Sortiraj mape abecedno"
+      ],
+      "Sort labels alphabetically": [
+        "Sortiraj oznake abecedno"
       ],
       "Confirm loss of Proton bonuses": [
         "Potvrdite gubitak Proton bonusa"
@@ -2263,6 +2314,21 @@
       "Confirm phone number": [
         "Potvrdite broj telefona"
       ],
+      "${ appName } Keyboard Shortcuts": [
+        "${ appName } tipkovni prečaci"
+      ],
+      "Add address": [
+        "Dodaj adresu"
+      ],
+      "Delete ${ address.Email }": [
+        "Izbriši ${ address.Email }"
+      ],
+      "Generate missing keys": [
+        "Generirajte ključeve koji nedostaju"
+      ],
+      "Bridge for ${ platform }": [
+        "Bridge za ${ platform }"
+      ],
       "App": [
         "Aplikacija"
       ],
@@ -2278,9 +2344,6 @@
       "Clear": [
         "Očisti"
       ],
-      "Automatically sign outgoing messages?": [
-        "Automatsko potpisivanje odlaznih poruka?"
-      ],
       "Pay invoice": [
         "Plati račun"
       ],
@@ -2295,63 +2358,6 @@
       ],
       "Status": [
         "Status"
-      ],
-      "Edit filter": [
-        "Uredi filtar"
-      ],
-      "Add filter": [
-        "Dodaj filtar"
-      ],
-      "Are you sure you want to close?": [
-        "Jeste li sigurni da želite zatvoriti?"
-      ],
-      "Edit Sieve filter": [
-        "Uredi Sieve filtar"
-      ],
-      "Add Sieve filter": [
-        "Dodaj Sieve filtar"
-      ],
-      "Delete ${ filter.Name }": [
-        "Izbriši ${ filter.Name }"
-      ],
-      "Allow List": [
-        "Popis dopuštenih"
-      ],
-      "Block List": [
-        "Popis nedopuštenih"
-      ],
-      "Add to Block List": [
-        "Dodaj na popis nedopuštenih"
-      ],
-      "Add to Allow List": [
-        "Dodaj na popis dopuštenih"
-      ],
-      "Edit Block List": [
-        "Uredi popis nedopuštenih"
-      ],
-      "Edit Allow List": [
-        "Uredi popis dopuštenih"
-      ],
-      "Invalid verification code": [
-        "Nevažeći kôd za provjeru"
-      ],
-      "Request new code": [
-        "Zatraži novi kȏd"
-      ],
-      "Human verification": [
-        "Ljudska provjera"
-      ],
-      "Delete ${ Name } folder": [
-        "Izbriši ${ Name } mapu"
-      ],
-      "Delete ${ Name } label": [
-        "Izbriši ${ Name } oznaku"
-      ],
-      "Sort folders alphabetically": [
-        "Sortiraj mape abecedno"
-      ],
-      "Sort labels alphabetically": [
-        "Sortiraj oznake abecedno"
       ],
       "Change organization name": [
         "Promijeni naziv organizacije"
@@ -2398,23 +2404,17 @@
       "Add user": [
         "Dodaj korisnika"
       ],
-      "Add address": [
-        "Dodaj adresu"
-      ],
-      "Delete ${ address.Email }": [
-        "Izbriši ${ address.Email }"
-      ],
-      "Generate missing keys": [
-        "Generirajte ključeve koji nedostaju"
-      ],
-      "${ appName } Keyboard Shortcuts": [
-        "${ appName } tipkovni prečaci"
-      ],
       "Sign in again to continue": [
         "Ponovno se prijavite da biste nastavili"
       ],
-      "Bridge for ${ platform }": [
-        "Bridge za ${ platform }"
+      "Invalid verification code": [
+        "Nevažeći kôd za provjeru"
+      ],
+      "Human verification": [
+        "Ljudska provjera"
+      ],
+      "Request new code": [
+        "Zatraži novi kȏd"
       ],
       "Account suspended": [
         "Račun je suspendiran"
@@ -2446,14 +2446,14 @@
       "Other": [
         "Ostalo"
       ],
+      "Auto reply": [
+        "Automatski odgovori"
+      ],
       "Domain names": [
         "Nazivi domena"
       ],
       "Catch-all address": [
         "Dohvati-sve adrese e-pošte"
-      ],
-      "Auto reply": [
-        "Automatski odgovori"
       ],
       "Encryption & keys": [
         "Šifriranje i ključevi"
@@ -2469,9 +2469,6 @@
       ],
       "Contact encryption keys": [
         "Šifrirani ključevi kontataka"
-      ],
-      "Import Assistant": [
-        "Import Assistant"
       ],
       "Filters": [
         "Filtri"
@@ -2515,6 +2512,9 @@
       "ProtonMail Bridge": [
         "ProtonMail Bridge"
       ],
+      "Import Assistant": [
+        "Import Assistant"
+      ],
       "Current & past imports": [
         "Trenutni i prošli uvozi"
       ],
@@ -2535,6 +2535,18 @@
       ],
       "OpenVPN configuration files": [
         "OpenVPN konfiguracijske datoteke"
+      ],
+      "My calendars": [
+        "Moji kalendari"
+      ],
+      "Subscribed calendars": [
+        "Pretplaćeni kalendari"
+      ],
+      "Share outside Proton": [
+        "Podijeli izvan Protona"
+      ],
+      "Time zone": [
+        "Vremenska zona"
       ],
       "Password & recovery": [
         "Lozinka i oporavak"
@@ -2602,29 +2614,17 @@
       "Password & keys": [
         "Lozinka i ključevi"
       ],
-      "My calendars": [
-        "Moji kalendari"
-      ],
-      "Subscribed calendars": [
-        "Pretplaćeni kalendari"
-      ],
-      "Share outside Proton": [
-        "Podijeli izvan Protona"
-      ],
-      "Time zone": [
-        "Vremenska zona"
-      ],
       "Sorry, you can't access this page": [
         "Nažalost, ne možete pristupiti ovoj stranici"
       ],
       "Upgrade": [
         "Nadogradnja"
       ],
-      "Proton Logo": [
-        "Proton Logo"
-      ],
       "Settings": [
         "Postavke"
+      ],
+      "Proton Logo": [
+        "Proton Logo"
       ],
       "Choose an account": [
         "Odaberite račun"
@@ -2793,12 +2793,6 @@
       "Loading": [
         "Učitavanje"
       ],
-      "Add a @pm.me email address to your account. This simple, shorter domain stands for \"ProtonMail me\" or \"Private Message me.\"": [
-        "Dodajte @pm.me adresu e-pošte na vaš račun. Ova jednostavna, kratka domena znači \"ProtonMail me\" ili \"Private Message me.\""
-      ],
-      "You can now receive messages to your @pm.me address. Upgrade to a paid plan to also send emails using your @pm.me address and create additional @pm.me addresses.": [
-        ""
-      ],
       "Import calendars": [
         "Uvoz kalendara"
       ],
@@ -2929,6 +2923,12 @@
       "Choose the look and feel of the application.": [
         "Odaberite izgled i dojam aplikacije."
       ],
+      "Add a @pm.me email address to your account. This simple, shorter domain stands for \"ProtonMail me\" or \"Private Message me.\"": [
+        "Dodajte @pm.me adresu e-pošte na vaš račun. Ova jednostavna, kratka domena znači \"ProtonMail me\" ili \"Private Message me.\""
+      ],
+      "You can now receive messages to your @pm.me address. Upgrade to a paid plan to also send emails using your @pm.me address and create additional @pm.me addresses.": [
+        ""
+      ],
       "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
         "Podržavamo uvoz CSV datoteka iz Outlooka, Outlook Express-a, Yahoo! Mail, Hotmail, Eudora i drugih aplikacija. Također podržavamo uvoz vCard 4.0. (UTF-8 kodiranje)."
       ],
@@ -3008,54 +3008,41 @@
       "Plan upgrade required": [
         "Potrebna je nadogradnja plana"
       ],
-      "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ProtonMail in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
-        "SPF se koristi za određivanje kome je dopušteno slanje e-pošte za domenu, stoga preporučujemo da dodate ProtonMail u svoj SPF zapis. Dodajte sljedeći TXT zapis u svoj DNS. To se obično može obaviti na upravljačkoj ploči registrara vaše domene."
+      "Auto-reply is active each month between the selected start and end time.": [
+        "Automatski odgovor je aktivan svaki mjesec između odabranog vremena početka i završetka."
       ],
-      "If you want to keep an existing SPF record, you can just add ${ spf } to it after the ${ spfValue }. Do not create multiple SPF records.": [
-        "Ako želite zadržati postojeći SPF zapis, možete jednostavno dodati ${ spf } u njega nakon ${ spfValue }. Ne stvarajte više SPF zapisa."
+      "Auto-reply is always active on the days of the week you select, between the selected hours.": [
+        "Automatski odgovor uvijek je aktivan u odabranim danima u tjednu i to između odabranih sati."
       ],
-      "ProtonMail supports DKIM signing for custom domains. To use DKIM authentication, please add the following CNAME record into your DNS settings for this domain. This can typically be done in the control panel of your domain name registrar.": [
-        "ProtonMail podržava DKIM potpisivanje za prilagođene domene. Da biste koristili DKIM autentikaciju, dodajte sljedeći CNAME zapis u postavke svog DNS-a za ovu domenu. To se obično može obaviti na upravljačkoj ploči registrara domene."
+      "Auto-reply is active each week between the selected start and end time.": [
+        "Automatski odgovor je aktivan svaki tjedan između odabranog vremena početka i završetka."
       ],
-      "IMPORTANT: Some registrars do not accept CNAME values with a period at the end (while others require it). If your registrar does not accept your CNAME records, please delete the period at the end of each CNAME value and try again.": [
-        "VAŽNO: Neki registri ne prihvaćaju CNAME vrijednosti s točkom na kraju (dok drugi to zahtijevaju). Ako vaš registar ne prihvaća vaše CNAME zapise, izbrišite točku na kraju svake CNAME vrijednosti i pokušajte ponovo."
+      "Auto-reply is active until you turn it off.": [
+        "Automatski odgovor je aktivan dokle god ga vi ne isključite."
       ],
-      "Keep those records in your DNS for as long as you want to use DKIM.": [
-        "Čuvajte ove zapise u svom DNS-u onoliko dugo koliko želite koristiti DKIM."
+      "Auto-reply is active from the start time to the end time.": [
+        "Automatski odgovor je aktivan između odabranog vremena početka i završetka."
       ],
-      "Before you can receive emails for your custom domain addresses at ProtonMail, you need to add the following MX records to your DNS. This can typically be done in the control panel of your domain name registrar.": [
-        "Prije nego li možete primati e-poštu od svojih adresa e-pošte od vaših prilagođenih domena na ProtonMailu, morate dodati sljedeće MX zapise u svoj DNS. To se obično može obaviti u upravljačkoj ploči registrara vaše domene."
+      "Images have been removed because they are not allowed in auto-reply.": [
+        ""
       ],
-      "Delete any other MX records or make sure ProtonMail's Priority is the lowest number.": [
-        "Uklonite sve druge MX zapise ili provjerite da li je prioritetni broj ProtonMaila najniži."
+      "Use automatic replies to inform contacts you are out of the office or otherwise unable to respond.": [
+        "Pomoću automatskih odgovora obavijestite kontakte da ste izvan ureda ili da ne možete odgovoriti."
       ],
-      "If this domain is currently receiving emails, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
-        "Ako ova domena trenutno prima e-poštu, odaberite karticu ${ boldAddresses } i dodajte sve aktivne adrese e-pošte prije promjene MX zapisa kako biste osigurali nesmetan prijelaz."
+      "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to enable automatic replies for when you are out of the office.": [
+        ""
       ],
-      "If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly.": [
-        "Ako ste postavili SPF i DKIM, DMARC vam omogućuje da odredite kako bi drugi pružatelji usluge e-pošte trebali dostaviti e-poštu za vašu domenu, ako SPF i DKIM provjere nisu uspjele. Ovo može otežati pošiljateljima neželjenih poruka koji se pretvaraju da ste vi, ali može uzrokovati i probleme s isporukom ako se ne provede ispravno."
+      "Address verification is an advanced security feature. Only turn this on if you know what it does.": [
+        "Potvrda adresa je napredna sigurnosna značajka. Uključite ovo samo ako znate što radi."
       ],
-      "${ none } has no effect on email delivery, but we recommend ${ quarantine } for better security.": [
-        "${ none } nema utjecaja na slanje e-pošte, ali preporučujemo ${ quarantine } za veću sigurnost."
+      "Encryption setting updated": [
+        "Postavke šifriranje su ažurirane"
       ],
-      "${ n } address": [
-        "${ n } adresa",
-        "${ n } adrese",
-        "${ n } adresa"
+      "PGP clients are more likely to automatically detect your PGP keys if outgoing messages are signed.": [
+        "PGP klijenti će s većom vjerojatnošću automatski otkriti vaše PGP ključeve ako su izlazne poruke potpisane."
       ],
-      "Please note that if you delete this domain, all the addresses associated with it will be disabled.": [
-        "Imajte na umu da ako izbrišete ovu domenu sve adrese povezane s njom biti će onemogućene."
-      ],
-      "Are you sure you want to delete this domain?": [
-        "Jeste li sigurni da želite ukloniti ovu domenu?"
-      ],
-      "domain used": [
-        "iskorištena domena",
-        "iskorištene domene",
-        "iskorištenih domena"
-      ],
-      "If you have a custom domain with ProtonMail, you can set a catch-all email address that will receive messages sent to your domain but to an invalid email address (e.g., typos).": [
-        "Ako imate prilagođenu domenu s ProtonMailom, možete postaviti dohvati-sve adresu e-pošte koja će primati poruke poslane na vašu domenu, ali za ne važeću adresu e-poštu (npr. greška u nazivu)."
+      "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
+        "Promijenite ove postavke samo ako koristite PGP s primateljima koji ne koriste ProtonMail."
       ],
       "Are you sure you want to delete this calendar?": [
         "Jeste li sigurni da želite ukloniti ovaj kalendar?"
@@ -3120,42 +3107,6 @@
       "You need to have a personal calendar to create a link.": [
         ""
       ],
-      "Auto-reply is active each month between the selected start and end time.": [
-        "Automatski odgovor je aktivan svaki mjesec između odabranog vremena početka i završetka."
-      ],
-      "Auto-reply is always active on the days of the week you select, between the selected hours.": [
-        "Automatski odgovor uvijek je aktivan u odabranim danima u tjednu i to između odabranih sati."
-      ],
-      "Auto-reply is active each week between the selected start and end time.": [
-        "Automatski odgovor je aktivan svaki tjedan između odabranog vremena početka i završetka."
-      ],
-      "Auto-reply is active until you turn it off.": [
-        "Automatski odgovor je aktivan dokle god ga vi ne isključite."
-      ],
-      "Auto-reply is active from the start time to the end time.": [
-        "Automatski odgovor je aktivan između odabranog vremena početka i završetka."
-      ],
-      "Images have been removed because they are not allowed in auto-reply.": [
-        ""
-      ],
-      "Use automatic replies to inform contacts you are out of the office or otherwise unable to respond.": [
-        "Pomoću automatskih odgovora obavijestite kontakte da ste izvan ureda ili da ne možete odgovoriti."
-      ],
-      "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to enable automatic replies for when you are out of the office.": [
-        ""
-      ],
-      "Screenshot(s) attached": [
-        "Snimka(e) zaslona su pridodane"
-      ],
-      "Refreshing the page or ${ link } will automatically resolve most issues.": [
-        "Osvježavanje stranice ili ${ link } će automatski riješiti većinu problema."
-      ],
-      "More Info": [
-        "Više informacija"
-      ],
-      "Loading ${ appName }": [
-        "Učitavanje ${ appName }"
-      ],
       "All keys successfully reactivated": [
         ""
       ],
@@ -3211,6 +3162,130 @@
       ],
       "No contact encryption keys exist": [
         "Ne postoje ključevi za šifriranje kontakata"
+      ],
+      "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ProtonMail in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
+        "SPF se koristi za određivanje kome je dopušteno slanje e-pošte za domenu, stoga preporučujemo da dodate ProtonMail u svoj SPF zapis. Dodajte sljedeći TXT zapis u svoj DNS. To se obično može obaviti na upravljačkoj ploči registrara vaše domene."
+      ],
+      "If you want to keep an existing SPF record, you can just add ${ spf } to it after the ${ spfValue }. Do not create multiple SPF records.": [
+        "Ako želite zadržati postojeći SPF zapis, možete jednostavno dodati ${ spf } u njega nakon ${ spfValue }. Ne stvarajte više SPF zapisa."
+      ],
+      "ProtonMail supports DKIM signing for custom domains. To use DKIM authentication, please add the following CNAME record into your DNS settings for this domain. This can typically be done in the control panel of your domain name registrar.": [
+        "ProtonMail podržava DKIM potpisivanje za prilagođene domene. Da biste koristili DKIM autentikaciju, dodajte sljedeći CNAME zapis u postavke svog DNS-a za ovu domenu. To se obično može obaviti na upravljačkoj ploči registrara domene."
+      ],
+      "IMPORTANT: Some registrars do not accept CNAME values with a period at the end (while others require it). If your registrar does not accept your CNAME records, please delete the period at the end of each CNAME value and try again.": [
+        "VAŽNO: Neki registri ne prihvaćaju CNAME vrijednosti s točkom na kraju (dok drugi to zahtijevaju). Ako vaš registar ne prihvaća vaše CNAME zapise, izbrišite točku na kraju svake CNAME vrijednosti i pokušajte ponovo."
+      ],
+      "Keep those records in your DNS for as long as you want to use DKIM.": [
+        "Čuvajte ove zapise u svom DNS-u onoliko dugo koliko želite koristiti DKIM."
+      ],
+      "Before you can receive emails for your custom domain addresses at ProtonMail, you need to add the following MX records to your DNS. This can typically be done in the control panel of your domain name registrar.": [
+        "Prije nego li možete primati e-poštu od svojih adresa e-pošte od vaših prilagođenih domena na ProtonMailu, morate dodati sljedeće MX zapise u svoj DNS. To se obično može obaviti u upravljačkoj ploči registrara vaše domene."
+      ],
+      "Delete any other MX records or make sure ProtonMail's Priority is the lowest number.": [
+        "Uklonite sve druge MX zapise ili provjerite da li je prioritetni broj ProtonMaila najniži."
+      ],
+      "If this domain is currently receiving emails, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
+        "Ako ova domena trenutno prima e-poštu, odaberite karticu ${ boldAddresses } i dodajte sve aktivne adrese e-pošte prije promjene MX zapisa kako biste osigurali nesmetan prijelaz."
+      ],
+      "If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly.": [
+        "Ako ste postavili SPF i DKIM, DMARC vam omogućuje da odredite kako bi drugi pružatelji usluge e-pošte trebali dostaviti e-poštu za vašu domenu, ako SPF i DKIM provjere nisu uspjele. Ovo može otežati pošiljateljima neželjenih poruka koji se pretvaraju da ste vi, ali može uzrokovati i probleme s isporukom ako se ne provede ispravno."
+      ],
+      "${ none } has no effect on email delivery, but we recommend ${ quarantine } for better security.": [
+        "${ none } nema utjecaja na slanje e-pošte, ali preporučujemo ${ quarantine } za veću sigurnost."
+      ],
+      "${ n } address": [
+        "${ n } adresa",
+        "${ n } adrese",
+        "${ n } adresa"
+      ],
+      "Please note that if you delete this domain, all the addresses associated with it will be disabled.": [
+        "Imajte na umu da ako izbrišete ovu domenu sve adrese povezane s njom biti će onemogućene."
+      ],
+      "Are you sure you want to delete this domain?": [
+        "Jeste li sigurni da želite ukloniti ovu domenu?"
+      ],
+      "domain used": [
+        "iskorištena domena",
+        "iskorištene domene",
+        "iskorištenih domena"
+      ],
+      "If you have a custom domain with ProtonMail, you can set a catch-all email address that will receive messages sent to your domain but to an invalid email address (e.g., typos).": [
+        "Ako imate prilagođenu domenu s ProtonMailom, možete postaviti dohvati-sve adresu e-pošte koja će primati poruke poslane na vašu domenu, ali za ne važeću adresu e-poštu (npr. greška u nazivu)."
+      ],
+      "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name and a valid Sieve script.": [
+        "Filtri rade na svim porukama e-pošte, uključujući dolazne i poslane. Svaki filtar mora sadržavati barem naziv i valjana Sieve skripta."
+      ],
+      "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
+        "Filtri rade na svim porukama e-pošte, uključujući dolazne i poslane. Svaki filtar mora sadržavati barem naziv, uvjet i radnju."
+      ],
+      "No label selected": [
+        "Nije odabrana nijedna oznaka"
+      ],
+      "No folder selected": [
+        "Nije odabrana nijedna mapa"
+      ],
+      "No action selected": [
+        "Nije odabrana nijedna radnja"
+      ],
+      "(Filter if ALL of the following conditions are met)": [
+        "(Filtriraj ako su ispunjeni SVI sljedeći uvjeti)"
+      ],
+      "(Filter if ANY of the following conditions are met)": [
+        "(Filtriraj ako su ispunjeni BILO KOJI sljedeći uvjeti)"
+      ],
+      "All your changes will be lost.": [
+        "Sve vaše promjene će biti izgubljene."
+      ],
+      "Are you sure you want to discard your changes?": [
+        "Jeste li sigurni da želite odbaciti vaše promjene?"
+      ],
+      "Custom filters work on all new emails, including incoming emails as well as sent emails. Filters can be edited and created directly via Sieve programming language.": [
+        "Prilagođeni filtri rade na svim porukama e-pošte, uključujući dolazne i poslane. Filtri se mogu uređivati i stvarati izravno putem programskog jezika Sieve."
+      ],
+      "Please note that if you delete this filter, we will stop processing all the automated actions it triggers.": [
+        "Imajte na umu da ako izbrišete ovaj filtar, prestat ćemo obrađivati sve automatizirane radnje koje on pokreće."
+      ],
+      "Are you sure you want to delete this filter?": [
+        "Jeste li sigurni da želite izbrisati ovaj filtar?"
+      ],
+      "Your Allow List is empty.": [
+        "Vaš popis dopuštenih je prazan."
+      ],
+      "Your Block List is empty.": [
+        "Vaš popis nedopuštenih je prazan."
+      ],
+      "Screenshot(s) attached": [
+        "Snimka(e) zaslona su pridodane"
+      ],
+      "Refreshing the page or ${ link } will automatically resolve most issues.": [
+        "Osvježavanje stranice ili ${ link } će automatski riješiti većinu problema."
+      ],
+      "Inherited from parent folder": [
+        "Nasljedno iz roditeljske mape"
+      ],
+      "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
+        "Možete uključiti obavijesti da biste dobili upozorenja kada u tu mapu stignu nove poruke e-pošte."
+      ],
+      "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
+        "Dodijelite naziv svojoj novoj mapi i odaberite roditeljsku mapu u koju je želite staviti. Ako ne odaberete roditeljsku mapu, nova će se mapa stvoriti kao mapa najviše razine."
+      ],
+      "Emails tagged with this label will not be deleted and can still be found in the respective folder.": [
+        ""
+      ],
+      "Are you sure you want to delete this label?": [
+        "Jeste li sigurni da želite izbrisati ovu oznaku?"
+      ],
+      "Emails stored in this folder will not be deleted and can still be found in the All Mail folder.": [
+        ""
+      ],
+      "Are you sure you want to delete this folder?": [
+        "Jeste li sigurni da želite izbrisati ovu mapu?"
+      ],
+      "More Info": [
+        "Više informacija"
+      ],
+      "Loading ${ appName }": [
+        "Učitavanje ${ appName }"
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Budući da ste odani korisnik, na vašem su računu omogućene dodatne značajke."
@@ -3531,6 +3606,12 @@
       "Internet connection lost. Please check your device's connectivity.": [
         "Nema internetske veze. Molimo provjerite povezanost uređaja."
       ],
+      "When disabled, this prevents all files from loading on your device without your knowledge.\t": [
+        "Kad je onemogućeno, ovo spriječava učitavanje svih datoteka na vašem uređaju bez vašeg znanja.\t"
+      ],
+      "When disabled, this prevents image files from loading on your device without your knowledge.": [
+        "Kad je onemogućeno, ovo spriječava učitavanje slikovnih datoteka na vašem uređaju bez vašeg znanja.\t"
+      ],
       "By leaving now, changes may not be saved": [
         "Ako sada napustite, promjene se možda neće spremiti"
       ],
@@ -3639,6 +3720,9 @@
       "Disabling this will prevent your recovery phrase from being used for account recovery.": [
         ""
       ],
+      "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
+        "Osnovna navigacija i radnje ostaju dostupni bez obzira jesu li tipkovni prečaci aktivni ili ne u postavkama."
+      ],
       "Your recovery phrase is a series of 12 words in a specific order.": [
         ""
       ],
@@ -3665,6 +3749,33 @@
       ],
       "Recovery phrase has been disabled": [
         ""
+      ],
+      "Let your contacts know you care about their privacy.": [
+        "Pokažite svojim kontaktima da vam je stalo do njihove privatnosti."
+      ],
+      "Please note that if you delete this address, you will no longer be able to send or receive emails using this address.": [
+        "Imajte na umu da ako izbrišete ovu adresu, više nećete moći slati ni primati e-poštu putem ove adrese."
+      ],
+      "Are you sure you want to delete this address?": [
+        "Jeste li sigurni da želite ukloniti ovu adresu?"
+      ],
+      "The email address you place at the top of the list is your default email address. Drag and drop to reorder your addresses.": [
+        "Adresa e-pošte koju stavite na vrh popisa je vaša zadana adresa e-pošte. Povucite i ispustite da biste promjenili redoslijed adresa."
+      ],
+      "Queued": [
+        "Na čekanju"
+      ],
+      "Done": [
+        "Gotovo"
+      ],
+      "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
+        "Da biste mogli početi slati i primati e-poštu s vaših novih adresa -pošte, morate za njih stvoriti ključeve za šifriranje."
+      ],
+      "You can use ProtonMail with any desktop email client that supports IMAP/SMTP, including Outlook, Apple Mail, and Thunderbird.": [
+        "ProtonMail možete koristiti sa bilo kojim desktop klijentom za e-poštu koji podržava IMAP/SMTP, uključujući Outlook, Apple Mail i Thunderbird."
+      ],
+      "Upgrade to a paid plan to unlock IMAP/SMTP support through ProtonMail Bridge.": [
+        "Nadogradite na plaćeni plan za otključavanje podrške za IMAP/SMTP putem ProtonMail Bridgea."
       ],
       "Do you want to revoke all other sessions than the current one?": [
         "Želite li opozvati sve ostale sesije osim trenutne?"
@@ -3693,18 +3804,6 @@
       "Expired": [
         "Isteklo"
       ],
-      "Address verification is an advanced security feature. Only turn this on if you know what it does.": [
-        "Potvrda adresa je napredna sigurnosna značajka. Uključite ovo samo ako znate što radi."
-      ],
-      "Encryption setting updated": [
-        "Postavke šifriranje su ažurirane"
-      ],
-      "PGP clients are more likely to automatically detect your PGP keys if outgoing messages are signed.": [
-        "PGP klijenti će s većom vjerojatnošću automatski otkriti vaše PGP ključeve ako su izlazne poruke potpisane."
-      ],
-      "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
-        "Promijenite ove postavke samo ako koristite PGP s primateljima koji ne koriste ProtonMail."
-      ],
       "You can customize and download your invoices for accounting purposes.": [
         "Račune možete prilagoditi i preuzeti za računovodstvene svrhe."
       ],
@@ -3725,99 +3824,6 @@
       ],
       "of": [
         "od"
-      ],
-      "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name and a valid Sieve script.": [
-        "Filtri rade na svim porukama e-pošte, uključujući dolazne i poslane. Svaki filtar mora sadržavati barem naziv i valjana Sieve skripta."
-      ],
-      "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
-        "Filtri rade na svim porukama e-pošte, uključujući dolazne i poslane. Svaki filtar mora sadržavati barem naziv, uvjet i radnju."
-      ],
-      "No label selected": [
-        "Nije odabrana nijedna oznaka"
-      ],
-      "No folder selected": [
-        "Nije odabrana nijedna mapa"
-      ],
-      "No action selected": [
-        "Nije odabrana nijedna radnja"
-      ],
-      "(Filter if ALL of the following conditions are met)": [
-        "(Filtriraj ako su ispunjeni SVI sljedeći uvjeti)"
-      ],
-      "(Filter if ANY of the following conditions are met)": [
-        "(Filtriraj ako su ispunjeni BILO KOJI sljedeći uvjeti)"
-      ],
-      "All your changes will be lost.": [
-        "Sve vaše promjene će biti izgubljene."
-      ],
-      "Are you sure you want to discard your changes?": [
-        "Jeste li sigurni da želite odbaciti vaše promjene?"
-      ],
-      "Custom filters work on all new emails, including incoming emails as well as sent emails. Filters can be edited and created directly via Sieve programming language.": [
-        "Prilagođeni filtri rade na svim porukama e-pošte, uključujući dolazne i poslane. Filtri se mogu uređivati i stvarati izravno putem programskog jezika Sieve."
-      ],
-      "Please note that if you delete this filter, we will stop processing all the automated actions it triggers.": [
-        "Imajte na umu da ako izbrišete ovaj filtar, prestat ćemo obrađivati sve automatizirane radnje koje on pokreće."
-      ],
-      "Are you sure you want to delete this filter?": [
-        "Jeste li sigurni da želite izbrisati ovaj filtar?"
-      ],
-      "Your Allow List is empty.": [
-        "Vaš popis dopuštenih je prazan."
-      ],
-      "Your Block List is empty.": [
-        "Vaš popis nedopuštenih je prazan."
-      ],
-      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
-        "Vaš Proton račun je trenutno na čekanju. Da biste nastavili koristiti svoj račun, uplatite sve neplaćene fakture."
-      ],
-      "Would you like to receive a new verification code or use an alternative verification method?": [
-        "Želite li dobiti novi potvrdni kôd ili koristiti alternativnu metodu potvrde?"
-      ],
-      "Enter the verification code that was sent to ${ destinationText }.": [
-        "Unesite potvrdni kôd koji je poslan na ${ destinationText }."
-      ],
-      "If you don't find the email in your inbox, please check your spam folder.": [
-        "Ako ne pronađete e-poštu u pristigloj pošti, provjerite svoju mapu neželjene pošte."
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
-        "Pritisnite \"Zatraži novi kôd\" da biste novi potvrdni kôd poslali na ${ strong }. Ako je ova adresa e-pošte netočan, pritisnite \"Uredi\" da biste je ispravili."
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
-        "Pritisnite \"Zatraži novi kôd\" da biste novi potvrdni kôd poslali na ${ strong }. Ako je ovaj telefonski broj netočan, pritisnite \"Uredi\" da biste ga ispravili."
-      ],
-      "To fight spam and abuse, please verify you are human.": [
-        "U borbi protiv spama i zlouporabe, molimo potvrdite da ste čovjek."
-      ],
-      "Your email will only be used for this one-time verification.": [
-        "Vaša adresa e-pošte koristit će se samo za ovu jednokratnu provjeru."
-      ],
-      "Your phone number will only be used for this one-time verification.": [
-        "Vaš broj telefona koristit će se samo za ovu jednokratnu provjeru."
-      ],
-      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
-        "Ako imate poteškoća s otvaranjem računa, zatražite pozivnicu i odgovorit ćemo vam u roku jednog radnog dana."
-      ],
-      "Inherited from parent folder": [
-        "Nasljedno iz roditeljske mape"
-      ],
-      "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
-        "Možete uključiti obavijesti da biste dobili upozorenja kada u tu mapu stignu nove poruke e-pošte."
-      ],
-      "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
-        "Dodijelite naziv svojoj novoj mapi i odaberite roditeljsku mapu u koju je želite staviti. Ako ne odaberete roditeljsku mapu, nova će se mapa stvoriti kao mapa najviše razine."
-      ],
-      "Emails tagged with this label will not be deleted and can still be found in the respective folder.": [
-        ""
-      ],
-      "Are you sure you want to delete this label?": [
-        "Jeste li sigurni da želite izbrisati ovu oznaku?"
-      ],
-      "Emails stored in this folder will not be deleted and can still be found in the All Mail folder.": [
-        ""
-      ],
-      "Are you sure you want to delete this folder?": [
-        "Jeste li sigurni da želite izbrisati ovu mapu?"
       ],
       "This will create an encryption key for your organization. 4096-bit keys only work on high performance computers, for most users, we recommend using 2048-bit keys.": [
         "Ovo će stvoriti ključ za šifriranje za vašu organizaciju. 4096-bitni ključevi rade samo na računalima s visokim performansama, a za većinu korisnika preporučujemo upotrebu 2048-bitnih ključeva."
@@ -3905,44 +3911,38 @@
       "more": [
         "više"
       ],
-      "Please note that if you delete this address, you will no longer be able to send or receive emails using this address.": [
-        "Imajte na umu da ako izbrišete ovu adresu, više nećete moći slati ni primati e-poštu putem ove adrese."
+      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
+        "Vaš Proton račun je trenutno na čekanju. Da biste nastavili koristiti svoj račun, uplatite sve neplaćene fakture."
       ],
-      "Are you sure you want to delete this address?": [
-        "Jeste li sigurni da želite ukloniti ovu adresu?"
+      "Would you like to receive a new verification code or use an alternative verification method?": [
+        "Želite li dobiti novi potvrdni kôd ili koristiti alternativnu metodu potvrde?"
       ],
-      "The email address you place at the top of the list is your default email address. Drag and drop to reorder your addresses.": [
-        "Adresa e-pošte koju stavite na vrh popisa je vaša zadana adresa e-pošte. Povucite i ispustite da biste promjenili redoslijed adresa."
+      "Enter the verification code that was sent to ${ destinationText }.": [
+        "Unesite potvrdni kôd koji je poslan na ${ destinationText }."
       ],
-      "Queued": [
-        "Na čekanju"
+      "If you don't find the email in your inbox, please check your spam folder.": [
+        "Ako ne pronađete e-poštu u pristigloj pošti, provjerite svoju mapu neželjene pošte."
       ],
-      "Done": [
-        "Gotovo"
+      "To fight spam and abuse, please verify you are human.": [
+        "U borbi protiv spama i zlouporabe, molimo potvrdite da ste čovjek."
       ],
-      "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
-        "Da biste mogli početi slati i primati e-poštu s vaših novih adresa -pošte, morate za njih stvoriti ključeve za šifriranje."
+      "Your email will only be used for this one-time verification.": [
+        "Vaša adresa e-pošte koristit će se samo za ovu jednokratnu provjeru."
       ],
-      "Let your contacts know you care about their privacy.": [
-        "Pokažite svojim kontaktima da vam je stalo do njihove privatnosti."
+      "Your phone number will only be used for this one-time verification.": [
+        "Vaš broj telefona koristit će se samo za ovu jednokratnu provjeru."
       ],
-      "When disabled, this prevents all files from loading on your device without your knowledge.\t": [
-        "Kad je onemogućeno, ovo spriječava učitavanje svih datoteka na vašem uređaju bez vašeg znanja.\t"
+      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
+        "Ako imate poteškoća s otvaranjem računa, zatražite pozivnicu i odgovorit ćemo vam u roku jednog radnog dana."
       ],
-      "When disabled, this prevents image files from loading on your device without your knowledge.": [
-        "Kad je onemogućeno, ovo spriječava učitavanje slikovnih datoteka na vašem uređaju bez vašeg znanja.\t"
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
+        "Pritisnite \"Zatraži novi kôd\" da biste novi potvrdni kôd poslali na ${ strong }. Ako je ova adresa e-pošte netočan, pritisnite \"Uredi\" da biste je ispravili."
       ],
-      "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
-        "Osnovna navigacija i radnje ostaju dostupni bez obzira jesu li tipkovni prečaci aktivni ili ne u postavkama."
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
+        "Pritisnite \"Zatraži novi kôd\" da biste novi potvrdni kôd poslali na ${ strong }. Ako je ovaj telefonski broj netočan, pritisnite \"Uredi\" da biste ga ispravili."
       ],
       "support team": [
         "tim za podršku"
-      ],
-      "You can use ProtonMail with any desktop email client that supports IMAP/SMTP, including Outlook, Apple Mail, and Thunderbird.": [
-        "ProtonMail možete koristiti sa bilo kojim desktop klijentom za e-poštu koji podržava IMAP/SMTP, uključujući Outlook, Apple Mail i Thunderbird."
-      ],
-      "Upgrade to a paid plan to unlock IMAP/SMTP support through ProtonMail Bridge.": [
-        "Nadogradite na plaćeni plan za otključavanje podrške za IMAP/SMTP putem ProtonMail Bridgea."
       ],
       "here": [
         "ovdje"
@@ -3952,6 +3952,15 @@
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Ako mislite da je ovo pogreška, kontaktirajte nas na ${ contactLink }."
+      ],
+      "Session timed out.": [
+        "Sesija je istekla."
+      ],
+      "Internet connection lost.": [
+        "Prekinuta je internetska veza."
+      ],
+      "Servers are unreachable.": [
+        "Poslužitelji nisu dostupni."
       ],
       "Custom daily": [
         "Prilagođeno dnevno"
@@ -3976,15 +3985,6 @@
       ],
       "Yearly": [
         "Godišnje"
-      ],
-      "Session timed out.": [
-        "Sesija je istekla."
-      ],
-      "Internet connection lost.": [
-        "Prekinuta je internetska veza."
-      ],
-      "Servers are unreachable.": [
-        "Poslužitelji nisu dostupni."
       ],
       "Users can't make changes to organization settings. If you need admin privileges, reach out to your system administrator.": [
         "Korisnici ne mogu mijenjati postavke organizacije. Ako vam trebaju administratorske povlastice, obratite se administratoru sustava."
@@ -4209,399 +4209,6 @@
         "Pretražite vremensku zonu"
       ]
     },
-    "Success": {
-      "Preference saved": [
-        "Postavke su spremljene"
-      ],
-      "Locale updated": [
-        "Lokalizacija je ažurirana"
-      ],
-      "Premium address created": [
-        "Stvorena je Premium adresa"
-      ],
-      "Keyboard shortcuts preferences updated": [
-        "Postavke tipkovnih prečaca su ažurirane"
-      ],
-      "Import resumed": [
-        "Uvoz nastavljen"
-      ],
-      "Import canceled": [
-        "Uvoz je otkazan"
-      ],
-      "Import record deleted": [
-        "Zapis uvoza je izbrisan"
-      ],
-      "Deleting original messages": [
-        "Brisanje originalnih poruka"
-      ],
-      "${ server.Domain } copied in your clipboard": [
-        "${ server.Domain } kopirano u vaš međuspremnik"
-      ],
-      "Verification code copied to clipboard!": [
-        ""
-      ],
-      "SPF value copied to clipboard!": [
-        "SPF vrijednost spremljena u međuspremnik!"
-      ],
-      "Value copied to clipboard!": [
-        "Vrijednost spremljena u međuspremnik!"
-      ],
-      "DMARC value copied to clipboard!": [
-        "DMARC vrijednost spremljena u međuspremnik!"
-      ],
-      "Domain verified": [
-        "Domena je potvrđena"
-      ],
-      "Catch-all address updated": [
-        "Dohvati-sve adresa je ažurirana"
-      ],
-      "Email address copied to clipboard": [
-        "Adresa e-pošte je kopirana u međuspremnik"
-      ],
-      "Calendar added. It might take a few minutes to sync.": [
-        ""
-      ],
-      "Calendar created": [
-        "Kalendar je stvoren"
-      ],
-      "Calendar updated": [
-        "Kalendar je ažuriran"
-      ],
-      "Default calendar updated": [
-        "Zadani kalendar je ažuriran"
-      ],
-      "Calendar removed": [
-        "Kalendar je uklonjen"
-      ],
-      "Auto-reply disabled": [
-        "Automatski odgovori su onemogućeni"
-      ],
-      "Auto-reply updated": [
-        "Automatski odgovori ažurirani"
-      ],
-      "Bug reported": [
-        "Problem je prijavljen"
-      ],
-      "You have successfully unsubscribed": [
-        "Uspješno ste poništili pretplatu"
-      ],
-      "Payment method updated": [
-        "Način plaćanja je ažuriran"
-      ],
-      "Payment method added": [
-        "Način plaćanja dodan"
-      ],
-      "Credits added": [
-        "Nadodan je kredit"
-      ],
-      "Gift code applied": [
-        "Kôd darovnog kupona je primjenjen"
-      ],
-      "Password updated": [
-        "Lozinka je ažurirana"
-      ],
-      "Account deleted. Logging out...": [
-        "Račun je uklonjen. Odjavljivanje..."
-      ],
-      "Email updated": [
-        "Ažurirana je adresa"
-      ],
-      "Phone number updated": [
-        "Broj telefona je ažuriran"
-      ],
-      "Session revoked": [
-        "Sesija je opozvana"
-      ],
-      "Sessions revoked": [
-        "Sesije su opozvane"
-      ],
-      "Payment method deleted": [
-        "Način plaćanja je izbrisan"
-      ],
-      "Invoice paid": [
-        "Plaćen račun"
-      ],
-      "Invoice customized": [
-        "Prilagođena je faktura"
-      ],
-      "Code sent to ${ methodTo }": [
-        "Kôd je poslan na ${ methodTo }"
-      ],
-      "Verification successful": [
-        "Uspješna provjera"
-      ],
-      "Organization activated": [
-        "Organizacija je aktivirana"
-      ],
-      "Keys updated": [
-        "Ažurirani su ključevi"
-      ],
-      "User updated": [
-        "Korisnik je ažuriran"
-      ],
-      "User created": [
-        "Korisnik je stvoren"
-      ],
-      "Address added": [
-        "Adresa je dodana"
-      ],
-      "Address updated": [
-        "Adresa je ažurirana"
-      ],
-      "If you entered a valid recovery email we will send you an email with your usernames in the next minute.": [
-        "Ako ste unijeli važeću adresu e-pošte za oporavak, poslat ćemo vam e-poštu s vašim korisničkim imenima u sljedećoj minuti."
-      ],
-      "If you entered a valid recovery phone we will send you an sms with your usernames in the next minute.": [
-        "Ako ste unijeli važeći broj telefona za oporavak, poslat ćemo vam tekstualnu poruku s vašim korisničkim imenima u sljedećoj minuti."
-      ]
-    },
-    "Option": {
-      "Automatic (${ defaultFormat })": [
-        "Automatski (${ defaultFormat })"
-      ],
-      "Automatic (${ defaultDay })": [
-        "Automatski (${ defaultDay })"
-      ],
-      "Add to existing group": [
-        "Dodaj u postojeću grupu"
-      ],
-      "Create new group": [
-        "Stvori novu grupu"
-      ],
-      "Ignore group": [
-        "Ignoriraj grupu"
-      ],
-      "Normal": [
-        "Normalno"
-      ],
-      "Plain text": [
-        "Običan tekst"
-      ],
-      "Left to Right": [
-        "S lijeva na desno"
-      ],
-      "Right to Left": [
-        "S desna na lijevo"
-      ],
-      "Android": [
-        "Android"
-      ],
-      "iOS": [
-        "iOS"
-      ],
-      "Windows": [
-        "Windows"
-      ],
-      "macOS": [
-        "macOS"
-      ],
-      "GNU/Linux": [
-        "GNU/Linux"
-      ],
-      "Router": [
-        "Usmjerivač (Router)"
-      ],
-      "UDP": [
-        "UDP"
-      ],
-      "TCP": [
-        "TCP"
-      ],
-      "Secure Core configs": [
-        "Secure core konfiguracije"
-      ],
-      "Country configs": [
-        "Postavke države"
-      ],
-      "Standard server configs": [
-        "Postavke standardnog poslužitelja"
-      ],
-      "Free server configs": [
-        "Postavke besplatnog poslužitelja"
-      ],
-      "Fixed duration": [
-        "Fiksno trajanje"
-      ],
-      "Repeat daily": [
-        "Ponovi svaki dan"
-      ],
-      "Repeat weekly": [
-        "Ponovi svaki tjedan"
-      ],
-      "Repeat monthly": [
-        "Ponovi svaki mjesec"
-      ],
-      "Permanent": [
-        "Trajno"
-      ],
-      "1st of the month": [
-        "1. dan u mjesecu"
-      ],
-      "2nd of the month": [
-        "2. dan u mjesecu"
-      ],
-      "3rd of the month": [
-        "3. dan u mjesecu"
-      ],
-      "4th of the month": [
-        "4. dan u mjesecu"
-      ],
-      "5th of the month": [
-        "5. dan u mjesecu"
-      ],
-      "6th of the month": [
-        "6. dan u mjesecu"
-      ],
-      "7th of the month": [
-        "7. dan u mjesecu"
-      ],
-      "8th of the month": [
-        "8. dan u mjesecu"
-      ],
-      "9th of the month": [
-        "9. dan u mjesecu"
-      ],
-      "10th of the month": [
-        "10. dan u mjesecu"
-      ],
-      "11th of the month": [
-        "11. dan u mjesecu"
-      ],
-      "12th of the month": [
-        "12. dan u mjesecu"
-      ],
-      "13th of the month": [
-        "13. dan u mjesecu"
-      ],
-      "14th of the month": [
-        "14. dan u mjesecu"
-      ],
-      "15th of the month": [
-        "15. dan u mjesecu"
-      ],
-      "16th of the month": [
-        "16. dan u mjesecu"
-      ],
-      "17th of the month": [
-        "17. dan u mjesecu"
-      ],
-      "18th of the month": [
-        "18. dan u mjesecu"
-      ],
-      "19th of the month": [
-        "19. dan u mjesecu"
-      ],
-      "20th of the month": [
-        "20. dan u mjesecu"
-      ],
-      "21st of the month": [
-        "21. dan u mjesecu"
-      ],
-      "22nd of the month": [
-        "22. dan u mjesecu"
-      ],
-      "23rd of the month": [
-        "23. dan u mjesecu"
-      ],
-      "24th of the month": [
-        "24. dan u mjesecu"
-      ],
-      "25th of the month": [
-        "25. dan u mjesecu"
-      ],
-      "26th of the month": [
-        "26. dan u mjesecu"
-      ],
-      "27th of the month": [
-        "27. dan u mjesecu"
-      ],
-      "28th of the month": [
-        "28. dan u mjesecu"
-      ],
-      "29th of the month": [
-        "29. dan u mjesecu"
-      ],
-      "30th of the month": [
-        "30. dan u mjesecu"
-      ],
-      "31st of the month": [
-        "31. dan u mjesecu"
-      ],
-      "${ stateOfTheArt } X25519 (Fastest, most modern)": [
-        ""
-      ],
-      "${ highestSecurity } RSA 4096-bit (Slower, but increased compatibility with legacy software)": [
-        ""
-      ],
-      "Select a reason": [
-        "Odaberite razlog"
-      ],
-      "It’s temporary, I’ll be back": [
-        "Privremeno je, vratit ću se"
-      ],
-      "I didn’t understand what I was signing up for": [
-        "Nisam razumio za što se prijavljujem"
-      ],
-      "It’s too expensive": [
-        "Preskupo je"
-      ],
-      "I’m unhappy with customer service": [
-        "Nezadovoljan sam korisničkom službom"
-      ],
-      "Using Proton is too complicated": [
-        "Proton je previše kompliciran za korištenje"
-      ],
-      "I'm switching to a different service": [
-        "Prelazim na drugu uslugu"
-      ],
-      "The quality didn't live up to my expectations": [
-        "Kvaliteta nije opravdala moja očekivanja"
-      ],
-      "Other": [
-        "Ostalo"
-      ],
-      "I use a different Proton account": [
-        "Koristim drugi Proton račun"
-      ],
-      "It's too expensive": [
-        "Preskupo je"
-      ],
-      "It's missing a key feature that I need": [
-        "Nedostaje ključna značajka koja mi treba"
-      ],
-      "I found another service that I like better": [
-        "Pronašao/la sam drugu uslugu koja mi se više sviđa"
-      ],
-      "My reason isn't listed": [
-        "Moj razlog nije naveden"
-      ],
-      "No parent folder": [
-        "Nema roditeljske mape"
-      ]
-    },
-    "Day": {
-      "Sunday": [
-        "Nedjelja"
-      ],
-      "Monday": [
-        "Ponedjeljak"
-      ],
-      "Tuesday": [
-        "Utorak"
-      ],
-      "Wednesday": [
-        "Srijeda"
-      ],
-      "Thursday": [
-        "Četvrtak"
-      ],
-      "Friday": [
-        "Petak"
-      ],
-      "Saturday": [
-        "Subota"
-      ]
-    },
     "Loading info": {
       "Connecting to your calendar provider": [
         "Spajanje s vašim pružateljem kalendara"
@@ -4705,14 +4312,14 @@
       "Are you sure you want to delete the phone number?": [
         "Jeste li sigurni da želite izbrisati broj telefona?"
       ],
-      "By disabling the logs, you will also clear your entire logs history. Are you sure you want to disable the logs?": [
-        "Onemogućavanjem zapisa također ćete izbrisati cijelu povijest zapisa. Jeste li sigurni da želite onemogućiti zapise?"
-      ],
       "By disabling this address, you will no longer be able to send or receive emails using this address and all the linked Proton products will also be disabled. Are you sure you want to disable this address?": [
         "Onemogućavanjem ove adrese e-pošte više nećete moći slati ili primati e-poštu putem te adrese, a svi povezani Proton proizvodi također će biti onemogućeni. Jeste li sigurni da želite onemogućiti ovu adresu e-pošte?"
       ],
       "You must ${ activateLink } organization keys before adding an email address to a non-private member.": [
         "Morate ${ activateLink } ključeve organizacije prije dodavanja adrese e-pošte ne privatnom članu."
+      ],
+      "By disabling the logs, you will also clear your entire logs history. Are you sure you want to disable the logs?": [
+        "Onemogućavanjem zapisa također ćete izbrisati cijelu povijest zapisa. Jeste li sigurni da želite onemogućiti zapise?"
       ]
     },
     "Import instructions emphasis": {
@@ -4963,15 +4570,6 @@
       "Group emails in the same conversation together in your Inbox or display them separately.": [
         "Grupirajte e-poštu u istom razgovoru u pristigloj pošti ili ih prikažite zasebno."
       ],
-      "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
-        "Prestali smo s potpisivanjem DKIM-a zbog problema s vašim DNS postavkama. Slijedite dolje navedene upute za nastavak potpisivanja."
-      ],
-      "Your DKIM signing is working.": [
-        "Vaše DKIM potpisivanje radi."
-      ],
-      "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
-        "Otkrili smo problem s vašim DNS postavkama. Pobrinite se da se vaši zapisi podudaraju s uputama u nastavku. Ako se problem nastavi, morat ćemo isključiti potpisivanje DKIM-a."
-      ],
       "This feature is unavailable for the moment": [
         ""
       ],
@@ -4992,6 +4590,21 @@
       ],
       "This address has been disabled": [
         "Ova adresa e-pošte je onemogućena"
+      ],
+      "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
+        "Prestali smo s potpisivanjem DKIM-a zbog problema s vašim DNS postavkama. Slijedite dolje navedene upute za nastavak potpisivanja."
+      ],
+      "Your DKIM signing is working.": [
+        "Vaše DKIM potpisivanje radi."
+      ],
+      "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
+        "Otkrili smo problem s vašim DNS postavkama. Pobrinite se da se vaši zapisi podudaraju s uputama u nastavku. Ako se problem nastavi, morat ćemo isključiti potpisivanje DKIM-a."
+      ],
+      "This feature is only available for paid users": [
+        "Ova značajka je dostupna samo za plaćene korisnike"
+      ],
+      "Enable/disable desktop and mobile notifications": [
+        "Omogući/onemogući desktop i mobilne obavijesti"
       ],
       "Use multiple addresses / aliases linked to your account, e.g. username2@protonmail.com": [
         "Koristite više adresa / aliasa povezanih s vašim računom, npr. korisnickoime2@protonmail.com"
@@ -5041,15 +4654,6 @@
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Ako ste kupili darovni kôd ili ga dobili od našeg tima za podršku, možete ga unijeti ovdje."
       ],
-      "Enabling advanced logs records the IP address for each event in the security log.": [
-        "Omogućavanjem naprednih zapisa, IP adresa za svaki događaj će se spremati u sigurnosne zapise."
-      ],
-      "This feature is only available for paid users": [
-        "Ova značajka je dostupna samo za plaćene korisnike"
-      ],
-      "Enable/disable desktop and mobile notifications": [
-        "Omogući/onemogući desktop i mobilne obavijesti"
-      ],
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "Poruke u Poslano ili Skice mapi će se nastaviti pojavljivati u toj mapi, čak i kada ih pomaknete u drugu datoteku."
       ],
@@ -5058,6 +4662,9 @@
       ],
       "This feature delays sending your emails, giving you the opportunity to undo send during the selected time frame.": [
         "Ova značajka odgađa slanje vaše e-pošte, dajući vam mogućnost poništavanja slanja tijekom odabranog vremenskog okvira."
+      ],
+      "Enabling advanced logs records the IP address for each event in the security log.": [
+        "Omogućavanjem naprednih zapisa, IP adresa za svaki događaj će se spremati u sigurnosne zapise."
       ]
     },
     "Security phrase": {
@@ -5099,6 +4706,152 @@
         "Odgođeno"
       ]
     },
+    "Success": {
+      "Import resumed": [
+        "Uvoz nastavljen"
+      ],
+      "Import canceled": [
+        "Uvoz je otkazan"
+      ],
+      "Import record deleted": [
+        "Zapis uvoza je izbrisan"
+      ],
+      "Deleting original messages": [
+        "Brisanje originalnih poruka"
+      ],
+      "Preference saved": [
+        "Postavke su spremljene"
+      ],
+      "Premium address created": [
+        "Stvorena je Premium adresa"
+      ],
+      "Keyboard shortcuts preferences updated": [
+        "Postavke tipkovnih prečaca su ažurirane"
+      ],
+      "Locale updated": [
+        "Lokalizacija je ažurirana"
+      ],
+      "${ server.Domain } copied in your clipboard": [
+        "${ server.Domain } kopirano u vaš međuspremnik"
+      ],
+      "Auto-reply disabled": [
+        "Automatski odgovori su onemogućeni"
+      ],
+      "Auto-reply updated": [
+        "Automatski odgovori ažurirani"
+      ],
+      "Calendar added. It might take a few minutes to sync.": [
+        ""
+      ],
+      "Calendar created": [
+        "Kalendar je stvoren"
+      ],
+      "Calendar updated": [
+        "Kalendar je ažuriran"
+      ],
+      "Default calendar updated": [
+        "Zadani kalendar je ažuriran"
+      ],
+      "Calendar removed": [
+        "Kalendar je uklonjen"
+      ],
+      "Verification code copied to clipboard!": [
+        ""
+      ],
+      "SPF value copied to clipboard!": [
+        "SPF vrijednost spremljena u međuspremnik!"
+      ],
+      "Value copied to clipboard!": [
+        "Vrijednost spremljena u međuspremnik!"
+      ],
+      "DMARC value copied to clipboard!": [
+        "DMARC vrijednost spremljena u međuspremnik!"
+      ],
+      "Domain verified": [
+        "Domena je potvrđena"
+      ],
+      "Catch-all address updated": [
+        "Dohvati-sve adresa je ažurirana"
+      ],
+      "Email address copied to clipboard": [
+        "Adresa e-pošte je kopirana u međuspremnik"
+      ],
+      "Bug reported": [
+        "Problem je prijavljen"
+      ],
+      "You have successfully unsubscribed": [
+        "Uspješno ste poništili pretplatu"
+      ],
+      "Payment method updated": [
+        "Način plaćanja je ažuriran"
+      ],
+      "Payment method added": [
+        "Način plaćanja dodan"
+      ],
+      "Credits added": [
+        "Nadodan je kredit"
+      ],
+      "Gift code applied": [
+        "Kôd darovnog kupona je primjenjen"
+      ],
+      "Password updated": [
+        "Lozinka je ažurirana"
+      ],
+      "Account deleted. Logging out...": [
+        "Račun je uklonjen. Odjavljivanje..."
+      ],
+      "Email updated": [
+        "Ažurirana je adresa"
+      ],
+      "Phone number updated": [
+        "Broj telefona je ažuriran"
+      ],
+      "Address updated": [
+        "Adresa je ažurirana"
+      ],
+      "Address added": [
+        "Adresa je dodana"
+      ],
+      "Session revoked": [
+        "Sesija je opozvana"
+      ],
+      "Sessions revoked": [
+        "Sesije su opozvane"
+      ],
+      "Payment method deleted": [
+        "Način plaćanja je izbrisan"
+      ],
+      "Invoice paid": [
+        "Plaćen račun"
+      ],
+      "Invoice customized": [
+        "Prilagođena je faktura"
+      ],
+      "Organization activated": [
+        "Organizacija je aktivirana"
+      ],
+      "Keys updated": [
+        "Ažurirani su ključevi"
+      ],
+      "User updated": [
+        "Korisnik je ažuriran"
+      ],
+      "User created": [
+        "Korisnik je stvoren"
+      ],
+      "Code sent to ${ methodTo }": [
+        "Kôd je poslan na ${ methodTo }"
+      ],
+      "Verification successful": [
+        "Uspješna provjera"
+      ],
+      "If you entered a valid recovery email we will send you an email with your usernames in the next minute.": [
+        "Ako ste unijeli važeću adresu e-pošte za oporavak, poslat ćemo vam e-poštu s vašim korisničkim imenima u sljedećoj minuti."
+      ],
+      "If you entered a valid recovery phone we will send you an sms with your usernames in the next minute.": [
+        "Ako ste unijeli važeći broj telefona za oporavak, poslat ćemo vam tekstualnu poruku s vašim korisničkim imenima u sljedećoj minuti."
+      ]
+    },
     "Title header": {
       "Import": [
         "Uvoz"
@@ -5119,6 +4872,253 @@
     "Import error link": {
       "bandwidth limit": [
         "ograničenje propusnosti"
+      ]
+    },
+    "Option": {
+      "Automatic (${ defaultFormat })": [
+        "Automatski (${ defaultFormat })"
+      ],
+      "Automatic (${ defaultDay })": [
+        "Automatski (${ defaultDay })"
+      ],
+      "Add to existing group": [
+        "Dodaj u postojeću grupu"
+      ],
+      "Create new group": [
+        "Stvori novu grupu"
+      ],
+      "Ignore group": [
+        "Ignoriraj grupu"
+      ],
+      "Normal": [
+        "Normalno"
+      ],
+      "Plain text": [
+        "Običan tekst"
+      ],
+      "Left to Right": [
+        "S lijeva na desno"
+      ],
+      "Right to Left": [
+        "S desna na lijevo"
+      ],
+      "Android": [
+        "Android"
+      ],
+      "iOS": [
+        "iOS"
+      ],
+      "Windows": [
+        "Windows"
+      ],
+      "macOS": [
+        "macOS"
+      ],
+      "GNU/Linux": [
+        "GNU/Linux"
+      ],
+      "Router": [
+        "Usmjerivač (Router)"
+      ],
+      "UDP": [
+        "UDP"
+      ],
+      "TCP": [
+        "TCP"
+      ],
+      "Secure Core configs": [
+        "Secure core konfiguracije"
+      ],
+      "Country configs": [
+        "Postavke države"
+      ],
+      "Standard server configs": [
+        "Postavke standardnog poslužitelja"
+      ],
+      "Free server configs": [
+        "Postavke besplatnog poslužitelja"
+      ],
+      "Fixed duration": [
+        "Fiksno trajanje"
+      ],
+      "Repeat daily": [
+        "Ponovi svaki dan"
+      ],
+      "Repeat weekly": [
+        "Ponovi svaki tjedan"
+      ],
+      "Repeat monthly": [
+        "Ponovi svaki mjesec"
+      ],
+      "Permanent": [
+        "Trajno"
+      ],
+      "1st of the month": [
+        "1. dan u mjesecu"
+      ],
+      "2nd of the month": [
+        "2. dan u mjesecu"
+      ],
+      "3rd of the month": [
+        "3. dan u mjesecu"
+      ],
+      "4th of the month": [
+        "4. dan u mjesecu"
+      ],
+      "5th of the month": [
+        "5. dan u mjesecu"
+      ],
+      "6th of the month": [
+        "6. dan u mjesecu"
+      ],
+      "7th of the month": [
+        "7. dan u mjesecu"
+      ],
+      "8th of the month": [
+        "8. dan u mjesecu"
+      ],
+      "9th of the month": [
+        "9. dan u mjesecu"
+      ],
+      "10th of the month": [
+        "10. dan u mjesecu"
+      ],
+      "11th of the month": [
+        "11. dan u mjesecu"
+      ],
+      "12th of the month": [
+        "12. dan u mjesecu"
+      ],
+      "13th of the month": [
+        "13. dan u mjesecu"
+      ],
+      "14th of the month": [
+        "14. dan u mjesecu"
+      ],
+      "15th of the month": [
+        "15. dan u mjesecu"
+      ],
+      "16th of the month": [
+        "16. dan u mjesecu"
+      ],
+      "17th of the month": [
+        "17. dan u mjesecu"
+      ],
+      "18th of the month": [
+        "18. dan u mjesecu"
+      ],
+      "19th of the month": [
+        "19. dan u mjesecu"
+      ],
+      "20th of the month": [
+        "20. dan u mjesecu"
+      ],
+      "21st of the month": [
+        "21. dan u mjesecu"
+      ],
+      "22nd of the month": [
+        "22. dan u mjesecu"
+      ],
+      "23rd of the month": [
+        "23. dan u mjesecu"
+      ],
+      "24th of the month": [
+        "24. dan u mjesecu"
+      ],
+      "25th of the month": [
+        "25. dan u mjesecu"
+      ],
+      "26th of the month": [
+        "26. dan u mjesecu"
+      ],
+      "27th of the month": [
+        "27. dan u mjesecu"
+      ],
+      "28th of the month": [
+        "28. dan u mjesecu"
+      ],
+      "29th of the month": [
+        "29. dan u mjesecu"
+      ],
+      "30th of the month": [
+        "30. dan u mjesecu"
+      ],
+      "31st of the month": [
+        "31. dan u mjesecu"
+      ],
+      "${ stateOfTheArt } X25519 (Fastest, most modern)": [
+        ""
+      ],
+      "${ highestSecurity } RSA 4096-bit (Slower, but increased compatibility with legacy software)": [
+        ""
+      ],
+      "No parent folder": [
+        "Nema roditeljske mape"
+      ],
+      "Select a reason": [
+        "Odaberite razlog"
+      ],
+      "It’s temporary, I’ll be back": [
+        "Privremeno je, vratit ću se"
+      ],
+      "I didn’t understand what I was signing up for": [
+        "Nisam razumio za što se prijavljujem"
+      ],
+      "It’s too expensive": [
+        "Preskupo je"
+      ],
+      "I’m unhappy with customer service": [
+        "Nezadovoljan sam korisničkom službom"
+      ],
+      "Using Proton is too complicated": [
+        "Proton je previše kompliciran za korištenje"
+      ],
+      "I'm switching to a different service": [
+        "Prelazim na drugu uslugu"
+      ],
+      "The quality didn't live up to my expectations": [
+        "Kvaliteta nije opravdala moja očekivanja"
+      ],
+      "Other": [
+        "Ostalo"
+      ],
+      "I use a different Proton account": [
+        "Koristim drugi Proton račun"
+      ],
+      "It's too expensive": [
+        "Preskupo je"
+      ],
+      "It's missing a key feature that I need": [
+        "Nedostaje ključna značajka koja mi treba"
+      ],
+      "I found another service that I like better": [
+        "Pronašao/la sam drugu uslugu koja mi se više sviđa"
+      ],
+      "My reason isn't listed": [
+        "Moj razlog nije naveden"
+      ]
+    },
+    "Day": {
+      "Sunday": [
+        "Nedjelja"
+      ],
+      "Monday": [
+        "Ponedjeljak"
+      ],
+      "Tuesday": [
+        "Utorak"
+      ],
+      "Wednesday": [
+        "Srijeda"
+      ],
+      "Thursday": [
+        "Četvrtak"
+      ],
+      "Friday": [
+        "Petak"
+      ],
+      "Saturday": [
+        "Subota"
       ]
     },
     "Progress bar description": {
@@ -5428,181 +5428,29 @@
         "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now i drugi."
       ]
     },
-    "Label for adding a new custom domain": {
-      "Add a domain that you own to your ProtonMail account.": [
-        "Dodajte domenu koju posjedujete na vaš ProtonMail račun."
+    "Autoresponse": {
+      "I'm out of the office with limited access to my email.": [
+        "Ja sam izvan ureda s ograničenim pristupom mojoj e-pošti."
       ]
     },
-    "Domain modal": {
-      "'www' subdomains are typically not used for email. Are you sure you want to use this domain value?": [
-        "Poddomene 'www' obično se ne koriste za e-poštu. Jeste li sigurni da želite koristiti ovu domenu?"
+    "Tooltip prompt to trust keys": {
+      "When receiving an email from another ProtonMail user who does not have trusted keys in your contacts, a banner will ask if you want to enable trusted keys.": [
+        "Kad primate e-poštu od drugog korisnika ProtonMaila koji u vašim kontaktima nema pouzdane ključeve, natpis će vas pitati želite li omogućiti pouzdane ključeve."
       ]
     },
-    "Info for domain modal": {
-      "For security reasons, we need to verify that you are the owner of ${ domainName }. Please add the following DNS TXT record to your domain. This can typically be done in the control panel of your domain name registrar.": [
-        "Iz sigurnosnih razloga moramo potvrditi da ste vlasnik ${ domainName } domene. Dodajte sljedeći DNS TXT zapis za svoju domenu. To se obično može obaviti na upravljačkoj ploči registrara domene."
-      ],
-      "Add a new user to your organization and create an address for it.": [
-        "Dodajte novog korisnika u svoju organizaciju i stvorite adresu za njega."
-      ],
-      "Add a new address for any user of your organization.": [
-        "Dodajte novu adresu za bilo kojeg korisnika vaše organizacije."
+    "Tooltip sign external messages": {
+      "Automatically sign all your outgoing messages so users can verify the authenticity of your messages. This is done in combination with the default PGP settings which can be configured below.": [
+        "Automatski potpišite sve svoje odlazne poruke kako bi korisnici mogli provjeriti autentičnost vaših poruka. To se radi u kombinaciji sa zadanim PGP postavkama koje su postavljene ispod."
       ]
     },
-    "Warning for domain modal": {
-      "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
-        "Nakon uspješne provjere, ne uklanjajte ovaj TXT zapis jer je potreban za potvrdu da i dalje posjedujete domenu."
-      ],
-      "It can take up to a day for DNS changes to update.": [
-        "Može potrajati do jedan dan da se DNS promjene ažuriraju."
+    "Tooltip automatically attach public key": {
+      "This automatically adds your public key to each message you send. Recipients can use this to verify the authenticity of your messages and send encrypted messages to you.": [
+        "Ovo automatski dodaje vaš javni ključ svakoj poruci koju šaljete. Primatelji mogu koristiti ovo za provjeru autentičnosti vaših poruka i slanje šifriranih poruka."
       ]
     },
-    "Label for domain modal": {
-      "Please add the following TXT record:": [
-        "Dodajte sljedeći TXT zapis:"
-      ]
-    },
-    "Header for domain modal": {
-      "Type": [
-        "Vrsta"
-      ],
-      "Host name": [
-        "Naziv računala"
-      ],
-      "Value / Data / Points to": [
-        "Vrijednost / Podaci / Ukazuje na"
-      ],
-      "Value / Data": [
-        "Vrijednost / Podaci"
-      ],
-      "Priority": [
-        "Prioritet"
-      ]
-    },
-    "Tab in domain modal": {
-      "Addresses": [
-        "Adrese"
-      ]
-    },
-    "Label in domain modal": {
-      "Domain": [
-        "Domena"
-      ],
-      "Verify": [
-        "Potvrdi"
-      ],
-      "Addresses": [
-        "Adrese"
-      ]
-    },
-    "Domain label": {
-      "Verified": [
-        "Potvrđeno"
-      ]
-    },
-    "Badge for domain": {
-      "Missing keys": [
-        "Nedostaju ključevi"
-      ],
-      "Enabled": [
-        "Omogućeno"
-      ],
-      "Disabled": [
-        "Onemogućeno"
-      ]
-    },
-    "Title header for addresses domain table": {
-      "Address": [
-        "Adresa"
-      ],
-      "Status": [
-        "Status"
-      ],
-      "Catch-All": [
-        "Dohvati-sve"
-      ]
-    },
-    "Success message": {
-      "Domain deleted": [
-        "Domena je izbrisana"
-      ],
-      "Sessions revoked": [
-        "Sesije su opozvane"
-      ],
-      "User deleted": [
-        "Korisnik je izbrisan"
-      ]
-    },
-    "Header for addresses table": {
-      "Domain": [
-        "Domena"
-      ],
-      "Status": [
-        "Status"
-      ],
-      "Actions": [
-        "Radnje"
-      ],
-      "Address": [
-        "Adresa"
-      ],
-      "Username": [
-        "Korisničko ime"
-      ]
-    },
-    "Message": {
-      "Set up a custom domain email address (e.g., you@yourcompany.com). It only takes a few minutes, and our wizard will guide you through the process.": [
-        "Postavite adresu e-pošte s prilagođene domene (npr. vi@vasatvrtka.hr). Potrebno je samo nekoliko minuta, a naš čarobnjak će vas voditi kroz postupak."
-      ],
-      "Upgrade to any paid plan to use custom domains and unlock premium features": [
-        ""
-      ],
-      "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to use a catch-all address and unlock premium features": [
-        ""
-      ],
-      "Are you sure you want to disable two-factor authentication?": [
-        "Jeste li sigurni da želite onemogućiti provjeru autentičnosti u dva koraka?"
-      ]
-    },
-    "Header": {
-      "Get help": [
-        "Pomoć"
-      ],
-      "Name": [
-        "Naziv"
-      ],
-      "Status": [
-        "Status"
-      ],
-      "Actions": [
-        "Radnje"
-      ],
-      "Calendar": [
-        "Kalendar"
-      ],
-      "Label": [
-        "Oznaka"
-      ],
-      "What others see": [
-        "Što drugi vide"
-      ],
-      "Event": [
-        "Događaj"
-      ],
-      "Time": [
-        "Vrijeme"
-      ],
-      "Folders": [
-        "Mape"
-      ],
-      "Notifications": [
-        "Obavijesti"
-      ],
-      "Organization key fingerprint": [
-        "Jedinstveni ključ organizacije"
-      ],
-      "Key type": [
-        "Vrsta ključa"
+    "Tooltip default pgp scheme": {
+      "Select the default PGP settings used to sign or encrypt messages with non-ProtonMail PGP users. Note that Inline PGP forces plain text messages. Learn more": [
+        "Odaberite zadane PGP postavke koje se koriste za potpisivanje ili šifriranje poruka s PGP korisnicima koji ne koriste ProtonMail. Imajte na umu da Inline PGP nameće obične tekstualne poruke. Saznajte više"
       ]
     },
     "Duration": {
@@ -5719,6 +5567,47 @@
         "Pojedinosti o događajima koje nije bilo moguće izvesti"
       ]
     },
+    "Header": {
+      "Name": [
+        "Naziv"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "Actions": [
+        "Radnje"
+      ],
+      "Calendar": [
+        "Kalendar"
+      ],
+      "Label": [
+        "Oznaka"
+      ],
+      "What others see": [
+        "Što drugi vide"
+      ],
+      "Get help": [
+        "Pomoć"
+      ],
+      "Folders": [
+        "Mape"
+      ],
+      "Notifications": [
+        "Obavijesti"
+      ],
+      "Event": [
+        "Događaj"
+      ],
+      "Time": [
+        "Vrijeme"
+      ],
+      "Organization key fingerprint": [
+        "Jedinstveni ključ organizacije"
+      ],
+      "Key type": [
+        "Vrsta ključa"
+      ]
+    },
     "Calendar status": {
       "Default": [
         "Zadano"
@@ -5729,11 +5618,11 @@
       "Disabled": [
         "Onemogućeno"
       ],
-      "Not synced": [
-        "Nije sinkronizirano"
-      ],
       "Syncing": [
         ""
+      ],
+      "Not synced": [
+        "Nije sinkronizirano"
       ]
     },
     "Upgrade notice": {
@@ -5962,157 +5851,6 @@
         "Puni prikaz"
       ]
     },
-    "Onboarding Proton": {
-      "This is what people will see when you send them an email, invite them to an event, or share a file with them.": [
-        "Ovo će ljudi vidjeti kada im pošaljete e-poštu, pozovete ih na događaj ili podijelite datoteku s njima."
-      ],
-      "Choose a display name": [
-        "Odaberite zaslonsko ime"
-      ],
-      "Select a theme": [
-        "Odaberi temu"
-      ],
-      "You can change this anytime in your settings.": [
-        "Možete promijeniti bilo kada u vašim postavkama."
-      ],
-      "Discover all Proton services": [
-        "Otkrijte sve Proton usluge"
-      ],
-      "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
-        "Koristite birač aplikacija u gornjem lijevom kutu za pristup ostalim Proton uslugama, uključujući VPN, Calendar i Drive."
-      ],
-      "Welcome to Proton": [
-        "Dobro došli u Proton"
-      ],
-      "Our mission is to build an internet where you are in control of your data and your privacy. We have recently updated Proton - welcome to the secure internet.": [
-        "Naša je misija izgraditi internet na kojem ćete kontrolirati svoje podatke i svoju privatnost. Nedavno smo ažurirali Proton - dobrodošli na sigurni internet."
-      ],
-      "Set up your organization": [
-        "Postavite vašu organizaciju"
-      ],
-      "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
-        "Postavite vašu organizaciju, povežite naziv domene i stvorite račune kako biste osigurali zaštitu svih članova vaše organizacije."
-      ]
-    },
-    "Autoresponse": {
-      "I'm out of the office with limited access to my email.": [
-        "Ja sam izvan ureda s ograničenim pristupom mojoj e-pošti."
-      ]
-    },
-    "Error notification in the bug report modal when the user upload file": {
-      "No image selected": [
-        "Nije odabrana nijedna slika"
-      ]
-    },
-    "Bug category": {
-      "Sign in problem": [
-        "Problem s prijavom"
-      ],
-      "Sign up problem": [
-        "Problem s registracijom"
-      ],
-      "Payments problem": [
-        "Problem s naplatom"
-      ],
-      "Custom domain problem": [
-        "Problem s prilagođenim domenama"
-      ],
-      "Bridge problem": [
-        "Problem s Bridgeom"
-      ],
-      "Import / export problem": [
-        "Problem s uvozom/izvozom"
-      ],
-      "Connection problem": [
-        "Problem s vezom"
-      ],
-      "Slow speed problem": [
-        "Problem s sporom brzinom"
-      ],
-      "Calendar problem": [
-        "Problem s Calendarom"
-      ],
-      "Contacts problem": [
-        "Problem s Contactsima"
-      ],
-      "Drive problem": [
-        "Problem s Driveom"
-      ],
-      "Mail problem": [
-        "Problem s e-poštom"
-      ],
-      "VPN problem": [
-        "Problem s VPN-om"
-      ],
-      "Feature request": [
-        "Predložite novu značajku"
-      ],
-      "Other": [
-        "Ostalo"
-      ],
-      "Signup problem": [
-        "Problem s registracijom"
-      ],
-      "Installation problem": [
-        "Problem s instalacijom"
-      ],
-      "Update problem": [
-        "Problem s nadogradnjom"
-      ],
-      "Application problem": [
-        "Problem s aplikacijom"
-      ],
-      "Speed problem": [
-        "Problem s brzinom"
-      ],
-      "Manual setup problem": [
-        "Problem s ručnim postavljanjem"
-      ],
-      "Website access problem": [
-        "Problem s pristupom web stanici"
-      ],
-      "Streaming problem": [
-        "Problem s streamingom"
-      ]
-    },
-    "Group": {
-      "Account": [
-        "Korisnički račun"
-      ],
-      "Apps": [
-        "Aplikacije"
-      ],
-      "Network": [
-        "Mreža"
-      ],
-      "Services": [
-        "Usluge"
-      ],
-      "Other category": [
-        "Ostale kategorije"
-      ]
-    },
-    "Action to select a title for the bug report modal": {
-      "Select": [
-        "Odaberi"
-      ]
-    },
-    "Label, make it short please": {
-      "Attach screenshot(s)": [
-        "Dodajte snimku(e) zaslona"
-      ]
-    },
-    "Apps dropdown": {
-      "Proton applications": [
-        "Proton aplikacije"
-      ],
-      "Go to ${ title }": [
-        "Idi na ${ title }"
-      ],
-      "Go to ${ vpnName }": [
-        "Idi na ${ vpnName }"
-      ]
-    },
     "Select files": {
       "Upload additional private keys": [
         ""
@@ -6232,6 +5970,558 @@
       ],
       "Compatibility": [
         "Kompatibilnost"
+      ]
+    },
+    "Label for adding a new custom domain": {
+      "Add a domain that you own to your ProtonMail account.": [
+        "Dodajte domenu koju posjedujete na vaš ProtonMail račun."
+      ]
+    },
+    "Domain modal": {
+      "'www' subdomains are typically not used for email. Are you sure you want to use this domain value?": [
+        "Poddomene 'www' obično se ne koriste za e-poštu. Jeste li sigurni da želite koristiti ovu domenu?"
+      ]
+    },
+    "Info for domain modal": {
+      "For security reasons, we need to verify that you are the owner of ${ domainName }. Please add the following DNS TXT record to your domain. This can typically be done in the control panel of your domain name registrar.": [
+        "Iz sigurnosnih razloga moramo potvrditi da ste vlasnik ${ domainName } domene. Dodajte sljedeći DNS TXT zapis za svoju domenu. To se obično može obaviti na upravljačkoj ploči registrara domene."
+      ],
+      "Add a new user to your organization and create an address for it.": [
+        "Dodajte novog korisnika u svoju organizaciju i stvorite adresu za njega."
+      ],
+      "Add a new address for any user of your organization.": [
+        "Dodajte novu adresu za bilo kojeg korisnika vaše organizacije."
+      ]
+    },
+    "Warning for domain modal": {
+      "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
+        "Nakon uspješne provjere, ne uklanjajte ovaj TXT zapis jer je potreban za potvrdu da i dalje posjedujete domenu."
+      ],
+      "It can take up to a day for DNS changes to update.": [
+        "Može potrajati do jedan dan da se DNS promjene ažuriraju."
+      ]
+    },
+    "Label for domain modal": {
+      "Please add the following TXT record:": [
+        "Dodajte sljedeći TXT zapis:"
+      ]
+    },
+    "Header for domain modal": {
+      "Type": [
+        "Vrsta"
+      ],
+      "Host name": [
+        "Naziv računala"
+      ],
+      "Value / Data / Points to": [
+        "Vrijednost / Podaci / Ukazuje na"
+      ],
+      "Value / Data": [
+        "Vrijednost / Podaci"
+      ],
+      "Priority": [
+        "Prioritet"
+      ]
+    },
+    "Tab in domain modal": {
+      "Addresses": [
+        "Adrese"
+      ]
+    },
+    "Label in domain modal": {
+      "Domain": [
+        "Domena"
+      ],
+      "Verify": [
+        "Potvrdi"
+      ],
+      "Addresses": [
+        "Adrese"
+      ]
+    },
+    "Domain label": {
+      "Verified": [
+        "Potvrđeno"
+      ]
+    },
+    "Badge for domain": {
+      "Missing keys": [
+        "Nedostaju ključevi"
+      ],
+      "Enabled": [
+        "Omogućeno"
+      ],
+      "Disabled": [
+        "Onemogućeno"
+      ]
+    },
+    "Title header for addresses domain table": {
+      "Address": [
+        "Adresa"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "Catch-All": [
+        "Dohvati-sve"
+      ]
+    },
+    "Success message": {
+      "Domain deleted": [
+        "Domena je izbrisana"
+      ],
+      "Sessions revoked": [
+        "Sesije su opozvane"
+      ],
+      "User deleted": [
+        "Korisnik je izbrisan"
+      ]
+    },
+    "Header for addresses table": {
+      "Domain": [
+        "Domena"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "Actions": [
+        "Radnje"
+      ],
+      "Address": [
+        "Adresa"
+      ],
+      "Username": [
+        "Korisničko ime"
+      ]
+    },
+    "Message": {
+      "Set up a custom domain email address (e.g., you@yourcompany.com). It only takes a few minutes, and our wizard will guide you through the process.": [
+        "Postavite adresu e-pošte s prilagođene domene (npr. vi@vasatvrtka.hr). Potrebno je samo nekoliko minuta, a naš čarobnjak će vas voditi kroz postupak."
+      ],
+      "Upgrade to any paid plan to use custom domains and unlock premium features": [
+        ""
+      ],
+      "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to use a catch-all address and unlock premium features": [
+        ""
+      ],
+      "Are you sure you want to disable two-factor authentication?": [
+        "Jeste li sigurni da želite onemogućiti provjeru autentičnosti u dva koraka?"
+      ]
+    },
+    "Onboarding Proton": {
+      "This is what people will see when you send them an email, invite them to an event, or share a file with them.": [
+        "Ovo će ljudi vidjeti kada im pošaljete e-poštu, pozovete ih na događaj ili podijelite datoteku s njima."
+      ],
+      "Choose a display name": [
+        "Odaberite zaslonsko ime"
+      ],
+      "Select a theme": [
+        "Odaberi temu"
+      ],
+      "You can change this anytime in your settings.": [
+        "Možete promijeniti bilo kada u vašim postavkama."
+      ],
+      "Discover all Proton services": [
+        "Otkrijte sve Proton usluge"
+      ],
+      "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
+        "Koristite birač aplikacija u gornjem lijevom kutu za pristup ostalim Proton uslugama, uključujući VPN, Calendar i Drive."
+      ],
+      "Welcome to Proton": [
+        "Dobro došli u Proton"
+      ],
+      "Our mission is to build an internet where you are in control of your data and your privacy. We have recently updated Proton - welcome to the secure internet.": [
+        "Naša je misija izgraditi internet na kojem ćete kontrolirati svoje podatke i svoju privatnost. Nedavno smo ažurirali Proton - dobrodošli na sigurni internet."
+      ],
+      "Set up your organization": [
+        "Postavite vašu organizaciju"
+      ],
+      "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
+        "Postavite vašu organizaciju, povežite naziv domene i stvorite račune kako biste osigurali zaštitu svih članova vaše organizacije."
+      ]
+    },
+    "Step in filter modal": {
+      "Name": [
+        "Naziv"
+      ],
+      "Conditions": [
+        "Uvjeti"
+      ],
+      "Actions": [
+        "Radnje"
+      ],
+      "Preview": [
+        "Pregled"
+      ],
+      "Sieve editor": [
+        "Sieve urednik"
+      ]
+    },
+    "Option group": {
+      "Custom folders": [
+        "Prilagođene mape"
+      ],
+      "Move to...": [
+        "Premjesti u..."
+      ],
+      "Default folders": [
+        "Zadane mape"
+      ]
+    },
+    "Filter preview": {
+      "read": [
+        "pročitano"
+      ],
+      "starred": [
+        "označeno zvijezdicom"
+      ]
+    },
+    "Filter notification": {
+      "Filter ${ Filter.Name } updated": [
+        "Filtar ${ Filter.Name } ažuriran"
+      ],
+      "${ Label.Name } updated": [
+        "${ Label.Name } ažurirano"
+      ]
+    },
+    "Filter modal type": {
+      "Select…": [
+        "Odaberi…"
+      ],
+      "The subject": [
+        "Predmet"
+      ],
+      "The sender": [
+        "Pošiljatelj"
+      ],
+      "The recipient": [
+        "Primatelj"
+      ],
+      "The attachment": [
+        "Privitci"
+      ]
+    },
+    "Condition for custom filter": {
+      "contains": [
+        "sadrži"
+      ],
+      "is exactly": [
+        "je točno"
+      ],
+      "begins with": [
+        "počinje sa"
+      ],
+      "ends with": [
+        "završava s"
+      ],
+      "matches": [
+        "odgovara"
+      ],
+      "does not contain": [
+        "ne sadrži"
+      ],
+      "is not": [
+        "nije"
+      ],
+      "does not begin with": [
+        "ne počinje sa"
+      ],
+      "does not end with": [
+        "ne završava sa"
+      ],
+      "does not match": [
+        "ne odgovara"
+      ]
+    },
+    "Filter modal operators": {
+      "All conditions must be fulfilled (AND)": [
+        "Jedan uvjet mora biti ispunjen (I)"
+      ],
+      "One condition must be fulfilled (OR)": [
+        "Jedan uvjet mora biti ispunjen (ILI)"
+      ]
+    },
+    "Filter Actions": {
+      "Select a folder": [
+        "Odaberite mapu"
+      ],
+      "Archive": [
+        "Arhiva"
+      ],
+      "Inbox": [
+        "Pristigla pošta"
+      ],
+      "Spam": [
+        "Neželjena pošta"
+      ],
+      "Trash": [
+        "Otpad"
+      ]
+    },
+    "Success notification": {
+      "Status updated": [
+        "Status je ažuriran"
+      ],
+      "Filter removed": [
+        "Filtar je uklonjen"
+      ],
+      "${ label.Name } removed": [
+        "${ label.Name } uklonjeno"
+      ],
+      "Address deleted": [
+        "Adresa je uklonjena"
+      ],
+      "Address enabled": [
+        "Adresa je omogućena"
+      ],
+      "Address disabled": [
+        "Adresa je onemogućena"
+      ]
+    },
+    "Settings/filters": {
+      "Filters": [
+        "Filtri"
+      ]
+    },
+    "Settings/filters - table": {
+      "Order": [
+        "Redoslijed"
+      ],
+      "Name": [
+        "Naziv"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "Action": [
+        "Radnja"
+      ]
+    },
+    "FilterSettings": {
+      "Add a custom filter to automatically perform certain actions, like labeling or archiving messages.": [
+        "Dodajte prilagođeni filtar za automatsko izvršavanje određenih radnji, poput označavanja ili arhiviranja poruka."
+      ],
+      "Apply sender-specific spam rules. Messages from addresses or domains on the Allow List always go to your Inbox while messages from addresses or domains on the Block List always go to Spam. Marking a message as spam adds its address to the Block List. Marking a message as not spam adds it to the Allow List.": [
+        "Ovdje se može primijeniti pravila neželjene pošte za neželjene pošiljatelje. Poruke s adresa ili domena iz popisa dopuštenih adresa uvijek ide u pristiglu poštu, dok poruke s adresa ili domena iz popisa nedopuštenih uvijek idu u neželjenu poštu. Označavanje poruke kao neželjene poruke dodaje adresu na popis nedopuštenih. Označavanje poruke kao željene poruke dodaje adresu na popis dopuštenih."
+      ],
+      "Search in Allow List and Block List": [
+        "Pretraga popisa dopuštenih i nedopuštenih"
+      ]
+    },
+    "Spam notification": {
+      "${ domain } updated": [
+        "${ domain } ažurirano"
+      ],
+      "${ domain } added": [
+        "${ domain } dodano"
+      ],
+      "${ email } updated": [
+        "${ email } ažurirano"
+      ],
+      "${ email } added": [
+        "${ email } dodano"
+      ]
+    },
+    "Spam filter moved to blacklist": {
+      "${ Domain } moved to Block List": [
+        "${ Domain } premješteno u popis nedopuštenih"
+      ],
+      "${ Email } moved to Block List": [
+        "${ Email } premješteno u popis nedopuštenih"
+      ]
+    },
+    "Spam filter moved to whitelist": {
+      "${ Domain } moved to Allow List": [
+        "${ Domain } premješteno u popis dopuštenih"
+      ],
+      "${ Email } moved to Allow List": [
+        "${ Email } premješteno u popis dopuštenih"
+      ]
+    },
+    "Moved to black/whitelist": {
+      "${ Domain } removed": [
+        "${ Domain } izbrisano"
+      ],
+      "${ Email } removed": [
+        "${ Email } izbrisano"
+      ]
+    },
+    "Error notification in the bug report modal when the user upload file": {
+      "No image selected": [
+        "Nije odabrana nijedna slika"
+      ]
+    },
+    "Bug category": {
+      "Sign in problem": [
+        "Problem s prijavom"
+      ],
+      "Sign up problem": [
+        "Problem s registracijom"
+      ],
+      "Payments problem": [
+        "Problem s naplatom"
+      ],
+      "Custom domain problem": [
+        "Problem s prilagođenim domenama"
+      ],
+      "Bridge problem": [
+        "Problem s Bridgeom"
+      ],
+      "Import / export problem": [
+        "Problem s uvozom/izvozom"
+      ],
+      "Connection problem": [
+        "Problem s vezom"
+      ],
+      "Slow speed problem": [
+        "Problem s sporom brzinom"
+      ],
+      "Calendar problem": [
+        "Problem s Calendarom"
+      ],
+      "Contacts problem": [
+        "Problem s Contactsima"
+      ],
+      "Drive problem": [
+        "Problem s Driveom"
+      ],
+      "Mail problem": [
+        "Problem s e-poštom"
+      ],
+      "VPN problem": [
+        "Problem s VPN-om"
+      ],
+      "Feature request": [
+        "Predložite novu značajku"
+      ],
+      "Other": [
+        "Ostalo"
+      ],
+      "Signup problem": [
+        "Problem s registracijom"
+      ],
+      "Installation problem": [
+        "Problem s instalacijom"
+      ],
+      "Update problem": [
+        "Problem s nadogradnjom"
+      ],
+      "Application problem": [
+        "Problem s aplikacijom"
+      ],
+      "Speed problem": [
+        "Problem s brzinom"
+      ],
+      "Manual setup problem": [
+        "Problem s ručnim postavljanjem"
+      ],
+      "Website access problem": [
+        "Problem s pristupom web stanici"
+      ],
+      "Streaming problem": [
+        "Problem s streamingom"
+      ]
+    },
+    "Group": {
+      "Account": [
+        "Korisnički račun"
+      ],
+      "Apps": [
+        "Aplikacije"
+      ],
+      "Network": [
+        "Mreža"
+      ],
+      "Services": [
+        "Usluge"
+      ],
+      "Other category": [
+        "Ostale kategorije"
+      ]
+    },
+    "Action to select a title for the bug report modal": {
+      "Select": [
+        "Odaberi"
+      ]
+    },
+    "Label, make it short please": {
+      "Attach screenshot(s)": [
+        "Dodajte snimku(e) zaslona"
+      ]
+    },
+    "New Label form": {
+      "Color": [
+        "Boja"
+      ],
+      "Folder name": [
+        "Naziv mape"
+      ],
+      "Label name": [
+        "Naziv oznake"
+      ]
+    },
+    "label/folder notification": {
+      "${ Label.Name } created": [
+        "${ Label.Name } stvoreno"
+      ],
+      "${ label.Name } updated": [
+        "${ label.Name } ažurirano"
+      ],
+      "Preference saved": [
+        "Postavke su spremljene"
+      ]
+    },
+    "Label/folder modal": {
+      "Create folder": [
+        "Stvori mapu"
+      ],
+      "Create label": [
+        "Stvori oznaku"
+      ],
+      "Edit folder": [
+        "Uredi mapu"
+      ],
+      "Edit label": [
+        "Uredi oznaku"
+      ]
+    },
+    "Success message after sorting folders": {
+      "Folders sorted": [
+        "Mape su sortirane"
+      ]
+    },
+    "Info - folder colouring feature": {
+      "When enabled, sub-folders inherit the color of the parent folder.": [
+        "Kada je omogućeno, podmape će naslijediti boju od roditeljskih mapa."
+      ]
+    },
+    "Settings/labels": {
+      "Labels/Folders": [
+        "Oznake/Mape"
+      ]
+    },
+    "Settings/labels - table": {
+      "Labels": [
+        "Oznake"
+      ],
+      "Actions": [
+        "Radnje"
+      ]
+    },
+    "Success message after sorting labels": {
+      "Labels sorted": [
+        "Oznake su sortirane"
+      ]
+    },
+    "Apps dropdown": {
+      "Proton applications": [
+        "Proton aplikacije"
+      ],
+      "Go to ${ title }": [
+        "Idi na ${ title }"
+      ],
+      "Go to ${ vpnName }": [
+        "Idi na ${ vpnName }"
       ]
     },
     "Suffix": {
@@ -6778,6 +7068,20 @@
         "Nova verzija ${ appName } je dostupna. ${ reloadButton }."
       ]
     },
+    "Option delay send seconds": {
+      "0 seconds": [
+        "0 sekundi"
+      ],
+      "5 seconds": [
+        "5 sekundi"
+      ],
+      "10 seconds": [
+        "10 sekundi"
+      ],
+      "20 seconds": [
+        "20 sekundi"
+      ]
+    },
     "Label for news": {
       "Proton company announcements": [
         "Proton najave tvrtke"
@@ -6824,6 +7128,59 @@
       ],
       "Recovery phrase": [
         ""
+      ]
+    },
+    "Address status": {
+      "Default": [
+        "Zadano"
+      ],
+      "Active": [
+        "Aktivno"
+      ],
+      "Disabled": [
+        "Onemogućeno"
+      ],
+      "Orphan": [
+        "Siroče"
+      ],
+      "Missing keys": [
+        "Nedostaju ključevi"
+      ]
+    },
+    "Address action": {
+      "Enable": [
+        "Omogući"
+      ],
+      "Disable": [
+        "Onemogući"
+      ],
+      "Generate missing keys": [
+        "Generiraj ključeve koji nedostaju"
+      ],
+      "Delete": [
+        "Izbriši"
+      ]
+    },
+    "Bridge version load failed": {
+      "Failed to find latest version": [
+        "Neuspješno pronalaženje najnovije verzije"
+      ]
+    },
+    "OS compatibility": {
+      ".exe (64-bit)": [
+        ".exe (64-bit)"
+      ],
+      ".dmg (10.12 or later)": [
+        ".dmg (10.12 ili kasnije)"
+      ],
+      ".deb (for Debian/Ubuntu)": [
+        ".deb (za Debian/Ubuntu)"
+      ],
+      ".rpm (for Fedora/openSUSE)": [
+        ".rpm (za Fedora/openSUSE)"
+      ],
+      "PKGBUILD (for other distributions)": [
+        "PKGBUILD (za druge distribucije)"
       ]
     },
     "Badge for user sessions table": {
@@ -6986,26 +7343,6 @@
         "Bitcoin"
       ]
     },
-    "Tooltip prompt to trust keys": {
-      "When receiving an email from another ProtonMail user who does not have trusted keys in your contacts, a banner will ask if you want to enable trusted keys.": [
-        "Kad primate e-poštu od drugog korisnika ProtonMaila koji u vašim kontaktima nema pouzdane ključeve, natpis će vas pitati želite li omogućiti pouzdane ključeve."
-      ]
-    },
-    "Tooltip sign external messages": {
-      "Automatically sign all your outgoing messages so users can verify the authenticity of your messages. This is done in combination with the default PGP settings which can be configured below.": [
-        "Automatski potpišite sve svoje odlazne poruke kako bi korisnici mogli provjeriti autentičnost vaših poruka. To se radi u kombinaciji sa zadanim PGP postavkama koje su postavljene ispod."
-      ]
-    },
-    "Tooltip automatically attach public key": {
-      "This automatically adds your public key to each message you send. Recipients can use this to verify the authenticity of your messages and send encrypted messages to you.": [
-        "Ovo automatski dodaje vaš javni ključ svakoj poruci koju šaljete. Primatelji mogu koristiti ovo za provjeru autentičnosti vaših poruka i slanje šifriranih poruka."
-      ]
-    },
-    "Tooltip default pgp scheme": {
-      "Select the default PGP settings used to sign or encrypt messages with non-ProtonMail PGP users. Note that Inline PGP forces plain text messages. Learn more": [
-        "Odaberite zadane PGP postavke koje se koriste za potpisivanje ili šifriranje poruka s PGP korisnicima koji ne koriste ProtonMail. Imajte na umu da Inline PGP nameće obične tekstualne poruke. Saznajte više"
-      ]
-    },
     "Invoice type display as badge": {
       "Other": [
         "Ostalo"
@@ -7068,298 +7405,6 @@
     "Title for PDF file": {
       "ProtonMail invoice": [
         "ProtonMail faktura"
-      ]
-    },
-    "Step in filter modal": {
-      "Name": [
-        "Naziv"
-      ],
-      "Conditions": [
-        "Uvjeti"
-      ],
-      "Actions": [
-        "Radnje"
-      ],
-      "Preview": [
-        "Pregled"
-      ],
-      "Sieve editor": [
-        "Sieve urednik"
-      ]
-    },
-    "Option group": {
-      "Custom folders": [
-        "Prilagođene mape"
-      ],
-      "Move to...": [
-        "Premjesti u..."
-      ],
-      "Default folders": [
-        "Zadane mape"
-      ]
-    },
-    "Filter preview": {
-      "read": [
-        "pročitano"
-      ],
-      "starred": [
-        "označeno zvijezdicom"
-      ]
-    },
-    "Filter notification": {
-      "Filter ${ Filter.Name } updated": [
-        "Filtar ${ Filter.Name } ažuriran"
-      ],
-      "${ Label.Name } updated": [
-        "${ Label.Name } ažurirano"
-      ]
-    },
-    "Filter modal type": {
-      "Select…": [
-        "Odaberi…"
-      ],
-      "The subject": [
-        "Predmet"
-      ],
-      "The sender": [
-        "Pošiljatelj"
-      ],
-      "The recipient": [
-        "Primatelj"
-      ],
-      "The attachment": [
-        "Privitci"
-      ]
-    },
-    "Condition for custom filter": {
-      "contains": [
-        "sadrži"
-      ],
-      "is exactly": [
-        "je točno"
-      ],
-      "begins with": [
-        "počinje sa"
-      ],
-      "ends with": [
-        "završava s"
-      ],
-      "matches": [
-        "odgovara"
-      ],
-      "does not contain": [
-        "ne sadrži"
-      ],
-      "is not": [
-        "nije"
-      ],
-      "does not begin with": [
-        "ne počinje sa"
-      ],
-      "does not end with": [
-        "ne završava sa"
-      ],
-      "does not match": [
-        "ne odgovara"
-      ]
-    },
-    "Filter modal operators": {
-      "All conditions must be fulfilled (AND)": [
-        "Jedan uvjet mora biti ispunjen (I)"
-      ],
-      "One condition must be fulfilled (OR)": [
-        "Jedan uvjet mora biti ispunjen (ILI)"
-      ]
-    },
-    "Filter Actions": {
-      "Select a folder": [
-        "Odaberite mapu"
-      ],
-      "Archive": [
-        "Arhiva"
-      ],
-      "Inbox": [
-        "Pristigla pošta"
-      ],
-      "Spam": [
-        "Neželjena pošta"
-      ],
-      "Trash": [
-        "Otpad"
-      ]
-    },
-    "Success notification": {
-      "Status updated": [
-        "Status je ažuriran"
-      ],
-      "Filter removed": [
-        "Filtar je uklonjen"
-      ],
-      "${ label.Name } removed": [
-        "${ label.Name } uklonjeno"
-      ],
-      "Address deleted": [
-        "Adresa je uklonjena"
-      ],
-      "Address enabled": [
-        "Adresa je omogućena"
-      ],
-      "Address disabled": [
-        "Adresa je onemogućena"
-      ]
-    },
-    "Settings/filters": {
-      "Filters": [
-        "Filtri"
-      ]
-    },
-    "Settings/filters - table": {
-      "Order": [
-        "Redoslijed"
-      ],
-      "Name": [
-        "Naziv"
-      ],
-      "Status": [
-        "Status"
-      ],
-      "Action": [
-        "Radnja"
-      ]
-    },
-    "FilterSettings": {
-      "Add a custom filter to automatically perform certain actions, like labeling or archiving messages.": [
-        "Dodajte prilagođeni filtar za automatsko izvršavanje određenih radnji, poput označavanja ili arhiviranja poruka."
-      ],
-      "Apply sender-specific spam rules. Messages from addresses or domains on the Allow List always go to your Inbox while messages from addresses or domains on the Block List always go to Spam. Marking a message as spam adds its address to the Block List. Marking a message as not spam adds it to the Allow List.": [
-        "Ovdje se može primijeniti pravila neželjene pošte za neželjene pošiljatelje. Poruke s adresa ili domena iz popisa dopuštenih adresa uvijek ide u pristiglu poštu, dok poruke s adresa ili domena iz popisa nedopuštenih uvijek idu u neželjenu poštu. Označavanje poruke kao neželjene poruke dodaje adresu na popis nedopuštenih. Označavanje poruke kao željene poruke dodaje adresu na popis dopuštenih."
-      ],
-      "Search in Allow List and Block List": [
-        "Pretraga popisa dopuštenih i nedopuštenih"
-      ]
-    },
-    "Spam notification": {
-      "${ domain } updated": [
-        "${ domain } ažurirano"
-      ],
-      "${ domain } added": [
-        "${ domain } dodano"
-      ],
-      "${ email } updated": [
-        "${ email } ažurirano"
-      ],
-      "${ email } added": [
-        "${ email } dodano"
-      ]
-    },
-    "Spam filter moved to blacklist": {
-      "${ Domain } moved to Block List": [
-        "${ Domain } premješteno u popis nedopuštenih"
-      ],
-      "${ Email } moved to Block List": [
-        "${ Email } premješteno u popis nedopuštenih"
-      ]
-    },
-    "Spam filter moved to whitelist": {
-      "${ Domain } moved to Allow List": [
-        "${ Domain } premješteno u popis dopuštenih"
-      ],
-      "${ Email } moved to Allow List": [
-        "${ Email } premješteno u popis dopuštenih"
-      ]
-    },
-    "Moved to black/whitelist": {
-      "${ Domain } removed": [
-        "${ Domain } izbrisano"
-      ],
-      "${ Email } removed": [
-        "${ Email } izbrisano"
-      ]
-    },
-    "Delinquent modal title": {
-      "Overdue invoice": [
-        "Neplaćena faktura"
-      ]
-    },
-    "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
-      "Email": [
-        "E-pošta"
-      ],
-      "SMS": [
-        "SMS"
-      ],
-      "Manual": [
-        "Ručno"
-      ],
-      "No verification method available": [
-        "Nema dostupne metode za provjeru"
-      ]
-    },
-    "New Label form": {
-      "Color": [
-        "Boja"
-      ],
-      "Folder name": [
-        "Naziv mape"
-      ],
-      "Label name": [
-        "Naziv oznake"
-      ]
-    },
-    "label/folder notification": {
-      "${ Label.Name } created": [
-        "${ Label.Name } stvoreno"
-      ],
-      "${ label.Name } updated": [
-        "${ label.Name } ažurirano"
-      ],
-      "Preference saved": [
-        "Postavke su spremljene"
-      ]
-    },
-    "Label/folder modal": {
-      "Create folder": [
-        "Stvori mapu"
-      ],
-      "Create label": [
-        "Stvori oznaku"
-      ],
-      "Edit folder": [
-        "Uredi mapu"
-      ],
-      "Edit label": [
-        "Uredi oznaku"
-      ]
-    },
-    "Success message after sorting folders": {
-      "Folders sorted": [
-        "Mape su sortirane"
-      ]
-    },
-    "Info - folder colouring feature": {
-      "When enabled, sub-folders inherit the color of the parent folder.": [
-        "Kada je omogućeno, podmape će naslijediti boju od roditeljskih mapa."
-      ]
-    },
-    "Settings/labels": {
-      "Labels/Folders": [
-        "Oznake/Mape"
-      ]
-    },
-    "Settings/labels - table": {
-      "Labels": [
-        "Oznake"
-      ],
-      "Actions": [
-        "Radnje"
-      ]
-    },
-    "Success message after sorting labels": {
-      "Labels sorted": [
-        "Oznake su sortirane"
       ]
     },
     "Restore administrator panel": {
@@ -7443,147 +7488,26 @@
         "privatno"
       ]
     },
-    "Address status": {
-      "Default": [
-        "Zadano"
-      ],
-      "Active": [
-        "Aktivno"
-      ],
-      "Disabled": [
-        "Onemogućeno"
-      ],
-      "Orphan": [
-        "Siroče"
-      ],
-      "Missing keys": [
-        "Nedostaju ključevi"
+    "Delinquent modal title": {
+      "Overdue invoice": [
+        "Neplaćena faktura"
       ]
     },
-    "Address action": {
-      "Enable": [
-        "Omogući"
+    "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
       ],
-      "Disable": [
-        "Onemogući"
+      "Email": [
+        "E-pošta"
       ],
-      "Generate missing keys": [
-        "Generiraj ključeve koji nedostaju"
+      "SMS": [
+        "SMS"
       ],
-      "Delete": [
-        "Izbriši"
-      ]
-    },
-    "Option delay send seconds": {
-      "0 seconds": [
-        "0 sekundi"
+      "Manual": [
+        "Ručno"
       ],
-      "5 seconds": [
-        "5 sekundi"
-      ],
-      "10 seconds": [
-        "10 sekundi"
-      ],
-      "20 seconds": [
-        "20 sekundi"
-      ]
-    },
-    "Bridge version load failed": {
-      "Failed to find latest version": [
-        "Neuspješno pronalaženje najnovije verzije"
-      ]
-    },
-    "OS compatibility": {
-      ".exe (64-bit)": [
-        ".exe (64-bit)"
-      ],
-      ".dmg (10.12 or later)": [
-        ".dmg (10.12 ili kasnije)"
-      ],
-      ".deb (for Debian/Ubuntu)": [
-        ".deb (za Debian/Ubuntu)"
-      ],
-      ".rpm (for Fedora/openSUSE)": [
-        ".rpm (za Fedora/openSUSE)"
-      ],
-      "PKGBUILD (for other distributions)": [
-        "PKGBUILD (za druge distribucije)"
-      ]
-    },
-    "Import contact. Contact identifier": {
-      "unknown": [
-        "nepoznato"
-      ]
-    },
-    "Error importing contact": {
-      "vCard versions < 3.0 not supported": [
-        "vCard verzija < 3.0 nije podržana"
-      ],
-      "Encryption failed": [
-        "Neuspješno šifriranje"
-      ]
-    },
-    "Error importing calendar": {
-      "An unexpected error occurred. Import must be restarted.": [
-        "Došlo je do neočekivane pogreške. Uvoz se mora ponovo pokrenuti."
-      ],
-      "An error occurred uploading your file. No file has been selected.": [
-        "Došlo je do pogreške prilikom učitavanja vaše datoteke. Nije odabrana nijedna datoteka."
-      ],
-      "An error occurred uploading your file ${ formattedFilename }. Only ICS file formats are allowed.": [
-        "Došlo je do pogreške prilikom učitavanja vaše datoteke ${ formattedFilename }. Samo datoteke ICS formata su dopuštene."
-      ],
-      "Your file ${ formattedFilename } is empty.": [
-        "Vaša datoteka ${ formattedFilename } je prazna."
-      ],
-      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
-        "Došlo je do pogreške prilikom učitavanja vaše datoteke ${ formattedFilename }. Maksimalna veličina datoteke je ${ MAX_IMPORT_FILE_SIZE_STRING }."
-      ],
-      "Your file ${ formattedFilename } is not a calendar.": [
-        "Vaša datoteka ${ formattedFilename } nije kalendar."
-      ],
-      "${ CALENDAR_APP_NAME } only supports importing calendars with iCal version 2.0.": [
-        "${ CALENDAR_APP_NAME } samo podržava uvoz iCal verzija 2.0 kalendara."
-      ],
-      "Your file ${ formattedFilename } is an invitation and cannot be imported.": [
-        "Vaša datoteka ${ formattedFilename } je pozivnica i ne može biti uvezena."
-      ],
-      "Your file ${ formattedFilename } has no events to be imported.": [
-        "Vaša datoteka ${ formattedFilename } nema događaje za uvoz."
-      ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } events.": [
-        "Vaša datoteka ${ formattedFilename } sadrži više od ${ MAX_IMPORT_EVENTS_STRING } događaja."
-      ],
-      "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "Došlo je do pogreške prilikom čitanja vaše datoteke ${ formattedFilename }. Datoteka nema pravi format."
-      ]
-    },
-    "Error importing contacts": {
-      "An error occurred uploading your file. No file has been selected.": [
-        "Došlo je do pogreške prilikom učitavanja vaše datoteke. Nije odabrana nijedna datoteka."
-      ],
-      "An error occurred uploading your file ${ formattedFilename }. No .csv or .vcf file selected": [
-        "Došlo je do pogreške prilikom učitavanja vaše datoteke ${ formattedFilename }. Nije odabrana .csv ili .vcf datoteka"
-      ],
-      "Your file ${ formattedFilename } is empty.": [
-        "Vaša datoteka ${ formattedFilename } je prazna."
-      ],
-      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
-        "Došlo je do pogreške prilikom učitavanja vaše datoteke ${ formattedFilename }. Maksimalna veličina datoteke je ${ MAX_IMPORT_FILE_SIZE_STRING }."
-      ],
-      "Your file ${ formattedFilename } has no contacts to be imported.": [
-        "Vaša datoteka ${ formattedFilename } nema kontakte za uvoz."
-      ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
-        "Vaša datoteka ${ formattedFilename } sadrži više od ${ MAX_IMPORT_CONTACTS_STRING } kontakata."
-      ],
-      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "Došlo je do pogreške prilikom čitanja vaše datoteke ${ formattedFilename }. Datoteka nema pravi format."
-      ]
-    },
-    "Default display name vcard": {
-      "Unknown": [
-        "Nepoznato"
+      "No verification method available": [
+        "Nema dostupne metode za provjeru"
       ]
     },
     "Contact field label": {
@@ -7719,6 +7643,82 @@
       ],
       "GB": [
         "GB"
+      ]
+    },
+    "Import contact. Contact identifier": {
+      "unknown": [
+        "nepoznato"
+      ]
+    },
+    "Error importing contact": {
+      "vCard versions < 3.0 not supported": [
+        "vCard verzija < 3.0 nije podržana"
+      ],
+      "Encryption failed": [
+        "Neuspješno šifriranje"
+      ]
+    },
+    "Error importing calendar": {
+      "An unexpected error occurred. Import must be restarted.": [
+        "Došlo je do neočekivane pogreške. Uvoz se mora ponovo pokrenuti."
+      ],
+      "An error occurred uploading your file. No file has been selected.": [
+        "Došlo je do pogreške prilikom učitavanja vaše datoteke. Nije odabrana nijedna datoteka."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Only ICS file formats are allowed.": [
+        "Došlo je do pogreške prilikom učitavanja vaše datoteke ${ formattedFilename }. Samo datoteke ICS formata su dopuštene."
+      ],
+      "Your file ${ formattedFilename } is empty.": [
+        "Vaša datoteka ${ formattedFilename } je prazna."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
+        "Došlo je do pogreške prilikom učitavanja vaše datoteke ${ formattedFilename }. Maksimalna veličina datoteke je ${ MAX_IMPORT_FILE_SIZE_STRING }."
+      ],
+      "Your file ${ formattedFilename } is not a calendar.": [
+        "Vaša datoteka ${ formattedFilename } nije kalendar."
+      ],
+      "${ CALENDAR_APP_NAME } only supports importing calendars with iCal version 2.0.": [
+        "${ CALENDAR_APP_NAME } samo podržava uvoz iCal verzija 2.0 kalendara."
+      ],
+      "Your file ${ formattedFilename } is an invitation and cannot be imported.": [
+        "Vaša datoteka ${ formattedFilename } je pozivnica i ne može biti uvezena."
+      ],
+      "Your file ${ formattedFilename } has no events to be imported.": [
+        "Vaša datoteka ${ formattedFilename } nema događaje za uvoz."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } events.": [
+        "Vaša datoteka ${ formattedFilename } sadrži više od ${ MAX_IMPORT_EVENTS_STRING } događaja."
+      ],
+      "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
+        "Došlo je do pogreške prilikom čitanja vaše datoteke ${ formattedFilename }. Datoteka nema pravi format."
+      ]
+    },
+    "Error importing contacts": {
+      "An error occurred uploading your file. No file has been selected.": [
+        "Došlo je do pogreške prilikom učitavanja vaše datoteke. Nije odabrana nijedna datoteka."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. No .csv or .vcf file selected": [
+        "Došlo je do pogreške prilikom učitavanja vaše datoteke ${ formattedFilename }. Nije odabrana .csv ili .vcf datoteka"
+      ],
+      "Your file ${ formattedFilename } is empty.": [
+        "Vaša datoteka ${ formattedFilename } je prazna."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
+        "Došlo je do pogreške prilikom učitavanja vaše datoteke ${ formattedFilename }. Maksimalna veličina datoteke je ${ MAX_IMPORT_FILE_SIZE_STRING }."
+      ],
+      "Your file ${ formattedFilename } has no contacts to be imported.": [
+        "Vaša datoteka ${ formattedFilename } nema kontakte za uvoz."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
+        "Vaša datoteka ${ formattedFilename } sadrži više od ${ MAX_IMPORT_CONTACTS_STRING } kontakata."
+      ],
+      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
+        "Došlo je do pogreške prilikom čitanja vaše datoteke ${ formattedFilename }. Datoteka nema pravi format."
+      ]
+    },
+    "Default display name vcard": {
+      "Unknown": [
+        "Nepoznato"
       ]
     },
     "Participant name": {
@@ -8249,6 +8249,12 @@
       "Unsupported event": [
         "Događaj nije podržan"
       ],
+      "Empty ICS file": [
+        ""
+      ],
+      "Unsupported calendar component": [
+        ""
+      ],
       "Invalid method": [
         "Nevažeća metoda"
       ]
@@ -8523,6 +8529,9 @@
       "VPN apps": [
         "VPN aplikacije"
       ],
+      "Calendars": [
+        "Kalendari"
+      ],
       "Users & addresses": [
         "Korisnici i adrese"
       ],
@@ -8534,9 +8543,6 @@
       ],
       "Multi-user support": [
         "Višekorisnička podrška"
-      ],
-      "Calendars": [
-        "Kalendari"
       ],
       "Account": [
         "Korisnički račun"
@@ -8557,6 +8563,20 @@
         "Nadogradite na ${ protonVpnName } ${ PLAN_NAMES[PLANS.VPNPLUS] } za povezivanje do ${ plusVpnConnections } uređaja na VPN odjednom"
       ]
     },
+    "Navigation": {
+      "Back to Mail": [
+        ""
+      ],
+      "Back to Calendar": [
+        "Natrag na Kalendar"
+      ],
+      "Back to Contacts": [
+        "Natrag na Kontakti"
+      ],
+      "Back to Drive": [
+        "Natrag na Drive"
+      ]
+    },
     "Email Unsubscribe Categories": {
       "${ allCategoriesExceptTheLastOne } and ${ lastCategory }": [
         "${ allCategoriesExceptTheLastOne } i ${ lastCategory }"
@@ -8571,20 +8591,6 @@
       ],
       "Which emails do you want to receive from Proton?": [
         "Koju e-poštu želite primati od Protona?"
-      ]
-    },
-    "Navigation": {
-      "Back to Mail": [
-        ""
-      ],
-      "Back to Calendar": [
-        "Natrag na Kalendar"
-      ],
-      "Back to Contacts": [
-        "Natrag na Kontakti"
-      ],
-      "Back to Drive": [
-        "Natrag na Drive"
       ]
     },
     "Signup label": {

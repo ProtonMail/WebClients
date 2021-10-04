@@ -59,12 +59,6 @@
       "Request timed out.": [
         "Zahtjev je istekao."
       ],
-      "Signature verification failed": [
-        "Potvrda potpisa je neuspješna"
-      ],
-      "Could not find address ${ email }.": [
-        "Ne mogu pronaći adresu ${ email }."
-      ],
       "Missing signature": [
         "Nedostaje potpis"
       ],
@@ -79,6 +73,12 @@
       ],
       "The key properties for ${ emailAddress } could not be extracted": [
         "Svojstva ključa za ${ emailAddress } nemogu se izdvojiti"
+      ],
+      "Signature verification failed": [
+        "Potvrda potpisa je neuspješna"
+      ],
+      "Could not find address ${ email }.": [
+        "Ne mogu pronaći adresu ${ email }."
       ],
       "Address primary private key not found": [
         "Primarni privatni ključ adrese nije pronađen"
@@ -101,17 +101,17 @@
       "Authentication error.": [
         "Pogreška autentikacije."
       ],
-      "Email address invalid": [
-        "Adresa e-pošte nije valjana"
-      ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "Preglednik koji koristite ne dopušta potpuno odobrenje plaćanja. Molimo koristite drugi preglednik ili se prijavite putem računala."
-      ],
       "The composer failed to load.": [
         "Neuspješno učitavanje prozora za novu poruku."
       ],
       "Please refresh the page.": [
         "Osvježite stranicu."
+      ],
+      "Email address invalid": [
+        "Adresa e-pošte nije valjana"
+      ],
+      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
+        "Preglednik koji koristite ne dopušta potpuno odobrenje plaćanja. Molimo koristite drugi preglednik ili se prijavite putem računala."
       ],
       "Incorrect mailbox password. Please try again": [
         "Pogrešna lozinka poštanskog pretinca. Pokušajte ponovno"
@@ -377,7 +377,7 @@
       "Your emails cannot be decrypted due to a recent password reset. If you remember your previous password, you can ${ reActivateKeyLink } in order to access your messages. ${ learnMoreLink }": [
         ""
       ],
-      "Your emails cannot be decrypted due to a recent password reset. ${ learnMoreLink }": [
+      "Your emails cannot be decrypted. This may be due to a password reset. ${ learnMoreLink }": [
         ""
       ],
       "Too many active filters. Please upgrade to a paid plan to activate more filters": [
@@ -556,29 +556,6 @@
       "No results found": [
         "Nema rezultata"
       ],
-      "Week": [
-        "Tjedan"
-      ],
-      "(${ memberCount } member)": [
-        "(${ memberCount } član)",
-        "(${ memberCount } člana)",
-        "(${ memberCount } članova)"
-      ],
-      "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Ova poveznica može biti homografski napad i ne može je otvoriti preglednik Internet Explorer i Edge. Ako ste sigurni da je poveznica legitimna, upotrijebite drugi preglednik da biste je otvorili."
-      ],
-      "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
-        "Ova poveznica može biti homografski napad. Potvrdite da je ovo poveznica koju želite posjetiti ili je nemojte otvarati."
-      ],
-      "You are about to open another browser tab and visit:": [
-        "Otvoriti će te još jednu karticu preglednika i posjetiti:"
-      ],
-      "Learn more": [
-        "Saznajte više"
-      ],
-      "Loading": [
-        "Učitavanje"
-      ],
       "Insert image": [
         "Umetni sliku"
       ],
@@ -654,6 +631,29 @@
       "Plain text": [
         "Običan tekst"
       ],
+      "Week": [
+        "Tjedan"
+      ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } član)",
+        "(${ memberCount } člana)",
+        "(${ memberCount } članova)"
+      ],
+      "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
+        "Ova poveznica može biti homografski napad i ne može je otvoriti preglednik Internet Explorer i Edge. Ako ste sigurni da je poveznica legitimna, upotrijebite drugi preglednik da biste je otvorili."
+      ],
+      "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
+        "Ova poveznica može biti homografski napad. Potvrdite da je ovo poveznica koju želite posjetiti ili je nemojte otvarati."
+      ],
+      "You are about to open another browser tab and visit:": [
+        "Otvoriti će te još jednu karticu preglednika i posjetiti:"
+      ],
+      "Learn more": [
+        "Saznajte više"
+      ],
+      "Loading": [
+        "Učitavanje"
+      ],
       "Drop the file here to upload": [
         "Ispustite datoteku ovdje za prijenos"
       ],
@@ -681,12 +681,6 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Ako ne pronađete e-poštu u pristigloj pošti, provjerite svoju mapu neželjene pošte."
       ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
-        "Pritisnite \"Zatraži novi kôd\" da biste novi potvrdni kôd poslali na ${ strong }. Ako je ova adresa e-pošte netočan, pritisnite \"Uredi\" da biste je ispravili."
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
-        "Pritisnite \"Zatraži novi kôd\" da biste novi potvrdni kôd poslali na ${ strong }. Ako je ovaj telefonski broj netočan, pritisnite \"Uredi\" da biste ga ispravili."
-      ],
       "To fight spam and abuse, please verify you are human.": [
         "U borbi protiv spama i zlouporabe, molimo potvrdite da ste čovjek."
       ],
@@ -698,6 +692,12 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Ako imate poteškoća s otvaranjem računa, zatražite pozivnicu i odgovorit ćemo vam u roku jednog radnog dana."
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
+        "Pritisnite \"Zatraži novi kôd\" da biste novi potvrdni kôd poslali na ${ strong }. Ako je ova adresa e-pošte netočan, pritisnite \"Uredi\" da biste je ispravili."
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
+        "Pritisnite \"Zatraži novi kôd\" da biste novi potvrdni kôd poslali na ${ strong }. Ako je ovaj telefonski broj netočan, pritisnite \"Uredi\" da biste ga ispravili."
       ],
       "No contacts added yet": [
         "Nema dodanih kontakata"
@@ -1792,11 +1792,6 @@
         "Pomoću mobilnog uređaja skenirajte ovaj QR kôd ili posjetite ${ link }."
       ]
     },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "Adresa e-pošte nije pronađena među korisničkim ID-ovima definiranim u ključu za slanje (${ keyUserIds })"
-      ]
-    },
     "Default display name vcard": {
       "Unknown": [
         "Nepoznato"
@@ -1841,6 +1836,11 @@
       ],
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
         "Došlo je do pogreške prilikom čitanja vaše datoteke ${ formattedFilename }. Datoteka nema pravi format."
+      ]
+    },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "Adresa e-pošte nije pronađena među korisničkim ID-ovima definiranim u ključu za slanje (${ keyUserIds })"
       ]
     },
     "Keyboard shortcut section name": {
@@ -2019,10 +2019,10 @@
       ]
     },
     "Calendar status": {
-      "Not synced": [
+      "Syncing": [
         ""
       ],
-      "Syncing": [
+      "Not synced": [
         ""
       ]
     },
@@ -2058,6 +2058,12 @@
       ],
       "Unsupported event": [
         "Događaj nije podržan"
+      ],
+      "Empty ICS file": [
+        ""
+      ],
+      "Unsupported calendar component": [
+        ""
       ],
       "Invalid method": [
         "Nevažeća metoda"
@@ -2695,38 +2701,8 @@
       "Close": [
         "Zatvori"
       ],
-      "More info: ${ safeTitle }": [
-        "Više informacija: ${ safeTitle }"
-      ],
-      "Confirm": [
-        "Potvrdi"
-      ],
       "Cancel": [
         "Poništi"
-      ],
-      "Submit": [
-        "Pošalji"
-      ],
-      "Close modal": [
-        "Zatvori skočni prozor"
-      ],
-      "Use “${ label }” setting": [
-        "Koristi “${ label }” postavku"
-      ],
-      "Remove": [
-        "Ukloni"
-      ],
-      "Next month": [
-        "Sljedeći mjesec"
-      ],
-      "Previous month": [
-        "Prethodni mjesec"
-      ],
-      "Load image": [
-        "Učitaj sliku"
-      ],
-      "Confirm opening of link ${ link }": [
-        "Potvrdite otvaranje poveznice ${ link }"
       ],
       "Save": [
         "Spremi"
@@ -2790,6 +2766,36 @@
       ],
       "Underline": [
         "Podvučeno"
+      ],
+      "More info: ${ safeTitle }": [
+        "Više informacija: ${ safeTitle }"
+      ],
+      "Confirm": [
+        "Potvrdi"
+      ],
+      "Submit": [
+        "Pošalji"
+      ],
+      "Close modal": [
+        "Zatvori skočni prozor"
+      ],
+      "Use “${ label }” setting": [
+        "Koristi “${ label }” postavku"
+      ],
+      "Remove": [
+        "Ukloni"
+      ],
+      "Next month": [
+        "Sljedeći mjesec"
+      ],
+      "Previous month": [
+        "Prethodni mjesec"
+      ],
+      "Load image": [
+        "Učitaj sliku"
+      ],
+      "Confirm opening of link ${ link }": [
+        "Potvrdite otvaranje poveznice ${ link }"
       ],
       "Go to panel ${ index }": [
         "Idi na ${ index } panel"
@@ -3575,11 +3581,11 @@
       "Open actions dropdown": [
         "Otvorite padajući izbornik radnji"
       ],
-      "Link confirmation": [
-        "Potvrda poveznice"
-      ],
       "Expand content": [
         "Proširi sadržaj"
+      ],
+      "Link confirmation": [
+        "Potvrda poveznice"
       ],
       "Keyboard Shortcuts": [
         "Tipkovni prečaci"
@@ -3601,9 +3607,6 @@
       ],
       "Invalid verification code": [
         "Nevažeći kôd za provjeru"
-      ],
-      "Request new code": [
-        "Zatraži novi kȏd"
       ],
       "Human verification": [
         "Ljudska provjera"
@@ -4088,6 +4091,138 @@
       ],
       "Welcome": [
         "Dobrodošli"
+      ]
+    },
+    "Placeholder": {
+      "Link": [
+        "Poveznica"
+      ],
+      "Fill in the URL link and text to test your link": [
+        "Unesite URL poveznicu i tekst kako biste testirali vezu"
+      ],
+      "Email address": [
+        "Adresa e-pošte"
+      ],
+      "Fill in the email address and text to test your link": [
+        "Unesite adresu e-pošte i tekst kako biste testirali vezu"
+      ],
+      "Phone number": [
+        "Broj telefona"
+      ],
+      "Fill in the phone number and text to test your link": [
+        "Unesite broj telefona i tekst kako biste testirali vezu"
+      ],
+      "Text": [
+        "Tekst"
+      ],
+      "E.g., ": [
+        "Npr. "
+      ],
+      "Mailbox password": [
+        "Lozinka sandučića e-pošte"
+      ],
+      "Start typing an email address": [
+        "Započnite pisati adresu e-pošte"
+      ],
+      "Image URL": [
+        "URL slike"
+      ],
+      "Search name, email or group": [
+        "Potražite naziv, e-poštu ili grupu"
+      ],
+      "Filter groups": [
+        "Filtrirajte grupe"
+      ],
+      "Search for name or email": [
+        "Pretraga po imenu ili adresi e-pošte"
+      ],
+      "Search for group name": [
+        "Pretraga po nazivu grupe"
+      ],
+      "Name": [
+        "Naziv"
+      ],
+      "OS name": [
+        "Naziv OS-a"
+      ],
+      "OS version": [
+        "Verzija OS-a"
+      ],
+      "Proton username": [
+        "Proton korisničko ime"
+      ],
+      "A way to contact you": [
+        "Način kako da vas kontaktiramo"
+      ],
+      "Please describe the problem and include any error messages": [
+        "Molimo opišite problem i pridružite sve poruke o pogreškama"
+      ],
+      "Browser name": [
+        "Naziv preglednika"
+      ],
+      "Browser version": [
+        "Verzija preglednika"
+      ],
+      "e.g. Julia Smith": [
+        "npr. Ana Horvat"
+      ],
+      "ZIP": [
+        "Poštanski broj"
+      ],
+      "Postal code": [
+        "Poštanski broj"
+      ],
+      "Gift code": [
+        "Darovni kôd"
+      ],
+      "Type text or keyword": [
+        "Unesite tekst ili ključnu riječ"
+      ],
+      "Subject": [
+        "Predmet"
+      ],
+      "Write your message": [
+        "Napišite vašu poruku"
+      ],
+      "Password": [
+        "Lozinka"
+      ],
+      "Confirm Password": [
+        "Potvrdi lozinku"
+      ],
+      "Hint": [
+        "Savjet"
+      ],
+      "Search Messages": [
+        ""
+      ],
+      "Start date": [
+        "Početni datum"
+      ],
+      "End date": [
+        "Krajnji datum"
+      ],
+      "Name or email address": [
+        "Naziv ili adresa e-pošte"
+      ],
+      "Search messages": [
+        "Pretraži poruke"
+      ],
+      "Filter folders": [
+        "Filtriraj mape"
+      ],
+      "Filter labels": [
+        "Filtriraj oznake"
+      ]
+    },
+    "Font Face Default": {
+      "Default": [
+        ""
+      ]
+    },
+    "Font Size Default": {
+      "Default": [
+        ""
       ]
     },
     "PGP key encryption warning": {
@@ -4621,128 +4756,6 @@
         "Također i arhivu"
       ]
     },
-    "Placeholder": {
-      "E.g., ": [
-        "Npr. "
-      ],
-      "Link": [
-        "Poveznica"
-      ],
-      "Fill in the URL link and text to test your link": [
-        "Unesite URL poveznicu i tekst kako biste testirali vezu"
-      ],
-      "Email address": [
-        "Adresa e-pošte"
-      ],
-      "Fill in the email address and text to test your link": [
-        "Unesite adresu e-pošte i tekst kako biste testirali vezu"
-      ],
-      "Phone number": [
-        "Broj telefona"
-      ],
-      "Fill in the phone number and text to test your link": [
-        "Unesite broj telefona i tekst kako biste testirali vezu"
-      ],
-      "Text": [
-        "Tekst"
-      ],
-      "Mailbox password": [
-        "Lozinka sandučića e-pošte"
-      ],
-      "Start typing an email address": [
-        "Započnite pisati adresu e-pošte"
-      ],
-      "Image URL": [
-        "URL slike"
-      ],
-      "Search name, email or group": [
-        "Potražite naziv, e-poštu ili grupu"
-      ],
-      "Filter groups": [
-        "Filtrirajte grupe"
-      ],
-      "Search for name or email": [
-        "Pretraga po imenu ili adresi e-pošte"
-      ],
-      "Search for group name": [
-        "Pretraga po nazivu grupe"
-      ],
-      "Name": [
-        "Naziv"
-      ],
-      "OS name": [
-        "Naziv OS-a"
-      ],
-      "OS version": [
-        "Verzija OS-a"
-      ],
-      "Proton username": [
-        "Proton korisničko ime"
-      ],
-      "A way to contact you": [
-        "Način kako da vas kontaktiramo"
-      ],
-      "Please describe the problem and include any error messages": [
-        "Molimo opišite problem i pridružite sve poruke o pogreškama"
-      ],
-      "Browser name": [
-        "Naziv preglednika"
-      ],
-      "Browser version": [
-        "Verzija preglednika"
-      ],
-      "e.g. Julia Smith": [
-        "npr. Ana Horvat"
-      ],
-      "ZIP": [
-        "Poštanski broj"
-      ],
-      "Postal code": [
-        "Poštanski broj"
-      ],
-      "Gift code": [
-        "Darovni kôd"
-      ],
-      "Type text or keyword": [
-        "Unesite tekst ili ključnu riječ"
-      ],
-      "Subject": [
-        "Predmet"
-      ],
-      "Write your message": [
-        "Napišite vašu poruku"
-      ],
-      "Password": [
-        "Lozinka"
-      ],
-      "Confirm Password": [
-        "Potvrdi lozinku"
-      ],
-      "Hint": [
-        "Savjet"
-      ],
-      "Search Messages": [
-        ""
-      ],
-      "Start date": [
-        "Početni datum"
-      ],
-      "End date": [
-        "Krajnji datum"
-      ],
-      "Name or email address": [
-        "Naziv ili adresa e-pošte"
-      ],
-      "Search messages": [
-        "Pretraži poruke"
-      ],
-      "Filter folders": [
-        "Filtriraj mape"
-      ],
-      "Filter labels": [
-        "Filtriraj oznake"
-      ]
-    },
     "Time unit": {
       "${ hours } hour": [
         "${ hours } sat",
@@ -4783,16 +4796,6 @@
         "Pronađen je ${ items.length } prijedlog. Za navigaciju koristite tipkovnicu.",
         "Pronađena su ${ items.length } prijedloga. Za navigaciju koristite tipkovnicu.",
         "Pronađeno je ${ items.length } prijedloga. Za navigaciju koristite tipkovnicu."
-      ]
-    },
-    "Font Face Default": {
-      "Default": [
-        ""
-      ]
-    },
-    "Font Size Default": {
-      "Default": [
-        ""
       ]
     },
     "Storage": {
@@ -5517,6 +5520,11 @@
         "${ totalImported }/${ totalToImport } kontakata šifrirano i dodano u vašu listu kontakata"
       ]
     },
+    "Select files": {
+      "Upload": [
+        "Učitaj"
+      ]
+    },
     "Label to change density": {
       "Comfortable": [
         "Udobno"
@@ -5539,11 +5547,6 @@
       ],
       "Maximized": [
         "Maksimizirano"
-      ]
-    },
-    "Select files": {
-      "Upload": [
-        "Učitaj"
       ]
     },
     "Loading info": {

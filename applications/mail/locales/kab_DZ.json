@@ -59,12 +59,6 @@
       "Request timed out.": [
         "Akud n usuter yemmut."
       ],
-      "Signature verification failed": [
-        "Asenqed n uzmul yecceḍ"
-      ],
-      "Could not find address ${ email }.": [
-        "Ur nezmir ara ad d-naff tansa ${ email }."
-      ],
       "Missing signature": [
         "Ixuṣ uzmul"
       ],
@@ -79,6 +73,12 @@
       ],
       "The key properties for ${ emailAddress } could not be extracted": [
         "Iraten n tsarut i ${ emailAddress } ur zmiren ara ad ttwasufɣen"
+      ],
+      "Signature verification failed": [
+        "Asenqed n uzmul yecceḍ"
+      ],
+      "Could not find address ${ email }.": [
+        "Ur nezmir ara ad d-naff tansa ${ email }."
       ],
       "Address primary private key not found": [
         "Tasarut tamaẓlayt tagejdant n tansa ulac-itt"
@@ -101,17 +101,17 @@
       "Authentication error.": [
         "Tuccḍa deg usesteb."
       ],
-      "Email address invalid": [
-        "Tansa imayl mači d tameɣtut"
-      ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "Iminig i tesseqdaceḍ ur k-yettaǧǧa ara ad tfakkeḍ axelleṣ. Ma ulac aɣilif, seqdec iminig nniḍen neɣ qqen s uselkim."
-      ],
       "The composer failed to load.": [
         "Asali n umsuddes ur yeddi ara."
       ],
       "Please refresh the page.": [
         "Ttxil smiren asebter."
+      ],
+      "Email address invalid": [
+        "Tansa imayl mači d tameɣtut"
+      ],
+      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
+        "Iminig i tesseqdaceḍ ur k-yettaǧǧa ara ad tfakkeḍ axelleṣ. Ma ulac aɣilif, seqdec iminig nniḍen neɣ qqen s uselkim."
       ],
       "Incorrect mailbox password. Please try again": [
         "Awal uffir n tirawt d arameɣtu. Ttxil ɛreḍ tikkelt-nniḍen"
@@ -371,7 +371,7 @@
       "Your emails cannot be decrypted due to a recent password reset. If you remember your previous password, you can ${ reActivateKeyLink } in order to access your messages. ${ learnMoreLink }": [
         ""
       ],
-      "Your emails cannot be decrypted due to a recent password reset. ${ learnMoreLink }": [
+      "Your emails cannot be decrypted. This may be due to a password reset. ${ learnMoreLink }": [
         ""
       ],
       "Too many active filters. Please upgrade to a paid plan to activate more filters": [
@@ -549,28 +549,6 @@
       "No results found": [
         "Ulac igmaḍ"
       ],
-      "Week": [
-        "Imalas"
-      ],
-      "(${ memberCount } member)": [
-        "(${ memberCount } n uɛeggal)",
-        "(${ memberCount } n yiɛeggalen)"
-      ],
-      "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Aseɣwen-a yezmer ad yili d aẓdam homograph, ulamek yeldi s yimingen Internet Explorer d Edge. Ma yella tetḥeqqeḍ belli aseɣwen-a iṣeḥḥa, ttxil-k·m seqdec iminig-nniḍen i twaledyawt-is."
-      ],
-      "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
-        "Aseɣwen-a yezmer ad yili d aẓdam homograph. Ttxil-k·m senqed ma d aseɣwen-a iwuɣur tebɣiḍ ad terzuḍ, neɣ ur tettalday ara."
-      ],
-      "You are about to open another browser tab and visit:": [
-        "Atan ad teldiḍ iccer-nniḍen n iminig sakin ad terzuḍ ɣer:"
-      ],
-      "Learn more": [
-        "Issin ugar"
-      ],
-      "Loading": [
-        "Azdam"
-      ],
       "Insert image": [
         "Ger tugna"
       ],
@@ -646,6 +624,28 @@
       "Plain text": [
         "Aḍris aččuran"
       ],
+      "Week": [
+        "Imalas"
+      ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } n uɛeggal)",
+        "(${ memberCount } n yiɛeggalen)"
+      ],
+      "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
+        "Aseɣwen-a yezmer ad yili d aẓdam homograph, ulamek yeldi s yimingen Internet Explorer d Edge. Ma yella tetḥeqqeḍ belli aseɣwen-a iṣeḥḥa, ttxil-k·m seqdec iminig-nniḍen i twaledyawt-is."
+      ],
+      "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
+        "Aseɣwen-a yezmer ad yili d aẓdam homograph. Ttxil-k·m senqed ma d aseɣwen-a iwuɣur tebɣiḍ ad terzuḍ, neɣ ur tettalday ara."
+      ],
+      "You are about to open another browser tab and visit:": [
+        "Atan ad teldiḍ iccer-nniḍen n iminig sakin ad terzuḍ ɣer:"
+      ],
+      "Learn more": [
+        "Issin ugar"
+      ],
+      "Loading": [
+        "Azdam"
+      ],
       "Drop the file here to upload": [
         "Sers dagi afaylu ara tessaliḍ"
       ],
@@ -673,12 +673,6 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Ma ur tufiḍ ara imayl deg tnaka n urmas, ttxil-k/m wali deg ukaram n ispamen."
       ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
-        "Tekki ɣef \"Suter tangalt tamaynut\" akken tangalt n usenqed tamaynut ad tettwaznen ɣer ${ strong }. Ma tansa n imayl-agi ur teɣti ara, tekki ɣef \"Ẓreg\" akken ad tt-tseɣtiḍ."
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
-        "Tekki ɣef \"Suter tangalt tamaynut\" akken tangalt n usenqed tamaynut ad tettwaznen ɣer ${ strong }. Ma uṭṭun-agi n tilifun ur yeɣti ara, tekki ɣef \"Ẓreg\" akken ad t-seɣtiḍ."
-      ],
       "To fight spam and abuse, please verify you are human.": [
         "Akken ad nennaɣ mgal ispament, senqed ma yella kečč d amdan."
       ],
@@ -690,6 +684,12 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Ma tufiḍ ugur deg usnulfu n umiḍan-inek/m, ttxil-k/m suter tinnubga ad d-nerr deg yiwen n wass uxeddim."
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
+        "Tekki ɣef \"Suter tangalt tamaynut\" akken tangalt n usenqed tamaynut ad tettwaznen ɣer ${ strong }. Ma tansa n imayl-agi ur teɣti ara, tekki ɣef \"Ẓreg\" akken ad tt-tseɣtiḍ."
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
+        "Tekki ɣef \"Suter tangalt tamaynut\" akken tangalt n usenqed tamaynut ad tettwaznen ɣer ${ strong }. Ma uṭṭun-agi n tilifun ur yeɣti ara, tekki ɣef \"Ẓreg\" akken ad t-seɣtiḍ."
       ],
       "No contacts added yet": [
         "Ur ɛad ttwarnan inermisen"
@@ -1745,11 +1745,6 @@
         "S yibenk-ik•im aziraz, smiḍen tangalt-a QR-Code neɣ rzu ɣer ${ link }."
       ]
     },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "Tansa n yimayl ur tettwaf ara gar yisulay n yiseqdacen yettusbadun i tsarut n tuzna (${ keyUserIds })"
-      ]
-    },
     "Default display name vcard": {
       "Unknown": [
         "Arussin"
@@ -1794,6 +1789,11 @@
       ],
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
         "Tella tuccḍa deg tɣuri n ufaylu-inek·inem ${ formattedFilename }. Afaylu ur yesɛi ara amasal i ilaqen."
+      ]
+    },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "Tansa n yimayl ur tettwaf ara gar yisulay n yiseqdacen yettusbadun i tsarut n tuzna (${ keyUserIds })"
       ]
     },
     "Keyboard shortcut section name": {
@@ -1972,11 +1972,11 @@
       ]
     },
     "Calendar status": {
-      "Not synced": [
-        "Ur yemtawi ara"
-      ],
       "Syncing": [
         "Amtawi"
+      ],
+      "Not synced": [
+        "Ur yemtawi ara"
       ]
     },
     "Calendar subscription not synced error": {
@@ -2011,6 +2011,12 @@
       ],
       "Unsupported event": [
         "Tadyant ur nettusefrak ara"
+      ],
+      "Empty ICS file": [
+        ""
+      ],
+      "Unsupported calendar component": [
+        ""
       ],
       "Invalid method": [
         "Yir tarrayt"
@@ -2611,38 +2617,8 @@
       "Close": [
         "Mdel"
       ],
-      "More info: ${ safeTitle }": [
-        "Ugar n telɣut: ${ safeTitle }"
-      ],
-      "Confirm": [
-        "Sentem"
-      ],
       "Cancel": [
         "Sefsex"
-      ],
-      "Submit": [
-        "Azen"
-      ],
-      "Close modal": [
-        "Mdel"
-      ],
-      "Use “${ label }” setting": [
-        "Seqdec iɣewwaṛen n “${ label }”"
-      ],
-      "Remove": [
-        "Kkes"
-      ],
-      "Next month": [
-        "Ayyur d-itteddun"
-      ],
-      "Previous month": [
-        "Ayyur yezrin"
-      ],
-      "Load image": [
-        "Sali-d tugniwin"
-      ],
-      "Confirm opening of link ${ link }": [
-        "Sentem tawaledyawt n useɣwen ${ link }"
       ],
       "Save": [
         "Sekles"
@@ -2706,6 +2682,36 @@
       ],
       "Underline": [
         "Derrer"
+      ],
+      "More info: ${ safeTitle }": [
+        "Ugar n telɣut: ${ safeTitle }"
+      ],
+      "Confirm": [
+        "Sentem"
+      ],
+      "Submit": [
+        "Azen"
+      ],
+      "Close modal": [
+        "Mdel"
+      ],
+      "Use “${ label }” setting": [
+        "Seqdec iɣewwaṛen n “${ label }”"
+      ],
+      "Remove": [
+        "Kkes"
+      ],
+      "Next month": [
+        "Ayyur d-itteddun"
+      ],
+      "Previous month": [
+        "Ayyur yezrin"
+      ],
+      "Load image": [
+        "Sali-d tugniwin"
+      ],
+      "Confirm opening of link ${ link }": [
+        "Sentem tawaledyawt n useɣwen ${ link }"
       ],
       "Go to panel ${ index }": [
         "Ddu ɣer ufeggag ${ index }"
@@ -3487,11 +3493,11 @@
       "Open actions dropdown": [
         "Ldi ummuɣ n tigawin"
       ],
-      "Link confirmation": [
-        "Aseɣwen n usentem"
-      ],
       "Expand content": [
         "Snerni agbur"
+      ],
+      "Link confirmation": [
+        "Aseɣwen n usentem"
       ],
       "Keyboard Shortcuts": [
         "Inegzumen n unasiw"
@@ -3513,9 +3519,6 @@
       ],
       "Invalid verification code": [
         "Tangalt n usentem mačči d tameɣtut"
-      ],
-      "Request new code": [
-        "Suter tangalt tamaynut"
       ],
       "Human verification": [
         "Asenqed b-umdan"
@@ -3992,6 +3995,138 @@
       ],
       "Welcome": [
         "Anṣuf"
+      ]
+    },
+    "Placeholder": {
+      "Link": [
+        "Aseɣwen"
+      ],
+      "Fill in the URL link and text to test your link": [
+        "Ččar aseɣwen n URL akked uḍris i usekyed n useɣwen-inek·inem"
+      ],
+      "Email address": [
+        "Tansa imayl"
+      ],
+      "Fill in the email address and text to test your link": [
+        "Ččar tansa n yimayl akked uḍris i usekyed n useɣwen-inek·inem"
+      ],
+      "Phone number": [
+        "Uṭṭun n tiliɣri"
+      ],
+      "Fill in the phone number and text to test your link": [
+        "Ččar uṭṭun n tilifun akked uḍris i usekyed n useɣwen-inek·inem"
+      ],
+      "Text": [
+        "Aḍris"
+      ],
+      "E.g., ": [
+        "D am., "
+      ],
+      "Mailbox password": [
+        "Awal uffir n tnaka n yimayl"
+      ],
+      "Start typing an email address": [
+        "Bdu tira n tansa n yimayl"
+      ],
+      "Image URL": [
+        "URL n tugna"
+      ],
+      "Search name, email or group": [
+        "Nadi isem, imayl neɣ agraw"
+      ],
+      "Filter groups": [
+        "Sti igrawen"
+      ],
+      "Search for name or email": [
+        "Nadi ɣef yisem neɣ imayl"
+      ],
+      "Search for group name": [
+        "Nadi isem n ugraw"
+      ],
+      "Name": [
+        "Isem"
+      ],
+      "OS name": [
+        "Isem n unagraw n wammud"
+      ],
+      "OS version": [
+        "Lqem n unagraw n wammud"
+      ],
+      "Proton username": [
+        "Isem n useqdac Proton"
+      ],
+      "A way to contact you": [
+        "Ttawil akken ad ken-nermes"
+      ],
+      "Please describe the problem and include any error messages": [
+        "Mudd ma ulac aɣilif aglam n wugur sakin seddu-d akk iznan n tuccḍa"
+      ],
+      "Browser name": [
+        "Isem n iminig web"
+      ],
+      "Browser version": [
+        "Lqem n yiminig"
+      ],
+      "e.g. Julia Smith": [
+        "md. Julia Smith"
+      ],
+      "ZIP": [
+        "Tangalt n lpusṭa"
+      ],
+      "Postal code": [
+        "Tangalt n lpusṭa"
+      ],
+      "Gift code": [
+        "Tangalt n usefk"
+      ],
+      "Type text or keyword": [
+        "Aru aḍris neɣ awal ufrin"
+      ],
+      "Subject": [
+        "Asentel"
+      ],
+      "Write your message": [
+        "Arut izen-nwen"
+      ],
+      "Password": [
+        "Awal ufir"
+      ],
+      "Confirm Password": [
+        "Sentem awal uffir"
+      ],
+      "Hint": [
+        "Amatar"
+      ],
+      "Search Messages": [
+        ""
+      ],
+      "Start date": [
+        "Azemz n tazwara"
+      ],
+      "End date": [
+        "Azemz n tagara"
+      ],
+      "Name or email address": [
+        "Isem neɣ tansa n imayl"
+      ],
+      "Search messages": [
+        "Nadi deg iznan"
+      ],
+      "Filter folders": [
+        "Sizdeg ikaramen"
+      ],
+      "Filter labels": [
+        "Sizdeg tibzimin"
+      ]
+    },
+    "Font Face Default": {
+      "Default": [
+        ""
+      ]
+    },
+    "Font Size Default": {
+      "Default": [
+        ""
       ]
     },
     "PGP key encryption warning": {
@@ -4525,128 +4660,6 @@
         "Γber daɣen"
       ]
     },
-    "Placeholder": {
-      "E.g., ": [
-        "D am., "
-      ],
-      "Link": [
-        "Aseɣwen"
-      ],
-      "Fill in the URL link and text to test your link": [
-        "Ččar aseɣwen n URL akked uḍris i usekyed n useɣwen-inek·inem"
-      ],
-      "Email address": [
-        "Tansa imayl"
-      ],
-      "Fill in the email address and text to test your link": [
-        "Ččar tansa n yimayl akked uḍris i usekyed n useɣwen-inek·inem"
-      ],
-      "Phone number": [
-        "Uṭṭun n tiliɣri"
-      ],
-      "Fill in the phone number and text to test your link": [
-        "Ččar uṭṭun n tilifun akked uḍris i usekyed n useɣwen-inek·inem"
-      ],
-      "Text": [
-        "Aḍris"
-      ],
-      "Mailbox password": [
-        "Awal uffir n tnaka n yimayl"
-      ],
-      "Start typing an email address": [
-        "Bdu tira n tansa n yimayl"
-      ],
-      "Image URL": [
-        "URL n tugna"
-      ],
-      "Search name, email or group": [
-        "Nadi isem, imayl neɣ agraw"
-      ],
-      "Filter groups": [
-        "Sti igrawen"
-      ],
-      "Search for name or email": [
-        "Nadi ɣef yisem neɣ imayl"
-      ],
-      "Search for group name": [
-        "Nadi isem n ugraw"
-      ],
-      "Name": [
-        "Isem"
-      ],
-      "OS name": [
-        "Isem n unagraw n wammud"
-      ],
-      "OS version": [
-        "Lqem n unagraw n wammud"
-      ],
-      "Proton username": [
-        "Isem n useqdac Proton"
-      ],
-      "A way to contact you": [
-        "Ttawil akken ad ken-nermes"
-      ],
-      "Please describe the problem and include any error messages": [
-        "Mudd ma ulac aɣilif aglam n wugur sakin seddu-d akk iznan n tuccḍa"
-      ],
-      "Browser name": [
-        "Isem n iminig web"
-      ],
-      "Browser version": [
-        "Lqem n yiminig"
-      ],
-      "e.g. Julia Smith": [
-        "md. Julia Smith"
-      ],
-      "ZIP": [
-        "Tangalt n lpusṭa"
-      ],
-      "Postal code": [
-        "Tangalt n lpusṭa"
-      ],
-      "Gift code": [
-        "Tangalt n usefk"
-      ],
-      "Type text or keyword": [
-        "Aru aḍris neɣ awal ufrin"
-      ],
-      "Subject": [
-        "Asentel"
-      ],
-      "Write your message": [
-        "Arut izen-nwen"
-      ],
-      "Password": [
-        "Awal ufir"
-      ],
-      "Confirm Password": [
-        "Sentem awal uffir"
-      ],
-      "Hint": [
-        "Amatar"
-      ],
-      "Search Messages": [
-        ""
-      ],
-      "Start date": [
-        "Azemz n tazwara"
-      ],
-      "End date": [
-        "Azemz n tagara"
-      ],
-      "Name or email address": [
-        "Isem neɣ tansa n imayl"
-      ],
-      "Search messages": [
-        "Nadi deg iznan"
-      ],
-      "Filter folders": [
-        "Sizdeg ikaramen"
-      ],
-      "Filter labels": [
-        "Sizdeg tibzimin"
-      ]
-    },
     "Time unit": {
       "${ hours } hour": [
         "${ hours } n usrag",
@@ -4680,16 +4693,6 @@
       "Found ${ items.length } suggestion, use keyboard to navigate.": [
         "Af asumer n { items.length }, seqdec anasiw i tunigin.",
         "Af isumar { items.length }, seqdec anasiw i tunigin."
-      ]
-    },
-    "Font Face Default": {
-      "Default": [
-        ""
-      ]
-    },
-    "Font Size Default": {
-      "Default": [
-        ""
       ]
     },
     "Storage": {
@@ -5385,6 +5388,11 @@
         "Inermisen ${ totalImported }/${ totalToImport } ttwawgelhnen syen ttwarnan ɣer tebdart-inek·inem n yinermisen"
       ]
     },
+    "Select files": {
+      "Upload": [
+        "Ali"
+      ]
+    },
     "Label to change density": {
       "Comfortable": [
         "Yerked"
@@ -5407,11 +5415,6 @@
       ],
       "Maximized": [
         "Adday"
-      ]
-    },
-    "Select files": {
-      "Upload": [
-        "Ali"
       ]
     },
     "Loading info": {
