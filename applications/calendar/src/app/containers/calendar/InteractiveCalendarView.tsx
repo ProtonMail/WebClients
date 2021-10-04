@@ -975,6 +975,7 @@ const InteractiveCalendarView = ({
                 syncActions,
                 updatePartstatActions = [],
                 updatePersonalPartActions = [],
+                sendActions = [],
                 texts,
             } = await getSaveEventActions({
                 temporaryEvent,
@@ -1015,6 +1016,10 @@ const InteractiveCalendarView = ({
             await handleUpdateVisibility(uniqueCalendarIDs);
             calendarsEventCache.rerender?.();
             handleCreateNotification(texts);
+            if (sendActions.length) {
+                // if there is any send action, it's meant to be run after the sync actions above
+                await Promise.all(sendActions.map(handleSendIcs));
+            }
         } catch (e: any) {
             createNotification({ text: e.message, type: 'error' });
         } finally {

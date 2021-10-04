@@ -66,6 +66,7 @@ const getSaveSingleEventActions = async ({
     inviteActions: InviteActions;
     updatePartstatActions?: UpdatePartstatOperation[];
     updatePersonalPartActions?: UpdatePersonalPartOperation[];
+    sendActions?: SendIcsActionData[];
 }> => {
     const oldEvent = oldEditEventData?.eventData;
     const oldCalendarID = oldEditEventData?.calendarID;

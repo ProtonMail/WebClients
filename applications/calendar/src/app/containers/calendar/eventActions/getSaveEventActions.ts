@@ -83,6 +83,7 @@ const getSaveSingleEventActionsHelper = async ({
         updatePartstatActions,
         updatePersonalPartActions,
         inviteActions: saveInviteActions,
+        sendActions,
     } = await getSaveSingleEventActions({
         newEditEventData: { ...newEditEventData, veventComponent: newVeventWithSequence },
         oldEditEventData,
@@ -103,6 +104,7 @@ const getSaveSingleEventActionsHelper = async ({
         texts: {
             success: successText,
         },
+        sendActions,
     };
 };
 
@@ -144,6 +146,7 @@ const getSaveEventActions = async ({
     syncActions: SyncEventActionOperations[];
     updatePartstatActions?: UpdatePartstatOperation[];
     updatePersonalPartActions?: UpdatePersonalPartOperation[];
+    sendActions?: SendIcsActionData[];
     texts?: { success: string };
 }> => {
     const {
@@ -176,7 +179,7 @@ const getSaveEventActions = async ({
     if (!inviteActions.selfAddress) {
         inviteActionsWithSelfAddress.selfAddress = selfAddress;
     }
-    // Do not touch RRULE for invitations
+    // Handle duplicate attendees if any
     const newVeventComponent = await withPmAttendees(modelVeventComponent, getCanonicalEmailsMap);
     const handleDuplicateAttendees = async (vevent: VcalVeventComponent, inviteActions: InviteActions) => {
         const duplicateAttendees = getDuplicateAttendeesSend(vevent, inviteActions);
@@ -204,7 +207,11 @@ const getSaveEventActions = async ({
             newVevent: newVeventWithSequence,
         });
 
-        const { multiSyncActions = [], inviteActions: saveInviteActions } = await getSaveSingleEventActions({
+        const {
+            multiSyncActions = [],
+            inviteActions: saveInviteActions,
+            sendActions,
+        } = await getSaveSingleEventActions({
             newEditEventData: {
                 ...newEditEventData,
                 veventComponent: newVeventWithSequence,
@@ -223,12 +230,14 @@ const getSaveEventActions = async ({
         return {
             syncActions: multiSyncActions,
             texts: { success: successText },
+            sendActions,
         };
     }
 
+    // Edition
     const calendarBootstrap = getCalendarBootstrap(oldEventData.CalendarID);
     if (!calendarBootstrap) {
-        throw new Error('Trying to update event without a calendar');
+        throw new Error('Trying to edit event without a calendar');
     }
     if (!getIsCalendarEvent(oldEventData) || !eventReadResult?.result) {
         throw new Error('Trying to edit event without event information');
@@ -355,6 +364,7 @@ const getSaveEventActions = async ({
         updatePartstatActions,
         updatePersonalPartActions,
         inviteActions: saveInviteActions,
+        sendActions,
     } = await getSaveRecurringEventActions({
         type: saveType,
         recurrences,
@@ -376,6 +386,7 @@ const getSaveEventActions = async ({
         updatePartstatActions,
         updatePersonalPartActions,
         texts: { success: successText },
+        sendActions,
     };
 };
 
