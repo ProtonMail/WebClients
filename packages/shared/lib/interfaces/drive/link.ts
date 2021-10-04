@@ -45,7 +45,7 @@ interface DriveLink {
     MIMEType: string;
     Hash: string;
     CreateTime: number;
-    // API returns only ModifyTime which represnet modification on API, i.e.,
+    // API returns only ModifyTime which represents modification on API, i.e.,
     // the time when the last revision was uploaded. The real modification time
     // (set by file system) is available in XAttr and these times are properly
     // set during decryption of the link.
