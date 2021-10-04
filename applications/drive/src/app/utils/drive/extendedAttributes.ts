@@ -74,7 +74,7 @@ function parseModificationTime(xattr: any): number | undefined {
         console.warn(`XAttr modification time "${modificationTime}" is not valid`);
         return undefined;
     }
-    const modificationTimestamp = parseInt((modificationTime.getTime() / 1000).toFixed(0), 10);
+    const modificationTimestamp = Math.trunc(modificationTime.getTime() / 1000);
     if (Number.isNaN(modificationTimestamp)) {
         console.warn(`XAttr modification time "${modificationTime}" is not valid`);
         return undefined;
