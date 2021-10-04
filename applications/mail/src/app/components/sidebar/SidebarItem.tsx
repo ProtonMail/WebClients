@@ -31,6 +31,8 @@ const noDrop: string[] = [ALL_MAIL, DRAFTS, ALL_DRAFTS, SENT, ALL_SENT, SCHEDULE
 
 const COUNTER_LIMIT = 9999;
 
+const defaultShortcutHandlers: HotkeyTuple[] = [];
+
 interface Props {
     currentLabelID: string;
     labelID: string;
@@ -44,7 +46,7 @@ interface Props {
     unreadCount?: number;
     totalMessagesCount?: number;
     shortcutHandlers?: HotkeyTuple[];
-    onFocus?: () => void;
+    onFocus?: (id: string) => void;
     id?: string;
 }
 
@@ -60,7 +62,7 @@ const SidebarItem = ({
     isFolder,
     unreadCount,
     totalMessagesCount = 0,
-    shortcutHandlers = [],
+    shortcutHandlers = defaultShortcutHandlers,
     onFocus = noop,
     id,
 }: Props) => {
@@ -147,7 +149,7 @@ const SidebarItem = ({
                 ref={elementRef}
                 data-testid={`navigation-link:${text}`}
                 data-shortcut-target={['navigation-link', id].filter(isTruthy).join(' ')}
-                onFocus={onFocus}
+                onFocus={() => onFocus(id || '')}
             >
                 <SidebarListItemContent
                     left={icon ? <SidebarListItemContentIcon name={icon} color={color} size={iconSize} /> : undefined}

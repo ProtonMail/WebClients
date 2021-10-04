@@ -282,6 +282,11 @@ const SquireEditorWrapper = ({
     });
     const handleSquireReady = useCallback(() => setEditorReady(true), []);
 
+    const toolbarExtension = useMemo(
+        () => <EditorToolbarExtension message={message.data} onChangeFlag={onChangeFlag} />,
+        [message.data, onChangeFlag]
+    );
+
     return (
         <SquireEditor
             ref={squireEditorRef}
@@ -296,7 +301,7 @@ const SquireEditorWrapper = ({
             onEllipseClick={handleEllipseClick}
             onReady={handleSquireReady}
             onAddImages={onAddAttachments}
-            toolbarMoreDropdownExtension={<EditorToolbarExtension message={message.data} onChangeFlag={onChangeFlag} />}
+            toolbarMoreDropdownExtension={toolbarExtension}
             keydownHandler={keydownHandler}
             defaultFont={defaultFont}
         />

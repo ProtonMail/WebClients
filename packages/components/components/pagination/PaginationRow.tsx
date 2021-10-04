@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 import { range } from '@proton/shared/lib/helpers/array';
-
+import { memo } from 'react';
 import { ButtonGroup, Button } from '../button';
 import { Icon } from '../icon';
 import { classnames } from '../../helpers';
@@ -37,6 +37,7 @@ const PaginationRow = ({
     const goToPageTitle = (page: number) => c('Action').t`Go to page ${page}`;
     const disablePrevious = page === 1;
     const disableNext = page === total;
+
     return (
         <ButtonGroup className={className}>
             <Tooltip title={c('Action').t`Go to first page`}>
@@ -79,4 +80,4 @@ const PaginationRow = ({
     );
 };
 
-export default PaginationRow;
+export default memo(PaginationRow);

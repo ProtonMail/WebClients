@@ -109,12 +109,12 @@ const MailSidebarList = ({ labelID: currentLabelID }: Props) => {
         [foldersTreeview]
     );
 
-    const updateFocusItem = (item: string) => {
+    const updateFocusItem = useCallback((item: string) => {
         setFocusedItem(item);
         const element = sidebarRef?.current?.querySelector(`[data-shortcut-target~="${item}"]`) as HTMLElement;
         element?.focus();
         scrollIntoView(element, { block: 'nearest' });
-    };
+    }, []);
 
     const sidebarListItems = useMemo(() => {
         const foldersArray = folders?.length ? reduceFolderTreeview : ['add-folder'];
@@ -242,7 +242,7 @@ const MailSidebarList = ({ labelID: currentLabelID }: Props) => {
                     shortcutText="[G] [I]"
                     isFolder
                     id="inbox"
-                    onFocus={() => setFocusedItem('inbox')}
+                    onFocus={setFocusedItem}
                 />
                 <SidebarItem
                     {...getCommonProps(
@@ -253,7 +253,7 @@ const MailSidebarList = ({ labelID: currentLabelID }: Props) => {
                     shortcutText="[G] [D]"
                     isFolder
                     id="drafts"
-                    onFocus={() => setFocusedItem('drafts')}
+                    onFocus={setFocusedItem}
                 />
                 {showScheduled ? (
                     <SidebarItem
@@ -262,7 +262,7 @@ const MailSidebarList = ({ labelID: currentLabelID }: Props) => {
                         text={c('Link').t`Scheduled`}
                         isFolder
                         id="scheduled"
-                        onFocus={() => setFocusedItem('scheduled')}
+                        onFocus={setFocusedItem}
                     />
                 ) : null}
                 <SidebarItem
@@ -274,7 +274,7 @@ const MailSidebarList = ({ labelID: currentLabelID }: Props) => {
                     shortcutText="[G] [E]"
                     isFolder
                     id="sent"
-                    onFocus={() => setFocusedItem('sent')}
+                    onFocus={setFocusedItem}
                 />
                 <SidebarItem
                     {...getCommonProps(MAILBOX_LABEL_IDS.STARRED)}
@@ -283,7 +283,7 @@ const MailSidebarList = ({ labelID: currentLabelID }: Props) => {
                     shortcutText="[G] [*]"
                     isFolder={false}
                     id="starred"
-                    onFocus={() => setFocusedItem('starred')}
+                    onFocus={setFocusedItem}
                 />
                 <SidebarItem
                     {...getCommonProps(MAILBOX_LABEL_IDS.ARCHIVE)}
@@ -292,7 +292,7 @@ const MailSidebarList = ({ labelID: currentLabelID }: Props) => {
                     shortcutText="[G] [A]"
                     isFolder
                     id="archive"
-                    onFocus={() => setFocusedItem('archive')}
+                    onFocus={setFocusedItem}
                 />
                 <SidebarItem
                     {...getCommonProps(MAILBOX_LABEL_IDS.SPAM)}
@@ -301,7 +301,7 @@ const MailSidebarList = ({ labelID: currentLabelID }: Props) => {
                     shortcutText="[G] [S]"
                     isFolder
                     id="spam"
-                    onFocus={() => setFocusedItem('spam')}
+                    onFocus={setFocusedItem}
                 />
                 <SidebarItem
                     {...getCommonProps(MAILBOX_LABEL_IDS.TRASH)}
@@ -310,7 +310,7 @@ const MailSidebarList = ({ labelID: currentLabelID }: Props) => {
                     shortcutText="[G] [T]"
                     isFolder
                     id="trash"
-                    onFocus={() => setFocusedItem('trash')}
+                    onFocus={setFocusedItem}
                 />
                 <SidebarItem
                     {...getCommonProps(MAILBOX_LABEL_IDS.ALL_MAIL)}
@@ -319,7 +319,7 @@ const MailSidebarList = ({ labelID: currentLabelID }: Props) => {
                     shortcutText="[G] [M]"
                     isFolder
                     id="allmail"
-                    onFocus={() => setFocusedItem('allmail')}
+                    onFocus={setFocusedItem}
                 />
                 <SimpleSidebarListItemHeader
                     toggle={displayFolders}
@@ -327,7 +327,7 @@ const MailSidebarList = ({ labelID: currentLabelID }: Props) => {
                     text={c('Link').t`Folders`}
                     title={c('Link').t`Folders`}
                     id="toggle-folders"
-                    onFocus={() => setFocusedItem('toggle-folders')}
+                    onFocus={setFocusedItem}
                     right={
                         <div className="flex flex-align-items-center">
                             {folders?.length ? (
@@ -370,7 +370,7 @@ const MailSidebarList = ({ labelID: currentLabelID }: Props) => {
                     text={c('Link').t`Labels`}
                     title={c('Link').t`Labels`}
                     id="toggle-labels"
-                    onFocus={() => setFocusedItem('toggle-labels')}
+                    onFocus={setFocusedItem}
                     right={
                         <div className="flex flex-align-items-center">
                             {labels?.length ? (
