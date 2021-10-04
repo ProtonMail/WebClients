@@ -96,6 +96,14 @@ export const useSendHandler = ({
                 throw error;
             }
 
+            if (error.data?.Error) {
+                createNotification({
+                    text: error.data?.Error,
+                    type: 'error',
+                });
+                throw error;
+            }
+
             createNotification({
                 text: c('Error').t`Error while sending the message. Message is not sent`,
                 type: 'error',
