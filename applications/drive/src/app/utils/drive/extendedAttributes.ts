@@ -1,8 +1,7 @@
 import { encryptMessage, OpenPGPKey } from 'pmcrypto';
 
 import { decryptUnsigned } from '@proton/shared/lib/keys/driveKeys';
-
-import { FILE_CHUNK_SIZE } from '../../constants';
+import { FILE_CHUNK_SIZE } from '@proton/shared/lib/drive/constants';
 
 interface ExtendedAttributes {
     Common: {
@@ -70,12 +69,13 @@ export function parseExtendedAttributes(xattrString: string) {
 
 function parseModificationTime(xattr: any): number | undefined {
     const modificationTime = new Date(xattr?.Common?.ModificationTime);
+    // This is the best way to check if date is "Invalid Date". :shrug:
     if (JSON.stringify(modificationTime) === 'null') {
         console.warn(`XAttr modification time "${modificationTime}" is not valid`);
         return undefined;
     }
     const modificationTimestamp = parseInt((modificationTime.getTime() / 1000).toFixed(0), 10);
-    if (typeof modificationTimestamp !== 'number') {
+    if (Number.isNaN(modificationTimestamp)) {
         console.warn(`XAttr modification time "${modificationTime}" is not valid`);
         return undefined;
     }

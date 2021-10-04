@@ -1,4 +1,5 @@
-import { FILE_CHUNK_SIZE } from '../../constants';
+import { FILE_CHUNK_SIZE } from '@proton/shared/lib/drive/constants';
+
 import { mockGlobalFile, testFile } from '../../helpers/test/file';
 import { createExtendedAttributes, parseExtendedAttributes } from './extendedAttributes';
 
