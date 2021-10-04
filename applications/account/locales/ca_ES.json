@@ -84,6 +84,24 @@
       "Confirm": [
         "Confirmar"
       ],
+      "Delete": [
+        "Esborra"
+      ],
+      "Close": [
+        "Tancar"
+      ],
+      "Next month": [
+        "Mes següent"
+      ],
+      "Previous month": [
+        "Mes anterior"
+      ],
+      "Show less": [
+        "Mostrar menys"
+      ],
+      "Show more": [
+        "Mostrar-ne més"
+      ],
       "Close navigation": [
         "Tanca la navegació"
       ],
@@ -93,47 +111,20 @@
       "More info: ${ safeTitle }": [
         "Més informació: ${ safeTitle }"
       ],
-      "Close": [
-        "Tancar"
-      ],
-      "Delete": [
-        "Esborra"
-      ],
       "Go to panel ${ index }": [
         "Ir al panell ${ index }"
       ],
-      "Show less": [
-        "Mostrar menys"
-      ],
-      "Show more": [
-        "Mostrar-ne més"
-      ],
-      "Next month": [
-        "Mes següent"
-      ],
-      "Previous month": [
-        "Mes anterior"
-      ],
       "Remove": [
         "Suprimeix"
+      ],
+      "Select timezone": [
+        "Seleccioneu el fus horari"
       ],
       "Submit": [
         "Enviar"
       ],
       "Close modal": [
         "Tancar el modal"
-      ],
-      "Select timezone": [
-        "Seleccioneu el fus horari"
-      ],
-      "Activate ${ Name }@pm.me": [
-        "Activar ${ Name }@pm.me"
-      ],
-      "Upgrade": [
-        "Actualitzar"
-      ],
-      "Show shortcuts": [
-        "Mostrar dreceres"
       ],
       "Continue import": [
         "Continua la importació"
@@ -213,6 +204,15 @@
       "Use ${ label } theme": [
         "Utilitzar el tema ${ label }"
       ],
+      "Activate ${ Name }@pm.me": [
+        "Activar ${ Name }@pm.me"
+      ],
+      "Upgrade": [
+        "Actualitzar"
+      ],
+      "Show shortcuts": [
+        "Mostrar dreceres"
+      ],
       "Import contacts": [
         "Importar contactes"
       ],
@@ -249,53 +249,11 @@
       "Get ProtonVPN Plus": [
         "Obtenir ProtonVPN Plus"
       ],
-      "Add user": [
-        "Afegir usuari"
+      "Yes": [
+        "Si"
       ],
-      "Add address": [
-        "Afegir adreça"
-      ],
-      "Done": [
-        "Fet"
-      ],
-      "Review": [
-        "Ressenya"
-      ],
-      "Set catch-all": [
-        "Seleccionar catch-all"
-      ],
-      "Add domain": [
-        "Afegir domini"
-      ],
-      "Refresh status": [
-        "Refresca l'estat"
-      ],
-      "Copy email to clipboard": [
-        "Copiar correu electrònic al porta-retalls"
-      ],
-      "${ BRAND_NAME } introduction": [
-        "Introducció ${ BRAND_NAME }"
-      ],
-      "Chat with us": [
-        "Xategeu amb nosaltres"
-      ],
-      "I have a question": [
-        "Tinc una pregunta"
-      ],
-      "Request a feature": [
-        "Demana una nova característica"
-      ],
-      "Report a problem": [
-        "Avisar d'un problema"
-      ],
-      "${ BRAND_NAME } shop": [
-        "Botiga de ${ BRAND_NAME }"
-      ],
-      "Switch account": [
-        "Canviar de compte"
-      ],
-      "Sign out": [
-        "Tancar la sessió"
+      "No": [
+        "No"
       ],
       "Update": [
         "Actualitza"
@@ -348,33 +306,6 @@
       "Delete link": [
         "Eliminar enllaç"
       ],
-      "Get started": [
-        "Començar"
-      ],
-      "Start setup": [
-        "Començar la configuració"
-      ],
-      "Skip": [
-        "Ometre"
-      ],
-      "Clear": [
-        "Netejar"
-      ],
-      "Add screenshot(s)": [
-        "Afegir captura(es) de pantalla"
-      ],
-      "Hide info": [
-        "Amagar informació"
-      ],
-      "Show info": [
-        "Mostra informació"
-      ],
-      "Signing out": [
-        "Tancant la sessió"
-      ],
-      "refresh the page": [
-        "recarregar la pàgina"
-      ],
       "Reactivate keys": [
         "Reactivar les claus"
       ],
@@ -393,9 +324,6 @@
       "Export key": [
         "Exportar clau"
       ],
-      "No": [
-        "No"
-      ],
       "Warning": [
         "Atenció"
       ],
@@ -404,6 +332,135 @@
       ],
       "Export private key": [
         "Exportar clau privada"
+      ],
+      "Add user": [
+        "Afegir usuari"
+      ],
+      "Add address": [
+        "Afegir adreça"
+      ],
+      "Done": [
+        "Fet"
+      ],
+      "Review": [
+        "Ressenya"
+      ],
+      "Set catch-all": [
+        "Seleccionar catch-all"
+      ],
+      "Add domain": [
+        "Afegir domini"
+      ],
+      "Refresh status": [
+        "Refresca l'estat"
+      ],
+      "Copy email to clipboard": [
+        "Copiar correu electrònic al porta-retalls"
+      ],
+      "${ BRAND_NAME } introduction": [
+        "Introducció ${ BRAND_NAME }"
+      ],
+      "Chat with us": [
+        "Xategeu amb nosaltres"
+      ],
+      "I have a question": [
+        "Tinc una pregunta"
+      ],
+      "Request a feature": [
+        "Demana una nova característica"
+      ],
+      "Report a problem": [
+        "Avisar d'un problema"
+      ],
+      "${ BRAND_NAME } shop": [
+        "Botiga de ${ BRAND_NAME }"
+      ],
+      "Switch account": [
+        "Canviar de compte"
+      ],
+      "Sign out": [
+        "Tancar la sessió"
+      ],
+      "Get started": [
+        "Començar"
+      ],
+      "Start setup": [
+        "Començar la configuració"
+      ],
+      "Skip": [
+        "Ometre"
+      ],
+      "Preview": [
+        "Previsualització"
+      ],
+      "Create label": [
+        "Crear etiqueta"
+      ],
+      "Create folder": [
+        "Crear carpeta"
+      ],
+      "Remove this label": [
+        "Elimina aquesta etiqueta"
+      ],
+      "Add condition": [
+        "Afegir condició"
+      ],
+      "label emails as": [
+        "etiquetar correus electrònics com"
+      ],
+      "move emails to": [
+        "moure correus electrònics a"
+      ],
+      "mark emails as": [
+        "marcar correus electrònics com"
+      ],
+      "send auto-reply email": [
+        "enviar correu d’auto-resposta"
+      ],
+      "Edit sieve": [
+        "Editar sieve"
+      ],
+      "Add filter": [
+        "Afegir filtre"
+      ],
+      "Add sieve filter": [
+        "Afegir filtre sieve"
+      ],
+      "Add": [
+        "Afegir"
+      ],
+      "Move to Block List": [
+        "Moure a la Llista de Bloqueig"
+      ],
+      "Move to Allow List": [
+        "Moure a la Llista d'Autoritzats"
+      ],
+      "Clear": [
+        "Netejar"
+      ],
+      "Add screenshot(s)": [
+        "Afegir captura(es) de pantalla"
+      ],
+      "Hide info": [
+        "Amagar informació"
+      ],
+      "Show info": [
+        "Mostra informació"
+      ],
+      "Add folder": [
+        "Afegir carpeta"
+      ],
+      "Sort": [
+        "Ordenar"
+      ],
+      "Add label": [
+        "Afegir etiqueta"
+      ],
+      "Signing out": [
+        "Tancant la sessió"
+      ],
+      "refresh the page": [
+        "recarregar la pàgina"
       ],
       "Remove bonuses": [
         "Suprimeix bonus"
@@ -504,9 +561,6 @@
       "Ok": [
         "Ok"
       ],
-      "Yes": [
-        "Si"
-      ],
       "Change mailbox password": [
         "Canviar contrasenya de la bústia de correu"
       ],
@@ -530,6 +584,12 @@
       ],
       "Disable recovery phrase": [
         "Desactivar la frase de recuperació"
+      ],
+      "Save address": [
+        "Desar adreça"
+      ],
+      "activate": [
+        "activar"
       ],
       "Revoke all other sessions": [
         "Revocar totes les altres sessions"
@@ -582,50 +642,23 @@
       "Previous": [
         "Anterior"
       ],
-      "Preview": [
-        "Previsualització"
+      "Enable multi-user support": [
+        "Activar suport multiusuari"
       ],
-      "Create label": [
-        "Crear etiqueta"
+      "Reset keys": [
+        "Restablir les claus"
       ],
-      "Create folder": [
-        "Crear carpeta"
+      "Change organization keys": [
+        "Canviar claus de l'organització"
       ],
-      "Remove this label": [
-        "Elimina aquesta etiqueta"
+      "Reset organization keys": [
+        "Restablir les claus d'organització"
       ],
-      "Add condition": [
-        "Afegir condició"
+      "Restore administrator privileges": [
+        "Restaurar els privilegis d'administrador"
       ],
-      "label emails as": [
-        "etiquetar correus electrònics com"
-      ],
-      "move emails to": [
-        "moure correus electrònics a"
-      ],
-      "mark emails as": [
-        "marcar correus electrònics com"
-      ],
-      "send auto-reply email": [
-        "enviar correu d’auto-resposta"
-      ],
-      "Edit sieve": [
-        "Editar sieve"
-      ],
-      "Add filter": [
-        "Afegir filtre"
-      ],
-      "Add sieve filter": [
-        "Afegir filtre sieve"
-      ],
-      "Add": [
-        "Afegir"
-      ],
-      "Move to Block List": [
-        "Moure a la Llista de Bloqueig"
-      ],
-      "Move to Allow List": [
-        "Moure a la Llista d'Autoritzats"
+      "Activate organization key": [
+        "Activar la clau d'organització"
       ],
       "View invoice": [
         "Veure factura"
@@ -647,39 +680,6 @@
       ],
       "Edit phone number": [
         "Editar el número de telèfon"
-      ],
-      "Add folder": [
-        "Afegir carpeta"
-      ],
-      "Sort": [
-        "Ordenar"
-      ],
-      "Add label": [
-        "Afegir etiqueta"
-      ],
-      "Enable multi-user support": [
-        "Activar suport multiusuari"
-      ],
-      "Reset keys": [
-        "Restablir les claus"
-      ],
-      "Change organization keys": [
-        "Canviar claus de l'organització"
-      ],
-      "Reset organization keys": [
-        "Restablir les claus d'organització"
-      ],
-      "Restore administrator privileges": [
-        "Restaurar els privilegis d'administrador"
-      ],
-      "Activate organization key": [
-        "Activar la clau d'organització"
-      ],
-      "Save address": [
-        "Desar adreça"
-      ],
-      "activate": [
-        "activar"
       ],
       "Upgrade now": [
         "Actualitzar ara"
@@ -801,17 +801,23 @@
       "Name": [
         "Nom"
       ],
-      "yourdomain.com": [
-        "elteudomini.com"
-      ],
       "Add a calendar name": [
         "Afegir un nom de calendari"
       ],
       "Add a calendar description": [
         "Afegir una descripció de calendari"
       ],
+      "Password": [
+        "Contrasenya"
+      ],
+      "yourdomain.com": [
+        "elteudomini.com"
+      ],
       "e.g. Julia Smith": [
         "ex. Julia Smith"
+      ],
+      "Type text or keyword": [
+        "Escrigui text o paraula clau"
       ],
       "OS name": [
         "Nom del SO"
@@ -833,9 +839,6 @@
       ],
       "Browser version": [
         "Versió del navegador"
-      ],
-      "Password": [
-        "Contrasenya"
       ],
       "Feedback": [
         "Opinió"
@@ -861,8 +864,11 @@
       "Confirm": [
         "Confirmar"
       ],
-      "Type text or keyword": [
-        "Escrigui text o paraula clau"
+      "Choose display name": [
+        "Trieu el nom de visualització"
+      ],
+      "Choose address": [
+        "Triar l'adreça"
       ],
       "Choose a name": [
         "Seleccionar un nom"
@@ -878,12 +884,6 @@
       ],
       "Search users": [
         "Cercar usuaris"
-      ],
-      "Choose address": [
-        "Triar l'adreça"
-      ],
-      "Choose display name": [
-        "Trieu el nom de visualització"
       ]
     },
     "Error": {
@@ -950,14 +950,8 @@
       "Invalid name": [
         "Nom no vàlid"
       ],
-      "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
-        "Hem aturat la signatura de DKIM per problemes amb la vostra configuració DNS. Seguiu les instruccions a continuació per continuar a signar."
-      ],
-      "Verification did not succeed, please try again in an hour.": [
-        "La verificació no s'ha pogut realitzar amb èxit, si us plau intenteu-ho de nou d'aquí una hora."
-      ],
-      "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.": [
-        "Codi de verificació erroni. Si us plau assegureu-vos que heu copiat el codi de verificació correctament i intenteu-ho de nou. Els canvis poden trigar fins a 24 hores a produir-se."
+      "Automatic replies is a paid feature. Please upgrade to a paid account to use this feature.": [
+        "Les respostes automàtiques són una característica de pagament. Actualitzeu-vos a un compte de pagament per utilitzar aquesta funció."
       ],
       "Name required": [
         "Cal indicar un nom"
@@ -967,12 +961,6 @@
       ],
       "Primary address key is not decrypted.": [
         "La clau de la adreça primària no està desxifrada."
-      ],
-      "Automatic replies is a paid feature. Please upgrade to a paid account to use this feature.": [
-        "Les respostes automàtiques són una característica de pagament. Actualitzeu-vos a un compte de pagament per utilitzar aquesta funció."
-      ],
-      "Primary address key is not decrypted": [
-        "La clau de la adreça primària no està desxifrada"
       ],
       "Incorrect password": [
         "Contrasenya incorrecta"
@@ -986,8 +974,47 @@
       "Uploaded files are not valid private keys. Please verify and try again.": [
         "Els fitxers carregats no són claus privades vàlides. Verifiqueu-les i torneu-ho a provar."
       ],
+      "Primary address key is not decrypted": [
+        "La clau de la adreça primària no està desxifrada"
+      ],
       "Invalid private key file": [
         "Arxiu de clau privada invàlid"
+      ],
+      "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
+        "Hem aturat la signatura de DKIM per problemes amb la vostra configuració DNS. Seguiu les instruccions a continuació per continuar a signar."
+      ],
+      "Verification did not succeed, please try again in an hour.": [
+        "La verificació no s'ha pogut realitzar amb èxit, si us plau intenteu-ho de nou d'aquí una hora."
+      ],
+      "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.": [
+        "Codi de verificació erroni. Si us plau assegureu-vos que heu copiat el codi de verificació correctament i intenteu-ho de nou. Els canvis poden trigar fins a 24 hores a produir-se."
+      ],
+      "Empty condition": [
+        "Condició buida"
+      ],
+      "Condition incomplete": [
+        "Condició incompleta"
+      ],
+      "Filter with this name already exists": [
+        "Ja existeix un filtre amb aquest nom"
+      ],
+      "Error in one of the conditions": [
+        "Errada en una de les condicions"
+      ],
+      "Require at least one condition": [
+        "Requereix al menys una condició"
+      ],
+      "Require at least one action": [
+        "Requereix al menys una acció"
+      ],
+      "Filter with this name already exist": [
+        "Ja existeix un filtre amb aquest nom"
+      ],
+      "Invalid Sieve code": [
+        "Codi Sieve invàlid"
+      ],
+      "Invalid domain": [
+        "Domini invàlid"
       ],
       "Checkout expired, please try again.": [
         "El pagament ha caducat. Torneu-ho a provar."
@@ -1061,6 +1088,18 @@
       "Wrong recovery phrase. Try again or use another recovery method.": [
         "Frase de recuperació incorrecta. Torneu-ho a provar o utilitzeu un altre mètode de recuperació."
       ],
+      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Addresses > Short domain (pm.me)": [
+        "${ Local } es el teu nom d'usuari. Per crear ${ Local }@${ Domain }, si us plau vagi a Ajustaments > Adreces > Domini Curt (pm.me)"
+      ],
+      "The organization key must be activated first.": [
+        "S'ha d'activar primer la clau d'organització."
+      ],
+      "Error": [
+        "Error"
+      ],
+      "Organization key is not decrypted.": [
+        "La clau d'organització no está desxifrada."
+      ],
       "Payments are currently not available, please try again later": [
         "Els pagaments actualment no estan disponibles, proveu-ho més tard"
       ],
@@ -1073,45 +1112,6 @@
       "File has no contents to preview": [
         "L'arxiu no té contingut per previsualitzar"
       ],
-      "Empty condition": [
-        "Condició buida"
-      ],
-      "Condition incomplete": [
-        "Condició incompleta"
-      ],
-      "Filter with this name already exists": [
-        "Ja existeix un filtre amb aquest nom"
-      ],
-      "Error in one of the conditions": [
-        "Errada en una de les condicions"
-      ],
-      "Require at least one condition": [
-        "Requereix al menys una condició"
-      ],
-      "Require at least one action": [
-        "Requereix al menys una acció"
-      ],
-      "Filter with this name already exist": [
-        "Ja existeix un filtre amb aquest nom"
-      ],
-      "Invalid Sieve code": [
-        "Codi Sieve invàlid"
-      ],
-      "Invalid domain": [
-        "Domini invàlid"
-      ],
-      "Can't validate email, try again later": [
-        "No es pot validar el correu electrònic, torneu-ho a provar més tard"
-      ],
-      "Can't validate phone, try again later": [
-        "No es pot validar el telèfon, torneu-ho a provar més tard"
-      ],
-      "Enter 6 digits": [
-        "Introduïu 6 dígits"
-      ],
-      "Invalid verification code": [
-        "Codi de verificació no vàlid"
-      ],
       "Passwords do not match": [
         "Les contrasenyes no coincideixen"
       ],
@@ -1121,17 +1121,11 @@
       "You must privatize all users before generating new organization keys": [
         "Heu de privatitzar tots els usuaris abans de generar claus d'organització noves"
       ],
-      "Organization key is not decrypted.": [
-        "La clau d'organització no está desxifrada."
-      ],
       "You have lost access to your organization keys. Without restoration you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Heu perdut l'accés a les vostres claus d'organització. Sense restauració no podreu crear usuaris nous, afegir adreces a usuaris ja existents, o accedir a comptes d'usuaris no privats."
       ],
       "You must activate your organization keys. Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Ha activar les claus de la seva organització. Sense l'activació, no podrà crear nous usuaris, afegir adreces a usuaris existents o accedir a comptes d'usuaris no privats."
-      ],
-      "The organization key must be activated first.": [
-        "S'ha d'activar primer la clau d'organització."
       ],
       "Permission denied, administrator privileges have been restricted.": [
         "Permís denegat. Els privilegis d'administrador s'han restringit."
@@ -1163,11 +1157,17 @@
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "Tot l'espai d'emmagatzematge s'ha assignat. Si us plau, reduïu l'emmagatzematge assignat a altres usuaris."
       ],
-      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Addresses > Short domain (pm.me)": [
-        "${ Local } es el teu nom d'usuari. Per crear ${ Local }@${ Domain }, si us plau vagi a Ajustaments > Adreces > Domini Curt (pm.me)"
+      "Can't validate email, try again later": [
+        "No es pot validar el correu electrònic, torneu-ho a provar més tard"
       ],
-      "Error": [
-        "Error"
+      "Can't validate phone, try again later": [
+        "No es pot validar el telèfon, torneu-ho a provar més tard"
+      ],
+      "Enter 6 digits": [
+        "Introduïu 6 dígits"
+      ],
+      "Invalid verification code": [
+        "Codi de verificació no vàlid"
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "S'ha produït un error, ${ refresh } per continuar. Si continueu veient aquest missatge d’error, poseu-vos en contacte amb el nostre ${ supportTeam }."
@@ -1193,6 +1193,15 @@
       "Unknown error": [
         "Error desconegut"
       ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Aquest camp requereix un mínim de ${ minimumLength } caràcters."
+      ],
+      "Email is not valid": [
+        "El correu electrònic no és vàlid"
+      ],
+      "Not a valid number": [
+        "Número no vàlid"
+      ],
       "Missing signature": [
         "Falta la signatura"
       ],
@@ -1202,14 +1211,8 @@
       "Signature not verified": [
         "Signatura no verificada"
       ],
-      "This field requires a minimum of ${ minimumLength } characters.": [
-        "Aquest camp requereix un mínim de ${ minimumLength } caràcters."
-      ],
-      "Email is not valid": [
-        "El correu electrònic no és vàlid"
-      ],
-      "Not a valid number": [
-        "Número no vàlid"
+      "Request timed out.": [
+        "S'ha esgotat el temps d'espera."
       ],
       "Signature verification failed": [
         "Verificació de la signatura fallida"
@@ -1225,9 +1228,6 @@
       ],
       "Calendar primary private key is not decrypted": [
         "La clau privada primària del calendari no està desxifrada"
-      ],
-      "Request timed out.": [
-        "S'ha esgotat el temps d'espera."
       ],
       "The session has expired. Please sign in again.": [
         "La sessió ha caducat. Torneu a accedir."
@@ -1254,18 +1254,6 @@
       ],
       "Do not ask again": [
         "No m'ho torneu a preguntar"
-      ],
-      "Date format": [
-        "Format de data"
-      ],
-      "Default language": [
-        "Idioma per defecte"
-      ],
-      "Time format": [
-        "Format d'hora"
-      ],
-      "Week start": [
-        "Inici de setmana"
       ],
       "From: ${ fromEmailAddress }": [
         "De: ${ fromEmailAddress }"
@@ -1321,6 +1309,18 @@
       "Manage folders": [
         "Gestionar carpetes"
       ],
+      "Date format": [
+        "Format de data"
+      ],
+      "Default language": [
+        "Idioma per defecte"
+      ],
+      "Time format": [
+        "Format d'hora"
+      ],
+      "Week start": [
+        "Inici de setmana"
+      ],
       "Automatically save contacts": [
         "Guardar contactes automàticament"
       ],
@@ -1354,20 +1354,56 @@
       "OpenVPN / IKEv2 password": [
         "Contrasenya OpenVPN / IKEv2"
       ],
-      "Domain name": [
-        "Nom de domini"
+      "Timezone": [
+        "Fus horari"
       ],
-      "Please add the following TXT record. Note, DNS records can take several hours to update.": [
-        "Si us plau afegiu el següent registre TXT. Recordeu que els registres DNS poden trigar diverses hores a actualitzar-se."
+      "Days of the week": [
+        "Dies de la setmana"
       ],
-      "Please add all 3 of the following CNAME records. Note, DNS records can take several hours to update.": [
-        "Si us plan, afegiu els següents tres registres CNAME. Tingueu en compte que els registres DNS poden trigar diverses hores a actualitzar-se."
+      "Duration": [
+        "Durada"
       ],
-      "Please add the following MX record. Note, DNS records can take several hours to update.": [
-        "Si us plau afegiu el següent registre MX. Recordeu que els registres DNS poden trigar diverses hores a actualitzar-se."
+      "Start day of month": [
+        "Dia de començament del mes"
       ],
-      "Here is a basic DMARC record that does nothing except email you reports.": [
-        "Això és un registre DMARC bàsic que l'únic que fa és enviar-vos informes."
+      "Start time": [
+        "Hora d'inici"
+      ],
+      "End day of month": [
+        "Dia de finalització del mes"
+      ],
+      "End time": [
+        "Hora de finalització"
+      ],
+      "Start weekday": [
+        "Dia de inici de la setmana"
+      ],
+      "End weekday": [
+        "Dia de finalització de la setmana"
+      ],
+      "Start date": [
+        "Data d'inici"
+      ],
+      "End date": [
+        "Data de finalització"
+      ],
+      "Message": [
+        "Missatge"
+      ],
+      "Auto reply": [
+        "Respondre automàticament"
+      ],
+      "Prompt to trust keys": [
+        "Demanar les claus de confiança"
+      ],
+      "Sign external messages": [
+        "Signar missatges externs"
+      ],
+      "Attach public key": [
+        "Adjunta la clau pública"
+      ],
+      "Default PGP settings": [
+        "Configuració PGP per defecte"
       ],
       "Name": [
         "Nom"
@@ -1417,75 +1453,6 @@
       "Your calendar URL label": [
         "Etiqueta URL del vostre calendari"
       ],
-      "Display name": [
-        "Mostrar el nom"
-      ],
-      "Timezone": [
-        "Fus horari"
-      ],
-      "Days of the week": [
-        "Dies de la setmana"
-      ],
-      "Duration": [
-        "Durada"
-      ],
-      "Start day of month": [
-        "Dia de començament del mes"
-      ],
-      "Start time": [
-        "Hora d'inici"
-      ],
-      "End day of month": [
-        "Dia de finalització del mes"
-      ],
-      "End time": [
-        "Hora de finalització"
-      ],
-      "Start weekday": [
-        "Dia de inici de la setmana"
-      ],
-      "End weekday": [
-        "Dia de finalització de la setmana"
-      ],
-      "Start date": [
-        "Data d'inici"
-      ],
-      "End date": [
-        "Data de finalització"
-      ],
-      "Message": [
-        "Missatge"
-      ],
-      "Auto reply": [
-        "Respondre automàticament"
-      ],
-      "Operating system": [
-        "Sistema operatiu"
-      ],
-      "Operating system version": [
-        "Versió del sistema operatiu"
-      ],
-      "Proton username": [
-        "Nom d'usuari de Proton"
-      ],
-      "Email address": [
-        "Adreça de correu electrònic"
-      ],
-      "Category": [
-        "Categoria"
-      ],
-      "What happened?": [
-        "Què ha passat?"
-      ],
-      "System information": [
-        "Informació del sistema"
-      ],
-      "Browser": [
-        "Navegador"
-      ],
-      "Browser version": [
-        "Versió del navegador"
-      ],
       "Delete": [
         "Eliminar"
       ],
@@ -1513,222 +1480,23 @@
       "Please select files to upload": [
         "Si us plau, selecciona els fitxers a pujar"
       ],
-      "${ n } VPN connection available": [
-        "${ n } connexió VPN disponible",
-        "${ n } connexions VPN disponibles"
+      "Domain name": [
+        "Nom de domini"
       ],
-      "${ UsedMembers } of ${ MaxMembers } user": [
-        "${ UsedMembers } de ${ MaxMembers } usuari",
-        "${ UsedMembers } de ${ MaxMembers } usuaris"
+      "Please add the following TXT record. Note, DNS records can take several hours to update.": [
+        "Si us plau afegiu el següent registre TXT. Recordeu que els registres DNS poden trigar diverses hores a actualitzar-se."
       ],
-      "${ UsedAddresses } of ${ MaxAddresses } email address": [
-        "${ UsedAddresses } de ${ MaxAddresses } adreça de correu electrònic",
-        "${ UsedAddresses } de ${ MaxAddresses } adreces de correu electrònic"
+      "Please add all 3 of the following CNAME records. Note, DNS records can take several hours to update.": [
+        "Si us plan, afegiu els següents tres registres CNAME. Tingueu en compte que els registres DNS poden trigar diverses hores a actualitzar-se."
       ],
-      "${ UsedDomains } of ${ MaxDomains } custom domain": [
-        "${ UsedDomains } de ${ MaxDomains } domini personalitzat",
-        "${ UsedDomains } de ${ MaxDomains } dominis personalitzats"
+      "Please add the following MX record. Note, DNS records can take several hours to update.": [
+        "Si us plau afegiu el següent registre MX. Recordeu que els registres DNS poden trigar diverses hores a actualitzar-se."
       ],
-      "Using ${ humanUsedSpace } of ${ humanMaxSpace }": [
-        "${ humanUsedSpace } de ${ humanMaxSpace } en ús"
+      "Here is a basic DMARC record that does nothing except email you reports.": [
+        "Això és un registre DMARC bàsic que l'únic que fa és enviar-vos informes."
       ],
-      "What is the main reason you are cancelling?": [
-        "Quina es la principal raó de la seva cancel·lació?"
-      ],
-      "How likely are you to recommend ${ BRAND_NAME } to others?": [
-        "¿Quina és la probabilitat que recomaneu ${ BRAND_NAME } a altres?"
-      ],
-      "0 - Not at all likely": [
-        "0 - Gens probable"
-      ],
-      "10 - Extremely likely": [
-        "10 - Molt probable"
-      ],
-      "How do you think we could improve our products or service in the future?": [
-        "Com creieu que podríem millorar els nostres productes o serveis en el futur?"
-      ],
-      "Total (${ countdown })": [
-        "Total (${ countdown })"
-      ],
-      "Total": [
-        "Total"
-      ],
-      "Proration": [
-        "Prorrateig"
-      ],
-      "extra storage": [
-        "emmagatzematge addicional"
-      ],
-      "bonus storage": [
-        "bonus d’emmagatzematge"
-      ],
-      "Subtotal": [
-        "Subtotal"
-      ],
-      "Discount": [
-        "Descompte"
-      ],
-      "Other amount": [
-        "Una altra quantitat"
-      ],
-      "Amount": [
-        "Quantitat"
-      ],
-      "Gift code": [
-        "Codi regal"
-      ],
-      "Name on card": [
-        "Nom de la targeta"
-      ],
-      "Card number": [
-        "Número de la targeta"
-      ],
-      "Expiry date": [
-        "Data d'expiració"
-      ],
-      "CVV code": [
-        "Codi CVV"
-      ],
-      "Country": [
-        "País"
-      ],
-      "Select your country": [
-        "Seleccioni el seu país"
-      ],
-      "ZIP": [
-        "ZIP"
-      ],
-      "Postal code": [
-        "Codi postal"
-      ],
-      "BTC amount:": [
-        "Import de BTC:"
-      ],
-      "BTC address:": [
-        "Adreça BTC:"
-      ],
-      "Select a method": [
-        "Selecciona un mètode"
-      ],
-      "Your password (admin)": [
-        "La seva contrasenya (admin)"
-      ],
-      "User's new password": [
-        "Nova contrasenya d’usuari"
-      ],
-      "Confirm new password": [
-        "Confirmi la nova contrasenya"
-      ],
-      "Old password": [
-        "Contrasenya antiga"
-      ],
-      "New password": [
-        "Contrasenya nova"
-      ],
-      "Confirm password": [
-        "Confirma la contrasenya"
-      ],
-      "Old login password": [
-        "Contrasenya d'inici antiga"
-      ],
-      "New login password": [
-        "Nova contrasenya d'inici de sessió"
-      ],
-      "Confirm login password": [
-        "Confirma la contrasenya d'inici de sessió"
-      ],
-      "New mailbox password": [
-        "Nova contrasenya de la bústia"
-      ],
-      "Confirm mailbox password": [
-        "Confirma la contrasenya de la bústia de correu"
-      ],
-      "Two-factor authentication code": [
-        "Codi d'autenticació de dos factors"
-      ],
-      "Key": [
-        "Clau"
-      ],
-      "Interval": [
-        "Interval"
-      ],
-      "Digits": [
-        "Dígits"
-      ],
-      "Two-factor authentication": [
-        "Autenticació de dos factors"
-      ],
-      "Two-password mode": [
-        "Mode de dues contrasenyes"
-      ],
-      "Mailbox password": [
-        "Contrasenya de la bústia"
-      ],
-      "What is the main reason you are deleting your account?": [
-        "Quin és el motiu principal per suprimir el teu compte?"
-      ],
-      "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
-        "Ens sap greu que marxeu. Si us plau expliqueu perquè us n'aneu per ajudar-nos a millorar."
-      ],
-      "Login password": [
-        "Contrasenya d'inici"
-      ],
-      "Yes, I want to permanently delete this account and all its data.": [
-        "Sí, vull suprimir definitivament aquest compte i totes les seves dades."
-      ],
-      "Allow recovery by email": [
-        "Permetre recuperació per correu electrònic"
-      ],
-      "Daily email notifications": [
-        "Notificacions diàries per correu electrònic"
-      ],
-      "Allow recovery by phone": [
-        "Permetre recuperació per telèfon"
-      ],
-      "Allow recovery by recovery phrase": [
-        "Permetre la recuperació amb la frase de recuperació"
-      ],
-      "Recovery phrase": [
-        "Frase de recuperació"
-      ],
-      "Your recovery phrase": [
-        "La seva frase de recuperació"
-      ],
-      "Recovery phrase contains 12 words": [
-        "La frase de recuperació conté 12 paraules"
-      ],
-      "Cash": [
-        "Efectiu"
-      ],
-      "Card holder": [
-        "Titular de la targeta"
-      ],
-      "Expires": [
-        "Venç"
-      ],
-      "Payer": [
-        "Pagador"
-      ],
-      "Prompt to trust keys": [
-        "Demanar les claus de confiança"
-      ],
-      "Sign external messages": [
-        "Signar missatges externs"
-      ],
-      "Attach public key": [
-        "Adjunta la clau pública"
-      ],
-      "Default PGP settings": [
-        "Configuració PGP per defecte"
-      ],
-      "Credits used": [
-        "Crèdits utilitzats"
-      ],
-      "Amount due": [
-        "Import a deure"
-      ],
-      "Customize invoices": [
-        "Personalitzar factures"
+      "Display name": [
+        "Mostrar el nom"
       ],
       "Filter Name": [
         "Nom del filtre"
@@ -1835,14 +1603,32 @@
       "Want to add": [
         "Voleu afegir"
       ],
-      "Phone number": [
-        "Número de telèfon"
+      "Operating system": [
+        "Sistema operatiu"
       ],
-      "Verification code": [
-        "Codi de verificació"
+      "Operating system version": [
+        "Versió del sistema operatiu"
       ],
-      "Enter the 6-digit code": [
-        "Introduïu el codi de 6 dígits"
+      "Proton username": [
+        "Nom d'usuari de Proton"
+      ],
+      "Email address": [
+        "Adreça de correu electrònic"
+      ],
+      "Category": [
+        "Categoria"
+      ],
+      "What happened?": [
+        "Què ha passat?"
+      ],
+      "System information": [
+        "Informació del sistema"
+      ],
+      "Browser": [
+        "Navegador"
+      ],
+      "Browser version": [
+        "Versió del navegador"
       ],
       "Folder location": [
         "Ubicació de la carpeta"
@@ -1855,6 +1641,241 @@
       ],
       "Inherit color from parent folder": [
         "Heretat d'una carpeta principal"
+      ],
+      "${ n } VPN connection available": [
+        "${ n } connexió VPN disponible",
+        "${ n } connexions VPN disponibles"
+      ],
+      "${ UsedMembers } of ${ MaxMembers } user": [
+        "${ UsedMembers } de ${ MaxMembers } usuari",
+        "${ UsedMembers } de ${ MaxMembers } usuaris"
+      ],
+      "${ UsedAddresses } of ${ MaxAddresses } email address": [
+        "${ UsedAddresses } de ${ MaxAddresses } adreça de correu electrònic",
+        "${ UsedAddresses } de ${ MaxAddresses } adreces de correu electrònic"
+      ],
+      "${ UsedDomains } of ${ MaxDomains } custom domain": [
+        "${ UsedDomains } de ${ MaxDomains } domini personalitzat",
+        "${ UsedDomains } de ${ MaxDomains } dominis personalitzats"
+      ],
+      "Using ${ humanUsedSpace } of ${ humanMaxSpace }": [
+        "${ humanUsedSpace } de ${ humanMaxSpace } en ús"
+      ],
+      "What is the main reason you are cancelling?": [
+        "Quina es la principal raó de la seva cancel·lació?"
+      ],
+      "How likely are you to recommend ${ BRAND_NAME } to others?": [
+        "¿Quina és la probabilitat que recomaneu ${ BRAND_NAME } a altres?"
+      ],
+      "0 - Not at all likely": [
+        "0 - Gens probable"
+      ],
+      "10 - Extremely likely": [
+        "10 - Molt probable"
+      ],
+      "How do you think we could improve our products or service in the future?": [
+        "Com creieu que podríem millorar els nostres productes o serveis en el futur?"
+      ],
+      "Total (${ countdown })": [
+        "Total (${ countdown })"
+      ],
+      "Total": [
+        "Total"
+      ],
+      "Proration": [
+        "Prorrateig"
+      ],
+      "extra storage": [
+        "emmagatzematge addicional"
+      ],
+      "bonus storage": [
+        "bonus d’emmagatzematge"
+      ],
+      "Subtotal": [
+        "Subtotal"
+      ],
+      "Discount": [
+        "Descompte"
+      ],
+      "Other amount": [
+        "Una altra quantitat"
+      ],
+      "Amount": [
+        "Quantitat"
+      ],
+      "Gift code": [
+        "Codi regal"
+      ],
+      "Name on card": [
+        "Nom de la targeta"
+      ],
+      "Card number": [
+        "Número de la targeta"
+      ],
+      "Expiry date": [
+        "Data d'expiració"
+      ],
+      "CVV code": [
+        "Codi CVV"
+      ],
+      "Country": [
+        "País"
+      ],
+      "Select your country": [
+        "Seleccioni el seu país"
+      ],
+      "ZIP": [
+        "ZIP"
+      ],
+      "Postal code": [
+        "Codi postal"
+      ],
+      "BTC amount:": [
+        "Import de BTC:"
+      ],
+      "BTC address:": [
+        "Adreça BTC:"
+      ],
+      "Select a method": [
+        "Selecciona un mètode"
+      ],
+      "Auto-load remote content": [
+        "Càrrega automàtica del contingut remot"
+      ],
+      "Auto-load embedded images": [
+        "Càrrega automàtica d'imatges incrustades"
+      ],
+      "Keep messages in Sent/Drafts": [
+        "Mantenir els missatges a Enviats/Esborranys"
+      ],
+      "Link confirmation": [
+        "Confirmació d'enllaç"
+      ],
+      "Undo send": [
+        "Desfer l'enviament"
+      ],
+      "Your password (admin)": [
+        "La seva contrasenya (admin)"
+      ],
+      "User's new password": [
+        "Nova contrasenya d’usuari"
+      ],
+      "Confirm new password": [
+        "Confirmi la nova contrasenya"
+      ],
+      "Old password": [
+        "Contrasenya antiga"
+      ],
+      "New password": [
+        "Contrasenya nova"
+      ],
+      "Confirm password": [
+        "Confirma la contrasenya"
+      ],
+      "Old login password": [
+        "Contrasenya d'inici antiga"
+      ],
+      "New login password": [
+        "Nova contrasenya d'inici de sessió"
+      ],
+      "Confirm login password": [
+        "Confirma la contrasenya d'inici de sessió"
+      ],
+      "New mailbox password": [
+        "Nova contrasenya de la bústia"
+      ],
+      "Confirm mailbox password": [
+        "Confirma la contrasenya de la bústia de correu"
+      ],
+      "Two-factor authentication code": [
+        "Codi d'autenticació de dos factors"
+      ],
+      "Key": [
+        "Clau"
+      ],
+      "Interval": [
+        "Interval"
+      ],
+      "Digits": [
+        "Dígits"
+      ],
+      "Two-factor authentication": [
+        "Autenticació de dos factors"
+      ],
+      "Two-password mode": [
+        "Mode de dues contrasenyes"
+      ],
+      "Mailbox password": [
+        "Contrasenya de la bústia"
+      ],
+      "What is the main reason you are deleting your account?": [
+        "Quin és el motiu principal per suprimir el teu compte?"
+      ],
+      "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
+        "Ens sap greu que marxeu. Si us plau expliqueu perquè us n'aneu per ajudar-nos a millorar."
+      ],
+      "Login password": [
+        "Contrasenya d'inici"
+      ],
+      "Yes, I want to permanently delete this account and all its data.": [
+        "Sí, vull suprimir definitivament aquest compte i totes les seves dades."
+      ],
+      "Allow recovery by email": [
+        "Permetre recuperació per correu electrònic"
+      ],
+      "Daily email notifications": [
+        "Notificacions diàries per correu electrònic"
+      ],
+      "Allow recovery by phone": [
+        "Permetre recuperació per telèfon"
+      ],
+      "Allow recovery by recovery phrase": [
+        "Permetre la recuperació amb la frase de recuperació"
+      ],
+      "Keyboard shortcuts": [
+        "Dreceres de teclat"
+      ],
+      "Recovery phrase": [
+        "Frase de recuperació"
+      ],
+      "Your recovery phrase": [
+        "La seva frase de recuperació"
+      ],
+      "Recovery phrase contains 12 words": [
+        "La frase de recuperació conté 12 paraules"
+      ],
+      "Signature": [
+        "Signatura"
+      ],
+      "ProtonMail footer": [
+        "Peu de pàgina de ProtonMail"
+      ],
+      "User": [
+        "Usuari"
+      ],
+      "Address": [
+        "Adreça"
+      ],
+      "Cash": [
+        "Efectiu"
+      ],
+      "Card holder": [
+        "Titular de la targeta"
+      ],
+      "Expires": [
+        "Venç"
+      ],
+      "Payer": [
+        "Pagador"
+      ],
+      "Credits used": [
+        "Crèdits utilitzats"
+      ],
+      "Amount due": [
+        "Import a deure"
+      ],
+      "Customize invoices": [
+        "Personalitzar factures"
       ],
       "Organization name": [
         "Nom de l'organització"
@@ -1886,44 +1907,23 @@
       "Addresses": [
         "Adreces"
       ],
-      "Address": [
-        "Adreça"
-      ],
       "Key strength": [
         "Fortalesa de la clau"
-      ],
-      "User": [
-        "Usuari"
-      ],
-      "Signature": [
-        "Signatura"
-      ],
-      "ProtonMail footer": [
-        "Peu de pàgina de ProtonMail"
-      ],
-      "Auto-load remote content": [
-        "Càrrega automàtica del contingut remot"
-      ],
-      "Auto-load embedded images": [
-        "Càrrega automàtica d'imatges incrustades"
-      ],
-      "Keep messages in Sent/Drafts": [
-        "Mantenir els missatges a Enviats/Esborranys"
-      ],
-      "Link confirmation": [
-        "Confirmació d'enllaç"
-      ],
-      "Undo send": [
-        "Desfer l'enviament"
-      ],
-      "Keyboard shortcuts": [
-        "Dreceres de teclat"
       ],
       "Cancel": [
         "Cancel·lar"
       ],
       "Submit": [
         "Enviar"
+      ],
+      "Phone number": [
+        "Número de telèfon"
+      ],
+      "Verification code": [
+        "Codi de verificació"
+      ],
+      "Enter the 6-digit code": [
+        "Introduïu el codi de 6 dígits"
       ],
       "Recovery email": [
         "Correu electrònic de recuperació"
@@ -1960,6 +1960,9 @@
       "Open actions dropdown": [
         "Obrir el desplegable d'accions"
       ],
+      "Keyboard Shortcuts": [
+        "Dreceres de teclat"
+      ],
       "Previous": [
         "Anterior"
       ],
@@ -1971,12 +1974,6 @@
       ],
       "What's new": [
         "Novetats"
-      ],
-      "Keyboard Shortcuts": [
-        "Dreceres de teclat"
-      ],
-      "Enable keyboard shortcuts": [
-        "Activar les dreceres de teclat"
       ],
       "Start import process": [
         "Iniciar el procés d'importació"
@@ -2001,6 +1998,9 @@
       ],
       "Start a new import": [
         "Iniciar una nova importació"
+      ],
+      "Enable keyboard shortcuts": [
+        "Activar les dreceres de teclat"
       ],
       "Exporting contacts": [
         "Exportació de contactes"
@@ -2035,23 +2035,8 @@
       "Get ProtonVPN Plus to access all servers": [
         "Obteniu ProtonVPN Plus per accedir a tots els servidors"
       ],
-      "Edit domain": [
-        "Editar el domini"
-      ],
-      "Add domain": [
-        "Afegir domini"
-      ],
-      "Catch-All address": [
-        "Adreça Catch-All"
-      ],
-      "Delete ${ domain.DomainName }": [
-        "Esborrar ${ domain.DomainName }"
-      ],
-      "Open help menu": [
-        "Obrir el menú d'ajuda"
-      ],
-      "Back": [
-        "Torna"
+      "Automatically sign outgoing messages?": [
+        "Signar automàticament els missatges de sortida?"
       ],
       "Error": [
         "Error"
@@ -2089,9 +2074,6 @@
       "Your calendar link": [
         "El vostre enllaç al calendari"
       ],
-      "Report a problem": [
-        "Avisar d'un problema"
-      ],
       "Reactivate keys": [
         "Reactivar les claus"
       ],
@@ -2115,6 +2097,75 @@
       ],
       "Import key": [
         "Importar clau"
+      ],
+      "Edit domain": [
+        "Editar el domini"
+      ],
+      "Add domain": [
+        "Afegir domini"
+      ],
+      "Catch-All address": [
+        "Adreça Catch-All"
+      ],
+      "Delete ${ domain.DomainName }": [
+        "Esborrar ${ domain.DomainName }"
+      ],
+      "Open help menu": [
+        "Obrir el menú d'ajuda"
+      ],
+      "Back": [
+        "Torna"
+      ],
+      "Edit filter": [
+        "Editar filtre"
+      ],
+      "Add filter": [
+        "Afegir filtre"
+      ],
+      "Are you sure you want to close?": [
+        "Està segur que vol tancar?"
+      ],
+      "Edit Sieve filter": [
+        "Editar filtre Sieve"
+      ],
+      "Add Sieve filter": [
+        "Afegir filtre Sieve"
+      ],
+      "Delete ${ filter.Name }": [
+        "Esborrar ${ filter.Name }"
+      ],
+      "Allow List": [
+        "Llista d'Autoritzats"
+      ],
+      "Block List": [
+        "Llista de Bloqueig"
+      ],
+      "Add to Block List": [
+        "Afegir a Llista de Bloqueig"
+      ],
+      "Add to Allow List": [
+        "Afegiu a la Llista d'Autoritzats"
+      ],
+      "Edit Block List": [
+        "Edita la Lista de Bloqueig"
+      ],
+      "Edit Allow List": [
+        "Edita la Llista d'Autoritzats"
+      ],
+      "Report a problem": [
+        "Avisar d'un problema"
+      ],
+      "Delete ${ Name } folder": [
+        "Eliminar la carpeta ${ Name }"
+      ],
+      "Delete ${ Name } label": [
+        "Eliminar l'etiqueta ${ Name }"
+      ],
+      "Sort folders alphabetically": [
+        "Ordenar carpetes alfabèticament"
+      ],
+      "Sort labels alphabetically": [
+        "Ordena les etiquetes alfabèticament"
       ],
       "Confirm loss of Proton bonuses": [
         "Confirmeu la pèrdua de bonificacions de Proton"
@@ -2257,6 +2308,21 @@
       "Confirm phone number": [
         "Confirmeu el número de telèfon"
       ],
+      "${ appName } Keyboard Shortcuts": [
+        "Dreceres de teclat de ${ appName }"
+      ],
+      "Add address": [
+        "Afegir adreça"
+      ],
+      "Delete ${ address.Email }": [
+        "Esborrar ${ address.Email }"
+      ],
+      "Generate missing keys": [
+        "Generar claus perdudes"
+      ],
+      "Bridge for ${ platform }": [
+        "Bridge per ${ platform }"
+      ],
       "App": [
         "Applicació"
       ],
@@ -2272,9 +2338,6 @@
       "Clear": [
         "Netejar"
       ],
-      "Automatically sign outgoing messages?": [
-        "Signar automàticament els missatges de sortida?"
-      ],
       "Pay invoice": [
         "Factura de pagament"
       ],
@@ -2289,63 +2352,6 @@
       ],
       "Status": [
         "Estat"
-      ],
-      "Edit filter": [
-        "Editar filtre"
-      ],
-      "Add filter": [
-        "Afegir filtre"
-      ],
-      "Are you sure you want to close?": [
-        "Està segur que vol tancar?"
-      ],
-      "Edit Sieve filter": [
-        "Editar filtre Sieve"
-      ],
-      "Add Sieve filter": [
-        "Afegir filtre Sieve"
-      ],
-      "Delete ${ filter.Name }": [
-        "Esborrar ${ filter.Name }"
-      ],
-      "Allow List": [
-        "Llista d'Autoritzats"
-      ],
-      "Block List": [
-        "Llista de Bloqueig"
-      ],
-      "Add to Block List": [
-        "Afegir a Llista de Bloqueig"
-      ],
-      "Add to Allow List": [
-        "Afegiu a la Llista d'Autoritzats"
-      ],
-      "Edit Block List": [
-        "Edita la Lista de Bloqueig"
-      ],
-      "Edit Allow List": [
-        "Edita la Llista d'Autoritzats"
-      ],
-      "Invalid verification code": [
-        "Codi de verificació no vàlid"
-      ],
-      "Request new code": [
-        "Demanar un codi nou"
-      ],
-      "Human verification": [
-        "Verificació humana"
-      ],
-      "Delete ${ Name } folder": [
-        "Eliminar la carpeta ${ Name }"
-      ],
-      "Delete ${ Name } label": [
-        "Eliminar l'etiqueta ${ Name }"
-      ],
-      "Sort folders alphabetically": [
-        "Ordenar carpetes alfabèticament"
-      ],
-      "Sort labels alphabetically": [
-        "Ordena les etiquetes alfabèticament"
       ],
       "Change organization name": [
         "Canviar nom de l'organització"
@@ -2392,23 +2398,17 @@
       "Add user": [
         "Afegir usuari"
       ],
-      "Add address": [
-        "Afegir adreça"
-      ],
-      "Delete ${ address.Email }": [
-        "Esborrar ${ address.Email }"
-      ],
-      "Generate missing keys": [
-        "Generar claus perdudes"
-      ],
-      "${ appName } Keyboard Shortcuts": [
-        "Dreceres de teclat de ${ appName }"
-      ],
       "Sign in again to continue": [
         "Torneu a iniciar per continuar"
       ],
-      "Bridge for ${ platform }": [
-        "Bridge per ${ platform }"
+      "Invalid verification code": [
+        "Codi de verificació no vàlid"
+      ],
+      "Human verification": [
+        "Verificació humana"
+      ],
+      "Request new code": [
+        "Demanar un codi nou"
       ],
       "Account suspended": [
         "Compte suspès"
@@ -2440,14 +2440,14 @@
       "Other": [
         "Altres"
       ],
+      "Auto reply": [
+        "Resposta automàtica"
+      ],
       "Domain names": [
         "Noms de domini"
       ],
       "Catch-all address": [
         "Adreça per capturar-ho tot"
-      ],
-      "Auto reply": [
-        "Resposta automàtica"
       ],
       "Encryption & keys": [
         "Xifratge i claus"
@@ -2463,9 +2463,6 @@
       ],
       "Contact encryption keys": [
         "Claus de xifratge de contacte"
-      ],
-      "Import Assistant": [
-        "Assistent d'importació"
       ],
       "Filters": [
         "Filtres"
@@ -2509,6 +2506,9 @@
       "ProtonMail Bridge": [
         "ProtonMail Bridge"
       ],
+      "Import Assistant": [
+        "Assistent d'importació"
+      ],
       "Current & past imports": [
         "Importacions actuals i anteriors"
       ],
@@ -2529,6 +2529,18 @@
       ],
       "OpenVPN configuration files": [
         "Fitxers de configuració d'OpenVPN"
+      ],
+      "My calendars": [
+        "Els meus calendaris"
+      ],
+      "Subscribed calendars": [
+        "Calendaris subscrits"
+      ],
+      "Share outside Proton": [
+        "Compartir fora de Proton"
+      ],
+      "Time zone": [
+        "Zona horària"
       ],
       "Password & recovery": [
         "Contrasenya i recuperació"
@@ -2596,29 +2608,17 @@
       "Password & keys": [
         "Contrasenya i claus"
       ],
-      "My calendars": [
-        "Els meus calendaris"
-      ],
-      "Subscribed calendars": [
-        "Calendaris subscrits"
-      ],
-      "Share outside Proton": [
-        "Compartir fora de Proton"
-      ],
-      "Time zone": [
-        "Zona horària"
-      ],
       "Sorry, you can't access this page": [
         "Ho sentim, no tens accés a aquesta pàgina"
       ],
       "Upgrade": [
         "Actualitzar"
       ],
-      "Proton Logo": [
-        "Logo de Proton"
-      ],
       "Settings": [
         "Configuració"
+      ],
+      "Proton Logo": [
+        "Logo de Proton"
       ],
       "Choose an account": [
         "Tria un compte"
@@ -2787,12 +2787,6 @@
       "Loading": [
         "Carregant"
       ],
-      "Add a @pm.me email address to your account. This simple, shorter domain stands for \"ProtonMail me\" or \"Private Message me.\"": [
-        "Afegiu una adreça de correu electrònic @pm.me al vostre compte. Aquest domini curt i senzill significa \"ProtonMail me\" o \"Private Message me\""
-      ],
-      "You can now receive messages to your @pm.me address. Upgrade to a paid plan to also send emails using your @pm.me address and create additional @pm.me addresses.": [
-        "Ara podeu rebre missatges a la vostra adreça @pm.me. Actualitzeu a un pla de pagament per enviar també correus electrònics usant la vostra adreça @pm.me i per crear adreces @pm.me addicionals."
-      ],
       "Import calendars": [
         "Importar calendari"
       ],
@@ -2915,6 +2909,12 @@
       "Choose the look and feel of the application.": [
         "Trieu l'aspecte de la vostra aplicació."
       ],
+      "Add a @pm.me email address to your account. This simple, shorter domain stands for \"ProtonMail me\" or \"Private Message me.\"": [
+        "Afegiu una adreça de correu electrònic @pm.me al vostre compte. Aquest domini curt i senzill significa \"ProtonMail me\" o \"Private Message me\""
+      ],
+      "You can now receive messages to your @pm.me address. Upgrade to a paid plan to also send emails using your @pm.me address and create additional @pm.me addresses.": [
+        "Ara podeu rebre missatges a la vostra adreça @pm.me. Actualitzeu a un pla de pagament per enviar també correus electrònics usant la vostra adreça @pm.me i per crear adreces @pm.me addicionals."
+      ],
       "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
         "Admetem la importació de fitxers CSV des de Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora i algunes altres aplicacions. També admetem la importació de vCard 4.0. (Codificació UTF-8)."
       ],
@@ -2992,52 +2992,41 @@
       "Plan upgrade required": [
         "Es requereix una millora del pla"
       ],
-      "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ProtonMail in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
-        "SPF s'utilitza per especificar a qui se li pot enviar un missatge de correu electrònic per al domini, per la qual cosa recomanem que inclogui ProtonMail al vostre registre SPF. Afegiu el següent registre TXT al vostre DNS. Normalment es pot fer al tauler de control del registre del vostre nom de domini."
+      "Auto-reply is active each month between the selected start and end time.": [
+        "La resposta automàtica està activa durant cada mes entre l'hora inicial i final seleccionada."
       ],
-      "If you want to keep an existing SPF record, you can just add ${ spf } to it after the ${ spfValue }. Do not create multiple SPF records.": [
-        "Si voleu conservar un registre SPF existent, només podeu afegir-hi ${ spf } després del ${ spfValue }. No creeu diversos registres SPF."
+      "Auto-reply is always active on the days of the week you select, between the selected hours.": [
+        "La resposta automàtica està sempre activa durant els dies de la setmana seleccionats, entre les hores escollides."
       ],
-      "ProtonMail supports DKIM signing for custom domains. To use DKIM authentication, please add the following CNAME record into your DNS settings for this domain. This can typically be done in the control panel of your domain name registrar.": [
-        "ProtonMail admet la signatura DKIM per a dominis personalitzats! Per utilitzar l'autenticació DKIM, afegiu el següent registre CNAME en el seu DNS per a aquest domini. Això normalment es pot fer en el panell de control del seu registrador de noms de domini."
+      "Auto-reply is active each week between the selected start and end time.": [
+        "La resposta automàtica està activa cada setmana entre l'hora inicial i final seleccionada."
       ],
-      "IMPORTANT: Some registrars do not accept CNAME values with a period at the end (while others require it). If your registrar does not accept your CNAME records, please delete the period at the end of each CNAME value and try again.": [
-        "IMPORTANT: Alguns registradors no accepten els valors CNAME amb un període al final (mentre que altres ho requereixen). Si el registrador no accepta els vostres registres CNAME, elimineu el període al final de cada valor CNAME i torna-ho a provar."
+      "Auto-reply is active until you turn it off.": [
+        "La resposta automàtica està activa fins que l'usuari la desactivi."
       ],
-      "Keep those records in your DNS for as long as you want to use DKIM.": [
-        "Mantingueu aquest registre al DNS durant el temps que vulgueu fer servir el DKIM."
+      "Auto-reply is active from the start time to the end time.": [
+        "La resposta automàtica està activa des de l'hora d'inici fins a la de finalització."
       ],
-      "Before you can receive emails for your custom domain addresses at ProtonMail, you need to add the following MX records to your DNS. This can typically be done in the control panel of your domain name registrar.": [
-        "Abans de rebre correus a les adreces dels vostres dominis personalitzats de ProtonMail, cal que afegiu els següents registres MX al vostre DNS. Això es pot fer normalment en el panell de control del vostre registrador de domini."
+      "Images have been removed because they are not allowed in auto-reply.": [
+        "Les imatges s'han eliminat perquè no estan permeses a les respostes automàtiques."
       ],
-      "Delete any other MX records or make sure ProtonMail's Priority is the lowest number.": [
-        "Esborreu qualsevol altre registre MX o assegureu-vos que la prioritat de ProtonMail té el número més baix."
+      "Use automatic replies to inform contacts you are out of the office or otherwise unable to respond.": [
+        "Utilitzeu respostes automàtiques per informar als contactes que sou fora de l'oficina o que no podeu respondre."
       ],
-      "If this domain is currently receiving emails, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
-        "Si actualment aquest domini rep correus electrònics, seleccioneu la pestanya ${ boldAddresses } i afegiu totes les adreces de correu electrònic actives abans de canviar el registre MX per garantir una transició fluida."
+      "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to enable automatic replies for when you are out of the office.": [
+        "Actualitzeu a un pla ${ PLAN_NAMES[PLANS.VISIONARY] } o ${ PLAN_NAMES[PLANS.PROFESSIONAL] } per activar les respostes automàtiques per quan esteu fora de l'oficina."
       ],
-      "If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly.": [
-        "Si heu definit SPF i DKIM, DMARC us permet especificar com altres serveis de correu electrònic haurien de lliurar el correu electrònic per al vostre domini si han fallat tant les comprovacions SPF com DKIM. Això pot fer que els spammers que facin passar per vosaltres siguin més difícils, però també poden causar problemes de lliurament si no es fan correctament."
+      "Address verification is an advanced security feature. Only turn this on if you know what it does.": [
+        "La verificació de l'adreça és una funció de seguretat avançada. Només activeu això si sabeu el que fa."
       ],
-      "${ none } has no effect on email delivery, but we recommend ${ quarantine } for better security.": [
-        "${ none } no té cap efecte en l’enviament de correu electrònic, però us recomanem ${ quarantine } per a una millor seguretat."
+      "Encryption setting updated": [
+        "Configuració de xifratge actualitzat"
       ],
-      "${ n } address": [
-        "${ n } adreça",
-        "${ n } adreces"
+      "PGP clients are more likely to automatically detect your PGP keys if outgoing messages are signed.": [
+        "Els clients de PGP tenen més probabilitats de detectar automàticament les claus PGP si els missatges de sortida són signats."
       ],
-      "Please note that if you delete this domain, all the addresses associated with it will be disabled.": [
-        "Tingueu en compte que si suprimiu aquest domini, totes les adreces associades a ell seran deshabilitades."
-      ],
-      "Are you sure you want to delete this domain?": [
-        "Esteu segur que voleu suprimir aquest domini?"
-      ],
-      "domain used": [
-        "domini utilitzat",
-        "dominis utilitzats"
-      ],
-      "If you have a custom domain with ProtonMail, you can set a catch-all email address that will receive messages sent to your domain but to an invalid email address (e.g., typos).": [
-        "Si teniu un domini personalitzat a ProtonMail, podeu configurar una adreça de correu electrònic catch-all (adreça d'arreplega) que rebrà els missatges enviats al vostre domini però a una adreça de correu errònia (p. ex. errors tipogràfics)."
+      "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
+        "Canvieu aquestes funcions únicament si esteu emprant PGP amb destinataris sense ProtonMail."
       ],
       "Are you sure you want to delete this calendar?": [
         "Estàs segur de que vols esborrar aquest calendari?"
@@ -3102,42 +3091,6 @@
       "You need to have a personal calendar to create a link.": [
         "Necessiteu tenir un calendari personal per crear un enllaç."
       ],
-      "Auto-reply is active each month between the selected start and end time.": [
-        "La resposta automàtica està activa durant cada mes entre l'hora inicial i final seleccionada."
-      ],
-      "Auto-reply is always active on the days of the week you select, between the selected hours.": [
-        "La resposta automàtica està sempre activa durant els dies de la setmana seleccionats, entre les hores escollides."
-      ],
-      "Auto-reply is active each week between the selected start and end time.": [
-        "La resposta automàtica està activa cada setmana entre l'hora inicial i final seleccionada."
-      ],
-      "Auto-reply is active until you turn it off.": [
-        "La resposta automàtica està activa fins que l'usuari la desactivi."
-      ],
-      "Auto-reply is active from the start time to the end time.": [
-        "La resposta automàtica està activa des de l'hora d'inici fins a la de finalització."
-      ],
-      "Images have been removed because they are not allowed in auto-reply.": [
-        "Les imatges s'han eliminat perquè no estan permeses a les respostes automàtiques."
-      ],
-      "Use automatic replies to inform contacts you are out of the office or otherwise unable to respond.": [
-        "Utilitzeu respostes automàtiques per informar als contactes que sou fora de l'oficina o que no podeu respondre."
-      ],
-      "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to enable automatic replies for when you are out of the office.": [
-        "Actualitzeu a un pla ${ PLAN_NAMES[PLANS.VISIONARY] } o ${ PLAN_NAMES[PLANS.PROFESSIONAL] } per activar les respostes automàtiques per quan esteu fora de l'oficina."
-      ],
-      "Screenshot(s) attached": [
-        "Captures de pantalla(s) adjuntes"
-      ],
-      "Refreshing the page or ${ link } will automatically resolve most issues.": [
-        "Actualitzar la pàgina o ${ link } resoldrà automàticament la majoria dels problemes."
-      ],
-      "More Info": [
-        "Més informació"
-      ],
-      "Loading ${ appName }": [
-        "Carregant ${ appName }"
-      ],
       "All keys successfully reactivated": [
         "S'han reactivat correctament totes les claus"
       ],
@@ -3192,6 +3145,128 @@
       ],
       "No contact encryption keys exist": [
         "No existeixen claus de xifratge de contactes"
+      ],
+      "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ProtonMail in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
+        "SPF s'utilitza per especificar a qui se li pot enviar un missatge de correu electrònic per al domini, per la qual cosa recomanem que inclogui ProtonMail al vostre registre SPF. Afegiu el següent registre TXT al vostre DNS. Normalment es pot fer al tauler de control del registre del vostre nom de domini."
+      ],
+      "If you want to keep an existing SPF record, you can just add ${ spf } to it after the ${ spfValue }. Do not create multiple SPF records.": [
+        "Si voleu conservar un registre SPF existent, només podeu afegir-hi ${ spf } després del ${ spfValue }. No creeu diversos registres SPF."
+      ],
+      "ProtonMail supports DKIM signing for custom domains. To use DKIM authentication, please add the following CNAME record into your DNS settings for this domain. This can typically be done in the control panel of your domain name registrar.": [
+        "ProtonMail admet la signatura DKIM per a dominis personalitzats! Per utilitzar l'autenticació DKIM, afegiu el següent registre CNAME en el seu DNS per a aquest domini. Això normalment es pot fer en el panell de control del seu registrador de noms de domini."
+      ],
+      "IMPORTANT: Some registrars do not accept CNAME values with a period at the end (while others require it). If your registrar does not accept your CNAME records, please delete the period at the end of each CNAME value and try again.": [
+        "IMPORTANT: Alguns registradors no accepten els valors CNAME amb un període al final (mentre que altres ho requereixen). Si el registrador no accepta els vostres registres CNAME, elimineu el període al final de cada valor CNAME i torna-ho a provar."
+      ],
+      "Keep those records in your DNS for as long as you want to use DKIM.": [
+        "Mantingueu aquest registre al DNS durant el temps que vulgueu fer servir el DKIM."
+      ],
+      "Before you can receive emails for your custom domain addresses at ProtonMail, you need to add the following MX records to your DNS. This can typically be done in the control panel of your domain name registrar.": [
+        "Abans de rebre correus a les adreces dels vostres dominis personalitzats de ProtonMail, cal que afegiu els següents registres MX al vostre DNS. Això es pot fer normalment en el panell de control del vostre registrador de domini."
+      ],
+      "Delete any other MX records or make sure ProtonMail's Priority is the lowest number.": [
+        "Esborreu qualsevol altre registre MX o assegureu-vos que la prioritat de ProtonMail té el número més baix."
+      ],
+      "If this domain is currently receiving emails, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
+        "Si actualment aquest domini rep correus electrònics, seleccioneu la pestanya ${ boldAddresses } i afegiu totes les adreces de correu electrònic actives abans de canviar el registre MX per garantir una transició fluida."
+      ],
+      "If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly.": [
+        "Si heu definit SPF i DKIM, DMARC us permet especificar com altres serveis de correu electrònic haurien de lliurar el correu electrònic per al vostre domini si han fallat tant les comprovacions SPF com DKIM. Això pot fer que els spammers que facin passar per vosaltres siguin més difícils, però també poden causar problemes de lliurament si no es fan correctament."
+      ],
+      "${ none } has no effect on email delivery, but we recommend ${ quarantine } for better security.": [
+        "${ none } no té cap efecte en l’enviament de correu electrònic, però us recomanem ${ quarantine } per a una millor seguretat."
+      ],
+      "${ n } address": [
+        "${ n } adreça",
+        "${ n } adreces"
+      ],
+      "Please note that if you delete this domain, all the addresses associated with it will be disabled.": [
+        "Tingueu en compte que si suprimiu aquest domini, totes les adreces associades a ell seran deshabilitades."
+      ],
+      "Are you sure you want to delete this domain?": [
+        "Esteu segur que voleu suprimir aquest domini?"
+      ],
+      "domain used": [
+        "domini utilitzat",
+        "dominis utilitzats"
+      ],
+      "If you have a custom domain with ProtonMail, you can set a catch-all email address that will receive messages sent to your domain but to an invalid email address (e.g., typos).": [
+        "Si teniu un domini personalitzat a ProtonMail, podeu configurar una adreça de correu electrònic catch-all (adreça d'arreplega) que rebrà els missatges enviats al vostre domini però a una adreça de correu errònia (p. ex. errors tipogràfics)."
+      ],
+      "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name and a valid Sieve script.": [
+        "Els filtres funcionen en tots els correus electrònics, inclosos els que es reben i els enviats. Cada filtre ha de contenir almenys un nom i una seqüència de comandes vàlida."
+      ],
+      "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
+        "Els filtres funcionen en tots els correus electrònics, inclosos els que es reben i els enviats. Cada filtre ha de contenir almenys un nom, una condició i una acció."
+      ],
+      "No label selected": [
+        "No s'ha seleccionat cap etiqueta"
+      ],
+      "No folder selected": [
+        "No hi ha carpetes seleccionades"
+      ],
+      "No action selected": [
+        "No s'ha seleccionat cap acció"
+      ],
+      "(Filter if ALL of the following conditions are met)": [
+        "(Filtre si es compleixen totes les condicions següents)"
+      ],
+      "(Filter if ANY of the following conditions are met)": [
+        "(Filtre si es compleixen ALGUNES de les condicions següents)"
+      ],
+      "All your changes will be lost.": [
+        "Tots els vostres canvis es perdran."
+      ],
+      "Are you sure you want to discard your changes?": [
+        "N'estás segur que desitges descartar els teus canvis?"
+      ],
+      "Custom filters work on all new emails, including incoming emails as well as sent emails. Filters can be edited and created directly via Sieve programming language.": [
+        "Els filtres personalitzats funcionen en tots els correus electrònics nous, inclosos els que entren i els que s'envien. Els filtres es poden editar i crear directament mitjançant el llenguatge de programació de Sieve."
+      ],
+      "Please note that if you delete this filter, we will stop processing all the automated actions it triggers.": [
+        "Tingueu en compte que si elimineu aquest filtre, deixarem de processar totes les accions automatitzades que desencadena."
+      ],
+      "Are you sure you want to delete this filter?": [
+        "Estàs segur que vols esborrar aquest filtre?"
+      ],
+      "Your Allow List is empty.": [
+        "La vostra llista de permesos està buida."
+      ],
+      "Your Block List is empty.": [
+        "La vostra llista de no desitjats està buida."
+      ],
+      "Screenshot(s) attached": [
+        "Captures de pantalla(s) adjuntes"
+      ],
+      "Refreshing the page or ${ link } will automatically resolve most issues.": [
+        "Actualitzar la pàgina o ${ link } resoldrà automàticament la majoria dels problemes."
+      ],
+      "Inherited from parent folder": [
+        "Heretada d'una carpeta principal"
+      ],
+      "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
+        "Podeu activar les notificacions per obtenir alertes quan arribin missatges de correu electrònic nous a aquesta carpeta."
+      ],
+      "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
+        "Nombreu la vostra nova carpeta i seleccioneu la carpeta principal on introduir-la. Si no seleccioneu una carpeta principal, aquesta nova carpeta es crearà com a carpeta de primer nivell."
+      ],
+      "Emails tagged with this label will not be deleted and can still be found in the respective folder.": [
+        "Els correus electrònics etiquetats amb aquesta etiqueta no s'esborraran i continuaran trobant-se a la carpeta respectiva."
+      ],
+      "Are you sure you want to delete this label?": [
+        "Esteu segur de voler eliminar aquesta etiqueta?"
+      ],
+      "Emails stored in this folder will not be deleted and can still be found in the All Mail folder.": [
+        "Els correus electrònics emmagatzemats en aquesta carpeta no s'eliminaran i continuaran trobant-se a la carpeta Tot el correu."
+      ],
+      "Are you sure you want to delete this folder?": [
+        "Esteu segur de voler eliminar aquesta carpeta?"
+      ],
+      "More Info": [
+        "Més informació"
+      ],
+      "Loading ${ appName }": [
+        "Carregant ${ appName }"
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Com que sou un usuari fidel, el vostre compte té característiques addicionals activades."
@@ -3510,6 +3585,12 @@
       "Internet connection lost. Please check your device's connectivity.": [
         "S'ha perdut la connexió a Internet. Comproveu la connectivitat del dispositiu."
       ],
+      "When disabled, this prevents all files from loading on your device without your knowledge.\t": [
+        "Si s'inhabilita, s'evita que tots els vostres arxius es carreguin al vostre dispositiu sense el vostre coneixement.\t"
+      ],
+      "When disabled, this prevents image files from loading on your device without your knowledge.": [
+        "Si s'inhabilita, s'evita que els arxius d'imatge es carreguin al vostre dispositiu sense el vostre coneixement.\t"
+      ],
       "By leaving now, changes may not be saved": [
         "Si surt ara, és possible que els canvis no es desin"
       ],
@@ -3618,6 +3699,9 @@
       "Disabling this will prevent your recovery phrase from being used for account recovery.": [
         "Deshabilitant-ho s'evitarà que la seva frase de recuperació s'utilitzi per a la recuperació del compte."
       ],
+      "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
+        "La navegació bàsica i les accions es mantenen disponibles independentment de que a la configuració les dreceres de teclat estiguin actives o no."
+      ],
       "Your recovery phrase is a series of 12 words in a specific order.": [
         "La seva frase de recuperació és una sèrie de 12 paraules en un ordre específic."
       ],
@@ -3644,6 +3728,33 @@
       ],
       "Recovery phrase has been disabled": [
         "S'ha desactivat la frase de recuperació"
+      ],
+      "Let your contacts know you care about their privacy.": [
+        "Feu que els vostres contactes coneguin que us preocupeu per la seva privadesa."
+      ],
+      "Please note that if you delete this address, you will no longer be able to send or receive emails using this address.": [
+        "Tingueu en compte que si suprimiu aquesta adreça, ja no podreu enviar ni rebre correus electrònics mitjançant aquesta adreça."
+      ],
+      "Are you sure you want to delete this address?": [
+        "Esteu segur que voleu esborrar aquesta carpeta?"
+      ],
+      "The email address you place at the top of the list is your default email address. Drag and drop to reorder your addresses.": [
+        "L'adreça de correu electrònic que poseu a la primera posició de la llista és la vostra adreça per defecte. Arrossegueu i deixeu anar per reordenar-les."
+      ],
+      "Queued": [
+        "En cua"
+      ],
+      "Done": [
+        "Fet"
+      ],
+      "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
+        "Abans que pugueu enviar i rebre missatges des de les noves direccions, necessiteu crear les seves claus de xifrat respectives."
+      ],
+      "You can use ProtonMail with any desktop email client that supports IMAP/SMTP, including Outlook, Apple Mail, and Thunderbird.": [
+        "Podeu utilitzar ProtonMail amb qualsevol client d'escriptori que suporti IMAP/SMTP, incloent Outlook, Apple Mail i Thunderbird."
+      ],
+      "Upgrade to a paid plan to unlock IMAP/SMTP support through ProtonMail Bridge.": [
+        "Actualitzeu-vos a un pla de pagament per desbloquejar el suport IMAP/SMTP mitjançant ProtonMail Bridge."
       ],
       "Do you want to revoke all other sessions than the current one?": [
         "Voleu revocar totes les altres sessions i l’actual?"
@@ -3672,18 +3783,6 @@
       "Expired": [
         "Vençuda"
       ],
-      "Address verification is an advanced security feature. Only turn this on if you know what it does.": [
-        "La verificació de l'adreça és una funció de seguretat avançada. Només activeu això si sabeu el que fa."
-      ],
-      "Encryption setting updated": [
-        "Configuració de xifratge actualitzat"
-      ],
-      "PGP clients are more likely to automatically detect your PGP keys if outgoing messages are signed.": [
-        "Els clients de PGP tenen més probabilitats de detectar automàticament les claus PGP si els missatges de sortida són signats."
-      ],
-      "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
-        "Canvieu aquestes funcions únicament si esteu emprant PGP amb destinataris sense ProtonMail."
-      ],
       "You can customize and download your invoices for accounting purposes.": [
         "Podeu personalitzar i descarregar les vostres factures a efectes de comptabilitat."
       ],
@@ -3704,99 +3803,6 @@
       ],
       "of": [
         "de"
-      ],
-      "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name and a valid Sieve script.": [
-        "Els filtres funcionen en tots els correus electrònics, inclosos els que es reben i els enviats. Cada filtre ha de contenir almenys un nom i una seqüència de comandes vàlida."
-      ],
-      "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
-        "Els filtres funcionen en tots els correus electrònics, inclosos els que es reben i els enviats. Cada filtre ha de contenir almenys un nom, una condició i una acció."
-      ],
-      "No label selected": [
-        "No s'ha seleccionat cap etiqueta"
-      ],
-      "No folder selected": [
-        "No hi ha carpetes seleccionades"
-      ],
-      "No action selected": [
-        "No s'ha seleccionat cap acció"
-      ],
-      "(Filter if ALL of the following conditions are met)": [
-        "(Filtre si es compleixen totes les condicions següents)"
-      ],
-      "(Filter if ANY of the following conditions are met)": [
-        "(Filtre si es compleixen ALGUNES de les condicions següents)"
-      ],
-      "All your changes will be lost.": [
-        "Tots els vostres canvis es perdran."
-      ],
-      "Are you sure you want to discard your changes?": [
-        "N'estás segur que desitges descartar els teus canvis?"
-      ],
-      "Custom filters work on all new emails, including incoming emails as well as sent emails. Filters can be edited and created directly via Sieve programming language.": [
-        "Els filtres personalitzats funcionen en tots els correus electrònics nous, inclosos els que entren i els que s'envien. Els filtres es poden editar i crear directament mitjançant el llenguatge de programació de Sieve."
-      ],
-      "Please note that if you delete this filter, we will stop processing all the automated actions it triggers.": [
-        "Tingueu en compte que si elimineu aquest filtre, deixarem de processar totes les accions automatitzades que desencadena."
-      ],
-      "Are you sure you want to delete this filter?": [
-        "Estàs segur que vols esborrar aquest filtre?"
-      ],
-      "Your Allow List is empty.": [
-        "La vostra llista de permesos està buida."
-      ],
-      "Your Block List is empty.": [
-        "La vostra llista de no desitjats està buida."
-      ],
-      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
-        "Actualment, el vostre compte Proton està en suspensió. Per continuar utilitzant el vostre compte, pagueu qualsevol factura que hagi pendent."
-      ],
-      "Would you like to receive a new verification code or use an alternative verification method?": [
-        "Voleu rebre un codi de verificació nou o utilitzar un mètode de verificació alternatiu?"
-      ],
-      "Enter the verification code that was sent to ${ destinationText }.": [
-        "Introduïu el codi de verificació que s’ha enviat a ${ destinationText }."
-      ],
-      "If you don't find the email in your inbox, please check your spam folder.": [
-        "Si no trobeu el correu electrònic a la safata d'entrada, comproveu la vostra carpeta de correu brossa."
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
-        "Feu clic a \"Sol·licitar un nou codi\" per rebre un codi de verificació nou a ${ strong }. Si aquesta adreça de correu electrònic és incorrecta, feu clic a \"Editar\" per corregir-la."
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
-        "Feu clic a \"Sol·licitar un nou codi\" per rebre un codi de verificació nou a ${ strong }. Si aquest número de telèfon és incorrecte, feu clic a \"Editar\" per corregir-lo."
-      ],
-      "To fight spam and abuse, please verify you are human.": [
-        "Per combatre el correu brossa, si us plau verifiqueu que sou humà."
-      ],
-      "Your email will only be used for this one-time verification.": [
-        "El vostre correu electrònic només s’utilitzarà per a aquesta única verificació."
-      ],
-      "Your phone number will only be used for this one-time verification.": [
-        "El vostre número de telèfon només s’utilitzarà per a aquesta única verificació."
-      ],
-      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
-        "Si teniu problemes per crear el vostre compte, sol·liciteu una invitació i us respondrem en un dia laborable."
-      ],
-      "Inherited from parent folder": [
-        "Heretada d'una carpeta principal"
-      ],
-      "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
-        "Podeu activar les notificacions per obtenir alertes quan arribin missatges de correu electrònic nous a aquesta carpeta."
-      ],
-      "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
-        "Nombreu la vostra nova carpeta i seleccioneu la carpeta principal on introduir-la. Si no seleccioneu una carpeta principal, aquesta nova carpeta es crearà com a carpeta de primer nivell."
-      ],
-      "Emails tagged with this label will not be deleted and can still be found in the respective folder.": [
-        "Els correus electrònics etiquetats amb aquesta etiqueta no s'esborraran i continuaran trobant-se a la carpeta respectiva."
-      ],
-      "Are you sure you want to delete this label?": [
-        "Esteu segur de voler eliminar aquesta etiqueta?"
-      ],
-      "Emails stored in this folder will not be deleted and can still be found in the All Mail folder.": [
-        "Els correus electrònics emmagatzemats en aquesta carpeta no s'eliminaran i continuaran trobant-se a la carpeta Tot el correu."
-      ],
-      "Are you sure you want to delete this folder?": [
-        "Esteu segur de voler eliminar aquesta carpeta?"
       ],
       "This will create an encryption key for your organization. 4096-bit keys only work on high performance computers, for most users, we recommend using 2048-bit keys.": [
         "Això crearà una nova clau de xifrat per a la vostra organització. Les claus 4096-bit només funcionen en ordinadors d'alt rendiment, per a la majoria d'usuaris recomanem l'ús de claus de 2048-bit."
@@ -3883,44 +3889,38 @@
       "more": [
         "més"
       ],
-      "Please note that if you delete this address, you will no longer be able to send or receive emails using this address.": [
-        "Tingueu en compte que si suprimiu aquesta adreça, ja no podreu enviar ni rebre correus electrònics mitjançant aquesta adreça."
+      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
+        "Actualment, el vostre compte Proton està en suspensió. Per continuar utilitzant el vostre compte, pagueu qualsevol factura que hagi pendent."
       ],
-      "Are you sure you want to delete this address?": [
-        "Esteu segur que voleu esborrar aquesta carpeta?"
+      "Would you like to receive a new verification code or use an alternative verification method?": [
+        "Voleu rebre un codi de verificació nou o utilitzar un mètode de verificació alternatiu?"
       ],
-      "The email address you place at the top of the list is your default email address. Drag and drop to reorder your addresses.": [
-        "L'adreça de correu electrònic que poseu a la primera posició de la llista és la vostra adreça per defecte. Arrossegueu i deixeu anar per reordenar-les."
+      "Enter the verification code that was sent to ${ destinationText }.": [
+        "Introduïu el codi de verificació que s’ha enviat a ${ destinationText }."
       ],
-      "Queued": [
-        "En cua"
+      "If you don't find the email in your inbox, please check your spam folder.": [
+        "Si no trobeu el correu electrònic a la safata d'entrada, comproveu la vostra carpeta de correu brossa."
       ],
-      "Done": [
-        "Fet"
+      "To fight spam and abuse, please verify you are human.": [
+        "Per combatre el correu brossa, si us plau verifiqueu que sou humà."
       ],
-      "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
-        "Abans que pugueu enviar i rebre missatges des de les noves direccions, necessiteu crear les seves claus de xifrat respectives."
+      "Your email will only be used for this one-time verification.": [
+        "El vostre correu electrònic només s’utilitzarà per a aquesta única verificació."
       ],
-      "Let your contacts know you care about their privacy.": [
-        "Feu que els vostres contactes coneguin que us preocupeu per la seva privadesa."
+      "Your phone number will only be used for this one-time verification.": [
+        "El vostre número de telèfon només s’utilitzarà per a aquesta única verificació."
       ],
-      "When disabled, this prevents all files from loading on your device without your knowledge.\t": [
-        "Si s'inhabilita, s'evita que tots els vostres arxius es carreguin al vostre dispositiu sense el vostre coneixement.\t"
+      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
+        "Si teniu problemes per crear el vostre compte, sol·liciteu una invitació i us respondrem en un dia laborable."
       ],
-      "When disabled, this prevents image files from loading on your device without your knowledge.": [
-        "Si s'inhabilita, s'evita que els arxius d'imatge es carreguin al vostre dispositiu sense el vostre coneixement.\t"
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
+        "Feu clic a \"Sol·licitar un nou codi\" per rebre un codi de verificació nou a ${ strong }. Si aquesta adreça de correu electrònic és incorrecta, feu clic a \"Editar\" per corregir-la."
       ],
-      "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
-        "La navegació bàsica i les accions es mantenen disponibles independentment de que a la configuració les dreceres de teclat estiguin actives o no."
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
+        "Feu clic a \"Sol·licitar un nou codi\" per rebre un codi de verificació nou a ${ strong }. Si aquest número de telèfon és incorrecte, feu clic a \"Editar\" per corregir-lo."
       ],
       "support team": [
         "equip de suport"
-      ],
-      "You can use ProtonMail with any desktop email client that supports IMAP/SMTP, including Outlook, Apple Mail, and Thunderbird.": [
-        "Podeu utilitzar ProtonMail amb qualsevol client d'escriptori que suporti IMAP/SMTP, incloent Outlook, Apple Mail i Thunderbird."
-      ],
-      "Upgrade to a paid plan to unlock IMAP/SMTP support through ProtonMail Bridge.": [
-        "Actualitzeu-vos a un pla de pagament per desbloquejar el suport IMAP/SMTP mitjançant ProtonMail Bridge."
       ],
       "here": [
         "aquí"
@@ -3930,6 +3930,15 @@
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Si creieu que es tracta d'un error, poseu-vos en contacte amb nosaltres ${ contactLink }."
+      ],
+      "Session timed out.": [
+        "Temps de sessió esgotat."
+      ],
+      "Internet connection lost.": [
+        "S'ha perdut la connexió a Internet."
+      ],
+      "Servers are unreachable.": [
+        "Els servidors no són accessibles."
       ],
       "Custom daily": [
         "Personalitzat diàriament"
@@ -3954,15 +3963,6 @@
       ],
       "Yearly": [
         "Anualment"
-      ],
-      "Session timed out.": [
-        "Temps de sessió esgotat."
-      ],
-      "Internet connection lost.": [
-        "S'ha perdut la connexió a Internet."
-      ],
-      "Servers are unreachable.": [
-        "Els servidors no són accessibles."
       ],
       "Users can't make changes to organization settings. If you need admin privileges, reach out to your system administrator.": [
         "Els usuaris no poden fer canvis al la configuració de la organització. Si necessites privilegis d’administració contacta amb em teu administrador de sistema."
@@ -4187,399 +4187,6 @@
         "Cercar fus horari"
       ]
     },
-    "Success": {
-      "Preference saved": [
-        "Preferència desada"
-      ],
-      "Locale updated": [
-        "Locals actualitzades"
-      ],
-      "Premium address created": [
-        "Adreça Premium creada"
-      ],
-      "Keyboard shortcuts preferences updated": [
-        "Preferències de les dreceres de teclat actualitzades"
-      ],
-      "Import resumed": [
-        "S'ha reprès la importació"
-      ],
-      "Import canceled": [
-        "Importació cancel·lada"
-      ],
-      "Import record deleted": [
-        "S'ha suprimit el registre d'importació"
-      ],
-      "Deleting original messages": [
-        "Eliminant missatges originals"
-      ],
-      "${ server.Domain } copied in your clipboard": [
-        "${ server.Domain } copiat al vostre porta-retalls"
-      ],
-      "Verification code copied to clipboard!": [
-        "Codi de verificació copiat al porta-retalls!"
-      ],
-      "SPF value copied to clipboard!": [
-        "Valor SPF copiat al portaretalls!"
-      ],
-      "Value copied to clipboard!": [
-        "Valor copiat al portaretalls!"
-      ],
-      "DMARC value copied to clipboard!": [
-        "Valor DMARC copiat al portaretalls!"
-      ],
-      "Domain verified": [
-        "Domini verificat"
-      ],
-      "Catch-all address updated": [
-        "Adreça de \"Captura tot\" actualitzada"
-      ],
-      "Email address copied to clipboard": [
-        "Correu electronic copiat al porta-retalls"
-      ],
-      "Calendar added. It might take a few minutes to sync.": [
-        "Calendari afegit. Pot trigar uns minuts a sincronitzar-se."
-      ],
-      "Calendar created": [
-        "Calendari creat"
-      ],
-      "Calendar updated": [
-        "Calendari actualitzat"
-      ],
-      "Default calendar updated": [
-        "Calendari per defecte actualitzat"
-      ],
-      "Calendar removed": [
-        "Calendari suprimit"
-      ],
-      "Auto-reply disabled": [
-        "Resposta automàtica deshabilitada"
-      ],
-      "Auto-reply updated": [
-        "Resposta automàtica actualitzada"
-      ],
-      "Bug reported": [
-        "Error notificat"
-      ],
-      "You have successfully unsubscribed": [
-        "Heu anul·lat la subscripció amb èxit"
-      ],
-      "Payment method updated": [
-        "Mètode de pagament actualitzat"
-      ],
-      "Payment method added": [
-        "Mètode de pagament afegit"
-      ],
-      "Credits added": [
-        "Crèdits afegits"
-      ],
-      "Gift code applied": [
-        "Codi regal aplicat"
-      ],
-      "Password updated": [
-        "Contrasenya actualitzada"
-      ],
-      "Account deleted. Logging out...": [
-        "Compte esborrat. Sortint..."
-      ],
-      "Email updated": [
-        "Adreça de correu electronic actualitzada"
-      ],
-      "Phone number updated": [
-        "Número de telèfon s'ha actualitzat"
-      ],
-      "Session revoked": [
-        "Sessió revocada"
-      ],
-      "Sessions revoked": [
-        "Sessions revocades"
-      ],
-      "Payment method deleted": [
-        "Mètode de pagament eliminat"
-      ],
-      "Invoice paid": [
-        "Factura pagada"
-      ],
-      "Invoice customized": [
-        "Factura personalitzada"
-      ],
-      "Code sent to ${ methodTo }": [
-        "Codi enviat a ${ methodTo }"
-      ],
-      "Verification successful": [
-        "Èxit de verificació"
-      ],
-      "Organization activated": [
-        "Organització activada"
-      ],
-      "Keys updated": [
-        "Claus actualitzades"
-      ],
-      "User updated": [
-        "S'ha actualitzat l'usuari"
-      ],
-      "User created": [
-        "S'ha creat l'usuari"
-      ],
-      "Address added": [
-        "Adreça afegida"
-      ],
-      "Address updated": [
-        "Adreça actualitzada"
-      ],
-      "If you entered a valid recovery email we will send you an email with your usernames in the next minute.": [
-        "Si heu introduït un correu electrònic de recuperació vàlid, en breu us enviarem un correu amb els vostres noms d'usuari."
-      ],
-      "If you entered a valid recovery phone we will send you an sms with your usernames in the next minute.": [
-        "Si heu introduït un telèfon de recuperació vàlid, en breu us enviarem un sms amb els vostres noms d'usuari."
-      ]
-    },
-    "Option": {
-      "Automatic (${ defaultFormat })": [
-        "Automàtic (${ defaultFormat })"
-      ],
-      "Automatic (${ defaultDay })": [
-        "Automàtic (${ defaultDay })"
-      ],
-      "Add to existing group": [
-        "Afegir a grup existent"
-      ],
-      "Create new group": [
-        "Crear nou grup"
-      ],
-      "Ignore group": [
-        "Ignorar grup"
-      ],
-      "Normal": [
-        "Normal"
-      ],
-      "Plain text": [
-        "Text net"
-      ],
-      "Left to Right": [
-        "Esquerra a dreta"
-      ],
-      "Right to Left": [
-        "Dreta a esquerra"
-      ],
-      "Android": [
-        "Android"
-      ],
-      "iOS": [
-        "iOS"
-      ],
-      "Windows": [
-        "Windows"
-      ],
-      "macOS": [
-        "macOS"
-      ],
-      "GNU/Linux": [
-        "GNU/Linux"
-      ],
-      "Router": [
-        "Router"
-      ],
-      "UDP": [
-        "UDP"
-      ],
-      "TCP": [
-        "TCP"
-      ],
-      "Secure Core configs": [
-        "Configuracions Secure Core"
-      ],
-      "Country configs": [
-        "Configuracions de país"
-      ],
-      "Standard server configs": [
-        "Configuracions estàndard de servidor"
-      ],
-      "Free server configs": [
-        "Configuracions de servidor gratuït"
-      ],
-      "Fixed duration": [
-        "Durada fixa"
-      ],
-      "Repeat daily": [
-        "Repeteix diàriament"
-      ],
-      "Repeat weekly": [
-        "Repeteix setmanalment"
-      ],
-      "Repeat monthly": [
-        "Repeteix mensualment"
-      ],
-      "Permanent": [
-        "Permanent"
-      ],
-      "1st of the month": [
-        "1r del mes"
-      ],
-      "2nd of the month": [
-        "2on del mes"
-      ],
-      "3rd of the month": [
-        "3er del mes"
-      ],
-      "4th of the month": [
-        "4rt del mes"
-      ],
-      "5th of the month": [
-        "5è del mes"
-      ],
-      "6th of the month": [
-        "6è del mes"
-      ],
-      "7th of the month": [
-        "7è del mes"
-      ],
-      "8th of the month": [
-        "8è del mes"
-      ],
-      "9th of the month": [
-        "9è del mes"
-      ],
-      "10th of the month": [
-        "10è del mes"
-      ],
-      "11th of the month": [
-        "11è del mes"
-      ],
-      "12th of the month": [
-        "12è del mes"
-      ],
-      "13th of the month": [
-        "13è del mes"
-      ],
-      "14th of the month": [
-        "14è del mes"
-      ],
-      "15th of the month": [
-        "15è del mes"
-      ],
-      "16th of the month": [
-        "16è del mes"
-      ],
-      "17th of the month": [
-        "17è del mes"
-      ],
-      "18th of the month": [
-        "18è del mes"
-      ],
-      "19th of the month": [
-        "19è del mes"
-      ],
-      "20th of the month": [
-        "20 del mes"
-      ],
-      "21st of the month": [
-        "21 del mes"
-      ],
-      "22nd of the month": [
-        "22 del mes"
-      ],
-      "23rd of the month": [
-        "23 del mes"
-      ],
-      "24th of the month": [
-        "24 del mes"
-      ],
-      "25th of the month": [
-        "25 del mes"
-      ],
-      "26th of the month": [
-        "26 del mes"
-      ],
-      "27th of the month": [
-        "27 del mes"
-      ],
-      "28th of the month": [
-        "28 del mes"
-      ],
-      "29th of the month": [
-        "29 del mes"
-      ],
-      "30th of the month": [
-        "30 del mes"
-      ],
-      "31st of the month": [
-        "31 del mes"
-      ],
-      "${ stateOfTheArt } X25519 (Fastest, most modern)": [
-        "${ stateOfTheArt } X25519 (Més ràpid , més modern)"
-      ],
-      "${ highestSecurity } RSA 4096-bit (Slower, but increased compatibility with legacy software)": [
-        "${ highestSecurity } RSA 4096-bits (Més lent, però amb major compatibilitat amb programari antic)"
-      ],
-      "Select a reason": [
-        "Selecciona un motiu"
-      ],
-      "It’s temporary, I’ll be back": [
-        "És temporal, hi tornaré"
-      ],
-      "I didn’t understand what I was signing up for": [
-        "No entenia a què em signava"
-      ],
-      "It’s too expensive": [
-        "Es massa car"
-      ],
-      "I’m unhappy with customer service": [
-        "Estic descontent amb el servei al client"
-      ],
-      "Using Proton is too complicated": [
-        "L’ús de Proton és massa complicat"
-      ],
-      "I'm switching to a different service": [
-        "Passo a un servei diferent"
-      ],
-      "The quality didn't live up to my expectations": [
-        "La qualitat no complia les meves expectatives"
-      ],
-      "Other": [
-        "Altre"
-      ],
-      "I use a different Proton account": [
-        "Faig us d'un compte Proton diferent"
-      ],
-      "It's too expensive": [
-        "Es massa car"
-      ],
-      "It's missing a key feature that I need": [
-        "Li falta una característica clau que necessito"
-      ],
-      "I found another service that I like better": [
-        "He trobat un altre servei que m'agrada mes"
-      ],
-      "My reason isn't listed": [
-        "La meva raó no apareix"
-      ],
-      "No parent folder": [
-        "No hi ha la carpeta pare"
-      ]
-    },
-    "Day": {
-      "Sunday": [
-        "Diumenge"
-      ],
-      "Monday": [
-        "Dilluns"
-      ],
-      "Tuesday": [
-        "Dimarts"
-      ],
-      "Wednesday": [
-        "Dimecres"
-      ],
-      "Thursday": [
-        "Dijous"
-      ],
-      "Friday": [
-        "Divendres"
-      ],
-      "Saturday": [
-        "Dissabte"
-      ]
-    },
     "Loading info": {
       "Connecting to your calendar provider": [
         "Connectant al vostre proveïdor de calendari"
@@ -4683,14 +4290,14 @@
       "Are you sure you want to delete the phone number?": [
         "Confirmes que vols eliminar el número de telèfon?"
       ],
-      "By disabling the logs, you will also clear your entire logs history. Are you sure you want to disable the logs?": [
-        "Al desactivar els registres, també netejaràs l'historial complet de registres. Esteu segur que voleu desactivar els registres?"
-      ],
       "By disabling this address, you will no longer be able to send or receive emails using this address and all the linked Proton products will also be disabled. Are you sure you want to disable this address?": [
         "Si deshabiliteu aquesta adreça, ja no podreu enviar o rebre correus electrònics amb aquesta adreça i tots els productes Proton vinculats també seran deshabilitats. Esteu segur que voleu deshabilitar aquesta adreça?"
       ],
       "You must ${ activateLink } organization keys before adding an email address to a non-private member.": [
         "Heu de ${ activateLink } claus d'organització abans d'afegir una adreça de correu electrònic a un membre no privat."
+      ],
+      "By disabling the logs, you will also clear your entire logs history. Are you sure you want to disable the logs?": [
+        "Al desactivar els registres, també netejaràs l'historial complet de registres. Esteu segur que voleu desactivar els registres?"
       ]
     },
     "Import instructions emphasis": {
@@ -4941,15 +4548,6 @@
       "Group emails in the same conversation together in your Inbox or display them separately.": [
         "Agrupeu correus electrònics a la mateixa conversa a la vostra safata d'entrada o mostreu-los separadament."
       ],
-      "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
-        "Hem aturat la signatura de DKIM per problemes amb la vostra configuració DNS. Seguiu les instruccions a continuació per continuar a signar."
-      ],
-      "Your DKIM signing is working.": [
-        "La teva signatura DKIM està funcionant."
-      ],
-      "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
-        "Hem detectat un problema amb la vostra configuració DNS. Assegureu-vos que els vostres registres coincideixin amb les instruccions següents. Si el problema continua, haurem de desactivar la signatura de DKIM."
-      ],
       "This feature is unavailable for the moment": [
         "Aquesta característica no està disponible de moment"
       ],
@@ -4970,6 +4568,21 @@
       ],
       "This address has been disabled": [
         "Aquesta adreça s'ha desactivat"
+      ],
+      "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
+        "Hem aturat la signatura de DKIM per problemes amb la vostra configuració DNS. Seguiu les instruccions a continuació per continuar a signar."
+      ],
+      "Your DKIM signing is working.": [
+        "La teva signatura DKIM està funcionant."
+      ],
+      "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
+        "Hem detectat un problema amb la vostra configuració DNS. Assegureu-vos que els vostres registres coincideixin amb les instruccions següents. Si el problema continua, haurem de desactivar la signatura de DKIM."
+      ],
+      "This feature is only available for paid users": [
+        "Aquesta funció només està disponible per a usuaris de pagament"
+      ],
+      "Enable/disable desktop and mobile notifications": [
+        "Activa/desactiva les notificacions d'escriptori i de mòbils"
       ],
       "Use multiple addresses / aliases linked to your account, e.g. username2@protonmail.com": [
         "Utilitzeu adreces múltiples / àlies vinculats al vostre compte, p. ex. usuari2@protonmail.com"
@@ -5019,15 +4632,6 @@
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Si heu comprat un codi regal o n'heu rebut un del nostre equip de suport, escriviu-lo aquí."
       ],
-      "Enabling advanced logs records the IP address for each event in the security log.": [
-        "Habitar els registres avançats enregistra l'adreça IP per a cada esdeveniment al registre de seguretat."
-      ],
-      "This feature is only available for paid users": [
-        "Aquesta funció només està disponible per a usuaris de pagament"
-      ],
-      "Enable/disable desktop and mobile notifications": [
-        "Activa/desactiva les notificacions d'escriptori i de mòbils"
-      ],
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "Els missatges a la carpeta d'Enviats o Esborranys continuaran apareixent a aquestes carpetes, fins i tot si els moveu a una altra carpeta."
       ],
@@ -5036,6 +4640,9 @@
       ],
       "This feature delays sending your emails, giving you the opportunity to undo send during the selected time frame.": [
         "Aquesta funció retarda l'enviament dels vostres correus electrònics, donant-vos l'oportunitat de desfer l'enviament durant el període de temps seleccionat."
+      ],
+      "Enabling advanced logs records the IP address for each event in the security log.": [
+        "Habitar els registres avançats enregistra l'adreça IP per a cada esdeveniment al registre de seguretat."
       ]
     },
     "Security phrase": {
@@ -5077,6 +4684,152 @@
         "Retardat"
       ]
     },
+    "Success": {
+      "Import resumed": [
+        "S'ha reprès la importació"
+      ],
+      "Import canceled": [
+        "Importació cancel·lada"
+      ],
+      "Import record deleted": [
+        "S'ha suprimit el registre d'importació"
+      ],
+      "Deleting original messages": [
+        "Eliminant missatges originals"
+      ],
+      "Preference saved": [
+        "Preferència desada"
+      ],
+      "Premium address created": [
+        "Adreça Premium creada"
+      ],
+      "Keyboard shortcuts preferences updated": [
+        "Preferències de les dreceres de teclat actualitzades"
+      ],
+      "Locale updated": [
+        "Locals actualitzades"
+      ],
+      "${ server.Domain } copied in your clipboard": [
+        "${ server.Domain } copiat al vostre porta-retalls"
+      ],
+      "Auto-reply disabled": [
+        "Resposta automàtica deshabilitada"
+      ],
+      "Auto-reply updated": [
+        "Resposta automàtica actualitzada"
+      ],
+      "Calendar added. It might take a few minutes to sync.": [
+        "Calendari afegit. Pot trigar uns minuts a sincronitzar-se."
+      ],
+      "Calendar created": [
+        "Calendari creat"
+      ],
+      "Calendar updated": [
+        "Calendari actualitzat"
+      ],
+      "Default calendar updated": [
+        "Calendari per defecte actualitzat"
+      ],
+      "Calendar removed": [
+        "Calendari suprimit"
+      ],
+      "Verification code copied to clipboard!": [
+        "Codi de verificació copiat al porta-retalls!"
+      ],
+      "SPF value copied to clipboard!": [
+        "Valor SPF copiat al portaretalls!"
+      ],
+      "Value copied to clipboard!": [
+        "Valor copiat al portaretalls!"
+      ],
+      "DMARC value copied to clipboard!": [
+        "Valor DMARC copiat al portaretalls!"
+      ],
+      "Domain verified": [
+        "Domini verificat"
+      ],
+      "Catch-all address updated": [
+        "Adreça de \"Captura tot\" actualitzada"
+      ],
+      "Email address copied to clipboard": [
+        "Correu electronic copiat al porta-retalls"
+      ],
+      "Bug reported": [
+        "Error notificat"
+      ],
+      "You have successfully unsubscribed": [
+        "Heu anul·lat la subscripció amb èxit"
+      ],
+      "Payment method updated": [
+        "Mètode de pagament actualitzat"
+      ],
+      "Payment method added": [
+        "Mètode de pagament afegit"
+      ],
+      "Credits added": [
+        "Crèdits afegits"
+      ],
+      "Gift code applied": [
+        "Codi regal aplicat"
+      ],
+      "Password updated": [
+        "Contrasenya actualitzada"
+      ],
+      "Account deleted. Logging out...": [
+        "Compte esborrat. Sortint..."
+      ],
+      "Email updated": [
+        "Adreça de correu electronic actualitzada"
+      ],
+      "Phone number updated": [
+        "Número de telèfon s'ha actualitzat"
+      ],
+      "Address updated": [
+        "Adreça actualitzada"
+      ],
+      "Address added": [
+        "Adreça afegida"
+      ],
+      "Session revoked": [
+        "Sessió revocada"
+      ],
+      "Sessions revoked": [
+        "Sessions revocades"
+      ],
+      "Payment method deleted": [
+        "Mètode de pagament eliminat"
+      ],
+      "Invoice paid": [
+        "Factura pagada"
+      ],
+      "Invoice customized": [
+        "Factura personalitzada"
+      ],
+      "Organization activated": [
+        "Organització activada"
+      ],
+      "Keys updated": [
+        "Claus actualitzades"
+      ],
+      "User updated": [
+        "S'ha actualitzat l'usuari"
+      ],
+      "User created": [
+        "S'ha creat l'usuari"
+      ],
+      "Code sent to ${ methodTo }": [
+        "Codi enviat a ${ methodTo }"
+      ],
+      "Verification successful": [
+        "Èxit de verificació"
+      ],
+      "If you entered a valid recovery email we will send you an email with your usernames in the next minute.": [
+        "Si heu introduït un correu electrònic de recuperació vàlid, en breu us enviarem un correu amb els vostres noms d'usuari."
+      ],
+      "If you entered a valid recovery phone we will send you an sms with your usernames in the next minute.": [
+        "Si heu introduït un telèfon de recuperació vàlid, en breu us enviarem un sms amb els vostres noms d'usuari."
+      ]
+    },
     "Title header": {
       "Import": [
         "Importació"
@@ -5097,6 +4850,253 @@
     "Import error link": {
       "bandwidth limit": [
         "límit d'ample de banda"
+      ]
+    },
+    "Option": {
+      "Automatic (${ defaultFormat })": [
+        "Automàtic (${ defaultFormat })"
+      ],
+      "Automatic (${ defaultDay })": [
+        "Automàtic (${ defaultDay })"
+      ],
+      "Add to existing group": [
+        "Afegir a grup existent"
+      ],
+      "Create new group": [
+        "Crear nou grup"
+      ],
+      "Ignore group": [
+        "Ignorar grup"
+      ],
+      "Normal": [
+        "Normal"
+      ],
+      "Plain text": [
+        "Text net"
+      ],
+      "Left to Right": [
+        "Esquerra a dreta"
+      ],
+      "Right to Left": [
+        "Dreta a esquerra"
+      ],
+      "Android": [
+        "Android"
+      ],
+      "iOS": [
+        "iOS"
+      ],
+      "Windows": [
+        "Windows"
+      ],
+      "macOS": [
+        "macOS"
+      ],
+      "GNU/Linux": [
+        "GNU/Linux"
+      ],
+      "Router": [
+        "Router"
+      ],
+      "UDP": [
+        "UDP"
+      ],
+      "TCP": [
+        "TCP"
+      ],
+      "Secure Core configs": [
+        "Configuracions Secure Core"
+      ],
+      "Country configs": [
+        "Configuracions de país"
+      ],
+      "Standard server configs": [
+        "Configuracions estàndard de servidor"
+      ],
+      "Free server configs": [
+        "Configuracions de servidor gratuït"
+      ],
+      "Fixed duration": [
+        "Durada fixa"
+      ],
+      "Repeat daily": [
+        "Repeteix diàriament"
+      ],
+      "Repeat weekly": [
+        "Repeteix setmanalment"
+      ],
+      "Repeat monthly": [
+        "Repeteix mensualment"
+      ],
+      "Permanent": [
+        "Permanent"
+      ],
+      "1st of the month": [
+        "1r del mes"
+      ],
+      "2nd of the month": [
+        "2on del mes"
+      ],
+      "3rd of the month": [
+        "3er del mes"
+      ],
+      "4th of the month": [
+        "4rt del mes"
+      ],
+      "5th of the month": [
+        "5è del mes"
+      ],
+      "6th of the month": [
+        "6è del mes"
+      ],
+      "7th of the month": [
+        "7è del mes"
+      ],
+      "8th of the month": [
+        "8è del mes"
+      ],
+      "9th of the month": [
+        "9è del mes"
+      ],
+      "10th of the month": [
+        "10è del mes"
+      ],
+      "11th of the month": [
+        "11è del mes"
+      ],
+      "12th of the month": [
+        "12è del mes"
+      ],
+      "13th of the month": [
+        "13è del mes"
+      ],
+      "14th of the month": [
+        "14è del mes"
+      ],
+      "15th of the month": [
+        "15è del mes"
+      ],
+      "16th of the month": [
+        "16è del mes"
+      ],
+      "17th of the month": [
+        "17è del mes"
+      ],
+      "18th of the month": [
+        "18è del mes"
+      ],
+      "19th of the month": [
+        "19è del mes"
+      ],
+      "20th of the month": [
+        "20 del mes"
+      ],
+      "21st of the month": [
+        "21 del mes"
+      ],
+      "22nd of the month": [
+        "22 del mes"
+      ],
+      "23rd of the month": [
+        "23 del mes"
+      ],
+      "24th of the month": [
+        "24 del mes"
+      ],
+      "25th of the month": [
+        "25 del mes"
+      ],
+      "26th of the month": [
+        "26 del mes"
+      ],
+      "27th of the month": [
+        "27 del mes"
+      ],
+      "28th of the month": [
+        "28 del mes"
+      ],
+      "29th of the month": [
+        "29 del mes"
+      ],
+      "30th of the month": [
+        "30 del mes"
+      ],
+      "31st of the month": [
+        "31 del mes"
+      ],
+      "${ stateOfTheArt } X25519 (Fastest, most modern)": [
+        "${ stateOfTheArt } X25519 (Més ràpid , més modern)"
+      ],
+      "${ highestSecurity } RSA 4096-bit (Slower, but increased compatibility with legacy software)": [
+        "${ highestSecurity } RSA 4096-bits (Més lent, però amb major compatibilitat amb programari antic)"
+      ],
+      "No parent folder": [
+        "No hi ha la carpeta pare"
+      ],
+      "Select a reason": [
+        "Selecciona un motiu"
+      ],
+      "It’s temporary, I’ll be back": [
+        "És temporal, hi tornaré"
+      ],
+      "I didn’t understand what I was signing up for": [
+        "No entenia a què em signava"
+      ],
+      "It’s too expensive": [
+        "Es massa car"
+      ],
+      "I’m unhappy with customer service": [
+        "Estic descontent amb el servei al client"
+      ],
+      "Using Proton is too complicated": [
+        "L’ús de Proton és massa complicat"
+      ],
+      "I'm switching to a different service": [
+        "Passo a un servei diferent"
+      ],
+      "The quality didn't live up to my expectations": [
+        "La qualitat no complia les meves expectatives"
+      ],
+      "Other": [
+        "Altre"
+      ],
+      "I use a different Proton account": [
+        "Faig us d'un compte Proton diferent"
+      ],
+      "It's too expensive": [
+        "Es massa car"
+      ],
+      "It's missing a key feature that I need": [
+        "Li falta una característica clau que necessito"
+      ],
+      "I found another service that I like better": [
+        "He trobat un altre servei que m'agrada mes"
+      ],
+      "My reason isn't listed": [
+        "La meva raó no apareix"
+      ]
+    },
+    "Day": {
+      "Sunday": [
+        "Diumenge"
+      ],
+      "Monday": [
+        "Dilluns"
+      ],
+      "Tuesday": [
+        "Dimarts"
+      ],
+      "Wednesday": [
+        "Dimecres"
+      ],
+      "Thursday": [
+        "Dijous"
+      ],
+      "Friday": [
+        "Divendres"
+      ],
+      "Saturday": [
+        "Dissabte"
       ]
     },
     "Progress bar description": {
@@ -5397,181 +5397,29 @@
         "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now i més."
       ]
     },
-    "Label for adding a new custom domain": {
-      "Add a domain that you own to your ProtonMail account.": [
-        "Afegeixi un domini propi al seu compte de ProtonMail."
+    "Autoresponse": {
+      "I'm out of the office with limited access to my email.": [
+        "Sóc fora de l'oficina i amb accés limitat al meu correu electrònic."
       ]
     },
-    "Domain modal": {
-      "'www' subdomains are typically not used for email. Are you sure you want to use this domain value?": [
-        "Els subdominis \"www\" normalment no s'utilitzen per enviar missatges de correu electrònic. Està segur que vol utilitzar aquest valor de domini?"
+    "Tooltip prompt to trust keys": {
+      "When receiving an email from another ProtonMail user who does not have trusted keys in your contacts, a banner will ask if you want to enable trusted keys.": [
+        "Al rebre un correu electrònic d'un altre usuari de ProtonMail que no tingui claus de confiança als vostres contactes, un avís us preguntarà si voleu habilitar les claus de confiança."
       ]
     },
-    "Info for domain modal": {
-      "For security reasons, we need to verify that you are the owner of ${ domainName }. Please add the following DNS TXT record to your domain. This can typically be done in the control panel of your domain name registrar.": [
-        "Per motius de seguretat, hem de verificar que sou el propietari de ${ domainName }. Afegiu el següent registre DNS TXT al vostre domini. Normalment es pot fer al tauler de control del registre del vostre nom de domini."
-      ],
-      "Add a new user to your organization and create an address for it.": [
-        "Afegiu un usuari nou a la vostra organització i creeu-ne una adreça."
-      ],
-      "Add a new address for any user of your organization.": [
-        "Afegiu una adreça nova per a qualsevol usuari de la vostra organització."
+    "Tooltip sign external messages": {
+      "Automatically sign all your outgoing messages so users can verify the authenticity of your messages. This is done in combination with the default PGP settings which can be configured below.": [
+        "Signeu automàticament tots els vostres missatges de sortida perquè els usuaris puguin verificar l'autenticitat dels vostres missatges. Això es fa en combinació amb la configuració PGP per defecte que es pot configurar a continuació."
       ]
     },
-    "Warning for domain modal": {
-      "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
-        "Després de la verificació satisfactòria, no suprimiu aquest registre TXT ja que cal confirmar que continueu posseint el domini."
-      ],
-      "It can take up to a day for DNS changes to update.": [
-        "Els canvis DNS poden trigar fins a un dia a actualitzar-se."
+    "Tooltip automatically attach public key": {
+      "This automatically adds your public key to each message you send. Recipients can use this to verify the authenticity of your messages and send encrypted messages to you.": [
+        "Això afegeix automàticament la vostra clau pública a cada missatge que envieu. Els destinataris poden utilitzar això per verificar l'autenticitat dels vostres missatges i enviar-vos missatges xifrats."
       ]
     },
-    "Label for domain modal": {
-      "Please add the following TXT record:": [
-        "Si us plau afegiu el següent registre TXT:"
-      ]
-    },
-    "Header for domain modal": {
-      "Type": [
-        "Tipus"
-      ],
-      "Host name": [
-        "Nom del servidor"
-      ],
-      "Value / Data / Points to": [
-        "Valor / Dades / Punts a"
-      ],
-      "Value / Data": [
-        "Valor / Dades"
-      ],
-      "Priority": [
-        "Prioritat"
-      ]
-    },
-    "Tab in domain modal": {
-      "Addresses": [
-        "Adreces"
-      ]
-    },
-    "Label in domain modal": {
-      "Domain": [
-        "Domini"
-      ],
-      "Verify": [
-        "Verificar"
-      ],
-      "Addresses": [
-        "Adreces"
-      ]
-    },
-    "Domain label": {
-      "Verified": [
-        "Verificat"
-      ]
-    },
-    "Badge for domain": {
-      "Missing keys": [
-        "Falten claus"
-      ],
-      "Enabled": [
-        "Activat"
-      ],
-      "Disabled": [
-        "Desactivat"
-      ]
-    },
-    "Title header for addresses domain table": {
-      "Address": [
-        "Adreça"
-      ],
-      "Status": [
-        "Estat"
-      ],
-      "Catch-All": [
-        "Catch-All"
-      ]
-    },
-    "Success message": {
-      "Domain deleted": [
-        "S'ha suprimit el domini"
-      ],
-      "Sessions revoked": [
-        "Sessions revocades"
-      ],
-      "User deleted": [
-        "Usuari eliminat"
-      ]
-    },
-    "Header for addresses table": {
-      "Domain": [
-        "Domini"
-      ],
-      "Status": [
-        "Estat"
-      ],
-      "Actions": [
-        "Accions"
-      ],
-      "Address": [
-        "Adreça"
-      ],
-      "Username": [
-        "Nom d'usuari"
-      ]
-    },
-    "Message": {
-      "Set up a custom domain email address (e.g., you@yourcompany.com). It only takes a few minutes, and our wizard will guide you through the process.": [
-        "Configureu una adreça de correu electrònic amb domini personalitzat (p. ex. exemple@lavostracompanyia.cat). Només necessiteu uns minuts i el nostre assistent us guiarà en el procés."
-      ],
-      "Upgrade to any paid plan to use custom domains and unlock premium features": [
-        "Actualitzeu a qualsevol pla de pagament per utilitzar els dominis personalitzats i desbloquejar característiques prèmium"
-      ],
-      "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to use a catch-all address and unlock premium features": [
-        "Actualitzeu a un pla ${ PLAN_NAMES[PLANS.VISIONARY] } o ${ PLAN_NAMES[PLANS.PROFESSIONAL] } per utilitzar l'adreça \"recull tot\" i desbloquejar característiques prèmium"
-      ],
-      "Are you sure you want to disable two-factor authentication?": [
-        "Esteu segur que voleu deshabilitar l'autenticació de dos factors?"
-      ]
-    },
-    "Header": {
-      "Get help": [
-        "Obtenir ajuda"
-      ],
-      "Name": [
-        "Nom"
-      ],
-      "Status": [
-        "Estat"
-      ],
-      "Actions": [
-        "Accions"
-      ],
-      "Calendar": [
-        "Calendari"
-      ],
-      "Label": [
-        "Etiqueta"
-      ],
-      "What others see": [
-        "El que altres veuen"
-      ],
-      "Event": [
-        "Esdeveniment"
-      ],
-      "Time": [
-        "Temps"
-      ],
-      "Folders": [
-        "Carpetes"
-      ],
-      "Notifications": [
-        "Notificacions"
-      ],
-      "Organization key fingerprint": [
-        "Clau d'identificació de la clau d'organització"
-      ],
-      "Key type": [
-        "Clau tipus"
+    "Tooltip default pgp scheme": {
+      "Select the default PGP settings used to sign or encrypt messages with non-ProtonMail PGP users. Note that Inline PGP forces plain text messages. Learn more": [
+        "Seleccioneu la configuració PGP per defecte utilitzada per signar o xifrar missatges amb usuaris PGP que no utilitzin ProtonMail. Tingueu en compte que Inline PGP força a la utilització de text pla. Saber-ne més"
       ]
     },
     "Duration": {
@@ -5683,6 +5531,47 @@
         "Detalls dels esdeveniments que no s'han pogut exportar"
       ]
     },
+    "Header": {
+      "Name": [
+        "Nom"
+      ],
+      "Status": [
+        "Estat"
+      ],
+      "Actions": [
+        "Accions"
+      ],
+      "Calendar": [
+        "Calendari"
+      ],
+      "Label": [
+        "Etiqueta"
+      ],
+      "What others see": [
+        "El que altres veuen"
+      ],
+      "Get help": [
+        "Obtenir ajuda"
+      ],
+      "Folders": [
+        "Carpetes"
+      ],
+      "Notifications": [
+        "Notificacions"
+      ],
+      "Event": [
+        "Esdeveniment"
+      ],
+      "Time": [
+        "Temps"
+      ],
+      "Organization key fingerprint": [
+        "Clau d'identificació de la clau d'organització"
+      ],
+      "Key type": [
+        "Clau tipus"
+      ]
+    },
     "Calendar status": {
       "Default": [
         "Per defecte"
@@ -5693,11 +5582,11 @@
       "Disabled": [
         "Deshabilitat"
       ],
-      "Not synced": [
-        "No sincronitzat"
-      ],
       "Syncing": [
         "Sincronitzant"
+      ],
+      "Not synced": [
+        "No sincronitzat"
       ]
     },
     "Upgrade notice": {
@@ -5923,157 +5812,6 @@
         "Vista completa"
       ]
     },
-    "Onboarding Proton": {
-      "This is what people will see when you send them an email, invite them to an event, or share a file with them.": [
-        "Això és el que la gent veurà quan els envieu un correu electrònic, els convideu a un esdeveniment o hi compartiu un arxiu."
-      ],
-      "Choose a display name": [
-        "Trieu un nom per mostrar"
-      ],
-      "Select a theme": [
-        "Seleccioneu un tema"
-      ],
-      "You can change this anytime in your settings.": [
-        "Podeu canviar-ho en qualsevol moment a les preferències."
-      ],
-      "Discover all Proton services": [
-        "Descobriu tots els serveis de Proton"
-      ],
-      "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
-        "Utilitzeu el selector d'aplicació a dalt a l'esquerra per accedir a altres serveis de Proton, incloent VPN, Calendar i Drive."
-      ],
-      "Welcome to Proton": [
-        "Benvingut/da a Proton"
-      ],
-      "Our mission is to build an internet where you are in control of your data and your privacy. We have recently updated Proton - welcome to the secure internet.": [
-        "La nostra missió és construir una internet on tingueu el control de les vostres dades i la vostra privacitat. Hem actualitzat Proton recentment - benvinguts a una internet segura."
-      ],
-      "Set up your organization": [
-        "Configureu la vostra organització"
-      ],
-      "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
-        "Configureu la vostra organització, enllaç al vostre nom de domini, i creeu comptes per assegurar-vos que tots els membres de la vostra organització estan protegits."
-      ]
-    },
-    "Autoresponse": {
-      "I'm out of the office with limited access to my email.": [
-        "Sóc fora de l'oficina i amb accés limitat al meu correu electrònic."
-      ]
-    },
-    "Error notification in the bug report modal when the user upload file": {
-      "No image selected": [
-        "No s'ha seleccionat cap imatge"
-      ]
-    },
-    "Bug category": {
-      "Sign in problem": [
-        "Problema d'inici de sessió"
-      ],
-      "Sign up problem": [
-        "Problema de registre"
-      ],
-      "Payments problem": [
-        "Problema de pagament"
-      ],
-      "Custom domain problem": [
-        "Problema al domini personalitzat"
-      ],
-      "Bridge problem": [
-        "Problema a Bridge"
-      ],
-      "Import / export problem": [
-        "Problema d'Importació / Exportació"
-      ],
-      "Connection problem": [
-        "Problema de connexió"
-      ],
-      "Slow speed problem": [
-        "Problema de baixa velocitat"
-      ],
-      "Calendar problem": [
-        "Problemes al calendari"
-      ],
-      "Contacts problem": [
-        "Problemes de contactes"
-      ],
-      "Drive problem": [
-        "Problemes de Drive"
-      ],
-      "Mail problem": [
-        "Problemes al correu"
-      ],
-      "VPN problem": [
-        "Problema de VPN"
-      ],
-      "Feature request": [
-        "Petició d'una característica"
-      ],
-      "Other": [
-        "Altres"
-      ],
-      "Signup problem": [
-        "Problema de registre"
-      ],
-      "Installation problem": [
-        "Problema d'instal·lació"
-      ],
-      "Update problem": [
-        "Actualitzar problema"
-      ],
-      "Application problem": [
-        "Problema d’aplicació"
-      ],
-      "Speed problem": [
-        "Problema de velocitat"
-      ],
-      "Manual setup problem": [
-        "Problema de configuració manual"
-      ],
-      "Website access problem": [
-        "Problema d'acces a la web"
-      ],
-      "Streaming problem": [
-        "Problema de streaming"
-      ]
-    },
-    "Group": {
-      "Account": [
-        "Compte"
-      ],
-      "Apps": [
-        "Aplicacions"
-      ],
-      "Network": [
-        "Xarxa"
-      ],
-      "Services": [
-        "Serveis"
-      ],
-      "Other category": [
-        "Una altra categoria"
-      ]
-    },
-    "Action to select a title for the bug report modal": {
-      "Select": [
-        "Seleccionar"
-      ]
-    },
-    "Label, make it short please": {
-      "Attach screenshot(s)": [
-        "Adjunta captura(es) de pantalla"
-      ]
-    },
-    "Apps dropdown": {
-      "Proton applications": [
-        "Aplicacions de Proton"
-      ],
-      "Go to ${ title }": [
-        "Ves a ${ title }"
-      ],
-      "Go to ${ vpnName }": [
-        "Anar a ${ vpnName }"
-      ]
-    },
     "Select files": {
       "Upload additional private keys": [
         "Carregar claus privades addicionals"
@@ -6193,6 +5931,558 @@
       ],
       "Compatibility": [
         "Compatibilitat"
+      ]
+    },
+    "Label for adding a new custom domain": {
+      "Add a domain that you own to your ProtonMail account.": [
+        "Afegeixi un domini propi al seu compte de ProtonMail."
+      ]
+    },
+    "Domain modal": {
+      "'www' subdomains are typically not used for email. Are you sure you want to use this domain value?": [
+        "Els subdominis \"www\" normalment no s'utilitzen per enviar missatges de correu electrònic. Està segur que vol utilitzar aquest valor de domini?"
+      ]
+    },
+    "Info for domain modal": {
+      "For security reasons, we need to verify that you are the owner of ${ domainName }. Please add the following DNS TXT record to your domain. This can typically be done in the control panel of your domain name registrar.": [
+        "Per motius de seguretat, hem de verificar que sou el propietari de ${ domainName }. Afegiu el següent registre DNS TXT al vostre domini. Normalment es pot fer al tauler de control del registre del vostre nom de domini."
+      ],
+      "Add a new user to your organization and create an address for it.": [
+        "Afegiu un usuari nou a la vostra organització i creeu-ne una adreça."
+      ],
+      "Add a new address for any user of your organization.": [
+        "Afegiu una adreça nova per a qualsevol usuari de la vostra organització."
+      ]
+    },
+    "Warning for domain modal": {
+      "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
+        "Després de la verificació satisfactòria, no suprimiu aquest registre TXT ja que cal confirmar que continueu posseint el domini."
+      ],
+      "It can take up to a day for DNS changes to update.": [
+        "Els canvis DNS poden trigar fins a un dia a actualitzar-se."
+      ]
+    },
+    "Label for domain modal": {
+      "Please add the following TXT record:": [
+        "Si us plau afegiu el següent registre TXT:"
+      ]
+    },
+    "Header for domain modal": {
+      "Type": [
+        "Tipus"
+      ],
+      "Host name": [
+        "Nom del servidor"
+      ],
+      "Value / Data / Points to": [
+        "Valor / Dades / Punts a"
+      ],
+      "Value / Data": [
+        "Valor / Dades"
+      ],
+      "Priority": [
+        "Prioritat"
+      ]
+    },
+    "Tab in domain modal": {
+      "Addresses": [
+        "Adreces"
+      ]
+    },
+    "Label in domain modal": {
+      "Domain": [
+        "Domini"
+      ],
+      "Verify": [
+        "Verificar"
+      ],
+      "Addresses": [
+        "Adreces"
+      ]
+    },
+    "Domain label": {
+      "Verified": [
+        "Verificat"
+      ]
+    },
+    "Badge for domain": {
+      "Missing keys": [
+        "Falten claus"
+      ],
+      "Enabled": [
+        "Activat"
+      ],
+      "Disabled": [
+        "Desactivat"
+      ]
+    },
+    "Title header for addresses domain table": {
+      "Address": [
+        "Adreça"
+      ],
+      "Status": [
+        "Estat"
+      ],
+      "Catch-All": [
+        "Catch-All"
+      ]
+    },
+    "Success message": {
+      "Domain deleted": [
+        "S'ha suprimit el domini"
+      ],
+      "Sessions revoked": [
+        "Sessions revocades"
+      ],
+      "User deleted": [
+        "Usuari eliminat"
+      ]
+    },
+    "Header for addresses table": {
+      "Domain": [
+        "Domini"
+      ],
+      "Status": [
+        "Estat"
+      ],
+      "Actions": [
+        "Accions"
+      ],
+      "Address": [
+        "Adreça"
+      ],
+      "Username": [
+        "Nom d'usuari"
+      ]
+    },
+    "Message": {
+      "Set up a custom domain email address (e.g., you@yourcompany.com). It only takes a few minutes, and our wizard will guide you through the process.": [
+        "Configureu una adreça de correu electrònic amb domini personalitzat (p. ex. exemple@lavostracompanyia.cat). Només necessiteu uns minuts i el nostre assistent us guiarà en el procés."
+      ],
+      "Upgrade to any paid plan to use custom domains and unlock premium features": [
+        "Actualitzeu a qualsevol pla de pagament per utilitzar els dominis personalitzats i desbloquejar característiques prèmium"
+      ],
+      "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to use a catch-all address and unlock premium features": [
+        "Actualitzeu a un pla ${ PLAN_NAMES[PLANS.VISIONARY] } o ${ PLAN_NAMES[PLANS.PROFESSIONAL] } per utilitzar l'adreça \"recull tot\" i desbloquejar característiques prèmium"
+      ],
+      "Are you sure you want to disable two-factor authentication?": [
+        "Esteu segur que voleu deshabilitar l'autenticació de dos factors?"
+      ]
+    },
+    "Onboarding Proton": {
+      "This is what people will see when you send them an email, invite them to an event, or share a file with them.": [
+        "Això és el que la gent veurà quan els envieu un correu electrònic, els convideu a un esdeveniment o hi compartiu un arxiu."
+      ],
+      "Choose a display name": [
+        "Trieu un nom per mostrar"
+      ],
+      "Select a theme": [
+        "Seleccioneu un tema"
+      ],
+      "You can change this anytime in your settings.": [
+        "Podeu canviar-ho en qualsevol moment a les preferències."
+      ],
+      "Discover all Proton services": [
+        "Descobriu tots els serveis de Proton"
+      ],
+      "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
+        "Utilitzeu el selector d'aplicació a dalt a l'esquerra per accedir a altres serveis de Proton, incloent VPN, Calendar i Drive."
+      ],
+      "Welcome to Proton": [
+        "Benvingut/da a Proton"
+      ],
+      "Our mission is to build an internet where you are in control of your data and your privacy. We have recently updated Proton - welcome to the secure internet.": [
+        "La nostra missió és construir una internet on tingueu el control de les vostres dades i la vostra privacitat. Hem actualitzat Proton recentment - benvinguts a una internet segura."
+      ],
+      "Set up your organization": [
+        "Configureu la vostra organització"
+      ],
+      "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
+        "Configureu la vostra organització, enllaç al vostre nom de domini, i creeu comptes per assegurar-vos que tots els membres de la vostra organització estan protegits."
+      ]
+    },
+    "Step in filter modal": {
+      "Name": [
+        "Nom"
+      ],
+      "Conditions": [
+        "Condicions"
+      ],
+      "Actions": [
+        "Accions"
+      ],
+      "Preview": [
+        "Vista prèvia"
+      ],
+      "Sieve editor": [
+        "Editor Sieve"
+      ]
+    },
+    "Option group": {
+      "Custom folders": [
+        "Carpetes personalitzades"
+      ],
+      "Move to...": [
+        "Moure a..."
+      ],
+      "Default folders": [
+        "Carpetes per defecte"
+      ]
+    },
+    "Filter preview": {
+      "read": [
+        "llegit"
+      ],
+      "starred": [
+        "destacat"
+      ]
+    },
+    "Filter notification": {
+      "Filter ${ Filter.Name } updated": [
+        "Filtre ${ Filter.Name } actualitzat"
+      ],
+      "${ Label.Name } updated": [
+        "${ Label.Name } actualitzat"
+      ]
+    },
+    "Filter modal type": {
+      "Select…": [
+        "Seleccionar…"
+      ],
+      "The subject": [
+        "L'assumpte"
+      ],
+      "The sender": [
+        "El remitent"
+      ],
+      "The recipient": [
+        "El destinatari"
+      ],
+      "The attachment": [
+        "L’adjunt"
+      ]
+    },
+    "Condition for custom filter": {
+      "contains": [
+        "conté"
+      ],
+      "is exactly": [
+        "és exactament"
+      ],
+      "begins with": [
+        "comença amb"
+      ],
+      "ends with": [
+        "acaba amb"
+      ],
+      "matches": [
+        "coincideix"
+      ],
+      "does not contain": [
+        "no conté"
+      ],
+      "is not": [
+        "no és"
+      ],
+      "does not begin with": [
+        "no comença amb"
+      ],
+      "does not end with": [
+        "no acaba amb"
+      ],
+      "does not match": [
+        "no coincideix"
+      ]
+    },
+    "Filter modal operators": {
+      "All conditions must be fulfilled (AND)": [
+        "Cal complir totes les condicions (I)"
+      ],
+      "One condition must be fulfilled (OR)": [
+        "Cal complir totes les condicions (O)"
+      ]
+    },
+    "Filter Actions": {
+      "Select a folder": [
+        "Selecció de carpeta"
+      ],
+      "Archive": [
+        "Arxiu"
+      ],
+      "Inbox": [
+        "Safata d'entrada"
+      ],
+      "Spam": [
+        "Correu brossa"
+      ],
+      "Trash": [
+        "Paperera"
+      ]
+    },
+    "Success notification": {
+      "Status updated": [
+        "Estat actualitzat"
+      ],
+      "Filter removed": [
+        "Filtre suprimit"
+      ],
+      "${ label.Name } removed": [
+        "${ label.Name } suprimit"
+      ],
+      "Address deleted": [
+        "Adreça eliminada"
+      ],
+      "Address enabled": [
+        "Adreça habilitada"
+      ],
+      "Address disabled": [
+        "Adreça deshabilitada"
+      ]
+    },
+    "Settings/filters": {
+      "Filters": [
+        "Filtres"
+      ]
+    },
+    "Settings/filters - table": {
+      "Order": [
+        "Comanda"
+      ],
+      "Name": [
+        "Nom"
+      ],
+      "Status": [
+        "Estat"
+      ],
+      "Action": [
+        "Acció"
+      ]
+    },
+    "FilterSettings": {
+      "Add a custom filter to automatically perform certain actions, like labeling or archiving messages.": [
+        "Afegiu un filtre personalitzat per realitzar automàticament certes accions, com ara etiquetar o arxivar missatges."
+      ],
+      "Apply sender-specific spam rules. Messages from addresses or domains on the Allow List always go to your Inbox while messages from addresses or domains on the Block List always go to Spam. Marking a message as spam adds its address to the Block List. Marking a message as not spam adds it to the Allow List.": [
+        "Aplicar regles de correu no desitjat específiques depenent del remitent. Els missatges d'adreces o dominis a la llista de Permesos sempre van a parar a la vostra Safata d'entrada, mentre que missatges d'adreces o dominis de la llista de No desitjats sempre van a parar a Correu brossa. Marcar un missatge com a correu brossa n'afegeix l'adreça a la llista de No desitjats; marcar un missatge com a no correu brossa l'afegeix a la llista de Permesos."
+      ],
+      "Search in Allow List and Block List": [
+        "Cercar a Llista d'Autoritzats i Llista de Bloqueig"
+      ]
+    },
+    "Spam notification": {
+      "${ domain } updated": [
+        "${ domain } actualitzat"
+      ],
+      "${ domain } added": [
+        "${ domain } afegit"
+      ],
+      "${ email } updated": [
+        "${ email } actualitzat"
+      ],
+      "${ email } added": [
+        "${ email } afegit"
+      ]
+    },
+    "Spam filter moved to blacklist": {
+      "${ Domain } moved to Block List": [
+        "${ Domain } mogut a la Llista de Bloqueig"
+      ],
+      "${ Email } moved to Block List": [
+        "${ Email } mogut a la Llista de Bloqueig"
+      ]
+    },
+    "Spam filter moved to whitelist": {
+      "${ Domain } moved to Allow List": [
+        "${ Domain } mogut a Llista d'Autoritzats"
+      ],
+      "${ Email } moved to Allow List": [
+        "${ Email } mogut a Llista d'Autoritzats"
+      ]
+    },
+    "Moved to black/whitelist": {
+      "${ Domain } removed": [
+        "${ Domain } esborrat"
+      ],
+      "${ Email } removed": [
+        "${ Email } esborrat"
+      ]
+    },
+    "Error notification in the bug report modal when the user upload file": {
+      "No image selected": [
+        "No s'ha seleccionat cap imatge"
+      ]
+    },
+    "Bug category": {
+      "Sign in problem": [
+        "Problema d'inici de sessió"
+      ],
+      "Sign up problem": [
+        "Problema de registre"
+      ],
+      "Payments problem": [
+        "Problema de pagament"
+      ],
+      "Custom domain problem": [
+        "Problema al domini personalitzat"
+      ],
+      "Bridge problem": [
+        "Problema a Bridge"
+      ],
+      "Import / export problem": [
+        "Problema d'Importació / Exportació"
+      ],
+      "Connection problem": [
+        "Problema de connexió"
+      ],
+      "Slow speed problem": [
+        "Problema de baixa velocitat"
+      ],
+      "Calendar problem": [
+        "Problemes al calendari"
+      ],
+      "Contacts problem": [
+        "Problemes de contactes"
+      ],
+      "Drive problem": [
+        "Problemes de Drive"
+      ],
+      "Mail problem": [
+        "Problemes al correu"
+      ],
+      "VPN problem": [
+        "Problema de VPN"
+      ],
+      "Feature request": [
+        "Petició d'una característica"
+      ],
+      "Other": [
+        "Altres"
+      ],
+      "Signup problem": [
+        "Problema de registre"
+      ],
+      "Installation problem": [
+        "Problema d'instal·lació"
+      ],
+      "Update problem": [
+        "Actualitzar problema"
+      ],
+      "Application problem": [
+        "Problema d’aplicació"
+      ],
+      "Speed problem": [
+        "Problema de velocitat"
+      ],
+      "Manual setup problem": [
+        "Problema de configuració manual"
+      ],
+      "Website access problem": [
+        "Problema d'acces a la web"
+      ],
+      "Streaming problem": [
+        "Problema de streaming"
+      ]
+    },
+    "Group": {
+      "Account": [
+        "Compte"
+      ],
+      "Apps": [
+        "Aplicacions"
+      ],
+      "Network": [
+        "Xarxa"
+      ],
+      "Services": [
+        "Serveis"
+      ],
+      "Other category": [
+        "Una altra categoria"
+      ]
+    },
+    "Action to select a title for the bug report modal": {
+      "Select": [
+        "Seleccionar"
+      ]
+    },
+    "Label, make it short please": {
+      "Attach screenshot(s)": [
+        "Adjunta captura(es) de pantalla"
+      ]
+    },
+    "New Label form": {
+      "Color": [
+        "Color"
+      ],
+      "Folder name": [
+        "Nom de carpeta"
+      ],
+      "Label name": [
+        "Nom de etiqueta"
+      ]
+    },
+    "label/folder notification": {
+      "${ Label.Name } created": [
+        "${ Label.Name } creada"
+      ],
+      "${ label.Name } updated": [
+        "${ label.Name } actualitzat"
+      ],
+      "Preference saved": [
+        "Preferència desada"
+      ]
+    },
+    "Label/folder modal": {
+      "Create folder": [
+        "Crear carpeta"
+      ],
+      "Create label": [
+        "Crear etiqueta"
+      ],
+      "Edit folder": [
+        "Edita la carpeta"
+      ],
+      "Edit label": [
+        "Edita l'etiqueta"
+      ]
+    },
+    "Success message after sorting folders": {
+      "Folders sorted": [
+        "Carpetes ordenades"
+      ]
+    },
+    "Info - folder colouring feature": {
+      "When enabled, sub-folders inherit the color of the parent folder.": [
+        "Si s'activa, les subcarpetes hereten el color de la carpeta principal."
+      ]
+    },
+    "Settings/labels": {
+      "Labels/Folders": [
+        "Etiquetes/Carpetes"
+      ]
+    },
+    "Settings/labels - table": {
+      "Labels": [
+        "Etiquetes"
+      ],
+      "Actions": [
+        "Accions"
+      ]
+    },
+    "Success message after sorting labels": {
+      "Labels sorted": [
+        "Etiquetes ordenades"
+      ]
+    },
+    "Apps dropdown": {
+      "Proton applications": [
+        "Aplicacions de Proton"
+      ],
+      "Go to ${ title }": [
+        "Ves a ${ title }"
+      ],
+      "Go to ${ vpnName }": [
+        "Anar a ${ vpnName }"
       ]
     },
     "Suffix": {
@@ -6723,6 +7013,20 @@
         "Hi ha disponible una nova versió de ${ appName }. ${ reloadButton }."
       ]
     },
+    "Option delay send seconds": {
+      "0 seconds": [
+        "0 segons"
+      ],
+      "5 seconds": [
+        "5 segons"
+      ],
+      "10 seconds": [
+        "10 segons"
+      ],
+      "20 seconds": [
+        "20 segons"
+      ]
+    },
     "Label for news": {
       "Proton company announcements": [
         "Anuncis de l'organització Proton"
@@ -6769,6 +7073,59 @@
       ],
       "Recovery phrase": [
         "Frase de recuperació"
+      ]
+    },
+    "Address status": {
+      "Default": [
+        "Per defecte"
+      ],
+      "Active": [
+        "Actiu"
+      ],
+      "Disabled": [
+        "Desactivat"
+      ],
+      "Orphan": [
+        "Orfà"
+      ],
+      "Missing keys": [
+        "Falta claus"
+      ]
+    },
+    "Address action": {
+      "Enable": [
+        "Habilitar"
+      ],
+      "Disable": [
+        "Deshabilitar"
+      ],
+      "Generate missing keys": [
+        "Generar claus perdudes"
+      ],
+      "Delete": [
+        "Esborra"
+      ]
+    },
+    "Bridge version load failed": {
+      "Failed to find latest version": [
+        "No s'ha pogut trobar l'última versió"
+      ]
+    },
+    "OS compatibility": {
+      ".exe (64-bit)": [
+        ".exe (64-bit)"
+      ],
+      ".dmg (10.12 or later)": [
+        ".dmg (10.12 o posterior)"
+      ],
+      ".deb (for Debian/Ubuntu)": [
+        ".deb (per a Debian/Ubuntu)"
+      ],
+      ".rpm (for Fedora/openSUSE)": [
+        ".rpm (per a Fedora/openSUSE)"
+      ],
+      "PKGBUILD (for other distributions)": [
+        "PKGBUILD (per a altres distribucions)"
       ]
     },
     "Badge for user sessions table": {
@@ -6931,26 +7288,6 @@
         "Bitcoin"
       ]
     },
-    "Tooltip prompt to trust keys": {
-      "When receiving an email from another ProtonMail user who does not have trusted keys in your contacts, a banner will ask if you want to enable trusted keys.": [
-        "Al rebre un correu electrònic d'un altre usuari de ProtonMail que no tingui claus de confiança als vostres contactes, un avís us preguntarà si voleu habilitar les claus de confiança."
-      ]
-    },
-    "Tooltip sign external messages": {
-      "Automatically sign all your outgoing messages so users can verify the authenticity of your messages. This is done in combination with the default PGP settings which can be configured below.": [
-        "Signeu automàticament tots els vostres missatges de sortida perquè els usuaris puguin verificar l'autenticitat dels vostres missatges. Això es fa en combinació amb la configuració PGP per defecte que es pot configurar a continuació."
-      ]
-    },
-    "Tooltip automatically attach public key": {
-      "This automatically adds your public key to each message you send. Recipients can use this to verify the authenticity of your messages and send encrypted messages to you.": [
-        "Això afegeix automàticament la vostra clau pública a cada missatge que envieu. Els destinataris poden utilitzar això per verificar l'autenticitat dels vostres missatges i enviar-vos missatges xifrats."
-      ]
-    },
-    "Tooltip default pgp scheme": {
-      "Select the default PGP settings used to sign or encrypt messages with non-ProtonMail PGP users. Note that Inline PGP forces plain text messages. Learn more": [
-        "Seleccioneu la configuració PGP per defecte utilitzada per signar o xifrar missatges amb usuaris PGP que no utilitzin ProtonMail. Tingueu en compte que Inline PGP força a la utilització de text pla. Saber-ne més"
-      ]
-    },
     "Invoice type display as badge": {
       "Other": [
         "Altres"
@@ -7013,298 +7350,6 @@
     "Title for PDF file": {
       "ProtonMail invoice": [
         "Factura ProtonMail"
-      ]
-    },
-    "Step in filter modal": {
-      "Name": [
-        "Nom"
-      ],
-      "Conditions": [
-        "Condicions"
-      ],
-      "Actions": [
-        "Accions"
-      ],
-      "Preview": [
-        "Vista prèvia"
-      ],
-      "Sieve editor": [
-        "Editor Sieve"
-      ]
-    },
-    "Option group": {
-      "Custom folders": [
-        "Carpetes personalitzades"
-      ],
-      "Move to...": [
-        "Moure a..."
-      ],
-      "Default folders": [
-        "Carpetes per defecte"
-      ]
-    },
-    "Filter preview": {
-      "read": [
-        "llegit"
-      ],
-      "starred": [
-        "destacat"
-      ]
-    },
-    "Filter notification": {
-      "Filter ${ Filter.Name } updated": [
-        "Filtre ${ Filter.Name } actualitzat"
-      ],
-      "${ Label.Name } updated": [
-        "${ Label.Name } actualitzat"
-      ]
-    },
-    "Filter modal type": {
-      "Select…": [
-        "Seleccionar…"
-      ],
-      "The subject": [
-        "L'assumpte"
-      ],
-      "The sender": [
-        "El remitent"
-      ],
-      "The recipient": [
-        "El destinatari"
-      ],
-      "The attachment": [
-        "L’adjunt"
-      ]
-    },
-    "Condition for custom filter": {
-      "contains": [
-        "conté"
-      ],
-      "is exactly": [
-        "és exactament"
-      ],
-      "begins with": [
-        "comença amb"
-      ],
-      "ends with": [
-        "acaba amb"
-      ],
-      "matches": [
-        "coincideix"
-      ],
-      "does not contain": [
-        "no conté"
-      ],
-      "is not": [
-        "no és"
-      ],
-      "does not begin with": [
-        "no comença amb"
-      ],
-      "does not end with": [
-        "no acaba amb"
-      ],
-      "does not match": [
-        "no coincideix"
-      ]
-    },
-    "Filter modal operators": {
-      "All conditions must be fulfilled (AND)": [
-        "Cal complir totes les condicions (I)"
-      ],
-      "One condition must be fulfilled (OR)": [
-        "Cal complir totes les condicions (O)"
-      ]
-    },
-    "Filter Actions": {
-      "Select a folder": [
-        "Selecció de carpeta"
-      ],
-      "Archive": [
-        "Arxiu"
-      ],
-      "Inbox": [
-        "Safata d'entrada"
-      ],
-      "Spam": [
-        "Correu brossa"
-      ],
-      "Trash": [
-        "Paperera"
-      ]
-    },
-    "Success notification": {
-      "Status updated": [
-        "Estat actualitzat"
-      ],
-      "Filter removed": [
-        "Filtre suprimit"
-      ],
-      "${ label.Name } removed": [
-        "${ label.Name } suprimit"
-      ],
-      "Address deleted": [
-        "Adreça eliminada"
-      ],
-      "Address enabled": [
-        "Adreça habilitada"
-      ],
-      "Address disabled": [
-        "Adreça deshabilitada"
-      ]
-    },
-    "Settings/filters": {
-      "Filters": [
-        "Filtres"
-      ]
-    },
-    "Settings/filters - table": {
-      "Order": [
-        "Comanda"
-      ],
-      "Name": [
-        "Nom"
-      ],
-      "Status": [
-        "Estat"
-      ],
-      "Action": [
-        "Acció"
-      ]
-    },
-    "FilterSettings": {
-      "Add a custom filter to automatically perform certain actions, like labeling or archiving messages.": [
-        "Afegiu un filtre personalitzat per realitzar automàticament certes accions, com ara etiquetar o arxivar missatges."
-      ],
-      "Apply sender-specific spam rules. Messages from addresses or domains on the Allow List always go to your Inbox while messages from addresses or domains on the Block List always go to Spam. Marking a message as spam adds its address to the Block List. Marking a message as not spam adds it to the Allow List.": [
-        "Aplicar regles de correu no desitjat específiques depenent del remitent. Els missatges d'adreces o dominis a la llista de Permesos sempre van a parar a la vostra Safata d'entrada, mentre que missatges d'adreces o dominis de la llista de No desitjats sempre van a parar a Correu brossa. Marcar un missatge com a correu brossa n'afegeix l'adreça a la llista de No desitjats; marcar un missatge com a no correu brossa l'afegeix a la llista de Permesos."
-      ],
-      "Search in Allow List and Block List": [
-        "Cercar a Llista d'Autoritzats i Llista de Bloqueig"
-      ]
-    },
-    "Spam notification": {
-      "${ domain } updated": [
-        "${ domain } actualitzat"
-      ],
-      "${ domain } added": [
-        "${ domain } afegit"
-      ],
-      "${ email } updated": [
-        "${ email } actualitzat"
-      ],
-      "${ email } added": [
-        "${ email } afegit"
-      ]
-    },
-    "Spam filter moved to blacklist": {
-      "${ Domain } moved to Block List": [
-        "${ Domain } mogut a la Llista de Bloqueig"
-      ],
-      "${ Email } moved to Block List": [
-        "${ Email } mogut a la Llista de Bloqueig"
-      ]
-    },
-    "Spam filter moved to whitelist": {
-      "${ Domain } moved to Allow List": [
-        "${ Domain } mogut a Llista d'Autoritzats"
-      ],
-      "${ Email } moved to Allow List": [
-        "${ Email } mogut a Llista d'Autoritzats"
-      ]
-    },
-    "Moved to black/whitelist": {
-      "${ Domain } removed": [
-        "${ Domain } esborrat"
-      ],
-      "${ Email } removed": [
-        "${ Email } esborrat"
-      ]
-    },
-    "Delinquent modal title": {
-      "Overdue invoice": [
-        "Factura vençuda"
-      ]
-    },
-    "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
-      "Email": [
-        "Correu electrònic"
-      ],
-      "SMS": [
-        "SMS"
-      ],
-      "Manual": [
-        "Manual"
-      ],
-      "No verification method available": [
-        "Cap mètode de verificació disponible"
-      ]
-    },
-    "New Label form": {
-      "Color": [
-        "Color"
-      ],
-      "Folder name": [
-        "Nom de carpeta"
-      ],
-      "Label name": [
-        "Nom de etiqueta"
-      ]
-    },
-    "label/folder notification": {
-      "${ Label.Name } created": [
-        "${ Label.Name } creada"
-      ],
-      "${ label.Name } updated": [
-        "${ label.Name } actualitzat"
-      ],
-      "Preference saved": [
-        "Preferència desada"
-      ]
-    },
-    "Label/folder modal": {
-      "Create folder": [
-        "Crear carpeta"
-      ],
-      "Create label": [
-        "Crear etiqueta"
-      ],
-      "Edit folder": [
-        "Edita la carpeta"
-      ],
-      "Edit label": [
-        "Edita l'etiqueta"
-      ]
-    },
-    "Success message after sorting folders": {
-      "Folders sorted": [
-        "Carpetes ordenades"
-      ]
-    },
-    "Info - folder colouring feature": {
-      "When enabled, sub-folders inherit the color of the parent folder.": [
-        "Si s'activa, les subcarpetes hereten el color de la carpeta principal."
-      ]
-    },
-    "Settings/labels": {
-      "Labels/Folders": [
-        "Etiquetes/Carpetes"
-      ]
-    },
-    "Settings/labels - table": {
-      "Labels": [
-        "Etiquetes"
-      ],
-      "Actions": [
-        "Accions"
-      ]
-    },
-    "Success message after sorting labels": {
-      "Labels sorted": [
-        "Etiquetes ordenades"
       ]
     },
     "Restore administrator panel": {
@@ -7387,147 +7432,26 @@
         "privat"
       ]
     },
-    "Address status": {
-      "Default": [
-        "Per defecte"
-      ],
-      "Active": [
-        "Actiu"
-      ],
-      "Disabled": [
-        "Desactivat"
-      ],
-      "Orphan": [
-        "Orfà"
-      ],
-      "Missing keys": [
-        "Falta claus"
+    "Delinquent modal title": {
+      "Overdue invoice": [
+        "Factura vençuda"
       ]
     },
-    "Address action": {
-      "Enable": [
-        "Habilitar"
+    "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
       ],
-      "Disable": [
-        "Deshabilitar"
+      "Email": [
+        "Correu electrònic"
       ],
-      "Generate missing keys": [
-        "Generar claus perdudes"
+      "SMS": [
+        "SMS"
       ],
-      "Delete": [
-        "Esborra"
-      ]
-    },
-    "Option delay send seconds": {
-      "0 seconds": [
-        "0 segons"
+      "Manual": [
+        "Manual"
       ],
-      "5 seconds": [
-        "5 segons"
-      ],
-      "10 seconds": [
-        "10 segons"
-      ],
-      "20 seconds": [
-        "20 segons"
-      ]
-    },
-    "Bridge version load failed": {
-      "Failed to find latest version": [
-        "No s'ha pogut trobar l'última versió"
-      ]
-    },
-    "OS compatibility": {
-      ".exe (64-bit)": [
-        ".exe (64-bit)"
-      ],
-      ".dmg (10.12 or later)": [
-        ".dmg (10.12 o posterior)"
-      ],
-      ".deb (for Debian/Ubuntu)": [
-        ".deb (per a Debian/Ubuntu)"
-      ],
-      ".rpm (for Fedora/openSUSE)": [
-        ".rpm (per a Fedora/openSUSE)"
-      ],
-      "PKGBUILD (for other distributions)": [
-        "PKGBUILD (per a altres distribucions)"
-      ]
-    },
-    "Import contact. Contact identifier": {
-      "unknown": [
-        "deconeguda"
-      ]
-    },
-    "Error importing contact": {
-      "vCard versions < 3.0 not supported": [
-        "versions vCard < 3.0 no suportades"
-      ],
-      "Encryption failed": [
-        "El xifratge ha fallat"
-      ]
-    },
-    "Error importing calendar": {
-      "An unexpected error occurred. Import must be restarted.": [
-        "S'ha produït un error inesperat. S'ha de reiniciar la importació."
-      ],
-      "An error occurred uploading your file. No file has been selected.": [
-        "S'ha produït un error en penjar el fitxer. No s'ha seleccionat cap fitxer."
-      ],
-      "An error occurred uploading your file ${ formattedFilename }. Only ICS file formats are allowed.": [
-        "S'ha produït un error carregant el teu fitxer ${ formattedFilename }. Només es permeten formats de fitxers . ics."
-      ],
-      "Your file ${ formattedFilename } is empty.": [
-        "El teu arxiu ${ formattedFilename } és buit."
-      ],
-      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
-        "S'ha produït un error en carregar el vostre fitxer ${ formattedFilename }. La mida màxima del fitxer és de ${ MAX_IMPORT_FILE_SIZE_STRING }."
-      ],
-      "Your file ${ formattedFilename } is not a calendar.": [
-        "El teu arxiu ${ formattedFilename } no és un calendari."
-      ],
-      "${ CALENDAR_APP_NAME } only supports importing calendars with iCal version 2.0.": [
-        "El ${ CALENDAR_APP_NAME } només admet la importació de calendaris amb iCal versió 2.0."
-      ],
-      "Your file ${ formattedFilename } is an invitation and cannot be imported.": [
-        "El seu arxiu ${ formattedFilename } es una invitació i no pot ser importat."
-      ],
-      "Your file ${ formattedFilename } has no events to be imported.": [
-        "El teu arxiu ${ formattedFilename } no te esdeveniments per ser importats."
-      ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } events.": [
-        "El fitxer ${ formattedFilename } conté més de ${ MAX_IMPORT_EVENTS_STRING } esdeveniments."
-      ],
-      "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "S'ha produït un error llegint el fitxer ${ formattedFilename }. El fitxer no té el format adequat."
-      ]
-    },
-    "Error importing contacts": {
-      "An error occurred uploading your file. No file has been selected.": [
-        "S'ha produït un error carregant el fitxer. No s'ha seleccionat cap fitxer."
-      ],
-      "An error occurred uploading your file ${ formattedFilename }. No .csv or .vcf file selected": [
-        "S'ha produït un error carregant el teu fitxer ${ formattedFilename }. No s'ha seleccionat cap fitxer .csv o .vcf"
-      ],
-      "Your file ${ formattedFilename } is empty.": [
-        "El vostre arxiu ${ formattedFilename } està buit."
-      ],
-      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
-        "S'ha produït un error carregant el vostre fitxer ${ formattedFilename }. La mida màxima del fitxer és de ${ MAX_IMPORT_FILE_SIZE_STRING }."
-      ],
-      "Your file ${ formattedFilename } has no contacts to be imported.": [
-        "El teu arxiu ${ formattedFilename } no te contactes per ser importats."
-      ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
-        "El fitxer ${ formattedFilename } conté més de ${ MAX_IMPORT_CONTACTS_STRING } contactes."
-      ],
-      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "S'ha produït un error llegint el fitxer ${ formattedFilename }. El fitxer no té el format adequat."
-      ]
-    },
-    "Default display name vcard": {
-      "Unknown": [
-        "Desconegut"
+      "No verification method available": [
+        "Cap mètode de verificació disponible"
       ]
     },
     "Contact field label": {
@@ -7662,6 +7586,82 @@
       ],
       "GB": [
         "GB"
+      ]
+    },
+    "Import contact. Contact identifier": {
+      "unknown": [
+        "deconeguda"
+      ]
+    },
+    "Error importing contact": {
+      "vCard versions < 3.0 not supported": [
+        "versions vCard < 3.0 no suportades"
+      ],
+      "Encryption failed": [
+        "El xifratge ha fallat"
+      ]
+    },
+    "Error importing calendar": {
+      "An unexpected error occurred. Import must be restarted.": [
+        "S'ha produït un error inesperat. S'ha de reiniciar la importació."
+      ],
+      "An error occurred uploading your file. No file has been selected.": [
+        "S'ha produït un error en penjar el fitxer. No s'ha seleccionat cap fitxer."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Only ICS file formats are allowed.": [
+        "S'ha produït un error carregant el teu fitxer ${ formattedFilename }. Només es permeten formats de fitxers . ics."
+      ],
+      "Your file ${ formattedFilename } is empty.": [
+        "El teu arxiu ${ formattedFilename } és buit."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
+        "S'ha produït un error en carregar el vostre fitxer ${ formattedFilename }. La mida màxima del fitxer és de ${ MAX_IMPORT_FILE_SIZE_STRING }."
+      ],
+      "Your file ${ formattedFilename } is not a calendar.": [
+        "El teu arxiu ${ formattedFilename } no és un calendari."
+      ],
+      "${ CALENDAR_APP_NAME } only supports importing calendars with iCal version 2.0.": [
+        "El ${ CALENDAR_APP_NAME } només admet la importació de calendaris amb iCal versió 2.0."
+      ],
+      "Your file ${ formattedFilename } is an invitation and cannot be imported.": [
+        "El seu arxiu ${ formattedFilename } es una invitació i no pot ser importat."
+      ],
+      "Your file ${ formattedFilename } has no events to be imported.": [
+        "El teu arxiu ${ formattedFilename } no te esdeveniments per ser importats."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } events.": [
+        "El fitxer ${ formattedFilename } conté més de ${ MAX_IMPORT_EVENTS_STRING } esdeveniments."
+      ],
+      "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
+        "S'ha produït un error llegint el fitxer ${ formattedFilename }. El fitxer no té el format adequat."
+      ]
+    },
+    "Error importing contacts": {
+      "An error occurred uploading your file. No file has been selected.": [
+        "S'ha produït un error carregant el fitxer. No s'ha seleccionat cap fitxer."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. No .csv or .vcf file selected": [
+        "S'ha produït un error carregant el teu fitxer ${ formattedFilename }. No s'ha seleccionat cap fitxer .csv o .vcf"
+      ],
+      "Your file ${ formattedFilename } is empty.": [
+        "El vostre arxiu ${ formattedFilename } està buit."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
+        "S'ha produït un error carregant el vostre fitxer ${ formattedFilename }. La mida màxima del fitxer és de ${ MAX_IMPORT_FILE_SIZE_STRING }."
+      ],
+      "Your file ${ formattedFilename } has no contacts to be imported.": [
+        "El teu arxiu ${ formattedFilename } no te contactes per ser importats."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
+        "El fitxer ${ formattedFilename } conté més de ${ MAX_IMPORT_CONTACTS_STRING } contactes."
+      ],
+      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
+        "S'ha produït un error llegint el fitxer ${ formattedFilename }. El fitxer no té el format adequat."
+      ]
+    },
+    "Default display name vcard": {
+      "Unknown": [
+        "Desconegut"
       ]
     },
     "Participant name": {
@@ -8155,6 +8155,12 @@
       "Unsupported event": [
         "Esdeveniment no suportat"
       ],
+      "Empty ICS file": [
+        "Fitxer ICS buit"
+      ],
+      "Unsupported calendar component": [
+        "Component de calendari no admès"
+      ],
       "Invalid method": [
         "Mètode no vàlid"
       ]
@@ -8429,6 +8435,9 @@
       "VPN apps": [
         "Aplicacions VPN"
       ],
+      "Calendars": [
+        "Calendaris"
+      ],
       "Users & addresses": [
         "Usuaris i adreces"
       ],
@@ -8440,9 +8449,6 @@
       ],
       "Multi-user support": [
         "Suport multiusuari"
-      ],
-      "Calendars": [
-        "Calendaris"
       ],
       "Account": [
         "Compte"
@@ -8462,6 +8468,20 @@
         "Actualitzeu a ${ protonVpnName } ${ PLAN_NAMES[PLANS.VPNPLUS] } per a connectar fins a ${ plusVpnConnections } dispositius a la vegada a la VPN"
       ]
     },
+    "Navigation": {
+      "Back to Mail": [
+        "Tornar al Correu"
+      ],
+      "Back to Calendar": [
+        "Tornar al Calendari"
+      ],
+      "Back to Contacts": [
+        "Tornar als Contactes"
+      ],
+      "Back to Drive": [
+        "Tornar al Drive"
+      ]
+    },
     "Email Unsubscribe Categories": {
       "${ allCategoriesExceptTheLastOne } and ${ lastCategory }": [
         "${ allCategoriesExceptTheLastOne } i ${ lastCategory }"
@@ -8476,20 +8496,6 @@
       ],
       "Which emails do you want to receive from Proton?": [
         "Quins correus de Proton vols rebre?"
-      ]
-    },
-    "Navigation": {
-      "Back to Mail": [
-        "Tornar al Correu"
-      ],
-      "Back to Calendar": [
-        "Tornar al Calendari"
-      ],
-      "Back to Contacts": [
-        "Tornar als Contactes"
-      ],
-      "Back to Drive": [
-        "Tornar al Drive"
       ]
     },
     "Signup label": {

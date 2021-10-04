@@ -5,161 +5,13 @@
   },
   "contexts": {
     "": {},
-    "Error": {
-      "Unknown error": [
-        "Erro desconhecido"
-      ],
-      "Checkout expired, please try again.": [
-        "Pedido expirado. Por favor, tente novamente."
-      ],
-      "Invalid code": [
-        "Código inválido"
-      ],
-      "Error connecting to the Bitcoin API.": [
-        "Erro ao conectar com a API do Bitcoin."
-      ],
-      "Amount below minimum.": [
-        "Quantidade abaixo do mínimo."
-      ],
-      "Amount above the maximum.": [
-        "Quantidade acima do máximo."
-      ],
-      "The minimum amount that can be donated is ${ price }": [
-        "O valor mínimo que pode ser doado é ${ price }"
-      ],
-      "The minimum amount of credit that can be added is ${ _price }": [
-        "A quantidade mínima de crédito que pode ser adicionado é ${ _price }"
-      ],
-      "The minimum payment we accept is ${ _price2 }": [
-        "O pagamento mínimo que aceitamos é ${ _price2 }"
-      ],
-      "Process aborted": [
-        "Processo abortado"
-      ],
-      "Payment process cancelled": [
-        "Processo de pagamento cancelado"
-      ],
-      "Payment process failed": [
-        "Falha no processo de pagamento"
-      ],
-      "Payment process consumed": [
-        "Processo de pagamento concluído"
-      ],
-      "Payment process not supported": [
-        "Processo de pagamento não suportado"
-      ],
-      "Unknown payment token status": [
-        "Status da token de pagamento desconhecido"
-      ],
-      "Tab closed": [
-        "Guia fechada"
-      ],
-      "Name on card required": [
-        "Nome do cartão de credito obrigatório"
-      ],
-      "Invalid expiration date": [
-        "Data de validade inválida"
-      ],
-      "Invalid card number": [
-        "Número do cartão inválido"
-      ],
-      "Invalid ${ name } code": [
-        "Código ${ name } inválido"
-      ],
-      "Invalid postal code": [
-        "CEP inválido"
-      ],
-      "Please generate keys before you try to change your password.": [
-        "Por favor, crie novas chaves antes de tentar alterar sua senha."
-      ],
-      "Please set a recovery/notification email first": [
-        "Por favor, defina um e-mail para recuperação/notificação"
-      ],
-      "Please set a recovery phone number first": [
-        "Por favor, defina um número de telefone de recuperação"
-      ],
-      "Payments are currently not available, please try again later": [
-        "Os pagamentos não estão disponíveis no momento. Por favor, tente novamente mais tarde"
-      ],
-      "You have no invoices.": [
-        "Você não tem faturas."
-      ],
-      "Your account or organization currently has an overdue invoice. Please pay all unpaid invoices.": [
-        "A sua conta ou organização tem neste momento uma fatura em atraso. Por favor regularize a situação."
-      ],
-      "File has no contents to preview": [
-        "Arquivo não tem conteúdo para pré-visualização"
-      ],
-      "Incorrect mailbox password. Please try again": [
-        "E-mail ou senha incorreta. Por favor, tente novamente"
-      ],
-      "Incorrect login credentials. Please try again": [
-        "Credenciais de acesso incorretas. Por favor, tente novamente"
-      ],
-      "Can't validate email, try again later": [
-        "Não é possível validar o e-mail, tente novamente mais tarde"
-      ],
-      "Can't validate phone, try again later": [
-        "Não é possível validar o telefone, tente novamente mais tarde"
-      ],
-      "Enter 6 digits": [
-        "Insira 6 dígitos"
-      ],
-      "Invalid verification code": [
-        "Código de verificação inválido"
-      ],
-      "Email address invalid": [
-        "Endereço de e-mail inválido"
-      ],
-      "Please enter '${ dangerWord }'": [
-        "Por favor, digite '${ dangerWord }'"
-      ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Algo deu errado. Por favor, ${ refresh } a página para tentar novamente. Se você continuar vendo esta mensagem de erro, entre em contato com nossa ${ supportTeam }."
-      ],
-      "This field is required": [
-        "Este campo é obrigatório"
-      ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "O navegador que você está usando não permite que o pagamento seja completamente autorizado. Por favor, use um navegador diferente ou inicie a sessão através de um computador."
-      ],
-      "This field requires a minimum of ${ minimumLength } characters.": [
-        "Esse campo requer um mínimo de ${ minimumLength } caracteres."
-      ],
-      "Email is not valid": [
-        "E-mail não é válido"
-      ],
-      "Not a valid number": [
-        "Não é um número válido"
-      ],
-      "Passwords do not match": [
-        "As senhas não conferem"
-      ],
-      "Signature verification failed": [
-        "Falha na verificação da assinatura"
-      ],
-      "Request timed out.": [
-        "Solicitação expirada."
-      ],
-      "Code wrong or not valid anymore": [
-        "Código errado ou não é mais válido"
-      ],
-      "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
-        "Se o tempo na sua TV expirou, clique em Atualizar na sua TV e digite o seu código novamente."
-      ],
-      "Invalid invitation link": [
-        "Link de convite inválido"
-      ],
-      "Can't check username, try again later": [
-        "Não foi possível verificar o nome de usuário, tente novamente mais tarde"
-      ]
-    },
-    "Error notification in the bug report modal when the user upload file": {
-      "No image selected": [
-        "Nenhuma imagem selecionada"
-      ]
-    },
     "Info": {
+      "No results found": [
+        "Nenhum resultado encontrado"
+      ],
+      "Loading": [
+        "Carregando"
+      ],
       "Screenshot(s) attached": [
         "Captura(s) de tela anexada"
       ],
@@ -746,12 +598,6 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Se você não encontrar o e-mail na caixa de entrada. Por favor, verifique a pasta de spam."
       ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
-        "Clique em \"Solicitar novo código\" para que um novo código seja enviado para ${ strong }. Se esse email estiver incorreto, clique em \"Editar\" para corrigir isso."
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
-        "Clique em \"Solicitar novo código\" para que um novo código seja enviado para ${ strong }. Se esse número de telefone estiver incorreto, clique em \"Editar\" para corrigir isso."
-      ],
       "To fight spam and abuse, please verify you are human.": [
         "Para combater o spam e/ou abuso, verifique se você é humano."
       ],
@@ -763,6 +609,12 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Se você estiver tendo problemas para criar sua conta, solicite um convite e nós responderemos no prazo de um dia útil."
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
+        "Clique em \"Solicitar novo código\" para que um novo código seja enviado para ${ strong }. Se esse email estiver incorreto, clique em \"Editar\" para corrigir isso."
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
+        "Clique em \"Solicitar novo código\" para que um novo código seja enviado para ${ strong }. Se esse número de telefone estiver incorreto, clique em \"Editar\" para corrigir isso."
       ],
       "Enter your recovery email address, and we'll send you your username(s). (This is usually the email address you provided during signup.)": [
         "Digite seu endereço de e-mail de recuperação e enviaremos seu(s) nome(s) de usuário(s). (Geralmente, esse é o endereço de e-mail que você forneceu durante o registro.)"
@@ -802,12 +654,6 @@
       ],
       "support team": [
         "equipe de suporte"
-      ],
-      "No results found": [
-        "Nenhum resultado encontrado"
-      ],
-      "Loading": [
-        "Carregando"
       ],
       "Session timed out.": [
         "Sessão expirada."
@@ -879,628 +725,16 @@
         "Criando sua conta"
       ]
     },
-    "Action": {
-      "Clear": [
-        "Limpar"
-      ],
-      "Add screenshot(s)": [
-        "Adicionar captura(s) de tela"
-      ],
-      "Submit": [
-        "Enviar"
-      ],
-      "Hide info": [
-        "Ocultar informação"
-      ],
-      "Show info": [
-        "Mostrar informação"
-      ],
-      "Copy email to clipboard": [
-        "Copiar e-mail para a área de transferência"
-      ],
-      "${ BRAND_NAME } introduction": [
-        "Introdução do ${ BRAND_NAME }"
-      ],
-      "Chat with us": [
-        "Converse conosco"
-      ],
-      "I have a question": [
-        "Eu tenho uma dúvida"
-      ],
-      "Request a feature": [
-        "Solicitar um recurso"
-      ],
-      "Report a problem": [
-        "Relatar um problema"
-      ],
-      "${ BRAND_NAME } shop": [
-        "Loja ${ BRAND_NAME }"
-      ],
-      "Switch account": [
-        "Alternar de conta"
-      ],
-      "Sign out": [
-        "Encerrar sessão"
-      ],
-      "Get started": [
-        "Comece"
-      ],
-      "Next": [
-        "Próximo"
-      ],
-      "Start setup": [
-        "Iniciar configuração"
-      ],
-      "Skip": [
-        "Pular"
-      ],
-      "Done": [
-        "Concluído"
-      ],
-      "Back": [
-        "Voltar"
-      ],
-      "Use ${ label } theme": [
-        "Usar o tema ${ label }"
-      ],
-      "Signing out": [
-        "Encerrando a sessão"
-      ],
-      "Close": [
-        "Fechar"
-      ],
-      "refresh the page": [
-        "atualizar a página"
-      ],
-      "Remove bonuses": [
-        "Remover bônus"
-      ],
-      "Select plan": [
-        "Selecione o plano"
-      ],
-      "Compare all features": [
-        "Comparar todos os recursos"
-      ],
-      "${ boldSave } by switching to annual billing": [
-        "${ boldSave } mudando para pagamento anual"
-      ],
-      "Continue": [
-        "Continuar"
-      ],
-      "Confirm": [
-        "Confirmar"
-      ],
-      "Pay": [
-        "Pagar"
-      ],
-      "Apply": [
-        "Aplicar"
-      ],
-      "Open ${ CALENDAR_APP_NAME } settings": [
-        "Abrir as configurações de ${ CALENDAR_APP_NAME }"
-      ],
-      "OK": [
-        "OK"
-      ],
-      "Upgrade to Plus": [
-        "Upgrade para o plano Plus"
-      ],
-      "Upgrade to Professional": [
-        "Atualize para o Professional"
-      ],
-      "Activate": [
-        "Ativado"
-      ],
-      "Customize subscription": [
-        "Personalizar assinatura"
-      ],
-      "Cancel subscription": [
-        "Cancelar assinatura"
-      ],
-      "Remove gift code": [
-        "Remover código de vale-presente"
-      ],
-      "annual billing": [
-        "faturamento anual"
-      ],
-      "Compare plans": [
-        "Compare planos"
-      ],
-      "Decrease": [
-        "Diminuir"
-      ],
-      "Increase": [
-        "Aumentar"
-      ],
-      "Downgrade": [
-        "Downgrade"
-      ],
-      "Top up": [
-        "Recarregar"
-      ],
-      "Add credits": [
-        "Adicionar créditos"
-      ],
-      "Save": [
-        "Salvar"
-      ],
-      "Cancel": [
-        "Cancelar"
-      ],
-      "Add PayPal payment method": [
-        "Adicionar o Paypal como método de pagamento"
-      ],
-      "Retry": [
-        "Tentar novamente"
-      ],
-      "Loading verification": [
-        "Carregando verificação"
-      ],
-      "Try again": [
-        "Tentar novamente"
-      ],
-      "Verify": [
-        "Verificar"
-      ],
-      "Use a different card": [
-        "Usar outro cartão"
-      ],
-      "Use a different payment method": [
-        "Use outro método de pagamento"
-      ],
-      "enable desktop notifications": [
-        "habilitar notificações na área de trabalho"
-      ],
-      "here": [
-        "aqui"
-      ],
-      "Refresh the page": [
-        "Atualizar a página"
-      ],
-      "Close this banner": [
-        "Fechar esse banner"
-      ],
-      "Change password": [
-        "Alterar senha"
-      ],
-      "Ok": [
-        "Ok"
-      ],
-      "Download": [
-        "Baixar"
-      ],
-      "Yes": [
-        "Sim"
-      ],
-      "Change mailbox password": [
-        "Alterar senha da caixa de correio"
-      ],
-      "Delete": [
-        "Excluir"
-      ],
-      "Delete your account": [
-        "Excluir sua conta"
-      ],
-      "Hide": [
-        "Ocultar"
-      ],
-      "Show": [
-        "Exibir"
-      ],
-      "Reset credentials": [
-        "Redefinir credenciais"
-      ],
-      "Upgrade": [
-        "Upgrade"
+    "Label": {
+      "Reveal password": [
+        "Revelar senha"
+      ],
+      "Hide password": [
+        "Ocultar senha"
       ],
       "Copy": [
         "Copiar"
       ],
-      "Download all configurations": [
-        "Baixar todas configurações"
-      ],
-      "Get ProtonVPN Plus": [
-        "Obter ProtonVPN Plus"
-      ],
-      "Update": [
-        "Atualizar"
-      ],
-      "Create new recovery phrase": [
-        "Crie uma nova frase de recuperação"
-      ],
-      "Copy to clipboard": [
-        "Copiar para a área de transferência"
-      ],
-      "Create new recovery phrase?": [
-        "Criar uma nova frase de recuperação?"
-      ],
-      "Enter password to continue": [
-        "Digite a senha para continuar"
-      ],
-      "Disable recovery phrase?": [
-        "Desativar a frase de recuperação?"
-      ],
-      "Disable recovery phrase": [
-        "Desativar a frase de recuperação"
-      ],
-      "Edit": [
-        "Editar"
-      ],
-      "Mark as default": [
-        "Definir como padrão"
-      ],
-      "Add credit / debit card": [
-        "Adicionar cartão de crédito/débito"
-      ],
-      "Add PayPal": [
-        "Adicionar PayPal"
-      ],
-      "View": [
-        "Visualizar"
-      ],
-      "User": [
-        "Usuário"
-      ],
-      "Organization": [
-        "Organização"
-      ],
-      "Customize": [
-        "Personalizar"
-      ],
-      "Details": [
-        "Detalhes"
-      ],
-      "Share via link": [
-        "Compartilhar via link"
-      ],
-      "Sharing options": [
-        "Opções de compartilhamento"
-      ],
-      "Zoom out": [
-        "Diminuir zoom"
-      ],
-      "Reset zoom": [
-        "Redefinir zoom"
-      ],
-      "Zoom in": [
-        "Aumentar zoom"
-      ],
-      "Previous": [
-        "Anterior"
-      ],
-      "Log in": [
-        "Iniciar sessão"
-      ],
-      "View invoice": [
-        "Visualizar fatura"
-      ],
-      "Get verification code": [
-        "Obter código de verificação"
-      ],
-      "Try another method": [
-        "Tentar outro método"
-      ],
-      "Request new code": [
-        "Solicitar novo código"
-      ],
-      "Did not receive the code?": [
-        "Não recebeu o código?"
-      ],
-      "Edit email address": [
-        "Editar endereço de e-mail"
-      ],
-      "Edit phone number": [
-        "Editar número de telefone"
-      ],
-      "Email me my username(s)": [
-        "Enviar meu(s) nome(s) de usuário(s)"
-      ],
-      "Get a new password": [
-        "Obter uma nova senha"
-      ],
-      "Reset password": [
-        "Redefinir senha"
-      ],
-      "Reset my password": [
-        "Redefinir minha senha"
-      ],
-      "Close navigation": [
-        "Fechar navegação"
-      ],
-      "Open navigation": [
-        "Abrir navegação"
-      ],
-      "More info: ${ safeTitle }": [
-        "Mais informações: ${ safeTitle }"
-      ],
-      "Go to panel ${ index }": [
-        "Ir para o painel ${ index }"
-      ],
-      "Close modal": [
-        "Fechar janela"
-      ],
-      "Report bug": [
-        "Reportar um problema"
-      ],
-      "Activate my coupon": [
-        "Ativar meu cupom"
-      ],
-      "Hide additional features": [
-        "Ocultar recursos adicionais"
-      ],
-      "Select": [
-        "Selecionar"
-      ],
-      "Verify code again": [
-        "Verificar código novamente"
-      ],
-      "Verify code": [
-        "Verificar código"
-      ],
-      "Create account": [
-        "Criar uma conta"
-      ],
-      "Go to login": [
-        "Ir para login"
-      ],
-      "View full plan comparison": [
-        "Ver comparação completa de planos"
-      ],
-      "Send": [
-        "Enviar"
-      ],
-      "Resend": [
-        "Reenviar"
-      ],
-      "Use another verification method": [
-        "Utilizar outro método de verificação"
-      ],
-      "Confirm payment": [
-        "Confirmar pagamento"
-      ],
-      "Pay annually and save 20%": [
-        "Pague anualmente e economize 20%"
-      ],
-      "Try ${ upsellPlan.title } for only ${ totalMonthlyText }": [
-        "Experimente ${ upsellPlan.title } por apenas ${ totalMonthlyText }"
-      ],
-      "Homepage": [
-        "Página inicial"
-      ]
-    },
-    "Bug category": {
-      "Sign in problem": [
-        "Problema ao iniciar a sessão"
-      ],
-      "Sign up problem": [
-        "Problema no registro"
-      ],
-      "Payments problem": [
-        "Problema com pagamento"
-      ],
-      "Custom domain problem": [
-        "Problema com domínios personalizados"
-      ],
-      "Bridge problem": [
-        "Problema de bridge"
-      ],
-      "Import / export problem": [
-        "Problema ao importar / exportar"
-      ],
-      "Connection problem": [
-        "Problema de conexão"
-      ],
-      "Slow speed problem": [
-        "Problema com lentidão"
-      ],
-      "Calendar problem": [
-        "Problemas com calendário"
-      ],
-      "Contacts problem": [
-        "Problemas com contatos"
-      ],
-      "Drive problem": [
-        "Problemas no Drive"
-      ],
-      "Mail problem": [
-        "Problemas no e-mail"
-      ],
-      "VPN problem": [
-        "Problema na VPN"
-      ],
-      "Feature request": [
-        "Solicitação de recurso"
-      ],
-      "Other": [
-        "Outro"
-      ],
-      "Signup problem": [
-        "Problema no registro"
-      ],
-      "Installation problem": [
-        "Problema na instalação"
-      ],
-      "Update problem": [
-        "Problema na atualização"
-      ],
-      "Application problem": [
-        "Problema no aplicativo"
-      ],
-      "Speed problem": [
-        "Problema de velocidade"
-      ],
-      "Manual setup problem": [
-        "Problema de configuração manual"
-      ],
-      "Website access problem": [
-        "Problema de acesso ao site"
-      ],
-      "Streaming problem": [
-        "Problema de streaming"
-      ]
-    },
-    "Group": {
-      "Account": [
-        "Conta"
-      ],
-      "Apps": [
-        "Aplicativos"
-      ],
-      "Network": [
-        "Rede"
-      ],
-      "Services": [
-        "Serviços"
-      ],
-      "Other category": [
-        "Outra categoria"
-      ]
-    },
-    "Action to select a title for the bug report modal": {
-      "Select": [
-        "Selecionar"
-      ]
-    },
-    "Link": {
-      "clearing your browser cache": [
-        "limpando o cache do seu navegador"
-      ],
-      "Upgrade": [
-        "Upgrade"
-      ],
-      "Go to subscription plans": [
-        "Ir para os planos de assinatura"
-      ],
-      "Add a gift code": [
-        "Adicionar código de vale-presente"
-      ],
-      "click here": [
-        "clique aqui"
-      ],
-      "Pay invoice": [
-        "Pagar fatura"
-      ],
-      "Upgrade account": [
-        "Upgrade de conta"
-      ],
-      "Not activated": [
-        "Não ativado"
-      ],
-      "View guide": [
-        "Ver guia"
-      ],
-      "What is the difference between UDP and TCP protocols?": [
-        "Qual é a diferença entre os protocolos UDP e TCP?"
-      ],
-      "Learn more": [
-        "Saiba mais"
-      ],
-      "Request an invite": [
-        "Solicitar um convite"
-      ],
-      "Back to login": [
-        "Voltar para o início de sessão"
-      ],
-      "here": [
-        "aqui"
-      ],
-      "Upgrade now": [
-        "Faça o upgrade agora"
-      ],
-      "Sign up for free": [
-        "Cadastre-se gratuitamente"
-      ],
-      "protonvpn.com": [
-        "protonvpn.com"
-      ],
-      "Don't have an account yet? Sign up for free!": [
-        "Ainda não tem uma conta? Cadastre-se gratuitamente!"
-      ],
-      "Reset password": [
-        "Redefinir senha"
-      ],
-      "Forgot username?": [
-        "Esqueceu seu nome de usuário?"
-      ],
-      "Common login problems": [
-        "Problemas comuns para iniciar sessão"
-      ],
-      "Contact support": [
-        "Contatar o suporte"
-      ],
-      "Terms of Service": [
-        "Termos de serviço"
-      ],
-      "Privacy Policy": [
-        "Politica de privacidade"
-      ],
-      "Log in": [
-        "Iniciar sessão"
-      ],
-      "Close": [
-        "Fechar"
-      ]
-    },
-    "Success": {
-      "Bug reported": [
-        "Relatório de erros enviado"
-      ],
-      "Email address copied to clipboard": [
-        "Endereço de e-mail copiado para a área de transferência"
-      ],
-      "You have successfully unsubscribed": [
-        "Sua assinatura foi cancelada com sucesso"
-      ],
-      "Credits added": [
-        "Créditos adicionados"
-      ],
-      "Gift code applied": [
-        "Código de presente aplicado"
-      ],
-      "Payment method updated": [
-        "Método de pagamento atualizado"
-      ],
-      "Payment method added": [
-        "Método de pagamento adicionado"
-      ],
-      "Password updated": [
-        "Senha atualizada"
-      ],
-      "Account deleted. Logging out...": [
-        "Conta excluída. Saindo..."
-      ],
-      "Locale updated": [
-        "Idioma atualizado"
-      ],
-      "${ server.Domain } copied in your clipboard": [
-        "${ server.Domain } copiado para a área de transferência"
-      ],
-      "Email updated": [
-        "E-mail atualizado"
-      ],
-      "Phone number updated": [
-        "Número de telefone atualizado"
-      ],
-      "Payment method deleted": [
-        "Método de pagamento excluído"
-      ],
-      "Invoice paid": [
-        "Fatura pendente"
-      ],
-      "Invoice customized": [
-        "Fatura personalizada"
-      ],
-      "Code sent to ${ methodTo }": [
-        "Código enviado para ${ methodTo }"
-      ],
-      "Verification successful": [
-        "Verificado com sucesso"
-      ],
-      "If you entered a valid notification email we will send you an email with your usernames in the next minute.": [
-        "Se você digitou um endereço de e-mail válido, enviaremos um e-mail com os seu(s) nome(s) de usuário(s) no próximo minuto."
-      ]
-    },
-    "Label": {
       "Operating system": [
         "Sistema operacional"
       ],
@@ -1781,15 +1015,6 @@
       "Danger": [
         "Perigo"
       ],
-      "Copy": [
-        "Copiar"
-      ],
-      "Reveal password": [
-        "Revelar senha"
-      ],
-      "Hide password": [
-        "Ocultar senha"
-      ],
       "Back to:": [
         "Voltar para:"
       ],
@@ -1827,90 +1052,651 @@
         "Valor total (dois anos)"
       ]
     },
-    "Placeholder": {
-      "OS name": [
-        "Nome do SO"
+    "Action": {
+      "Close navigation": [
+        "Fechar navegação"
       ],
-      "OS version": [
-        "Versão do SO"
+      "Open navigation": [
+        "Abrir navegação"
       ],
-      "Proton username": [
-        "Nome de usuário"
+      "More info: ${ safeTitle }": [
+        "Mais informações: ${ safeTitle }"
       ],
-      "A way to contact you": [
-        "Uma maneira de entrar em contato com você"
+      "Go to panel ${ index }": [
+        "Ir para o painel ${ index }"
       ],
-      "Please describe the problem and include any error messages": [
-        "Por favor, descreva o problema e inclua quaisquer mensagens de erro"
-      ],
-      "Browser name": [
-        "Nome do navegador"
-      ],
-      "Browser version": [
-        "Versão do navegador"
-      ],
-      "e.g. Julia Smith": [
-        "ex. Jessica Sales"
-      ],
-      "Gift code": [
-        "Código de vale-presente"
-      ],
-      "Feedback": [
-        "Feedback"
-      ],
-      "Other": [
-        "Outro"
-      ],
-      "Add gift code": [
-        "Adicione um Código de Vale-Presente"
-      ],
-      "ZIP": [
-        "CEP"
-      ],
-      "Postal code": [
-        "CEP"
-      ],
-      "Password": [
-        "Senha"
-      ],
-      "Two-factor authentication code": [
-        "Código da verificação em duas etapas"
+      "Close": [
+        "Fechar"
       ],
       "Confirm": [
         "Confirmar"
       ],
-      "Email address": [
-        "Endereço de e-mail"
+      "Cancel": [
+        "Cancelar"
       ],
-      "Mailbox password": [
-        "Senha da caixa de correio"
+      "Submit": [
+        "Enviar"
       ],
-      "Email": [
-        "E-mail"
+      "Close modal": [
+        "Fechar janela"
       ],
-      "Username": [
-        "Nome de usuário"
+      "Clear": [
+        "Limpar"
       ],
-      "Recovery email": [
-        "E-mail de recuperação"
+      "Add screenshot(s)": [
+        "Adicionar captura(s) de tela"
       ],
-      "Reset code": [
-        "Código de redefinição"
+      "Hide info": [
+        "Ocultar informação"
       ],
-      "Enter the word '${ dangerWord }' here": [
-        "Digite a palavra '${ dangerWord }' aqui"
+      "Show info": [
+        "Mostrar informação"
       ],
-      "Choose a new password": [
-        "Digite a nova senha"
+      "Copy email to clipboard": [
+        "Copiar e-mail para a área de transferência"
       ],
-      "Enter coupon code": [
-        "Insira o código do cupom"
+      "${ BRAND_NAME } introduction": [
+        "Introdução do ${ BRAND_NAME }"
       ],
-      "Confirm password": [
-        "Confirmar senha"
+      "Chat with us": [
+        "Converse conosco"
+      ],
+      "I have a question": [
+        "Eu tenho uma dúvida"
+      ],
+      "Request a feature": [
+        "Solicitar um recurso"
+      ],
+      "Report a problem": [
+        "Relatar um problema"
+      ],
+      "${ BRAND_NAME } shop": [
+        "Loja ${ BRAND_NAME }"
+      ],
+      "Switch account": [
+        "Alternar de conta"
+      ],
+      "Sign out": [
+        "Encerrar sessão"
+      ],
+      "Get started": [
+        "Comece"
+      ],
+      "Next": [
+        "Próximo"
+      ],
+      "Start setup": [
+        "Iniciar configuração"
+      ],
+      "Skip": [
+        "Pular"
+      ],
+      "Done": [
+        "Concluído"
+      ],
+      "Back": [
+        "Voltar"
+      ],
+      "Use ${ label } theme": [
+        "Usar o tema ${ label }"
+      ],
+      "Signing out": [
+        "Encerrando a sessão"
+      ],
+      "refresh the page": [
+        "atualizar a página"
+      ],
+      "Remove bonuses": [
+        "Remover bônus"
+      ],
+      "Select plan": [
+        "Selecione o plano"
+      ],
+      "Compare all features": [
+        "Comparar todos os recursos"
+      ],
+      "${ boldSave } by switching to annual billing": [
+        "${ boldSave } mudando para pagamento anual"
+      ],
+      "Continue": [
+        "Continuar"
+      ],
+      "Pay": [
+        "Pagar"
+      ],
+      "Apply": [
+        "Aplicar"
+      ],
+      "Open ${ CALENDAR_APP_NAME } settings": [
+        "Abrir as configurações de ${ CALENDAR_APP_NAME }"
+      ],
+      "OK": [
+        "OK"
+      ],
+      "Upgrade to Plus": [
+        "Upgrade para o plano Plus"
+      ],
+      "Upgrade to Professional": [
+        "Atualize para o Professional"
+      ],
+      "Activate": [
+        "Ativado"
+      ],
+      "Customize subscription": [
+        "Personalizar assinatura"
+      ],
+      "Cancel subscription": [
+        "Cancelar assinatura"
+      ],
+      "Remove gift code": [
+        "Remover código de vale-presente"
+      ],
+      "annual billing": [
+        "faturamento anual"
+      ],
+      "Compare plans": [
+        "Compare planos"
+      ],
+      "Decrease": [
+        "Diminuir"
+      ],
+      "Increase": [
+        "Aumentar"
+      ],
+      "Downgrade": [
+        "Downgrade"
+      ],
+      "Top up": [
+        "Recarregar"
+      ],
+      "Add credits": [
+        "Adicionar créditos"
+      ],
+      "Save": [
+        "Salvar"
+      ],
+      "Add PayPal payment method": [
+        "Adicionar o Paypal como método de pagamento"
+      ],
+      "Retry": [
+        "Tentar novamente"
+      ],
+      "Loading verification": [
+        "Carregando verificação"
+      ],
+      "Try again": [
+        "Tentar novamente"
+      ],
+      "Verify": [
+        "Verificar"
+      ],
+      "Use a different card": [
+        "Usar outro cartão"
+      ],
+      "Use a different payment method": [
+        "Use outro método de pagamento"
+      ],
+      "enable desktop notifications": [
+        "habilitar notificações na área de trabalho"
+      ],
+      "here": [
+        "aqui"
+      ],
+      "Refresh the page": [
+        "Atualizar a página"
+      ],
+      "Close this banner": [
+        "Fechar esse banner"
+      ],
+      "Change password": [
+        "Alterar senha"
+      ],
+      "Ok": [
+        "Ok"
+      ],
+      "Download": [
+        "Baixar"
+      ],
+      "Yes": [
+        "Sim"
+      ],
+      "Change mailbox password": [
+        "Alterar senha da caixa de correio"
+      ],
+      "Delete": [
+        "Excluir"
+      ],
+      "Delete your account": [
+        "Excluir sua conta"
+      ],
+      "Hide": [
+        "Ocultar"
+      ],
+      "Show": [
+        "Exibir"
+      ],
+      "Reset credentials": [
+        "Redefinir credenciais"
+      ],
+      "Upgrade": [
+        "Upgrade"
+      ],
+      "Copy": [
+        "Copiar"
+      ],
+      "Download all configurations": [
+        "Baixar todas configurações"
+      ],
+      "Get ProtonVPN Plus": [
+        "Obter ProtonVPN Plus"
+      ],
+      "Update": [
+        "Atualizar"
+      ],
+      "Create new recovery phrase": [
+        "Crie uma nova frase de recuperação"
+      ],
+      "Copy to clipboard": [
+        "Copiar para a área de transferência"
+      ],
+      "Create new recovery phrase?": [
+        "Criar uma nova frase de recuperação?"
+      ],
+      "Enter password to continue": [
+        "Digite a senha para continuar"
+      ],
+      "Disable recovery phrase?": [
+        "Desativar a frase de recuperação?"
+      ],
+      "Disable recovery phrase": [
+        "Desativar a frase de recuperação"
+      ],
+      "Edit": [
+        "Editar"
+      ],
+      "Mark as default": [
+        "Definir como padrão"
+      ],
+      "Add credit / debit card": [
+        "Adicionar cartão de crédito/débito"
+      ],
+      "Add PayPal": [
+        "Adicionar PayPal"
+      ],
+      "View": [
+        "Visualizar"
+      ],
+      "User": [
+        "Usuário"
+      ],
+      "Organization": [
+        "Organização"
+      ],
+      "Customize": [
+        "Personalizar"
+      ],
+      "Details": [
+        "Detalhes"
+      ],
+      "Share via link": [
+        "Compartilhar via link"
+      ],
+      "Sharing options": [
+        "Opções de compartilhamento"
+      ],
+      "Zoom out": [
+        "Diminuir zoom"
+      ],
+      "Reset zoom": [
+        "Redefinir zoom"
+      ],
+      "Zoom in": [
+        "Aumentar zoom"
+      ],
+      "Previous": [
+        "Anterior"
+      ],
+      "Log in": [
+        "Iniciar sessão"
+      ],
+      "View invoice": [
+        "Visualizar fatura"
+      ],
+      "Get verification code": [
+        "Obter código de verificação"
+      ],
+      "Try another method": [
+        "Tentar outro método"
+      ],
+      "Request new code": [
+        "Solicitar novo código"
+      ],
+      "Did not receive the code?": [
+        "Não recebeu o código?"
+      ],
+      "Edit email address": [
+        "Editar endereço de e-mail"
+      ],
+      "Edit phone number": [
+        "Editar número de telefone"
+      ],
+      "Email me my username(s)": [
+        "Enviar meu(s) nome(s) de usuário(s)"
+      ],
+      "Get a new password": [
+        "Obter uma nova senha"
+      ],
+      "Reset password": [
+        "Redefinir senha"
+      ],
+      "Reset my password": [
+        "Redefinir minha senha"
+      ],
+      "Report bug": [
+        "Reportar um problema"
+      ],
+      "Activate my coupon": [
+        "Ativar meu cupom"
+      ],
+      "Hide additional features": [
+        "Ocultar recursos adicionais"
+      ],
+      "Select": [
+        "Selecionar"
+      ],
+      "Verify code again": [
+        "Verificar código novamente"
+      ],
+      "Verify code": [
+        "Verificar código"
+      ],
+      "Create account": [
+        "Criar uma conta"
+      ],
+      "Go to login": [
+        "Ir para login"
+      ],
+      "View full plan comparison": [
+        "Ver comparação completa de planos"
+      ],
+      "Send": [
+        "Enviar"
+      ],
+      "Resend": [
+        "Reenviar"
+      ],
+      "Use another verification method": [
+        "Utilizar outro método de verificação"
+      ],
+      "Confirm payment": [
+        "Confirmar pagamento"
+      ],
+      "Pay annually and save 20%": [
+        "Pague anualmente e economize 20%"
+      ],
+      "Try ${ upsellPlan.title } for only ${ totalMonthlyText }": [
+        "Experimente ${ upsellPlan.title } por apenas ${ totalMonthlyText }"
+      ],
+      "Homepage": [
+        "Página inicial"
+      ]
+    },
+    "Storage": {
+      "Your current storage:": [
+        "Seu armazenamento atual:"
+      ],
+      "Upgrade storage": [
+        "Ampliar armazenamento"
+      ],
+      "Release notes": [
+        "Notas de lançamento"
+      ]
+    },
+    "Link": {
+      "Learn more": [
+        "Saiba mais"
+      ],
+      "clearing your browser cache": [
+        "limpando o cache do seu navegador"
+      ],
+      "Upgrade": [
+        "Upgrade"
+      ],
+      "Go to subscription plans": [
+        "Ir para os planos de assinatura"
+      ],
+      "Add a gift code": [
+        "Adicionar código de vale-presente"
+      ],
+      "click here": [
+        "clique aqui"
+      ],
+      "Pay invoice": [
+        "Pagar fatura"
+      ],
+      "Upgrade account": [
+        "Upgrade de conta"
+      ],
+      "Not activated": [
+        "Não ativado"
+      ],
+      "View guide": [
+        "Ver guia"
+      ],
+      "What is the difference between UDP and TCP protocols?": [
+        "Qual é a diferença entre os protocolos UDP e TCP?"
+      ],
+      "Request an invite": [
+        "Solicitar um convite"
+      ],
+      "Back to login": [
+        "Voltar para o início de sessão"
+      ],
+      "here": [
+        "aqui"
+      ],
+      "Upgrade now": [
+        "Faça o upgrade agora"
+      ],
+      "Sign up for free": [
+        "Cadastre-se gratuitamente"
+      ],
+      "protonvpn.com": [
+        "protonvpn.com"
+      ],
+      "Don't have an account yet? Sign up for free!": [
+        "Ainda não tem uma conta? Cadastre-se gratuitamente!"
+      ],
+      "Reset password": [
+        "Redefinir senha"
+      ],
+      "Forgot username?": [
+        "Esqueceu seu nome de usuário?"
+      ],
+      "Common login problems": [
+        "Problemas comuns para iniciar sessão"
+      ],
+      "Contact support": [
+        "Contatar o suporte"
+      ],
+      "Terms of Service": [
+        "Termos de serviço"
+      ],
+      "Privacy Policy": [
+        "Politica de privacidade"
+      ],
+      "Log in": [
+        "Iniciar sessão"
+      ],
+      "Close": [
+        "Fechar"
+      ]
+    },
+    "Error": {
+      "Email address invalid": [
+        "Endereço de e-mail inválido"
+      ],
+      "This field is required": [
+        "Este campo é obrigatório"
+      ],
+      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
+        "O navegador que você está usando não permite que o pagamento seja completamente autorizado. Por favor, use um navegador diferente ou inicie a sessão através de um computador."
+      ],
+      "Unknown error": [
+        "Erro desconhecido"
+      ],
+      "Checkout expired, please try again.": [
+        "Pedido expirado. Por favor, tente novamente."
+      ],
+      "Invalid code": [
+        "Código inválido"
+      ],
+      "Error connecting to the Bitcoin API.": [
+        "Erro ao conectar com a API do Bitcoin."
+      ],
+      "Amount below minimum.": [
+        "Quantidade abaixo do mínimo."
+      ],
+      "Amount above the maximum.": [
+        "Quantidade acima do máximo."
+      ],
+      "The minimum amount that can be donated is ${ price }": [
+        "O valor mínimo que pode ser doado é ${ price }"
+      ],
+      "The minimum amount of credit that can be added is ${ _price }": [
+        "A quantidade mínima de crédito que pode ser adicionado é ${ _price }"
+      ],
+      "The minimum payment we accept is ${ _price2 }": [
+        "O pagamento mínimo que aceitamos é ${ _price2 }"
+      ],
+      "Process aborted": [
+        "Processo abortado"
+      ],
+      "Payment process cancelled": [
+        "Processo de pagamento cancelado"
+      ],
+      "Payment process failed": [
+        "Falha no processo de pagamento"
+      ],
+      "Payment process consumed": [
+        "Processo de pagamento concluído"
+      ],
+      "Payment process not supported": [
+        "Processo de pagamento não suportado"
+      ],
+      "Unknown payment token status": [
+        "Status da token de pagamento desconhecido"
+      ],
+      "Tab closed": [
+        "Guia fechada"
+      ],
+      "Name on card required": [
+        "Nome do cartão de credito obrigatório"
+      ],
+      "Invalid expiration date": [
+        "Data de validade inválida"
+      ],
+      "Invalid card number": [
+        "Número do cartão inválido"
+      ],
+      "Invalid ${ name } code": [
+        "Código ${ name } inválido"
+      ],
+      "Invalid postal code": [
+        "CEP inválido"
+      ],
+      "Please generate keys before you try to change your password.": [
+        "Por favor, crie novas chaves antes de tentar alterar sua senha."
+      ],
+      "Please set a recovery/notification email first": [
+        "Por favor, defina um e-mail para recuperação/notificação"
+      ],
+      "Please set a recovery phone number first": [
+        "Por favor, defina um número de telefone de recuperação"
+      ],
+      "Payments are currently not available, please try again later": [
+        "Os pagamentos não estão disponíveis no momento. Por favor, tente novamente mais tarde"
+      ],
+      "You have no invoices.": [
+        "Você não tem faturas."
+      ],
+      "Your account or organization currently has an overdue invoice. Please pay all unpaid invoices.": [
+        "A sua conta ou organização tem neste momento uma fatura em atraso. Por favor regularize a situação."
+      ],
+      "File has no contents to preview": [
+        "Arquivo não tem conteúdo para pré-visualização"
+      ],
+      "Incorrect mailbox password. Please try again": [
+        "E-mail ou senha incorreta. Por favor, tente novamente"
+      ],
+      "Incorrect login credentials. Please try again": [
+        "Credenciais de acesso incorretas. Por favor, tente novamente"
+      ],
+      "Can't validate email, try again later": [
+        "Não é possível validar o e-mail, tente novamente mais tarde"
+      ],
+      "Can't validate phone, try again later": [
+        "Não é possível validar o telefone, tente novamente mais tarde"
+      ],
+      "Enter 6 digits": [
+        "Insira 6 dígitos"
+      ],
+      "Invalid verification code": [
+        "Código de verificação inválido"
+      ],
+      "Please enter '${ dangerWord }'": [
+        "Por favor, digite '${ dangerWord }'"
+      ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "Algo deu errado. Por favor, ${ refresh } a página para tentar novamente. Se você continuar vendo esta mensagem de erro, entre em contato com nossa ${ supportTeam }."
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Esse campo requer um mínimo de ${ minimumLength } caracteres."
+      ],
+      "Email is not valid": [
+        "E-mail não é válido"
+      ],
+      "Not a valid number": [
+        "Não é um número válido"
+      ],
+      "Passwords do not match": [
+        "As senhas não conferem"
+      ],
+      "Signature verification failed": [
+        "Falha na verificação da assinatura"
+      ],
+      "Request timed out.": [
+        "Solicitação expirada."
+      ],
+      "Code wrong or not valid anymore": [
+        "Código errado ou não é mais válido"
+      ],
+      "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
+        "Se o tempo na sua TV expirou, clique em Atualizar na sua TV e digite o seu código novamente."
+      ],
+      "Invalid invitation link": [
+        "Link de convite inválido"
+      ],
+      "Can't check username, try again later": [
+        "Não foi possível verificar o nome de usuário, tente novamente mais tarde"
       ]
     },
     "Title": {
+      "Open actions dropdown": [
+        "Abrir menu de ações"
+      ],
+      "Previous": [
+        "Anterior"
+      ],
+      "Open pagination": [
+        "Abrir paginação"
+      ],
+      "Next": [
+        "Próximo"
+      ],
+      "What's new": [
+        "What's new"
+      ],
       "Report a problem": [
         "Relatar um problema"
       ],
@@ -2061,9 +1847,6 @@
       "Sign in again to continue": [
         "Inicie a sessão novamente para continuar"
       ],
-      "Open actions dropdown": [
-        "Abrir menu de ações"
-      ],
       "1. Select platform": [
         "1. Selecione a plataforma"
       ],
@@ -2115,26 +1898,11 @@
       "Invalid verification code": [
         "Código de verificação inválido"
       ],
-      "Request new code": [
-        "Solicitar novo código"
-      ],
       "Human verification": [
         "Verificação humana"
       ],
       "Confirm reset password": [
         "Confirme senha de redefinição"
-      ],
-      "Previous": [
-        "Anterior"
-      ],
-      "Open pagination": [
-        "Abrir paginação"
-      ],
-      "Next": [
-        "Próximo"
-      ],
-      "What's new": [
-        "What's new"
       ],
       "Upgrade": [
         "Upgrade"
@@ -2294,6 +2062,246 @@
       ],
       "Settings": [
         "Configurações"
+      ]
+    },
+    "Error notification in the bug report modal when the user upload file": {
+      "No image selected": [
+        "Nenhuma imagem selecionada"
+      ]
+    },
+    "Bug category": {
+      "Sign in problem": [
+        "Problema ao iniciar a sessão"
+      ],
+      "Sign up problem": [
+        "Problema no registro"
+      ],
+      "Payments problem": [
+        "Problema com pagamento"
+      ],
+      "Custom domain problem": [
+        "Problema com domínios personalizados"
+      ],
+      "Bridge problem": [
+        "Problema de bridge"
+      ],
+      "Import / export problem": [
+        "Problema ao importar / exportar"
+      ],
+      "Connection problem": [
+        "Problema de conexão"
+      ],
+      "Slow speed problem": [
+        "Problema com lentidão"
+      ],
+      "Calendar problem": [
+        "Problemas com calendário"
+      ],
+      "Contacts problem": [
+        "Problemas com contatos"
+      ],
+      "Drive problem": [
+        "Problemas no Drive"
+      ],
+      "Mail problem": [
+        "Problemas no e-mail"
+      ],
+      "VPN problem": [
+        "Problema na VPN"
+      ],
+      "Feature request": [
+        "Solicitação de recurso"
+      ],
+      "Other": [
+        "Outro"
+      ],
+      "Signup problem": [
+        "Problema no registro"
+      ],
+      "Installation problem": [
+        "Problema na instalação"
+      ],
+      "Update problem": [
+        "Problema na atualização"
+      ],
+      "Application problem": [
+        "Problema no aplicativo"
+      ],
+      "Speed problem": [
+        "Problema de velocidade"
+      ],
+      "Manual setup problem": [
+        "Problema de configuração manual"
+      ],
+      "Website access problem": [
+        "Problema de acesso ao site"
+      ],
+      "Streaming problem": [
+        "Problema de streaming"
+      ]
+    },
+    "Group": {
+      "Account": [
+        "Conta"
+      ],
+      "Apps": [
+        "Aplicativos"
+      ],
+      "Network": [
+        "Rede"
+      ],
+      "Services": [
+        "Serviços"
+      ],
+      "Other category": [
+        "Outra categoria"
+      ]
+    },
+    "Action to select a title for the bug report modal": {
+      "Select": [
+        "Selecionar"
+      ]
+    },
+    "Success": {
+      "Bug reported": [
+        "Relatório de erros enviado"
+      ],
+      "Email address copied to clipboard": [
+        "Endereço de e-mail copiado para a área de transferência"
+      ],
+      "You have successfully unsubscribed": [
+        "Sua assinatura foi cancelada com sucesso"
+      ],
+      "Credits added": [
+        "Créditos adicionados"
+      ],
+      "Gift code applied": [
+        "Código de presente aplicado"
+      ],
+      "Payment method updated": [
+        "Método de pagamento atualizado"
+      ],
+      "Payment method added": [
+        "Método de pagamento adicionado"
+      ],
+      "Password updated": [
+        "Senha atualizada"
+      ],
+      "Account deleted. Logging out...": [
+        "Conta excluída. Saindo..."
+      ],
+      "Locale updated": [
+        "Idioma atualizado"
+      ],
+      "${ server.Domain } copied in your clipboard": [
+        "${ server.Domain } copiado para a área de transferência"
+      ],
+      "Email updated": [
+        "E-mail atualizado"
+      ],
+      "Phone number updated": [
+        "Número de telefone atualizado"
+      ],
+      "Payment method deleted": [
+        "Método de pagamento excluído"
+      ],
+      "Invoice paid": [
+        "Fatura pendente"
+      ],
+      "Invoice customized": [
+        "Fatura personalizada"
+      ],
+      "Code sent to ${ methodTo }": [
+        "Código enviado para ${ methodTo }"
+      ],
+      "Verification successful": [
+        "Verificado com sucesso"
+      ],
+      "If you entered a valid notification email we will send you an email with your usernames in the next minute.": [
+        "Se você digitou um endereço de e-mail válido, enviaremos um e-mail com os seu(s) nome(s) de usuário(s) no próximo minuto."
+      ]
+    },
+    "Placeholder": {
+      "OS name": [
+        "Nome do SO"
+      ],
+      "OS version": [
+        "Versão do SO"
+      ],
+      "Proton username": [
+        "Nome de usuário"
+      ],
+      "A way to contact you": [
+        "Uma maneira de entrar em contato com você"
+      ],
+      "Please describe the problem and include any error messages": [
+        "Por favor, descreva o problema e inclua quaisquer mensagens de erro"
+      ],
+      "Browser name": [
+        "Nome do navegador"
+      ],
+      "Browser version": [
+        "Versão do navegador"
+      ],
+      "e.g. Julia Smith": [
+        "ex. Jessica Sales"
+      ],
+      "Gift code": [
+        "Código de vale-presente"
+      ],
+      "Feedback": [
+        "Feedback"
+      ],
+      "Other": [
+        "Outro"
+      ],
+      "Add gift code": [
+        "Adicione um Código de Vale-Presente"
+      ],
+      "ZIP": [
+        "CEP"
+      ],
+      "Postal code": [
+        "CEP"
+      ],
+      "Password": [
+        "Senha"
+      ],
+      "Two-factor authentication code": [
+        "Código da verificação em duas etapas"
+      ],
+      "Confirm": [
+        "Confirmar"
+      ],
+      "Email address": [
+        "Endereço de e-mail"
+      ],
+      "Mailbox password": [
+        "Senha da caixa de correio"
+      ],
+      "Email": [
+        "E-mail"
+      ],
+      "Username": [
+        "Nome de usuário"
+      ],
+      "Recovery email": [
+        "E-mail de recuperação"
+      ],
+      "Reset code": [
+        "Código de redefinição"
+      ],
+      "Enter the word '${ dangerWord }' here": [
+        "Digite a palavra '${ dangerWord }' aqui"
+      ],
+      "Choose a new password": [
+        "Digite a nova senha"
+      ],
+      "Enter coupon code": [
+        "Insira o código do cupom"
+      ],
+      "Confirm password": [
+        "Confirmar senha"
       ]
     },
     "Warning": {
@@ -3491,17 +3499,6 @@
         "Confirmar nova senha"
       ]
     },
-    "Storage": {
-      "Your current storage:": [
-        "Seu armazenamento atual:"
-      ],
-      "Upgrade storage": [
-        "Ampliar armazenamento"
-      ],
-      "Release notes": [
-        "Notas de lançamento"
-      ]
-    },
     "file size format": {
       "bytes": [
         "bytes"
@@ -3523,11 +3520,11 @@
       ]
     },
     "Calendar status": {
-      "Not synced": [
-        ""
-      ],
       "Syncing": [
         "Sincronizando"
+      ],
+      "Not synced": [
+        ""
       ]
     },
     "Calendar subscription not synced error": {

@@ -5,161 +5,13 @@
   },
   "contexts": {
     "": {},
-    "Error": {
-      "Unknown error": [
-        "Nepoznata pogreška"
-      ],
-      "Checkout expired, please try again.": [
-        "Naplata je istekla, pokušajte ponovo."
-      ],
-      "Invalid code": [
-        "Nevažeći kôd"
-      ],
-      "Error connecting to the Bitcoin API.": [
-        "Pogreška prilikom spajanja na Bitcoin API."
-      ],
-      "Amount below minimum.": [
-        "Iznos ispod minimuma."
-      ],
-      "Amount above the maximum.": [
-        "Iznos veći od maksimuma."
-      ],
-      "The minimum amount that can be donated is ${ price }": [
-        "Minimalni iznos koji se može donirati je ${ price }"
-      ],
-      "The minimum amount of credit that can be added is ${ _price }": [
-        "Minimalni iznos kredita koji se može dodati je ${ _price }"
-      ],
-      "The minimum payment we accept is ${ _price2 }": [
-        "Minimalni iznos koji prihvaćamo je ${ _price2 }"
-      ],
-      "Process aborted": [
-        "Proces je prekinut"
-      ],
-      "Payment process cancelled": [
-        "Proces plaćanja je otkazan"
-      ],
-      "Payment process failed": [
-        "Proces plaćanja nije uspio"
-      ],
-      "Payment process consumed": [
-        "Proces plaćanja je konzumiran"
-      ],
-      "Payment process not supported": [
-        "Proces plaćanja nije podržan"
-      ],
-      "Unknown payment token status": [
-        "Nepoznati status tokena za plaćanje"
-      ],
-      "Tab closed": [
-        "Kartica zatvorena"
-      ],
-      "Name on card required": [
-        "Ime s kartice je nužno"
-      ],
-      "Invalid expiration date": [
-        "Nevažeći datum isteka"
-      ],
-      "Invalid card number": [
-        "Netočan broj kartice"
-      ],
-      "Invalid ${ name } code": [
-        "Nevažeći ${ name } kôd"
-      ],
-      "Invalid postal code": [
-        "Netočan poštanski broj"
-      ],
-      "Please generate keys before you try to change your password.": [
-        "Prije pokušaja promjene lozinke generirajte ključeve."
-      ],
-      "Please set a recovery/notification email first": [
-        "Prvo postavite adresu e-pošte za oporavak/obavijesti"
-      ],
-      "Please set a recovery phone number first": [
-        "Prvo postavite broj telefona za oporavak"
-      ],
-      "Payments are currently not available, please try again later": [
-        "Plaćanje trenutno nije dostupno, pokušajte ponovo kasnije"
-      ],
-      "You have no invoices.": [
-        "Nemate faktura."
-      ],
-      "Your account or organization currently has an overdue invoice. Please pay all unpaid invoices.": [
-        "Vaš račun ili organizacija trenutačno ima neplaćenu fakturu. Molimo platite sve neplaćene fakture."
-      ],
-      "File has no contents to preview": [
-        "Datoteka nema sadržaja za pregled"
-      ],
-      "Incorrect mailbox password. Please try again": [
-        "Pogrešna lozinka poštanskog pretinca. Pokušajte ponovno"
-      ],
-      "Incorrect login credentials. Please try again": [
-        "Nevažeći podaci za prijavu. Molimo pokušajte ponovno"
-      ],
-      "Can't validate email, try again later": [
-        "Nije moguće potvrditi e-poštu, pokušajte ponovo kasnije"
-      ],
-      "Can't validate phone, try again later": [
-        "Nije moguće potvrditi broj telefona, pokušajte ponovo kasnije"
-      ],
-      "Enter 6 digits": [
-        "Unesite 6 znamenki"
-      ],
-      "Invalid verification code": [
-        "Nevažeći kôd za provjeru"
-      ],
-      "Email address invalid": [
-        "Adresa e-pošte nije valjana"
-      ],
-      "Please enter '${ dangerWord }'": [
-        "Molimo unesite '${ dangerWord }'"
-      ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Nešto je pošlo po zlu. Molimo ${ refresh } kako biste nastavili. Ako i dalje vidite ovu poruku o pogrešci, kontaktirajte naš ${ supportTeam }."
-      ],
-      "This field is required": [
-        "Ovo polje je obavezno"
-      ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "Preglednik koji koristite ne dopušta potpuno odobrenje plaćanja. Molimo koristite drugi preglednik ili se prijavite putem računala."
-      ],
-      "This field requires a minimum of ${ minimumLength } characters.": [
-        "Ovo polje zahtjeva najmanje ${ minimumLength } znakova."
-      ],
-      "Email is not valid": [
-        "Adresa e-pošte nije važeća"
-      ],
-      "Not a valid number": [
-        "Broj telefona nije važeći"
-      ],
-      "Passwords do not match": [
-        "Lozinke se ne poklapaju"
-      ],
-      "Signature verification failed": [
-        "Potvrda potpisa je neuspješna"
-      ],
-      "Request timed out.": [
-        "Zahtjev je istekao."
-      ],
-      "Code wrong or not valid anymore": [
-        "Kôd je pogrešan ili više ne vrijedi"
-      ],
-      "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
-        "Ako je vrijeme na vašem TV-u isteklo, kliknite Osvježi na televizoru i ponovno unesite kôd."
-      ],
-      "Invalid invitation link": [
-        "Neispravna poveznica pozivnice"
-      ],
-      "Can't check username, try again later": [
-        "Ne uspješna provjera korisničkog imena, pokušajte ponovo kasnije"
-      ]
-    },
-    "Error notification in the bug report modal when the user upload file": {
-      "No image selected": [
-        "Nije odabrana nijedna slika"
-      ]
-    },
     "Info": {
+      "No results found": [
+        "Nema rezultata"
+      ],
+      "Loading": [
+        "Učitavanje"
+      ],
       "Screenshot(s) attached": [
         "Snimke zaslona su pridodane"
       ],
@@ -750,12 +602,6 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Ako ne pronađete e-poštu u pristigloj pošti, provjerite svoju mapu neželjene pošte."
       ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
-        "Pritisnite \"Zatraži novi kȏd\" da biste novi potvrdni kȏd poslali na ${ strong }. Ako je ova adresa e-pošte netočan, pritisnite \"Uredi\" da biste je ispravili."
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
-        "Pritisnite \"Zatraži novi kȏd\" da biste novi potvrdni kȏd poslali na ${ strong }. Ako je ovaj telefonski broj netočan, pritisnite \"Uredi\" da biste ga ispravili."
-      ],
       "To fight spam and abuse, please verify you are human.": [
         "U borbi protiv spama i zlouporabe, molimo potvrdite da ste čovjek."
       ],
@@ -767,6 +613,12 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Ako imate poteškoća s otvaranjem računa, zatražite pozivnicu i odgovorit ćemo vam u roku jednog radnog dana."
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
+        "Pritisnite \"Zatraži novi kȏd\" da biste novi potvrdni kȏd poslali na ${ strong }. Ako je ova adresa e-pošte netočan, pritisnite \"Uredi\" da biste je ispravili."
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
+        "Pritisnite \"Zatraži novi kȏd\" da biste novi potvrdni kȏd poslali na ${ strong }. Ako je ovaj telefonski broj netočan, pritisnite \"Uredi\" da biste ga ispravili."
       ],
       "Enter your recovery email address, and we'll send you your username(s). (This is usually the email address you provided during signup.)": [
         "Unesite svoju adresu e-pošte za oporavak i poslat ćemo vam vaše korisničko ime(na). (To je obično adresa e-pošte koju ste naveli tijekom registracije.)"
@@ -806,12 +658,6 @@
       ],
       "support team": [
         "tim za podršku"
-      ],
-      "No results found": [
-        "Nema rezultata"
-      ],
-      "Loading": [
-        "Učitavanje"
       ],
       "Session timed out.": [
         "Sesija je istekla."
@@ -883,628 +729,16 @@
         "Izrada vašeg računa"
       ]
     },
-    "Action": {
-      "Clear": [
-        "Očisti"
-      ],
-      "Add screenshot(s)": [
-        "Dodaj snimku(e) zaslona"
-      ],
-      "Submit": [
-        "Pošalji"
-      ],
-      "Hide info": [
-        "Sakrij informacije"
-      ],
-      "Show info": [
-        "Prikaži informacije"
-      ],
-      "Copy email to clipboard": [
-        "Kopiraj adresu e-pošte u međuspremnik"
-      ],
-      "${ BRAND_NAME } introduction": [
-        "${ BRAND_NAME } predstavljanje"
-      ],
-      "Chat with us": [
-        ""
-      ],
-      "I have a question": [
-        "Imam pitanje"
-      ],
-      "Request a feature": [
-        "Zatraži značajku"
-      ],
-      "Report a problem": [
-        "Prijavi problem"
-      ],
-      "${ BRAND_NAME } shop": [
-        "${ BRAND_NAME } dućan"
-      ],
-      "Switch account": [
-        "Promijeni račun"
-      ],
-      "Sign out": [
-        "Odjava"
-      ],
-      "Get started": [
-        "Započnite"
-      ],
-      "Next": [
-        "Sljedeće"
-      ],
-      "Start setup": [
-        "Započni postavljanje"
-      ],
-      "Skip": [
-        "Preskoči"
-      ],
-      "Done": [
-        "Gotovo"
-      ],
-      "Back": [
-        "Natrag"
-      ],
-      "Use ${ label } theme": [
-        "Koristi ${ label } temu"
-      ],
-      "Signing out": [
-        "Odjavljivanje"
-      ],
-      "Close": [
-        "Zatvori"
-      ],
-      "refresh the page": [
-        "osvježi stranicu"
-      ],
-      "Remove bonuses": [
-        "Ukloni bonuse"
-      ],
-      "Select plan": [
-        "Odaberi plan"
-      ],
-      "Compare all features": [
-        "Usporedi sve značajke"
-      ],
-      "${ boldSave } by switching to annual billing": [
-        "${ boldSave } prebacivanjem na godišnju naplatu"
-      ],
-      "Continue": [
-        "Nastavi"
-      ],
-      "Confirm": [
-        "Potvrdi"
-      ],
-      "Pay": [
-        "Plati"
-      ],
-      "Apply": [
-        "Primijeni"
-      ],
-      "Open ${ CALENDAR_APP_NAME } settings": [
-        "Otvori ${ CALENDAR_APP_NAME } postavke"
-      ],
-      "OK": [
-        "U redu"
-      ],
-      "Upgrade to Plus": [
-        "Nadogradite na Plus plan"
-      ],
-      "Upgrade to Professional": [
-        "Nadogradite na Professional plan"
-      ],
-      "Activate": [
-        "Aktiviraj"
-      ],
-      "Customize subscription": [
-        "Prilagodite pretplatu"
-      ],
-      "Cancel subscription": [
-        "Otkaži pretplatu"
-      ],
-      "Remove gift code": [
-        "Ukloni darovni kôd"
-      ],
-      "annual billing": [
-        "godišnja naplata"
-      ],
-      "Compare plans": [
-        "Usporedi planove"
-      ],
-      "Decrease": [
-        "Smanji"
-      ],
-      "Increase": [
-        "Povećaj"
-      ],
-      "Downgrade": [
-        "Snizi status"
-      ],
-      "Top up": [
-        "Nadopuni"
-      ],
-      "Add credits": [
-        "Dodaj kredit"
-      ],
-      "Save": [
-        "Spremi"
-      ],
-      "Cancel": [
-        "Poništi"
-      ],
-      "Add PayPal payment method": [
-        "Dodaj PayPal način plaćanja"
-      ],
-      "Retry": [
-        "Pokušaj ponovno"
-      ],
-      "Loading verification": [
-        "Učitavanje potvrde"
-      ],
-      "Try again": [
-        "Pokušaj ponovno"
-      ],
-      "Verify": [
-        "Potvrdi"
-      ],
-      "Use a different card": [
-        "Upotrijebite neku drugu karticu"
-      ],
-      "Use a different payment method": [
-        "Koristite drugi način plaćanja"
-      ],
-      "enable desktop notifications": [
-        "omogući obavijesti radne površine"
-      ],
-      "here": [
-        "ovdje"
-      ],
-      "Refresh the page": [
-        "Osvježi stranicu"
-      ],
-      "Close this banner": [
-        "Zatvori natpis"
-      ],
-      "Change password": [
-        "Promijeni lozinku"
-      ],
-      "Ok": [
-        "U redu"
-      ],
-      "Download": [
-        "Preuzmi"
-      ],
-      "Yes": [
-        "Da"
-      ],
-      "Change mailbox password": [
-        "Promijeni lozinku sandučića e-pošte"
-      ],
-      "Delete": [
-        "Izbriši"
-      ],
-      "Delete your account": [
-        "Izbrišite svoj račun"
-      ],
-      "Hide": [
-        "Sakrij"
-      ],
-      "Show": [
-        "Prikaži"
-      ],
-      "Reset credentials": [
-        "Poništi vjerodajnice"
-      ],
-      "Upgrade": [
-        "Nadogradnja"
+    "Label": {
+      "Reveal password": [
+        "Prikaži lozinku"
+      ],
+      "Hide password": [
+        "Sakrij lozinku"
       ],
       "Copy": [
         "Kopiraj"
       ],
-      "Download all configurations": [
-        "Preuzmite sve konfiguracije"
-      ],
-      "Get ProtonVPN Plus": [
-        "Nabavite ProtonVPN Plus"
-      ],
-      "Update": [
-        "Ažuriraj"
-      ],
-      "Create new recovery phrase": [
-        ""
-      ],
-      "Copy to clipboard": [
-        ""
-      ],
-      "Create new recovery phrase?": [
-        ""
-      ],
-      "Enter password to continue": [
-        ""
-      ],
-      "Disable recovery phrase?": [
-        ""
-      ],
-      "Disable recovery phrase": [
-        ""
-      ],
-      "Edit": [
-        "Uredi"
-      ],
-      "Mark as default": [
-        "Postavi kao zadano"
-      ],
-      "Add credit / debit card": [
-        "Dodaj kreditnu/debitnu karticu"
-      ],
-      "Add PayPal": [
-        "Dodaj PayPal"
-      ],
-      "View": [
-        "Pregled"
-      ],
-      "User": [
-        "Korisnik"
-      ],
-      "Organization": [
-        "Organizacija"
-      ],
-      "Customize": [
-        "Prilagodi"
-      ],
-      "Details": [
-        "Pojedinosti"
-      ],
-      "Share via link": [
-        "Podijeli putem poveznice"
-      ],
-      "Sharing options": [
-        "Opcije dijeljenja"
-      ],
-      "Zoom out": [
-        "Smanji"
-      ],
-      "Reset zoom": [
-        "Poništi zumiranje"
-      ],
-      "Zoom in": [
-        "Povećaj"
-      ],
-      "Previous": [
-        "Prethodno"
-      ],
-      "Log in": [
-        "Prijavite se"
-      ],
-      "View invoice": [
-        "Prikaži fakturu"
-      ],
-      "Get verification code": [
-        "Nabavi kôd za provjeru"
-      ],
-      "Try another method": [
-        "Isprobajte drugu metodu"
-      ],
-      "Request new code": [
-        "Zatraži novi kôd"
-      ],
-      "Did not receive the code?": [
-        "Niste primili kôd?"
-      ],
-      "Edit email address": [
-        "Uredi adresu e-pošte"
-      ],
-      "Edit phone number": [
-        "Uredi broj telefona"
-      ],
-      "Email me my username(s)": [
-        "Pošalji mi e-poruku s mojim korisničkim imenom(ima)"
-      ],
-      "Get a new password": [
-        "Generirajte novu lozinku"
-      ],
-      "Reset password": [
-        "Ponovno postavljanje lozinke"
-      ],
-      "Reset my password": [
-        "Resetiraj moju lozinku"
-      ],
-      "Close navigation": [
-        "Zatvori navigaciju"
-      ],
-      "Open navigation": [
-        "Otvori navigaciju"
-      ],
-      "More info: ${ safeTitle }": [
-        "Više informacija: ${ safeTitle }"
-      ],
-      "Go to panel ${ index }": [
-        "Idi na ${ index } panel"
-      ],
-      "Close modal": [
-        "Zatvori skočni prozor"
-      ],
-      "Report bug": [
-        "Prijavi problem"
-      ],
-      "Activate my coupon": [
-        "Aktiviraj moj kupon"
-      ],
-      "Hide additional features": [
-        "Sakrij dodatne značajke"
-      ],
-      "Select": [
-        "Odaberi"
-      ],
-      "Verify code again": [
-        "Ponovno potvrdite kôd"
-      ],
-      "Verify code": [
-        "Potvrdi kôd"
-      ],
-      "Create account": [
-        "Stvori račun"
-      ],
-      "Go to login": [
-        "Idi na prijavu"
-      ],
-      "View full plan comparison": [
-        "Pogledajte cjelovitu usporedbu planova"
-      ],
-      "Send": [
-        "Pošalji"
-      ],
-      "Resend": [
-        "Ponovno pošalji"
-      ],
-      "Use another verification method": [
-        "Koristi drugi način potvrde"
-      ],
-      "Confirm payment": [
-        "Potvrdite plaćanje"
-      ],
-      "Pay annually and save 20%": [
-        "Plaćajte godišnje i uštedite 20%"
-      ],
-      "Try ${ upsellPlan.title } for only ${ totalMonthlyText }": [
-        "Isprobajte ${ upsellPlan.title } za samo ${ totalMonthlyText }"
-      ],
-      "Homepage": [
-        "Početna stranica"
-      ]
-    },
-    "Bug category": {
-      "Sign in problem": [
-        "Problem s prijavom"
-      ],
-      "Sign up problem": [
-        "Problem s registracijom"
-      ],
-      "Payments problem": [
-        "Problem s naplatom"
-      ],
-      "Custom domain problem": [
-        "Problem s prilagođenim domenama"
-      ],
-      "Bridge problem": [
-        "Problem s Bridgeom"
-      ],
-      "Import / export problem": [
-        "Problem s uvozom/izvozom"
-      ],
-      "Connection problem": [
-        "Problem s vezom"
-      ],
-      "Slow speed problem": [
-        "Problem s sporom brzinom"
-      ],
-      "Calendar problem": [
-        "Problem s Calendarom"
-      ],
-      "Contacts problem": [
-        "Problem s Contactsima"
-      ],
-      "Drive problem": [
-        "Problem s Driveom"
-      ],
-      "Mail problem": [
-        "Problem s e-poštom"
-      ],
-      "VPN problem": [
-        "Problem s VPN-om"
-      ],
-      "Feature request": [
-        "Predložite novu značajku"
-      ],
-      "Other": [
-        "Ostalo"
-      ],
-      "Signup problem": [
-        "Problem s registracijom"
-      ],
-      "Installation problem": [
-        "Problem s instalacijom"
-      ],
-      "Update problem": [
-        "Problem s nadogradnjom"
-      ],
-      "Application problem": [
-        "Problem s aplikacijom"
-      ],
-      "Speed problem": [
-        "Problem s brzinom"
-      ],
-      "Manual setup problem": [
-        "Problem s ručnim postavljanjem"
-      ],
-      "Website access problem": [
-        "Problem s pristupom web stanici"
-      ],
-      "Streaming problem": [
-        "Problem s streamingom"
-      ]
-    },
-    "Group": {
-      "Account": [
-        "Korisnički račun"
-      ],
-      "Apps": [
-        "Aplikacije"
-      ],
-      "Network": [
-        "Mreža"
-      ],
-      "Services": [
-        "Usluge"
-      ],
-      "Other category": [
-        "Ostale kategorije"
-      ]
-    },
-    "Action to select a title for the bug report modal": {
-      "Select": [
-        "Odaberi"
-      ]
-    },
-    "Link": {
-      "clearing your browser cache": [
-        "čišćenje predmemorije preglednika"
-      ],
-      "Upgrade": [
-        "Nadogradnja"
-      ],
-      "Go to subscription plans": [
-        "Idi na planove pretplate"
-      ],
-      "Add a gift code": [
-        "Dodaj darovni kôd"
-      ],
-      "click here": [
-        "kliknite ovdje"
-      ],
-      "Pay invoice": [
-        "Plati račun"
-      ],
-      "Upgrade account": [
-        "Nadogradi račun"
-      ],
-      "Not activated": [
-        "Nije aktivirano"
-      ],
-      "View guide": [
-        "Pregledaj upute"
-      ],
-      "What is the difference between UDP and TCP protocols?": [
-        "Koja je razlika između UDP i TCP protokola?"
-      ],
-      "Learn more": [
-        "Saznajte više"
-      ],
-      "Request an invite": [
-        "Zatraži pozivnicu"
-      ],
-      "Back to login": [
-        "Povratak na prijavu"
-      ],
-      "here": [
-        "ovdje"
-      ],
-      "Upgrade now": [
-        "Nadogradi sada"
-      ],
-      "Sign up for free": [
-        "Prijavite se besplatno"
-      ],
-      "protonvpn.com": [
-        "protonvpn.com"
-      ],
-      "Don't have an account yet? Sign up for free!": [
-        "Još nemate račun? Prijavite se besplatno!"
-      ],
-      "Reset password": [
-        "Ponovno postavljanje lozinke"
-      ],
-      "Forgot username?": [
-        "Zaboravili ste korisničko ime?"
-      ],
-      "Common login problems": [
-        "Najčešći problemi s prijavom"
-      ],
-      "Contact support": [
-        "Kontaktiraj podršku"
-      ],
-      "Terms of Service": [
-        "Uvjeti korištenja"
-      ],
-      "Privacy Policy": [
-        "Pravila o privatnosti"
-      ],
-      "Log in": [
-        "Prijavite se"
-      ],
-      "Close": [
-        "Zatvori"
-      ]
-    },
-    "Success": {
-      "Bug reported": [
-        "Problem je prijavljen"
-      ],
-      "Email address copied to clipboard": [
-        "Adresa e-pošte je kopirana u međuspremnik"
-      ],
-      "You have successfully unsubscribed": [
-        "Uspješno ste poništili pretplatu"
-      ],
-      "Credits added": [
-        "Nadodan je kredit"
-      ],
-      "Gift code applied": [
-        "Kôd darovnog kupona je primjenjen"
-      ],
-      "Payment method updated": [
-        "Način plaćanja je ažuriran"
-      ],
-      "Payment method added": [
-        "Način plaćanja dodan"
-      ],
-      "Password updated": [
-        "Lozinka je ažurirana"
-      ],
-      "Account deleted. Logging out...": [
-        "Račun je izbrisan. Odjava..."
-      ],
-      "Locale updated": [
-        "Lokalizacija je ažurirana"
-      ],
-      "${ server.Domain } copied in your clipboard": [
-        "${ server.Domain } kopirano u vaš međuspremnik"
-      ],
-      "Email updated": [
-        "Ažurirana je adresa"
-      ],
-      "Phone number updated": [
-        "Broj telefona je ažuriran"
-      ],
-      "Payment method deleted": [
-        "Način plaćanja je izbrisan"
-      ],
-      "Invoice paid": [
-        "Plaćen račun"
-      ],
-      "Invoice customized": [
-        "Prilagođena je faktura"
-      ],
-      "Code sent to ${ methodTo }": [
-        "Kôd je poslan na ${ methodTo }"
-      ],
-      "Verification successful": [
-        "Uspješna provjera"
-      ],
-      "If you entered a valid notification email we will send you an email with your usernames in the next minute.": [
-        "Ako ste unijeli važeću adresu e-pošte za obavijesti, poslat ćemo vam e-poštu s vašim korisničkim imenima u sljedećoj minuti."
-      ]
-    },
-    "Label": {
       "Operating system": [
         "Operativni sustav"
       ],
@@ -1789,15 +1023,6 @@
       "Danger": [
         "Opasnost"
       ],
-      "Copy": [
-        "Kopiraj"
-      ],
-      "Reveal password": [
-        "Prikaži lozinku"
-      ],
-      "Hide password": [
-        "Sakrij lozinku"
-      ],
       "Back to:": [
         "Natrag na:"
       ],
@@ -1835,90 +1060,651 @@
         "Ukupna cijena (dvogodišnje)"
       ]
     },
-    "Placeholder": {
-      "OS name": [
-        "Naziv OS-a"
+    "Action": {
+      "Close navigation": [
+        "Zatvori navigaciju"
       ],
-      "OS version": [
-        "Verzija OS-a"
+      "Open navigation": [
+        "Otvori navigaciju"
       ],
-      "Proton username": [
-        "Proton korisničko ime"
+      "More info: ${ safeTitle }": [
+        "Više informacija: ${ safeTitle }"
       ],
-      "A way to contact you": [
-        "Način kako da vas kontaktiramo"
+      "Go to panel ${ index }": [
+        "Idi na ${ index } panel"
       ],
-      "Please describe the problem and include any error messages": [
-        "Molimo opišite problem i pridružite sve poruke o pogreškama"
-      ],
-      "Browser name": [
-        "Naziv preglednika"
-      ],
-      "Browser version": [
-        "Verzija preglednika"
-      ],
-      "e.g. Julia Smith": [
-        "npr. Ana Horvat"
-      ],
-      "Gift code": [
-        "Darovni kôd"
-      ],
-      "Feedback": [
-        "Povratne informacije"
-      ],
-      "Other": [
-        "Ostalo"
-      ],
-      "Add gift code": [
-        "Dodaj darovni kôd"
-      ],
-      "ZIP": [
-        "Poštanski broj"
-      ],
-      "Postal code": [
-        "Poštanski broj"
-      ],
-      "Password": [
-        "Lozinka"
-      ],
-      "Two-factor authentication code": [
-        "Kôd dvofaktorske autentikacije"
+      "Close": [
+        "Zatvori"
       ],
       "Confirm": [
         "Potvrdi"
       ],
-      "Email address": [
-        "Adresa e-pošte"
+      "Cancel": [
+        "Poništi"
       ],
-      "Mailbox password": [
-        "Lozinka sandučića e-pošte"
+      "Submit": [
+        "Pošalji"
       ],
-      "Email": [
-        "E-pošta"
+      "Close modal": [
+        "Zatvori skočni prozor"
       ],
-      "Username": [
-        "Korisničko ime"
+      "Clear": [
+        "Očisti"
       ],
-      "Recovery email": [
-        "Adresa e-pošte za oporavak"
+      "Add screenshot(s)": [
+        "Dodaj snimku(e) zaslona"
       ],
-      "Reset code": [
-        "Ponovo postavljanje kôda"
+      "Hide info": [
+        "Sakrij informacije"
       ],
-      "Enter the word '${ dangerWord }' here": [
-        "Unesite riječ '${ dangerWord }' ovdje"
+      "Show info": [
+        "Prikaži informacije"
       ],
-      "Choose a new password": [
-        "Odaberite novu lozinku"
+      "Copy email to clipboard": [
+        "Kopiraj adresu e-pošte u međuspremnik"
       ],
-      "Enter coupon code": [
-        "Unesite kôd kupona"
+      "${ BRAND_NAME } introduction": [
+        "${ BRAND_NAME } predstavljanje"
       ],
-      "Confirm password": [
-        "Potvrdi lozinku"
+      "Chat with us": [
+        ""
+      ],
+      "I have a question": [
+        "Imam pitanje"
+      ],
+      "Request a feature": [
+        "Zatraži značajku"
+      ],
+      "Report a problem": [
+        "Prijavi problem"
+      ],
+      "${ BRAND_NAME } shop": [
+        "${ BRAND_NAME } dućan"
+      ],
+      "Switch account": [
+        "Promijeni račun"
+      ],
+      "Sign out": [
+        "Odjava"
+      ],
+      "Get started": [
+        "Započnite"
+      ],
+      "Next": [
+        "Sljedeće"
+      ],
+      "Start setup": [
+        "Započni postavljanje"
+      ],
+      "Skip": [
+        "Preskoči"
+      ],
+      "Done": [
+        "Gotovo"
+      ],
+      "Back": [
+        "Natrag"
+      ],
+      "Use ${ label } theme": [
+        "Koristi ${ label } temu"
+      ],
+      "Signing out": [
+        "Odjavljivanje"
+      ],
+      "refresh the page": [
+        "osvježi stranicu"
+      ],
+      "Remove bonuses": [
+        "Ukloni bonuse"
+      ],
+      "Select plan": [
+        "Odaberi plan"
+      ],
+      "Compare all features": [
+        "Usporedi sve značajke"
+      ],
+      "${ boldSave } by switching to annual billing": [
+        "${ boldSave } prebacivanjem na godišnju naplatu"
+      ],
+      "Continue": [
+        "Nastavi"
+      ],
+      "Pay": [
+        "Plati"
+      ],
+      "Apply": [
+        "Primijeni"
+      ],
+      "Open ${ CALENDAR_APP_NAME } settings": [
+        "Otvori ${ CALENDAR_APP_NAME } postavke"
+      ],
+      "OK": [
+        "U redu"
+      ],
+      "Upgrade to Plus": [
+        "Nadogradite na Plus plan"
+      ],
+      "Upgrade to Professional": [
+        "Nadogradite na Professional plan"
+      ],
+      "Activate": [
+        "Aktiviraj"
+      ],
+      "Customize subscription": [
+        "Prilagodite pretplatu"
+      ],
+      "Cancel subscription": [
+        "Otkaži pretplatu"
+      ],
+      "Remove gift code": [
+        "Ukloni darovni kôd"
+      ],
+      "annual billing": [
+        "godišnja naplata"
+      ],
+      "Compare plans": [
+        "Usporedi planove"
+      ],
+      "Decrease": [
+        "Smanji"
+      ],
+      "Increase": [
+        "Povećaj"
+      ],
+      "Downgrade": [
+        "Snizi status"
+      ],
+      "Top up": [
+        "Nadopuni"
+      ],
+      "Add credits": [
+        "Dodaj kredit"
+      ],
+      "Save": [
+        "Spremi"
+      ],
+      "Add PayPal payment method": [
+        "Dodaj PayPal način plaćanja"
+      ],
+      "Retry": [
+        "Pokušaj ponovno"
+      ],
+      "Loading verification": [
+        "Učitavanje potvrde"
+      ],
+      "Try again": [
+        "Pokušaj ponovno"
+      ],
+      "Verify": [
+        "Potvrdi"
+      ],
+      "Use a different card": [
+        "Upotrijebite neku drugu karticu"
+      ],
+      "Use a different payment method": [
+        "Koristite drugi način plaćanja"
+      ],
+      "enable desktop notifications": [
+        "omogući obavijesti radne površine"
+      ],
+      "here": [
+        "ovdje"
+      ],
+      "Refresh the page": [
+        "Osvježi stranicu"
+      ],
+      "Close this banner": [
+        "Zatvori natpis"
+      ],
+      "Change password": [
+        "Promijeni lozinku"
+      ],
+      "Ok": [
+        "U redu"
+      ],
+      "Download": [
+        "Preuzmi"
+      ],
+      "Yes": [
+        "Da"
+      ],
+      "Change mailbox password": [
+        "Promijeni lozinku sandučića e-pošte"
+      ],
+      "Delete": [
+        "Izbriši"
+      ],
+      "Delete your account": [
+        "Izbrišite svoj račun"
+      ],
+      "Hide": [
+        "Sakrij"
+      ],
+      "Show": [
+        "Prikaži"
+      ],
+      "Reset credentials": [
+        "Poništi vjerodajnice"
+      ],
+      "Upgrade": [
+        "Nadogradnja"
+      ],
+      "Copy": [
+        "Kopiraj"
+      ],
+      "Download all configurations": [
+        "Preuzmite sve konfiguracije"
+      ],
+      "Get ProtonVPN Plus": [
+        "Nabavite ProtonVPN Plus"
+      ],
+      "Update": [
+        "Ažuriraj"
+      ],
+      "Create new recovery phrase": [
+        ""
+      ],
+      "Copy to clipboard": [
+        ""
+      ],
+      "Create new recovery phrase?": [
+        ""
+      ],
+      "Enter password to continue": [
+        ""
+      ],
+      "Disable recovery phrase?": [
+        ""
+      ],
+      "Disable recovery phrase": [
+        ""
+      ],
+      "Edit": [
+        "Uredi"
+      ],
+      "Mark as default": [
+        "Postavi kao zadano"
+      ],
+      "Add credit / debit card": [
+        "Dodaj kreditnu/debitnu karticu"
+      ],
+      "Add PayPal": [
+        "Dodaj PayPal"
+      ],
+      "View": [
+        "Pregled"
+      ],
+      "User": [
+        "Korisnik"
+      ],
+      "Organization": [
+        "Organizacija"
+      ],
+      "Customize": [
+        "Prilagodi"
+      ],
+      "Details": [
+        "Pojedinosti"
+      ],
+      "Share via link": [
+        "Podijeli putem poveznice"
+      ],
+      "Sharing options": [
+        "Opcije dijeljenja"
+      ],
+      "Zoom out": [
+        "Smanji"
+      ],
+      "Reset zoom": [
+        "Poništi zumiranje"
+      ],
+      "Zoom in": [
+        "Povećaj"
+      ],
+      "Previous": [
+        "Prethodno"
+      ],
+      "Log in": [
+        "Prijavite se"
+      ],
+      "View invoice": [
+        "Prikaži fakturu"
+      ],
+      "Get verification code": [
+        "Nabavi kôd za provjeru"
+      ],
+      "Try another method": [
+        "Isprobajte drugu metodu"
+      ],
+      "Request new code": [
+        "Zatraži novi kôd"
+      ],
+      "Did not receive the code?": [
+        "Niste primili kôd?"
+      ],
+      "Edit email address": [
+        "Uredi adresu e-pošte"
+      ],
+      "Edit phone number": [
+        "Uredi broj telefona"
+      ],
+      "Email me my username(s)": [
+        "Pošalji mi e-poruku s mojim korisničkim imenom(ima)"
+      ],
+      "Get a new password": [
+        "Generirajte novu lozinku"
+      ],
+      "Reset password": [
+        "Ponovno postavljanje lozinke"
+      ],
+      "Reset my password": [
+        "Resetiraj moju lozinku"
+      ],
+      "Report bug": [
+        "Prijavi problem"
+      ],
+      "Activate my coupon": [
+        "Aktiviraj moj kupon"
+      ],
+      "Hide additional features": [
+        "Sakrij dodatne značajke"
+      ],
+      "Select": [
+        "Odaberi"
+      ],
+      "Verify code again": [
+        "Ponovno potvrdite kôd"
+      ],
+      "Verify code": [
+        "Potvrdi kôd"
+      ],
+      "Create account": [
+        "Stvori račun"
+      ],
+      "Go to login": [
+        "Idi na prijavu"
+      ],
+      "View full plan comparison": [
+        "Pogledajte cjelovitu usporedbu planova"
+      ],
+      "Send": [
+        "Pošalji"
+      ],
+      "Resend": [
+        "Ponovno pošalji"
+      ],
+      "Use another verification method": [
+        "Koristi drugi način potvrde"
+      ],
+      "Confirm payment": [
+        "Potvrdite plaćanje"
+      ],
+      "Pay annually and save 20%": [
+        "Plaćajte godišnje i uštedite 20%"
+      ],
+      "Try ${ upsellPlan.title } for only ${ totalMonthlyText }": [
+        "Isprobajte ${ upsellPlan.title } za samo ${ totalMonthlyText }"
+      ],
+      "Homepage": [
+        "Početna stranica"
+      ]
+    },
+    "Storage": {
+      "Your current storage:": [
+        "Vaš trenutni prostor za pohranu:"
+      ],
+      "Upgrade storage": [
+        "Nadogradi prostor za pohranu"
+      ],
+      "Release notes": [
+        "Bilješke o izdanoj verziji"
+      ]
+    },
+    "Link": {
+      "Learn more": [
+        "Saznajte više"
+      ],
+      "clearing your browser cache": [
+        "čišćenje predmemorije preglednika"
+      ],
+      "Upgrade": [
+        "Nadogradnja"
+      ],
+      "Go to subscription plans": [
+        "Idi na planove pretplate"
+      ],
+      "Add a gift code": [
+        "Dodaj darovni kôd"
+      ],
+      "click here": [
+        "kliknite ovdje"
+      ],
+      "Pay invoice": [
+        "Plati račun"
+      ],
+      "Upgrade account": [
+        "Nadogradi račun"
+      ],
+      "Not activated": [
+        "Nije aktivirano"
+      ],
+      "View guide": [
+        "Pregledaj upute"
+      ],
+      "What is the difference between UDP and TCP protocols?": [
+        "Koja je razlika između UDP i TCP protokola?"
+      ],
+      "Request an invite": [
+        "Zatraži pozivnicu"
+      ],
+      "Back to login": [
+        "Povratak na prijavu"
+      ],
+      "here": [
+        "ovdje"
+      ],
+      "Upgrade now": [
+        "Nadogradi sada"
+      ],
+      "Sign up for free": [
+        "Prijavite se besplatno"
+      ],
+      "protonvpn.com": [
+        "protonvpn.com"
+      ],
+      "Don't have an account yet? Sign up for free!": [
+        "Još nemate račun? Prijavite se besplatno!"
+      ],
+      "Reset password": [
+        "Ponovno postavljanje lozinke"
+      ],
+      "Forgot username?": [
+        "Zaboravili ste korisničko ime?"
+      ],
+      "Common login problems": [
+        "Najčešći problemi s prijavom"
+      ],
+      "Contact support": [
+        "Kontaktiraj podršku"
+      ],
+      "Terms of Service": [
+        "Uvjeti korištenja"
+      ],
+      "Privacy Policy": [
+        "Pravila o privatnosti"
+      ],
+      "Log in": [
+        "Prijavite se"
+      ],
+      "Close": [
+        "Zatvori"
+      ]
+    },
+    "Error": {
+      "Email address invalid": [
+        "Adresa e-pošte nije valjana"
+      ],
+      "This field is required": [
+        "Ovo polje je obavezno"
+      ],
+      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
+        "Preglednik koji koristite ne dopušta potpuno odobrenje plaćanja. Molimo koristite drugi preglednik ili se prijavite putem računala."
+      ],
+      "Unknown error": [
+        "Nepoznata pogreška"
+      ],
+      "Checkout expired, please try again.": [
+        "Naplata je istekla, pokušajte ponovo."
+      ],
+      "Invalid code": [
+        "Nevažeći kôd"
+      ],
+      "Error connecting to the Bitcoin API.": [
+        "Pogreška prilikom spajanja na Bitcoin API."
+      ],
+      "Amount below minimum.": [
+        "Iznos ispod minimuma."
+      ],
+      "Amount above the maximum.": [
+        "Iznos veći od maksimuma."
+      ],
+      "The minimum amount that can be donated is ${ price }": [
+        "Minimalni iznos koji se može donirati je ${ price }"
+      ],
+      "The minimum amount of credit that can be added is ${ _price }": [
+        "Minimalni iznos kredita koji se može dodati je ${ _price }"
+      ],
+      "The minimum payment we accept is ${ _price2 }": [
+        "Minimalni iznos koji prihvaćamo je ${ _price2 }"
+      ],
+      "Process aborted": [
+        "Proces je prekinut"
+      ],
+      "Payment process cancelled": [
+        "Proces plaćanja je otkazan"
+      ],
+      "Payment process failed": [
+        "Proces plaćanja nije uspio"
+      ],
+      "Payment process consumed": [
+        "Proces plaćanja je konzumiran"
+      ],
+      "Payment process not supported": [
+        "Proces plaćanja nije podržan"
+      ],
+      "Unknown payment token status": [
+        "Nepoznati status tokena za plaćanje"
+      ],
+      "Tab closed": [
+        "Kartica zatvorena"
+      ],
+      "Name on card required": [
+        "Ime s kartice je nužno"
+      ],
+      "Invalid expiration date": [
+        "Nevažeći datum isteka"
+      ],
+      "Invalid card number": [
+        "Netočan broj kartice"
+      ],
+      "Invalid ${ name } code": [
+        "Nevažeći ${ name } kôd"
+      ],
+      "Invalid postal code": [
+        "Netočan poštanski broj"
+      ],
+      "Please generate keys before you try to change your password.": [
+        "Prije pokušaja promjene lozinke generirajte ključeve."
+      ],
+      "Please set a recovery/notification email first": [
+        "Prvo postavite adresu e-pošte za oporavak/obavijesti"
+      ],
+      "Please set a recovery phone number first": [
+        "Prvo postavite broj telefona za oporavak"
+      ],
+      "Payments are currently not available, please try again later": [
+        "Plaćanje trenutno nije dostupno, pokušajte ponovo kasnije"
+      ],
+      "You have no invoices.": [
+        "Nemate faktura."
+      ],
+      "Your account or organization currently has an overdue invoice. Please pay all unpaid invoices.": [
+        "Vaš račun ili organizacija trenutačno ima neplaćenu fakturu. Molimo platite sve neplaćene fakture."
+      ],
+      "File has no contents to preview": [
+        "Datoteka nema sadržaja za pregled"
+      ],
+      "Incorrect mailbox password. Please try again": [
+        "Pogrešna lozinka poštanskog pretinca. Pokušajte ponovno"
+      ],
+      "Incorrect login credentials. Please try again": [
+        "Nevažeći podaci za prijavu. Molimo pokušajte ponovno"
+      ],
+      "Can't validate email, try again later": [
+        "Nije moguće potvrditi e-poštu, pokušajte ponovo kasnije"
+      ],
+      "Can't validate phone, try again later": [
+        "Nije moguće potvrditi broj telefona, pokušajte ponovo kasnije"
+      ],
+      "Enter 6 digits": [
+        "Unesite 6 znamenki"
+      ],
+      "Invalid verification code": [
+        "Nevažeći kôd za provjeru"
+      ],
+      "Please enter '${ dangerWord }'": [
+        "Molimo unesite '${ dangerWord }'"
+      ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "Nešto je pošlo po zlu. Molimo ${ refresh } kako biste nastavili. Ako i dalje vidite ovu poruku o pogrešci, kontaktirajte naš ${ supportTeam }."
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Ovo polje zahtjeva najmanje ${ minimumLength } znakova."
+      ],
+      "Email is not valid": [
+        "Adresa e-pošte nije važeća"
+      ],
+      "Not a valid number": [
+        "Broj telefona nije važeći"
+      ],
+      "Passwords do not match": [
+        "Lozinke se ne poklapaju"
+      ],
+      "Signature verification failed": [
+        "Potvrda potpisa je neuspješna"
+      ],
+      "Request timed out.": [
+        "Zahtjev je istekao."
+      ],
+      "Code wrong or not valid anymore": [
+        "Kôd je pogrešan ili više ne vrijedi"
+      ],
+      "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
+        "Ako je vrijeme na vašem TV-u isteklo, kliknite Osvježi na televizoru i ponovno unesite kôd."
+      ],
+      "Invalid invitation link": [
+        "Neispravna poveznica pozivnice"
+      ],
+      "Can't check username, try again later": [
+        "Ne uspješna provjera korisničkog imena, pokušajte ponovo kasnije"
       ]
     },
     "Title": {
+      "Open actions dropdown": [
+        "Otvorite padajući izbornik radnji"
+      ],
+      "Previous": [
+        "Prethodno"
+      ],
+      "Open pagination": [
+        "Otvori paginaciju"
+      ],
+      "Next": [
+        "Sljedeće"
+      ],
+      "What's new": [
+        "Što je novo"
+      ],
       "Report a problem": [
         "Prijavi problem"
       ],
@@ -2069,9 +1855,6 @@
       "Sign in again to continue": [
         "Ponovno se prijavite da biste nastavili"
       ],
-      "Open actions dropdown": [
-        "Otvorite padajući izbornik radnji"
-      ],
       "1. Select platform": [
         "1. Odaberite platformu"
       ],
@@ -2123,26 +1906,11 @@
       "Invalid verification code": [
         "Nevažeći kôd za provjeru"
       ],
-      "Request new code": [
-        "Zatraži novi kôd"
-      ],
       "Human verification": [
         "Ljudska provjera"
       ],
       "Confirm reset password": [
         "Potvrdi lozinku za ponovno postavljanje"
-      ],
-      "Previous": [
-        "Prethodno"
-      ],
-      "Open pagination": [
-        "Otvori paginaciju"
-      ],
-      "Next": [
-        "Sljedeće"
-      ],
-      "What's new": [
-        "Što je novo"
       ],
       "Upgrade": [
         "Nadogradnja"
@@ -2302,6 +2070,246 @@
       ],
       "Settings": [
         "Postavke"
+      ]
+    },
+    "Error notification in the bug report modal when the user upload file": {
+      "No image selected": [
+        "Nije odabrana nijedna slika"
+      ]
+    },
+    "Bug category": {
+      "Sign in problem": [
+        "Problem s prijavom"
+      ],
+      "Sign up problem": [
+        "Problem s registracijom"
+      ],
+      "Payments problem": [
+        "Problem s naplatom"
+      ],
+      "Custom domain problem": [
+        "Problem s prilagođenim domenama"
+      ],
+      "Bridge problem": [
+        "Problem s Bridgeom"
+      ],
+      "Import / export problem": [
+        "Problem s uvozom/izvozom"
+      ],
+      "Connection problem": [
+        "Problem s vezom"
+      ],
+      "Slow speed problem": [
+        "Problem s sporom brzinom"
+      ],
+      "Calendar problem": [
+        "Problem s Calendarom"
+      ],
+      "Contacts problem": [
+        "Problem s Contactsima"
+      ],
+      "Drive problem": [
+        "Problem s Driveom"
+      ],
+      "Mail problem": [
+        "Problem s e-poštom"
+      ],
+      "VPN problem": [
+        "Problem s VPN-om"
+      ],
+      "Feature request": [
+        "Predložite novu značajku"
+      ],
+      "Other": [
+        "Ostalo"
+      ],
+      "Signup problem": [
+        "Problem s registracijom"
+      ],
+      "Installation problem": [
+        "Problem s instalacijom"
+      ],
+      "Update problem": [
+        "Problem s nadogradnjom"
+      ],
+      "Application problem": [
+        "Problem s aplikacijom"
+      ],
+      "Speed problem": [
+        "Problem s brzinom"
+      ],
+      "Manual setup problem": [
+        "Problem s ručnim postavljanjem"
+      ],
+      "Website access problem": [
+        "Problem s pristupom web stanici"
+      ],
+      "Streaming problem": [
+        "Problem s streamingom"
+      ]
+    },
+    "Group": {
+      "Account": [
+        "Korisnički račun"
+      ],
+      "Apps": [
+        "Aplikacije"
+      ],
+      "Network": [
+        "Mreža"
+      ],
+      "Services": [
+        "Usluge"
+      ],
+      "Other category": [
+        "Ostale kategorije"
+      ]
+    },
+    "Action to select a title for the bug report modal": {
+      "Select": [
+        "Odaberi"
+      ]
+    },
+    "Success": {
+      "Bug reported": [
+        "Problem je prijavljen"
+      ],
+      "Email address copied to clipboard": [
+        "Adresa e-pošte je kopirana u međuspremnik"
+      ],
+      "You have successfully unsubscribed": [
+        "Uspješno ste poništili pretplatu"
+      ],
+      "Credits added": [
+        "Nadodan je kredit"
+      ],
+      "Gift code applied": [
+        "Kôd darovnog kupona je primjenjen"
+      ],
+      "Payment method updated": [
+        "Način plaćanja je ažuriran"
+      ],
+      "Payment method added": [
+        "Način plaćanja dodan"
+      ],
+      "Password updated": [
+        "Lozinka je ažurirana"
+      ],
+      "Account deleted. Logging out...": [
+        "Račun je izbrisan. Odjava..."
+      ],
+      "Locale updated": [
+        "Lokalizacija je ažurirana"
+      ],
+      "${ server.Domain } copied in your clipboard": [
+        "${ server.Domain } kopirano u vaš međuspremnik"
+      ],
+      "Email updated": [
+        "Ažurirana je adresa"
+      ],
+      "Phone number updated": [
+        "Broj telefona je ažuriran"
+      ],
+      "Payment method deleted": [
+        "Način plaćanja je izbrisan"
+      ],
+      "Invoice paid": [
+        "Plaćen račun"
+      ],
+      "Invoice customized": [
+        "Prilagođena je faktura"
+      ],
+      "Code sent to ${ methodTo }": [
+        "Kôd je poslan na ${ methodTo }"
+      ],
+      "Verification successful": [
+        "Uspješna provjera"
+      ],
+      "If you entered a valid notification email we will send you an email with your usernames in the next minute.": [
+        "Ako ste unijeli važeću adresu e-pošte za obavijesti, poslat ćemo vam e-poštu s vašim korisničkim imenima u sljedećoj minuti."
+      ]
+    },
+    "Placeholder": {
+      "OS name": [
+        "Naziv OS-a"
+      ],
+      "OS version": [
+        "Verzija OS-a"
+      ],
+      "Proton username": [
+        "Proton korisničko ime"
+      ],
+      "A way to contact you": [
+        "Način kako da vas kontaktiramo"
+      ],
+      "Please describe the problem and include any error messages": [
+        "Molimo opišite problem i pridružite sve poruke o pogreškama"
+      ],
+      "Browser name": [
+        "Naziv preglednika"
+      ],
+      "Browser version": [
+        "Verzija preglednika"
+      ],
+      "e.g. Julia Smith": [
+        "npr. Ana Horvat"
+      ],
+      "Gift code": [
+        "Darovni kôd"
+      ],
+      "Feedback": [
+        "Povratne informacije"
+      ],
+      "Other": [
+        "Ostalo"
+      ],
+      "Add gift code": [
+        "Dodaj darovni kôd"
+      ],
+      "ZIP": [
+        "Poštanski broj"
+      ],
+      "Postal code": [
+        "Poštanski broj"
+      ],
+      "Password": [
+        "Lozinka"
+      ],
+      "Two-factor authentication code": [
+        "Kôd dvofaktorske autentikacije"
+      ],
+      "Confirm": [
+        "Potvrdi"
+      ],
+      "Email address": [
+        "Adresa e-pošte"
+      ],
+      "Mailbox password": [
+        "Lozinka sandučića e-pošte"
+      ],
+      "Email": [
+        "E-pošta"
+      ],
+      "Username": [
+        "Korisničko ime"
+      ],
+      "Recovery email": [
+        "Adresa e-pošte za oporavak"
+      ],
+      "Reset code": [
+        "Ponovo postavljanje kôda"
+      ],
+      "Enter the word '${ dangerWord }' here": [
+        "Unesite riječ '${ dangerWord }' ovdje"
+      ],
+      "Choose a new password": [
+        "Odaberite novu lozinku"
+      ],
+      "Enter coupon code": [
+        "Unesite kôd kupona"
+      ],
+      "Confirm password": [
+        "Potvrdi lozinku"
       ]
     },
     "Warning": {
@@ -3521,17 +3529,6 @@
         "Potvrdi novu lozinku"
       ]
     },
-    "Storage": {
-      "Your current storage:": [
-        "Vaš trenutni prostor za pohranu:"
-      ],
-      "Upgrade storage": [
-        "Nadogradi prostor za pohranu"
-      ],
-      "Release notes": [
-        "Bilješke o izdanoj verziji"
-      ]
-    },
     "file size format": {
       "bytes": [
         "bajtova"
@@ -3554,11 +3551,11 @@
       ]
     },
     "Calendar status": {
-      "Not synced": [
-        ""
-      ],
       "Syncing": [
         "Sinkronizacija"
+      ],
+      "Not synced": [
+        ""
       ]
     },
     "Calendar subscription not synced error": {

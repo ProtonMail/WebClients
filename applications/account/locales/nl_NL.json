@@ -84,6 +84,24 @@
       "Confirm": [
         "Bevestigen"
       ],
+      "Delete": [
+        "Verwijderen"
+      ],
+      "Close": [
+        "Sluiten"
+      ],
+      "Next month": [
+        "Volgende maand"
+      ],
+      "Previous month": [
+        "Vorige maand"
+      ],
+      "Show less": [
+        "Minder weergeven"
+      ],
+      "Show more": [
+        "Meer weergeven"
+      ],
       "Close navigation": [
         "Navigatie sluiten"
       ],
@@ -93,47 +111,20 @@
       "More info: ${ safeTitle }": [
         "Meer informatie: ${ safeTitle }"
       ],
-      "Close": [
-        "Sluiten"
-      ],
-      "Delete": [
-        "Verwijderen"
-      ],
       "Go to panel ${ index }": [
         "Ga naar paneel ${ index }"
       ],
-      "Show less": [
-        "Minder weergeven"
-      ],
-      "Show more": [
-        "Meer weergeven"
-      ],
-      "Next month": [
-        "Volgende maand"
-      ],
-      "Previous month": [
-        "Vorige maand"
-      ],
       "Remove": [
         "Verwijderen"
+      ],
+      "Select timezone": [
+        "Kies tijdzone"
       ],
       "Submit": [
         "Versturen"
       ],
       "Close modal": [
         "Venster sluiten"
-      ],
-      "Select timezone": [
-        "Kies tijdzone"
-      ],
-      "Activate ${ Name }@pm.me": [
-        "Activeer ${ Name }@pm.me"
-      ],
-      "Upgrade": [
-        "Upgraden"
-      ],
-      "Show shortcuts": [
-        "Snelkoppelingen tonen"
       ],
       "Continue import": [
         "Doorgaan met importeren"
@@ -213,6 +204,15 @@
       "Use ${ label } theme": [
         "Gebruik thema ${ label }"
       ],
+      "Activate ${ Name }@pm.me": [
+        "Activeer ${ Name }@pm.me"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ],
+      "Show shortcuts": [
+        "Snelkoppelingen tonen"
+      ],
       "Import contacts": [
         "Contactpersonen importeren"
       ],
@@ -249,53 +249,11 @@
       "Get ProtonVPN Plus": [
         "Neem ProtonVPN Plus"
       ],
-      "Add user": [
-        "Gebruiker toevoegen"
+      "Yes": [
+        "Ja"
       ],
-      "Add address": [
-        "E-mailadres toevoegen"
-      ],
-      "Done": [
-        "Klaar"
-      ],
-      "Review": [
-        "Bekijken"
-      ],
-      "Set catch-all": [
-        "Stel catch-all in"
-      ],
-      "Add domain": [
-        "Domein toevoegen"
-      ],
-      "Refresh status": [
-        "Status vernieuwen"
-      ],
-      "Copy email to clipboard": [
-        "E-mailadres kopiëren naar klembord"
-      ],
-      "${ BRAND_NAME } introduction": [
-        "${ BRAND_NAME } inleiding"
-      ],
-      "Chat with us": [
-        ""
-      ],
-      "I have a question": [
-        "Ik heb een vraag"
-      ],
-      "Request a feature": [
-        "Vraag een functie aan"
-      ],
-      "Report a problem": [
-        "Meld een probleem"
-      ],
-      "${ BRAND_NAME } shop": [
-        "${ BRAND_NAME } winkel"
-      ],
-      "Switch account": [
-        "Account wijzigen"
-      ],
-      "Sign out": [
-        "Uitloggen"
+      "No": [
+        "Nee"
       ],
       "Update": [
         "Updaten"
@@ -328,7 +286,7 @@
         "Agenda aanmaken"
       ],
       "Remove calendar": [
-        ""
+        "Agenda verwijderen"
       ],
       "Subscribe to calendar": [
         "Abonneer op agenda"
@@ -348,33 +306,6 @@
       "Delete link": [
         "Verwijder hyperlink"
       ],
-      "Get started": [
-        "Aan de slag"
-      ],
-      "Start setup": [
-        "Installatie starten"
-      ],
-      "Skip": [
-        "Overslaan"
-      ],
-      "Clear": [
-        "Wissen"
-      ],
-      "Add screenshot(s)": [
-        "Screenshot(s) toevoegen"
-      ],
-      "Hide info": [
-        "Informatie verbergen"
-      ],
-      "Show info": [
-        "Informatie tonen"
-      ],
-      "Signing out": [
-        "Uitloggen"
-      ],
-      "refresh the page": [
-        "pagina vernieuwen"
-      ],
       "Reactivate keys": [
         "Sleutels heractiveren"
       ],
@@ -393,9 +324,6 @@
       "Export key": [
         "Sleutel exporteren"
       ],
-      "No": [
-        "Nee"
-      ],
       "Warning": [
         "Waarschuwing"
       ],
@@ -404,6 +332,135 @@
       ],
       "Export private key": [
         "Exporteer geheime sleutel"
+      ],
+      "Add user": [
+        "Gebruiker toevoegen"
+      ],
+      "Add address": [
+        "E-mailadres toevoegen"
+      ],
+      "Done": [
+        "Klaar"
+      ],
+      "Review": [
+        "Bekijken"
+      ],
+      "Set catch-all": [
+        "Stel catch-all in"
+      ],
+      "Add domain": [
+        "Domein toevoegen"
+      ],
+      "Refresh status": [
+        "Status vernieuwen"
+      ],
+      "Copy email to clipboard": [
+        "E-mailadres kopiëren naar klembord"
+      ],
+      "${ BRAND_NAME } introduction": [
+        "${ BRAND_NAME } inleiding"
+      ],
+      "Chat with us": [
+        "Chat met ons"
+      ],
+      "I have a question": [
+        "Ik heb een vraag"
+      ],
+      "Request a feature": [
+        "Vraag een functie aan"
+      ],
+      "Report a problem": [
+        "Meld een probleem"
+      ],
+      "${ BRAND_NAME } shop": [
+        "${ BRAND_NAME } winkel"
+      ],
+      "Switch account": [
+        "Account wijzigen"
+      ],
+      "Sign out": [
+        "Uitloggen"
+      ],
+      "Get started": [
+        "Aan de slag"
+      ],
+      "Start setup": [
+        "Installatie starten"
+      ],
+      "Skip": [
+        "Overslaan"
+      ],
+      "Preview": [
+        "Voorbeeld"
+      ],
+      "Create label": [
+        "Label maken"
+      ],
+      "Create folder": [
+        "Map maken"
+      ],
+      "Remove this label": [
+        "Label verwijderen"
+      ],
+      "Add condition": [
+        "Voorwaarde toevoegen"
+      ],
+      "label emails as": [
+        "e-mail labellen als"
+      ],
+      "move emails to": [
+        "e-mails verplaatsen naar"
+      ],
+      "mark emails as": [
+        "e-mails markeren als"
+      ],
+      "send auto-reply email": [
+        "automatisch antwoord versturen"
+      ],
+      "Edit sieve": [
+        "Regel bewerken"
+      ],
+      "Add filter": [
+        "Filter toevoegen"
+      ],
+      "Add sieve filter": [
+        "Voeg Sieve filter toe"
+      ],
+      "Add": [
+        "Toevoegen"
+      ],
+      "Move to Block List": [
+        "Verplaats naar Bloklijst"
+      ],
+      "Move to Allow List": [
+        "Verplaatsen naar Toestane Lijst"
+      ],
+      "Clear": [
+        "Wissen"
+      ],
+      "Add screenshot(s)": [
+        "Screenshot(s) toevoegen"
+      ],
+      "Hide info": [
+        "Informatie verbergen"
+      ],
+      "Show info": [
+        "Informatie tonen"
+      ],
+      "Add folder": [
+        "Map toevoegen"
+      ],
+      "Sort": [
+        "Sorteer"
+      ],
+      "Add label": [
+        "Label toevoegen"
+      ],
+      "Signing out": [
+        "Uitloggen"
+      ],
+      "refresh the page": [
+        "pagina vernieuwen"
       ],
       "Remove bonuses": [
         "Verwijder bonussen"
@@ -504,9 +561,6 @@
       "Ok": [
         "OK"
       ],
-      "Yes": [
-        "Ja"
-      ],
       "Change mailbox password": [
         "Mailboxwachtwoord wijzigen"
       ],
@@ -514,22 +568,28 @@
         "Uw account verwijderen"
       ],
       "Create new recovery phrase": [
-        ""
+        "Maak een nieuwe herstelzin"
       ],
       "Copy to clipboard": [
-        ""
+        "Naar klembord kopiëren"
       ],
       "Create new recovery phrase?": [
-        ""
+        "Een nieuwe herstelzin maken?"
       ],
       "Enter password to continue": [
-        ""
+        "Voer wachtwoord in om door te gaan"
       ],
       "Disable recovery phrase?": [
-        ""
+        "Herstelzin uitschakelen?"
       ],
       "Disable recovery phrase": [
-        ""
+        "Herstelzin uitschakelen"
+      ],
+      "Save address": [
+        "Adres opslaan"
+      ],
+      "activate": [
+        "activeer"
       ],
       "Revoke all other sessions": [
         "Alle andere sessies beëindigen"
@@ -582,50 +642,23 @@
       "Previous": [
         "Vorige"
       ],
-      "Preview": [
-        "Voorbeeld"
+      "Enable multi-user support": [
+        "Ondersteuning voor meerdere gebruikers inschakelen"
       ],
-      "Create label": [
-        "Label maken"
+      "Reset keys": [
+        "Reset sleutels"
       ],
-      "Create folder": [
-        "Map maken"
+      "Change organization keys": [
+        "Organisatiesleutels wijzigen"
       ],
-      "Remove this label": [
-        "Label verwijderen"
+      "Reset organization keys": [
+        "Organisatiesleutels resetten"
       ],
-      "Add condition": [
-        "Voorwaarde toevoegen"
+      "Restore administrator privileges": [
+        "Herstel beheerdersbevoegdheden"
       ],
-      "label emails as": [
-        "e-mail labellen als"
-      ],
-      "move emails to": [
-        "e-mails verplaatsen naar"
-      ],
-      "mark emails as": [
-        "e-mails markeren als"
-      ],
-      "send auto-reply email": [
-        "automatisch antwoord versturen"
-      ],
-      "Edit sieve": [
-        "Regel bewerken"
-      ],
-      "Add filter": [
-        "Filter toevoegen"
-      ],
-      "Add sieve filter": [
-        "Voeg Sieve filter toe"
-      ],
-      "Add": [
-        "Toevoegen"
-      ],
-      "Move to Block List": [
-        "Verplaats naar Bloklijst"
-      ],
-      "Move to Allow List": [
-        "Verplaatsen naar Toestane Lijst"
+      "Activate organization key": [
+        "Organisatiesleutel activeren"
       ],
       "View invoice": [
         "Factuur bekijken"
@@ -647,39 +680,6 @@
       ],
       "Edit phone number": [
         "Wijzig telefoonnummer"
-      ],
-      "Add folder": [
-        "Map toevoegen"
-      ],
-      "Sort": [
-        "Sorteer"
-      ],
-      "Add label": [
-        "Label toevoegen"
-      ],
-      "Enable multi-user support": [
-        "Ondersteuning voor meerdere gebruikers inschakelen"
-      ],
-      "Reset keys": [
-        ""
-      ],
-      "Change organization keys": [
-        "Organisatiesleutels wijzigen"
-      ],
-      "Reset organization keys": [
-        ""
-      ],
-      "Restore administrator privileges": [
-        "Herstel beheerdersbevoegdheden"
-      ],
-      "Activate organization key": [
-        "Organisatiesleutel activeren"
-      ],
-      "Save address": [
-        "Adres opslaan"
-      ],
-      "activate": [
-        "activeer"
       ],
       "Upgrade now": [
         "Upgrade nu"
@@ -751,7 +751,7 @@
         "Code versturen"
       ],
       "Return to sign in": [
-        ""
+        "Terug naar inloggen"
       ],
       "Didn't receive a code?": [
         "Heeft u geen code ontvangen?"
@@ -801,17 +801,23 @@
       "Name": [
         "Naam"
       ],
-      "yourdomain.com": [
-        "uwdomein.com"
-      ],
       "Add a calendar name": [
         "Voeg een kalendernaam toe"
       ],
       "Add a calendar description": [
         "Voeg een beschrijving toe aan de kalender"
       ],
+      "Password": [
+        "Wachtwoord"
+      ],
+      "yourdomain.com": [
+        "uwdomein.com"
+      ],
       "e.g. Julia Smith": [
         "bijv. Julia Smith"
+      ],
+      "Type text or keyword": [
+        "Voer tekst of trefwoord in"
       ],
       "OS name": [
         "Besturingssysteem"
@@ -833,9 +839,6 @@
       ],
       "Browser version": [
         "Browserversie"
-      ],
-      "Password": [
-        "Wachtwoord"
       ],
       "Feedback": [
         "Feedback"
@@ -861,8 +864,11 @@
       "Confirm": [
         "Bevestig"
       ],
-      "Type text or keyword": [
-        "Voer tekst of trefwoord in"
+      "Choose display name": [
+        "Kies weergavenaam"
+      ],
+      "Choose address": [
+        "Adres kiezen"
       ],
       "Choose a name": [
         "Kies een naam"
@@ -878,12 +884,6 @@
       ],
       "Search users": [
         "Zoek gebruikers"
-      ],
-      "Choose address": [
-        "Adres kiezen"
-      ],
-      "Choose display name": [
-        "Kies weergavenaam"
       ]
     },
     "Error": {
@@ -950,14 +950,8 @@
       "Invalid name": [
         "Ongeldige naam"
       ],
-      "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
-        "We zijn gestopt met het ondertekenen van DKIM-ondertekening, vanwege problemen met uw DNS-configuratie. Volg de onderstaande instructies om ondertekenen te hervatten."
-      ],
-      "Verification did not succeed, please try again in an hour.": [
-        "Verificatie mislukt, probeer het over een uur opnieuw."
-      ],
-      "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.": [
-        "Verkeerde verificatiecode. Controleer of u de verificatiecode correct gekopieerd hebt en probeer het opnieuw. Het kan maximaal 24 uur duren voordat wijzigingen doorgevoerd zijn."
+      "Automatic replies is a paid feature. Please upgrade to a paid account to use this feature.": [
+        "Automatische antwoorden is een betaalde functie. Upgrade naar een betaald account om deze functie te gebruiken."
       ],
       "Name required": [
         "Naam vereist"
@@ -968,26 +962,59 @@
       "Primary address key is not decrypted.": [
         "Primaire adressleutel is niet gedecodeerd."
       ],
-      "Automatic replies is a paid feature. Please upgrade to a paid account to use this feature.": [
-        "Automatische antwoorden is een betaalde functie. Upgrade naar een betaald account om deze functie te gebruiken."
-      ],
-      "Primary address key is not decrypted": [
-        "Primaire adressleutel is niet gedecodeerd"
-      ],
       "Incorrect password": [
         "Ongeldig wachtwoord"
       ],
       "Zero keys reactivated": [
-        ""
+        "Nul sleutels gereactiveerd"
       ],
       "Uploaded file is not a valid private key. Please verify and try again.": [
-        ""
+        "Geüploadde file is geen geldige geheime sleutel. Controleer en probeer opnieuw."
       ],
       "Uploaded files are not valid private keys. Please verify and try again.": [
-        ""
+        "Geüploadde files zijn geen geldige geheime sleutels. Controleer en probeer opnieuw."
+      ],
+      "Primary address key is not decrypted": [
+        "Primaire adressleutel is niet gedecodeerd"
       ],
       "Invalid private key file": [
         "Ongeldige privésleutel"
+      ],
+      "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
+        "We zijn gestopt met het ondertekenen van DKIM-ondertekening, vanwege problemen met uw DNS-configuratie. Volg de onderstaande instructies om ondertekenen te hervatten."
+      ],
+      "Verification did not succeed, please try again in an hour.": [
+        "Verificatie mislukt, probeer het over een uur opnieuw."
+      ],
+      "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.": [
+        "Verkeerde verificatiecode. Controleer of u de verificatiecode correct gekopieerd hebt en probeer het opnieuw. Het kan maximaal 24 uur duren voordat wijzigingen doorgevoerd zijn."
+      ],
+      "Empty condition": [
+        "Lege voorwaarde"
+      ],
+      "Condition incomplete": [
+        "Onvolledig ingevulde voorwaarde"
+      ],
+      "Filter with this name already exists": [
+        "Filter met deze naam bestaat reeds"
+      ],
+      "Error in one of the conditions": [
+        "Fout in de volgende voorwaarden"
+      ],
+      "Require at least one condition": [
+        "Vereist minstens één voorwaarde"
+      ],
+      "Require at least one action": [
+        "Vereist minstens één actie"
+      ],
+      "Filter with this name already exist": [
+        "Filter met deze naam bestaat reeds"
+      ],
+      "Invalid Sieve code": [
+        "Ongeldige Sieve-code"
+      ],
+      "Invalid domain": [
+        "Ongeldige domeinnaam"
       ],
       "Checkout expired, please try again.": [
         "Checkout is verlopen, probeer het opnieuw."
@@ -1059,7 +1086,19 @@
         "Stel eerst een hersteltelefoonnummer in"
       ],
       "Wrong recovery phrase. Try again or use another recovery method.": [
-        ""
+        "Verkeerde herstelzijn. Probeer opnieuw of probeer een andere herstelmethode."
+      ],
+      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Addresses > Short domain (pm.me)": [
+        "${ Local } is uw gebruikersnaam. Om ${ Local }@${ Domain } te maken, ga naar Instellingen > Adressen > Korte domein (pm.me)"
+      ],
+      "The organization key must be activated first.": [
+        "De organisatiesleutel moet eerst geactiveerd worden."
+      ],
+      "Error": [
+        "Fout"
+      ],
+      "Organization key is not decrypted.": [
+        "Organisatiesleutel is niet gedecodeerd."
       ],
       "Payments are currently not available, please try again later": [
         "Betalingen zijn op dit moment niet beschikbaar, probeer het later nog eens"
@@ -1073,45 +1112,6 @@
       "File has no contents to preview": [
         "Bestand heeft geen inhoud om een voorbeeld te tonen"
       ],
-      "Empty condition": [
-        "Lege voorwaarde"
-      ],
-      "Condition incomplete": [
-        "Onvolledig ingevulde voorwaarde"
-      ],
-      "Filter with this name already exists": [
-        "Filter met deze naam bestaat reeds"
-      ],
-      "Error in one of the conditions": [
-        "Fout in de volgende voorwaarden"
-      ],
-      "Require at least one condition": [
-        "Vereist minstens één voorwaarde"
-      ],
-      "Require at least one action": [
-        "Vereist minstens één actie"
-      ],
-      "Filter with this name already exist": [
-        "Filter met deze naam bestaat reeds"
-      ],
-      "Invalid Sieve code": [
-        "Ongeldige Sieve-code"
-      ],
-      "Invalid domain": [
-        "Ongeldige domeinnaam"
-      ],
-      "Can't validate email, try again later": [
-        "Kan e-mail niet valideren, probeer het later opnieuw"
-      ],
-      "Can't validate phone, try again later": [
-        "Kan telefoon niet valideren, probeer het later opnieuw"
-      ],
-      "Enter 6 digits": [
-        "Voer 6 cijfers in"
-      ],
-      "Invalid verification code": [
-        "Ongeldige verificatiecode"
-      ],
       "Passwords do not match": [
         "Wachtwoorden komen niet overeen"
       ],
@@ -1119,19 +1119,13 @@
         "Upgrade naar het abonnement Professional dat meer dan 1 gebruiker ondersteunt, of upgrade naar het abonnement Visionary voor multi-user ondersteuning."
       ],
       "You must privatize all users before generating new organization keys": [
-        ""
-      ],
-      "Organization key is not decrypted.": [
-        "Organisatiesleutel is niet gedecodeerd."
+        "U moet alle gebruikers loskoppelen voordat u nieuwe organisatiesleutels genereert"
       ],
       "You have lost access to your organization keys. Without restoration you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "U heeft uw toegang tot de organisatie sleutels verloren. Zonder herstel kan u geen nieuwe gebruikers creëren, nieuwe adressen aan bestaande gebruikers toewijzen of toegang krijgen tot niet-private gebruikers accounts."
       ],
       "You must activate your organization keys. Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "U moet uw organisatiesleutels activeren. Zonder activatie kan u geen nieuwe gebruikers creëren, nieuwe adressen aan bestaande gebruikers toewijzen, of toegang krijgen tot niet-private gebruikeraccounts."
-      ],
-      "The organization key must be activated first.": [
-        "De organisatiesleutel moet eerst geactiveerd worden."
       ],
       "Permission denied, administrator privileges have been restricted.": [
         "Toegang geweigerd, beheerdersbevoegdheden zijn beperkt."
@@ -1163,11 +1157,17 @@
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "Alle opslagruimte is reeds toegewezen. Beperk de toegewezen opslagruimte van andere gebruikers."
       ],
-      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Addresses > Short domain (pm.me)": [
-        "${ Local } is uw gebruikersnaam. Om ${ Local }@${ Domain } te maken, ga naar Instellingen > Adressen > Korte domein (pm.me)"
+      "Can't validate email, try again later": [
+        "Kan e-mail niet valideren, probeer het later opnieuw"
       ],
-      "Error": [
-        "Fout"
+      "Can't validate phone, try again later": [
+        "Kan telefoon niet valideren, probeer het later opnieuw"
+      ],
+      "Enter 6 digits": [
+        "Voer 6 cijfers in"
+      ],
+      "Invalid verification code": [
+        "Ongeldige verificatiecode"
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Er ging iets mis, gelieve ${ refresh } om door te gaan. Als u dit foutbericht nog steeds ziet, neem dan contact op met onze ${ supportTeam }."
@@ -1193,6 +1193,15 @@
       "Unknown error": [
         "Onbekende fout"
       ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Dit veld vereist een minimum van ${ minimumLength } tekens."
+      ],
+      "Email is not valid": [
+        "E-mailadres is ongeldig"
+      ],
+      "Not a valid number": [
+        "Ongeldig getal"
+      ],
       "Missing signature": [
         "Handtekening ontbreekt"
       ],
@@ -1202,14 +1211,8 @@
       "Signature not verified": [
         "Handtekening niet geverifieerd"
       ],
-      "This field requires a minimum of ${ minimumLength } characters.": [
-        "Dit veld vereist een minimum van ${ minimumLength } tekens."
-      ],
-      "Email is not valid": [
-        "E-mailadres is ongeldig"
-      ],
-      "Not a valid number": [
-        "Ongeldig getal"
+      "Request timed out.": [
+        "Reactietijd verzoek overschreden."
       ],
       "Signature verification failed": [
         "Handtekening controle mislukt"
@@ -1225,9 +1228,6 @@
       ],
       "Calendar primary private key is not decrypted": [
         "Primaire kalendersleutel is niet gedecodeerd"
-      ],
-      "Request timed out.": [
-        "Reactietijd verzoek overschreden."
       ],
       "The session has expired. Please sign in again.": [
         "De sessie is verlopen. Log opnieuw in."
@@ -1254,18 +1254,6 @@
       ],
       "Do not ask again": [
         "Vraag niet opnieuw"
-      ],
-      "Date format": [
-        "Datumformaat"
-      ],
-      "Default language": [
-        "Standaardtaal"
-      ],
-      "Time format": [
-        "Tijdsformaat"
-      ],
-      "Week start": [
-        "Eerste dag van de week"
       ],
       "From: ${ fromEmailAddress }": [
         "Van: ${ fromEmailAddress }"
@@ -1321,6 +1309,18 @@
       "Manage folders": [
         "Mappen beheren"
       ],
+      "Date format": [
+        "Datumformaat"
+      ],
+      "Default language": [
+        "Standaardtaal"
+      ],
+      "Time format": [
+        "Tijdsformaat"
+      ],
+      "Week start": [
+        "Eerste dag van de week"
+      ],
       "Automatically save contacts": [
         "Contacten automatisch opslaan"
       ],
@@ -1354,20 +1354,56 @@
       "OpenVPN / IKEv2 password": [
         "OpenVPN / IKEv2 wachtwoord"
       ],
-      "Domain name": [
-        "Domeinnaam"
+      "Timezone": [
+        "Tijdzone"
       ],
-      "Please add the following TXT record. Note, DNS records can take several hours to update.": [
-        "Voeg het volgende TXT-record toe. Let op, het updaten van DNS-records kan enige tijd duren."
+      "Days of the week": [
+        "Dagen van de week"
       ],
-      "Please add all 3 of the following CNAME records. Note, DNS records can take several hours to update.": [
-        "Voeg alle 3 van de volgende CNAME records toe. Let op, DNS records kunnen enkele uren duren om te updaten."
+      "Duration": [
+        "Duur"
       ],
-      "Please add the following MX record. Note, DNS records can take several hours to update.": [
-        "Voeg alstublieft het volgende MX-record toe. Let op, het kan enkele uren duren voordat DNS-records worden bijgewerkt."
+      "Start day of month": [
+        "Eerste dag van de maand"
       ],
-      "Here is a basic DMARC record that does nothing except email you reports.": [
-        "Hier is een DMARC-record dat u alleen verslagen toestuurt."
+      "Start time": [
+        "Begintijd"
+      ],
+      "End day of month": [
+        "Laatste dag van de maand"
+      ],
+      "End time": [
+        "Eindtijd"
+      ],
+      "Start weekday": [
+        "Eerste weekdag"
+      ],
+      "End weekday": [
+        "Laatste weekdag"
+      ],
+      "Start date": [
+        "Begindatum"
+      ],
+      "End date": [
+        "Einddatum"
+      ],
+      "Message": [
+        "Bericht"
+      ],
+      "Auto reply": [
+        "Automatisch antwoorden"
+      ],
+      "Prompt to trust keys": [
+        "Vraag naar het vertrouwen van sleutels"
+      ],
+      "Sign external messages": [
+        "Onderteken externe berichten"
+      ],
+      "Attach public key": [
+        "Publieke sleutel bijvoegen"
+      ],
+      "Default PGP settings": [
+        "Standaard PGP-instellingen"
       ],
       "Name": [
         "Naam"
@@ -1417,92 +1453,23 @@
       "Your calendar URL label": [
         "Uw agenda-URL label"
       ],
-      "Display name": [
-        "Weergavenaam"
-      ],
-      "Timezone": [
-        "Tijdzone"
-      ],
-      "Days of the week": [
-        "Dagen van de week"
-      ],
-      "Duration": [
-        "Duur"
-      ],
-      "Start day of month": [
-        "Eerste dag van de maand"
-      ],
-      "Start time": [
-        "Begintijd"
-      ],
-      "End day of month": [
-        "Laatste dag van de maand"
-      ],
-      "End time": [
-        "Eindtijd"
-      ],
-      "Start weekday": [
-        "Eerste weekdag"
-      ],
-      "End weekday": [
-        "Laatste weekdag"
-      ],
-      "Start date": [
-        "Begindatum"
-      ],
-      "End date": [
-        "Einddatum"
-      ],
-      "Message": [
-        "Bericht"
-      ],
-      "Auto reply": [
-        "Automatisch antwoorden"
-      ],
-      "Operating system": [
-        "Besturingssysteem"
-      ],
-      "Operating system version": [
-        "Versie van besturingssysteem"
-      ],
-      "Proton username": [
-        "Proton-gebruikersnaam"
-      ],
-      "Email address": [
-        "E-mailadres"
-      ],
-      "Category": [
-        "Categorie"
-      ],
-      "What happened?": [
-        "Wat is er gebeurd?"
-      ],
-      "System information": [
-        "Systeeminformatie"
-      ],
-      "Browser": [
-        "Browser"
-      ],
-      "Browser version": [
-        "Browserversie"
-      ],
       "Delete": [
-        ""
+        "Verwijder"
       ],
       "Backup key": [
-        ""
+        "Back-up sleutel"
       ],
       "Uploaded private keys": [
-        ""
+        "Geüploadde geheime sleutels"
       ],
       "Upload your backup key": [
-        ""
+        "Upload uw back-up sleutel"
       ],
       "Phrase": [
-        ""
+        "Zin"
       ],
       "Backup keys": [
-        ""
+        "Back-up sleutels"
       ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Voer het wachtwoord in voor de sleutel met vingerafdruk: ${ fingerprintCode }"
@@ -1513,222 +1480,23 @@
       "Please select files to upload": [
         "Selecteer bestanden die u wil uploaden"
       ],
-      "${ n } VPN connection available": [
-        "",
-        ""
+      "Domain name": [
+        "Domeinnaam"
       ],
-      "${ UsedMembers } of ${ MaxMembers } user": [
-        "",
-        ""
+      "Please add the following TXT record. Note, DNS records can take several hours to update.": [
+        "Voeg het volgende TXT-record toe. Let op, het updaten van DNS-records kan enige tijd duren."
       ],
-      "${ UsedAddresses } of ${ MaxAddresses } email address": [
-        "",
-        ""
+      "Please add all 3 of the following CNAME records. Note, DNS records can take several hours to update.": [
+        "Voeg alle 3 van de volgende CNAME records toe. Let op, DNS records kunnen enkele uren duren om te updaten."
       ],
-      "${ UsedDomains } of ${ MaxDomains } custom domain": [
-        "",
-        ""
+      "Please add the following MX record. Note, DNS records can take several hours to update.": [
+        "Voeg alstublieft het volgende MX-record toe. Let op, het kan enkele uren duren voordat DNS-records worden bijgewerkt."
       ],
-      "Using ${ humanUsedSpace } of ${ humanMaxSpace }": [
-        ""
+      "Here is a basic DMARC record that does nothing except email you reports.": [
+        "Hier is een DMARC-record dat u alleen verslagen toestuurt."
       ],
-      "What is the main reason you are cancelling?": [
-        "Wat is de belangrijkste reden dat u wil opzeggen?"
-      ],
-      "How likely are you to recommend ${ BRAND_NAME } to others?": [
-        "Hoe waarschijnlijk is het dat u ${ BRAND_NAME } aan anderen zult aanbevelen?"
-      ],
-      "0 - Not at all likely": [
-        "0 - Zeer onwaarschijnlijk"
-      ],
-      "10 - Extremely likely": [
-        "10 - Zeer waarschijnlijk"
-      ],
-      "How do you think we could improve our products or service in the future?": [
-        "Hoe denkt u dat we onze producten of diensten in de toekomst kunnen verbeteren?"
-      ],
-      "Total (${ countdown })": [
-        "Totaal (${ countdown })"
-      ],
-      "Total": [
-        "Totaal"
-      ],
-      "Proration": [
-        "Verrekening"
-      ],
-      "extra storage": [
-        "extra opslagruimte"
-      ],
-      "bonus storage": [
-        "bonus opslag"
-      ],
-      "Subtotal": [
-        "Subtotaal"
-      ],
-      "Discount": [
-        "Korting"
-      ],
-      "Other amount": [
-        "Ander bedrag"
-      ],
-      "Amount": [
-        "Bedrag"
-      ],
-      "Gift code": [
-        "Geschenkcode"
-      ],
-      "Name on card": [
-        "Naam op de kaart"
-      ],
-      "Card number": [
-        "Kaartnummer"
-      ],
-      "Expiry date": [
-        "Vervaldatum"
-      ],
-      "CVV code": [
-        "CVV code"
-      ],
-      "Country": [
-        "Land"
-      ],
-      "Select your country": [
-        "Selecteer uw land"
-      ],
-      "ZIP": [
-        "Postcode"
-      ],
-      "Postal code": [
-        "Postcode"
-      ],
-      "BTC amount:": [
-        "BTC bedrag:"
-      ],
-      "BTC address:": [
-        "BTC adres:"
-      ],
-      "Select a method": [
-        "Een methode selecteren"
-      ],
-      "Your password (admin)": [
-        "Uw wachtwoord (admin)"
-      ],
-      "User's new password": [
-        "Nieuw wachtwoord van gebruiker"
-      ],
-      "Confirm new password": [
-        "Bevestig nieuw wachtwoord"
-      ],
-      "Old password": [
-        "Oud wachtwoord"
-      ],
-      "New password": [
-        "Nieuw wachtwoord"
-      ],
-      "Confirm password": [
-        "Bevestig wachtwoord"
-      ],
-      "Old login password": [
-        "Oud inlogwachtwoord"
-      ],
-      "New login password": [
-        "Nieuw inlogwachtwoord"
-      ],
-      "Confirm login password": [
-        "Bevestig inlogwachtwoord"
-      ],
-      "New mailbox password": [
-        "Nieuw mailbox-wachtwoord"
-      ],
-      "Confirm mailbox password": [
-        "Bevestig mailbox-wachtwoord"
-      ],
-      "Two-factor authentication code": [
-        "Tweestapsverificatiecode"
-      ],
-      "Key": [
-        "Sleutel"
-      ],
-      "Interval": [
-        "Interval"
-      ],
-      "Digits": [
-        "Cijfers"
-      ],
-      "Two-factor authentication": [
-        "Tweestapsverificatie"
-      ],
-      "Two-password mode": [
-        "Twee-wachtwoord modus"
-      ],
-      "Mailbox password": [
-        "Mailboxwachtwoord"
-      ],
-      "What is the main reason you are deleting your account?": [
-        "Wat is de voornaamste reden dat u uw account verwijdert?"
-      ],
-      "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
-        "We vinden het jammer u te zien gaan. Leg uit waarom u vertrekt om ons te helpen te verbeteren."
-      ],
-      "Login password": [
-        "Inlogwachtwoord"
-      ],
-      "Yes, I want to permanently delete this account and all its data.": [
-        "Ja, ik wil permanent mijn account inclusief alle gegevens verwijderen."
-      ],
-      "Allow recovery by email": [
-        "Herstellen via e-mail toestaan"
-      ],
-      "Daily email notifications": [
-        "Dagelijkse e-mailmeldingen"
-      ],
-      "Allow recovery by phone": [
-        "Herstellen via telefoon toestaan"
-      ],
-      "Allow recovery by recovery phrase": [
-        ""
-      ],
-      "Recovery phrase": [
-        ""
-      ],
-      "Your recovery phrase": [
-        ""
-      ],
-      "Recovery phrase contains 12 words": [
-        ""
-      ],
-      "Cash": [
-        "Contant"
-      ],
-      "Card holder": [
-        "Kaarthouder"
-      ],
-      "Expires": [
-        "Verloopt"
-      ],
-      "Payer": [
-        "Betaler"
-      ],
-      "Prompt to trust keys": [
-        "Vraag naar het vertrouwen van sleutels"
-      ],
-      "Sign external messages": [
-        "Onderteken externe berichten"
-      ],
-      "Attach public key": [
-        "Publieke sleutel bijvoegen"
-      ],
-      "Default PGP settings": [
-        "Standaard PGP-instellingen"
-      ],
-      "Credits used": [
-        "Verbruikt tegoed"
-      ],
-      "Amount due": [
-        "Verschuldigd bedrag"
-      ],
-      "Customize invoices": [
-        "Facturen aanpassen"
+      "Display name": [
+        "Weergavenaam"
       ],
       "Filter Name": [
         "Filternaam"
@@ -1835,14 +1603,32 @@
       "Want to add": [
         "Toevoegen"
       ],
-      "Phone number": [
-        "Telefoonnummer"
+      "Operating system": [
+        "Besturingssysteem"
       ],
-      "Verification code": [
-        "Verificatiecode"
+      "Operating system version": [
+        "Versie van besturingssysteem"
       ],
-      "Enter the 6-digit code": [
-        "Voer de 6-cijferige code in"
+      "Proton username": [
+        "Proton-gebruikersnaam"
+      ],
+      "Email address": [
+        "E-mailadres"
+      ],
+      "Category": [
+        "Categorie"
+      ],
+      "What happened?": [
+        "Wat is er gebeurd?"
+      ],
+      "System information": [
+        "Systeeminformatie"
+      ],
+      "Browser": [
+        "Browser"
+      ],
+      "Browser version": [
+        "Browserversie"
       ],
       "Folder location": [
         "Map locatie"
@@ -1855,6 +1641,241 @@
       ],
       "Inherit color from parent folder": [
         "Kleur van bovenliggende map overnemen"
+      ],
+      "${ n } VPN connection available": [
+        "${ n } VPN-verbinding beschikbaar",
+        "${ n } VPN-verbindingen beschikbaar"
+      ],
+      "${ UsedMembers } of ${ MaxMembers } user": [
+        "${ UsedMembers }/${ MaxMembers } actieve gebruiker",
+        "${ UsedMembers }/${ MaxMembers } actieve gebruikers"
+      ],
+      "${ UsedAddresses } of ${ MaxAddresses } email address": [
+        "${ UsedAddresses } of ${ MaxAddresses } e-mailadressen",
+        "${ UsedAddresses } of ${ MaxAddresses } e-mailadressen"
+      ],
+      "${ UsedDomains } of ${ MaxDomains } custom domain": [
+        "${ UsedDomains } van de ${ MaxDomains } eigen domeinen",
+        "${ UsedDomains } van de ${ MaxDomains } eigen domeinen"
+      ],
+      "Using ${ humanUsedSpace } of ${ humanMaxSpace }": [
+        "${ humanUsedSpace } van de ${ humanMaxSpace } gebruikt"
+      ],
+      "What is the main reason you are cancelling?": [
+        "Wat is de belangrijkste reden dat u wil opzeggen?"
+      ],
+      "How likely are you to recommend ${ BRAND_NAME } to others?": [
+        "Hoe waarschijnlijk is het dat u ${ BRAND_NAME } aan anderen zult aanbevelen?"
+      ],
+      "0 - Not at all likely": [
+        "0 - Zeer onwaarschijnlijk"
+      ],
+      "10 - Extremely likely": [
+        "10 - Zeer waarschijnlijk"
+      ],
+      "How do you think we could improve our products or service in the future?": [
+        "Hoe denkt u dat we onze producten of diensten in de toekomst kunnen verbeteren?"
+      ],
+      "Total (${ countdown })": [
+        "Totaal (${ countdown })"
+      ],
+      "Total": [
+        "Totaal"
+      ],
+      "Proration": [
+        "Verrekening"
+      ],
+      "extra storage": [
+        "extra opslagruimte"
+      ],
+      "bonus storage": [
+        "bonus opslag"
+      ],
+      "Subtotal": [
+        "Subtotaal"
+      ],
+      "Discount": [
+        "Korting"
+      ],
+      "Other amount": [
+        "Ander bedrag"
+      ],
+      "Amount": [
+        "Bedrag"
+      ],
+      "Gift code": [
+        "Geschenkcode"
+      ],
+      "Name on card": [
+        "Naam op de kaart"
+      ],
+      "Card number": [
+        "Kaartnummer"
+      ],
+      "Expiry date": [
+        "Vervaldatum"
+      ],
+      "CVV code": [
+        "CVV code"
+      ],
+      "Country": [
+        "Land"
+      ],
+      "Select your country": [
+        "Selecteer uw land"
+      ],
+      "ZIP": [
+        "Postcode"
+      ],
+      "Postal code": [
+        "Postcode"
+      ],
+      "BTC amount:": [
+        "BTC bedrag:"
+      ],
+      "BTC address:": [
+        "BTC adres:"
+      ],
+      "Select a method": [
+        "Een methode selecteren"
+      ],
+      "Auto-load remote content": [
+        "Externe inhoud automatisch laden"
+      ],
+      "Auto-load embedded images": [
+        "Ingesloten afbeeldingen automatisch laden"
+      ],
+      "Keep messages in Sent/Drafts": [
+        "Berichten behouden in Verzonden/Concepten"
+      ],
+      "Link confirmation": [
+        "Bevestiging openen externe link"
+      ],
+      "Undo send": [
+        "Verzenden ongedaan maken"
+      ],
+      "Your password (admin)": [
+        "Uw wachtwoord (admin)"
+      ],
+      "User's new password": [
+        "Nieuw wachtwoord van gebruiker"
+      ],
+      "Confirm new password": [
+        "Bevestig nieuw wachtwoord"
+      ],
+      "Old password": [
+        "Oud wachtwoord"
+      ],
+      "New password": [
+        "Nieuw wachtwoord"
+      ],
+      "Confirm password": [
+        "Bevestig wachtwoord"
+      ],
+      "Old login password": [
+        "Oud inlogwachtwoord"
+      ],
+      "New login password": [
+        "Nieuw inlogwachtwoord"
+      ],
+      "Confirm login password": [
+        "Bevestig inlogwachtwoord"
+      ],
+      "New mailbox password": [
+        "Nieuw mailbox-wachtwoord"
+      ],
+      "Confirm mailbox password": [
+        "Bevestig mailbox-wachtwoord"
+      ],
+      "Two-factor authentication code": [
+        "Tweestapsverificatiecode"
+      ],
+      "Key": [
+        "Sleutel"
+      ],
+      "Interval": [
+        "Interval"
+      ],
+      "Digits": [
+        "Cijfers"
+      ],
+      "Two-factor authentication": [
+        "Tweestapsverificatie"
+      ],
+      "Two-password mode": [
+        "Twee-wachtwoord modus"
+      ],
+      "Mailbox password": [
+        "Mailboxwachtwoord"
+      ],
+      "What is the main reason you are deleting your account?": [
+        "Wat is de voornaamste reden dat u uw account verwijdert?"
+      ],
+      "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
+        "We vinden het jammer u te zien gaan. Leg uit waarom u vertrekt om ons te helpen te verbeteren."
+      ],
+      "Login password": [
+        "Inlogwachtwoord"
+      ],
+      "Yes, I want to permanently delete this account and all its data.": [
+        "Ja, ik wil permanent mijn account inclusief alle gegevens verwijderen."
+      ],
+      "Allow recovery by email": [
+        "Herstellen via e-mail toestaan"
+      ],
+      "Daily email notifications": [
+        "Dagelijkse e-mailmeldingen"
+      ],
+      "Allow recovery by phone": [
+        "Herstellen via telefoon toestaan"
+      ],
+      "Allow recovery by recovery phrase": [
+        "Laat herstel door herstelzin toe"
+      ],
+      "Keyboard shortcuts": [
+        "Toetsenbord snelkoppelingen"
+      ],
+      "Recovery phrase": [
+        "Herstelzin"
+      ],
+      "Your recovery phrase": [
+        "Uw herstelzin"
+      ],
+      "Recovery phrase contains 12 words": [
+        "Herstelzin bevat 12 woorden"
+      ],
+      "Signature": [
+        "Handtekening"
+      ],
+      "ProtonMail footer": [
+        "ProtonMail footer"
+      ],
+      "User": [
+        "Gebruiker"
+      ],
+      "Address": [
+        "Adres"
+      ],
+      "Cash": [
+        "Contant"
+      ],
+      "Card holder": [
+        "Kaarthouder"
+      ],
+      "Expires": [
+        "Verloopt"
+      ],
+      "Payer": [
+        "Betaler"
+      ],
+      "Credits used": [
+        "Verbruikt tegoed"
+      ],
+      "Amount due": [
+        "Verschuldigd bedrag"
+      ],
+      "Customize invoices": [
+        "Facturen aanpassen"
       ],
       "Organization name": [
         "Organisatienaam"
@@ -1886,44 +1907,23 @@
       "Addresses": [
         "Adressen"
       ],
-      "Address": [
-        "Adres"
-      ],
       "Key strength": [
         "Sleutelsterkte"
-      ],
-      "User": [
-        "Gebruiker"
-      ],
-      "Signature": [
-        "Handtekening"
-      ],
-      "ProtonMail footer": [
-        "ProtonMail footer"
-      ],
-      "Auto-load remote content": [
-        "Externe inhoud automatisch laden"
-      ],
-      "Auto-load embedded images": [
-        "Ingesloten afbeeldingen automatisch laden"
-      ],
-      "Keep messages in Sent/Drafts": [
-        "Berichten behouden in Verzonden/Concepten"
-      ],
-      "Link confirmation": [
-        "Bevestiging openen externe link"
-      ],
-      "Undo send": [
-        "Verzenden ongedaan maken"
-      ],
-      "Keyboard shortcuts": [
-        "Toetsenbord snelkoppelingen"
       ],
       "Cancel": [
         "Annuleren"
       ],
       "Submit": [
         "Versturen"
+      ],
+      "Phone number": [
+        "Telefoonnummer"
+      ],
+      "Verification code": [
+        "Verificatiecode"
+      ],
+      "Enter the 6-digit code": [
+        "Voer de 6-cijferige code in"
       ],
       "Recovery email": [
         "Herstel-e-mailadres"
@@ -1960,6 +1960,9 @@
       "Open actions dropdown": [
         "Open dropdown-menu met acties"
       ],
+      "Keyboard Shortcuts": [
+        "Sneltoetsen"
+      ],
       "Previous": [
         "Vorige"
       ],
@@ -1971,12 +1974,6 @@
       ],
       "What's new": [
         "Wat is er nieuw"
-      ],
-      "Keyboard Shortcuts": [
-        "Sneltoetsen"
-      ],
-      "Enable keyboard shortcuts": [
-        "Sneltoetsen inschakelen"
       ],
       "Start import process": [
         "Importproces starten"
@@ -2001,6 +1998,9 @@
       ],
       "Start a new import": [
         "Start een nieuwe import"
+      ],
+      "Enable keyboard shortcuts": [
+        "Sneltoetsen inschakelen"
       ],
       "Exporting contacts": [
         "Contactpersonen exporteren"
@@ -2035,23 +2035,8 @@
       "Get ProtonVPN Plus to access all servers": [
         "Neem ProtonVPN Plus om toegang te krijgen tot alle servers"
       ],
-      "Edit domain": [
-        "Domein bewerken"
-      ],
-      "Add domain": [
-        "Domein toevoegen"
-      ],
-      "Catch-All address": [
-        "Catch-All adres"
-      ],
-      "Delete ${ domain.DomainName }": [
-        "Verwijder ${ domain.DomainName }"
-      ],
-      "Open help menu": [
-        "Open help-menu"
-      ],
-      "Back": [
-        "Terug"
+      "Automatically sign outgoing messages?": [
+        "Automatisch uitgaande berichten ondertekenen?"
       ],
       "Error": [
         "Fout"
@@ -2081,7 +2066,7 @@
         "Agenda verwijderen"
       ],
       "Remove calendar": [
-        ""
+        "Agenda verwijderen"
       ],
       "Import events": [
         "Afspraken importeren"
@@ -2089,11 +2074,8 @@
       "Your calendar link": [
         "Uw agenda-link"
       ],
-      "Report a problem": [
-        "Meld een probleem"
-      ],
       "Reactivate keys": [
-        ""
+        "Sleutels heractiveren"
       ],
       "Decrypt key": [
         "Sleutel decoderen"
@@ -2115,6 +2097,75 @@
       ],
       "Import key": [
         "Sleutel importeren"
+      ],
+      "Edit domain": [
+        "Domein bewerken"
+      ],
+      "Add domain": [
+        "Domein toevoegen"
+      ],
+      "Catch-All address": [
+        "Catch-All adres"
+      ],
+      "Delete ${ domain.DomainName }": [
+        "Verwijder ${ domain.DomainName }"
+      ],
+      "Open help menu": [
+        "Open help-menu"
+      ],
+      "Back": [
+        "Terug"
+      ],
+      "Edit filter": [
+        "Filter bewerken"
+      ],
+      "Add filter": [
+        "Filter toevoegen"
+      ],
+      "Are you sure you want to close?": [
+        "Weet u zeker dat u wil afsluiten?"
+      ],
+      "Edit Sieve filter": [
+        "Sieve filter bewerken"
+      ],
+      "Add Sieve filter": [
+        "Sievefilter toevoegen"
+      ],
+      "Delete ${ filter.Name }": [
+        "Verwijder ${ filter.Name }"
+      ],
+      "Allow List": [
+        "Toegestane Lijst"
+      ],
+      "Block List": [
+        "Bloklijst"
+      ],
+      "Add to Block List": [
+        "Toevoegen aan Bloklijst"
+      ],
+      "Add to Allow List": [
+        "Toevoegen aan Toestane Lijst"
+      ],
+      "Edit Block List": [
+        "Bewerk Bloklijst"
+      ],
+      "Edit Allow List": [
+        "Bewerk Toestane Lijst"
+      ],
+      "Report a problem": [
+        "Meld een probleem"
+      ],
+      "Delete ${ Name } folder": [
+        "Verwijder ${ Name } map"
+      ],
+      "Delete ${ Name } label": [
+        "Verwijder ${ Name } label"
+      ],
+      "Sort folders alphabetically": [
+        "Sorteer mappen alfabetisch"
+      ],
+      "Sort labels alphabetically": [
+        "Sorteer labels alfabetisch"
       ],
       "Confirm loss of Proton bonuses": [
         "Bevestig verlies van Proton-bonussen"
@@ -2257,6 +2308,21 @@
       "Confirm phone number": [
         "Telefoonnummer bevestigen"
       ],
+      "${ appName } Keyboard Shortcuts": [
+        "${ appName } Sneltoetsen"
+      ],
+      "Add address": [
+        "E-mailadres toevoegen"
+      ],
+      "Delete ${ address.Email }": [
+        "Verwijder ${ address.Email }"
+      ],
+      "Generate missing keys": [
+        "Ontbrekende sleutels genereren"
+      ],
+      "Bridge for ${ platform }": [
+        "Bridge voor ${ platform }"
+      ],
       "App": [
         "App"
       ],
@@ -2272,9 +2338,6 @@
       "Clear": [
         "Wissen"
       ],
-      "Automatically sign outgoing messages?": [
-        "Automatisch uitgaande berichten ondertekenen?"
-      ],
       "Pay invoice": [
         "Factuur betalen"
       ],
@@ -2289,63 +2352,6 @@
       ],
       "Status": [
         "Status"
-      ],
-      "Edit filter": [
-        "Filter bewerken"
-      ],
-      "Add filter": [
-        "Filter toevoegen"
-      ],
-      "Are you sure you want to close?": [
-        "Weet u zeker dat u wil afsluiten?"
-      ],
-      "Edit Sieve filter": [
-        "Sieve filter bewerken"
-      ],
-      "Add Sieve filter": [
-        "Sievefilter toevoegen"
-      ],
-      "Delete ${ filter.Name }": [
-        "Verwijder ${ filter.Name }"
-      ],
-      "Allow List": [
-        "Toegestane Lijst"
-      ],
-      "Block List": [
-        "Bloklijst"
-      ],
-      "Add to Block List": [
-        "Toevoegen aan Bloklijst"
-      ],
-      "Add to Allow List": [
-        "Toevoegen aan Toestane Lijst"
-      ],
-      "Edit Block List": [
-        "Bewerk Bloklijst"
-      ],
-      "Edit Allow List": [
-        "Bewerk Toestane Lijst"
-      ],
-      "Invalid verification code": [
-        "De ingevoerde code is ongeldig"
-      ],
-      "Request new code": [
-        "Nieuwe code aanvragen"
-      ],
-      "Human verification": [
-        "Menselijke verificatie"
-      ],
-      "Delete ${ Name } folder": [
-        ""
-      ],
-      "Delete ${ Name } label": [
-        ""
-      ],
-      "Sort folders alphabetically": [
-        "Sorteer mappen alfabetisch"
-      ],
-      "Sort labels alphabetically": [
-        "Sorteer labels alfabetisch"
       ],
       "Change organization name": [
         "Organisatienaam wijzigen"
@@ -2366,7 +2372,7 @@
         "VPN-verbindingen toestaan"
       ],
       "Reset organization keys": [
-        ""
+        "Organisatiesleutels resetten"
       ],
       "Change organization keys": [
         "Organisatiesleutels wijzigen"
@@ -2392,23 +2398,17 @@
       "Add user": [
         "Gebruiker toevoegen"
       ],
-      "Add address": [
-        "E-mailadres toevoegen"
-      ],
-      "Delete ${ address.Email }": [
-        "Verwijder ${ address.Email }"
-      ],
-      "Generate missing keys": [
-        "Ontbrekende sleutels genereren"
-      ],
-      "${ appName } Keyboard Shortcuts": [
-        "${ appName } Sneltoetsen"
-      ],
       "Sign in again to continue": [
         "Log opnieuw in om door te gaan"
       ],
-      "Bridge for ${ platform }": [
-        "Bridge voor ${ platform }"
+      "Invalid verification code": [
+        "De ingevoerde code is ongeldig"
+      ],
+      "Human verification": [
+        "Menselijke verificatie"
+      ],
+      "Request new code": [
+        "Nieuwe code aanvragen"
       ],
       "Account suspended": [
         "Account opgeschort"
@@ -2440,14 +2440,14 @@
       "Other": [
         "Anders"
       ],
+      "Auto reply": [
+        "Automatisch antwoorden"
+      ],
       "Domain names": [
         "Domeinnamen"
       ],
       "Catch-all address": [
         "Catch-all adres"
-      ],
-      "Auto reply": [
-        "Automatisch antwoorden"
       ],
       "Encryption & keys": [
         "Versleuteling & sleutels"
@@ -2463,9 +2463,6 @@
       ],
       "Contact encryption keys": [
         "Contact encryptiesleutels"
-      ],
-      "Import Assistant": [
-        "Importeer assistent"
       ],
       "Filters": [
         "Filters"
@@ -2509,6 +2506,9 @@
       "ProtonMail Bridge": [
         "ProtonMail Bridge"
       ],
+      "Import Assistant": [
+        "Importeer assistent"
+      ],
       "Current & past imports": [
         "Import uit het verleden en huidige"
       ],
@@ -2529,6 +2529,18 @@
       ],
       "OpenVPN configuration files": [
         "OpenVPN-configuratiebestanden"
+      ],
+      "My calendars": [
+        "Mijn agenda"
+      ],
+      "Subscribed calendars": [
+        "Abonneer op agenda's"
+      ],
+      "Share outside Proton": [
+        "Deel buiten Proton"
+      ],
+      "Time zone": [
+        "Tijdzone"
       ],
       "Password & recovery": [
         "Wachtwoord & herstel"
@@ -2596,29 +2608,17 @@
       "Password & keys": [
         "Wachtwoord & sleutels"
       ],
-      "My calendars": [
-        "Mijn agenda"
-      ],
-      "Subscribed calendars": [
-        ""
-      ],
-      "Share outside Proton": [
-        "Deel buiten Proton"
-      ],
-      "Time zone": [
-        "Tijdzone"
-      ],
       "Sorry, you can't access this page": [
         "Sorry, u heeft geen toegang tot deze pagina"
       ],
       "Upgrade": [
         "Upgrade"
       ],
-      "Proton Logo": [
-        "Proton Logo"
-      ],
       "Settings": [
         "Instellingen"
+      ],
+      "Proton Logo": [
+        "Proton Logo"
       ],
       "Choose an account": [
         "Een account selecteren"
@@ -2787,12 +2787,6 @@
       "Loading": [
         "Laden"
       ],
-      "Add a @pm.me email address to your account. This simple, shorter domain stands for \"ProtonMail me\" or \"Private Message me.\"": [
-        "Voeg een @pm.me-e-mailadres toe aan uw account. Dit eenvoudige kortere domein staat voor \"ProtonMail me\" of \"Private Message me.\""
-      ],
-      "You can now receive messages to your @pm.me address. Upgrade to a paid plan to also send emails using your @pm.me address and create additional @pm.me addresses.": [
-        ""
-      ],
       "Import calendars": [
         "Importeer agenda's"
       ],
@@ -2915,6 +2909,12 @@
       "Choose the look and feel of the application.": [
         "Kies het uiterlijk en gevoel van de applicatie."
       ],
+      "Add a @pm.me email address to your account. This simple, shorter domain stands for \"ProtonMail me\" or \"Private Message me.\"": [
+        "Voeg een @pm.me-e-mailadres toe aan uw account. Dit eenvoudige kortere domein staat voor \"ProtonMail me\" of \"Private Message me.\""
+      ],
+      "You can now receive messages to your @pm.me address. Upgrade to a paid plan to also send emails using your @pm.me address and create additional @pm.me addresses.": [
+        "U kunt nu berichten ontvangen op uw @pm.me-adres. Upgrade naar een betaald abonnement om ook e-mails te versturen met behulp van uw @pm.me-adres en maak additionele @pm.me-adressen."
+      ],
       "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
         "We ondersteunen het importeren van CSV-bestanden uit Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora en enkele andere apps. We ondersteunen ook de import van vCard 4.0. (UTF-8 codering)."
       ],
@@ -2992,52 +2992,41 @@
       "Plan upgrade required": [
         "Upgrade van abonnement vereist"
       ],
-      "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ProtonMail in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
-        "Met SPF kan u bepalen wie uw domeinnaam mag gebruiken om e-mails te versturen. Het is raadzaam om ProtonMail toe te voegen aan uw SPF-record. Voeg het volgende TXT-record toe aan uw DNS. Dit kunt u meestal doen in het beheerpaneel van uw domeinnaamregistrar of hostingprovider."
+      "Auto-reply is active each month between the selected start and end time.": [
+        "Automatisch antwoord is elke maand tussen de geselecteerde begin- en eindtijd actief."
       ],
-      "If you want to keep an existing SPF record, you can just add ${ spf } to it after the ${ spfValue }. Do not create multiple SPF records.": [
-        "Als u een bestaande SPF-record wilt behouden, kunt u gewoon ${ spf } eraan toevoegen na de ${ spfValue }. Maak niet meerdere SPF-records."
+      "Auto-reply is always active on the days of the week you select, between the selected hours.": [
+        "Automatisch antwoord is altijd actief op de dagen van de week die u, tussen de geselecteerde uren, selecteert."
       ],
-      "ProtonMail supports DKIM signing for custom domains. To use DKIM authentication, please add the following CNAME record into your DNS settings for this domain. This can typically be done in the control panel of your domain name registrar.": [
-        "ProtonMail ondersteunt DKIM-ondertekening voor aangepaste domeinen. Voeg het volgende CNAME record toe aan uw DNS-instellingen voor dit domein om DKIM-authenticatie te gebruiken. Dit kan meestal worden gedaan in het beheerpaneel van uw domeinnaamlijst."
+      "Auto-reply is active each week between the selected start and end time.": [
+        "Automatisch antwoord is elke week tussen de geselecteerde begin- en eindtijd actief."
       ],
-      "IMPORTANT: Some registrars do not accept CNAME values with a period at the end (while others require it). If your registrar does not accept your CNAME records, please delete the period at the end of each CNAME value and try again.": [
-        "BELANGRIJK: Sommige registrars accepteren geen CNAME-waarden met een periode aan het einde (terwijl andere gebruikers dit nodig hebben). Als uw registratie uw CNAME-records niet accepteert, verwijder dan de periode aan het einde van elke CNAME-waarde en probeer het opnieuw."
+      "Auto-reply is active until you turn it off.": [
+        "Automatisch antwoord is actief totdat u het uitschakelt."
       ],
-      "Keep those records in your DNS for as long as you want to use DKIM.": [
-        "Houd deze records in uw DNS voor zolang u DKIM wilt gebruiken."
+      "Auto-reply is active from the start time to the end time.": [
+        "Automatisch antwoord is actief vanaf de begin- tot eindtijd."
       ],
-      "Before you can receive emails for your custom domain addresses at ProtonMail, you need to add the following MX records to your DNS. This can typically be done in the control panel of your domain name registrar.": [
-        "Voordat u e-mails voor uw eigen domeinnaam op ProtonMail kan ontvangen, moet u de volgende MX-records toevoegen aan uw DNS. Dit kan u meestal doen in het beheerderspaneel van uw domeinnamenregister of hostingprovider."
+      "Images have been removed because they are not allowed in auto-reply.": [
+        "Afbeeldingen werden verwijderd omdat ze niet toegelaten zijn in automatisch antwoord."
       ],
-      "Delete any other MX records or make sure ProtonMail's Priority is the lowest number.": [
-        "Verwijder alle andere MX records of zorg ervoor dat ProtonMails prioriteit het laagste getal is."
+      "Use automatic replies to inform contacts you are out of the office or otherwise unable to respond.": [
+        "Gebruik automatische antwoorden om contactpersonen te informeren die u op kantoor bent of die anders niet kunnen reageren."
       ],
-      "If this domain is currently receiving emails, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
-        "Als dit domein momenteel e-mails ontvangt, selecteer het tabblad ${ boldAddresses } en voeg alle actieve e-mailadressen toe voordat u het MX-record wijzigt om een soepele overgang te garanderen."
+      "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to enable automatic replies for when you are out of the office.": [
+        "UPGRADE naar een ${ PLAN_NAMES[PLANS.VISIONARY] } of ${ PLAN_NAMES[PLANS.PROFESSIONAL] } abonnement om automatisch antwoord in te schakelen voor als u niet in kantoor bent."
       ],
-      "If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly.": [
-        "Indien u zowel SPF als DKIM ingesteld hebt, geeft het DMARC-record voor andere e-maildiensten aan wat er moet gebeuren als er iets misgaat tijdens het controleren van uw SPF- en DKIM-records. Dit maakt het moeilijker voor spammers om zich voor te doen als u, maar dit kan ook afleverproblemen veroorzaken ten gevolge van een foutieve configuratie."
+      "Address verification is an advanced security feature. Only turn this on if you know what it does.": [
+        "Adresverificatie is een geavanceerde beveiligingsfunctie. Schakel dit alleen in als u weet wat het doet."
       ],
-      "${ none } has no effect on email delivery, but we recommend ${ quarantine } for better security.": [
-        "${ none } heeft geen effect op de e-mailbezorging, maar wij raden ${ quarantine } aan voor een betere beveiliging."
+      "Encryption setting updated": [
+        "Versleutelingsinstelling bijgewerkt"
       ],
-      "${ n } address": [
-        "${ n } adres",
-        "${ n } adressen"
+      "PGP clients are more likely to automatically detect your PGP keys if outgoing messages are signed.": [
+        "PGP-clients zullen uw PGP-sleutels eerder automatisch detecteren wanneer uitgaande berichten zijn ondertekend."
       ],
-      "Please note that if you delete this domain, all the addresses associated with it will be disabled.": [
-        "Houd er rekening mee dat als u dit domein verwijdert, alle adressen die eraan gekoppeld zijn uitgeschakeld zullen worden."
-      ],
-      "Are you sure you want to delete this domain?": [
-        "Weet u zeker dat u dit domein wilt verwijderen?"
-      ],
-      "domain used": [
-        "domein gebruikt",
-        "domeinen gebruikt"
-      ],
-      "If you have a custom domain with ProtonMail, you can set a catch-all email address that will receive messages sent to your domain but to an invalid email address (e.g., typos).": [
-        "Als u een eigen domein heeft met ProtonMail, kunt u een catch-all e-mailadres instellen dat berichten zal ontvangen die naar uw domein worden verstuurd, maar op een ongeldig e-mailadres (bijv. typos)."
+      "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
+        "Wijzig deze instellingen alleen als u PGP met niet-ProtonMail geaddresseerden gebruikt."
       ],
       "Are you sure you want to delete this calendar?": [
         "Weet u zeker dat u deze agenda wilt verwijderen?"
@@ -3046,10 +3035,10 @@
         "${ calendarName } zal worden ingesteld als standaardagenda."
       ],
       "The calendar will be removed from your account.": [
-        ""
+        "De agenda zal verwijderd worden van uw account."
       ],
       "You need to have an active personal calendar to import your events.": [
-        ""
+        "U heeft een actieve persoonlijke agenda nodig om uw afspraken te importeren."
       ],
       "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
         "Als de tijdzone niet overeenkomt met de huidige tijdzone zal u worden gevraagd om deze bij te werken (maximaal één keer per dag)."
@@ -3100,65 +3089,29 @@
         "Maak een link naar uw agenda en deel deze met iedereen buiten uw Proton. Alleen u kunt afspraken toevoegen of verwijderen."
       ],
       "You need to have a personal calendar to create a link.": [
-        ""
-      ],
-      "Auto-reply is active each month between the selected start and end time.": [
-        "Automatisch antwoord is elke maand tussen de geselecteerde begin- en eindtijd actief."
-      ],
-      "Auto-reply is always active on the days of the week you select, between the selected hours.": [
-        "Automatisch antwoord is altijd actief op de dagen van de week die u, tussen de geselecteerde uren, selecteert."
-      ],
-      "Auto-reply is active each week between the selected start and end time.": [
-        "Automatisch antwoord is elke week tussen de geselecteerde begin- en eindtijd actief."
-      ],
-      "Auto-reply is active until you turn it off.": [
-        "Automatisch antwoord is actief totdat u het uitschakelt."
-      ],
-      "Auto-reply is active from the start time to the end time.": [
-        "Automatisch antwoord is actief vanaf de begin- tot eindtijd."
-      ],
-      "Images have been removed because they are not allowed in auto-reply.": [
-        ""
-      ],
-      "Use automatic replies to inform contacts you are out of the office or otherwise unable to respond.": [
-        "Gebruik automatische antwoorden om contactpersonen te informeren die u op kantoor bent of die anders niet kunnen reageren."
-      ],
-      "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to enable automatic replies for when you are out of the office.": [
-        ""
-      ],
-      "Screenshot(s) attached": [
-        "Schermafbeelding(en) toegevoegd"
-      ],
-      "Refreshing the page or ${ link } will automatically resolve most issues.": [
-        "Vernieuwen van de pagina of ${ link } zal automatisch de meeste problemen oplossen."
-      ],
-      "More Info": [
-        ""
-      ],
-      "Loading ${ appName }": [
-        "${ appName } aan het laden"
+        "U moet een persoonlijke agenda hebben om een koppeling aan te maken."
       ],
       "All keys successfully reactivated": [
-        ""
+        "Alle sleutels zijn succesvol geheractiveerd"
       ],
       "Some keys successfully reactivated": [
-        ""
+        "Sommige sleutels zijn succesvol geheractiveerd"
       ],
       "Unable to decrypt. Recovery phrase is not associated with any outdated keys.": [
-        ""
+        "Onmogelijk te decoderen. Herstelzin is niet geassocieerd met een verouderde sleutel."
       ],
       "Unable to decrypt. Recovery phrase is not associated with any keys.": [
-        ""
+        "Onmogelijk te decoderen. Herstelzin is niet geassocieerd met een sleutel."
       ],
       "Uploaded file is not a valid private key. Please verify and try again.": [
-        ""
+        "Geüploadde file is geen geldige geheime sleutel. Controleer en probeer opnieuw."
       ],
       "${ numberOfNonPrivateKeys } uploaded file is not a valid private key. Please verify and try again.": [
-        "",
-        ""
+        "${ numberOfNonPrivateKeys } geüploade bestand is geen geldige geheime sleutel. Controleer het en probeer het opnieuw.",
+        "${ numberOfNonPrivateKeys } geüploade bestanden zijn geen geldige geheime sleutels. Controleer het en probeer het opnieuw."
       ],
       "To access your old messages, you will need to reactivate your old encryption keys using one of the following recovery methods.": [
-        ""
+        "Om toegang te krijgen tot uw oude berichten, moet u uw oude encryptiesleutels opnieuw activeren met een van de volgende herstelmethoden."
       ],
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
         "Geef uw publieke sleutel aan uw vrienden, of publiceer deze online, zodat iedereen u end-to-end versleutelde e-mail kan sturen!"
@@ -3193,6 +3146,128 @@
       "No contact encryption keys exist": [
         "Er bestaan geen contactcoderingssleutels"
       ],
+      "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ProtonMail in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
+        "Met SPF kan u bepalen wie uw domeinnaam mag gebruiken om e-mails te versturen. Het is raadzaam om ProtonMail toe te voegen aan uw SPF-record. Voeg het volgende TXT-record toe aan uw DNS. Dit kunt u meestal doen in het beheerpaneel van uw domeinnaamregistrar of hostingprovider."
+      ],
+      "If you want to keep an existing SPF record, you can just add ${ spf } to it after the ${ spfValue }. Do not create multiple SPF records.": [
+        "Als u een bestaande SPF-record wilt behouden, kunt u gewoon ${ spf } eraan toevoegen na de ${ spfValue }. Maak niet meerdere SPF-records."
+      ],
+      "ProtonMail supports DKIM signing for custom domains. To use DKIM authentication, please add the following CNAME record into your DNS settings for this domain. This can typically be done in the control panel of your domain name registrar.": [
+        "ProtonMail ondersteunt DKIM-ondertekening voor aangepaste domeinen. Voeg het volgende CNAME record toe aan uw DNS-instellingen voor dit domein om DKIM-authenticatie te gebruiken. Dit kan meestal worden gedaan in het beheerpaneel van uw domeinnaamlijst."
+      ],
+      "IMPORTANT: Some registrars do not accept CNAME values with a period at the end (while others require it). If your registrar does not accept your CNAME records, please delete the period at the end of each CNAME value and try again.": [
+        "BELANGRIJK: Sommige registrars accepteren geen CNAME-waarden met een periode aan het einde (terwijl andere gebruikers dit nodig hebben). Als uw registratie uw CNAME-records niet accepteert, verwijder dan de periode aan het einde van elke CNAME-waarde en probeer het opnieuw."
+      ],
+      "Keep those records in your DNS for as long as you want to use DKIM.": [
+        "Houd deze records in uw DNS voor zolang u DKIM wilt gebruiken."
+      ],
+      "Before you can receive emails for your custom domain addresses at ProtonMail, you need to add the following MX records to your DNS. This can typically be done in the control panel of your domain name registrar.": [
+        "Voordat u e-mails voor uw eigen domeinnaam op ProtonMail kan ontvangen, moet u de volgende MX-records toevoegen aan uw DNS. Dit kan u meestal doen in het beheerderspaneel van uw domeinnamenregister of hostingprovider."
+      ],
+      "Delete any other MX records or make sure ProtonMail's Priority is the lowest number.": [
+        "Verwijder alle andere MX records of zorg ervoor dat ProtonMails prioriteit het laagste getal is."
+      ],
+      "If this domain is currently receiving emails, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
+        "Als dit domein momenteel e-mails ontvangt, selecteer het tabblad ${ boldAddresses } en voeg alle actieve e-mailadressen toe voordat u het MX-record wijzigt om een soepele overgang te garanderen."
+      ],
+      "If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly.": [
+        "Indien u zowel SPF als DKIM ingesteld hebt, geeft het DMARC-record voor andere e-maildiensten aan wat er moet gebeuren als er iets misgaat tijdens het controleren van uw SPF- en DKIM-records. Dit maakt het moeilijker voor spammers om zich voor te doen als u, maar dit kan ook afleverproblemen veroorzaken ten gevolge van een foutieve configuratie."
+      ],
+      "${ none } has no effect on email delivery, but we recommend ${ quarantine } for better security.": [
+        "${ none } heeft geen effect op de e-mailbezorging, maar wij raden ${ quarantine } aan voor een betere beveiliging."
+      ],
+      "${ n } address": [
+        "${ n } adres",
+        "${ n } adressen"
+      ],
+      "Please note that if you delete this domain, all the addresses associated with it will be disabled.": [
+        "Houd er rekening mee dat als u dit domein verwijdert, alle adressen die eraan gekoppeld zijn uitgeschakeld zullen worden."
+      ],
+      "Are you sure you want to delete this domain?": [
+        "Weet u zeker dat u dit domein wilt verwijderen?"
+      ],
+      "domain used": [
+        "domein gebruikt",
+        "domeinen gebruikt"
+      ],
+      "If you have a custom domain with ProtonMail, you can set a catch-all email address that will receive messages sent to your domain but to an invalid email address (e.g., typos).": [
+        "Als u een eigen domein heeft met ProtonMail, kunt u een catch-all e-mailadres instellen dat berichten zal ontvangen die naar uw domein worden verstuurd, maar op een ongeldig e-mailadres (bijv. typos)."
+      ],
+      "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name and a valid Sieve script.": [
+        "Filters werken op alle e-mails, zowel inkomende als verzonden e-mails. Elk filter moet ten minste een naam en een geldig Sieve-script bevatten."
+      ],
+      "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
+        "Filters werken op alle e-mails, zowel inkomende als verzonden e-mails. Elk filter moet minstens een naam, voorwaarde en actie bevatten."
+      ],
+      "No label selected": [
+        "Geen label geselecteerd"
+      ],
+      "No folder selected": [
+        "Geen map geselecteerd"
+      ],
+      "No action selected": [
+        "Geen actie geselecteerd"
+      ],
+      "(Filter if ALL of the following conditions are met)": [
+        "(Filter als aan ALLE van de volgende voorwaarden is voldaan)"
+      ],
+      "(Filter if ANY of the following conditions are met)": [
+        "(Filter als aan EEN van de volgende voorwaarden is voldaan)"
+      ],
+      "All your changes will be lost.": [
+        "Alle wijzigingen gaan verloren."
+      ],
+      "Are you sure you want to discard your changes?": [
+        "Weet u zeker dat u uw wijzigingen ongedaan wilt maken?"
+      ],
+      "Custom filters work on all new emails, including incoming emails as well as sent emails. Filters can be edited and created directly via Sieve programming language.": [
+        "Aangepaste filters werken op alle nieuwe e-mails, zowel inkomende e-mails als verzonden e-mails. Filters kunnen direct worden bewerkt en gemaakt via Sieve programmeertaal."
+      ],
+      "Please note that if you delete this filter, we will stop processing all the automated actions it triggers.": [
+        "Houd er rekening mee dat als u deze filter verwijdert, we stoppen met het verwerken van alle geautomatiseerde acties die het start."
+      ],
+      "Are you sure you want to delete this filter?": [
+        "Weet u zeker dat u dit filter wil verwijderen?"
+      ],
+      "Your Allow List is empty.": [
+        "Uw Toegestane Lijst is leeg."
+      ],
+      "Your Block List is empty.": [
+        "Uw Bloklijst is leeg."
+      ],
+      "Screenshot(s) attached": [
+        "Schermafbeelding(en) toegevoegd"
+      ],
+      "Refreshing the page or ${ link } will automatically resolve most issues.": [
+        "Vernieuwen van de pagina of ${ link } zal automatisch de meeste problemen oplossen."
+      ],
+      "Inherited from parent folder": [
+        "Overgenomen van bovenliggende map"
+      ],
+      "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
+        "U kunt meldingen inschakelen om meldingen te krijgen wanneer nieuwe e-mailberichten in deze map binnenkomen."
+      ],
+      "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
+        "Benoem uw nieuwe map en selecteer de bovenliggende map waarin u deze wilt plaatsen. Als u geen bovenliggende map selecteert, wordt deze als hoofdmap gemaakt."
+      ],
+      "Emails tagged with this label will not be deleted and can still be found in the respective folder.": [
+        "E-mails met dit label worden niet verwijderd en zijn nog steeds te vinden in de betreffende map."
+      ],
+      "Are you sure you want to delete this label?": [
+        "Weet u zeker dat u dit label wilt verwijderen?"
+      ],
+      "Emails stored in this folder will not be deleted and can still be found in the All Mail folder.": [
+        "E-mails die in deze map zijn opgeslagen, worden niet verwijderd en zijn nog steeds te vinden in de map Alle Mails."
+      ],
+      "Are you sure you want to delete this folder?": [
+        "Weet u zeker dat u de map wilt verwijderen?"
+      ],
+      "More Info": [
+        "Meer info"
+      ],
+      "Loading ${ appName }": [
+        "${ appName } aan het laden"
+      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Aangezien u een loyale gebruiker bent, heeft uw account extra functies ingeschakeld."
       ],
@@ -3222,7 +3297,7 @@
         "Download uw favoriete app vandaag nog en neem uw privacy mee overal waar u gaat."
       ],
       "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
-        ""
+        "U moet alle extra persoonlijke agenda's en gedeelde agenda-koppelingen verwijderen voordat u uw abonnement kunt opzeggen. ${ linkButton }"
       ],
       "No payment is required at this time.": [
         "Er is op dit moment geen betaling vereist."
@@ -3342,7 +3417,7 @@
         "Downgraden zal alle verbindingen naar betaalde ProtonVPN-servers beëindigen."
       ],
       "For Visa and MasterCard, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
-        ""
+        "Voor Visa, MasterCard en Discover zijn dit de 3 cijfers op de achterkant van uw kaart. Voor American Express de 4 cijfers op de voorkant van uw kaart."
       ],
       "20% discount applied to your subscription with coupon ${ code }": [
         "20% korting toegepast op uw abonnement met coupon ${ code }"
@@ -3510,6 +3585,12 @@
       "Internet connection lost. Please check your device's connectivity.": [
         "Internetverbinding verbroken. Controleer uw internetverbinding."
       ],
+      "When disabled, this prevents all files from loading on your device without your knowledge.\t": [
+        "Indien uitgeschakeld, voorkomt dit dat alle bestanden op uw apparaat laden zonder uw kennis.\t"
+      ],
+      "When disabled, this prevents image files from loading on your device without your knowledge.": [
+        "Indien uitgeschakeld, voorkomt dit dat afbeeldingsbestanden op uw apparaat laden zonder uw informatie."
+      ],
       "By leaving now, changes may not be saved": [
         "Door nu te verlaten, worden wijzigingen mogelijk niet opgeslagen"
       ],
@@ -3571,10 +3652,10 @@
         "Uw abonnement wordt beheerd door Mozilla. Neem contact op met Mozilla support."
       ],
       "Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts.": [
-        ""
+        "Waarschuwing: verwijdering is permanent. Dit verwijdert ook de toegang tot alle verbonden diensten en verwijdert al uw contacten."
       ],
       "If you wish to combine this account with another one, do NOT delete it.": [
-        ""
+        "Als u deze rekening met een andere rekening wilt combineren, verwijder deze dan NIET."
       ],
       "Please provide an email address in case we need to contact you.": [
         "Geef een e-mailadres op voor het geval we contact met u moeten opnemen."
@@ -3613,37 +3694,67 @@
         "Dit uitschakelen zal voorkomen dat dit telefoonnummer wordt gebruikt voor accountherstel."
       ],
       "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password.": [
-        ""
+        "Met een herstelzin kunt u toegang krijgen tot uw account en uw gecodeerde berichten herstellen als u uw wachtwoord bent vergeten."
       ],
       "Disabling this will prevent your recovery phrase from being used for account recovery.": [
-        ""
+        "Als u dit uitschakelt, kan uw herstelzin niet worden gebruikt voor het herstel van uw account."
+      ],
+      "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
+        "Basisnavigatie en -acties blijven beschikbaar, ongeacht de sneltoetsen die actief zijn of niet in de instellingen."
       ],
       "Your recovery phrase is a series of 12 words in a specific order.": [
-        ""
+        "Uw herstelzin is een reeks van 12 woorden in een specifieke volgorde."
       ],
       "Please write your recovery phrase down in the order it appears and keep it somewhere safe. Your recovery phrase can be used to fully recover access to your account and your encrypted messages.": [
-        ""
+        "Schrijf uw herstelzin op in de volgorde waarin deze verschijnt en bewaar deze ergens veilig. Uw herstelzin kan worden gebruikt om de toegang tot uw account en uw gecodeerde berichten volledig te herstellen."
       ],
       "Recovery phrase copied to clipboard": [
-        ""
+        "Herstel zin gekopieerd naar klembord"
       ],
       "Creating a new recovery phrase will deactivate your old one.": [
-        ""
+        "Als u een nieuwe herstelzin aanmaakt, wordt uw oude zin gedeactiveerd."
       ],
       "Are you sure you want to continue?": [
-        ""
+        "Weet u zeker dat u door wilt gaan?"
       ],
       "Your recovery phrase": [
-        ""
+        "Uw herstelzin"
       ],
       "If you proceed, you will have to reset your password and will be logged out of any other active sessions.": [
-        ""
+        "Als u doorgaat, moet u uw wachtwoord opnieuw instellen en wordt u uitgelogd bij alle andere actieve sessies."
       ],
       "This will also disable two-factor authentication.": [
-        ""
+        "Dit zal ook de twee-factor authenticatie uitschakelen."
       ],
       "Recovery phrase has been disabled": [
-        ""
+        "Herstelzin is uitgeschakeld"
+      ],
+      "Let your contacts know you care about their privacy.": [
+        "Laat uw contacten weten dat u om hun privacy geeft."
+      ],
+      "Please note that if you delete this address, you will no longer be able to send or receive emails using this address.": [
+        "Let op: als u dit adres verwijdert, kunt u geen e-mails meer verzenden of ontvangen met behulp van dit adres."
+      ],
+      "Are you sure you want to delete this address?": [
+        "Weet u zeker dat u dit adres wil verwijderen?"
+      ],
+      "The email address you place at the top of the list is your default email address. Drag and drop to reorder your addresses.": [
+        "Het e-mailadres dat u bovenaan de lijst plaatst is uw standaard e-mailadres. Slepen en neerzetten om uw adressen te rangschikken."
+      ],
+      "Queued": [
+        "In de wachtrij"
+      ],
+      "Done": [
+        "Klaar"
+      ],
+      "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
+        "Voordat u e-mails kunt verzenden en ontvangen van uw nieuwe adressen, moet u versleutelingssleutels aanmaken."
+      ],
+      "You can use ProtonMail with any desktop email client that supports IMAP/SMTP, including Outlook, Apple Mail, and Thunderbird.": [
+        "U kunt ProtonMail gebruiken met elke desktop e-mailclient die IMAP/SMTP ondersteunt, inclusief Outlook, Apple Mail en Thunderbird."
+      ],
+      "Upgrade to a paid plan to unlock IMAP/SMTP support through ProtonMail Bridge.": [
+        "Upgrade naar een betaald abonnement om IMAP/SMTP ondersteuning te ontgrendelen via ProtonMail Bridge."
       ],
       "Do you want to revoke all other sessions than the current one?": [
         "Wilt u alle andere sessies intrekken behalve de huidige?"
@@ -3672,18 +3783,6 @@
       "Expired": [
         "Verlopen"
       ],
-      "Address verification is an advanced security feature. Only turn this on if you know what it does.": [
-        "Adresverificatie is een geavanceerde beveiligingsfunctie. Schakel dit alleen in als u weet wat het doet."
-      ],
-      "Encryption setting updated": [
-        "Versleutelingsinstelling bijgewerkt"
-      ],
-      "PGP clients are more likely to automatically detect your PGP keys if outgoing messages are signed.": [
-        "PGP-clients zullen uw PGP-sleutels eerder automatisch detecteren wanneer uitgaande berichten zijn ondertekend."
-      ],
-      "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
-        "Wijzig deze instellingen alleen als u PGP met niet-ProtonMail geaddresseerden gebruikt."
-      ],
       "You can customize and download your invoices for accounting purposes.": [
         "U kunt uw facturen aanpassen en downloaden voor boekhoudkundige doeleinden."
       ],
@@ -3704,99 +3803,6 @@
       ],
       "of": [
         "van"
-      ],
-      "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name and a valid Sieve script.": [
-        "Filters werken op alle e-mails, zowel inkomende als verzonden e-mails. Elk filter moet ten minste een naam en een geldig Sieve-script bevatten."
-      ],
-      "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
-        "Filters werken op alle e-mails, zowel inkomende als verzonden e-mails. Elk filter moet minstens een naam, voorwaarde en actie bevatten."
-      ],
-      "No label selected": [
-        "Geen label geselecteerd"
-      ],
-      "No folder selected": [
-        "Geen map geselecteerd"
-      ],
-      "No action selected": [
-        "Geen actie geselecteerd"
-      ],
-      "(Filter if ALL of the following conditions are met)": [
-        "(Filter als aan ALLE van de volgende voorwaarden is voldaan)"
-      ],
-      "(Filter if ANY of the following conditions are met)": [
-        "(Filter als aan EEN van de volgende voorwaarden is voldaan)"
-      ],
-      "All your changes will be lost.": [
-        "Alle wijzigingen gaan verloren."
-      ],
-      "Are you sure you want to discard your changes?": [
-        "Weet u zeker dat u uw wijzigingen ongedaan wilt maken?"
-      ],
-      "Custom filters work on all new emails, including incoming emails as well as sent emails. Filters can be edited and created directly via Sieve programming language.": [
-        "Aangepaste filters werken op alle nieuwe e-mails, zowel inkomende e-mails als verzonden e-mails. Filters kunnen direct worden bewerkt en gemaakt via Sieve programmeertaal."
-      ],
-      "Please note that if you delete this filter, we will stop processing all the automated actions it triggers.": [
-        "Houd er rekening mee dat als u deze filter verwijdert, we stoppen met het verwerken van alle geautomatiseerde acties die het start."
-      ],
-      "Are you sure you want to delete this filter?": [
-        "Weet u zeker dat u dit filter wil verwijderen?"
-      ],
-      "Your Allow List is empty.": [
-        "Uw Toegestane Lijst is leeg."
-      ],
-      "Your Block List is empty.": [
-        "Uw Bloklijst is leeg."
-      ],
-      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
-        "Uw Proton-account is bevroren. Betaal onbetaalde facturen om uw account weer te gebruiken."
-      ],
-      "Would you like to receive a new verification code or use an alternative verification method?": [
-        "Wilt u een nieuwe verificatiecode ontvangen of een alternatieve verificatiemethode gebruiken?"
-      ],
-      "Enter the verification code that was sent to ${ destinationText }.": [
-        "Voer de verificatiecode in die is verzonden naar ${ destinationText }."
-      ],
-      "If you don't find the email in your inbox, please check your spam folder.": [
-        "Als u de mail niet kunt vinden in uw inbox, check dan eerst de map 'Spam'."
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
-        "Klik op \"Vraag nieuwe code aan\" om een nieuwe verificatiecode te sturen naar ${ strong }. Als dit e-mailadres onjuist is, klik op \"Bewerken\" om het te corrigeren."
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
-        "Klik op \"Vraag nieuwe code aan\" om een nieuwe verificatiecode te sturen naar ${ strong }. Als dit telefoonnummer onjuist is, klik op \"Bewerken\" om het te corrigeren."
-      ],
-      "To fight spam and abuse, please verify you are human.": [
-        "Bevestig dat u een natuurlijk persoon bent, om spam en misbruik tegen te gaan."
-      ],
-      "Your email will only be used for this one-time verification.": [
-        "Uw e-mailadres wordt alleen gebruikt voor deze eenmalige verificatie."
-      ],
-      "Your phone number will only be used for this one-time verification.": [
-        "Uw telefoonnummer wordt alleen gebruikt voor deze eenmalige verificatie."
-      ],
-      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
-        "Als u problemen ondervindt met het aanmaken van uw account, vraag dan een uitnodiging aan. Wij reageren op uw verzoek binnen een werkdag."
-      ],
-      "Inherited from parent folder": [
-        "Overgenomen van bovenliggende map"
-      ],
-      "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
-        "U kunt meldingen inschakelen om meldingen te krijgen wanneer nieuwe e-mailberichten in deze map binnenkomen."
-      ],
-      "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
-        "Benoem uw nieuwe map en selecteer de bovenliggende map waarin u deze wilt plaatsen. Als u geen bovenliggende map selecteert, wordt deze als hoofdmap gemaakt."
-      ],
-      "Emails tagged with this label will not be deleted and can still be found in the respective folder.": [
-        ""
-      ],
-      "Are you sure you want to delete this label?": [
-        "Weet u zeker dat u dit label wilt verwijderen?"
-      ],
-      "Emails stored in this folder will not be deleted and can still be found in the All Mail folder.": [
-        ""
-      ],
-      "Are you sure you want to delete this folder?": [
-        "Weet u zeker dat u de map wilt verwijderen?"
       ],
       "This will create an encryption key for your organization. 4096-bit keys only work on high performance computers, for most users, we recommend using 2048-bit keys.": [
         "Dit maakt een nieuwe versleutelingssleutel aan voor uw organisatie. Sleutels met een lengte van 4096-bits werken alleen op krachtige computers. Voor de meeste gebruikers is het aangeraden de standaardwaarde van 2048-bits te gebruiken."
@@ -3883,44 +3889,38 @@
       "more": [
         "meer"
       ],
-      "Please note that if you delete this address, you will no longer be able to send or receive emails using this address.": [
-        "Let op: als u dit adres verwijdert, kunt u geen e-mails meer verzenden of ontvangen met behulp van dit adres."
+      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
+        "Uw Proton-account is bevroren. Betaal onbetaalde facturen om uw account weer te gebruiken."
       ],
-      "Are you sure you want to delete this address?": [
-        "Weet u zeker dat u dit adres wil verwijderen?"
+      "Would you like to receive a new verification code or use an alternative verification method?": [
+        "Wilt u een nieuwe verificatiecode ontvangen of een alternatieve verificatiemethode gebruiken?"
       ],
-      "The email address you place at the top of the list is your default email address. Drag and drop to reorder your addresses.": [
-        "Het e-mailadres dat u bovenaan de lijst plaatst is uw standaard e-mailadres. Slepen en neerzetten om uw adressen te rangschikken."
+      "Enter the verification code that was sent to ${ destinationText }.": [
+        "Voer de verificatiecode in die is verzonden naar ${ destinationText }."
       ],
-      "Queued": [
-        "In de wachtrij"
+      "If you don't find the email in your inbox, please check your spam folder.": [
+        "Als u de mail niet kunt vinden in uw inbox, check dan eerst de map 'Spam'."
       ],
-      "Done": [
-        "Klaar"
+      "To fight spam and abuse, please verify you are human.": [
+        "Bevestig dat u een natuurlijk persoon bent, om spam en misbruik tegen te gaan."
       ],
-      "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
-        "Voordat u e-mails kunt verzenden en ontvangen van uw nieuwe adressen, moet u versleutelingssleutels aanmaken."
+      "Your email will only be used for this one-time verification.": [
+        "Uw e-mailadres wordt alleen gebruikt voor deze eenmalige verificatie."
       ],
-      "Let your contacts know you care about their privacy.": [
-        "Laat uw contacten weten dat u om hun privacy geeft."
+      "Your phone number will only be used for this one-time verification.": [
+        "Uw telefoonnummer wordt alleen gebruikt voor deze eenmalige verificatie."
       ],
-      "When disabled, this prevents all files from loading on your device without your knowledge.\t": [
-        "Indien uitgeschakeld, voorkomt dit dat alle bestanden op uw apparaat laden zonder uw kennis.\t"
+      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
+        "Als u problemen ondervindt met het aanmaken van uw account, vraag dan een uitnodiging aan. Wij reageren op uw verzoek binnen een werkdag."
       ],
-      "When disabled, this prevents image files from loading on your device without your knowledge.": [
-        "Indien uitgeschakeld, voorkomt dit dat afbeeldingsbestanden op uw apparaat laden zonder uw informatie."
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
+        "Klik op \"Vraag nieuwe code aan\" om een nieuwe verificatiecode te sturen naar ${ strong }. Als dit e-mailadres onjuist is, klik op \"Bewerken\" om het te corrigeren."
       ],
-      "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
-        "Basisnavigatie en -acties blijven beschikbaar, ongeacht de sneltoetsen die actief zijn of niet in de instellingen."
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
+        "Klik op \"Vraag nieuwe code aan\" om een nieuwe verificatiecode te sturen naar ${ strong }. Als dit telefoonnummer onjuist is, klik op \"Bewerken\" om het te corrigeren."
       ],
       "support team": [
         "ondersteuningsteam"
-      ],
-      "You can use ProtonMail with any desktop email client that supports IMAP/SMTP, including Outlook, Apple Mail, and Thunderbird.": [
-        "U kunt ProtonMail gebruiken met elke desktop e-mailclient die IMAP/SMTP ondersteunt, inclusief Outlook, Apple Mail en Thunderbird."
-      ],
-      "Upgrade to a paid plan to unlock IMAP/SMTP support through ProtonMail Bridge.": [
-        "Upgrade naar een betaald abonnement om IMAP/SMTP ondersteuning te ontgrendelen via ProtonMail Bridge."
       ],
       "here": [
         "hier"
@@ -3930,6 +3930,15 @@
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Als u denkt dat dit een fout is, neem dan contact met ons op via ${ contactLink }."
+      ],
+      "Session timed out.": [
+        "Sessie verlopen."
+      ],
+      "Internet connection lost.": [
+        "Internetverbinding verbroken."
+      ],
+      "Servers are unreachable.": [
+        "Servers zijn onbereikbaar."
       ],
       "Custom daily": [
         "Aangepast dagelijks"
@@ -3954,15 +3963,6 @@
       ],
       "Yearly": [
         "Jaarlijks"
-      ],
-      "Session timed out.": [
-        "Sessie verlopen."
-      ],
-      "Internet connection lost.": [
-        "Internetverbinding verbroken."
-      ],
-      "Servers are unreachable.": [
-        "Servers zijn onbereikbaar."
       ],
       "Users can't make changes to organization settings. If you need admin privileges, reach out to your system administrator.": [
         "Gebruikers kunnen geen wijzigingen aanbrengen in de organisatie-instellingen. Neem contact op met uw systeembeheerder."
@@ -4013,13 +4013,13 @@
         "We zullen u een herstellink naar dit e-mailadres sturen als u uw wachtwoord vergeet of uit uw account wordt verwijderd."
       ],
       "This email address will only be used for recovery purposes.": [
-        ""
+        "Dit e-mailadres zal alleen worden gebruikt voor terugvorderingsdoeleinden."
       ],
       "We will send a code to this phone number if you forget your password or get locked out of your account.": [
         "We zullen een code naar dit telefoonnummer sturen als u uw wachtwoord vergeet of u uit uw account wordt verwijderd."
       ],
       "This phone number will only be used for recovery purposes.": [
-        ""
+        "Dit telefoonnummer zal alleen worden gebruikt voor terugvorderingsdoeleinden."
       ],
       "Creating your Proton account": [
         "Uw Proton account aanmaken"
@@ -4049,13 +4049,13 @@
         "Uw ${ BRAND_NAME }-account is gekoppeld aan ${ externalEmailAddress }. Maak een adres aan om ${ toAppName } te gebruiken."
       ],
       "If you proceed, you will be required to reset your password and you will be logged out of all other active sessions.": [
-        ""
+        "Als u doorgaat, wordt u gevraagd uw wachtwoord opnieuw in te stellen en wordt u uitgelogd bij alle andere actieve sessies."
       ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Helaas is er geen herstelmethode opgeslagen voor dit account."
       ],
       "Enter the recovery phrase associated with your ${ BRAND_NAME } Account.": [
-        ""
+        "Voer de herstelzin in die bij uw ${ BRAND_NAME } Account hoort."
       ],
       "Enter the recovery ${ recoveryMethodText } associated with your ${ BRAND_NAME } Account. We will send you a code to confirm the password reset.": [
         "Voer de recovery ${ recoveryMethodText } in die gekoppeld is aan uw ${ BRAND_NAME } account. We sturen u een code om het wachtwoord opnieuw in te stellen."
@@ -4082,7 +4082,7 @@
         "Klaar! We hebben een code verzonden naar ${ destination }"
       ],
       "Enter your Proton account email address or username.": [
-        ""
+        "Voer het e-mailadres of de gebruikersnaam van uw Proton-account in."
       ],
       "This can take a few seconds or a few minutes depending on your device": [
         "Afhankelijk van uw apparaat kan dit enkele seconden tot enkele minuten duren"
@@ -4090,12 +4090,12 @@
     },
     "Font Face Default": {
       "Default": [
-        ""
+        "Standaard"
       ]
     },
     "Font Size Default": {
       "Default": [
-        ""
+        "Standaard"
       ]
     },
     "Storage": {
@@ -4185,399 +4185,6 @@
     "Timezone search placeholder": {
       "Search timezones": [
         "Zoek tijdzones"
-      ]
-    },
-    "Success": {
-      "Preference saved": [
-        "Voorkeur opgeslagen"
-      ],
-      "Locale updated": [
-        "Landinstelling bijgewerkt"
-      ],
-      "Premium address created": [
-        "Premium adres aangemaakt"
-      ],
-      "Keyboard shortcuts preferences updated": [
-        "Sneltoetsvoorkeuren bijgewerkt"
-      ],
-      "Import resumed": [
-        "Import hervat"
-      ],
-      "Import canceled": [
-        "Importeren geannuleerd"
-      ],
-      "Import record deleted": [
-        "Import record verwijderd"
-      ],
-      "Deleting original messages": [
-        "Originele berichten verwijderen"
-      ],
-      "${ server.Domain } copied in your clipboard": [
-        "${ server.Domain } gekopieerd naar uw klembord"
-      ],
-      "Verification code copied to clipboard!": [
-        ""
-      ],
-      "SPF value copied to clipboard!": [
-        "SPF-waarde gekopieerd naar klembord!"
-      ],
-      "Value copied to clipboard!": [
-        "Gekopieerd naar klembord!"
-      ],
-      "DMARC value copied to clipboard!": [
-        "DMARC-waarde gekopieerd naar klembord!"
-      ],
-      "Domain verified": [
-        "Domeinnaam geverifieerd"
-      ],
-      "Catch-all address updated": [
-        "Catch-all adres bijgewerkt"
-      ],
-      "Email address copied to clipboard": [
-        "E-mailadres naar klembord gekopieerd"
-      ],
-      "Calendar added. It might take a few minutes to sync.": [
-        ""
-      ],
-      "Calendar created": [
-        "Agenda aangemaakt"
-      ],
-      "Calendar updated": [
-        "Agenda bijgewerkt"
-      ],
-      "Default calendar updated": [
-        "Standaardkalender geüpdate"
-      ],
-      "Calendar removed": [
-        "Agenda verwijderd"
-      ],
-      "Auto-reply disabled": [
-        "Automatisch antwoorden uitgeschakeld"
-      ],
-      "Auto-reply updated": [
-        "Automatisch antwoord bijgewerkt"
-      ],
-      "Bug reported": [
-        "Bug gemeld"
-      ],
-      "You have successfully unsubscribed": [
-        "U bent succesvol afgemeld"
-      ],
-      "Payment method updated": [
-        "Betalingsmethode bijgewerkt"
-      ],
-      "Payment method added": [
-        "Betalingsmethode toegevoegd"
-      ],
-      "Credits added": [
-        "Tegoed toegevoegd"
-      ],
-      "Gift code applied": [
-        "Geschenkcode toegepast"
-      ],
-      "Password updated": [
-        "Wachtwoord bijgewerkt"
-      ],
-      "Account deleted. Logging out...": [
-        "Account verwijderd. Uitloggen..."
-      ],
-      "Email updated": [
-        "E-mail bijgewerkt"
-      ],
-      "Phone number updated": [
-        "Telefoonnummer bijgewerkt"
-      ],
-      "Session revoked": [
-        "Sessie ingetrokken"
-      ],
-      "Sessions revoked": [
-        "Sessies ingetrokken"
-      ],
-      "Payment method deleted": [
-        "Betalingsmethode verwijderd"
-      ],
-      "Invoice paid": [
-        "Factuur betaald"
-      ],
-      "Invoice customized": [
-        "Factuur aangepast"
-      ],
-      "Code sent to ${ methodTo }": [
-        "Code verzonden naar ${ methodTo }"
-      ],
-      "Verification successful": [
-        "Verificatie gelukt"
-      ],
-      "Organization activated": [
-        "Organisatie geactiveerd"
-      ],
-      "Keys updated": [
-        "Sleutels gewijzigd"
-      ],
-      "User updated": [
-        "Gebruiker bijgewerkt"
-      ],
-      "User created": [
-        "Gebruiker aangemaakt"
-      ],
-      "Address added": [
-        "Adres toegevoegd"
-      ],
-      "Address updated": [
-        "Adres bijgewerkt"
-      ],
-      "If you entered a valid recovery email we will send you an email with your usernames in the next minute.": [
-        "Als u een geldige herstel-e-mail hebt ingevoerd, sturen we u een e-mail met uw gebruikersnamen in de komende minuut."
-      ],
-      "If you entered a valid recovery phone we will send you an sms with your usernames in the next minute.": [
-        "Als u een geldig herstel-telefoonnummer heeft ingevoerd, sturen we u een sms met uw gebruikersnamen in de komende minuut."
-      ]
-    },
-    "Option": {
-      "Automatic (${ defaultFormat })": [
-        "Automatisch (${ defaultFormat })"
-      ],
-      "Automatic (${ defaultDay })": [
-        "Automatisch (${ defaultDay })"
-      ],
-      "Add to existing group": [
-        "Toevoegen aan bestaande groep"
-      ],
-      "Create new group": [
-        "Nieuwe groep maken"
-      ],
-      "Ignore group": [
-        "Groep negeren"
-      ],
-      "Normal": [
-        "Normaal"
-      ],
-      "Plain text": [
-        "Platte tekst"
-      ],
-      "Left to Right": [
-        "Links naar rechts"
-      ],
-      "Right to Left": [
-        "Rechts naar links"
-      ],
-      "Android": [
-        "Android"
-      ],
-      "iOS": [
-        "iOS"
-      ],
-      "Windows": [
-        "Windows"
-      ],
-      "macOS": [
-        "macOS"
-      ],
-      "GNU/Linux": [
-        "GNU/Linux"
-      ],
-      "Router": [
-        "Router"
-      ],
-      "UDP": [
-        "UDP"
-      ],
-      "TCP": [
-        "TCP"
-      ],
-      "Secure Core configs": [
-        "Secure Core configuraties"
-      ],
-      "Country configs": [
-        "Landconfiguraties"
-      ],
-      "Standard server configs": [
-        "Standaard server configuraties"
-      ],
-      "Free server configs": [
-        "Gratis server configuratiebestanden"
-      ],
-      "Fixed duration": [
-        "Vaste duur"
-      ],
-      "Repeat daily": [
-        "Dagelijks herhalen"
-      ],
-      "Repeat weekly": [
-        "Wekelijks herhalen"
-      ],
-      "Repeat monthly": [
-        "Maandelijks herhalen"
-      ],
-      "Permanent": [
-        "Permanent"
-      ],
-      "1st of the month": [
-        "1ste dag van de maand"
-      ],
-      "2nd of the month": [
-        "2e dag van de maand"
-      ],
-      "3rd of the month": [
-        "3e dag van de maand"
-      ],
-      "4th of the month": [
-        "4e dag van de maand"
-      ],
-      "5th of the month": [
-        "5e dag van de maand"
-      ],
-      "6th of the month": [
-        "6e dag van de maand"
-      ],
-      "7th of the month": [
-        "7e dag van de maand"
-      ],
-      "8th of the month": [
-        "8ste dag van de maand"
-      ],
-      "9th of the month": [
-        "9e dag van de maand"
-      ],
-      "10th of the month": [
-        "10e dag van de maand"
-      ],
-      "11th of the month": [
-        "11e dag van de maand"
-      ],
-      "12th of the month": [
-        "12e dag van de maand"
-      ],
-      "13th of the month": [
-        "13e dag van de maand"
-      ],
-      "14th of the month": [
-        "14e dag van de maand"
-      ],
-      "15th of the month": [
-        "15e dag van de maand"
-      ],
-      "16th of the month": [
-        "16e dag van de maand"
-      ],
-      "17th of the month": [
-        "17e dag van de maand"
-      ],
-      "18th of the month": [
-        "18e dag van de maand"
-      ],
-      "19th of the month": [
-        "19e dag van de maand"
-      ],
-      "20th of the month": [
-        "20ste dag van de maand"
-      ],
-      "21st of the month": [
-        "21ste dag van de maand"
-      ],
-      "22nd of the month": [
-        "22ste dag van de maand"
-      ],
-      "23rd of the month": [
-        "23ste dag van de maand"
-      ],
-      "24th of the month": [
-        "24ste dag van de maand"
-      ],
-      "25th of the month": [
-        "25ste dag van de maand"
-      ],
-      "26th of the month": [
-        "26ste dag van de maand"
-      ],
-      "27th of the month": [
-        "27ste dag van de maand"
-      ],
-      "28th of the month": [
-        "28ste dag van de maand"
-      ],
-      "29th of the month": [
-        "29ste dag van de maand"
-      ],
-      "30th of the month": [
-        "30ste dag van de maand"
-      ],
-      "31st of the month": [
-        "31ste dag van de maand"
-      ],
-      "${ stateOfTheArt } X25519 (Fastest, most modern)": [
-        ""
-      ],
-      "${ highestSecurity } RSA 4096-bit (Slower, but increased compatibility with legacy software)": [
-        ""
-      ],
-      "Select a reason": [
-        "Selecteer een reden"
-      ],
-      "It’s temporary, I’ll be back": [
-        "Dit is tijdelijk, ik zal snel terugkeren"
-      ],
-      "I didn’t understand what I was signing up for": [
-        "Ik begreep niet waarvoor ik mij aanmeldde"
-      ],
-      "It’s too expensive": [
-        "Het is te duur"
-      ],
-      "I’m unhappy with customer service": [
-        "Ik ben ontevreden over de klantenondersteuning"
-      ],
-      "Using Proton is too complicated": [
-        "Het gebruik van Proton is te ingewikkeld"
-      ],
-      "I'm switching to a different service": [
-        "Ik stap over naar een andere dienst"
-      ],
-      "The quality didn't live up to my expectations": [
-        "De kwaliteit voldeed niet aan mijn verwachtingen"
-      ],
-      "Other": [
-        "Anders"
-      ],
-      "I use a different Proton account": [
-        "Ik gebruik een ander Proton account"
-      ],
-      "It's too expensive": [
-        "Het is te duur"
-      ],
-      "It's missing a key feature that I need": [
-        "Ik mis een belangrijke functie"
-      ],
-      "I found another service that I like better": [
-        "Ik heb een anderen service gevonden die mijn voorkeur heeft"
-      ],
-      "My reason isn't listed": [
-        "Mijn reden wordt niet vermeld"
-      ],
-      "No parent folder": [
-        "Geen bovenliggende map"
-      ]
-    },
-    "Day": {
-      "Sunday": [
-        "Zondag"
-      ],
-      "Monday": [
-        "Maandag"
-      ],
-      "Tuesday": [
-        "Dinsdag"
-      ],
-      "Wednesday": [
-        "Woensdag"
-      ],
-      "Thursday": [
-        "Donderdag"
-      ],
-      "Friday": [
-        "Vrijdag"
-      ],
-      "Saturday": [
-        "Zaterdag"
       ]
     },
     "Loading info": {
@@ -4683,14 +4290,14 @@
       "Are you sure you want to delete the phone number?": [
         "Bent u zeker dat u het telefoonnummer wilt verwijderen?"
       ],
-      "By disabling the logs, you will also clear your entire logs history. Are you sure you want to disable the logs?": [
-        "Door de logboeken uit te schakelen, verwijdert u ook de gehele logboekgeschiedenis. Weet u zeker dat u de logboeken wilt uitschakelen?"
-      ],
       "By disabling this address, you will no longer be able to send or receive emails using this address and all the linked Proton products will also be disabled. Are you sure you want to disable this address?": [
         "Door het uitschakelen van dit adres u kunt niet langer e-mails verzenden of ontvangen met dit adres en alle gekoppelde Proton producten worden ook uitgeschakeld. Weet u zeker dat u dit adres wilt uitschakelen?"
       ],
       "You must ${ activateLink } organization keys before adding an email address to a non-private member.": [
         "U moet ${ activateLink } organisatiesleutels voordat u een e-mailadres toevoegt aan een niet-privé lid."
+      ],
+      "By disabling the logs, you will also clear your entire logs history. Are you sure you want to disable the logs?": [
+        "Door de logboeken uit te schakelen, verwijdert u ook de gehele logboekgeschiedenis. Weet u zeker dat u de logboeken wilt uitschakelen?"
       ]
     },
     "Import instructions emphasis": {
@@ -4941,15 +4548,6 @@
       "Group emails in the same conversation together in your Inbox or display them separately.": [
         "Groepeer e-mails in hetzelfde gesprek samen in uw Inbox of geef ze apart weer."
       ],
-      "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
-        "We hebben gestopt met het ondertekenen met DKIM, vanwege problemen met uw DNS-configuratie. Volg de onderstaande instructies om ondertekenen te hervatten."
-      ],
-      "Your DKIM signing is working.": [
-        "Ondertekenen met DKIM werkt."
-      ],
-      "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
-        "We hebben een probleem met uw DNS-configuratie ontdekt. Zorg ervoor dat uw records overeenkomen met de instructies hieronder. Als het probleem zich blijft voordoen, moeten we het ondertekenen met DKIM stopzetten."
-      ],
       "This feature is unavailable for the moment": [
         "Deze functionaliteit is op dit moment niet beschikbaar"
       ],
@@ -4970,6 +4568,21 @@
       ],
       "This address has been disabled": [
         "Dit adres is uitgeschakeld"
+      ],
+      "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
+        "We hebben gestopt met het ondertekenen met DKIM, vanwege problemen met uw DNS-configuratie. Volg de onderstaande instructies om ondertekenen te hervatten."
+      ],
+      "Your DKIM signing is working.": [
+        "Ondertekenen met DKIM werkt."
+      ],
+      "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
+        "We hebben een probleem met uw DNS-configuratie ontdekt. Zorg ervoor dat uw records overeenkomen met de instructies hieronder. Als het probleem zich blijft voordoen, moeten we het ondertekenen met DKIM stopzetten."
+      ],
+      "This feature is only available for paid users": [
+        "Deze functionaliteit is alleen beschikbaar voor betalende gebruikers"
+      ],
+      "Enable/disable desktop and mobile notifications": [
+        "Desktop en mobiele notificaties inschakelen/uitschakelen"
       ],
       "Use multiple addresses / aliases linked to your account, e.g. username2@protonmail.com": [
         "Gebruik meerdere adressen / aliassen gekoppeld aan uw account, bijvoorbeeld gebruikersnaam2@protonmail.com"
@@ -5019,15 +4632,6 @@
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Als u een cadeaucode heeft gekocht of een cadeaucode heeft ontvangen van ons supportteam, kunt u deze hier invoeren."
       ],
-      "Enabling advanced logs records the IP address for each event in the security log.": [
-        "Inschakelen van geavanceerd logboek recordt het IP-adres van elke gebeurtenis in het beveiligingslogboek."
-      ],
-      "This feature is only available for paid users": [
-        "Deze functionaliteit is alleen beschikbaar voor betalende gebruikers"
-      ],
-      "Enable/disable desktop and mobile notifications": [
-        "Desktop en mobiele notificaties inschakelen/uitschakelen"
-      ],
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "Berichten in de map Verzonden of Concepten blijven in die map verschijnen, zelfs als u ze naar een andere map verplaatst."
       ],
@@ -5036,6 +4640,9 @@
       ],
       "This feature delays sending your emails, giving you the opportunity to undo send during the selected time frame.": [
         "Deze functie vertraagt het verzenden van uw e-mails, waardoor u de kans krijgt om het verzenden ongedaan te maken gedurende het geselecteerde tijdsbestek."
+      ],
+      "Enabling advanced logs records the IP address for each event in the security log.": [
+        "Inschakelen van geavanceerd logboek recordt het IP-adres van elke gebeurtenis in het beveiligingslogboek."
       ]
     },
     "Security phrase": {
@@ -5077,6 +4684,152 @@
         "Vertraagd"
       ]
     },
+    "Success": {
+      "Import resumed": [
+        "Import hervat"
+      ],
+      "Import canceled": [
+        "Importeren geannuleerd"
+      ],
+      "Import record deleted": [
+        "Import record verwijderd"
+      ],
+      "Deleting original messages": [
+        "Originele berichten verwijderen"
+      ],
+      "Preference saved": [
+        "Voorkeur opgeslagen"
+      ],
+      "Premium address created": [
+        "Premium adres aangemaakt"
+      ],
+      "Keyboard shortcuts preferences updated": [
+        "Sneltoetsvoorkeuren bijgewerkt"
+      ],
+      "Locale updated": [
+        "Landinstelling bijgewerkt"
+      ],
+      "${ server.Domain } copied in your clipboard": [
+        "${ server.Domain } gekopieerd naar uw klembord"
+      ],
+      "Auto-reply disabled": [
+        "Automatisch antwoorden uitgeschakeld"
+      ],
+      "Auto-reply updated": [
+        "Automatisch antwoord bijgewerkt"
+      ],
+      "Calendar added. It might take a few minutes to sync.": [
+        "Agenda toegevoegd. Het kan een paar minuten duren om te synchroniseren."
+      ],
+      "Calendar created": [
+        "Agenda aangemaakt"
+      ],
+      "Calendar updated": [
+        "Agenda bijgewerkt"
+      ],
+      "Default calendar updated": [
+        "Standaardkalender geüpdate"
+      ],
+      "Calendar removed": [
+        "Agenda verwijderd"
+      ],
+      "Verification code copied to clipboard!": [
+        "Verificatie code gekopieerd naar klembord!"
+      ],
+      "SPF value copied to clipboard!": [
+        "SPF-waarde gekopieerd naar klembord!"
+      ],
+      "Value copied to clipboard!": [
+        "Gekopieerd naar klembord!"
+      ],
+      "DMARC value copied to clipboard!": [
+        "DMARC-waarde gekopieerd naar klembord!"
+      ],
+      "Domain verified": [
+        "Domeinnaam geverifieerd"
+      ],
+      "Catch-all address updated": [
+        "Catch-all adres bijgewerkt"
+      ],
+      "Email address copied to clipboard": [
+        "E-mailadres naar klembord gekopieerd"
+      ],
+      "Bug reported": [
+        "Bug gemeld"
+      ],
+      "You have successfully unsubscribed": [
+        "U bent succesvol afgemeld"
+      ],
+      "Payment method updated": [
+        "Betalingsmethode bijgewerkt"
+      ],
+      "Payment method added": [
+        "Betalingsmethode toegevoegd"
+      ],
+      "Credits added": [
+        "Tegoed toegevoegd"
+      ],
+      "Gift code applied": [
+        "Geschenkcode toegepast"
+      ],
+      "Password updated": [
+        "Wachtwoord bijgewerkt"
+      ],
+      "Account deleted. Logging out...": [
+        "Account verwijderd. Uitloggen..."
+      ],
+      "Email updated": [
+        "E-mail bijgewerkt"
+      ],
+      "Phone number updated": [
+        "Telefoonnummer bijgewerkt"
+      ],
+      "Address updated": [
+        "Adres bijgewerkt"
+      ],
+      "Address added": [
+        "Adres toegevoegd"
+      ],
+      "Session revoked": [
+        "Sessie ingetrokken"
+      ],
+      "Sessions revoked": [
+        "Sessies ingetrokken"
+      ],
+      "Payment method deleted": [
+        "Betalingsmethode verwijderd"
+      ],
+      "Invoice paid": [
+        "Factuur betaald"
+      ],
+      "Invoice customized": [
+        "Factuur aangepast"
+      ],
+      "Organization activated": [
+        "Organisatie geactiveerd"
+      ],
+      "Keys updated": [
+        "Sleutels gewijzigd"
+      ],
+      "User updated": [
+        "Gebruiker bijgewerkt"
+      ],
+      "User created": [
+        "Gebruiker aangemaakt"
+      ],
+      "Code sent to ${ methodTo }": [
+        "Code verzonden naar ${ methodTo }"
+      ],
+      "Verification successful": [
+        "Verificatie gelukt"
+      ],
+      "If you entered a valid recovery email we will send you an email with your usernames in the next minute.": [
+        "Als u een geldige herstel-e-mail hebt ingevoerd, sturen we u een e-mail met uw gebruikersnamen in de komende minuut."
+      ],
+      "If you entered a valid recovery phone we will send you an sms with your usernames in the next minute.": [
+        "Als u een geldig herstel-telefoonnummer heeft ingevoerd, sturen we u een sms met uw gebruikersnamen in de komende minuut."
+      ]
+    },
     "Title header": {
       "Import": [
         "Importeren"
@@ -5097,6 +4850,253 @@
     "Import error link": {
       "bandwidth limit": [
         "bandbreedte limiet"
+      ]
+    },
+    "Option": {
+      "Automatic (${ defaultFormat })": [
+        "Automatisch (${ defaultFormat })"
+      ],
+      "Automatic (${ defaultDay })": [
+        "Automatisch (${ defaultDay })"
+      ],
+      "Add to existing group": [
+        "Toevoegen aan bestaande groep"
+      ],
+      "Create new group": [
+        "Nieuwe groep maken"
+      ],
+      "Ignore group": [
+        "Groep negeren"
+      ],
+      "Normal": [
+        "Normaal"
+      ],
+      "Plain text": [
+        "Platte tekst"
+      ],
+      "Left to Right": [
+        "Links naar rechts"
+      ],
+      "Right to Left": [
+        "Rechts naar links"
+      ],
+      "Android": [
+        "Android"
+      ],
+      "iOS": [
+        "iOS"
+      ],
+      "Windows": [
+        "Windows"
+      ],
+      "macOS": [
+        "macOS"
+      ],
+      "GNU/Linux": [
+        "GNU/Linux"
+      ],
+      "Router": [
+        "Router"
+      ],
+      "UDP": [
+        "UDP"
+      ],
+      "TCP": [
+        "TCP"
+      ],
+      "Secure Core configs": [
+        "Secure Core configuraties"
+      ],
+      "Country configs": [
+        "Landconfiguraties"
+      ],
+      "Standard server configs": [
+        "Standaard server configuraties"
+      ],
+      "Free server configs": [
+        "Gratis server configuratiebestanden"
+      ],
+      "Fixed duration": [
+        "Vaste duur"
+      ],
+      "Repeat daily": [
+        "Dagelijks herhalen"
+      ],
+      "Repeat weekly": [
+        "Wekelijks herhalen"
+      ],
+      "Repeat monthly": [
+        "Maandelijks herhalen"
+      ],
+      "Permanent": [
+        "Permanent"
+      ],
+      "1st of the month": [
+        "1ste dag van de maand"
+      ],
+      "2nd of the month": [
+        "2e dag van de maand"
+      ],
+      "3rd of the month": [
+        "3e dag van de maand"
+      ],
+      "4th of the month": [
+        "4e dag van de maand"
+      ],
+      "5th of the month": [
+        "5e dag van de maand"
+      ],
+      "6th of the month": [
+        "6e dag van de maand"
+      ],
+      "7th of the month": [
+        "7e dag van de maand"
+      ],
+      "8th of the month": [
+        "8ste dag van de maand"
+      ],
+      "9th of the month": [
+        "9e dag van de maand"
+      ],
+      "10th of the month": [
+        "10e dag van de maand"
+      ],
+      "11th of the month": [
+        "11e dag van de maand"
+      ],
+      "12th of the month": [
+        "12e dag van de maand"
+      ],
+      "13th of the month": [
+        "13e dag van de maand"
+      ],
+      "14th of the month": [
+        "14e dag van de maand"
+      ],
+      "15th of the month": [
+        "15e dag van de maand"
+      ],
+      "16th of the month": [
+        "16e dag van de maand"
+      ],
+      "17th of the month": [
+        "17e dag van de maand"
+      ],
+      "18th of the month": [
+        "18e dag van de maand"
+      ],
+      "19th of the month": [
+        "19e dag van de maand"
+      ],
+      "20th of the month": [
+        "20ste dag van de maand"
+      ],
+      "21st of the month": [
+        "21ste dag van de maand"
+      ],
+      "22nd of the month": [
+        "22ste dag van de maand"
+      ],
+      "23rd of the month": [
+        "23ste dag van de maand"
+      ],
+      "24th of the month": [
+        "24ste dag van de maand"
+      ],
+      "25th of the month": [
+        "25ste dag van de maand"
+      ],
+      "26th of the month": [
+        "26ste dag van de maand"
+      ],
+      "27th of the month": [
+        "27ste dag van de maand"
+      ],
+      "28th of the month": [
+        "28ste dag van de maand"
+      ],
+      "29th of the month": [
+        "29ste dag van de maand"
+      ],
+      "30th of the month": [
+        "30ste dag van de maand"
+      ],
+      "31st of the month": [
+        "31ste dag van de maand"
+      ],
+      "${ stateOfTheArt } X25519 (Fastest, most modern)": [
+        "${ stateOfTheArt } X25519 (Snelste, modernste)"
+      ],
+      "${ highestSecurity } RSA 4096-bit (Slower, but increased compatibility with legacy software)": [
+        "${ highestSecurity } RSA 4096-bit (langzamer, maar meer compatibiliteit met oudere software)"
+      ],
+      "No parent folder": [
+        "Geen bovenliggende map"
+      ],
+      "Select a reason": [
+        "Selecteer een reden"
+      ],
+      "It’s temporary, I’ll be back": [
+        "Dit is tijdelijk, ik zal snel terugkeren"
+      ],
+      "I didn’t understand what I was signing up for": [
+        "Ik begreep niet waarvoor ik mij aanmeldde"
+      ],
+      "It’s too expensive": [
+        "Het is te duur"
+      ],
+      "I’m unhappy with customer service": [
+        "Ik ben ontevreden over de klantenondersteuning"
+      ],
+      "Using Proton is too complicated": [
+        "Het gebruik van Proton is te ingewikkeld"
+      ],
+      "I'm switching to a different service": [
+        "Ik stap over naar een andere dienst"
+      ],
+      "The quality didn't live up to my expectations": [
+        "De kwaliteit voldeed niet aan mijn verwachtingen"
+      ],
+      "Other": [
+        "Anders"
+      ],
+      "I use a different Proton account": [
+        "Ik gebruik een ander Proton account"
+      ],
+      "It's too expensive": [
+        "Het is te duur"
+      ],
+      "It's missing a key feature that I need": [
+        "Ik mis een belangrijke functie"
+      ],
+      "I found another service that I like better": [
+        "Ik heb een anderen service gevonden die mijn voorkeur heeft"
+      ],
+      "My reason isn't listed": [
+        "Mijn reden wordt niet vermeld"
+      ]
+    },
+    "Day": {
+      "Sunday": [
+        "Zondag"
+      ],
+      "Monday": [
+        "Maandag"
+      ],
+      "Tuesday": [
+        "Dinsdag"
+      ],
+      "Wednesday": [
+        "Woensdag"
+      ],
+      "Thursday": [
+        "Donderdag"
+      ],
+      "Friday": [
+        "Vrijdag"
+      ],
+      "Saturday": [
+        "Zaterdag"
       ]
     },
     "Progress bar description": {
@@ -5397,181 +5397,29 @@
         "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now en meer."
       ]
     },
-    "Label for adding a new custom domain": {
-      "Add a domain that you own to your ProtonMail account.": [
-        "Voeg een domein toe waarvan u eigenaar bent aan uw ProtonMail-account."
+    "Autoresponse": {
+      "I'm out of the office with limited access to my email.": [
+        "Ik ben afwezig en heb beperkte toegang tot mijn e-mail."
       ]
     },
-    "Domain modal": {
-      "'www' subdomains are typically not used for email. Are you sure you want to use this domain value?": [
-        "'www'-subdomeinen worden normaal gesproken niet gebruikt voor e-mailadressen. Weet u zeker dat u van deze domeinnaam gebruik wilt maken?"
+    "Tooltip prompt to trust keys": {
+      "When receiving an email from another ProtonMail user who does not have trusted keys in your contacts, a banner will ask if you want to enable trusted keys.": [
+        "Wanneer u een e-mail ontvangt van een andere ProtonMail gebruiker die geen vertrouwde sleutels in uw contactpersonen heeft, een banner vraagt of u vertrouwde sleutels wilt inschakelen."
       ]
     },
-    "Info for domain modal": {
-      "For security reasons, we need to verify that you are the owner of ${ domainName }. Please add the following DNS TXT record to your domain. This can typically be done in the control panel of your domain name registrar.": [
-        "Om veiligheidsredenen moeten we controleren of u de eigenaar van ${ domainName }. Voeg het volgende TXT-record toe aan de DNS van uw domein. Dit kan meestal worden gedaan in het beheerpaneel van uw domeinnaamlijst."
-      ],
-      "Add a new user to your organization and create an address for it.": [
-        "Voeg een nieuwe gebruiker toe aan uw organisatie en maak er een adres voor aan."
-      ],
-      "Add a new address for any user of your organization.": [
-        "Voeg een nieuw adres toe voor een gebruiker van uw organisatie."
+    "Tooltip sign external messages": {
+      "Automatically sign all your outgoing messages so users can verify the authenticity of your messages. This is done in combination with the default PGP settings which can be configured below.": [
+        "Automatisch al uw uitgaande berichten ondertekenen zodat gebruikers de authenticiteit van uw berichten kunnen verifiëren. Dit wordt gedaan in combinatie met de standaard PGP-instellingen, welke hieronder kunnen worden geconfigureerd."
       ]
     },
-    "Warning for domain modal": {
-      "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
-        "Verwijder na een succesvolle verificatie, dit TXT-record niet omdat het nodig is om te bevestigen dat u de eigenaar van het domein blijft."
-      ],
-      "It can take up to a day for DNS changes to update.": [
-        "Het kan een dag duren voordat DNS-veranderingen zijn bijgewerkt."
+    "Tooltip automatically attach public key": {
+      "This automatically adds your public key to each message you send. Recipients can use this to verify the authenticity of your messages and send encrypted messages to you.": [
+        "Dit voert automatisch uw openbare sleutel toe aan ieder bericht dat u verzendt. Geadresseerden kunnen de authenticiteit van uw berichten verifiëren en versleutelde berichten aan u versturen."
       ]
     },
-    "Label for domain modal": {
-      "Please add the following TXT record:": [
-        "Voeg het volgende TXT-record toe:"
-      ]
-    },
-    "Header for domain modal": {
-      "Type": [
-        "Type"
-      ],
-      "Host name": [
-        "Hostnaam"
-      ],
-      "Value / Data / Points to": [
-        "Waarde / Data / Verwijst naar"
-      ],
-      "Value / Data": [
-        "Waarde / Data"
-      ],
-      "Priority": [
-        "Prioriteit"
-      ]
-    },
-    "Tab in domain modal": {
-      "Addresses": [
-        "Adressen"
-      ]
-    },
-    "Label in domain modal": {
-      "Domain": [
-        "Domein"
-      ],
-      "Verify": [
-        "Verifiëren"
-      ],
-      "Addresses": [
-        "Adressen"
-      ]
-    },
-    "Domain label": {
-      "Verified": [
-        "Geverifieerd"
-      ]
-    },
-    "Badge for domain": {
-      "Missing keys": [
-        "Ontbrekende sleutels"
-      ],
-      "Enabled": [
-        "Geactiveerd"
-      ],
-      "Disabled": [
-        "Uitgeschakeld"
-      ]
-    },
-    "Title header for addresses domain table": {
-      "Address": [
-        "Adres"
-      ],
-      "Status": [
-        "Status"
-      ],
-      "Catch-All": [
-        "Catch-all"
-      ]
-    },
-    "Success message": {
-      "Domain deleted": [
-        "Domein verwijderd"
-      ],
-      "Sessions revoked": [
-        "Sessies ingetrokken"
-      ],
-      "User deleted": [
-        "Gebruiker verwijderd"
-      ]
-    },
-    "Header for addresses table": {
-      "Domain": [
-        "Domein"
-      ],
-      "Status": [
-        "Status"
-      ],
-      "Actions": [
-        "Acties"
-      ],
-      "Address": [
-        "Adres"
-      ],
-      "Username": [
-        "Gebruikersnaam"
-      ]
-    },
-    "Message": {
-      "Set up a custom domain email address (e.g., you@yourcompany.com). It only takes a few minutes, and our wizard will guide you through the process.": [
-        "Stel een eigen domein e-mailadres in (bijv. u@uwbedrijf.com). Het duurt slechts enkele minuten en onze wizard zal u door het proces begeleiden."
-      ],
-      "Upgrade to any paid plan to use custom domains and unlock premium features": [
-        ""
-      ],
-      "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to use a catch-all address and unlock premium features": [
-        ""
-      ],
-      "Are you sure you want to disable two-factor authentication?": [
-        "Weet u zeker dat u tweestapsverificatie wil uitschakelen?"
-      ]
-    },
-    "Header": {
-      "Get help": [
-        ""
-      ],
-      "Name": [
-        "Naam"
-      ],
-      "Status": [
-        "Status"
-      ],
-      "Actions": [
-        "Acties"
-      ],
-      "Calendar": [
-        "Agenda"
-      ],
-      "Label": [
-        "Label"
-      ],
-      "What others see": [
-        "Wat anderen zien"
-      ],
-      "Event": [
-        "Gebeurtenis"
-      ],
-      "Time": [
-        "Tijd"
-      ],
-      "Folders": [
-        "Mappen"
-      ],
-      "Notifications": [
-        "Meldingen"
-      ],
-      "Organization key fingerprint": [
-        "Vingerafdruk van organisatiesleutel"
-      ],
-      "Key type": [
-        "Sleuteltype"
+    "Tooltip default pgp scheme": {
+      "Select the default PGP settings used to sign or encrypt messages with non-ProtonMail PGP users. Note that Inline PGP forces plain text messages. Learn more": [
+        "Selecteer de standaard PGP-instellingen die worden gebruikt voor het ondertekenen of versleutelen van berichten met niet-ProtonMail PGP-gebruikers. Merk op dat Inline PGP-gebruikers berichten zonder opmaak weergeven. Meer informatie"
       ]
     },
     "Duration": {
@@ -5683,6 +5531,47 @@
         "Details over gebeurtenissen die niet konden worden geëxporteerd"
       ]
     },
+    "Header": {
+      "Name": [
+        "Naam"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "Actions": [
+        "Acties"
+      ],
+      "Calendar": [
+        "Agenda"
+      ],
+      "Label": [
+        "Label"
+      ],
+      "What others see": [
+        "Wat anderen zien"
+      ],
+      "Get help": [
+        "Krijg hulp"
+      ],
+      "Folders": [
+        "Mappen"
+      ],
+      "Notifications": [
+        "Meldingen"
+      ],
+      "Event": [
+        "Gebeurtenis"
+      ],
+      "Time": [
+        "Tijd"
+      ],
+      "Organization key fingerprint": [
+        "Vingerafdruk van organisatiesleutel"
+      ],
+      "Key type": [
+        "Sleuteltype"
+      ]
+    },
     "Calendar status": {
       "Default": [
         "Standaard"
@@ -5693,11 +5582,11 @@
       "Disabled": [
         "Inactief"
       ],
-      "Not synced": [
-        "Niet gesynchroniseerd"
-      ],
       "Syncing": [
         "Synchroniseren"
+      ],
+      "Not synced": [
+        "Niet gesynchroniseerd"
       ]
     },
     "Upgrade notice": {
@@ -5706,32 +5595,32 @@
         "Upgrade naar een betaald abonnement om maximaal ${ MAX_CALENDARS_PER_USER } kalenders aan te maken, laat u toe om kalenders te maken voor het werk, om te delen met vrienden en alleen voor uzelf."
       ],
       "Upgrade to a paid plan to share your personal calendar via link with anyone.": [
-        ""
+        "Upgrade naar een betaald plan om uw persoonlijke agenda via een link met iedereen te delen."
       ]
     },
     "Calendar limit warning": {
       "You have reached the maximum of ${ calendarsLimit } calendar.": [
-        "",
-        ""
+        "U hebt het maximum van één agenda bereikt.",
+        "U hebt het maximum van ${ calendarsLimit } agenda's bereikt."
       ],
       "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } subscribed calendar.": [
-        "",
-        ""
+        "U hebt het maximum van één geabonneerde agenda bereikt.",
+        "U hebt het maximum van ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } geabonneerde agenda's bereikt."
       ]
     },
     "Subscribed calendar section description": {
       "Add public, external, or shared calendars using a URL.": [
-        ""
+        "Voeg openbare, externe of gedeelde agenda's toe met behulp van een URL."
       ]
     },
     "Knowledge base link label": {
       "Here's how": [
-        ""
+        "Hier is hoe"
       ]
     },
     "Calendar import section description": {
       "Import events or the contents of a calendar via ICS files.": [
-        ""
+        "Importeer gebeurtenissen of de inhoud van een agenda via ICS-bestanden."
       ]
     },
     "Primary timezone": {
@@ -5755,10 +5644,10 @@
     },
     "Subscribed calendar extension warning": {
       "This link might be wrong": [
-        ""
+        "Deze link kan fout zijn"
       ],
       "By using this link, Google will make the calendar you are subscribing to public": [
-        ""
+        "Door deze link te gebruiken, maakt Google de agenda waarop u zich abonneert openbaar"
       ]
     },
     "Modal title and action": {
@@ -5768,12 +5657,12 @@
     },
     "Subscribe to calendar modal description": {
       "Learn how to get a private calendar link.": [
-        ""
+        "Leer hoe je een persoonlijkge agenda link krijgt."
       ]
     },
     "Subscribe to calendar modal": {
       "You can subscribe to someone else's calendar by pasting its URL below. This will give you access to a read-only version of this calendar.\n${ kbLink }": [
-        ""
+        "U kunt zich abonneren op iemand anders kalender door de URL hieronder te plakken. Dit geeft u toegang tot een alleen-lezen versie van deze kalender.\n${ kbLink }"
       ],
       "Calendar URL": [
         "Agenda-URL"
@@ -5787,7 +5676,7 @@
         "Oeps, er is iets misgegaan"
       ],
       "Too many child sessions, please clear your cookies and sign back in.": [
-        ""
+        "Te veel kindersessies, wis uw cookies en log opnieuw in."
       ],
       "There was a problem connecting to Proton.": [
         "Fout bij het verbinden met Proton."
@@ -5923,6 +5812,263 @@
         "Volledige weergave"
       ]
     },
+    "Select files": {
+      "Upload additional private keys": [
+        "Upload extra geheime sleutels"
+      ],
+      "Browse": [
+        "Doorzoek"
+      ],
+      "Upload": [
+        "Uploaden"
+      ]
+    },
+    "info": {
+      "Key ${ fingerprint } has already been uploaded": [
+        "Sleutel ${ fingerprint } is al geüpload"
+      ],
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Extra dubbele sleutels gedetecteerd. Gelieve afzonderlijk te uploaden voor meer informatie."
+      ],
+      "(beta)": [
+        "(bèta)"
+      ]
+    },
+    "Keys actions": {
+      "Export": [
+        "Exporteren"
+      ],
+      "Export private key": [
+        "Privésleutel exporteren"
+      ],
+      "Make primary": [
+        "Primair"
+      ],
+      "Mark obsolete": [
+        "Markeren als uitgelekt"
+      ],
+      "Disables encryption with this key": [
+        "Schakelt het versleutelen met deze sleutel uit"
+      ],
+      "Mark not obsolete": [
+        "Markeren als"
+      ],
+      "Enable encryption with this key": [
+        "Desktopmeldingen aanzetten"
+      ],
+      "Mark compromised": [
+        "Markeren als"
+      ],
+      "Disables signature verification and encryption with this key": [
+        "Schakelt het controleren van digitale handtekeningen en het versleutelen met deze sleutel uit"
+      ],
+      "Mark not compromised": [
+        "Markeren als"
+      ],
+      "Enable signature verification and encryption with this key": [
+        "Schakel het controleren van digitale handtekeningen en het versleutelen met deze sleutel in"
+      ],
+      "Delete": [
+        "Verwijderen"
+      ]
+    },
+    "Key state badge": {
+      "Primary": [
+        "Primair"
+      ],
+      "Active": [
+        "Actief"
+      ],
+      "Inactive": [
+        "Inactief"
+      ],
+      "Compromised": [
+        "Uitgelekt"
+      ],
+      "Obsolete": [
+        "Verouderd"
+      ],
+      "Disabled": [
+        "Uitgeschakeld"
+      ]
+    },
+    "Title header for keys table": {
+      "Fingerprint": [
+        "Vingerafdruk"
+      ],
+      "Key type": [
+        "Sleuteltype"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "Actions": [
+        "Acties"
+      ]
+    },
+    "Confirm": {
+      "Are you sure you want to permanently delete this key?": [
+        "Weet u zeker dat u dit concept permanent wil verwijderen?"
+      ],
+      "Do you want to export your key?": [
+        "Wilt u de volgende openbare sleutel vertrouwen?"
+      ],
+      "Are you sure you want to delete this key without backing it up?": [
+        "Weet u zeker dat u deze sleutel wil verwijderen zonder eerst een back-up te maken?"
+      ]
+    },
+    "alert": {
+      "The key for your address is now being deleted.": [
+        "De sleutel van uw adres wordt nu verwijderd,"
+      ],
+      "The encryption keys for your address are being generated. This may take several minutes and temporarily freeze your browser.": [
+        "De verleutelingssleutels van uw e-mailadres worden aangemaakt. Dit kan enkele minuten duren en uw browser kan kort bevriezen."
+      ]
+    },
+    "encryption": {
+      "State of the art": [
+        "State-of-the-art"
+      ],
+      "Compatibility": [
+        "Compatibiliteit"
+      ]
+    },
+    "Label for adding a new custom domain": {
+      "Add a domain that you own to your ProtonMail account.": [
+        "Voeg een domein toe waarvan u eigenaar bent aan uw ProtonMail-account."
+      ]
+    },
+    "Domain modal": {
+      "'www' subdomains are typically not used for email. Are you sure you want to use this domain value?": [
+        "'www'-subdomeinen worden normaal gesproken niet gebruikt voor e-mailadressen. Weet u zeker dat u van deze domeinnaam gebruik wilt maken?"
+      ]
+    },
+    "Info for domain modal": {
+      "For security reasons, we need to verify that you are the owner of ${ domainName }. Please add the following DNS TXT record to your domain. This can typically be done in the control panel of your domain name registrar.": [
+        "Om veiligheidsredenen moeten we controleren of u de eigenaar van ${ domainName }. Voeg het volgende TXT-record toe aan de DNS van uw domein. Dit kan meestal worden gedaan in het beheerpaneel van uw domeinnaamlijst."
+      ],
+      "Add a new user to your organization and create an address for it.": [
+        "Voeg een nieuwe gebruiker toe aan uw organisatie en maak er een adres voor aan."
+      ],
+      "Add a new address for any user of your organization.": [
+        "Voeg een nieuw adres toe voor een gebruiker van uw organisatie."
+      ]
+    },
+    "Warning for domain modal": {
+      "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
+        "Verwijder na een succesvolle verificatie, dit TXT-record niet omdat het nodig is om te bevestigen dat u de eigenaar van het domein blijft."
+      ],
+      "It can take up to a day for DNS changes to update.": [
+        "Het kan een dag duren voordat DNS-veranderingen zijn bijgewerkt."
+      ]
+    },
+    "Label for domain modal": {
+      "Please add the following TXT record:": [
+        "Voeg het volgende TXT-record toe:"
+      ]
+    },
+    "Header for domain modal": {
+      "Type": [
+        "Type"
+      ],
+      "Host name": [
+        "Hostnaam"
+      ],
+      "Value / Data / Points to": [
+        "Waarde / Data / Verwijst naar"
+      ],
+      "Value / Data": [
+        "Waarde / Data"
+      ],
+      "Priority": [
+        "Prioriteit"
+      ]
+    },
+    "Tab in domain modal": {
+      "Addresses": [
+        "Adressen"
+      ]
+    },
+    "Label in domain modal": {
+      "Domain": [
+        "Domein"
+      ],
+      "Verify": [
+        "Verifiëren"
+      ],
+      "Addresses": [
+        "Adressen"
+      ]
+    },
+    "Domain label": {
+      "Verified": [
+        "Geverifieerd"
+      ]
+    },
+    "Badge for domain": {
+      "Missing keys": [
+        "Ontbrekende sleutels"
+      ],
+      "Enabled": [
+        "Geactiveerd"
+      ],
+      "Disabled": [
+        "Uitgeschakeld"
+      ]
+    },
+    "Title header for addresses domain table": {
+      "Address": [
+        "Adres"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "Catch-All": [
+        "Catch-all"
+      ]
+    },
+    "Success message": {
+      "Domain deleted": [
+        "Domein verwijderd"
+      ],
+      "Sessions revoked": [
+        "Sessies ingetrokken"
+      ],
+      "User deleted": [
+        "Gebruiker verwijderd"
+      ]
+    },
+    "Header for addresses table": {
+      "Domain": [
+        "Domein"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "Actions": [
+        "Acties"
+      ],
+      "Address": [
+        "Adres"
+      ],
+      "Username": [
+        "Gebruikersnaam"
+      ]
+    },
+    "Message": {
+      "Set up a custom domain email address (e.g., you@yourcompany.com). It only takes a few minutes, and our wizard will guide you through the process.": [
+        "Stel een eigen domein e-mailadres in (bijv. u@uwbedrijf.com). Het duurt slechts enkele minuten en onze wizard zal u door het proces begeleiden."
+      ],
+      "Upgrade to any paid plan to use custom domains and unlock premium features": [
+        "Upgrade naar een betaald plan om aangepaste domeinen te gebruiken en premium functies te ontgrendelen"
+      ],
+      "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to use a catch-all address and unlock premium features": [
+        "Upgrade naar een ${ PLAN_NAMES[PLANS.VISIONARY] } of ${ PLAN_NAMES[PLANS.PROFESSIONAL] } abonnement om een algemeen adres te gebruiken en premium functies te ontgrendelen"
+      ],
+      "Are you sure you want to disable two-factor authentication?": [
+        "Weet u zeker dat u tweestapsverificatie wil uitschakelen?"
+      ]
+    },
     "Onboarding Proton": {
       "This is what people will see when you send them an email, invite them to an event, or share a file with them.": [
         "Dit is wat mensen zien wanneer u hen een e-mail stuurt, uitnodigt voor een afspraak, of een bestand deelt."
@@ -5955,9 +6101,210 @@
         "Configureer uw organisatie, koppel uw domeinnaam, en maak accounts aan om ervoor te zorgen dat alle leden van uw organisatie beveiligd zijn."
       ]
     },
-    "Autoresponse": {
-      "I'm out of the office with limited access to my email.": [
-        "Ik ben afwezig en heb beperkte toegang tot mijn e-mail."
+    "Step in filter modal": {
+      "Name": [
+        "Naam"
+      ],
+      "Conditions": [
+        "Voorwaarden"
+      ],
+      "Actions": [
+        "Acties"
+      ],
+      "Preview": [
+        "Voorbeeld"
+      ],
+      "Sieve editor": [
+        "Sieve-editor"
+      ]
+    },
+    "Option group": {
+      "Custom folders": [
+        "Aangepaste mappen"
+      ],
+      "Move to...": [
+        "Verplaats naar..."
+      ],
+      "Default folders": [
+        "Standaard mappen"
+      ]
+    },
+    "Filter preview": {
+      "read": [
+        "gelezen"
+      ],
+      "starred": [
+        "Met ster"
+      ]
+    },
+    "Filter notification": {
+      "Filter ${ Filter.Name } updated": [
+        "Filter ${ Filter.Name } bijgewerkt"
+      ],
+      "${ Label.Name } updated": [
+        "${ Label.Name } bijgewerkt"
+      ]
+    },
+    "Filter modal type": {
+      "Select…": [
+        "Selecteren…"
+      ],
+      "The subject": [
+        "Het onderwerp"
+      ],
+      "The sender": [
+        "De afzender"
+      ],
+      "The recipient": [
+        "De ontvanger"
+      ],
+      "The attachment": [
+        "De bijlage"
+      ]
+    },
+    "Condition for custom filter": {
+      "contains": [
+        "bevat"
+      ],
+      "is exactly": [
+        "is precies"
+      ],
+      "begins with": [
+        "begint met"
+      ],
+      "ends with": [
+        "eindigt op"
+      ],
+      "matches": [
+        "komt overeen"
+      ],
+      "does not contain": [
+        "bevat niet"
+      ],
+      "is not": [
+        "is niet"
+      ],
+      "does not begin with": [
+        "begint niet met"
+      ],
+      "does not end with": [
+        "eindigt niet op"
+      ],
+      "does not match": [
+        "komt niet overeen"
+      ]
+    },
+    "Filter modal operators": {
+      "All conditions must be fulfilled (AND)": [
+        "Aan alle voorwaarden moet worden voldaan (AND)"
+      ],
+      "One condition must be fulfilled (OR)": [
+        "Aan één voorwaarde moet worden voldaan (OR)"
+      ]
+    },
+    "Filter Actions": {
+      "Select a folder": [
+        "Kies een map"
+      ],
+      "Archive": [
+        "Archief"
+      ],
+      "Inbox": [
+        "Inbox"
+      ],
+      "Spam": [
+        "Spam"
+      ],
+      "Trash": [
+        "Prullenbak"
+      ]
+    },
+    "Success notification": {
+      "Status updated": [
+        "Status bijgewerkt"
+      ],
+      "Filter removed": [
+        "Filter verwijderd"
+      ],
+      "${ label.Name } removed": [
+        "${ label.Name } verwijderd"
+      ],
+      "Address deleted": [
+        "Adres verwijderd"
+      ],
+      "Address enabled": [
+        "Adres ingeschakeld"
+      ],
+      "Address disabled": [
+        "Adres uitgeschakeld"
+      ]
+    },
+    "Settings/filters": {
+      "Filters": [
+        "Filters"
+      ]
+    },
+    "Settings/filters - table": {
+      "Order": [
+        "Volgorde"
+      ],
+      "Name": [
+        "Naam"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "Action": [
+        "Actie"
+      ]
+    },
+    "FilterSettings": {
+      "Add a custom filter to automatically perform certain actions, like labeling or archiving messages.": [
+        "Voeg een aangepast filter toe om automatisch bepaalde acties uit te voeren, zoals het labelen of archiveren van berichten."
+      ],
+      "Apply sender-specific spam rules. Messages from addresses or domains on the Allow List always go to your Inbox while messages from addresses or domains on the Block List always go to Spam. Marking a message as spam adds its address to the Block List. Marking a message as not spam adds it to the Allow List.": [
+        "Pas afzender-specifieke spamregels toe. Berichten uit adressen of domeinen in de Toegestane Lijst gaan altijd naar uw Inbox terwijl berichten van adressen of domeinen in de bloklijst altijd naar Spam gaan. Een bericht als Spam markeren voegt zijn adres toe aan de bloklijst. Een bericht niet als Spam markeren voegt het toe aan de Toegestane Lijst."
+      ],
+      "Search in Allow List and Block List": [
+        "Zoeken in Toestane Lijst en Bloklijst"
+      ]
+    },
+    "Spam notification": {
+      "${ domain } updated": [
+        "${ domain } bijgewerkt"
+      ],
+      "${ domain } added": [
+        "${ domain } toegevoegd"
+      ],
+      "${ email } updated": [
+        "${ email } bijgewerkt"
+      ],
+      "${ email } added": [
+        "${ email } toegevoegd"
+      ]
+    },
+    "Spam filter moved to blacklist": {
+      "${ Domain } moved to Block List": [
+        "${ Domain } verplaatst naar Bloklijst"
+      ],
+      "${ Email } moved to Block List": [
+        "${ Email } verplaatst naar Bloklijst"
+      ]
+    },
+    "Spam filter moved to whitelist": {
+      "${ Domain } moved to Allow List": [
+        "${ Domain } verplaatst naar Toegestane Lijst"
+      ],
+      "${ Email } moved to Allow List": [
+        "${ Email } verplaatst naar Toegestane Lijst"
+      ]
+    },
+    "Moved to black/whitelist": {
+      "${ Domain } removed": [
+        "${ Domain } verwijderd"
+      ],
+      "${ Email } removed": [
+        "${ Email } verwijderd"
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -6063,6 +6410,70 @@
         "Schermafbeelding(en) toevoegen"
       ]
     },
+    "New Label form": {
+      "Color": [
+        "Kleur"
+      ],
+      "Folder name": [
+        "Mapnaam"
+      ],
+      "Label name": [
+        "Labelnaam"
+      ]
+    },
+    "label/folder notification": {
+      "${ Label.Name } created": [
+        "${ Label.Name } aangemaakt"
+      ],
+      "${ label.Name } updated": [
+        "${ label.Name } bijgewerkt"
+      ],
+      "Preference saved": [
+        "Voorkeur opgeslagen"
+      ]
+    },
+    "Label/folder modal": {
+      "Create folder": [
+        "Map maken"
+      ],
+      "Create label": [
+        "Label maken"
+      ],
+      "Edit folder": [
+        "Map bewerken"
+      ],
+      "Edit label": [
+        "Label bewerken"
+      ]
+    },
+    "Success message after sorting folders": {
+      "Folders sorted": [
+        "Mappen gesorteerd"
+      ]
+    },
+    "Info - folder colouring feature": {
+      "When enabled, sub-folders inherit the color of the parent folder.": [
+        "Indien ingeschakeld, nemen submappen de kleur van de bovenliggende map over."
+      ]
+    },
+    "Settings/labels": {
+      "Labels/Folders": [
+        "Labels/mappen"
+      ]
+    },
+    "Settings/labels - table": {
+      "Labels": [
+        "Labels"
+      ],
+      "Actions": [
+        "Acties"
+      ]
+    },
+    "Success message after sorting labels": {
+      "Labels sorted": [
+        "Labels gesorteerd"
+      ]
+    },
     "Apps dropdown": {
       "Proton applications": [
         "Proton-applicaties"
@@ -6072,127 +6483,6 @@
       ],
       "Go to ${ vpnName }": [
         "Ga naar ${ vpnName }"
-      ]
-    },
-    "Select files": {
-      "Upload additional private keys": [
-        ""
-      ],
-      "Browse": [
-        ""
-      ],
-      "Upload": [
-        "Uploaden"
-      ]
-    },
-    "info": {
-      "Key ${ fingerprint } has already been uploaded": [
-        ""
-      ],
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        ""
-      ],
-      "(beta)": [
-        "(bèta)"
-      ]
-    },
-    "Keys actions": {
-      "Export": [
-        "Exporteren"
-      ],
-      "Export private key": [
-        "Privésleutel exporteren"
-      ],
-      "Make primary": [
-        "Primair"
-      ],
-      "Mark obsolete": [
-        "Markeren als uitgelekt"
-      ],
-      "Disables encryption with this key": [
-        "Schakelt het versleutelen met deze sleutel uit"
-      ],
-      "Mark not obsolete": [
-        "Markeren als"
-      ],
-      "Enable encryption with this key": [
-        "Desktopmeldingen aanzetten"
-      ],
-      "Mark compromised": [
-        "Markeren als"
-      ],
-      "Disables signature verification and encryption with this key": [
-        "Schakelt het controleren van digitale handtekeningen en het versleutelen met deze sleutel uit"
-      ],
-      "Mark not compromised": [
-        "Markeren als"
-      ],
-      "Enable signature verification and encryption with this key": [
-        "Schakel het controleren van digitale handtekeningen en het versleutelen met deze sleutel in"
-      ],
-      "Delete": [
-        "Verwijderen"
-      ]
-    },
-    "Key state badge": {
-      "Primary": [
-        "Primair"
-      ],
-      "Active": [
-        "Actief"
-      ],
-      "Inactive": [
-        "Inactief"
-      ],
-      "Compromised": [
-        "Uitgelekt"
-      ],
-      "Obsolete": [
-        "Verouderd"
-      ],
-      "Disabled": [
-        "Uitgeschakeld"
-      ]
-    },
-    "Title header for keys table": {
-      "Fingerprint": [
-        "Vingerafdruk"
-      ],
-      "Key type": [
-        "Sleuteltype"
-      ],
-      "Status": [
-        "Status"
-      ],
-      "Actions": [
-        "Acties"
-      ]
-    },
-    "Confirm": {
-      "Are you sure you want to permanently delete this key?": [
-        "Weet u zeker dat u dit concept permanent wil verwijderen?"
-      ],
-      "Do you want to export your key?": [
-        "Wilt u de volgende openbare sleutel vertrouwen?"
-      ],
-      "Are you sure you want to delete this key without backing it up?": [
-        "Weet u zeker dat u deze sleutel wil verwijderen zonder eerst een back-up te maken?"
-      ]
-    },
-    "alert": {
-      "The key for your address is now being deleted.": [
-        "De sleutel van uw adres wordt nu verwijderd,"
-      ],
-      "The encryption keys for your address are being generated. This may take several minutes and temporarily freeze your browser.": [
-        "De verleutelingssleutels van uw e-mailadres worden aangemaakt. Dit kan enkele minuten duren en uw browser kan kort bevriezen."
-      ]
-    },
-    "encryption": {
-      "State of the art": [
-        "State-of-the-art"
-      ],
-      "Compatibility": [
-        "Compatibiliteit"
       ]
     },
     "Suffix": {
@@ -6517,8 +6807,8 @@
         "Toegang tot geblokkeerde inhoud"
       ],
       "${ freeServers } in ${ freeCountries } country": [
-        "",
-        ""
+        "${ freeServers } in ${ freeCountries } land",
+        "${ freeServers } in ${ freeCountries } landen"
       ],
       "Medium speed": [
         "Gemiddelde snelheid"
@@ -6723,6 +7013,20 @@
         "Er is een nieuwe versie van ${ appName } beschikbaar. ${ reloadButton }."
       ]
     },
+    "Option delay send seconds": {
+      "0 seconds": [
+        "0 seconden"
+      ],
+      "5 seconds": [
+        "5 seconden"
+      ],
+      "10 seconds": [
+        "10 seconden"
+      ],
+      "20 seconds": [
+        "20 seconden"
+      ]
+    },
     "Label for news": {
       "Proton company announcements": [
         "Proton bedrijfsaankondigingen"
@@ -6768,7 +7072,60 @@
         "Telefoonnummer"
       ],
       "Recovery phrase": [
-        ""
+        "Herstelzin"
+      ]
+    },
+    "Address status": {
+      "Default": [
+        "Standaard"
+      ],
+      "Active": [
+        "Actief"
+      ],
+      "Disabled": [
+        "Uitgeschakeld"
+      ],
+      "Orphan": [
+        "Wees"
+      ],
+      "Missing keys": [
+        "Ontbrekende sleutels"
+      ]
+    },
+    "Address action": {
+      "Enable": [
+        "Inschakelen"
+      ],
+      "Disable": [
+        "Uitschakelen"
+      ],
+      "Generate missing keys": [
+        "Ontbrekende sleutels genereren"
+      ],
+      "Delete": [
+        "Verwijderen"
+      ]
+    },
+    "Bridge version load failed": {
+      "Failed to find latest version": [
+        "De laatste versie kan niet worden gevonden"
+      ]
+    },
+    "OS compatibility": {
+      ".exe (64-bit)": [
+        ".exe (64-bit)"
+      ],
+      ".dmg (10.12 or later)": [
+        ".dmg (10.12 of hoger)"
+      ],
+      ".deb (for Debian/Ubuntu)": [
+        ".deb (voor Debian/Ubuntu)"
+      ],
+      ".rpm (for Fedora/openSUSE)": [
+        ".rpm (voor Fedora/openSUSE)"
+      ],
+      "PKGBUILD (for other distributions)": [
+        "PKGBUILD (voor andere distributies)"
       ]
     },
     "Badge for user sessions table": {
@@ -6931,26 +7288,6 @@
         "Bitcoin"
       ]
     },
-    "Tooltip prompt to trust keys": {
-      "When receiving an email from another ProtonMail user who does not have trusted keys in your contacts, a banner will ask if you want to enable trusted keys.": [
-        "Wanneer u een e-mail ontvangt van een andere ProtonMail gebruiker die geen vertrouwde sleutels in uw contactpersonen heeft, een banner vraagt of u vertrouwde sleutels wilt inschakelen."
-      ]
-    },
-    "Tooltip sign external messages": {
-      "Automatically sign all your outgoing messages so users can verify the authenticity of your messages. This is done in combination with the default PGP settings which can be configured below.": [
-        "Automatisch al uw uitgaande berichten ondertekenen zodat gebruikers de authenticiteit van uw berichten kunnen verifiëren. Dit wordt gedaan in combinatie met de standaard PGP-instellingen, welke hieronder kunnen worden geconfigureerd."
-      ]
-    },
-    "Tooltip automatically attach public key": {
-      "This automatically adds your public key to each message you send. Recipients can use this to verify the authenticity of your messages and send encrypted messages to you.": [
-        "Dit voert automatisch uw openbare sleutel toe aan ieder bericht dat u verzendt. Geadresseerden kunnen de authenticiteit van uw berichten verifiëren en versleutelde berichten aan u versturen."
-      ]
-    },
-    "Tooltip default pgp scheme": {
-      "Select the default PGP settings used to sign or encrypt messages with non-ProtonMail PGP users. Note that Inline PGP forces plain text messages. Learn more": [
-        "Selecteer de standaard PGP-instellingen die worden gebruikt voor het ondertekenen of versleutelen van berichten met niet-ProtonMail PGP-gebruikers. Merk op dat Inline PGP-gebruikers berichten zonder opmaak weergeven. Meer informatie"
-      ]
-    },
     "Invoice type display as badge": {
       "Other": [
         "Anders"
@@ -7015,307 +7352,15 @@
         "ProtonMail factuur"
       ]
     },
-    "Step in filter modal": {
-      "Name": [
-        "Naam"
-      ],
-      "Conditions": [
-        "Voorwaarden"
-      ],
-      "Actions": [
-        "Acties"
-      ],
-      "Preview": [
-        "Voorbeeld"
-      ],
-      "Sieve editor": [
-        "Sieve-editor"
-      ]
-    },
-    "Option group": {
-      "Custom folders": [
-        "Aangepaste mappen"
-      ],
-      "Move to...": [
-        "Verplaats naar..."
-      ],
-      "Default folders": [
-        "Standaard mappen"
-      ]
-    },
-    "Filter preview": {
-      "read": [
-        "gelezen"
-      ],
-      "starred": [
-        "Met ster"
-      ]
-    },
-    "Filter notification": {
-      "Filter ${ Filter.Name } updated": [
-        "Filter ${ Filter.Name } bijgewerkt"
-      ],
-      "${ Label.Name } updated": [
-        "${ Label.Name } bijgewerkt"
-      ]
-    },
-    "Filter modal type": {
-      "Select…": [
-        "Selecteren…"
-      ],
-      "The subject": [
-        "Het onderwerp"
-      ],
-      "The sender": [
-        "De afzender"
-      ],
-      "The recipient": [
-        "De ontvanger"
-      ],
-      "The attachment": [
-        "De bijlage"
-      ]
-    },
-    "Condition for custom filter": {
-      "contains": [
-        "bevat"
-      ],
-      "is exactly": [
-        "is precies"
-      ],
-      "begins with": [
-        "begint met"
-      ],
-      "ends with": [
-        "eindigt op"
-      ],
-      "matches": [
-        "komt overeen"
-      ],
-      "does not contain": [
-        "bevat niet"
-      ],
-      "is not": [
-        "is niet"
-      ],
-      "does not begin with": [
-        "begint niet met"
-      ],
-      "does not end with": [
-        "eindigt niet op"
-      ],
-      "does not match": [
-        "komt niet overeen"
-      ]
-    },
-    "Filter modal operators": {
-      "All conditions must be fulfilled (AND)": [
-        "Aan alle voorwaarden moet worden voldaan (AND)"
-      ],
-      "One condition must be fulfilled (OR)": [
-        "Aan één voorwaarde moet worden voldaan (OR)"
-      ]
-    },
-    "Filter Actions": {
-      "Select a folder": [
-        "Kies een map"
-      ],
-      "Archive": [
-        "Archief"
-      ],
-      "Inbox": [
-        "Inbox"
-      ],
-      "Spam": [
-        "Spam"
-      ],
-      "Trash": [
-        "Prullenbak"
-      ]
-    },
-    "Success notification": {
-      "Status updated": [
-        "Status bijgewerkt"
-      ],
-      "Filter removed": [
-        "Filter verwijderd"
-      ],
-      "${ label.Name } removed": [
-        "${ label.Name } verwijderd"
-      ],
-      "Address deleted": [
-        "Adres verwijderd"
-      ],
-      "Address enabled": [
-        "Adres ingeschakeld"
-      ],
-      "Address disabled": [
-        "Adres uitgeschakeld"
-      ]
-    },
-    "Settings/filters": {
-      "Filters": [
-        "Filters"
-      ]
-    },
-    "Settings/filters - table": {
-      "Order": [
-        "Volgorde"
-      ],
-      "Name": [
-        "Naam"
-      ],
-      "Status": [
-        "Status"
-      ],
-      "Action": [
-        "Actie"
-      ]
-    },
-    "FilterSettings": {
-      "Add a custom filter to automatically perform certain actions, like labeling or archiving messages.": [
-        "Voeg een aangepast filter toe om automatisch bepaalde acties uit te voeren, zoals het labelen of archiveren van berichten."
-      ],
-      "Apply sender-specific spam rules. Messages from addresses or domains on the Allow List always go to your Inbox while messages from addresses or domains on the Block List always go to Spam. Marking a message as spam adds its address to the Block List. Marking a message as not spam adds it to the Allow List.": [
-        "Pas afzender-specifieke spamregels toe. Berichten uit adressen of domeinen in de Toegestane Lijst gaan altijd naar uw Inbox terwijl berichten van adressen of domeinen in de bloklijst altijd naar Spam gaan. Een bericht als Spam markeren voegt zijn adres toe aan de bloklijst. Een bericht niet als Spam markeren voegt het toe aan de Toegestane Lijst."
-      ],
-      "Search in Allow List and Block List": [
-        "Zoeken in Toestane Lijst en Bloklijst"
-      ]
-    },
-    "Spam notification": {
-      "${ domain } updated": [
-        "${ domain } bijgewerkt"
-      ],
-      "${ domain } added": [
-        "${ domain } toegevoegd"
-      ],
-      "${ email } updated": [
-        "${ email } bijgewerkt"
-      ],
-      "${ email } added": [
-        "${ email } toegevoegd"
-      ]
-    },
-    "Spam filter moved to blacklist": {
-      "${ Domain } moved to Block List": [
-        "${ Domain } verplaatst naar Bloklijst"
-      ],
-      "${ Email } moved to Block List": [
-        "${ Email } verplaatst naar Bloklijst"
-      ]
-    },
-    "Spam filter moved to whitelist": {
-      "${ Domain } moved to Allow List": [
-        "${ Domain } verplaatst naar Toegestane Lijst"
-      ],
-      "${ Email } moved to Allow List": [
-        "${ Email } verplaatst naar Toegestane Lijst"
-      ]
-    },
-    "Moved to black/whitelist": {
-      "${ Domain } removed": [
-        "${ Domain } verwijderd"
-      ],
-      "${ Email } removed": [
-        "${ Email } verwijderd"
-      ]
-    },
-    "Delinquent modal title": {
-      "Overdue invoice": [
-        "Onbetaalde factuur"
-      ]
-    },
-    "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
-      "Email": [
-        "E-mail"
-      ],
-      "SMS": [
-        "SMS"
-      ],
-      "Manual": [
-        "Handmatig"
-      ],
-      "No verification method available": [
-        "Geen verificatiemethode beschikbaar"
-      ]
-    },
-    "New Label form": {
-      "Color": [
-        "Kleur"
-      ],
-      "Folder name": [
-        "Mapnaam"
-      ],
-      "Label name": [
-        "Labelnaam"
-      ]
-    },
-    "label/folder notification": {
-      "${ Label.Name } created": [
-        "${ Label.Name } aangemaakt"
-      ],
-      "${ label.Name } updated": [
-        "${ label.Name } bijgewerkt"
-      ],
-      "Preference saved": [
-        "Voorkeur opgeslagen"
-      ]
-    },
-    "Label/folder modal": {
-      "Create folder": [
-        "Map maken"
-      ],
-      "Create label": [
-        "Label maken"
-      ],
-      "Edit folder": [
-        "Map bewerken"
-      ],
-      "Edit label": [
-        "Label bewerken"
-      ]
-    },
-    "Success message after sorting folders": {
-      "Folders sorted": [
-        "Mappen gesorteerd"
-      ]
-    },
-    "Info - folder colouring feature": {
-      "When enabled, sub-folders inherit the color of the parent folder.": [
-        "Indien ingeschakeld, nemen submappen de kleur van de bovenliggende map over."
-      ]
-    },
-    "Settings/labels": {
-      "Labels/Folders": [
-        "Labels/mappen"
-      ]
-    },
-    "Settings/labels - table": {
-      "Labels": [
-        "Labels"
-      ],
-      "Actions": [
-        "Acties"
-      ]
-    },
-    "Success message after sorting labels": {
-      "Labels sorted": [
-        "Labels gesorteerd"
-      ]
-    },
     "Restore administrator panel": {
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "Als gevolg van het wijzigen van een wachtwoord zijn uw beheerdersbevoegdheden beperkt. De volgende acties zijn niet langer toegestaan:"
       ],
       "Creating new users": [
-        ""
+        "Aanmaken van nieuwe gebruikers"
       ],
       "Reading emails of non-private users": [
-        ""
+        "Lezen van e-mails van niet-particuliere gebruikers"
       ],
       "Changing organization password": [
         "Organisatiewachtwoord wijzigen"
@@ -7387,147 +7432,26 @@
         "privé"
       ]
     },
-    "Address status": {
-      "Default": [
-        "Standaard"
-      ],
-      "Active": [
-        "Actief"
-      ],
-      "Disabled": [
-        "Uitgeschakeld"
-      ],
-      "Orphan": [
-        "Wees"
-      ],
-      "Missing keys": [
-        "Ontbrekende sleutels"
+    "Delinquent modal title": {
+      "Overdue invoice": [
+        "Onbetaalde factuur"
       ]
     },
-    "Address action": {
-      "Enable": [
-        "Inschakelen"
+    "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
       ],
-      "Disable": [
-        "Uitschakelen"
+      "Email": [
+        "E-mail"
       ],
-      "Generate missing keys": [
-        "Ontbrekende sleutels genereren"
+      "SMS": [
+        "SMS"
       ],
-      "Delete": [
-        "Verwijderen"
-      ]
-    },
-    "Option delay send seconds": {
-      "0 seconds": [
-        "0 seconden"
+      "Manual": [
+        "Handmatig"
       ],
-      "5 seconds": [
-        "5 seconden"
-      ],
-      "10 seconds": [
-        "10 seconden"
-      ],
-      "20 seconds": [
-        "20 seconden"
-      ]
-    },
-    "Bridge version load failed": {
-      "Failed to find latest version": [
-        "De laatste versie kan niet worden gevonden"
-      ]
-    },
-    "OS compatibility": {
-      ".exe (64-bit)": [
-        ".exe (64-bit)"
-      ],
-      ".dmg (10.12 or later)": [
-        ".dmg (10.12 of hoger)"
-      ],
-      ".deb (for Debian/Ubuntu)": [
-        ".deb (voor Debian/Ubuntu)"
-      ],
-      ".rpm (for Fedora/openSUSE)": [
-        ".rpm (voor Fedora/openSUSE)"
-      ],
-      "PKGBUILD (for other distributions)": [
-        "PKGBUILD (voor andere distributies)"
-      ]
-    },
-    "Import contact. Contact identifier": {
-      "unknown": [
-        "onbekend"
-      ]
-    },
-    "Error importing contact": {
-      "vCard versions < 3.0 not supported": [
-        "vCard-versies < 3.0 niet ondersteund"
-      ],
-      "Encryption failed": [
-        "Versleutelen is mislukt"
-      ]
-    },
-    "Error importing calendar": {
-      "An unexpected error occurred. Import must be restarted.": [
-        "Er is een onverwachte fout opgetreden. Importeren moet opnieuw gestart worden."
-      ],
-      "An error occurred uploading your file. No file has been selected.": [
-        "Fout opgetreden tijdens het uploaden van uw bestand. Er is geen bestand geselecteerd."
-      ],
-      "An error occurred uploading your file ${ formattedFilename }. Only ICS file formats are allowed.": [
-        "Er is een fout opgetreden bij het uploaden van uw bestand ${ formattedFilename }. Alleen ICS-bestandsindelingen zijn toegestaan."
-      ],
-      "Your file ${ formattedFilename } is empty.": [
-        "Uw bestand ${ formattedFilename } is leeg."
-      ],
-      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
-        "Er is een fout opgetreden bij het uploaden van uw bestand ${ formattedFilename }. Maximale bestandsgrootte is ${ MAX_IMPORT_FILE_SIZE_STRING }."
-      ],
-      "Your file ${ formattedFilename } is not a calendar.": [
-        "Uw bestand ${ formattedFilename } is geen agenda."
-      ],
-      "${ CALENDAR_APP_NAME } only supports importing calendars with iCal version 2.0.": [
-        "${ CALENDAR_APP_NAME } ondersteunt alleen het importeren van agenda's met iCal versie 2.0."
-      ],
-      "Your file ${ formattedFilename } is an invitation and cannot be imported.": [
-        "Uw bestand ${ formattedFilename } is een uitnodiging en kan niet worden geïmporteerd."
-      ],
-      "Your file ${ formattedFilename } has no events to be imported.": [
-        "Uw bestand ${ formattedFilename } heeft geen afspraken om te importeren."
-      ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } events.": [
-        "Uw bestand ${ formattedFilename } bevat meer dan ${ MAX_IMPORT_EVENTS_STRING } afspraken."
-      ],
-      "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "Er is een fout opgetreden bij het lezen van uw bestand ${ formattedFilename }. Bestand heeft niet de juiste indeling."
-      ]
-    },
-    "Error importing contacts": {
-      "An error occurred uploading your file. No file has been selected.": [
-        "Fout opgetreden tijdens het uploaden van uw bestand. Er is geen bestand geselecteerd."
-      ],
-      "An error occurred uploading your file ${ formattedFilename }. No .csv or .vcf file selected": [
-        "Er is een fout opgetreden tijdens het uploaden van uw bestand ${ formattedFilename }. Geen .csv of .vcf bestand geselecteerd"
-      ],
-      "Your file ${ formattedFilename } is empty.": [
-        "Uw bestand ${ formattedFilename } is leeg."
-      ],
-      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
-        "Er is een fout opgetreden bij het uploaden van uw bestand ${ formattedFilename }. Maximale bestandsgrootte is ${ MAX_IMPORT_FILE_SIZE_STRING }."
-      ],
-      "Your file ${ formattedFilename } has no contacts to be imported.": [
-        "Uw bestand ${ formattedFilename } heeft geen contactpersonen om te importeren."
-      ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
-        "Uw bestand ${ formattedFilename } bevat meer dan ${ MAX_IMPORT_CONTACTS_STRING } contacten."
-      ],
-      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "Er is een fout opgetreden tijdens het lezen van uw bestand ${ formattedFilename }. Bestand heeft niet de juiste indeling."
-      ]
-    },
-    "Default display name vcard": {
-      "Unknown": [
-        "Onbekend"
+      "No verification method available": [
+        "Geen verificatiemethode beschikbaar"
       ]
     },
     "Contact field label": {
@@ -7662,6 +7586,82 @@
       ],
       "GB": [
         "GB"
+      ]
+    },
+    "Import contact. Contact identifier": {
+      "unknown": [
+        "onbekend"
+      ]
+    },
+    "Error importing contact": {
+      "vCard versions < 3.0 not supported": [
+        "vCard-versies < 3.0 niet ondersteund"
+      ],
+      "Encryption failed": [
+        "Versleutelen is mislukt"
+      ]
+    },
+    "Error importing calendar": {
+      "An unexpected error occurred. Import must be restarted.": [
+        "Er is een onverwachte fout opgetreden. Importeren moet opnieuw gestart worden."
+      ],
+      "An error occurred uploading your file. No file has been selected.": [
+        "Fout opgetreden tijdens het uploaden van uw bestand. Er is geen bestand geselecteerd."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Only ICS file formats are allowed.": [
+        "Er is een fout opgetreden bij het uploaden van uw bestand ${ formattedFilename }. Alleen ICS-bestandsindelingen zijn toegestaan."
+      ],
+      "Your file ${ formattedFilename } is empty.": [
+        "Uw bestand ${ formattedFilename } is leeg."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
+        "Er is een fout opgetreden bij het uploaden van uw bestand ${ formattedFilename }. Maximale bestandsgrootte is ${ MAX_IMPORT_FILE_SIZE_STRING }."
+      ],
+      "Your file ${ formattedFilename } is not a calendar.": [
+        "Uw bestand ${ formattedFilename } is geen agenda."
+      ],
+      "${ CALENDAR_APP_NAME } only supports importing calendars with iCal version 2.0.": [
+        "${ CALENDAR_APP_NAME } ondersteunt alleen het importeren van agenda's met iCal versie 2.0."
+      ],
+      "Your file ${ formattedFilename } is an invitation and cannot be imported.": [
+        "Uw bestand ${ formattedFilename } is een uitnodiging en kan niet worden geïmporteerd."
+      ],
+      "Your file ${ formattedFilename } has no events to be imported.": [
+        "Uw bestand ${ formattedFilename } heeft geen afspraken om te importeren."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } events.": [
+        "Uw bestand ${ formattedFilename } bevat meer dan ${ MAX_IMPORT_EVENTS_STRING } afspraken."
+      ],
+      "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
+        "Er is een fout opgetreden bij het lezen van uw bestand ${ formattedFilename }. Bestand heeft niet de juiste indeling."
+      ]
+    },
+    "Error importing contacts": {
+      "An error occurred uploading your file. No file has been selected.": [
+        "Fout opgetreden tijdens het uploaden van uw bestand. Er is geen bestand geselecteerd."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. No .csv or .vcf file selected": [
+        "Er is een fout opgetreden tijdens het uploaden van uw bestand ${ formattedFilename }. Geen .csv of .vcf bestand geselecteerd"
+      ],
+      "Your file ${ formattedFilename } is empty.": [
+        "Uw bestand ${ formattedFilename } is leeg."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
+        "Er is een fout opgetreden bij het uploaden van uw bestand ${ formattedFilename }. Maximale bestandsgrootte is ${ MAX_IMPORT_FILE_SIZE_STRING }."
+      ],
+      "Your file ${ formattedFilename } has no contacts to be imported.": [
+        "Uw bestand ${ formattedFilename } heeft geen contactpersonen om te importeren."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
+        "Uw bestand ${ formattedFilename } bevat meer dan ${ MAX_IMPORT_CONTACTS_STRING } contacten."
+      ],
+      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
+        "Er is een fout opgetreden tijdens het lezen van uw bestand ${ formattedFilename }. Bestand heeft niet de juiste indeling."
+      ]
+    },
+    "Default display name vcard": {
+      "Unknown": [
+        "Onbekend"
       ]
     },
     "Participant name": {
@@ -8147,13 +8147,19 @@
     },
     "Attached ics file error": {
       "Invalid ICS file": [
-        ""
+        "Ongeldig ICS-bestand"
       ],
       "Invalid event": [
         "Ongeldige gebeurtenis"
       ],
       "Unsupported event": [
         "Niet-ondersteunde gebeurtenis"
+      ],
+      "Empty ICS file": [
+        "Leeg ICS-bestand"
+      ],
+      "Unsupported calendar component": [
+        "Niet-ondersteunde agendacomponent"
       ],
       "Invalid method": [
         "Ongeldige methode"
@@ -8173,10 +8179,10 @@
         "Niet-ondersteunde uitnodiging"
       ],
       "Attached ICS file could not be parsed": [
-        ""
+        "Bijgevoegd ICS-bestand kon niet worden verwerkt"
       ],
       "Attached ICS file could not be decrypted": [
-        ""
+        "Bijgevoegd ICS-bestand kon niet worden gedecodeerd"
       ],
       "We could not retrieve the event from your calendar": [
         "We konden de afspraak niet ophalen uit uw agenda"
@@ -8205,16 +8211,16 @@
         "Er is meer dan 12 uur verstreken sinds de laatste update"
       ],
       "Calendar link is wrong": [
-        ""
+        "Agenda link is verkeerd"
       ],
       "Calendar is too big": [
         "De agenda is te groot"
       ],
       "Calendar link is not accessible": [
-        ""
+        "Agneda link is niet toegankelijk"
       ],
       "Calendar link is temporarily unaccessible": [
-        ""
+        "Agenda link is tijdelijk onbereikbaar"
       ],
       "Failed to sync calendar": [
         "Synchronisatie van de agenda is mislukt"
@@ -8429,6 +8435,9 @@
       "VPN apps": [
         "VPN-apps"
       ],
+      "Calendars": [
+        "Agenda's"
+      ],
       "Users & addresses": [
         "Gebruikers & adressen"
       ],
@@ -8440,9 +8449,6 @@
       ],
       "Multi-user support": [
         "Ondersteuning voor meerdere gebruikers"
-      ],
-      "Calendars": [
-        "Agenda's"
       ],
       "Account": [
         "Account"
@@ -8462,6 +8468,20 @@
         "Upgrade naar ${ protonVpnName } ${ PLAN_NAMES[PLANS.VPNPLUS] } om met ${ plusVpnConnections } apparaten tegelijkertijd te kunnen verbinden"
       ]
     },
+    "Navigation": {
+      "Back to Mail": [
+        "Terug naar mail"
+      ],
+      "Back to Calendar": [
+        "Terug naar agenda"
+      ],
+      "Back to Contacts": [
+        "Terug naar Contacten"
+      ],
+      "Back to Drive": [
+        "Terug naar Drive"
+      ]
+    },
     "Email Unsubscribe Categories": {
       "${ allCategoriesExceptTheLastOne } and ${ lastCategory }": [
         "${ allCategoriesExceptTheLastOne } en ${ lastCategory }"
@@ -8476,20 +8496,6 @@
       ],
       "Which emails do you want to receive from Proton?": [
         "Welke e-mails wilt u ontvangen van Proton?"
-      ]
-    },
-    "Navigation": {
-      "Back to Mail": [
-        ""
-      ],
-      "Back to Calendar": [
-        "Terug naar agenda"
-      ],
-      "Back to Contacts": [
-        "Terug naar Contacten"
-      ],
-      "Back to Drive": [
-        "Terug naar Drive"
       ]
     },
     "Signup label": {
@@ -8514,7 +8520,7 @@
         "Telefoonnummer"
       ],
       "Recovery phrase": [
-        ""
+        "Herstelzin"
       ]
     },
     "blackfriday Info": {

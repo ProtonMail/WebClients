@@ -59,12 +59,6 @@
       "Request timed out.": [
         "A solicitação expirou."
       ],
-      "Signature verification failed": [
-        "Falha na verificação da assinatura"
-      ],
-      "Could not find address ${ email }.": [
-        "Não foi possível encontrar o endereço ${ email }."
-      ],
       "Missing signature": [
         "Assinatura ausente"
       ],
@@ -79,6 +73,12 @@
       ],
       "The key properties for ${ emailAddress } could not be extracted": [
         "As propriedades da chave do ${ emailAddress } não puderam ser extraídas"
+      ],
+      "Signature verification failed": [
+        "Falha na verificação da assinatura"
+      ],
+      "Could not find address ${ email }.": [
+        "Não foi possível encontrar o endereço ${ email }."
       ],
       "Address primary private key not found": [
         "Chave privada primária do endereço não encontrada"
@@ -101,17 +101,17 @@
       "Authentication error.": [
         "Erro de autenticação."
       ],
-      "Email address invalid": [
-        "Endereço de e-mail inválido"
-      ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "O navegador que você está usando não permite que o pagamento seja completamente autorizado. Por favor, use um navegador diferente ou inicie a sessão através de um computador."
-      ],
       "The composer failed to load.": [
         "O compositor falhou ao carregar."
       ],
       "Please refresh the page.": [
         "Por favor atualize a página."
+      ],
+      "Email address invalid": [
+        "Endereço de e-mail inválido"
+      ],
+      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
+        "O navegador que você está usando não permite que o pagamento seja completamente autorizado. Por favor, use um navegador diferente ou inicie a sessão através de um computador."
       ],
       "Incorrect mailbox password. Please try again": [
         "E-mail ou senha incorreta. Por favor, tente novamente"
@@ -371,8 +371,8 @@
       "Your emails cannot be decrypted due to a recent password reset. If you remember your previous password, you can ${ reActivateKeyLink } in order to access your messages. ${ learnMoreLink }": [
         "Suas mensagens não podem ser descriptografadas devido a uma recente redefinição de senha. Caso lembre-se de sua senha anterior, você pode ${ reActivateKeyLink } para acessar suas mensagens. ${ learnMoreLink }"
       ],
-      "Your emails cannot be decrypted due to a recent password reset. ${ learnMoreLink }": [
-        "Suas mensagens não podem ser descriptografadas devido a uma recente redefinição de senha. ${ learnMoreLink }"
+      "Your emails cannot be decrypted. This may be due to a password reset. ${ learnMoreLink }": [
+        "Suas mensagens não podem ser descriptografadas. Isso pode ser devido a uma recente redefinição de senha. ${ learnMoreLink }"
       ],
       "Too many active filters. Please upgrade to a paid plan to activate more filters": [
         "Muitos filtros ativos. Por favor, atualize para um plano pago para ativar mais filtros"
@@ -549,28 +549,6 @@
       "No results found": [
         "Nenhum resultado encontrado"
       ],
-      "Week": [
-        "Semana"
-      ],
-      "(${ memberCount } member)": [
-        "(${ memberCount } membro)",
-        "(${ memberCount } membros)"
-      ],
-      "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Este link pode ser um ataque homográfico e não pode ser aberto pelos navegadores Internet Explorer e Microsoft Edge. Se você tiver certeza de que este link é legítimo, use um navegador diferente para abri-lo."
-      ],
-      "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
-        "Este link pode ser um ataque homográfico. Por favor, verifique se este é o link que você deseja visitar, caso contrário, não abra."
-      ],
-      "You are about to open another browser tab and visit:": [
-        "Você está prestes a abrir outra guia do navegador e visitar:"
-      ],
-      "Learn more": [
-        "Saiba mais"
-      ],
-      "Loading": [
-        "Carregando"
-      ],
       "Insert image": [
         "Inserir imagem"
       ],
@@ -646,6 +624,28 @@
       "Plain text": [
         "Texto sem formatação"
       ],
+      "Week": [
+        "Semana"
+      ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } membro)",
+        "(${ memberCount } membros)"
+      ],
+      "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
+        "Este link pode ser um ataque homográfico e não pode ser aberto pelos navegadores Internet Explorer e Microsoft Edge. Se você tiver certeza de que este link é legítimo, use um navegador diferente para abri-lo."
+      ],
+      "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
+        "Este link pode ser um ataque homográfico. Por favor, verifique se este é o link que você deseja visitar, caso contrário, não abra."
+      ],
+      "You are about to open another browser tab and visit:": [
+        "Você está prestes a abrir outra guia do navegador e visitar:"
+      ],
+      "Learn more": [
+        "Saiba mais"
+      ],
+      "Loading": [
+        "Carregando"
+      ],
       "Drop the file here to upload": [
         "Solte o arquivo aqui para fazer o upload"
       ],
@@ -673,12 +673,6 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Se você não encontrar o e-mail na caixa de entrada. Por favor, verifique a pasta de spam."
       ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
-        "Clique em \"Solicitar novo código\" para que um novo código seja enviado para ${ strong }. Se esse e-mail estiver incorreto, clique em \"Editar\" para corrigir isso."
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
-        "Clique em \"Solicitar novo código\" para que um novo código seja enviado para ${ strong }. Se esse número de telefone estiver incorreto, clique em \"Editar\" para corrigir isso."
-      ],
       "To fight spam and abuse, please verify you are human.": [
         "Para combater o spam e/ou abuso, verifique se você é humano."
       ],
@@ -690,6 +684,12 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Se você estiver tendo problemas para criar sua conta, solicite um convite e nós responderemos no prazo de um dia útil."
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
+        "Clique em \"Solicitar novo código\" para que um novo código seja enviado para ${ strong }. Se esse e-mail estiver incorreto, clique em \"Editar\" para corrigir isso."
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
+        "Clique em \"Solicitar novo código\" para que um novo código seja enviado para ${ strong }. Se esse número de telefone estiver incorreto, clique em \"Editar\" para corrigir isso."
       ],
       "No contacts added yet": [
         "Nenhum contato foi adicionado ainda"
@@ -1745,11 +1745,6 @@
         "Utilizando o seu dispositivo móvel, escaneie este código QR ou visite ${ link }."
       ]
     },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "Endereço de e-mail não encontrado entre as ids de usuário definidas na chave de envio (${ keyUserIds })"
-      ]
-    },
     "Default display name vcard": {
       "Unknown": [
         "Desconhecido"
@@ -1794,6 +1789,11 @@
       ],
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
         "Ocorreu um erro ao ler o arquivo ${ formattedFilename }. O arquivo não tem o formato correto."
+      ]
+    },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "Endereço de e-mail não encontrado entre as ids de usuário definidas na chave de envio (${ keyUserIds })"
       ]
     },
     "Keyboard shortcut section name": {
@@ -1972,11 +1972,11 @@
       ]
     },
     "Calendar status": {
-      "Not synced": [
-        "Não sincronizado"
-      ],
       "Syncing": [
         "Sincronizando"
+      ],
+      "Not synced": [
+        "Não sincronizado"
       ]
     },
     "Calendar subscription not synced error": {
@@ -2011,6 +2011,12 @@
       ],
       "Unsupported event": [
         "Evento não suportado"
+      ],
+      "Empty ICS file": [
+        ""
+      ],
+      "Unsupported calendar component": [
+        ""
       ],
       "Invalid method": [
         "Método inválido"
@@ -2611,38 +2617,8 @@
       "Close": [
         "Fechar"
       ],
-      "More info: ${ safeTitle }": [
-        "Mais informações: ${ safeTitle }"
-      ],
-      "Confirm": [
-        "Confirmar"
-      ],
       "Cancel": [
         "Cancelar"
-      ],
-      "Submit": [
-        "Enviar"
-      ],
-      "Close modal": [
-        "Fechar janela"
-      ],
-      "Use “${ label }” setting": [
-        "Usar “${ label }” configurações"
-      ],
-      "Remove": [
-        "Remover"
-      ],
-      "Next month": [
-        "Próximo mês"
-      ],
-      "Previous month": [
-        "Mês anterior"
-      ],
-      "Load image": [
-        "Carregar imagem"
-      ],
-      "Confirm opening of link ${ link }": [
-        "Confirmar a abertura do link ${ link }"
       ],
       "Save": [
         "Salvar"
@@ -2706,6 +2682,36 @@
       ],
       "Underline": [
         "Sublinhado"
+      ],
+      "More info: ${ safeTitle }": [
+        "Mais informações: ${ safeTitle }"
+      ],
+      "Confirm": [
+        "Confirmar"
+      ],
+      "Submit": [
+        "Enviar"
+      ],
+      "Close modal": [
+        "Fechar janela"
+      ],
+      "Use “${ label }” setting": [
+        "Usar “${ label }” configurações"
+      ],
+      "Remove": [
+        "Remover"
+      ],
+      "Next month": [
+        "Próximo mês"
+      ],
+      "Previous month": [
+        "Mês anterior"
+      ],
+      "Load image": [
+        "Carregar imagem"
+      ],
+      "Confirm opening of link ${ link }": [
+        "Confirmar a abertura do link ${ link }"
       ],
       "Go to panel ${ index }": [
         "Ir para o painel ${ index }"
@@ -3487,11 +3493,11 @@
       "Open actions dropdown": [
         "Abrir menu de ações"
       ],
-      "Link confirmation": [
-        "Confirmar redirecionamento"
-      ],
       "Expand content": [
         "Expandir conteúdo"
+      ],
+      "Link confirmation": [
+        "Confirmar redirecionamento"
       ],
       "Keyboard Shortcuts": [
         "Atalhos de teclado"
@@ -3513,9 +3519,6 @@
       ],
       "Invalid verification code": [
         "Código de verificação inválido"
-      ],
-      "Request new code": [
-        "Solicitar novo código"
       ],
       "Human verification": [
         "Verificação humana"
@@ -3992,6 +3995,138 @@
       ],
       "Welcome": [
         "Bem-vindo"
+      ]
+    },
+    "Placeholder": {
+      "Link": [
+        "Link"
+      ],
+      "Fill in the URL link and text to test your link": [
+        "Preencha o link da URL e o texto para testar o seu link"
+      ],
+      "Email address": [
+        "Endereço de e-mail"
+      ],
+      "Fill in the email address and text to test your link": [
+        "Preencha o endereço de e-mail e texto para testar seu link"
+      ],
+      "Phone number": [
+        "Número do telefone"
+      ],
+      "Fill in the phone number and text to test your link": [
+        "Preencha o número de telefone e texto para testar seu link"
+      ],
+      "Text": [
+        "Texto"
+      ],
+      "E.g., ": [
+        "Ex., "
+      ],
+      "Mailbox password": [
+        "Senha da caixa de correio"
+      ],
+      "Start typing an email address": [
+        "Comece a digitar um endereço de e-mail"
+      ],
+      "Image URL": [
+        "URL da imagem"
+      ],
+      "Search name, email or group": [
+        "Pesquisar nome, e-mail ou grupo"
+      ],
+      "Filter groups": [
+        "Filtrar grupos"
+      ],
+      "Search for name or email": [
+        "Pesquisar nome ou e-mail"
+      ],
+      "Search for group name": [
+        "Pesquisar nome do grupo"
+      ],
+      "Name": [
+        "Nome"
+      ],
+      "OS name": [
+        "Nome do SO"
+      ],
+      "OS version": [
+        "Versão do SO"
+      ],
+      "Proton username": [
+        "Nome de usuário Proton"
+      ],
+      "A way to contact you": [
+        "Uma maneira de entrar em contato com você"
+      ],
+      "Please describe the problem and include any error messages": [
+        "Por favor, descreva o problema e inclua quaisquer mensagens de erro"
+      ],
+      "Browser name": [
+        "Nome do navegador"
+      ],
+      "Browser version": [
+        "Versão do navegador"
+      ],
+      "e.g. Julia Smith": [
+        "ex. Jessica Sales"
+      ],
+      "ZIP": [
+        "CEP"
+      ],
+      "Postal code": [
+        "Código postal"
+      ],
+      "Gift code": [
+        "Código do vale-presente"
+      ],
+      "Type text or keyword": [
+        "Digite o texto ou a palavra-chave"
+      ],
+      "Subject": [
+        "Assunto"
+      ],
+      "Write your message": [
+        "Escreva sua mensagem"
+      ],
+      "Password": [
+        "Senha"
+      ],
+      "Confirm Password": [
+        "Confirme a Senha"
+      ],
+      "Hint": [
+        "Dica"
+      ],
+      "Search Messages": [
+        "Pesquisar mensagens"
+      ],
+      "Start date": [
+        "Data de início"
+      ],
+      "End date": [
+        "Data de término"
+      ],
+      "Name or email address": [
+        "Nome ou endereço de e-mail"
+      ],
+      "Search messages": [
+        "Pesquisar mensagens"
+      ],
+      "Filter folders": [
+        "Filtrar pastas"
+      ],
+      "Filter labels": [
+        "Filtrar marcadores"
+      ]
+    },
+    "Font Face Default": {
+      "Default": [
+        ""
+      ]
+    },
+    "Font Size Default": {
+      "Default": [
+        ""
       ]
     },
     "PGP key encryption warning": {
@@ -4525,128 +4660,6 @@
         "Também arquivar"
       ]
     },
-    "Placeholder": {
-      "E.g., ": [
-        "Ex., "
-      ],
-      "Link": [
-        "Link"
-      ],
-      "Fill in the URL link and text to test your link": [
-        "Preencha o link da URL e o texto para testar o seu link"
-      ],
-      "Email address": [
-        "Endereço de e-mail"
-      ],
-      "Fill in the email address and text to test your link": [
-        "Preencha o endereço de e-mail e texto para testar seu link"
-      ],
-      "Phone number": [
-        "Número do telefone"
-      ],
-      "Fill in the phone number and text to test your link": [
-        "Preencha o número de telefone e texto para testar seu link"
-      ],
-      "Text": [
-        "Texto"
-      ],
-      "Mailbox password": [
-        "Senha da caixa de correio"
-      ],
-      "Start typing an email address": [
-        "Comece a digitar um endereço de e-mail"
-      ],
-      "Image URL": [
-        "URL da imagem"
-      ],
-      "Search name, email or group": [
-        "Pesquisar nome, e-mail ou grupo"
-      ],
-      "Filter groups": [
-        "Filtrar grupos"
-      ],
-      "Search for name or email": [
-        "Pesquisar nome ou e-mail"
-      ],
-      "Search for group name": [
-        "Pesquisar nome do grupo"
-      ],
-      "Name": [
-        "Nome"
-      ],
-      "OS name": [
-        "Nome do SO"
-      ],
-      "OS version": [
-        "Versão do SO"
-      ],
-      "Proton username": [
-        "Nome de usuário Proton"
-      ],
-      "A way to contact you": [
-        "Uma maneira de entrar em contato com você"
-      ],
-      "Please describe the problem and include any error messages": [
-        "Por favor, descreva o problema e inclua quaisquer mensagens de erro"
-      ],
-      "Browser name": [
-        "Nome do navegador"
-      ],
-      "Browser version": [
-        "Versão do navegador"
-      ],
-      "e.g. Julia Smith": [
-        "ex. Jessica Sales"
-      ],
-      "ZIP": [
-        "CEP"
-      ],
-      "Postal code": [
-        "Código postal"
-      ],
-      "Gift code": [
-        "Código do vale-presente"
-      ],
-      "Type text or keyword": [
-        "Digite o texto ou a palavra-chave"
-      ],
-      "Subject": [
-        "Assunto"
-      ],
-      "Write your message": [
-        "Escreva sua mensagem"
-      ],
-      "Password": [
-        "Senha"
-      ],
-      "Confirm Password": [
-        "Confirme a Senha"
-      ],
-      "Hint": [
-        "Dica"
-      ],
-      "Search Messages": [
-        "Pesquisar mensagens"
-      ],
-      "Start date": [
-        "Data de início"
-      ],
-      "End date": [
-        "Data de término"
-      ],
-      "Name or email address": [
-        "Nome ou endereço de e-mail"
-      ],
-      "Search messages": [
-        "Pesquisar mensagens"
-      ],
-      "Filter folders": [
-        "Filtrar pastas"
-      ],
-      "Filter labels": [
-        "Filtrar marcadores"
-      ]
-    },
     "Time unit": {
       "${ hours } hour": [
         "${ hours } hora",
@@ -4680,16 +4693,6 @@
       "Found ${ items.length } suggestion, use keyboard to navigate.": [
         "Encontrada ${ items.length } sugestão, use o teclado para navegar.",
         "Encontradas ${ items.length } sugestões, use o teclado para navegar."
-      ]
-    },
-    "Font Face Default": {
-      "Default": [
-        ""
-      ]
-    },
-    "Font Size Default": {
-      "Default": [
-        ""
       ]
     },
     "Storage": {
@@ -5385,6 +5388,11 @@
         "${ totalImported }/${ totalToImport } contatos criptografados e adicionados à sua lista de contatos"
       ]
     },
+    "Select files": {
+      "Upload": [
+        "Enviar"
+      ]
+    },
     "Label to change density": {
       "Comfortable": [
         "Confortável"
@@ -5407,11 +5415,6 @@
       ],
       "Maximized": [
         "Maximizado"
-      ]
-    },
-    "Select files": {
-      "Upload": [
-        "Enviar"
       ]
     },
     "Loading info": {

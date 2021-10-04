@@ -5,161 +5,13 @@
   },
   "contexts": {
     "": {},
-    "Error": {
-      "Unknown error": [
-        "Bilinmeyen hata"
-      ],
-      "Checkout expired, please try again.": [
-        "Ödeme süresi doldu, lütfen tekrar deneyin."
-      ],
-      "Invalid code": [
-        "Geçersiz kod"
-      ],
-      "Error connecting to the Bitcoin API.": [
-        "Bitcoin API'ye bağlanırken hata oluştu."
-      ],
-      "Amount below minimum.": [
-        "En düşük değer tutarı."
-      ],
-      "Amount above the maximum.": [
-        "En yüksek değer tutarı."
-      ],
-      "The minimum amount that can be donated is ${ price }": [
-        "Bağışlanabilecek en düşük tutar ${ price }"
-      ],
-      "The minimum amount of credit that can be added is ${ _price }": [
-        "Eklenebilecek en az kredi tutarı ${ _price }"
-      ],
-      "The minimum payment we accept is ${ _price2 }": [
-        "Kabul ettiğimiz en az ödeme ${ _price2 }"
-      ],
-      "Process aborted": [
-        "İşlem iptal edildi"
-      ],
-      "Payment process cancelled": [
-        "Ödeme işlemi iptal edildi"
-      ],
-      "Payment process failed": [
-        "Ödeme işlemi başarısız oldu"
-      ],
-      "Payment process consumed": [
-        "Tüketilen ödeme işlemi"
-      ],
-      "Payment process not supported": [
-        "Ödeme işlemi desteklenmiyor"
-      ],
-      "Unknown payment token status": [
-        "Bilinmeyen ödeme belirteci durumu"
-      ],
-      "Tab closed": [
-        "Sekme kapatıldı"
-      ],
-      "Name on card required": [
-        "Kart üzerindeki isim gerekli"
-      ],
-      "Invalid expiration date": [
-        "Geçersiz son kullanma tarihi"
-      ],
-      "Invalid card number": [
-        "Geçersiz kart numarası"
-      ],
-      "Invalid ${ name } code": [
-        "Geçersiz ${ name } kodu"
-      ],
-      "Invalid postal code": [
-        "Geçersiz posta kodu"
-      ],
-      "Please generate keys before you try to change your password.": [
-        "Lütfen şifrenizi değiştirmeden önce anahtarlar oluşturun."
-      ],
-      "Please set a recovery/notification email first": [
-        "Lütfen önce bir kurtarma/bildirim e-postası ayarlayın"
-      ],
-      "Please set a recovery phone number first": [
-        "Lütfen önce bir kurtarma telefon numarası ayarlayın"
-      ],
-      "Payments are currently not available, please try again later": [
-        "Ödemeler şu anda kullanılamıyor, lütfen daha sonra tekrar deneyin"
-      ],
-      "You have no invoices.": [
-        "Faturalarınız yok."
-      ],
-      "Your account or organization currently has an overdue invoice. Please pay all unpaid invoices.": [
-        "Hesabınızın veya kuruluşunuzun şu anda gecikmiş bir faturası var. Lütfen ödenmemiş tüm faturalarınızı ödeyin."
-      ],
-      "File has no contents to preview": [
-        "Dosyanın önizlenecek içeriği yok"
-      ],
-      "Incorrect mailbox password. Please try again": [
-        "Posta kutusu şifresi yanlış. Lütfen tekrar deneyin"
-      ],
-      "Incorrect login credentials. Please try again": [
-        "Oturum açma bilgileri yanlış. Lütfen tekrar deneyin"
-      ],
-      "Can't validate email, try again later": [
-        "E-posta doğrulanamıyor, daha sonra tekrar deneyin"
-      ],
-      "Can't validate phone, try again later": [
-        "Telefon doğrulanamıyor, daha sonra tekrar deneyin"
-      ],
-      "Enter 6 digits": [
-        "6 hane girin"
-      ],
-      "Invalid verification code": [
-        "Geçersiz doğrulama kodu"
-      ],
-      "Email address invalid": [
-        "E-posta adresi geçersiz"
-      ],
-      "Please enter '${ dangerWord }'": [
-        "Lütfen girin '${ dangerWord }'"
-      ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Bir şeyler ters gitti, devam etmek için lütfen ${ refresh }. Hala bu hata mesajını görüyorsanız, lütfen ${ supportTeam } ile bağlantı kurun."
-      ],
-      "This field is required": [
-        "Bu alan gereklidir"
-      ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "Kullandığınız tarayıcı, ödemenin tam olarak onaylanmasına izin vermiyor. Lütfen farklı bir tarayıcı kullanın veya bir bilgisayar aracılığıyla giriş yapın."
-      ],
-      "This field requires a minimum of ${ minimumLength } characters.": [
-        "Bu alan en az $ { minimumLength } karakter gerektirir."
-      ],
-      "Email is not valid": [
-        "E-posta geçerli değil"
-      ],
-      "Not a valid number": [
-        "Geçerli bir numara değil"
-      ],
-      "Passwords do not match": [
-        "Parolalar eşleşmiyor"
-      ],
-      "Signature verification failed": [
-        "İmza doğrulama başarısız oldu"
-      ],
-      "Request timed out.": [
-        "İstek zaman aşımına uğradı."
-      ],
-      "Code wrong or not valid anymore": [
-        "Kod yanlış veya artık geçersiz"
-      ],
-      "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
-        "TV'nizdeki süre dolduysa, TV'nizdeki Yenile butonuna tıklayın ve kodunuzu tekrar girin."
-      ],
-      "Invalid invitation link": [
-        "Geçersiz davet bağlantısı"
-      ],
-      "Can't check username, try again later": [
-        "Kullanıcı adı kontrol edilemiyor, daha sonra tekrar deneyin"
-      ]
-    },
-    "Error notification in the bug report modal when the user upload file": {
-      "No image selected": [
-        "Resim seçilmedi"
-      ]
-    },
     "Info": {
+      "No results found": [
+        "Sonuç bulunamadı"
+      ],
+      "Loading": [
+        "Yükleniyor"
+      ],
       "Screenshot(s) attached": [
         "Ekran görüntüleri eklendi"
       ],
@@ -746,12 +598,6 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "E-postayı gelen kutunuzda bulamazsanız, lütfen spam klasörünüzü kontrol edin."
       ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
-        "Yeni bir doğrulama kodunun ${ strong } adresine gönderilmesi için \"Yeni Kod İste\" seçeneğine tıklayın. Bu e-posta adresi yanlışsa, düzeltmek için \"Düzenle\" seçeneğine tıklayın."
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
-        "Yeni bir doğrulama kodunun ${ strong } numarasına gönderilmesi için \"Yeni kod iste\" seçeneğine tıklayın. Bu telefon numarası yanlışsa düzeltmek için \"Düzenle\" seçeneğine tıklayın."
-      ],
       "To fight spam and abuse, please verify you are human.": [
         "Spam ve kötüye kullanımla mücadele etmek için lütfen insan olduğunuzu doğrulayın."
       ],
@@ -763,6 +609,12 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Hesabınızı oluşturmada sorun yaşıyorsanız, lütfen bir davetiye isteyin, bir iş günü içinde yanıt vereceğiz."
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
+        "Yeni bir doğrulama kodunun ${ strong } adresine gönderilmesi için \"Yeni Kod İste\" seçeneğine tıklayın. Bu e-posta adresi yanlışsa, düzeltmek için \"Düzenle\" seçeneğine tıklayın."
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
+        "Yeni bir doğrulama kodunun ${ strong } numarasına gönderilmesi için \"Yeni kod iste\" seçeneğine tıklayın. Bu telefon numarası yanlışsa düzeltmek için \"Düzenle\" seçeneğine tıklayın."
       ],
       "Enter your recovery email address, and we'll send you your username(s). (This is usually the email address you provided during signup.)": [
         "Kurtarma e-posta adresinizi girin, size kullanıcı adınızı(lar) gönderelim. (Bu genellikle kayıt sırasında verdiğiniz e-posta adresidir.)"
@@ -802,12 +654,6 @@
       ],
       "support team": [
         "destek ekibi"
-      ],
-      "No results found": [
-        "Sonuç bulunamadı"
-      ],
-      "Loading": [
-        "Yükleniyor"
       ],
       "Session timed out.": [
         "Oturum zaman aşımına uğradı."
@@ -879,628 +725,16 @@
         "Hesabınız oluşturuluyor"
       ]
     },
-    "Action": {
-      "Clear": [
-        "Temizle"
-      ],
-      "Add screenshot(s)": [
-        "Ekran görüntüsü ekle"
-      ],
-      "Submit": [
-        "Bildir"
-      ],
-      "Hide info": [
-        "Bilgileri gizle"
-      ],
-      "Show info": [
-        "Bilgileri göster"
-      ],
-      "Copy email to clipboard": [
-        "E-postayı panoya kopyala"
-      ],
-      "${ BRAND_NAME } introduction": [
-        "${ BRAND_NAME } tanıtımı"
-      ],
-      "Chat with us": [
-        "Bizimle canlı konuşun"
-      ],
-      "I have a question": [
-        "Bir sorum var"
-      ],
-      "Request a feature": [
-        "Bir özellik isteyin"
-      ],
-      "Report a problem": [
-        "Sorun bildir"
-      ],
-      "${ BRAND_NAME } shop": [
-        "${ BRAND_NAME } mağazası"
-      ],
-      "Switch account": [
-        "Hesap değiştir"
-      ],
-      "Sign out": [
-        "Oturumu kapat"
-      ],
-      "Get started": [
-        "Başlayalım"
-      ],
-      "Next": [
-        "İleri"
-      ],
-      "Start setup": [
-        "Kurulumu başlat"
-      ],
-      "Skip": [
-        "Atla"
-      ],
-      "Done": [
-        "Tamamlandı"
-      ],
-      "Back": [
-        "Geri"
-      ],
-      "Use ${ label } theme": [
-        "${ label } temasını kullan"
-      ],
-      "Signing out": [
-        "Çıkış yapılıyor"
-      ],
-      "Close": [
-        "Kapat"
-      ],
-      "refresh the page": [
-        "sayfayı yenile"
-      ],
-      "Remove bonuses": [
-        "Bonusları kaldır"
-      ],
-      "Select plan": [
-        "Plan seçin"
-      ],
-      "Compare all features": [
-        "Tüm özellikleri karşılaştırın"
-      ],
-      "${ boldSave } by switching to annual billing": [
-        "Yıllık faturalandırmaya geçerek ${ boldSave }"
-      ],
-      "Continue": [
-        "Devam et"
-      ],
-      "Confirm": [
-        "Onayla"
-      ],
-      "Pay": [
-        "Öde"
-      ],
-      "Apply": [
-        "Uygula"
-      ],
-      "Open ${ CALENDAR_APP_NAME } settings": [
-        "${ CALENDAR_APP_NAME } ayarlarını açın"
-      ],
-      "OK": [
-        "TAMAM"
-      ],
-      "Upgrade to Plus": [
-        "Plus'a Yükselt"
-      ],
-      "Upgrade to Professional": [
-        "Profesyonel'e Yükselt"
-      ],
-      "Activate": [
-        "Etkinleştir"
-      ],
-      "Customize subscription": [
-        "Aboneliği özelleştir"
-      ],
-      "Cancel subscription": [
-        "Aboneliği iptal et"
-      ],
-      "Remove gift code": [
-        "Hediye kodunu kaldır"
-      ],
-      "annual billing": [
-        "yıllık fatura"
-      ],
-      "Compare plans": [
-        "Planları karşılaştır"
-      ],
-      "Decrease": [
-        "Azalt"
-      ],
-      "Increase": [
-        "Arttır"
-      ],
-      "Downgrade": [
-        "Eski sürüme yükle"
-      ],
-      "Top up": [
-        "Doldur"
-      ],
-      "Add credits": [
-        "Kredi ekle"
-      ],
-      "Save": [
-        "Kaydet"
-      ],
-      "Cancel": [
-        "İptal"
-      ],
-      "Add PayPal payment method": [
-        "PayPal ödeme yöntemi ekleyin"
-      ],
-      "Retry": [
-        "Yeniden dene"
-      ],
-      "Loading verification": [
-        "Doğrulama yükleniyor"
-      ],
-      "Try again": [
-        "Tekrar dene"
-      ],
-      "Verify": [
-        "Doğrula"
-      ],
-      "Use a different card": [
-        "Farklı bir kart kullanın"
-      ],
-      "Use a different payment method": [
-        "Farklı bir ödeme yöntemi kullanın"
-      ],
-      "enable desktop notifications": [
-        "masaüstü bildirimlerini etkinleştir"
-      ],
-      "here": [
-        "buraya"
-      ],
-      "Refresh the page": [
-        "Sayfayı yenile"
-      ],
-      "Close this banner": [
-        "Bu uyarıyı kapat"
-      ],
-      "Change password": [
-        "Parolayı değiştir"
-      ],
-      "Ok": [
-        "Tamam"
-      ],
-      "Download": [
-        "İndir"
-      ],
-      "Yes": [
-        "Evet"
-      ],
-      "Change mailbox password": [
-        "Posta kutusu şifresini değiştir"
-      ],
-      "Delete": [
-        "Sil"
-      ],
-      "Delete your account": [
-        "Hesabınızı silin"
-      ],
-      "Hide": [
-        "Gizle"
-      ],
-      "Show": [
-        "Göster"
-      ],
-      "Reset credentials": [
-        "Bilgileri sıfırla"
-      ],
-      "Upgrade": [
-        "Yükselt"
+    "Label": {
+      "Reveal password": [
+        "Şifreyi göster"
+      ],
+      "Hide password": [
+        "Şifreyi gizle"
       ],
       "Copy": [
         "Kopyala"
       ],
-      "Download all configurations": [
-        "Tüm yapılandırmaları indir"
-      ],
-      "Get ProtonVPN Plus": [
-        "ProtonVPN Plus alın"
-      ],
-      "Update": [
-        "Güncelle"
-      ],
-      "Create new recovery phrase": [
-        "Yeni bir kurtarma anahtar metni oluştur"
-      ],
-      "Copy to clipboard": [
-        "Panoya kopyala"
-      ],
-      "Create new recovery phrase?": [
-        "Yeni bir kurtarma anahtar metni oluştur?"
-      ],
-      "Enter password to continue": [
-        "Devam etmek için şifreyi girin"
-      ],
-      "Disable recovery phrase?": [
-        ""
-      ],
-      "Disable recovery phrase": [
-        ""
-      ],
-      "Edit": [
-        "Düzenle"
-      ],
-      "Mark as default": [
-        "Varsayılan olarak işaretle"
-      ],
-      "Add credit / debit card": [
-        "Kredi / banka kartı ekle"
-      ],
-      "Add PayPal": [
-        "PayPal ekle"
-      ],
-      "View": [
-        "Görüntüle"
-      ],
-      "User": [
-        "Kullanıcı"
-      ],
-      "Organization": [
-        "Kuruluş"
-      ],
-      "Customize": [
-        "Özelleştir"
-      ],
-      "Details": [
-        "Ayrıntılar"
-      ],
-      "Share via link": [
-        "Bağlantı yoluyla paylaş"
-      ],
-      "Sharing options": [
-        "Paylaşım seçenekleri"
-      ],
-      "Zoom out": [
-        "Uzaklaştır"
-      ],
-      "Reset zoom": [
-        "Yakınlaştırmayı sıfırla"
-      ],
-      "Zoom in": [
-        "Yakınlaştır"
-      ],
-      "Previous": [
-        "Önceki"
-      ],
-      "Log in": [
-        "Oturum aç"
-      ],
-      "View invoice": [
-        "Faturayı görüntüle"
-      ],
-      "Get verification code": [
-        "Doğrulama kodu al"
-      ],
-      "Try another method": [
-        "Başka bir yöntem dene"
-      ],
-      "Request new code": [
-        "Yeni kod isteyin"
-      ],
-      "Did not receive the code?": [
-        "Kod almadınız mı?"
-      ],
-      "Edit email address": [
-        "E-posta adresini düzenle"
-      ],
-      "Edit phone number": [
-        "Telefon numarasını düzenle"
-      ],
-      "Email me my username(s)": [
-        "Kullanıcı adlarımı bana e-postala"
-      ],
-      "Get a new password": [
-        "Yeni bir şifre al"
-      ],
-      "Reset password": [
-        "Şifreyi sıfırla"
-      ],
-      "Reset my password": [
-        "Şifremi sıfırla"
-      ],
-      "Close navigation": [
-        "Gezintiyi kapat"
-      ],
-      "Open navigation": [
-        "Gezintiyi aç"
-      ],
-      "More info: ${ safeTitle }": [
-        "Daha fazla bilgi: ${ safeTitle }"
-      ],
-      "Go to panel ${ index }": [
-        "${ index } paneline git"
-      ],
-      "Close modal": [
-        "Pencereyi kapat"
-      ],
-      "Report bug": [
-        "Hata bildir"
-      ],
-      "Activate my coupon": [
-        "Kuponumu etkinleştir"
-      ],
-      "Hide additional features": [
-        "Ek özellikleri gizle"
-      ],
-      "Select": [
-        "Seç"
-      ],
-      "Verify code again": [
-        "Kodu tekrar doğrula"
-      ],
-      "Verify code": [
-        "Kodu doğrula"
-      ],
-      "Create account": [
-        "Hesap oluştur"
-      ],
-      "Go to login": [
-        "Oturum açmaya gidin"
-      ],
-      "View full plan comparison": [
-        "Tam plan karşılaştırmasını görüntüle"
-      ],
-      "Send": [
-        "Gönder"
-      ],
-      "Resend": [
-        "Yeniden gönder"
-      ],
-      "Use another verification method": [
-        "Başka bir doğrulama yöntemi kullan"
-      ],
-      "Confirm payment": [
-        "Ödemeyi Onayla"
-      ],
-      "Pay annually and save 20%": [
-        "Yıllık ödeyin ve %20 tasarruf edin"
-      ],
-      "Try ${ upsellPlan.title } for only ${ totalMonthlyText }": [
-        "Sadece ${ totalMonthlyText } ${ upsellPlan.title } deneyin"
-      ],
-      "Homepage": [
-        "Ana sayfa"
-      ]
-    },
-    "Bug category": {
-      "Sign in problem": [
-        "Oturum açma sorunu"
-      ],
-      "Sign up problem": [
-        "Kaydolma sorunu"
-      ],
-      "Payments problem": [
-        "Ödemeler sorunu"
-      ],
-      "Custom domain problem": [
-        "Özel alan adı sorunu"
-      ],
-      "Bridge problem": [
-        "Köprüleme sorunu"
-      ],
-      "Import / export problem": [
-        "İçe / dışa aktarma sorunu"
-      ],
-      "Connection problem": [
-        "Bağlantı sorunu"
-      ],
-      "Slow speed problem": [
-        "Yavaş hız sorunu"
-      ],
-      "Calendar problem": [
-        "Takvim sorunu"
-      ],
-      "Contacts problem": [
-        "İletişim sorunu"
-      ],
-      "Drive problem": [
-        "Sürücü sorunu"
-      ],
-      "Mail problem": [
-        "Posta sorunu"
-      ],
-      "VPN problem": [
-        "VPN sorunu"
-      ],
-      "Feature request": [
-        "Özellik isteği"
-      ],
-      "Other": [
-        "Diğer"
-      ],
-      "Signup problem": [
-        "Kayıt sorunu"
-      ],
-      "Installation problem": [
-        "Kurulum sorunu"
-      ],
-      "Update problem": [
-        "Güncelleme sorunu"
-      ],
-      "Application problem": [
-        "Uygulama sorunu"
-      ],
-      "Speed problem": [
-        "Hız sorunu"
-      ],
-      "Manual setup problem": [
-        "Elle kurulum sorunu"
-      ],
-      "Website access problem": [
-        "İnternet sitesi erişim sorunu"
-      ],
-      "Streaming problem": [
-        "Yayın akışı sorunu"
-      ]
-    },
-    "Group": {
-      "Account": [
-        "Hesap"
-      ],
-      "Apps": [
-        "Uygulamalar"
-      ],
-      "Network": [
-        "Ağ"
-      ],
-      "Services": [
-        "Hizmetler"
-      ],
-      "Other category": [
-        "Diğer kategori"
-      ]
-    },
-    "Action to select a title for the bug report modal": {
-      "Select": [
-        "Seç"
-      ]
-    },
-    "Link": {
-      "clearing your browser cache": [
-        "tarayıcı önbelleğini temizleme"
-      ],
-      "Upgrade": [
-        "Yükselt"
-      ],
-      "Go to subscription plans": [
-        "Abonelik planlarına git"
-      ],
-      "Add a gift code": [
-        "Hediye kodu ekle"
-      ],
-      "click here": [
-        "buraya tıkla"
-      ],
-      "Pay invoice": [
-        "Faturayı ödeyin"
-      ],
-      "Upgrade account": [
-        "Hesabınızı yükseltin"
-      ],
-      "Not activated": [
-        "Etkinleştirilmedi"
-      ],
-      "View guide": [
-        "Rehberi görüntüle"
-      ],
-      "What is the difference between UDP and TCP protocols?": [
-        "UDP ve TCP protokolleri arasındaki fark nedir?"
-      ],
-      "Learn more": [
-        "Daha fazla bilgi edinin"
-      ],
-      "Request an invite": [
-        "Davet et"
-      ],
-      "Back to login": [
-        "Oturum açma sayfasına geri dön"
-      ],
-      "here": [
-        "buraya"
-      ],
-      "Upgrade now": [
-        "Şimdi yükselt"
-      ],
-      "Sign up for free": [
-        "Ücretsiz kaydol"
-      ],
-      "protonvpn.com": [
-        ""
-      ],
-      "Don't have an account yet? Sign up for free!": [
-        "Henüz bir hesabınız yok mu? Ücretsiz kaydolun!"
-      ],
-      "Reset password": [
-        "Şifreyi sıfırla"
-      ],
-      "Forgot username?": [
-        "Kullanıcı adınızı mı unuttunuz?"
-      ],
-      "Common login problems": [
-        "Yaygın oturum açma problemleri"
-      ],
-      "Contact support": [
-        "Destek ile iletişime geçin"
-      ],
-      "Terms of Service": [
-        "Hizmet Şartları"
-      ],
-      "Privacy Policy": [
-        "Gizlilik Politikası"
-      ],
-      "Log in": [
-        "Oturum aç"
-      ],
-      "Close": [
-        "Kapat"
-      ]
-    },
-    "Success": {
-      "Bug reported": [
-        "Hata bildirildi"
-      ],
-      "Email address copied to clipboard": [
-        "E-posta adresi panoya kopyalandı"
-      ],
-      "You have successfully unsubscribed": [
-        "Aboneliğinizi başarıyla iptal ettiniz"
-      ],
-      "Credits added": [
-        "Krediler eklendi"
-      ],
-      "Gift code applied": [
-        "Hediye kodu uygulandı"
-      ],
-      "Payment method updated": [
-        "Ödeme yöntemi güncellendi"
-      ],
-      "Payment method added": [
-        "Ödeme yöntemi eklendi"
-      ],
-      "Password updated": [
-        "Şifreniz güncellendi"
-      ],
-      "Account deleted. Logging out...": [
-        "Hesap silindi. Çıkış yapılıyor..."
-      ],
-      "Locale updated": [
-        "Yerel ayarlar güncellendi"
-      ],
-      "${ server.Domain } copied in your clipboard": [
-        "${ server.Domain } panonuza kopyalandı"
-      ],
-      "Email updated": [
-        "E-posta güncellendi"
-      ],
-      "Phone number updated": [
-        "Telefon numarası güncellendi"
-      ],
-      "Payment method deleted": [
-        "Ödeme yöntemi silindi"
-      ],
-      "Invoice paid": [
-        "Fatura ödendi"
-      ],
-      "Invoice customized": [
-        "Fatura özelleştirildi"
-      ],
-      "Code sent to ${ methodTo }": [
-        "${ methodTo } kod gönderildi"
-      ],
-      "Verification successful": [
-        "Doğrulama başarılı"
-      ],
-      "If you entered a valid notification email we will send you an email with your usernames in the next minute.": [
-        "Geçerli bir bildirim e-postası girdiyseniz, birkaç dakika içinde size kullanıcı adlarınızı içeren bir e-posta göndereceğiz."
-      ]
-    },
-    "Label": {
       "Operating system": [
         "İşletim sistemi"
       ],
@@ -1781,15 +1015,6 @@
       "Danger": [
         "Tehlikeli"
       ],
-      "Copy": [
-        "Kopyala"
-      ],
-      "Reveal password": [
-        "Şifreyi göster"
-      ],
-      "Hide password": [
-        "Şifreyi gizle"
-      ],
       "Back to:": [
         "Geri dön:"
       ],
@@ -1827,90 +1052,651 @@
         "Toplam fiyat (iki yıllık)"
       ]
     },
-    "Placeholder": {
-      "OS name": [
-        "İşletim sistemi adı"
+    "Action": {
+      "Close navigation": [
+        "Gezintiyi kapat"
       ],
-      "OS version": [
-        "İşletim sistemi sürümü"
+      "Open navigation": [
+        "Gezintiyi aç"
       ],
-      "Proton username": [
-        "Proton kullanıcı adı"
+      "More info: ${ safeTitle }": [
+        "Daha fazla bilgi: ${ safeTitle }"
       ],
-      "A way to contact you": [
-        "Sizinle iletişim kurmanın bir yolu"
+      "Go to panel ${ index }": [
+        "${ index } paneline git"
       ],
-      "Please describe the problem and include any error messages": [
-        "Lütfen sorunu açıklayın varsa hata mesajlarını ekleyin"
-      ],
-      "Browser name": [
-        "Tarayıcı adı"
-      ],
-      "Browser version": [
-        "Tarayıcı sürümü"
-      ],
-      "e.g. Julia Smith": [
-        "örn. Ayşe Yılmaz"
-      ],
-      "Gift code": [
-        "Hediye kodu"
-      ],
-      "Feedback": [
-        "Geri bildirim"
-      ],
-      "Other": [
-        "Diğer"
-      ],
-      "Add gift code": [
-        "Hediye kodu ekle"
-      ],
-      "ZIP": [
-        "ZIP"
-      ],
-      "Postal code": [
-        "Posta kodu"
-      ],
-      "Password": [
-        "Şifre"
-      ],
-      "Two-factor authentication code": [
-        "İki aşamalı doğrulama kodu"
+      "Close": [
+        "Kapat"
       ],
       "Confirm": [
         "Onayla"
       ],
-      "Email address": [
-        "E-posta adresi"
+      "Cancel": [
+        "İptal"
       ],
-      "Mailbox password": [
-        "Posta kutusu şifresi"
+      "Submit": [
+        "Bildir"
       ],
-      "Email": [
-        "E-posta"
+      "Close modal": [
+        "Pencereyi kapat"
       ],
-      "Username": [
-        "Kullanıcı Adı"
+      "Clear": [
+        "Temizle"
       ],
-      "Recovery email": [
-        "E-posta kurtar"
+      "Add screenshot(s)": [
+        "Ekran görüntüsü ekle"
       ],
-      "Reset code": [
-        "Sıfırlama kodu"
+      "Hide info": [
+        "Bilgileri gizle"
       ],
-      "Enter the word '${ dangerWord }' here": [
-        "Buraya '${ dangerWord }' kelimesini girin"
+      "Show info": [
+        "Bilgileri göster"
       ],
-      "Choose a new password": [
-        "Yeni bir şifre seçin"
+      "Copy email to clipboard": [
+        "E-postayı panoya kopyala"
       ],
-      "Enter coupon code": [
-        "Kupon kodunu girin"
+      "${ BRAND_NAME } introduction": [
+        "${ BRAND_NAME } tanıtımı"
       ],
-      "Confirm password": [
-        "Şifreyi onayla"
+      "Chat with us": [
+        "Bizimle canlı konuşun"
+      ],
+      "I have a question": [
+        "Bir sorum var"
+      ],
+      "Request a feature": [
+        "Bir özellik isteyin"
+      ],
+      "Report a problem": [
+        "Sorun bildir"
+      ],
+      "${ BRAND_NAME } shop": [
+        "${ BRAND_NAME } mağazası"
+      ],
+      "Switch account": [
+        "Hesap değiştir"
+      ],
+      "Sign out": [
+        "Oturumu kapat"
+      ],
+      "Get started": [
+        "Başlayalım"
+      ],
+      "Next": [
+        "İleri"
+      ],
+      "Start setup": [
+        "Kurulumu başlat"
+      ],
+      "Skip": [
+        "Atla"
+      ],
+      "Done": [
+        "Tamamlandı"
+      ],
+      "Back": [
+        "Geri"
+      ],
+      "Use ${ label } theme": [
+        "${ label } temasını kullan"
+      ],
+      "Signing out": [
+        "Çıkış yapılıyor"
+      ],
+      "refresh the page": [
+        "sayfayı yenile"
+      ],
+      "Remove bonuses": [
+        "Bonusları kaldır"
+      ],
+      "Select plan": [
+        "Plan seçin"
+      ],
+      "Compare all features": [
+        "Tüm özellikleri karşılaştırın"
+      ],
+      "${ boldSave } by switching to annual billing": [
+        "Yıllık faturalandırmaya geçerek ${ boldSave }"
+      ],
+      "Continue": [
+        "Devam et"
+      ],
+      "Pay": [
+        "Öde"
+      ],
+      "Apply": [
+        "Uygula"
+      ],
+      "Open ${ CALENDAR_APP_NAME } settings": [
+        "${ CALENDAR_APP_NAME } ayarlarını açın"
+      ],
+      "OK": [
+        "TAMAM"
+      ],
+      "Upgrade to Plus": [
+        "Plus'a Yükselt"
+      ],
+      "Upgrade to Professional": [
+        "Profesyonel'e Yükselt"
+      ],
+      "Activate": [
+        "Etkinleştir"
+      ],
+      "Customize subscription": [
+        "Aboneliği özelleştir"
+      ],
+      "Cancel subscription": [
+        "Aboneliği iptal et"
+      ],
+      "Remove gift code": [
+        "Hediye kodunu kaldır"
+      ],
+      "annual billing": [
+        "yıllık fatura"
+      ],
+      "Compare plans": [
+        "Planları karşılaştır"
+      ],
+      "Decrease": [
+        "Azalt"
+      ],
+      "Increase": [
+        "Arttır"
+      ],
+      "Downgrade": [
+        "Eski sürüme yükle"
+      ],
+      "Top up": [
+        "Doldur"
+      ],
+      "Add credits": [
+        "Kredi ekle"
+      ],
+      "Save": [
+        "Kaydet"
+      ],
+      "Add PayPal payment method": [
+        "PayPal ödeme yöntemi ekleyin"
+      ],
+      "Retry": [
+        "Yeniden dene"
+      ],
+      "Loading verification": [
+        "Doğrulama yükleniyor"
+      ],
+      "Try again": [
+        "Tekrar dene"
+      ],
+      "Verify": [
+        "Doğrula"
+      ],
+      "Use a different card": [
+        "Farklı bir kart kullanın"
+      ],
+      "Use a different payment method": [
+        "Farklı bir ödeme yöntemi kullanın"
+      ],
+      "enable desktop notifications": [
+        "masaüstü bildirimlerini etkinleştir"
+      ],
+      "here": [
+        "buraya"
+      ],
+      "Refresh the page": [
+        "Sayfayı yenile"
+      ],
+      "Close this banner": [
+        "Bu uyarıyı kapat"
+      ],
+      "Change password": [
+        "Parolayı değiştir"
+      ],
+      "Ok": [
+        "Tamam"
+      ],
+      "Download": [
+        "İndir"
+      ],
+      "Yes": [
+        "Evet"
+      ],
+      "Change mailbox password": [
+        "Posta kutusu şifresini değiştir"
+      ],
+      "Delete": [
+        "Sil"
+      ],
+      "Delete your account": [
+        "Hesabınızı silin"
+      ],
+      "Hide": [
+        "Gizle"
+      ],
+      "Show": [
+        "Göster"
+      ],
+      "Reset credentials": [
+        "Bilgileri sıfırla"
+      ],
+      "Upgrade": [
+        "Yükselt"
+      ],
+      "Copy": [
+        "Kopyala"
+      ],
+      "Download all configurations": [
+        "Tüm yapılandırmaları indir"
+      ],
+      "Get ProtonVPN Plus": [
+        "ProtonVPN Plus alın"
+      ],
+      "Update": [
+        "Güncelle"
+      ],
+      "Create new recovery phrase": [
+        "Yeni bir kurtarma anahtar metni oluştur"
+      ],
+      "Copy to clipboard": [
+        "Panoya kopyala"
+      ],
+      "Create new recovery phrase?": [
+        "Yeni bir kurtarma anahtar metni oluştur?"
+      ],
+      "Enter password to continue": [
+        "Devam etmek için şifreyi girin"
+      ],
+      "Disable recovery phrase?": [
+        ""
+      ],
+      "Disable recovery phrase": [
+        ""
+      ],
+      "Edit": [
+        "Düzenle"
+      ],
+      "Mark as default": [
+        "Varsayılan olarak işaretle"
+      ],
+      "Add credit / debit card": [
+        "Kredi / banka kartı ekle"
+      ],
+      "Add PayPal": [
+        "PayPal ekle"
+      ],
+      "View": [
+        "Görüntüle"
+      ],
+      "User": [
+        "Kullanıcı"
+      ],
+      "Organization": [
+        "Kuruluş"
+      ],
+      "Customize": [
+        "Özelleştir"
+      ],
+      "Details": [
+        "Ayrıntılar"
+      ],
+      "Share via link": [
+        "Bağlantı yoluyla paylaş"
+      ],
+      "Sharing options": [
+        "Paylaşım seçenekleri"
+      ],
+      "Zoom out": [
+        "Uzaklaştır"
+      ],
+      "Reset zoom": [
+        "Yakınlaştırmayı sıfırla"
+      ],
+      "Zoom in": [
+        "Yakınlaştır"
+      ],
+      "Previous": [
+        "Önceki"
+      ],
+      "Log in": [
+        "Oturum aç"
+      ],
+      "View invoice": [
+        "Faturayı görüntüle"
+      ],
+      "Get verification code": [
+        "Doğrulama kodu al"
+      ],
+      "Try another method": [
+        "Başka bir yöntem dene"
+      ],
+      "Request new code": [
+        "Yeni kod isteyin"
+      ],
+      "Did not receive the code?": [
+        "Kod almadınız mı?"
+      ],
+      "Edit email address": [
+        "E-posta adresini düzenle"
+      ],
+      "Edit phone number": [
+        "Telefon numarasını düzenle"
+      ],
+      "Email me my username(s)": [
+        "Kullanıcı adlarımı bana e-postala"
+      ],
+      "Get a new password": [
+        "Yeni bir şifre al"
+      ],
+      "Reset password": [
+        "Şifreyi sıfırla"
+      ],
+      "Reset my password": [
+        "Şifremi sıfırla"
+      ],
+      "Report bug": [
+        "Hata bildir"
+      ],
+      "Activate my coupon": [
+        "Kuponumu etkinleştir"
+      ],
+      "Hide additional features": [
+        "Ek özellikleri gizle"
+      ],
+      "Select": [
+        "Seç"
+      ],
+      "Verify code again": [
+        "Kodu tekrar doğrula"
+      ],
+      "Verify code": [
+        "Kodu doğrula"
+      ],
+      "Create account": [
+        "Hesap oluştur"
+      ],
+      "Go to login": [
+        "Oturum açmaya gidin"
+      ],
+      "View full plan comparison": [
+        "Tam plan karşılaştırmasını görüntüle"
+      ],
+      "Send": [
+        "Gönder"
+      ],
+      "Resend": [
+        "Yeniden gönder"
+      ],
+      "Use another verification method": [
+        "Başka bir doğrulama yöntemi kullan"
+      ],
+      "Confirm payment": [
+        "Ödemeyi Onayla"
+      ],
+      "Pay annually and save 20%": [
+        "Yıllık ödeyin ve %20 tasarruf edin"
+      ],
+      "Try ${ upsellPlan.title } for only ${ totalMonthlyText }": [
+        "Sadece ${ totalMonthlyText } ${ upsellPlan.title } deneyin"
+      ],
+      "Homepage": [
+        "Ana sayfa"
+      ]
+    },
+    "Storage": {
+      "Your current storage:": [
+        "Mevcut depolama alanınız:"
+      ],
+      "Upgrade storage": [
+        "Depolamayı yükseltin"
+      ],
+      "Release notes": [
+        "Sürüm notları"
+      ]
+    },
+    "Link": {
+      "Learn more": [
+        "Daha fazla bilgi edinin"
+      ],
+      "clearing your browser cache": [
+        "tarayıcı önbelleğini temizleme"
+      ],
+      "Upgrade": [
+        "Yükselt"
+      ],
+      "Go to subscription plans": [
+        "Abonelik planlarına git"
+      ],
+      "Add a gift code": [
+        "Hediye kodu ekle"
+      ],
+      "click here": [
+        "buraya tıkla"
+      ],
+      "Pay invoice": [
+        "Faturayı ödeyin"
+      ],
+      "Upgrade account": [
+        "Hesabınızı yükseltin"
+      ],
+      "Not activated": [
+        "Etkinleştirilmedi"
+      ],
+      "View guide": [
+        "Rehberi görüntüle"
+      ],
+      "What is the difference between UDP and TCP protocols?": [
+        "UDP ve TCP protokolleri arasındaki fark nedir?"
+      ],
+      "Request an invite": [
+        "Davet et"
+      ],
+      "Back to login": [
+        "Oturum açma sayfasına geri dön"
+      ],
+      "here": [
+        "buraya"
+      ],
+      "Upgrade now": [
+        "Şimdi yükselt"
+      ],
+      "Sign up for free": [
+        "Ücretsiz kaydol"
+      ],
+      "protonvpn.com": [
+        ""
+      ],
+      "Don't have an account yet? Sign up for free!": [
+        "Henüz bir hesabınız yok mu? Ücretsiz kaydolun!"
+      ],
+      "Reset password": [
+        "Şifreyi sıfırla"
+      ],
+      "Forgot username?": [
+        "Kullanıcı adınızı mı unuttunuz?"
+      ],
+      "Common login problems": [
+        "Yaygın oturum açma problemleri"
+      ],
+      "Contact support": [
+        "Destek ile iletişime geçin"
+      ],
+      "Terms of Service": [
+        "Hizmet Şartları"
+      ],
+      "Privacy Policy": [
+        "Gizlilik Politikası"
+      ],
+      "Log in": [
+        "Oturum aç"
+      ],
+      "Close": [
+        "Kapat"
+      ]
+    },
+    "Error": {
+      "Email address invalid": [
+        "E-posta adresi geçersiz"
+      ],
+      "This field is required": [
+        "Bu alan gereklidir"
+      ],
+      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
+        "Kullandığınız tarayıcı, ödemenin tam olarak onaylanmasına izin vermiyor. Lütfen farklı bir tarayıcı kullanın veya bir bilgisayar aracılığıyla giriş yapın."
+      ],
+      "Unknown error": [
+        "Bilinmeyen hata"
+      ],
+      "Checkout expired, please try again.": [
+        "Ödeme süresi doldu, lütfen tekrar deneyin."
+      ],
+      "Invalid code": [
+        "Geçersiz kod"
+      ],
+      "Error connecting to the Bitcoin API.": [
+        "Bitcoin API'ye bağlanırken hata oluştu."
+      ],
+      "Amount below minimum.": [
+        "En düşük değer tutarı."
+      ],
+      "Amount above the maximum.": [
+        "En yüksek değer tutarı."
+      ],
+      "The minimum amount that can be donated is ${ price }": [
+        "Bağışlanabilecek en düşük tutar ${ price }"
+      ],
+      "The minimum amount of credit that can be added is ${ _price }": [
+        "Eklenebilecek en az kredi tutarı ${ _price }"
+      ],
+      "The minimum payment we accept is ${ _price2 }": [
+        "Kabul ettiğimiz en az ödeme ${ _price2 }"
+      ],
+      "Process aborted": [
+        "İşlem iptal edildi"
+      ],
+      "Payment process cancelled": [
+        "Ödeme işlemi iptal edildi"
+      ],
+      "Payment process failed": [
+        "Ödeme işlemi başarısız oldu"
+      ],
+      "Payment process consumed": [
+        "Tüketilen ödeme işlemi"
+      ],
+      "Payment process not supported": [
+        "Ödeme işlemi desteklenmiyor"
+      ],
+      "Unknown payment token status": [
+        "Bilinmeyen ödeme belirteci durumu"
+      ],
+      "Tab closed": [
+        "Sekme kapatıldı"
+      ],
+      "Name on card required": [
+        "Kart üzerindeki isim gerekli"
+      ],
+      "Invalid expiration date": [
+        "Geçersiz son kullanma tarihi"
+      ],
+      "Invalid card number": [
+        "Geçersiz kart numarası"
+      ],
+      "Invalid ${ name } code": [
+        "Geçersiz ${ name } kodu"
+      ],
+      "Invalid postal code": [
+        "Geçersiz posta kodu"
+      ],
+      "Please generate keys before you try to change your password.": [
+        "Lütfen şifrenizi değiştirmeden önce anahtarlar oluşturun."
+      ],
+      "Please set a recovery/notification email first": [
+        "Lütfen önce bir kurtarma/bildirim e-postası ayarlayın"
+      ],
+      "Please set a recovery phone number first": [
+        "Lütfen önce bir kurtarma telefon numarası ayarlayın"
+      ],
+      "Payments are currently not available, please try again later": [
+        "Ödemeler şu anda kullanılamıyor, lütfen daha sonra tekrar deneyin"
+      ],
+      "You have no invoices.": [
+        "Faturalarınız yok."
+      ],
+      "Your account or organization currently has an overdue invoice. Please pay all unpaid invoices.": [
+        "Hesabınızın veya kuruluşunuzun şu anda gecikmiş bir faturası var. Lütfen ödenmemiş tüm faturalarınızı ödeyin."
+      ],
+      "File has no contents to preview": [
+        "Dosyanın önizlenecek içeriği yok"
+      ],
+      "Incorrect mailbox password. Please try again": [
+        "Posta kutusu şifresi yanlış. Lütfen tekrar deneyin"
+      ],
+      "Incorrect login credentials. Please try again": [
+        "Oturum açma bilgileri yanlış. Lütfen tekrar deneyin"
+      ],
+      "Can't validate email, try again later": [
+        "E-posta doğrulanamıyor, daha sonra tekrar deneyin"
+      ],
+      "Can't validate phone, try again later": [
+        "Telefon doğrulanamıyor, daha sonra tekrar deneyin"
+      ],
+      "Enter 6 digits": [
+        "6 hane girin"
+      ],
+      "Invalid verification code": [
+        "Geçersiz doğrulama kodu"
+      ],
+      "Please enter '${ dangerWord }'": [
+        "Lütfen girin '${ dangerWord }'"
+      ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "Bir şeyler ters gitti, devam etmek için lütfen ${ refresh }. Hala bu hata mesajını görüyorsanız, lütfen ${ supportTeam } ile bağlantı kurun."
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Bu alan en az $ { minimumLength } karakter gerektirir."
+      ],
+      "Email is not valid": [
+        "E-posta geçerli değil"
+      ],
+      "Not a valid number": [
+        "Geçerli bir numara değil"
+      ],
+      "Passwords do not match": [
+        "Parolalar eşleşmiyor"
+      ],
+      "Signature verification failed": [
+        "İmza doğrulama başarısız oldu"
+      ],
+      "Request timed out.": [
+        "İstek zaman aşımına uğradı."
+      ],
+      "Code wrong or not valid anymore": [
+        "Kod yanlış veya artık geçersiz"
+      ],
+      "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
+        "TV'nizdeki süre dolduysa, TV'nizdeki Yenile butonuna tıklayın ve kodunuzu tekrar girin."
+      ],
+      "Invalid invitation link": [
+        "Geçersiz davet bağlantısı"
+      ],
+      "Can't check username, try again later": [
+        "Kullanıcı adı kontrol edilemiyor, daha sonra tekrar deneyin"
       ]
     },
     "Title": {
+      "Open actions dropdown": [
+        "Açılır menü işlemleri"
+      ],
+      "Previous": [
+        "Önceki"
+      ],
+      "Open pagination": [
+        "Sayfalandırmayı aç"
+      ],
+      "Next": [
+        "İleri"
+      ],
+      "What's new": [
+        "Yenilikler"
+      ],
       "Report a problem": [
         "Sorun bildir"
       ],
@@ -2061,9 +1847,6 @@
       "Sign in again to continue": [
         "Devam etmek için tekrar oturum açın"
       ],
-      "Open actions dropdown": [
-        "Açılır menü işlemleri"
-      ],
       "1. Select platform": [
         "1. Platform seçin"
       ],
@@ -2115,26 +1898,11 @@
       "Invalid verification code": [
         "Geçersiz doğrulama kodu"
       ],
-      "Request new code": [
-        "Yeni kod isteyin"
-      ],
       "Human verification": [
         "İnsan olduğunuzu doğrulayın"
       ],
       "Confirm reset password": [
         "Şifre sıfırlamayı onaylayın"
-      ],
-      "Previous": [
-        "Önceki"
-      ],
-      "Open pagination": [
-        "Sayfalandırmayı aç"
-      ],
-      "Next": [
-        "İleri"
-      ],
-      "What's new": [
-        "Yenilikler"
       ],
       "Upgrade": [
         "Yükselt"
@@ -2294,6 +2062,246 @@
       ],
       "Settings": [
         "Ayarlar"
+      ]
+    },
+    "Error notification in the bug report modal when the user upload file": {
+      "No image selected": [
+        "Resim seçilmedi"
+      ]
+    },
+    "Bug category": {
+      "Sign in problem": [
+        "Oturum açma sorunu"
+      ],
+      "Sign up problem": [
+        "Kaydolma sorunu"
+      ],
+      "Payments problem": [
+        "Ödemeler sorunu"
+      ],
+      "Custom domain problem": [
+        "Özel alan adı sorunu"
+      ],
+      "Bridge problem": [
+        "Köprüleme sorunu"
+      ],
+      "Import / export problem": [
+        "İçe / dışa aktarma sorunu"
+      ],
+      "Connection problem": [
+        "Bağlantı sorunu"
+      ],
+      "Slow speed problem": [
+        "Yavaş hız sorunu"
+      ],
+      "Calendar problem": [
+        "Takvim sorunu"
+      ],
+      "Contacts problem": [
+        "İletişim sorunu"
+      ],
+      "Drive problem": [
+        "Sürücü sorunu"
+      ],
+      "Mail problem": [
+        "Posta sorunu"
+      ],
+      "VPN problem": [
+        "VPN sorunu"
+      ],
+      "Feature request": [
+        "Özellik isteği"
+      ],
+      "Other": [
+        "Diğer"
+      ],
+      "Signup problem": [
+        "Kayıt sorunu"
+      ],
+      "Installation problem": [
+        "Kurulum sorunu"
+      ],
+      "Update problem": [
+        "Güncelleme sorunu"
+      ],
+      "Application problem": [
+        "Uygulama sorunu"
+      ],
+      "Speed problem": [
+        "Hız sorunu"
+      ],
+      "Manual setup problem": [
+        "Elle kurulum sorunu"
+      ],
+      "Website access problem": [
+        "İnternet sitesi erişim sorunu"
+      ],
+      "Streaming problem": [
+        "Yayın akışı sorunu"
+      ]
+    },
+    "Group": {
+      "Account": [
+        "Hesap"
+      ],
+      "Apps": [
+        "Uygulamalar"
+      ],
+      "Network": [
+        "Ağ"
+      ],
+      "Services": [
+        "Hizmetler"
+      ],
+      "Other category": [
+        "Diğer kategori"
+      ]
+    },
+    "Action to select a title for the bug report modal": {
+      "Select": [
+        "Seç"
+      ]
+    },
+    "Success": {
+      "Bug reported": [
+        "Hata bildirildi"
+      ],
+      "Email address copied to clipboard": [
+        "E-posta adresi panoya kopyalandı"
+      ],
+      "You have successfully unsubscribed": [
+        "Aboneliğinizi başarıyla iptal ettiniz"
+      ],
+      "Credits added": [
+        "Krediler eklendi"
+      ],
+      "Gift code applied": [
+        "Hediye kodu uygulandı"
+      ],
+      "Payment method updated": [
+        "Ödeme yöntemi güncellendi"
+      ],
+      "Payment method added": [
+        "Ödeme yöntemi eklendi"
+      ],
+      "Password updated": [
+        "Şifreniz güncellendi"
+      ],
+      "Account deleted. Logging out...": [
+        "Hesap silindi. Çıkış yapılıyor..."
+      ],
+      "Locale updated": [
+        "Yerel ayarlar güncellendi"
+      ],
+      "${ server.Domain } copied in your clipboard": [
+        "${ server.Domain } panonuza kopyalandı"
+      ],
+      "Email updated": [
+        "E-posta güncellendi"
+      ],
+      "Phone number updated": [
+        "Telefon numarası güncellendi"
+      ],
+      "Payment method deleted": [
+        "Ödeme yöntemi silindi"
+      ],
+      "Invoice paid": [
+        "Fatura ödendi"
+      ],
+      "Invoice customized": [
+        "Fatura özelleştirildi"
+      ],
+      "Code sent to ${ methodTo }": [
+        "${ methodTo } kod gönderildi"
+      ],
+      "Verification successful": [
+        "Doğrulama başarılı"
+      ],
+      "If you entered a valid notification email we will send you an email with your usernames in the next minute.": [
+        "Geçerli bir bildirim e-postası girdiyseniz, birkaç dakika içinde size kullanıcı adlarınızı içeren bir e-posta göndereceğiz."
+      ]
+    },
+    "Placeholder": {
+      "OS name": [
+        "İşletim sistemi adı"
+      ],
+      "OS version": [
+        "İşletim sistemi sürümü"
+      ],
+      "Proton username": [
+        "Proton kullanıcı adı"
+      ],
+      "A way to contact you": [
+        "Sizinle iletişim kurmanın bir yolu"
+      ],
+      "Please describe the problem and include any error messages": [
+        "Lütfen sorunu açıklayın varsa hata mesajlarını ekleyin"
+      ],
+      "Browser name": [
+        "Tarayıcı adı"
+      ],
+      "Browser version": [
+        "Tarayıcı sürümü"
+      ],
+      "e.g. Julia Smith": [
+        "örn. Ayşe Yılmaz"
+      ],
+      "Gift code": [
+        "Hediye kodu"
+      ],
+      "Feedback": [
+        "Geri bildirim"
+      ],
+      "Other": [
+        "Diğer"
+      ],
+      "Add gift code": [
+        "Hediye kodu ekle"
+      ],
+      "ZIP": [
+        "ZIP"
+      ],
+      "Postal code": [
+        "Posta kodu"
+      ],
+      "Password": [
+        "Şifre"
+      ],
+      "Two-factor authentication code": [
+        "İki aşamalı doğrulama kodu"
+      ],
+      "Confirm": [
+        "Onayla"
+      ],
+      "Email address": [
+        "E-posta adresi"
+      ],
+      "Mailbox password": [
+        "Posta kutusu şifresi"
+      ],
+      "Email": [
+        "E-posta"
+      ],
+      "Username": [
+        "Kullanıcı Adı"
+      ],
+      "Recovery email": [
+        "E-posta kurtar"
+      ],
+      "Reset code": [
+        "Sıfırlama kodu"
+      ],
+      "Enter the word '${ dangerWord }' here": [
+        "Buraya '${ dangerWord }' kelimesini girin"
+      ],
+      "Choose a new password": [
+        "Yeni bir şifre seçin"
+      ],
+      "Enter coupon code": [
+        "Kupon kodunu girin"
+      ],
+      "Confirm password": [
+        "Şifreyi onayla"
       ]
     },
     "Warning": {
@@ -3491,17 +3499,6 @@
         "Yeni şifreyi onayla"
       ]
     },
-    "Storage": {
-      "Your current storage:": [
-        "Mevcut depolama alanınız:"
-      ],
-      "Upgrade storage": [
-        "Depolamayı yükseltin"
-      ],
-      "Release notes": [
-        "Sürüm notları"
-      ]
-    },
     "file size format": {
       "bytes": [
         "bayt"
@@ -3523,11 +3520,11 @@
       ]
     },
     "Calendar status": {
-      "Not synced": [
-        ""
-      ],
       "Syncing": [
         "Senkronize ediliyor"
+      ],
+      "Not synced": [
+        ""
       ]
     },
     "Calendar subscription not synced error": {
