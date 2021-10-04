@@ -1,8 +1,13 @@
+import DOMPurify from 'dompurify';
 import { useState, useRef, useEffect } from 'react';
 import { c } from 'ttag';
+
+import { uint8ArrayToString, stringToUint8Array } from '@proton/shared/lib/helpers/encoding';
+
 import ZoomControl from './ZoomControl';
 import useElementRect from '../../hooks/useElementRect';
 import UnsupportedPreview from './UnsupportedPreview';
+import { isSVG } from './helpers';
 
 interface Props {
     mimeType: string;
@@ -24,6 +29,22 @@ function getImageNaturalDimensions(imageElement: HTMLImageElement | null) {
     };
 }
 
+/**
+ * SVG can contain nasty scripts. We do have security headers set but attacker
+ * can overcome it by asking user to open the previewed image in the new tab,
+ * where browsers don't check headers and allow scripts from the SVG.
+ * One option would be to render it as PNG, but zooming or rescaling the window
+ * would mean to redraw. Better to keep SVG then. Sanitizing small SVGs takes
+ * miliseconds, bigger ones (MBs) under second. Only super huge ones takes even
+ * 10 seconds on slow computer as is mine, but we talk about huge SVGs as 30 MB.
+ * Because such SVG is more edge case, we can live with that.
+ */
+function sanitizeSVG(contents: Uint8Array[]): Uint8Array[] {
+    const contentsString = contents.map(uint8ArrayToString).join('');
+    const sanitzedSVG = DOMPurify.sanitize(contentsString);
+    return [stringToUint8Array(sanitzedSVG)];
+}
+
 const ImagePreview = ({ mimeType, contents, onSave }: Props) => {
     const imageRef = useRef<HTMLImageElement>(null);
     const containerRef = useRef<HTMLDivElement>(null);
@@ -41,7 +62,13 @@ const ImagePreview = ({ mimeType, contents, onSave }: Props) => {
             setError(false);
         }
 
-        const blob = new Blob(contents, { type: mimeType });
+        if (!contents) {
+            setImageData({ src: '' });
+            return;
+        }
+
+        const data = isSVG(mimeType) ? sanitizeSVG(contents) : contents;
+        const blob = new Blob(data, { type: mimeType });
         setImageData({
             src: URL.createObjectURL(blob),
         });
