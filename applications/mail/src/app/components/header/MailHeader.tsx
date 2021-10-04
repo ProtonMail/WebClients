@@ -1,6 +1,6 @@
 import { useRef, useState, useEffect, memo } from 'react';
 import { c } from 'ttag';
-import { Location, History } from 'history';
+import { useLocation } from 'react-router-dom';
 import {
     Searchbox,
     useLabels,
@@ -29,24 +29,14 @@ import { MESSAGE_ACTIONS } from '../../constants';
 interface Props {
     labelID: string;
     elementID: string | undefined;
-    location: Location;
-    history: History;
     breakpoints: Breakpoints;
     onSearch: (keyword?: string, labelID?: string) => void;
     expanded?: boolean;
     onToggleExpand: () => void;
 }
 
-const MailHeader = ({
-    labelID,
-    elementID,
-    location,
-    history,
-    breakpoints,
-    expanded,
-    onToggleExpand,
-    onSearch,
-}: Props) => {
+const MailHeader = ({ labelID, elementID, breakpoints, expanded, onToggleExpand, onSearch }: Props) => {
+    const location = useLocation();
     const { keyword = '' } = extractSearchParameters(location);
     const [value, updateValue] = useState(keyword);
     const oldLabelIDRef = useRef<string>(MAILBOX_LABEL_IDS.INBOX);
@@ -88,7 +78,7 @@ const MailHeader = ({
         });
     };
 
-    const backUrl = setParamsInUrl(history.location, { labelID });
+    const backUrl = setParamsInUrl(location, { labelID });
     const showBackButton = breakpoints.isNarrow && elementID;
     const labelName = getLabelName(labelID, labels, folders);
     const logo = <MainLogo to="/inbox" />;
