@@ -62,7 +62,7 @@ import { queryFileRevisionThumbnail } from '@proton/shared/lib/api/drive/files';
 import { queryCreateFolder, queryFolderChildren } from '@proton/shared/lib/api/drive/folder';
 import { queryCreateDriveVolume, queryRestoreDriveVolume } from '@proton/shared/lib/api/drive/volume';
 import { isPrimaryShare } from '@proton/shared/lib/drive/utils/share';
-import { decryptPassphrase, getDecryptedSessionKey } from '../../utils/drive/driveCrypto';
+import { decryptPassphrase, getDecryptedSessionKey } from '@proton/shared/lib/keys/drivePassphrase';
 import { validateLinkName, ValidationError } from '../../utils/validation';
 import useDebouncedRequest from '../util/useDebouncedRequest';
 import useQueuedFunction from '../util/useQueuedFunction';
