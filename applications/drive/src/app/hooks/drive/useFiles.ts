@@ -4,7 +4,7 @@ import { decryptMessage, getMessage, getSignature } from 'pmcrypto';
 import { useApi } from '@proton/components';
 import { getStreamMessage } from '@proton/shared/lib/keys/driveKeys';
 
-import { queryDeleteOldFiles, queryFileRevision } from '@proton/shared/lib/api/drive/files';
+import { queryDeleteOldVolumes, queryFileRevision } from '@proton/shared/lib/api/drive/files';
 import { DriveFileRevisionResult, NestedFileStream, DriveFileBlock } from '@proton/shared/lib/interfaces/drive/file';
 import { LinkType, LinkMeta } from '@proton/shared/lib/interfaces/drive/link';
 import { TransferMeta, DownloadInfo } from '@proton/shared/lib/interfaces/drive/transfer';
@@ -249,7 +249,7 @@ function useFiles() {
     };
 
     const deleteOldFiles = async (volumeIds: string[]) => {
-        return Promise.all(volumeIds.map((volumeId) => api(queryDeleteOldFiles(volumeId))));
+        return Promise.all(volumeIds.map((volumeId) => api(queryDeleteOldVolumes(volumeId))));
     };
 
     return {

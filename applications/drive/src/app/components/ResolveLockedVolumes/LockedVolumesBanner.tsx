@@ -8,7 +8,7 @@ import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import FilesRecoveryModal from './FileRecovery/FilesRecoveryModal';
 import { useDriveCache } from '../DriveCache/DriveCacheProvider';
 import useDrive from '../../hooks/drive/useDrive';
-import useKeyReactivationFlow from './KeyReactivation/useResolveLockedSharesFlow';
+import useResolveLockedSharesFlow from './KeyReactivation/useResolveLockedSharesFlow';
 
 interface Props {
     onClose: () => void;
@@ -21,7 +21,7 @@ const LockedVolumesBanner = ({ onClose }: Props) => {
     const [addressesKeys] = useAddressesKeys();
     const [loading, withLoading] = useLoading(true);
     const { getSharesReadyToRestore } = useDrive();
-    const { openKeyReactivationModal } = useKeyReactivationFlow({ onSuccess: onClose, onError: onClose });
+    const { openKeyReactivationModal } = useResolveLockedSharesFlow({ onSuccess: onClose, onError: onClose });
 
     const getReadyToRestoreData = useCallback(
         (
