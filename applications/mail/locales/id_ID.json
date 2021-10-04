@@ -42,7 +42,7 @@
         "Kunci pengiriman tidak valid"
       ],
       "This field is required": [
-        "Kolom ini wajib terisi"
+        "Kolom ini wajib diisi"
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Kolom ini harus diisi dengan minimal ${ minimumLength } karakter."
@@ -59,12 +59,6 @@
       "Request timed out.": [
         "Terlalu lama memuat."
       ],
-      "Signature verification failed": [
-        "Verifikasi tanda tangan gagal"
-      ],
-      "Could not find address ${ email }.": [
-        "Tidak dapat menemukan alamat ${ email }."
-      ],
       "Missing signature": [
         "Tanda tangan hilang"
       ],
@@ -79,6 +73,12 @@
       ],
       "The key properties for ${ emailAddress } could not be extracted": [
         "Properti kunci untuk ${ emailAddress } tidak dapat diekstrak"
+      ],
+      "Signature verification failed": [
+        "Verifikasi tanda tangan gagal"
+      ],
+      "Could not find address ${ email }.": [
+        "Tidak dapat menemukan alamat ${ email }."
       ],
       "Address primary private key not found": [
         "Kunci pribadi utama alamat tidak ditemukan"
@@ -101,17 +101,17 @@
       "Authentication error.": [
         "Kesalahan otentikasi."
       ],
-      "Email address invalid": [
-        "Alamat surel tidak valid"
-      ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "Peramban yang Anda gunakan tidak mengizinkan pembayaran secara penuh diotorisasi. Sila gunakan peramban lain atau masuk via komputer."
-      ],
       "The composer failed to load.": [
         "Komposer gagal memuat."
       ],
       "Please refresh the page.": [
         "Silahkan segarkan halaman ini."
+      ],
+      "Email address invalid": [
+        "Alamat surel tidak valid"
+      ],
+      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
+        "Peramban yang Anda gunakan tidak mengizinkan pembayaran secara penuh diotorisasi. Sila gunakan peramban lain atau masuk via komputer."
       ],
       "Incorrect mailbox password. Please try again": [
         "Sandi kotak masuk salah. Silakan coba lagi"
@@ -365,8 +365,8 @@
       "Your emails cannot be decrypted due to a recent password reset. If you remember your previous password, you can ${ reActivateKeyLink } in order to access your messages. ${ learnMoreLink }": [
         "Email-email Anda tidak dapat didekripsi karena kata sandi akun Anda telah diubah. Apabila Anda ingat kata sandi Anda sebelumnya, Anda dapat ${ reActivateKeyLink } untuk dapat kembali mengakses email-email Anda. ${ learnMoreLink }"
       ],
-      "Your emails cannot be decrypted due to a recent password reset. ${ learnMoreLink }": [
-        "Email-email Anda tidak dapat didekripsi karena kata sandi akun Anda telah diubah. ${ learnMoreLink }"
+      "Your emails cannot be decrypted. This may be due to a password reset. ${ learnMoreLink }": [
+        "Email-email Anda tidak dapat didekripsi. Besar kemungkinan hal ini disebabkan oleh kata sandi akun Anda yang telah diubah. ${ learnMoreLink }"
       ],
       "Too many active filters. Please upgrade to a paid plan to activate more filters": [
         "Terlalu banyak filter aktif. Mohon tingkatkan ke paket berbayar untuk mengaktifkan lebih banyak filter"
@@ -542,27 +542,6 @@
       "No results found": [
         "Tidak ada hasil ditemukan"
       ],
-      "Week": [
-        "Pekan"
-      ],
-      "(${ memberCount } member)": [
-        "(${ memberCount } anggota)"
-      ],
-      "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Tautan ini mungkin serangan homograf dan tidak dapat dibuka dengan Internet Explorer dan Edge. Jika Anda yakin tautan tersebut absah, mohon buka dengan peramban lain."
-      ],
-      "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
-        "Tautan ini mungkin serangan homograf. Mohon verifikasi tautan yang ingin Anda kunjungi, atau jangan kunjungi sama sekali."
-      ],
-      "You are about to open another browser tab and visit:": [
-        "Anda akan membuka tab peramban lain dan mengunjungi:"
-      ],
-      "Learn more": [
-        "Pelajari lebih lanjut"
-      ],
-      "Loading": [
-        "Memuat"
-      ],
       "Insert image": [
         "Memasukkan gambar"
       ],
@@ -638,6 +617,27 @@
       "Plain text": [
         "Teks biasa"
       ],
+      "Week": [
+        "Pekan"
+      ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } anggota)"
+      ],
+      "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
+        "Tautan ini mungkin serangan homograf dan tidak dapat dibuka dengan Internet Explorer dan Edge. Jika Anda yakin tautan tersebut absah, mohon buka dengan peramban lain."
+      ],
+      "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
+        "Tautan ini mungkin serangan homograf. Mohon verifikasi tautan yang ingin Anda kunjungi, atau jangan kunjungi sama sekali."
+      ],
+      "You are about to open another browser tab and visit:": [
+        "Anda akan membuka tab peramban lain dan mengunjungi:"
+      ],
+      "Learn more": [
+        "Pelajari lebih lanjut"
+      ],
+      "Loading": [
+        "Memuat"
+      ],
       "Drop the file here to upload": [
         "Taruh berkas di sini untuk mengunggah"
       ],
@@ -665,12 +665,6 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Jika Anda tidak menemukan surel di kotak masuk, mohon periksa folder spam Anda."
       ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
-        "Klik \"Minta kode baru\" untuk mendapatkan kode verifikasi baru yang dikirim ke ${ strong }. Jika alamat email ini salah, klik \"Edit\" untuk memperbaikinya."
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
-        "Klik \"Minta kode baru\" untuk mendapatkan kode verifikasi baru di ${ strong }. Jika nomor telepon ini salah, klik \"Edit\" untuk memperbaiki."
-      ],
       "To fight spam and abuse, please verify you are human.": [
         "Untuk melawan spam dan penyalahgunaan, mohon verifikasi Anda memang manusia."
       ],
@@ -682,6 +676,12 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Jika Anda menemui masalah saat membuat akun, silakan minta undangan dan kami akan meresponnya satu hari kerja."
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
+        "Klik \"Minta kode baru\" untuk mendapatkan kode verifikasi baru yang dikirim ke ${ strong }. Jika alamat email ini salah, klik \"Edit\" untuk memperbaikinya."
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
+        "Klik \"Minta kode baru\" untuk mendapatkan kode verifikasi baru di ${ strong }. Jika nomor telepon ini salah, klik \"Edit\" untuk memperbaiki."
       ],
       "No contacts added yet": [
         "Belum ada kontak yang ditambahkan"
@@ -1122,7 +1122,7 @@
         "Jumlah koneksi VPN yang dapat ditambahkan ke pengguna. Setiap perangkat yang terhubung dihitung satu koneksi VPN."
       ],
       "ProtonMail Plus is limited to one user and starts with 5 GB of storage.": [
-        "ProtonMail Plus terbatas untuk satu pengguna dan mulai dengan penyimpanan 5 GB."
+        "ProtonMail Plus terbatas untuk satu pengguna dengan kuota penyimpanan awal 5 GB."
       ],
       "Switch to ${ professionalPlan } to add more users.": [
         "Beralih ke ${ professionalPlan } untuk menambah lebih banyak pengguna."
@@ -1584,7 +1584,7 @@
         "Dapatkan kuota penyimpanan tambahan dan fitur-fitur premium lainnya."
       ],
       "Support privacy by upgrading for": [
-        ""
+        "Dukung privasi online dengan meningkatkan jenis akun Anda mulai dari"
       ],
       "/month.": [
         "/bulan."
@@ -1698,11 +1698,6 @@
         "Gunakan perangkat bergerak Anda, pindai kode QR ini atau kunjungi ${ link }."
       ]
     },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "Alamat surel tidak ditemukan di antara id pengguna yang terdefinisi di kunci (${ keyUserIds })"
-      ]
-    },
     "Default display name vcard": {
       "Unknown": [
         "Tidak dikenal"
@@ -1747,6 +1742,11 @@
       ],
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
         "Ada kesalahan saat membaca berkas ${ formattedFilename }. Format berkas salah."
+      ]
+    },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "Alamat surel tidak ditemukan di antara id pengguna yang terdefinisi di kunci (${ keyUserIds })"
       ]
     },
     "Keyboard shortcut section name": {
@@ -1925,11 +1925,11 @@
       ]
     },
     "Calendar status": {
-      "Not synced": [
-        "Tidak disinkronkan"
-      ],
       "Syncing": [
         "Menyinkronkan"
+      ],
+      "Not synced": [
+        "Tidak disinkronkan"
       ]
     },
     "Calendar subscription not synced error": {
@@ -1964,6 +1964,12 @@
       ],
       "Unsupported event": [
         "Acara tidak didukung"
+      ],
+      "Empty ICS file": [
+        "Berkas ICS kosong"
+      ],
+      "Unsupported calendar component": [
+        "Komponen kalender tidak didukung"
       ],
       "Invalid method": [
         "Metode tidak valid"
@@ -2527,38 +2533,8 @@
       "Close": [
         "Tutup"
       ],
-      "More info: ${ safeTitle }": [
-        "Info lebih lanjut: ${ safeTitle }"
-      ],
-      "Confirm": [
-        "Konfirmasi"
-      ],
       "Cancel": [
         "Batal"
-      ],
-      "Submit": [
-        "Kirim"
-      ],
-      "Close modal": [
-        "Tutup jendela"
-      ],
-      "Use “${ label }” setting": [
-        "Gunakan pengaturan \"${ label }\""
-      ],
-      "Remove": [
-        "Hapus"
-      ],
-      "Next month": [
-        "Bulan selanjutnya"
-      ],
-      "Previous month": [
-        "Bulan sebelumnya"
-      ],
-      "Load image": [
-        "Muat gambar"
-      ],
-      "Confirm opening of link ${ link }": [
-        "Konfirmasi membuka tautan ${ link }"
       ],
       "Save": [
         "Simpan"
@@ -2622,6 +2598,36 @@
       ],
       "Underline": [
         "Garis Bawah"
+      ],
+      "More info: ${ safeTitle }": [
+        "Info lebih lanjut: ${ safeTitle }"
+      ],
+      "Confirm": [
+        "Konfirmasi"
+      ],
+      "Submit": [
+        "Kirim"
+      ],
+      "Close modal": [
+        "Tutup jendela"
+      ],
+      "Use “${ label }” setting": [
+        "Gunakan pengaturan \"${ label }\""
+      ],
+      "Remove": [
+        "Hapus"
+      ],
+      "Next month": [
+        "Bulan selanjutnya"
+      ],
+      "Previous month": [
+        "Bulan sebelumnya"
+      ],
+      "Load image": [
+        "Muat gambar"
+      ],
+      "Confirm opening of link ${ link }": [
+        "Konfirmasi membuka tautan ${ link }"
       ],
       "Go to panel ${ index }": [
         "Ke panel ${ index }"
@@ -3399,11 +3405,11 @@
       "Open actions dropdown": [
         "Buka menu tindakan"
       ],
-      "Link confirmation": [
-        "Konfirmasi tautan"
-      ],
       "Expand content": [
         "Buka konten"
+      ],
+      "Link confirmation": [
+        "Konfirmasi tautan"
       ],
       "Keyboard Shortcuts": [
         "Pintasan Papan Ketik"
@@ -3425,9 +3431,6 @@
       ],
       "Invalid verification code": [
         "Kode verifikasi tidak valid"
-      ],
-      "Request new code": [
-        "Minta kode baru"
       ],
       "Human verification": [
         "Verifikasi manusia"
@@ -3896,6 +3899,138 @@
       ],
       "Welcome": [
         "Selamat datang"
+      ]
+    },
+    "Placeholder": {
+      "Link": [
+        "Tautan"
+      ],
+      "Fill in the URL link and text to test your link": [
+        "Isikan tautan URL dan teks untuk menguji tautan Anda"
+      ],
+      "Email address": [
+        "Alamat surel"
+      ],
+      "Fill in the email address and text to test your link": [
+        "Isikan di alamat surel dan teks untuk menguji tautan Anda"
+      ],
+      "Phone number": [
+        "Nomor telepon"
+      ],
+      "Fill in the phone number and text to test your link": [
+        "Isikan di nomot telepon dan teks untuk menguji tautan Anda"
+      ],
+      "Text": [
+        "Teks"
+      ],
+      "E.g., ": [
+        "Misalnya "
+      ],
+      "Mailbox password": [
+        "Sandi kotak pesan"
+      ],
+      "Start typing an email address": [
+        "Mulai ketik alamat surel"
+      ],
+      "Image URL": [
+        "URL gambar"
+      ],
+      "Search name, email or group": [
+        "Cari nama, surel, atau grup"
+      ],
+      "Filter groups": [
+        "Filter grup"
+      ],
+      "Search for name or email": [
+        "Cari nama atau surel"
+      ],
+      "Search for group name": [
+        "Cari nama grup"
+      ],
+      "Name": [
+        "Nama"
+      ],
+      "OS name": [
+        "Nama Sistem Operasi"
+      ],
+      "OS version": [
+        "Versi Sistem Operasi"
+      ],
+      "Proton username": [
+        "Nama Pengguna Proton"
+      ],
+      "A way to contact you": [
+        "Cara menghubungi Anda"
+      ],
+      "Please describe the problem and include any error messages": [
+        "Mohon uraikan masalah dan sertakan pesan kesalahan apapun"
+      ],
+      "Browser name": [
+        "Nama Peramban"
+      ],
+      "Browser version": [
+        "Versi peramban"
+      ],
+      "e.g. Julia Smith": [
+        "cth. Julia Smith"
+      ],
+      "ZIP": [
+        "Kode pos"
+      ],
+      "Postal code": [
+        "Kode pos"
+      ],
+      "Gift code": [
+        "Kode hadiah"
+      ],
+      "Type text or keyword": [
+        "Ketik teks atau kata kunci"
+      ],
+      "Subject": [
+        "Subjek"
+      ],
+      "Write your message": [
+        "Tulis pesan Anda"
+      ],
+      "Password": [
+        "Kata sandi"
+      ],
+      "Confirm Password": [
+        "Konfirmasi Kata Sandi"
+      ],
+      "Hint": [
+        "Petunjuk"
+      ],
+      "Search Messages": [
+        "Cari Pesan"
+      ],
+      "Start date": [
+        "Tanggal mulai"
+      ],
+      "End date": [
+        "Tanggal berakhir"
+      ],
+      "Name or email address": [
+        "Nama atau alamat surel"
+      ],
+      "Search messages": [
+        "Cari pesan"
+      ],
+      "Filter folders": [
+        "Filter folder"
+      ],
+      "Filter labels": [
+        "Filter label"
+      ]
+    },
+    "Font Face Default": {
+      "Default": [
+        "Default"
+      ]
+    },
+    "Font Size Default": {
+      "Default": [
+        "Default"
       ]
     },
     "PGP key encryption warning": {
@@ -4429,128 +4564,6 @@
         "Arsipkan juga"
       ]
     },
-    "Placeholder": {
-      "E.g., ": [
-        "Misalnya "
-      ],
-      "Link": [
-        "Tautan"
-      ],
-      "Fill in the URL link and text to test your link": [
-        "Isikan tautan URL dan teks untuk menguji tautan Anda"
-      ],
-      "Email address": [
-        "Alamat surel"
-      ],
-      "Fill in the email address and text to test your link": [
-        "Isikan di alamat surel dan teks untuk menguji tautan Anda"
-      ],
-      "Phone number": [
-        "Nomor telepon"
-      ],
-      "Fill in the phone number and text to test your link": [
-        "Isikan di nomot telepon dan teks untuk menguji tautan Anda"
-      ],
-      "Text": [
-        "Teks"
-      ],
-      "Mailbox password": [
-        "Sandi kotak pesan"
-      ],
-      "Start typing an email address": [
-        "Mulai ketik alamat surel"
-      ],
-      "Image URL": [
-        "URL gambar"
-      ],
-      "Search name, email or group": [
-        "Cari nama, surel, atau grup"
-      ],
-      "Filter groups": [
-        "Filter grup"
-      ],
-      "Search for name or email": [
-        "Cari nama atau surel"
-      ],
-      "Search for group name": [
-        "Cari nama grup"
-      ],
-      "Name": [
-        "Nama"
-      ],
-      "OS name": [
-        "Nama Sistem Operasi"
-      ],
-      "OS version": [
-        "Versi Sistem Operasi"
-      ],
-      "Proton username": [
-        "Nama Pengguna Proton"
-      ],
-      "A way to contact you": [
-        "Cara menghubungi Anda"
-      ],
-      "Please describe the problem and include any error messages": [
-        "Mohon uraikan masalah dan sertakan pesan kesalahan apapun"
-      ],
-      "Browser name": [
-        "Nama Peramban"
-      ],
-      "Browser version": [
-        "Versi peramban"
-      ],
-      "e.g. Julia Smith": [
-        "cth. Julia Smith"
-      ],
-      "ZIP": [
-        "Kode pos"
-      ],
-      "Postal code": [
-        "Kode pos"
-      ],
-      "Gift code": [
-        "Kode hadiah"
-      ],
-      "Type text or keyword": [
-        "Ketik teks atau kata kunci"
-      ],
-      "Subject": [
-        "Subjek"
-      ],
-      "Write your message": [
-        "Tulis pesan Anda"
-      ],
-      "Password": [
-        "Kata sandi"
-      ],
-      "Confirm Password": [
-        "Konfirmasi Kata Sandi"
-      ],
-      "Hint": [
-        "Petunjuk"
-      ],
-      "Search Messages": [
-        "Cari Pesan"
-      ],
-      "Start date": [
-        "Tanggal mulai"
-      ],
-      "End date": [
-        "Tanggal berakhir"
-      ],
-      "Name or email address": [
-        "Nama atau alamat surel"
-      ],
-      "Search messages": [
-        "Cari pesan"
-      ],
-      "Filter folders": [
-        "Filter folder"
-      ],
-      "Filter labels": [
-        "Filter label"
-      ]
-    },
     "Time unit": {
       "${ hours } hour": [
         "${ hours } jam"
@@ -4577,16 +4590,6 @@
       ],
       "Found ${ items.length } suggestion, use keyboard to navigate.": [
         "Menemukan ${ items.length } saran, gunakan papan ketik untuk navigasi."
-      ]
-    },
-    "Font Face Default": {
-      "Default": [
-        "Default"
-      ]
-    },
-    "Font Size Default": {
-      "Default": [
-        "Default"
       ]
     },
     "Storage": {
@@ -5253,6 +5256,11 @@
         "${ totalImported }/${ totalToImport } kontak dienkripsi dan ditambahkan ke daftar kontak"
       ]
     },
+    "Select files": {
+      "Upload": [
+        "Unggah"
+      ]
+    },
     "Label to change density": {
       "Comfortable": [
         "Longgar"
@@ -5275,11 +5283,6 @@
       ],
       "Maximized": [
         "Dimaksimalkan"
-      ]
-    },
-    "Select files": {
-      "Upload": [
-        "Unggah"
       ]
     },
     "Loading info": {

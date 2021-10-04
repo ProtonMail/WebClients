@@ -68,66 +68,6 @@
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "Iminig i tesseqdaceḍ ur k-yettaǧǧa ara ad tfakkeḍ axelleṣ. Ma ulac aɣilif, seqdec iminig nniḍen neɣ qqen s uselkim."
       ],
-      "Process aborted": [
-        "Yettwanef ukala"
-      ],
-      "Payment process cancelled": [
-        "Akala n uxelleṣ yettwasefsex"
-      ],
-      "Payment process failed": [
-        "Akala n uxelleṣ ur yeddi ara"
-      ],
-      "Payment process consumed": [
-        "Akala n uxelleṣ yekfa"
-      ],
-      "Payment process not supported": [
-        "Akala n uxelleṣ ur yettwasefrak ara"
-      ],
-      "Unknown payment token status": [
-        "Addad n ujiṭun n uxelleṣ d arussin"
-      ],
-      "Tab closed": [
-        "Iccer yettwamdel"
-      ],
-      "Name on card required": [
-        "Isem n tkarḍa ilaq"
-      ],
-      "Invalid expiration date": [
-        "Yir azemz n taggara"
-      ],
-      "Invalid card number": [
-        "Yir uṭṭun n tkarḍa"
-      ],
-      "Invalid ${ name } code": [
-        "Tangalt n ${ name } ur d tameɣtut"
-      ],
-      "Invalid postal code": [
-        "Yir tangalt n lpusṭa"
-      ],
-      "Error connecting to the Bitcoin API.": [
-        "Tuccḍa di tuqqna ar API Bitcoin."
-      ],
-      "Amount below minimum.": [
-        "Azal ddaw n wadday."
-      ],
-      "Amount above the maximum.": [
-        "Tallayt nnig tafellayt yettwasirgen."
-      ],
-      "The minimum amount that can be donated is ${ price }": [
-        "Azal amezyan maḍi i izemren ad yettunefk d ${ price }"
-      ],
-      "The minimum amount of credit that can be added is ${ _price }": [
-        "Azal amezyan maḍi n usmad i izemren ad yettwarnu d ${ _price }"
-      ],
-      "The minimum payment we accept is ${ _price2 }": [
-        "Lexlaṣ amezyan maḍi i nezmer ad neqbel d ${ _price2 }"
-      ],
-      "Checkout expired, please try again.": [
-        "Asenqed iɛedda wakud-is, ttxil-k·m ɛreḍ tikkelt-nniḍen."
-      ],
-      "Invalid code": [
-        "Yir tangalt"
-      ],
       "Incorrect mailbox password. Please try again": [
         "Awal uffir n tirawt d arameɣtu. Ttxil ɛreḍ tikkelt-nniḍen"
       ],
@@ -190,14 +130,74 @@
       "A group with this name already exists": [
         "Yella yakan ugraw s yisem-agui"
       ],
+      "Process aborted": [
+        "Yettwanef ukala"
+      ],
+      "Payment process cancelled": [
+        "Akala n uxelleṣ yettwasefsex"
+      ],
+      "Payment process failed": [
+        "Akala n uxelleṣ ur yeddi ara"
+      ],
+      "Payment process consumed": [
+        "Akala n uxelleṣ yekfa"
+      ],
+      "Payment process not supported": [
+        "Akala n uxelleṣ ur yettwasefrak ara"
+      ],
+      "Unknown payment token status": [
+        "Addad n ujiṭun n uxelleṣ d arussin"
+      ],
+      "Tab closed": [
+        "Iccer yettwamdel"
+      ],
+      "Name on card required": [
+        "Isem n tkarḍa ilaq"
+      ],
+      "Invalid expiration date": [
+        "Yir azemz n taggara"
+      ],
+      "Invalid card number": [
+        "Yir uṭṭun n tkarḍa"
+      ],
+      "Invalid ${ name } code": [
+        "Tangalt n ${ name } ur d tameɣtut"
+      ],
+      "Invalid postal code": [
+        "Yir tangalt n lpusṭa"
+      ],
+      "Error connecting to the Bitcoin API.": [
+        "Tuccḍa di tuqqna ar API Bitcoin."
+      ],
+      "Amount below minimum.": [
+        "Azal ddaw n wadday."
+      ],
+      "Amount above the maximum.": [
+        "Tallayt nnig tafellayt yettwasirgen."
+      ],
+      "The minimum amount that can be donated is ${ price }": [
+        "Azal amezyan maḍi i izemren ad yettunefk d ${ price }"
+      ],
+      "The minimum amount of credit that can be added is ${ _price }": [
+        "Azal amezyan maḍi n usmad i izemren ad yettwarnu d ${ _price }"
+      ],
+      "The minimum payment we accept is ${ _price2 }": [
+        "Lexlaṣ amezyan maḍi i nezmer ad neqbel d ${ _price2 }"
+      ],
+      "Checkout expired, please try again.": [
+        "Asenqed iɛedda wakud-is, ttxil-k·m ɛreḍ tikkelt-nniḍen."
+      ],
+      "Invalid code": [
+        "Yir tangalt"
+      ],
+      "File has no contents to preview": [
+        "Afaylu ur isεi ara agbur i teskant"
+      ],
       "We were unable to connect to your service provider.": [
         ""
       ],
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         ""
-      ],
-      "File has no contents to preview": [
-        "Afaylu ur isεi ara agbur i teskant"
       ],
       "Could not generate file keys": [
         ""
@@ -383,6 +383,9 @@
       "Week": [
         "Imalas"
       ],
+      "Loading": [
+        "Azdam"
+      ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Aseɣwen-a yezmer ad yili d aẓdam homograph, ulamek yeldi s yimingen Internet Explorer d Edge. Ma yella tetḥeqqeḍ belli aseɣwen-a iṣeḥḥa, ttxil-k·m seqdec iminig-nniḍen akken ad teldiḍ."
       ],
@@ -398,11 +401,47 @@
       "Drop the file here to upload": [
         "Sers dagi afaylu ara tessaliḍ"
       ],
-      "Loading": [
-        "Azdam"
-      ],
       "Loading ${ appName }": [
         "Asali ${ appName }"
+      ],
+      "here": [
+        "da"
+      ],
+      "This account has been suspended due to a potential policy violation.": [
+        "Amiḍan yettwaseḥbes ssebba n wugur n truẓi n tsertit."
+      ],
+      "If you believe this is in error, please contact us ${ contactLink }.": [
+        "Ma yella tumneḍ tagi d tuccḍa, ttxil-k·m nermes-aɣ-a ${ contactLink }."
+      ],
+      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
+        "Amiḍan-inek/m Proton yettwaḥbes akka tura. Akken ad tkemmleḍ aseqdec n umiḍan-inek/m, ttxil-k/m xelleṣ tifaturin yellan."
+      ],
+      "Would you like to receive a new verification code or use an alternative verification method?": [
+        "Tebɣiḍ ad d-teṭṭfeḍ tangalt n usenqed tamaynut neɣ ad tesqedceḍ ttawil n usenqed nniḍen?"
+      ],
+      "Enter the verification code that was sent to ${ destinationText }.": [
+        "Sekcem tangalt n usenged i yettwaznen ɣer ${ destinationText }."
+      ],
+      "If you don't find the email in your inbox, please check your spam folder.": [
+        "Ma ur tufiḍ ara imayl deg tnaka n urmas, ttxil-k/m wali deg ukaram n ispamen."
+      ],
+      "To fight spam and abuse, please verify you are human.": [
+        "Akken ad nennaɣ mgal ispament, senqed ma yella kečč d amdan."
+      ],
+      "Your email will only be used for this one-time verification.": [
+        "Imayl-ik ad yettwaseqdec kan tikkelt deg usenqed-agi."
+      ],
+      "Your phone number will only be used for this one-time verification.": [
+        "Uṭṭun-ik n tiliɣṛi ad yettwaseqdec kan tikkelt deg usenqed-agi."
+      ],
+      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
+        "Ma tufiḍ ugur deg usnulfu n umiḍan-inek/m, ttxil-k/m suter tinnubga ad d-nerr deg yiwen n wass uxeddim."
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
+        "Tekki ɣef \"Suter tangalt tamaynut\" akken tangalt n usenqed tamaynut ad tettwaznen ɣer ${ strong }. Ma tansa n imayl-agi ur teɣti ara, tekki ɣef \"Ẓreg\" akken ad tt-tseɣtiḍ."
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
+        "Tekki ɣef \"Suter tangalt tamaynut\" akken tangalt n usenqed tamaynut ad tettwaznen ɣer ${ strong }. Ma uṭṭun-agi n tilifun ur yeɣti ara, tekki ɣef \"Ẓreg\" akken ad t-seɣtiḍ."
       ],
       "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
         "Amiḍan-ik.im yesεa ma drus yiwet n tfaturt ur nettwaxelleṣ ara. Anekcum-ik.im yettwagdel. ${ payInvoiceLink }"
@@ -443,11 +482,130 @@
       "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
         "Tsenseḍ anekcum Biṭa. Ssit ɣef ${ refreshButton } akken ad tesqedceḍ lqem urkid n ${ appName }. Asnas ad yales asali."
       ],
+      "support team": [
+        "tarbaɛt n tallalt"
+      ],
       "Screenshot(s) attached": [
         "Tuṭṭfa n ugdil tedda (ddant)"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Asmiren n usebter neɣ  ${ link } ad frun tugget n wuguren s wudem awurman."
+      ],
+      "${ contactEmailsLength } Member": [
+        "${ contactEmailsLength } n uɛeggal",
+        "${ contactEmailsLength } n yiɛeggalen"
+      ],
+      "${ namesWithoutLast } and ${ nameOfLast }": [
+        "${ namesWithoutLast } d ${ nameOfLast }"
+      ],
+      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to this group.": [
+        "${ contactName } yegber aṭas n tansiwin imayl. Ttxil fren anta tansa neɣ tansiwin imayl ara ternuḍ ɣer ugraw-a."
+      ],
+      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
+        "${ contactName } yegber aṭas n tansiwin imayl. Ttxil fren tansa neɣ tansiwin imayl ara ternuḍ ɣer${ groupsEnumeration }."
+      ],
+      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to this group.": [
+        "${ contactsEnumeration } yegber aṭas n tansiwin imayl. Ttxil fren tansa neɣ tansiwin imayl ara ternuḍ ɣer ugraw-a."
+      ],
+      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
+        "${ contactsEnumeration } yegber aṭas n tansiwin imayl. Ttxil fren tansa neɣ tansiwin imayl ara ternuḍ ɣer ${ groupsEnumeration }."
+      ],
+      "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
+        "Ttxil-k•m arǧu ad nwali ma llan yinermisen igebren isefka ittuwgelhenen s tsarut tarurmidt."
+      ],
+      "Checking contact ${ progress } of ${ max }...": [
+        "Anadi ɣef yinermisen ${ progress } seg ${ max }..."
+      ],
+      "${ updated } contact updated successfully.": [
+        "${ updated } n unermis yettwaleqqem akken iwata.",
+        "${ updated } n unermis yettwaleqqem akken iwata."
+      ],
+      "To recover your data, you need to re-activate the contact encryption key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
+        "Akken ad d-terreḍ isefka-inek•m, tesriḍ ad tremdeḍ tikkelt-nniḍen tasarut n uwgelhen n unermis i yettwasqedcen mi d-nulfan yisefka i tikkelt tamezwarut. Ilaq ad d-tmektiḍ awal uffir i tesqedceḍ mi d-tnulfa tsarut."
+      ],
+      "Key fingerprint": [
+        "Adriz umḍin n tsarut"
+      ],
+      "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
+        "Ur tezmireḍ ara ad d-temmektiḍ awal uffir-inek•m? Nezmer ad k-nɛiwen akken ad tsefḍeḍ isefka iwgelhanen n yinermisen meṛṛa iwgelhen s tsarut-agi akked telɣut n uzgel."
+      ],
+      "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
+        "Ttxil rǧu simmal ad nmuqel inermisen izemren ad ttuzemlen tikkelt-nniḍen s tsarut n uwgelhen tagejdant."
+      ],
+      "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
+        "Akken ad tzemleḍ tikkelt-nniḍen inermisen-inek•m, nesra ad nsenqed yal anermis s tebdart n tsura n uwgelhen iwejden deg umiḍan-inek•m. Ma ur nufi ara ula d yiwet n tenmeɣrut, amiḍan-inek•m ad ittuzmel tikkelt-nniḍen s tsarut n uqgelhen tagejdant."
+      ],
+      "Please note that this process may take some time depending on the size of your address book.": [
+        "Ttxil-k•m ẓer belli ayagi yezmer ad yeṭṭef kra n wakud i lmend n tiddi n udlis n tansiwin."
+      ],
+      "Select the email format you want to be used by default when sending an email to this email address.": [
+        "Fren amasal n yimayl i tebɣiḍ ad yettwaseqdec d amezwer mi ara tazneḍ imayl ɣer tansa-a imayl."
+      ],
+      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
+        "PGP/Inline yemṣada kan akked umasal aḍris. Ttxil-k ẓer d akken ProtonMail ittezmil dayem iznan iwgelhanen."
+      ],
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
+        "PGP/MIME yettazen izen s wudem awurman s useqdec n uskar amiran n tsuddest. Ttxil-k ẓer d akken ProtonMail yettezmil dayem iznan iwgelhanen"
+      ],
+      "Please note that addresses assigned to this group will NOT be deleted.": [
+        "Ttxil-k·m ẓer belli tansiwin yettunefken i ugraw-a ur ttwakkasent ara."
+      ],
+      "No contacts added yet": [
+        "Ur inermisen akka tura"
+      ],
+      "Group assignment applied": [
+        "Afares n ugraw yettusnes"
+      ],
+      "Create a new contact group": [
+        "Snulfu-d agraw n unermes amaynut"
+      ],
+      "No group found": [
+        "Ulac agraw"
+      ],
+      "Primary": [
+        "Agejdan"
+      ],
+      "Duplicate key updated": [
+        "Sisleg tasarut yettwaleqqmen"
+      ],
+      "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
+        "Asesteb n PGP ad ak·am-imudd tisirag i wakken ad tazneḍ imaylen yettwawgelhen seg yixef ɣer yixef i useqdac ur nesɛi ara Protonmail i iseqdacen ameẓlu yemṣadan d PGP."
+      ],
+      "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
+        "Asenqed n tansa s tsura yettwamanen yermed i tansa-agi. Iwakken ad tizmireḍ ad tazneḍ ɣer tansa-agi, di tazwara isefk ad tgeḍ laman i tsura tizayazin i yezemren ad ttwasqedcent i tuzzna."
+      ],
+      "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
+        "Tansa-agi tettusens. Iwakken ad tizmireḍ ad tazneḍ ɣer tansa-agi, bab-is isefk ad tt-isermed."
+      ],
+      "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
+        "I useqdec n usenqed n tansa, issefk ad tettekleḍ ɣef yiwet neɣ ugar seg tsura tizuyaz i yellan, ula d tin i tebɣiḍ ad tt-tesqedceḍ i tuzna. Aya ad isewḥel abeddel n tsura n uwgelhen."
+      ],
+      "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
+        "Beddel iɣewwaren-agi ma yella tesseqdaceḍ PGP akked iɣerwaḍen ur nesseqdac ara ProtonMail."
+      ],
+      "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
+        "Ula d yiwet seg tsura i d-yettwasulin dtameɣtut i uwgelhen. Awgelhen yettusens s wudem awurman."
+      ],
+      "No email address": [
+        "Ulac tansa n yimayl"
+      ],
+      "${ contactsCount } contact found": [
+        "${ contactsCount } n unermis yettwafen",
+        "${ contactsCount } n yinermisen yettwafen"
+      ],
+      "${ groupCounts } group found": [
+        "${ groupCounts } n ugraw yettwafen",
+        "${ groupCounts } n yigrawen yettwafen"
+      ],
+      "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
+        "Nedhel taktert n yifuyla CSV si Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora akked kra n yisnasen-nniḍen. Nedhel daɣen taktert n 4.0. (Asettengel UTF-8)."
+      ],
+      "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
+        "Asnas-a yesra ad ikkes awgelhen s wudem adidgan i yinermisen-ik send ad d-banen. Ɣer taggara n ukala, afaylu VCF ad ilal, sakin ad tizmireḍ ad t-id-sadreḍ."
+      ],
+      "${ addressCount } email address": [
+        "${ addressCount } n tansa n yimayl",
+        "${ addressCount } n tansiwin n yimayl"
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Segmi telliḍ d aseqdac imekdi, amiḍan-inek• inem yesɛa tiwuriwin n zzyada iremden."
@@ -688,163 +846,23 @@
       "Expired": [
         "Yemmut"
       ],
-      "here": [
-        "da"
+      "Unsupported file": [
+        "Afaylu ur yettwasefrak ara"
       ],
-      "This account has been suspended due to a potential policy violation.": [
-        "Amiḍan yettwaseḥbes ssebba n wugur n truẓi n tsertit."
+      "No preview available": [
+        "Ulac taskant i yellan"
       ],
-      "If you believe this is in error, please contact us ${ contactLink }.": [
-        "Ma yella tumneḍ tagi d tuccḍa, ttxil-k·m nermes-aɣ-a ${ contactLink }."
+      "Preview": [
+        "Taskant"
       ],
-      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
-        "Amiḍan-inek/m Proton yettwaḥbes akka tura. Akken ad tkemmleḍ aseqdec n umiḍan-inek/m, ttxil-k/m xelleṣ tifaturin yellan."
+      "Loading preview": [
+        "Asali n teskant"
       ],
-      "Would you like to receive a new verification code or use an alternative verification method?": [
-        "Tebɣiḍ ad d-teṭṭfeḍ tangalt n usenqed tamaynut neɣ ad tesqedceḍ ttawil n usenqed nniḍen?"
+      "This browser does not support previewing PDF documents. Please download the file.": [
+        "Iminig-a ur yessefrak ara tamuɣli n yisemliyen PDF. Ttxil sader afaylu."
       ],
-      "Enter the verification code that was sent to ${ destinationText }.": [
-        "Sekcem tangalt n usenged i yettwaznen ɣer ${ destinationText }."
-      ],
-      "If you don't find the email in your inbox, please check your spam folder.": [
-        "Ma ur tufiḍ ara imayl deg tnaka n urmas, ttxil-k/m wali deg ukaram n ispamen."
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
-        "Tekki ɣef \"Suter tangalt tamaynut\" akken tangalt n usenqed tamaynut ad tettwaznen ɣer ${ strong }. Ma tansa n imayl-agi ur teɣti ara, tekki ɣef \"Ẓreg\" akken ad tt-tseɣtiḍ."
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
-        "Tekki ɣef \"Suter tangalt tamaynut\" akken tangalt n usenqed tamaynut ad tettwaznen ɣer ${ strong }. Ma uṭṭun-agi n tilifun ur yeɣti ara, tekki ɣef \"Ẓreg\" akken ad t-seɣtiḍ."
-      ],
-      "To fight spam and abuse, please verify you are human.": [
-        "Akken ad nennaɣ mgal ispament, senqed ma yella kečč d amdan."
-      ],
-      "Your email will only be used for this one-time verification.": [
-        "Imayl-ik ad yettwaseqdec kan tikkelt deg usenqed-agi."
-      ],
-      "Your phone number will only be used for this one-time verification.": [
-        "Uṭṭun-ik n tiliɣṛi ad yettwaseqdec kan tikkelt deg usenqed-agi."
-      ],
-      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
-        "Ma tufiḍ ugur deg usnulfu n umiḍan-inek/m, ttxil-k/m suter tinnubga ad d-nerr deg yiwen n wass uxeddim."
-      ],
-      "support team": [
-        "tarbaɛt n tallalt"
-      ],
-      "${ contactEmailsLength } Member": [
-        "${ contactEmailsLength } n uɛeggal",
-        "${ contactEmailsLength } n yiɛeggalen"
-      ],
-      "${ namesWithoutLast } and ${ nameOfLast }": [
-        "${ namesWithoutLast } d ${ nameOfLast }"
-      ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "${ contactName } yegber aṭas n tansiwin imayl. Ttxil fren anta tansa neɣ tansiwin imayl ara ternuḍ ɣer ugraw-a."
-      ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "${ contactName } yegber aṭas n tansiwin imayl. Ttxil fren tansa neɣ tansiwin imayl ara ternuḍ ɣer${ groupsEnumeration }."
-      ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "${ contactsEnumeration } yegber aṭas n tansiwin imayl. Ttxil fren tansa neɣ tansiwin imayl ara ternuḍ ɣer ugraw-a."
-      ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "${ contactsEnumeration } yegber aṭas n tansiwin imayl. Ttxil fren tansa neɣ tansiwin imayl ara ternuḍ ɣer ${ groupsEnumeration }."
-      ],
-      "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
-        "Ttxil-k•m arǧu ad nwali ma llan yinermisen igebren isefka ittuwgelhenen s tsarut tarurmidt."
-      ],
-      "Checking contact ${ progress } of ${ max }...": [
-        "Anadi ɣef yinermisen ${ progress } seg ${ max }..."
-      ],
-      "${ updated } contact updated successfully.": [
-        "${ updated } n unermis yettwaleqqem akken iwata.",
-        "${ updated } n unermis yettwaleqqem akken iwata."
-      ],
-      "To recover your data, you need to re-activate the contact encryption key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
-        "Akken ad d-terreḍ isefka-inek•m, tesriḍ ad tremdeḍ tikkelt-nniḍen tasarut n uwgelhen n unermis i yettwasqedcen mi d-nulfan yisefka i tikkelt tamezwarut. Ilaq ad d-tmektiḍ awal uffir i tesqedceḍ mi d-tnulfa tsarut."
-      ],
-      "Key fingerprint": [
-        "Adriz umḍin n tsarut"
-      ],
-      "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
-        "Ur tezmireḍ ara ad d-temmektiḍ awal uffir-inek•m? Nezmer ad k-nɛiwen akken ad tsefḍeḍ isefka iwgelhanen n yinermisen meṛṛa iwgelhen s tsarut-agi akked telɣut n uzgel."
-      ],
-      "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
-        "Ttxil rǧu simmal ad nmuqel inermisen izemren ad ttuzemlen tikkelt-nniḍen s tsarut n uwgelhen tagejdant."
-      ],
-      "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
-        "Akken ad tzemleḍ tikkelt-nniḍen inermisen-inek•m, nesra ad nsenqed yal anermis s tebdart n tsura n uwgelhen iwejden deg umiḍan-inek•m. Ma ur nufi ara ula d yiwet n tenmeɣrut, amiḍan-inek•m ad ittuzmel tikkelt-nniḍen s tsarut n uqgelhen tagejdant."
-      ],
-      "Please note that this process may take some time depending on the size of your address book.": [
-        "Ttxil-k•m ẓer belli ayagi yezmer ad yeṭṭef kra n wakud i lmend n tiddi n udlis n tansiwin."
-      ],
-      "Select the email format you want to be used by default when sending an email to this email address.": [
-        "Fren amasal n yimayl i tebɣiḍ ad yettwaseqdec d amezwer mi ara tazneḍ imayl ɣer tansa-a imayl."
-      ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
-        "PGP/Inline yemṣada kan akked umasal aḍris. Ttxil-k ẓer d akken ProtonMail ittezmil dayem iznan iwgelhanen."
-      ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
-        "PGP/MIME yettazen izen s wudem awurman s useqdec n uskar amiran n tsuddest. Ttxil-k ẓer d akken ProtonMail yettezmil dayem iznan iwgelhanen"
-      ],
-      "Please note that addresses assigned to this group will NOT be deleted.": [
-        "Ttxil-k·m ẓer belli tansiwin yettunefken i ugraw-a ur ttwakkasent ara."
-      ],
-      "No contacts added yet": [
-        "Ur inermisen akka tura"
-      ],
-      "Group assignment applied": [
-        "Afares n ugraw yettusnes"
-      ],
-      "Create a new contact group": [
-        "Snulfu-d agraw n unermes amaynut"
-      ],
-      "No group found": [
-        "Ulac agraw"
-      ],
-      "Primary": [
-        "Agejdan"
-      ],
-      "Duplicate key updated": [
-        "Sisleg tasarut yettwaleqqmen"
-      ],
-      "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
-        "Asesteb n PGP ad ak·am-imudd tisirag i wakken ad tazneḍ imaylen yettwawgelhen seg yixef ɣer yixef i useqdac ur nesɛi ara Protonmail i iseqdacen ameẓlu yemṣadan d PGP."
-      ],
-      "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
-        "Asenqed n tansa s tsura yettwamanen yermed i tansa-agi. Iwakken ad tizmireḍ ad tazneḍ ɣer tansa-agi, di tazwara isefk ad tgeḍ laman i tsura tizayazin i yezemren ad ttwasqedcent i tuzzna."
-      ],
-      "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
-        "Tansa-agi tettusens. Iwakken ad tizmireḍ ad tazneḍ ɣer tansa-agi, bab-is isefk ad tt-isermed."
-      ],
-      "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
-        "I useqdec n usenqed n tansa, issefk ad tettekleḍ ɣef yiwet neɣ ugar seg tsura tizuyaz i yellan, ula d tin i tebɣiḍ ad tt-tesqedceḍ i tuzna. Aya ad isewḥel abeddel n tsura n uwgelhen."
-      ],
-      "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
-        "Beddel iɣewwaren-agi ma yella tesseqdaceḍ PGP akked iɣerwaḍen ur nesseqdac ara ProtonMail."
-      ],
-      "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
-        "Ula d yiwet seg tsura i d-yettwasulin dtameɣtut i uwgelhen. Awgelhen yettusens s wudem awurman."
-      ],
-      "No email address": [
-        "Ulac tansa n yimayl"
-      ],
-      "${ contactsCount } contact found": [
-        "${ contactsCount } n unermis yettwafen",
-        "${ contactsCount } n yinermisen yettwafen"
-      ],
-      "${ groupCounts } group found": [
-        "${ groupCounts } n ugraw yettwafen",
-        "${ groupCounts } n yigrawen yettwafen"
-      ],
-      "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
-        "Nedhel taktert n yifuyla CSV si Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora akked kra n yisnasen-nniḍen. Nedhel daɣen taktert n 4.0. (Asettengel UTF-8)."
-      ],
-      "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
-        "Asnas-a yesra ad ikkes awgelhen s wudem adidgan i yinermisen-ik send ad d-banen. Ɣer taggara n ukala, afaylu VCF ad ilal, sakin ad tizmireḍ ad t-id-sadreḍ."
-      ],
-      "${ addressCount } email address": [
-        "${ addressCount } n tansa n yimayl",
-        "${ addressCount } n tansiwin n yimayl"
+      "of": [
+        "n"
       ],
       "Import contacts": [
         ""
@@ -872,24 +890,6 @@
       ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Inig azaduran akked tigawin ad qqimen wejden ama remden neɣ ur rmiden ara yinegzumen n unasiw deg yiɣewwaren."
-      ],
-      "Unsupported file": [
-        "Afaylu ur yettwasefrak ara"
-      ],
-      "No preview available": [
-        "Ulac taskant i yellan"
-      ],
-      "Preview": [
-        "Taskant"
-      ],
-      "Loading preview": [
-        "Asali n teskant"
-      ],
-      "This browser does not support previewing PDF documents. Please download the file.": [
-        "Iminig-a ur yessefrak ara tamuɣli n yisemliyen PDF. Ttxil sader afaylu."
-      ],
-      "of": [
-        "n"
       ],
       "Transfer skipped for file \"${ file.name }\"": [
         ""
@@ -935,30 +935,6 @@
       ],
       "Your files will be encrypted and then saved.": [
         "Ifuyla-k.m ad ttwawgelhen syin ad ttwaskelsen."
-      ],
-      "There are no files yet": [
-        "Ulac ɛad ifuyla"
-      ],
-      "Drag and drop a file here or choose to upload.": [
-        "Ẓuɣer neɣ sers afaylu da neɣ fren asali."
-      ],
-      "Share files with links": [
-        "Bḍu ifuyla s yisɣewnen"
-      ],
-      "Create links and share your files with others.": [
-        "Snulfu-d isɣewnen akken ad tebḍuḍ ifuyla-inek m akked wiyiḍ."
-      ],
-      "My Links": [
-        "Iseɣwan-iw"
-      ],
-      "Are you sure you want to empty trash and permanently delete all the items?": [
-        "Tebɣiḍ s tidet ad tsefḍeḍ taqecwalt daɣen ad tekkseḍ s wudem imezgi akk iferdisen?"
-      ],
-      "No files or folders in trash": [
-        "Ulac ifuyla neɣ ikaramen deg tqecwalt"
-      ],
-      "Trash": [
-        "Taqecwalt"
       ],
       "${ doneCount } Finished": [
         "${ doneCount } yekfa",
@@ -1036,6 +1012,30 @@
       ],
       "Closing transfer manager will cancel all active transfers, are you sure?": [
         "Amdal n umsefrak n usiweḍ ad isefsex meṛṛa ayen i tsawaḍeḍ tura, s tidet tebɣiḍ aya?"
+      ],
+      "There are no files yet": [
+        "Ulac ɛad ifuyla"
+      ],
+      "Drag and drop a file here or choose to upload.": [
+        "Ẓuɣer neɣ sers afaylu da neɣ fren asali."
+      ],
+      "Share files with links": [
+        "Bḍu ifuyla s yisɣewnen"
+      ],
+      "Create links and share your files with others.": [
+        "Snulfu-d isɣewnen akken ad tebḍuḍ ifuyla-inek m akked wiyiḍ."
+      ],
+      "My Links": [
+        "Iseɣwan-iw"
+      ],
+      "Are you sure you want to empty trash and permanently delete all the items?": [
+        "Tebɣiḍ s tidet ad tsefḍeḍ taqecwalt daɣen ad tekkseḍ s wudem imezgi akk iferdisen?"
+      ],
+      "No files or folders in trash": [
+        "Ulac ifuyla neɣ ikaramen deg tqecwalt"
+      ],
+      "Trash": [
+        "Taqecwalt"
       ],
       "Link expires: ": [
         "Aseɣwen ad ifat di: "
@@ -1446,6 +1446,33 @@
       "refresh the page": [
         "smiren asebter"
       ],
+      "Log in": [
+        "Tuqqna"
+      ],
+      "View invoice": [
+        "Wali tafaturt"
+      ],
+      "Get verification code": [
+        "Awi tangalt n usentem"
+      ],
+      "Try another method": [
+        "Ɛreḍ tarrayt-nniḍen"
+      ],
+      "Request new code": [
+        "Suter tangalt tamaynut"
+      ],
+      "Verify": [
+        "Senqed"
+      ],
+      "Did not receive the code?": [
+        "Ur d-teṭṭifeḍ ara tangalt?"
+      ],
+      "Edit email address": [
+        "Ẓreg tansa n yimayl"
+      ],
+      "Edit phone number": [
+        "Ẓreg uṭṭun n tiliɣri"
+      ],
       "Close this banner": [
         "Mdel aɣarrac-a"
       ],
@@ -1542,87 +1569,6 @@
       "Show info": [
         "Sken isallen"
       ],
-      "Remove bonuses": [
-        "Kkes ibunusen"
-      ],
-      "Verify": [
-        "Senqed"
-      ],
-      "Try again": [
-        "Ɛreḍ tikkelt-nniḍen"
-      ],
-      "Use a different card": [
-        "Seqdec takarḍa-nniḍen"
-      ],
-      "Use a different payment method": [
-        "Seqdec tarayt-nniḍen n usellek"
-      ],
-      "Retry": [
-        "Ɛreḍ tikkelt-nniḍen"
-      ],
-      "Loading verification": [
-        "Asali n usenqed"
-      ],
-      "Select plan": [
-        "Fren aɣawas"
-      ],
-      "Compare all features": [
-        "Serwes akk timahilin"
-      ],
-      "${ boldSave } by switching to annual billing": [
-        "${ boldSave } s ubeddel ɣer uxelleṣ s useggas"
-      ],
-      "Continue": [
-        "Kemmel"
-      ],
-      "Pay": [
-        "Xelleṣ"
-      ],
-      "Apply": [
-        "Snes"
-      ],
-      "Open ${ CALENDAR_APP_NAME } settings": [
-        "Ldi iɣewwaren n ${ CALENDAR_APP_NAME }"
-      ],
-      "Remove gift code": [
-        "Kkes tangalt n usefk"
-      ],
-      "annual billing": [
-        "tafaṭurt s useggas"
-      ],
-      "Compare plans": [
-        "Serwes iɣawasen"
-      ],
-      "Decrease": [
-        "Senqes"
-      ],
-      "Increase": [
-        "Snerni"
-      ],
-      "Log in": [
-        "Tuqqna"
-      ],
-      "View invoice": [
-        "Wali tafaturt"
-      ],
-      "Get verification code": [
-        "Awi tangalt n usentem"
-      ],
-      "Try another method": [
-        "Ɛreḍ tarrayt-nniḍen"
-      ],
-      "Request new code": [
-        "Suter tangalt tamaynut"
-      ],
-      "Did not receive the code?": [
-        "Ur d-teṭṭifeḍ ara tangalt?"
-      ],
-      "Edit email address": [
-        "Ẓreg tansa n yimayl"
-      ],
-      "Edit phone number": [
-        "Ẓreg uṭṭun n tiliɣri"
-      ],
       "Save": [
         "Sekles"
       ],
@@ -1631,6 +1577,9 @@
       ],
       "Add": [
         "Rnu"
+      ],
+      "Apply": [
+        "Snes"
       ],
       "Clear data": [
         "Sfeḍ isefka"
@@ -1695,6 +1644,9 @@
       "Preview contact": [
         "Anerms yezrin"
       ],
+      "Continue": [
+        "Kemmel"
+      ],
       "Delete contact": [
         "Kkes anermis"
       ],
@@ -1754,17 +1706,53 @@
       "Import": [
         "Kter"
       ],
-      "Continue import": [
-        ""
+      "Remove bonuses": [
+        "Kkes ibunusen"
       ],
-      "Discard": [
-        ""
+      "Try again": [
+        "Ɛreḍ tikkelt-nniḍen"
       ],
-      "Reconnect": [
-        ""
+      "Use a different card": [
+        "Seqdec takarḍa-nniḍen"
       ],
-      "Start import": [
-        ""
+      "Use a different payment method": [
+        "Seqdec tarayt-nniḍen n usellek"
+      ],
+      "Retry": [
+        "Ɛreḍ tikkelt-nniḍen"
+      ],
+      "Loading verification": [
+        "Asali n usenqed"
+      ],
+      "Select plan": [
+        "Fren aɣawas"
+      ],
+      "Compare all features": [
+        "Serwes akk timahilin"
+      ],
+      "${ boldSave } by switching to annual billing": [
+        "${ boldSave } s ubeddel ɣer uxelleṣ s useggas"
+      ],
+      "Pay": [
+        "Xelleṣ"
+      ],
+      "Open ${ CALENDAR_APP_NAME } settings": [
+        "Ldi iɣewwaren n ${ CALENDAR_APP_NAME }"
+      ],
+      "Remove gift code": [
+        "Kkes tangalt n usefk"
+      ],
+      "annual billing": [
+        "tafaṭurt s useggas"
+      ],
+      "Compare plans": [
+        "Serwes iɣawasen"
+      ],
+      "Decrease": [
+        "Senqes"
+      ],
+      "Increase": [
+        "Snerni"
       ],
       "Details": [
         "Ifatusen"
@@ -1787,8 +1775,74 @@
       "Previous": [
         "Ar deffir"
       ],
+      "Continue import": [
+        ""
+      ],
+      "Discard": [
+        ""
+      ],
+      "Reconnect": [
+        ""
+      ],
+      "Start import": [
+        ""
+      ],
       "Cancel all uploads": [
         "Sefsex akk isaliyen"
+      ],
+      "Share": [
+        "Bḍu"
+      ],
+      "Show shared link details": [
+        "Sken-d ifutas n useɣwen yettwabḍan"
+      ],
+      "Maximize transfers": [
+        "Semɣer asiweḍ"
+      ],
+      "Minimize transfers": [
+        "Semẓi asiweḍ"
+      ],
+      "Close transfers": [
+        "Mdel asiweḍ"
+      ],
+      "Pause download": [
+        "Ttarǧu asider"
+      ],
+      "Pause upload": [
+        "Ḥbes asali"
+      ],
+      "Resume download": [
+        "Kemmel asader"
+      ],
+      "Resume upload": [
+        "Kemmel asali"
+      ],
+      "Cancel download": [
+        "Sefsex asider"
+      ],
+      "Cancel upload": [
+        "Sefsex asali"
+      ],
+      "Restart download": [
+        "Ales asenker n usader"
+      ],
+      "Restart upload": [
+        "Ales asenker n usali"
+      ],
+      "Remove from this list": [
+        "Kkes seg tebdart-a"
+      ],
+      "Resume transfers": [
+        ""
+      ],
+      "Pause transfers": [
+        ""
+      ],
+      "Cancel transfers": [
+        ""
+      ],
+      "Restart transfers": [
+        ""
       ],
       "New upload": [
         "Asali amaynut"
@@ -1804,9 +1858,6 @@
       ],
       "Share options": [
         ""
-      ],
-      "Share": [
-        "Bḍu"
       ],
       "Create new folder": [
         "Rnu akaram amaynut"
@@ -1865,57 +1916,6 @@
       "Restore from trash": [
         "Err-d seg tqecwalt"
       ],
-      "Maximize transfers": [
-        "Semɣer asiweḍ"
-      ],
-      "Minimize transfers": [
-        "Semẓi asiweḍ"
-      ],
-      "Close transfers": [
-        "Mdel asiweḍ"
-      ],
-      "Pause download": [
-        "Ttarǧu asider"
-      ],
-      "Pause upload": [
-        "Ḥbes asali"
-      ],
-      "Resume download": [
-        "Kemmel asader"
-      ],
-      "Resume upload": [
-        "Kemmel asali"
-      ],
-      "Cancel download": [
-        "Sefsex asider"
-      ],
-      "Cancel upload": [
-        "Sefsex asali"
-      ],
-      "Restart download": [
-        "Ales asenker n usader"
-      ],
-      "Restart upload": [
-        "Ales asenker n usali"
-      ],
-      "Remove from this list": [
-        "Kkes seg tebdart-a"
-      ],
-      "Resume transfers": [
-        ""
-      ],
-      "Pause transfers": [
-        ""
-      ],
-      "Cancel transfers": [
-        ""
-      ],
-      "Restart transfers": [
-        ""
-      ],
-      "Show shared link details": [
-        "Sken-d ifutas n useɣwen yettwabḍan"
-      ],
       "Start recovering": [
         "Bdu tiririt"
       ],
@@ -1951,111 +1951,6 @@
       "What's new": [
         "D acu i d amaynut"
       ],
-      "Open help menu": [
-        "Ldi umuɣ n tallelt"
-      ],
-      "Back": [
-        "Ar deffir"
-      ],
-      "Open settings menu": [
-        "Ldi umuɣ n yiɣewwaren"
-      ],
-      "Select a theme": [
-        "Fren asentel"
-      ],
-      "Report a problem": [
-        "Azen ugur"
-      ],
-      "Confirm loss of Proton bonuses": [
-        "Sentem lexṣara n yibunusen n Proton"
-      ],
-      "Unsupported browser": [
-        "Iminig ur nettusefrak ara"
-      ],
-      "Card verification": [
-        "Takerḍa n usenqed"
-      ],
-      "Payment verification": [
-        "Asenqed n uxelleṣ"
-      ],
-      "Processing...": [
-        "Asesfer..."
-      ],
-      "Card verification in progress": [
-        "Asenqed s tkerḍa iteddu"
-      ],
-      "Payment verification in progress": [
-        "Asenqed n usellek iteddu"
-      ],
-      "PayPal verification failed": [
-        "Asenqed n PayPal yecceḍ"
-      ],
-      "3-D Secure verification failed": [
-        "Asenqed 3-D Secure yecceḍ"
-      ],
-      "Error": [
-        "Tuccḍa"
-      ],
-      "ZIP / postal code": [
-        "ZIP / tangalt n lpusṭa"
-      ],
-      "Payment details": [
-        "Talqayt n lexlas"
-      ],
-      "Currency": [
-        "Azamul n tedrimt"
-      ],
-      "Billing cycle": [
-        "Tawala n ufter"
-      ],
-      "Current plan": [
-        "Aɣawas amiran"
-      ],
-      "Processing": [
-        "Asesfer"
-      ],
-      "Apply gift code": [
-        "Snes tangalt n usefk"
-      ],
-      "Subtotal": [
-        "Adasemday"
-      ],
-      "Coupon discount": [
-        "Akupun n usenɣes"
-      ],
-      "Total (monthly)": [
-        "Amatu(monthly)"
-      ],
-      "Credits": [
-        "Ismaden"
-      ],
-      "Gift code": [
-        "Tangalt n usefk"
-      ],
-      "Amount due": [
-        "Tallayt ara txelseḍ"
-      ],
-      "Cancel subscription": [
-        "Sefsex ajerred"
-      ],
-      "Network error": [
-        "Tuccḍa deg uzeṭṭa"
-      ],
-      "Select a plan": [
-        "Fren aɣawas"
-      ],
-      "Customize your plan": [
-        "Mudd udem i uɣawas-ik"
-      ],
-      "Checkout": [
-        "Axelleṣ"
-      ],
-      "Plan summary": [
-        "Agzul n uɣawas"
-      ],
-      "${ appName } customization": [
-        "${ appName } udmawan"
-      ],
       "Sign in again to continue": [
         "Qqen tikelt-nniḍen akken ad tkemmled"
       ],
@@ -2071,11 +1966,23 @@
       "Invalid verification code": [
         "Tangalt n usentem mačči d tameɣtut"
       ],
-      "Request new code": [
-        "Suter tangalt tamaynut"
-      ],
       "Human verification": [
         "Asenqed n umdan"
+      ],
+      "Open help menu": [
+        "Ldi umuɣ n tallelt"
+      ],
+      "Back": [
+        "Ar deffir"
+      ],
+      "Open settings menu": [
+        "Ldi umuɣ n yiɣewwaren"
+      ],
+      "Select a theme": [
+        "Fren asentel"
+      ],
+      "Report a problem": [
+        "Azen ugur"
       ],
       "Edit image": [
         "Ẓreg tugna"
@@ -2198,6 +2105,96 @@
       "Import contacts": [
         "Kter inermisen"
       ],
+      "Confirm loss of Proton bonuses": [
+        "Sentem lexṣara n yibunusen n Proton"
+      ],
+      "Unsupported browser": [
+        "Iminig ur nettusefrak ara"
+      ],
+      "Card verification": [
+        "Takerḍa n usenqed"
+      ],
+      "Payment verification": [
+        "Asenqed n uxelleṣ"
+      ],
+      "Processing...": [
+        "Asesfer..."
+      ],
+      "Card verification in progress": [
+        "Asenqed s tkerḍa iteddu"
+      ],
+      "Payment verification in progress": [
+        "Asenqed n usellek iteddu"
+      ],
+      "PayPal verification failed": [
+        "Asenqed n PayPal yecceḍ"
+      ],
+      "3-D Secure verification failed": [
+        "Asenqed 3-D Secure yecceḍ"
+      ],
+      "Error": [
+        "Tuccḍa"
+      ],
+      "ZIP / postal code": [
+        "ZIP / tangalt n lpusṭa"
+      ],
+      "Payment details": [
+        "Talqayt n lexlas"
+      ],
+      "Currency": [
+        "Azamul n tedrimt"
+      ],
+      "Billing cycle": [
+        "Tawala n ufter"
+      ],
+      "Current plan": [
+        "Aɣawas amiran"
+      ],
+      "Processing": [
+        "Asesfer"
+      ],
+      "Apply gift code": [
+        "Snes tangalt n usefk"
+      ],
+      "Subtotal": [
+        "Adasemday"
+      ],
+      "Coupon discount": [
+        "Akupun n usenɣes"
+      ],
+      "Total (monthly)": [
+        "Amatu(monthly)"
+      ],
+      "Credits": [
+        "Ismaden"
+      ],
+      "Gift code": [
+        "Tangalt n usefk"
+      ],
+      "Amount due": [
+        "Tallayt ara txelseḍ"
+      ],
+      "Cancel subscription": [
+        "Sefsex ajerred"
+      ],
+      "Network error": [
+        "Tuccḍa deg uzeṭṭa"
+      ],
+      "Select a plan": [
+        "Fren aɣawas"
+      ],
+      "Customize your plan": [
+        "Mudd udem i uɣawas-ik"
+      ],
+      "Checkout": [
+        "Axelleṣ"
+      ],
+      "Plan summary": [
+        "Agzul n uɣawas"
+      ],
+      "${ appName } customization": [
+        "${ appName } udmawan"
+      ],
       "Start import process": [
         ""
       ],
@@ -2228,6 +2225,12 @@
       "Drop to upload": [
         "Ẓuɣer asali"
       ],
+      "Additional settings": [
+        "Iɣewwaren imernan"
+      ],
+      "Cancel all active transfers": [
+        "Sefsex meṛṛa ayen i tsiwḍeḍ"
+      ],
       "Show actions": [
         "Sken tigawin"
       ],
@@ -2248,12 +2251,6 @@
       ],
       "Trash": [
         "Taqecwalt"
-      ],
-      "Additional settings": [
-        "Iɣewwaren imernan"
-      ],
-      "Cancel all active transfers": [
-        "Sefsex meṛṛa ayen i tsiwḍeḍ"
       ],
       "Your file is ready to be downloaded": [
         "Afaylu-inek•inem yewjed i usader"
@@ -2389,6 +2386,36 @@
       "Do not ask again": [
         "Ur steqsay ara tikkelt-nniḍen"
       ],
+      "Cancel": [
+        "Sefsex"
+      ],
+      "Submit": [
+        "Azen"
+      ],
+      "Password": [
+        "Awal uffir"
+      ],
+      "Mailbox password": [
+        "Awal n uɛeddi n tenkult imayl"
+      ],
+      "Two-factor authentication code": [
+        "Tangalt n usesteb s snat n tarrayin"
+      ],
+      "Username or ProtonMail address": [
+        "Isem n useqdac neɣ tansa imayl n ProtonMail"
+      ],
+      "Email address": [
+        "Tansa imayl"
+      ],
+      "Phone number": [
+        "Uṭṭun n tiliɣri"
+      ],
+      "Verification code": [
+        "Tangalt n usenqed"
+      ],
+      "Enter the 6-digit code": [
+        "Sekcem tangalt n 6 n yizwilen"
+      ],
       "Display name": [
         "Isem n uskan"
       ],
@@ -2400,9 +2427,6 @@
       ],
       "Proton username": [
         "Isem n useqdac Proton"
-      ],
-      "Email address": [
-        "Tansa imayl"
       ],
       "Category": [
         "Taggayt"
@@ -2419,6 +2443,63 @@
       "Browser version": [
         "Lqem n yiminig"
       ],
+      "Add image URL": [
+        "Rnu URL n tugna"
+      ],
+      "Upload picture": [
+        "Sali-d tugna"
+      ],
+      "Add email address": [
+        "Rnu tansa n yimayl"
+      ],
+      "Email format": [
+        "Amasal n yimayl"
+      ],
+      "Street address": [
+        "Tansa n uxxam"
+      ],
+      "City": [
+        "Tamdint"
+      ],
+      "Region": [
+        "Tamnaḍt"
+      ],
+      "Postal code": [
+        "Tangalt n lpusṭa"
+      ],
+      "Country": [
+        "Tamurt"
+      ],
+      "Post office box": [
+        "Tanaka n lpusṭa"
+      ],
+      "Extended address": [
+        "Asiɣzef n tansa"
+      ],
+      "Add to group": [
+        "Rnu ɣer ugraw"
+      ],
+      "Encrypt emails": [
+        "Wgelhen imaylen"
+      ],
+      "Sign emails": [
+        "Eg azmul i yimaylen"
+      ],
+      "Cryptographic scheme": [
+        "Tamuddemt n uwgelhen"
+      ],
+      "Public keys": [
+        "Tisura tizuyaz"
+      ],
+      "Automatically save contacts": [
+        "Seekles inermisen s wudem awurman"
+      ],
+      "Import contacts": [
+        "Kter inermisen"
+      ],
+      "Export contacts": [
+        "Kter inermisen"
+      ],
       "Name on card": [
         "Isem ɣef takarḍa"
       ],
@@ -2431,16 +2512,10 @@
       "CVV code": [
         "Tangalt CVC"
       ],
-      "Country": [
-        "Tamurt"
-      ],
       "Select your country": [
         "Fren tamurt-ik•im"
       ],
       "ZIP": [
-        "Tangalt n lpusṭa"
-      ],
-      "Postal code": [
         "Tangalt n lpusṭa"
       ],
       "BTC amount:": [
@@ -2472,84 +2547,6 @@
       ],
       "Payer": [
         "Amxellaṣ"
-      ],
-      "Cancel": [
-        "Sefsex"
-      ],
-      "Submit": [
-        "Azen"
-      ],
-      "Password": [
-        "Awal uffir"
-      ],
-      "Mailbox password": [
-        "Awal n uɛeddi n tenkult imayl"
-      ],
-      "Two-factor authentication code": [
-        "Tangalt n usesteb s snat n tarrayin"
-      ],
-      "Username or ProtonMail address": [
-        "Isem n useqdac neɣ tansa imayl n ProtonMail"
-      ],
-      "Phone number": [
-        "Uṭṭun n tiliɣri"
-      ],
-      "Verification code": [
-        "Tangalt n usenqed"
-      ],
-      "Enter the 6-digit code": [
-        "Sekcem tangalt n 6 n yizwilen"
-      ],
-      "Add image URL": [
-        "Rnu URL n tugna"
-      ],
-      "Upload picture": [
-        "Sali-d tugna"
-      ],
-      "Add email address": [
-        "Rnu tansa n yimayl"
-      ],
-      "Email format": [
-        "Amasal n yimayl"
-      ],
-      "Street address": [
-        "Tansa n uxxam"
-      ],
-      "City": [
-        "Tamdint"
-      ],
-      "Region": [
-        "Tamnaḍt"
-      ],
-      "Post office box": [
-        "Tanaka n lpusṭa"
-      ],
-      "Extended address": [
-        "Asiɣzef n tansa"
-      ],
-      "Add to group": [
-        "Rnu ɣer ugraw"
-      ],
-      "Encrypt emails": [
-        "Wgelhen imaylen"
-      ],
-      "Sign emails": [
-        "Eg azmul i yimaylen"
-      ],
-      "Cryptographic scheme": [
-        "Tamuddemt n uwgelhen"
-      ],
-      "Public keys": [
-        "Tisura tizuyaz"
-      ],
-      "Automatically save contacts": [
-        "Seekles inermisen s wudem awurman"
-      ],
-      "Import contacts": [
-        "Kter inermisen"
-      ],
-      "Export contacts": [
-        "Kter inermisen"
       ],
       "From: ${ fromEmailAddress }": [
         ""
@@ -2596,6 +2593,36 @@
       "Apply to all duplicated files": [
         "Snes ɣef yifuyla usligen merra"
       ],
+      "Folder": [
+        "Akaram"
+      ],
+      "(Expired)": [
+        "(Ifut)"
+      ],
+      "Expired": [
+        "Ifut"
+      ],
+      "Never": [
+        "Werǧin"
+      ],
+      "File": [
+        "Afaylu"
+      ],
+      "All": [
+        "Akk"
+      ],
+      "Active": [
+        "Urmid"
+      ],
+      "Completed": [
+        ""
+      ],
+      "Failed": [
+        "Yecceḍ"
+      ],
+      "Apply to selection": [
+        ""
+      ],
       "Audio file": [
         "Afaylu ameslaw"
       ],
@@ -2617,36 +2644,6 @@
       "Up to ${ parentLinkName }": [
         ""
       ],
-      "All": [
-        "Akk"
-      ],
-      "Active": [
-        "Urmid"
-      ],
-      "Completed": [
-        ""
-      ],
-      "Failed": [
-        "Yecceḍ"
-      ],
-      "Apply to selection": [
-        ""
-      ],
-      "Folder": [
-        "Akaram"
-      ],
-      "(Expired)": [
-        "(Ifut)"
-      ],
-      "Expired": [
-        "Ifut"
-      ],
-      "Never": [
-        "Werǧin"
-      ],
-      "File": [
-        "Afaylu"
-      ],
       "Get your own ${ appName }": [
         "Awi-d ${ appName } inek•m"
       ],
@@ -2666,9 +2663,17 @@
         "Sbadu azemz n taggara"
       ]
     },
+    "PGP key encryption warning": {
+      "Key cannot be used for encryption": [
+        "Tasarut ulamek ara tettwaseqdec i uwgelhen"
+      ]
+    },
     "Placeholder": {
       "E.g., ": [
         "Md., "
+      ],
+      "Mailbox password": [
+        "Awal n uɛeddi n tenkult imayl"
       ],
       "e.g. Julia Smith": [
         "md. Julia Smith"
@@ -2694,18 +2699,6 @@
       "Browser version": [
         "Lqem n yiminig"
       ],
-      "ZIP": [
-        "Tangalt n lpusṭa"
-      ],
-      "Postal code": [
-        "Tangalt n lpusṭa"
-      ],
-      "Gift code": [
-        "Tangalt n usefk"
-      ],
-      "Mailbox password": [
-        "Awal n uɛeddi n tenkult imayl"
-      ],
       "Image URL": [
         "URL n tugna"
       ],
@@ -2723,6 +2716,15 @@
       ],
       "Name": [
         "Isem"
+      ],
+      "ZIP": [
+        "Tangalt n lpusṭa"
+      ],
+      "Postal code": [
+        "Tangalt n lpusṭa"
+      ],
+      "Gift code": [
+        "Tangalt n usefk"
       ],
       "New name": [
         "Isem amaynut"
@@ -2756,6 +2758,9 @@
       "Learn more": [
         "Issin ugar"
       ],
+      "Request an invite": [
+        "Suter tinubga"
+      ],
       "Pay invoice": [
         "Xelleṣ tafaturt"
       ],
@@ -2777,9 +2782,6 @@
       "Add a gift code": [
         "Rnu tangalt n usefk"
       ],
-      "Request an invite": [
-        "Suter tinubga"
-      ],
       "My files": [
         "Ifuyla-inu"
       ],
@@ -2790,11 +2792,6 @@
         "Taqecwalt"
       ]
     },
-    "PGP key encryption warning": {
-      "Key cannot be used for encryption": [
-        "Tasarut ulamek ara tettwaseqdec i uwgelhen"
-      ]
-    },
     "Hint": {
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Seqdec tiqeffalin Asawen d Akessar i wakken ad tkecmeḍ ɣer yisumar syen asenqed-nsen seld anekcum. Sit ɣef Enter i wakken ad tesnetmeḍ afran-inek·inem, neɣ Escape i wakken ad tmedleḍ tabewwaḍt n yisumar."
@@ -2802,17 +2799,6 @@
       "Found ${ items.length } suggestion, use keyboard to navigate.": [
         "Af asumer n { items.length }, seqdec anasiw i tunigin.",
         "Af isumar { items.length }, seqdec anasiw i tunigin."
-      ]
-    },
-    "Apps dropdown": {
-      "Proton applications": [
-        "Isnasen n Proton"
-      ],
-      "Go to ${ title }": [
-        "Ddu ɣer ${ title }"
-      ],
-      "Go to ${ vpnName }": [
-        "Ddu ɣer ${ vpnName }"
       ]
     },
     "Error message": {
@@ -2847,6 +2833,103 @@
         "Ahat ilaq daɣen ${ refresh } neɣ εreḍ ticki."
       ]
     },
+    "Apps dropdown": {
+      "Proton applications": [
+        "Isnasen n Proton"
+      ],
+      "Go to ${ title }": [
+        "Ddu ɣer ${ title }"
+      ],
+      "Go to ${ vpnName }": [
+        "Ddu ɣer ${ vpnName }"
+      ]
+    },
+    "Delinquent modal title": {
+      "Overdue invoice": [
+        "Tafaturt ur nettwaxelleṣ ara"
+      ]
+    },
+    "Success": {
+      "Code sent to ${ methodTo }": [
+        "Tangalt tettwazen ɣer ${ methodTo }"
+      ],
+      "Verification successful": [
+        "Asenqed yedda akken iwata"
+      ],
+      "Email address copied to clipboard": [
+        "Tansa imayl tettwanɣel ɣef afus"
+      ],
+      "Bug reported": [
+        "Abug yettwazen"
+      ],
+      "Contact saved": [
+        "Anermis yettwasekles"
+      ],
+      "Contacts deleted": [
+        "Inermisen ttwakksen"
+      ],
+      "Contact deleted": [
+        "Anermis ittwakkes",
+        "Inermisen ttwakksen"
+      ],
+      "Fingerprint copied to clipboard": [
+        "Adriz n uḍad yettwanɣel ɣer tecfawit"
+      ],
+      "Preferences saved": [
+        "Ismenyifen ttwaskelsen"
+      ],
+      "Contact group deleted": [
+        "Agraw n urmas yettwakkes",
+        "Igrawen n urmas ttwakksen"
+      ],
+      "Phone number copied to clipboard": [
+        "Uṭṭun n tilifun yettwanɣel ɣef afus"
+      ],
+      "Address copied to clipboard": [
+        "Tansa tettwanɣel ɣef afus"
+      ],
+      "You have successfully unsubscribed": [
+        "Teffɣeḍ seg ujerred akken iwata"
+      ],
+      "Preference saved": [
+        "Ismenyifen ttwaskelsen"
+      ],
+      "Keyboard shortcuts preferences updated": [
+        "Ismenyifen n yinegzumen n unasiw ttwaleqqmen"
+      ],
+      "Recovery has started.": [
+        "Tiririt tebda."
+      ],
+      "${ nameElement } renamed successfully": [
+        "${ nameElement } yettwabeddel yisem-is akken iwata"
+      ],
+      "\"${ formattedName }\" created successfully": [
+        "\"${ formattedName }\"yettwarna akken iwata"
+      ],
+      "The link to your file was successfully copied.": [
+        "Aseɣwen ɣer ufaylu-inek m yettwanɣel akken iwata."
+      ],
+      "Your files were successfully recovered to \"My files\".": [
+        "Ifuyla-inek·inem ttwarran-d akken iwata ɣer \"Ifuyla-inu\"."
+      ]
+    },
+    "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
+      "Email": [
+        "Imayl"
+      ],
+      "SMS": [
+        "SMS"
+      ],
+      "Manual": [
+        "Awfus"
+      ],
+      "No verification method available": [
+        "Ulac tarrayt n usenqed"
+      ]
+    },
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
         "Lqem amaynut ${ appName } yella. ${ reloadButton }."
@@ -2864,9 +2947,6 @@
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Tuzna n uneqqis ur tettuwgelhen ara seg yixef ar yixef, ur d-ttazen ara talɣut tamaẓlayt."
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Ttxil ẓer belli s ufran n tarrayt-a n uxelleṣ, amiḍan-ik·im ur nezmir ara ad t-nleqqem din din. Ad nleqqem amiḍan-ik·im akken ara yettwag uxelleṣ."
       ],
       "Are you sure you want to permanently delete this contact?": [
         "D tidet tebɣiḍ ad tekkseḍ i lebda anermis-a?"
@@ -2906,72 +2986,11 @@
       "Contacts could not be merged": [
         "Ur nezmir ara ad nezdi inermisen"
       ],
+      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
+        "Ttxil ẓer belli s ufran n tarrayt-a n uxelleṣ, amiḍan-ik·im ur nezmir ara ad t-nleqqem din din. Ad nleqqem amiḍan-ik·im akken ara yettwag uxelleṣ."
+      ],
       "Are you sure you want to discard your import?": [
         ""
-      ]
-    },
-    "Success": {
-      "Email address copied to clipboard": [
-        "Tansa imayl tettwanɣel ɣef afus"
-      ],
-      "Bug reported": [
-        "Abug yettwazen"
-      ],
-      "You have successfully unsubscribed": [
-        "Teffɣeḍ seg ujerred akken iwata"
-      ],
-      "Code sent to ${ methodTo }": [
-        "Tangalt tettwazen ɣer ${ methodTo }"
-      ],
-      "Verification successful": [
-        "Asenqed yedda akken iwata"
-      ],
-      "Contact saved": [
-        "Anermis yettwasekles"
-      ],
-      "Contacts deleted": [
-        "Inermisen ttwakksen"
-      ],
-      "Contact deleted": [
-        "Anermis ittwakkes",
-        "Inermisen ttwakksen"
-      ],
-      "Fingerprint copied to clipboard": [
-        "Adriz n uḍad yettwanɣel ɣer tecfawit"
-      ],
-      "Preferences saved": [
-        "Ismenyifen ttwaskelsen"
-      ],
-      "Contact group deleted": [
-        "Agraw n urmas yettwakkes",
-        "Igrawen n urmas ttwakksen"
-      ],
-      "Phone number copied to clipboard": [
-        "Uṭṭun n tilifun yettwanɣel ɣef afus"
-      ],
-      "Address copied to clipboard": [
-        "Tansa tettwanɣel ɣef afus"
-      ],
-      "Preference saved": [
-        "Ismenyifen ttwaskelsen"
-      ],
-      "Keyboard shortcuts preferences updated": [
-        "Ismenyifen n yinegzumen n unasiw ttwaleqqmen"
-      ],
-      "Recovery has started.": [
-        "Tiririt tebda."
-      ],
-      "${ nameElement } renamed successfully": [
-        "${ nameElement } yettwabeddel yisem-is akken iwata"
-      ],
-      "\"${ formattedName }\" created successfully": [
-        "\"${ formattedName }\"yettwarna akken iwata"
-      ],
-      "The link to your file was successfully copied.": [
-        "Aseɣwen ɣer ufaylu-inek m yettwanɣel akken iwata."
-      ],
-      "Your files were successfully recovered to \"My files\".": [
-        "Ifuyla-inek·inem ttwarran-d akken iwata ɣer \"Ifuyla-inu\"."
       ]
     },
     "Header": {
@@ -3169,6 +3188,544 @@
         "Seddu tuṭṭfa(win) n ugdil"
       ]
     },
+    "Label to change density": {
+      "Comfortable": [
+        "Yerked"
+      ],
+      "Compact": [
+        "Ussid"
+      ]
+    },
+    "Label to change view layout": {
+      "Column": [
+        "Tigejdit"
+      ],
+      "Row": [
+        "Izirig"
+      ]
+    },
+    "Label to change composer mode": {
+      "Normal": [
+        "Amagnu"
+      ],
+      "Maximized": [
+        "Afellay"
+      ]
+    },
+    "Label for contact group name": {
+      "Name": [
+        "Isem"
+      ]
+    },
+    "Placeholder for contact group name": {
+      "Name": [
+        "Isem"
+      ]
+    },
+    "Label for contact group color": {
+      "Color": [
+        "Ini"
+      ]
+    },
+    "Tooltip": {
+      "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
+        "Awurman yemmal belli amasal deg umsuddes yettwaseqdec i tuzzna ɣer useqdac-agi. Amasal aḍris yemmal belli izen ad ittuselket ɣer umasal aḍris di tuzzna."
+      ],
+      "Encrypted data with verified digital signature": [
+        "Isefka iwgelhanen s uzmul umḍin yettwasenqden"
+      ],
+      "Email encryption forces email signature to help authenticate your sent messages": [
+        "Awgelhen n yimayl yettḥettim azmul n yimayl ad yallel deg usesteb n yiznan-ik·im yettwaznen"
+      ],
+      "Digitally signing emails helps authenticating that messages are sent by you": [
+        "Azmul umḍin n yimaylen tettallel asesteb belli iznan-a d kečč·kemm i ten-yuznen"
+      ],
+      "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
+        "Fren aneggaf PGP ara yettusqedcen deg uzmel neɣ deg uwgelhen ɣer useqdac-nniḍen. Ẓer belli PGP/Inline ittḥettim ɣef yiznan amasal aḍris"
+      ],
+      "Upload a public key to enable sending end-to-end encrypted emails to this email": [
+        "Sali-d tasarut tazayezt i wakken ad tremdeḍ tuzna n yimaylen yettwawgelhen seg yixef ɣer yixef ɣer yimayl-a"
+      ],
+      "You do not have any contacts to export": [
+        "Ur tesɛiḍ ara kra n yinermisen ara tsifḍeḍ"
+      ],
+      "Use multiple addresses / aliases linked to your account, e.g. username2@protonmail.com": [
+        "Seqdec aṭas n tansiwin / mefferismawen icudden ɣer umiḍan-ik·im, d amedya: muhendbelqasem@protonmail.com"
+      ],
+      "Host emails for your own domain(s) at ProtonMail, e.g. john.smith@example.com": [
+        "Sezdeɣ imaylen s yismawen-ik·im n taɣult(tiɣula) deg ProtonMail, m.d. muhend.belqasem@amedya.com"
+      ],
+      "Use the personal address username@pm.me to send emails": [
+        "Seqdec tansa tudmawant isemnuseqdac@pm.me akken ad tazneḍ imaylen"
+      ],
+      "Multi-user support is only applicable to plans with 2 or more users": [
+        "Tallalt n waṭas n yiseqdacen tettusnas kan i yiɣawasen s 2 neɣ ugar n yiseqdacen"
+      ],
+      "NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "NetShield ad yemmesten ibenk-inek·inem yerna ad yerr iminig-ik·im ad iteddu s zzerb s usewḥel n udellel, imakaren d yir yiseɣẓanen."
+      ],
+      "Support for file sharing protocols such as BitTorrent.": [
+        "Tadhelt i yineggafen n beṭṭu n yifuyla am BitTorrent."
+      ],
+      "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
+        "Kcem ɣer ugbur yettwagedlen sɣur timura (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, You Tube, atg) anda tebɣuḍ tiliḍ."
+      ],
+      "Route your Internet traffic through the Tor network with a single click.": [
+        "Azen timahilin-ik•im n internet s useqdec n uzeṭṭa Tor s yiwen n usiti."
+      ],
+      "Defends against threats to VPN privacy by passing your Internet traffic through multiple servers.": [
+        "Aḥezzeb mgal iguzzuyen ɣer tbaḍnit VPN s usεeddi n isefka-inek·inem internet ɣef waṭas n yiqeddacen."
+      ],
+      "Get access to all the paid features for both ProtonVPN and ProtonMail (the encrypted email service that millions use to protect their data) with one plan.": [
+        "Kcem ɣer tmahilin akk s lexlaṣ n ProtoVPN d ProtoMail i sin (ameẓlu n yimayl awgelhan i seqdacen yimelyan n yiseqdacen akken ad ḥerzen isefka-nsen) s yiwen n uɣawas."
+      ],
+      "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
+        "Kcem ɣer tmahilin akk s lexlaṣ n ${ vpnAppName } d ${ mailAppName } i sin (ameẓlu n yimayl awgelhan i seqdacen yimelyan n yiseqdacen akken ad ḥerzen isefka-nsen) s yiwen n uɣawas."
+      ],
+      "Host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
+        "Sezdeɣ imaylen s yismawen-ik·im n taɣult(tiɣula) deg ${ mailAppName }, m.d. muhend.belqasem@amedya.com"
+      ],
+      "Create multiple email addresses linked to your account, e.g. username2@protonmail.com": [
+        "Snulfu-d aṭas n tansiwin imayl ara yeqqnen ɣer umiḍan-inek, md. isemnuseqdac2@protonmail.com"
+      ],
+      "Discount applied for annual billing cycle": [
+        "Yettwag usenqes i tallit n tfakturin n useggas"
+      ],
+      "Discount applied for two-year billing cycle": [
+        "Yettwag usenqes i tallit n tfakturin n sin yiseggasen"
+      ],
+      "If you purchased a gift code or received one from our support team, you can enter it here.": [
+        "Ma yella tuɣeḍ-d tangalt n warraz neɣ tremseḍ-d yiwet seg terbaɛt-nneɣ n tallalt, tzemreḍ ad tt-taruḍ dagi."
+      ],
+      "Expired sharing link": [
+        "Aseɣwen n beṭṭu ifut"
+      ],
+      "Inactive sharing link": [
+        "Aseɣwen n beṭṭu yensa"
+      ],
+      "Active sharing link": [
+        "Aseɣwen n beṭṭu yermed"
+      ]
+    },
+    "Progress bar description": {
+      "${ contactsExported.length } out of ${ countContacts } contacts successfully exported.": [
+        "${ contactsExported.length } inermisen ɣef ${ countContacts } ttusfḍen-d akken iwata."
+      ],
+      "No contacts exported.": [
+        "Ulac inermisen i yettusifḍen."
+      ],
+      "Progress: ${ combinedProgress }%": [
+        "Asfari: ${ combinedProgress }%"
+      ],
+      "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
+        "${ model.deleted.length } n unermis ɣef ${ totalBeDeleted } yettwakkes akken iwata.",
+        "${ model.deleted.length } inermisen ɣef ${ totalBeDeleted } ttwakksen akken iwata."
+      ],
+      "${ model.submitted.length } out of ${ totalBeMerged } contact successfully merged.": [
+        "${ model.submitted.length } n unermis ɣef ${ totalBeMerged } ttummmezdin akken iwata.",
+        "${ model.submitted.length } n yinermisen ɣef ${ totalBeMerged } ttummmezdin akken iwata."
+      ],
+      "No contacts merged.": [
+        "Ulac inermisen yemmezdin."
+      ]
+    },
+    "Description": {
+      "Decrypting contacts... This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
+        "Tukksa n uwgelhen i yinermasen... Ayagi yezmer ad yeṭṭef kra n tsedidin.\nMi yekfa ukala-agi, ad tizmireḍ ad tsidreḍ afaylu s yinermisen-inek m meṛṛa ttusifḍen."
+      ],
+      "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
+        "Asmezdi n yinermasen... Ayagi yezmer ad yeṭṭef kra n tsedidin.\nMi yekfa ukala-agi, ad tizmireḍ ad tmedleḍ tankult-agi n udiwenni."
+      ],
+      "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
+        "Tukksa n yinermasen... Ayagi yezmer ad yeṭṭef kra n tsedidin.\nMi yekfa ukala-agi, ad tizmireḍ ad tmedleḍ tankult-agi n udiwenni."
+      ],
+      "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
+        "Seqdec tawuri Zuɣer Sers iwakken ad tesmizzwireḍ tazwart n usmezdi gar yinermisen. Kkes afran i yinermisen ur tebɣiḍ ara ad tesmezdiḍ."
+      ],
+      "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
+        "Tzemreḍ ad tcerḍeḍ ɣef yinermisen ur tebɣiḍ ara ad tesmezdiḍ neɣ ad tḥerzeḍ. Tukksa ur tetteddu ara alamma tessdeḍ ɣef tqeffalt n usmezdi"
+      ],
+      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
+        "Afaylu ilaq ad yesɛu deg teɣzi taddayt { MAX_IMPORT_FILE_SIZE_STRING } yerna ad yesɛu ugar n { MAX_IMPORT_CONTACTS_STRING } n unermis. Ma yella afaylu-inek·inem meqqar aṭas, ttxil-k·m bḍu-t ɣef yifuyla imeẓẓyanen.",
+        "Afaylu ilaq ad yesɛu deg teɣzi taddayt { MAX_IMPORT_FILE_SIZE_STRING } yerna ad yesɛu ugar n { MAX_IMPORT_CONTACTS_STRING } n yinermisen. Ma yella afaylu-inek·inem meqqar aṭas, ttxil-k·m bḍu-t ɣef yifuyla imeẓẓyanen."
+      ],
+      "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
+        "Akka d-yettban tabdart n yinermisen i d-tketreḍ deg-s kra n yigrawen. Ttxil-k·m senqed amek i ilaq ad d-ttwaktaren yigrawen-a."
+      ],
+      "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
+        "Awgelhen akked tektert n yinermisen... Ayagi yezmer ad yeṭṭef kra n tsedidin.\nMi yekfa ukala-agi, tzemreḍ ad tmedleḍ tankult-agi n udiwenni."
+      ]
+    },
+    "Table header": {
+      "Name": [
+        "Isem"
+      ],
+      "Address": [
+        "Tansa"
+      ],
+      "Action": [
+        "Tigawt"
+      ],
+      "Fingerprint": [
+        "Adsil umḍin"
+      ],
+      "Created": [
+        "Yettwarna"
+      ],
+      "Expires": [
+        "Ad ifat di"
+      ],
+      "Type": [
+        "Anaw"
+      ],
+      "Status": [
+        "Addad"
+      ],
+      "Actions": [
+        "Tigawin"
+      ]
+    },
+    "Notification": {
+      "Contact group updated": [
+        "Agraw n unermes yettwasnifel"
+      ],
+      "Contact group created": [
+        "Agraw n unermes yettwarna"
+      ],
+      "File or folder \"${ filename }\" is already uploading": [
+        ""
+      ],
+      "File or folder \"${ filename }\" and ${ count } other are already uploading": [
+        "",
+        ""
+      ],
+      "File or folder is missing a name": [
+        ""
+      ],
+      "Not enough space to upload ${ formattedTotal }": [
+        ""
+      ],
+      "Failed to upload files: ${ err }": [
+        ""
+      ],
+      "Move ${ movingCount } file": [
+        "Smutti afaylu ${ movingCount }",
+        "Smutti ifuyla ${ movingCount }"
+      ],
+      "Move ${ movingCount } folder": [
+        "Smutti akaram ${ movingCount }",
+        "Smutti akaram ${ movingCount }"
+      ],
+      "Move ${ movingCount } item": [
+        "Smutti aferdis  ${ movingCount }",
+        "Smutti aferdis  ${ movingCount }"
+      ],
+      "All items will soon be permanently deleted from trash": [
+        "Akk iferdisen ad ttwakksen seg tqecwalt i lebda"
+      ],
+      "Failed to move, please try again": [
+        "Asmutti ur yeddi, ttxil ɛreḍ tikkelt-nniḍen"
+      ],
+      "Move ${ itemsToMoveCount } file": [
+        "Smutti ${ itemsToMoveCount } n ufaylu",
+        "Smutti ifuyla ${ itemsToMoveCount }"
+      ],
+      "Move ${ itemsToMoveCount } folder": [
+        "Smutti ${ itemsToMoveCount } n ukaram",
+        "Smutti ${ itemsToMoveCount } n yikaramen"
+      ],
+      "Move ${ itemsToMoveCount } item": [
+        "Smutti ${ itemsToMoveCount } n uferdis",
+        "Smutti ${ itemsToMoveCount } n yiferdisen"
+      ],
+      "Your settings have been changed successfully.": [
+        "Iɣewwaren-ik·im ggwabeddlen war ugur."
+      ],
+      "The link to your file was deleted.": [
+        "Aseɣwen ɣer ufaylu-inek m yettwakkes."
+      ],
+      "\"${ firstItemName }\" deleted permanently from trash": [
+        "\"${ firstItemName }\" yettwakkes seg tqecwalt i lebda"
+      ],
+      "${ deletedItemsCount } file deleted permanently from trash": [
+        "Ifuyla ${ deletedItemsCount } ttwakksen seg tqecwalt i lebda",
+        "Ifuyla ${ deletedItemsCount } ttwakksen seg tqecwalt i lebda"
+      ],
+      "${ deletedItemsCount } folder deleted permanently from trash": [
+        "Iakaram ${ deletedItemsCount } ttwakksen seg tqecwalt i lebda",
+        "Ikaramen ${ deletedItemsCount } ttwakksen seg tqecwalt i lebda"
+      ],
+      "${ deletedItemsCount } item deleted permanently from trash": [
+        "${ deletedItemsCount } n uferdis yettwakkes seg tqecwalt s wudem imezgi",
+        "${ deletedItemsCount } n yiferdisen ttwakksen seg tqecwalt s wudem imezgi"
+      ],
+      "\"${ firstItemName }\" moved to trash": [
+        "\"${ firstItemName }\" imutti ɣer tqecwalt"
+      ],
+      "${ trashedLinksCount } file moved to trash": [
+        "${ trashedLinksCount } n ufaylu imutti ɣer tqecwal",
+        "${ trashedLinksCount } n yifuyla muttin ɣer tqecwalt"
+      ],
+      "${ trashedLinksCount } folder moved to trash": [
+        "${ trashedLinksCount } n ukaram imutti ɣer tqecwal",
+        "${ trashedLinksCount } n yikaramen muttin ɣer tqecwalt"
+      ],
+      "${ trashedLinksCount } item moved to trash": [
+        "${ trashedLinksCount } n uferdis imutti ɣer tqecwal",
+        "${ trashedLinksCount } n yiferdisen muttin ɣer tqecwalt"
+      ],
+      "\"${ firstItemName }\" restored from trash": [
+        "\"${ firstItemName }\" yettwarra-d seg tqecwalt"
+      ],
+      "${ restoredItemsCount } file restored from trash": [
+        "${ restoredItemsCount } n ufaylu ittwarra-d seg tqecwalt",
+        "${ restoredItemsCount } n yifuyla ttwarran-d seg tqecwalt"
+      ],
+      "${ restoredItemsCount } folder restored from trash": [
+        "${ restoredItemsCount } n ukaram ittwarra-d seg tqecwalt",
+        "${ restoredItemsCount } n yikaramen ttwarran-d seg tqecwalt"
+      ],
+      "${ restoredItemsCount } item restored from trash": [
+        "${ restoredItemsCount } n uferdis ittwarra-d seg tqecwalt",
+        "${ restoredItemsCount } n yiferdisen ttwarran-d seg tqecwalt"
+      ],
+      "An item with the name \"${ name }\" already exists in the current folder": [
+        "Yiwen n uferdis s yisem \"${ name }\" yella yakan deg ukaram-a"
+      ],
+      "\"${ _firstItemName }\" successfully moved": [
+        "\"${ _firstItemName }\" imutti akken iwata"
+      ],
+      "${ movedLinksCount } file successfully moved": [
+        "${ movedLinksCount } n ufaylu imutti akken iwata",
+        "${ movedLinksCount } n yifuyla muttin akken iwata"
+      ],
+      "${ movedLinksCount } folder successfully moved": [
+        "${ movedLinksCount } n ukaram imutti akken iwata",
+        "${ movedLinksCount } n yikaramen muttin akken iwata"
+      ],
+      "${ movedLinksCount } item successfully moved": [
+        "${ movedLinksCount } n uferdis imutti akken iwata",
+        "${ movedLinksCount } n yiferdisen muttin akken iwata"
+      ],
+      "\"${ firstItemName }\" failed to be moved": [
+        "Asmutti n \"${ firstItemName }\" ur yeddi ara"
+      ],
+      "${ failedMovesCount } file failed to be moved": [
+        "Asmutti n ${ failedMovesCount } n ufaylu ur yeddi ara",
+        "Asmutti n ${ failedMovesCount } n yifuyla ur yeddi ara"
+      ],
+      "${ failedMovesCount } folder failed to be moved": [
+        "Asmutti n ${ failedMovesCount } n ukaram ur yeddi ara",
+        "Asmutti n ${ failedMovesCount } n yikaramen ur yeddi ara"
+      ],
+      "${ failedMovesCount } item failed to be moved": [
+        "Asmutti n ${ failedMovesCount } n uferdis ur yeddi ara",
+        "Asmutti n ${ failedMovesCount } n yiferdisen ur yeddi ara"
+      ],
+      "${ deletedCount } link to your file was deleted.": [
+        "Nufa-d ${ deletedCount } n useɣwen ɣer ufaylu-inek•m.",
+        "${ deletedCount } n yisɣewnen ɣer yifuyla-inek•m ttwakksen."
+      ],
+      "The link to your file failed to be deleted.": [
+        "Ulamek tukksa n uaseɣwen ɣer ufaylu-inek•m."
+      ],
+      "${ failedCount } link to your file failed to be deleted.": [
+        "${ failedCount } n useɣwen ɣer ufaylu-inek•m ulamek ara yettwakkes.",
+        "${ failedCount } n yisɣewnen ɣer yifuyla-inek•m ulamek ara ttwakksen."
+      ]
+    },
+    "MIME type": {
+      "Automatic": [
+        "Awurman"
+      ],
+      "Plain text": [
+        "Aḍris aččuran"
+      ]
+    },
+    "Default encryption scheme": {
+      "Use global default (${ defaultValueText })": [
+        "Seqdec amezwer amatu (${ defaultValueText })"
+      ]
+    },
+    "Key badge": {
+      "Primary": [
+        "Agejdan"
+      ],
+      "Verification only": [
+        "Asenqed kan"
+      ],
+      "WKD": [
+        "WKD"
+      ],
+      "Trusted": [
+        "Yettwaman"
+      ],
+      "Revoked": [
+        "Yettwaḥwi"
+      ],
+      "Expired": [
+        "Ifut"
+      ]
+    },
+    "TableHeader": {
+      "Name": [
+        "Isem"
+      ],
+      "Address": [
+        "Tansa"
+      ],
+      "Actions": [
+        "Tigawin"
+      ],
+      "Import": [
+        "Kter"
+      ],
+      "CSV field": [
+        "Urti CSV"
+      ],
+      "vCard field": [
+        "urti vCard"
+      ],
+      "Values": [
+        "Azalen"
+      ],
+      "Location": [
+        "Emplacement"
+      ],
+      "Type": [
+        "Tawsit"
+      ],
+      "Modified": [
+        "Yettwabeddel"
+      ],
+      "Deleted": [
+        "Ittwakkes"
+      ],
+      "Size": [
+        "Tiddi"
+      ],
+      "Created": [
+        "Yettwarna"
+      ],
+      "# of accesses": [
+        "# n yinekcumen"
+      ],
+      "Expires": [
+        "Azmez n tasewti"
+      ]
+    },
+    "Actions message": {
+      "You don't have any groups.": [
+        "Ulac ɣur-k·m ula d yiwet n ugraw."
+      ],
+      "No results found.": [
+        "Ulac igmaḍ yettwafen."
+      ],
+      "Please try another search term.": [
+        "Ttxil ɛreḍ awal-nniḍen n unadi."
+      ],
+      "You don't have any contacts.": [
+        "Ur tesɛiḍ ula d yiwen n unermis."
+      ],
+      "${ addContact } or ${ importContact }.": [
+        "${ addContact } neɣ ${ importContact }."
+      ]
+    },
+    "Info, no need for singular": {
+      "Multiple contacts look identical. ${ mergeAction }": [
+        "Aṭas n yinermisen ttaken acbi. ${ mergeAction }"
+      ]
+    },
+    "Error notification": {
+      "First name and last name cannot be unchecked at the same time": [
+        "Aɣara d yisem ulamek ttwaṛcamen ɣef tikkelt"
+      ]
+    },
+    "Description of the purpose of the import CSV modal": {
+      "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
+        "Nufa-d urtiyen-agi deg ufaylu CSV i tsuliḍ. Fren wid i tebɣiḍ ad tketreḍ."
+      ],
+      "Also, we have automatically matched CSV fields with vCard fields. You can review and change this matching manually.": [
+        "Daɣen, nsemṣada s wudem awurman urtan CSV akked wurtan n vCard. Tzemreḍ ad tesneqdeḍ neɣ ad tbeddleḍ amṣada-a s ufus."
+      ]
+    },
+    "Option": {
+      "Add to existing group": [
+        "Rnu ɣer ugraw yellan"
+      ],
+      "Create new group": [
+        "Snulfu-d agraw amaynut"
+      ],
+      "Ignore group": [
+        "Agi agraw"
+      ]
+    },
+    "Import contact groups info": {
+      "${ totalContacts } contact": [
+        "${ totalContacts } n unermis",
+        "${ totalContacts } inermisen"
+      ]
+    },
+    "Alert": {
+      "By leaving now, some contacts may not be imported": [
+        "Ma teffɣeḍ tura, yezmer ur d-ttwaktaran ara kra n yinermisen"
+      ]
+    },
+    "Import calendar": {
+      "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
+        "Awgelhen d tmerna n yinermisen: ${ totalImported }/${ totalToImport }"
+      ]
+    },
+    "Import contact error": {
+      "Contact ${ contactId }: ": [
+        "Anermis ${ contactId }: "
+      ]
+    },
+    "Info on errors": {
+      "Click for details": [
+        "Tekki i telqayt"
+      ]
+    },
+    "Import contacts warning": {
+      "for now": [
+        "ɣer tura"
+      ],
+      "ProtonContacts does not support ${ forNow }:": [
+        "ProtonContacts ur issefrak ara ${ forNow }:"
+      ]
+    },
+    "Import warning": {
+      "No contact can be imported. Click for details": [
+        "Ulac anermis i tzemreḍ ad d-tketreḍ. Sit ad teẓreḍ telqayt"
+      ],
+      "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
+        "Inermisen ${ totalContactsDiscarded } ɣef ${ totalContacts } ur d-ttwaktaren ara. Sit ad teẓreḍ telqayt"
+      ]
+    },
+    "Import calendar warning": {
+      "vCard versions < 3.0": [
+        "lqem vCard < 3.0"
+      ]
+    },
+    "Import contacts": {
+      "Contact successfully imported. The imported contact will now appear in your contact list.": [
+        "Anermis yettwakter akken iwata. Anermis yettwaketren ad d-iban deg tebdart-ik·im n yinermisen.",
+        "Inermisen ttwaketren akken iwata. Inermisen yettwaketren ad d-banen deg tebdart-ik·im n yinermisen."
+      ],
+      "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
+        "Tella-d tuccḍa lawan n uwgelhen d tmerna n yinermisen. ${ totalImported } ɣef ${ totalToImport } n yinermsen i d-yettwaketren akken iwata."
+      ]
+    },
+    "Import contact": {
+      "An error occurred while encrypting and adding your contact. No contact could be imported.": [
+        "Tella-d tuccḍa lawan n uwgelhen d tmerna n urmis-inek·inem. Ulac anermis ara d-yettwaktaren.",
+        "Tella-d tuccḍa lawan n uwgelhen d tmerna n yinermisen-ik·im. Ulac anermis ara d-yettwaktaren."
+      ],
+      "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
+        "Anermis ${ totalImported }/${ totalToImport } yettwawgelhen syenyettwarna ɣer tebdart-inek·inem n yinermisen",
+        "Inermisen ${ totalImported }/${ totalToImport } ttwawgelhnen syen ttwarnan ɣer tebdart-inek·inem n yinermisen"
+      ]
+    },
     "Info for cash payment method": {
       "Please contact us at ${ email } for instructions on how to pay us with cash.": [
         "Ttxil-k·m nermes-aɣ-d ɣer ${ email } i yiwellihen ɣef wamek ara txellseḍ ɣef tkkelt."
@@ -3275,86 +3832,6 @@
       ],
       "Unlimited": [
         "War talast"
-      ]
-    },
-    "Tooltip": {
-      "Use multiple addresses / aliases linked to your account, e.g. username2@protonmail.com": [
-        "Seqdec aṭas n tansiwin / mefferismawen icudden ɣer umiḍan-ik·im, d amedya: muhendbelqasem@protonmail.com"
-      ],
-      "Host emails for your own domain(s) at ProtonMail, e.g. john.smith@example.com": [
-        "Sezdeɣ imaylen s yismawen-ik·im n taɣult(tiɣula) deg ProtonMail, m.d. muhend.belqasem@amedya.com"
-      ],
-      "Use the personal address username@pm.me to send emails": [
-        "Seqdec tansa tudmawant isemnuseqdac@pm.me akken ad tazneḍ imaylen"
-      ],
-      "Multi-user support is only applicable to plans with 2 or more users": [
-        "Tallalt n waṭas n yiseqdacen tettusnas kan i yiɣawasen s 2 neɣ ugar n yiseqdacen"
-      ],
-      "NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "NetShield ad yemmesten ibenk-inek·inem yerna ad yerr iminig-ik·im ad iteddu s zzerb s usewḥel n udellel, imakaren d yir yiseɣẓanen."
-      ],
-      "Support for file sharing protocols such as BitTorrent.": [
-        "Tadhelt i yineggafen n beṭṭu n yifuyla am BitTorrent."
-      ],
-      "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
-        "Kcem ɣer ugbur yettwagedlen sɣur timura (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, You Tube, atg) anda tebɣuḍ tiliḍ."
-      ],
-      "Route your Internet traffic through the Tor network with a single click.": [
-        "Azen timahilin-ik•im n internet s useqdec n uzeṭṭa Tor s yiwen n usiti."
-      ],
-      "Defends against threats to VPN privacy by passing your Internet traffic through multiple servers.": [
-        "Aḥezzeb mgal iguzzuyen ɣer tbaḍnit VPN s usεeddi n isefka-inek·inem internet ɣef waṭas n yiqeddacen."
-      ],
-      "Get access to all the paid features for both ProtonVPN and ProtonMail (the encrypted email service that millions use to protect their data) with one plan.": [
-        "Kcem ɣer tmahilin akk s lexlaṣ n ProtoVPN d ProtoMail i sin (ameẓlu n yimayl awgelhan i seqdacen yimelyan n yiseqdacen akken ad ḥerzen isefka-nsen) s yiwen n uɣawas."
-      ],
-      "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
-        "Kcem ɣer tmahilin akk s lexlaṣ n ${ vpnAppName } d ${ mailAppName } i sin (ameẓlu n yimayl awgelhan i seqdacen yimelyan n yiseqdacen akken ad ḥerzen isefka-nsen) s yiwen n uɣawas."
-      ],
-      "Host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
-        "Sezdeɣ imaylen s yismawen-ik·im n taɣult(tiɣula) deg ${ mailAppName }, m.d. muhend.belqasem@amedya.com"
-      ],
-      "Create multiple email addresses linked to your account, e.g. username2@protonmail.com": [
-        "Snulfu-d aṭas n tansiwin imayl ara yeqqnen ɣer umiḍan-inek, md. isemnuseqdac2@protonmail.com"
-      ],
-      "Discount applied for annual billing cycle": [
-        "Yettwag usenqes i tallit n tfakturin n useggas"
-      ],
-      "Discount applied for two-year billing cycle": [
-        "Yettwag usenqes i tallit n tfakturin n sin yiseggasen"
-      ],
-      "If you purchased a gift code or received one from our support team, you can enter it here.": [
-        "Ma yella tuɣeḍ-d tangalt n warraz neɣ tremseḍ-d yiwet seg terbaɛt-nneɣ n tallalt, tzemreḍ ad tt-taruḍ dagi."
-      ],
-      "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
-        "Awurman yemmal belli amasal deg umsuddes yettwaseqdec i tuzzna ɣer useqdac-agi. Amasal aḍris yemmal belli izen ad ittuselket ɣer umasal aḍris di tuzzna."
-      ],
-      "Encrypted data with verified digital signature": [
-        "Isefka iwgelhanen s uzmul umḍin yettwasenqden"
-      ],
-      "Email encryption forces email signature to help authenticate your sent messages": [
-        "Awgelhen n yimayl yettḥettim azmul n yimayl ad yallel deg usesteb n yiznan-ik·im yettwaznen"
-      ],
-      "Digitally signing emails helps authenticating that messages are sent by you": [
-        "Azmul umḍin n yimaylen tettallel asesteb belli iznan-a d kečč·kemm i ten-yuznen"
-      ],
-      "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
-        "Fren aneggaf PGP ara yettusqedcen deg uzmel neɣ deg uwgelhen ɣer useqdac-nniḍen. Ẓer belli PGP/Inline ittḥettim ɣef yiznan amasal aḍris"
-      ],
-      "Upload a public key to enable sending end-to-end encrypted emails to this email": [
-        "Sali-d tasarut tazayezt i wakken ad tremdeḍ tuzna n yimaylen yettwawgelhen seg yixef ɣer yixef ɣer yimayl-a"
-      ],
-      "You do not have any contacts to export": [
-        "Ur tesɛiḍ ara kra n yinermisen ara tsifḍeḍ"
-      ],
-      "Expired sharing link": [
-        "Aseɣwen n beṭṭu ifut"
-      ],
-      "Inactive sharing link": [
-        "Aseɣwen n beṭṭu yensa"
-      ],
-      "Active sharing link": [
-        "Aseɣwen n beṭṭu yermed"
       ]
     },
     "Mail feature option: 5 email addresses / user": {
@@ -3696,486 +4173,6 @@
         "Bitcoin"
       ]
     },
-    "Delinquent modal title": {
-      "Overdue invoice": [
-        "Tafaturt ur nettwaxelleṣ ara"
-      ]
-    },
-    "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
-      "Email": [
-        "Imayl"
-      ],
-      "SMS": [
-        "SMS"
-      ],
-      "Manual": [
-        "Awfus"
-      ],
-      "No verification method available": [
-        "Ulac tarrayt n usenqed"
-      ]
-    },
-    "Label for contact group name": {
-      "Name": [
-        "Isem"
-      ]
-    },
-    "Placeholder for contact group name": {
-      "Name": [
-        "Isem"
-      ]
-    },
-    "Label for contact group color": {
-      "Color": [
-        "Ini"
-      ]
-    },
-    "Progress bar description": {
-      "${ contactsExported.length } out of ${ countContacts } contacts successfully exported.": [
-        "${ contactsExported.length } inermisen ɣef ${ countContacts } ttusfḍen-d akken iwata."
-      ],
-      "No contacts exported.": [
-        "Ulac inermisen i yettusifḍen."
-      ],
-      "Progress: ${ combinedProgress }%": [
-        "Asfari: ${ combinedProgress }%"
-      ],
-      "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
-        "${ model.deleted.length } n unermis ɣef ${ totalBeDeleted } yettwakkes akken iwata.",
-        "${ model.deleted.length } inermisen ɣef ${ totalBeDeleted } ttwakksen akken iwata."
-      ],
-      "${ model.submitted.length } out of ${ totalBeMerged } contact successfully merged.": [
-        "${ model.submitted.length } n unermis ɣef ${ totalBeMerged } ttummmezdin akken iwata.",
-        "${ model.submitted.length } n yinermisen ɣef ${ totalBeMerged } ttummmezdin akken iwata."
-      ],
-      "No contacts merged.": [
-        "Ulac inermisen yemmezdin."
-      ]
-    },
-    "Description": {
-      "Decrypting contacts... This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
-        "Tukksa n uwgelhen i yinermasen... Ayagi yezmer ad yeṭṭef kra n tsedidin.\nMi yekfa ukala-agi, ad tizmireḍ ad tsidreḍ afaylu s yinermisen-inek m meṛṛa ttusifḍen."
-      ],
-      "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
-        "Asmezdi n yinermasen... Ayagi yezmer ad yeṭṭef kra n tsedidin.\nMi yekfa ukala-agi, ad tizmireḍ ad tmedleḍ tankult-agi n udiwenni."
-      ],
-      "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
-        "Tukksa n yinermasen... Ayagi yezmer ad yeṭṭef kra n tsedidin.\nMi yekfa ukala-agi, ad tizmireḍ ad tmedleḍ tankult-agi n udiwenni."
-      ],
-      "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
-        "Seqdec tawuri Zuɣer Sers iwakken ad tesmizzwireḍ tazwart n usmezdi gar yinermisen. Kkes afran i yinermisen ur tebɣiḍ ara ad tesmezdiḍ."
-      ],
-      "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
-        "Tzemreḍ ad tcerḍeḍ ɣef yinermisen ur tebɣiḍ ara ad tesmezdiḍ neɣ ad tḥerzeḍ. Tukksa ur tetteddu ara alamma tessdeḍ ɣef tqeffalt n usmezdi"
-      ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "Afaylu ilaq ad yesɛu deg teɣzi taddayt { MAX_IMPORT_FILE_SIZE_STRING } yerna ad yesɛu ugar n { MAX_IMPORT_CONTACTS_STRING } n unermis. Ma yella afaylu-inek·inem meqqar aṭas, ttxil-k·m bḍu-t ɣef yifuyla imeẓẓyanen.",
-        "Afaylu ilaq ad yesɛu deg teɣzi taddayt { MAX_IMPORT_FILE_SIZE_STRING } yerna ad yesɛu ugar n { MAX_IMPORT_CONTACTS_STRING } n yinermisen. Ma yella afaylu-inek·inem meqqar aṭas, ttxil-k·m bḍu-t ɣef yifuyla imeẓẓyanen."
-      ],
-      "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
-        "Akka d-yettban tabdart n yinermisen i d-tketreḍ deg-s kra n yigrawen. Ttxil-k·m senqed amek i ilaq ad d-ttwaktaren yigrawen-a."
-      ],
-      "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
-        "Awgelhen akked tektert n yinermisen... Ayagi yezmer ad yeṭṭef kra n tsedidin.\nMi yekfa ukala-agi, tzemreḍ ad tmedleḍ tankult-agi n udiwenni."
-      ]
-    },
-    "Table header": {
-      "Name": [
-        "Isem"
-      ],
-      "Address": [
-        "Tansa"
-      ],
-      "Action": [
-        "Tigawt"
-      ],
-      "Fingerprint": [
-        "Adsil umḍin"
-      ],
-      "Created": [
-        "Yettwarna"
-      ],
-      "Expires": [
-        "Ad ifat di"
-      ],
-      "Type": [
-        "Anaw"
-      ],
-      "Status": [
-        "Addad"
-      ],
-      "Actions": [
-        "Tigawin"
-      ]
-    },
-    "Notification": {
-      "Contact group updated": [
-        "Agraw n unermes yettwasnifel"
-      ],
-      "Contact group created": [
-        "Agraw n unermes yettwarna"
-      ],
-      "File or folder \"${ filename }\" is already uploading": [
-        ""
-      ],
-      "File or folder \"${ filename }\" and ${ count } other are already uploading": [
-        "",
-        ""
-      ],
-      "File or folder is missing a name": [
-        ""
-      ],
-      "Not enough space to upload ${ formattedTotal }": [
-        ""
-      ],
-      "Failed to upload files: ${ err }": [
-        ""
-      ],
-      "All items will soon be permanently deleted from trash": [
-        "Akk iferdisen ad ttwakksen seg tqecwalt i lebda"
-      ],
-      "Move ${ movingCount } file": [
-        "Smutti afaylu ${ movingCount }",
-        "Smutti ifuyla ${ movingCount }"
-      ],
-      "Move ${ movingCount } folder": [
-        "Smutti akaram ${ movingCount }",
-        "Smutti akaram ${ movingCount }"
-      ],
-      "Move ${ movingCount } item": [
-        "Smutti aferdis  ${ movingCount }",
-        "Smutti aferdis  ${ movingCount }"
-      ],
-      "Failed to move, please try again": [
-        "Asmutti ur yeddi, ttxil ɛreḍ tikkelt-nniḍen"
-      ],
-      "Move ${ itemsToMoveCount } file": [
-        "Smutti ${ itemsToMoveCount } n ufaylu",
-        "Smutti ifuyla ${ itemsToMoveCount }"
-      ],
-      "Move ${ itemsToMoveCount } folder": [
-        "Smutti ${ itemsToMoveCount } n ukaram",
-        "Smutti ${ itemsToMoveCount } n yikaramen"
-      ],
-      "Move ${ itemsToMoveCount } item": [
-        "Smutti ${ itemsToMoveCount } n uferdis",
-        "Smutti ${ itemsToMoveCount } n yiferdisen"
-      ],
-      "Your settings have been changed successfully.": [
-        "Iɣewwaren-ik·im ggwabeddlen war ugur."
-      ],
-      "The link to your file was deleted.": [
-        "Aseɣwen ɣer ufaylu-inek m yettwakkes."
-      ],
-      "\"${ firstItemName }\" deleted permanently from trash": [
-        "\"${ firstItemName }\" yettwakkes seg tqecwalt i lebda"
-      ],
-      "${ deletedItemsCount } file deleted permanently from trash": [
-        "Ifuyla ${ deletedItemsCount } ttwakksen seg tqecwalt i lebda",
-        "Ifuyla ${ deletedItemsCount } ttwakksen seg tqecwalt i lebda"
-      ],
-      "${ deletedItemsCount } folder deleted permanently from trash": [
-        "Iakaram ${ deletedItemsCount } ttwakksen seg tqecwalt i lebda",
-        "Ikaramen ${ deletedItemsCount } ttwakksen seg tqecwalt i lebda"
-      ],
-      "${ deletedItemsCount } item deleted permanently from trash": [
-        "${ deletedItemsCount } n uferdis yettwakkes seg tqecwalt s wudem imezgi",
-        "${ deletedItemsCount } n yiferdisen ttwakksen seg tqecwalt s wudem imezgi"
-      ],
-      "\"${ firstItemName }\" moved to trash": [
-        "\"${ firstItemName }\" imutti ɣer tqecwalt"
-      ],
-      "${ trashedLinksCount } file moved to trash": [
-        "${ trashedLinksCount } n ufaylu imutti ɣer tqecwal",
-        "${ trashedLinksCount } n yifuyla muttin ɣer tqecwalt"
-      ],
-      "${ trashedLinksCount } folder moved to trash": [
-        "${ trashedLinksCount } n ukaram imutti ɣer tqecwal",
-        "${ trashedLinksCount } n yikaramen muttin ɣer tqecwalt"
-      ],
-      "${ trashedLinksCount } item moved to trash": [
-        "${ trashedLinksCount } n uferdis imutti ɣer tqecwal",
-        "${ trashedLinksCount } n yiferdisen muttin ɣer tqecwalt"
-      ],
-      "\"${ firstItemName }\" restored from trash": [
-        "\"${ firstItemName }\" yettwarra-d seg tqecwalt"
-      ],
-      "${ restoredItemsCount } file restored from trash": [
-        "${ restoredItemsCount } n ufaylu ittwarra-d seg tqecwalt",
-        "${ restoredItemsCount } n yifuyla ttwarran-d seg tqecwalt"
-      ],
-      "${ restoredItemsCount } folder restored from trash": [
-        "${ restoredItemsCount } n ukaram ittwarra-d seg tqecwalt",
-        "${ restoredItemsCount } n yikaramen ttwarran-d seg tqecwalt"
-      ],
-      "${ restoredItemsCount } item restored from trash": [
-        "${ restoredItemsCount } n uferdis ittwarra-d seg tqecwalt",
-        "${ restoredItemsCount } n yiferdisen ttwarran-d seg tqecwalt"
-      ],
-      "An item with the name \"${ name }\" already exists in the current folder": [
-        "Yiwen n uferdis s yisem \"${ name }\" yella yakan deg ukaram-a"
-      ],
-      "\"${ _firstItemName }\" successfully moved": [
-        "\"${ _firstItemName }\" imutti akken iwata"
-      ],
-      "${ movedLinksCount } file successfully moved": [
-        "${ movedLinksCount } n ufaylu imutti akken iwata",
-        "${ movedLinksCount } n yifuyla muttin akken iwata"
-      ],
-      "${ movedLinksCount } folder successfully moved": [
-        "${ movedLinksCount } n ukaram imutti akken iwata",
-        "${ movedLinksCount } n yikaramen muttin akken iwata"
-      ],
-      "${ movedLinksCount } item successfully moved": [
-        "${ movedLinksCount } n uferdis imutti akken iwata",
-        "${ movedLinksCount } n yiferdisen muttin akken iwata"
-      ],
-      "\"${ firstItemName }\" failed to be moved": [
-        "Asmutti n \"${ firstItemName }\" ur yeddi ara"
-      ],
-      "${ failedMovesCount } file failed to be moved": [
-        "Asmutti n ${ failedMovesCount } n ufaylu ur yeddi ara",
-        "Asmutti n ${ failedMovesCount } n yifuyla ur yeddi ara"
-      ],
-      "${ failedMovesCount } folder failed to be moved": [
-        "Asmutti n ${ failedMovesCount } n ukaram ur yeddi ara",
-        "Asmutti n ${ failedMovesCount } n yikaramen ur yeddi ara"
-      ],
-      "${ failedMovesCount } item failed to be moved": [
-        "Asmutti n ${ failedMovesCount } n uferdis ur yeddi ara",
-        "Asmutti n ${ failedMovesCount } n yiferdisen ur yeddi ara"
-      ],
-      "${ deletedCount } link to your file was deleted.": [
-        "Nufa-d ${ deletedCount } n useɣwen ɣer ufaylu-inek•m.",
-        "${ deletedCount } n yisɣewnen ɣer yifuyla-inek•m ttwakksen."
-      ],
-      "The link to your file failed to be deleted.": [
-        "Ulamek tukksa n uaseɣwen ɣer ufaylu-inek•m."
-      ],
-      "${ failedCount } link to your file failed to be deleted.": [
-        "${ failedCount } n useɣwen ɣer ufaylu-inek•m ulamek ara yettwakkes.",
-        "${ failedCount } n yisɣewnen ɣer yifuyla-inek•m ulamek ara ttwakksen."
-      ]
-    },
-    "MIME type": {
-      "Automatic": [
-        "Awurman"
-      ],
-      "Plain text": [
-        "Aḍris aččuran"
-      ]
-    },
-    "Default encryption scheme": {
-      "Use global default (${ defaultValueText })": [
-        "Seqdec amezwer amatu (${ defaultValueText })"
-      ]
-    },
-    "Key badge": {
-      "Primary": [
-        "Agejdan"
-      ],
-      "Verification only": [
-        "Asenqed kan"
-      ],
-      "WKD": [
-        "WKD"
-      ],
-      "Trusted": [
-        "Yettwaman"
-      ],
-      "Revoked": [
-        "Yettwaḥwi"
-      ],
-      "Expired": [
-        "Ifut"
-      ]
-    },
-    "TableHeader": {
-      "Name": [
-        "Isem"
-      ],
-      "Address": [
-        "Tansa"
-      ],
-      "Actions": [
-        "Tigawin"
-      ],
-      "Import": [
-        "Kter"
-      ],
-      "CSV field": [
-        "Urti CSV"
-      ],
-      "vCard field": [
-        "urti vCard"
-      ],
-      "Values": [
-        "Azalen"
-      ],
-      "Location": [
-        "Emplacement"
-      ],
-      "Type": [
-        "Tawsit"
-      ],
-      "Modified": [
-        "Yettwabeddel"
-      ],
-      "Deleted": [
-        "Ittwakkes"
-      ],
-      "Size": [
-        "Tiddi"
-      ],
-      "Created": [
-        "Yettwarna"
-      ],
-      "# of accesses": [
-        "# n yinekcumen"
-      ],
-      "Expires": [
-        "Azmez n tasewti"
-      ]
-    },
-    "Actions message": {
-      "You don't have any groups.": [
-        "Ulac ɣur-k·m ula d yiwet n ugraw."
-      ],
-      "No results found.": [
-        "Ulac igmaḍ yettwafen."
-      ],
-      "Please try another search term.": [
-        "Ttxil ɛreḍ awal-nniḍen n unadi."
-      ],
-      "You don't have any contacts.": [
-        "Ur tesɛiḍ ula d yiwen n unermis."
-      ],
-      "${ addContact } or ${ importContact }.": [
-        "${ addContact } neɣ ${ importContact }."
-      ]
-    },
-    "Info, no need for singular": {
-      "Multiple contacts look identical. ${ mergeAction }": [
-        "Aṭas n yinermisen ttaken acbi. ${ mergeAction }"
-      ]
-    },
-    "Error notification": {
-      "First name and last name cannot be unchecked at the same time": [
-        "Aɣara d yisem ulamek ttwaṛcamen ɣef tikkelt"
-      ]
-    },
-    "Description of the purpose of the import CSV modal": {
-      "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
-        "Nufa-d urtiyen-agi deg ufaylu CSV i tsuliḍ. Fren wid i tebɣiḍ ad tketreḍ."
-      ],
-      "Also, we have automatically matched CSV fields with vCard fields. You can review and change this matching manually.": [
-        "Daɣen, nsemṣada s wudem awurman urtan CSV akked wurtan n vCard. Tzemreḍ ad tesneqdeḍ neɣ ad tbeddleḍ amṣada-a s ufus."
-      ]
-    },
-    "Option": {
-      "Add to existing group": [
-        "Rnu ɣer ugraw yellan"
-      ],
-      "Create new group": [
-        "Snulfu-d agraw amaynut"
-      ],
-      "Ignore group": [
-        "Agi agraw"
-      ]
-    },
-    "Import contact groups info": {
-      "${ totalContacts } contact": [
-        "${ totalContacts } n unermis",
-        "${ totalContacts } inermisen"
-      ]
-    },
-    "Alert": {
-      "By leaving now, some contacts may not be imported": [
-        "Ma teffɣeḍ tura, yezmer ur d-ttwaktaran ara kra n yinermisen"
-      ]
-    },
-    "Import calendar": {
-      "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
-        "Awgelhen d tmerna n yinermisen: ${ totalImported }/${ totalToImport }"
-      ]
-    },
-    "Import contact error": {
-      "Contact ${ contactId }: ": [
-        "Anermis ${ contactId }: "
-      ]
-    },
-    "Info on errors": {
-      "Click for details": [
-        "Tekki i telqayt"
-      ]
-    },
-    "Import contacts warning": {
-      "for now": [
-        "ɣer tura"
-      ],
-      "ProtonContacts does not support ${ forNow }:": [
-        "ProtonContacts ur issefrak ara ${ forNow }:"
-      ]
-    },
-    "Import warning": {
-      "No contact can be imported. Click for details": [
-        "Ulac anermis i tzemreḍ ad d-tketreḍ. Sit ad teẓreḍ telqayt"
-      ],
-      "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
-        "Inermisen ${ totalContactsDiscarded } ɣef ${ totalContacts } ur d-ttwaktaren ara. Sit ad teẓreḍ telqayt"
-      ]
-    },
-    "Import calendar warning": {
-      "vCard versions < 3.0": [
-        "lqem vCard < 3.0"
-      ]
-    },
-    "Import contacts": {
-      "Contact successfully imported. The imported contact will now appear in your contact list.": [
-        "Anermis yettwakter akken iwata. Anermis yettwaketren ad d-iban deg tebdart-ik·im n yinermisen.",
-        "Inermisen ttwaketren akken iwata. Inermisen yettwaketren ad d-banen deg tebdart-ik·im n yinermisen."
-      ],
-      "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
-        "Tella-d tuccḍa lawan n uwgelhen d tmerna n yinermisen. ${ totalImported } ɣef ${ totalToImport } n yinermsen i d-yettwaketren akken iwata."
-      ]
-    },
-    "Import contact": {
-      "An error occurred while encrypting and adding your contact. No contact could be imported.": [
-        "Tella-d tuccḍa lawan n uwgelhen d tmerna n urmis-inek·inem. Ulac anermis ara d-yettwaktaren.",
-        "Tella-d tuccḍa lawan n uwgelhen d tmerna n yinermisen-ik·im. Ulac anermis ara d-yettwaktaren."
-      ],
-      "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
-        "Anermis ${ totalImported }/${ totalToImport } yettwawgelhen syenyettwarna ɣer tebdart-inek·inem n yinermisen",
-        "Inermisen ${ totalImported }/${ totalToImport } ttwawgelhnen syen ttwarnan ɣer tebdart-inek·inem n yinermisen"
-      ]
-    },
-    "Label to change density": {
-      "Comfortable": [
-        "Yerked"
-      ],
-      "Compact": [
-        "Ussid"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "Tigejdit"
-      ],
-      "Row": [
-        "Izirig"
-      ]
-    },
-    "Label to change composer mode": {
-      "Normal": [
-        "Amagnu"
-      ],
-      "Maximized": [
-        "Afellay"
-      ]
-    },
     "Select files": {
       "Upload": [
         "Sali"
@@ -4215,26 +4212,6 @@
         "Tamawt: ameẓlu ad yales asali mi ara tessiteḍ ɣef tqeffalt Snes."
       ]
     },
-    "Validation Error": {
-      "Name must not end with a space": [
-        "Isem ur ilaq ara ad yekfu s tallunt"
-      ],
-      "Name must not begin with a space": [
-        "Isem ur ilaq ara ad ibdu s tallunt"
-      ],
-      "Name must be ${ MAX_NAME_LENGTH } characters long at most": [
-        "Isem ilaq ad yili ${ MAX_NAME_LENGTH } n yisekkilen deg teɣzi ma aṭas"
-      ],
-      "\"${ str }\" is not a valid name": [
-        "\"${ str }\" mačči d isem ameɣtu"
-      ],
-      "Name cannot include invisible characters, / or \\.": [
-        "Isem ur izir ara ad yegber isekkilen uffiren, / neɣ \\."
-      ],
-      "Name must not be empty": [
-        "Isem ur ilaq ara ad yili d ilem"
-      ]
-    },
     "Onboarding Proton Drive Action": {
       "Upgrade account": [
         "Sali aswir n umiḍan"
@@ -4266,6 +4243,26 @@
       ],
       "Protect all your files with end-to-end encryption. Use ${ appName } to store and share your files securely.": [
         "Mmesten ifuyla-k•m s uwgelhen seg yixef ɣer yixef. Seqdec ${ appName } akken ad teskelseḍ rnu ad tebḍuḍ ifuyla-k•m s wudem aɣellsan."
+      ]
+    },
+    "Validation Error": {
+      "Name must not end with a space": [
+        "Isem ur ilaq ara ad yekfu s tallunt"
+      ],
+      "Name must not begin with a space": [
+        "Isem ur ilaq ara ad ibdu s tallunt"
+      ],
+      "Name must be ${ MAX_NAME_LENGTH } characters long at most": [
+        "Isem ilaq ad yili ${ MAX_NAME_LENGTH } n yisekkilen deg teɣzi ma aṭas"
+      ],
+      "\"${ str }\" is not a valid name": [
+        "\"${ str }\" mačči d isem ameɣtu"
+      ],
+      "Name cannot include invisible characters, / or \\.": [
+        "Isem ur izir ara ad yegber isekkilen uffiren, / neɣ \\."
+      ],
+      "Name must not be empty": [
+        "Isem ur ilaq ara ad yili d ilem"
       ]
     },
     "blackfriday Promo title, need to be short": {

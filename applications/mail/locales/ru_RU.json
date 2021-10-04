@@ -59,12 +59,6 @@
       "Request timed out.": [
         "Истекло время ожидания запроса."
       ],
-      "Signature verification failed": [
-        "Проверка подписи не удалась"
-      ],
-      "Could not find address ${ email }.": [
-        "Не могу найти адрес ${ email }."
-      ],
       "Missing signature": [
         "Подпись отсутствует"
       ],
@@ -79,6 +73,12 @@
       ],
       "The key properties for ${ emailAddress } could not be extracted": [
         "Не удалось извлечь свойства ключа для ${ emailAddress }"
+      ],
+      "Signature verification failed": [
+        "Проверка подписи не удалась"
+      ],
+      "Could not find address ${ email }.": [
+        "Не могу найти адрес ${ email }."
       ],
       "Address primary private key not found": [
         "Основной секретный ключ для адреса не найден"
@@ -101,17 +101,17 @@
       "Authentication error.": [
         "Ошибка аутентификации."
       ],
-      "Email address invalid": [
-        "Неверный адрес электронной почты"
-      ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "Используемый вами браузер не позволяет полностью авторизовать платеж. Пожалуйста, используйте другой браузер или войдите в через компьютер."
-      ],
       "The composer failed to load.": [
         "Не удалось загрузить редактор."
       ],
       "Please refresh the page.": [
         "Пожалуйста, обновите страницу."
+      ],
+      "Email address invalid": [
+        "Неверный адрес электронной почты"
+      ],
+      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
+        "Используемый вами браузер не позволяет полностью авторизовать платеж. Пожалуйста, используйте другой браузер или войдите в через компьютер."
       ],
       "Incorrect mailbox password. Please try again": [
         "Неверный пароль. Пожалуйста, попробуйте еще раз"
@@ -383,8 +383,8 @@
       "Your emails cannot be decrypted due to a recent password reset. If you remember your previous password, you can ${ reActivateKeyLink } in order to access your messages. ${ learnMoreLink }": [
         "Ваши электронные письма не могут быть расшифрованы из-за недавнего сброса пароля. Если вы помните свой предыдущий пароль, вы можете ${ reActivateKeyLink } чтобы получить доступ к своим сообщениям. ${ learnMoreLink }"
       ],
-      "Your emails cannot be decrypted due to a recent password reset. ${ learnMoreLink }": [
-        "Ваши письма не могут быть расшифрованы из-за недавнего сброса пароля. ${ learnMoreLink }"
+      "Your emails cannot be decrypted. This may be due to a password reset. ${ learnMoreLink }": [
+        "Ваши письма не могут быть расшифрованы. Это может быть следствием недавнего сброса пароля. ${ learnMoreLink }"
       ],
       "Too many active filters. Please upgrade to a paid plan to activate more filters": [
         "Слишком много активных фильтров. Пожалуйста, перейдите на платный план для активации дополнительных фильтров"
@@ -563,30 +563,6 @@
       "No results found": [
         "Результаты не найдены"
       ],
-      "Week": [
-        "Неделя"
-      ],
-      "(${ memberCount } member)": [
-        "(${ memberCount } участник)",
-        "(${ memberCount } участника)",
-        "(${ memberCount } участников)",
-        "(${ memberCount } участника)"
-      ],
-      "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Эта ссылка может быть омографической атакой и не может быть открыта браузерами Internet Explorer и Edge. Если вы уверены, что ссылка безопасна, то, пожалуйста, воспользуйтесь другим браузером для её открытия."
-      ],
-      "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
-        "Эта ссылка может быть омографической атакой, при которой символы одного алфавита подменяются похожими символами из другого. Пожалуйста, проверьте, что это именно та ссылка, которую вы хотите посетить, или не переходите по ней."
-      ],
-      "You are about to open another browser tab and visit:": [
-        "Вы собираетесь открыть другую вкладку браузера и посетить:"
-      ],
-      "Learn more": [
-        "Узнать больше"
-      ],
-      "Loading": [
-        "Загрузка"
-      ],
       "Insert image": [
         "Вставить изображение"
       ],
@@ -662,6 +638,30 @@
       "Plain text": [
         "Простой текст"
       ],
+      "Week": [
+        "Неделя"
+      ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } участник)",
+        "(${ memberCount } участника)",
+        "(${ memberCount } участников)",
+        "(${ memberCount } участника)"
+      ],
+      "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
+        "Эта ссылка может быть омографической атакой и не может быть открыта браузерами Internet Explorer и Edge. Если вы уверены, что ссылка безопасна, то, пожалуйста, воспользуйтесь другим браузером для её открытия."
+      ],
+      "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
+        "Эта ссылка может быть омографической атакой, при которой символы одного алфавита подменяются похожими символами из другого. Пожалуйста, проверьте, что это именно та ссылка, которую вы хотите посетить, или не переходите по ней."
+      ],
+      "You are about to open another browser tab and visit:": [
+        "Вы собираетесь открыть другую вкладку браузера и посетить:"
+      ],
+      "Learn more": [
+        "Узнать больше"
+      ],
+      "Loading": [
+        "Загрузка"
+      ],
       "Drop the file here to upload": [
         "Для загрузки файла перетащите его сюда"
       ],
@@ -689,12 +689,6 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Если сообщения нет в папке \"Входящие\" — проверьте, не попало ли оно в папку «спам»."
       ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
-        "Нажмите «Запросить новый код», и мы отправим новый проверочный код на ${ strong }. Если этот адрес электронной почты неверный, выберите «Изменить» для обновления."
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
-        "Нажмите «Запросить новый код», и мы отправим новый проверочный код на ${ strong }. Если этот номер телефона неверный, выберите «Изменить» для обновления."
-      ],
       "To fight spam and abuse, please verify you are human.": [
         "Для предотвращения распространения спама и иных злоупотреблений нашим сервисом, нам нужно убедиться, что вы человек."
       ],
@@ -706,6 +700,12 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Если у вас возникли проблемы с созданием учетной записи, пожалуйста, запросите приглашение и мы ответим в течение одного рабочего дня."
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
+        "Нажмите «Запросить новый код», и мы отправим новый проверочный код на ${ strong }. Если этот адрес электронной почты неверный, выберите «Изменить» для обновления."
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
+        "Нажмите «Запросить новый код», и мы отправим новый проверочный код на ${ strong }. Если этот номер телефона неверный, выберите «Изменить» для обновления."
       ],
       "No contacts added yet": [
         "Контакты ещё не добавлены"
@@ -1839,11 +1839,6 @@
         "Используя мобильное устройство, отсканируйте этот QR-код или перейдите по ссылке ${ link }."
       ]
     },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "Адрес электронной почты не найден среди идентификаторов пользователя, определенных в ключе отправки (${ keyUserIds })"
-      ]
-    },
     "Default display name vcard": {
       "Unknown": [
         "Неизвестный"
@@ -1888,6 +1883,11 @@
       ],
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
         "Произошла ошибка при чтении файла ${ formattedFilename }. Формат файла не поддерживается."
+      ]
+    },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "Адрес электронной почты не найден среди идентификаторов пользователя, определенных в ключе отправки (${ keyUserIds })"
       ]
     },
     "Keyboard shortcut section name": {
@@ -2066,11 +2066,11 @@
       ]
     },
     "Calendar status": {
-      "Not synced": [
-        "Не синхронизировано"
-      ],
       "Syncing": [
         "Синхронизация"
+      ],
+      "Not synced": [
+        "Не синхронизировано"
       ]
     },
     "Calendar subscription not synced error": {
@@ -2105,6 +2105,12 @@
       ],
       "Unsupported event": [
         "Событие не поддерживается"
+      ],
+      "Empty ICS file": [
+        "Пустой файл ICS"
+      ],
+      "Unsupported calendar component": [
+        "Неподдерживаемый компонент календаря"
       ],
       "Invalid method": [
         "Недействительный метод"
@@ -2779,38 +2785,8 @@
       "Close": [
         "Закрыть"
       ],
-      "More info: ${ safeTitle }": [
-        "Больше информации: ${ safeTitle }"
-      ],
-      "Confirm": [
-        "Подтвердить"
-      ],
       "Cancel": [
         "Отменить"
-      ],
-      "Submit": [
-        "Отправить"
-      ],
-      "Close modal": [
-        "Закрыть окно"
-      ],
-      "Use “${ label }” setting": [
-        "Использовать настройку «${ label }»"
-      ],
-      "Remove": [
-        "Удалить"
-      ],
-      "Next month": [
-        "След. месяц"
-      ],
-      "Previous month": [
-        "Предыдущий месяц"
-      ],
-      "Load image": [
-        "Загрузить изображение"
-      ],
-      "Confirm opening of link ${ link }": [
-        "Подтвердить открытие ссылки ${ link }"
       ],
       "Save": [
         "Сохранить"
@@ -2874,6 +2850,36 @@
       ],
       "Underline": [
         "Подчёркнутый"
+      ],
+      "More info: ${ safeTitle }": [
+        "Больше информации: ${ safeTitle }"
+      ],
+      "Confirm": [
+        "Подтвердить"
+      ],
+      "Submit": [
+        "Отправить"
+      ],
+      "Close modal": [
+        "Закрыть окно"
+      ],
+      "Use “${ label }” setting": [
+        "Использовать настройку «${ label }»"
+      ],
+      "Remove": [
+        "Удалить"
+      ],
+      "Next month": [
+        "След. месяц"
+      ],
+      "Previous month": [
+        "Предыдущий месяц"
+      ],
+      "Load image": [
+        "Загрузить изображение"
+      ],
+      "Confirm opening of link ${ link }": [
+        "Подтвердить открытие ссылки ${ link }"
       ],
       "Go to panel ${ index }": [
         "Перейти к панели ${ index }"
@@ -3663,11 +3669,11 @@
       "Open actions dropdown": [
         "Показать список доступных действий"
       ],
-      "Link confirmation": [
-        "Подтверждение ссылки"
-      ],
       "Expand content": [
         "Развернуть содержимое"
+      ],
+      "Link confirmation": [
+        "Подтверждение ссылки"
       ],
       "Keyboard Shortcuts": [
         "Сочетания клавиш"
@@ -3689,9 +3695,6 @@
       ],
       "Invalid verification code": [
         "Неверный проверочный код"
-      ],
-      "Request new code": [
-        "Запросить новый код"
       ],
       "Human verification": [
         "Проверка \"Я не робот\""
@@ -4184,6 +4187,138 @@
       ],
       "Welcome": [
         "Добро пожаловать"
+      ]
+    },
+    "Placeholder": {
+      "Link": [
+        "Ссылка"
+      ],
+      "Fill in the URL link and text to test your link": [
+        "Введите URL-адрес и текст для проверки вашей ссылки"
+      ],
+      "Email address": [
+        "Адрес эл. почты"
+      ],
+      "Fill in the email address and text to test your link": [
+        "Введите адрес электронной почты и текст для проверки вашей ссылки"
+      ],
+      "Phone number": [
+        "Hомер телефона"
+      ],
+      "Fill in the phone number and text to test your link": [
+        "Введите номер телефона и текст для проверки вашей ссылки"
+      ],
+      "Text": [
+        "Текст"
+      ],
+      "E.g., ": [
+        "Например, "
+      ],
+      "Mailbox password": [
+        "Пароль почтового ящика"
+      ],
+      "Start typing an email address": [
+        "Начните вводить адрес эл. почты"
+      ],
+      "Image URL": [
+        "URL изображения"
+      ],
+      "Search name, email or group": [
+        "Искать имя, адрес эл. почты или группу"
+      ],
+      "Filter groups": [
+        "Фильтровать группы"
+      ],
+      "Search for name or email": [
+        "Поиск имени или эл. почты"
+      ],
+      "Search for group name": [
+        "Поиск по названию группы"
+      ],
+      "Name": [
+        "Название"
+      ],
+      "OS name": [
+        "Название ОС"
+      ],
+      "OS version": [
+        "Версия ОС"
+      ],
+      "Proton username": [
+        "Имя пользователя в Proton"
+      ],
+      "A way to contact you": [
+        "Способ связаться с вами"
+      ],
+      "Please describe the problem and include any error messages": [
+        "Пожалуйста, опишите проблему и добавьте все возникавшие сообщения об ошибках"
+      ],
+      "Browser name": [
+        "Название браузера"
+      ],
+      "Browser version": [
+        "Версия браузера"
+      ],
+      "e.g. Julia Smith": [
+        "например, Джулия Смит"
+      ],
+      "ZIP": [
+        "ZIP-код"
+      ],
+      "Postal code": [
+        "Почтовый индекс"
+      ],
+      "Gift code": [
+        "Подарочный код"
+      ],
+      "Type text or keyword": [
+        "Введите текст или ключевое слово"
+      ],
+      "Subject": [
+        "Тема"
+      ],
+      "Write your message": [
+        "Напишите сообщение"
+      ],
+      "Password": [
+        "Пароль"
+      ],
+      "Confirm Password": [
+        "Подтвердите пароль"
+      ],
+      "Hint": [
+        "Подсказка"
+      ],
+      "Search Messages": [
+        "Поиск сообщений"
+      ],
+      "Start date": [
+        "Начиная с"
+      ],
+      "End date": [
+        "Дата окончания"
+      ],
+      "Name or email address": [
+        "Имя или адрес эл. почты"
+      ],
+      "Search messages": [
+        "Поиск сообщений"
+      ],
+      "Filter folders": [
+        "Фильтр папок"
+      ],
+      "Filter labels": [
+        "Фильтр ярлыков"
+      ]
+    },
+    "Font Face Default": {
+      "Default": [
+        "По умолчанию"
+      ]
+    },
+    "Font Size Default": {
+      "Default": [
+        "По умолчанию"
       ]
     },
     "PGP key encryption warning": {
@@ -4717,128 +4852,6 @@
         "Также перенести в архив"
       ]
     },
-    "Placeholder": {
-      "E.g., ": [
-        "Например, "
-      ],
-      "Link": [
-        "Ссылка"
-      ],
-      "Fill in the URL link and text to test your link": [
-        "Введите URL-адрес и текст для проверки вашей ссылки"
-      ],
-      "Email address": [
-        "Адрес эл. почты"
-      ],
-      "Fill in the email address and text to test your link": [
-        "Введите адрес электронной почты и текст для проверки вашей ссылки"
-      ],
-      "Phone number": [
-        "Hомер телефона"
-      ],
-      "Fill in the phone number and text to test your link": [
-        "Введите номер телефона и текст для проверки вашей ссылки"
-      ],
-      "Text": [
-        "Текст"
-      ],
-      "Mailbox password": [
-        "Пароль почтового ящика"
-      ],
-      "Start typing an email address": [
-        "Начните вводить адрес эл. почты"
-      ],
-      "Image URL": [
-        "URL изображения"
-      ],
-      "Search name, email or group": [
-        "Искать имя, адрес эл. почты или группу"
-      ],
-      "Filter groups": [
-        "Фильтровать группы"
-      ],
-      "Search for name or email": [
-        "Поиск имени или эл. почты"
-      ],
-      "Search for group name": [
-        "Поиск по названию группы"
-      ],
-      "Name": [
-        "Название"
-      ],
-      "OS name": [
-        "Название ОС"
-      ],
-      "OS version": [
-        "Версия ОС"
-      ],
-      "Proton username": [
-        "Имя пользователя в Proton"
-      ],
-      "A way to contact you": [
-        "Способ связаться с вами"
-      ],
-      "Please describe the problem and include any error messages": [
-        "Пожалуйста, опишите проблему и добавьте все возникавшие сообщения об ошибках"
-      ],
-      "Browser name": [
-        "Название браузера"
-      ],
-      "Browser version": [
-        "Версия браузера"
-      ],
-      "e.g. Julia Smith": [
-        "например, Джулия Смит"
-      ],
-      "ZIP": [
-        "ZIP-код"
-      ],
-      "Postal code": [
-        "Почтовый индекс"
-      ],
-      "Gift code": [
-        "Подарочный код"
-      ],
-      "Type text or keyword": [
-        "Введите текст или ключевое слово"
-      ],
-      "Subject": [
-        "Тема"
-      ],
-      "Write your message": [
-        "Напишите сообщение"
-      ],
-      "Password": [
-        "Пароль"
-      ],
-      "Confirm Password": [
-        "Подтвердите пароль"
-      ],
-      "Hint": [
-        "Подсказка"
-      ],
-      "Search Messages": [
-        "Поиск сообщений"
-      ],
-      "Start date": [
-        "Начиная с"
-      ],
-      "End date": [
-        "Дата окончания"
-      ],
-      "Name or email address": [
-        "Имя или адрес эл. почты"
-      ],
-      "Search messages": [
-        "Поиск сообщений"
-      ],
-      "Filter folders": [
-        "Фильтр папок"
-      ],
-      "Filter labels": [
-        "Фильтр ярлыков"
-      ]
-    },
     "Time unit": {
       "${ hours } hour": [
         "${ hours } час",
@@ -4886,16 +4899,6 @@
         "Найдено ${ items.length } предложения, используйте клавиатуру для навигации.",
         "Найдено ${ items.length } предложений, используйте клавиатуру для навигации.",
         "Найдено ${ items.length } предложений, используйте клавиатуру для навигации."
-      ]
-    },
-    "Font Face Default": {
-      "Default": [
-        "По умолчанию"
-      ]
-    },
-    "Font Size Default": {
-      "Default": [
-        "По умолчанию"
       ]
     },
     "Storage": {
@@ -5649,6 +5652,11 @@
         "${ totalImported }/${ totalToImport } контактов зашифровано и добавлено в ваш список контактов"
       ]
     },
+    "Select files": {
+      "Upload": [
+        "Загрузить"
+      ]
+    },
     "Label to change density": {
       "Comfortable": [
         "Удобный"
@@ -5671,11 +5679,6 @@
       ],
       "Maximized": [
         "Максимизированный"
-      ]
-    },
-    "Select files": {
-      "Upload": [
-        "Загрузить"
       ]
     },
     "Loading info": {
@@ -6091,7 +6094,7 @@
         "Предотвращение утечки DNS"
       ],
       "Kill Switch / Always-on VPN": [
-        "Запрет незащищенного соединения / VPN включен всегда"
+        "Аварийный Стоп / Постоянная VPN"
       ],
       "Perfect Forward Secrecy (PFS)": [
         "Совершенная прямая секретность (PFS)"

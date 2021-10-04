@@ -5,161 +5,13 @@
   },
   "contexts": {
     "": {},
-    "Error": {
-      "Unknown error": [
-        "Неизвестная ошибка"
-      ],
-      "Checkout expired, please try again.": [
-        "Срок действия заказа истек, попробуйте еще раз."
-      ],
-      "Invalid code": [
-        "Неверный код"
-      ],
-      "Error connecting to the Bitcoin API.": [
-        "Ошибка при подключении к Bitcoin API."
-      ],
-      "Amount below minimum.": [
-        "Сумма ниже допустимого минимума."
-      ],
-      "Amount above the maximum.": [
-        "Сумма выше допустимого максимума."
-      ],
-      "The minimum amount that can be donated is ${ price }": [
-        "Минимальная сумма, которую можно пожертвовать, составляет ${ price }"
-      ],
-      "The minimum amount of credit that can be added is ${ _price }": [
-        "Минимальная сумма, которая может быть добавлена, составляет: ${ _price }"
-      ],
-      "The minimum payment we accept is ${ _price2 }": [
-        "Минимальная оплата, которую мы принимаем, составляет ${ _price2 }"
-      ],
-      "Process aborted": [
-        "Процесс прерван"
-      ],
-      "Payment process cancelled": [
-        "Процесс оплаты отменён"
-      ],
-      "Payment process failed": [
-        "Сбой в процессе оплаты"
-      ],
-      "Payment process consumed": [
-        "Процесс оплаты завершён"
-      ],
-      "Payment process not supported": [
-        "Процесс оплаты не поддерживается"
-      ],
-      "Unknown payment token status": [
-        "Неизвестный статус платёжного токена"
-      ],
-      "Tab closed": [
-        "Вкладка закрыта"
-      ],
-      "Name on card required": [
-        "Требуется имя на карте"
-      ],
-      "Invalid expiration date": [
-        "Недействительная дата окончания"
-      ],
-      "Invalid card number": [
-        "Недействительный номер карты"
-      ],
-      "Invalid ${ name } code": [
-        "Недействительный код ${ name }"
-      ],
-      "Invalid postal code": [
-        "Недействительный почтовый индекс"
-      ],
-      "Please generate keys before you try to change your password.": [
-        "Пожалуйста, создайте ключи перед тем, как попробуете изменить свой пароль."
-      ],
-      "Please set a recovery/notification email first": [
-        "Пожалуйста, сначала укажите адрес электронной почты для восстановления/уведомлений"
-      ],
-      "Please set a recovery phone number first": [
-        "Пожалуйста, сначала укажите номер телефона для восстановления"
-      ],
-      "Payments are currently not available, please try again later": [
-        "Платежи в настоящее время не доступны, пожалуйста, повторите попытку позже"
-      ],
-      "You have no invoices.": [
-        "У вас нет счетов."
-      ],
-      "Your account or organization currently has an overdue invoice. Please pay all unpaid invoices.": [
-        "Для вашей учётной записи или организации есть просроченный счёт. Пожалуйста, оплатите все неоплаченные счета."
-      ],
-      "File has no contents to preview": [
-        "В файле нет содержимого для предпросмотра"
-      ],
-      "Incorrect mailbox password. Please try again": [
-        "Неверный пароль почтового ящика. Пожалуйста, попробуйте снова"
-      ],
-      "Incorrect login credentials. Please try again": [
-        "Неверные учетные данные. Пожалуйста, попробуйте снова"
-      ],
-      "Can't validate email, try again later": [
-        "Не удается проверить адрес электронной почты, повторите попытку позже"
-      ],
-      "Can't validate phone, try again later": [
-        "Не удается проверить телефон, повторите попытку позже"
-      ],
-      "Enter 6 digits": [
-        "Введите 6 цифр"
-      ],
-      "Invalid verification code": [
-        "Неверный проверочный код"
-      ],
-      "Email address invalid": [
-        "Недействительный адрес эл. почты"
-      ],
-      "Please enter '${ dangerWord }'": [
-        "Пожалуйста, введите '${ dangerWord }'"
-      ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Что-то пошло не так, пожалуйста, ${ refresh }, чтобы продолжить. Если вы всё же видите это сообщение об ошибке, пожалуйста, свяжитесь с нашей службой поддержки ${ supportTeam }."
-      ],
-      "This field is required": [
-        "Это обязательное поле"
-      ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "Используемый Вами браузер не позволяет совершить платёж. Пожалуйста, используйте другой браузер, либо войдите через компьютер."
-      ],
-      "This field requires a minimum of ${ minimumLength } characters.": [
-        "Минимальная длина для этого поля: ${ minimumLength }."
-      ],
-      "Email is not valid": [
-        "Эл. почта недействительна"
-      ],
-      "Not a valid number": [
-        "Неверный номер"
-      ],
-      "Passwords do not match": [
-        "Пароли не совпадают"
-      ],
-      "Signature verification failed": [
-        "Ошибка проверки подписи"
-      ],
-      "Request timed out.": [
-        "Истекло время ожидания запроса."
-      ],
-      "Code wrong or not valid anymore": [
-        "Неверный или недействительный код"
-      ],
-      "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
-        "Если время на вашем телевизоре истекло, нажмите \"Обновить\" на телевизоре и введите свой код еще раз."
-      ],
-      "Invalid invitation link": [
-        "Пригласительная ссылка недействительная"
-      ],
-      "Can't check username, try again later": [
-        "Не могу проверить имя пользователя, повторите попытку позже"
-      ]
-    },
-    "Error notification in the bug report modal when the user upload file": {
-      "No image selected": [
-        "Изображение не выбрано"
-      ]
-    },
     "Info": {
+      "No results found": [
+        "Результаты не найдены"
+      ],
+      "Loading": [
+        "Загрузка"
+      ],
       "Screenshot(s) attached": [
         "Снимки экрана прикреплены"
       ],
@@ -491,7 +343,7 @@
         "Интернет-соединение потеряно. Пожалуйста, проверьте подключение вашего устройства."
       ],
       "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
-        ""
+        "Одновременно может быть открыт только один чат. Пожалуйста, закройте предыдущие беседы, прежде чем начинать новую."
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Ваша подписка находится под управлением Mozilla. Пожалуйста, свяжитесь со службой поддержки Mozilla."
@@ -754,12 +606,6 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Если сообщения нет в папке \"Входящие\" - проверьте, не попало ли оно в папку «спам»."
       ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
-        "Нажмите \"Запросить новый код\", и мы отправим новый проверочный код на ${ strong }. Если этот адрес электронной почты неверный, то выберите \"Изменить\" для обновления."
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
-        "Нажмите \"Запросить новый код\", и мы отправим новый проверочный код на ${ strong }. Если этот номер телефона не верный, то выберите \"Изменить\" для обновления."
-      ],
       "To fight spam and abuse, please verify you are human.": [
         "Для предотвращения распространения спама и иных злоупотреблений нашим сервисом, нам нужно убедиться, что вы человек."
       ],
@@ -771,6 +617,12 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Если у вас возникли проблемы с созданием учетной записи, пожалуйста, запросите приглашение и мы ответим в течение одного рабочего дня."
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
+        "Нажмите \"Запросить новый код\", и мы отправим новый проверочный код на ${ strong }. Если этот адрес электронной почты неверный, то выберите \"Изменить\" для обновления."
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
+        "Нажмите \"Запросить новый код\", и мы отправим новый проверочный код на ${ strong }. Если этот номер телефона не верный, то выберите \"Изменить\" для обновления."
       ],
       "Enter your recovery email address, and we'll send you your username(s). (This is usually the email address you provided during signup.)": [
         "Введите свой резервный адрес электронной почты, и мы отправим вам имя вашего пользователя. (Обычно это тот адрес, который вы давали при регистрации.)"
@@ -810,12 +662,6 @@
       ],
       "support team": [
         "команда поддержки"
-      ],
-      "No results found": [
-        "Результаты не найдены"
-      ],
-      "Loading": [
-        "Загрузка"
       ],
       "Session timed out.": [
         "Время сессии истекло."
@@ -887,628 +733,16 @@
         "Создание учетной записи"
       ]
     },
-    "Action": {
-      "Clear": [
-        "Очистить"
-      ],
-      "Add screenshot(s)": [
-        "Добавить снимки экрана"
-      ],
-      "Submit": [
-        "Отправить"
-      ],
-      "Hide info": [
-        "Скрыть информацию"
-      ],
-      "Show info": [
-        "Показать информацию"
-      ],
-      "Copy email to clipboard": [
-        "Скопировать адрес эл. почты в буфер обмена"
-      ],
-      "${ BRAND_NAME } introduction": [
-        "${ BRAND_NAME } введение"
-      ],
-      "Chat with us": [
-        "Поболтать с нами"
-      ],
-      "I have a question": [
-        "У меня есть вопрос"
-      ],
-      "Request a feature": [
-        "Предложить идею"
-      ],
-      "Report a problem": [
-        "Сообщить о проблеме"
-      ],
-      "${ BRAND_NAME } shop": [
-        "${ BRAND_NAME } магазин"
-      ],
-      "Switch account": [
-        "Сменить аккаунт"
-      ],
-      "Sign out": [
-        "Выйти из учетной записи"
-      ],
-      "Get started": [
-        "Приступить к работе"
-      ],
-      "Next": [
-        "Далее"
-      ],
-      "Start setup": [
-        "Приступить к настройкам"
-      ],
-      "Skip": [
-        "Пропустить"
-      ],
-      "Done": [
-        "Готово"
-      ],
-      "Back": [
-        "Назад"
-      ],
-      "Use ${ label } theme": [
-        "Используйте ${ label } тему"
-      ],
-      "Signing out": [
-        "Производится выход"
-      ],
-      "Close": [
-        "Закрыть"
-      ],
-      "refresh the page": [
-        "обновить страницу"
-      ],
-      "Remove bonuses": [
-        "Удалить бонусы"
-      ],
-      "Select plan": [
-        "Выберите тарифный план"
-      ],
-      "Compare all features": [
-        "Сравнить все функции"
-      ],
-      "${ boldSave } by switching to annual billing": [
-        "${ boldSave } переключившись на ежегодную оплату"
-      ],
-      "Continue": [
-        "Продолжить"
-      ],
-      "Confirm": [
-        "Подтвердить"
-      ],
-      "Pay": [
-        "Оплатить"
-      ],
-      "Apply": [
-        "Применить"
-      ],
-      "Open ${ CALENDAR_APP_NAME } settings": [
-        "Открыть настройки приложения ${ CALENDAR_APP_NAME }"
-      ],
-      "OK": [
-        "ОК"
-      ],
-      "Upgrade to Plus": [
-        "Улучшить до Plus"
-      ],
-      "Upgrade to Professional": [
-        "Улучшить до Professional"
-      ],
-      "Activate": [
-        "Активировать"
-      ],
-      "Customize subscription": [
-        "Настроить подписку"
-      ],
-      "Cancel subscription": [
-        "Отменить подписку"
-      ],
-      "Remove gift code": [
-        "Удалить подарочный код"
-      ],
-      "annual billing": [
-        "ежегодная оплата"
-      ],
-      "Compare plans": [
-        "Сравнить тарифные планы"
-      ],
-      "Decrease": [
-        "Уменьшить"
-      ],
-      "Increase": [
-        "Увеличить"
-      ],
-      "Downgrade": [
-        "Понизить"
-      ],
-      "Top up": [
-        "Пополнить"
-      ],
-      "Add credits": [
-        "Пополнить счет"
-      ],
-      "Save": [
-        "Сохранить"
-      ],
-      "Cancel": [
-        "Отмена"
-      ],
-      "Add PayPal payment method": [
-        "Добавить способ оплаты PayPal"
-      ],
-      "Retry": [
-        "Повторить"
-      ],
-      "Loading verification": [
-        "Загружается проверка"
-      ],
-      "Try again": [
-        "Попробовать ещё раз"
-      ],
-      "Verify": [
-        "Подтвердить"
-      ],
-      "Use a different card": [
-        "Использовать другую карту"
-      ],
-      "Use a different payment method": [
-        "Использовать другой способ оплаты"
-      ],
-      "enable desktop notifications": [
-        "включить уведомления на рабочем столе"
-      ],
-      "here": [
-        "здесь"
-      ],
-      "Refresh the page": [
-        "Обновить страницу"
-      ],
-      "Close this banner": [
-        "Закрыть этот баннер"
-      ],
-      "Change password": [
-        "Изменить пароль"
-      ],
-      "Ok": [
-        "ОК"
-      ],
-      "Download": [
-        "Скачать"
-      ],
-      "Yes": [
-        "Да"
-      ],
-      "Change mailbox password": [
-        "Изменить пароль почтового ящика"
-      ],
-      "Delete": [
-        "Удалить"
-      ],
-      "Delete your account": [
-        "Удалить аккаунт"
-      ],
-      "Hide": [
-        "Скрыть"
-      ],
-      "Show": [
-        "Показать"
-      ],
-      "Reset credentials": [
-        "Сбросить учётные данные"
-      ],
-      "Upgrade": [
-        "Улучшить"
+    "Label": {
+      "Reveal password": [
+        "Показать пароль"
+      ],
+      "Hide password": [
+        "Скрыть пароль"
       ],
       "Copy": [
         "Копировать"
       ],
-      "Download all configurations": [
-        "Скачать все конфигурации"
-      ],
-      "Get ProtonVPN Plus": [
-        "Получить ProtonVPN Plus"
-      ],
-      "Update": [
-        "Обновить"
-      ],
-      "Create new recovery phrase": [
-        "Создать новую фразу для восстановления доступа к учетной записи"
-      ],
-      "Copy to clipboard": [
-        "Скопировать в буфер обмена"
-      ],
-      "Create new recovery phrase?": [
-        "Создать новую фразу для восстановления доступа к учетной записи?"
-      ],
-      "Enter password to continue": [
-        "Введите пароль для продолжения"
-      ],
-      "Disable recovery phrase?": [
-        "Отключить фразу для восстановления доступа к учетной записи?"
-      ],
-      "Disable recovery phrase": [
-        "Отключить фразу для восстановления доступа к учетной записи"
-      ],
-      "Edit": [
-        "Редактировать"
-      ],
-      "Mark as default": [
-        "Установить по умолчанию"
-      ],
-      "Add credit / debit card": [
-        "Добавить банковскую карту"
-      ],
-      "Add PayPal": [
-        "Добавить PayPal"
-      ],
-      "View": [
-        "Просмотр"
-      ],
-      "User": [
-        "Пользователь"
-      ],
-      "Organization": [
-        "Организация"
-      ],
-      "Customize": [
-        "Настроить"
-      ],
-      "Details": [
-        "Подробнее"
-      ],
-      "Share via link": [
-        "Доступ по ссылке"
-      ],
-      "Sharing options": [
-        "Параметры совместного доступа"
-      ],
-      "Zoom out": [
-        "Отдалить"
-      ],
-      "Reset zoom": [
-        "Сбросить масштабирование"
-      ],
-      "Zoom in": [
-        "Приблизить"
-      ],
-      "Previous": [
-        "Пред."
-      ],
-      "Log in": [
-        "Войти"
-      ],
-      "View invoice": [
-        "Просмотр счета"
-      ],
-      "Get verification code": [
-        "Получить проверочный код"
-      ],
-      "Try another method": [
-        "Попробуйте другой способ"
-      ],
-      "Request new code": [
-        "Запросить новый код"
-      ],
-      "Did not receive the code?": [
-        "Не получили код?"
-      ],
-      "Edit email address": [
-        "Изменить адрес эл. почты"
-      ],
-      "Edit phone number": [
-        "Изменить номер телефона"
-      ],
-      "Email me my username(s)": [
-        "Отправить мне имя моего пользователя"
-      ],
-      "Get a new password": [
-        "Получить новый пароль"
-      ],
-      "Reset password": [
-        "Сбросить пароль"
-      ],
-      "Reset my password": [
-        "Сбросить мой пароль"
-      ],
-      "Close navigation": [
-        "Cкрыть панель навигации"
-      ],
-      "Open navigation": [
-        "Показать панель навигации"
-      ],
-      "More info: ${ safeTitle }": [
-        "Дополнительная информация: ${ safeTitle }"
-      ],
-      "Go to panel ${ index }": [
-        "Перейти к панели ${ index }"
-      ],
-      "Close modal": [
-        "Закрыть окно"
-      ],
-      "Report bug": [
-        "Сообщить об ошибке"
-      ],
-      "Activate my coupon": [
-        "Активировать мой купон"
-      ],
-      "Hide additional features": [
-        "Скрыть дополнительные функции"
-      ],
-      "Select": [
-        "Выбрать"
-      ],
-      "Verify code again": [
-        "Подтвердить код еще раз"
-      ],
-      "Verify code": [
-        "Подтвердите код"
-      ],
-      "Create account": [
-        "Создать учетную запись"
-      ],
-      "Go to login": [
-        "Перейти ко входу"
-      ],
-      "View full plan comparison": [
-        "Посмотреть полное сравнение планов"
-      ],
-      "Send": [
-        "Отправить"
-      ],
-      "Resend": [
-        "Отправить заново"
-      ],
-      "Use another verification method": [
-        "Использовать другой способ проверки"
-      ],
-      "Confirm payment": [
-        "Подтверждение платежа"
-      ],
-      "Pay annually and save 20%": [
-        "Платите ежегодно и сэкономьте 20%"
-      ],
-      "Try ${ upsellPlan.title } for only ${ totalMonthlyText }": [
-        "Попробуйте ${ upsellPlan.title } всего за ${ totalMonthlyText }"
-      ],
-      "Homepage": [
-        "Домашняя страница"
-      ]
-    },
-    "Bug category": {
-      "Sign in problem": [
-        "Проблема со входом"
-      ],
-      "Sign up problem": [
-        "Проблема при регистрации"
-      ],
-      "Payments problem": [
-        "Проблема с платежами"
-      ],
-      "Custom domain problem": [
-        "Проблема с пользовательскими доменами"
-      ],
-      "Bridge problem": [
-        "Проблема с Bridge"
-      ],
-      "Import / export problem": [
-        "Проблема импорта / экспорта"
-      ],
-      "Connection problem": [
-        "Проблема с подключением"
-      ],
-      "Slow speed problem": [
-        "Проблема с низкой скоростью"
-      ],
-      "Calendar problem": [
-        "Проблемы календаря"
-      ],
-      "Contacts problem": [
-        "Проблемы с контактами"
-      ],
-      "Drive problem": [
-        "Проблемы с диском"
-      ],
-      "Mail problem": [
-        "Проблемы с почтой"
-      ],
-      "VPN problem": [
-        "Проблема с VPN"
-      ],
-      "Feature request": [
-        "Запрос новых функций"
-      ],
-      "Other": [
-        "Другое"
-      ],
-      "Signup problem": [
-        "Проблема при регистрации"
-      ],
-      "Installation problem": [
-        "Проблема с установкой"
-      ],
-      "Update problem": [
-        "Проблема с обновлением"
-      ],
-      "Application problem": [
-        "Проблема в приложении"
-      ],
-      "Speed problem": [
-        "Проблема со скоростью"
-      ],
-      "Manual setup problem": [
-        "Проблема при ручной настройке"
-      ],
-      "Website access problem": [
-        "Проблема с доступом к сайту"
-      ],
-      "Streaming problem": [
-        "Проблема стриминга"
-      ]
-    },
-    "Group": {
-      "Account": [
-        "Аккаунт"
-      ],
-      "Apps": [
-        "Приложения"
-      ],
-      "Network": [
-        "Сеть"
-      ],
-      "Services": [
-        "Службы"
-      ],
-      "Other category": [
-        "Другая категория"
-      ]
-    },
-    "Action to select a title for the bug report modal": {
-      "Select": [
-        "Выбрать"
-      ]
-    },
-    "Link": {
-      "clearing your browser cache": [
-        "очистка кэша вашего браузера"
-      ],
-      "Upgrade": [
-        "Улучшить"
-      ],
-      "Go to subscription plans": [
-        "Перейти на страницу подписки"
-      ],
-      "Add a gift code": [
-        "Добавить подарочный код"
-      ],
-      "click here": [
-        "нажмите здесь"
-      ],
-      "Pay invoice": [
-        "Оплатить счёт"
-      ],
-      "Upgrade account": [
-        "Улучшить аккаунт"
-      ],
-      "Not activated": [
-        "Не активировано"
-      ],
-      "View guide": [
-        "Посмотреть руководство"
-      ],
-      "What is the difference between UDP and TCP protocols?": [
-        "Какова разница между протоколами UDP и TCP?"
-      ],
-      "Learn more": [
-        "Узнать больше"
-      ],
-      "Request an invite": [
-        "Запросить приглашение"
-      ],
-      "Back to login": [
-        "Назад к форме входа"
-      ],
-      "here": [
-        "здесь"
-      ],
-      "Upgrade now": [
-        "Улучшить сейчас"
-      ],
-      "Sign up for free": [
-        "Зарегистрируйтесь бесплатно"
-      ],
-      "protonvpn.com": [
-        "protonvpn.com"
-      ],
-      "Don't have an account yet? Sign up for free!": [
-        "У вас еще нет аккаунта? Зарегистрируйтесь бесплатно!"
-      ],
-      "Reset password": [
-        "Сбросить пароль"
-      ],
-      "Forgot username?": [
-        "Забыли имя пользователя?"
-      ],
-      "Common login problems": [
-        "Распространённые проблемы входа"
-      ],
-      "Contact support": [
-        "Связаться с поддержкой"
-      ],
-      "Terms of Service": [
-        "Условия использования"
-      ],
-      "Privacy Policy": [
-        "Политика конфиденциальности"
-      ],
-      "Log in": [
-        "Войти"
-      ],
-      "Close": [
-        "Закрыть"
-      ]
-    },
-    "Success": {
-      "Bug reported": [
-        "Отчёт об ошибке отправлен"
-      ],
-      "Email address copied to clipboard": [
-        "Адрес эл. почты скопирован в буфер обмена"
-      ],
-      "You have successfully unsubscribed": [
-        "Подписка успешно отменена"
-      ],
-      "Credits added": [
-        "Средства зачислены"
-      ],
-      "Gift code applied": [
-        "Подарочный код применён"
-      ],
-      "Payment method updated": [
-        "Способ оплаты обновлён"
-      ],
-      "Payment method added": [
-        "Способ оплаты добавлен"
-      ],
-      "Password updated": [
-        "Пароль обновлён"
-      ],
-      "Account deleted. Logging out...": [
-        "Аккаунт удален. Выход из системы..."
-      ],
-      "Locale updated": [
-        "Региональные настройки обновлены"
-      ],
-      "${ server.Domain } copied in your clipboard": [
-        "Скопировано в буфер обмена: ${ server.Domain }"
-      ],
-      "Email updated": [
-        "Адрес эл. почты обновлён"
-      ],
-      "Phone number updated": [
-        "Номер телефона обновлен"
-      ],
-      "Payment method deleted": [
-        "Способ оплаты удалён"
-      ],
-      "Invoice paid": [
-        "Счёт оплачен"
-      ],
-      "Invoice customized": [
-        "Счёт настроен"
-      ],
-      "Code sent to ${ methodTo }": [
-        "Код отправлен на ${ methodTo }"
-      ],
-      "Verification successful": [
-        "Проверка прошла успешно"
-      ],
-      "If you entered a valid notification email we will send you an email with your usernames in the next minute.": [
-        "Если вы ввели действительный адрес эл. почты для уведомлений, мы отправим вам письмо с вашими именами пользователей в течение следующей минуты."
-      ]
-    },
-    "Label": {
       "Operating system": [
         "Операционная система"
       ],
@@ -1797,15 +1031,6 @@
       "Danger": [
         "Ненадежный"
       ],
-      "Copy": [
-        "Копировать"
-      ],
-      "Reveal password": [
-        "Показать пароль"
-      ],
-      "Hide password": [
-        "Скрыть пароль"
-      ],
       "Back to:": [
         "Назад к:"
       ],
@@ -1843,90 +1068,651 @@
         "Общая цена (два года)"
       ]
     },
-    "Placeholder": {
-      "OS name": [
-        "Название ОС"
+    "Action": {
+      "Close navigation": [
+        "Cкрыть панель навигации"
       ],
-      "OS version": [
-        "Версия ОС"
+      "Open navigation": [
+        "Показать панель навигации"
       ],
-      "Proton username": [
-        "Имя пользователя Proton"
+      "More info: ${ safeTitle }": [
+        "Дополнительная информация: ${ safeTitle }"
       ],
-      "A way to contact you": [
-        "Способ связаться с вами"
+      "Go to panel ${ index }": [
+        "Перейти к панели ${ index }"
       ],
-      "Please describe the problem and include any error messages": [
-        "Пожалуйста, опишите проблему, включая сообщения об ошибке"
-      ],
-      "Browser name": [
-        "Название браузера"
-      ],
-      "Browser version": [
-        "Версия браузера"
-      ],
-      "e.g. Julia Smith": [
-        "например, Джулия Смит"
-      ],
-      "Gift code": [
-        "Подарочный код"
-      ],
-      "Feedback": [
-        "Обратная связь"
-      ],
-      "Other": [
-        "Другое"
-      ],
-      "Add gift code": [
-        "Добавить подарочный код"
-      ],
-      "ZIP": [
-        "Почтовый индекс"
-      ],
-      "Postal code": [
-        "Почтовый индекс"
-      ],
-      "Password": [
-        "Пароль"
-      ],
-      "Two-factor authentication code": [
-        "Код двухфакторной аутентификации"
+      "Close": [
+        "Закрыть"
       ],
       "Confirm": [
         "Подтвердить"
       ],
-      "Email address": [
-        "Адрес эл. почты"
+      "Cancel": [
+        "Отмена"
       ],
-      "Mailbox password": [
-        "Пароль почтового ящика"
+      "Submit": [
+        "Отправить"
       ],
-      "Email": [
-        "Эл. почта"
+      "Close modal": [
+        "Закрыть окно"
       ],
-      "Username": [
-        "Имя пользователя"
+      "Clear": [
+        "Очистить"
       ],
-      "Recovery email": [
-        "Резервная эл. почта"
+      "Add screenshot(s)": [
+        "Добавить снимки экрана"
       ],
-      "Reset code": [
-        "Код для сброса"
+      "Hide info": [
+        "Скрыть информацию"
       ],
-      "Enter the word '${ dangerWord }' here": [
-        "Введите здесь слово '${ dangerWord }'"
+      "Show info": [
+        "Показать информацию"
       ],
-      "Choose a new password": [
-        "Задайте новый пароль"
+      "Copy email to clipboard": [
+        "Скопировать адрес эл. почты в буфер обмена"
       ],
-      "Enter coupon code": [
-        "Введите код купона"
+      "${ BRAND_NAME } introduction": [
+        "${ BRAND_NAME } введение"
       ],
-      "Confirm password": [
-        "Подтвердите пароль"
+      "Chat with us": [
+        "Поболтать с нами"
+      ],
+      "I have a question": [
+        "У меня есть вопрос"
+      ],
+      "Request a feature": [
+        "Предложить идею"
+      ],
+      "Report a problem": [
+        "Сообщить о проблеме"
+      ],
+      "${ BRAND_NAME } shop": [
+        "${ BRAND_NAME } магазин"
+      ],
+      "Switch account": [
+        "Сменить аккаунт"
+      ],
+      "Sign out": [
+        "Выйти из учетной записи"
+      ],
+      "Get started": [
+        "Приступить к работе"
+      ],
+      "Next": [
+        "Далее"
+      ],
+      "Start setup": [
+        "Приступить к настройкам"
+      ],
+      "Skip": [
+        "Пропустить"
+      ],
+      "Done": [
+        "Готово"
+      ],
+      "Back": [
+        "Назад"
+      ],
+      "Use ${ label } theme": [
+        "Используйте ${ label } тему"
+      ],
+      "Signing out": [
+        "Производится выход"
+      ],
+      "refresh the page": [
+        "обновить страницу"
+      ],
+      "Remove bonuses": [
+        "Удалить бонусы"
+      ],
+      "Select plan": [
+        "Выберите тарифный план"
+      ],
+      "Compare all features": [
+        "Сравнить все функции"
+      ],
+      "${ boldSave } by switching to annual billing": [
+        "${ boldSave } переключившись на ежегодную оплату"
+      ],
+      "Continue": [
+        "Продолжить"
+      ],
+      "Pay": [
+        "Оплатить"
+      ],
+      "Apply": [
+        "Применить"
+      ],
+      "Open ${ CALENDAR_APP_NAME } settings": [
+        "Открыть настройки приложения ${ CALENDAR_APP_NAME }"
+      ],
+      "OK": [
+        "ОК"
+      ],
+      "Upgrade to Plus": [
+        "Улучшить до Plus"
+      ],
+      "Upgrade to Professional": [
+        "Улучшить до Professional"
+      ],
+      "Activate": [
+        "Активировать"
+      ],
+      "Customize subscription": [
+        "Настроить подписку"
+      ],
+      "Cancel subscription": [
+        "Отменить подписку"
+      ],
+      "Remove gift code": [
+        "Удалить подарочный код"
+      ],
+      "annual billing": [
+        "ежегодная оплата"
+      ],
+      "Compare plans": [
+        "Сравнить тарифные планы"
+      ],
+      "Decrease": [
+        "Уменьшить"
+      ],
+      "Increase": [
+        "Увеличить"
+      ],
+      "Downgrade": [
+        "Понизить"
+      ],
+      "Top up": [
+        "Пополнить"
+      ],
+      "Add credits": [
+        "Пополнить счет"
+      ],
+      "Save": [
+        "Сохранить"
+      ],
+      "Add PayPal payment method": [
+        "Добавить способ оплаты PayPal"
+      ],
+      "Retry": [
+        "Повторить"
+      ],
+      "Loading verification": [
+        "Загружается проверка"
+      ],
+      "Try again": [
+        "Попробовать ещё раз"
+      ],
+      "Verify": [
+        "Подтвердить"
+      ],
+      "Use a different card": [
+        "Использовать другую карту"
+      ],
+      "Use a different payment method": [
+        "Использовать другой способ оплаты"
+      ],
+      "enable desktop notifications": [
+        "включить уведомления на рабочем столе"
+      ],
+      "here": [
+        "здесь"
+      ],
+      "Refresh the page": [
+        "Обновить страницу"
+      ],
+      "Close this banner": [
+        "Закрыть этот баннер"
+      ],
+      "Change password": [
+        "Изменить пароль"
+      ],
+      "Ok": [
+        "ОК"
+      ],
+      "Download": [
+        "Скачать"
+      ],
+      "Yes": [
+        "Да"
+      ],
+      "Change mailbox password": [
+        "Изменить пароль почтового ящика"
+      ],
+      "Delete": [
+        "Удалить"
+      ],
+      "Delete your account": [
+        "Удалить аккаунт"
+      ],
+      "Hide": [
+        "Скрыть"
+      ],
+      "Show": [
+        "Показать"
+      ],
+      "Reset credentials": [
+        "Сбросить учётные данные"
+      ],
+      "Upgrade": [
+        "Улучшить"
+      ],
+      "Copy": [
+        "Копировать"
+      ],
+      "Download all configurations": [
+        "Скачать все конфигурации"
+      ],
+      "Get ProtonVPN Plus": [
+        "Получить ProtonVPN Plus"
+      ],
+      "Update": [
+        "Обновить"
+      ],
+      "Create new recovery phrase": [
+        "Создать новую фразу для восстановления доступа к учетной записи"
+      ],
+      "Copy to clipboard": [
+        "Скопировать в буфер обмена"
+      ],
+      "Create new recovery phrase?": [
+        "Создать новую фразу для восстановления доступа к учетной записи?"
+      ],
+      "Enter password to continue": [
+        "Введите пароль для продолжения"
+      ],
+      "Disable recovery phrase?": [
+        "Отключить фразу для восстановления доступа к учетной записи?"
+      ],
+      "Disable recovery phrase": [
+        "Отключить фразу для восстановления доступа к учетной записи"
+      ],
+      "Edit": [
+        "Редактировать"
+      ],
+      "Mark as default": [
+        "Установить по умолчанию"
+      ],
+      "Add credit / debit card": [
+        "Добавить банковскую карту"
+      ],
+      "Add PayPal": [
+        "Добавить PayPal"
+      ],
+      "View": [
+        "Просмотр"
+      ],
+      "User": [
+        "Пользователь"
+      ],
+      "Organization": [
+        "Организация"
+      ],
+      "Customize": [
+        "Настроить"
+      ],
+      "Details": [
+        "Подробнее"
+      ],
+      "Share via link": [
+        "Доступ по ссылке"
+      ],
+      "Sharing options": [
+        "Параметры совместного доступа"
+      ],
+      "Zoom out": [
+        "Отдалить"
+      ],
+      "Reset zoom": [
+        "Сбросить масштабирование"
+      ],
+      "Zoom in": [
+        "Приблизить"
+      ],
+      "Previous": [
+        "Пред."
+      ],
+      "Log in": [
+        "Войти"
+      ],
+      "View invoice": [
+        "Просмотр счета"
+      ],
+      "Get verification code": [
+        "Получить проверочный код"
+      ],
+      "Try another method": [
+        "Попробуйте другой способ"
+      ],
+      "Request new code": [
+        "Запросить новый код"
+      ],
+      "Did not receive the code?": [
+        "Не получили код?"
+      ],
+      "Edit email address": [
+        "Изменить адрес эл. почты"
+      ],
+      "Edit phone number": [
+        "Изменить номер телефона"
+      ],
+      "Email me my username(s)": [
+        "Отправить мне имя моего пользователя"
+      ],
+      "Get a new password": [
+        "Получить новый пароль"
+      ],
+      "Reset password": [
+        "Сбросить пароль"
+      ],
+      "Reset my password": [
+        "Сбросить мой пароль"
+      ],
+      "Report bug": [
+        "Сообщить об ошибке"
+      ],
+      "Activate my coupon": [
+        "Активировать мой купон"
+      ],
+      "Hide additional features": [
+        "Скрыть дополнительные функции"
+      ],
+      "Select": [
+        "Выбрать"
+      ],
+      "Verify code again": [
+        "Подтвердить код еще раз"
+      ],
+      "Verify code": [
+        "Подтвердите код"
+      ],
+      "Create account": [
+        "Создать учетную запись"
+      ],
+      "Go to login": [
+        "Перейти ко входу"
+      ],
+      "View full plan comparison": [
+        "Посмотреть полное сравнение планов"
+      ],
+      "Send": [
+        "Отправить"
+      ],
+      "Resend": [
+        "Отправить заново"
+      ],
+      "Use another verification method": [
+        "Использовать другой способ проверки"
+      ],
+      "Confirm payment": [
+        "Подтверждение платежа"
+      ],
+      "Pay annually and save 20%": [
+        "Платите ежегодно и сэкономьте 20%"
+      ],
+      "Try ${ upsellPlan.title } for only ${ totalMonthlyText }": [
+        "Попробуйте ${ upsellPlan.title } всего за ${ totalMonthlyText }"
+      ],
+      "Homepage": [
+        "Домашняя страница"
+      ]
+    },
+    "Storage": {
+      "Your current storage:": [
+        "Текущее хранилище:"
+      ],
+      "Upgrade storage": [
+        "Увеличить дисковое пространство"
+      ],
+      "Release notes": [
+        "Список изменений"
+      ]
+    },
+    "Link": {
+      "Learn more": [
+        "Узнать больше"
+      ],
+      "clearing your browser cache": [
+        "очистка кэша вашего браузера"
+      ],
+      "Upgrade": [
+        "Улучшить"
+      ],
+      "Go to subscription plans": [
+        "Перейти на страницу подписки"
+      ],
+      "Add a gift code": [
+        "Добавить подарочный код"
+      ],
+      "click here": [
+        "нажмите здесь"
+      ],
+      "Pay invoice": [
+        "Оплатить счёт"
+      ],
+      "Upgrade account": [
+        "Улучшить аккаунт"
+      ],
+      "Not activated": [
+        "Не активировано"
+      ],
+      "View guide": [
+        "Посмотреть руководство"
+      ],
+      "What is the difference between UDP and TCP protocols?": [
+        "Какова разница между протоколами UDP и TCP?"
+      ],
+      "Request an invite": [
+        "Запросить приглашение"
+      ],
+      "Back to login": [
+        "Назад к форме входа"
+      ],
+      "here": [
+        "здесь"
+      ],
+      "Upgrade now": [
+        "Улучшить сейчас"
+      ],
+      "Sign up for free": [
+        "Зарегистрируйтесь бесплатно"
+      ],
+      "protonvpn.com": [
+        "protonvpn.com"
+      ],
+      "Don't have an account yet? Sign up for free!": [
+        "У вас еще нет аккаунта? Зарегистрируйтесь бесплатно!"
+      ],
+      "Reset password": [
+        "Сбросить пароль"
+      ],
+      "Forgot username?": [
+        "Забыли имя пользователя?"
+      ],
+      "Common login problems": [
+        "Распространённые проблемы входа"
+      ],
+      "Contact support": [
+        "Связаться с поддержкой"
+      ],
+      "Terms of Service": [
+        "Условия использования"
+      ],
+      "Privacy Policy": [
+        "Политика конфиденциальности"
+      ],
+      "Log in": [
+        "Войти"
+      ],
+      "Close": [
+        "Закрыть"
+      ]
+    },
+    "Error": {
+      "Email address invalid": [
+        "Недействительный адрес эл. почты"
+      ],
+      "This field is required": [
+        "Это обязательное поле"
+      ],
+      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
+        "Используемый Вами браузер не позволяет совершить платёж. Пожалуйста, используйте другой браузер, либо войдите через компьютер."
+      ],
+      "Unknown error": [
+        "Неизвестная ошибка"
+      ],
+      "Checkout expired, please try again.": [
+        "Срок действия заказа истек, попробуйте еще раз."
+      ],
+      "Invalid code": [
+        "Неверный код"
+      ],
+      "Error connecting to the Bitcoin API.": [
+        "Ошибка при подключении к Bitcoin API."
+      ],
+      "Amount below minimum.": [
+        "Сумма ниже допустимого минимума."
+      ],
+      "Amount above the maximum.": [
+        "Сумма выше допустимого максимума."
+      ],
+      "The minimum amount that can be donated is ${ price }": [
+        "Минимальная сумма, которую можно пожертвовать, составляет ${ price }"
+      ],
+      "The minimum amount of credit that can be added is ${ _price }": [
+        "Минимальная сумма, которая может быть добавлена, составляет: ${ _price }"
+      ],
+      "The minimum payment we accept is ${ _price2 }": [
+        "Минимальная оплата, которую мы принимаем, составляет ${ _price2 }"
+      ],
+      "Process aborted": [
+        "Процесс прерван"
+      ],
+      "Payment process cancelled": [
+        "Процесс оплаты отменён"
+      ],
+      "Payment process failed": [
+        "Сбой в процессе оплаты"
+      ],
+      "Payment process consumed": [
+        "Процесс оплаты завершён"
+      ],
+      "Payment process not supported": [
+        "Процесс оплаты не поддерживается"
+      ],
+      "Unknown payment token status": [
+        "Неизвестный статус платёжного токена"
+      ],
+      "Tab closed": [
+        "Вкладка закрыта"
+      ],
+      "Name on card required": [
+        "Требуется имя на карте"
+      ],
+      "Invalid expiration date": [
+        "Недействительная дата окончания"
+      ],
+      "Invalid card number": [
+        "Недействительный номер карты"
+      ],
+      "Invalid ${ name } code": [
+        "Недействительный код ${ name }"
+      ],
+      "Invalid postal code": [
+        "Недействительный почтовый индекс"
+      ],
+      "Please generate keys before you try to change your password.": [
+        "Пожалуйста, создайте ключи перед тем, как попробуете изменить свой пароль."
+      ],
+      "Please set a recovery/notification email first": [
+        "Пожалуйста, сначала укажите адрес электронной почты для восстановления/уведомлений"
+      ],
+      "Please set a recovery phone number first": [
+        "Пожалуйста, сначала укажите номер телефона для восстановления"
+      ],
+      "Payments are currently not available, please try again later": [
+        "Платежи в настоящее время не доступны, пожалуйста, повторите попытку позже"
+      ],
+      "You have no invoices.": [
+        "У вас нет счетов."
+      ],
+      "Your account or organization currently has an overdue invoice. Please pay all unpaid invoices.": [
+        "Для вашей учётной записи или организации есть просроченный счёт. Пожалуйста, оплатите все неоплаченные счета."
+      ],
+      "File has no contents to preview": [
+        "В файле нет содержимого для предпросмотра"
+      ],
+      "Incorrect mailbox password. Please try again": [
+        "Неверный пароль почтового ящика. Пожалуйста, попробуйте снова"
+      ],
+      "Incorrect login credentials. Please try again": [
+        "Неверные учетные данные. Пожалуйста, попробуйте снова"
+      ],
+      "Can't validate email, try again later": [
+        "Не удается проверить адрес электронной почты, повторите попытку позже"
+      ],
+      "Can't validate phone, try again later": [
+        "Не удается проверить телефон, повторите попытку позже"
+      ],
+      "Enter 6 digits": [
+        "Введите 6 цифр"
+      ],
+      "Invalid verification code": [
+        "Неверный проверочный код"
+      ],
+      "Please enter '${ dangerWord }'": [
+        "Пожалуйста, введите '${ dangerWord }'"
+      ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "Что-то пошло не так, пожалуйста, ${ refresh }, чтобы продолжить. Если вы всё же видите это сообщение об ошибке, пожалуйста, свяжитесь с нашей службой поддержки ${ supportTeam }."
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Минимальная длина для этого поля: ${ minimumLength }."
+      ],
+      "Email is not valid": [
+        "Эл. почта недействительна"
+      ],
+      "Not a valid number": [
+        "Неверный номер"
+      ],
+      "Passwords do not match": [
+        "Пароли не совпадают"
+      ],
+      "Signature verification failed": [
+        "Ошибка проверки подписи"
+      ],
+      "Request timed out.": [
+        "Истекло время ожидания запроса."
+      ],
+      "Code wrong or not valid anymore": [
+        "Неверный или недействительный код"
+      ],
+      "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
+        "Если время на вашем телевизоре истекло, нажмите \"Обновить\" на телевизоре и введите свой код еще раз."
+      ],
+      "Invalid invitation link": [
+        "Пригласительная ссылка недействительная"
+      ],
+      "Can't check username, try again later": [
+        "Не могу проверить имя пользователя, повторите попытку позже"
       ]
     },
     "Title": {
+      "Open actions dropdown": [
+        "Показать список доступных действий"
+      ],
+      "Previous": [
+        "Предыдущий"
+      ],
+      "Open pagination": [
+        "Открыть переключатель страниц"
+      ],
+      "Next": [
+        "Следующий"
+      ],
+      "What's new": [
+        "Что нового"
+      ],
       "Report a problem": [
         "Сообщить о проблеме"
       ],
@@ -2077,9 +1863,6 @@
       "Sign in again to continue": [
         "Войдите снова, чтобы продолжить"
       ],
-      "Open actions dropdown": [
-        "Показать список доступных действий"
-      ],
       "1. Select platform": [
         "1. Выберите платформу"
       ],
@@ -2131,26 +1914,11 @@
       "Invalid verification code": [
         "Неверный проверочный код"
       ],
-      "Request new code": [
-        "Запросить новый код"
-      ],
       "Human verification": [
         "Проверка \"Я не робот\""
       ],
       "Confirm reset password": [
         "Подтвердите пароль сброса"
-      ],
-      "Previous": [
-        "Предыдущий"
-      ],
-      "Open pagination": [
-        "Открыть переключатель страниц"
-      ],
-      "Next": [
-        "Следующий"
-      ],
-      "What's new": [
-        "Что нового"
       ],
       "Upgrade": [
         "Улучшить"
@@ -2255,7 +2023,7 @@
         "Нет журналов активности"
       ],
       "Kill Switch": [
-        "Kill Switch"
+        "Аварийный Стоп"
       ],
       "DNS leak prevention": [
         "Предотвращение утечки DNS"
@@ -2310,6 +2078,246 @@
       ],
       "Settings": [
         "Настройки"
+      ]
+    },
+    "Error notification in the bug report modal when the user upload file": {
+      "No image selected": [
+        "Изображение не выбрано"
+      ]
+    },
+    "Bug category": {
+      "Sign in problem": [
+        "Проблема со входом"
+      ],
+      "Sign up problem": [
+        "Проблема при регистрации"
+      ],
+      "Payments problem": [
+        "Проблема с платежами"
+      ],
+      "Custom domain problem": [
+        "Проблема с пользовательскими доменами"
+      ],
+      "Bridge problem": [
+        "Проблема с Bridge"
+      ],
+      "Import / export problem": [
+        "Проблема импорта / экспорта"
+      ],
+      "Connection problem": [
+        "Проблема с подключением"
+      ],
+      "Slow speed problem": [
+        "Проблема с низкой скоростью"
+      ],
+      "Calendar problem": [
+        "Проблемы календаря"
+      ],
+      "Contacts problem": [
+        "Проблемы с контактами"
+      ],
+      "Drive problem": [
+        "Проблемы с диском"
+      ],
+      "Mail problem": [
+        "Проблемы с почтой"
+      ],
+      "VPN problem": [
+        "Проблема с VPN"
+      ],
+      "Feature request": [
+        "Запрос новых функций"
+      ],
+      "Other": [
+        "Другое"
+      ],
+      "Signup problem": [
+        "Проблема при регистрации"
+      ],
+      "Installation problem": [
+        "Проблема с установкой"
+      ],
+      "Update problem": [
+        "Проблема с обновлением"
+      ],
+      "Application problem": [
+        "Проблема в приложении"
+      ],
+      "Speed problem": [
+        "Проблема со скоростью"
+      ],
+      "Manual setup problem": [
+        "Проблема при ручной настройке"
+      ],
+      "Website access problem": [
+        "Проблема с доступом к сайту"
+      ],
+      "Streaming problem": [
+        "Проблема стриминга"
+      ]
+    },
+    "Group": {
+      "Account": [
+        "Аккаунт"
+      ],
+      "Apps": [
+        "Приложения"
+      ],
+      "Network": [
+        "Сеть"
+      ],
+      "Services": [
+        "Службы"
+      ],
+      "Other category": [
+        "Другая категория"
+      ]
+    },
+    "Action to select a title for the bug report modal": {
+      "Select": [
+        "Выбрать"
+      ]
+    },
+    "Success": {
+      "Bug reported": [
+        "Отчёт об ошибке отправлен"
+      ],
+      "Email address copied to clipboard": [
+        "Адрес эл. почты скопирован в буфер обмена"
+      ],
+      "You have successfully unsubscribed": [
+        "Подписка успешно отменена"
+      ],
+      "Credits added": [
+        "Средства зачислены"
+      ],
+      "Gift code applied": [
+        "Подарочный код применён"
+      ],
+      "Payment method updated": [
+        "Способ оплаты обновлён"
+      ],
+      "Payment method added": [
+        "Способ оплаты добавлен"
+      ],
+      "Password updated": [
+        "Пароль обновлён"
+      ],
+      "Account deleted. Logging out...": [
+        "Аккаунт удален. Выход из системы..."
+      ],
+      "Locale updated": [
+        "Региональные настройки обновлены"
+      ],
+      "${ server.Domain } copied in your clipboard": [
+        "Скопировано в буфер обмена: ${ server.Domain }"
+      ],
+      "Email updated": [
+        "Адрес эл. почты обновлён"
+      ],
+      "Phone number updated": [
+        "Номер телефона обновлен"
+      ],
+      "Payment method deleted": [
+        "Способ оплаты удалён"
+      ],
+      "Invoice paid": [
+        "Счёт оплачен"
+      ],
+      "Invoice customized": [
+        "Счёт настроен"
+      ],
+      "Code sent to ${ methodTo }": [
+        "Код отправлен на ${ methodTo }"
+      ],
+      "Verification successful": [
+        "Проверка прошла успешно"
+      ],
+      "If you entered a valid notification email we will send you an email with your usernames in the next minute.": [
+        "Если вы ввели действительный адрес эл. почты для уведомлений, мы отправим вам письмо с вашими именами пользователей в течение следующей минуты."
+      ]
+    },
+    "Placeholder": {
+      "OS name": [
+        "Название ОС"
+      ],
+      "OS version": [
+        "Версия ОС"
+      ],
+      "Proton username": [
+        "Имя пользователя Proton"
+      ],
+      "A way to contact you": [
+        "Способ связаться с вами"
+      ],
+      "Please describe the problem and include any error messages": [
+        "Пожалуйста, опишите проблему, включая сообщения об ошибке"
+      ],
+      "Browser name": [
+        "Название браузера"
+      ],
+      "Browser version": [
+        "Версия браузера"
+      ],
+      "e.g. Julia Smith": [
+        "например, Джулия Смит"
+      ],
+      "Gift code": [
+        "Подарочный код"
+      ],
+      "Feedback": [
+        "Обратная связь"
+      ],
+      "Other": [
+        "Другое"
+      ],
+      "Add gift code": [
+        "Добавить подарочный код"
+      ],
+      "ZIP": [
+        "Почтовый индекс"
+      ],
+      "Postal code": [
+        "Почтовый индекс"
+      ],
+      "Password": [
+        "Пароль"
+      ],
+      "Two-factor authentication code": [
+        "Код двухфакторной аутентификации"
+      ],
+      "Confirm": [
+        "Подтвердить"
+      ],
+      "Email address": [
+        "Адрес эл. почты"
+      ],
+      "Mailbox password": [
+        "Пароль почтового ящика"
+      ],
+      "Email": [
+        "Эл. почта"
+      ],
+      "Username": [
+        "Имя пользователя"
+      ],
+      "Recovery email": [
+        "Резервная эл. почта"
+      ],
+      "Reset code": [
+        "Код для сброса"
+      ],
+      "Enter the word '${ dangerWord }' here": [
+        "Введите здесь слово '${ dangerWord }'"
+      ],
+      "Choose a new password": [
+        "Задайте новый пароль"
+      ],
+      "Enter coupon code": [
+        "Введите код купона"
+      ],
+      "Confirm password": [
+        "Подтвердите пароль"
       ]
     },
     "Warning": {
@@ -3551,17 +3559,6 @@
         "Подтвердите новый пароль"
       ]
     },
-    "Storage": {
-      "Your current storage:": [
-        "Текущее хранилище:"
-      ],
-      "Upgrade storage": [
-        "Увеличить дисковое пространство"
-      ],
-      "Release notes": [
-        "Список изменений"
-      ]
-    },
     "file size format": {
       "bytes": [
         "байт"
@@ -3585,11 +3582,11 @@
       ]
     },
     "Calendar status": {
-      "Not synced": [
-        "Не синхронизировано"
-      ],
       "Syncing": [
         "Синхронизация"
+      ],
+      "Not synced": [
+        "Не синхронизировано"
       ]
     },
     "Calendar subscription not synced error": {

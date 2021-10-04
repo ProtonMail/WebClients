@@ -5,1203 +5,577 @@
   },
   "contexts": {
     "": {},
-    "Error": {
-      "Unknown error": [
-        "未知错误"
-      ],
-      "This message may contain some link's URL that cannot be properly opened by your current browser": [
-        "此邮件含有浏览器不能打开的链接"
-      ],
-      "Authentication canceled.": [
-        "验证被取消"
-      ],
-      "Your import will not be processed.": [
-        "此次导入将不会进行"
-      ],
-      "Authentication error.": [
-        "验证错误"
-      ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "您使用的浏览器无法完成支付验证，请使用其他浏览器或电脑支付。"
-      ],
-      "Email address invalid": [
-        "电子邮箱地址无效"
-      ],
-      "This field is required": [
-        "此项必须填写"
-      ],
-      "Process aborted": [
-        "操作已中止"
-      ],
-      "Payment process cancelled": [
-        "支付已取消"
-      ],
-      "Payment process failed": [
-        "支付失败"
-      ],
-      "Payment process consumed": [
-        "已经支付过了"
-      ],
-      "Payment process not supported": [
-        "不支持此支付流程"
-      ],
-      "Unknown payment token status": [
-        "支付状态不明"
-      ],
-      "Tab closed": [
-        "标签页已关闭"
-      ],
-      "Name on card required": [
-        "必须填写持卡人姓名"
-      ],
-      "Invalid expiration date": [
-        "有效期不正确"
-      ],
-      "Invalid card number": [
-        "卡号不正确"
-      ],
-      "Invalid ${ name } code": [
-        "${ name } 码不正确"
-      ],
-      "Invalid postal code": [
-        "邮政编码不正确"
-      ],
-      "Error connecting to the Bitcoin API.": [
-        "连接比特币 API 失败。"
-      ],
-      "Amount below minimum.": [
-        "金额太小。"
-      ],
-      "Amount above the maximum.": [
-        "金额太大。"
-      ],
-      "The minimum amount that can be donated is ${ price }": [
-        "捐款金额不应低于 ${ price }"
-      ],
-      "The minimum amount of credit that can be added is ${ _price }": [
-        "充值金额不能低于 ${ _price }"
-      ],
-      "The minimum payment we accept is ${ _price2 }": [
-        "支付金额不能低于 ${ _price2 }"
-      ],
-      "Checkout expired, please try again.": [
-        "支付超时，请重试。"
-      ],
-      "Invalid code": [
-        "无效的代码"
-      ],
-      "Image upload failed": [
-        "图片上传失败"
-      ],
-      "Contact could not be saved": [
-        "无法保存联系人"
-      ],
-      "Some contacts could not be deleted": [
-        "部分联系人无法删除"
-      ],
-      "Preferences could not be saved": [
-        "无法保存偏好设置"
-      ],
-      "Some groups could not be deleted": [
-        "部分群组无法删除"
-      ],
-      "Invalid public key file": [
-        "公钥文件无效"
-      ],
-      "You can't send a mail to more than 100 recipients": [
-        "您不能给100 位以上收件人发送邮件"
-      ],
-      "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
-        "某个/些联系人没有电子邮件地址: ${ noEmailsContactNamesList } "
-      ],
-      "You can't send vCards of more than 10 contacts": [
-        "您不能发送超过 10 个联系人的 vCard"
-      ],
-      "There was an error when exporting the contacts vCards": [
-        "导出联系人 vCards 时出错"
-      ],
-      "One of the groups has no contacts: ${ noContactGroupList }": [
-        "某个/些群组没有联系人: ${ noContactGroupList } "
-      ],
-      "You must set a name": [
-        "请输入名称 (必填)"
-      ],
-      "A group with this name already exists": [
-        "已存在同名群组"
-      ],
-      "Invalid name": [
-        "无效的名称"
-      ],
-      "Primary address key is not decrypted": [
-        "主密钥尚未解密。"
-      ],
-      "Incorrect mailbox password. Please try again": [
-        "邮箱密码不正确。请重试"
-      ],
-      "Incorrect login credentials. Please try again": [
-        "登录凭据不正确。请重试"
-      ],
-      "Can't validate email, try again later": [
-        "无法验证电子邮件，请稍后再试"
-      ],
-      "Can't validate phone, try again later": [
-        "无法验证手机，请稍候再试"
-      ],
-      "Enter 6 digits": [
-        "请输入 6 位验证码"
-      ],
-      "Invalid verification code": [
-        "无效的验证代码"
-      ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "出错了，请${ refresh }以继续。若仍出现此错误，请联系我们的${ supportTeam }"
-      ],
-      "We were unable to connect to your service provider.": [
+    "Calendar status": {
+      "Syncing": [
         ""
       ],
-      "Please try to reauthenticate and make sure the permissions are set correctly.": [
-        ""
-      ],
-      "No valid address found": [
-        "未找到有效地址"
-      ],
-      "Primary address key is not decrypted.": [
-        "主密钥尚未解密。"
-      ],
-      "Name required": [
-        "姓名 (必填)"
-      ],
-      "Address primary private key not found": [
-        "找不到地址主私钥"
-      ],
-      "Calendar primary private key is not decrypted": [
-        "日历主密钥未解密。"
-      ],
-      "This field requires a minimum of ${ minimumLength } characters.": [
-        "此字段至少需要 ${ minimumLength } 个字符。"
-      ],
-      "Email is not valid": [
-        "无效邮箱"
-      ],
-      "Not a valid number": [
-        "无效号码"
-      ],
-      "Passwords do not match": [
-        "密码不匹配"
-      ],
-      "Request timed out.": [
-        "请求超时。"
-      ],
-      "Missing signature": [
-        "缺少签名"
-      ],
-      "Contact signature not verified": [
-        "未验证联系人签名"
-      ],
-      "Signature not verified": [
-        "签名未验证"
-      ],
-      "Signature verification failed": [
-        "签名验证失败"
-      ],
-      "Could not find address ${ email }.": [
-        "找不到邮箱 ${ email }。"
-      ],
-      "Email address disabled": [
-        "Email 地址已禁用"
-      ],
-      "No keys retrieved for internal user": [
-        "没有为内部用户检索到密钥"
-      ],
-      "No valid keys retrieved for internal user": [
-        "没有为内部用户检索到有效密钥"
-      ],
-      "Contact signature could not be verified": [
-        "无法验证联系人签名"
-      ],
-      "No key retrieved for internal user is valid for sending": [
-        "没有为内部用户检索到的密钥用于发送"
-      ],
-      "Trusted keys are not valid for sending": [
-        "已信任的密钥对发送无效"
-      ],
-      "No WKD key retrieved for user is valid for sending": [
-        "没有为内部用户检索到的密钥用于发送"
-      ],
-      "The sending key is not valid": [
-        "发送密钥无效"
-      ],
-      "Self invitation not allowed": [
-        "不能自我邀请"
-      ],
-      "${ list } doesn't have a valid email address": [
-        "某个/些联系人没有有效的电子邮件地址: ${ list }"
-      ],
-      "${ _list } doesn't have an email address": [
-        "某个/些联系人没有电子邮件地址: ${ _list }"
-      ],
-      "${ list } has invalid emails": [
-        "某个/些群组存在无效的电子邮件地址: ${ list }"
-      ],
-      "${ _list2 } has no contacts": [
-        "某个/些群组没有联系人: ${ _list2 }"
-      ],
-      "Failed to get original occurrence in series": [
-        "无法获取序列中的原始事件"
-      ],
-      "It is only possible to move events between ${ minDateString } - ${ maxDateString }": [
-        "只能在${ minDateString }到${ maxDateString }之间移动日程"
-      ],
-      "It is only possible to create events between ${ minDateString } - ${ maxDateString }": [
-        "只能在${ minDateString }到${ maxDateString }之间创建日程"
-      ],
-      "Invitation failed to be sent": [
-        "邀请发送失败"
-      ],
-      "Answer failed to be sent": [
-        "答复发送失败"
-      ],
-      "Cancellation failed to be sent": [
-        "活动取消发送失败"
-      ],
-      "Invalid link to the event": [
-        "无效的日程链接"
-      ],
-      "Please create an address first.": [
-        "请先创建地址。"
-      ],
-      "Start time must be before end time": [
-        "起始时间必须早于结束时间"
-      ],
-      "Interval cannot be empty": [
-        "重复周期不能为空"
-      ],
-      "Ends on date cannot be empty": [
-        "结束日期不能为空"
-      ],
-      "Ends on date must be after start time": [
-        "结束日期不能早于起始日期"
-      ],
-      "Number of occurrences cannot be empty": [
-        "重复次数不能为空"
-      ],
-      "A maximum of 10 notifications is allowed": [
-        "最多允许10个通知"
-      ],
-      "Invalid email address": [
-        "无效的邮件地址"
-      ],
-      "Decryption error: Decryption of this event's content failed.": [
-        "解密失败：无法解密此日程的内容。"
-      ],
-      "Error: ${ errorMessage }": [
-        "错误：${ errorMessage }"
-      ],
-      "Error": [
-        "错误"
-      ]
-    },
-    "Action": {
-      "Close": [
-        "关闭"
-      ],
-      "Close navigation": [
-        "关闭导航栏"
-      ],
-      "Open navigation": [
-        "打开导航栏"
-      ],
-      "More info: ${ safeTitle }": [
-        "更多信息：${ safeTitle }"
-      ],
-      "Go to panel ${ index }": [
-        "转到面板 ${ index }"
-      ],
-      "Confirm": [
-        "确认"
-      ],
-      "Cancel": [
-        "取消"
-      ],
-      "Close modal": [
-        "关闭"
-      ],
-      "Submit": [
-        "提交"
-      ],
-      "Use “${ label }” setting": [
-        "使用 \"${ label }\" 设置"
-      ],
-      "Load image": [
-        "加载图片"
-      ],
-      "Next month": [
-        "下个月"
-      ],
-      "Previous month": [
-        "上个月"
-      ],
-      "Remove": [
-        "移除"
-      ],
-      "Confirm opening of link ${ link }": [
-        "确认打开链接 ${ link }"
-      ],
-      "Continue with Google": [
-        "使用 Google 帐号登录"
-      ],
-      "Delete": [
-        "删除"
-      ],
-      "Select timezone": [
-        "选择时区"
-      ],
-      "Show less": [
-        "显示更少"
-      ],
-      "Show more": [
-        "显示更多"
-      ],
-      "Signing out": [
-        "退出"
-      ],
-      "refresh the page": [
-        "刷新页面"
-      ],
-      "Copy email to clipboard": [
-        "复制邮箱地址"
-      ],
-      "${ BRAND_NAME } introduction": [
-        "${ BRAND_NAME } 简介"
-      ],
-      "Chat with us": [
-        "联系我们"
-      ],
-      "I have a question": [
-        "我有疑问"
-      ],
-      "Request a feature": [
-        "功能建议"
-      ],
-      "Report a problem": [
-        "反馈问题"
-      ],
-      "${ BRAND_NAME } shop": [
-        "${ BRAND_NAME } 商店"
-      ],
-      "Switch account": [
-        "切换账户"
-      ],
-      "Sign out": [
-        "退出"
-      ],
-      "Go to settings": [
-        "前往设置"
-      ],
-      "Beta Access": [
-        "测试版功能"
-      ],
-      "Theme": [
-        "主題"
-      ],
-      "Keyboard shortcuts": [
-        "键盘快捷键"
-      ],
-      "Mailbox layout": [
-        "邮箱布局"
-      ],
-      "Mailbox density": [
-        "邮箱密度"
-      ],
-      "Composer size": [
-        ""
-      ],
-      "Get started": [
-        "入门"
-      ],
-      "Next": [
-        "下一步"
-      ],
-      "Start setup": [
-        "开始设置"
-      ],
-      "Skip": [
-        "跳过"
-      ],
-      "Done": [
-        "完成"
-      ],
-      "Back": [
-        "返回"
-      ],
-      "Use ${ label } theme": [
-        "使用${ label }主题"
-      ],
-      "OK": [
-        "确定"
-      ],
-      "Clear": [
-        "移除"
-      ],
-      "Add screenshot(s)": [
-        "添加屏幕截图"
-      ],
-      "Hide info": [
-        "隐藏信息"
-      ],
-      "Show info": [
-        "显示信息"
-      ],
-      "Remove bonuses": [
-        "放弃特权"
-      ],
-      "Verify": [
-        "验证"
-      ],
-      "Try again": [
-        "重试"
-      ],
-      "Use a different card": [
-        "使用其他银行卡"
-      ],
-      "Use a different payment method": [
-        "改用其他支付方式"
-      ],
-      "Retry": [
-        "重试"
-      ],
-      "Loading verification": [
-        "正在准备验证"
-      ],
-      "Select plan": [
-        "选择等级"
-      ],
-      "Compare all features": [
-        "比较所有功能"
-      ],
-      "${ boldSave } by switching to annual billing": [
-        "年付可享 ${ boldSave } 优惠"
-      ],
-      "Continue": [
-        "继续"
-      ],
-      "Pay": [
-        "支付"
-      ],
-      "Apply": [
-        "应用"
-      ],
-      "Open ${ CALENDAR_APP_NAME } settings": [
-        "打开 ${ CALENDAR_APP_NAME } 设置"
-      ],
-      "Remove gift code": [
-        "移除礼品码"
-      ],
-      "annual billing": [
-        "年费"
-      ],
-      "Compare plans": [
-        "套餐对比"
-      ],
-      "Decrease": [
-        "减少"
-      ],
-      "Increase": [
-        "增加"
-      ],
-      "Save": [
-        "保存"
-      ],
-      "Upload picture": [
-        "上传图片"
-      ],
-      "Add": [
-        "添加"
-      ],
-      "Clear data": [
-        "清除数据"
-      ],
-      "Recover data": [
-        "恢复数据"
-      ],
-      "Click here.": [
-        "点击此处"
-      ],
-      "Re-sign": [
-        "重新签名"
-      ],
-      "Hide advanced PGP settings": [
-        "隐藏高级 PGP 设置"
-      ],
-      "Show advanced PGP settings": [
-        "显示高级 PGP 设置"
-      ],
-      "Edit": [
-        "编辑"
-      ],
-      "Add to group": [
-        "添加至群组"
-      ],
-      "Upgrade": [
-        "升级账户"
-      ],
-      "Contact group": [
-        "联系人群组"
-      ],
-      "Export": [
-        "导出"
-      ],
-      "Download": [
-        "下载"
-      ],
-      "Use for sending": [
-        "用于发送邮件"
-      ],
-      "Trust": [
-        "信任"
-      ],
-      "Untrust": [
-        "取消信任"
-      ],
-      "Email settings": [
-        "邮件设置"
-      ],
-      "Merge": [
-        "合并"
-      ],
-      "View": [
-        "查看"
-      ],
-      "Unmark for deletion": [
-        "取消待删除标记"
-      ],
-      "Mark for deletion": [
-        "标记为待删除"
-      ],
-      "Preview contact": [
-        "预览联系人"
-      ],
-      "Delete contact": [
-        "删除联系人"
-      ],
-      "Delete ${ selectedCount } contact": [
-        "删除 ${ selectedCount } 个联系人"
-      ],
-      "Deselect all": [
-        "取消全选"
-      ],
-      "Select all": [
-        "全选"
-      ],
-      "Compose": [
-        "撰写"
-      ],
-      "Forward as attachment": [
-        "作为附件转发"
-      ],
-      "Merge contacts": [
-        "合并联系人"
-      ],
-      "Add new contact": [
-        "添加新联系人"
-      ],
-      "Add group": [
-        "添加群组"
-      ],
-      "Clear query": [
-        "清除查询记录"
-      ],
-      "Add contact": [
-        "添加联系人"
-      ],
-      "import": [
-        "导入"
-      ],
-      "Delete contact group": [
-        "删除联系人群组"
-      ],
-      "Delete ${ selectedCount } contact group": [
-        "删除 ${ selectedCount } 个联系人群组"
-      ],
-      "Add new group": [
-        "添加新群组"
-      ],
-      "Export contacts": [
-        "导出联系人"
-      ],
-      "Import contacts": [
-        "导入联系人"
-      ],
-      "Choose a file or drag it here": [
-        "选择一个文件或将其拖到此处"
-      ],
-      "Import": [
-        "导入"
-      ],
-      "Log in": [
-        "登录"
-      ],
-      "View invoice": [
-        "查看账单"
-      ],
-      "Get verification code": [
-        "获取验证码"
-      ],
-      "Try another method": [
-        "更换验证方式"
-      ],
-      "Request new code": [
-        "请求新验证码"
-      ],
-      "Did not receive the code?": [
-        "没收到验证码？"
-      ],
-      "Edit email address": [
-        "编辑邮箱地址"
-      ],
-      "Edit phone number": [
-        "编辑电话号码"
-      ],
-      "Continue import": [
-        ""
-      ],
-      "Discard": [
-        "舍弃"
-      ],
-      "Reconnect": [
-        ""
-      ],
-      "Start import": [
-        ""
-      ],
-      "Close this banner": [
-        "关闭此横幅"
-      ],
-      "Refresh the page": [
-        "刷新此页"
-      ],
-      "enable desktop notifications": [
-        "启用桌面通知"
-      ],
-      "here": [
-        "此处"
-      ],
-      "Remove this notification": [
-        "移除这个通知？"
-      ],
-      "Add notification": [
-        "添加通知"
-      ],
-      "Update": [
-        "更改"
-      ],
-      "Create": [
-        "创建"
-      ],
-      "Yes, I'll attend": [
-        "是，我将参加"
-      ],
-      "Maybe I'll attend": [
-        "可能参加"
-      ],
-      "No, I won't attend": [
-        "不，我不会参加"
-      ],
-      "Yes": [
-        "是"
-      ],
-      "Maybe": [
-        "可能"
-      ],
-      "No": [
-        "否"
-      ],
-      "Share": [
-        "分享"
-      ],
-      "New event": [
-        "新日程"
-      ],
-      "Create event": [
-        "创建事件"
-      ],
-      "Send": [
-        "发送​​"
-      ],
-      "Previous day": [
-        "前一天"
-      ],
-      "Previous week": [
-        "前一周"
-      ],
-      "Previous year": [
-        "上一年"
-      ],
-      "Next day": [
-        "后一天"
-      ],
-      "Next week": [
-        "下一周"
-      ],
-      "Next year": [
-        "下一年"
-      ],
-      "Today": [
-        "今天"
-      ],
-      "Make this participant required": [
-        "必须包含此参与者"
-      ],
-      "Make this participant optional": [
-        "可选择包含此参与者"
-      ],
-      "Remove this participant": [
-        "移除此参与者"
-      ],
-      "Hide time zones": [
-        "隐藏时区"
-      ],
-      "Show time zones": [
-        "显示时区"
-      ],
-      "More options": [
-        "更多选项"
-      ],
-      "Close popover": [
-        "关闭对话框"
-      ],
-      "Close event popover": [
+      "Not synced": [
         ""
       ]
     },
-    "Title": {
-      "Open actions dropdown": [
-        "展开操作菜单"
-      ],
-      "Keyboard Shortcuts": [
-        "键盘快捷键"
-      ],
-      "Link confirmation": [
-        "确认打开链接"
-      ],
-      "What's new": [
-        "更新内容"
-      ],
-      "Open help menu": [
-        "打开帮助菜单"
-      ],
-      "Back": [
-        "返回"
-      ],
-      "Open settings menu": [
-        "打开设置菜单"
-      ],
-      "Send feedback": [
-        "发送反馈"
-      ],
-      "Feedback": [
-        "用户反馈"
-      ],
-      "Give feedback": [
-        "提供反馈"
-      ],
-      "Select a theme": [
-        "选择主题"
-      ],
-      "Report a problem": [
-        "反馈问题"
-      ],
-      "Confirm loss of Proton bonuses": [
-        "确定放弃 Proton 特权"
-      ],
-      "Unsupported browser": [
-        "不支持此浏览器"
-      ],
-      "Card verification": [
-        "银行卡验证"
-      ],
-      "Payment verification": [
-        "确认支付"
-      ],
-      "Processing...": [
-        "正在处理..."
-      ],
-      "Card verification in progress": [
-        "正在验证银行卡"
-      ],
-      "Payment verification in progress": [
-        "正在确认支付"
-      ],
-      "PayPal verification failed": [
-        "PayPal 验证失败"
-      ],
-      "3-D Secure verification failed": [
-        "3-D Secure 验证失败"
-      ],
-      "Error": [
-        "错误"
-      ],
-      "ZIP / postal code": [
-        "邮编"
-      ],
-      "Payment details": [
-        "支付明细"
-      ],
-      "Currency": [
-        "货币"
-      ],
-      "Billing cycle": [
-        "计费周期"
-      ],
-      "Current plan": [
-        "当前等级"
-      ],
-      "Processing": [
-        "处理中"
-      ],
-      "Apply gift code": [
-        "使用礼品码"
-      ],
-      "Subtotal": [
-        "小计"
-      ],
-      "Coupon discount": [
-        "优惠券折扣"
-      ],
-      "Total (monthly)": [
-        "合计（按月）"
-      ],
-      "Credits": [
-        "余额"
-      ],
-      "Gift code": [
-        "礼品码"
-      ],
-      "Amount due": [
-        "应付金额"
-      ],
-      "Cancel subscription": [
-        "停止订购"
-      ],
-      "Network error": [
-        "网络错误"
-      ],
-      "Select a plan": [
-        "选择套餐"
-      ],
-      "Customize your plan": [
-        "自定义您的套餐"
-      ],
-      "Checkout": [
-        "结算"
-      ],
-      "Plan summary": [
-        "订单概览"
-      ],
-      "${ appName } customization": [
-        "自定义 ${ appName }"
-      ],
-      "${ appName } Keyboard Shortcuts": [
-        "${ appName } 快捷键"
-      ],
-      "Mailbox density": [
-        "邮箱密度"
-      ],
-      "Mailbox layout": [
-        "邮箱布局"
-      ],
-      "Composer mode": [
-        "编辑窗模式"
-      ],
-      "Beta Access": [
-        "测试版功能"
-      ],
-      "Edit image": [
-        "编辑图片"
-      ],
-      "Edit contact group": [
-        "更改联系人群组"
-      ],
-      "Create new group": [
-        "创建新群组"
-      ],
-      "Add to ${ groupName }": [
-        "添加到 ${ groupName }"
-      ],
-      "Add to ${ groupCount } group": [
-        "添加到 ${ groupCount } 个群组"
-      ],
-      "Edit contact": [
-        "编辑联系人"
-      ],
-      "Create contact": [
-        "创建联系人"
-      ],
-      "Delete ${ Name }": [
-        "删除 ${ Name }"
-      ],
-      "Delete ${ count } contact": [
-        "删除 ${ count } 个联系人"
-      ],
-      "Clearing data": [
-        "正在清除数据"
-      ],
-      "Warning": [
-        "警告"
-      ],
-      "Recover data": [
-        "恢复数据"
-      ],
-      "Re-signing contacts": [
-        "正在重新签署联系人"
-      ],
-      "Re-sign all contacts": [
-        "重新签署所有联系人"
-      ],
-      "Email settings (${ emailAddress })": [
-        "邮件设置 (${ emailAddress })"
-      ],
-      "Delete ${ count } contact group": [
-        "删除 ${ count } 个联系人群组"
-      ],
-      "${ emailsCount } member": [
-        "${ emailsCount } 位成员"
-      ],
-      "Exporting contacts": [
-        "正在导出联系人"
-      ],
-      "Upgrade required": [
-        "需要升级"
-      ],
-      "Contact group": [
-        "联系人群组"
-      ],
-      "Other names": [
-        "其他名称"
-      ],
-      "Email addresses": [
-        "邮箱地址"
-      ],
-      "Phone numbers": [
-        "电话号码"
-      ],
-      "Addresses": [
-        "地址"
-      ],
-      "Other information": [
-        "其他信息"
-      ],
-      "Email settings": [
-        "邮件设置"
-      ],
-      "Contact Details": [
-        "联系人详情"
-      ],
-      "Merging contacts": [
-        "正在合并联系人"
-      ],
-      "Merge contacts": [
-        "合并联系人"
-      ],
-      "Deleting contacts": [
-        "删除联系人中"
-      ],
-      "View contacts": [
-        "查看联系人"
-      ],
-      "Contacts": [
-        "联系人"
-      ],
-      "Groups": [
-        "群组"
-      ],
-      "Settings": [
-        "设置"
-      ],
-      "Select action to take on contact group": [
-        "选择针对联系人群组的动作"
-      ],
-      "Add contact group name": [
-        "添加联系人群组名称"
-      ],
-      "Select contact group": [
-        "选择联系人群组"
-      ],
-      "Import groups": [
-        "导入群组"
-      ],
-      "Import contacts": [
-        "导入联系人"
-      ],
-      "Sign in again to continue": [
-        "此操作需要重新登录"
-      ],
-      "Account suspended": [
-        "帐号已被停用"
-      ],
-      "Enter your username or ProtonMail email address": [
-        "输入用户名或 ProtonMail 邮箱"
-      ],
-      "Enter your password": [
-        "输入密码"
-      ],
-      "Invalid verification code": [
-        "无效的验证代码"
-      ],
-      "Request new code": [
-        "请求新验证码"
-      ],
-      "Human verification": [
-        "身份验证"
-      ],
-      "Start import process": [
+    "Calendar subscription not synced error": {
+      "Calendar is syncing": [
         ""
       ],
-      "Import in progress": [
+      "More than 12 hours passed since last update": [
         ""
       ],
-      "Select the way to send this notification": [
-        "选择发送该通知的方式"
+      "Calendar link is wrong": [
+        ""
       ],
-      "Select when you want this notification to be sent": [
-        "选择您希望发送该通知的时间"
+      "Calendar is too big": [
+        ""
       ],
-      "Select the time to send this notification": [
-        "选择发送该通知的时间"
+      "Calendar link is not accessible": [
+        ""
       ],
-      "Add another notification to remind you of this event": [
-        "添加另一个提醒您此日程的通知"
+      "Calendar link is temporarily unaccessible": [
+        ""
       ],
-      "Update calendar": [
-        "更新日历"
+      "Failed to sync calendar": [
+        ""
+      ]
+    },
+    "Alarm notification": {
+      "${ title } starts now": [
+        "${ title } 现在开始"
       ],
-      "Create calendar": [
-        "创建日历"
+      "${ title } starts today": [
+        "${ title } 今天开始"
       ],
-      "Change my answer": [
-        "更改答复"
+      "${ title } started at ${ formattedHour }": [
+        "${ title } 以${ formattedHour } 开始"
       ],
-      "Calendar": [
-        "日历"
+      "${ title } started yesterday": [
+        "${ title } 于昨天开始"
       ],
-      "Organizer cannot be notified": [
-        "无法通知组织者"
+      "${ title } started yesterday at ${ formattedHour }": [
+        "${ title } 昨天${ formattedHour } 开始"
       ],
-      "Participants cannot be notified": [
-        "无法通知参与者"
+      "${ title } started on ${ formattedDate }": [
+        "${ title } 开始于 ${ formattedDate }"
       ],
-      "Delete event": [
-        "删除日程"
+      "${ title } started on ${ formattedDate } at ${ formattedHour }": [
+        "${ title } ${ formattedDate } 开始, ${ formattedHour }"
       ],
-      "Delete recurring event": [
-        "删除周期性活动"
+      "${ title } started on ${ _formattedDate }": [
+        "${ title } 开始于 ${ _formattedDate }"
       ],
-      "Update recurring event": [
-        "更新周期性活动"
+      "${ title } started on ${ _formattedDate } at ${ formattedHour }": [
+        "${ title } ${ _formattedDate } ${ formattedHour } 开始"
       ],
-      "Save changes": [
-        "保存更改"
+      "${ title } started on ${ formattedDateWithoutTime }": [
+        "${ title } 开始于 ${ formattedDateWithoutTime }"
       ],
-      "Add participants": [
-        "添加成员"
+      "${ title } started on ${ _formattedDateWithTime }": [
+        "${ title } 开始于 ${ _formattedDateWithTime }"
       ],
-      "Remove participants": [
-        "移除参与者"
+      "${ title } will start at ${ formattedHour }": [
+        "${ title } 将以${ formattedHour } 开始"
       ],
-      "Send invitation": [
-        "发送邀请"
+      "${ title } will start tomorrow": [
+        "${ title } 将于明天开始"
       ],
-      "Update event": [
-        "更新日程"
+      "${ title } will start tomorrow at ${ formattedHour }": [
+        "${ title } 明天将以${ formattedHour } 开始"
       ],
-      "You have invited participants with equivalent emails": [
-        "您已通过相同的邮件邀请了参与者"
+      "${ title } will start on ${ _formattedDate2 }": [
+        "${ title } 将于 ${ _formattedDate2 } 开始"
       ],
-      "Reset calendar keys": [
-        "重置日历密钥"
+      "${ title } will start on ${ _formattedDate2 } at ${ formattedHour }": [
+        "${ title } 将以${ _formattedDate2 } 开始，并${ formattedHour }"
       ],
-      "Reactivate calendar keys": [
-        "激活日历密钥"
+      "${ title } will start on ${ _formattedDate3 }": [
+        "${ title } 将从 ${ _formattedDate3 } 开始"
       ],
-      "Calendar alarm": [
-        "日历闹钟"
+      "${ title } will start on ${ _formattedDate3 } at ${ formattedHour }": [
+        "${ title } 将以${ _formattedDate3 } 开始，并${ formattedHour }"
       ],
-      "Choose how often this event repeats": [
-        "选择此日程重复的频率"
+      "${ title } will start on ${ _formattedDateWithoutTime }": [
+        "${ title } 将从 ${ _formattedDateWithoutTime } 开始"
       ],
-      "Select event frequency interval": [
-        "选择日程的频率间隔"
+      "${ title } will start on ${ formattedDateWithTime }": [
+        "${ title } 将从 ${ formattedDateWithTime } 开始"
+      ]
+    },
+    "Event title": {
+      "(no title)": [
+        "(无标题)"
+      ]
+    },
+    "Participant name": {
+      "You": [
+        "你"
+      ]
+    },
+    "Email subject": {
+      "Invitation for an event on ${ formattedStart }": [
+        "${ formattedStart } 的活动邀请函"
       ],
-      "Select a day in the month": [
-        "选择一个月中的某一天"
+      "Update for an event on ${ formattedStart }": [
+        "更新 ${ formattedStart } 的活动"
       ],
-      "Select when this event will stop happening": [
-        "选择日程停止该事件"
+      "Invitation for an event starting on ${ formattedStart }": [
+        "开始于 { formattedStart } 的活动邀请函"
       ],
-      "Select event's last date": [
-        "选择日程的结束日期"
+      "Update for an event starting on ${ formattedStart }": [
+        "更新开始于 ${ formattedStart } 的活动"
       ],
-      "Choose how many times this event will repeat": [
-        "选择该日程的重复次数"
+      "Cancellation of an event on ${ formattedStart }": [
+        "取消 ${ formattedStart } 的活动"
       ],
-      "Select event start date": [
-        "选择日程开始日期"
+      "Cancellation of an event starting on ${ formattedStart }": [
+        "取消开始于 ${ formattedStart } 的活动"
+      ]
+    },
+    "Email body for invitation (date part)": {
+      "When: ${ formattedStart } (all day)": [
+        "时间：${ formattedStart } (全天)"
       ],
-      "Select event start time": [
-        "选择日程开始时间"
+      "When: ${ formattedStart } - ${ formattedEnd }": [
+        "时间：${ formattedStart } - ${ formattedEnd }"
       ],
-      "Select the time zone for the event start time": [
-        "选择事件开始时间的时区"
+      "When: ${ formattedStart }": [
+        "时间：${ formattedStart }"
+      ]
+    },
+    "Email body for invitation (location part)": {
+      "Where: ${ eventLocation }": [
+        "地点：${ eventLocation }"
+      ]
+    },
+    "Email body for description (description part)": {
+      "Description: ${ eventDescription }": [
+        "描述：${ eventDescription }"
+      ]
+    },
+    "Email body for invitation": {
+      "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
+        "您受邀参加 ${ eventTitle }\n${ eventDetailsText }"
       ],
-      "Select event end date": [
-        "选择日程结束日期"
+      "${ eventTitle } has been updated.\n${ eventDetailsText }": [
+        "${ eventTitle } 已更新。\n{ eventDetailsText }"
       ],
-      "Select event end time": [
-        "选择日程结束时间"
+      "${ eventTitle } has been cancelled.": [
+        "${ eventTitle } 已被取消。"
+      ]
+    },
+    "Email body for response to invitation": {
+      "${ emailAddress } has accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } 接受了参加 ${ eventTitle } 的邀请"
       ],
-      "Select the time zone for the event end time": [
-        "选择日程结束时间的时区"
+      "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } 暂时接受了参加 ${ eventTitle } 的邀请"
       ],
-      "Event is happening on defined time slot": [
-        "事件在指定的时间段发生"
+      "${ emailAddress } has declined your invitation to ${ eventTitle }": [
+        "${ emailAddress } 拒绝了参加 ${ eventTitle } 的邀请"
+      ]
+    },
+    "Monthly recurring event, repeats on": {
+      "on the first Sunday": [
+        "第一个星期日"
       ],
-      "Event is happening all day": [
-        "日程正在全天进行"
+      "on the first Monday": [
+        "第一个星期一"
       ],
-      "Hide time zones for event start and end times": [
-        "隐藏事件开始和结束时间的时区"
+      "on the first Tuesday": [
+        "第一个星期二"
       ],
-      "Show time zones for event start and end times": [
-        "显示日程开始和结束时间的时区"
+      "on the first Wednesday": [
+        "第一个星期三"
       ],
-      "Add event title": [
-        "添加日程标题"
+      "on the first Thursday": [
+        "第一个星期四"
       ],
-      "Select event frequency": [
-        "选择事件频率"
+      "on the first Friday": [
+        "第一个星期五"
       ],
-      "Add event location": [
-        "添加事件位置"
+      "on the first Saturday": [
+        "第一个星期六"
       ],
-      "Add more information related to this event": [
-        "添加更多与此事件相关的信息"
+      "on the second Sunday": [
+        "第二个星期日"
       ],
-      "Select which calendar to add this event to": [
-        "选择要将此事件添加到哪个日历"
+      "on the second Monday": [
+        "第二个星期一"
       ],
-      "Create event": [
-        "创建事件"
+      "on the second Tuesday": [
+        "第二个星期二"
       ],
-      "Edit event": [
-        "编辑日程"
+      "on the second Wednesday": [
+        "第二个星期三"
+      ],
+      "on the second Thursday": [
+        "第二个星期四"
+      ],
+      "on the second Friday": [
+        "第二个星期五"
+      ],
+      "on the second Saturday": [
+        "第二个星期六"
+      ],
+      "on the third Sunday": [
+        "第三个星期日"
+      ],
+      "on the third Monday": [
+        "第三个星期一"
+      ],
+      "on the third Tuesday": [
+        "第三个星期二"
+      ],
+      "on the third Wednesday": [
+        "第三个星期三"
+      ],
+      "on the third Thursday": [
+        "第三个星期四"
+      ],
+      "on the third Friday": [
+        "第三个星期五"
+      ],
+      "on the third Saturday": [
+        "第三个星期六"
+      ],
+      "on the fourth Sunday": [
+        "第四个星期日"
+      ],
+      "on the fourth Monday": [
+        "第四个星期一"
+      ],
+      "on the fourth Tuesday": [
+        "第四个星期二"
+      ],
+      "on the fourth Wednesday": [
+        "第四个星期三"
+      ],
+      "on the fourth Thursday": [
+        "第四个星期四"
+      ],
+      "on the fourth Friday": [
+        "第四个星期五"
+      ],
+      "on the fourth Saturday": [
+        "第四个星期六"
+      ],
+      "on the last Sunday": [
+        "最后一个星期日"
+      ],
+      "on the last Monday": [
+        "最后一个星期一"
+      ],
+      "on the last Tuesday": [
+        "最后一个星期二"
+      ],
+      "on the last Wednesday": [
+        "最后一个星期三"
+      ],
+      "on the last Thursday": [
+        "最后一个星期四"
+      ],
+      "on the last Friday": [
+        "最后一个星期五"
+      ],
+      "on the last Saturday": [
+        "最后一个星期六"
+      ],
+      "on day ${ dayOfMonth }": [
+        "按日 ${ dayOfMonth }"
+      ]
+    },
+    "Daily recurring event, frequency": {
+      "${ count } time": [
+        "${ count } 次"
+      ],
+      "until ${ dateString }": [
+        "直到${ dateString }"
+      ],
+      "Daily": [
+        "每天"
+      ],
+      "Every ${ interval } day": [
+        "每 ${ interval } 天"
+      ],
+      "Daily, ${ timesString }": [
+        "每天, ${ timesString }"
+      ],
+      "Every ${ interval } day, ${ timesString }": [
+        "每 ${ interval } 天，${ timesString }"
+      ],
+      "Daily, ${ untilString }": [
+        "每天, 直到${ untilString }"
+      ],
+      "Every ${ interval } day, ${ untilString }": [
+        "每 ${ interval } 天，${ untilString }"
+      ]
+    },
+    "Weekly recurring event, repeats on (multiple days), frequency": {
+      "Sunday": [
+        "星期日"
+      ],
+      "Monday": [
+        "星期一"
+      ],
+      "Tuesday": [
+        "星期二"
+      ],
+      "Wednesday": [
+        "星期三"
+      ],
+      "Thursday": [
+        "星期四"
+      ],
+      "Friday": [
+        "星期五"
+      ],
+      "Saturday": [
+        "星期六"
+      ]
+    },
+    "Weekly recurring event, frequency": {
+      "Weekly on all days": [
+        "每周所有天"
+      ],
+      "Every ${ interval } week on all days": [
+        "每 ${ interval } 周整周"
+      ],
+      "Weekly on Sunday": [
+        "每周星期日"
+      ],
+      "Every ${ interval } week on Sunday": [
+        "每 ${ interval } 周的星期日"
+      ],
+      "Weekly on Monday": [
+        "每周星期一"
+      ],
+      "Every ${ interval } week on Monday": [
+        "每 ${ interval } 周的星期一"
+      ],
+      "Weekly on Tuesday": [
+        "每周星期二"
+      ],
+      "Every ${ interval } week on Tuesday": [
+        "每 ${ interval } 周的星期二"
+      ],
+      "Weekly on Wednesday": [
+        "每周星期三"
+      ],
+      "Every ${ interval } week on Wednesday": [
+        "每 ${ interval } 周的星期三"
+      ],
+      "Weekly on Thursday": [
+        "每周星期四"
+      ],
+      "Every ${ interval } week on Thursday": [
+        "每 ${ interval } 周的星期四"
+      ],
+      "Weekly on Friday": [
+        "每周星期五"
+      ],
+      "Every ${ interval } week on Friday": [
+        "每 ${ interval } 周的星期五"
+      ],
+      "Weekly on Saturday": [
+        "每周星期六"
+      ],
+      "Every ${ interval } week on Saturday": [
+        "每 ${ interval } 周的星期六"
+      ],
+      "Weekly on ${ multipleDaysString }": [
+        "每周的 ${ multipleDaysString }"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }": [
+        "每 ${ interval } 周的${ multipleDaysString }"
+      ],
+      "Weekly on all days, ${ timesString }": [
+        "每周所有天数，${ timesString }。"
+      ],
+      "Every ${ interval } week on all days, ${ timesString }": [
+        "每 ${ interval } 周整周，${ timesString }"
+      ],
+      "Weekly on Sunday, ${ timesString }": [
+        "每周星期日，${ timesString }"
+      ],
+      "Every ${ interval } week on Sunday, ${ timesString }": [
+        "每 ${ interval } 周星期日，${ timesString }"
+      ],
+      "Weekly on Monday, ${ timesString }": [
+        "每周星期一，${ timesString }"
+      ],
+      "Every ${ interval } week on Monday, ${ timesString }": [
+        "每 ${ interval } 周星期一，${ timesString }"
+      ],
+      "Weekly on Tuesday, ${ timesString }": [
+        "每周星期二，${ timesString }"
+      ],
+      "Every ${ interval } week on Tuesday, ${ timesString }": [
+        "每 ${ interval } 周星期二，${ timesString }"
+      ],
+      "Weekly on Wednesday, ${ timesString }": [
+        "每周星期三，${ timesString }"
+      ],
+      "Every ${ interval } week on Wednesday, ${ timesString }": [
+        "每 ${ interval } 周星期三，${ timesString }"
+      ],
+      "Weekly on Thursday, ${ timesString }": [
+        "每周星期四，${ timesString }"
+      ],
+      "Every ${ interval } week on Thursday, ${ timesString }": [
+        "每 ${ interval } 周星期四，${ timesString }"
+      ],
+      "Weekly on Friday, ${ timesString }": [
+        "每周星期五，${ timesString }"
+      ],
+      "Every ${ interval } week on Friday, ${ timesString }": [
+        "每 ${ interval } 周星期五，${ timesString }"
+      ],
+      "Weekly on Saturday, ${ timesString }": [
+        "每周星期六，${ timesString }"
+      ],
+      "Every ${ interval } week on Saturday, ${ timesString }": [
+        "每 ${ interval } 周星期六，${ timesString }"
+      ],
+      "Weekly on ${ multipleDaysString }, ${ timesString }": [
+        "每周${ multipleDaysString }，${ timesString }"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
+        "每{ interval } 周的${ multipleDaysString }，${ timesString }"
+      ],
+      "Weekly on all days, ${ untilString }": [
+        "每周所有天数，直到${ untilString }。"
+      ],
+      "Every ${ interval } week on all days, ${ untilString }": [
+        "每 ${ interval } 周整周，${ untilString }"
+      ],
+      "Weekly on Sunday, ${ untilString }": [
+        "每周星期日，直到${ untilString }"
+      ],
+      "Every ${ interval } week on Sunday, ${ untilString }": [
+        "每 ${ interval } 周星期日，${ untilString }"
+      ],
+      "Weekly on Monday, ${ untilString }": [
+        "每周星期一，直到${ untilString }"
+      ],
+      "Every ${ interval } week on Monday, ${ untilString }": [
+        "每 ${ interval } 周星期一，${ untilString }"
+      ],
+      "Weekly on Tuesday, ${ untilString }": [
+        "每周星期二，直到${ untilString }"
+      ],
+      "Every ${ interval } week on Tuesday, ${ untilString }": [
+        "每 ${ interval } 周星期二，${ untilString }"
+      ],
+      "Weekly on Wednesday, ${ untilString }": [
+        "每周星期三，直到${ untilString }"
+      ],
+      "Every ${ interval } week on Wednesday, ${ untilString }": [
+        "每 ${ interval } 周星期三，${ untilString }"
+      ],
+      "Weekly on Thursday, ${ untilString }": [
+        "每周星期四，直到${ untilString }"
+      ],
+      "Every ${ interval } week on Thursday, ${ untilString }": [
+        "每 ${ interval } 周星期四，${ untilString }"
+      ],
+      "Weekly on Friday, ${ untilString }": [
+        "每周星期五，直到${ untilString }"
+      ],
+      "Every ${ interval } week on Friday, ${ untilString }": [
+        "每 ${ interval } 周星期五，${ untilString }"
+      ],
+      "Weekly on Saturday, ${ untilString }": [
+        "每周星期六，直到${ untilString }"
+      ],
+      "Every ${ interval } week on Saturday, ${ untilString }": [
+        "每 ${ interval } 周星期六，${ untilString }"
+      ],
+      "Weekly on ${ multipleDaysString }, ${ untilString }": [
+        "每周${ multipleDaysString }，${ untilString }"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
+        "每{ interval } 周的${ multipleDaysString }，${ untilString }"
+      ]
+    },
+    "Monthly recurring event, frequency": {
+      "Monthly ${ onDayString }": [
+        "每月${ onDayString }"
+      ],
+      "Every ${ interval } month ${ onDayString }": [
+        "每 ${ interval } 个月的${ onDayString }"
+      ],
+      "Monthly ${ onDayString }, ${ timesString }": [
+        "每月${ onDayString }，${ timesString }"
+      ],
+      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
+        "每 ${ interval } 月的${ onDayString }，${ timesString }"
+      ],
+      "Monthly ${ onDayString }, ${ untilString }": [
+        "每月${ onDayString }，直到${ untilString }"
+      ],
+      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
+        "每 ${ interval } 月的${ onDayString }，${ untilString }"
+      ]
+    },
+    "Yearly recurring event, frequency": {
+      "Yearly": [
+        "每年"
+      ],
+      "Every ${ interval } year": [
+        "每 ${ interval } 年"
+      ],
+      "Yearly, ${ timesString }": [
+        "每年, ${ timesString }"
+      ],
+      "Every ${ interval } year, ${ timesString }": [
+        "每 ${ interval } 年，${ timesString }"
+      ],
+      "Yearly, ${ untilString }": [
+        "每年，直到${ untilString }"
+      ],
+      "Every ${ interval } year, ${ untilString }": [
+        "每 ${ interval } 年，${ untilString }"
       ]
     },
     "Info": {
+      "Custom daily": [
+        "个人每日计划。"
+      ],
+      "Custom weekly": [
+        "个人周计划。"
+      ],
+      "Custom monthly": [
+        "个人月计划。"
+      ],
+      "Custom yearly": [
+        "个人年计划。"
+      ],
+      "Custom": [
+        "自定义"
+      ],
+      "Daily": [
+        "每天"
+      ],
+      "Monthly ${ onDayString }": [
+        "每月 ${ onDayString }"
+      ],
+      "Yearly": [
+        "按年付费"
+      ],
+      "Session timed out.": [
+        "会话已超时。"
+      ],
+      "Internet connection lost.": [
+        "网络连接断开"
+      ],
+      "Servers are unreachable.": [
+        "无法连接服务器。"
+      ],
       "No results found": [
         "未找到结果"
       ],
       "Week": [
         "周"
+      ],
+      "Loading": [
+        "加载中"
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "此链接可能使用了欺骗性域名，IE 和 Edge 浏览器无法打开。若您确认链接可靠，请使用其他浏览器打开"
@@ -1218,14 +592,50 @@
       "Drop the file here to upload": [
         "请将文件拖拽至此处进行上传"
       ],
-      "Loading": [
-        "加载中"
-      ],
       "(${ memberCount } member)": [
         "(${ memberCount } 位成员)"
       ],
       "Loading ${ appName }": [
         "正在加载 ${ appName }"
+      ],
+      "here": [
+        "这里"
+      ],
+      "This account has been suspended due to a potential policy violation.": [
+        "此帐户因可能违反用户协议而被封禁"
+      ],
+      "If you believe this is in error, please contact us ${ contactLink }.": [
+        "如果您坚信其中有误，请联系 ${ contactLink }"
+      ],
+      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
+        "您的 Proton 账户已欠费停用，请先支付逾期账单再继续使用。"
+      ],
+      "Would you like to receive a new verification code or use an alternative verification method?": [
+        "您想重新获取验证码还是更换验证方式？"
+      ],
+      "Enter the verification code that was sent to ${ destinationText }.": [
+        "验证码已发至 ${ destinationText }，请在下方输入。"
+      ],
+      "If you don't find the email in your inbox, please check your spam folder.": [
+        "若邮件没有出现在收件箱中，请检查其是否被归为垃圾邮件。"
+      ],
+      "To fight spam and abuse, please verify you are human.": [
+        "为了防止垃圾邮件和滥用，请验证您是人类。"
+      ],
+      "Your email will only be used for this one-time verification.": [
+        "您的电子邮件将只会用于此一次性验证"
+      ],
+      "Your phone number will only be used for this one-time verification.": [
+        "您的电话号码将只会用于此一次性验证"
+      ],
+      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
+        "若您创建账户存在困难，请提交注册申请，我们将在一个工作日内回复。"
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
+        "点击 \"请求新验证码\" 将发送到 ${ strong }。如果此电子邮件地址不正确，请点击 \"编辑\""
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
+        "点击 \"请求新验证码\" 将发送到 ${ strong }。如果此电话号码不正确，请点击 \"编辑\""
       ],
       "Screenshot(s) attached": [
         "已附加的屏幕截图"
@@ -1470,8 +880,8 @@
       "Expired": [
         "已过期"
       ],
-      "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
-        "无论设置中键盘快捷键是否激活，一些基本的导航和操作始终可用"
+      "support team": [
+        "客服团队"
       ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } 成员"
@@ -1584,47 +994,8 @@
       "${ addressCount } email address": [
         "${ addressCount } 个电子邮件地址"
       ],
-      "here": [
-        "这里"
-      ],
-      "This account has been suspended due to a potential policy violation.": [
-        "此帐户因可能违反用户协议而被封禁"
-      ],
-      "If you believe this is in error, please contact us ${ contactLink }.": [
-        "如果您坚信其中有误，请联系 ${ contactLink }"
-      ],
-      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
-        "您的 Proton 账户已欠费停用，请先支付逾期账单再继续使用。"
-      ],
-      "Would you like to receive a new verification code or use an alternative verification method?": [
-        "您想重新获取验证码还是更换验证方式？"
-      ],
-      "Enter the verification code that was sent to ${ destinationText }.": [
-        "验证码已发至 ${ destinationText }，请在下方输入。"
-      ],
-      "If you don't find the email in your inbox, please check your spam folder.": [
-        "若邮件没有出现在收件箱中，请检查其是否被归为垃圾邮件。"
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
-        "点击 \"请求新验证码\" 将发送到 ${ strong }。如果此电子邮件地址不正确，请点击 \"编辑\""
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
-        "点击 \"请求新验证码\" 将发送到 ${ strong }。如果此电话号码不正确，请点击 \"编辑\""
-      ],
-      "To fight spam and abuse, please verify you are human.": [
-        "为了防止垃圾邮件和滥用，请验证您是人类。"
-      ],
-      "Your email will only be used for this one-time verification.": [
-        "您的电子邮件将只会用于此一次性验证"
-      ],
-      "Your phone number will only be used for this one-time verification.": [
-        "您的电话号码将只会用于此一次性验证"
-      ],
-      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
-        "若您创建账户存在困难，请提交注册申请，我们将在一个工作日内回复。"
-      ],
-      "support team": [
-        "客服团队"
+      "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
+        "无论设置中键盘快捷键是否激活，一些基本的导航和操作始终可用"
       ],
       "Import contacts": [
         ""
@@ -1688,39 +1059,6 @@
       ],
       "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
         "您已经关闭了 \"测试版功能\"。请点击 ${ refreshButton } 以使用稳定版的 ${ appName }，应用将重新启动"
-      ],
-      "Custom daily": [
-        "个人每日计划。"
-      ],
-      "Custom weekly": [
-        "个人周计划。"
-      ],
-      "Custom monthly": [
-        "个人月计划。"
-      ],
-      "Custom yearly": [
-        "个人年计划。"
-      ],
-      "Custom": [
-        "自定义"
-      ],
-      "Daily": [
-        "每天"
-      ],
-      "Monthly ${ onDayString }": [
-        "每月 ${ onDayString }"
-      ],
-      "Yearly": [
-        "按年付费"
-      ],
-      "Session timed out.": [
-        "会话已超时。"
-      ],
-      "Internet connection lost.": [
-        "网络连接断开"
-      ],
-      "Servers are unreachable.": [
-        "无法连接服务器。"
       ],
       "Manage your calendars": [
         "管理您的日历"
@@ -1897,6 +1235,1561 @@
         "日程加载中"
       ]
     },
+    "Error": {
+      "Address primary private key not found": [
+        "找不到地址主私钥"
+      ],
+      "Calendar primary private key is not decrypted": [
+        "日历主密钥未解密。"
+      ],
+      "This field is required": [
+        "此项必须填写"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "此字段至少需要 ${ minimumLength } 个字符。"
+      ],
+      "Email is not valid": [
+        "无效邮箱"
+      ],
+      "Not a valid number": [
+        "无效号码"
+      ],
+      "Passwords do not match": [
+        "密码不匹配"
+      ],
+      "Request timed out.": [
+        "请求超时。"
+      ],
+      "Signature verification failed": [
+        "签名验证失败"
+      ],
+      "Could not find address ${ email }.": [
+        "找不到邮箱 ${ email }。"
+      ],
+      "Missing signature": [
+        "缺少签名"
+      ],
+      "Contact signature not verified": [
+        "未验证联系人签名"
+      ],
+      "Signature not verified": [
+        "签名未验证"
+      ],
+      "Invalid name": [
+        "无效的名称"
+      ],
+      "Email address disabled": [
+        "Email 地址已禁用"
+      ],
+      "No keys retrieved for internal user": [
+        "没有为内部用户检索到密钥"
+      ],
+      "No valid keys retrieved for internal user": [
+        "没有为内部用户检索到有效密钥"
+      ],
+      "Contact signature could not be verified": [
+        "无法验证联系人签名"
+      ],
+      "No key retrieved for internal user is valid for sending": [
+        "没有为内部用户检索到的密钥用于发送"
+      ],
+      "Trusted keys are not valid for sending": [
+        "已信任的密钥对发送无效"
+      ],
+      "No WKD key retrieved for user is valid for sending": [
+        "没有为内部用户检索到的密钥用于发送"
+      ],
+      "The sending key is not valid": [
+        "发送密钥无效"
+      ],
+      "Unknown error": [
+        "未知错误"
+      ],
+      "This message may contain some link's URL that cannot be properly opened by your current browser": [
+        "此邮件含有浏览器不能打开的链接"
+      ],
+      "Authentication canceled.": [
+        "验证被取消"
+      ],
+      "Your import will not be processed.": [
+        "此次导入将不会进行"
+      ],
+      "Authentication error.": [
+        "验证错误"
+      ],
+      "Email address invalid": [
+        "电子邮箱地址无效"
+      ],
+      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
+        "您使用的浏览器无法完成支付验证，请使用其他浏览器或电脑支付。"
+      ],
+      "Incorrect mailbox password. Please try again": [
+        "邮箱密码不正确。请重试"
+      ],
+      "Incorrect login credentials. Please try again": [
+        "登录凭据不正确。请重试"
+      ],
+      "Can't validate email, try again later": [
+        "无法验证电子邮件，请稍后再试"
+      ],
+      "Can't validate phone, try again later": [
+        "无法验证手机，请稍候再试"
+      ],
+      "Enter 6 digits": [
+        "请输入 6 位验证码"
+      ],
+      "Invalid verification code": [
+        "无效的验证代码"
+      ],
+      "Process aborted": [
+        "操作已中止"
+      ],
+      "Payment process cancelled": [
+        "支付已取消"
+      ],
+      "Payment process failed": [
+        "支付失败"
+      ],
+      "Payment process consumed": [
+        "已经支付过了"
+      ],
+      "Payment process not supported": [
+        "不支持此支付流程"
+      ],
+      "Unknown payment token status": [
+        "支付状态不明"
+      ],
+      "Tab closed": [
+        "标签页已关闭"
+      ],
+      "Name on card required": [
+        "必须填写持卡人姓名"
+      ],
+      "Invalid expiration date": [
+        "有效期不正确"
+      ],
+      "Invalid card number": [
+        "卡号不正确"
+      ],
+      "Invalid ${ name } code": [
+        "${ name } 码不正确"
+      ],
+      "Invalid postal code": [
+        "邮政编码不正确"
+      ],
+      "Error connecting to the Bitcoin API.": [
+        "连接比特币 API 失败。"
+      ],
+      "Amount below minimum.": [
+        "金额太小。"
+      ],
+      "Amount above the maximum.": [
+        "金额太大。"
+      ],
+      "The minimum amount that can be donated is ${ price }": [
+        "捐款金额不应低于 ${ price }"
+      ],
+      "The minimum amount of credit that can be added is ${ _price }": [
+        "充值金额不能低于 ${ _price }"
+      ],
+      "The minimum payment we accept is ${ _price2 }": [
+        "支付金额不能低于 ${ _price2 }"
+      ],
+      "Checkout expired, please try again.": [
+        "支付超时，请重试。"
+      ],
+      "Invalid code": [
+        "无效的代码"
+      ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "出错了，请${ refresh }以继续。若仍出现此错误，请联系我们的${ supportTeam }"
+      ],
+      "Image upload failed": [
+        "图片上传失败"
+      ],
+      "Contact could not be saved": [
+        "无法保存联系人"
+      ],
+      "Some contacts could not be deleted": [
+        "部分联系人无法删除"
+      ],
+      "Preferences could not be saved": [
+        "无法保存偏好设置"
+      ],
+      "Some groups could not be deleted": [
+        "部分群组无法删除"
+      ],
+      "Invalid public key file": [
+        "公钥文件无效"
+      ],
+      "You can't send a mail to more than 100 recipients": [
+        "您不能给100 位以上收件人发送邮件"
+      ],
+      "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
+        "某个/些联系人没有电子邮件地址: ${ noEmailsContactNamesList } "
+      ],
+      "You can't send vCards of more than 10 contacts": [
+        "您不能发送超过 10 个联系人的 vCard"
+      ],
+      "There was an error when exporting the contacts vCards": [
+        "导出联系人 vCards 时出错"
+      ],
+      "One of the groups has no contacts: ${ noContactGroupList }": [
+        "某个/些群组没有联系人: ${ noContactGroupList } "
+      ],
+      "You must set a name": [
+        "请输入名称 (必填)"
+      ],
+      "A group with this name already exists": [
+        "已存在同名群组"
+      ],
+      "Primary address key is not decrypted": [
+        "主密钥尚未解密。"
+      ],
+      "We were unable to connect to your service provider.": [
+        ""
+      ],
+      "Please try to reauthenticate and make sure the permissions are set correctly.": [
+        ""
+      ],
+      "No valid address found": [
+        "未找到有效地址"
+      ],
+      "Primary address key is not decrypted.": [
+        "主密钥尚未解密。"
+      ],
+      "Name required": [
+        "姓名 (必填)"
+      ],
+      "Self invitation not allowed": [
+        "不能自我邀请"
+      ],
+      "${ list } doesn't have a valid email address": [
+        "某个/些联系人没有有效的电子邮件地址: ${ list }"
+      ],
+      "${ _list } doesn't have an email address": [
+        "某个/些联系人没有电子邮件地址: ${ _list }"
+      ],
+      "${ list } has invalid emails": [
+        "某个/些群组存在无效的电子邮件地址: ${ list }"
+      ],
+      "${ _list2 } has no contacts": [
+        "某个/些群组没有联系人: ${ _list2 }"
+      ],
+      "Failed to get original occurrence in series": [
+        "无法获取序列中的原始事件"
+      ],
+      "It is only possible to move events between ${ minDateString } - ${ maxDateString }": [
+        "只能在${ minDateString }到${ maxDateString }之间移动日程"
+      ],
+      "It is only possible to create events between ${ minDateString } - ${ maxDateString }": [
+        "只能在${ minDateString }到${ maxDateString }之间创建日程"
+      ],
+      "Invitation failed to be sent": [
+        "邀请发送失败"
+      ],
+      "Answer failed to be sent": [
+        "答复发送失败"
+      ],
+      "Cancellation failed to be sent": [
+        "活动取消发送失败"
+      ],
+      "Invalid link to the event": [
+        "无效的日程链接"
+      ],
+      "Please create an address first.": [
+        "请先创建地址。"
+      ],
+      "Start time must be before end time": [
+        "起始时间必须早于结束时间"
+      ],
+      "Interval cannot be empty": [
+        "重复周期不能为空"
+      ],
+      "Ends on date cannot be empty": [
+        "结束日期不能为空"
+      ],
+      "Ends on date must be after start time": [
+        "结束日期不能早于起始日期"
+      ],
+      "Number of occurrences cannot be empty": [
+        "重复次数不能为空"
+      ],
+      "A maximum of 10 notifications is allowed": [
+        "最多允许10个通知"
+      ],
+      "Invalid email address": [
+        "无效的邮件地址"
+      ],
+      "Decryption error: Decryption of this event's content failed.": [
+        "解密失败：无法解密此日程的内容。"
+      ],
+      "Error: ${ errorMessage }": [
+        "错误：${ errorMessage }"
+      ],
+      "Error": [
+        "错误"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "密码必须至少包含 ${ length } 个字符"
+      ]
+    },
+    "file size format": {
+      "bytes": [
+        "字节"
+      ],
+      "KB": [
+        "KB"
+      ],
+      "MB": [
+        "MB"
+      ],
+      "GB": [
+        "GB"
+      ]
+    },
+    "Contact field label": {
+      "Name": [
+        "姓名"
+      ],
+      "Email": [
+        "电子邮件"
+      ],
+      "Phone": [
+        "电话"
+      ],
+      "Address": [
+        "地址"
+      ],
+      "Photo": [
+        "照片"
+      ],
+      "Organization": [
+        "单位"
+      ],
+      "Birthday": [
+        "生日"
+      ],
+      "Anniversary": [
+        "周年纪念日"
+      ],
+      "Title": [
+        "职衔"
+      ],
+      "Role": [
+        "角色"
+      ],
+      "Note": [
+        "备注"
+      ],
+      "URL": [
+        "网址"
+      ],
+      "Gender": [
+        "性别"
+      ],
+      "Language": [
+        "语言"
+      ],
+      "Timezone": [
+        "时区"
+      ],
+      "Geo": [
+        "坐标"
+      ],
+      "Logo": [
+        "Logo"
+      ],
+      "Member": [
+        "成员"
+      ]
+    },
+    "Contact type label": {
+      "Work": [
+        "工作"
+      ],
+      "Personal": [
+        "私人"
+      ],
+      "Mobile": [
+        "手机"
+      ],
+      "Main": [
+        "主要"
+      ],
+      "Yomi": [
+        "读音"
+      ],
+      "Other": [
+        "其他"
+      ],
+      "Fax": [
+        "传真"
+      ],
+      "Pager": [
+        "寻呼机"
+      ]
+    },
+    "Property type": {
+      "Email": [
+        "电子邮件"
+      ],
+      "Home": [
+        "家庭"
+      ],
+      "Work": [
+        "工作"
+      ],
+      "Other": [
+        "其他"
+      ],
+      "Phone": [
+        "电话"
+      ],
+      "Mobile": [
+        "手机"
+      ],
+      "Main": [
+        "主要"
+      ],
+      "Fax": [
+        "传真"
+      ],
+      "Pager": [
+        "寻呼机"
+      ],
+      "Address": [
+        "地址"
+      ]
+    },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "在发送密钥中定义的用户编号中找不到电子邮件地址 (${ keyUserIds })"
+      ]
+    },
+    "Keyboard shortcut section name": {
+      "Basic navigation": [
+        "基本导航"
+      ],
+      "Basic actions": [
+        "基本操作"
+      ],
+      "Folder shortcuts": [
+        "类别快捷键"
+      ],
+      "Composer shortcuts": [
+        "编辑窗快捷键"
+      ],
+      "List shortcuts": [
+        "列表快捷键"
+      ],
+      "Action shortcuts": [
+        "操作快捷键"
+      ],
+      "Message shortcuts": [
+        "消息快捷键"
+      ]
+    },
+    "Keyboard shortcut name": {
+      "Move up": [
+        "上移"
+      ],
+      "Jump to first": [
+        "跳转到第一个"
+      ],
+      "Move down": [
+        "下移"
+      ],
+      "Jump to last": [
+        "跳转到最后一个"
+      ],
+      "Move right / expand": [
+        "右移 / 展开"
+      ],
+      "Move left / collapse": [
+        "左移 / 折叠"
+      ],
+      "Apply / open": [
+        "应用 / 打开"
+      ],
+      "Cancel / close": [
+        "取消 / 关闭"
+      ],
+      "Open this modal": [
+        "打开此面板"
+      ],
+      "Select / unselect": [
+        "选择 / 取消选择"
+      ],
+      "Go to Inbox": [
+        "转至收件箱"
+      ],
+      "Go to Archive": [
+        "转至归档"
+      ],
+      "Go to Sent": [
+        "转至发件箱"
+      ],
+      "Go to Starred": [
+        "转至星标邮件"
+      ],
+      "Go to Drafts": [
+        "转至草稿箱"
+      ],
+      "Go to Trash": [
+        "移至回收站"
+      ],
+      "Go to Spam": [
+        "转至垃圾邮件"
+      ],
+      "Go to All Mail": [
+        "转至所有邮件"
+      ],
+      "Save draft": [
+        "保存草稿"
+      ],
+      "Send email": [
+        "发送邮件"
+      ],
+      "Close draft": [
+        "关闭草稿"
+      ],
+      "Minimize / maximize composer": [
+        "最小化/最大化编辑窗"
+      ],
+      "Expand / contract composer": [
+        "展开/还原编辑窗"
+      ],
+      "Attach file": [
+        "添加附件"
+      ],
+      "Add expiration time": [
+        "添加到期时间"
+      ],
+      "Add encryption": [
+        "添加加密"
+      ],
+      "Discard draft": [
+        "舍弃草稿"
+      ],
+      "Open previous message": [
+        "打开上则消息"
+      ],
+      "Open next message": [
+        "打开下则消息"
+      ],
+      "Show unread emails": [
+        "显示未读邮件"
+      ],
+      "Show all emails": [
+        "显示所有邮件"
+      ],
+      "Select / unselect all": [
+        "全选 / 反选"
+      ],
+      "Search": [
+        "搜索"
+      ],
+      "New message": [
+        "新邮件"
+      ],
+      "Star": [
+        "星标"
+      ],
+      "Mark as unread": [
+        "标为未读"
+      ],
+      "Label as...": [
+        "标记为"
+      ],
+      "Create filter with...": [
+        "创建过滤器..."
+      ],
+      "Move to...": [
+        "移至..."
+      ],
+      "Move to Inbox": [
+        "移至收件箱"
+      ],
+      "Move to Archive": [
+        "移至归档"
+      ],
+      "Move to Spam": [
+        "标为垃圾邮件"
+      ],
+      "Move to Trash": [
+        "移至回收站"
+      ],
+      "Delete permanently": [
+        "永久删除"
+      ],
+      "Reply": [
+        "回复"
+      ],
+      "Reply all": [
+        "回复所有人"
+      ],
+      "Forward": [
+        "转发"
+      ],
+      "Load remote content": [
+        "加载外链内容"
+      ],
+      "Load embedded images": [
+        "加载嵌入图像"
+      ],
+      "Show original message": [
+        "显示原始邮件"
+      ]
+    },
+    "Import contact. Contact identifier": {
+      "unknown": [
+        "未知"
+      ]
+    },
+    "Default display name vcard": {
+      "Unknown": [
+        "未知"
+      ]
+    },
+    "Error importing contact": {
+      "vCard versions < 3.0 not supported": [
+        "不支持 vCard 3.0 以下版本"
+      ],
+      "Encryption failed": [
+        "加密失败"
+      ]
+    },
+    "Error importing calendar": {
+      "An unexpected error occurred. Import must be restarted.": [
+        "发生未知错误，需重新导入"
+      ]
+    },
+    "Error importing contacts": {
+      "An error occurred uploading your file. No file has been selected.": [
+        "上传文件出错，尚未选择文件"
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. No .csv or .vcf file selected": [
+        "上传文件 ${ formattedFilename } 出错，未选择 .csv 或 .vcf 文件"
+      ],
+      "Your file ${ formattedFilename } is empty.": [
+        "文件 ${ formattedFilename } 为空"
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
+        "上传文件 ${ formattedFilename } 出错，文件大小上限为 ${ MAX_IMPORT_FILE_SIZE_STRING }"
+      ],
+      "Your file ${ formattedFilename } has no contacts to be imported.": [
+        "文件 ${ formattedFilename } 中没有可导入的联系人"
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
+        "文件 ${ formattedFilename } 中的联系人数已超过 ${ MAX_IMPORT_CONTACTS_STRING }"
+      ],
+      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
+        "读取文件 ${ formattedFilename } 出错，文件格式不对"
+      ]
+    },
+    "Message": {
+      "Re:": [
+        "回复："
+      ],
+      "Fw:": [
+        "转发："
+      ]
+    },
+    "Action": {
+      "Close": [
+        "关闭"
+      ],
+      "Close navigation": [
+        "关闭导航栏"
+      ],
+      "Open navigation": [
+        "打开导航栏"
+      ],
+      "More info: ${ safeTitle }": [
+        "更多信息：${ safeTitle }"
+      ],
+      "Go to panel ${ index }": [
+        "转到面板 ${ index }"
+      ],
+      "Use “${ label }” setting": [
+        "使用 \"${ label }\" 设置"
+      ],
+      "Confirm": [
+        "确认"
+      ],
+      "Cancel": [
+        "取消"
+      ],
+      "Close modal": [
+        "关闭"
+      ],
+      "Submit": [
+        "提交"
+      ],
+      "Load image": [
+        "加载图片"
+      ],
+      "Next month": [
+        "下个月"
+      ],
+      "Previous month": [
+        "上个月"
+      ],
+      "Remove": [
+        "移除"
+      ],
+      "Confirm opening of link ${ link }": [
+        "确认打开链接 ${ link }"
+      ],
+      "Continue with Google": [
+        "使用 Google 帐号登录"
+      ],
+      "Delete": [
+        "删除"
+      ],
+      "Select timezone": [
+        "选择时区"
+      ],
+      "Show less": [
+        "显示更少"
+      ],
+      "Show more": [
+        "显示更多"
+      ],
+      "Signing out": [
+        "退出"
+      ],
+      "refresh the page": [
+        "刷新页面"
+      ],
+      "Copy email to clipboard": [
+        "复制邮箱地址"
+      ],
+      "${ BRAND_NAME } introduction": [
+        "${ BRAND_NAME } 简介"
+      ],
+      "Chat with us": [
+        "联系我们"
+      ],
+      "I have a question": [
+        "我有疑问"
+      ],
+      "Request a feature": [
+        "功能建议"
+      ],
+      "Report a problem": [
+        "反馈问题"
+      ],
+      "${ BRAND_NAME } shop": [
+        "${ BRAND_NAME } 商店"
+      ],
+      "Switch account": [
+        "切换账户"
+      ],
+      "Sign out": [
+        "退出"
+      ],
+      "Go to settings": [
+        "前往设置"
+      ],
+      "Beta Access": [
+        "测试版功能"
+      ],
+      "Theme": [
+        "主題"
+      ],
+      "Keyboard shortcuts": [
+        "键盘快捷键"
+      ],
+      "Mailbox layout": [
+        "邮箱布局"
+      ],
+      "Mailbox density": [
+        "邮箱密度"
+      ],
+      "Composer size": [
+        ""
+      ],
+      "Get started": [
+        "入门"
+      ],
+      "Next": [
+        "下一步"
+      ],
+      "Start setup": [
+        "开始设置"
+      ],
+      "Skip": [
+        "跳过"
+      ],
+      "Done": [
+        "完成"
+      ],
+      "Back": [
+        "返回"
+      ],
+      "Use ${ label } theme": [
+        "使用${ label }主题"
+      ],
+      "OK": [
+        "确定"
+      ],
+      "Log in": [
+        "登录"
+      ],
+      "View invoice": [
+        "查看账单"
+      ],
+      "Get verification code": [
+        "获取验证码"
+      ],
+      "Try another method": [
+        "更换验证方式"
+      ],
+      "Request new code": [
+        "请求新验证码"
+      ],
+      "Verify": [
+        "验证"
+      ],
+      "Did not receive the code?": [
+        "没收到验证码？"
+      ],
+      "Edit email address": [
+        "编辑邮箱地址"
+      ],
+      "Edit phone number": [
+        "编辑电话号码"
+      ],
+      "Clear": [
+        "移除"
+      ],
+      "Add screenshot(s)": [
+        "添加屏幕截图"
+      ],
+      "Hide info": [
+        "隐藏信息"
+      ],
+      "Show info": [
+        "显示信息"
+      ],
+      "Remove bonuses": [
+        "放弃特权"
+      ],
+      "Try again": [
+        "重试"
+      ],
+      "Use a different card": [
+        "使用其他银行卡"
+      ],
+      "Use a different payment method": [
+        "改用其他支付方式"
+      ],
+      "Retry": [
+        "重试"
+      ],
+      "Loading verification": [
+        "正在准备验证"
+      ],
+      "Select plan": [
+        "选择等级"
+      ],
+      "Compare all features": [
+        "比较所有功能"
+      ],
+      "${ boldSave } by switching to annual billing": [
+        "年付可享 ${ boldSave } 优惠"
+      ],
+      "Continue": [
+        "继续"
+      ],
+      "Pay": [
+        "支付"
+      ],
+      "Apply": [
+        "应用"
+      ],
+      "Open ${ CALENDAR_APP_NAME } settings": [
+        "打开 ${ CALENDAR_APP_NAME } 设置"
+      ],
+      "Remove gift code": [
+        "移除礼品码"
+      ],
+      "annual billing": [
+        "年费"
+      ],
+      "Compare plans": [
+        "套餐对比"
+      ],
+      "Decrease": [
+        "减少"
+      ],
+      "Increase": [
+        "增加"
+      ],
+      "Save": [
+        "保存"
+      ],
+      "Upload picture": [
+        "上传图片"
+      ],
+      "Add": [
+        "添加"
+      ],
+      "Clear data": [
+        "清除数据"
+      ],
+      "Recover data": [
+        "恢复数据"
+      ],
+      "Click here.": [
+        "点击此处"
+      ],
+      "Re-sign": [
+        "重新签名"
+      ],
+      "Hide advanced PGP settings": [
+        "隐藏高级 PGP 设置"
+      ],
+      "Show advanced PGP settings": [
+        "显示高级 PGP 设置"
+      ],
+      "Edit": [
+        "编辑"
+      ],
+      "Add to group": [
+        "添加至群组"
+      ],
+      "Upgrade": [
+        "升级账户"
+      ],
+      "Contact group": [
+        "联系人群组"
+      ],
+      "Export": [
+        "导出"
+      ],
+      "Download": [
+        "下载"
+      ],
+      "Use for sending": [
+        "用于发送邮件"
+      ],
+      "Trust": [
+        "信任"
+      ],
+      "Untrust": [
+        "取消信任"
+      ],
+      "Email settings": [
+        "邮件设置"
+      ],
+      "Merge": [
+        "合并"
+      ],
+      "View": [
+        "查看"
+      ],
+      "Unmark for deletion": [
+        "取消待删除标记"
+      ],
+      "Mark for deletion": [
+        "标记为待删除"
+      ],
+      "Preview contact": [
+        "预览联系人"
+      ],
+      "Delete contact": [
+        "删除联系人"
+      ],
+      "Delete ${ selectedCount } contact": [
+        "删除 ${ selectedCount } 个联系人"
+      ],
+      "Deselect all": [
+        "取消全选"
+      ],
+      "Select all": [
+        "全选"
+      ],
+      "Compose": [
+        "撰写"
+      ],
+      "Forward as attachment": [
+        "作为附件转发"
+      ],
+      "Merge contacts": [
+        "合并联系人"
+      ],
+      "Add new contact": [
+        "添加新联系人"
+      ],
+      "Add group": [
+        "添加群组"
+      ],
+      "Clear query": [
+        "清除查询记录"
+      ],
+      "Add contact": [
+        "添加联系人"
+      ],
+      "import": [
+        "导入"
+      ],
+      "Delete contact group": [
+        "删除联系人群组"
+      ],
+      "Delete ${ selectedCount } contact group": [
+        "删除 ${ selectedCount } 个联系人群组"
+      ],
+      "Add new group": [
+        "添加新群组"
+      ],
+      "Export contacts": [
+        "导出联系人"
+      ],
+      "Import contacts": [
+        "导入联系人"
+      ],
+      "Choose a file or drag it here": [
+        "选择一个文件或将其拖到此处"
+      ],
+      "Import": [
+        "导入"
+      ],
+      "Continue import": [
+        ""
+      ],
+      "Discard": [
+        "舍弃"
+      ],
+      "Reconnect": [
+        ""
+      ],
+      "Start import": [
+        ""
+      ],
+      "Close this banner": [
+        "关闭此横幅"
+      ],
+      "Refresh the page": [
+        "刷新此页"
+      ],
+      "enable desktop notifications": [
+        "启用桌面通知"
+      ],
+      "here": [
+        "此处"
+      ],
+      "Remove this notification": [
+        "移除这个通知？"
+      ],
+      "Add notification": [
+        "添加通知"
+      ],
+      "Update": [
+        "更改"
+      ],
+      "Create": [
+        "创建"
+      ],
+      "Yes, I'll attend": [
+        "是，我将参加"
+      ],
+      "Maybe I'll attend": [
+        "可能参加"
+      ],
+      "No, I won't attend": [
+        "不，我不会参加"
+      ],
+      "Yes": [
+        "是"
+      ],
+      "Maybe": [
+        "可能"
+      ],
+      "No": [
+        "否"
+      ],
+      "Share": [
+        "分享"
+      ],
+      "New event": [
+        "新日程"
+      ],
+      "Create event": [
+        "创建事件"
+      ],
+      "Send": [
+        "发送​​"
+      ],
+      "Previous day": [
+        "前一天"
+      ],
+      "Previous week": [
+        "前一周"
+      ],
+      "Previous year": [
+        "上一年"
+      ],
+      "Next day": [
+        "后一天"
+      ],
+      "Next week": [
+        "下一周"
+      ],
+      "Next year": [
+        "下一年"
+      ],
+      "Today": [
+        "今天"
+      ],
+      "Make this participant required": [
+        "必须包含此参与者"
+      ],
+      "Make this participant optional": [
+        "可选择包含此参与者"
+      ],
+      "Remove this participant": [
+        "移除此参与者"
+      ],
+      "Hide time zones": [
+        "隐藏时区"
+      ],
+      "Show time zones": [
+        "显示时区"
+      ],
+      "More options": [
+        "更多选项"
+      ],
+      "Close popover": [
+        "关闭对话框"
+      ],
+      "Close event popover": [
+        ""
+      ]
+    },
+    "Title": {
+      "Open actions dropdown": [
+        "展开操作菜单"
+      ],
+      "Keyboard Shortcuts": [
+        "键盘快捷键"
+      ],
+      "Link confirmation": [
+        "确认打开链接"
+      ],
+      "What's new": [
+        "更新内容"
+      ],
+      "Open help menu": [
+        "打开帮助菜单"
+      ],
+      "Back": [
+        "返回"
+      ],
+      "Open settings menu": [
+        "打开设置菜单"
+      ],
+      "Send feedback": [
+        "发送反馈"
+      ],
+      "Feedback": [
+        "用户反馈"
+      ],
+      "Give feedback": [
+        "提供反馈"
+      ],
+      "Select a theme": [
+        "选择主题"
+      ],
+      "Sign in again to continue": [
+        "此操作需要重新登录"
+      ],
+      "Account suspended": [
+        "帐号已被停用"
+      ],
+      "Enter your username or ProtonMail email address": [
+        "输入用户名或 ProtonMail 邮箱"
+      ],
+      "Enter your password": [
+        "输入密码"
+      ],
+      "Invalid verification code": [
+        "无效的验证代码"
+      ],
+      "Human verification": [
+        "身份验证"
+      ],
+      "Report a problem": [
+        "反馈问题"
+      ],
+      "Confirm loss of Proton bonuses": [
+        "确定放弃 Proton 特权"
+      ],
+      "Unsupported browser": [
+        "不支持此浏览器"
+      ],
+      "Card verification": [
+        "银行卡验证"
+      ],
+      "Payment verification": [
+        "确认支付"
+      ],
+      "Processing...": [
+        "正在处理..."
+      ],
+      "Card verification in progress": [
+        "正在验证银行卡"
+      ],
+      "Payment verification in progress": [
+        "正在确认支付"
+      ],
+      "PayPal verification failed": [
+        "PayPal 验证失败"
+      ],
+      "3-D Secure verification failed": [
+        "3-D Secure 验证失败"
+      ],
+      "Error": [
+        "错误"
+      ],
+      "ZIP / postal code": [
+        "邮编"
+      ],
+      "Payment details": [
+        "支付明细"
+      ],
+      "Currency": [
+        "货币"
+      ],
+      "Billing cycle": [
+        "计费周期"
+      ],
+      "Current plan": [
+        "当前等级"
+      ],
+      "Processing": [
+        "处理中"
+      ],
+      "Apply gift code": [
+        "使用礼品码"
+      ],
+      "Subtotal": [
+        "小计"
+      ],
+      "Coupon discount": [
+        "优惠券折扣"
+      ],
+      "Total (monthly)": [
+        "合计（按月）"
+      ],
+      "Credits": [
+        "余额"
+      ],
+      "Gift code": [
+        "礼品码"
+      ],
+      "Amount due": [
+        "应付金额"
+      ],
+      "Cancel subscription": [
+        "停止订购"
+      ],
+      "Network error": [
+        "网络错误"
+      ],
+      "Select a plan": [
+        "选择套餐"
+      ],
+      "Customize your plan": [
+        "自定义您的套餐"
+      ],
+      "Checkout": [
+        "结算"
+      ],
+      "Plan summary": [
+        "订单概览"
+      ],
+      "${ appName } customization": [
+        "自定义 ${ appName }"
+      ],
+      "Edit image": [
+        "编辑图片"
+      ],
+      "Edit contact group": [
+        "更改联系人群组"
+      ],
+      "Create new group": [
+        "创建新群组"
+      ],
+      "Add to ${ groupName }": [
+        "添加到 ${ groupName }"
+      ],
+      "Add to ${ groupCount } group": [
+        "添加到 ${ groupCount } 个群组"
+      ],
+      "Edit contact": [
+        "编辑联系人"
+      ],
+      "Create contact": [
+        "创建联系人"
+      ],
+      "Delete ${ Name }": [
+        "删除 ${ Name }"
+      ],
+      "Delete ${ count } contact": [
+        "删除 ${ count } 个联系人"
+      ],
+      "Clearing data": [
+        "正在清除数据"
+      ],
+      "Warning": [
+        "警告"
+      ],
+      "Recover data": [
+        "恢复数据"
+      ],
+      "Re-signing contacts": [
+        "正在重新签署联系人"
+      ],
+      "Re-sign all contacts": [
+        "重新签署所有联系人"
+      ],
+      "Email settings (${ emailAddress })": [
+        "邮件设置 (${ emailAddress })"
+      ],
+      "Delete ${ count } contact group": [
+        "删除 ${ count } 个联系人群组"
+      ],
+      "${ emailsCount } member": [
+        "${ emailsCount } 位成员"
+      ],
+      "Exporting contacts": [
+        "正在导出联系人"
+      ],
+      "Upgrade required": [
+        "需要升级"
+      ],
+      "Contact group": [
+        "联系人群组"
+      ],
+      "Other names": [
+        "其他名称"
+      ],
+      "Email addresses": [
+        "邮箱地址"
+      ],
+      "Phone numbers": [
+        "电话号码"
+      ],
+      "Addresses": [
+        "地址"
+      ],
+      "Other information": [
+        "其他信息"
+      ],
+      "Email settings": [
+        "邮件设置"
+      ],
+      "Contact Details": [
+        "联系人详情"
+      ],
+      "Merging contacts": [
+        "正在合并联系人"
+      ],
+      "Merge contacts": [
+        "合并联系人"
+      ],
+      "Deleting contacts": [
+        "删除联系人中"
+      ],
+      "View contacts": [
+        "查看联系人"
+      ],
+      "Contacts": [
+        "联系人"
+      ],
+      "Groups": [
+        "群组"
+      ],
+      "Settings": [
+        "设置"
+      ],
+      "Select action to take on contact group": [
+        "选择针对联系人群组的动作"
+      ],
+      "Add contact group name": [
+        "添加联系人群组名称"
+      ],
+      "Select contact group": [
+        "选择联系人群组"
+      ],
+      "Import groups": [
+        "导入群组"
+      ],
+      "Import contacts": [
+        "导入联系人"
+      ],
+      "${ appName } Keyboard Shortcuts": [
+        "${ appName } 快捷键"
+      ],
+      "Mailbox density": [
+        "邮箱密度"
+      ],
+      "Mailbox layout": [
+        "邮箱布局"
+      ],
+      "Composer mode": [
+        "编辑窗模式"
+      ],
+      "Beta Access": [
+        "测试版功能"
+      ],
+      "Start import process": [
+        ""
+      ],
+      "Import in progress": [
+        ""
+      ],
+      "Select the way to send this notification": [
+        "选择发送该通知的方式"
+      ],
+      "Select when you want this notification to be sent": [
+        "选择您希望发送该通知的时间"
+      ],
+      "Select the time to send this notification": [
+        "选择发送该通知的时间"
+      ],
+      "Add another notification to remind you of this event": [
+        "添加另一个提醒您此日程的通知"
+      ],
+      "Update calendar": [
+        "更新日历"
+      ],
+      "Create calendar": [
+        "创建日历"
+      ],
+      "Change my answer": [
+        "更改答复"
+      ],
+      "Calendar": [
+        "日历"
+      ],
+      "Organizer cannot be notified": [
+        "无法通知组织者"
+      ],
+      "Participants cannot be notified": [
+        "无法通知参与者"
+      ],
+      "Delete event": [
+        "删除日程"
+      ],
+      "Delete recurring event": [
+        "删除周期性活动"
+      ],
+      "Update recurring event": [
+        "更新周期性活动"
+      ],
+      "Save changes": [
+        "保存更改"
+      ],
+      "Add participants": [
+        "添加成员"
+      ],
+      "Remove participants": [
+        "移除参与者"
+      ],
+      "Send invitation": [
+        "发送邀请"
+      ],
+      "Update event": [
+        "更新日程"
+      ],
+      "You have invited participants with equivalent emails": [
+        "您已通过相同的邮件邀请了参与者"
+      ],
+      "Reset calendar keys": [
+        "重置日历密钥"
+      ],
+      "Reactivate calendar keys": [
+        "激活日历密钥"
+      ],
+      "Calendar alarm": [
+        "日历闹钟"
+      ],
+      "Choose how often this event repeats": [
+        "选择此日程重复的频率"
+      ],
+      "Select event frequency interval": [
+        "选择日程的频率间隔"
+      ],
+      "Select a day in the month": [
+        "选择一个月中的某一天"
+      ],
+      "Select when this event will stop happening": [
+        "选择日程停止该事件"
+      ],
+      "Select event's last date": [
+        "选择日程的结束日期"
+      ],
+      "Choose how many times this event will repeat": [
+        "选择该日程的重复次数"
+      ],
+      "Select event start date": [
+        "选择日程开始日期"
+      ],
+      "Select event start time": [
+        "选择日程开始时间"
+      ],
+      "Select the time zone for the event start time": [
+        "选择事件开始时间的时区"
+      ],
+      "Select event end date": [
+        "选择日程结束日期"
+      ],
+      "Select event end time": [
+        "选择日程结束时间"
+      ],
+      "Select the time zone for the event end time": [
+        "选择日程结束时间的时区"
+      ],
+      "Event is happening on defined time slot": [
+        "事件在指定的时间段发生"
+      ],
+      "Event is happening all day": [
+        "日程正在全天进行"
+      ],
+      "Hide time zones for event start and end times": [
+        "隐藏事件开始和结束时间的时区"
+      ],
+      "Show time zones for event start and end times": [
+        "显示日程开始和结束时间的时区"
+      ],
+      "Add event title": [
+        "添加日程标题"
+      ],
+      "Select event frequency": [
+        "选择事件频率"
+      ],
+      "Add event location": [
+        "添加事件位置"
+      ],
+      "Add more information related to this event": [
+        "添加更多与此事件相关的信息"
+      ],
+      "Select which calendar to add this event to": [
+        "选择要将此事件添加到哪个日历"
+      ],
+      "Create event": [
+        "创建事件"
+      ],
+      "Edit event": [
+        "编辑日程"
+      ]
+    },
     "Storage": {
       "Your current storage:": [
         "您当前的存储空间："
@@ -1906,6 +2799,11 @@
       ],
       "Release notes": [
         "版本说明"
+      ]
+    },
+    "PGP key encryption warning": {
+      "Key cannot be used for encryption": [
+        "此密钥不能用于加密"
       ]
     },
     "Label": {
@@ -1927,6 +2825,36 @@
       "Display name": [
         "显示名称"
       ],
+      "Cancel": [
+        "取消"
+      ],
+      "Submit": [
+        "确定"
+      ],
+      "Password": [
+        "密码"
+      ],
+      "Mailbox password": [
+        "邮箱密码"
+      ],
+      "Two-factor authentication code": [
+        "双重认证验证码"
+      ],
+      "Username or ProtonMail address": [
+        "用户名或 ProtonMail 地址"
+      ],
+      "Email address": [
+        "电子邮件地址"
+      ],
+      "Phone number": [
+        "电话号码"
+      ],
+      "Verification code": [
+        "验证码"
+      ],
+      "Enter the 6-digit code": [
+        "请输入 6 位验证码"
+      ],
       "Operating system": [
         "操作系统"
       ],
@@ -1935,9 +2863,6 @@
       ],
       "Proton username": [
         "Proton 用户名"
-      ],
-      "Email address": [
-        "电子邮件地址"
       ],
       "Category": [
         "类别"
@@ -2008,21 +2933,6 @@
       "Payer": [
         "付款人"
       ],
-      "Keyboard shortcuts": [
-        "键盘快捷键"
-      ],
-      "Select how your list of messages looks like by default.": [
-        "请选择收件箱列表的默认外观"
-      ],
-      "Select how your mailbox looks like by default.": [
-        "请选择邮箱的默认外观"
-      ],
-      "Select how your composer opens by default.": [
-        "请选择编辑窗的默认外观"
-      ],
-      "Enable Beta Access": [
-        "启用测试版功能"
-      ],
       "Add image URL": [
         "添加图片链接"
       ],
@@ -2074,32 +2984,20 @@
       "Export contacts": [
         "导出联系人"
       ],
-      "Cancel": [
-        "取消"
+      "Keyboard shortcuts": [
+        "键盘快捷键"
       ],
-      "Submit": [
-        "确定"
+      "Select how your list of messages looks like by default.": [
+        "请选择收件箱列表的默认外观"
       ],
-      "Password": [
-        "密码"
+      "Select how your mailbox looks like by default.": [
+        "请选择邮箱的默认外观"
       ],
-      "Mailbox password": [
-        "邮箱密码"
+      "Select how your composer opens by default.": [
+        "请选择编辑窗的默认外观"
       ],
-      "Two-factor authentication code": [
-        "双重认证验证码"
-      ],
-      "Username or ProtonMail address": [
-        "用户名或 ProtonMail 地址"
-      ],
-      "Phone number": [
-        "电话号码"
-      ],
-      "Verification code": [
-        "验证码"
-      ],
-      "Enter the 6-digit code": [
-        "请输入 6 位验证码"
+      "Enable Beta Access": [
+        "启用测试版功能"
       ],
       "From: ${ fromEmailAddress }": [
         ""
@@ -2199,6 +3097,9 @@
       "Go to subscription plans": [
         "转至订阅计划"
       ],
+      "Request an invite": [
+        "请求邀请"
+      ],
       "clearing your browser cache": [
         "清除浏览器缓存"
       ],
@@ -2207,9 +3108,6 @@
       ],
       "Add a gift code": [
         "使用礼品码"
-      ],
-      "Request an invite": [
-        "请求邀请"
       ],
       "Pay invoice": [
         "支付"
@@ -2236,6 +3134,9 @@
       ],
       "e.g. Julia Smith": [
         "例如：Julia Smith"
+      ],
+      "Mailbox password": [
+        "邮箱密码"
       ],
       "OS name": [
         "操作系统名称"
@@ -2285,9 +3186,6 @@
       "Name": [
         "名称"
       ],
-      "Mailbox password": [
-        "邮箱密码"
-      ],
       "Add a calendar name": [
         "填写分类名称"
       ],
@@ -2321,11 +3219,6 @@
       ],
       "Found ${ items.length } suggestion, use keyboard to navigate.": [
         "找到 ${ items.length } 个建议，请使用键盘导航"
-      ]
-    },
-    "PGP key encryption warning": {
-      "Key cannot be used for encryption": [
-        "此密钥不能用于加密"
       ]
     },
     "Select search results": {
@@ -2381,17 +3274,17 @@
       "Email address copied to clipboard": [
         "邮箱地址已复制到剪贴板"
       ],
+      "Code sent to ${ methodTo }": [
+        "代码已发送到 ${ methodTo }"
+      ],
+      "Verification successful": [
+        "验证成功"
+      ],
       "Bug reported": [
         "问题已反馈"
       ],
       "You have successfully unsubscribed": [
         "您已成功降级"
-      ],
-      "Keyboard shortcuts preferences updated": [
-        "键盘快捷键设置已更新"
-      ],
-      "Preference saved": [
-        "设置已保存"
       ],
       "Contact saved": [
         "联系人已保存"
@@ -2417,11 +3310,11 @@
       "Address copied to clipboard": [
         "地址已复制到剪贴板"
       ],
-      "Code sent to ${ methodTo }": [
-        "代码已发送到 ${ methodTo }"
+      "Keyboard shortcuts preferences updated": [
+        "键盘快捷键设置已更新"
       ],
-      "Verification successful": [
-        "验证成功"
+      "Preference saved": [
+        "设置已保存"
       ],
       "Calendar added. It might take a few minutes to sync.": [
         "已新增日历，可能需要几分钟才能同步"
@@ -2614,6 +3507,28 @@
       ],
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "配置您的机构信息、链接您的域名、创建账户以确保您机构的所有成员都受到保护"
+      ]
+    },
+    "Delinquent modal title": {
+      "Overdue invoice": [
+        "逾期账单"
+      ]
+    },
+    "Human verification method": {
+      "CAPTCHA": [
+        "验证码"
+      ],
+      "Email": [
+        "邮件"
+      ],
+      "SMS": [
+        "短信"
+      ],
+      "Manual": [
+        "手动"
+      ],
+      "No verification method available": [
+        "没有可用的验证方法"
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -3282,19 +4197,6 @@
         "比特币"
       ]
     },
-    "Beta access description": {
-      "Beta Access lets you use the beta version of ProtonMail, Proton Calendar, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "启用 \"测试版功能\" 能让您在正式发布之前使用 ProtonMail, Proton Calendar, Proton Drive 的测试版本。这代表您可以抢先体验新产品，获得最新更新，并使用最新推出的功能"
-      ],
-      "If you encounter issues, you can always disable Beta Access.": [
-        "如果您在使用过程中遇到问题，您可以随时禁用该选项"
-      ]
-    },
-    "Refresh on apply warning": {
-      "Note: the service will reload after you click the Apply button.": [
-        "请注意：点击 \"应用\" 按钮后，服务将重新加载"
-      ]
-    },
     "Label to change density": {
       "Comfortable": [
         "标准"
@@ -3623,31 +4525,22 @@
         "${ totalImported }/${ totalToImport } 联系人已加密并添至您的联系人列表"
       ]
     },
+    "Beta access description": {
+      "Beta Access lets you use the beta version of ProtonMail, Proton Calendar, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
+        "启用 \"测试版功能\" 能让您在正式发布之前使用 ProtonMail, Proton Calendar, Proton Drive 的测试版本。这代表您可以抢先体验新产品，获得最新更新，并使用最新推出的功能"
+      ],
+      "If you encounter issues, you can always disable Beta Access.": [
+        "如果您在使用过程中遇到问题，您可以随时禁用该选项"
+      ]
+    },
+    "Refresh on apply warning": {
+      "Note: the service will reload after you click the Apply button.": [
+        "请注意：点击 \"应用\" 按钮后，服务将重新加载"
+      ]
+    },
     "Select files": {
       "Upload": [
         "上传"
-      ]
-    },
-    "Delinquent modal title": {
-      "Overdue invoice": [
-        "逾期账单"
-      ]
-    },
-    "Human verification method": {
-      "CAPTCHA": [
-        "验证码"
-      ],
-      "Email": [
-        "邮件"
-      ],
-      "SMS": [
-        "短信"
-      ],
-      "Manual": [
-        "手动"
-      ],
-      "No verification method available": [
-        "没有可用的验证方法"
       ]
     },
     "Loading info": {
@@ -3726,902 +4619,6 @@
       ],
       "120 minutes": [
         "120 分钟"
-      ]
-    },
-    "Calendar status": {
-      "Not synced": [
-        ""
-      ],
-      "Syncing": [
-        ""
-      ]
-    },
-    "Calendar subscription not synced error": {
-      "Calendar is syncing": [
-        ""
-      ],
-      "More than 12 hours passed since last update": [
-        ""
-      ],
-      "Calendar link is wrong": [
-        ""
-      ],
-      "Calendar is too big": [
-        ""
-      ],
-      "Calendar link is not accessible": [
-        ""
-      ],
-      "Calendar link is temporarily unaccessible": [
-        ""
-      ],
-      "Failed to sync calendar": [
-        ""
-      ]
-    },
-    "Alarm notification": {
-      "${ title } starts now": [
-        "${ title } 现在开始"
-      ],
-      "${ title } starts today": [
-        "${ title } 今天开始"
-      ],
-      "${ title } started at ${ formattedHour }": [
-        "${ title } 以${ formattedHour } 开始"
-      ],
-      "${ title } started yesterday": [
-        "${ title } 于昨天开始"
-      ],
-      "${ title } started yesterday at ${ formattedHour }": [
-        "${ title } 昨天${ formattedHour } 开始"
-      ],
-      "${ title } started on ${ formattedDate }": [
-        "${ title } 开始于 ${ formattedDate }"
-      ],
-      "${ title } started on ${ formattedDate } at ${ formattedHour }": [
-        "${ title } ${ formattedDate } 开始, ${ formattedHour }"
-      ],
-      "${ title } started on ${ _formattedDate }": [
-        "${ title } 开始于 ${ _formattedDate }"
-      ],
-      "${ title } started on ${ _formattedDate } at ${ formattedHour }": [
-        "${ title } ${ _formattedDate } ${ formattedHour } 开始"
-      ],
-      "${ title } started on ${ formattedDateWithoutTime }": [
-        "${ title } 开始于 ${ formattedDateWithoutTime }"
-      ],
-      "${ title } started on ${ _formattedDateWithTime }": [
-        "${ title } 开始于 ${ _formattedDateWithTime }"
-      ],
-      "${ title } will start at ${ formattedHour }": [
-        "${ title } 将以${ formattedHour } 开始"
-      ],
-      "${ title } will start tomorrow": [
-        "${ title } 将于明天开始"
-      ],
-      "${ title } will start tomorrow at ${ formattedHour }": [
-        "${ title } 明天将以${ formattedHour } 开始"
-      ],
-      "${ title } will start on ${ _formattedDate2 }": [
-        "${ title } 将于 ${ _formattedDate2 } 开始"
-      ],
-      "${ title } will start on ${ _formattedDate2 } at ${ formattedHour }": [
-        "${ title } 将以${ _formattedDate2 } 开始，并${ formattedHour }"
-      ],
-      "${ title } will start on ${ _formattedDate3 }": [
-        "${ title } 将从 ${ _formattedDate3 } 开始"
-      ],
-      "${ title } will start on ${ _formattedDate3 } at ${ formattedHour }": [
-        "${ title } 将以${ _formattedDate3 } 开始，并${ formattedHour }"
-      ],
-      "${ title } will start on ${ _formattedDateWithoutTime }": [
-        "${ title } 将从 ${ _formattedDateWithoutTime } 开始"
-      ],
-      "${ title } will start on ${ formattedDateWithTime }": [
-        "${ title } 将从 ${ formattedDateWithTime } 开始"
-      ]
-    },
-    "Event title": {
-      "(no title)": [
-        "(无标题)"
-      ]
-    },
-    "Participant name": {
-      "You": [
-        "你"
-      ]
-    },
-    "Email subject": {
-      "Invitation for an event on ${ formattedStart }": [
-        "${ formattedStart } 的活动邀请函"
-      ],
-      "Update for an event on ${ formattedStart }": [
-        "更新 ${ formattedStart } 的活动"
-      ],
-      "Invitation for an event starting on ${ formattedStart }": [
-        "开始于 { formattedStart } 的活动邀请函"
-      ],
-      "Update for an event starting on ${ formattedStart }": [
-        "更新开始于 ${ formattedStart } 的活动"
-      ],
-      "Cancellation of an event on ${ formattedStart }": [
-        "取消 ${ formattedStart } 的活动"
-      ],
-      "Cancellation of an event starting on ${ formattedStart }": [
-        "取消开始于 ${ formattedStart } 的活动"
-      ]
-    },
-    "Email body for invitation (date part)": {
-      "When: ${ formattedStart } (all day)": [
-        "时间：${ formattedStart } (全天)"
-      ],
-      "When: ${ formattedStart } - ${ formattedEnd }": [
-        "时间：${ formattedStart } - ${ formattedEnd }"
-      ],
-      "When: ${ formattedStart }": [
-        "时间：${ formattedStart }"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "Where: ${ eventLocation }": [
-        "地点：${ eventLocation }"
-      ]
-    },
-    "Email body for description (description part)": {
-      "Description: ${ eventDescription }": [
-        "描述：${ eventDescription }"
-      ]
-    },
-    "Email body for invitation": {
-      "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
-        "您受邀参加 ${ eventTitle }\n${ eventDetailsText }"
-      ],
-      "${ eventTitle } has been updated.\n${ eventDetailsText }": [
-        "${ eventTitle } 已更新。\n{ eventDetailsText }"
-      ],
-      "${ eventTitle } has been cancelled.": [
-        "${ eventTitle } 已被取消。"
-      ]
-    },
-    "Email body for response to invitation": {
-      "${ emailAddress } has accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } 接受了参加 ${ eventTitle } 的邀请"
-      ],
-      "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } 暂时接受了参加 ${ eventTitle } 的邀请"
-      ],
-      "${ emailAddress } has declined your invitation to ${ eventTitle }": [
-        "${ emailAddress } 拒绝了参加 ${ eventTitle } 的邀请"
-      ]
-    },
-    "Monthly recurring event, repeats on": {
-      "on the first Sunday": [
-        "第一个星期日"
-      ],
-      "on the first Monday": [
-        "第一个星期一"
-      ],
-      "on the first Tuesday": [
-        "第一个星期二"
-      ],
-      "on the first Wednesday": [
-        "第一个星期三"
-      ],
-      "on the first Thursday": [
-        "第一个星期四"
-      ],
-      "on the first Friday": [
-        "第一个星期五"
-      ],
-      "on the first Saturday": [
-        "第一个星期六"
-      ],
-      "on the second Sunday": [
-        "第二个星期日"
-      ],
-      "on the second Monday": [
-        "第二个星期一"
-      ],
-      "on the second Tuesday": [
-        "第二个星期二"
-      ],
-      "on the second Wednesday": [
-        "第二个星期三"
-      ],
-      "on the second Thursday": [
-        "第二个星期四"
-      ],
-      "on the second Friday": [
-        "第二个星期五"
-      ],
-      "on the second Saturday": [
-        "第二个星期六"
-      ],
-      "on the third Sunday": [
-        "第三个星期日"
-      ],
-      "on the third Monday": [
-        "第三个星期一"
-      ],
-      "on the third Tuesday": [
-        "第三个星期二"
-      ],
-      "on the third Wednesday": [
-        "第三个星期三"
-      ],
-      "on the third Thursday": [
-        "第三个星期四"
-      ],
-      "on the third Friday": [
-        "第三个星期五"
-      ],
-      "on the third Saturday": [
-        "第三个星期六"
-      ],
-      "on the fourth Sunday": [
-        "第四个星期日"
-      ],
-      "on the fourth Monday": [
-        "第四个星期一"
-      ],
-      "on the fourth Tuesday": [
-        "第四个星期二"
-      ],
-      "on the fourth Wednesday": [
-        "第四个星期三"
-      ],
-      "on the fourth Thursday": [
-        "第四个星期四"
-      ],
-      "on the fourth Friday": [
-        "第四个星期五"
-      ],
-      "on the fourth Saturday": [
-        "第四个星期六"
-      ],
-      "on the last Sunday": [
-        "最后一个星期日"
-      ],
-      "on the last Monday": [
-        "最后一个星期一"
-      ],
-      "on the last Tuesday": [
-        "最后一个星期二"
-      ],
-      "on the last Wednesday": [
-        "最后一个星期三"
-      ],
-      "on the last Thursday": [
-        "最后一个星期四"
-      ],
-      "on the last Friday": [
-        "最后一个星期五"
-      ],
-      "on the last Saturday": [
-        "最后一个星期六"
-      ],
-      "on day ${ dayOfMonth }": [
-        "按日 ${ dayOfMonth }"
-      ]
-    },
-    "Daily recurring event, frequency": {
-      "${ count } time": [
-        "${ count } 次"
-      ],
-      "until ${ dateString }": [
-        "直到${ dateString }"
-      ],
-      "Daily": [
-        "每天"
-      ],
-      "Every ${ interval } day": [
-        "每 ${ interval } 天"
-      ],
-      "Daily, ${ timesString }": [
-        "每天, ${ timesString }"
-      ],
-      "Every ${ interval } day, ${ timesString }": [
-        "每 ${ interval } 天，${ timesString }"
-      ],
-      "Daily, ${ untilString }": [
-        "每天, 直到${ untilString }"
-      ],
-      "Every ${ interval } day, ${ untilString }": [
-        "每 ${ interval } 天，${ untilString }"
-      ]
-    },
-    "Weekly recurring event, repeats on (multiple days), frequency": {
-      "Sunday": [
-        "星期日"
-      ],
-      "Monday": [
-        "星期一"
-      ],
-      "Tuesday": [
-        "星期二"
-      ],
-      "Wednesday": [
-        "星期三"
-      ],
-      "Thursday": [
-        "星期四"
-      ],
-      "Friday": [
-        "星期五"
-      ],
-      "Saturday": [
-        "星期六"
-      ]
-    },
-    "Weekly recurring event, frequency": {
-      "Weekly on all days": [
-        "每周所有天"
-      ],
-      "Every ${ interval } week on all days": [
-        "每 ${ interval } 周整周"
-      ],
-      "Weekly on Sunday": [
-        "每周星期日"
-      ],
-      "Every ${ interval } week on Sunday": [
-        "每 ${ interval } 周的星期日"
-      ],
-      "Weekly on Monday": [
-        "每周星期一"
-      ],
-      "Every ${ interval } week on Monday": [
-        "每 ${ interval } 周的星期一"
-      ],
-      "Weekly on Tuesday": [
-        "每周星期二"
-      ],
-      "Every ${ interval } week on Tuesday": [
-        "每 ${ interval } 周的星期二"
-      ],
-      "Weekly on Wednesday": [
-        "每周星期三"
-      ],
-      "Every ${ interval } week on Wednesday": [
-        "每 ${ interval } 周的星期三"
-      ],
-      "Weekly on Thursday": [
-        "每周星期四"
-      ],
-      "Every ${ interval } week on Thursday": [
-        "每 ${ interval } 周的星期四"
-      ],
-      "Weekly on Friday": [
-        "每周星期五"
-      ],
-      "Every ${ interval } week on Friday": [
-        "每 ${ interval } 周的星期五"
-      ],
-      "Weekly on Saturday": [
-        "每周星期六"
-      ],
-      "Every ${ interval } week on Saturday": [
-        "每 ${ interval } 周的星期六"
-      ],
-      "Weekly on ${ multipleDaysString }": [
-        "每周的 ${ multipleDaysString }"
-      ],
-      "Every ${ interval } week on ${ multipleDaysString }": [
-        "每 ${ interval } 周的${ multipleDaysString }"
-      ],
-      "Weekly on all days, ${ timesString }": [
-        "每周所有天数，${ timesString }。"
-      ],
-      "Every ${ interval } week on all days, ${ timesString }": [
-        "每 ${ interval } 周整周，${ timesString }"
-      ],
-      "Weekly on Sunday, ${ timesString }": [
-        "每周星期日，${ timesString }"
-      ],
-      "Every ${ interval } week on Sunday, ${ timesString }": [
-        "每 ${ interval } 周星期日，${ timesString }"
-      ],
-      "Weekly on Monday, ${ timesString }": [
-        "每周星期一，${ timesString }"
-      ],
-      "Every ${ interval } week on Monday, ${ timesString }": [
-        "每 ${ interval } 周星期一，${ timesString }"
-      ],
-      "Weekly on Tuesday, ${ timesString }": [
-        "每周星期二，${ timesString }"
-      ],
-      "Every ${ interval } week on Tuesday, ${ timesString }": [
-        "每 ${ interval } 周星期二，${ timesString }"
-      ],
-      "Weekly on Wednesday, ${ timesString }": [
-        "每周星期三，${ timesString }"
-      ],
-      "Every ${ interval } week on Wednesday, ${ timesString }": [
-        "每 ${ interval } 周星期三，${ timesString }"
-      ],
-      "Weekly on Thursday, ${ timesString }": [
-        "每周星期四，${ timesString }"
-      ],
-      "Every ${ interval } week on Thursday, ${ timesString }": [
-        "每 ${ interval } 周星期四，${ timesString }"
-      ],
-      "Weekly on Friday, ${ timesString }": [
-        "每周星期五，${ timesString }"
-      ],
-      "Every ${ interval } week on Friday, ${ timesString }": [
-        "每 ${ interval } 周星期五，${ timesString }"
-      ],
-      "Weekly on Saturday, ${ timesString }": [
-        "每周星期六，${ timesString }"
-      ],
-      "Every ${ interval } week on Saturday, ${ timesString }": [
-        "每 ${ interval } 周星期六，${ timesString }"
-      ],
-      "Weekly on ${ multipleDaysString }, ${ timesString }": [
-        "每周${ multipleDaysString }，${ timesString }"
-      ],
-      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
-        "每{ interval } 周的${ multipleDaysString }，${ timesString }"
-      ],
-      "Weekly on all days, ${ untilString }": [
-        "每周所有天数，直到${ untilString }。"
-      ],
-      "Every ${ interval } week on all days, ${ untilString }": [
-        "每 ${ interval } 周整周，${ untilString }"
-      ],
-      "Weekly on Sunday, ${ untilString }": [
-        "每周星期日，直到${ untilString }"
-      ],
-      "Every ${ interval } week on Sunday, ${ untilString }": [
-        "每 ${ interval } 周星期日，${ untilString }"
-      ],
-      "Weekly on Monday, ${ untilString }": [
-        "每周星期一，直到${ untilString }"
-      ],
-      "Every ${ interval } week on Monday, ${ untilString }": [
-        "每 ${ interval } 周星期一，${ untilString }"
-      ],
-      "Weekly on Tuesday, ${ untilString }": [
-        "每周星期二，直到${ untilString }"
-      ],
-      "Every ${ interval } week on Tuesday, ${ untilString }": [
-        "每 ${ interval } 周星期二，${ untilString }"
-      ],
-      "Weekly on Wednesday, ${ untilString }": [
-        "每周星期三，直到${ untilString }"
-      ],
-      "Every ${ interval } week on Wednesday, ${ untilString }": [
-        "每 ${ interval } 周星期三，${ untilString }"
-      ],
-      "Weekly on Thursday, ${ untilString }": [
-        "每周星期四，直到${ untilString }"
-      ],
-      "Every ${ interval } week on Thursday, ${ untilString }": [
-        "每 ${ interval } 周星期四，${ untilString }"
-      ],
-      "Weekly on Friday, ${ untilString }": [
-        "每周星期五，直到${ untilString }"
-      ],
-      "Every ${ interval } week on Friday, ${ untilString }": [
-        "每 ${ interval } 周星期五，${ untilString }"
-      ],
-      "Weekly on Saturday, ${ untilString }": [
-        "每周星期六，直到${ untilString }"
-      ],
-      "Every ${ interval } week on Saturday, ${ untilString }": [
-        "每 ${ interval } 周星期六，${ untilString }"
-      ],
-      "Weekly on ${ multipleDaysString }, ${ untilString }": [
-        "每周${ multipleDaysString }，${ untilString }"
-      ],
-      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
-        "每{ interval } 周的${ multipleDaysString }，${ untilString }"
-      ]
-    },
-    "Monthly recurring event, frequency": {
-      "Monthly ${ onDayString }": [
-        "每月${ onDayString }"
-      ],
-      "Every ${ interval } month ${ onDayString }": [
-        "每 ${ interval } 个月的${ onDayString }"
-      ],
-      "Monthly ${ onDayString }, ${ timesString }": [
-        "每月${ onDayString }，${ timesString }"
-      ],
-      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
-        "每 ${ interval } 月的${ onDayString }，${ timesString }"
-      ],
-      "Monthly ${ onDayString }, ${ untilString }": [
-        "每月${ onDayString }，直到${ untilString }"
-      ],
-      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
-        "每 ${ interval } 月的${ onDayString }，${ untilString }"
-      ]
-    },
-    "Yearly recurring event, frequency": {
-      "Yearly": [
-        "每年"
-      ],
-      "Every ${ interval } year": [
-        "每 ${ interval } 年"
-      ],
-      "Yearly, ${ timesString }": [
-        "每年, ${ timesString }"
-      ],
-      "Every ${ interval } year, ${ timesString }": [
-        "每 ${ interval } 年，${ timesString }"
-      ],
-      "Yearly, ${ untilString }": [
-        "每年，直到${ untilString }"
-      ],
-      "Every ${ interval } year, ${ untilString }": [
-        "每 ${ interval } 年，${ untilString }"
-      ]
-    },
-    "file size format": {
-      "bytes": [
-        "字节"
-      ],
-      "KB": [
-        "KB"
-      ],
-      "MB": [
-        "MB"
-      ],
-      "GB": [
-        "GB"
-      ]
-    },
-    "Contact field label": {
-      "Name": [
-        "姓名"
-      ],
-      "Email": [
-        "电子邮件"
-      ],
-      "Phone": [
-        "电话"
-      ],
-      "Address": [
-        "地址"
-      ],
-      "Photo": [
-        "照片"
-      ],
-      "Organization": [
-        "单位"
-      ],
-      "Birthday": [
-        "生日"
-      ],
-      "Anniversary": [
-        "周年纪念日"
-      ],
-      "Title": [
-        "职衔"
-      ],
-      "Role": [
-        "角色"
-      ],
-      "Note": [
-        "备注"
-      ],
-      "URL": [
-        "网址"
-      ],
-      "Gender": [
-        "性别"
-      ],
-      "Language": [
-        "语言"
-      ],
-      "Timezone": [
-        "时区"
-      ],
-      "Geo": [
-        "坐标"
-      ],
-      "Logo": [
-        "Logo"
-      ],
-      "Member": [
-        "成员"
-      ]
-    },
-    "Contact type label": {
-      "Work": [
-        "工作"
-      ],
-      "Personal": [
-        "私人"
-      ],
-      "Mobile": [
-        "手机"
-      ],
-      "Main": [
-        "主要"
-      ],
-      "Yomi": [
-        "读音"
-      ],
-      "Other": [
-        "其他"
-      ],
-      "Fax": [
-        "传真"
-      ],
-      "Pager": [
-        "寻呼机"
-      ]
-    },
-    "Property type": {
-      "Email": [
-        "电子邮件"
-      ],
-      "Home": [
-        "家庭"
-      ],
-      "Work": [
-        "工作"
-      ],
-      "Other": [
-        "其他"
-      ],
-      "Phone": [
-        "电话"
-      ],
-      "Mobile": [
-        "手机"
-      ],
-      "Main": [
-        "主要"
-      ],
-      "Fax": [
-        "传真"
-      ],
-      "Pager": [
-        "寻呼机"
-      ],
-      "Address": [
-        "地址"
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
-        "密码必须至少包含 ${ length } 个字符"
-      ]
-    },
-    "Keyboard shortcut section name": {
-      "Basic navigation": [
-        "基本导航"
-      ],
-      "Basic actions": [
-        "基本操作"
-      ],
-      "Folder shortcuts": [
-        "类别快捷键"
-      ],
-      "Composer shortcuts": [
-        "编辑窗快捷键"
-      ],
-      "List shortcuts": [
-        "列表快捷键"
-      ],
-      "Action shortcuts": [
-        "操作快捷键"
-      ],
-      "Message shortcuts": [
-        "消息快捷键"
-      ]
-    },
-    "Keyboard shortcut name": {
-      "Move up": [
-        "上移"
-      ],
-      "Jump to first": [
-        "跳转到第一个"
-      ],
-      "Move down": [
-        "下移"
-      ],
-      "Jump to last": [
-        "跳转到最后一个"
-      ],
-      "Move right / expand": [
-        "右移 / 展开"
-      ],
-      "Move left / collapse": [
-        "左移 / 折叠"
-      ],
-      "Apply / open": [
-        "应用 / 打开"
-      ],
-      "Cancel / close": [
-        "取消 / 关闭"
-      ],
-      "Open this modal": [
-        "打开此面板"
-      ],
-      "Select / unselect": [
-        "选择 / 取消选择"
-      ],
-      "Go to Inbox": [
-        "转至收件箱"
-      ],
-      "Go to Archive": [
-        "转至归档"
-      ],
-      "Go to Sent": [
-        "转至发件箱"
-      ],
-      "Go to Starred": [
-        "转至星标邮件"
-      ],
-      "Go to Drafts": [
-        "转至草稿箱"
-      ],
-      "Go to Trash": [
-        "移至回收站"
-      ],
-      "Go to Spam": [
-        "转至垃圾邮件"
-      ],
-      "Go to All Mail": [
-        "转至所有邮件"
-      ],
-      "Save draft": [
-        "保存草稿"
-      ],
-      "Send email": [
-        "发送邮件"
-      ],
-      "Close draft": [
-        "关闭草稿"
-      ],
-      "Minimize / maximize composer": [
-        "最小化/最大化编辑窗"
-      ],
-      "Expand / contract composer": [
-        "展开/还原编辑窗"
-      ],
-      "Attach file": [
-        "添加附件"
-      ],
-      "Add expiration time": [
-        "添加到期时间"
-      ],
-      "Add encryption": [
-        "添加加密"
-      ],
-      "Discard draft": [
-        "舍弃草稿"
-      ],
-      "Open previous message": [
-        "打开上则消息"
-      ],
-      "Open next message": [
-        "打开下则消息"
-      ],
-      "Show unread emails": [
-        "显示未读邮件"
-      ],
-      "Show all emails": [
-        "显示所有邮件"
-      ],
-      "Select / unselect all": [
-        "全选 / 反选"
-      ],
-      "Search": [
-        "搜索"
-      ],
-      "New message": [
-        "新邮件"
-      ],
-      "Star": [
-        "星标"
-      ],
-      "Mark as unread": [
-        "标为未读"
-      ],
-      "Label as...": [
-        "标记为"
-      ],
-      "Create filter with...": [
-        "创建过滤器..."
-      ],
-      "Move to...": [
-        "移至..."
-      ],
-      "Move to Inbox": [
-        "移至收件箱"
-      ],
-      "Move to Archive": [
-        "移至归档"
-      ],
-      "Move to Spam": [
-        "标为垃圾邮件"
-      ],
-      "Move to Trash": [
-        "移至回收站"
-      ],
-      "Delete permanently": [
-        "永久删除"
-      ],
-      "Reply": [
-        "回复"
-      ],
-      "Reply all": [
-        "回复所有人"
-      ],
-      "Forward": [
-        "转发"
-      ],
-      "Load remote content": [
-        "加载外链内容"
-      ],
-      "Load embedded images": [
-        "加载嵌入图像"
-      ],
-      "Show original message": [
-        "显示原始邮件"
-      ]
-    },
-    "Import contact. Contact identifier": {
-      "unknown": [
-        "未知"
-      ]
-    },
-    "Default display name vcard": {
-      "Unknown": [
-        "未知"
-      ]
-    },
-    "Error importing contact": {
-      "vCard versions < 3.0 not supported": [
-        "不支持 vCard 3.0 以下版本"
-      ],
-      "Encryption failed": [
-        "加密失败"
-      ]
-    },
-    "Error importing calendar": {
-      "An unexpected error occurred. Import must be restarted.": [
-        "发生未知错误，需重新导入"
-      ]
-    },
-    "Error importing contacts": {
-      "An error occurred uploading your file. No file has been selected.": [
-        "上传文件出错，尚未选择文件"
-      ],
-      "An error occurred uploading your file ${ formattedFilename }. No .csv or .vcf file selected": [
-        "上传文件 ${ formattedFilename } 出错，未选择 .csv 或 .vcf 文件"
-      ],
-      "Your file ${ formattedFilename } is empty.": [
-        "文件 ${ formattedFilename } 为空"
-      ],
-      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
-        "上传文件 ${ formattedFilename } 出错，文件大小上限为 ${ MAX_IMPORT_FILE_SIZE_STRING }"
-      ],
-      "Your file ${ formattedFilename } has no contacts to be imported.": [
-        "文件 ${ formattedFilename } 中没有可导入的联系人"
-      ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
-        "文件 ${ formattedFilename } 中的联系人数已超过 ${ MAX_IMPORT_CONTACTS_STRING }"
-      ],
-      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "读取文件 ${ formattedFilename } 出错，文件格式不对"
-      ]
-    },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "在发送密钥中定义的用户编号中找不到电子邮件地址 (${ keyUserIds })"
-      ]
-    },
-    "Message": {
-      "Re:": [
-        "回复："
-      ],
-      "Fw:": [
-        "转发："
       ]
     },
     "Event info. Organizer name": {
