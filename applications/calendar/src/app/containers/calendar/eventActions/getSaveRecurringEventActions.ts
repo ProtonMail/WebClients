@@ -77,6 +77,7 @@ const getSaveRecurringEventActions = async ({
     inviteActions: InviteActions;
     updatePartstatActions?: UpdatePartstatOperation[];
     updatePersonalPartActions?: UpdatePersonalPartOperation[];
+    sendActions?: SendIcsActionData[];
 }> => {
     const { type: inviteType, partstat: invitePartstat } = inviteActions;
     const isSingleEdit = oldEvent.ID !== originalEvent.ID;
@@ -225,7 +226,7 @@ const getSaveRecurringEventActions = async ({
         const deleteOperations = isInvitation ? [] : singleEditRecurrences.map(getDeleteSyncOperation);
         if (selfAttendeeToken && invitePartstat) {
             // the attendee changes answer
-            const { updatePartstatActions, updatePersonalPartActions } = await getChangePartstatActions({
+            const { updatePartstatActions, updatePersonalPartActions, sendActions } = await getChangePartstatActions({
                 inviteActions,
                 eventComponent: newVeventComponent,
                 event: oldEvent,
@@ -259,6 +260,7 @@ const getSaveRecurringEventActions = async ({
                 multiSyncActions: [],
                 updatePartstatActions,
                 updatePersonalPartActions,
+                sendActions,
             };
         }
         if (!oldEvent.IsOrganizer && !isSwitchCalendar) {

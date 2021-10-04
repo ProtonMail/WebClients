@@ -4,6 +4,7 @@ import { ICAL_ATTENDEE_STATUS } from '@proton/shared/lib/calendar/constants';
 import { getAttendeeToken, getHasAttendees } from '@proton/shared/lib/calendar/vcalHelper';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import { CalendarEvent, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
+import { serverTime } from 'pmcrypto';
 import {
     InviteActions,
     SendIcsActionData,
@@ -112,12 +113,16 @@ const getChangePartstatActions = async ({
     multiSyncActions: SyncEventActionOperations[];
     updatePartstatActions: UpdatePartstatOperation[];
     updatePersonalPartActions: UpdatePersonalPartOperation[];
+    sendActions?: SendIcsActionData[];
 }> => {
-    const { partstat } = inviteActions;
+    const { partstat, isProtonProtonInvite } = inviteActions;
     if (!partstat) {
         throw new Error('Cannot update participation status without new answer');
     }
-    const { timestamp } = await sendIcs({ inviteActions, vevent: eventComponent });
+    // For Proton to Proton invites, we send the email after changing the answer
+    const timestamp = isProtonProtonInvite
+        ? +serverTime()
+        : (await sendIcs({ inviteActions, vevent: eventComponent })).timestamp;
     const partstatOperation = getUpdatePartstatOperation({
         eventComponent,
         event,
@@ -141,6 +146,7 @@ const getChangePartstatActions = async ({
         multiSyncActions: [],
         updatePartstatActions: [partstatOperation],
         updatePersonalPartActions: [personalPartOperation].filter(isTruthy),
+        sendActions: isProtonProtonInvite ? [{ inviteActions, vevent: eventComponent }] : undefined,
     };
 };
 
