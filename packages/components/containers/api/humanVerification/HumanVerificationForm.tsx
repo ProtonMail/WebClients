@@ -37,6 +37,7 @@ interface Props {
     defaultPhone?: string;
     defaultCountry?: string;
     step: HumanVerificationSteps;
+    isEmbedded?: boolean;
     onChangeStep: (step: HumanVerificationSteps) => void;
 }
 
@@ -48,6 +49,7 @@ const HumanVerificationForm = ({
     token,
     onSubmit,
     step,
+    isEmbedded,
     onChangeStep,
 }: Props) => {
     const api = useApi();
@@ -136,6 +138,7 @@ const HumanVerificationForm = ({
                         <LearnMore url="https://protonmail.com/support/knowledge-base/human-verification/" />
                     </Text>
                     <PhoneMethodForm
+                        isEmbedded={isEmbedded}
                         defaultCountry={defaultCountry}
                         onSubmit={async (phone) => {
                             verificationRef.current = {
@@ -191,13 +194,13 @@ const HumanVerificationForm = ({
 
         return (
             <>
-                <p>
+                <div className="mb2">
                     {verificationModel.method === 'email'
                         ? c('Info')
                               .jt`Click "Request new code" to have a new verification code sent to ${strong}. If this email address is incorrect, click "Edit" to correct it.`
                         : c('Info')
                               .jt`Click "Request new code" to have a new verification code sent to ${strong}. If this phone number is incorrect, click "Edit" to correct it.`}
-                </p>
+                </div>
                 <Button
                     size="large"
                     color="norm"

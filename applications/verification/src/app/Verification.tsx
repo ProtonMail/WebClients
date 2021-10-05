@@ -116,6 +116,7 @@ const Verification = () => {
             defaultCountry={defaultCountry}
             defaultEmail={defaultEmail}
             defaultPhone={defaultPhone}
+            isEmbedded={windowIsEmbedded}
         />
     );
 
