@@ -142,18 +142,26 @@ const ComposerContent = ({
                 )}
             </div>
             {showAttachements && (
-                <AttachmentList
-                    attachments={attachments}
-                    pendingUploads={pendingUploads}
-                    message={message as MessageExtendedWithData}
-                    primaryAction={AttachmentAction.Preview}
-                    secondaryAction={AttachmentAction.Remove}
-                    collapsable
-                    showDownloadAll={false}
-                    onRemoveAttachment={onRemoveAttachment}
-                    onRemoveUpload={onRemoveUpload}
-                    className="composer-attachments-list bg-weak"
-                />
+                <div
+                    onDragOver={(e) => {
+                        e.stopPropagation();
+                        e.preventDefault();
+                    }}
+                    onDrop={handleDrop}
+                >
+                    <AttachmentList
+                        attachments={attachments}
+                        pendingUploads={pendingUploads}
+                        message={message as MessageExtendedWithData}
+                        primaryAction={AttachmentAction.Preview}
+                        secondaryAction={AttachmentAction.Remove}
+                        collapsable
+                        showDownloadAll={false}
+                        onRemoveAttachment={onRemoveAttachment}
+                        onRemoveUpload={onRemoveUpload}
+                        className="composer-attachments-list bg-weak"
+                    />
+                </div>
             )}
         </section>
     );
