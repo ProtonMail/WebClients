@@ -8,7 +8,6 @@ import {
     SessionKey,
     OpenPGPKey,
 } from 'pmcrypto';
-import { enums } from 'openpgp';
 
 import { identity } from '@proton/shared/lib/helpers/function';
 import { Package, Packages } from '@proton/shared/lib/interfaces/mail/crypto';
@@ -120,7 +119,6 @@ const encryptBodyPackage = async (pack: Package, messageKeys: MessageKeys, publi
         sessionKey: cleanPublicKeys.length ? undefined : await generateSessionKeyHelper(),
         privateKeys,
         returnSessionKey: true,
-        compression: enums.compression.zip,
     });
 
     const { asymmetric: keys, encrypted } = await splitMessage(data);
@@ -148,7 +146,6 @@ const encryptDraftBodyPackage = async (
         publicKeys: cleanPublicKeys,
         privateKeys,
         returnSessionKey: true,
-        compression: enums.compression.zip,
     });
 
     const packets = await splitMessage(data);
