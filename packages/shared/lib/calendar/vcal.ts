@@ -400,7 +400,7 @@ export const toTriggerString = (value: VcalDurationValue) => {
 /**
  * Transform a duration object into milliseconds
  */
-const durationToMilliseconds = ({
+export const durationToMilliseconds = ({
     isNegative = false,
     weeks = 0,
     days = 0,

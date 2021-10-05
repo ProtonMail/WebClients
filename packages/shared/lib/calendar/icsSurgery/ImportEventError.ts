@@ -17,7 +17,6 @@ export enum IMPORT_EVENT_ERROR_TYPE {
     DTSTART_OUT_OF_BOUNDS,
     DTEND_MALFORMED,
     DTEND_OUT_OF_BOUNDS,
-    VEVENT_DURATION,
     X_WR_TIMEZONE_UNSUPPORTED,
     TZID_UNSUPPORTED,
     RRULE_MALFORMED,
@@ -75,9 +74,6 @@ const getErrorMessage = (errorType: IMPORT_EVENT_ERROR_TYPE, externalError?: Err
     }
     if (errorType === IMPORT_EVENT_ERROR_TYPE.DTEND_OUT_OF_BOUNDS) {
         return c('Error importing event').t`End time out of bounds`;
-    }
-    if (errorType === IMPORT_EVENT_ERROR_TYPE.VEVENT_DURATION) {
-        return c('Error importing event').t`Event duration not supported`;
     }
     if (errorType === IMPORT_EVENT_ERROR_TYPE.X_WR_TIMEZONE_UNSUPPORTED) {
         return c('Error importing event').t`Calendar timezone not supported`;
