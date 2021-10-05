@@ -1,14 +1,16 @@
 import generateUID from '@proton/shared/lib/helpers/generateUID';
-import { MailSettings } from '@proton/shared/lib/interfaces';
+import { Api, MailSettings } from '@proton/shared/lib/interfaces';
 import { isDraft } from '@proton/shared/lib/mail/messages';
+import { hasBit } from '@proton/shared/lib/helpers/bitset';
+import { IMAGE_PROXY_FLAGS } from '@proton/shared/lib/constants';
 import { MessageExtended } from '../../models/message';
 import { querySelectorAll } from '../message/messageContent';
 import { hasShowRemote } from '../mailSettings';
 import { getRemoteImages, insertImageAnchor } from '../message/messageImages';
+import { MessageCache } from '../../containers/MessageProvider';
+import { ATTRIBUTES, loadRemoteImages } from '../message/messageRemotes';
 
 const WHITELIST = ['notify@protonmail.com'];
-
-export const ATTRIBUTES = ['url', 'xlink:href', 'srcset', 'src', 'svg', 'background', 'poster'];
 
 const SELECTOR = ATTRIBUTES.map((name) => {
     if (name === 'src') {
@@ -23,23 +25,20 @@ const SELECTOR = ATTRIBUTES.map((name) => {
     return `[proton-${name}]`;
 }).join(',');
 
-const removeProtonPrefix = (match: HTMLElement) => {
-    ATTRIBUTES.forEach((attr) => {
-        const protonAttr = `proton-${attr}`;
-        if (match.hasAttribute(protonAttr)) {
-            match.setAttribute(attr, match.getAttribute(protonAttr) as string);
-            match.removeAttribute(attr);
-        }
-    });
-};
-
-export const transformRemote = (message: MessageExtended, mailSettings?: Partial<MailSettings>) => {
+export const transformRemote = (
+    message: MessageExtended,
+    mailSettings: Partial<MailSettings> | undefined,
+    api: Api,
+    messageCache: MessageCache
+) => {
     const showRemoteImages =
         message.messageImages?.showRemoteImages ||
         hasShowRemote(mailSettings) ||
         WHITELIST.includes(message.data?.Sender?.Address || '');
 
     const draft = isDraft(message.data);
+
+    const useProxy = hasBit(mailSettings?.ImageProxy, IMAGE_PROXY_FLAGS.PROXY);
 
     const matches = querySelectorAll(message, SELECTOR);
 
@@ -48,22 +47,23 @@ export const transformRemote = (message: MessageExtended, mailSettings?: Partial
     const remoteImages = getRemoteImages(message);
 
     matches.forEach((match) => {
-        if (showRemoteImages) {
-            removeProtonPrefix(match);
+        const id = generateUID('remote');
+        if (!draft && match.tagName === 'IMG') {
+            insertImageAnchor(id, 'remote', match);
         }
-        if (match.tagName === 'IMG') {
-            const id = generateUID('remote');
-            if (!draft) {
-                insertImageAnchor(id, 'remote', match);
-            }
-            remoteImages.push({
-                type: 'remote',
-                url: match.getAttribute('proton-src') || '',
-                original: match,
-                id,
-            });
-        }
+        remoteImages.push({
+            type: 'remote',
+            url: match.getAttribute('proton-src') || '',
+            original: match,
+            id,
+            tracker: undefined,
+            status: 'not-loaded',
+        });
     });
+
+    if (showRemoteImages) {
+        void loadRemoteImages(useProxy, message.localID, remoteImages, messageCache, api);
+    }
 
     return {
         document,

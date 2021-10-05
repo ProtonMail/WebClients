@@ -22,7 +22,12 @@ import {
 import { locateBlockquote } from '../../../helpers/message/messageBlockquote';
 import EditorToolbarExtension from './EditorToolbarExtension';
 import { getEmbeddedImages } from '../../../helpers/message/messageImages';
-import { createBlob, findCIDsInContent, readCID, removeEmbeddedHTML } from '../../../helpers/message/messageEmbeddeds';
+import {
+    createBlob,
+    findCIDsInContent,
+    readContentIDandLocation,
+    removeEmbeddedHTML,
+} from '../../../helpers/message/messageEmbeddeds';
 
 interface ExternalEditorActions {
     getContent: () => string;
@@ -240,7 +245,7 @@ const SquireEditorWrapper = ({
 
     // Editors actions ref to add and remove embedded image
     const handleInsertEmbedded = useHandler((attachment: Attachment, data: string | Uint8Array) => {
-        const cid = readCID(attachment);
+        const { cid } = readContentIDandLocation(attachment);
         const url = createBlob(attachment, data);
 
         squireEditorRef.current?.insertImage(url, {

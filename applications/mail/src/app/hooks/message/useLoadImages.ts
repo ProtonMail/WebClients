@@ -9,6 +9,7 @@ import { useGetMessageKeys } from './useGetMessageKeys';
 import { updateImages } from '../../helpers/message/messageImages';
 
 export const useLoadRemoteImages = (localID: string) => {
+    const api = useApi();
     const messageCache = useMessageCache();
     const [mailSettings] = useMailSettings();
 
@@ -20,7 +21,9 @@ export const useLoadRemoteImages = (localID: string) => {
                 ...message,
                 messageImages: updateImages(message.messageImages, { showRemoteImages: true }, undefined, undefined),
             },
-            mailSettings
+            mailSettings,
+            api,
+            messageCache
         );
 
         updateMessageCache(messageCache, localID, {

@@ -40,7 +40,12 @@ export const prepareHtml = async (
 
     transformStylesheet(document);
 
-    const { showRemoteImages, hasRemoteImages, remoteImages } = transformRemote({ ...message, document }, mailSettings);
+    const { showRemoteImages, hasRemoteImages, remoteImages } = transformRemote(
+        { ...message, document },
+        mailSettings,
+        api,
+        messageCache
+    );
 
     attachBase64(document, base64Cache);
 

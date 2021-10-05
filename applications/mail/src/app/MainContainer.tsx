@@ -32,6 +32,7 @@ const MainContainer = () => {
         FeatureCode.UsedMailMobileApp,
         FeatureCode.Mnemonic,
         FeatureCode.CalendarEmailNotification,
+        FeatureCode.SpyTrackerProtection,
     ]);
 
     return (

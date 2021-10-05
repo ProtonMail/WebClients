@@ -362,6 +362,13 @@ export enum SHOW_IMAGES {
     ALL = 3,
 }
 
+export enum IMAGE_PROXY_FLAGS {
+    NONE = 0,
+    INCORPORATOR = 1,
+    PROXY = 2,
+    ALL = 3,
+}
+
 export enum COMPOSER_MODE {
     POPUP = 0,
     MAXIMIZED = 1,
