@@ -191,7 +191,7 @@ describe('Mailbox element list', () => {
                 Messages: [message],
             }));
             addApiMock(`mail/v4/messages/messageID1`, () => ({ Message: message }));
-            addApiMock(`mail/v4/messages/read`, () => {});
+            addApiMock(`mail/v4/messages/read`, () => ({ UndoToken: { Token: 'Token' } }));
             await rerender({ elementID: element1.ID });
 
             const items = getItems();
@@ -248,7 +248,7 @@ describe('Mailbox element list', () => {
                     },
                 },
             ];
-            const labelRequestSpy = jest.fn();
+            const labelRequestSpy = jest.fn(() => ({ UndoToken: { Token: 'Token' } }));
             addApiMock(`mail/v4/conversations/label`, labelRequestSpy, 'put');
 
             const { getByTestId } = await setup({ conversations, page: 1, mockConversations: false });

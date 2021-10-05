@@ -200,3 +200,6 @@ export const restoringEncryptedMessagesURL =
 export const reActivateKeySettingsURL = '/encryption-keys';
 
 export const emailTrackerProtectionURL = 'https://protonmail.com/support/email-tracker-protection';
+
+// Used for main action such as "label as", "move to" and "mark as read/unread"
+export const SUCCESS_NOTIFICATION_EXPIRATION = 7500;
