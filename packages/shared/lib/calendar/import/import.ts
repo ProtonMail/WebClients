@@ -202,6 +202,11 @@ export const getSupportedEvents = async ({
                 if (e instanceof ImportEventError && e.type === IMPORT_EVENT_ERROR_TYPE.TIMEZONE_IGNORE) {
                     return;
                 }
+
+                if (e instanceof ImportEventError && e.type === IMPORT_EVENT_ERROR_TYPE.NO_OCCURRENCES) {
+                    return;
+                }
+
                 return e;
             }
         })

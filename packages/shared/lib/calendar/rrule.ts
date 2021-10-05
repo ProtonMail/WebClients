@@ -2,9 +2,16 @@ import { RequireSome } from '../interfaces';
 import { getOccurrences } from './recurring';
 import { propertyToUTCDate } from './vcalConverter';
 import { getIsDateTimeValue, getIsPropertyAllDay, getPropertyTzid } from './vcalHelper';
-import { convertUTCDateTimeToZone, convertZonedDateTimeToUTC, toLocalDate, toUTCDate } from '../date/timezone';
+import {
+    convertUTCDateTimeToZone,
+    convertZonedDateTimeToUTC,
+    fromUTCDate,
+    toLocalDate,
+    toUTCDate,
+} from '../date/timezone';
 import { omit, pick } from '../helpers/object';
 import {
+    VcalDateOrDateTimeProperty,
     VcalDateOrDateTimeValue,
     VcalDaysKeys,
     VcalRruleProperty,
@@ -19,6 +26,7 @@ import {
     FREQUENCY_INTERVALS_MAX,
     FREQUENCY_COUNT_MAX_INVITATION,
 } from './constants';
+import { ImportEventError, IMPORT_EVENT_ERROR_TYPE } from './icsSurgery/ImportEventError';
 
 export const getIsStandardByday = (byday = ''): byday is VcalDaysKeys => {
     return /^(SU|MO|TU|WE|TH|FR|SA)$/.test(byday);
@@ -329,18 +337,30 @@ export const getIsRruleSupported = (rruleProperty?: VcalRrulePropertyValue, isIn
     return false;
 };
 
-export const getSupportedUntil = (
-    until: VcalDateOrDateTimeValue,
-    isAllDay: boolean,
-    tzid = 'UTC',
-    guessTzid = 'UTC'
-) => {
+export const getSupportedUntil = ({
+    until,
+    dtstart,
+    guessTzid = 'UTC',
+}: {
+    until: VcalDateOrDateTimeValue;
+    dtstart: VcalDateOrDateTimeProperty;
+    guessTzid?: string;
+}) => {
+    const isAllDay = getIsPropertyAllDay(dtstart);
+    const tzid = getPropertyTzid(dtstart) || 'UTC';
+
+    const startDateUTC = propertyToUTCDate(dtstart);
+    const untilDateUTC = toUTCDate(until);
+    const startsAfterUntil = +startDateUTC > +untilDateUTC;
+
+    const adjustedUntil = startsAfterUntil ? fromUTCDate(startDateUTC) : until;
+
     // According to the RFC, we should use UTC dates if and only if the event is not all-day.
     if (isAllDay) {
         // we should use a floating date in this case
-        if (getIsDateTimeValue(until)) {
+        if (getIsDateTimeValue(adjustedUntil)) {
             // try to guess the right UNTIL
-            const untilGuess = convertUTCDateTimeToZone(until, guessTzid);
+            const untilGuess = convertUTCDateTimeToZone(adjustedUntil, guessTzid);
             return {
                 year: untilGuess.year,
                 month: untilGuess.month,
@@ -348,18 +368,20 @@ export const getSupportedUntil = (
             };
         }
         return {
-            year: until.year,
-            month: until.month,
-            day: until.day,
+            year: adjustedUntil.year,
+            month: adjustedUntil.month,
+            day: adjustedUntil.day,
         };
     }
-    const zonedUntilDateTime = getIsDateTimeValue(until)
-        ? pick(until, ['year', 'month', 'day', 'hours', 'minutes', 'seconds'])
-        : { ...pick(until, ['year', 'month', 'day']), hours: 0, minutes: 0, seconds: 0 };
+
+    const zonedUntilDateTime = getIsDateTimeValue(adjustedUntil)
+        ? pick(adjustedUntil, ['year', 'month', 'day', 'hours', 'minutes', 'seconds'])
+        : { ...pick(adjustedUntil, ['year', 'month', 'day']), hours: 0, minutes: 0, seconds: 0 };
     const zonedUntil = convertUTCDateTimeToZone(zonedUntilDateTime, tzid);
     // Pick end of day in the event start date timezone
     const zonedEndOfDay = { ...zonedUntil, hours: 23, minutes: 59, seconds: 59 };
     const utcEndOfDay = convertZonedDateTimeToUTC(zonedEndOfDay, tzid);
+
     return { ...utcEndOfDay, isUTC: true };
 };
 
@@ -376,12 +398,11 @@ export const getSupportedRrule = (
     const supportedRrule = { ...rrule };
 
     if (until) {
-        const supportedUntil = getSupportedUntil(
+        const supportedUntil = getSupportedUntil({
             until,
-            getIsPropertyAllDay(dtstart),
-            getPropertyTzid(dtstart),
-            guessTzid
-        );
+            dtstart,
+            guessTzid,
+        });
         supportedRrule.value.until = supportedUntil;
     }
     if (!getIsRruleSupported(rrule.value, isInvitation)) {
@@ -389,6 +410,9 @@ export const getSupportedRrule = (
     }
     return supportedRrule;
 };
+
+export const getHasOccurrences = (vevent: RequireSome<Partial<VcalVeventComponent>, 'dtstart'>) =>
+    !!getOccurrences({ component: vevent, maxCount: 1 }).length;
 
 export const getHasConsistentRrule = (vevent: RequireSome<Partial<VcalVeventComponent>, 'dtstart'>) => {
     const { dtstart, rrule } = vevent;
@@ -403,6 +427,10 @@ export const getHasConsistentRrule = (vevent: RequireSome<Partial<VcalVeventComp
         return false;
     }
 
+    if (count === 0) {
+        throw new ImportEventError(IMPORT_EVENT_ERROR_TYPE.NO_OCCURRENCES, 'vevent', '');
+    }
+
     // UNTIL should happen before DTSTART
     // Although this condition should be covered by the next check,
     // this check is cheaper and can help discard invalid RRULEs more efficiently
@@ -414,19 +442,16 @@ export const getHasConsistentRrule = (vevent: RequireSome<Partial<VcalVeventComp
         }
     }
 
-    // make sure the event generates some occurrence
-    const [firstOccurrence] = getOccurrences({ component: vevent, maxCount: 1 });
-    if (!firstOccurrence) {
-        return false;
-    }
-
-    // make sure DTSTART matches the pattern of the recurring series
+    // make sure DTSTART matches the pattern of the recurring series (EXDATE should be excluded here)
     const [first] = getOccurrences({ component: omit(vevent, ['exdate']), maxCount: 1 });
+
     if (!first) {
         return false;
     }
+
     if (+first.localStart !== +toUTCDate(vevent.dtstart.value)) {
         return false;
     }
+
     return true;
 };
