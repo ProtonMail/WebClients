@@ -1,5 +1,5 @@
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
-import { Api } from '@proton/shared/lib/interfaces';
+import { Api, LabelCount } from '@proton/shared/lib/interfaces';
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import { range } from '@proton/shared/lib/helpers/array';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
@@ -45,9 +45,9 @@ import { sizeOfCachedMessage, removeFromESCache, addToESCache, replaceInESCache 
  * Check whether the DB is limited, either after indexing or if it became so
  * after an update
  */
-export const checkIsDBLimited = async (userID: string, messageCounts: any, api: Api) => {
+export const checkIsDBLimited = async (userID: string, messageCounts: LabelCount[]) => {
     const count = await getNumMessagesDB(userID);
-    const totalMessages = await getTotalMessages(messageCounts, api);
+    const totalMessages = await getTotalMessages(messageCounts);
     return count < totalMessages;
 };
 
@@ -483,7 +483,7 @@ export const refreshIndex = async (
     indexKey: CryptoKey,
     getMessageKeys: GetMessageKeys,
     recordProgress: (progress: number, total: number) => void,
-    messageCounts: any
+    messageCounts: LabelCount[]
 ) => {
     // Get the latest event to catch up after refreshing
     const eventSinceRefresh = await queryEvents(api);
@@ -503,7 +503,7 @@ export const refreshIndex = async (
     const esDB = await openESDB(userID);
 
     // Fetching and preparing all metadata
-    const Total = await getTotalMessages(messageCounts, api);
+    const Total = await getTotalMessages(messageCounts);
     const numPages = Math.ceil(Total / PAGE_SIZE);
     const numBatches = Math.ceil(numPages / ES_MAX_PAGES_PER_BATCH);
     let numMessages = 0;
@@ -675,7 +675,7 @@ export const refreshLegacyIndex = async (
     indexKey: CryptoKey,
     getMessageKeys: GetMessageKeys,
     recordProgress: (progress: number, total: number) => void,
-    messageCounts: any
+    messageCounts: LabelCount[]
 ) => {
     // Get the latest event to catch up after refreshing
     const eventSinceRefresh = await queryEvents(api);
@@ -694,7 +694,7 @@ export const refreshLegacyIndex = async (
     const legacyESDB = await openESDB(legacyUserID);
 
     // Fetching and preparing all metadata
-    const Total = await getTotalMessages(messageCounts, api);
+    const Total = await getTotalMessages(messageCounts);
     const numPages = Math.ceil(Total / PAGE_SIZE);
     const numBatches = Math.ceil(numPages / ES_MAX_PAGES_PER_BATCH);
     let numMessages = 0;

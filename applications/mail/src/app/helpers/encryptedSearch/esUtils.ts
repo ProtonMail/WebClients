@@ -1,15 +1,17 @@
 import { getItem, setItem, removeItem } from '@proton/shared/lib/helpers/storage';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import { Api } from '@proton/shared/lib/interfaces';
-import { getMessageCountsModel } from '@proton/shared/lib/models/messageCountsModel';
+import { LabelCount } from '@proton/shared/lib/interfaces';
 import { destroyOpenPGP, loadOpenPGP } from '@proton/shared/lib/openpgp';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { IDBPDatabase, openDB, deleteDB } from 'idb';
+import { Location, History } from 'history';
 import { EncryptedSearchDB, GetUserKeys } from '../../models/encryptedSearch';
 import { ES_MAX_PARALLEL_MESSAGES } from '../../constants';
 import { decryptIndexKey } from './esBuild';
+import { extractSearchParameters, filterFromUrl, pageFromUrl, setSortInUrl, sortFromUrl } from '../mailboxUrl';
+import { isSearch } from '../elements';
 
 /**
  * Helpers to work with ES blobs in localStorage
@@ -215,13 +217,8 @@ export const updateSizeIDB = (userID: string, addend: number) => {
 /**
  * Read the current total amount of messages
  */
-export const getTotalMessages = async (inputMessageCounts: any, api: Api) => {
-    // If messageCounts hasn't been loaded, we fetch the information directly
-    const messageCounts = inputMessageCounts || (await getMessageCountsModel(api));
-    const { Total }: { Total: number } = messageCounts.find(
-        ({ LabelID }: { LabelID: string }) => LabelID === MAILBOX_LABEL_IDS.ALL_MAIL
-    );
-    return Total;
+export const getTotalMessages = async (messageCounts: LabelCount[]) => {
+    return messageCounts.find((labelCount) => labelCount?.LabelID === MAILBOX_LABEL_IDS.ALL_MAIL)?.Total || 0;
 };
 
 /**
@@ -278,4 +275,25 @@ export const checkNewUserID = async (getUserKeys: GetUserKeys) => {
             })
         )
     ).filter(isTruthy);
+};
+
+/**
+ * Parse search parameters from URL
+ */
+export const parseSearchParams = (location: Location) => {
+    const searchParameters = extractSearchParameters(location);
+    return {
+        filterParameter: filterFromUrl(location),
+        sortParameter: sortFromUrl(location),
+        isSearch: isSearch(searchParameters),
+        page: pageFromUrl(location),
+        searchParameters,
+    };
+};
+
+/**
+ * Reset sort in URL, e.g because ES doesn't support SIZE sort
+ */
+export const resetSort = (history: History) => {
+    history.push(setSortInUrl(history.location, { sort: 'Time', desc: true }));
 };
