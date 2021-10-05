@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { addDomain, getDomain } from '@proton/shared/lib/api/domains';
 import { VERIFY_STATE, DOMAIN_STATE, SPF_STATE, MX_STATE, DMARC_STATE, DKIM_STATE } from '@proton/shared/lib/constants';
 import { FormModal, ButtonGroup, RoundedIcon, Tooltip, Icon, Button } from '../../components';
-import { useLoading, useApi, useStep, useNotifications, useDomains } from '../../hooks';
+import { useLoading, useApi, useStep, useNotifications, useDomains, useEventManager } from '../../hooks';
 import { classnames } from '../../helpers';
 
 import DomainSection from './DomainSection';
@@ -46,6 +46,12 @@ const DomainModal = ({ onClose, domain = {}, domainAddresses = [], ...rest }) =>
     const [domainName, updateDomainName] = useState(domainModel.DomainName);
     const api = useApi();
     const { step, next, goTo } = useStep();
+    const { call } = useEventManager();
+
+    const handleClose = async () => {
+        void call(); // Refresh domains model present in background page
+        onClose();
+    };
 
     const renderDKIMIcon = () => {
         const {
@@ -160,6 +166,7 @@ const DomainModal = ({ onClose, domain = {}, domainAddresses = [], ...rest }) =>
                 }
                 const { Domain } = await api(addDomain(domainName));
                 setDomain(Domain);
+                await call();
                 next();
             };
 
@@ -183,6 +190,7 @@ const DomainModal = ({ onClose, domain = {}, domainAddresses = [], ...rest }) =>
                 }
 
                 setDomain(Domain);
+                await call();
                 createNotification({ text: c('Success').t`Domain verified` });
                 next();
             };
@@ -223,7 +231,7 @@ const DomainModal = ({ onClose, domain = {}, domainAddresses = [], ...rest }) =>
 
         if (step === STEPS.ADDRESSES) {
             return {
-                section: <AddressesSection onClose={onClose} />,
+                section: <AddressesSection onClose={handleClose} />,
                 submit: c('Action').t`Done`,
                 onSubmit: onClose,
             };
@@ -241,7 +249,7 @@ const DomainModal = ({ onClose, domain = {}, domainAddresses = [], ...rest }) =>
 
     return (
         <FormModal
-            onClose={onClose}
+            onClose={handleClose}
             close={c('Action').t`Close`}
             submit={c('Action').t`Next`}
             title={domainModel.ID ? c('Title').t`Edit domain` : c('Title').t`Add domain`}
