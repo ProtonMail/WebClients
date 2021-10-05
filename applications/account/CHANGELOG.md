@@ -1,8 +1,14 @@
+## Release: 4.0.7 — October 20, 2021
+
+### Improvements
+
+-   General design & UI/UX enhancements
+
 ## Release: 4.0.6 — September 1, 2021
 
 ### Fixes
 
-- Minor text corrections and improvements
+-   Minor text corrections and improvements
 
 ## Release: 4.0.5 — August 26, 2021
 
