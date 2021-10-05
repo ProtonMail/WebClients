@@ -8,7 +8,7 @@ import { AttachmentsCache } from '../../containers/AttachmentProvider';
 import { getPlainText } from '../message/messageContent';
 import { prepareExport } from '../message/messageExport';
 import { Download, formatDownload } from '../attachment/attachmentDownloader';
-import { readCID } from '../message/messageEmbeddeds';
+import { readContentIDandLocation } from '../message/messageEmbeddeds';
 
 // Reference: Angular/src/app/composer/services/mimeMessageBuilder.js
 
@@ -25,8 +25,10 @@ const extractContentValue = (value = '') => {
 
 const getAttachmentsByType = (attachments: Download[], messageImages: MessageImages | undefined, inline: boolean) =>
     attachments.filter((attachmentData) => {
-        const cid = readCID(attachmentData.attachment);
-        const image = messageImages?.images.find((image) => (image as MessageEmbeddedImage).cid === cid);
+        const { cid, cloc } = readContentIDandLocation(attachmentData.attachment);
+        const image = messageImages?.images.find(
+            (image) => (image as MessageEmbeddedImage).cid === cid || (image as MessageEmbeddedImage).cloc === cloc
+        );
         return !!image === inline;
     });
 

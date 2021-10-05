@@ -10,7 +10,7 @@ import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { base64ToArray, arrayToBase64 } from '../base64';
 import { generateSessionKey, encryptSessionKey, GeneratedKey } from './crypto';
 import { MessageEmbeddedImage, MessageImage } from '../../models/message';
-import { readCID } from '../message/messageEmbeddeds';
+import { readContentIDandLocation } from '../message/messageEmbeddeds';
 
 export const createDocument = (content: string): Element => {
     const document = window.document.createElement('div');
@@ -75,7 +75,7 @@ export const createEmbeddedImage = (attachment: Attachment) =>
     ({
         type: 'embedded',
         attachment,
-        cid: readCID(attachment),
+        cid: readContentIDandLocation(attachment).cid,
         url: 'url',
         id: 'image-id',
         status: 'loaded',

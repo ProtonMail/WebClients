@@ -34,6 +34,10 @@ export const getGeneralPage = (user: UserModel, showPmMeSection: boolean) => {
                 text: c('Title').t`Advanced`,
                 id: 'advanced',
             },
+            {
+                text: c('Title').t`Spy Tracker Protection`,
+                id: 'spy-tracker',
+            },
         ].filter(isTruthy),
     };
 };

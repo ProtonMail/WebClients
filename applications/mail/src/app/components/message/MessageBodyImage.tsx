@@ -4,7 +4,7 @@ import { classnames, Icon, Loader, Tooltip } from '@proton/components';
 import { createPortal } from 'react-dom';
 import { c } from 'ttag';
 import { getAnchor } from '../../helpers/message/messageImages';
-import { MessageEmbeddedImage, MessageImage } from '../../models/message';
+import { MessageImage } from '../../models/message';
 
 const sizeProps: ['width', 'height'] = ['width', 'height'];
 
@@ -56,10 +56,7 @@ const MessageBodyImage = ({ showRemoteImages, showEmbeddedImages, image, anchor 
 
     const { type } = image;
     const showPlaceholder =
-        isError ||
-        (type === 'remote'
-            ? !showRemoteImages
-            : !showEmbeddedImages || (image as MessageEmbeddedImage).status !== 'loaded');
+        isError || image.status !== 'loaded' || (type === 'remote' ? !showRemoteImages : !showEmbeddedImages);
     const showImage = !showPlaceholder;
 
     const attributes =
@@ -91,7 +88,7 @@ const MessageBodyImage = ({ showRemoteImages, showEmbeddedImages, image, anchor 
         return <img ref={imageRef} src={image.url} onError={handleError} />;
     }
 
-    const showLoader = type === 'remote' ? false : (image as MessageEmbeddedImage).status === 'loading';
+    const showLoader = image.status === 'loading';
 
     const placeholderTooltip = isError
         ? c('Message image').t`Image did not load because the remote server’s identity certificate is invalid.`

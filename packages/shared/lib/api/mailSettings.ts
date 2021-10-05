@@ -178,3 +178,9 @@ export const updateFontSize = (FontSize: number) => ({
     method: 'put',
     data: { FontSize },
 });
+
+export const updateImageProxy = (ImageProxy: number, Action: 'add' | 'remove') => ({
+    url: 'mail/v4/settings/imageproxy',
+    method: 'put',
+    data: { ImageProxy, Action: Action === 'add' ? 1 : 0 },
+});

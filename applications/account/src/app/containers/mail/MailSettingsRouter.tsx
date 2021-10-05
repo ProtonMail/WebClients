@@ -12,6 +12,7 @@ import MailGeneralSettings from './MailGeneralSettings';
 import MailIdentityAndAddressesSettings from './MailIdentityAndAddressesSettings';
 import MailImapSmtpSettings from './MailImapSmtpSettings';
 import MailImportAndExportSettings from './MailImportAndExportSettings';
+import MailEmailPrivacySettings from './MailEmailPrivacySettings';
 
 const MailSettingsRouter = () => {
     const { path } = useRouteMatch();
@@ -22,6 +23,9 @@ const MailSettingsRouter = () => {
         <Switch>
             <Route path={`${path}/general`}>
                 <MailGeneralSettings user={user} location={location} />
+            </Route>
+            <Route path={`${path}/email-privacy`}>
+                <MailEmailPrivacySettings location={location} />
             </Route>
             <Route path={`${path}/identity-addresses`}>
                 <MailIdentityAndAddressesSettings location={location} />
