@@ -1,6 +1,7 @@
+import * as React from 'react';
+
 import { noop } from '@proton/shared/lib/helpers/function';
 import { wait } from '@proton/shared/lib/helpers/promise';
-import * as React from 'react';
 import {
     SidebarListItem,
     SidebarListItemContent,
@@ -8,29 +9,28 @@ import {
     SidebarListItemLink,
     useLoading,
 } from '@proton/components';
-import { useRouteMatch } from 'react-router-dom';
-import useDrive from '../../../hooks/drive/useDrive';
+
 import LocationAside from './ReloadSpinner';
 
-interface Props {
-    to: string;
-    icon: string;
-    children: React.ReactNode;
-    shareId?: string;
-}
-const DriveSidebarListItem = ({ to, children, icon, shareId }: Props) => {
-    const match = useRouteMatch();
-    const { events } = useDrive();
-    const [refreshing, withRefreshing] = useLoading(false);
+import useDriveEvents from '../../../hooks/drive/useDriveEvents';
 
-    const isActive = match.path === to;
+interface Props {
+    children: React.ReactNode;
+    icon: string;
+    isActive: boolean;
+    shareId?: string;
+    to: string;
+}
+const DriveSidebarListItem = ({ to, children, icon, shareId, isActive }: Props) => {
+    const driveEvents = useDriveEvents();
+    const [refreshing, withRefreshing] = useLoading(false);
 
     const left = icon ? <SidebarListItemContentIcon name={icon} /> : null;
     const right = isActive && shareId && <LocationAside refreshing={refreshing} />;
 
     const handleClick = () => {
         if (!refreshing && shareId) {
-            withRefreshing(Promise.all([events.callAll(shareId), wait(1000)])).catch(noop);
+            withRefreshing(Promise.all([driveEvents.callAll(shareId), wait(1000)])).catch(noop);
         }
     };
 
