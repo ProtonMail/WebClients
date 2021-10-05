@@ -37,7 +37,7 @@ interface Props {
 
 const AttachmentList = ({
     attachments,
-    pendingUploads,
+    pendingUploads = [],
     message,
     primaryAction,
     secondaryAction,
@@ -54,14 +54,19 @@ const AttachmentList = ({
     const [showInstant, setShowInstant] = useState(false);
 
     const [expanded, setExpanded] = useState(!collapsable);
+    const [manuallyExpanded, setManuallyExpanded] = useState(false);
     const [verifiedAttachments, setVerifiedAttachments] = useState<SimpleMap<VERIFICATION_STATUS>>({});
 
     const previewRef = useRef<AttachmentPreviewControls>();
 
     useEffect(() => {
-        if (pendingUploads !== undefined) {
-            setExpanded(pendingUploads.length > 0);
+        const dontCloseAfterUploadsWhenExpandedManually = manuallyExpanded && pendingUploads.length === 0;
+
+        if (dontCloseAfterUploadsWhenExpandedManually || collapsable === false) {
+            return;
         }
+
+        setExpanded(pendingUploads.length > 0);
     }, [pendingUploads]);
 
     const { size, sizeLabel, pureAttachmentsCount, embeddedAttachmentsCount, attachmentsCount } = getAttachmentCounts(
@@ -72,6 +77,7 @@ const AttachmentList = ({
     const handleToggleExpand = () => {
         if (collapsable) {
             setExpanded(!expanded);
+            setManuallyExpanded(!expanded);
         }
     };
 
