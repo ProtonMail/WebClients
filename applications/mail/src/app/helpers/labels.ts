@@ -11,7 +11,8 @@ import { Conversation } from '../models/conversation';
 import { getLabelIDs } from './elements';
 import { Element } from '../models/element';
 
-const { INBOX, TRASH, SPAM, ARCHIVE, SENT, DRAFTS, ALL_SENT, ALL_DRAFTS, SCHEDULED } = MAILBOX_LABEL_IDS;
+const { INBOX, TRASH, SPAM, ARCHIVE, SENT, DRAFTS, ALL_SENT, ALL_DRAFTS, SCHEDULED, OUTBOX } = MAILBOX_LABEL_IDS;
+const DEFAULT_FOLDERS = [INBOX, TRASH, SPAM, ARCHIVE, SENT, DRAFTS, SCHEDULED, OUTBOX];
 
 export type LabelChanges = { [labelID: string]: boolean };
 
@@ -153,7 +154,7 @@ export const getCurrentFolders = (
 };
 
 export const getCurrentFolderID = (labelIDs: string[] = [], customFoldersList: Folder[] = []): string => {
-    const allFolderIDs = [INBOX, ARCHIVE, SPAM, TRASH, SENT, DRAFTS, ...customFoldersList.map(({ ID }) => ID)];
+    const allFolderIDs = [...DEFAULT_FOLDERS, ...customFoldersList.map(({ ID }) => ID)];
     return labelIDs.find((labeID) => allFolderIDs.includes(labeID)) || '';
 };
 
