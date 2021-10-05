@@ -80,7 +80,7 @@ describe('Mailbox labels actions', () => {
         };
 
         it('should add a label to two conversations', async () => {
-            const labelRequestSpy = jest.fn();
+            const labelRequestSpy = jest.fn(() => ({ UndoToken: { Token: 'Token' } }));
             addApiMock(`mail/v4/conversations/label`, labelRequestSpy, 'put');
 
             const { getByTestId, getAllByTestId, getItems } = await setup({ conversations, labelID: label1.ID });
@@ -100,6 +100,7 @@ describe('Mailbox labels actions', () => {
             });
 
             expect(labelRequestSpy).toHaveBeenCalled();
+            // @ts-ignore
             const { url, method, data } = labelRequestSpy.mock.calls[0][0];
             expect({ url, method, data }).toEqual({
                 url: 'mail/v4/conversations/label',
@@ -109,7 +110,7 @@ describe('Mailbox labels actions', () => {
         });
 
         it('should remove a label to two conversations', async () => {
-            const labelRequestSpy = jest.fn();
+            const labelRequestSpy = jest.fn(() => ({ UndoToken: { Token: 'Token' } }));
             addApiMock(`mail/v4/conversations/unlabel`, labelRequestSpy, 'put');
 
             const { getByTestId, getAllByTestId, getItems } = await setup({ conversations, labelID: label1.ID });
@@ -129,6 +130,7 @@ describe('Mailbox labels actions', () => {
             });
 
             expect(labelRequestSpy).toHaveBeenCalled();
+            // @ts-ignore
             const { url, method, data } = labelRequestSpy.mock.calls[0][0];
             expect({ url, method, data }).toEqual({
                 url: 'mail/v4/conversations/unlabel',
@@ -138,8 +140,8 @@ describe('Mailbox labels actions', () => {
         });
 
         it('should add and remove a label of a conversation', async () => {
-            const labelRequestSpy = jest.fn();
-            const unlabelRequestSpy = jest.fn();
+            const labelRequestSpy = jest.fn(() => ({ UndoToken: { Token: 'Token' } }));
+            const unlabelRequestSpy = jest.fn(() => ({ UndoToken: { Token: 'Token' } }));
             addApiMock(`mail/v4/conversations/label`, labelRequestSpy, 'put');
             addApiMock(`mail/v4/conversations/unlabel`, unlabelRequestSpy, 'put');
 
@@ -184,7 +186,7 @@ describe('Mailbox labels actions', () => {
         };
 
         it('should move two conversations in a another folder', async () => {
-            const labelRequestSpy = jest.fn();
+            const labelRequestSpy = jest.fn(() => ({ UndoToken: { Token: 'Token' } }));
             addApiMock(`mail/v4/conversations/label`, labelRequestSpy, 'put');
 
             const { getByTestId, getAllByTestId, getItems } = await setup({ conversations, labelID: folder1.ID });

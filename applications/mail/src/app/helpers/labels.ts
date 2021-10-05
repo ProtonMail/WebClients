@@ -176,28 +176,39 @@ export const isAutoRead = (labelID: MAILBOX_LABEL_IDS | string) =>
 export const isUnmodifiableByUser = (labelID: MAILBOX_LABEL_IDS | string) =>
     LABELS_UNMODIFIABLE_BY_USER.includes(labelID as MAILBOX_LABEL_IDS);
 
-export const applyLabelChangesOnMessage = (message: Message, changes: LabelChanges): Message => {
+export const applyLabelChangesOnMessage = (
+    message: Message,
+    changes: LabelChanges,
+    unreadStatuses?: { id: string; unread: number }[]
+): Message => {
     const { LabelIDs } = message;
-    let { Unread } = message;
 
     Object.keys(changes).forEach((labelID) => {
         const index = LabelIDs.findIndex((existingLabelID) => existingLabelID === labelID);
         if (changes[labelID]) {
             if (index === -1) {
                 LabelIDs.push(labelID);
-                if (isAutoRead(labelID)) {
-                    Unread = 0;
-                }
             }
         } else if (index >= 0) {
             LabelIDs.splice(index, 1);
         }
     });
 
-    return { ...message, LabelIDs, Unread };
+    if (unreadStatuses) {
+        const elementUnreadStatus = unreadStatuses.find((element) => element.id === message.ID)?.unread;
+        if (elementUnreadStatus) {
+            return { ...message, LabelIDs, Unread: elementUnreadStatus };
+        }
+    }
+
+    return { ...message, LabelIDs };
 };
 
-export const applyLabelChangesOnConversation = (conversation: Conversation, changes: LabelChanges): Conversation => {
+export const applyLabelChangesOnConversation = (
+    conversation: Conversation,
+    changes: LabelChanges,
+    unreadStatuses?: { id: string; unread: number }[]
+): Conversation => {
     const Labels = [...(conversation.Labels || [])];
     Object.keys(changes).forEach((labelID) => {
         const index = Labels.findIndex((existingLabel) => existingLabel.ID === labelID);
@@ -214,9 +225,15 @@ export const applyLabelChangesOnConversation = (conversation: Conversation, chan
             Labels.splice(index, 1);
         }
     });
-    const NumUnread = Object.keys(changes).some((labelID) => isAutoRead(labelID)) ? 0 : conversation.NumUnread;
 
-    return { ...conversation, Labels, NumUnread };
+    if (unreadStatuses) {
+        const elementUnreadStatus = unreadStatuses.find((element) => element.id === conversation.ID)?.unread;
+        if (elementUnreadStatus) {
+            return { ...conversation, Labels, NumUnread: elementUnreadStatus };
+        }
+    }
+
+    return { ...conversation, Labels };
 };
 
 export const applyLabelChangesOnOneMessageOfAConversation = (

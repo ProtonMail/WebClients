@@ -1,31 +1,61 @@
-import { useCallback } from 'react';
-import { useApi, useEventManager, useMailSettings } from '@proton/components';
+import React, { useCallback } from 'react';
+import { c, msgid } from 'ttag';
+import { useApi, useEventManager, useMailSettings, useNotifications } from '@proton/components';
 import { useHistory } from 'react-router-dom';
 import { markMessageAsRead, markMessageAsUnread } from '@proton/shared/lib/api/messages';
 import { markConversationsAsRead, markConversationsAsUnread } from '@proton/shared/lib/api/conversations';
-
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import { undoActions } from '@proton/shared/lib/api/mailUndoActions';
+
 import { isMessage as testIsMessage } from '../helpers/elements';
 import { Element } from '../models/element';
-
+import UndoActionNotification from '../components/notifications/UndoActionNotification';
 import { useOptimisticMarkAs } from './optimistic/useOptimisticMarkAs';
 import { useSetElementsCache } from './mailbox/useElementsCache';
 import { isConversationMode } from '../helpers/mailSettings';
+import { SUCCESS_NOTIFICATION_EXPIRATION } from '../constants';
 
 export enum MARK_AS_STATUS {
     READ = 'read',
     UNREAD = 'unread',
 }
 
+const getNotificationTextMarked = (isMessage: boolean, elementsCount: number, status: MARK_AS_STATUS) => {
+    const action = status === MARK_AS_STATUS.READ ? c('Action').t`mark as read` : c('Action').t`mark as unread`;
+
+    if (isMessage) {
+        if (elementsCount === 1) {
+            return c('Success').t`Message ${action}.`;
+        }
+
+        return c('Success').ngettext(
+            msgid`${elementsCount} message ${action}.`,
+            `${elementsCount} messages ${action}.`,
+            elementsCount
+        );
+    }
+
+    if (elementsCount === 1) {
+        return c('Success').t`Conversation ${action}.`;
+    }
+
+    return c('Success').ngettext(
+        msgid`${elementsCount} conversation ${action}.`,
+        `${elementsCount} conversations ${action}.`,
+        elementsCount
+    );
+};
+
 export const useMarkAs = () => {
     const api = useApi();
-    const { call } = useEventManager();
+    const { call, start, stop } = useEventManager();
     const optimisticMarkAs = useOptimisticMarkAs();
     const setElementsCache = useSetElementsCache();
     const [mailSettings] = useMailSettings();
     const history = useHistory();
+    const { createNotification } = useNotifications();
 
-    const markAs = useCallback((elements: Element[], labelID = '', status: MARK_AS_STATUS) => {
+    const markAs = useCallback((elements: Element[], labelID = '', status: MARK_AS_STATUS, silent = false) => {
         if (!elements.length) {
             return;
         }
@@ -55,22 +85,51 @@ export const useMarkAs = () => {
         });
 
         const request = async () => {
+            let token;
             try {
-                await api(
+                // Stop the event manager to prevent race conditions
+                stop();
+                const { UndoToken } = await api(
                     action(
                         elements.map((element) => element.ID),
                         labelID
                     )
                 );
-            } catch (error: any) {
+                token = UndoToken.Token;
+            } catch (error:any) {
                 rollback();
                 throw error;
+            } finally {
+                start();
+                await call();
             }
-            await call();
+            return token;
         };
 
         // No await since we are doing optimistic UI here
-        void request();
+        const promise = request();
+
+        if (!silent) {
+            const notificationText = getNotificationTextMarked(isMessage, elements.length, status);
+
+            const handleUndo = async () => {
+                try {
+                    // Stop the event manager to prevent race conditions
+                    stop();
+                    rollback();
+                    const token = await promise;
+                    await api(undoActions(token));
+                } finally {
+                    start();
+                    await call();
+                }
+            };
+
+            createNotification({
+                text: <UndoActionNotification onUndo={handleUndo}>{notificationText}</UndoActionNotification>,
+                expiration: SUCCESS_NOTIFICATION_EXPIRATION,
+            });
+        }
     }, []);
 
     return markAs;
