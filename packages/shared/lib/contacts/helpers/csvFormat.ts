@@ -1,3 +1,4 @@
+import isTruthy from '../../helpers/isTruthy';
 import { capitalize, normalize } from '../../helpers/string';
 import { ContactValue } from '../../interfaces/contacts';
 import {
@@ -154,7 +155,7 @@ export const standarize = ({ headers, contacts }: ParsedCsvContacts) => {
                 beChanged[i + 4] = `${capitalize(toVcardType(value))} PO Box ${n}`.trim();
                 beChanged[i + 5] = `${capitalize(toVcardType(value))} State ${n}`.trim();
                 beChanged[i + 6] = `${capitalize(toVcardType(value))} Postal Code ${n}`.trim();
-                beChanged[i + 7] = `${capitalize(toVcardType(value))} Country/Region ${n}`.trim();
+                beChanged[i + 7] = `${capitalize(toVcardType(value))} Country ${n}`.trim();
                 beChanged[i + 8] = `${capitalize(toVcardType(value))} Extended Address ${n}`.trim();
                 return acc;
             }
@@ -249,13 +250,14 @@ const templates = {
         };
     },
     email({ pref, header, value, type }: TemplateArgs) {
-        if (typeof value === 'string') {
+        const googleSeparator = ' ::: ';
+        if (typeof value === 'string' && value.includes(googleSeparator)) {
             /*
              * Google CSV may contain several emails in a field such as
              * "email1@protonmail.com ::: email2@protonmail.com ::: email3@protonmail.com"
-             * So we need to split the value to create a string[]
+             * We split the value to create a string[]
              */
-            const splitEmails = value.split(' ::: ');
+            const splitEmails = value.split(googleSeparator).filter(isTruthy);
             if (splitEmails.length > 1) {
                 return {
                     pref,
@@ -671,14 +673,9 @@ export const display: Display = {
         return propertyORG.filter(Boolean).join('; ');
     },
     email(preVcards: PreVcardsProperty) {
-        // If the value is an array, display values joined by a coma, otherwise display the value
-        let prevCardValue;
-        preVcards.forEach(({ value }) => {
-            if (Array.isArray(value)) {
-                prevCardValue = value.join(', ');
-            }
-        });
-        return prevCardValue || getFirstValue(preVcards);
+        // If the value is an array, display values joined by a comma, otherwise display the value
+        const { value } = preVcards[0];
+        return Array.isArray(value) ? value.join(', ') : value;
     },
     tel: getFirstValue,
     photo: getFirstValue,
