@@ -35,9 +35,18 @@ interface Props {
     toggleMinimized: () => void;
     toggleMaximized: () => void;
     onClose: () => void;
+    handleStartDragging: React.MouseEventHandler<HTMLElement>;
 }
 
-const ComposerTitleBar = ({ title, minimized, maximized, toggleMinimized, toggleMaximized, onClose }: Props) => {
+const ComposerTitleBar = ({
+    title,
+    minimized,
+    maximized,
+    toggleMinimized,
+    toggleMaximized,
+    handleStartDragging,
+    onClose,
+}: Props) => {
     const isSafari = checkIsSafari();
 
     const [{ Shortcuts = 0 } = {}] = useMailSettings();
@@ -92,7 +101,15 @@ const ComposerTitleBar = ({ title, minimized, maximized, toggleMinimized, toggle
             className="composer-title-bar ui-prominent flex flex-row flex-align-items-center flex-nowrap pl0-5 pr0-5 w100"
             onDoubleClick={handleDoubleClick}
         >
-            <span className="flex-item-fluid p0-5 pr1 text-ellipsis">{title}</span>
+            <span
+                className={classnames([
+                    'flex-item-fluid p0-5 pr1 text-ellipsis user-select-none',
+                    (!maximized || minimized) && 'cursor-move',
+                ])}
+                onMouseDown={handleStartDragging}
+            >
+                {title}
+            </span>
             <TitleBarButton
                 className={classnames(['no-mobile', minimized && 'rotateX-180'])}
                 title={titleMinimize}
