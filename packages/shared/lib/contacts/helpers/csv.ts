@@ -195,8 +195,32 @@ export const toVcard = (preVcards: PreVcardProperty[]): ContactPropertyWithDispl
           };
 };
 
+const sanitizeEmailProperties = (contactProperties: ContactProperties[]): ContactProperties[] => {
+    return contactProperties.map((contact) => {
+        return contact.reduce((contactArray: ContactProperties, property) => {
+            // If the property is an email having an array of emails as value
+            if (property.field === 'email' && Array.isArray(property.value)) {
+                // We create a property for each email
+                return [
+                    ...contactArray,
+                    property.value.map((value) => {
+                        return {
+                            ...property,
+                            display: value,
+                            value,
+                        };
+                    }),
+                ].flat();
+            }
+            return [...contactArray, property];
+        }, []);
+    });
+};
+
 /**
  * Transform pre-vCards contacts into vCard contacts
  */
 export const toVcardContacts = (preVcardsContacts: PreVcardsContact[]): ContactProperties[] =>
-    preVcardsContacts.map((preVcardsContact) => preVcardsContact.map(toVcard).filter(isTruthy).sort(sortByPref));
+    sanitizeEmailProperties(
+        preVcardsContacts.map((preVcardsContact) => preVcardsContact.map(toVcard).filter(isTruthy).sort(sortByPref))
+    );

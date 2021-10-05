@@ -249,6 +249,25 @@ const templates = {
         };
     },
     email({ pref, header, value, type }: TemplateArgs) {
+        if (typeof value === 'string') {
+            /*
+             * Google CSV may contain several emails in a field such as
+             * "email1@protonmail.com ::: email2@protonmail.com ::: email3@protonmail.com"
+             * So we need to split the value to create a string[]
+             */
+            const splitEmails = value.split(' ::: ');
+            if (splitEmails.length > 1) {
+                return {
+                    pref,
+                    header,
+                    value: splitEmails,
+                    checked: true,
+                    field: 'email',
+                    type,
+                    group: pref,
+                };
+            }
+        }
         return {
             pref,
             header,
@@ -651,7 +670,16 @@ export const display: Display = {
         });
         return propertyORG.filter(Boolean).join('; ');
     },
-    email: getFirstValue,
+    email(preVcards: PreVcardsProperty) {
+        // If the value is an array, display values joined by a coma, otherwise display the value
+        let prevCardValue;
+        preVcards.forEach(({ value }) => {
+            if (Array.isArray(value)) {
+                prevCardValue = value.join(', ');
+            }
+        });
+        return prevCardValue || getFirstValue(preVcards);
+    },
     tel: getFirstValue,
     photo: getFirstValue,
     bday: getFirstValue,
