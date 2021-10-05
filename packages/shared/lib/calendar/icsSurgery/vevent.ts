@@ -13,7 +13,7 @@ import {
 import { dedupeAlarmsWithNormalizedTriggers } from '../alarms';
 import { getAttendeeEmail, getSupportedAttendee, getSupportedOrganizer } from '../attendees';
 import { ICAL_METHOD, MAX_LENGTHS } from '../constants';
-import { getHasConsistentRrule, getSupportedRrule } from '../rrule';
+import { getHasConsistentRrule, getHasOccurrences, getSupportedRrule } from '../rrule';
 import {
     dateToProperty,
     getDateTimeProperty,
@@ -112,12 +112,14 @@ export const getSupportedDateOrDateTimeProperty = ({
     }
 
     const supportedTzid = getSupportedTimezone(partDayPropertyTzid);
+
     if (!supportedTzid) {
         if (isInvite) {
             throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_UNSUPPORTED, { method });
         }
         throw new ImportEventError(IMPORT_EVENT_ERROR_TYPE.TZID_UNSUPPORTED, component, componentId);
     }
+
     return getDateTimeProperty(partDayProperty.value, supportedTzid);
 };
 
@@ -253,6 +255,7 @@ export const getSupportedEvent = ({
             isRecurring,
             guessTzid,
         });
+
         const isAllDayStart = getIsPropertyAllDay(validated.dtstart);
         const startTzid = getPropertyTzid(validated.dtstart);
         if (!getIsWellFormedDateOrDateTime(validated.dtstart)) {
@@ -371,6 +374,9 @@ export const getSupportedEvent = ({
                 throw new ImportEventError(IMPORT_EVENT_ERROR_TYPE.RRULE_UNSUPPORTED, 'vevent', componentId);
             }
             validated.rrule = supportedRrule;
+            if (!getHasOccurrences(vcalVeventComponent)) {
+                throw new ImportEventError(IMPORT_EVENT_ERROR_TYPE.NO_OCCURRENCES, 'vevent', componentId);
+            }
             if (!getHasConsistentRrule(validated)) {
                 if (isEventInvitation) {
                     throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_INVALID, { method });

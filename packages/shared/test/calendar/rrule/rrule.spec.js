@@ -8,6 +8,7 @@ import {
     getIsStandardByday,
     getHasConsistentRrule,
     getIsRruleSimple,
+    getHasOccurrences,
 } from '../../../lib/calendar/rrule';
 import { FREQUENCY } from '../../../lib/calendar/constants';
 
@@ -35,14 +36,22 @@ describe('getSupportedUntil', () => {
     it('should keep the date for all-day events', () => {
         const tzid = 'Pacific/Niue';
         const until = { year: 2020, month: 6, day: 27, hours: 10, minutes: 59, seconds: 59, isUTC: true };
+        const dtstartValue = { year: 2010, month: 6, day: 27 };
         const expected = { year: 2020, month: 6, day: 27 };
-        expect(getSupportedUntil(until, true, tzid)).toEqual(expected);
+        expect(
+            getSupportedUntil({
+                until,
+                dtstart: { parameters: { type: 'date' }, value: dtstartValue },
+                tzid,
+            })
+        ).toEqual(expected);
     });
 
     it('should always return the same until if it was at the end of the day already', () => {
         const tzid = 'Pacific/Niue';
         const until = { year: 2020, month: 6, day: 27, hours: 10, minutes: 59, seconds: 59, isUTC: true };
-        expect(getSupportedUntil(until, false, tzid)).toEqual(until);
+        const dtstartValue = { year: 2010, month: 6, day: 27, hours: 10, minutes: 59, seconds: 59, isUTC: false };
+        expect(getSupportedUntil({ until, dtstart: { parameters: { tzid }, value: dtstartValue } })).toEqual(until);
     });
 
     it('should always return an until at the end of the day', () => {
@@ -55,15 +64,24 @@ describe('getSupportedUntil', () => {
             { year: 2020, month: 6, day: 28, hours: 10, minutes: 59, seconds: 59, isUTC: true },
             { year: 2020, month: 6, day: 27, hours: 10, minutes: 59, seconds: 59, isUTC: true },
         ];
-        expect(untils.map((until) => getSupportedUntil(until, false, tzid))).toEqual(expected);
+        const dtstartValue = { year: 2010, month: 6, day: 28, hours: 10, minutes: 59, seconds: 59, isUTC: false };
+        expect(
+            untils.map((until) => getSupportedUntil({ until, dtstart: { parameters: { tzid }, value: dtstartValue } }))
+        ).toEqual(expected);
     });
 
     it('should keep the right date for all-day events when a guess tzid is passed', () => {
-        const tzid = 'Pacific/Niue';
         const guessTzid = 'Asia/Taipei';
         const until = { year: 2020, month: 11, day: 24, hours: 16, minutes: 0, seconds: 0, isUTC: true };
+        const dtstartValue = { year: 2010, month: 11, day: 24 };
         const expected = { year: 2020, month: 11, day: 25 };
-        expect(getSupportedUntil(until, true, tzid, guessTzid)).toEqual(expected);
+        expect(
+            getSupportedUntil({
+                until,
+                dtstart: { parameters: { type: 'date' }, value: dtstartValue },
+                guessTzid,
+            })
+        ).toEqual(expected);
     });
 });
 
@@ -277,6 +295,46 @@ describe('getIsRruleCustom', () => {
             },
         ];
         expect(rrules.map(getIsRruleCustom)).toEqual(rrules.map(() => false));
+    });
+});
+
+describe('getHasOccurrences', () => {
+    it('should filter out events that generate no occurrence', () => {
+        const vevent = {
+            dtstart: {
+                value: { year: 2015, month: 8, day: 25, hours: 18, minutes: 30, seconds: 0, isUTC: false },
+                parameters: {
+                    tzid: 'Europe/Paris',
+                },
+            },
+            dtend: {
+                value: { year: 2015, month: 8, day: 25, hours: 18, minutes: 35, seconds: 0, isUTC: false },
+                parameters: {
+                    tzid: 'Europe/Paris',
+                },
+            },
+            rrule: {
+                value: {
+                    freq: 'DAILY',
+                    count: 2,
+                },
+            },
+            exdate: [
+                {
+                    value: { year: 2015, month: 8, day: 25, hours: 18, minutes: 30, seconds: 0, isUTC: false },
+                    parameters: {
+                        tzid: 'Europe/Paris',
+                    },
+                },
+                {
+                    value: { year: 2015, month: 8, day: 26, hours: 18, minutes: 30, seconds: 0, isUTC: false },
+                    parameters: {
+                        tzid: 'Europe/Paris',
+                    },
+                },
+            ],
+        };
+        expect(getHasOccurrences(vevent)).toEqual(false);
     });
 });
 
@@ -568,44 +626,6 @@ describe('getHasConsistentRrule', () => {
             ],
         };
         expect(getHasConsistentRrule(vevent)).toEqual(true);
-    });
-
-    it('should filter out events that generate no occurrence', () => {
-        const vevent = {
-            dtstart: {
-                value: { year: 2015, month: 8, day: 25, hours: 18, minutes: 30, seconds: 0, isUTC: false },
-                parameters: {
-                    tzid: 'Europe/Paris',
-                },
-            },
-            dtend: {
-                value: { year: 2015, month: 8, day: 25, hours: 18, minutes: 35, seconds: 0, isUTC: false },
-                parameters: {
-                    tzid: 'Europe/Paris',
-                },
-            },
-            rrule: {
-                value: {
-                    freq: 'DAILY',
-                    count: 2,
-                },
-            },
-            exdate: [
-                {
-                    value: { year: 2015, month: 8, day: 25, hours: 18, minutes: 30, seconds: 0, isUTC: false },
-                    parameters: {
-                        tzid: 'Europe/Paris',
-                    },
-                },
-                {
-                    value: { year: 2015, month: 8, day: 26, hours: 18, minutes: 30, seconds: 0, isUTC: false },
-                    parameters: {
-                        tzid: 'Europe/Paris',
-                    },
-                },
-            ],
-        };
-        expect(getHasConsistentRrule(vevent)).toEqual(false);
     });
 
     it('should filter out events with an UNTIL earlier than DTSTART', () => {
