@@ -328,9 +328,7 @@ SUMMARY:Scenka: napad na bank
 TRANSP:OPAQUE
 END:VEVENT`;
         const event = parse(vevent) as VcalVeventComponent;
-        expect(() => getSupportedEvent({ vcalVeventComponent: event, hasXWrTimezone: false })).toThrowError(
-            'Malformed recurring event'
-        );
+        expect(() => getSupportedEvent({ vcalVeventComponent: event, hasXWrTimezone: false })).toThrowError('');
     });
 
     it('should catch non-supported rrules', () => {
