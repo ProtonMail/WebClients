@@ -1,5 +1,4 @@
 import { encryptSessionKey, encryptMessage, OpenPGPKey, encodeBase64, arrayToBinaryString } from 'pmcrypto';
-import { enums } from 'openpgp';
 import { createDraft, updateDraft } from '@proton/shared/lib/api/messages';
 import { Api } from '@proton/shared/lib/interfaces';
 import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
@@ -46,7 +45,6 @@ const encryptBody = async (content: string, messageKeys: MessageKeys) => {
         data: content,
         publicKeys,
         privateKeys,
-        compression: enums.compression.zip,
     });
 
     return data;
