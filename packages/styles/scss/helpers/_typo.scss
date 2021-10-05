@@ -184,6 +184,10 @@
 	user-select: all;
 }
 
+.user-select-none {
+	user-select: none;
+}
+
 /* TODO: If everything works fine, remove this!
 .primary-link {
 	&:focus,
