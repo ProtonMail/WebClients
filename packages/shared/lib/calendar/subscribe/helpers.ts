@@ -103,7 +103,7 @@ export const getCalendarIsNotSyncedInfo = (calendar: SubscribedCalendar) => {
 
     if ([HTTP_REQUEST_FAILED_GENERIC, HTTP_REQUEST_FAILED_INTERNAL_SERVER_ERROR].includes(Status)) {
         return getNotSyncedInfo(
-            c('Calendar subscription not synced error').t`Calendar link is temporarily unaccessible`
+            c('Calendar subscription not synced error').t`Calendar link is temporarily inaccessible`
         );
     }
 
