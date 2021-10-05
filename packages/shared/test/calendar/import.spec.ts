@@ -163,7 +163,7 @@ END:VEVENT`;
         });
     });
 
-    it('should catch events whose duration is specified through the DURATION field', () => {
+    it('should modify events whose duration is specified to convert that into a dtend', () => {
         const vevent = `BEGIN:VEVENT
 DTSTAMP:19980309T231000Z
 UID:test-event
@@ -172,9 +172,21 @@ DURATION:PT1H0M0S
 LOCATION:1CP Conference Room 4350
 END:VEVENT`;
         const event = parse(vevent) as VcalVeventComponent;
-        expect(() => getSupportedEvent({ vcalVeventComponent: event, hasXWrTimezone: false })).toThrowError(
-            'Event duration not supported'
-        );
+        expect(getSupportedEvent({ vcalVeventComponent: event, hasXWrTimezone: false })).toEqual({
+            component: 'vevent',
+            uid: { value: 'test-event' },
+            dtstamp: { value: { year: 1998, month: 3, day: 9, hours: 23, minutes: 10, seconds: 0, isUTC: true } },
+            dtstart: {
+                value: { year: 2002, month: 3, day: 12, hours: 8, minutes: 30, seconds: 0, isUTC: false },
+                parameters: { tzid: 'America/New_York' },
+            },
+            location: { value: '1CP Conference Room 4350' },
+            sequence: { value: 0 },
+            dtend: {
+                value: { year: 2002, month: 3, day: 12, hours: 9, minutes: 30, seconds: 0, isUTC: false },
+                parameters: { tzid: 'America/New_York' },
+            },
+        });
     });
 
     it('should filter out notifications out of bounds', () => {
