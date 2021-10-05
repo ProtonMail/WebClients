@@ -4,25 +4,26 @@ import { usePreventLeave, useModals } from '@proton/components';
 import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 
-import useQueuedFunction from '../util/useQueuedFunction';
-import useListNotifications from '../util/useListNotifications';
-import useFiles from './useFiles';
-import useTrash from './useTrash';
-import useNavigate from './useNavigate';
-import useConfirm from '../util/useConfirm';
-import useSharing from './useSharing';
-import useDrive from './useDrive';
-import FileSaver from '../../utils/FileSaver/FileSaver';
-import { getMetaForTransfer } from '../../utils/transfer';
 import { DriveFolder } from './useActiveShare';
-import RenameModal from '../../components/RenameModal';
-import DetailsModal from '../../components/DetailsModal';
-import MoveToFolderModal from '../../components/MoveToFolderModal/MoveToFolderModal';
+import { getMetaForTransfer } from '../../utils/transfer';
 import CreateFolderModal from '../../components/CreateFolderModal';
-import ShareModal from '../../components/ShareModal/ShareModal';
-import ShareLinkModal from '../../components/ShareLinkModal/ShareLinkModal';
-import SelectedFileToShareModal from '../../components/SelectedFileToShareModal/SelectedFileToShareModal';
+import DetailsModal from '../../components/DetailsModal';
+import FileSaver from '../../utils/FileSaver/FileSaver';
 import FilesDetailsModal from '../../components/FilesDetailsModal';
+import MoveToFolderModal from '../../components/MoveToFolderModal/MoveToFolderModal';
+import RenameModal from '../../components/RenameModal';
+import SelectedFileToShareModal from '../../components/SelectedFileToShareModal/SelectedFileToShareModal';
+import ShareLinkModal from '../../components/ShareLinkModal/ShareLinkModal';
+import ShareModal from '../../components/ShareModal/ShareModal';
+import useConfirm from '../util/useConfirm';
+import useDrive from './useDrive';
+import useDriveEvents from './useDriveEvents';
+import useFiles from './useFiles';
+import useListNotifications from '../util/useListNotifications';
+import useNavigate from './useNavigate';
+import useQueuedFunction from '../util/useQueuedFunction';
+import useSharing from './useSharing';
+import useTrash from './useTrash';
 
 function useActions() {
     const queuedFunction = useQueuedFunction();
@@ -32,7 +33,8 @@ function useActions() {
     const { createModal } = useModals();
     const { deleteTrashedLinks, restoreLinks, trashLinks } = useTrash();
     const { deleteMultipleSharedLinks } = useSharing();
-    const { events, deleteShare } = useDrive();
+    const { deleteShare } = useDrive();
+    const driveEvents = useDriveEvents();
 
     const {
         createDeleteLinksNotifications,
@@ -222,7 +224,7 @@ function useActions() {
             onConfirm: async () => {
                 const deletedCount = await deleteLinks(itemsToStopSharing);
                 const failedCount = itemsToStopSharing.length - deletedCount;
-                await events.callAll(shareId);
+                await driveEvents.callAll(shareId);
                 createDeleteSharedLinksNotifications(deletedCount, failedCount);
             },
         });

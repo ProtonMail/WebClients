@@ -13,8 +13,8 @@ import {
 } from '@proton/shared/lib/interfaces/drive/link';
 import { ShareMeta, ShareMetaShort } from '@proton/shared/lib/interfaces/drive/share';
 import { ShareURL } from '@proton/shared/lib/interfaces/drive/sharing';
-import { isPrimaryShare } from '@proton/shared/lib/drive/utils/share';
 import { DEFAULT_SORT_PARAMS_DRIVE } from '@proton/shared/lib/drive/constants';
+import { isMainShare } from '@proton/shared/lib/drive/utils/share';
 
 interface FileLinkKeys {
     privateKey: OpenPGPKey;
@@ -96,8 +96,9 @@ interface DriveCacheState {
 
 const useDriveCacheState = () => {
     const cacheRef = useRef<DriveCacheState>({});
-    const [defaultShare, setDefaultShare] = useState<string>();
-    const [lockedShares, setLockedShares] = useState<ShareMetaShort[]>([]);
+    const [defaultShareId, setDefaultShareId] = useState<ShareMetaShort['ShareID']>();
+    const [mainShareIdList, setMainShareIdList] = useState<ShareMetaShort['ShareID'][]>([]);
+
     const [sharesReadyToRestore, setSharesReadyToRestore] = useState<
         {
             lockedShareMeta: ShareMeta;
@@ -105,6 +106,20 @@ const useDriveCacheState = () => {
         }[]
     >([]);
     const [, setRerender] = useState(0);
+
+    const mainShares = React.useMemo(() => {
+        return mainShareIdList
+            .map((shareId: string) => {
+                return cacheRef.current[shareId];
+            })
+            .filter(Boolean)
+            .map((share) => share.meta)
+            .filter(Boolean) as (ShareMeta | ShareMetaShort)[];
+    }, [mainShareIdList]);
+
+    const lockedShares = React.useMemo(() => {
+        return mainShares.filter((share) => share.Locked);
+    }, [mainShareIdList]);
 
     const setLinkMeta = (
         metas: LinkMeta | LinkMeta[],
@@ -411,7 +426,7 @@ const useDriveCacheState = () => {
     const getShareMeta = (shareId: string) => cacheRef.current[shareId].meta;
     const getShareKeys = (shareId: string) => cacheRef.current[shareId].keys;
     const getDefaultShareMeta = () => {
-        return defaultShare ? cacheRef.current[defaultShare].meta : undefined;
+        return defaultShareId ? cacheRef.current[defaultShareId].meta : undefined;
     };
     const getLinkMeta = (shareId: string, linkId: string): LinkMeta | undefined =>
         cacheRef.current[shareId].links[linkId]?.meta;
@@ -532,7 +547,7 @@ const useDriveCacheState = () => {
                 cacheRef.current[share.ShareID].meta = share;
             }
 
-            if (isPrimaryShare(share)) {
+            if (isMainShare(share)) {
                 cacheRef.current[share.ShareID].trash = {
                     complete: false,
                     locked: false,
@@ -698,53 +713,54 @@ const useDriveCacheState = () => {
 
     return {
         set: {
-            trashLinkMetas: setTrashLinkMetas,
-            childLinkMetas: setChildLinkMetas,
-            foldersOnlyLinkMetas: setFoldersOnlyLinkMetas,
-            linkMeta: setLinkMeta,
-            linkKeys: setLinkKeys,
-            shareMeta: setShareMeta,
-            shareKeys: setShareKeys,
-            emptyShares: setEmptyShares,
-            linksLocked: setLinksLocked,
             allTrashedLocked: setAllTrashedLocked,
+            childLinkMetas: setChildLinkMetas,
+            emptyShares: setEmptyShares,
+            foldersOnlyLinkMetas: setFoldersOnlyLinkMetas,
+            linkKeys: setLinkKeys,
+            linkMeta: setLinkMeta,
+            linksLocked: setLinksLocked,
+            mainShareIdList: setMainShareIdList,
             sharedLinkMetas: setSharedLinkMetas,
+            shareKeys: setShareKeys,
+            shareMeta: setShareMeta,
             shareURLs: setShareURLs,
+            trashLinkMetas: setTrashLinkMetas,
         },
         get: {
-            sharedLinkMetas: getSharedLinkMetas,
-            shareURL: getShareURL,
-            trashMetas: getTrashMetas,
-            trashComplete: getTrashComplete,
-            trashChildLinks: getTrashChildLinks,
-            defaultShareMeta: getDefaultShareMeta,
-            childrenComplete: getChildrenComplete,
-            sharedLinksComplete: getSharedLinksComplete,
-            childrenInitialized: getChildrenInitialized,
+            areAncestorsTrashed,
             childLinkMetas: getChildLinkMetas,
             childLinks: getChildLinks,
-            sharedLinks: getSharedLinks,
-            listedChildLinks: getListedChildLinks,
-            foldersOnlyLinkMetas: getFoldersOnlyLinkMetas,
-            listedFoldersOnlyLinks: getListedFoldersOnlyLinks,
+            childrenComplete: getChildrenComplete,
+            childrenInitialized: getChildrenInitialized,
+            defaultShareMeta: getDefaultShareMeta,
             foldersOnlyComplete: getfoldersOnlyComplete,
-            linkMeta: getLinkMeta,
-            linkKeys: getLinkKeys,
-            shareMeta: getShareMeta,
-            shareKeys: getShareKeys,
-            shareIds: getShareIds,
-            isTrashLocked,
+            foldersOnlyLinkMetas: getFoldersOnlyLinkMetas,
             isLinkLocked,
-            areAncestorsTrashed,
+            isTrashLocked,
+            linkKeys: getLinkKeys,
+            linkMeta: getLinkMeta,
+            listedChildLinks: getListedChildLinks,
+            listedFoldersOnlyLinks: getListedFoldersOnlyLinks,
+            lockedShares,
+            mainShares,
+            sharedLinkMetas: getSharedLinkMetas,
+            sharedLinks: getSharedLinks,
+            sharedLinksComplete: getSharedLinksComplete,
+            shareIds: getShareIds,
+            shareKeys: getShareKeys,
+            shareMeta: getShareMeta,
+            shareURL: getShareURL,
+            trashChildLinks: getTrashChildLinks,
+            trashComplete: getTrashComplete,
+            trashMetas: getTrashMetas,
         },
         delete: {
             links: deleteLinks,
         },
-        setDefaultShare,
-        setLockedShares,
+        defaultShareId,
+        setDefaultShareId,
         setSharesReadyToRestore,
-        defaultShare,
-        lockedShares,
         sharesReadyToRestore,
     };
 };
