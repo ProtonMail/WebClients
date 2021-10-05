@@ -144,10 +144,10 @@ describe('getCalendarIsNotSyncedInfo', () => {
         );
 
         expect(getCalendarIsNotSyncedInfo(getCommonCalendarWithStatus(HTTP_REQUEST_FAILED_GENERIC))).toEqual(
-            getNotSyncedInfo('Calendar link is temporarily unaccessible')
+            getNotSyncedInfo('Calendar link is temporarily inaccessible')
         );
         expect(
             getCalendarIsNotSyncedInfo(getCommonCalendarWithStatus(HTTP_REQUEST_FAILED_INTERNAL_SERVER_ERROR))
-        ).toEqual(getNotSyncedInfo('Calendar link is temporarily unaccessible'));
+        ).toEqual(getNotSyncedInfo('Calendar link is temporarily inaccessible'));
     });
 });
