@@ -43,6 +43,7 @@ import { initUploadFileWorker } from '../initUploadFileWorker';
 import { ConflictStrategyHandler, UploadUserError } from './interface';
 import useUploadHelper from './useUploadHelper';
 import { ecryptFileExtendedAttributes } from '../../../utils/drive/extendedAttributes';
+import useDriveEvents from '../../../hooks/drive/useDriveEvents';
 
 interface FileRevision {
     isNewFile: boolean;
@@ -57,10 +58,11 @@ interface FileRevision {
 export default function useUploadFile() {
     const debouncedRequest = useDebouncedRequest();
     const queuedFunction = useQueuedFunction();
-    const { events, deleteChildrenLinks, getLinkKeys } = useDrive();
+    const { deleteChildrenLinks, getLinkKeys } = useDrive();
     const { getPrimaryAddressKey } = useDriveCrypto();
     const { trashLinks } = useTrash();
     const { findAvailableName, getLinkByName } = useUploadHelper();
+    const driveEvents = useDriveEvents();
 
     const initFileUpload = (
         shareId: string,
@@ -358,7 +360,7 @@ export default function useUploadFile() {
                         );
                     }
 
-                    events.callAll(shareId).catch(console.error);
+                    driveEvents.callAll(shareId).catch(console.error);
                 },
                 5
             ),

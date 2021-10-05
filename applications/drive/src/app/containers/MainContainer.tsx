@@ -32,10 +32,16 @@ enum ERROR_TYPES {
     ONBOARDING,
 }
 
+// Empty shared root for blurred container.
+const DEFAULT_SHARE_VALUE = {
+    shareId: '',
+    linkId: '',
+};
+
 const InitContainer = () => {
     const { initDrive } = useDrive();
     const [loading, withLoading] = useLoading(true);
-    const [defaultShareRoot, setDefaultShareRoot] = useState<{ shareId: string; linkId: string }>();
+    const [defaultShareRoot, setDefaultShareRoot] = useState<{ shareId: string; linkId: string }>(DEFAULT_SHARE_VALUE);
     const [errorType, setErrorType] = useState<ERROR_TYPES>(ERROR_TYPES.STANDARD);
     const [welcomeFlags, setWelcomeFlagsDone] = useWelcomeFlags();
     const earlyAccess = useEarlyAccess();
@@ -62,9 +68,6 @@ const InitContainer = () => {
         withLoading(initPromise).catch(noop);
     }, []);
 
-    // Empty shared root for blurred container.
-    let shareRoot = { shareId: '', linkId: '' };
-
     if (loading) {
         return (
             <>
@@ -76,7 +79,7 @@ const InitContainer = () => {
 
     if (errorType === ERROR_TYPES.NO_ACCESS) {
         return (
-            <ActiveShareProvider defaultShareRoot={shareRoot}>
+            <ActiveShareProvider defaultShareRoot={defaultShareRoot}>
                 <NoAccessContainer reason="notpaid" />
             </ActiveShareProvider>
         );
@@ -85,7 +88,7 @@ const InitContainer = () => {
     // isEnabled means global features is enabled, and value whether user has early access.
     if (earlyAccess.isEnabled && earlyAccess.value === false) {
         return (
-            <ActiveShareProvider defaultShareRoot={shareRoot}>
+            <ActiveShareProvider defaultShareRoot={defaultShareRoot}>
                 <NoAccessContainer reason="notbeta" />
             </ActiveShareProvider>
         );
@@ -93,24 +96,21 @@ const InitContainer = () => {
 
     if (welcomeFlags.isWelcomeFlow) {
         return (
-            <ActiveShareProvider defaultShareRoot={shareRoot}>
+            <ActiveShareProvider defaultShareRoot={defaultShareRoot}>
                 <OnboardingContainer onDone={setWelcomeFlagsDone} />
             </ActiveShareProvider>
         );
     }
 
-    // When drive is loaded without error, it is ensured defaultShareRoot to be set.
-    shareRoot = defaultShareRoot as { shareId: string; linkId: string };
-
     return (
-        <ActiveShareProvider defaultShareRoot={shareRoot}>
+        <ActiveShareProvider defaultShareRoot={defaultShareRoot}>
             <ModalsChildren />
             <TransferManager />
             <Switch>
                 <Route path="/trash" component={TrashContainer} />
                 <Route path="/shared-urls" component={SharedURLsContainer} />
-                <Route path="/" component={DriveContainer} />
-                <Redirect to="/" />
+                <Route path="/:shareId?/:type/:linkId?" component={DriveContainer} />
+                <Redirect to={`/${defaultShareRoot?.shareId}/folder/${defaultShareRoot?.linkId}`} />
             </Switch>
         </ActiveShareProvider>
     );

@@ -8,6 +8,7 @@ import { MAX_NAME_LENGTH } from '@proton/shared/lib/drive/constants';
 import { validateLinkNameField } from '../utils/validation';
 import { formatLinkName, splitLinkName } from '../utils/link';
 import useDrive from '../hooks/drive/useDrive';
+import useDriveEvents from '../hooks/drive/useDriveEvents';
 
 interface Props {
     shareId: string;
@@ -17,10 +18,11 @@ interface Props {
 
 const RenameModal = ({ shareId, item, onClose, ...rest }: Props) => {
     const { createNotification } = useNotifications();
-    const { renameLink, events } = useDrive();
+    const { renameLink } = useDrive();
     const [name, setName] = useState(item.Name);
     const [loading, withLoading] = useLoading();
     const [autofocusDone, setAutofocusDone] = useState(false);
+    const driveEvents = useDriveEvents();
 
     const selectNamePart = (e: FocusEvent<HTMLInputElement>) => {
         if (autofocusDone) {
@@ -48,7 +50,7 @@ const RenameModal = ({ shareId, item, onClose, ...rest }: Props) => {
 
         try {
             await renameLink(shareId, item.LinkID, item.ParentLinkID, formattedName);
-            await events.call(shareId);
+            await driveEvents.call(shareId);
             const nameElement = (
                 <span key="name" style={{ whiteSpace: 'pre-wrap' }}>
                     &quot;{formattedName}&quot;

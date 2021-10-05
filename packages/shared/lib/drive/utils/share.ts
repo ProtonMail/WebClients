@@ -1,5 +1,5 @@
 import { ShareFlags } from '../../interfaces/drive/share';
 
-export const isPrimaryShare = (meta: { Flags?: number }) => {
-    return !!(typeof meta.Flags !== 'undefined' && meta.Flags & ShareFlags.PrimaryShare);
+export const isMainShare = (meta: { Flags?: number }) => {
+    return !!(typeof meta.Flags !== 'undefined' && meta.Flags & ShareFlags.MainShare);
 };

@@ -12,8 +12,12 @@ import useNavigate from '../../../hooks/drive/useNavigate';
 import DriveContentProvider from './DriveContentProvider';
 import DriveToolbar from './DriveToolbar';
 import Drive from './Drive';
+import useDriveEvents from '../../../hooks/drive/useDriveEvents';
+import useDrive from '../../../hooks/drive/useDrive';
 
-function DriveView({ match }: RouteComponentProps<{ shareId?: string; type?: LinkURLType; linkId?: string }>) {
+export type DriveSectionRouteProps = { shareId?: string; type?: LinkURLType; linkId?: string };
+
+function DriveView({ match }: RouteComponentProps<DriveSectionRouteProps>) {
     const lastFolderRef = useRef<{
         shareId: string;
         linkId: string;
@@ -22,6 +26,8 @@ function DriveView({ match }: RouteComponentProps<{ shareId?: string; type?: Lin
     const [, setError] = useState();
     const { setFolder } = useActiveShare();
     const { navigateToRoot } = useNavigate();
+    const driveEvents = useDriveEvents();
+    const { handleDriveEvents } = useDrive();
 
     const folder = useMemo(() => {
         const { shareId, type, linkId } = match.params;
@@ -52,6 +58,11 @@ function DriveView({ match }: RouteComponentProps<{ shareId?: string; type?: Lin
 
         if (folder) {
             setFolder(folder);
+            const { shareId } = match.params;
+            if (!shareId) {
+                return;
+            }
+            void driveEvents.listenForShareEvents(shareId, handleDriveEvents(shareId));
         } else if (type !== LinkURLType.FILE) {
             navigateToRoot();
         }

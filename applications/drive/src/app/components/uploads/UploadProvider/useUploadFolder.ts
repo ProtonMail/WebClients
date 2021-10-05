@@ -8,6 +8,7 @@ import useQueuedFunction from '../../../hooks/util/useQueuedFunction';
 import { TransferConflictStrategy, UploadFolderControls } from '../interface';
 import { ConflictStrategyHandler } from './interface';
 import useUploadHelper from './useUploadHelper';
+import useDriveEvents from '../../../hooks/drive/useDriveEvents';
 
 interface Folder {
     isNewFolder: boolean;
@@ -15,11 +16,11 @@ interface Folder {
 }
 
 export default function useUploadFolder() {
-    const { events } = useDrive();
     const queuedFunction = useQueuedFunction();
     const { createNewFolder } = useDrive();
     const { trashLinks } = useTrash();
     const { findAvailableName, getLinkByName } = useUploadHelper();
+    const driveEvents = useDriveEvents();
 
     const createEmptyFolder = async (
         shareId: string,
@@ -30,7 +31,7 @@ export default function useUploadFolder() {
         const {
             Folder: { ID: folderId },
         } = await createNewFolder(shareId, parentId, folderName, modificationTime);
-        await events.call(shareId);
+        await driveEvents.call(shareId);
         return {
             folderId,
             isNewFolder: true,
