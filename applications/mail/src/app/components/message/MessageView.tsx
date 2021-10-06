@@ -26,10 +26,10 @@ import { useVerifyMessage } from '../../hooks/message/useVerifyMessage';
 import { useMessageHotkeys } from '../../hooks/message/useMessageHotkeys';
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { isMessageForwarded } from '../../helpers/encryptedSearch/esBuild';
-
-import './MessageView.scss';
 import { useOnCompose } from '../../containers/ComposeProvider';
 import { LOAD_RETRY_COUNT } from '../../constants';
+
+import './MessageView.scss';
 
 interface Props {
     labelID: string;
@@ -232,6 +232,7 @@ const MessageView = (
                 // Max retries reach, aborting
                 return;
             }
+
             void initialize();
         }
     }, [loading, expanded, message.initialized]);
@@ -262,7 +263,7 @@ const MessageView = (
             setExpanded(getInitialExpand);
             setSourceMode(false);
         }
-    }, [draft, message.data?.ID]);
+    }, [message.data?.ID]);
 
     // Automatically activate source mode when processing errors
     const hasProcessingErrors = !!message.errors?.processing?.length;
