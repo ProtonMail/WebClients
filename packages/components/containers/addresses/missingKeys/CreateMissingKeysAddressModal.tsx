@@ -9,7 +9,7 @@ import {
 import { missingKeysMemberProcess, missingKeysSelfProcess } from '@proton/shared/lib/keys';
 import { noop } from '@proton/shared/lib/helpers/function';
 import { Address, Member, CachedOrganizationKey } from '@proton/shared/lib/interfaces';
-import { queryAddresses } from '@proton/shared/lib/api/members';
+import { getAllMemberAddresses } from '@proton/shared/lib/api/members';
 
 import { FormModal, Alert, Table, TableHeader, TableBody, TableRow } from '../../../components';
 import {
@@ -77,9 +77,7 @@ const CreateMissingKeysAddressModal = ({ onClose, member, addressesToGenerate, o
             createNotification({ text: c('Error').t`Organization key is not decrypted.`, type: 'error' });
             return;
         }
-        const memberAddresses = await api<{ Addresses: Address[] }>(queryAddresses(member.ID)).then(
-            ({ Addresses }) => Addresses
-        );
+        const memberAddresses = await getAllMemberAddresses(api, member.ID);
         try {
             const addresses = await getAddresses();
 

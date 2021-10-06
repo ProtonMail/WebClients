@@ -1,10 +1,25 @@
 import { PaginationParams } from './interface';
+import { Address, Api, Member } from '../interfaces';
+import queryPages from './helpers/queryPages';
 
 export const queryMembers = (params?: PaginationParams) => ({
     method: 'get',
     url: 'members',
     params,
 });
+
+export const getAllMembers = (api: Api) => {
+    return queryPages((Page, PageSize) => {
+        return api<{ Members: Member[]; Total: number }>(
+            queryMembers({
+                Page,
+                PageSize,
+            })
+        );
+    }).then((pages) => {
+        return pages.flatMap(({ Members }) => Members);
+    });
+};
 
 export const getMember = (memberID: string) => ({
     method: 'get',
@@ -16,6 +31,19 @@ export const queryAddresses = (memberID: string, params?: PaginationParams) => (
     url: `members/${memberID}/addresses`,
     params,
 });
+
+export const getAllMemberAddresses = (api: Api, memberID: string) => {
+    return queryPages((page, pageSize) => {
+        return api<{ Addresses: Address[]; Total: number }>(
+            queryAddresses(memberID, {
+                Page: page,
+                PageSize: pageSize,
+            })
+        );
+    }).then((pages) => {
+        return pages.flatMap(({ Addresses = [] }) => Addresses);
+    });
+};
 
 export const createMember = (data: { Name: string; Private: number; MaxSpace: number; MaxVPN: number }) => ({
     method: 'post',

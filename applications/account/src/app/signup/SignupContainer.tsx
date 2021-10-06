@@ -14,7 +14,6 @@ import {
 import { checkSubscription, subscribe } from '@proton/shared/lib/api/payments';
 import { c } from 'ttag';
 import {
-    Address,
     Api,
     Currency,
     Cycle,
@@ -23,7 +22,7 @@ import {
     SubscriptionCheckResponse,
     User as tsUser,
 } from '@proton/shared/lib/interfaces';
-import { queryAddresses } from '@proton/shared/lib/api/addresses';
+import { getAllAddresses } from '@proton/shared/lib/api/addresses';
 import { persistSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { updateLocale } from '@proton/shared/lib/api/settings';
 import { noop } from '@proton/shared/lib/helpers/function';
@@ -345,7 +344,7 @@ const SignupContainer = ({ toApp, onLogin, onBack, signupParameters }: Props) =>
 
             const addresses = username
                 ? await handleSetupAddress({ api: authApi.api, domains, username })
-                : await authApi.api<{ Addresses: Address[] }>(queryAddresses()).then(({ Addresses }) => Addresses);
+                : await getAllAddresses(authApi.api);
 
             const keyPassword = addresses.length
                 ? await handleSetupKeys({
