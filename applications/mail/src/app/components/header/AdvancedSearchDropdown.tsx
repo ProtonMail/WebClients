@@ -1,4 +1,4 @@
-import { useState, useEffect, FormEvent, useRef } from 'react';
+import { useState, useEffect, FormEvent } from 'react';
 import { useHistory } from 'react-router-dom';
 import { c } from 'ttag';
 import { getUnixTime, fromUnixTime, isBefore, isAfter, add, sub } from 'date-fns';
@@ -23,11 +23,10 @@ import {
     useFeature,
     FeatureCode,
 } from '@proton/components';
-import { MAILBOX_LABEL_IDS, SECOND } from '@proton/shared/lib/constants';
+import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import { changeSearchParams, getSearchParams } from '@proton/shared/lib/helpers/url';
 import { Recipient } from '@proton/shared/lib/interfaces/Address';
-import { wait } from '@proton/shared/lib/helpers/promise';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 import { isPaid } from '@proton/shared/lib/user/helpers';
 
@@ -36,9 +35,6 @@ import AddressesInput from '../composer/addresses/AddressesInput';
 import { extractSearchParameters, keywordToString } from '../../helpers/mailboxUrl';
 import { getOldestTime, wasIndexingDone } from '../../helpers/encryptedSearch/esUtils';
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
-import { ESIndexingState } from '../../models/encryptedSearch';
-import { defaultESIndexingState } from '../../constants';
-import { estimateIndexingTime } from '../../helpers/encryptedSearch/esBuild';
 
 import './AdvancedSearchDropdown.scss';
 import { useClickMailContent } from '../../hooks/useClickMailContent';
@@ -102,10 +98,8 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow }: Props) =>
     const [model, updateModel] = useState<SearchModel>(DEFAULT_MODEL);
     const { state: showMore, toggle: toggleShowMore } = useToggle(false);
     const [user] = useUser();
-    const { getESDBStatus, getProgressRecorderRef, cacheIndexedDB } = useEncryptedSearchContext();
-    const { isBuilding, isDBLimited, isRefreshing } = getESDBStatus();
-    const [, setESState] = useState<ESIndexingState>(defaultESIndexingState);
-    const abortProgressRef = useRef<AbortController>(new AbortController());
+    const { getESDBStatus, cacheIndexedDB } = useEncryptedSearchContext();
+    const { isDBLimited } = getESDBStatus();
     const { loading: loadingESFeature, feature: esFeature } = useFeature(FeatureCode.EnabledEncryptedSearch);
     const { loading: loadingScheduledFeature } = useFeature(FeatureCode.ScheduledSend);
 
@@ -147,63 +141,6 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow }: Props) =>
 
     const handleReset = (event: FormEvent) => handleSubmit(event, true);
 
-    const setProgress = async () => {
-        while (!abortProgressRef.current.signal.aborted) {
-            setESState((esState) => {
-                const [esProgress, esTotal] = getProgressRecorderRef().current;
-                const endTime = performance.now();
-
-                const { estimatedMinutes, currentProgressValue } = estimateIndexingTime(
-                    esProgress,
-                    esTotal,
-                    endTime,
-                    esState
-                );
-
-                return {
-                    ...esState,
-                    endTime,
-                    esProgress,
-                    totalIndexingMessages: esTotal,
-                    estimatedMinutes: estimatedMinutes || esState.estimatedMinutes,
-                    currentProgressValue: currentProgressValue || esState.currentProgressValue,
-                };
-            });
-            await wait(2 * SECOND);
-        }
-    };
-
-    const setOldestTime = async () => {
-        if (wasIndexingDone(user.ID) && isDBLimited) {
-            const oldestTime = await getOldestTime(user.ID, 1000);
-            setESState((esState) => {
-                return {
-                    ...esState,
-                    oldestTime,
-                };
-            });
-        }
-    };
-
-    const startProgress = async () => {
-        abortProgressRef.current = new AbortController();
-        const [esPrevProgress, totalIndexingMessages] = getProgressRecorderRef().current;
-        setESState((esState) => {
-            return {
-                ...esState,
-                startTime: performance.now(),
-                esPrevProgress,
-                totalIndexingMessages,
-            };
-        });
-        void setProgress();
-    };
-
-    const stopProgress = () => {
-        abortProgressRef.current.abort();
-        setESState(() => defaultESIndexingState);
-    };
-
     useEffect(() => {
         if (isOpen) {
             updateModel(() => {
@@ -226,18 +163,8 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow }: Props) =>
                     filter,
                 };
             });
-            void setOldestTime();
         }
     }, [isOpen]);
-
-    useEffect(() => {
-        if (isBuilding || isRefreshing) {
-            void startProgress();
-        } else {
-            stopProgress();
-        }
-        void setOldestTime();
-    }, [isBuilding, isRefreshing]);
 
     const loading =
         loadingLabels || loadingFolders || loadingMailSettings || loadingESFeature || loadingScheduledFeature;
