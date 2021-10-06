@@ -118,26 +118,29 @@ const ItemSpyTrackerIcon = ({ message, className }: Props) => {
                 </>
             }
         >
-            <Tooltip title={getTitle()} data-testid="privacy:icon-tooltip">
-                <div className={classnames(['flex', className])} ref={anchorRef}>
-                    {needsMoreProtection ? (
-                        <SettingsLink
-                            path="/email-privacy"
-                            app={APPS.PROTONMAIL}
-                            className="relative inline-flex mr0-1 item-spy-tracker-link flex-align-items-center"
-                        >
-                            {icon}
-                        </SettingsLink>
-                    ) : (
-                        <Href
-                            url={emailTrackerProtectionURL}
-                            className="relative inline-flex mr0-1 item-spy-tracker-link flex-align-items-center"
-                        >
-                            {icon}
-                        </Href>
-                    )}
-                </div>
-            </Tooltip>
+            <div>
+                {/* Need to wrap the Tooltip by a div to avoid ref warning because Spotlight is cloning the element and applying refs on top of it */}
+                <Tooltip title={getTitle()} data-testid="privacy:icon-tooltip">
+                    <div className={classnames(['flex', className])} ref={anchorRef}>
+                        {needsMoreProtection ? (
+                            <SettingsLink
+                                path="/email-privacy"
+                                app={APPS.PROTONMAIL}
+                                className="relative inline-flex mr0-1 item-spy-tracker-link flex-align-items-center"
+                            >
+                                {icon}
+                            </SettingsLink>
+                        ) : (
+                            <Href
+                                url={emailTrackerProtectionURL}
+                                className="relative inline-flex mr0-1 item-spy-tracker-link flex-align-items-center"
+                            >
+                                {icon}
+                            </Href>
+                        )}
+                    </div>
+                </Tooltip>
+            </div>
         </Spotlight>
     );
 };
