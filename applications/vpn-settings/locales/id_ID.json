@@ -21,6 +21,45 @@
       "Loading ${ appName }": [
         "Memuat ${ appName }"
       ],
+      "here": [
+        "di sini"
+      ],
+      "This account has been suspended due to a potential policy violation.": [
+        "Akun ini telah ditangguhkan karena kemungkinan pelanggaran kebijakan."
+      ],
+      "If you believe this is in error, please contact us ${ contactLink }.": [
+        "Jika anda yakin ini adalah kesalahan, silakan hubungi kami ${ contactLink }."
+      ],
+      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
+        "Akun Proton Anda sedang dalam masa tenggang. Untuk tetap menggunakan akun Anda, mohon lunasi tagihan yang sudah jatuh tempo."
+      ],
+      "Would you like to receive a new verification code or use an alternative verification method?": [
+        "Apakah Anda mau menerima kode verifikasi baru atau menggunakan metode verifikasi alternatif?"
+      ],
+      "Enter the verification code that was sent to ${ destinationText }.": [
+        "Masukkan kode verifikasi yang dikirim ke ${ destinationText }."
+      ],
+      "If you don't find the email in your inbox, please check your spam folder.": [
+        "Jika Anda tidak menemukan surel di kotak masuk, mohon periksa folder spam Anda."
+      ],
+      "To fight spam and abuse, please verify you are human.": [
+        "Untuk melawan spam dan penyalahgunaan, mohon verifikasi Anda memang manusia."
+      ],
+      "Your email will only be used for this one-time verification.": [
+        "Surel Anda hanya dipakai untuk verifikasi sekali saja."
+      ],
+      "Your phone number will only be used for this one-time verification.": [
+        "Nomor telepon Anda hanya akan dipakai untuk verifikasi sekali saja."
+      ],
+      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
+        "Jika Anda menemui masalah saat membuat akun, silakan minta undangan dan kami akan merespon dalam satu hari kerja."
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
+        "Klik \"Minta kode baru\" untuk mendapatkan kode verifikasi baru yang dikirim ke ${ strong }. Jika alamat surel ini salah, klik \"Edit\" untuk mengoreksi."
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
+        "Klik \"Minta kode baru\" untuk mendapatkan kode verifikasi baru yang dikirim ke ${ strong }. Jika nomor telepon ini salah, klik \"Edit\" untuk mengoreksi."
+      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Karena Anda pengguna setia, akun Anda memiliki fitur tambahan yang diaktifkan."
       ],
@@ -45,12 +84,6 @@
       "* Customizable features": [
         "* Fitur yang dapat disesuaikan"
       ],
-      "Access your streaming services, like ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, no matter where you are.": [
-        "Akses layanan tontonan Anda, seperti ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, di mana pun Anda berada."
-      ],
-      "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
-        "Akses konten terblokir, seperti sosial media, berita, Wikipedia, YouTube, dan masih banyak lagi, di mana pun Anda berada."
-      ],
       "For getting started with private and secure emailing.": [
         "Untuk memulai pengiriman surel dengan privat dan aman."
       ],
@@ -74,6 +107,12 @@
       ],
       "For families and small teams; includes both Mail and VPN.": [
         "Untuk keluarga dan tim kecil; termasuk Mail dan VPN."
+      ],
+      "Access your streaming services, like ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, no matter where you are.": [
+        "Akses layanan tontonan Anda, seperti ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, di mana pun Anda berada."
+      ],
+      "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
+        "Akses konten terblokir, seperti sosial media, berita, Wikipedia, YouTube, dan masih banyak lagi, di mana pun Anda berada."
       ],
       "Save 20%": [
         "Hemat 20%"
@@ -116,6 +155,9 @@
       ],
       "No subscription yet": [
         "Belum berlangganan"
+      ],
+      "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
+        ""
       ],
       "You already have a free account": [
         "Anda sudah memiliki akun gratis"
@@ -336,8 +378,47 @@
       "Internet connection lost. Please check your device's connectivity.": [
         "Koneksi internet putus. Mohon periksa koneksi pada perangkat Anda."
       ],
+      "Enter your recovery email address, and we'll send you your username(s). (This is usually the email address you provided during signup.)": [
+        "Masukkan alamat surel pemulihan Anda, dan kami akan mengirim nama pengguna Anda. (Biasanya ini alamat surel yang Anda isikan saat mendaftar.)"
+      ],
+      "We will send a reset code to your recovery email to reset your password.": [
+        "Kami akan mengirim sebuah kode untuk mengatur ulang ke alamat surel pemulihan Anda guna mengatur ulang kata sandi Anda."
+      ],
+      "We've sent a reset code to your recovery email, valid for one hour or until you request a new code. Enter it below to continue.": [
+        "Kami telah mengirim kode untuk mengatur ulang ke surel pemulihan, valid hingga satu jam sampai Anda meminta kode baru. Masukkanlah kode di bawah untuk melanjutkan."
+      ],
+      "IMPORTANT: Do not close or navigate away from this page. You will need to enter the reset code into the field below once you receive it.": [
+        "PENTING: Jangan tutup atau pindah dari halaman ini. Anda harus memasukkan kode set ulang ke bidang di bawah saat Anda sudah menerimanya."
+      ],
+      "Resetting your password will reset your encryption keys for all Proton related services (Mail and VPN). You will be unable to read your existing messages. If you know your ProtonMail credentials, do NOT reset. You can log in with them ${ hereLink }.": [
+        "Mengatur ulang kata sandi Anda akan mengatur ulang kunci enkripsi Anda pada semua layanan Proton yang terkait (Mail dan VPN). Anda tidak akan dapat membaca pesan Anda. Jika Anda tahu kredensial ProtonMail Anda, JANGAN atur ulang. Anda dapat masuk dengannya ${ hereLink }."
+      ],
+      "ALL YOUR DATA WILL BE LOST!": [
+        "SEMUA DATA ANDA AKAN HILANG!"
+      ],
+      "If you remember your old password later, you can recover your existing messages.": [
+        "Jika dikemudian hari Anda ingat kata sandi lama Anda, Anda bisa mendapatkan kembali pesan-pesan anda."
+      ],
+      "Keep this password safe, it cannot be recovered.": [
+        "Simpan kata sandi ini dengan aman, ia tidak dapat dipulihkan."
+      ],
+      "Do NOT forget this password. If you forget it, you will not be able to login or decrypt your messages.": [
+        "JANGAN melupakan kata sandi ini. Jika Anda lupa, Anda tidak akan bisa masuk atau mendekripsi pesan Anda."
+      ],
+      "Done! We sent a code to ${ destination }": [
+        "Berhasil! Kami kirim kodenya ke ${ destination }"
+      ],
+      "Resetting your password means your old password and the places it is saved will no longer work. Are you sure you want to reset your password?": [
+        "Mengatur ulang kata sandi Anda berarti kata sandi lama Anda dan tempat ia disimpan tidak lagi bisa digunakan. Apakah yakin ingin mengatur ulang kata sandi Anda?"
+      ],
+      "This can take a few seconds or a few minutes depending on your device": [
+        "Hal ini bisa memakan waktu beberapa detik atau beberapa menit tergantung perangkat Anda"
+      ],
       "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
         ""
+      ],
+      "support team": [
+        "tim dukungan"
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Langganan Anda dikelola oleh Mozilla.\nHarap hubungi dukungan Mozilla."
@@ -573,84 +654,6 @@
       "of": [
         "dari"
       ],
-      "here": [
-        "di sini"
-      ],
-      "This account has been suspended due to a potential policy violation.": [
-        "Akun ini telah ditangguhkan karena kemungkinan pelanggaran kebijakan."
-      ],
-      "If you believe this is in error, please contact us ${ contactLink }.": [
-        "Jika anda yakin ini adalah kesalahan, silakan hubungi kami ${ contactLink }."
-      ],
-      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
-        "Akun Proton Anda sedang dalam masa tenggang. Untuk tetap menggunakan akun Anda, mohon lunasi tagihan yang sudah jatuh tempo."
-      ],
-      "Would you like to receive a new verification code or use an alternative verification method?": [
-        "Apakah Anda mau menerima kode verifikasi baru atau menggunakan metode verifikasi alternatif?"
-      ],
-      "Enter the verification code that was sent to ${ destinationText }.": [
-        "Masukkan kode verifikasi yang dikirim ke ${ destinationText }."
-      ],
-      "If you don't find the email in your inbox, please check your spam folder.": [
-        "Jika Anda tidak menemukan surel di kotak masuk, mohon periksa folder spam Anda."
-      ],
-      "To fight spam and abuse, please verify you are human.": [
-        "Untuk melawan spam dan penyalahgunaan, mohon verifikasi Anda memang manusia."
-      ],
-      "Your email will only be used for this one-time verification.": [
-        "Surel Anda hanya dipakai untuk verifikasi sekali saja."
-      ],
-      "Your phone number will only be used for this one-time verification.": [
-        "Nomor telepon Anda hanya akan dipakai untuk verifikasi sekali saja."
-      ],
-      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
-        "Jika Anda menemui masalah saat membuat akun, silakan minta undangan dan kami akan merespon dalam satu hari kerja."
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
-        "Klik \"Minta kode baru\" untuk mendapatkan kode verifikasi baru yang dikirim ke ${ strong }. Jika alamat surel ini salah, klik \"Edit\" untuk mengoreksi."
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
-        "Klik \"Minta kode baru\" untuk mendapatkan kode verifikasi baru yang dikirim ke ${ strong }. Jika nomor telepon ini salah, klik \"Edit\" untuk mengoreksi."
-      ],
-      "Enter your recovery email address, and we'll send you your username(s). (This is usually the email address you provided during signup.)": [
-        "Masukkan alamat surel pemulihan Anda, dan kami akan mengirim nama pengguna Anda. (Biasanya ini alamat surel yang Anda isikan saat mendaftar.)"
-      ],
-      "We will send a reset code to your recovery email to reset your password.": [
-        "Kami akan mengirim sebuah kode untuk mengatur ulang ke alamat surel pemulihan Anda guna mengatur ulang kata sandi Anda."
-      ],
-      "We've sent a reset code to your recovery email, valid for one hour or until you request a new code. Enter it below to continue.": [
-        "Kami telah mengirim kode untuk mengatur ulang ke surel pemulihan, valid hingga satu jam sampai Anda meminta kode baru. Masukkanlah kode di bawah untuk melanjutkan."
-      ],
-      "IMPORTANT: Do not close or navigate away from this page. You will need to enter the reset code into the field below once you receive it.": [
-        "PENTING: Jangan tutup atau pindah dari halaman ini. Anda harus memasukkan kode set ulang ke bidang di bawah saat Anda sudah menerimanya."
-      ],
-      "Resetting your password will reset your encryption keys for all Proton related services (Mail and VPN). You will be unable to read your existing messages. If you know your ProtonMail credentials, do NOT reset. You can log in with them ${ hereLink }.": [
-        "Mengatur ulang kata sandi Anda akan mengatur ulang kunci enkripsi Anda pada semua layanan Proton yang terkait (Mail dan VPN). Anda tidak akan dapat membaca pesan Anda. Jika Anda tahu kredensial ProtonMail Anda, JANGAN atur ulang. Anda dapat masuk dengannya ${ hereLink }."
-      ],
-      "ALL YOUR DATA WILL BE LOST!": [
-        "SEMUA DATA ANDA AKAN HILANG!"
-      ],
-      "If you remember your old password later, you can recover your existing messages.": [
-        "Jika dikemudian hari Anda ingat kata sandi lama Anda, Anda bisa mendapatkan kembali pesan-pesan anda."
-      ],
-      "Keep this password safe, it cannot be recovered.": [
-        "Simpan kata sandi ini dengan aman, ia tidak dapat dipulihkan."
-      ],
-      "Do NOT forget this password. If you forget it, you will not be able to login or decrypt your messages.": [
-        "JANGAN melupakan kata sandi ini. Jika Anda lupa, Anda tidak akan bisa masuk atau mendekripsi pesan Anda."
-      ],
-      "Done! We sent a code to ${ destination }": [
-        "Berhasil! Kami kirim kodenya ke ${ destination }"
-      ],
-      "Resetting your password means your old password and the places it is saved will no longer work. Are you sure you want to reset your password?": [
-        "Mengatur ulang kata sandi Anda berarti kata sandi lama Anda dan tempat ia disimpan tidak lagi bisa digunakan. Apakah yakin ingin mengatur ulang kata sandi Anda?"
-      ],
-      "This can take a few seconds or a few minutes depending on your device": [
-        "Hal ini bisa memakan waktu beberapa detik atau beberapa menit tergantung perangkat Anda"
-      ],
-      "support team": [
-        "tim dukungan"
-      ],
       "Session timed out.": [
         "Sesi habis."
       ],
@@ -660,9 +663,6 @@
       "Servers are unreachable.": [
         "Server tidak terjangkau."
       ],
-      "Upgrade to a paid plan to access premium features and increase your storage space.": [
-        "Tingkatkan ke paket berbayar untuk mengakses fitur-fitur premium dan meningkatkan ruang penyimpanan Anda."
-      ],
       "billed as ${ billedPrice }": [
         "ditagih sebagai ${ billedPrice }"
       ],
@@ -671,6 +671,9 @@
       ],
       "Route your Internet traffic through the Tor network with a single click.": [
         "Alihkan lalu lintas Internet Anda melalui jaringan Tor dengan sekali klik."
+      ],
+      "Upgrade to a paid plan to access premium features and increase your storage space.": [
+        "Tingkatkan ke paket berbayar untuk mengakses fitur-fitur premium dan meningkatkan ruang penyimpanan Anda."
       ],
       "By clicking Create account you agree to abide by our ${ termsOfServiceLink } and ${ privacyPolicyLink }.": [
         "Dengan mengeklik Buat Akun Anda setuju untuk tunduk pada ${ termsOfServiceLink } dan ${ privacyPolicyLink } kami."
@@ -761,6 +764,33 @@
       "Display name": [
         "Nama tampilan"
       ],
+      "Cancel": [
+        "Batal"
+      ],
+      "Submit": [
+        "Kirim"
+      ],
+      "Password": [
+        "Kata Sandi"
+      ],
+      "Mailbox password": [
+        "Kata sandi kotak masuk"
+      ],
+      "Two-factor authentication code": [
+        "Kode otentikasi dua faktor"
+      ],
+      "Username or ProtonMail address": [
+        "Nama pengguna atau alamat ProtonMail"
+      ],
+      "Phone number": [
+        "Nomor telepon"
+      ],
+      "Verification code": [
+        "Kode verifikasi"
+      ],
+      "Enter the 6-digit code": [
+        "Masukkan kode 6 digit"
+      ],
       "Total (${ countdown })": [
         "Total (${ countdown })"
       ],
@@ -785,20 +815,23 @@
       "Using ${ humanUsedSpace } of ${ humanMaxSpace }": [
         ""
       ],
+      "Could you please specify?": [
+        ""
+      ],
+      "Could you please specify which streaming service?": [
+        ""
+      ],
+      "Could you please let us know which provider?": [
+        ""
+      ],
       "What is the main reason you are cancelling?": [
         "Apa alasan utama Anda membatalkan?"
       ],
-      "How likely are you to recommend ${ BRAND_NAME } to others?": [
-        "Seberapa besar Anda merekomendasikan ${ BRAND_NAME } ke orang lain?"
+      "Do you have any suggestions for our team?": [
+        ""
       ],
-      "0 - Not at all likely": [
-        "0 - Tidak sama sekali"
-      ],
-      "10 - Extremely likely": [
-        "10 - Sangat merekomendasikan"
-      ],
-      "How do you think we could improve our products or service in the future?": [
-        "Menurut Anda bagaimana kami dapat meningkatkan produk atau layanan di masa mendatang?"
+      "Optional": [
+        ""
       ],
       "extra storage": [
         "penyimpanan tambahan"
@@ -854,6 +887,24 @@
       "Select a method": [
         "Pilih metode"
       ],
+      "Username": [
+        "Nama Pengguna"
+      ],
+      "Email": [
+        "Surel"
+      ],
+      "Token": [
+        "Token"
+      ],
+      "Danger": [
+        "Bahaya"
+      ],
+      "New password": [
+        "Kata sandi baru"
+      ],
+      "Confirm password": [
+        "Konfirmasi sandi"
+      ],
       "Name": [
         "Nama"
       ],
@@ -872,12 +923,6 @@
       "Old password": [
         "Kata sandi lama"
       ],
-      "New password": [
-        "Kata sandi baru"
-      ],
-      "Confirm password": [
-        "Konfirmasi sandi"
-      ],
       "Old login password": [
         "Kata sandi lama untuk masuk"
       ],
@@ -892,9 +937,6 @@
       ],
       "Confirm mailbox password": [
         "Konfirmasi sandi kotak pesan"
-      ],
-      "Two-factor authentication code": [
-        "Kode otentikasi dua faktor"
       ],
       "Key": [
         "Kunci"
@@ -911,9 +953,6 @@
       "Two-password mode": [
         "Mode dua kata sandi"
       ],
-      "Mailbox password": [
-        "Kata sandi kotak masuk"
-      ],
       "What is the main reason you are deleting your account?": [
         "Apa alasan utama Anda menghapus akun?"
       ],
@@ -928,15 +967,6 @@
       ],
       "Default language": [
         "Bahasa bawaan"
-      ],
-      "Password": [
-        "Kata Sandi"
-      ],
-      "Cancel": [
-        "Batal"
-      ],
-      "Submit": [
-        "Kirim"
       ],
       "OpenVPN / IKEv2 username": [
         "Nama pengguna OpenVPN / IKEv2"
@@ -983,35 +1013,8 @@
       "Customize invoices": [
         "Sesuaikan tagihan"
       ],
-      "Username or ProtonMail address": [
-        "Nama pengguna atau alamat ProtonMail"
-      ],
-      "Phone number": [
-        "Nomor telepon"
-      ],
-      "Verification code": [
-        "Kode verifikasi"
-      ],
-      "Enter the 6-digit code": [
-        "Masukkan kode 6 digit"
-      ],
-      "Username": [
-        "Nama Pengguna"
-      ],
-      "Email": [
-        "Surel"
-      ],
-      "Token": [
-        "Token"
-      ],
-      "Danger": [
-        "Bahaya"
-      ],
       "Back to:": [
         "Kembali ke:"
-      ],
-      "Enter the code displayed on your TV": [
-        "Masukkan kode yang ditampilkan di TV Anda"
       ],
       "Verification method": [
         "Metode verifikasi"
@@ -1042,6 +1045,9 @@
       ],
       "Total price (two-year)": [
         "Harga total (dua tahun)"
+      ],
+      "Enter the code displayed on your TV": [
+        "Masukkan kode yang ditampilkan di TV Anda"
       ]
     },
     "Action": {
@@ -1057,9 +1063,6 @@
       "Go to panel ${ index }": [
         "Ke panel ${ index }"
       ],
-      "Close": [
-        "Tutup"
-      ],
       "Confirm": [
         "Konfirmasi"
       ],
@@ -1071,6 +1074,9 @@
       ],
       "Close modal": [
         "Tutup jendela"
+      ],
+      "Close": [
+        "Tutup"
       ],
       "Clear": [
         "Bersihkan"
@@ -1138,6 +1144,33 @@
       "refresh the page": [
         "segarkan halaman"
       ],
+      "Log in": [
+        "Masuk"
+      ],
+      "View invoice": [
+        "Lihat tagihan"
+      ],
+      "Get verification code": [
+        "Dapatkan kode verifikasi"
+      ],
+      "Try another method": [
+        "Coba metode lain"
+      ],
+      "Request new code": [
+        "Minta kode baru"
+      ],
+      "Verify": [
+        "Verifikasikan"
+      ],
+      "Did not receive the code?": [
+        "Tidak menerima kode?"
+      ],
+      "Edit email address": [
+        "Edit alamat surel"
+      ],
+      "Edit phone number": [
+        "Edit nomor telepon"
+      ],
       "Remove bonuses": [
         "Hapus bonus"
       ],
@@ -1177,8 +1210,14 @@
       "Customize subscription": [
         "Sesuaikan langganan"
       ],
-      "Cancel subscription": [
-        "Batalkan langganan"
+      "Downgrade to ${ BRAND_NAME } ${ downgradedPlanName }": [
+        ""
+      ],
+      "Keep my ${ BRAND_NAME } ${ currentPlanName } account": [
+        ""
+      ],
+      "Downgrade account": [
+        ""
       ],
       "Remove gift code": [
         "Hapus kode hadiah"
@@ -1219,9 +1258,6 @@
       "Try again": [
         "Coba lagi"
       ],
-      "Verify": [
-        "Verifikasikan"
-      ],
       "Use a different card": [
         "Gunakan kartu lain"
       ],
@@ -1239,6 +1275,18 @@
       ],
       "Close this banner": [
         "Tutup spanduk ini"
+      ],
+      "Email me my username(s)": [
+        "Kirim surel nama pengguna saya"
+      ],
+      "Get a new password": [
+        "Buat kata sandi baru"
+      ],
+      "Reset password": [
+        "Atur ulang kata sandi"
+      ],
+      "Reset my password": [
+        "Atur ulang kata sandi saya"
       ],
       "Change password": [
         "Ubah kata sandi"
@@ -1348,42 +1396,6 @@
       "Previous": [
         "Sebelumnya"
       ],
-      "Log in": [
-        "Masuk"
-      ],
-      "View invoice": [
-        "Lihat tagihan"
-      ],
-      "Get verification code": [
-        "Dapatkan kode verifikasi"
-      ],
-      "Try another method": [
-        "Coba metode lain"
-      ],
-      "Request new code": [
-        "Minta kode baru"
-      ],
-      "Did not receive the code?": [
-        "Tidak menerima kode?"
-      ],
-      "Edit email address": [
-        "Edit alamat surel"
-      ],
-      "Edit phone number": [
-        "Edit nomor telepon"
-      ],
-      "Email me my username(s)": [
-        "Kirim surel nama pengguna saya"
-      ],
-      "Get a new password": [
-        "Buat kata sandi baru"
-      ],
-      "Reset password": [
-        "Atur ulang kata sandi"
-      ],
-      "Reset my password": [
-        "Atur ulang kata sandi saya"
-      ],
       "Report bug": [
         "Laporkan bug"
       ],
@@ -1395,12 +1407,6 @@
       ],
       "Select": [
         "Pilih"
-      ],
-      "Verify code again": [
-        "Verifikasi kode lagi"
-      ],
-      "Verify code": [
-        "Verifikasi kode"
       ],
       "Create account": [
         "Buat akun"
@@ -1431,6 +1437,12 @@
       ],
       "Homepage": [
         "Beranda"
+      ],
+      "Verify code again": [
+        "Verifikasi kode lagi"
+      ],
+      "Verify code": [
+        "Verifikasi kode"
       ]
     },
     "Storage": {
@@ -1457,6 +1469,9 @@
       "Go to subscription plans": [
         "Ke paket langganan"
       ],
+      "Request an invite": [
+        "Minta undangan"
+      ],
       "Add a gift code": [
         "Tambah kode hadiah"
       ],
@@ -1469,6 +1484,12 @@
       "Upgrade account": [
         "Tingkatkan akun"
       ],
+      "Back to login": [
+        "Kembali ke masuk"
+      ],
+      "here": [
+        "di sini"
+      ],
       "Not activated": [
         "Belum diaktifkan"
       ],
@@ -1478,23 +1499,14 @@
       "What is the difference between UDP and TCP protocols?": [
         "Apa bedanya protokol UDP dan TCP?"
       ],
-      "Request an invite": [
-        "Minta undangan"
-      ],
-      "Back to login": [
-        "Kembali ke masuk"
-      ],
-      "here": [
-        "di sini"
-      ],
-      "Upgrade now": [
-        "Tingkatkan sekarang"
-      ],
       "Sign up for free": [
         "Daftar gratis"
       ],
       "protonvpn.com": [
         "protonvpn.com"
+      ],
+      "Upgrade now": [
+        "Tingkatkan sekarang"
       ],
       "Don't have an account yet? Sign up for free!": [
         "Masih belum memiliki akun? Mendaftarlah dengan gratis!"
@@ -1536,6 +1548,24 @@
       ],
       "Unknown error": [
         "Galat tak diketahui"
+      ],
+      "Incorrect mailbox password. Please try again": [
+        "Sandi kotak surat salah. Silakan coba lagi"
+      ],
+      "Incorrect login credentials. Please try again": [
+        "Kredensial masuk salah. Silakan coba lagi"
+      ],
+      "Can't validate email, try again later": [
+        "Tidak dapat memvalidasi surel, coba lagi nanti"
+      ],
+      "Can't validate phone, try again later": [
+        "Tidak dapat memvalidasi telepon, coba lagi nanti"
+      ],
+      "Enter 6 digits": [
+        "Masukan 6 digit"
+      ],
+      "Invalid verification code": [
+        "Kode verifikasi tidak valid"
       ],
       "Checkout expired, please try again.": [
         "Pembayaran kedaluwarsa, silakan coba lagi."
@@ -1597,6 +1627,12 @@
       "Invalid postal code": [
         "Kode pos tidak valid"
       ],
+      "Please enter '${ dangerWord }'": [
+        "Silakan masukkan '${ dangerWord }'"
+      ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "Ada yang salah, mohon ${ refresh } untuk melanjutkan. Jika Anda masih melihat pesan kesalahan ini silahkan hubungi ${ supportTeam } kami."
+      ],
       "Please generate keys before you try to change your password.": [
         "Mohon hasilkan kunci sebelum Anda mengubah kata sandi."
       ],
@@ -1618,32 +1654,8 @@
       "File has no contents to preview": [
         "Berkas ini kosong"
       ],
-      "Incorrect mailbox password. Please try again": [
-        "Sandi kotak surat salah. Silakan coba lagi"
-      ],
-      "Incorrect login credentials. Please try again": [
-        "Kredensial masuk salah. Silakan coba lagi"
-      ],
-      "Can't validate email, try again later": [
-        "Tidak dapat memvalidasi surel, coba lagi nanti"
-      ],
-      "Can't validate phone, try again later": [
-        "Tidak dapat memvalidasi telepon, coba lagi nanti"
-      ],
-      "Enter 6 digits": [
-        "Masukan 6 digit"
-      ],
-      "Invalid verification code": [
-        "Kode verifikasi tidak valid"
-      ],
-      "Please enter '${ dangerWord }'": [
-        "Silakan masukkan '${ dangerWord }'"
-      ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Ada yang salah, mohon ${ refresh } untuk melanjutkan. Jika Anda masih melihat pesan kesalahan ini silahkan hubungi ${ supportTeam } kami."
-      ],
       "This field requires a minimum of ${ minimumLength } characters.": [
-        "Kolom ini membutuhkan minimal { minimumLength } karakter."
+        "Kolom ini membutuhkan minimal ${ minimumLength } karakter."
       ],
       "Email is not valid": [
         "Surel tidak valid"
@@ -1654,23 +1666,23 @@
       "Passwords do not match": [
         "Sandi tidak sama"
       ],
-      "Signature verification failed": [
-        "Verifikasi tanda tangan gagal"
-      ],
       "Request timed out.": [
         "Terlalu lama memuat."
       ],
-      "Code wrong or not valid anymore": [
-        "Kode salah atau sudah tidak valid"
-      ],
-      "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
-        "Jika saat di TV Anda kedaluwarsa, klik Segarkan pada TV Anda dan masukkan kode lagi."
+      "Signature verification failed": [
+        "Verifikasi tanda tangan gagal"
       ],
       "Invalid invitation link": [
         "Tautan undangan tidak valid"
       ],
       "Can't check username, try again later": [
         "Gagal periksa nama pengguna. Coba lagi nanti"
+      ],
+      "Code wrong or not valid anymore": [
+        "Kode salah atau sudah tidak valid"
+      ],
+      "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
+        "Jika saat di TV Anda kedaluwarsa, klik Segarkan pada TV Anda dan masukkan kode lagi."
       ]
     },
     "Title": {
@@ -1697,6 +1709,24 @@
       ],
       "Back": [
         "Kembali"
+      ],
+      "Sign in again to continue": [
+        "Masuk lagi untuk melanjutkan"
+      ],
+      "Account suspended": [
+        "Akun ditangguhkan"
+      ],
+      "Enter your username or ProtonMail email address": [
+        "Masukkan nama pengguna atau alamat surel ProtonMail Anda"
+      ],
+      "Enter your password": [
+        "Masukkan sandi Anda"
+      ],
+      "Invalid verification code": [
+        "Kode verifikasi tidak valid"
+      ],
+      "Human verification": [
+        "Pembuktian manusia"
       ],
       "Confirm loss of Proton bonuses": [
         "Konfirmasi hilangnya bonus Proton"
@@ -1728,8 +1758,8 @@
       "Amount due": [
         "Jumlah jatuh tempo"
       ],
-      "Cancel subscription": [
-        "Batalkan langganan"
+      "Downgrade account": [
+        ""
       ],
       "Network error": [
         "Kesalahan jaringan"
@@ -1747,7 +1777,7 @@
         "Ringkasan paket"
       ],
       "${ appName } customization": [
-        "Penyesuaian { appName }"
+        "Penyesuaian ${ appName }"
       ],
       "Confirm downgrade": [
         "Konfirmasi penurunan"
@@ -1803,6 +1833,9 @@
       "Error": [
         "Galat"
       ],
+      "Confirm reset password": [
+        "Konfirmasikan penyetelan ulang kata sandi"
+      ],
       "Change password for ${ Name } (${ Email })": [
         "Ubah kata sandi untuk ${ Name } (${ Email })"
       ],
@@ -1835,9 +1868,6 @@
       ],
       "Delete account": [
         "Hapus akun"
-      ],
-      "Sign in again to continue": [
-        "Masuk lagi untuk melanjutkan"
       ],
       "1. Select platform": [
         "1. Pilih platform"
@@ -1878,98 +1908,11 @@
       "Action": [
         "Tindakan"
       ],
-      "Account suspended": [
-        "Akun ditangguhkan"
-      ],
-      "Enter your username or ProtonMail email address": [
-        "Masukkan nama pengguna atau alamat surel ProtonMail Anda"
-      ],
-      "Enter your password": [
-        "Masukkan sandi Anda"
-      ],
-      "Invalid verification code": [
-        "Kode verifikasi tidak valid"
-      ],
-      "Human verification": [
-        "Pembuktian manusia"
-      ],
-      "Confirm reset password": [
-        "Konfirmasikan penyetelan ulang kata sandi"
-      ],
-      "Upgrade": [
-        "Tingkatkan"
-      ],
       "My subscription": [
         "Langganan saya"
       ],
-      "Dashboard": [
-        "Dasbor"
-      ],
-      "Plans": [
-        "Paket"
-      ],
-      "Your current plan": [
-        "Paket Anda saat ini"
-      ],
-      "Your plan": [
-        "Paket anda"
-      ],
-      "Billing": [
-        "Penagihan"
-      ],
-      "Gift Code": [
-        "Kode Hadiah"
-      ],
-      "General": [
-        "Umum"
-      ],
-      "Language": [
-        "Bahasa"
-      ],
-      "Account": [
-        "Akun"
-      ],
-      "Username": [
-        "Nama Pengguna"
-      ],
-      "Passwords": [
-        "Kata Sandi"
-      ],
-      "OpenVPN / IKEv2 username": [
-        "Nama pengguna OpenVPN / IKEv2"
-      ],
-      "Recovery & notification": [
-        "Pemulihan & pemberitahuan"
-      ],
-      "Email subscriptions": [
-        "Langganan via surel"
-      ],
-      "Delete": [
-        "Hapus"
-      ],
-      "Downloads": [
-        "Unduhan"
-      ],
-      "ProtonVPN clients": [
-        "Klien ProtonVPN"
-      ],
-      "OpenVPN configuration files": [
-        "Berkas konfigurasi OpenVPN"
-      ],
-      "Payments": [
-        "Pembayaran"
-      ],
-      "Payment methods": [
-        "Metode pembayaran"
-      ],
-      "Invoices": [
-        "Tagihan"
-      ],
-      "Device connected!": [
-        "Perangkat tersambung!"
-      ],
-      "TV log in": [
-        "Masuk TV"
+      "Upgrade": [
+        "Tingkatkan"
       ],
       "Forgot username": [
         "Lupa nama pengguna"
@@ -2051,6 +1994,75 @@
       ],
       "Sign up": [
         "Daftar"
+      ],
+      "Dashboard": [
+        "Dasbor"
+      ],
+      "Plans": [
+        "Paket"
+      ],
+      "Your current plan": [
+        "Paket Anda saat ini"
+      ],
+      "Your plan": [
+        "Paket anda"
+      ],
+      "Billing": [
+        "Penagihan"
+      ],
+      "Gift Code": [
+        "Kode Hadiah"
+      ],
+      "General": [
+        "Umum"
+      ],
+      "Language": [
+        "Bahasa"
+      ],
+      "Account": [
+        "Akun"
+      ],
+      "Username": [
+        "Nama Pengguna"
+      ],
+      "Passwords": [
+        "Kata Sandi"
+      ],
+      "OpenVPN / IKEv2 username": [
+        "Nama pengguna OpenVPN / IKEv2"
+      ],
+      "Recovery & notification": [
+        "Pemulihan & pemberitahuan"
+      ],
+      "Email subscriptions": [
+        "Langganan via surel"
+      ],
+      "Delete": [
+        "Hapus"
+      ],
+      "Downloads": [
+        "Unduhan"
+      ],
+      "ProtonVPN clients": [
+        "Klien ProtonVPN"
+      ],
+      "OpenVPN configuration files": [
+        "Berkas konfigurasi OpenVPN"
+      ],
+      "Payments": [
+        "Pembayaran"
+      ],
+      "Payment methods": [
+        "Metode pembayaran"
+      ],
+      "Invoices": [
+        "Tagihan"
+      ],
+      "Device connected!": [
+        "Perangkat tersambung!"
+      ],
+      "TV log in": [
+        "Masuk TV"
       ],
       "Settings": [
         "Pengaturan"
@@ -2161,6 +2173,12 @@
       "Email address copied to clipboard": [
         "Alamat surel disalin ke papan klip"
       ],
+      "Code sent to ${ methodTo }": [
+        "Kode dikirim ke ${ methodTo }"
+      ],
+      "Verification successful": [
+        "Verifikasi berhasil"
+      ],
       "You have successfully unsubscribed": [
         "Anda telah berhenti berlangganan"
       ],
@@ -2175,6 +2193,9 @@
       ],
       "Payment method added": [
         "Metode pembayaran berhasil ditambahkan"
+      ],
+      "If you entered a valid notification email we will send you an email with your usernames in the next minute.": [
+        "Apabila surel pemberitahuan yang Anda masukkan terdaftar, nama pengguna Anda akan dikirimkan via surel."
       ],
       "Password updated": [
         "Kata sandi diperbarui"
@@ -2202,15 +2223,6 @@
       ],
       "Invoice customized": [
         "Tagihan berhasil disesuaikan"
-      ],
-      "Code sent to ${ methodTo }": [
-        "Kode dikirim ke ${ methodTo }"
-      ],
-      "Verification successful": [
-        "Verifikasi berhasil"
-      ],
-      "If you entered a valid notification email we will send you an email with your usernames in the next minute.": [
-        "Apabila surel pemberitahuan yang Anda masukkan terdaftar, nama pengguna Anda akan dikirimkan via surel."
       ]
     },
     "Placeholder": {
@@ -2238,8 +2250,14 @@
       "e.g. Julia Smith": [
         "cth. Julia Smith"
       ],
+      "Mailbox password": [
+        "Kata sandi kotak pesan"
+      ],
       "Gift code": [
         "Kode hadiah"
+      ],
+      "Select a reason": [
+        "Pilih alasan"
       ],
       "Feedback": [
         "Umpan balik"
@@ -2255,21 +2273,6 @@
       ],
       "Postal code": [
         "Kode Pos"
-      ],
-      "Password": [
-        "Kata Sandi"
-      ],
-      "Two-factor authentication code": [
-        "Kode otentikasi dua faktor"
-      ],
-      "Confirm": [
-        "Konfirmasi"
-      ],
-      "Email address": [
-        "Alamat Surel"
-      ],
-      "Mailbox password": [
-        "Kata sandi kotak pesan"
       ],
       "Email": [
         "Surel"
@@ -2288,6 +2291,18 @@
       ],
       "Choose a new password": [
         "Tentukan kata sandi baru"
+      ],
+      "Password": [
+        "Kata Sandi"
+      ],
+      "Two-factor authentication code": [
+        "Kode otentikasi dua faktor"
+      ],
+      "Confirm": [
+        "Konfirmasi"
+      ],
+      "Email address": [
+        "Alamat Surel"
       ],
       "Enter coupon code": [
         "Masukkan kode kupon"
@@ -2447,6 +2462,33 @@
       ],
       "You may also ${ refresh } or try again later.": [
         "Anda juga dapat ${ refresh } atau mencoba lagi nanti."
+      ]
+    },
+    "Footer": {
+      "Based in Switzerland, available globally.": [
+        "Berbasis di Swiss, tersedia secara global."
+      ]
+    },
+    "Delinquent modal title": {
+      "Overdue invoice": [
+        "Tagihan jatuh tempo"
+      ]
+    },
+    "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
+      "Email": [
+        "Surel"
+      ],
+      "SMS": [
+        "SMS"
+      ],
+      "Manual": [
+        "Manual"
+      ],
+      "No verification method available": [
+        "Metode verifikasi tidak tersedia"
       ]
     },
     "Suffix for price": {
@@ -3037,90 +3079,40 @@
         "/tahun"
       ]
     },
-    "Option": {
-      "Select a reason": [
-        "Pilih alasan"
-      ],
-      "It’s temporary, I’ll be back": [
-        "Ini hanya sementara, saya akan kembali"
-      ],
-      "I didn’t understand what I was signing up for": [
-        "Saya tidak mengerti mengapa dahulu saya mendaftar"
-      ],
-      "It’s too expensive": [
-        "Terlalu mahal"
-      ],
-      "I’m unhappy with customer service": [
-        "Saya tidak senang dengan layanan konsumennya"
-      ],
-      "Using Proton is too complicated": [
-        "Menggunakan Proton terlalu rumit"
-      ],
-      "I'm switching to a different service": [
-        "Saya pindah ke layanan lain"
-      ],
-      "The quality didn't live up to my expectations": [
-        "Kualitasnya tidak sesuai harapan saya"
-      ],
-      "Other": [
-        "Lainnya"
-      ],
+    "Downgrade account reason": {
       "I use a different Proton account": [
         "Saya menggunakan akun Proton lain"
       ],
-      "It's too expensive": [
-        "Terlalu mahal"
+      "Subscription is too expensive": [
+        ""
       ],
-      "It's missing a key feature that I need": [
-        "Tidak ada fitur penting yang saya butuhkan"
+      "Missing feature(s) ": [
+        ""
       ],
-      "I found another service that I like better": [
-        "Saya menemukan layanan lain yang lebih baik"
+      "Bugs or quality issue": [
+        ""
       ],
-      "My reason isn't listed": [
-        "Alasan saya tidak ada di daftar"
+      "Streaming service unsupported": [
+        ""
       ],
-      "Android": [
-        "Android"
+      "Switching to a different provider": [
+        ""
       ],
-      "iOS": [
-        "iOS"
+      "Temporary need, may come back in the future": [
+        ""
       ],
-      "Windows": [
-        "Windows"
-      ],
-      "macOS": [
-        "macOS"
-      ],
-      "GNU/Linux": [
-        "GNU/Linux"
-      ],
-      "Router": [
-        "Perute"
-      ],
-      "UDP": [
-        "UDP"
-      ],
-      "TCP": [
-        "TCP"
-      ],
-      "Secure Core configs": [
-        "Konfigurasi Secure Core"
-      ],
-      "Country configs": [
-        "Konfigurasi negara"
-      ],
-      "Standard server configs": [
-        "Konfigurasi server standar"
-      ],
-      "Free server configs": [
-        "Konfigurasi server gratis"
-      ],
-      "Email address": [
-        "Alamat surel"
-      ],
-      "SMS": [
-        "SMS"
+      "My reason isn't listed, please comment": [
+        ""
+      ]
+    },
+    "Plan time remaining": {
+      "You still have ${ daysRemaining } day left on your ${ BRAND_NAME } ${ currentPlanName } account.": [
+        ""
+      ]
+    },
+    "Downgrade modal exit survey title": {
+      "Help us improve!": [
+        ""
       ]
     },
     "State": {
@@ -3198,6 +3190,11 @@
         "Versi baru ${ appName } tersedia. ${ reloadButton }."
       ]
     },
+    "Password": {
+      "Confirm new password": [
+        "Konfirmasi sandi baru"
+      ]
+    },
     "Message": {
       "Are you sure you want to disable two-factor authentication?": [
         "Anda yakin ingin mematikan pemeriksaan dua-faktor?"
@@ -3229,6 +3226,68 @@
       ],
       "(1 email per month)": [
         "(1 surel per bulan)"
+      ]
+    },
+    "Option": {
+      "Select a reason": [
+        "Pilih alasan"
+      ],
+      "I use a different Proton account": [
+        "Saya menggunakan akun Proton lain"
+      ],
+      "It's too expensive": [
+        "Terlalu mahal"
+      ],
+      "It's missing a key feature that I need": [
+        "Tidak ada fitur penting yang saya butuhkan"
+      ],
+      "I found another service that I like better": [
+        "Saya menemukan layanan lain yang lebih baik"
+      ],
+      "My reason isn't listed": [
+        "Alasan saya tidak ada di daftar"
+      ],
+      "Android": [
+        "Android"
+      ],
+      "iOS": [
+        "iOS"
+      ],
+      "Windows": [
+        "Windows"
+      ],
+      "macOS": [
+        "macOS"
+      ],
+      "GNU/Linux": [
+        "GNU/Linux"
+      ],
+      "Router": [
+        "Perute"
+      ],
+      "UDP": [
+        "UDP"
+      ],
+      "TCP": [
+        "TCP"
+      ],
+      "Secure Core configs": [
+        "Konfigurasi Secure Core"
+      ],
+      "Country configs": [
+        "Konfigurasi negara"
+      ],
+      "Standard server configs": [
+        "Konfigurasi server standar"
+      ],
+      "Free server configs": [
+        "Konfigurasi server gratis"
+      ],
+      "Email address": [
+        "Alamat surel"
+      ],
+      "SMS": [
+        "SMS"
       ]
     },
     "Notification": {
@@ -3437,38 +3496,6 @@
         "Tagihan ProtonMail"
       ]
     },
-    "Footer": {
-      "Based in Switzerland, available globally.": [
-        "Berbasis di Swiss, tersedia secara global."
-      ]
-    },
-    "Delinquent modal title": {
-      "Overdue invoice": [
-        "Tagihan jatuh tempo"
-      ]
-    },
-    "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
-      "Email": [
-        "Surel"
-      ],
-      "SMS": [
-        "SMS"
-      ],
-      "Manual": [
-        "Manual"
-      ],
-      "No verification method available": [
-        "Metode verifikasi tidak tersedia"
-      ]
-    },
-    "Password": {
-      "Confirm new password": [
-        "Konfirmasi sandi baru"
-      ]
-    },
     "file size format": {
       "bytes": [
         "byte"
@@ -3512,7 +3539,7 @@
       "Calendar link is not accessible": [
         ""
       ],
-      "Calendar link is temporarily unaccessible": [
+      "Calendar link is temporarily inaccessible": [
         ""
       ],
       "Failed to sync calendar": [
