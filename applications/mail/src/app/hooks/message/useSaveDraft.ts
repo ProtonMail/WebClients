@@ -39,6 +39,7 @@ export const useCreateDraft = () => {
     return useCallback(async (message: MessageExtendedWithData) => {
         const messageKeys = await getMessageKeys(message.data);
         const newMessage = await createMessage(message, api, getMessageKeys);
+        const messageImages = replaceEmbeddedAttachments(message, newMessage.Attachments);
         updateMessageCache(messageCache, message.localID, {
             data: {
                 ...mergeSavedMessage(message.data, newMessage),
@@ -48,7 +49,7 @@ export const useCreateDraft = () => {
             ...messageKeys,
             document: message.document,
             plainText: message.plainText,
-            messageImages: replaceEmbeddedAttachments(message, newMessage.Attachments),
+            messageImages,
         });
         await call();
     }, []);
