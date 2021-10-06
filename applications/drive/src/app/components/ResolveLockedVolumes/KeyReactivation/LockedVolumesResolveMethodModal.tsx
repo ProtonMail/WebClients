@@ -1,14 +1,12 @@
 import React, { useState } from 'react';
 import {
     Button,
-    // ButtonLike,
     ContentModal,
     DialogModal,
     FooterModal,
     HeaderModal,
     InnerModal,
     RadioGroup,
-    // SettingsLink,
 } from '@proton/components';
 import { APPS } from '@proton/shared/lib/constants';
 import { c, msgid } from 'ttag';
