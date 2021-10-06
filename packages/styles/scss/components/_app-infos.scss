@@ -16,8 +16,7 @@
 		}
 	}
 
-	// If storage is displayed, hide app name
-	&-storage + &-version &-name {
+	&-compact &-name {
 		@extend .sr-only;
 	}
 }
