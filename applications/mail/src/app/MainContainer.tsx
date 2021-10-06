@@ -45,22 +45,24 @@ const MainContainer = () => {
                     <AttachmentProvider>
                         <ContactProvider>
                             <EncryptedSearchProvider>
-                                <ModalsChildren />
                                 <MailContentRefProvider mailContentRef={mailContentRef}>
                                     <ComposerContainer breakpoints={breakpoints}>
                                         {({ isComposerOpened }) => (
-                                            <Switch>
-                                                <Route
-                                                    path={MAIN_ROUTE_PATH}
-                                                    render={() => (
-                                                        <PageContainer
-                                                            ref={mailContentRef}
-                                                            breakpoints={breakpoints}
-                                                            isComposerOpened={isComposerOpened}
-                                                        />
-                                                    )}
-                                                />
-                                            </Switch>
+                                            <>
+                                                <ModalsChildren />
+                                                <Switch>
+                                                    <Route
+                                                        path={MAIN_ROUTE_PATH}
+                                                        render={() => (
+                                                            <PageContainer
+                                                                ref={mailContentRef}
+                                                                breakpoints={breakpoints}
+                                                                isComposerOpened={isComposerOpened}
+                                                            />
+                                                        )}
+                                                    />
+                                                </Switch>
+                                            </>
                                         )}
                                     </ComposerContainer>
                                 </MailContentRefProvider>

@@ -7,6 +7,7 @@ export * from './bridge';
 export * from './cache';
 export * from './calendar';
 export * from './challenge';
+export * from './checklist';
 export * from './compatibilityCheck';
 export * from './contacts';
 export * from './config';

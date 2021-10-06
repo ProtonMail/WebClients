@@ -1,11 +1,21 @@
 import { useCallback, memo } from 'react';
 import { c } from 'ttag';
-import { Sidebar, SidebarPrimaryButton, SidebarNav, MainLogo, useMailSettings, Tooltip } from '@proton/components';
+import {
+    Sidebar,
+    SidebarPrimaryButton,
+    SidebarNav,
+    MainLogo,
+    useMailSettings,
+    Tooltip,
+    useModals,
+} from '@proton/components';
+import giftSvg from '@proton/styles/assets/img/get-started/gift.svg';
 
-import MailSidebarList from './MailSidebarList';
-import SidebarVersion from './SidebarVersion';
 import { useOnCompose } from '../../containers/ComposeProvider';
 import { MESSAGE_ACTIONS } from '../../constants';
+import MailGetStartedChecklistModal from '../checklist/GetStartedChecklistModal';
+import MailSidebarList from './MailSidebarList';
+import SidebarVersion from './SidebarVersion';
 
 interface Props {
     labelID: string;
@@ -15,11 +25,16 @@ interface Props {
 
 const MailSidebar = ({ labelID, expanded = false, onToggleExpand }: Props) => {
     const onCompose = useOnCompose();
+    const { createModal } = useModals();
 
     const handleCompose = useCallback(() => {
         onCompose({ action: MESSAGE_ACTIONS.NEW });
     }, [onCompose]);
     const [{ Shortcuts = 0 } = {}] = useMailSettings();
+
+    const handleGiftClick = () => {
+        createModal(<MailGetStartedChecklistModal />);
+    };
 
     const titlePrimaryButton = Shortcuts ? (
         <>
@@ -28,6 +43,7 @@ const MailSidebar = ({ labelID, expanded = false, onToggleExpand }: Props) => {
             <kbd className="no-border">N</kbd>
         </>
     ) : null;
+
     const sideBarPrimaryButton = Shortcuts ? (
         <Tooltip title={titlePrimaryButton} originalPlacement="top">
             <SidebarPrimaryButton className="no-mobile" onClick={handleCompose} data-testid="sidebar:compose">
@@ -39,6 +55,7 @@ const MailSidebar = ({ labelID, expanded = false, onToggleExpand }: Props) => {
             {c('Action').t`New message`}
         </SidebarPrimaryButton>
     );
+
     return (
         <Sidebar
             expanded={expanded}
@@ -46,6 +63,19 @@ const MailSidebar = ({ labelID, expanded = false, onToggleExpand }: Props) => {
             primary={sideBarPrimaryButton}
             logo={<MainLogo to="/inbox" />}
             version={<SidebarVersion />}
+            storageGift={
+                <Tooltip
+                    title={c('Storage').t`Get 1 GB of bonus storage for completing your "get started" action items.`}
+                >
+                    <button type="button" className="ml0-5" onClick={handleGiftClick}>
+                        <img
+                            width={16}
+                            src={giftSvg}
+                            alt={c('Storage gift icon img alt attribute').t`Bonus storage gift icon`}
+                        />
+                    </button>
+                </Tooltip>
+            }
         >
             <SidebarNav>
                 <MailSidebarList labelID={labelID} />

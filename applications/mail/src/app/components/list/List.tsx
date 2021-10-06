@@ -1,8 +1,10 @@
-import { useEffect, ChangeEvent, Ref, memo, forwardRef, MutableRefObject } from 'react';
+import { useEffect, ChangeEvent, Ref, memo, forwardRef, MutableRefObject, useState } from 'react';
 import { c, msgid } from 'ttag';
 import { useLabels, classnames, PaginationRow, useItemsDraggable } from '@proton/components';
 import { MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
 import { DENSITY } from '@proton/shared/lib/constants';
+import * as sessionStorage from '@proton/shared/lib/helpers/sessionStorage';
+
 import Item from './Item';
 import { Element } from '../../models/element';
 import EmptyView from '../view/EmptyView';
@@ -15,10 +17,11 @@ import ListSettings from './ListSettings';
 import ESSlowToolbar from './ESSlowToolbar';
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import useEncryptedSearchList from './useEncryptedSearchList';
+import GetStartedChecklist from '../checklist/GetStartedChecklist';
 
 const defaultCheckedIDs: string[] = [];
 const defaultElements: Element[] = [];
-
+const GET_STARTED_CHECKLIST_DISMISSED_STORAGE_KEY = 'GET_STARTED_CHECKLIST_DISMISSED_STORAGE_KEY';
 interface Props {
     labelID: string;
     loading: boolean;
@@ -81,6 +84,9 @@ const List = (
     const elements = usePlaceholders(inputElements, loading, placeholderCount);
     const pagingHandlers = usePaging(inputPage, inputTotal, onPage);
     const { page, total } = pagingHandlers;
+    const [getStartedDismissed, setGetStartedDismissed] = useState(() =>
+        JSON.parse(sessionStorage.getItem(GET_STARTED_CHECKLIST_DISMISSED_STORAGE_KEY) || JSON.stringify(false))
+    );
 
     // Scroll top when changing page
     useEffect(() => {
@@ -95,6 +101,10 @@ const List = (
         page,
         total
     );
+    const handleDismiss = () => {
+        setGetStartedDismissed(true);
+        sessionStorage.setItem(GET_STARTED_CHECKLIST_DISMISSED_STORAGE_KEY, JSON.stringify(true));
+    };
 
     const { draggedIDs, handleDragStart, handleDragEnd } = useItemsDraggable(
         elements,
@@ -166,7 +176,14 @@ const List = (
                                 onFocus={onFocus}
                             />
                         ))}
+
+                        {userSettings.Checklists?.includes('get-started') &&
+                            !loading &&
+                            !(total > 1) &&
+                            !getStartedDismissed && <GetStartedChecklist onDismiss={handleDismiss} />}
+
                         {useLoadingElement && loadingElement}
+
                         {!loading && total > 1 && (
                             <div className="p1-5 flex flex-column flex-align-items-center">
                                 <PaginationRow

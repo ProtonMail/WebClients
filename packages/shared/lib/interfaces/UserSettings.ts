@@ -91,4 +91,5 @@ export interface UserSettings {
     Welcome: number;
     EarlyAccess: number;
     Flags: Flags;
+    Checklists?: string[];
 }
