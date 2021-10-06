@@ -1,10 +1,10 @@
 import { decryptPrivateKey, encryptPrivateKey, generateKey, OpenPGPKey, reformatKey } from 'pmcrypto';
 import { computeKeyPassword, generateKeySalt } from '@proton/srp';
 
-import { queryAddresses } from '../api/members';
+import { getAllMemberAddresses } from '../api/members';
 import { encryptAddressKeyToken, generateAddressKey, getAddressKeyToken } from './addressKeys';
 import { decryptMemberToken, encryptMemberToken, generateMemberToken } from './memberToken';
-import { Member, EncryptionConfig, KeyPair, Api, Address } from '../interfaces';
+import { Member, EncryptionConfig, KeyPair, Api } from '../interfaces';
 import { getPrimaryKey } from './getPrimaryKey';
 import isTruthy from '../helpers/isTruthy';
 import { splitKeys } from './keys';
@@ -84,9 +84,7 @@ export const getReEncryptedPublicMemberTokensPayloadV2 = async ({
             continue;
         }
 
-        const memberAddresses = await api<{ Addresses: Address[] }>(queryAddresses(member.ID)).then(
-            ({ Addresses }) => Addresses || []
-        );
+        const memberAddresses = await getAllMemberAddresses(api, member.ID);
 
         const memberKeysAndReEncryptedTokens = await Promise.all(
             member.Keys.map(async ({ Token, PrivateKey, ID }) => {
@@ -184,9 +182,7 @@ export const getReEncryptedPublicMemberTokensPayloadLegacy = async ({
         if (!member.Keys?.length) {
             continue;
         }
-        const memberAddresses = await api<{ Addresses: [] }>(queryAddresses(member.ID)).then(
-            ({ Addresses }) => Addresses || []
-        );
+        const memberAddresses = await getAllMemberAddresses(api, member.ID);
         const memberUserAndAddressKeys = memberAddresses.reduce((acc, { Keys: AddressKeys }) => {
             return acc.concat(AddressKeys);
         }, member.Keys);

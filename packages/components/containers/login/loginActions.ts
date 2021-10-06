@@ -3,7 +3,6 @@ import {
     Api,
     KeySalt as tsKeySalt,
     Member as tsMember,
-    OrganizationKey,
     User as tsUser,
 } from '@proton/shared/lib/interfaces';
 import { AUTH_VERSION } from '@proton/srp';
@@ -12,7 +11,7 @@ import { srpVerify } from '@proton/shared/lib/srp';
 import { upgradePassword } from '@proton/shared/lib/api/settings';
 import { auth2FA, getInfo, revoke } from '@proton/shared/lib/api/auth';
 import { getUser } from '@proton/shared/lib/api/user';
-import { getKeySalts, migrateAddressKeysRoute } from '@proton/shared/lib/api/keys';
+import { getKeySalts } from '@proton/shared/lib/api/keys';
 import { HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
 import { InfoResponse } from '@proton/shared/lib/authentication/interface';
 import loginWithFallback from '@proton/shared/lib/authentication/loginWithFallback';
@@ -20,16 +19,14 @@ import { withAuthHeaders } from '@proton/shared/lib/fetch/headers';
 import { noop } from '@proton/shared/lib/helpers/function';
 import { maybeResumeSessionByUser, persistSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { MEMBER_PRIVATE, USER_ROLES } from '@proton/shared/lib/constants';
-import { queryAddresses } from '@proton/shared/lib/api/addresses';
+import { getAllAddresses } from '@proton/shared/lib/api/addresses';
 import { getHasV2KeysToUpgrade, upgradeV2KeysHelper } from '@proton/shared/lib/keys/upgradeKeysV2';
-import { traceError } from '@proton/shared/lib/helpers/sentry';
-import { getOrganizationKeys } from '@proton/shared/lib/api/organization';
+import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { getMember } from '@proton/shared/lib/api/members';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { handleSetupAddressKeys } from '@proton/shared/lib/keys/setupAddressKeys';
 import { wait } from '@proton/shared/lib/helpers/promise';
-import { migrateMembersAddressKeysRoute } from '@proton/shared/lib/api/memberKeys';
-import { getHasKeyMigrationRunner, getHasMigratedAddressKeys, migrateAddressKeys } from '@proton/shared/lib/keys';
+import { getHasKeyMigrationRunner, migrateUser } from '@proton/shared/lib/keys';
 
 import { ChallengeResult } from '../challenge';
 import { getAuthTypes, handleUnlockKey } from './loginHelper';
@@ -103,75 +100,33 @@ const handleKeyMigration = async ({
 
     const [User, Addresses] = await Promise.all([
         maybeUser || authApi<{ User: tsUser }>(getUser()).then(({ User }) => User),
-        maybeAddresess || hasGenerateKeys
-            ? authApi<{ Addresses: tsAddress[] }>(queryAddresses()).then(({ Addresses }) => Addresses)
-            : undefined,
+        maybeAddresess || hasGenerateKeys ? getAllAddresses(authApi) : undefined,
     ]);
 
-    if (
-        User.ToMigrate === 1 &&
-        getHasKeyMigrationRunner(keyMigrationFeatureValue) &&
-        // Non-private members are not migrated during sign-in.
-        !(User.Private === MEMBER_PRIVATE.READABLE && User.Role === USER_ROLES.MEMBER_ROLE) &&
-        keyPassword &&
-        Addresses &&
-        !getHasMigratedAddressKeys(Addresses)
-    ) {
-        if (User.Private === MEMBER_PRIVATE.READABLE && User.Role === USER_ROLES.ADMIN_ROLE) {
-            const [selfMember, organizationKey] = await Promise.all([
-                authApi<{ Member: tsMember }>(getMember('me')).then(({ Member }) => Member),
-                authApi<OrganizationKey>(getOrganizationKeys()),
-            ]);
-            const payload = await migrateAddressKeys({
-                user: User,
-                organizationKey,
-                addresses: Addresses,
-                keyPassword,
-            }).catch((e) => {
-                traceError(e);
-                return undefined;
-            });
-            if (payload) {
-                await authApi({
-                    ...migrateMembersAddressKeysRoute({ MemberID: selfMember.ID, ...payload }),
-                    timeout: 60000,
-                }).catch(noop);
-                return finalizeLogin({
-                    cache,
-                    loginPassword,
-                    keyPassword,
-                    user: undefined,
-                    addresses: undefined,
-                });
-            }
-        } else {
-            const payload = await migrateAddressKeys({
-                user: User,
-                addresses: Addresses,
-                keyPassword,
-            }).catch((e) => {
-                traceError(e);
-                return undefined;
-            });
-            if (payload) {
-                await authApi({ ...migrateAddressKeysRoute(payload), timeout: 60000 }).catch(noop);
-                return finalizeLogin({
-                    cache,
-                    loginPassword,
-                    keyPassword,
-                    user: undefined,
-                    addresses: undefined,
-                });
-            }
-        }
+    let hasDoneMigration = false;
+    if (getHasKeyMigrationRunner(keyMigrationFeatureValue) && keyPassword && Addresses) {
+        hasDoneMigration = await migrateUser({
+            api: authApi,
+            keyPassword,
+            user: User,
+            addresses: Addresses,
+        }).catch((e) => {
+            captureMessage('Key migration error', { extra: { error: e } });
+            return false;
+        });
     }
 
     return finalizeLogin({
         cache,
         loginPassword,
         keyPassword,
-        user: User,
-        addresses: Addresses,
+        // If migration was performed in the previous step, reset the user and addresses value to get updated keys and values
+        ...(hasDoneMigration
+            ? undefined
+            : {
+                  user: User,
+                  addresses: Addresses,
+              }),
     });
 };
 
@@ -195,9 +150,7 @@ const handleKeyUpgrade = async ({
 
     const [User, Addresses] = await Promise.all([
         maybeUser || authApi<{ User: tsUser }>(getUser()).then(({ User }) => User),
-        hasGenerateKeys
-            ? authApi<{ Addresses: tsAddress[] }>(queryAddresses()).then(({ Addresses }) => Addresses)
-            : undefined,
+        hasGenerateKeys ? getAllAddresses(authApi) : undefined,
     ]);
 
     if (Addresses && getHasV2KeysToUpgrade(User, Addresses)) {
@@ -212,7 +165,7 @@ const handleKeyUpgrade = async ({
             hasAddressKeyMigration: false,
             api: authApi,
         }).catch((e) => {
-            traceError(e);
+            captureMessage('Key upgrade error', { extra: { error: e } });
             return undefined;
         });
         if (newKeyPassword !== undefined) {

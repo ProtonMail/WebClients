@@ -1,10 +1,25 @@
 import { PaginationParams } from './interface';
+import queryPages from './helpers/queryPages';
+import { Address, Api } from '../interfaces';
 
 export const queryAddresses = (params?: PaginationParams) => ({
     url: 'addresses',
     method: 'get',
     params,
 });
+
+export const getAllAddresses = (api: Api) => {
+    return queryPages((page, pageSize) => {
+        return api<{ Addresses: Address[]; Total: number }>(
+            queryAddresses({
+                Page: page,
+                PageSize: pageSize,
+            })
+        );
+    }).then((pages) => {
+        return pages.flatMap(({ Addresses }) => Addresses);
+    });
+};
 
 interface CreateAddressArgs {
     MemberID?: string;
@@ -13,6 +28,7 @@ interface CreateAddressArgs {
     DisplayName?: string;
     Signature?: string;
 }
+
 export const createAddress = ({ MemberID, Local, Domain, DisplayName, Signature }: CreateAddressArgs) => ({
     url: 'addresses',
     method: 'post',
@@ -30,6 +46,7 @@ interface SetupAddressArgs {
     DisplayName: string;
     Signature?: string;
 }
+
 export const setupAddress = ({ Domain, DisplayName, Signature }: SetupAddressArgs) => ({
     url: 'addresses/setup',
     method: 'post',
