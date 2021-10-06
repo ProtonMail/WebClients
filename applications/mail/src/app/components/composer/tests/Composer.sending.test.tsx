@@ -434,7 +434,7 @@ describe('Composer sending', () => {
             const image = createEmbeddedImage(attachment);
             const messageImages = createMessageImages([image]);
 
-            const content = `<img src="${imageUrl}" data-embedded-img="${cid}">`;
+            const content = `<img src="${imageUrl}" data-embedded-img="cid:${cid}">`;
             const document = window.document.createElement('div');
             document.innerHTML = content;
 

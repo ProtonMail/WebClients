@@ -5,6 +5,7 @@ import {
     MessageRemoteImage,
     PartialMessageExtended,
 } from '../../models/message';
+import { setEmbeddedAttr } from './messageEmbeddeds';
 import { ATTRIBUTES } from './messageRemotes';
 
 const REGEXP_FIXER = (() => {
@@ -78,7 +79,8 @@ export const restoreImages = (inputDocument: Element | undefined, images: Messag
             return;
         }
         if (image.type === 'embedded') {
-            original.setAttribute('data-embedded-img', image.cid || image.cloc);
+            setEmbeddedAttr(image.cid, image.cloc, original);
+
             original.classList.add('proton-embedded');
 
             if (showEmbeddedImages) {
