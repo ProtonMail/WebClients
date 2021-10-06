@@ -174,6 +174,7 @@ const SquireIframe = (
     useEffect(() => {
         if (squireReady) {
             const squire = getSquireRef(ref);
+            const iframeDocumentRef = iframeRef.current?.contentDocument;
 
             const keydownHandler = (e: KeyboardEvent) => handleKeyDown(e, squire);
             const dropHandler = (e: DragEvent) => handleDrop(e, squire);
@@ -181,9 +182,10 @@ const SquireIframe = (
             squire.addEventListener('focus', handleFocus);
             squire.addEventListener('input', handleInput);
             squire.addEventListener('paste', handlePaste);
-            squire.addEventListener('dragenter', handlePassDragEvents);
-            squire.addEventListener('dragleave', handlePassDragEvents);
-            squire.addEventListener('drop', dropHandler);
+            iframeDocumentRef?.addEventListener('dragenter', handlePassDragEvents);
+            iframeDocumentRef?.addEventListener('dragleave', handlePassDragEvents);
+            iframeDocumentRef?.addEventListener('dragover', handlePassDragEvents);
+            iframeDocumentRef?.addEventListener('drop', dropHandler);
             squire.addEventListener('cursor', handleCursor);
             // Listening to all keyups as inputs is aggressive but we tested some deletion actions that trigger no other events
             // Also it's keyup and not keydown, keydown is too early and don't contains changes
@@ -193,9 +195,10 @@ const SquireIframe = (
                 squire.removeEventListener('focus', handleFocus);
                 squire.removeEventListener('input', handleInput);
                 squire.removeEventListener('paste', handlePaste);
-                squire.removeEventListener('dragenter', handlePassDragEvents);
-                squire.removeEventListener('dragleave', handlePassDragEvents);
-                squire.removeEventListener('drop', dropHandler);
+                iframeDocumentRef?.removeEventListener('dragenter', handlePassDragEvents);
+                iframeDocumentRef?.removeEventListener('dragleave', handlePassDragEvents);
+                iframeDocumentRef?.removeEventListener('dragover', handlePassDragEvents);
+                iframeDocumentRef?.removeEventListener('drop', dropHandler);
                 squire.removeEventListener('cursor', handleCursor);
                 squire.removeEventListener('keyup', handleInput);
                 squire.removeEventListener('keydown', keydownHandler);
