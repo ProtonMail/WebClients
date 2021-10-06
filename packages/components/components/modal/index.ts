@@ -13,3 +13,4 @@ export { default as DeleteModal } from './DeleteModal';
 export { default as SimpleFormModal } from './SimpleFormModal';
 export { default as PreviewPDFModal } from './PreviewPDFModal';
 export { default as FooterModal } from './Footer';
+export { default as ModalCloseButton } from './ModalCloseButton';
