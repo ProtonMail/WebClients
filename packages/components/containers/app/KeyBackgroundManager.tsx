@@ -9,9 +9,9 @@ import {
     getHasKeyMigrationRunner,
     getHasMigratedAddressKeys,
     getDecryptedUserKeysHelper,
+    migrateUser,
 } from '@proton/shared/lib/keys';
-import { traceError } from '@proton/shared/lib/helpers/sentry';
-import { USER_ROLES } from '@proton/shared/lib/constants';
+import { captureMessage, traceError } from '@proton/shared/lib/helpers/sentry';
 import { User } from '@proton/shared/lib/interfaces';
 
 import {
@@ -95,22 +95,44 @@ const KeyBackgroundManager = ({
 
         const runMigration = async () => {
             const [user, organization, addresses] = await Promise.all([getUser(), getOrganization(), getAddresses()]);
-            if (
-                user.Role !== USER_ROLES.ADMIN_ROLE ||
-                organization.ToMigrate !== 1 ||
-                !getHasMigratedAddressKeys(addresses)
-            ) {
+
+            if (!(user.ToMigrate === 1 || organization.ToMigrate === 1)) {
                 return;
             }
+
             const keyMigrationFeatureValue = await keyMigrationFeature
                 .get<number>()
                 .then(({ Value }) => Value)
                 .catch(() => 0);
+
             if (!getHasKeyMigrationRunner(keyMigrationFeatureValue)) {
                 return;
             }
+
             const keyPassword = authentication.getPassword();
-            return migrateMemberAddressKeys({ api: silentApi, keyPassword }).then(call).catch(traceError);
+            let hasMigratedAddressKeys = getHasMigratedAddressKeys(addresses);
+
+            const hasDoneMigration = await migrateUser({
+                api: silentApi,
+                user,
+                keyPassword,
+                addresses,
+            });
+
+            if (hasDoneMigration) {
+                // Force a refresh directly so they're good to be used
+                await call();
+                hasMigratedAddressKeys = true;
+            }
+
+            if (hasMigratedAddressKeys) {
+                await migrateMemberAddressKeys({
+                    api: silentApi,
+                    user,
+                    organization,
+                    keyPassword,
+                });
+            }
         };
 
         if (!(hasMemberKeyMigration || hasPrivateMemberKeyGeneration || hasReadableMemberKeyActivation)) {
@@ -118,7 +140,13 @@ const KeyBackgroundManager = ({
         }
 
         run()
-            .then(() => (hasMemberKeyMigration ? runMigration() : undefined))
+            .then(() =>
+                hasMemberKeyMigration
+                    ? runMigration().catch((e) => {
+                          captureMessage('Key migration error', { extra: { error: e } });
+                      })
+                    : undefined
+            )
             .catch(noop);
     }, []);
 

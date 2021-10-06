@@ -1,7 +1,7 @@
 import { c } from 'ttag';
-import { Address as tsAddress, Api, User as tsUser } from '../interfaces';
+import { Api, User as tsUser } from '../interfaces';
 import { getUser, queryCheckUsernameAvailability } from '../api/user';
-import { queryAddresses } from '../api/addresses';
+import { getAllAddresses } from '../api/addresses';
 import { updateUsername } from '../api/settings';
 import { handleSetupAddress } from './setupAddressKeys';
 import { getHasMigratedAddressKeys } from './keyMigration';
@@ -28,7 +28,7 @@ export const handleCreateInternalAddressAndKey = async ({ username, keyPassword,
 
     const [user, addresses] = await Promise.all([
         api<{ User: tsUser }>(getUser()).then(({ User }) => User),
-        api<{ Addresses: tsAddress[] }>(queryAddresses()).then(({ Addresses }) => Addresses),
+        getAllAddresses(api),
     ]);
 
     const hasSetUsername = !!user.Name;

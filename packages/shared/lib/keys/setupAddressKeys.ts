@@ -1,6 +1,6 @@
-import { queryAddresses, setupAddress as setupAddressRoute } from '../api/addresses';
+import { getAllAddresses, setupAddress as setupAddressRoute } from '../api/addresses';
 import { queryAvailableDomains } from '../api/domains';
-import { Address as tsAddress, Address, Api } from '../interfaces';
+import { Address as tsAddress, Api } from '../interfaces';
 import { handleSetupKeys } from './setupKeys';
 
 interface SetupAddressArgs {
@@ -38,7 +38,7 @@ export const handleSetupAddressKeys = async ({
     hasAddressKeyMigrationGeneration,
 }: SetupAddressKeysArgs) => {
     const [availableAddresses, availableDomains] = await Promise.all([
-        api<{ Addresses: Address[] }>(queryAddresses()).then(({ Addresses }) => Addresses),
+        getAllAddresses(api),
         api<{ Domains: string[] }>(queryAvailableDomains()).then(({ Domains }) => Domains),
     ]);
 
