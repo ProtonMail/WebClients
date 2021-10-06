@@ -230,9 +230,12 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow }: Props) =>
                             showEncryptedSearch={showEncryptedSearch}
                         />
                     )}
-                    {showEncryptedSearch && (
-                        <EncryptedSearchField isOpen={isOpen} showMore={showMore} toggleShowMore={toggleShowMore} />
-                    )}
+                    <EncryptedSearchField
+                        show={showEncryptedSearch}
+                        isOpen={isOpen}
+                        showMore={showMore}
+                        toggleShowMore={toggleShowMore}
+                    />
                     {showAdvancedSearch && (
                         <>
                             {showEncryptedSearch && (

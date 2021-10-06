@@ -33,12 +33,13 @@ import { formatSimpleDate } from '../../../helpers/date';
 import { estimateIndexingTime } from '../../../helpers/encryptedSearch/esBuild';
 
 interface Props {
+    show: boolean;
     isOpen: boolean;
     showMore: boolean;
     toggleShowMore: () => void;
 }
 
-const EncryptedSearchField = ({ isOpen, showMore, toggleShowMore }: Props) => {
+const EncryptedSearchField = ({ show, isOpen, showMore, toggleShowMore }: Props) => {
     const [user] = useUser();
     const { createModal } = useModals();
     const { resumeIndexing, getESDBStatus, pauseIndexing, toggleEncryptedSearch, getProgressRecorderRef } =
@@ -254,7 +255,7 @@ const EncryptedSearchField = ({ isOpen, showMore, toggleShowMore }: Props) => {
         </div>
     );
 
-    return (
+    return show ? (
         <div className="pt1-5">
             <div className="flex flex-column">
                 <div className="flex flew-nowrap mb0-5 flex-align-items-center">
@@ -292,7 +293,7 @@ const EncryptedSearchField = ({ isOpen, showMore, toggleShowMore }: Props) => {
             <hr className="mt1" />
             {showMoreButton}
         </div>
-    );
+    ) : null;
 };
 
 export default EncryptedSearchField;
