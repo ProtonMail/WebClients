@@ -1,5 +1,5 @@
 import { encryptPrivateKey, OpenPGPKey } from 'pmcrypto';
-import { User, Address, OrganizationKey, DecryptedKey, SignedKeyList, Member, Api } from '../interfaces';
+import { User, Address, OrganizationKey, DecryptedKey, SignedKeyList, Member, Api, Organization } from '../interfaces';
 import { getDecryptedUserKeys, getDecryptedUserKeysHelper } from './getDecryptedUserKeys';
 import { getDecryptedAddressKeys, getDecryptedAddressKeysHelper } from './getDecryptedAddressKeys';
 import { generateAddressKeyTokens } from './addressKeys';
@@ -7,14 +7,14 @@ import { getActiveKeys } from './getActiveKeys';
 import { getSignedKeyList } from './signedKeyList';
 import { getPrimaryKey } from './getPrimaryKey';
 import { getDecryptedOrganizationKey } from './getDecryptedOrganizationKey';
-import { MEMBER_PRIVATE } from '../constants';
+import { MEMBER_PRIVATE, USER_ROLES } from '../constants';
 import { queryScopes } from '../api/auth';
+import { migrateAddressKeysRoute } from '../api/keys';
 import { getOrganizationKeys } from '../api/organization';
-import { queryAddresses, queryMembers } from '../api/members';
+import { getAllMemberAddresses, getAllMembers, getMember } from '../api/members';
 import { noop } from '../helpers/function';
 import { migrateMembersAddressKeysRoute } from '../api/memberKeys';
 import { hasBit } from '../helpers/bitset';
-import paginatedFetch from '../api/helpers/paginatedFetch';
 import isTruthy from '../helpers/isTruthy';
 
 export const getHasMigratedAddressKey = ({ Token, Signature }: { Token?: string; Signature?: string }): boolean => {
@@ -196,13 +196,30 @@ export async function migrateAddressKeys({
 interface MigrateMemberAddressKeysArguments {
     api: Api;
     keyPassword: string;
+    timeout?: number;
+    user: User;
+    organization: Organization;
 }
 
-export async function migrateMemberAddressKeys({ api, keyPassword }: MigrateMemberAddressKeysArguments) {
+export async function migrateMemberAddressKeys({
+    api,
+    keyPassword,
+    timeout = 120000,
+    user,
+    organization,
+}: MigrateMemberAddressKeysArguments) {
+    if (organization.ToMigrate !== 1) {
+        return false;
+    }
+
+    if (user.Role !== USER_ROLES.ADMIN_ROLE) {
+        return;
+    }
+
     // NOTE: The API following calls are done in a waterfall to lower the amount of unnecessary requests.
     // Ensure scope...
     const { Scopes } = await api<{ Scopes: string[] }>(queryScopes());
-    if (!(Scopes.includes('organization') && Scopes.includes('locked'))) {
+    if (!Scopes.includes('organization')) {
         return;
     }
 
@@ -217,9 +234,7 @@ export async function migrateMemberAddressKeys({ api, keyPassword }: MigrateMemb
     }
 
     // Ensure that there are members to migrate...
-    const members = await paginatedFetch(api, (Page, PageSize) => {
-        return api<{ Members: Member[] }>(queryMembers({ Page, PageSize })).then(({ Members }) => Members);
-    });
+    const members = await getAllMembers(api);
     const membersToMigrate = members.filter(({ ToMigrate, Private, Self }) => {
         return !Self && ToMigrate === 1 && Private === MEMBER_PRIVATE.READABLE;
     });
@@ -232,9 +247,7 @@ export async function migrateMemberAddressKeys({ api, keyPassword }: MigrateMemb
         if (!member.Keys?.length) {
             continue;
         }
-        const memberAddresses = await api<{ Addresses: Address[] }>(queryAddresses(member.ID)).then(
-            ({ Addresses }) => Addresses
-        );
+        const memberAddresses = await getAllMemberAddresses(api, member.ID);
         const memberUserKeys = await getDecryptedUserKeys(member.Keys, '', decryptedOrganizationKeyResult);
         const primaryMemberUserKey = getPrimaryKey(memberUserKeys)?.privateKey;
         if (!primaryMemberUserKey) {
@@ -273,7 +286,55 @@ export async function migrateMemberAddressKeys({ api, keyPassword }: MigrateMemb
             decryptedOrganizationKeyResult.privateKey
         );
         if (payload) {
-            await api({ ...migrateMembersAddressKeysRoute({ MemberID: member.ID, ...payload }), timeout: 60000 });
+            await api({ ...migrateMembersAddressKeysRoute({ MemberID: member.ID, ...payload }), timeout });
         }
     }
 }
+
+export const migrateUser = async ({
+    api,
+    user,
+    addresses,
+    keyPassword,
+    timeout = 120000,
+}: {
+    api: Api;
+    user: User;
+    addresses: Address[];
+    keyPassword: string;
+    timeout?: number;
+}) => {
+    if (user.ToMigrate !== 1 || getHasMigratedAddressKeys(addresses)) {
+        return false;
+    }
+
+    if (user.Private === MEMBER_PRIVATE.READABLE && user.Role === USER_ROLES.MEMBER_ROLE) {
+        return false;
+    }
+
+    if (user.Private === MEMBER_PRIVATE.READABLE && user.Role === USER_ROLES.ADMIN_ROLE) {
+        const [selfMember, organizationKey] = await Promise.all([
+            api<{ Member: Member }>(getMember('me')).then(({ Member }) => Member),
+            api<OrganizationKey>(getOrganizationKeys()),
+        ]);
+        const payload = await migrateAddressKeys({
+            user,
+            organizationKey,
+            addresses,
+            keyPassword,
+        });
+        await api({
+            ...migrateMembersAddressKeysRoute({ MemberID: selfMember.ID, ...payload }),
+            timeout,
+        });
+        return true;
+    }
+
+    const payload = await migrateAddressKeys({
+        user,
+        addresses,
+        keyPassword,
+    });
+    await api({ ...migrateAddressKeysRoute(payload), timeout });
+    return true;
+};
