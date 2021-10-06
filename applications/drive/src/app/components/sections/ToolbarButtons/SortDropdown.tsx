@@ -11,7 +11,7 @@ import {
     ToolbarButton,
     DropdownCaret,
 } from '@proton/components';
-import { AllSortKeys, SortParams } from '../../../interfaces/link';
+import { AllSortKeys, SortParams } from '@proton/shared/lib/interfaces/drive/link';
 
 export interface MenuItem<T extends AllSortKeys> {
     name: string;

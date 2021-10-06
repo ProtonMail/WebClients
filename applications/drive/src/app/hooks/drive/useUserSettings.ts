@@ -4,9 +4,9 @@ import { useApi } from '@proton/components';
 import { LayoutSetting, UserSettings } from '@proton/shared/lib/interfaces/drive/userSettings';
 import { queryUpdateUserSettings, queryUserSettings } from '@proton/shared/lib/api/drive/userSettings';
 import { DEFAULT_USER_SETTINGS } from '@proton/shared/lib/drive/constants';
-import { UserSettingsContext } from '../../components/sections/UserSettingsProvider';
 import { DriveSectionSortKeys, SortParams } from '@proton/shared/lib/interfaces/drive/link';
 
+import { UserSettingsContext } from '../../components/sections/UserSettingsProvider';
 import userSettingsParser from '../../utils/userSettingsParser/userSettingsParser';
 
 type UserSettingsResponse = { UserSettings: Partial<UserSettings> };

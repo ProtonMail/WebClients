@@ -1,7 +1,7 @@
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
+import { DriveSectionSortKeys, SortParams } from '@proton/shared/lib/interfaces/drive/link';
+import { SortSetting } from '@proton/shared/lib/interfaces/drive/userSettings';
 
-import { DriveSectionSortKeys, SortParams } from '../../interfaces/link';
-import { SortSetting } from '../../interfaces/userSettings';
 import { fieldMap } from './constants';
 
 export const parseSetting = (sortSetting: SortSetting) => {
