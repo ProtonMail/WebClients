@@ -1,5 +1,5 @@
-import { DriveSectionSortKeys } from '../../interfaces/link';
-import { SortSetting } from '../../interfaces/userSettings';
+import { DriveSectionSortKeys } from '@proton/shared/lib/interfaces/drive/link';
+import { SortSetting } from '@proton/shared/lib/interfaces/drive/userSettings';
 
 export const fieldMap: { [key in SortSetting]: DriveSectionSortKeys } = {
     [SortSetting.ModifiedAsc]: 'ModifyTime',

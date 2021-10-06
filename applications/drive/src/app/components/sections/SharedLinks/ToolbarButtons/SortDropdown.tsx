@@ -1,10 +1,10 @@
 import { c } from 'ttag';
 
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
+import { SharedLinksSectionSortKeys, SortParams } from '@proton/shared/lib/interfaces/drive/link';
 
 import SortDropdown from '../../ToolbarButtons/SortDropdown';
 import { useSharedLinksContent } from '../SharedLinksContentProvider';
-import { SharedLinksSectionSortKeys, SortParams } from '../../../../interfaces/link';
 
 const menuItems = (): {
     name: string;

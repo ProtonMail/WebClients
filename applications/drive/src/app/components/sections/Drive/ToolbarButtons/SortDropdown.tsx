@@ -1,10 +1,10 @@
 import { c } from 'ttag';
 
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
+import { DriveSectionSortKeys, SortParams } from '@proton/shared/lib/interfaces/drive/link';
 
 import { useDriveContent } from '../DriveContentProvider';
 import SortDropdown from '../../ToolbarButtons/SortDropdown';
-import { DriveSectionSortKeys, SortParams } from '../../../../interfaces/link';
 
 const menuItems = (): {
     name: string;
