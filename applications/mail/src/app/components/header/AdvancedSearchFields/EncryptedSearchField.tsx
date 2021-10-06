@@ -1,4 +1,3 @@
-import { useEffect, useRef, useState } from 'react';
 import { add } from 'date-fns';
 import { c, msgid } from 'ttag';
 import {
@@ -14,11 +13,8 @@ import {
     useModals,
     useUser,
 } from '@proton/components';
-import { wait } from '@proton/shared/lib/helpers/promise';
-import { SECOND } from '@proton/shared/lib/constants';
 
 import {
-    getOldestTime,
     getProgressFromBuildProgress,
     getTotalFromBuildProgress,
     indexKeyExists,
@@ -28,26 +24,20 @@ import {
 } from '../../../helpers/encryptedSearch/esUtils';
 import { useEncryptedSearchContext } from '../../../containers/EncryptedSearchProvider';
 import { ESIndexingState } from '../../../models/encryptedSearch';
-import { defaultESIndexingState } from '../../../constants';
 import { formatSimpleDate } from '../../../helpers/date';
-import { estimateIndexingTime } from '../../../helpers/encryptedSearch/esBuild';
 
 interface Props {
-    show: boolean;
-    isOpen: boolean;
     showMore: boolean;
     toggleShowMore: () => void;
+    esState: ESIndexingState;
 }
 
-const EncryptedSearchField = ({ show, isOpen, showMore, toggleShowMore }: Props) => {
+const EncryptedSearchField = ({ showMore, toggleShowMore, esState }: Props) => {
     const [user] = useUser();
     const { createModal } = useModals();
-    const { resumeIndexing, getESDBStatus, pauseIndexing, toggleEncryptedSearch, getProgressRecorderRef } =
-        useEncryptedSearchContext();
+    const { resumeIndexing, getESDBStatus, pauseIndexing, toggleEncryptedSearch } = useEncryptedSearchContext();
     const { isBuilding, esEnabled, isDBLimited, isRefreshing } = getESDBStatus();
-    const [esState, setESState] = useState<ESIndexingState>(defaultESIndexingState);
     const { esProgress, oldestTime, totalIndexingMessages, estimatedMinutes, currentProgressValue } = esState;
-    const abortProgressRef = useRef<AbortController>(new AbortController());
 
     const confirmationToIndex = () => {
         createModal(
@@ -62,78 +52,6 @@ const EncryptedSearchField = ({ show, isOpen, showMore, toggleShowMore }: Props)
             </ConfirmModal>
         );
     };
-
-    const setProgress = async () => {
-        while (!abortProgressRef.current.signal.aborted) {
-            setESState((esState) => {
-                const [esProgress, esTotal] = getProgressRecorderRef().current;
-                const endTime = performance.now();
-
-                const { estimatedMinutes, currentProgressValue } = estimateIndexingTime(
-                    esProgress,
-                    esTotal,
-                    endTime,
-                    esState
-                );
-
-                return {
-                    ...esState,
-                    endTime,
-                    esProgress,
-                    totalIndexingMessages: esTotal,
-                    estimatedMinutes: estimatedMinutes || esState.estimatedMinutes,
-                    currentProgressValue: currentProgressValue || esState.currentProgressValue,
-                };
-            });
-            await wait(2 * SECOND);
-        }
-    };
-
-    const setOldestTime = async () => {
-        if (wasIndexingDone(user.ID) && isDBLimited) {
-            const oldestTime = await getOldestTime(user.ID, 1000);
-            setESState((esState) => {
-                return {
-                    ...esState,
-                    oldestTime,
-                };
-            });
-        }
-    };
-
-    const startProgress = async () => {
-        abortProgressRef.current = new AbortController();
-        const [esPrevProgress, totalIndexingMessages] = getProgressRecorderRef().current;
-        setESState((esState) => {
-            return {
-                ...esState,
-                startTime: performance.now(),
-                esPrevProgress,
-                totalIndexingMessages,
-            };
-        });
-        void setProgress();
-    };
-
-    const stopProgress = () => {
-        abortProgressRef.current.abort();
-        setESState(() => defaultESIndexingState);
-    };
-
-    useEffect(() => {
-        if (isOpen) {
-            void setOldestTime();
-        }
-    }, [isOpen]);
-
-    useEffect(() => {
-        if (isBuilding || isRefreshing) {
-            void startProgress();
-        } else {
-            stopProgress();
-        }
-        void setOldestTime();
-    }, [isBuilding, isRefreshing]);
 
     // Switches
     const showProgress = indexKeyExists(user.ID) && esEnabled && (!isDBReadyAfterBuilding(user.ID) || isRefreshing);
@@ -255,7 +173,7 @@ const EncryptedSearchField = ({ show, isOpen, showMore, toggleShowMore }: Props)
         </div>
     );
 
-    return show ? (
+    return (
         <div className="pt1-5">
             <div className="flex flex-column">
                 <div className="flex flew-nowrap mb0-5 flex-align-items-center">
@@ -293,7 +211,7 @@ const EncryptedSearchField = ({ show, isOpen, showMore, toggleShowMore }: Props)
             <hr className="mt1" />
             {showMoreButton}
         </div>
-    ) : null;
+    );
 };
 
 export default EncryptedSearchField;

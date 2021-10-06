@@ -41,6 +41,7 @@ import { useClickMailContent } from '../../hooks/useClickMailContent';
 import SearchField from './AdvancedSearchFields/SearchField';
 import LocationField from './AdvancedSearchFields/LocationField';
 import EncryptedSearchField from './AdvancedSearchFields/EncryptedSearchField';
+import useEncryptedSearchToggleState from './useEncryptedSearchToggleState';
 
 interface SearchModel {
     keyword: string;
@@ -102,6 +103,7 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow }: Props) =>
     const { isDBLimited } = getESDBStatus();
     const { loading: loadingESFeature, feature: esFeature } = useFeature(FeatureCode.EnabledEncryptedSearch);
     const { loading: loadingScheduledFeature } = useFeature(FeatureCode.ScheduledSend);
+    const esState = useEncryptedSearchToggleState(isOpen);
 
     // Get right keyword value depending on the current situation
     const getKeyword = (keyword: string, reset?: boolean) => {
@@ -230,12 +232,9 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow }: Props) =>
                             showEncryptedSearch={showEncryptedSearch}
                         />
                     )}
-                    <EncryptedSearchField
-                        show={showEncryptedSearch}
-                        isOpen={isOpen}
-                        showMore={showMore}
-                        toggleShowMore={toggleShowMore}
-                    />
+                    {showEncryptedSearch && (
+                        <EncryptedSearchField esState={esState} showMore={showMore} toggleShowMore={toggleShowMore} />
+                    )}
                     {showAdvancedSearch && (
                         <>
                             {showEncryptedSearch && (
