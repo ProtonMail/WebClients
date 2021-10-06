@@ -14,8 +14,7 @@ import {
     useTheme,
 } from '@proton/components';
 import { ThemeTypes } from '@proton/shared/lib/themes/themes';
-import { queryAddresses } from '@proton/shared/lib/api/addresses';
-import { Address } from '@proton/shared/lib/interfaces';
+import { getAllAddresses } from '@proton/shared/lib/api/addresses';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
 import { handleCreateInternalAddressAndKey } from '@proton/shared/lib/keys';
 import { getHasOnlyExternalAddresses } from '@proton/shared/lib/helpers/address';
@@ -81,7 +80,7 @@ const SetupInternalAccountContainer = () => {
             }
 
             const [addresses, domains] = await Promise.all([
-                silentApi<{ Addresses: Address[] }>(queryAddresses()).then(({ Addresses }) => Addresses),
+                getAllAddresses(silentApi),
                 silentApi<{ Domains: string[] }>(queryAvailableDomains()).then(({ Domains }) => Domains),
             ]);
 

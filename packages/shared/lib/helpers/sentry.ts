@@ -63,9 +63,9 @@ function main({ SENTRY_DSN, COMMIT, APP_VERSION }: Pick<ProtonConfig, 'SENTRY_DS
     });
 }
 
-export const traceError = (e: unknown) => {
+export const traceError = (...args: Parameters<typeof Sentry.captureException>) => {
     if (!isLocalhost(window.location.host)) {
-        Sentry.captureException(e);
+        Sentry.captureException(...args);
     }
 };
 
