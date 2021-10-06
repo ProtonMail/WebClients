@@ -208,7 +208,7 @@ const PopoverEventContent = ({ calendar, model, formatTime, displayNameEmailMap 
                             headerContent={
                                 <div className="attendee-count">
                                     {numberOfParticipants}{' '}
-                                    {c('Label').ngettext(msgid`Participant`, `Participants`, numberOfParticipants)}
+                                    {c('Label').ngettext(msgid`participant`, `participants`, numberOfParticipants)}
                                     <div className="color-weak text-sm m0">
                                         {Object.entries(groupedReplies)
                                             .filter(([, { count }]) => count)
