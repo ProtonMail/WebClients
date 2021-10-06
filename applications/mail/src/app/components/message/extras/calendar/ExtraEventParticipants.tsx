@@ -37,8 +37,8 @@ const ExtraEventParticipants = ({ list }: Props) => {
                 <div className="flex flex-align-items-center">
                     <span className="mr0-5">
                         {c('ICS widget label for event details').ngettext(
-                            msgid`${totalAttendees} Participant`,
-                            `${totalAttendees} Participants`,
+                            msgid`${totalAttendees} participant`,
+                            `${totalAttendees} participants`,
                             totalAttendees
                         )}
                     </span>
