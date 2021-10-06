@@ -3,7 +3,7 @@ import { c } from 'ttag';
 
 import { useModals, useNotifications } from '@proton/components';
 
-import DeleteOldFilesConfirmModal from './DeleteLockedVolumesConfirmModal';
+import DeleteLockedVolumesConfirmModal from './DeleteLockedVolumesConfirmModal';
 import UnlockDriveConfirmationDialog from './UnlockDriveConfirmationDialog';
 import KeyReactivationModal, { LockedVolumeResolveMethod } from './LockedVolumesResolveMethodModal';
 import useFiles from '../../../hooks/drive/useFiles';
@@ -17,7 +17,7 @@ const useKeyReactivationFlow = ({ onSuccess, onError }: ReactivationParams) => {
     const lastResolveMethod = useRef<LockedVolumeResolveMethod>(LockedVolumeResolveMethod.ReactivateKeys);
     const volumesToDelete = useRef<string[]>([]);
 
-    const { deleteOldFiles } = useFiles();
+    const { deleteLockedVolumes } = useFiles();
     const { createModal, removeModal } = useModals();
     const { createNotification } = useNotifications();
 
@@ -31,9 +31,9 @@ const useKeyReactivationFlow = ({ onSuccess, onError }: ReactivationParams) => {
         }
     };
 
-    const handleConfirmation = async () => {
+    const handleDeleteLockedVolumesSubmit = async () => {
         try {
-            await deleteOldFiles(volumesToDelete.current);
+            await deleteLockedVolumes(volumesToDelete.current);
             createNotification({
                 text: c('Notification').t`Your old files will be deleted in 72 hours`,
             });
@@ -75,8 +75,8 @@ const useKeyReactivationFlow = ({ onSuccess, onError }: ReactivationParams) => {
                 break;
             case LockedVolumeResolveMethod.DeleteOldFiles:
                 currentModalRef.current = createModal(
-                    <DeleteOldFilesConfirmModal
-                        onSubmit={handleConfirmation}
+                    <DeleteLockedVolumesConfirmModal
+                        onSubmit={handleDeleteLockedVolumesSubmit}
                         onBack={handleBackButtonClick}
                         onClose={() => setCurrentModalType(null)}
                         volumeCount={volumeCount}
