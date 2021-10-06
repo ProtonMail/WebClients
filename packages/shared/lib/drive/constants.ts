@@ -224,7 +224,7 @@ export const fileDescriptions: { [type: string]: string } = {
     'application/x-httpd-php': 'Hypertext Preprocessor (Personal Home Page)',
     'application/vnd.ms-powerpoint': 'Microsoft PowerPoint',
     'application/x-sh': 'Bourne shell script',
-    'image/svg+xml': 'Scalable Vector Graphics(SVG)',
+    'image/svg+xml': 'Scalable Vector Graphics (SVG)',
     'text/plain': 'Text',
     'application/vnd.visio': 'Microsoft Visio',
     'audio/webm': 'WEBM audio',
