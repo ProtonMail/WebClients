@@ -1,4 +1,3 @@
-import { useRef } from 'react';
 import * as React from 'react';
 import { FixedSizeList, ListChildComponentProps } from 'react-window';
 
@@ -13,7 +12,6 @@ import {
 } from '@proton/components';
 import { buffer } from '@proton/shared/lib/helpers/function';
 import { rootFontSize } from '@proton/shared/lib/helpers/dom';
-
 import {
     FileBrowserProps,
     FileBrowserItem,
@@ -21,11 +19,12 @@ import {
     FileBrowserLayouts,
     ItemContextMenuProps,
 } from '@proton/shared/lib/interfaces/drive/fileBrowser';
+
+import { AllSortKeys } from '@proton/shared/lib/interfaces/drive/link';
 import { useFileBrowserColumns } from '../useFileBrowserColumns';
 import useFileBrowserView from '../useFileBrowserView';
 import ListHeader from './ListHeader';
 import ItemRow from './ItemRow';
-import { AllSortKeys } from '../../../interfaces/link';
 
 type ListItemData = {
     itemCount: number;
@@ -142,7 +141,7 @@ const ListView = <T extends AllSortKeys>({
     ItemContextMenu,
     FolderContextMenu,
 }: Props<T>) => {
-    const containerRef = useRef<HTMLDivElement>(null);
+    const containerRef = React.useRef<HTMLDivElement>(null);
     const rect = useElementRect(containerRef, buffer);
 
     const {
