@@ -173,6 +173,8 @@ export const getSupportedEvent = ({
             'x-pm-session-key': sharedSessionKey,
             'x-pm-shared-event-id': sharedEventID,
             'x-pm-proton-reply': protonReply,
+            'x-yahoo-yid': xYahooID,
+            'x-yahoo-user-status': xYahooUserStatus,
         } = vcalVeventComponent;
         const trimmedSummaryValue = summary?.value.trim();
         const trimmedDescriptionValue = description?.value.trim();
@@ -369,6 +371,14 @@ export const getSupportedEvent = ({
             }
             if (protonReply) {
                 validated['x-pm-proton-reply'] = { ...protonReply };
+            }
+            if (xYahooID) {
+                // Needed to interpret non RFC-compliant Yahoo REPLY ics's
+                validated['x-yahoo-yid'] = { ...xYahooID };
+            }
+            if (xYahooUserStatus) {
+                // Needed to interpret non RFC-compliant Yahoo REPLY ics's
+                validated['x-yahoo-user-status'] = { ...xYahooUserStatus };
             }
             if (organizer) {
                 validated.organizer = getSupportedOrganizer(organizer);
