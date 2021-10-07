@@ -1,6 +1,5 @@
 import { c, msgid } from 'ttag';
 import { Label } from '@proton/shared/lib/interfaces/Label';
-
 import ItemStar from './ItemStar';
 import ItemLabels from './ItemLabels';
 import ItemAttachmentIcon from './ItemAttachmentIcon';

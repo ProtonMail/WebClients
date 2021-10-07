@@ -1,6 +1,6 @@
 import { MailSettings } from '@proton/shared/lib/interfaces';
-
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { memo } from 'react';
 import FilterActions from '../toolbar/FilterActions';
 import SortDropdown from '../toolbar/SortDropdown';
 import { Sort, Filter } from '../../models/tools';
@@ -33,4 +33,4 @@ const ListSettings = ({ sort, onSort, onFilter, filter, conversationMode, mailSe
     );
 };
 
-export default ListSettings;
+export default memo(ListSettings);

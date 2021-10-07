@@ -11,7 +11,7 @@ interface Props {
     onToggle: (folder: FolderWithSubFolders, expanded: boolean) => void;
     unreadCount?: number;
     expanded?: boolean;
-    onFocus: () => void;
+    onFocus: (id: string) => void;
     id: string;
 }
 

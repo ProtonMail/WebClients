@@ -183,7 +183,7 @@ describe('MailHeader', () => {
             expect(history.location.pathname).toBe('/all-mail');
             expect(history.location.hash).toBe(`#keyword=${searchTerm}`);
 
-            await rerender(<MailHeader {...props} location={history.location} />);
+            await rerender(<MailHeader {...props} />);
 
             const searchInput = searchForm.querySelector('input') as HTMLInputElement;
             expect(searchInput.value).toBe(searchTerm);

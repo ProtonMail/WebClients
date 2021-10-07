@@ -12,7 +12,7 @@ interface Props {
     right?: ReactNode;
     text: string;
     title?: string;
-    onFocus?: () => void;
+    onFocus?: (id: string) => void;
     id?: string;
 }
 
@@ -55,7 +55,7 @@ const SimpleSidebarListItemHeader = ({
                     onClick={() => onToggle(!toggle)}
                     title={title}
                     aria-expanded={toggle}
-                    onFocus={onFocus}
+                    onFocus={() => onFocus(id || '')}
                     data-shortcut-target={id}
                 >
                     <span className="mr0-5 text-sm">{text}</span>
