@@ -44,7 +44,7 @@ const LocationField = ({ value, onChange }: Props) => {
                 <LocationFieldDropdown onChange={onChange} value={value} />
                 {showCustomValue ? (
                     <Button
-                        className="no-border rounded align-baseline"
+                        className="no-border rounded align-baseline text-ellipsis"
                         color="norm"
                         onClick={() => onChange(ALL_MAIL)}
                         shape="solid"
