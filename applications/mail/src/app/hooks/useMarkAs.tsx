@@ -21,29 +21,43 @@ export enum MARK_AS_STATUS {
 }
 
 const getNotificationTextMarked = (isMessage: boolean, elementsCount: number, status: MARK_AS_STATUS) => {
-    const action = status === MARK_AS_STATUS.READ ? c('Action').t`mark as read` : c('Action').t`mark as unread`;
-
     if (isMessage) {
         if (elementsCount === 1) {
-            return c('Success').t`Message ${action}.`;
+            return status === MARK_AS_STATUS.READ
+                ? c('Success').t`Message marked as read.`
+                : c('Success').t`Message marked as unread.`;
         }
 
-        return c('Success').ngettext(
-            msgid`${elementsCount} message ${action}.`,
-            `${elementsCount} messages ${action}.`,
-            elementsCount
-        );
+        return status === MARK_AS_STATUS.READ
+            ? c('Success').ngettext(
+                  msgid`${elementsCount} message marked as read.`,
+                  `${elementsCount} messages marked as read.`,
+                  elementsCount
+              )
+            : c('Success').ngettext(
+                  msgid`${elementsCount} message marked as unread.`,
+                  `${elementsCount} messages marked as unread.`,
+                  elementsCount
+              );
     }
 
     if (elementsCount === 1) {
-        return c('Success').t`Conversation ${action}.`;
+        return status === MARK_AS_STATUS.READ
+            ? c('Success').t`Conversation marked as read.`
+            : c('Success').t`Conversation marked as unread.`;
     }
 
-    return c('Success').ngettext(
-        msgid`${elementsCount} conversation ${action}.`,
-        `${elementsCount} conversations ${action}.`,
-        elementsCount
-    );
+    return status === MARK_AS_STATUS.READ
+        ? c('Success').ngettext(
+              msgid`${elementsCount} conversation marked as read.`,
+              `${elementsCount} conversations marked as read.`,
+              elementsCount
+          )
+        : c('Success').ngettext(
+              msgid`${elementsCount} conversation marked as unread.`,
+              `${elementsCount} conversations marked as unread.`,
+              elementsCount
+          );
 };
 
 export const useMarkAs = () => {
@@ -96,7 +110,7 @@ export const useMarkAs = () => {
                     )
                 );
                 token = UndoToken.Token;
-            } catch (error:any) {
+            } catch (error: any) {
                 rollback();
                 throw error;
             } finally {
