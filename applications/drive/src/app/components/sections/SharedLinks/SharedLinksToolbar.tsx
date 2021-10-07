@@ -10,6 +10,7 @@ import {
 } from '../ToolbarButtons';
 import { StopSharingButton } from './ToolbarButtons';
 import { useSharedLinksContent } from './SharedLinksContentProvider';
+import SortDropdown from './ToolbarButtons/SortDropdown';
 
 interface Props {
     shareId: string;
@@ -32,6 +33,7 @@ const SharedLinksToolbar = ({ shareId }: Props) => {
 
             <span className="mlauto flex">
                 <LayoutDropdown />
+                <SortDropdown />
             </span>
         </Toolbar>
     );

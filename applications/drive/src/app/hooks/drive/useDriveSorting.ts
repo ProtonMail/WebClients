@@ -1,73 +1,57 @@
 import { useMultiSortedList } from '@proton/components';
-import { useMemo } from 'react';
 import { SortConfig } from '@proton/components/hooks/useSortedList';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
-import { LinkMeta, SortKeys, SortParams } from '@proton/shared/lib/interfaces/drive/link';
-import { SortSetting } from '@proton/shared/lib/interfaces/drive/userSettings';
-import useUserSettings from './useUserSettings';
+import { AllSortKeys, DriveSectionSortKeys, LinkMeta, SortParams } from '@proton/shared/lib/interfaces/drive/link';
 
 const getNameSortConfig = (direction = SORT_DIRECTION.ASC) => ({
-    key: 'Name' as SortKeys,
+    key: 'Name' as DriveSectionSortKeys,
     direction,
     compare: (a: LinkMeta['Name'], b: LinkMeta['Name']) => a.localeCompare(b),
 });
 
-const fieldMap: { [key in SortSetting]: SortKeys } = {
-    [SortSetting.ModifiedAsc]: 'ModifyTime',
-    [SortSetting.ModifiedDesc]: 'ModifyTime',
-    [SortSetting.NameAsc]: 'Name',
-    [SortSetting.NameDesc]: 'Name',
-    [SortSetting.SizeAsc]: 'Size',
-    [SortSetting.SizeDesc]: 'Size',
-    [SortSetting.TypeAsc]: 'MIMEType',
-    [SortSetting.TypeDesc]: 'MIMEType',
+const getShareLinkCreatedSortConfig = (direction = SORT_DIRECTION.ASC) => ({
+    key: 'ShareUrls' as DriveSectionSortKeys,
+    direction,
+    compare: (a: LinkMeta['ShareUrls'], b: LinkMeta['ShareUrls']) => {
+        return a[0].CreateTime - b[0].CreateTime;
+    },
+});
+
+const getShareLinkExpiresSortConfig = (direction = SORT_DIRECTION.ASC) => ({
+    key: 'ShareUrls' as DriveSectionSortKeys,
+    direction,
+    compare: (a: LinkMeta['ShareUrls'], b: LinkMeta['ShareUrls']) => {
+        return (a[0].ExpireTime || Infinity) - (b[0].ExpireTime || Infinity);
+    },
+});
+
+const getConfig = (sortField: AllSortKeys, direction: SORT_DIRECTION) => {
+    const configs: {
+        [key in AllSortKeys]: SortConfig<LinkMeta>[];
+    } = {
+        Name: [{ key: 'Type', direction: SORT_DIRECTION.ASC }, getNameSortConfig(direction)],
+        MIMEType: [{ key: 'MIMEType', direction }, { key: 'Type', direction }, getNameSortConfig()],
+        ModifyTime: [{ key: 'ModifyTime', direction }, getNameSortConfig()],
+        Size: [{ key: 'Type', direction }, { key: 'Size', direction }, getNameSortConfig()],
+        CreateTime: [getShareLinkCreatedSortConfig(direction), { key: 'Type', direction }, getNameSortConfig()],
+        ExpireTime: [getShareLinkExpiresSortConfig(direction), { key: 'Type', direction }, getNameSortConfig()],
+    };
+    return configs[sortField];
 };
 
-function useDriveSorting(getList: (sortParams: SortParams) => LinkMeta[]) {
-    const { sort, changeSort } = useUserSettings();
-
-    const sortParams = useMemo((): SortParams => {
-        const sortOrder = sort < 0 ? SORT_DIRECTION.DESC : SORT_DIRECTION.ASC;
-        const sortField = fieldMap[sort];
-        return {
-            sortOrder,
-            sortField,
-        };
-    }, [sort]);
-
-    const getConfig = (sortField: SortKeys, direction: SORT_DIRECTION) => {
-        const configs: {
-            [key in SortKeys]: SortConfig<LinkMeta>[];
-        } = {
-            Name: [{ key: 'Type', direction: SORT_DIRECTION.ASC }, getNameSortConfig(direction)],
-            MIMEType: [{ key: 'MIMEType', direction }, { key: 'Type', direction }, getNameSortConfig()],
-            ModifyTime: [{ key: 'ModifyTime', direction }, getNameSortConfig()],
-            Size: [{ key: 'Type', direction }, { key: 'Size', direction }, getNameSortConfig()],
-        };
-        return configs[sortField];
-    };
-
+function useDriveSorting<T extends AllSortKeys>(
+    getList: (sortParams: SortParams<T>) => LinkMeta[],
+    sortParams: SortParams<T>,
+    changeSort: (sortParams: SortParams<T>) => Promise<unknown>
+) {
     const { sortedList, setConfigs } = useMultiSortedList(
         getList(sortParams),
         getConfig(sortParams.sortField, sortParams.sortOrder)
     );
 
-    const setSorting = async (sortField: SortKeys, sortOrder: SORT_DIRECTION) => {
+    const setSorting = async ({ sortField, sortOrder }: SortParams<T>) => {
         setConfigs(getConfig(sortField, sortOrder));
-        const sortSettingValue = Object.entries(fieldMap).find(([setting, fieldName]) => {
-            if (fieldName === sortField) {
-                const settingValue = Number(setting);
-                const isSameDirection =
-                    (sortOrder === SORT_DIRECTION.ASC && settingValue > 0) ||
-                    (sortOrder === SORT_DIRECTION.DESC && settingValue < 0);
-                return isSameDirection;
-            }
-            return false;
-        })?.[0];
-
-        if (sortSettingValue) {
-            await changeSort(Number(sortSettingValue));
-        }
+        changeSort({ sortField, sortOrder }).catch(console.error);
     };
 
     return {
