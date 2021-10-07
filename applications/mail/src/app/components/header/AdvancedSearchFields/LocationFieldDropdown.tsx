@@ -51,7 +51,7 @@ const LocationFieldDropdown = ({ value, onChange }: Props) => {
                                 <span className="button text-bold pl1">{group.title}</span>
                                 {group.items.map((item) => (
                                     <DropdownMenuButton
-                                        className="text-left pl2"
+                                        className="text-left pl2 text-ellipsis"
                                         isSelected={item.value === value}
                                         key={item.value}
                                         onClick={() => onChange(item.value)}
