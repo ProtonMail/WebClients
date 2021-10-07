@@ -125,7 +125,7 @@ const HeaderExpandedDetails = ({ labelID, labels, message, messageViewIcons, mai
             )}
             {displayTrackerIcon && (
                 <div className="mb0-5 flex flex-nowrap">
-                    <span className="container-to relative inline-flex mr0-1 item-spy-tracker-link flex-align-items-center">
+                    <span className="container-to relative inline-flex item-spy-tracker-link flex-align-items-center">
                         <SpyTrackerIcon
                             numberOfTrackers={numberOfTrackers}
                             needsMoreProtection={needsMoreProtection}

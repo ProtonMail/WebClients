@@ -1,17 +1,7 @@
 import { useRef } from 'react';
 import { c } from 'ttag';
-import {
-    FeatureCode,
-    Spotlight,
-    useSpotlightOnFeature,
-    classnames,
-    Href,
-    SettingsLink,
-    Tooltip,
-} from '@proton/components';
-import { APPS } from '@proton/shared/lib/constants';
+import { FeatureCode, Spotlight, useSpotlightOnFeature, classnames, Href, Tooltip } from '@proton/components';
 import * as React from 'react';
-import { emailTrackerProtectionURL } from '../../constants';
 import { MessageExtended } from '../../models/message';
 
 import './ItemSpyTrackerIcon.scss';
@@ -45,10 +35,6 @@ const ItemSpyTrackerIcon = ({ message, className }: Props) => {
         return null;
     }
 
-    const icon = (
-        <SpyTrackerIcon numberOfTrackers={numberOfTrackers} needsMoreProtection={needsMoreProtection} title={title} />
-    );
-
     return (
         <Spotlight
             originalPlacement="top-right"
@@ -69,25 +55,14 @@ const ItemSpyTrackerIcon = ({ message, className }: Props) => {
             <div>
                 {/* Need to wrap the Tooltip by a div to avoid ref warning because Spotlight is cloning the element and applying refs on top of it */}
                 <Tooltip title={title} data-testid="privacy:icon-tooltip">
-                <div className={classnames(['flex', className])} ref={anchorRef}>
-                    {needsMoreProtection ? (
-                        <SettingsLink
-                            path="/email-privacy"
-                            app={APPS.PROTONMAIL}
-                            className="relative inline-flex mr0-1 item-spy-tracker-link flex-align-items-center"
-                        >
-                            {icon}
-                        </SettingsLink>
-                    ) : (
-                        <Href
-                            url={emailTrackerProtectionURL}
-                            className="relative inline-flex mr0-1 item-spy-tracker-link flex-align-items-center"
-                        >
-                            {icon}
-                        </Href>
-                    )}
-                </div>
-            </Tooltip>
+                    <div className={classnames(['flex', className])} ref={anchorRef}>
+                        <SpyTrackerIcon
+                            numberOfTrackers={numberOfTrackers}
+                            needsMoreProtection={needsMoreProtection}
+                            title={title}
+                        />
+                    </div>
+                </Tooltip>
             </div>
         </Spotlight>
     );
