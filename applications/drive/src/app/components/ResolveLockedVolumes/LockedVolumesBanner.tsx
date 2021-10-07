@@ -67,9 +67,7 @@ const LockedVolumesBanner = ({ onClose }: Props) => {
     const KeyReactivationButton = (
         <InlineLinkButton
             key="key-reactivation"
-            onClick={() => {
-                openKeyReactivationModal(lockedShares.map((el) => el.VolumeID));
-            }}
+            onClick={openKeyReactivationModal}
             data-test-id="recovery-banner:key-reactivation-button"
         >
             {c('Info').t`Learn more`}
