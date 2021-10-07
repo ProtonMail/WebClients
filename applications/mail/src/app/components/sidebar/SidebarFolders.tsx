@@ -37,7 +37,7 @@ const SidebarFolders = ({
                 expanded={Boolean(folder.Expanded)}
                 unreadCount={getUnreadCount(counterMap, folder)}
                 id={folder.ID}
-                onFocus={() => updateFocusItem(folder.ID)}
+                onFocus={updateFocusItem}
             />
         );
 

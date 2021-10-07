@@ -69,20 +69,22 @@ const useItemsSelection = (activeID: string | undefined, allIDs: string[], reset
     /**
      * Check or uncheck all items
      */
-    const handleCheckAll = (check: boolean) => (check ? handleCheck(allIDs, true, true) : handleCheck([], true, true));
+    const handleCheckAll = useHandler((check: boolean) =>
+        check ? handleCheck(allIDs, true, true) : handleCheck([], true, true)
+    );
 
     /**
      * Just check the given id, nothing more
      */
-    const handleCheckOnlyOne = (id: string) => {
+    const handleCheckOnlyOne = useHandler((id: string) => {
         handleCheck([id], !isChecked(id), false);
         setLastChecked(id);
-    };
+    });
 
     /**
      * Check all items from the last checked to the given id
      */
-    const handleCheckRange = (id: string) => {
+    const handleCheckRange = useHandler((id: string) => {
         const ids = [id];
 
         if (lastChecked) {
@@ -94,12 +96,12 @@ const useItemsSelection = (activeID: string | undefined, allIDs: string[], reset
 
         handleCheck(ids, !isChecked(id), false);
         setLastChecked(id);
-    };
+    });
 
     /**
      * Check only one or check range depending on the shift key value in the event
      */
-    const handleCheckOne = (event: ChangeEvent, id: string) => {
+    const handleCheckOne = useHandler((event: ChangeEvent, id: string) => {
         const { shiftKey } = event.nativeEvent as any;
 
         if (shiftKey) {
@@ -107,7 +109,7 @@ const useItemsSelection = (activeID: string | undefined, allIDs: string[], reset
         } else {
             handleCheckOnlyOne(id);
         }
-    };
+    });
 
     // Automatically uncheck an id which is not anymore in the list (Happens frequently when using search)
     useEffect(() => {

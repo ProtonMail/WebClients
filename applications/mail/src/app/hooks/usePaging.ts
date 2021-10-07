@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { pageCount } from '../helpers/paging';
 
 export const usePaging = (inputPage: number, inputTotal: number | undefined, onPage: (page: number) => void) => {
@@ -14,11 +14,14 @@ export const usePaging = (inputPage: number, inputTotal: number | undefined, onP
         setTotal(getTotal);
     }, [inputPage, inputTotal]);
 
-    const handleNext = () => onPage(inputPage === total - 1 ? total - 1 : inputPage + 1);
-    const handlePrevious = () => onPage(inputPage === 0 ? 0 : inputPage - 1);
-    const handlePage = (newPage: number) => onPage(newPage - 1);
-    const handleStart = () => onPage(0);
-    const handleEnd = () => onPage(total - 1);
+    const handleNext = useCallback(
+        () => onPage(inputPage === total - 1 ? total - 1 : inputPage + 1),
+        [onPage, inputPage, total]
+    );
+    const handlePrevious = useCallback(() => onPage(inputPage === 0 ? 0 : inputPage - 1), [onPage, inputPage]);
+    const handlePage = useCallback((newPage: number) => onPage(newPage - 1), [onPage]);
+    const handleStart = useCallback(() => onPage(0), [onPage]);
+    const handleEnd = useCallback(() => onPage(total - 1), [onPage, total]);
 
     return {
         onNext: handleNext,

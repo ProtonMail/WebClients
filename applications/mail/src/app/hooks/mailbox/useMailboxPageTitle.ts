@@ -9,7 +9,7 @@ import {
     useFolders,
 } from '@proton/components';
 import { toMap } from '@proton/shared/lib/helpers/object';
-import { LabelCount } from '@proton/shared/lib/interfaces/Label';
+import { LabelCount } from '@proton/shared/lib/interfaces';
 import { getLabelName } from '../../helpers/labels';
 import { isConversationMode } from '../../helpers/mailSettings';
 
@@ -18,8 +18,8 @@ export const useMailboxPageTitle = (labelID: string, location: Location) => {
     const [labels] = useLabels();
     const [folders] = useFolders();
     const [user] = useUser();
-    const [conversationCounts] = useConversationCounts() as [LabelCount[], boolean, Error];
-    const [messageCounts] = useMessageCounts() as [LabelCount[], boolean, Error];
+    const [conversationCounts] = useConversationCounts();
+    const [messageCounts] = useMessageCounts();
 
     useEffect(() => {
         const conversationMode = isConversationMode(labelID, mailSettings, location);
