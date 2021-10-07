@@ -10,6 +10,8 @@ import { useCallback } from 'react';
 import { useApi, useGetEncryptionPreferences, useGetMailSettings } from '@proton/components';
 import { INVITE_ACTION_TYPES, InviteActions } from '../interfaces/Invite';
 
+const { SEND_INVITATION, SEND_UPDATE, CHANGE_PARTSTAT, DECLINE_INVITATION, CANCEL_INVITATION } = INVITE_ACTION_TYPES;
+
 const useGetSendIcsPreferencesMap = () => {
     const api = useApi();
     const getEncryptionPreferences = useGetEncryptionPreferences();
@@ -37,7 +39,7 @@ const useGetSendIcsPreferencesMap = () => {
             const organizerEmail = vevent?.organizer ? getAttendeeEmail(vevent.organizer) : undefined;
             const emails: string[] = [];
 
-            if (type === INVITE_ACTION_TYPES.SEND_INVITATION) {
+            if (type === SEND_INVITATION) {
                 if (!hasAddedAttendees && !hasRemovedAttendees && invitedEmails?.length) {
                     emails.push(...invitedEmails);
                 } else {
@@ -48,18 +50,18 @@ const useGetSendIcsPreferencesMap = () => {
                         emails.push(...removedEmails);
                     }
                 }
-            } else if (type === INVITE_ACTION_TYPES.SEND_UPDATE) {
+            } else if (type === SEND_UPDATE) {
                 if (invitedEmails?.length) {
                     emails.push(...invitedEmails);
                 }
                 if (removedEmails?.length) {
                     emails.push(...removedEmails);
                 }
-            } else if (type === INVITE_ACTION_TYPES.CANCEL_INVITATION) {
+            } else if (type === CANCEL_INVITATION) {
                 if (cancelledEmails?.length) {
                     emails.push(...cancelledEmails);
                 }
-            } else if (type === INVITE_ACTION_TYPES.DECLINE_INVITATION) {
+            } else if ([CHANGE_PARTSTAT, DECLINE_INVITATION].includes(type)) {
                 if (organizerEmail) {
                     emails.push(organizerEmail);
                 }

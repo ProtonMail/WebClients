@@ -9,7 +9,6 @@ import {
     MINIMUM_DATE_UTC,
     SAVE_CONFIRMATION_TYPES,
 } from '@proton/shared/lib/calendar/constants';
-import { reformatApiErrorMessage } from '@proton/shared/lib/calendar/helper';
 import getMemberAndAddress from '@proton/shared/lib/calendar/integration/getMemberAndAddress';
 import { withDtstamp } from '@proton/shared/lib/calendar/veventHelper';
 import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
@@ -36,7 +35,6 @@ import {
 } from '@proton/shared/lib/interfaces/calendar';
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
-import { EncryptionPreferencesError } from '@proton/shared/lib/mail/encryptionPreferences';
 import {
     MutableRefObject,
     RefObject,
@@ -686,13 +684,7 @@ const InteractiveCalendarView = ({
         const onRequestError = () => {
             throw new Error(c('Error').t`Invitation failed to be sent`);
         };
-        const onReplyError = (error: Error) => {
-            if (error instanceof EncryptionPreferencesError) {
-                const apiErrorMessage = reformatApiErrorMessage(error.message);
-                const errorMessage = c('Reply to calendar invitation')
-                    .t`Cannot send to organizer address: ${apiErrorMessage}`;
-                throw new Error(errorMessage);
-            }
+        const onReplyError = () => {
             throw new Error(c('Error').t`Answer failed to be sent`);
         };
         const onCancelError = () => {
