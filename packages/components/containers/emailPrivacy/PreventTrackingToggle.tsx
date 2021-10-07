@@ -25,6 +25,7 @@ const PreventTrackingToggle = ({ id, preventTracking, ...rest }: Props) => {
         await api(updateImageProxy(IMAGE_PROXY_FLAGS.PROXY, checked ? 'add' : 'remove'));
         await call();
         toggle();
+
         createNotification({ text: c('Success').t`Preference saved` });
     };
 
