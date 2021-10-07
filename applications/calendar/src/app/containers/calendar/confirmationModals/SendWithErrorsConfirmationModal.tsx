@@ -8,6 +8,9 @@ import { Alert, ErrorButton, FormModal } from '@proton/components';
 import { c } from 'ttag';
 import { CleanSendIcsActionData, INVITE_ACTION_TYPES, InviteActions } from '../../../interfaces/Invite';
 
+const { SEND_INVITATION, SEND_UPDATE, CHANGE_PARTSTAT, DECLINE_INVITATION, CANCEL_INVITATION, NONE } =
+    INVITE_ACTION_TYPES;
+
 const getCleanSendData = ({
     emailsWithError,
     sendPreferencesMap,
@@ -72,7 +75,7 @@ const getCleanSendData = ({
         emailsWithError: [],
     };
 
-    if (type === INVITE_ACTION_TYPES.SEND_INVITATION) {
+    if (type === SEND_INVITATION) {
         if (!vevent) {
             throw new Error('Cannot create event without vevent component');
         }
@@ -99,40 +102,38 @@ const getCleanSendData = ({
             ...cleanData,
             inviteActions: {
                 ...cleanData.inviteActions,
-                type: hasAddedOrRemoved ? INVITE_ACTION_TYPES.SEND_INVITATION : INVITE_ACTION_TYPES.NONE,
+                type: hasAddedOrRemoved ? SEND_INVITATION : NONE,
             },
             emailsWithError: [...addedEmailsWithError, ...removedEmailsWithError],
         };
     }
-    if (type === INVITE_ACTION_TYPES.SEND_UPDATE) {
+    if (type === SEND_UPDATE) {
         const cannotNotify = !invitedCleanAttendees?.length && !removedCleanAttendees?.length;
         return {
             ...cleanData,
             inviteActions: {
                 ...cleanData.inviteActions,
-                type: cannotNotify ? INVITE_ACTION_TYPES.NONE : INVITE_ACTION_TYPES.SEND_UPDATE,
+                type: cannotNotify ? NONE : SEND_UPDATE,
             },
             emailsWithError: [...invitedEmailsWithError, ...addedEmailsWithError, ...removedEmailsWithError],
         };
     }
-    if (type === INVITE_ACTION_TYPES.CANCEL_INVITATION) {
+    if (type === CANCEL_INVITATION) {
         return {
             ...cleanData,
             inviteActions: {
                 ...cleanData.inviteActions,
-                type: cancelledCleanAttendees?.length
-                    ? INVITE_ACTION_TYPES.CANCEL_INVITATION
-                    : INVITE_ACTION_TYPES.NONE,
+                type: cancelledCleanAttendees?.length ? CANCEL_INVITATION : NONE,
             },
             emailsWithError: cancelledEmailsWithError,
         };
     }
-    if (type === INVITE_ACTION_TYPES.DECLINE_INVITATION) {
+    if ([CHANGE_PARTSTAT, DECLINE_INVITATION].includes(type)) {
         return {
             sendPreferencesMap,
             inviteActions: {
                 ...inviteActions,
-                type: INVITE_ACTION_TYPES.NONE,
+                type: NONE,
             },
             vevent,
             cancelVevent,
@@ -148,11 +149,26 @@ const getModalContent = (
 ): {
     title: string;
     warningText: string;
-    alertType: 'error' | 'info';
-    alertText: string;
-    submit: React.ReactNode;
+    alertType?: 'error' | 'info';
+    alertText?: string;
+    submit?: React.ReactNode;
+    close?: React.ReactNode;
 } => {
-    if (originalInviteActions.type === INVITE_ACTION_TYPES.DECLINE_INVITATION) {
+    if (originalInviteActions.type === CHANGE_PARTSTAT) {
+        if (originalInviteActions.isProtonProtonInvite) {
+            // For Proton-Proton invites the answer was changed before sending the email
+            return {
+                title: c('Title').t`Organizer cannot be notified`,
+                warningText: c('Info').t`The organizer could not be notified that you changed your answer:`,
+                close: c('Action').t`OK`,
+            };
+        }
+        return {
+            title: c('Title').t`Organizer cannot be notified`,
+            warningText: c('Info').t`The organizer cannot be notified that you want to change your answer:`,
+        };
+    }
+    if (originalInviteActions.type === DECLINE_INVITATION) {
         return {
             title: c('Title').t`Organizer cannot be notified`,
             warningText: c('Info').t`The organizer cannot be notified that you decline the invitation:`,
@@ -164,7 +180,7 @@ const getModalContent = (
     return {
         title: c('Title').t`Participants cannot be notified`,
         warningText:
-            newInviteActions.type === INVITE_ACTION_TYPES.NONE
+            newInviteActions.type === NONE
                 ? c('Info').t`None of the participants can be notified about your changes:`
                 : c('Info').t`The following participants cannot be notified about your changes:`,
         alertType: 'info',
@@ -227,22 +243,24 @@ const SendWithErrorsConfirmationModal = ({
         );
     };
 
-    const { title, warningText, alertText, alertType, submit } = getModalContent(
+    const { title, warningText, alertText, alertType, submit, close } = getModalContent(
         cleanSendData.inviteActions,
         inviteActions
     );
 
     return (
-        <FormModal title={title} submit={submit} onSubmit={handleConfirm} {...rest}>
+        <FormModal title={title} submit={submit} close={close} hasSubmit={!!submit} onSubmit={handleConfirm} {...rest}>
             <Alert className="mb1" type="warning">
                 {warningText}
             </Alert>
             <div>
                 <ul>{Object.keys(errorMap).map(renderEmailRow)}</ul>
             </div>
-            <Alert className="mb1" type={alertType}>
-                {alertText}
-            </Alert>
+            {alertText && (
+                <Alert className="mb1" type={alertType}>
+                    {alertText}
+                </Alert>
+            )}
         </FormModal>
     );
 };
