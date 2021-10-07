@@ -7,6 +7,7 @@ import {
     DropdownMenu,
     DropdownMenuButton,
     generateUID,
+    Icon,
     Mark,
     SearchInput,
     usePopperAnchor,
@@ -90,7 +91,23 @@ const LocationFieldDropdown = ({ value, onChange }: Props) => {
                                             key={item.value}
                                             onClick={() => onChange(item.value)}
                                         >
-                                            <Mark value={search}>{item.text}</Mark>
+                                            <div
+                                                className={classnames([
+                                                    'flex flex-nowrap flex-align-items-center',
+                                                    item.folderLvlClass,
+                                                ])}
+                                            >
+                                                {!!item.icon && (
+                                                    <Icon
+                                                        name={item.icon}
+                                                        title={item.text}
+                                                        className="mr0-5 flex-item-noshrink"
+                                                    />
+                                                )}
+                                                <span className="text-ellipsis">
+                                                    <Mark value={search}>{item.text}</Mark>
+                                                </span>
+                                            </div>
                                         </DropdownMenuButton>
                                     ))}
                                 </div>
