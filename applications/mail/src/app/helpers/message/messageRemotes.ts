@@ -35,7 +35,7 @@ const removeProtonPrefix = (match: HTMLElement) => {
         const protonAttr = `proton-${attr}`;
         if (match.hasAttribute(protonAttr)) {
             match.setAttribute(attr, match.getAttribute(protonAttr) as string);
-            match.removeAttribute(attr);
+            match.removeAttribute(protonAttr);
         }
     });
 };
