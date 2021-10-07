@@ -1,4 +1,6 @@
+import { useEffect } from 'react';
 import { c } from 'ttag';
+import { useHistory } from 'react-router-dom';
 import { Button, Icon, Label } from '@proton/components';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
@@ -15,6 +17,7 @@ const LOCATION_FIELD_MAIN_OPTIONS: string[] = [ALL_MAIL, INBOX, DRAFTS, SENT, AL
 
 const LocationField = ({ value, onChange }: Props) => {
     const { all: options } = useLocationFieldOptions();
+    const history = useHistory();
     const firstOptions = options.filter(({ value }) => LOCATION_FIELD_MAIN_OPTIONS.includes(value));
     const { getTextFromValue } = useLocationFieldOptions();
 
@@ -22,6 +25,17 @@ const LocationField = ({ value, onChange }: Props) => {
         value !== undefined && LOCATION_FIELD_MAIN_OPTIONS.every((optionValue) => optionValue !== value);
     const customValueText = isCustomValue ? getTextFromValue(value)?.text : undefined;
     const showCustomValue = isCustomValue === true && customValueText !== undefined;
+
+    useEffect(() => {
+        const selectedValueFromUrl = options.reduce((acc, option) => {
+            if (option.url && history.location.pathname.includes(option.url)) {
+                return option.value;
+            }
+            return acc;
+        }, value);
+
+        window.setTimeout(() => onChange(selectedValueFromUrl), 0);
+    }, []);
 
     return (
         <>
@@ -33,7 +47,9 @@ const LocationField = ({ value, onChange }: Props) => {
                         color={value === option.value ? 'norm' : 'weak'}
                         key={option.value}
                         data-testid={`location-${option.value}`}
-                        onClick={() => onChange(option.value)}
+                        onClick={() => {
+                            onChange(option.value);
+                        }}
                         shape="solid"
                         size="small"
                         type="button"

@@ -42,7 +42,7 @@ import { estimateIndexingTime } from '../../helpers/encryptedSearch/esBuild';
 
 import './AdvancedSearchDropdown.scss';
 import { useClickMailContent } from '../../hooks/useClickMailContent';
-import SearchField from './SearchField';
+import SearchField from './AdvancedSearchFields/SearchField';
 import LocationField from './AdvancedSearchFields/LocationField';
 import EncryptedSearchField from './AdvancedSearchFields/EncryptedSearchField';
 
