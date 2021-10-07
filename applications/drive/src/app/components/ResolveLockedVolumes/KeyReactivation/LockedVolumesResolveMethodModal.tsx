@@ -12,6 +12,7 @@ import { APPS } from '@proton/shared/lib/constants';
 import { c, msgid } from 'ttag';
 import { noop } from '@proton/shared/lib/helpers/function';
 import { getAppName } from '@proton/shared/lib/apps/helper';
+import { LockedVolumeResolveMethod } from './interfaces';
 
 const appName = getAppName(APPS.PROTONDRIVE);
 
@@ -30,13 +31,6 @@ const OptionLabel = ({ title, info }: { title: string; info: string }) => {
         </div>
     );
 };
-
-export enum LockedVolumeResolveMethod {
-    ResolveMethodSelection,
-    DeleteOldFiles,
-    UnlockLater,
-    ReactivateKeys,
-}
 
 const KeyReactivationModal = ({
     onClose = noop,
