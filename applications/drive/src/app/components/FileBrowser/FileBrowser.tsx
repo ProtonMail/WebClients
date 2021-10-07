@@ -2,7 +2,9 @@ import { useCallback, useRef } from 'react';
 
 import { LayoutSetting } from '@proton/shared/lib/interfaces/drive/userSettings';
 import { FileBrowserProps } from '@proton/shared/lib/interfaces/drive/fileBrowser';
+import { AllSortKeys } from '@proton/shared/lib/interfaces/drive/link';
 import useUserSettings from '../../hooks/drive/useUserSettings';
+
 import useOnScrollEnd from '../../hooks/util/useOnScrollEnd';
 import ListView from './ListView/ListView';
 import GridView from './GridView/GridView';
@@ -11,7 +13,7 @@ import GridView from './GridView/GridView';
  * File browser that supports grid view and list view
  * If only grid or list view is needed better use them directly
  */
-const FileBrowser = ({
+const FileBrowser = <T extends AllSortKeys>({
     loading,
     caption,
     contents,
@@ -31,7 +33,7 @@ const FileBrowser = ({
     onScrollEnd,
     ItemContextMenu,
     FolderContextMenu,
-}: FileBrowserProps) => {
+}: FileBrowserProps<T>) => {
     const { layout } = useUserSettings();
     const scrollAreaRef = useRef<HTMLDivElement>(null);
 
