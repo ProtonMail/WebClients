@@ -79,10 +79,15 @@ const loadImagesThroughProxy = async (
 
     const promises = Promise.all(
         imagesToLoad.map(async (image) => {
+            if (!image.url) {
+                return { image, error: 'No URL' };
+            }
+
             try {
                 const response: Response = await api({
                     ...getImage(image.url as string),
                     output: 'raw',
+                    silence: true,
                 });
 
                 return {
