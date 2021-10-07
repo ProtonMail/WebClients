@@ -14,12 +14,12 @@ export const useGetPublicKeys = () => {
     const api = useApi();
 
     return useCallback(
-        (email, lifetime = DEFAULT_LIFETIME) => {
+        (email, lifetime = DEFAULT_LIFETIME, noCache = false) => {
             if (!cache.has(CACHE_KEY)) {
                 cache.set(CACHE_KEY, new Map());
             }
             const subCache = cache.get(CACHE_KEY);
-            const miss = () => getPublicKeysEmailHelper(api, email, true);
+            const miss = () => getPublicKeysEmailHelper(api, email, true, noCache);
             return getPromiseValue(subCache, email, miss, lifetime);
         },
         [api, cache]
