@@ -10,18 +10,34 @@ export interface LocationFieldLabel {
     text: string;
     value: string;
     url?: string;
+    icon: string | undefined;
+    folderLvlClass?: string;
 }
 
 const { INBOX, TRASH, SPAM, STARRED, ARCHIVE, ALL_MAIL, ALL_SENT, SENT, ALL_DRAFTS, DRAFTS, SCHEDULED } =
     MAILBOX_LABEL_IDS;
 
 const STANDARD_FOLDERS = getStandardFolders();
+const getMarginByFolderLvl = (lvl: number) => {
+    switch (lvl) {
+        case 1:
+            return 'ml0-5';
+        case 2:
+        case 3:
+        case 4:
+            return 'ml1';
+        default:
+            return '';
+    }
+};
 
 function folderReducer(acc: LocationFieldLabel[], folder: FolderWithSubFolders, level = 0) {
     acc.push({
-        text: formatFolderName(level, folder.Name, ' ∙ '),
+        text: formatFolderName(level, folder.Name),
         value: folder.ID,
         url: folder.ID,
+        icon: folder.subfolders?.length ? 'folders' : 'folder',
+        folderLvlClass: getMarginByFolderLvl(level),
     });
 
     if (Array.isArray(folder.subfolders)) {
@@ -40,12 +56,13 @@ function useLocationFieldOptions() {
 
     const DRAFT_TYPE = hasBit(mailSettings?.ShowMoved || 0, SHOW_MOVED.DRAFTS) ? ALL_DRAFTS : DRAFTS;
     const defaultOptions: LocationFieldLabel[] = [
-        { value: ALL_MAIL, text: c('Mailbox').t`All mail`, url: '/all-mail' },
-        { value: INBOX, text: STANDARD_FOLDERS[INBOX].name, url: STANDARD_FOLDERS[INBOX].to },
+        { value: ALL_MAIL, text: c('Mailbox').t`All mail`, url: '/all-mail', icon: 'envelopes' },
+        { value: INBOX, text: STANDARD_FOLDERS[INBOX].name, url: STANDARD_FOLDERS[INBOX].to, icon: 'inbox' },
         {
             value: DRAFT_TYPE,
             text: STANDARD_FOLDERS[DRAFT_TYPE].name,
             url: STANDARD_FOLDERS[DRAFT_TYPE].to,
+            icon: 'file-lines',
         },
         ...(scheduledFeature?.Value
             ? [
@@ -53,23 +70,32 @@ function useLocationFieldOptions() {
                       value: SCHEDULED,
                       text: STANDARD_FOLDERS[SCHEDULED].name,
                       url: STANDARD_FOLDERS[SCHEDULED].to,
+                      icon: 'clock',
                   },
               ]
             : []),
         {
             value: hasBit(mailSettings?.ShowMoved || 0, SHOW_MOVED.SENT) ? ALL_SENT : SENT,
             text: c('Mailbox').t`Sent`,
+            icon: 'paper-plane',
+            url: '/sent',
         },
-        { value: STARRED, text: c('Mailbox').t`Starred`, url: '/starred' },
-        { value: ARCHIVE, text: STANDARD_FOLDERS[ARCHIVE].name, url: STANDARD_FOLDERS[ARCHIVE].to },
-        { value: SPAM, text: STANDARD_FOLDERS[SPAM].name, url: STANDARD_FOLDERS[SPAM].to },
-        { value: TRASH, text: STANDARD_FOLDERS[TRASH].name, url: STANDARD_FOLDERS[TRASH].to },
+        { value: STARRED, text: c('Mailbox').t`Starred`, url: '/starred', icon: 'star' },
+        {
+            value: ARCHIVE,
+            text: STANDARD_FOLDERS[ARCHIVE].name,
+            url: STANDARD_FOLDERS[ARCHIVE].to,
+            icon: 'box-archive',
+        },
+        { value: SPAM, text: STANDARD_FOLDERS[SPAM].name, url: STANDARD_FOLDERS[SPAM].to, icon: 'fire' },
+        { value: TRASH, text: STANDARD_FOLDERS[TRASH].name, url: STANDARD_FOLDERS[TRASH].to, icon: 'trash' },
     ];
 
     const labelOptions = labels.map<LocationFieldLabel>(({ ID: value, Name: text }) => ({
         text,
         value,
         url: value,
+        icon: undefined,
     }));
     const customOptions = treeview.reduce<LocationFieldLabel[]>((acc, folder) => folderReducer(acc, folder), []);
     const allOptions = defaultOptions.concat(labelOptions).concat(customOptions);
