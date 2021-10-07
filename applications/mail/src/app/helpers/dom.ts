@@ -22,6 +22,8 @@ const DECLASSIFY_OPTIONS = {
         .concat(/protonmail.*/ as any),
 };
 
+const LIST_STYLE_PROPERTIES_REMOVED = ['position', 'left', 'right', 'top', 'bottom'];
+
 /**
  * Inline css into an element and remove all obsolete class names.
  */
@@ -32,6 +34,15 @@ export const inlineCss = (document: Element) => {
         declassify.pruneAttrs(['id', 'class'], cheerioDoc, DECLASSIFY_OPTIONS.ignore);
         // Extra security not to leak any global styling
         cheerioDoc('style').remove();
+        // Remove a selection of forbidden style props
+        cheerioDoc('[style]').each((i: any, e: any) => {
+            const element = cheerio(e);
+            LIST_STYLE_PROPERTIES_REMOVED.forEach((prop) => {
+                if (element.css(prop)) {
+                    element.css(prop, '');
+                }
+            });
+        });
         document.innerHTML = cheerioDoc('body').html();
     } catch (err: any) {
         console.error(err);
