@@ -7,22 +7,25 @@ import DeleteLockedVolumesConfirmModal from './DeleteLockedVolumesConfirmModal';
 import UnlockDriveConfirmationDialog from './UnlockDriveConfirmationDialog';
 import KeyReactivationModal, { LockedVolumeResolveMethod } from './LockedVolumesResolveMethodModal';
 import useFiles from '../../../hooks/drive/useFiles';
+import { useDriveCache } from '../../DriveCache/DriveCacheProvider';
 
 interface ReactivationParams {
     onSuccess?: () => void;
     onError?: () => void;
 }
 
-const useKeyReactivationFlow = ({ onSuccess, onError }: ReactivationParams) => {
+const useResolveLockedSharesFlow = ({ onSuccess, onError }: ReactivationParams) => {
     const lastResolveMethod = useRef<LockedVolumeResolveMethod>(LockedVolumeResolveMethod.ReactivateKeys);
     const volumesToDelete = useRef<string[]>([]);
+    const currentModalRef = useRef<string | null>(null);
 
     const { deleteLockedVolumes } = useFiles();
     const { createModal, removeModal } = useModals();
     const { createNotification } = useNotifications();
+    const cache = useDriveCache();
 
     const [currentModalType, setCurrentModalType] = useState<LockedVolumeResolveMethod | null>(null);
-    const currentModalRef = useRef<string | null>(null);
+    const lockedShares = cache.lockedShares.filter((share) => !share.VolumeSoftDeleted);
 
     const removeCurrentModal = () => {
         if (currentModalRef.current !== null) {
@@ -33,7 +36,7 @@ const useKeyReactivationFlow = ({ onSuccess, onError }: ReactivationParams) => {
 
     const handleDeleteLockedVolumesSubmit = async () => {
         try {
-            await deleteLockedVolumes(volumesToDelete.current);
+            await deleteLockedVolumes(lockedShares.map((shareMeta) => shareMeta.ShareID));
             createNotification({
                 text: c('Notification').t`Your old files will be deleted in 72 hours`,
             });
@@ -60,7 +63,7 @@ const useKeyReactivationFlow = ({ onSuccess, onError }: ReactivationParams) => {
             return;
         }
 
-        const volumeCount = volumesToDelete.current.length;
+        const lockedVolumesCount = lockedShares.length;
 
         switch (currentModalType) {
             case LockedVolumeResolveMethod.ResolveMethodSelection:
@@ -69,7 +72,7 @@ const useKeyReactivationFlow = ({ onSuccess, onError }: ReactivationParams) => {
                         onSubmit={handleResolveMethodSelection}
                         defaultResolveMethod={lastResolveMethod.current}
                         onClose={() => setCurrentModalType(null)}
-                        volumeCount={volumeCount}
+                        volumeCount={lockedVolumesCount}
                     />
                 );
                 break;
@@ -79,7 +82,7 @@ const useKeyReactivationFlow = ({ onSuccess, onError }: ReactivationParams) => {
                         onSubmit={handleDeleteLockedVolumesSubmit}
                         onBack={handleBackButtonClick}
                         onClose={() => setCurrentModalType(null)}
-                        volumeCount={volumeCount}
+                        volumeCount={lockedVolumesCount}
                     />
                 );
                 break;
@@ -103,7 +106,7 @@ const useKeyReactivationFlow = ({ onSuccess, onError }: ReactivationParams) => {
     const openKeyReactivationModal = (volumeIds: string[]) => {
         volumesToDelete.current = volumeIds;
         lastResolveMethod.current = LockedVolumeResolveMethod.ReactivateKeys;
-        setCurrentModalType(null);
+        removeCurrentModal();
         setCurrentModalType(LockedVolumeResolveMethod.ResolveMethodSelection);
     };
 
@@ -112,4 +115,4 @@ const useKeyReactivationFlow = ({ onSuccess, onError }: ReactivationParams) => {
     };
 };
 
-export default useKeyReactivationFlow;
+export default useResolveLockedSharesFlow;
