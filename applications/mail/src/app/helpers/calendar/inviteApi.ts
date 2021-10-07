@@ -443,7 +443,12 @@ export const updateEventInvitation = async ({
         getIsEventCancelled(calendarEvent) ||
         !attendeeIcs ||
         !attendeeApi ||
-        getIsProtonInvite({ invitationIcs, invitationApi, pmData })
+        getIsProtonInvite({
+            invitationIcs,
+            invitationApi,
+            pmData,
+            xYahooUserStatus: veventIcs['x-yahoo-user-status']?.value,
+        })
     ) {
         // do not update
         return { action: NONE };
