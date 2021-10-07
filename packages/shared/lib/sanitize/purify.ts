@@ -12,7 +12,6 @@ const LIST_PROTON_TAG = ['svg'];
 // const MAP_PROTON_TAG = toMap(LIST_PROTON_TAG);
 const LIST_PROTON_ATTR = ['data-src', 'src', 'srcset', 'background', 'poster', 'xlink:href'];
 const MAP_PROTON_ATTR = toMap(LIST_PROTON_ATTR);
-const LIST_STYLE_PROPERTIES_REMOVED = ['position', 'left', 'right', 'top', 'bottom'];
 
 const CONFIG: { [key: string]: any } = {
     default: {
@@ -49,22 +48,6 @@ const CONFIG: { [key: string]: any } = {
 };
 
 const getConfig = (type: string): Config => ({ ...CONFIG.default, ...(CONFIG[type] || {}) });
-
-/**
- * Remove some style properties configured in LIST_STYLE_PROPERTIES_REMOVED
- */
-const sanitizeStyle = (node: Node) => {
-    // We only work on elements
-    if (node.nodeType !== 1) {
-        return node;
-    }
-
-    const element = node as HTMLElement;
-
-    LIST_STYLE_PROPERTIES_REMOVED.forEach((prop) => {
-        element.style[prop as any] = '';
-    });
-};
 
 /**
  * Rename some tags adding the proton- prefix configured in LIST_PROTON_TAG
@@ -133,9 +116,7 @@ const clean = (mode: string) => {
 
     return (input: string | Node): string | Element => {
         DOMPurify.clearConfig();
-        DOMPurify.addHook('afterSanitizeElements', sanitizeStyle);
         const value = DOMPurify.sanitize(input, config) as string | Element;
-        DOMPurify.removeHook('afterSanitizeElements');
         purifyHTMLHooks(false); // Always remove the hooks
         if (mode === 'str') {
             // When trusted types is available, DOMPurify returns a trustedHTML object and not a string, force cast it.
