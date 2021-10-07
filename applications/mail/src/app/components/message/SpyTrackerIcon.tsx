@@ -1,5 +1,8 @@
-import { classnames, Icon } from '@proton/components';
+import { classnames, Href, Icon, SettingsLink } from '@proton/components';
 import { c, msgid } from 'ttag';
+import { APPS } from '@proton/shared/lib/constants';
+import * as React from 'react';
+import { emailTrackerProtectionURL } from '../../constants';
 
 interface Props {
     numberOfTrackers: number;
@@ -10,17 +13,14 @@ interface Props {
 }
 
 const SpyTrackerIcon = ({ numberOfTrackers, needsMoreProtection, title, className, isDetails = false }: Props) => {
-    return (
+    const icon = (
         <>
             <Icon
                 name="shield"
                 size={isDetails ? 16 : 14}
                 alt={title}
                 data-testid="privacy:tracker-icon"
-                className={classnames([
-                    needsMoreProtection && numberOfTrackers === 0 ? 'color-weak' : 'color-primary',
-                    className,
-                ])}
+                className={classnames([needsMoreProtection && numberOfTrackers === 0 ? 'color-weak' : 'color-primary'])}
             />
             {numberOfTrackers > 0 ? (
                 <span
@@ -38,6 +38,33 @@ const SpyTrackerIcon = ({ numberOfTrackers, needsMoreProtection, title, classNam
                     {numberOfTrackers > 9 ? '9+' : numberOfTrackers}
                 </span>
             ) : null}
+        </>
+    );
+
+    return (
+        <>
+            {needsMoreProtection ? (
+                <SettingsLink
+                    path="/email-privacy"
+                    app={APPS.PROTONMAIL}
+                    className={classnames([
+                        'relative inline-flex mr0-1 item-spy-tracker-link flex-align-items-center',
+                        className,
+                    ])}
+                >
+                    {icon}
+                </SettingsLink>
+            ) : (
+                <Href
+                    url={emailTrackerProtectionURL}
+                    className={classnames([
+                        'relative inline-flex mr0-1 item-spy-tracker-link flex-align-items-center',
+                        className,
+                    ])}
+                >
+                    {icon}
+                </Href>
+            )}
         </>
     );
 };

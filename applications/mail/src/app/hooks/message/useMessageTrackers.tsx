@@ -36,8 +36,8 @@ export const useMessageTrackers = ({ message, isDetails = false }: Props) => {
             title = c('Info').t`No email trackers found.`;
         } else if (isDetails) {
             title = c('Info').ngettext(
-                msgid`${numberOfTrackers} tracker found.`,
-                `${numberOfTrackers} trackers found.`,
+                msgid`${numberOfTrackers} email tracker found`,
+                `${numberOfTrackers} email trackers found`,
                 numberOfTrackers
             );
         } else {
