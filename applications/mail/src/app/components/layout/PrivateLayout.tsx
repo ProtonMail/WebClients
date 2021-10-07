@@ -37,8 +37,6 @@ const PrivateLayout = ({ children, breakpoints, labelID, elementID, isBlurred }:
         <MailHeader
             labelID={labelID}
             elementID={elementID}
-            location={location}
-            history={history}
             breakpoints={breakpoints}
             expanded={expanded}
             onToggleExpand={handleToggleExpand}

@@ -1,10 +1,10 @@
-import { createContext, ReactNode, useContext, useState, useEffect, useRef } from 'react';
+import { createContext, ReactNode, useContext, useState, useEffect, useRef, useMemo } from 'react';
 import { useLocation, useHistory } from 'react-router-dom';
 import { c } from 'ttag';
 import {
     useApi,
+    useGetMessageCounts,
     useGetUserKeys,
-    useMessageCounts,
     useNotifications,
     useOnLogout,
     useSubscribeEventManager,
@@ -31,8 +31,6 @@ import {
     ESCache,
 } from '../models/encryptedSearch';
 import { defaultESCache, defaultESStatus, PAGE_SIZE } from '../constants';
-import { extractSearchParameters, filterFromUrl, pageFromUrl, setSortInUrl, sortFromUrl } from '../helpers/mailboxUrl';
-import { isSearch as testIsSearch } from '../helpers/elements';
 import {
     indexKeyExists,
     isPaused,
@@ -49,6 +47,8 @@ import {
     setES,
     esSentryReport,
     checkNewUserID,
+    parseSearchParams,
+    resetSort,
 } from '../helpers/encryptedSearch/esUtils';
 import { buildDB, getIndexKey, initialiseDB } from '../helpers/encryptedSearch/esBuild';
 import {
@@ -84,8 +84,8 @@ const EncryptedSearchProvider = ({ children }: Props) => {
     const api = useApi();
     const [{ ID: userID }] = useUser();
     const { createNotification } = useNotifications();
-    const [messageCounts] = useMessageCounts();
-    const isSearch = testIsSearch(extractSearchParameters(location));
+    const getMessageCounts = useGetMessageCounts();
+    const { isSearch, page } = parseSearchParams(location);
 
     // Keep a state of search results to update in case of new events
     // and information on the status of IndexedDB
@@ -197,8 +197,9 @@ const EncryptedSearchProvider = ({ children }: Props) => {
         } else {
             // Every time ES is enabled, we reset sorting to avoid carrying on with SIZE sorting in
             // case it was previously used. SIZE sorting is not supported by ES
-            if (testIsSearch(extractSearchParameters(location))) {
-                history.push(setSortInUrl(history.location, { sort: 'Time', desc: true }));
+            const { isSearch } = parseSearchParams(history.location);
+            if (isSearch) {
+                resetSort(history);
             }
             setES.Enabled(userID);
         }
@@ -296,10 +297,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
 
         const { labelID, permanentResults, setElementsCache } = esStatus;
 
-        const searchParameters = extractSearchParameters(location);
-        const filterParameter = filterFromUrl(location);
-        const sortParameter = sortFromUrl(location);
-        const isSearch = testIsSearch(searchParameters);
+        const { isSearch, searchParameters, filterParameter, sortParameter } = parseSearchParams(history.location);
         const normalisedSearchParams = normaliseSearchParams(searchParameters, labelID, filterParameter, sortParameter);
 
         const searchChanged = await syncMessageEvents(
@@ -351,6 +349,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
 
             // Refresh needs to happen and will account for all events, potentially
             // except those that happened since beginning it
+            const messageCounts = await getMessageCounts();
             const newEventToCheck = await refreshIndex(
                 userID,
                 api,
@@ -387,7 +386,8 @@ const EncryptedSearchProvider = ({ children }: Props) => {
         await refreshESCache(userID, indexKey, esCacheRef);
 
         // Check if DB became limited after the update
-        const isDBLimited = await checkIsDBLimited(userID, messageCounts, api);
+        const messageCounts = await getMessageCounts();
+        const isDBLimited = await checkIsDBLimited(userID, messageCounts);
         setESStatus((esStatus) => {
             return {
                 ...esStatus,
@@ -662,7 +662,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
         }
 
         const catchUpPromise = catchUpFromLS(indexKey, currentEvent);
-        addSyncing(() => catchUpPromise);
+        void addSyncing(() => catchUpPromise);
         await catchUpPromise;
 
         // Note that it's safe to remove the BuildProgress blob because the event to catch
@@ -713,9 +713,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
             void cacheIndexedDB();
         }
 
-        const searchParameters = extractSearchParameters(location);
-        const filterParameter = filterFromUrl(location);
-        const sortParameter = sortFromUrl(location);
+        const { searchParameters, filterParameter, sortParameter } = parseSearchParams(history.location);
         const normalisedSearchParams = normaliseSearchParams(searchParameters, labelID, filterParameter, sortParameter);
 
         // In case only sorting changed, for complete searches it doesn't make sense to perform a new search
@@ -829,10 +827,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
             return;
         }
 
-        const searchParameters = extractSearchParameters(location);
-        const filterParameter = filterFromUrl(location);
-        const sortParameter = sortFromUrl(location);
-        const isSearch = testIsSearch(searchParameters);
+        const { isSearch, searchParameters, filterParameter, sortParameter } = parseSearchParams(history.location);
         if (!isSearch || !isSearchPartial) {
             return;
         }
@@ -891,8 +886,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
      * Check whether to highlight keywords upon opening a result of any search (both server-side and encrypted)
      */
     const shouldHighlight = () => {
-        const searchParameters = extractSearchParameters(location);
-        const isSearch = testIsSearch(searchParameters);
+        const { isSearch, searchParameters } = parseSearchParams(history.location);
         if (!isSearch) {
             return false;
         }
@@ -910,7 +904,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
      * Highlight keywords in body. Return a string with the new body
      */
     const highlightString: HighlightString = (content, setAutoScroll) => {
-        const searchParameters = extractSearchParameters(location);
+        const { searchParameters } = parseSearchParams(history.location);
         const { labelID } = esStatus;
         const { normalisedKeywords } = normaliseSearchParams(searchParameters, labelID);
         if (!normalisedKeywords) {
@@ -924,7 +918,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
      * Highlight keywords in metadata. Return the JSX element to be rendered
      */
     const highlightMetadata: HighlightMetadata = (metadata, isBold, trim) => {
-        const searchParameters = extractSearchParameters(location);
+        const { searchParameters } = parseSearchParams(history.location);
         const { labelID } = esStatus;
         const { normalisedKeywords } = normaliseSearchParams(searchParameters, labelID);
         if (!normalisedKeywords) {
@@ -942,6 +936,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
      */
     const isSearchResult: IsSearchResult = (ID) => {
         const { dbExists, esEnabled, permanentResults } = esStatus;
+        const { isSearch } = parseSearchParams(history.location);
         if (!(dbExists && esEnabled && isSearch)) {
             return false;
         }
@@ -985,6 +980,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
 
         // Otherwise we try to refresh the index and resort to removing it only if
         // something fails
+        const messageCounts = await getMessageCounts();
         await refreshLegacyIndex(legacyUserID, userID, api, indexKey, getMessageKeys, recordProgress, messageCounts);
 
         // If the process is successful, the old DB and LS blobs are removed
@@ -1007,7 +1003,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
             throw new Error('Refresh flag set');
         }
 
-        addSyncing(() => catchUpFromLS(indexKey, currentEvent));
+        void addSyncing(() => catchUpFromLS(indexKey, currentEvent));
     };
 
     useSubscribeEventManager(async (event: Event) => {
@@ -1029,12 +1025,12 @@ const EncryptedSearchProvider = ({ children }: Props) => {
             return restartIndexing();
         }
 
-        addSyncing(() => catchUpFromEvent(indexKey, event));
+        void addSyncing(() => catchUpFromEvent(indexKey, event));
     });
 
     useEffect(() => {
-        pageRef.current = pageFromUrl(location);
-    }, [pageFromUrl(location)]);
+        pageRef.current = page;
+    }, [page]);
 
     // Remove previous search data from the status when no longer in search mode
     useEffect(() => {
@@ -1124,27 +1120,30 @@ const EncryptedSearchProvider = ({ children }: Props) => {
                 return restartIndexing();
             }
 
-            addSyncing(() => catchUpFromLS(indexKey, currentEvent));
+            void addSyncing(() => catchUpFromLS(indexKey, currentEvent));
         };
 
         void run();
     }, []);
 
-    const esFunctions = {
-        encryptedSearch,
-        cacheIndexedDB,
-        getESDBStatus,
-        toggleEncryptedSearch,
-        resumeIndexing,
-        pauseIndexing,
-        getProgressRecorderRef,
-        incrementSearch,
-        highlightString,
-        highlightMetadata,
-        shouldHighlight,
-        isSearchResult,
-        esDelete,
-    };
+    const esFunctions = useMemo(
+        () => ({
+            encryptedSearch,
+            cacheIndexedDB,
+            getESDBStatus,
+            toggleEncryptedSearch,
+            resumeIndexing,
+            pauseIndexing,
+            getProgressRecorderRef,
+            incrementSearch,
+            highlightString,
+            highlightMetadata,
+            shouldHighlight,
+            isSearchResult,
+            esDelete,
+        }),
+        [userID, esStatus]
+    );
 
     return <EncryptedSearchContext.Provider value={esFunctions}>{children}</EncryptedSearchContext.Provider>;
 };
