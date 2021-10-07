@@ -12,6 +12,7 @@ export interface LocationFieldLabel {
     url?: string;
     icon: string | undefined;
     folderLvlClass?: string;
+    labelColor?: string;
 }
 
 const { INBOX, TRASH, SPAM, STARRED, ARCHIVE, ALL_MAIL, ALL_SENT, SENT, ALL_DRAFTS, DRAFTS, SCHEDULED } =
@@ -91,11 +92,12 @@ function useLocationFieldOptions() {
         { value: TRASH, text: STANDARD_FOLDERS[TRASH].name, url: STANDARD_FOLDERS[TRASH].to, icon: 'trash' },
     ];
 
-    const labelOptions = labels.map<LocationFieldLabel>(({ ID: value, Name: text }) => ({
-        text,
+    const labelOptions = labels.map<LocationFieldLabel>(({ ID: value, Name: text, Color: color }) => ({
         value,
+        text,
         url: value,
         icon: undefined,
+        labelColor: color,
     }));
     const customOptions = treeview.reduce<LocationFieldLabel[]>((acc, folder) => folderReducer(acc, folder), []);
     const allOptions = defaultOptions.concat(labelOptions).concat(customOptions);
