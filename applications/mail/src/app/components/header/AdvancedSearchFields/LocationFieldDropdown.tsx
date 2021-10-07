@@ -104,6 +104,14 @@ const LocationFieldDropdown = ({ value, onChange }: Props) => {
                                                         className="mr0-5 flex-item-noshrink"
                                                     />
                                                 )}
+                                                {!!item.labelColor && (
+                                                    <Icon
+                                                        name="circle-filled"
+                                                        size={12}
+                                                        color={item.labelColor}
+                                                        className="flex-item-noshrink mr0-5"
+                                                    />
+                                                )}
                                                 <span className="text-ellipsis">
                                                     <Mark value={search}>{item.text}</Mark>
                                                 </span>
