@@ -100,6 +100,14 @@ export interface MoveLink {
     SignatureAddress: string;
 }
 
-export type SortKeys = keyof Pick<DriveLink, 'MIMEType' | 'ModifyTime' | 'Size' | 'Name'>;
+export type DriveSectionSortKeys = keyof Pick<DriveLink, 'MIMEType' | 'ModifyTime' | 'Size' | 'Name'>;
+export type SharedLinksSectionSortKeys =
+    | keyof Pick<DriveLink, 'Name'>
+    | keyof Pick<SharedUrlInfo, 'CreateTime' | 'ExpireTime'>;
 
-export type SortParams = { sortField: SortKeys; sortOrder: SORT_DIRECTION };
+export type AllSortKeys = DriveSectionSortKeys | SharedLinksSectionSortKeys;
+
+export type SortParams<T extends AllSortKeys = AllSortKeys> = {
+    sortField: T;
+    sortOrder: SORT_DIRECTION;
+};

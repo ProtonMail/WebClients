@@ -34,7 +34,7 @@ import {
 
 import {
     BATCH_REQUEST_SIZE,
-    DEFAULT_SORT_PARAMS,
+    DEFAULT_SORT_PARAMS_DRIVE,
     EVENT_TYPES,
     FOLDER_PAGE_SIZE,
     MAX_THREADS_PER_REQUEST,
@@ -371,7 +371,7 @@ function useDrive() {
         return linkMetas;
     };
 
-    const fetchNextFolderContents = async (shareId: string, linkId: string, sortParams = DEFAULT_SORT_PARAMS) => {
+    const fetchNextFolderContents = async (shareId: string, linkId: string, sortParams = DEFAULT_SORT_PARAMS_DRIVE) => {
         const listedChildren = cache.get.listedChildLinks(shareId, linkId, sortParams) || [];
 
         const PageSize = FOLDER_PAGE_SIZE;

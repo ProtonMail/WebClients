@@ -1,4 +1,3 @@
-import { useRef } from 'react';
 import * as React from 'react';
 import { FixedSizeList, ListChildComponentProps } from 'react-window';
 
@@ -13,7 +12,6 @@ import {
 } from '@proton/components';
 import { buffer } from '@proton/shared/lib/helpers/function';
 import { rootFontSize } from '@proton/shared/lib/helpers/dom';
-
 import {
     FileBrowserProps,
     FileBrowserItem,
@@ -21,6 +19,8 @@ import {
     FileBrowserLayouts,
     ItemContextMenuProps,
 } from '@proton/shared/lib/interfaces/drive/fileBrowser';
+
+import { AllSortKeys } from '@proton/shared/lib/interfaces/drive/link';
 import { useFileBrowserColumns } from '../useFileBrowserColumns';
 import useFileBrowserView from '../useFileBrowserView';
 import ListHeader from './ListHeader';
@@ -116,11 +116,11 @@ const TableBodyRenderer = ({
     );
 };
 
-type Props = Omit<FileBrowserProps, 'onScrollEnd'> & {
+type Props<T extends AllSortKeys> = Omit<FileBrowserProps<T>, 'onScrollEnd'> & {
     scrollAreaRef: React.RefObject<HTMLDivElement>;
 };
 
-const ListView = ({
+const ListView = <T extends AllSortKeys>({
     loading,
     caption,
     contents,
@@ -140,8 +140,8 @@ const ListView = ({
     getDragMoveControls,
     ItemContextMenu,
     FolderContextMenu,
-}: Props) => {
-    const containerRef = useRef<HTMLDivElement>(null);
+}: Props<T>) => {
+    const containerRef = React.useRef<HTMLDivElement>(null);
     const rect = useElementRect(containerRef, buffer);
 
     const {

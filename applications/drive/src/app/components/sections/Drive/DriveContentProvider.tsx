@@ -2,7 +2,7 @@ import { useState, createContext, useEffect, useContext, useRef, useCallback } f
 import * as React from 'react';
 
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
-import { SortKeys } from '@proton/shared/lib/interfaces/drive/link';
+import { DriveSectionSortKeys, SortParams } from '@proton/shared/lib/interfaces/drive/link';
 import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 import { STATUS_CODE } from '@proton/shared/lib/drive/constants';
 
@@ -13,17 +13,13 @@ import useNavigate from '../../../hooks/drive/useNavigate';
 import useSelection from '../../../hooks/util/useSelection';
 import { useDriveCache } from '../../DriveCache/DriveCacheProvider';
 import { mapLinksToChildren } from '../helpers';
-
-export interface DriveSortParams {
-    sortField: SortKeys;
-    sortOrder: SORT_DIRECTION;
-}
+import useUserSettings from '../../../hooks/drive/useUserSettings';
 
 interface DriveContentProviderState {
     contents: FileBrowserItem[];
     loadNextPage: () => void;
-    setSorting: (sortField: SortKeys, sortOrder: SORT_DIRECTION) => void;
-    sortParams: { sortField: SortKeys; sortOrder: SORT_DIRECTION };
+    setSorting: (sortParams: SortParams<DriveSectionSortKeys>) => void;
+    sortParams: { sortField: DriveSectionSortKeys; sortOrder: SORT_DIRECTION };
     fileBrowserControls: Omit<ReturnType<typeof useSelection>, 'selectedItems'> & {
         selectedItems: FileBrowserItem[];
     };
@@ -41,14 +37,19 @@ const DriveContentProviderInner = ({
     activeFolder: DriveFolder;
 }) => {
     const cache = useDriveCache();
+    const { sort, changeSort } = useUserSettings();
+
     const { fetchNextFolderContents, fetchAllFolderPagesWithLoader } = useDrive();
     const [loading, setLoading] = useState(false);
     const [, setError] = useState();
     const { navigateToRoot } = useNavigate();
 
     const { sortParams, sortedList, setSorting } = useDriveSorting(
-        (sortParams) => cache.get.childLinkMetas(shareId, linkId, sortParams) || []
+        (sortParams: SortParams<DriveSectionSortKeys>) => cache.get.childLinkMetas(shareId, linkId, sortParams) || [],
+        sort,
+        changeSort
     );
+
     const contents = mapLinksToChildren(sortedList, (linkId) => cache.get.isLinkLocked(shareId, linkId));
     const complete = cache.get.childrenComplete(shareId, linkId, sortParams);
 

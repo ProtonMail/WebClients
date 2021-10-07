@@ -1,9 +1,13 @@
-import { useContext, useCallback } from 'react';
+import { useContext, useCallback, useMemo } from 'react';
+
 import { useApi } from '@proton/components';
-import { LayoutSetting, SortSetting, UserSettings } from '@proton/shared/lib/interfaces/drive/userSettings';
+import { LayoutSetting, UserSettings } from '@proton/shared/lib/interfaces/drive/userSettings';
 import { queryUpdateUserSettings, queryUserSettings } from '@proton/shared/lib/api/drive/userSettings';
 import { DEFAULT_USER_SETTINGS } from '@proton/shared/lib/drive/constants';
+import { DriveSectionSortKeys, SortParams } from '@proton/shared/lib/interfaces/drive/link';
+
 import { UserSettingsContext } from '../../components/sections/UserSettingsProvider';
+import userSettingsParser from '../../utils/userSettingsParser/userSettingsParser';
 
 type UserSettingsResponse = { UserSettings: Partial<UserSettings> };
 
@@ -30,6 +34,7 @@ const useUserSettings = () => {
 
     const sort = userSettings.Sort;
     const layout = userSettings.Layout;
+    const sortSetting = useMemo(() => userSettingsParser.sorting.parseSetting(sort), [sort]);
 
     const changeLayout = useCallback(async (Layout: LayoutSetting) => {
         setUserSettings((settings) => ({ ...settings, Layout }));
@@ -40,17 +45,18 @@ const useUserSettings = () => {
         );
     }, []);
 
-    const changeSort = useCallback(async (Sort: SortSetting) => {
-        setUserSettings((settings) => ({ ...settings, Sort }));
+    const changeSort = useCallback(async (sortParams: SortParams<DriveSectionSortKeys>) => {
+        const sortSetting = userSettingsParser.sorting.getSetting(sortParams);
+        setUserSettings((settings) => ({ ...settings, Sort: sortSetting }));
         await api(
             queryUpdateUserSettings({
-                Sort,
+                Sort: sortSetting,
             })
         );
     }, []);
 
     return {
-        sort,
+        sort: sortSetting,
         layout,
         loadUserSettings,
         changeLayout,
