@@ -63,6 +63,14 @@ export const generateCid = (input: string, email: string) => {
     return `${hashValue}@${domain}`;
 };
 
+export const setEmbeddedAttr = (cid: string, cloc: string, element: Element) => {
+    if (cid) {
+        element.setAttribute('data-embedded-img', `cid:${cid}`);
+    } else if (cloc) {
+        element.setAttribute('data-embedded-img', `cloc:${cloc}`);
+    }
+};
+
 /**
  * Create a Blob and its URL for an attachment
  */
@@ -124,18 +132,22 @@ export const findCIDsInContent = (content: string) =>
     (content.match(/(rel=("([^"]|"")*"))|(data-embedded-img=("([^"]|"")*"))/g) || [])
         .filter((key) => key !== 'rel="noreferrer nofollow noopener"') // we don't care about links
         .map((key) => key.replace(/rel="|data-embedded-img="/, ''))
-        .map((key) => key.slice(0, -1));
+        .map((key) => key.slice(4, -1)); // Assume it's starts by "cid:"
 
 /**
  * Insert actual src="cid:..." into embedded image elements
  */
 export const insertActualEmbeddedImages = (document: Element) => {
     querySelectorAll({ document }, '[data-embedded-img]').forEach((element) => {
-        const cid = element.getAttribute('data-embedded-img');
+        const cidOrCloc = element.getAttribute('data-embedded-img');
         element.removeAttribute('data-embedded-img');
         element.removeAttribute('proton-src');
         element.removeAttribute('src');
-        element.setAttribute('src', `cid:${cid}`);
+        if (cidOrCloc?.startsWith('cid')) {
+            element.setAttribute('src', `cid:${cidOrCloc.slice(4)}`);
+        } else if (cidOrCloc?.startsWith('cloc')) {
+            element.setAttribute('src', cidOrCloc.slice(5));
+        }
     });
 };
 
@@ -150,7 +162,7 @@ export const replaceEmbeddedAttachments = (
     const newEmbeddedImages = embeddedImages.map((image) => {
         const attachment = attachments.find((attachment) => {
             const { cid, cloc } = readContentIDandLocation(attachment);
-            return image.cid === cid || image.cloc === cloc;
+            return (cid !== '' && image.cid === cid) || (cloc !== '' && image.cloc === cloc);
         });
         if (attachment) {
             return { ...image, attachment };

@@ -249,7 +249,7 @@ const SquireEditorWrapper = ({
         const url = createBlob(attachment, data);
 
         squireEditorRef.current?.insertImage(url, {
-            'data-embedded-img': cid,
+            'data-embedded-img': `cid:${cid}`,
             alt: attachment.Name,
         });
     });

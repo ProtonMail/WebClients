@@ -1,7 +1,7 @@
 import { generateProtonWebUID } from '@proton/shared/lib/helpers/uid';
 import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 import { MessageExtended } from '../../models/message';
-import { generateCid } from './messageEmbeddeds';
+import { generateCid, setEmbeddedAttr } from './messageEmbeddeds';
 
 // Reference Angular/src/app/composer/services/extractDataURI.js
 
@@ -43,7 +43,7 @@ export const replaceDataUrl = (message: MessageExtended) => {
             const fileName = image.alt || `image${Date.now()}`;
             const file = dataUrlToFile(fileName, src);
 
-            image.setAttribute('data-embedded-img', cid);
+            setEmbeddedAttr(cid, '', image);
             image.removeAttribute('src');
 
             return { cid, file };
