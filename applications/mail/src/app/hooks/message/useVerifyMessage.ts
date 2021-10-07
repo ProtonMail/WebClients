@@ -20,7 +20,7 @@ export const useVerifyMessage = (localID: string) => {
     const { contactsMap } = useContactCache();
 
     return useCallback(
-        async (decryptedRawContent: string, signature?: OpenPGPSignature) => {
+        async (decryptedRawContent: Uint8Array = new Uint8Array(), signature?: OpenPGPSignature) => {
             // Message can change during the whole sequence
             // To have the most up to date version, best is to get back to the cache version each time
             const getData = () => (messageCache.get(localID) as MessageExtendedWithData).data;
