@@ -12,6 +12,7 @@ import {
     decryptEmbeddedImages,
     markEmbeddedImagesAsLoaded,
     insertBlobImages,
+    setEmbeddedAttr,
 } from '../message/messageEmbeddeds';
 
 export const transformEmbedded = async (
@@ -47,7 +48,7 @@ export const transformEmbedded = async (
                 return matches.map((match) => {
                     const id = generateUID('embedded');
                     if (draft) {
-                        match.setAttribute('data-embedded-img', cid || cloc);
+                        setEmbeddedAttr(cid, cloc, match);
                     } else {
                         insertImageAnchor(id, 'embedded', match);
                     }
