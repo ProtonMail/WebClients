@@ -200,8 +200,20 @@ export const getEventStatus = ({ status }: VcalVeventComponent) => {
     return ICAL_EVENT_STATUS.CONFIRMED;
 };
 
-export const getAttendeePartstat = (attendee: Partial<VcalAttendeeProperty> = {}) => {
+export const getAttendeePartstat = (attendee: Partial<VcalAttendeeProperty> = {}, xYahooUserStatus?: string) => {
     const partstat = attendee.parameters?.partstat;
+    if (partstat === ICAL_ATTENDEE_STATUS.NEEDS_ACTION && xYahooUserStatus) {
+        // Yahoo Calendar does not follow the RFC and encodes the partstat in a custom property
+        if (xYahooUserStatus === 'BUSY') {
+            return ICAL_ATTENDEE_STATUS.ACCEPTED;
+        }
+        if (xYahooUserStatus === 'TENTATIVE') {
+            return ICAL_ATTENDEE_STATUS.TENTATIVE;
+        }
+        if (xYahooUserStatus === 'FREE') {
+            return ICAL_ATTENDEE_STATUS.DECLINED;
+        }
+    }
     if (Object.values(ICAL_ATTENDEE_STATUS).some((icalPartstat) => icalPartstat === partstat)) {
         return partstat as ICAL_ATTENDEE_STATUS;
     }
@@ -218,6 +230,10 @@ export const getAttendeeRole = (attendee: Partial<VcalAttendeeProperty> = {}) =>
 
 export const getAttendeeToken = (attendee: Partial<VcalAttendeeProperty> = {}) => {
     return attendee?.parameters?.['x-pm-token'];
+};
+
+export const getIsYahooEvent = (veventComponent: VcalVeventComponent) => {
+    return !!(veventComponent['x-yahoo-yid'] || veventComponent['x-yahoo-user-status']);
 };
 
 export const getIsProtonReply = (veventComponent: VcalVeventComponent) => {

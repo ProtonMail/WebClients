@@ -57,6 +57,7 @@ export const getParticipant = ({
     emailTo,
     index,
     calendarAttendees,
+    xYahooUserStatus,
 }: {
     participant: VcalAttendeeProperty | VcalOrganizerProperty;
     contactEmails: ContactEmail[];
@@ -65,6 +66,7 @@ export const getParticipant = ({
     emailTo?: string;
     index?: number;
     calendarAttendees?: Attendee[];
+    xYahooUserStatus?: string;
 }): Participant => {
     const emailAddress = getAttendeeEmail(participant);
     const canonicalInternalEmail = canonizeInternalEmail(emailAddress);
@@ -78,7 +80,7 @@ export const getParticipant = ({
         vcalComponent: participant,
         name: participantName,
         emailAddress,
-        partstat: getAttendeePartstat(participant),
+        partstat: getAttendeePartstat(participant, xYahooUserStatus),
         displayName: isYou ? c('Participant name').t`You` : displayName,
         displayEmail: emailAddress,
     };
