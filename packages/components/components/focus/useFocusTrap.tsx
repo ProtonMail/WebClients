@@ -154,15 +154,30 @@ const useFocusTrap = ({
             }
         };
 
-        // If the current focused element is not in this root. E.g. no autoFocus
-        if (!rootRef.current.contains(document.activeElement)) {
-            // If the first tabbable element should not be focused, fall back to the container
-            if (!enableInitialFocus) {
-                focusElement(rootRef.current);
-            } else {
-                initFocus(rootRef.current);
+        const contain = (root: HTMLDivElement) => {
+            // If the current focused element is not in this root. E.g. no autoFocus
+            if (!root.contains(document.activeElement)) {
+                // If the first tabbable element should not be focused, fall back to the container
+                if (!enableInitialFocus) {
+                    focusElement(root);
+                } else {
+                    initFocus(root);
+                }
             }
-        }
+        };
+
+        // Unfortunately browsers don't trigger any focus related events when focus is lost
+        // because for example the element was deleted or the new element is not focusable.
+        // https://bugzilla.mozilla.org/show_bug.cgi?id=559561
+        // Instead, we look for if the active element was restored to the body.
+        // This idea was stolen from material ui.
+        const containIntervalHandle = window.setInterval(() => {
+            if (document.activeElement?.tagName === 'BODY' && isLastFocusTrap() && rootRef.current) {
+                contain(rootRef.current);
+            }
+        }, 100);
+
+        contain(rootRef.current);
 
         const handleMouseDown = () => {
             isMouseDownFocusIn = true;
@@ -179,6 +194,8 @@ const useFocusTrap = ({
         document.addEventListener('keydown', handleKeyDown, true);
 
         return () => {
+            window.clearInterval(containIntervalHandle);
+
             document.removeEventListener('focusin', handleFocusIn, true);
             document.removeEventListener('keydown', handleKeyDown, true);
             document.removeEventListener('mousedown', handleMouseDown, true);
