@@ -73,6 +73,11 @@ export interface InitHandshake {
     Flags: number;
 }
 
+export interface ThumbnailURLInfo {
+    BareURL: string;
+    Token: string;
+}
+
 export interface SharedLinkInfo {
     Name: string;
     Size: number;
@@ -81,7 +86,7 @@ export interface SharedLinkInfo {
     NodeKey: OpenPGPKey;
     SessionKey: SessionKey;
     Blocks: DriveFileBlock[];
-    ThumbnailURL: string | null;
+    ThumbnailURLInfo: ThumbnailURLInfo;
 }
 
 export interface SharedLinkPayload {
@@ -95,8 +100,11 @@ export interface SharedLinkPayload {
     ShareKey: string;
     SharePassphrase: string;
     SharePasswordSalt: string;
-    Blocks: string[];
-    ThumbnailURL: string | null;
+    BlockURLs: {
+        BareURL: string;
+        Token: string;
+    }[];
+    ThumbnailURLInfo: ThumbnailURLInfo;
 }
 
 export interface SharedURLSessionKeyPayload {

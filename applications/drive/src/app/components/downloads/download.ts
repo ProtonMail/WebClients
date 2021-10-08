@@ -216,7 +216,7 @@ export const initDownload = ({
             };
 
             let ongoingNumberOfDownloads = 0;
-            const downloadQueue = blockQueue.map(({ URL, Index, EncSignature }) => async () => {
+            const downloadQueue = blockQueue.map(({ Index, EncSignature, BareURL, Token }) => async () => {
                 ongoingNumberOfDownloads++;
                 try {
                     if (!buffers.get(Index)?.done) {
@@ -228,11 +228,14 @@ export const initDownload = ({
 
                         const blockStream = toPolyfillReadable(
                             await api({
-                                ...queryFileBlock(URL),
+                                ...queryFileBlock(BareURL),
                                 timeout: DOWNLOAD_TIMEOUT,
                                 retriesOnTimeout: DOWNLOAD_RETRIES_ON_TIMEOUT,
                                 signal: abortController.signal,
                                 silence: true,
+                                headers: {
+                                    'pm-storage-token': Token,
+                                },
                             })
                         ) as ReadableStream<Uint8Array>;
 

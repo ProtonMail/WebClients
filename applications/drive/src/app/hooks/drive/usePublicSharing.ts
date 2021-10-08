@@ -7,7 +7,7 @@ import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 import { decryptUnsigned, getStreamMessage } from '@proton/shared/lib/keys/driveKeys';
 
 import { queryInitSRPHandshake, queryGetSharedLinkPayload } from '@proton/shared/lib/api/drive/sharing';
-import { InitHandshake, SharedLinkPayload, SharedLinkInfo } from '@proton/shared/lib/interfaces/drive/sharing';
+import { InitHandshake, SharedLinkPayload, SharedLinkInfo, ThumbnailURLInfo } from '@proton/shared/lib/interfaces/drive/sharing';
 import { DriveFileBlock } from '@proton/shared/lib/interfaces/drive/file';
 import { TransferMeta } from '@proton/shared/lib/interfaces/drive/transfer';
 import { getDecryptedSessionKey } from '@proton/shared/lib/keys/drivePassphrase';
@@ -47,10 +47,11 @@ function usePublicSharing() {
             config: queryGetSharedLinkPayload(token, pagination),
         });
 
-        const Blocks: DriveFileBlock[] = Payload.Blocks.map((URL: string, Index: number) => {
+        const Blocks: DriveFileBlock[] = Payload.BlockURLs.map(({ BareURL, Token }, Index: number) => {
             return {
                 Index: Index + 1,
-                URL,
+                BareURL,
+                Token,
             };
         });
 
@@ -80,7 +81,10 @@ function usePublicSharing() {
             Blocks,
             NodeKey,
             SessionKey,
-            ThumbnailURL: Payload.ThumbnailURL,
+            ThumbnailURLInfo: {
+                BareURL: Payload.ThumbnailURLInfo.BareURL,
+                Token: Payload.ThumbnailURLInfo.Token,
+            },
         };
     };
 
@@ -140,12 +144,13 @@ function usePublicSharing() {
         );
     };
 
-    const downloadThumbnail = (sessionKey: SessionKey, privateKey: OpenPGPKey, downloadURL: string) => {
+    const downloadThumbnail = (sessionKey: SessionKey, privateKey: OpenPGPKey, params: ThumbnailURLInfo) => {
         return startDownload(api, {
             getBlocks: async () => [
                 {
                     Index: 1,
-                    URL: downloadURL,
+                    BareURL: params.BareURL,
+                    Token: params.Token,
                 },
             ],
             transformBlockStream: decryptSharedBlockStream(sessionKey, privateKey),
