@@ -57,7 +57,13 @@ async function uploadBlock(
     };
 
     try {
-        await uploadBlockDataCallback(block.uploadLink, block.encryptedData, onProgress, pauser.abortController.signal);
+        await uploadBlockDataCallback(
+            block.uploadLink,
+            block.uploadToken,
+            block.encryptedData,
+            onProgress,
+            pauser.abortController.signal
+        );
     } catch (err: any | XHRError) {
         resetProgress();
 
@@ -85,6 +91,7 @@ async function uploadBlock(
 
 async function uploadBlockData(
     url: string,
+    token: string,
     content: Uint8Array,
     onProgress: (relativeIncrement: number) => void,
     signal: AbortSignal
@@ -137,6 +144,7 @@ async function uploadBlockData(
             reject(new Error('Upload failed'));
         };
         xhr.open('POST', url);
+        xhr.setRequestHeader('pm-storage-token', token);
         xhr.send(
             serializeFormData({
                 Block: new Blob([content]),
