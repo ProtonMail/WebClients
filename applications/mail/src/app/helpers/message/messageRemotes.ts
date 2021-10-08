@@ -30,7 +30,7 @@ const preloadImage = async (url: string) =>
         img.onerror = reject;
     });
 
-const removeProtonPrefix = (match: HTMLElement) => {
+export const removeProtonPrefix = (match: HTMLElement) => {
     ATTRIBUTES.forEach((attr) => {
         const protonAttr = `proton-${attr}`;
         if (match.hasAttribute(protonAttr)) {
