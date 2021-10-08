@@ -374,14 +374,17 @@ export const getSupportedEvent = ({
                 throw new ImportEventError(IMPORT_EVENT_ERROR_TYPE.RRULE_UNSUPPORTED, 'vevent', componentId);
             }
             validated.rrule = supportedRrule;
-            if (!getHasOccurrences(vcalVeventComponent)) {
-                throw new ImportEventError(IMPORT_EVENT_ERROR_TYPE.NO_OCCURRENCES, 'vevent', componentId);
-            }
             if (!getHasConsistentRrule(validated)) {
                 if (isEventInvitation) {
                     throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_INVALID, { method });
                 }
                 throw new ImportEventError(IMPORT_EVENT_ERROR_TYPE.RRULE_MALFORMED, 'vevent', componentId);
+            }
+            if (!getHasOccurrences(validated)) {
+                if (isEventInvitation) {
+                    throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_INVALID, { method });
+                }
+                throw new ImportEventError(IMPORT_EVENT_ERROR_TYPE.NO_OCCURRENCES, 'vevent', componentId);
             }
         }
 

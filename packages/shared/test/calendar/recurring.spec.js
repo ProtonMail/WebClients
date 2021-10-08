@@ -116,6 +116,18 @@ END:VEVENT`);
         ]);
     });
 
+    it('should return no occurrences for a count = 0', () => {
+        const component = parse(`
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20200129
+DTEND;VALUE=DATE:20200130
+RRULE:FREQ=DAILY;COUNT=0
+END:VEVENT`);
+        const cache = {};
+        const result = getOccurrencesBetween(component, Date.UTC(2020, 0, 1), Date.UTC(2020, 2, 1), cache);
+        expect(stringifyResultSimple(result)).toEqual([]);
+    });
+
     it('should pick a targeted given occurrence ', () => {
         const component = parse(`
 BEGIN:VEVENT
@@ -261,6 +273,17 @@ END:VEVENT
         expect(getOccurrences({ component, maxCount: 0 }).length).toBe(0);
         expect(getOccurrences({ component, maxCount: 1 }).length).toBe(1);
         expect(getOccurrences({ component, maxCount: 2 }).length).toBe(1);
+    });
+
+    it('should fill no occurrence for rrule with count = 0', () => {
+        const component = parse(`
+BEGIN:VEVENT
+DTSTART:20200201T030000Z
+DTEND:20200201T040000Z
+RRULE:FREQ=DAILY;COUNT=0
+END:VEVENT
+`);
+        expect(getOccurrences({ component, maxCount: 1 }).length).toBe(0);
     });
 
     it('should fill occurrences with max start', () => {
