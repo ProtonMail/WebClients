@@ -6,6 +6,7 @@ import {
     DropdownButton,
     DropdownMenu,
     DropdownMenuButton,
+    FolderIcon,
     generateUID,
     Icon,
     Mark,
@@ -13,7 +14,7 @@ import {
     usePopperAnchor,
 } from '@proton/components';
 
-import useLocationFieldOptions from './useLocationFieldOptions';
+import { useLocationFieldOptions, ItemsGroup } from './useLocationFieldOptions';
 
 interface Props {
     value: string;
@@ -21,7 +22,7 @@ interface Props {
 }
 
 const LocationFieldDropdown = ({ value, onChange }: Props) => {
-    const { grouped: optionGroups } = useLocationFieldOptions();
+    const { grouped: optionGroups, isLabel, isCustomFolder } = useLocationFieldOptions();
     const [search, setSearch] = useState('');
     const [options, setOptions] = useState(optionGroups);
 
@@ -31,11 +32,14 @@ const LocationFieldDropdown = ({ value, onChange }: Props) => {
 
     useEffect(() => {
         const lowerCaseSearch = search.toLowerCase();
-        const nextOptions = optionGroups.map((optionGroup) => ({
-            ...optionGroup,
-            items: optionGroup.items.filter((item) => item.text.toLowerCase().includes(lowerCaseSearch)),
-        }));
-        setOptions(nextOptions);
+        const nextOptions = optionGroups.map((optionGroup) => {
+            return {
+                ...optionGroup,
+                // @ts-expect-error typescript signature conflict between the different items type
+                items: optionGroup.items.filter((item) => item.text.toLowerCase().includes(lowerCaseSearch)),
+            };
+        });
+        setOptions(nextOptions as ItemsGroup);
     }, [search]);
 
     return (
@@ -94,23 +98,19 @@ const LocationFieldDropdown = ({ value, onChange }: Props) => {
                                             <div
                                                 className={classnames([
                                                     'flex flex-nowrap flex-align-items-center',
-                                                    item.folderLvlClass,
+                                                    isCustomFolder(item) && item.className,
                                                 ])}
                                             >
-                                                {!!item.icon && (
-                                                    <Icon
-                                                        name={item.icon}
-                                                        title={item.text}
-                                                        className="mr0-5 flex-item-noshrink"
-                                                    />
-                                                )}
-                                                {!!item.labelColor && (
+                                                {isLabel(item) && (
                                                     <Icon
                                                         name="circle-filled"
                                                         size={12}
-                                                        color={item.labelColor}
+                                                        color={item.color}
                                                         className="flex-item-noshrink mr0-5"
                                                     />
+                                                )}
+                                                {isCustomFolder(item) && (
+                                                    <FolderIcon folder={item.folderEntity} className="mr0-5" />
                                                 )}
                                                 <span className="text-ellipsis">
                                                     <Mark value={search}>{item.text}</Mark>
