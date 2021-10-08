@@ -71,15 +71,18 @@ describe.only('initDownload', () => {
                 getBlocks: async () => [
                     {
                         Index: 1,
-                        URL: 'url:1',
+                        BareURL: 'url:1',
+                        Token: '1',
                     },
                     {
                         Index: 2,
-                        URL: 'url:2',
+                        BareURL: 'url:2',
+                        Token: '2',
                     },
                     {
                         Index: 3,
-                        URL: 'url:3',
+                        BareURL: 'url:3',
+                        Token: '3',
                     },
                 ],
             });
@@ -98,7 +101,8 @@ describe.only('initDownload', () => {
                 getBlocks: async () => [
                     {
                         Index: 1,
-                        URL: 'url:1',
+                        BareURL: 'url:1',
+                        Token: '1',
                     },
                 ],
             });
@@ -133,19 +137,23 @@ describe.only('initDownload', () => {
                 getBlocks: async () => [
                     {
                         Index: 1,
-                        URL: 'url:1',
+                        BareURL: 'url:1',
+                        Token: '1',
                     },
                     {
                         Index: 2,
-                        URL: 'url:2',
+                        BareURL: 'url:2',
+                        Token: '2',
                     },
                     {
                         Index: 3,
-                        URL: 'url:3',
+                        BareURL: 'url:3',
+                        Token: '3',
                     },
                     {
                         Index: 4,
-                        URL: 'url:4',
+                        BareURL: 'url:4',
+                        Token: '4',
                     },
                 ],
                 onNetworkError: (id, err) => {
@@ -179,10 +187,12 @@ describe.only('initDownload', () => {
                     }
 
                     shouldValidateBlock = true;
+
                     return [
                         {
                             Index: 1,
-                            URL: 'url:1',
+                            BareURL: 'url:1',
+                            Token: '1',
                         },
                     ];
                 },
@@ -215,10 +225,12 @@ describe.only('initDownload', () => {
                         expiredURL = '';
                     }
                     blockRetryCount++;
+
                     return [
                         {
                             Index: 1,
-                            URL: 'url:1',
+                            BareURL: 'url:1',
+                            Token: '1',
                         },
                     ];
                 },
@@ -244,7 +256,8 @@ describe.only('initDownload', () => {
                     return [
                         {
                             Index: 1,
-                            URL: 'url:1',
+                            BareURL: 'url:1',
+                            Token: '1',
                         },
                     ];
                 },
