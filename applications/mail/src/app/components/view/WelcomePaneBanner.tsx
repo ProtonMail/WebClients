@@ -323,20 +323,38 @@ const WelcomePaneBanner = ({ plans, theme, userSettings, calendars = [] }: Props
     ].filter(isTruthy);
 
     const getRandomOption = (): MessageOption => {
-        const hasSeenAllMessages =
-            encounteredMessagesIDs && JSON.parse(encounteredMessagesIDs).length === messagesOptions.length;
+        let hasSeenAllMessages = false;
+
+        /*
+         * Message options can contains less element than the localstorage in the case where the user has triggered a condition in the mean time
+         * For example, if the user did not have any calendar items, and had all messages displayed, messageOptions now contains less items than the
+         * localStorage array. Instead of checking if length are equals, check if every items of messageOptions have been encountered.
+         */
+        if (encounteredMessagesIDs) {
+            hasSeenAllMessages = messagesOptions.every((option) =>
+                encounteredMessagesIDs.includes(option.id.toString())
+            );
+        }
+
         const encounteredMessages =
             !encounteredMessagesIDs || hasSeenAllMessages ? [] : JSON.parse(encounteredMessagesIDs);
 
         const filteredOptions = messagesOptions.filter((option) => !encounteredMessages.includes(option.id));
 
-        const randomOption = filteredOptions[Math.floor(Math.random() * filteredOptions.length)];
+        // We should never have a filteredOptions empty, but in case it is, display the first option as a fallback
+        const randomOption = filteredOptions.length
+            ? filteredOptions[Math.floor(Math.random() * filteredOptions.length)]
+            : messagesOptions[0];
         setItem('WelcomePaneEncounteredMessages', JSON.stringify([...encounteredMessages, randomOption.id]));
         return randomOption;
     };
 
     useEffect(() => {
-        setOption(getRandomOption());
+        try {
+            setOption(getRandomOption());
+        } catch (e: any) {
+            console.error(e);
+        }
     }, []);
 
     return (
