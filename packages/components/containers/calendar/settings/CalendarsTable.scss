@@ -3,8 +3,6 @@
 @import '~@proton/styles/scss/specifics/placeholder-loading';
 
 .calendar-email {
-	color: green;
-
 	&::before {
 		@extend %item-loading-pseudo;
 		@extend %placeholder-loading;
