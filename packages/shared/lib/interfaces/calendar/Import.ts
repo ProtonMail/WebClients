@@ -21,7 +21,8 @@ export interface ImportCalendarModel {
     eventsParsed: VcalVeventComponent[];
     totalEncrypted: number;
     totalImported: number;
-    errors: ImportEventError[];
+    visibleErrors: ImportEventError[];
+    hiddenErrors: ImportEventError[];
     failure?: ImportFatalError | ImportFileError | Error;
     calendar: Calendar;
     loading: boolean;

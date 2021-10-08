@@ -52,6 +52,9 @@ const getErrorMessage = (errorType: IMPORT_EVENT_ERROR_TYPE, externalError?: Err
     if (errorType === IMPORT_EVENT_ERROR_TYPE.TIMEZONE_FORMAT) {
         return c('Error importing event').t`Custom timezone`;
     }
+    if (errorType === IMPORT_EVENT_ERROR_TYPE.TIMEZONE_IGNORE) {
+        return 'Timezone component ignored';
+    }
     if (errorType === IMPORT_EVENT_ERROR_TYPE.VEVENT_INVALID) {
         return c('Error importing event').t`Invalid event`;
     }

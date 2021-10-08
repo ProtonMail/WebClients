@@ -293,6 +293,20 @@ END:VEVENT`;
         );
     });
 
+    it('should catch inconsistent rrules after reformatting bad untils', () => {
+        const vevent = `BEGIN:VEVENT
+DTSTART;TZID=Europe/Vilnius:20200503T150000
+DTEND;TZID=Europe/Vilnius:20200503T160000
+RRULE:FREQ=MONTHLY;BYDAY=1MO;UNTIL=20000101T000000Z
+DTSTAMP:20200508T121218Z
+UID:71hdoqnevmnq80hfaeadnq8d0v@google.com
+END:VEVENT`;
+        const event = parse(vevent) as VcalVeventComponent;
+        expect(() => getSupportedEvent({ vcalVeventComponent: event, hasXWrTimezone: false })).toThrowError(
+            'Malformed recurring event'
+        );
+    });
+
     it('should catch recurring single edits', () => {
         const vevent = `BEGIN:VEVENT
 DTSTART;TZID=Europe/Vilnius:20200503T150000
@@ -308,7 +322,7 @@ END:VEVENT`;
         );
     });
 
-    it('should catch recurring events with no occurrences', () => {
+    it('should catch recurring events with no occurrences because of EXDATE', () => {
         const vevent = `BEGIN:VEVENT
 DTSTART;TZID=Europe/Warsaw:20130820T145000
 DTEND;TZID=Europe/Warsaw:20130820T152000
@@ -328,7 +342,53 @@ SUMMARY:Scenka: napad na bank
 TRANSP:OPAQUE
 END:VEVENT`;
         const event = parse(vevent) as VcalVeventComponent;
-        expect(() => getSupportedEvent({ vcalVeventComponent: event, hasXWrTimezone: false })).toThrowError('');
+        expect(() => getSupportedEvent({ vcalVeventComponent: event, hasXWrTimezone: false })).toThrowError(
+            'Recurring event has no occurrences'
+        );
+    });
+
+    it('should catch recurring events with no occurrences because of COUNT', () => {
+        const vevent = `BEGIN:VEVENT
+DTSTART;TZID=Europe/Warsaw:20211020T145000
+DTEND;TZID=Europe/Warsaw:20211020T152000
+RRULE:FREQ=WEEKLY;COUNT=0
+DTSTAMP:20200708T215912Z
+UID:qkbndaqtgkuj4nfr21adr86etk@google.com
+CREATED:20130902T220905Z
+DESCRIPTION:
+LAST-MODIFIED:20130902T220905Z
+LOCATION:Twinpigs - Żory\\, Katowicka 4
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Scenka: napad na bank
+TRANSP:OPAQUE
+END:VEVENT`;
+        const event = parse(vevent) as VcalVeventComponent;
+        expect(() => getSupportedEvent({ vcalVeventComponent: event, hasXWrTimezone: false })).toThrowError(
+            'Recurring event has no occurrences'
+        );
+    });
+
+    it('should catch malformed recurring events with no occurrences (throw because of malformed)', () => {
+        const vevent = `BEGIN:VEVENT
+DTSTART;TZID=Europe/Warsaw:20211020T145000
+DTEND;TZID=Europe/Warsaw:20211020T152000
+RRULE:FREQ=WEEKLY;WKST=MO;BYDAY=SA;COUNT=0
+DTSTAMP:20200708T215912Z
+UID:qkbndaqtgkuj4nfr21adr86etk@google.com
+CREATED:20130902T220905Z
+DESCRIPTION:
+LAST-MODIFIED:20130902T220905Z
+LOCATION:Twinpigs - Żory\\, Katowicka 4
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Scenka: napad na bank
+TRANSP:OPAQUE
+END:VEVENT`;
+        const event = parse(vevent) as VcalVeventComponent;
+        expect(() => getSupportedEvent({ vcalVeventComponent: event, hasXWrTimezone: false })).toThrowError(
+            'Malformed recurring event'
+        );
     });
 
     it('should catch non-supported rrules', () => {

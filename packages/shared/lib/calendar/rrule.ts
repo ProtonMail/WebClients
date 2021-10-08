@@ -26,7 +26,6 @@ import {
     FREQUENCY_INTERVALS_MAX,
     FREQUENCY_COUNT_MAX_INVITATION,
 } from './constants';
-import { ImportEventError, IMPORT_EVENT_ERROR_TYPE } from './icsSurgery/ImportEventError';
 
 export const getIsStandardByday = (byday = ''): byday is VcalDaysKeys => {
     return /^(SU|MO|TU|WE|TH|FR|SA)$/.test(byday);
@@ -415,7 +414,7 @@ export const getHasOccurrences = (vevent: RequireSome<Partial<VcalVeventComponen
     !!getOccurrences({ component: vevent, maxCount: 1 }).length;
 
 export const getHasConsistentRrule = (vevent: RequireSome<Partial<VcalVeventComponent>, 'dtstart'>) => {
-    const { dtstart, rrule } = vevent;
+    const { rrule } = vevent;
 
     if (!rrule?.value) {
         return true;
@@ -427,23 +426,12 @@ export const getHasConsistentRrule = (vevent: RequireSome<Partial<VcalVeventComp
         return false;
     }
 
-    if (count === 0) {
-        throw new ImportEventError(IMPORT_EVENT_ERROR_TYPE.NO_OCCURRENCES, 'vevent', '');
-    }
-
-    // UNTIL should happen before DTSTART
-    // Although this condition should be covered by the next check,
-    // this check is cheaper and can help discard invalid RRULEs more efficiently
-    if (until) {
-        const startDateUTC = propertyToUTCDate(dtstart);
-        const untilDateUTC = toUTCDate(until);
-        if (+startDateUTC > +untilDateUTC) {
-            return false;
-        }
-    }
-
-    // make sure DTSTART matches the pattern of the recurring series (EXDATE should be excluded here)
-    const [first] = getOccurrences({ component: omit(vevent, ['exdate']), maxCount: 1 });
+    // make sure DTSTART matches the pattern of the recurring series (we exclude EXDATE and COUNT/UNTIL here)
+    const rruleValueWithNoCountOrUntil = omit(rrule.value, ['count', 'until']);
+    const [first] = getOccurrences({
+        component: omit({ ...vevent, rrule: { value: rruleValueWithNoCountOrUntil } }, ['exdate']),
+        maxCount: 1,
+    });
 
     if (!first) {
         return false;
