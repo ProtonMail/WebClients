@@ -1,5 +1,11 @@
 import { updateCalendar } from '@proton/shared/lib/api/calendars';
-import { getSupportedEvents, parseIcs, splitErrors } from '@proton/shared/lib/calendar/import/import';
+import {
+    extractTotals,
+    getSupportedEvents,
+    parseIcs,
+    splitErrors,
+    splitHiddenErrors,
+} from '@proton/shared/lib/calendar/import/import';
 import { ImportFatalError } from '@proton/shared/lib/calendar/import/ImportFatalError';
 import { splitExtension } from '@proton/shared/lib/helpers/file';
 import { noop } from '@proton/shared/lib/helpers/function';
@@ -32,7 +38,8 @@ const getInitialState = (calendar: Calendar): ImportCalendarModel => ({
     eventsParsed: [],
     totalEncrypted: 0,
     totalImported: 0,
-    errors: [],
+    visibleErrors: [],
+    hiddenErrors: [],
     loading: false,
 });
 
@@ -123,12 +130,14 @@ const ImportModal = ({ calendars, defaultCalendar, ...rest }: Props) => {
                     if (!parsed.length && !errors.length) {
                         throw new ImportFileError(IMPORT_ERROR_TYPE.NO_EVENTS, fileAttached.name);
                     }
-                    const step = errors.length || !parsed.length ? IMPORT_STEPS.WARNING : IMPORT_STEPS.IMPORTING;
+                    const { hidden: hiddenErrors, visible: visibleErrors } = splitHiddenErrors(errors);
+                    const step = visibleErrors.length ? IMPORT_STEPS.WARNING : IMPORT_STEPS.IMPORTING;
                     setModel({
                         ...model,
                         step,
                         eventsParsed: parsed,
-                        errors,
+                        visibleErrors,
+                        hiddenErrors,
                         failure: undefined,
                         loading: false,
                     });
@@ -161,14 +170,15 @@ const ImportModal = ({ calendars, defaultCalendar, ...rest }: Props) => {
         }
 
         if (model.step <= IMPORT_STEPS.WARNING) {
+            const { totalToImport } = extractTotals(model);
             const submit = (
-                <PrimaryButton disabled={!model.eventsParsed?.length} type="submit">
+                <PrimaryButton disabled={!totalToImport} type="submit">
                     {c('Action').t`Import`}
                 </PrimaryButton>
             );
 
             const handleSubmit = () => {
-                setModel({ ...model, step: IMPORT_STEPS.IMPORTING, errors: [] });
+                setModel({ ...model, step: IMPORT_STEPS.IMPORTING, visibleErrors: [] });
             };
 
             return {

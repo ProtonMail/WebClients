@@ -204,7 +204,8 @@ export const getOccurrences = ({
     maxCount = 1,
     cache = {},
 }: GetOccurrences): Pick<RecurringResult, 'localStart' | 'localEnd' | 'occurrenceNumber'>[] => {
-    if (maxCount <= 0) {
+    // ICAL.js ignores COUNT=0, so we have to deal with it by hand
+    if (maxCount <= 0 || component?.rrule?.value.count === 0) {
         return [];
     }
 
@@ -245,6 +246,11 @@ export const getOccurrencesBetween = (
     cache: Partial<OccurrenceIterationCache> = {},
     maxCount?: number
 ): RecurringResult[] => {
+    // ICAL.js ignores COUNT=0, so we have to deal with it by hand
+    if (component?.rrule?.value.count === 0) {
+        return [];
+    }
+
     if (!cache.start) {
         cache.start = getOccurrenceSetup(component);
     }

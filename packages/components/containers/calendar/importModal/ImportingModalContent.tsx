@@ -1,7 +1,9 @@
 import {
+    extractTotals,
     getSupportedEventsWithRecurrenceId,
     splitByRecurrenceId,
     splitErrors,
+    splitHiddenErrors,
 } from '@proton/shared/lib/calendar/import/import';
 import { ImportFatalError } from '@proton/shared/lib/calendar/import/ImportFatalError';
 import { Dispatch, SetStateAction, useEffect } from 'react';
@@ -14,7 +16,7 @@ import {
     ImportedEvent,
 } from '@proton/shared/lib/interfaces/calendar';
 import { ImportEventError } from '@proton/shared/lib/calendar/icsSurgery/ImportEventError';
-import { extractTotals, processInBatches } from '@proton/shared/lib/calendar/import/encryptAndSubmit';
+import { processInBatches } from '@proton/shared/lib/calendar/import/encryptAndSubmit';
 
 import { Alert, DynamicProgress } from '../../../components';
 import { useApi, useBeforeUnload, useGetCalendarInfo } from '../../../hooks';
@@ -49,11 +51,13 @@ const ImportingModalContent = ({ model, setModel, onFinish }: Props) => {
             imported: EncryptedEvent[],
             errors: ImportEventError[]
         ) => {
+            const { hidden: hiddenErrors, visible: visibleErrors } = splitHiddenErrors(errors);
             setModelWithAbort((model) => ({
                 ...model,
                 totalEncrypted: model.totalEncrypted + encrypted.length,
                 totalImported: model.totalImported + imported.length,
-                errors: [...model.errors, ...errors],
+                visibleErrors: [...model.visibleErrors, ...visibleErrors],
+                hiddenErrors: [...model.hiddenErrors, ...hiddenErrors],
             }));
         };
 
@@ -95,7 +99,8 @@ const ImportingModalContent = ({ model, setModel, onFinish }: Props) => {
                     eventsParsed: [],
                     totalEncrypted: 0,
                     totalImported: 0,
-                    errors: [],
+                    visibleErrors: [],
+                    hiddenErrors: [],
                     failure: new ImportFatalError(error),
                     loading: false,
                 }));

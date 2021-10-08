@@ -11,8 +11,8 @@ interface Props {
 }
 
 const WarningModalContent = ({ model }: Props) => {
-    const eventsDiscarded = model.errors.filter((e) => e.component === 'vevent');
-    const totalSupported = model.eventsParsed.length;
+    const eventsDiscarded = model.visibleErrors.filter((e) => e.component === 'vevent');
+    const totalSupported = model.eventsParsed.length + model.hiddenErrors.length;
     const totalEventsDiscarded = eventsDiscarded.length;
     const totalEvents = totalSupported + totalEventsDiscarded;
 
@@ -41,7 +41,7 @@ const WarningModalContent = ({ model }: Props) => {
                     <li>{c('Import calendar warning').t`Non-Gregorian calendars`}</li>
                 </ul>
             </Alert>
-            <ErrorDetails summary={summary} errors={model.errors} />
+            <ErrorDetails summary={summary} errors={model.visibleErrors} />
         </>
     );
 };
