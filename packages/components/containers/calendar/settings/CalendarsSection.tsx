@@ -10,7 +10,7 @@ import { SettingsSection } from '../../account';
 
 import CalendarsTable from './CalendarsTable';
 
-interface Props {
+export interface CalendarsSectionProps {
     calendars: (Calendar | SubscribedCalendar)[];
     defaultCalendarID?: string;
     user: UserModel;
@@ -45,62 +45,60 @@ const CalendarsSection = ({
     onExport,
     canUpgradeLimit = true,
     calendarLimitReachedText,
-}: Props) => {
-    return (
-        <SettingsSection>
-            {!canAdd && !isFeatureUnavailable && user.hasNonDelinquentScope && (
-                <Alert className="mb1" type="warning">
-                    {calendarLimitReachedText}
-                </Alert>
+}: CalendarsSectionProps) => (
+    <SettingsSection>
+        {!canAdd && !isFeatureUnavailable && user.hasNonDelinquentScope && (
+            <Alert className="mb1" type="warning">
+                {calendarLimitReachedText}
+            </Alert>
+        )}
+        {user.isFree && canUpgradeLimit && !canAdd && !isFeatureUnavailable && (
+            <Card className="mb1">
+                <div className="flex flex-nowrap flex-align-items-center">
+                    <p className="flex-item-fluid mt0 mb0 pr2">
+                        {c('Upgrade notice').ngettext(
+                            msgid`Upgrade to a paid plan to create up to ${MAX_CALENDARS_PER_USER} calendar, allowing you to make calendars for work, to share with friends, and just for yourself.`,
+                            `Upgrade to a paid plan to create up to ${MAX_CALENDARS_PER_USER} calendars, allowing you to make calendars for work, to share with friends, and just for yourself.`,
+                            MAX_CALENDARS_PER_USER
+                        )}
+                    </p>
+                    <ButtonLike as={SettingsLink} path="/dashboard" color="norm" shape="solid" size="small">
+                        {c('Action').t`Upgrade`}
+                    </ButtonLike>
+                </div>
+            </Card>
+        )}
+        {description}
+        <div className="mb1">
+            {isFeatureUnavailable ? (
+                <Tooltip title={c('Tooltip').t`This feature is unavailable for the moment`}>
+                    {/* a <span> is added artificially so that the disabled prop of the button does not hide the tooltip */}
+                    <span>
+                        <PrimaryButton data-test-id="calendar-setting-page:add-calendar" disabled>
+                            {add}
+                        </PrimaryButton>
+                    </span>
+                </Tooltip>
+            ) : (
+                <PrimaryButton data-test-id="calendar-setting-page:add-calendar" disabled={!canAdd} onClick={onAdd}>
+                    {add}
+                </PrimaryButton>
             )}
-            {user.isFree && canUpgradeLimit && !canAdd && !isFeatureUnavailable && (
-                <Card className="mb1">
-                    <div className="flex flex-nowrap flex-align-items-center">
-                        <p className="flex-item-fluid mt0 mb0 pr2">
-                            {c('Upgrade notice').ngettext(
-                                msgid`Upgrade to a paid plan to create up to ${MAX_CALENDARS_PER_USER} calendar, allowing you to make calendars for work, to share with friends, and just for yourself.`,
-                                `Upgrade to a paid plan to create up to ${MAX_CALENDARS_PER_USER} calendars, allowing you to make calendars for work, to share with friends, and just for yourself.`,
-                                MAX_CALENDARS_PER_USER
-                            )}
-                        </p>
-                        <ButtonLike as={SettingsLink} path="/dashboard" color="norm" shape="solid" size="small">
-                            {c('Action').t`Upgrade`}
-                        </ButtonLike>
-                    </div>
-                </Card>
-            )}
-            {description}
-            <div className="mb1">
-                {isFeatureUnavailable ? (
-                    <Tooltip title={c('Tooltip').t`This feature is unavailable for the moment`}>
-                        {/* a <span> is added artificially so that the disabled prop of the button does not hide the tooltip */}
-                        <span>
-                            <PrimaryButton data-test-id="calendar-setting-page:add-calendar" disabled>
-                                {add}
-                            </PrimaryButton>
-                        </span>
-                    </Tooltip>
-                ) : (
-                    <PrimaryButton data-test-id="calendar-setting-page:add-calendar" disabled={!canAdd} onClick={onAdd}>
-                        {add}
-                    </PrimaryButton>
-                )}
-            </div>
-            {!!calendars.length && (
-                <CalendarsTable
-                    calendars={calendars}
-                    defaultCalendarID={defaultCalendarID}
-                    user={user}
-                    onEdit={onEdit}
-                    onSetDefault={onSetDefault}
-                    onDelete={onDelete}
-                    onExport={onExport}
-                    loadingMap={loadingMap}
-                    actionsDisabled={loading}
-                />
-            )}
-        </SettingsSection>
-    );
-};
+        </div>
+        {!!calendars.length && (
+            <CalendarsTable
+                calendars={calendars}
+                defaultCalendarID={defaultCalendarID}
+                user={user}
+                onEdit={onEdit}
+                onSetDefault={onSetDefault}
+                onDelete={onDelete}
+                onExport={onExport}
+                loadingMap={loadingMap}
+                actionsDisabled={loading}
+            />
+        )}
+    </SettingsSection>
+);
 
 export default CalendarsSection;
