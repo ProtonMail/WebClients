@@ -1,6 +1,4 @@
 import { addDays, fromUnixTime } from 'date-fns';
-import { getIsDateOutOfBounds, getIsWellFormedDateOrDateTime, getSupportedUID } from '../helper';
-import { EVENT_INVITATION_ERROR_TYPE, EventInvitationError } from './EventInvitationError';
 import { convertUTCDateTimeToZone, fromUTCDate, getSupportedTimezone } from '../../date/timezone';
 import { unique } from '../../helpers/array';
 import { truncate } from '../../helpers/string';
@@ -13,6 +11,7 @@ import {
 import { dedupeAlarmsWithNormalizedTriggers } from '../alarms';
 import { getAttendeeEmail, getSupportedAttendee, getSupportedOrganizer } from '../attendees';
 import { ICAL_METHOD, MAX_LENGTHS } from '../constants';
+import { getIsDateOutOfBounds, getIsWellFormedDateOrDateTime, getSupportedUID } from '../helper';
 import { getHasConsistentRrule, getHasOccurrences, getSupportedRrule } from '../rrule';
 import {
     dateToProperty,
@@ -21,6 +20,7 @@ import {
     propertyToUTCDate,
 } from '../vcalConverter';
 import { getIsPropertyAllDay, getPropertyTzid } from '../vcalHelper';
+import { EVENT_INVITATION_ERROR_TYPE, EventInvitationError } from './EventInvitationError';
 import { IMPORT_EVENT_ERROR_TYPE, ImportEventError } from './ImportEventError';
 import { getSupportedAlarms } from './valarm';
 import { durationToMilliseconds } from '../vcal';
@@ -185,7 +185,8 @@ export const getSupportedEvent = ({
     isEventInvitation?: boolean;
     enabledEmailNotifications?: boolean;
 }): VcalVeventComponent => {
-    const isImport = method === ICAL_METHOD.PUBLISH;
+    const isPublish = method === ICAL_METHOD.PUBLISH;
+    const isInvitation = isEventInvitation && !isPublish;
     try {
         // common surgery
         const {
@@ -302,7 +303,7 @@ export const getSupportedEvent = ({
             if (eventDuration > 0) {
                 validated.dtend = supportedDtend;
             }
-        } else if (duration && !isImport) {
+        } else if (duration && isInvitation) {
             // We won't support duration for invitations until other clients adapt
             throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_UNSUPPORTED, { method });
         }
@@ -341,7 +342,10 @@ export const getSupportedEvent = ({
                 })
             );
         }
-        if (recurrenceId) {
+        // Do not keep recurrence ids when importing invitations. In those cases we override the UID,
+        // so the RECURRENCE-ID is meaningless
+        const keepRecurrenceId = isEventInvitation ? !isPublish : isPublish;
+        if (recurrenceId && keepRecurrenceId) {
             if (rrule) {
                 if (method === ICAL_METHOD.REPLY) {
                     // the external provider forgot to remove the RRULE
@@ -366,7 +370,7 @@ export const getSupportedEvent = ({
         }
 
         if (rrule && !ignoreRrule) {
-            const supportedRrule = getSupportedRrule({ ...validated, rrule }, !isImport, guessTzid);
+            const supportedRrule = getSupportedRrule({ ...validated, rrule }, isInvitation, guessTzid);
             if (!supportedRrule) {
                 if (isEventInvitation) {
                     throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_UNSUPPORTED, { method });
@@ -389,7 +393,7 @@ export const getSupportedEvent = ({
         }
 
         // import-specific surgery
-        if (isImport) {
+        if (!isInvitation) {
             if (!dtend && duration) {
                 const dtendFromDuration = getDtendPropertyFromDuration(validated.dtstart, duration.value);
 
@@ -398,23 +402,24 @@ export const getSupportedEvent = ({
                 }
 
                 if (validated.dtend && getIsDateOutOfBounds(validated.dtend)) {
+                    if (isEventInvitation) {
+                        throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_UNSUPPORTED, { method });
+                    }
                     throw new ImportEventError(IMPORT_EVENT_ERROR_TYPE.DTEND_OUT_OF_BOUNDS, 'vevent', componentId);
                 }
             }
 
-            if (!isEventInvitation) {
-                const alarms = components?.filter(({ component }) => component === 'valarm') || [];
-                const supportedAlarms = getSupportedAlarms(alarms, dtstart, enabledEmailNotifications);
-                const dedupedAlarms = dedupeAlarmsWithNormalizedTriggers(supportedAlarms);
+            const alarms = components?.filter(({ component }) => component === 'valarm') || [];
+            const supportedAlarms = getSupportedAlarms(alarms, dtstart, enabledEmailNotifications);
+            const dedupedAlarms = dedupeAlarmsWithNormalizedTriggers(supportedAlarms);
 
-                if (dedupedAlarms.length) {
-                    validated.components = dedupedAlarms;
-                }
+            if (dedupedAlarms.length) {
+                validated.components = dedupedAlarms;
             }
         }
 
         // invite-specific surgery
-        if (!isImport) {
+        if (isInvitation) {
             if (sharedSessionKey) {
                 validated['x-pm-session-key'] = { ...sharedSessionKey };
             }

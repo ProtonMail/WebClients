@@ -1,22 +1,22 @@
-import { syncMultipleEvents } from '../../api/calendars';
+import {
+    SyncMultipleApiResponses,
+    SyncMultipleApiResponse,
+    DecryptedCalendarKey,
+    ImportedEvent,
+    VcalVeventComponent,
+    EncryptedEvent,
+} from '../../interfaces/calendar';
 import { HOUR } from '../../constants';
+import { CreateCalendarEventSyncData } from '../../interfaces/calendar/Api';
+import { getIsSuccessSyncApiResponse } from '../helper';
+import { getComponentIdentifier, splitErrors } from './import';
+import { IMPORT_EVENT_ERROR_TYPE, ImportEventError } from '../icsSurgery/ImportEventError';
+import { syncMultipleEvents } from '../../api/calendars';
+import { createCalendarEvent, getHasSharedEventContent, getHasSharedKeyPacket } from '../serialize';
+import getCreationKeys from '../integration/getCreationKeys';
 import { chunk } from '../../helpers/array';
 import { wait } from '../../helpers/promise';
 import { Api, DecryptedKey } from '../../interfaces';
-import {
-    DecryptedCalendarKey,
-    EncryptedEvent,
-    ImportedEvent,
-    SyncMultipleApiResponse,
-    SyncMultipleApiResponses,
-    VcalVeventComponent,
-} from '../../interfaces/calendar';
-import { CreateCalendarEventSyncData } from '../../interfaces/calendar/Api';
-import { getIsSuccessSyncApiResponse } from '../helper';
-import { IMPORT_EVENT_ERROR_TYPE, ImportEventError } from '../icsSurgery/ImportEventError';
-import getCreationKeys from '../integration/getCreationKeys';
-import { createCalendarEvent, getHasSharedEventContent, getHasSharedKeyPacket } from '../serialize';
-import { splitErrors } from './import';
 
 const BATCH_SIZE = 10;
 
@@ -25,7 +25,7 @@ const encryptEvent = async (
     addressKeys: DecryptedKey[],
     calendarKeys: DecryptedCalendarKey[]
 ) => {
-    const uid = eventComponent.uid.value;
+    const componentId = getComponentIdentifier(eventComponent);
     try {
         const data = await createCalendarEvent({
             eventComponent,
@@ -38,7 +38,7 @@ const encryptEvent = async (
         }
         return { data, component: eventComponent };
     } catch (error: any) {
-        return new ImportEventError(IMPORT_EVENT_ERROR_TYPE.ENCRYPTION_ERROR, uid, 'vevent');
+        return new ImportEventError(IMPORT_EVENT_ERROR_TYPE.ENCRYPTION_ERROR, 'vevent', componentId);
     }
 };
 
@@ -87,8 +87,9 @@ const processResponses = (responses: SyncMultipleApiResponses[], events: Encrypt
             };
         }
         const error = new Error(errorMessage);
-        const uid = events[Index]?.component.uid.value;
-        return new ImportEventError(IMPORT_EVENT_ERROR_TYPE.EXTERNAL_ERROR, 'vevent', uid, error);
+        const component = events[Index]?.component;
+        const componentId = component ? getComponentIdentifier(component) : '';
+        return new ImportEventError(IMPORT_EVENT_ERROR_TYPE.EXTERNAL_ERROR, 'vevent', componentId, error);
     });
 };
 

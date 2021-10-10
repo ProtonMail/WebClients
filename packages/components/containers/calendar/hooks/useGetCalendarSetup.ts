@@ -3,10 +3,15 @@ import { c } from 'ttag';
 
 import { getActiveAddresses } from '@proton/shared/lib/helpers/address';
 import { Calendar, CalendarViewModelFull, SubscribedCalendar } from '@proton/shared/lib/interfaces/calendar';
-import useCalendarEmailNotificationsFeature from '../../../hooks/useCalendarEmailNotificationsFeature';
 
 import { getCalendarModel } from '../calendarModal/calendarModalState';
-import { useGetAddresses, useGetCalendarBootstrap, useLoading, useNotifications } from '../../../hooks';
+import {
+    useGetAddresses,
+    useGetCalendarBootstrap,
+    useLoading,
+    useNotifications,
+    useCalendarEmailNotificationsFeature,
+} from '../../../hooks';
 
 interface Props {
     calendar?: Calendar | SubscribedCalendar;
