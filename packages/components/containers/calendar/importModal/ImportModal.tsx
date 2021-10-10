@@ -1,4 +1,6 @@
 import { updateCalendar } from '@proton/shared/lib/api/calendars';
+
+import { ICAL_METHOD, IMPORT_ERROR_TYPE, MAX_IMPORT_FILE_SIZE } from '@proton/shared/lib/calendar/constants';
 import {
     extractTotals,
     getSupportedEvents,
@@ -7,24 +9,22 @@ import {
     splitHiddenErrors,
 } from '@proton/shared/lib/calendar/import/import';
 import { ImportFatalError } from '@proton/shared/lib/calendar/import/ImportFatalError';
-import { splitExtension } from '@proton/shared/lib/helpers/file';
-import { noop } from '@proton/shared/lib/helpers/function';
-import { Calendar, ImportedEvent, IMPORT_STEPS, ImportCalendarModel } from '@proton/shared/lib/interfaces/calendar';
-import { ChangeEvent, useState, DragEvent } from 'react';
-import { c } from 'ttag';
-
-import { IMPORT_ERROR_TYPE, MAX_IMPORT_FILE_SIZE } from '@proton/shared/lib/calendar/constants';
 
 import { ImportFileError } from '@proton/shared/lib/calendar/import/ImportFileError';
+import { splitExtension } from '@proton/shared/lib/helpers/file';
+import { noop } from '@proton/shared/lib/helpers/function';
+import { Calendar, IMPORT_STEPS, ImportCalendarModel, ImportedEvent } from '@proton/shared/lib/interfaces/calendar';
+import { ChangeEvent, DragEvent, useState } from 'react';
+import { c, msgid } from 'ttag';
+import { FormModal, onlyDragFiles, PrimaryButton } from '../../../components';
 
-import { useApi, useEventManager } from '../../../hooks';
-import { FormModal, PrimaryButton, onlyDragFiles } from '../../../components';
-import useCalendarEmailNotificationsFeature from '../../../hooks/useCalendarEmailNotificationsFeature';
+import { useApi, useEventManager, useCalendarEmailNotificationsFeature } from '../../../hooks';
 
 import AttachingModalContent from './AttachingModalContent';
 import ImportingModalContent from './ImportingModalContent';
+import ImportInvitationModalContent from './ImportInvitationModalContent';
 import ImportSummaryModalContent from './ImportSummaryModalContent';
-import WarningModalContent from './WarningModalContent';
+import PartialImportModalContent from './PartialImportModalContent';
 
 interface Props {
     defaultCalendar: Calendar;
@@ -123,17 +123,32 @@ const ImportModal = ({ calendars, defaultCalendar, ...rest }: Props) => {
                 }
                 try {
                     setModel({ ...model, loading: true });
-                    const { components, calscale, xWrTimezone } = await parseIcs(fileAttached);
+                    const { components, calscale, xWrTimezone, method } = await parseIcs(fileAttached);
                     const { errors, rest: parsed } = splitErrors(
-                        await getSupportedEvents({ components, calscale, xWrTimezone, enabledEmailNotifications })
+                        await getSupportedEvents({
+                            components,
+                            method,
+                            calscale,
+                            xWrTimezone,
+                            enabledEmailNotifications,
+                        })
                     );
-                    if (!parsed.length && !errors.length) {
+                    const { hidden: hiddenErrors, visible: visibleErrors } = splitHiddenErrors(errors);
+
+                    const totalToImport = parsed.length + hiddenErrors.length;
+                    const totalErrors = visibleErrors.length;
+                    if (!totalToImport && !totalErrors) {
                         throw new ImportFileError(IMPORT_ERROR_TYPE.NO_EVENTS, fileAttached.name);
                     }
-                    const { hidden: hiddenErrors, visible: visibleErrors } = splitHiddenErrors(errors);
-                    const step = visibleErrors.length ? IMPORT_STEPS.WARNING : IMPORT_STEPS.IMPORTING;
+                    const step = (() => {
+                        if (method !== ICAL_METHOD.PUBLISH) {
+                            return IMPORT_STEPS.WARNING_IMPORT_INVITATION;
+                        }
+                        return totalErrors ? IMPORT_STEPS.WARNING_PARTIAL_IMPORT : IMPORT_STEPS.IMPORTING;
+                    })();
                     setModel({
                         ...model,
+                        method,
                         step,
                         eventsParsed: parsed,
                         visibleErrors,
@@ -169,22 +184,38 @@ const ImportModal = ({ calendars, defaultCalendar, ...rest }: Props) => {
             };
         }
 
-        if (model.step <= IMPORT_STEPS.WARNING) {
+        if (model.step <= IMPORT_STEPS.WARNING_IMPORT_INVITATION) {
+            const totalEvents = model.eventsParsed.length + model.visibleErrors.length + model.hiddenErrors.length;
+            const submit = <PrimaryButton type="submit">{c('Action').t`Import`}</PrimaryButton>;
+
+            const handleSubmit = () => {
+                setModel({
+                    ...model,
+                    step: model.visibleErrors.length ? IMPORT_STEPS.WARNING_PARTIAL_IMPORT : IMPORT_STEPS.IMPORTING,
+                });
+            };
+
+            return {
+                title: c('Title').ngettext(msgid`Import as simple event?`, `Import as simple events?`, totalEvents),
+                content: <ImportInvitationModalContent model={model} />,
+                submit,
+                onSubmit: handleSubmit,
+            };
+        }
+
+        if (model.step <= IMPORT_STEPS.WARNING_PARTIAL_IMPORT) {
             const { totalToImport } = extractTotals(model);
-            const submit = (
-                <PrimaryButton disabled={!totalToImport} type="submit">
-                    {c('Action').t`Import`}
-                </PrimaryButton>
-            );
+            const submit = <PrimaryButton type="submit">{c('Action').t`Continue import`}</PrimaryButton>;
 
             const handleSubmit = () => {
                 setModel({ ...model, step: IMPORT_STEPS.IMPORTING, visibleErrors: [] });
             };
 
             return {
-                title: c('Title').t`Warning`,
-                content: <WarningModalContent model={model} />,
+                title: !totalToImport ? c('Title').t`Import failed` : c('Title').t`Continue with partial import?`,
+                content: <PartialImportModalContent model={model} />,
                 submit,
+                hasSubmit: !!totalToImport,
                 onSubmit: handleSubmit,
             };
         }

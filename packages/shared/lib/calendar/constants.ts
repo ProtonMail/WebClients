@@ -228,6 +228,7 @@ export const MAX_UID_CHARS_DISPLAY = 43;
 export const MAX_FILENAME_CHARS_DISPLAY = 100;
 export const IMPORT_CALENDAR_FAQ_URL =
     'https://protonmail.com/support/knowledge-base/import-calendar-to-protoncalendar';
+export const IMPORT_CALENDAR_UNSUPPORTED_FAQ_URL = `${IMPORT_CALENDAR_FAQ_URL}/#items_not_supported`;
 
 export const MAX_LINKS_PER_CALENDAR = 5;
 

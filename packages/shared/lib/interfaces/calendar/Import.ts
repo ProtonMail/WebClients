@@ -1,3 +1,4 @@
+import { ICAL_METHOD } from '../../calendar/constants';
 import { ImportEventError } from '../../calendar/icsSurgery/ImportEventError';
 import { ImportFatalError } from '../../calendar/import/ImportFatalError';
 import { ImportFileError } from '../../calendar/import/ImportFileError';
@@ -10,7 +11,8 @@ import { VcalCalendarComponent, VcalVeventComponent } from './VcalModel';
 export enum IMPORT_STEPS {
     ATTACHING,
     ATTACHED,
-    WARNING,
+    WARNING_IMPORT_INVITATION,
+    WARNING_PARTIAL_IMPORT,
     IMPORTING,
     FINISHED,
 }
@@ -18,6 +20,7 @@ export enum IMPORT_STEPS {
 export interface ImportCalendarModel {
     step: IMPORT_STEPS;
     fileAttached?: File;
+    method?: ICAL_METHOD;
     eventsParsed: VcalVeventComponent[];
     totalEncrypted: number;
     totalImported: number;
