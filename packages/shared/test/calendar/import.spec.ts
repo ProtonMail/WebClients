@@ -1,14 +1,101 @@
-import { MAX_LENGTHS } from '../../lib/calendar/constants';
+import { enUS } from 'date-fns/locale';
+import { ICAL_METHOD, MAX_LENGTHS } from '../../lib/calendar/constants';
 import { getSupportedEvent } from '../../lib/calendar/icsSurgery/vevent';
+import { extractSupportedEvent, getComponentIdentifier, parseIcs } from '../../lib/calendar/import/import';
 import { parse } from '../../lib/calendar/vcal';
+import { omit } from '../../lib/helpers/object';
 import { truncate } from '../../lib/helpers/string';
 import {
     VcalDateTimeProperty,
     VcalVeventComponent,
     VcalVtimezoneComponent,
 } from '../../lib/interfaces/calendar/VcalModel';
-import { omit } from '../../lib/helpers/object';
-import { extractSupportedEvent, parseIcs } from '../../lib/calendar/import/import';
+
+describe('getComponentIdentifier', () => {
+    it('should return the empty string if passed an error', () => {
+        expect(getComponentIdentifier({ error: new Error('error') })).toEqual('');
+    });
+
+    it('should return the tzid for a VTIMEZONE', () => {
+        const vtimezone = `BEGIN:VTIMEZONE
+TZID:Europe/Vilnius
+BEGIN:DAYLIGHT
+TZOFFSETFROM:+0200
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU
+DTSTART:20030330T030000
+TZNAME:EEST
+TZOFFSETTO:+0300
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:+0300
+RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU
+DTSTART:20031026T040000
+TZNAME:EET
+TZOFFSETTO:+0200
+END:STANDARD
+END:VTIMEZONE`;
+        const timezone = parse(vtimezone) as VcalVtimezoneComponent;
+        expect(getComponentIdentifier(timezone)).toEqual('Europe/Vilnius');
+    });
+
+    it('should return the uid for an event with a normal uid', () => {
+        const vevent = `BEGIN:VEVENT
+DTSTAMP:19980309T231000Z
+UID:test-event
+DTSTART;TZID=America/New_York:20690312T083000
+DTEND;TZID=America/New_York:20690312T093000
+LOCATION:1CP Conference Room 4350
+END:VEVENT`;
+        const event = parse(vevent) as VcalVeventComponent;
+        expect(getComponentIdentifier(event)).toEqual('test-event');
+    });
+
+    it('should return the original uid for an event with a hash uid', () => {
+        const vevent = `BEGIN:VEVENT
+DTSTAMP:19980309T231000Z
+UID:sha1-uid-b8ae0238d0011a4961a2d259e33bd383672b9229-original-uid-stmyce9lb3ef@domain.com
+DTSTART;TZID=America/New_York:20690312T083000
+DTEND;TZID=America/New_York:20690312T093000
+LOCATION:1CP Conference Room 4350
+END:VEVENT`;
+        const event = parse(vevent) as VcalVeventComponent;
+        expect(getComponentIdentifier(event)).toEqual('stmyce9lb3ef@domain.com');
+    });
+
+    it('should return the title when the event had no original uid', () => {
+        const vevent = `BEGIN:VEVENT
+DTSTAMP:19980309T231000Z
+UID:sha1-uid-b8ae0238d0011a4961a2d259e33bd383672b9229
+DTSTART;TZID=America/New_York:20690312T083000
+DTEND;TZID=America/New_York:20690312T093000
+SUMMARY:Test event
+LOCATION:1CP Conference Room 4350
+END:VEVENT`;
+        const event = parse(vevent) as VcalVeventComponent;
+        expect(getComponentIdentifier(event)).toEqual('Test event');
+    });
+
+    it('should return the date-time when the part-day event has no uid and no title', () => {
+        const vevent = `BEGIN:VEVENT
+DTSTAMP:19980309T231000Z
+DTSTART;TZID=America/New_York:20690312T083000
+DTEND;TZID=America/New_York:20690312T093000
+LOCATION:1CP Conference Room 4350
+END:VEVENT`;
+        const event = parse(vevent) as VcalVeventComponent;
+        expect(getComponentIdentifier(event, { locale: enUS })).toEqual('Mar 12, 2069, 8:30:00 AM');
+    });
+
+    it('should return the date when the part-day event has no uid and no title', () => {
+        const vevent = `BEGIN:VEVENT
+DTSTAMP:19980309T231000Z
+DTSTART;VALUE=DATE:20690312
+LOCATION:1CP Conference Room 4350
+END:VEVENT`;
+        const event = parse(vevent) as VcalVeventComponent;
+        expect(getComponentIdentifier(event, { locale: enUS })).toEqual('Mar 12, 2069');
+    });
+});
 
 describe('getSupportedEvent', () => {
     it('should catch events with start time before 1970', () => {
@@ -730,6 +817,7 @@ END:VEVENT`;
         const tzid = 'Europe/Brussels';
         const event = parse(vevent) as VcalVeventComponent & Required<Pick<VcalVeventComponent, 'dtend'>>;
         const supportedEvent = await extractSupportedEvent({
+            method: ICAL_METHOD.PUBLISH,
             vcalComponent: event,
             calendarTzid: tzid,
             hasXWrTimezone: true,
@@ -737,6 +825,156 @@ END:VEVENT`;
         expect(supportedEvent).toEqual({
             component: 'vevent',
             uid: { value: 'sha1-uid-0ff30d1f26a94abe627d9f715db16714b01be84c' },
+            dtstamp: {
+                value: { year: 1998, month: 3, day: 9, hours: 23, minutes: 10, seconds: 0, isUTC: true },
+            },
+            dtstart: {
+                value: { year: 2002, month: 12, day: 31, hours: 20, minutes: 30, seconds: 0, isUTC: false },
+                parameters: { tzid: 'Europe/Brussels' },
+            },
+            dtend: {
+                value: { year: 2003, month: 1, day: 1, hours: 0, minutes: 30, seconds: 0, isUTC: false },
+                parameters: { tzid: 'Europe/Brussels' },
+            },
+            location: { value: '1CP Conference Room 4350' },
+            sequence: { value: 0 },
+        });
+    });
+
+    it('should add a uid if the invitation has none', async () => {
+        const vevent = `
+BEGIN:VEVENT
+DTSTAMP:19980309T231000Z
+DTSTART;TZID=Europe/Brussels:20021231T203000
+DTEND;TZID=Europe/Brussels:20030101T003000
+LOCATION:1CP Conference Room 4350
+END:VEVENT`;
+        const tzid = 'Europe/Brussels';
+        const event = parse(vevent) as VcalVeventComponent & Required<Pick<VcalVeventComponent, 'dtend'>>;
+        const supportedEvent = await extractSupportedEvent({
+            method: ICAL_METHOD.REQUEST,
+            vcalComponent: event,
+            calendarTzid: tzid,
+            hasXWrTimezone: true,
+        });
+        expect(supportedEvent).toEqual({
+            component: 'vevent',
+            uid: { value: 'sha1-uid-0ff30d1f26a94abe627d9f715db16714b01be84c' },
+            dtstamp: {
+                value: { year: 1998, month: 3, day: 9, hours: 23, minutes: 10, seconds: 0, isUTC: true },
+            },
+            dtstart: {
+                value: { year: 2002, month: 12, day: 31, hours: 20, minutes: 30, seconds: 0, isUTC: false },
+                parameters: { tzid: 'Europe/Brussels' },
+            },
+            dtend: {
+                value: { year: 2003, month: 1, day: 1, hours: 0, minutes: 30, seconds: 0, isUTC: false },
+                parameters: { tzid: 'Europe/Brussels' },
+            },
+            location: { value: '1CP Conference Room 4350' },
+            sequence: { value: 0 },
+        });
+    });
+
+    it('should override the uid if the event is an invitation, and preserve it in the new uid', async () => {
+        const vevent = `
+BEGIN:VEVENT
+UID:lalalala
+DTSTAMP:19980309T231000Z
+DTSTART;TZID=Europe/Brussels:20021231T203000
+DTEND;TZID=Europe/Brussels:20030101T003000
+LOCATION:1CP Conference Room 4350
+END:VEVENT`;
+        const tzid = 'Europe/Brussels';
+        const event = parse(vevent) as VcalVeventComponent & Required<Pick<VcalVeventComponent, 'dtend'>>;
+        const supportedEvent = await extractSupportedEvent({
+            method: ICAL_METHOD.REQUEST,
+            vcalComponent: event,
+            calendarTzid: tzid,
+            hasXWrTimezone: true,
+        });
+        expect(supportedEvent).toEqual({
+            component: 'vevent',
+            uid: { value: 'sha1-uid-c4f5344f25afb36ff7870a5418d346a939aa66dd-original-uid-lalalala' },
+            dtstamp: {
+                value: { year: 1998, month: 3, day: 9, hours: 23, minutes: 10, seconds: 0, isUTC: true },
+            },
+            dtstart: {
+                value: { year: 2002, month: 12, day: 31, hours: 20, minutes: 30, seconds: 0, isUTC: false },
+                parameters: { tzid: 'Europe/Brussels' },
+            },
+            dtend: {
+                value: { year: 2003, month: 1, day: 1, hours: 0, minutes: 30, seconds: 0, isUTC: false },
+                parameters: { tzid: 'Europe/Brussels' },
+            },
+            location: { value: '1CP Conference Room 4350' },
+            sequence: { value: 0 },
+        });
+    });
+
+    it('should add a uid if the event has none', async () => {
+        const vevent = `
+BEGIN:VEVENT
+DTSTAMP:19980309T231000Z
+DTSTART;TZID=Europe/Brussels:20021231T203000
+DTEND;TZID=Europe/Brussels:20030101T003000
+LOCATION:1CP Conference Room 4350
+END:VEVENT`;
+        const tzid = 'Europe/Brussels';
+        const event = parse(vevent) as VcalVeventComponent & Required<Pick<VcalVeventComponent, 'dtend'>>;
+        const supportedEvent = await extractSupportedEvent({
+            method: ICAL_METHOD.PUBLISH,
+            vcalComponent: event,
+            calendarTzid: tzid,
+            hasXWrTimezone: true,
+        });
+        expect(supportedEvent).toEqual({
+            component: 'vevent',
+            uid: { value: 'sha1-uid-0ff30d1f26a94abe627d9f715db16714b01be84c' },
+            dtstamp: {
+                value: { year: 1998, month: 3, day: 9, hours: 23, minutes: 10, seconds: 0, isUTC: true },
+            },
+            dtstart: {
+                value: { year: 2002, month: 12, day: 31, hours: 20, minutes: 30, seconds: 0, isUTC: false },
+                parameters: { tzid: 'Europe/Brussels' },
+            },
+            dtend: {
+                value: { year: 2003, month: 1, day: 1, hours: 0, minutes: 30, seconds: 0, isUTC: false },
+                parameters: { tzid: 'Europe/Brussels' },
+            },
+            location: { value: '1CP Conference Room 4350' },
+            sequence: { value: 0 },
+        });
+    });
+
+    it('should not import alarms for invitations', async () => {
+        const vevent = `
+BEGIN:VEVENT
+UID:test-event
+DTSTAMP:19980309T231000Z
+DTSTART;TZID=Europe/Brussels:20021231T203000
+DTEND;TZID=Europe/Brussels:20030101T003000
+LOCATION:1CP Conference Room 4350
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+END:VALARM
+BEGIN:VALARM
+TRIGGER:-PT1W2D
+ACTION:EMAIL
+END:VALARM
+END:VEVENT`;
+        const tzid = 'Europe/Brussels';
+        const event = parse(vevent) as VcalVeventComponent & Required<Pick<VcalVeventComponent, 'dtend'>>;
+        const supportedEvent = await extractSupportedEvent({
+            method: ICAL_METHOD.REQUEST,
+            vcalComponent: event,
+            calendarTzid: tzid,
+            hasXWrTimezone: true,
+        });
+        expect(supportedEvent).toEqual({
+            component: 'vevent',
+            uid: { value: 'sha1-uid-a9c06d78f4755f736bfd046b3deb3d76f99ab285-original-uid-test-event' },
             dtstamp: {
                 value: { year: 1998, month: 3, day: 9, hours: 23, minutes: 10, seconds: 0, isUTC: true },
             },
@@ -848,6 +1086,7 @@ END:VCALENDAR`;
             ],
         };
         expect(await parseIcs(ics)).toEqual({
+            method: ICAL_METHOD.PUBLISH,
             calscale: undefined,
             xWrTimezone: undefined,
             components: [expectedVtimezone, expectedVevent],
