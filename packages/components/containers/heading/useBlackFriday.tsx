@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { isProductPayer } from '@proton/shared/lib/helpers/blackfriday';
 import { PlanIDs, Cycle, Currency } from '@proton/shared/lib/interfaces';
-import { APPS } from '@proton/shared/lib/constants';
+import { APPS, BLACK_FRIDAY } from '@proton/shared/lib/constants';
 import { useLocation } from 'react-router';
 
 import { checkLastCancelledSubscription } from '../payments/subscription/helpers';
@@ -38,8 +38,8 @@ const useBlackFriday = () => {
     const { createModal } = useModals();
     const [loading, withLoading] = useLoading();
     const params = new URLSearchParams(location.search);
-    const openBlackFridayModal = (params.get('modal') || '').toLocaleLowerCase() === 'bf2020';
-    const hasBlackFridayCoupon = (params.get('coupon') || '').toLocaleLowerCase() === 'bf2020';
+    const openBlackFridayModal = (params.get('modal') || '').toLowerCase() === BLACK_FRIDAY.COUPON_CODE.toLowerCase();
+    const hasBlackFridayCoupon = (params.get('coupon') || '').toLowerCase() === BLACK_FRIDAY.COUPON_CODE.toLowerCase();
 
     const onSelect = ({
         planIDs,
