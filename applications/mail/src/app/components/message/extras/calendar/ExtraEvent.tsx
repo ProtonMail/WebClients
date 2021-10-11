@@ -1,3 +1,4 @@
+import useCalendarEmailNotificationsFeature from '@proton/components/hooks/useCalendarEmailNotificationsFeature';
 import { Address, UserSettings } from '@proton/shared/lib/interfaces';
 import { Calendar } from '@proton/shared/lib/interfaces/calendar';
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
@@ -8,12 +9,10 @@ import {
 } from '@proton/shared/lib/calendar/icsSurgery/EventInvitationError';
 import { useEffect, useState } from 'react';
 import {
-    FeatureCode,
     Icon,
     InlineLinkButton,
     Loader,
     useApi,
-    useFeature,
     useGetCalendarEventRaw,
     useGetCalendarInfo,
     useLoading,
@@ -92,7 +91,7 @@ const ExtraEvent = ({
     const [loading, withLoading] = useLoading(true);
     const [retryCount, setRetryCount] = useState<number>(0);
     const api = useApi();
-    const enabledEmailNotifications = !!useFeature(FeatureCode.CalendarEmailNotification)?.feature?.Value;
+    const enabledEmailNotifications = useCalendarEmailNotificationsFeature();
     const getCalendarInfo = useGetCalendarInfo();
     const getCalendarEventRaw = useGetCalendarEventRaw();
     const getCalendarEventPersonal = useGetCalendarEventPersonal();

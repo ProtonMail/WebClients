@@ -15,8 +15,44 @@ describe('Environment based feature values', () => {
         ['whatever', 0b000001, { enabled: true, unavailable: false }],
         ['whatever', 0b001001, { enabled: true, unavailable: true }],
     ].forEach(([env, value, expected]) => {
-        it(`getResult(${env}, ${value})`, () => {
+        it(`getResult(${env}, ${value}) for two keys`, () => {
             expect(getResult(value, env, ['enabled', 'unavailable'])).toEqual(expected);
+        });
+    });
+
+    [
+        ['alpha', undefined, { enabled: false }],
+        ['beta', undefined, { enabled: false }],
+        ['default', undefined, { enabled: false }],
+    ].forEach(([env, value, expected]) => {
+        it(`getResult(${env}, ${value}) for one key, undefined value`, () => {
+            expect(getResult(value, env, ['enabled'])).toEqual(expected);
+        });
+    });
+
+    [
+        ['alpha', 0b100, { enabled: true }],
+        ['beta', 0b100, { enabled: false }],
+        ['default', 0b100, { enabled: false }],
+        ['beta', 0b101, { enabled: false }],
+        ['default', 0b111, { enabled: true }],
+        ['whatever', 0b111, { enabled: true }],
+    ].forEach(([env, value, expected]) => {
+        it(`getResult(${env}, ${value}) for one key, bitmap value`, () => {
+            expect(getResult(value, env, ['enabled'])).toEqual(expected);
+        });
+    });
+
+    [
+        ['alpha', false, { enabled: false }],
+        ['alpha', true, { enabled: false }],
+        ['beta', false, { enabled: false }],
+        ['beta', true, { enabled: false }],
+        ['default', false, { enabled: false }],
+        ['default', true, { enabled: true }],
+    ].forEach(([env, value, expected]) => {
+        it(`getResult(${env}, ${value}) for one key, Boolean value`, () => {
+            expect(getResult(value, env, ['enabled'])).toEqual(expected);
         });
     });
 
