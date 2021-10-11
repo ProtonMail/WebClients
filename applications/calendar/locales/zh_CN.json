@@ -7,33 +7,33 @@
     "": {},
     "Calendar status": {
       "Syncing": [
-        ""
+        "正在同步"
       ],
       "Not synced": [
-        ""
+        "未同步"
       ]
     },
     "Calendar subscription not synced error": {
       "Calendar is syncing": [
-        ""
+        "日历正在同步中"
       ],
       "More than 12 hours passed since last update": [
-        ""
+        "距离上次更新已超过了 12 个小时"
       ],
       "Calendar link is wrong": [
-        ""
+        "日历链接错误"
       ],
       "Calendar is too big": [
         ""
       ],
       "Calendar link is not accessible": [
-        ""
+        "日历链接无法访问"
       ],
-      "Calendar link is temporarily unaccessible": [
-        ""
+      "Calendar link is temporarily inaccessible": [
+        "日历链接暂时无法访问"
       ],
       "Failed to sync calendar": [
-        ""
+        "同步日历失败"
       ]
     },
     "Alarm notification": {
@@ -571,11 +571,11 @@
       "No results found": [
         "未找到结果"
       ],
-      "Week": [
-        "周"
-      ],
       "Loading": [
         "加载中"
+      ],
+      "Week": [
+        "周"
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "此链接可能使用了欺骗性域名，IE 和 Edge 浏览器无法打开。若您确认链接可靠，请使用其他浏览器打开"
@@ -730,12 +730,6 @@
       "* Customizable features": [
         "可自定义功能"
       ],
-      "Access your streaming services, like ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, no matter where you are.": [
-        "无论您身于何处，您都可以访问您最喜爱的流媒体服务，如 ${ netflix }、${ disney }、${ primeVideo } 及${ many }。"
-      ],
-      "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
-        "突破网络封锁，打开自由世界。随时随地访问被屏蔽的内容，例如社交媒体、新闻、维基百科、YouTube等等。"
-      ],
       "For getting started with private and secure emailing.": [
         "适合初次体验安全隐私邮件服务的新手。"
       ],
@@ -759,6 +753,12 @@
       ],
       "For families and small teams; includes both Mail and VPN.": [
         "适合家庭和小团队；包括邮件和 VPN。"
+      ],
+      "Access your streaming services, like ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, no matter where you are.": [
+        "无论您身于何处，您都可以访问您最喜爱的流媒体服务，如 ${ netflix }、${ disney }、${ primeVideo } 及${ many }。"
+      ],
+      "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
+        "突破网络封锁，打开自由世界。随时随地访问被屏蔽的内容，例如社交媒体、新闻、维基百科、YouTube等等。"
       ],
       "Save 20%": [
         "节省 20%"
@@ -1069,6 +1069,12 @@
       "Loading events": [
         "日程加载中"
       ],
+      "The organizer could not be notified that you changed your answer:": [
+        "未能通知组织者您更改了答案："
+      ],
+      "The organizer cannot be notified that you want to change your answer:": [
+        "无法通知组织者您想要更改答案："
+      ],
       "The organizer cannot be notified that you decline the invitation:": [
         "无法通知组织者您已拒绝邀请:"
       ],
@@ -1217,7 +1223,7 @@
         "请移除重复项后重试"
       ],
       "You have reset your password and events linked to the following calendars couldn't be decrypted.\nAny shared calendar links you created previously will no longer work.\nAny active subscribed calendars will synchronize again after a few minutes.": [
-        ""
+        "您已重置了密码，无法解密链接到以下日历的事件。\n您之前创建的任何共享日历链接将不再有效。\n任何激活的订阅日历将在几分钟后再次同步。"
       ],
       "You have reactivated your keys and events linked to the following calendars can now be decrypted.": [
         "您已重新激活密钥，可以解密下列分类中的日程了。"
@@ -1240,7 +1246,7 @@
         "找不到地址主私钥"
       ],
       "Calendar primary private key is not decrypted": [
-        "日历主密钥未解密。"
+        "日历主私钥未解密"
       ],
       "This field is required": [
         "此项必须填写"
@@ -1443,14 +1449,14 @@
       "A group with this name already exists": [
         "已存在同名群组"
       ],
-      "Primary address key is not decrypted": [
-        "主密钥尚未解密。"
-      ],
       "We were unable to connect to your service provider.": [
         ""
       ],
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         ""
+      ],
+      "Primary address key is not decrypted": [
+        "主密钥尚未解密。"
       ],
       "No valid address found": [
         "未找到有效地址"
@@ -2011,7 +2017,7 @@
         "邮箱密度"
       ],
       "Composer size": [
-        ""
+        "编辑窗大小"
       ],
       "Get started": [
         "入门"
@@ -2030,12 +2036,6 @@
       ],
       "Back": [
         "返回"
-      ],
-      "Use ${ label } theme": [
-        "使用${ label }主题"
-      ],
-      "OK": [
-        "确定"
       ],
       "Log in": [
         "登录"
@@ -2063,6 +2063,12 @@
       ],
       "Edit phone number": [
         "编辑电话号码"
+      ],
+      "Use ${ label } theme": [
+        "使用${ label }主题"
+      ],
+      "OK": [
+        "确定"
       ],
       "Clear": [
         "移除"
@@ -2368,7 +2374,7 @@
         "关闭对话框"
       ],
       "Close event popover": [
-        ""
+        "关闭事件弹出框"
       ]
     },
     "Title": {
@@ -2402,9 +2408,6 @@
       "Give feedback": [
         "提供反馈"
       ],
-      "Select a theme": [
-        "选择主题"
-      ],
       "Sign in again to continue": [
         "此操作需要重新登录"
       ],
@@ -2422,6 +2425,9 @@
       ],
       "Human verification": [
         "身份验证"
+      ],
+      "Select a theme": [
+        "选择主题"
       ],
       "Report a problem": [
         "反馈问题"
@@ -2495,8 +2501,8 @@
       "Amount due": [
         "应付金额"
       ],
-      "Cancel subscription": [
-        "停止订购"
+      "Downgrade account": [
+        "降级账户"
       ],
       "Network error": [
         "网络错误"
@@ -2790,6 +2796,11 @@
         "编辑日程"
       ]
     },
+    "PGP key encryption warning": {
+      "Key cannot be used for encryption": [
+        "此密钥不能用于加密"
+      ]
+    },
     "Storage": {
       "Your current storage:": [
         "您当前的存储空间："
@@ -2799,11 +2810,6 @@
       ],
       "Release notes": [
         "版本说明"
-      ]
-    },
-    "PGP key encryption warning": {
-      "Key cannot be used for encryption": [
-        "此密钥不能用于加密"
       ]
     },
     "Label": {
@@ -3083,8 +3089,8 @@
       "Your calendars": [
         "您的日历"
       ],
-      "Participant": [
-        ""
+      "participant": [
+        "参与者"
       ]
     },
     "Link": {
@@ -3233,10 +3239,10 @@
     },
     "Collapsible tooltip": {
       "Open": [
-        ""
+        "打开"
       ],
       "Close": [
-        ""
+        "关闭"
       ]
     },
     "Error message": {
@@ -3425,22 +3431,22 @@
     },
     "Early Access Enabled": {
       "On": [
-        ""
+        "开"
       ]
     },
     "Early Access Disabled": {
       "Off": [
-        ""
+        "关"
       ]
     },
     "Keyboard Shortcuts Enabled": {
       "On": [
-        ""
+        "开"
       ]
     },
     "Keyboard Shortcuts Disabled": {
       "Off": [
-        ""
+        "关"
       ]
     },
     "Layout mode": {
@@ -3634,7 +3640,7 @@
         ""
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
-        ""
+        "非常抱歉，我们目前不在线。请填写下面的表格来描述您的问题，我们会进行调查并在上线后联系您。"
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "反馈内容不会经过端对端加密，请勿发送敏感信息"
@@ -3944,7 +3950,7 @@
         "完美前向加密（PFS）"
       ],
       "Full Disk Encryption on Servers": [
-        ""
+        "服务器端全盘加密"
       ],
       "Split tunneling": [
         "拆分隧道"
@@ -4538,11 +4544,6 @@
         "请注意：点击 \"应用\" 按钮后，服务将重新加载"
       ]
     },
-    "Select files": {
-      "Upload": [
-        "上传"
-      ]
-    },
     "Loading info": {
       "Connecting to your contacts provider": [
         ""
@@ -4562,6 +4563,11 @@
     "Confirm modal title": {
       "Quit import?": [
         ""
+      ]
+    },
+    "Select files": {
+      "Upload": [
+        "上传"
       ]
     },
     "Message display when a new app version is available": {
@@ -4705,11 +4711,6 @@
         "(无姓名)"
       ]
     },
-    "Reply to calendar invitation": {
-      "Cannot send to organizer address: ${ apiErrorMessage }": [
-        "无法发送到组织者地址：${ apiErrorMessage }"
-      ]
-    },
     "Modal title": {
       "Time zone changed": [
         "时区已更改"
@@ -4747,7 +4748,7 @@
     },
     "Event popover close button": {
       "Close popover": [
-        ""
+        "关闭弹出框"
       ]
     },
     "Calendar invite info": {
@@ -4796,44 +4797,44 @@
     },
     "Event reply": {
       "yes": [
-        ""
+        "是"
       ],
       "maybe": [
-        ""
+        "可能"
       ],
       "no": [
-        ""
+        "否"
       ],
       "unanswered": [
-        ""
+        "未答复"
       ]
     },
     "Participants expand button label": {
       "Expand participants list": [
-        ""
+        "展开参与者列表"
       ],
       "Collapse participants list": [
-        ""
+        "收起参与者名单"
       ]
     },
     "Event edit button tooltip": {
       "Edit event": [
-        ""
+        "编辑日程"
       ]
     },
     "Event delete button tooltip": {
       "Delete event": [
-        ""
+        "删除日程"
       ]
     },
     "Event cancelled status badge": {
       "cancelled": [
-        ""
+        "已取消"
       ]
     },
     "Calendar invite buttons label": {
       "Attending?": [
-        ""
+        "是否出席？"
       ]
     },
     "blackfriday Promo title, need to be short": {

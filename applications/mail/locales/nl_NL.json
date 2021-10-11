@@ -5,87 +5,7 @@
   },
   "contexts": {
     "": {},
-    "Message": {
-      "Re:": [
-        "Re:"
-      ],
-      "Fw:": [
-        "Fw:"
-      ],
-      "On ${ date }, ${ name } ${ address } wrote:": [
-        "Op ${ date } schreef ${ name } ${ address }:"
-      ]
-    },
     "Error": {
-      "Email address disabled": [
-        "E-mailadres uitgeschakeld"
-      ],
-      "No keys retrieved for internal user": [
-        "Geen keys ontvangen van interne gebruiker"
-      ],
-      "No valid keys retrieved for internal user": [
-        "Geen geldige keys ontvangen van interne gebruiker"
-      ],
-      "Contact signature could not be verified": [
-        "Contacthandtekening kan niet geverifieerd worden"
-      ],
-      "No key retrieved for internal user is valid for sending": [
-        "Geen enkele ontvangen sleutel van interne gebruiker is geldig om mee te verzenden"
-      ],
-      "Trusted keys are not valid for sending": [
-        "Vertrouwde sleutels zijn niet geldig om mee te verzenden"
-      ],
-      "No WKD key retrieved for user is valid for sending": [
-        "Geen enkel ontvangen WKD-sleutel is geldig voor deze gebruiker"
-      ],
-      "The sending key is not valid": [
-        "De verzend-sleutel is ongeldig"
-      ],
-      "This field is required": [
-        "Dit veld is vereist"
-      ],
-      "This field requires a minimum of ${ minimumLength } characters.": [
-        "Dit veld vereist een minimum van ${ minimumLength } tekens."
-      ],
-      "Email is not valid": [
-        "E-mailadres is ongeldig"
-      ],
-      "Not a valid number": [
-        "Geen geldig getal"
-      ],
-      "Passwords do not match": [
-        "Wachtwoorden komen niet overeen"
-      ],
-      "Request timed out.": [
-        "Het verzoek timed out."
-      ],
-      "Missing signature": [
-        "Handtekening ontbreekt"
-      ],
-      "Contact signature not verified": [
-        "Handtekening van contact niet geverifieerd"
-      ],
-      "Signature not verified": [
-        "Handtekening niet geverifieerd"
-      ],
-      "Invalid name": [
-        "Ongeldige naam"
-      ],
-      "The key properties for ${ emailAddress } could not be extracted": [
-        "De kerneigenschappen van ${ emailAddress } kunnen niet verkregen worden"
-      ],
-      "Signature verification failed": [
-        "Controle van handtekening mislukt"
-      ],
-      "Could not find address ${ email }.": [
-        "Kon adres ${ email } niet vinden."
-      ],
-      "Address primary private key not found": [
-        "Primaire adressleutel is niet gevonden"
-      ],
-      "Calendar primary private key is not decrypted": [
-        "Primaire agendasleutel is niet gedecodeerd"
-      ],
       "Unknown error": [
         "Onbekende fout"
       ],
@@ -101,17 +21,20 @@
       "Authentication error.": [
         "Verificatiefout."
       ],
+      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
+        "De browser die u gebruikt staat niet toe dat de betaling volledig geautoriseerd wordt. Gebruik een andere browser of log in via een computer."
+      ],
+      "Email address invalid": [
+        "E-mailadres is ongeldig"
+      ],
+      "This field is required": [
+        "Dit veld is vereist"
+      ],
       "The composer failed to load.": [
         "Kon het opstelvenster niet laden."
       ],
       "Please refresh the page.": [
         "Vernieuw de pagina."
-      ],
-      "Email address invalid": [
-        "E-mailadres is ongeldig"
-      ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "De browser die u gebruikt staat niet toe dat de betaling volledig geautoriseerd wordt. Gebruik een andere browser of log in via een computer."
       ],
       "Incorrect mailbox password. Please try again": [
         "Onjuist mailbox-wachtwoord. Probeer het opnieuw"
@@ -130,6 +53,9 @@
       ],
       "Invalid verification code": [
         "De ingevoerde code is ongeldig"
+      ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "Er ging iets mis, gelieve ${ refresh } om door te gaan. Als u dit foutbericht nog steeds ziet, neem dan contact op met onze ${ supportTeam }."
       ],
       "Some groups could not be deleted": [
         "Sommige groepen konden niet worden verwijderd"
@@ -172,17 +98,17 @@
       "A group with this name already exists": [
         "Er bestaat al een groep met deze naam"
       ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Er ging iets mis, gelieve ${ refresh } om door te gaan. Als u dit foutbericht nog steeds ziet, neem dan contact op met onze ${ supportTeam }."
-      ],
-      "File has no contents to preview": [
-        "Bestand heeft geen inhoud om een voorbeeld te tonen"
+      "Invalid name": [
+        "Ongeldige naam"
       ],
       "We were unable to connect to your service provider.": [
         "We kunnen geen verbinding maken met uw serviceprovider."
       ],
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         "Probeer opnieuw te verifiëren en zorg ervoor dat de machtigingen correct zijn ingesteld."
+      ],
+      "File has no contents to preview": [
+        "Bestand heeft geen inhoud om een voorbeeld te tonen"
       ],
       "Process aborted": [
         "Proces afgebroken"
@@ -261,6 +187,69 @@
       ],
       "Require at least one action": [
         "Vereist minstens één actie"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Dit veld vereist een minimum van ${ minimumLength } tekens."
+      ],
+      "Email is not valid": [
+        "E-mailadres is ongeldig"
+      ],
+      "Not a valid number": [
+        "Geen geldig getal"
+      ],
+      "Passwords do not match": [
+        "Wachtwoorden komen niet overeen"
+      ],
+      "Request timed out.": [
+        "Het verzoek timed out."
+      ],
+      "Signature verification failed": [
+        "Controle van handtekening mislukt"
+      ],
+      "Could not find address ${ email }.": [
+        "Kon adres ${ email } niet vinden."
+      ],
+      "Email address disabled": [
+        "E-mailadres uitgeschakeld"
+      ],
+      "No keys retrieved for internal user": [
+        "Geen keys ontvangen van interne gebruiker"
+      ],
+      "No valid keys retrieved for internal user": [
+        "Geen geldige keys ontvangen van interne gebruiker"
+      ],
+      "Contact signature could not be verified": [
+        "Contacthandtekening kan niet geverifieerd worden"
+      ],
+      "No key retrieved for internal user is valid for sending": [
+        "Geen enkele ontvangen sleutel van interne gebruiker is geldig om mee te verzenden"
+      ],
+      "Trusted keys are not valid for sending": [
+        "Vertrouwde sleutels zijn niet geldig om mee te verzenden"
+      ],
+      "No WKD key retrieved for user is valid for sending": [
+        "Geen enkel ontvangen WKD-sleutel is geldig voor deze gebruiker"
+      ],
+      "The sending key is not valid": [
+        "De verzend-sleutel is ongeldig"
+      ],
+      "Missing signature": [
+        "Handtekening ontbreekt"
+      ],
+      "Contact signature not verified": [
+        "Handtekening van contact niet geverifieerd"
+      ],
+      "Signature not verified": [
+        "Handtekening niet geverifieerd"
+      ],
+      "The key properties for ${ emailAddress } could not be extracted": [
+        "De kerneigenschappen van ${ emailAddress } kunnen niet verkregen worden"
+      ],
+      "Address primary private key not found": [
+        "Primaire adressleutel is niet gevonden"
+      ],
+      "Calendar primary private key is not decrypted": [
+        "Primaire agendasleutel is niet gedecodeerd"
       ],
       "You did not provide a file.": [
         "U heeft geen bestand geselecteerd."
@@ -378,176 +367,1399 @@
         "Te veel actieve filters. Upgrade naar een betaald abonnement om meer filters te activeren"
       ]
     },
-    "file size format": {
-      "bytes": [
-        "bytes"
+    "Action": {
+      "Close": [
+        "Sluiten"
       ],
-      "KB": [
-        "KB"
+      "Use “${ label }” setting": [
+        "Gebruik “${ label }”-instelling"
       ],
-      "MB": [
-        "MB"
+      "More info: ${ safeTitle }": [
+        "Meer informatie: ${ safeTitle }"
       ],
-      "GB": [
-        "GB"
+      "Cancel": [
+        "Annuleren"
+      ],
+      "Submit": [
+        "Versturen"
+      ],
+      "Close modal": [
+        "Sluit het venster"
+      ],
+      "Confirm": [
+        "Bevestigen"
+      ],
+      "Save": [
+        "Opslaan"
+      ],
+      "Upload picture": [
+        "Afbeelding uploaden"
+      ],
+      "Insert": [
+        "Invoegen"
+      ],
+      "Font": [
+        "Lettertype"
+      ],
+      "Size": [
+        "Grootte"
+      ],
+      "Color": [
+        "Kleur"
+      ],
+      "Alignment": [
+        "Uitlijning"
+      ],
+      "More": [
+        "Meer"
+      ],
+      "Unordered list": [
+        "Ongenummerde lijst"
+      ],
+      "Ordered list": [
+        "Genummerde lijst"
+      ],
+      "Align left": [
+        "Links uitlijnen"
+      ],
+      "Align center": [
+        "Centreren"
+      ],
+      "Align right": [
+        "Rechts uitlijnen"
+      ],
+      "Justify": [
+        "Uitvullen"
+      ],
+      "Quote": [
+        "Citaat"
+      ],
+      "Insert link": [
+        "Link invoegen"
+      ],
+      "Clear all formatting": [
+        "Alle opmaak wissen"
+      ],
+      "Insert image": [
+        "Afbeelding toevoegen"
+      ],
+      "Bold": [
+        "Vet"
+      ],
+      "Italic": [
+        "Schuin"
+      ],
+      "Underline": [
+        "Onderstreept"
+      ],
+      "Remove": [
+        "Verwijderen"
+      ],
+      "Next month": [
+        "Volgende maand"
+      ],
+      "Previous month": [
+        "Vorige maand"
+      ],
+      "Load image": [
+        "Afbeelding laden"
+      ],
+      "Confirm opening of link ${ link }": [
+        "Bevestig het openen van link ${ link }"
+      ],
+      "Go to panel ${ index }": [
+        "Ga naar paneel ${ index }"
+      ],
+      "Close navigation": [
+        "Navigatie sluiten"
+      ],
+      "Open navigation": [
+        "Navigatie openen"
+      ],
+      "Continue with Google": [
+        "Ga verder met Google"
+      ],
+      "Delete": [
+        "Verwijderen"
+      ],
+      "Go to page ${ page }": [
+        "Ga naar pagina ${ page }"
+      ],
+      "Go to first page": [
+        "Ga naar de eerste pagina"
+      ],
+      "Go to previous page": [
+        "Ga naar de vorige pagina"
+      ],
+      "Go to next page": [
+        "Ga naar de volgende pagina"
+      ],
+      "Go to last page": [
+        "Ga naar de laatste pagina"
+      ],
+      "Signing out": [
+        "Uitloggen"
+      ],
+      "refresh the page": [
+        "pagina vernieuwen"
+      ],
+      "Log in": [
+        "Aanmelden"
+      ],
+      "View invoice": [
+        "Factuur bekijken"
+      ],
+      "Get verification code": [
+        "Krijg verificatie code"
+      ],
+      "Try another method": [
+        "Andere methode proberen"
+      ],
+      "Request new code": [
+        "Nieuwe code aanvragen"
+      ],
+      "Verify": [
+        "Verifiëren"
+      ],
+      "Did not receive the code?": [
+        "Heeft u de code niet ontvangen?"
+      ],
+      "Edit email address": [
+        "Wijzig e-mailadres"
+      ],
+      "Edit phone number": [
+        "Wijzig telefoonnummer"
+      ],
+      "Use ${ label } theme": [
+        "Gebruik ${ label } thema"
+      ],
+      "OK": [
+        "OK"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ],
+      "Add": [
+        "Voeg toe"
+      ],
+      "Edit": [
+        "Bewerken"
+      ],
+      "Apply": [
+        "Toepassen"
+      ],
+      "Insert contact": [
+        "Contact invoegen"
+      ],
+      "Insert ${ totalChecked } contact": [
+        "${ totalChecked } contact invoegen",
+        "${ totalChecked } contacten invoegen"
+      ],
+      "Done": [
+        "Klaar"
+      ],
+      "Clear data": [
+        "Gegevens wissen"
+      ],
+      "Recover data": [
+        "Gegevens herstellen"
+      ],
+      "Click here.": [
+        "Klik hier."
+      ],
+      "Re-sign": [
+        "Opnieuw ondertekenen"
+      ],
+      "Hide advanced PGP settings": [
+        "Geavanceerde PGP-instellingen verbergen"
+      ],
+      "Show advanced PGP settings": [
+        "Geavanceerde PGP-instellingen tonen"
+      ],
+      "Add to group": [
+        "Aan groep toevoegen"
+      ],
+      "Contact group": [
+        "Contactgroep"
+      ],
+      "Create new contact": [
+        "Nieuwe contactpersoon aanmaken"
+      ],
+      "clear it": [
+        "opruimen"
+      ],
+      "Export": [
+        "Exporteren"
+      ],
+      "Download": [
+        "Downloaden"
+      ],
+      "Use for sending": [
+        "Gebruiken om te versturen"
+      ],
+      "Trust": [
+        "Vertrouwen"
+      ],
+      "Untrust": [
+        "Niet meer vertrouwen"
+      ],
+      "Email settings": [
+        "E-mailinstellingen"
+      ],
+      "Merge": [
+        "Samenvoegen"
+      ],
+      "View": [
+        "Bekijken"
+      ],
+      "Unmark for deletion": [
+        "Niet markeren voor verwijdering"
+      ],
+      "Mark for deletion": [
+        "Markeren voor verwijderen"
+      ],
+      "Preview contact": [
+        "Contact tonen"
+      ],
+      "Continue": [
+        "Doorgaan"
+      ],
+      "Copy email to clipboard": [
+        "E-mailadres kopiëren naar klembord"
+      ],
+      "Delete contact": [
+        "Contactpersoon verwijderen"
+      ],
+      "Delete ${ selectedCount } contact": [
+        "Verwijder ${ selectedCount } contact",
+        "Verwijder ${ selectedCount } contacten"
+      ],
+      "Deselect all": [
+        "Alles deselecteren"
+      ],
+      "Select all": [
+        "Alles selecteren"
+      ],
+      "Compose": [
+        "Opstellen"
+      ],
+      "Forward as attachment": [
+        "Doorsturen als bijlage"
+      ],
+      "Merge contacts": [
+        "Contacten samenvoegen"
+      ],
+      "Add new contact": [
+        "Contactpersoon toevoegen"
+      ],
+      "Add group": [
+        "Groep toevoegen"
+      ],
+      "Clear query": [
+        "Zoekopdracht wissen"
+      ],
+      "Add contact": [
+        "Contactpersoon toevoegen"
+      ],
+      "import": [
+        "importeren"
+      ],
+      "Delete contact group": [
+        "Contactgroep verwijderen"
+      ],
+      "Delete ${ selectedCount } contact group": [
+        "${ selectedCount } contactgroep verwijderen",
+        "${ selectedCount } contactgroepen verwijderen"
+      ],
+      "Add new group": [
+        "Voeg nieuwe groep toe"
+      ],
+      "Export contacts": [
+        "Contactpersonen exporteren"
+      ],
+      "Import contacts": [
+        "Contactpersonen importeren"
+      ],
+      "Choose a file or drag it here": [
+        "Kies een bestand of sleep het hierheen"
+      ],
+      "Import": [
+        "Importeren"
+      ],
+      "Next": [
+        "Volgende"
+      ],
+      "Continue import": [
+        "Doorgaan met importeren"
+      ],
+      "Discard": [
+        "Verwijderen"
+      ],
+      "Reconnect": [
+        "Opnieuw verbinden"
+      ],
+      "Start import": [
+        "Begin met importeren"
+      ],
+      "Clear": [
+        "Wissen"
+      ],
+      "Add screenshot(s)": [
+        "Screenshot(s) toevoegen"
+      ],
+      "Hide info": [
+        "Informatie verbergen"
+      ],
+      "Show info": [
+        "Informatie tonen"
+      ],
+      "Details": [
+        "Details"
+      ],
+      "Share via link": [
+        "Deel via link"
+      ],
+      "Sharing options": [
+        "Opties voor delen"
+      ],
+      "Zoom out": [
+        "Zoom uit"
+      ],
+      "Reset zoom": [
+        "Reset zoom"
+      ],
+      "Zoom in": [
+        "Inzoomen"
+      ],
+      "Previous": [
+        "Vorige"
+      ],
+      "Get started": [
+        "Aan de slag"
+      ],
+      "Start setup": [
+        "Installatie starten"
+      ],
+      "Skip": [
+        "Overslaan"
+      ],
+      "Back": [
+        "Terug"
+      ],
+      "Copy to clipboard": [
+        ""
+      ],
+      "Create recovery phrase": [
+        ""
+      ],
+      "Don't secure account": [
+        ""
+      ],
+      "Close this banner": [
+        "Sluit deze banner"
+      ],
+      "Refresh the page": [
+        "Pagina vernieuwen"
+      ],
+      "enable desktop notifications": [
+        "schakel desktopmeldingen in"
+      ],
+      "here": [
+        "hier"
+      ],
+      "Search": [
+        "Zoeken"
+      ],
+      "${ BRAND_NAME } introduction": [
+        "${ BRAND_NAME } inleiding"
+      ],
+      "Chat with us": [
+        ""
+      ],
+      "I have a question": [
+        "Ik heb een vraag"
+      ],
+      "Request a feature": [
+        "Vraag een functie aan"
+      ],
+      "Report a problem": [
+        "Meld een probleem"
+      ],
+      "${ BRAND_NAME } shop": [
+        "${ BRAND_NAME } winkel"
+      ],
+      "Switch account": [
+        "Account wisselen"
+      ],
+      "Sign out": [
+        "Uitloggen"
+      ],
+      "Go to settings": [
+        "Ga naar instellingen"
+      ],
+      "Beta Access": [
+        "Bèta toegang"
+      ],
+      "Theme": [
+        "Thema"
+      ],
+      "Keyboard shortcuts": [
+        "Toetsenbord snelkoppelingen"
+      ],
+      "Mailbox layout": [
+        "Mailbox layout"
+      ],
+      "Mailbox density": [
+        "Mailbox dichtheid"
+      ],
+      "Composer size": [
+        ""
+      ],
+      "Remove bonuses": [
+        "Verwijder bonussen"
+      ],
+      "Try again": [
+        "Opnieuw proberen"
+      ],
+      "Use a different card": [
+        "Gebruik een andere kaart"
+      ],
+      "Use a different payment method": [
+        "Gebruik een andere betaalmethode"
+      ],
+      "Retry": [
+        "Opnieuw proberen"
+      ],
+      "Loading verification": [
+        "Verificatie laden"
+      ],
+      "Select plan": [
+        "Selecteer abonnement"
+      ],
+      "Compare all features": [
+        "Alle functies vergelijken"
+      ],
+      "${ boldSave } by switching to annual billing": [
+        "${ boldSave } door over te schakelen naar jaarlijkse betaling"
+      ],
+      "Pay": [
+        "Betalen"
+      ],
+      "Open ${ CALENDAR_APP_NAME } settings": [
+        "Open ${ CALENDAR_APP_NAME }-instellingen"
+      ],
+      "Remove gift code": [
+        "Cadeaucode verwijderen"
+      ],
+      "annual billing": [
+        "jaarlijkse betaling"
+      ],
+      "Compare plans": [
+        "Vergelijk abonnementen"
+      ],
+      "Decrease": [
+        "Verlagen"
+      ],
+      "Increase": [
+        "Verhogen"
+      ],
+      "Preview": [
+        "Voorbeeld"
+      ],
+      "Create label": [
+        "Label aanmaken"
+      ],
+      "Create folder": [
+        "Map aanmaken"
+      ],
+      "Remove this label": [
+        "Label verwijderen"
+      ],
+      "Add condition": [
+        "Voorwaarde toevoegen"
+      ],
+      "label emails as": [
+        "e-mail labellen als"
+      ],
+      "move emails to": [
+        "e-mails verplaatsen naar"
+      ],
+      "mark emails as": [
+        "e-mails markeren als"
+      ],
+      "send auto-reply email": [
+        "automatisch antwoord versturen"
+      ],
+      "Yes, I'll attend": [
+        "Ja, ik zal aanwezig zijn"
+      ],
+      "Maybe I'll attend": [
+        "Misschien zal ik aanwezig zijn"
+      ],
+      "No, I won't attend": [
+        "Nee, ik zal niet aanwezig zijn"
+      ],
+      "Yes": [
+        "Ja"
+      ],
+      "Maybe": [
+        "Misschien"
+      ],
+      "No": [
+        "Nee"
+      ],
+      "Add to ${ CALENDAR_APP_NAME }": [
+        "Toevoegen aan ${ CALENDAR_APP_NAME }"
+      ],
+      "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
+        ""
+      ],
+      "Send anyway": [
+        "Toch verzenden"
+      ],
+      "Got it": [
+        "Begrepen"
+      ],
+      "Maximize composer": [
+        "Opstelvenster maximaliseren"
+      ],
+      "Minimize composer": [
+        "Opstelvenster minimaliseren"
+      ],
+      "Contract composer": [
+        "Opstelvenster verkleinen"
+      ],
+      "Expand composer": [
+        "Opstelvenster vergroten"
+      ],
+      "Close composer": [
+        "Opstelvenster sluiten"
+      ],
+      "Trust key": [
+        "Sleutel vertrouwen",
+        "Vertrouwde sleutels"
+      ],
+      "Copy address": [
+        "Adres kopiëren"
+      ],
+      "Edit address": [
+        "Adres bewerken"
+      ],
+      "View contact details": [
+        "Contactdetails bekijken"
+      ],
+      "Copy addresses": [
+        "Adressen kopiëren"
+      ],
+      "View recipients": [
+        "Ontvangers bekijken"
+      ],
+      "Carbon Copy, Blind Carbon Copy": [
+        "CC, BCC"
+      ],
+      "CC, BCC": [
+        "CC, BCC"
+      ],
+      "Send": [
+        "Verstuur"
+      ],
+      "Attachment": [
+        "Bijlage"
+      ],
+      "Inline": [
+        "Inline"
+      ],
+      "Cancel action": [
+        "Annuleer actie"
+      ],
+      "Loading${ ellipsis }": [
+        "Laden${ ellipsis }"
+      ],
+      "Saving${ _ellipsis }": [
+        "Opslaan${ _ellipsis }"
+      ],
+      "Not saved": [
+        "Niet opgeslagen"
+      ],
+      "Schedule send": [
+        ""
+      ],
+      "Expiration time": [
+        "Vervaltijd"
+      ],
+      "Encryption": [
+        "Versleuteling"
+      ],
+      "Delete draft": [
+        "Concept verwijderen"
+      ],
+      "Set": [
+        "Instellen"
+      ],
+      "Schedule message": [
+        ""
+      ],
+      "Print": [
+        "Afdrukken"
+      ],
+      "Address options": [
+        "Adresinstellingen"
+      ],
+      "New message": [
+        "Nieuw bericht"
+      ],
+      "Trust Public Key": [
+        "Vertrouw openbare sleutel"
+      ],
+      "Filter on...": [
+        "Filteren op..."
+      ],
+      "Move to...": [
+        "Verplaats naar..."
+      ],
+      "Label as...": [
+        "Labelen als..."
+      ],
+      "Mark as unread": [
+        "Markeren als ongelezen"
+      ],
+      "Move to spam": [
+        "Naar spam verplaatsen"
+      ],
+      "Report phishing": [
+        "Phishing rapporteren"
+      ],
+      "View source code": [
+        "Bekijk broncode"
+      ],
+      "View rendered HTML": [
+        "Bekijk gerenderde HTML"
+      ],
+      "View headers": [
+        "Headers bekijken"
+      ],
+      "Hide details": [
+        "Verberg details"
+      ],
+      "Show details": [
+        "Details tonen"
+      ],
+      "Custom filter": [
+        "Aangepaste filter"
+      ],
+      "Move to": [
+        "Verplaatsen naar"
+      ],
+      "Label as": [
+        "Labellen als"
+      ],
+      "Load": [
+        "Laden"
+      ],
+      "This message contains remote content.": [
+        "Dit bericht bevat externe inhoud."
+      ],
+      "This message contains embedded images.": [
+        "Dit bericht bevat ingebedde afbeeldingen."
+      ],
+      "Unsubscribe": [
+        "Afmelden"
+      ],
+      "Unsubscribing": [
+        "Afmelden"
+      ],
+      "Mark legitimate": [
+        "Markeren als legitiem"
+      ],
+      "Send receipt": [
+        "Ontvangstbewijs versturen"
+      ],
+      "Accept": [
+        "Accepteren"
+      ],
+      "Show": [
+        "Tonen"
+      ],
+      "Show less": [
+        ""
+      ],
+      "Never show": [
+        "Nooit tonen"
+      ],
+      "View keys": [
+        "Bekijk toetsen"
+      ],
+      "Edit draft": [
+        ""
+      ],
+      "Download ${ attachmentName }": [
+        "Download ${ attachmentName }"
+      ],
+      "Preview ${ attachmentName }": [
+        "Bekijk ${ attachmentName }"
+      ],
+      "Remove ${ attachmentName }": [
+        "Verwijder ${ attachmentName }"
+      ],
+      "Hide attachment details": [
+        "Bijlagedetails verbergen"
+      ],
+      "Show attachment details": [
+        "Bijlagedetails weergeven"
+      ],
+      "Hide": [
+        "Verbergen"
+      ],
+      "Learn more": [
+        "Meer informatie"
+      ],
+      "Undo": [
+        "Ongedaan maken"
+      ],
+      "View message": [
+        ""
+      ],
+      "Enable": [
+        "Inschakelen"
+      ],
+      "Search message content": [
+        "Doorzoek berichtinhoud"
+      ],
+      "Activate": [
+        "Activeren"
+      ],
+      "Resume": [
+        "Hervatten"
+      ],
+      "Pause": [
+        "Pauzeer"
+      ],
+      "Show less search options": [
+        "Minder zoekopties weergeven"
+      ],
+      "Show more search options": [
+        "Meer zoekopties weergeven"
+      ],
+      "Less search options": [
+        ""
+      ],
+      "More search options": [
+        ""
+      ],
+      "Advanced search": [
+        "Uitgebreid zoeken"
+      ],
+      "Clear browser data": [
+        ""
+      ],
+      "Mark as read": [
+        "Markeer als gelezen"
+      ],
+      "Delete permanently": [
+        "Permanent verwijderen"
+      ],
+      "Move to inbox": [
+        "Naar Postvak IN verplaatsen"
+      ],
+      "Move to archive": [
+        "Naar archief verplaatsen"
+      ],
+      "Move to inbox (not spam)": [
+        "Verplaatsen naar inbox (geen spam)"
+      ],
+      "Move to trash": [
+        "Naar prullenbak verplaatsen"
+      ],
+      "Delete all": [
+        "Alles verwijderen"
+      ],
+      "Deselect all messages": [
+        "Alle berichten deselecteren"
+      ],
+      "Select all messages": [
+        "Alle berichten selecteren"
+      ],
+      "Select All": [
+        "Alles selecteren"
+      ],
+      "All Read": [
+        "Alle gelezen"
+      ],
+      "All Unread": [
+        "Alle ongelezen"
+      ],
+      "All Starred": [
+        "Berichten met ster"
+      ],
+      "All Unstarred": [
+        "Berichten zonder ster"
+      ],
+      "Load more": [
+        "Laad meer"
+      ],
+      "Previous page": [
+        "Vorige pagina"
+      ],
+      "Change page": [
+        "Pagina veranderen"
+      ],
+      "Page ${ pageNumber }": [
+        "Pagina ${ pageNumber }"
+      ],
+      "Next page": [
+        "Volgende pagina"
+      ],
+      "Previous conversation": [
+        "Vorig gesprek"
+      ],
+      "Previous message": [
+        "Vorig bericht"
+      ],
+      "Next conversation": [
+        "Volgend gesprek"
+      ],
+      "Next message": [
+        "Volgend bericht"
+      ],
+      "Show messages": [
+        "Toon berichten"
+      ],
+      "Hide messages": [
+        "Verberg berichten"
+      ],
+      "Create new message": [
+        ""
+      ],
+      "Open shop": [
+        ""
+      ],
+      "Open calendar": [
+        "Agenda openen"
+      ],
+      "Import messages": [
+        "Berichten importeren"
+      ],
+      "Deselect": [
+        "Deselecteren"
+      ],
+      "Start using ${ appName }": [
+        "Begin met ${ appName }"
       ]
     },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
-        "Wachtwoord moet ten minste ${ length } teken bevatten",
-        "Wachtwoord moet ten minste ${ length } tekens bevatten"
-      ]
-    },
-    "Contact field label": {
-      "Name": [
-        "Naam"
+    "Title": {
+      "Open actions dropdown": [
+        "Open dropdown-menu voor acties"
       ],
-      "Email": [
-        "E-mailadres"
+      "Expand content": [
+        "Inhoud uitvouwen"
       ],
-      "Phone": [
-        "Telefoonnummer"
+      "Link confirmation": [
+        "Link bevestigen"
       ],
-      "Address": [
-        "Adres"
+      "Keyboard Shortcuts": [
+        "Sneltoetsen"
       ],
-      "Photo": [
-        "Foto"
+      "What's new": [
+        "Wat is er nieuw"
       ],
-      "Organization": [
-        "Organisatie"
+      "Sign in again to continue": [
+        "Log opnieuw in om door te gaan"
       ],
-      "Birthday": [
-        "Verjaardag"
+      "Account suspended": [
+        "Account opgeschort"
       ],
-      "Anniversary": [
-        "Feestdag"
+      "Enter your username or ProtonMail email address": [
+        "Vul uw gebruikersnaam of ProtonMail e-mailadres in"
       ],
-      "Title": [
-        "Titel"
+      "Enter your password": [
+        "Voer uw wachtwoord in"
       ],
-      "Role": [
-        "Rol"
+      "Invalid verification code": [
+        "De ingevoerde code is ongeldig"
       ],
-      "Note": [
-        "Notitie"
+      "Human verification": [
+        "Persoonsverificatie"
       ],
-      "URL": [
-        "Website"
+      "Select a theme": [
+        "Selecteer een thema"
       ],
-      "Gender": [
-        "Geslacht"
+      "Upgrade required": [
+        "Upgrade vereist"
       ],
-      "Language": [
-        "Taal"
+      "Delete ${ Name }": [
+        "Verwijder ${ Name }"
       ],
-      "Timezone": [
-        "Tijdzone"
+      "Delete ${ count } contact group": [
+        "${ count } contactgroep verwijderen",
+        "${ count } contactgroepen verwijderen"
       ],
-      "Geo": [
-        "Plaats"
+      "Edit contact group": [
+        "Contactgroep bewerken"
       ],
-      "Logo": [
-        "Logo"
+      "Create new group": [
+        "Nieuwe groep aanmaken"
       ],
-      "Member": [
-        "Lid"
-      ]
-    },
-    "Contact type label": {
-      "Work": [
-        "Werk"
+      "${ emailsCount } member": [
+        "${ emailsCount } lid",
+        "${ emailsCount } leden"
       ],
-      "Personal": [
-        "Persoonlijk"
+      "Edit image": [
+        "Afbeelding bewerken"
       ],
-      "Mobile": [
-        "Mobiel"
+      "Add to ${ groupName }": [
+        "Toevoegen aan ${ groupName }"
       ],
-      "Main": [
-        "Primair"
+      "Add to ${ groupCount } group": [
+        "Toevoegen aan ${ groupCount } groep",
+        "Toevoegen aan ${ groupCount } groepen"
       ],
-      "Yomi": [
-        "Yomi"
+      "Edit contact": [
+        "Contactpersoon bewerken"
       ],
-      "Other": [
-        "Anders"
+      "Create contact": [
+        "Contact aanmaken"
       ],
-      "Fax": [
-        "Fax"
+      "Insert contacts": [
+        "Contacten invoegen"
       ],
-      "Pager": [
-        "Pager"
-      ]
-    },
-    "Property type": {
-      "Email": [
-        "E-mailadres"
+      "Delete ${ count } contact": [
+        "Verwijder ${ count } contact",
+        "${ count } contacten verwijderen"
       ],
-      "Home": [
-        "Thuis"
+      "Clearing data": [
+        "Data aan het wissen"
       ],
-      "Work": [
-        "Werk"
+      "Warning": [
+        "Waarschuwing"
       ],
-      "Other": [
-        "Anders"
+      "Recover data": [
+        "Gegevens herstellen"
       ],
-      "Phone": [
-        "Telefoon"
+      "Re-signing contacts": [
+        "Contacten opnieuw ondertekenen"
       ],
-      "Mobile": [
-        "Mobiel"
+      "Re-sign all contacts": [
+        "Alle contacten opnieuw ondertekenen"
       ],
-      "Main": [
-        "Primair"
+      "Email settings (${ emailAddress })": [
+        "E-mailinstellingen voor (${ emailAddress })"
       ],
-      "Fax": [
-        "Fax"
+      "Exporting contacts": [
+        "Contacten worden geëxporteerd"
       ],
-      "Pager": [
-        "Pager"
+      "Contact group": [
+        "Contactgroep"
       ],
-      "Address": [
-        "Adres"
+      "Other names": [
+        "Andere namen"
+      ],
+      "Email addresses": [
+        "E-mailadressen"
+      ],
+      "Phone numbers": [
+        "Telefoonnummers"
+      ],
+      "Addresses": [
+        "Adressen"
+      ],
+      "Other information": [
+        "Andere informatie"
+      ],
+      "Email settings": [
+        "E-mailinstellingen"
+      ],
+      "Contact Details": [
+        "Contactgegevens"
+      ],
+      "Merging contacts": [
+        "Contacten worden samengevoegd"
+      ],
+      "Merge contacts": [
+        "Contacten samenvoegen"
+      ],
+      "Deleting contacts": [
+        "Contacten aan het verwijderen"
+      ],
+      "View contacts": [
+        "Contacten weergeven"
+      ],
+      "Contacts": [
+        "Contacten"
+      ],
+      "Groups": [
+        "Groepen"
+      ],
+      "Settings": [
+        "Instellingen"
+      ],
+      "Select action to take on contact group": [
+        "Selecteer actie voor de contactgroep"
+      ],
+      "Add contact group name": [
+        "Naam contactgroep toevoegen"
+      ],
+      "Select contact group": [
+        "Contactgroep selecteren"
+      ],
+      "Import groups": [
+        "Importeer groepen"
+      ],
+      "Import contacts": [
+        "Contactpersonen importeren"
+      ],
+      "Start import process": [
+        "Importproces starten"
+      ],
+      "Import in progress": [
+        "Bezig met importeren"
+      ],
+      "Report a problem": [
+        "Meld een probleem"
+      ],
+      "${ appName } Keyboard Shortcuts": [
+        "${ appName } Sneltoetsen"
+      ],
+      "Mailbox density": [
+        "Mailbox dichtheid"
+      ],
+      "Mailbox layout": [
+        "Mailbox layout"
+      ],
+      "Composer mode": [
+        "Opstelmodus"
+      ],
+      "Open help menu": [
+        "Open helpmenu"
+      ],
+      "Back": [
+        "Terug"
+      ],
+      "Open settings menu": [
+        "Open instellingenmenu"
+      ],
+      "Confirm loss of Proton bonuses": [
+        "Bevestig verlies van Proton bonussen"
+      ],
+      "Unsupported browser": [
+        "Niet-ondersteunde browser"
+      ],
+      "Card verification": [
+        "Kaartverificatie"
+      ],
+      "Payment verification": [
+        "Betalingsverificatie"
+      ],
+      "Processing...": [
+        "Wordt verwerkt..."
+      ],
+      "Card verification in progress": [
+        "Kaartverificatie in uitvoering"
+      ],
+      "Payment verification in progress": [
+        "Betalingsverzoek bezig"
+      ],
+      "PayPal verification failed": [
+        "PayPal verificatie mislukt"
+      ],
+      "3-D Secure verification failed": [
+        "3-D Secure verificatie mislukt"
+      ],
+      "Error": [
+        "Fout"
+      ],
+      "ZIP / postal code": [
+        "Postcode"
+      ],
+      "Payment details": [
+        "Betalingsgegevens"
+      ],
+      "Currency": [
+        "Valuta"
+      ],
+      "Billing cycle": [
+        "Factuurperiode"
+      ],
+      "Current plan": [
+        "Huidig abonnement"
+      ],
+      "Processing": [
+        "Verwerken"
+      ],
+      "Apply gift code": [
+        "Geschenkcode toepassen"
+      ],
+      "Subtotal": [
+        "Subtotaal"
+      ],
+      "Coupon discount": [
+        "Couponkorting"
+      ],
+      "Total (monthly)": [
+        "Totaal (maandelijks)"
+      ],
+      "Credits": [
+        "Credits"
+      ],
+      "Gift code": [
+        "Geschenkcode"
+      ],
+      "Amount due": [
+        "Verschuldigd bedrag"
+      ],
+      "Downgrade account": [
+        ""
+      ],
+      "Network error": [
+        "Netwerkfout"
+      ],
+      "Select a plan": [
+        "Selecteer een abonnement"
+      ],
+      "Customize your plan": [
+        "Abonnement aanpassen"
+      ],
+      "Checkout": [
+        "Naar de kassa"
+      ],
+      "Plan summary": [
+        "Samenvatting abonnement"
+      ],
+      "${ appName } customization": [
+        "${ appName } aanpassingen"
+      ],
+      "Beta Access": [
+        "Bèta toegang"
+      ],
+      "Edit filter": [
+        "Filter bewerken"
+      ],
+      "Add filter": [
+        "Filter toevoegen"
+      ],
+      "Are you sure you want to close?": [
+        "Weet u zeker dat u wil afsluiten?"
+      ],
+      "Change my answer": [
+        "Mijn antwoord wijzigen"
+      ],
+      "Image": [
+        "Afbeelding"
+      ],
+      "Sending notice": [
+        "Melding versturen"
+      ],
+      "Storage capacity warning": [
+        "Waarschuwing voor opslagruimte"
+      ],
+      "Sending original message": [
+        "Oorspronkelijk bericht wordt verzonden"
+      ],
+      "No recipient": [
+        "Geen ontvanger"
+      ],
+      "Message without subject?": [
+        "Versturen zonder onderwerp?"
+      ],
+      "No attachment found": [
+        ""
+      ],
+      "Re-sign contact": [
+        "Contact opnieuw ondertekenen"
+      ],
+      "Verification error": [
+        "Verificatiefout"
+      ],
+      "Decryption error": [
+        "Ontsleutelingsfout"
+      ],
+      "Delete draft": [
+        "Concept verwijderen"
+      ],
+      "Delete ${ count } draft": [
+        "Verwijder ${ count } concept",
+        "${ count } concepten verwijderen"
+      ],
+      "Delete message": [
+        "Bericht verwijderen"
+      ],
+      "Delete conversation": [
+        "Gesprek verwijderen"
+      ],
+      "Delete ${ count } conversation": [
+        "${ count } conversatie verwijderen",
+        "${ count } conversaties verwijderen"
+      ],
+      "Delete ${ count } message": [
+        "${ count } bericht verwijderen",
+        "Verwijder ${ count } berichten"
+      ],
+      "Delete all messages": [
+        "Alle berichten verwijderen"
+      ],
+      "Trust new key?": [
+        "Nieuwe sleutel vertrouwen?",
+        "Nieuwe sleutels vertrouwen?"
+      ],
+      "Add contacts": [
+        "Contactpersonen toevoegen"
+      ],
+      "To": [
+        "Aan"
+      ],
+      "CC": [
+        "CC"
+      ],
+      "BCC": [
+        "BCC"
+      ],
+      "Carbon Copy": [
+        "CC"
+      ],
+      "Blind Carbon Copy": [
+        "BCC"
+      ],
+      "Sending error": [
+        ""
+      ],
+      "Confirm recipient address?": [
+        "Adres van ontvanger bevestigen?"
+      ],
+      "Send without expiration?": [
+        "Versturen zonder verlooptijd?"
+      ],
+      "Send with changed preferences?": [
+        "Versturen met gewijzigde voorkeuren?"
+      ],
+      "Attachments": [
+        "Bijlagen"
+      ],
+      "Expiration time": [
+        "Vervaltijd"
+      ],
+      "Encryption": [
+        "Versleuteling"
+      ],
+      "Send email": [
+        "E-mail verzenden"
+      ],
+      "Schedule send": [
+        ""
+      ],
+      "New message": [
+        "Nieuw bericht"
+      ],
+      "Trust public key?": [
+        "Publieke sleutel vertrouwen?"
+      ],
+      "All recipients were added to the BCC field and cannot be disclosed": [
+        "Alle ontvangers zijn toegevoegd aan het BCC-veld en kunnen niet worden vrijgegeven"
+      ],
+      "Move to inbox (not spam)": [
+        "Verplaatsen naar inbox (geen spam)"
+      ],
+      "Mark as unread": [
+        "Markeren als ongelezen"
+      ],
+      "Move to inbox": [
+        "Verplaats naar inbox"
+      ],
+      "Move to trash": [
+        "Naar prullenbak verplaatsen"
+      ],
+      "More": [
+        "Meer"
+      ],
+      "More options": [
+        "Meer opties"
+      ],
+      "Reply": [
+        "Beantwoorden"
+      ],
+      "Reply all": [
+        "Allen beantwoorden"
+      ],
+      "Forward": [
+        "Doorsturen"
+      ],
+      "Filter on": [
+        "Filteren op"
+      ],
+      "Move to": [
+        "Verplaats naar"
+      ],
+      "Label as": [
+        "Labellen als"
+      ],
+      "Load remote content": [
+        "Externe inhoud laden"
+      ],
+      "Load embedded images": [
+        "Ingesloten afbeeldingen laden"
+      ],
+      "Unsubscribe": [
+        "Afmelden"
+      ],
+      "Mark email as legitimate": [
+        "E-mail als legitiem markeren"
+      ],
+      "Trust pinned keys?": [
+        "Vastgezette sleutels vertrouwen?"
+      ],
+      "Enable message content search": [
+        ""
+      ],
+      "Create a new folder": [
+        "Nieuwe map aanmaken"
+      ],
+      "Create a new label": [
+        "Nieuwe label maken"
+      ],
+      "More selections": [
+        "Meer selecties"
+      ],
+      "Previous conversation": [
+        "Vorig gesprek"
+      ],
+      "Previous message": [
+        "Vorig bericht"
+      ],
+      "Next conversation": [
+        "Volgend gesprek"
+      ],
+      "Next message": [
+        "Volgend bericht"
+      ],
+      "Sort conversations": [
+        "Gesprekken sorteren"
+      ],
+      "Sort messages": [
+        "Berichten sorteren"
+      ],
+      "Create folder": [
+        "Map maken"
+      ],
+      "Create label": [
+        "Label maken"
+      ],
+      "Conversation list": [
+        "Gesprekslijst"
+      ],
+      "Message list": [
+        "Berichtenlijst"
+      ],
+      "Welcome ${ userName }": [
+        "Welkom ${ userName }"
+      ],
+      "Welcome": [
+        "Welkom"
       ]
     },
     "Info": {
-      "Session timed out.": [
-        "Sessie time-out."
-      ],
-      "Internet connection lost.": [
-        "Internetverbinding verbroken."
-      ],
-      "Servers are unreachable.": [
-        "Servers zijn onbereikbaar."
-      ],
-      "Custom daily": [
-        "Aangepast dagelijks"
-      ],
-      "Custom weekly": [
-        "Aangepast wekelijks"
-      ],
-      "Custom monthly": [
-        "Aangepast maandelijks"
-      ],
-      "Custom yearly": [
-        "Aangepast jaarlijks"
-      ],
-      "Custom": [
-        "Aangepast"
-      ],
-      "Daily": [
-        "Dagelijks"
-      ],
-      "Monthly ${ onDayString }": [
-        "Maandelijks ${ onDayString }"
-      ],
-      "Yearly": [
-        "Jaarlijks"
-      ],
       "No results found": [
         "Geen resultaten gevonden"
+      ],
+      "Loading": [
+        "Laden"
       ],
       "Insert image": [
         "Afbeelding invoegen"
@@ -643,9 +1855,6 @@
       "Learn more": [
         "Meer informatie"
       ],
-      "Loading": [
-        "Laden"
-      ],
       "Drop the file here to upload": [
         "Sleep het bestand hierheen om te uploaden"
       ],
@@ -690,6 +1899,9 @@
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klik op \"Vraag nieuwe code aan\" om een nieuwe verificatiecode te sturen naar ${ strong }. Als dit telefoonnummer onjuist is, klik op \"Bewerken\" om het te corrigeren."
+      ],
+      "support team": [
+        "ondersteuningsteam"
       ],
       "No contacts added yet": [
         "Nog geen contactpersonen toegevoegd"
@@ -810,27 +2022,6 @@
         "${ addressCount } e-mailadres",
         "${ addressCount } e-mailadressen"
       ],
-      "support team": [
-        "ondersteuningsteam"
-      ],
-      "Unsupported file": [
-        "Niet-ondersteund bestand"
-      ],
-      "No preview available": [
-        "Geen voorbeeld beschikbaar"
-      ],
-      "Preview": [
-        "Voorbeeld"
-      ],
-      "Loading preview": [
-        "Voorbeeld laden"
-      ],
-      "This browser does not support previewing PDF documents. Please download the file.": [
-        "Deze browser ondersteunt geen voorbeeld PDF-documenten. Download het bestand."
-      ],
-      "of": [
-        "van"
-      ],
       "Import contacts": [
         "Contactpersonen importeren"
       ],
@@ -860,6 +2051,24 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "De pagina vernieuwen of ${ link } zal de meeste problemen vanzelf oplossen."
+      ],
+      "Unsupported file": [
+        "Niet-ondersteund bestand"
+      ],
+      "No preview available": [
+        "Geen voorbeeld beschikbaar"
+      ],
+      "Preview": [
+        "Voorbeeld"
+      ],
+      "Loading preview": [
+        "Voorbeeld laden"
+      ],
+      "This browser does not support previewing PDF documents. Please download the file.": [
+        "Deze browser ondersteunt geen voorbeeld PDF-documenten. Download het bestand."
+      ],
+      "of": [
+        "van"
       ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Basisnavigatie en -acties blijven beschikbaar, ongeacht de sneltoetsen die actief zijn of niet in de instellingen."
@@ -1009,12 +2218,6 @@
       "* Customizable features": [
         "* Aanpasbare functies"
       ],
-      "Access your streaming services, like ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, no matter where you are.": [
-        "Toegang tot uw streamingdiensten, zoals ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, ongeacht waar u bent."
-      ],
-      "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
-        "Toegang tot geblokkeerde inhoud, zoals sociale media, nieuws, Wikipedia, YouTube, en vele anderen, ongeacht waar u bent."
-      ],
       "For getting started with private and secure emailing.": [
         "Om te beginnen met privé en veilige e-mails."
       ],
@@ -1038,6 +2241,12 @@
       ],
       "For families and small teams; includes both Mail and VPN.": [
         "Voor families en kleine teams; omvat zowel Mail en VPN."
+      ],
+      "Access your streaming services, like ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, no matter where you are.": [
+        "Toegang tot uw streamingdiensten, zoals ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, ongeacht waar u bent."
+      ],
+      "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
+        "Toegang tot geblokkeerde inhoud, zoals sociale media, nieuws, Wikipedia, YouTube, en vele anderen, ongeacht waar u bent."
       ],
       "Save 20%": [
         "Bespaar 20%"
@@ -1198,6 +2407,39 @@
       ],
       "Are you sure you want to discard your changes?": [
         "Weet u zeker dat u uw wijzigingen ongedaan wilt maken?"
+      ],
+      "Session timed out.": [
+        "Sessie time-out."
+      ],
+      "Internet connection lost.": [
+        "Internetverbinding verbroken."
+      ],
+      "Servers are unreachable.": [
+        "Servers zijn onbereikbaar."
+      ],
+      "Custom daily": [
+        "Aangepast dagelijks"
+      ],
+      "Custom weekly": [
+        "Aangepast wekelijks"
+      ],
+      "Custom monthly": [
+        "Aangepast maandelijks"
+      ],
+      "Custom yearly": [
+        "Aangepast jaarlijks"
+      ],
+      "Custom": [
+        "Aangepast"
+      ],
+      "Daily": [
+        "Dagelijks"
+      ],
+      "Monthly ${ onDayString }": [
+        "Maandelijks ${ onDayString }"
+      ],
+      "Yearly": [
+        "Jaarlijks"
       ],
       "Members": [
         "Leden"
@@ -1596,6 +2838,19 @@
       "No more results found": [
         "Geen resultaten meer gevonden"
       ],
+      "Protect yourself from trackers by turning on Proton email tracker protection.": [
+        ""
+      ],
+      "No email trackers found.": [
+        ""
+      ],
+      "Proton has blocked email trackers in this message in order to protect your privacy.": [
+        ""
+      ],
+      "${ numberOfTrackers } email tracker blocked": [
+        "",
+        ""
+      ],
       "This conversation contains non-trashed messages.": [
         "Dit gesprek bevat berichten die zich niet in de prullenbak bevinden."
       ],
@@ -1743,2541 +2998,15 @@
       ],
       "Using your mobile device, scan this QR-Code or visit ${ link }.": [
         "Met uw mobiele apparaat, scan deze QR-Code of bezoek ${ link }."
-      ]
-    },
-    "Default display name vcard": {
-      "Unknown": [
-        "Onbekend"
-      ]
-    },
-    "Import contact. Contact identifier": {
-      "unknown": [
-        "onbekend"
-      ]
-    },
-    "Error importing contact": {
-      "vCard versions < 3.0 not supported": [
-        "vCard-versies < 3.0 niet ondersteund"
       ],
-      "Encryption failed": [
-        "Versleutelen is mislukt"
-      ]
-    },
-    "Error importing calendar": {
-      "An unexpected error occurred. Import must be restarted.": [
-        "Er is een onverwachte fout opgetreden. Importeren moet opnieuw gestart worden."
-      ]
-    },
-    "Error importing contacts": {
-      "An error occurred uploading your file. No file has been selected.": [
-        "Fout opgetreden tijdens het uploaden van uw bestand. Er is geen bestand geselecteerd."
-      ],
-      "An error occurred uploading your file ${ formattedFilename }. No .csv or .vcf file selected": [
-        "Er is een fout opgetreden tijdens het uploaden van uw bestand ${ formattedFilename }. Geen .csv- of .vcf-bestand geselecteerd"
-      ],
-      "Your file ${ formattedFilename } is empty.": [
-        "Uw bestand ${ formattedFilename } is leeg."
-      ],
-      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
-        "Er is een fout opgetreden bij het uploaden van uw bestand ${ formattedFilename }. Maximale bestandsgrootte is ${ MAX_IMPORT_FILE_SIZE_STRING }."
-      ],
-      "Your file ${ formattedFilename } has no contacts to be imported.": [
-        "Uw bestand ${ formattedFilename } heeft geen contactpersonen om te importeren."
-      ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
-        "Uw bestand ${ formattedFilename } bevat meer dan ${ MAX_IMPORT_CONTACTS_STRING } contacten."
-      ],
-      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "Er is een fout opgetreden tijdens het lezen van uw bestand ${ formattedFilename }. Bestand heeft niet de juiste indeling."
-      ]
-    },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "E-mailadres is niet gevonden in de user id's van verzendsleutel (${ keyUserIds })"
-      ]
-    },
-    "Keyboard shortcut section name": {
-      "Basic navigation": [
-        "Basisnavigatie"
-      ],
-      "Basic actions": [
-        "Basisacties"
-      ],
-      "Folder shortcuts": [
-        "Snelkoppelingenmap"
-      ],
-      "Composer shortcuts": [
-        "Sneltoetsensamensteller"
-      ],
-      "List shortcuts": [
-        "Sneltoetsen weergeven"
-      ],
-      "Action shortcuts": [
-        "Actiesneltoetsen"
-      ],
-      "Message shortcuts": [
-        "Berichtsneltoetsen"
-      ]
-    },
-    "Keyboard shortcut name": {
-      "Move up": [
-        "Verplaats omhoog"
-      ],
-      "Jump to first": [
-        "Spring naar eerste"
-      ],
-      "Move down": [
-        "Beweeg omlaag"
-      ],
-      "Jump to last": [
-        "Spring naar laatste"
-      ],
-      "Move right / expand": [
-        "Verplaats naar rechts / uitbreiden"
-      ],
-      "Move left / collapse": [
-        "Verplaats naar links / inklappen"
-      ],
-      "Apply / open": [
-        "Toepassen / openen"
-      ],
-      "Cancel / close": [
-        "Annuleren / sluiten"
-      ],
-      "Open this modal": [
-        "Open dit hulpvenster"
-      ],
-      "Select / unselect": [
-        "Selecteren / deselecteren"
-      ],
-      "Go to Inbox": [
-        "Ga naar Inbox"
-      ],
-      "Go to Archive": [
-        "Ga naar Archief"
-      ],
-      "Go to Sent": [
-        "Ga naar Verzonden"
-      ],
-      "Go to Starred": [
-        "Ga naar Berichten met ster"
-      ],
-      "Go to Drafts": [
-        "Ga naar Concepten"
-      ],
-      "Go to Trash": [
-        "Ga naar Prullenbak"
-      ],
-      "Go to Spam": [
-        "Ga naar Spam"
-      ],
-      "Go to All Mail": [
-        "Ga naar Alle Berichten"
-      ],
-      "Save draft": [
-        "Concept opslaan"
-      ],
-      "Send email": [
-        "E-mail verzenden"
-      ],
-      "Close draft": [
-        "Concept sluiten"
-      ],
-      "Minimize / maximize composer": [
-        "Minimaliseren / maximaliseren van opstelvenster"
-      ],
-      "Expand / contract composer": [
-        "Uitvouwen / opvouwen opstelvenster"
-      ],
-      "Attach file": [
-        "Bestand toevoegen"
-      ],
-      "Add expiration time": [
-        "Vervaltijd toevoegen"
-      ],
-      "Add encryption": [
-        "Voeg encryptie toe"
-      ],
-      "Discard draft": [
-        "Verwijder concept"
-      ],
-      "Open previous message": [
-        "Open vorig bericht"
-      ],
-      "Open next message": [
-        "Open volgend bericht"
-      ],
-      "Show unread emails": [
-        "Toon ongelezen e-mails"
-      ],
-      "Show all emails": [
-        "Toon alle e-mails"
-      ],
-      "Select / unselect all": [
-        "Selecteer / deselecteer alles"
-      ],
-      "Search": [
-        "Zoek"
-      ],
-      "New message": [
-        "Nieuw bericht"
-      ],
-      "Star": [
-        "Ster"
-      ],
-      "Mark as unread": [
-        "Markeer als ongelezen"
-      ],
-      "Label as...": [
-        "Label als..."
-      ],
-      "Create filter with...": [
-        "Filter maken met..."
-      ],
-      "Move to...": [
-        "Verplaats naar..."
-      ],
-      "Move to Inbox": [
-        "Verplaats naar inbox"
-      ],
-      "Move to Archive": [
-        "Verplaats naar Archief"
-      ],
-      "Move to Spam": [
-        "Verplaats naar Spam"
-      ],
-      "Move to Trash": [
-        "Verplaats naar Prullenbak"
-      ],
-      "Delete permanently": [
-        "Permanent verwijderen"
-      ],
-      "Reply": [
-        "Beantwoorden"
-      ],
-      "Reply all": [
-        "Allen beantwoorden"
-      ],
-      "Forward": [
-        "Doorsturen"
-      ],
-      "Load remote content": [
-        "Externe inhoud laden"
-      ],
-      "Load embedded images": [
-        "Ingesloten afbeeldingen laden"
-      ],
-      "Show original message": [
-        "Toon origineel bericht"
-      ]
-    },
-    "Calendar status": {
-      "Syncing": [
-        "Synchroniseren"
-      ],
-      "Not synced": [
-        "Niet gesynchroniseerd"
-      ]
-    },
-    "Calendar subscription not synced error": {
-      "Calendar is syncing": [
-        "De agenda wordt gesynchroniseerd"
-      ],
-      "More than 12 hours passed since last update": [
-        "Er zijn meer dan 12 uur verstreken sinds de laatste update"
-      ],
-      "Calendar link is wrong": [
-        ""
-      ],
-      "Calendar is too big": [
-        "De agenda is te groot"
-      ],
-      "Calendar link is not accessible": [
-        ""
-      ],
-      "Calendar link is temporarily unaccessible": [
-        ""
-      ],
-      "Failed to sync calendar": [
-        "Synchronisatie van de agenda is mislukt"
-      ]
-    },
-    "Attached ics file error": {
-      "Invalid ICS file": [
-        ""
-      ],
-      "Invalid event": [
-        "Ongeldige gebeurtenis"
-      ],
-      "Unsupported event": [
-        "Niet-ondersteunde gebeurtenis"
-      ],
-      "Empty ICS file": [
-        "Leeg ICS-bestand"
-      ],
-      "Unsupported calendar component": [
-        "Niet-ondersteunde agendacomponent"
-      ],
-      "Invalid method": [
-        "Ongeldige methode"
-      ]
-    },
-    "Event invitation error": {
-      "Invalid response": [
-        "Ongeldige reactie"
-      ],
-      "Invalid invitation": [
-        "Ongeldige uitnodiging"
-      ],
-      "Unsupported response": [
-        "Niet-ondersteunde reactie"
-      ],
-      "Unsupported invitation": [
-        "Niet-ondersteunde uitnodiging"
-      ],
-      "Attached ICS file could not be parsed": [
-        ""
-      ],
-      "Attached ICS file could not be decrypted": [
-        ""
-      ],
-      "We could not retrieve the event from your calendar": [
-        "We konden de afspraak niet ophalen uit uw agenda"
-      ],
-      "We could not update the event in your calendar": [
-        "We konden de afspraak niet bijwerken in uw agenda"
-      ],
-      "Your answer was sent, but the event could not be added to your calendar": [
-        "Uw antwoord werd verzonden, maar de afspraak kon niet worden toegevoegd aan uw agenda"
-      ],
-      "Your answer was sent, but the event could not be updated in your calendar": [
-        "Uw antwoord is verzonden, maar de afspraak kon niet worden bijgewerkt in uw agenda"
-      ],
-      "We could not cancel the event in your calendar": [
-        "We konden de afspraak in uw agenda niet annuleren"
-      ],
-      "Unexpected error": [
-        "Onverwachte fout"
-      ]
-    },
-    "Error importing event": {
-      "Component with wrong format": [
-        "Component met verkeerde indeling"
-      ],
-      "Non-Gregorian": [
-        "Niet-Gregoriaanse"
-      ],
-      "To-do entry": [
-        "To-do item"
-      ],
-      "Journal entry": [
-        "Logboek-item"
-      ],
-      "Free-busy time information": [
-        "Informatie over vrije tijd"
-      ],
-      "Custom timezone": [
-        "Aangepaste tijdzone"
-      ],
-      "Invalid event": [
-        "Ongeldige gebeurtenis"
-      ],
-      "Unsupported event": [
-        "Niet-ondersteunde gebeurtenis"
-      ],
-      "Malformed all-day event": [
-        "Misvormde afspraak gedurende de hele dag"
-      ],
-      "Missing start time": [
-        "Begintijd ontbreekt"
-      ],
-      "Malformed start time": [
-        "Misvormde begintijd"
-      ],
-      "Floating times not supported": [
-        "Zwevende tijden niet ondersteund"
-      ],
-      "Start time out of bounds": [
-        "Begintijd valt buiten de grenzen"
-      ],
-      "Malformed end time": [
-        "Misvormde eindtijd"
-      ],
-      "End time out of bounds": [
-        "Eindtijd valt buiten de grenzen"
-      ],
-      "Event duration not supported": [
-        "Afspraakduur niet ondersteund"
-      ],
-      "Calendar timezone not supported": [
-        "Agendatijdzone niet ondersteund"
-      ],
-      "Timezone not supported": [
-        "Tijdzone niet ondersteund"
-      ],
-      "Malformed recurring event": [
-        "Misvormde periodieke afspraak"
-      ],
-      "Recurring rule not supported": [
-        "Herhalingsvoorwaarde niet ondersteund"
-      ],
-      "Edited event not supported": [
-        "Bewerkte afspraak niet ondersteund"
-      ],
-      "Notification out of bounds": [
-        "Melding buiten de grenzen"
-      ],
-      "Event validation failed": [
-        "Validatie van afspraak mislukt"
-      ],
-      "Encryption failed": [
-        "Versleutelen is mislukt"
-      ],
-      "Original recurring event could not be found": [
-        "Oorspronkelijke terugkerende afspraak kan niet worden gevonden"
-      ],
-      "no UID, title or start time": [
-        "geen UID, titel of starttijd"
-      ]
-    },
-    "Event title": {
-      "(no title)": [
-        "(geen titel)"
-      ]
-    },
-    "Participant name": {
-      "You": [
-        "U"
-      ]
-    },
-    "Email subject": {
-      "Invitation for an event on ${ formattedStart }": [
-        "Uitnodiging voor een afspraak op ${ formattedStart }"
-      ],
-      "Update for an event on ${ formattedStart }": [
-        "Update voor een afspraak op ${ formattedStart }"
-      ],
-      "Invitation for an event starting on ${ formattedStart }": [
-        "Uitnodiging voor een afspraak die begint op ${ formattedStart }"
-      ],
-      "Update for an event starting on ${ formattedStart }": [
-        "Update voor een afspraak die begint op ${ formattedStart }"
-      ],
-      "Cancellation of an event on ${ formattedStart }": [
-        "Annulering van een afspraak op ${ formattedStart }"
-      ],
-      "Cancellation of an event starting on ${ formattedStart }": [
-        "Annulering van een afspraak die begint op ${ formattedStart }"
-      ]
-    },
-    "Email body for invitation (date part)": {
-      "When: ${ formattedStart } (all day)": [
-        "Wanneer: ${ formattedStart } (hele dag)"
-      ],
-      "When: ${ formattedStart } - ${ formattedEnd }": [
-        "Wanneer: ${ formattedStart } - ${ formattedEnd }"
-      ],
-      "When: ${ formattedStart }": [
-        "Wanneer: ${ formattedStart }"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "Where: ${ eventLocation }": [
-        "Waar: ${ eventLocation }"
-      ]
-    },
-    "Email body for description (description part)": {
-      "Description: ${ eventDescription }": [
-        "Omschrijving: ${ eventDescription }"
-      ]
-    },
-    "Email body for invitation": {
-      "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
-        "U bent uitgenodigd voor ${ eventTitle }\n${ eventDetailsText }"
-      ],
-      "${ eventTitle } has been updated.\n${ eventDetailsText }": [
-        "${ eventTitle } is bijgewerkt.\n${ eventDetailsText }"
-      ],
-      "${ eventTitle } has been cancelled.": [
-        "${ eventTitle } is geannuleerd."
-      ]
-    },
-    "Email body for response to invitation": {
-      "${ emailAddress } has accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } heeft uw uitnodiging geaccepteerd voor ${ eventTitle }"
-      ],
-      "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } heeft uw uitnodiging voorlopig geaccepteerd voor ${ eventTitle }"
-      ],
-      "${ emailAddress } has declined your invitation to ${ eventTitle }": [
-        "${ emailAddress } heeft uw uitnodiging geweigerd voor ${ eventTitle }"
-      ]
-    },
-    "Monthly recurring event, repeats on": {
-      "on the first Sunday": [
-        "op de eerste zondag"
-      ],
-      "on the first Monday": [
-        "op de eerste maandag"
-      ],
-      "on the first Tuesday": [
-        "op de eerste dinsdag"
-      ],
-      "on the first Wednesday": [
-        "op de eerste woensdag"
-      ],
-      "on the first Thursday": [
-        "op de eerste donderdag"
-      ],
-      "on the first Friday": [
-        "op de eerste vrijdag"
-      ],
-      "on the first Saturday": [
-        "op de eerste zaterdag"
-      ],
-      "on the second Sunday": [
-        "op de tweede zondag"
-      ],
-      "on the second Monday": [
-        "op de tweede maandag"
-      ],
-      "on the second Tuesday": [
-        "op de tweede dinsdag"
-      ],
-      "on the second Wednesday": [
-        "op de tweede woensdag"
-      ],
-      "on the second Thursday": [
-        "op de tweede donderdag"
-      ],
-      "on the second Friday": [
-        "op de tweede vrijdag"
-      ],
-      "on the second Saturday": [
-        "op de tweede zaterdag"
-      ],
-      "on the third Sunday": [
-        "op de derde zondag"
-      ],
-      "on the third Monday": [
-        "op de derde maandag"
-      ],
-      "on the third Tuesday": [
-        "op de derde dinsdag"
-      ],
-      "on the third Wednesday": [
-        "op de derde woensdag"
-      ],
-      "on the third Thursday": [
-        "op de derde donderdag"
-      ],
-      "on the third Friday": [
-        "op de derde vrijdag"
-      ],
-      "on the third Saturday": [
-        "op de derde zaterdag"
-      ],
-      "on the fourth Sunday": [
-        "op de vierde zondag"
-      ],
-      "on the fourth Monday": [
-        "op de vierde maandag"
-      ],
-      "on the fourth Tuesday": [
-        "op de vierde dinsdag"
-      ],
-      "on the fourth Wednesday": [
-        "op de vierde woensdag"
-      ],
-      "on the fourth Thursday": [
-        "op de vierde donderdag"
-      ],
-      "on the fourth Friday": [
-        "op de vierde vrijdag"
-      ],
-      "on the fourth Saturday": [
-        "op de vierde zaterdag"
-      ],
-      "on the last Sunday": [
-        "op de laatste zondag"
-      ],
-      "on the last Monday": [
-        "op de laatste maandag"
-      ],
-      "on the last Tuesday": [
-        "op de laatste dinsdag"
-      ],
-      "on the last Wednesday": [
-        "op de laatste woensdag"
-      ],
-      "on the last Thursday": [
-        "op de laatste donderdag"
-      ],
-      "on the last Friday": [
-        "op de laatste vrijdag"
-      ],
-      "on the last Saturday": [
-        "op de laatste zaterdag"
-      ],
-      "on day ${ dayOfMonth }": [
-        "op dag ${ dayOfMonth }"
-      ]
-    },
-    "Daily recurring event, frequency": {
-      "${ count } time": [
-        "${ count } keer",
-        "${ count } keren"
-      ],
-      "until ${ dateString }": [
-        "tot ${ dateString }"
-      ],
-      "Daily": [
-        "Dagelijks"
-      ],
-      "Every ${ interval } day": [
-        "Elke ${ interval } dag",
-        "Elke ${ interval } dagen"
-      ],
-      "Daily, ${ timesString }": [
-        "Dagelijks, ${ timesString }"
-      ],
-      "Every ${ interval } day, ${ timesString }": [
-        "Elke ${ interval } dag, ${ timesString }",
-        "Elke ${ interval } dagen, ${ timesString }"
-      ],
-      "Daily, ${ untilString }": [
-        "Dagelijks, ${ untilString }"
-      ],
-      "Every ${ interval } day, ${ untilString }": [
-        "Elke ${ interval } dag, ${ untilString }",
-        "Elke ${ interval } dagen, ${ untilString }"
-      ]
-    },
-    "Weekly recurring event, repeats on (multiple days), frequency": {
-      "Sunday": [
-        "Zondag"
-      ],
-      "Monday": [
-        "Maandag"
-      ],
-      "Tuesday": [
-        "Dinsdag"
-      ],
-      "Wednesday": [
-        "Woensdag"
-      ],
-      "Thursday": [
-        "Donderdag"
-      ],
-      "Friday": [
-        "Vrijdag"
-      ],
-      "Saturday": [
-        "Zaterdag"
-      ]
-    },
-    "Weekly recurring event, frequency": {
-      "Weekly on all days": [
-        "Wekelijks op alle dagen"
-      ],
-      "Every ${ interval } week on all days": [
-        "Elke ${ interval } op alle dagen",
-        "Elke ${ interval } weken op alle dagen"
-      ],
-      "Weekly on Sunday": [
-        "Wekelijks op zondag"
-      ],
-      "Every ${ interval } week on Sunday": [
-        "Elke ${ interval } op zondag",
-        "Elke ${ interval } weken op zondag"
-      ],
-      "Weekly on Monday": [
-        "Wekelijks op maandag"
-      ],
-      "Every ${ interval } week on Monday": [
-        "Elke ${ interval } op maandag",
-        "Elke ${ interval } weken op maandag"
-      ],
-      "Weekly on Tuesday": [
-        "Wekelijks op dinsdag"
-      ],
-      "Every ${ interval } week on Tuesday": [
-        "Elke ${ interval } op dinsdag",
-        "Elke ${ interval } weken op dinsdag"
-      ],
-      "Weekly on Wednesday": [
-        "Wekelijks op woensdag"
-      ],
-      "Every ${ interval } week on Wednesday": [
-        "Elke ${ interval } op woensdag",
-        "Elke ${ interval } weken op woensdag"
-      ],
-      "Weekly on Thursday": [
-        "Wekelijks op donderdag"
-      ],
-      "Every ${ interval } week on Thursday": [
-        "Elke ${ interval } op donderdag",
-        "Elke ${ interval } weken op donderdag"
-      ],
-      "Weekly on Friday": [
-        "Wekelijks op vrijdag"
-      ],
-      "Every ${ interval } week on Friday": [
-        "Elke week op vrijdag",
-        "Elke ${ interval } weken op vrijdag"
-      ],
-      "Weekly on Saturday": [
-        "Wekelijks op zaterdag"
-      ],
-      "Every ${ interval } week on Saturday": [
-        "Elke week op zaterdag",
-        "Elke ${ interval } weken op zaterdag"
-      ],
-      "Weekly on ${ multipleDaysString }": [
-        "Wekelijks op ${ multipleDaysString }"
-      ],
-      "Every ${ interval } week on ${ multipleDaysString }": [
-        "Elke week op ${ multipleDaysString }",
-        "Elke ${ interval } weken op ${ multipleDaysString }"
-      ],
-      "Weekly on all days, ${ timesString }": [
-        "Wekelijks op alle dagen, ${ timesString }"
-      ],
-      "Every ${ interval } week on all days, ${ timesString }": [
-        "Elke week op alle dagen, ${ timesString }",
-        "Elke ${ interval } weken op alle dagen, ${ timesString }"
-      ],
-      "Weekly on Sunday, ${ timesString }": [
-        "Wekelijks op zondag ${ timesString }"
-      ],
-      "Every ${ interval } week on Sunday, ${ timesString }": [
-        "Elke week op zondag, ${ timesString }",
-        "Elke ${ interval } weken op zondag, ${ timesString }"
-      ],
-      "Weekly on Monday, ${ timesString }": [
-        "Wekelijks op maandag, ${ timesString }"
-      ],
-      "Every ${ interval } week on Monday, ${ timesString }": [
-        "Elke ${ interval } week op maandag, ${ timesString }",
-        "Elke ${ interval } weken op maandag, ${ timesString }"
-      ],
-      "Weekly on Tuesday, ${ timesString }": [
-        "Wekelijks op dinsdag ${ timesString }"
-      ],
-      "Every ${ interval } week on Tuesday, ${ timesString }": [
-        "Elke ${ interval } week op dinsdag, ${ timesString }",
-        "Elke ${ interval } weken op dinsdag, ${ timesString }"
-      ],
-      "Weekly on Wednesday, ${ timesString }": [
-        "Wekelijks op woensdag ${ timesString }"
-      ],
-      "Every ${ interval } week on Wednesday, ${ timesString }": [
-        "Elke ${ interval } week op woensdag, ${ timesString }",
-        "Elke ${ interval } weken op woensdag, ${ timesString }"
-      ],
-      "Weekly on Thursday, ${ timesString }": [
-        "Wekelijks op donderdag ${ timesString }"
-      ],
-      "Every ${ interval } week on Thursday, ${ timesString }": [
-        "Elke ${ interval } week op donderdag, ${ timesString }",
-        "Elke ${ interval } weken op donderdag, ${ timesString }"
-      ],
-      "Weekly on Friday, ${ timesString }": [
-        "Wekelijks op vrijdag ${ timesString }"
-      ],
-      "Every ${ interval } week on Friday, ${ timesString }": [
-        "Elke ${ interval } week op vrijdag, ${ timesString }",
-        "Elke ${ interval } weken op vrijdag, ${ timesString }"
-      ],
-      "Weekly on Saturday, ${ timesString }": [
-        "Wekelijks op zaterdag ${ timesString }"
-      ],
-      "Every ${ interval } week on Saturday, ${ timesString }": [
-        "Elke ${ interval } week op zaterdag, ${ timesString }",
-        "Elke ${ interval } weken op zaterdag, ${ timesString }"
-      ],
-      "Weekly on ${ multipleDaysString }, ${ timesString }": [
-        "Wekelijks op ${ multipleDaysString }, ${ timesString }"
-      ],
-      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
-        "Elke ${ interval } week op ${ multipleDaysString }, ${ timesString }",
-        "Elke ${ interval } weken op ${ multipleDaysString }, ${ timesString }"
-      ],
-      "Weekly on all days, ${ untilString }": [
-        "Wekelijks op alle dagen, ${ untilString }"
-      ],
-      "Every ${ interval } week on all days, ${ untilString }": [
-        "Elke ${ interval } week op alle dagen, ${ untilString }",
-        "Elke ${ interval } weken op alle dagen, ${ untilString }"
-      ],
-      "Weekly on Sunday, ${ untilString }": [
-        "Wekelijks op zondag ${ untilString }"
-      ],
-      "Every ${ interval } week on Sunday, ${ untilString }": [
-        "Elke ${ interval } week op zondag, ${ untilString }",
-        "Elke ${ interval } weken op zondag, ${ untilString }"
-      ],
-      "Weekly on Monday, ${ untilString }": [
-        "Wekelijks op maandag, ${ untilString }"
-      ],
-      "Every ${ interval } week on Monday, ${ untilString }": [
-        "Elke ${ interval } week op maandag, ${ untilString }",
-        "Elke ${ interval } weken op maandag, ${ untilString }"
-      ],
-      "Weekly on Tuesday, ${ untilString }": [
-        "Wekelijks op dinsdag ${ untilString }"
-      ],
-      "Every ${ interval } week on Tuesday, ${ untilString }": [
-        "Elke ${ interval } week op dinsdag, ${ untilString }",
-        "Elke ${ interval } weken op dinsdag, ${ untilString }"
-      ],
-      "Weekly on Wednesday, ${ untilString }": [
-        "Wekelijks op woensdag ${ untilString }"
-      ],
-      "Every ${ interval } week on Wednesday, ${ untilString }": [
-        "Elke ${ interval } week op woensdag, ${ untilString }",
-        "Elke ${ interval } week op woensdag, ${ untilString }"
-      ],
-      "Weekly on Thursday, ${ untilString }": [
-        "Wekelijks op donderdag ${ untilString }"
-      ],
-      "Every ${ interval } week on Thursday, ${ untilString }": [
-        "Elke ${ interval } week op donderdag, ${ untilString }",
-        "Elke ${ interval } weken op donderdag, ${ untilString }"
-      ],
-      "Weekly on Friday, ${ untilString }": [
-        "Wekelijks op vrijdag ${ untilString }"
-      ],
-      "Every ${ interval } week on Friday, ${ untilString }": [
-        "Elke ${ interval } week op vrijdag, ${ untilString }",
-        "Elke ${ interval } week op vrijdag, ${ untilString }"
-      ],
-      "Weekly on Saturday, ${ untilString }": [
-        "Wekelijks op zaterdag ${ untilString }"
-      ],
-      "Every ${ interval } week on Saturday, ${ untilString }": [
-        "Elke ${ interval } week op zaterdag, ${ untilString }",
-        "Elke ${ interval } weken op zaterdag, ${ untilString }"
-      ],
-      "Weekly on ${ multipleDaysString }, ${ untilString }": [
-        "Wekelijks op ${ multipleDaysString }, ${ untilString }"
-      ],
-      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
-        "Elke ${ interval } week op ${ multipleDaysString }, ${ untilString }",
-        "Elke ${ interval } weken op ${ multipleDaysString }, ${ untilString }"
-      ]
-    },
-    "Monthly recurring event, frequency": {
-      "Monthly ${ onDayString }": [
-        "Maandelijks ${ onDayString }"
-      ],
-      "Every ${ interval } month ${ onDayString }": [
-        "Elke ${ interval } maand ${ onDayString }",
-        "Elke ${ interval } maanden ${ onDayString }"
-      ],
-      "Monthly ${ onDayString }, ${ timesString }": [
-        "Maandelijks ${ onDayString }, ${ timesString }"
-      ],
-      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
-        "Elke ${ interval } maand ${ onDayString }, ${ timesString }",
-        "Elke ${ interval } maanden ${ onDayString }, ${ timesString }"
-      ],
-      "Monthly ${ onDayString }, ${ untilString }": [
-        "Maandelijks ${ onDayString }, ${ untilString }"
-      ],
-      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
-        "Elke ${ interval } maand ${ onDayString }, ${ untilString }",
-        "Elke ${ interval } maanden ${ onDayString }, ${ untilString }"
-      ]
-    },
-    "Yearly recurring event, frequency": {
-      "Yearly": [
-        "Jaarlijks"
-      ],
-      "Every ${ interval } year": [
-        "Elk jaar",
-        "Elke ${ interval } jaar"
-      ],
-      "Yearly, ${ timesString }": [
-        "Jaarlijks ${ timesString }"
-      ],
-      "Every ${ interval } year, ${ timesString }": [
-        "Elke jaar, ${ timesString }",
-        "Elke ${ interval } jaar, ${ timesString }"
-      ],
-      "Yearly, ${ untilString }": [
-        "Jaarlijks ${ untilString }"
-      ],
-      "Every ${ interval } year, ${ untilString }": [
-        "Elke jaar, ${ untilString }",
-        "Elke ${ interval } jaar, ${ untilString }"
-      ]
-    },
-    "Action": {
-      "Close": [
-        "Sluiten"
-      ],
-      "Cancel": [
-        "Annuleren"
-      ],
-      "Save": [
-        "Opslaan"
-      ],
-      "Upload picture": [
-        "Afbeelding uploaden"
-      ],
-      "Insert": [
-        "Invoegen"
-      ],
-      "Font": [
-        "Lettertype"
-      ],
-      "Size": [
-        "Grootte"
-      ],
-      "Color": [
-        "Kleur"
-      ],
-      "Alignment": [
-        "Uitlijning"
-      ],
-      "More": [
-        "Meer"
-      ],
-      "Unordered list": [
-        "Ongenummerde lijst"
-      ],
-      "Ordered list": [
-        "Genummerde lijst"
-      ],
-      "Align left": [
-        "Links uitlijnen"
-      ],
-      "Align center": [
-        "Centreren"
-      ],
-      "Align right": [
-        "Rechts uitlijnen"
-      ],
-      "Justify": [
-        "Uitvullen"
-      ],
-      "Quote": [
-        "Citaat"
-      ],
-      "Insert link": [
-        "Link invoegen"
-      ],
-      "Clear all formatting": [
-        "Alle opmaak wissen"
-      ],
-      "Insert image": [
-        "Afbeelding toevoegen"
-      ],
-      "Bold": [
-        "Vet"
-      ],
-      "Italic": [
-        "Schuin"
-      ],
-      "Underline": [
-        "Onderstreept"
-      ],
-      "More info: ${ safeTitle }": [
-        "Meer informatie: ${ safeTitle }"
-      ],
-      "Confirm": [
-        "Bevestigen"
-      ],
-      "Submit": [
-        "Versturen"
-      ],
-      "Close modal": [
-        "Sluit het venster"
-      ],
-      "Use “${ label }” setting": [
-        "Gebruik “${ label }”-instelling"
-      ],
-      "Remove": [
-        "Verwijderen"
-      ],
-      "Next month": [
-        "Volgende maand"
-      ],
-      "Previous month": [
-        "Vorige maand"
-      ],
-      "Load image": [
-        "Afbeelding laden"
-      ],
-      "Confirm opening of link ${ link }": [
-        "Bevestig het openen van link ${ link }"
-      ],
-      "Go to panel ${ index }": [
-        "Ga naar paneel ${ index }"
-      ],
-      "Close navigation": [
-        "Navigatie sluiten"
-      ],
-      "Open navigation": [
-        "Navigatie openen"
-      ],
-      "Continue with Google": [
-        "Ga verder met Google"
-      ],
-      "Delete": [
-        "Verwijderen"
-      ],
-      "Go to page ${ page }": [
-        "Ga naar pagina ${ page }"
-      ],
-      "Go to first page": [
-        "Ga naar de eerste pagina"
-      ],
-      "Go to previous page": [
-        "Ga naar de vorige pagina"
-      ],
-      "Go to next page": [
-        "Ga naar de volgende pagina"
-      ],
-      "Go to last page": [
-        "Ga naar de laatste pagina"
-      ],
-      "Signing out": [
-        "Uitloggen"
-      ],
-      "refresh the page": [
-        "pagina vernieuwen"
-      ],
-      "Log in": [
-        "Aanmelden"
-      ],
-      "View invoice": [
-        "Factuur bekijken"
-      ],
-      "Get verification code": [
-        "Krijg verificatie code"
-      ],
-      "Try another method": [
-        "Andere methode proberen"
-      ],
-      "Request new code": [
-        "Nieuwe code aanvragen"
-      ],
-      "Verify": [
-        "Verifiëren"
-      ],
-      "Did not receive the code?": [
-        "Heeft u de code niet ontvangen?"
-      ],
-      "Edit email address": [
-        "Wijzig e-mailadres"
-      ],
-      "Edit phone number": [
-        "Wijzig telefoonnummer"
-      ],
-      "Upgrade": [
-        "Upgraden"
-      ],
-      "Add": [
-        "Voeg toe"
-      ],
-      "Edit": [
-        "Bewerken"
-      ],
-      "Apply": [
-        "Toepassen"
-      ],
-      "Insert contact": [
-        "Contact invoegen"
-      ],
-      "Insert ${ totalChecked } contact": [
-        "${ totalChecked } contact invoegen",
-        "${ totalChecked } contacten invoegen"
-      ],
-      "Done": [
-        "Klaar"
-      ],
-      "Clear data": [
-        "Gegevens wissen"
-      ],
-      "Recover data": [
-        "Gegevens herstellen"
-      ],
-      "Click here.": [
-        "Klik hier."
-      ],
-      "Re-sign": [
-        "Opnieuw ondertekenen"
-      ],
-      "Hide advanced PGP settings": [
-        "Geavanceerde PGP-instellingen verbergen"
-      ],
-      "Show advanced PGP settings": [
-        "Geavanceerde PGP-instellingen tonen"
-      ],
-      "Add to group": [
-        "Aan groep toevoegen"
-      ],
-      "Contact group": [
-        "Contactgroep"
-      ],
-      "Create new contact": [
-        "Nieuwe contactpersoon aanmaken"
-      ],
-      "clear it": [
-        "opruimen"
-      ],
-      "Export": [
-        "Exporteren"
-      ],
-      "Download": [
-        "Downloaden"
-      ],
-      "Use for sending": [
-        "Gebruiken om te versturen"
-      ],
-      "Trust": [
-        "Vertrouwen"
-      ],
-      "Untrust": [
-        "Niet meer vertrouwen"
-      ],
-      "Email settings": [
-        "E-mailinstellingen"
-      ],
-      "Merge": [
-        "Samenvoegen"
-      ],
-      "View": [
-        "Bekijken"
-      ],
-      "Unmark for deletion": [
-        "Niet markeren voor verwijdering"
-      ],
-      "Mark for deletion": [
-        "Markeren voor verwijderen"
-      ],
-      "Preview contact": [
-        "Contact tonen"
-      ],
-      "Continue": [
-        "Doorgaan"
-      ],
-      "Copy email to clipboard": [
-        "E-mailadres kopiëren naar klembord"
-      ],
-      "Delete contact": [
-        "Contactpersoon verwijderen"
-      ],
-      "Delete ${ selectedCount } contact": [
-        "Verwijder ${ selectedCount } contact",
-        "Verwijder ${ selectedCount } contacten"
-      ],
-      "Deselect all": [
-        "Alles deselecteren"
-      ],
-      "Select all": [
-        "Alles selecteren"
-      ],
-      "Compose": [
-        "Opstellen"
-      ],
-      "Forward as attachment": [
-        "Doorsturen als bijlage"
-      ],
-      "Merge contacts": [
-        "Contacten samenvoegen"
-      ],
-      "Add new contact": [
-        "Contactpersoon toevoegen"
-      ],
-      "Add group": [
-        "Groep toevoegen"
-      ],
-      "Clear query": [
-        "Zoekopdracht wissen"
-      ],
-      "Add contact": [
-        "Contactpersoon toevoegen"
-      ],
-      "import": [
-        "importeren"
-      ],
-      "Delete contact group": [
-        "Contactgroep verwijderen"
-      ],
-      "Delete ${ selectedCount } contact group": [
-        "${ selectedCount } contactgroep verwijderen",
-        "${ selectedCount } contactgroepen verwijderen"
-      ],
-      "Add new group": [
-        "Voeg nieuwe groep toe"
-      ],
-      "Export contacts": [
-        "Contactpersonen exporteren"
-      ],
-      "Import contacts": [
-        "Contactpersonen importeren"
-      ],
-      "Choose a file or drag it here": [
-        "Kies een bestand of sleep het hierheen"
-      ],
-      "Import": [
-        "Importeren"
-      ],
-      "Next": [
-        "Volgende"
-      ],
-      "Use ${ label } theme": [
-        "Gebruik ${ label } thema"
-      ],
-      "OK": [
-        "OK"
-      ],
-      "Details": [
-        "Details"
-      ],
-      "Share via link": [
-        "Deel via link"
-      ],
-      "Sharing options": [
-        "Opties voor delen"
-      ],
-      "Zoom out": [
-        "Zoom uit"
-      ],
-      "Reset zoom": [
-        "Reset zoom"
-      ],
-      "Zoom in": [
-        "Inzoomen"
-      ],
-      "Previous": [
-        "Vorige"
-      ],
-      "Continue import": [
-        "Doorgaan met importeren"
-      ],
-      "Discard": [
-        "Verwijderen"
-      ],
-      "Reconnect": [
-        "Opnieuw verbinden"
-      ],
-      "Start import": [
-        "Begin met importeren"
-      ],
-      "Clear": [
-        "Wissen"
-      ],
-      "Add screenshot(s)": [
-        "Screenshot(s) toevoegen"
-      ],
-      "Hide info": [
-        "Informatie verbergen"
-      ],
-      "Show info": [
-        "Informatie tonen"
-      ],
-      "Get started": [
-        "Aan de slag"
-      ],
-      "Start setup": [
-        "Installatie starten"
-      ],
-      "Skip": [
-        "Overslaan"
-      ],
-      "Back": [
-        "Terug"
-      ],
-      "Copy to clipboard": [
-        ""
-      ],
-      "Create recovery phrase": [
-        ""
-      ],
-      "Don't secure account": [
-        ""
-      ],
-      "Close this banner": [
-        "Sluit deze banner"
-      ],
-      "Refresh the page": [
-        "Pagina vernieuwen"
-      ],
-      "enable desktop notifications": [
-        "schakel desktopmeldingen in"
-      ],
-      "here": [
-        "hier"
-      ],
-      "Search": [
-        "Zoeken"
-      ],
-      "${ BRAND_NAME } introduction": [
-        "${ BRAND_NAME } inleiding"
-      ],
-      "Chat with us": [
-        ""
-      ],
-      "I have a question": [
-        "Ik heb een vraag"
-      ],
-      "Request a feature": [
-        "Vraag een functie aan"
-      ],
-      "Report a problem": [
-        "Meld een probleem"
-      ],
-      "${ BRAND_NAME } shop": [
-        "${ BRAND_NAME } winkel"
-      ],
-      "Switch account": [
-        "Account wisselen"
-      ],
-      "Sign out": [
-        "Uitloggen"
-      ],
-      "Go to settings": [
-        "Ga naar instellingen"
-      ],
-      "Beta Access": [
-        "Bèta toegang"
-      ],
-      "Theme": [
-        "Thema"
-      ],
-      "Keyboard shortcuts": [
-        "Toetsenbord snelkoppelingen"
-      ],
-      "Mailbox layout": [
-        "Mailbox layout"
-      ],
-      "Mailbox density": [
-        "Mailbox dichtheid"
-      ],
-      "Composer size": [
-        ""
-      ],
-      "Remove bonuses": [
-        "Verwijder bonussen"
-      ],
-      "Try again": [
-        "Opnieuw proberen"
-      ],
-      "Use a different card": [
-        "Gebruik een andere kaart"
-      ],
-      "Use a different payment method": [
-        "Gebruik een andere betaalmethode"
-      ],
-      "Retry": [
-        "Opnieuw proberen"
-      ],
-      "Loading verification": [
-        "Verificatie laden"
-      ],
-      "Select plan": [
-        "Selecteer abonnement"
-      ],
-      "Compare all features": [
-        "Alle functies vergelijken"
-      ],
-      "${ boldSave } by switching to annual billing": [
-        "${ boldSave } door over te schakelen naar jaarlijkse betaling"
-      ],
-      "Pay": [
-        "Betalen"
-      ],
-      "Open ${ CALENDAR_APP_NAME } settings": [
-        "Open ${ CALENDAR_APP_NAME }-instellingen"
-      ],
-      "Remove gift code": [
-        "Cadeaucode verwijderen"
-      ],
-      "annual billing": [
-        "jaarlijkse betaling"
-      ],
-      "Compare plans": [
-        "Vergelijk abonnementen"
-      ],
-      "Decrease": [
-        "Verlagen"
-      ],
-      "Increase": [
-        "Verhogen"
-      ],
-      "Preview": [
-        "Voorbeeld"
-      ],
-      "Create label": [
-        "Label aanmaken"
-      ],
-      "Create folder": [
-        "Map aanmaken"
-      ],
-      "Remove this label": [
-        "Label verwijderen"
-      ],
-      "Add condition": [
-        "Voorwaarde toevoegen"
-      ],
-      "label emails as": [
-        "e-mail labellen als"
-      ],
-      "move emails to": [
-        "e-mails verplaatsen naar"
-      ],
-      "mark emails as": [
-        "e-mails markeren als"
-      ],
-      "send auto-reply email": [
-        "automatisch antwoord versturen"
-      ],
-      "Yes, I'll attend": [
-        "Ja, ik zal aanwezig zijn"
-      ],
-      "Maybe I'll attend": [
-        "Misschien zal ik aanwezig zijn"
-      ],
-      "No, I won't attend": [
-        "Nee, ik zal niet aanwezig zijn"
-      ],
-      "Yes": [
-        "Ja"
-      ],
-      "Maybe": [
-        "Misschien"
-      ],
-      "No": [
-        "Nee"
-      ],
-      "Add to ${ CALENDAR_APP_NAME }": [
-        "Toevoegen aan ${ CALENDAR_APP_NAME }"
-      ],
-      "Send anyway": [
-        "Toch verzenden"
-      ],
-      "Got it": [
-        "Begrepen"
-      ],
-      "Maximize composer": [
-        "Opstelvenster maximaliseren"
-      ],
-      "Minimize composer": [
-        "Opstelvenster minimaliseren"
-      ],
-      "Contract composer": [
-        "Opstelvenster verkleinen"
-      ],
-      "Expand composer": [
-        "Opstelvenster vergroten"
-      ],
-      "Close composer": [
-        "Opstelvenster sluiten"
-      ],
-      "Trust key": [
-        "Sleutel vertrouwen",
-        "Vertrouwde sleutels"
-      ],
-      "Copy address": [
-        "Adres kopiëren"
-      ],
-      "Edit address": [
-        "Adres bewerken"
-      ],
-      "View contact details": [
-        "Contactdetails bekijken"
-      ],
-      "Copy addresses": [
-        "Adressen kopiëren"
-      ],
-      "View recipients": [
-        "Ontvangers bekijken"
-      ],
-      "Carbon Copy, Blind Carbon Copy": [
-        "CC, BCC"
-      ],
-      "CC, BCC": [
-        "CC, BCC"
-      ],
-      "Send": [
-        "Verstuur"
-      ],
-      "Attachment": [
-        "Bijlage"
-      ],
-      "Inline": [
-        "Inline"
-      ],
-      "Cancel action": [
-        "Annuleer actie"
-      ],
-      "Loading${ ellipsis }": [
-        "Laden${ ellipsis }"
-      ],
-      "Saving${ _ellipsis }": [
-        "Opslaan${ _ellipsis }"
-      ],
-      "Not saved": [
-        "Niet opgeslagen"
-      ],
-      "Schedule send": [
-        ""
-      ],
-      "Expiration time": [
-        "Vervaltijd"
-      ],
-      "Encryption": [
-        "Versleuteling"
-      ],
-      "Delete draft": [
-        "Concept verwijderen"
-      ],
-      "Set": [
-        "Instellen"
-      ],
-      "Schedule message": [
-        ""
-      ],
-      "Print": [
-        "Afdrukken"
-      ],
-      "Address options": [
-        "Adresinstellingen"
-      ],
-      "New message": [
-        "Nieuw bericht"
-      ],
-      "Trust Public Key": [
-        "Vertrouw openbare sleutel"
-      ],
-      "Filter on...": [
-        "Filteren op..."
-      ],
-      "Move to...": [
-        "Verplaats naar..."
-      ],
-      "Label as...": [
-        "Labelen als..."
-      ],
-      "Mark as unread": [
-        "Markeren als ongelezen"
-      ],
-      "Move to spam": [
-        "Naar spam verplaatsen"
-      ],
-      "Report phishing": [
-        "Phishing rapporteren"
-      ],
-      "View source code": [
-        "Bekijk broncode"
-      ],
-      "View rendered HTML": [
-        "Bekijk gerenderde HTML"
-      ],
-      "View headers": [
-        "Headers bekijken"
-      ],
-      "Hide details": [
-        "Verberg details"
-      ],
-      "Show details": [
-        "Details tonen"
-      ],
-      "Custom filter": [
-        "Aangepaste filter"
-      ],
-      "Move to": [
-        "Verplaatsen naar"
-      ],
-      "Label as": [
-        "Labellen als"
-      ],
-      "Load": [
-        "Laden"
-      ],
-      "This message contains remote content.": [
-        "Dit bericht bevat externe inhoud."
-      ],
-      "This message contains embedded images.": [
-        "Dit bericht bevat ingebedde afbeeldingen."
-      ],
-      "Unsubscribe": [
-        "Afmelden"
-      ],
-      "Unsubscribing": [
-        "Afmelden"
-      ],
-      "Mark legitimate": [
-        "Markeren als legitiem"
-      ],
-      "Send receipt": [
-        "Ontvangstbewijs versturen"
-      ],
-      "Accept": [
-        "Accepteren"
-      ],
-      "Show": [
-        "Tonen"
-      ],
-      "Show less": [
-        ""
-      ],
-      "Never show": [
-        "Nooit tonen"
-      ],
-      "View keys": [
-        "Bekijk toetsen"
-      ],
-      "Edit draft": [
-        ""
-      ],
-      "Download ${ attachmentName }": [
-        "Download ${ attachmentName }"
-      ],
-      "Preview ${ attachmentName }": [
-        "Bekijk ${ attachmentName }"
-      ],
-      "Remove ${ attachmentName }": [
-        "Verwijder ${ attachmentName }"
-      ],
-      "Hide attachment details": [
-        "Bijlagedetails verbergen"
-      ],
-      "Show attachment details": [
-        "Bijlagedetails weergeven"
-      ],
-      "Hide": [
-        "Verbergen"
-      ],
-      "Learn more": [
-        "Meer informatie"
-      ],
-      "Undo": [
-        "Ongedaan maken"
-      ],
-      "View message": [
-        ""
-      ],
-      "Enable": [
-        "Inschakelen"
-      ],
-      "Search message content": [
-        "Doorzoek berichtinhoud"
-      ],
-      "Activate": [
-        "Activeren"
-      ],
-      "Resume": [
-        "Hervatten"
-      ],
-      "Pause": [
-        "Pauzeer"
-      ],
-      "Show less search options": [
-        "Minder zoekopties weergeven"
-      ],
-      "Show more search options": [
-        "Meer zoekopties weergeven"
-      ],
-      "Less search options": [
-        ""
-      ],
-      "More search options": [
-        ""
-      ],
-      "Advanced search": [
-        "Uitgebreid zoeken"
-      ],
-      "Clear browser data": [
-        ""
-      ],
-      "Mark as read": [
-        "Markeer als gelezen"
-      ],
-      "Delete permanently": [
-        "Permanent verwijderen"
-      ],
-      "Move to inbox": [
-        "Naar Postvak IN verplaatsen"
-      ],
-      "Move to archive": [
-        "Naar archief verplaatsen"
-      ],
-      "Move to inbox (not spam)": [
-        "Verplaatsen naar inbox (geen spam)"
-      ],
-      "Move to trash": [
-        "Naar prullenbak verplaatsen"
-      ],
-      "Delete all": [
-        "Alles verwijderen"
-      ],
-      "Deselect all messages": [
-        "Alle berichten deselecteren"
-      ],
-      "Select all messages": [
-        "Alle berichten selecteren"
-      ],
-      "Select All": [
-        "Alles selecteren"
-      ],
-      "All Read": [
-        "Alle gelezen"
-      ],
-      "All Unread": [
-        "Alle ongelezen"
-      ],
-      "All Starred": [
-        "Berichten met ster"
-      ],
-      "All Unstarred": [
-        "Berichten zonder ster"
-      ],
-      "Load more": [
-        "Laad meer"
-      ],
-      "Previous page": [
-        "Vorige pagina"
-      ],
-      "Change page": [
-        "Pagina veranderen"
-      ],
-      "Page ${ pageNumber }": [
-        "Pagina ${ pageNumber }"
-      ],
-      "Next page": [
-        "Volgende pagina"
-      ],
-      "Previous conversation": [
-        "Vorig gesprek"
-      ],
-      "Previous message": [
-        "Vorig bericht"
-      ],
-      "Next conversation": [
-        "Volgend gesprek"
-      ],
-      "Next message": [
-        "Volgend bericht"
-      ],
-      "Show messages": [
-        "Toon berichten"
-      ],
-      "Hide messages": [
-        "Verberg berichten"
-      ],
-      "Create new message": [
-        ""
-      ],
-      "Open shop": [
-        ""
-      ],
-      "Open calendar": [
-        "Agenda openen"
-      ],
-      "Import messages": [
-        "Berichten importeren"
-      ],
-      "Deselect": [
-        "Deselecteren"
-      ],
-      "Start using ${ appName }": [
-        "Begin met ${ appName }"
-      ]
-    },
-    "Title": {
-      "Open actions dropdown": [
-        "Open dropdown-menu voor acties"
-      ],
-      "Expand content": [
-        "Inhoud uitvouwen"
-      ],
-      "Link confirmation": [
-        "Link bevestigen"
-      ],
-      "Keyboard Shortcuts": [
-        "Sneltoetsen"
-      ],
-      "What's new": [
-        "Wat is er nieuw"
-      ],
-      "Sign in again to continue": [
-        "Log opnieuw in om door te gaan"
-      ],
-      "Account suspended": [
-        "Account opgeschort"
-      ],
-      "Enter your username or ProtonMail email address": [
-        "Vul uw gebruikersnaam of ProtonMail e-mailadres in"
-      ],
-      "Enter your password": [
-        "Voer uw wachtwoord in"
-      ],
-      "Invalid verification code": [
-        "De ingevoerde code is ongeldig"
-      ],
-      "Human verification": [
-        "Persoonsverificatie"
-      ],
-      "Upgrade required": [
-        "Upgrade vereist"
-      ],
-      "Delete ${ Name }": [
-        "Verwijder ${ Name }"
-      ],
-      "Delete ${ count } contact group": [
-        "${ count } contactgroep verwijderen",
-        "${ count } contactgroepen verwijderen"
-      ],
-      "Edit contact group": [
-        "Contactgroep bewerken"
-      ],
-      "Create new group": [
-        "Nieuwe groep aanmaken"
-      ],
-      "${ emailsCount } member": [
-        "${ emailsCount } lid",
-        "${ emailsCount } leden"
-      ],
-      "Edit image": [
-        "Afbeelding bewerken"
-      ],
-      "Add to ${ groupName }": [
-        "Toevoegen aan ${ groupName }"
-      ],
-      "Add to ${ groupCount } group": [
-        "Toevoegen aan ${ groupCount } groep",
-        "Toevoegen aan ${ groupCount } groepen"
-      ],
-      "Edit contact": [
-        "Contactpersoon bewerken"
-      ],
-      "Create contact": [
-        "Contact aanmaken"
-      ],
-      "Insert contacts": [
-        "Contacten invoegen"
-      ],
-      "Delete ${ count } contact": [
-        "Verwijder ${ count } contact",
-        "${ count } contacten verwijderen"
-      ],
-      "Clearing data": [
-        "Data aan het wissen"
-      ],
-      "Warning": [
-        "Waarschuwing"
-      ],
-      "Recover data": [
-        "Gegevens herstellen"
-      ],
-      "Re-signing contacts": [
-        "Contacten opnieuw ondertekenen"
-      ],
-      "Re-sign all contacts": [
-        "Alle contacten opnieuw ondertekenen"
-      ],
-      "Email settings (${ emailAddress })": [
-        "E-mailinstellingen voor (${ emailAddress })"
-      ],
-      "Exporting contacts": [
-        "Contacten worden geëxporteerd"
-      ],
-      "Contact group": [
-        "Contactgroep"
-      ],
-      "Other names": [
-        "Andere namen"
-      ],
-      "Email addresses": [
-        "E-mailadressen"
-      ],
-      "Phone numbers": [
-        "Telefoonnummers"
-      ],
-      "Addresses": [
-        "Adressen"
-      ],
-      "Other information": [
-        "Andere informatie"
-      ],
-      "Email settings": [
-        "E-mailinstellingen"
-      ],
-      "Contact Details": [
-        "Contactgegevens"
-      ],
-      "Merging contacts": [
-        "Contacten worden samengevoegd"
-      ],
-      "Merge contacts": [
-        "Contacten samenvoegen"
-      ],
-      "Deleting contacts": [
-        "Contacten aan het verwijderen"
-      ],
-      "View contacts": [
-        "Contacten weergeven"
-      ],
-      "Contacts": [
-        "Contacten"
-      ],
-      "Groups": [
-        "Groepen"
-      ],
-      "Settings": [
-        "Instellingen"
-      ],
-      "Select action to take on contact group": [
-        "Selecteer actie voor de contactgroep"
-      ],
-      "Add contact group name": [
-        "Naam contactgroep toevoegen"
-      ],
-      "Select contact group": [
-        "Contactgroep selecteren"
-      ],
-      "Import groups": [
-        "Importeer groepen"
-      ],
-      "Import contacts": [
-        "Contactpersonen importeren"
-      ],
-      "Select a theme": [
-        "Selecteer een thema"
-      ],
-      "Start import process": [
-        "Importproces starten"
-      ],
-      "Import in progress": [
-        "Bezig met importeren"
-      ],
-      "Report a problem": [
-        "Meld een probleem"
-      ],
-      "${ appName } Keyboard Shortcuts": [
-        "${ appName } Sneltoetsen"
-      ],
-      "Mailbox density": [
-        "Mailbox dichtheid"
-      ],
-      "Mailbox layout": [
-        "Mailbox layout"
-      ],
-      "Composer mode": [
-        "Opstelmodus"
-      ],
-      "Open help menu": [
-        "Open helpmenu"
-      ],
-      "Back": [
-        "Terug"
-      ],
-      "Open settings menu": [
-        "Open instellingenmenu"
-      ],
-      "Confirm loss of Proton bonuses": [
-        "Bevestig verlies van Proton bonussen"
-      ],
-      "Unsupported browser": [
-        "Niet-ondersteunde browser"
-      ],
-      "Card verification": [
-        "Kaartverificatie"
-      ],
-      "Payment verification": [
-        "Betalingsverificatie"
-      ],
-      "Processing...": [
-        "Wordt verwerkt..."
-      ],
-      "Card verification in progress": [
-        "Kaartverificatie in uitvoering"
-      ],
-      "Payment verification in progress": [
-        "Betalingsverzoek bezig"
-      ],
-      "PayPal verification failed": [
-        "PayPal verificatie mislukt"
-      ],
-      "3-D Secure verification failed": [
-        "3-D Secure verificatie mislukt"
-      ],
-      "Error": [
-        "Fout"
-      ],
-      "ZIP / postal code": [
-        "Postcode"
-      ],
-      "Payment details": [
-        "Betalingsgegevens"
-      ],
-      "Currency": [
-        "Valuta"
-      ],
-      "Billing cycle": [
-        "Factuurperiode"
-      ],
-      "Current plan": [
-        "Huidig abonnement"
-      ],
-      "Processing": [
-        "Verwerken"
-      ],
-      "Apply gift code": [
-        "Geschenkcode toepassen"
-      ],
-      "Subtotal": [
-        "Subtotaal"
-      ],
-      "Coupon discount": [
-        "Couponkorting"
-      ],
-      "Total (monthly)": [
-        "Totaal (maandelijks)"
-      ],
-      "Credits": [
-        "Credits"
-      ],
-      "Gift code": [
-        "Geschenkcode"
-      ],
-      "Amount due": [
-        "Verschuldigd bedrag"
-      ],
-      "Cancel subscription": [
-        "Abonnement opzeggen"
-      ],
-      "Network error": [
-        "Netwerkfout"
-      ],
-      "Select a plan": [
-        "Selecteer een abonnement"
-      ],
-      "Customize your plan": [
-        "Abonnement aanpassen"
-      ],
-      "Checkout": [
-        "Naar de kassa"
-      ],
-      "Plan summary": [
-        "Samenvatting abonnement"
-      ],
-      "${ appName } customization": [
-        "${ appName } aanpassingen"
-      ],
-      "Beta Access": [
-        "Bèta toegang"
-      ],
-      "Edit filter": [
-        "Filter bewerken"
-      ],
-      "Add filter": [
-        "Filter toevoegen"
-      ],
-      "Are you sure you want to close?": [
-        "Weet u zeker dat u wil afsluiten?"
-      ],
-      "Change my answer": [
-        "Mijn antwoord wijzigen"
-      ],
-      "Image": [
-        "Afbeelding"
-      ],
-      "Sending notice": [
-        "Melding versturen"
-      ],
-      "Storage capacity warning": [
-        "Waarschuwing voor opslagruimte"
-      ],
-      "Sending original message": [
-        "Oorspronkelijk bericht wordt verzonden"
-      ],
-      "No recipient": [
-        "Geen ontvanger"
-      ],
-      "Message without subject?": [
-        "Versturen zonder onderwerp?"
-      ],
-      "No attachment found": [
-        ""
-      ],
-      "Re-sign contact": [
-        "Contact opnieuw ondertekenen"
-      ],
-      "Verification error": [
-        "Verificatiefout"
-      ],
-      "Decryption error": [
-        "Ontsleutelingsfout"
-      ],
-      "Delete draft": [
-        "Concept verwijderen"
-      ],
-      "Delete ${ count } draft": [
-        "Verwijder ${ count } concept",
-        "${ count } concepten verwijderen"
-      ],
-      "Delete message": [
-        "Bericht verwijderen"
-      ],
-      "Delete conversation": [
-        "Gesprek verwijderen"
-      ],
-      "Delete ${ count } conversation": [
-        "${ count } conversatie verwijderen",
-        "${ count } conversaties verwijderen"
-      ],
-      "Delete ${ count } message": [
-        "${ count } bericht verwijderen",
-        "Verwijder ${ count } berichten"
-      ],
-      "Delete all messages": [
-        "Alle berichten verwijderen"
-      ],
-      "Trust new key?": [
-        "Nieuwe sleutel vertrouwen?",
-        "Nieuwe sleutels vertrouwen?"
-      ],
-      "Add contacts": [
-        "Contactpersonen toevoegen"
-      ],
-      "To": [
-        "Aan"
-      ],
-      "CC": [
-        "CC"
-      ],
-      "BCC": [
-        "BCC"
-      ],
-      "Carbon Copy": [
-        "CC"
-      ],
-      "Blind Carbon Copy": [
-        "BCC"
-      ],
-      "Sending error": [
-        ""
-      ],
-      "Confirm recipient address?": [
-        "Adres van ontvanger bevestigen?"
-      ],
-      "Send without expiration?": [
-        "Versturen zonder verlooptijd?"
-      ],
-      "Send with changed preferences?": [
-        "Versturen met gewijzigde voorkeuren?"
-      ],
-      "Attachments": [
-        "Bijlagen"
-      ],
-      "Expiration time": [
-        "Vervaltijd"
-      ],
-      "Encryption": [
-        "Versleuteling"
-      ],
-      "Send email": [
-        "E-mail verzenden"
-      ],
-      "Schedule send": [
-        ""
-      ],
-      "New message": [
-        "Nieuw bericht"
-      ],
-      "Trust public key?": [
-        "Publieke sleutel vertrouwen?"
-      ],
-      "All recipients were added to the BCC field and cannot be disclosed": [
-        "Alle ontvangers zijn toegevoegd aan het BCC-veld en kunnen niet worden vrijgegeven"
-      ],
-      "Move to inbox (not spam)": [
-        "Verplaatsen naar inbox (geen spam)"
-      ],
-      "Mark as unread": [
-        "Markeren als ongelezen"
-      ],
-      "Move to inbox": [
-        "Verplaats naar inbox"
-      ],
-      "Move to trash": [
-        "Naar prullenbak verplaatsen"
-      ],
-      "More": [
-        "Meer"
-      ],
-      "More options": [
-        "Meer opties"
-      ],
-      "Reply": [
-        "Beantwoorden"
-      ],
-      "Reply all": [
-        "Allen beantwoorden"
-      ],
-      "Forward": [
-        "Doorsturen"
-      ],
-      "Filter on": [
-        "Filteren op"
-      ],
-      "Move to": [
-        "Verplaats naar"
-      ],
-      "Label as": [
-        "Labellen als"
-      ],
-      "Load remote content": [
-        "Externe inhoud laden"
-      ],
-      "Load embedded images": [
-        "Ingesloten afbeeldingen laden"
-      ],
-      "Unsubscribe": [
-        "Afmelden"
-      ],
-      "Mark email as legitimate": [
-        "E-mail als legitiem markeren"
-      ],
-      "Trust pinned keys?": [
-        "Vastgezette sleutels vertrouwen?"
-      ],
-      "Enable message content search": [
-        ""
-      ],
-      "Create a new folder": [
-        "Nieuwe map aanmaken"
-      ],
-      "Create a new label": [
-        "Nieuwe label maken"
-      ],
-      "More selections": [
-        "Meer selecties"
-      ],
-      "Previous conversation": [
-        "Vorig gesprek"
-      ],
-      "Previous message": [
-        "Vorig bericht"
-      ],
-      "Next conversation": [
-        "Volgend gesprek"
-      ],
-      "Next message": [
-        "Volgend bericht"
-      ],
-      "Sort conversations": [
-        "Gesprekken sorteren"
-      ],
-      "Sort messages": [
-        "Berichten sorteren"
-      ],
-      "Create folder": [
-        "Map maken"
-      ],
-      "Create label": [
-        "Label maken"
-      ],
-      "Conversation list": [
-        "Gesprekslijst"
-      ],
-      "Message list": [
-        "Berichtenlijst"
-      ],
-      "Welcome ${ userName }": [
-        "Welkom ${ userName }"
-      ],
-      "Welcome": [
-        "Welkom"
-      ]
-    },
-    "Placeholder": {
-      "Link": [
-        "Link"
-      ],
-      "Fill in the URL link and text to test your link": [
-        "Vul de URL en weergegeven tekst in om uw link te testen"
-      ],
-      "Email address": [
-        "E-mailadres"
-      ],
-      "Fill in the email address and text to test your link": [
-        "Vul het e-mailadres en de tekst in om uw link te testen"
-      ],
-      "Phone number": [
-        "Telefoonnummer"
-      ],
-      "Fill in the phone number and text to test your link": [
-        "Vul het telefoonnummer en weergegeven tekst in om uw link te testen"
-      ],
-      "Text": [
-        "Tekst"
-      ],
-      "E.g., ": [
-        "Bijv., "
-      ],
-      "Mailbox password": [
-        "Mailboxwachtwoord"
-      ],
-      "Start typing an email address": [
-        "Voer een e-mailadres in"
-      ],
-      "Image URL": [
-        "Afbeeldings-URL"
-      ],
-      "Search name, email or group": [
-        "Zoek op naam, e-mailadres of groep"
-      ],
-      "Filter groups": [
-        "Filter groepen"
-      ],
-      "Search for name or email": [
-        "Naam of e-mailadres zoeken"
-      ],
-      "Search for group name": [
-        "Zoeken naar groepsnaam"
-      ],
-      "Name": [
-        "Naam"
-      ],
-      "OS name": [
-        "Naam besturingssysteem"
-      ],
-      "OS version": [
-        "Versie besturingssysteem"
-      ],
-      "Proton username": [
-        "Proton gebruikersnaam"
-      ],
-      "A way to contact you": [
-        "Een manier om u te contacteren"
-      ],
-      "Please describe the problem and include any error messages": [
-        "Beschrijf het probleem alstublieft en vermeld ook eventuele foutmeldingen"
-      ],
-      "Browser name": [
-        "Naam browser"
-      ],
-      "Browser version": [
-        "Browserversie"
-      ],
-      "e.g. Julia Smith": [
-        "bijv. Julia Smith"
-      ],
-      "ZIP": [
-        "Postcode"
-      ],
-      "Postal code": [
-        "Postcode"
-      ],
-      "Gift code": [
-        "Geschenkcode"
-      ],
-      "Type text or keyword": [
-        "Voer tekst of trefwoord in"
-      ],
-      "Subject": [
-        "Onderwerp"
-      ],
-      "Write your message": [
-        "Schrijf uw bericht"
-      ],
-      "Password": [
-        "Wachtwoord"
-      ],
-      "Confirm Password": [
-        "Wachtwoord bevestigen"
-      ],
-      "Hint": [
-        "Hint"
-      ],
-      "Search Messages": [
-        ""
-      ],
-      "Start date": [
-        "Begindatum"
-      ],
-      "End date": [
-        "Einddatum"
-      ],
-      "Name or email address": [
-        "Naam of e-mailadres"
-      ],
-      "Search messages": [
-        "Zoek berichten"
-      ],
-      "Filter folders": [
-        "Filter mappen"
-      ],
-      "Filter labels": [
-        "Filter op labels"
-      ]
-    },
-    "Font Face Default": {
-      "Default": [
-        ""
-      ]
-    },
-    "Font Size Default": {
-      "Default": [
+      "${ numberOfTrackers } email tracker found": [
+        "",
         ""
       ]
     },
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "Sleutel kan niet worden gebruikt voor versleuteling"
-      ]
-    },
-    "Link": {
-      "Learn more": [
-        "Meer informatie"
-      ],
-      "Request an invite": [
-        "Uitnodiging aanvragen"
-      ],
-      "clearing your browser cache": [
-        "browsercache legen"
-      ],
-      "Pay invoice": [
-        "Factuur betalen"
-      ],
-      "Upgrade account": [
-        "Account upgraden"
-      ],
-      "Upgrade": [
-        "Upgraden"
-      ],
-      "Go to subscription plans": [
-        "Ga naar abonnementsplannen"
-      ],
-      "click here": [
-        "klik hier"
-      ],
-      "Add a gift code": [
-        "Voeg een geschenkcode toe"
-      ],
-      "You need to activate your calendar keys to add this event": [
-        ""
-      ],
-      "You need to activate your calendar keys to manage this invitation": [
-        "U moet uw agendasleutels activeren om deze uitnodiging te beheren"
-      ],
-      "You need to activate your calendar keys to answer this invitation": [
-        "U moet uw agendasleutels activeren om deze uitnodiging te beantwoorden"
-      ],
-      "You need to activate your calendar keys to see the updated event": [
-        "U moet uw agendasleutels activeren om de bijgewerkte afspraak te zien"
-      ],
-      "You need to activate your calendar keys to see the updated invitation": [
-        "U moet uw agendasleutels activeren om de bijgewerkte uitnodiging te zien"
-      ],
-      "This ICS file contains more than one event. Please download it and import the events in ${ calendarAppName }": [
-        ""
-      ],
-      "You need to reactivate your keys to manage this invitation": [
-        "U moet uw sleutels opnieuw activeren om deze uitnodiging te beheren"
-      ],
-      "You need to reactivate your keys to see the updated event": [
-        "U moet uw sleutels opnieuw activeren om de bijgewerkte gebeurtenis te zien"
-      ],
-      "You need to reactivate your keys to see the updated invitation": [
-        "U moet uw sleutels opnieuw activeren om de bijgewerkte uitnodiging te zien"
-      ],
-      "Create a new calendar to add this event": [
-        ""
-      ],
-      "Create a new calendar to answer this invitation": [
-        "Maak een nieuwe agenda om deze uitnodiging te beantwoorden"
-      ],
-      "Create a new calendar to manage your invitations": [
-        "Maak een nieuwe kalender om uw uitnodigingen te beheren"
-      ],
-      "Open updated event in ${ calendarAppName }": [
-        "Open de bijgewerkte afspraak in ${ calendarAppName }"
-      ],
-      "Open in ${ calendarAppName }": [
-        "Open in ${ calendarAppName }"
-      ],
-      "Inbox": [
-        "Inbox"
-      ],
-      "Drafts": [
-        "Concepten"
-      ],
-      "Sent": [
-        "Verzonden"
-      ],
-      "Trash": [
-        "Prullenbak"
-      ],
-      "Spam": [
-        "Spam"
-      ],
-      "All mail": [
-        "Alle e-mail"
-      ],
-      "Archive": [
-        "Archiveren"
-      ],
-      "Starred": [
-        "Met ster"
-      ],
-      "Outbox": [
-        "Postvak UIT"
-      ],
-      "Scheduled": [
-        "Gepland"
-      ],
-      "Re-enable the address linked to this calendar to manage your invitation.": [
-        "Schakel het adres gekoppeld aan deze kalender opnieuw in om uw uitnodiging te beheren."
-      ],
-      "Re-enable the address linked to this calendar to update your invitation.": [
-        "Schakel het adres gekoppeld aan deze kalender opnieuw in om uw uitnodiging bij te werken."
-      ],
-      "Enable your address to answer this invitation.": [
-        "Schakel uw adres in om deze uitnodiging te beantwoorden."
-      ],
-      "Create a calendar linked to an active email address.": [
-        "Maak en koppel een agenda aan een actief e-mailadres."
-      ],
-      "Enable an email address linked to one of your calendars.": [
-        "Schakel een e-mailadres gekoppeld aan een van uw agenda's in."
-      ],
-      "Or you can delete one of your calendars and create a new one linked to an active email address.": [
-        "Of u kunt een van uw agenda's verwijderen en een nieuwe aanmaken die gekoppeld is aan een actief e-mailadres."
-      ],
-      "Enable your address again to modify your answer.": [
-        "Schakel uw adres opnieuw in om uw antwoord te wijzigen."
-      ],
-      "Enable the email address linked to the disabled calendar to cancel the event.": [
-        "Schakel het e-mailadres in dat gekoppeld is aan de uitgeschakelde agenda om de afspraak te annuleren."
-      ],
-      "Enable the email address linked to the disabled calendar to modify your answer.": [
-        "Schakel het e-mailadres in dat gekoppeld is aan de uitgeschakelde agenda om uw antwoord aan te passen."
-      ],
-      "Add folder": [
-        "Map toevoegen"
-      ],
-      "Add label": [
-        "Label toevoegen"
-      ],
-      "Folders": [
-        "Mappen"
-      ],
-      "Manage your folders": [
-        "Mappen beheren"
-      ],
-      "Labels": [
-        "Labels"
-      ],
-      "Manage your labels": [
-        "Labels beheren"
       ]
     },
     "Label": {
@@ -4638,8 +3367,8 @@
       "Keyword": [
         "Trefwoord"
       ],
-      "Location": [
-        "Locatie"
+      "Search in": [
+        ""
       ],
       "From": [
         "Van"
@@ -4658,6 +3387,128 @@
       ],
       "Also archive": [
         "Ook archiveren"
+      ]
+    },
+    "Placeholder": {
+      "E.g., ": [
+        "Bijv., "
+      ],
+      "Link": [
+        "Link"
+      ],
+      "Fill in the URL link and text to test your link": [
+        "Vul de URL en weergegeven tekst in om uw link te testen"
+      ],
+      "Email address": [
+        "E-mailadres"
+      ],
+      "Fill in the email address and text to test your link": [
+        "Vul het e-mailadres en de tekst in om uw link te testen"
+      ],
+      "Phone number": [
+        "Telefoonnummer"
+      ],
+      "Fill in the phone number and text to test your link": [
+        "Vul het telefoonnummer en weergegeven tekst in om uw link te testen"
+      ],
+      "Text": [
+        "Tekst"
+      ],
+      "Mailbox password": [
+        "Mailboxwachtwoord"
+      ],
+      "Start typing an email address": [
+        "Voer een e-mailadres in"
+      ],
+      "Image URL": [
+        "Afbeeldings-URL"
+      ],
+      "Search name, email or group": [
+        "Zoek op naam, e-mailadres of groep"
+      ],
+      "Filter groups": [
+        "Filter groepen"
+      ],
+      "Search for name or email": [
+        "Naam of e-mailadres zoeken"
+      ],
+      "Search for group name": [
+        "Zoeken naar groepsnaam"
+      ],
+      "Name": [
+        "Naam"
+      ],
+      "OS name": [
+        "Naam besturingssysteem"
+      ],
+      "OS version": [
+        "Versie besturingssysteem"
+      ],
+      "Proton username": [
+        "Proton gebruikersnaam"
+      ],
+      "A way to contact you": [
+        "Een manier om u te contacteren"
+      ],
+      "Please describe the problem and include any error messages": [
+        "Beschrijf het probleem alstublieft en vermeld ook eventuele foutmeldingen"
+      ],
+      "Browser name": [
+        "Naam browser"
+      ],
+      "Browser version": [
+        "Browserversie"
+      ],
+      "e.g. Julia Smith": [
+        "bijv. Julia Smith"
+      ],
+      "ZIP": [
+        "Postcode"
+      ],
+      "Postal code": [
+        "Postcode"
+      ],
+      "Gift code": [
+        "Geschenkcode"
+      ],
+      "Type text or keyword": [
+        "Voer tekst of trefwoord in"
+      ],
+      "Subject": [
+        "Onderwerp"
+      ],
+      "Write your message": [
+        "Schrijf uw bericht"
+      ],
+      "Password": [
+        "Wachtwoord"
+      ],
+      "Confirm Password": [
+        "Wachtwoord bevestigen"
+      ],
+      "Hint": [
+        "Hint"
+      ],
+      "Search Messages": [
+        ""
+      ],
+      "Start date": [
+        "Begindatum"
+      ],
+      "End date": [
+        "Einddatum"
+      ],
+      "Name or email address": [
+        "Naam of e-mailadres"
+      ],
+      "Search messages": [
+        "Zoek berichten"
+      ],
+      "Filter folders": [
+        "Filter mappen"
+      ],
+      "Filter labels": [
+        "Filter op labels"
       ]
     },
     "Time unit": {
@@ -4684,6 +3535,162 @@
       "${ secondsCountLeft } second": [
         "${ secondsCountLeft } seconde",
         "${ secondsCountLeft } seconden"
+      ]
+    },
+    "Link": {
+      "Learn more": [
+        "Meer informatie"
+      ],
+      "Request an invite": [
+        "Uitnodiging aanvragen"
+      ],
+      "clearing your browser cache": [
+        "browsercache legen"
+      ],
+      "Pay invoice": [
+        "Factuur betalen"
+      ],
+      "Upgrade account": [
+        "Account upgraden"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ],
+      "Go to subscription plans": [
+        "Ga naar abonnementsplannen"
+      ],
+      "click here": [
+        "klik hier"
+      ],
+      "Add a gift code": [
+        "Voeg een geschenkcode toe"
+      ],
+      "Inbox": [
+        "Inbox"
+      ],
+      "Drafts": [
+        "Concepten"
+      ],
+      "Sent": [
+        "Verzonden"
+      ],
+      "Trash": [
+        "Prullenbak"
+      ],
+      "Spam": [
+        "Spam"
+      ],
+      "All mail": [
+        "Alle e-mail"
+      ],
+      "Archive": [
+        "Archiveren"
+      ],
+      "Starred": [
+        "Met ster"
+      ],
+      "Outbox": [
+        "Postvak UIT"
+      ],
+      "Scheduled": [
+        "Gepland"
+      ],
+      "You need to activate your calendar keys to add this event": [
+        ""
+      ],
+      "You need to activate your calendar keys to manage this invitation": [
+        "U moet uw agendasleutels activeren om deze uitnodiging te beheren"
+      ],
+      "You need to activate your calendar keys to answer this invitation": [
+        "U moet uw agendasleutels activeren om deze uitnodiging te beantwoorden"
+      ],
+      "You need to activate your calendar keys to see the updated event": [
+        "U moet uw agendasleutels activeren om de bijgewerkte afspraak te zien"
+      ],
+      "You need to activate your calendar keys to see the updated invitation": [
+        "U moet uw agendasleutels activeren om de bijgewerkte uitnodiging te zien"
+      ],
+      "This ICS file contains more than one event. Please download it and import the events in ${ calendarAppName }": [
+        ""
+      ],
+      "You need to reactivate your keys to manage this invitation": [
+        "U moet uw sleutels opnieuw activeren om deze uitnodiging te beheren"
+      ],
+      "You need to reactivate your keys to see the updated event": [
+        "U moet uw sleutels opnieuw activeren om de bijgewerkte gebeurtenis te zien"
+      ],
+      "You need to reactivate your keys to see the updated invitation": [
+        "U moet uw sleutels opnieuw activeren om de bijgewerkte uitnodiging te zien"
+      ],
+      "Create a new calendar to add this event": [
+        ""
+      ],
+      "Create a new calendar to answer this invitation": [
+        "Maak een nieuwe agenda om deze uitnodiging te beantwoorden"
+      ],
+      "Create a new calendar to manage your invitations": [
+        "Maak een nieuwe kalender om uw uitnodigingen te beheren"
+      ],
+      "Open updated event in ${ calendarAppName }": [
+        "Open de bijgewerkte afspraak in ${ calendarAppName }"
+      ],
+      "Open in ${ calendarAppName }": [
+        "Open in ${ calendarAppName }"
+      ],
+      "Re-enable the address linked to this calendar to manage your invitation.": [
+        "Schakel het adres gekoppeld aan deze kalender opnieuw in om uw uitnodiging te beheren."
+      ],
+      "Re-enable the address linked to this calendar to update your invitation.": [
+        "Schakel het adres gekoppeld aan deze kalender opnieuw in om uw uitnodiging bij te werken."
+      ],
+      "Enable your address to answer this invitation.": [
+        "Schakel uw adres in om deze uitnodiging te beantwoorden."
+      ],
+      "Create a calendar linked to an active email address.": [
+        "Maak en koppel een agenda aan een actief e-mailadres."
+      ],
+      "Enable an email address linked to one of your calendars.": [
+        "Schakel een e-mailadres gekoppeld aan een van uw agenda's in."
+      ],
+      "Or you can delete one of your calendars and create a new one linked to an active email address.": [
+        "Of u kunt een van uw agenda's verwijderen en een nieuwe aanmaken die gekoppeld is aan een actief e-mailadres."
+      ],
+      "Enable your address again to modify your answer.": [
+        "Schakel uw adres opnieuw in om uw antwoord te wijzigen."
+      ],
+      "Enable the email address linked to the disabled calendar to cancel the event.": [
+        "Schakel het e-mailadres in dat gekoppeld is aan de uitgeschakelde agenda om de afspraak te annuleren."
+      ],
+      "Enable the email address linked to the disabled calendar to modify your answer.": [
+        "Schakel het e-mailadres in dat gekoppeld is aan de uitgeschakelde agenda om uw antwoord aan te passen."
+      ],
+      "Add folder": [
+        "Map toevoegen"
+      ],
+      "Add label": [
+        "Label toevoegen"
+      ],
+      "Folders": [
+        "Mappen"
+      ],
+      "Manage your folders": [
+        "Mappen beheren"
+      ],
+      "Labels": [
+        "Labels"
+      ],
+      "Manage your labels": [
+        "Labels beheren"
+      ]
+    },
+    "Font Face Default": {
+      "Default": [
+        ""
+      ]
+    },
+    "Font Size Default": {
+      "Default": [
+        ""
       ]
     },
     "Hint": {
@@ -4972,6 +3979,30 @@
       ],
       "No verification method available": [
         "Geen verificatiemethode beschikbaar"
+      ]
+    },
+    "Label to change density": {
+      "Comfortable": [
+        "Comfortabel"
+      ],
+      "Compact": [
+        "Compact"
+      ]
+    },
+    "Label to change view layout": {
+      "Column": [
+        "Kolom"
+      ],
+      "Row": [
+        "Rij"
+      ]
+    },
+    "Label to change composer mode": {
+      "Normal": [
+        "Normaal"
+      ],
+      "Maximized": [
+        "Gemaximaliseerd"
       ]
     },
     "Table header": {
@@ -5388,35 +4419,6 @@
         "${ totalImported }/${ totalToImport } contacten versleuteld en toegevoegd aan uw contactenlijst"
       ]
     },
-    "Select files": {
-      "Upload": [
-        "Uploaden"
-      ]
-    },
-    "Label to change density": {
-      "Comfortable": [
-        "Comfortabel"
-      ],
-      "Compact": [
-        "Compact"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "Kolom"
-      ],
-      "Row": [
-        "Rij"
-      ]
-    },
-    "Label to change composer mode": {
-      "Normal": [
-        "Normaal"
-      ],
-      "Maximized": [
-        "Gemaximaliseerd"
-      ]
-    },
     "Loading info": {
       "Connecting to your contacts provider": [
         "Verbinding maken met uw contactpersonen provider"
@@ -5536,11 +4538,11 @@
       "Other category": [
         "Andere categorie"
       ],
-      "Custom folders": [
-        "Aangepaste mappen"
-      ],
       "Default folders": [
         "Standaardmappen"
+      ],
+      "Custom folders": [
+        "Aangepaste mappen"
       ],
       "Labels": [
         "Labels"
@@ -5554,6 +4556,11 @@
     "Label, make it short please": {
       "Attach screenshot(s)": [
         "Schermafdruk(ken) toevoegen"
+      ]
+    },
+    "Select files": {
+      "Upload": [
+        "Uploaden"
       ]
     },
     "Onboarding Proton": {
@@ -6270,6 +5277,1019 @@
         "Met ster"
       ]
     },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "Wachtwoord moet ten minste ${ length } teken bevatten",
+        "Wachtwoord moet ten minste ${ length } tekens bevatten"
+      ]
+    },
+    "file size format": {
+      "bytes": [
+        "bytes"
+      ],
+      "KB": [
+        "KB"
+      ],
+      "MB": [
+        "MB"
+      ],
+      "GB": [
+        "GB"
+      ]
+    },
+    "Contact field label": {
+      "Name": [
+        "Naam"
+      ],
+      "Email": [
+        "E-mailadres"
+      ],
+      "Phone": [
+        "Telefoonnummer"
+      ],
+      "Address": [
+        "Adres"
+      ],
+      "Photo": [
+        "Foto"
+      ],
+      "Organization": [
+        "Organisatie"
+      ],
+      "Birthday": [
+        "Verjaardag"
+      ],
+      "Anniversary": [
+        "Feestdag"
+      ],
+      "Title": [
+        "Titel"
+      ],
+      "Role": [
+        "Rol"
+      ],
+      "Note": [
+        "Notitie"
+      ],
+      "URL": [
+        "Website"
+      ],
+      "Gender": [
+        "Geslacht"
+      ],
+      "Language": [
+        "Taal"
+      ],
+      "Timezone": [
+        "Tijdzone"
+      ],
+      "Geo": [
+        "Plaats"
+      ],
+      "Logo": [
+        "Logo"
+      ],
+      "Member": [
+        "Lid"
+      ]
+    },
+    "Contact type label": {
+      "Work": [
+        "Werk"
+      ],
+      "Personal": [
+        "Persoonlijk"
+      ],
+      "Mobile": [
+        "Mobiel"
+      ],
+      "Main": [
+        "Primair"
+      ],
+      "Yomi": [
+        "Yomi"
+      ],
+      "Other": [
+        "Anders"
+      ],
+      "Fax": [
+        "Fax"
+      ],
+      "Pager": [
+        "Pager"
+      ]
+    },
+    "Property type": {
+      "Email": [
+        "E-mailadres"
+      ],
+      "Home": [
+        "Thuis"
+      ],
+      "Work": [
+        "Werk"
+      ],
+      "Other": [
+        "Anders"
+      ],
+      "Phone": [
+        "Telefoon"
+      ],
+      "Mobile": [
+        "Mobiel"
+      ],
+      "Main": [
+        "Primair"
+      ],
+      "Fax": [
+        "Fax"
+      ],
+      "Pager": [
+        "Pager"
+      ],
+      "Address": [
+        "Adres"
+      ]
+    },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "E-mailadres is niet gevonden in de user id's van verzendsleutel (${ keyUserIds })"
+      ]
+    },
+    "Message": {
+      "Re:": [
+        "Re:"
+      ],
+      "Fw:": [
+        "Fw:"
+      ],
+      "On ${ date }, ${ name } ${ address } wrote:": [
+        "Op ${ date } schreef ${ name } ${ address }:"
+      ]
+    },
+    "Default display name vcard": {
+      "Unknown": [
+        "Onbekend"
+      ]
+    },
+    "Import contact. Contact identifier": {
+      "unknown": [
+        "onbekend"
+      ]
+    },
+    "Error importing contact": {
+      "vCard versions < 3.0 not supported": [
+        "vCard-versies < 3.0 niet ondersteund"
+      ],
+      "Encryption failed": [
+        "Versleutelen is mislukt"
+      ]
+    },
+    "Error importing calendar": {
+      "An unexpected error occurred. Import must be restarted.": [
+        "Er is een onverwachte fout opgetreden. Importeren moet opnieuw gestart worden."
+      ]
+    },
+    "Error importing contacts": {
+      "An error occurred uploading your file. No file has been selected.": [
+        "Fout opgetreden tijdens het uploaden van uw bestand. Er is geen bestand geselecteerd."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. No .csv or .vcf file selected": [
+        "Er is een fout opgetreden tijdens het uploaden van uw bestand ${ formattedFilename }. Geen .csv- of .vcf-bestand geselecteerd"
+      ],
+      "Your file ${ formattedFilename } is empty.": [
+        "Uw bestand ${ formattedFilename } is leeg."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
+        "Er is een fout opgetreden bij het uploaden van uw bestand ${ formattedFilename }. Maximale bestandsgrootte is ${ MAX_IMPORT_FILE_SIZE_STRING }."
+      ],
+      "Your file ${ formattedFilename } has no contacts to be imported.": [
+        "Uw bestand ${ formattedFilename } heeft geen contactpersonen om te importeren."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
+        "Uw bestand ${ formattedFilename } bevat meer dan ${ MAX_IMPORT_CONTACTS_STRING } contacten."
+      ],
+      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
+        "Er is een fout opgetreden tijdens het lezen van uw bestand ${ formattedFilename }. Bestand heeft niet de juiste indeling."
+      ]
+    },
+    "Keyboard shortcut section name": {
+      "Basic navigation": [
+        "Basisnavigatie"
+      ],
+      "Basic actions": [
+        "Basisacties"
+      ],
+      "Folder shortcuts": [
+        "Snelkoppelingenmap"
+      ],
+      "Composer shortcuts": [
+        "Sneltoetsensamensteller"
+      ],
+      "List shortcuts": [
+        "Sneltoetsen weergeven"
+      ],
+      "Action shortcuts": [
+        "Actiesneltoetsen"
+      ],
+      "Message shortcuts": [
+        "Berichtsneltoetsen"
+      ]
+    },
+    "Keyboard shortcut name": {
+      "Move up": [
+        "Verplaats omhoog"
+      ],
+      "Jump to first": [
+        "Spring naar eerste"
+      ],
+      "Move down": [
+        "Beweeg omlaag"
+      ],
+      "Jump to last": [
+        "Spring naar laatste"
+      ],
+      "Move right / expand": [
+        "Verplaats naar rechts / uitbreiden"
+      ],
+      "Move left / collapse": [
+        "Verplaats naar links / inklappen"
+      ],
+      "Apply / open": [
+        "Toepassen / openen"
+      ],
+      "Cancel / close": [
+        "Annuleren / sluiten"
+      ],
+      "Open this modal": [
+        "Open dit hulpvenster"
+      ],
+      "Select / unselect": [
+        "Selecteren / deselecteren"
+      ],
+      "Go to Inbox": [
+        "Ga naar Inbox"
+      ],
+      "Go to Archive": [
+        "Ga naar Archief"
+      ],
+      "Go to Sent": [
+        "Ga naar Verzonden"
+      ],
+      "Go to Starred": [
+        "Ga naar Berichten met ster"
+      ],
+      "Go to Drafts": [
+        "Ga naar Concepten"
+      ],
+      "Go to Trash": [
+        "Ga naar Prullenbak"
+      ],
+      "Go to Spam": [
+        "Ga naar Spam"
+      ],
+      "Go to All Mail": [
+        "Ga naar Alle Berichten"
+      ],
+      "Save draft": [
+        "Concept opslaan"
+      ],
+      "Send email": [
+        "E-mail verzenden"
+      ],
+      "Close draft": [
+        "Concept sluiten"
+      ],
+      "Minimize / maximize composer": [
+        "Minimaliseren / maximaliseren van opstelvenster"
+      ],
+      "Expand / contract composer": [
+        "Uitvouwen / opvouwen opstelvenster"
+      ],
+      "Attach file": [
+        "Bestand toevoegen"
+      ],
+      "Add expiration time": [
+        "Vervaltijd toevoegen"
+      ],
+      "Add encryption": [
+        "Voeg encryptie toe"
+      ],
+      "Discard draft": [
+        "Verwijder concept"
+      ],
+      "Open previous message": [
+        "Open vorig bericht"
+      ],
+      "Open next message": [
+        "Open volgend bericht"
+      ],
+      "Show unread emails": [
+        "Toon ongelezen e-mails"
+      ],
+      "Show all emails": [
+        "Toon alle e-mails"
+      ],
+      "Select / unselect all": [
+        "Selecteer / deselecteer alles"
+      ],
+      "Search": [
+        "Zoek"
+      ],
+      "New message": [
+        "Nieuw bericht"
+      ],
+      "Star": [
+        "Ster"
+      ],
+      "Mark as unread": [
+        "Markeer als ongelezen"
+      ],
+      "Label as...": [
+        "Label als..."
+      ],
+      "Create filter with...": [
+        "Filter maken met..."
+      ],
+      "Move to...": [
+        "Verplaats naar..."
+      ],
+      "Move to Inbox": [
+        "Verplaats naar inbox"
+      ],
+      "Move to Archive": [
+        "Verplaats naar Archief"
+      ],
+      "Move to Spam": [
+        "Verplaats naar Spam"
+      ],
+      "Move to Trash": [
+        "Verplaats naar Prullenbak"
+      ],
+      "Delete permanently": [
+        "Permanent verwijderen"
+      ],
+      "Reply": [
+        "Beantwoorden"
+      ],
+      "Reply all": [
+        "Allen beantwoorden"
+      ],
+      "Forward": [
+        "Doorsturen"
+      ],
+      "Load remote content": [
+        "Externe inhoud laden"
+      ],
+      "Load embedded images": [
+        "Ingesloten afbeeldingen laden"
+      ],
+      "Show original message": [
+        "Toon origineel bericht"
+      ]
+    },
+    "Calendar status": {
+      "Syncing": [
+        "Synchroniseren"
+      ],
+      "Not synced": [
+        "Niet gesynchroniseerd"
+      ]
+    },
+    "Calendar subscription not synced error": {
+      "Calendar is syncing": [
+        "De agenda wordt gesynchroniseerd"
+      ],
+      "More than 12 hours passed since last update": [
+        "Er zijn meer dan 12 uur verstreken sinds de laatste update"
+      ],
+      "Calendar link is wrong": [
+        ""
+      ],
+      "Calendar is too big": [
+        "De agenda is te groot"
+      ],
+      "Calendar link is not accessible": [
+        ""
+      ],
+      "Failed to sync calendar": [
+        "Synchronisatie van de agenda is mislukt"
+      ],
+      "Calendar link is temporarily inaccessible": [
+        ""
+      ]
+    },
+    "Attached ics file error": {
+      "Invalid ICS file": [
+        ""
+      ],
+      "Invalid event": [
+        "Ongeldige gebeurtenis"
+      ],
+      "Unsupported event": [
+        "Niet-ondersteunde gebeurtenis"
+      ],
+      "Empty ICS file": [
+        "Leeg ICS-bestand"
+      ],
+      "Unsupported calendar component": [
+        "Niet-ondersteunde agendacomponent"
+      ],
+      "Invalid method": [
+        "Ongeldige methode"
+      ]
+    },
+    "Event invitation error": {
+      "Invalid response": [
+        "Ongeldige reactie"
+      ],
+      "Invalid invitation": [
+        "Ongeldige uitnodiging"
+      ],
+      "Unsupported response": [
+        "Niet-ondersteunde reactie"
+      ],
+      "Unsupported invitation": [
+        "Niet-ondersteunde uitnodiging"
+      ],
+      "Attached ICS file could not be parsed": [
+        ""
+      ],
+      "Attached ICS file could not be decrypted": [
+        ""
+      ],
+      "We could not retrieve the event from your calendar": [
+        "We konden de afspraak niet ophalen uit uw agenda"
+      ],
+      "We could not update the event in your calendar": [
+        "We konden de afspraak niet bijwerken in uw agenda"
+      ],
+      "Your answer was sent, but the event could not be added to your calendar": [
+        "Uw antwoord werd verzonden, maar de afspraak kon niet worden toegevoegd aan uw agenda"
+      ],
+      "Your answer was sent, but the event could not be updated in your calendar": [
+        "Uw antwoord is verzonden, maar de afspraak kon niet worden bijgewerkt in uw agenda"
+      ],
+      "We could not cancel the event in your calendar": [
+        "We konden de afspraak in uw agenda niet annuleren"
+      ],
+      "Unexpected error": [
+        "Onverwachte fout"
+      ]
+    },
+    "Error importing event": {
+      "Component with wrong format": [
+        "Component met verkeerde indeling"
+      ],
+      "Non-Gregorian": [
+        "Niet-Gregoriaanse"
+      ],
+      "To-do entry": [
+        "To-do item"
+      ],
+      "Journal entry": [
+        "Logboek-item"
+      ],
+      "Free-busy time information": [
+        "Informatie over vrije tijd"
+      ],
+      "Custom timezone": [
+        "Aangepaste tijdzone"
+      ],
+      "Invalid event": [
+        "Ongeldige gebeurtenis"
+      ],
+      "Unsupported event": [
+        "Niet-ondersteunde gebeurtenis"
+      ],
+      "Malformed all-day event": [
+        "Misvormde afspraak gedurende de hele dag"
+      ],
+      "Missing start time": [
+        "Begintijd ontbreekt"
+      ],
+      "Malformed start time": [
+        "Misvormde begintijd"
+      ],
+      "Floating times not supported": [
+        "Zwevende tijden niet ondersteund"
+      ],
+      "Start time out of bounds": [
+        "Begintijd valt buiten de grenzen"
+      ],
+      "Malformed end time": [
+        "Misvormde eindtijd"
+      ],
+      "End time out of bounds": [
+        "Eindtijd valt buiten de grenzen"
+      ],
+      "Event duration not supported": [
+        "Afspraakduur niet ondersteund"
+      ],
+      "Calendar timezone not supported": [
+        "Agendatijdzone niet ondersteund"
+      ],
+      "Timezone not supported": [
+        "Tijdzone niet ondersteund"
+      ],
+      "Malformed recurring event": [
+        "Misvormde periodieke afspraak"
+      ],
+      "Recurring rule not supported": [
+        "Herhalingsvoorwaarde niet ondersteund"
+      ],
+      "Edited event not supported": [
+        "Bewerkte afspraak niet ondersteund"
+      ],
+      "Notification out of bounds": [
+        "Melding buiten de grenzen"
+      ],
+      "Event validation failed": [
+        "Validatie van afspraak mislukt"
+      ],
+      "Encryption failed": [
+        "Versleutelen is mislukt"
+      ],
+      "Original recurring event could not be found": [
+        "Oorspronkelijke terugkerende afspraak kan niet worden gevonden"
+      ],
+      "no UID, title or start time": [
+        "geen UID, titel of starttijd"
+      ]
+    },
+    "Event title": {
+      "(no title)": [
+        "(geen titel)"
+      ]
+    },
+    "Participant name": {
+      "You": [
+        "U"
+      ]
+    },
+    "Email subject": {
+      "Invitation for an event on ${ formattedStart }": [
+        "Uitnodiging voor een afspraak op ${ formattedStart }"
+      ],
+      "Update for an event on ${ formattedStart }": [
+        "Update voor een afspraak op ${ formattedStart }"
+      ],
+      "Invitation for an event starting on ${ formattedStart }": [
+        "Uitnodiging voor een afspraak die begint op ${ formattedStart }"
+      ],
+      "Update for an event starting on ${ formattedStart }": [
+        "Update voor een afspraak die begint op ${ formattedStart }"
+      ],
+      "Cancellation of an event on ${ formattedStart }": [
+        "Annulering van een afspraak op ${ formattedStart }"
+      ],
+      "Cancellation of an event starting on ${ formattedStart }": [
+        "Annulering van een afspraak die begint op ${ formattedStart }"
+      ]
+    },
+    "Email body for invitation (date part)": {
+      "When: ${ formattedStart } (all day)": [
+        "Wanneer: ${ formattedStart } (hele dag)"
+      ],
+      "When: ${ formattedStart } - ${ formattedEnd }": [
+        "Wanneer: ${ formattedStart } - ${ formattedEnd }"
+      ],
+      "When: ${ formattedStart }": [
+        "Wanneer: ${ formattedStart }"
+      ]
+    },
+    "Email body for invitation (location part)": {
+      "Where: ${ eventLocation }": [
+        "Waar: ${ eventLocation }"
+      ]
+    },
+    "Email body for description (description part)": {
+      "Description: ${ eventDescription }": [
+        "Omschrijving: ${ eventDescription }"
+      ]
+    },
+    "Email body for invitation": {
+      "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
+        "U bent uitgenodigd voor ${ eventTitle }\n${ eventDetailsText }"
+      ],
+      "${ eventTitle } has been updated.\n${ eventDetailsText }": [
+        "${ eventTitle } is bijgewerkt.\n${ eventDetailsText }"
+      ],
+      "${ eventTitle } has been cancelled.": [
+        "${ eventTitle } is geannuleerd."
+      ]
+    },
+    "Email body for response to invitation": {
+      "${ emailAddress } has accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } heeft uw uitnodiging geaccepteerd voor ${ eventTitle }"
+      ],
+      "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } heeft uw uitnodiging voorlopig geaccepteerd voor ${ eventTitle }"
+      ],
+      "${ emailAddress } has declined your invitation to ${ eventTitle }": [
+        "${ emailAddress } heeft uw uitnodiging geweigerd voor ${ eventTitle }"
+      ]
+    },
+    "Monthly recurring event, repeats on": {
+      "on the first Sunday": [
+        "op de eerste zondag"
+      ],
+      "on the first Monday": [
+        "op de eerste maandag"
+      ],
+      "on the first Tuesday": [
+        "op de eerste dinsdag"
+      ],
+      "on the first Wednesday": [
+        "op de eerste woensdag"
+      ],
+      "on the first Thursday": [
+        "op de eerste donderdag"
+      ],
+      "on the first Friday": [
+        "op de eerste vrijdag"
+      ],
+      "on the first Saturday": [
+        "op de eerste zaterdag"
+      ],
+      "on the second Sunday": [
+        "op de tweede zondag"
+      ],
+      "on the second Monday": [
+        "op de tweede maandag"
+      ],
+      "on the second Tuesday": [
+        "op de tweede dinsdag"
+      ],
+      "on the second Wednesday": [
+        "op de tweede woensdag"
+      ],
+      "on the second Thursday": [
+        "op de tweede donderdag"
+      ],
+      "on the second Friday": [
+        "op de tweede vrijdag"
+      ],
+      "on the second Saturday": [
+        "op de tweede zaterdag"
+      ],
+      "on the third Sunday": [
+        "op de derde zondag"
+      ],
+      "on the third Monday": [
+        "op de derde maandag"
+      ],
+      "on the third Tuesday": [
+        "op de derde dinsdag"
+      ],
+      "on the third Wednesday": [
+        "op de derde woensdag"
+      ],
+      "on the third Thursday": [
+        "op de derde donderdag"
+      ],
+      "on the third Friday": [
+        "op de derde vrijdag"
+      ],
+      "on the third Saturday": [
+        "op de derde zaterdag"
+      ],
+      "on the fourth Sunday": [
+        "op de vierde zondag"
+      ],
+      "on the fourth Monday": [
+        "op de vierde maandag"
+      ],
+      "on the fourth Tuesday": [
+        "op de vierde dinsdag"
+      ],
+      "on the fourth Wednesday": [
+        "op de vierde woensdag"
+      ],
+      "on the fourth Thursday": [
+        "op de vierde donderdag"
+      ],
+      "on the fourth Friday": [
+        "op de vierde vrijdag"
+      ],
+      "on the fourth Saturday": [
+        "op de vierde zaterdag"
+      ],
+      "on the last Sunday": [
+        "op de laatste zondag"
+      ],
+      "on the last Monday": [
+        "op de laatste maandag"
+      ],
+      "on the last Tuesday": [
+        "op de laatste dinsdag"
+      ],
+      "on the last Wednesday": [
+        "op de laatste woensdag"
+      ],
+      "on the last Thursday": [
+        "op de laatste donderdag"
+      ],
+      "on the last Friday": [
+        "op de laatste vrijdag"
+      ],
+      "on the last Saturday": [
+        "op de laatste zaterdag"
+      ],
+      "on day ${ dayOfMonth }": [
+        "op dag ${ dayOfMonth }"
+      ]
+    },
+    "Daily recurring event, frequency": {
+      "${ count } time": [
+        "${ count } keer",
+        "${ count } keren"
+      ],
+      "until ${ dateString }": [
+        "tot ${ dateString }"
+      ],
+      "Daily": [
+        "Dagelijks"
+      ],
+      "Every ${ interval } day": [
+        "Elke ${ interval } dag",
+        "Elke ${ interval } dagen"
+      ],
+      "Daily, ${ timesString }": [
+        "Dagelijks, ${ timesString }"
+      ],
+      "Every ${ interval } day, ${ timesString }": [
+        "Elke ${ interval } dag, ${ timesString }",
+        "Elke ${ interval } dagen, ${ timesString }"
+      ],
+      "Daily, ${ untilString }": [
+        "Dagelijks, ${ untilString }"
+      ],
+      "Every ${ interval } day, ${ untilString }": [
+        "Elke ${ interval } dag, ${ untilString }",
+        "Elke ${ interval } dagen, ${ untilString }"
+      ]
+    },
+    "Weekly recurring event, repeats on (multiple days), frequency": {
+      "Sunday": [
+        "Zondag"
+      ],
+      "Monday": [
+        "Maandag"
+      ],
+      "Tuesday": [
+        "Dinsdag"
+      ],
+      "Wednesday": [
+        "Woensdag"
+      ],
+      "Thursday": [
+        "Donderdag"
+      ],
+      "Friday": [
+        "Vrijdag"
+      ],
+      "Saturday": [
+        "Zaterdag"
+      ]
+    },
+    "Weekly recurring event, frequency": {
+      "Weekly on all days": [
+        "Wekelijks op alle dagen"
+      ],
+      "Every ${ interval } week on all days": [
+        "Elke ${ interval } op alle dagen",
+        "Elke ${ interval } weken op alle dagen"
+      ],
+      "Weekly on Sunday": [
+        "Wekelijks op zondag"
+      ],
+      "Every ${ interval } week on Sunday": [
+        "Elke ${ interval } op zondag",
+        "Elke ${ interval } weken op zondag"
+      ],
+      "Weekly on Monday": [
+        "Wekelijks op maandag"
+      ],
+      "Every ${ interval } week on Monday": [
+        "Elke ${ interval } op maandag",
+        "Elke ${ interval } weken op maandag"
+      ],
+      "Weekly on Tuesday": [
+        "Wekelijks op dinsdag"
+      ],
+      "Every ${ interval } week on Tuesday": [
+        "Elke ${ interval } op dinsdag",
+        "Elke ${ interval } weken op dinsdag"
+      ],
+      "Weekly on Wednesday": [
+        "Wekelijks op woensdag"
+      ],
+      "Every ${ interval } week on Wednesday": [
+        "Elke ${ interval } op woensdag",
+        "Elke ${ interval } weken op woensdag"
+      ],
+      "Weekly on Thursday": [
+        "Wekelijks op donderdag"
+      ],
+      "Every ${ interval } week on Thursday": [
+        "Elke ${ interval } op donderdag",
+        "Elke ${ interval } weken op donderdag"
+      ],
+      "Weekly on Friday": [
+        "Wekelijks op vrijdag"
+      ],
+      "Every ${ interval } week on Friday": [
+        "Elke week op vrijdag",
+        "Elke ${ interval } weken op vrijdag"
+      ],
+      "Weekly on Saturday": [
+        "Wekelijks op zaterdag"
+      ],
+      "Every ${ interval } week on Saturday": [
+        "Elke week op zaterdag",
+        "Elke ${ interval } weken op zaterdag"
+      ],
+      "Weekly on ${ multipleDaysString }": [
+        "Wekelijks op ${ multipleDaysString }"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }": [
+        "Elke week op ${ multipleDaysString }",
+        "Elke ${ interval } weken op ${ multipleDaysString }"
+      ],
+      "Weekly on all days, ${ timesString }": [
+        "Wekelijks op alle dagen, ${ timesString }"
+      ],
+      "Every ${ interval } week on all days, ${ timesString }": [
+        "Elke week op alle dagen, ${ timesString }",
+        "Elke ${ interval } weken op alle dagen, ${ timesString }"
+      ],
+      "Weekly on Sunday, ${ timesString }": [
+        "Wekelijks op zondag ${ timesString }"
+      ],
+      "Every ${ interval } week on Sunday, ${ timesString }": [
+        "Elke week op zondag, ${ timesString }",
+        "Elke ${ interval } weken op zondag, ${ timesString }"
+      ],
+      "Weekly on Monday, ${ timesString }": [
+        "Wekelijks op maandag, ${ timesString }"
+      ],
+      "Every ${ interval } week on Monday, ${ timesString }": [
+        "Elke ${ interval } week op maandag, ${ timesString }",
+        "Elke ${ interval } weken op maandag, ${ timesString }"
+      ],
+      "Weekly on Tuesday, ${ timesString }": [
+        "Wekelijks op dinsdag ${ timesString }"
+      ],
+      "Every ${ interval } week on Tuesday, ${ timesString }": [
+        "Elke ${ interval } week op dinsdag, ${ timesString }",
+        "Elke ${ interval } weken op dinsdag, ${ timesString }"
+      ],
+      "Weekly on Wednesday, ${ timesString }": [
+        "Wekelijks op woensdag ${ timesString }"
+      ],
+      "Every ${ interval } week on Wednesday, ${ timesString }": [
+        "Elke ${ interval } week op woensdag, ${ timesString }",
+        "Elke ${ interval } weken op woensdag, ${ timesString }"
+      ],
+      "Weekly on Thursday, ${ timesString }": [
+        "Wekelijks op donderdag ${ timesString }"
+      ],
+      "Every ${ interval } week on Thursday, ${ timesString }": [
+        "Elke ${ interval } week op donderdag, ${ timesString }",
+        "Elke ${ interval } weken op donderdag, ${ timesString }"
+      ],
+      "Weekly on Friday, ${ timesString }": [
+        "Wekelijks op vrijdag ${ timesString }"
+      ],
+      "Every ${ interval } week on Friday, ${ timesString }": [
+        "Elke ${ interval } week op vrijdag, ${ timesString }",
+        "Elke ${ interval } weken op vrijdag, ${ timesString }"
+      ],
+      "Weekly on Saturday, ${ timesString }": [
+        "Wekelijks op zaterdag ${ timesString }"
+      ],
+      "Every ${ interval } week on Saturday, ${ timesString }": [
+        "Elke ${ interval } week op zaterdag, ${ timesString }",
+        "Elke ${ interval } weken op zaterdag, ${ timesString }"
+      ],
+      "Weekly on ${ multipleDaysString }, ${ timesString }": [
+        "Wekelijks op ${ multipleDaysString }, ${ timesString }"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
+        "Elke ${ interval } week op ${ multipleDaysString }, ${ timesString }",
+        "Elke ${ interval } weken op ${ multipleDaysString }, ${ timesString }"
+      ],
+      "Weekly on all days, ${ untilString }": [
+        "Wekelijks op alle dagen, ${ untilString }"
+      ],
+      "Every ${ interval } week on all days, ${ untilString }": [
+        "Elke ${ interval } week op alle dagen, ${ untilString }",
+        "Elke ${ interval } weken op alle dagen, ${ untilString }"
+      ],
+      "Weekly on Sunday, ${ untilString }": [
+        "Wekelijks op zondag ${ untilString }"
+      ],
+      "Every ${ interval } week on Sunday, ${ untilString }": [
+        "Elke ${ interval } week op zondag, ${ untilString }",
+        "Elke ${ interval } weken op zondag, ${ untilString }"
+      ],
+      "Weekly on Monday, ${ untilString }": [
+        "Wekelijks op maandag, ${ untilString }"
+      ],
+      "Every ${ interval } week on Monday, ${ untilString }": [
+        "Elke ${ interval } week op maandag, ${ untilString }",
+        "Elke ${ interval } weken op maandag, ${ untilString }"
+      ],
+      "Weekly on Tuesday, ${ untilString }": [
+        "Wekelijks op dinsdag ${ untilString }"
+      ],
+      "Every ${ interval } week on Tuesday, ${ untilString }": [
+        "Elke ${ interval } week op dinsdag, ${ untilString }",
+        "Elke ${ interval } weken op dinsdag, ${ untilString }"
+      ],
+      "Weekly on Wednesday, ${ untilString }": [
+        "Wekelijks op woensdag ${ untilString }"
+      ],
+      "Every ${ interval } week on Wednesday, ${ untilString }": [
+        "Elke ${ interval } week op woensdag, ${ untilString }",
+        "Elke ${ interval } week op woensdag, ${ untilString }"
+      ],
+      "Weekly on Thursday, ${ untilString }": [
+        "Wekelijks op donderdag ${ untilString }"
+      ],
+      "Every ${ interval } week on Thursday, ${ untilString }": [
+        "Elke ${ interval } week op donderdag, ${ untilString }",
+        "Elke ${ interval } weken op donderdag, ${ untilString }"
+      ],
+      "Weekly on Friday, ${ untilString }": [
+        "Wekelijks op vrijdag ${ untilString }"
+      ],
+      "Every ${ interval } week on Friday, ${ untilString }": [
+        "Elke ${ interval } week op vrijdag, ${ untilString }",
+        "Elke ${ interval } week op vrijdag, ${ untilString }"
+      ],
+      "Weekly on Saturday, ${ untilString }": [
+        "Wekelijks op zaterdag ${ untilString }"
+      ],
+      "Every ${ interval } week on Saturday, ${ untilString }": [
+        "Elke ${ interval } week op zaterdag, ${ untilString }",
+        "Elke ${ interval } weken op zaterdag, ${ untilString }"
+      ],
+      "Weekly on ${ multipleDaysString }, ${ untilString }": [
+        "Wekelijks op ${ multipleDaysString }, ${ untilString }"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
+        "Elke ${ interval } week op ${ multipleDaysString }, ${ untilString }",
+        "Elke ${ interval } weken op ${ multipleDaysString }, ${ untilString }"
+      ]
+    },
+    "Monthly recurring event, frequency": {
+      "Monthly ${ onDayString }": [
+        "Maandelijks ${ onDayString }"
+      ],
+      "Every ${ interval } month ${ onDayString }": [
+        "Elke ${ interval } maand ${ onDayString }",
+        "Elke ${ interval } maanden ${ onDayString }"
+      ],
+      "Monthly ${ onDayString }, ${ timesString }": [
+        "Maandelijks ${ onDayString }, ${ timesString }"
+      ],
+      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
+        "Elke ${ interval } maand ${ onDayString }, ${ timesString }",
+        "Elke ${ interval } maanden ${ onDayString }, ${ timesString }"
+      ],
+      "Monthly ${ onDayString }, ${ untilString }": [
+        "Maandelijks ${ onDayString }, ${ untilString }"
+      ],
+      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
+        "Elke ${ interval } maand ${ onDayString }, ${ untilString }",
+        "Elke ${ interval } maanden ${ onDayString }, ${ untilString }"
+      ]
+    },
+    "Yearly recurring event, frequency": {
+      "Yearly": [
+        "Jaarlijks"
+      ],
+      "Every ${ interval } year": [
+        "Elk jaar",
+        "Elke ${ interval } jaar"
+      ],
+      "Yearly, ${ timesString }": [
+        "Jaarlijks ${ timesString }"
+      ],
+      "Every ${ interval } year, ${ timesString }": [
+        "Elke jaar, ${ timesString }",
+        "Elke ${ interval } jaar, ${ timesString }"
+      ],
+      "Yearly, ${ untilString }": [
+        "Jaarlijks ${ untilString }"
+      ],
+      "Every ${ interval } year, ${ untilString }": [
+        "Elke jaar, ${ untilString }",
+        "Elke ${ interval } jaar, ${ untilString }"
+      ]
+    },
     "Mailbox": {
       "Inbox": [
         "Inbox"
@@ -6292,8 +6312,8 @@
       "Scheduled": [
         "Gepland"
       ],
-      "All": [
-        "Alle"
+      "All mail": [
+        ""
       ],
       "Starred": [
         "Met ster"
@@ -6713,6 +6733,12 @@
     "Spotlight": {
       "You can now schedule your messages to be sent later": [
         ""
+      ],
+      "Tracker protection": [
+        ""
+      ],
+      "Proton blocked email trackers in this message in order to protect your privacy": [
+        ""
       ]
     },
     "Message image": {
@@ -6797,10 +6823,6 @@
       "Organizer:": [
         ""
       ],
-      "${ totalAttendees } Participant": [
-        "",
-        ""
-      ],
       "Repeats": [
         ""
       ],
@@ -6811,6 +6833,10 @@
         ""
       ],
       "Participants": [
+        ""
+      ],
+      "${ totalAttendees } participant": [
+        "",
         ""
       ]
     },

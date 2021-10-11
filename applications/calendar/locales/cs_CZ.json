@@ -29,8 +29,8 @@
       "Calendar link is not accessible": [
         "Odkaz na kalendář není přístupný"
       ],
-      "Calendar link is temporarily unaccessible": [
-        "Odkaz na kalendář je dočasně nedostupný"
+      "Calendar link is temporarily inaccessible": [
+        ""
       ],
       "Failed to sync calendar": [
         "Synchronizace kalendáře selhala"
@@ -682,11 +682,11 @@
       "No results found": [
         "Nebyly nalezeny žádné výsledky"
       ],
-      "Week": [
-        "Týden"
-      ],
       "Loading": [
         "Načítá se"
+      ],
+      "Week": [
+        "Týden"
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Tento odkaz může být homografickým útokem a nelze ho otevřít pomocí prohlížeče Internet Explorer nebo Edge. Pokud jste si jisti, že je odkaz v pořádku, otevřete ho v jiném prohlížeči."
@@ -847,12 +847,6 @@
       "* Customizable features": [
         "* Přizpůsobitelné funkce"
       ],
-      "Access your streaming services, like ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, no matter where you are.": [
-        "Přístup ke svým streamovacím službám jako ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, bez ohledu na to, kde jste."
-      ],
-      "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
-        "Získejte přístup k blokovanému obsahu, jako jsou sociální média, zprávy, Wikipedia, YouTube a mnoho dalšího, bez ohledu na to, kde se nacházíte."
-      ],
       "For getting started with private and secure emailing.": [
         "Začínáme se soukromým a zabezpečeným e-mailem."
       ],
@@ -876,6 +870,12 @@
       ],
       "For families and small teams; includes both Mail and VPN.": [
         "Pro rodiny a malé týmy; zahrnuje jak poštu tak i VPN."
+      ],
+      "Access your streaming services, like ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, no matter where you are.": [
+        "Přístup ke svým streamovacím službám jako ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, bez ohledu na to, kde jste."
+      ],
+      "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
+        "Získejte přístup k blokovanému obsahu, jako jsou sociální média, zprávy, Wikipedia, YouTube a mnoho dalšího, bez ohledu na to, kde se nacházíte."
       ],
       "Save 20%": [
         "Ušetřete 20%"
@@ -1203,6 +1203,12 @@
       ],
       "Loading events": [
         "Načítání událostí"
+      ],
+      "The organizer could not be notified that you changed your answer:": [
+        ""
+      ],
+      "The organizer cannot be notified that you want to change your answer:": [
+        ""
       ],
       "The organizer cannot be notified that you decline the invitation:": [
         ""
@@ -1584,14 +1590,14 @@
       "A group with this name already exists": [
         "Skupina s tímto názvem již existuje"
       ],
-      "Primary address key is not decrypted": [
-        "Klíč hlavní adresy není dešifrován"
-      ],
       "We were unable to connect to your service provider.": [
         ""
       ],
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         ""
+      ],
+      "Primary address key is not decrypted": [
+        "Klíč hlavní adresy není dešifrován"
       ],
       "No valid address found": [
         "Nebyla nalezena žádná platná adresa"
@@ -2187,12 +2193,6 @@
       "Back": [
         "Zpět"
       ],
-      "Use ${ label } theme": [
-        "Použít ${ label } motiv"
-      ],
-      "OK": [
-        "OK"
-      ],
       "Log in": [
         "Přihlásit se"
       ],
@@ -2219,6 +2219,12 @@
       ],
       "Edit phone number": [
         "Upravit telefonní číslo"
+      ],
+      "Use ${ label } theme": [
+        "Použít ${ label } motiv"
+      ],
+      "OK": [
+        "OK"
       ],
       "Clear": [
         "Vyčistit"
@@ -2564,9 +2570,6 @@
       "Give feedback": [
         "Poskytnout zpětnou vazbu"
       ],
-      "Select a theme": [
-        "Vyberte motiv"
-      ],
       "Sign in again to continue": [
         "Chcete-li pokračovat, znovu se přihlaste"
       ],
@@ -2584,6 +2587,9 @@
       ],
       "Human verification": [
         "Captcha"
+      ],
+      "Select a theme": [
+        "Vyberte motiv"
       ],
       "Report a problem": [
         "Nahlásit problém"
@@ -2657,8 +2663,8 @@
       "Amount due": [
         "Částka k zaplacení"
       ],
-      "Cancel subscription": [
-        "Zrušit předplatné"
+      "Downgrade account": [
+        ""
       ],
       "Network error": [
         "Chyba sítě"
@@ -2964,6 +2970,11 @@
         "Upravit událost"
       ]
     },
+    "PGP key encryption warning": {
+      "Key cannot be used for encryption": [
+        "Klíč není možné použít k šifrování"
+      ]
+    },
     "Storage": {
       "Your current storage:": [
         "Vaše aktuální úložiště:"
@@ -2973,11 +2984,6 @@
       ],
       "Release notes": [
         "Seznam změn"
-      ]
-    },
-    "PGP key encryption warning": {
-      "Key cannot be used for encryption": [
-        "Klíč není možné použít k šifrování"
       ]
     },
     "Label": {
@@ -3257,7 +3263,7 @@
       "Your calendars": [
         ""
       ],
-      "Participant": [
+      "participant": [
         "",
         "",
         "",
@@ -4802,11 +4808,6 @@
         "Upozorňujeme: služba bude znovu načtena, jakmile kliknete na tlačítko Žádost."
       ]
     },
-    "Select files": {
-      "Upload": [
-        "Nahrát"
-      ]
-    },
     "Loading info": {
       "Connecting to your contacts provider": [
         ""
@@ -4826,6 +4827,11 @@
     "Confirm modal title": {
       "Quit import?": [
         ""
+      ]
+    },
+    "Select files": {
+      "Upload": [
+        "Nahrát"
       ]
     },
     "Message display when a new app version is available": {
@@ -5027,11 +5033,6 @@
     "Placeholder for contact with no name": {
       "(No name)": [
         "(Žádné jméno)"
-      ]
-    },
-    "Reply to calendar invitation": {
-      "Cannot send to organizer address: ${ apiErrorMessage }": [
-        "Nelze odeslat na adresu organizátora: ${ apiErrorMessage }"
       ]
     },
     "Modal title": {

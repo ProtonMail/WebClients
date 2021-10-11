@@ -6,9 +6,6 @@
   "contexts": {
     "": {},
     "Action": {
-      "Continue with Google": [
-        "Συνεχίστε με Google"
-      ],
       "Use “${ label }” setting": [
         ""
       ],
@@ -78,14 +75,20 @@
       "Underline": [
         "Υπογράμμιση"
       ],
+      "Continue with Google": [
+        "Συνεχίστε με Google"
+      ],
+      "Show less": [
+        "Εμφάνιση λιγότερων"
+      ],
+      "Show more": [
+        "Εμφάνιση περισσοτέρων"
+      ],
       "Confirm opening of link ${ link }": [
         ""
       ],
       "Confirm": [
         "Επιβεβαίωση"
-      ],
-      "Delete": [
-        "Διαγραφή"
       ],
       "Close": [
         "Κλείσιμο"
@@ -96,11 +99,11 @@
       "Previous month": [
         "Προηγούμενος μήνας"
       ],
-      "Show less": [
-        "Εμφάνιση λιγότερων"
+      "Delete": [
+        "Διαγραφή"
       ],
-      "Show more": [
-        "Εμφάνιση περισσοτέρων"
+      "Select timezone": [
+        "Επιλογή ζώνης ώρας"
       ],
       "Close navigation": [
         "Κλείσιμο μενού πλοήγησης"
@@ -116,9 +119,6 @@
       ],
       "Remove": [
         "Αφαίρεση"
-      ],
-      "Select timezone": [
-        "Επιλογή ζώνης ώρας"
       ],
       "Submit": [
         "Υποβολή"
@@ -228,33 +228,6 @@
       "Continue": [
         "Συνέχεια"
       ],
-      "Download": [
-        "Λήψη"
-      ],
-      "Hide": [
-        "Απόκρυψη"
-      ],
-      "Show": [
-        "Εμφάνιση"
-      ],
-      "Reset credentials": [
-        "Επαναφορά διαπιστευτηρίων"
-      ],
-      "Copy": [
-        "Αντιγραφή"
-      ],
-      "Download all configurations": [
-        "Λήψη όλων των διαμορφώσεων"
-      ],
-      "Get ProtonVPN Plus": [
-        "Αποκτήστε ProtonVPN Plus"
-      ],
-      "Yes": [
-        "Ναι"
-      ],
-      "No": [
-        "Όχι"
-      ],
       "Update": [
         "Ενημέρωση"
       ],
@@ -324,6 +297,9 @@
       "Export key": [
         "Εξαγωγή κλειδιού"
       ],
+      "No": [
+        "Όχι"
+      ],
       "Warning": [
         "Προειδοποίηση"
       ],
@@ -332,6 +308,9 @@
       ],
       "Export private key": [
         "Εξαγωγή ιδιωτικού κλειδιού"
+      ],
+      "Yes": [
+        "Ναι"
       ],
       "Add user": [
         "Προσθήκη χρήστη"
@@ -381,15 +360,6 @@
       "Sign out": [
         "Αποσύνδεση"
       ],
-      "Get started": [
-        "Ξεκινήστε"
-      ],
-      "Start setup": [
-        "Ρύθμιση εκκίνησης"
-      ],
-      "Skip": [
-        "Παράλειψη"
-      ],
       "Preview": [
         "Προεπισκόπηση"
       ],
@@ -435,6 +405,24 @@
       "Move to Allow List": [
         "Μετακίνηση στη λίστα επιτρεπόμενων"
       ],
+      "Get started": [
+        "Ξεκινήστε"
+      ],
+      "Start setup": [
+        "Ρύθμιση εκκίνησης"
+      ],
+      "Skip": [
+        "Παράλειψη"
+      ],
+      "Add folder": [
+        "Προσθήκη φακέλου"
+      ],
+      "Sort": [
+        "Ταξινόμηση"
+      ],
+      "Add label": [
+        "Προσθήκη ετικέτας"
+      ],
       "Clear": [
         "Καθαρισμός"
       ],
@@ -446,15 +434,6 @@
       ],
       "Show info": [
         "Εμφάνιση πληροφοριών"
-      ],
-      "Add folder": [
-        "Προσθήκη φακέλου"
-      ],
-      "Sort": [
-        "Ταξινόμηση"
-      ],
-      "Add label": [
-        "Προσθήκη ετικέτας"
       ],
       "Signing out": [
         "Αποσύνδεση"
@@ -486,8 +465,14 @@
       "Customize subscription": [
         "Προσαρμογή συνδρομής"
       ],
-      "Cancel subscription": [
-        "Ακυρώστε τη συνδρομή"
+      "Downgrade to ${ BRAND_NAME } ${ downgradedPlanName }": [
+        "Υποβάθμιση σε ${ BRAND_NAME } ${ downgradedPlanName }"
+      ],
+      "Keep my ${ BRAND_NAME } ${ currentPlanName } account": [
+        "Διατήρηση λογαριασμού ${ BRAND_NAME } ${ currentPlanName }"
+      ],
+      "Downgrade account": [
+        "Υποβάθμιση λογαριασμού"
       ],
       "Select plan": [
         "Επιλέξτε πλάνο"
@@ -543,6 +528,27 @@
       "Remove gift code": [
         "Αφαιρέστε τον κωδικό δώρου"
       ],
+      "Download": [
+        "Λήψη"
+      ],
+      "Hide": [
+        "Απόκρυψη"
+      ],
+      "Show": [
+        "Εμφάνιση"
+      ],
+      "Reset credentials": [
+        "Επαναφορά διαπιστευτηρίων"
+      ],
+      "Copy": [
+        "Αντιγραφή"
+      ],
+      "Download all configurations": [
+        "Λήψη όλων των διαμορφώσεων"
+      ],
+      "Get ProtonVPN Plus": [
+        "Αποκτήστε ProtonVPN Plus"
+      ],
       "enable desktop notifications": [
         "ενεργοποίηση ειδοποιήσεων επιφάνειας εργασίας"
       ],
@@ -574,22 +580,16 @@
         "Αντιγραφή στο πρόχειρο"
       ],
       "Create new recovery phrase?": [
-        ""
+        "Δημιουργία νέας φράσης ανάκτησης;"
       ],
       "Enter password to continue": [
         "Προσθήκη συνθηματικού για τη συνέχεια"
       ],
       "Disable recovery phrase?": [
-        ""
+        "Απενεργοποίηση φράσης ανάκτησης;"
       ],
       "Disable recovery phrase": [
-        ""
-      ],
-      "Save address": [
-        "Αποθήκευση διεύθυνσης"
-      ],
-      "activate": [
-        "ενεργοποιήστε"
+        "Απενεργοποίηση φράσης ανάκτησης"
       ],
       "Revoke all other sessions": [
         "Αποσυνδεθείτε από όλες τις άλλες συνεδρίες"
@@ -625,7 +625,7 @@
         "Λεπτομέρειες"
       ],
       "Share via link": [
-        ""
+        "Κοινοποίηση με σύνδεσμο"
       ],
       "Sharing options": [
         "Επιλογές κοινοποίησης"
@@ -646,7 +646,7 @@
         "Ενεργοποίηση υποστήριξης πολλαπλών χρηστών"
       ],
       "Reset keys": [
-        ""
+        "Επαναφορά κλειδιών"
       ],
       "Change organization keys": [
         "Αλλαγή κλειδιών οργανισμού"
@@ -659,6 +659,12 @@
       ],
       "Activate organization key": [
         "Ενεργοποιήστε το κλειδί οργανισμού"
+      ],
+      "Save address": [
+        "Αποθήκευση διεύθυνσης"
+      ],
+      "activate": [
+        "ενεργοποιήστε"
       ],
       "View invoice": [
         "Προβολή τιμολογίου"
@@ -751,7 +757,7 @@
         "Αποστολή κωδικού"
       ],
       "Return to sign in": [
-        ""
+        "Επιστροφή στην σελίδα σύνδεσης"
       ],
       "Didn't receive a code?": [
         "Δεν λάβατε τον κωδικό;"
@@ -813,11 +819,11 @@
       "yourdomain.com": [
         "yourdomain.com"
       ],
-      "e.g. Julia Smith": [
-        "π.χ. Julia Smith"
-      ],
       "Type text or keyword": [
         "Πληκτρολόγηση κειμένου ή λέξης-κλειδιού"
+      ],
+      "e.g. Julia Smith": [
+        "π.χ. Julia Smith"
       ],
       "OS name": [
         "Όνομα Λειτουργικού Συστήματος (OS)"
@@ -839,6 +845,9 @@
       ],
       "Browser version": [
         "Έκδοση προγράμματος περιήγησης"
+      ],
+      "Select a reason": [
+        "Επιλογή αιτιολογίας"
       ],
       "Feedback": [
         "Αξιολόγηση"
@@ -864,14 +873,14 @@
       "Confirm": [
         "Επιβεβαίωση"
       ],
+      "Choose a name": [
+        "Επιλέξτε ένα όνομα"
+      ],
       "Choose display name": [
         "Επιλέξτε εμφανιζόμενο όνομα"
       ],
       "Choose address": [
         "Επιλέξτε διεύθυνση"
-      ],
-      "Choose a name": [
-        "Επιλέξτε ένα όνομα"
       ],
       "Username": [
         "Όνομα χρήστη"
@@ -950,9 +959,6 @@
       "Invalid name": [
         "Μη έγκυρο όνομα"
       ],
-      "Automatic replies is a paid feature. Please upgrade to a paid account to use this feature.": [
-        "Οι αυτόματες απαντήσεις είναι λειτουργία επί πληρωμή. Παρακαλούμε αναβαθμίστε σε λογαριασμό επί πληρωμή για να χρησιμοποιήσετε αυτή τη λειτουργία."
-      ],
       "Name required": [
         "Απαιτείται όνομα"
       ],
@@ -961,6 +967,9 @@
       ],
       "Primary address key is not decrypted.": [
         "Το κύριο κλειδί διεύθυνσης δεν αποκρυπτογραφείται."
+      ],
+      "Primary address key is not decrypted": [
+        "Το κύριο κλειδί διεύθυνσης δεν αποκρυπτογραφείται"
       ],
       "Incorrect password": [
         "Λάθος κωδικός"
@@ -974,11 +983,11 @@
       "Uploaded files are not valid private keys. Please verify and try again.": [
         ""
       ],
-      "Primary address key is not decrypted": [
-        "Το κύριο κλειδί διεύθυνσης δεν αποκρυπτογραφείται"
-      ],
       "Invalid private key file": [
         "Μη έγκυρο αρχείο ιδιωτικού κλειδιού"
+      ],
+      "Automatic replies is a paid feature. Please upgrade to a paid account to use this feature.": [
+        "Οι αυτόματες απαντήσεις είναι λειτουργία επί πληρωμή. Παρακαλούμε αναβαθμίστε σε λογαριασμό επί πληρωμή για να χρησιμοποιήσετε αυτή τη λειτουργία."
       ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "Σταματήσαμε την υπογραφή DKIM λόγω προβλημάτων με τη ρύθμιση παραμέτρων DNS. Ακολουθήστε τις παρακάτω οδηγίες για να συνεχίσετε την υπογραφή."
@@ -1088,18 +1097,6 @@
       "Wrong recovery phrase. Try again or use another recovery method.": [
         ""
       ],
-      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Addresses > Short domain (pm.me)": [
-        "${ Local } είναι το όνομα χρήστη σας. Για να δημιουργήσετε ${ Local }@${ Domain }, Παρακαλώ πηγαίνετε Ρυθμίσεις > Διευθύνσεις > Σύντομο domain (pm.me)"
-      ],
-      "The organization key must be activated first.": [
-        "Το κλειδί οργανισμού πρέπει πρώτα να ενεργοποιηθεί."
-      ],
-      "Error": [
-        "Σφάλμα"
-      ],
-      "Organization key is not decrypted.": [
-        "Το κλειδί οργανισμού δεν είναι αποκρυπτογραφημένο."
-      ],
       "Payments are currently not available, please try again later": [
         "Οι πληρωμές δεν είναι διαθέσιμες προς το παρόν, παρακαλώ δοκιμάστε ξανά αργότερα"
       ],
@@ -1121,11 +1118,23 @@
       "You must privatize all users before generating new organization keys": [
         "Πρέπει να ιδιωτικοποιήσετε όλους τους λογαριασμούς χρηστών πριν δημιουργήσετε νέα κλειδιά οργανισμού"
       ],
+      "Organization key is not decrypted.": [
+        "Το κλειδί οργανισμού δεν είναι αποκρυπτογραφημένο."
+      ],
       "You have lost access to your organization keys. Without restoration you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Έχετε χάσει την πρόσβαση στα κλειδιά της επιχείρησης σας. Χωρίς επαναφορά, δεν θα μπορείτε να δημιουργήσετε νέους χρήστες, να προσθέσετε διευθύνσεις σε υπάρχοντες χρήστες ή να αποκτήσετε πρόσβαση σε μη ιδιωτικούς λογαριασμούς χρηστών."
       ],
       "You must activate your organization keys. Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Πρέπει να ενεργοποιήσετε τα κλειδιά της επιχείρησής σας. Χωρίς ενεργοποίηση, δεν θα μπορείτε να δημιουργήσετε νέους χρήστες, να προσθέσετε διευθύνσεις σε υπάρχοντες χρήστες ή να αποκτήσετε πρόσβαση σε μη ιδιωτικούς λογαριασμούς χρηστών."
+      ],
+      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Addresses > Short domain (pm.me)": [
+        "${ Local } είναι το όνομα χρήστη σας. Για να δημιουργήσετε ${ Local }@${ Domain }, Παρακαλώ πηγαίνετε Ρυθμίσεις > Διευθύνσεις > Σύντομο domain (pm.me)"
+      ],
+      "The organization key must be activated first.": [
+        "Το κλειδί οργανισμού πρέπει πρώτα να ενεργοποιηθεί."
+      ],
+      "Error": [
+        "Σφάλμα"
       ],
       "Permission denied, administrator privileges have been restricted.": [
         "Η άδεια απορρίφθηκε, τα δικαιώματα διαχειριστή έχουν περιοριστεί."
@@ -1202,18 +1211,6 @@
       "Not a valid number": [
         "Μη έγκυρος αριθμός"
       ],
-      "Missing signature": [
-        "Λείπει η υπογραφή"
-      ],
-      "Contact signature not verified": [
-        "Η υπογραφή επαφής δεν πιστοποιήθηκε"
-      ],
-      "Signature not verified": [
-        "Υπογραφή δεν πιστοποιήθηκε"
-      ],
-      "Request timed out.": [
-        "Λήξη χρονικού ορίου αιτήματος."
-      ],
       "Signature verification failed": [
         "Η επαλήθευση υπογραφής απέτυχε"
       ],
@@ -1228,6 +1225,18 @@
       ],
       "Calendar primary private key is not decrypted": [
         "Το πρωτεύον ιδιωτικό κλειδί ημερολογίου δεν είναι αποκρυπτογραφημένο"
+      ],
+      "Missing signature": [
+        "Λείπει η υπογραφή"
+      ],
+      "Contact signature not verified": [
+        "Η υπογραφή επαφής δεν πιστοποιήθηκε"
+      ],
+      "Signature not verified": [
+        "Υπογραφή δεν πιστοποιήθηκε"
+      ],
+      "Request timed out.": [
+        "Λήξη χρονικού ορίου αιτήματος."
       ],
       "The session has expired. Please sign in again.": [
         "Έχει λήξει η συνεδρία σας. Παρακαλώ συνδεθείτε ξανά."
@@ -1254,6 +1263,30 @@
       ],
       "Do not ask again": [
         "Να μην ερωτηθώ ξανά"
+      ],
+      "Inbox": [
+        "Εισερχόμενα"
+      ],
+      "Composer": [
+        "Συντάκτης"
+      ],
+      "Density": [
+        "Πυκνότητα"
+      ],
+      "Use sticky labels": [
+        "Χρησιμοποιήστε sticky ετικέτες"
+      ],
+      "Conversation grouping": [
+        "Ομαδοποίηση συνομιλιών"
+      ],
+      "Composer mode": [
+        "Λειτουργία σύνθεσης"
+      ],
+      "Composer text direction": [
+        "Κατεύθυνση κειμένου σύνθεσης"
+      ],
+      "Composer default font/size": [
+        ""
       ],
       "From: ${ fromEmailAddress }": [
         "Από: ${ fromEmailAddress }"
@@ -1324,87 +1357,6 @@
       "Automatically save contacts": [
         "Αυτόματη αποθήκευση επαφών"
       ],
-      "Inbox": [
-        "Εισερχόμενα"
-      ],
-      "Composer": [
-        "Συντάκτης"
-      ],
-      "Density": [
-        "Πυκνότητα"
-      ],
-      "Use sticky labels": [
-        "Χρησιμοποιήστε sticky ετικέτες"
-      ],
-      "Conversation grouping": [
-        "Ομαδοποίηση συνομιλιών"
-      ],
-      "Composer mode": [
-        "Λειτουργία σύνθεσης"
-      ],
-      "Composer text direction": [
-        "Κατεύθυνση κειμένου σύνθεσης"
-      ],
-      "Composer default font/size": [
-        ""
-      ],
-      "OpenVPN / IKEv2 username": [
-        "Όνομα χρήστη OpenVPN / IKEv2"
-      ],
-      "OpenVPN / IKEv2 password": [
-        "Κωδικός πρόσβασης OpenVPN / IKEv2"
-      ],
-      "Timezone": [
-        "Ζώνη ώρας"
-      ],
-      "Days of the week": [
-        "Ημέρα της εβδομάδας"
-      ],
-      "Duration": [
-        "Διάρκεια"
-      ],
-      "Start day of month": [
-        "Ημερομηνία έναρξης του μήνα"
-      ],
-      "Start time": [
-        "Ώρα έναρξης"
-      ],
-      "End day of month": [
-        "Ημερομηνία λήξης του μήνα"
-      ],
-      "End time": [
-        "Ώρα λήξης"
-      ],
-      "Start weekday": [
-        "Εκκίνηση της εβδομάδας"
-      ],
-      "End weekday": [
-        "Λήξη εβδομάδας"
-      ],
-      "Start date": [
-        "Ημερομηνία Έναρξης"
-      ],
-      "End date": [
-        "Ημερομηνία Λήξης"
-      ],
-      "Message": [
-        "Μήνυμα"
-      ],
-      "Auto reply": [
-        "Αυτόματη απάντηση"
-      ],
-      "Prompt to trust keys": [
-        "Προτροπή για χαρακτηρισμό κλειδιών ως αξιόπιστα"
-      ],
-      "Sign external messages": [
-        "Υπογράψτε εξωτερικά μηνύματα"
-      ],
-      "Attach public key": [
-        "Επισυνάψτε το δημόσιο κλειδί"
-      ],
-      "Default PGP settings": [
-        "Προεπιλεγμένες ρυθμίσεις PGP"
-      ],
       "Name": [
         "Όνομα"
       ],
@@ -1466,7 +1418,7 @@
         ""
       ],
       "Phrase": [
-        ""
+        "Φράση"
       ],
       "Backup keys": [
         ""
@@ -1479,6 +1431,57 @@
       ],
       "Please select files to upload": [
         "Επιλέξτε αρχεία για μεταφόρτωση"
+      ],
+      "Timezone": [
+        "Ζώνη ώρας"
+      ],
+      "Days of the week": [
+        "Ημέρα της εβδομάδας"
+      ],
+      "Duration": [
+        "Διάρκεια"
+      ],
+      "Start day of month": [
+        "Ημερομηνία έναρξης του μήνα"
+      ],
+      "Start time": [
+        "Ώρα έναρξης"
+      ],
+      "End day of month": [
+        "Ημερομηνία λήξης του μήνα"
+      ],
+      "End time": [
+        "Ώρα λήξης"
+      ],
+      "Start weekday": [
+        "Εκκίνηση της εβδομάδας"
+      ],
+      "End weekday": [
+        "Λήξη εβδομάδας"
+      ],
+      "Start date": [
+        "Ημερομηνία Έναρξης"
+      ],
+      "End date": [
+        "Ημερομηνία Λήξης"
+      ],
+      "Message": [
+        "Μήνυμα"
+      ],
+      "Auto reply": [
+        "Αυτόματη απάντηση"
+      ],
+      "Prompt to trust keys": [
+        "Προτροπή για χαρακτηρισμό κλειδιών ως αξιόπιστα"
+      ],
+      "Sign external messages": [
+        "Υπογράψτε εξωτερικά μηνύματα"
+      ],
+      "Attach public key": [
+        "Επισυνάψτε το δημόσιο κλειδί"
+      ],
+      "Default PGP settings": [
+        "Προεπιλεγμένες ρυθμίσεις PGP"
       ],
       "Domain name": [
         "Όνομα domain"
@@ -1494,9 +1497,6 @@
       ],
       "Here is a basic DMARC record that does nothing except email you reports.": [
         "Ακολουθεί μια βασική εγγραφή DMARC που δεν κάνει τίποτα άλλο εκτός από τα μηνύματα που αναφέρετε."
-      ],
-      "Display name": [
-        "Εμφανιζόμενο Όνομα"
       ],
       "Filter Name": [
         "Όνομα φίλτρου"
@@ -1603,6 +1603,21 @@
       "Want to add": [
         "Θέλω να προσθέσω"
       ],
+      "Display name": [
+        "Εμφανιζόμενο Όνομα"
+      ],
+      "Folder location": [
+        "Τοποθεσία φακέλου"
+      ],
+      "Notification": [
+        "Ειδοποίηση"
+      ],
+      "Use folder colors": [
+        "Χρήση χρωμάτων φακέλου"
+      ],
+      "Inherit color from parent folder": [
+        "Κληρονόμηση χρώματος από το γονικό φάκελο"
+      ],
       "Operating system": [
         "Λειτουργικό σύστημα"
       ],
@@ -1630,25 +1645,13 @@
       "Browser version": [
         "Έκδοση προγράμματος περιήγησης"
       ],
-      "Folder location": [
-        "Τοποθεσία φακέλου"
-      ],
-      "Notification": [
-        "Ειδοποίηση"
-      ],
-      "Use folder colors": [
-        "Χρήση χρωμάτων φακέλου"
-      ],
-      "Inherit color from parent folder": [
-        "Κληρονόμηση χρώματος από το γονικό φάκελο"
-      ],
       "${ n } VPN connection available": [
-        "",
-        ""
+        "${ n } διαθέσιμη σύνδεση VPN",
+        "${ n } διαθέσιμες συνδέσεις VPN"
       ],
       "${ UsedMembers } of ${ MaxMembers } user": [
-        "",
-        ""
+        "${ UsedMembers } από ${ MaxMembers } χρήστη",
+        "${ UsedMembers } από ${ MaxMembers } χρήστες"
       ],
       "${ UsedAddresses } of ${ MaxAddresses } email address": [
         "",
@@ -1661,20 +1664,23 @@
       "Using ${ humanUsedSpace } of ${ humanMaxSpace }": [
         ""
       ],
+      "Could you please specify?": [
+        "Θα μπορούσατε να συγκεκριμενοποιήσετε;"
+      ],
+      "Could you please specify which streaming service?": [
+        "Θα μπορούσατε να μας γνωστοποιήσετε την υπηρεσία μετάδοσης;"
+      ],
+      "Could you please let us know which provider?": [
+        "Θα μπορούσατε να μας γνωστοποιήσετε τον πάροχο;"
+      ],
       "What is the main reason you are cancelling?": [
         "Ποιος είναι ο κύριος λόγος που ακυρώνεται;"
       ],
-      "How likely are you to recommend ${ BRAND_NAME } to others?": [
-        "Πόσο πιθανό είναι να συστήσετε το ${ BRAND_NAME } σε άλλους;"
+      "Do you have any suggestions for our team?": [
+        "Έχετε να προτείνετε κάτι στην ομάδα μας;"
       ],
-      "0 - Not at all likely": [
-        "0 - Δεν είναι καθόλου πιθανό"
-      ],
-      "10 - Extremely likely": [
-        "10 - Εξαιρετικά πιθανό"
-      ],
-      "How do you think we could improve our products or service in the future?": [
-        "Πώς νομίζετε ότι θα μπορούσαμε να βελτιώσουμε τα προϊόντα ή την υπηρεσία μας στο μέλλον;"
+      "Optional": [
+        "Προαιρετικό"
       ],
       "Total (${ countdown })": [
         "Σύνολο (${ countdown })"
@@ -1739,20 +1745,11 @@
       "Select a method": [
         "Επιλέξτε μέθοδο"
       ],
-      "Auto-load remote content": [
-        "Αυτόματη φόρτωση απομακρυσμένου περιεχομένου"
+      "OpenVPN / IKEv2 username": [
+        "Όνομα χρήστη OpenVPN / IKEv2"
       ],
-      "Auto-load embedded images": [
-        "Αυτόματη φόρτωση ενσωματωμένων εικόνων"
-      ],
-      "Keep messages in Sent/Drafts": [
-        ""
-      ],
-      "Link confirmation": [
-        "Επιβεβαίωση συνδέσμου"
-      ],
-      "Undo send": [
-        "Αναίρεση αποστολής"
+      "OpenVPN / IKEv2 password": [
+        "Κωδικός πρόσβασης OpenVPN / IKEv2"
       ],
       "Your password (admin)": [
         "Ο κωδικός σας (διαχειριστής)"
@@ -1832,29 +1829,14 @@
       "Allow recovery by recovery phrase": [
         ""
       ],
-      "Keyboard shortcuts": [
-        "Συντομεύσεις πληκτρολογίου"
-      ],
       "Recovery phrase": [
         "Φράση αποκατάστασης"
       ],
       "Your recovery phrase": [
-        ""
+        "Η φράση ανάκτησης σας"
       ],
       "Recovery phrase contains 12 words": [
         ""
-      ],
-      "Signature": [
-        "Υπογραφή"
-      ],
-      "ProtonMail footer": [
-        "Υποσέλιδο ProtonMail"
-      ],
-      "User": [
-        "Χρήστης"
-      ],
-      "Address": [
-        "Διεύθυνση"
       ],
       "Cash": [
         "Μετρητά"
@@ -1894,6 +1876,42 @@
       ],
       "Confirm organization password": [
         "Επιβεβαίωση κωδικού πρόσβασης οργανισμού"
+      ],
+      "Confirm before loading remote content": [
+        "Επιβεβαίωση πριν τη λήψη απομακρυσμένου περιεχομένου"
+      ],
+      "Auto-load embedded images": [
+        "Αυτόματη φόρτωση ενσωματωμένων εικόνων"
+      ],
+      "Keep messages in Sent/Drafts": [
+        ""
+      ],
+      "Link confirmation": [
+        "Επιβεβαίωση συνδέσμου"
+      ],
+      "Undo send": [
+        "Αναίρεση αποστολής"
+      ],
+      "Protect against email tracking": [
+        "Προστασία κατά της ιχνηλάτησης μηνυμάτων"
+      ],
+      "Protection mode": [
+        "Μέθοδος προστασίας"
+      ],
+      "Keyboard shortcuts": [
+        "Συντομεύσεις πληκτρολογίου"
+      ],
+      "Signature": [
+        "Υπογραφή"
+      ],
+      "ProtonMail footer": [
+        "Υποσέλιδο ProtonMail"
+      ],
+      "User": [
+        "Χρήστης"
+      ],
+      "Address": [
+        "Διεύθυνση"
       ],
       "VPN connections": [
         "Συνδέσεις VPN"
@@ -1960,9 +1978,6 @@
       "Open actions dropdown": [
         "Άνοιγμα αναπτυσσόμενων επιλογών"
       ],
-      "Keyboard Shortcuts": [
-        "Συντομεύσεις Πληκτρολογίου"
-      ],
       "Previous": [
         "Προηγούμενο"
       ],
@@ -1971,6 +1986,9 @@
       ],
       "Next": [
         "Επόμενο"
+      ],
+      "Keyboard Shortcuts": [
+        "Συντομεύσεις Πληκτρολογίου"
       ],
       "What's new": [
         "Τι νέο υπάρχει"
@@ -2022,21 +2040,6 @@
       ],
       "Import contacts": [
         "Εισαγωγή επαφών"
-      ],
-      "1. Select platform": [
-        "1. Επιλέξτε πλατφόρμα"
-      ],
-      "2. Select protocol": [
-        "2. Επιλέξτε πρωτόκολλο"
-      ],
-      "3. Select config file and download": [
-        "3. Επιλέξτε αρχείο ρυθμίσεων και λήψη"
-      ],
-      "Get ProtonVPN Plus to access all servers": [
-        "Αποκτήστε το ProtonVPN Plus για πρόσβαση σε όλους τους διακομιστές (server)"
-      ],
-      "Automatically sign outgoing messages?": [
-        "Αυτόματη υπογραφή εξερχόμενων μηνυμάτων;"
       ],
       "Error": [
         "Σφάλμα"
@@ -2098,6 +2101,9 @@
       "Import key": [
         "Εισαγωγή κλειδιού"
       ],
+      "Automatically sign outgoing messages?": [
+        "Αυτόματη υπογραφή εξερχόμενων μηνυμάτων;"
+      ],
       "Edit domain": [
         "Επεξεργασία domain"
       ],
@@ -2152,9 +2158,6 @@
       "Edit Allow List": [
         "Επεξεργασία λίστας επιθυμητών"
       ],
-      "Report a problem": [
-        "Αναφορά προβλήματος"
-      ],
       "Delete ${ Name } folder": [
         ""
       ],
@@ -2167,14 +2170,17 @@
       "Sort labels alphabetically": [
         "Ταξινόμηση ετικετών αλφαβητικά"
       ],
+      "Report a problem": [
+        "Αναφορά προβλήματος"
+      ],
       "Confirm loss of Proton bonuses": [
         "Επιβεβαιώστε την απώλεια μπόνους Proton"
       ],
       "Processing": [
         "Επεξεργασία"
       ],
-      "Cancel subscription": [
-        "Ακύρωση συνδρομής"
+      "Downgrade account": [
+        "Υποβάθμιση λογαριασμού"
       ],
       "Network error": [
         "Σφάλμα δικτύου"
@@ -2269,6 +2275,18 @@
       "Plan summary": [
         "Σύνοψη πακέτου"
       ],
+      "1. Select platform": [
+        "1. Επιλέξτε πλατφόρμα"
+      ],
+      "2. Select protocol": [
+        "2. Επιλέξτε πρωτόκολλο"
+      ],
+      "3. Select config file and download": [
+        "3. Επιλέξτε αρχείο ρυθμίσεων και λήψη"
+      ],
+      "Get ProtonVPN Plus to access all servers": [
+        "Για πρόσβαση σε όλους τους διακομιστές, αποκτήστε το ProtonVPN Plus"
+      ],
       "Change password for ${ Name } (${ Email })": [
         "Αλλαγή κωδικού πρόσβασης για ${ Name } (${ Email })"
       ],
@@ -2307,21 +2325,6 @@
       ],
       "Confirm phone number": [
         "Επιβεβαίωση αριθμού τηλεφώνου"
-      ],
-      "${ appName } Keyboard Shortcuts": [
-        "${ appName } Συντομεύσεις πληκτρολογίου"
-      ],
-      "Add address": [
-        "Προσθήκη διεύθυνσης"
-      ],
-      "Delete ${ address.Email }": [
-        "Διαγραφή ${ address.Email }"
-      ],
-      "Generate missing keys": [
-        "Δημιουργία των κλειδιών που λείπουν"
-      ],
-      "Bridge for ${ platform }": [
-        "Bridge για ${ platform }"
       ],
       "App": [
         "Εφαρμογή"
@@ -2386,6 +2389,18 @@
       "Change organization password": [
         "Αλλαγή κωδικού πρόσβασης οργανισμού"
       ],
+      "${ appName } Keyboard Shortcuts": [
+        "${ appName } Συντομεύσεις πληκτρολογίου"
+      ],
+      "Add address": [
+        "Προσθήκη διεύθυνσης"
+      ],
+      "Delete ${ address.Email }": [
+        "Διαγραφή ${ address.Email }"
+      ],
+      "Generate missing keys": [
+        "Δημιουργία των κλειδιών που λείπουν"
+      ],
       "Change role": [
         "Αλλαγή ρόλου"
       ],
@@ -2397,6 +2412,9 @@
       ],
       "Add user": [
         "Προσθήκη χρήστη"
+      ],
+      "Bridge for ${ platform }": [
+        "Bridge για ${ platform }"
       ],
       "Sign in again to continue": [
         "Συνδεθείτε ξανά για να συνεχίσετε"
@@ -2413,26 +2431,11 @@
       "Account suspended": [
         "Ο λογαριασμός έχει ανασταλεί"
       ],
-      "General": [
-        "Γενικά"
+      "Appearance": [
+        "Εμφάνιση"
       ],
       "Theme": [
         "Θέμα"
-      ],
-      "Contacts": [
-        "Επαφές"
-      ],
-      "Import & export": [
-        "Εισαγωγή & εξαγωγή"
-      ],
-      "Import": [
-        "Εισαγωγή"
-      ],
-      "Export": [
-        "Εξαγωγή"
-      ],
-      "Appearance": [
-        "Εμφάνιση"
       ],
       "Layout": [
         "Διάταξη"
@@ -2482,6 +2485,12 @@
       "Labels": [
         "Ετικέτες"
       ],
+      "Import Assistant": [
+        "Βοηθός Εισαγωγής"
+      ],
+      "General": [
+        "Γενικά"
+      ],
       "Short domain (@pm.me)": [
         "Σύντομο domain (@pm.me)"
       ],
@@ -2490,6 +2499,9 @@
       ],
       "Advanced": [
         "Για προχωρημένους"
+      ],
+      "Spy Tracker Protection": [
+        "Προστασία κατά Κρυφών Ιχνηλατών"
       ],
       "Identity & addresses": [
         "Ταυτότητα & διευθύνσεις"
@@ -2506,14 +2518,38 @@
       "ProtonMail Bridge": [
         "ProtonMail Bridge"
       ],
-      "Import Assistant": [
-        "Βοηθός Εισαγωγής"
+      "Import & export": [
+        "Εισαγωγή & εξαγωγή"
       ],
       "Current & past imports": [
         "Τρέχουσες & παλαιότερες εισαγωγές"
       ],
       "Import-Export app": [
         "Εφαρμογή εισαγωγής-εξαγωγής"
+      ],
+      "Email privacy": [
+        ""
+      ],
+      "Contacts": [
+        "Επαφές"
+      ],
+      "Import": [
+        "Εισαγωγή"
+      ],
+      "Export": [
+        "Εξαγωγή"
+      ],
+      "My calendars": [
+        "Τα ημερολόγια μου"
+      ],
+      "Subscribed calendars": [
+        ""
+      ],
+      "Share outside Proton": [
+        ""
+      ],
+      "Time zone": [
+        "Ζωνη ωρας"
       ],
       "VPN apps": [
         "Εφαρμογές VPN"
@@ -2529,18 +2565,6 @@
       ],
       "OpenVPN configuration files": [
         "Αρχεία διαμόρφωσης OpenVPN"
-      ],
-      "My calendars": [
-        "Τα ημερολόγια μου"
-      ],
-      "Subscribed calendars": [
-        ""
-      ],
-      "Share outside Proton": [
-        ""
-      ],
-      "Time zone": [
-        "Ζωνη ωρας"
       ],
       "Password & recovery": [
         ""
@@ -2763,9 +2787,6 @@
       "Plain text": [
         "Απλό κείμενο"
       ],
-      "No results found": [
-        "Δεν βρέθηκαν αποτελέσματα"
-      ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Αυτός ο σύνδεσμος μπορεί να είναι επίθεση ομογραφίας και δεν μπορεί να ανοίξει από προγράμματα περιήγησης Internet Explorer και Edge. Εάν είστε βέβαιοι ότι ο σύνδεσμος είναι αυθεντικός, χρησιμοποιήστε ένα διαφορετικό πρόγραμμα περιήγησης για να το ανοίξετε."
       ],
@@ -2778,11 +2799,14 @@
       "Learn more": [
         "Μάθετε περισσότερα"
       ],
+      "Week": [
+        "Εβδομάδα"
+      ],
       "Drop the file here to upload": [
         "Αφήστε το αρχείο εδώ για μεταφόρτωση"
       ],
-      "Week": [
-        "Εβδομάδα"
+      "No results found": [
+        "Δεν βρέθηκαν αποτελέσματα"
       ],
       "Loading": [
         "Φόρτωση"
@@ -2921,113 +2945,6 @@
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "Πρέπει να αποκρυπτογραφήσουμε τοπικά τις επαφές σας προτού μπορέσετε να τις εξάγετε. Στο τέλος της διαδικασίας, θα δημιουργηθεί ένα αρχείο VCF και θα μπορείτε να το κατεβάσετε."
       ],
-      "To secure your internet connection, download and install the ProtonVPN application for your device and connect to a ProtonVPN server.": [
-        "Για να ξεκινήσετε να διασφαλίζετε τη σύνδεσή σας στο διαδίκτυο, θα πρέπει να εγκαταστήσετε την εφαρμογή ProtonVPN στη συσκευή σας και να συνδεθείτε σε ένα διακομιστή ProtonVPN."
-      ],
-      "You can use the following credentials to connect to a ProtonVPN server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
-        "Μπορείτε να χρησιμοποιήσετε τα ακόλουθα διαπιστευτήρια για να συνδεθείτε σε έναν διακομιστή ProtonVPN χρησιμοποιώντας τρίτο, ανοιχτό πηγαίο VPN app, όπως το Tunnelblick για macOS ή OpenVPN για GNU/Linux."
-      ],
-      "Learn how to log in to ProtonVPN with third-party VPN applications.": [
-        "Μάθετε πώς να συνδεθείτε στο ProtonVPN με εφαρμογές VPN τρίτων."
-      ],
-      "We advise you to use official ProtonVPN applications when possible.": [
-        "Σας συμβουλεύουμε να χρησιμοποιείτε επίσημες εφαρμογές ProtonVPN όταν είναι δυνατόν."
-      ],
-      "You cannot use the OpenVPN / IKEv2 credentials to log in to ProtonVPN applications or the ProtonVPN dashboard. ${ learnMore }": [
-        ""
-      ],
-      "Use the following credentials when connecting to ProtonVPN servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
-        ""
-      ],
-      "Do not use the OpenVPN / IKEv2 credentials in ProtonVPN applications or on the ProtonVPN dashboard. ${ learnMore }": [
-        "Μην χρησιμοποιείτε τα διαπιστευτήρια OpenVPN / IKEv2 στις εφαρμογές ProtonVPN ή στον πίνακα ελέγχου ProtonVPN. ${ learnMore }"
-      ],
-      "Server load": [
-        "Φορτίο διακομιστή"
-      ],
-      "Server is currently down": [
-        "Ο διακομιστής είναι προσωρινά εκτός"
-      ],
-      "P2P": [
-        "P2P"
-      ],
-      "Tor": [
-        "Tor"
-      ],
-      "Plus or Visionary subscription required": [
-        "Απαιτείται συνδρομή Plus ή Visionary"
-      ],
-      "Basic, Plus or Visionary subscription required": [
-        "Απαιτείται συνδρομή Basic, Plus ή Visionary"
-      ],
-      "${ number } server": [
-        "${ number } διακομιστής",
-        "${ number } διακομιστές"
-      ],
-      "${ number } city": [
-        "${ number } πόλη",
-        "${ number } πόλεις"
-      ],
-      "These configuration files let you choose which ProtonVPN server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
-        "Αυτά τα αρχεία διαμόρφωσης σας επιτρέπουν να επιλέξετε με ποιον διακομιστή ProtonVPN συνδέεστε όταν χρησιμοποιείτε μια εφαρμογή VPN τρίτων ή ρυθμίζετε μια σύνδεση VPN σε έναν δρομολογητή."
-      ],
-      "Install a Secure Core configuration file to benefit from an additional protection against VPN endpoint compromise.": [
-        "Εγκαταστήστε ένα αρχείο διαμόρφωσης Secure Core για να επωφεληθείτε με επιπλέον προστασία ενάντια παραβίασης ενός τελικού σημείου του VPN."
-      ],
-      "ProtonVPN Plus or Visionary required for Secure Core feature.": [
-        "Απαιτείται ProtonVPN Plus ή Visionary για τη λειτουργία Secure Core."
-      ],
-      "Install a Country configuration file to connect to a random server in the country of your choice.": [
-        "Εγκαταστήστε ένα αρχείο διαμόρφωσης χώρας για να συνδεθείτε σε έναν τυχαίο διακομιστή στη χώρα της επιλογής σας."
-      ],
-      "ProtonVPN Basic, Plus or Visionary required for Country level connection.": [
-        "Απαιτείται ProtonVPN Basic, Plus ή Visionary για σύνδεση σε επίπεδο χώρας."
-      ],
-      "Install a Server configuration file to connect to a specific server in the country of your choice.": [
-        "Εγκαταστήστε ένα αρχείο διαμόρφωσης διακομιστή για να συνδεθείτε σε έναν συγκεκριμένο διακομιστή στη χώρα της επιλογής σας."
-      ],
-      "Install a Free server configuration file to connect to a specific server in one of the three free locations.": [
-        "Εγκαταστήστε ένα δωρεάν αρχείο διαμόρφωσης διακομιστή, για να συνδεθείτε σε έναν συγκεκριμένο διακομιστή, σε μία από τις τρεις δωρεάν τοποθεσίες."
-      ],
-      "Plan upgrade required": [
-        "Απαιτείται αναβάθμιση πακέτου"
-      ],
-      "Auto-reply is active each month between the selected start and end time.": [
-        "Η αυτόματη απάντηση είναι ενεργή κάθε μήνα μεταξύ της επιλεγμένης ώρας έναρξης και λήξης."
-      ],
-      "Auto-reply is always active on the days of the week you select, between the selected hours.": [
-        "Η αυτόματη απάντηση είναι πάντα ενεργή τις ημέρες της εβδομάδας που επιλέγετε, μεταξύ των επιλεγμένων ωρών."
-      ],
-      "Auto-reply is active each week between the selected start and end time.": [
-        "Η αυτόματη απάντηση είναι ενεργή κάθε ευδομάδα μεταξύ της επιλεγμένης ώρας έναρξης και λήξης."
-      ],
-      "Auto-reply is active until you turn it off.": [
-        "Η αυτόματη απάντηση είναι ενεργή μέχρι να την αποενεργοποιήσετε."
-      ],
-      "Auto-reply is active from the start time to the end time.": [
-        "Η αυτόματη απάντηση είναι ενεργή μεταξύ της ώρας έναρξης και λήξης."
-      ],
-      "Images have been removed because they are not allowed in auto-reply.": [
-        ""
-      ],
-      "Use automatic replies to inform contacts you are out of the office or otherwise unable to respond.": [
-        "Χρησιμοποιήστε τις αυτόματες απαντήσεις για να ενημερώνετε τις επαφές σας ότι βρίσκεστε εκτός γραφείου ή ότι δεν μπορείτε να απαντήσετε με άλλο τρόπο."
-      ],
-      "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to enable automatic replies for when you are out of the office.": [
-        ""
-      ],
-      "Address verification is an advanced security feature. Only turn this on if you know what it does.": [
-        "Η επαλήθευση διεύθυνσης είναι μια προηγμένη λειτουργία ασφαλείας. Ενεργοποιήστε το μόνο εάν ξέρετε τι κάνει."
-      ],
-      "Encryption setting updated": [
-        "Η ρύθμιση κρυπτογράφησης ενημερώθηκε"
-      ],
-      "PGP clients are more likely to automatically detect your PGP keys if outgoing messages are signed.": [
-        "Οι πελάτες PGP είναι πιο πιθανό να ανιχνεύουν αυτόματα τα κλειδιά PGP εάν έχουν υπογραφεί τα εξερχόμενα μηνύματα."
-      ],
-      "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
-        "Αλλάξτε αυτές τις ρυθμίσεις μόνο αν χρησιμοποιείτε PGP με παραλήπτες που δεν ανήκουν στο ProtonMail."
-      ],
       "Are you sure you want to delete this calendar?": [
         "Είστε βέβαιοι ότι θέλετε να διαγράψετε αυτό το ημερολόγιο;"
       ],
@@ -3146,6 +3063,42 @@
       "No contact encryption keys exist": [
         "Δεν υπάρχουν κλειδιά κρυπτογράφησης επαφών"
       ],
+      "Auto-reply is active each month between the selected start and end time.": [
+        "Η αυτόματη απάντηση είναι ενεργή κάθε μήνα μεταξύ της επιλεγμένης ώρας έναρξης και λήξης."
+      ],
+      "Auto-reply is always active on the days of the week you select, between the selected hours.": [
+        "Η αυτόματη απάντηση είναι πάντα ενεργή τις ημέρες της εβδομάδας που επιλέγετε, μεταξύ των επιλεγμένων ωρών."
+      ],
+      "Auto-reply is active each week between the selected start and end time.": [
+        "Η αυτόματη απάντηση είναι ενεργή κάθε ευδομάδα μεταξύ της επιλεγμένης ώρας έναρξης και λήξης."
+      ],
+      "Auto-reply is active until you turn it off.": [
+        "Η αυτόματη απάντηση είναι ενεργή μέχρι να την αποενεργοποιήσετε."
+      ],
+      "Auto-reply is active from the start time to the end time.": [
+        "Η αυτόματη απάντηση είναι ενεργή μεταξύ της ώρας έναρξης και λήξης."
+      ],
+      "Images have been removed because they are not allowed in auto-reply.": [
+        ""
+      ],
+      "Use automatic replies to inform contacts you are out of the office or otherwise unable to respond.": [
+        "Χρησιμοποιήστε τις αυτόματες απαντήσεις για να ενημερώνετε τις επαφές σας ότι βρίσκεστε εκτός γραφείου ή ότι δεν μπορείτε να απαντήσετε με άλλο τρόπο."
+      ],
+      "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to enable automatic replies for when you are out of the office.": [
+        ""
+      ],
+      "Address verification is an advanced security feature. Only turn this on if you know what it does.": [
+        "Η επαλήθευση διεύθυνσης είναι μια προηγμένη λειτουργία ασφαλείας. Ενεργοποιήστε το μόνο εάν ξέρετε τι κάνει."
+      ],
+      "Encryption setting updated": [
+        "Η ρύθμιση κρυπτογράφησης ενημερώθηκε"
+      ],
+      "PGP clients are more likely to automatically detect your PGP keys if outgoing messages are signed.": [
+        "Οι πελάτες PGP είναι πιο πιθανό να ανιχνεύουν αυτόματα τα κλειδιά PGP εάν έχουν υπογραφεί τα εξερχόμενα μηνύματα."
+      ],
+      "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
+        "Αλλάξτε αυτές τις ρυθμίσεις μόνο αν χρησιμοποιείτε PGP με παραλήπτες που δεν ανήκουν στο ProtonMail."
+      ],
       "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ProtonMail in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
         "Το SPF χρησιμοποιείται για να καθορίσετε ποιος μπορεί να στείλει μηνύματα ηλεκτρονικού ταχυδρομείου για το domain, γι 'αυτό συνιστούμε να συμπεριλάβετε το ProtonMail στην εγγραφή SPF σας. Προσθέστε την ακόλουθη εγγραφή TXT στο DNS σας. Αυτό μπορεί να γίνει συνήθως στον πίνακα ελέγχου του καταχωρητή ονομάτων domain σας."
       ],
@@ -3235,12 +3188,6 @@
       "Your Block List is empty.": [
         "Η Λίστα Αποκλεισμού είναι κενή."
       ],
-      "Screenshot(s) attached": [
-        "Το στιγμιότυπο/α οθόνης έχει επισυναφθεί"
-      ],
-      "Refreshing the page or ${ link } will automatically resolve most issues.": [
-        "Η ανανέωση της σελίδας ή ${ link } θα επιλύσει αυτόματα τα περισσότερα προβλήματα."
-      ],
       "Inherited from parent folder": [
         "Κληρονoμήθηκαν από το γονικό φάκελο"
       ],
@@ -3261,6 +3208,12 @@
       ],
       "Are you sure you want to delete this folder?": [
         "Είστε βέβαιοι ότι θέλετε να διαγράψετε αυτόν τον φάκελο;"
+      ],
+      "Screenshot(s) attached": [
+        "Το στιγμιότυπο/α οθόνης έχει επισυναφθεί"
+      ],
+      "Refreshing the page or ${ link } will automatically resolve most issues.": [
+        "Η ανανέωση της σελίδας ή ${ link } θα επιλύσει αυτόματα τα περισσότερα προβλήματα."
       ],
       "More Info": [
         "Περισσότερες πληροφορίες"
@@ -3308,6 +3261,9 @@
       "No subscription yet": [
         "Δεν υπάρχει συνδρομή ακόμα"
       ],
+      "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
+        "Με την υποβάθμιση θα χάσετε τα παρακάτω προνόμια. Θέλετε σίγουρα να προχωρήσετε;"
+      ],
       "You already have a free account": [
         "Έχετε ήδη έναν δωρεάν λογαριασμό"
       ],
@@ -3325,12 +3281,6 @@
       ],
       "* Customizable features": [
         "*Προσαρμοσμένες λειτουργίες"
-      ],
-      "Access your streaming services, like ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, no matter where you are.": [
-        "Πρόσβαση στις υπηρεσίες streaming, όπως ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, ανεξάρτητα από το πού βρίσκεστε."
-      ],
-      "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
-        "Πρόσβαση σε μπλοκαρισμένο περιεχόμενο, όπως μέσα κοινωνικής δικτύωσης, ειδήσεις, Wikipedia, YouTube, και πολλά άλλα, ανεξάρτητα από το πού βρίσκεστε."
       ],
       "For getting started with private and secure emailing.": [
         ""
@@ -3355,6 +3305,12 @@
       ],
       "For families and small teams; includes both Mail and VPN.": [
         ""
+      ],
+      "Access your streaming services, like ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, no matter where you are.": [
+        "Πρόσβαση στις υπηρεσίες streaming, όπως ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, ανεξάρτητα από το πού βρίσκεστε."
+      ],
+      "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
+        "Πρόσβαση σε μπλοκαρισμένο περιεχόμενο, όπως μέσα κοινωνικής δικτύωσης, ειδήσεις, Wikipedia, YouTube, και πολλά άλλα, ανεξάρτητα από το πού βρίσκεστε."
       ],
       "Save 20%": [
         "Εξοικονομήστε 20%"
@@ -3483,7 +3439,7 @@
         "Παρακαλώ προσπαθήστε ξανά, χρησιμοποιείστε μια διαφορετική μέθοδο πληρωμής, ή καλέστε την τράπεζα σας για περαιτέρω βοήθεια."
       ],
       "Save extra 20%": [
-        ""
+        "Εξοικονομήστε επιπλέον 20%"
       ],
       "${ save20 } on your subscription by switching to ${ annualBilling }": [
         "${ save20 } στη συνδρομή σας με αλλαγή σε ${ annualBilling }"
@@ -3525,8 +3481,8 @@
         "Μετάβαση σε ${ professionalPlan } για να προσθέσετε περισσότερους χρήστες."
       ],
       "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } includes ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } VPN connection.": [
-        "",
-        ""
+        "Το ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } περιλαμβάνει ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } VPN σύνδεση.",
+        "Το ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } περιλαμβάνει ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } VPN συνδέσεις."
       ],
       "Each additional connection can be assigned to users in your organization.": [
         "Κάθε πρόσθετη σύνδεση μπορεί να ανατεθεί σε χρήστες στον οργανισμό σας."
@@ -3545,6 +3501,77 @@
       ],
       "30 days money-back guarantee.": [
         "Εγγύηση Επιστροφής Χρημάτων εντός 30 ημερών."
+      ],
+      "To secure your internet connection, download and install the ProtonVPN application for your device and connect to a ProtonVPN server.": [
+        "Για να ξεκινήσετε να διασφαλίζετε τη σύνδεσή σας στο διαδίκτυο, θα πρέπει να εγκαταστήσετε την εφαρμογή ProtonVPN στη συσκευή σας και να συνδεθείτε σε ένα διακομιστή ProtonVPN."
+      ],
+      "You can use the following credentials to connect to a ProtonVPN server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
+        "Μπορείτε να χρησιμοποιήσετε τα ακόλουθα διαπιστευτήρια για να συνδεθείτε σε έναν διακομιστή ProtonVPN χρησιμοποιώντας τρίτο, ανοιχτό πηγαίο VPN app, όπως το Tunnelblick για macOS ή OpenVPN για GNU/Linux."
+      ],
+      "Learn how to log in to ProtonVPN with third-party VPN applications.": [
+        "Μάθετε πώς να συνδεθείτε στο ProtonVPN με εφαρμογές VPN τρίτων."
+      ],
+      "We advise you to use official ProtonVPN applications when possible.": [
+        "Σας συμβουλεύουμε να χρησιμοποιείτε επίσημες εφαρμογές ProtonVPN όταν είναι δυνατόν."
+      ],
+      "You cannot use the OpenVPN / IKEv2 credentials to log in to ProtonVPN applications or the ProtonVPN dashboard. ${ learnMore }": [
+        ""
+      ],
+      "Use the following credentials when connecting to ProtonVPN servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
+        ""
+      ],
+      "Do not use the OpenVPN / IKEv2 credentials in ProtonVPN applications or on the ProtonVPN dashboard. ${ learnMore }": [
+        "Μην χρησιμοποιείτε τα διαπιστευτήρια OpenVPN / IKEv2 στις εφαρμογές ProtonVPN ή στον πίνακα ελέγχου ProtonVPN. ${ learnMore }"
+      ],
+      "Server load": [
+        "Φορτίο διακομιστή"
+      ],
+      "Server is currently down": [
+        "Ο διακομιστής είναι προσωρινά εκτός"
+      ],
+      "P2P": [
+        "P2P"
+      ],
+      "Tor": [
+        "Tor"
+      ],
+      "Plus or Visionary subscription required": [
+        "Απαιτείται συνδρομή Plus ή Visionary"
+      ],
+      "Basic, Plus or Visionary subscription required": [
+        "Απαιτείται συνδρομή Basic, Plus ή Visionary"
+      ],
+      "${ number } server": [
+        "${ number } διακομιστής",
+        "${ number } διακομιστές"
+      ],
+      "${ number } city": [
+        "${ number } πόλη",
+        "${ number } πόλεις"
+      ],
+      "These configuration files let you choose which ProtonVPN server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
+        "Αυτά τα αρχεία διαμόρφωσης σας επιτρέπουν να επιλέξετε με ποιον διακομιστή ProtonVPN συνδέεστε όταν χρησιμοποιείτε μια εφαρμογή VPN τρίτων ή ρυθμίζετε μια σύνδεση VPN σε έναν δρομολογητή."
+      ],
+      "Install a Secure Core configuration file to benefit from an additional protection against VPN endpoint compromise.": [
+        "Εγκαταστήστε ένα αρχείο διαμόρφωσης Secure Core για να επωφεληθείτε με επιπλέον προστασία ενάντια παραβίασης ενός τελικού σημείου του VPN."
+      ],
+      "ProtonVPN Plus or Visionary required for Secure Core feature.": [
+        "Απαιτείται ProtonVPN Plus ή Visionary για τη λειτουργία Secure Core."
+      ],
+      "Install a Country configuration file to connect to a random server in the country of your choice.": [
+        "Εγκαταστήστε ένα αρχείο διαμόρφωσης χώρας για να συνδεθείτε σε έναν τυχαίο διακομιστή στη χώρα της επιλογής σας."
+      ],
+      "ProtonVPN Basic, Plus or Visionary required for Country level connection.": [
+        "Απαιτείται ProtonVPN Basic, Plus ή Visionary για σύνδεση σε επίπεδο χώρας."
+      ],
+      "Install a Server configuration file to connect to a specific server in the country of your choice.": [
+        "Εγκαταστήστε ένα αρχείο διαμόρφωσης διακομιστή για να συνδεθείτε σε έναν συγκεκριμένο διακομιστή στη χώρα της επιλογής σας."
+      ],
+      "Install a Free server configuration file to connect to a specific server in one of the three free locations.": [
+        "Εγκαταστήστε ένα δωρεάν αρχείο διαμόρφωσης διακομιστή, για να συνδεθείτε σε έναν συγκεκριμένο διακομιστή, σε μία από τις τρεις δωρεάν τοποθεσίες."
+      ],
+      "Plan upgrade required": [
+        "Απαιτείται αναβάθμιση πακέτου"
       ],
       "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
         "Ο λογαριασμός σας έχει τουλάχιστον ένα εκπρόθεσμο τιμολόγιο. Η πρόσβαση σας έχει περιοριστεί. ${ payInvoiceLink }"
@@ -3584,12 +3611,6 @@
       ],
       "Internet connection lost. Please check your device's connectivity.": [
         "Η σύνδεση στο Διαδίκτυο χάθηκε. Ελέγξτε τη συνδεσιμότητα της συσκευής σας."
-      ],
-      "When disabled, this prevents all files from loading on your device without your knowledge.\t": [
-        "Όταν είναι απενεργοποιημένο, εμποδίζει τη φόρτωση όλων των αρχείων στη συσκευή σας εν αγνοία σας.\t"
-      ],
-      "When disabled, this prevents image files from loading on your device without your knowledge.": [
-        "Όταν είναι απενεργοποιημένο, εμποδίζει τη φόρτωση αρχείων εικόνας στη συσκευή σας εν αγνοία σας."
       ],
       "By leaving now, changes may not be saved": [
         "Φεύγοντας τώρα, οι αλλαγές ενδέχεται να μην αποθηκευτούν"
@@ -3699,9 +3720,6 @@
       "Disabling this will prevent your recovery phrase from being used for account recovery.": [
         ""
       ],
-      "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
-        "Η βασική πλοήγηση και οι ενέργειες παραμένουν διαθέσιμες ανεξάρτητα από τις συντομεύσεις πληκτρολογίου που είναι ενεργές ή όχι στις ρυθμίσεις."
-      ],
       "Your recovery phrase is a series of 12 words in a specific order.": [
         ""
       ],
@@ -3718,7 +3736,7 @@
         ""
       ],
       "Your recovery phrase": [
-        ""
+        "Η φράση ανάκτησης σας"
       ],
       "If you proceed, you will have to reset your password and will be logged out of any other active sessions.": [
         ""
@@ -3727,33 +3745,6 @@
         ""
       ],
       "Recovery phrase has been disabled": [
-        ""
-      ],
-      "Let your contacts know you care about their privacy.": [
-        "Ενημερώστε τις επαφές σας ότι ενδιαφέρεστε για την ιδιωτικότητά τους."
-      ],
-      "Please note that if you delete this address, you will no longer be able to send or receive emails using this address.": [
-        "Λάβετε υπόψη ότι αν διαγράψετε αυτήν τη διεύθυνση, δεν θα μπορείτε πλέον να στέλνετε ή να λαμβάνετε μηνύματα ηλεκτρονικού ταχυδρομείου χρησιμοποιώντας αυτήν τη διεύθυνση."
-      ],
-      "Are you sure you want to delete this address?": [
-        "Είστε βέβαιοι ότι θέλετε να διαγράψετε αυτή τη διεύθυνση;"
-      ],
-      "The email address you place at the top of the list is your default email address. Drag and drop to reorder your addresses.": [
-        "Η διεύθυνση ηλεκτρονικού ταχυδρομείου που τοποθετείτε στην κορυφή της λίστας είναι η προεπιλεγμένη διεύθυνσή σας. Σύρετε και αφήστε για να αναδιατάξετε τις διευθύνσεις σας."
-      ],
-      "Queued": [
-        "Σε ουρά"
-      ],
-      "Done": [
-        "Ολοκληρώθηκε"
-      ],
-      "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
-        "Προτού αρχίσετε να στέλνετε και να λαμβάνετε μηνύματα ηλεκτρονικού ταχυδρομείου από τις νέες διευθύνσεις σας, πρέπει πρώτα να δημιουργήσετε κλειδιά κρυπτογράφησης για αυτά."
-      ],
-      "You can use ProtonMail with any desktop email client that supports IMAP/SMTP, including Outlook, Apple Mail, and Thunderbird.": [
-        "Μπορείτε να χρησιμοποιήσετε το ProtonMail με οποιοδήποτε πρόγραμμα-πελάτη ηλεκτρονικού ταχυδρομείου για desktop που υποστηρίζει IMAP/SMTP, συμπεριλαμβανομένων των Outlook, Apple Mail και Thunderbird."
-      ],
-      "Upgrade to a paid plan to unlock IMAP/SMTP support through ProtonMail Bridge.": [
         ""
       ],
       "Do you want to revoke all other sessions than the current one?": [
@@ -3870,6 +3861,39 @@
       "Your organization's emails are protected with end-to-end encryption using the organization key. This fingerprint can be used to verify that all administrators in your account have the same key.": [
         "Τα μηνύματα ηλεκτρονικού ταχυδρομείου της εταιρείας σας προστατεύονται με κρυπτογράφηση από άκρο σε άκρο χρησιμοποιώντας το κλειδί οργανισμού. Αυτό το δακτυλικό αποτύπωμα μπορεί να χρησιμοποιηθεί για να επαληθεύσει ότι όλοι οι διαχειριστές του λογαριασμού σας έχουν το ίδιο κλειδί."
       ],
+      "Prevents remote email content from loading automatically.": [
+        "Αποτρέπει την αυτόματη λήψη απομακρυσμένων περιεχομένων μηνυμάτων."
+      ],
+      "When disabled, this prevents image files from loading on your device without your knowledge.": [
+        "Όταν είναι απενεργοποιημένο, εμποδίζει τη φόρτωση αρχείων εικόνας στη συσκευή σας εν αγνοία σας."
+      ],
+      "Prevents senders from knowing whether and when you have opened a message.": [
+        "Αποτρέπει τη γνωστοποίηση στους αποστολείς του αν και πότε ανοίξατε ένα μήνυμα."
+      ],
+      "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
+        "Η βασική πλοήγηση και οι ενέργειες παραμένουν διαθέσιμες ανεξάρτητα από τις συντομεύσεις πληκτρολογίου που είναι ενεργές ή όχι στις ρυθμίσεις."
+      ],
+      "Let your contacts know you care about their privacy.": [
+        "Ενημερώστε τις επαφές σας ότι ενδιαφέρεστε για την ιδιωτικότητά τους."
+      ],
+      "Please note that if you delete this address, you will no longer be able to send or receive emails using this address.": [
+        "Λάβετε υπόψη ότι αν διαγράψετε αυτήν τη διεύθυνση, δεν θα μπορείτε πλέον να στέλνετε ή να λαμβάνετε μηνύματα ηλεκτρονικού ταχυδρομείου χρησιμοποιώντας αυτήν τη διεύθυνση."
+      ],
+      "Are you sure you want to delete this address?": [
+        "Είστε βέβαιοι ότι θέλετε να διαγράψετε αυτή τη διεύθυνση;"
+      ],
+      "The email address you place at the top of the list is your default email address. Drag and drop to reorder your addresses.": [
+        "Η διεύθυνση ηλεκτρονικού ταχυδρομείου που τοποθετείτε στην κορυφή της λίστας είναι η προεπιλεγμένη διεύθυνσή σας. Σύρετε και αφήστε για να αναδιατάξετε τις διευθύνσεις σας."
+      ],
+      "Queued": [
+        "Σε ουρά"
+      ],
+      "Done": [
+        "Ολοκληρώθηκε"
+      ],
+      "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
+        "Προτού αρχίσετε να στέλνετε και να λαμβάνετε μηνύματα ηλεκτρονικού ταχυδρομείου από τις νέες διευθύνσεις σας, πρέπει πρώτα να δημιουργήσετε κλειδιά κρυπτογράφησης για αυτά."
+      ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Αυτός ο χρήστης είναι προς το παρόν υπεύθυνος για τις πληρωμές του οργανισμού σας. Με την υποβάθμιση αυτού του μέλους, θα είστε εσείς υπεύθυνοι για τις πληρωμές του οργανισμού σας."
       ],
@@ -3888,6 +3912,12 @@
       ],
       "more": [
         "περισσότερα"
+      ],
+      "You can use ProtonMail with any desktop email client that supports IMAP/SMTP, including Outlook, Apple Mail, and Thunderbird.": [
+        "Μπορείτε να χρησιμοποιήσετε το ProtonMail με οποιοδήποτε πρόγραμμα-πελάτη ηλεκτρονικού ταχυδρομείου για desktop που υποστηρίζει IMAP/SMTP, συμπεριλαμβανομένων των Outlook, Apple Mail και Thunderbird."
+      ],
+      "Upgrade to a paid plan to unlock IMAP/SMTP support through ProtonMail Bridge.": [
+        ""
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "Ο λογαριασμός Proton βρίσκεται σε αναμονή. Για να συνεχίσετε να χρησιμοποιείτε το λογαριασμό σας, παρακαλούμε να πληρώσετε τυχόν εκπρόθεσμα τιμολόγια."
@@ -3931,15 +3961,6 @@
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Εάν πιστεύετε ότι αυτό είναι λάθος, παρακαλούμε επικοινωνήστε μαζί μας ${ contactLink }."
       ],
-      "Session timed out.": [
-        "Η χρονική περίοδος σύνδεσης έληξε."
-      ],
-      "Internet connection lost.": [
-        ""
-      ],
-      "Servers are unreachable.": [
-        "Αδυναμία πρόσβασης σε διακομιστή."
-      ],
       "Custom daily": [
         "Προσαρμοσμένη καθημερινή"
       ],
@@ -3963,6 +3984,15 @@
       ],
       "Yearly": [
         "Ετησίως"
+      ],
+      "Session timed out.": [
+        "Η χρονική περίοδος σύνδεσης έληξε."
+      ],
+      "Internet connection lost.": [
+        ""
+      ],
+      "Servers are unreachable.": [
+        "Αδυναμία πρόσβασης σε διακομιστή."
       ],
       "Users can't make changes to organization settings. If you need admin privileges, reach out to your system administrator.": [
         "Οι χρήστες δεν μπορούν να κάνουν αλλαγές στις ρυθμίσεις του οργανισμού. Εάν χρειάζεστε δικαιώματα διαχειριστή, επικοινωνήστε με το διαχειριστή του συστήματός σας."
@@ -4098,6 +4128,16 @@
         ""
       ]
     },
+    "Select search results": {
+      "No results found": [
+        "Κανένα αποτέλεσμα"
+      ]
+    },
+    "Timezone search placeholder": {
+      "Search timezones": [
+        "Αναζήτηση ζώνης ώρας"
+      ]
+    },
     "Storage": {
       "Your current storage:": [
         ""
@@ -4113,12 +4153,6 @@
       "Learn more": [
         "Μάθετε περισσότερα"
       ],
-      "View guide": [
-        "Προβολή οδηγού"
-      ],
-      "What is the difference between UDP and TCP protocols?": [
-        "Ποια είναι η διαφορά μεταξύ των πρωτοκόλλων UDP και TCP;"
-      ],
       "Upgrade": [
         "Αναβάθμιση"
       ],
@@ -4133,6 +4167,12 @@
       ],
       "Add a gift code": [
         "Προσθήκη κωδικού δώρου"
+      ],
+      "View guide": [
+        "Προβολή οδηγού"
+      ],
+      "What is the difference between UDP and TCP protocols?": [
+        "Ποια είναι η διαφορά μεταξύ των πρωτοκόλλων UDP και TCP;"
       ],
       "Pay invoice": [
         "Πληρωμή υπολοίπου"
@@ -4177,14 +4217,511 @@
         "Δημιουργήστε νέο λογαριασμό"
       ]
     },
-    "Select search results": {
-      "No results found": [
-        "Δεν βρέθηκαν αποτελέσματα"
+    "Label to change composer mode": {
+      "Normal": [
+        "Κανονικό"
+      ],
+      "Maximized": [
+        "Μεγιστοποιημένο"
       ]
     },
-    "Timezone search placeholder": {
-      "Search timezones": [
+    "Label to change view layout": {
+      "Column": [
+        "Στήλη"
+      ],
+      "Row": [
+        "Σειρά"
+      ]
+    },
+    "Label to change density": {
+      "Comfortable": [
+        "Άνετη"
+      ],
+      "Compact": [
+        "Συμπαγής"
+      ]
+    },
+    "Success": {
+      "Preference saved": [
+        "Η προτίμηση αποθηκεύτηκε"
+      ],
+      "Import resumed": [
+        "Η εισαγωγή συνεχίζεται"
+      ],
+      "Import canceled": [
+        "Η εισαγωγή ακυρώθηκε"
+      ],
+      "Import record deleted": [
+        "Η εισαγωγή εγγραφής διαγράφηκε"
+      ],
+      "Deleting original messages": [
+        "Διαγραφή αρχικών μηνυμάτων"
+      ],
+      "Locale updated": [
+        "Το τοπικό ενημερώθηκε"
+      ],
+      "Premium address created": [
+        "Κορυφαία διεύθυνση δημιουργήθηκε"
+      ],
+      "Keyboard shortcuts preferences updated": [
+        "Οι προτιμήσεις συντομεύσεων πληκτρολογίου ενημερώθηκαν"
+      ],
+      "Calendar added. It might take a few minutes to sync.": [
         ""
+      ],
+      "Calendar created": [
+        "Το ημερολόγιο δημιουργήθηκε"
+      ],
+      "Calendar updated": [
+        "Το ημερολόγιο ενημερώθηκε"
+      ],
+      "Default calendar updated": [
+        "Το προεπιλεγμένο ημερολόγιο ενημερώθηκε"
+      ],
+      "Calendar removed": [
+        "Το ημερολόγιο αφαιρέθηκε"
+      ],
+      "Auto-reply disabled": [
+        "Η αυτόματη απάντηση απενεργοποιήθηκε"
+      ],
+      "Auto-reply updated": [
+        "Η αυτόματη απάντηση ενημερώθηκε"
+      ],
+      "Verification code copied to clipboard!": [
+        ""
+      ],
+      "SPF value copied to clipboard!": [
+        "Η τιμή SPF αντιγράφηκε στο πρόχειρο!"
+      ],
+      "Value copied to clipboard!": [
+        "Η τιμή αντιγράφηκε στο πρόχειρο!"
+      ],
+      "DMARC value copied to clipboard!": [
+        "Η τιμή DMARC αντιγράφηκε στο πρόχειρο!"
+      ],
+      "Domain verified": [
+        "Ο τομέας επαληθεύτηκε"
+      ],
+      "Catch-all address updated": [
+        "Έγινε ενημέρωση της διεύθυνσης catch-all"
+      ],
+      "Email address copied to clipboard": [
+        "Η διεύθυνση Email αντιγράφηκε στο πρόχειρο"
+      ],
+      "Bug reported": [
+        "Το σφάλμα αναφέρθηκε"
+      ],
+      "You have successfully unsubscribed": [
+        "Διαγραφήκατε με επιτυχία"
+      ],
+      "Payment method updated": [
+        "Η μέθοδος πληρωμής ενημερώθηκε"
+      ],
+      "Payment method added": [
+        "Προστέθηκε τρόπος πληρωμής"
+      ],
+      "Credits added": [
+        "Οι μονάδες προστέθηκαν"
+      ],
+      "Gift code applied": [
+        "Εφαρμόστηκε ο κωδικός δώρου"
+      ],
+      "${ server.Domain } copied in your clipboard": [
+        "${ server.Domain } αντιγράφηκε στο πρόχειρο σας"
+      ],
+      "Password updated": [
+        "Ο κωδικός πρόσβασης ενημερώθηκε"
+      ],
+      "Account deleted. Logging out...": [
+        "Ο λογαριασμός διαγράφηκε. Αποσύνδεση..."
+      ],
+      "Email updated": [
+        "Το E-mail ενημερώθηκε"
+      ],
+      "Phone number updated": [
+        "Ο αριθμός τηλεφώνου ενημερώθηκε"
+      ],
+      "Session revoked": [
+        "Η συνεδρία ανακλήθηκε"
+      ],
+      "Sessions revoked": [
+        "Οι συνεδρίες ανακλήθηκαν"
+      ],
+      "Payment method deleted": [
+        "Η μέθοδος πληρωμής διαγράφηκε"
+      ],
+      "Invoice paid": [
+        "Το υπόλοιπο πληρώθηκε"
+      ],
+      "Invoice customized": [
+        "Το υπόλοιπο προσαρμόστηκε"
+      ],
+      "Organization activated": [
+        "Ο οργανισμός ενεργοποιήθηκε"
+      ],
+      "Keys updated": [
+        "Τα κλειδιά ενημερώθηκαν"
+      ],
+      "Address updated": [
+        "Η διεύθυνση ενημερώθηκε"
+      ],
+      "Address added": [
+        "Η διεύθυνση προστέθηκε"
+      ],
+      "User updated": [
+        "Ο χρήστης ενημερώθηκε"
+      ],
+      "User created": [
+        "Ο χρήστης δημιουργήθηκε"
+      ],
+      "Code sent to ${ methodTo }": [
+        "Ο κωδικός στάλθηκε στο ${ methodTo }"
+      ],
+      "Verification successful": [
+        "Επιτυχία επαλήθευσης"
+      ],
+      "If you entered a valid recovery email we will send you an email with your usernames in the next minute.": [
+        "Αν εισαγάγατε ένα έγκυρο email ανάκτησης θα σας στείλουμε ένα email με τα ονόματα χρηστών σας στο επόμενο λεπτό."
+      ],
+      "If you entered a valid recovery phone we will send you an sms with your usernames in the next minute.": [
+        "Αν εισαγάγατε ένα έγκυρο τηλέφωνο ανάκτησης θα σας στείλουμε ένα sms με τα ονόματα χρήστη σας το επόμενο λεπτό."
+      ]
+    },
+    "Tooltip": {
+      "Set the default layout for your Inbox.": [
+        "Ορίστε την προεπιλεγμένη διάταξη για τα Εισερχόμενά σας."
+      ],
+      "Set the default Composer popup size as small or full screen.": [
+        "Ορίστε το προεπιλεγμένο μέγεθος του αναδυόμενου παραθύρου του Συντάκτη ως μικρό ή σε πλήρη οθόνη."
+      ],
+      "When you add a label to a message in a conversation, it will automatically be applied to all future messages you send or receive in that conversation.": [
+        "Όταν προσθέτετε μια ετικέτα σε ένα μήνυμα σε μια συνομιλία, θα εφαρμόζεται αυτόματα σε όλα τα μελλοντικά μηνύματα που στέλνετε ή λαμβάνετε σε αυτή τη συνομιλία."
+      ],
+      "Group emails in the same conversation together in your Inbox or display them separately.": [
+        "Ομαδοποιήστε τα μηνύματα της ίδιας συνομιλίας στα Εισερχόμενά σας ή εμφανίστε τα ξεχωριστά."
+      ],
+      "Customize import to reduce the number of labels": [
+        "Προσαρμόσετε την εισαγωγή για να μειώσετε τον αριθμό των ετικετών"
+      ],
+      "Customize import to reduce the number of folders": [
+        "Προσαρμόσετε την εισαγωγή για να μειώσετε του αριθμού των φακέλων"
+      ],
+      "Edit label names": [
+        "Επεξεργασία ονομάτων ετικετών"
+      ],
+      "Edit folder names": [
+        "Επεξεργασία ονομάτων φακέλων"
+      ],
+      "System subfolders will show up as separate folders in ProtonMail": [
+        "Οι υποφάκελοι συστήματος θα εμφανιστούν ως ξεχωριστοί φάκελοι στο ProtonMail"
+      ],
+      "Each imported email will have this label": [
+        "Κάθε εισαγόμενο μήνυμα ηλεκτρονικού ταχυδρομείου θα έχει αυτήν την ετικέτα"
+      ],
+      "The import will start with the most recent messages.": [
+        "Η εισαγωγή θα ξεκινήσει με τα πιο πρόσφατα μηνύματα."
+      ],
+      "Account is disconnected": [
+        "Ο λογαριασμός είναι αποσυνδεδεμένος"
+      ],
+      "Your ProtonMail inbox is almost full": [
+        "Το γραμματοκιβώτιό σας στο ProtonMail, είναι σχεδόν γεμάτο"
+      ],
+      "Your external account may have reached its 24-hour bandwidth limit. Proton will try to resume the import as soon as possible.": [
+        "Ο εξωτερικός σας λογαριασμός μπορεί να έχει φτάσει το όριο εύρους ζώνης 24 ωρών. Το Proton θα προσπαθήσει να συνεχίσει την εισαγωγή το συντομότερο δυνατό."
+      ],
+      "You do not have any contacts to export": [
+        "Δεν έχετε επαφές προς εξαγωγή"
+      ],
+      "This feature is unavailable for the moment": [
+        ""
+      ],
+      "ProtonMail users will use this key by default for sending": [
+        "Οι χρήστες ProtonMail θα χρησιμοποιήσουν αυτό το κλειδί από προεπιλογή για αποστολή"
+      ],
+      "You have locally decrypted this key": [
+        "Έχετε αποκρυπτογραφήσει τοπικά αυτό το κλειδί"
+      ],
+      "This key is encrypted with an old password": [
+        "Αυτό το κλειδί είναι κρυπτογραφημένο με έναν παλιό κωδικό πρόσβασης"
+      ],
+      "Signatures produced by this key are treated as invalid and this key cannot be used for encryption": [
+        "Οι υπογραφές που παράγονται από αυτό το κλειδί θεωρούνται άκυρες και αυτό το κλειδί δεν μπορεί να χρησιμοποιηθεί για κρυπτογράφηση"
+      ],
+      "This key cannot be used for encryption": [
+        "Αυτό το κλειδί δεν μπορεί να χρησιμοποιηθεί για κρυπτογράφηση"
+      ],
+      "This address has been disabled": [
+        "Αυτή η διεύθυνση έχει απενεργοποιηθεί"
+      ],
+      "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
+        "Σταματήσαμε την υπογραφή DKIM λόγω προβλημάτων με τη ρύθμιση παραμέτρων DNS. Ακολουθήστε τις παρακάτω οδηγίες για να συνεχίσετε την υπογραφή."
+      ],
+      "Your DKIM signing is working.": [
+        "Η υπογραφή σας DKIM λειτουργεί."
+      ],
+      "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
+        "Εντοπίσαμε ένα πρόβλημα με τη ρύθμιση παραμέτρων DNS. Βεβαιωθείτε ότι τα αρχεία σας ταιριάζουν με τις παρακάτω οδηγίες. Εάν το πρόβλημα εξακολουθεί να υφίσταται, θα πρέπει να αλλάξουμε την υπογραφή DKIM."
+      ],
+      "This feature is only available for paid users": [
+        "Αυτή η δυνατότητα είναι διαθέσιμη μόνο για χρήστες επί πληρωμής"
+      ],
+      "Enable/disable desktop and mobile notifications": [
+        "Ενεργοποίηση / απενεργοποίηση ειδοποιήσεων για σταθερούς και φορητούς υπολογιστές"
+      ],
+      "Use multiple addresses / aliases linked to your account, e.g. username2@protonmail.com": [
+        "Χρήση πολλαπλών διευθύνσεων / ψευδωνύμων που συνδέονται με το λογαριασμό σας, π.χ. username2@protonmail.com"
+      ],
+      "Host emails for your own domain(s) at ProtonMail, e.g. john.smith@example.com": [
+        "Ηλεκτρονικά μηνύματα φιλοξενίας για τον δικό σας τομέα στο ProtonMail, π.χ. john.smith@example.com"
+      ],
+      "Use the personal address username@pm.me to send emails": [
+        ""
+      ],
+      "Multi-user support is only applicable to plans with 2 or more users": [
+        "Υποστήριξη πολλαπλών χρηστών ισχύει μόνο για πλάνο με 2 ή περισσότερους χρήστες"
+      ],
+      "NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "Το NetShield προστατεύει τη συσκευή σας και επιταχύνει την περιήγησή σας εμποδίζοντας διαφημίσεις, ιχνηλάτες και κακόβουλο λογισμικό."
+      ],
+      "Support for file sharing protocols such as BitTorrent.": [
+        "Υποστήριξη για πρωτόκολλα κοινής χρήσης αρχείων όπως το BitTorrent."
+      ],
+      "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
+        "Αποκτήστε πρόσβαση σε γεωγραφικά αποκλεισμένο περιεχόμενο (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, Youtube κ. λπ.) όπου κι αν βρίσκεστε."
+      ],
+      "Route your Internet traffic through the Tor network with a single click.": [
+        "Δρομολογήστε την κυκλοφορία σας στο Διαδίκτυο μέσω του δικτύου Tor με ένα μόνο κλικ."
+      ],
+      "Defends against threats to VPN privacy by passing your Internet traffic through multiple servers.": [
+        "Υπερασπίζεται τις απειλές για το απόρρητο του VPN μεταβιβάζοντας την κυκλοφορία στο Διαδίκτυο μέσω πολλών servers."
+      ],
+      "Get access to all the paid features for both ProtonVPN and ProtonMail (the encrypted email service that millions use to protect their data) with one plan.": [
+        "Αποκτήστε πρόσβαση σε όλες τις δυνατότητες επι πληρωμής, τόσο για το ProtonVPN όσο και για το ProtonMail (η κρυπτογραφημένη υπηρεσία email που χρησιμοποιούν εκατομμύρια άνθρωποι για την προστασία των δεδομένων τους) με ένα πλάνο."
+      ],
+      "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
+        "Αποκτήστε πρόσβαση σε όλες τις δυνατότητες επι πληρωμής, τόσο για το ${ vpnAppName } όσο και για το ${ mailAppName } (η κρυπτογραφημένη υπηρεσία email που χρησιμοποιούν εκατομμύρια άνθρωποι για την προστασία των δεδομένων τους) με ένα πλάνο."
+      ],
+      "Host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
+        "Φιλοξενήστε μηνύματα ηλεκτρονικού ταχυδρομείου για τον δικό σας τομέα (domain) στο ${ mailAppName }, π.χ. john.smith@example.com"
+      ],
+      "Create multiple email addresses linked to your account, e.g. username2@protonmail.com": [
+        ""
+      ],
+      "Discount applied for annual billing cycle": [
+        "Η έκπτωση ισχύει για τον ετήσιο κύκλο χρέωσης"
+      ],
+      "Discount applied for two-year billing cycle": [
+        "Η έκπτωση ισχύει για τον κύκλο χρέωσης δύο ετών"
+      ],
+      "If you purchased a gift code or received one from our support team, you can enter it here.": [
+        "Αν έχετε αγοράσει έναν κωδικό δώρου ή έχετε λάβει ένα από την ομάδα υποστήριξης, μπορείτε να τον εισάγετε εδώ."
+      ],
+      "Enabling advanced logs records the IP address for each event in the security log.": [
+        ""
+      ],
+      "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
+        "Τα μηνύματα στον φάκελο Απεσταλμένα ή Πρόχειρα θα συνεχίσουν να εμφανίζονται σε αυτόν τον φάκελο, ακόμη και αν τα μετακινήσετε σε άλλο φάκελο."
+      ],
+      "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
+        "Όταν κάνετε κλικ σε έναν σύνδεσμο, αυτή η λειτουργία εναντίον του ηλεκτρονικού «ψαρέματος» (phishing) θα σας ζητά να επιβεβαιώσετε τη διεύθυνση URL της ιστοσελίδας."
+      ],
+      "This feature delays sending your emails, giving you the opportunity to undo send during the selected time frame.": [
+        "Αυτή η λειτουργία καθυστερεί την αποστολή των μηνυμάτων σας, δίνοντάς σας την δυνατότητα να αναιρέσετε την αποστολή κατά τη διάρκεια του επιλεγμένου χρονικού πλαισίου."
+      ]
+    },
+    "Option": {
+      "Normal": [
+        "Κανονικό"
+      ],
+      "Plain text": [
+        "Απλό κείμενο"
+      ],
+      "Left to Right": [
+        "Αριστερά προς τα δεξιά"
+      ],
+      "Right to Left": [
+        "Δεξιά προς τα αριστερά"
+      ],
+      "Automatic (${ defaultFormat })": [
+        "Αυτόματο (${ defaultFormat })"
+      ],
+      "Automatic (${ defaultDay })": [
+        "Αυτόματο (${ defaultDay })"
+      ],
+      "Add to existing group": [
+        "Προσθήκη σε υπάρχουσα ομάδα"
+      ],
+      "Create new group": [
+        "Δημιουργία νέας ομάδας"
+      ],
+      "Ignore group": [
+        "Παράβλεψη ομάδας"
+      ],
+      "Fixed duration": [
+        "Σταθερή διάρκεια"
+      ],
+      "Repeat daily": [
+        "Επανάληψη καθημερινά"
+      ],
+      "Repeat weekly": [
+        "Επανάληψη εβδομαδιαία"
+      ],
+      "Repeat monthly": [
+        "Επανάληψη μηνιαία"
+      ],
+      "Permanent": [
+        "Μόνιμο"
+      ],
+      "1st of the month": [
+        "1η του μήνα"
+      ],
+      "2nd of the month": [
+        "2η του μήνα"
+      ],
+      "3rd of the month": [
+        "3η του μήνα"
+      ],
+      "4th of the month": [
+        "4η του μήνα"
+      ],
+      "5th of the month": [
+        "5η του μήνα"
+      ],
+      "6th of the month": [
+        "6η του μήνα"
+      ],
+      "7th of the month": [
+        "7η του μήνα"
+      ],
+      "8th of the month": [
+        "8η του μήνα"
+      ],
+      "9th of the month": [
+        "9η του μήνα"
+      ],
+      "10th of the month": [
+        "10η του μήνα"
+      ],
+      "11th of the month": [
+        "11η του μήνα"
+      ],
+      "12th of the month": [
+        "12η του μήνα"
+      ],
+      "13th of the month": [
+        "13η του μήνα"
+      ],
+      "14th of the month": [
+        "14η του μήνα"
+      ],
+      "15th of the month": [
+        "15η του μήνα"
+      ],
+      "16th of the month": [
+        "16η του μήνα"
+      ],
+      "17th of the month": [
+        "17η του μήνα"
+      ],
+      "18th of the month": [
+        "18η του μήνα"
+      ],
+      "19th of the month": [
+        "19η του μήνα"
+      ],
+      "20th of the month": [
+        "20ή του μήνα"
+      ],
+      "21st of the month": [
+        "21η του μήνα"
+      ],
+      "22nd of the month": [
+        "22η του μήνα"
+      ],
+      "23rd of the month": [
+        "23η του μήνα"
+      ],
+      "24th of the month": [
+        "24η του μήνα"
+      ],
+      "25th of the month": [
+        "25η του μήνα"
+      ],
+      "26th of the month": [
+        "26η του μήνα"
+      ],
+      "27th of the month": [
+        "27η του μήνα"
+      ],
+      "28th of the month": [
+        "28η του μήνα"
+      ],
+      "29th of the month": [
+        "29η του μήνα"
+      ],
+      "30th of the month": [
+        "30ή του μήνα"
+      ],
+      "31st of the month": [
+        "31η του μήνα"
+      ],
+      "No parent folder": [
+        "Δεν υπάρχει γονικός φάκελος"
+      ],
+      "Android": [
+        "Android"
+      ],
+      "iOS": [
+        "iOS"
+      ],
+      "Windows": [
+        "Windows"
+      ],
+      "macOS": [
+        "macOS"
+      ],
+      "GNU/Linux": [
+        "GNU/Linux"
+      ],
+      "Router": [
+        "Ρούτερ"
+      ],
+      "UDP": [
+        "UDP"
+      ],
+      "TCP": [
+        "TCP"
+      ],
+      "Secure Core configs": [
+        "Διαμορφώσεις Secure Core"
+      ],
+      "Country configs": [
+        "Διαμορφώσεις χώρας"
+      ],
+      "Standard server configs": [
+        "Ρυθμίσεις τυπικού διακομιστή"
+      ],
+      "Free server configs": [
+        "Ρυθμίσεις δωρεάν διακομιστή"
+      ],
+      "Select a reason": [
+        "Επιλέξτε ένα λόγο"
+      ],
+      "I use a different Proton account": [
+        "Χρησιμοποιώ διαφορετικό λογαριασμό Proton"
+      ],
+      "It's too expensive": [
+        "Είναι πολύ ακριβό"
+      ],
+      "It's missing a key feature that I need": [
+        "Λείπει ένα βασικό χαρακτηριστικό που χρειάζομαι"
+      ],
+      "I found another service that I like better": [
+        "Βρήκα μια άλλη υπηρεσία που μου αρέσει περισσότερο"
+      ],
+      "My reason isn't listed": [
+        "Ο λόγος δεν συμπεριλαμβάνεται στη λίστα"
       ]
     },
     "Loading info": {
@@ -4290,14 +4827,14 @@
       "Are you sure you want to delete the phone number?": [
         "Είστε σίγουροι ότι θέλετε να διαγράψετε τον αριθμό τηλεφώνου;"
       ],
+      "By disabling the logs, you will also clear your entire logs history. Are you sure you want to disable the logs?": [
+        "Απενεργοποιώντας τα αρχεία καταγραφής, θα διαγράψετε επίσης ολόκληρο το ιστορικό των αρχείων καταγραφής. Είστε βέβαιοι ότι θέλετε να απενεργοποιήσετε τα αρχεία καταγραφής;"
+      ],
       "By disabling this address, you will no longer be able to send or receive emails using this address and all the linked Proton products will also be disabled. Are you sure you want to disable this address?": [
         "Απενεργοποιώντας αυτήν τη διεύθυνση, δεν θα μπορείτε πλέον να στέλνετε ή να λαμβάνετε μηνύματα ηλεκτρονικού ταχυδρομείου χρησιμοποιώντας αυτήν τη διεύθυνση και όλα τα συνδεδεμένα προϊόντα Proton θα απενεργοποιηθούν επίσης. Είστε βέβαιοι ότι θέλετε να απενεργοποιήσετε αυτήν τη διεύθυνση;"
       ],
       "You must ${ activateLink } organization keys before adding an email address to a non-private member.": [
         "Πρέπει να { activateLink } κλειδιά οργανισμού πριν προσθέσετε μια διεύθυνση email σε μη ιδιωτικό μέλος."
-      ],
-      "By disabling the logs, you will also clear your entire logs history. Are you sure you want to disable the logs?": [
-        "Απενεργοποιώντας τα αρχεία καταγραφής, θα διαγράψετε επίσης ολόκληρο το ιστορικό των αρχείων καταγραφής. Είστε βέβαιοι ότι θέλετε να απενεργοποιήσετε τα αρχεία καταγραφής;"
       ]
     },
     "Import instructions emphasis": {
@@ -4502,149 +5039,6 @@
         "CAPTCHA"
       ]
     },
-    "Tooltip": {
-      "Customize import to reduce the number of labels": [
-        "Προσαρμόσετε την εισαγωγή για να μειώσετε τον αριθμό των ετικετών"
-      ],
-      "Customize import to reduce the number of folders": [
-        "Προσαρμόσετε την εισαγωγή για να μειώσετε του αριθμού των φακέλων"
-      ],
-      "Edit label names": [
-        "Επεξεργασία ονομάτων ετικετών"
-      ],
-      "Edit folder names": [
-        "Επεξεργασία ονομάτων φακέλων"
-      ],
-      "System subfolders will show up as separate folders in ProtonMail": [
-        "Οι υποφάκελοι συστήματος θα εμφανιστούν ως ξεχωριστοί φάκελοι στο ProtonMail"
-      ],
-      "Each imported email will have this label": [
-        "Κάθε εισαγόμενο μήνυμα ηλεκτρονικού ταχυδρομείου θα έχει αυτήν την ετικέτα"
-      ],
-      "The import will start with the most recent messages.": [
-        "Η εισαγωγή θα ξεκινήσει με τα πιο πρόσφατα μηνύματα."
-      ],
-      "Account is disconnected": [
-        "Ο λογαριασμός είναι αποσυνδεδεμένος"
-      ],
-      "Your ProtonMail inbox is almost full": [
-        "Το γραμματοκιβώτιό σας στο ProtonMail, είναι σχεδόν γεμάτο"
-      ],
-      "Your external account may have reached its 24-hour bandwidth limit. Proton will try to resume the import as soon as possible.": [
-        "Ο εξωτερικός σας λογαριασμός μπορεί να έχει φτάσει το όριο εύρους ζώνης 24 ωρών. Το Proton θα προσπαθήσει να συνεχίσει την εισαγωγή το συντομότερο δυνατό."
-      ],
-      "You do not have any contacts to export": [
-        "Δεν έχετε επαφές προς εξαγωγή"
-      ],
-      "Set the default layout for your Inbox.": [
-        "Ορίστε την προεπιλεγμένη διάταξη για τα Εισερχόμενά σας."
-      ],
-      "Set the default Composer popup size as small or full screen.": [
-        "Ορίστε το προεπιλεγμένο μέγεθος του αναδυόμενου παραθύρου του Συντάκτη ως μικρό ή σε πλήρη οθόνη."
-      ],
-      "When you add a label to a message in a conversation, it will automatically be applied to all future messages you send or receive in that conversation.": [
-        "Όταν προσθέτετε μια ετικέτα σε ένα μήνυμα σε μια συνομιλία, θα εφαρμόζεται αυτόματα σε όλα τα μελλοντικά μηνύματα που στέλνετε ή λαμβάνετε σε αυτή τη συνομιλία."
-      ],
-      "Group emails in the same conversation together in your Inbox or display them separately.": [
-        "Ομαδοποιήστε τα μηνύματα της ίδιας συνομιλίας στα Εισερχόμενά σας ή εμφανίστε τα ξεχωριστά."
-      ],
-      "This feature is unavailable for the moment": [
-        ""
-      ],
-      "ProtonMail users will use this key by default for sending": [
-        "Οι χρήστες ProtonMail θα χρησιμοποιήσουν αυτό το κλειδί από προεπιλογή για αποστολή"
-      ],
-      "You have locally decrypted this key": [
-        "Έχετε αποκρυπτογραφήσει τοπικά αυτό το κλειδί"
-      ],
-      "This key is encrypted with an old password": [
-        "Αυτό το κλειδί είναι κρυπτογραφημένο με έναν παλιό κωδικό πρόσβασης"
-      ],
-      "Signatures produced by this key are treated as invalid and this key cannot be used for encryption": [
-        "Οι υπογραφές που παράγονται από αυτό το κλειδί θεωρούνται άκυρες και αυτό το κλειδί δεν μπορεί να χρησιμοποιηθεί για κρυπτογράφηση"
-      ],
-      "This key cannot be used for encryption": [
-        "Αυτό το κλειδί δεν μπορεί να χρησιμοποιηθεί για κρυπτογράφηση"
-      ],
-      "This address has been disabled": [
-        "Αυτή η διεύθυνση έχει απενεργοποιηθεί"
-      ],
-      "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
-        "Σταματήσαμε την υπογραφή DKIM λόγω προβλημάτων με τη ρύθμιση παραμέτρων DNS. Ακολουθήστε τις παρακάτω οδηγίες για να συνεχίσετε την υπογραφή."
-      ],
-      "Your DKIM signing is working.": [
-        "Η υπογραφή σας DKIM λειτουργεί."
-      ],
-      "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
-        "Εντοπίσαμε ένα πρόβλημα με τη ρύθμιση παραμέτρων DNS. Βεβαιωθείτε ότι τα αρχεία σας ταιριάζουν με τις παρακάτω οδηγίες. Εάν το πρόβλημα εξακολουθεί να υφίσταται, θα πρέπει να αλλάξουμε την υπογραφή DKIM."
-      ],
-      "This feature is only available for paid users": [
-        "Αυτή η δυνατότητα είναι διαθέσιμη μόνο για χρήστες επί πληρωμής"
-      ],
-      "Enable/disable desktop and mobile notifications": [
-        "Ενεργοποίηση / απενεργοποίηση ειδοποιήσεων για σταθερούς και φορητούς υπολογιστές"
-      ],
-      "Use multiple addresses / aliases linked to your account, e.g. username2@protonmail.com": [
-        "Χρήση πολλαπλών διευθύνσεων / ψευδωνύμων που συνδέονται με το λογαριασμό σας, π.χ. username2@protonmail.com"
-      ],
-      "Host emails for your own domain(s) at ProtonMail, e.g. john.smith@example.com": [
-        "Ηλεκτρονικά μηνύματα φιλοξενίας για τον δικό σας τομέα στο ProtonMail, π.χ. john.smith@example.com"
-      ],
-      "Use the personal address username@pm.me to send emails": [
-        ""
-      ],
-      "Multi-user support is only applicable to plans with 2 or more users": [
-        "Υποστήριξη πολλαπλών χρηστών ισχύει μόνο για πλάνο με 2 ή περισσότερους χρήστες"
-      ],
-      "NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "Το NetShield προστατεύει τη συσκευή σας και επιταχύνει την περιήγησή σας εμποδίζοντας διαφημίσεις, ιχνηλάτες και κακόβουλο λογισμικό."
-      ],
-      "Support for file sharing protocols such as BitTorrent.": [
-        "Υποστήριξη για πρωτόκολλα κοινής χρήσης αρχείων όπως το BitTorrent."
-      ],
-      "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
-        "Αποκτήστε πρόσβαση σε γεωγραφικά αποκλεισμένο περιεχόμενο (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, Youtube κ. λπ.) όπου κι αν βρίσκεστε."
-      ],
-      "Route your Internet traffic through the Tor network with a single click.": [
-        "Δρομολογήστε την κυκλοφορία σας στο Διαδίκτυο μέσω του δικτύου Tor με ένα μόνο κλικ."
-      ],
-      "Defends against threats to VPN privacy by passing your Internet traffic through multiple servers.": [
-        "Υπερασπίζεται τις απειλές για το απόρρητο του VPN μεταβιβάζοντας την κυκλοφορία στο Διαδίκτυο μέσω πολλών servers."
-      ],
-      "Get access to all the paid features for both ProtonVPN and ProtonMail (the encrypted email service that millions use to protect their data) with one plan.": [
-        "Αποκτήστε πρόσβαση σε όλες τις δυνατότητες επι πληρωμής, τόσο για το ProtonVPN όσο και για το ProtonMail (η κρυπτογραφημένη υπηρεσία email που χρησιμοποιούν εκατομμύρια άνθρωποι για την προστασία των δεδομένων τους) με ένα πλάνο."
-      ],
-      "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
-        "Αποκτήστε πρόσβαση σε όλες τις δυνατότητες επι πληρωμής, τόσο για το ${ vpnAppName } όσο και για το ${ mailAppName } (η κρυπτογραφημένη υπηρεσία email που χρησιμοποιούν εκατομμύρια άνθρωποι για την προστασία των δεδομένων τους) με ένα πλάνο."
-      ],
-      "Host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
-        "Φιλοξενήστε μηνύματα ηλεκτρονικού ταχυδρομείου για τον δικό σας τομέα (domain) στο ${ mailAppName }, π.χ. john.smith@example.com"
-      ],
-      "Create multiple email addresses linked to your account, e.g. username2@protonmail.com": [
-        ""
-      ],
-      "Discount applied for annual billing cycle": [
-        "Η έκπτωση ισχύει για τον ετήσιο κύκλο χρέωσης"
-      ],
-      "Discount applied for two-year billing cycle": [
-        "Η έκπτωση ισχύει για τον κύκλο χρέωσης δύο ετών"
-      ],
-      "If you purchased a gift code or received one from our support team, you can enter it here.": [
-        "Αν έχετε αγοράσει έναν κωδικό δώρου ή έχετε λάβει ένα από την ομάδα υποστήριξης, μπορείτε να τον εισάγετε εδώ."
-      ],
-      "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
-        "Τα μηνύματα στον φάκελο Απεσταλμένα ή Πρόχειρα θα συνεχίσουν να εμφανίζονται σε αυτόν τον φάκελο, ακόμη και αν τα μετακινήσετε σε άλλο φάκελο."
-      ],
-      "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
-        "Όταν κάνετε κλικ σε έναν σύνδεσμο, αυτή η λειτουργία εναντίον του ηλεκτρονικού «ψαρέματος» (phishing) θα σας ζητά να επιβεβαιώσετε τη διεύθυνση URL της ιστοσελίδας."
-      ],
-      "This feature delays sending your emails, giving you the opportunity to undo send during the selected time frame.": [
-        "Αυτή η λειτουργία καθυστερεί την αποστολή των μηνυμάτων σας, δίνοντάς σας την δυνατότητα να αναιρέσετε την αποστολή κατά τη διάρκεια του επιλεγμένου χρονικού πλαισίου."
-      ],
-      "Enabling advanced logs records the IP address for each event in the security log.": [
-        ""
-      ]
-    },
     "Security phrase": {
       "Permanently delete messages in ${ email }": [
         "Μόνιμη διαγραφή μηνυμάτων σε ${ email }"
@@ -4684,152 +5078,6 @@
         "Καθυστερήσει"
       ]
     },
-    "Success": {
-      "Import resumed": [
-        "Η εισαγωγή συνεχίζεται"
-      ],
-      "Import canceled": [
-        "Η εισαγωγή ακυρώθηκε"
-      ],
-      "Import record deleted": [
-        "Η εισαγωγή εγγραφής διαγράφηκε"
-      ],
-      "Deleting original messages": [
-        "Διαγραφή αρχικών μηνυμάτων"
-      ],
-      "Preference saved": [
-        "Η προτίμηση αποθηκεύτηκε"
-      ],
-      "Premium address created": [
-        "Κορυφαία διεύθυνση δημιουργήθηκε"
-      ],
-      "Keyboard shortcuts preferences updated": [
-        "Οι προτιμήσεις συντομεύσεων πληκτρολογίου ενημερώθηκαν"
-      ],
-      "Locale updated": [
-        "Το τοπικό ενημερώθηκε"
-      ],
-      "${ server.Domain } copied in your clipboard": [
-        "${ server.Domain } αντιγράφηκε στο πρόχειρο σας"
-      ],
-      "Auto-reply disabled": [
-        "Η αυτόματη απάντηση απενεργοποιήθηκε"
-      ],
-      "Auto-reply updated": [
-        "Η αυτόματη απάντηση ενημερώθηκε"
-      ],
-      "Calendar added. It might take a few minutes to sync.": [
-        ""
-      ],
-      "Calendar created": [
-        "Το ημερολόγιο δημιουργήθηκε"
-      ],
-      "Calendar updated": [
-        "Το ημερολόγιο ενημερώθηκε"
-      ],
-      "Default calendar updated": [
-        "Το προεπιλεγμένο ημερολόγιο ενημερώθηκε"
-      ],
-      "Calendar removed": [
-        "Το ημερολόγιο αφαιρέθηκε"
-      ],
-      "Verification code copied to clipboard!": [
-        ""
-      ],
-      "SPF value copied to clipboard!": [
-        "Η τιμή SPF αντιγράφηκε στο πρόχειρο!"
-      ],
-      "Value copied to clipboard!": [
-        "Η τιμή αντιγράφηκε στο πρόχειρο!"
-      ],
-      "DMARC value copied to clipboard!": [
-        "Η τιμή DMARC αντιγράφηκε στο πρόχειρο!"
-      ],
-      "Domain verified": [
-        "Ο τομέας επαληθεύτηκε"
-      ],
-      "Catch-all address updated": [
-        "Έγινε ενημέρωση της διεύθυνσης catch-all"
-      ],
-      "Email address copied to clipboard": [
-        "Η διεύθυνση Email αντιγράφηκε στο πρόχειρο"
-      ],
-      "Bug reported": [
-        "Το σφάλμα αναφέρθηκε"
-      ],
-      "You have successfully unsubscribed": [
-        "Διαγραφήκατε με επιτυχία"
-      ],
-      "Payment method updated": [
-        "Η μέθοδος πληρωμής ενημερώθηκε"
-      ],
-      "Payment method added": [
-        "Προστέθηκε τρόπος πληρωμής"
-      ],
-      "Credits added": [
-        "Οι μονάδες προστέθηκαν"
-      ],
-      "Gift code applied": [
-        "Εφαρμόστηκε ο κωδικός δώρου"
-      ],
-      "Password updated": [
-        "Ο κωδικός πρόσβασης ενημερώθηκε"
-      ],
-      "Account deleted. Logging out...": [
-        "Ο λογαριασμός διαγράφηκε. Αποσύνδεση..."
-      ],
-      "Email updated": [
-        "Το E-mail ενημερώθηκε"
-      ],
-      "Phone number updated": [
-        "Ο αριθμός τηλεφώνου ενημερώθηκε"
-      ],
-      "Address updated": [
-        "Η διεύθυνση ενημερώθηκε"
-      ],
-      "Address added": [
-        "Η διεύθυνση προστέθηκε"
-      ],
-      "Session revoked": [
-        "Η συνεδρία ανακλήθηκε"
-      ],
-      "Sessions revoked": [
-        "Οι συνεδρίες ανακλήθηκαν"
-      ],
-      "Payment method deleted": [
-        "Η μέθοδος πληρωμής διαγράφηκε"
-      ],
-      "Invoice paid": [
-        "Το υπόλοιπο πληρώθηκε"
-      ],
-      "Invoice customized": [
-        "Το υπόλοιπο προσαρμόστηκε"
-      ],
-      "Organization activated": [
-        "Ο οργανισμός ενεργοποιήθηκε"
-      ],
-      "Keys updated": [
-        "Τα κλειδιά ενημερώθηκαν"
-      ],
-      "User updated": [
-        "Ο χρήστης ενημερώθηκε"
-      ],
-      "User created": [
-        "Ο χρήστης δημιουργήθηκε"
-      ],
-      "Code sent to ${ methodTo }": [
-        "Ο κωδικός στάλθηκε στο ${ methodTo }"
-      ],
-      "Verification successful": [
-        "Επιτυχία επαλήθευσης"
-      ],
-      "If you entered a valid recovery email we will send you an email with your usernames in the next minute.": [
-        "Αν εισαγάγατε ένα έγκυρο email ανάκτησης θα σας στείλουμε ένα email με τα ονόματα χρηστών σας στο επόμενο λεπτό."
-      ],
-      "If you entered a valid recovery phone we will send you an sms with your usernames in the next minute.": [
-        "Αν εισαγάγατε ένα έγκυρο τηλέφωνο ανάκτησης θα σας στείλουμε ένα sms με τα ονόματα χρήστη σας το επόμενο λεπτό."
-      ]
-    },
     "Title header": {
       "Import": [
         "Εισαγωγή"
@@ -4850,230 +5098,6 @@
     "Import error link": {
       "bandwidth limit": [
         "όριο εύρους ζώνης"
-      ]
-    },
-    "Option": {
-      "Automatic (${ defaultFormat })": [
-        "Αυτόματο (${ defaultFormat })"
-      ],
-      "Automatic (${ defaultDay })": [
-        "Αυτόματο (${ defaultDay })"
-      ],
-      "Add to existing group": [
-        "Προσθήκη σε υπάρχουσα ομάδα"
-      ],
-      "Create new group": [
-        "Δημιουργία νέας ομάδας"
-      ],
-      "Ignore group": [
-        "Παράβλεψη ομάδας"
-      ],
-      "Normal": [
-        "Κανονικό"
-      ],
-      "Plain text": [
-        "Απλό κείμενο"
-      ],
-      "Left to Right": [
-        "Αριστερά προς τα δεξιά"
-      ],
-      "Right to Left": [
-        "Δεξιά προς τα αριστερά"
-      ],
-      "Android": [
-        "Android"
-      ],
-      "iOS": [
-        "iOS"
-      ],
-      "Windows": [
-        "Windows"
-      ],
-      "macOS": [
-        "macOS"
-      ],
-      "GNU/Linux": [
-        "GNU/Linux"
-      ],
-      "Router": [
-        "Ρούτερ"
-      ],
-      "UDP": [
-        "UDP"
-      ],
-      "TCP": [
-        "TCP"
-      ],
-      "Secure Core configs": [
-        "Διαμορφώσεις Secure Core"
-      ],
-      "Country configs": [
-        "Διαμορφώσεις χώρας"
-      ],
-      "Standard server configs": [
-        "Τυπικές ρυθμίσεις διακομιστή"
-      ],
-      "Free server configs": [
-        "Ρυθμίσεις δωρεάν διακομιστή"
-      ],
-      "Fixed duration": [
-        "Σταθερή διάρκεια"
-      ],
-      "Repeat daily": [
-        "Επανάληψη καθημερινά"
-      ],
-      "Repeat weekly": [
-        "Επανάληψη εβδομαδιαία"
-      ],
-      "Repeat monthly": [
-        "Επανάληψη μηνιαία"
-      ],
-      "Permanent": [
-        "Μόνιμο"
-      ],
-      "1st of the month": [
-        "1η του μήνα"
-      ],
-      "2nd of the month": [
-        "2η του μήνα"
-      ],
-      "3rd of the month": [
-        "3η του μήνα"
-      ],
-      "4th of the month": [
-        "4η του μήνα"
-      ],
-      "5th of the month": [
-        "5η του μήνα"
-      ],
-      "6th of the month": [
-        "6η του μήνα"
-      ],
-      "7th of the month": [
-        "7η του μήνα"
-      ],
-      "8th of the month": [
-        "8η του μήνα"
-      ],
-      "9th of the month": [
-        "9η του μήνα"
-      ],
-      "10th of the month": [
-        "10η του μήνα"
-      ],
-      "11th of the month": [
-        "11η του μήνα"
-      ],
-      "12th of the month": [
-        "12η του μήνα"
-      ],
-      "13th of the month": [
-        "13η του μήνα"
-      ],
-      "14th of the month": [
-        "14η του μήνα"
-      ],
-      "15th of the month": [
-        "15η του μήνα"
-      ],
-      "16th of the month": [
-        "16η του μήνα"
-      ],
-      "17th of the month": [
-        "17η του μήνα"
-      ],
-      "18th of the month": [
-        "18η του μήνα"
-      ],
-      "19th of the month": [
-        "19η του μήνα"
-      ],
-      "20th of the month": [
-        "20ή του μήνα"
-      ],
-      "21st of the month": [
-        "21η του μήνα"
-      ],
-      "22nd of the month": [
-        "22η του μήνα"
-      ],
-      "23rd of the month": [
-        "23η του μήνα"
-      ],
-      "24th of the month": [
-        "24η του μήνα"
-      ],
-      "25th of the month": [
-        "25η του μήνα"
-      ],
-      "26th of the month": [
-        "26η του μήνα"
-      ],
-      "27th of the month": [
-        "27η του μήνα"
-      ],
-      "28th of the month": [
-        "28η του μήνα"
-      ],
-      "29th of the month": [
-        "29η του μήνα"
-      ],
-      "30th of the month": [
-        "30ή του μήνα"
-      ],
-      "31st of the month": [
-        "31η του μήνα"
-      ],
-      "${ stateOfTheArt } X25519 (Fastest, most modern)": [
-        ""
-      ],
-      "${ highestSecurity } RSA 4096-bit (Slower, but increased compatibility with legacy software)": [
-        ""
-      ],
-      "No parent folder": [
-        "Δεν υπάρχει γονικός φάκελος"
-      ],
-      "Select a reason": [
-        "Επιλέξτε ένα λόγο"
-      ],
-      "It’s temporary, I’ll be back": [
-        "Είναι προσωρινό, θα επιστρέψω"
-      ],
-      "I didn’t understand what I was signing up for": [
-        "Δεν κατάλαβα σε τι είχα κάνει εγγραφή"
-      ],
-      "It’s too expensive": [
-        "Είναι πολύ ακριβό"
-      ],
-      "I’m unhappy with customer service": [
-        "Είμαι δυσαρεστημένος με την εξυπηρέτηση πελατών"
-      ],
-      "Using Proton is too complicated": [
-        "Η χρήση του Proton είναι πολύ περίπλοκη"
-      ],
-      "I'm switching to a different service": [
-        "Πηγαίνω σε μια άλλη υπηρεσία"
-      ],
-      "The quality didn't live up to my expectations": [
-        "Η ποιότητα δεν ανταποκρίθηκε στις προσδοκίες μου"
-      ],
-      "Other": [
-        "Άλλο"
-      ],
-      "I use a different Proton account": [
-        "Χρησιμοποιώ διαφορετικό λογαριασμό Proton"
-      ],
-      "It's too expensive": [
-        "Είναι πολύ ακριβό"
-      ],
-      "It's missing a key feature that I need": [
-        "Λείπει ένα βασικό χαρακτηριστικό που χρειάζομαι"
-      ],
-      "I found another service that I like better": [
-        "Βρήκα μια άλλη υπηρεσία που μου αρέσει περισσότερο"
-      ],
-      "My reason isn't listed": [
-        "Ο λόγος δεν συμπεριλαμβάνεται στη λίστα"
       ]
     },
     "Day": {
@@ -5303,123 +5327,6 @@
       "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
         "${ totalImported }/${ totalToImport } επαφή κρυπτογραφήθηκε και προστέθηκε στη λίστα επαφών σας",
         "${ totalImported }/${ totalToImport } επαφές κρυπτογραφήθηκαν και προστέθηκαν στη λίστα επαφών σας"
-      ]
-    },
-    "Label to change composer mode": {
-      "Normal": [
-        "Κανονικό"
-      ],
-      "Maximized": [
-        "Μεγιστοποιημένο"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "Στήλη"
-      ],
-      "Row": [
-        "Σειρά"
-      ]
-    },
-    "Label to change density": {
-      "Comfortable": [
-        "Άνετη"
-      ],
-      "Compact": [
-        "Συμπαγής"
-      ]
-    },
-    "VPNClient": {
-      "Android": [
-        "Android"
-      ],
-      "iOS": [
-        "iOS"
-      ],
-      "Windows": [
-        "Windows"
-      ],
-      "macOS": [
-        "macOS"
-      ],
-      "GNU/Linux": [
-        "GNU/Linux"
-      ],
-      "Chromebook": [
-        "Chromebook"
-      ],
-      "Android TV": [
-        "Android TV"
-      ]
-    },
-    "Notification": {
-      "OpenVPN / IKEv2 credentials regenerated": [
-        "Τα διαπιστευτήρια του OpenVPN / IKEv2 επαναδημιουργήθηκαν"
-      ],
-      "${ _Filter.Name } created": [
-        "${ _Filter.Name } δημιουργήθηκε"
-      ],
-      "A disabled address cannot be primary": [
-        "Μια απενεργοποιημένη διεύθυνση δεν μπορεί να είναι κύρια"
-      ]
-    },
-    "CountryInfo": {
-      "(via ${ entryCountryName })": [
-        "(μέσω ${ entryCountryName })"
-      ]
-    },
-    "Feature": {
-      "Access to all countries": [
-        "Πρόσβαση σε όλες τις χώρες"
-      ],
-      "Secure Core servers": [
-        "Διακομιστές Secure Core"
-      ],
-      "Fastest VPN servers": [
-        "Γρηγορότερος διακομιστής VPN"
-      ],
-      "Torrenting support (P2P)": [
-        "Υποστήριξη Torrenting (P2P)"
-      ],
-      "Connection for up to ${ plusVpnConnections } device": [
-        "",
-        ""
-      ],
-      "Secure streaming support": [
-        "Υποστήριξη ασφαλούς ροής"
-      ],
-      "VPN ${ connectionsPluralized }": [
-        "${ connectionsPluralized } VPN"
-      ]
-    },
-    "VPN info": {
-      "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, and more.": [
-        "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, και άλλα."
-      ]
-    },
-    "Autoresponse": {
-      "I'm out of the office with limited access to my email.": [
-        "Είμαι εκτός γραφείου με περιορισμένη πρόσβαση στο email μου."
-      ]
-    },
-    "Tooltip prompt to trust keys": {
-      "When receiving an email from another ProtonMail user who does not have trusted keys in your contacts, a banner will ask if you want to enable trusted keys.": [
-        "Όταν λαμβάνετε ένα email από άλλο χρήστη του ProtonMail που δεν έχει αξιόπιστα κλειδιά στις επαφές σας, ένα αναδυόμενο πλαίσιο θα σας ρωτήσει αν θέλετε να ενεργοποιήσετε τα αξιόπιστα κλειδιά."
-      ]
-    },
-    "Tooltip sign external messages": {
-      "Automatically sign all your outgoing messages so users can verify the authenticity of your messages. This is done in combination with the default PGP settings which can be configured below.": [
-        "Υπογράψτε αυτόματα όλα τα εξερχόμενα μηνύματά σας, ώστε οι χρήστες να μπορούν να επαληθεύσουν τη γνησιότητά τους. Αυτό γίνεται σε συνδυασμό με τις προεπιλεγμένες ρυθμίσεις PGP, οι οποίες μπορούν να διαμορφωθούν παρακάτω."
-      ]
-    },
-    "Tooltip automatically attach public key": {
-      "This automatically adds your public key to each message you send. Recipients can use this to verify the authenticity of your messages and send encrypted messages to you.": [
-        "Αυτό προσθέτει αυτόματα το δημόσιο κλειδί σε κάθε μήνυμα που στέλνετε. Οι παραλήπτες μπορούν να το χρησιμοποιήσουν για να επαληθεύσουν την αυθεντικότητα των μηνυμάτων σας και να σας στείλουν κρυπτογραφημένα μηνύματα."
-      ]
-    },
-    "Tooltip default pgp scheme": {
-      "Select the default PGP settings used to sign or encrypt messages with non-ProtonMail PGP users. Note that Inline PGP forces plain text messages. Learn more": [
-        "Επιλέξτε τις προεπιλεγμένες ρυθμίσεις PGP που χρησιμοποιούνται για την υπογραφή ή κρυπτογράφηση μηνυμάτων με χρήστες PGP εκτός ProtonMail. Σημειώστε ότι το Inline PGP επιβάλλει μηνύματα απλού κειμένου. Μάθετε περισσότερα"
       ]
     },
     "Duration": {
@@ -5925,12 +5832,45 @@
         "Τα κλειδιά κρυπτογράφησης για τη διεύθυνση σας δημιουργούνται. Αυτό μπορεί να διαρκέσει αρκετά λεπτά και να παγώσει προσωρινά το πρόγραμμα περιήγησης σας."
       ]
     },
-    "encryption": {
+    "Remark about a key type option": {
       "State of the art": [
-        "Υψηλής τεχνολογίας"
+        "Αιχμής"
       ],
       "Compatibility": [
-        "Συμβατότητα"
+        "Συμβατή"
+      ]
+    },
+    "Key type option": {
+      "${ stateOfTheArt } ECC Curve25519 (Fastest, most modern)": [
+        "${ stateOfTheArt } ECC Curve25519 (Τάχιστη, πλέον σύγχρονη)"
+      ],
+      "${ compatibility } RSA 4096-bit (Slower, but increased compatibility with legacy software)": [
+        "${ compatibility } RSA 4096-bit (Αργή, αλλά αυξημένης συμβατότητας με παλαιό λογισμικό)"
+      ]
+    },
+    "Autoresponse": {
+      "I'm out of the office with limited access to my email.": [
+        "Είμαι εκτός γραφείου με περιορισμένη πρόσβαση στο email μου."
+      ]
+    },
+    "Tooltip prompt to trust keys": {
+      "When receiving an email from another ProtonMail user who does not have trusted keys in your contacts, a banner will ask if you want to enable trusted keys.": [
+        "Όταν λαμβάνετε ένα email από άλλο χρήστη του ProtonMail που δεν έχει αξιόπιστα κλειδιά στις επαφές σας, ένα αναδυόμενο πλαίσιο θα σας ρωτήσει αν θέλετε να ενεργοποιήσετε τα αξιόπιστα κλειδιά."
+      ]
+    },
+    "Tooltip sign external messages": {
+      "Automatically sign all your outgoing messages so users can verify the authenticity of your messages. This is done in combination with the default PGP settings which can be configured below.": [
+        "Υπογράψτε αυτόματα όλα τα εξερχόμενα μηνύματά σας, ώστε οι χρήστες να μπορούν να επαληθεύσουν τη γνησιότητά τους. Αυτό γίνεται σε συνδυασμό με τις προεπιλεγμένες ρυθμίσεις PGP, οι οποίες μπορούν να διαμορφωθούν παρακάτω."
+      ]
+    },
+    "Tooltip automatically attach public key": {
+      "This automatically adds your public key to each message you send. Recipients can use this to verify the authenticity of your messages and send encrypted messages to you.": [
+        "Αυτό προσθέτει αυτόματα το δημόσιο κλειδί σε κάθε μήνυμα που στέλνετε. Οι παραλήπτες μπορούν να το χρησιμοποιήσουν για να επαληθεύσουν την αυθεντικότητα των μηνυμάτων σας και να σας στείλουν κρυπτογραφημένα μηνύματα."
+      ]
+    },
+    "Tooltip default pgp scheme": {
+      "Select the default PGP settings used to sign or encrypt messages with non-ProtonMail PGP users. Note that Inline PGP forces plain text messages. Learn more": [
+        "Επιλέξτε τις προεπιλεγμένες ρυθμίσεις PGP που χρησιμοποιούνται για την υπογραφή ή κρυπτογράφηση μηνυμάτων με χρήστες PGP εκτός ProtonMail. Σημειώστε ότι το Inline PGP επιβάλλει μηνύματα απλού κειμένου. Μάθετε περισσότερα"
       ]
     },
     "Label for adding a new custom domain": {
@@ -6069,38 +6009,6 @@
         "Είστε βέβαιοι ότι θέλετε να απενεργοποιήσετε τον έλεγχο ταυτότητας δύο παραγόντων (2FA);"
       ]
     },
-    "Onboarding Proton": {
-      "This is what people will see when you send them an email, invite them to an event, or share a file with them.": [
-        ""
-      ],
-      "Choose a display name": [
-        "Επιλέξτε ένα εμφανιζόμενο όνομα"
-      ],
-      "Select a theme": [
-        "Επιλέξτε ένα θέμα"
-      ],
-      "You can change this anytime in your settings.": [
-        ""
-      ],
-      "Discover all Proton services": [
-        ""
-      ],
-      "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
-        ""
-      ],
-      "Welcome to Proton": [
-        "Καλώς ήρθατε στο Proton"
-      ],
-      "Our mission is to build an internet where you are in control of your data and your privacy. We have recently updated Proton - welcome to the secure internet.": [
-        ""
-      ],
-      "Set up your organization": [
-        ""
-      ],
-      "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
-        ""
-      ]
-    },
     "Step in filter modal": {
       "Name": [
         "Όνομα"
@@ -6135,6 +6043,17 @@
       ],
       "starred": [
         "με αστέρι"
+      ]
+    },
+    "Notification": {
+      "${ _Filter.Name } created": [
+        "${ _Filter.Name } δημιουργήθηκε"
+      ],
+      "OpenVPN / IKEv2 credentials regenerated": [
+        "Τα διαπιστευτήρια του OpenVPN / IKEv2 επαναδημιουργήθηκαν"
+      ],
+      "A disabled address cannot be primary": [
+        "Μια απενεργοποιημένη διεύθυνση δεν μπορεί να είναι κύρια"
       ]
     },
     "Filter notification": {
@@ -6307,6 +6226,102 @@
         "${ Email } αφαιρέθηκε"
       ]
     },
+    "Onboarding Proton": {
+      "This is what people will see when you send them an email, invite them to an event, or share a file with them.": [
+        ""
+      ],
+      "Choose a display name": [
+        "Επιλέξτε ένα εμφανιζόμενο όνομα"
+      ],
+      "Select a theme": [
+        "Επιλέξτε ένα θέμα"
+      ],
+      "You can change this anytime in your settings.": [
+        ""
+      ],
+      "Discover all Proton services": [
+        ""
+      ],
+      "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
+        ""
+      ],
+      "Welcome to Proton": [
+        "Καλώς ήρθατε στο Proton"
+      ],
+      "Our mission is to build an internet where you are in control of your data and your privacy. We have recently updated Proton - welcome to the secure internet.": [
+        ""
+      ],
+      "Set up your organization": [
+        ""
+      ],
+      "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
+        ""
+      ]
+    },
+    "New Label form": {
+      "Color": [
+        "Χρώμα"
+      ],
+      "Folder name": [
+        "Όνομα φακέλου"
+      ],
+      "Label name": [
+        "Όνομα ετικέτας"
+      ]
+    },
+    "label/folder notification": {
+      "${ Label.Name } created": [
+        "${ Label.Name } δημιουργήθηκε"
+      ],
+      "${ label.Name } updated": [
+        "${ label.Name } ενημερώθηκε"
+      ],
+      "Preference saved": [
+        "Η προτίμηση αποθηκεύτηκε"
+      ]
+    },
+    "Label/folder modal": {
+      "Create folder": [
+        "Δημιουργία φακέλου"
+      ],
+      "Create label": [
+        "Δημιουργία ετικέτας"
+      ],
+      "Edit folder": [
+        "Επεξεργασία φακέλου"
+      ],
+      "Edit label": [
+        "Επεξεργασία ετικέτας"
+      ]
+    },
+    "Success message after sorting folders": {
+      "Folders sorted": [
+        "Οι φάκελοι ταξινομήθηκαν"
+      ]
+    },
+    "Info - folder colouring feature": {
+      "When enabled, sub-folders inherit the color of the parent folder.": [
+        "Όταν είναι ενεργοποιημένο, υπο-φάκελοι κληρονομούν το χρώμα του γονικού φακέλου."
+      ]
+    },
+    "Settings/labels": {
+      "Labels/Folders": [
+        "Ετικέτες/Φάκελοι"
+      ]
+    },
+    "Settings/labels - table": {
+      "Labels": [
+        "Ετικέτες"
+      ],
+      "Actions": [
+        "Ενέργειες"
+      ]
+    },
+    "Success message after sorting labels": {
+      "Labels sorted": [
+        "Οι Ετικέτες ταξινομήθηκαν"
+      ]
+    },
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Δεν επιλέχθηκε εικόνα"
@@ -6410,70 +6425,6 @@
         "Επισύναψη στιγμιοτύπου/ων οθόνης"
       ]
     },
-    "New Label form": {
-      "Color": [
-        "Χρώμα"
-      ],
-      "Folder name": [
-        "Όνομα φακέλου"
-      ],
-      "Label name": [
-        "Όνομα ετικέτας"
-      ]
-    },
-    "label/folder notification": {
-      "${ Label.Name } created": [
-        "${ Label.Name } δημιουργήθηκε"
-      ],
-      "${ label.Name } updated": [
-        "${ label.Name } ενημερώθηκε"
-      ],
-      "Preference saved": [
-        "Η προτίμηση αποθηκεύτηκε"
-      ]
-    },
-    "Label/folder modal": {
-      "Create folder": [
-        "Δημιουργία φακέλου"
-      ],
-      "Create label": [
-        "Δημιουργία ετικέτας"
-      ],
-      "Edit folder": [
-        "Επεξεργασία φακέλου"
-      ],
-      "Edit label": [
-        "Επεξεργασία ετικέτας"
-      ]
-    },
-    "Success message after sorting folders": {
-      "Folders sorted": [
-        "Οι φάκελοι ταξινομήθηκαν"
-      ]
-    },
-    "Info - folder colouring feature": {
-      "When enabled, sub-folders inherit the color of the parent folder.": [
-        "Όταν είναι ενεργοποιημένο, υπο-φάκελοι κληρονομούν το χρώμα του γονικού φακέλου."
-      ]
-    },
-    "Settings/labels": {
-      "Labels/Folders": [
-        "Ετικέτες/Φάκελοι"
-      ]
-    },
-    "Settings/labels - table": {
-      "Labels": [
-        "Ετικέτες"
-      ],
-      "Actions": [
-        "Ενέργειες"
-      ]
-    },
-    "Success message after sorting labels": {
-      "Labels sorted": [
-        "Οι Ετικέτες ταξινομήθηκαν"
-      ]
-    },
     "Apps dropdown": {
       "Proton applications": [
         "Εφαρμογές Proton"
@@ -6518,6 +6469,43 @@
       ],
       "${ mailAppName } Free": [
         "${ mailAppName } Δωρεάν"
+      ]
+    },
+    "Downgrade account reason": {
+      "I use a different Proton account": [
+        "Χρησιμοποιώ διαφορετικό λογαριασμό Proton"
+      ],
+      "Subscription is too expensive": [
+        "Υπερβολικά ακριβή συνδρομή"
+      ],
+      "Missing feature(s) ": [
+        "Έλλειψη χαρακτηριστικών "
+      ],
+      "Bugs or quality issue": [
+        "Σφάλματα ή ζητήματα ποιότητας"
+      ],
+      "Streaming service unsupported": [
+        "Μη υποστηριζόμενη υπηρεσία μετάδοσης"
+      ],
+      "Switching to a different provider": [
+        "Αλλαγή παρόχου"
+      ],
+      "Temporary need, may come back in the future": [
+        "Προσωρινή ανάγκη, ενδεχόμενη επιστροφή στο μέλλον"
+      ],
+      "My reason isn't listed, please comment": [
+        "Άλλη αιτιολογία, παρακαλώ σχολιάστε"
+      ]
+    },
+    "Plan time remaining": {
+      "You still have ${ daysRemaining } day left on your ${ BRAND_NAME } ${ currentPlanName } account.": [
+        "Σας απομένει ${ daysRemaining } ημέρα στον λογαριασμό σας ${ BRAND_NAME } ${ currentPlanName }.",
+        "Σας απομένουν ${ daysRemaining } ημέρες στον λογαριασμό σας ${ BRAND_NAME } ${ currentPlanName }."
+      ]
+    },
+    "Downgrade modal exit survey title": {
+      "Help us improve!": [
+        "Βοηθήστε μας να βελτιωθούμε!"
       ]
     },
     "State": {
@@ -6636,7 +6624,7 @@
         "P2P/BitTorrent"
       ],
       "Streaming service support": [
-        "Υποστήριξη υπηρεσίας streaming"
+        "Υποστήριξη υπηρεσίας μετάδοσης"
       ],
       "Tor over VPN": [
         "Tor μέσω VPN"
@@ -7008,23 +6996,66 @@
         "Δωρεάν"
       ]
     },
+    "VPNClient": {
+      "Android": [
+        "Android"
+      ],
+      "iOS": [
+        "iOS"
+      ],
+      "Windows": [
+        "Windows"
+      ],
+      "macOS": [
+        "macOS"
+      ],
+      "GNU/Linux": [
+        "GNU/Linux"
+      ],
+      "Chromebook": [
+        "Chromebook"
+      ],
+      "Android TV": [
+        "Android TV"
+      ]
+    },
+    "CountryInfo": {
+      "(via ${ entryCountryName })": [
+        "(μέσω ${ entryCountryName })"
+      ]
+    },
+    "Feature": {
+      "Access to all countries": [
+        "Πρόσβαση σε όλες τις χώρες"
+      ],
+      "Secure Core servers": [
+        "Διακομιστές Secure Core"
+      ],
+      "Fastest VPN servers": [
+        "Γρηγορότεροι διακομιστές VPN"
+      ],
+      "Torrenting support (P2P)": [
+        "Υποστήριξη Torrenting (P2P)"
+      ],
+      "Connection for up to ${ plusVpnConnections } device": [
+        "",
+        ""
+      ],
+      "Secure streaming support": [
+        "Υποστήριξη ασφαλούς μετάδοσης"
+      ],
+      "VPN ${ connectionsPluralized }": [
+        "${ connectionsPluralized } VPN"
+      ]
+    },
+    "VPN info": {
+      "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, and more.": [
+        "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, και άλλα."
+      ]
+    },
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
         "Μια νέα έκδοση του ${ appName } είναι διαθέσιμη. ${ reloadButton }."
-      ]
-    },
-    "Option delay send seconds": {
-      "0 seconds": [
-        "0 δευτερόλεπτα"
-      ],
-      "5 seconds": [
-        "5 δευτερόλεπτα"
-      ],
-      "10 seconds": [
-        "10 δευτερόλεπτα"
-      ],
-      "20 seconds": [
-        "20 δευτερόλεπτα"
       ]
     },
     "Label for news": {
@@ -7073,59 +7104,6 @@
       ],
       "Recovery phrase": [
         ""
-      ]
-    },
-    "Address status": {
-      "Default": [
-        "Προεπιλογή"
-      ],
-      "Active": [
-        "Ενεργό"
-      ],
-      "Disabled": [
-        "Απενεργοποιημένο"
-      ],
-      "Orphan": [
-        "Ορφανό"
-      ],
-      "Missing keys": [
-        "Κλειδιά που λείπουν"
-      ]
-    },
-    "Address action": {
-      "Enable": [
-        "Ενεργοποίηση"
-      ],
-      "Disable": [
-        "Απενεργοποίηση"
-      ],
-      "Generate missing keys": [
-        "Δημιουργία των κλειδιών που λείπουν"
-      ],
-      "Delete": [
-        "Διαγραφή"
-      ]
-    },
-    "Bridge version load failed": {
-      "Failed to find latest version": [
-        ""
-      ]
-    },
-    "OS compatibility": {
-      ".exe (64-bit)": [
-        ".exe (64-bit)"
-      ],
-      ".dmg (10.12 or later)": [
-        ".dmg (10.12 or later)"
-      ],
-      ".deb (for Debian/Ubuntu)": [
-        ".deb (για Debian/Ubuntu)"
-      ],
-      ".rpm (for Fedora/openSUSE)": [
-        ".rpm (για Fedora/openSUSE)"
-      ],
-      "PKGBUILD (for other distributions)": [
-        "PKGBUILD (για άλλες διανομές)"
       ]
     },
     "Badge for user sessions table": {
@@ -7369,6 +7347,59 @@
         "Γίνεται αλλαγή κλειδιών οργανισμού"
       ]
     },
+    "Option delay send seconds": {
+      "0 seconds": [
+        "0 δευτερόλεπτα"
+      ],
+      "5 seconds": [
+        "5 δευτερόλεπτα"
+      ],
+      "10 seconds": [
+        "10 δευτερόλεπτα"
+      ],
+      "20 seconds": [
+        "20 δευτερόλεπτα"
+      ]
+    },
+    "Option protection mode": {
+      "Prevent tracking (recommended)": [
+        "Αποτροπή ιχνηλάτησης (συστήνεται)"
+      ],
+      "Prevent tracking and store content locally": [
+        "Αποτροπή ιχνηλάτησης και τοπικής αποθήκευσης περιεχομένου"
+      ]
+    },
+    "Address status": {
+      "Default": [
+        "Προεπιλογή"
+      ],
+      "Active": [
+        "Ενεργό"
+      ],
+      "Disabled": [
+        "Απενεργοποιημένο"
+      ],
+      "Orphan": [
+        "Ορφανό"
+      ],
+      "Missing keys": [
+        "Κλειδιά που λείπουν"
+      ]
+    },
+    "Address action": {
+      "Enable": [
+        "Ενεργοποίηση"
+      ],
+      "Disable": [
+        "Απενεργοποίηση"
+      ],
+      "Generate missing keys": [
+        "Δημιουργία των κλειδιών που λείπουν"
+      ],
+      "Delete": [
+        "Διαγραφή"
+      ]
+    },
     "Member action": {
       "Edit": [
         "Επεξεργασία"
@@ -7430,6 +7461,28 @@
     "Private Member": {
       "private": [
         "ιδιωτικό"
+      ]
+    },
+    "Bridge version load failed": {
+      "Failed to find latest version": [
+        ""
+      ]
+    },
+    "OS compatibility": {
+      ".exe (64-bit)": [
+        ".exe (64-bit)"
+      ],
+      ".dmg (10.12 or later)": [
+        ".dmg (10.12 or later)"
+      ],
+      ".deb (for Debian/Ubuntu)": [
+        ".deb (για Debian/Ubuntu)"
+      ],
+      ".rpm (for Fedora/openSUSE)": [
+        ".rpm (για Fedora/openSUSE)"
+      ],
+      "PKGBUILD (for other distributions)": [
+        "PKGBUILD (για άλλες διανομές)"
       ]
     },
     "Delinquent modal title": {
@@ -7586,82 +7639,6 @@
       ],
       "GB": [
         "GB"
-      ]
-    },
-    "Import contact. Contact identifier": {
-      "unknown": [
-        "άγνωστο"
-      ]
-    },
-    "Error importing contact": {
-      "vCard versions < 3.0 not supported": [
-        "Οι εκδόσεις vCard < 3.0 δεν υποστηρίζονται"
-      ],
-      "Encryption failed": [
-        "Η κρυπτογράφηση απέτυχε"
-      ]
-    },
-    "Error importing calendar": {
-      "An unexpected error occurred. Import must be restarted.": [
-        "Παρουσιάστηκε μη αναμενόμενο σφάλμα. Πρέπει να γίνει επανεκκίνηση της εισαγωγής."
-      ],
-      "An error occurred uploading your file. No file has been selected.": [
-        "Παρουσιάστηκε σφάλμα κατά την αποστολή του αρχείου σας. Δεν έχει επιλεγεί αρχείο."
-      ],
-      "An error occurred uploading your file ${ formattedFilename }. Only ICS file formats are allowed.": [
-        ""
-      ],
-      "Your file ${ formattedFilename } is empty.": [
-        "Το αρχείο σας ${ formattedFilename } είναι άδειο."
-      ],
-      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
-        "Παρουσιάστηκε σφάλμα κατά την αποστολή του αρχείου ${ formattedFilename }. Το μέγιστο μέγεθος αρχείου είναι ${ MAX_IMPORT_FILE_SIZE_STRING }."
-      ],
-      "Your file ${ formattedFilename } is not a calendar.": [
-        "Το αρχείο σας ${ formattedFilename } δεν είναι ημερολόγιο."
-      ],
-      "${ CALENDAR_APP_NAME } only supports importing calendars with iCal version 2.0.": [
-        "${ CALENDAR_APP_NAME } υποστηρίζει μόνο την εισαγωγή ημερολογίων με την έκδοση 2.0 του iCal."
-      ],
-      "Your file ${ formattedFilename } is an invitation and cannot be imported.": [
-        "Το αρχείο σας ${ formattedFilename } είναι μια πρόσκληση και δεν μπορεί να εισαχθεί."
-      ],
-      "Your file ${ formattedFilename } has no events to be imported.": [
-        "Το αρχείο σας ${ formattedFilename } δεν έχει κανένα συμβάν για εισαγωγή."
-      ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } events.": [
-        "Το αρχείο ${ formattedFilename } περιέχει περισσότερα από ${ MAX_IMPORT_EVENTS_STRING } γεγονότα."
-      ],
-      "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "Παρουσιάστηκε σφάλμα κατά την ανάγνωση του αρχείου σας ${ formattedFilename }. Το αρχείο δεν έχει τη σωστή μορφή."
-      ]
-    },
-    "Error importing contacts": {
-      "An error occurred uploading your file. No file has been selected.": [
-        "Παρουσιάστηκε σφάλμα κατά την μεταφόρτωση του αρχείου σας. Δεν έχει επιλεγεί αρχείο."
-      ],
-      "An error occurred uploading your file ${ formattedFilename }. No .csv or .vcf file selected": [
-        "Παρουσιάστηκε σφάλμα κατά την αποστολή του αρχείου σας ${ formattedFilename }. Δεν έχει επιλεγεί αρχείο .csv ή .vcf"
-      ],
-      "Your file ${ formattedFilename } is empty.": [
-        "Το αρχείο σας ${ formattedFilename } είναι άδειο."
-      ],
-      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
-        "Παρουσιάστηκε σφάλμα κατά την μεταφόρτωση του αρχείου ${ formattedFilename }. Το μέγιστο μέγεθος αρχείου είναι ${ MAX_IMPORT_FILE_SIZE_STRING }."
-      ],
-      "Your file ${ formattedFilename } has no contacts to be imported.": [
-        "Το αρχείο σας ${ formattedFilename } δεν έχει επαφές προς εισαγωγή."
-      ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
-        "Το αρχείο σας ${ formattedFilename } περιέχει περισσότερες από ${ MAX_IMPORT_CONTACTS_STRING } επαφές."
-      ],
-      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "Παρουσιάστηκε σφάλμα κατά την ανάγνωση του αρχείου σας ${ formattedFilename }. Το αρχείο δεν έχει τη σωστή μορφή."
-      ]
-    },
-    "Default display name vcard": {
-      "Unknown": [
-        "Άγνωστο"
       ]
     },
     "Participant name": {
@@ -8203,6 +8180,41 @@
         "Απροσδόκητο σφάλμα"
       ]
     },
+    "Error importing calendar": {
+      "An error occurred uploading your file. No file has been selected.": [
+        "Παρουσιάστηκε σφάλμα κατά την αποστολή του αρχείου σας. Δεν έχει επιλεγεί αρχείο."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Only ICS file formats are allowed.": [
+        ""
+      ],
+      "Your file ${ formattedFilename } is empty.": [
+        "Το αρχείο σας ${ formattedFilename } είναι άδειο."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
+        "Παρουσιάστηκε σφάλμα κατά την αποστολή του αρχείου ${ formattedFilename }. Το μέγιστο μέγεθος αρχείου είναι ${ MAX_IMPORT_FILE_SIZE_STRING }."
+      ],
+      "Your file ${ formattedFilename } is not a calendar.": [
+        "Το αρχείο σας ${ formattedFilename } δεν είναι ημερολόγιο."
+      ],
+      "${ CALENDAR_APP_NAME } only supports importing calendars with iCal version 2.0.": [
+        "${ CALENDAR_APP_NAME } υποστηρίζει μόνο την εισαγωγή ημερολογίων με την έκδοση 2.0 του iCal."
+      ],
+      "Your file ${ formattedFilename } is an invitation and cannot be imported.": [
+        "Το αρχείο σας ${ formattedFilename } είναι μια πρόσκληση και δεν μπορεί να εισαχθεί."
+      ],
+      "Your file ${ formattedFilename } has no events to be imported.": [
+        "Το αρχείο σας ${ formattedFilename } δεν έχει κανένα συμβάν για εισαγωγή."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } events.": [
+        "Το αρχείο ${ formattedFilename } περιέχει περισσότερα από ${ MAX_IMPORT_EVENTS_STRING } γεγονότα."
+      ],
+      "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
+        "Παρουσιάστηκε σφάλμα κατά την ανάγνωση του αρχείου σας ${ formattedFilename }. Το αρχείο δεν έχει τη σωστή μορφή."
+      ],
+      "An unexpected error occurred. Import must be restarted.": [
+        "Παρουσιάστηκε μη αναμενόμενο σφάλμα. Πρέπει να γίνει επανεκκίνηση της εισαγωγής."
+      ]
+    },
     "Calendar subscription not synced error": {
       "Calendar is syncing": [
         ""
@@ -8219,11 +8231,52 @@
       "Calendar link is not accessible": [
         ""
       ],
-      "Calendar link is temporarily unaccessible": [
-        ""
+      "Calendar link is temporarily inaccessible": [
+        "Ο σύνδεσμος του ημερολογίου είναι προσωρινά μη προσβάσιμος"
       ],
       "Failed to sync calendar": [
         ""
+      ]
+    },
+    "Import contact. Contact identifier": {
+      "unknown": [
+        "άγνωστο"
+      ]
+    },
+    "Error importing contact": {
+      "vCard versions < 3.0 not supported": [
+        "Οι εκδόσεις vCard < 3.0 δεν υποστηρίζονται"
+      ],
+      "Encryption failed": [
+        "Η κρυπτογράφηση απέτυχε"
+      ]
+    },
+    "Error importing contacts": {
+      "An error occurred uploading your file. No file has been selected.": [
+        "Παρουσιάστηκε σφάλμα κατά την μεταφόρτωση του αρχείου σας. Δεν έχει επιλεγεί αρχείο."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. No .csv or .vcf file selected": [
+        "Παρουσιάστηκε σφάλμα κατά την αποστολή του αρχείου σας ${ formattedFilename }. Δεν έχει επιλεγεί αρχείο .csv ή .vcf"
+      ],
+      "Your file ${ formattedFilename } is empty.": [
+        "Το αρχείο σας ${ formattedFilename } είναι άδειο."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
+        "Παρουσιάστηκε σφάλμα κατά την μεταφόρτωση του αρχείου ${ formattedFilename }. Το μέγιστο μέγεθος αρχείου είναι ${ MAX_IMPORT_FILE_SIZE_STRING }."
+      ],
+      "Your file ${ formattedFilename } has no contacts to be imported.": [
+        "Το αρχείο σας ${ formattedFilename } δεν έχει επαφές προς εισαγωγή."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
+        "Το αρχείο σας ${ formattedFilename } περιέχει περισσότερες από ${ MAX_IMPORT_CONTACTS_STRING } επαφές."
+      ],
+      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
+        "Παρουσιάστηκε σφάλμα κατά την ανάγνωση του αρχείου σας ${ formattedFilename }. Το αρχείο δεν έχει τη σωστή μορφή."
+      ]
+    },
+    "Default display name vcard": {
+      "Unknown": [
+        "Άγνωστο"
       ]
     },
     "Keyboard shortcut section name": {
@@ -8338,7 +8391,7 @@
         "Άνοιγμα επόμενου μηνύματος"
       ],
       "Show unread emails": [
-        "Εμφάνιση μη αναγνωσμένων email"
+        "Εμφάνιση μη διαβασμένων μηνυμάτων"
       ],
       "Show all emails": [
         "Εμφάνιση όλων των email"
@@ -8356,7 +8409,7 @@
         "Προσθήκη αστεριού"
       ],
       "Mark as unread": [
-        "Επισήμανση ως μη αναγνωσμένου"
+        "Σήμανση ως μη διαβασμένο"
       ],
       "Label as...": [
         "Ορίστε ετικέτα..."
@@ -8401,12 +8454,17 @@
         "Προβολή αρχικού μηνύματος"
       ]
     },
+    "Settings description": {
+      "You can apply multiple labels to a single message, but messages can usually only be in a single folder. Drag and drop to rearrange the order of your folders and labels.": [
+        "Μπορείτε να εφαρμόσετε πολλαπλές ετικέτες σε ένα μήνυμα, αλλά τα μηνύματα μπορούν συνήθως να βρίσκονται μόνο σε έναν φάκελο. Σύρετε και αφήστε για να αναδιατάξετε τη σειρά των φακέλων και των ετικετών σας."
+      ]
+    },
     "Settings section title": {
       "General": [
         "Γενικά"
       ],
-      "Import & export": [
-        "Εισαγωγή & εξαγωγή"
+      "Email privacy": [
+        ""
       ],
       "Identity & addresses": [
         "Ταυτότητα & διευθύνσεις"
@@ -8429,14 +8487,17 @@
       "Encryption & keys": [
         "Κρυπτογράφηση & κλειδιά"
       ],
+      "Import & export": [
+        "Εισαγωγή & εξαγωγή"
+      ],
       "IMAP/SMTP": [
         "IMAP/SMTP"
       ],
-      "VPN apps": [
-        "Εφαρμογές VPN"
-      ],
       "Calendars": [
         "Ημερολόγια"
+      ],
+      "VPN apps": [
+        "Εφαρμογές VPN"
       ],
       "Users & addresses": [
         "Χρήστες & διευθύνσεις"
@@ -8455,11 +8516,6 @@
       ],
       "Organization": [
         "Οργανισμός"
-      ]
-    },
-    "Settings description": {
-      "You can apply multiple labels to a single message, but messages can usually only be in a single folder. Drag and drop to rearrange the order of your folders and labels.": [
-        "Μπορείτε να εφαρμόσετε πολλαπλές ετικέτες σε ένα μήνυμα, αλλά τα μηνύματα μπορούν συνήθως να βρίσκονται μόνο σε έναν φάκελο. Σύρετε και αφήστε για να αναδιατάξετε τη σειρά των φακέλων και των ετικετών σας."
       ]
     },
     "Upgrade": {
