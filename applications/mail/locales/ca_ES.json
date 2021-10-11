@@ -5,87 +5,7 @@
   },
   "contexts": {
     "": {},
-    "Message": {
-      "Re:": [
-        "Re:"
-      ],
-      "Fw:": [
-        "Fw:"
-      ],
-      "On ${ date }, ${ name } ${ address } wrote:": [
-        "El ${ date }, ${ name } ${ address } va escriure:"
-      ]
-    },
     "Error": {
-      "Email address disabled": [
-        "Correu electrònic deshabilitada"
-      ],
-      "No keys retrieved for internal user": [
-        "No s’ha recuperat cap clau per a l’usuari intern"
-      ],
-      "No valid keys retrieved for internal user": [
-        "No hi ha claus vàlides recuperades per l'usuari intern"
-      ],
-      "Contact signature could not be verified": [
-        "La signatura del contacte no pot ser verificada"
-      ],
-      "No key retrieved for internal user is valid for sending": [
-        "Cap enviament de cap clau per a l’usuari intern és vàlid per enviar-la"
-      ],
-      "Trusted keys are not valid for sending": [
-        "Les claus de confiança no són vàlides per enviar-les"
-      ],
-      "No WKD key retrieved for user is valid for sending": [
-        "No hi ha cap clau WKD per a l'usuari vàlida per a l'enviament"
-      ],
-      "The sending key is not valid": [
-        "La clau enviada no es vàlida"
-      ],
-      "This field is required": [
-        "Aquest camp és obligatori"
-      ],
-      "This field requires a minimum of ${ minimumLength } characters.": [
-        "Aquest camp requereix un mínim de ${ minimumLength } caràcters."
-      ],
-      "Email is not valid": [
-        "El correu electrònic no és vàlid"
-      ],
-      "Not a valid number": [
-        "Número no vàlid"
-      ],
-      "Passwords do not match": [
-        "Les contrasenyes no coincideixen"
-      ],
-      "Request timed out.": [
-        "S'ha esgotat el temps d'espera."
-      ],
-      "Missing signature": [
-        "Signatura no trobada"
-      ],
-      "Contact signature not verified": [
-        "Signatura del contacte no verificada"
-      ],
-      "Signature not verified": [
-        "Signatura no verificada"
-      ],
-      "Invalid name": [
-        "Nom no vàlid"
-      ],
-      "The key properties for ${ emailAddress } could not be extracted": [
-        "No s'han pogut extreure les propietats clau de ${ emailAddress }"
-      ],
-      "Signature verification failed": [
-        "Verificació de la signatura fallida"
-      ],
-      "Could not find address ${ email }.": [
-        "No s'ha pogut trobar el correu ${ email }."
-      ],
-      "Address primary private key not found": [
-        "No s'ha trobat la clau privada primària de l'adreça"
-      ],
-      "Calendar primary private key is not decrypted": [
-        "La clau privada primària del calendari no està desxifrada"
-      ],
       "Unknown error": [
         "Error desconegut"
       ],
@@ -101,17 +21,20 @@
       "Authentication error.": [
         "Error d'autenticació."
       ],
+      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
+        "El navegador que utilitzeu no permet l'autorització total del pagament. Utilitzeu un navegador diferent o inicieu la sessió mitjançant un ordinador."
+      ],
+      "Email address invalid": [
+        "Correu electrònic invàlid"
+      ],
+      "This field is required": [
+        "Aquest camp és obligatori"
+      ],
       "The composer failed to load.": [
         "El compositor no s'ha pogut carregar."
       ],
       "Please refresh the page.": [
         "Si us plau, refresqueu la pàgina."
-      ],
-      "Email address invalid": [
-        "Correu electrònic invàlid"
-      ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "El navegador que utilitzeu no permet l'autorització total del pagament. Utilitzeu un navegador diferent o inicieu la sessió mitjançant un ordinador."
       ],
       "Incorrect mailbox password. Please try again": [
         "Contrasenya de bustia incorrecta, si us plau, torneu-ho a provar de nou"
@@ -130,6 +53,9 @@
       ],
       "Invalid verification code": [
         "Codi de verificació no vàlid"
+      ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "S'ha produït un error, ${ refresh } per continuar. Si continueu veient aquest missatge d'error, poseu-vos en contacte amb el nostre ${ supportTeam }."
       ],
       "Some groups could not be deleted": [
         "Alguns grups no poden ser esborrats"
@@ -172,17 +98,17 @@
       "A group with this name already exists": [
         "Ja existeix un grup amb aquest nom"
       ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "S'ha produït un error, ${ refresh } per continuar. Si continueu veient aquest missatge d'error, poseu-vos en contacte amb el nostre ${ supportTeam }."
-      ],
-      "File has no contents to preview": [
-        "L'arxiu no té contingut per previsualitzar"
+      "Invalid name": [
+        "Nom no vàlid"
       ],
       "We were unable to connect to your service provider.": [
         "No hem pogut connectar-nos al vostre proveïdor de serveis."
       ],
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         "Si us plau, proveu de tornar-vos a autenticar i assegureu-vos que els permisos estan correctament configurats."
+      ],
+      "File has no contents to preview": [
+        "L'arxiu no té contingut per previsualitzar"
       ],
       "Process aborted": [
         "Procés anul·lat"
@@ -261,6 +187,69 @@
       ],
       "Require at least one action": [
         "Requereix al menys una acció"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Aquest camp requereix un mínim de ${ minimumLength } caràcters."
+      ],
+      "Email is not valid": [
+        "El correu electrònic no és vàlid"
+      ],
+      "Not a valid number": [
+        "Número no vàlid"
+      ],
+      "Passwords do not match": [
+        "Les contrasenyes no coincideixen"
+      ],
+      "Request timed out.": [
+        "S'ha esgotat el temps d'espera."
+      ],
+      "Signature verification failed": [
+        "Verificació de la signatura fallida"
+      ],
+      "Could not find address ${ email }.": [
+        "No s'ha pogut trobar el correu ${ email }."
+      ],
+      "Email address disabled": [
+        "Correu electrònic deshabilitada"
+      ],
+      "No keys retrieved for internal user": [
+        "No s’ha recuperat cap clau per a l’usuari intern"
+      ],
+      "No valid keys retrieved for internal user": [
+        "No hi ha claus vàlides recuperades per l'usuari intern"
+      ],
+      "Contact signature could not be verified": [
+        "La signatura del contacte no pot ser verificada"
+      ],
+      "No key retrieved for internal user is valid for sending": [
+        "Cap enviament de cap clau per a l’usuari intern és vàlid per enviar-la"
+      ],
+      "Trusted keys are not valid for sending": [
+        "Les claus de confiança no són vàlides per enviar-les"
+      ],
+      "No WKD key retrieved for user is valid for sending": [
+        "No hi ha cap clau WKD per a l'usuari vàlida per a l'enviament"
+      ],
+      "The sending key is not valid": [
+        "La clau enviada no es vàlida"
+      ],
+      "Missing signature": [
+        "Signatura no trobada"
+      ],
+      "Contact signature not verified": [
+        "Signatura del contacte no verificada"
+      ],
+      "Signature not verified": [
+        "Signatura no verificada"
+      ],
+      "The key properties for ${ emailAddress } could not be extracted": [
+        "No s'han pogut extreure les propietats clau de ${ emailAddress }"
+      ],
+      "Address primary private key not found": [
+        "No s'ha trobat la clau privada primària de l'adreça"
+      ],
+      "Calendar primary private key is not decrypted": [
+        "La clau privada primària del calendari no està desxifrada"
       ],
       "You did not provide a file.": [
         "No has proporcionat un arxiu."
@@ -378,176 +367,1399 @@
         "Massa filtres actius. Actualitzeu a un pla de pagament per activar més filtres"
       ]
     },
-    "file size format": {
-      "bytes": [
-        "bytes"
+    "Action": {
+      "Close": [
+        "Tancar"
       ],
-      "KB": [
-        "KB"
+      "Use “${ label }” setting": [
+        "Utilitzar la configuració \"${ label }\""
       ],
-      "MB": [
-        "MB"
+      "More info: ${ safeTitle }": [
+        "Més informació: ${ safeTitle }"
       ],
-      "GB": [
-        "GB"
+      "Cancel": [
+        "Cancel·lar"
+      ],
+      "Submit": [
+        "Enviar"
+      ],
+      "Close modal": [
+        "Tancar el modal"
+      ],
+      "Confirm": [
+        "Confirmar"
+      ],
+      "Save": [
+        "Desa"
+      ],
+      "Upload picture": [
+        "Carregar imatge"
+      ],
+      "Insert": [
+        "Afegir"
+      ],
+      "Font": [
+        "Font"
+      ],
+      "Size": [
+        "Mida"
+      ],
+      "Color": [
+        "Color"
+      ],
+      "Alignment": [
+        "Alineació"
+      ],
+      "More": [
+        "Més"
+      ],
+      "Unordered list": [
+        "Llista sense ordenar"
+      ],
+      "Ordered list": [
+        "Llista ordenada"
+      ],
+      "Align left": [
+        "Alinea a l'esquerra"
+      ],
+      "Align center": [
+        "Alinea al centre"
+      ],
+      "Align right": [
+        "Alinea a la dreta"
+      ],
+      "Justify": [
+        "Justificat"
+      ],
+      "Quote": [
+        "Cita"
+      ],
+      "Insert link": [
+        "Afegir enllaç"
+      ],
+      "Clear all formatting": [
+        "Esborra tot el format"
+      ],
+      "Insert image": [
+        "Afegeix imatge"
+      ],
+      "Bold": [
+        "Negreta"
+      ],
+      "Italic": [
+        "Cursiva"
+      ],
+      "Underline": [
+        "Subratllat"
+      ],
+      "Remove": [
+        "Suprimeix"
+      ],
+      "Next month": [
+        "Mes següent"
+      ],
+      "Previous month": [
+        "Mes anterior"
+      ],
+      "Load image": [
+        "Carregar imatge"
+      ],
+      "Confirm opening of link ${ link }": [
+        "Confirmeu obrir l'enllaç ${ link }"
+      ],
+      "Go to panel ${ index }": [
+        "Anar al panell ${ index }"
+      ],
+      "Close navigation": [
+        "Tanca la navegació"
+      ],
+      "Open navigation": [
+        "Obre la navegació"
+      ],
+      "Continue with Google": [
+        "Continuar amb Google"
+      ],
+      "Delete": [
+        "Esborra"
+      ],
+      "Go to page ${ page }": [
+        "Anar a la pàgina ${ page }"
+      ],
+      "Go to first page": [
+        "Anar a la primera pàgina"
+      ],
+      "Go to previous page": [
+        "Anar a la pàgina anterior"
+      ],
+      "Go to next page": [
+        "Anar a la pàgina següent"
+      ],
+      "Go to last page": [
+        "Anar a la darrera pàgina"
+      ],
+      "Signing out": [
+        "Tancant la sessió"
+      ],
+      "refresh the page": [
+        "refresqueu la pàgina"
+      ],
+      "Log in": [
+        "Inicia sessió"
+      ],
+      "View invoice": [
+        "Veure factura"
+      ],
+      "Get verification code": [
+        "Obtenir codi de verificació"
+      ],
+      "Try another method": [
+        "Proveu amb un altre mètode"
+      ],
+      "Request new code": [
+        "Demana un nou codi"
+      ],
+      "Verify": [
+        "Verificar"
+      ],
+      "Did not receive the code?": [
+        "No has regut el codi?"
+      ],
+      "Edit email address": [
+        "Editar l'adreça de correu electrònic"
+      ],
+      "Edit phone number": [
+        "Editar el número de telèfon"
+      ],
+      "Use ${ label } theme": [
+        "Utilitzar el tema ${ label }"
+      ],
+      "OK": [
+        "Accepta"
+      ],
+      "Upgrade": [
+        "Actualitzar"
+      ],
+      "Add": [
+        "Afegir"
+      ],
+      "Edit": [
+        "Editar"
+      ],
+      "Apply": [
+        "Aplicar"
+      ],
+      "Insert contact": [
+        "Afegir contacte"
+      ],
+      "Insert ${ totalChecked } contact": [
+        "Afegir ${ totalChecked } contacte",
+        "Afegir ${ totalChecked } contactes"
+      ],
+      "Done": [
+        "Fet"
+      ],
+      "Clear data": [
+        "Netejar dades"
+      ],
+      "Recover data": [
+        "Recuperar dades"
+      ],
+      "Click here.": [
+        "Cliqueu aquí."
+      ],
+      "Re-sign": [
+        "Tornar a signar"
+      ],
+      "Hide advanced PGP settings": [
+        "Amagueu la configuració avançada del PGP"
+      ],
+      "Show advanced PGP settings": [
+        "Mostra la configuració avançada del PGP"
+      ],
+      "Add to group": [
+        "Afegir al grup"
+      ],
+      "Contact group": [
+        "Grups de contactes"
+      ],
+      "Create new contact": [
+        "Crea un nou contacte"
+      ],
+      "clear it": [
+        "netegeu-lo"
+      ],
+      "Export": [
+        "Exporta"
+      ],
+      "Download": [
+        "Descarregar"
+      ],
+      "Use for sending": [
+        "Usar per enviar"
+      ],
+      "Trust": [
+        "De confiança"
+      ],
+      "Untrust": [
+        "No confiable"
+      ],
+      "Email settings": [
+        "Configuració del correu"
+      ],
+      "Merge": [
+        "Fusionar"
+      ],
+      "View": [
+        "Veure"
+      ],
+      "Unmark for deletion": [
+        "Desmarcar la supressió"
+      ],
+      "Mark for deletion": [
+        "Marcar per eliminar"
+      ],
+      "Preview contact": [
+        "Previsualitzar contacte"
+      ],
+      "Continue": [
+        "Continua"
+      ],
+      "Copy email to clipboard": [
+        "Copiar correu electrònic al porta-retalls"
+      ],
+      "Delete contact": [
+        "Eliminar contacte"
+      ],
+      "Delete ${ selectedCount } contact": [
+        "Eliminar ${ selectedCount } contacte",
+        "Eliminar ${ selectedCount } contactes"
+      ],
+      "Deselect all": [
+        "Desseleccionar-ho tot"
+      ],
+      "Select all": [
+        "Seleccionar-ho tot"
+      ],
+      "Compose": [
+        "Redactar"
+      ],
+      "Forward as attachment": [
+        "Reenviar com a adjunt"
+      ],
+      "Merge contacts": [
+        "Combinar contactes"
+      ],
+      "Add new contact": [
+        "Afegir un contacte nou"
+      ],
+      "Add group": [
+        "Afegir grup"
+      ],
+      "Clear query": [
+        "Netejar la consulta"
+      ],
+      "Add contact": [
+        "Afegir contacte"
+      ],
+      "import": [
+        "importar"
+      ],
+      "Delete contact group": [
+        "Eliminar grup de contactes"
+      ],
+      "Delete ${ selectedCount } contact group": [
+        "Eliminar ${ selectedCount } grup de contactes",
+        "Eliminar ${ selectedCount } grups de contactes"
+      ],
+      "Add new group": [
+        "Afegir nou grup"
+      ],
+      "Export contacts": [
+        "Exportar contactes"
+      ],
+      "Import contacts": [
+        "Importar contactes"
+      ],
+      "Choose a file or drag it here": [
+        "Trieu un fitxer o arrossegueu-lo aquí"
+      ],
+      "Import": [
+        "Importar"
+      ],
+      "Next": [
+        "Següent"
+      ],
+      "Continue import": [
+        "Continuar importació"
+      ],
+      "Discard": [
+        "Descarta"
+      ],
+      "Reconnect": [
+        "Tornar a connectar"
+      ],
+      "Start import": [
+        "Començar importació"
+      ],
+      "Clear": [
+        "Netejar"
+      ],
+      "Add screenshot(s)": [
+        "Afegir captura(es) de pantalla"
+      ],
+      "Hide info": [
+        "Amagar informació"
+      ],
+      "Show info": [
+        "Mostra informació"
+      ],
+      "Details": [
+        "Detalls"
+      ],
+      "Share via link": [
+        "Compartir amb enllaç"
+      ],
+      "Sharing options": [
+        "Opcions de compartició"
+      ],
+      "Zoom out": [
+        "Allunyar"
+      ],
+      "Reset zoom": [
+        "Restablir zoom"
+      ],
+      "Zoom in": [
+        "Apropa"
+      ],
+      "Previous": [
+        "Anterior"
+      ],
+      "Get started": [
+        "Començar"
+      ],
+      "Start setup": [
+        "Començar la configuració"
+      ],
+      "Skip": [
+        "Ometre"
+      ],
+      "Back": [
+        "Torna"
+      ],
+      "Copy to clipboard": [
+        "Copiar al porta-retalls"
+      ],
+      "Create recovery phrase": [
+        "Crear una frase de recuperació"
+      ],
+      "Don't secure account": [
+        "No protegir el compte"
+      ],
+      "Close this banner": [
+        "Tancar aquest bàner"
+      ],
+      "Refresh the page": [
+        "Refresca la pàgina"
+      ],
+      "enable desktop notifications": [
+        "activar les notificacions d'escriptori"
+      ],
+      "here": [
+        "aquí"
+      ],
+      "Search": [
+        "Cerca"
+      ],
+      "${ BRAND_NAME } introduction": [
+        "Introducció ${ BRAND_NAME }"
+      ],
+      "Chat with us": [
+        "Xategeu amb nosaltres"
+      ],
+      "I have a question": [
+        "Tinc una pregunta"
+      ],
+      "Request a feature": [
+        "Demana una nova característica"
+      ],
+      "Report a problem": [
+        "Avisar d'un problema"
+      ],
+      "${ BRAND_NAME } shop": [
+        "Botiga de ${ BRAND_NAME }"
+      ],
+      "Switch account": [
+        "Canviar de compte"
+      ],
+      "Sign out": [
+        "Tancar la sessió"
+      ],
+      "Go to settings": [
+        "Anar a la configuració"
+      ],
+      "Beta Access": [
+        "Accés Beta"
+      ],
+      "Theme": [
+        "Tema"
+      ],
+      "Keyboard shortcuts": [
+        "Dreceres de teclat"
+      ],
+      "Mailbox layout": [
+        "Disseny de la bústia de correu"
+      ],
+      "Mailbox density": [
+        "Densitat de la bústia de correu"
+      ],
+      "Composer size": [
+        "Mida de l'editor"
+      ],
+      "Remove bonuses": [
+        "Suprimeix beneficis"
+      ],
+      "Try again": [
+        "Torna-ho a provar"
+      ],
+      "Use a different card": [
+        "Utilitzeu una targeta diferent"
+      ],
+      "Use a different payment method": [
+        "Utilitzeu un mètode de pagament diferent"
+      ],
+      "Retry": [
+        "Tornar a provar"
+      ],
+      "Loading verification": [
+        "Carregant verificació"
+      ],
+      "Select plan": [
+        "Seleccionar el pla"
+      ],
+      "Compare all features": [
+        "Comparar totes les funcionalitats"
+      ],
+      "${ boldSave } by switching to annual billing": [
+        "${ boldSave } canviant a la facturació anual"
+      ],
+      "Pay": [
+        "Pagar"
+      ],
+      "Open ${ CALENDAR_APP_NAME } settings": [
+        "Obrir la configuració de ${ CALENDAR_APP_NAME }"
+      ],
+      "Remove gift code": [
+        "Esborrar el codi regal"
+      ],
+      "annual billing": [
+        "facturació anual"
+      ],
+      "Compare plans": [
+        "Comparar plans"
+      ],
+      "Decrease": [
+        "Reduir"
+      ],
+      "Increase": [
+        "Incrementar"
+      ],
+      "Preview": [
+        "Previsualització"
+      ],
+      "Create label": [
+        "Crear etiqueta"
+      ],
+      "Create folder": [
+        "Crear carpeta"
+      ],
+      "Remove this label": [
+        "Elimina aquesta etiqueta"
+      ],
+      "Add condition": [
+        "Afegir condició"
+      ],
+      "label emails as": [
+        "etiquetar correus electrònics com"
+      ],
+      "move emails to": [
+        "moure correus electrònics a"
+      ],
+      "mark emails as": [
+        "marcar correus electrònics com"
+      ],
+      "send auto-reply email": [
+        "enviar correu d’auto-resposta"
+      ],
+      "Yes, I'll attend": [
+        "Sí, hi assistiré"
+      ],
+      "Maybe I'll attend": [
+        "Potser hi assistiré"
+      ],
+      "No, I won't attend": [
+        "No, no hi assistiré"
+      ],
+      "Yes": [
+        "Si"
+      ],
+      "Maybe": [
+        "Potser"
+      ],
+      "No": [
+        "No"
+      ],
+      "Add to ${ CALENDAR_APP_NAME }": [
+        "Afegir a ${ CALENDAR_APP_NAME }"
+      ],
+      "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
+        "Utilitzeu el ratolí per redimensionar la vista. Si esteu utilitzant el teclat, podeu utilitzar les tecles d'esquerra i dreta per redimensionar."
+      ],
+      "Send anyway": [
+        "Enviar de totes maneres"
+      ],
+      "Got it": [
+        "Entesos"
+      ],
+      "Maximize composer": [
+        "Maximitzar l'editor"
+      ],
+      "Minimize composer": [
+        "Minimitzar l'editor"
+      ],
+      "Contract composer": [
+        "Contraure l'editor"
+      ],
+      "Expand composer": [
+        "Ampliar l'editor"
+      ],
+      "Close composer": [
+        "Tancar l'editor"
+      ],
+      "Trust key": [
+        "Clau de confiança",
+        "Claus de confiança"
+      ],
+      "Copy address": [
+        "Copiar l'adreça"
+      ],
+      "Edit address": [
+        "Editar l'adreça"
+      ],
+      "View contact details": [
+        "Veure detalls del contacte"
+      ],
+      "Copy addresses": [
+        "Copiar adreces"
+      ],
+      "View recipients": [
+        "Veure destinataris"
+      ],
+      "Carbon Copy, Blind Carbon Copy": [
+        "Còpia, Còpia oculta"
+      ],
+      "CC, BCC": [
+        "CC, CCO"
+      ],
+      "Send": [
+        "Enviar"
+      ],
+      "Attachment": [
+        "Adjuntar"
+      ],
+      "Inline": [
+        "En línia"
+      ],
+      "Cancel action": [
+        "Cancel·lar l'acció"
+      ],
+      "Loading${ ellipsis }": [
+        "Carregant${ ellipsis }"
+      ],
+      "Saving${ _ellipsis }": [
+        "Desant${ _ellipsis }"
+      ],
+      "Not saved": [
+        "No s'ha desat"
+      ],
+      "Schedule send": [
+        "Programar enviament"
+      ],
+      "Expiration time": [
+        "Temps d'expiració"
+      ],
+      "Encryption": [
+        "Xifratge"
+      ],
+      "Delete draft": [
+        "Eliminar esborrany"
+      ],
+      "Set": [
+        "Establir"
+      ],
+      "Schedule message": [
+        "Programar missatge"
+      ],
+      "Print": [
+        "Imprimir"
+      ],
+      "Address options": [
+        "Opcions d'adreça"
+      ],
+      "New message": [
+        "Nou missatge"
+      ],
+      "Trust Public Key": [
+        "Confiar en la Clau Pública"
+      ],
+      "Filter on...": [
+        "Filtrar per..."
+      ],
+      "Move to...": [
+        "Moure a..."
+      ],
+      "Label as...": [
+        "Etiquetar com a..."
+      ],
+      "Mark as unread": [
+        "Marcar com a no llegit"
+      ],
+      "Move to spam": [
+        "Moure a correu brossa"
+      ],
+      "Report phishing": [
+        "Notificar suplantació d'identitat"
+      ],
+      "View source code": [
+        "Mostrar el codi font"
+      ],
+      "View rendered HTML": [
+        "Veure l'HTML renderitzat"
+      ],
+      "View headers": [
+        "Mostrar les capçaleres"
+      ],
+      "Hide details": [
+        "Amagar els detalls"
+      ],
+      "Show details": [
+        "Mostrar els detalls"
+      ],
+      "Custom filter": [
+        "Filtre personalitzat"
+      ],
+      "Move to": [
+        "Moure a"
+      ],
+      "Label as": [
+        "Etiquetar com a"
+      ],
+      "Load": [
+        "Carregar"
+      ],
+      "This message contains remote content.": [
+        "Aquest missatge conté contingut remot."
+      ],
+      "This message contains embedded images.": [
+        "Aquest missatge conté imatges incrustades."
+      ],
+      "Unsubscribe": [
+        "Anul·lar la subscripció"
+      ],
+      "Unsubscribing": [
+        "Anul·lant la subscripció"
+      ],
+      "Mark legitimate": [
+        "Marcar com a legítim"
+      ],
+      "Send receipt": [
+        "Enviar confirmació"
+      ],
+      "Accept": [
+        "Acceptar"
+      ],
+      "Show": [
+        "Mostrar"
+      ],
+      "Show less": [
+        "Mostrar menys"
+      ],
+      "Never show": [
+        "No mostrar mai"
+      ],
+      "View keys": [
+        "Veure claus"
+      ],
+      "Edit draft": [
+        "Editar esborrany"
+      ],
+      "Download ${ attachmentName }": [
+        "Descarregar ${ attachmentName }"
+      ],
+      "Preview ${ attachmentName }": [
+        "Previsualitzar ${ attachmentName }"
+      ],
+      "Remove ${ attachmentName }": [
+        "Esborrar ${ attachmentName }"
+      ],
+      "Hide attachment details": [
+        "Amagar detalls d'adjunt"
+      ],
+      "Show attachment details": [
+        "Mostrar detalls d'adjunt"
+      ],
+      "Hide": [
+        "Amagar"
+      ],
+      "Learn more": [
+        "Saber-ne més"
+      ],
+      "Undo": [
+        "Desfer"
+      ],
+      "View message": [
+        "Veure el missatge"
+      ],
+      "Enable": [
+        "Habilitar"
+      ],
+      "Search message content": [
+        "Cercar al contingut del missatge"
+      ],
+      "Activate": [
+        "Activar"
+      ],
+      "Resume": [
+        "Continuar"
+      ],
+      "Pause": [
+        "Pausar"
+      ],
+      "Show less search options": [
+        "Mostrar menys opcions de cerca"
+      ],
+      "Show more search options": [
+        "Mostrar més opcions de cerca"
+      ],
+      "Less search options": [
+        "Menys opcions de cerca"
+      ],
+      "More search options": [
+        "Més opcions de cerca"
+      ],
+      "Advanced search": [
+        "Cerca avançada"
+      ],
+      "Clear browser data": [
+        "Netejar les dades del navegador"
+      ],
+      "Mark as read": [
+        "Marcar com a llegit"
+      ],
+      "Delete permanently": [
+        "Suprimir permanentment"
+      ],
+      "Move to inbox": [
+        "Moure a la safata d'entrada"
+      ],
+      "Move to archive": [
+        "Moure a l'arxiu"
+      ],
+      "Move to inbox (not spam)": [
+        "Moure a la safata d'entrada (no és correu brossa)"
+      ],
+      "Move to trash": [
+        "Moure a la paperera"
+      ],
+      "Delete all": [
+        "Eliminar-ho tot"
+      ],
+      "Deselect all messages": [
+        "Deseleccionar tots els missatges"
+      ],
+      "Select all messages": [
+        "Seleccionar tots els missatges"
+      ],
+      "Select All": [
+        "Seleccionar-ho tot"
+      ],
+      "All Read": [
+        "Tots els llegits"
+      ],
+      "All Unread": [
+        "Tots els no llegits"
+      ],
+      "All Starred": [
+        "Tots els destacats"
+      ],
+      "All Unstarred": [
+        "Tots els no destacats"
+      ],
+      "Load more": [
+        "Carregar-ne més"
+      ],
+      "Previous page": [
+        "Pàgina anterior"
+      ],
+      "Change page": [
+        "Canviar de pàgina"
+      ],
+      "Page ${ pageNumber }": [
+        "Pàgina ${ pageNumber }"
+      ],
+      "Next page": [
+        "Pàgina següent"
+      ],
+      "Previous conversation": [
+        "Conversa anterior"
+      ],
+      "Previous message": [
+        "Missatge anterior"
+      ],
+      "Next conversation": [
+        "Conversa següent"
+      ],
+      "Next message": [
+        "Missatge següent"
+      ],
+      "Show messages": [
+        "Mostrar missatges"
+      ],
+      "Hide messages": [
+        "Amagar missatges"
+      ],
+      "Create new message": [
+        "Crear un missatge nou"
+      ],
+      "Open shop": [
+        "Obrir la botiga"
+      ],
+      "Open calendar": [
+        "Obrir el calendari"
+      ],
+      "Import messages": [
+        "Importar missatges"
+      ],
+      "Deselect": [
+        "Anul·lar la selecció"
+      ],
+      "Start using ${ appName }": [
+        "Començar a utilitzar ${ appName }"
       ]
     },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
-        "La contrasenya ha de tenir com a mínim ${ length } caràcter",
-        "La contrasenya ha de tenir com a mínim ${ length } caràcters"
-      ]
-    },
-    "Contact field label": {
-      "Name": [
-        "Nom"
+    "Title": {
+      "Open actions dropdown": [
+        "Obrir el desplegable d'accions"
       ],
-      "Email": [
-        "Correu electrònic"
+      "Expand content": [
+        "Amplia el contingut"
       ],
-      "Phone": [
-        "Telèfon"
+      "Link confirmation": [
+        "Confirmació d'enllaç"
       ],
-      "Address": [
-        "Adreça"
+      "Keyboard Shortcuts": [
+        "Dreceres de teclat"
       ],
-      "Photo": [
-        "Foto"
+      "What's new": [
+        "Novetats"
       ],
-      "Organization": [
-        "Organització"
+      "Sign in again to continue": [
+        "Inicia sessió per continuar"
       ],
-      "Birthday": [
-        "Aniversari"
+      "Account suspended": [
+        "Compte suspès"
       ],
-      "Anniversary": [
-        "Aniversari"
+      "Enter your username or ProtonMail email address": [
+        "Introduïu el vostre nom d'usuari o adreça de correu electrònic ProtonMail"
       ],
-      "Title": [
-        "Títol"
+      "Enter your password": [
+        "Introdueix la teva contrasenya"
       ],
-      "Role": [
-        "Rol"
+      "Invalid verification code": [
+        "Codi de verificació no vàlid"
       ],
-      "Note": [
-        "Nota"
+      "Human verification": [
+        "Verificació humana"
       ],
-      "URL": [
-        "URL"
+      "Select a theme": [
+        "Seleccionar un tema"
       ],
-      "Gender": [
-        "Gènere"
+      "Upgrade required": [
+        "Actualització necessària"
       ],
-      "Language": [
-        "Idioma"
+      "Delete ${ Name }": [
+        "Esborrar ${ Name }"
       ],
-      "Timezone": [
-        "Zona Horària"
+      "Delete ${ count } contact group": [
+        "Eliminar ${ count } grup de contactes",
+        "Eliminar ${ count } grups de contactes"
       ],
-      "Geo": [
-        "Geo"
+      "Edit contact group": [
+        "Edita Grup de Contactes"
       ],
-      "Logo": [
-        "Logo"
+      "Create new group": [
+        "Crea un grup nou"
       ],
-      "Member": [
-        "Membre"
-      ]
-    },
-    "Contact type label": {
-      "Work": [
-        "Feina"
+      "${ emailsCount } member": [
+        "${ emailsCount } membre",
+        "${ emailsCount } membres"
       ],
-      "Personal": [
-        "Personal"
+      "Edit image": [
+        "Editar imatge"
       ],
-      "Mobile": [
-        "Mòbil"
+      "Add to ${ groupName }": [
+        "Afegir a ${ groupName }"
       ],
-      "Main": [
-        "Principal"
+      "Add to ${ groupCount } group": [
+        "Afegir a ${ groupCount } grup",
+        "Afegir a ${ groupCount } grups"
       ],
-      "Yomi": [
-        "Yomi"
+      "Edit contact": [
+        "Editar contacte"
       ],
-      "Other": [
-        "Altres"
+      "Create contact": [
+        "Crea un contacte"
       ],
-      "Fax": [
-        "Fax"
+      "Insert contacts": [
+        "Afegir contactes"
       ],
-      "Pager": [
-        "Cercapersones"
-      ]
-    },
-    "Property type": {
-      "Email": [
-        "Correu electrònic"
+      "Delete ${ count } contact": [
+        "Suprimeix ${ count } contacte",
+        "Suprimeix ${ count } contactes"
       ],
-      "Home": [
-        "Casa"
+      "Clearing data": [
+        "Netejant dades"
       ],
-      "Work": [
-        "Feina"
+      "Warning": [
+        "Advertència"
       ],
-      "Other": [
-        "Altres"
+      "Recover data": [
+        "Recuperar dades"
       ],
-      "Phone": [
-        "Telèfon"
+      "Re-signing contacts": [
+        "Tornant a signar contactes"
       ],
-      "Mobile": [
-        "Mòbil"
+      "Re-sign all contacts": [
+        "Tornant a signar tots els contactes"
       ],
-      "Main": [
-        "Principal"
+      "Email settings (${ emailAddress })": [
+        "Preferències de correu electrònic (${ emailAddress })"
       ],
-      "Fax": [
-        "Fax"
+      "Exporting contacts": [
+        "Exportant contactes"
       ],
-      "Pager": [
-        "Cercapersones"
+      "Contact group": [
+        "Grups de contactes"
       ],
-      "Address": [
-        "Adreça"
+      "Other names": [
+        "Altres noms"
+      ],
+      "Email addresses": [
+        "Adreces de correu electrònic"
+      ],
+      "Phone numbers": [
+        "Números de telèfon"
+      ],
+      "Addresses": [
+        "Adreces"
+      ],
+      "Other information": [
+        "Altres dades"
+      ],
+      "Email settings": [
+        "Configuració del correu"
+      ],
+      "Contact Details": [
+        "Detalls del contacte"
+      ],
+      "Merging contacts": [
+        "Combinant contactes"
+      ],
+      "Merge contacts": [
+        "Combinar contactes"
+      ],
+      "Deleting contacts": [
+        "Eliminant contactes"
+      ],
+      "View contacts": [
+        "Veure contactes"
+      ],
+      "Contacts": [
+        "Contactes"
+      ],
+      "Groups": [
+        "Grups"
+      ],
+      "Settings": [
+        "Preferències"
+      ],
+      "Select action to take on contact group": [
+        "Seleccionar acció a realitzar al grup de contactes"
+      ],
+      "Add contact group name": [
+        "Afegir nom de grup de contactes"
+      ],
+      "Select contact group": [
+        "Seleccionar grup de contactes"
+      ],
+      "Import groups": [
+        "Importar grups"
+      ],
+      "Import contacts": [
+        "Importar contactes"
+      ],
+      "Start import process": [
+        "Iniciar el procés d'importació"
+      ],
+      "Import in progress": [
+        "Importació en curs"
+      ],
+      "Report a problem": [
+        "Avisar d'un problema"
+      ],
+      "${ appName } Keyboard Shortcuts": [
+        "Dreceres de teclat de ${ appName }"
+      ],
+      "Mailbox density": [
+        "Densitat de la bústia de correu"
+      ],
+      "Mailbox layout": [
+        "Disseny de la bústia de correu"
+      ],
+      "Composer mode": [
+        "Mode d'editor"
+      ],
+      "Open help menu": [
+        "Obrir el menú d'ajuda"
+      ],
+      "Back": [
+        "Torna"
+      ],
+      "Open settings menu": [
+        "Obrir el menú de preferències"
+      ],
+      "Confirm loss of Proton bonuses": [
+        "Confirmeu la pèrdua dels beneficis de Proton"
+      ],
+      "Unsupported browser": [
+        "Navegador no suportat"
+      ],
+      "Card verification": [
+        "Verificació de la targeta"
+      ],
+      "Payment verification": [
+        "Verificació del pagament"
+      ],
+      "Processing...": [
+        "Processant..."
+      ],
+      "Card verification in progress": [
+        "Verificació de la targeta en curs"
+      ],
+      "Payment verification in progress": [
+        "Verificació del pagament en curs"
+      ],
+      "PayPal verification failed": [
+        "Ha fallat la verificació de PayPal"
+      ],
+      "3-D Secure verification failed": [
+        "Ha fallat la verificació de 3-D Segur"
+      ],
+      "Error": [
+        "Error"
+      ],
+      "ZIP / postal code": [
+        "ZIP / codi postal"
+      ],
+      "Payment details": [
+        "Detalls de pagament"
+      ],
+      "Currency": [
+        "Moneda"
+      ],
+      "Billing cycle": [
+        "Cicle de facturació"
+      ],
+      "Current plan": [
+        "Pla actual"
+      ],
+      "Processing": [
+        "Processant"
+      ],
+      "Apply gift code": [
+        "Introduïu el codi regal"
+      ],
+      "Subtotal": [
+        "Subtotal"
+      ],
+      "Coupon discount": [
+        "Cupó de descompte"
+      ],
+      "Total (monthly)": [
+        "Total (mensual)"
+      ],
+      "Credits": [
+        "Crèdits"
+      ],
+      "Gift code": [
+        "Codi regal"
+      ],
+      "Amount due": [
+        "Import a deure"
+      ],
+      "Downgrade account": [
+        "Degradar compte"
+      ],
+      "Network error": [
+        "Error de xarxa"
+      ],
+      "Select a plan": [
+        "Seleccioneu un pla"
+      ],
+      "Customize your plan": [
+        "Personalitzeu el vostre pla"
+      ],
+      "Checkout": [
+        "Pagament final"
+      ],
+      "Plan summary": [
+        "Resum del pla"
+      ],
+      "${ appName } customization": [
+        "Personalització de ${ appName }"
+      ],
+      "Beta Access": [
+        "Accés Beta"
+      ],
+      "Edit filter": [
+        "Editar filtre"
+      ],
+      "Add filter": [
+        "Afegir filtre"
+      ],
+      "Are you sure you want to close?": [
+        "Està segur que vol tancar?"
+      ],
+      "Change my answer": [
+        "Canviar la meva resposta"
+      ],
+      "Image": [
+        "Imatge"
+      ],
+      "Sending notice": [
+        "Avís d'enviament"
+      ],
+      "Storage capacity warning": [
+        "Advertència de capacitat d’emmagatzematge"
+      ],
+      "Sending original message": [
+        "Enviant missatge original"
+      ],
+      "No recipient": [
+        "Cap destinatari"
+      ],
+      "Message without subject?": [
+        "Missatge sense assumpte?"
+      ],
+      "No attachment found": [
+        "No s'ha trobat cap adjunt"
+      ],
+      "Re-sign contact": [
+        "Tornar a signar el contacte"
+      ],
+      "Verification error": [
+        "Error de verificació"
+      ],
+      "Decryption error": [
+        "Error de desxifrat"
+      ],
+      "Delete draft": [
+        "Eliminar esborrany"
+      ],
+      "Delete ${ count } draft": [
+        "Eliminar ${ count } esborrany",
+        "Eliminar ${ count } esborranys"
+      ],
+      "Delete message": [
+        "Eliminar missatge"
+      ],
+      "Delete conversation": [
+        "Eliminar conversa"
+      ],
+      "Delete ${ count } conversation": [
+        "Eliminar ${ count } conversa",
+        "Eliminar ${ count } converses"
+      ],
+      "Delete ${ count } message": [
+        "Eliminar ${ count } missatge",
+        "Eliminar ${ count } missatges"
+      ],
+      "Delete all messages": [
+        "Eliminar tots els missatges"
+      ],
+      "Trust new key?": [
+        "Confiar en la nova clau?",
+        "Confiar en les noves claus?"
+      ],
+      "Add contacts": [
+        "Afegir contactes"
+      ],
+      "To": [
+        "Per a"
+      ],
+      "CC": [
+        "CC"
+      ],
+      "BCC": [
+        "CCO"
+      ],
+      "Carbon Copy": [
+        "Copia Carbó"
+      ],
+      "Blind Carbon Copy": [
+        "Copia Carbó Amagada"
+      ],
+      "Sending error": [
+        "Error enviant"
+      ],
+      "Confirm recipient address?": [
+        "Confirma adreça de destinatari?"
+      ],
+      "Send without expiration?": [
+        "Enviar sense expiració?"
+      ],
+      "Send with changed preferences?": [
+        "Enviar amb preferències canviades?"
+      ],
+      "Attachments": [
+        "Adjunts"
+      ],
+      "Expiration time": [
+        "Temps d'expiració"
+      ],
+      "Encryption": [
+        "Xifratge"
+      ],
+      "Send email": [
+        "Enviar correu"
+      ],
+      "Schedule send": [
+        "Programar enviament"
+      ],
+      "New message": [
+        "Nou missatge"
+      ],
+      "Trust public key?": [
+        "Confiar en les claus públiques?"
+      ],
+      "All recipients were added to the BCC field and cannot be disclosed": [
+        "Tots els destinataris es van afegir al camp BCC i no es poden revelar"
+      ],
+      "Move to inbox (not spam)": [
+        "Mou a la safata d'entrada (no és correu brossa)"
+      ],
+      "Mark as unread": [
+        "Marcar com a no llegit"
+      ],
+      "Move to inbox": [
+        "Moure a la safata d'entrada"
+      ],
+      "Move to trash": [
+        "Moure a la paperera"
+      ],
+      "More": [
+        "Més"
+      ],
+      "More options": [
+        "Més opcions"
+      ],
+      "Reply": [
+        "Respon"
+      ],
+      "Reply all": [
+        "Respondre a tothom"
+      ],
+      "Forward": [
+        "Reenviar"
+      ],
+      "Filter on": [
+        "Filtrat"
+      ],
+      "Move to": [
+        "Moure a"
+      ],
+      "Label as": [
+        "Etiqueta com a"
+      ],
+      "Load remote content": [
+        "Carrega el contingut remot"
+      ],
+      "Load embedded images": [
+        "Carrega imatges incrustades"
+      ],
+      "Unsubscribe": [
+        "Cancel·lar la subscripció"
+      ],
+      "Mark email as legitimate": [
+        "Marca el correu electrònic com a legítim"
+      ],
+      "Trust pinned keys?": [
+        "Confieu en les claus fixades?"
+      ],
+      "Enable message content search": [
+        "Activar la cerca de contingut dels missatges"
+      ],
+      "Create a new folder": [
+        "Crear una nova carpeta"
+      ],
+      "Create a new label": [
+        "Crea una etiqueta nova"
+      ],
+      "More selections": [
+        "Més seleccions"
+      ],
+      "Previous conversation": [
+        "Conversa anterior"
+      ],
+      "Previous message": [
+        "Missatge anterior"
+      ],
+      "Next conversation": [
+        "Conversa següent"
+      ],
+      "Next message": [
+        "Missatge següent"
+      ],
+      "Sort conversations": [
+        "Ordenar converses"
+      ],
+      "Sort messages": [
+        "Ordenar missatges"
+      ],
+      "Create folder": [
+        "Crear carpeta"
+      ],
+      "Create label": [
+        "Crear etiqueta"
+      ],
+      "Conversation list": [
+        "Llista de converses"
+      ],
+      "Message list": [
+        "Llista de missatges"
+      ],
+      "Welcome ${ userName }": [
+        "Benvingut/da, ${ userName }"
+      ],
+      "Welcome": [
+        "Benvingut/da"
       ]
     },
     "Info": {
-      "Session timed out.": [
-        "Temps de sessió esgotat."
-      ],
-      "Internet connection lost.": [
-        "S'ha perdut la connexió a Internet."
-      ],
-      "Servers are unreachable.": [
-        "Els servidors no són accessibles."
-      ],
-      "Custom daily": [
-        "Personalitzat diàriament"
-      ],
-      "Custom weekly": [
-        "Personalitzat setmanalment"
-      ],
-      "Custom monthly": [
-        "Personalitzat mensualment"
-      ],
-      "Custom yearly": [
-        "Personalitzat anualment"
-      ],
-      "Custom": [
-        "Personalitzat"
-      ],
-      "Daily": [
-        "Diàriament"
-      ],
-      "Monthly ${ onDayString }": [
-        "Mensual ${ onDayString }"
-      ],
-      "Yearly": [
-        "Anual"
-      ],
       "No results found": [
         "No s'han trobat resultats"
+      ],
+      "Loading": [
+        "Carregant"
       ],
       "Insert image": [
         "Afegeix imatge"
@@ -643,9 +1855,6 @@
       "Learn more": [
         "Més informació"
       ],
-      "Loading": [
-        "Carregant"
-      ],
       "Drop the file here to upload": [
         "Arrossegueu el fitxer aquí per carregar-lo"
       ],
@@ -690,6 +1899,9 @@
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Feu clic a \"Sol·licitar un nou codi\" per rebre un codi de verificació nou a ${ strong }. Si aquest número de telèfon és incorrecte, feu clic a \"Editar\" per corregir-lo."
+      ],
+      "support team": [
+        "equip de suport"
       ],
       "No contacts added yet": [
         "Encara no s'han afegit contactes"
@@ -810,27 +2022,6 @@
         "${ addressCount } adreça de correu electrònic",
         "${ addressCount } adreces de correu electrònic"
       ],
-      "support team": [
-        "equip de suport"
-      ],
-      "Unsupported file": [
-        "Fitxer no compatible"
-      ],
-      "No preview available": [
-        "No hi ha previsualització disponible"
-      ],
-      "Preview": [
-        "Vista prèvia"
-      ],
-      "Loading preview": [
-        "S'està carregant la previsualització"
-      ],
-      "This browser does not support previewing PDF documents. Please download the file.": [
-        "Aquest navegador no suporta la previsualització de documents PDF. Descarregueu-vos l'arxiu."
-      ],
-      "of": [
-        "de"
-      ],
       "Import contacts": [
         "Importar contactes"
       ],
@@ -860,6 +2051,24 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Actualitzar la pàgina o ${ link } resoldrà automàticament la majoria dels problemes."
+      ],
+      "Unsupported file": [
+        "Fitxer no compatible"
+      ],
+      "No preview available": [
+        "No hi ha previsualització disponible"
+      ],
+      "Preview": [
+        "Vista prèvia"
+      ],
+      "Loading preview": [
+        "S'està carregant la previsualització"
+      ],
+      "This browser does not support previewing PDF documents. Please download the file.": [
+        "Aquest navegador no suporta la previsualització de documents PDF. Descarregueu-vos l'arxiu."
+      ],
+      "of": [
+        "de"
       ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "La navegació bàsica i les accions es mantenen disponibles independentment de que a la configuració les dreceres de teclat estiguin actives o no."
@@ -1009,12 +2218,6 @@
       "* Customizable features": [
         "* Característiques personalitzables"
       ],
-      "Access your streaming services, like ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, no matter where you are.": [
-        "Accediu als vostres serveis de reproducció en línia com ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, sense importar on us trobeu."
-      ],
-      "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
-        "Accediu a contingut bloquejat com xarxes socials, notícies, Wikipedia, YouTube i molts d'altres, sense importar on us trobeu."
-      ],
       "For getting started with private and secure emailing.": [
         "Per començar amb correspondència electrònica privada i segura."
       ],
@@ -1038,6 +2241,12 @@
       ],
       "For families and small teams; includes both Mail and VPN.": [
         "Per a famílies i equips Petits; inclou correu electrònic i connexions VPN."
+      ],
+      "Access your streaming services, like ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, no matter where you are.": [
+        "Accediu als vostres serveis de reproducció en línia com ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, sense importar on us trobeu."
+      ],
+      "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
+        "Accediu a contingut bloquejat com xarxes socials, notícies, Wikipedia, YouTube i molts d'altres, sense importar on us trobeu."
       ],
       "Save 20%": [
         "Estalvia un 20%"
@@ -1198,6 +2407,39 @@
       ],
       "Are you sure you want to discard your changes?": [
         "N'estás segur que desitges descartar els teus canvis?"
+      ],
+      "Session timed out.": [
+        "Temps de sessió esgotat."
+      ],
+      "Internet connection lost.": [
+        "S'ha perdut la connexió a Internet."
+      ],
+      "Servers are unreachable.": [
+        "Els servidors no són accessibles."
+      ],
+      "Custom daily": [
+        "Personalitzat diàriament"
+      ],
+      "Custom weekly": [
+        "Personalitzat setmanalment"
+      ],
+      "Custom monthly": [
+        "Personalitzat mensualment"
+      ],
+      "Custom yearly": [
+        "Personalitzat anualment"
+      ],
+      "Custom": [
+        "Personalitzat"
+      ],
+      "Daily": [
+        "Diàriament"
+      ],
+      "Monthly ${ onDayString }": [
+        "Mensual ${ onDayString }"
+      ],
+      "Yearly": [
+        "Anual"
       ],
       "Members": [
         "Membres"
@@ -1596,6 +2838,19 @@
       "No more results found": [
         "No s'han trobat més resultats"
       ],
+      "Protect yourself from trackers by turning on Proton email tracker protection.": [
+        "Protegiu-vos dels rastrejadors activant la protecció de rastreig de correu electrònic de Proton."
+      ],
+      "No email trackers found.": [
+        "No s'han trobat rastrejadors de correu electrònic."
+      ],
+      "Proton has blocked email trackers in this message in order to protect your privacy.": [
+        "Proton ha bloquejat rastrejadors de correu electrònic en aquest missatge per protegir la vostra privacitat."
+      ],
+      "${ numberOfTrackers } email tracker blocked": [
+        "${ numberOfTrackers } rastrejador de correu electrònic bloquejat",
+        "${ numberOfTrackers } rastrejadors de correu electrònic bloquejats"
+      ],
       "This conversation contains non-trashed messages.": [
         "Aquesta conversa conté missatges no esborrats."
       ],
@@ -1743,2541 +2998,15 @@
       ],
       "Using your mobile device, scan this QR-Code or visit ${ link }.": [
         "Utilitzant el vostre dispositiu mòbil, escanegeu aquest codi QR o visiteu ${ link }."
-      ]
-    },
-    "Default display name vcard": {
-      "Unknown": [
-        "Desconegut"
-      ]
-    },
-    "Import contact. Contact identifier": {
-      "unknown": [
-        "desconegut/da"
-      ]
-    },
-    "Error importing contact": {
-      "vCard versions < 3.0 not supported": [
-        "versions vCard < 3.0 no suportades"
       ],
-      "Encryption failed": [
-        "El xifratge ha fallat"
-      ]
-    },
-    "Error importing calendar": {
-      "An unexpected error occurred. Import must be restarted.": [
-        "S'ha produït un error inesperat. S'ha de reiniciar la importació."
-      ]
-    },
-    "Error importing contacts": {
-      "An error occurred uploading your file. No file has been selected.": [
-        "S'ha produït un error carregant el fitxer. No s'ha seleccionat cap fitxer."
-      ],
-      "An error occurred uploading your file ${ formattedFilename }. No .csv or .vcf file selected": [
-        "S'ha produït un error carregant el vostre fitxer ${ formattedFilename }. No s'ha seleccionat cap fitxer .csv o .vcf"
-      ],
-      "Your file ${ formattedFilename } is empty.": [
-        "El vostre fitxer ${ formattedFilename } està buit."
-      ],
-      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
-        "S'ha produït un error carregant el vostre fitxer ${ formattedFilename }. La mida màxima del fitxer és ${ MAX_IMPORT_FILE_SIZE_STRING }."
-      ],
-      "Your file ${ formattedFilename } has no contacts to be imported.": [
-        "El vostre fitxer ${ formattedFilename } no conté contactes per importar."
-      ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
-        "El vostre fitxer ${ formattedFilename } conté més de ${ MAX_IMPORT_CONTACTS_STRING } contactes."
-      ],
-      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "S'ha produït un error llegint el fitxer ${ formattedFilename }. El fitxer no té el format adequat."
-      ]
-    },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "L'adreça de correu electrònic que no es troba entre els identificadors d'usuari definits a la clau d'enviament (${ keyUserIds })"
-      ]
-    },
-    "Keyboard shortcut section name": {
-      "Basic navigation": [
-        "Navegació bàsica"
-      ],
-      "Basic actions": [
-        "Accions bàsiques"
-      ],
-      "Folder shortcuts": [
-        "Dreceres de carpeta"
-      ],
-      "Composer shortcuts": [
-        "Dreceres de l'editor"
-      ],
-      "List shortcuts": [
-        "Dreceres de llistat"
-      ],
-      "Action shortcuts": [
-        "Dreceres d'acció"
-      ],
-      "Message shortcuts": [
-        "Dreceres de missatge"
-      ]
-    },
-    "Keyboard shortcut name": {
-      "Move up": [
-        "Mou cap amunt"
-      ],
-      "Jump to first": [
-        "Moure a primera posició"
-      ],
-      "Move down": [
-        "Mou cap avall"
-      ],
-      "Jump to last": [
-        "Moure a última posició"
-      ],
-      "Move right / expand": [
-        "Cap a la dreta / expandir"
-      ],
-      "Move left / collapse": [
-        "Cap a l'esquerra / reduir"
-      ],
-      "Apply / open": [
-        "Aplicar / obrir"
-      ],
-      "Cancel / close": [
-        "Cancel·lar / tancar"
-      ],
-      "Open this modal": [
-        "Obre aquesta finestra"
-      ],
-      "Select / unselect": [
-        "Seleccioneu / Anul·leu selecció"
-      ],
-      "Go to Inbox": [
-        "Vés a la Safata d'entrada"
-      ],
-      "Go to Archive": [
-        "Vés a l'Arxiu"
-      ],
-      "Go to Sent": [
-        "Vés a Enviats"
-      ],
-      "Go to Starred": [
-        "Vés a Destacats"
-      ],
-      "Go to Drafts": [
-        "Vés a Esborranys"
-      ],
-      "Go to Trash": [
-        "Vés a la Paperera"
-      ],
-      "Go to Spam": [
-        "Vés al Correu brossa"
-      ],
-      "Go to All Mail": [
-        "Vés a Tot el Correu"
-      ],
-      "Save draft": [
-        "Desa l'esborrany"
-      ],
-      "Send email": [
-        "Enviar correu"
-      ],
-      "Close draft": [
-        "Tancar esborrany"
-      ],
-      "Minimize / maximize composer": [
-        "Minimitzar / maximitzar el compositor"
-      ],
-      "Expand / contract composer": [
-        "Ampliar / contractar compositor"
-      ],
-      "Attach file": [
-        "Adjuntar arxiu"
-      ],
-      "Add expiration time": [
-        "Afegir temps d'expiració"
-      ],
-      "Add encryption": [
-        "Afegir xifrat"
-      ],
-      "Discard draft": [
-        "Descarta l'esborrany"
-      ],
-      "Open previous message": [
-        "Obrir el missatge anterior"
-      ],
-      "Open next message": [
-        "Obrir següent missatge"
-      ],
-      "Show unread emails": [
-        "Mostrar correus electronics sense llegir"
-      ],
-      "Show all emails": [
-        "Mostra tots els correus electrònics"
-      ],
-      "Select / unselect all": [
-        "Selecciona-ho tot / No seleccionis res"
-      ],
-      "Search": [
-        "Cerca"
-      ],
-      "New message": [
-        "Nou missatge"
-      ],
-      "Star": [
-        "Destacat"
-      ],
-      "Mark as unread": [
-        "Marca com a no llegit"
-      ],
-      "Label as...": [
-        "Etiqueta com a..."
-      ],
-      "Create filter with...": [
-        "Crear filtre amb..."
-      ],
-      "Move to...": [
-        "Moure a..."
-      ],
-      "Move to Inbox": [
-        "Moure a la Safata d'entrada"
-      ],
-      "Move to Archive": [
-        "Moure al Arxiu"
-      ],
-      "Move to Spam": [
-        "Moure a Correu brossa"
-      ],
-      "Move to Trash": [
-        "Moure a la Paperera"
-      ],
-      "Delete permanently": [
-        "Suprimeix permanentment"
-      ],
-      "Reply": [
-        "Respon"
-      ],
-      "Reply all": [
-        "Respon a tothom"
-      ],
-      "Forward": [
-        "Reenvia"
-      ],
-      "Load remote content": [
-        "Carrega el contingut remot"
-      ],
-      "Load embedded images": [
-        "Carrega imatges incrustades"
-      ],
-      "Show original message": [
-        "Mostra el missatge original"
-      ]
-    },
-    "Calendar status": {
-      "Syncing": [
-        "Sincronitzant"
-      ],
-      "Not synced": [
-        "No sincronitzat"
-      ]
-    },
-    "Calendar subscription not synced error": {
-      "Calendar is syncing": [
-        "El calendari s'està sincronitzant"
-      ],
-      "More than 12 hours passed since last update": [
-        "Han passat més de 12 hores des de la darrera actualització"
-      ],
-      "Calendar link is wrong": [
-        "L'enllaç del calendari és erroni"
-      ],
-      "Calendar is too big": [
-        "El calendari és massa gran"
-      ],
-      "Calendar link is not accessible": [
-        "L'enllaç del calendari no és accessible"
-      ],
-      "Calendar link is temporarily unaccessible": [
-        "L'enllaç del calendari no és accessible temporalment"
-      ],
-      "Failed to sync calendar": [
-        "Error sincronitzant el calendari"
-      ]
-    },
-    "Attached ics file error": {
-      "Invalid ICS file": [
-        "Fitxer ICS invàlid"
-      ],
-      "Invalid event": [
-        "Esdeveniment invàlid"
-      ],
-      "Unsupported event": [
-        "Esdeveniment no suportat"
-      ],
-      "Empty ICS file": [
-        "Fitxer ICS buit"
-      ],
-      "Unsupported calendar component": [
-        "Component de calendari no admès"
-      ],
-      "Invalid method": [
-        "Mètode no vàlid"
-      ]
-    },
-    "Event invitation error": {
-      "Invalid response": [
-        "Resposta no vàlida"
-      ],
-      "Invalid invitation": [
-        "Invitació no vàlida"
-      ],
-      "Unsupported response": [
-        "Resposta no admesa"
-      ],
-      "Unsupported invitation": [
-        "Invitació no compatible"
-      ],
-      "Attached ICS file could not be parsed": [
-        "No es pot analitzar l'arxiu ICS adjuntat"
-      ],
-      "Attached ICS file could not be decrypted": [
-        "No es pot desxifrar l'arxiu ICS adjuntat"
-      ],
-      "We could not retrieve the event from your calendar": [
-        "No hem pogut recuperar l'esdeveniment del calendari"
-      ],
-      "We could not update the event in your calendar": [
-        "No hem pogut actualitzar l'esdeveniment del teu calendari"
-      ],
-      "Your answer was sent, but the event could not be added to your calendar": [
-        "S'ha enviat la vostra resposta, però l'esdeveniment no s'ha pogut afegir al vostre calendari"
-      ],
-      "Your answer was sent, but the event could not be updated in your calendar": [
-        "S'ha enviat la vostra resposta, però l'esdeveniment no s'ha pogut actualitzar al vostre calendari"
-      ],
-      "We could not cancel the event in your calendar": [
-        "No hem pogut cancelar l'esdeveniment del vostre calendari"
-      ],
-      "Unexpected error": [
-        "S'ha produït un error inesperat"
-      ]
-    },
-    "Error importing event": {
-      "Component with wrong format": [
-        "Component amb format erroni"
-      ],
-      "Non-Gregorian": [
-        "No gregorià"
-      ],
-      "To-do entry": [
-        "Entrada de tasques"
-      ],
-      "Journal entry": [
-        "Entrada de diari"
-      ],
-      "Free-busy time information": [
-        "Informació de disponibilitat temporal"
-      ],
-      "Custom timezone": [
-        "Fus horari personalitzat"
-      ],
-      "Invalid event": [
-        "Esdeveniment no vàlid"
-      ],
-      "Unsupported event": [
-        "Esdeveniment no suportat"
-      ],
-      "Malformed all-day event": [
-        "Esdeveniment de tot el dia amb format incorrecte"
-      ],
-      "Missing start time": [
-        "Falta l’hora d’inici"
-      ],
-      "Malformed start time": [
-        "Hora de inici amb format incorrecte"
-      ],
-      "Floating times not supported": [
-        "Temps flotants no compatibles"
-      ],
-      "Start time out of bounds": [
-        "Hora d’inici fora de límits"
-      ],
-      "Malformed end time": [
-        "Hora de finalització amb format incorrecte"
-      ],
-      "End time out of bounds": [
-        "Hora de finalització fora de límits"
-      ],
-      "Event duration not supported": [
-        "Durada d'esdeveniment no compatible"
-      ],
-      "Calendar timezone not supported": [
-        "Fus horari del calendari no compatible"
-      ],
-      "Timezone not supported": [
-        "Fus horari no compatible"
-      ],
-      "Malformed recurring event": [
-        "Esdeveniment recurrent amb format incorrecte"
-      ],
-      "Recurring rule not supported": [
-        "Regla recurrent no compatible"
-      ],
-      "Edited event not supported": [
-        "Esdeveniment editat no compatible"
-      ],
-      "Notification out of bounds": [
-        "Notificació fora de límits"
-      ],
-      "Event validation failed": [
-        "Ha fallat la validació de l'esdeveniment"
-      ],
-      "Encryption failed": [
-        "Ha fallat el xifratge"
-      ],
-      "Original recurring event could not be found": [
-        "No es troba l'esdeveniment recurrent original"
-      ],
-      "no UID, title or start time": [
-        "sense UID, títol o hora d'inici"
-      ]
-    },
-    "Event title": {
-      "(no title)": [
-        "(No title)"
-      ]
-    },
-    "Participant name": {
-      "You": [
-        "Tú"
-      ]
-    },
-    "Email subject": {
-      "Invitation for an event on ${ formattedStart }": [
-        "Invitació a un esdeveniment el ${ formattedStart }"
-      ],
-      "Update for an event on ${ formattedStart }": [
-        "Actualització d'un esdeveniment el ${ formattedStart }"
-      ],
-      "Invitation for an event starting on ${ formattedStart }": [
-        "Invitació a un esdeveniment que comença el ${ formattedStart }"
-      ],
-      "Update for an event starting on ${ formattedStart }": [
-        "Actualització d'un esdeveniment que comença el ${ formattedStart }"
-      ],
-      "Cancellation of an event on ${ formattedStart }": [
-        "Cancel·lació d'un esdeveniment el ${ formattedStart }"
-      ],
-      "Cancellation of an event starting on ${ formattedStart }": [
-        "Cancel·lació d'un esdeveniment que comença el ${ formattedStart }"
-      ]
-    },
-    "Email body for invitation (date part)": {
-      "When: ${ formattedStart } (all day)": [
-        "Quan: ${ formattedStart } (tot el dia)"
-      ],
-      "When: ${ formattedStart } - ${ formattedEnd }": [
-        "Quan: ${ formattedStart } - ${ formattedEnd }"
-      ],
-      "When: ${ formattedStart }": [
-        "Quan: ${ formattedStart }"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "Where: ${ eventLocation }": [
-        "On: ${ eventLocation }"
-      ]
-    },
-    "Email body for description (description part)": {
-      "Description: ${ eventDescription }": [
-        "Descripció: ${ eventDescription }"
-      ]
-    },
-    "Email body for invitation": {
-      "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
-        "Heu estat convidat/da a ${ eventTitle }\n${ eventDetailsText }"
-      ],
-      "${ eventTitle } has been updated.\n${ eventDetailsText }": [
-        "${ eventTitle } s'ha actualitzat.\n${ eventDetailsText }"
-      ],
-      "${ eventTitle } has been cancelled.": [
-        "${ eventTitle } s'ha cancel·lat."
-      ]
-    },
-    "Email body for response to invitation": {
-      "${ emailAddress } has accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } ha acceptat la vostra invitació a ${ eventTitle }"
-      ],
-      "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } ha acceptat provisionalment la vostra invitació a ${ eventTitle }"
-      ],
-      "${ emailAddress } has declined your invitation to ${ eventTitle }": [
-        "${ emailAddress } ha declinat la vostra invitació a ${ eventTitle }"
-      ]
-    },
-    "Monthly recurring event, repeats on": {
-      "on the first Sunday": [
-        "en el primer Diumenge"
-      ],
-      "on the first Monday": [
-        "en el primer Dilluns"
-      ],
-      "on the first Tuesday": [
-        "en el primer Dimarts"
-      ],
-      "on the first Wednesday": [
-        "en el primer Dimecres"
-      ],
-      "on the first Thursday": [
-        "en el primer Dijous"
-      ],
-      "on the first Friday": [
-        "en el primer Divendres"
-      ],
-      "on the first Saturday": [
-        "en el primer Dissapte"
-      ],
-      "on the second Sunday": [
-        "en el segon Diumenge"
-      ],
-      "on the second Monday": [
-        "en el segon Dilluns"
-      ],
-      "on the second Tuesday": [
-        "en el segon Dimarts"
-      ],
-      "on the second Wednesday": [
-        "en el segon Dimecres"
-      ],
-      "on the second Thursday": [
-        "en el segon Dijous"
-      ],
-      "on the second Friday": [
-        "en el segon Divendres"
-      ],
-      "on the second Saturday": [
-        "en el segon Dissabte"
-      ],
-      "on the third Sunday": [
-        "en el tercer Diumenge"
-      ],
-      "on the third Monday": [
-        "en el tercer Dilluns"
-      ],
-      "on the third Tuesday": [
-        "en el tercer Dimarts"
-      ],
-      "on the third Wednesday": [
-        "en el tercer Dimecres"
-      ],
-      "on the third Thursday": [
-        "en el tercer Dijous"
-      ],
-      "on the third Friday": [
-        "en el tercer Divendres"
-      ],
-      "on the third Saturday": [
-        "en el tercer Dissabte"
-      ],
-      "on the fourth Sunday": [
-        "en el quart Diumenge"
-      ],
-      "on the fourth Monday": [
-        "en el quart Dilluns"
-      ],
-      "on the fourth Tuesday": [
-        "en el quart Dimarts"
-      ],
-      "on the fourth Wednesday": [
-        "en el quart Dimecres"
-      ],
-      "on the fourth Thursday": [
-        "en el quart Dijous"
-      ],
-      "on the fourth Friday": [
-        "en el quart Divendres"
-      ],
-      "on the fourth Saturday": [
-        "en el quart Dissabte"
-      ],
-      "on the last Sunday": [
-        "en el darrer Diumenge"
-      ],
-      "on the last Monday": [
-        "en el darrer Dilluns"
-      ],
-      "on the last Tuesday": [
-        "en el darrer Dimarts"
-      ],
-      "on the last Wednesday": [
-        "en el darrer Dimecres"
-      ],
-      "on the last Thursday": [
-        "en el darrer Dijous"
-      ],
-      "on the last Friday": [
-        "en el darrer Divendres"
-      ],
-      "on the last Saturday": [
-        "en el darrer Dissabte"
-      ],
-      "on day ${ dayOfMonth }": [
-        "el dia ${ dayOfMonth }"
-      ]
-    },
-    "Daily recurring event, frequency": {
-      "${ count } time": [
-        "${ count } vegada",
-        "${ count } vegades"
-      ],
-      "until ${ dateString }": [
-        "fins el ${ dateString }"
-      ],
-      "Daily": [
-        "Diàriament"
-      ],
-      "Every ${ interval } day": [
-        "Cada ${ interval } dia",
-        "Cada ${ interval } dies"
-      ],
-      "Daily, ${ timesString }": [
-        "Diàriament, ${ timesString }"
-      ],
-      "Every ${ interval } day, ${ timesString }": [
-        "Cada ${ interval } dia, ${ timesString }",
-        "Cada ${ interval } dies, ${ timesString }"
-      ],
-      "Daily, ${ untilString }": [
-        "Diàriament, ${ untilString }"
-      ],
-      "Every ${ interval } day, ${ untilString }": [
-        "Cada ${ interval } dia, ${ untilString }",
-        "Cada ${ interval } dies, ${ untilString }"
-      ]
-    },
-    "Weekly recurring event, repeats on (multiple days), frequency": {
-      "Sunday": [
-        "Diumenge"
-      ],
-      "Monday": [
-        "Dilluns"
-      ],
-      "Tuesday": [
-        "Dimarts"
-      ],
-      "Wednesday": [
-        "Dimecres"
-      ],
-      "Thursday": [
-        "Dijous"
-      ],
-      "Friday": [
-        "Divendres"
-      ],
-      "Saturday": [
-        "Dissabte"
-      ]
-    },
-    "Weekly recurring event, frequency": {
-      "Weekly on all days": [
-        "Setmanalment tots els dies"
-      ],
-      "Every ${ interval } week on all days": [
-        "Cada ${ interval } setmana tots els dies",
-        "Cada ${ interval } setmanes tots els dies"
-      ],
-      "Weekly on Sunday": [
-        "Setmanalment al Diumenge"
-      ],
-      "Every ${ interval } week on Sunday": [
-        "Cada ${ interval } setmana els Diumenges",
-        "Cada ${ interval } setmanes els Diumenges"
-      ],
-      "Weekly on Monday": [
-        "Setmanalment al Dilluns"
-      ],
-      "Every ${ interval } week on Monday": [
-        "Cada ${ interval } setmana els Dilluns",
-        "Cada ${ interval } setmanes els Dilluns"
-      ],
-      "Weekly on Tuesday": [
-        "Setmanalment al Dimarts"
-      ],
-      "Every ${ interval } week on Tuesday": [
-        "Cada ${ interval } setmana els Dimarts",
-        "Cada ${ interval } setmanes els Dimarts"
-      ],
-      "Weekly on Wednesday": [
-        "Setmanalment al Dimecres"
-      ],
-      "Every ${ interval } week on Wednesday": [
-        "Cada ${ interval } setmana els Dimecres",
-        "Cada ${ interval } setmanes els Dimecres"
-      ],
-      "Weekly on Thursday": [
-        "Setmanalment al Dijous"
-      ],
-      "Every ${ interval } week on Thursday": [
-        "Cada ${ interval } setmana els Dijous",
-        "Cada ${ interval } setmanes els Dijous"
-      ],
-      "Weekly on Friday": [
-        "Setmanalment al Divendres"
-      ],
-      "Every ${ interval } week on Friday": [
-        "Cada ${ interval } setmana els Divendres",
-        "Cada ${ interval } setmanes els Divendres"
-      ],
-      "Weekly on Saturday": [
-        "Setmanalment al Dissabte"
-      ],
-      "Every ${ interval } week on Saturday": [
-        "Cada ${ interval } setmana els Dissabtes",
-        "Cada ${ interval } setmanes els Dissabtes"
-      ],
-      "Weekly on ${ multipleDaysString }": [
-        "Setmanalment els ${ multipleDaysString }"
-      ],
-      "Every ${ interval } week on ${ multipleDaysString }": [
-        "Cada ${ interval } setmana els ${ multipleDaysString }",
-        "Cada ${ interval } setmanes els ${ multipleDaysString }"
-      ],
-      "Weekly on all days, ${ timesString }": [
-        "Semanalment tots els dies, ${ timesString }"
-      ],
-      "Every ${ interval } week on all days, ${ timesString }": [
-        "Cada ${ interval } setmana tots els dies, ${ timesString }",
-        "Cada ${ interval } setmanes tots els dies, ${ timesString }"
-      ],
-      "Weekly on Sunday, ${ timesString }": [
-        "Semanalment el Diumenge, ${ timesString }"
-      ],
-      "Every ${ interval } week on Sunday, ${ timesString }": [
-        "Cada ${ interval } setmana tots els Diumenges, ${ timesString }",
-        "Cada ${ interval } setmanes tots els Diumenges, ${ timesString }"
-      ],
-      "Weekly on Monday, ${ timesString }": [
-        "Semanalment els Dilluns, ${ timesString }"
-      ],
-      "Every ${ interval } week on Monday, ${ timesString }": [
-        "Cada ${ interval } setmana tots els Dilluns, ${ timesString }",
-        "Cada ${ interval } setmanes tots els Dilluns, ${ timesString }"
-      ],
-      "Weekly on Tuesday, ${ timesString }": [
-        "Semanalment els Dimarts, ${ timesString }"
-      ],
-      "Every ${ interval } week on Tuesday, ${ timesString }": [
-        "Cada ${ interval } setmana els Dimarts, ${ timesString }",
-        "Cada ${ interval } setmanes els Dimarts, ${ timesString }"
-      ],
-      "Weekly on Wednesday, ${ timesString }": [
-        "Dimecres setmanalmenty, ${ timesString }"
-      ],
-      "Every ${ interval } week on Wednesday, ${ timesString }": [
-        "Cada ${ interval } setmana els Dimecres, ${ timesString }",
-        "Cada ${ interval } setmanes els Dimecres, ${ timesString }"
-      ],
-      "Weekly on Thursday, ${ timesString }": [
-        "Semanalment els Dijous, ${ timesString }"
-      ],
-      "Every ${ interval } week on Thursday, ${ timesString }": [
-        "Cada ${ interval } setmana els Dijous, ${ timesString }",
-        "Cada ${ interval } setmanes els Dijous, ${ timesString }"
-      ],
-      "Weekly on Friday, ${ timesString }": [
-        "Semanalment el Dilluns, ${ timesString }"
-      ],
-      "Every ${ interval } week on Friday, ${ timesString }": [
-        "Cada ${ interval } setmana tots els Divendres, ${ timesString }",
-        "Cada ${ interval } setmanes tots els Divendres, ${ timesString }"
-      ],
-      "Weekly on Saturday, ${ timesString }": [
-        "Semanalment el Dissapte, ${ timesString }"
-      ],
-      "Every ${ interval } week on Saturday, ${ timesString }": [
-        "Cada ${ interval } setmana tots els Dissaptes, ${ timesString }",
-        "Cada ${ interval } setmanes tots els Dissaptes, ${ timesString }"
-      ],
-      "Weekly on ${ multipleDaysString }, ${ timesString }": [
-        "Semanalment els ${ multipleDaysString }, ${ timesString }"
-      ],
-      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
-        "Cada ${ interval } setmana els ${ multipleDaysString }, ${ timesString }",
-        "Cada ${ interval } setmanes els ${ multipleDaysString }, ${ timesString }"
-      ],
-      "Weekly on all days, ${ untilString }": [
-        "Semanalment tots els dies, ${ untilString }"
-      ],
-      "Every ${ interval } week on all days, ${ untilString }": [
-        "Cada ${ interval } setmana tots els dies, ${ untilString }",
-        "Cada ${ interval } setmanes tots els dies, ${ untilString }"
-      ],
-      "Weekly on Sunday, ${ untilString }": [
-        "Semanalment el Diumenge, ${ untilString }"
-      ],
-      "Every ${ interval } week on Sunday, ${ untilString }": [
-        "Cada ${ interval } setmana tots els Diumenges, ${ untilString }",
-        "Cada ${ interval } setmanes tots els Diumenges, ${ untilString }"
-      ],
-      "Weekly on Monday, ${ untilString }": [
-        "Semanalment el Dilluns, ${ untilString }"
-      ],
-      "Every ${ interval } week on Monday, ${ untilString }": [
-        "Cada ${ interval } setmana tots els Dilluns, ${ untilString }",
-        "Cada ${ interval } setmanes tots els Dilluns, ${ untilString }"
-      ],
-      "Weekly on Tuesday, ${ untilString }": [
-        "Semanalment el Dimarts, ${ untilString }"
-      ],
-      "Every ${ interval } week on Tuesday, ${ untilString }": [
-        "Cada ${ interval } setmana el Dimarts, ${ untilString }",
-        "Cada ${ interval } setmanes el Dimarts, ${ untilString }"
-      ],
-      "Weekly on Wednesday, ${ untilString }": [
-        "Semanalment el Dimecres, ${ untilString }"
-      ],
-      "Every ${ interval } week on Wednesday, ${ untilString }": [
-        "Cada ${ interval } setmana el Dimecres, ${ untilString }",
-        "Cada ${ interval } setmanes el Dimecres, ${ untilString }"
-      ],
-      "Weekly on Thursday, ${ untilString }": [
-        "Semanalment el Dijous, ${ untilString }"
-      ],
-      "Every ${ interval } week on Thursday, ${ untilString }": [
-        "Cada ${ interval } setmana el Dijous, ${ untilString }",
-        "Cada ${ interval } setmanes el Dijous, ${ untilString }"
-      ],
-      "Weekly on Friday, ${ untilString }": [
-        "Semanalment el Divendres, ${ untilString }"
-      ],
-      "Every ${ interval } week on Friday, ${ untilString }": [
-        "Cada ${ interval } setmana el Divendres, ${ untilString }",
-        "Cada ${ interval } setmanes el Divendres, ${ untilString }"
-      ],
-      "Weekly on Saturday, ${ untilString }": [
-        "Semanalment el Dissapte, ${ untilString }"
-      ],
-      "Every ${ interval } week on Saturday, ${ untilString }": [
-        "Cada ${ interval } setmana el Dissapte, ${ untilString }",
-        "Cada ${ interval } setmanes el Dissapte, ${ untilString }"
-      ],
-      "Weekly on ${ multipleDaysString }, ${ untilString }": [
-        "Semanalment els ${ multipleDaysString }, ${ untilString }"
-      ],
-      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
-        "Cada ${ interval } setmana els ${ multipleDaysString }, ${ untilString }",
-        "Cada ${ interval } setmanes els ${ multipleDaysString }, ${ untilString }"
-      ]
-    },
-    "Monthly recurring event, frequency": {
-      "Monthly ${ onDayString }": [
-        "Mensual ${ onDayString }"
-      ],
-      "Every ${ interval } month ${ onDayString }": [
-        "Cada ${ interval } mes ${ onDayString }",
-        "Cada ${ interval } messos ${ onDayString }"
-      ],
-      "Monthly ${ onDayString }, ${ timesString }": [
-        "Mensualment ${ onDayString }, ${ timesString }"
-      ],
-      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
-        "Cada ${ interval } mes ${ onDayString }, ${ timesString }",
-        "Cada ${ interval } messos ${ onDayString }, ${ timesString }"
-      ],
-      "Monthly ${ onDayString }, ${ untilString }": [
-        "Mensualment ${ onDayString }, ${ untilString }"
-      ],
-      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
-        "Cada ${ interval } mes ${ onDayString }, ${ untilString }",
-        "Cada ${ interval } mesos ${ onDayString }, ${ untilString }"
-      ]
-    },
-    "Yearly recurring event, frequency": {
-      "Yearly": [
-        "Anual"
-      ],
-      "Every ${ interval } year": [
-        "Cada ${ interval } any",
-        "Cada ${ interval } anys"
-      ],
-      "Yearly, ${ timesString }": [
-        "Anualment, ${ timesString }"
-      ],
-      "Every ${ interval } year, ${ timesString }": [
-        "Cada ${ interval } any, ${ timesString }",
-        "Cada ${ interval } anys, ${ timesString }"
-      ],
-      "Yearly, ${ untilString }": [
-        "Anualment, ${ untilString }"
-      ],
-      "Every ${ interval } year, ${ untilString }": [
-        "Cada ${ interval } any, ${ untilString }",
-        "Cada ${ interval } anys, ${ untilString }"
-      ]
-    },
-    "Action": {
-      "Close": [
-        "Tancar"
-      ],
-      "Cancel": [
-        "Cancel·lar"
-      ],
-      "Save": [
-        "Desa"
-      ],
-      "Upload picture": [
-        "Carregar imatge"
-      ],
-      "Insert": [
-        "Afegir"
-      ],
-      "Font": [
-        "Font"
-      ],
-      "Size": [
-        "Mida"
-      ],
-      "Color": [
-        "Color"
-      ],
-      "Alignment": [
-        "Alineació"
-      ],
-      "More": [
-        "Més"
-      ],
-      "Unordered list": [
-        "Llista sense ordenar"
-      ],
-      "Ordered list": [
-        "Llista ordenada"
-      ],
-      "Align left": [
-        "Alinea a l'esquerra"
-      ],
-      "Align center": [
-        "Alinea al centre"
-      ],
-      "Align right": [
-        "Alinea a la dreta"
-      ],
-      "Justify": [
-        "Justificat"
-      ],
-      "Quote": [
-        "Cita"
-      ],
-      "Insert link": [
-        "Afegir enllaç"
-      ],
-      "Clear all formatting": [
-        "Esborra tot el format"
-      ],
-      "Insert image": [
-        "Afegeix imatge"
-      ],
-      "Bold": [
-        "Negreta"
-      ],
-      "Italic": [
-        "Cursiva"
-      ],
-      "Underline": [
-        "Subratllat"
-      ],
-      "More info: ${ safeTitle }": [
-        "Més informació: ${ safeTitle }"
-      ],
-      "Confirm": [
-        "Confirmar"
-      ],
-      "Submit": [
-        "Enviar"
-      ],
-      "Close modal": [
-        "Tancar el modal"
-      ],
-      "Use “${ label }” setting": [
-        "Utilitzar la configuració \"${ label }\""
-      ],
-      "Remove": [
-        "Suprimeix"
-      ],
-      "Next month": [
-        "Mes següent"
-      ],
-      "Previous month": [
-        "Mes anterior"
-      ],
-      "Load image": [
-        "Carregar imatge"
-      ],
-      "Confirm opening of link ${ link }": [
-        "Confirmeu obrir l'enllaç ${ link }"
-      ],
-      "Go to panel ${ index }": [
-        "Anar al panell ${ index }"
-      ],
-      "Close navigation": [
-        "Tanca la navegació"
-      ],
-      "Open navigation": [
-        "Obre la navegació"
-      ],
-      "Continue with Google": [
-        "Continuar amb Google"
-      ],
-      "Delete": [
-        "Esborra"
-      ],
-      "Go to page ${ page }": [
-        "Anar a la pàgina ${ page }"
-      ],
-      "Go to first page": [
-        "Anar a la primera pàgina"
-      ],
-      "Go to previous page": [
-        "Anar a la pàgina anterior"
-      ],
-      "Go to next page": [
-        "Anar a la pàgina següent"
-      ],
-      "Go to last page": [
-        "Anar a la darrera pàgina"
-      ],
-      "Signing out": [
-        "Tancant la sessió"
-      ],
-      "refresh the page": [
-        "refresqueu la pàgina"
-      ],
-      "Log in": [
-        "Inicia sessió"
-      ],
-      "View invoice": [
-        "Veure factura"
-      ],
-      "Get verification code": [
-        "Obtenir codi de verificació"
-      ],
-      "Try another method": [
-        "Proveu amb un altre mètode"
-      ],
-      "Request new code": [
-        "Demana un nou codi"
-      ],
-      "Verify": [
-        "Verificar"
-      ],
-      "Did not receive the code?": [
-        "No has regut el codi?"
-      ],
-      "Edit email address": [
-        "Editar l'adreça de correu electrònic"
-      ],
-      "Edit phone number": [
-        "Editar el número de telèfon"
-      ],
-      "Upgrade": [
-        "Actualitzar"
-      ],
-      "Add": [
-        "Afegir"
-      ],
-      "Edit": [
-        "Editar"
-      ],
-      "Apply": [
-        "Aplicar"
-      ],
-      "Insert contact": [
-        "Afegir contacte"
-      ],
-      "Insert ${ totalChecked } contact": [
-        "Afegir ${ totalChecked } contacte",
-        "Afegir ${ totalChecked } contactes"
-      ],
-      "Done": [
-        "Fet"
-      ],
-      "Clear data": [
-        "Netejar dades"
-      ],
-      "Recover data": [
-        "Recuperar dades"
-      ],
-      "Click here.": [
-        "Cliqueu aquí."
-      ],
-      "Re-sign": [
-        "Tornar a signar"
-      ],
-      "Hide advanced PGP settings": [
-        "Amagueu la configuració avançada del PGP"
-      ],
-      "Show advanced PGP settings": [
-        "Mostra la configuració avançada del PGP"
-      ],
-      "Add to group": [
-        "Afegir al grup"
-      ],
-      "Contact group": [
-        "Grups de contactes"
-      ],
-      "Create new contact": [
-        "Crea un nou contacte"
-      ],
-      "clear it": [
-        "netegeu-lo"
-      ],
-      "Export": [
-        "Exporta"
-      ],
-      "Download": [
-        "Descarregar"
-      ],
-      "Use for sending": [
-        "Usar per enviar"
-      ],
-      "Trust": [
-        "De confiança"
-      ],
-      "Untrust": [
-        "No confiable"
-      ],
-      "Email settings": [
-        "Configuració del correu"
-      ],
-      "Merge": [
-        "Fusionar"
-      ],
-      "View": [
-        "Veure"
-      ],
-      "Unmark for deletion": [
-        "Desmarcar la supressió"
-      ],
-      "Mark for deletion": [
-        "Marcar per eliminar"
-      ],
-      "Preview contact": [
-        "Previsualitzar contacte"
-      ],
-      "Continue": [
-        "Continua"
-      ],
-      "Copy email to clipboard": [
-        "Copiar correu electrònic al porta-retalls"
-      ],
-      "Delete contact": [
-        "Eliminar contacte"
-      ],
-      "Delete ${ selectedCount } contact": [
-        "Eliminar ${ selectedCount } contacte",
-        "Eliminar ${ selectedCount } contactes"
-      ],
-      "Deselect all": [
-        "Desseleccionar-ho tot"
-      ],
-      "Select all": [
-        "Seleccionar-ho tot"
-      ],
-      "Compose": [
-        "Redactar"
-      ],
-      "Forward as attachment": [
-        "Reenviar com a adjunt"
-      ],
-      "Merge contacts": [
-        "Combinar contactes"
-      ],
-      "Add new contact": [
-        "Afegir un contacte nou"
-      ],
-      "Add group": [
-        "Afegir grup"
-      ],
-      "Clear query": [
-        "Netejar la consulta"
-      ],
-      "Add contact": [
-        "Afegir contacte"
-      ],
-      "import": [
-        "importar"
-      ],
-      "Delete contact group": [
-        "Eliminar grup de contactes"
-      ],
-      "Delete ${ selectedCount } contact group": [
-        "Eliminar ${ selectedCount } grup de contactes",
-        "Eliminar ${ selectedCount } grups de contactes"
-      ],
-      "Add new group": [
-        "Afegir nou grup"
-      ],
-      "Export contacts": [
-        "Exportar contactes"
-      ],
-      "Import contacts": [
-        "Importar contactes"
-      ],
-      "Choose a file or drag it here": [
-        "Trieu un fitxer o arrossegueu-lo aquí"
-      ],
-      "Import": [
-        "Importar"
-      ],
-      "Next": [
-        "Següent"
-      ],
-      "Use ${ label } theme": [
-        "Utilitzar el tema ${ label }"
-      ],
-      "OK": [
-        "Accepta"
-      ],
-      "Details": [
-        "Detalls"
-      ],
-      "Share via link": [
-        "Compartir amb enllaç"
-      ],
-      "Sharing options": [
-        "Opcions de compartició"
-      ],
-      "Zoom out": [
-        "Allunyar"
-      ],
-      "Reset zoom": [
-        "Restablir zoom"
-      ],
-      "Zoom in": [
-        "Apropa"
-      ],
-      "Previous": [
-        "Anterior"
-      ],
-      "Continue import": [
-        "Continuar importació"
-      ],
-      "Discard": [
-        "Descarta"
-      ],
-      "Reconnect": [
-        "Tornar a connectar"
-      ],
-      "Start import": [
-        "Començar importació"
-      ],
-      "Clear": [
-        "Netejar"
-      ],
-      "Add screenshot(s)": [
-        "Afegir captura(es) de pantalla"
-      ],
-      "Hide info": [
-        "Amagar informació"
-      ],
-      "Show info": [
-        "Mostra informació"
-      ],
-      "Get started": [
-        "Començar"
-      ],
-      "Start setup": [
-        "Començar la configuració"
-      ],
-      "Skip": [
-        "Ometre"
-      ],
-      "Back": [
-        "Torna"
-      ],
-      "Copy to clipboard": [
-        "Copiar al porta-retalls"
-      ],
-      "Create recovery phrase": [
-        "Crear una frase de recuperació"
-      ],
-      "Don't secure account": [
-        "No protegir el compte"
-      ],
-      "Close this banner": [
-        "Tancar aquest bàner"
-      ],
-      "Refresh the page": [
-        "Refresca la pàgina"
-      ],
-      "enable desktop notifications": [
-        "activar les notificacions d'escriptori"
-      ],
-      "here": [
-        "aquí"
-      ],
-      "Search": [
-        "Cerca"
-      ],
-      "${ BRAND_NAME } introduction": [
-        "Introducció ${ BRAND_NAME }"
-      ],
-      "Chat with us": [
-        "Xategeu amb nosaltres"
-      ],
-      "I have a question": [
-        "Tinc una pregunta"
-      ],
-      "Request a feature": [
-        "Demana una nova característica"
-      ],
-      "Report a problem": [
-        "Avisar d'un problema"
-      ],
-      "${ BRAND_NAME } shop": [
-        "Botiga de ${ BRAND_NAME }"
-      ],
-      "Switch account": [
-        "Canviar de compte"
-      ],
-      "Sign out": [
-        "Tancar la sessió"
-      ],
-      "Go to settings": [
-        "Anar a la configuració"
-      ],
-      "Beta Access": [
-        "Accés Beta"
-      ],
-      "Theme": [
-        "Tema"
-      ],
-      "Keyboard shortcuts": [
-        "Dreceres de teclat"
-      ],
-      "Mailbox layout": [
-        "Disseny de la bústia de correu"
-      ],
-      "Mailbox density": [
-        "Densitat de la bústia de correu"
-      ],
-      "Composer size": [
-        "Mida de l'editor"
-      ],
-      "Remove bonuses": [
-        "Suprimeix beneficis"
-      ],
-      "Try again": [
-        "Torna-ho a provar"
-      ],
-      "Use a different card": [
-        "Utilitzeu una targeta diferent"
-      ],
-      "Use a different payment method": [
-        "Utilitzeu un mètode de pagament diferent"
-      ],
-      "Retry": [
-        "Tornar a provar"
-      ],
-      "Loading verification": [
-        "Carregant verificació"
-      ],
-      "Select plan": [
-        "Seleccionar el pla"
-      ],
-      "Compare all features": [
-        "Comparar totes les funcionalitats"
-      ],
-      "${ boldSave } by switching to annual billing": [
-        "${ boldSave } canviant a la facturació anual"
-      ],
-      "Pay": [
-        "Pagar"
-      ],
-      "Open ${ CALENDAR_APP_NAME } settings": [
-        "Obrir la configuració de ${ CALENDAR_APP_NAME }"
-      ],
-      "Remove gift code": [
-        "Esborrar el codi regal"
-      ],
-      "annual billing": [
-        "facturació anual"
-      ],
-      "Compare plans": [
-        "Comparar plans"
-      ],
-      "Decrease": [
-        "Reduir"
-      ],
-      "Increase": [
-        "Incrementar"
-      ],
-      "Preview": [
-        "Previsualització"
-      ],
-      "Create label": [
-        "Crear etiqueta"
-      ],
-      "Create folder": [
-        "Crear carpeta"
-      ],
-      "Remove this label": [
-        "Elimina aquesta etiqueta"
-      ],
-      "Add condition": [
-        "Afegir condició"
-      ],
-      "label emails as": [
-        "etiquetar correus electrònics com"
-      ],
-      "move emails to": [
-        "moure correus electrònics a"
-      ],
-      "mark emails as": [
-        "marcar correus electrònics com"
-      ],
-      "send auto-reply email": [
-        "enviar correu d’auto-resposta"
-      ],
-      "Yes, I'll attend": [
-        "Sí, hi assistiré"
-      ],
-      "Maybe I'll attend": [
-        "Potser hi assistiré"
-      ],
-      "No, I won't attend": [
-        "No, no hi assistiré"
-      ],
-      "Yes": [
-        "Si"
-      ],
-      "Maybe": [
-        "Potser"
-      ],
-      "No": [
-        "No"
-      ],
-      "Add to ${ CALENDAR_APP_NAME }": [
-        "Afegir a ${ CALENDAR_APP_NAME }"
-      ],
-      "Send anyway": [
-        "Enviar de totes maneres"
-      ],
-      "Got it": [
-        "Entesos"
-      ],
-      "Maximize composer": [
-        "Maximitzar l'editor"
-      ],
-      "Minimize composer": [
-        "Minimitzar l'editor"
-      ],
-      "Contract composer": [
-        "Contraure l'editor"
-      ],
-      "Expand composer": [
-        "Ampliar l'editor"
-      ],
-      "Close composer": [
-        "Tancar l'editor"
-      ],
-      "Trust key": [
-        "Clau de confiança",
-        "Claus de confiança"
-      ],
-      "Copy address": [
-        "Copiar l'adreça"
-      ],
-      "Edit address": [
-        "Editar l'adreça"
-      ],
-      "View contact details": [
-        "Veure detalls del contacte"
-      ],
-      "Copy addresses": [
-        "Copiar adreces"
-      ],
-      "View recipients": [
-        "Veure destinataris"
-      ],
-      "Carbon Copy, Blind Carbon Copy": [
-        "Còpia, Còpia oculta"
-      ],
-      "CC, BCC": [
-        "CC, CCO"
-      ],
-      "Send": [
-        "Enviar"
-      ],
-      "Attachment": [
-        "Adjuntar"
-      ],
-      "Inline": [
-        "En línia"
-      ],
-      "Cancel action": [
-        "Cancel·lar l'acció"
-      ],
-      "Loading${ ellipsis }": [
-        "Carregant${ ellipsis }"
-      ],
-      "Saving${ _ellipsis }": [
-        "Desant${ _ellipsis }"
-      ],
-      "Not saved": [
-        "No s'ha desat"
-      ],
-      "Schedule send": [
-        "Programar enviament"
-      ],
-      "Expiration time": [
-        "Temps d'expiració"
-      ],
-      "Encryption": [
-        "Xifratge"
-      ],
-      "Delete draft": [
-        "Eliminar esborrany"
-      ],
-      "Set": [
-        "Establir"
-      ],
-      "Schedule message": [
-        "Programar missatge"
-      ],
-      "Print": [
-        "Imprimir"
-      ],
-      "Address options": [
-        "Opcions d'adreça"
-      ],
-      "New message": [
-        "Nou missatge"
-      ],
-      "Trust Public Key": [
-        "Confiar en la Clau Pública"
-      ],
-      "Filter on...": [
-        "Filtrar per..."
-      ],
-      "Move to...": [
-        "Moure a..."
-      ],
-      "Label as...": [
-        "Etiquetar com a..."
-      ],
-      "Mark as unread": [
-        "Marcar com a no llegit"
-      ],
-      "Move to spam": [
-        "Moure a correu brossa"
-      ],
-      "Report phishing": [
-        "Notificar suplantació d'identitat"
-      ],
-      "View source code": [
-        "Mostrar el codi font"
-      ],
-      "View rendered HTML": [
-        "Veure l'HTML renderitzat"
-      ],
-      "View headers": [
-        "Mostrar les capçaleres"
-      ],
-      "Hide details": [
-        "Amagar els detalls"
-      ],
-      "Show details": [
-        "Mostrar els detalls"
-      ],
-      "Custom filter": [
-        "Filtre personalitzat"
-      ],
-      "Move to": [
-        "Moure a"
-      ],
-      "Label as": [
-        "Etiquetar com a"
-      ],
-      "Load": [
-        "Carregar"
-      ],
-      "This message contains remote content.": [
-        "Aquest missatge conté contingut remot."
-      ],
-      "This message contains embedded images.": [
-        "Aquest missatge conté imatges incrustades."
-      ],
-      "Unsubscribe": [
-        "Anul·lar la subscripció"
-      ],
-      "Unsubscribing": [
-        "Anul·lant la subscripció"
-      ],
-      "Mark legitimate": [
-        "Marcar com a legítim"
-      ],
-      "Send receipt": [
-        "Enviar confirmació"
-      ],
-      "Accept": [
-        "Acceptar"
-      ],
-      "Show": [
-        "Mostrar"
-      ],
-      "Show less": [
-        "Mostrar menys"
-      ],
-      "Never show": [
-        "No mostrar mai"
-      ],
-      "View keys": [
-        "Veure claus"
-      ],
-      "Edit draft": [
-        "Editar esborrany"
-      ],
-      "Download ${ attachmentName }": [
-        "Descarregar ${ attachmentName }"
-      ],
-      "Preview ${ attachmentName }": [
-        "Previsualitzar ${ attachmentName }"
-      ],
-      "Remove ${ attachmentName }": [
-        "Esborrar ${ attachmentName }"
-      ],
-      "Hide attachment details": [
-        "Amagar detalls d'adjunt"
-      ],
-      "Show attachment details": [
-        "Mostrar detalls d'adjunt"
-      ],
-      "Hide": [
-        "Amagar"
-      ],
-      "Learn more": [
-        "Saber-ne més"
-      ],
-      "Undo": [
-        "Desfer"
-      ],
-      "View message": [
-        "Veure el missatge"
-      ],
-      "Enable": [
-        "Habilitar"
-      ],
-      "Search message content": [
-        "Cercar al contingut del missatge"
-      ],
-      "Activate": [
-        "Activar"
-      ],
-      "Resume": [
-        "Continuar"
-      ],
-      "Pause": [
-        "Pausar"
-      ],
-      "Show less search options": [
-        "Mostrar menys opcions de cerca"
-      ],
-      "Show more search options": [
-        "Mostrar més opcions de cerca"
-      ],
-      "Less search options": [
-        "Menys opcions de cerca"
-      ],
-      "More search options": [
-        "Més opcions de cerca"
-      ],
-      "Advanced search": [
-        "Cerca avançada"
-      ],
-      "Clear browser data": [
-        "Netejar les dades del navegador"
-      ],
-      "Mark as read": [
-        "Marcar com a llegit"
-      ],
-      "Delete permanently": [
-        "Suprimir permanentment"
-      ],
-      "Move to inbox": [
-        "Moure a la safata d'entrada"
-      ],
-      "Move to archive": [
-        "Moure a l'arxiu"
-      ],
-      "Move to inbox (not spam)": [
-        "Moure a la safata d'entrada (no és correu brossa)"
-      ],
-      "Move to trash": [
-        "Moure a la paperera"
-      ],
-      "Delete all": [
-        "Eliminar-ho tot"
-      ],
-      "Deselect all messages": [
-        "Deseleccionar tots els missatges"
-      ],
-      "Select all messages": [
-        "Seleccionar tots els missatges"
-      ],
-      "Select All": [
-        "Seleccionar-ho tot"
-      ],
-      "All Read": [
-        "Tots els llegits"
-      ],
-      "All Unread": [
-        "Tots els no llegits"
-      ],
-      "All Starred": [
-        "Tots els destacats"
-      ],
-      "All Unstarred": [
-        "Tots els no destacats"
-      ],
-      "Load more": [
-        "Carregar-ne més"
-      ],
-      "Previous page": [
-        "Pàgina anterior"
-      ],
-      "Change page": [
-        "Canviar de pàgina"
-      ],
-      "Page ${ pageNumber }": [
-        "Pàgina ${ pageNumber }"
-      ],
-      "Next page": [
-        "Pàgina següent"
-      ],
-      "Previous conversation": [
-        "Conversa anterior"
-      ],
-      "Previous message": [
-        "Missatge anterior"
-      ],
-      "Next conversation": [
-        "Conversa següent"
-      ],
-      "Next message": [
-        "Missatge següent"
-      ],
-      "Show messages": [
-        "Mostrar missatges"
-      ],
-      "Hide messages": [
-        "Amagar missatges"
-      ],
-      "Create new message": [
-        "Crear un missatge nou"
-      ],
-      "Open shop": [
-        "Obrir la botiga"
-      ],
-      "Open calendar": [
-        "Obrir el calendari"
-      ],
-      "Import messages": [
-        "Importar missatges"
-      ],
-      "Deselect": [
-        "Anul·lar la selecció"
-      ],
-      "Start using ${ appName }": [
-        "Començar a utilitzar ${ appName }"
-      ]
-    },
-    "Title": {
-      "Open actions dropdown": [
-        "Obrir el desplegable d'accions"
-      ],
-      "Expand content": [
-        "Amplia el contingut"
-      ],
-      "Link confirmation": [
-        "Confirmació d'enllaç"
-      ],
-      "Keyboard Shortcuts": [
-        "Dreceres de teclat"
-      ],
-      "What's new": [
-        "Novetats"
-      ],
-      "Sign in again to continue": [
-        "Inicia sessió per continuar"
-      ],
-      "Account suspended": [
-        "Compte suspès"
-      ],
-      "Enter your username or ProtonMail email address": [
-        "Introduïu el vostre nom d'usuari o adreça de correu electrònic ProtonMail"
-      ],
-      "Enter your password": [
-        "Introdueix la teva contrasenya"
-      ],
-      "Invalid verification code": [
-        "Codi de verificació no vàlid"
-      ],
-      "Human verification": [
-        "Verificació humana"
-      ],
-      "Upgrade required": [
-        "Actualització necessària"
-      ],
-      "Delete ${ Name }": [
-        "Esborrar ${ Name }"
-      ],
-      "Delete ${ count } contact group": [
-        "Eliminar ${ count } grup de contactes",
-        "Eliminar ${ count } grups de contactes"
-      ],
-      "Edit contact group": [
-        "Edita Grup de Contactes"
-      ],
-      "Create new group": [
-        "Crea un grup nou"
-      ],
-      "${ emailsCount } member": [
-        "${ emailsCount } membre",
-        "${ emailsCount } membres"
-      ],
-      "Edit image": [
-        "Editar imatge"
-      ],
-      "Add to ${ groupName }": [
-        "Afegir a ${ groupName }"
-      ],
-      "Add to ${ groupCount } group": [
-        "Afegir a ${ groupCount } grup",
-        "Afegir a ${ groupCount } grups"
-      ],
-      "Edit contact": [
-        "Editar contacte"
-      ],
-      "Create contact": [
-        "Crea un contacte"
-      ],
-      "Insert contacts": [
-        "Afegir contactes"
-      ],
-      "Delete ${ count } contact": [
-        "Suprimeix ${ count } contacte",
-        "Suprimeix ${ count } contactes"
-      ],
-      "Clearing data": [
-        "Netejant dades"
-      ],
-      "Warning": [
-        "Advertència"
-      ],
-      "Recover data": [
-        "Recuperar dades"
-      ],
-      "Re-signing contacts": [
-        "Tornant a signar contactes"
-      ],
-      "Re-sign all contacts": [
-        "Tornant a signar tots els contactes"
-      ],
-      "Email settings (${ emailAddress })": [
-        "Preferències de correu electrònic (${ emailAddress })"
-      ],
-      "Exporting contacts": [
-        "Exportant contactes"
-      ],
-      "Contact group": [
-        "Grups de contactes"
-      ],
-      "Other names": [
-        "Altres noms"
-      ],
-      "Email addresses": [
-        "Adreces de correu electrònic"
-      ],
-      "Phone numbers": [
-        "Números de telèfon"
-      ],
-      "Addresses": [
-        "Adreces"
-      ],
-      "Other information": [
-        "Altres dades"
-      ],
-      "Email settings": [
-        "Configuració del correu"
-      ],
-      "Contact Details": [
-        "Detalls del contacte"
-      ],
-      "Merging contacts": [
-        "Combinant contactes"
-      ],
-      "Merge contacts": [
-        "Combinar contactes"
-      ],
-      "Deleting contacts": [
-        "Eliminant contactes"
-      ],
-      "View contacts": [
-        "Veure contactes"
-      ],
-      "Contacts": [
-        "Contactes"
-      ],
-      "Groups": [
-        "Grups"
-      ],
-      "Settings": [
-        "Preferències"
-      ],
-      "Select action to take on contact group": [
-        "Seleccionar acció a realitzar al grup de contactes"
-      ],
-      "Add contact group name": [
-        "Afegir nom de grup de contactes"
-      ],
-      "Select contact group": [
-        "Seleccionar grup de contactes"
-      ],
-      "Import groups": [
-        "Importar grups"
-      ],
-      "Import contacts": [
-        "Importar contactes"
-      ],
-      "Select a theme": [
-        "Seleccionar un tema"
-      ],
-      "Start import process": [
-        "Iniciar el procés d'importació"
-      ],
-      "Import in progress": [
-        "Importació en curs"
-      ],
-      "Report a problem": [
-        "Avisar d'un problema"
-      ],
-      "${ appName } Keyboard Shortcuts": [
-        "Dreceres de teclat de ${ appName }"
-      ],
-      "Mailbox density": [
-        "Densitat de la bústia de correu"
-      ],
-      "Mailbox layout": [
-        "Disseny de la bústia de correu"
-      ],
-      "Composer mode": [
-        "Mode d'editor"
-      ],
-      "Open help menu": [
-        "Obrir el menú d'ajuda"
-      ],
-      "Back": [
-        "Torna"
-      ],
-      "Open settings menu": [
-        "Obrir el menú de preferències"
-      ],
-      "Confirm loss of Proton bonuses": [
-        "Confirmeu la pèrdua dels beneficis de Proton"
-      ],
-      "Unsupported browser": [
-        "Navegador no suportat"
-      ],
-      "Card verification": [
-        "Verificació de la targeta"
-      ],
-      "Payment verification": [
-        "Verificació del pagament"
-      ],
-      "Processing...": [
-        "Processant..."
-      ],
-      "Card verification in progress": [
-        "Verificació de la targeta en curs"
-      ],
-      "Payment verification in progress": [
-        "Verificació del pagament en curs"
-      ],
-      "PayPal verification failed": [
-        "Ha fallat la verificació de PayPal"
-      ],
-      "3-D Secure verification failed": [
-        "Ha fallat la verificació de 3-D Segur"
-      ],
-      "Error": [
-        "Error"
-      ],
-      "ZIP / postal code": [
-        "ZIP / codi postal"
-      ],
-      "Payment details": [
-        "Detalls de pagament"
-      ],
-      "Currency": [
-        "Moneda"
-      ],
-      "Billing cycle": [
-        "Cicle de facturació"
-      ],
-      "Current plan": [
-        "Pla actual"
-      ],
-      "Processing": [
-        "Processant"
-      ],
-      "Apply gift code": [
-        "Introduïu el codi regal"
-      ],
-      "Subtotal": [
-        "Subtotal"
-      ],
-      "Coupon discount": [
-        "Cupó de descompte"
-      ],
-      "Total (monthly)": [
-        "Total (mensual)"
-      ],
-      "Credits": [
-        "Crèdits"
-      ],
-      "Gift code": [
-        "Codi regal"
-      ],
-      "Amount due": [
-        "Import a deure"
-      ],
-      "Cancel subscription": [
-        "Cancel·lar la subscripció"
-      ],
-      "Network error": [
-        "Error de xarxa"
-      ],
-      "Select a plan": [
-        "Seleccioneu un pla"
-      ],
-      "Customize your plan": [
-        "Personalitzeu el vostre pla"
-      ],
-      "Checkout": [
-        "Pagament final"
-      ],
-      "Plan summary": [
-        "Resum del pla"
-      ],
-      "${ appName } customization": [
-        "Personalització de ${ appName }"
-      ],
-      "Beta Access": [
-        "Accés Beta"
-      ],
-      "Edit filter": [
-        "Editar filtre"
-      ],
-      "Add filter": [
-        "Afegir filtre"
-      ],
-      "Are you sure you want to close?": [
-        "Està segur que vol tancar?"
-      ],
-      "Change my answer": [
-        "Canviar la meva resposta"
-      ],
-      "Image": [
-        "Imatge"
-      ],
-      "Sending notice": [
-        "Avís d'enviament"
-      ],
-      "Storage capacity warning": [
-        "Advertència de capacitat d’emmagatzematge"
-      ],
-      "Sending original message": [
-        "Enviant missatge original"
-      ],
-      "No recipient": [
-        "Cap destinatari"
-      ],
-      "Message without subject?": [
-        "Missatge sense assumpte?"
-      ],
-      "No attachment found": [
-        "No s'ha trobat cap adjunt"
-      ],
-      "Re-sign contact": [
-        "Tornar a signar el contacte"
-      ],
-      "Verification error": [
-        "Error de verificació"
-      ],
-      "Decryption error": [
-        "Error de desxifrat"
-      ],
-      "Delete draft": [
-        "Eliminar esborrany"
-      ],
-      "Delete ${ count } draft": [
-        "Eliminar ${ count } esborrany",
-        "Eliminar ${ count } esborranys"
-      ],
-      "Delete message": [
-        "Eliminar missatge"
-      ],
-      "Delete conversation": [
-        "Eliminar conversa"
-      ],
-      "Delete ${ count } conversation": [
-        "Eliminar ${ count } conversa",
-        "Eliminar ${ count } converses"
-      ],
-      "Delete ${ count } message": [
-        "Eliminar ${ count } missatge",
-        "Eliminar ${ count } missatges"
-      ],
-      "Delete all messages": [
-        "Eliminar tots els missatges"
-      ],
-      "Trust new key?": [
-        "Confiar en la nova clau?",
-        "Confiar en les noves claus?"
-      ],
-      "Add contacts": [
-        "Afegir contactes"
-      ],
-      "To": [
-        "Per a"
-      ],
-      "CC": [
-        "CC"
-      ],
-      "BCC": [
-        "CCO"
-      ],
-      "Carbon Copy": [
-        "Copia Carbó"
-      ],
-      "Blind Carbon Copy": [
-        "Copia Carbó Amagada"
-      ],
-      "Sending error": [
-        "Error enviant"
-      ],
-      "Confirm recipient address?": [
-        "Confirma adreça de destinatari?"
-      ],
-      "Send without expiration?": [
-        "Enviar sense expiració?"
-      ],
-      "Send with changed preferences?": [
-        "Enviar amb preferències canviades?"
-      ],
-      "Attachments": [
-        "Adjunts"
-      ],
-      "Expiration time": [
-        "Temps d'expiració"
-      ],
-      "Encryption": [
-        "Xifratge"
-      ],
-      "Send email": [
-        "Enviar correu"
-      ],
-      "Schedule send": [
-        "Programar enviament"
-      ],
-      "New message": [
-        "Nou missatge"
-      ],
-      "Trust public key?": [
-        "Confiar en les claus públiques?"
-      ],
-      "All recipients were added to the BCC field and cannot be disclosed": [
-        "Tots els destinataris es van afegir al camp BCC i no es poden revelar"
-      ],
-      "Move to inbox (not spam)": [
-        "Mou a la safata d'entrada (no és correu brossa)"
-      ],
-      "Mark as unread": [
-        "Marcar com a no llegit"
-      ],
-      "Move to inbox": [
-        "Moure a la safata d'entrada"
-      ],
-      "Move to trash": [
-        "Moure a la paperera"
-      ],
-      "More": [
-        "Més"
-      ],
-      "More options": [
-        "Més opcions"
-      ],
-      "Reply": [
-        "Respon"
-      ],
-      "Reply all": [
-        "Respondre a tothom"
-      ],
-      "Forward": [
-        "Reenviar"
-      ],
-      "Filter on": [
-        "Filtrat"
-      ],
-      "Move to": [
-        "Moure a"
-      ],
-      "Label as": [
-        "Etiqueta com a"
-      ],
-      "Load remote content": [
-        "Carrega el contingut remot"
-      ],
-      "Load embedded images": [
-        "Carrega imatges incrustades"
-      ],
-      "Unsubscribe": [
-        "Cancel·lar la subscripció"
-      ],
-      "Mark email as legitimate": [
-        "Marca el correu electrònic com a legítim"
-      ],
-      "Trust pinned keys?": [
-        "Confieu en les claus fixades?"
-      ],
-      "Enable message content search": [
-        "Activar la cerca de contingut dels missatges"
-      ],
-      "Create a new folder": [
-        "Crear una nova carpeta"
-      ],
-      "Create a new label": [
-        "Crea una etiqueta nova"
-      ],
-      "More selections": [
-        "Més seleccions"
-      ],
-      "Previous conversation": [
-        "Conversa anterior"
-      ],
-      "Previous message": [
-        "Missatge anterior"
-      ],
-      "Next conversation": [
-        "Conversa següent"
-      ],
-      "Next message": [
-        "Missatge següent"
-      ],
-      "Sort conversations": [
-        "Ordenar converses"
-      ],
-      "Sort messages": [
-        "Ordenar missatges"
-      ],
-      "Create folder": [
-        "Crear carpeta"
-      ],
-      "Create label": [
-        "Crear etiqueta"
-      ],
-      "Conversation list": [
-        "Llista de converses"
-      ],
-      "Message list": [
-        "Llista de missatges"
-      ],
-      "Welcome ${ userName }": [
-        "Benvingut/da, ${ userName }"
-      ],
-      "Welcome": [
-        "Benvingut/da"
-      ]
-    },
-    "Placeholder": {
-      "Link": [
-        "Enllaç"
-      ],
-      "Fill in the URL link and text to test your link": [
-        "Omple l'enllaç URL i el text per provar l'enllaç"
-      ],
-      "Email address": [
-        "Adreça de correu electrònic"
-      ],
-      "Fill in the email address and text to test your link": [
-        "Omple l'adreça de correu electrònic i el text per provar l'enllaç"
-      ],
-      "Phone number": [
-        "Número de telèfon"
-      ],
-      "Fill in the phone number and text to test your link": [
-        "Omple el número de telèfon i el text per provar l'enllaç"
-      ],
-      "Text": [
-        "Text"
-      ],
-      "E.g., ": [
-        "Ex., "
-      ],
-      "Mailbox password": [
-        "Contrasenya de la bústia"
-      ],
-      "Start typing an email address": [
-        "Començi a escriure una adreça de correu electrònic"
-      ],
-      "Image URL": [
-        "URL de la imatge"
-      ],
-      "Search name, email or group": [
-        "Cerca nom, correu electrónic o grup"
-      ],
-      "Filter groups": [
-        "Filtra grups"
-      ],
-      "Search for name or email": [
-        "Cercar per nom o correu electrònic"
-      ],
-      "Search for group name": [
-        "Buscar per nom de grup"
-      ],
-      "Name": [
-        "Nom"
-      ],
-      "OS name": [
-        "Nom de Sistema Operatiu"
-      ],
-      "OS version": [
-        "Versió de Sistema Operatiu"
-      ],
-      "Proton username": [
-        "Nom d'usuari de Proton"
-      ],
-      "A way to contact you": [
-        "Una manera de contactar amb tu"
-      ],
-      "Please describe the problem and include any error messages": [
-        "Si us plau, descriu el problema i inclou-hi qualsevol missatges d'error"
-      ],
-      "Browser name": [
-        "Nom del navegador"
-      ],
-      "Browser version": [
-        "Versió del navegador"
-      ],
-      "e.g. Julia Smith": [
-        "ex. Julia Smith"
-      ],
-      "ZIP": [
-        "Codi postal"
-      ],
-      "Postal code": [
-        "Codi postal"
-      ],
-      "Gift code": [
-        "Codi de regal"
-      ],
-      "Type text or keyword": [
-        "Escrigui text o paraula clau"
-      ],
-      "Subject": [
-        "Assumpte"
-      ],
-      "Write your message": [
-        "Escriviu el vostre missatge"
-      ],
-      "Password": [
-        "Contrasenya"
-      ],
-      "Confirm Password": [
-        "Confirmar contrasenya"
-      ],
-      "Hint": [
-        "Pista"
-      ],
-      "Search Messages": [
-        "Cercar Missatges"
-      ],
-      "Start date": [
-        "Data d'inici"
-      ],
-      "End date": [
-        "Data de finalització"
-      ],
-      "Name or email address": [
-        "Nom o adreça de correu electrònic"
-      ],
-      "Search messages": [
-        "Cercar missatges"
-      ],
-      "Filter folders": [
-        "Filtrar carpetes"
-      ],
-      "Filter labels": [
-        "Filtrar etiquetes"
-      ]
-    },
-    "Font Face Default": {
-      "Default": [
-        "Predeterminada"
-      ]
-    },
-    "Font Size Default": {
-      "Default": [
-        "Predeterminada"
+      "${ numberOfTrackers } email tracker found": [
+        "${ numberOfTrackers } rastrejador de correu electrònic trobat",
+        "${ numberOfTrackers } rastrejadors de correu electrònic trobats"
       ]
     },
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "La clau no es pot utilitzar per al xifratge"
-      ]
-    },
-    "Link": {
-      "Learn more": [
-        "Més informació"
-      ],
-      "Request an invite": [
-        "Demana una invitació"
-      ],
-      "clearing your browser cache": [
-        "buidar la memòria cau del navegador"
-      ],
-      "Pay invoice": [
-        "Pagar la factura"
-      ],
-      "Upgrade account": [
-        "Millorar el compte"
-      ],
-      "Upgrade": [
-        "Actualitzar"
-      ],
-      "Go to subscription plans": [
-        "Anar als plans de subscripció"
-      ],
-      "click here": [
-        "feu clic aquí"
-      ],
-      "Add a gift code": [
-        "Afegiu un codi regal"
-      ],
-      "You need to activate your calendar keys to add this event": [
-        "Heu d'activar les claus del calendari per afegir aquest esdeveniment"
-      ],
-      "You need to activate your calendar keys to manage this invitation": [
-        "Heu d'activar les claus del calendari per gestionar aquesta invitació"
-      ],
-      "You need to activate your calendar keys to answer this invitation": [
-        "Cal que activeu les claus del calendari per respondre aquesta invitació"
-      ],
-      "You need to activate your calendar keys to see the updated event": [
-        "Heu d'activar les claus del calendari per veure l'esdeveniment actualitzat"
-      ],
-      "You need to activate your calendar keys to see the updated invitation": [
-        "Heu d'activar les claus del calendari per veure la invitació actualitzada"
-      ],
-      "This ICS file contains more than one event. Please download it and import the events in ${ calendarAppName }": [
-        "Aquest arxiu ICS conté més d'un esdeveniment. Descarregueu-lo i importeu els esdeveniments a ${ calendarAppName }"
-      ],
-      "You need to reactivate your keys to manage this invitation": [
-        "Heu de reactivar les vostres claus per gestionar aquesta invitació"
-      ],
-      "You need to reactivate your keys to see the updated event": [
-        "Heu de reactivar les vostres claus per veure l'esdeveniment actualitzat"
-      ],
-      "You need to reactivate your keys to see the updated invitation": [
-        "Heu de reactivar les vostres claus per veure la invitació actualitzada"
-      ],
-      "Create a new calendar to add this event": [
-        "Crear un calendari nou per afegir aquest esdeveniment"
-      ],
-      "Create a new calendar to answer this invitation": [
-        "Crear un calendari nou per respondre aquesta invitació"
-      ],
-      "Create a new calendar to manage your invitations": [
-        "Crear un calendari nou per gestionar les vostres invitacions"
-      ],
-      "Open updated event in ${ calendarAppName }": [
-        "Obrir l'esdeveniment actualitzat a ${ calendarAppName }"
-      ],
-      "Open in ${ calendarAppName }": [
-        "Obrir a ${ calendarAppName }"
-      ],
-      "Inbox": [
-        "Safata d'entrada"
-      ],
-      "Drafts": [
-        "Esborranys"
-      ],
-      "Sent": [
-        "Enviats"
-      ],
-      "Trash": [
-        "Paperera"
-      ],
-      "Spam": [
-        "Correu brossa"
-      ],
-      "All mail": [
-        "Tot el correu"
-      ],
-      "Archive": [
-        "Arxiu"
-      ],
-      "Starred": [
-        "Destacats"
-      ],
-      "Outbox": [
-        "Safata de sortida"
-      ],
-      "Scheduled": [
-        "Programats"
-      ],
-      "Re-enable the address linked to this calendar to manage your invitation.": [
-        "Reactivar l'adreça enllaçada a aquest calendari per gestionar la vostra invitació."
-      ],
-      "Re-enable the address linked to this calendar to update your invitation.": [
-        "Reactivar l'adreça enllaçada a aquest calendari per actualitzar la vostra invitació."
-      ],
-      "Enable your address to answer this invitation.": [
-        "Activeu la vostra adreça per respondre aquesta invitació."
-      ],
-      "Create a calendar linked to an active email address.": [
-        "Crear un calendari enllaçat a una adreça de correu electrònic activa."
-      ],
-      "Enable an email address linked to one of your calendars.": [
-        "Habilitar una adreça de correu electrònic vinculada a un dels vostres calendaris."
-      ],
-      "Or you can delete one of your calendars and create a new one linked to an active email address.": [
-        "O podeu suprimir un dels vostres calendaris i crear-ne un de nou enllaçat a una adreça de correu electrònic activa."
-      ],
-      "Enable your address again to modify your answer.": [
-        "Activeu la vostra adreça de nou per modificar la vostra resposta."
-      ],
-      "Enable the email address linked to the disabled calendar to cancel the event.": [
-        "Activar l'adreça de correu electrònic vinculada al calendari desactivat per a cancel·lar l'esdeveniment."
-      ],
-      "Enable the email address linked to the disabled calendar to modify your answer.": [
-        "Activar l'adreça de correu electrònic vinculada al calendari desactivat per a modificar la vostra resposta."
-      ],
-      "Add folder": [
-        "Afegir carpeta"
-      ],
-      "Add label": [
-        "Afegir etiqueta"
-      ],
-      "Folders": [
-        "Carpetes"
-      ],
-      "Manage your folders": [
-        "Gestioneu les vostres carpetes"
-      ],
-      "Labels": [
-        "Etiquetes"
-      ],
-      "Manage your labels": [
-        "Gestioneu les vostres etiquetes"
       ]
     },
     "Label": {
@@ -4638,8 +3367,8 @@
       "Keyword": [
         "Paraula clau"
       ],
-      "Location": [
-        "Ubicació"
+      "Search in": [
+        "Cercar en"
       ],
       "From": [
         "Des de"
@@ -4658,6 +3387,128 @@
       ],
       "Also archive": [
         "Arxivar també"
+      ]
+    },
+    "Placeholder": {
+      "E.g., ": [
+        "Ex., "
+      ],
+      "Link": [
+        "Enllaç"
+      ],
+      "Fill in the URL link and text to test your link": [
+        "Omple l'enllaç URL i el text per provar l'enllaç"
+      ],
+      "Email address": [
+        "Adreça de correu electrònic"
+      ],
+      "Fill in the email address and text to test your link": [
+        "Omple l'adreça de correu electrònic i el text per provar l'enllaç"
+      ],
+      "Phone number": [
+        "Número de telèfon"
+      ],
+      "Fill in the phone number and text to test your link": [
+        "Omple el número de telèfon i el text per provar l'enllaç"
+      ],
+      "Text": [
+        "Text"
+      ],
+      "Mailbox password": [
+        "Contrasenya de la bústia"
+      ],
+      "Start typing an email address": [
+        "Començi a escriure una adreça de correu electrònic"
+      ],
+      "Image URL": [
+        "URL de la imatge"
+      ],
+      "Search name, email or group": [
+        "Cerca nom, correu electrónic o grup"
+      ],
+      "Filter groups": [
+        "Filtra grups"
+      ],
+      "Search for name or email": [
+        "Cercar per nom o correu electrònic"
+      ],
+      "Search for group name": [
+        "Buscar per nom de grup"
+      ],
+      "Name": [
+        "Nom"
+      ],
+      "OS name": [
+        "Nom de Sistema Operatiu"
+      ],
+      "OS version": [
+        "Versió de Sistema Operatiu"
+      ],
+      "Proton username": [
+        "Nom d'usuari de Proton"
+      ],
+      "A way to contact you": [
+        "Una manera de contactar amb tu"
+      ],
+      "Please describe the problem and include any error messages": [
+        "Si us plau, descriu el problema i inclou-hi qualsevol missatges d'error"
+      ],
+      "Browser name": [
+        "Nom del navegador"
+      ],
+      "Browser version": [
+        "Versió del navegador"
+      ],
+      "e.g. Julia Smith": [
+        "ex. Julia Smith"
+      ],
+      "ZIP": [
+        "Codi postal"
+      ],
+      "Postal code": [
+        "Codi postal"
+      ],
+      "Gift code": [
+        "Codi de regal"
+      ],
+      "Type text or keyword": [
+        "Escrigui text o paraula clau"
+      ],
+      "Subject": [
+        "Assumpte"
+      ],
+      "Write your message": [
+        "Escriviu el vostre missatge"
+      ],
+      "Password": [
+        "Contrasenya"
+      ],
+      "Confirm Password": [
+        "Confirmar contrasenya"
+      ],
+      "Hint": [
+        "Pista"
+      ],
+      "Search Messages": [
+        "Cercar Missatges"
+      ],
+      "Start date": [
+        "Data d'inici"
+      ],
+      "End date": [
+        "Data de finalització"
+      ],
+      "Name or email address": [
+        "Nom o adreça de correu electrònic"
+      ],
+      "Search messages": [
+        "Cercar missatges"
+      ],
+      "Filter folders": [
+        "Filtrar carpetes"
+      ],
+      "Filter labels": [
+        "Filtrar etiquetes"
       ]
     },
     "Time unit": {
@@ -4684,6 +3535,162 @@
       "${ secondsCountLeft } second": [
         "${ secondsCountLeft } segon",
         "${ secondsCountLeft } segons"
+      ]
+    },
+    "Link": {
+      "Learn more": [
+        "Més informació"
+      ],
+      "Request an invite": [
+        "Demana una invitació"
+      ],
+      "clearing your browser cache": [
+        "buidar la memòria cau del navegador"
+      ],
+      "Pay invoice": [
+        "Pagar la factura"
+      ],
+      "Upgrade account": [
+        "Millorar el compte"
+      ],
+      "Upgrade": [
+        "Actualitzar"
+      ],
+      "Go to subscription plans": [
+        "Anar als plans de subscripció"
+      ],
+      "click here": [
+        "feu clic aquí"
+      ],
+      "Add a gift code": [
+        "Afegiu un codi regal"
+      ],
+      "Inbox": [
+        "Safata d'entrada"
+      ],
+      "Drafts": [
+        "Esborranys"
+      ],
+      "Sent": [
+        "Enviats"
+      ],
+      "Trash": [
+        "Paperera"
+      ],
+      "Spam": [
+        "Correu brossa"
+      ],
+      "All mail": [
+        "Tot el correu"
+      ],
+      "Archive": [
+        "Arxiu"
+      ],
+      "Starred": [
+        "Destacats"
+      ],
+      "Outbox": [
+        "Safata de sortida"
+      ],
+      "Scheduled": [
+        "Programats"
+      ],
+      "You need to activate your calendar keys to add this event": [
+        "Heu d'activar les claus del calendari per afegir aquest esdeveniment"
+      ],
+      "You need to activate your calendar keys to manage this invitation": [
+        "Heu d'activar les claus del calendari per gestionar aquesta invitació"
+      ],
+      "You need to activate your calendar keys to answer this invitation": [
+        "Cal que activeu les claus del calendari per respondre aquesta invitació"
+      ],
+      "You need to activate your calendar keys to see the updated event": [
+        "Heu d'activar les claus del calendari per veure l'esdeveniment actualitzat"
+      ],
+      "You need to activate your calendar keys to see the updated invitation": [
+        "Heu d'activar les claus del calendari per veure la invitació actualitzada"
+      ],
+      "This ICS file contains more than one event. Please download it and import the events in ${ calendarAppName }": [
+        "Aquest arxiu ICS conté més d'un esdeveniment. Descarregueu-lo i importeu els esdeveniments a ${ calendarAppName }"
+      ],
+      "You need to reactivate your keys to manage this invitation": [
+        "Heu de reactivar les vostres claus per gestionar aquesta invitació"
+      ],
+      "You need to reactivate your keys to see the updated event": [
+        "Heu de reactivar les vostres claus per veure l'esdeveniment actualitzat"
+      ],
+      "You need to reactivate your keys to see the updated invitation": [
+        "Heu de reactivar les vostres claus per veure la invitació actualitzada"
+      ],
+      "Create a new calendar to add this event": [
+        "Crear un calendari nou per afegir aquest esdeveniment"
+      ],
+      "Create a new calendar to answer this invitation": [
+        "Crear un calendari nou per respondre aquesta invitació"
+      ],
+      "Create a new calendar to manage your invitations": [
+        "Crear un calendari nou per gestionar les vostres invitacions"
+      ],
+      "Open updated event in ${ calendarAppName }": [
+        "Obrir l'esdeveniment actualitzat a ${ calendarAppName }"
+      ],
+      "Open in ${ calendarAppName }": [
+        "Obrir a ${ calendarAppName }"
+      ],
+      "Re-enable the address linked to this calendar to manage your invitation.": [
+        "Reactivar l'adreça enllaçada a aquest calendari per gestionar la vostra invitació."
+      ],
+      "Re-enable the address linked to this calendar to update your invitation.": [
+        "Reactivar l'adreça enllaçada a aquest calendari per actualitzar la vostra invitació."
+      ],
+      "Enable your address to answer this invitation.": [
+        "Activeu la vostra adreça per respondre aquesta invitació."
+      ],
+      "Create a calendar linked to an active email address.": [
+        "Crear un calendari enllaçat a una adreça de correu electrònic activa."
+      ],
+      "Enable an email address linked to one of your calendars.": [
+        "Habilitar una adreça de correu electrònic vinculada a un dels vostres calendaris."
+      ],
+      "Or you can delete one of your calendars and create a new one linked to an active email address.": [
+        "O podeu suprimir un dels vostres calendaris i crear-ne un de nou enllaçat a una adreça de correu electrònic activa."
+      ],
+      "Enable your address again to modify your answer.": [
+        "Activeu la vostra adreça de nou per modificar la vostra resposta."
+      ],
+      "Enable the email address linked to the disabled calendar to cancel the event.": [
+        "Activar l'adreça de correu electrònic vinculada al calendari desactivat per a cancel·lar l'esdeveniment."
+      ],
+      "Enable the email address linked to the disabled calendar to modify your answer.": [
+        "Activar l'adreça de correu electrònic vinculada al calendari desactivat per a modificar la vostra resposta."
+      ],
+      "Add folder": [
+        "Afegir carpeta"
+      ],
+      "Add label": [
+        "Afegir etiqueta"
+      ],
+      "Folders": [
+        "Carpetes"
+      ],
+      "Manage your folders": [
+        "Gestioneu les vostres carpetes"
+      ],
+      "Labels": [
+        "Etiquetes"
+      ],
+      "Manage your labels": [
+        "Gestioneu les vostres etiquetes"
+      ]
+    },
+    "Font Face Default": {
+      "Default": [
+        "Predeterminada"
+      ]
+    },
+    "Font Size Default": {
+      "Default": [
+        "Predeterminada"
       ]
     },
     "Hint": {
@@ -4972,6 +3979,30 @@
       ],
       "No verification method available": [
         "Cap mètode de verificació disponible"
+      ]
+    },
+    "Label to change density": {
+      "Comfortable": [
+        "Còmode"
+      ],
+      "Compact": [
+        "Compacte"
+      ]
+    },
+    "Label to change view layout": {
+      "Column": [
+        "Columna"
+      ],
+      "Row": [
+        "Fila"
+      ]
+    },
+    "Label to change composer mode": {
+      "Normal": [
+        "Normal"
+      ],
+      "Maximized": [
+        "Maximitzat"
       ]
     },
     "Table header": {
@@ -5388,35 +4419,6 @@
         "${ totalImported }/${ totalToImport } contactes xifrats i afegits a la vostra llista de contactes"
       ]
     },
-    "Select files": {
-      "Upload": [
-        "Carregar"
-      ]
-    },
-    "Label to change density": {
-      "Comfortable": [
-        "Còmode"
-      ],
-      "Compact": [
-        "Compacte"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "Columna"
-      ],
-      "Row": [
-        "Fila"
-      ]
-    },
-    "Label to change composer mode": {
-      "Normal": [
-        "Normal"
-      ],
-      "Maximized": [
-        "Maximitzat"
-      ]
-    },
     "Loading info": {
       "Connecting to your contacts provider": [
         "Connectant al vostre proveïdor de contactes"
@@ -5536,11 +4538,11 @@
       "Other category": [
         "Una altra categoria"
       ],
-      "Custom folders": [
-        "Carpetes personalitzades"
-      ],
       "Default folders": [
         "Carpetes per defecte"
+      ],
+      "Custom folders": [
+        "Carpetes personalitzades"
       ],
       "Labels": [
         "Etiquetes"
@@ -5554,6 +4556,11 @@
     "Label, make it short please": {
       "Attach screenshot(s)": [
         "Adjunta captura(es) de pantalla"
+      ]
+    },
+    "Select files": {
+      "Upload": [
+        "Carregar"
       ]
     },
     "Onboarding Proton": {
@@ -6270,6 +5277,1019 @@
         "destacat"
       ]
     },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "La contrasenya ha de tenir com a mínim ${ length } caràcter",
+        "La contrasenya ha de tenir com a mínim ${ length } caràcters"
+      ]
+    },
+    "file size format": {
+      "bytes": [
+        "bytes"
+      ],
+      "KB": [
+        "KB"
+      ],
+      "MB": [
+        "MB"
+      ],
+      "GB": [
+        "GB"
+      ]
+    },
+    "Contact field label": {
+      "Name": [
+        "Nom"
+      ],
+      "Email": [
+        "Correu electrònic"
+      ],
+      "Phone": [
+        "Telèfon"
+      ],
+      "Address": [
+        "Adreça"
+      ],
+      "Photo": [
+        "Foto"
+      ],
+      "Organization": [
+        "Organització"
+      ],
+      "Birthday": [
+        "Aniversari"
+      ],
+      "Anniversary": [
+        "Aniversari"
+      ],
+      "Title": [
+        "Títol"
+      ],
+      "Role": [
+        "Rol"
+      ],
+      "Note": [
+        "Nota"
+      ],
+      "URL": [
+        "URL"
+      ],
+      "Gender": [
+        "Gènere"
+      ],
+      "Language": [
+        "Idioma"
+      ],
+      "Timezone": [
+        "Zona Horària"
+      ],
+      "Geo": [
+        "Geo"
+      ],
+      "Logo": [
+        "Logo"
+      ],
+      "Member": [
+        "Membre"
+      ]
+    },
+    "Contact type label": {
+      "Work": [
+        "Feina"
+      ],
+      "Personal": [
+        "Personal"
+      ],
+      "Mobile": [
+        "Mòbil"
+      ],
+      "Main": [
+        "Principal"
+      ],
+      "Yomi": [
+        "Yomi"
+      ],
+      "Other": [
+        "Altres"
+      ],
+      "Fax": [
+        "Fax"
+      ],
+      "Pager": [
+        "Cercapersones"
+      ]
+    },
+    "Property type": {
+      "Email": [
+        "Correu electrònic"
+      ],
+      "Home": [
+        "Casa"
+      ],
+      "Work": [
+        "Feina"
+      ],
+      "Other": [
+        "Altres"
+      ],
+      "Phone": [
+        "Telèfon"
+      ],
+      "Mobile": [
+        "Mòbil"
+      ],
+      "Main": [
+        "Principal"
+      ],
+      "Fax": [
+        "Fax"
+      ],
+      "Pager": [
+        "Cercapersones"
+      ],
+      "Address": [
+        "Adreça"
+      ]
+    },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "L'adreça de correu electrònic que no es troba entre els identificadors d'usuari definits a la clau d'enviament (${ keyUserIds })"
+      ]
+    },
+    "Message": {
+      "Re:": [
+        "Re:"
+      ],
+      "Fw:": [
+        "Fw:"
+      ],
+      "On ${ date }, ${ name } ${ address } wrote:": [
+        "El ${ date }, ${ name } ${ address } va escriure:"
+      ]
+    },
+    "Default display name vcard": {
+      "Unknown": [
+        "Desconegut"
+      ]
+    },
+    "Import contact. Contact identifier": {
+      "unknown": [
+        "desconegut/da"
+      ]
+    },
+    "Error importing contact": {
+      "vCard versions < 3.0 not supported": [
+        "versions vCard < 3.0 no suportades"
+      ],
+      "Encryption failed": [
+        "El xifratge ha fallat"
+      ]
+    },
+    "Error importing calendar": {
+      "An unexpected error occurred. Import must be restarted.": [
+        "S'ha produït un error inesperat. S'ha de reiniciar la importació."
+      ]
+    },
+    "Error importing contacts": {
+      "An error occurred uploading your file. No file has been selected.": [
+        "S'ha produït un error carregant el fitxer. No s'ha seleccionat cap fitxer."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. No .csv or .vcf file selected": [
+        "S'ha produït un error carregant el vostre fitxer ${ formattedFilename }. No s'ha seleccionat cap fitxer .csv o .vcf"
+      ],
+      "Your file ${ formattedFilename } is empty.": [
+        "El vostre fitxer ${ formattedFilename } està buit."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
+        "S'ha produït un error carregant el vostre fitxer ${ formattedFilename }. La mida màxima del fitxer és ${ MAX_IMPORT_FILE_SIZE_STRING }."
+      ],
+      "Your file ${ formattedFilename } has no contacts to be imported.": [
+        "El vostre fitxer ${ formattedFilename } no conté contactes per importar."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
+        "El vostre fitxer ${ formattedFilename } conté més de ${ MAX_IMPORT_CONTACTS_STRING } contactes."
+      ],
+      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
+        "S'ha produït un error llegint el fitxer ${ formattedFilename }. El fitxer no té el format adequat."
+      ]
+    },
+    "Keyboard shortcut section name": {
+      "Basic navigation": [
+        "Navegació bàsica"
+      ],
+      "Basic actions": [
+        "Accions bàsiques"
+      ],
+      "Folder shortcuts": [
+        "Dreceres de carpeta"
+      ],
+      "Composer shortcuts": [
+        "Dreceres de l'editor"
+      ],
+      "List shortcuts": [
+        "Dreceres de llistat"
+      ],
+      "Action shortcuts": [
+        "Dreceres d'acció"
+      ],
+      "Message shortcuts": [
+        "Dreceres de missatge"
+      ]
+    },
+    "Keyboard shortcut name": {
+      "Move up": [
+        "Mou cap amunt"
+      ],
+      "Jump to first": [
+        "Moure a primera posició"
+      ],
+      "Move down": [
+        "Mou cap avall"
+      ],
+      "Jump to last": [
+        "Moure a última posició"
+      ],
+      "Move right / expand": [
+        "Cap a la dreta / expandir"
+      ],
+      "Move left / collapse": [
+        "Cap a l'esquerra / reduir"
+      ],
+      "Apply / open": [
+        "Aplicar / obrir"
+      ],
+      "Cancel / close": [
+        "Cancel·lar / tancar"
+      ],
+      "Open this modal": [
+        "Obre aquesta finestra"
+      ],
+      "Select / unselect": [
+        "Seleccioneu / Anul·leu selecció"
+      ],
+      "Go to Inbox": [
+        "Vés a la Safata d'entrada"
+      ],
+      "Go to Archive": [
+        "Vés a l'Arxiu"
+      ],
+      "Go to Sent": [
+        "Vés a Enviats"
+      ],
+      "Go to Starred": [
+        "Vés a Destacats"
+      ],
+      "Go to Drafts": [
+        "Vés a Esborranys"
+      ],
+      "Go to Trash": [
+        "Vés a la Paperera"
+      ],
+      "Go to Spam": [
+        "Vés al Correu brossa"
+      ],
+      "Go to All Mail": [
+        "Vés a Tot el Correu"
+      ],
+      "Save draft": [
+        "Desa l'esborrany"
+      ],
+      "Send email": [
+        "Enviar correu"
+      ],
+      "Close draft": [
+        "Tancar esborrany"
+      ],
+      "Minimize / maximize composer": [
+        "Minimitzar / maximitzar el compositor"
+      ],
+      "Expand / contract composer": [
+        "Ampliar / contractar compositor"
+      ],
+      "Attach file": [
+        "Adjuntar arxiu"
+      ],
+      "Add expiration time": [
+        "Afegir temps d'expiració"
+      ],
+      "Add encryption": [
+        "Afegir xifrat"
+      ],
+      "Discard draft": [
+        "Descarta l'esborrany"
+      ],
+      "Open previous message": [
+        "Obrir el missatge anterior"
+      ],
+      "Open next message": [
+        "Obrir següent missatge"
+      ],
+      "Show unread emails": [
+        "Mostrar correus electronics sense llegir"
+      ],
+      "Show all emails": [
+        "Mostra tots els correus electrònics"
+      ],
+      "Select / unselect all": [
+        "Selecciona-ho tot / No seleccionis res"
+      ],
+      "Search": [
+        "Cerca"
+      ],
+      "New message": [
+        "Nou missatge"
+      ],
+      "Star": [
+        "Destacat"
+      ],
+      "Mark as unread": [
+        "Marca com a no llegit"
+      ],
+      "Label as...": [
+        "Etiqueta com a..."
+      ],
+      "Create filter with...": [
+        "Crear filtre amb..."
+      ],
+      "Move to...": [
+        "Moure a..."
+      ],
+      "Move to Inbox": [
+        "Moure a la Safata d'entrada"
+      ],
+      "Move to Archive": [
+        "Moure al Arxiu"
+      ],
+      "Move to Spam": [
+        "Moure a Correu brossa"
+      ],
+      "Move to Trash": [
+        "Moure a la Paperera"
+      ],
+      "Delete permanently": [
+        "Suprimeix permanentment"
+      ],
+      "Reply": [
+        "Respon"
+      ],
+      "Reply all": [
+        "Respon a tothom"
+      ],
+      "Forward": [
+        "Reenvia"
+      ],
+      "Load remote content": [
+        "Carrega el contingut remot"
+      ],
+      "Load embedded images": [
+        "Carrega imatges incrustades"
+      ],
+      "Show original message": [
+        "Mostra el missatge original"
+      ]
+    },
+    "Calendar status": {
+      "Syncing": [
+        "Sincronitzant"
+      ],
+      "Not synced": [
+        "No sincronitzat"
+      ]
+    },
+    "Calendar subscription not synced error": {
+      "Calendar is syncing": [
+        "El calendari s'està sincronitzant"
+      ],
+      "More than 12 hours passed since last update": [
+        "Han passat més de 12 hores des de la darrera actualització"
+      ],
+      "Calendar link is wrong": [
+        "L'enllaç del calendari és erroni"
+      ],
+      "Calendar is too big": [
+        "El calendari és massa gran"
+      ],
+      "Calendar link is not accessible": [
+        "L'enllaç del calendari no és accessible"
+      ],
+      "Failed to sync calendar": [
+        "Error sincronitzant el calendari"
+      ],
+      "Calendar link is temporarily inaccessible": [
+        "L'enllaç del calendari no és accessible temporalment"
+      ]
+    },
+    "Attached ics file error": {
+      "Invalid ICS file": [
+        "Fitxer ICS invàlid"
+      ],
+      "Invalid event": [
+        "Esdeveniment invàlid"
+      ],
+      "Unsupported event": [
+        "Esdeveniment no suportat"
+      ],
+      "Empty ICS file": [
+        "Fitxer ICS buit"
+      ],
+      "Unsupported calendar component": [
+        "Component de calendari no admès"
+      ],
+      "Invalid method": [
+        "Mètode no vàlid"
+      ]
+    },
+    "Event invitation error": {
+      "Invalid response": [
+        "Resposta no vàlida"
+      ],
+      "Invalid invitation": [
+        "Invitació no vàlida"
+      ],
+      "Unsupported response": [
+        "Resposta no admesa"
+      ],
+      "Unsupported invitation": [
+        "Invitació no compatible"
+      ],
+      "Attached ICS file could not be parsed": [
+        "No es pot analitzar l'arxiu ICS adjuntat"
+      ],
+      "Attached ICS file could not be decrypted": [
+        "No es pot desxifrar l'arxiu ICS adjuntat"
+      ],
+      "We could not retrieve the event from your calendar": [
+        "No hem pogut recuperar l'esdeveniment del calendari"
+      ],
+      "We could not update the event in your calendar": [
+        "No hem pogut actualitzar l'esdeveniment del teu calendari"
+      ],
+      "Your answer was sent, but the event could not be added to your calendar": [
+        "S'ha enviat la vostra resposta, però l'esdeveniment no s'ha pogut afegir al vostre calendari"
+      ],
+      "Your answer was sent, but the event could not be updated in your calendar": [
+        "S'ha enviat la vostra resposta, però l'esdeveniment no s'ha pogut actualitzar al vostre calendari"
+      ],
+      "We could not cancel the event in your calendar": [
+        "No hem pogut cancelar l'esdeveniment del vostre calendari"
+      ],
+      "Unexpected error": [
+        "S'ha produït un error inesperat"
+      ]
+    },
+    "Error importing event": {
+      "Component with wrong format": [
+        "Component amb format erroni"
+      ],
+      "Non-Gregorian": [
+        "No gregorià"
+      ],
+      "To-do entry": [
+        "Entrada de tasques"
+      ],
+      "Journal entry": [
+        "Entrada de diari"
+      ],
+      "Free-busy time information": [
+        "Informació de disponibilitat temporal"
+      ],
+      "Custom timezone": [
+        "Fus horari personalitzat"
+      ],
+      "Invalid event": [
+        "Esdeveniment no vàlid"
+      ],
+      "Unsupported event": [
+        "Esdeveniment no suportat"
+      ],
+      "Malformed all-day event": [
+        "Esdeveniment de tot el dia amb format incorrecte"
+      ],
+      "Missing start time": [
+        "Falta l’hora d’inici"
+      ],
+      "Malformed start time": [
+        "Hora de inici amb format incorrecte"
+      ],
+      "Floating times not supported": [
+        "Temps flotants no compatibles"
+      ],
+      "Start time out of bounds": [
+        "Hora d’inici fora de límits"
+      ],
+      "Malformed end time": [
+        "Hora de finalització amb format incorrecte"
+      ],
+      "End time out of bounds": [
+        "Hora de finalització fora de límits"
+      ],
+      "Event duration not supported": [
+        "Durada d'esdeveniment no compatible"
+      ],
+      "Calendar timezone not supported": [
+        "Fus horari del calendari no compatible"
+      ],
+      "Timezone not supported": [
+        "Fus horari no compatible"
+      ],
+      "Malformed recurring event": [
+        "Esdeveniment recurrent amb format incorrecte"
+      ],
+      "Recurring rule not supported": [
+        "Regla recurrent no compatible"
+      ],
+      "Edited event not supported": [
+        "Esdeveniment editat no compatible"
+      ],
+      "Notification out of bounds": [
+        "Notificació fora de límits"
+      ],
+      "Event validation failed": [
+        "Ha fallat la validació de l'esdeveniment"
+      ],
+      "Encryption failed": [
+        "Ha fallat el xifratge"
+      ],
+      "Original recurring event could not be found": [
+        "No es troba l'esdeveniment recurrent original"
+      ],
+      "no UID, title or start time": [
+        "sense UID, títol o hora d'inici"
+      ]
+    },
+    "Event title": {
+      "(no title)": [
+        "(No title)"
+      ]
+    },
+    "Participant name": {
+      "You": [
+        "Tú"
+      ]
+    },
+    "Email subject": {
+      "Invitation for an event on ${ formattedStart }": [
+        "Invitació a un esdeveniment el ${ formattedStart }"
+      ],
+      "Update for an event on ${ formattedStart }": [
+        "Actualització d'un esdeveniment el ${ formattedStart }"
+      ],
+      "Invitation for an event starting on ${ formattedStart }": [
+        "Invitació a un esdeveniment que comença el ${ formattedStart }"
+      ],
+      "Update for an event starting on ${ formattedStart }": [
+        "Actualització d'un esdeveniment que comença el ${ formattedStart }"
+      ],
+      "Cancellation of an event on ${ formattedStart }": [
+        "Cancel·lació d'un esdeveniment el ${ formattedStart }"
+      ],
+      "Cancellation of an event starting on ${ formattedStart }": [
+        "Cancel·lació d'un esdeveniment que comença el ${ formattedStart }"
+      ]
+    },
+    "Email body for invitation (date part)": {
+      "When: ${ formattedStart } (all day)": [
+        "Quan: ${ formattedStart } (tot el dia)"
+      ],
+      "When: ${ formattedStart } - ${ formattedEnd }": [
+        "Quan: ${ formattedStart } - ${ formattedEnd }"
+      ],
+      "When: ${ formattedStart }": [
+        "Quan: ${ formattedStart }"
+      ]
+    },
+    "Email body for invitation (location part)": {
+      "Where: ${ eventLocation }": [
+        "On: ${ eventLocation }"
+      ]
+    },
+    "Email body for description (description part)": {
+      "Description: ${ eventDescription }": [
+        "Descripció: ${ eventDescription }"
+      ]
+    },
+    "Email body for invitation": {
+      "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
+        "Heu estat convidat/da a ${ eventTitle }\n${ eventDetailsText }"
+      ],
+      "${ eventTitle } has been updated.\n${ eventDetailsText }": [
+        "${ eventTitle } s'ha actualitzat.\n${ eventDetailsText }"
+      ],
+      "${ eventTitle } has been cancelled.": [
+        "${ eventTitle } s'ha cancel·lat."
+      ]
+    },
+    "Email body for response to invitation": {
+      "${ emailAddress } has accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } ha acceptat la vostra invitació a ${ eventTitle }"
+      ],
+      "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } ha acceptat provisionalment la vostra invitació a ${ eventTitle }"
+      ],
+      "${ emailAddress } has declined your invitation to ${ eventTitle }": [
+        "${ emailAddress } ha declinat la vostra invitació a ${ eventTitle }"
+      ]
+    },
+    "Monthly recurring event, repeats on": {
+      "on the first Sunday": [
+        "en el primer Diumenge"
+      ],
+      "on the first Monday": [
+        "en el primer Dilluns"
+      ],
+      "on the first Tuesday": [
+        "en el primer Dimarts"
+      ],
+      "on the first Wednesday": [
+        "en el primer Dimecres"
+      ],
+      "on the first Thursday": [
+        "en el primer Dijous"
+      ],
+      "on the first Friday": [
+        "en el primer Divendres"
+      ],
+      "on the first Saturday": [
+        "en el primer Dissapte"
+      ],
+      "on the second Sunday": [
+        "en el segon Diumenge"
+      ],
+      "on the second Monday": [
+        "en el segon Dilluns"
+      ],
+      "on the second Tuesday": [
+        "en el segon Dimarts"
+      ],
+      "on the second Wednesday": [
+        "en el segon Dimecres"
+      ],
+      "on the second Thursday": [
+        "en el segon Dijous"
+      ],
+      "on the second Friday": [
+        "en el segon Divendres"
+      ],
+      "on the second Saturday": [
+        "en el segon Dissabte"
+      ],
+      "on the third Sunday": [
+        "en el tercer Diumenge"
+      ],
+      "on the third Monday": [
+        "en el tercer Dilluns"
+      ],
+      "on the third Tuesday": [
+        "en el tercer Dimarts"
+      ],
+      "on the third Wednesday": [
+        "en el tercer Dimecres"
+      ],
+      "on the third Thursday": [
+        "en el tercer Dijous"
+      ],
+      "on the third Friday": [
+        "en el tercer Divendres"
+      ],
+      "on the third Saturday": [
+        "en el tercer Dissabte"
+      ],
+      "on the fourth Sunday": [
+        "en el quart Diumenge"
+      ],
+      "on the fourth Monday": [
+        "en el quart Dilluns"
+      ],
+      "on the fourth Tuesday": [
+        "en el quart Dimarts"
+      ],
+      "on the fourth Wednesday": [
+        "en el quart Dimecres"
+      ],
+      "on the fourth Thursday": [
+        "en el quart Dijous"
+      ],
+      "on the fourth Friday": [
+        "en el quart Divendres"
+      ],
+      "on the fourth Saturday": [
+        "en el quart Dissabte"
+      ],
+      "on the last Sunday": [
+        "en el darrer Diumenge"
+      ],
+      "on the last Monday": [
+        "en el darrer Dilluns"
+      ],
+      "on the last Tuesday": [
+        "en el darrer Dimarts"
+      ],
+      "on the last Wednesday": [
+        "en el darrer Dimecres"
+      ],
+      "on the last Thursday": [
+        "en el darrer Dijous"
+      ],
+      "on the last Friday": [
+        "en el darrer Divendres"
+      ],
+      "on the last Saturday": [
+        "en el darrer Dissabte"
+      ],
+      "on day ${ dayOfMonth }": [
+        "el dia ${ dayOfMonth }"
+      ]
+    },
+    "Daily recurring event, frequency": {
+      "${ count } time": [
+        "${ count } vegada",
+        "${ count } vegades"
+      ],
+      "until ${ dateString }": [
+        "fins el ${ dateString }"
+      ],
+      "Daily": [
+        "Diàriament"
+      ],
+      "Every ${ interval } day": [
+        "Cada ${ interval } dia",
+        "Cada ${ interval } dies"
+      ],
+      "Daily, ${ timesString }": [
+        "Diàriament, ${ timesString }"
+      ],
+      "Every ${ interval } day, ${ timesString }": [
+        "Cada ${ interval } dia, ${ timesString }",
+        "Cada ${ interval } dies, ${ timesString }"
+      ],
+      "Daily, ${ untilString }": [
+        "Diàriament, ${ untilString }"
+      ],
+      "Every ${ interval } day, ${ untilString }": [
+        "Cada ${ interval } dia, ${ untilString }",
+        "Cada ${ interval } dies, ${ untilString }"
+      ]
+    },
+    "Weekly recurring event, repeats on (multiple days), frequency": {
+      "Sunday": [
+        "Diumenge"
+      ],
+      "Monday": [
+        "Dilluns"
+      ],
+      "Tuesday": [
+        "Dimarts"
+      ],
+      "Wednesday": [
+        "Dimecres"
+      ],
+      "Thursday": [
+        "Dijous"
+      ],
+      "Friday": [
+        "Divendres"
+      ],
+      "Saturday": [
+        "Dissabte"
+      ]
+    },
+    "Weekly recurring event, frequency": {
+      "Weekly on all days": [
+        "Setmanalment tots els dies"
+      ],
+      "Every ${ interval } week on all days": [
+        "Cada ${ interval } setmana tots els dies",
+        "Cada ${ interval } setmanes tots els dies"
+      ],
+      "Weekly on Sunday": [
+        "Setmanalment al Diumenge"
+      ],
+      "Every ${ interval } week on Sunday": [
+        "Cada ${ interval } setmana els Diumenges",
+        "Cada ${ interval } setmanes els Diumenges"
+      ],
+      "Weekly on Monday": [
+        "Setmanalment al Dilluns"
+      ],
+      "Every ${ interval } week on Monday": [
+        "Cada ${ interval } setmana els Dilluns",
+        "Cada ${ interval } setmanes els Dilluns"
+      ],
+      "Weekly on Tuesday": [
+        "Setmanalment al Dimarts"
+      ],
+      "Every ${ interval } week on Tuesday": [
+        "Cada ${ interval } setmana els Dimarts",
+        "Cada ${ interval } setmanes els Dimarts"
+      ],
+      "Weekly on Wednesday": [
+        "Setmanalment al Dimecres"
+      ],
+      "Every ${ interval } week on Wednesday": [
+        "Cada ${ interval } setmana els Dimecres",
+        "Cada ${ interval } setmanes els Dimecres"
+      ],
+      "Weekly on Thursday": [
+        "Setmanalment al Dijous"
+      ],
+      "Every ${ interval } week on Thursday": [
+        "Cada ${ interval } setmana els Dijous",
+        "Cada ${ interval } setmanes els Dijous"
+      ],
+      "Weekly on Friday": [
+        "Setmanalment al Divendres"
+      ],
+      "Every ${ interval } week on Friday": [
+        "Cada ${ interval } setmana els Divendres",
+        "Cada ${ interval } setmanes els Divendres"
+      ],
+      "Weekly on Saturday": [
+        "Setmanalment al Dissabte"
+      ],
+      "Every ${ interval } week on Saturday": [
+        "Cada ${ interval } setmana els Dissabtes",
+        "Cada ${ interval } setmanes els Dissabtes"
+      ],
+      "Weekly on ${ multipleDaysString }": [
+        "Setmanalment els ${ multipleDaysString }"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }": [
+        "Cada ${ interval } setmana els ${ multipleDaysString }",
+        "Cada ${ interval } setmanes els ${ multipleDaysString }"
+      ],
+      "Weekly on all days, ${ timesString }": [
+        "Semanalment tots els dies, ${ timesString }"
+      ],
+      "Every ${ interval } week on all days, ${ timesString }": [
+        "Cada ${ interval } setmana tots els dies, ${ timesString }",
+        "Cada ${ interval } setmanes tots els dies, ${ timesString }"
+      ],
+      "Weekly on Sunday, ${ timesString }": [
+        "Semanalment el Diumenge, ${ timesString }"
+      ],
+      "Every ${ interval } week on Sunday, ${ timesString }": [
+        "Cada ${ interval } setmana tots els Diumenges, ${ timesString }",
+        "Cada ${ interval } setmanes tots els Diumenges, ${ timesString }"
+      ],
+      "Weekly on Monday, ${ timesString }": [
+        "Semanalment els Dilluns, ${ timesString }"
+      ],
+      "Every ${ interval } week on Monday, ${ timesString }": [
+        "Cada ${ interval } setmana tots els Dilluns, ${ timesString }",
+        "Cada ${ interval } setmanes tots els Dilluns, ${ timesString }"
+      ],
+      "Weekly on Tuesday, ${ timesString }": [
+        "Semanalment els Dimarts, ${ timesString }"
+      ],
+      "Every ${ interval } week on Tuesday, ${ timesString }": [
+        "Cada ${ interval } setmana els Dimarts, ${ timesString }",
+        "Cada ${ interval } setmanes els Dimarts, ${ timesString }"
+      ],
+      "Weekly on Wednesday, ${ timesString }": [
+        "Dimecres setmanalmenty, ${ timesString }"
+      ],
+      "Every ${ interval } week on Wednesday, ${ timesString }": [
+        "Cada ${ interval } setmana els Dimecres, ${ timesString }",
+        "Cada ${ interval } setmanes els Dimecres, ${ timesString }"
+      ],
+      "Weekly on Thursday, ${ timesString }": [
+        "Semanalment els Dijous, ${ timesString }"
+      ],
+      "Every ${ interval } week on Thursday, ${ timesString }": [
+        "Cada ${ interval } setmana els Dijous, ${ timesString }",
+        "Cada ${ interval } setmanes els Dijous, ${ timesString }"
+      ],
+      "Weekly on Friday, ${ timesString }": [
+        "Semanalment el Dilluns, ${ timesString }"
+      ],
+      "Every ${ interval } week on Friday, ${ timesString }": [
+        "Cada ${ interval } setmana tots els Divendres, ${ timesString }",
+        "Cada ${ interval } setmanes tots els Divendres, ${ timesString }"
+      ],
+      "Weekly on Saturday, ${ timesString }": [
+        "Semanalment el Dissapte, ${ timesString }"
+      ],
+      "Every ${ interval } week on Saturday, ${ timesString }": [
+        "Cada ${ interval } setmana tots els Dissaptes, ${ timesString }",
+        "Cada ${ interval } setmanes tots els Dissaptes, ${ timesString }"
+      ],
+      "Weekly on ${ multipleDaysString }, ${ timesString }": [
+        "Semanalment els ${ multipleDaysString }, ${ timesString }"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
+        "Cada ${ interval } setmana els ${ multipleDaysString }, ${ timesString }",
+        "Cada ${ interval } setmanes els ${ multipleDaysString }, ${ timesString }"
+      ],
+      "Weekly on all days, ${ untilString }": [
+        "Semanalment tots els dies, ${ untilString }"
+      ],
+      "Every ${ interval } week on all days, ${ untilString }": [
+        "Cada ${ interval } setmana tots els dies, ${ untilString }",
+        "Cada ${ interval } setmanes tots els dies, ${ untilString }"
+      ],
+      "Weekly on Sunday, ${ untilString }": [
+        "Semanalment el Diumenge, ${ untilString }"
+      ],
+      "Every ${ interval } week on Sunday, ${ untilString }": [
+        "Cada ${ interval } setmana tots els Diumenges, ${ untilString }",
+        "Cada ${ interval } setmanes tots els Diumenges, ${ untilString }"
+      ],
+      "Weekly on Monday, ${ untilString }": [
+        "Semanalment el Dilluns, ${ untilString }"
+      ],
+      "Every ${ interval } week on Monday, ${ untilString }": [
+        "Cada ${ interval } setmana tots els Dilluns, ${ untilString }",
+        "Cada ${ interval } setmanes tots els Dilluns, ${ untilString }"
+      ],
+      "Weekly on Tuesday, ${ untilString }": [
+        "Semanalment el Dimarts, ${ untilString }"
+      ],
+      "Every ${ interval } week on Tuesday, ${ untilString }": [
+        "Cada ${ interval } setmana el Dimarts, ${ untilString }",
+        "Cada ${ interval } setmanes el Dimarts, ${ untilString }"
+      ],
+      "Weekly on Wednesday, ${ untilString }": [
+        "Semanalment el Dimecres, ${ untilString }"
+      ],
+      "Every ${ interval } week on Wednesday, ${ untilString }": [
+        "Cada ${ interval } setmana el Dimecres, ${ untilString }",
+        "Cada ${ interval } setmanes el Dimecres, ${ untilString }"
+      ],
+      "Weekly on Thursday, ${ untilString }": [
+        "Semanalment el Dijous, ${ untilString }"
+      ],
+      "Every ${ interval } week on Thursday, ${ untilString }": [
+        "Cada ${ interval } setmana el Dijous, ${ untilString }",
+        "Cada ${ interval } setmanes el Dijous, ${ untilString }"
+      ],
+      "Weekly on Friday, ${ untilString }": [
+        "Semanalment el Divendres, ${ untilString }"
+      ],
+      "Every ${ interval } week on Friday, ${ untilString }": [
+        "Cada ${ interval } setmana el Divendres, ${ untilString }",
+        "Cada ${ interval } setmanes el Divendres, ${ untilString }"
+      ],
+      "Weekly on Saturday, ${ untilString }": [
+        "Semanalment el Dissapte, ${ untilString }"
+      ],
+      "Every ${ interval } week on Saturday, ${ untilString }": [
+        "Cada ${ interval } setmana el Dissapte, ${ untilString }",
+        "Cada ${ interval } setmanes el Dissapte, ${ untilString }"
+      ],
+      "Weekly on ${ multipleDaysString }, ${ untilString }": [
+        "Semanalment els ${ multipleDaysString }, ${ untilString }"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
+        "Cada ${ interval } setmana els ${ multipleDaysString }, ${ untilString }",
+        "Cada ${ interval } setmanes els ${ multipleDaysString }, ${ untilString }"
+      ]
+    },
+    "Monthly recurring event, frequency": {
+      "Monthly ${ onDayString }": [
+        "Mensual ${ onDayString }"
+      ],
+      "Every ${ interval } month ${ onDayString }": [
+        "Cada ${ interval } mes ${ onDayString }",
+        "Cada ${ interval } messos ${ onDayString }"
+      ],
+      "Monthly ${ onDayString }, ${ timesString }": [
+        "Mensualment ${ onDayString }, ${ timesString }"
+      ],
+      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
+        "Cada ${ interval } mes ${ onDayString }, ${ timesString }",
+        "Cada ${ interval } messos ${ onDayString }, ${ timesString }"
+      ],
+      "Monthly ${ onDayString }, ${ untilString }": [
+        "Mensualment ${ onDayString }, ${ untilString }"
+      ],
+      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
+        "Cada ${ interval } mes ${ onDayString }, ${ untilString }",
+        "Cada ${ interval } mesos ${ onDayString }, ${ untilString }"
+      ]
+    },
+    "Yearly recurring event, frequency": {
+      "Yearly": [
+        "Anual"
+      ],
+      "Every ${ interval } year": [
+        "Cada ${ interval } any",
+        "Cada ${ interval } anys"
+      ],
+      "Yearly, ${ timesString }": [
+        "Anualment, ${ timesString }"
+      ],
+      "Every ${ interval } year, ${ timesString }": [
+        "Cada ${ interval } any, ${ timesString }",
+        "Cada ${ interval } anys, ${ timesString }"
+      ],
+      "Yearly, ${ untilString }": [
+        "Anualment, ${ untilString }"
+      ],
+      "Every ${ interval } year, ${ untilString }": [
+        "Cada ${ interval } any, ${ untilString }",
+        "Cada ${ interval } anys, ${ untilString }"
+      ]
+    },
     "Mailbox": {
       "Inbox": [
         "Safata d'entrada"
@@ -6292,8 +6312,8 @@
       "Scheduled": [
         "Programats"
       ],
-      "All": [
-        "Tots"
+      "All mail": [
+        "Tot el correu"
       ],
       "Starred": [
         "Destacats"
@@ -6713,6 +6733,12 @@
     "Spotlight": {
       "You can now schedule your messages to be sent later": [
         "Ara podeu programar els vostres missatges per tal que s'enviïn més tard"
+      ],
+      "Tracker protection": [
+        "Protecció de rastrejadors"
+      ],
+      "Proton blocked email trackers in this message in order to protect your privacy": [
+        "Proton ha bloquejat rastrejadors de correu electrònic en aquest missatge per protegir la vostra privacitat"
       ]
     },
     "Message image": {
@@ -6797,10 +6823,6 @@
       "Organizer:": [
         "Organitzador:"
       ],
-      "${ totalAttendees } Participant": [
-        "${ totalAttendees } Participant",
-        "${ totalAttendees } Participants"
-      ],
       "Repeats": [
         "Repeticions"
       ],
@@ -6812,6 +6834,10 @@
       ],
       "Participants": [
         "Participants"
+      ],
+      "${ totalAttendees } participant": [
+        "${ totalAttendees } participant",
+        "${ totalAttendees } participants"
       ]
     },
     "Attachment signature verification": {

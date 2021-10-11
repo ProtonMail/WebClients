@@ -29,7 +29,7 @@
       "Calendar link is not accessible": [
         ""
       ],
-      "Calendar link is temporarily unaccessible": [
+      "Calendar link is temporarily inaccessible": [
         ""
       ],
       "Failed to sync calendar": [
@@ -608,11 +608,11 @@
       "No results found": [
         "Geen resultaten gevonden"
       ],
-      "Week": [
-        "Week"
-      ],
       "Loading": [
         "Laden"
+      ],
+      "Week": [
+        "Week"
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Deze link kan een homografie-aanval zijn en kan niet geopend worden in Internet Explorer en Edge. Als u zeker bent dat de link legitiem is, gebruik dan een andere browser om het te bezoeken."
@@ -769,12 +769,6 @@
       "* Customizable features": [
         "* Aanpasbare functies"
       ],
-      "Access your streaming services, like ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, no matter where you are.": [
-        "Toegang tot uw streamingdiensten, zoals ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, ongeacht waar u bent."
-      ],
-      "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
-        "Toegang tot geblokkeerde inhoud, zoals sociale media, nieuws, Wikipedia, YouTube, en vele anderen, ongeacht waar u bent."
-      ],
       "For getting started with private and secure emailing.": [
         "Om te beginnen met privé en veilige e-mails."
       ],
@@ -798,6 +792,12 @@
       ],
       "For families and small teams; includes both Mail and VPN.": [
         "Voor families en kleine teams; omvat zowel Mail en VPN."
+      ],
+      "Access your streaming services, like ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, no matter where you are.": [
+        "Toegang tot uw streamingdiensten, zoals ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, ongeacht waar u bent."
+      ],
+      "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
+        "Toegang tot geblokkeerde inhoud, zoals sociale media, nieuws, Wikipedia, YouTube, en vele anderen, ongeacht waar u bent."
       ],
       "Save 20%": [
         "Bespaar 20%"
@@ -1113,6 +1113,12 @@
       ],
       "Loading events": [
         "Afspraken laden"
+      ],
+      "The organizer could not be notified that you changed your answer:": [
+        ""
+      ],
+      "The organizer cannot be notified that you want to change your answer:": [
+        ""
       ],
       "The organizer cannot be notified that you decline the invitation:": [
         "De organisator kan niet worden gewaarschuwd dat u de uitnodiging afwijst:"
@@ -1490,14 +1496,14 @@
       "A group with this name already exists": [
         "Er bestaat al een groep met deze naam"
       ],
-      "Primary address key is not decrypted": [
-        "Primaire adressleutel is niet gedecodeerd"
-      ],
       "We were unable to connect to your service provider.": [
         ""
       ],
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         ""
+      ],
+      "Primary address key is not decrypted": [
+        "Primaire adressleutel is niet gedecodeerd"
       ],
       "No valid address found": [
         "Geen geldig adres gevonden"
@@ -2083,12 +2089,6 @@
       "Back": [
         "Terug"
       ],
-      "Use ${ label } theme": [
-        "Gebruik thema ${ label }"
-      ],
-      "OK": [
-        "OK"
-      ],
       "Log in": [
         "Aanmelden"
       ],
@@ -2115,6 +2115,12 @@
       ],
       "Edit phone number": [
         "Wijzig telefoonnummer"
+      ],
+      "Use ${ label } theme": [
+        "Gebruik thema ${ label }"
+      ],
+      "OK": [
+        "OK"
       ],
       "Clear": [
         "Wissen"
@@ -2456,9 +2462,6 @@
       "Give feedback": [
         "Feedback geven"
       ],
-      "Select a theme": [
-        "Kies een thema"
-      ],
       "Sign in again to continue": [
         "Log opnieuw in om door te gaan"
       ],
@@ -2476,6 +2479,9 @@
       ],
       "Human verification": [
         "Persoonsverificatie"
+      ],
+      "Select a theme": [
+        "Kies een thema"
       ],
       "Report a problem": [
         "Meld een probleem"
@@ -2549,8 +2555,8 @@
       "Amount due": [
         "Verschuldigd bedrag"
       ],
-      "Cancel subscription": [
-        "Abonnement opzeggen"
+      "Downgrade account": [
+        ""
       ],
       "Network error": [
         "Netwerkfout"
@@ -2848,6 +2854,11 @@
         "Afspraak wijzigen"
       ]
     },
+    "PGP key encryption warning": {
+      "Key cannot be used for encryption": [
+        "Sleutel kan niet worden gebruikt voor versleuteling"
+      ]
+    },
     "Storage": {
       "Your current storage:": [
         "Uw huidige opslag:"
@@ -2857,11 +2868,6 @@
       ],
       "Release notes": [
         "Belangrijkste wijzigingen"
-      ]
-    },
-    "PGP key encryption warning": {
-      "Key cannot be used for encryption": [
-        "Sleutel kan niet worden gebruikt voor versleuteling"
       ]
     },
     "Label": {
@@ -3141,7 +3147,7 @@
       "Your calendars": [
         "Uw agenda's"
       ],
-      "Participant": [
+      "participant": [
         "",
         ""
       ]
@@ -4626,11 +4632,6 @@
         "Opmerking: de service wordt herladen nadat u op de knop Toepassen klikt."
       ]
     },
-    "Select files": {
-      "Upload": [
-        "Uploaden"
-      ]
-    },
     "Loading info": {
       "Connecting to your contacts provider": [
         ""
@@ -4650,6 +4651,11 @@
     "Confirm modal title": {
       "Quit import?": [
         ""
+      ]
+    },
+    "Select files": {
+      "Upload": [
+        "Uploaden"
       ]
     },
     "Message display when a new app version is available": {
@@ -4811,11 +4817,6 @@
     "Placeholder for contact with no name": {
       "(No name)": [
         "(Geen naam)"
-      ]
-    },
-    "Reply to calendar invitation": {
-      "Cannot send to organizer address: ${ apiErrorMessage }": [
-        "Kan niet verzenden naar organisatieadres: ${ apiErrorMessage }"
       ]
     },
     "Modal title": {

@@ -3159,7 +3159,7 @@
         "Подписка слишком дорогая"
       ],
       "Missing feature(s) ": [
-        "Отсутствующая(ие) функция(и) "
+        "Отсутствующие функции"
       ],
       "Bugs or quality issue": [
         "Ошибки или проблемы с качеством"
@@ -3179,10 +3179,10 @@
     },
     "Plan time remaining": {
       "You still have ${ daysRemaining } day left on your ${ BRAND_NAME } ${ currentPlanName } account.": [
-        "У вас остался еще ${ daysRemaining } день на ${ BRAND_NAME } ${ currentPlanName } счету.",
-        "У вас остались еще ${ daysRemaining } дней на ${ BRAND_NAME } ${ currentPlanName } счету.",
-        "У вас остались еще ${ daysRemaining } дней на ${ BRAND_NAME } ${ currentPlanName } счету.",
-        "У вас осталось(лся) еще ${ daysRemaining } день(дней) на ${ BRAND_NAME } ${ currentPlanName } счету."
+        "У вас остался еще ${ daysRemaining } день на учетной записи ${ currentPlanName } ${ BRAND_NAME }.",
+        "У вас осталось еще ${ daysRemaining } дня на учетной записи ${ currentPlanName } ${ BRAND_NAME }.",
+        "У вас осталось еще ${ daysRemaining } дней на учетной записи ${ currentPlanName } ${ BRAND_NAME }.",
+        "У вас осталось еще ${ daysRemaining } дней на учетной записи ${ currentPlanName } ${ BRAND_NAME }."
       ]
     },
     "Downgrade modal exit survey title": {

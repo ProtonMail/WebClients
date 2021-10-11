@@ -6,9 +6,6 @@
   "contexts": {
     "": {},
     "Action": {
-      "Continue with Google": [
-        "Continuare cu Google"
-      ],
       "Use “${ label }” setting": [
         "Folosire setarea „${ label }”"
       ],
@@ -78,14 +75,20 @@
       "Underline": [
         "Subliniat"
       ],
+      "Continue with Google": [
+        "Continuare cu Google"
+      ],
+      "Show less": [
+        "Afișare mai puțin"
+      ],
+      "Show more": [
+        "Afișare mai mult"
+      ],
       "Confirm opening of link ${ link }": [
         "Confirmați deschiderea legăturii ${ link }"
       ],
       "Confirm": [
         "Confirmare"
-      ],
-      "Delete": [
-        "Ștergere"
       ],
       "Close": [
         "Închidere"
@@ -96,11 +99,11 @@
       "Previous month": [
         "Luna trecută"
       ],
-      "Show less": [
-        "Afișare mai puțin"
+      "Delete": [
+        "Ștergere"
       ],
-      "Show more": [
-        "Afișare mai mult"
+      "Select timezone": [
+        "Selectare fus orar"
       ],
       "Close navigation": [
         "Închidere navigare"
@@ -116,9 +119,6 @@
       ],
       "Remove": [
         "Eliminare"
-      ],
-      "Select timezone": [
-        "Selectare fus orar"
       ],
       "Submit": [
         "Trimitere"
@@ -228,33 +228,6 @@
       "Continue": [
         "Continuare"
       ],
-      "Download": [
-        "Descărcare"
-      ],
-      "Hide": [
-        "Ascundere"
-      ],
-      "Show": [
-        "Afișare"
-      ],
-      "Reset credentials": [
-        "Resetare acreditări"
-      ],
-      "Copy": [
-        "Copiere"
-      ],
-      "Download all configurations": [
-        "Descărcare toate configurațiile"
-      ],
-      "Get ProtonVPN Plus": [
-        "Obțineți „ProtonVPN Plus”"
-      ],
-      "Yes": [
-        "Da"
-      ],
-      "No": [
-        "Nu"
-      ],
       "Update": [
         "Actualizare"
       ],
@@ -324,6 +297,9 @@
       "Export key": [
         "Exportare cheie"
       ],
+      "No": [
+        "Nu"
+      ],
       "Warning": [
         "Avertizare"
       ],
@@ -332,6 +308,9 @@
       ],
       "Export private key": [
         "Exportare cheie privată"
+      ],
+      "Yes": [
+        "Da"
       ],
       "Add user": [
         "Adăugare utilizator"
@@ -381,15 +360,6 @@
       "Sign out": [
         "Deconectare"
       ],
-      "Get started": [
-        "Să începem"
-      ],
-      "Start setup": [
-        "Pornire configurare"
-      ],
-      "Skip": [
-        "Omitere"
-      ],
       "Preview": [
         "Examinare"
       ],
@@ -435,6 +405,24 @@
       "Move to Allow List": [
         "Mutare în listă permise"
       ],
+      "Get started": [
+        "Să începem"
+      ],
+      "Start setup": [
+        "Pornire configurare"
+      ],
+      "Skip": [
+        "Omitere"
+      ],
+      "Add folder": [
+        "Adăugare folder"
+      ],
+      "Sort": [
+        "Sortare"
+      ],
+      "Add label": [
+        "Adăugare etichetă"
+      ],
       "Clear": [
         "Eliminare"
       ],
@@ -446,15 +434,6 @@
       ],
       "Show info": [
         "Afișare informații"
-      ],
-      "Add folder": [
-        "Adăugare folder"
-      ],
-      "Sort": [
-        "Sortare"
-      ],
-      "Add label": [
-        "Adăugare etichetă"
       ],
       "Signing out": [
         "Deconectare"
@@ -486,8 +465,14 @@
       "Customize subscription": [
         "Personalizare abonament"
       ],
-      "Cancel subscription": [
-        "Anulare abonament"
+      "Downgrade to ${ BRAND_NAME } ${ downgradedPlanName }": [
+        "Revenire la ${ BRAND_NAME } ${ downgradedPlanName }"
+      ],
+      "Keep my ${ BRAND_NAME } ${ currentPlanName } account": [
+        "Păstrare cont ${ BRAND_NAME } ${ currentPlanName }"
+      ],
+      "Downgrade account": [
+        "Retrogradare cont"
       ],
       "Select plan": [
         "Selectare plan"
@@ -543,6 +528,27 @@
       "Remove gift code": [
         "Eliminare cod cadou"
       ],
+      "Download": [
+        "Descărcare"
+      ],
+      "Hide": [
+        "Ascundere"
+      ],
+      "Show": [
+        "Afișare"
+      ],
+      "Reset credentials": [
+        "Resetare acreditări"
+      ],
+      "Copy": [
+        "Copiere"
+      ],
+      "Download all configurations": [
+        "Descărcare toate configurațiile"
+      ],
+      "Get ProtonVPN Plus": [
+        "Obțineți „ProtonVPN Plus”"
+      ],
       "enable desktop notifications": [
         "activare notificări pe desktop"
       ],
@@ -584,12 +590,6 @@
       ],
       "Disable recovery phrase": [
         "Dezactivare fraze de recuperare"
-      ],
-      "Save address": [
-        "Salvare adresă"
-      ],
-      "activate": [
-        "activare"
       ],
       "Revoke all other sessions": [
         "Deconectare alte sesiuni"
@@ -659,6 +659,12 @@
       ],
       "Activate organization key": [
         "Activare chei organizație"
+      ],
+      "Save address": [
+        "Salvare adresă"
+      ],
+      "activate": [
+        "activare"
       ],
       "View invoice": [
         "Afișare factură"
@@ -815,11 +821,11 @@
       "yourdomain.com": [
         "domeniuldvs.com"
       ],
-      "e.g. Julia Smith": [
-        "ex: Iulia Sandu"
-      ],
       "Type text or keyword": [
         "Scrieți un text sau cuvânt cheie"
+      ],
+      "e.g. Julia Smith": [
+        "ex: Iulia Sandu"
       ],
       "OS name": [
         "Sistem de operare"
@@ -841,6 +847,9 @@
       ],
       "Browser version": [
         "Versiune navigator"
+      ],
+      "Select a reason": [
+        "Selectați un motiv"
       ],
       "Feedback": [
         "Feedback"
@@ -866,14 +875,14 @@
       "Confirm": [
         "Confirmare"
       ],
+      "Choose a name": [
+        "Alegeți un nume"
+      ],
       "Choose display name": [
         "Alegere nume afișat"
       ],
       "Choose address": [
         "Alegere adresă"
-      ],
-      "Choose a name": [
-        "Alegeți un nume"
       ],
       "Username": [
         "Nume utilizator"
@@ -952,9 +961,6 @@
       "Invalid name": [
         "Nume nevalid"
       ],
-      "Automatic replies is a paid feature. Please upgrade to a paid account to use this feature.": [
-        "Răspunsurile automate sunt o caracteristică plătită. Treceți la un cont cu plată pentru a utiliza această caracteristică."
-      ],
       "Name required": [
         "Numele este obligatoriu"
       ],
@@ -962,6 +968,9 @@
         "Nu s-a găsit o adresă de e-mail validă."
       ],
       "Primary address key is not decrypted.": [
+        "Cheia primară a adresei nu este decriptată."
+      ],
+      "Primary address key is not decrypted": [
         "Cheia primară a adresei nu este decriptată."
       ],
       "Incorrect password": [
@@ -976,11 +985,11 @@
       "Uploaded files are not valid private keys. Please verify and try again.": [
         "Fișierele încărcate nu sunt chei private valide. Verificați și reîncercați."
       ],
-      "Primary address key is not decrypted": [
-        "Cheia primară a adresei nu este decriptată."
-      ],
       "Invalid private key file": [
         "Fișier cheie privată nevalid"
+      ],
+      "Automatic replies is a paid feature. Please upgrade to a paid account to use this feature.": [
+        "Răspunsurile automate sunt o caracteristică plătită. Treceți la un cont cu plată pentru a utiliza această caracteristică."
       ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "Am oprit semnarea cu DKIM din cauza problemelor cu configurația DNS. Urmați instrucțiunile de mai jos pentru a relua semnarea."
@@ -1090,18 +1099,6 @@
       "Wrong recovery phrase. Try again or use another recovery method.": [
         "Frază de recuperare greșită. Încercați din nou sau utilizați o altă metodă de recuperare."
       ],
-      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Addresses > Short domain (pm.me)": [
-        "Aveți numele de utilizator ${ Local }. Pentru a crea ${ Local }@${ Domain }, accesați Setări > Adrese > Domeniu scurt (pm.me)"
-      ],
-      "The organization key must be activated first.": [
-        "Cheia organizației trebuie mai întâi activată."
-      ],
-      "Error": [
-        "Eroare"
-      ],
-      "Organization key is not decrypted.": [
-        "Cheia organizației nu este decriptată."
-      ],
       "Payments are currently not available, please try again later": [
         "Plățile nu sunt disponibile acum, reîncercați mai târziu."
       ],
@@ -1123,11 +1120,23 @@
       "You must privatize all users before generating new organization keys": [
         "Trebuie să faceți privați toți utilizatorii înainte de a genera noi chei pentru organizație."
       ],
+      "Organization key is not decrypted.": [
+        "Cheia organizației nu este decriptată."
+      ],
       "You have lost access to your organization keys. Without restoration you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Ați pierdut accesul la cheile organizației. Fără restaurare nu veți mai putea crea utilizatori noi, adăuga adrese la utilizatorii existenți sau accesa conturile utilizatorilor non-privați."
       ],
       "You must activate your organization keys. Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Trebuie să activați cheile organizației. Fără activare nu veți mai putea crea utilizatori noi, adăuga adrese la utilizatorii existenți sau accesa conturile utilizatorilor non-privați."
+      ],
+      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Addresses > Short domain (pm.me)": [
+        "Aveți numele de utilizator ${ Local }. Pentru a crea ${ Local }@${ Domain }, accesați Setări > Adrese > Domeniu scurt (pm.me)"
+      ],
+      "The organization key must be activated first.": [
+        "Cheia organizației trebuie mai întâi activată."
+      ],
+      "Error": [
+        "Eroare"
       ],
       "Permission denied, administrator privileges have been restricted.": [
         "Permisiune refuzată, drepturile de administrator au fost restricționate."
@@ -1204,18 +1213,6 @@
       "Not a valid number": [
         "Nu este un număr valid"
       ],
-      "Missing signature": [
-        "Semnătură lipsă"
-      ],
-      "Contact signature not verified": [
-        "Semnătura contactului nu a fost verificată."
-      ],
-      "Signature not verified": [
-        "Semnătură neverificată."
-      ],
-      "Request timed out.": [
-        "Solicitarea a expirat."
-      ],
       "Signature verification failed": [
         "Eșuare verificare semnătură"
       ],
@@ -1230,6 +1227,18 @@
       ],
       "Calendar primary private key is not decrypted": [
         "Cheia privată primară a calendarului nu este decriptată"
+      ],
+      "Missing signature": [
+        "Semnătură lipsă"
+      ],
+      "Contact signature not verified": [
+        "Semnătura contactului nu a fost verificată."
+      ],
+      "Signature not verified": [
+        "Semnătură neverificată."
+      ],
+      "Request timed out.": [
+        "Solicitarea a expirat."
       ],
       "The session has expired. Please sign in again.": [
         "Sesiunea a expirat. Reconectați-vă."
@@ -1256,6 +1265,30 @@
       ],
       "Do not ask again": [
         "Nu mă mai întreba"
+      ],
+      "Inbox": [
+        "Primite"
+      ],
+      "Composer": [
+        "Compunere mesaje"
+      ],
+      "Density": [
+        "Densitate"
+      ],
+      "Use sticky labels": [
+        "Folosire etichete permanente"
+      ],
+      "Conversation grouping": [
+        "Grupare conversații"
+      ],
+      "Composer mode": [
+        "Editor de mesaje"
+      ],
+      "Composer text direction": [
+        "Direcție redactare text"
+      ],
+      "Composer default font/size": [
+        "Marime/tip font implicit editor mesaje"
       ],
       "From: ${ fromEmailAddress }": [
         "De la: ${ fromEmailAddress }"
@@ -1325,87 +1358,6 @@
       ],
       "Automatically save contacts": [
         "Salvare automată contacte"
-      ],
-      "Inbox": [
-        "Primite"
-      ],
-      "Composer": [
-        "Compunere mesaje"
-      ],
-      "Density": [
-        "Densitate"
-      ],
-      "Use sticky labels": [
-        "Folosire etichete permanente"
-      ],
-      "Conversation grouping": [
-        "Grupare conversații"
-      ],
-      "Composer mode": [
-        "Editor de mesaje"
-      ],
-      "Composer text direction": [
-        "Direcție redactare text"
-      ],
-      "Composer default font/size": [
-        "Marime/tip font implicit editor mesaje"
-      ],
-      "OpenVPN / IKEv2 username": [
-        "Nume utilizator OpenVPN/IKEv2"
-      ],
-      "OpenVPN / IKEv2 password": [
-        "Parola OpenVPN/IKEv2"
-      ],
-      "Timezone": [
-        "Fus orar"
-      ],
-      "Days of the week": [
-        "Ziua săptămânii"
-      ],
-      "Duration": [
-        "Durata"
-      ],
-      "Start day of month": [
-        "Prima zi a lunii"
-      ],
-      "Start time": [
-        "Timp activare"
-      ],
-      "End day of month": [
-        "Ultima zi a lunii"
-      ],
-      "End time": [
-        "Timp oprire"
-      ],
-      "Start weekday": [
-        "Prima zi din săptămână"
-      ],
-      "End weekday": [
-        "Ultima zi din săptămână"
-      ],
-      "Start date": [
-        "Dată început"
-      ],
-      "End date": [
-        "Data sfârșit"
-      ],
-      "Message": [
-        "Mesaj"
-      ],
-      "Auto reply": [
-        "Auto răspuns"
-      ],
-      "Prompt to trust keys": [
-        "Solicitare chei de încredere"
-      ],
-      "Sign external messages": [
-        "Semnare mesaje externe"
-      ],
-      "Attach public key": [
-        "Atașare cheie publică"
-      ],
-      "Default PGP settings": [
-        "Setări PGP implicite"
       ],
       "Name": [
         "Nume"
@@ -1482,6 +1434,57 @@
       "Please select files to upload": [
         "Selectați fișierele de încărcat"
       ],
+      "Timezone": [
+        "Fus orar"
+      ],
+      "Days of the week": [
+        "Ziua săptămânii"
+      ],
+      "Duration": [
+        "Durata"
+      ],
+      "Start day of month": [
+        "Prima zi a lunii"
+      ],
+      "Start time": [
+        "Timp activare"
+      ],
+      "End day of month": [
+        "Ultima zi a lunii"
+      ],
+      "End time": [
+        "Timp oprire"
+      ],
+      "Start weekday": [
+        "Prima zi din săptămână"
+      ],
+      "End weekday": [
+        "Ultima zi din săptămână"
+      ],
+      "Start date": [
+        "Dată început"
+      ],
+      "End date": [
+        "Data sfârșit"
+      ],
+      "Message": [
+        "Mesaj"
+      ],
+      "Auto reply": [
+        "Auto răspuns"
+      ],
+      "Prompt to trust keys": [
+        "Solicitare chei de încredere"
+      ],
+      "Sign external messages": [
+        "Semnare mesaje externe"
+      ],
+      "Attach public key": [
+        "Atașare cheie publică"
+      ],
+      "Default PGP settings": [
+        "Setări PGP implicite"
+      ],
       "Domain name": [
         "Nume domeniu"
       ],
@@ -1496,9 +1499,6 @@
       ],
       "Here is a basic DMARC record that does nothing except email you reports.": [
         "Aici este o simplă înregistrare DMARC care doar vă trimite rapoarte pe e-mail."
-      ],
-      "Display name": [
-        "Nume afișat"
       ],
       "Filter Name": [
         "Nume filtru"
@@ -1605,6 +1605,21 @@
       "Want to add": [
         "Doriți să adăugați"
       ],
+      "Display name": [
+        "Nume afișat"
+      ],
+      "Folder location": [
+        "Amplasare folder"
+      ],
+      "Notification": [
+        "Notificare"
+      ],
+      "Use folder colors": [
+        "Folosire culori folder"
+      ],
+      "Inherit color from parent folder": [
+        "Moştenire culoare de la folderul părinte"
+      ],
       "Operating system": [
         "Sistem de operare"
       ],
@@ -1632,18 +1647,6 @@
       "Browser version": [
         "Versiune navigator"
       ],
-      "Folder location": [
-        "Amplasare folder"
-      ],
-      "Notification": [
-        "Notificare"
-      ],
-      "Use folder colors": [
-        "Folosire culori folder"
-      ],
-      "Inherit color from parent folder": [
-        "Moştenire culoare de la folderul părinte"
-      ],
       "${ n } VPN connection available": [
         "O conexiune VPN disponibilă",
         "${ n } conexiuni VPN disponibile",
@@ -1667,20 +1670,23 @@
       "Using ${ humanUsedSpace } of ${ humanMaxSpace }": [
         "Utilizare ${ humanUsedSpace } din ${ humanMaxSpace }"
       ],
+      "Could you please specify?": [
+        "Puteți să precizați?"
+      ],
+      "Could you please specify which streaming service?": [
+        "Ați putea preciza ce serviciu de trasmisie în flux?"
+      ],
+      "Could you please let us know which provider?": [
+        "Ați putea să ne spuneți care furnizor?"
+      ],
       "What is the main reason you are cancelling?": [
         "Care este principalul motiv pentru care anulați?"
       ],
-      "How likely are you to recommend ${ BRAND_NAME } to others?": [
-        "Cât de probabil este să recomandați ${ BRAND_NAME } unui prieten?"
+      "Do you have any suggestions for our team?": [
+        "Aveți sugestii pentru echipa noastră?"
       ],
-      "0 - Not at all likely": [
-        "0 - Puțin probabil"
-      ],
-      "10 - Extremely likely": [
-        "10 - Extrem de probabil"
-      ],
-      "How do you think we could improve our products or service in the future?": [
-        "Cum credeți că am putea să ne îmbunătățim produsele sau serviciile în viitor?"
+      "Optional": [
+        "Opțional"
       ],
       "Total (${ countdown })": [
         "Total (${ countdown })"
@@ -1745,20 +1751,11 @@
       "Select a method": [
         "Selectați metoda"
       ],
-      "Auto-load remote content": [
-        "Autoîncărcare conținut extern"
+      "OpenVPN / IKEv2 username": [
+        "Nume utilizator OpenVPN/IKEv2"
       ],
-      "Auto-load embedded images": [
-        "Autoîncărcare imagini încorporate"
-      ],
-      "Keep messages in Sent/Drafts": [
-        "Păstrare mesaje în «Ciorne»/«Trimise»"
-      ],
-      "Link confirmation": [
-        "Legătură de confirmare"
-      ],
-      "Undo send": [
-        "Anulare trimitere"
+      "OpenVPN / IKEv2 password": [
+        "Parola OpenVPN/IKEv2"
       ],
       "Your password (admin)": [
         "Parola dvs. (administrator)"
@@ -1838,9 +1835,6 @@
       "Allow recovery by recovery phrase": [
         "Permitere recuperare prin fraza de recuperare"
       ],
-      "Keyboard shortcuts": [
-        "Combinații de taste"
-      ],
       "Recovery phrase": [
         "Fraza de recuperare"
       ],
@@ -1849,18 +1843,6 @@
       ],
       "Recovery phrase contains 12 words": [
         "Fraza de recuperare conține 12 cuvinte"
-      ],
-      "Signature": [
-        "Semnătura"
-      ],
-      "ProtonMail footer": [
-        "Subsol ProtonMail"
-      ],
-      "User": [
-        "Utilizator"
-      ],
-      "Address": [
-        "Adresa"
       ],
       "Cash": [
         "Numerar"
@@ -1900,6 +1882,42 @@
       ],
       "Confirm organization password": [
         "Confirmare parolă organizație"
+      ],
+      "Confirm before loading remote content": [
+        "Confirmați înainte de a încărca conținutul de la distanță"
+      ],
+      "Auto-load embedded images": [
+        "Autoîncărcare imagini încorporate"
+      ],
+      "Keep messages in Sent/Drafts": [
+        "Păstrare mesaje în «Ciorne»/«Trimise»"
+      ],
+      "Link confirmation": [
+        "Legătură de confirmare"
+      ],
+      "Undo send": [
+        "Anulare trimitere"
+      ],
+      "Protect against email tracking": [
+        "Protejați-vă împotriva urmăririi e-mailurilor"
+      ],
+      "Protection mode": [
+        "Mod de protecție"
+      ],
+      "Keyboard shortcuts": [
+        "Combinații de taste"
+      ],
+      "Signature": [
+        "Semnătura"
+      ],
+      "ProtonMail footer": [
+        "Subsol ProtonMail"
+      ],
+      "User": [
+        "Utilizator"
+      ],
+      "Address": [
+        "Adresa"
       ],
       "VPN connections": [
         "Conexiuni VPN"
@@ -1966,9 +1984,6 @@
       "Open actions dropdown": [
         "Deschidere meniu acțiuni"
       ],
-      "Keyboard Shortcuts": [
-        "Combinații de taste"
-      ],
       "Previous": [
         "Anterioară"
       ],
@@ -1977,6 +1992,9 @@
       ],
       "Next": [
         "Următoare"
+      ],
+      "Keyboard Shortcuts": [
+        "Combinații de taste"
       ],
       "What's new": [
         "Ce este nou"
@@ -2028,21 +2046,6 @@
       ],
       "Import contacts": [
         "Importare contacte"
-      ],
-      "1. Select platform": [
-        "1. Selectați platforma"
-      ],
-      "2. Select protocol": [
-        "2. Selectați protocolul"
-      ],
-      "3. Select config file and download": [
-        "3. Selectați fișierul de configurare și descărcați-l"
-      ],
-      "Get ProtonVPN Plus to access all servers": [
-        "Obțineți „ProtonVPN Plus” pentru a accesa toate serverele"
-      ],
-      "Automatically sign outgoing messages?": [
-        "Semnare automată mesaje trimise?"
       ],
       "Error": [
         "Eroare"
@@ -2104,6 +2107,9 @@
       "Import key": [
         "Importare cheie"
       ],
+      "Automatically sign outgoing messages?": [
+        "Semnare automată mesaje trimise?"
+      ],
       "Edit domain": [
         "Editare domeniu"
       ],
@@ -2158,9 +2164,6 @@
       "Edit Allow List": [
         "Editare adrese permise"
       ],
-      "Report a problem": [
-        "Raportare problemă"
-      ],
       "Delete ${ Name } folder": [
         "Ștergere folder ${ Name }"
       ],
@@ -2173,14 +2176,17 @@
       "Sort labels alphabetically": [
         "Sortare alfabetică etichete"
       ],
+      "Report a problem": [
+        "Raportare problemă"
+      ],
       "Confirm loss of Proton bonuses": [
         "Confirmare pierdere bonusuri Proton"
       ],
       "Processing": [
         "Se procesează"
       ],
-      "Cancel subscription": [
-        "Anulare abonament"
+      "Downgrade account": [
+        "Retrogradare cont"
       ],
       "Network error": [
         "Eroare de rețea"
@@ -2275,6 +2281,18 @@
       "Plan summary": [
         "Sumar planuri"
       ],
+      "1. Select platform": [
+        "1. Selectați platforma"
+      ],
+      "2. Select protocol": [
+        "2. Selectați protocolul"
+      ],
+      "3. Select config file and download": [
+        "3. Selectați fișierul de configurare și descărcați-l"
+      ],
+      "Get ProtonVPN Plus to access all servers": [
+        "Obțineți „ProtonVPN Plus” pentru a accesa toate serverele"
+      ],
       "Change password for ${ Name } (${ Email })": [
         "Schimbare parolă pentru ${ Name } (${ Email })"
       ],
@@ -2313,21 +2331,6 @@
       ],
       "Confirm phone number": [
         "Confirmați numărul de telefon"
-      ],
-      "${ appName } Keyboard Shortcuts": [
-        "Combinații de taste ${ appName }"
-      ],
-      "Add address": [
-        "Adăugare adresă"
-      ],
-      "Delete ${ address.Email }": [
-        "Ștergere ${ address.Email }"
-      ],
-      "Generate missing keys": [
-        "Generare chei lipsă"
-      ],
-      "Bridge for ${ platform }": [
-        "Bridge pentru ${ platform }"
       ],
       "App": [
         "Aplicație"
@@ -2392,6 +2395,18 @@
       "Change organization password": [
         "Schimbare parolă organizație"
       ],
+      "${ appName } Keyboard Shortcuts": [
+        "Combinații de taste ${ appName }"
+      ],
+      "Add address": [
+        "Adăugare adresă"
+      ],
+      "Delete ${ address.Email }": [
+        "Ștergere ${ address.Email }"
+      ],
+      "Generate missing keys": [
+        "Generare chei lipsă"
+      ],
       "Change role": [
         "Schimbare rol"
       ],
@@ -2403,6 +2418,9 @@
       ],
       "Add user": [
         "Adăugare utilizator"
+      ],
+      "Bridge for ${ platform }": [
+        "Bridge pentru ${ platform }"
       ],
       "Sign in again to continue": [
         "Reconectați-vă pentru a continua"
@@ -2419,26 +2437,11 @@
       "Account suspended": [
         "Cont suspendat"
       ],
-      "General": [
-        "Generale"
+      "Appearance": [
+        "Aspect"
       ],
       "Theme": [
         "Tema"
-      ],
-      "Contacts": [
-        "Contacte"
-      ],
-      "Import & export": [
-        "Importare și exportare"
-      ],
-      "Import": [
-        "Importare"
-      ],
-      "Export": [
-        "Exportare"
-      ],
-      "Appearance": [
-        "Aspect"
       ],
       "Layout": [
         "Aspect"
@@ -2488,6 +2491,12 @@
       "Labels": [
         "Etichete"
       ],
+      "Import Assistant": [
+        "Asistent importare"
+      ],
+      "General": [
+        "Generale"
+      ],
       "Short domain (@pm.me)": [
         "Domeniu scurt (@pm.me)"
       ],
@@ -2496,6 +2505,9 @@
       ],
       "Advanced": [
         "Avansat"
+      ],
+      "Spy Tracker Protection": [
+        "Protecție împotriva trackerilor de spionaj"
       ],
       "Identity & addresses": [
         "Identitate și adrese"
@@ -2512,14 +2524,38 @@
       "ProtonMail Bridge": [
         "ProtonMail Bridge"
       ],
-      "Import Assistant": [
-        "Asistent importare"
+      "Import & export": [
+        "Importare și exportare"
       ],
       "Current & past imports": [
         "Importări actuale și anterioare"
       ],
       "Import-Export app": [
         "Aplicația „Import-Export”"
+      ],
+      "Email privacy": [
+        "Confidențialitatea e-mailului"
+      ],
+      "Contacts": [
+        "Contacte"
+      ],
+      "Import": [
+        "Importare"
+      ],
+      "Export": [
+        "Exportare"
+      ],
+      "My calendars": [
+        "Calendarele mele"
+      ],
+      "Subscribed calendars": [
+        "Calendare abonate"
+      ],
+      "Share outside Proton": [
+        "Partajare în afara Proton"
+      ],
+      "Time zone": [
+        "Fus orar"
       ],
       "VPN apps": [
         "Aplicații VPN"
@@ -2535,18 +2571,6 @@
       ],
       "OpenVPN configuration files": [
         "Fișiere de configurare OpenVPN"
-      ],
-      "My calendars": [
-        "Calendarele mele"
-      ],
-      "Subscribed calendars": [
-        "Calendare abonate"
-      ],
-      "Share outside Proton": [
-        "Partajare în afara Proton"
-      ],
-      "Time zone": [
-        "Fus orar"
       ],
       "Password & recovery": [
         "Parolă și recuperare"
@@ -2769,9 +2793,6 @@
       "Plain text": [
         "Text simplu"
       ],
-      "No results found": [
-        "Nu s-au găsit rezultate"
-      ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Această legătură ar putea fi un atac omoglific (caractere asemănătoare dar cu cod diferit de caracter) și nu poate fi deschisă de către navigatoarele Internet Explorer și Edge. Dacă aveţi siguranţa că legătura este legitimă, folosiți un alt navigator pentru a o deschide."
       ],
@@ -2784,11 +2805,14 @@
       "Learn more": [
         "Detalii"
       ],
+      "Week": [
+        "Săptămâna"
+      ],
       "Drop the file here to upload": [
         "Plasați fișierul aici pentru a fi încărcat."
       ],
-      "Week": [
-        "Săptămâna"
+      "No results found": [
+        "Nu s-au găsit rezultate"
       ],
       "Loading": [
         "Se încarcă"
@@ -2935,115 +2959,6 @@
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "Aplicația trebuie să decripteze local contactele înainte de a putea fi exportate. La sfârșitul procesului, va fi generat un fișier VCF pe care îl veți putea descărca."
       ],
-      "To secure your internet connection, download and install the ProtonVPN application for your device and connect to a ProtonVPN server.": [
-        "Pentru a vă securiza conexiunea la internet, descărcați și instalați aplicația ProtonVPN pentru propriul dispozitiv și conectați-vă la un server ProtonVPN."
-      ],
-      "You can use the following credentials to connect to a ProtonVPN server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
-        "Puteți utiliza următoarele acreditări pentru a vă conecta la un server ProtonVPN folosind o terță parte, aplicație VPN cu sursă publică, cum ar fi Tunnelblick pentru macOS sau OpenVPN pentru GNU/Linux."
-      ],
-      "Learn how to log in to ProtonVPN with third-party VPN applications.": [
-        "Aflați cum să vă conectați la ProtonVPN cu aplicații VPN terțe."
-      ],
-      "We advise you to use official ProtonVPN applications when possible.": [
-        "Vă sfătuim să utilizați aplicațiile ProtonVPN oficiale atunci când este posibil."
-      ],
-      "You cannot use the OpenVPN / IKEv2 credentials to log in to ProtonVPN applications or the ProtonVPN dashboard. ${ learnMore }": [
-        "Nu puteți utiliza acreditările OpenVPN / IKEv2 pentru a vă conecta la aplicațiile ProtonVPN sau la panoul general al ProtonVPN. ${ learnMore }"
-      ],
-      "Use the following credentials when connecting to ProtonVPN servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
-        "Utilizați următoarele acreditări atunci când vă conectați la serverele ProtonVPN fără aplicație. Exemplele de utilizare includ: Tunnelblick pe macOS, OpenVPN pe GNU/Linux."
-      ],
-      "Do not use the OpenVPN / IKEv2 credentials in ProtonVPN applications or on the ProtonVPN dashboard. ${ learnMore }": [
-        "Nu utilizați credențialele OpenVPN/IKEv2 în aplicațiile ProtonVPN sau pe panoul general al ProtonVPN. ${ learnMore }"
-      ],
-      "Server load": [
-        "Încărcare server"
-      ],
-      "Server is currently down": [
-        "Serverul este în prezent inactiv"
-      ],
-      "P2P": [
-        "P2P"
-      ],
-      "Tor": [
-        "Tor"
-      ],
-      "Plus or Visionary subscription required": [
-        "Este necesar abonamentul „Plus” sau „Visionary”"
-      ],
-      "Basic, Plus or Visionary subscription required": [
-        "Este necesar abonamentul „Basic”,„Plus” sau „Visionary”"
-      ],
-      "${ number } server": [
-        "Un server",
-        "${ number } servere",
-        "${ number } de servere"
-      ],
-      "${ number } city": [
-        "Un oraș",
-        "${ number } orașe",
-        "${ number } de orașe"
-      ],
-      "These configuration files let you choose which ProtonVPN server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
-        "Aceste fișiere de configurare vă permit să alegeți la care server ProtonVPN vă conectați atunci când utilizați o aplicație VPN terță sau când configurați o conexiune VPN pe un ruter."
-      ],
-      "Install a Secure Core configuration file to benefit from an additional protection against VPN endpoint compromise.": [
-        "Instalați un fișier de configurare a „Secure Core” pentru a beneficia de o protecție suplimentară împotriva compromiterii VPN-ului final."
-      ],
-      "ProtonVPN Plus or Visionary required for Secure Core feature.": [
-        "Trebuie să aveți „ProtonVPN Plus” sau „Visionary” pentru funcția „Secure Core”."
-      ],
-      "Install a Country configuration file to connect to a random server in the country of your choice.": [
-        "Instalați un fișier de configurare al țării pentru a vă conecta la un server aleatoriu din țara aleasă."
-      ],
-      "ProtonVPN Basic, Plus or Visionary required for Country level connection.": [
-        "Trebuie să aveți „ProtonVPN Basic”, „Plus” sau „Visionary” pentru conexiunea la nivel de țară."
-      ],
-      "Install a Server configuration file to connect to a specific server in the country of your choice.": [
-        "Instalați un fișier de configurare al serverului pentru a vă conecta la un server din țara aleasă."
-      ],
-      "Install a Free server configuration file to connect to a specific server in one of the three free locations.": [
-        "Instalați un fișier de configurare al serverului gratuit pentru a vă conecta la un server specific într-unul din cele trei locuri gratuite."
-      ],
-      "Plan upgrade required": [
-        "Trebuie trecut la alt plan"
-      ],
-      "Auto-reply is active each month between the selected start and end time.": [
-        "Răspunsul automat este activ în fiecare lună între data de activare și de dezactivare."
-      ],
-      "Auto-reply is always active on the days of the week you select, between the selected hours.": [
-        "Autorăspunsul este activ întotdeauna în zilele selectate ale săptămânii, între orele stabilite."
-      ],
-      "Auto-reply is active each week between the selected start and end time.": [
-        "Răspunsul automat este activ săptămânal între data de activare și de dezactivare."
-      ],
-      "Auto-reply is active until you turn it off.": [
-        "Autorăspunsul este activ până când îl dezactivați."
-      ],
-      "Auto-reply is active from the start time to the end time.": [
-        "Autorăspunsul este activ între ora de activare și ora de dezactivare."
-      ],
-      "Images have been removed because they are not allowed in auto-reply.": [
-        "Imaginile au fost eliminate deoarece nu sunt permise în răspunsurile automate."
-      ],
-      "Use automatic replies to inform contacts you are out of the office or otherwise unable to respond.": [
-        "Utilizați răspunsurile automate pentru a informa persoanele de contact că nu sunteți la birou sau că nu puteți răspunde."
-      ],
-      "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to enable automatic replies for when you are out of the office.": [
-        "Treceți la un plan ${ PLAN_NAMES[PLANS.VISIONARY] } sau ${ PLAN_NAMES[PLANS.PROFESSIONAL] } pentru a activa răspunsurile automate atunci când nu aveţi acces la e-mail."
-      ],
-      "Address verification is an advanced security feature. Only turn this on if you know what it does.": [
-        "Verificarea adresei este o funcție avansată de securitate. Activați-o doar dacă știți la ce se referă."
-      ],
-      "Encryption setting updated": [
-        "Setări criptare actualizate"
-      ],
-      "PGP clients are more likely to automatically detect your PGP keys if outgoing messages are signed.": [
-        "Clienții PGP probabil vor detecta automat cheile PGP dacă mesajele trimise sunt semnate."
-      ],
-      "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
-        "Schimbați aceste setări doar dacă utilizați PGP cu destinatari non-ProtonMail."
-      ],
       "Are you sure you want to delete this calendar?": [
         "Sunteți sigur că doriți ștergerea acestui calendar?"
       ],
@@ -3163,6 +3078,42 @@
       "No contact encryption keys exist": [
         "Nu există chei de criptare contacte"
       ],
+      "Auto-reply is active each month between the selected start and end time.": [
+        "Răspunsul automat este activ în fiecare lună între data de activare și de dezactivare."
+      ],
+      "Auto-reply is always active on the days of the week you select, between the selected hours.": [
+        "Autorăspunsul este activ întotdeauna în zilele selectate ale săptămânii, între orele stabilite."
+      ],
+      "Auto-reply is active each week between the selected start and end time.": [
+        "Răspunsul automat este activ săptămânal între data de activare și de dezactivare."
+      ],
+      "Auto-reply is active until you turn it off.": [
+        "Autorăspunsul este activ până când îl dezactivați."
+      ],
+      "Auto-reply is active from the start time to the end time.": [
+        "Autorăspunsul este activ între ora de activare și ora de dezactivare."
+      ],
+      "Images have been removed because they are not allowed in auto-reply.": [
+        "Imaginile au fost eliminate deoarece nu sunt permise în răspunsurile automate."
+      ],
+      "Use automatic replies to inform contacts you are out of the office or otherwise unable to respond.": [
+        "Utilizați răspunsurile automate pentru a informa persoanele de contact că nu sunteți la birou sau că nu puteți răspunde."
+      ],
+      "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to enable automatic replies for when you are out of the office.": [
+        "Treceți la un plan ${ PLAN_NAMES[PLANS.VISIONARY] } sau ${ PLAN_NAMES[PLANS.PROFESSIONAL] } pentru a activa răspunsurile automate atunci când nu aveţi acces la e-mail."
+      ],
+      "Address verification is an advanced security feature. Only turn this on if you know what it does.": [
+        "Verificarea adresei este o funcție avansată de securitate. Activați-o doar dacă știți la ce se referă."
+      ],
+      "Encryption setting updated": [
+        "Setări criptare actualizate"
+      ],
+      "PGP clients are more likely to automatically detect your PGP keys if outgoing messages are signed.": [
+        "Clienții PGP probabil vor detecta automat cheile PGP dacă mesajele trimise sunt semnate."
+      ],
+      "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
+        "Schimbați aceste setări doar dacă utilizați PGP cu destinatari non-ProtonMail."
+      ],
       "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ProtonMail in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
         "SPF este folosit pentru a stabili cui îi este permis să trimită mesaje pentru domeniu astfel încât vă recomandăm includerea ProtonMail în înregistrarea SPF. Adăugați următoarea înregistrare TXT în DNS. Această operație poate fi realizată din panoul de control al celui care v-a înregistrat domeniul."
       ],
@@ -3254,12 +3205,6 @@
       "Your Block List is empty.": [
         "Lista de adrese blocate este goală."
       ],
-      "Screenshot(s) attached": [
-        "Capturi de ecran adăugate"
-      ],
-      "Refreshing the page or ${ link } will automatically resolve most issues.": [
-        "Reîmprospătând pagina sau ${ link } veți rezolva majoritatea problemelor."
-      ],
       "Inherited from parent folder": [
         "Moştenit de la folderul părinte"
       ],
@@ -3280,6 +3225,12 @@
       ],
       "Are you sure you want to delete this folder?": [
         "Sigur doriți să ștergeți acest folder?"
+      ],
+      "Screenshot(s) attached": [
+        "Capturi de ecran adăugate"
+      ],
+      "Refreshing the page or ${ link } will automatically resolve most issues.": [
+        "Reîmprospătând pagina sau ${ link } veți rezolva majoritatea problemelor."
       ],
       "More Info": [
         "Detalii"
@@ -3328,6 +3279,9 @@
       "No subscription yet": [
         "Fără abonament"
       ],
+      "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
+        "Prin retrogradare veți pierde următoarele beneficii. Sigur doriți să continuați?"
+      ],
       "You already have a free account": [
         "Deja aveți un cont gratuit"
       ],
@@ -3345,12 +3299,6 @@
       ],
       "* Customizable features": [
         "* Funcții personalizabile"
-      ],
-      "Access your streaming services, like ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, no matter where you are.": [
-        "Accesați serviciile de trasmisie în flux, cum ar fi ${ netflix }, ${ disney }, ${ primeVideo }, ${ many } oriunde v-ați afla."
-      ],
-      "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
-        "Accesați conținutul blocat, cum ar fi platformele de comunicare socială, știri, Wikipedia, YouTube și multe altele, indiferent unde vă aflați."
       ],
       "For getting started with private and secure emailing.": [
         "Pentru a folosi e-mailuri private și securizate."
@@ -3375,6 +3323,12 @@
       ],
       "For families and small teams; includes both Mail and VPN.": [
         "Pentru familii şi echipe mici; include atât e-mail cât şi VPN."
+      ],
+      "Access your streaming services, like ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, no matter where you are.": [
+        "Accesați serviciile de trasmisie în flux, cum ar fi ${ netflix }, ${ disney }, ${ primeVideo }, ${ many } oriunde v-ați afla."
+      ],
+      "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
+        "Accesați conținutul blocat, cum ar fi platformele de comunicare socială, știri, Wikipedia, YouTube și multe altele, indiferent unde vă aflați."
       ],
       "Save 20%": [
         "Economisiți 20%"
@@ -3567,6 +3521,79 @@
       "30 days money-back guarantee.": [
         "Banii înapoi în 30 de zile garantat."
       ],
+      "To secure your internet connection, download and install the ProtonVPN application for your device and connect to a ProtonVPN server.": [
+        "Pentru a vă securiza conexiunea la internet, descărcați și instalați aplicația ProtonVPN pentru propriul dispozitiv și conectați-vă la un server ProtonVPN."
+      ],
+      "You can use the following credentials to connect to a ProtonVPN server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
+        "Puteți utiliza următoarele acreditări pentru a vă conecta la un server ProtonVPN folosind o terță parte, aplicație VPN cu sursă publică, cum ar fi Tunnelblick pentru macOS sau OpenVPN pentru GNU/Linux."
+      ],
+      "Learn how to log in to ProtonVPN with third-party VPN applications.": [
+        "Aflați cum să vă conectați la ProtonVPN cu aplicații VPN terțe."
+      ],
+      "We advise you to use official ProtonVPN applications when possible.": [
+        "Vă sfătuim să utilizați aplicațiile ProtonVPN oficiale atunci când este posibil."
+      ],
+      "You cannot use the OpenVPN / IKEv2 credentials to log in to ProtonVPN applications or the ProtonVPN dashboard. ${ learnMore }": [
+        "Nu puteți utiliza acreditările OpenVPN / IKEv2 pentru a vă conecta la aplicațiile ProtonVPN sau la panoul general al ProtonVPN. ${ learnMore }"
+      ],
+      "Use the following credentials when connecting to ProtonVPN servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
+        "Utilizați următoarele acreditări atunci când vă conectați la serverele ProtonVPN fără aplicație. Exemplele de utilizare includ: Tunnelblick pe macOS, OpenVPN pe GNU/Linux."
+      ],
+      "Do not use the OpenVPN / IKEv2 credentials in ProtonVPN applications or on the ProtonVPN dashboard. ${ learnMore }": [
+        "Nu utilizați credențialele OpenVPN/IKEv2 în aplicațiile ProtonVPN sau pe panoul general al ProtonVPN. ${ learnMore }"
+      ],
+      "Server load": [
+        "Încărcare server"
+      ],
+      "Server is currently down": [
+        "Serverul este în prezent inactiv"
+      ],
+      "P2P": [
+        "P2P"
+      ],
+      "Tor": [
+        "Tor"
+      ],
+      "Plus or Visionary subscription required": [
+        "Este necesar abonamentul „Plus” sau „Visionary”"
+      ],
+      "Basic, Plus or Visionary subscription required": [
+        "Este necesar abonamentul „Basic”,„Plus” sau „Visionary”"
+      ],
+      "${ number } server": [
+        "Un server",
+        "${ number } servere",
+        "${ number } de servere"
+      ],
+      "${ number } city": [
+        "Un oraș",
+        "${ number } orașe",
+        "${ number } de orașe"
+      ],
+      "These configuration files let you choose which ProtonVPN server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
+        "Aceste fișiere de configurare vă permit să alegeți la care server ProtonVPN vă conectați atunci când utilizați o aplicație VPN terță sau când configurați o conexiune VPN pe un ruter."
+      ],
+      "Install a Secure Core configuration file to benefit from an additional protection against VPN endpoint compromise.": [
+        "Instalați un fișier de configurare a „Secure Core” pentru a beneficia de o protecție suplimentară împotriva compromiterii VPN-ului final."
+      ],
+      "ProtonVPN Plus or Visionary required for Secure Core feature.": [
+        "Trebuie să aveți „ProtonVPN Plus” sau „Visionary” pentru funcția „Secure Core”."
+      ],
+      "Install a Country configuration file to connect to a random server in the country of your choice.": [
+        "Instalați un fișier de configurare al țării pentru a vă conecta la un server aleatoriu din țara aleasă."
+      ],
+      "ProtonVPN Basic, Plus or Visionary required for Country level connection.": [
+        "Trebuie să aveți „ProtonVPN Basic”, „Plus” sau „Visionary” pentru conexiunea la nivel de țară."
+      ],
+      "Install a Server configuration file to connect to a specific server in the country of your choice.": [
+        "Instalați un fișier de configurare al serverului pentru a vă conecta la un server din țara aleasă."
+      ],
+      "Install a Free server configuration file to connect to a specific server in one of the three free locations.": [
+        "Instalați un fișier de configurare al serverului gratuit pentru a vă conecta la un server specific într-unul din cele trei locuri gratuite."
+      ],
+      "Plan upgrade required": [
+        "Trebuie trecut la alt plan"
+      ],
       "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
         "Acest cont are cel puțin o factură restantă. Accesul a fost restricționat. ${ payInvoiceLink }"
       ],
@@ -3605,12 +3632,6 @@
       ],
       "Internet connection lost. Please check your device's connectivity.": [
         "Conexiune la internet pierdută. Verificați conexiunea dispozitivului."
-      ],
-      "When disabled, this prevents all files from loading on your device without your knowledge.\t": [
-        "Când este dezactivat, acest lucru împiedică încărcarea fișierelor pe dispozitiv fără acordul dvs."
-      ],
-      "When disabled, this prevents image files from loading on your device without your knowledge.": [
-        "Când este dezactivat, acest lucru împiedică încărcarea imaginilor pe dispozitiv fără acordul dvs."
       ],
       "By leaving now, changes may not be saved": [
         "Dacă ieșiți acum, este posibil ca schimbările să nu fie salvate."
@@ -3720,9 +3741,6 @@
       "Disabling this will prevent your recovery phrase from being used for account recovery.": [
         "Dezactivarea acestei opțiuni va împiedica utilizarea frazei de recuperare pentru recuperarea contului."
       ],
-      "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
-        "Navigarea de bază și acțiunile rămân disponibile indiferent de combinațiile de taste care sunt active sau nu în setări."
-      ],
       "Your recovery phrase is a series of 12 words in a specific order.": [
         "Fraza de recuperare este o serie de 12 cuvinte într-o anumită ordine."
       ],
@@ -3749,33 +3767,6 @@
       ],
       "Recovery phrase has been disabled": [
         "Fraza de recuperare a fost dezactivată."
-      ],
-      "Let your contacts know you care about their privacy.": [
-        "Anunțați persoanele de contact că vă pasă de confidențialitatea lor."
-      ],
-      "Please note that if you delete this address, you will no longer be able to send or receive emails using this address.": [
-        "Dacă ștergeți această adresă, nu veți mai putea trimite sau primi mesaje folosind această adresă."
-      ],
-      "Are you sure you want to delete this address?": [
-        "Sigur doriți ștergerea acestei adrese?"
-      ],
-      "The email address you place at the top of the list is your default email address. Drag and drop to reorder your addresses.": [
-        "Adresa de e-mail pe care o plasați în partea de sus a listei este adresa de e-mail implicită. Pentru a le reordona, trageți și plasați adresele în poziția dorită."
-      ],
-      "Queued": [
-        "În așteptare"
-      ],
-      "Done": [
-        "Gata"
-      ],
-      "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
-        "Înainte de a putea începe trimiterea și primirea de mesaje cu noua adresă va trebui să creați o cheie de criptare pentru ele."
-      ],
-      "You can use ProtonMail with any desktop email client that supports IMAP/SMTP, including Outlook, Apple Mail, and Thunderbird.": [
-        "Puteți folosi ProtonMail cu orice client de e-mail pentru desktop care acceptă IMAP/SMTP, inclusiv Outlook, Apple Mail, și Thunderbird."
-      ],
-      "Upgrade to a paid plan to unlock IMAP/SMTP support through ProtonMail Bridge.": [
-        "Treceți la un plan cu plată pentru a debloca suportul IMAP/SMTP cu ajutorul „ProtonMail Bridge”."
       ],
       "Do you want to revoke all other sessions than the current one?": [
         "Doriți să anulați toate celelalte sesiuni în afară de cea curentă?"
@@ -3891,6 +3882,39 @@
       "Your organization's emails are protected with end-to-end encryption using the organization key. This fingerprint can be used to verify that all administrators in your account have the same key.": [
         "Mesajele organizației sunt protejate la ambele capete folosind cheia organizației. Această amprentă poate fi folosită pentru a verifica dacă toți administratorii din cont au aceeași cheie."
       ],
+      "Prevents remote email content from loading automatically.": [
+        "Împiedică încărcarea automată a conținutului e-mailurilor de la distanță."
+      ],
+      "When disabled, this prevents image files from loading on your device without your knowledge.": [
+        "Când este dezactivat, acest lucru împiedică încărcarea imaginilor pe dispozitiv fără acordul dvs."
+      ],
+      "Prevents senders from knowing whether and when you have opened a message.": [
+        "Împiedică expeditorii să știe dacă și când ați deschis un mesaj."
+      ],
+      "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
+        "Navigarea de bază și acțiunile rămân disponibile indiferent de combinațiile de taste care sunt active sau nu în setări."
+      ],
+      "Let your contacts know you care about their privacy.": [
+        "Anunțați persoanele de contact că vă pasă de confidențialitatea lor."
+      ],
+      "Please note that if you delete this address, you will no longer be able to send or receive emails using this address.": [
+        "Dacă ștergeți această adresă, nu veți mai putea trimite sau primi mesaje folosind această adresă."
+      ],
+      "Are you sure you want to delete this address?": [
+        "Sigur doriți ștergerea acestei adrese?"
+      ],
+      "The email address you place at the top of the list is your default email address. Drag and drop to reorder your addresses.": [
+        "Adresa de e-mail pe care o plasați în partea de sus a listei este adresa de e-mail implicită. Pentru a le reordona, trageți și plasați adresele în poziția dorită."
+      ],
+      "Queued": [
+        "În așteptare"
+      ],
+      "Done": [
+        "Gata"
+      ],
+      "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
+        "Înainte de a putea începe trimiterea și primirea de mesaje cu noua adresă va trebui să creați o cheie de criptare pentru ele."
+      ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Acest utilizator este în prezent responsabil pentru plăţile organizaţiei. Retrogradând acest membru, veți deveni responsabil pentru plăţile organizaţiei."
       ],
@@ -3910,6 +3934,12 @@
       ],
       "more": [
         "mai mult"
+      ],
+      "You can use ProtonMail with any desktop email client that supports IMAP/SMTP, including Outlook, Apple Mail, and Thunderbird.": [
+        "Puteți folosi ProtonMail cu orice client de e-mail pentru desktop care acceptă IMAP/SMTP, inclusiv Outlook, Apple Mail, și Thunderbird."
+      ],
+      "Upgrade to a paid plan to unlock IMAP/SMTP support through ProtonMail Bridge.": [
+        "Treceți la un plan cu plată pentru a debloca suportul IMAP/SMTP cu ajutorul „ProtonMail Bridge”."
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "Contul Proton este momentan suspendat. Pentru a putea să-l utilizați, trebuie să plătiți orice factură restantă."
@@ -3953,15 +3983,6 @@
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Dacă credeți că acest lucru este o eroare, vă rugăm să ne contactați la ${ contactLink }."
       ],
-      "Session timed out.": [
-        "Sesiune expirată."
-      ],
-      "Internet connection lost.": [
-        "Conexiunea la internet s-a întrerupt."
-      ],
-      "Servers are unreachable.": [
-        "Servere sunt inaccesibile."
-      ],
       "Custom daily": [
         "Zilnic personalizat"
       ],
@@ -3985,6 +4006,15 @@
       ],
       "Yearly": [
         "Anual"
+      ],
+      "Session timed out.": [
+        "Sesiune expirată."
+      ],
+      "Internet connection lost.": [
+        "Conexiunea la internet s-a întrerupt."
+      ],
+      "Servers are unreachable.": [
+        "Servere sunt inaccesibile."
       ],
       "Users can't make changes to organization settings. If you need admin privileges, reach out to your system administrator.": [
         "Utilizatorii nu pot face modificări în setările organizației. Dacă doriți drepturi administrative, contactați-vă administratorul de sistem."
@@ -4120,6 +4150,16 @@
         "Implicit"
       ]
     },
+    "Select search results": {
+      "No results found": [
+        "Nu s-au găsit rezultate"
+      ]
+    },
+    "Timezone search placeholder": {
+      "Search timezones": [
+        "Căutare fusuri orare"
+      ]
+    },
     "Storage": {
       "Your current storage:": [
         "Spațiu actual:"
@@ -4135,12 +4175,6 @@
       "Learn more": [
         "Detalii"
       ],
-      "View guide": [
-        "Consultare ghid"
-      ],
-      "What is the difference between UDP and TCP protocols?": [
-        "Care este diferenţa dintre protocoalele UDP şi TCP?"
-      ],
       "Upgrade": [
         "Migrare"
       ],
@@ -4155,6 +4189,12 @@
       ],
       "Add a gift code": [
         "Adăugare cod cadou"
+      ],
+      "View guide": [
+        "Consultare ghid"
+      ],
+      "What is the difference between UDP and TCP protocols?": [
+        "Care este diferenţa dintre protocoalele UDP şi TCP?"
       ],
       "Pay invoice": [
         "Plată factură"
@@ -4199,14 +4239,511 @@
         "Creare cont"
       ]
     },
-    "Select search results": {
-      "No results found": [
-        "Nu s-au găsit rezultate"
+    "Label to change composer mode": {
+      "Normal": [
+        "Normal"
+      ],
+      "Maximized": [
+        "Mărire"
       ]
     },
-    "Timezone search placeholder": {
-      "Search timezones": [
-        "Căutare fusuri orare"
+    "Label to change view layout": {
+      "Column": [
+        "Coloane"
+      ],
+      "Row": [
+        "Rânduri"
+      ]
+    },
+    "Label to change density": {
+      "Comfortable": [
+        "Confortabilă"
+      ],
+      "Compact": [
+        "Compactă"
+      ]
+    },
+    "Success": {
+      "Preference saved": [
+        "Preferințe salvate"
+      ],
+      "Import resumed": [
+        "Importare reluată"
+      ],
+      "Import canceled": [
+        "Importare anulată"
+      ],
+      "Import record deleted": [
+        "Înregistrare importare ștearsă"
+      ],
+      "Deleting original messages": [
+        "Se șterg mesajele originale"
+      ],
+      "Locale updated": [
+        "Limbă actualizată"
+      ],
+      "Premium address created": [
+        "Adresă premium creată"
+      ],
+      "Keyboard shortcuts preferences updated": [
+        "Preferințele combinațiilor de taste au fost actualizate"
+      ],
+      "Calendar added. It might take a few minutes to sync.": [
+        "Calendarul a fost adăugat. Sincronizarea ar putea dura câteva minute."
+      ],
+      "Calendar created": [
+        "Calendar creat"
+      ],
+      "Calendar updated": [
+        "Calendar actualizat"
+      ],
+      "Default calendar updated": [
+        "Calendar implicit actualizat"
+      ],
+      "Calendar removed": [
+        "Calendar eliminat"
+      ],
+      "Auto-reply disabled": [
+        "Autorăspuns dezactivat"
+      ],
+      "Auto-reply updated": [
+        "Autorăspuns actualizat"
+      ],
+      "Verification code copied to clipboard!": [
+        "Codul de verificare a fost copiat în memorie!"
+      ],
+      "SPF value copied to clipboard!": [
+        "Valoare SPF copiată în memorie!"
+      ],
+      "Value copied to clipboard!": [
+        "Valoare copiată în memorie!"
+      ],
+      "DMARC value copied to clipboard!": [
+        "Valoare DMARC copiată în memorie!"
+      ],
+      "Domain verified": [
+        "Domeniu verificat"
+      ],
+      "Catch-all address updated": [
+        "Adresă colectoare actualizată"
+      ],
+      "Email address copied to clipboard": [
+        "Adresa de e-mail a fost copiată în memorie"
+      ],
+      "Bug reported": [
+        "Eroare raportată"
+      ],
+      "You have successfully unsubscribed": [
+        "V-ați dezabonat cu succes"
+      ],
+      "Payment method updated": [
+        "Metodă de plată actualizată"
+      ],
+      "Payment method added": [
+        "Metodă de plată adăugată"
+      ],
+      "Credits added": [
+        "Credite adăugate"
+      ],
+      "Gift code applied": [
+        "Cod cadou aplicat"
+      ],
+      "${ server.Domain } copied in your clipboard": [
+        "${ server.Domain } a fost copiat în memorie"
+      ],
+      "Password updated": [
+        "Parolă actualizată"
+      ],
+      "Account deleted. Logging out...": [
+        "Cont șters. Se deconectează..."
+      ],
+      "Email updated": [
+        "E-mail actualizat"
+      ],
+      "Phone number updated": [
+        "Număr de telefon actualizat"
+      ],
+      "Session revoked": [
+        "Sesiune anulată"
+      ],
+      "Sessions revoked": [
+        "Sesiuni anulate"
+      ],
+      "Payment method deleted": [
+        "Metodă de plată ștearsă"
+      ],
+      "Invoice paid": [
+        "Factură plătită"
+      ],
+      "Invoice customized": [
+        "Factură personalizată"
+      ],
+      "Organization activated": [
+        "Organizație activată"
+      ],
+      "Keys updated": [
+        "Chei actualizate"
+      ],
+      "Address updated": [
+        "Adresă actualizată"
+      ],
+      "Address added": [
+        "Adresă adăugată"
+      ],
+      "User updated": [
+        "Utilizator actualizat"
+      ],
+      "User created": [
+        "Utilizator creat"
+      ],
+      "Code sent to ${ methodTo }": [
+        "Cod trimis la ${ methodTo }"
+      ],
+      "Verification successful": [
+        "Verificare reușită"
+      ],
+      "If you entered a valid recovery email we will send you an email with your usernames in the next minute.": [
+        "Dacă ați introdus un e-mail de recuperare valid veți primi un mesaj cu numele de utilizator în curând."
+      ],
+      "If you entered a valid recovery phone we will send you an sms with your usernames in the next minute.": [
+        "Dacă ați introdus un număr de telefon de recuperare valid veți primi un SMS cu numele de utilizator în curând."
+      ]
+    },
+    "Tooltip": {
+      "Set the default layout for your Inbox.": [
+        "Setare aspect implicit pentru lista de mesaje."
+      ],
+      "Set the default Composer popup size as small or full screen.": [
+        "Setare dimensiune implicită a panoului de compunere mesaje ca micșorat sau complet."
+      ],
+      "When you add a label to a message in a conversation, it will automatically be applied to all future messages you send or receive in that conversation.": [
+        "Când adăugați o etichetă la un mesaj într-o conversație, va fi aplicată automat la toate mesajele viitoare pe care le trimiteți sau le primiți în conversație."
+      ],
+      "Group emails in the same conversation together in your Inbox or display them separately.": [
+        "Grupare mesaje din aceeași conversație sau afișare separată."
+      ],
+      "Customize import to reduce the number of labels": [
+        "Modificare opțiuni de importare pentru a reduce numărul de etichete."
+      ],
+      "Customize import to reduce the number of folders": [
+        "Modificați importarea pentru a reduce numărul folderelor"
+      ],
+      "Edit label names": [
+        "Editare nume etichete"
+      ],
+      "Edit folder names": [
+        "Editare nume foldere"
+      ],
+      "System subfolders will show up as separate folders in ProtonMail": [
+        "Subdosarele de sistem vor fi afișate ca dosare separate în ProtonMail"
+      ],
+      "Each imported email will have this label": [
+        "Fiecare e-mail importat va avea această etichetă."
+      ],
+      "The import will start with the most recent messages.": [
+        "Importarea va începe cu cele mai recente mesaje."
+      ],
+      "Account is disconnected": [
+        "Contul este deconectat"
+      ],
+      "Your ProtonMail inbox is almost full": [
+        "Spațiul ProtonMail alocat pentru mesaje este aproape plin"
+      ],
+      "Your external account may have reached its 24-hour bandwidth limit. Proton will try to resume the import as soon as possible.": [
+        "Contul extern ar putea să fi atins limita lățimii de bandă pentru 24 de ore. Proton va încerca să reia importarea cât mai curând posibil."
+      ],
+      "You do not have any contacts to export": [
+        "Nu aveți persoane de contact pentru exportare"
+      ],
+      "This feature is unavailable for the moment": [
+        "Această opțiune nu este disponibilă momentan."
+      ],
+      "ProtonMail users will use this key by default for sending": [
+        "Utilizatorii ProtonMail vor folosi implicit această cheie pentru trimiteri."
+      ],
+      "You have locally decrypted this key": [
+        "Ați decriptat local această cheie."
+      ],
+      "This key is encrypted with an old password": [
+        "Această cheie este criptată cu o parolă veche."
+      ],
+      "Signatures produced by this key are treated as invalid and this key cannot be used for encryption": [
+        "Semnăturile produse de această cheie sunt considerate nevalide, iar această cheie nu poate fi folosită pentru criptare."
+      ],
+      "This key cannot be used for encryption": [
+        "Această cheie nu poate fi folosită pentru criptare."
+      ],
+      "This address has been disabled": [
+        "Această adresă a fost dezactivată."
+      ],
+      "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
+        "Am oprit semnarea cu DKIM din cauza problemelor cu configurația DNS. Urmați instrucțiunile de mai jos pentru a relua semnarea."
+      ],
+      "Your DKIM signing is working.": [
+        "Semnarea DKIM funcționează."
+      ],
+      "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
+        "Am detectat o problemă cu configurația DNS. Asigurați-vă că înregistrările tale se potrivesc cu instrucțiunile de mai jos. Dacă problema persistă, va trebui să oprim semnarea cu DKIM."
+      ],
+      "This feature is only available for paid users": [
+        "Această opțiune este valabilă doar pentru utilizatorii cu plată."
+      ],
+      "Enable/disable desktop and mobile notifications": [
+        "Activare/Dezactivare notificări desktop și pe mobil."
+      ],
+      "Use multiple addresses / aliases linked to your account, e.g. username2@protonmail.com": [
+        "Folosiți mai multe adrese / aliasuri legate la cont, ex.: numeutilizator2@protonmail.com"
+      ],
+      "Host emails for your own domain(s) at ProtonMail, e.g. john.smith@example.com": [
+        "Găzduiți e-mailuri pentru domeniu(ii) personal(e) la ProtonmMail, ex.: ion.vasile@exemplu.com"
+      ],
+      "Use the personal address username@pm.me to send emails": [
+        "Utilizați adresa personală utilizator@pm.me pentru a trimite mesaje"
+      ],
+      "Multi-user support is only applicable to plans with 2 or more users": [
+        "Suportul pentru utilizatori multipli se aplică doar planurilor cu doi sau mai mulți utilizatori"
+      ],
+      "NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "NetShield vă protejează dispozitivul și accelerează navigarea prin blocarea reclamelor, urmăritorilor și a programelor malițioase."
+      ],
+      "Support for file sharing protocols such as BitTorrent.": [
+        "Suport pentru protocoalele de partajare a fișierelor, cum ar fi BitTorrent."
+      ],
+      "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
+        "Accesați conținutul blocat geografic (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube etc.) indiferent unde vă aflați."
+      ],
+      "Route your Internet traffic through the Tor network with a single click.": [
+        "Redirecționați traficul de internet prin rețeaua Tor cu un singur clic."
+      ],
+      "Defends against threats to VPN privacy by passing your Internet traffic through multiple servers.": [
+        "Vă apără împotriva pierderii confidențialității în VPN prin transmiterea traficului pe internet prin mai multe servere."
+      ],
+      "Get access to all the paid features for both ProtonVPN and ProtonMail (the encrypted email service that millions use to protect their data) with one plan.": [
+        "Obțineți acces la toate funcțiile plătite, pentru ProtonVPN și ProtonMail (serviciul de e-mail criptat folosit de milioane de utilizatori pentru a-și proteja datele) cu un singur plan."
+      ],
+      "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
+        "Acces la toate funcțiile plătite, pentru ${ vpnAppName } și { mailAppName } (serviciul de e-mail criptat folosit de milioane de utilizatori pentru a-și proteja datele) cu un singur plan."
+      ],
+      "Host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
+        "Găzduiți e-mailuri pentru domeniu(ii) personal(e) la ${ mailAppName }, ex. ion.vasile@exemplu.com"
+      ],
+      "Create multiple email addresses linked to your account, e.g. username2@protonmail.com": [
+        "Creaţi mai multe adrese de e-mail legate la cont, ex. utilzator2@protonmail.com"
+      ],
+      "Discount applied for annual billing cycle": [
+        "Reducere aplicată pentru plata anuală"
+      ],
+      "Discount applied for two-year billing cycle": [
+        "S-a aplicat reducerea pentru plata la doi ani."
+      ],
+      "If you purchased a gift code or received one from our support team, you can enter it here.": [
+        "Dacă ați cumpărat un cod cadou sau ați primit unul de la echipa de suport, îl puteți folosi aici."
+      ],
+      "Enabling advanced logs records the IP address for each event in the security log.": [
+        "Activarea jurnalelor detaliate înregistrează adresa IP pentru fiecare eveniment în jurnalul de securitate."
+      ],
+      "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
+        "Mesajele din folderul «Trimise» sau «Ciorne» vor continua să apară în acel folder, chiar dacă le mutați în altul."
+      ],
+      "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
+        "Când faceți clic pe o legătură, această funcție antiînșelăciune vă va cere să confirmați adresa URL a paginii web."
+      ],
+      "This feature delays sending your emails, giving you the opportunity to undo send during the selected time frame.": [
+        "Această funcție întârzie trimiterea mesajelor, pemițându-vă să anulați trimiterea în intervalul de timp selectat."
+      ]
+    },
+    "Option": {
+      "Normal": [
+        "Normal"
+      ],
+      "Plain text": [
+        "Text simplu"
+      ],
+      "Left to Right": [
+        "De la stânga la dreapta"
+      ],
+      "Right to Left": [
+        "De la dreapta la stânga"
+      ],
+      "Automatic (${ defaultFormat })": [
+        "Automat (${ defaultFormat })"
+      ],
+      "Automatic (${ defaultDay })": [
+        "Automat (${ defaultDay })"
+      ],
+      "Add to existing group": [
+        "Adăugare la grup existent"
+      ],
+      "Create new group": [
+        "Creare grup"
+      ],
+      "Ignore group": [
+        "Ignorare grup"
+      ],
+      "Fixed duration": [
+        "Durată fixă"
+      ],
+      "Repeat daily": [
+        "Repetare zilnică"
+      ],
+      "Repeat weekly": [
+        "Repetare săptămânală"
+      ],
+      "Repeat monthly": [
+        "Repetare lunară"
+      ],
+      "Permanent": [
+        "Permanent"
+      ],
+      "1st of the month": [
+        "Prima zi din lună"
+      ],
+      "2nd of the month": [
+        "Ziua 2 a lunii"
+      ],
+      "3rd of the month": [
+        "Ziua 3 a lunii"
+      ],
+      "4th of the month": [
+        "Ziua 4 a lunii"
+      ],
+      "5th of the month": [
+        "Ziua 5 a lunii"
+      ],
+      "6th of the month": [
+        "Ziua 6 a lunii"
+      ],
+      "7th of the month": [
+        "Ziua 7 a lunii"
+      ],
+      "8th of the month": [
+        "Ziua 8 a lunii"
+      ],
+      "9th of the month": [
+        "Ziua 9 a lunii"
+      ],
+      "10th of the month": [
+        "Ziua 10 a lunii"
+      ],
+      "11th of the month": [
+        "Ziua 11 a lunii"
+      ],
+      "12th of the month": [
+        "Ziua 12 a lunii"
+      ],
+      "13th of the month": [
+        "Ziua 13 a lunii"
+      ],
+      "14th of the month": [
+        "Ziua 14 a lunii"
+      ],
+      "15th of the month": [
+        "Ziua 15 a lunii"
+      ],
+      "16th of the month": [
+        "Ziua 16 a lunii"
+      ],
+      "17th of the month": [
+        "Ziua 17 a lunii"
+      ],
+      "18th of the month": [
+        "Ziua 18 a lunii"
+      ],
+      "19th of the month": [
+        "Ziua 19 a lunii"
+      ],
+      "20th of the month": [
+        "Ziua 20 a lunii"
+      ],
+      "21st of the month": [
+        "Ziua 21 a lunii"
+      ],
+      "22nd of the month": [
+        "Ziua 22 a lunii"
+      ],
+      "23rd of the month": [
+        "Ziua 23 a lunii"
+      ],
+      "24th of the month": [
+        "Ziua 24 a lunii"
+      ],
+      "25th of the month": [
+        "Ziua 25 a lunii"
+      ],
+      "26th of the month": [
+        "Ziua 26 a lunii"
+      ],
+      "27th of the month": [
+        "Ziua 27 a lunii"
+      ],
+      "28th of the month": [
+        "Ziua 28 a lunii"
+      ],
+      "29th of the month": [
+        "Ziua 29 a lunii"
+      ],
+      "30th of the month": [
+        "Ziua 30 a lunii"
+      ],
+      "31st of the month": [
+        "Ziua 31 a lunii"
+      ],
+      "No parent folder": [
+        "Fără folder părinte"
+      ],
+      "Android": [
+        "Android"
+      ],
+      "iOS": [
+        "iOS"
+      ],
+      "Windows": [
+        "Windows"
+      ],
+      "macOS": [
+        "macOS"
+      ],
+      "GNU/Linux": [
+        "GNU/Linux"
+      ],
+      "Router": [
+        "Ruter"
+      ],
+      "UDP": [
+        "UDP"
+      ],
+      "TCP": [
+        "TCP"
+      ],
+      "Secure Core configs": [
+        "Configurări „Secure Core”"
+      ],
+      "Country configs": [
+        "Configurări țară"
+      ],
+      "Standard server configs": [
+        "Configurări standard de server"
+      ],
+      "Free server configs": [
+        "Configurări servere gratuite"
+      ],
+      "Select a reason": [
+        "Selectați un motiv"
+      ],
+      "I use a different Proton account": [
+        "Folosesc un alt cont Proton"
+      ],
+      "It's too expensive": [
+        "Este prea scump"
+      ],
+      "It's missing a key feature that I need": [
+        "Nu are o caracteristică esențială de care am nevoie"
+      ],
+      "I found another service that I like better": [
+        "Am găsit un alt serviciu care îmi place mai mult"
+      ],
+      "My reason isn't listed": [
+        "Motivul meu nu este afișat"
       ]
     },
     "Loading info": {
@@ -4312,14 +4849,14 @@
       "Are you sure you want to delete the phone number?": [
         "Sigur doriți ștergerea acestui număr de telefon?"
       ],
+      "By disabling the logs, you will also clear your entire logs history. Are you sure you want to disable the logs?": [
+        "Dezactivând jurnalele, veți șterge și istoricul celor existente. Sigur doriți să dezactivați jurnalele?"
+      ],
       "By disabling this address, you will no longer be able to send or receive emails using this address and all the linked Proton products will also be disabled. Are you sure you want to disable this address?": [
         "Dezactivând această adresă, nu veți mai putea primi și trimite mesaje folosind această adresă. Sigur doriți să o dezactivați?"
       ],
       "You must ${ activateLink } organization keys before adding an email address to a non-private member.": [
         "Trebuie să ${ activateLink } chei organizație înainte de a adăuga o adresă de e-mail unui membru non-privat."
-      ],
-      "By disabling the logs, you will also clear your entire logs history. Are you sure you want to disable the logs?": [
-        "Dezactivând jurnalele, veți șterge și istoricul celor existente. Sigur doriți să dezactivați jurnalele?"
       ]
     },
     "Import instructions emphasis": {
@@ -4524,149 +5061,6 @@
         "CAPTCHA"
       ]
     },
-    "Tooltip": {
-      "Customize import to reduce the number of labels": [
-        "Modificare opțiuni de importare pentru a reduce numărul de etichete."
-      ],
-      "Customize import to reduce the number of folders": [
-        "Modificați importarea pentru a reduce numărul folderelor"
-      ],
-      "Edit label names": [
-        "Editare nume etichete"
-      ],
-      "Edit folder names": [
-        "Editare nume foldere"
-      ],
-      "System subfolders will show up as separate folders in ProtonMail": [
-        "Subdosarele de sistem vor fi afișate ca dosare separate în ProtonMail"
-      ],
-      "Each imported email will have this label": [
-        "Fiecare e-mail importat va avea această etichetă."
-      ],
-      "The import will start with the most recent messages.": [
-        "Importarea va începe cu cele mai recente mesaje."
-      ],
-      "Account is disconnected": [
-        "Contul este deconectat"
-      ],
-      "Your ProtonMail inbox is almost full": [
-        "Spațiul ProtonMail alocat pentru mesaje este aproape plin"
-      ],
-      "Your external account may have reached its 24-hour bandwidth limit. Proton will try to resume the import as soon as possible.": [
-        "Contul extern ar putea să fi atins limita lățimii de bandă pentru 24 de ore. Proton va încerca să reia importarea cât mai curând posibil."
-      ],
-      "You do not have any contacts to export": [
-        "Nu aveți persoane de contact pentru exportare"
-      ],
-      "Set the default layout for your Inbox.": [
-        "Setare aspect implicit pentru lista de mesaje."
-      ],
-      "Set the default Composer popup size as small or full screen.": [
-        "Setare dimensiune implicită a panoului de compunere mesaje ca micșorat sau complet."
-      ],
-      "When you add a label to a message in a conversation, it will automatically be applied to all future messages you send or receive in that conversation.": [
-        "Când adăugați o etichetă la un mesaj într-o conversație, va fi aplicată automat la toate mesajele viitoare pe care le trimiteți sau le primiți în conversație."
-      ],
-      "Group emails in the same conversation together in your Inbox or display them separately.": [
-        "Grupare mesaje din aceeași conversație sau afișare separată."
-      ],
-      "This feature is unavailable for the moment": [
-        "Această opțiune nu este disponibilă momentan."
-      ],
-      "ProtonMail users will use this key by default for sending": [
-        "Utilizatorii ProtonMail vor folosi implicit această cheie pentru trimiteri."
-      ],
-      "You have locally decrypted this key": [
-        "Ați decriptat local această cheie."
-      ],
-      "This key is encrypted with an old password": [
-        "Această cheie este criptată cu o parolă veche."
-      ],
-      "Signatures produced by this key are treated as invalid and this key cannot be used for encryption": [
-        "Semnăturile produse de această cheie sunt considerate nevalide, iar această cheie nu poate fi folosită pentru criptare."
-      ],
-      "This key cannot be used for encryption": [
-        "Această cheie nu poate fi folosită pentru criptare."
-      ],
-      "This address has been disabled": [
-        "Această adresă a fost dezactivată."
-      ],
-      "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
-        "Am oprit semnarea cu DKIM din cauza problemelor cu configurația DNS. Urmați instrucțiunile de mai jos pentru a relua semnarea."
-      ],
-      "Your DKIM signing is working.": [
-        "Semnarea DKIM funcționează."
-      ],
-      "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
-        "Am detectat o problemă cu configurația DNS. Asigurați-vă că înregistrările tale se potrivesc cu instrucțiunile de mai jos. Dacă problema persistă, va trebui să oprim semnarea cu DKIM."
-      ],
-      "This feature is only available for paid users": [
-        "Această opțiune este valabilă doar pentru utilizatorii cu plată."
-      ],
-      "Enable/disable desktop and mobile notifications": [
-        "Activare/Dezactivare notificări desktop și pe mobil."
-      ],
-      "Use multiple addresses / aliases linked to your account, e.g. username2@protonmail.com": [
-        "Folosiți mai multe adrese / aliasuri legate la cont, ex.: numeutilizator2@protonmail.com"
-      ],
-      "Host emails for your own domain(s) at ProtonMail, e.g. john.smith@example.com": [
-        "Găzduiți e-mailuri pentru domeniu(ii) personal(e) la ProtonmMail, ex.: ion.vasile@exemplu.com"
-      ],
-      "Use the personal address username@pm.me to send emails": [
-        "Utilizați adresa personală utilizator@pm.me pentru a trimite mesaje"
-      ],
-      "Multi-user support is only applicable to plans with 2 or more users": [
-        "Suportul pentru utilizatori multipli se aplică doar planurilor cu doi sau mai mulți utilizatori"
-      ],
-      "NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "NetShield vă protejează dispozitivul și accelerează navigarea prin blocarea reclamelor, urmăritorilor și a programelor malițioase."
-      ],
-      "Support for file sharing protocols such as BitTorrent.": [
-        "Suport pentru protocoalele de partajare a fișierelor, cum ar fi BitTorrent."
-      ],
-      "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
-        "Accesați conținutul blocat geografic (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube etc.) indiferent unde vă aflați."
-      ],
-      "Route your Internet traffic through the Tor network with a single click.": [
-        "Redirecționați traficul de internet prin rețeaua Tor cu un singur clic."
-      ],
-      "Defends against threats to VPN privacy by passing your Internet traffic through multiple servers.": [
-        "Vă apără împotriva pierderii confidențialității în VPN prin transmiterea traficului pe internet prin mai multe servere."
-      ],
-      "Get access to all the paid features for both ProtonVPN and ProtonMail (the encrypted email service that millions use to protect their data) with one plan.": [
-        "Obțineți acces la toate funcțiile plătite, pentru ProtonVPN și ProtonMail (serviciul de e-mail criptat folosit de milioane de utilizatori pentru a-și proteja datele) cu un singur plan."
-      ],
-      "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
-        "Acces la toate funcțiile plătite, pentru ${ vpnAppName } și { mailAppName } (serviciul de e-mail criptat folosit de milioane de utilizatori pentru a-și proteja datele) cu un singur plan."
-      ],
-      "Host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
-        "Găzduiți e-mailuri pentru domeniu(ii) personal(e) la ${ mailAppName }, ex. ion.vasile@exemplu.com"
-      ],
-      "Create multiple email addresses linked to your account, e.g. username2@protonmail.com": [
-        "Creaţi mai multe adrese de e-mail legate la cont, ex. utilzator2@protonmail.com"
-      ],
-      "Discount applied for annual billing cycle": [
-        "Reducere aplicată pentru plata anuală"
-      ],
-      "Discount applied for two-year billing cycle": [
-        "S-a aplicat reducerea pentru plata la doi ani."
-      ],
-      "If you purchased a gift code or received one from our support team, you can enter it here.": [
-        "Dacă ați cumpărat un cod cadou sau ați primit unul de la echipa de suport, îl puteți folosi aici."
-      ],
-      "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
-        "Mesajele din folderul «Trimise» sau «Ciorne» vor continua să apară în acel folder, chiar dacă le mutați în altul."
-      ],
-      "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
-        "Când faceți clic pe o legătură, această funcție antiînșelăciune vă va cere să confirmați adresa URL a paginii web."
-      ],
-      "This feature delays sending your emails, giving you the opportunity to undo send during the selected time frame.": [
-        "Această funcție întârzie trimiterea mesajelor, pemițându-vă să anulați trimiterea în intervalul de timp selectat."
-      ],
-      "Enabling advanced logs records the IP address for each event in the security log.": [
-        "Activarea jurnalelor detaliate înregistrează adresa IP pentru fiecare eveniment în jurnalul de securitate."
-      ]
-    },
     "Security phrase": {
       "Permanently delete messages in ${ email }": [
         "Șterge permanentă mesaje din ${ email }"
@@ -4706,152 +5100,6 @@
         "Întârziat"
       ]
     },
-    "Success": {
-      "Import resumed": [
-        "Importare reluată"
-      ],
-      "Import canceled": [
-        "Importare anulată"
-      ],
-      "Import record deleted": [
-        "Înregistrare importare ștearsă"
-      ],
-      "Deleting original messages": [
-        "Se șterg mesajele originale"
-      ],
-      "Preference saved": [
-        "Preferințe salvate"
-      ],
-      "Premium address created": [
-        "Adresă premium creată"
-      ],
-      "Keyboard shortcuts preferences updated": [
-        "Preferințele combinațiilor de taste au fost actualizate"
-      ],
-      "Locale updated": [
-        "Limbă actualizată"
-      ],
-      "${ server.Domain } copied in your clipboard": [
-        "${ server.Domain } a fost copiat în memorie"
-      ],
-      "Auto-reply disabled": [
-        "Autorăspuns dezactivat"
-      ],
-      "Auto-reply updated": [
-        "Autorăspuns actualizat"
-      ],
-      "Calendar added. It might take a few minutes to sync.": [
-        "Calendarul a fost adăugat. Sincronizarea ar putea dura câteva minute."
-      ],
-      "Calendar created": [
-        "Calendar creat"
-      ],
-      "Calendar updated": [
-        "Calendar actualizat"
-      ],
-      "Default calendar updated": [
-        "Calendar implicit actualizat"
-      ],
-      "Calendar removed": [
-        "Calendar eliminat"
-      ],
-      "Verification code copied to clipboard!": [
-        "Codul de verificare a fost copiat în memorie!"
-      ],
-      "SPF value copied to clipboard!": [
-        "Valoare SPF copiată în memorie!"
-      ],
-      "Value copied to clipboard!": [
-        "Valoare copiată în memorie!"
-      ],
-      "DMARC value copied to clipboard!": [
-        "Valoare DMARC copiată în memorie!"
-      ],
-      "Domain verified": [
-        "Domeniu verificat"
-      ],
-      "Catch-all address updated": [
-        "Adresă colectoare actualizată"
-      ],
-      "Email address copied to clipboard": [
-        "Adresa de e-mail a fost copiată în memorie"
-      ],
-      "Bug reported": [
-        "Eroare raportată"
-      ],
-      "You have successfully unsubscribed": [
-        "V-ați dezabonat cu succes"
-      ],
-      "Payment method updated": [
-        "Metodă de plată actualizată"
-      ],
-      "Payment method added": [
-        "Metodă de plată adăugată"
-      ],
-      "Credits added": [
-        "Credite adăugate"
-      ],
-      "Gift code applied": [
-        "Cod cadou aplicat"
-      ],
-      "Password updated": [
-        "Parolă actualizată"
-      ],
-      "Account deleted. Logging out...": [
-        "Cont șters. Se deconectează..."
-      ],
-      "Email updated": [
-        "E-mail actualizat"
-      ],
-      "Phone number updated": [
-        "Număr de telefon actualizat"
-      ],
-      "Address updated": [
-        "Adresă actualizată"
-      ],
-      "Address added": [
-        "Adresă adăugată"
-      ],
-      "Session revoked": [
-        "Sesiune anulată"
-      ],
-      "Sessions revoked": [
-        "Sesiuni anulate"
-      ],
-      "Payment method deleted": [
-        "Metodă de plată ștearsă"
-      ],
-      "Invoice paid": [
-        "Factură plătită"
-      ],
-      "Invoice customized": [
-        "Factură personalizată"
-      ],
-      "Organization activated": [
-        "Organizație activată"
-      ],
-      "Keys updated": [
-        "Chei actualizate"
-      ],
-      "User updated": [
-        "Utilizator actualizat"
-      ],
-      "User created": [
-        "Utilizator creat"
-      ],
-      "Code sent to ${ methodTo }": [
-        "Cod trimis la ${ methodTo }"
-      ],
-      "Verification successful": [
-        "Verificare reușită"
-      ],
-      "If you entered a valid recovery email we will send you an email with your usernames in the next minute.": [
-        "Dacă ați introdus un e-mail de recuperare valid veți primi un mesaj cu numele de utilizator în curând."
-      ],
-      "If you entered a valid recovery phone we will send you an sms with your usernames in the next minute.": [
-        "Dacă ați introdus un număr de telefon de recuperare valid veți primi un SMS cu numele de utilizator în curând."
-      ]
-    },
     "Title header": {
       "Import": [
         "Importare"
@@ -4872,230 +5120,6 @@
     "Import error link": {
       "bandwidth limit": [
         "limita lățimii de bandă"
-      ]
-    },
-    "Option": {
-      "Automatic (${ defaultFormat })": [
-        "Automat (${ defaultFormat })"
-      ],
-      "Automatic (${ defaultDay })": [
-        "Automat (${ defaultDay })"
-      ],
-      "Add to existing group": [
-        "Adăugare la grup existent"
-      ],
-      "Create new group": [
-        "Creare grup"
-      ],
-      "Ignore group": [
-        "Ignorare grup"
-      ],
-      "Normal": [
-        "Normal"
-      ],
-      "Plain text": [
-        "Text simplu"
-      ],
-      "Left to Right": [
-        "De la stânga la dreapta"
-      ],
-      "Right to Left": [
-        "De la dreapta la stânga"
-      ],
-      "Android": [
-        "Android"
-      ],
-      "iOS": [
-        "iOS"
-      ],
-      "Windows": [
-        "Windows"
-      ],
-      "macOS": [
-        "macOS"
-      ],
-      "GNU/Linux": [
-        "GNU/Linux"
-      ],
-      "Router": [
-        "Ruter"
-      ],
-      "UDP": [
-        "UDP"
-      ],
-      "TCP": [
-        "TCP"
-      ],
-      "Secure Core configs": [
-        "Configurări „Secure Core”"
-      ],
-      "Country configs": [
-        "Configurări țară"
-      ],
-      "Standard server configs": [
-        "Configurări standard de server"
-      ],
-      "Free server configs": [
-        "Configurări servere gratuite"
-      ],
-      "Fixed duration": [
-        "Durată fixă"
-      ],
-      "Repeat daily": [
-        "Repetare zilnică"
-      ],
-      "Repeat weekly": [
-        "Repetare săptămânală"
-      ],
-      "Repeat monthly": [
-        "Repetare lunară"
-      ],
-      "Permanent": [
-        "Permanent"
-      ],
-      "1st of the month": [
-        "Prima zi din lună"
-      ],
-      "2nd of the month": [
-        "Ziua 2 a lunii"
-      ],
-      "3rd of the month": [
-        "Ziua 3 a lunii"
-      ],
-      "4th of the month": [
-        "Ziua 4 a lunii"
-      ],
-      "5th of the month": [
-        "Ziua 5 a lunii"
-      ],
-      "6th of the month": [
-        "Ziua 6 a lunii"
-      ],
-      "7th of the month": [
-        "Ziua 7 a lunii"
-      ],
-      "8th of the month": [
-        "Ziua 8 a lunii"
-      ],
-      "9th of the month": [
-        "Ziua 9 a lunii"
-      ],
-      "10th of the month": [
-        "Ziua 10 a lunii"
-      ],
-      "11th of the month": [
-        "Ziua 11 a lunii"
-      ],
-      "12th of the month": [
-        "Ziua 12 a lunii"
-      ],
-      "13th of the month": [
-        "Ziua 13 a lunii"
-      ],
-      "14th of the month": [
-        "Ziua 14 a lunii"
-      ],
-      "15th of the month": [
-        "Ziua 15 a lunii"
-      ],
-      "16th of the month": [
-        "Ziua 16 a lunii"
-      ],
-      "17th of the month": [
-        "Ziua 17 a lunii"
-      ],
-      "18th of the month": [
-        "Ziua 18 a lunii"
-      ],
-      "19th of the month": [
-        "Ziua 19 a lunii"
-      ],
-      "20th of the month": [
-        "Ziua 20 a lunii"
-      ],
-      "21st of the month": [
-        "Ziua 21 a lunii"
-      ],
-      "22nd of the month": [
-        "Ziua 22 a lunii"
-      ],
-      "23rd of the month": [
-        "Ziua 23 a lunii"
-      ],
-      "24th of the month": [
-        "Ziua 24 a lunii"
-      ],
-      "25th of the month": [
-        "Ziua 25 a lunii"
-      ],
-      "26th of the month": [
-        "Ziua 26 a lunii"
-      ],
-      "27th of the month": [
-        "Ziua 27 a lunii"
-      ],
-      "28th of the month": [
-        "Ziua 28 a lunii"
-      ],
-      "29th of the month": [
-        "Ziua 29 a lunii"
-      ],
-      "30th of the month": [
-        "Ziua 30 a lunii"
-      ],
-      "31st of the month": [
-        "Ziua 31 a lunii"
-      ],
-      "${ stateOfTheArt } X25519 (Fastest, most modern)": [
-        "${ stateOfTheArt } X25519 (Cel mai rapid, cel mai modern)"
-      ],
-      "${ highestSecurity } RSA 4096-bit (Slower, but increased compatibility with legacy software)": [
-        "${ highestSecurity } RSA 4096-bit (Mai lent, dar cu o compatibilitate sporită cu programele vechi)"
-      ],
-      "No parent folder": [
-        "Fără folder părinte"
-      ],
-      "Select a reason": [
-        "Selectați un motiv"
-      ],
-      "It’s temporary, I’ll be back": [
-        "Este temporar, voi reveni"
-      ],
-      "I didn’t understand what I was signing up for": [
-        "Nu am înțeles în ce m-am înscris"
-      ],
-      "It’s too expensive": [
-        "Este prea scump"
-      ],
-      "I’m unhappy with customer service": [
-        "Serviciul pentru clienți nu e satisfăcător"
-      ],
-      "Using Proton is too complicated": [
-        "Folosirea Proton este prea complicată"
-      ],
-      "I'm switching to a different service": [
-        "Trec la un alt serviciu de acest gen"
-      ],
-      "The quality didn't live up to my expectations": [
-        "Calitatea nu a fost la înălțimea așteptărilor mele"
-      ],
-      "Other": [
-        "Alt motiv"
-      ],
-      "I use a different Proton account": [
-        "Folosesc un alt cont Proton"
-      ],
-      "It's too expensive": [
-        "Este prea scump"
-      ],
-      "It's missing a key feature that I need": [
-        "Nu are o caracteristică esențială de care am nevoie"
-      ],
-      "I found another service that I like better": [
-        "Am găsit un alt serviciu care îmi place mai mult"
-      ],
-      "My reason isn't listed": [
-        "Motivul meu nu este afișat"
       ]
     },
     "Day": {
@@ -5333,124 +5357,6 @@
         "${ totalImported }/${ totalToImport } contact criptat și adăugat în lista de contacte",
         "${ totalImported }/${ totalToImport } contacte criptate și adăugate în lista de contacte",
         "${ totalImported }/${ totalToImport } de contacte criptate și adăugate în lista de contacte"
-      ]
-    },
-    "Label to change composer mode": {
-      "Normal": [
-        "Normal"
-      ],
-      "Maximized": [
-        "Mărire"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "Coloane"
-      ],
-      "Row": [
-        "Rânduri"
-      ]
-    },
-    "Label to change density": {
-      "Comfortable": [
-        "Confortabilă"
-      ],
-      "Compact": [
-        "Compactă"
-      ]
-    },
-    "VPNClient": {
-      "Android": [
-        "Android"
-      ],
-      "iOS": [
-        "iOS"
-      ],
-      "Windows": [
-        "Windows"
-      ],
-      "macOS": [
-        "macOS"
-      ],
-      "GNU/Linux": [
-        "GNU/Linux"
-      ],
-      "Chromebook": [
-        "Chromebook"
-      ],
-      "Android TV": [
-        "Android TV"
-      ]
-    },
-    "Notification": {
-      "OpenVPN / IKEv2 credentials regenerated": [
-        "Credențiale OpenVPN/IKE2 regenerate"
-      ],
-      "${ _Filter.Name } created": [
-        "A fost creat ${ _Filter.Name }"
-      ],
-      "A disabled address cannot be primary": [
-        "O adresă dezactivată nu poate fi primară"
-      ]
-    },
-    "CountryInfo": {
-      "(via ${ entryCountryName })": [
-        "(prin ${ entryCountryName })"
-      ]
-    },
-    "Feature": {
-      "Access to all countries": [
-        "Acces la toate ţările"
-      ],
-      "Secure Core servers": [
-        "Servere centrale securizate"
-      ],
-      "Fastest VPN servers": [
-        "Cele mai rapide servere VPN"
-      ],
-      "Torrenting support (P2P)": [
-        "Suport torente (P2P)"
-      ],
-      "Connection for up to ${ plusVpnConnections } device": [
-        "Conectare cu un dispozitiv",
-        "Conectare cu maxim ${ plusVpnConnections } dispozitive",
-        "Conectare cu maxim ${ plusVpnConnections } de dispozitive"
-      ],
-      "Secure streaming support": [
-        "Suport securizat transmisii live"
-      ],
-      "VPN ${ connectionsPluralized }": [
-        "${ connectionsPluralized } VPN"
-      ]
-    },
-    "VPN info": {
-      "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, and more.": [
-        "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now şi multe altele."
-      ]
-    },
-    "Autoresponse": {
-      "I'm out of the office with limited access to my email.": [
-        "Nu sunt la birou și am acces limitat la e-mail."
-      ]
-    },
-    "Tooltip prompt to trust keys": {
-      "When receiving an email from another ProtonMail user who does not have trusted keys in your contacts, a banner will ask if you want to enable trusted keys.": [
-        "Când primiți un e-mail de la un alt utilizator ProtonMail care nu are chei de încredere salvate în contacte dvs., veți fi întrebat dacă doriți să activați cheile de încredere."
-      ]
-    },
-    "Tooltip sign external messages": {
-      "Automatically sign all your outgoing messages so users can verify the authenticity of your messages. This is done in combination with the default PGP settings which can be configured below.": [
-        "Semnare automată toate mesajele trimise, astfel încât utilizatorii să vă poată verifica autenticitatea mesajelor. Aceasta se poate face în combinație cu setările implicite PGP care pot fi configurate mai jos."
-      ]
-    },
-    "Tooltip automatically attach public key": {
-      "This automatically adds your public key to each message you send. Recipients can use this to verify the authenticity of your messages and send encrypted messages to you.": [
-        "Aceasta vă adaugă automat cheia publică la fiecare mesaj trimis. Destinatarii o pot folosi pentru a vă verifica autenticitatea mesajelor și a vă trimite mesaje criptate."
-      ]
-    },
-    "Tooltip default pgp scheme": {
-      "Select the default PGP settings used to sign or encrypt messages with non-ProtonMail PGP users. Note that Inline PGP forces plain text messages. Learn more": [
-        "Selectați setările PGP implicite utilizate pentru a semna sau a cripta mesajele schimbate cu cei care nu folosesc ProtonMail dar folosesc PGP. Rețineți că PGP integrat forțează folosirea mesajelor cu text simplu. Aflați mai multe"
       ]
     },
     "Duration": {
@@ -5964,12 +5870,45 @@
         "Acum se generează cheia de criptare pentru adresă. Aceasta ar putea dura câteva minute și ar putea îngheța navigatorul."
       ]
     },
-    "encryption": {
+    "Remark about a key type option": {
       "State of the art": [
-        "De ultimă oră"
+        "Stadiul actual al tehnicii"
       ],
       "Compatibility": [
         "Compatibilitate"
+      ]
+    },
+    "Key type option": {
+      "${ stateOfTheArt } ECC Curve25519 (Fastest, most modern)": [
+        "${ stateOfTheArt } ECC Curve25519 (Cel mai rapid, cel mai modern)"
+      ],
+      "${ compatibility } RSA 4096-bit (Slower, but increased compatibility with legacy software)": [
+        "${ compatibility } RSA pe 4096 biți (mai lent, dar cu o compatibilitate sporită cu software-ul vechi)"
+      ]
+    },
+    "Autoresponse": {
+      "I'm out of the office with limited access to my email.": [
+        "Nu sunt la birou și am acces limitat la e-mail."
+      ]
+    },
+    "Tooltip prompt to trust keys": {
+      "When receiving an email from another ProtonMail user who does not have trusted keys in your contacts, a banner will ask if you want to enable trusted keys.": [
+        "Când primiți un e-mail de la un alt utilizator ProtonMail care nu are chei de încredere salvate în contacte dvs., veți fi întrebat dacă doriți să activați cheile de încredere."
+      ]
+    },
+    "Tooltip sign external messages": {
+      "Automatically sign all your outgoing messages so users can verify the authenticity of your messages. This is done in combination with the default PGP settings which can be configured below.": [
+        "Semnare automată toate mesajele trimise, astfel încât utilizatorii să vă poată verifica autenticitatea mesajelor. Aceasta se poate face în combinație cu setările implicite PGP care pot fi configurate mai jos."
+      ]
+    },
+    "Tooltip automatically attach public key": {
+      "This automatically adds your public key to each message you send. Recipients can use this to verify the authenticity of your messages and send encrypted messages to you.": [
+        "Aceasta vă adaugă automat cheia publică la fiecare mesaj trimis. Destinatarii o pot folosi pentru a vă verifica autenticitatea mesajelor și a vă trimite mesaje criptate."
+      ]
+    },
+    "Tooltip default pgp scheme": {
+      "Select the default PGP settings used to sign or encrypt messages with non-ProtonMail PGP users. Note that Inline PGP forces plain text messages. Learn more": [
+        "Selectați setările PGP implicite utilizate pentru a semna sau a cripta mesajele schimbate cu cei care nu folosesc ProtonMail dar folosesc PGP. Rețineți că PGP integrat forțează folosirea mesajelor cu text simplu. Aflați mai multe"
       ]
     },
     "Label for adding a new custom domain": {
@@ -6108,38 +6047,6 @@
         "Sigur doriți dezactivarea autentificării cu doi factori?"
       ]
     },
-    "Onboarding Proton": {
-      "This is what people will see when you send them an email, invite them to an event, or share a file with them.": [
-        "Aceasta e ceea ce vor vedea oamenii când le trimiteți un e-mail, îi veți invita la un eveniment sau când le veți partaja un fișier."
-      ],
-      "Choose a display name": [
-        "Alegeți un nume de afișat"
-      ],
-      "Select a theme": [
-        "Selectaţi o temă"
-      ],
-      "You can change this anytime in your settings.": [
-        "Puteți modifica oricând aceasta în setări."
-      ],
-      "Discover all Proton services": [
-        "Descoperiți toate serviciile Proton"
-      ],
-      "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
-        "Utilizați selectorul de aplicații din stânga sus pentru a accesa alte servicii Proton, inclusiv VPN, Calendar și Drive."
-      ],
-      "Welcome to Proton": [
-        "Bine ați venit la ProtonMail"
-      ],
-      "Our mission is to build an internet where you are in control of your data and your privacy. We have recently updated Proton - welcome to the secure internet.": [
-        "Misiunea noastră este să construim un internet în care aveți controlul și confidențialitatea datelor personale. Am actualizat recent Proton - bine ați venit la un internet securizat."
-      ],
-      "Set up your organization": [
-        "Setați organizația"
-      ],
-      "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
-        "Configurați-vă organizația, asociați un nume de domeniu și creați conturi pentru a vă asigura că toți membrii organizației vă sunt protejați."
-      ]
-    },
     "Step in filter modal": {
       "Name": [
         "Nume"
@@ -6174,6 +6081,17 @@
       ],
       "starred": [
         "cu stea"
+      ]
+    },
+    "Notification": {
+      "${ _Filter.Name } created": [
+        "A fost creat ${ _Filter.Name }"
+      ],
+      "OpenVPN / IKEv2 credentials regenerated": [
+        "Credențiale OpenVPN/IKE2 regenerate"
+      ],
+      "A disabled address cannot be primary": [
+        "O adresă dezactivată nu poate fi primară"
       ]
     },
     "Filter notification": {
@@ -6346,6 +6264,102 @@
         "${ Email } eliminat"
       ]
     },
+    "Onboarding Proton": {
+      "This is what people will see when you send them an email, invite them to an event, or share a file with them.": [
+        "Aceasta e ceea ce vor vedea oamenii când le trimiteți un e-mail, îi veți invita la un eveniment sau când le veți partaja un fișier."
+      ],
+      "Choose a display name": [
+        "Alegeți un nume de afișat"
+      ],
+      "Select a theme": [
+        "Selectaţi o temă"
+      ],
+      "You can change this anytime in your settings.": [
+        "Puteți modifica oricând aceasta în setări."
+      ],
+      "Discover all Proton services": [
+        "Descoperiți toate serviciile Proton"
+      ],
+      "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
+        "Utilizați selectorul de aplicații din stânga sus pentru a accesa alte servicii Proton, inclusiv VPN, Calendar și Drive."
+      ],
+      "Welcome to Proton": [
+        "Bine ați venit la ProtonMail"
+      ],
+      "Our mission is to build an internet where you are in control of your data and your privacy. We have recently updated Proton - welcome to the secure internet.": [
+        "Misiunea noastră este să construim un internet în care aveți controlul și confidențialitatea datelor personale. Am actualizat recent Proton - bine ați venit la un internet securizat."
+      ],
+      "Set up your organization": [
+        "Setați organizația"
+      ],
+      "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
+        "Configurați-vă organizația, asociați un nume de domeniu și creați conturi pentru a vă asigura că toți membrii organizației vă sunt protejați."
+      ]
+    },
+    "New Label form": {
+      "Color": [
+        "Culoare"
+      ],
+      "Folder name": [
+        "Nume folder"
+      ],
+      "Label name": [
+        "Nume etichetă"
+      ]
+    },
+    "label/folder notification": {
+      "${ Label.Name } created": [
+        "S-a creat ${ Label.Name }"
+      ],
+      "${ label.Name } updated": [
+        "S-a actualizat ${ label.Name }"
+      ],
+      "Preference saved": [
+        "Preferințe salvate"
+      ]
+    },
+    "Label/folder modal": {
+      "Create folder": [
+        "Creare folder"
+      ],
+      "Create label": [
+        "Creare etichetă"
+      ],
+      "Edit folder": [
+        "Editare folder"
+      ],
+      "Edit label": [
+        "Editare etichetă"
+      ]
+    },
+    "Success message after sorting folders": {
+      "Folders sorted": [
+        "Folderele au fost sortate"
+      ]
+    },
+    "Info - folder colouring feature": {
+      "When enabled, sub-folders inherit the color of the parent folder.": [
+        "Când este activată, subfolderele moștenesc culoarea folderului părinte."
+      ]
+    },
+    "Settings/labels": {
+      "Labels/Folders": [
+        "Etichete/Foldere"
+      ]
+    },
+    "Settings/labels - table": {
+      "Labels": [
+        "Etichete"
+      ],
+      "Actions": [
+        "Acțiuni"
+      ]
+    },
+    "Success message after sorting labels": {
+      "Labels sorted": [
+        "Etichetele au fost sortate"
+      ]
+    },
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Imagine neselectată"
@@ -6449,70 +6463,6 @@
         "Atașare captură ecran"
       ]
     },
-    "New Label form": {
-      "Color": [
-        "Culoare"
-      ],
-      "Folder name": [
-        "Nume folder"
-      ],
-      "Label name": [
-        "Nume etichetă"
-      ]
-    },
-    "label/folder notification": {
-      "${ Label.Name } created": [
-        "S-a creat ${ Label.Name }"
-      ],
-      "${ label.Name } updated": [
-        "S-a actualizat ${ label.Name }"
-      ],
-      "Preference saved": [
-        "Preferințe salvate"
-      ]
-    },
-    "Label/folder modal": {
-      "Create folder": [
-        "Creare folder"
-      ],
-      "Create label": [
-        "Creare etichetă"
-      ],
-      "Edit folder": [
-        "Editare folder"
-      ],
-      "Edit label": [
-        "Editare etichetă"
-      ]
-    },
-    "Success message after sorting folders": {
-      "Folders sorted": [
-        "Folderele au fost sortate"
-      ]
-    },
-    "Info - folder colouring feature": {
-      "When enabled, sub-folders inherit the color of the parent folder.": [
-        "Când este activată, subfolderele moștenesc culoarea folderului părinte."
-      ]
-    },
-    "Settings/labels": {
-      "Labels/Folders": [
-        "Etichete/Foldere"
-      ]
-    },
-    "Settings/labels - table": {
-      "Labels": [
-        "Etichete"
-      ],
-      "Actions": [
-        "Acțiuni"
-      ]
-    },
-    "Success message after sorting labels": {
-      "Labels sorted": [
-        "Etichetele au fost sortate"
-      ]
-    },
     "Apps dropdown": {
       "Proton applications": [
         "Aplicații Proton"
@@ -6557,6 +6507,44 @@
       ],
       "${ mailAppName } Free": [
         "${ mailAppName } gratuit"
+      ]
+    },
+    "Downgrade account reason": {
+      "I use a different Proton account": [
+        "Folosesc un alt cont Proton."
+      ],
+      "Subscription is too expensive": [
+        "Abonamentul este prea scump."
+      ],
+      "Missing feature(s) ": [
+        "Funcții lipsă. "
+      ],
+      "Bugs or quality issue": [
+        "Erori sau probleme de calitate."
+      ],
+      "Streaming service unsupported": [
+        "Serviciu de trasmisie în flux neacceptat."
+      ],
+      "Switching to a different provider": [
+        "Trec la un alt furnizor."
+      ],
+      "Temporary need, may come back in the future": [
+        "Nevoie temporară, poate voi mai reveni."
+      ],
+      "My reason isn't listed, please comment": [
+        "Motivul meu nu este afişat. Vă rugăm să comentați."
+      ]
+    },
+    "Plan time remaining": {
+      "You still have ${ daysRemaining } day left on your ${ BRAND_NAME } ${ currentPlanName } account.": [
+        "Mai aveți încă o zi rămasă pentru contul ${ BRAND_NAME } ${ currentPlanName }.",
+        "Mai aveți încă ${ daysRemaining } zile rămase pentru contul ${ BRAND_NAME } ${ currentPlanName }.",
+        "Mai aveți încă ${ daysRemaining } de zile rămase pentru contul ${ BRAND_NAME } ${ currentPlanName }."
+      ]
+    },
+    "Downgrade modal exit survey title": {
+      "Help us improve!": [
+        "Ajutaţi-ne să ne îmbunătățim!"
       ]
     },
     "State": {
@@ -7063,23 +7051,67 @@
         "Gratuit"
       ]
     },
+    "VPNClient": {
+      "Android": [
+        "Android"
+      ],
+      "iOS": [
+        "iOS"
+      ],
+      "Windows": [
+        "Windows"
+      ],
+      "macOS": [
+        "macOS"
+      ],
+      "GNU/Linux": [
+        "GNU/Linux"
+      ],
+      "Chromebook": [
+        "Chromebook"
+      ],
+      "Android TV": [
+        "Android TV"
+      ]
+    },
+    "CountryInfo": {
+      "(via ${ entryCountryName })": [
+        "(prin ${ entryCountryName })"
+      ]
+    },
+    "Feature": {
+      "Access to all countries": [
+        "Acces la toate ţările"
+      ],
+      "Secure Core servers": [
+        "Servere centrale securizate"
+      ],
+      "Fastest VPN servers": [
+        "Cele mai rapide servere VPN"
+      ],
+      "Torrenting support (P2P)": [
+        "Suport torente (P2P)"
+      ],
+      "Connection for up to ${ plusVpnConnections } device": [
+        "Conectare cu un dispozitiv",
+        "Conectare cu maxim ${ plusVpnConnections } dispozitive",
+        "Conectare cu maxim ${ plusVpnConnections } de dispozitive"
+      ],
+      "Secure streaming support": [
+        "Suport securizat transmisii live"
+      ],
+      "VPN ${ connectionsPluralized }": [
+        "${ connectionsPluralized } VPN"
+      ]
+    },
+    "VPN info": {
+      "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, and more.": [
+        "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now şi multe altele."
+      ]
+    },
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
         "O versiune nouă a ${ appName } este disponibilă. ${ reloadButton }."
-      ]
-    },
-    "Option delay send seconds": {
-      "0 seconds": [
-        "0 secunde"
-      ],
-      "5 seconds": [
-        "5 secunde"
-      ],
-      "10 seconds": [
-        "10 secunde"
-      ],
-      "20 seconds": [
-        "20 de secunde"
       ]
     },
     "Label for news": {
@@ -7128,59 +7160,6 @@
       ],
       "Recovery phrase": [
         "Fraza de recuperare"
-      ]
-    },
-    "Address status": {
-      "Default": [
-        "Implicită"
-      ],
-      "Active": [
-        "Activă"
-      ],
-      "Disabled": [
-        "Dezactivată"
-      ],
-      "Orphan": [
-        "Neasociată"
-      ],
-      "Missing keys": [
-        "Lipsesc cheile"
-      ]
-    },
-    "Address action": {
-      "Enable": [
-        "Activare"
-      ],
-      "Disable": [
-        "Dezactivare"
-      ],
-      "Generate missing keys": [
-        "Generare chei lipsă"
-      ],
-      "Delete": [
-        "Ștergere"
-      ]
-    },
-    "Bridge version load failed": {
-      "Failed to find latest version": [
-        "Nu s-a putut găsi cea mai recentă versiune"
-      ]
-    },
-    "OS compatibility": {
-      ".exe (64-bit)": [
-        ".exe (64-biți)"
-      ],
-      ".dmg (10.12 or later)": [
-        ".dmg (10.12 sau mai nou)"
-      ],
-      ".deb (for Debian/Ubuntu)": [
-        ".deb (pentru Debian/Ubuntu)"
-      ],
-      ".rpm (for Fedora/openSUSE)": [
-        ".rpm (pentru Fedora/openSUSE)"
-      ],
-      "PKGBUILD (for other distributions)": [
-        "PKGBUILD (pentru alte distribuții)"
       ]
     },
     "Badge for user sessions table": {
@@ -7424,6 +7403,59 @@
         "Schimbarea cheilor organizației"
       ]
     },
+    "Option delay send seconds": {
+      "0 seconds": [
+        "0 secunde"
+      ],
+      "5 seconds": [
+        "5 secunde"
+      ],
+      "10 seconds": [
+        "10 secunde"
+      ],
+      "20 seconds": [
+        "20 de secunde"
+      ]
+    },
+    "Option protection mode": {
+      "Prevent tracking (recommended)": [
+        "Preveniți urmărirea (recomandat)"
+      ],
+      "Prevent tracking and store content locally": [
+        "Împiedicați urmărirea și stocați conținutul la nivel local"
+      ]
+    },
+    "Address status": {
+      "Default": [
+        "Implicită"
+      ],
+      "Active": [
+        "Activă"
+      ],
+      "Disabled": [
+        "Dezactivată"
+      ],
+      "Orphan": [
+        "Neasociată"
+      ],
+      "Missing keys": [
+        "Lipsesc cheile"
+      ]
+    },
+    "Address action": {
+      "Enable": [
+        "Activare"
+      ],
+      "Disable": [
+        "Dezactivare"
+      ],
+      "Generate missing keys": [
+        "Generare chei lipsă"
+      ],
+      "Delete": [
+        "Ștergere"
+      ]
+    },
     "Member action": {
       "Edit": [
         "Editare"
@@ -7486,6 +7518,28 @@
     "Private Member": {
       "private": [
         "privat"
+      ]
+    },
+    "Bridge version load failed": {
+      "Failed to find latest version": [
+        "Nu s-a putut găsi cea mai recentă versiune"
+      ]
+    },
+    "OS compatibility": {
+      ".exe (64-bit)": [
+        ".exe (64-biți)"
+      ],
+      ".dmg (10.12 or later)": [
+        ".dmg (10.12 sau mai nou)"
+      ],
+      ".deb (for Debian/Ubuntu)": [
+        ".deb (pentru Debian/Ubuntu)"
+      ],
+      ".rpm (for Fedora/openSUSE)": [
+        ".rpm (pentru Fedora/openSUSE)"
+      ],
+      "PKGBUILD (for other distributions)": [
+        "PKGBUILD (pentru alte distribuții)"
       ]
     },
     "Delinquent modal title": {
@@ -7643,82 +7697,6 @@
       ],
       "GB": [
         "GB"
-      ]
-    },
-    "Import contact. Contact identifier": {
-      "unknown": [
-        "necunoscut"
-      ]
-    },
-    "Error importing contact": {
-      "vCard versions < 3.0 not supported": [
-        "versiunile vCard < 3.0 nu sunt suportate"
-      ],
-      "Encryption failed": [
-        "Criptare eșuată"
-      ]
-    },
-    "Error importing calendar": {
-      "An unexpected error occurred. Import must be restarted.": [
-        "A apărut o eroare neașteptată. Importarea trebuie repornită."
-      ],
-      "An error occurred uploading your file. No file has been selected.": [
-        "A apărut o eroare la încărcarea fișierului. Nu a fost selectat niciun fișier."
-      ],
-      "An error occurred uploading your file ${ formattedFilename }. Only ICS file formats are allowed.": [
-        "A aparut o eroare la incarcarea fișierului ${ formattedFilename }. Sunt permise numai fișiere în format ICS."
-      ],
-      "Your file ${ formattedFilename } is empty.": [
-        "Fișierul ${ formattedFilename } este gol."
-      ],
-      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
-        "A apărut o eroare la încărcarea fișierului ${ formattedFilename }. Dimensiunea maximă a fișierului este de ${ MAX_IMPORT_FILE_SIZE_STRING }."
-      ],
-      "Your file ${ formattedFilename } is not a calendar.": [
-        "Fișierul ${ formattedFilename } nu este un calendar."
-      ],
-      "${ CALENDAR_APP_NAME } only supports importing calendars with iCal version 2.0.": [
-        "${ CALENDAR_APP_NAME } suportă numai importarea calendarelor cu versiunea iCal 2.0."
-      ],
-      "Your file ${ formattedFilename } is an invitation and cannot be imported.": [
-        "Fișierul ${ formattedFilename } este o invitație și nu poate fi importat."
-      ],
-      "Your file ${ formattedFilename } has no events to be imported.": [
-        "Fișierul ${ formattedFilename } nu are evenimente de importat."
-      ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } events.": [
-        "Fișierul ${ formattedFilename } conține mai mult de ${ MAX_IMPORT_EVENTS_STRING } evenimente."
-      ],
-      "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "A apărut o eroare la citirea fișierului ${ formattedFilename }. Fișierul nu are formatul corect."
-      ]
-    },
-    "Error importing contacts": {
-      "An error occurred uploading your file. No file has been selected.": [
-        "A apărut o eroare la încărcarea fișierului. Nu a fost selectat niciun fișier."
-      ],
-      "An error occurred uploading your file ${ formattedFilename }. No .csv or .vcf file selected": [
-        "A apărut o eroare la încărcarea fișierului ${ formattedFilename }. Nu s-a selectat un fișier în format .csv sau .vcf"
-      ],
-      "Your file ${ formattedFilename } is empty.": [
-        "Fișierul ${ formattedFilename } este gol."
-      ],
-      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
-        "A apărut o eroare la încărcarea fișierului ${ formattedFilename }. Dimensiunea maximă a fișierului este de ${ MAX_IMPORT_FILE_SIZE_STRING }."
-      ],
-      "Your file ${ formattedFilename } has no contacts to be imported.": [
-        "Fișierul ${ formattedFilename } nu are contacte de importat."
-      ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
-        "Fișierul ${ formattedFilename } conține mai mult de ${ MAX_IMPORT_CONTACTS_STRING } contacte."
-      ],
-      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "A apărut o eroare la citirea fișierului ${ formattedFilename }. Fișierul nu are formatul corect."
-      ]
-    },
-    "Default display name vcard": {
-      "Unknown": [
-        "Necunoscut"
       ]
     },
     "Participant name": {
@@ -8250,10 +8228,10 @@
         "Eveniment nesuportat"
       ],
       "Empty ICS file": [
-        "Fișier ICS gol"
+        "Fișier ICS gol."
       ],
       "Unsupported calendar component": [
-        "Componentă de calendar neacceptată"
+        "Componentă de calendar neacceptată."
       ],
       "Invalid method": [
         "Metodă nevalidă"
@@ -8297,6 +8275,41 @@
         "Eroare neașteptată"
       ]
     },
+    "Error importing calendar": {
+      "An error occurred uploading your file. No file has been selected.": [
+        "A apărut o eroare la încărcarea fișierului. Nu a fost selectat niciun fișier."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Only ICS file formats are allowed.": [
+        "A aparut o eroare la incarcarea fișierului ${ formattedFilename }. Sunt permise numai fișiere în format ICS."
+      ],
+      "Your file ${ formattedFilename } is empty.": [
+        "Fișierul ${ formattedFilename } este gol."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
+        "A apărut o eroare la încărcarea fișierului ${ formattedFilename }. Dimensiunea maximă a fișierului este de ${ MAX_IMPORT_FILE_SIZE_STRING }."
+      ],
+      "Your file ${ formattedFilename } is not a calendar.": [
+        "Fișierul ${ formattedFilename } nu este un calendar."
+      ],
+      "${ CALENDAR_APP_NAME } only supports importing calendars with iCal version 2.0.": [
+        "${ CALENDAR_APP_NAME } suportă numai importarea calendarelor cu versiunea iCal 2.0."
+      ],
+      "Your file ${ formattedFilename } is an invitation and cannot be imported.": [
+        "Fișierul ${ formattedFilename } este o invitație și nu poate fi importat."
+      ],
+      "Your file ${ formattedFilename } has no events to be imported.": [
+        "Fișierul ${ formattedFilename } nu are evenimente de importat."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } events.": [
+        "Fișierul ${ formattedFilename } conține mai mult de ${ MAX_IMPORT_EVENTS_STRING } evenimente."
+      ],
+      "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
+        "A apărut o eroare la citirea fișierului ${ formattedFilename }. Fișierul nu are formatul corect."
+      ],
+      "An unexpected error occurred. Import must be restarted.": [
+        "A apărut o eroare neașteptată. Importarea trebuie repornită."
+      ]
+    },
     "Calendar subscription not synced error": {
       "Calendar is syncing": [
         "Calendarul se sincronizează."
@@ -8313,11 +8326,52 @@
       "Calendar link is not accessible": [
         "Legătura calendarului nu este accesibilă."
       ],
-      "Calendar link is temporarily unaccessible": [
-        "Legătura calendarului nu este disponibilă momentan."
+      "Calendar link is temporarily inaccessible": [
+        "Linkul calendarului este temporar inaccesibil"
       ],
       "Failed to sync calendar": [
         "Eșuare sincronizare calendar."
+      ]
+    },
+    "Import contact. Contact identifier": {
+      "unknown": [
+        "necunoscut"
+      ]
+    },
+    "Error importing contact": {
+      "vCard versions < 3.0 not supported": [
+        "versiunile vCard < 3.0 nu sunt suportate"
+      ],
+      "Encryption failed": [
+        "Criptare eșuată"
+      ]
+    },
+    "Error importing contacts": {
+      "An error occurred uploading your file. No file has been selected.": [
+        "A apărut o eroare la încărcarea fișierului. Nu a fost selectat niciun fișier."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. No .csv or .vcf file selected": [
+        "A apărut o eroare la încărcarea fișierului ${ formattedFilename }. Nu s-a selectat un fișier în format .csv sau .vcf"
+      ],
+      "Your file ${ formattedFilename } is empty.": [
+        "Fișierul ${ formattedFilename } este gol."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
+        "A apărut o eroare la încărcarea fișierului ${ formattedFilename }. Dimensiunea maximă a fișierului este de ${ MAX_IMPORT_FILE_SIZE_STRING }."
+      ],
+      "Your file ${ formattedFilename } has no contacts to be imported.": [
+        "Fișierul ${ formattedFilename } nu are contacte de importat."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
+        "Fișierul ${ formattedFilename } conține mai mult de ${ MAX_IMPORT_CONTACTS_STRING } contacte."
+      ],
+      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
+        "A apărut o eroare la citirea fișierului ${ formattedFilename }. Fișierul nu are formatul corect."
+      ]
+    },
+    "Default display name vcard": {
+      "Unknown": [
+        "Necunoscut"
       ]
     },
     "Keyboard shortcut section name": {
@@ -8495,12 +8549,17 @@
         "Afișare mesaj original"
       ]
     },
+    "Settings description": {
+      "You can apply multiple labels to a single message, but messages can usually only be in a single folder. Drag and drop to rearrange the order of your folders and labels.": [
+        "Puteți aplica mai multe etichete unui singur mesaj, dar mesajele pot fi doar într-un singur folder. Trageți și plasați pentru a rearanja folderele și etichetele."
+      ]
+    },
     "Settings section title": {
       "General": [
         "Generale"
       ],
-      "Import & export": [
-        "Importare și exportare"
+      "Email privacy": [
+        "Confidențialitatea e-mailului"
       ],
       "Identity & addresses": [
         "Identitate și adrese"
@@ -8523,14 +8582,17 @@
       "Encryption & keys": [
         "Criptare și chei"
       ],
+      "Import & export": [
+        "Importare și exportare"
+      ],
       "IMAP/SMTP": [
         "IMAP / SMTP"
       ],
-      "VPN apps": [
-        "Aplicații VPN"
-      ],
       "Calendars": [
         "Calendare"
+      ],
+      "VPN apps": [
+        "Aplicații VPN"
       ],
       "Users & addresses": [
         "Utilizatori și adrese"
@@ -8549,11 +8611,6 @@
       ],
       "Organization": [
         "Organizația"
-      ]
-    },
-    "Settings description": {
-      "You can apply multiple labels to a single message, but messages can usually only be in a single folder. Drag and drop to rearrange the order of your folders and labels.": [
-        "Puteți aplica mai multe etichete unui singur mesaj, dar mesajele pot fi doar într-un singur folder. Trageți și plasați pentru a rearanja folderele și etichetele."
       ]
     },
     "Upgrade": {

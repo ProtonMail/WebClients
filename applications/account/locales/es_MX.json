@@ -6,9 +6,6 @@
   "contexts": {
     "": {},
     "Action": {
-      "Continue with Google": [
-        "Continuar con Google"
-      ],
       "Use “${ label }” setting": [
         "Usar ajustes de “${ label }”"
       ],
@@ -78,14 +75,20 @@
       "Underline": [
         "Subrayado"
       ],
+      "Continue with Google": [
+        "Continuar con Google"
+      ],
+      "Show less": [
+        "Mostrar menos"
+      ],
+      "Show more": [
+        "Mostrar más"
+      ],
       "Confirm opening of link ${ link }": [
         "Confirmar apertura del enlace ${ link }"
       ],
       "Confirm": [
         "Confirmar"
-      ],
-      "Delete": [
-        "Eliminar"
       ],
       "Close": [
         "Cerrar"
@@ -96,11 +99,11 @@
       "Previous month": [
         "Mes anterior"
       ],
-      "Show less": [
-        "Mostrar menos"
+      "Delete": [
+        "Eliminar"
       ],
-      "Show more": [
-        "Mostrar más"
+      "Select timezone": [
+        "Seleccionar zona horaria"
       ],
       "Close navigation": [
         "Cerrar navegación"
@@ -116,9 +119,6 @@
       ],
       "Remove": [
         "Eliminar"
-      ],
-      "Select timezone": [
-        "Seleccionar zona horaria"
       ],
       "Submit": [
         "Enviar"
@@ -228,33 +228,6 @@
       "Continue": [
         "Continuar"
       ],
-      "Download": [
-        "Descargar"
-      ],
-      "Hide": [
-        "Ocultar"
-      ],
-      "Show": [
-        "Mostrar"
-      ],
-      "Reset credentials": [
-        "Restablecer credenciales"
-      ],
-      "Copy": [
-        "Copiar"
-      ],
-      "Download all configurations": [
-        "Descargar todos los ajustes"
-      ],
-      "Get ProtonVPN Plus": [
-        "Obtener ProtonVPN Plus"
-      ],
-      "Yes": [
-        "Sí"
-      ],
-      "No": [
-        "No"
-      ],
       "Update": [
         "Actualizar"
       ],
@@ -324,6 +297,9 @@
       "Export key": [
         "Exportar clave"
       ],
+      "No": [
+        "No"
+      ],
       "Warning": [
         "Advertencia"
       ],
@@ -332,6 +308,9 @@
       ],
       "Export private key": [
         "Exportar clave privada"
+      ],
+      "Yes": [
+        "Sí"
       ],
       "Add user": [
         "Añadir usuario"
@@ -381,15 +360,6 @@
       "Sign out": [
         "Cerrar sesión"
       ],
-      "Get started": [
-        "Comenzar"
-      ],
-      "Start setup": [
-        "Iniciar la configuración"
-      ],
-      "Skip": [
-        "Omitir"
-      ],
       "Preview": [
         "Vista previa"
       ],
@@ -435,6 +405,24 @@
       "Move to Allow List": [
         "Mover a la lista deseada"
       ],
+      "Get started": [
+        "Comenzar"
+      ],
+      "Start setup": [
+        "Iniciar la configuración"
+      ],
+      "Skip": [
+        "Omitir"
+      ],
+      "Add folder": [
+        "Añadir carpeta"
+      ],
+      "Sort": [
+        "Ordenar"
+      ],
+      "Add label": [
+        "Añadir etiqueta"
+      ],
       "Clear": [
         "Borrar"
       ],
@@ -446,15 +434,6 @@
       ],
       "Show info": [
         "Mostrar información"
-      ],
-      "Add folder": [
-        "Añadir carpeta"
-      ],
-      "Sort": [
-        "Ordenar"
-      ],
-      "Add label": [
-        "Añadir etiqueta"
       ],
       "Signing out": [
         "Cerrando sesión"
@@ -486,8 +465,14 @@
       "Customize subscription": [
         "Personalizar suscripción"
       ],
-      "Cancel subscription": [
-        "Cancelar suscripción"
+      "Downgrade to ${ BRAND_NAME } ${ downgradedPlanName }": [
+        "Degradar a ${ BRAND_NAME } ${ downgradedPlanName }"
+      ],
+      "Keep my ${ BRAND_NAME } ${ currentPlanName } account": [
+        "Mantener mi cuenta ${ BRAND_NAME } ${ currentPlanName }"
+      ],
+      "Downgrade account": [
+        "Degradar cuenta"
       ],
       "Select plan": [
         "Seleccionar plan"
@@ -543,6 +528,27 @@
       "Remove gift code": [
         "Eliminar código de regalo"
       ],
+      "Download": [
+        "Descargar"
+      ],
+      "Hide": [
+        "Ocultar"
+      ],
+      "Show": [
+        "Mostrar"
+      ],
+      "Reset credentials": [
+        "Restablecer credenciales"
+      ],
+      "Copy": [
+        "Copiar"
+      ],
+      "Download all configurations": [
+        "Descargar todos los ajustes"
+      ],
+      "Get ProtonVPN Plus": [
+        "Obtener ProtonVPN Plus"
+      ],
       "enable desktop notifications": [
         "habilitar las notificaciones de escritorio"
       ],
@@ -584,12 +590,6 @@
       ],
       "Disable recovery phrase": [
         "Deshabilitar frase de recuperación"
-      ],
-      "Save address": [
-        "Guardar dirección"
-      ],
-      "activate": [
-        "activar"
       ],
       "Revoke all other sessions": [
         "Revocar todas las demás sesiones"
@@ -659,6 +659,12 @@
       ],
       "Activate organization key": [
         "Activar clave de la organización"
+      ],
+      "Save address": [
+        "Guardar dirección"
+      ],
+      "activate": [
+        "activar"
       ],
       "View invoice": [
         "Ver factura"
@@ -813,11 +819,11 @@
       "yourdomain.com": [
         "sudominio.com"
       ],
-      "e.g. Julia Smith": [
-        "ej. Julia Smith"
-      ],
       "Type text or keyword": [
         "Escriba el texto o palabra clave"
+      ],
+      "e.g. Julia Smith": [
+        "ej. Julia Smith"
       ],
       "OS name": [
         "Sistema operativo"
@@ -839,6 +845,9 @@
       ],
       "Browser version": [
         "Versión del navegador"
+      ],
+      "Select a reason": [
+        "Seleccione un motivo"
       ],
       "Feedback": [
         "Comentarios"
@@ -864,14 +873,14 @@
       "Confirm": [
         "Confirmar"
       ],
+      "Choose a name": [
+        "Elija un nombre"
+      ],
       "Choose display name": [
         "Elija un nombre a mostrar"
       ],
       "Choose address": [
         "Elija una dirección"
-      ],
-      "Choose a name": [
-        "Elija un nombre"
       ],
       "Username": [
         "Nombre de usuario"
@@ -950,9 +959,6 @@
       "Invalid name": [
         "Nombre inválido"
       ],
-      "Automatic replies is a paid feature. Please upgrade to a paid account to use this feature.": [
-        "Las respuestas automáticas son una función de pago. Actualice a una cuenta de pago para usar esta función."
-      ],
       "Name required": [
         "Nombre requerido"
       ],
@@ -961,6 +967,9 @@
       ],
       "Primary address key is not decrypted.": [
         "La clave principal no está descifrada."
+      ],
+      "Primary address key is not decrypted": [
+        "La clave principal no está descifrada"
       ],
       "Incorrect password": [
         "Contraseña incorrecta"
@@ -974,11 +983,11 @@
       "Uploaded files are not valid private keys. Please verify and try again.": [
         "Los archivos cargados son claves privadas inválidas. Verifique e intente de nuevo."
       ],
-      "Primary address key is not decrypted": [
-        "La clave principal no está descifrada"
-      ],
       "Invalid private key file": [
         "Archivo de clave privada inválido"
+      ],
+      "Automatic replies is a paid feature. Please upgrade to a paid account to use this feature.": [
+        "Las respuestas automáticas son una función de pago. Actualice a una cuenta de pago para usar esta función."
       ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "Detuvimos la firma de DKIM por problemas con su configuración de DNS. Siga las instrucciones a continuación para reanudar la firma."
@@ -1088,18 +1097,6 @@
       "Wrong recovery phrase. Try again or use another recovery method.": [
         "Frase de recuperación incorrecta. Vuelva a intentarlo o use otro método de recuperación."
       ],
-      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Addresses > Short domain (pm.me)": [
-        "${ Local } es su nombre de usuario. Para crear ${ Local }@${ Domain }, vaya a Ajustes > Direcciones > Dominio corto (pm.me)"
-      ],
-      "The organization key must be activated first.": [
-        "La clave de la organización debe activarse primero."
-      ],
-      "Error": [
-        "Error"
-      ],
-      "Organization key is not decrypted.": [
-        "La clave de la organización no está descifrada."
-      ],
       "Payments are currently not available, please try again later": [
         "Los pagos no están disponibles, vuelva a intentarlo más tarde"
       ],
@@ -1121,11 +1118,23 @@
       "You must privatize all users before generating new organization keys": [
         "Debe privatizar todos los usuarios antes de generar claves nuevas de la organización"
       ],
+      "Organization key is not decrypted.": [
+        "La clave de la organización no está descifrada."
+      ],
       "You have lost access to your organization keys. Without restoration you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Ha perdido el acceso a las claves de su organización. Sin restauración, no podrá crear nuevos usuarios, agregar direcciones a usuarios existentes o acceder a cuentas de usuario no privadas."
       ],
       "You must activate your organization keys. Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Debe activar las claves de su organización. Sin la activación no será capaz de crear usuarios nuevos, añadir direcciones a los usuarios o acceder a cuentas de usuario no privadas."
+      ],
+      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Addresses > Short domain (pm.me)": [
+        "${ Local } es su nombre de usuario. Para crear ${ Local }@${ Domain }, vaya a Ajustes > Direcciones > Dominio corto (pm.me)"
+      ],
+      "The organization key must be activated first.": [
+        "La clave de la organización debe activarse primero."
+      ],
+      "Error": [
+        "Error"
       ],
       "Permission denied, administrator privileges have been restricted.": [
         "Permiso denegado, los privilegios de administrador se han limitado."
@@ -1202,18 +1211,6 @@
       "Not a valid number": [
         "Número no válido"
       ],
-      "Missing signature": [
-        "Falta la firma"
-      ],
-      "Contact signature not verified": [
-        "Firma del contacto no verificada"
-      ],
-      "Signature not verified": [
-        "Firma no verificada"
-      ],
-      "Request timed out.": [
-        "Tiempo de espera agotado."
-      ],
       "Signature verification failed": [
         "Falló la verificación de la firma"
       ],
@@ -1228,6 +1225,18 @@
       ],
       "Calendar primary private key is not decrypted": [
         "La clave privada principal del calendario no está descifrada"
+      ],
+      "Missing signature": [
+        "Falta la firma"
+      ],
+      "Contact signature not verified": [
+        "Firma del contacto no verificada"
+      ],
+      "Signature not verified": [
+        "Firma no verificada"
+      ],
+      "Request timed out.": [
+        "Tiempo de espera agotado."
       ],
       "The session has expired. Please sign in again.": [
         "La sesión ha expirado. Por favor, inicie sesión de nuevo."
@@ -1254,6 +1263,30 @@
       ],
       "Do not ask again": [
         "No volver a preguntar"
+      ],
+      "Inbox": [
+        "Buzón"
+      ],
+      "Composer": [
+        "Compositor"
+      ],
+      "Density": [
+        "Densidad"
+      ],
+      "Use sticky labels": [
+        "Usar etiquetas fijas"
+      ],
+      "Conversation grouping": [
+        "Agrupar conversaciones"
+      ],
+      "Composer mode": [
+        "Modo del compositor"
+      ],
+      "Composer text direction": [
+        "Dirección del texto del compositor"
+      ],
+      "Composer default font/size": [
+        "Tamaño/tipo de letra por defecto del compositor"
       ],
       "From: ${ fromEmailAddress }": [
         "De: ${ fromEmailAddress }"
@@ -1323,87 +1356,6 @@
       ],
       "Automatically save contacts": [
         "Guardar contactos automáticamente"
-      ],
-      "Inbox": [
-        "Buzón"
-      ],
-      "Composer": [
-        "Compositor"
-      ],
-      "Density": [
-        "Densidad"
-      ],
-      "Use sticky labels": [
-        "Usar etiquetas fijas"
-      ],
-      "Conversation grouping": [
-        "Agrupar conversaciones"
-      ],
-      "Composer mode": [
-        "Modo del compositor"
-      ],
-      "Composer text direction": [
-        "Dirección del texto del compositor"
-      ],
-      "Composer default font/size": [
-        "Tamaño/tipo de letra por defecto del compositor"
-      ],
-      "OpenVPN / IKEv2 username": [
-        "Usuario de OpenVPN / IKEv2"
-      ],
-      "OpenVPN / IKEv2 password": [
-        "Contraseña OpenVPN / IKEv2"
-      ],
-      "Timezone": [
-        "Zona horaria"
-      ],
-      "Days of the week": [
-        "Días de la semana"
-      ],
-      "Duration": [
-        "Duración"
-      ],
-      "Start day of month": [
-        "Primer día del mes"
-      ],
-      "Start time": [
-        "Hora inicial"
-      ],
-      "End day of month": [
-        "Último día del mes"
-      ],
-      "End time": [
-        "Hora final"
-      ],
-      "Start weekday": [
-        "Primer día de la semana"
-      ],
-      "End weekday": [
-        "Último día de la semana"
-      ],
-      "Start date": [
-        "Fecha inicial"
-      ],
-      "End date": [
-        "Fecha final"
-      ],
-      "Message": [
-        "Mensaje"
-      ],
-      "Auto reply": [
-        "Autorrespuesta"
-      ],
-      "Prompt to trust keys": [
-        "Solicitar confiar claves"
-      ],
-      "Sign external messages": [
-        "Firmar mensajes externos"
-      ],
-      "Attach public key": [
-        "Adjuntar clave pública"
-      ],
-      "Default PGP settings": [
-        "Ajustes PGP por defecto"
       ],
       "Name": [
         "Nombre"
@@ -1480,6 +1432,57 @@
       "Please select files to upload": [
         "Seleccione archivos para subir"
       ],
+      "Timezone": [
+        "Zona horaria"
+      ],
+      "Days of the week": [
+        "Días de la semana"
+      ],
+      "Duration": [
+        "Duración"
+      ],
+      "Start day of month": [
+        "Primer día del mes"
+      ],
+      "Start time": [
+        "Hora inicial"
+      ],
+      "End day of month": [
+        "Último día del mes"
+      ],
+      "End time": [
+        "Hora final"
+      ],
+      "Start weekday": [
+        "Primer día de la semana"
+      ],
+      "End weekday": [
+        "Último día de la semana"
+      ],
+      "Start date": [
+        "Fecha inicial"
+      ],
+      "End date": [
+        "Fecha final"
+      ],
+      "Message": [
+        "Mensaje"
+      ],
+      "Auto reply": [
+        "Autorrespuesta"
+      ],
+      "Prompt to trust keys": [
+        "Solicitar confiar claves"
+      ],
+      "Sign external messages": [
+        "Firmar mensajes externos"
+      ],
+      "Attach public key": [
+        "Adjuntar clave pública"
+      ],
+      "Default PGP settings": [
+        "Ajustes PGP por defecto"
+      ],
       "Domain name": [
         "Nombre de dominio"
       ],
@@ -1494,9 +1497,6 @@
       ],
       "Here is a basic DMARC record that does nothing except email you reports.": [
         "Aquí hay un registro básico DMARC que no hace nada excepto correo electrónicos que notifique."
-      ],
-      "Display name": [
-        "Nombre a mostrar"
       ],
       "Filter Name": [
         "Nombre del filtro"
@@ -1603,6 +1603,21 @@
       "Want to add": [
         "Quiero añadir"
       ],
+      "Display name": [
+        "Nombre a mostrar"
+      ],
+      "Folder location": [
+        "Ubicación de la carpeta"
+      ],
+      "Notification": [
+        "Notificación"
+      ],
+      "Use folder colors": [
+        "Usar colores de carpeta"
+      ],
+      "Inherit color from parent folder": [
+        "Heredar color de la carpeta padre"
+      ],
       "Operating system": [
         "Sistema operativo"
       ],
@@ -1630,18 +1645,6 @@
       "Browser version": [
         "Versión del navegador"
       ],
-      "Folder location": [
-        "Ubicación de la carpeta"
-      ],
-      "Notification": [
-        "Notificación"
-      ],
-      "Use folder colors": [
-        "Usar colores de carpeta"
-      ],
-      "Inherit color from parent folder": [
-        "Heredar color de la carpeta padre"
-      ],
       "${ n } VPN connection available": [
         "${ n } conexión VPN disponible",
         "${ n } conexiones VPN disponibles"
@@ -1661,20 +1664,23 @@
       "Using ${ humanUsedSpace } of ${ humanMaxSpace }": [
         "Usando ${ humanUsedSpace } de ${ humanMaxSpace }"
       ],
+      "Could you please specify?": [
+        "¿Podría especificarlo?"
+      ],
+      "Could you please specify which streaming service?": [
+        "¿Podría especificar cuál servicio de transmisión?"
+      ],
+      "Could you please let us know which provider?": [
+        "¿Podría indicarnos cuál proveedor?"
+      ],
       "What is the main reason you are cancelling?": [
         "¿Cuál es la razón principal por la que está cancelando?"
       ],
-      "How likely are you to recommend ${ BRAND_NAME } to others?": [
-        "¿Qué tan probable es que recomiende ${ BRAND_NAME } a los demás?"
+      "Do you have any suggestions for our team?": [
+        "¿Tiene alguna sugerencia para nuestro equipo?"
       ],
-      "0 - Not at all likely": [
-        "0 - No es muy probable"
-      ],
-      "10 - Extremely likely": [
-        "10 - Muy probable"
-      ],
-      "How do you think we could improve our products or service in the future?": [
-        "¿Cómo cree usted que podríamos mejorar nuestros productos o servicio en el futuro?"
+      "Optional": [
+        "Opcional"
       ],
       "Total (${ countdown })": [
         "Total (${ countdown })"
@@ -1739,20 +1745,11 @@
       "Select a method": [
         "Seleccione un método"
       ],
-      "Auto-load remote content": [
-        "Cargar contenido remoto automáticamente"
+      "OpenVPN / IKEv2 username": [
+        "Usuario de OpenVPN / IKEv2"
       ],
-      "Auto-load embedded images": [
-        "Cargar imágenes incrustadas automáticamente"
-      ],
-      "Keep messages in Sent/Drafts": [
-        "Mantener mensajes en Enviados/Borradores"
-      ],
-      "Link confirmation": [
-        "Confirmación de enlace"
-      ],
-      "Undo send": [
-        "Deshacer envío"
+      "OpenVPN / IKEv2 password": [
+        "Contraseña OpenVPN / IKEv2"
       ],
       "Your password (admin)": [
         "Su contraseña (admin)"
@@ -1832,9 +1829,6 @@
       "Allow recovery by recovery phrase": [
         "Permitir recuperación mediante frase de recuperación"
       ],
-      "Keyboard shortcuts": [
-        "Atajos de teclado"
-      ],
       "Recovery phrase": [
         "Frase de recuperación"
       ],
@@ -1843,18 +1837,6 @@
       ],
       "Recovery phrase contains 12 words": [
         "La frase de recuperación contiene 12 palabras"
-      ],
-      "Signature": [
-        "Firma"
-      ],
-      "ProtonMail footer": [
-        "Pie de página - ProtonMail"
-      ],
-      "User": [
-        "Usuario"
-      ],
-      "Address": [
-        "Dirección"
       ],
       "Cash": [
         "Efectivo"
@@ -1894,6 +1876,42 @@
       ],
       "Confirm organization password": [
         "Confirmar contraseña de la organización"
+      ],
+      "Confirm before loading remote content": [
+        "Confirmar antes de cargar contenido remoto"
+      ],
+      "Auto-load embedded images": [
+        "Cargar imágenes incrustadas automáticamente"
+      ],
+      "Keep messages in Sent/Drafts": [
+        "Mantener mensajes en Enviados/Borradores"
+      ],
+      "Link confirmation": [
+        "Confirmación de enlace"
+      ],
+      "Undo send": [
+        "Deshacer envío"
+      ],
+      "Protect against email tracking": [
+        "Protege contra el rastreo de correo"
+      ],
+      "Protection mode": [
+        "Modo de protección"
+      ],
+      "Keyboard shortcuts": [
+        "Atajos de teclado"
+      ],
+      "Signature": [
+        "Firma"
+      ],
+      "ProtonMail footer": [
+        "Pie de página - ProtonMail"
+      ],
+      "User": [
+        "Usuario"
+      ],
+      "Address": [
+        "Dirección"
       ],
       "VPN connections": [
         "Conexiones VPN"
@@ -1960,9 +1978,6 @@
       "Open actions dropdown": [
         "Abrir menú de acciones"
       ],
-      "Keyboard Shortcuts": [
-        "Atajos de teclado"
-      ],
       "Previous": [
         "Anterior"
       ],
@@ -1971,6 +1986,9 @@
       ],
       "Next": [
         "Siguiente"
+      ],
+      "Keyboard Shortcuts": [
+        "Atajos de teclado"
       ],
       "What's new": [
         "Novedades"
@@ -2022,21 +2040,6 @@
       ],
       "Import contacts": [
         "Importar contactos"
-      ],
-      "1. Select platform": [
-        "1. Seleccionar plataforma"
-      ],
-      "2. Select protocol": [
-        "2. Seleccionar protocolo"
-      ],
-      "3. Select config file and download": [
-        "3. Seleccionar archivo de configuración y descargar"
-      ],
-      "Get ProtonVPN Plus to access all servers": [
-        "Obtenga ProtonVPN Plus para acceder a todos los servidores"
-      ],
-      "Automatically sign outgoing messages?": [
-        "¿Firmar automáticamente los mensajes salientes?"
       ],
       "Error": [
         "Error"
@@ -2098,6 +2101,9 @@
       "Import key": [
         "Importar clave"
       ],
+      "Automatically sign outgoing messages?": [
+        "¿Firmar automáticamente los mensajes salientes?"
+      ],
       "Edit domain": [
         "Editar dominio"
       ],
@@ -2152,9 +2158,6 @@
       "Edit Allow List": [
         "Editar lista deseada"
       ],
-      "Report a problem": [
-        "Reportar un problema"
-      ],
       "Delete ${ Name } folder": [
         "Eliminar carpeta ${ Name }"
       ],
@@ -2167,14 +2170,17 @@
       "Sort labels alphabetically": [
         "Ordenar etiquetas alfabéticamente"
       ],
+      "Report a problem": [
+        "Reportar un problema"
+      ],
       "Confirm loss of Proton bonuses": [
         "Confirmar pérdida de beneficios de Proton"
       ],
       "Processing": [
         "Procesando"
       ],
-      "Cancel subscription": [
-        "Cancelar suscripción"
+      "Downgrade account": [
+        "Degradar cuenta"
       ],
       "Network error": [
         "Error de red"
@@ -2269,6 +2275,18 @@
       "Plan summary": [
         "Resumen del plan"
       ],
+      "1. Select platform": [
+        "1. Seleccionar plataforma"
+      ],
+      "2. Select protocol": [
+        "2. Seleccionar protocolo"
+      ],
+      "3. Select config file and download": [
+        "3. Seleccionar archivo de configuración y descargar"
+      ],
+      "Get ProtonVPN Plus to access all servers": [
+        "Obtenga ProtonVPN Plus para acceder a todos los servidores"
+      ],
       "Change password for ${ Name } (${ Email })": [
         "Cambiar contraseña para ${ Name } (${ Email })"
       ],
@@ -2307,21 +2325,6 @@
       ],
       "Confirm phone number": [
         "Confirmar número de teléfono"
-      ],
-      "${ appName } Keyboard Shortcuts": [
-        "Atajos de teclado de ${ appName }"
-      ],
-      "Add address": [
-        "Añadir dirección"
-      ],
-      "Delete ${ address.Email }": [
-        "Eliminar ${ address.Email }"
-      ],
-      "Generate missing keys": [
-        "Generar claves faltantes"
-      ],
-      "Bridge for ${ platform }": [
-        "Bridge para ${ platform }"
       ],
       "App": [
         "App"
@@ -2386,6 +2389,18 @@
       "Change organization password": [
         "Cambiar contraseña de la organización"
       ],
+      "${ appName } Keyboard Shortcuts": [
+        "Atajos de teclado de ${ appName }"
+      ],
+      "Add address": [
+        "Añadir dirección"
+      ],
+      "Delete ${ address.Email }": [
+        "Eliminar ${ address.Email }"
+      ],
+      "Generate missing keys": [
+        "Generar claves faltantes"
+      ],
       "Change role": [
         "Cambiar rol"
       ],
@@ -2397,6 +2412,9 @@
       ],
       "Add user": [
         "Añadir usuario"
+      ],
+      "Bridge for ${ platform }": [
+        "Bridge para ${ platform }"
       ],
       "Sign in again to continue": [
         "Inicie sesión otra vez para continuar"
@@ -2413,26 +2431,11 @@
       "Account suspended": [
         "Cuenta suspendida"
       ],
-      "General": [
-        "General"
+      "Appearance": [
+        "Apariencia"
       ],
       "Theme": [
         "Tema"
-      ],
-      "Contacts": [
-        "Contactos"
-      ],
-      "Import & export": [
-        "Importación y exportación"
-      ],
-      "Import": [
-        "Importar"
-      ],
-      "Export": [
-        "Exportar"
-      ],
-      "Appearance": [
-        "Apariencia"
       ],
       "Layout": [
         "Diseño"
@@ -2482,6 +2485,12 @@
       "Labels": [
         "Etiquetas"
       ],
+      "Import Assistant": [
+        "Import Assistant"
+      ],
+      "General": [
+        "General"
+      ],
       "Short domain (@pm.me)": [
         "Dominio corto (@pm.me)"
       ],
@@ -2490,6 +2499,9 @@
       ],
       "Advanced": [
         "Avanzado"
+      ],
+      "Spy Tracker Protection": [
+        "Protección de rastreador de espías"
       ],
       "Identity & addresses": [
         "Identidad y direcciones"
@@ -2506,14 +2518,38 @@
       "ProtonMail Bridge": [
         "ProtonMail Bridge"
       ],
-      "Import Assistant": [
-        "Import Assistant"
+      "Import & export": [
+        "Importación y exportación"
       ],
       "Current & past imports": [
         "Importaciones actuales y anteriores"
       ],
       "Import-Export app": [
         "App Import-Export"
+      ],
+      "Email privacy": [
+        "Privacidad del correo"
+      ],
+      "Contacts": [
+        "Contactos"
+      ],
+      "Import": [
+        "Importar"
+      ],
+      "Export": [
+        "Exportar"
+      ],
+      "My calendars": [
+        "Mis calendarios"
+      ],
+      "Subscribed calendars": [
+        "Calendarios suscritos"
+      ],
+      "Share outside Proton": [
+        "Compartir fuera de Proton"
+      ],
+      "Time zone": [
+        "Zona horaria"
       ],
       "VPN apps": [
         "Aplicaciones VPN"
@@ -2529,18 +2565,6 @@
       ],
       "OpenVPN configuration files": [
         "Archivos de configuración de OpenVPN"
-      ],
-      "My calendars": [
-        "Mis calendarios"
-      ],
-      "Subscribed calendars": [
-        "Calendarios suscritos"
-      ],
-      "Share outside Proton": [
-        "Compartir fuera de Proton"
-      ],
-      "Time zone": [
-        "Zona horaria"
       ],
       "Password & recovery": [
         "Contraseña y recuperación"
@@ -2763,9 +2787,6 @@
       "Plain text": [
         "Texto plano"
       ],
-      "No results found": [
-        "No se encontraron resultados"
-      ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Este enlace puede ser un ataque homógrafo y no puede abrirse por los navegadores Internet Explorer y Edge. Si cree que el enlace es legítimo, deberá abrirlo en un navegador diferente."
       ],
@@ -2778,11 +2799,14 @@
       "Learn more": [
         "Más información"
       ],
+      "Week": [
+        "Semana"
+      ],
       "Drop the file here to upload": [
         "Arrastre el archivo aquí para cargar"
       ],
-      "Week": [
-        "Semana"
+      "No results found": [
+        "No se encontraron resultados"
       ],
       "Loading": [
         "Cargando"
@@ -2921,113 +2945,6 @@
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "La aplicación necesita descifrar localmente sus contactos antes de poder exportarlos. Al final del proceso se generará un archivo VCF y podrá descargarlo."
       ],
-      "To secure your internet connection, download and install the ProtonVPN application for your device and connect to a ProtonVPN server.": [
-        "Para asegurar su conexión a Internet, descargue e instale la aplicación ProtonVPN para su dispositivo y conéctese a un servidor ProtonVPN."
-      ],
-      "You can use the following credentials to connect to a ProtonVPN server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
-        "Puede usar las siguientes credenciales para conectarse a un servidor ProtonVPN mediante una aplicación VPN de código abierto de terceros, como Tunnelblick para macOS u OpenVPN para GNU/Linux."
-      ],
-      "Learn how to log in to ProtonVPN with third-party VPN applications.": [
-        "Aprenda cómo iniciar sesión en ProtonVPN con aplicaciones VPN de terceros."
-      ],
-      "We advise you to use official ProtonVPN applications when possible.": [
-        "Le aconsejamos que use aplicaciones oficiales de ProtonVPN cuando sea posible."
-      ],
-      "You cannot use the OpenVPN / IKEv2 credentials to log in to ProtonVPN applications or the ProtonVPN dashboard. ${ learnMore }": [
-        "No puede usar las credenciales OpenVPN / IKEv2 para iniciar sesión en las aplicaciones ProtonVPN o en el panel de control de ProtonVPN. ${ learnMore }"
-      ],
-      "Use the following credentials when connecting to ProtonVPN servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
-        "Use las siguientes credenciales al conectarse a servidores ProtonVPN sin aplicación. Por ejemplo: Tunnelblick en macOS, OpenVPN en GNU/Linux."
-      ],
-      "Do not use the OpenVPN / IKEv2 credentials in ProtonVPN applications or on the ProtonVPN dashboard. ${ learnMore }": [
-        "No use las credenciales OpenVPN / IKEv2 en aplicaciones ProtonVPN o en el panel de control de ProtonVPN. ${ learnMore }"
-      ],
-      "Server load": [
-        "Carga del servidor"
-      ],
-      "Server is currently down": [
-        "El servidor está actualmente caído"
-      ],
-      "P2P": [
-        "P2P"
-      ],
-      "Tor": [
-        "Tor"
-      ],
-      "Plus or Visionary subscription required": [
-        "Se requiere suscripción Plus o Visionary"
-      ],
-      "Basic, Plus or Visionary subscription required": [
-        "Se requiere suscripción Basic, Plus o Visionary"
-      ],
-      "${ number } server": [
-        "${ number } servidor",
-        "${ number } servidores"
-      ],
-      "${ number } city": [
-        "${ number } ciudad",
-        "${ number } ciudades"
-      ],
-      "These configuration files let you choose which ProtonVPN server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
-        "Estos archivos de configuración le permiten elegir a qué servidor de ProtonVPN se conecta cuando usa una aplicación VPN de terceros o al configurar una conexión VPN en un enrutador."
-      ],
-      "Install a Secure Core configuration file to benefit from an additional protection against VPN endpoint compromise.": [
-        "Instale un archivo de configuración de Secure Core para obtener protección adicional contra el compromiso de punto final de VPN."
-      ],
-      "ProtonVPN Plus or Visionary required for Secure Core feature.": [
-        "Se requiere de ProtonVPN Plus o Visionary para tener Secure Core."
-      ],
-      "Install a Country configuration file to connect to a random server in the country of your choice.": [
-        "Instale un archivo de configuración de País para conectarse a un servidor aleatorio en el país de su elección."
-      ],
-      "ProtonVPN Basic, Plus or Visionary required for Country level connection.": [
-        "Se requiere de ProtonVPN Basic, Plus o Visionary para tener conexión a nivel de país."
-      ],
-      "Install a Server configuration file to connect to a specific server in the country of your choice.": [
-        "Instale un archivo de configuración de Servidor para conectarse a un servidor específico en el país de su elección."
-      ],
-      "Install a Free server configuration file to connect to a specific server in one of the three free locations.": [
-        "Instale un archivo de configuración de servidor gratuito para conectarse a un servidor específico en una de las tres ubicaciones gratuitas."
-      ],
-      "Plan upgrade required": [
-        "Se requiere actualizar el plan"
-      ],
-      "Auto-reply is active each month between the selected start and end time.": [
-        "La respuesta automática estará activa cada mes entre la fecha inicial y la fecha final seleccionadas."
-      ],
-      "Auto-reply is always active on the days of the week you select, between the selected hours.": [
-        "La respuesta automática estará siempre activa los días de la semana que selecciones, entre las horas seleccionadas."
-      ],
-      "Auto-reply is active each week between the selected start and end time.": [
-        "La respuesta automática estará activa cada semana entre la fecha inicial y la fecha final seleccionadas."
-      ],
-      "Auto-reply is active until you turn it off.": [
-        "La respuesta automática está activa hasta que la desactive."
-      ],
-      "Auto-reply is active from the start time to the end time.": [
-        "La respuesta automática estará activa desde la fecha inicial hasta la fecha final."
-      ],
-      "Images have been removed because they are not allowed in auto-reply.": [
-        "Las imágenes se han eliminado porque no están permitidas en la respuesta automática."
-      ],
-      "Use automatic replies to inform contacts you are out of the office or otherwise unable to respond.": [
-        "Use respuestas automáticas para informar a los contactos que está fuera de la oficina o que de otro modo no puede responder."
-      ],
-      "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to enable automatic replies for when you are out of the office.": [
-        "Actualice a un plan ${ PLAN_NAMES[PLANS.VISIONARY] } o ${ PLAN_NAMES[PLANS.PROFESSIONAL] } para habilitar las respuestas automáticas cuando se encuentre fuera de la oficina."
-      ],
-      "Address verification is an advanced security feature. Only turn this on if you know what it does.": [
-        "La verificación de dirección es una función de seguridad avanzada. Habilítela solo si sabe lo que hace."
-      ],
-      "Encryption setting updated": [
-        "Ajustes de cifrado actualizados"
-      ],
-      "PGP clients are more likely to automatically detect your PGP keys if outgoing messages are signed.": [
-        "Los clientes PGP detectan automáticamente sus claves PGP si los mensajes salientes van firmados."
-      ],
-      "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
-        "Solo cambie estos ajustes si está utilizando PGP con remitentes fuera de ProtonMail."
-      ],
       "Are you sure you want to delete this calendar?": [
         "¿Seguro que desea eliminar este calendario?"
       ],
@@ -3146,6 +3063,42 @@
       "No contact encryption keys exist": [
         "No existen claves de cifrado de contactos"
       ],
+      "Auto-reply is active each month between the selected start and end time.": [
+        "La respuesta automática estará activa cada mes entre la fecha inicial y la fecha final seleccionadas."
+      ],
+      "Auto-reply is always active on the days of the week you select, between the selected hours.": [
+        "La respuesta automática estará siempre activa los días de la semana que selecciones, entre las horas seleccionadas."
+      ],
+      "Auto-reply is active each week between the selected start and end time.": [
+        "La respuesta automática estará activa cada semana entre la fecha inicial y la fecha final seleccionadas."
+      ],
+      "Auto-reply is active until you turn it off.": [
+        "La respuesta automática está activa hasta que la desactive."
+      ],
+      "Auto-reply is active from the start time to the end time.": [
+        "La respuesta automática estará activa desde la fecha inicial hasta la fecha final."
+      ],
+      "Images have been removed because they are not allowed in auto-reply.": [
+        "Las imágenes se han eliminado porque no están permitidas en la respuesta automática."
+      ],
+      "Use automatic replies to inform contacts you are out of the office or otherwise unable to respond.": [
+        "Use respuestas automáticas para informar a los contactos que está fuera de la oficina o que de otro modo no puede responder."
+      ],
+      "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to enable automatic replies for when you are out of the office.": [
+        "Actualice a un plan ${ PLAN_NAMES[PLANS.VISIONARY] } o ${ PLAN_NAMES[PLANS.PROFESSIONAL] } para habilitar las respuestas automáticas cuando se encuentre fuera de la oficina."
+      ],
+      "Address verification is an advanced security feature. Only turn this on if you know what it does.": [
+        "La verificación de dirección es una función de seguridad avanzada. Habilítela solo si sabe lo que hace."
+      ],
+      "Encryption setting updated": [
+        "Ajustes de cifrado actualizados"
+      ],
+      "PGP clients are more likely to automatically detect your PGP keys if outgoing messages are signed.": [
+        "Los clientes PGP detectan automáticamente sus claves PGP si los mensajes salientes van firmados."
+      ],
+      "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
+        "Solo cambie estos ajustes si está utilizando PGP con remitentes fuera de ProtonMail."
+      ],
       "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ProtonMail in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
         "SPF es usado para especificar quién está autorizado para enviar correos para el dominio, así que le recomendamos incluir a ProtonMail en su registro de SPF. Añada el siguiente registro TXT en su registro DNS. Esto se puede hacer normalmente en el panel de control de su registrador de nombres de dominio."
       ],
@@ -3235,12 +3188,6 @@
       "Your Block List is empty.": [
         "Su Lista no Deseada está vacía."
       ],
-      "Screenshot(s) attached": [
-        "Captura(s) añadidas(s)"
-      ],
-      "Refreshing the page or ${ link } will automatically resolve most issues.": [
-        "Refrescar la página o ${ link } resolverá automáticamente la mayoría de los problemas."
-      ],
       "Inherited from parent folder": [
         "Heredada de la carpeta padre"
       ],
@@ -3261,6 +3208,12 @@
       ],
       "Are you sure you want to delete this folder?": [
         "¿Está seguro que desea eliminar esta carpeta?"
+      ],
+      "Screenshot(s) attached": [
+        "Captura(s) añadidas(s)"
+      ],
+      "Refreshing the page or ${ link } will automatically resolve most issues.": [
+        "Refrescar la página o ${ link } resolverá automáticamente la mayoría de los problemas."
       ],
       "More Info": [
         "Más información"
@@ -3308,6 +3261,9 @@
       "No subscription yet": [
         "No hay suscripción"
       ],
+      "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
+        "Al degradar la cuenta perderá los siguientes beneficios. ¿Está seguro que desea continuar?"
+      ],
       "You already have a free account": [
         "Ya tiene una cuenta gratuita"
       ],
@@ -3325,12 +3281,6 @@
       ],
       "* Customizable features": [
         "* Funciones personalizables"
-      ],
-      "Access your streaming services, like ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, no matter where you are.": [
-        "Acceda a sus servicios de streaming, como ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, no importa donde esté."
-      ],
-      "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
-        "Acceda a contenidos bloqueados, como redes sociales, noticias, Wikipedia, YouTube, y muchos otros, sin importar dónde esté."
       ],
       "For getting started with private and secure emailing.": [
         "Para comenzar con el correo electrónico privado y seguro."
@@ -3355,6 +3305,12 @@
       ],
       "For families and small teams; includes both Mail and VPN.": [
         "Para familias y pequeños equipos; incluye correo y VPN."
+      ],
+      "Access your streaming services, like ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, no matter where you are.": [
+        "Acceda a sus servicios de streaming, como ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, no importa donde esté."
+      ],
+      "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
+        "Acceda a contenidos bloqueados, como redes sociales, noticias, Wikipedia, YouTube, y muchos otros, sin importar dónde esté."
       ],
       "Save 20%": [
         "Ahorre un 20%"
@@ -3546,6 +3502,77 @@
       "30 days money-back guarantee.": [
         "Garantía de reembolso de 30 días."
       ],
+      "To secure your internet connection, download and install the ProtonVPN application for your device and connect to a ProtonVPN server.": [
+        "Para asegurar su conexión a Internet, descargue e instale la aplicación ProtonVPN para su dispositivo y conéctese a un servidor ProtonVPN."
+      ],
+      "You can use the following credentials to connect to a ProtonVPN server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
+        "Puede usar las siguientes credenciales para conectarse a un servidor ProtonVPN mediante una aplicación VPN de código abierto de terceros, como Tunnelblick para macOS u OpenVPN para GNU/Linux."
+      ],
+      "Learn how to log in to ProtonVPN with third-party VPN applications.": [
+        "Aprenda cómo iniciar sesión en ProtonVPN con aplicaciones VPN de terceros."
+      ],
+      "We advise you to use official ProtonVPN applications when possible.": [
+        "Le aconsejamos que use aplicaciones oficiales de ProtonVPN cuando sea posible."
+      ],
+      "You cannot use the OpenVPN / IKEv2 credentials to log in to ProtonVPN applications or the ProtonVPN dashboard. ${ learnMore }": [
+        "No puede usar las credenciales OpenVPN / IKEv2 para iniciar sesión en las aplicaciones ProtonVPN o en el panel de control de ProtonVPN. ${ learnMore }"
+      ],
+      "Use the following credentials when connecting to ProtonVPN servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
+        "Use las siguientes credenciales al conectarse a servidores ProtonVPN sin aplicación. Por ejemplo: Tunnelblick en macOS, OpenVPN en GNU/Linux."
+      ],
+      "Do not use the OpenVPN / IKEv2 credentials in ProtonVPN applications or on the ProtonVPN dashboard. ${ learnMore }": [
+        "No use las credenciales OpenVPN / IKEv2 en aplicaciones ProtonVPN o en el panel de control de ProtonVPN. ${ learnMore }"
+      ],
+      "Server load": [
+        "Carga del servidor"
+      ],
+      "Server is currently down": [
+        "El servidor está actualmente caído"
+      ],
+      "P2P": [
+        "P2P"
+      ],
+      "Tor": [
+        "Tor"
+      ],
+      "Plus or Visionary subscription required": [
+        "Se requiere suscripción Plus o Visionary"
+      ],
+      "Basic, Plus or Visionary subscription required": [
+        "Se requiere suscripción Basic, Plus o Visionary"
+      ],
+      "${ number } server": [
+        "${ number } servidor",
+        "${ number } servidores"
+      ],
+      "${ number } city": [
+        "${ number } ciudad",
+        "${ number } ciudades"
+      ],
+      "These configuration files let you choose which ProtonVPN server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
+        "Estos archivos de configuración le permiten elegir a qué servidor de ProtonVPN se conecta cuando usa una aplicación VPN de terceros o al configurar una conexión VPN en un enrutador."
+      ],
+      "Install a Secure Core configuration file to benefit from an additional protection against VPN endpoint compromise.": [
+        "Instale un archivo de configuración de Secure Core para obtener protección adicional contra el compromiso de punto final de VPN."
+      ],
+      "ProtonVPN Plus or Visionary required for Secure Core feature.": [
+        "Se requiere de ProtonVPN Plus o Visionary para tener Secure Core."
+      ],
+      "Install a Country configuration file to connect to a random server in the country of your choice.": [
+        "Instale un archivo de configuración de País para conectarse a un servidor aleatorio en el país de su elección."
+      ],
+      "ProtonVPN Basic, Plus or Visionary required for Country level connection.": [
+        "Se requiere de ProtonVPN Basic, Plus o Visionary para tener conexión a nivel de país."
+      ],
+      "Install a Server configuration file to connect to a specific server in the country of your choice.": [
+        "Instale un archivo de configuración de Servidor para conectarse a un servidor específico en el país de su elección."
+      ],
+      "Install a Free server configuration file to connect to a specific server in one of the three free locations.": [
+        "Instale un archivo de configuración de servidor gratuito para conectarse a un servidor específico en una de las tres ubicaciones gratuitas."
+      ],
+      "Plan upgrade required": [
+        "Se requiere actualizar el plan"
+      ],
       "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
         "Su cuenta tiene al menos una factura vencida. Su acceso ha sido restringido. ${ payInvoiceLink }"
       ],
@@ -3584,12 +3611,6 @@
       ],
       "Internet connection lost. Please check your device's connectivity.": [
         "No hay conexión a internet. Compruebe la conectividad de su dispositivo."
-      ],
-      "When disabled, this prevents all files from loading on your device without your knowledge.\t": [
-        "Cuando está deshabilitado, esto evita que todos los archivos se carguen en su dispositivo sin su conocimiento.\t"
-      ],
-      "When disabled, this prevents image files from loading on your device without your knowledge.": [
-        "Cuando está deshabilitado, esto evita que todos los archivos de imagen se carguen en su dispositivo sin su conocimiento.\t"
       ],
       "By leaving now, changes may not be saved": [
         "Al salir ahora, los cambios podrían no ser guardados"
@@ -3699,9 +3720,6 @@
       "Disabling this will prevent your recovery phrase from being used for account recovery.": [
         "Deshabilitar esto evitará que su frase de recuperación se use para recuperar la cuenta."
       ],
-      "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
-        "La navegación básica y las acciones siguen estando disponibles independientemente de que los atajos de teclado estén habilitados o no en los ajustes."
-      ],
       "Your recovery phrase is a series of 12 words in a specific order.": [
         "Su frase de recuperación es una serie de 12 palabras en un orden específico."
       ],
@@ -3728,33 +3746,6 @@
       ],
       "Recovery phrase has been disabled": [
         "La frase de recuperación ha sido deshabilitada"
-      ],
-      "Let your contacts know you care about their privacy.": [
-        "Indique a sus contactos que se preocupa por su privacidad."
-      ],
-      "Please note that if you delete this address, you will no longer be able to send or receive emails using this address.": [
-        "Tome en cuenta que si elimina esta dirección, ya no podrá enviar o recibir correos electrónicos usando esta dirección."
-      ],
-      "Are you sure you want to delete this address?": [
-        "¿Está seguro que desea eliminar esta dirección?"
-      ],
-      "The email address you place at the top of the list is your default email address. Drag and drop to reorder your addresses.": [
-        "La dirección de correo que ha colocado en la parte superior de la lista es su dirección de correo predeterminada. Arrastre y suelte para reordenar sus direcciones."
-      ],
-      "Queued": [
-        "En espera"
-      ],
-      "Done": [
-        "Hecho"
-      ],
-      "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
-        "Antes de que pueda enviar y recibir mensajes desde sus direcciones nuevas, necesita crear las claves de cifrado para ellas."
-      ],
-      "You can use ProtonMail with any desktop email client that supports IMAP/SMTP, including Outlook, Apple Mail, and Thunderbird.": [
-        "Puede usar ProtonMail con cualquier cliente de escritorio que soporte IMAP/SMTP, incluyendo Outlook, Apple Mail y Thunderbird."
-      ],
-      "Upgrade to a paid plan to unlock IMAP/SMTP support through ProtonMail Bridge.": [
-        "Actualice a un plan de pago para desbloquear el soporte IMAP/SMTP mediante ProtonMail Bridge."
       ],
       "Do you want to revoke all other sessions than the current one?": [
         "¿Desea revocar todas las demás sesiones y mantener la actual?"
@@ -3870,6 +3861,39 @@
       "Your organization's emails are protected with end-to-end encryption using the organization key. This fingerprint can be used to verify that all administrators in your account have the same key.": [
         "Los correos electrónicos de su organización están protegidos con cifrado de extremo a extremo usando la clave de la organización. Esta huella digital puede ser usada para verificar que todos los administradores en su cuenta tienen la misma clave."
       ],
+      "Prevents remote email content from loading automatically.": [
+        "Evita que el contenido remoto se cargue automáticamente."
+      ],
+      "When disabled, this prevents image files from loading on your device without your knowledge.": [
+        "Cuando está deshabilitado, esto evita que todos los archivos de imagen se carguen en su dispositivo sin su conocimiento.\t"
+      ],
+      "Prevents senders from knowing whether and when you have opened a message.": [
+        "Evita que los remitentes sepan si ha abierto un mensaje y cuándo lo ha hecho."
+      ],
+      "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
+        "La navegación básica y las acciones siguen estando disponibles independientemente de que los atajos de teclado estén habilitados o no en los ajustes."
+      ],
+      "Let your contacts know you care about their privacy.": [
+        "Indique a sus contactos que se preocupa por su privacidad."
+      ],
+      "Please note that if you delete this address, you will no longer be able to send or receive emails using this address.": [
+        "Tome en cuenta que si elimina esta dirección, ya no podrá enviar o recibir correos electrónicos usando esta dirección."
+      ],
+      "Are you sure you want to delete this address?": [
+        "¿Está seguro que desea eliminar esta dirección?"
+      ],
+      "The email address you place at the top of the list is your default email address. Drag and drop to reorder your addresses.": [
+        "La dirección de correo que ha colocado en la parte superior de la lista es su dirección de correo predeterminada. Arrastre y suelte para reordenar sus direcciones."
+      ],
+      "Queued": [
+        "En espera"
+      ],
+      "Done": [
+        "Hecho"
+      ],
+      "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
+        "Antes de que pueda enviar y recibir mensajes desde sus direcciones nuevas, necesita crear las claves de cifrado para ellas."
+      ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Este usuario es actualmente responsable de los pagos de su organización. Al darlo de baja, usted será el responsable de los pagos de su organización."
       ],
@@ -3888,6 +3912,12 @@
       ],
       "more": [
         "más"
+      ],
+      "You can use ProtonMail with any desktop email client that supports IMAP/SMTP, including Outlook, Apple Mail, and Thunderbird.": [
+        "Puede usar ProtonMail con cualquier cliente de escritorio que soporte IMAP/SMTP, incluyendo Outlook, Apple Mail y Thunderbird."
+      ],
+      "Upgrade to a paid plan to unlock IMAP/SMTP support through ProtonMail Bridge.": [
+        "Actualice a un plan de pago para desbloquear el soporte IMAP/SMTP mediante ProtonMail Bridge."
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "Su cuenta de Proton está actualmente bloqueada. Para continuar usando su cuenta, por favor pague cualquier factura atrasada."
@@ -3931,15 +3961,6 @@
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Si cree que esto es un error, contáctenos ${ contactLink }."
       ],
-      "Session timed out.": [
-        "Sesión agotada."
-      ],
-      "Internet connection lost.": [
-        "Sin conexión a Internet."
-      ],
-      "Servers are unreachable.": [
-        "Los servidores no están disponibles."
-      ],
       "Custom daily": [
         "Personalización diaria"
       ],
@@ -3963,6 +3984,15 @@
       ],
       "Yearly": [
         "Anual"
+      ],
+      "Session timed out.": [
+        "Sesión agotada."
+      ],
+      "Internet connection lost.": [
+        "Sin conexión a Internet."
+      ],
+      "Servers are unreachable.": [
+        "Los servidores no están disponibles."
       ],
       "Users can't make changes to organization settings. If you need admin privileges, reach out to your system administrator.": [
         "Los usuarios no pueden hacer cambios en los ajustes de la organización. Si necesita privilegios de administrador, póngase en contacto con el administrador del sistema."
@@ -4098,6 +4128,16 @@
         "Por defecto"
       ]
     },
+    "Select search results": {
+      "No results found": [
+        "No se encontraron resultados"
+      ]
+    },
+    "Timezone search placeholder": {
+      "Search timezones": [
+        "Buscar zonas horarias"
+      ]
+    },
     "Storage": {
       "Your current storage:": [
         "Su almacenamiento actual:"
@@ -4113,12 +4153,6 @@
       "Learn more": [
         "Más información"
       ],
-      "View guide": [
-        "Ver guía"
-      ],
-      "What is the difference between UDP and TCP protocols?": [
-        "¿Cuál es la diferencia entre los protocolos UDP y TCP?"
-      ],
       "Upgrade": [
         "Mejorar"
       ],
@@ -4133,6 +4167,12 @@
       ],
       "Add a gift code": [
         "Añadir código de regalo"
+      ],
+      "View guide": [
+        "Ver guía"
+      ],
+      "What is the difference between UDP and TCP protocols?": [
+        "¿Cuál es la diferencia entre los protocolos UDP y TCP?"
       ],
       "Pay invoice": [
         "Pagar factura"
@@ -4177,14 +4217,511 @@
         "Crear una cuenta"
       ]
     },
-    "Select search results": {
-      "No results found": [
-        "No se encontraron resultados"
+    "Label to change composer mode": {
+      "Normal": [
+        "Normal"
+      ],
+      "Maximized": [
+        "Maximizada"
       ]
     },
-    "Timezone search placeholder": {
-      "Search timezones": [
-        "Buscar zonas horarias"
+    "Label to change view layout": {
+      "Column": [
+        "Columna"
+      ],
+      "Row": [
+        "Fila"
+      ]
+    },
+    "Label to change density": {
+      "Comfortable": [
+        "Cómoda"
+      ],
+      "Compact": [
+        "Compacta"
+      ]
+    },
+    "Success": {
+      "Preference saved": [
+        "Preferencia guardada"
+      ],
+      "Import resumed": [
+        "Importación reanudada"
+      ],
+      "Import canceled": [
+        "Importación cancelada"
+      ],
+      "Import record deleted": [
+        "Registro de importación eliminado"
+      ],
+      "Deleting original messages": [
+        "Eliminando mensajes originales"
+      ],
+      "Locale updated": [
+        "Idioma actualizado"
+      ],
+      "Premium address created": [
+        "Dirección premium creada"
+      ],
+      "Keyboard shortcuts preferences updated": [
+        "Preferencias de atajos de teclado actualizadas"
+      ],
+      "Calendar added. It might take a few minutes to sync.": [
+        "Calendario añadido. Puede tomar unos minutos en sincronizarse."
+      ],
+      "Calendar created": [
+        "Calendario creado"
+      ],
+      "Calendar updated": [
+        "Calendario actualizado"
+      ],
+      "Default calendar updated": [
+        "Calendario por defecto actualizado"
+      ],
+      "Calendar removed": [
+        "Calendario eliminado"
+      ],
+      "Auto-reply disabled": [
+        "Autorrespuesta deshabilitada"
+      ],
+      "Auto-reply updated": [
+        "Respuesta automática actualizada"
+      ],
+      "Verification code copied to clipboard!": [
+        "¡Código de verificación copiado al portapapeles!"
+      ],
+      "SPF value copied to clipboard!": [
+        "¡Valor SPF copiado al portapapeles!"
+      ],
+      "Value copied to clipboard!": [
+        "¡Valor copiado al portapapeles!"
+      ],
+      "DMARC value copied to clipboard!": [
+        "¡Valor DMARC copiado al portapapeles!"
+      ],
+      "Domain verified": [
+        "Dominio verificado"
+      ],
+      "Catch-all address updated": [
+        "Dirección catch-all actualizada"
+      ],
+      "Email address copied to clipboard": [
+        "Dirección de correo copiada al portapapeles"
+      ],
+      "Bug reported": [
+        "Error reportado"
+      ],
+      "You have successfully unsubscribed": [
+        "Se ha desuscrito satisfactoriamente"
+      ],
+      "Payment method updated": [
+        "Método de pago actualizado"
+      ],
+      "Payment method added": [
+        "Método de pago añadido"
+      ],
+      "Credits added": [
+        "Créditos añadidos"
+      ],
+      "Gift code applied": [
+        "Código de regalo aplicado"
+      ],
+      "${ server.Domain } copied in your clipboard": [
+        "${ server.Domain } copiado al portapapeles"
+      ],
+      "Password updated": [
+        "Contraseña actualizada"
+      ],
+      "Account deleted. Logging out...": [
+        "Cuenta eliminada. Cerrando sesión..."
+      ],
+      "Email updated": [
+        "Correo actualizado"
+      ],
+      "Phone number updated": [
+        "Número de teléfono actualizado"
+      ],
+      "Session revoked": [
+        "Sesión revocada"
+      ],
+      "Sessions revoked": [
+        "Sesiones revocadas"
+      ],
+      "Payment method deleted": [
+        "Método de pago eliminado"
+      ],
+      "Invoice paid": [
+        "Factura pagada"
+      ],
+      "Invoice customized": [
+        "Factura personalizada"
+      ],
+      "Organization activated": [
+        "Organización activada"
+      ],
+      "Keys updated": [
+        "Claves actualizadas"
+      ],
+      "Address updated": [
+        "Dirección actualizada"
+      ],
+      "Address added": [
+        "Dirección añadida"
+      ],
+      "User updated": [
+        "Usuario actualizado"
+      ],
+      "User created": [
+        "Usuario creado"
+      ],
+      "Code sent to ${ methodTo }": [
+        "Código enviado a ${ methodTo }"
+      ],
+      "Verification successful": [
+        "Verificación exitosa"
+      ],
+      "If you entered a valid recovery email we will send you an email with your usernames in the next minute.": [
+        "Si ha ingresado un correo electrónico de recuperación válido, le enviaremos un correo con sus nombres de usuario en el próximo minuto."
+      ],
+      "If you entered a valid recovery phone we will send you an sms with your usernames in the next minute.": [
+        "Si ha ingresado un teléfono de recuperación válido, le enviaremos un SMS con sus nombres de usuario en el próximo minuto."
+      ]
+    },
+    "Tooltip": {
+      "Set the default layout for your Inbox.": [
+        "Establezca el diseño por defecto para su bandeja de entrada."
+      ],
+      "Set the default Composer popup size as small or full screen.": [
+        "Establezca el tamaño por defecto de la ventana emergente del compositor como pequeña o como pantalla completa."
+      ],
+      "When you add a label to a message in a conversation, it will automatically be applied to all future messages you send or receive in that conversation.": [
+        "Cuando añada una etiqueta a un mensaje en una conversación, se aplicará automáticamente a todos los mensajes futuros que envíe o reciba en esa conversación."
+      ],
+      "Group emails in the same conversation together in your Inbox or display them separately.": [
+        "Agrupa correos electrónicos en la misma conversación juntos en su bandeja de entrada o los muestra por separado."
+      ],
+      "Customize import to reduce the number of labels": [
+        "Personalice la importación para reducir el número de etiquetas"
+      ],
+      "Customize import to reduce the number of folders": [
+        "Personalizar importación para reducir el número de carpetas"
+      ],
+      "Edit label names": [
+        "Editar nombres de etiquetas"
+      ],
+      "Edit folder names": [
+        "Editar nombres de las carpetas"
+      ],
+      "System subfolders will show up as separate folders in ProtonMail": [
+        "Las subcarpetas del sistema se mostrarán como carpetas separadas en ProtonMail"
+      ],
+      "Each imported email will have this label": [
+        "Cada correo importado tendrá esta etiqueta"
+      ],
+      "The import will start with the most recent messages.": [
+        "La importación empezará con los mensajes más recientes."
+      ],
+      "Account is disconnected": [
+        "La cuenta está desconectada"
+      ],
+      "Your ProtonMail inbox is almost full": [
+        "Su buzón de ProtonMail está casi lleno"
+      ],
+      "Your external account may have reached its 24-hour bandwidth limit. Proton will try to resume the import as soon as possible.": [
+        "Su cuenta externa puede haber alcanzado su límite de ancho de banda de 24 horas. Proton intentará reanudar la importación tan pronto como sea posible."
+      ],
+      "You do not have any contacts to export": [
+        "No tiene ningún contacto para exportar"
+      ],
+      "This feature is unavailable for the moment": [
+        "Esta función no está disponible por el momento"
+      ],
+      "ProtonMail users will use this key by default for sending": [
+        "Los usuarios de ProtonMail usarán esta clave por defecto para enviar"
+      ],
+      "You have locally decrypted this key": [
+        "Ha descifrado localmente esta clave"
+      ],
+      "This key is encrypted with an old password": [
+        "Esta clave está cifrada con una contraseña antigua"
+      ],
+      "Signatures produced by this key are treated as invalid and this key cannot be used for encryption": [
+        "Las firmas creadas con esta clave son tratadas como inválidas y esta clave no puede usarse para cifrar"
+      ],
+      "This key cannot be used for encryption": [
+        "Esta clave no puede usarse para cifrar"
+      ],
+      "This address has been disabled": [
+        "Esta dirección fue deshabilitada"
+      ],
+      "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
+        "Detuvimos la firma de DKIM por problemas con su configuración de DNS. Siga las instrucciones a continuación para reanudar la firma."
+      ],
+      "Your DKIM signing is working.": [
+        "Su firma DKIM está funcionando."
+      ],
+      "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
+        "Detectamos un problema con su configuración DNS. Asegúrese de que sus registros coinciden con las instrucciones de abajo. Si el problema persiste, tendremos que cerrar la sesión de DKIM."
+      ],
+      "This feature is only available for paid users": [
+        "Esta función solo está disponible para usuarios de pago"
+      ],
+      "Enable/disable desktop and mobile notifications": [
+        "Habilitar/deshabilitar notificaciones de escritorio y teléfono"
+      ],
+      "Use multiple addresses / aliases linked to your account, e.g. username2@protonmail.com": [
+        "Use direcciones múltiples / alias vinculados a su cuenta, p. ej., usuario2@protonmail.com"
+      ],
+      "Host emails for your own domain(s) at ProtonMail, e.g. john.smith@example.com": [
+        "Aloje correos electrónicos para sus propios dominios en ProtonMail, p. ej. usuario@sudominio.com"
+      ],
+      "Use the personal address username@pm.me to send emails": [
+        "Use la dirección personal usuario@pm.me para enviar correos electrónicos"
+      ],
+      "Multi-user support is only applicable to plans with 2 or more users": [
+        "El soporte multi usuario solo se aplica a planes con 2 o más usuarios"
+      ],
+      "NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "NetShield protege su dispositivo y acelera la navegación bloqueando anuncios, rastreadores y malware."
+      ],
+      "Support for file sharing protocols such as BitTorrent.": [
+        "Soporte para protocolos de intercambio de archivos como BitTorrent."
+      ],
+      "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
+        "Acceda al contenido geobloqueado (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) sin importar dónde se encuentre."
+      ],
+      "Route your Internet traffic through the Tor network with a single click.": [
+        "Envíe todo su tráfico de Internet a través de la red Tor con un solo clic."
+      ],
+      "Defends against threats to VPN privacy by passing your Internet traffic through multiple servers.": [
+        "Defiende contra amenazas a la privacidad VPN pasando su tráfico de Internet a través de múltiples servidores."
+      ],
+      "Get access to all the paid features for both ProtonVPN and ProtonMail (the encrypted email service that millions use to protect their data) with one plan.": [
+        "Obtenga acceso a todas las funciones de pago de ProtonVPN y ProtonMail (el servicio de correo electrónico cifrado que millones utilizan para proteger sus datos) con un solo plan."
+      ],
+      "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
+        "Obtenga acceso a todas las funciones de pago de ${ vpnAppName } y ${ mailAppName } (el servicio de correo electrónico cifrado que millones usan para proteger sus datos) con un plan."
+      ],
+      "Host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
+        "Aloje correos electrónicos para sus propios dominios en ${ mailAppName }, p. ej. usuario@sudominio.com"
+      ],
+      "Create multiple email addresses linked to your account, e.g. username2@protonmail.com": [
+        "Cree direcciones múltiples vinculadas a su cuenta, p. ej., usuario2@protonmail.com"
+      ],
+      "Discount applied for annual billing cycle": [
+        "Descuento aplicado para el ciclo de facturación anual"
+      ],
+      "Discount applied for two-year billing cycle": [
+        "Descuento aplicado para el ciclo de facturación de dos años"
+      ],
+      "If you purchased a gift code or received one from our support team, you can enter it here.": [
+        "Si compó un código de regalo o recibió uno de nuestro equipo de soporte, puede ingresarlo aquí."
+      ],
+      "Enabling advanced logs records the IP address for each event in the security log.": [
+        "Al habilitar el registro avanzado, registra la dirección IP para cada evento en el registro de seguridad."
+      ],
+      "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
+        "Los mensajes en la carpeta enviados o borradores continuarán apareciendo en esa carpeta, incluso si los mueve a otra carpeta."
+      ],
+      "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
+        "Al hacer clic en un enlace, esta función de anti suplantación le pedirá que confirme la URL de la página web."
+      ],
+      "This feature delays sending your emails, giving you the opportunity to undo send during the selected time frame.": [
+        "Esta función retrasa el envío de sus correos electrónicos, dándole la oportunidad de deshacer el envío durante el periodo de tiempo seleccionado."
+      ]
+    },
+    "Option": {
+      "Normal": [
+        "Normal"
+      ],
+      "Plain text": [
+        "Texto plano"
+      ],
+      "Left to Right": [
+        "Izquierda a derecha"
+      ],
+      "Right to Left": [
+        "Derecha a izquierda"
+      ],
+      "Automatic (${ defaultFormat })": [
+        "Automático (${ defaultFormat })"
+      ],
+      "Automatic (${ defaultDay })": [
+        "Automático (${ defaultDay })"
+      ],
+      "Add to existing group": [
+        "Añadir al grupo existente"
+      ],
+      "Create new group": [
+        "Crear grupo nuevo"
+      ],
+      "Ignore group": [
+        "Ignorar grupo"
+      ],
+      "Fixed duration": [
+        "Duración fija"
+      ],
+      "Repeat daily": [
+        "Repetir diariamente"
+      ],
+      "Repeat weekly": [
+        "Repetir semanalmente"
+      ],
+      "Repeat monthly": [
+        "Repetir mensualmente"
+      ],
+      "Permanent": [
+        "Permanente"
+      ],
+      "1st of the month": [
+        "1º del mes"
+      ],
+      "2nd of the month": [
+        "2º del mes"
+      ],
+      "3rd of the month": [
+        "3º del mes"
+      ],
+      "4th of the month": [
+        "4º del mes"
+      ],
+      "5th of the month": [
+        "5º del mes"
+      ],
+      "6th of the month": [
+        "6º del mes"
+      ],
+      "7th of the month": [
+        "7º del mes"
+      ],
+      "8th of the month": [
+        "8º del mes"
+      ],
+      "9th of the month": [
+        "9º del mes"
+      ],
+      "10th of the month": [
+        "10º del mes"
+      ],
+      "11th of the month": [
+        "11º del mes"
+      ],
+      "12th of the month": [
+        "12º del mes"
+      ],
+      "13th of the month": [
+        "13º del mes"
+      ],
+      "14th of the month": [
+        "14º del mes"
+      ],
+      "15th of the month": [
+        "15º del mes"
+      ],
+      "16th of the month": [
+        "16º del mes"
+      ],
+      "17th of the month": [
+        "17º del mes"
+      ],
+      "18th of the month": [
+        "18º del mes"
+      ],
+      "19th of the month": [
+        "19º del mes"
+      ],
+      "20th of the month": [
+        "20º del mes"
+      ],
+      "21st of the month": [
+        "21º del mes"
+      ],
+      "22nd of the month": [
+        "22º del mes"
+      ],
+      "23rd of the month": [
+        "23º del mes"
+      ],
+      "24th of the month": [
+        "24º del mes"
+      ],
+      "25th of the month": [
+        "25º del mes"
+      ],
+      "26th of the month": [
+        "26º del mes"
+      ],
+      "27th of the month": [
+        "27º del mes"
+      ],
+      "28th of the month": [
+        "28º del mes"
+      ],
+      "29th of the month": [
+        "29º del mes"
+      ],
+      "30th of the month": [
+        "30º del mes"
+      ],
+      "31st of the month": [
+        "31º del mes"
+      ],
+      "No parent folder": [
+        "No hay carpeta principal"
+      ],
+      "Android": [
+        "Android"
+      ],
+      "iOS": [
+        "iOS"
+      ],
+      "Windows": [
+        "Windows"
+      ],
+      "macOS": [
+        "macOS"
+      ],
+      "GNU/Linux": [
+        "GNU/Linux"
+      ],
+      "Router": [
+        "Enrutador"
+      ],
+      "UDP": [
+        "UDP"
+      ],
+      "TCP": [
+        "TCP"
+      ],
+      "Secure Core configs": [
+        "Ajustes de Secure Core"
+      ],
+      "Country configs": [
+        "Ajustes de país"
+      ],
+      "Standard server configs": [
+        "Ajustes estándar del servidor"
+      ],
+      "Free server configs": [
+        "Ajustes del servidor gratuito"
+      ],
+      "Select a reason": [
+        "Seleccione un motivo"
+      ],
+      "I use a different Proton account": [
+        "Uso una cuenta de Proton diferente"
+      ],
+      "It's too expensive": [
+        "Es muy costoso"
+      ],
+      "It's missing a key feature that I need": [
+        "Falta una característica clave que necesito"
+      ],
+      "I found another service that I like better": [
+        "Encontré otro servicio que me gusta mejor"
+      ],
+      "My reason isn't listed": [
+        "Mi motivo no está listado"
       ]
     },
     "Loading info": {
@@ -4290,14 +4827,14 @@
       "Are you sure you want to delete the phone number?": [
         "¿Está seguro que desea eliminar el número de teléfono?"
       ],
+      "By disabling the logs, you will also clear your entire logs history. Are you sure you want to disable the logs?": [
+        "Al deshabilitar los registros, también borrará todo el historial. ¿Está seguro que desea deshabilitar los registros?"
+      ],
       "By disabling this address, you will no longer be able to send or receive emails using this address and all the linked Proton products will also be disabled. Are you sure you want to disable this address?": [
         "Al deshabilitar esta dirección, no podrá enviar o recibir correos usando esta dirección y todos los productos de Proton enlazados también se deshabilitarán. ¿Está seguro que desea deshabilitar la dirección?"
       ],
       "You must ${ activateLink } organization keys before adding an email address to a non-private member.": [
         "Debe ${ activateLink } las claves de la organización antes de añadir una dirección de correo electrónico a un miembro no privado."
-      ],
-      "By disabling the logs, you will also clear your entire logs history. Are you sure you want to disable the logs?": [
-        "Al deshabilitar los registros, también borrará todo el historial. ¿Está seguro que desea deshabilitar los registros?"
       ]
     },
     "Import instructions emphasis": {
@@ -4502,149 +5039,6 @@
         "CAPTCHA"
       ]
     },
-    "Tooltip": {
-      "Customize import to reduce the number of labels": [
-        "Personalice la importación para reducir el número de etiquetas"
-      ],
-      "Customize import to reduce the number of folders": [
-        "Personalizar importación para reducir el número de carpetas"
-      ],
-      "Edit label names": [
-        "Editar nombres de etiquetas"
-      ],
-      "Edit folder names": [
-        "Editar nombres de las carpetas"
-      ],
-      "System subfolders will show up as separate folders in ProtonMail": [
-        "Las subcarpetas del sistema se mostrarán como carpetas separadas en ProtonMail"
-      ],
-      "Each imported email will have this label": [
-        "Cada correo importado tendrá esta etiqueta"
-      ],
-      "The import will start with the most recent messages.": [
-        "La importación empezará con los mensajes más recientes."
-      ],
-      "Account is disconnected": [
-        "La cuenta está desconectada"
-      ],
-      "Your ProtonMail inbox is almost full": [
-        "Su buzón de ProtonMail está casi lleno"
-      ],
-      "Your external account may have reached its 24-hour bandwidth limit. Proton will try to resume the import as soon as possible.": [
-        "Su cuenta externa puede haber alcanzado su límite de ancho de banda de 24 horas. Proton intentará reanudar la importación tan pronto como sea posible."
-      ],
-      "You do not have any contacts to export": [
-        "No tiene ningún contacto para exportar"
-      ],
-      "Set the default layout for your Inbox.": [
-        "Establezca el diseño por defecto para su bandeja de entrada."
-      ],
-      "Set the default Composer popup size as small or full screen.": [
-        "Establezca el tamaño por defecto de la ventana emergente del compositor como pequeña o como pantalla completa."
-      ],
-      "When you add a label to a message in a conversation, it will automatically be applied to all future messages you send or receive in that conversation.": [
-        "Cuando añada una etiqueta a un mensaje en una conversación, se aplicará automáticamente a todos los mensajes futuros que envíe o reciba en esa conversación."
-      ],
-      "Group emails in the same conversation together in your Inbox or display them separately.": [
-        "Agrupa correos electrónicos en la misma conversación juntos en su bandeja de entrada o los muestra por separado."
-      ],
-      "This feature is unavailable for the moment": [
-        "Esta función no está disponible por el momento"
-      ],
-      "ProtonMail users will use this key by default for sending": [
-        "Los usuarios de ProtonMail usarán esta clave por defecto para enviar"
-      ],
-      "You have locally decrypted this key": [
-        "Ha descifrado localmente esta clave"
-      ],
-      "This key is encrypted with an old password": [
-        "Esta clave está cifrada con una contraseña antigua"
-      ],
-      "Signatures produced by this key are treated as invalid and this key cannot be used for encryption": [
-        "Las firmas creadas con esta clave son tratadas como inválidas y esta clave no puede usarse para cifrar"
-      ],
-      "This key cannot be used for encryption": [
-        "Esta clave no puede usarse para cifrar"
-      ],
-      "This address has been disabled": [
-        "Esta dirección fue deshabilitada"
-      ],
-      "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
-        "Detuvimos la firma de DKIM por problemas con su configuración de DNS. Siga las instrucciones a continuación para reanudar la firma."
-      ],
-      "Your DKIM signing is working.": [
-        "Su firma DKIM está funcionando."
-      ],
-      "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
-        "Detectamos un problema con su configuración DNS. Asegúrese de que sus registros coinciden con las instrucciones de abajo. Si el problema persiste, tendremos que cerrar la sesión de DKIM."
-      ],
-      "This feature is only available for paid users": [
-        "Esta función solo está disponible para usuarios de pago"
-      ],
-      "Enable/disable desktop and mobile notifications": [
-        "Habilitar/deshabilitar notificaciones de escritorio y teléfono"
-      ],
-      "Use multiple addresses / aliases linked to your account, e.g. username2@protonmail.com": [
-        "Use direcciones múltiples / alias vinculados a su cuenta, p. ej., usuario2@protonmail.com"
-      ],
-      "Host emails for your own domain(s) at ProtonMail, e.g. john.smith@example.com": [
-        "Aloje correos electrónicos para sus propios dominios en ProtonMail, p. ej. usuario@sudominio.com"
-      ],
-      "Use the personal address username@pm.me to send emails": [
-        "Use la dirección personal usuario@pm.me para enviar correos electrónicos"
-      ],
-      "Multi-user support is only applicable to plans with 2 or more users": [
-        "El soporte multi usuario solo se aplica a planes con 2 o más usuarios"
-      ],
-      "NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "NetShield protege su dispositivo y acelera la navegación bloqueando anuncios, rastreadores y malware."
-      ],
-      "Support for file sharing protocols such as BitTorrent.": [
-        "Soporte para protocolos de intercambio de archivos como BitTorrent."
-      ],
-      "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
-        "Acceda al contenido geobloqueado (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) sin importar dónde se encuentre."
-      ],
-      "Route your Internet traffic through the Tor network with a single click.": [
-        "Envíe todo su tráfico de Internet a través de la red Tor con un solo clic."
-      ],
-      "Defends against threats to VPN privacy by passing your Internet traffic through multiple servers.": [
-        "Defiende contra amenazas a la privacidad VPN pasando su tráfico de Internet a través de múltiples servidores."
-      ],
-      "Get access to all the paid features for both ProtonVPN and ProtonMail (the encrypted email service that millions use to protect their data) with one plan.": [
-        "Obtenga acceso a todas las funciones de pago de ProtonVPN y ProtonMail (el servicio de correo electrónico cifrado que millones utilizan para proteger sus datos) con un solo plan."
-      ],
-      "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
-        "Obtenga acceso a todas las funciones de pago de ${ vpnAppName } y ${ mailAppName } (el servicio de correo electrónico cifrado que millones usan para proteger sus datos) con un plan."
-      ],
-      "Host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
-        "Aloje correos electrónicos para sus propios dominios en ${ mailAppName }, p. ej. usuario@sudominio.com"
-      ],
-      "Create multiple email addresses linked to your account, e.g. username2@protonmail.com": [
-        "Cree direcciones múltiples vinculadas a su cuenta, p. ej., usuario2@protonmail.com"
-      ],
-      "Discount applied for annual billing cycle": [
-        "Descuento aplicado para el ciclo de facturación anual"
-      ],
-      "Discount applied for two-year billing cycle": [
-        "Descuento aplicado para el ciclo de facturación de dos años"
-      ],
-      "If you purchased a gift code or received one from our support team, you can enter it here.": [
-        "Si compó un código de regalo o recibió uno de nuestro equipo de soporte, puede ingresarlo aquí."
-      ],
-      "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
-        "Los mensajes en la carpeta enviados o borradores continuarán apareciendo en esa carpeta, incluso si los mueve a otra carpeta."
-      ],
-      "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
-        "Al hacer clic en un enlace, esta función de anti suplantación le pedirá que confirme la URL de la página web."
-      ],
-      "This feature delays sending your emails, giving you the opportunity to undo send during the selected time frame.": [
-        "Esta función retrasa el envío de sus correos electrónicos, dándole la oportunidad de deshacer el envío durante el periodo de tiempo seleccionado."
-      ],
-      "Enabling advanced logs records the IP address for each event in the security log.": [
-        "Al habilitar el registro avanzado, registra la dirección IP para cada evento en el registro de seguridad."
-      ]
-    },
     "Security phrase": {
       "Permanently delete messages in ${ email }": [
         "Eliminar permanentemente los mensajes en ${ email }"
@@ -4684,152 +5078,6 @@
         "Retrasada"
       ]
     },
-    "Success": {
-      "Import resumed": [
-        "Importación reanudada"
-      ],
-      "Import canceled": [
-        "Importación cancelada"
-      ],
-      "Import record deleted": [
-        "Registro de importación eliminado"
-      ],
-      "Deleting original messages": [
-        "Eliminando mensajes originales"
-      ],
-      "Preference saved": [
-        "Preferencia guardada"
-      ],
-      "Premium address created": [
-        "Dirección premium creada"
-      ],
-      "Keyboard shortcuts preferences updated": [
-        "Preferencias de atajos de teclado actualizadas"
-      ],
-      "Locale updated": [
-        "Idioma actualizado"
-      ],
-      "${ server.Domain } copied in your clipboard": [
-        "${ server.Domain } copiado al portapapeles"
-      ],
-      "Auto-reply disabled": [
-        "Autorrespuesta deshabilitada"
-      ],
-      "Auto-reply updated": [
-        "Respuesta automática actualizada"
-      ],
-      "Calendar added. It might take a few minutes to sync.": [
-        "Calendario añadido. Puede tomar unos minutos en sincronizarse."
-      ],
-      "Calendar created": [
-        "Calendario creado"
-      ],
-      "Calendar updated": [
-        "Calendario actualizado"
-      ],
-      "Default calendar updated": [
-        "Calendario por defecto actualizado"
-      ],
-      "Calendar removed": [
-        "Calendario eliminado"
-      ],
-      "Verification code copied to clipboard!": [
-        "¡Código de verificación copiado al portapapeles!"
-      ],
-      "SPF value copied to clipboard!": [
-        "¡Valor SPF copiado al portapapeles!"
-      ],
-      "Value copied to clipboard!": [
-        "¡Valor copiado al portapapeles!"
-      ],
-      "DMARC value copied to clipboard!": [
-        "¡Valor DMARC copiado al portapapeles!"
-      ],
-      "Domain verified": [
-        "Dominio verificado"
-      ],
-      "Catch-all address updated": [
-        "Dirección catch-all actualizada"
-      ],
-      "Email address copied to clipboard": [
-        "Dirección de correo copiada al portapapeles"
-      ],
-      "Bug reported": [
-        "Error reportado"
-      ],
-      "You have successfully unsubscribed": [
-        "Se ha desuscrito satisfactoriamente"
-      ],
-      "Payment method updated": [
-        "Método de pago actualizado"
-      ],
-      "Payment method added": [
-        "Método de pago añadido"
-      ],
-      "Credits added": [
-        "Créditos añadidos"
-      ],
-      "Gift code applied": [
-        "Código de regalo aplicado"
-      ],
-      "Password updated": [
-        "Contraseña actualizada"
-      ],
-      "Account deleted. Logging out...": [
-        "Cuenta eliminada. Cerrando sesión..."
-      ],
-      "Email updated": [
-        "Correo actualizado"
-      ],
-      "Phone number updated": [
-        "Número de teléfono actualizado"
-      ],
-      "Address updated": [
-        "Dirección actualizada"
-      ],
-      "Address added": [
-        "Dirección añadida"
-      ],
-      "Session revoked": [
-        "Sesión revocada"
-      ],
-      "Sessions revoked": [
-        "Sesiones revocadas"
-      ],
-      "Payment method deleted": [
-        "Método de pago eliminado"
-      ],
-      "Invoice paid": [
-        "Factura pagada"
-      ],
-      "Invoice customized": [
-        "Factura personalizada"
-      ],
-      "Organization activated": [
-        "Organización activada"
-      ],
-      "Keys updated": [
-        "Claves actualizadas"
-      ],
-      "User updated": [
-        "Usuario actualizado"
-      ],
-      "User created": [
-        "Usuario creado"
-      ],
-      "Code sent to ${ methodTo }": [
-        "Código enviado a ${ methodTo }"
-      ],
-      "Verification successful": [
-        "Verificación exitosa"
-      ],
-      "If you entered a valid recovery email we will send you an email with your usernames in the next minute.": [
-        "Si ha ingresado un correo electrónico de recuperación válido, le enviaremos un correo con sus nombres de usuario en el próximo minuto."
-      ],
-      "If you entered a valid recovery phone we will send you an sms with your usernames in the next minute.": [
-        "Si ha ingresado un teléfono de recuperación válido, le enviaremos un SMS con sus nombres de usuario en el próximo minuto."
-      ]
-    },
     "Title header": {
       "Import": [
         "Importar"
@@ -4850,230 +5098,6 @@
     "Import error link": {
       "bandwidth limit": [
         "límite de ancho de banda"
-      ]
-    },
-    "Option": {
-      "Automatic (${ defaultFormat })": [
-        "Automático (${ defaultFormat })"
-      ],
-      "Automatic (${ defaultDay })": [
-        "Automático (${ defaultDay })"
-      ],
-      "Add to existing group": [
-        "Añadir al grupo existente"
-      ],
-      "Create new group": [
-        "Crear grupo nuevo"
-      ],
-      "Ignore group": [
-        "Ignorar grupo"
-      ],
-      "Normal": [
-        "Normal"
-      ],
-      "Plain text": [
-        "Texto plano"
-      ],
-      "Left to Right": [
-        "Izquierda a derecha"
-      ],
-      "Right to Left": [
-        "Derecha a izquierda"
-      ],
-      "Android": [
-        "Android"
-      ],
-      "iOS": [
-        "iOS"
-      ],
-      "Windows": [
-        "Windows"
-      ],
-      "macOS": [
-        "macOS"
-      ],
-      "GNU/Linux": [
-        "GNU/Linux"
-      ],
-      "Router": [
-        "Enrutador"
-      ],
-      "UDP": [
-        "UDP"
-      ],
-      "TCP": [
-        "TCP"
-      ],
-      "Secure Core configs": [
-        "Ajustes de Secure Core"
-      ],
-      "Country configs": [
-        "Ajustes de país"
-      ],
-      "Standard server configs": [
-        "Ajustes estándar del servidor"
-      ],
-      "Free server configs": [
-        "Ajustes del servidor gratuito"
-      ],
-      "Fixed duration": [
-        "Duración fija"
-      ],
-      "Repeat daily": [
-        "Repetir diariamente"
-      ],
-      "Repeat weekly": [
-        "Repetir semanalmente"
-      ],
-      "Repeat monthly": [
-        "Repetir mensualmente"
-      ],
-      "Permanent": [
-        "Permanente"
-      ],
-      "1st of the month": [
-        "1º del mes"
-      ],
-      "2nd of the month": [
-        "2º del mes"
-      ],
-      "3rd of the month": [
-        "3º del mes"
-      ],
-      "4th of the month": [
-        "4º del mes"
-      ],
-      "5th of the month": [
-        "5º del mes"
-      ],
-      "6th of the month": [
-        "6º del mes"
-      ],
-      "7th of the month": [
-        "7º del mes"
-      ],
-      "8th of the month": [
-        "8º del mes"
-      ],
-      "9th of the month": [
-        "9º del mes"
-      ],
-      "10th of the month": [
-        "10º del mes"
-      ],
-      "11th of the month": [
-        "11º del mes"
-      ],
-      "12th of the month": [
-        "12º del mes"
-      ],
-      "13th of the month": [
-        "13º del mes"
-      ],
-      "14th of the month": [
-        "14º del mes"
-      ],
-      "15th of the month": [
-        "15º del mes"
-      ],
-      "16th of the month": [
-        "16º del mes"
-      ],
-      "17th of the month": [
-        "17º del mes"
-      ],
-      "18th of the month": [
-        "18º del mes"
-      ],
-      "19th of the month": [
-        "19º del mes"
-      ],
-      "20th of the month": [
-        "20º del mes"
-      ],
-      "21st of the month": [
-        "21º del mes"
-      ],
-      "22nd of the month": [
-        "22º del mes"
-      ],
-      "23rd of the month": [
-        "23º del mes"
-      ],
-      "24th of the month": [
-        "24º del mes"
-      ],
-      "25th of the month": [
-        "25º del mes"
-      ],
-      "26th of the month": [
-        "26º del mes"
-      ],
-      "27th of the month": [
-        "27º del mes"
-      ],
-      "28th of the month": [
-        "28º del mes"
-      ],
-      "29th of the month": [
-        "29º del mes"
-      ],
-      "30th of the month": [
-        "30º del mes"
-      ],
-      "31st of the month": [
-        "31º del mes"
-      ],
-      "${ stateOfTheArt } X25519 (Fastest, most modern)": [
-        "${ stateOfTheArt } X25519 (Más rápido, moderno)"
-      ],
-      "${ highestSecurity } RSA 4096-bit (Slower, but increased compatibility with legacy software)": [
-        "${ highestSecurity } RSA 4096-bit (Lento, pero mayor compatibilidad con software heredado)"
-      ],
-      "No parent folder": [
-        "No hay carpeta principal"
-      ],
-      "Select a reason": [
-        "Seleccione un motivo"
-      ],
-      "It’s temporary, I’ll be back": [
-        "Es temporal, regresaré"
-      ],
-      "I didn’t understand what I was signing up for": [
-        "No entendí para lo que me estaba registrando"
-      ],
-      "It’s too expensive": [
-        "Es demasiado caro"
-      ],
-      "I’m unhappy with customer service": [
-        "Estoy descontento con el servicio al cliente"
-      ],
-      "Using Proton is too complicated": [
-        "Usar Proton es demasiado complicado"
-      ],
-      "I'm switching to a different service": [
-        "Estoy cambiando a otro servicio"
-      ],
-      "The quality didn't live up to my expectations": [
-        "La calidad no cumplió mis expectativas"
-      ],
-      "Other": [
-        "Otro"
-      ],
-      "I use a different Proton account": [
-        "Uso una cuenta de Proton diferente"
-      ],
-      "It's too expensive": [
-        "Es muy costoso"
-      ],
-      "It's missing a key feature that I need": [
-        "Falta una característica clave que necesito"
-      ],
-      "I found another service that I like better": [
-        "Encontré otro servicio que me gusta mejor"
-      ],
-      "My reason isn't listed": [
-        "Mi motivo no está listado"
       ]
     },
     "Day": {
@@ -5303,123 +5327,6 @@
       "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
         "${ totalImported }/${ totalToImport } contacto cifrado y añadido a su lista de contactos",
         "${ totalImported }/${ totalToImport } contactos cifrados y añadidos a su lista de contactos"
-      ]
-    },
-    "Label to change composer mode": {
-      "Normal": [
-        "Normal"
-      ],
-      "Maximized": [
-        "Maximizada"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "Columna"
-      ],
-      "Row": [
-        "Fila"
-      ]
-    },
-    "Label to change density": {
-      "Comfortable": [
-        "Cómoda"
-      ],
-      "Compact": [
-        "Compacta"
-      ]
-    },
-    "VPNClient": {
-      "Android": [
-        "Android"
-      ],
-      "iOS": [
-        "iOS"
-      ],
-      "Windows": [
-        "Windows"
-      ],
-      "macOS": [
-        "macOS"
-      ],
-      "GNU/Linux": [
-        "GNU/Linux"
-      ],
-      "Chromebook": [
-        "Chromebook"
-      ],
-      "Android TV": [
-        "Android TV"
-      ]
-    },
-    "Notification": {
-      "OpenVPN / IKEv2 credentials regenerated": [
-        "Credenciales OpenVPN/IKEv2 regeneradas"
-      ],
-      "${ _Filter.Name } created": [
-        "${ _Filter.Name } creado"
-      ],
-      "A disabled address cannot be primary": [
-        "Una dirección deshabilitada no puede ser principal"
-      ]
-    },
-    "CountryInfo": {
-      "(via ${ entryCountryName })": [
-        "(vía ${ entryCountryName })"
-      ]
-    },
-    "Feature": {
-      "Access to all countries": [
-        "Acceso a todos los países"
-      ],
-      "Secure Core servers": [
-        "Servidores Secure Core"
-      ],
-      "Fastest VPN servers": [
-        "Servidores VPN más rápidos"
-      ],
-      "Torrenting support (P2P)": [
-        "Soporte de torrent (P2P)"
-      ],
-      "Connection for up to ${ plusVpnConnections } device": [
-        "Conexión hasta para ${ plusVpnConnections } dispositivo",
-        "Conexión hasta para ${ plusVpnConnections } dispositivos"
-      ],
-      "Secure streaming support": [
-        "Soporte de transmisión segura"
-      ],
-      "VPN ${ connectionsPluralized }": [
-        "VPN ${ connectionsPluralized }"
-      ]
-    },
-    "VPN info": {
-      "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, and more.": [
-        "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now y más."
-      ]
-    },
-    "Autoresponse": {
-      "I'm out of the office with limited access to my email.": [
-        "Estoy fuera de la oficina con acceso limitado a mi correo."
-      ]
-    },
-    "Tooltip prompt to trust keys": {
-      "When receiving an email from another ProtonMail user who does not have trusted keys in your contacts, a banner will ask if you want to enable trusted keys.": [
-        "Al recibir un correo electrónico de otro usuario de ProtonMail que no tiene claves de confianza en sus contactos, un aviso le preguntará si desea habilitar las claves de confianza."
-      ]
-    },
-    "Tooltip sign external messages": {
-      "Automatically sign all your outgoing messages so users can verify the authenticity of your messages. This is done in combination with the default PGP settings which can be configured below.": [
-        "Firmar automáticamente todos sus mensajes salientes para que los usuarios puedan verificar la autenticidad de sus mensajes. Esto se hace en combinación con la configuración predeterminada de PGP que se puede configurar a continuación."
-      ]
-    },
-    "Tooltip automatically attach public key": {
-      "This automatically adds your public key to each message you send. Recipients can use this to verify the authenticity of your messages and send encrypted messages to you.": [
-        "Esto añade automáticamente su clave pública a cada mensaje que envíe. Los destinatarios pueden usar esto para verificar la autenticidad de sus mensajes y enviarle mensajes cifrados a usted."
-      ]
-    },
-    "Tooltip default pgp scheme": {
-      "Select the default PGP settings used to sign or encrypt messages with non-ProtonMail PGP users. Note that Inline PGP forces plain text messages. Learn more": [
-        "Seleccione la configuración PGP predeterminada usada para firmar o cifrar mensajes con usuarios fuera de ProtonMail. Tome en cuenta que PGP en línea fuerza mensajes de texto plano. Más información."
       ]
     },
     "Duration": {
@@ -5925,12 +5832,45 @@
         "Se están generando las claves de cifrado de su dirección. Esto puede tomar unos minutos y congelar temporalmente su navegador."
       ]
     },
-    "encryption": {
+    "Remark about a key type option": {
       "State of the art": [
         "Lo último"
       ],
       "Compatibility": [
         "Compatibilidad"
+      ]
+    },
+    "Key type option": {
+      "${ stateOfTheArt } ECC Curve25519 (Fastest, most modern)": [
+        "${ stateOfTheArt } ECC Curve25519 (Más rápido, moderno)"
+      ],
+      "${ compatibility } RSA 4096-bit (Slower, but increased compatibility with legacy software)": [
+        "${ compatibility } RSA 4096-bit (Lento, pero mayor compatibilidad con software heredado)"
+      ]
+    },
+    "Autoresponse": {
+      "I'm out of the office with limited access to my email.": [
+        "Estoy fuera de la oficina con acceso limitado a mi correo."
+      ]
+    },
+    "Tooltip prompt to trust keys": {
+      "When receiving an email from another ProtonMail user who does not have trusted keys in your contacts, a banner will ask if you want to enable trusted keys.": [
+        "Al recibir un correo electrónico de otro usuario de ProtonMail que no tiene claves de confianza en sus contactos, un aviso le preguntará si desea habilitar las claves de confianza."
+      ]
+    },
+    "Tooltip sign external messages": {
+      "Automatically sign all your outgoing messages so users can verify the authenticity of your messages. This is done in combination with the default PGP settings which can be configured below.": [
+        "Firmar automáticamente todos sus mensajes salientes para que los usuarios puedan verificar la autenticidad de sus mensajes. Esto se hace en combinación con la configuración predeterminada de PGP que se puede configurar a continuación."
+      ]
+    },
+    "Tooltip automatically attach public key": {
+      "This automatically adds your public key to each message you send. Recipients can use this to verify the authenticity of your messages and send encrypted messages to you.": [
+        "Esto añade automáticamente su clave pública a cada mensaje que envíe. Los destinatarios pueden usar esto para verificar la autenticidad de sus mensajes y enviarle mensajes cifrados a usted."
+      ]
+    },
+    "Tooltip default pgp scheme": {
+      "Select the default PGP settings used to sign or encrypt messages with non-ProtonMail PGP users. Note that Inline PGP forces plain text messages. Learn more": [
+        "Seleccione la configuración PGP predeterminada usada para firmar o cifrar mensajes con usuarios fuera de ProtonMail. Tome en cuenta que PGP en línea fuerza mensajes de texto plano. Más información."
       ]
     },
     "Label for adding a new custom domain": {
@@ -6069,38 +6009,6 @@
         "¿Está seguro que desea deshabilitar la autenticación de dos factores?"
       ]
     },
-    "Onboarding Proton": {
-      "This is what people will see when you send them an email, invite them to an event, or share a file with them.": [
-        "Esto es lo que la gente verá cuando les envíe un correo electrónico, les invite a un evento, o comparta un archivo."
-      ],
-      "Choose a display name": [
-        "Elija un nombre para mostrar"
-      ],
-      "Select a theme": [
-        "Seleccionar un tema"
-      ],
-      "You can change this anytime in your settings.": [
-        "Puede cambiar esto en cualquier momento en los ajustes."
-      ],
-      "Discover all Proton services": [
-        "Descubra todos los servicios de Proton"
-      ],
-      "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
-        "Use el selector de aplicaciones en la parte superior izquierda para acceder a otros servicios de Proton, incluyendo VPN, Calendario y Drive."
-      ],
-      "Welcome to Proton": [
-        "Bienvenido a Proton"
-      ],
-      "Our mission is to build an internet where you are in control of your data and your privacy. We have recently updated Proton - welcome to the secure internet.": [
-        "Nuestra misión es construir un Internet donde tenga el control de sus datos y de su privacidad. Hemos actualizado recientemente Proton. Bienvenido a un Internet seguro."
-      ],
-      "Set up your organization": [
-        "Configure su organización"
-      ],
-      "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
-        "Configure su organización, vincule su nombre de dominio y cree cuentas para asegurarse de que todos los miembros de su organización estén protegidos."
-      ]
-    },
     "Step in filter modal": {
       "Name": [
         "Nombre"
@@ -6135,6 +6043,17 @@
       ],
       "starred": [
         "destacado"
+      ]
+    },
+    "Notification": {
+      "${ _Filter.Name } created": [
+        "${ _Filter.Name } creado"
+      ],
+      "OpenVPN / IKEv2 credentials regenerated": [
+        "Credenciales OpenVPN/IKEv2 regeneradas"
+      ],
+      "A disabled address cannot be primary": [
+        "Una dirección deshabilitada no puede ser principal"
       ]
     },
     "Filter notification": {
@@ -6307,6 +6226,102 @@
         "${ Email } eliminado"
       ]
     },
+    "Onboarding Proton": {
+      "This is what people will see when you send them an email, invite them to an event, or share a file with them.": [
+        "Esto es lo que la gente verá cuando les envíe un correo electrónico, les invite a un evento, o comparta un archivo."
+      ],
+      "Choose a display name": [
+        "Elija un nombre para mostrar"
+      ],
+      "Select a theme": [
+        "Seleccionar un tema"
+      ],
+      "You can change this anytime in your settings.": [
+        "Puede cambiar esto en cualquier momento en los ajustes."
+      ],
+      "Discover all Proton services": [
+        "Descubra todos los servicios de Proton"
+      ],
+      "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
+        "Use el selector de aplicaciones en la parte superior izquierda para acceder a otros servicios de Proton, incluyendo VPN, Calendario y Drive."
+      ],
+      "Welcome to Proton": [
+        "Bienvenido a Proton"
+      ],
+      "Our mission is to build an internet where you are in control of your data and your privacy. We have recently updated Proton - welcome to the secure internet.": [
+        "Nuestra misión es construir un Internet donde tenga el control de sus datos y de su privacidad. Hemos actualizado recientemente Proton. Bienvenido a un Internet seguro."
+      ],
+      "Set up your organization": [
+        "Configure su organización"
+      ],
+      "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
+        "Configure su organización, vincule su nombre de dominio y cree cuentas para asegurarse de que todos los miembros de su organización estén protegidos."
+      ]
+    },
+    "New Label form": {
+      "Color": [
+        "Color"
+      ],
+      "Folder name": [
+        "Nombre de la carpeta"
+      ],
+      "Label name": [
+        "Nombre de la etiqueta"
+      ]
+    },
+    "label/folder notification": {
+      "${ Label.Name } created": [
+        "${ Label.Name } creado"
+      ],
+      "${ label.Name } updated": [
+        "${ label.Name } actualizado"
+      ],
+      "Preference saved": [
+        "Preferencia guardada"
+      ]
+    },
+    "Label/folder modal": {
+      "Create folder": [
+        "Crear carpeta"
+      ],
+      "Create label": [
+        "Crear etiqueta"
+      ],
+      "Edit folder": [
+        "Editar carpeta"
+      ],
+      "Edit label": [
+        "Editar etiqueta"
+      ]
+    },
+    "Success message after sorting folders": {
+      "Folders sorted": [
+        "Carpetas ordenadas"
+      ]
+    },
+    "Info - folder colouring feature": {
+      "When enabled, sub-folders inherit the color of the parent folder.": [
+        "Cuando está habilitada, las subcarpetas heredan el color de la carpeta padre."
+      ]
+    },
+    "Settings/labels": {
+      "Labels/Folders": [
+        "Etiquetas/Carpetas"
+      ]
+    },
+    "Settings/labels - table": {
+      "Labels": [
+        "Etiquetas"
+      ],
+      "Actions": [
+        "Acciones"
+      ]
+    },
+    "Success message after sorting labels": {
+      "Labels sorted": [
+        "Etiquetas ordenadas"
+      ]
+    },
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Ninguna imagen seleccionada"
@@ -6410,70 +6425,6 @@
         "Adjuntar captura(s)"
       ]
     },
-    "New Label form": {
-      "Color": [
-        "Color"
-      ],
-      "Folder name": [
-        "Nombre de la carpeta"
-      ],
-      "Label name": [
-        "Nombre de la etiqueta"
-      ]
-    },
-    "label/folder notification": {
-      "${ Label.Name } created": [
-        "${ Label.Name } creado"
-      ],
-      "${ label.Name } updated": [
-        "${ label.Name } actualizado"
-      ],
-      "Preference saved": [
-        "Preferencia guardada"
-      ]
-    },
-    "Label/folder modal": {
-      "Create folder": [
-        "Crear carpeta"
-      ],
-      "Create label": [
-        "Crear etiqueta"
-      ],
-      "Edit folder": [
-        "Editar carpeta"
-      ],
-      "Edit label": [
-        "Editar etiqueta"
-      ]
-    },
-    "Success message after sorting folders": {
-      "Folders sorted": [
-        "Carpetas ordenadas"
-      ]
-    },
-    "Info - folder colouring feature": {
-      "When enabled, sub-folders inherit the color of the parent folder.": [
-        "Cuando está habilitada, las subcarpetas heredan el color de la carpeta padre."
-      ]
-    },
-    "Settings/labels": {
-      "Labels/Folders": [
-        "Etiquetas/Carpetas"
-      ]
-    },
-    "Settings/labels - table": {
-      "Labels": [
-        "Etiquetas"
-      ],
-      "Actions": [
-        "Acciones"
-      ]
-    },
-    "Success message after sorting labels": {
-      "Labels sorted": [
-        "Etiquetas ordenadas"
-      ]
-    },
     "Apps dropdown": {
       "Proton applications": [
         "Aplicaciones de Proton"
@@ -6518,6 +6469,43 @@
       ],
       "${ mailAppName } Free": [
         "${ mailAppName } Gratuito"
+      ]
+    },
+    "Downgrade account reason": {
+      "I use a different Proton account": [
+        "Uso una cuenta de Proton diferente"
+      ],
+      "Subscription is too expensive": [
+        "La suscripción es muy costosa"
+      ],
+      "Missing feature(s) ": [
+        "Faltan funciones "
+      ],
+      "Bugs or quality issue": [
+        "Errores o problemas de calidad"
+      ],
+      "Streaming service unsupported": [
+        "Servicio de transmisión no compatible"
+      ],
+      "Switching to a different provider": [
+        "Cambio a otro proveedor"
+      ],
+      "Temporary need, may come back in the future": [
+        "Necesidad temporal, puedo volver en el futuro"
+      ],
+      "My reason isn't listed, please comment": [
+        "Mi motivo no está listado, por favor coméntenos"
+      ]
+    },
+    "Plan time remaining": {
+      "You still have ${ daysRemaining } day left on your ${ BRAND_NAME } ${ currentPlanName } account.": [
+        "Aún tiene ${ daysRemaining } día disponible en la cuenta ${ BRAND_NAME } ${ currentPlanName }.",
+        "Aún tiene ${ daysRemaining } días disponibles en la cuenta ${ BRAND_NAME } ${ currentPlanName }."
+      ]
+    },
+    "Downgrade modal exit survey title": {
+      "Help us improve!": [
+        "¡Ayúdenos a mejorar!"
       ]
     },
     "State": {
@@ -7008,23 +6996,66 @@
         "Gratis"
       ]
     },
+    "VPNClient": {
+      "Android": [
+        "Android"
+      ],
+      "iOS": [
+        "iOS"
+      ],
+      "Windows": [
+        "Windows"
+      ],
+      "macOS": [
+        "macOS"
+      ],
+      "GNU/Linux": [
+        "GNU/Linux"
+      ],
+      "Chromebook": [
+        "Chromebook"
+      ],
+      "Android TV": [
+        "Android TV"
+      ]
+    },
+    "CountryInfo": {
+      "(via ${ entryCountryName })": [
+        "(vía ${ entryCountryName })"
+      ]
+    },
+    "Feature": {
+      "Access to all countries": [
+        "Acceso a todos los países"
+      ],
+      "Secure Core servers": [
+        "Servidores Secure Core"
+      ],
+      "Fastest VPN servers": [
+        "Servidores VPN más rápidos"
+      ],
+      "Torrenting support (P2P)": [
+        "Soporte de torrent (P2P)"
+      ],
+      "Connection for up to ${ plusVpnConnections } device": [
+        "Conexión hasta para ${ plusVpnConnections } dispositivo",
+        "Conexión hasta para ${ plusVpnConnections } dispositivos"
+      ],
+      "Secure streaming support": [
+        "Soporte de transmisión segura"
+      ],
+      "VPN ${ connectionsPluralized }": [
+        "VPN ${ connectionsPluralized }"
+      ]
+    },
+    "VPN info": {
+      "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, and more.": [
+        "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now y más."
+      ]
+    },
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
         "Una versión nueva de ${ appName } está disponible. ${ reloadButton }."
-      ]
-    },
-    "Option delay send seconds": {
-      "0 seconds": [
-        "0 segundos"
-      ],
-      "5 seconds": [
-        "5 segundos"
-      ],
-      "10 seconds": [
-        "10 segundos"
-      ],
-      "20 seconds": [
-        "20 segundos"
       ]
     },
     "Label for news": {
@@ -7073,59 +7104,6 @@
       ],
       "Recovery phrase": [
         "Frase de recuperación"
-      ]
-    },
-    "Address status": {
-      "Default": [
-        "Por defecto"
-      ],
-      "Active": [
-        "Activa"
-      ],
-      "Disabled": [
-        "Deshabilitada"
-      ],
-      "Orphan": [
-        "Huérfana"
-      ],
-      "Missing keys": [
-        "Claves faltantes"
-      ]
-    },
-    "Address action": {
-      "Enable": [
-        "Habilitar"
-      ],
-      "Disable": [
-        "Deshabilitar"
-      ],
-      "Generate missing keys": [
-        "Generar claves faltantes"
-      ],
-      "Delete": [
-        "Eliminar"
-      ]
-    },
-    "Bridge version load failed": {
-      "Failed to find latest version": [
-        "No se encontró la última versión"
-      ]
-    },
-    "OS compatibility": {
-      ".exe (64-bit)": [
-        ".exe (64 bits)"
-      ],
-      ".dmg (10.12 or later)": [
-        ".dmg (10.12 o superior)"
-      ],
-      ".deb (for Debian/Ubuntu)": [
-        ".deb (para Debian/Ubuntu)"
-      ],
-      ".rpm (for Fedora/openSUSE)": [
-        ".rpm (para Fedora/openSUSE)"
-      ],
-      "PKGBUILD (for other distributions)": [
-        "PKGBUILD (para otras distribuciones)"
       ]
     },
     "Badge for user sessions table": {
@@ -7369,6 +7347,59 @@
         "Cambiar las claves de la organización"
       ]
     },
+    "Option delay send seconds": {
+      "0 seconds": [
+        "0 segundos"
+      ],
+      "5 seconds": [
+        "5 segundos"
+      ],
+      "10 seconds": [
+        "10 segundos"
+      ],
+      "20 seconds": [
+        "20 segundos"
+      ]
+    },
+    "Option protection mode": {
+      "Prevent tracking (recommended)": [
+        "Evitar rastreo (recomendado)"
+      ],
+      "Prevent tracking and store content locally": [
+        "Evitar rastreo y almacenamiento de contenido localmente"
+      ]
+    },
+    "Address status": {
+      "Default": [
+        "Por defecto"
+      ],
+      "Active": [
+        "Activa"
+      ],
+      "Disabled": [
+        "Deshabilitada"
+      ],
+      "Orphan": [
+        "Huérfana"
+      ],
+      "Missing keys": [
+        "Claves faltantes"
+      ]
+    },
+    "Address action": {
+      "Enable": [
+        "Habilitar"
+      ],
+      "Disable": [
+        "Deshabilitar"
+      ],
+      "Generate missing keys": [
+        "Generar claves faltantes"
+      ],
+      "Delete": [
+        "Eliminar"
+      ]
+    },
     "Member action": {
       "Edit": [
         "Editar"
@@ -7430,6 +7461,28 @@
     "Private Member": {
       "private": [
         "privado"
+      ]
+    },
+    "Bridge version load failed": {
+      "Failed to find latest version": [
+        "No se encontró la última versión"
+      ]
+    },
+    "OS compatibility": {
+      ".exe (64-bit)": [
+        ".exe (64 bits)"
+      ],
+      ".dmg (10.12 or later)": [
+        ".dmg (10.12 o superior)"
+      ],
+      ".deb (for Debian/Ubuntu)": [
+        ".deb (para Debian/Ubuntu)"
+      ],
+      ".rpm (for Fedora/openSUSE)": [
+        ".rpm (para Fedora/openSUSE)"
+      ],
+      "PKGBUILD (for other distributions)": [
+        "PKGBUILD (para otras distribuciones)"
       ]
     },
     "Delinquent modal title": {
@@ -7586,82 +7639,6 @@
       ],
       "GB": [
         "GB"
-      ]
-    },
-    "Import contact. Contact identifier": {
-      "unknown": [
-        "desconocido"
-      ]
-    },
-    "Error importing contact": {
-      "vCard versions < 3.0 not supported": [
-        "Versiones vCard menores a 3.0 no compatibles"
-      ],
-      "Encryption failed": [
-        "Falló el cifrado"
-      ]
-    },
-    "Error importing calendar": {
-      "An unexpected error occurred. Import must be restarted.": [
-        "Ocurrió un error inesperado. La importación debe reiniciarse."
-      ],
-      "An error occurred uploading your file. No file has been selected.": [
-        "Ocurrió un error al cargar el archivo. Ningún archivo fue seleccionado."
-      ],
-      "An error occurred uploading your file ${ formattedFilename }. Only ICS file formats are allowed.": [
-        "Ocurrió un error al cargar el archivo ${ formattedFilename }. Solo se admiten los formatos ICS."
-      ],
-      "Your file ${ formattedFilename } is empty.": [
-        "Su archivo ${ formattedFilename } está vacío."
-      ],
-      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
-        "Ocurrió un error al cargar el archivo ${ formattedFilename }. El tamaño máximo del archivo es ${ MAX_IMPORT_FILE_SIZE_STRING }."
-      ],
-      "Your file ${ formattedFilename } is not a calendar.": [
-        "Su archivo ${ formattedFilename } no es un calendario."
-      ],
-      "${ CALENDAR_APP_NAME } only supports importing calendars with iCal version 2.0.": [
-        "${ CALENDAR_APP_NAME } solo es compatible con la importación de calendarios con la versión iCal 2.0."
-      ],
-      "Your file ${ formattedFilename } is an invitation and cannot be imported.": [
-        "El archivo ${ formattedFilename } es una invitación y no se puede importar."
-      ],
-      "Your file ${ formattedFilename } has no events to be imported.": [
-        "Su archivo ${ formattedFilename } no tiene eventos para importar."
-      ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } events.": [
-        "Su archivo ${ formattedFilename } contiene más de ${ MAX_IMPORT_EVENTS_STRING } eventos."
-      ],
-      "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "Ocurrió un error al leer el archivo ${ formattedFilename }. El archivo no tiene el formato correcto."
-      ]
-    },
-    "Error importing contacts": {
-      "An error occurred uploading your file. No file has been selected.": [
-        "Ocurrió un error al cargar el archivo. Ningún archivo fue seleccionado."
-      ],
-      "An error occurred uploading your file ${ formattedFilename }. No .csv or .vcf file selected": [
-        "Ocurrió un error al subir el archivo ${ formattedFilename }. No se seleccionó un archivo .csv o .vcf"
-      ],
-      "Your file ${ formattedFilename } is empty.": [
-        "Su archivo ${ formattedFilename } está vacío."
-      ],
-      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
-        "Ocurrió un error al cargar el archivo ${ formattedFilename }. El tamaño máximo del archivo es ${ MAX_IMPORT_FILE_SIZE_STRING }."
-      ],
-      "Your file ${ formattedFilename } has no contacts to be imported.": [
-        "Su archivo ${ formattedFilename } no tiene contactos para importar."
-      ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
-        "Su archivo ${ formattedFilename } contiene más de ${ MAX_IMPORT_CONTACTS_STRING } contactos."
-      ],
-      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "Ocurrió un error al leer el archivo ${ formattedFilename }. El archivo no tiene el formato correcto."
-      ]
-    },
-    "Default display name vcard": {
-      "Unknown": [
-        "Desconocido"
       ]
     },
     "Participant name": {
@@ -8203,6 +8180,41 @@
         "Error inesperado"
       ]
     },
+    "Error importing calendar": {
+      "An error occurred uploading your file. No file has been selected.": [
+        "Ocurrió un error al cargar el archivo. Ningún archivo fue seleccionado."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Only ICS file formats are allowed.": [
+        "Ocurrió un error al cargar el archivo ${ formattedFilename }. Solo se admiten los formatos ICS."
+      ],
+      "Your file ${ formattedFilename } is empty.": [
+        "Su archivo ${ formattedFilename } está vacío."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
+        "Ocurrió un error al cargar el archivo ${ formattedFilename }. El tamaño máximo del archivo es ${ MAX_IMPORT_FILE_SIZE_STRING }."
+      ],
+      "Your file ${ formattedFilename } is not a calendar.": [
+        "Su archivo ${ formattedFilename } no es un calendario."
+      ],
+      "${ CALENDAR_APP_NAME } only supports importing calendars with iCal version 2.0.": [
+        "${ CALENDAR_APP_NAME } solo es compatible con la importación de calendarios con la versión iCal 2.0."
+      ],
+      "Your file ${ formattedFilename } is an invitation and cannot be imported.": [
+        "El archivo ${ formattedFilename } es una invitación y no se puede importar."
+      ],
+      "Your file ${ formattedFilename } has no events to be imported.": [
+        "Su archivo ${ formattedFilename } no tiene eventos para importar."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } events.": [
+        "Su archivo ${ formattedFilename } contiene más de ${ MAX_IMPORT_EVENTS_STRING } eventos."
+      ],
+      "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
+        "Ocurrió un error al leer el archivo ${ formattedFilename }. El archivo no tiene el formato correcto."
+      ],
+      "An unexpected error occurred. Import must be restarted.": [
+        "Ocurrió un error inesperado. La importación debe reiniciarse."
+      ]
+    },
     "Calendar subscription not synced error": {
       "Calendar is syncing": [
         "El calendario se está sincronizando"
@@ -8219,11 +8231,52 @@
       "Calendar link is not accessible": [
         "El enlace del calendario no es accesible"
       ],
-      "Calendar link is temporarily unaccessible": [
+      "Calendar link is temporarily inaccessible": [
         "El enlace del calendario está inaccesible temporalmente"
       ],
       "Failed to sync calendar": [
         "Error al sincronizar el calendario"
+      ]
+    },
+    "Import contact. Contact identifier": {
+      "unknown": [
+        "desconocido"
+      ]
+    },
+    "Error importing contact": {
+      "vCard versions < 3.0 not supported": [
+        "Versiones vCard menores a 3.0 no compatibles"
+      ],
+      "Encryption failed": [
+        "Falló el cifrado"
+      ]
+    },
+    "Error importing contacts": {
+      "An error occurred uploading your file. No file has been selected.": [
+        "Ocurrió un error al cargar el archivo. Ningún archivo fue seleccionado."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. No .csv or .vcf file selected": [
+        "Ocurrió un error al subir el archivo ${ formattedFilename }. No se seleccionó un archivo .csv o .vcf"
+      ],
+      "Your file ${ formattedFilename } is empty.": [
+        "Su archivo ${ formattedFilename } está vacío."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
+        "Ocurrió un error al cargar el archivo ${ formattedFilename }. El tamaño máximo del archivo es ${ MAX_IMPORT_FILE_SIZE_STRING }."
+      ],
+      "Your file ${ formattedFilename } has no contacts to be imported.": [
+        "Su archivo ${ formattedFilename } no tiene contactos para importar."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
+        "Su archivo ${ formattedFilename } contiene más de ${ MAX_IMPORT_CONTACTS_STRING } contactos."
+      ],
+      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
+        "Ocurrió un error al leer el archivo ${ formattedFilename }. El archivo no tiene el formato correcto."
+      ]
+    },
+    "Default display name vcard": {
+      "Unknown": [
+        "Desconocido"
       ]
     },
     "Keyboard shortcut section name": {
@@ -8401,12 +8454,17 @@
         "Mostrar mensaje original"
       ]
     },
+    "Settings description": {
+      "You can apply multiple labels to a single message, but messages can usually only be in a single folder. Drag and drop to rearrange the order of your folders and labels.": [
+        "Puede aplicar varias etiquetas a un solo mensaje, pero los mensajes generalmente solo pueden estar en una sola carpeta. Arrastre y suelte para reorganizar el orden de sus carpetas y etiquetas."
+      ]
+    },
     "Settings section title": {
       "General": [
         "General"
       ],
-      "Import & export": [
-        "Importación y exportación"
+      "Email privacy": [
+        "Privacidad del correo"
       ],
       "Identity & addresses": [
         "Identidad y direcciones"
@@ -8429,14 +8487,17 @@
       "Encryption & keys": [
         "Cifrado y claves"
       ],
+      "Import & export": [
+        "Importación y exportación"
+      ],
       "IMAP/SMTP": [
         "IMAP/SMTP"
       ],
-      "VPN apps": [
-        "Aplicaciones VPN"
-      ],
       "Calendars": [
         "Calendarios"
+      ],
+      "VPN apps": [
+        "Aplicaciones VPN"
       ],
       "Users & addresses": [
         "Usuarios y direcciones"
@@ -8455,11 +8516,6 @@
       ],
       "Organization": [
         "Organización"
-      ]
-    },
-    "Settings description": {
-      "You can apply multiple labels to a single message, but messages can usually only be in a single folder. Drag and drop to rearrange the order of your folders and labels.": [
-        "Puede aplicar varias etiquetas a un solo mensaje, pero los mensajes generalmente solo pueden estar en una sola carpeta. Arrastre y suelte para reorganizar el orden de sus carpetas y etiquetas."
       ]
     },
     "Upgrade": {

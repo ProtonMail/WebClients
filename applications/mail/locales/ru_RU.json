@@ -5,87 +5,7 @@
   },
   "contexts": {
     "": {},
-    "Message": {
-      "Re:": [
-        "Re:"
-      ],
-      "Fw:": [
-        "Fw:"
-      ],
-      "On ${ date }, ${ name } ${ address } wrote:": [
-        "${ date }, ${ name } ${ address } написал(а):"
-      ]
-    },
     "Error": {
-      "Email address disabled": [
-        "Адрес электронной почты неактивен"
-      ],
-      "No keys retrieved for internal user": [
-        "Нет загруженных ключей для внутреннего пользователя"
-      ],
-      "No valid keys retrieved for internal user": [
-        "Нет действующих ключей для внутреннего пользователя"
-      ],
-      "Contact signature could not be verified": [
-        "Подпись контакта не может быть проверена"
-      ],
-      "No key retrieved for internal user is valid for sending": [
-        "Ни один их полученных ключей внутреннего пользователя не годен для отправки"
-      ],
-      "Trusted keys are not valid for sending": [
-        "Доверенные ключи не действительны для отправки"
-      ],
-      "No WKD key retrieved for user is valid for sending": [
-        "Ни один из полученных из WKD ключей пользователя не годен для отправки"
-      ],
-      "The sending key is not valid": [
-        "Недействительный ключ отправки"
-      ],
-      "This field is required": [
-        "Это обязательное поле"
-      ],
-      "This field requires a minimum of ${ minimumLength } characters.": [
-        "Минимальная длина для этого поля: ${ minimumLength }."
-      ],
-      "Email is not valid": [
-        "Эл. почта недействительна"
-      ],
-      "Not a valid number": [
-        "Номер недействителен"
-      ],
-      "Passwords do not match": [
-        "Пароли не совпадают"
-      ],
-      "Request timed out.": [
-        "Истекло время ожидания запроса."
-      ],
-      "Missing signature": [
-        "Подпись отсутствует"
-      ],
-      "Contact signature not verified": [
-        "Подпись контакта не подтверждена"
-      ],
-      "Signature not verified": [
-        "Подпись подтверждена"
-      ],
-      "Invalid name": [
-        "Недопустимое имя"
-      ],
-      "The key properties for ${ emailAddress } could not be extracted": [
-        "Не удалось извлечь свойства ключа для ${ emailAddress }"
-      ],
-      "Signature verification failed": [
-        "Проверка подписи не удалась"
-      ],
-      "Could not find address ${ email }.": [
-        "Не могу найти адрес ${ email }."
-      ],
-      "Address primary private key not found": [
-        "Основной секретный ключ для адреса не найден"
-      ],
-      "Calendar primary private key is not decrypted": [
-        "Основной секретный ключ календаря не расшифрован"
-      ],
       "Unknown error": [
         "Неизвестная ошибка"
       ],
@@ -101,17 +21,20 @@
       "Authentication error.": [
         "Ошибка аутентификации."
       ],
+      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
+        "Используемый вами браузер не позволяет полностью авторизовать платеж. Пожалуйста, используйте другой браузер или войдите в через компьютер."
+      ],
+      "Email address invalid": [
+        "Неверный адрес электронной почты"
+      ],
+      "This field is required": [
+        "Это обязательное поле"
+      ],
       "The composer failed to load.": [
         "Не удалось загрузить редактор."
       ],
       "Please refresh the page.": [
         "Пожалуйста, обновите страницу."
-      ],
-      "Email address invalid": [
-        "Неверный адрес электронной почты"
-      ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "Используемый вами браузер не позволяет полностью авторизовать платеж. Пожалуйста, используйте другой браузер или войдите в через компьютер."
       ],
       "Incorrect mailbox password. Please try again": [
         "Неверный пароль. Пожалуйста, попробуйте еще раз"
@@ -130,6 +53,9 @@
       ],
       "Invalid verification code": [
         "Неверный проверочный код"
+      ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "Что-то пошло не так. Пожалуйста ${ refresh } чтобы продолжить. Если вы все еще видите сообщение об ошибке, пожалуйста свяжитесь нашей ${ supportTeam }."
       ],
       "Some groups could not be deleted": [
         "Некоторые группы не могут быть удалены"
@@ -176,17 +102,17 @@
       "A group with this name already exists": [
         "Группа с таким именем уже существует"
       ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Что-то пошло не так. Пожалуйста ${ refresh } чтобы продолжить. Если вы все еще видите сообщение об ошибке, пожалуйста свяжитесь нашей ${ supportTeam }."
-      ],
-      "File has no contents to preview": [
-        "В файле нет содержимого для предпросмотра"
+      "Invalid name": [
+        "Недопустимое имя"
       ],
       "We were unable to connect to your service provider.": [
         "Не удалось подключиться к вашему поставщику услуг."
       ],
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         "Пожалуйста, попробуйте повторить аутентификацию и убедитесь, что права доступа правильные."
+      ],
+      "File has no contents to preview": [
+        "В файле нет содержимого для предпросмотра"
       ],
       "Process aborted": [
         "Процесс прерван"
@@ -266,6 +192,69 @@
       "Require at least one action": [
         "Требуется как минимум одно действие"
       ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Минимальная длина для этого поля: ${ minimumLength }."
+      ],
+      "Email is not valid": [
+        "Эл. почта недействительна"
+      ],
+      "Not a valid number": [
+        "Номер недействителен"
+      ],
+      "Passwords do not match": [
+        "Пароли не совпадают"
+      ],
+      "Request timed out.": [
+        "Истекло время ожидания запроса."
+      ],
+      "Signature verification failed": [
+        "Проверка подписи не удалась"
+      ],
+      "Could not find address ${ email }.": [
+        "Не могу найти адрес ${ email }."
+      ],
+      "Email address disabled": [
+        "Адрес электронной почты неактивен"
+      ],
+      "No keys retrieved for internal user": [
+        "Нет загруженных ключей для внутреннего пользователя"
+      ],
+      "No valid keys retrieved for internal user": [
+        "Нет действующих ключей для внутреннего пользователя"
+      ],
+      "Contact signature could not be verified": [
+        "Подпись контакта не может быть проверена"
+      ],
+      "No key retrieved for internal user is valid for sending": [
+        "Ни один их полученных ключей внутреннего пользователя не годен для отправки"
+      ],
+      "Trusted keys are not valid for sending": [
+        "Доверенные ключи не действительны для отправки"
+      ],
+      "No WKD key retrieved for user is valid for sending": [
+        "Ни один из полученных из WKD ключей пользователя не годен для отправки"
+      ],
+      "The sending key is not valid": [
+        "Недействительный ключ отправки"
+      ],
+      "Missing signature": [
+        "Подпись отсутствует"
+      ],
+      "Contact signature not verified": [
+        "Подпись контакта не подтверждена"
+      ],
+      "Signature not verified": [
+        "Подпись подтверждена"
+      ],
+      "The key properties for ${ emailAddress } could not be extracted": [
+        "Не удалось извлечь свойства ключа для ${ emailAddress }"
+      ],
+      "Address primary private key not found": [
+        "Основной секретный ключ для адреса не найден"
+      ],
+      "Calendar primary private key is not decrypted": [
+        "Основной секретный ключ календаря не расшифрован"
+      ],
       "You did not provide a file.": [
         "Вы не предоставили файл."
       ],
@@ -276,7 +265,7 @@
         "Активируйте поиск по содержимому еще раз"
       ],
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser": [
-        "Поиск содержимого не возможен в этом браузере. Пожалуйста, выйдите из режима приватного просмотра или используйте другой браузер"
+        "Поиск содержимого не может быть включен в этом браузере. Пожалуйста, выйдите из режима инкогнито или используйте другой браузер"
       ],
       "A problem occurred, please try again": [
         "Возникла проблема. Попробуйте еще раз."
@@ -390,178 +379,1423 @@
         "Слишком много активных фильтров. Пожалуйста, перейдите на платный план для активации дополнительных фильтров"
       ]
     },
-    "file size format": {
-      "bytes": [
-        "байт"
+    "Action": {
+      "Close": [
+        "Закрыть"
       ],
-      "KB": [
-        "КБ"
+      "Use “${ label }” setting": [
+        "Использовать настройку «${ label }»"
       ],
-      "MB": [
-        "МБ"
+      "More info: ${ safeTitle }": [
+        "Больше информации: ${ safeTitle }"
       ],
-      "GB": [
-        "ГБ"
+      "Cancel": [
+        "Отменить"
+      ],
+      "Submit": [
+        "Отправить"
+      ],
+      "Close modal": [
+        "Закрыть окно"
+      ],
+      "Confirm": [
+        "Подтвердить"
+      ],
+      "Save": [
+        "Сохранить"
+      ],
+      "Upload picture": [
+        "Загрузить картинку"
+      ],
+      "Insert": [
+        "Вставить"
+      ],
+      "Font": [
+        "Шрифт"
+      ],
+      "Size": [
+        "Размер"
+      ],
+      "Color": [
+        "Цвет"
+      ],
+      "Alignment": [
+        "Выравнивание"
+      ],
+      "More": [
+        "Ещё"
+      ],
+      "Unordered list": [
+        "Ненумерованный список"
+      ],
+      "Ordered list": [
+        "Нумерованный список"
+      ],
+      "Align left": [
+        "Выровнять по левому краю"
+      ],
+      "Align center": [
+        "Выровнять по центру"
+      ],
+      "Align right": [
+        "Выровнять по правому краю"
+      ],
+      "Justify": [
+        "Выравнивание по ширине"
+      ],
+      "Quote": [
+        "Цитировать"
+      ],
+      "Insert link": [
+        "Вставить ссылку"
+      ],
+      "Clear all formatting": [
+        "Удалить форматирование"
+      ],
+      "Insert image": [
+        "Вставить изображение"
+      ],
+      "Bold": [
+        "Полужирный"
+      ],
+      "Italic": [
+        "Курсив"
+      ],
+      "Underline": [
+        "Подчёркнутый"
+      ],
+      "Remove": [
+        "Удалить"
+      ],
+      "Next month": [
+        "След. месяц"
+      ],
+      "Previous month": [
+        "Предыдущий месяц"
+      ],
+      "Load image": [
+        "Загрузить изображение"
+      ],
+      "Confirm opening of link ${ link }": [
+        "Подтвердить открытие ссылки ${ link }"
+      ],
+      "Go to panel ${ index }": [
+        "Перейти к панели ${ index }"
+      ],
+      "Close navigation": [
+        "Закрыть навигацию"
+      ],
+      "Open navigation": [
+        "Открыть навигацию"
+      ],
+      "Continue with Google": [
+        "Продолжить с Google"
+      ],
+      "Delete": [
+        "Удалить"
+      ],
+      "Go to page ${ page }": [
+        "Перейти на страницу ${ page }"
+      ],
+      "Go to first page": [
+        "Перейти на первую страницу"
+      ],
+      "Go to previous page": [
+        "Перейти на предыдущую страницу"
+      ],
+      "Go to next page": [
+        "Перейти на следующую страницу"
+      ],
+      "Go to last page": [
+        "Перейти на последнюю страницу"
+      ],
+      "Signing out": [
+        "Выход"
+      ],
+      "refresh the page": [
+        "обновить страницу"
+      ],
+      "Log in": [
+        "Войти"
+      ],
+      "View invoice": [
+        "Посмотреть счёт"
+      ],
+      "Get verification code": [
+        "Получить проверочный код"
+      ],
+      "Try another method": [
+        "Попробуйте другой способ"
+      ],
+      "Request new code": [
+        "Запросить новый код"
+      ],
+      "Verify": [
+        "Подтвердить"
+      ],
+      "Did not receive the code?": [
+        "Вы не получили код?"
+      ],
+      "Edit email address": [
+        "Изменить адрес эл. почты"
+      ],
+      "Edit phone number": [
+        "Изменить номер телефона"
+      ],
+      "Use ${ label } theme": [
+        "Использовать тему ${ label }"
+      ],
+      "OK": [
+        "OK"
+      ],
+      "Upgrade": [
+        "Повысить"
+      ],
+      "Add": [
+        "Добавить"
+      ],
+      "Edit": [
+        "Изменить"
+      ],
+      "Apply": [
+        "Применить"
+      ],
+      "Insert contact": [
+        "Добавить контакт"
+      ],
+      "Insert ${ totalChecked } contact": [
+        "Добавить ${ totalChecked } контакт",
+        "Добавить ${ totalChecked } контакта",
+        "Добавить ${ totalChecked } контактов",
+        "Добавить ${ totalChecked } контактов"
+      ],
+      "Done": [
+        "Готово"
+      ],
+      "Clear data": [
+        "Стереть данные"
+      ],
+      "Recover data": [
+        "Восстановить данные"
+      ],
+      "Click here.": [
+        "Нажмите здесь."
+      ],
+      "Re-sign": [
+        "Подписать повторно"
+      ],
+      "Hide advanced PGP settings": [
+        "Скрыть расширенные настройки PGP"
+      ],
+      "Show advanced PGP settings": [
+        "Показать расширенные настройки PGP"
+      ],
+      "Add to group": [
+        "Добавить в группу"
+      ],
+      "Contact group": [
+        "Группа контактов"
+      ],
+      "Create new contact": [
+        "Создать новый контакт"
+      ],
+      "clear it": [
+        "очистить"
+      ],
+      "Export": [
+        "Экспорт"
+      ],
+      "Download": [
+        "Скачать"
+      ],
+      "Use for sending": [
+        "Использовать для отправки"
+      ],
+      "Trust": [
+        "Доверять"
+      ],
+      "Untrust": [
+        "Не доверять"
+      ],
+      "Email settings": [
+        "Настройки эл. почты"
+      ],
+      "Merge": [
+        "Объединить"
+      ],
+      "View": [
+        "Посмотреть"
+      ],
+      "Unmark for deletion": [
+        "Снять отметку для удаления"
+      ],
+      "Mark for deletion": [
+        "Отметить для удаления"
+      ],
+      "Preview contact": [
+        "Предпросмотр контакта"
+      ],
+      "Continue": [
+        "Продолжить"
+      ],
+      "Copy email to clipboard": [
+        "Скопировать адрес эл. почты в буфер обмена"
+      ],
+      "Delete contact": [
+        "Удалить контакт"
+      ],
+      "Delete ${ selectedCount } contact": [
+        "Удалить ${ selectedCount } контакт",
+        "Удалить ${ selectedCount } контакта",
+        "Удалить ${ selectedCount } контактов",
+        "Удалить ${ selectedCount } контакта"
+      ],
+      "Deselect all": [
+        "Снять выделение со всех"
+      ],
+      "Select all": [
+        "Выделить все"
+      ],
+      "Compose": [
+        "Новое письмо"
+      ],
+      "Forward as attachment": [
+        "Переслать как вложение"
+      ],
+      "Merge contacts": [
+        "Объединить контакты"
+      ],
+      "Add new contact": [
+        "Добавить новый контакт"
+      ],
+      "Add group": [
+        "Добавить группу"
+      ],
+      "Clear query": [
+        "Очистить запрос"
+      ],
+      "Add contact": [
+        "Добавить контакт"
+      ],
+      "import": [
+        "импорт"
+      ],
+      "Delete contact group": [
+        "Удалить группу контактов"
+      ],
+      "Delete ${ selectedCount } contact group": [
+        "Удалить ${ selectedCount } группу контактов",
+        "Удалить ${ selectedCount } группы контактов",
+        "Удалить ${ selectedCount } групп контактов",
+        "Удалить ${ selectedCount } группы контактов"
+      ],
+      "Add new group": [
+        "Добавить новую группу"
+      ],
+      "Export contacts": [
+        "Экспортировать контакты"
+      ],
+      "Import contacts": [
+        "Импортировать контакты"
+      ],
+      "Choose a file or drag it here": [
+        "Выберите файл или перетащите его сюда"
+      ],
+      "Import": [
+        "Импортировать"
+      ],
+      "Next": [
+        "Далее"
+      ],
+      "Continue import": [
+        "Продолжить импорт"
+      ],
+      "Discard": [
+        "Отказаться"
+      ],
+      "Reconnect": [
+        "Переподключиться"
+      ],
+      "Start import": [
+        "Начать импорт"
+      ],
+      "Clear": [
+        "Очистить"
+      ],
+      "Add screenshot(s)": [
+        "Добавить снимки экрана"
+      ],
+      "Hide info": [
+        "Скрыть информацию"
+      ],
+      "Show info": [
+        "Показать информацию"
+      ],
+      "Details": [
+        "Подробности"
+      ],
+      "Share via link": [
+        "Доступ по ссылке"
+      ],
+      "Sharing options": [
+        "Параметры совместного доступа"
+      ],
+      "Zoom out": [
+        "Уменьшить масштаб"
+      ],
+      "Reset zoom": [
+        "Сбросить масштаб"
+      ],
+      "Zoom in": [
+        "Увеличить масштаб"
+      ],
+      "Previous": [
+        "Предыдущий"
+      ],
+      "Get started": [
+        "Приступить к работе"
+      ],
+      "Start setup": [
+        "Приступить к настройке"
+      ],
+      "Skip": [
+        "Пропустить"
+      ],
+      "Back": [
+        "Назад"
+      ],
+      "Copy to clipboard": [
+        "Скопировать в буфер обмена"
+      ],
+      "Create recovery phrase": [
+        "Создать фразу для восстановления доступа к учетной записи"
+      ],
+      "Don't secure account": [
+        "Не защищать учетную запись"
+      ],
+      "Close this banner": [
+        "Закрыть этот баннер"
+      ],
+      "Refresh the page": [
+        "Обновить страницу"
+      ],
+      "enable desktop notifications": [
+        "включить уведомления на рабочем столе"
+      ],
+      "here": [
+        "здесь"
+      ],
+      "Search": [
+        "Поиск"
+      ],
+      "${ BRAND_NAME } introduction": [
+        "Введение в ${ BRAND_NAME }"
+      ],
+      "Chat with us": [
+        "Переписывайтесь с нами"
+      ],
+      "I have a question": [
+        "У меня есть вопрос"
+      ],
+      "Request a feature": [
+        "Предложить идею"
+      ],
+      "Report a problem": [
+        "Сообщить о проблеме"
+      ],
+      "${ BRAND_NAME } shop": [
+        "Магазин «${ BRAND_NAME }»"
+      ],
+      "Switch account": [
+        "Переключить учетную запись"
+      ],
+      "Sign out": [
+        "Выйти из учетной записи"
+      ],
+      "Go to settings": [
+        "Открыть настройки"
+      ],
+      "Beta Access": [
+        "Бета-доступ"
+      ],
+      "Theme": [
+        "Тема"
+      ],
+      "Keyboard shortcuts": [
+        "Сочетания клавиш"
+      ],
+      "Mailbox layout": [
+        "Схема отображения для почты"
+      ],
+      "Mailbox density": [
+        "Плотность отображения элементов для почты"
+      ],
+      "Composer size": [
+        "Размер редактора"
+      ],
+      "Remove bonuses": [
+        "Удалить бонусы"
+      ],
+      "Try again": [
+        "Попробовать снова"
+      ],
+      "Use a different card": [
+        "Использовать другую карту"
+      ],
+      "Use a different payment method": [
+        "Использовать другой способ оплаты"
+      ],
+      "Retry": [
+        "Повторить"
+      ],
+      "Loading verification": [
+        "Загружается проверка"
+      ],
+      "Select plan": [
+        "Выбрать тарифный план"
+      ],
+      "Compare all features": [
+        "Сравнить все функции"
+      ],
+      "${ boldSave } by switching to annual billing": [
+        "${ boldSave } переключившись на ежегодную оплату"
+      ],
+      "Pay": [
+        "Оплатить"
+      ],
+      "Open ${ CALENDAR_APP_NAME } settings": [
+        "Открыть настройки ${ CALENDAR_APP_NAME }"
+      ],
+      "Remove gift code": [
+        "Удалить подарочный код"
+      ],
+      "annual billing": [
+        "ежегодная оплата"
+      ],
+      "Compare plans": [
+        "Сравнить тарифные планы"
+      ],
+      "Decrease": [
+        "Уменьшить"
+      ],
+      "Increase": [
+        "Увеличить"
+      ],
+      "Preview": [
+        "Предпросмотр"
+      ],
+      "Create label": [
+        "Создать ярлык"
+      ],
+      "Create folder": [
+        "Создать папку"
+      ],
+      "Remove this label": [
+        "Удалить этот ярлык"
+      ],
+      "Add condition": [
+        "Добавить условие"
+      ],
+      "label emails as": [
+        "отметить письма ярлыком"
+      ],
+      "move emails to": [
+        "переместить письма в"
+      ],
+      "mark emails as": [
+        "отметить письма как"
+      ],
+      "send auto-reply email": [
+        "отправить автоответ"
+      ],
+      "Yes, I'll attend": [
+        "Да, я участвую"
+      ],
+      "Maybe I'll attend": [
+        "Возможно я участвую"
+      ],
+      "No, I won't attend": [
+        "Нет, я не участвую"
+      ],
+      "Yes": [
+        "Да"
+      ],
+      "Maybe": [
+        "Может быть"
+      ],
+      "No": [
+        "Нет"
+      ],
+      "Add to ${ CALENDAR_APP_NAME }": [
+        "Добавить в ${ CALENDAR_APP_NAME }"
+      ],
+      "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
+        "Используйте мышь для изменения размера просмотра. Если вы используете клавиатуру, для изменения размера можно использовать клавиши со стрелками влево и вправо."
+      ],
+      "Send anyway": [
+        "Все равно отправить"
+      ],
+      "Got it": [
+        "Понятно"
+      ],
+      "Maximize composer": [
+        "Развернуть редактор"
+      ],
+      "Minimize composer": [
+        "Свернуть редактор"
+      ],
+      "Contract composer": [
+        "Сжать окно редактора сообщений"
+      ],
+      "Expand composer": [
+        "Раскрыть окно редактора сообщений"
+      ],
+      "Close composer": [
+        "Закрыть редактор"
+      ],
+      "Trust key": [
+        "Доверять ключу",
+        "Доверять ключам",
+        "Доверять ключам",
+        "Доверять ключам"
+      ],
+      "Copy address": [
+        "Копировать адрес"
+      ],
+      "Edit address": [
+        "Изменить адрес"
+      ],
+      "View contact details": [
+        "Просмотреть контакт"
+      ],
+      "Copy addresses": [
+        "Копировать адреса"
+      ],
+      "View recipients": [
+        "Посмотреть получателей"
+      ],
+      "Carbon Copy, Blind Carbon Copy": [
+        "Копия, скрытая копия"
+      ],
+      "CC, BCC": [
+        "Копия, Скрытая копия"
+      ],
+      "Send": [
+        "Отправить"
+      ],
+      "Attachment": [
+        "Вложение"
+      ],
+      "Inline": [
+        "Встроенный"
+      ],
+      "Cancel action": [
+        "Отмена действия"
+      ],
+      "Loading${ ellipsis }": [
+        "Загрузка${ ellipsis }"
+      ],
+      "Saving${ _ellipsis }": [
+        "Сохраняем ${ _ellipsis }"
+      ],
+      "Not saved": [
+        "Не сохранено"
+      ],
+      "Schedule send": [
+        "Запланированное сообщение отправлено"
+      ],
+      "Expiration time": [
+        "Срок действия"
+      ],
+      "Encryption": [
+        "Шифрование"
+      ],
+      "Delete draft": [
+        "Удалить черновик"
+      ],
+      "Set": [
+        "Задать"
+      ],
+      "Schedule message": [
+        "Запланировать сообщение"
+      ],
+      "Print": [
+        "Печать"
+      ],
+      "Address options": [
+        "Настройки адреса"
+      ],
+      "New message": [
+        "Новое сообщение"
+      ],
+      "Trust Public Key": [
+        "Доверять этому публичному ключу"
+      ],
+      "Filter on...": [
+        "Фильтр по..."
+      ],
+      "Move to...": [
+        "Переместить в..."
+      ],
+      "Label as...": [
+        "Отметить как..."
+      ],
+      "Mark as unread": [
+        "Отметить как непрочитанное"
+      ],
+      "Move to spam": [
+        "Переместить в спам"
+      ],
+      "Report phishing": [
+        "Пожаловаться на фишинг"
+      ],
+      "View source code": [
+        "Показать исходный код"
+      ],
+      "View rendered HTML": [
+        "Просмотр обработанного HTML"
+      ],
+      "View headers": [
+        "Просмотр заголовков"
+      ],
+      "Hide details": [
+        "Скрыть подробности"
+      ],
+      "Show details": [
+        "Показать подробности"
+      ],
+      "Custom filter": [
+        "Пользовательский фильтр"
+      ],
+      "Move to": [
+        "Переместить в"
+      ],
+      "Label as": [
+        "Отметить как"
+      ],
+      "Load": [
+        "Загрузить"
+      ],
+      "This message contains remote content.": [
+        "Это сообщение содержит удаленное содержимое."
+      ],
+      "This message contains embedded images.": [
+        "В этом сообщении есть встроенные изображения."
+      ],
+      "Unsubscribe": [
+        "Отписаться"
+      ],
+      "Unsubscribing": [
+        "Подписка отменяется"
+      ],
+      "Mark legitimate": [
+        "Отметить как законное"
+      ],
+      "Send receipt": [
+        "Отправить уведомление"
+      ],
+      "Accept": [
+        "Принять"
+      ],
+      "Show": [
+        "Показать"
+      ],
+      "Show less": [
+        "Меньше"
+      ],
+      "Never show": [
+        "Никогда не показывать"
+      ],
+      "View keys": [
+        "Просмотреть ключи"
+      ],
+      "Edit draft": [
+        "Редактировать черновик"
+      ],
+      "Download ${ attachmentName }": [
+        "Скачать ${ attachmentName }"
+      ],
+      "Preview ${ attachmentName }": [
+        "Предпросмотр ${ attachmentName }"
+      ],
+      "Remove ${ attachmentName }": [
+        "Удалить ${ attachmentName }"
+      ],
+      "Hide attachment details": [
+        "Скрыть сведения о вложении"
+      ],
+      "Show attachment details": [
+        "Показать сведения о вложении"
+      ],
+      "Hide": [
+        "Скрыть"
+      ],
+      "Learn more": [
+        "Подробнее"
+      ],
+      "Undo": [
+        "Отменить"
+      ],
+      "View message": [
+        "Посмотреть сообщение"
+      ],
+      "Enable": [
+        "Активировать"
+      ],
+      "Search message content": [
+        "Поиск содержимого сообщения"
+      ],
+      "Activate": [
+        "Активировать"
+      ],
+      "Resume": [
+        "Возобновить"
+      ],
+      "Pause": [
+        "Приостановить"
+      ],
+      "Show less search options": [
+        "Показать меньше настроек поиска"
+      ],
+      "Show more search options": [
+        "Показать больше настроек поиска"
+      ],
+      "Less search options": [
+        "Меньше настроек поиска"
+      ],
+      "More search options": [
+        "Больше настроек поиска"
+      ],
+      "Advanced search": [
+        "Расширенный поиск"
+      ],
+      "Clear browser data": [
+        "Очистить данные браузера"
+      ],
+      "Mark as read": [
+        "Отметить как прочитанное"
+      ],
+      "Delete permanently": [
+        "Удалить безвозвратно"
+      ],
+      "Move to inbox": [
+        "Переместить во Входящие"
+      ],
+      "Move to archive": [
+        "Переместить в Архив"
+      ],
+      "Move to inbox (not spam)": [
+        "Переместить во входящие (не спам)"
+      ],
+      "Move to trash": [
+        "Переместить в корзину"
+      ],
+      "Delete all": [
+        "Удалить все"
+      ],
+      "Deselect all messages": [
+        "Снять выбор со всех сообщений"
+      ],
+      "Select all messages": [
+        "Выбрать все сообщения"
+      ],
+      "Select All": [
+        "Выбрать все"
+      ],
+      "All Read": [
+        "Все прочитанные"
+      ],
+      "All Unread": [
+        "Все непрочитанные"
+      ],
+      "All Starred": [
+        "Все избранные"
+      ],
+      "All Unstarred": [
+        "Все не избранные"
+      ],
+      "Load more": [
+        "Загрузить ещё"
+      ],
+      "Previous page": [
+        "Предыдущая страница"
+      ],
+      "Change page": [
+        "Изменить страницу"
+      ],
+      "Page ${ pageNumber }": [
+        "Страница ${ pageNumber }"
+      ],
+      "Next page": [
+        "След. страница"
+      ],
+      "Previous conversation": [
+        "Предыдущая цепочка писем"
+      ],
+      "Previous message": [
+        "Предыдущее сообщение"
+      ],
+      "Next conversation": [
+        "Следующая беседа"
+      ],
+      "Next message": [
+        "Cледующее сообщение"
+      ],
+      "Show messages": [
+        "Показать сообщения"
+      ],
+      "Hide messages": [
+        "Скрыть сообщения"
+      ],
+      "Create new message": [
+        "Создать новое сообщение"
+      ],
+      "Open shop": [
+        "Открыть магазин"
+      ],
+      "Open calendar": [
+        "Открыть календарь"
+      ],
+      "Import messages": [
+        "Импортировать сообщения"
+      ],
+      "Deselect": [
+        "Снять выделение"
+      ],
+      "Start using ${ appName }": [
+        "Начните использовать ${ appName }"
       ]
     },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
-        "Пароль должен включать по меньшей мере ${ length } символ",
-        "Пароль должен включать по меньшей мере ${ length } символа",
-        "Пароль должен включать по меньшей мере ${ length } символов",
-        "Пароль должен включать по меньшей мере ${ length } символа"
-      ]
-    },
-    "Contact field label": {
-      "Name": [
-        "Имя"
+    "Title": {
+      "Open actions dropdown": [
+        "Показать список доступных действий"
       ],
-      "Email": [
-        "Эл. почта"
+      "Expand content": [
+        "Развернуть содержимое"
       ],
-      "Phone": [
-        "Телефон"
+      "Link confirmation": [
+        "Подтверждение ссылки"
       ],
-      "Address": [
-        "Адрес"
+      "Keyboard Shortcuts": [
+        "Сочетания клавиш"
       ],
-      "Photo": [
-        "Фотография"
+      "What's new": [
+        "Что нового"
       ],
-      "Organization": [
-        "Организация"
+      "Sign in again to continue": [
+        "Чтобы продолжить, повторно войдите ещё раз"
       ],
-      "Birthday": [
-        "День рождения"
+      "Account suspended": [
+        "Учетная запись приостановлена"
       ],
-      "Anniversary": [
-        "Годовщина"
+      "Enter your username or ProtonMail email address": [
+        "Введите ваше имя пользователя или адрес эл. почты ProtonMail"
       ],
-      "Title": [
-        "Должность"
+      "Enter your password": [
+        "Введите свой пароль"
       ],
-      "Role": [
-        "Роль"
+      "Invalid verification code": [
+        "Неверный проверочный код"
       ],
-      "Note": [
-        "Заметка"
+      "Human verification": [
+        "Проверка \"Я не робот\""
       ],
-      "URL": [
-        "URL"
+      "Select a theme": [
+        "Выбор темы"
       ],
-      "Gender": [
-        "Пол"
+      "Upgrade required": [
+        "Требуется переход на платную версию"
       ],
-      "Language": [
-        "Язык"
+      "Delete ${ Name }": [
+        "Удалить ${ Name }"
       ],
-      "Timezone": [
-        "Часовой пояс"
+      "Delete ${ count } contact group": [
+        "Удаление ${ count } группы контактов",
+        "Удаление ${ count } групп контактов",
+        "Удаление ${ count } групп контактов",
+        "Удаление ${ count } группы контактов"
       ],
-      "Geo": [
-        "Геолокация"
+      "Edit contact group": [
+        "Изменение группы контактов"
       ],
-      "Logo": [
-        "Лого"
+      "Create new group": [
+        "Создать группу"
       ],
-      "Member": [
-        "Участник"
-      ]
-    },
-    "Contact type label": {
-      "Work": [
-        "Рабочий"
+      "${ emailsCount } member": [
+        "${ emailsCount } участник",
+        "${ emailsCount } участника",
+        "${ emailsCount } участников",
+        "${ emailsCount } участника"
       ],
-      "Personal": [
-        "Личное"
+      "Edit image": [
+        "Изменение изображения"
       ],
-      "Mobile": [
-        "Мобильный"
+      "Add to ${ groupName }": [
+        "Добавить в ${ groupName }"
       ],
-      "Main": [
-        "Основной"
+      "Add to ${ groupCount } group": [
+        "Добавление в ${ groupCount } группу",
+        "Добавление в ${ groupCount } группы",
+        "Добавление в ${ groupCount } групп",
+        "Добавление в ${ groupCount } группы"
       ],
-      "Yomi": [
-        "Ёми"
+      "Edit contact": [
+        "Изменение контакта"
       ],
-      "Other": [
-        "Другое"
+      "Create contact": [
+        "Создать контакт"
       ],
-      "Fax": [
-        "Факс"
+      "Insert contacts": [
+        "Добавить контакты"
       ],
-      "Pager": [
-        "Пейджер"
-      ]
-    },
-    "Property type": {
-      "Email": [
-        "Эл. почта"
+      "Delete ${ count } contact": [
+        "Удалить ${ count } контакт",
+        "Удалить ${ count } контакта",
+        "Удалить ${ count } контактов",
+        "Удалить ${ count } контактов"
       ],
-      "Home": [
-        "Домашний"
+      "Clearing data": [
+        "Очистка данных"
       ],
-      "Work": [
-        "Рабочий"
+      "Warning": [
+        "Предупреждение"
       ],
-      "Other": [
-        "Другое"
+      "Recover data": [
+        "Восстановление данных"
       ],
-      "Phone": [
-        "Телефон"
+      "Re-signing contacts": [
+        "Переподписание контактов"
       ],
-      "Mobile": [
-        "Мобильный"
+      "Re-sign all contacts": [
+        "Переподписать все контакты"
       ],
-      "Main": [
-        "Основной"
+      "Email settings (${ emailAddress })": [
+        "Настройки электронной почты (${ emailAddress })"
       ],
-      "Fax": [
-        "Факс"
+      "Exporting contacts": [
+        "Экспортирование контактов"
       ],
-      "Pager": [
-        "Пейджер"
+      "Contact group": [
+        "Группа контактов"
       ],
-      "Address": [
-        "Адрес"
+      "Other names": [
+        "Другие названия"
+      ],
+      "Email addresses": [
+        "Адреса электронной почты"
+      ],
+      "Phone numbers": [
+        "Hомера телефонов"
+      ],
+      "Addresses": [
+        "Адреса"
+      ],
+      "Other information": [
+        "Доп. информация"
+      ],
+      "Email settings": [
+        "Настройки эл. почты"
+      ],
+      "Contact Details": [
+        "Контактные данные"
+      ],
+      "Merging contacts": [
+        "Идет объединение контактов"
+      ],
+      "Merge contacts": [
+        "Объединение контактов"
+      ],
+      "Deleting contacts": [
+        "Удаление контактов"
+      ],
+      "View contacts": [
+        "Просмотр контактов"
+      ],
+      "Contacts": [
+        "Контакты"
+      ],
+      "Groups": [
+        "Группы"
+      ],
+      "Settings": [
+        "Настройки"
+      ],
+      "Select action to take on contact group": [
+        "Выберите действие для группы контактов"
+      ],
+      "Add contact group name": [
+        "Добавление имени для группы контактов"
+      ],
+      "Select contact group": [
+        "Выбор группы контактов"
+      ],
+      "Import groups": [
+        "Импорт групп"
+      ],
+      "Import contacts": [
+        "Импорт контактов"
+      ],
+      "Start import process": [
+        "Начать процесс импорта"
+      ],
+      "Import in progress": [
+        "Выполняется импорт"
+      ],
+      "Report a problem": [
+        "Сообщить о проблеме"
+      ],
+      "${ appName } Keyboard Shortcuts": [
+        "Сочетания клавиш ${ appName }"
+      ],
+      "Mailbox density": [
+        "Плотность отображения элементов для почты"
+      ],
+      "Mailbox layout": [
+        "Схема отображения для почты"
+      ],
+      "Composer mode": [
+        "Режим редактора"
+      ],
+      "Open help menu": [
+        "Открыть меню справки"
+      ],
+      "Back": [
+        "Назад"
+      ],
+      "Open settings menu": [
+        "Открыть меню настроек"
+      ],
+      "Confirm loss of Proton bonuses": [
+        "Подтвердите потерю бонусов Proton"
+      ],
+      "Unsupported browser": [
+        "Браузер не поддерживается"
+      ],
+      "Card verification": [
+        "Проверка карты"
+      ],
+      "Payment verification": [
+        "Проверка платежа"
+      ],
+      "Processing...": [
+        "Обработка..."
+      ],
+      "Card verification in progress": [
+        "Идет проверка карты"
+      ],
+      "Payment verification in progress": [
+        "Идет проверка платежа"
+      ],
+      "PayPal verification failed": [
+        "Сбой проверки PayPal"
+      ],
+      "3-D Secure verification failed": [
+        "Сбой проверки 3-D Secure"
+      ],
+      "Error": [
+        "Ошибка"
+      ],
+      "ZIP / postal code": [
+        "ZIP-код / почтовый индекс"
+      ],
+      "Payment details": [
+        "Подробности платежа"
+      ],
+      "Currency": [
+        "Валюта"
+      ],
+      "Billing cycle": [
+        "Платежный цикл"
+      ],
+      "Current plan": [
+        "Текущий тарифный план"
+      ],
+      "Processing": [
+        "Обработка"
+      ],
+      "Apply gift code": [
+        "Использовать подарочный код"
+      ],
+      "Subtotal": [
+        "Подитог"
+      ],
+      "Coupon discount": [
+        "Скидка по купону"
+      ],
+      "Total (monthly)": [
+        "Всего (ежемесячно)"
+      ],
+      "Credits": [
+        "Кредиты"
+      ],
+      "Gift code": [
+        "Подарочный код"
+      ],
+      "Amount due": [
+        "К оплате"
+      ],
+      "Downgrade account": [
+        "Понизить учетную запись"
+      ],
+      "Network error": [
+        "Ошибка сети"
+      ],
+      "Select a plan": [
+        "Выберите тарифный план"
+      ],
+      "Customize your plan": [
+        "Настроить свой тарифный план"
+      ],
+      "Checkout": [
+        "Оформление заказа"
+      ],
+      "Plan summary": [
+        "Сводка по тарифу"
+      ],
+      "${ appName } customization": [
+        "${ appName } настройка"
+      ],
+      "Beta Access": [
+        "Бета-доступ"
+      ],
+      "Edit filter": [
+        "Изменение фильтра"
+      ],
+      "Add filter": [
+        "Добавить фильтр"
+      ],
+      "Are you sure you want to close?": [
+        "Вы уверены, что хотите закрыть?"
+      ],
+      "Change my answer": [
+        "Изменить мой ответ"
+      ],
+      "Image": [
+        "Изображение"
+      ],
+      "Sending notice": [
+        "Предупреждение"
+      ],
+      "Storage capacity warning": [
+        "Предупреждение об объёме хранилища"
+      ],
+      "Sending original message": [
+        "Отправление исходного сообщения"
+      ],
+      "No recipient": [
+        "Нет получателя"
+      ],
+      "Message without subject?": [
+        "Отправить сообщение без темы?"
+      ],
+      "No attachment found": [
+        "Вложение не найдено"
+      ],
+      "Re-sign contact": [
+        "Повторно подписать контакт"
+      ],
+      "Verification error": [
+        "Ошибка подтверждения"
+      ],
+      "Decryption error": [
+        "Ошибка расшифровки"
+      ],
+      "Delete draft": [
+        "Удалить черновик"
+      ],
+      "Delete ${ count } draft": [
+        "Удалить ${ count } черновик",
+        "Удалить ${ count } черновика",
+        "Удалить ${ count } черновиков",
+        "Удалить ${ count } черновиков"
+      ],
+      "Delete message": [
+        "Удалить сообщение"
+      ],
+      "Delete conversation": [
+        "Удалить цепочку писем"
+      ],
+      "Delete ${ count } conversation": [
+        "Удалить ${ count } цепочку писем",
+        "Удалить ${ count } цепочки писем",
+        "Удалить ${ count } цепочек писем",
+        "Удалить ${ count } цепочек писем"
+      ],
+      "Delete ${ count } message": [
+        "Удалить ${ count } сообщение",
+        "Удалить ${ count } сообщения",
+        "Удалить ${ count } сообщений",
+        "Удалить ${ count } сообщений"
+      ],
+      "Delete all messages": [
+        "Удалить все сообщения"
+      ],
+      "Trust new key?": [
+        "Доверять новому ключу?",
+        "Доверять новым ключам?",
+        "Доверять новым ключам?",
+        "Доверять новым ключам?"
+      ],
+      "Add contacts": [
+        "Добавить контакты"
+      ],
+      "To": [
+        "Кому"
+      ],
+      "CC": [
+        "Копия"
+      ],
+      "BCC": [
+        "Cкрытая копия"
+      ],
+      "Carbon Copy": [
+        "Копия"
+      ],
+      "Blind Carbon Copy": [
+        "Скрытая копия"
+      ],
+      "Sending error": [
+        "Ошибка отправки"
+      ],
+      "Confirm recipient address?": [
+        "Подтвердить адрес получателя?"
+      ],
+      "Send without expiration?": [
+        "Отправить без истечения срока действия?"
+      ],
+      "Send with changed preferences?": [
+        "Отправить с изменёнными настройками?"
+      ],
+      "Attachments": [
+        "Вложения"
+      ],
+      "Expiration time": [
+        "Срок действия"
+      ],
+      "Encryption": [
+        "Шифрование"
+      ],
+      "Send email": [
+        "Отправить электронное письмо"
+      ],
+      "Schedule send": [
+        "Запланированное сообщение отправлено"
+      ],
+      "New message": [
+        "Новое сообщение"
+      ],
+      "Trust public key?": [
+        "Доверять этому открытому ключу?"
+      ],
+      "All recipients were added to the BCC field and cannot be disclosed": [
+        "Все получатели были добавлены в поле \"Скрытая копия\" и не будут видны"
+      ],
+      "Move to inbox (not spam)": [
+        "Переместить во входящие (не спам)"
+      ],
+      "Mark as unread": [
+        "Отметить как непрочитанное"
+      ],
+      "Move to inbox": [
+        "Переместить во Входящие"
+      ],
+      "Move to trash": [
+        "Переместить в корзину"
+      ],
+      "More": [
+        "Еще"
+      ],
+      "More options": [
+        "Дополнительные параметры"
+      ],
+      "Reply": [
+        "Ответить"
+      ],
+      "Reply all": [
+        "Ответить всем"
+      ],
+      "Forward": [
+        "Переслать"
+      ],
+      "Filter on": [
+        "Вкл фильтр"
+      ],
+      "Move to": [
+        "Переместить"
+      ],
+      "Label as": [
+        "Отметить как"
+      ],
+      "Load remote content": [
+        "Загрузить внешнее содержимое"
+      ],
+      "Load embedded images": [
+        "Показывать встроенные изображения"
+      ],
+      "Unsubscribe": [
+        "Отписаться"
+      ],
+      "Mark email as legitimate": [
+        "Пометить эл. письмо как законное"
+      ],
+      "Trust pinned keys?": [
+        "Доверять закрепленным ключам?"
+      ],
+      "Enable message content search": [
+        "Включить поиск содержимого сообщений"
+      ],
+      "Create a new folder": [
+        "Создать новую папку"
+      ],
+      "Create a new label": [
+        "Создать новый ярлык"
+      ],
+      "More selections": [
+        "Еще варианты выбора"
+      ],
+      "Previous conversation": [
+        "Предыдущая цепочка писем"
+      ],
+      "Previous message": [
+        "Предыдущее сообщение"
+      ],
+      "Next conversation": [
+        "Следующая цепочка писем"
+      ],
+      "Next message": [
+        "Cледующее сообщение"
+      ],
+      "Sort conversations": [
+        "Сортировка бесед"
+      ],
+      "Sort messages": [
+        "Сортировка сообщений"
+      ],
+      "Create folder": [
+        "Создать папку"
+      ],
+      "Create label": [
+        "Создать ярлык"
+      ],
+      "Conversation list": [
+        "Цепочка писем"
+      ],
+      "Message list": [
+        "Список сообщений"
+      ],
+      "Welcome ${ userName }": [
+        "Добро пожаловать, ${ userName }"
+      ],
+      "Welcome": [
+        "Добро пожаловать"
       ]
     },
     "Info": {
-      "Session timed out.": [
-        "Время сессии истекло."
-      ],
-      "Internet connection lost.": [
-        "Потеряно интернет-соединение."
-      ],
-      "Servers are unreachable.": [
-        "Серверы недоступны."
-      ],
-      "Custom daily": [
-        "Настраиваемое ежедневное"
-      ],
-      "Custom weekly": [
-        "Настраиваемое еженедельное"
-      ],
-      "Custom monthly": [
-        "Настраиваемое ежемесячное"
-      ],
-      "Custom yearly": [
-        "Настраиваемое ежегодное"
-      ],
-      "Custom": [
-        "Настраиваемый"
-      ],
-      "Daily": [
-        "Ежедневно"
-      ],
-      "Monthly ${ onDayString }": [
-        "Ежемесячно ${ onDayString }"
-      ],
-      "Yearly": [
-        "Ежегодно"
-      ],
       "No results found": [
         "Результаты не найдены"
+      ],
+      "Loading": [
+        "Загрузка"
       ],
       "Insert image": [
         "Вставить изображение"
@@ -659,9 +1893,6 @@
       "Learn more": [
         "Узнать больше"
       ],
-      "Loading": [
-        "Загрузка"
-      ],
       "Drop the file here to upload": [
         "Для загрузки файла перетащите его сюда"
       ],
@@ -706,6 +1937,9 @@
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Нажмите «Запросить новый код», и мы отправим новый проверочный код на ${ strong }. Если этот номер телефона неверный, выберите «Изменить» для обновления."
+      ],
+      "support team": [
+        "служба поддержки"
       ],
       "No contacts added yet": [
         "Контакты ещё не добавлены"
@@ -836,27 +2070,6 @@
         "${ addressCount } адресов электронной почты",
         "${ addressCount } адреса электронной почты"
       ],
-      "support team": [
-        "служба поддержки"
-      ],
-      "Unsupported file": [
-        "Неподдерживаемый файл"
-      ],
-      "No preview available": [
-        "Предпросмотр недоступен"
-      ],
-      "Preview": [
-        "Предварительный просмотр"
-      ],
-      "Loading preview": [
-        "Загрузка предпросмотра"
-      ],
-      "This browser does not support previewing PDF documents. Please download the file.": [
-        "Браузер не поддерживает предварительный просмотр PDF-документов. Пожалуйста, скачайте файл."
-      ],
-      "of": [
-        "из"
-      ],
       "Import contacts": [
         "Импортировать контакты"
       ],
@@ -886,6 +2099,24 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Обновление страницы или ${ link } автоматически решит большую часть проблем."
+      ],
+      "Unsupported file": [
+        "Неподдерживаемый файл"
+      ],
+      "No preview available": [
+        "Предпросмотр недоступен"
+      ],
+      "Preview": [
+        "Предварительный просмотр"
+      ],
+      "Loading preview": [
+        "Загрузка предпросмотра"
+      ],
+      "This browser does not support previewing PDF documents. Please download the file.": [
+        "Браузер не поддерживает предварительный просмотр PDF-документов. Пожалуйста, скачайте файл."
+      ],
+      "of": [
+        "из"
       ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Основные клавиши для навигации и действий остаются доступными независимо от того, включены ли сочетания клавиш в настройках."
@@ -1037,14 +2268,8 @@
       "* Customizable features": [
         "* Настраиваемые функции"
       ],
-      "Access your streaming services, like ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, no matter where you are.": [
-        "Доступ к вашим услугам стриминга, таким как ${ netflix }, ${ disney }, ${ primeVideo } ${ many } независимо от того, где вы находитесь."
-      ],
-      "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
-        "Доступ к заблокированному содержимому, например социальным сетям, новостям, Википедии, YouTube и многому другому независимо от того, где вы находитесь."
-      ],
       "For getting started with private and secure emailing.": [
-        "Для начала работы с приватной и безопасной электронной почтой."
+        "Для начала работы с конфиденциальной и безопасной электронной почтой."
       ],
       "A free and uncensored Internet should be available to all.": [
         "Свободный интернет без цензуры должен быть доступен всем."
@@ -1066,6 +2291,12 @@
       ],
       "For families and small teams; includes both Mail and VPN.": [
         "Для семей и небольших команд; включает как почту, так и VPN."
+      ],
+      "Access your streaming services, like ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, no matter where you are.": [
+        "Доступ к вашим услугам стриминга, таким как ${ netflix }, ${ disney }, ${ primeVideo } ${ many } независимо от того, где вы находитесь."
+      ],
+      "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
+        "Доступ к заблокированному содержимому, например социальным сетям, новостям, Википедии, YouTube и многому другому независимо от того, где вы находитесь."
       ],
       "Save 20%": [
         "Скидка 20%"
@@ -1228,6 +2459,39 @@
       ],
       "Are you sure you want to discard your changes?": [
         "Вы уверены, что хотите отменить изменения?"
+      ],
+      "Session timed out.": [
+        "Время сессии истекло."
+      ],
+      "Internet connection lost.": [
+        "Потеряно интернет-соединение."
+      ],
+      "Servers are unreachable.": [
+        "Серверы недоступны."
+      ],
+      "Custom daily": [
+        "Настраиваемое ежедневное"
+      ],
+      "Custom weekly": [
+        "Настраиваемое еженедельное"
+      ],
+      "Custom monthly": [
+        "Настраиваемое ежемесячное"
+      ],
+      "Custom yearly": [
+        "Настраиваемое ежегодное"
+      ],
+      "Custom": [
+        "Настраиваемый"
+      ],
+      "Daily": [
+        "Ежедневно"
+      ],
+      "Monthly ${ onDayString }": [
+        "Ежемесячно ${ onDayString }"
+      ],
+      "Yearly": [
+        "Ежегодно"
       ],
       "Members": [
         "Участники"
@@ -1664,6 +2928,21 @@
       "No more results found": [
         "Больше результатов не найдено"
       ],
+      "Protect yourself from trackers by turning on Proton email tracker protection.": [
+        "Защитите себя от трекеров, включив защиту от трекеров электронной почты Proton."
+      ],
+      "No email trackers found.": [
+        "Почтовые трекеры не найдены."
+      ],
+      "Proton has blocked email trackers in this message in order to protect your privacy.": [
+        "Proton заблокировал почтовые трекеры в этом сообщении для защиты вашей конфиденциальности."
+      ],
+      "${ numberOfTrackers } email tracker blocked": [
+        "${ numberOfTrackers } почтовый трекер заблокирован",
+        "${ numberOfTrackers } почтовых трекеров заблокировано",
+        "${ numberOfTrackers } почтовых трекеров заблокировано",
+        "${ numberOfTrackers } почтовый(ых) трекер(ов), а заблокирован(о)"
+      ],
       "This conversation contains non-trashed messages.": [
         "В этой цепочке писем есть не удаленные сообщения."
       ],
@@ -1689,7 +2968,7 @@
         "Получите больше места в хранилище и премиальных функций."
       ],
       "Support privacy by upgrading for": [
-        "Поддержите приватность, обновившись до"
+        "Поддержите конфиденциальность, обновившись до"
       ],
       "/month.": [
         "в месяц."
@@ -1707,10 +2986,10 @@
         "Обновите учетную запись чтобы пользоваться ProtonMail с помощью сторонних почтовых программ для компьютера."
       ],
       "Proton doesn't make money by abusing privacy.": [
-        "Протон не делает деньги на нарушении приватности."
+        "Протон не делает деньги на нарушении конфиденциальности."
       ],
       "Upgrade to support privacy and get more features.": [
-        "Обновите учетную запись чтобы поддержать приватность и получить доступ к большему количеству функций."
+        "Обновите учетную запись чтобы поддержать конфиденциальность и получить доступ к большему количеству функций."
       ],
       "Visit our shop to get Proton merchandise.": [
         "Посетите наш магазин, чтобы приобрести товары Proton."
@@ -1740,10 +3019,10 @@
         "Обновите учетную запись для легко посылать электронные письма группам контактов."
       ],
       "Upgrade to support a privacy-first internet.": [
-        "Обновите учетную запись чтобы поддержать интернет, в котором приватность стоит на первом месте."
+        "Улучшите учетную запись и поддержите интернет, в котором конфиденциальность на первом месте."
       ],
       "Upgrade to support our mission of privacy for all.": [
-        "Обновите учетную запись чтобы поддержать нашу миссию приватности для всех."
+        "Обновите учетную запись чтобы поддержать нашу миссию конфиденциальности для всех."
       ],
       "Store and share files securely with Proton Drive.": [
         "Безопасное хранение и обмен файлами с помощью Proton Drive."
@@ -1752,7 +3031,7 @@
         "Вы можете использовать ProtonVPN бесплатно уже сегодня."
       ],
       "Use Proton Calendar to keep your agenda private.": [
-        "Используйте календарь Proton Calendar, чтобы сохранить приватность своей повестки дня."
+        "Используйте календарь Proton Calendar, чтобы сохранить конфиденциальность своей повестки дня."
       ],
       "${ unread } unread conversation": [
         "${ unread } непрочитанная цепочка писем",
@@ -1837,2639 +3116,17 @@
       ],
       "Using your mobile device, scan this QR-Code or visit ${ link }.": [
         "Используя мобильное устройство, отсканируйте этот QR-код или перейдите по ссылке ${ link }."
-      ]
-    },
-    "Default display name vcard": {
-      "Unknown": [
-        "Неизвестный"
-      ]
-    },
-    "Import contact. Contact identifier": {
-      "unknown": [
-        "неизвестно"
-      ]
-    },
-    "Error importing contact": {
-      "vCard versions < 3.0 not supported": [
-        "vCard версии ниже 3.0 не поддерживаются"
       ],
-      "Encryption failed": [
-        "Ошибка шифрования"
-      ]
-    },
-    "Error importing calendar": {
-      "An unexpected error occurred. Import must be restarted.": [
-        "Произошла непредвиденная ошибка. Необходимо начать импорт заново."
-      ]
-    },
-    "Error importing contacts": {
-      "An error occurred uploading your file. No file has been selected.": [
-        "Произошла ошибка при загрузке вашего файла. Ничего не было выбрано."
-      ],
-      "An error occurred uploading your file ${ formattedFilename }. No .csv or .vcf file selected": [
-        "Произошла ошибка при загрузке файла ${ formattedFilename }. Не выбран файл CSV или VCF."
-      ],
-      "Your file ${ formattedFilename } is empty.": [
-        "Файл ${ formattedFilename } пуст."
-      ],
-      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
-        "Произошла ошибка при загрузке файла ${ formattedFilename }. Максимальный размер: ${ MAX_IMPORT_FILE_SIZE_STRING }."
-      ],
-      "Your file ${ formattedFilename } has no contacts to be imported.": [
-        "В вашем файле ${ formattedFilename } нет контактов для импорта."
-      ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
-        "Ваш файл ${ formattedFilename } содержит более ${ MAX_IMPORT_CONTACTS_STRING } контактов."
-      ],
-      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "Произошла ошибка при чтении файла ${ formattedFilename }. Формат файла не поддерживается."
-      ]
-    },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "Адрес электронной почты не найден среди идентификаторов пользователя, определенных в ключе отправки (${ keyUserIds })"
-      ]
-    },
-    "Keyboard shortcut section name": {
-      "Basic navigation": [
-        "Основная навигация"
-      ],
-      "Basic actions": [
-        "Основные действия"
-      ],
-      "Folder shortcuts": [
-        "Сочетания клавиш для папок"
-      ],
-      "Composer shortcuts": [
-        "Сочетания клавиш редактора"
-      ],
-      "List shortcuts": [
-        "Сочетания клавиш для списка писем"
-      ],
-      "Action shortcuts": [
-        "Сочетания клавиш для действий"
-      ],
-      "Message shortcuts": [
-        "Сочетания клавиш для сообщений"
-      ]
-    },
-    "Keyboard shortcut name": {
-      "Move up": [
-        "Переместить выше"
-      ],
-      "Jump to first": [
-        "Перейти к первому"
-      ],
-      "Move down": [
-        "Переместить ниже"
-      ],
-      "Jump to last": [
-        "Перейти к последнему"
-      ],
-      "Move right / expand": [
-        "Переместить вправо / развернуть"
-      ],
-      "Move left / collapse": [
-        "Переместить влево / свернуть"
-      ],
-      "Apply / open": [
-        "Применить / открыть"
-      ],
-      "Cancel / close": [
-        "Отменить / закрыть"
-      ],
-      "Open this modal": [
-        "Открыть этот диалог"
-      ],
-      "Select / unselect": [
-        "Выбрать / отменить выбор"
-      ],
-      "Go to Inbox": [
-        "Перейти во Входящие"
-      ],
-      "Go to Archive": [
-        "Перейти в Архив"
-      ],
-      "Go to Sent": [
-        "Перейти в Отправленные"
-      ],
-      "Go to Starred": [
-        "Перейти в Отмеченные звёздами"
-      ],
-      "Go to Drafts": [
-        "Перейти в Черновики"
-      ],
-      "Go to Trash": [
-        "Перейти в Корзину"
-      ],
-      "Go to Spam": [
-        "Перейти в Спам"
-      ],
-      "Go to All Mail": [
-        "Перейти во Все письма"
-      ],
-      "Save draft": [
-        "Сохранить черновик"
-      ],
-      "Send email": [
-        "Отправить электронное письмо"
-      ],
-      "Close draft": [
-        "Закрыть черновик"
-      ],
-      "Minimize / maximize composer": [
-        "Свернуть / развернуть окно редактора"
-      ],
-      "Expand / contract composer": [
-        "Расширить / сжать окно редактора"
-      ],
-      "Attach file": [
-        "Прикрепить файл"
-      ],
-      "Add expiration time": [
-        "Добавить срок действия"
-      ],
-      "Add encryption": [
-        "Добавить шифрование"
-      ],
-      "Discard draft": [
-        "Удалить черновик"
-      ],
-      "Open previous message": [
-        "Открыть предыдущее сообщение"
-      ],
-      "Open next message": [
-        "Открыть следующее сообщение"
-      ],
-      "Show unread emails": [
-        "Показать непрочитанные письма"
-      ],
-      "Show all emails": [
-        "Показать все письма"
-      ],
-      "Select / unselect all": [
-        "Выбрать всё/снять выделение"
-      ],
-      "Search": [
-        "Поиск"
-      ],
-      "New message": [
-        "Новое сообщение"
-      ],
-      "Star": [
-        "Добавить в Избранное"
-      ],
-      "Mark as unread": [
-        "Отметить как непрочитанное"
-      ],
-      "Label as...": [
-        "Обозначить, как..."
-      ],
-      "Create filter with...": [
-        "Создать фильтр с помощью..."
-      ],
-      "Move to...": [
-        "Переместить в..."
-      ],
-      "Move to Inbox": [
-        "Переместить в входящие"
-      ],
-      "Move to Archive": [
-        "Переместить в архив"
-      ],
-      "Move to Spam": [
-        "Переместить в спам"
-      ],
-      "Move to Trash": [
-        "Переместить в корзину"
-      ],
-      "Delete permanently": [
-        "Удалить навсегда"
-      ],
-      "Reply": [
-        "Ответить"
-      ],
-      "Reply all": [
-        "Ответить всем"
-      ],
-      "Forward": [
-        "Переслать"
-      ],
-      "Load remote content": [
-        "Загрузить внешнее содержимое"
-      ],
-      "Load embedded images": [
-        "Показывать встроенные изображения"
-      ],
-      "Show original message": [
-        "Показать исходное сообщение"
-      ]
-    },
-    "Calendar status": {
-      "Syncing": [
-        "Синхронизация"
-      ],
-      "Not synced": [
-        "Не синхронизировано"
-      ]
-    },
-    "Calendar subscription not synced error": {
-      "Calendar is syncing": [
-        "Календарь синхронизируется"
-      ],
-      "More than 12 hours passed since last update": [
-        "Более 12 часов прошло с момента последнего обновления"
-      ],
-      "Calendar link is wrong": [
-        "Неверная ссылка календаря"
-      ],
-      "Calendar is too big": [
-        "Календарь слишком большой"
-      ],
-      "Calendar link is not accessible": [
-        "Ссылка на календарь недоступна"
-      ],
-      "Calendar link is temporarily unaccessible": [
-        "Ссылка на календарь временно недоступна"
-      ],
-      "Failed to sync calendar": [
-        "Не удалось синхронизировать календарь"
-      ]
-    },
-    "Attached ics file error": {
-      "Invalid ICS file": [
-        "Недопустимый файл ICS"
-      ],
-      "Invalid event": [
-        "Недопустимое событие"
-      ],
-      "Unsupported event": [
-        "Событие не поддерживается"
-      ],
-      "Empty ICS file": [
-        "Пустой файл ICS"
-      ],
-      "Unsupported calendar component": [
-        "Неподдерживаемый компонент календаря"
-      ],
-      "Invalid method": [
-        "Недействительный метод"
-      ]
-    },
-    "Event invitation error": {
-      "Invalid response": [
-        "Ошибка сервера"
-      ],
-      "Invalid invitation": [
-        "Приглашение недействительно"
-      ],
-      "Unsupported response": [
-        "Неподдерживаемый ответ"
-      ],
-      "Unsupported invitation": [
-        "Неподдерживаемое приглашение"
-      ],
-      "Attached ICS file could not be parsed": [
-        "Вложенный файл ICS невозможно проанализировать"
-      ],
-      "Attached ICS file could not be decrypted": [
-        "Вложенный файл ICS невозможно расшифровать"
-      ],
-      "We could not retrieve the event from your calendar": [
-        "Мы не смогли получить событие из вашего календаря"
-      ],
-      "We could not update the event in your calendar": [
-        "Мы не смогли обновить событие в вашем календаре"
-      ],
-      "Your answer was sent, but the event could not be added to your calendar": [
-        "Ваш ответ отправлен, но событие не может быть добавлено в ваш календарь"
-      ],
-      "Your answer was sent, but the event could not be updated in your calendar": [
-        "Ваш ответ отправлен, но событие не может быть обновлено в Вашем календаре"
-      ],
-      "We could not cancel the event in your calendar": [
-        "Мы не смогли отменить событие в вашем календаре"
-      ],
-      "Unexpected error": [
-        "Непредвиденная ошибка"
-      ]
-    },
-    "Error importing event": {
-      "Component with wrong format": [
-        "Неправильный формат компонента"
-      ],
-      "Non-Gregorian": [
-        "Не Грегорианский"
-      ],
-      "To-do entry": [
-        "Запись списка задач"
-      ],
-      "Journal entry": [
-        "Запись журнала"
-      ],
-      "Free-busy time information": [
-        "Информация о свободном и занятом времени"
-      ],
-      "Custom timezone": [
-        "Настроить часовой пояс"
-      ],
-      "Invalid event": [
-        "Недействительное событие"
-      ],
-      "Unsupported event": [
-        "Неподдерживаемое событие"
-      ],
-      "Malformed all-day event": [
-        "Неправильный формант оформление события на весь день"
-      ],
-      "Missing start time": [
-        "Отсутствует время начала импорта"
-      ],
-      "Malformed start time": [
-        "Неправильный формат времени начала"
-      ],
-      "Floating times not supported": [
-        "Плавающий график не поддерживается"
-      ],
-      "Start time out of bounds": [
-        "Время начала находится вне границ"
-      ],
-      "Malformed end time": [
-        "Неправильный формат времени окончания"
-      ],
-      "End time out of bounds": [
-        "Время окончания находится вне границ"
-      ],
-      "Event duration not supported": [
-        "Длительность события не поддерживается"
-      ],
-      "Calendar timezone not supported": [
-        "Часовой пояс календаря не поддерживается"
-      ],
-      "Timezone not supported": [
-        "Часовой пояс не поддерживается"
-      ],
-      "Malformed recurring event": [
-        "Неправильное повторяющееся событие"
-      ],
-      "Recurring rule not supported": [
-        "Правило для повторения не поддерживается"
-      ],
-      "Edited event not supported": [
-        "Отредактированное событие не поддерживается"
-      ],
-      "Notification out of bounds": [
-        "Уведомление находится вне границ"
-      ],
-      "Event validation failed": [
-        "Проверка события не удалась"
-      ],
-      "Encryption failed": [
-        "Ошибка шифрования"
-      ],
-      "Original recurring event could not be found": [
-        "Исходное повторяющееся событие не найдено"
-      ],
-      "no UID, title or start time": [
-        "нет UID, названия или времени начала"
-      ]
-    },
-    "Event title": {
-      "(no title)": [
-        "(без названия)"
-      ]
-    },
-    "Participant name": {
-      "You": [
-        "Вы"
-      ]
-    },
-    "Email subject": {
-      "Invitation for an event on ${ formattedStart }": [
-        "Приглашение на мероприятие, начинающееся ${ formattedStart }"
-      ],
-      "Update for an event on ${ formattedStart }": [
-        "Обновление события, начинающегося ${ formattedStart }"
-      ],
-      "Invitation for an event starting on ${ formattedStart }": [
-        "Приглашение на событие, начинающееся ${ formattedStart }"
-      ],
-      "Update for an event starting on ${ formattedStart }": [
-        "Обновить для события, начинающегося ${ formattedStart }"
-      ],
-      "Cancellation of an event on ${ formattedStart }": [
-        "Отмена события, начинающегося ${ formattedStart }"
-      ],
-      "Cancellation of an event starting on ${ formattedStart }": [
-        "Отмена события, начинающегося ${ formattedStart }"
-      ]
-    },
-    "Email body for invitation (date part)": {
-      "When: ${ formattedStart } (all day)": [
-        "Когда: ${ formattedStart } (весь день)"
-      ],
-      "When: ${ formattedStart } - ${ formattedEnd }": [
-        "Когда: ${ formattedStart } - ${ formattedEnd }"
-      ],
-      "When: ${ formattedStart }": [
-        "Когда: ${ formattedStart }"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "Where: ${ eventLocation }": [
-        "Где: ${ eventLocation }"
-      ]
-    },
-    "Email body for description (description part)": {
-      "Description: ${ eventDescription }": [
-        "Описание: ${ eventDescription }"
-      ]
-    },
-    "Email body for invitation": {
-      "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
-        "Вы приглашены на ${ eventTitle }\n${ eventDetailsText }"
-      ],
-      "${ eventTitle } has been updated.\n${ eventDetailsText }": [
-        "Событие «${ eventTitle }» было обновлено.\n${ eventDetailsText }"
-      ],
-      "${ eventTitle } has been cancelled.": [
-        "Событие «${ eventTitle }» было отменено."
-      ]
-    },
-    "Email body for response to invitation": {
-      "${ emailAddress } has accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } принял ваше приглашение на ${ eventTitle }"
-      ],
-      "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } предварительно принял ваше приглашение на ${ eventTitle }"
-      ],
-      "${ emailAddress } has declined your invitation to ${ eventTitle }": [
-        "${ emailAddress } отклонил ваше приглашение на ${ eventTitle }"
-      ]
-    },
-    "Monthly recurring event, repeats on": {
-      "on the first Sunday": [
-        "в первое воскресенье"
-      ],
-      "on the first Monday": [
-        "в первый понедельник"
-      ],
-      "on the first Tuesday": [
-        "в первый вторник"
-      ],
-      "on the first Wednesday": [
-        "в первую среду"
-      ],
-      "on the first Thursday": [
-        "в первый четверг"
-      ],
-      "on the first Friday": [
-        "в первую пятницу"
-      ],
-      "on the first Saturday": [
-        "в первую субботу"
-      ],
-      "on the second Sunday": [
-        "во второе воскресенье"
-      ],
-      "on the second Monday": [
-        "во второй понедельник"
-      ],
-      "on the second Tuesday": [
-        "во второй вторник"
-      ],
-      "on the second Wednesday": [
-        "во вторую среду"
-      ],
-      "on the second Thursday": [
-        "во второй четверг"
-      ],
-      "on the second Friday": [
-        "во вторую пятницу"
-      ],
-      "on the second Saturday": [
-        "во вторую субботу"
-      ],
-      "on the third Sunday": [
-        "в третье воскресенье"
-      ],
-      "on the third Monday": [
-        "в третий понедельник"
-      ],
-      "on the third Tuesday": [
-        "в третий понедельник"
-      ],
-      "on the third Wednesday": [
-        "в третью среду"
-      ],
-      "on the third Thursday": [
-        "в третий четверг"
-      ],
-      "on the third Friday": [
-        "в третью пятницу"
-      ],
-      "on the third Saturday": [
-        "в третью субботу"
-      ],
-      "on the fourth Sunday": [
-        "в четвертое воскресенье"
-      ],
-      "on the fourth Monday": [
-        "в четвертый понедельник"
-      ],
-      "on the fourth Tuesday": [
-        "в четвертый вторник"
-      ],
-      "on the fourth Wednesday": [
-        "в четвертый вторник"
-      ],
-      "on the fourth Thursday": [
-        "в четвертый четверг"
-      ],
-      "on the fourth Friday": [
-        "в четвертую пятницу"
-      ],
-      "on the fourth Saturday": [
-        "в четвертую субботу"
-      ],
-      "on the last Sunday": [
-        "в последнее воскресенье"
-      ],
-      "on the last Monday": [
-        "в последний понедельник"
-      ],
-      "on the last Tuesday": [
-        "в последний вторник"
-      ],
-      "on the last Wednesday": [
-        "в последнюю среду"
-      ],
-      "on the last Thursday": [
-        "в последний четверг"
-      ],
-      "on the last Friday": [
-        "в последнюю пятницу"
-      ],
-      "on the last Saturday": [
-        "в последнюю субботу"
-      ],
-      "on day ${ dayOfMonth }": [
-        "в день ${ dayOfMonth }"
-      ]
-    },
-    "Daily recurring event, frequency": {
-      "${ count } time": [
-        "${ count } раз",
-        "${ count } раза",
-        "${ count } раз",
-        "${ count } раз"
-      ],
-      "until ${ dateString }": [
-        "до ${ dateString }"
-      ],
-      "Daily": [
-        "Ежедневно"
-      ],
-      "Every ${ interval } day": [
-        "Каждый ${ interval } день",
-        "Каждые ${ interval } дня",
-        "Каждые ${ interval } дней",
-        "Каждые ${ interval } дня"
-      ],
-      "Daily, ${ timesString }": [
-        "Ежедневно в ${ timesString }"
-      ],
-      "Every ${ interval } day, ${ timesString }": [
-        "Каждый ${ interval } день, ${ timesString }",
-        "Каждые ${ interval } дня, ${ timesString }",
-        "Каждые ${ interval } дней, ${ timesString }",
-        "Каждые ${ interval } дня, ${ timesString }"
-      ],
-      "Daily, ${ untilString }": [
-        "Ежедневно до ${ untilString }"
-      ],
-      "Every ${ interval } day, ${ untilString }": [
-        "Каждый ${ interval } день, ${ untilString }",
-        "Каждые ${ interval } дня, ${ untilString }",
-        "Каждые ${ interval } дней, ${ untilString }",
-        "Каждые ${ interval } дня, ${ untilString }"
-      ]
-    },
-    "Weekly recurring event, repeats on (multiple days), frequency": {
-      "Sunday": [
-        "Воскресенье"
-      ],
-      "Monday": [
-        "Понедельник"
-      ],
-      "Tuesday": [
-        "Вторник"
-      ],
-      "Wednesday": [
-        "Среда"
-      ],
-      "Thursday": [
-        "Четверг"
-      ],
-      "Friday": [
-        "Пятница"
-      ],
-      "Saturday": [
-        "Суббота"
-      ]
-    },
-    "Weekly recurring event, frequency": {
-      "Weekly on all days": [
-        "Еженедельно каждый день"
-      ],
-      "Every ${ interval } week on all days": [
-        "Каждую ${ interval } неделю во все дни",
-        "Каждые ${ interval } недели, каждый день",
-        "Каждые ${ interval } недель, каждый день",
-        "Каждые ${ interval } недель, каждый день"
-      ],
-      "Weekly on Sunday": [
-        "Еженедельно в воскресенье"
-      ],
-      "Every ${ interval } week on Sunday": [
-        "Каждую ${ interval } неделю в воскресенье",
-        "Каждые ${ interval } недели в воскресенье",
-        "Каждые ${ interval } недель в воскресенье",
-        "Каждые ${ interval } недель в воскресенье"
-      ],
-      "Weekly on Monday": [
-        "Еженедельно в понедельник"
-      ],
-      "Every ${ interval } week on Monday": [
-        "Каждую ${ interval } неделю в понедельник",
-        "Каждые ${ interval } недели в понедельник",
-        "Каждые ${ interval } недель в понедельник",
-        "Каждые ${ interval } недель в понедельник"
-      ],
-      "Weekly on Tuesday": [
-        "Еженедельно во вторник"
-      ],
-      "Every ${ interval } week on Tuesday": [
-        "Каждую ${ interval } неделю во вторник",
-        "Каждые ${ interval } недели во вторник",
-        "Каждые ${ interval } недель во вторник",
-        "Каждые ${ interval } недель во вторник"
-      ],
-      "Weekly on Wednesday": [
-        "Еженедельно в среду"
-      ],
-      "Every ${ interval } week on Wednesday": [
-        "Каждую ${ interval } неделю в среду",
-        "Каждые ${ interval } недели в среду",
-        "Каждые ${ interval } недель в среду",
-        "Каждые ${ interval } недель в среду"
-      ],
-      "Weekly on Thursday": [
-        "Еженедельно в четверг"
-      ],
-      "Every ${ interval } week on Thursday": [
-        "Каждую ${ interval } неделю в четверг",
-        "Каждые ${ interval } недели в четверг",
-        "Каждые ${ interval } недель в четверг",
-        "Каждые ${ interval } недель в четверг"
-      ],
-      "Weekly on Friday": [
-        "Еженедельно в пятницу"
-      ],
-      "Every ${ interval } week on Friday": [
-        "Каждую ${ interval } неделю в пятницу",
-        "Каждые ${ interval } недели в пятницу",
-        "Каждые ${ interval } недель в пятницу",
-        "Каждые ${ interval } недель в пятницу"
-      ],
-      "Weekly on Saturday": [
-        "Еженедельно в субботу"
-      ],
-      "Every ${ interval } week on Saturday": [
-        "Каждую ${ interval } неделю в субботу",
-        "Каждые ${ interval } недели в субботу",
-        "Каждые ${ interval } недель в субботу",
-        "Каждые ${ interval } недель в субботу"
-      ],
-      "Weekly on ${ multipleDaysString }": [
-        "Еженедельно по следующим дням: ${ multipleDaysString }"
-      ],
-      "Every ${ interval } week on ${ multipleDaysString }": [
-        "Каждую ${ interval } неделю в ${ multipleDaysString }",
-        "Каждую ${ interval } неделю в ${ multipleDaysString }",
-        "Каждую ${ interval } неделю в ${ multipleDaysString }",
-        "Каждую ${ interval } неделю в ${ multipleDaysString }"
-      ],
-      "Weekly on all days, ${ timesString }": [
-        "Еженедельно во все дни в ${ timesString }"
-      ],
-      "Every ${ interval } week on all days, ${ timesString }": [
-        "Каждую ${ interval } неделю по всем дням, ${ timesString }",
-        "Каждую ${ interval } неделю по всем дням, ${ timesString }",
-        "Каждую ${ interval } неделю по всем дням, ${ timesString }",
-        "Каждую ${ interval } неделю по всем дням, ${ timesString }"
-      ],
-      "Weekly on Sunday, ${ timesString }": [
-        "Еженедельно в воскресенье в ${ timesString }"
-      ],
-      "Every ${ interval } week on Sunday, ${ timesString }": [
-        "Каждую ${ interval } неделю в воскресенье, ${ timesString }",
-        "Каждые ${ interval } недели в воскресенье, ${ timesString }",
-        "Каждые ${ interval } недель в воскресенье, ${ timesString }",
-        "Каждые ${ interval } недель в воскресенье, ${ timesString }"
-      ],
-      "Weekly on Monday, ${ timesString }": [
-        "Еженедельно в понедельник в ${ timesString }"
-      ],
-      "Every ${ interval } week on Monday, ${ timesString }": [
-        "Каждую ${ interval } неделю по понедельникам, ${ timesString }",
-        "Каждые ${ interval } недели по понедельникам, ${ timesString }",
-        "Каждые ${ interval } недель по понедельникам, ${ timesString }",
-        "Каждые ${ interval } недели по понедельникам, ${ timesString }"
-      ],
-      "Weekly on Tuesday, ${ timesString }": [
-        "Еженедельно по вторникам в ${ timesString }"
-      ],
-      "Every ${ interval } week on Tuesday, ${ timesString }": [
-        "Каждую ${ interval } неделю по вторникам, ${ timesString }",
-        "Каждые ${ interval } недели по вторникам, ${ timesString }",
-        "Каждые ${ interval } недель по вторникам, ${ timesString }",
-        "Каждые ${ interval } недели по вторникам, ${ timesString }"
-      ],
-      "Weekly on Wednesday, ${ timesString }": [
-        "Еженедельно по средам в ${ timesString }"
-      ],
-      "Every ${ interval } week on Wednesday, ${ timesString }": [
-        "Каждую ${ interval } неделю по средам, ${ timesString }",
-        "Каждые ${ interval } недели по средам, ${ timesString }",
-        "Каждые ${ interval } недель по средам, ${ timesString }",
-        "Каждые ${ interval } недели по средам, ${ timesString }"
-      ],
-      "Weekly on Thursday, ${ timesString }": [
-        "Еженедельно по четвергам в ${ timesString }"
-      ],
-      "Every ${ interval } week on Thursday, ${ timesString }": [
-        "Каждую ${ interval } неделю по четвергам, ${ timesString }",
-        "Каждые ${ interval } недели по четвергам, ${ timesString }",
-        "Каждые ${ interval } недель по четвергам, ${ timesString }",
-        "Каждые ${ interval } недели по четвергам, ${ timesString }"
-      ],
-      "Weekly on Friday, ${ timesString }": [
-        "Еженедельно по пятницам в ${ timesString }"
-      ],
-      "Every ${ interval } week on Friday, ${ timesString }": [
-        "Каждую ${ interval } неделю по пятницам, ${ timesString }",
-        "Каждые ${ interval } недели по пятницам, ${ timesString }",
-        "Каждые ${ interval } недель по пятницам, ${ timesString }",
-        "Каждые ${ interval } недели по пятницам, ${ timesString }"
-      ],
-      "Weekly on Saturday, ${ timesString }": [
-        "Еженедельно по субботам в ${ timesString }"
-      ],
-      "Every ${ interval } week on Saturday, ${ timesString }": [
-        "Каждую ${ interval } неделю по субботам, ${ timesString }",
-        "Каждые ${ interval } недели по субботам, ${ timesString }",
-        "Каждые ${ interval } недель по субботам, ${ timesString }",
-        "Каждые ${ interval } недели по субботам, ${ timesString }"
-      ],
-      "Weekly on ${ multipleDaysString }, ${ timesString }": [
-        "Еженедельно по следующим дням: ${ multipleDaysString } в ${ timesString }"
-      ],
-      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
-        "Каждую ${ interval } неделю по ${ multipleDaysString }, ${ timesString }",
-        "Каждые ${ interval } недели по ${ multipleDaysString }, ${ timesString }",
-        "Каждые ${ interval } недель по ${ multipleDaysString }, ${ timesString }",
-        "Каждые ${ interval } недели по ${ multipleDaysString }, ${ timesString }"
-      ],
-      "Weekly on all days, ${ untilString }": [
-        "Еженедельно, каждый день до ${ untilString }"
-      ],
-      "Every ${ interval } week on all days, ${ untilString }": [
-        "Каждую ${ interval } неделю каждый день, ${ untilString }",
-        "Каждые ${ interval } недели каждый день, ${ untilString }",
-        "Каждые ${ interval } недель каждый день, ${ untilString }",
-        "Каждые ${ interval } недели каждый день, ${ untilString }"
-      ],
-      "Weekly on Sunday, ${ untilString }": [
-        "Еженедельно по воскресеньям до ${ untilString }"
-      ],
-      "Every ${ interval } week on Sunday, ${ untilString }": [
-        "Каждую ${ interval } неделю в воскресенье, ${ untilString }",
-        "Каждые ${ interval } недели в воскресенье, ${ untilString }",
-        "Каждые ${ interval } недель в воскресенье, ${ untilString }",
-        "Каждые ${ interval } недели в воскресенье, ${ untilString }"
-      ],
-      "Weekly on Monday, ${ untilString }": [
-        "Еженедельно в понедельник до ${ untilString }"
-      ],
-      "Every ${ interval } week on Monday, ${ untilString }": [
-        "Каждую ${ interval } неделю в понедельник, ${ untilString }",
-        "Каждые ${ interval } недели в понедельник, ${ untilString }",
-        "Каждые ${ interval } недель в понедельник, ${ untilString }",
-        "Каждые ${ interval } недели в понедельник, ${ untilString }"
-      ],
-      "Weekly on Tuesday, ${ untilString }": [
-        "Еженедельно по вторникам до ${ untilString }"
-      ],
-      "Every ${ interval } week on Tuesday, ${ untilString }": [
-        "Каждую ${ interval } неделю во вторник, ${ untilString }",
-        "Каждые ${ interval } недели во вторник, ${ untilString }",
-        "Каждые ${ interval } недель во вторник, ${ untilString }",
-        "Каждые ${ interval } недели во вторник, ${ untilString }"
-      ],
-      "Weekly on Wednesday, ${ untilString }": [
-        "Еженедельно по средам до ${ untilString }"
-      ],
-      "Every ${ interval } week on Wednesday, ${ untilString }": [
-        "Каждую ${ interval } неделю в среду, ${ untilString }",
-        "Каждые ${ interval } недели в среду, ${ untilString }",
-        "Каждые ${ interval } недель в среду, ${ untilString }",
-        "Каждые ${ interval } недели в среду, ${ untilString }"
-      ],
-      "Weekly on Thursday, ${ untilString }": [
-        "Еженедельно по четвергам до ${ untilString }"
-      ],
-      "Every ${ interval } week on Thursday, ${ untilString }": [
-        "Каждую ${ interval } неделю в четверг, ${ untilString }",
-        "Каждые ${ interval } недели в четверг, ${ untilString }",
-        "Каждые ${ interval } недель в четверг, ${ untilString }",
-        "Каждые ${ interval } недели в четверг, ${ untilString }"
-      ],
-      "Weekly on Friday, ${ untilString }": [
-        "Еженедельно по пятницам до ${ untilString }"
-      ],
-      "Every ${ interval } week on Friday, ${ untilString }": [
-        "Каждую ${ interval } неделю в пятницу, ${ untilString }",
-        "Каждые ${ interval } недели в пятницу, ${ untilString }",
-        "Каждые ${ interval } недель в пятницу, ${ untilString }",
-        "Каждые ${ interval } недели в пятницу, ${ untilString }"
-      ],
-      "Weekly on Saturday, ${ untilString }": [
-        "Еженедельно по субботам до ${ untilString }"
-      ],
-      "Every ${ interval } week on Saturday, ${ untilString }": [
-        "Каждую ${ interval } неделю в субботу, ${ untilString }",
-        "Каждые ${ interval } недели в субботу, ${ untilString }",
-        "Каждые ${ interval } недель в субботу, ${ untilString }",
-        "Каждые ${ interval } недели в субботу, ${ untilString }"
-      ],
-      "Weekly on ${ multipleDaysString }, ${ untilString }": [
-        "Еженедельно по следующим дням ${ multipleDaysString } до ${ untilString }"
-      ],
-      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
-        "Каждую ${ interval } неделю по ${ multipleDaysString }, ${ untilString }",
-        "Каждые ${ interval } недели по ${ multipleDaysString }, ${ untilString }",
-        "Каждые ${ interval } недель по ${ multipleDaysString }, ${ untilString }",
-        "Каждые ${ interval } недели по ${ multipleDaysString }, ${ untilString }"
-      ]
-    },
-    "Monthly recurring event, frequency": {
-      "Monthly ${ onDayString }": [
-        "Ежемесячно по ${ onDayString }"
-      ],
-      "Every ${ interval } month ${ onDayString }": [
-        "Каждый ${ interval } месяц (${ onDayString })",
-        "Каждые ${ interval } месяца (${ onDayString })",
-        "Каждые ${ interval } месяцев (${ onDayString })",
-        "Каждые ${ interval } месяца (${ onDayString })"
-      ],
-      "Monthly ${ onDayString }, ${ timesString }": [
-        "Ежемесячно по ${ onDayString } в ${ timesString }"
-      ],
-      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
-        "Каждый ${ interval } месяц (${ onDayString }, ${ timesString })",
-        "Каждые ${ interval } месяца (${ onDayString }, ${ timesString })",
-        "Каждые ${ interval } месяцев (${ onDayString }, ${ timesString })",
-        "Каждые ${ interval } месяца (${ onDayString }, ${ timesString })"
-      ],
-      "Monthly ${ onDayString }, ${ untilString }": [
-        "Ежемесячно ${ onDayString } числа, до ${ untilString }"
-      ],
-      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
-        "Каждый ${ interval } месяц (${ onDayString }, ${ untilString })",
-        "Каждые ${ interval } месяца (${ onDayString } ${ untilString })",
-        "Каждые ${ interval } месяцев (${ onDayString }, ${ untilString })",
-        "Каждые ${ interval } месяца (${ onDayString }, ${ untilString })"
-      ]
-    },
-    "Yearly recurring event, frequency": {
-      "Yearly": [
-        "Ежегодно"
-      ],
-      "Every ${ interval } year": [
-        "Каждый ${ interval }-й год",
-        "Каждый ${ interval }-й год",
-        "Каждый ${ interval }-й год",
-        "Каждый ${ interval }-й год"
-      ],
-      "Yearly, ${ timesString }": [
-        "Ежегодно в ${ timesString }"
-      ],
-      "Every ${ interval } year, ${ timesString }": [
-        "Каждый ${ interval } год, ${ timesString }",
-        "Каждый ${ interval } год, ${ timesString }",
-        "Каждый ${ interval } год, ${ timesString }",
-        "Каждый ${ interval } год, ${ timesString }"
-      ],
-      "Yearly, ${ untilString }": [
-        "Ежегодно до ${ untilString }"
-      ],
-      "Every ${ interval } year, ${ untilString }": [
-        "Каждый ${ interval } год ${ untilString }",
-        "Каждый ${ interval } год ${ untilString }",
-        "Каждый ${ interval } год ${ untilString }",
-        "Каждый ${ interval } год ${ untilString }"
-      ]
-    },
-    "Action": {
-      "Close": [
-        "Закрыть"
-      ],
-      "Cancel": [
-        "Отменить"
-      ],
-      "Save": [
-        "Сохранить"
-      ],
-      "Upload picture": [
-        "Загрузить картинку"
-      ],
-      "Insert": [
-        "Вставить"
-      ],
-      "Font": [
-        "Шрифт"
-      ],
-      "Size": [
-        "Размер"
-      ],
-      "Color": [
-        "Цвет"
-      ],
-      "Alignment": [
-        "Выравнивание"
-      ],
-      "More": [
-        "Ещё"
-      ],
-      "Unordered list": [
-        "Ненумерованный список"
-      ],
-      "Ordered list": [
-        "Нумерованный список"
-      ],
-      "Align left": [
-        "Выровнять по левому краю"
-      ],
-      "Align center": [
-        "Выровнять по центру"
-      ],
-      "Align right": [
-        "Выровнять по правому краю"
-      ],
-      "Justify": [
-        "Выравнивание по ширине"
-      ],
-      "Quote": [
-        "Цитировать"
-      ],
-      "Insert link": [
-        "Вставить ссылку"
-      ],
-      "Clear all formatting": [
-        "Удалить форматирование"
-      ],
-      "Insert image": [
-        "Вставить изображение"
-      ],
-      "Bold": [
-        "Полужирный"
-      ],
-      "Italic": [
-        "Курсив"
-      ],
-      "Underline": [
-        "Подчёркнутый"
-      ],
-      "More info: ${ safeTitle }": [
-        "Больше информации: ${ safeTitle }"
-      ],
-      "Confirm": [
-        "Подтвердить"
-      ],
-      "Submit": [
-        "Отправить"
-      ],
-      "Close modal": [
-        "Закрыть окно"
-      ],
-      "Use “${ label }” setting": [
-        "Использовать настройку «${ label }»"
-      ],
-      "Remove": [
-        "Удалить"
-      ],
-      "Next month": [
-        "След. месяц"
-      ],
-      "Previous month": [
-        "Предыдущий месяц"
-      ],
-      "Load image": [
-        "Загрузить изображение"
-      ],
-      "Confirm opening of link ${ link }": [
-        "Подтвердить открытие ссылки ${ link }"
-      ],
-      "Go to panel ${ index }": [
-        "Перейти к панели ${ index }"
-      ],
-      "Close navigation": [
-        "Закрыть навигацию"
-      ],
-      "Open navigation": [
-        "Открыть навигацию"
-      ],
-      "Continue with Google": [
-        "Продолжить с Google"
-      ],
-      "Delete": [
-        "Удалить"
-      ],
-      "Go to page ${ page }": [
-        "Перейти на страницу ${ page }"
-      ],
-      "Go to first page": [
-        "Перейти на первую страницу"
-      ],
-      "Go to previous page": [
-        "Перейти на предыдущую страницу"
-      ],
-      "Go to next page": [
-        "Перейти на следующую страницу"
-      ],
-      "Go to last page": [
-        "Перейти на последнюю страницу"
-      ],
-      "Signing out": [
-        "Выход"
-      ],
-      "refresh the page": [
-        "обновить страницу"
-      ],
-      "Log in": [
-        "Войти"
-      ],
-      "View invoice": [
-        "Посмотреть счёт"
-      ],
-      "Get verification code": [
-        "Получить проверочный код"
-      ],
-      "Try another method": [
-        "Попробуйте другой способ"
-      ],
-      "Request new code": [
-        "Запросить новый код"
-      ],
-      "Verify": [
-        "Подтвердить"
-      ],
-      "Did not receive the code?": [
-        "Вы не получили код?"
-      ],
-      "Edit email address": [
-        "Изменить адрес эл. почты"
-      ],
-      "Edit phone number": [
-        "Изменить номер телефона"
-      ],
-      "Upgrade": [
-        "Повысить"
-      ],
-      "Add": [
-        "Добавить"
-      ],
-      "Edit": [
-        "Изменить"
-      ],
-      "Apply": [
-        "Применить"
-      ],
-      "Insert contact": [
-        "Добавить контакт"
-      ],
-      "Insert ${ totalChecked } contact": [
-        "Добавить ${ totalChecked } контакт",
-        "Добавить ${ totalChecked } контакта",
-        "Добавить ${ totalChecked } контактов",
-        "Добавить ${ totalChecked } контактов"
-      ],
-      "Done": [
-        "Готово"
-      ],
-      "Clear data": [
-        "Стереть данные"
-      ],
-      "Recover data": [
-        "Восстановить данные"
-      ],
-      "Click here.": [
-        "Нажмите здесь."
-      ],
-      "Re-sign": [
-        "Подписать повторно"
-      ],
-      "Hide advanced PGP settings": [
-        "Скрыть расширенные настройки PGP"
-      ],
-      "Show advanced PGP settings": [
-        "Показать расширенные настройки PGP"
-      ],
-      "Add to group": [
-        "Добавить в группу"
-      ],
-      "Contact group": [
-        "Группа контактов"
-      ],
-      "Create new contact": [
-        "Создать новый контакт"
-      ],
-      "clear it": [
-        "очистить"
-      ],
-      "Export": [
-        "Экспорт"
-      ],
-      "Download": [
-        "Скачать"
-      ],
-      "Use for sending": [
-        "Использовать для отправки"
-      ],
-      "Trust": [
-        "Доверять"
-      ],
-      "Untrust": [
-        "Не доверять"
-      ],
-      "Email settings": [
-        "Настройки эл. почты"
-      ],
-      "Merge": [
-        "Объединить"
-      ],
-      "View": [
-        "Посмотреть"
-      ],
-      "Unmark for deletion": [
-        "Снять отметку для удаления"
-      ],
-      "Mark for deletion": [
-        "Отметить для удаления"
-      ],
-      "Preview contact": [
-        "Предпросмотр контакта"
-      ],
-      "Continue": [
-        "Продолжить"
-      ],
-      "Copy email to clipboard": [
-        "Скопировать адрес эл. почты в буфер обмена"
-      ],
-      "Delete contact": [
-        "Удалить контакт"
-      ],
-      "Delete ${ selectedCount } contact": [
-        "Удалить ${ selectedCount } контакт",
-        "Удалить ${ selectedCount } контакта",
-        "Удалить ${ selectedCount } контактов",
-        "Удалить ${ selectedCount } контакта"
-      ],
-      "Deselect all": [
-        "Снять выделение со всех"
-      ],
-      "Select all": [
-        "Выделить все"
-      ],
-      "Compose": [
-        "Новое письмо"
-      ],
-      "Forward as attachment": [
-        "Переслать как вложение"
-      ],
-      "Merge contacts": [
-        "Объединить контакты"
-      ],
-      "Add new contact": [
-        "Добавить новый контакт"
-      ],
-      "Add group": [
-        "Добавить группу"
-      ],
-      "Clear query": [
-        "Очистить запрос"
-      ],
-      "Add contact": [
-        "Добавить контакт"
-      ],
-      "import": [
-        "импорт"
-      ],
-      "Delete contact group": [
-        "Удалить группу контактов"
-      ],
-      "Delete ${ selectedCount } contact group": [
-        "Удалить ${ selectedCount } группу контактов",
-        "Удалить ${ selectedCount } группы контактов",
-        "Удалить ${ selectedCount } групп контактов",
-        "Удалить ${ selectedCount } группы контактов"
-      ],
-      "Add new group": [
-        "Добавить новую группу"
-      ],
-      "Export contacts": [
-        "Экспортировать контакты"
-      ],
-      "Import contacts": [
-        "Импортировать контакты"
-      ],
-      "Choose a file or drag it here": [
-        "Выберите файл или перетащите его сюда"
-      ],
-      "Import": [
-        "Импортировать"
-      ],
-      "Next": [
-        "Далее"
-      ],
-      "Use ${ label } theme": [
-        "Использовать тему ${ label }"
-      ],
-      "OK": [
-        "OK"
-      ],
-      "Details": [
-        "Подробности"
-      ],
-      "Share via link": [
-        "Доступ по ссылке"
-      ],
-      "Sharing options": [
-        "Параметры совместного доступа"
-      ],
-      "Zoom out": [
-        "Уменьшить масштаб"
-      ],
-      "Reset zoom": [
-        "Сбросить масштаб"
-      ],
-      "Zoom in": [
-        "Увеличить масштаб"
-      ],
-      "Previous": [
-        "Предыдущий"
-      ],
-      "Continue import": [
-        "Продолжить импорт"
-      ],
-      "Discard": [
-        "Отказаться"
-      ],
-      "Reconnect": [
-        "Переподключиться"
-      ],
-      "Start import": [
-        "Начать импорт"
-      ],
-      "Clear": [
-        "Очистить"
-      ],
-      "Add screenshot(s)": [
-        "Добавить снимки экрана"
-      ],
-      "Hide info": [
-        "Скрыть информацию"
-      ],
-      "Show info": [
-        "Показать информацию"
-      ],
-      "Get started": [
-        "Приступить к работе"
-      ],
-      "Start setup": [
-        "Приступить к настройке"
-      ],
-      "Skip": [
-        "Пропустить"
-      ],
-      "Back": [
-        "Назад"
-      ],
-      "Copy to clipboard": [
-        "Скопировать в буфер обмена"
-      ],
-      "Create recovery phrase": [
-        "Создать фразу для восстановления доступа к учетной записи"
-      ],
-      "Don't secure account": [
-        "Не защищать учетную запись"
-      ],
-      "Close this banner": [
-        "Закрыть этот баннер"
-      ],
-      "Refresh the page": [
-        "Обновить страницу"
-      ],
-      "enable desktop notifications": [
-        "включить уведомления на рабочем столе"
-      ],
-      "here": [
-        "здесь"
-      ],
-      "Search": [
-        "Поиск"
-      ],
-      "${ BRAND_NAME } introduction": [
-        "Введение в ${ BRAND_NAME }"
-      ],
-      "Chat with us": [
-        "Переписывайтесь с нами"
-      ],
-      "I have a question": [
-        "У меня есть вопрос"
-      ],
-      "Request a feature": [
-        "Предложить идею"
-      ],
-      "Report a problem": [
-        "Сообщить о проблеме"
-      ],
-      "${ BRAND_NAME } shop": [
-        "Магазин «${ BRAND_NAME }»"
-      ],
-      "Switch account": [
-        "Переключить учетную запись"
-      ],
-      "Sign out": [
-        "Выйти из учетной записи"
-      ],
-      "Go to settings": [
-        "Открыть настройки"
-      ],
-      "Beta Access": [
-        "Бета-доступ"
-      ],
-      "Theme": [
-        "Тема"
-      ],
-      "Keyboard shortcuts": [
-        "Сочетания клавиш"
-      ],
-      "Mailbox layout": [
-        "Схема отображения для почты"
-      ],
-      "Mailbox density": [
-        "Плотность отображения элементов для почты"
-      ],
-      "Composer size": [
-        "Размер редактора"
-      ],
-      "Remove bonuses": [
-        "Удалить бонусы"
-      ],
-      "Try again": [
-        "Попробовать снова"
-      ],
-      "Use a different card": [
-        "Использовать другую карту"
-      ],
-      "Use a different payment method": [
-        "Использовать другой способ оплаты"
-      ],
-      "Retry": [
-        "Повторить"
-      ],
-      "Loading verification": [
-        "Загружается проверка"
-      ],
-      "Select plan": [
-        "Выбрать тарифный план"
-      ],
-      "Compare all features": [
-        "Сравнить все функции"
-      ],
-      "${ boldSave } by switching to annual billing": [
-        "${ boldSave } переключившись на ежегодную оплату"
-      ],
-      "Pay": [
-        "Оплатить"
-      ],
-      "Open ${ CALENDAR_APP_NAME } settings": [
-        "Открыть настройки ${ CALENDAR_APP_NAME }"
-      ],
-      "Remove gift code": [
-        "Удалить подарочный код"
-      ],
-      "annual billing": [
-        "ежегодная оплата"
-      ],
-      "Compare plans": [
-        "Сравнить тарифные планы"
-      ],
-      "Decrease": [
-        "Уменьшить"
-      ],
-      "Increase": [
-        "Увеличить"
-      ],
-      "Preview": [
-        "Предпросмотр"
-      ],
-      "Create label": [
-        "Создать ярлык"
-      ],
-      "Create folder": [
-        "Создать папку"
-      ],
-      "Remove this label": [
-        "Удалить этот ярлык"
-      ],
-      "Add condition": [
-        "Добавить условие"
-      ],
-      "label emails as": [
-        "отметить письма ярлыком"
-      ],
-      "move emails to": [
-        "переместить письма в"
-      ],
-      "mark emails as": [
-        "отметить письма как"
-      ],
-      "send auto-reply email": [
-        "отправить автоответ"
-      ],
-      "Yes, I'll attend": [
-        "Да, я участвую"
-      ],
-      "Maybe I'll attend": [
-        "Возможно я участвую"
-      ],
-      "No, I won't attend": [
-        "Нет, я не участвую"
-      ],
-      "Yes": [
-        "Да"
-      ],
-      "Maybe": [
-        "Может быть"
-      ],
-      "No": [
-        "Нет"
-      ],
-      "Add to ${ CALENDAR_APP_NAME }": [
-        "Добавить в ${ CALENDAR_APP_NAME }"
-      ],
-      "Send anyway": [
-        "Все равно отправить"
-      ],
-      "Got it": [
-        "Понятно"
-      ],
-      "Maximize composer": [
-        "Развернуть редактор"
-      ],
-      "Minimize composer": [
-        "Свернуть редактор"
-      ],
-      "Contract composer": [
-        "Сжать окно редактора сообщений"
-      ],
-      "Expand composer": [
-        "Раскрыть окно редактора сообщений"
-      ],
-      "Close composer": [
-        "Закрыть редактор"
-      ],
-      "Trust key": [
-        "Доверять ключу",
-        "Доверять ключам",
-        "Доверять ключам",
-        "Доверять ключам"
-      ],
-      "Copy address": [
-        "Копировать адрес"
-      ],
-      "Edit address": [
-        "Изменить адрес"
-      ],
-      "View contact details": [
-        "Просмотреть контакт"
-      ],
-      "Copy addresses": [
-        "Копировать адреса"
-      ],
-      "View recipients": [
-        "Посмотреть получателей"
-      ],
-      "Carbon Copy, Blind Carbon Copy": [
-        "Копия, скрытая копия"
-      ],
-      "CC, BCC": [
-        "Копия, Скрытая копия"
-      ],
-      "Send": [
-        "Отправить"
-      ],
-      "Attachment": [
-        "Вложение"
-      ],
-      "Inline": [
-        "Встроенный"
-      ],
-      "Cancel action": [
-        "Отмена действия"
-      ],
-      "Loading${ ellipsis }": [
-        "Загрузка${ ellipsis }"
-      ],
-      "Saving${ _ellipsis }": [
-        "Сохраняем ${ _ellipsis }"
-      ],
-      "Not saved": [
-        "Не сохранено"
-      ],
-      "Schedule send": [
-        "Запланированное сообщение отправлено"
-      ],
-      "Expiration time": [
-        "Срок действия"
-      ],
-      "Encryption": [
-        "Шифрование"
-      ],
-      "Delete draft": [
-        "Удалить черновик"
-      ],
-      "Set": [
-        "Задать"
-      ],
-      "Schedule message": [
-        "Запланировать сообщение"
-      ],
-      "Print": [
-        "Печать"
-      ],
-      "Address options": [
-        "Настройки адреса"
-      ],
-      "New message": [
-        "Новое сообщение"
-      ],
-      "Trust Public Key": [
-        "Доверять этому публичному ключу"
-      ],
-      "Filter on...": [
-        "Фильтр по..."
-      ],
-      "Move to...": [
-        "Переместить в..."
-      ],
-      "Label as...": [
-        "Отметить как..."
-      ],
-      "Mark as unread": [
-        "Отметить как непрочитанное"
-      ],
-      "Move to spam": [
-        "Переместить в спам"
-      ],
-      "Report phishing": [
-        "Пожаловаться на фишинг"
-      ],
-      "View source code": [
-        "Показать исходный код"
-      ],
-      "View rendered HTML": [
-        "Просмотр обработанного HTML"
-      ],
-      "View headers": [
-        "Просмотр заголовков"
-      ],
-      "Hide details": [
-        "Скрыть подробности"
-      ],
-      "Show details": [
-        "Показать подробности"
-      ],
-      "Custom filter": [
-        "Пользовательский фильтр"
-      ],
-      "Move to": [
-        "Переместить в"
-      ],
-      "Label as": [
-        "Отметить как"
-      ],
-      "Load": [
-        "Загрузить"
-      ],
-      "This message contains remote content.": [
-        "Это сообщение содержит удаленное содержимое."
-      ],
-      "This message contains embedded images.": [
-        "В этом сообщении есть встроенные изображения."
-      ],
-      "Unsubscribe": [
-        "Отписаться"
-      ],
-      "Unsubscribing": [
-        "Подписка отменяется"
-      ],
-      "Mark legitimate": [
-        "Отметить как законное"
-      ],
-      "Send receipt": [
-        "Отправить уведомление"
-      ],
-      "Accept": [
-        "Принять"
-      ],
-      "Show": [
-        "Показать"
-      ],
-      "Show less": [
-        "Меньше"
-      ],
-      "Never show": [
-        "Никогда не показывать"
-      ],
-      "View keys": [
-        "Просмотреть ключи"
-      ],
-      "Edit draft": [
-        "Редактировать черновик"
-      ],
-      "Download ${ attachmentName }": [
-        "Скачать ${ attachmentName }"
-      ],
-      "Preview ${ attachmentName }": [
-        "Предпросмотр ${ attachmentName }"
-      ],
-      "Remove ${ attachmentName }": [
-        "Удалить ${ attachmentName }"
-      ],
-      "Hide attachment details": [
-        "Скрыть сведения о вложении"
-      ],
-      "Show attachment details": [
-        "Показать сведения о вложении"
-      ],
-      "Hide": [
-        "Скрыть"
-      ],
-      "Learn more": [
-        "Подробнее"
-      ],
-      "Undo": [
-        "Отменить"
-      ],
-      "View message": [
-        "Посмотреть сообщение"
-      ],
-      "Enable": [
-        "Активировать"
-      ],
-      "Search message content": [
-        "Поиск содержимого сообщения"
-      ],
-      "Activate": [
-        "Активировать"
-      ],
-      "Resume": [
-        "Возобновить"
-      ],
-      "Pause": [
-        "Приостановить"
-      ],
-      "Show less search options": [
-        "Показать меньше настроек поиска"
-      ],
-      "Show more search options": [
-        "Показать больше настроек поиска"
-      ],
-      "Less search options": [
-        "Меньше настроек поиска"
-      ],
-      "More search options": [
-        "Больше настроек поиска"
-      ],
-      "Advanced search": [
-        "Расширенный поиск"
-      ],
-      "Clear browser data": [
-        "Очистить данные браузера"
-      ],
-      "Mark as read": [
-        "Отметить как прочитанное"
-      ],
-      "Delete permanently": [
-        "Удалить безвозвратно"
-      ],
-      "Move to inbox": [
-        "Переместить во Входящие"
-      ],
-      "Move to archive": [
-        "Переместить в Архив"
-      ],
-      "Move to inbox (not spam)": [
-        "Переместить во входящие (не спам)"
-      ],
-      "Move to trash": [
-        "Переместить в корзину"
-      ],
-      "Delete all": [
-        "Удалить все"
-      ],
-      "Deselect all messages": [
-        "Снять выбор со всех сообщений"
-      ],
-      "Select all messages": [
-        "Выбрать все сообщения"
-      ],
-      "Select All": [
-        "Выбрать все"
-      ],
-      "All Read": [
-        "Все прочитанные"
-      ],
-      "All Unread": [
-        "Все непрочитанные"
-      ],
-      "All Starred": [
-        "Все избранные"
-      ],
-      "All Unstarred": [
-        "Все не избранные"
-      ],
-      "Load more": [
-        "Загрузить ещё"
-      ],
-      "Previous page": [
-        "Предыдущая страница"
-      ],
-      "Change page": [
-        "Изменить страницу"
-      ],
-      "Page ${ pageNumber }": [
-        "Страница ${ pageNumber }"
-      ],
-      "Next page": [
-        "След. страница"
-      ],
-      "Previous conversation": [
-        "Предыдущая цепочка писем"
-      ],
-      "Previous message": [
-        "Предыдущее сообщение"
-      ],
-      "Next conversation": [
-        "Следующая беседа"
-      ],
-      "Next message": [
-        "Cледующее сообщение"
-      ],
-      "Show messages": [
-        "Показать сообщения"
-      ],
-      "Hide messages": [
-        "Скрыть сообщения"
-      ],
-      "Create new message": [
-        "Создать новое сообщение"
-      ],
-      "Open shop": [
-        "Открыть магазин"
-      ],
-      "Open calendar": [
-        "Открыть календарь"
-      ],
-      "Import messages": [
-        "Импортировать сообщения"
-      ],
-      "Deselect": [
-        "Снять выделение"
-      ],
-      "Start using ${ appName }": [
-        "Начните использовать ${ appName }"
-      ]
-    },
-    "Title": {
-      "Open actions dropdown": [
-        "Показать список доступных действий"
-      ],
-      "Expand content": [
-        "Развернуть содержимое"
-      ],
-      "Link confirmation": [
-        "Подтверждение ссылки"
-      ],
-      "Keyboard Shortcuts": [
-        "Сочетания клавиш"
-      ],
-      "What's new": [
-        "Что нового"
-      ],
-      "Sign in again to continue": [
-        "Чтобы продолжить, повторно войдите ещё раз"
-      ],
-      "Account suspended": [
-        "Учетная запись приостановлена"
-      ],
-      "Enter your username or ProtonMail email address": [
-        "Введите ваше имя пользователя или адрес эл. почты ProtonMail"
-      ],
-      "Enter your password": [
-        "Введите свой пароль"
-      ],
-      "Invalid verification code": [
-        "Неверный проверочный код"
-      ],
-      "Human verification": [
-        "Проверка \"Я не робот\""
-      ],
-      "Upgrade required": [
-        "Требуется переход на платную версию"
-      ],
-      "Delete ${ Name }": [
-        "Удалить ${ Name }"
-      ],
-      "Delete ${ count } contact group": [
-        "Удаление ${ count } группы контактов",
-        "Удаление ${ count } групп контактов",
-        "Удаление ${ count } групп контактов",
-        "Удаление ${ count } группы контактов"
-      ],
-      "Edit contact group": [
-        "Изменение группы контактов"
-      ],
-      "Create new group": [
-        "Создать группу"
-      ],
-      "${ emailsCount } member": [
-        "${ emailsCount } участник",
-        "${ emailsCount } участника",
-        "${ emailsCount } участников",
-        "${ emailsCount } участника"
-      ],
-      "Edit image": [
-        "Изменение изображения"
-      ],
-      "Add to ${ groupName }": [
-        "Добавить в ${ groupName }"
-      ],
-      "Add to ${ groupCount } group": [
-        "Добавление в ${ groupCount } группу",
-        "Добавление в ${ groupCount } группы",
-        "Добавление в ${ groupCount } групп",
-        "Добавление в ${ groupCount } группы"
-      ],
-      "Edit contact": [
-        "Изменение контакта"
-      ],
-      "Create contact": [
-        "Создать контакт"
-      ],
-      "Insert contacts": [
-        "Добавить контакты"
-      ],
-      "Delete ${ count } contact": [
-        "Удалить ${ count } контакт",
-        "Удалить ${ count } контакта",
-        "Удалить ${ count } контактов",
-        "Удалить ${ count } контактов"
-      ],
-      "Clearing data": [
-        "Очистка данных"
-      ],
-      "Warning": [
-        "Предупреждение"
-      ],
-      "Recover data": [
-        "Восстановление данных"
-      ],
-      "Re-signing contacts": [
-        "Переподписание контактов"
-      ],
-      "Re-sign all contacts": [
-        "Переподписать все контакты"
-      ],
-      "Email settings (${ emailAddress })": [
-        "Настройки электронной почты (${ emailAddress })"
-      ],
-      "Exporting contacts": [
-        "Экспортирование контактов"
-      ],
-      "Contact group": [
-        "Группа контактов"
-      ],
-      "Other names": [
-        "Другие названия"
-      ],
-      "Email addresses": [
-        "Адреса электронной почты"
-      ],
-      "Phone numbers": [
-        "Hомера телефонов"
-      ],
-      "Addresses": [
-        "Адреса"
-      ],
-      "Other information": [
-        "Доп. информация"
-      ],
-      "Email settings": [
-        "Настройки эл. почты"
-      ],
-      "Contact Details": [
-        "Контактные данные"
-      ],
-      "Merging contacts": [
-        "Идет объединение контактов"
-      ],
-      "Merge contacts": [
-        "Объединение контактов"
-      ],
-      "Deleting contacts": [
-        "Удаление контактов"
-      ],
-      "View contacts": [
-        "Просмотр контактов"
-      ],
-      "Contacts": [
-        "Контакты"
-      ],
-      "Groups": [
-        "Группы"
-      ],
-      "Settings": [
-        "Настройки"
-      ],
-      "Select action to take on contact group": [
-        "Выберите действие для группы контактов"
-      ],
-      "Add contact group name": [
-        "Добавление имени для группы контактов"
-      ],
-      "Select contact group": [
-        "Выбор группы контактов"
-      ],
-      "Import groups": [
-        "Импорт групп"
-      ],
-      "Import contacts": [
-        "Импорт контактов"
-      ],
-      "Select a theme": [
-        "Выбор темы"
-      ],
-      "Start import process": [
-        "Начать процесс импорта"
-      ],
-      "Import in progress": [
-        "Выполняется импорт"
-      ],
-      "Report a problem": [
-        "Сообщить о проблеме"
-      ],
-      "${ appName } Keyboard Shortcuts": [
-        "Сочетания клавиш ${ appName }"
-      ],
-      "Mailbox density": [
-        "Плотность отображения элементов для почты"
-      ],
-      "Mailbox layout": [
-        "Схема отображения для почты"
-      ],
-      "Composer mode": [
-        "Режим редактора"
-      ],
-      "Open help menu": [
-        "Открыть меню справки"
-      ],
-      "Back": [
-        "Назад"
-      ],
-      "Open settings menu": [
-        "Открыть меню настроек"
-      ],
-      "Confirm loss of Proton bonuses": [
-        "Подтвердите потерю бонусов Proton"
-      ],
-      "Unsupported browser": [
-        "Браузер не поддерживается"
-      ],
-      "Card verification": [
-        "Проверка карты"
-      ],
-      "Payment verification": [
-        "Проверка платежа"
-      ],
-      "Processing...": [
-        "Обработка..."
-      ],
-      "Card verification in progress": [
-        "Идет проверка карты"
-      ],
-      "Payment verification in progress": [
-        "Идет проверка платежа"
-      ],
-      "PayPal verification failed": [
-        "Сбой проверки PayPal"
-      ],
-      "3-D Secure verification failed": [
-        "Сбой проверки 3-D Secure"
-      ],
-      "Error": [
-        "Ошибка"
-      ],
-      "ZIP / postal code": [
-        "ZIP-код / почтовый индекс"
-      ],
-      "Payment details": [
-        "Подробности платежа"
-      ],
-      "Currency": [
-        "Валюта"
-      ],
-      "Billing cycle": [
-        "Платежный цикл"
-      ],
-      "Current plan": [
-        "Текущий тарифный план"
-      ],
-      "Processing": [
-        "Обработка"
-      ],
-      "Apply gift code": [
-        "Использовать подарочный код"
-      ],
-      "Subtotal": [
-        "Подитог"
-      ],
-      "Coupon discount": [
-        "Скидка по купону"
-      ],
-      "Total (monthly)": [
-        "Всего (ежемесячно)"
-      ],
-      "Credits": [
-        "Кредиты"
-      ],
-      "Gift code": [
-        "Подарочный код"
-      ],
-      "Amount due": [
-        "К оплате"
-      ],
-      "Cancel subscription": [
-        "Отменить подписку"
-      ],
-      "Network error": [
-        "Ошибка сети"
-      ],
-      "Select a plan": [
-        "Выберите тарифный план"
-      ],
-      "Customize your plan": [
-        "Настроить свой тарифный план"
-      ],
-      "Checkout": [
-        "Оформление заказа"
-      ],
-      "Plan summary": [
-        "Сводка по тарифу"
-      ],
-      "${ appName } customization": [
-        "${ appName } настройка"
-      ],
-      "Beta Access": [
-        "Бета-доступ"
-      ],
-      "Edit filter": [
-        "Изменение фильтра"
-      ],
-      "Add filter": [
-        "Добавить фильтр"
-      ],
-      "Are you sure you want to close?": [
-        "Вы уверены, что хотите закрыть?"
-      ],
-      "Change my answer": [
-        "Изменить мой ответ"
-      ],
-      "Image": [
-        "Изображение"
-      ],
-      "Sending notice": [
-        "Предупреждение"
-      ],
-      "Storage capacity warning": [
-        "Предупреждение об объёме хранилища"
-      ],
-      "Sending original message": [
-        "Отправление исходного сообщения"
-      ],
-      "No recipient": [
-        "Нет получателя"
-      ],
-      "Message without subject?": [
-        "Отправить сообщение без темы?"
-      ],
-      "No attachment found": [
-        "Вложение не найдено"
-      ],
-      "Re-sign contact": [
-        "Повторно подписать контакт"
-      ],
-      "Verification error": [
-        "Ошибка подтверждения"
-      ],
-      "Decryption error": [
-        "Ошибка расшифровки"
-      ],
-      "Delete draft": [
-        "Удалить черновик"
-      ],
-      "Delete ${ count } draft": [
-        "Удалить ${ count } черновик",
-        "Удалить ${ count } черновика",
-        "Удалить ${ count } черновиков",
-        "Удалить ${ count } черновиков"
-      ],
-      "Delete message": [
-        "Удалить сообщение"
-      ],
-      "Delete conversation": [
-        "Удалить цепочку писем"
-      ],
-      "Delete ${ count } conversation": [
-        "Удалить ${ count } цепочку писем",
-        "Удалить ${ count } цепочки писем",
-        "Удалить ${ count } цепочек писем",
-        "Удалить ${ count } цепочек писем"
-      ],
-      "Delete ${ count } message": [
-        "Удалить ${ count } сообщение",
-        "Удалить ${ count } сообщения",
-        "Удалить ${ count } сообщений",
-        "Удалить ${ count } сообщений"
-      ],
-      "Delete all messages": [
-        "Удалить все сообщения"
-      ],
-      "Trust new key?": [
-        "Доверять новому ключу?",
-        "Доверять новым ключам?",
-        "Доверять новым ключам?",
-        "Доверять новым ключам?"
-      ],
-      "Add contacts": [
-        "Добавить контакты"
-      ],
-      "To": [
-        "Кому"
-      ],
-      "CC": [
-        "Копия"
-      ],
-      "BCC": [
-        "Cкрытая копия"
-      ],
-      "Carbon Copy": [
-        "Копия"
-      ],
-      "Blind Carbon Copy": [
-        "Скрытая копия"
-      ],
-      "Sending error": [
-        "Ошибка отправки"
-      ],
-      "Confirm recipient address?": [
-        "Подтвердить адрес получателя?"
-      ],
-      "Send without expiration?": [
-        "Отправить без истечения срока действия?"
-      ],
-      "Send with changed preferences?": [
-        "Отправить с изменёнными настройками?"
-      ],
-      "Attachments": [
-        "Вложения"
-      ],
-      "Expiration time": [
-        "Срок действия"
-      ],
-      "Encryption": [
-        "Шифрование"
-      ],
-      "Send email": [
-        "Отправить электронное письмо"
-      ],
-      "Schedule send": [
-        "Запланированное сообщение отправлено"
-      ],
-      "New message": [
-        "Новое сообщение"
-      ],
-      "Trust public key?": [
-        "Доверять этому открытому ключу?"
-      ],
-      "All recipients were added to the BCC field and cannot be disclosed": [
-        "Все получатели были добавлены в поле \"Скрытая копия\" и не будут видны"
-      ],
-      "Move to inbox (not spam)": [
-        "Переместить во входящие (не спам)"
-      ],
-      "Mark as unread": [
-        "Отметить как непрочитанное"
-      ],
-      "Move to inbox": [
-        "Переместить во Входящие"
-      ],
-      "Move to trash": [
-        "Переместить в корзину"
-      ],
-      "More": [
-        "Еще"
-      ],
-      "More options": [
-        "Дополнительные параметры"
-      ],
-      "Reply": [
-        "Ответить"
-      ],
-      "Reply all": [
-        "Ответить всем"
-      ],
-      "Forward": [
-        "Переслать"
-      ],
-      "Filter on": [
-        "Вкл фильтр"
-      ],
-      "Move to": [
-        "Переместить"
-      ],
-      "Label as": [
-        "Отметить как"
-      ],
-      "Load remote content": [
-        "Загрузить внешнее содержимое"
-      ],
-      "Load embedded images": [
-        "Показывать встроенные изображения"
-      ],
-      "Unsubscribe": [
-        "Отписаться"
-      ],
-      "Mark email as legitimate": [
-        "Пометить эл. письмо как законное"
-      ],
-      "Trust pinned keys?": [
-        "Доверять закрепленным ключам?"
-      ],
-      "Enable message content search": [
-        "Включить поиск содержимого сообщений"
-      ],
-      "Create a new folder": [
-        "Создать новую папку"
-      ],
-      "Create a new label": [
-        "Создать новый ярлык"
-      ],
-      "More selections": [
-        "Еще варианты выбора"
-      ],
-      "Previous conversation": [
-        "Предыдущая цепочка писем"
-      ],
-      "Previous message": [
-        "Предыдущее сообщение"
-      ],
-      "Next conversation": [
-        "Следующая цепочка писем"
-      ],
-      "Next message": [
-        "Cледующее сообщение"
-      ],
-      "Sort conversations": [
-        "Сортировка бесед"
-      ],
-      "Sort messages": [
-        "Сортировка сообщений"
-      ],
-      "Create folder": [
-        "Создать папку"
-      ],
-      "Create label": [
-        "Создать ярлык"
-      ],
-      "Conversation list": [
-        "Цепочка писем"
-      ],
-      "Message list": [
-        "Список сообщений"
-      ],
-      "Welcome ${ userName }": [
-        "Добро пожаловать, ${ userName }"
-      ],
-      "Welcome": [
-        "Добро пожаловать"
-      ]
-    },
-    "Placeholder": {
-      "Link": [
-        "Ссылка"
-      ],
-      "Fill in the URL link and text to test your link": [
-        "Введите URL-адрес и текст для проверки вашей ссылки"
-      ],
-      "Email address": [
-        "Адрес эл. почты"
-      ],
-      "Fill in the email address and text to test your link": [
-        "Введите адрес электронной почты и текст для проверки вашей ссылки"
-      ],
-      "Phone number": [
-        "Hомер телефона"
-      ],
-      "Fill in the phone number and text to test your link": [
-        "Введите номер телефона и текст для проверки вашей ссылки"
-      ],
-      "Text": [
-        "Текст"
-      ],
-      "E.g., ": [
-        "Например, "
-      ],
-      "Mailbox password": [
-        "Пароль почтового ящика"
-      ],
-      "Start typing an email address": [
-        "Начните вводить адрес эл. почты"
-      ],
-      "Image URL": [
-        "URL изображения"
-      ],
-      "Search name, email or group": [
-        "Искать имя, адрес эл. почты или группу"
-      ],
-      "Filter groups": [
-        "Фильтровать группы"
-      ],
-      "Search for name or email": [
-        "Поиск имени или эл. почты"
-      ],
-      "Search for group name": [
-        "Поиск по названию группы"
-      ],
-      "Name": [
-        "Название"
-      ],
-      "OS name": [
-        "Название ОС"
-      ],
-      "OS version": [
-        "Версия ОС"
-      ],
-      "Proton username": [
-        "Имя пользователя в Proton"
-      ],
-      "A way to contact you": [
-        "Способ связаться с вами"
-      ],
-      "Please describe the problem and include any error messages": [
-        "Пожалуйста, опишите проблему и добавьте все возникавшие сообщения об ошибках"
-      ],
-      "Browser name": [
-        "Название браузера"
-      ],
-      "Browser version": [
-        "Версия браузера"
-      ],
-      "e.g. Julia Smith": [
-        "например, Джулия Смит"
-      ],
-      "ZIP": [
-        "ZIP-код"
-      ],
-      "Postal code": [
-        "Почтовый индекс"
-      ],
-      "Gift code": [
-        "Подарочный код"
-      ],
-      "Type text or keyword": [
-        "Введите текст или ключевое слово"
-      ],
-      "Subject": [
-        "Тема"
-      ],
-      "Write your message": [
-        "Напишите сообщение"
-      ],
-      "Password": [
-        "Пароль"
-      ],
-      "Confirm Password": [
-        "Подтвердите пароль"
-      ],
-      "Hint": [
-        "Подсказка"
-      ],
-      "Search Messages": [
-        "Поиск сообщений"
-      ],
-      "Start date": [
-        "Начиная с"
-      ],
-      "End date": [
-        "Дата окончания"
-      ],
-      "Name or email address": [
-        "Имя или адрес эл. почты"
-      ],
-      "Search messages": [
-        "Поиск сообщений"
-      ],
-      "Filter folders": [
-        "Фильтр папок"
-      ],
-      "Filter labels": [
-        "Фильтр ярлыков"
-      ]
-    },
-    "Font Face Default": {
-      "Default": [
-        "По умолчанию"
-      ]
-    },
-    "Font Size Default": {
-      "Default": [
-        "По умолчанию"
+      "${ numberOfTrackers } email tracker found": [
+        "найден ${ numberOfTrackers } трекер эл. почты",
+        "найдено ${ numberOfTrackers } трекера эл. почты",
+        "найдено ${ numberOfTrackers } трекеров эл. почты",
+        "найдено ${ numberOfTrackers } трекеров эл. почты"
       ]
     },
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "Ключ не может быть использован для шифрования"
-      ]
-    },
-    "Link": {
-      "Learn more": [
-        "Подробнее"
-      ],
-      "Request an invite": [
-        "Запросить приглашение"
-      ],
-      "clearing your browser cache": [
-        "очистка кэша браузера"
-      ],
-      "Pay invoice": [
-        "Оплатить счёт"
-      ],
-      "Upgrade account": [
-        "Повысить учётную запись"
-      ],
-      "Upgrade": [
-        "Повысить"
-      ],
-      "Go to subscription plans": [
-        "Перейти на страницу подписки"
-      ],
-      "click here": [
-        "нажмите здесь"
-      ],
-      "Add a gift code": [
-        "Добавить подарочный код"
-      ],
-      "You need to activate your calendar keys to add this event": [
-        "Вы должны активировать ключи вашего календаря, чтобы добавить это событие"
-      ],
-      "You need to activate your calendar keys to manage this invitation": [
-        "Вам нужно активировать ключи календаря для управления этим приглашением"
-      ],
-      "You need to activate your calendar keys to answer this invitation": [
-        "Вам нужно активировать ключи календаря для ответа на это приглашение"
-      ],
-      "You need to activate your calendar keys to see the updated event": [
-        "Вам нужно активировать ключи календаря, чтобы увидеть обновленное событие"
-      ],
-      "You need to activate your calendar keys to see the updated invitation": [
-        "Вам нужно активировать ключи календаря, чтобы увидеть обновленные приглашения"
-      ],
-      "This ICS file contains more than one event. Please download it and import the events in ${ calendarAppName }": [
-        "Этот ICS файл календаря содержит более, чем одно событие. Пожалуйста, загрузите его и импортируйте события в ${ calendarAppName }"
-      ],
-      "You need to reactivate your keys to manage this invitation": [
-        "Вам нужно повторно активировать ключи для управления этим приглашением"
-      ],
-      "You need to reactivate your keys to see the updated event": [
-        "Вам нужно повторно активировать ключи, чтобы увидеть обновленное событие"
-      ],
-      "You need to reactivate your keys to see the updated invitation": [
-        "Вам нужно повторно активировать ключи, чтобы увидеть обновленное приглашение"
-      ],
-      "Create a new calendar to add this event": [
-        "Создайте новый календарь чтобы добавить это событие"
-      ],
-      "Create a new calendar to answer this invitation": [
-        "Создайте новый календарь, чтобы ответить на это приглашение"
-      ],
-      "Create a new calendar to manage your invitations": [
-        "Создайте новый календарь для управления вашими приглашениями"
-      ],
-      "Open updated event in ${ calendarAppName }": [
-        "Открыть обновленное событие в ${ calendarAppName }"
-      ],
-      "Open in ${ calendarAppName }": [
-        "Открыть в ${ calendarAppName }"
-      ],
-      "Inbox": [
-        "Входящие"
-      ],
-      "Drafts": [
-        "Черновики"
-      ],
-      "Sent": [
-        "Отправленные"
-      ],
-      "Trash": [
-        "Корзина"
-      ],
-      "Spam": [
-        "Спам"
-      ],
-      "All mail": [
-        "Вся почта"
-      ],
-      "Archive": [
-        "Архив"
-      ],
-      "Starred": [
-        "Со звёздами"
-      ],
-      "Outbox": [
-        "Исходящие"
-      ],
-      "Scheduled": [
-        "Расписание"
-      ],
-      "Re-enable the address linked to this calendar to manage your invitation.": [
-        "Повторно включите адрес, связанный с этим календарем, для управления вашим приглашением."
-      ],
-      "Re-enable the address linked to this calendar to update your invitation.": [
-        "Повторно включите адрес, связанный с этим календарем, для обновления вашего приглашения."
-      ],
-      "Enable your address to answer this invitation.": [
-        "Включите свой адрес, чтобы ответить на это приглашение."
-      ],
-      "Create a calendar linked to an active email address.": [
-        "Создать календарь, связанный с активным адресом электронной почты."
-      ],
-      "Enable an email address linked to one of your calendars.": [
-        "Включить адрес электронной почты, связанный с одним из ваших календарей."
-      ],
-      "Or you can delete one of your calendars and create a new one linked to an active email address.": [
-        "Или вы можете удалить один из календарей и создать новый, связанный с активным адресом электронной почты."
-      ],
-      "Enable your address again to modify your answer.": [
-        "Включите свой адрес еще раз, чтобы изменить свой ответ."
-      ],
-      "Enable the email address linked to the disabled calendar to cancel the event.": [
-        "Включите адрес электронной почты, связанный с отключенным календарем, для отмены события."
-      ],
-      "Enable the email address linked to the disabled calendar to modify your answer.": [
-        "Включите адрес электронной почты, связанный с отключенным календарем, для изменения ответа."
-      ],
-      "Add folder": [
-        "Добавить папку"
-      ],
-      "Add label": [
-        "Добавить ярлык"
-      ],
-      "Folders": [
-        "Папки"
-      ],
-      "Manage your folders": [
-        "Управлять вашими папками"
-      ],
-      "Labels": [
-        "Ярлыки"
-      ],
-      "Manage your labels": [
-        "Управлять вашими ярлыками"
       ]
     },
     "Label": {
@@ -4830,8 +3487,8 @@
       "Keyword": [
         "Ключевое слово"
       ],
-      "Location": [
-        "Местоположение"
+      "Search in": [
+        "Искать во"
       ],
       "From": [
         "От"
@@ -4850,6 +3507,128 @@
       ],
       "Also archive": [
         "Также перенести в архив"
+      ]
+    },
+    "Placeholder": {
+      "E.g., ": [
+        "Например, "
+      ],
+      "Link": [
+        "Ссылка"
+      ],
+      "Fill in the URL link and text to test your link": [
+        "Введите URL-адрес и текст для проверки вашей ссылки"
+      ],
+      "Email address": [
+        "Адрес эл. почты"
+      ],
+      "Fill in the email address and text to test your link": [
+        "Введите адрес электронной почты и текст для проверки вашей ссылки"
+      ],
+      "Phone number": [
+        "Hомер телефона"
+      ],
+      "Fill in the phone number and text to test your link": [
+        "Введите номер телефона и текст для проверки вашей ссылки"
+      ],
+      "Text": [
+        "Текст"
+      ],
+      "Mailbox password": [
+        "Пароль почтового ящика"
+      ],
+      "Start typing an email address": [
+        "Начните вводить адрес эл. почты"
+      ],
+      "Image URL": [
+        "URL изображения"
+      ],
+      "Search name, email or group": [
+        "Искать имя, адрес эл. почты или группу"
+      ],
+      "Filter groups": [
+        "Фильтровать группы"
+      ],
+      "Search for name or email": [
+        "Поиск имени или эл. почты"
+      ],
+      "Search for group name": [
+        "Поиск по названию группы"
+      ],
+      "Name": [
+        "Название"
+      ],
+      "OS name": [
+        "Название ОС"
+      ],
+      "OS version": [
+        "Версия ОС"
+      ],
+      "Proton username": [
+        "Имя пользователя в Proton"
+      ],
+      "A way to contact you": [
+        "Способ связаться с вами"
+      ],
+      "Please describe the problem and include any error messages": [
+        "Пожалуйста, опишите проблему и добавьте все возникавшие сообщения об ошибках"
+      ],
+      "Browser name": [
+        "Название браузера"
+      ],
+      "Browser version": [
+        "Версия браузера"
+      ],
+      "e.g. Julia Smith": [
+        "например, Джулия Смит"
+      ],
+      "ZIP": [
+        "ZIP-код"
+      ],
+      "Postal code": [
+        "Почтовый индекс"
+      ],
+      "Gift code": [
+        "Подарочный код"
+      ],
+      "Type text or keyword": [
+        "Введите текст или ключевое слово"
+      ],
+      "Subject": [
+        "Тема"
+      ],
+      "Write your message": [
+        "Напишите сообщение"
+      ],
+      "Password": [
+        "Пароль"
+      ],
+      "Confirm Password": [
+        "Подтвердите пароль"
+      ],
+      "Hint": [
+        "Подсказка"
+      ],
+      "Search Messages": [
+        "Поиск сообщений"
+      ],
+      "Start date": [
+        "Начиная с"
+      ],
+      "End date": [
+        "Дата окончания"
+      ],
+      "Name or email address": [
+        "Имя или адрес эл. почты"
+      ],
+      "Search messages": [
+        "Поиск сообщений"
+      ],
+      "Filter folders": [
+        "Фильтр папок"
+      ],
+      "Filter labels": [
+        "Фильтр ярлыков"
       ]
     },
     "Time unit": {
@@ -4888,6 +3667,162 @@
         "${ secondsCountLeft } секунды",
         "${ secondsCountLeft } секунд",
         "${ secondsCountLeft } секунд"
+      ]
+    },
+    "Link": {
+      "Learn more": [
+        "Подробнее"
+      ],
+      "Request an invite": [
+        "Запросить приглашение"
+      ],
+      "clearing your browser cache": [
+        "очистка кэша браузера"
+      ],
+      "Pay invoice": [
+        "Оплатить счёт"
+      ],
+      "Upgrade account": [
+        "Повысить учётную запись"
+      ],
+      "Upgrade": [
+        "Повысить"
+      ],
+      "Go to subscription plans": [
+        "Перейти на страницу подписки"
+      ],
+      "click here": [
+        "нажмите здесь"
+      ],
+      "Add a gift code": [
+        "Добавить подарочный код"
+      ],
+      "Inbox": [
+        "Входящие"
+      ],
+      "Drafts": [
+        "Черновики"
+      ],
+      "Sent": [
+        "Отправленные"
+      ],
+      "Trash": [
+        "Корзина"
+      ],
+      "Spam": [
+        "Спам"
+      ],
+      "All mail": [
+        "Вся почта"
+      ],
+      "Archive": [
+        "Архив"
+      ],
+      "Starred": [
+        "Со звёздами"
+      ],
+      "Outbox": [
+        "Исходящие"
+      ],
+      "Scheduled": [
+        "Расписание"
+      ],
+      "You need to activate your calendar keys to add this event": [
+        "Вы должны активировать ключи вашего календаря, чтобы добавить это событие"
+      ],
+      "You need to activate your calendar keys to manage this invitation": [
+        "Вам нужно активировать ключи календаря для управления этим приглашением"
+      ],
+      "You need to activate your calendar keys to answer this invitation": [
+        "Вам нужно активировать ключи календаря для ответа на это приглашение"
+      ],
+      "You need to activate your calendar keys to see the updated event": [
+        "Вам нужно активировать ключи календаря, чтобы увидеть обновленное событие"
+      ],
+      "You need to activate your calendar keys to see the updated invitation": [
+        "Вам нужно активировать ключи календаря, чтобы увидеть обновленные приглашения"
+      ],
+      "This ICS file contains more than one event. Please download it and import the events in ${ calendarAppName }": [
+        "Этот ICS файл календаря содержит более, чем одно событие. Пожалуйста, загрузите его и импортируйте события в ${ calendarAppName }"
+      ],
+      "You need to reactivate your keys to manage this invitation": [
+        "Вам нужно повторно активировать ключи для управления этим приглашением"
+      ],
+      "You need to reactivate your keys to see the updated event": [
+        "Вам нужно повторно активировать ключи, чтобы увидеть обновленное событие"
+      ],
+      "You need to reactivate your keys to see the updated invitation": [
+        "Вам нужно повторно активировать ключи, чтобы увидеть обновленное приглашение"
+      ],
+      "Create a new calendar to add this event": [
+        "Создайте новый календарь чтобы добавить это событие"
+      ],
+      "Create a new calendar to answer this invitation": [
+        "Создайте новый календарь, чтобы ответить на это приглашение"
+      ],
+      "Create a new calendar to manage your invitations": [
+        "Создайте новый календарь для управления вашими приглашениями"
+      ],
+      "Open updated event in ${ calendarAppName }": [
+        "Открыть обновленное событие в ${ calendarAppName }"
+      ],
+      "Open in ${ calendarAppName }": [
+        "Открыть в ${ calendarAppName }"
+      ],
+      "Re-enable the address linked to this calendar to manage your invitation.": [
+        "Повторно включите адрес, связанный с этим календарем, для управления вашим приглашением."
+      ],
+      "Re-enable the address linked to this calendar to update your invitation.": [
+        "Повторно включите адрес, связанный с этим календарем, для обновления вашего приглашения."
+      ],
+      "Enable your address to answer this invitation.": [
+        "Включите свой адрес, чтобы ответить на это приглашение."
+      ],
+      "Create a calendar linked to an active email address.": [
+        "Создать календарь, связанный с активным адресом электронной почты."
+      ],
+      "Enable an email address linked to one of your calendars.": [
+        "Включить адрес электронной почты, связанный с одним из ваших календарей."
+      ],
+      "Or you can delete one of your calendars and create a new one linked to an active email address.": [
+        "Или вы можете удалить один из календарей и создать новый, связанный с активным адресом электронной почты."
+      ],
+      "Enable your address again to modify your answer.": [
+        "Включите свой адрес еще раз, чтобы изменить свой ответ."
+      ],
+      "Enable the email address linked to the disabled calendar to cancel the event.": [
+        "Включите адрес электронной почты, связанный с отключенным календарем, для отмены события."
+      ],
+      "Enable the email address linked to the disabled calendar to modify your answer.": [
+        "Включите адрес электронной почты, связанный с отключенным календарем, для изменения ответа."
+      ],
+      "Add folder": [
+        "Добавить папку"
+      ],
+      "Add label": [
+        "Добавить ярлык"
+      ],
+      "Folders": [
+        "Папки"
+      ],
+      "Manage your folders": [
+        "Управлять вашими папками"
+      ],
+      "Labels": [
+        "Ярлыки"
+      ],
+      "Manage your labels": [
+        "Управлять вашими ярлыками"
+      ]
+    },
+    "Font Face Default": {
+      "Default": [
+        "По умолчанию"
+      ]
+    },
+    "Font Size Default": {
+      "Default": [
+        "По умолчанию"
       ]
     },
     "Hint": {
@@ -5218,6 +4153,30 @@
         "Нет доступных способов проверки"
       ]
     },
+    "Label to change density": {
+      "Comfortable": [
+        "Удобный"
+      ],
+      "Compact": [
+        "Компактный"
+      ]
+    },
+    "Label to change view layout": {
+      "Column": [
+        "Колонка"
+      ],
+      "Row": [
+        "Ряд"
+      ]
+    },
+    "Label to change composer mode": {
+      "Normal": [
+        "Обычный"
+      ],
+      "Maximized": [
+        "Максимизированный"
+      ]
+    },
     "Table header": {
       "Name": [
         "Имя"
@@ -5377,7 +4336,7 @@
         "Направляйте свой трафик через сеть Tor одним щелчком мыши."
       ],
       "Defends against threats to VPN privacy by passing your Internet traffic through multiple servers.": [
-        "Защищая от угроз, VPN обеспечивает приватность, передавая ваш интернет-трафик через несколько серверов."
+        "Защищая от угроз, VPN обеспечивает конфиденциальность, передавая ваш интернет-трафик через несколько серверов."
       ],
       "Get access to all the paid features for both ProtonVPN and ProtonMail (the encrypted email service that millions use to protect their data) with one plan.": [
         "Получите доступ ко всем платным функциям как ProtonVPN, так и ProtonMail (служба зашифрованной электронной почты, которую миллионы людей используют для защиты своих данных) по одному тарифному плану."
@@ -5652,35 +4611,6 @@
         "${ totalImported }/${ totalToImport } контактов зашифровано и добавлено в ваш список контактов"
       ]
     },
-    "Select files": {
-      "Upload": [
-        "Загрузить"
-      ]
-    },
-    "Label to change density": {
-      "Comfortable": [
-        "Удобный"
-      ],
-      "Compact": [
-        "Компактный"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "Колонка"
-      ],
-      "Row": [
-        "Ряд"
-      ]
-    },
-    "Label to change composer mode": {
-      "Normal": [
-        "Обычный"
-      ],
-      "Maximized": [
-        "Максимизированный"
-      ]
-    },
     "Loading info": {
       "Connecting to your contacts provider": [
         "Подключение к провайдеру календаря"
@@ -5800,11 +4730,11 @@
       "Other category": [
         "Другая категория"
       ],
-      "Custom folders": [
-        "Настраиваемые папки"
-      ],
       "Default folders": [
         "Папки по умолчанию"
+      ],
+      "Custom folders": [
+        "Настраиваемые папки"
       ],
       "Labels": [
         "Ярлыки"
@@ -5818,6 +4748,11 @@
     "Label, make it short please": {
       "Attach screenshot(s)": [
         "Приложить снимки экрана"
+      ]
+    },
+    "Select files": {
+      "Upload": [
+        "Загрузить"
       ]
     },
     "Onboarding Proton": {
@@ -6556,6 +5491,1095 @@
         "со звёздами"
       ]
     },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "Пароль должен включать по меньшей мере ${ length } символ",
+        "Пароль должен включать по меньшей мере ${ length } символа",
+        "Пароль должен включать по меньшей мере ${ length } символов",
+        "Пароль должен включать по меньшей мере ${ length } символа"
+      ]
+    },
+    "file size format": {
+      "bytes": [
+        "байт"
+      ],
+      "KB": [
+        "КБ"
+      ],
+      "MB": [
+        "МБ"
+      ],
+      "GB": [
+        "ГБ"
+      ]
+    },
+    "Contact field label": {
+      "Name": [
+        "Имя"
+      ],
+      "Email": [
+        "Эл. почта"
+      ],
+      "Phone": [
+        "Телефон"
+      ],
+      "Address": [
+        "Адрес"
+      ],
+      "Photo": [
+        "Фотография"
+      ],
+      "Organization": [
+        "Организация"
+      ],
+      "Birthday": [
+        "День рождения"
+      ],
+      "Anniversary": [
+        "Годовщина"
+      ],
+      "Title": [
+        "Должность"
+      ],
+      "Role": [
+        "Роль"
+      ],
+      "Note": [
+        "Заметка"
+      ],
+      "URL": [
+        "URL"
+      ],
+      "Gender": [
+        "Пол"
+      ],
+      "Language": [
+        "Язык"
+      ],
+      "Timezone": [
+        "Часовой пояс"
+      ],
+      "Geo": [
+        "Геолокация"
+      ],
+      "Logo": [
+        "Лого"
+      ],
+      "Member": [
+        "Участник"
+      ]
+    },
+    "Contact type label": {
+      "Work": [
+        "Рабочий"
+      ],
+      "Personal": [
+        "Личное"
+      ],
+      "Mobile": [
+        "Мобильный"
+      ],
+      "Main": [
+        "Основной"
+      ],
+      "Yomi": [
+        "Ёми"
+      ],
+      "Other": [
+        "Другое"
+      ],
+      "Fax": [
+        "Факс"
+      ],
+      "Pager": [
+        "Пейджер"
+      ]
+    },
+    "Property type": {
+      "Email": [
+        "Эл. почта"
+      ],
+      "Home": [
+        "Домашний"
+      ],
+      "Work": [
+        "Рабочий"
+      ],
+      "Other": [
+        "Другое"
+      ],
+      "Phone": [
+        "Телефон"
+      ],
+      "Mobile": [
+        "Мобильный"
+      ],
+      "Main": [
+        "Основной"
+      ],
+      "Fax": [
+        "Факс"
+      ],
+      "Pager": [
+        "Пейджер"
+      ],
+      "Address": [
+        "Адрес"
+      ]
+    },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "Адрес электронной почты не найден среди идентификаторов пользователя, определенных в ключе отправки (${ keyUserIds })"
+      ]
+    },
+    "Message": {
+      "Re:": [
+        "Re:"
+      ],
+      "Fw:": [
+        "Fw:"
+      ],
+      "On ${ date }, ${ name } ${ address } wrote:": [
+        "${ date }, ${ name } ${ address } написал(а):"
+      ]
+    },
+    "Default display name vcard": {
+      "Unknown": [
+        "Неизвестный"
+      ]
+    },
+    "Import contact. Contact identifier": {
+      "unknown": [
+        "неизвестно"
+      ]
+    },
+    "Error importing contact": {
+      "vCard versions < 3.0 not supported": [
+        "vCard версии ниже 3.0 не поддерживаются"
+      ],
+      "Encryption failed": [
+        "Ошибка шифрования"
+      ]
+    },
+    "Error importing calendar": {
+      "An unexpected error occurred. Import must be restarted.": [
+        "Произошла непредвиденная ошибка. Необходимо начать импорт заново."
+      ]
+    },
+    "Error importing contacts": {
+      "An error occurred uploading your file. No file has been selected.": [
+        "Произошла ошибка при загрузке вашего файла. Ничего не было выбрано."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. No .csv or .vcf file selected": [
+        "Произошла ошибка при загрузке файла ${ formattedFilename }. Не выбран файл CSV или VCF."
+      ],
+      "Your file ${ formattedFilename } is empty.": [
+        "Файл ${ formattedFilename } пуст."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
+        "Произошла ошибка при загрузке файла ${ formattedFilename }. Максимальный размер: ${ MAX_IMPORT_FILE_SIZE_STRING }."
+      ],
+      "Your file ${ formattedFilename } has no contacts to be imported.": [
+        "В вашем файле ${ formattedFilename } нет контактов для импорта."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
+        "Ваш файл ${ formattedFilename } содержит более ${ MAX_IMPORT_CONTACTS_STRING } контактов."
+      ],
+      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
+        "Произошла ошибка при чтении файла ${ formattedFilename }. Формат файла не поддерживается."
+      ]
+    },
+    "Keyboard shortcut section name": {
+      "Basic navigation": [
+        "Основная навигация"
+      ],
+      "Basic actions": [
+        "Основные действия"
+      ],
+      "Folder shortcuts": [
+        "Сочетания клавиш для папок"
+      ],
+      "Composer shortcuts": [
+        "Сочетания клавиш редактора"
+      ],
+      "List shortcuts": [
+        "Сочетания клавиш для списка писем"
+      ],
+      "Action shortcuts": [
+        "Сочетания клавиш для действий"
+      ],
+      "Message shortcuts": [
+        "Сочетания клавиш для сообщений"
+      ]
+    },
+    "Keyboard shortcut name": {
+      "Move up": [
+        "Переместить выше"
+      ],
+      "Jump to first": [
+        "Перейти к первому"
+      ],
+      "Move down": [
+        "Переместить ниже"
+      ],
+      "Jump to last": [
+        "Перейти к последнему"
+      ],
+      "Move right / expand": [
+        "Переместить вправо / развернуть"
+      ],
+      "Move left / collapse": [
+        "Переместить влево / свернуть"
+      ],
+      "Apply / open": [
+        "Применить / открыть"
+      ],
+      "Cancel / close": [
+        "Отменить / закрыть"
+      ],
+      "Open this modal": [
+        "Открыть этот диалог"
+      ],
+      "Select / unselect": [
+        "Выбрать / отменить выбор"
+      ],
+      "Go to Inbox": [
+        "Перейти во Входящие"
+      ],
+      "Go to Archive": [
+        "Перейти в Архив"
+      ],
+      "Go to Sent": [
+        "Перейти в Отправленные"
+      ],
+      "Go to Starred": [
+        "Перейти в Отмеченные звёздами"
+      ],
+      "Go to Drafts": [
+        "Перейти в Черновики"
+      ],
+      "Go to Trash": [
+        "Перейти в Корзину"
+      ],
+      "Go to Spam": [
+        "Перейти в Спам"
+      ],
+      "Go to All Mail": [
+        "Перейти во Все письма"
+      ],
+      "Save draft": [
+        "Сохранить черновик"
+      ],
+      "Send email": [
+        "Отправить электронное письмо"
+      ],
+      "Close draft": [
+        "Закрыть черновик"
+      ],
+      "Minimize / maximize composer": [
+        "Свернуть / развернуть окно редактора"
+      ],
+      "Expand / contract composer": [
+        "Расширить / сжать окно редактора"
+      ],
+      "Attach file": [
+        "Прикрепить файл"
+      ],
+      "Add expiration time": [
+        "Добавить срок действия"
+      ],
+      "Add encryption": [
+        "Добавить шифрование"
+      ],
+      "Discard draft": [
+        "Удалить черновик"
+      ],
+      "Open previous message": [
+        "Открыть предыдущее сообщение"
+      ],
+      "Open next message": [
+        "Открыть следующее сообщение"
+      ],
+      "Show unread emails": [
+        "Показать непрочитанные письма"
+      ],
+      "Show all emails": [
+        "Показать все письма"
+      ],
+      "Select / unselect all": [
+        "Выбрать всё/снять выделение"
+      ],
+      "Search": [
+        "Поиск"
+      ],
+      "New message": [
+        "Новое сообщение"
+      ],
+      "Star": [
+        "Добавить в Избранное"
+      ],
+      "Mark as unread": [
+        "Отметить как непрочитанное"
+      ],
+      "Label as...": [
+        "Обозначить, как..."
+      ],
+      "Create filter with...": [
+        "Создать фильтр с помощью..."
+      ],
+      "Move to...": [
+        "Переместить в..."
+      ],
+      "Move to Inbox": [
+        "Переместить в входящие"
+      ],
+      "Move to Archive": [
+        "Переместить в архив"
+      ],
+      "Move to Spam": [
+        "Переместить в спам"
+      ],
+      "Move to Trash": [
+        "Переместить в корзину"
+      ],
+      "Delete permanently": [
+        "Удалить навсегда"
+      ],
+      "Reply": [
+        "Ответить"
+      ],
+      "Reply all": [
+        "Ответить всем"
+      ],
+      "Forward": [
+        "Переслать"
+      ],
+      "Load remote content": [
+        "Загрузить внешнее содержимое"
+      ],
+      "Load embedded images": [
+        "Показывать встроенные изображения"
+      ],
+      "Show original message": [
+        "Показать исходное сообщение"
+      ]
+    },
+    "Calendar status": {
+      "Syncing": [
+        "Синхронизация"
+      ],
+      "Not synced": [
+        "Не синхронизировано"
+      ]
+    },
+    "Calendar subscription not synced error": {
+      "Calendar is syncing": [
+        "Календарь синхронизируется"
+      ],
+      "More than 12 hours passed since last update": [
+        "Более 12 часов прошло с момента последнего обновления"
+      ],
+      "Calendar link is wrong": [
+        "Неверная ссылка календаря"
+      ],
+      "Calendar is too big": [
+        "Календарь слишком большой"
+      ],
+      "Calendar link is not accessible": [
+        "Ссылка на календарь недоступна"
+      ],
+      "Failed to sync calendar": [
+        "Не удалось синхронизировать календарь"
+      ],
+      "Calendar link is temporarily inaccessible": [
+        "Ссылка на календарь временно недоступна"
+      ]
+    },
+    "Attached ics file error": {
+      "Invalid ICS file": [
+        "Недопустимый файл ICS"
+      ],
+      "Invalid event": [
+        "Недопустимое событие"
+      ],
+      "Unsupported event": [
+        "Событие не поддерживается"
+      ],
+      "Empty ICS file": [
+        "Пустой файл ICS"
+      ],
+      "Unsupported calendar component": [
+        "Неподдерживаемый компонент календаря"
+      ],
+      "Invalid method": [
+        "Недействительный метод"
+      ]
+    },
+    "Event invitation error": {
+      "Invalid response": [
+        "Ошибка сервера"
+      ],
+      "Invalid invitation": [
+        "Приглашение недействительно"
+      ],
+      "Unsupported response": [
+        "Неподдерживаемый ответ"
+      ],
+      "Unsupported invitation": [
+        "Неподдерживаемое приглашение"
+      ],
+      "Attached ICS file could not be parsed": [
+        "Вложенный файл ICS невозможно проанализировать"
+      ],
+      "Attached ICS file could not be decrypted": [
+        "Вложенный файл ICS невозможно расшифровать"
+      ],
+      "We could not retrieve the event from your calendar": [
+        "Мы не смогли получить событие из вашего календаря"
+      ],
+      "We could not update the event in your calendar": [
+        "Мы не смогли обновить событие в вашем календаре"
+      ],
+      "Your answer was sent, but the event could not be added to your calendar": [
+        "Ваш ответ отправлен, но событие не может быть добавлено в ваш календарь"
+      ],
+      "Your answer was sent, but the event could not be updated in your calendar": [
+        "Ваш ответ отправлен, но событие не может быть обновлено в Вашем календаре"
+      ],
+      "We could not cancel the event in your calendar": [
+        "Мы не смогли отменить событие в вашем календаре"
+      ],
+      "Unexpected error": [
+        "Непредвиденная ошибка"
+      ]
+    },
+    "Error importing event": {
+      "Component with wrong format": [
+        "Неправильный формат компонента"
+      ],
+      "Non-Gregorian": [
+        "Не Грегорианский"
+      ],
+      "To-do entry": [
+        "Запись списка задач"
+      ],
+      "Journal entry": [
+        "Запись журнала"
+      ],
+      "Free-busy time information": [
+        "Информация о свободном и занятом времени"
+      ],
+      "Custom timezone": [
+        "Настроить часовой пояс"
+      ],
+      "Invalid event": [
+        "Недействительное событие"
+      ],
+      "Unsupported event": [
+        "Неподдерживаемое событие"
+      ],
+      "Malformed all-day event": [
+        "Неправильный формант оформление события на весь день"
+      ],
+      "Missing start time": [
+        "Отсутствует время начала импорта"
+      ],
+      "Malformed start time": [
+        "Неправильный формат времени начала"
+      ],
+      "Floating times not supported": [
+        "Плавающий график не поддерживается"
+      ],
+      "Start time out of bounds": [
+        "Время начала находится вне границ"
+      ],
+      "Malformed end time": [
+        "Неправильный формат времени окончания"
+      ],
+      "End time out of bounds": [
+        "Время окончания находится вне границ"
+      ],
+      "Event duration not supported": [
+        "Длительность события не поддерживается"
+      ],
+      "Calendar timezone not supported": [
+        "Часовой пояс календаря не поддерживается"
+      ],
+      "Timezone not supported": [
+        "Часовой пояс не поддерживается"
+      ],
+      "Malformed recurring event": [
+        "Неправильное повторяющееся событие"
+      ],
+      "Recurring rule not supported": [
+        "Правило для повторения не поддерживается"
+      ],
+      "Edited event not supported": [
+        "Отредактированное событие не поддерживается"
+      ],
+      "Notification out of bounds": [
+        "Уведомление находится вне границ"
+      ],
+      "Event validation failed": [
+        "Проверка события не удалась"
+      ],
+      "Encryption failed": [
+        "Ошибка шифрования"
+      ],
+      "Original recurring event could not be found": [
+        "Исходное повторяющееся событие не найдено"
+      ],
+      "no UID, title or start time": [
+        "нет UID, названия или времени начала"
+      ]
+    },
+    "Event title": {
+      "(no title)": [
+        "(без названия)"
+      ]
+    },
+    "Participant name": {
+      "You": [
+        "Вы"
+      ]
+    },
+    "Email subject": {
+      "Invitation for an event on ${ formattedStart }": [
+        "Приглашение на мероприятие, начинающееся ${ formattedStart }"
+      ],
+      "Update for an event on ${ formattedStart }": [
+        "Обновление события, начинающегося ${ formattedStart }"
+      ],
+      "Invitation for an event starting on ${ formattedStart }": [
+        "Приглашение на событие, начинающееся ${ formattedStart }"
+      ],
+      "Update for an event starting on ${ formattedStart }": [
+        "Обновить для события, начинающегося ${ formattedStart }"
+      ],
+      "Cancellation of an event on ${ formattedStart }": [
+        "Отмена события, начинающегося ${ formattedStart }"
+      ],
+      "Cancellation of an event starting on ${ formattedStart }": [
+        "Отмена события, начинающегося ${ formattedStart }"
+      ]
+    },
+    "Email body for invitation (date part)": {
+      "When: ${ formattedStart } (all day)": [
+        "Когда: ${ formattedStart } (весь день)"
+      ],
+      "When: ${ formattedStart } - ${ formattedEnd }": [
+        "Когда: ${ formattedStart } - ${ formattedEnd }"
+      ],
+      "When: ${ formattedStart }": [
+        "Когда: ${ formattedStart }"
+      ]
+    },
+    "Email body for invitation (location part)": {
+      "Where: ${ eventLocation }": [
+        "Где: ${ eventLocation }"
+      ]
+    },
+    "Email body for description (description part)": {
+      "Description: ${ eventDescription }": [
+        "Описание: ${ eventDescription }"
+      ]
+    },
+    "Email body for invitation": {
+      "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
+        "Вы приглашены на ${ eventTitle }\n${ eventDetailsText }"
+      ],
+      "${ eventTitle } has been updated.\n${ eventDetailsText }": [
+        "Событие «${ eventTitle }» было обновлено.\n${ eventDetailsText }"
+      ],
+      "${ eventTitle } has been cancelled.": [
+        "Событие «${ eventTitle }» было отменено."
+      ]
+    },
+    "Email body for response to invitation": {
+      "${ emailAddress } has accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } принял ваше приглашение на ${ eventTitle }"
+      ],
+      "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } предварительно принял ваше приглашение на ${ eventTitle }"
+      ],
+      "${ emailAddress } has declined your invitation to ${ eventTitle }": [
+        "${ emailAddress } отклонил ваше приглашение на ${ eventTitle }"
+      ]
+    },
+    "Monthly recurring event, repeats on": {
+      "on the first Sunday": [
+        "в первое воскресенье"
+      ],
+      "on the first Monday": [
+        "в первый понедельник"
+      ],
+      "on the first Tuesday": [
+        "в первый вторник"
+      ],
+      "on the first Wednesday": [
+        "в первую среду"
+      ],
+      "on the first Thursday": [
+        "в первый четверг"
+      ],
+      "on the first Friday": [
+        "в первую пятницу"
+      ],
+      "on the first Saturday": [
+        "в первую субботу"
+      ],
+      "on the second Sunday": [
+        "во второе воскресенье"
+      ],
+      "on the second Monday": [
+        "во второй понедельник"
+      ],
+      "on the second Tuesday": [
+        "во второй вторник"
+      ],
+      "on the second Wednesday": [
+        "во вторую среду"
+      ],
+      "on the second Thursday": [
+        "во второй четверг"
+      ],
+      "on the second Friday": [
+        "во вторую пятницу"
+      ],
+      "on the second Saturday": [
+        "во вторую субботу"
+      ],
+      "on the third Sunday": [
+        "в третье воскресенье"
+      ],
+      "on the third Monday": [
+        "в третий понедельник"
+      ],
+      "on the third Tuesday": [
+        "в третий понедельник"
+      ],
+      "on the third Wednesday": [
+        "в третью среду"
+      ],
+      "on the third Thursday": [
+        "в третий четверг"
+      ],
+      "on the third Friday": [
+        "в третью пятницу"
+      ],
+      "on the third Saturday": [
+        "в третью субботу"
+      ],
+      "on the fourth Sunday": [
+        "в четвертое воскресенье"
+      ],
+      "on the fourth Monday": [
+        "в четвертый понедельник"
+      ],
+      "on the fourth Tuesday": [
+        "в четвертый вторник"
+      ],
+      "on the fourth Wednesday": [
+        "в четвертый вторник"
+      ],
+      "on the fourth Thursday": [
+        "в четвертый четверг"
+      ],
+      "on the fourth Friday": [
+        "в четвертую пятницу"
+      ],
+      "on the fourth Saturday": [
+        "в четвертую субботу"
+      ],
+      "on the last Sunday": [
+        "в последнее воскресенье"
+      ],
+      "on the last Monday": [
+        "в последний понедельник"
+      ],
+      "on the last Tuesday": [
+        "в последний вторник"
+      ],
+      "on the last Wednesday": [
+        "в последнюю среду"
+      ],
+      "on the last Thursday": [
+        "в последний четверг"
+      ],
+      "on the last Friday": [
+        "в последнюю пятницу"
+      ],
+      "on the last Saturday": [
+        "в последнюю субботу"
+      ],
+      "on day ${ dayOfMonth }": [
+        "в день ${ dayOfMonth }"
+      ]
+    },
+    "Daily recurring event, frequency": {
+      "${ count } time": [
+        "${ count } раз",
+        "${ count } раза",
+        "${ count } раз",
+        "${ count } раз"
+      ],
+      "until ${ dateString }": [
+        "до ${ dateString }"
+      ],
+      "Daily": [
+        "Ежедневно"
+      ],
+      "Every ${ interval } day": [
+        "Каждый ${ interval } день",
+        "Каждые ${ interval } дня",
+        "Каждые ${ interval } дней",
+        "Каждые ${ interval } дня"
+      ],
+      "Daily, ${ timesString }": [
+        "Ежедневно в ${ timesString }"
+      ],
+      "Every ${ interval } day, ${ timesString }": [
+        "Каждый ${ interval } день, ${ timesString }",
+        "Каждые ${ interval } дня, ${ timesString }",
+        "Каждые ${ interval } дней, ${ timesString }",
+        "Каждые ${ interval } дня, ${ timesString }"
+      ],
+      "Daily, ${ untilString }": [
+        "Ежедневно до ${ untilString }"
+      ],
+      "Every ${ interval } day, ${ untilString }": [
+        "Каждый ${ interval } день, ${ untilString }",
+        "Каждые ${ interval } дня, ${ untilString }",
+        "Каждые ${ interval } дней, ${ untilString }",
+        "Каждые ${ interval } дня, ${ untilString }"
+      ]
+    },
+    "Weekly recurring event, repeats on (multiple days), frequency": {
+      "Sunday": [
+        "Воскресенье"
+      ],
+      "Monday": [
+        "Понедельник"
+      ],
+      "Tuesday": [
+        "Вторник"
+      ],
+      "Wednesday": [
+        "Среда"
+      ],
+      "Thursday": [
+        "Четверг"
+      ],
+      "Friday": [
+        "Пятница"
+      ],
+      "Saturday": [
+        "Суббота"
+      ]
+    },
+    "Weekly recurring event, frequency": {
+      "Weekly on all days": [
+        "Еженедельно каждый день"
+      ],
+      "Every ${ interval } week on all days": [
+        "Каждую ${ interval } неделю во все дни",
+        "Каждые ${ interval } недели, каждый день",
+        "Каждые ${ interval } недель, каждый день",
+        "Каждые ${ interval } недель, каждый день"
+      ],
+      "Weekly on Sunday": [
+        "Еженедельно в воскресенье"
+      ],
+      "Every ${ interval } week on Sunday": [
+        "Каждую ${ interval } неделю в воскресенье",
+        "Каждые ${ interval } недели в воскресенье",
+        "Каждые ${ interval } недель в воскресенье",
+        "Каждые ${ interval } недель в воскресенье"
+      ],
+      "Weekly on Monday": [
+        "Еженедельно в понедельник"
+      ],
+      "Every ${ interval } week on Monday": [
+        "Каждую ${ interval } неделю в понедельник",
+        "Каждые ${ interval } недели в понедельник",
+        "Каждые ${ interval } недель в понедельник",
+        "Каждые ${ interval } недель в понедельник"
+      ],
+      "Weekly on Tuesday": [
+        "Еженедельно во вторник"
+      ],
+      "Every ${ interval } week on Tuesday": [
+        "Каждую ${ interval } неделю во вторник",
+        "Каждые ${ interval } недели во вторник",
+        "Каждые ${ interval } недель во вторник",
+        "Каждые ${ interval } недель во вторник"
+      ],
+      "Weekly on Wednesday": [
+        "Еженедельно в среду"
+      ],
+      "Every ${ interval } week on Wednesday": [
+        "Каждую ${ interval } неделю в среду",
+        "Каждые ${ interval } недели в среду",
+        "Каждые ${ interval } недель в среду",
+        "Каждые ${ interval } недель в среду"
+      ],
+      "Weekly on Thursday": [
+        "Еженедельно в четверг"
+      ],
+      "Every ${ interval } week on Thursday": [
+        "Каждую ${ interval } неделю в четверг",
+        "Каждые ${ interval } недели в четверг",
+        "Каждые ${ interval } недель в четверг",
+        "Каждые ${ interval } недель в четверг"
+      ],
+      "Weekly on Friday": [
+        "Еженедельно в пятницу"
+      ],
+      "Every ${ interval } week on Friday": [
+        "Каждую ${ interval } неделю в пятницу",
+        "Каждые ${ interval } недели в пятницу",
+        "Каждые ${ interval } недель в пятницу",
+        "Каждые ${ interval } недель в пятницу"
+      ],
+      "Weekly on Saturday": [
+        "Еженедельно в субботу"
+      ],
+      "Every ${ interval } week on Saturday": [
+        "Каждую ${ interval } неделю в субботу",
+        "Каждые ${ interval } недели в субботу",
+        "Каждые ${ interval } недель в субботу",
+        "Каждые ${ interval } недель в субботу"
+      ],
+      "Weekly on ${ multipleDaysString }": [
+        "Еженедельно по следующим дням: ${ multipleDaysString }"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }": [
+        "Каждую ${ interval } неделю в ${ multipleDaysString }",
+        "Каждую ${ interval } неделю в ${ multipleDaysString }",
+        "Каждую ${ interval } неделю в ${ multipleDaysString }",
+        "Каждую ${ interval } неделю в ${ multipleDaysString }"
+      ],
+      "Weekly on all days, ${ timesString }": [
+        "Еженедельно во все дни в ${ timesString }"
+      ],
+      "Every ${ interval } week on all days, ${ timesString }": [
+        "Каждую ${ interval } неделю по всем дням, ${ timesString }",
+        "Каждую ${ interval } неделю по всем дням, ${ timesString }",
+        "Каждую ${ interval } неделю по всем дням, ${ timesString }",
+        "Каждую ${ interval } неделю по всем дням, ${ timesString }"
+      ],
+      "Weekly on Sunday, ${ timesString }": [
+        "Еженедельно в воскресенье в ${ timesString }"
+      ],
+      "Every ${ interval } week on Sunday, ${ timesString }": [
+        "Каждую ${ interval } неделю в воскресенье, ${ timesString }",
+        "Каждые ${ interval } недели в воскресенье, ${ timesString }",
+        "Каждые ${ interval } недель в воскресенье, ${ timesString }",
+        "Каждые ${ interval } недель в воскресенье, ${ timesString }"
+      ],
+      "Weekly on Monday, ${ timesString }": [
+        "Еженедельно в понедельник в ${ timesString }"
+      ],
+      "Every ${ interval } week on Monday, ${ timesString }": [
+        "Каждую ${ interval } неделю по понедельникам, ${ timesString }",
+        "Каждые ${ interval } недели по понедельникам, ${ timesString }",
+        "Каждые ${ interval } недель по понедельникам, ${ timesString }",
+        "Каждые ${ interval } недели по понедельникам, ${ timesString }"
+      ],
+      "Weekly on Tuesday, ${ timesString }": [
+        "Еженедельно по вторникам в ${ timesString }"
+      ],
+      "Every ${ interval } week on Tuesday, ${ timesString }": [
+        "Каждую ${ interval } неделю по вторникам, ${ timesString }",
+        "Каждые ${ interval } недели по вторникам, ${ timesString }",
+        "Каждые ${ interval } недель по вторникам, ${ timesString }",
+        "Каждые ${ interval } недели по вторникам, ${ timesString }"
+      ],
+      "Weekly on Wednesday, ${ timesString }": [
+        "Еженедельно по средам в ${ timesString }"
+      ],
+      "Every ${ interval } week on Wednesday, ${ timesString }": [
+        "Каждую ${ interval } неделю по средам, ${ timesString }",
+        "Каждые ${ interval } недели по средам, ${ timesString }",
+        "Каждые ${ interval } недель по средам, ${ timesString }",
+        "Каждые ${ interval } недели по средам, ${ timesString }"
+      ],
+      "Weekly on Thursday, ${ timesString }": [
+        "Еженедельно по четвергам в ${ timesString }"
+      ],
+      "Every ${ interval } week on Thursday, ${ timesString }": [
+        "Каждую ${ interval } неделю по четвергам, ${ timesString }",
+        "Каждые ${ interval } недели по четвергам, ${ timesString }",
+        "Каждые ${ interval } недель по четвергам, ${ timesString }",
+        "Каждые ${ interval } недели по четвергам, ${ timesString }"
+      ],
+      "Weekly on Friday, ${ timesString }": [
+        "Еженедельно по пятницам в ${ timesString }"
+      ],
+      "Every ${ interval } week on Friday, ${ timesString }": [
+        "Каждую ${ interval } неделю по пятницам, ${ timesString }",
+        "Каждые ${ interval } недели по пятницам, ${ timesString }",
+        "Каждые ${ interval } недель по пятницам, ${ timesString }",
+        "Каждые ${ interval } недели по пятницам, ${ timesString }"
+      ],
+      "Weekly on Saturday, ${ timesString }": [
+        "Еженедельно по субботам в ${ timesString }"
+      ],
+      "Every ${ interval } week on Saturday, ${ timesString }": [
+        "Каждую ${ interval } неделю по субботам, ${ timesString }",
+        "Каждые ${ interval } недели по субботам, ${ timesString }",
+        "Каждые ${ interval } недель по субботам, ${ timesString }",
+        "Каждые ${ interval } недели по субботам, ${ timesString }"
+      ],
+      "Weekly on ${ multipleDaysString }, ${ timesString }": [
+        "Еженедельно по следующим дням: ${ multipleDaysString } в ${ timesString }"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
+        "Каждую ${ interval } неделю по ${ multipleDaysString }, ${ timesString }",
+        "Каждые ${ interval } недели по ${ multipleDaysString }, ${ timesString }",
+        "Каждые ${ interval } недель по ${ multipleDaysString }, ${ timesString }",
+        "Каждые ${ interval } недели по ${ multipleDaysString }, ${ timesString }"
+      ],
+      "Weekly on all days, ${ untilString }": [
+        "Еженедельно, каждый день до ${ untilString }"
+      ],
+      "Every ${ interval } week on all days, ${ untilString }": [
+        "Каждую ${ interval } неделю каждый день, ${ untilString }",
+        "Каждые ${ interval } недели каждый день, ${ untilString }",
+        "Каждые ${ interval } недель каждый день, ${ untilString }",
+        "Каждые ${ interval } недели каждый день, ${ untilString }"
+      ],
+      "Weekly on Sunday, ${ untilString }": [
+        "Еженедельно по воскресеньям до ${ untilString }"
+      ],
+      "Every ${ interval } week on Sunday, ${ untilString }": [
+        "Каждую ${ interval } неделю в воскресенье, ${ untilString }",
+        "Каждые ${ interval } недели в воскресенье, ${ untilString }",
+        "Каждые ${ interval } недель в воскресенье, ${ untilString }",
+        "Каждые ${ interval } недели в воскресенье, ${ untilString }"
+      ],
+      "Weekly on Monday, ${ untilString }": [
+        "Еженедельно в понедельник до ${ untilString }"
+      ],
+      "Every ${ interval } week on Monday, ${ untilString }": [
+        "Каждую ${ interval } неделю в понедельник, ${ untilString }",
+        "Каждые ${ interval } недели в понедельник, ${ untilString }",
+        "Каждые ${ interval } недель в понедельник, ${ untilString }",
+        "Каждые ${ interval } недели в понедельник, ${ untilString }"
+      ],
+      "Weekly on Tuesday, ${ untilString }": [
+        "Еженедельно по вторникам до ${ untilString }"
+      ],
+      "Every ${ interval } week on Tuesday, ${ untilString }": [
+        "Каждую ${ interval } неделю во вторник, ${ untilString }",
+        "Каждые ${ interval } недели во вторник, ${ untilString }",
+        "Каждые ${ interval } недель во вторник, ${ untilString }",
+        "Каждые ${ interval } недели во вторник, ${ untilString }"
+      ],
+      "Weekly on Wednesday, ${ untilString }": [
+        "Еженедельно по средам до ${ untilString }"
+      ],
+      "Every ${ interval } week on Wednesday, ${ untilString }": [
+        "Каждую ${ interval } неделю в среду, ${ untilString }",
+        "Каждые ${ interval } недели в среду, ${ untilString }",
+        "Каждые ${ interval } недель в среду, ${ untilString }",
+        "Каждые ${ interval } недели в среду, ${ untilString }"
+      ],
+      "Weekly on Thursday, ${ untilString }": [
+        "Еженедельно по четвергам до ${ untilString }"
+      ],
+      "Every ${ interval } week on Thursday, ${ untilString }": [
+        "Каждую ${ interval } неделю в четверг, ${ untilString }",
+        "Каждые ${ interval } недели в четверг, ${ untilString }",
+        "Каждые ${ interval } недель в четверг, ${ untilString }",
+        "Каждые ${ interval } недели в четверг, ${ untilString }"
+      ],
+      "Weekly on Friday, ${ untilString }": [
+        "Еженедельно по пятницам до ${ untilString }"
+      ],
+      "Every ${ interval } week on Friday, ${ untilString }": [
+        "Каждую ${ interval } неделю в пятницу, ${ untilString }",
+        "Каждые ${ interval } недели в пятницу, ${ untilString }",
+        "Каждые ${ interval } недель в пятницу, ${ untilString }",
+        "Каждые ${ interval } недели в пятницу, ${ untilString }"
+      ],
+      "Weekly on Saturday, ${ untilString }": [
+        "Еженедельно по субботам до ${ untilString }"
+      ],
+      "Every ${ interval } week on Saturday, ${ untilString }": [
+        "Каждую ${ interval } неделю в субботу, ${ untilString }",
+        "Каждые ${ interval } недели в субботу, ${ untilString }",
+        "Каждые ${ interval } недель в субботу, ${ untilString }",
+        "Каждые ${ interval } недели в субботу, ${ untilString }"
+      ],
+      "Weekly on ${ multipleDaysString }, ${ untilString }": [
+        "Еженедельно по следующим дням ${ multipleDaysString } до ${ untilString }"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
+        "Каждую ${ interval } неделю по ${ multipleDaysString }, ${ untilString }",
+        "Каждые ${ interval } недели по ${ multipleDaysString }, ${ untilString }",
+        "Каждые ${ interval } недель по ${ multipleDaysString }, ${ untilString }",
+        "Каждые ${ interval } недели по ${ multipleDaysString }, ${ untilString }"
+      ]
+    },
+    "Monthly recurring event, frequency": {
+      "Monthly ${ onDayString }": [
+        "Ежемесячно по ${ onDayString }"
+      ],
+      "Every ${ interval } month ${ onDayString }": [
+        "Каждый ${ interval } месяц (${ onDayString })",
+        "Каждые ${ interval } месяца (${ onDayString })",
+        "Каждые ${ interval } месяцев (${ onDayString })",
+        "Каждые ${ interval } месяца (${ onDayString })"
+      ],
+      "Monthly ${ onDayString }, ${ timesString }": [
+        "Ежемесячно по ${ onDayString } в ${ timesString }"
+      ],
+      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
+        "Каждый ${ interval } месяц (${ onDayString }, ${ timesString })",
+        "Каждые ${ interval } месяца (${ onDayString }, ${ timesString })",
+        "Каждые ${ interval } месяцев (${ onDayString }, ${ timesString })",
+        "Каждые ${ interval } месяца (${ onDayString }, ${ timesString })"
+      ],
+      "Monthly ${ onDayString }, ${ untilString }": [
+        "Ежемесячно ${ onDayString } числа, до ${ untilString }"
+      ],
+      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
+        "Каждый ${ interval } месяц (${ onDayString }, ${ untilString })",
+        "Каждые ${ interval } месяца (${ onDayString } ${ untilString })",
+        "Каждые ${ interval } месяцев (${ onDayString }, ${ untilString })",
+        "Каждые ${ interval } месяца (${ onDayString }, ${ untilString })"
+      ]
+    },
+    "Yearly recurring event, frequency": {
+      "Yearly": [
+        "Ежегодно"
+      ],
+      "Every ${ interval } year": [
+        "Каждый ${ interval }-й год",
+        "Каждый ${ interval }-й год",
+        "Каждый ${ interval }-й год",
+        "Каждый ${ interval }-й год"
+      ],
+      "Yearly, ${ timesString }": [
+        "Ежегодно в ${ timesString }"
+      ],
+      "Every ${ interval } year, ${ timesString }": [
+        "Каждый ${ interval } год, ${ timesString }",
+        "Каждый ${ interval } год, ${ timesString }",
+        "Каждый ${ interval } год, ${ timesString }",
+        "Каждый ${ interval } год, ${ timesString }"
+      ],
+      "Yearly, ${ untilString }": [
+        "Ежегодно до ${ untilString }"
+      ],
+      "Every ${ interval } year, ${ untilString }": [
+        "Каждый ${ interval } год ${ untilString }",
+        "Каждый ${ interval } год ${ untilString }",
+        "Каждый ${ interval } год ${ untilString }",
+        "Каждый ${ interval } год ${ untilString }"
+      ]
+    },
     "Mailbox": {
       "Inbox": [
         "Входящие"
@@ -6578,8 +6602,8 @@
       "Scheduled": [
         "Расписание"
       ],
-      "All": [
-        "Всё"
+      "All mail": [
+        "Всех письмах"
       ],
       "Starred": [
         "Со звёздами"
@@ -7015,6 +7039,12 @@
     "Spotlight": {
       "You can now schedule your messages to be sent later": [
         "Сейчас вы можете запланировать отправку ваших сообщений на более позднее время"
+      ],
+      "Tracker protection": [
+        "Защита от трекеров"
+      ],
+      "Proton blocked email trackers in this message in order to protect your privacy": [
+        "Proton заблокировал почтовые трекеры в этом сообщении для защиты вашей конфиденциальности"
       ]
     },
     "Message image": {
@@ -7022,7 +7052,7 @@
         "Изображение не было загружено, поскольку сертификат идентификации удаленного сервера является недействительным."
       ],
       "Image has not been loaded in order to protect your privacy.": [
-        "Изображение не было загружено, чтобы защитить вашу приватность."
+        "Изображение не было загружено, чтобы защитить вашу конфиденциальность."
       ]
     },
     "Alt": {
@@ -7099,12 +7129,6 @@
       "Organizer:": [
         "Организатор:"
       ],
-      "${ totalAttendees } Participant": [
-        "${ totalAttendees } Участник",
-        "${ totalAttendees } Участников",
-        "${ totalAttendees } Участников",
-        "${ totalAttendees } Участник(ов)"
-      ],
       "Repeats": [
         "Повторы"
       ],
@@ -7116,6 +7140,12 @@
       ],
       "Participants": [
         "Участники"
+      ],
+      "${ totalAttendees } participant": [
+        "${ totalAttendees } участник",
+        "${ totalAttendees } участников",
+        "${ totalAttendees } участников",
+        "${ totalAttendees } участник(ов)"
       ]
     },
     "Attachment signature verification": {

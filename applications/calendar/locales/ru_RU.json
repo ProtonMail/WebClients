@@ -29,8 +29,8 @@
       "Calendar link is not accessible": [
         "Ссылка на календарь недоступна"
       ],
-      "Calendar link is temporarily unaccessible": [
-        "Ссылка на календарь временно недоступна"
+      "Calendar link is temporarily inaccessible": [
+        ""
       ],
       "Failed to sync calendar": [
         "Не удалось синхронизировать календарь"
@@ -682,11 +682,11 @@
       "No results found": [
         "Результаты не найдены"
       ],
-      "Week": [
-        "Неделя"
-      ],
       "Loading": [
         "Загрузка"
+      ],
+      "Week": [
+        "Неделя"
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Эта ссылка может быть омографической атакой и не может быть открыта браузерами Internet Explorer и Edge. Если вы уверены, что ссылка безопасна, то, пожалуйста, воспользуйтесь другим браузером для её открытия."
@@ -847,12 +847,6 @@
       "* Customizable features": [
         "Настраиваемые функции"
       ],
-      "Access your streaming services, like ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, no matter where you are.": [
-        "Доступ к вашим услугам стриминга, таким как ${ netflix }, ${ disney }, ${ primeVideo } ${ many } независимо от того, где вы находитесь."
-      ],
-      "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
-        "Доступ к заблокированному контенту, например социальным сетям, новостям, Википедии, YouTube и многому другому независимо от того, где вы находитесь."
-      ],
       "For getting started with private and secure emailing.": [
         "Для начала работы с безопасной и надежной электронной почтой."
       ],
@@ -876,6 +870,12 @@
       ],
       "For families and small teams; includes both Mail and VPN.": [
         "Для семей и небольших команд. Версия включает как почту, так и VPN."
+      ],
+      "Access your streaming services, like ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, no matter where you are.": [
+        "Доступ к вашим услугам стриминга, таким как ${ netflix }, ${ disney }, ${ primeVideo } ${ many } независимо от того, где вы находитесь."
+      ],
+      "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
+        "Доступ к заблокированному контенту, например социальным сетям, новостям, Википедии, YouTube и многому другому независимо от того, где вы находитесь."
       ],
       "Save 20%": [
         "Скидка 20%"
@@ -1203,6 +1203,12 @@
       ],
       "Loading events": [
         "Загружаем события"
+      ],
+      "The organizer could not be notified that you changed your answer:": [
+        ""
+      ],
+      "The organizer cannot be notified that you want to change your answer:": [
+        ""
       ],
       "The organizer cannot be notified that you decline the invitation:": [
         "Организатор не может быть уведомлен, что вы отклонили приглашение:"
@@ -1584,14 +1590,14 @@
       "A group with this name already exists": [
         "Группа с таким именем уже существует"
       ],
-      "Primary address key is not decrypted": [
-        "Не расшифрован ключ основного адреса"
-      ],
       "We were unable to connect to your service provider.": [
         ""
       ],
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         ""
+      ],
+      "Primary address key is not decrypted": [
+        "Не расшифрован ключ основного адреса"
       ],
       "No valid address found": [
         "Не найдено действительных адресов"
@@ -2187,12 +2193,6 @@
       "Back": [
         "Назад"
       ],
-      "Use ${ label } theme": [
-        "Использовать тему: ${ label }"
-      ],
-      "OK": [
-        "ОК"
-      ],
       "Log in": [
         "Войти"
       ],
@@ -2219,6 +2219,12 @@
       ],
       "Edit phone number": [
         "Изменить номер телефона"
+      ],
+      "Use ${ label } theme": [
+        "Использовать тему: ${ label }"
+      ],
+      "OK": [
+        "ОК"
       ],
       "Clear": [
         "Очистить"
@@ -2564,9 +2570,6 @@
       "Give feedback": [
         "Оставить отзыв"
       ],
-      "Select a theme": [
-        "Выбор темы"
-      ],
       "Sign in again to continue": [
         "Чтобы продолжить, повторно войдите ещё раз"
       ],
@@ -2584,6 +2587,9 @@
       ],
       "Human verification": [
         "Проверка \"Я не робот\""
+      ],
+      "Select a theme": [
+        "Выбор темы"
       ],
       "Report a problem": [
         "Сообщить о проблеме"
@@ -2657,8 +2663,8 @@
       "Amount due": [
         "К оплате"
       ],
-      "Cancel subscription": [
-        "Отменить подписку"
+      "Downgrade account": [
+        "Понизить учетную запись"
       ],
       "Network error": [
         "Ошибка сети"
@@ -2964,6 +2970,11 @@
         "Изменить событие"
       ]
     },
+    "PGP key encryption warning": {
+      "Key cannot be used for encryption": [
+        "Ключ не может быть использован для шифрования"
+      ]
+    },
     "Storage": {
       "Your current storage:": [
         "Текущее хранилище:"
@@ -2973,11 +2984,6 @@
       ],
       "Release notes": [
         "Список изменений"
-      ]
-    },
-    "PGP key encryption warning": {
-      "Key cannot be used for encryption": [
-        "Ключ не может быть использован для шифрования"
       ]
     },
     "Label": {
@@ -3257,11 +3263,11 @@
       "Your calendars": [
         "Ваши календари"
       ],
-      "Participant": [
-        "Участник",
-        "Участники",
-        "Участники",
-        "Участники"
+      "participant": [
+        "",
+        "",
+        "",
+        ""
       ]
     },
     "Link": {
@@ -4802,11 +4808,6 @@
         "Примечание: сервис будет перезагружен, когда вы нажмете кнопку Применить."
       ]
     },
-    "Select files": {
-      "Upload": [
-        "Загрузить"
-      ]
-    },
     "Loading info": {
       "Connecting to your contacts provider": [
         ""
@@ -4826,6 +4827,11 @@
     "Confirm modal title": {
       "Quit import?": [
         ""
+      ]
+    },
+    "Select files": {
+      "Upload": [
+        "Загрузить"
       ]
     },
     "Message display when a new app version is available": {
@@ -5027,11 +5033,6 @@
     "Placeholder for contact with no name": {
       "(No name)": [
         "(Нет имени)"
-      ]
-    },
-    "Reply to calendar invitation": {
-      "Cannot send to organizer address: ${ apiErrorMessage }": [
-        "Не удается отправить на адрес организатора: ${ apiErrorMessage }"
       ]
     },
     "Modal title": {
