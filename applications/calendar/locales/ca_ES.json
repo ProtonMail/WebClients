@@ -29,7 +29,7 @@
       "Calendar link is not accessible": [
         "L'enllaç del calendari no és accessible"
       ],
-      "Calendar link is temporarily unaccessible": [
+      "Calendar link is temporarily inaccessible": [
         "L'enllaç del calendari no és accessible temporalment"
       ],
       "Failed to sync calendar": [
@@ -608,11 +608,11 @@
       "No results found": [
         "No s'han trobat resultats"
       ],
-      "Week": [
-        "Setmana"
-      ],
       "Loading": [
         "Carregant"
+      ],
+      "Week": [
+        "Setmana"
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Aquest enllaç podria ser un atac homògraf i no es pot obrir amb els navegadors Internet Explorer i Edge. Si esteu segurs de que aquest enllaç és legítim, feu servir un navegador diferent per obrir-lo."
@@ -769,12 +769,6 @@
       "* Customizable features": [
         "* Característiques personalitzables"
       ],
-      "Access your streaming services, like ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, no matter where you are.": [
-        "Accediu als vostres serveis de reproducció en línia com ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, sense importar on us trobeu."
-      ],
-      "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
-        "Accediu a contingut bloquejat com xarxes socials, notícies, Wikipedia, YouTube i molts d'altres, sense importar on us trobeu."
-      ],
       "For getting started with private and secure emailing.": [
         "Per començar amb correspondència electrònica privada i segura."
       ],
@@ -798,6 +792,12 @@
       ],
       "For families and small teams; includes both Mail and VPN.": [
         "Per a famílies i equips petits; inclou correu electrònic i connexions VPN."
+      ],
+      "Access your streaming services, like ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, no matter where you are.": [
+        "Accediu als vostres serveis de reproducció en línia com ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, sense importar on us trobeu."
+      ],
+      "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
+        "Accediu a contingut bloquejat com xarxes socials, notícies, Wikipedia, YouTube i molts d'altres, sense importar on us trobeu."
       ],
       "Save 20%": [
         "Estalvieu un 20%"
@@ -1113,6 +1113,12 @@
       ],
       "Loading events": [
         "Carregant esdeveniments"
+      ],
+      "The organizer could not be notified that you changed your answer:": [
+        "L'organitzador podria no ser notificat de que heu canviat la vostra resposta:"
+      ],
+      "The organizer cannot be notified that you want to change your answer:": [
+        "L'organitzador no pot ser notificat que voleu canviar la vostra resposta:"
       ],
       "The organizer cannot be notified that you decline the invitation:": [
         "L'organitzador no pot ser notificat que heu declinat la invitació:"
@@ -1490,14 +1496,14 @@
       "A group with this name already exists": [
         "Ja existeix un grup amb aquest nom"
       ],
-      "Primary address key is not decrypted": [
-        "La clau de la adreça primària no està desxifrada"
-      ],
       "We were unable to connect to your service provider.": [
         "No hem pogut connectar-nos al vostre proveïdor de serveis."
       ],
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         "Si us plau, proveu de tornar-vos a autenticar i assegureu-vos que els permisos estan correctament configurats."
+      ],
+      "Primary address key is not decrypted": [
+        "La clau de la adreça primària no està desxifrada"
       ],
       "No valid address found": [
         "No s’ha trobat una adreça vàlida"
@@ -2083,12 +2089,6 @@
       "Back": [
         "Torna"
       ],
-      "Use ${ label } theme": [
-        "Utilitzar el tema ${ label }"
-      ],
-      "OK": [
-        "D'acord"
-      ],
       "Log in": [
         "Inicia la sessió"
       ],
@@ -2115,6 +2115,12 @@
       ],
       "Edit phone number": [
         "Editar el número de telèfon"
+      ],
+      "Use ${ label } theme": [
+        "Utilitzar el tema ${ label }"
+      ],
+      "OK": [
+        "D'acord"
       ],
       "Clear": [
         "Netejar"
@@ -2456,9 +2462,6 @@
       "Give feedback": [
         "Doneu la vostra opinió"
       ],
-      "Select a theme": [
-        "Seleccionar un tema"
-      ],
       "Sign in again to continue": [
         "Torneu a iniciar per continuar"
       ],
@@ -2476,6 +2479,9 @@
       ],
       "Human verification": [
         "Verificació humana"
+      ],
+      "Select a theme": [
+        "Seleccionar un tema"
       ],
       "Report a problem": [
         "Avisar d'un problema"
@@ -2549,8 +2555,8 @@
       "Amount due": [
         "Import a deure"
       ],
-      "Cancel subscription": [
-        "Cancel·lar la subscripció"
+      "Downgrade account": [
+        "Degradar compte"
       ],
       "Network error": [
         "Error de xarxa"
@@ -2848,6 +2854,11 @@
         "Edita l'esdeveniment"
       ]
     },
+    "PGP key encryption warning": {
+      "Key cannot be used for encryption": [
+        "La clau no es pot utilitzar per al xifratge"
+      ]
+    },
     "Storage": {
       "Your current storage:": [
         "El vostre emmagatzematge actual:"
@@ -2857,11 +2868,6 @@
       ],
       "Release notes": [
         "Notes de la versió"
-      ]
-    },
-    "PGP key encryption warning": {
-      "Key cannot be used for encryption": [
-        "La clau no es pot utilitzar per al xifratge"
       ]
     },
     "Label": {
@@ -3141,9 +3147,9 @@
       "Your calendars": [
         "El vostre calendari"
       ],
-      "Participant": [
-        "Participant",
-        "Participants"
+      "participant": [
+        "participant",
+        "participants"
       ]
     },
     "Link": {
@@ -4626,11 +4632,6 @@
         "Atenció: el servei es tornarà a carregar quan cliqueu al botó Aplicar."
       ]
     },
-    "Select files": {
-      "Upload": [
-        "Carregar"
-      ]
-    },
     "Loading info": {
       "Connecting to your contacts provider": [
         "Connectant al vostre proveïdor de contactes"
@@ -4650,6 +4651,11 @@
     "Confirm modal title": {
       "Quit import?": [
         "Sortir de la importació?"
+      ]
+    },
+    "Select files": {
+      "Upload": [
+        "Carregar"
       ]
     },
     "Message display when a new app version is available": {
@@ -4811,11 +4817,6 @@
     "Placeholder for contact with no name": {
       "(No name)": [
         "(Sense nom)"
-      ]
-    },
-    "Reply to calendar invitation": {
-      "Cannot send to organizer address: ${ apiErrorMessage }": [
-        "No es pot enviar a l'adreça de l'organitzador: ${ apiErrorMessage }"
       ]
     },
     "Modal title": {

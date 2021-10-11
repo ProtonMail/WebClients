@@ -29,7 +29,7 @@
       "Calendar link is not accessible": [
         "El enlace del calendario no es accesible"
       ],
-      "Calendar link is temporarily unaccessible": [
+      "Calendar link is temporarily inaccessible": [
         "El enlace del calendario está inaccesible temporalmente"
       ],
       "Failed to sync calendar": [
@@ -608,11 +608,11 @@
       "No results found": [
         "No se encontraron resultados"
       ],
-      "Week": [
-        "Semana"
-      ],
       "Loading": [
         "Cargando"
+      ],
+      "Week": [
+        "Semana"
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Este enlace puede ser un ataque homógrafo y no puede abrirse por los navegadores Internet Explorer y Edge. Si cree que el enlace es legítimo, deberá abrirlo en un navegador diferente."
@@ -769,12 +769,6 @@
       "* Customizable features": [
         "* Funciones personalizables"
       ],
-      "Access your streaming services, like ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, no matter where you are.": [
-        "Acceda a sus servicios de streaming, como ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, no importa donde esté."
-      ],
-      "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
-        "Acceda a contenidos bloqueados, como medios sociales, noticias, Wikipedia, YouTube, y muchos otros, sin importar donde esté."
-      ],
       "For getting started with private and secure emailing.": [
         "Para comenzar con el correo electrónico privado y seguro."
       ],
@@ -798,6 +792,12 @@
       ],
       "For families and small teams; includes both Mail and VPN.": [
         "Para familias y equipos pequeños; incluye correo y VPN."
+      ],
+      "Access your streaming services, like ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, no matter where you are.": [
+        "Acceda a sus servicios de streaming, como ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, no importa donde esté."
+      ],
+      "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
+        "Acceda a contenidos bloqueados, como medios sociales, noticias, Wikipedia, YouTube, y muchos otros, sin importar donde esté."
       ],
       "Save 20%": [
         "Ahorre un 20%"
@@ -1113,6 +1113,12 @@
       ],
       "Loading events": [
         "Cargando eventos"
+      ],
+      "The organizer could not be notified that you changed your answer:": [
+        "El organizador no puede ser notificado de que usted cambió su respuesta:"
+      ],
+      "The organizer cannot be notified that you want to change your answer:": [
+        "El organizador no puede ser notificado de que usted desea cambiar su respuesta:"
       ],
       "The organizer cannot be notified that you decline the invitation:": [
         "El organizador no puede ser notificado de que usted rechaza la invitación:"
@@ -1490,14 +1496,14 @@
       "A group with this name already exists": [
         "Ya existe un grupo con este nombre"
       ],
-      "Primary address key is not decrypted": [
-        "La clave principal no está descifrada"
-      ],
       "We were unable to connect to your service provider.": [
         "No pudimos conectarnos con su proveedor de servicios."
       ],
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         "Intente volver a autenticarse y asegúrese de que los permisos están configurados correctamente."
+      ],
+      "Primary address key is not decrypted": [
+        "La clave principal no está descifrada"
       ],
       "No valid address found": [
         "Ninguna dirección válida encontrada"
@@ -2083,12 +2089,6 @@
       "Back": [
         "Atrás"
       ],
-      "Use ${ label } theme": [
-        "Usar tema ${ label }"
-      ],
-      "OK": [
-        "OK"
-      ],
       "Log in": [
         "Iniciar sesión"
       ],
@@ -2115,6 +2115,12 @@
       ],
       "Edit phone number": [
         "Editar número de teléfono"
+      ],
+      "Use ${ label } theme": [
+        "Usar tema ${ label }"
+      ],
+      "OK": [
+        "OK"
       ],
       "Clear": [
         "Borrar"
@@ -2456,9 +2462,6 @@
       "Give feedback": [
         "Enviar comentarios"
       ],
-      "Select a theme": [
-        "Seleccionar un tema"
-      ],
       "Sign in again to continue": [
         "Inicie sesión otra vez para continuar"
       ],
@@ -2476,6 +2479,9 @@
       ],
       "Human verification": [
         "Verificación humana"
+      ],
+      "Select a theme": [
+        "Seleccionar un tema"
       ],
       "Report a problem": [
         "Reportar un problema"
@@ -2549,8 +2555,8 @@
       "Amount due": [
         "Monto adeudado"
       ],
-      "Cancel subscription": [
-        "Cancelar suscripción"
+      "Downgrade account": [
+        "Degradar cuenta"
       ],
       "Network error": [
         "Error de red"
@@ -2848,6 +2854,11 @@
         "Editar evento"
       ]
     },
+    "PGP key encryption warning": {
+      "Key cannot be used for encryption": [
+        "La clave no puede usarse para el cifrado"
+      ]
+    },
     "Storage": {
       "Your current storage:": [
         "Su almacenamiento actual:"
@@ -2857,11 +2868,6 @@
       ],
       "Release notes": [
         "Notas de la versión"
-      ]
-    },
-    "PGP key encryption warning": {
-      "Key cannot be used for encryption": [
-        "La clave no puede usarse para el cifrado"
       ]
     },
     "Label": {
@@ -3141,9 +3147,9 @@
       "Your calendars": [
         "Sus calendarios"
       ],
-      "Participant": [
-        "Participante",
-        "Participantes"
+      "participant": [
+        "participante",
+        "participantes"
       ]
     },
     "Link": {
@@ -4626,11 +4632,6 @@
         "Nota: el servicio se recargará después de hacer clic en el botón Aplicar."
       ]
     },
-    "Select files": {
-      "Upload": [
-        "Cargar"
-      ]
-    },
     "Loading info": {
       "Connecting to your contacts provider": [
         "Conectando con su proveedor de contactos"
@@ -4650,6 +4651,11 @@
     "Confirm modal title": {
       "Quit import?": [
         "¿Salir de la importación?"
+      ]
+    },
+    "Select files": {
+      "Upload": [
+        "Cargar"
       ]
     },
     "Message display when a new app version is available": {
@@ -4811,11 +4817,6 @@
     "Placeholder for contact with no name": {
       "(No name)": [
         "(Sin nombre)"
-      ]
-    },
-    "Reply to calendar invitation": {
-      "Cannot send to organizer address: ${ apiErrorMessage }": [
-        "No se puede enviar a la dirección del organizador: ${ apiErrorMessage }"
       ]
     },
     "Modal title": {

@@ -29,8 +29,8 @@
       "Calendar link is not accessible": [
         "Legătura calendarului nu este accesibilă."
       ],
-      "Calendar link is temporarily unaccessible": [
-        "Legătura calendarului nu este disponibilă momentan."
+      "Calendar link is temporarily inaccessible": [
+        ""
       ],
       "Failed to sync calendar": [
         "Eșuare sincronizare calendar."
@@ -645,11 +645,11 @@
       "No results found": [
         "Nu s-au găsit rezultate"
       ],
-      "Week": [
-        "Săptămâna"
-      ],
       "Loading": [
         "Se încarcă"
+      ],
+      "Week": [
+        "Săptămâna"
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Această legătură ar putea fi un atac omoglific (caractere asemănătoare dar cu cod diferit de caracter) și nu poate fi deschisă de către navigatoarele Internet Explorer și Edge. Dacă aveţi siguranţa că legătura este legitimă, folosiți un alt navigator pentru a o deschide."
@@ -808,12 +808,6 @@
       "* Customizable features": [
         "* Funcții personalizabile"
       ],
-      "Access your streaming services, like ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, no matter where you are.": [
-        "Accesați serviciile de trasmisie în flux, cum ar fi ${ netflix }, ${ disney }, ${ primeVideo }, ${ many } oriunde v-ați afla."
-      ],
-      "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
-        "Accesați conținutul blocat, cum ar fi platformele de comunicare socială, știri, Wikipedia, YouTube și multe altele, indiferent unde vă aflați."
-      ],
       "For getting started with private and secure emailing.": [
         "Pentru a folosi mesaje private și securizate."
       ],
@@ -837,6 +831,12 @@
       ],
       "For families and small teams; includes both Mail and VPN.": [
         "Pentru familii şi echipe mici; include atât e-mail cât şi VPN."
+      ],
+      "Access your streaming services, like ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, no matter where you are.": [
+        "Accesați serviciile de trasmisie în flux, cum ar fi ${ netflix }, ${ disney }, ${ primeVideo }, ${ many } oriunde v-ați afla."
+      ],
+      "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
+        "Accesați conținutul blocat, cum ar fi platformele de comunicare socială, știri, Wikipedia, YouTube și multe altele, indiferent unde vă aflați."
       ],
       "Save 20%": [
         "Economisiți 20%"
@@ -1158,6 +1158,12 @@
       ],
       "Loading events": [
         "Se încarcă evenimentele"
+      ],
+      "The organizer could not be notified that you changed your answer:": [
+        ""
+      ],
+      "The organizer cannot be notified that you want to change your answer:": [
+        ""
       ],
       "The organizer cannot be notified that you decline the invitation:": [
         "Organizatorul nu poate fi notificat că refuzați invitația:"
@@ -1537,14 +1543,14 @@
       "A group with this name already exists": [
         "Un grup cu acest nume există deja."
       ],
-      "Primary address key is not decrypted": [
-        "Cheia primară a adresei nu este decriptată."
-      ],
       "We were unable to connect to your service provider.": [
         ""
       ],
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         ""
+      ],
+      "Primary address key is not decrypted": [
+        "Cheia primară a adresei nu este decriptată."
       ],
       "No valid address found": [
         "Nu s-a găsit o adresă de e-mail validă"
@@ -2135,12 +2141,6 @@
       "Back": [
         "Înapoi"
       ],
-      "Use ${ label } theme": [
-        "Folosire tema ${ label }"
-      ],
-      "OK": [
-        "OK"
-      ],
       "Log in": [
         "Conectare"
       ],
@@ -2167,6 +2167,12 @@
       ],
       "Edit phone number": [
         "Editare număr de telefon"
+      ],
+      "Use ${ label } theme": [
+        "Folosire tema ${ label }"
+      ],
+      "OK": [
+        "OK"
       ],
       "Clear": [
         "Eliminare"
@@ -2510,9 +2516,6 @@
       "Give feedback": [
         "Oferiți feedback"
       ],
-      "Select a theme": [
-        "Selectaţi o temă"
-      ],
       "Sign in again to continue": [
         "Reconectați-vă pentru a continua"
       ],
@@ -2530,6 +2533,9 @@
       ],
       "Human verification": [
         "Verificare persoană"
+      ],
+      "Select a theme": [
+        "Selectaţi o temă"
       ],
       "Report a problem": [
         "Raportare problemă"
@@ -2603,8 +2609,8 @@
       "Amount due": [
         "Suma datorată"
       ],
-      "Cancel subscription": [
-        "Anulare abonament"
+      "Downgrade account": [
+        "Retrogradare cont"
       ],
       "Network error": [
         "Eroare de rețea"
@@ -2906,6 +2912,11 @@
         "Editare eveniment"
       ]
     },
+    "PGP key encryption warning": {
+      "Key cannot be used for encryption": [
+        "Cheia nu poate fi folosită pentru criptare."
+      ]
+    },
     "Storage": {
       "Your current storage:": [
         "Spațiu actual:"
@@ -2915,11 +2926,6 @@
       ],
       "Release notes": [
         "Note de lansare"
-      ]
-    },
-    "PGP key encryption warning": {
-      "Key cannot be used for encryption": [
-        "Cheia nu poate fi folosită pentru criptare."
       ]
     },
     "Label": {
@@ -3199,10 +3205,10 @@
       "Your calendars": [
         "Calendare"
       ],
-      "Participant": [
-        "Participant",
-        "Participanți",
-        "Participanți"
+      "participant": [
+        "",
+        "",
+        ""
       ]
     },
     "Link": {
@@ -4714,11 +4720,6 @@
         "Notă: serviciul se va reîncărca după ce faceți clic pe butonul «Aplicare»."
       ]
     },
-    "Select files": {
-      "Upload": [
-        "Încărcare"
-      ]
-    },
     "Loading info": {
       "Connecting to your contacts provider": [
         ""
@@ -4738,6 +4739,11 @@
     "Confirm modal title": {
       "Quit import?": [
         ""
+      ]
+    },
+    "Select files": {
+      "Upload": [
+        "Încărcare"
       ]
     },
     "Message display when a new app version is available": {
@@ -4919,11 +4925,6 @@
     "Placeholder for contact with no name": {
       "(No name)": [
         "(Fără nume)"
-      ]
-    },
-    "Reply to calendar invitation": {
-      "Cannot send to organizer address: ${ apiErrorMessage }": [
-        "Nu se poate trimite la adresa organizatorului: ${ apiErrorMessage }"
       ]
     },
     "Modal title": {

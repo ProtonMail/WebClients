@@ -29,7 +29,7 @@
       "Calendar link is not accessible": [
         ""
       ],
-      "Calendar link is temporarily unaccessible": [
+      "Calendar link is temporarily inaccessible": [
         ""
       ],
       "Failed to sync calendar": [
@@ -571,11 +571,11 @@
       "No results found": [
         "結果が見つかりませんでした"
       ],
-      "Week": [
-        "週"
-      ],
       "Loading": [
         "読み込み中"
+      ],
+      "Week": [
+        "週"
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "このリンクはホモグラフ攻撃の可能性があり、Internet ExplorerおよびEdgeブラウザーで開くことはできません。リンクが正当であることが確実な場合は、別のブラウザーを使用して開いてください。"
@@ -730,12 +730,6 @@
       "* Customizable features": [
         "* カスタマイズ可能な項目"
       ],
-      "Access your streaming services, like ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, no matter where you are.": [
-        "場所を問わず、${ netflix }, ${ disney }, ${ primeVideo }, ${ many } などのストリーミングサービスにアクセスできます。"
-      ],
-      "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
-        "場所を問わず、ソーシャルメディア、ニュース、Wikipedia、YouTubeなどのブロックされたコンテンツにアクセスできます。"
-      ],
       "For getting started with private and secure emailing.": [
         "プライベートで安全なEメールを始めるために。"
       ],
@@ -759,6 +753,12 @@
       ],
       "For families and small teams; includes both Mail and VPN.": [
         "家族や小規模なチームには、メールとVPNの両方が含まれています。"
+      ],
+      "Access your streaming services, like ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, no matter where you are.": [
+        "場所を問わず、${ netflix }, ${ disney }, ${ primeVideo }, ${ many } などのストリーミングサービスにアクセスできます。"
+      ],
+      "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
+        "場所を問わず、ソーシャルメディア、ニュース、Wikipedia、YouTubeなどのブロックされたコンテンツにアクセスできます。"
       ],
       "Save 20%": [
         "20% 割引"
@@ -1068,6 +1068,12 @@
       ],
       "Loading events": [
         "予定を読み込み中"
+      ],
+      "The organizer could not be notified that you changed your answer:": [
+        ""
+      ],
+      "The organizer cannot be notified that you want to change your answer:": [
+        ""
       ],
       "The organizer cannot be notified that you decline the invitation:": [
         ""
@@ -1443,14 +1449,14 @@
       "A group with this name already exists": [
         "この名前のグループは既に存在します"
       ],
-      "Primary address key is not decrypted": [
-        "プライマリーアドレス鍵が復号されていません"
-      ],
       "We were unable to connect to your service provider.": [
         ""
       ],
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         ""
+      ],
+      "Primary address key is not decrypted": [
+        "プライマリーアドレス鍵が復号されていません"
       ],
       "No valid address found": [
         "有効なアドレスが見つかりません。"
@@ -2031,12 +2037,6 @@
       "Back": [
         "戻る"
       ],
-      "Use ${ label } theme": [
-        "${ label } テーマを使用"
-      ],
-      "OK": [
-        "OK"
-      ],
       "Log in": [
         "ログイン"
       ],
@@ -2063,6 +2063,12 @@
       ],
       "Edit phone number": [
         "電話番号を編集"
+      ],
+      "Use ${ label } theme": [
+        "${ label } テーマを使用"
+      ],
+      "OK": [
+        "OK"
       ],
       "Clear": [
         "クリア"
@@ -2402,9 +2408,6 @@
       "Give feedback": [
         "ご意見"
       ],
-      "Select a theme": [
-        "テーマを選択"
-      ],
       "Sign in again to continue": [
         "続行するには再度ログインしてください"
       ],
@@ -2422,6 +2425,9 @@
       ],
       "Human verification": [
         "人間であることの検証"
+      ],
+      "Select a theme": [
+        "テーマを選択"
       ],
       "Report a problem": [
         "問題を報告"
@@ -2495,8 +2501,8 @@
       "Amount due": [
         "支払い総額"
       ],
-      "Cancel subscription": [
-        "サブスクリプションをキャンセル"
+      "Downgrade account": [
+        ""
       ],
       "Network error": [
         "ネットワークエラー"
@@ -2790,6 +2796,11 @@
         "イベントを編集"
       ]
     },
+    "PGP key encryption warning": {
+      "Key cannot be used for encryption": [
+        ""
+      ]
+    },
     "Storage": {
       "Your current storage:": [
         "現在のストレージ:"
@@ -2799,11 +2810,6 @@
       ],
       "Release notes": [
         "更新情報"
-      ]
-    },
-    "PGP key encryption warning": {
-      "Key cannot be used for encryption": [
-        ""
       ]
     },
     "Label": {
@@ -3083,7 +3089,7 @@
       "Your calendars": [
         "あなたのカレンダー"
       ],
-      "Participant": [
+      "participant": [
         ""
       ]
     },
@@ -4538,11 +4544,6 @@
         "注意: 「適用」をクリックするとサービスが再読み込みされます。"
       ]
     },
-    "Select files": {
-      "Upload": [
-        "アップロード"
-      ]
-    },
     "Loading info": {
       "Connecting to your contacts provider": [
         ""
@@ -4562,6 +4563,11 @@
     "Confirm modal title": {
       "Quit import?": [
         ""
+      ]
+    },
+    "Select files": {
+      "Upload": [
+        "アップロード"
       ]
     },
     "Message display when a new app version is available": {
@@ -4703,11 +4709,6 @@
     "Placeholder for contact with no name": {
       "(No name)": [
         "(名前なし)"
-      ]
-    },
-    "Reply to calendar invitation": {
-      "Cannot send to organizer address: ${ apiErrorMessage }": [
-        ""
       ]
     },
     "Modal title": {
