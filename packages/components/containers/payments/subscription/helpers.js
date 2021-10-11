@@ -2,6 +2,7 @@ import { PLAN_SERVICES, PLAN_TYPES, ADDON_NAMES } from '@proton/shared/lib/const
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { getLastCancelledSubscription } from '@proton/shared/lib/api/payments';
 import { getUnixTime } from 'date-fns';
+import { hasVpnBasic } from '@proton/shared/lib/helpers/subscription';
 
 const { PLAN, ADDON } = PLAN_TYPES;
 const { MAIL, VPN } = PLAN_SERVICES;
@@ -92,13 +93,19 @@ export const formatPlans = (plans = []) => {
 /**
  * Check if the current user is eligible to Black Friday discount
  */
-export const checkLastCancelledSubscription = async (api) => {
+export const getBlackFridayEligibility = async (api, subscription) => {
     // Return the latest subscription cancellation time, return null if the user never had any subscription, 0 if the user currently has an active subscription
     const { LastSubscriptionEnd = 0 } = await api(getLastCancelledSubscription());
 
-    if (LastSubscriptionEnd === null) {
+    // Anyone who had a paid plan at any point in time after Oct 2021 is not eligible
+    if (LastSubscriptionEnd && LastSubscriptionEnd > OCTOBER_01) {
+        return false;
+    }
+
+    // Eligible if you are on a vpn basic or free plan
+    if (hasVpnBasic(subscription) || !subscription?.Plans?.length) {
         return true;
     }
 
-    return LastSubscriptionEnd ? LastSubscriptionEnd < OCTOBER_01 : false;
+    return false;
 };

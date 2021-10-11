@@ -4,7 +4,7 @@ import { PlanIDs, Cycle, Currency } from '@proton/shared/lib/interfaces';
 import { APPS, BLACK_FRIDAY } from '@proton/shared/lib/constants';
 import { useLocation } from 'react-router';
 
-import { checkLastCancelledSubscription } from '../payments/subscription/helpers';
+import { getBlackFridayEligibility } from '../payments/subscription/helpers';
 import {
     useLoading,
     useModals,
@@ -64,12 +64,13 @@ const useBlackFriday = () => {
     };
 
     useEffect(() => {
-        if (isFree && isBlackFridayPeriod) {
-            withLoading(checkLastCancelledSubscription(api).then(setEligibility));
-        } else {
-            setEligibility(false);
+        // Free users have a dummy subscription, this is just checking that it's loaded
+        if (subscription && isBlackFridayPeriod) {
+            withLoading(getBlackFridayEligibility(api, subscription).then(setEligibility)).catch(() =>
+                setEligibility(false)
+            );
         }
-    }, [isBlackFridayPeriod, isFree]);
+    }, [isBlackFridayPeriod, subscription]);
 
     useEffect(() => {
         if (isDelinquent || !feature) {
