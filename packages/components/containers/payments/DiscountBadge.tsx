@@ -3,7 +3,7 @@ import { COUPON_CODES, BLACK_FRIDAY } from '@proton/shared/lib/constants';
 
 import { Badge } from '../../components';
 
-const { BUNDLE, PROTONTEAM, BLACK_FRIDAY_2018, BLACK_FRIDAY_2019 } = COUPON_CODES;
+const { BUNDLE, PROTONTEAM, BLACK_FRIDAY_2018, BLACK_FRIDAY_2019, BLACK_FRIDAY_2020 } = COUPON_CODES;
 
 interface Props {
     code: string;
@@ -34,9 +34,17 @@ const DiscountBadge = ({ code }: Props) => {
         );
     }
 
-    if (code === BLACK_FRIDAY.COUPON_CODE) {
+    if (code === BLACK_FRIDAY_2020) {
         return (
             <Badge type="success" tooltip={c('Info').t`Black Friday 2020 newcomer discount has been applied`}>
+                Black Friday
+            </Badge>
+        );
+    }
+
+    if (code === BLACK_FRIDAY.COUPON_CODE) {
+        return (
+            <Badge type="success" tooltip={c('Info').t`Black Friday 2021 newcomer discount has been applied`}>
                 Black Friday
             </Badge>
         );
