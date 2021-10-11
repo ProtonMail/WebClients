@@ -107,7 +107,7 @@ const PrivateHeader = ({
                             />
                         </TopNavbarListItem>
                     )}
-                    {hasPaidVpn || !isVPN ? null : (
+                    {hasPaidVpn || !isVPN || (isVPN && showBlackFridayButton) ? null : (
                         <TopNavbarListItem noShrink collapsedOnDesktop={false}>
                             <TopNavbarListItemButton
                                 as={AppLink}
