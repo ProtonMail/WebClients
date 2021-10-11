@@ -1,6 +1,5 @@
 import { useState, useMemo, useEffect, useCallback, useRef, memo } from 'react';
 import { History, Location } from 'history';
-import { useSelector } from 'react-redux';
 import { PrivateMainArea, useCalendars, useCalendarUserSettings, useItemsSelection } from '@proton/components';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { isDraft } from '@proton/shared/lib/mail/messages';
@@ -38,7 +37,6 @@ import { useMailboxHotkeys } from '../../hooks/mailbox/useMailboxHotkeys';
 import { useMailboxFocus } from '../../hooks/mailbox/useMailboxFocus';
 import { useOnCompose, useOnMailTo } from '../ComposeProvider';
 import { useEncryptedSearchContext } from '../EncryptedSearchProvider';
-import { selectElements } from '../../logic/elements/elementsSelectors';
 
 import './MailboxContainer.scss';
 import { useResizeMessageView } from '../../hooks/useResizeMessageView';
@@ -130,13 +128,7 @@ const MailboxContainer = ({
     const onMessageLoad = () => setIsMessageOpening(true);
     const onMessageReady = useCallback(() => setIsMessageOpening(false), [setIsMessageOpening]);
 
-    const {
-        labelID,
-        // elements,
-        loading,
-        placeholderCount,
-        total,
-    } = useElements({
+    const { labelID, elements, loading, placeholderCount, total } = useElements({
         conversationMode: isConversationMode(inputLabelID, mailSettings, location),
         labelID: inputLabelID,
         page: pageFromUrl(location),
@@ -145,7 +137,6 @@ const MailboxContainer = ({
         search: searchParameters,
         onPage: handlePage,
     });
-    const elements = useSelector(selectElements);
 
     const handleBack = useCallback(() => history.push(setParamsInLocation(history.location, { labelID })), [labelID]);
 

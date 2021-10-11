@@ -1,13 +1,15 @@
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { createSlice } from '@reduxjs/toolkit';
 import { ElementsState, ElementsStateParams, NewStateParams } from './elementsTypes';
+import { reset, load, removeExpired, eventUpdates } from './elementsActions';
 import {
-    resetState as resetStateReducer,
-    load,
-    loadStarted,
-    loadSuccess,
+    reset as resetReducer,
+    loadPending,
+    loadFulfilled,
     removeExpired as removeExpiredReducer,
-} from './elementsActions';
+    eventUpdatesPending,
+    eventUpdatesFulfilled,
+} from './elementsReducers';
 
 export const newState = ({
     page = 0,
@@ -39,21 +41,16 @@ export const newState = ({
 const elementsSlice = createSlice({
     name: 'elements',
     initialState: newState(),
-    reducers: {
-        resetState: resetStateReducer,
-        removeExpired: removeExpiredReducer,
-    },
+    reducers: {},
     extraReducers: (builder) => {
-        builder.addCase(load.pending, loadStarted);
-        builder.addCase(load.fulfilled, loadSuccess);
+        builder.addCase(reset, resetReducer);
+        builder.addCase(load.pending, loadPending);
+        builder.addCase(load.fulfilled, loadFulfilled);
+        builder.addCase(removeExpired, removeExpiredReducer);
+        builder.addCase(eventUpdates.pending, eventUpdatesPending);
+        builder.addCase(eventUpdates.fulfilled, eventUpdatesFulfilled);
     },
 });
 
-// Extract the action creators object and the reducer
-const { actions, reducer } = elementsSlice;
-
-// Extract and export each action creator by name
-export const { resetState, removeExpired } = actions;
-
 // Export the reducer, either as a default or named export
-export default reducer;
+export default elementsSlice.reducer;

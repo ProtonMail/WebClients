@@ -1,5 +1,6 @@
 import { Api } from '@proton/shared/lib/interfaces';
 import { Element } from '../../models/element';
+import { LabelIDsChanges } from '../../models/event';
 
 export interface Filter {
     [key: string]: number;
@@ -99,6 +100,11 @@ export interface QueryParams {
     params: ElementsStateParams;
 }
 
+export interface QueryResults {
+    Total: number;
+    Elements: Element[];
+}
+
 export interface NewStateParams {
     page?: number;
     params?: Partial<ElementsStateParams>;
@@ -106,12 +112,11 @@ export interface NewStateParams {
     beforeFirstLoad?: boolean;
 }
 
-export type ResetAction = {
-    type: string;
-    payload: NewStateParams;
-};
-
-export type RemoveExpiredAction = {
-    type: string;
-    payload: Element;
-};
+export interface EventUpdates {
+    api: Api;
+    conversationMode: boolean;
+    toCreate: (Element & LabelIDsChanges)[];
+    toUpdate: (Element & LabelIDsChanges)[];
+    toLoad: string[];
+    toDelete: string[];
+}
