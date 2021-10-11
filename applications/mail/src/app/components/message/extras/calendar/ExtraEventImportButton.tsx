@@ -1,10 +1,11 @@
+import useCalendarEmailNotificationsFeature from '@proton/components/hooks/useCalendarEmailNotificationsFeature';
 import { getEventWithCalendarAlarms } from '@proton/shared/lib/calendar/integration/invite';
 import { omit } from '@proton/shared/lib/helpers/object';
 import { RequireSome } from '@proton/shared/lib/interfaces';
 import { ImportedEvent } from '@proton/shared/lib/interfaces/calendar';
 import { useCallback, Dispatch, SetStateAction } from 'react';
 import { c } from 'ttag';
-import { useNotifications, AddToCalendarButton, FeatureCode, useFeature } from '@proton/components';
+import { useNotifications, AddToCalendarButton } from '@proton/components';
 import { getDisableButtons, InvitationModel, UPDATE_ACTION } from '../../../../helpers/calendar/invite';
 
 interface Props {
@@ -14,7 +15,7 @@ interface Props {
 
 const ExtraEventImportButton = ({ model, setModel }: Props) => {
     const { createNotification } = useNotifications();
-    const enabledEmailNotifications = !!useFeature(FeatureCode.CalendarEmailNotification)?.feature?.Value;
+    const enabledEmailNotifications = useCalendarEmailNotificationsFeature();
 
     const {
         calendarData,
