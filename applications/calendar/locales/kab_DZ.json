@@ -29,8 +29,8 @@
       "Calendar link is not accessible": [
         "Ulac anekcum ɣer useɣwen n uwitay"
       ],
-      "Calendar link is temporarily unaccessible": [
-        "Ulac anekcum ɣer useɣwen n uwitay tura yakan"
+      "Calendar link is temporarily inaccessible": [
+        ""
       ],
       "Failed to sync calendar": [
         "Tuccḍa deg umtawi n uwitay"
@@ -608,11 +608,11 @@
       "No results found": [
         "Ulac igmaḍ"
       ],
-      "Week": [
-        "Dduṛt"
-      ],
       "Loading": [
         "Azdam"
+      ],
+      "Week": [
+        "Dduṛt"
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Aseɣwen-a yezmer ad yili d aẓdam homograph, ulamek yeldi s yimingen Internet Explorer d Edge. Ma yella tetḥeqqeḍ belli aseɣwen-a iṣeḥḥa, ttxil-k·m seqdec iminig-nniḍen i twaledyawt-is."
@@ -769,12 +769,6 @@
       "* Customizable features": [
         "* Timahilin yettwasaganen"
       ],
-      "Access your streaming services, like ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, no matter where you are.": [
-        "Kcem ɣer yimeẓla n usuddem-inek·inem, am ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, anida yebɣu tiliḍ."
-      ],
-      "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
-        "Kcem ɣer ugbur yettusweḥlen, am yimidyaten imettiyen, isallen, Wikipedia, Youtube akked waṭas-nniḍen, anida yebɣu tiliḍ."
-      ],
       "For getting started with private and secure emailing.": [
         "Akken ad tebduḍ s tirawt d tamaẓlayt yerna taɣelsant."
       ],
@@ -798,6 +792,12 @@
       ],
       "For families and small teams; includes both Mail and VPN.": [
         "I twaculin akked terbaɛ timeẓyanin; yedda Imayl akked VPN."
+      ],
+      "Access your streaming services, like ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, no matter where you are.": [
+        "Kcem ɣer yimeẓla n usuddem-inek·inem, am ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, anida yebɣu tiliḍ."
+      ],
+      "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
+        "Kcem ɣer ugbur yettusweḥlen, am yimidyaten imettiyen, isallen, Wikipedia, Youtube akked waṭas-nniḍen, anida yebɣu tiliḍ."
       ],
       "Save 20%": [
         "Ḥrez 20%"
@@ -1113,6 +1113,12 @@
       ],
       "Loading events": [
         "Asali n tedyanin"
+      ],
+      "The organizer could not be notified that you changed your answer:": [
+        ""
+      ],
+      "The organizer cannot be notified that you want to change your answer:": [
+        ""
       ],
       "The organizer cannot be notified that you decline the invitation:": [
         "Amsuddes ulamek ara yeṭṭef talɣut belli ur tqbileḍ ara laɛraḍa:"
@@ -1490,14 +1496,14 @@
       "A group with this name already exists": [
         "Yella yakan ugraw s yisem-agui"
       ],
-      "Primary address key is not decrypted": [
-        "Tasarut n tansa tagejdant ur tettwawgelhen ara"
-      ],
       "We were unable to connect to your service provider.": [
         ""
       ],
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         ""
+      ],
+      "Primary address key is not decrypted": [
+        "Tasarut n tansa tagejdant ur tettwawgelhen ara"
       ],
       "No valid address found": [
         "Ur d-nufi ara tansa yeɣtan"
@@ -2083,12 +2089,6 @@
       "Back": [
         "Ar deffir"
       ],
-      "Use ${ label } theme": [
-        "Seqdec asentel ${ label }"
-      ],
-      "OK": [
-        "IH"
-      ],
       "Log in": [
         "Tuqqna"
       ],
@@ -2115,6 +2115,12 @@
       ],
       "Edit phone number": [
         "Ẓreg uṭṭun n tiliɣri"
+      ],
+      "Use ${ label } theme": [
+        "Seqdec asentel ${ label }"
+      ],
+      "OK": [
+        "IH"
       ],
       "Clear": [
         "Sfeḍ"
@@ -2456,9 +2462,6 @@
       "Give feedback": [
         "Mudd-d takti"
       ],
-      "Select a theme": [
-        "Fren asentel"
-      ],
       "Sign in again to continue": [
         "Qqen tikelt-nniḍen akken ad tkemmled"
       ],
@@ -2476,6 +2479,9 @@
       ],
       "Human verification": [
         "Asenqed b-umdan"
+      ],
+      "Select a theme": [
+        "Fren asentel"
       ],
       "Report a problem": [
         "Azen aneqqis n wugur"
@@ -2549,8 +2555,8 @@
       "Amount due": [
         "Tallayt ara txelseḍ"
       ],
-      "Cancel subscription": [
-        "Sefsex ajerred"
+      "Downgrade account": [
+        ""
       ],
       "Network error": [
         "Tuccḍa deg uzeṭṭa"
@@ -2848,6 +2854,11 @@
         "Ẓreg aneḍru"
       ]
     },
+    "PGP key encryption warning": {
+      "Key cannot be used for encryption": [
+        "Tasarut ulamek ara tettwaseqdec i uwgelhen"
+      ]
+    },
     "Storage": {
       "Your current storage:": [
         "Aklas-inek·inem amiran:"
@@ -2857,11 +2868,6 @@
       ],
       "Release notes": [
         "Tizmilin n leqqem"
-      ]
-    },
-    "PGP key encryption warning": {
-      "Key cannot be used for encryption": [
-        "Tasarut ulamek ara tettwaseqdec i uwgelhen"
       ]
     },
     "Label": {
@@ -3141,7 +3147,7 @@
       "Your calendars": [
         "Iwitayen-inek·inem"
       ],
-      "Participant": [
+      "participant": [
         "",
         ""
       ]
@@ -4626,11 +4632,6 @@
         "Tamawt: ameẓlu ad yales asali mi ara tessiteḍ ɣef tqeffalt Snes."
       ]
     },
-    "Select files": {
-      "Upload": [
-        "Sali"
-      ]
-    },
     "Loading info": {
       "Connecting to your contacts provider": [
         ""
@@ -4650,6 +4651,11 @@
     "Confirm modal title": {
       "Quit import?": [
         ""
+      ]
+    },
+    "Select files": {
+      "Upload": [
+        "Sali"
       ]
     },
     "Message display when a new app version is available": {
@@ -4811,11 +4817,6 @@
     "Placeholder for contact with no name": {
       "(No name)": [
         "(Ulac isem)"
-      ]
-    },
-    "Reply to calendar invitation": {
-      "Cannot send to organizer address: ${ apiErrorMessage }": [
-        "D awezɣi ad tettwazen tansa n umsuddes: ${ apiErrorMessage }"
       ]
     },
     "Modal title": {

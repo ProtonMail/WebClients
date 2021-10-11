@@ -6,9 +6,6 @@
   "contexts": {
     "": {},
     "Action": {
-      "Continue with Google": [
-        "Google ile Devam Et"
-      ],
       "Use “${ label }” setting": [
         "\"${ label }\" ayarını kullan"
       ],
@@ -78,14 +75,20 @@
       "Underline": [
         "Alt çizgili"
       ],
+      "Continue with Google": [
+        "Google ile Devam Et"
+      ],
+      "Show less": [
+        "Daha az göster"
+      ],
+      "Show more": [
+        "Daha fazla göster"
+      ],
       "Confirm opening of link ${ link }": [
         "${ link } bağlantısını açmayı onaylayın"
       ],
       "Confirm": [
         "Onayla"
-      ],
-      "Delete": [
-        "Sil"
       ],
       "Close": [
         "Kapat"
@@ -96,11 +99,11 @@
       "Previous month": [
         "Geçen ay"
       ],
-      "Show less": [
-        "Daha az göster"
+      "Delete": [
+        "Sil"
       ],
-      "Show more": [
-        "Daha fazla göster"
+      "Select timezone": [
+        "Zaman dilimini seçin"
       ],
       "Close navigation": [
         "Gezintiyi kapat"
@@ -116,9 +119,6 @@
       ],
       "Remove": [
         "Sil"
-      ],
-      "Select timezone": [
-        "Zaman dilimini seçin"
       ],
       "Submit": [
         "Gönder"
@@ -228,33 +228,6 @@
       "Continue": [
         "Devam et"
       ],
-      "Download": [
-        "İndir"
-      ],
-      "Hide": [
-        "Gizle"
-      ],
-      "Show": [
-        "Göster"
-      ],
-      "Reset credentials": [
-        "Bilgileri sıfırla"
-      ],
-      "Copy": [
-        "Kopyala"
-      ],
-      "Download all configurations": [
-        "Tüm yapılandırmaları indir"
-      ],
-      "Get ProtonVPN Plus": [
-        "ProtonVPN Plus edinin"
-      ],
-      "Yes": [
-        "Evet"
-      ],
-      "No": [
-        "Hayır"
-      ],
       "Update": [
         "Güncelle"
       ],
@@ -324,6 +297,9 @@
       "Export key": [
         "Anahtarı dışa aktar"
       ],
+      "No": [
+        "Hayır"
+      ],
       "Warning": [
         "Uyarı"
       ],
@@ -332,6 +308,9 @@
       ],
       "Export private key": [
         "Özel anahtarı dışa aktar"
+      ],
+      "Yes": [
+        "Evet"
       ],
       "Add user": [
         "Kullanıcı ekle"
@@ -381,15 +360,6 @@
       "Sign out": [
         "Oturumu kapat"
       ],
-      "Get started": [
-        "Başlayalım"
-      ],
-      "Start setup": [
-        "Kurulumu başlat"
-      ],
-      "Skip": [
-        "Atla"
-      ],
       "Preview": [
         "Önizleme"
       ],
@@ -435,6 +405,24 @@
       "Move to Allow List": [
         "İzin verilenler listesine taşıyın"
       ],
+      "Get started": [
+        "Başlayalım"
+      ],
+      "Start setup": [
+        "Kurulumu başlat"
+      ],
+      "Skip": [
+        "Atla"
+      ],
+      "Add folder": [
+        "Klasör ekle"
+      ],
+      "Sort": [
+        "Sırala"
+      ],
+      "Add label": [
+        "Etiket ekle"
+      ],
       "Clear": [
         "Temizle"
       ],
@@ -446,15 +434,6 @@
       ],
       "Show info": [
         "Bilgileri göster"
-      ],
-      "Add folder": [
-        "Klasör ekle"
-      ],
-      "Sort": [
-        "Sırala"
-      ],
-      "Add label": [
-        "Etiket ekle"
       ],
       "Signing out": [
         "Oturumu kapatılıyor"
@@ -486,8 +465,14 @@
       "Customize subscription": [
         "Aboneliği özelleştirin"
       ],
-      "Cancel subscription": [
-        "Aboneliği iptal et"
+      "Downgrade to ${ BRAND_NAME } ${ downgradedPlanName }": [
+        ""
+      ],
+      "Keep my ${ BRAND_NAME } ${ currentPlanName } account": [
+        ""
+      ],
+      "Downgrade account": [
+        ""
       ],
       "Select plan": [
         "Plan seçin"
@@ -543,6 +528,27 @@
       "Remove gift code": [
         "Hediye kodunu kaldır"
       ],
+      "Download": [
+        "İndir"
+      ],
+      "Hide": [
+        "Gizle"
+      ],
+      "Show": [
+        "Göster"
+      ],
+      "Reset credentials": [
+        "Bilgileri sıfırla"
+      ],
+      "Copy": [
+        "Kopyala"
+      ],
+      "Download all configurations": [
+        "Tüm yapılandırmaları indir"
+      ],
+      "Get ProtonVPN Plus": [
+        "ProtonVPN Plus edinin"
+      ],
       "enable desktop notifications": [
         "masaüstü bildirimlerini etkinleştir"
       ],
@@ -584,12 +590,6 @@
       ],
       "Disable recovery phrase": [
         ""
-      ],
-      "Save address": [
-        "Adresi kaydet"
-      ],
-      "activate": [
-        "etkinleştir"
       ],
       "Revoke all other sessions": [
         "Diğer tüm oturumları iptal et"
@@ -659,6 +659,12 @@
       ],
       "Activate organization key": [
         "Kuruluş anahtarını etkinleştir"
+      ],
+      "Save address": [
+        "Adresi kaydet"
+      ],
+      "activate": [
+        "etkinleştir"
       ],
       "View invoice": [
         "Faturayı görüntüle"
@@ -813,11 +819,11 @@
       "yourdomain.com": [
         "yourdomain.com"
       ],
-      "e.g. Julia Smith": [
-        "örneğin; Julia Smith"
-      ],
       "Type text or keyword": [
         "Metin veya anahtar kelime yazın"
+      ],
+      "e.g. Julia Smith": [
+        "örneğin; Julia Smith"
       ],
       "OS name": [
         "İşletim sistemi adı"
@@ -839,6 +845,9 @@
       ],
       "Browser version": [
         "Tarayıcı sürümü"
+      ],
+      "Select a reason": [
+        ""
       ],
       "Feedback": [
         "Geri bildirim"
@@ -864,14 +873,14 @@
       "Confirm": [
         "Onayla"
       ],
+      "Choose a name": [
+        "Bir isim seçin"
+      ],
       "Choose display name": [
         "Görüntülenecek ad seçin"
       ],
       "Choose address": [
         "Adres seçin"
-      ],
-      "Choose a name": [
-        "Bir isim seçin"
       ],
       "Username": [
         "Kullanıcı adı"
@@ -950,9 +959,6 @@
       "Invalid name": [
         "Geçersiz isim"
       ],
-      "Automatic replies is a paid feature. Please upgrade to a paid account to use this feature.": [
-        "Otomatik yanıtlar ücretli bir özelliktir. Bu özelliği kullanmak için ücretli bir hesaba yükseltin."
-      ],
       "Name required": [
         "İsim gerekli"
       ],
@@ -961,6 +967,9 @@
       ],
       "Primary address key is not decrypted.": [
         "Birincil adres anahtarının şifresi çözülemedi."
+      ],
+      "Primary address key is not decrypted": [
+        "Birincil adres anahtarının şifresi çözülemedi"
       ],
       "Incorrect password": [
         "Geçersiz parola"
@@ -974,11 +983,11 @@
       "Uploaded files are not valid private keys. Please verify and try again.": [
         ""
       ],
-      "Primary address key is not decrypted": [
-        "Birincil adres anahtarının şifresi çözülemedi"
-      ],
       "Invalid private key file": [
         "Geçersiz özel anahtar dosyası"
+      ],
+      "Automatic replies is a paid feature. Please upgrade to a paid account to use this feature.": [
+        "Otomatik yanıtlar ücretli bir özelliktir. Bu özelliği kullanmak için ücretli bir hesaba yükseltin."
       ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "DNS yapılandırmanızla ilgili sorunlar nedeniyle DKIM imzalamayı durdurduk. İmzalamaya devam etmek için lütfen aşağıdaki talimatları izleyin."
@@ -1088,18 +1097,6 @@
       "Wrong recovery phrase. Try again or use another recovery method.": [
         ""
       ],
-      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Addresses > Short domain (pm.me)": [
-        "${ Local } kullanıcı adınızdır. ${ Local } @ $ { Domain } oluşturmak için lütfen Ayarlar > Adresler > Kısa etki alanı (pm.me)"
-      ],
-      "The organization key must be activated first.": [
-        "Önce kuruluş anahtarı etkinleştirilmelidir."
-      ],
-      "Error": [
-        "Hata"
-      ],
-      "Organization key is not decrypted.": [
-        "Kuruluş anahtarının şifresi çözülmedi."
-      ],
       "Payments are currently not available, please try again later": [
         "Ödemeler şu anda kullanılamıyor, lütfen daha sonra tekrar deneyin"
       ],
@@ -1121,11 +1118,23 @@
       "You must privatize all users before generating new organization keys": [
         "Yeni kuruluş anahtarları oluşturmadan önce tüm kullanıcıları özelleştirmelisiniz"
       ],
+      "Organization key is not decrypted.": [
+        "Kuruluş anahtarının şifresi çözülmedi."
+      ],
       "You have lost access to your organization keys. Without restoration you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Kuruluş anahtarlarınıza erişiminizi kaybettiniz. Geri yükleme olmadan yeni kullanıcılar oluşturamaz, mevcut kullanıcılara adres ekleyemez veya gizli olmayan kullanıcı hesaplarına erişemezsiniz."
       ],
       "You must activate your organization keys. Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Kuruluş anahtarlarınızı etkinleştirmelisiniz. Etkinleştirme olmadan yeni kullanıcılar oluşturamaz, mevcut kullanıcılara adres ekleyemez, veya gizli olmayan kullanıcı hesaplarına erişemezsiniz."
+      ],
+      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Addresses > Short domain (pm.me)": [
+        "${ Local } kullanıcı adınızdır. ${ Local } @ $ { Domain } oluşturmak için lütfen Ayarlar > Adresler > Kısa etki alanı (pm.me)"
+      ],
+      "The organization key must be activated first.": [
+        "Önce kuruluş anahtarı etkinleştirilmelidir."
+      ],
+      "Error": [
+        "Hata"
       ],
       "Permission denied, administrator privileges have been restricted.": [
         "İzin reddedildi, yönetici ayrıcalıkları kısıtlandı."
@@ -1202,18 +1211,6 @@
       "Not a valid number": [
         "Geçerli bir sayı değil"
       ],
-      "Missing signature": [
-        "İmza eksik"
-      ],
-      "Contact signature not verified": [
-        "Kişi imzası doğrulanamadı"
-      ],
-      "Signature not verified": [
-        "İmza doğrulanamadı"
-      ],
-      "Request timed out.": [
-        "İstek zaman aşımına uğradı."
-      ],
       "Signature verification failed": [
         "İmza doğrulaması başarısız oldu"
       ],
@@ -1228,6 +1225,18 @@
       ],
       "Calendar primary private key is not decrypted": [
         "Takvim birincil özel anahtarının şifresi çözülemedi"
+      ],
+      "Missing signature": [
+        "İmza eksik"
+      ],
+      "Contact signature not verified": [
+        "Kişi imzası doğrulanamadı"
+      ],
+      "Signature not verified": [
+        "İmza doğrulanamadı"
+      ],
+      "Request timed out.": [
+        "İstek zaman aşımına uğradı."
       ],
       "The session has expired. Please sign in again.": [
         "Oturum zaman aşımına uğradı. Lütfen tekrar giriş yapın."
@@ -1254,6 +1263,30 @@
       ],
       "Do not ask again": [
         "Tekrar sorma"
+      ],
+      "Inbox": [
+        "Gelen kutusu"
+      ],
+      "Composer": [
+        "Oluşturucu"
+      ],
+      "Density": [
+        "Yoğunluk"
+      ],
+      "Use sticky labels": [
+        "Yapışkan etiketleri kullan"
+      ],
+      "Conversation grouping": [
+        "Konuşma gruplandırma"
+      ],
+      "Composer mode": [
+        "Oluşturucu modu"
+      ],
+      "Composer text direction": [
+        "Oluşturucunun metin yönü"
+      ],
+      "Composer default font/size": [
+        ""
       ],
       "From: ${ fromEmailAddress }": [
         "Kimden: ${ fromEmailAddress }"
@@ -1323,87 +1356,6 @@
       ],
       "Automatically save contacts": [
         "Kişileri otomatik olarak kaydet"
-      ],
-      "Inbox": [
-        "Gelen kutusu"
-      ],
-      "Composer": [
-        "Oluşturucu"
-      ],
-      "Density": [
-        "Yoğunluk"
-      ],
-      "Use sticky labels": [
-        "Yapışkan etiketleri kullan"
-      ],
-      "Conversation grouping": [
-        "Konuşma gruplandırma"
-      ],
-      "Composer mode": [
-        "Oluşturucu modu"
-      ],
-      "Composer text direction": [
-        "Oluşturucunun metin yönü"
-      ],
-      "Composer default font/size": [
-        ""
-      ],
-      "OpenVPN / IKEv2 username": [
-        "OpenVPN / IKEv2 kullanıcı adı"
-      ],
-      "OpenVPN / IKEv2 password": [
-        "OpenVPN / IKEv2 şifresi"
-      ],
-      "Timezone": [
-        "Zaman dilimi"
-      ],
-      "Days of the week": [
-        "Haftanın günleri"
-      ],
-      "Duration": [
-        "Süre"
-      ],
-      "Start day of month": [
-        "Ayın ilk günü"
-      ],
-      "Start time": [
-        "Başlangıç zamanı"
-      ],
-      "End day of month": [
-        "Ayın son günü"
-      ],
-      "End time": [
-        "Bitiş zamanı"
-      ],
-      "Start weekday": [
-        "Hafta başı"
-      ],
-      "End weekday": [
-        "Hafta sonu"
-      ],
-      "Start date": [
-        "Başlangıç tarihi"
-      ],
-      "End date": [
-        "Bitiş tarihi"
-      ],
-      "Message": [
-        "İleti"
-      ],
-      "Auto reply": [
-        "Otomatik Yanıt"
-      ],
-      "Prompt to trust keys": [
-        "Anahtarlara güvenme istemi"
-      ],
-      "Sign external messages": [
-        "Dış iletileri imzala"
-      ],
-      "Attach public key": [
-        "Genel anahtar ekle"
-      ],
-      "Default PGP settings": [
-        "Varsayılan PGP ayarları"
       ],
       "Name": [
         "Ad"
@@ -1480,6 +1432,57 @@
       "Please select files to upload": [
         "Lütfen yüklenecek dosyaları seçin"
       ],
+      "Timezone": [
+        "Zaman dilimi"
+      ],
+      "Days of the week": [
+        "Haftanın günleri"
+      ],
+      "Duration": [
+        "Süre"
+      ],
+      "Start day of month": [
+        "Ayın ilk günü"
+      ],
+      "Start time": [
+        "Başlangıç zamanı"
+      ],
+      "End day of month": [
+        "Ayın son günü"
+      ],
+      "End time": [
+        "Bitiş zamanı"
+      ],
+      "Start weekday": [
+        "Hafta başı"
+      ],
+      "End weekday": [
+        "Hafta sonu"
+      ],
+      "Start date": [
+        "Başlangıç tarihi"
+      ],
+      "End date": [
+        "Bitiş tarihi"
+      ],
+      "Message": [
+        "İleti"
+      ],
+      "Auto reply": [
+        "Otomatik Yanıt"
+      ],
+      "Prompt to trust keys": [
+        "Anahtarlara güvenme istemi"
+      ],
+      "Sign external messages": [
+        "Dış iletileri imzala"
+      ],
+      "Attach public key": [
+        "Genel anahtar ekle"
+      ],
+      "Default PGP settings": [
+        "Varsayılan PGP ayarları"
+      ],
       "Domain name": [
         "Alan adı"
       ],
@@ -1494,9 +1497,6 @@
       ],
       "Here is a basic DMARC record that does nothing except email you reports.": [
         "Raporlarınızı e-postayla göndermekten başka hiçbir şey yapmayan temel bir DMARC kaydı burada."
-      ],
-      "Display name": [
-        "Görünen ad"
       ],
       "Filter Name": [
         "Filtre Adı"
@@ -1603,6 +1603,21 @@
       "Want to add": [
         "Eklemek istiyor musun"
       ],
+      "Display name": [
+        "Görünen ad"
+      ],
+      "Folder location": [
+        "Klasör konumu"
+      ],
+      "Notification": [
+        "Bildirim"
+      ],
+      "Use folder colors": [
+        "Klasör renklerini kullan"
+      ],
+      "Inherit color from parent folder": [
+        "Rengi ana klasörden devral"
+      ],
       "Operating system": [
         "İşletim sistemi"
       ],
@@ -1630,18 +1645,6 @@
       "Browser version": [
         "Tarayıcı sürümü"
       ],
-      "Folder location": [
-        "Klasör konumu"
-      ],
-      "Notification": [
-        "Bildirim"
-      ],
-      "Use folder colors": [
-        "Klasör renklerini kullan"
-      ],
-      "Inherit color from parent folder": [
-        "Rengi ana klasörden devral"
-      ],
       "${ n } VPN connection available": [
         "${ n } VPN bağlantısı kullanılabilir",
         "${ n } VPN bağlantısı kullanılabilir"
@@ -1661,20 +1664,23 @@
       "Using ${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanMaxSpace } toplamından ${ humanUsedSpace } kadarı kullanılıyor"
       ],
+      "Could you please specify?": [
+        ""
+      ],
+      "Could you please specify which streaming service?": [
+        ""
+      ],
+      "Could you please let us know which provider?": [
+        ""
+      ],
       "What is the main reason you are cancelling?": [
         "İptal etmenizin ana nedeni nedir?"
       ],
-      "How likely are you to recommend ${ BRAND_NAME } to others?": [
-        "Arkadaşlarınıza ${ BRAND_NAME } önerir miydiniz?"
+      "Do you have any suggestions for our team?": [
+        ""
       ],
-      "0 - Not at all likely": [
-        "0 - Hiç sanmıyorum"
-      ],
-      "10 - Extremely likely": [
-        "10 - Kesinlikle"
-      ],
-      "How do you think we could improve our products or service in the future?": [
-        "Sizce gelecekte ürün veya hizmetimizi nasıl geliştirebiliriz?"
+      "Optional": [
+        ""
       ],
       "Total (${ countdown })": [
         "Toplam (${ countdown })"
@@ -1739,20 +1745,11 @@
       "Select a method": [
         "Bir yöntem seçin"
       ],
-      "Auto-load remote content": [
-        "Uzak içeriği otomatik yükle"
+      "OpenVPN / IKEv2 username": [
+        "OpenVPN / IKEv2 kullanıcı adı"
       ],
-      "Auto-load embedded images": [
-        "Gömülü resimleri otomatik yükle"
-      ],
-      "Keep messages in Sent/Drafts": [
-        "İletileri Gönderilenler/Taslaklar klasöründe tut"
-      ],
-      "Link confirmation": [
-        "Bağlantı onayı"
-      ],
-      "Undo send": [
-        "Göndermeyi geri al"
+      "OpenVPN / IKEv2 password": [
+        "OpenVPN / IKEv2 şifresi"
       ],
       "Your password (admin)": [
         "Parolanız (yönetici)"
@@ -1832,9 +1829,6 @@
       "Allow recovery by recovery phrase": [
         "Kurtarma anahtar metniyle kurtarma işlemine izin ver"
       ],
-      "Keyboard shortcuts": [
-        "Klavye kısayolları"
-      ],
       "Recovery phrase": [
         "Kurtarma anahtar metni"
       ],
@@ -1843,18 +1837,6 @@
       ],
       "Recovery phrase contains 12 words": [
         ""
-      ],
-      "Signature": [
-        "İmza"
-      ],
-      "ProtonMail footer": [
-        "ProtonMail alt bilgi"
-      ],
-      "User": [
-        "Kullanıcı"
-      ],
-      "Address": [
-        "Adres"
       ],
       "Cash": [
         "Nakit"
@@ -1894,6 +1876,42 @@
       ],
       "Confirm organization password": [
         "Kuruluş parolasını onayla"
+      ],
+      "Confirm before loading remote content": [
+        ""
+      ],
+      "Auto-load embedded images": [
+        "Gömülü resimleri otomatik yükle"
+      ],
+      "Keep messages in Sent/Drafts": [
+        "İletileri Gönderilenler/Taslaklar klasöründe tut"
+      ],
+      "Link confirmation": [
+        "Bağlantı onayı"
+      ],
+      "Undo send": [
+        "Göndermeyi geri al"
+      ],
+      "Protect against email tracking": [
+        ""
+      ],
+      "Protection mode": [
+        ""
+      ],
+      "Keyboard shortcuts": [
+        "Klavye kısayolları"
+      ],
+      "Signature": [
+        "İmza"
+      ],
+      "ProtonMail footer": [
+        "ProtonMail alt bilgi"
+      ],
+      "User": [
+        "Kullanıcı"
+      ],
+      "Address": [
+        "Adres"
       ],
       "VPN connections": [
         "VPN bağlantıları"
@@ -1960,9 +1978,6 @@
       "Open actions dropdown": [
         "Açılır menü işlemleri"
       ],
-      "Keyboard Shortcuts": [
-        "Klavye Kısayolları"
-      ],
       "Previous": [
         "Önceki"
       ],
@@ -1971,6 +1986,9 @@
       ],
       "Next": [
         "Sonraki"
+      ],
+      "Keyboard Shortcuts": [
+        "Klavye Kısayolları"
       ],
       "What's new": [
         "Yenilikler"
@@ -2022,21 +2040,6 @@
       ],
       "Import contacts": [
         "Kişileri içe aktar"
-      ],
-      "1. Select platform": [
-        "1. Platform seçin"
-      ],
-      "2. Select protocol": [
-        "2. Protokol seçin"
-      ],
-      "3. Select config file and download": [
-        "3. Yapılandırma dosyasını seçin ve indirin"
-      ],
-      "Get ProtonVPN Plus to access all servers": [
-        "Tüm sunuculara erişmek için ProtonVPN Plus edinin"
-      ],
-      "Automatically sign outgoing messages?": [
-        "Giden iletiler otomatik olarak imzalansın mı?"
       ],
       "Error": [
         "Hata"
@@ -2098,6 +2101,9 @@
       "Import key": [
         "Anahtarı içeri aktar"
       ],
+      "Automatically sign outgoing messages?": [
+        "Giden iletiler otomatik olarak imzalansın mı?"
+      ],
       "Edit domain": [
         "Etki alanını düzenle"
       ],
@@ -2152,9 +2158,6 @@
       "Edit Allow List": [
         "İzin verilen listesini düzenle"
       ],
-      "Report a problem": [
-        "Sorun bildir"
-      ],
       "Delete ${ Name } folder": [
         "${ Name } dosyasını sil"
       ],
@@ -2167,14 +2170,17 @@
       "Sort labels alphabetically": [
         "Etiketleri alfabetik olarak sırala"
       ],
+      "Report a problem": [
+        "Sorun bildir"
+      ],
       "Confirm loss of Proton bonuses": [
         "Proton hediye puanlarının kaybını onaylayın"
       ],
       "Processing": [
         "İşleniyor"
       ],
-      "Cancel subscription": [
-        "Aboneliği iptal et"
+      "Downgrade account": [
+        ""
       ],
       "Network error": [
         "Ağ hatası"
@@ -2269,6 +2275,18 @@
       "Plan summary": [
         "Plan özeti"
       ],
+      "1. Select platform": [
+        "1. Platform seçin"
+      ],
+      "2. Select protocol": [
+        "2. Protokol seçin"
+      ],
+      "3. Select config file and download": [
+        "3. Yapılandırma dosyasını seçin ve indirin"
+      ],
+      "Get ProtonVPN Plus to access all servers": [
+        "Tüm sunuculara erişmek için ProtonVPN Plus edinin"
+      ],
       "Change password for ${ Name } (${ Email })": [
         "${ Name } (${ Email }) şifresini değiştir"
       ],
@@ -2307,21 +2325,6 @@
       ],
       "Confirm phone number": [
         "Telefon numarasını onaylayın"
-      ],
-      "${ appName } Keyboard Shortcuts": [
-        "${ appName } Klavye Kısayolları"
-      ],
-      "Add address": [
-        "Adres ekle"
-      ],
-      "Delete ${ address.Email }": [
-        "${ address.Email } sil"
-      ],
-      "Generate missing keys": [
-        "Eksik anahtarları oluştur"
-      ],
-      "Bridge for ${ platform }": [
-        "${ platform } için Bridge"
       ],
       "App": [
         "Uygulama"
@@ -2386,6 +2389,18 @@
       "Change organization password": [
         "Kuruluş parolasını değiştirin"
       ],
+      "${ appName } Keyboard Shortcuts": [
+        "${ appName } Klavye Kısayolları"
+      ],
+      "Add address": [
+        "Adres ekle"
+      ],
+      "Delete ${ address.Email }": [
+        "${ address.Email } sil"
+      ],
+      "Generate missing keys": [
+        "Eksik anahtarları oluştur"
+      ],
       "Change role": [
         "Rolü Değiştir"
       ],
@@ -2397,6 +2412,9 @@
       ],
       "Add user": [
         "Kullanıcı ekle"
+      ],
+      "Bridge for ${ platform }": [
+        "${ platform } için Bridge"
       ],
       "Sign in again to continue": [
         "Devam etmek için tekrar oturum açın"
@@ -2413,26 +2431,11 @@
       "Account suspended": [
         "Hesap askıya alındı"
       ],
-      "General": [
-        "Genel"
+      "Appearance": [
+        "Görünüm"
       ],
       "Theme": [
         "Tema"
-      ],
-      "Contacts": [
-        "Kişiler"
-      ],
-      "Import & export": [
-        "İçe/Dışa aktarma"
-      ],
-      "Import": [
-        "İçe aktar"
-      ],
-      "Export": [
-        "Dışa aktar"
-      ],
-      "Appearance": [
-        "Görünüm"
       ],
       "Layout": [
         "Yerleşim"
@@ -2482,6 +2485,12 @@
       "Labels": [
         "Etiketler"
       ],
+      "Import Assistant": [
+        "Import Assistant"
+      ],
+      "General": [
+        "Genel"
+      ],
       "Short domain (@pm.me)": [
         "Kısa etki alanı (@pm.me)"
       ],
@@ -2490,6 +2499,9 @@
       ],
       "Advanced": [
         "Gelişmiş"
+      ],
+      "Spy Tracker Protection": [
+        ""
       ],
       "Identity & addresses": [
         "Kimlik ve adresler"
@@ -2506,14 +2518,38 @@
       "ProtonMail Bridge": [
         "ProtonMail Bridge"
       ],
-      "Import Assistant": [
-        "Import Assistant"
+      "Import & export": [
+        "İçe/Dışa aktarma"
       ],
       "Current & past imports": [
         "Mevcut ve geçmiş içe aktarmalar"
       ],
       "Import-Export app": [
         "Import-Export uygulaması"
+      ],
+      "Email privacy": [
+        ""
+      ],
+      "Contacts": [
+        "Kişiler"
+      ],
+      "Import": [
+        "İçe aktar"
+      ],
+      "Export": [
+        "Dışa aktar"
+      ],
+      "My calendars": [
+        "Takvimlerim"
+      ],
+      "Subscribed calendars": [
+        "Abone olunan takvimler"
+      ],
+      "Share outside Proton": [
+        "Proton dışında paylaş"
+      ],
+      "Time zone": [
+        "Saat dilimi"
       ],
       "VPN apps": [
         "VPN uygulamaları"
@@ -2529,18 +2565,6 @@
       ],
       "OpenVPN configuration files": [
         "OpenVPN yapılandırma dosyaları"
-      ],
-      "My calendars": [
-        "Takvimlerim"
-      ],
-      "Subscribed calendars": [
-        "Abone olunan takvimler"
-      ],
-      "Share outside Proton": [
-        "Proton dışında paylaş"
-      ],
-      "Time zone": [
-        "Saat dilimi"
       ],
       "Password & recovery": [
         "Parola ve kurtarma"
@@ -2763,9 +2787,6 @@
       "Plain text": [
         "Düz metin"
       ],
-      "No results found": [
-        "Sonuç bulunamadı"
-      ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Bu bağlantı bir eşyazım saldırısı olabilir ve Internet Explorer ve Edge tarayıcıları tarafından açılamaz. Bağlantının yasal olduğundan eminseniz, lütfen açmak için farklı bir tarayıcı kullanın."
       ],
@@ -2778,11 +2799,14 @@
       "Learn more": [
         "Daha fazla bilgi edinin"
       ],
+      "Week": [
+        "Hafta"
+      ],
       "Drop the file here to upload": [
         "Yüklemek için bir dosyayı buraya bırakın"
       ],
-      "Week": [
-        "Hafta"
+      "No results found": [
+        "Sonuç bulunamadı"
       ],
       "Loading": [
         "Yükleniyor"
@@ -2921,113 +2945,6 @@
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "Kışilerini dışa aktarmadan önce bu uygulamanın yerel şifreye ihtiyacı var. İlerlemenin sonunda, VCF dosyası genelleştirilecek ve indirmeye elvirişli olacaktır."
       ],
-      "To secure your internet connection, download and install the ProtonVPN application for your device and connect to a ProtonVPN server.": [
-        "İnternet bağlantınızı güvence altına almak için cihazınıza ProtonVPN uygulamasını indirip yükleyin ve bir ProtonVPN sunucusuna bağlanın."
-      ],
-      "You can use the following credentials to connect to a ProtonVPN server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
-        "MacOS için Tunnelblick veya GNU/Linux için OpenVPN gibi üçüncü taraf, açık kaynaklı bir VPN uygulaması kullanarak bir ProtonVPN sunucusuna bağlanmak için aşağıdaki kimlik bilgilerini kullanabilirsiniz."
-      ],
-      "Learn how to log in to ProtonVPN with third-party VPN applications.": [
-        "Üçüncü taraf VPN uygulamalarıyla ProtonVPN'e nasıl giriş yapacağınızı öğrenin."
-      ],
-      "We advise you to use official ProtonVPN applications when possible.": [
-        "Mümkün oldukça resmi ProtonVPN uygulamalarını kullanmanızı öneririz."
-      ],
-      "You cannot use the OpenVPN / IKEv2 credentials to log in to ProtonVPN applications or the ProtonVPN dashboard. ${ learnMore }": [
-        "ProtonVPN uygulamalarına veya ProtonVPN kontrol paneline giriş yapmak için OpenVPN / IKEv2 kimlik bilgilerini kullanamazsınız. ${ learnMore }"
-      ],
-      "Use the following credentials when connecting to ProtonVPN servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
-        "ProtonVPN sunucularına uygulama olmadan bağlanırken aşağıdaki kimlik bilgilerini kullanın. Kullanım örnekleri: MacOS'ta Tunnelblick, GNU/Linux'ta OpenVPN."
-      ],
-      "Do not use the OpenVPN / IKEv2 credentials in ProtonVPN applications or on the ProtonVPN dashboard. ${ learnMore }": [
-        "ProtonVPN uygulamalarında veya ProtonVPN kontrol panelinde OpenVPN / IKEv2 kimlik bilgilerini kullanmayın. ${ learnMore }"
-      ],
-      "Server load": [
-        "Sunucu yükü"
-      ],
-      "Server is currently down": [
-        "Sunucu şu anda kapalı"
-      ],
-      "P2P": [
-        "P2P"
-      ],
-      "Tor": [
-        "Tor"
-      ],
-      "Plus or Visionary subscription required": [
-        "Plus veya Vizyoner aboneliği gerekli"
-      ],
-      "Basic, Plus or Visionary subscription required": [
-        "Temel, Plus veya Vizyoner aboneliği gerekli"
-      ],
-      "${ number } server": [
-        "${ number } sunucu",
-        "${ number } sunucu"
-      ],
-      "${ number } city": [
-        "${ number } şehir",
-        "${ number } şehir"
-      ],
-      "These configuration files let you choose which ProtonVPN server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
-        "Bu yapılandırma dosyaları, üçüncü taraf bir VPN uygulaması kullanırken veya bir yönlendiricide VPN bağlantısı kurarken hangi ProtonVPN sunucusuna bağlanacağınızı seçmenizi sağlar."
-      ],
-      "Install a Secure Core configuration file to benefit from an additional protection against VPN endpoint compromise.": [
-        "VPN uç nokta sızıntısına karşı ek bir korumadan yararlanmak için Secure Core yapılandırma dosyası yükleyin."
-      ],
-      "ProtonVPN Plus or Visionary required for Secure Core feature.": [
-        "Secure Core özelliği için ProtonVPN Plus veya Visionary gerekir."
-      ],
-      "Install a Country configuration file to connect to a random server in the country of your choice.": [
-        "Seçtiğiniz ülkede rastgele bir sunucuya bağlanmak için bir ülke yapılandırma dosyası yükleyin."
-      ],
-      "ProtonVPN Basic, Plus or Visionary required for Country level connection.": [
-        "Ülke düzeyinde bağlantı için ProtonVPN Basic, Plus veya Visionary gereklidir."
-      ],
-      "Install a Server configuration file to connect to a specific server in the country of your choice.": [
-        "Seçtiğiniz ülkedeki belirli bir sunucuya bağlanmak için bir sunucu yapılandırma dosyası yükleyin."
-      ],
-      "Install a Free server configuration file to connect to a specific server in one of the three free locations.": [
-        "Üç ücretsiz konumdan birinde belirli bir sunucuya bağlanmak için ücretsiz bir sunucu yapılandırma dosyası yükleyin."
-      ],
-      "Plan upgrade required": [
-        "Plan yükseltmesi gerekli"
-      ],
-      "Auto-reply is active each month between the selected start and end time.": [
-        "Otomatik cevaplama, seçilen başlangıç ​​ve bitiş saatleri arasında her ay aktiftir."
-      ],
-      "Auto-reply is always active on the days of the week you select, between the selected hours.": [
-        "Otomatik cevaplama, seçtiğiniz saatler arasında seçtiğiniz haftanın günlerinde daima etkindir."
-      ],
-      "Auto-reply is active each week between the selected start and end time.": [
-        "Otomatik yanıt, seçilen başlangıç ​​ve bitiş saatleri arasında her hafta etkindir."
-      ],
-      "Auto-reply is active until you turn it off.": [
-        "Otomatik yanıtlama siz kapatana kadar etkin durumdadır."
-      ],
-      "Auto-reply is active from the start time to the end time.": [
-        "Otomatik yanıt, başlangıç ​​zamanından bitiş saatine kadar aktiftir."
-      ],
-      "Images have been removed because they are not allowed in auto-reply.": [
-        ""
-      ],
-      "Use automatic replies to inform contacts you are out of the office or otherwise unable to respond.": [
-        "Kişilere ofis dışında olduğunuzu veya başka bir şekilde yanıt veremeyeceğinizi bildirmek için otomatik yanıtları kullanın."
-      ],
-      "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to enable automatic replies for when you are out of the office.": [
-        "Ofisinizde olmadığınız zaman otomatik yanıtları açmak için bir ${ PLAN_NAMES[PLANS.VISIONARY] } ya da ${ PLAN_NAMES[PLANS.PROFESSIONAL] } tarifesine yükseltin."
-      ],
-      "Address verification is an advanced security feature. Only turn this on if you know what it does.": [
-        "Adres doğrulama, gelişmiş bir güvenlik özelliğidir. Sadece ne yaptığınızı biliyorsanız bunu açın."
-      ],
-      "Encryption setting updated": [
-        "Şifreleme ayarları güncellendi"
-      ],
-      "PGP clients are more likely to automatically detect your PGP keys if outgoing messages are signed.": [
-        "Giden iletiler imzalanırsa, PGP istemcilerinin PGP anahtarlarınızı otomatik olarak algılaması daha olasıdır."
-      ],
-      "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
-        "Bu ayarları yalnızca ProtonMail dışındaki alıcılarla PGP kullanıyorsanız değiştirin."
-      ],
       "Are you sure you want to delete this calendar?": [
         "Bu takvimi silmek istediğinizden emin misiniz?"
       ],
@@ -3146,6 +3063,42 @@
       "No contact encryption keys exist": [
         "Kişinin şifreleme anahtarları yok"
       ],
+      "Auto-reply is active each month between the selected start and end time.": [
+        "Otomatik cevaplama, seçilen başlangıç ​​ve bitiş saatleri arasında her ay aktiftir."
+      ],
+      "Auto-reply is always active on the days of the week you select, between the selected hours.": [
+        "Otomatik cevaplama, seçtiğiniz saatler arasında seçtiğiniz haftanın günlerinde daima etkindir."
+      ],
+      "Auto-reply is active each week between the selected start and end time.": [
+        "Otomatik yanıt, seçilen başlangıç ​​ve bitiş saatleri arasında her hafta etkindir."
+      ],
+      "Auto-reply is active until you turn it off.": [
+        "Otomatik yanıtlama siz kapatana kadar etkin durumdadır."
+      ],
+      "Auto-reply is active from the start time to the end time.": [
+        "Otomatik yanıt, başlangıç ​​zamanından bitiş saatine kadar aktiftir."
+      ],
+      "Images have been removed because they are not allowed in auto-reply.": [
+        ""
+      ],
+      "Use automatic replies to inform contacts you are out of the office or otherwise unable to respond.": [
+        "Kişilere ofis dışında olduğunuzu veya başka bir şekilde yanıt veremeyeceğinizi bildirmek için otomatik yanıtları kullanın."
+      ],
+      "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to enable automatic replies for when you are out of the office.": [
+        "Ofisinizde olmadığınız zaman otomatik yanıtları açmak için bir ${ PLAN_NAMES[PLANS.VISIONARY] } ya da ${ PLAN_NAMES[PLANS.PROFESSIONAL] } tarifesine yükseltin."
+      ],
+      "Address verification is an advanced security feature. Only turn this on if you know what it does.": [
+        "Adres doğrulama, gelişmiş bir güvenlik özelliğidir. Sadece ne yaptığınızı biliyorsanız bunu açın."
+      ],
+      "Encryption setting updated": [
+        "Şifreleme ayarları güncellendi"
+      ],
+      "PGP clients are more likely to automatically detect your PGP keys if outgoing messages are signed.": [
+        "Giden iletiler imzalanırsa, PGP istemcilerinin PGP anahtarlarınızı otomatik olarak algılaması daha olasıdır."
+      ],
+      "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
+        "Bu ayarları yalnızca ProtonMail dışındaki alıcılarla PGP kullanıyorsanız değiştirin."
+      ],
       "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ProtonMail in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
         "SPF alan adı kimin e-posta göndermesine izin verildiğini belirtmek için kullanılır, bu nedenle SPF kaydınıza ProtonMail'i dahil etmenizi şiddetle tavsiye ederiz. Lütfen aşağıdaki TXT kaydını DNS'nize ekleyin. Bu genellikle alan adı kayıt kuruluşunuzun kontrol panelinden yapılabilir."
       ],
@@ -3235,12 +3188,6 @@
       "Your Block List is empty.": [
         "Engel listeniz boş."
       ],
-      "Screenshot(s) attached": [
-        "Ekran görüntüsü eklendi"
-      ],
-      "Refreshing the page or ${ link } will automatically resolve most issues.": [
-        "Sayfayı yenilemek ya da ${ link } çoğu sorunu kendiliğinden çözecektir."
-      ],
       "Inherited from parent folder": [
         "Ana klasörden devralındı"
       ],
@@ -3261,6 +3208,12 @@
       ],
       "Are you sure you want to delete this folder?": [
         "Bu klasörü silmek istediğinize emin misiniz?"
+      ],
+      "Screenshot(s) attached": [
+        "Ekran görüntüsü eklendi"
+      ],
+      "Refreshing the page or ${ link } will automatically resolve most issues.": [
+        "Sayfayı yenilemek ya da ${ link } çoğu sorunu kendiliğinden çözecektir."
       ],
       "More Info": [
         "Daha Fazla Bilgi"
@@ -3308,6 +3261,9 @@
       "No subscription yet": [
         "Henüz aboneliğiniz yok"
       ],
+      "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
+        ""
+      ],
       "You already have a free account": [
         "Zaten ücretsiz bir hesabınız var"
       ],
@@ -3325,12 +3281,6 @@
       ],
       "* Customizable features": [
         "* Özelleştirilebilir özellikler"
-      ],
-      "Access your streaming services, like ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, no matter where you are.": [
-        "Nerede olursanız olun ${ netflix }, ${ disney }, ${ primeVideo }, ${ many } gibi yayın hizmetlerinize erişin."
-      ],
-      "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
-        "Nerede olursanız olun, sosyal medya, haberler, Wikipedia, YouTube ve diğerleri gibi engellenen içeriğe erişin."
       ],
       "For getting started with private and secure emailing.": [
         "Gizli ve güvenli e-posta kullanımına başlamak için."
@@ -3355,6 +3305,12 @@
       ],
       "For families and small teams; includes both Mail and VPN.": [
         "Aileler ve küçük ekipler için; hem Posta hem de VPN içerir."
+      ],
+      "Access your streaming services, like ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, no matter where you are.": [
+        "Nerede olursanız olun ${ netflix }, ${ disney }, ${ primeVideo }, ${ many } gibi yayın hizmetlerinize erişin."
+      ],
+      "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
+        "Nerede olursanız olun, sosyal medya, haberler, Wikipedia, YouTube ve diğerleri gibi engellenen içeriğe erişin."
       ],
       "Save 20%": [
         "%20 indirim"
@@ -3546,6 +3502,77 @@
       "30 days money-back guarantee.": [
         "30 gün para iade garantisi."
       ],
+      "To secure your internet connection, download and install the ProtonVPN application for your device and connect to a ProtonVPN server.": [
+        "İnternet bağlantınızı güvence altına almak için cihazınıza ProtonVPN uygulamasını indirip yükleyin ve bir ProtonVPN sunucusuna bağlanın."
+      ],
+      "You can use the following credentials to connect to a ProtonVPN server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
+        "MacOS için Tunnelblick veya GNU/Linux için OpenVPN gibi üçüncü taraf, açık kaynaklı bir VPN uygulaması kullanarak bir ProtonVPN sunucusuna bağlanmak için aşağıdaki kimlik bilgilerini kullanabilirsiniz."
+      ],
+      "Learn how to log in to ProtonVPN with third-party VPN applications.": [
+        "Üçüncü taraf VPN uygulamalarıyla ProtonVPN'e nasıl giriş yapacağınızı öğrenin."
+      ],
+      "We advise you to use official ProtonVPN applications when possible.": [
+        "Mümkün oldukça resmi ProtonVPN uygulamalarını kullanmanızı öneririz."
+      ],
+      "You cannot use the OpenVPN / IKEv2 credentials to log in to ProtonVPN applications or the ProtonVPN dashboard. ${ learnMore }": [
+        "ProtonVPN uygulamalarına veya ProtonVPN kontrol paneline giriş yapmak için OpenVPN / IKEv2 kimlik bilgilerini kullanamazsınız. ${ learnMore }"
+      ],
+      "Use the following credentials when connecting to ProtonVPN servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
+        "ProtonVPN sunucularına uygulama olmadan bağlanırken aşağıdaki kimlik bilgilerini kullanın. Kullanım örnekleri: MacOS'ta Tunnelblick, GNU/Linux'ta OpenVPN."
+      ],
+      "Do not use the OpenVPN / IKEv2 credentials in ProtonVPN applications or on the ProtonVPN dashboard. ${ learnMore }": [
+        "ProtonVPN uygulamalarında veya ProtonVPN kontrol panelinde OpenVPN / IKEv2 kimlik bilgilerini kullanmayın. ${ learnMore }"
+      ],
+      "Server load": [
+        "Sunucu yükü"
+      ],
+      "Server is currently down": [
+        "Sunucu şu anda kapalı"
+      ],
+      "P2P": [
+        "P2P"
+      ],
+      "Tor": [
+        "Tor"
+      ],
+      "Plus or Visionary subscription required": [
+        "Plus veya Vizyoner aboneliği gerekli"
+      ],
+      "Basic, Plus or Visionary subscription required": [
+        "Temel, Plus veya Vizyoner aboneliği gerekli"
+      ],
+      "${ number } server": [
+        "${ number } sunucu",
+        "${ number } sunucu"
+      ],
+      "${ number } city": [
+        "${ number } şehir",
+        "${ number } şehir"
+      ],
+      "These configuration files let you choose which ProtonVPN server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
+        "Bu yapılandırma dosyaları, üçüncü taraf bir VPN uygulaması kullanırken veya bir yönlendiricide VPN bağlantısı kurarken hangi ProtonVPN sunucusuna bağlanacağınızı seçmenizi sağlar."
+      ],
+      "Install a Secure Core configuration file to benefit from an additional protection against VPN endpoint compromise.": [
+        "VPN uç nokta sızıntısına karşı ek bir korumadan yararlanmak için Secure Core yapılandırma dosyası yükleyin."
+      ],
+      "ProtonVPN Plus or Visionary required for Secure Core feature.": [
+        "Secure Core özelliği için ProtonVPN Plus veya Visionary gerekir."
+      ],
+      "Install a Country configuration file to connect to a random server in the country of your choice.": [
+        "Seçtiğiniz ülkede rastgele bir sunucuya bağlanmak için bir ülke yapılandırma dosyası yükleyin."
+      ],
+      "ProtonVPN Basic, Plus or Visionary required for Country level connection.": [
+        "Ülke düzeyinde bağlantı için ProtonVPN Basic, Plus veya Visionary gereklidir."
+      ],
+      "Install a Server configuration file to connect to a specific server in the country of your choice.": [
+        "Seçtiğiniz ülkedeki belirli bir sunucuya bağlanmak için bir sunucu yapılandırma dosyası yükleyin."
+      ],
+      "Install a Free server configuration file to connect to a specific server in one of the three free locations.": [
+        "Üç ücretsiz konumdan birinde belirli bir sunucuya bağlanmak için ücretsiz bir sunucu yapılandırma dosyası yükleyin."
+      ],
+      "Plan upgrade required": [
+        "Plan yükseltmesi gerekli"
+      ],
       "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
         "Hesabınızda vadesi geçmiş en az bir fatura var. Erişiminiz kısıtlandı. ${ payInvoiceLink }"
       ],
@@ -3584,12 +3611,6 @@
       ],
       "Internet connection lost. Please check your device's connectivity.": [
         "İnternet bağlantısı kesildi. Lütfen cihazınızın bağlantısını kontrol edin."
-      ],
-      "When disabled, this prevents all files from loading on your device without your knowledge.\t": [
-        "Devre dışı bırakıldığında, tüm dosyaların bilginiz olmadan cihazınıza yüklenmesini engeller.\t"
-      ],
-      "When disabled, this prevents image files from loading on your device without your knowledge.": [
-        "Devre dışı bırakıldığında, görüntü dosyalarının bilginiz olmadan cihazınıza yüklenmesini engeller."
       ],
       "By leaving now, changes may not be saved": [
         "Şimdi çıkarsanız, değişiklikler kaydedilmeyebilir"
@@ -3699,9 +3720,6 @@
       "Disabling this will prevent your recovery phrase from being used for account recovery.": [
         "Bunu devre dışı bırakmak, kurtarma anahtar metninizin hesap kurtarması için kullanılmasını engelleyecektir."
       ],
-      "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
-        "Temel gezinme ve eylemler, ayarlarda etkin olan veya olmayan klavye kısayollarından bağımsız olarak kullanılabilir kalır."
-      ],
       "Your recovery phrase is a series of 12 words in a specific order.": [
         "Kurtarma anahtar metniniz, belirli bir sırada oluşturulan 12 kelimelik bir dizidir."
       ],
@@ -3728,33 +3746,6 @@
       ],
       "Recovery phrase has been disabled": [
         "Kurtarma anahtar metni devre dışı bırakıldı"
-      ],
-      "Let your contacts know you care about their privacy.": [
-        "Kişilerinizin, gizliliklerine önem verdiğinizi bilmelerini sağlayın."
-      ],
-      "Please note that if you delete this address, you will no longer be able to send or receive emails using this address.": [
-        "Bu adresi silerseniz, artık bu adresi kullanarak e-posta gönderip alamayacağınızı lütfen unutmayın."
-      ],
-      "Are you sure you want to delete this address?": [
-        "Bu adresi silmek istediğinizden emin misiniz?"
-      ],
-      "The email address you place at the top of the list is your default email address. Drag and drop to reorder your addresses.": [
-        "Listenin en üstüne yerleştirdiğiniz e-posta adresi, varsayılan e-posta adresinizdir. Adreslerinizi yeniden sıralamak için sürükleyip bırakın."
-      ],
-      "Queued": [
-        "Sıraya Alındı"
-      ],
-      "Done": [
-        "Tamamlandı"
-      ],
-      "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
-        "Yeni adresinizden e-posta gönderip almaya başlamadan önce, onlar için şifreleme anahtarları oluşturmanız gerekir."
-      ],
-      "You can use ProtonMail with any desktop email client that supports IMAP/SMTP, including Outlook, Apple Mail, and Thunderbird.": [
-        "Protonmail'i Outlook, Apple Mail ve Thunderbird dahil IMAP/SMTP'yi destekleyen herhangi bir masaüstü e-posta istemcisiyle kullanabilirsiniz."
-      ],
-      "Upgrade to a paid plan to unlock IMAP/SMTP support through ProtonMail Bridge.": [
-        "ProtonMail Bridge aracılığı ile IMAP/SMTP desteğinin kilidini açmak için ücretli bir plana geçmelisiniz."
       ],
       "Do you want to revoke all other sessions than the current one?": [
         "Geçerli oturumun dışındaki diğer oturumları iptal etmek istiyor musunuz?"
@@ -3870,6 +3861,39 @@
       "Your organization's emails are protected with end-to-end encryption using the organization key. This fingerprint can be used to verify that all administrators in your account have the same key.": [
         "Kuruluşunuzun e-postaları, kuruluş anahtarı kullanılarak uçtan uca şifreleme ile korunur. Bu parmak izi, hesabınızdaki tüm yöneticilerin aynı anahtara sahip olduğunu doğrulamak için kullanılabilir."
       ],
+      "Prevents remote email content from loading automatically.": [
+        ""
+      ],
+      "When disabled, this prevents image files from loading on your device without your knowledge.": [
+        "Devre dışı bırakıldığında, görüntü dosyalarının bilginiz olmadan cihazınıza yüklenmesini engeller."
+      ],
+      "Prevents senders from knowing whether and when you have opened a message.": [
+        ""
+      ],
+      "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
+        "Temel gezinme ve eylemler, ayarlarda etkin olan veya olmayan klavye kısayollarından bağımsız olarak kullanılabilir kalır."
+      ],
+      "Let your contacts know you care about their privacy.": [
+        "Kişilerinizin, gizliliklerine önem verdiğinizi bilmelerini sağlayın."
+      ],
+      "Please note that if you delete this address, you will no longer be able to send or receive emails using this address.": [
+        "Bu adresi silerseniz, artık bu adresi kullanarak e-posta gönderip alamayacağınızı lütfen unutmayın."
+      ],
+      "Are you sure you want to delete this address?": [
+        "Bu adresi silmek istediğinizden emin misiniz?"
+      ],
+      "The email address you place at the top of the list is your default email address. Drag and drop to reorder your addresses.": [
+        "Listenin en üstüne yerleştirdiğiniz e-posta adresi, varsayılan e-posta adresinizdir. Adreslerinizi yeniden sıralamak için sürükleyip bırakın."
+      ],
+      "Queued": [
+        "Sıraya Alındı"
+      ],
+      "Done": [
+        "Tamamlandı"
+      ],
+      "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
+        "Yeni adresinizden e-posta gönderip almaya başlamadan önce, onlar için şifreleme anahtarları oluşturmanız gerekir."
+      ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Bu kullanıcı şu anda kuruluşunuz için ödemelerden sorumludur. Bu üyeyi tenzil ederek, kuruluşunuzun ödemelerinden siz sorumlu olacaksınız."
       ],
@@ -3888,6 +3912,12 @@
       ],
       "more": [
         "dahası"
+      ],
+      "You can use ProtonMail with any desktop email client that supports IMAP/SMTP, including Outlook, Apple Mail, and Thunderbird.": [
+        "Protonmail'i Outlook, Apple Mail ve Thunderbird dahil IMAP/SMTP'yi destekleyen herhangi bir masaüstü e-posta istemcisiyle kullanabilirsiniz."
+      ],
+      "Upgrade to a paid plan to unlock IMAP/SMTP support through ProtonMail Bridge.": [
+        "ProtonMail Bridge aracılığı ile IMAP/SMTP desteğinin kilidini açmak için ücretli bir plana geçmelisiniz."
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "Proton hesabınız şu anda beklemede. Hesabınızı kullanmaya devam etmek için, lütfen gecikmiş faturaları ödeyin."
@@ -3931,15 +3961,6 @@
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Bunun bir hata olduğunu düşünüyorsanız, lütfen bize ${ contactLink } ulaşın."
       ],
-      "Session timed out.": [
-        "Oturum zaman aşımına uğradı."
-      ],
-      "Internet connection lost.": [
-        "İnternet bağlantısı kesildi."
-      ],
-      "Servers are unreachable.": [
-        "Sunuculara ulaşılamıyor."
-      ],
       "Custom daily": [
         "Özel günlük"
       ],
@@ -3963,6 +3984,15 @@
       ],
       "Yearly": [
         "Yıllık"
+      ],
+      "Session timed out.": [
+        "Oturum zaman aşımına uğradı."
+      ],
+      "Internet connection lost.": [
+        "İnternet bağlantısı kesildi."
+      ],
+      "Servers are unreachable.": [
+        "Sunuculara ulaşılamıyor."
       ],
       "Users can't make changes to organization settings. If you need admin privileges, reach out to your system administrator.": [
         "Kullanıcılar, kuruluş ayarlarında değişiklik yapamaz. Yönetici ayrıcalıklarına ihtiyacınız varsa, sistem yöneticinize ulaşın."
@@ -4098,6 +4128,16 @@
         "Varsayılan"
       ]
     },
+    "Select search results": {
+      "No results found": [
+        "Sonuç bulunamadı"
+      ]
+    },
+    "Timezone search placeholder": {
+      "Search timezones": [
+        "Zaman dilimlerini ara"
+      ]
+    },
     "Storage": {
       "Your current storage:": [
         "Mevcut depolama alanınız:"
@@ -4113,12 +4153,6 @@
       "Learn more": [
         "Daha fazla bilgi edinin"
       ],
-      "View guide": [
-        "Rehberi görüntüle"
-      ],
-      "What is the difference between UDP and TCP protocols?": [
-        "UDP ve TCP protokolleri arasındaki fark nedir?"
-      ],
       "Upgrade": [
         "Yükselt"
       ],
@@ -4133,6 +4167,12 @@
       ],
       "Add a gift code": [
         "Hediye kodu ekle"
+      ],
+      "View guide": [
+        "Rehberi görüntüle"
+      ],
+      "What is the difference between UDP and TCP protocols?": [
+        "UDP ve TCP protokolleri arasındaki fark nedir?"
       ],
       "Pay invoice": [
         "Faturayı öde"
@@ -4177,14 +4217,511 @@
         "Hesap oluşturun"
       ]
     },
-    "Select search results": {
-      "No results found": [
-        "Sonuç bulunamadı"
+    "Label to change composer mode": {
+      "Normal": [
+        "Normal"
+      ],
+      "Maximized": [
+        "Genişletilmiş"
       ]
     },
-    "Timezone search placeholder": {
-      "Search timezones": [
-        "Zaman dilimlerini ara"
+    "Label to change view layout": {
+      "Column": [
+        "Sütun"
+      ],
+      "Row": [
+        "Liste"
+      ]
+    },
+    "Label to change density": {
+      "Comfortable": [
+        "Rahat"
+      ],
+      "Compact": [
+        "Kompakt"
+      ]
+    },
+    "Success": {
+      "Preference saved": [
+        "Tercih kaydedildi"
+      ],
+      "Import resumed": [
+        "İçe aktarmaya devam et"
+      ],
+      "Import canceled": [
+        "İçe aktarma iptal edildi"
+      ],
+      "Import record deleted": [
+        "İçe aktarma kaydı silindi"
+      ],
+      "Deleting original messages": [
+        "İletilerin aslı siliniyor"
+      ],
+      "Locale updated": [
+        "Yerel ayar güncellendi"
+      ],
+      "Premium address created": [
+        "Premium hesap yaratın"
+      ],
+      "Keyboard shortcuts preferences updated": [
+        "Klavye kısayol tercihleri güncellendi"
+      ],
+      "Calendar added. It might take a few minutes to sync.": [
+        "Takvim eklendi. Eşlenmesi birkaç dakika sürebilir."
+      ],
+      "Calendar created": [
+        "Takvim oluşturuldu"
+      ],
+      "Calendar updated": [
+        "Takvim güncellendi"
+      ],
+      "Default calendar updated": [
+        "Varsayılan takvim güncellendi"
+      ],
+      "Calendar removed": [
+        "Takvim kaldırıldı"
+      ],
+      "Auto-reply disabled": [
+        "Otomatik yanıtlama etkinleştirildi"
+      ],
+      "Auto-reply updated": [
+        "Otomatik yanıtlama güncellendi"
+      ],
+      "Verification code copied to clipboard!": [
+        "Doğrulama kodu panoya kopyalandı!"
+      ],
+      "SPF value copied to clipboard!": [
+        "SPF değeri panoya kopyalandı!"
+      ],
+      "Value copied to clipboard!": [
+        "Değer panoya kopyalandı!"
+      ],
+      "DMARC value copied to clipboard!": [
+        "DMARC değeri panoya kopyalandı!"
+      ],
+      "Domain verified": [
+        "Etki alanı doğrulandı"
+      ],
+      "Catch-all address updated": [
+        "Tümünü yakalama adresi güncellendi"
+      ],
+      "Email address copied to clipboard": [
+        "E-posta adresi panoya kopyalandı"
+      ],
+      "Bug reported": [
+        "Hata bildirildi"
+      ],
+      "You have successfully unsubscribed": [
+        "Abonelikten başarıyla çıktınız"
+      ],
+      "Payment method updated": [
+        "Ödeme yöntemi güncellendi"
+      ],
+      "Payment method added": [
+        "Ödeme yöntemi eklendi"
+      ],
+      "Credits added": [
+        "Krediler eklendi"
+      ],
+      "Gift code applied": [
+        "Hediye kodu uygulandı"
+      ],
+      "${ server.Domain } copied in your clipboard": [
+        "${ server.Domain } panonuza kopyalandı"
+      ],
+      "Password updated": [
+        "Parola güncellendi"
+      ],
+      "Account deleted. Logging out...": [
+        "Hesap silindi. Çıkış yapılıyor..."
+      ],
+      "Email updated": [
+        "E-posta güncellendi"
+      ],
+      "Phone number updated": [
+        "Telefon numarası güncellendi"
+      ],
+      "Session revoked": [
+        "Oturum iptal edildi"
+      ],
+      "Sessions revoked": [
+        "Oturumlar iptal edildi"
+      ],
+      "Payment method deleted": [
+        "Ödeme yöntemi silindi"
+      ],
+      "Invoice paid": [
+        "Fatura ödendi"
+      ],
+      "Invoice customized": [
+        "Fatura özelleştirildi"
+      ],
+      "Organization activated": [
+        "Kuruluş etkinleştirildi"
+      ],
+      "Keys updated": [
+        "Anahtarlar güncellendi"
+      ],
+      "Address updated": [
+        "Adres güncellendi"
+      ],
+      "Address added": [
+        "Adres eklendi"
+      ],
+      "User updated": [
+        "Kullanıcı güncellendi"
+      ],
+      "User created": [
+        "Kullanıcı oluşturuldu"
+      ],
+      "Code sent to ${ methodTo }": [
+        "${ methodTo } kod gönderildi"
+      ],
+      "Verification successful": [
+        "Doğrulama başarılı"
+      ],
+      "If you entered a valid recovery email we will send you an email with your usernames in the next minute.": [
+        "Geçerli bir kurtarma e-postası girdiyseniz, bir dakika içinde kullanıcı adlarınızı içeren bir e-posta göndereceğiz."
+      ],
+      "If you entered a valid recovery phone we will send you an sms with your usernames in the next minute.": [
+        "Geçerli bir kurtarma telefon numarası girdiyseniz, bir dakika içinde kullanıcı adlarınızı içeren bir sms göndereceğiz."
+      ]
+    },
+    "Tooltip": {
+      "Set the default layout for your Inbox.": [
+        "Gelen Kutunuz için varsayılan düzeni ayarlayın."
+      ],
+      "Set the default Composer popup size as small or full screen.": [
+        "Varsayılan oluşturucu açılır pencere boyutunu küçük veya tam ekran olarak ayarlayın."
+      ],
+      "When you add a label to a message in a conversation, it will automatically be applied to all future messages you send or receive in that conversation.": [
+        "Bir ileti dizisindeki bir iletiye etiket eklediğinizde, bu ileti dizisinde gönderdiğiniz veya aldığınız gelecekteki tüm iletilere otomatik olarak uygulanır."
+      ],
+      "Group emails in the same conversation together in your Inbox or display them separately.": [
+        "Aynı konuşmadaki e-postaları gelen kutunuzda gruplayın veya ayrı ayrı görüntüleyin."
+      ],
+      "Customize import to reduce the number of labels": [
+        "Etiket sayısını azaltmak için içe aktarmayı özelleştirin"
+      ],
+      "Customize import to reduce the number of folders": [
+        "Klasör sayısını azaltmak için içe aktarmayı özelleştirin"
+      ],
+      "Edit label names": [
+        "Etiket adlarını düzenle"
+      ],
+      "Edit folder names": [
+        "Dosya adını düzenleyin"
+      ],
+      "System subfolders will show up as separate folders in ProtonMail": [
+        "Sistem alt klasörleri ProtonMail'de ayrı klasörler olarak görünecektir"
+      ],
+      "Each imported email will have this label": [
+        "Her içe aktarılan e-posta etiketlenecektir"
+      ],
+      "The import will start with the most recent messages.": [
+        "İçe aktarma en son iletilerle başlayacaktır."
+      ],
+      "Account is disconnected": [
+        "Hesap bağlantısı kesildi"
+      ],
+      "Your ProtonMail inbox is almost full": [
+        "ProtonMail gelen kutunuz neredeyse doldu"
+      ],
+      "Your external account may have reached its 24-hour bandwidth limit. Proton will try to resume the import as soon as possible.": [
+        "Harici hesabınız 24 saatlik bant genişliği sınırına ulaşmış olabilir. Proton, içe aktarmayı mümkün olan en kısa sürede sürdürmeye çalışacaktır."
+      ],
+      "You do not have any contacts to export": [
+        "Dışa aktarılacak kişiniz yok"
+      ],
+      "This feature is unavailable for the moment": [
+        "Bu özellik şu anda kullanılamıyor"
+      ],
+      "ProtonMail users will use this key by default for sending": [
+        "ProtonMail kullanıcıları, bu anahtarı gönderilmek üzere varsayılan olarak kullanacaktır"
+      ],
+      "You have locally decrypted this key": [
+        "Bu anahtarı yerel olarak çözdünüz"
+      ],
+      "This key is encrypted with an old password": [
+        "Bu anahtar eski bir parola ile şifrelenir"
+      ],
+      "Signatures produced by this key are treated as invalid and this key cannot be used for encryption": [
+        "Bu anahtar tarafından üretilen imzalar geçersiz olarak kabul edilir ve bu anahtar şifreleme için kullanılamaz"
+      ],
+      "This key cannot be used for encryption": [
+        "Bu anahtar şifreleme için kullanılamaz"
+      ],
+      "This address has been disabled": [
+        "Bu adres devre dışı bırakıldı"
+      ],
+      "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
+        "DNS yapılandırmanızdaki sorunlar nedeniyle DKIM imzalamayı durdurduk. İmzalamaya devam etmek için lütfen aşağıdaki talimatları izleyin."
+      ],
+      "Your DKIM signing is working.": [
+        "DKIM imzanız çalışıyor."
+      ],
+      "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
+        "DNS yapılandırmanızda bir sorun tespit ettik. Lütfen kayıtlarınızın aşağıdaki talimatlarla eşleştiğinden emin olun. Sorun devam ederse, DKIM imzalamayı kapatmamız gerekecek."
+      ],
+      "This feature is only available for paid users": [
+        "Bu özelliğe sadece ücretli kullanıcılar erişilebilir"
+      ],
+      "Enable/disable desktop and mobile notifications": [
+        "Masaüstü ve mobil bildirimleri etkinleştir/devre dışı bırak"
+      ],
+      "Use multiple addresses / aliases linked to your account, e.g. username2@protonmail.com": [
+        "Hesabınıza bağlı birden fazla adres / takma ad kullanın, örn. kullaniciadi2@protonmail.com"
+      ],
+      "Host emails for your own domain(s) at ProtonMail, e.g. john.smith@example.com": [
+        "Protonmail'de kendi alan adlarınız için e-postaları barındırın, örn. ali.yilmaz@ornek.com"
+      ],
+      "Use the personal address username@pm.me to send emails": [
+        "E-posta göndermek için kişisel adresiniz kullanıcı@pm.me'yi kullanma"
+      ],
+      "Multi-user support is only applicable to plans with 2 or more users": [
+        "Çok kullanıcı desteği yalnızca 2 veya daha fazla kullanıcılı planlar için geçerlidir"
+      ],
+      "NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "NetShield cihazınızı korur ve reklamları, izleyicileri ve kötü amaçlı yazılımları engelleyerek internette gezinmenizi hızlandırır."
+      ],
+      "Support for file sharing protocols such as BitTorrent.": [
+        "BitTorrent gibi dosya paylaşım protokolleri için destek."
+      ],
+      "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
+        "Nerede olursanız olun coğrafi olarak engellenen içeriğe (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube vb.) erişin."
+      ],
+      "Route your Internet traffic through the Tor network with a single click.": [
+        "Tek bir tıklama ile internet trafiğinizi Tor ağı üzerinden yönlendirin."
+      ],
+      "Defends against threats to VPN privacy by passing your Internet traffic through multiple servers.": [
+        "İnternet trafiğinizi birden fazla sunucudan geçirerek VPN gizliliğine yönelik tehditlere karşı savunur."
+      ],
+      "Get access to all the paid features for both ProtonVPN and ProtonMail (the encrypted email service that millions use to protect their data) with one plan.": [
+        "Hem ProtonVPN hem de ProtonMail (milyonlarca kişinin verilerini korumak için kullandığı şifreli e-posta hizmeti) için tüm ücretli özelliklere tek bir planla erişin."
+      ],
+      "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
+        "Hem ${ vpnAppName } hem de ${ mailAppName } (milyonlarca kişinin verilerini korumak için kullandığı şifreli e-posta hizmeti) için tüm ücretli özelliklere tek bir planla erişin."
+      ],
+      "Host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
+        "Kendi alan adlarınız için e-postaları ${ mailAppName } adresinde barındırın, ör. john.smith@ornek.com"
+      ],
+      "Create multiple email addresses linked to your account, e.g. username2@protonmail.com": [
+        "Hesabınıza bağlı birden fazla e-posta adresi oluşturun, örn. kullaniciadi2@protonmail.com"
+      ],
+      "Discount applied for annual billing cycle": [
+        "Yıllık faturalandırma döngüsü için uygulanan indirim"
+      ],
+      "Discount applied for two-year billing cycle": [
+        "İki yıllık faturalandırma döngüsü için uygulanan indirim"
+      ],
+      "If you purchased a gift code or received one from our support team, you can enter it here.": [
+        "Bir hediye kodu satın aldıysanız veya destek ekibimizden bir tane aldıysanız, buraya girebilirsiniz."
+      ],
+      "Enabling advanced logs records the IP address for each event in the security log.": [
+        "Gelişmiş günlükleri etkinleştirmek, güvenlik günlüğündeki her olay için IP adresini kaydeder."
+      ],
+      "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
+        "Gönderilmiş veya Taslaklar klasöründeki mesajlar, başka bir klasöre taşısanız bile o klasörde görünmeye devam edecektir."
+      ],
+      "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
+        "Bir bağlantıya tıkladığınızda, bu kimlik avını önleme özelliği sizden web sayfasının URL'sini onaylamanızı isteyecektir."
+      ],
+      "This feature delays sending your emails, giving you the opportunity to undo send during the selected time frame.": [
+        "Bu özellik, e-postalarınızı göndermeyi geciktirerek size seçilen zaman aralığında göndermeyi geri alma fırsatı verir."
+      ]
+    },
+    "Option": {
+      "Normal": [
+        "Normal"
+      ],
+      "Plain text": [
+        "Düz metin"
+      ],
+      "Left to Right": [
+        "Soldan sağa"
+      ],
+      "Right to Left": [
+        "Sağdan sola"
+      ],
+      "Automatic (${ defaultFormat })": [
+        "Otomatik (${ defaultFormat })"
+      ],
+      "Automatic (${ defaultDay })": [
+        "Otomatik (${ defaultDay })"
+      ],
+      "Add to existing group": [
+        "Mevcut gruba ekle"
+      ],
+      "Create new group": [
+        "Yeni grup oluştur"
+      ],
+      "Ignore group": [
+        "Grubu yoksay"
+      ],
+      "Fixed duration": [
+        "Sabit süre"
+      ],
+      "Repeat daily": [
+        "Günlük tekrarla"
+      ],
+      "Repeat weekly": [
+        "Haftalık tekrarla"
+      ],
+      "Repeat monthly": [
+        "Aylık tekrarla"
+      ],
+      "Permanent": [
+        "Kalıcı"
+      ],
+      "1st of the month": [
+        "Ayın 1'i"
+      ],
+      "2nd of the month": [
+        "Ayın 2'si"
+      ],
+      "3rd of the month": [
+        "Ayın 3'ü"
+      ],
+      "4th of the month": [
+        "Ayın 4'ü"
+      ],
+      "5th of the month": [
+        "Ayın 5'i"
+      ],
+      "6th of the month": [
+        "Ayın 6'sı"
+      ],
+      "7th of the month": [
+        "Ayın 7'si"
+      ],
+      "8th of the month": [
+        "Ayın 8'i"
+      ],
+      "9th of the month": [
+        "Ayın 9'u"
+      ],
+      "10th of the month": [
+        "Ayın 10'u"
+      ],
+      "11th of the month": [
+        "Ayın 11'i"
+      ],
+      "12th of the month": [
+        "Ayın 12'si"
+      ],
+      "13th of the month": [
+        "Ayın 13'ü"
+      ],
+      "14th of the month": [
+        "Ayın 14'ü"
+      ],
+      "15th of the month": [
+        "Ayın 15'i"
+      ],
+      "16th of the month": [
+        "Ayın 16'sı"
+      ],
+      "17th of the month": [
+        "Ayın 17'si"
+      ],
+      "18th of the month": [
+        "Ayın 18'i"
+      ],
+      "19th of the month": [
+        "Ayın 19'u"
+      ],
+      "20th of the month": [
+        "Ayın 20'si"
+      ],
+      "21st of the month": [
+        "Ayın 21'i"
+      ],
+      "22nd of the month": [
+        "Ayın 22'si"
+      ],
+      "23rd of the month": [
+        "Ayın 23'ü"
+      ],
+      "24th of the month": [
+        "Ayın 24'ü"
+      ],
+      "25th of the month": [
+        "Ayın 25'i"
+      ],
+      "26th of the month": [
+        "Ayın 26'sı"
+      ],
+      "27th of the month": [
+        "Ayın 27'si"
+      ],
+      "28th of the month": [
+        "Ayın 28'i"
+      ],
+      "29th of the month": [
+        "Ayın 29'u"
+      ],
+      "30th of the month": [
+        "Ayın 30'u"
+      ],
+      "31st of the month": [
+        "Ayın 31'i"
+      ],
+      "No parent folder": [
+        "Ana klasör yok"
+      ],
+      "Android": [
+        "Android"
+      ],
+      "iOS": [
+        "iOS"
+      ],
+      "Windows": [
+        "Windows"
+      ],
+      "macOS": [
+        "macOS"
+      ],
+      "GNU/Linux": [
+        "GNU/Linux"
+      ],
+      "Router": [
+        "Yönlendirici"
+      ],
+      "UDP": [
+        "UDP"
+      ],
+      "TCP": [
+        "TCP"
+      ],
+      "Secure Core configs": [
+        "Secure Core yapılandırmaları"
+      ],
+      "Country configs": [
+        "Ülke yapılandırmaları"
+      ],
+      "Standard server configs": [
+        "Standart sunucu yapılandırmaları"
+      ],
+      "Free server configs": [
+        "Ücretsiz sunucu yapılandırmaları"
+      ],
+      "Select a reason": [
+        "Bir sebep seçin"
+      ],
+      "I use a different Proton account": [
+        "Farklı bir Proton hesabı kullanıyorum"
+      ],
+      "It's too expensive": [
+        "Çok pahalı"
+      ],
+      "It's missing a key feature that I need": [
+        "İhtiyacım olan önemli bir özelliği eksik"
+      ],
+      "I found another service that I like better": [
+        "Daha çok beğendiğim başka bir hizmet buldum"
+      ],
+      "My reason isn't listed": [
+        "Nedenim listede yok"
       ]
     },
     "Loading info": {
@@ -4290,14 +4827,14 @@
       "Are you sure you want to delete the phone number?": [
         "Telefon numarasını silmek istediğinizden emin misiniz?"
       ],
+      "By disabling the logs, you will also clear your entire logs history. Are you sure you want to disable the logs?": [
+        "Günlükleri devre dışı bırakarak, tüm günlük geçmişinizi de temizleyeceksiniz. Günlükleri devre dışı bırakmak istediğinizden emin misiniz?"
+      ],
       "By disabling this address, you will no longer be able to send or receive emails using this address and all the linked Proton products will also be disabled. Are you sure you want to disable this address?": [
         "Bu adresi devre dışı bıraktığınızda, artık bu adresi kullanarak e-posta gönderemez veya alamazsınız ve tüm bağlantılı Proton ürünleri de devre dışı bırakılır. Bu adresi devre dışı bırakmak istediğinizden emin misiniz?"
       ],
       "You must ${ activateLink } organization keys before adding an email address to a non-private member.": [
         "Özel olmayan bir üyeye bir e-posta adresi eklemeden önce ${ activateLink } kuruluş anahtarına sahip olmanız gerekir."
-      ],
-      "By disabling the logs, you will also clear your entire logs history. Are you sure you want to disable the logs?": [
-        "Günlükleri devre dışı bırakarak, tüm günlük geçmişinizi de temizleyeceksiniz. Günlükleri devre dışı bırakmak istediğinizden emin misiniz?"
       ]
     },
     "Import instructions emphasis": {
@@ -4502,149 +5039,6 @@
         "CAPTCHA"
       ]
     },
-    "Tooltip": {
-      "Customize import to reduce the number of labels": [
-        "Etiket sayısını azaltmak için içe aktarmayı özelleştirin"
-      ],
-      "Customize import to reduce the number of folders": [
-        "Klasör sayısını azaltmak için içe aktarmayı özelleştirin"
-      ],
-      "Edit label names": [
-        "Etiket adlarını düzenle"
-      ],
-      "Edit folder names": [
-        "Dosya adını düzenleyin"
-      ],
-      "System subfolders will show up as separate folders in ProtonMail": [
-        "Sistem alt klasörleri ProtonMail'de ayrı klasörler olarak görünecektir"
-      ],
-      "Each imported email will have this label": [
-        "Her içe aktarılan e-posta etiketlenecektir"
-      ],
-      "The import will start with the most recent messages.": [
-        "İçe aktarma en son iletilerle başlayacaktır."
-      ],
-      "Account is disconnected": [
-        "Hesap bağlantısı kesildi"
-      ],
-      "Your ProtonMail inbox is almost full": [
-        "ProtonMail gelen kutunuz neredeyse doldu"
-      ],
-      "Your external account may have reached its 24-hour bandwidth limit. Proton will try to resume the import as soon as possible.": [
-        "Harici hesabınız 24 saatlik bant genişliği sınırına ulaşmış olabilir. Proton, içe aktarmayı mümkün olan en kısa sürede sürdürmeye çalışacaktır."
-      ],
-      "You do not have any contacts to export": [
-        "Dışa aktarılacak kişiniz yok"
-      ],
-      "Set the default layout for your Inbox.": [
-        "Gelen Kutunuz için varsayılan düzeni ayarlayın."
-      ],
-      "Set the default Composer popup size as small or full screen.": [
-        "Varsayılan oluşturucu açılır pencere boyutunu küçük veya tam ekran olarak ayarlayın."
-      ],
-      "When you add a label to a message in a conversation, it will automatically be applied to all future messages you send or receive in that conversation.": [
-        "Bir ileti dizisindeki bir iletiye etiket eklediğinizde, bu ileti dizisinde gönderdiğiniz veya aldığınız gelecekteki tüm iletilere otomatik olarak uygulanır."
-      ],
-      "Group emails in the same conversation together in your Inbox or display them separately.": [
-        "Aynı konuşmadaki e-postaları gelen kutunuzda gruplayın veya ayrı ayrı görüntüleyin."
-      ],
-      "This feature is unavailable for the moment": [
-        "Bu özellik şu anda kullanılamıyor"
-      ],
-      "ProtonMail users will use this key by default for sending": [
-        "ProtonMail kullanıcıları, bu anahtarı gönderilmek üzere varsayılan olarak kullanacaktır"
-      ],
-      "You have locally decrypted this key": [
-        "Bu anahtarı yerel olarak çözdünüz"
-      ],
-      "This key is encrypted with an old password": [
-        "Bu anahtar eski bir parola ile şifrelenir"
-      ],
-      "Signatures produced by this key are treated as invalid and this key cannot be used for encryption": [
-        "Bu anahtar tarafından üretilen imzalar geçersiz olarak kabul edilir ve bu anahtar şifreleme için kullanılamaz"
-      ],
-      "This key cannot be used for encryption": [
-        "Bu anahtar şifreleme için kullanılamaz"
-      ],
-      "This address has been disabled": [
-        "Bu adres devre dışı bırakıldı"
-      ],
-      "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
-        "DNS yapılandırmanızdaki sorunlar nedeniyle DKIM imzalamayı durdurduk. İmzalamaya devam etmek için lütfen aşağıdaki talimatları izleyin."
-      ],
-      "Your DKIM signing is working.": [
-        "DKIM imzanız çalışıyor."
-      ],
-      "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
-        "DNS yapılandırmanızda bir sorun tespit ettik. Lütfen kayıtlarınızın aşağıdaki talimatlarla eşleştiğinden emin olun. Sorun devam ederse, DKIM imzalamayı kapatmamız gerekecek."
-      ],
-      "This feature is only available for paid users": [
-        "Bu özelliğe sadece ücretli kullanıcılar erişilebilir"
-      ],
-      "Enable/disable desktop and mobile notifications": [
-        "Masaüstü ve mobil bildirimleri etkinleştir/devre dışı bırak"
-      ],
-      "Use multiple addresses / aliases linked to your account, e.g. username2@protonmail.com": [
-        "Hesabınıza bağlı birden fazla adres / takma ad kullanın, örn. kullaniciadi2@protonmail.com"
-      ],
-      "Host emails for your own domain(s) at ProtonMail, e.g. john.smith@example.com": [
-        "Protonmail'de kendi alan adlarınız için e-postaları barındırın, örn. ali.yilmaz@ornek.com"
-      ],
-      "Use the personal address username@pm.me to send emails": [
-        "E-posta göndermek için kişisel adresiniz kullanıcı@pm.me'yi kullanma"
-      ],
-      "Multi-user support is only applicable to plans with 2 or more users": [
-        "Çok kullanıcı desteği yalnızca 2 veya daha fazla kullanıcılı planlar için geçerlidir"
-      ],
-      "NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "NetShield cihazınızı korur ve reklamları, izleyicileri ve kötü amaçlı yazılımları engelleyerek internette gezinmenizi hızlandırır."
-      ],
-      "Support for file sharing protocols such as BitTorrent.": [
-        "BitTorrent gibi dosya paylaşım protokolleri için destek."
-      ],
-      "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
-        "Nerede olursanız olun coğrafi olarak engellenen içeriğe (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube vb.) erişin."
-      ],
-      "Route your Internet traffic through the Tor network with a single click.": [
-        "Tek bir tıklama ile internet trafiğinizi Tor ağı üzerinden yönlendirin."
-      ],
-      "Defends against threats to VPN privacy by passing your Internet traffic through multiple servers.": [
-        "İnternet trafiğinizi birden fazla sunucudan geçirerek VPN gizliliğine yönelik tehditlere karşı savunur."
-      ],
-      "Get access to all the paid features for both ProtonVPN and ProtonMail (the encrypted email service that millions use to protect their data) with one plan.": [
-        "Hem ProtonVPN hem de ProtonMail (milyonlarca kişinin verilerini korumak için kullandığı şifreli e-posta hizmeti) için tüm ücretli özelliklere tek bir planla erişin."
-      ],
-      "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
-        "Hem ${ vpnAppName } hem de ${ mailAppName } (milyonlarca kişinin verilerini korumak için kullandığı şifreli e-posta hizmeti) için tüm ücretli özelliklere tek bir planla erişin."
-      ],
-      "Host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
-        "Kendi alan adlarınız için e-postaları ${ mailAppName } adresinde barındırın, ör. john.smith@ornek.com"
-      ],
-      "Create multiple email addresses linked to your account, e.g. username2@protonmail.com": [
-        "Hesabınıza bağlı birden fazla e-posta adresi oluşturun, örn. kullaniciadi2@protonmail.com"
-      ],
-      "Discount applied for annual billing cycle": [
-        "Yıllık faturalandırma döngüsü için uygulanan indirim"
-      ],
-      "Discount applied for two-year billing cycle": [
-        "İki yıllık faturalandırma döngüsü için uygulanan indirim"
-      ],
-      "If you purchased a gift code or received one from our support team, you can enter it here.": [
-        "Bir hediye kodu satın aldıysanız veya destek ekibimizden bir tane aldıysanız, buraya girebilirsiniz."
-      ],
-      "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
-        "Gönderilmiş veya Taslaklar klasöründeki mesajlar, başka bir klasöre taşısanız bile o klasörde görünmeye devam edecektir."
-      ],
-      "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
-        "Bir bağlantıya tıkladığınızda, bu kimlik avını önleme özelliği sizden web sayfasının URL'sini onaylamanızı isteyecektir."
-      ],
-      "This feature delays sending your emails, giving you the opportunity to undo send during the selected time frame.": [
-        "Bu özellik, e-postalarınızı göndermeyi geciktirerek size seçilen zaman aralığında göndermeyi geri alma fırsatı verir."
-      ],
-      "Enabling advanced logs records the IP address for each event in the security log.": [
-        "Gelişmiş günlükleri etkinleştirmek, güvenlik günlüğündeki her olay için IP adresini kaydeder."
-      ]
-    },
     "Security phrase": {
       "Permanently delete messages in ${ email }": [
         "${ email } adresindeki tüm iletileri kalıcı olarak sil"
@@ -4684,152 +5078,6 @@
         "Gecikme"
       ]
     },
-    "Success": {
-      "Import resumed": [
-        "İçe aktarmaya devam et"
-      ],
-      "Import canceled": [
-        "İçe aktarma iptal edildi"
-      ],
-      "Import record deleted": [
-        "İçe aktarma kaydı silindi"
-      ],
-      "Deleting original messages": [
-        "İletilerin aslı siliniyor"
-      ],
-      "Preference saved": [
-        "Tercih kaydedildi"
-      ],
-      "Premium address created": [
-        "Premium hesap yaratın"
-      ],
-      "Keyboard shortcuts preferences updated": [
-        "Klavye kısayol tercihleri güncellendi"
-      ],
-      "Locale updated": [
-        "Yerel ayar güncellendi"
-      ],
-      "${ server.Domain } copied in your clipboard": [
-        "${ server.Domain } panonuza kopyalandı"
-      ],
-      "Auto-reply disabled": [
-        "Otomatik yanıtlama etkinleştirildi"
-      ],
-      "Auto-reply updated": [
-        "Otomatik yanıtlama güncellendi"
-      ],
-      "Calendar added. It might take a few minutes to sync.": [
-        "Takvim eklendi. Eşlenmesi birkaç dakika sürebilir."
-      ],
-      "Calendar created": [
-        "Takvim oluşturuldu"
-      ],
-      "Calendar updated": [
-        "Takvim güncellendi"
-      ],
-      "Default calendar updated": [
-        "Varsayılan takvim güncellendi"
-      ],
-      "Calendar removed": [
-        "Takvim kaldırıldı"
-      ],
-      "Verification code copied to clipboard!": [
-        "Doğrulama kodu panoya kopyalandı!"
-      ],
-      "SPF value copied to clipboard!": [
-        "SPF değeri panoya kopyalandı!"
-      ],
-      "Value copied to clipboard!": [
-        "Değer panoya kopyalandı!"
-      ],
-      "DMARC value copied to clipboard!": [
-        "DMARC değeri panoya kopyalandı!"
-      ],
-      "Domain verified": [
-        "Etki alanı doğrulandı"
-      ],
-      "Catch-all address updated": [
-        "Tümünü yakalama adresi güncellendi"
-      ],
-      "Email address copied to clipboard": [
-        "E-posta adresi panoya kopyalandı"
-      ],
-      "Bug reported": [
-        "Hata bildirildi"
-      ],
-      "You have successfully unsubscribed": [
-        "Abonelikten başarıyla çıktınız"
-      ],
-      "Payment method updated": [
-        "Ödeme yöntemi güncellendi"
-      ],
-      "Payment method added": [
-        "Ödeme yöntemi eklendi"
-      ],
-      "Credits added": [
-        "Krediler eklendi"
-      ],
-      "Gift code applied": [
-        "Hediye kodu uygulandı"
-      ],
-      "Password updated": [
-        "Parola güncellendi"
-      ],
-      "Account deleted. Logging out...": [
-        "Hesap silindi. Çıkış yapılıyor..."
-      ],
-      "Email updated": [
-        "E-posta güncellendi"
-      ],
-      "Phone number updated": [
-        "Telefon numarası güncellendi"
-      ],
-      "Address updated": [
-        "Adres güncellendi"
-      ],
-      "Address added": [
-        "Adres eklendi"
-      ],
-      "Session revoked": [
-        "Oturum iptal edildi"
-      ],
-      "Sessions revoked": [
-        "Oturumlar iptal edildi"
-      ],
-      "Payment method deleted": [
-        "Ödeme yöntemi silindi"
-      ],
-      "Invoice paid": [
-        "Fatura ödendi"
-      ],
-      "Invoice customized": [
-        "Fatura özelleştirildi"
-      ],
-      "Organization activated": [
-        "Kuruluş etkinleştirildi"
-      ],
-      "Keys updated": [
-        "Anahtarlar güncellendi"
-      ],
-      "User updated": [
-        "Kullanıcı güncellendi"
-      ],
-      "User created": [
-        "Kullanıcı oluşturuldu"
-      ],
-      "Code sent to ${ methodTo }": [
-        "${ methodTo } kod gönderildi"
-      ],
-      "Verification successful": [
-        "Doğrulama başarılı"
-      ],
-      "If you entered a valid recovery email we will send you an email with your usernames in the next minute.": [
-        "Geçerli bir kurtarma e-postası girdiyseniz, bir dakika içinde kullanıcı adlarınızı içeren bir e-posta göndereceğiz."
-      ],
-      "If you entered a valid recovery phone we will send you an sms with your usernames in the next minute.": [
-        "Geçerli bir kurtarma telefon numarası girdiyseniz, bir dakika içinde kullanıcı adlarınızı içeren bir sms göndereceğiz."
-      ]
-    },
     "Title header": {
       "Import": [
         "İçe aktar"
@@ -4850,230 +5098,6 @@
     "Import error link": {
       "bandwidth limit": [
         "bant genişliği sınırı"
-      ]
-    },
-    "Option": {
-      "Automatic (${ defaultFormat })": [
-        "Otomatik (${ defaultFormat })"
-      ],
-      "Automatic (${ defaultDay })": [
-        "Otomatik (${ defaultDay })"
-      ],
-      "Add to existing group": [
-        "Mevcut gruba ekle"
-      ],
-      "Create new group": [
-        "Yeni grup oluştur"
-      ],
-      "Ignore group": [
-        "Grubu yoksay"
-      ],
-      "Normal": [
-        "Normal"
-      ],
-      "Plain text": [
-        "Düz metin"
-      ],
-      "Left to Right": [
-        "Soldan sağa"
-      ],
-      "Right to Left": [
-        "Sağdan sola"
-      ],
-      "Android": [
-        "Android"
-      ],
-      "iOS": [
-        "iOS"
-      ],
-      "Windows": [
-        "Windows"
-      ],
-      "macOS": [
-        "macOS"
-      ],
-      "GNU/Linux": [
-        "GNU/Linux"
-      ],
-      "Router": [
-        "Yönlendirici"
-      ],
-      "UDP": [
-        "UDP"
-      ],
-      "TCP": [
-        "TCP"
-      ],
-      "Secure Core configs": [
-        "Secure Core yapılandırmaları"
-      ],
-      "Country configs": [
-        "Ülke yapılandırmaları"
-      ],
-      "Standard server configs": [
-        "Standart sunucu yapılandırmaları"
-      ],
-      "Free server configs": [
-        "Ücretsiz sunucu yapılandırmaları"
-      ],
-      "Fixed duration": [
-        "Sabit süre"
-      ],
-      "Repeat daily": [
-        "Günlük tekrarla"
-      ],
-      "Repeat weekly": [
-        "Haftalık tekrarla"
-      ],
-      "Repeat monthly": [
-        "Aylık tekrarla"
-      ],
-      "Permanent": [
-        "Kalıcı"
-      ],
-      "1st of the month": [
-        "Ayın 1'i"
-      ],
-      "2nd of the month": [
-        "Ayın 2'si"
-      ],
-      "3rd of the month": [
-        "Ayın 3'ü"
-      ],
-      "4th of the month": [
-        "Ayın 4'ü"
-      ],
-      "5th of the month": [
-        "Ayın 5'i"
-      ],
-      "6th of the month": [
-        "Ayın 6'sı"
-      ],
-      "7th of the month": [
-        "Ayın 7'si"
-      ],
-      "8th of the month": [
-        "Ayın 8'i"
-      ],
-      "9th of the month": [
-        "Ayın 9'u"
-      ],
-      "10th of the month": [
-        "Ayın 10'u"
-      ],
-      "11th of the month": [
-        "Ayın 11'i"
-      ],
-      "12th of the month": [
-        "Ayın 12'si"
-      ],
-      "13th of the month": [
-        "Ayın 13'ü"
-      ],
-      "14th of the month": [
-        "Ayın 14'ü"
-      ],
-      "15th of the month": [
-        "Ayın 15'i"
-      ],
-      "16th of the month": [
-        "Ayın 16'sı"
-      ],
-      "17th of the month": [
-        "Ayın 17'si"
-      ],
-      "18th of the month": [
-        "Ayın 18'i"
-      ],
-      "19th of the month": [
-        "Ayın 19'u"
-      ],
-      "20th of the month": [
-        "Ayın 20'si"
-      ],
-      "21st of the month": [
-        "Ayın 21'i"
-      ],
-      "22nd of the month": [
-        "Ayın 22'si"
-      ],
-      "23rd of the month": [
-        "Ayın 23'ü"
-      ],
-      "24th of the month": [
-        "Ayın 24'ü"
-      ],
-      "25th of the month": [
-        "Ayın 25'i"
-      ],
-      "26th of the month": [
-        "Ayın 26'sı"
-      ],
-      "27th of the month": [
-        "Ayın 27'si"
-      ],
-      "28th of the month": [
-        "Ayın 28'i"
-      ],
-      "29th of the month": [
-        "Ayın 29'u"
-      ],
-      "30th of the month": [
-        "Ayın 30'u"
-      ],
-      "31st of the month": [
-        "Ayın 31'i"
-      ],
-      "${ stateOfTheArt } X25519 (Fastest, most modern)": [
-        "${ stateOfTheArt } X25519 (En hızlısı, en modern)"
-      ],
-      "${ highestSecurity } RSA 4096-bit (Slower, but increased compatibility with legacy software)": [
-        "${ highestSecurity } RSA 4096-bit (Yavaş ama eski yazılımlarla uyumluluğu yüksek)"
-      ],
-      "No parent folder": [
-        "Ana klasör yok"
-      ],
-      "Select a reason": [
-        "Bir sebep seçin"
-      ],
-      "It’s temporary, I’ll be back": [
-        "Geçici bir durum, tekrar döneceğim"
-      ],
-      "I didn’t understand what I was signing up for": [
-        "Ne için kayıt olduğum hakkında bir bilgim yok"
-      ],
-      "It’s too expensive": [
-        "Aşırı pahalı"
-      ],
-      "I’m unhappy with customer service": [
-        "Müşteri hizmetlerinden memnun değilim"
-      ],
-      "Using Proton is too complicated": [
-        "Proton'un kullanımı çok karmaşık"
-      ],
-      "I'm switching to a different service": [
-        "Farklı bir hizmete geçiş yapıyorum"
-      ],
-      "The quality didn't live up to my expectations": [
-        "Ürün kalitesi beklentilerimi karşılamadı"
-      ],
-      "Other": [
-        "Diğer"
-      ],
-      "I use a different Proton account": [
-        "Farklı bir Proton hesabı kullanıyorum"
-      ],
-      "It's too expensive": [
-        "Çok pahalı"
-      ],
-      "It's missing a key feature that I need": [
-        "İhtiyacım olan önemli bir özelliği eksik"
-      ],
-      "I found another service that I like better": [
-        "Daha çok beğendiğim başka bir hizmet buldum"
-      ],
-      "My reason isn't listed": [
-        "Nedenim listede yok"
       ]
     },
     "Day": {
@@ -5303,123 +5327,6 @@
       "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
         "${ totalImported }/${ totalToImport } kişi şifrelendi ve kişi listenize eklendi",
         "${ totalImported }/${ totalToImport } kişi şifrelendi ve kişi listenize eklendi"
-      ]
-    },
-    "Label to change composer mode": {
-      "Normal": [
-        "Normal"
-      ],
-      "Maximized": [
-        "Genişletilmiş"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "Sütun"
-      ],
-      "Row": [
-        "Liste"
-      ]
-    },
-    "Label to change density": {
-      "Comfortable": [
-        "Rahat"
-      ],
-      "Compact": [
-        "Kompakt"
-      ]
-    },
-    "VPNClient": {
-      "Android": [
-        "Android"
-      ],
-      "iOS": [
-        "iOS"
-      ],
-      "Windows": [
-        "Windows"
-      ],
-      "macOS": [
-        "macOS"
-      ],
-      "GNU/Linux": [
-        "GNU/Linux"
-      ],
-      "Chromebook": [
-        "Chromebook"
-      ],
-      "Android TV": [
-        "Android TV"
-      ]
-    },
-    "Notification": {
-      "OpenVPN / IKEv2 credentials regenerated": [
-        "OpenVPN / IKEv2 Kimlik bilgileri güncellendi"
-      ],
-      "${ _Filter.Name } created": [
-        "${ _Filter.Name } oluşturuldu"
-      ],
-      "A disabled address cannot be primary": [
-        "Devre dışı bırakılmış bir adres birincil olamaz"
-      ]
-    },
-    "CountryInfo": {
-      "(via ${ entryCountryName })": [
-        "(${ entryCountryName } üzerinden)"
-      ]
-    },
-    "Feature": {
-      "Access to all countries": [
-        "Tüm ülkelere erişim"
-      ],
-      "Secure Core servers": [
-        "Secure Core sunucuları"
-      ],
-      "Fastest VPN servers": [
-        "En hızlı VPN sunucuları"
-      ],
-      "Torrenting support (P2P)": [
-        "Torrent desteği (P2P)"
-      ],
-      "Connection for up to ${ plusVpnConnections } device": [
-        "${ plusVpnConnections } cihaza kadar bağlantı",
-        "${ plusVpnConnections } cihaza kadar bağlantı"
-      ],
-      "Secure streaming support": [
-        "Güvenli medya akışı desteği"
-      ],
-      "VPN ${ connectionsPluralized }": [
-        "VPN ${ connectionsPluralized }"
-      ]
-    },
-    "VPN info": {
-      "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, and more.": [
-        "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now ve daha fazlası."
-      ]
-    },
-    "Autoresponse": {
-      "I'm out of the office with limited access to my email.": [
-        "Ofis dışındayım ve e-postama erişimim kısıtlı."
-      ]
-    },
-    "Tooltip prompt to trust keys": {
-      "When receiving an email from another ProtonMail user who does not have trusted keys in your contacts, a banner will ask if you want to enable trusted keys.": [
-        "Kişilerinizde güvenilir anahtarlara sahip olmayan başka bir ProtonMail kullanıcısından bir e-posta alırken, güvenilir anahtarları etkinleştirmek isteyip istemediğiniz sorulacaktır."
-      ]
-    },
-    "Tooltip sign external messages": {
-      "Automatically sign all your outgoing messages so users can verify the authenticity of your messages. This is done in combination with the default PGP settings which can be configured below.": [
-        "Tüm giden iletilerinizi otomatik olarak imzalayın, böylece kullanıcılar mesajlarınızın orijinalliğini doğrulayabilir. Bu, aşağıda yapılandırılabilen varsayılan PGP ayarları ile birlikte yapılır."
-      ]
-    },
-    "Tooltip automatically attach public key": {
-      "This automatically adds your public key to each message you send. Recipients can use this to verify the authenticity of your messages and send encrypted messages to you.": [
-        "Bu, gönderdiğiniz her iletiye otomatik olarak genel anahtarınızı ekler. Alıcılar bunu, iletilerinizin doğruluğunu doğrulamak ve şifreli iletileri size göndermek için kullanabilir."
-      ]
-    },
-    "Tooltip default pgp scheme": {
-      "Select the default PGP settings used to sign or encrypt messages with non-ProtonMail PGP users. Note that Inline PGP forces plain text messages. Learn more": [
-        "ProtonMail olmayan PGP kullanıcılarıyla iletileri imzalamak veya şifrelemek için kullanılan varsayılan PGP ayarlarını seçin. Satır içi PGP'nin düz metin iletileri gerektirdiğini unutmayın. Daha fazlasını öğrenin"
       ]
     },
     "Duration": {
@@ -5925,12 +5832,45 @@
         "Adresiniz için şifreleme anahtarları üretiliyor. Bu birkaç dakika sürebilir ve tarayıcınızı geçici olarak dondurur."
       ]
     },
-    "encryption": {
+    "Remark about a key type option": {
       "State of the art": [
-        "Teknoloji harikası"
+        ""
       ],
       "Compatibility": [
-        "Uyumluluk"
+        ""
+      ]
+    },
+    "Key type option": {
+      "${ stateOfTheArt } ECC Curve25519 (Fastest, most modern)": [
+        ""
+      ],
+      "${ compatibility } RSA 4096-bit (Slower, but increased compatibility with legacy software)": [
+        ""
+      ]
+    },
+    "Autoresponse": {
+      "I'm out of the office with limited access to my email.": [
+        "Ofis dışındayım ve e-postama erişimim kısıtlı."
+      ]
+    },
+    "Tooltip prompt to trust keys": {
+      "When receiving an email from another ProtonMail user who does not have trusted keys in your contacts, a banner will ask if you want to enable trusted keys.": [
+        "Kişilerinizde güvenilir anahtarlara sahip olmayan başka bir ProtonMail kullanıcısından bir e-posta alırken, güvenilir anahtarları etkinleştirmek isteyip istemediğiniz sorulacaktır."
+      ]
+    },
+    "Tooltip sign external messages": {
+      "Automatically sign all your outgoing messages so users can verify the authenticity of your messages. This is done in combination with the default PGP settings which can be configured below.": [
+        "Tüm giden iletilerinizi otomatik olarak imzalayın, böylece kullanıcılar mesajlarınızın orijinalliğini doğrulayabilir. Bu, aşağıda yapılandırılabilen varsayılan PGP ayarları ile birlikte yapılır."
+      ]
+    },
+    "Tooltip automatically attach public key": {
+      "This automatically adds your public key to each message you send. Recipients can use this to verify the authenticity of your messages and send encrypted messages to you.": [
+        "Bu, gönderdiğiniz her iletiye otomatik olarak genel anahtarınızı ekler. Alıcılar bunu, iletilerinizin doğruluğunu doğrulamak ve şifreli iletileri size göndermek için kullanabilir."
+      ]
+    },
+    "Tooltip default pgp scheme": {
+      "Select the default PGP settings used to sign or encrypt messages with non-ProtonMail PGP users. Note that Inline PGP forces plain text messages. Learn more": [
+        "ProtonMail olmayan PGP kullanıcılarıyla iletileri imzalamak veya şifrelemek için kullanılan varsayılan PGP ayarlarını seçin. Satır içi PGP'nin düz metin iletileri gerektirdiğini unutmayın. Daha fazlasını öğrenin"
       ]
     },
     "Label for adding a new custom domain": {
@@ -6069,38 +6009,6 @@
         "İki adımlı kimlik doğrulamayı devre dışı bırakmak istediğinizden emin misiniz?"
       ]
     },
-    "Onboarding Proton": {
-      "This is what people will see when you send them an email, invite them to an event, or share a file with them.": [
-        "Bu, insanlara eposta, davetiye linki gönderdiğinizde veya bir doya paylaştığınızda kişilerin göreceği bir şeydir."
-      ],
-      "Choose a display name": [
-        "Görünen adınızı seçin"
-      ],
-      "Select a theme": [
-        "Tema seçin"
-      ],
-      "You can change this anytime in your settings.": [
-        "Bunu istediğiniz zaman ayarlarınızdan değiştirebilirsiniz."
-      ],
-      "Discover all Proton services": [
-        "Proton hizmetlerinin tümünü keşfedin"
-      ],
-      "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
-        "VPN, Calendar ve Drive gibi diğer Proton hizmetlerine erişmek için sol üstteki uygulama seçiciyi kullanın."
-      ],
-      "Welcome to Proton": [
-        "Proton'a Hoş Geldin"
-      ],
-      "Our mission is to build an internet where you are in control of your data and your privacy. We have recently updated Proton - welcome to the secure internet.": [
-        "Görevimiz, verilerinizi ve gizliliğinizi kontrol ettiğiniz bir internet oluşturmaktır. Son zamanlarda Proton'u güncelledik, güvenli internete hoş geldiniz."
-      ],
-      "Set up your organization": [
-        "Kuruluşunuzu ayarlama"
-      ],
-      "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
-        "Kuruluşunuzun tüm üyelerinin korunduğundan emin olmak için kuruluşunuzu yapılandırın, etki alanı adınızı bağlayın ve hesaplar oluşturun."
-      ]
-    },
     "Step in filter modal": {
       "Name": [
         "İsim"
@@ -6135,6 +6043,17 @@
       ],
       "starred": [
         "yıldızlı"
+      ]
+    },
+    "Notification": {
+      "${ _Filter.Name } created": [
+        "${ _Filter.Name } oluşturuldu"
+      ],
+      "OpenVPN / IKEv2 credentials regenerated": [
+        "OpenVPN / IKEv2 Kimlik bilgileri güncellendi"
+      ],
+      "A disabled address cannot be primary": [
+        "Devre dışı bırakılmış bir adres birincil olamaz"
       ]
     },
     "Filter notification": {
@@ -6307,6 +6226,102 @@
         "${ Email } kaldırıldı"
       ]
     },
+    "Onboarding Proton": {
+      "This is what people will see when you send them an email, invite them to an event, or share a file with them.": [
+        "Bu, insanlara eposta, davetiye linki gönderdiğinizde veya bir doya paylaştığınızda kişilerin göreceği bir şeydir."
+      ],
+      "Choose a display name": [
+        "Görünen adınızı seçin"
+      ],
+      "Select a theme": [
+        "Tema seçin"
+      ],
+      "You can change this anytime in your settings.": [
+        "Bunu istediğiniz zaman ayarlarınızdan değiştirebilirsiniz."
+      ],
+      "Discover all Proton services": [
+        "Proton hizmetlerinin tümünü keşfedin"
+      ],
+      "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
+        "VPN, Calendar ve Drive gibi diğer Proton hizmetlerine erişmek için sol üstteki uygulama seçiciyi kullanın."
+      ],
+      "Welcome to Proton": [
+        "Proton'a Hoş Geldin"
+      ],
+      "Our mission is to build an internet where you are in control of your data and your privacy. We have recently updated Proton - welcome to the secure internet.": [
+        "Görevimiz, verilerinizi ve gizliliğinizi kontrol ettiğiniz bir internet oluşturmaktır. Son zamanlarda Proton'u güncelledik, güvenli internete hoş geldiniz."
+      ],
+      "Set up your organization": [
+        "Kuruluşunuzu ayarlama"
+      ],
+      "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
+        "Kuruluşunuzun tüm üyelerinin korunduğundan emin olmak için kuruluşunuzu yapılandırın, etki alanı adınızı bağlayın ve hesaplar oluşturun."
+      ]
+    },
+    "New Label form": {
+      "Color": [
+        "Renk"
+      ],
+      "Folder name": [
+        "Klasör adı"
+      ],
+      "Label name": [
+        "Etiket adı"
+      ]
+    },
+    "label/folder notification": {
+      "${ Label.Name } created": [
+        "${ Label.Name } oluşturuldu"
+      ],
+      "${ label.Name } updated": [
+        "${ label.Name } güncellendi"
+      ],
+      "Preference saved": [
+        "Tercih kaydedildi"
+      ]
+    },
+    "Label/folder modal": {
+      "Create folder": [
+        "Klasör oluştur"
+      ],
+      "Create label": [
+        "Etiket oluştur"
+      ],
+      "Edit folder": [
+        "Klasörü düzenle"
+      ],
+      "Edit label": [
+        "Etiketi düzenle"
+      ]
+    },
+    "Success message after sorting folders": {
+      "Folders sorted": [
+        "Klasörler sıralandı"
+      ]
+    },
+    "Info - folder colouring feature": {
+      "When enabled, sub-folders inherit the color of the parent folder.": [
+        "Etkinleştirildiğinde, alt klasörler üst klasörün rengini alır."
+      ]
+    },
+    "Settings/labels": {
+      "Labels/Folders": [
+        "Etiketler/Klasörler"
+      ]
+    },
+    "Settings/labels - table": {
+      "Labels": [
+        "Etiketler"
+      ],
+      "Actions": [
+        "Eylemler"
+      ]
+    },
+    "Success message after sorting labels": {
+      "Labels sorted": [
+        "Etiketler sıralandı"
+      ]
+    },
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Görüntü seçilmedi"
@@ -6410,70 +6425,6 @@
         "Ekran görüntüsü(leri) ekleyin"
       ]
     },
-    "New Label form": {
-      "Color": [
-        "Renk"
-      ],
-      "Folder name": [
-        "Klasör adı"
-      ],
-      "Label name": [
-        "Etiket adı"
-      ]
-    },
-    "label/folder notification": {
-      "${ Label.Name } created": [
-        "${ Label.Name } oluşturuldu"
-      ],
-      "${ label.Name } updated": [
-        "${ label.Name } güncellendi"
-      ],
-      "Preference saved": [
-        "Tercih kaydedildi"
-      ]
-    },
-    "Label/folder modal": {
-      "Create folder": [
-        "Klasör oluştur"
-      ],
-      "Create label": [
-        "Etiket oluştur"
-      ],
-      "Edit folder": [
-        "Klasörü düzenle"
-      ],
-      "Edit label": [
-        "Etiketi düzenle"
-      ]
-    },
-    "Success message after sorting folders": {
-      "Folders sorted": [
-        "Klasörler sıralandı"
-      ]
-    },
-    "Info - folder colouring feature": {
-      "When enabled, sub-folders inherit the color of the parent folder.": [
-        "Etkinleştirildiğinde, alt klasörler üst klasörün rengini alır."
-      ]
-    },
-    "Settings/labels": {
-      "Labels/Folders": [
-        "Etiketler/Klasörler"
-      ]
-    },
-    "Settings/labels - table": {
-      "Labels": [
-        "Etiketler"
-      ],
-      "Actions": [
-        "Eylemler"
-      ]
-    },
-    "Success message after sorting labels": {
-      "Labels sorted": [
-        "Etiketler sıralandı"
-      ]
-    },
     "Apps dropdown": {
       "Proton applications": [
         "Proton uygulamaları"
@@ -6518,6 +6469,43 @@
       ],
       "${ mailAppName } Free": [
         "${ mailAppName } Ücretsiz"
+      ]
+    },
+    "Downgrade account reason": {
+      "I use a different Proton account": [
+        ""
+      ],
+      "Subscription is too expensive": [
+        ""
+      ],
+      "Missing feature(s) ": [
+        ""
+      ],
+      "Bugs or quality issue": [
+        ""
+      ],
+      "Streaming service unsupported": [
+        ""
+      ],
+      "Switching to a different provider": [
+        ""
+      ],
+      "Temporary need, may come back in the future": [
+        ""
+      ],
+      "My reason isn't listed, please comment": [
+        ""
+      ]
+    },
+    "Plan time remaining": {
+      "You still have ${ daysRemaining } day left on your ${ BRAND_NAME } ${ currentPlanName } account.": [
+        "",
+        ""
+      ]
+    },
+    "Downgrade modal exit survey title": {
+      "Help us improve!": [
+        ""
       ]
     },
     "State": {
@@ -7008,23 +6996,66 @@
         "Ücretsiz"
       ]
     },
+    "VPNClient": {
+      "Android": [
+        "Android"
+      ],
+      "iOS": [
+        "iOS"
+      ],
+      "Windows": [
+        "Windows"
+      ],
+      "macOS": [
+        "macOS"
+      ],
+      "GNU/Linux": [
+        "GNU/Linux"
+      ],
+      "Chromebook": [
+        "Chromebook"
+      ],
+      "Android TV": [
+        "Android TV"
+      ]
+    },
+    "CountryInfo": {
+      "(via ${ entryCountryName })": [
+        "(${ entryCountryName } üzerinden)"
+      ]
+    },
+    "Feature": {
+      "Access to all countries": [
+        "Tüm ülkelere erişim"
+      ],
+      "Secure Core servers": [
+        "Secure Core sunucuları"
+      ],
+      "Fastest VPN servers": [
+        "En hızlı VPN sunucuları"
+      ],
+      "Torrenting support (P2P)": [
+        "Torrent desteği (P2P)"
+      ],
+      "Connection for up to ${ plusVpnConnections } device": [
+        "${ plusVpnConnections } cihaza kadar bağlantı",
+        "${ plusVpnConnections } cihaza kadar bağlantı"
+      ],
+      "Secure streaming support": [
+        "Güvenli medya akışı desteği"
+      ],
+      "VPN ${ connectionsPluralized }": [
+        "VPN ${ connectionsPluralized }"
+      ]
+    },
+    "VPN info": {
+      "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, and more.": [
+        "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now ve daha fazlası."
+      ]
+    },
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
         "${ appName } uygulamasının yeni sürümü mevcut. ${ reloadButton }."
-      ]
-    },
-    "Option delay send seconds": {
-      "0 seconds": [
-        "0 saniye"
-      ],
-      "5 seconds": [
-        "5 saniye"
-      ],
-      "10 seconds": [
-        "10 saniye"
-      ],
-      "20 seconds": [
-        "20 saniye"
       ]
     },
     "Label for news": {
@@ -7073,59 +7104,6 @@
       ],
       "Recovery phrase": [
         "Kurtarma anahtar metni"
-      ]
-    },
-    "Address status": {
-      "Default": [
-        "Varsayılan"
-      ],
-      "Active": [
-        "Etkin"
-      ],
-      "Disabled": [
-        "Devre Dışı"
-      ],
-      "Orphan": [
-        "Korumasız"
-      ],
-      "Missing keys": [
-        "Kayıp anahtarlar"
-      ]
-    },
-    "Address action": {
-      "Enable": [
-        "Etkinleştir"
-      ],
-      "Disable": [
-        "Devre dışı bırak"
-      ],
-      "Generate missing keys": [
-        "Eksik anahtarları oluştur"
-      ],
-      "Delete": [
-        "Sil"
-      ]
-    },
-    "Bridge version load failed": {
-      "Failed to find latest version": [
-        "En son sürüm bulunamadı"
-      ]
-    },
-    "OS compatibility": {
-      ".exe (64-bit)": [
-        ".exe (64-bit)"
-      ],
-      ".dmg (10.12 or later)": [
-        ".dmg (10.12 veya üzeri)"
-      ],
-      ".deb (for Debian/Ubuntu)": [
-        ".deb (Debian/Ubuntu için)"
-      ],
-      ".rpm (for Fedora/openSUSE)": [
-        ".rpm (Fedora/openSUSE için)"
-      ],
-      "PKGBUILD (for other distributions)": [
-        "PKGBUILD (diğer dağıtımlar için)"
       ]
     },
     "Badge for user sessions table": {
@@ -7369,6 +7347,59 @@
         "Kuruluş anahtarlarını değiştirme"
       ]
     },
+    "Option delay send seconds": {
+      "0 seconds": [
+        "0 saniye"
+      ],
+      "5 seconds": [
+        "5 saniye"
+      ],
+      "10 seconds": [
+        "10 saniye"
+      ],
+      "20 seconds": [
+        "20 saniye"
+      ]
+    },
+    "Option protection mode": {
+      "Prevent tracking (recommended)": [
+        ""
+      ],
+      "Prevent tracking and store content locally": [
+        ""
+      ]
+    },
+    "Address status": {
+      "Default": [
+        "Varsayılan"
+      ],
+      "Active": [
+        "Etkin"
+      ],
+      "Disabled": [
+        "Devre Dışı"
+      ],
+      "Orphan": [
+        "Korumasız"
+      ],
+      "Missing keys": [
+        "Kayıp anahtarlar"
+      ]
+    },
+    "Address action": {
+      "Enable": [
+        "Etkinleştir"
+      ],
+      "Disable": [
+        "Devre dışı bırak"
+      ],
+      "Generate missing keys": [
+        "Eksik anahtarları oluştur"
+      ],
+      "Delete": [
+        "Sil"
+      ]
+    },
     "Member action": {
       "Edit": [
         "Düzenle"
@@ -7430,6 +7461,28 @@
     "Private Member": {
       "private": [
         "özel"
+      ]
+    },
+    "Bridge version load failed": {
+      "Failed to find latest version": [
+        "En son sürüm bulunamadı"
+      ]
+    },
+    "OS compatibility": {
+      ".exe (64-bit)": [
+        ".exe (64-bit)"
+      ],
+      ".dmg (10.12 or later)": [
+        ".dmg (10.12 veya üzeri)"
+      ],
+      ".deb (for Debian/Ubuntu)": [
+        ".deb (Debian/Ubuntu için)"
+      ],
+      ".rpm (for Fedora/openSUSE)": [
+        ".rpm (Fedora/openSUSE için)"
+      ],
+      "PKGBUILD (for other distributions)": [
+        "PKGBUILD (diğer dağıtımlar için)"
       ]
     },
     "Delinquent modal title": {
@@ -7586,82 +7639,6 @@
       ],
       "GB": [
         "GB"
-      ]
-    },
-    "Import contact. Contact identifier": {
-      "unknown": [
-        "bilinmiyor"
-      ]
-    },
-    "Error importing contact": {
-      "vCard versions < 3.0 not supported": [
-        "vCard 3.0 öncesi desteklenmez"
-      ],
-      "Encryption failed": [
-        "Şifreleme başarısız oldu"
-      ]
-    },
-    "Error importing calendar": {
-      "An unexpected error occurred. Import must be restarted.": [
-        "Beklenmeyen bir hata oluştu. İçe aktarma yeniden başlatılmalıdır."
-      ],
-      "An error occurred uploading your file. No file has been selected.": [
-        "Dosyanız yüklenirken bir hata oluştu. Hiçbir dosya seçilmedi."
-      ],
-      "An error occurred uploading your file ${ formattedFilename }. Only ICS file formats are allowed.": [
-        "${ formattedFilename } dosyanızı yüklerken bir hata oluştu. Yalnızca ICS dosya formatlarına izin verilir."
-      ],
-      "Your file ${ formattedFilename } is empty.": [
-        "${ formattedFilename } dosyanız boş."
-      ],
-      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
-        "${ formattedFilename } dosyanızı yüklerken bir hata oluştu. Maksimum dosya boyutu ${ MAX_IMPORT_FILE_SIZE_STRING }."
-      ],
-      "Your file ${ formattedFilename } is not a calendar.": [
-        "${ formattedFilename } dosyanız bir takvim değildir."
-      ],
-      "${ CALENDAR_APP_NAME } only supports importing calendars with iCal version 2.0.": [
-        "${ CALENDAR_APP_NAME } sadece iCal sürüm 2.0 ile takvimleri içe aktarmayı destekler."
-      ],
-      "Your file ${ formattedFilename } is an invitation and cannot be imported.": [
-        "${ formattedFilename } dosyanız bir davettir ve içe aktarılamaz."
-      ],
-      "Your file ${ formattedFilename } has no events to be imported.": [
-        "${ formattedFilename } dosyanızın içe aktarılacak hiçbir etkinliği yoktur."
-      ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } events.": [
-        "${ formattedFilename } dosyanız birden fazla ${ MAX_IMPORT_EVENTS_STRING } etkinliği içerir."
-      ],
-      "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "${ formattedFilename } dosyanızı okurken bir hata oluştu. Dosya doğru formata sahip değil."
-      ]
-    },
-    "Error importing contacts": {
-      "An error occurred uploading your file. No file has been selected.": [
-        "Dosyanızı yüklerken bir hata oluştu. Hiçbir dosya seçilmedi."
-      ],
-      "An error occurred uploading your file ${ formattedFilename }. No .csv or .vcf file selected": [
-        "${ formattedFilename }. dosyanızı yüklerken bir hata oluştu. .csv veya .vcf dosyası seçilmedi"
-      ],
-      "Your file ${ formattedFilename } is empty.": [
-        "${ formattedFilename } dosyanız boş."
-      ],
-      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
-        "${ formattedFilename } dosyanızı yüklerken bir hata oluştu. Maksimum dosya boyutu ${ MAX_IMPORT_FILE_SIZE_STRING }."
-      ],
-      "Your file ${ formattedFilename } has no contacts to be imported.": [
-        "${ formattedFilename } dosyanızda içe aktarılacak kişi yok."
-      ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
-        "${ formattedFilename } dosyanız fazla ${ MAX_IMPORT_CONTACTS_STRING } kişileri içerir."
-      ],
-      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "${ formattedFilename } dosyanızı okurken bir hata oluştu. Dosya doğru formata sahip değil."
-      ]
-    },
-    "Default display name vcard": {
-      "Unknown": [
-        "Bilinmeyen"
       ]
     },
     "Participant name": {
@@ -8203,6 +8180,41 @@
         "Beklenmeyen hata"
       ]
     },
+    "Error importing calendar": {
+      "An error occurred uploading your file. No file has been selected.": [
+        "Dosyanız yüklenirken bir hata oluştu. Hiçbir dosya seçilmedi."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Only ICS file formats are allowed.": [
+        "${ formattedFilename } dosyanızı yüklerken bir hata oluştu. Yalnızca ICS dosya formatlarına izin verilir."
+      ],
+      "Your file ${ formattedFilename } is empty.": [
+        "${ formattedFilename } dosyanız boş."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
+        "${ formattedFilename } dosyanızı yüklerken bir hata oluştu. Maksimum dosya boyutu ${ MAX_IMPORT_FILE_SIZE_STRING }."
+      ],
+      "Your file ${ formattedFilename } is not a calendar.": [
+        "${ formattedFilename } dosyanız bir takvim değildir."
+      ],
+      "${ CALENDAR_APP_NAME } only supports importing calendars with iCal version 2.0.": [
+        "${ CALENDAR_APP_NAME } sadece iCal sürüm 2.0 ile takvimleri içe aktarmayı destekler."
+      ],
+      "Your file ${ formattedFilename } is an invitation and cannot be imported.": [
+        "${ formattedFilename } dosyanız bir davettir ve içe aktarılamaz."
+      ],
+      "Your file ${ formattedFilename } has no events to be imported.": [
+        "${ formattedFilename } dosyanızın içe aktarılacak hiçbir etkinliği yoktur."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } events.": [
+        "${ formattedFilename } dosyanız birden fazla ${ MAX_IMPORT_EVENTS_STRING } etkinliği içerir."
+      ],
+      "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
+        "${ formattedFilename } dosyanızı okurken bir hata oluştu. Dosya doğru formata sahip değil."
+      ],
+      "An unexpected error occurred. Import must be restarted.": [
+        "Beklenmeyen bir hata oluştu. İçe aktarma yeniden başlatılmalıdır."
+      ]
+    },
     "Calendar subscription not synced error": {
       "Calendar is syncing": [
         "Takvim senkronize ediliyor"
@@ -8219,11 +8231,52 @@
       "Calendar link is not accessible": [
         "Takvim bağlantısına erişilemiyor"
       ],
-      "Calendar link is temporarily unaccessible": [
-        "Takvim bağlantısına geçici olarak erişilemiyor"
+      "Calendar link is temporarily inaccessible": [
+        ""
       ],
       "Failed to sync calendar": [
         "Takvim senkronize edilemedi"
+      ]
+    },
+    "Import contact. Contact identifier": {
+      "unknown": [
+        "bilinmiyor"
+      ]
+    },
+    "Error importing contact": {
+      "vCard versions < 3.0 not supported": [
+        "vCard 3.0 öncesi desteklenmez"
+      ],
+      "Encryption failed": [
+        "Şifreleme başarısız oldu"
+      ]
+    },
+    "Error importing contacts": {
+      "An error occurred uploading your file. No file has been selected.": [
+        "Dosyanızı yüklerken bir hata oluştu. Hiçbir dosya seçilmedi."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. No .csv or .vcf file selected": [
+        "${ formattedFilename }. dosyanızı yüklerken bir hata oluştu. .csv veya .vcf dosyası seçilmedi"
+      ],
+      "Your file ${ formattedFilename } is empty.": [
+        "${ formattedFilename } dosyanız boş."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
+        "${ formattedFilename } dosyanızı yüklerken bir hata oluştu. Maksimum dosya boyutu ${ MAX_IMPORT_FILE_SIZE_STRING }."
+      ],
+      "Your file ${ formattedFilename } has no contacts to be imported.": [
+        "${ formattedFilename } dosyanızda içe aktarılacak kişi yok."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
+        "${ formattedFilename } dosyanız fazla ${ MAX_IMPORT_CONTACTS_STRING } kişileri içerir."
+      ],
+      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
+        "${ formattedFilename } dosyanızı okurken bir hata oluştu. Dosya doğru formata sahip değil."
+      ]
+    },
+    "Default display name vcard": {
+      "Unknown": [
+        "Bilinmeyen"
       ]
     },
     "Keyboard shortcut section name": {
@@ -8401,12 +8454,17 @@
         "İletinin aslını görüntüle"
       ]
     },
+    "Settings description": {
+      "You can apply multiple labels to a single message, but messages can usually only be in a single folder. Drag and drop to rearrange the order of your folders and labels.": [
+        "Tek bir iletiye birden çok etiket uygulayabilirsiniz, ancak iletiler genellikle yalnızca tek bir klasörde olabilir. Klasörlerinizin ve etiketlerinizin sırasını yeniden düzenlemek için sürükleyip bırakın."
+      ]
+    },
     "Settings section title": {
       "General": [
         "Genel"
       ],
-      "Import & export": [
-        "İçe/Dışa aktarma"
+      "Email privacy": [
+        ""
       ],
       "Identity & addresses": [
         "Kimlik ve adresler"
@@ -8429,14 +8487,17 @@
       "Encryption & keys": [
         "Şifreleme ve anahtarlar"
       ],
+      "Import & export": [
+        "İçe/Dışa aktarma"
+      ],
       "IMAP/SMTP": [
         "IMAP/SMTP"
       ],
-      "VPN apps": [
-        "VPN uygulamaları"
-      ],
       "Calendars": [
         "Takvimler"
+      ],
+      "VPN apps": [
+        "VPN uygulamaları"
       ],
       "Users & addresses": [
         "Kullanıcı ve Adresler"
@@ -8455,11 +8516,6 @@
       ],
       "Organization": [
         "Organizasyon"
-      ]
-    },
-    "Settings description": {
-      "You can apply multiple labels to a single message, but messages can usually only be in a single folder. Drag and drop to rearrange the order of your folders and labels.": [
-        "Tek bir iletiye birden çok etiket uygulayabilirsiniz, ancak iletiler genellikle yalnızca tek bir klasörde olabilir. Klasörlerinizin ve etiketlerinizin sırasını yeniden düzenlemek için sürükleyip bırakın."
       ]
     },
     "Upgrade": {

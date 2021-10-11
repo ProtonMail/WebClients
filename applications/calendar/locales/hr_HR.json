@@ -29,7 +29,7 @@
       "Calendar link is not accessible": [
         ""
       ],
-      "Calendar link is temporarily unaccessible": [
+      "Calendar link is temporarily inaccessible": [
         ""
       ],
       "Failed to sync calendar": [
@@ -645,11 +645,11 @@
       "No results found": [
         "Nema rezultata"
       ],
-      "Week": [
-        "Tjedan"
-      ],
       "Loading": [
         "Učitavanje"
+      ],
+      "Week": [
+        "Tjedan"
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Ova poveznica može biti homografski napad i ne može je otvoriti preglednik Internet Explorer i Edge. Ako ste sigurni da je poveznica legitimna, upotrijebite drugi preglednik da biste je otvorili."
@@ -808,12 +808,6 @@
       "* Customizable features": [
         "* Prilagodljive značajke"
       ],
-      "Access your streaming services, like ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, no matter where you are.": [
-        "Pristupite vašim streaming uslugama, poput ${ netflix }, ${ disney }, ${ primeVideo } ${ many }, bez obzira gdje se nalazite."
-      ],
-      "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
-        "Pristup ograničenom sadržaju, poput društvenih mreža, Wikipedije, Youtubea i mnogo drugih, bez obzira gdje se nalazite."
-      ],
       "For getting started with private and secure emailing.": [
         "Za početak korištenja privatne i sigurne e-pošte."
       ],
@@ -837,6 +831,12 @@
       ],
       "For families and small teams; includes both Mail and VPN.": [
         "Za obitelji i manje timove; uključuje E-poštu i VPN."
+      ],
+      "Access your streaming services, like ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, no matter where you are.": [
+        "Pristupite vašim streaming uslugama, poput ${ netflix }, ${ disney }, ${ primeVideo } ${ many }, bez obzira gdje se nalazite."
+      ],
+      "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
+        "Pristup ograničenom sadržaju, poput društvenih mreža, Wikipedije, Youtubea i mnogo drugih, bez obzira gdje se nalazite."
       ],
       "Save 20%": [
         "Uštedite 20%"
@@ -1158,6 +1158,12 @@
       ],
       "Loading events": [
         "Učitavanje događaja"
+      ],
+      "The organizer could not be notified that you changed your answer:": [
+        ""
+      ],
+      "The organizer cannot be notified that you want to change your answer:": [
+        ""
       ],
       "The organizer cannot be notified that you decline the invitation:": [
         "Organizator ne može biti obaviješten da odbijate pozivnicu:"
@@ -1537,14 +1543,14 @@
       "A group with this name already exists": [
         "Grupa s ovim nazivom već postoji"
       ],
-      "Primary address key is not decrypted": [
-        "Primarni ključ adrese e-pošte nije dešifriran"
-      ],
       "We were unable to connect to your service provider.": [
         ""
       ],
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         ""
+      ],
+      "Primary address key is not decrypted": [
+        "Primarni ključ adrese e-pošte nije dešifriran"
       ],
       "No valid address found": [
         "Nije pronađena važeća adresa"
@@ -2135,12 +2141,6 @@
       "Back": [
         "Natrag"
       ],
-      "Use ${ label } theme": [
-        "Koristi ${ label } temu"
-      ],
-      "OK": [
-        "U redu"
-      ],
       "Log in": [
         "Prijavite se"
       ],
@@ -2167,6 +2167,12 @@
       ],
       "Edit phone number": [
         "Uredi broj telefona"
+      ],
+      "Use ${ label } theme": [
+        "Koristi ${ label } temu"
+      ],
+      "OK": [
+        "U redu"
       ],
       "Clear": [
         "Očisti"
@@ -2510,9 +2516,6 @@
       "Give feedback": [
         "Ostavi povratnu informaciju"
       ],
-      "Select a theme": [
-        "Odaberi temu"
-      ],
       "Sign in again to continue": [
         "Ponovno se prijavite da biste nastavili"
       ],
@@ -2530,6 +2533,9 @@
       ],
       "Human verification": [
         "Ljudska provjera"
+      ],
+      "Select a theme": [
+        "Odaberi temu"
       ],
       "Report a problem": [
         "Prijavi problem"
@@ -2603,8 +2609,8 @@
       "Amount due": [
         "Dospjeli iznos"
       ],
-      "Cancel subscription": [
-        "Otkaži pretplatu"
+      "Downgrade account": [
+        ""
       ],
       "Network error": [
         "Pogreška mreže"
@@ -2906,6 +2912,11 @@
         "Uredi događaj"
       ]
     },
+    "PGP key encryption warning": {
+      "Key cannot be used for encryption": [
+        "Ključ se ne može koristiti za šifriranje"
+      ]
+    },
     "Storage": {
       "Your current storage:": [
         "Vaš trenutni prostor za pohranu:"
@@ -2915,11 +2926,6 @@
       ],
       "Release notes": [
         "Bilješke o izdanoj verziji"
-      ]
-    },
-    "PGP key encryption warning": {
-      "Key cannot be used for encryption": [
-        "Ključ se ne može koristiti za šifriranje"
       ]
     },
     "Label": {
@@ -3199,7 +3205,7 @@
       "Your calendars": [
         "Vaši kalendari"
       ],
-      "Participant": [
+      "participant": [
         "",
         "",
         ""
@@ -4714,11 +4720,6 @@
         "Napomena: usluga će se ponovo učitati nakon što kliknete dugme Primijeni."
       ]
     },
-    "Select files": {
-      "Upload": [
-        "Učitaj"
-      ]
-    },
     "Loading info": {
       "Connecting to your contacts provider": [
         ""
@@ -4738,6 +4739,11 @@
     "Confirm modal title": {
       "Quit import?": [
         ""
+      ]
+    },
+    "Select files": {
+      "Upload": [
+        "Učitaj"
       ]
     },
     "Message display when a new app version is available": {
@@ -4919,11 +4925,6 @@
     "Placeholder for contact with no name": {
       "(No name)": [
         "(Bez imena)"
-      ]
-    },
-    "Reply to calendar invitation": {
-      "Cannot send to organizer address: ${ apiErrorMessage }": [
-        "Nije moguće poslati na adresu organizatora: ${ apiErrorMessage }"
       ]
     },
     "Modal title": {

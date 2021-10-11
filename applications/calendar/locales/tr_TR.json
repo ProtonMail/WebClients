@@ -29,8 +29,8 @@
       "Calendar link is not accessible": [
         "Takvim bağlantısına erişilemiyor"
       ],
-      "Calendar link is temporarily unaccessible": [
-        "Takvim bağlantısına geçici olarak erişilemiyor"
+      "Calendar link is temporarily inaccessible": [
+        ""
       ],
       "Failed to sync calendar": [
         "Takvim senkronize edilemedi"
@@ -608,11 +608,11 @@
       "No results found": [
         "Sonuç bulunamadı"
       ],
-      "Week": [
-        "Hafta"
-      ],
       "Loading": [
         "Yükleniyor"
+      ],
+      "Week": [
+        "Hafta"
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Bu bağlantı bir eşyazım saldırısı olabilir ve Internet Explorer ve Edge tarayıcıları tarafından açılamaz. Bağlantının yasal olduğundan eminseniz, lütfen açmak için farklı bir tarayıcı kullanın."
@@ -769,12 +769,6 @@
       "* Customizable features": [
         "* Özelleştirilebilir özellikler"
       ],
-      "Access your streaming services, like ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, no matter where you are.": [
-        "Nerede olursanız olun ${ netflix }, ${ disney }, ${ primeVideo }, ${ many } gibi yayın hizmetlerinize erişin."
-      ],
-      "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
-        "Sosyal medya, haberler, Wikipedia, YouTube ve diğerleri gibi engellenen içeriğe erişin."
-      ],
       "For getting started with private and secure emailing.": [
         "Özel ve güvenli e-posta kullanımına başlamak için."
       ],
@@ -798,6 +792,12 @@
       ],
       "For families and small teams; includes both Mail and VPN.": [
         "Aileler ve küçük ekipler için; Posta ve VPN içerir."
+      ],
+      "Access your streaming services, like ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, no matter where you are.": [
+        "Nerede olursanız olun ${ netflix }, ${ disney }, ${ primeVideo }, ${ many } gibi yayın hizmetlerinize erişin."
+      ],
+      "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
+        "Sosyal medya, haberler, Wikipedia, YouTube ve diğerleri gibi engellenen içeriğe erişin."
       ],
       "Save 20%": [
         "%20 tasarruf edin"
@@ -1113,6 +1113,12 @@
       ],
       "Loading events": [
         "Etkinlikler yükleniyor"
+      ],
+      "The organizer could not be notified that you changed your answer:": [
+        ""
+      ],
+      "The organizer cannot be notified that you want to change your answer:": [
+        ""
       ],
       "The organizer cannot be notified that you decline the invitation:": [
         ""
@@ -1490,14 +1496,14 @@
       "A group with this name already exists": [
         "Bu isimde bir grup zaten var"
       ],
-      "Primary address key is not decrypted": [
-        "Birincil adres anahtarının şifresi çözülemedi"
-      ],
       "We were unable to connect to your service provider.": [
         ""
       ],
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         ""
+      ],
+      "Primary address key is not decrypted": [
+        "Birincil adres anahtarının şifresi çözülemedi"
       ],
       "No valid address found": [
         "Geçerli bir adres bulunamadı"
@@ -2083,12 +2089,6 @@
       "Back": [
         "Geri"
       ],
-      "Use ${ label } theme": [
-        "${ label } temasını kullan"
-      ],
-      "OK": [
-        "Tamam"
-      ],
       "Log in": [
         "Giriş yap"
       ],
@@ -2115,6 +2115,12 @@
       ],
       "Edit phone number": [
         "Telefon numarasını düzenle"
+      ],
+      "Use ${ label } theme": [
+        "${ label } temasını kullan"
+      ],
+      "OK": [
+        "Tamam"
       ],
       "Clear": [
         "Temizle"
@@ -2456,9 +2462,6 @@
       "Give feedback": [
         "Geri bildirim bırak"
       ],
-      "Select a theme": [
-        "Bir tema seçin"
-      ],
       "Sign in again to continue": [
         "Devam etmek için tekrar giriş yapın"
       ],
@@ -2476,6 +2479,9 @@
       ],
       "Human verification": [
         "İnsan doğrulaması"
+      ],
+      "Select a theme": [
+        "Bir tema seçin"
       ],
       "Report a problem": [
         "Sorun bildir"
@@ -2549,8 +2555,8 @@
       "Amount due": [
         "Toplam Tutar"
       ],
-      "Cancel subscription": [
-        "Aboneliği iptal et"
+      "Downgrade account": [
+        ""
       ],
       "Network error": [
         "Ağ hatası"
@@ -2848,6 +2854,11 @@
         "Etkinlik ekle"
       ]
     },
+    "PGP key encryption warning": {
+      "Key cannot be used for encryption": [
+        "Anahtar şifreleme için kullanılamaz"
+      ]
+    },
     "Storage": {
       "Your current storage:": [
         "Mevcut depolama alanınız:"
@@ -2857,11 +2868,6 @@
       ],
       "Release notes": [
         "Sürüm notları"
-      ]
-    },
-    "PGP key encryption warning": {
-      "Key cannot be used for encryption": [
-        "Anahtar şifreleme için kullanılamaz"
       ]
     },
     "Label": {
@@ -3141,7 +3147,7 @@
       "Your calendars": [
         "Takvimin"
       ],
-      "Participant": [
+      "participant": [
         "",
         ""
       ]
@@ -4626,11 +4632,6 @@
         "Not: Uygula düğmesine tıkladıktan sonra hizmet yeniden yüklenecektir."
       ]
     },
-    "Select files": {
-      "Upload": [
-        "Karşıya Yükle"
-      ]
-    },
     "Loading info": {
       "Connecting to your contacts provider": [
         ""
@@ -4650,6 +4651,11 @@
     "Confirm modal title": {
       "Quit import?": [
         ""
+      ]
+    },
+    "Select files": {
+      "Upload": [
+        "Karşıya Yükle"
       ]
     },
     "Message display when a new app version is available": {
@@ -4811,11 +4817,6 @@
     "Placeholder for contact with no name": {
       "(No name)": [
         "(İsim yok)"
-      ]
-    },
-    "Reply to calendar invitation": {
-      "Cannot send to organizer address: ${ apiErrorMessage }": [
-        "Organizatör adresine gönderilemiyor: ${ apiErrorMessage }"
       ]
     },
     "Modal title": {
