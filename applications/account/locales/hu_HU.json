@@ -6,9 +6,6 @@
   "contexts": {
     "": {},
     "Action": {
-      "Continue with Google": [
-        "Folytatás Google fiókkal"
-      ],
       "Use “${ label }” setting": [
         "\"${ label }\" beállítás használata"
       ],
@@ -78,14 +75,20 @@
       "Underline": [
         "Aláhúzott"
       ],
+      "Continue with Google": [
+        "Folytatás Google fiókkal"
+      ],
+      "Show less": [
+        "Kevesebb mutatása"
+      ],
+      "Show more": [
+        "Több megjelenítése"
+      ],
       "Confirm opening of link ${ link }": [
         "Link megnyitásának jóváhagyása: ${ link }"
       ],
       "Confirm": [
         "Megerősítés"
-      ],
-      "Delete": [
-        "Törlés"
       ],
       "Close": [
         "Bezárás"
@@ -96,11 +99,11 @@
       "Previous month": [
         "Előző hónap"
       ],
-      "Show less": [
-        "Kevesebb mutatása"
+      "Delete": [
+        "Törlés"
       ],
-      "Show more": [
-        ""
+      "Select timezone": [
+        "Időzóna kiválasztása"
       ],
       "Close navigation": [
         "Navigáció bezárása"
@@ -116,9 +119,6 @@
       ],
       "Remove": [
         "Eltávolítás"
-      ],
-      "Select timezone": [
-        "Időzóna kiválasztása"
       ],
       "Submit": [
         "Küldés"
@@ -228,33 +228,6 @@
       "Continue": [
         "Folytatás"
       ],
-      "Download": [
-        "Letöltés"
-      ],
-      "Hide": [
-        "Elrejtés"
-      ],
-      "Show": [
-        "Megjelenítés"
-      ],
-      "Reset credentials": [
-        "Hitelesítő adatok visszaállítása"
-      ],
-      "Copy": [
-        "Másolás"
-      ],
-      "Download all configurations": [
-        "Összes beállítás letöltése"
-      ],
-      "Get ProtonVPN Plus": [
-        "ProtonVPN Plus választása"
-      ],
-      "Yes": [
-        "Igen"
-      ],
-      "No": [
-        "Nem"
-      ],
       "Update": [
         "Frissítés"
       ],
@@ -286,10 +259,10 @@
         "Naptár létrehozása"
       ],
       "Remove calendar": [
-        ""
+        "Naptár eltávolítása"
       ],
       "Subscribe to calendar": [
-        ""
+        "Feliratkozás naptárra"
       ],
       "Import events": [
         "Események importálása"
@@ -324,6 +297,9 @@
       "Export key": [
         "Kulcs exportálása"
       ],
+      "No": [
+        "Nem"
+      ],
       "Warning": [
         "Figyelmeztetés"
       ],
@@ -332,6 +308,9 @@
       ],
       "Export private key": [
         "Privát kulcs exportálása"
+      ],
+      "Yes": [
+        "Igen"
       ],
       "Add user": [
         "Felhasználó hozzáadása"
@@ -361,7 +340,7 @@
         "${ BRAND_NAME } bevezető"
       ],
       "Chat with us": [
-        ""
+        "Beszélgetés indítása"
       ],
       "I have a question": [
         "Kérdésem van"
@@ -380,15 +359,6 @@
       ],
       "Sign out": [
         "Kijelentkezés"
-      ],
-      "Get started": [
-        "Kezdés"
-      ],
-      "Start setup": [
-        "Beállítás megkezdése"
-      ],
-      "Skip": [
-        "Kihagyás"
       ],
       "Preview": [
         "Előnézet"
@@ -435,6 +405,24 @@
       "Move to Allow List": [
         "Áthelyezés a engedélyezett listára"
       ],
+      "Get started": [
+        "Kezdés"
+      ],
+      "Start setup": [
+        "Beállítás megkezdése"
+      ],
+      "Skip": [
+        "Kihagyás"
+      ],
+      "Add folder": [
+        "Új mappa"
+      ],
+      "Sort": [
+        "Rendezés"
+      ],
+      "Add label": [
+        "Új címke"
+      ],
       "Clear": [
         "Törlés"
       ],
@@ -446,15 +434,6 @@
       ],
       "Show info": [
         "Információ megjelenítése"
-      ],
-      "Add folder": [
-        "Új mappa"
-      ],
-      "Sort": [
-        "Rendezés"
-      ],
-      "Add label": [
-        "Új címke"
       ],
       "Signing out": [
         "Kijelentkezés"
@@ -486,8 +465,14 @@
       "Customize subscription": [
         "Előfizetés testreszabása"
       ],
-      "Cancel subscription": [
-        "Előfizetés megszüntetése"
+      "Downgrade to ${ BRAND_NAME } ${ downgradedPlanName }": [
+        "Váltás kisebb csomagra: ${ BRAND_NAME } ${ downgradedPlanName }"
+      ],
+      "Keep my ${ BRAND_NAME } ${ currentPlanName } account": [
+        "Megtartom a ${ BRAND_NAME } ${ currentPlanName } fiókot"
+      ],
+      "Downgrade account": [
+        "Váltás kisebb csomagra"
       ],
       "Select plan": [
         "Csomag kiválasztása"
@@ -543,6 +528,27 @@
       "Remove gift code": [
         "Ajándék kód törlése"
       ],
+      "Download": [
+        "Letöltés"
+      ],
+      "Hide": [
+        "Elrejtés"
+      ],
+      "Show": [
+        "Megjelenítés"
+      ],
+      "Reset credentials": [
+        "Hitelesítő adatok visszaállítása"
+      ],
+      "Copy": [
+        "Másolás"
+      ],
+      "Download all configurations": [
+        "Összes beállítás letöltése"
+      ],
+      "Get ProtonVPN Plus": [
+        "ProtonVPN Plus választása"
+      ],
       "enable desktop notifications": [
         "asztali értesítések engedélyezése"
       ],
@@ -568,28 +574,22 @@
         "Fiók törlése"
       ],
       "Create new recovery phrase": [
-        ""
+        "Új helyreállító jelmondat létrehozása"
       ],
       "Copy to clipboard": [
-        ""
+        "Másolás a vágólapra"
       ],
       "Create new recovery phrase?": [
-        ""
+        "Új helyreállító jelmondat létrehozása?"
       ],
       "Enter password to continue": [
-        ""
+        "Írja be a jelszavát a folytatáshoz"
       ],
       "Disable recovery phrase?": [
-        ""
+        "Helyreállító jelmondat kikapcsolása?"
       ],
       "Disable recovery phrase": [
-        ""
-      ],
-      "Save address": [
-        "Cím mentése"
-      ],
-      "activate": [
-        "aktiválás"
+        "Helyreállító jelmondat kikapcsolása"
       ],
       "Revoke all other sessions": [
         "Minden más munkamenet kijelentkeztetése"
@@ -646,19 +646,25 @@
         "Többfelhasználós mód engedélyezése"
       ],
       "Reset keys": [
-        ""
+        "Kulcsok visszaállítása"
       ],
       "Change organization keys": [
         "Szervezeti kulcsok megváltoztatása"
       ],
       "Reset organization keys": [
-        ""
+        "Szervezeti kulcsok visszaállítása"
       ],
       "Restore administrator privileges": [
         "Adminisztrátori jogok visszaállítása"
       ],
       "Activate organization key": [
         "Szervezeti kulcs aktiválása"
+      ],
+      "Save address": [
+        "Cím mentése"
+      ],
+      "activate": [
+        "aktiválás"
       ],
       "View invoice": [
         "Számla megtekintése"
@@ -751,7 +757,7 @@
         "Kód küldése"
       ],
       "Return to sign in": [
-        ""
+        "Vissza a bejelentkezéshez"
       ],
       "Didn't receive a code?": [
         "Nem kapta meg a kódot?"
@@ -813,11 +819,11 @@
       "yourdomain.com": [
         "domainneve.com"
       ],
-      "e.g. Julia Smith": [
-        "pl. Kovács János"
-      ],
       "Type text or keyword": [
         "Írjon be szöveget"
+      ],
+      "e.g. Julia Smith": [
+        "pl. Kovács János"
       ],
       "OS name": [
         "Operációs rendszer neve"
@@ -839,6 +845,9 @@
       ],
       "Browser version": [
         "Böngésző verziója"
+      ],
+      "Select a reason": [
+        "Válasszon egy indokot"
       ],
       "Feedback": [
         "Visszajelzés"
@@ -864,14 +873,14 @@
       "Confirm": [
         "Jóváhagyás"
       ],
+      "Choose a name": [
+        "Válasszon egy nevet"
+      ],
       "Choose display name": [
         "Válasszon egy megjelenített nevet"
       ],
       "Choose address": [
         "Válasszon címet"
-      ],
-      "Choose a name": [
-        "Válasszon egy nevet"
       ],
       "Username": [
         "Felhasználónév"
@@ -950,9 +959,6 @@
       "Invalid name": [
         "Érvénytelen név"
       ],
-      "Automatic replies is a paid feature. Please upgrade to a paid account to use this feature.": [
-        "Az automatikus válasz egy fizetős funkció. Kérjük, váltson egy előfizetéses csomagra a lehetőség használatához."
-      ],
       "Name required": [
         "Név megadása kötelező"
       ],
@@ -962,23 +968,26 @@
       "Primary address key is not decrypted.": [
         "Az elsődleges cím kulcsa nincs visszafejtve."
       ],
+      "Primary address key is not decrypted": [
+        "Az elsődleges cím kulcsa nincs visszafejtve"
+      ],
       "Incorrect password": [
         "Hibás jelszó"
       ],
       "Zero keys reactivated": [
-        ""
+        "Nulla kulcs újraaktiválva"
       ],
       "Uploaded file is not a valid private key. Please verify and try again.": [
-        ""
+        "A feltöltött fájl nem egy érvényes titkos kulcs. Ellenőrizze és próbálja újra."
       ],
       "Uploaded files are not valid private keys. Please verify and try again.": [
-        ""
-      ],
-      "Primary address key is not decrypted": [
-        "Az elsődleges cím kulcsa nincs visszafejtve"
+        "A feltöltött fájlok nem érvényes titkos kulcsok. Ellenőrizze és próbálja újra."
       ],
       "Invalid private key file": [
         "Érvénytelen privát-kulcs fájl"
+      ],
+      "Automatic replies is a paid feature. Please upgrade to a paid account to use this feature.": [
+        "Az automatikus válasz egy fizetős funkció. Kérjük, váltson egy előfizetéses csomagra a lehetőség használatához."
       ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "A DKIM aláírás felfüggesztésre került a DNS beállítási hibája miatt. Kövesse az útmutatót a DKIM aláírás helyreállításához."
@@ -1086,19 +1095,7 @@
         "Először adja meg a helyreállítási telefonszámot"
       ],
       "Wrong recovery phrase. Try again or use another recovery method.": [
-        ""
-      ],
-      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Addresses > Short domain (pm.me)": [
-        "Az Ön felhasználóneve: ${ Local }. ${ Local }@${ Domain } e-mail cím létrehozásához válassza a Beállítások > Címek > Rövid domain (@pm.me) menüpontot"
-      ],
-      "The organization key must be activated first.": [
-        "Először a szervezeti kulcs aktiválása szükséges."
-      ],
-      "Error": [
-        "Hiba"
-      ],
-      "Organization key is not decrypted.": [
-        "A szervezeti kulcs nincs visszafejtve."
+        "Hibás helyreállító jelmondat. Próbálja meg újra vagy próbáljon másik helyreállítási módot."
       ],
       "Payments are currently not available, please try again later": [
         "Fizetés jelenleg nem lehetséges, kérjük, próbálja meg később"
@@ -1119,13 +1116,25 @@
         "Kérjük, váltson Professional csomagra egynél több felhasználóval, vagy Visionary csomagra, hogy több felhasználót hozhasson létre."
       ],
       "You must privatize all users before generating new organization keys": [
-        ""
+        "Az összes felhasználót privátra kell állítani mielőtt új szervezeti kulcsokat generálna"
+      ],
+      "Organization key is not decrypted.": [
+        "A szervezeti kulcs nincs visszafejtve."
       ],
       "You have lost access to your organization keys. Without restoration you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Elvesztette az elérését a szervezeti kulcsokhoz. Visszaállítás nélkül nem fog tudni új felhasználókat létrehozni, címeket felvenni meglévő felhasználókhoz, vagy nem-privát fiókokat elérni."
       ],
       "You must activate your organization keys. Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Aktiválnia kell a szervezeti kulcsokat. Aktiválás nélkül nem fog tudni új felhasználókat létrehozni, címeket felvenni meglévő felhasználókhoz, vagy nem-privát fiókokat elérni."
+      ],
+      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Addresses > Short domain (pm.me)": [
+        "Az Ön felhasználóneve: ${ Local }. ${ Local }@${ Domain } e-mail cím létrehozásához válassza a Beállítások > Címek > Rövid domain (@pm.me) menüpontot"
+      ],
+      "The organization key must be activated first.": [
+        "Először a szervezeti kulcs aktiválása szükséges."
+      ],
+      "Error": [
+        "Hiba"
       ],
       "Permission denied, administrator privileges have been restricted.": [
         "Hozzáférés megtagadva, adminisztrátori jogok korlátozásra kerültek."
@@ -1202,18 +1211,6 @@
       "Not a valid number": [
         "Érvénytelen szám"
       ],
-      "Missing signature": [
-        "Hiányzó aláírás"
-      ],
-      "Contact signature not verified": [
-        "Névjegy aláírása nincs ellenőrizve"
-      ],
-      "Signature not verified": [
-        "Aláírás nincs ellenőrizve"
-      ],
-      "Request timed out.": [
-        "A kérés túllépte az időkorlátot."
-      ],
       "Signature verification failed": [
         "Aláírás ellenőrzése sikertelen"
       ],
@@ -1228,6 +1225,18 @@
       ],
       "Calendar primary private key is not decrypted": [
         "A naptár elsődleges titkosító kulcsa nincs visszafejtve"
+      ],
+      "Missing signature": [
+        "Hiányzó aláírás"
+      ],
+      "Contact signature not verified": [
+        "Névjegy aláírása nincs ellenőrizve"
+      ],
+      "Signature not verified": [
+        "Aláírás nincs ellenőrizve"
+      ],
+      "Request timed out.": [
+        "A kérés túllépte az időkorlátot."
       ],
       "The session has expired. Please sign in again.": [
         "Ez a munkamenet lejárt. Lépjen be újra."
@@ -1254,6 +1263,30 @@
       ],
       "Do not ask again": [
         "Ne kérdezze újra"
+      ],
+      "Inbox": [
+        "Beérkezett üzenetek"
+      ],
+      "Composer": [
+        "Szerkesztő"
+      ],
+      "Density": [
+        "Sűrűség"
+      ],
+      "Use sticky labels": [
+        "Ragadós címkék használata"
+      ],
+      "Conversation grouping": [
+        "Beszélgetések csoportosítása"
+      ],
+      "Composer mode": [
+        "Szerkesztő módja"
+      ],
+      "Composer text direction": [
+        "Szerkesztő szövegiránya"
+      ],
+      "Composer default font/size": [
+        "Szerkesztő betűtípusa és mérete"
       ],
       "From: ${ fromEmailAddress }": [
         "Forrás: ${ fromEmailAddress }"
@@ -1324,35 +1357,80 @@
       "Automatically save contacts": [
         "Névjegyek automatikus létrehozása"
       ],
-      "Inbox": [
-        "Beérkezett üzenetek"
+      "Name": [
+        "Név"
       ],
-      "Composer": [
-        "Szerkesztő"
+      "Choose a color": [
+        "Válasszon színt"
       ],
-      "Density": [
-        "Sűrűség"
+      "Default email": [
+        "Alapértelmezett email"
       ],
-      "Use sticky labels": [
-        "Ragadós címkék használata"
+      "Display": [
+        "Megjelenítés"
       ],
-      "Conversation grouping": [
-        "Beszélgetések csoportosítása"
+      "Description": [
+        "Leírás"
       ],
-      "Composer mode": [
-        "Szerkesztő módja"
+      "Default event duration": [
+        "Az események alapértelmezett hossza"
       ],
-      "Composer text direction": [
-        "Szerkesztő szövegiránya"
+      "URL": [
+        "URL"
       ],
-      "Composer default font/size": [
-        ""
+      "Default notifications": [
+        "Alapértelmezett emlékeztetők"
       ],
-      "OpenVPN / IKEv2 username": [
-        "OpenVPN / IKEv2 felhasználónév"
+      "Default full day notifications": [
+        "Alapértelmezett emlékeztetők (egész napos)"
       ],
-      "OpenVPN / IKEv2 password": [
-        "OpenVPN / IKEv2 jelszó"
+      "Show secondary time zone": [
+        "Másodlagos időzóna megjelenítése"
+      ],
+      "Auto-detect primary time zone": [
+        "Automatikusan detektálja az elsődleges időzónát"
+      ],
+      "Default view": [
+        "Alapértelmezett nézet"
+      ],
+      "Show week numbers": [
+        "Hetek sorszámának megjelenítése"
+      ],
+      "Import to:": [
+        "Importálás ide:"
+      ],
+      "Your calendar URL": [
+        "Az ön naptárának URL-je"
+      ],
+      "Your calendar URL label": [
+        "Az ön naptárának URL neve"
+      ],
+      "Delete": [
+        "Törlés"
+      ],
+      "Backup key": [
+        "Tartalák kulcs"
+      ],
+      "Uploaded private keys": [
+        "Feltöltött titkos kulcsok"
+      ],
+      "Upload your backup key": [
+        "Tartalék kulcs felöltése"
+      ],
+      "Phrase": [
+        "Jelmondat"
+      ],
+      "Backup keys": [
+        "Tartalák kulcs"
+      ],
+      "Enter the password for key with fingerprint: ${ fingerprintCode }": [
+        "Írja be a következő ujjlenyomattal rendelkező kulcshoz tartozó jelszót: ${ fingerprintCode }"
+      ],
+      "Enter password": [
+        "Jelszó megadása"
+      ],
+      "Please select files to upload": [
+        "Válassza ki a fájlokat a feltöltéshez"
       ],
       "Timezone": [
         "Időzóna"
@@ -1405,81 +1483,6 @@
       "Default PGP settings": [
         "Alapértelmezett PGP beállítások"
       ],
-      "Name": [
-        "Név"
-      ],
-      "Choose a color": [
-        "Válasszon színt"
-      ],
-      "Default email": [
-        "Alapértelmezett email"
-      ],
-      "Display": [
-        "Megjelenítés"
-      ],
-      "Description": [
-        "Leírás"
-      ],
-      "Default event duration": [
-        "Az események alapértelmezett hossza"
-      ],
-      "URL": [
-        "URL"
-      ],
-      "Default notifications": [
-        "Alapértelmezett emlékeztetők"
-      ],
-      "Default full day notifications": [
-        "Alapértelmezett emlékeztetők (egész napos)"
-      ],
-      "Show secondary time zone": [
-        "Másodlagos időzóna megjelenítése"
-      ],
-      "Auto-detect primary time zone": [
-        "Automatikusan detektálja az elsődleges időzónát"
-      ],
-      "Default view": [
-        "Alapértelmezett nézet"
-      ],
-      "Show week numbers": [
-        "Hetek sorszámának megjelenítése"
-      ],
-      "Import to:": [
-        "Importálás ide:"
-      ],
-      "Your calendar URL": [
-        "Az ön naptárának URL-je"
-      ],
-      "Your calendar URL label": [
-        "Az ön naptárának URL neve"
-      ],
-      "Delete": [
-        ""
-      ],
-      "Backup key": [
-        ""
-      ],
-      "Uploaded private keys": [
-        ""
-      ],
-      "Upload your backup key": [
-        ""
-      ],
-      "Phrase": [
-        ""
-      ],
-      "Backup keys": [
-        ""
-      ],
-      "Enter the password for key with fingerprint: ${ fingerprintCode }": [
-        "Írja be a következő ujjlenyomattal rendelkező kulcshoz tartozó jelszót: ${ fingerprintCode }"
-      ],
-      "Enter password": [
-        "Jelszó megadása"
-      ],
-      "Please select files to upload": [
-        "Válassza ki a fájlokat a feltöltéshez"
-      ],
       "Domain name": [
         "Domain név"
       ],
@@ -1494,9 +1497,6 @@
       ],
       "Here is a basic DMARC record that does nothing except email you reports.": [
         "Ez egy alapszintű DMARC rekord ami nem csinál mást mint e-mail jelentéseket küld."
-      ],
-      "Display name": [
-        "Megjelenített név"
       ],
       "Filter Name": [
         "Szűrő neve"
@@ -1603,6 +1603,21 @@
       "Want to add": [
         "Hozzáadás:"
       ],
+      "Display name": [
+        "Megjelenített név"
+      ],
+      "Folder location": [
+        "Mappa helye"
+      ],
+      "Notification": [
+        "Értesítés"
+      ],
+      "Use folder colors": [
+        "Mappa színek használata"
+      ],
+      "Inherit color from parent folder": [
+        "Szín öröklése a tartalmazó mappáról"
+      ],
       "Operating system": [
         "Operációs rendszer"
       ],
@@ -1630,51 +1645,42 @@
       "Browser version": [
         "Böngésző verzió"
       ],
-      "Folder location": [
-        "Mappa helye"
-      ],
-      "Notification": [
-        "Értesítés"
-      ],
-      "Use folder colors": [
-        "Mappa színek használata"
-      ],
-      "Inherit color from parent folder": [
-        "Szín öröklése a tartalmazó mappáról"
-      ],
       "${ n } VPN connection available": [
-        "",
-        ""
+        "${ n } VPN kapcsolódás használható",
+        "${ n } VPN kapcsolódás használható"
       ],
       "${ UsedMembers } of ${ MaxMembers } user": [
-        "",
-        ""
+        "${ UsedMembers } az ${ MaxMembers } felhasználóból",
+        "${ UsedMembers } a ${ MaxMembers } felhasználóból"
       ],
       "${ UsedAddresses } of ${ MaxAddresses } email address": [
-        "",
-        ""
+        "${ UsedAddresses } az ${ MaxAddresses } e-mail címből",
+        "${ UsedAddresses } a ${ MaxAddresses } e-mail címből"
       ],
       "${ UsedDomains } of ${ MaxDomains } custom domain": [
-        "",
-        ""
+        "${ UsedDomains } az ${ MaxDomains } saját domain névből",
+        "${ UsedDomains } a ${ MaxDomains } saját domain névből"
       ],
       "Using ${ humanUsedSpace } of ${ humanMaxSpace }": [
-        ""
+        "Felhasználva ${ humanUsedSpace } a ${ humanMaxSpace } tárhelyből"
+      ],
+      "Could you please specify?": [
+        "Meg tudná határozni?"
+      ],
+      "Could you please specify which streaming service?": [
+        "Meg tudná határozni melyik videózás szolgáltató?"
+      ],
+      "Could you please let us know which provider?": [
+        "Meg tudná mondani melyik szolgáltató?"
       ],
       "What is the main reason you are cancelling?": [
         "Mi a lemondásának a fő oka?"
       ],
-      "How likely are you to recommend ${ BRAND_NAME } to others?": [
-        "Mennyire ajánlaná a ${ BRAND_NAME } szolgáltatást másoknak?"
+      "Do you have any suggestions for our team?": [
+        "Lenne valamilyen javaslata a csapatunk számára?"
       ],
-      "0 - Not at all likely": [
-        "0 - Egyáltalán nem"
-      ],
-      "10 - Extremely likely": [
-        "10 - Nagyon"
-      ],
-      "How do you think we could improve our products or service in the future?": [
-        "Mit javasol, hogyan javíthatnánk a szolgáltatásainkon a jövőben?"
+      "Optional": [
+        "Nem kötelező"
       ],
       "Total (${ countdown })": [
         "Összesen (${ countdown })"
@@ -1739,20 +1745,11 @@
       "Select a method": [
         "Válasszon fizetési módot"
       ],
-      "Auto-load remote content": [
-        "Távoli tartalom automatikus betöltése"
+      "OpenVPN / IKEv2 username": [
+        "OpenVPN / IKEv2 felhasználónév"
       ],
-      "Auto-load embedded images": [
-        "Beágyazott képek automatikus betöltése"
-      ],
-      "Keep messages in Sent/Drafts": [
-        "Üzenetek megőrzése az Elküldött és Piszkozatok mappában"
-      ],
-      "Link confirmation": [
-        "Link jóváhagyása"
-      ],
-      "Undo send": [
-        "Küldés visszavonása"
+      "OpenVPN / IKEv2 password": [
+        "OpenVPN / IKEv2 jelszó"
       ],
       "Your password (admin)": [
         "Jelszó (adminisztrátor)"
@@ -1830,31 +1827,16 @@
         "Helyreállítás engedélyezése telefonszámmal"
       ],
       "Allow recovery by recovery phrase": [
-        ""
-      ],
-      "Keyboard shortcuts": [
-        "Gyorsbillentyűk"
+        "Helyreállítás engedélyezése helyreállító jelmondattal"
       ],
       "Recovery phrase": [
-        ""
+        "Helyreállító jelmondat"
       ],
       "Your recovery phrase": [
-        ""
+        "Az ön helyreállító jelmondata"
       ],
       "Recovery phrase contains 12 words": [
-        ""
-      ],
-      "Signature": [
-        "Aláírás"
-      ],
-      "ProtonMail footer": [
-        "ProtonMail aláírás"
-      ],
-      "User": [
-        "Felhasználó"
-      ],
-      "Address": [
-        "Cím"
+        "A helyreállító jelmondat 12 szóból áll"
       ],
       "Cash": [
         "Készpénz"
@@ -1894,6 +1876,42 @@
       ],
       "Confirm organization password": [
         "Szervezeti jelszó megerősítése"
+      ],
+      "Confirm before loading remote content": [
+        "Megerősítés távoli tartalom betöltése előtt"
+      ],
+      "Auto-load embedded images": [
+        "Beágyazott képek automatikus betöltése"
+      ],
+      "Keep messages in Sent/Drafts": [
+        "Üzenetek megőrzése az Elküldött és Piszkozatok mappában"
+      ],
+      "Link confirmation": [
+        "Link jóváhagyása"
+      ],
+      "Undo send": [
+        "Küldés visszavonása"
+      ],
+      "Protect against email tracking": [
+        "E-mail nyomonkövetés ellen védi"
+      ],
+      "Protection mode": [
+        "Védelem módja"
+      ],
+      "Keyboard shortcuts": [
+        "Gyorsbillentyűk"
+      ],
+      "Signature": [
+        "Aláírás"
+      ],
+      "ProtonMail footer": [
+        "ProtonMail aláírás"
+      ],
+      "User": [
+        "Felhasználó"
+      ],
+      "Address": [
+        "Cím"
       ],
       "VPN connections": [
         "VPN kapcsolatok"
@@ -1960,9 +1978,6 @@
       "Open actions dropdown": [
         "Műveletek menü megnyitása"
       ],
-      "Keyboard Shortcuts": [
-        "Gyorsbillentyűk"
-      ],
       "Previous": [
         "Előző"
       ],
@@ -1971,6 +1986,9 @@
       ],
       "Next": [
         "Következő"
+      ],
+      "Keyboard Shortcuts": [
+        "Gyorsbillentyűk"
       ],
       "What's new": [
         "Újdonságok"
@@ -2023,21 +2041,6 @@
       "Import contacts": [
         "Névjegyek importálása"
       ],
-      "1. Select platform": [
-        "1. Platform kiválasztása"
-      ],
-      "2. Select protocol": [
-        "2. Protokoll kiválasztása"
-      ],
-      "3. Select config file and download": [
-        "3. Beállítási fájl kiválasztása és letöltése"
-      ],
-      "Get ProtonVPN Plus to access all servers": [
-        "Fizessen elő ProtonVPN Plus csomagra az összes szerver használatához"
-      ],
-      "Automatically sign outgoing messages?": [
-        "Automatikusan aláírja a kimenő üzeneteket?"
-      ],
       "Error": [
         "Hiba"
       ],
@@ -2066,7 +2069,7 @@
         "Naptár törlése"
       ],
       "Remove calendar": [
-        ""
+        "Naptár eltávolítása"
       ],
       "Import events": [
         "Események importálása"
@@ -2075,7 +2078,7 @@
         "Az ön naptárának hivatkozása"
       ],
       "Reactivate keys": [
-        ""
+        "Kulcsok újraaktiválása"
       ],
       "Decrypt key": [
         "Kulcs visszafejtése"
@@ -2097,6 +2100,9 @@
       ],
       "Import key": [
         "Kulcs importálása"
+      ],
+      "Automatically sign outgoing messages?": [
+        "Automatikusan aláírja a kimenő üzeneteket?"
       ],
       "Edit domain": [
         "Domain szerkesztése"
@@ -2152,11 +2158,8 @@
       "Edit Allow List": [
         "Engedélyezett lista szerkesztése"
       ],
-      "Report a problem": [
-        "Probléma jelentése"
-      ],
       "Delete ${ Name } folder": [
-        ""
+        "${ Name } mappa törlése"
       ],
       "Delete ${ Name } label": [
         ""
@@ -2167,14 +2170,17 @@
       "Sort labels alphabetically": [
         "Címkék rendezése betűrendbe"
       ],
+      "Report a problem": [
+        "Probléma jelentése"
+      ],
       "Confirm loss of Proton bonuses": [
         "Proton-bónuszok elvesztésének megerősítése"
       ],
       "Processing": [
         "Feldolgozás"
       ],
-      "Cancel subscription": [
-        "Előfizetés lemondása"
+      "Downgrade account": [
+        "Váltás kisebb csomagra"
       ],
       "Network error": [
         "Hálózati hiba"
@@ -2269,6 +2275,18 @@
       "Plan summary": [
         "Csomag összefoglaló"
       ],
+      "1. Select platform": [
+        "1. Platform kiválasztása"
+      ],
+      "2. Select protocol": [
+        "2. Protokoll kiválasztása"
+      ],
+      "3. Select config file and download": [
+        "3. Beállítási fájl kiválasztása és letöltése"
+      ],
+      "Get ProtonVPN Plus to access all servers": [
+        "Fizessen elő ProtonVPN Plus csomagra az összes szerver használatához"
+      ],
       "Change password for ${ Name } (${ Email })": [
         "Jelszó megváltoztatása, felhasználó: ${ Name } (${ Email })"
       ],
@@ -2307,21 +2325,6 @@
       ],
       "Confirm phone number": [
         "Telefonszám megerősítése"
-      ],
-      "${ appName } Keyboard Shortcuts": [
-        "${ appName } gyorsbillentyűk"
-      ],
-      "Add address": [
-        "Cím hozzáadása"
-      ],
-      "Delete ${ address.Email }": [
-        "${ address.Email } törlése"
-      ],
-      "Generate missing keys": [
-        "Hiányzó kulcsok generálása"
-      ],
-      "Bridge for ${ platform }": [
-        "Bridge ${ platform } eszközökre"
       ],
       "App": [
         "Alkalmazás"
@@ -2386,6 +2389,18 @@
       "Change organization password": [
         "Szervezeti jelszó megváltoztatása"
       ],
+      "${ appName } Keyboard Shortcuts": [
+        "${ appName } gyorsbillentyűk"
+      ],
+      "Add address": [
+        "Cím hozzáadása"
+      ],
+      "Delete ${ address.Email }": [
+        "${ address.Email } törlése"
+      ],
+      "Generate missing keys": [
+        "Hiányzó kulcsok generálása"
+      ],
       "Change role": [
         "Szerep megváltoztatása"
       ],
@@ -2397,6 +2412,9 @@
       ],
       "Add user": [
         "Felhasználó hozzáadása"
+      ],
+      "Bridge for ${ platform }": [
+        "Bridge ${ platform } eszközökre"
       ],
       "Sign in again to continue": [
         "Lépjen be újból a folytatáshoz"
@@ -2413,26 +2431,11 @@
       "Account suspended": [
         "Fiók felfüggesztve"
       ],
-      "General": [
-        "Általános"
+      "Appearance": [
+        "Megjelenés"
       ],
       "Theme": [
         "Téma"
-      ],
-      "Contacts": [
-        "Kapcsolatok"
-      ],
-      "Import & export": [
-        "Importálás és exportálás"
-      ],
-      "Import": [
-        "Importálás"
-      ],
-      "Export": [
-        "Exportálás"
-      ],
-      "Appearance": [
-        "Megjelenés"
       ],
       "Layout": [
         "Elrendezés"
@@ -2482,6 +2485,12 @@
       "Labels": [
         "Címkék"
       ],
+      "Import Assistant": [
+        "Import Assistant"
+      ],
+      "General": [
+        "Általános"
+      ],
       "Short domain (@pm.me)": [
         "Rövid domain (@pm.me)"
       ],
@@ -2490,6 +2499,9 @@
       ],
       "Advanced": [
         "Haladó"
+      ],
+      "Spy Tracker Protection": [
+        ""
       ],
       "Identity & addresses": [
         "Személyazonosság és címek"
@@ -2506,14 +2518,38 @@
       "ProtonMail Bridge": [
         "ProtonMail Bridge"
       ],
-      "Import Assistant": [
-        "Import Assistant"
+      "Import & export": [
+        "Importálás és exportálás"
       ],
       "Current & past imports": [
         "Jelenlegi és korábbi importálások"
       ],
       "Import-Export app": [
         "Import-Export alkalmazás"
+      ],
+      "Email privacy": [
+        ""
+      ],
+      "Contacts": [
+        "Kapcsolatok"
+      ],
+      "Import": [
+        "Importálás"
+      ],
+      "Export": [
+        "Exportálás"
+      ],
+      "My calendars": [
+        ""
+      ],
+      "Subscribed calendars": [
+        ""
+      ],
+      "Share outside Proton": [
+        "Megosztás Protonon kívül"
+      ],
+      "Time zone": [
+        "Időzóna"
       ],
       "VPN apps": [
         "VPN alkalmazások"
@@ -2529,18 +2565,6 @@
       ],
       "OpenVPN configuration files": [
         "OpenVPN konfigurációs fájlok"
-      ],
-      "My calendars": [
-        ""
-      ],
-      "Subscribed calendars": [
-        ""
-      ],
-      "Share outside Proton": [
-        "Megosztás Protonon kívül"
-      ],
-      "Time zone": [
-        "Időzóna"
       ],
       "Password & recovery": [
         "Jelszó és helyreállítás"
@@ -2763,9 +2787,6 @@
       "Plain text": [
         "Egyszerű szöveg"
       ],
-      "No results found": [
-        "Nincs találat"
-      ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Ez a link egy hamisított címre mutató (homográf) támadásnak néz ki. Internet Explorerben és Edge-ben nem nyitható meg. Ha biztos benne, hogy ez egy érvényes link, használjon egy másik böngészőt a megnyitáshoz."
       ],
@@ -2778,11 +2799,14 @@
       "Learn more": [
         "További információk"
       ],
+      "Week": [
+        "Hét"
+      ],
       "Drop the file here to upload": [
         "Húzza ide a fájlt a feltöltéshez"
       ],
-      "Week": [
-        "Hét"
+      "No results found": [
+        "Nincs találat"
       ],
       "Loading": [
         "Betöltés"
@@ -2921,113 +2945,6 @@
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "Az alkalmazásnak helyben kell visszafejtenie a névjegyeket az exportáláshoz. A folyamat végén egy VCF fájl fog létrejönni, amelyet letölthet."
       ],
-      "To secure your internet connection, download and install the ProtonVPN application for your device and connect to a ProtonVPN server.": [
-        "Az internetkapcsolatának biztonságosabbá tételéhez, töltse le és telepítse a ProtonVPN alkalmazást és kapcsolódjon egy ProtonVPN szerverhez."
-      ],
-      "You can use the following credentials to connect to a ProtonVPN server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
-        "Az alábbi bejelentkezéssel csatlakozhat a ProtonVPN szerverekhez ha valamilyen külső VPN alkalmazást használ, mint például Tunnelblick macOS-en vagy OpenVPN GNU/Linux-on."
-      ],
-      "Learn how to log in to ProtonVPN with third-party VPN applications.": [
-        "Tudjon meg többet arról, hogyan jelentkezhet be VPN alkalmazásokkal a ProtonVPN-re."
-      ],
-      "We advise you to use official ProtonVPN applications when possible.": [
-        "Amikor lehetséges, javasoljuk inkább a hivatalos ProtonVPN alkalmazás használatát."
-      ],
-      "You cannot use the OpenVPN / IKEv2 credentials to log in to ProtonVPN applications or the ProtonVPN dashboard. ${ learnMore }": [
-        "Nem használhatja az OpenVPN / IKEv2 bejelentkezési adatokat a ProtonVPN alkalmazásokban való bejelentkezéshez vagy a ProtonVPN vezérlőpulthoz. ${ learnMore }"
-      ],
-      "Use the following credentials when connecting to ProtonVPN servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
-        "Használja az alábbi adatokat, amikor a ProtonVPN szerverekhez az alkalmazás nélkül csatlakozik. Például: Tunnelblick MacOS-en, vagy OpenVPN GNU/Linux-on."
-      ],
-      "Do not use the OpenVPN / IKEv2 credentials in ProtonVPN applications or on the ProtonVPN dashboard. ${ learnMore }": [
-        "Ne használja az OpenVPN / IKEv2 adatokat a ProtonVPN alkalmazásban vagy a ProtonVPN vezérlőpulton. ${ learnMore }"
-      ],
-      "Server load": [
-        "Szerver terheltség"
-      ],
-      "Server is currently down": [
-        "A szerver jelenleg nem működik"
-      ],
-      "P2P": [
-        "P2P"
-      ],
-      "Tor": [
-        "Tor"
-      ],
-      "Plus or Visionary subscription required": [
-        "Plus vagy Visionary előfizetés szükséges"
-      ],
-      "Basic, Plus or Visionary subscription required": [
-        "Basic, Plus vagy Visionary előfizetés szükséges"
-      ],
-      "${ number } server": [
-        "${ number } kiszolgáló",
-        "${ number } kiszolgálók"
-      ],
-      "${ number } city": [
-        "${ number } város",
-        "${ number } városok"
-      ],
-      "These configuration files let you choose which ProtonVPN server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
-        "Ezekkel a beállítási fájlokkal egy külső VPN alkalmazással csatlakozhat a ProtonVPN-hez, vagy a routerén állíthatja be a kapcsolatot."
-      ],
-      "Install a Secure Core configuration file to benefit from an additional protection against VPN endpoint compromise.": [
-        "Telepítse a Secure Core konfigurációs fájlt, a VPN végpontok kompromittálásával szembeni erősebb védelemhez."
-      ],
-      "ProtonVPN Plus or Visionary required for Secure Core feature.": [
-        "ProtonVPN Plus vagy a Visionary csomag szükséges a Secure Core szolgáltatáshoz."
-      ],
-      "Install a Country configuration file to connect to a random server in the country of your choice.": [
-        "Telepítsen egy országkonfigurációs fájlt, ha véletlenszerű szerverhez szeretne kapcsolódni a választott országban."
-      ],
-      "ProtonVPN Basic, Plus or Visionary required for Country level connection.": [
-        "ProtonVPN Basic, Plus vagy Visionary csomag szükséges az ország szintű kapcsolódáshoz."
-      ],
-      "Install a Server configuration file to connect to a specific server in the country of your choice.": [
-        "Telepítsen egy szerverkonfigurációs fájlt, ha egy adott szerverhez szeretne kapcsolódni a választott országban."
-      ],
-      "Install a Free server configuration file to connect to a specific server in one of the three free locations.": [
-        "Telepítsen egy ingyenes konfigurációs fájlt, ha a három ingyenes hely egyikéhez szeretne kapcsolódni."
-      ],
-      "Plan upgrade required": [
-        "Nagyobb csomag szükséges"
-      ],
-      "Auto-reply is active each month between the selected start and end time.": [
-        "Az automatikus válasz minden hónapban aktív a kiválasztott kezdeti és befejezési időpont között."
-      ],
-      "Auto-reply is always active on the days of the week you select, between the selected hours.": [
-        "Az automatikus válasz mindig aktív a hét kiválasztott napjain a választott órák között."
-      ],
-      "Auto-reply is active each week between the selected start and end time.": [
-        "Az automatikus válasz minden héten aktív a kiválasztott kezdeti és befejezési időpont között."
-      ],
-      "Auto-reply is active until you turn it off.": [
-        "Az automatikus válasz aktív, míg ki nem kapcsolja."
-      ],
-      "Auto-reply is active from the start time to the end time.": [
-        "Az automatikus válasz aktív a kiválasztott kezdeti és befejezési időpont között."
-      ],
-      "Images have been removed because they are not allowed in auto-reply.": [
-        ""
-      ],
-      "Use automatic replies to inform contacts you are out of the office or otherwise unable to respond.": [
-        "Használja az automatikus válasz lehetőséget, hogy értesítse kapcsolatait arról, hogy jelenleg az irodán kívül tartózkodik, vagy más okok miatt nem tud válaszolni."
-      ],
-      "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to enable automatic replies for when you are out of the office.": [
-        ""
-      ],
-      "Address verification is an advanced security feature. Only turn this on if you know what it does.": [
-        "A cím hitelesítés egy haladó lehetőség. Csak akkor kapcsolja be, ha érti, hogyan működik."
-      ],
-      "Encryption setting updated": [
-        "Titkosítási beállítás frissítve"
-      ],
-      "PGP clients are more likely to automatically detect your PGP keys if outgoing messages are signed.": [
-        "PGP-t használó címzettek valószínűbb, hogy automatikusan érzékelik az ön PGP kulcsait, ha a kimenő levelek aláírtak."
-      ],
-      "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
-        "Csak akkor változtassa meg ezeket a beállításokat, ha PGP-t használ a nem ProtonMail címzettekhez."
-      ],
       "Are you sure you want to delete this calendar?": [
         "Biztos, hogy törölni szeretné ezt a naptárat?"
       ],
@@ -3146,6 +3063,42 @@
       "No contact encryption keys exist": [
         "Nincs névjegy titkosító kulcs"
       ],
+      "Auto-reply is active each month between the selected start and end time.": [
+        "Az automatikus válasz minden hónapban aktív a kiválasztott kezdeti és befejezési időpont között."
+      ],
+      "Auto-reply is always active on the days of the week you select, between the selected hours.": [
+        "Az automatikus válasz mindig aktív a hét kiválasztott napjain a választott órák között."
+      ],
+      "Auto-reply is active each week between the selected start and end time.": [
+        "Az automatikus válasz minden héten aktív a kiválasztott kezdeti és befejezési időpont között."
+      ],
+      "Auto-reply is active until you turn it off.": [
+        "Az automatikus válasz aktív, míg ki nem kapcsolja."
+      ],
+      "Auto-reply is active from the start time to the end time.": [
+        "Az automatikus válasz aktív a kiválasztott kezdeti és befejezési időpont között."
+      ],
+      "Images have been removed because they are not allowed in auto-reply.": [
+        ""
+      ],
+      "Use automatic replies to inform contacts you are out of the office or otherwise unable to respond.": [
+        "Használja az automatikus válasz lehetőséget, hogy értesítse kapcsolatait arról, hogy jelenleg az irodán kívül tartózkodik, vagy más okok miatt nem tud válaszolni."
+      ],
+      "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to enable automatic replies for when you are out of the office.": [
+        ""
+      ],
+      "Address verification is an advanced security feature. Only turn this on if you know what it does.": [
+        "A cím hitelesítés egy haladó lehetőség. Csak akkor kapcsolja be, ha érti, hogyan működik."
+      ],
+      "Encryption setting updated": [
+        "Titkosítási beállítás frissítve"
+      ],
+      "PGP clients are more likely to automatically detect your PGP keys if outgoing messages are signed.": [
+        "PGP-t használó címzettek valószínűbb, hogy automatikusan érzékelik az ön PGP kulcsait, ha a kimenő levelek aláírtak."
+      ],
+      "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
+        "Csak akkor változtassa meg ezeket a beállításokat, ha PGP-t használ a nem ProtonMail címzettekhez."
+      ],
       "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ProtonMail in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
         "Az SPF feladata, hogy meghatározza, kik küldhetnek levelet az adott domain névvel. Emiatt erősen javasolt a ProtonMail felvétele az SPF rekordba. Kérjük vegye fel a következő TXT rekordot a DNS beállításaiban. Ezt általában a domain név regisztrátor adminisztrálási felületén állathatja be."
       ],
@@ -3235,12 +3188,6 @@
       "Your Block List is empty.": [
         "A tiltott lista üres."
       ],
-      "Screenshot(s) attached": [
-        "Képernyőkép(ek) csatolva"
-      ],
-      "Refreshing the page or ${ link } will automatically resolve most issues.": [
-        "Az oldal frissítése vagy a ${ link } automatikusan megoldja a legtöbb problémát."
-      ],
       "Inherited from parent folder": [
         "Örökölve a felsőbb szintű mappából"
       ],
@@ -3261,6 +3208,12 @@
       ],
       "Are you sure you want to delete this folder?": [
         "Biztosan törli ezt a mappát?"
+      ],
+      "Screenshot(s) attached": [
+        "Képernyőkép(ek) csatolva"
+      ],
+      "Refreshing the page or ${ link } will automatically resolve most issues.": [
+        "Az oldal frissítése vagy a ${ link } automatikusan megoldja a legtöbb problémát."
       ],
       "More Info": [
         ""
@@ -3308,6 +3261,9 @@
       "No subscription yet": [
         "Még nincs előfizetés"
       ],
+      "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
+        ""
+      ],
       "You already have a free account": [
         "Már van egy ingyenes fiókja"
       ],
@@ -3325,12 +3281,6 @@
       ],
       "* Customizable features": [
         "* Testreszabható szolgáltatások"
-      ],
-      "Access your streaming services, like ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, no matter where you are.": [
-        "Nézze a TV előfizetéseit, mint ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, bárhol is van."
-      ],
-      "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
-        "Hozzáférés blokkolt tartalomhoz, mint például közösségi oldalak, hírek, Wikipedia, YouTube és sok más, bárhol is tartózkodik."
       ],
       "For getting started with private and secure emailing.": [
         "Az elinduláshoz a biztonságos és privát e-mailezésben."
@@ -3355,6 +3305,12 @@
       ],
       "For families and small teams; includes both Mail and VPN.": [
         "Családoknak és kisebb csoportoknak, a levelezést és VPN-t is tartalmazza."
+      ],
+      "Access your streaming services, like ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, no matter where you are.": [
+        "Nézze a TV előfizetéseit, mint ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, bárhol is van."
+      ],
+      "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
+        "Hozzáférés blokkolt tartalomhoz, mint például közösségi oldalak, hírek, Wikipedia, YouTube és sok más, bárhol is tartózkodik."
       ],
       "Save 20%": [
         "Takarítson meg 20%-ot"
@@ -3546,6 +3502,77 @@
       "30 days money-back guarantee.": [
         "30 napos pénz-visszafizetési garancia."
       ],
+      "To secure your internet connection, download and install the ProtonVPN application for your device and connect to a ProtonVPN server.": [
+        "Az internetkapcsolatának biztonságosabbá tételéhez, töltse le és telepítse a ProtonVPN alkalmazást és kapcsolódjon egy ProtonVPN szerverhez."
+      ],
+      "You can use the following credentials to connect to a ProtonVPN server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
+        "Az alábbi bejelentkezéssel csatlakozhat a ProtonVPN szerverekhez ha valamilyen külső VPN alkalmazást használ, mint például Tunnelblick macOS-en vagy OpenVPN GNU/Linux-on."
+      ],
+      "Learn how to log in to ProtonVPN with third-party VPN applications.": [
+        "Tudjon meg többet arról, hogyan jelentkezhet be VPN alkalmazásokkal a ProtonVPN-re."
+      ],
+      "We advise you to use official ProtonVPN applications when possible.": [
+        "Amikor lehetséges, javasoljuk inkább a hivatalos ProtonVPN alkalmazás használatát."
+      ],
+      "You cannot use the OpenVPN / IKEv2 credentials to log in to ProtonVPN applications or the ProtonVPN dashboard. ${ learnMore }": [
+        "Nem használhatja az OpenVPN / IKEv2 bejelentkezési adatokat a ProtonVPN alkalmazásokban való bejelentkezéshez vagy a ProtonVPN vezérlőpulthoz. ${ learnMore }"
+      ],
+      "Use the following credentials when connecting to ProtonVPN servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
+        "Használja az alábbi adatokat, amikor a ProtonVPN szerverekhez az alkalmazás nélkül csatlakozik. Például: Tunnelblick MacOS-en, vagy OpenVPN GNU/Linux-on."
+      ],
+      "Do not use the OpenVPN / IKEv2 credentials in ProtonVPN applications or on the ProtonVPN dashboard. ${ learnMore }": [
+        "Ne használja az OpenVPN / IKEv2 adatokat a ProtonVPN alkalmazásban vagy a ProtonVPN vezérlőpulton. ${ learnMore }"
+      ],
+      "Server load": [
+        "Szerver terheltség"
+      ],
+      "Server is currently down": [
+        "A szerver jelenleg nem működik"
+      ],
+      "P2P": [
+        "P2P"
+      ],
+      "Tor": [
+        "Tor"
+      ],
+      "Plus or Visionary subscription required": [
+        "Plus vagy Visionary előfizetés szükséges"
+      ],
+      "Basic, Plus or Visionary subscription required": [
+        "Basic, Plus vagy Visionary előfizetés szükséges"
+      ],
+      "${ number } server": [
+        "${ number } kiszolgáló",
+        "${ number } kiszolgálók"
+      ],
+      "${ number } city": [
+        "${ number } város",
+        "${ number } városok"
+      ],
+      "These configuration files let you choose which ProtonVPN server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
+        "Ezekkel a beállítási fájlokkal egy külső VPN alkalmazással csatlakozhat a ProtonVPN-hez, vagy a routerén állíthatja be a kapcsolatot."
+      ],
+      "Install a Secure Core configuration file to benefit from an additional protection against VPN endpoint compromise.": [
+        "Telepítse a Secure Core konfigurációs fájlt, a VPN végpontok kompromittálásával szembeni erősebb védelemhez."
+      ],
+      "ProtonVPN Plus or Visionary required for Secure Core feature.": [
+        "ProtonVPN Plus vagy a Visionary csomag szükséges a Secure Core szolgáltatáshoz."
+      ],
+      "Install a Country configuration file to connect to a random server in the country of your choice.": [
+        "Telepítsen egy országkonfigurációs fájlt, ha véletlenszerű szerverhez szeretne kapcsolódni a választott országban."
+      ],
+      "ProtonVPN Basic, Plus or Visionary required for Country level connection.": [
+        "ProtonVPN Basic, Plus vagy Visionary csomag szükséges az ország szintű kapcsolódáshoz."
+      ],
+      "Install a Server configuration file to connect to a specific server in the country of your choice.": [
+        "Telepítsen egy szerverkonfigurációs fájlt, ha egy adott szerverhez szeretne kapcsolódni a választott országban."
+      ],
+      "Install a Free server configuration file to connect to a specific server in one of the three free locations.": [
+        "Telepítsen egy ingyenes konfigurációs fájlt, ha a három ingyenes hely egyikéhez szeretne kapcsolódni."
+      ],
+      "Plan upgrade required": [
+        "Nagyobb csomag szükséges"
+      ],
       "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
         "Lejárt számlatartozása van. Hozzáférése korlátozásra került. ${ payInvoiceLink }"
       ],
@@ -3584,12 +3611,6 @@
       ],
       "Internet connection lost. Please check your device's connectivity.": [
         "Az internet kapcsolat megszakadt. Ellenőrizze az eszköz csatlakoztathatóságát."
-      ],
-      "When disabled, this prevents all files from loading on your device without your knowledge.\t": [
-        "Kikapcsolása megakadályozza, hogy az ön értesítése nélkül töltődjenek le fájlok az eszközére."
-      ],
-      "When disabled, this prevents image files from loading on your device without your knowledge.": [
-        "Kikapcsolása megakadályozza, hogy az ön értesítése nélkül töltődjenek le képek az eszközére."
       ],
       "By leaving now, changes may not be saved": [
         "Ha most kilép, a módosítások elveszhetnek"
@@ -3699,9 +3720,6 @@
       "Disabling this will prevent your recovery phrase from being used for account recovery.": [
         ""
       ],
-      "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
-        "Az alapvető navigációs lehetőségek akkor is megmaradnak, ha a beállításokban letiltotta a gyorsbillentyűket."
-      ],
       "Your recovery phrase is a series of 12 words in a specific order.": [
         ""
       ],
@@ -3728,33 +3746,6 @@
       ],
       "Recovery phrase has been disabled": [
         ""
-      ],
-      "Let your contacts know you care about their privacy.": [
-        "Tudassa kapcsolataival hogy Ön törődik személyes adataik védelmével!"
-      ],
-      "Please note that if you delete this address, you will no longer be able to send or receive emails using this address.": [
-        "Amennyiben törli ezt a címet, a továbbiakban nem fogadhat és nem küldhet leveleket ezzel a címmel."
-      ],
-      "Are you sure you want to delete this address?": [
-        "Biztosan törli ezt a címet?"
-      ],
-      "The email address you place at the top of the list is your default email address. Drag and drop to reorder your addresses.": [
-        "Az e-mail cím, amit a lista tetejére helyez lesz az alapértelmezett címe. Húzással mozgassa a címeket annak érdekében hogy módosíthassa a sorrendet."
-      ],
-      "Queued": [
-        "Sorba állítva"
-      ],
-      "Done": [
-        "Kész"
-      ],
-      "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
-        "Mielőtt elkezdhetne küldeni és fogadni e-maileket az új címével, létre kell hoznia titkosítási kulcsokat hozzá."
-      ],
-      "You can use ProtonMail with any desktop email client that supports IMAP/SMTP, including Outlook, Apple Mail, and Thunderbird.": [
-        "A ProtonMail szolgáltatásait bármilyen e-mail kliens programmal használhatja, amik támogatják a IMAP/SMTP protokollt: ilyenek pl.: az Outlook, Apple Mail, és a Thunderbird alkalmazások."
-      ],
-      "Upgrade to a paid plan to unlock IMAP/SMTP support through ProtonMail Bridge.": [
-        "Váltson előfizetéses csomagra, hogy használhassa az IMAP/SMTP elérést a ProtonMail Bridge segítségével."
       ],
       "Do you want to revoke all other sessions than the current one?": [
         "Biztos, hogy az aktuálisat leszámítva, minden munkafolyamatot visszavon?"
@@ -3870,6 +3861,39 @@
       "Your organization's emails are protected with end-to-end encryption using the organization key. This fingerprint can be used to verify that all administrators in your account have the same key.": [
         "Szervezete e-mailjei végpontok közti titkosítása a szervezeti kulccsal történik. Ezzel az ujjlenyomattal ellenőrizhető, hogy a fiókhoz tartozó összes adminisztrátor birtokolja ugyanazt a kulcsot."
       ],
+      "Prevents remote email content from loading automatically.": [
+        ""
+      ],
+      "When disabled, this prevents image files from loading on your device without your knowledge.": [
+        "Kikapcsolása megakadályozza, hogy az ön értesítése nélkül töltődjenek le képek az eszközére."
+      ],
+      "Prevents senders from knowing whether and when you have opened a message.": [
+        ""
+      ],
+      "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
+        "Az alapvető navigációs lehetőségek akkor is megmaradnak, ha a beállításokban letiltotta a gyorsbillentyűket."
+      ],
+      "Let your contacts know you care about their privacy.": [
+        "Tudassa kapcsolataival hogy Ön törődik személyes adataik védelmével!"
+      ],
+      "Please note that if you delete this address, you will no longer be able to send or receive emails using this address.": [
+        "Amennyiben törli ezt a címet, a továbbiakban nem fogadhat és nem küldhet leveleket ezzel a címmel."
+      ],
+      "Are you sure you want to delete this address?": [
+        "Biztosan törli ezt a címet?"
+      ],
+      "The email address you place at the top of the list is your default email address. Drag and drop to reorder your addresses.": [
+        "Az e-mail cím, amit a lista tetejére helyez lesz az alapértelmezett címe. Húzással mozgassa a címeket annak érdekében hogy módosíthassa a sorrendet."
+      ],
+      "Queued": [
+        "Sorba állítva"
+      ],
+      "Done": [
+        "Kész"
+      ],
+      "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
+        "Mielőtt elkezdhetne küldeni és fogadni e-maileket az új címével, létre kell hoznia titkosítási kulcsokat hozzá."
+      ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Jelenleg ez a felhasználó felelős a szervezet szolgáltatásainak kifizetéséért. Ha lefokozza, az ön feladatává válik a kifizetés."
       ],
@@ -3888,6 +3912,12 @@
       ],
       "more": [
         "több"
+      ],
+      "You can use ProtonMail with any desktop email client that supports IMAP/SMTP, including Outlook, Apple Mail, and Thunderbird.": [
+        "A ProtonMail szolgáltatásait bármilyen e-mail kliens programmal használhatja, amik támogatják a IMAP/SMTP protokollt: ilyenek pl.: az Outlook, Apple Mail, és a Thunderbird alkalmazások."
+      ],
+      "Upgrade to a paid plan to unlock IMAP/SMTP support through ProtonMail Bridge.": [
+        "Váltson előfizetéses csomagra, hogy használhassa az IMAP/SMTP elérést a ProtonMail Bridge segítségével."
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "A Proton fiók jelenleg fel van függesztve. A további használatához kérjük, egyenlítse ki a számlatartozását."
@@ -3931,15 +3961,6 @@
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Ha úgy gondolja ez tévedés, vegye fel velük a kapcsolatot ${ contactLink }."
       ],
-      "Session timed out.": [
-        "A munkamenet lejárt."
-      ],
-      "Internet connection lost.": [
-        "Az internetkapcsolat megszakadt."
-      ],
-      "Servers are unreachable.": [
-        "A szerverek nem érhetők el."
-      ],
       "Custom daily": [
         "Egyéni, naponta"
       ],
@@ -3963,6 +3984,15 @@
       ],
       "Yearly": [
         "Éves"
+      ],
+      "Session timed out.": [
+        "A munkamenet lejárt."
+      ],
+      "Internet connection lost.": [
+        "Az internetkapcsolat megszakadt."
+      ],
+      "Servers are unreachable.": [
+        "A szerverek nem érhetők el."
       ],
       "Users can't make changes to organization settings. If you need admin privileges, reach out to your system administrator.": [
         "A felhasználók nem kezelhetik a szervezet beállításait. Ha magasabb jogosultságra lenne szüksége, keresse meg a szervezet adminisztrátorát."
@@ -4095,7 +4125,17 @@
     },
     "Font Size Default": {
       "Default": [
-        ""
+        "Alapértelmezett"
+      ]
+    },
+    "Select search results": {
+      "No results found": [
+        "Nincs találat"
+      ]
+    },
+    "Timezone search placeholder": {
+      "Search timezones": [
+        "Időzóna keresése"
       ]
     },
     "Storage": {
@@ -4113,12 +4153,6 @@
       "Learn more": [
         "További információk"
       ],
-      "View guide": [
-        "Útmutató megtekintése"
-      ],
-      "What is the difference between UDP and TCP protocols?": [
-        "Mi a különbség az UDP és a TCP protokollok között?"
-      ],
       "Upgrade": [
         "Váltás nagyobb csomagra"
       ],
@@ -4133,6 +4167,12 @@
       ],
       "Add a gift code": [
         "Ajándék kód hozzáadása"
+      ],
+      "View guide": [
+        "Útmutató megtekintése"
+      ],
+      "What is the difference between UDP and TCP protocols?": [
+        "Mi a különbség az UDP és a TCP protokollok között?"
       ],
       "Pay invoice": [
         "Számla kifizetése"
@@ -4177,22 +4217,519 @@
         "Fiók létrehozása"
       ]
     },
-    "Select search results": {
-      "No results found": [
-        "Nincs találat"
+    "Label to change composer mode": {
+      "Normal": [
+        "Normál"
+      ],
+      "Maximized": [
+        "Teljes méretű"
       ]
     },
-    "Timezone search placeholder": {
-      "Search timezones": [
-        "Időzóna keresése"
+    "Label to change view layout": {
+      "Column": [
+        "Oszlop"
+      ],
+      "Row": [
+        "Sor"
+      ]
+    },
+    "Label to change density": {
+      "Comfortable": [
+        "Kényelmes"
+      ],
+      "Compact": [
+        "Tömör"
+      ]
+    },
+    "Success": {
+      "Preference saved": [
+        "Beállítások mentve"
+      ],
+      "Import resumed": [
+        "Importálás folytatva"
+      ],
+      "Import canceled": [
+        "Az importálás megszakítva"
+      ],
+      "Import record deleted": [
+        "Importálási elem törölve"
+      ],
+      "Deleting original messages": [
+        "Eredeti üzenetek törlése"
+      ],
+      "Locale updated": [
+        "Nyelv frissítve"
+      ],
+      "Premium address created": [
+        "Prémium cím létrehozva"
+      ],
+      "Keyboard shortcuts preferences updated": [
+        "Gyorsbillentyű beállítások frissítve"
+      ],
+      "Calendar added. It might take a few minutes to sync.": [
+        "Naptár létrehozva. Egy pár percbe telhet a szinkronizálás."
+      ],
+      "Calendar created": [
+        "Naptár létrehozva"
+      ],
+      "Calendar updated": [
+        "Naptár frissítve"
+      ],
+      "Default calendar updated": [
+        "Alapértelmezett naptár frissítve"
+      ],
+      "Calendar removed": [
+        "Naptár törölve"
+      ],
+      "Auto-reply disabled": [
+        "Automatikus válasz kikapcsolva"
+      ],
+      "Auto-reply updated": [
+        "Automatikus válasz frissítve"
+      ],
+      "Verification code copied to clipboard!": [
+        "Ellenőrző kód a vágólapra másolva!"
+      ],
+      "SPF value copied to clipboard!": [
+        "Az SPF érték a vágólapra másolva!"
+      ],
+      "Value copied to clipboard!": [
+        "Az érték a vágólapra másolva!"
+      ],
+      "DMARC value copied to clipboard!": [
+        "A DMARC érték a vágólapra másolva!"
+      ],
+      "Domain verified": [
+        "Domain név ellenőrizve"
+      ],
+      "Catch-all address updated": [
+        "Gyűjtő e-mail cím frissítve"
+      ],
+      "Email address copied to clipboard": [
+        "E-mail cím a vágólapra másolva"
+      ],
+      "Bug reported": [
+        "Hiba bejelentve"
+      ],
+      "You have successfully unsubscribed": [
+        "Sikeresen leiratkozott"
+      ],
+      "Payment method updated": [
+        "Fizetési mód frissítve"
+      ],
+      "Payment method added": [
+        "Fizetési mód hozzáadva"
+      ],
+      "Credits added": [
+        "Kredit hozzáadva"
+      ],
+      "Gift code applied": [
+        "Ajándék kód alkalmazva"
+      ],
+      "${ server.Domain } copied in your clipboard": [
+        "${ server.Domain } vágólapra másolva"
+      ],
+      "Password updated": [
+        "Jelszó frissítve"
+      ],
+      "Account deleted. Logging out...": [
+        "Fiók törölve. Kijelentkezés..."
+      ],
+      "Email updated": [
+        "E-mail frissítve"
+      ],
+      "Phone number updated": [
+        "Telefonszám frissítve"
+      ],
+      "Session revoked": [
+        "Munkafolyamat visszavonva"
+      ],
+      "Sessions revoked": [
+        "Munkafolyamatok visszavonva"
+      ],
+      "Payment method deleted": [
+        "Fizetési mód törölve"
+      ],
+      "Invoice paid": [
+        "Számla fizetve"
+      ],
+      "Invoice customized": [
+        "Számlabeállítások mentve"
+      ],
+      "Organization activated": [
+        "Szervezet aktiválva"
+      ],
+      "Keys updated": [
+        "Kulcsok frissítve"
+      ],
+      "Address updated": [
+        "Cím frissítve"
+      ],
+      "Address added": [
+        "Cím hozzáadva"
+      ],
+      "User updated": [
+        "Felhasználó frissítve"
+      ],
+      "User created": [
+        "Felhasználó létrehozva"
+      ],
+      "Code sent to ${ methodTo }": [
+        "Kód elküldve: ${ methodTo }"
+      ],
+      "Verification successful": [
+        "Sikeres ellenőrzés"
+      ],
+      "If you entered a valid recovery email we will send you an email with your usernames in the next minute.": [
+        "Amennyiben érvényes helyreállítási e-mailt adott meg, akkor a következő percben küldünk egy levelet a felhasználónevével."
+      ],
+      "If you entered a valid recovery phone we will send you an sms with your usernames in the next minute.": [
+        "Amennyiben érvényes helyreállítási számot adott meg, akkor a következő percben küldünk egy SMS-t a felhasználónevével."
+      ]
+    },
+    "Tooltip": {
+      "Set the default layout for your Inbox.": [
+        "A levelező alapértelmezett elrendezésének beállítása."
+      ],
+      "Set the default Composer popup size as small or full screen.": [
+        "A levél szerkesztő alapértelmezett méretének beállítása kicsire vagy teljes képernyősre."
+      ],
+      "When you add a label to a message in a conversation, it will automatically be applied to all future messages you send or receive in that conversation.": [
+        "Ha egy beszélgetésben szereplő levélhez rendel címkét, akkor abban a beszélgetésben az összes fogadott és küldött új üzenetre érvényes lesz."
+      ],
+      "Group emails in the same conversation together in your Inbox or display them separately.": [
+        "A levelező csoportosítsa az e-maileket beszélgetésenként vagy jelenítse meg külön."
+      ],
+      "Customize import to reduce the number of labels": [
+        "Módosítsa az importálás beállításait hogy kevesebb címkére legyen szükség"
+      ],
+      "Customize import to reduce the number of folders": [
+        "Módosítsa az importálás beállításait hogy kevesebb mappára legyen szükség"
+      ],
+      "Edit label names": [
+        "Címke nevek szerkesztése"
+      ],
+      "Edit folder names": [
+        "Mappa nevek szerkesztése"
+      ],
+      "System subfolders will show up as separate folders in ProtonMail": [
+        "A rendszer almappák külön mappákként fognak megjelenni a ProtonMailben"
+      ],
+      "Each imported email will have this label": [
+        "Minden importált üzenet megkapja ezt a címkét"
+      ],
+      "The import will start with the most recent messages.": [
+        "Az importálás a legfrissebb üzenetekkel kezdődik."
+      ],
+      "Account is disconnected": [
+        "A fiók lecsatlakoztatva"
+      ],
+      "Your ProtonMail inbox is almost full": [
+        "A ProtonMail fiók közel megtelt"
+      ],
+      "Your external account may have reached its 24-hour bandwidth limit. Proton will try to resume the import as soon as possible.": [
+        "A külső fiókja nagy eséllyel elérte a 24-órás sávszélesség limitét. A Proton meg fogja próbálni folytatni az importálást amilyen gyorsan lehetséges."
+      ],
+      "You do not have any contacts to export": [
+        "Önnek nincs exportálható névjegye"
+      ],
+      "This feature is unavailable for the moment": [
+        "Ez a lehetőség jelenleg nem érhető el"
+      ],
+      "ProtonMail users will use this key by default for sending": [
+        "A ProtonMail felhasználók alapértelmezetten ezt a kulcsot fogják használni a küldéshez"
+      ],
+      "You have locally decrypted this key": [
+        "Ezt a kulcsot helyileg visszafejtette"
+      ],
+      "This key is encrypted with an old password": [
+        "Ez a kulcs egy régebbi jelszóval van titkosítva"
+      ],
+      "Signatures produced by this key are treated as invalid and this key cannot be used for encryption": [
+        "Az ezzel a kulccsal készült aláírások érvénytelenként lesznek kezelve és a kulcs nem használható titkosításra"
+      ],
+      "This key cannot be used for encryption": [
+        "Ez a kulcs nem használható titkosításhoz"
+      ],
+      "This address has been disabled": [
+        "Ez a cím van letiltva"
+      ],
+      "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
+        "A DKIM aláírás felfüggesztésre került a DNS beállítási hibája miatt. Kövesse az útmutatót a DKIM aláírás helyreállításához."
+      ],
+      "Your DKIM signing is working.": [
+        "A DKIM aláírás megfelelően működik."
+      ],
+      "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
+        "Probléma van a DNS beállításaival. Kérjük, javítsa, hogy minden az alábbiak szerint legyen beállítva. Ha a probléma továbbra is fennáll, ki kell kapcsolnunk a DKIM aláírást."
+      ],
+      "This feature is only available for paid users": [
+        "Ez a lehetőség csak előfizetéses csomagokban érhető érhető el"
+      ],
+      "Enable/disable desktop and mobile notifications": [
+        "Mobil és asztali értesítések ki- és bekapcsolása"
+      ],
+      "Use multiple addresses / aliases linked to your account, e.g. username2@protonmail.com": [
+        "Használjon több címet / nevet a fiókjához pl. masiknev@protonmail.com"
+      ],
+      "Host emails for your own domain(s) at ProtonMail, e.g. john.smith@example.com": [
+        "Levelezzen a saját domain nevén a ProtonMaillel pl. kovacs.janos@example.com"
+      ],
+      "Use the personal address username@pm.me to send emails": [
+        "Használja a személyes felhasználónév@pm.me címét levelek küldésére"
+      ],
+      "Multi-user support is only applicable to plans with 2 or more users": [
+        "A több-felhasználós lehetőség csak a legalább 2 felhasználót tartalmazó csomagokban érhető el"
+      ],
+      "NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "A NetShield megvédi eszközeit és felgyorsítja a böngészés sebességét, a reklámok, követők és kártevő szoftverek letiltásával."
+      ],
+      "Support for file sharing protocols such as BitTorrent.": [
+        "Támogatja a fájlmegosztási protokollokat, mint például a BitTorrent."
+      ],
+      "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
+        "Hozzáférés a földrajzilag blokkolt tartalmakhoz (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, Youtube stb.), bárhol is tartózkodik."
+      ],
+      "Route your Internet traffic through the Tor network with a single click.": [
+        "Egyetlen kattintással irányítsa a teljes internetforgalmát a Tor hálózaton keresztül."
+      ],
+      "Defends against threats to VPN privacy by passing your Internet traffic through multiple servers.": [
+        "A VPN elleni támadásokkal szemben úgy véd, hogy több szerveren keresztül továbbítja az internetes forgalmat."
+      ],
+      "Get access to all the paid features for both ProtonVPN and ProtonMail (the encrypted email service that millions use to protect their data) with one plan.": [
+        "Szerezzen elérést mind a ProtonVPN, mind a ProtonMail (a titkosított e-mail szolgáltatás, amelyet több millióan használnak az adataik védelmére) összes fizetett szolgáltatásához egy csomagban."
+      ],
+      "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
+        "Szerezzen elérést mind a ${ vpnAppName }, mind a ${ mailAppName } (a titkosított e-mail szolgáltatás, amelyet több millióan használnak az adataik védelmére) összes fizetett szolgáltatásához egy csomagban."
+      ],
+      "Host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
+        "Levelezzen a saját domain nevén a ${ mailAppName } segítségével pl. kovacs.janos@example.com"
+      ],
+      "Create multiple email addresses linked to your account, e.g. username2@protonmail.com": [
+        "Hozzon létre több címet a fiókjához pl. masiknev@protonmail.com"
+      ],
+      "Discount applied for annual billing cycle": [
+        "Éves fizetés kedvezménye jóváírásra került"
+      ],
+      "Discount applied for two-year billing cycle": [
+        "Kétéves fizetés kedvezménye jóváírásra került"
+      ],
+      "If you purchased a gift code or received one from our support team, you can enter it here.": [
+        "Itt adhatja meg a vásárolt, vagy a rendszertámogató csapattól kapott ajándékutalvány kódját."
+      ],
+      "Enabling advanced logs records the IP address for each event in the security log.": [
+        "A részletes naplózás bekapcsolásakor az egyes műveletekhez tartozó IP címek is bekerülnek a naplóba."
+      ],
+      "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
+        "Az üzenetek továbbra is megjelennek az Elküldött elemek és a Piszkozatok közt, akkor is, ha áthelyezi őket egy másik mappába."
+      ],
+      "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
+        "A csaló weboldalak elkerülése érdekében, egy jóváhagyás jelenik meg a teljes URL-lel, amikor egy hivatkozásra kattint."
+      ],
+      "This feature delays sending your emails, giving you the opportunity to undo send during the selected time frame.": [
+        "Ezzel késleltetheti az e-mailek elüldését, lehetőséget kapva, a kiválasztott időtartamon belül, a küldés visszavonására."
+      ]
+    },
+    "Option": {
+      "Normal": [
+        "Normál"
+      ],
+      "Plain text": [
+        "Egyszerű szöveg"
+      ],
+      "Left to Right": [
+        "Balról jobbra"
+      ],
+      "Right to Left": [
+        "Jobbról balra"
+      ],
+      "Automatic (${ defaultFormat })": [
+        "Automatikus (${ defaultFormat })"
+      ],
+      "Automatic (${ defaultDay })": [
+        "Automatikus (${ defaultDay })"
+      ],
+      "Add to existing group": [
+        "Hozzáadás meglévő csoporthoz"
+      ],
+      "Create new group": [
+        "Új csoport létrehozása"
+      ],
+      "Ignore group": [
+        "Csoport figyelmen kívül hagyása"
+      ],
+      "Fixed duration": [
+        "Fix időtartam"
+      ],
+      "Repeat daily": [
+        "Ismétlés naponta"
+      ],
+      "Repeat weekly": [
+        "Ismétlés hetente"
+      ],
+      "Repeat monthly": [
+        "Ismétlés havonta"
+      ],
+      "Permanent": [
+        "Állandó"
+      ],
+      "1st of the month": [
+        "a hónap első napja"
+      ],
+      "2nd of the month": [
+        "a hónap 2-ik napja"
+      ],
+      "3rd of the month": [
+        "a hónap 3-ik napja"
+      ],
+      "4th of the month": [
+        "a hónap 4-ik napja"
+      ],
+      "5th of the month": [
+        "a hónap 5-ik napja"
+      ],
+      "6th of the month": [
+        "a hónap 6-ik napja"
+      ],
+      "7th of the month": [
+        "a hónap 7-ik napja"
+      ],
+      "8th of the month": [
+        "a hónap 8-ik napja"
+      ],
+      "9th of the month": [
+        "a hónap 9-ik napja"
+      ],
+      "10th of the month": [
+        "a hónap 10-ik napja"
+      ],
+      "11th of the month": [
+        "a hónap 11-ik napja"
+      ],
+      "12th of the month": [
+        "a hónap 12-ik napja"
+      ],
+      "13th of the month": [
+        "a hónap 13-ik napja"
+      ],
+      "14th of the month": [
+        "a hónap 14-ik napja"
+      ],
+      "15th of the month": [
+        "a hónap 15-ik napja"
+      ],
+      "16th of the month": [
+        "a hónap 16-ik napja"
+      ],
+      "17th of the month": [
+        "a hónap 17-ik napja"
+      ],
+      "18th of the month": [
+        "a hónap 18-ik napja"
+      ],
+      "19th of the month": [
+        "a hónap 19-ik napja"
+      ],
+      "20th of the month": [
+        "a hónap 20-ik napja"
+      ],
+      "21st of the month": [
+        "a hónap 21-ik napja"
+      ],
+      "22nd of the month": [
+        "a hónap 22-ik napja"
+      ],
+      "23rd of the month": [
+        "a hónap 23-ik napja"
+      ],
+      "24th of the month": [
+        "a hónap 24-ik napja"
+      ],
+      "25th of the month": [
+        "a hónap 25-ik napja"
+      ],
+      "26th of the month": [
+        "a hónap 26-ik napja"
+      ],
+      "27th of the month": [
+        "a hónap 27-ik napja"
+      ],
+      "28th of the month": [
+        "a hónap 28-ik napja"
+      ],
+      "29th of the month": [
+        "a hónap 29-ik napja"
+      ],
+      "30th of the month": [
+        "a hónap 30-ik napja"
+      ],
+      "31st of the month": [
+        "a hónap 31-ik napja"
+      ],
+      "No parent folder": [
+        "Nincs szülő-mappa"
+      ],
+      "Android": [
+        "Android"
+      ],
+      "iOS": [
+        "iOS"
+      ],
+      "Windows": [
+        "Windows"
+      ],
+      "macOS": [
+        "macOS"
+      ],
+      "GNU/Linux": [
+        "GNU/Linux"
+      ],
+      "Router": [
+        "Router"
+      ],
+      "UDP": [
+        "UDP"
+      ],
+      "TCP": [
+        "TCP"
+      ],
+      "Secure Core configs": [
+        "Secure Core konfigurációk"
+      ],
+      "Country configs": [
+        "Ország konfigurációk"
+      ],
+      "Standard server configs": [
+        "Normál szerver konfigurációk"
+      ],
+      "Free server configs": [
+        "Ingyenes szerver konfigurációk"
+      ],
+      "Select a reason": [
+        "Válasszon egy indokot"
+      ],
+      "I use a different Proton account": [
+        "Másik Proton fiókot használok"
+      ],
+      "It's too expensive": [
+        "Túl drága"
+      ],
+      "It's missing a key feature that I need": [
+        "Egy fontos funkció hiányzik, amire szükségem van"
+      ],
+      "I found another service that I like better": [
+        "Találtam egy másik szolgáltatást, ami jobban tetszik"
+      ],
+      "My reason isn't listed": [
+        "Más okból"
       ]
     },
     "Loading info": {
       "Connecting to your calendar provider": [
-        ""
+        "Csatlakozás a naptárszolgáltatójához"
       ],
       "Connecting to your email provider": [
-        ""
+        "Csatlakozás az e-mailszolgáltatójához"
       ]
     },
     "Wizard step": {
@@ -4261,7 +4798,7 @@
         ""
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
-        ""
+        "Sajnos a támogatási csoport jelenleg nem elérhető. Kérjük, az alábbi űrlapon írja le a problémáját és amint lehet felvesszük önnel a kapcsolatot."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "A hibajelentések nem végpontok közt titkosítottak, kérünk ne küldjön semmilyen érzékeny információt."
@@ -4290,14 +4827,14 @@
       "Are you sure you want to delete the phone number?": [
         "Biztosan törli ezt a telefonszámot?"
       ],
+      "By disabling the logs, you will also clear your entire logs history. Are you sure you want to disable the logs?": [
+        "A naplózás letiltásával törli a naplózási előzményeket is. Biztos benne, hogy le akarja tiltani a naplózást?"
+      ],
       "By disabling this address, you will no longer be able to send or receive emails using this address and all the linked Proton products will also be disabled. Are you sure you want to disable this address?": [
         "Ha letiltja ezt a címet, akkor már nem lesz képes e-maileket küldeni vagy fogadni és minden ehhez kapcsolt Proton szolgáltatás kikapcsolódik. Biztos benne, hogy le szeretné tiltani ezt a címet?"
       ],
       "You must ${ activateLink } organization keys before adding an email address to a non-private member.": [
         "Mielőtt nem-privát tagnak adna hozzá e-mail címet, ${ activateLink } kell a szervezeti kulcsokat."
-      ],
-      "By disabling the logs, you will also clear your entire logs history. Are you sure you want to disable the logs?": [
-        "A naplózás letiltásával törli a naplózási előzményeket is. Biztos benne, hogy le akarja tiltani a naplózást?"
       ]
     },
     "Import instructions emphasis": {
@@ -4502,149 +5039,6 @@
         "CAPTCHA"
       ]
     },
-    "Tooltip": {
-      "Customize import to reduce the number of labels": [
-        "Módosítsa az importálás beállításait hogy kevesebb címkére legyen szükség"
-      ],
-      "Customize import to reduce the number of folders": [
-        "Módosítsa az importálás beállításait hogy kevesebb mappára legyen szükség"
-      ],
-      "Edit label names": [
-        "Címke nevek szerkesztése"
-      ],
-      "Edit folder names": [
-        "Mappa nevek szerkesztése"
-      ],
-      "System subfolders will show up as separate folders in ProtonMail": [
-        "A rendszer almappák külön mappákként fognak megjelenni a ProtonMailben"
-      ],
-      "Each imported email will have this label": [
-        "Minden importált üzenet megkapja ezt a címkét"
-      ],
-      "The import will start with the most recent messages.": [
-        "Az importálás a legfrissebb üzenetekkel kezdődik."
-      ],
-      "Account is disconnected": [
-        "A fiók lecsatlakoztatva"
-      ],
-      "Your ProtonMail inbox is almost full": [
-        "A ProtonMail fiók közel megtelt"
-      ],
-      "Your external account may have reached its 24-hour bandwidth limit. Proton will try to resume the import as soon as possible.": [
-        "A külső fiókja nagy eséllyel elérte a 24-órás sávszélesség limitét. A Proton meg fogja próbálni folytatni az importálást amilyen gyorsan lehetséges."
-      ],
-      "You do not have any contacts to export": [
-        "Önnek nincs exportálható névjegye"
-      ],
-      "Set the default layout for your Inbox.": [
-        "A levelező alapértelmezett elrendezésének beállítása."
-      ],
-      "Set the default Composer popup size as small or full screen.": [
-        "A levél szerkesztő alapértelmezett méretének beállítása kicsire vagy teljes képernyősre."
-      ],
-      "When you add a label to a message in a conversation, it will automatically be applied to all future messages you send or receive in that conversation.": [
-        "Ha egy beszélgetésben szereplő levélhez rendel címkét, akkor abban a beszélgetésben az összes fogadott és küldött új üzenetre érvényes lesz."
-      ],
-      "Group emails in the same conversation together in your Inbox or display them separately.": [
-        "A levelező csoportosítsa az e-maileket beszélgetésenként vagy jelenítse meg külön."
-      ],
-      "This feature is unavailable for the moment": [
-        ""
-      ],
-      "ProtonMail users will use this key by default for sending": [
-        "A ProtonMail felhasználók alapértelmezetten ezt a kulcsot fogják használni a küldéshez"
-      ],
-      "You have locally decrypted this key": [
-        "Ezt a kulcsot helyileg visszafejtette"
-      ],
-      "This key is encrypted with an old password": [
-        "Ez a kulcs egy régebbi jelszóval van titkosítva"
-      ],
-      "Signatures produced by this key are treated as invalid and this key cannot be used for encryption": [
-        "Az ezzel a kulccsal készült aláírások érvénytelenként lesznek kezelve és a kulcs nem használható titkosításra"
-      ],
-      "This key cannot be used for encryption": [
-        "Ez a kulcs nem használható titkosításhoz"
-      ],
-      "This address has been disabled": [
-        "Ez a cím van letiltva"
-      ],
-      "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
-        "A DKIM aláírás felfüggesztésre került a DNS beállítási hibája miatt. Kövesse az útmutatót a DKIM aláírás helyreállításához."
-      ],
-      "Your DKIM signing is working.": [
-        "A DKIM aláírás megfelelően működik."
-      ],
-      "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
-        "Probléma van a DNS beállításaival. Kérjük, javítsa, hogy minden az alábbiak szerint legyen beállítva. Ha a probléma továbbra is fennáll, ki kell kapcsolnunk a DKIM aláírást."
-      ],
-      "This feature is only available for paid users": [
-        "Ez a lehetőség csak előfizetéses csomagokban érhető érhető el"
-      ],
-      "Enable/disable desktop and mobile notifications": [
-        "Mobil és asztali értesítések ki- és bekapcsolása"
-      ],
-      "Use multiple addresses / aliases linked to your account, e.g. username2@protonmail.com": [
-        "Használjon több címet / nevet a fiókjához pl. masiknev@protonmail.com"
-      ],
-      "Host emails for your own domain(s) at ProtonMail, e.g. john.smith@example.com": [
-        "Levelezzen a saját domain nevén a ProtonMaillel pl. kovacs.janos@example.com"
-      ],
-      "Use the personal address username@pm.me to send emails": [
-        "Használja a személyes felhasználónév@pm.me címét levelek küldésére"
-      ],
-      "Multi-user support is only applicable to plans with 2 or more users": [
-        "A több-felhasználós lehetőség csak a legalább 2 felhasználót tartalmazó csomagokban érhető el"
-      ],
-      "NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "A NetShield megvédi eszközeit és felgyorsítja a böngészés sebességét, a reklámok, követők és kártevő szoftverek letiltásával."
-      ],
-      "Support for file sharing protocols such as BitTorrent.": [
-        "Támogatja a fájlmegosztási protokollokat, mint például a BitTorrent."
-      ],
-      "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
-        "Hozzáférés a földrajzilag blokkolt tartalmakhoz (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, Youtube stb.), bárhol is tartózkodik."
-      ],
-      "Route your Internet traffic through the Tor network with a single click.": [
-        "Egyetlen kattintással irányítsa a teljes internetforgalmát a Tor hálózaton keresztül."
-      ],
-      "Defends against threats to VPN privacy by passing your Internet traffic through multiple servers.": [
-        "A VPN elleni támadásokkal szemben úgy véd, hogy több szerveren keresztül továbbítja az internetes forgalmat."
-      ],
-      "Get access to all the paid features for both ProtonVPN and ProtonMail (the encrypted email service that millions use to protect their data) with one plan.": [
-        "Szerezzen elérést mind a ProtonVPN, mind a ProtonMail (a titkosított e-mail szolgáltatás, amelyet több millióan használnak az adataik védelmére) összes fizetett szolgáltatásához egy csomagban."
-      ],
-      "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
-        "Szerezzen elérést mind a ${ vpnAppName }, mind a ${ mailAppName } (a titkosított e-mail szolgáltatás, amelyet több millióan használnak az adataik védelmére) összes fizetett szolgáltatásához egy csomagban."
-      ],
-      "Host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
-        "Levelezzen a saját domain nevén a ${ mailAppName } segítségével pl. kovacs.janos@example.com"
-      ],
-      "Create multiple email addresses linked to your account, e.g. username2@protonmail.com": [
-        "Hozzon létre több címet a fiókjához pl. masiknev@protonmail.com"
-      ],
-      "Discount applied for annual billing cycle": [
-        "Éves fizetés kedvezménye jóváírásra került"
-      ],
-      "Discount applied for two-year billing cycle": [
-        "Kétéves fizetés kedvezménye jóváírásra került"
-      ],
-      "If you purchased a gift code or received one from our support team, you can enter it here.": [
-        "Itt adhatja meg a vásárolt, vagy a rendszertámogató csapattól kapott ajándékutalvány kódját."
-      ],
-      "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
-        "Az üzenetek továbbra is megjelennek az Elküldött elemek és a Piszkozatok közt, akkor is, ha áthelyezi őket egy másik mappába."
-      ],
-      "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
-        "A csaló weboldalak elkerülése érdekében, egy jóváhagyás jelenik meg a teljes URL-lel, amikor egy hivatkozásra kattint."
-      ],
-      "This feature delays sending your emails, giving you the opportunity to undo send during the selected time frame.": [
-        "Ezzel késleltetheti az e-mailek elüldését, lehetőséget kapva, a kiválasztott időtartamon belül, a küldés visszavonására."
-      ],
-      "Enabling advanced logs records the IP address for each event in the security log.": [
-        "A részletes naplózás bekapcsolásakor az egyes műveletekhez tartozó IP címek is bekerülnek a naplóba."
-      ]
-    },
     "Security phrase": {
       "Permanently delete messages in ${ email }": [
         "Üzenetek végeleges törlése a(z) ${ email } címen"
@@ -4684,152 +5078,6 @@
         "Késleltetve"
       ]
     },
-    "Success": {
-      "Import resumed": [
-        "Importálás folytatva"
-      ],
-      "Import canceled": [
-        "Az importálás megszakítva"
-      ],
-      "Import record deleted": [
-        "Importálási elem törölve"
-      ],
-      "Deleting original messages": [
-        "Eredeti üzenetek törlése"
-      ],
-      "Preference saved": [
-        "Beállítások mentve"
-      ],
-      "Premium address created": [
-        "Prémium cím létrehozva"
-      ],
-      "Keyboard shortcuts preferences updated": [
-        "Gyorsbillentyű beállítások frissítve"
-      ],
-      "Locale updated": [
-        "Nyelv frissítve"
-      ],
-      "${ server.Domain } copied in your clipboard": [
-        "${ server.Domain } vágólapra másolva"
-      ],
-      "Auto-reply disabled": [
-        "Automatikus válasz kikapcsolva"
-      ],
-      "Auto-reply updated": [
-        "Automatikus válasz frissítve"
-      ],
-      "Calendar added. It might take a few minutes to sync.": [
-        ""
-      ],
-      "Calendar created": [
-        "Naptár létrehozva"
-      ],
-      "Calendar updated": [
-        "Naptár frissítve"
-      ],
-      "Default calendar updated": [
-        "Alapértelmezett naptár frissítve"
-      ],
-      "Calendar removed": [
-        "Naptár törölve"
-      ],
-      "Verification code copied to clipboard!": [
-        ""
-      ],
-      "SPF value copied to clipboard!": [
-        "Az SPF érték a vágólapra másolva!"
-      ],
-      "Value copied to clipboard!": [
-        "Az érték a vágólapra másolva!"
-      ],
-      "DMARC value copied to clipboard!": [
-        "A DMARC érték a vágólapra másolva!"
-      ],
-      "Domain verified": [
-        "Domain név ellenőrizve"
-      ],
-      "Catch-all address updated": [
-        "Gyűjtő e-mail cím frissítve"
-      ],
-      "Email address copied to clipboard": [
-        "E-mail cím a vágólapra másolva"
-      ],
-      "Bug reported": [
-        "Hiba bejelentve"
-      ],
-      "You have successfully unsubscribed": [
-        "Sikeresen leiratkozott"
-      ],
-      "Payment method updated": [
-        "Fizetési mód frissítve"
-      ],
-      "Payment method added": [
-        "Fizetési mód hozzáadva"
-      ],
-      "Credits added": [
-        "Kredit hozzáadva"
-      ],
-      "Gift code applied": [
-        "Ajándék kód alkalmazva"
-      ],
-      "Password updated": [
-        "Jelszó frissítve"
-      ],
-      "Account deleted. Logging out...": [
-        "Fiók törölve. Kijelentkezés..."
-      ],
-      "Email updated": [
-        "E-mail frissítve"
-      ],
-      "Phone number updated": [
-        "Telefonszám frissítve"
-      ],
-      "Address updated": [
-        "Cím frissítve"
-      ],
-      "Address added": [
-        "Cím hozzáadva"
-      ],
-      "Session revoked": [
-        "Munkafolyamat visszavonva"
-      ],
-      "Sessions revoked": [
-        "Munkafolyamatok visszavonva"
-      ],
-      "Payment method deleted": [
-        "Fizetési mód törölve"
-      ],
-      "Invoice paid": [
-        "Számla fizetve"
-      ],
-      "Invoice customized": [
-        "Számlabeállítások mentve"
-      ],
-      "Organization activated": [
-        "Szervezet aktiválva"
-      ],
-      "Keys updated": [
-        "Kulcsok frissítve"
-      ],
-      "User updated": [
-        "Felhasználó frissítve"
-      ],
-      "User created": [
-        "Felhasználó létrehozva"
-      ],
-      "Code sent to ${ methodTo }": [
-        "Kód elküldve: ${ methodTo }"
-      ],
-      "Verification successful": [
-        "Sikeres ellenőrzés"
-      ],
-      "If you entered a valid recovery email we will send you an email with your usernames in the next minute.": [
-        "Amennyiben érvényes helyreállítási e-mailt adott meg, akkor a következő percben küldünk egy levelet a felhasználónevével."
-      ],
-      "If you entered a valid recovery phone we will send you an sms with your usernames in the next minute.": [
-        "Amennyiben érvényes helyreállítási számot adott meg, akkor a következő percben küldünk egy SMS-t a felhasználónevével."
-      ]
-    },
     "Title header": {
       "Import": [
         "Importálás"
@@ -4850,230 +5098,6 @@
     "Import error link": {
       "bandwidth limit": [
         "sávszélesség limit"
-      ]
-    },
-    "Option": {
-      "Automatic (${ defaultFormat })": [
-        "Automatikus (${ defaultFormat })"
-      ],
-      "Automatic (${ defaultDay })": [
-        "Automatikus (${ defaultDay })"
-      ],
-      "Add to existing group": [
-        "Hozzáadás meglévő csoporthoz"
-      ],
-      "Create new group": [
-        "Új csoport létrehozása"
-      ],
-      "Ignore group": [
-        "Csoport figyelmen kívül hagyása"
-      ],
-      "Normal": [
-        "Normál"
-      ],
-      "Plain text": [
-        "Egyszerű szöveg"
-      ],
-      "Left to Right": [
-        "Balról jobbra"
-      ],
-      "Right to Left": [
-        "Jobbról balra"
-      ],
-      "Android": [
-        "Android"
-      ],
-      "iOS": [
-        "iOS"
-      ],
-      "Windows": [
-        "Windows"
-      ],
-      "macOS": [
-        "macOS"
-      ],
-      "GNU/Linux": [
-        "GNU/Linux"
-      ],
-      "Router": [
-        "Router"
-      ],
-      "UDP": [
-        "UDP"
-      ],
-      "TCP": [
-        "TCP"
-      ],
-      "Secure Core configs": [
-        "Secure Core konfigurációk"
-      ],
-      "Country configs": [
-        "Ország konfigurációk"
-      ],
-      "Standard server configs": [
-        "Normál szerver konfigurációk"
-      ],
-      "Free server configs": [
-        "Ingyenes szerver konfigurációk"
-      ],
-      "Fixed duration": [
-        "Fix időtartam"
-      ],
-      "Repeat daily": [
-        "Ismétlés naponta"
-      ],
-      "Repeat weekly": [
-        "Ismétlés hetente"
-      ],
-      "Repeat monthly": [
-        "Ismétlés havonta"
-      ],
-      "Permanent": [
-        "Állandó"
-      ],
-      "1st of the month": [
-        "a hónap első napja"
-      ],
-      "2nd of the month": [
-        "a hónap 2-ik napja"
-      ],
-      "3rd of the month": [
-        "a hónap 3-ik napja"
-      ],
-      "4th of the month": [
-        "a hónap 4-ik napja"
-      ],
-      "5th of the month": [
-        "a hónap 5-ik napja"
-      ],
-      "6th of the month": [
-        "a hónap 6-ik napja"
-      ],
-      "7th of the month": [
-        "a hónap 7-ik napja"
-      ],
-      "8th of the month": [
-        "a hónap 8-ik napja"
-      ],
-      "9th of the month": [
-        "a hónap 9-ik napja"
-      ],
-      "10th of the month": [
-        "a hónap 10-ik napja"
-      ],
-      "11th of the month": [
-        "a hónap 11-ik napja"
-      ],
-      "12th of the month": [
-        "a hónap 12-ik napja"
-      ],
-      "13th of the month": [
-        "a hónap 13-ik napja"
-      ],
-      "14th of the month": [
-        "a hónap 14-ik napja"
-      ],
-      "15th of the month": [
-        "a hónap 15-ik napja"
-      ],
-      "16th of the month": [
-        "a hónap 16-ik napja"
-      ],
-      "17th of the month": [
-        "a hónap 17-ik napja"
-      ],
-      "18th of the month": [
-        "a hónap 18-ik napja"
-      ],
-      "19th of the month": [
-        "a hónap 19-ik napja"
-      ],
-      "20th of the month": [
-        "a hónap 20-ik napja"
-      ],
-      "21st of the month": [
-        "a hónap 21-ik napja"
-      ],
-      "22nd of the month": [
-        "a hónap 22-ik napja"
-      ],
-      "23rd of the month": [
-        "a hónap 23-ik napja"
-      ],
-      "24th of the month": [
-        "a hónap 24-ik napja"
-      ],
-      "25th of the month": [
-        "a hónap 25-ik napja"
-      ],
-      "26th of the month": [
-        "a hónap 26-ik napja"
-      ],
-      "27th of the month": [
-        "a hónap 27-ik napja"
-      ],
-      "28th of the month": [
-        "a hónap 28-ik napja"
-      ],
-      "29th of the month": [
-        "a hónap 29-ik napja"
-      ],
-      "30th of the month": [
-        "a hónap 30-ik napja"
-      ],
-      "31st of the month": [
-        "a hónap 31-ik napja"
-      ],
-      "${ stateOfTheArt } X25519 (Fastest, most modern)": [
-        ""
-      ],
-      "${ highestSecurity } RSA 4096-bit (Slower, but increased compatibility with legacy software)": [
-        ""
-      ],
-      "No parent folder": [
-        "Nincs szülő-mappa"
-      ],
-      "Select a reason": [
-        "Válasszon egy indokot"
-      ],
-      "It’s temporary, I’ll be back": [
-        "Csak ideiglenesen, még visszatérek"
-      ],
-      "I didn’t understand what I was signing up for": [
-        "Nem érettem mire fizetek elő"
-      ],
-      "It’s too expensive": [
-        "Túl drága"
-      ],
-      "I’m unhappy with customer service": [
-        "Elégedetlen vagyok a támogatással"
-      ],
-      "Using Proton is too complicated": [
-        "A Proton használata túl bonyolult"
-      ],
-      "I'm switching to a different service": [
-        "Másik szolgáltatásra fizetek elő"
-      ],
-      "The quality didn't live up to my expectations": [
-        "A minőség nem felelt meg az elvárásaimnak"
-      ],
-      "Other": [
-        "Egyéb"
-      ],
-      "I use a different Proton account": [
-        "Másik Proton fiókot használok"
-      ],
-      "It's too expensive": [
-        "Túl drága"
-      ],
-      "It's missing a key feature that I need": [
-        "Egy fontos funkció hiányzik, amire szükségem van"
-      ],
-      "I found another service that I like better": [
-        "Találtam egy másik szolgáltatást, ami jobban tetszik"
-      ],
-      "My reason isn't listed": [
-        "Más okból"
       ]
     },
     "Day": {
@@ -5305,123 +5329,6 @@
         "${ totalImported }/${ totalToImport } névjegy titkosítva és felvéve a névjegyekhez"
       ]
     },
-    "Label to change composer mode": {
-      "Normal": [
-        "Normál"
-      ],
-      "Maximized": [
-        "Teljes méretű"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "Oszlop"
-      ],
-      "Row": [
-        "Sor"
-      ]
-    },
-    "Label to change density": {
-      "Comfortable": [
-        "Kényelmes"
-      ],
-      "Compact": [
-        "Tömör"
-      ]
-    },
-    "VPNClient": {
-      "Android": [
-        "Android"
-      ],
-      "iOS": [
-        "iOS"
-      ],
-      "Windows": [
-        "Windows"
-      ],
-      "macOS": [
-        "macOS"
-      ],
-      "GNU/Linux": [
-        "GNU/Linux"
-      ],
-      "Chromebook": [
-        "Chromebook"
-      ],
-      "Android TV": [
-        "Android TV"
-      ]
-    },
-    "Notification": {
-      "OpenVPN / IKEv2 credentials regenerated": [
-        "OpenVPN / IKEv2 azonosító frissítve"
-      ],
-      "${ _Filter.Name } created": [
-        "${ _Filter.Name } létrehozva"
-      ],
-      "A disabled address cannot be primary": [
-        "Egy kikapcsolt cím nem lehet elsődleges"
-      ]
-    },
-    "CountryInfo": {
-      "(via ${ entryCountryName })": [
-        "(${ entryCountryName }-on keresztül)"
-      ]
-    },
-    "Feature": {
-      "Access to all countries": [
-        "Hozzáférés az összes országhoz"
-      ],
-      "Secure Core servers": [
-        "Secure Core szerverek"
-      ],
-      "Fastest VPN servers": [
-        "A leggyorsabb VPN szerverek"
-      ],
-      "Torrenting support (P2P)": [
-        "Torrent támogatás (P2P)"
-      ],
-      "Connection for up to ${ plusVpnConnections } device": [
-        "Kapcsolódás akár ${ plusVpnConnections } eszközzel",
-        "Kapcsolódás akár ${ plusVpnConnections } eszközzel"
-      ],
-      "Secure streaming support": [
-        "Biztonságos videózás támogatás"
-      ],
-      "VPN ${ connectionsPluralized }": [
-        "VPN ${ connectionsPluralized }"
-      ]
-    },
-    "VPN info": {
-      "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, and more.": [
-        "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, és mások."
-      ]
-    },
-    "Autoresponse": {
-      "I'm out of the office with limited access to my email.": [
-        "Nem vagyok az irodában, ezért korlátozott a hozzáférésem az e-mailjeimhez."
-      ]
-    },
-    "Tooltip prompt to trust keys": {
-      "When receiving an email from another ProtonMail user who does not have trusted keys in your contacts, a banner will ask if you want to enable trusted keys.": [
-        "Ha egy olyan ProtonMail felhasználótól kap levelet, akinek még nincs megbízható kulcsa a névjegyei közt, egy kérdés fog megjelenni a kulcsok megbízhatóként megjelöléséhez."
-      ]
-    },
-    "Tooltip sign external messages": {
-      "Automatically sign all your outgoing messages so users can verify the authenticity of your messages. This is done in combination with the default PGP settings which can be configured below.": [
-        "Bekapcsolásakor a kimenő üzenetek automatikusan aláírásra kerülnek, így a címzettek ellenőrizhetik az üzenet hitelességét. Ez együtt működik a lentebb beállított alapértelmezett PGP beállításokkal."
-      ]
-    },
-    "Tooltip automatically attach public key": {
-      "This automatically adds your public key to each message you send. Recipients can use this to verify the authenticity of your messages and send encrypted messages to you.": [
-        "Bekapcsolásakor a nyilvános kulcs automatikusan csatolásra kerül minden kimenő üzenethez. A címzettek ezt használhatják a levél hitelességének ellenőrzésére és titkosított üzenetek küldésére önnek."
-      ]
-    },
-    "Tooltip default pgp scheme": {
-      "Select the default PGP settings used to sign or encrypt messages with non-ProtonMail PGP users. Note that Inline PGP forces plain text messages. Learn more": [
-        "Válassza ki a nem ProtonMail PGP felhasználók számára küldött üzenetek alapértelmezett PGP titkosítási és aláírási beállításait. Az Inline PGP csak egyszerű szöveges üzenetekkel működik. További információk"
-      ]
-    },
     "Duration": {
       "30 minutes": [
         "30 perc"
@@ -5551,7 +5458,7 @@
         "Ahogy másoknál megjelenik"
       ],
       "Get help": [
-        ""
+        "Súgó megnyitása"
       ],
       "Folders": [
         "Mappák"
@@ -5583,10 +5490,10 @@
         "Letiltva"
       ],
       "Syncing": [
-        ""
+        "Szinkronizálás"
       ],
       "Not synced": [
-        ""
+        "Nincs szinkronizálva"
       ]
     },
     "Upgrade notice": {
@@ -5595,27 +5502,27 @@
         "Váltson előfizetéses csomagra, hogy akár ${ MAX_CALENDARS_PER_USER } naptárat is létrehozhasson. Így lehet külön naptára munkára, másokkal való megosztásra vagy saját magának."
       ],
       "Upgrade to a paid plan to share your personal calendar via link with anyone.": [
-        ""
+        "Váltson előfizetéses csomagra, hogy egy hivatkozás segítségével bárkivel megoszthassa a személyes naptárát."
       ]
     },
     "Calendar limit warning": {
       "You have reached the maximum of ${ calendarsLimit } calendar.": [
-        "",
-        ""
+        "Elérte a maximálisan lehetséges ${ calendarsLimit } naptárat.",
+        "Elérte a maximálisan lehetséges ${ calendarsLimit } naptárat."
       ],
       "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } subscribed calendar.": [
-        "",
-        ""
+        "Elérte a maximálisan lehetséges ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } feliratkozott naptárat.",
+        "Elérte a maximálisan lehetséges ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } feliratkozott naptárat."
       ]
     },
     "Subscribed calendar section description": {
       "Add public, external, or shared calendars using a URL.": [
-        ""
+        "Vegyen fel nyilvános, külső vagy megosztott naptárat URL megadásával."
       ]
     },
     "Knowledge base link label": {
       "Here's how": [
-        ""
+        "További információk"
       ]
     },
     "Calendar import section description": {
@@ -5676,7 +5583,7 @@
         "Hoppá, valami hiba történt"
       ],
       "Too many child sessions, please clear your cookies and sign back in.": [
-        ""
+        "Túl sok al-folyamat van használatban. Kérjük, törölje a sütiket és jelentkezzen be újra."
       ],
       "There was a problem connecting to Proton.": [
         "Hiba lépett fel a Protonhoz történő csatlakozás során."
@@ -5825,10 +5732,10 @@
     },
     "info": {
       "Key ${ fingerprint } has already been uploaded": [
-        ""
+        "A kulcs ${ fingerprint } már feltöltésre került"
       ],
       "Additional duplicate keys detected. Please upload individually for more information.": [
-        ""
+        "További duplikált kulcsok is találhatók. Töltse fel egyesével a pontosabb információkért."
       ],
       "(beta)": [
         "(béta)"
@@ -5925,12 +5832,45 @@
         "A címéhez tartozó titkosítási kulcsok létrehozása folyamatban. Ez több percig is eltarthat és átmenetileg megállíthatja a böngészőt."
       ]
     },
-    "encryption": {
+    "Remark about a key type option": {
       "State of the art": [
-        "Különösen korszerű"
+        ""
       ],
       "Compatibility": [
-        "Kompatibilitás"
+        ""
+      ]
+    },
+    "Key type option": {
+      "${ stateOfTheArt } ECC Curve25519 (Fastest, most modern)": [
+        ""
+      ],
+      "${ compatibility } RSA 4096-bit (Slower, but increased compatibility with legacy software)": [
+        ""
+      ]
+    },
+    "Autoresponse": {
+      "I'm out of the office with limited access to my email.": [
+        "Nem vagyok az irodában, ezért korlátozott a hozzáférésem az e-mailjeimhez."
+      ]
+    },
+    "Tooltip prompt to trust keys": {
+      "When receiving an email from another ProtonMail user who does not have trusted keys in your contacts, a banner will ask if you want to enable trusted keys.": [
+        "Ha egy olyan ProtonMail felhasználótól kap levelet, akinek még nincs megbízható kulcsa a névjegyei közt, egy kérdés fog megjelenni a kulcsok megbízhatóként megjelöléséhez."
+      ]
+    },
+    "Tooltip sign external messages": {
+      "Automatically sign all your outgoing messages so users can verify the authenticity of your messages. This is done in combination with the default PGP settings which can be configured below.": [
+        "Bekapcsolásakor a kimenő üzenetek automatikusan aláírásra kerülnek, így a címzettek ellenőrizhetik az üzenet hitelességét. Ez együtt működik a lentebb beállított alapértelmezett PGP beállításokkal."
+      ]
+    },
+    "Tooltip automatically attach public key": {
+      "This automatically adds your public key to each message you send. Recipients can use this to verify the authenticity of your messages and send encrypted messages to you.": [
+        "Bekapcsolásakor a nyilvános kulcs automatikusan csatolásra kerül minden kimenő üzenethez. A címzettek ezt használhatják a levél hitelességének ellenőrzésére és titkosított üzenetek küldésére önnek."
+      ]
+    },
+    "Tooltip default pgp scheme": {
+      "Select the default PGP settings used to sign or encrypt messages with non-ProtonMail PGP users. Note that Inline PGP forces plain text messages. Learn more": [
+        "Válassza ki a nem ProtonMail PGP felhasználók számára küldött üzenetek alapértelmezett PGP titkosítási és aláírási beállításait. Az Inline PGP csak egyszerű szöveges üzenetekkel működik. További információk"
       ]
     },
     "Label for adding a new custom domain": {
@@ -6060,45 +6000,13 @@
         "Állítson be egyéni domain névhez tartozó e-mail címet (pl. nev@sajatceg.hu)! Csak pár percet vesz igénybe és a varázslónk végigvezeti a folyamaton."
       ],
       "Upgrade to any paid plan to use custom domains and unlock premium features": [
-        ""
+        "Váltson bármelyik előfizetéses csomagra, hogy saját domain nevet használhasson és prémium funkciókhoz férjen hozzá"
       ],
       "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to use a catch-all address and unlock premium features": [
-        ""
+        "Váltson ${ PLAN_NAMES[PLANS.VISIONARY] } vagy ${ PLAN_NAMES[PLANS.PROFESSIONAL] } csomagra a gyűjtő e-mail cím használatához és további prémium funkciók eléréshez"
       ],
       "Are you sure you want to disable two-factor authentication?": [
         "Biztosan ki szeretné kapcsolni a kétlépéses hitelesítést?"
-      ]
-    },
-    "Onboarding Proton": {
-      "This is what people will see when you send them an email, invite them to an event, or share a file with them.": [
-        "Ezt fogják látni a címzettek, ha e-mailt küld, esemény meghívót küld, vagy fájlokat oszt meg."
-      ],
-      "Choose a display name": [
-        "Válasszon egy megjelenített nevet"
-      ],
-      "Select a theme": [
-        "Téma kiválasztása"
-      ],
-      "You can change this anytime in your settings.": [
-        "Ezt a beállításoknál bármikor megváltoztathatja."
-      ],
-      "Discover all Proton services": [
-        "Fedezze fel a Proton szolgáltatásokat"
-      ],
-      "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
-        "Használja a bal felső sarokban található alkalmazás választót a Proton szolgáltatások eléréshez, mint például a VPN, Calendar vagy a Drive."
-      ],
-      "Welcome to Proton": [
-        "Üdvözöljük a Protonnál"
-      ],
-      "Our mission is to build an internet where you are in control of your data and your privacy. We have recently updated Proton - welcome to the secure internet.": [
-        "Célunk egy olyan internet felépítése, ahol az adatai és a magánszférája a saját kezében van. A közelmúltban frissítettük a Protont - üdvözöljük a biztonságos interneten."
-      ],
-      "Set up your organization": [
-        "Állítsa be szervezete adatait"
-      ],
-      "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
-        "Állítsa be a saját szervezete adatait, irányítsa át a domain nevét, hozza létre a fiókokat, hogy a szervezet minden tagja élhessen a védelemmel."
       ]
     },
     "Step in filter modal": {
@@ -6135,6 +6043,17 @@
       ],
       "starred": [
         "csillagozott"
+      ]
+    },
+    "Notification": {
+      "${ _Filter.Name } created": [
+        "${ _Filter.Name } létrehozva"
+      ],
+      "OpenVPN / IKEv2 credentials regenerated": [
+        "OpenVPN / IKEv2 azonosító frissítve"
+      ],
+      "A disabled address cannot be primary": [
+        "Egy kikapcsolt cím nem lehet elsődleges"
       ]
     },
     "Filter notification": {
@@ -6307,6 +6226,102 @@
         "${ Email } eltávolítva"
       ]
     },
+    "Onboarding Proton": {
+      "This is what people will see when you send them an email, invite them to an event, or share a file with them.": [
+        "Ezt fogják látni a címzettek, ha e-mailt küld, esemény meghívót küld, vagy fájlokat oszt meg."
+      ],
+      "Choose a display name": [
+        "Válasszon egy megjelenített nevet"
+      ],
+      "Select a theme": [
+        "Téma kiválasztása"
+      ],
+      "You can change this anytime in your settings.": [
+        "Ezt a beállításoknál bármikor megváltoztathatja."
+      ],
+      "Discover all Proton services": [
+        "Fedezze fel a Proton szolgáltatásokat"
+      ],
+      "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
+        "Használja a bal felső sarokban található alkalmazás választót a Proton szolgáltatások eléréshez, mint például a VPN, Calendar vagy a Drive."
+      ],
+      "Welcome to Proton": [
+        "Üdvözöljük a Protonnál"
+      ],
+      "Our mission is to build an internet where you are in control of your data and your privacy. We have recently updated Proton - welcome to the secure internet.": [
+        "Célunk egy olyan internet felépítése, ahol az adatai és a magánszférája a saját kezében van. A közelmúltban frissítettük a Protont - üdvözöljük a biztonságos interneten."
+      ],
+      "Set up your organization": [
+        "Állítsa be szervezete adatait"
+      ],
+      "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
+        "Állítsa be a saját szervezete adatait, irányítsa át a domain nevét, hozza létre a fiókokat, hogy a szervezet minden tagja élhessen a védelemmel."
+      ]
+    },
+    "New Label form": {
+      "Color": [
+        "Szín"
+      ],
+      "Folder name": [
+        "Mappa neve"
+      ],
+      "Label name": [
+        "Cimke neve"
+      ]
+    },
+    "label/folder notification": {
+      "${ Label.Name } created": [
+        "${ Label.Name } létrehozva"
+      ],
+      "${ label.Name } updated": [
+        "${ label.Name } frissítve"
+      ],
+      "Preference saved": [
+        "Beállítások mentve"
+      ]
+    },
+    "Label/folder modal": {
+      "Create folder": [
+        "Mappa létrehozása"
+      ],
+      "Create label": [
+        "Címke létrehozása"
+      ],
+      "Edit folder": [
+        "Mappa szerkesztése"
+      ],
+      "Edit label": [
+        "Címke szerkesztése"
+      ]
+    },
+    "Success message after sorting folders": {
+      "Folders sorted": [
+        "Mappák rendezve"
+      ]
+    },
+    "Info - folder colouring feature": {
+      "When enabled, sub-folders inherit the color of the parent folder.": [
+        "Bekapcsolásakor az almappák a szülő mappa színét öröklik."
+      ]
+    },
+    "Settings/labels": {
+      "Labels/Folders": [
+        "Címkék és mappák"
+      ]
+    },
+    "Settings/labels - table": {
+      "Labels": [
+        "Címkék"
+      ],
+      "Actions": [
+        "Műveletek"
+      ]
+    },
+    "Success message after sorting labels": {
+      "Labels sorted": [
+        "Rendezett címkék"
+      ]
+    },
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Nincs kép kiválasztva"
@@ -6410,70 +6425,6 @@
         "Képernyőkép csatolása"
       ]
     },
-    "New Label form": {
-      "Color": [
-        "Szín"
-      ],
-      "Folder name": [
-        "Mappa neve"
-      ],
-      "Label name": [
-        "Cimke neve"
-      ]
-    },
-    "label/folder notification": {
-      "${ Label.Name } created": [
-        "${ Label.Name } létrehozva"
-      ],
-      "${ label.Name } updated": [
-        "${ label.Name } frissítve"
-      ],
-      "Preference saved": [
-        "Beállítások mentve"
-      ]
-    },
-    "Label/folder modal": {
-      "Create folder": [
-        "Mappa létrehozása"
-      ],
-      "Create label": [
-        "Címke létrehozása"
-      ],
-      "Edit folder": [
-        "Mappa szerkesztése"
-      ],
-      "Edit label": [
-        "Címke szerkesztése"
-      ]
-    },
-    "Success message after sorting folders": {
-      "Folders sorted": [
-        "Mappák rendezve"
-      ]
-    },
-    "Info - folder colouring feature": {
-      "When enabled, sub-folders inherit the color of the parent folder.": [
-        "Bekapcsolásakor az almappák a szülő mappa színét öröklik."
-      ]
-    },
-    "Settings/labels": {
-      "Labels/Folders": [
-        "Címkék és mappák"
-      ]
-    },
-    "Settings/labels - table": {
-      "Labels": [
-        "Címkék"
-      ],
-      "Actions": [
-        "Műveletek"
-      ]
-    },
-    "Success message after sorting labels": {
-      "Labels sorted": [
-        "Rendezett címkék"
-      ]
-    },
     "Apps dropdown": {
       "Proton applications": [
         "Proton alkalmazások"
@@ -6518,6 +6469,43 @@
       ],
       "${ mailAppName } Free": [
         "${ mailAppName } Ingyenes"
+      ]
+    },
+    "Downgrade account reason": {
+      "I use a different Proton account": [
+        "Másik Proton fiókot használok"
+      ],
+      "Subscription is too expensive": [
+        "Az előfizetés túl drága"
+      ],
+      "Missing feature(s) ": [
+        "Funkciók hiányoznak "
+      ],
+      "Bugs or quality issue": [
+        "Hibák vagy minőségi problémák"
+      ],
+      "Streaming service unsupported": [
+        "Videó szolgáltatás nem támogatott"
+      ],
+      "Switching to a different provider": [
+        "Másik szolgáltatóra váltok"
+      ],
+      "Temporary need, may come back in the future": [
+        "Átmenetileg szükséges. Elképzelhető, hogy visszatérek"
+      ],
+      "My reason isn't listed, please comment": [
+        "Nem a felsorolt indokok miatt. Kérjük írja le"
+      ]
+    },
+    "Plan time remaining": {
+      "You still have ${ daysRemaining } day left on your ${ BRAND_NAME } ${ currentPlanName } account.": [
+        "Még maradt ${ daysRemaining } nap a ${ BRAND_NAME } ${ currentPlanName } előfizetéséből.",
+        "Még maradt ${ daysRemaining } nap a ${ BRAND_NAME } ${ currentPlanName } előfizetéséből."
+      ]
+    },
+    "Downgrade modal exit survey title": {
+      "Help us improve!": [
+        "Segítsen fejlődni!"
       ]
     },
     "State": {
@@ -6807,8 +6795,8 @@
         "Hozzáférés a blokkolt tartalomhoz"
       ],
       "${ freeServers } in ${ freeCountries } country": [
-        "",
-        ""
+        "${ freeServers } ${ freeCountries } országban",
+        "${ freeServers } ${ freeCountries } országban"
       ],
       "Medium speed": [
         "Közepes sebesség"
@@ -7008,23 +6996,66 @@
         "Ingyenes"
       ]
     },
+    "VPNClient": {
+      "Android": [
+        "Android"
+      ],
+      "iOS": [
+        "iOS"
+      ],
+      "Windows": [
+        "Windows"
+      ],
+      "macOS": [
+        "macOS"
+      ],
+      "GNU/Linux": [
+        "GNU/Linux"
+      ],
+      "Chromebook": [
+        "Chromebook"
+      ],
+      "Android TV": [
+        "Android TV"
+      ]
+    },
+    "CountryInfo": {
+      "(via ${ entryCountryName })": [
+        "(${ entryCountryName }-on keresztül)"
+      ]
+    },
+    "Feature": {
+      "Access to all countries": [
+        "Hozzáférés az összes országhoz"
+      ],
+      "Secure Core servers": [
+        "Secure Core szerverek"
+      ],
+      "Fastest VPN servers": [
+        "A leggyorsabb VPN szerverek"
+      ],
+      "Torrenting support (P2P)": [
+        "Torrent támogatás (P2P)"
+      ],
+      "Connection for up to ${ plusVpnConnections } device": [
+        "Kapcsolódás akár ${ plusVpnConnections } eszközzel",
+        "Kapcsolódás akár ${ plusVpnConnections } eszközzel"
+      ],
+      "Secure streaming support": [
+        "Biztonságos videózás támogatás"
+      ],
+      "VPN ${ connectionsPluralized }": [
+        "VPN ${ connectionsPluralized }"
+      ]
+    },
+    "VPN info": {
+      "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, and more.": [
+        "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, és mások."
+      ]
+    },
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
         "A ${ appName } új verziója érhető el. ${ reloadButton }."
-      ]
-    },
-    "Option delay send seconds": {
-      "0 seconds": [
-        "0 másodperc"
-      ],
-      "5 seconds": [
-        "5 másodperc"
-      ],
-      "10 seconds": [
-        "10 másodperc"
-      ],
-      "20 seconds": [
-        "20 másodperc"
       ]
     },
     "Label for news": {
@@ -7073,59 +7104,6 @@
       ],
       "Recovery phrase": [
         ""
-      ]
-    },
-    "Address status": {
-      "Default": [
-        "Alapértelmezett"
-      ],
-      "Active": [
-        "Aktív"
-      ],
-      "Disabled": [
-        "Letiltva"
-      ],
-      "Orphan": [
-        "Árva"
-      ],
-      "Missing keys": [
-        "Hiányzó kulcsok"
-      ]
-    },
-    "Address action": {
-      "Enable": [
-        "Engedélyezés"
-      ],
-      "Disable": [
-        "Letiltás"
-      ],
-      "Generate missing keys": [
-        "Hiányzó kulcsok generálása"
-      ],
-      "Delete": [
-        "Törlés"
-      ]
-    },
-    "Bridge version load failed": {
-      "Failed to find latest version": [
-        "Hiba a legutóbbi verzió megkeresésekor"
-      ]
-    },
-    "OS compatibility": {
-      ".exe (64-bit)": [
-        ".exe (64 bit)"
-      ],
-      ".dmg (10.12 or later)": [
-        ".dmg (10.12 vagy újabb)"
-      ],
-      ".deb (for Debian/Ubuntu)": [
-        ".deb (Debian/Ubuntu)"
-      ],
-      ".rpm (for Fedora/openSUSE)": [
-        ".rpm (Fedora/openSUSE)"
-      ],
-      "PKGBUILD (for other distributions)": [
-        "PKGBUILD (más disztribúciókhoz)"
       ]
     },
     "Badge for user sessions table": {
@@ -7369,6 +7347,59 @@
         "Szervezeti kulcsok megváltoztatása"
       ]
     },
+    "Option delay send seconds": {
+      "0 seconds": [
+        "0 másodperc"
+      ],
+      "5 seconds": [
+        "5 másodperc"
+      ],
+      "10 seconds": [
+        "10 másodperc"
+      ],
+      "20 seconds": [
+        "20 másodperc"
+      ]
+    },
+    "Option protection mode": {
+      "Prevent tracking (recommended)": [
+        ""
+      ],
+      "Prevent tracking and store content locally": [
+        ""
+      ]
+    },
+    "Address status": {
+      "Default": [
+        "Alapértelmezett"
+      ],
+      "Active": [
+        "Aktív"
+      ],
+      "Disabled": [
+        "Letiltva"
+      ],
+      "Orphan": [
+        "Árva"
+      ],
+      "Missing keys": [
+        "Hiányzó kulcsok"
+      ]
+    },
+    "Address action": {
+      "Enable": [
+        "Engedélyezés"
+      ],
+      "Disable": [
+        "Letiltás"
+      ],
+      "Generate missing keys": [
+        "Hiányzó kulcsok generálása"
+      ],
+      "Delete": [
+        "Törlés"
+      ]
+    },
     "Member action": {
       "Edit": [
         "Szerkesztés"
@@ -7430,6 +7461,28 @@
     "Private Member": {
       "private": [
         "privát"
+      ]
+    },
+    "Bridge version load failed": {
+      "Failed to find latest version": [
+        "Hiba a legutóbbi verzió megkeresésekor"
+      ]
+    },
+    "OS compatibility": {
+      ".exe (64-bit)": [
+        ".exe (64 bit)"
+      ],
+      ".dmg (10.12 or later)": [
+        ".dmg (10.12 vagy újabb)"
+      ],
+      ".deb (for Debian/Ubuntu)": [
+        ".deb (Debian/Ubuntu)"
+      ],
+      ".rpm (for Fedora/openSUSE)": [
+        ".rpm (Fedora/openSUSE)"
+      ],
+      "PKGBUILD (for other distributions)": [
+        "PKGBUILD (más disztribúciókhoz)"
       ]
     },
     "Delinquent modal title": {
@@ -7586,82 +7639,6 @@
       ],
       "GB": [
         "GB"
-      ]
-    },
-    "Import contact. Contact identifier": {
-      "unknown": [
-        "ismeretlen"
-      ]
-    },
-    "Error importing contact": {
-      "vCard versions < 3.0 not supported": [
-        "3.0-nál régebbi vCard verziók nem támogatottak"
-      ],
-      "Encryption failed": [
-        "Titkosítás nem sikerült"
-      ]
-    },
-    "Error importing calendar": {
-      "An unexpected error occurred. Import must be restarted.": [
-        "Váratlan hiba történt. Az importálást újra kell kezdeni."
-      ],
-      "An error occurred uploading your file. No file has been selected.": [
-        "Hiba történt a fájl feltöltésekor. Nincs fájl kiválasztva."
-      ],
-      "An error occurred uploading your file ${ formattedFilename }. Only ICS file formats are allowed.": [
-        "Hiba történt a fájl feltöltésekor: ${ formattedFilename }. Csak ICS fájl formátumok támogatottak."
-      ],
-      "Your file ${ formattedFilename } is empty.": [
-        "A fájl üres: ${ formattedFilename }."
-      ],
-      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
-        "Hiba történt a fájl feltöltésekor: ${ formattedFilename }. A megengedett legnagyobb méret: ${ MAX_IMPORT_FILE_SIZE_STRING }."
-      ],
-      "Your file ${ formattedFilename } is not a calendar.": [
-        "A fájl nem egy naptár: ${ formattedFilename }."
-      ],
-      "${ CALENDAR_APP_NAME } only supports importing calendars with iCal version 2.0.": [
-        "A ${ CALENDAR_APP_NAME } csak iCal 2.0 verziójú naptárak importálását támogatja."
-      ],
-      "Your file ${ formattedFilename } is an invitation and cannot be imported.": [
-        "A fájl egy meghívó, ez nem importálható: ${ formattedFilename }."
-      ],
-      "Your file ${ formattedFilename } has no events to be imported.": [
-        "A fájlban nem találhatók importálandó események: ${ formattedFilename }."
-      ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } events.": [
-        "A fájl több mint ${ MAX_IMPORT_EVENTS_STRING } eseményt tartalmaz: ${ formattedFilename }."
-      ],
-      "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "Hiba történt a fájl olvasása közben: ${ formattedFilename }. A fájl nem megfelelő formátumú."
-      ]
-    },
-    "Error importing contacts": {
-      "An error occurred uploading your file. No file has been selected.": [
-        "Hiba történt a fájl feltöltésekor. Nincs fájl kiválasztva."
-      ],
-      "An error occurred uploading your file ${ formattedFilename }. No .csv or .vcf file selected": [
-        "Hiba történt a fájl feltöltésekor: ${ formattedFilename }. Nem .csv vagy .vcf fájl van kiválasztva"
-      ],
-      "Your file ${ formattedFilename } is empty.": [
-        "A fájl üres: ${ formattedFilename }."
-      ],
-      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
-        "Hiba történt a fájl feltöltésekor: ${ formattedFilename }. A megengedett legnagyobb méret: ${ MAX_IMPORT_FILE_SIZE_STRING }."
-      ],
-      "Your file ${ formattedFilename } has no contacts to be imported.": [
-        "A fájlban nem találhatók importálható névjegyek: ${ formattedFilename }."
-      ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
-        "A fájl több mint ${ MAX_IMPORT_CONTACTS_STRING } névjegyet tartalmaz: ${ formattedFilename }."
-      ],
-      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "Hiba történt a fájl olvasása közben: ${ formattedFilename }. A fájl nem megfelelő formátumú."
-      ]
-    },
-    "Default display name vcard": {
-      "Unknown": [
-        "Ismeretlen"
       ]
     },
     "Participant name": {
@@ -8203,6 +8180,41 @@
         "Váratlan hiba"
       ]
     },
+    "Error importing calendar": {
+      "An error occurred uploading your file. No file has been selected.": [
+        "Hiba történt a fájl feltöltésekor. Nincs fájl kiválasztva."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Only ICS file formats are allowed.": [
+        "Hiba történt a fájl feltöltésekor: ${ formattedFilename }. Csak ICS fájl formátumok támogatottak."
+      ],
+      "Your file ${ formattedFilename } is empty.": [
+        "A fájl üres: ${ formattedFilename }."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
+        "Hiba történt a fájl feltöltésekor: ${ formattedFilename }. A megengedett legnagyobb méret: ${ MAX_IMPORT_FILE_SIZE_STRING }."
+      ],
+      "Your file ${ formattedFilename } is not a calendar.": [
+        "A fájl nem egy naptár: ${ formattedFilename }."
+      ],
+      "${ CALENDAR_APP_NAME } only supports importing calendars with iCal version 2.0.": [
+        "A ${ CALENDAR_APP_NAME } csak iCal 2.0 verziójú naptárak importálását támogatja."
+      ],
+      "Your file ${ formattedFilename } is an invitation and cannot be imported.": [
+        "A fájl egy meghívó, ez nem importálható: ${ formattedFilename }."
+      ],
+      "Your file ${ formattedFilename } has no events to be imported.": [
+        "A fájlban nem találhatók importálandó események: ${ formattedFilename }."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } events.": [
+        "A fájl több mint ${ MAX_IMPORT_EVENTS_STRING } eseményt tartalmaz: ${ formattedFilename }."
+      ],
+      "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
+        "Hiba történt a fájl olvasása közben: ${ formattedFilename }. A fájl nem megfelelő formátumú."
+      ],
+      "An unexpected error occurred. Import must be restarted.": [
+        "Váratlan hiba történt. Az importálást újra kell kezdeni."
+      ]
+    },
     "Calendar subscription not synced error": {
       "Calendar is syncing": [
         ""
@@ -8219,11 +8231,52 @@
       "Calendar link is not accessible": [
         ""
       ],
-      "Calendar link is temporarily unaccessible": [
+      "Calendar link is temporarily inaccessible": [
         ""
       ],
       "Failed to sync calendar": [
         ""
+      ]
+    },
+    "Import contact. Contact identifier": {
+      "unknown": [
+        "ismeretlen"
+      ]
+    },
+    "Error importing contact": {
+      "vCard versions < 3.0 not supported": [
+        "3.0-nál régebbi vCard verziók nem támogatottak"
+      ],
+      "Encryption failed": [
+        "Titkosítás nem sikerült"
+      ]
+    },
+    "Error importing contacts": {
+      "An error occurred uploading your file. No file has been selected.": [
+        "Hiba történt a fájl feltöltésekor. Nincs fájl kiválasztva."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. No .csv or .vcf file selected": [
+        "Hiba történt a fájl feltöltésekor: ${ formattedFilename }. Nem .csv vagy .vcf fájl van kiválasztva"
+      ],
+      "Your file ${ formattedFilename } is empty.": [
+        "A fájl üres: ${ formattedFilename }."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
+        "Hiba történt a fájl feltöltésekor: ${ formattedFilename }. A megengedett legnagyobb méret: ${ MAX_IMPORT_FILE_SIZE_STRING }."
+      ],
+      "Your file ${ formattedFilename } has no contacts to be imported.": [
+        "A fájlban nem találhatók importálható névjegyek: ${ formattedFilename }."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
+        "A fájl több mint ${ MAX_IMPORT_CONTACTS_STRING } névjegyet tartalmaz: ${ formattedFilename }."
+      ],
+      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
+        "Hiba történt a fájl olvasása közben: ${ formattedFilename }. A fájl nem megfelelő formátumú."
+      ]
+    },
+    "Default display name vcard": {
+      "Unknown": [
+        "Ismeretlen"
       ]
     },
     "Keyboard shortcut section name": {
@@ -8401,12 +8454,17 @@
         "Eredeti üzenet megjelenítése"
       ]
     },
+    "Settings description": {
+      "You can apply multiple labels to a single message, but messages can usually only be in a single folder. Drag and drop to rearrange the order of your folders and labels.": [
+        "Egy üzenetre több címkét is alkalmazhat, de egy üzenet általában egy mappában lehet. Húzza arrébb a címkéket és a mappákat a sorrendjük megváltoztatásához."
+      ]
+    },
     "Settings section title": {
       "General": [
         "Általános"
       ],
-      "Import & export": [
-        "Importálás és exportálás"
+      "Email privacy": [
+        ""
       ],
       "Identity & addresses": [
         "Személyazonosság és címek"
@@ -8429,14 +8487,17 @@
       "Encryption & keys": [
         "Titkosítás és kulcsok"
       ],
+      "Import & export": [
+        "Importálás és exportálás"
+      ],
       "IMAP/SMTP": [
         "IMAP/SMTP"
       ],
-      "VPN apps": [
-        "VPN alkalmazások"
-      ],
       "Calendars": [
         "Naptárak"
+      ],
+      "VPN apps": [
+        "VPN alkalmazások"
       ],
       "Users & addresses": [
         "Felhasználók és címek"
@@ -8455,11 +8516,6 @@
       ],
       "Organization": [
         "Szervezet"
-      ]
-    },
-    "Settings description": {
-      "You can apply multiple labels to a single message, but messages can usually only be in a single folder. Drag and drop to rearrange the order of your folders and labels.": [
-        "Egy üzenetre több címkét is alkalmazhat, de egy üzenet általában egy mappában lehet. Húzza arrébb a címkéket és a mappákat a sorrendjük megváltoztatásához."
       ]
     },
     "Upgrade": {

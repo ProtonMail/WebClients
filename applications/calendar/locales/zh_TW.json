@@ -29,7 +29,7 @@
       "Calendar link is not accessible": [
         "日曆無法存取"
       ],
-      "Calendar link is temporarily unaccessible": [
+      "Calendar link is temporarily inaccessible": [
         "日曆連結暫時無法存取"
       ],
       "Failed to sync calendar": [
@@ -571,11 +571,11 @@
       "No results found": [
         "查無結果"
       ],
-      "Week": [
-        "週"
-      ],
       "Loading": [
         "載入中"
+      ],
+      "Week": [
+        "週"
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "此連結可能是同形異義詞的偽裝攻擊 (homograph attack)，且無法以 Internet Explorer 或 Edge 瀏覽器開啟。如果您確定這是一個正當的連結，請使用其他瀏覽器來開啟。"
@@ -730,12 +730,6 @@
       "* Customizable features": [
         "* 自訂化功能"
       ],
-      "Access your streaming services, like ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, no matter where you are.": [
-        "無論您身在何處，都可以存取您的串流服務，如 ${ netflix }、${ disney }、${ primeVideo } 與 ${ many }。"
-      ],
-      "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
-        "無論您身在何處，都可以存取被封鎖的內容，如社群媒體、新聞、維基百科、YouTube 與更多其他東西。"
-      ],
       "For getting started with private and secure emailing.": [
         "開始使用私人且安全的電子郵件。"
       ],
@@ -759,6 +753,12 @@
       ],
       "For families and small teams; includes both Mail and VPN.": [
         "對於家庭與小型團隊；同時包含了郵件與 VPN。"
+      ],
+      "Access your streaming services, like ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, no matter where you are.": [
+        "無論您身在何處，都可以存取您的串流服務，如 ${ netflix }、${ disney }、${ primeVideo } 與 ${ many }。"
+      ],
+      "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
+        "無論您身在何處，都可以存取被封鎖的內容，如社群媒體、新聞、維基百科、YouTube 與更多其他東西。"
       ],
       "Save 20%": [
         "節省 20%"
@@ -1068,6 +1068,12 @@
       ],
       "Loading events": [
         "載入活動中"
+      ],
+      "The organizer could not be notified that you changed your answer:": [
+        ""
+      ],
+      "The organizer cannot be notified that you want to change your answer:": [
+        ""
       ],
       "The organizer cannot be notified that you decline the invitation:": [
         "召集人無法知悉您拒絕了此邀請："
@@ -1443,14 +1449,14 @@
       "A group with this name already exists": [
         "以此為名的群組已存在"
       ],
-      "Primary address key is not decrypted": [
-        "主要地址金鑰並未被加密"
-      ],
       "We were unable to connect to your service provider.": [
         ""
       ],
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         ""
+      ],
+      "Primary address key is not decrypted": [
+        "主要地址金鑰並未被加密"
       ],
       "No valid address found": [
         "找不到有效的地址"
@@ -2031,12 +2037,6 @@
       "Back": [
         "上一步"
       ],
-      "Use ${ label } theme": [
-        "使用 ${ label } 佈景主題"
-      ],
-      "OK": [
-        "確定"
-      ],
       "Log in": [
         "登入"
       ],
@@ -2063,6 +2063,12 @@
       ],
       "Edit phone number": [
         "編輯電話號碼"
+      ],
+      "Use ${ label } theme": [
+        "使用 ${ label } 佈景主題"
+      ],
+      "OK": [
+        "確定"
       ],
       "Clear": [
         "清除"
@@ -2402,9 +2408,6 @@
       "Give feedback": [
         "提供意見回饋"
       ],
-      "Select a theme": [
-        "選擇佈景主題"
-      ],
       "Sign in again to continue": [
         "請重新登入以繼續"
       ],
@@ -2422,6 +2425,9 @@
       ],
       "Human verification": [
         "真人驗證"
+      ],
+      "Select a theme": [
+        "選擇佈景主題"
       ],
       "Report a problem": [
         "回報問題"
@@ -2495,8 +2501,8 @@
       "Amount due": [
         "應付金額"
       ],
-      "Cancel subscription": [
-        "取消訂閱"
+      "Downgrade account": [
+        "降級帳號"
       ],
       "Network error": [
         "網路錯誤"
@@ -2790,6 +2796,11 @@
         "編輯事件"
       ]
     },
+    "PGP key encryption warning": {
+      "Key cannot be used for encryption": [
+        "此金鑰不適用於加密"
+      ]
+    },
     "Storage": {
       "Your current storage:": [
         "您目前的儲存空間："
@@ -2799,11 +2810,6 @@
       ],
       "Release notes": [
         "版本資訊"
-      ]
-    },
-    "PGP key encryption warning": {
-      "Key cannot be used for encryption": [
-        "此金鑰不適用於加密"
       ]
     },
     "Label": {
@@ -3083,8 +3089,8 @@
       "Your calendars": [
         "您的行事曆"
       ],
-      "Participant": [
-        "參與者"
+      "participant": [
+        ""
       ]
     },
     "Link": {
@@ -4538,11 +4544,6 @@
         "注意：服務將會在您點擊「套用」按鈕後重新載入。"
       ]
     },
-    "Select files": {
-      "Upload": [
-        "上載"
-      ]
-    },
     "Loading info": {
       "Connecting to your contacts provider": [
         ""
@@ -4562,6 +4563,11 @@
     "Confirm modal title": {
       "Quit import?": [
         ""
+      ]
+    },
+    "Select files": {
+      "Upload": [
+        "上載"
       ]
     },
     "Message display when a new app version is available": {
@@ -4703,11 +4709,6 @@
     "Placeholder for contact with no name": {
       "(No name)": [
         "(未命名)"
-      ]
-    },
-    "Reply to calendar invitation": {
-      "Cannot send to organizer address: ${ apiErrorMessage }": [
-        "無法傳送到召集人電子郵件地址：${ apiErrorMessage }"
       ]
     },
     "Modal title": {

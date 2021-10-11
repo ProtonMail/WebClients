@@ -29,7 +29,7 @@
       "Calendar link is not accessible": [
         ""
       ],
-      "Calendar link is temporarily unaccessible": [
+      "Calendar link is temporarily inaccessible": [
         ""
       ],
       "Failed to sync calendar": [
@@ -608,11 +608,11 @@
       "No results found": [
         "Nincs találat"
       ],
-      "Week": [
-        "Hét"
-      ],
       "Loading": [
         "Betöltés"
+      ],
+      "Week": [
+        "Hét"
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Ez a link egy hamisított címre mutató (homográf) támadásnak néz ki. Internet Explorerben és Edge-ben nem nyitható meg. Ha biztos benne, hogy ez egy érvényes link, használjon egy másik böngészőt a megnyitáshoz."
@@ -769,12 +769,6 @@
       "* Customizable features": [
         "* Testreszabható szolgáltatások"
       ],
-      "Access your streaming services, like ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, no matter where you are.": [
-        "Nézze a TV előfizetéseit, mint ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, bárhol is van."
-      ],
-      "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
-        "Hozzáférés blokkolt tartalomhoz, mint például közösségi oldalak, hírek, Wikipedia, YouTube és sok más, bárhol is tartózkodik."
-      ],
       "For getting started with private and secure emailing.": [
         "Az elinduláshoz a biztonságos és privát e-mailezésben."
       ],
@@ -798,6 +792,12 @@
       ],
       "For families and small teams; includes both Mail and VPN.": [
         "Családoknak és kisebb csoportoknak, a levelezést és VPN-t is tartalmazza."
+      ],
+      "Access your streaming services, like ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, no matter where you are.": [
+        "Nézze a TV előfizetéseit, mint ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, bárhol is van."
+      ],
+      "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
+        "Hozzáférés blokkolt tartalomhoz, mint például közösségi oldalak, hírek, Wikipedia, YouTube és sok más, bárhol is tartózkodik."
       ],
       "Save 20%": [
         "20% kedvezményt"
@@ -1113,6 +1113,12 @@
       ],
       "Loading events": [
         "Események betöltése"
+      ],
+      "The organizer could not be notified that you changed your answer:": [
+        ""
+      ],
+      "The organizer cannot be notified that you want to change your answer:": [
+        ""
       ],
       "The organizer cannot be notified that you decline the invitation:": [
         "A szervező nem értesíthető, hogy elutasította a meghívót:"
@@ -1490,14 +1496,14 @@
       "A group with this name already exists": [
         "Már létezik csoport ezzel a névvel"
       ],
-      "Primary address key is not decrypted": [
-        "Az elsődleges cím kulcsa nincs visszafejtve"
-      ],
       "We were unable to connect to your service provider.": [
         ""
       ],
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         ""
+      ],
+      "Primary address key is not decrypted": [
+        "Az elsődleges cím kulcsa nincs visszafejtve"
       ],
       "No valid address found": [
         "Nem található érvényes e-mail cím"
@@ -2083,12 +2089,6 @@
       "Back": [
         "Vissza"
       ],
-      "Use ${ label } theme": [
-        "${ label } téma használata"
-      ],
-      "OK": [
-        "OK"
-      ],
       "Log in": [
         "Belépés"
       ],
@@ -2115,6 +2115,12 @@
       ],
       "Edit phone number": [
         "Telefonszám módosítása"
+      ],
+      "Use ${ label } theme": [
+        "${ label } téma használata"
+      ],
+      "OK": [
+        "OK"
       ],
       "Clear": [
         "Törlés"
@@ -2456,9 +2462,6 @@
       "Give feedback": [
         "Adjon visszajelzést"
       ],
-      "Select a theme": [
-        "Téma kiválasztása"
-      ],
       "Sign in again to continue": [
         "Lépjen be újból a folytatáshoz"
       ],
@@ -2476,6 +2479,9 @@
       ],
       "Human verification": [
         "Robot ellenőrzés"
+      ],
+      "Select a theme": [
+        "Téma kiválasztása"
       ],
       "Report a problem": [
         "Probléma jelentése"
@@ -2549,8 +2555,8 @@
       "Amount due": [
         "Esedékes összeg"
       ],
-      "Cancel subscription": [
-        "Előfizetés megszüntetése"
+      "Downgrade account": [
+        ""
       ],
       "Network error": [
         "Hálózati hiba"
@@ -2848,6 +2854,11 @@
         "Esemény szerkesztése"
       ]
     },
+    "PGP key encryption warning": {
+      "Key cannot be used for encryption": [
+        ""
+      ]
+    },
     "Storage": {
       "Your current storage:": [
         "Jelenlegi tárhelye:"
@@ -2857,11 +2868,6 @@
       ],
       "Release notes": [
         "Kiadási megjegyzések"
-      ]
-    },
-    "PGP key encryption warning": {
-      "Key cannot be used for encryption": [
-        ""
       ]
     },
     "Label": {
@@ -3141,7 +3147,7 @@
       "Your calendars": [
         "Az ön naptárai"
       ],
-      "Participant": [
+      "participant": [
         "",
         ""
       ]
@@ -4626,11 +4632,6 @@
         "Figyelem: Az \"Alkalmazás\" gombra kattintva a szolgáltatás újraindul."
       ]
     },
-    "Select files": {
-      "Upload": [
-        "Feltöltés"
-      ]
-    },
     "Loading info": {
       "Connecting to your contacts provider": [
         ""
@@ -4650,6 +4651,11 @@
     "Confirm modal title": {
       "Quit import?": [
         ""
+      ]
+    },
+    "Select files": {
+      "Upload": [
+        "Feltöltés"
       ]
     },
     "Message display when a new app version is available": {
@@ -4811,11 +4817,6 @@
     "Placeholder for contact with no name": {
       "(No name)": [
         ""
-      ]
-    },
-    "Reply to calendar invitation": {
-      "Cannot send to organizer address: ${ apiErrorMessage }": [
-        "Nem sikerült a szervező címére küldeni: ${ apiErrorMessage }"
       ]
     },
     "Modal title": {

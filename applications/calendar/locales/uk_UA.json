@@ -29,8 +29,8 @@
       "Calendar link is not accessible": [
         "Календар за посиланням недоступний"
       ],
-      "Calendar link is temporarily unaccessible": [
-        "Календар за посиланням тимчасово недоступний"
+      "Calendar link is temporarily inaccessible": [
+        "Посилання календаря тимчасово недоступне"
       ],
       "Failed to sync calendar": [
         "Не вдалося синхронізувати календар"
@@ -286,7 +286,7 @@
         "${ count } раз",
         "${ count } рази",
         "${ count } разів",
-        "${ count } разів"
+        "${ count } раза"
       ],
       "until ${ dateString }": [
         "до ${ dateString }"
@@ -682,11 +682,11 @@
       "No results found": [
         "Результатів не знайдено"
       ],
-      "Week": [
-        "Тиждень"
-      ],
       "Loading": [
         "Завантаження"
+      ],
+      "Week": [
+        "Тиждень"
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Це посилання може бути гомографічною атакою і його не можна відкрити в браузерах Internet Explorer чи Edge. Якщо ви впевнені, що це надійне посилання, відкрийте його в іншому браузері."
@@ -800,7 +800,7 @@
         "Перевірка платежу може тривати кілька хвилин."
       ],
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
-        "Будь ласка, спробуйте ще раз, скористайтесь іншим методом оплати, або зв'яжіться з PayPal для отримання допомоги."
+        "Будь ласка, спробуйте ще раз, скористайтесь іншим способом оплати, або зв'яжіться з PayPal для отримання допомоги."
       ],
       "Please try again, use a different payment method, or call your bank for assistance.": [
         "Будь ласка, спробуйте ще раз. Скористайтесь іншим способом оплати, або зв'яжіться з вашим банком для допомоги."
@@ -847,12 +847,6 @@
       "* Customizable features": [
         "* Налаштовувані функції"
       ],
-      "Access your streaming services, like ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, no matter where you are.": [
-        "Отримуйте доступ до потокових служб, наприклад, ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, незалежно від місця перебування."
-      ],
-      "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
-        "Отримайте доступ до заблокованого вмісту, наприклад, суспільних мереж, новин, Wikipedia, YouTube та багатьох інших, незалежно від того, де ви знаходитесь."
-      ],
       "For getting started with private and secure emailing.": [
         "Щоб розпочати приватну та захищену роботу з електронною поштою."
       ],
@@ -876,6 +870,12 @@
       ],
       "For families and small teams; includes both Mail and VPN.": [
         "Для сімей та невеликих команд; включає пошту і VPN."
+      ],
+      "Access your streaming services, like ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, no matter where you are.": [
+        "Отримуйте доступ до потокових служб, наприклад, ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, незалежно від місця перебування."
+      ],
+      "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
+        "Отримайте доступ до заблокованого вмісту, наприклад, суспільних мереж, новин, Wikipedia, YouTube та багатьох інших, незалежно від того, де ви знаходитесь."
       ],
       "Save 20%": [
         "Заощадьте 20%"
@@ -1204,6 +1204,12 @@
       "Loading events": [
         "Завантаження подій"
       ],
+      "The organizer could not be notified that you changed your answer:": [
+        "Організатор не може бути сповіщений про те, що ви змінили свою відповідь:"
+      ],
+      "The organizer cannot be notified that you want to change your answer:": [
+        "Організатор не може бути сповіщений про те, що ви бажаєте змінити свою відповідь:"
+      ],
       "The organizer cannot be notified that you decline the invitation:": [
         "Організатор не може бути повідомлений, що ви відхиляєте запрошення:"
       ],
@@ -1361,7 +1367,7 @@
         "Схоже, системний часовий пояс змінено на ${ timezone }. Хочете оновити налаштування часового поясу?"
       ],
       "At most 100 participants are allowed per invitation": [
-        "Дозволено запрошувати не до 100 учасників у одному запрошенні"
+        "Для одного запрошення дозволяється не більше 100 учасників"
       ],
       "You can only modify personal event properties as you can't send emails from the organizer address.": [
         "Ви можете змінювати лише властивості особистих подій, тому що ви не можете надсилати листи з адреси організатора."
@@ -1468,7 +1474,7 @@
         "Не вдається підтвердити електронну пошту. Спробуйте знову пізніше"
       ],
       "Can't validate phone, try again later": [
-        "Не вдається підтвердити номер телефону. Спробуйте знову пізніше"
+        "Не вдалося перевірити номер телефону. Повторіть спробу пізніше"
       ],
       "Enter 6 digits": [
         "Введіть 6 цифр"
@@ -1584,14 +1590,14 @@
       "A group with this name already exists": [
         "Група з такою назвою вже існує"
       ],
-      "Primary address key is not decrypted": [
-        "Основний ключ адреси не розшифрований"
-      ],
       "We were unable to connect to your service provider.": [
         ""
       ],
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         ""
+      ],
+      "Primary address key is not decrypted": [
+        "Основний ключ адреси не розшифрований"
       ],
       "No valid address found": [
         "Не знайдено дійсної адреси"
@@ -2048,10 +2054,10 @@
     },
     "Message": {
       "Re:": [
-        "Відповісти:"
+        "Re:"
       ],
       "Fw:": [
-        "Переслати:"
+        "Fw:"
       ]
     },
     "Action": {
@@ -2187,12 +2193,6 @@
       "Back": [
         "Назад"
       ],
-      "Use ${ label } theme": [
-        "Використовувати тему ${ label }"
-      ],
-      "OK": [
-        "Гаразд"
-      ],
       "Log in": [
         "Увійти"
       ],
@@ -2219,6 +2219,12 @@
       ],
       "Edit phone number": [
         "Змінити номер телефону"
+      ],
+      "Use ${ label } theme": [
+        "Використовувати тему ${ label }"
+      ],
+      "OK": [
+        "Гаразд"
       ],
       "Clear": [
         "Очистити"
@@ -2564,9 +2570,6 @@
       "Give feedback": [
         "Залишити відгук"
       ],
-      "Select a theme": [
-        "Вибрати тему"
-      ],
       "Sign in again to continue": [
         "Увійдіть знову для продовження"
       ],
@@ -2584,6 +2587,9 @@
       ],
       "Human verification": [
         "Перевірка \"Я не робот\""
+      ],
+      "Select a theme": [
+        "Вибрати тему"
       ],
       "Report a problem": [
         "Повідомити про проблему"
@@ -2657,8 +2663,8 @@
       "Amount due": [
         "До сплати"
       ],
-      "Cancel subscription": [
-        "Скасувати передплату"
+      "Downgrade account": [
+        "Понизити тарифний план"
       ],
       "Network error": [
         "Помилка мережі"
@@ -2964,6 +2970,11 @@
         "Змінити подію"
       ]
     },
+    "PGP key encryption warning": {
+      "Key cannot be used for encryption": [
+        "Ключ не можна застосовувати для шифрування"
+      ]
+    },
     "Storage": {
       "Your current storage:": [
         "Ваше поточне сховище:"
@@ -2973,11 +2984,6 @@
       ],
       "Release notes": [
         "Примітки до випуску"
-      ]
-    },
-    "PGP key encryption warning": {
-      "Key cannot be used for encryption": [
-        "Ключ не можна застосовувати для шифрування"
       ]
     },
     "Label": {
@@ -3257,11 +3263,11 @@
       "Your calendars": [
         "Ваші календарі"
       ],
-      "Participant": [
-        "Учасник",
-        "Учасники",
-        "Учасників",
-        "Учасника"
+      "participant": [
+        "учасник",
+        "учасники",
+        "учасників",
+        "учасника"
       ]
     },
     "Link": {
@@ -4136,7 +4142,7 @@
         "Захист від витоку DNS"
       ],
       "Kill Switch / Always-on VPN": [
-        "Аварійний Стоп / Постійна VPN"
+        "Kill Switch / Always-on VPN"
       ],
       "Perfect Forward Secrecy (PFS)": [
         "Захист від зворотного читання (Perfect Forward Secrecy)"
@@ -4802,11 +4808,6 @@
         "Примітка: Після натискання кнопки Застосувати сервіс перезавантажиться."
       ]
     },
-    "Select files": {
-      "Upload": [
-        "Вивантажити"
-      ]
-    },
     "Loading info": {
       "Connecting to your contacts provider": [
         ""
@@ -4826,6 +4827,11 @@
     "Confirm modal title": {
       "Quit import?": [
         ""
+      ]
+    },
+    "Select files": {
+      "Upload": [
+        "Вивантажити"
       ]
     },
     "Message display when a new app version is available": {
@@ -5027,11 +5033,6 @@
     "Placeholder for contact with no name": {
       "(No name)": [
         "(Без назви)"
-      ]
-    },
-    "Reply to calendar invitation": {
-      "Cannot send to organizer address: ${ apiErrorMessage }": [
-        "Не вдалося надіслати на адресу організатора: ${ apiErrorMessage }"
       ]
     },
     "Modal title": {
