@@ -4,7 +4,7 @@ import { isBlackFridayPeriod } from '@proton/shared/lib/helpers/blackfriday';
 const EVERY_MINUTE = 60 * 1000;
 
 const useBlackFridayPeriod = () => {
-    const [blackFriday, setBlackFriday] = useState(isBlackFridayPeriod());
+    const [blackFriday, setBlackFriday] = useState(isBlackFridayPeriod);
 
     useEffect(() => {
         const intervalID = setInterval(() => {
