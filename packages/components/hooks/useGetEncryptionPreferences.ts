@@ -52,7 +52,7 @@ const useGetEncryptionPreferences = () => {
                 pinnedKeysConfig = { pinnedKeys: [], isContact: false };
             } else {
                 const { publicKeys } = splitKeys(await getUserKeys());
-                apiKeysConfig = await getPublicKeys(emailAddress, lifetime);
+                apiKeysConfig = await getPublicKeys(emailAddress, lifetime, !lifetime);
                 const isInternal = apiKeysConfig.RecipientType === RECIPIENT_TYPES.TYPE_INTERNAL;
                 pinnedKeysConfig = await getPublicKeysVcardHelper(
                     api,
