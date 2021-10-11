@@ -3,10 +3,10 @@ import { c } from 'ttag';
 
 import { getActiveAddresses } from '@proton/shared/lib/helpers/address';
 import { Calendar, CalendarViewModelFull, SubscribedCalendar } from '@proton/shared/lib/interfaces/calendar';
+import useCalendarEmailNotificationsFeature from '../../../hooks/useCalendarEmailNotificationsFeature';
 
 import { getCalendarModel } from '../calendarModal/calendarModalState';
-import { useFeature, useGetAddresses, useGetCalendarBootstrap, useLoading, useNotifications } from '../../../hooks';
-import { FeatureCode } from '../../features';
+import { useGetAddresses, useGetCalendarBootstrap, useLoading, useNotifications } from '../../../hooks';
 
 interface Props {
     calendar?: Calendar | SubscribedCalendar;
@@ -22,7 +22,7 @@ const useGetCalendarSetup = ({ calendar: initialCalendar, setModel }: Props) => 
 
     const [error, setError] = useState(false);
 
-    const emailNotificationsEnabled = !!useFeature(FeatureCode.CalendarEmailNotification)?.feature?.Value;
+    const emailNotificationsEnabled = useCalendarEmailNotificationsFeature();
 
     useEffect(() => {
         const initializeEmptyCalendar = async () => {
