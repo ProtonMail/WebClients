@@ -20,14 +20,14 @@ import {
     TextArea,
     Toggle,
 } from '../../../components';
+import useCalendarEmailNotificationsFeature from '../../../hooks/useCalendarEmailNotificationsFeature';
 import { getCalendarPayload, getCalendarSettingsPayload, getDefaultModel, validate } from './calendarModalState';
-import { useFeature, useLoading } from '../../../hooks';
+import { useLoading } from '../../../hooks';
 import { GenericError } from '../../error';
 import Notifications from '../notifications/Notifications';
 import useGetCalendarSetup from '../hooks/useGetCalendarSetup';
 import useGetCalendarActions from '../hooks/useGetCalendarActions';
 import { TruncatedText } from '../../../components/truncatedText';
-import { FeatureCode } from '../../features';
 
 const URL_MAX_DISPLAY_LENGTH = 100;
 
@@ -51,7 +51,7 @@ export const CalendarModal = ({
     const [error, setError] = useState(false);
     const [calendar, setCalendar] = useState(initialCalendar);
 
-    const emailNotificationsEnabled = !!useFeature(FeatureCode.CalendarEmailNotification)?.feature?.Value;
+    const emailNotificationsEnabled = useCalendarEmailNotificationsFeature();
     const [model, setModel] = useState(() => getDefaultModel(emailNotificationsEnabled));
 
     const addressText = useMemo(() => {
