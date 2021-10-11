@@ -1,3 +1,4 @@
+import useCalendarEmailNotificationsFeature from '@proton/components/hooks/useCalendarEmailNotificationsFeature';
 import { c } from 'ttag';
 import {
     FREQUENCY,
@@ -18,7 +19,7 @@ import { Address } from '@proton/shared/lib/interfaces';
 
 import { EventModel, EventModelErrors, NotificationModel } from '@proton/shared/lib/interfaces/calendar';
 import { HTMLAttributes, useRef } from 'react';
-import { Alert, classnames, FeatureCode, Input, Notifications, TextArea, useFeature } from '@proton/components';
+import { Alert, classnames, Input, Notifications, TextArea } from '@proton/components';
 import { isEmailNotification } from '@proton/shared/lib/calendar/alarms';
 
 import createHandlers from './eventForm/createPropFactory';
@@ -93,7 +94,7 @@ const EventForm = ({
     // and since the model is updated onChange, the ref makes sure it is possible even if you
     // delete the only email notification
     const emailNotificationsEnabled = useRef(
-        !!useFeature(FeatureCode.CalendarEmailNotification)?.feature?.Value || notifications.some(isEmailNotification)
+        useCalendarEmailNotificationsFeature() || notifications.some(isEmailNotification)
     ).current;
 
     const dateRow = isMinimal ? (
@@ -171,7 +172,12 @@ const EventForm = ({
     );
 
     const descriptionRow = (
-        <IconRow icon="align-left" iconClassName="on-rtl-mirror" title={c('Label').t`Description`} id={DESCRIPTION_INPUT_ID}>
+        <IconRow
+            icon="align-left"
+            iconClassName="on-rtl-mirror"
+            title={c('Label').t`Description`}
+            id={DESCRIPTION_INPUT_ID}
+        >
             <TextArea
                 id={DESCRIPTION_INPUT_ID}
                 minRows={2}
