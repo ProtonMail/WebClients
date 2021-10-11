@@ -51,13 +51,21 @@ const ExtraImages = ({ message, type, onLoadImages }: Props) => {
     const loadButton = Shortcuts ? (
         <>
             <Tooltip title={titleButtonLoad}>
-                <button type="button" onClick={onLoadImages} className="flex flex-item-noshrink text-underline link">{c(
-                    'Action'
-                ).t`Load`}</button>
+                <button
+                    type="button"
+                    onClick={onLoadImages}
+                    className="flex flex-item-noshrink text-underline link"
+                    data-testid="remote-content:load1"
+                >{c('Action').t`Load`}</button>
             </Tooltip>
         </>
     ) : (
-        <button type="button" onClick={onLoadImages} className="text-underline link">{c('Action').t`Load`}</button>
+        <button
+            type="button"
+            onClick={onLoadImages}
+            className="text-underline link"
+            data-testid="remote-content:load2"
+        >{c('Action').t`Load`}</button>
     );
 
     return (
