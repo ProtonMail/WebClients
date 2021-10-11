@@ -119,7 +119,7 @@ const EventPopover = ({
     };
 
     const dateHeader = useMemo(() => {
-        const [dateStart, dateEnd] = [start, end].map((date) => formatUTC(date, 'cccc PPP', { locale: dateLocale }));
+        const [dateStart, dateEnd] = [start, end].map((date) => formatUTC(date, 'ccc, PP', { locale: dateLocale }));
         const timeStart = formatTime(start);
         const timeEnd = formatTime(end);
 
@@ -159,7 +159,7 @@ const EventPopover = ({
                 data-test-id="event-popover:edit"
                 shape="ghost"
                 onClick={handleEdit}
-                loading={loadingAction}
+                disabled={loadingAction}
                 icon
                 size="small"
                 title={c('Action').t`Edit`}
@@ -209,12 +209,21 @@ const EventPopover = ({
         });
     }, [eventReadResult, tzid]);
 
+    const commonContainerProps = {
+        style: mergedStyle,
+        ref: popoverRef,
+        onClose,
+    };
+    const commonHeaderProps = {
+        onClose,
+        className: 'flex-item-noshrink',
+    };
+
     if (eventReadError) {
         return (
-            <PopoverContainer style={mergedStyle} className={mergedClassName} ref={popoverRef}>
+            <PopoverContainer {...commonContainerProps} className={mergedClassName}>
                 <PopoverHeader
-                    onClose={onClose}
-                    className="flex-item-noshrink"
+                    {...commonHeaderProps}
                     actions={
                         !isSubscribedCalendar && <div className="flex flex-nowrap flex-justify-end">{deleteButton}</div>
                     }
@@ -230,17 +239,16 @@ const EventPopover = ({
 
     if (isEventReadLoading) {
         return (
-            <PopoverContainer style={mergedStyle} className="eventpopover p1" ref={popoverRef}>
+            <PopoverContainer {...commonContainerProps} className="eventpopover p1">
                 <Loader />
             </PopoverContainer>
         );
     }
 
     return (
-        <PopoverContainer style={mergedStyle} className={mergedClassName} ref={popoverRef}>
+        <PopoverContainer {...commonContainerProps} className={mergedClassName}>
             <PopoverHeader
-                className="flex-item-noshrink"
-                onClose={onClose}
+                {...commonHeaderProps}
                 actions={
                     !isSubscribedCalendar && (
                         <>

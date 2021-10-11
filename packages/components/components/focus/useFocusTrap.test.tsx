@@ -261,4 +261,26 @@ describe('FocusTrap', () => {
         });
         expect(getByTestId('2')).toHaveFocus();
     });
+
+    it('should contain focus when elements are deleted', async () => {
+        jest.useFakeTimers();
+
+        const Component = () => {
+            const rootRef = useRef<HTMLDivElement>(null);
+            const [hidden, setHidden] = useState(false);
+            const props = useFocusTrap({ rootRef });
+            return (
+                <div {...props} ref={rootRef} data-testid="root">
+                    {!hidden && <button data-testid="1" autoFocus onClick={() => setHidden(true)} />}
+                </div>
+            );
+        };
+        const { getByTestId } = render(<Component />);
+        expect(getByTestId('1')).toHaveFocus();
+        fireEvent.click(getByTestId('1'));
+        jest.runOnlyPendingTimers();
+        expect(getByTestId('root')).toHaveFocus();
+
+        jest.useRealTimers();
+    });
 });

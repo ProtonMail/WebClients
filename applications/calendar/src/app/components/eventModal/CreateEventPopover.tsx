@@ -68,6 +68,7 @@ const CreateEventPopover = ({
             style={isNarrow ? undefined : style}
             className={classnames(['eventpopover pt2 pl1-5 pr1-5 pb1', isNarrow && 'eventpopover--full-width'])}
             ref={popoverRef}
+            onClose={onClose}
         >
             <form
                 onSubmit={(e) => {

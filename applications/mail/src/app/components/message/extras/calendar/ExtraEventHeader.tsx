@@ -38,7 +38,7 @@ const ExtraEventHeader = ({ model }: Props) => {
         const [utcStartDate, utcEndDate] = [dtstart, dtend].map(unary(propertyToUTCDate));
         const modifiedUtcEndDate = isAllDay ? addDays(utcEndDate, -1) : utcEndDate;
         const [[dateStart, timeStart], [dateEnd, timeEnd]] = [utcStartDate, modifiedUtcEndDate].map((date) => {
-            return [format(date, 'ccc PP', { locale: dateLocale }), format(date, 'p', { locale: dateLocale })];
+            return [format(date, 'ccc, PP', { locale: dateLocale }), format(date, 'p', { locale: dateLocale })];
         });
 
         if (isAllDay) {
