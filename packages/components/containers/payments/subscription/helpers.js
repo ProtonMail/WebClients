@@ -5,7 +5,7 @@ import { getUnixTime } from 'date-fns';
 
 const { PLAN, ADDON } = PLAN_TYPES;
 const { MAIL, VPN } = PLAN_SERVICES;
-const OCTOBER_01 = getUnixTime(new Date('2020-10-01'));
+const OCTOBER_01 = getUnixTime(new Date('2021-10-01'));
 
 /**
  * Calculate total for a specific subscription configuration
