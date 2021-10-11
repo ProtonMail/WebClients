@@ -26,26 +26,24 @@ const VPNBlackFridayModal = ({ plans = [], subscription, ...rest }: Props) => {
           ]
         : [
               {
-                  name: 'Plus Plan',
-                  cycle: CYCLE.YEARLY,
+                  name: 'ProtonVPN Plus',
+                  cycle: CYCLE.MONTHLY,
                   planIDs: { [plansMap.vpnplus.ID]: 1 },
                   couponCode: BLACK_FRIDAY.COUPON_CODE,
               },
               {
-                  name: 'ProtonVPN Plus + ProtonMail Plus',
+                  name: 'ProtonVPN Plus',
                   cycle: CYCLE.TWO_YEARS,
                   planIDs: {
-                      [plansMap.plus.ID]: 1,
                       [plansMap.vpnplus.ID]: 1,
                   },
                   couponCode: BLACK_FRIDAY.COUPON_CODE,
                   popular: true,
               },
               {
-                  name: 'ProtonVPN Plus + ProtonMail Plus',
+                  name: 'ProtonVPN Plus',
                   cycle: CYCLE.YEARLY,
                   planIDs: {
-                      [plansMap.plus.ID]: 1,
                       [plansMap.vpnplus.ID]: 1,
                   },
                   couponCode: BLACK_FRIDAY.COUPON_CODE,
