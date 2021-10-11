@@ -29,7 +29,7 @@
       "Calendar link is not accessible": [
         "Kalenderlink er ikke tilgængeligt"
       ],
-      "Calendar link is temporarily unaccessible": [
+      "Calendar link is temporarily inaccessible": [
         "Kalenderlink er midlertidig ikke tilgængeligt"
       ],
       "Failed to sync calendar": [
@@ -608,11 +608,11 @@
       "No results found": [
         "Ingen resultater fundet"
       ],
-      "Week": [
-        "Uge"
-      ],
       "Loading": [
         "Indlæser"
+      ],
+      "Week": [
+        "Uge"
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Dette link kan være et homografisk angreb og kan ikke åbnes af Internet Explorer og Edge browsere. Hvis du er sikker på, at linket er legitimt, så benyt en anden browser til at åbne det."
@@ -769,12 +769,6 @@
       "* Customizable features": [
         "* Funktioner som kan tilpasses"
       ],
-      "Access your streaming services, like ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, no matter where you are.": [
-        "Få adgang til dine streamingtjenester som f.eks. ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, uanset hvor du er."
-      ],
-      "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
-        "Få adgang til blokeret indhold såsom sociale medier, nyheder, Wikipedia, YouTube og mange andre, uanset hvor du er."
-      ],
       "For getting started with private and secure emailing.": [
         "Til at komme i gang med privat og sikker e-mail."
       ],
@@ -798,6 +792,12 @@
       ],
       "For families and small teams; includes both Mail and VPN.": [
         "For familier og små teams; inkluderer både Mail og VPN."
+      ],
+      "Access your streaming services, like ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, no matter where you are.": [
+        "Få adgang til dine streamingtjenester som f.eks. ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, uanset hvor du er."
+      ],
+      "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
+        "Få adgang til blokeret indhold såsom sociale medier, nyheder, Wikipedia, YouTube og mange andre, uanset hvor du er."
       ],
       "Save 20%": [
         "Spar 20%"
@@ -1113,6 +1113,12 @@
       ],
       "Loading events": [
         "Indlæser begivenheder"
+      ],
+      "The organizer could not be notified that you changed your answer:": [
+        "Arrangøren kunne ikke få besked om, at du har ændret dit svar:"
+      ],
+      "The organizer cannot be notified that you want to change your answer:": [
+        "Arrangøren kunne ikke få besked om, at du ønsker at ændre dit svar:"
       ],
       "The organizer cannot be notified that you decline the invitation:": [
         "Arrangøren kan ikke få at vide, at du afslår invitationen:"
@@ -1490,14 +1496,14 @@
       "A group with this name already exists": [
         "En gruppe med dette navn findes allerede"
       ],
-      "Primary address key is not decrypted": [
-        "Primære adressenøgle er ikke dekrypteret"
-      ],
       "We were unable to connect to your service provider.": [
         ""
       ],
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         ""
+      ],
+      "Primary address key is not decrypted": [
+        "Primære adressenøgle er ikke dekrypteret"
       ],
       "No valid address found": [
         "Ingen gyldig adresse fundet"
@@ -2083,12 +2089,6 @@
       "Back": [
         "Tilbage"
       ],
-      "Use ${ label } theme": [
-        "Brug ${ label } temaet"
-      ],
-      "OK": [
-        "Ok"
-      ],
       "Log in": [
         "Log ind"
       ],
@@ -2115,6 +2115,12 @@
       ],
       "Edit phone number": [
         "Rediger telefonnummer"
+      ],
+      "Use ${ label } theme": [
+        "Brug ${ label } temaet"
+      ],
+      "OK": [
+        "Ok"
       ],
       "Clear": [
         "Ryd"
@@ -2422,7 +2428,7 @@
         "Luk popover"
       ],
       "Close event popover": [
-        ""
+        "Luk begivenheds-popover"
       ]
     },
     "Title": {
@@ -2456,9 +2462,6 @@
       "Give feedback": [
         "Giv feedback"
       ],
-      "Select a theme": [
-        "Vælg et tema"
-      ],
       "Sign in again to continue": [
         "Log ind igen for at fortsætte"
       ],
@@ -2476,6 +2479,9 @@
       ],
       "Human verification": [
         "Menneskelig bekræftelse"
+      ],
+      "Select a theme": [
+        "Vælg et tema"
       ],
       "Report a problem": [
         "Anmeld et problem"
@@ -2549,8 +2555,8 @@
       "Amount due": [
         "Forfaldent beløb"
       ],
-      "Cancel subscription": [
-        "Afmeld abonnement"
+      "Downgrade account": [
+        "Nedgradér konto"
       ],
       "Network error": [
         "Netværksfejl"
@@ -2848,6 +2854,11 @@
         "Redigér begivenhed"
       ]
     },
+    "PGP key encryption warning": {
+      "Key cannot be used for encryption": [
+        "Nøgle kan ikke benyttes til kryptering"
+      ]
+    },
     "Storage": {
       "Your current storage:": [
         "Din aktuelle lagerplads:"
@@ -2857,11 +2868,6 @@
       ],
       "Release notes": [
         "Udgivelsesnoter"
-      ]
-    },
-    "PGP key encryption warning": {
-      "Key cannot be used for encryption": [
-        "Nøgle kan ikke benyttes til kryptering"
       ]
     },
     "Label": {
@@ -3141,9 +3147,9 @@
       "Your calendars": [
         "Din kalendere"
       ],
-      "Participant": [
-        "",
-        ""
+      "participant": [
+        "deltager",
+        "deltagere"
       ]
     },
     "Link": {
@@ -3295,10 +3301,10 @@
     },
     "Collapsible tooltip": {
       "Open": [
-        ""
+        "Åbn"
       ],
       "Close": [
-        ""
+        "Luk"
       ]
     },
     "Error message": {
@@ -3489,22 +3495,22 @@
     },
     "Early Access Enabled": {
       "On": [
-        ""
+        "Til"
       ]
     },
     "Early Access Disabled": {
       "Off": [
-        ""
+        "Fra"
       ]
     },
     "Keyboard Shortcuts Enabled": {
       "On": [
-        ""
+        "Til"
       ]
     },
     "Keyboard Shortcuts Disabled": {
       "Off": [
-        ""
+        "Fra"
       ]
     },
     "Layout mode": {
@@ -3698,7 +3704,7 @@
         ""
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
-        ""
+        "Vi er desværre ikke online i øjeblikket. Udfyld venligst formularen nedenfor for at beskrive dit problem. Så vil vi se på det og vende tilbage, når vi er tilbage online."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Fejlrapporter er ikke end-to-end krypterede. Send derfor venligst ikke følsomme oplysninger."
@@ -4626,11 +4632,6 @@
         "Bemærk: Tjenesten vil genindlæse, når du klikker på Anvend-knappen."
       ]
     },
-    "Select files": {
-      "Upload": [
-        "Upload"
-      ]
-    },
     "Loading info": {
       "Connecting to your contacts provider": [
         ""
@@ -4650,6 +4651,11 @@
     "Confirm modal title": {
       "Quit import?": [
         ""
+      ]
+    },
+    "Select files": {
+      "Upload": [
+        "Upload"
       ]
     },
     "Message display when a new app version is available": {
@@ -4813,11 +4819,6 @@
         "(Intet navn)"
       ]
     },
-    "Reply to calendar invitation": {
-      "Cannot send to organizer address: ${ apiErrorMessage }": [
-        "Kan ikke sende til arrangøradresse: ${ apiErrorMessage }"
-      ]
-    },
     "Modal title": {
       "Time zone changed": [
         "Tidszone ændret"
@@ -4857,7 +4858,7 @@
     },
     "Event popover close button": {
       "Close popover": [
-        ""
+        "Luk popover"
       ]
     },
     "Calendar invite info": {
@@ -4906,44 +4907,44 @@
     },
     "Event reply": {
       "yes": [
-        ""
+        "ja"
       ],
       "maybe": [
-        ""
+        "måske"
       ],
       "no": [
-        ""
+        "nej"
       ],
       "unanswered": [
-        ""
+        "ubesvaret"
       ]
     },
     "Participants expand button label": {
       "Expand participants list": [
-        ""
+        "Udvid deltagerliste"
       ],
       "Collapse participants list": [
-        ""
+        "Klap deltagerliste sammen"
       ]
     },
     "Event edit button tooltip": {
       "Edit event": [
-        ""
+        "Redigér begivenhed"
       ]
     },
     "Event delete button tooltip": {
       "Delete event": [
-        ""
+        "Slet begivenhed"
       ]
     },
     "Event cancelled status badge": {
       "cancelled": [
-        ""
+        "annulleret"
       ]
     },
     "Calendar invite buttons label": {
       "Attending?": [
-        ""
+        "Deltager?"
       ]
     },
     "blackfriday Promo title, need to be short": {

@@ -5,87 +5,7 @@
   },
   "contexts": {
     "": {},
-    "Message": {
-      "Re:": [
-        "Re:"
-      ],
-      "Fw:": [
-        "Fw:"
-      ],
-      "On ${ date }, ${ name } ${ address } wrote:": [
-        "${ date }, ${ name } ${ address } пише:"
-      ]
-    },
     "Error": {
-      "Email address disabled": [
-        "Адреса е-пошти вимкнена"
-      ],
-      "No keys retrieved for internal user": [
-        "Для внутрішнього користувача не отримано жодного ключа"
-      ],
-      "No valid keys retrieved for internal user": [
-        "Для внутрішнього користувача не отримано жодного дійсного ключа"
-      ],
-      "Contact signature could not be verified": [
-        "Не вдається перевірити підпис контакту"
-      ],
-      "No key retrieved for internal user is valid for sending": [
-        "Для внутрішнього користувача не отримано жодного дійсного ключа для надсилання"
-      ],
-      "Trusted keys are not valid for sending": [
-        "Довірені ключі недійсні для надсилання"
-      ],
-      "No WKD key retrieved for user is valid for sending": [
-        "Для користувача не отримано жодного ключа WKD, дійсного для надсилання"
-      ],
-      "The sending key is not valid": [
-        "Ключ надсилання недійсний"
-      ],
-      "This field is required": [
-        "Це поле є обов'язковим"
-      ],
-      "This field requires a minimum of ${ minimumLength } characters.": [
-        "В цьому полі повинно бути не менше ${ minimumLength } символів."
-      ],
-      "Email is not valid": [
-        "Е-пошта недійсна"
-      ],
-      "Not a valid number": [
-        "Номер недійсний"
-      ],
-      "Passwords do not match": [
-        "Паролі відрізняються"
-      ],
-      "Request timed out.": [
-        "Час очікування запиту завершився."
-      ],
-      "Missing signature": [
-        "Відсутній підпис"
-      ],
-      "Contact signature not verified": [
-        "Підпис для контакту не перевірено"
-      ],
-      "Signature not verified": [
-        "Підпис не перевірено"
-      ],
-      "Invalid name": [
-        "Неприпустиме ім'я"
-      ],
-      "The key properties for ${ emailAddress } could not be extracted": [
-        "Не вдається видобути властивості ключа для ${ emailAddress }"
-      ],
-      "Signature verification failed": [
-        "Неможливо перевірити підпис"
-      ],
-      "Could not find address ${ email }.": [
-        "Неможливо знайти адресу ${ email }."
-      ],
-      "Address primary private key not found": [
-        "Основний приватний ключ адреси не знайдено"
-      ],
-      "Calendar primary private key is not decrypted": [
-        "Основний приватний ключ календаря не зашифрований"
-      ],
       "Unknown error": [
         "Невідома помилка"
       ],
@@ -101,17 +21,20 @@
       "Authentication error.": [
         "Помилка автентифікації."
       ],
+      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
+        "Браузер, яким ви користуєтеся, не дозволяє повністю авторизувати платіж. Скористайтеся іншим браузером або увійдіть через комп’ютер."
+      ],
+      "Email address invalid": [
+        "Недійсна адреса електронної пошти"
+      ],
+      "This field is required": [
+        "Це поле є обов'язковим"
+      ],
       "The composer failed to load.": [
         "Не вдалося завантажити редактор."
       ],
       "Please refresh the page.": [
         "Будь ласка, оновіть сторінку."
-      ],
-      "Email address invalid": [
-        "Недійсна адреса електронної пошти"
-      ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "Браузер, яким ви користуєтеся, не дозволяє повністю авторизувати платіж. Скористайтеся іншим браузером або увійдіть через комп’ютер."
       ],
       "Incorrect mailbox password. Please try again": [
         "Неправильний пароль поштової скриньки. Спробуйте знову"
@@ -130,6 +53,9 @@
       ],
       "Invalid verification code": [
         "Недійсний код підтвердження"
+      ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "Щось пішло не так. Будь ласка, ${ refresh } для продовження. Якщо це повідомлення не зникає, зв'яжіться з нашою ${ supportTeam }."
       ],
       "Some groups could not be deleted": [
         "Не вдається видалити деякі групи"
@@ -176,17 +102,17 @@
       "A group with this name already exists": [
         "Група з таким ім'ям вже існує"
       ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Щось пішло не так. Будь ласка, ${ refresh } для продовження. Якщо це повідомлення не зникає, зв'яжіться з нашою ${ supportTeam }."
-      ],
-      "File has no contents to preview": [
-        "Файл не має вмісту для перегляду"
+      "Invalid name": [
+        "Неприпустиме ім'я"
       ],
       "We were unable to connect to your service provider.": [
         "Не вдається з'єднатися з вашим постачальником послуг."
       ],
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         "Спробуйте пройти перевірку ще раз і переконайтеся, що дозволи встановлено належним чином."
+      ],
+      "File has no contents to preview": [
+        "Файл не має вмісту для перегляду"
       ],
       "Process aborted": [
         "Процес перервано"
@@ -265,6 +191,69 @@
       ],
       "Require at least one action": [
         "Необхідна принаймні одна дія"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "В цьому полі повинно бути не менше ${ minimumLength } символів."
+      ],
+      "Email is not valid": [
+        "Е-пошта недійсна"
+      ],
+      "Not a valid number": [
+        "Номер недійсний"
+      ],
+      "Passwords do not match": [
+        "Паролі відрізняються"
+      ],
+      "Request timed out.": [
+        "Час очікування запиту завершився."
+      ],
+      "Signature verification failed": [
+        "Неможливо перевірити підпис"
+      ],
+      "Could not find address ${ email }.": [
+        "Неможливо знайти адресу ${ email }."
+      ],
+      "Email address disabled": [
+        "Адреса е-пошти вимкнена"
+      ],
+      "No keys retrieved for internal user": [
+        "Для внутрішнього користувача не отримано жодного ключа"
+      ],
+      "No valid keys retrieved for internal user": [
+        "Для внутрішнього користувача не отримано жодного дійсного ключа"
+      ],
+      "Contact signature could not be verified": [
+        "Не вдається перевірити підпис контакту"
+      ],
+      "No key retrieved for internal user is valid for sending": [
+        "Для внутрішнього користувача не отримано жодного дійсного ключа для надсилання"
+      ],
+      "Trusted keys are not valid for sending": [
+        "Довірені ключі недійсні для надсилання"
+      ],
+      "No WKD key retrieved for user is valid for sending": [
+        "Для користувача не отримано жодного ключа WKD, дійсного для надсилання"
+      ],
+      "The sending key is not valid": [
+        "Ключ надсилання недійсний"
+      ],
+      "Missing signature": [
+        "Відсутній підпис"
+      ],
+      "Contact signature not verified": [
+        "Підпис для контакту не перевірено"
+      ],
+      "Signature not verified": [
+        "Підпис не перевірено"
+      ],
+      "The key properties for ${ emailAddress } could not be extracted": [
+        "Не вдається видобути властивості ключа для ${ emailAddress }"
+      ],
+      "Address primary private key not found": [
+        "Основний приватний ключ адреси не знайдено"
+      ],
+      "Calendar primary private key is not decrypted": [
+        "Основний приватний ключ календаря не зашифрований"
       ],
       "You did not provide a file.": [
         "Ви не надали файл."
@@ -390,178 +379,1423 @@
         "Забагато активних фільтрів. Перейдіть на платний тарифний план, щоб активувати більше фільтрів"
       ]
     },
-    "file size format": {
-      "bytes": [
-        "байтів"
+    "Action": {
+      "Close": [
+        "Закрити"
       ],
-      "KB": [
-        "КБ"
+      "Use “${ label }” setting": [
+        "Використовувати налаштування“${ label }”"
       ],
-      "MB": [
-        "МБ"
+      "More info: ${ safeTitle }": [
+        "Докладніше: ${ safeTitle }"
       ],
-      "GB": [
-        "ГБ"
+      "Cancel": [
+        "Скасувати"
+      ],
+      "Submit": [
+        "Відправити"
+      ],
+      "Close modal": [
+        "Закрити вікно"
+      ],
+      "Confirm": [
+        "Підтвердити"
+      ],
+      "Save": [
+        "Зберегти"
+      ],
+      "Upload picture": [
+        "Вивантажити зображення"
+      ],
+      "Insert": [
+        "Вставити"
+      ],
+      "Font": [
+        "Шрифт"
+      ],
+      "Size": [
+        "Розмір"
+      ],
+      "Color": [
+        "Колір"
+      ],
+      "Alignment": [
+        "Вирівнювання"
+      ],
+      "More": [
+        "Більше"
+      ],
+      "Unordered list": [
+        "Невпорядкований список"
+      ],
+      "Ordered list": [
+        "Впорядкований список"
+      ],
+      "Align left": [
+        "Вирівняти ліворуч"
+      ],
+      "Align center": [
+        "Вирівняти по центру"
+      ],
+      "Align right": [
+        "Вирівняти праворуч"
+      ],
+      "Justify": [
+        "За шириною"
+      ],
+      "Quote": [
+        "Цитувати"
+      ],
+      "Insert link": [
+        "Вставити посилання"
+      ],
+      "Clear all formatting": [
+        "Очистити форматування"
+      ],
+      "Insert image": [
+        "Вставити зображення"
+      ],
+      "Bold": [
+        "Жирний"
+      ],
+      "Italic": [
+        "Курсив"
+      ],
+      "Underline": [
+        "Підкреслення"
+      ],
+      "Remove": [
+        "Вилучити"
+      ],
+      "Next month": [
+        "Наступний місяць"
+      ],
+      "Previous month": [
+        "Минулий місяць"
+      ],
+      "Load image": [
+        "Завантажити зображення"
+      ],
+      "Confirm opening of link ${ link }": [
+        "Підтвердити відкриття посилання ${ link }"
+      ],
+      "Go to panel ${ index }": [
+        "Перейти до панелі ${ index }"
+      ],
+      "Close navigation": [
+        "Закрити панель навігації"
+      ],
+      "Open navigation": [
+        "Відкрити панель навігації"
+      ],
+      "Continue with Google": [
+        "Продовжити з Google"
+      ],
+      "Delete": [
+        "Видалити"
+      ],
+      "Go to page ${ page }": [
+        "Перейти до сторінки ${ page }"
+      ],
+      "Go to first page": [
+        "Перейти на першу сторінку"
+      ],
+      "Go to previous page": [
+        "Перейти на попередню сторінку"
+      ],
+      "Go to next page": [
+        "Перейти на наступну сторінку"
+      ],
+      "Go to last page": [
+        "Перейти на останню сторінку"
+      ],
+      "Signing out": [
+        "Вихід"
+      ],
+      "refresh the page": [
+        "оновити сторінку"
+      ],
+      "Log in": [
+        "Увійти"
+      ],
+      "View invoice": [
+        "Переглянути рахунок"
+      ],
+      "Get verification code": [
+        "Отримати код підтвердження"
+      ],
+      "Try another method": [
+        "Спробувати інший спосіб"
+      ],
+      "Request new code": [
+        "Запитати новий код"
+      ],
+      "Verify": [
+        "Перевірити"
+      ],
+      "Did not receive the code?": [
+        "Не отримали код?"
+      ],
+      "Edit email address": [
+        "Змінити адресу е-пошти"
+      ],
+      "Edit phone number": [
+        "Змінити номер телефону"
+      ],
+      "Use ${ label } theme": [
+        "Використовувати тему ${ label }"
+      ],
+      "OK": [
+        "OK"
+      ],
+      "Upgrade": [
+        "Покращити"
+      ],
+      "Add": [
+        "Додати"
+      ],
+      "Edit": [
+        "Змінити"
+      ],
+      "Apply": [
+        "Застосувати"
+      ],
+      "Insert contact": [
+        "Вставити контакт"
+      ],
+      "Insert ${ totalChecked } contact": [
+        "Вставити ${ totalChecked } контакт",
+        "Вставити ${ totalChecked } контакти",
+        "Вставити ${ totalChecked } контактів",
+        "Вставити ${ totalChecked } контактів"
+      ],
+      "Done": [
+        "Готово"
+      ],
+      "Clear data": [
+        "Стерти дані"
+      ],
+      "Recover data": [
+        "Відновити дані"
+      ],
+      "Click here.": [
+        "Клацніть тут."
+      ],
+      "Re-sign": [
+        "Перепідписати"
+      ],
+      "Hide advanced PGP settings": [
+        "Приховати розширені налаштування PGP"
+      ],
+      "Show advanced PGP settings": [
+        "Показати розширені налаштування PGP"
+      ],
+      "Add to group": [
+        "Додати до групи"
+      ],
+      "Contact group": [
+        "Група контактів"
+      ],
+      "Create new contact": [
+        "Створити новий контакт"
+      ],
+      "clear it": [
+        "очистити це"
+      ],
+      "Export": [
+        "Експорт"
+      ],
+      "Download": [
+        "Завантажити"
+      ],
+      "Use for sending": [
+        "Використовувати для надсилання"
+      ],
+      "Trust": [
+        "Довіряти"
+      ],
+      "Untrust": [
+        "Не довіряти"
+      ],
+      "Email settings": [
+        "Налаштування е-пошти"
+      ],
+      "Merge": [
+        "Об'єднати"
+      ],
+      "View": [
+        "Вигляд"
+      ],
+      "Unmark for deletion": [
+        "Прибрати позначку для видалення"
+      ],
+      "Mark for deletion": [
+        "Позначити для видалення"
+      ],
+      "Preview contact": [
+        "Перегляд контакту"
+      ],
+      "Continue": [
+        "Продовжити"
+      ],
+      "Copy email to clipboard": [
+        "Копіювати е-пошту в буфер обміну"
+      ],
+      "Delete contact": [
+        "Видалити контакт"
+      ],
+      "Delete ${ selectedCount } contact": [
+        "Видалити ${ selectedCount } контакт",
+        "Видалити ${ selectedCount } контакти",
+        "Видалити ${ selectedCount } контактів",
+        "Видалити ${ selectedCount } контактів"
+      ],
+      "Deselect all": [
+        "Скасувати вибір"
+      ],
+      "Select all": [
+        "Вибрати все"
+      ],
+      "Compose": [
+        "Написати"
+      ],
+      "Forward as attachment": [
+        "Переслати як вкладення"
+      ],
+      "Merge contacts": [
+        "Об'єднати контакти"
+      ],
+      "Add new contact": [
+        "Додати новий контакт"
+      ],
+      "Add group": [
+        "Додати групу"
+      ],
+      "Clear query": [
+        "Очистити запит"
+      ],
+      "Add contact": [
+        "Додати контакт"
+      ],
+      "import": [
+        "імпортувати"
+      ],
+      "Delete contact group": [
+        "Видалити групу контактів"
+      ],
+      "Delete ${ selectedCount } contact group": [
+        "Видалити ${ selectedCount } групу контактів",
+        "Видалити ${ selectedCount } групи контактів",
+        "Видалити ${ selectedCount } груп контактів",
+        "Видалити ${ selectedCount } груп контактів"
+      ],
+      "Add new group": [
+        "Додати нову групу"
+      ],
+      "Export contacts": [
+        "Експортувати контакти"
+      ],
+      "Import contacts": [
+        "Імпортувати контакти"
+      ],
+      "Choose a file or drag it here": [
+        "Виберіть файл або перетягніть його сюди"
+      ],
+      "Import": [
+        "Імпорт"
+      ],
+      "Next": [
+        "Далі"
+      ],
+      "Continue import": [
+        "Продовжити імпорт"
+      ],
+      "Discard": [
+        "Відхилити"
+      ],
+      "Reconnect": [
+        "Повторно з'єднатися"
+      ],
+      "Start import": [
+        "Розпочати імпорт"
+      ],
+      "Clear": [
+        "Очистити"
+      ],
+      "Add screenshot(s)": [
+        "Додати знімки екрана"
+      ],
+      "Hide info": [
+        "Приховати інформацію"
+      ],
+      "Show info": [
+        "Показати інформацію"
+      ],
+      "Details": [
+        "Подробиці"
+      ],
+      "Share via link": [
+        "Спільний доступ за посиланням"
+      ],
+      "Sharing options": [
+        "Варіанти спільного доступу"
+      ],
+      "Zoom out": [
+        "Зменшити"
+      ],
+      "Reset zoom": [
+        "Скинути масштаб"
+      ],
+      "Zoom in": [
+        "Збільшити"
+      ],
+      "Previous": [
+        "Попередній"
+      ],
+      "Get started": [
+        "Розпочнімо"
+      ],
+      "Start setup": [
+        "Почати налаштування"
+      ],
+      "Skip": [
+        "Пропустити"
+      ],
+      "Back": [
+        "Назад"
+      ],
+      "Copy to clipboard": [
+        "Копіювати до буфера обміну"
+      ],
+      "Create recovery phrase": [
+        "Створити фразу відновлення"
+      ],
+      "Don't secure account": [
+        "Не захищати обліковий запис"
+      ],
+      "Close this banner": [
+        "Закрити цей банер"
+      ],
+      "Refresh the page": [
+        "Оновити сторінку"
+      ],
+      "enable desktop notifications": [
+        "увімкнути сповіщення на робочому столі"
+      ],
+      "here": [
+        "тут"
+      ],
+      "Search": [
+        "Пошук"
+      ],
+      "${ BRAND_NAME } introduction": [
+        "Знайомство з ${ BRAND_NAME }"
+      ],
+      "Chat with us": [
+        "Чат з нами"
+      ],
+      "I have a question": [
+        "У мене є питання"
+      ],
+      "Request a feature": [
+        "Запит нової функції"
+      ],
+      "Report a problem": [
+        "Повідомити про проблему"
+      ],
+      "${ BRAND_NAME } shop": [
+        "Крамниця ${ BRAND_NAME }"
+      ],
+      "Switch account": [
+        "Перемкнути обліковий запис"
+      ],
+      "Sign out": [
+        "Вийти"
+      ],
+      "Go to settings": [
+        "Перейти до налаштувань"
+      ],
+      "Beta Access": [
+        "Бета-доступ"
+      ],
+      "Theme": [
+        "Тема"
+      ],
+      "Keyboard shortcuts": [
+        "Комбінації клавіш"
+      ],
+      "Mailbox layout": [
+        "Макет поштової скриньки"
+      ],
+      "Mailbox density": [
+        "Щільність поштової скриньки"
+      ],
+      "Composer size": [
+        "Розмір редактора"
+      ],
+      "Remove bonuses": [
+        "Вилучити бонуси"
+      ],
+      "Try again": [
+        "Спробувати знову"
+      ],
+      "Use a different card": [
+        "Скористатися іншою карткою"
+      ],
+      "Use a different payment method": [
+        "Скористайтеся іншим способом оплати"
+      ],
+      "Retry": [
+        "Повторити"
+      ],
+      "Loading verification": [
+        "Завантаження підтвердження"
+      ],
+      "Select plan": [
+        "Обрати тарифний план"
+      ],
+      "Compare all features": [
+        "Порівняти всі функції"
+      ],
+      "${ boldSave } by switching to annual billing": [
+        "${ boldSave } перейшовши на річну передплату"
+      ],
+      "Pay": [
+        "Сплатити"
+      ],
+      "Open ${ CALENDAR_APP_NAME } settings": [
+        "Відкрити налаштування ${ CALENDAR_APP_NAME }"
+      ],
+      "Remove gift code": [
+        "Вилучити подарунковий код"
+      ],
+      "annual billing": [
+        "річна передплата"
+      ],
+      "Compare plans": [
+        "Порівняти тарифні плани"
+      ],
+      "Decrease": [
+        "Зменшити"
+      ],
+      "Increase": [
+        "Збільшити"
+      ],
+      "Preview": [
+        "Перегляд"
+      ],
+      "Create label": [
+        "Створити мітку"
+      ],
+      "Create folder": [
+        "Створити теку"
+      ],
+      "Remove this label": [
+        "Вилучити цю мітку"
+      ],
+      "Add condition": [
+        "Додати умову"
+      ],
+      "label emails as": [
+        "позначати листи міткою"
+      ],
+      "move emails to": [
+        "перемістити листи"
+      ],
+      "mark emails as": [
+        "позначити листи"
+      ],
+      "send auto-reply email": [
+        "надіслати лист з автоматичною відповіддю"
+      ],
+      "Yes, I'll attend": [
+        "Підтверджую присутність"
+      ],
+      "Maybe I'll attend": [
+        "Присутність під сумнівом"
+      ],
+      "No, I won't attend": [
+        "Не підтверджую присутність"
+      ],
+      "Yes": [
+        "Так"
+      ],
+      "Maybe": [
+        "Можливо"
+      ],
+      "No": [
+        "Ні"
+      ],
+      "Add to ${ CALENDAR_APP_NAME }": [
+        "Додати до ${ CALENDAR_APP_NAME }"
+      ],
+      "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
+        "Змініть розмір вікна перегляду за допомогою миші. Якщо ви використовуєте клавіатуру, можете змінювати розмір стрілками ліворуч та праворуч."
+      ],
+      "Send anyway": [
+        "Все одно надіслати"
+      ],
+      "Got it": [
+        "Зрозуміло"
+      ],
+      "Maximize composer": [
+        "Розгорнути редактор"
+      ],
+      "Minimize composer": [
+        "Згорнути редактор"
+      ],
+      "Contract composer": [
+        "Зменшити редактор"
+      ],
+      "Expand composer": [
+        "Розгорнути редактор"
+      ],
+      "Close composer": [
+        "Закрити редактор"
+      ],
+      "Trust key": [
+        "Довіряти ключу",
+        "Довіряти ключам",
+        "Довіряти ключам",
+        "Довіряти ключам"
+      ],
+      "Copy address": [
+        "Копіювати адресу"
+      ],
+      "Edit address": [
+        "Редагувати адресу"
+      ],
+      "View contact details": [
+        "Подробиці контакту"
+      ],
+      "Copy addresses": [
+        "Копіювати адреси"
+      ],
+      "View recipients": [
+        "Переглянути отримувачів"
+      ],
+      "Carbon Copy, Blind Carbon Copy": [
+        "Копія, Прихована копія"
+      ],
+      "CC, BCC": [
+        "Копія, Прихована копія"
+      ],
+      "Send": [
+        "Надіслати"
+      ],
+      "Attachment": [
+        "Вкладення"
+      ],
+      "Inline": [
+        "Вбудований"
+      ],
+      "Cancel action": [
+        "Скасувати дію"
+      ],
+      "Loading${ ellipsis }": [
+        "Завантаження${ ellipsis }"
+      ],
+      "Saving${ _ellipsis }": [
+        "Збереження${ _ellipsis }"
+      ],
+      "Not saved": [
+        "Не збережено"
+      ],
+      "Schedule send": [
+        "Запланувати надсилання"
+      ],
+      "Expiration time": [
+        "Термін дії"
+      ],
+      "Encryption": [
+        "Шифрування"
+      ],
+      "Delete draft": [
+        "Видалити чернетку"
+      ],
+      "Set": [
+        "Встановити"
+      ],
+      "Schedule message": [
+        "Запланувати повідомлення"
+      ],
+      "Print": [
+        "Друкувати"
+      ],
+      "Address options": [
+        "Параметри адреси"
+      ],
+      "New message": [
+        "Нове повідомлення"
+      ],
+      "Trust Public Key": [
+        "Довіряти відкритому ключу"
+      ],
+      "Filter on...": [
+        "Фільтр..."
+      ],
+      "Move to...": [
+        "Перемістити до..."
+      ],
+      "Label as...": [
+        "Позначити міткою..."
+      ],
+      "Mark as unread": [
+        "Позначити непрочитаним"
+      ],
+      "Move to spam": [
+        "Перемістити до спаму"
+      ],
+      "Report phishing": [
+        "Звіт про шахрайство"
+      ],
+      "View source code": [
+        "Переглянути програмний код"
+      ],
+      "View rendered HTML": [
+        "Переглянути оброблений HTML"
+      ],
+      "View headers": [
+        "Перегляд заголовків"
+      ],
+      "Hide details": [
+        "Приховати подробиці"
+      ],
+      "Show details": [
+        "Показати подробиці"
+      ],
+      "Custom filter": [
+        "Власний фільтр"
+      ],
+      "Move to": [
+        "Перемістити"
+      ],
+      "Label as": [
+        "Позначити міткою"
+      ],
+      "Load": [
+        "Завантажити"
+      ],
+      "This message contains remote content.": [
+        "Це повідомлення містить зовнішній вміст."
+      ],
+      "This message contains embedded images.": [
+        "Це повідомлення містить вбудовані зображення."
+      ],
+      "Unsubscribe": [
+        "Відписатися"
+      ],
+      "Unsubscribing": [
+        "Скасувати підписку"
+      ],
+      "Mark legitimate": [
+        "Позначити надійним"
+      ],
+      "Send receipt": [
+        "Надіслати квитанцію"
+      ],
+      "Accept": [
+        "Схвалити"
+      ],
+      "Show": [
+        "Показати"
+      ],
+      "Show less": [
+        "Згорнути"
+      ],
+      "Never show": [
+        "Ніколи не показувати"
+      ],
+      "View keys": [
+        "Переглянути ключі"
+      ],
+      "Edit draft": [
+        "Редагувати чернетку"
+      ],
+      "Download ${ attachmentName }": [
+        "Завантажити ${ attachmentName }"
+      ],
+      "Preview ${ attachmentName }": [
+        "Переглянути ${ attachmentName }"
+      ],
+      "Remove ${ attachmentName }": [
+        "Вилучити ${ attachmentName }"
+      ],
+      "Hide attachment details": [
+        "Приховати подробиці вкладення"
+      ],
+      "Show attachment details": [
+        "Показати подробиці вкладення"
+      ],
+      "Hide": [
+        "Приховати"
+      ],
+      "Learn more": [
+        "Докладніше"
+      ],
+      "Undo": [
+        "Скасувати"
+      ],
+      "View message": [
+        "Переглянути повідомлення"
+      ],
+      "Enable": [
+        "Увімкнути"
+      ],
+      "Search message content": [
+        "Пошук вмісту повідомлень"
+      ],
+      "Activate": [
+        "Активувати"
+      ],
+      "Resume": [
+        "Продовжити"
+      ],
+      "Pause": [
+        "Призупинити"
+      ],
+      "Show less search options": [
+        "Менше варіантів пошуку"
+      ],
+      "Show more search options": [
+        "Більше варіантів пошуку"
+      ],
+      "Less search options": [
+        "Менше варіантів пошуку"
+      ],
+      "More search options": [
+        "Більше варіантів пошуку"
+      ],
+      "Advanced search": [
+        "Розширений пошук"
+      ],
+      "Clear browser data": [
+        "Очистити дані браузера"
+      ],
+      "Mark as read": [
+        "Позначити прочитаним"
+      ],
+      "Delete permanently": [
+        "Видалити остаточно"
+      ],
+      "Move to inbox": [
+        "Перемістити до вхідних"
+      ],
+      "Move to archive": [
+        "Перемістити до архіву"
+      ],
+      "Move to inbox (not spam)": [
+        "Перемістити до вхідних (не спам)"
+      ],
+      "Move to trash": [
+        "Перемістити до смітника"
+      ],
+      "Delete all": [
+        "Видалити все"
+      ],
+      "Deselect all messages": [
+        "Скасувати вибір усіх повідомлень"
+      ],
+      "Select all messages": [
+        "Вибрати усі повідомлення"
+      ],
+      "Select All": [
+        "Вибрати все"
+      ],
+      "All Read": [
+        "Усе прочитане"
+      ],
+      "All Unread": [
+        "Усі непрочитані"
+      ],
+      "All Starred": [
+        "Усі з зірочкою"
+      ],
+      "All Unstarred": [
+        "Усі без зірочки"
+      ],
+      "Load more": [
+        "Завантажити ще"
+      ],
+      "Previous page": [
+        "Попередня сторінка"
+      ],
+      "Change page": [
+        "Змінити сторінку"
+      ],
+      "Page ${ pageNumber }": [
+        "Сторінка ${ pageNumber }"
+      ],
+      "Next page": [
+        "Наступна сторінка"
+      ],
+      "Previous conversation": [
+        "Попередня розмова"
+      ],
+      "Previous message": [
+        "Попереднє повідомлення"
+      ],
+      "Next conversation": [
+        "Наступна розмова"
+      ],
+      "Next message": [
+        "Наступне повідомлення"
+      ],
+      "Show messages": [
+        "Показати повідомлення"
+      ],
+      "Hide messages": [
+        "Приховати повідомлення"
+      ],
+      "Create new message": [
+        "Створити повідомлення"
+      ],
+      "Open shop": [
+        "Відкрити магазин"
+      ],
+      "Open calendar": [
+        "Відкрити календар"
+      ],
+      "Import messages": [
+        "Імпортувати повідомлення"
+      ],
+      "Deselect": [
+        "Прибрати вибір"
+      ],
+      "Start using ${ appName }": [
+        "Розпочніть використання ${ appName }"
       ]
     },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
-        "Пароль повинен містити принаймні ${ length } символ",
-        "Пароль повинен містити принаймні ${ length } символи",
-        "Пароль повинен містити принаймні ${ length } символів",
-        "Пароль повинен містити принаймні ${ length } символів"
-      ]
-    },
-    "Contact field label": {
-      "Name": [
-        "Ім'я"
+    "Title": {
+      "Open actions dropdown": [
+        "Випадне меню дій"
       ],
-      "Email": [
-        "Е-пошта"
+      "Expand content": [
+        "Розгорнути вміст"
       ],
-      "Phone": [
-        "Телефон"
+      "Link confirmation": [
+        "Підтвердження посилання"
       ],
-      "Address": [
-        "Адреса"
+      "Keyboard Shortcuts": [
+        "Комбінації клавіш"
       ],
-      "Photo": [
-        "Фото"
+      "What's new": [
+        "Що нового"
       ],
-      "Organization": [
-        "Організація"
+      "Sign in again to continue": [
+        "Увійдіть знову для продовження"
       ],
-      "Birthday": [
-        "День народження"
+      "Account suspended": [
+        "Обліковий запис призупинено"
       ],
-      "Anniversary": [
-        "Річниця"
+      "Enter your username or ProtonMail email address": [
+        "Введіть своє ім'я користувача або електронну адресу ProtonMail"
       ],
-      "Title": [
-        "Назва"
+      "Enter your password": [
+        "Введіть свій пароль"
       ],
-      "Role": [
-        "Роль"
+      "Invalid verification code": [
+        "Недійсний код підтвердження"
       ],
-      "Note": [
-        "Нотатка"
+      "Human verification": [
+        "Перевірка \"Я не робот\""
       ],
-      "URL": [
-        "URL"
+      "Select a theme": [
+        "Вибрати тему"
       ],
-      "Gender": [
-        "Стать"
+      "Upgrade required": [
+        "Необхідний платний тарифний план"
       ],
-      "Language": [
-        "Мова"
+      "Delete ${ Name }": [
+        "Видалити ${ Name }"
       ],
-      "Timezone": [
-        "Часовий пояс"
+      "Delete ${ count } contact group": [
+        "Видалити ${ count } групу контактів",
+        "Видалити ${ count } групи контактів",
+        "Видалити ${ count } груп контактів",
+        "Видалити ${ count } груп контактів"
       ],
-      "Geo": [
-        "Геолокація"
+      "Edit contact group": [
+        "Редагувати групу контактів"
       ],
-      "Logo": [
-        "Логотип"
+      "Create new group": [
+        "Створити нову групу"
       ],
-      "Member": [
-        "Учасник"
-      ]
-    },
-    "Contact type label": {
-      "Work": [
-        "Робочий"
+      "${ emailsCount } member": [
+        "${ emailsCount } учасник",
+        "${ emailsCount } учасники",
+        "${ emailsCount } учасників",
+        "${ emailsCount } учасників"
       ],
-      "Personal": [
-        "Особистий"
+      "Edit image": [
+        "Змінити зображення"
       ],
-      "Mobile": [
-        "Мобільний"
+      "Add to ${ groupName }": [
+        "Додати до ${ groupName }"
       ],
-      "Main": [
-        "Основний"
+      "Add to ${ groupCount } group": [
+        "Додати до ${ groupCount } групи",
+        "Додати до ${ groupCount } груп",
+        "Додати до ${ groupCount } груп",
+        "Додати до ${ groupCount } груп"
       ],
-      "Yomi": [
-        "Yomi"
+      "Edit contact": [
+        "Змінити контакт"
       ],
-      "Other": [
-        "Інше"
+      "Create contact": [
+        "Створити контакт"
       ],
-      "Fax": [
-        "Факс"
+      "Insert contacts": [
+        "Вставити контакти"
       ],
-      "Pager": [
-        "Пейджер"
-      ]
-    },
-    "Property type": {
-      "Email": [
-        "Е-пошта"
+      "Delete ${ count } contact": [
+        "Видалити ${ count } контакт",
+        "Видалити ${ count } контакти",
+        "Видалити ${ count } контактів",
+        "Видалити ${ count } контактів"
       ],
-      "Home": [
-        "Домашня"
+      "Clearing data": [
+        "Стирання даних"
       ],
-      "Work": [
-        "Робоча"
+      "Warning": [
+        "Попередження"
       ],
-      "Other": [
-        "Інша"
+      "Recover data": [
+        "Відновити дані"
       ],
-      "Phone": [
-        "Телефон"
+      "Re-signing contacts": [
+        "Повторне підписання контактів"
       ],
-      "Mobile": [
-        "Мобільний"
+      "Re-sign all contacts": [
+        "Повторно підписати всі контакти"
       ],
-      "Main": [
-        "Основний"
+      "Email settings (${ emailAddress })": [
+        "Налаштування е-пошти (${ emailAddress })"
       ],
-      "Fax": [
-        "Факс"
+      "Exporting contacts": [
+        "Експортування контактів"
       ],
-      "Pager": [
-        "Пейджер"
+      "Contact group": [
+        "Група контактів"
       ],
-      "Address": [
-        "Адреса"
+      "Other names": [
+        "Інші імена"
+      ],
+      "Email addresses": [
+        "Адреси е-пошти"
+      ],
+      "Phone numbers": [
+        "Номери телефонів"
+      ],
+      "Addresses": [
+        "Адреси"
+      ],
+      "Other information": [
+        "Інша інформація"
+      ],
+      "Email settings": [
+        "Налаштування е-пошти"
+      ],
+      "Contact Details": [
+        "Подробиці контакту"
+      ],
+      "Merging contacts": [
+        "Об'єднання контактів"
+      ],
+      "Merge contacts": [
+        "Об'єднати контакти"
+      ],
+      "Deleting contacts": [
+        "Видалення контактів"
+      ],
+      "View contacts": [
+        "Переглянути контакти"
+      ],
+      "Contacts": [
+        "Контакти"
+      ],
+      "Groups": [
+        "Групи"
+      ],
+      "Settings": [
+        "Налаштування"
+      ],
+      "Select action to take on contact group": [
+        "Виберіть дію для групи контактів"
+      ],
+      "Add contact group name": [
+        "Додати назву групи контактів"
+      ],
+      "Select contact group": [
+        "Вибрати групу контактів"
+      ],
+      "Import groups": [
+        "Імпортувати групи"
+      ],
+      "Import contacts": [
+        "Імпортувати контакти"
+      ],
+      "Start import process": [
+        "Розпочати процес імпортування"
+      ],
+      "Import in progress": [
+        "Виконується імпортування"
+      ],
+      "Report a problem": [
+        "Повідомити про проблему"
+      ],
+      "${ appName } Keyboard Shortcuts": [
+        "Комбінації клавіш ${ appName }"
+      ],
+      "Mailbox density": [
+        "Щільність поштової скриньки"
+      ],
+      "Mailbox layout": [
+        "Макет поштової скриньки"
+      ],
+      "Composer mode": [
+        "Режим редактора"
+      ],
+      "Open help menu": [
+        "Відкрити меню довідки"
+      ],
+      "Back": [
+        "Назад"
+      ],
+      "Open settings menu": [
+        "Відкрити меню налаштувань"
+      ],
+      "Confirm loss of Proton bonuses": [
+        "Підтвердити втрату бонусів Proton"
+      ],
+      "Unsupported browser": [
+        "Браузер не підтримується"
+      ],
+      "Card verification": [
+        "Перевірка картки"
+      ],
+      "Payment verification": [
+        "Перевірка платежу"
+      ],
+      "Processing...": [
+        "Обробка..."
+      ],
+      "Card verification in progress": [
+        "Триває перевірка картки"
+      ],
+      "Payment verification in progress": [
+        "Триває перевірка платежу"
+      ],
+      "PayPal verification failed": [
+        "Не вдалося пройти перевірку PayPal"
+      ],
+      "3-D Secure verification failed": [
+        "Не вдалося пройти перевірку 3-D Secure"
+      ],
+      "Error": [
+        "Помилка"
+      ],
+      "ZIP / postal code": [
+        "Поштовий індекс"
+      ],
+      "Payment details": [
+        "Подробиці платежу"
+      ],
+      "Currency": [
+        "Валюта"
+      ],
+      "Billing cycle": [
+        "Платіжний цикл"
+      ],
+      "Current plan": [
+        "Поточний тарифний план"
+      ],
+      "Processing": [
+        "Обробка"
+      ],
+      "Apply gift code": [
+        "Застосувати подарунковий код"
+      ],
+      "Subtotal": [
+        "Попередній підсумок"
+      ],
+      "Coupon discount": [
+        "Знижка за купоном"
+      ],
+      "Total (monthly)": [
+        "Всього (щомісячно)"
+      ],
+      "Credits": [
+        "Кредити"
+      ],
+      "Gift code": [
+        "Подарунковий код"
+      ],
+      "Amount due": [
+        "До сплати"
+      ],
+      "Downgrade account": [
+        "Понизити тарифний план"
+      ],
+      "Network error": [
+        "Помилка мережі"
+      ],
+      "Select a plan": [
+        "Оберіть тарифний план"
+      ],
+      "Customize your plan": [
+        "Налаштуйте свій тарифний план"
+      ],
+      "Checkout": [
+        "Розрахунок"
+      ],
+      "Plan summary": [
+        "Підсумок плану"
+      ],
+      "${ appName } customization": [
+        "Налаштування ${ appName }"
+      ],
+      "Beta Access": [
+        "Бета-доступ"
+      ],
+      "Edit filter": [
+        "Змінити фільтр"
+      ],
+      "Add filter": [
+        "Додати фільтр"
+      ],
+      "Are you sure you want to close?": [
+        "Ви дійсно хочете закрити?"
+      ],
+      "Change my answer": [
+        "Змінити мою відповідь"
+      ],
+      "Image": [
+        "Зображення"
+      ],
+      "Sending notice": [
+        "Надсилання сповіщення"
+      ],
+      "Storage capacity warning": [
+        "Попередження про обсяг сховища"
+      ],
+      "Sending original message": [
+        "Надсилання оригінального повідомлення"
+      ],
+      "No recipient": [
+        "Немає отримувача"
+      ],
+      "Message without subject?": [
+        "Повідомлення без теми?"
+      ],
+      "No attachment found": [
+        "Вкладення не знайдено"
+      ],
+      "Re-sign contact": [
+        "Повторно підписати контакт"
+      ],
+      "Verification error": [
+        "Помилка підтвердження"
+      ],
+      "Decryption error": [
+        "Помилка розшифрування"
+      ],
+      "Delete draft": [
+        "Видалити чернетку"
+      ],
+      "Delete ${ count } draft": [
+        "Видалити ${ count } чернетку",
+        "Видалити ${ count } чернетки",
+        "Видалити ${ count } чернеток",
+        "Видалити ${ count } чернеток"
+      ],
+      "Delete message": [
+        "Видалити повідомлення"
+      ],
+      "Delete conversation": [
+        "Видалити розмову"
+      ],
+      "Delete ${ count } conversation": [
+        "Видалити ${ count } розмову",
+        "Видалити ${ count } розмови",
+        "Видалити ${ count } розмов",
+        "Видалити ${ count } розмов"
+      ],
+      "Delete ${ count } message": [
+        "Видалити ${ count } повідомлення",
+        "Видалити ${ count } повідомлення",
+        "Видалити ${ count } повідомлень",
+        "Видалити ${ count } повідомлень"
+      ],
+      "Delete all messages": [
+        "Видалити всі повідомлення"
+      ],
+      "Trust new key?": [
+        "Довіряти новому ключу?",
+        "Довіряти новим ключам?",
+        "Довіряти новим ключам?",
+        "Довіряти новим ключам?"
+      ],
+      "Add contacts": [
+        "Додати контакти"
+      ],
+      "To": [
+        "Кому"
+      ],
+      "CC": [
+        "Копія"
+      ],
+      "BCC": [
+        "Прихована копія"
+      ],
+      "Carbon Copy": [
+        "Копія"
+      ],
+      "Blind Carbon Copy": [
+        "Прихована копія"
+      ],
+      "Sending error": [
+        "Надсилання помилки"
+      ],
+      "Confirm recipient address?": [
+        "Підтвердити адресу отримувача?"
+      ],
+      "Send without expiration?": [
+        "Надіслати без терміну дії?"
+      ],
+      "Send with changed preferences?": [
+        "Надіслати зі зміненими налаштуваннями?"
+      ],
+      "Attachments": [
+        "Вкладення"
+      ],
+      "Expiration time": [
+        "Час завершення"
+      ],
+      "Encryption": [
+        "Шифрування"
+      ],
+      "Send email": [
+        "Надіслати лист"
+      ],
+      "Schedule send": [
+        "Запланувати надсилання"
+      ],
+      "New message": [
+        "Нове повідомлення"
+      ],
+      "Trust public key?": [
+        "Довіряти відкритому ключу?"
+      ],
+      "All recipients were added to the BCC field and cannot be disclosed": [
+        "Всі одержувачі були додані в поле прихованої копії та їх не буде видно"
+      ],
+      "Move to inbox (not spam)": [
+        "Перемістити до вхідних (не спам)"
+      ],
+      "Mark as unread": [
+        "Позначити непрочитаним"
+      ],
+      "Move to inbox": [
+        "Перемістити до вхідних"
+      ],
+      "Move to trash": [
+        "Перемістити до смітника"
+      ],
+      "More": [
+        "Більше"
+      ],
+      "More options": [
+        "Додаткові параметри"
+      ],
+      "Reply": [
+        "Відповісти"
+      ],
+      "Reply all": [
+        "Відповісти всім"
+      ],
+      "Forward": [
+        "Переслати"
+      ],
+      "Filter on": [
+        "Фільтр"
+      ],
+      "Move to": [
+        "Перемістити"
+      ],
+      "Label as": [
+        "Позначити міткою"
+      ],
+      "Load remote content": [
+        "Завантажити зовнішній вміст"
+      ],
+      "Load embedded images": [
+        "Завантажити вбудовані зображення"
+      ],
+      "Unsubscribe": [
+        "Відписатися"
+      ],
+      "Mark email as legitimate": [
+        "Позначити надійним"
+      ],
+      "Trust pinned keys?": [
+        "Довіряти прикріпленим ключам?"
+      ],
+      "Enable message content search": [
+        "Увімкнути пошук вмісту повідомлень"
+      ],
+      "Create a new folder": [
+        "Створити нову теку"
+      ],
+      "Create a new label": [
+        "Створити нову мітку"
+      ],
+      "More selections": [
+        "Інші варіанти вибору"
+      ],
+      "Previous conversation": [
+        "Попередня розмова"
+      ],
+      "Previous message": [
+        "Попереднє повідомлення"
+      ],
+      "Next conversation": [
+        "Наступна розмова"
+      ],
+      "Next message": [
+        "Наступне повідомлення"
+      ],
+      "Sort conversations": [
+        "Впорядкувати розмови"
+      ],
+      "Sort messages": [
+        "Впорядкувати повідомлення"
+      ],
+      "Create folder": [
+        "Створити теку"
+      ],
+      "Create label": [
+        "Створити мітку"
+      ],
+      "Conversation list": [
+        "Список розмов"
+      ],
+      "Message list": [
+        "Список повідомлень"
+      ],
+      "Welcome ${ userName }": [
+        "Вітаємо, ${ userName }"
+      ],
+      "Welcome": [
+        "Вітаємо"
       ]
     },
     "Info": {
-      "Session timed out.": [
-        "Сеанс завершився."
-      ],
-      "Internet connection lost.": [
-        "Втрачено Інтернет-з'єднання."
-      ],
-      "Servers are unreachable.": [
-        "Сервери недоступні."
-      ],
-      "Custom daily": [
-        "Власне щодня"
-      ],
-      "Custom weekly": [
-        "Власне щотижня"
-      ],
-      "Custom monthly": [
-        "Власне щомісяця"
-      ],
-      "Custom yearly": [
-        "Власне щороку"
-      ],
-      "Custom": [
-        "Власний"
-      ],
-      "Daily": [
-        "Щодня"
-      ],
-      "Monthly ${ onDayString }": [
-        "Щомісяця ${ onDayString }"
-      ],
-      "Yearly": [
-        "Щороку"
-      ],
       "No results found": [
         "Результатів не знайдено"
+      ],
+      "Loading": [
+        "Завантаження"
       ],
       "Insert image": [
         "Вставити зображення"
@@ -659,9 +1893,6 @@
       "Learn more": [
         "Докладніше"
       ],
-      "Loading": [
-        "Завантаження"
-      ],
       "Drop the file here to upload": [
         "Для завантаження файлу перетягніть його сюди"
       ],
@@ -706,6 +1937,9 @@
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Натисніть \"Запитати новий код\", щоб отримати новий код перевірки на ${ strong }. Якщо цей номер телефону неправильний, натисніть \"Змінити\" для його виправлення."
+      ],
+      "support team": [
+        "командою підтримки"
       ],
       "No contacts added yet": [
         "Контактів ще не додано"
@@ -836,27 +2070,6 @@
         "${ addressCount } адрес е-пошти",
         "${ addressCount } адрес е-пошти"
       ],
-      "support team": [
-        "командою підтримки"
-      ],
-      "Unsupported file": [
-        "Непідтримуваний файл"
-      ],
-      "No preview available": [
-        "Перегляд недоступний"
-      ],
-      "Preview": [
-        "Попередній перегляд"
-      ],
-      "Loading preview": [
-        "Завантаження попереднього перегляду"
-      ],
-      "This browser does not support previewing PDF documents. Please download the file.": [
-        "Цей браузер не підтримує перегляд PDF документів. Будь ласка, завантажте файл."
-      ],
-      "of": [
-        "з"
-      ],
       "Import contacts": [
         "Імпортувати контакти"
       ],
@@ -886,6 +2099,24 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Оновлення сторінки чи ${ link } автоматично розв'яже більшість проблем."
+      ],
+      "Unsupported file": [
+        "Непідтримуваний файл"
+      ],
+      "No preview available": [
+        "Перегляд недоступний"
+      ],
+      "Preview": [
+        "Попередній перегляд"
+      ],
+      "Loading preview": [
+        "Завантаження попереднього перегляду"
+      ],
+      "This browser does not support previewing PDF documents. Please download the file.": [
+        "Цей браузер не підтримує перегляд PDF документів. Будь ласка, завантажте файл."
+      ],
+      "of": [
+        "з"
       ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Основні функції навігації та дії залишаються доступними, незалежно від того, активовані комбінації клавіш в налаштуваннях чи ні."
@@ -1037,12 +2268,6 @@
       "* Customizable features": [
         "* Налаштовувані функції"
       ],
-      "Access your streaming services, like ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, no matter where you are.": [
-        "Отримуйте доступ до потокових служб, наприклад, ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, незалежно від того, де ви знаходитесь."
-      ],
-      "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
-        "Отримайте доступ до заблокованого вмісту, наприклад, соціальних мереж, новин, Wikipedia, YouTube та багатьох інших, незалежно від того, де ви знаходитесь."
-      ],
       "For getting started with private and secure emailing.": [
         "Щоб розпочати роботу з приватною та захищеною електронною поштою."
       ],
@@ -1066,6 +2291,12 @@
       ],
       "For families and small teams; includes both Mail and VPN.": [
         "Для сімей та невеликих команд; включає пошту і VPN."
+      ],
+      "Access your streaming services, like ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, no matter where you are.": [
+        "Отримуйте доступ до потокових служб, наприклад, ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, незалежно від того, де ви знаходитесь."
+      ],
+      "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
+        "Отримайте доступ до заблокованого вмісту, наприклад, соціальних мереж, новин, Wikipedia, YouTube та багатьох інших, незалежно від того, де ви знаходитесь."
       ],
       "Save 20%": [
         "Заощадьте 20%"
@@ -1228,6 +2459,39 @@
       ],
       "Are you sure you want to discard your changes?": [
         "Ви справді хочете відхилити зміни?"
+      ],
+      "Session timed out.": [
+        "Сеанс завершився."
+      ],
+      "Internet connection lost.": [
+        "Втрачено Інтернет-з'єднання."
+      ],
+      "Servers are unreachable.": [
+        "Сервери недоступні."
+      ],
+      "Custom daily": [
+        "Власне щодня"
+      ],
+      "Custom weekly": [
+        "Власне щотижня"
+      ],
+      "Custom monthly": [
+        "Власне щомісяця"
+      ],
+      "Custom yearly": [
+        "Власне щороку"
+      ],
+      "Custom": [
+        "Власний"
+      ],
+      "Daily": [
+        "Щодня"
+      ],
+      "Monthly ${ onDayString }": [
+        "Щомісяця ${ onDayString }"
+      ],
+      "Yearly": [
+        "Щороку"
       ],
       "Members": [
         "Учасники"
@@ -1664,6 +2928,21 @@
       "No more results found": [
         "Більше нічого не знайдено"
       ],
+      "Protect yourself from trackers by turning on Proton email tracker protection.": [
+        "Захистіть себе від стеження, увімкнувши захист від стеження електронної пошти Proton."
+      ],
+      "No email trackers found.": [
+        "Стеження не виявлено."
+      ],
+      "Proton has blocked email trackers in this message in order to protect your privacy.": [
+        "З метою захисту вашої приватності Proton заблокував стеження в цьому повідомленні."
+      ],
+      "${ numberOfTrackers } email tracker blocked": [
+        "Заблоковано ${ numberOfTrackers } елемент стеження",
+        "Заблоковано ${ numberOfTrackers } елементи стеження",
+        "Заблоковано ${ numberOfTrackers } елементів стеження",
+        "Заблоковано ${ numberOfTrackers } елементи стеження"
+      ],
       "This conversation contains non-trashed messages.": [
         "Ця розмова містить не видалені повідомлення."
       ],
@@ -1837,2639 +3116,17 @@
       ],
       "Using your mobile device, scan this QR-Code or visit ${ link }.": [
         "Скануйте цей QR-код за допомогою свого мобільного пристрою, або відвідайте ${ link }."
-      ]
-    },
-    "Default display name vcard": {
-      "Unknown": [
-        "Невідомо"
-      ]
-    },
-    "Import contact. Contact identifier": {
-      "unknown": [
-        "невідомо"
-      ]
-    },
-    "Error importing contact": {
-      "vCard versions < 3.0 not supported": [
-        "vCard версій < 3.0 не підтримуються"
       ],
-      "Encryption failed": [
-        "Не вдалося зашифрувати"
-      ]
-    },
-    "Error importing calendar": {
-      "An unexpected error occurred. Import must be restarted.": [
-        "Сталася неочікувана помилка. Необхідно перезапустити імпорт."
-      ]
-    },
-    "Error importing contacts": {
-      "An error occurred uploading your file. No file has been selected.": [
-        "Помилка при вивантаженні вашого файлу. Файл не вибрано."
-      ],
-      "An error occurred uploading your file ${ formattedFilename }. No .csv or .vcf file selected": [
-        "Виникла помилка при вивантаженні вашого файлу ${ formattedFilename }. Не вибрано файл .csv чи .vcf"
-      ],
-      "Your file ${ formattedFilename } is empty.": [
-        "Ваш файл ${ formattedFilename } порожній."
-      ],
-      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
-        "Виникла помилка при вивантаженні вашого файлу ${ formattedFilename }. Максимальний розмір файлу ${ MAX_IMPORT_FILE_SIZE_STRING }."
-      ],
-      "Your file ${ formattedFilename } has no contacts to be imported.": [
-        "Ваш файл ${ formattedFilename } не містить контактів для імпортування."
-      ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
-        "Ваш файл ${ formattedFilename } містить понад ${ MAX_IMPORT_CONTACTS_STRING } контактів."
-      ],
-      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "Виникла помилка при прочитанні вашого файлу ${ formattedFilename }. Файл має неправильний формат."
-      ]
-    },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "Адресу е-пошти не знайдено серед ідентифікаторів користувачів, визначених у ключі надсилання (${ keyUserIds })"
-      ]
-    },
-    "Keyboard shortcut section name": {
-      "Basic navigation": [
-        "Основна навігація"
-      ],
-      "Basic actions": [
-        "Основні дії"
-      ],
-      "Folder shortcuts": [
-        "Комбінації клавіш для тек"
-      ],
-      "Composer shortcuts": [
-        "Комбінації клавіш редактора"
-      ],
-      "List shortcuts": [
-        "Перелік комбінацій клавіш"
-      ],
-      "Action shortcuts": [
-        "Комбінації клавіш дій"
-      ],
-      "Message shortcuts": [
-        "Комбінації клавіш для повідомлення"
-      ]
-    },
-    "Keyboard shortcut name": {
-      "Move up": [
-        "Перемістити вгору"
-      ],
-      "Jump to first": [
-        "До першого"
-      ],
-      "Move down": [
-        "Перемістити вниз"
-      ],
-      "Jump to last": [
-        "До останнього"
-      ],
-      "Move right / expand": [
-        "Перемістити вправо / розгорнути"
-      ],
-      "Move left / collapse": [
-        "Перемістити вліво / згорнути"
-      ],
-      "Apply / open": [
-        "Застосувати / відкрити"
-      ],
-      "Cancel / close": [
-        "Скасувати / закрити"
-      ],
-      "Open this modal": [
-        "Відкрити це вікно"
-      ],
-      "Select / unselect": [
-        "Вибрати / прибрати вибір"
-      ],
-      "Go to Inbox": [
-        "Перейти до Вхідних"
-      ],
-      "Go to Archive": [
-        "Перейти до Архіву"
-      ],
-      "Go to Sent": [
-        "Перейти до Надісланих"
-      ],
-      "Go to Starred": [
-        "Перейти до Позначених зірочкою"
-      ],
-      "Go to Drafts": [
-        "Перейти до Чернеток"
-      ],
-      "Go to Trash": [
-        "Перейти до Смітника"
-      ],
-      "Go to Spam": [
-        "Перейти до Спаму"
-      ],
-      "Go to All Mail": [
-        "Перейти до всієї пошти"
-      ],
-      "Save draft": [
-        "Зберегти чернетку"
-      ],
-      "Send email": [
-        "Надіслати лист"
-      ],
-      "Close draft": [
-        "Закрити чернетку"
-      ],
-      "Minimize / maximize composer": [
-        "Згорнути / розгорнути редактор"
-      ],
-      "Expand / contract composer": [
-        "Розширити / зменшити редактор"
-      ],
-      "Attach file": [
-        "Вкласти файл"
-      ],
-      "Add expiration time": [
-        "Додати термін дії"
-      ],
-      "Add encryption": [
-        "Додати шифрування"
-      ],
-      "Discard draft": [
-        "Відхилити чернетку"
-      ],
-      "Open previous message": [
-        "Відкрити попереднє повідомлення"
-      ],
-      "Open next message": [
-        "Відкрити наступне повідомлення"
-      ],
-      "Show unread emails": [
-        "Показати непрочитані листи"
-      ],
-      "Show all emails": [
-        "Показати всі листи"
-      ],
-      "Select / unselect all": [
-        "Вибрати все / прибрати вибір"
-      ],
-      "Search": [
-        "Пошук"
-      ],
-      "New message": [
-        "Нове повідомлення"
-      ],
-      "Star": [
-        "Зірочка"
-      ],
-      "Mark as unread": [
-        "Позначити непрочитаним"
-      ],
-      "Label as...": [
-        "Позначити міткою..."
-      ],
-      "Create filter with...": [
-        "Створити фільтр..."
-      ],
-      "Move to...": [
-        "Перемістити..."
-      ],
-      "Move to Inbox": [
-        "Перемістити до Вхідних"
-      ],
-      "Move to Archive": [
-        "Перемістити до Архіву"
-      ],
-      "Move to Spam": [
-        "Перемістити до Спаму"
-      ],
-      "Move to Trash": [
-        "Перемістити до Смітника"
-      ],
-      "Delete permanently": [
-        "Видалити остаточно"
-      ],
-      "Reply": [
-        "Відповісти"
-      ],
-      "Reply all": [
-        "Відповісти всім"
-      ],
-      "Forward": [
-        "Переслати"
-      ],
-      "Load remote content": [
-        "Звантажувати зовнішній вміст"
-      ],
-      "Load embedded images": [
-        "Завантажити вбудовані зображення"
-      ],
-      "Show original message": [
-        "Показати оригінальне повідомлення"
-      ]
-    },
-    "Calendar status": {
-      "Syncing": [
-        "Синхронізація"
-      ],
-      "Not synced": [
-        "Не синхронізовано"
-      ]
-    },
-    "Calendar subscription not synced error": {
-      "Calendar is syncing": [
-        "Календар синхронізується"
-      ],
-      "More than 12 hours passed since last update": [
-        "Понад 12 годин минуло після попередньої синхронізації"
-      ],
-      "Calendar link is wrong": [
-        "Хибне посилання календаря"
-      ],
-      "Calendar is too big": [
-        "Календар завеликий"
-      ],
-      "Calendar link is not accessible": [
-        "Календар за посиланням недоступний"
-      ],
-      "Calendar link is temporarily unaccessible": [
-        "Календар за посиланням тимчасово недоступний"
-      ],
-      "Failed to sync calendar": [
-        "Не вдалося синхронізувати календар"
-      ]
-    },
-    "Attached ics file error": {
-      "Invalid ICS file": [
-        "Недійсний файл ICS"
-      ],
-      "Invalid event": [
-        "Недійсна подія"
-      ],
-      "Unsupported event": [
-        "Непідтримувана подія"
-      ],
-      "Empty ICS file": [
-        "Порожній файл ICS"
-      ],
-      "Unsupported calendar component": [
-        "Непідтримуваний компонент календаря"
-      ],
-      "Invalid method": [
-        "Недійсний спосіб"
-      ]
-    },
-    "Event invitation error": {
-      "Invalid response": [
-        "Недійсна відповідь"
-      ],
-      "Invalid invitation": [
-        "Недійсне запрошення"
-      ],
-      "Unsupported response": [
-        "Непідтримувана відповідь"
-      ],
-      "Unsupported invitation": [
-        "Непідтримуване запрошення"
-      ],
-      "Attached ICS file could not be parsed": [
-        "Не вдається обробити вкладений ICS-файл"
-      ],
-      "Attached ICS file could not be decrypted": [
-        "Не вдається розшифрувати вкладений ICS-файл"
-      ],
-      "We could not retrieve the event from your calendar": [
-        "Не вдається видобути подію з вашого календаря"
-      ],
-      "We could not update the event in your calendar": [
-        "Не вдається оновити подію у вашому календарі"
-      ],
-      "Your answer was sent, but the event could not be added to your calendar": [
-        "Вашу відповідь надіслано, але подію не вдається додати до вашого календаря"
-      ],
-      "Your answer was sent, but the event could not be updated in your calendar": [
-        "Вашу відповідь надіслано, але подію не вдається оновити у вашому календарі"
-      ],
-      "We could not cancel the event in your calendar": [
-        "Не вдається скасувати подію у вашому календарі"
-      ],
-      "Unexpected error": [
-        "Неочікувана помилка"
-      ]
-    },
-    "Error importing event": {
-      "Component with wrong format": [
-        "Компонент з неправильним форматом"
-      ],
-      "Non-Gregorian": [
-        "Не григоріанський"
-      ],
-      "To-do entry": [
-        "Запис завдання"
-      ],
-      "Journal entry": [
-        "Запис журналу"
-      ],
-      "Free-busy time information": [
-        "Інформація про доступність та зайнятість"
-      ],
-      "Custom timezone": [
-        "Власний часовий пояс"
-      ],
-      "Invalid event": [
-        "Недійсна подія"
-      ],
-      "Unsupported event": [
-        "Непідтримувана подія"
-      ],
-      "Malformed all-day event": [
-        "Неправильна подія на цілий день"
-      ],
-      "Missing start time": [
-        "Відсутній час початку"
-      ],
-      "Malformed start time": [
-        "Неправильний час початку"
-      ],
-      "Floating times not supported": [
-        "Гнучкий час не підтримується"
-      ],
-      "Start time out of bounds": [
-        "Час початку поза припустимим діапазоном"
-      ],
-      "Malformed end time": [
-        "Неправильний час завершення"
-      ],
-      "End time out of bounds": [
-        "Час завершення поза припустимими межами"
-      ],
-      "Event duration not supported": [
-        "Тривалість події не підтримується"
-      ],
-      "Calendar timezone not supported": [
-        "Часовий пояс календаря не підтримується"
-      ],
-      "Timezone not supported": [
-        "Часовий пояс не підтримується"
-      ],
-      "Malformed recurring event": [
-        "Неправильна повторювана подія"
-      ],
-      "Recurring rule not supported": [
-        "Правило повторення не підтримується"
-      ],
-      "Edited event not supported": [
-        "Відредагована подія не підтримується"
-      ],
-      "Notification out of bounds": [
-        "Сповіщення поза межами"
-      ],
-      "Event validation failed": [
-        "Не вдалося перевірити подію"
-      ],
-      "Encryption failed": [
-        "Не вдалося зашифрувати"
-      ],
-      "Original recurring event could not be found": [
-        "Не вдається знайти оригінальну повторювану подію"
-      ],
-      "no UID, title or start time": [
-        "немає UID, заголовка або часу початку"
-      ]
-    },
-    "Event title": {
-      "(no title)": [
-        "(без назви)"
-      ]
-    },
-    "Participant name": {
-      "You": [
-        "Ви"
-      ]
-    },
-    "Email subject": {
-      "Invitation for an event on ${ formattedStart }": [
-        "Запрошення на подію ${ formattedStart }"
-      ],
-      "Update for an event on ${ formattedStart }": [
-        "Оновлення для події ${ formattedStart }"
-      ],
-      "Invitation for an event starting on ${ formattedStart }": [
-        "Запрошення на подію, що починається ${ formattedStart }"
-      ],
-      "Update for an event starting on ${ formattedStart }": [
-        "Оновлення для події, що починається ${ formattedStart }"
-      ],
-      "Cancellation of an event on ${ formattedStart }": [
-        "Скасування події ${ formattedStart }"
-      ],
-      "Cancellation of an event starting on ${ formattedStart }": [
-        "Скасування події, що починається ${ formattedStart }"
-      ]
-    },
-    "Email body for invitation (date part)": {
-      "When: ${ formattedStart } (all day)": [
-        "Коли: ${ formattedStart } (увесь день)"
-      ],
-      "When: ${ formattedStart } - ${ formattedEnd }": [
-        "Коли: ${ formattedStart } - ${ formattedEnd }"
-      ],
-      "When: ${ formattedStart }": [
-        "Коли: ${ formattedStart }"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "Where: ${ eventLocation }": [
-        "Де: ${ eventLocation }"
-      ]
-    },
-    "Email body for description (description part)": {
-      "Description: ${ eventDescription }": [
-        "Опис: ${ eventDescription }"
-      ]
-    },
-    "Email body for invitation": {
-      "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
-        "Вас запрошено на ${ eventTitle }\n${ eventDetailsText }"
-      ],
-      "${ eventTitle } has been updated.\n${ eventDetailsText }": [
-        "${ eventTitle } було оновлено.\n${ eventDetailsText }"
-      ],
-      "${ eventTitle } has been cancelled.": [
-        "${ eventTitle } було скасовано."
-      ]
-    },
-    "Email body for response to invitation": {
-      "${ emailAddress } has accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } приймає ваше запрошення на ${ eventTitle }"
-      ],
-      "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } приймає із сумнівом ваше запрошення на ${ eventTitle }"
-      ],
-      "${ emailAddress } has declined your invitation to ${ eventTitle }": [
-        "${ emailAddress } відхиляє ваше запрошення на ${ eventTitle }"
-      ]
-    },
-    "Monthly recurring event, repeats on": {
-      "on the first Sunday": [
-        "першої неділі"
-      ],
-      "on the first Monday": [
-        "першого понеділка"
-      ],
-      "on the first Tuesday": [
-        "першого вівторка"
-      ],
-      "on the first Wednesday": [
-        "першої середи"
-      ],
-      "on the first Thursday": [
-        "першого четверга"
-      ],
-      "on the first Friday": [
-        "першої п'ятниці"
-      ],
-      "on the first Saturday": [
-        "першої суботи"
-      ],
-      "on the second Sunday": [
-        "другої неділі"
-      ],
-      "on the second Monday": [
-        "другого понеділка"
-      ],
-      "on the second Tuesday": [
-        "другого вівторка"
-      ],
-      "on the second Wednesday": [
-        "другої середи"
-      ],
-      "on the second Thursday": [
-        "другого четверга"
-      ],
-      "on the second Friday": [
-        "другої п'ятниці"
-      ],
-      "on the second Saturday": [
-        "другої суботи"
-      ],
-      "on the third Sunday": [
-        "третьої неділі"
-      ],
-      "on the third Monday": [
-        "третього понеділка"
-      ],
-      "on the third Tuesday": [
-        "третього вівторка"
-      ],
-      "on the third Wednesday": [
-        "третьої середи"
-      ],
-      "on the third Thursday": [
-        "третього четверга"
-      ],
-      "on the third Friday": [
-        "третьої п'ятниці"
-      ],
-      "on the third Saturday": [
-        "третьої суботи"
-      ],
-      "on the fourth Sunday": [
-        "четвертої неділі"
-      ],
-      "on the fourth Monday": [
-        "четвертого понеділка"
-      ],
-      "on the fourth Tuesday": [
-        "четвертого вівторка"
-      ],
-      "on the fourth Wednesday": [
-        "четвертої середи"
-      ],
-      "on the fourth Thursday": [
-        "четвертого четверга"
-      ],
-      "on the fourth Friday": [
-        "четвертої п'ятниці"
-      ],
-      "on the fourth Saturday": [
-        "четвертої суботи"
-      ],
-      "on the last Sunday": [
-        "останньої неділі"
-      ],
-      "on the last Monday": [
-        "останнього понеділка"
-      ],
-      "on the last Tuesday": [
-        "останнього вівторка"
-      ],
-      "on the last Wednesday": [
-        "останньої середи"
-      ],
-      "on the last Thursday": [
-        "останнього четверга"
-      ],
-      "on the last Friday": [
-        "останньої п’ятниці"
-      ],
-      "on the last Saturday": [
-        "останньої суботи"
-      ],
-      "on day ${ dayOfMonth }": [
-        "${ dayOfMonth } дня"
-      ]
-    },
-    "Daily recurring event, frequency": {
-      "${ count } time": [
-        "${ count } раз",
-        "${ count } рази",
-        "${ count } разів",
-        "${ count } разів"
-      ],
-      "until ${ dateString }": [
-        "до ${ dateString }"
-      ],
-      "Daily": [
-        "Щодня"
-      ],
-      "Every ${ interval } day": [
-        "Щодня",
-        "Кожні ${ interval } дні",
-        "Кожні ${ interval } днів",
-        "Кожні ${ interval } днів"
-      ],
-      "Daily, ${ timesString }": [
-        "Щодня, ${ timesString }"
-      ],
-      "Every ${ interval } day, ${ timesString }": [
-        "Щодня, ${ timesString }",
-        "Кожні ${ interval } дні, ${ timesString }",
-        "Кожні ${ interval } днів, ${ timesString }",
-        "Кожні ${ interval } днів, ${ timesString }"
-      ],
-      "Daily, ${ untilString }": [
-        "Щодня, ${ untilString }"
-      ],
-      "Every ${ interval } day, ${ untilString }": [
-        "Щодня, ${ untilString }",
-        "Кожні ${ interval } дні, ${ untilString }",
-        "Кожні ${ interval } днів, ${ untilString }",
-        "Кожні ${ interval } днів, ${ untilString }"
-      ]
-    },
-    "Weekly recurring event, repeats on (multiple days), frequency": {
-      "Sunday": [
-        "Неділя"
-      ],
-      "Monday": [
-        "Понеділок"
-      ],
-      "Tuesday": [
-        "Вівторок"
-      ],
-      "Wednesday": [
-        "Середа"
-      ],
-      "Thursday": [
-        "Четвер"
-      ],
-      "Friday": [
-        "П'ятниця"
-      ],
-      "Saturday": [
-        "Субота"
-      ]
-    },
-    "Weekly recurring event, frequency": {
-      "Weekly on all days": [
-        "Щотижня в усі дні"
-      ],
-      "Every ${ interval } week on all days": [
-        "Кожен ${ interval } тиждень в усі дні",
-        "Кожні ${ interval } тижні в усі дні",
-        "Кожні ${ interval } тижнів в усі дні",
-        "Кожні ${ interval } тижнів в усі дні"
-      ],
-      "Weekly on Sunday": [
-        "Щотижня в неділю"
-      ],
-      "Every ${ interval } week on Sunday": [
-        "Кожен ${ interval } тиждень у неділю",
-        "Кожні ${ interval } тижні у неділю",
-        "Кожні ${ interval } тижнів у неділю",
-        "Кожні ${ interval } тижнів у неділю"
-      ],
-      "Weekly on Monday": [
-        "Щотижня в понеділок"
-      ],
-      "Every ${ interval } week on Monday": [
-        "Кожен ${ interval } тиждень у понеділок",
-        "Кожні ${ interval } тижні у понеділок",
-        "Кожні ${ interval } тижнів у понеділок",
-        "Кожні ${ interval } тижнів у понеділок"
-      ],
-      "Weekly on Tuesday": [
-        "Щотижня у вівторок"
-      ],
-      "Every ${ interval } week on Tuesday": [
-        "Кожен ${ interval } тиждень у вівторок",
-        "Кожні ${ interval } тижні у вівторок",
-        "Кожні ${ interval } тижнів у вівторок",
-        "Кожні ${ interval } тижнів у вівторок"
-      ],
-      "Weekly on Wednesday": [
-        "Щотижня в середу"
-      ],
-      "Every ${ interval } week on Wednesday": [
-        "Кожен ${ interval } тиждень у середу",
-        "Кожні ${ interval } тижні у середу",
-        "Кожні ${ interval } тижнів у середу",
-        "Кожні ${ interval } тижнів у середу"
-      ],
-      "Weekly on Thursday": [
-        "Щотижня у четвер"
-      ],
-      "Every ${ interval } week on Thursday": [
-        "Кожен ${ interval } тиждень у четвер",
-        "Кожні ${ interval } тижні у четвер",
-        "Кожні ${ interval } тижнів у четвер",
-        "Кожні ${ interval } тижнів у четвер"
-      ],
-      "Weekly on Friday": [
-        "Щотижня у п'ятницю"
-      ],
-      "Every ${ interval } week on Friday": [
-        "Кожен ${ interval } тиждень у п'ятницю",
-        "Кожні ${ interval } тижні у п'ятницю",
-        "Кожні ${ interval } тижнів у п'ятницю",
-        "Кожні ${ interval } тижнів у п'ятницю"
-      ],
-      "Weekly on Saturday": [
-        "Щотижня в суботу"
-      ],
-      "Every ${ interval } week on Saturday": [
-        "Кожен ${ interval } тиждень у суботу",
-        "Кожні ${ interval } тижні у суботу",
-        "Кожні ${ interval } тижнів у суботу",
-        "Кожні ${ interval } тижнів у суботу"
-      ],
-      "Weekly on ${ multipleDaysString }": [
-        "Щотижня ${ multipleDaysString }"
-      ],
-      "Every ${ interval } week on ${ multipleDaysString }": [
-        "Кожен ${ interval } тиждень ${ multipleDaysString }",
-        "Кожні ${ interval } тижні ${ multipleDaysString }",
-        "Кожні ${ interval } тижнів ${ multipleDaysString }",
-        "Кожні ${ interval } тижнів ${ multipleDaysString }"
-      ],
-      "Weekly on all days, ${ timesString }": [
-        "Щотижня кожен день, ${ timesString }"
-      ],
-      "Every ${ interval } week on all days, ${ timesString }": [
-        "Кожен ${ interval } тиждень щодня, ${ timesString }",
-        "Кожні ${ interval } тижні щодня, ${ timesString }",
-        "Кожні ${ interval } тижнів щодня, ${ timesString }",
-        "Кожні ${ interval } тижнів щодня, ${ timesString }"
-      ],
-      "Weekly on Sunday, ${ timesString }": [
-        "Щотижня у неділю, ${ timesString }"
-      ],
-      "Every ${ interval } week on Sunday, ${ timesString }": [
-        "Кожен ${ interval } тиждень у неділю, ${ timesString }",
-        "Кожні ${ interval } тижні у неділю, ${ timesString }",
-        "Кожні ${ interval } тижнів у неділю, ${ timesString }",
-        "Кожні ${ interval } тижнів у неділю, ${ timesString }"
-      ],
-      "Weekly on Monday, ${ timesString }": [
-        "Щотижня у понеділок, ${ timesString }"
-      ],
-      "Every ${ interval } week on Monday, ${ timesString }": [
-        "Кожен ${ interval } тиждень у понеділок, ${ timesString }",
-        "Кожні ${ interval } тижні у понеділок, ${ timesString }",
-        "Кожні ${ interval } тижнів у понеділок, ${ timesString }",
-        "Кожні ${ interval } тижнів у понеділок, ${ timesString }"
-      ],
-      "Weekly on Tuesday, ${ timesString }": [
-        "Щотижня у вівторок, ${ timesString }"
-      ],
-      "Every ${ interval } week on Tuesday, ${ timesString }": [
-        "Кожен ${ interval } тиждень у вівторок, ${ timesString }",
-        "Кожні ${ interval } тижні у вівторок, ${ timesString }",
-        "Кожні ${ interval } тижнів у вівторок, ${ timesString }",
-        "Кожні ${ interval } тижнів у вівторок, ${ timesString }"
-      ],
-      "Weekly on Wednesday, ${ timesString }": [
-        "Щотижня у середу, ${ timesString }"
-      ],
-      "Every ${ interval } week on Wednesday, ${ timesString }": [
-        "Кожен ${ interval } тиждень у середу, ${ timesString }",
-        "Кожні ${ interval } тижні у середу, ${ timesString }",
-        "Кожні ${ interval } тижнів у середу, ${ timesString }",
-        "Кожні ${ interval } тижнів у середу, ${ timesString }"
-      ],
-      "Weekly on Thursday, ${ timesString }": [
-        "Щотижня у четвер, ${ timesString }"
-      ],
-      "Every ${ interval } week on Thursday, ${ timesString }": [
-        "Кожен ${ interval } тиждень у четвер, ${ timesString }",
-        "Кожні ${ interval } тижні у четвер, ${ timesString }",
-        "Кожні ${ interval } тижнів у четвер, ${ timesString }",
-        "Кожні ${ interval } тижнів у четвер, ${ timesString }"
-      ],
-      "Weekly on Friday, ${ timesString }": [
-        "Щотижня у п'ятницю, ${ timesString }"
-      ],
-      "Every ${ interval } week on Friday, ${ timesString }": [
-        "Кожен ${ interval } тиждень у п'ятницю, ${ timesString }",
-        "Кожні ${ interval } тижні у п'ятницю, ${ timesString }",
-        "Кожні ${ interval } тижнів у п'ятницю, ${ timesString }",
-        "Кожні ${ interval } тижнів у п'ятницю, ${ timesString }"
-      ],
-      "Weekly on Saturday, ${ timesString }": [
-        "Щотижня у суботу, ${ timesString }"
-      ],
-      "Every ${ interval } week on Saturday, ${ timesString }": [
-        "Кожен ${ interval } тиждень у суботу, ${ timesString }",
-        "Кожні ${ interval } тижні у суботу, ${ timesString }",
-        "Кожні ${ interval } тижнів у суботу, ${ timesString }",
-        "Кожні ${ interval } тижнів у суботу, ${ timesString }"
-      ],
-      "Weekly on ${ multipleDaysString }, ${ timesString }": [
-        "Щотижня ${ multipleDaysString }, ${ timesString }"
-      ],
-      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
-        "Кожен ${ interval } тиждень ${ multipleDaysString }, ${ timesString }",
-        "Кожні ${ interval } тижні ${ multipleDaysString }, ${ timesString }",
-        "Кожні ${ interval } тижнів ${ multipleDaysString }, ${ timesString }",
-        "Кожні ${ interval } тижнів ${ multipleDaysString }, ${ timesString }"
-      ],
-      "Weekly on all days, ${ untilString }": [
-        "Щотижня кожен день, ${ untilString }"
-      ],
-      "Every ${ interval } week on all days, ${ untilString }": [
-        "Кожен ${ interval } тиждень щодня, ${ untilString }",
-        "Кожні ${ interval } тижні щодня, ${ untilString }",
-        "Кожні ${ interval } тижнів щодня, ${ untilString }",
-        "Кожні ${ interval } тижнів щодня, ${ untilString }"
-      ],
-      "Weekly on Sunday, ${ untilString }": [
-        "Щотижня в неділю, ${ untilString }"
-      ],
-      "Every ${ interval } week on Sunday, ${ untilString }": [
-        "Кожен ${ interval } тиждень у неділю, ${ untilString }",
-        "Кожні ${ interval } тижні у неділю, ${ untilString }",
-        "Кожні ${ interval } тижнів у неділю, ${ untilString }",
-        "Кожні ${ interval } тижнів у неділю, ${ untilString }"
-      ],
-      "Weekly on Monday, ${ untilString }": [
-        "Щотижня в понеділок, ${ untilString }"
-      ],
-      "Every ${ interval } week on Monday, ${ untilString }": [
-        "Кожен ${ interval } тиждень у понеділок, ${ untilString }",
-        "Кожні ${ interval } тижні у понеділок, ${ untilString }",
-        "Кожні ${ interval } тижнів у понеділок, ${ untilString }",
-        "Кожні ${ interval } тижнів у понеділок, ${ untilString }"
-      ],
-      "Weekly on Tuesday, ${ untilString }": [
-        "Щотижня у вівторок, ${ untilString }"
-      ],
-      "Every ${ interval } week on Tuesday, ${ untilString }": [
-        "Кожен ${ interval } тиждень у вівторок, ${ untilString }",
-        "Кожні ${ interval } тижні у вівторок, ${ untilString }",
-        "Кожні ${ interval } тижнів у вівторок, ${ untilString }",
-        "Кожні ${ interval } тижнів у вівторок, ${ untilString }"
-      ],
-      "Weekly on Wednesday, ${ untilString }": [
-        "Щотижня у середу, ${ untilString }"
-      ],
-      "Every ${ interval } week on Wednesday, ${ untilString }": [
-        "Кожен ${ interval } тиждень у середу, ${ untilString }",
-        "Кожні ${ interval } тижні у середу, ${ untilString }",
-        "Кожні ${ interval } тижнів у середу, ${ untilString }",
-        "Кожні ${ interval } тижнів у середу, ${ untilString }"
-      ],
-      "Weekly on Thursday, ${ untilString }": [
-        "Щотижня у четвер, ${ untilString }"
-      ],
-      "Every ${ interval } week on Thursday, ${ untilString }": [
-        "Кожен ${ interval } тиждень у четвер, ${ untilString }",
-        "Кожні ${ interval } тижні у четвер, ${ untilString }",
-        "Кожні ${ interval } тижнів у четвер, ${ untilString }",
-        "Кожні ${ interval } тижнів у четвер, ${ untilString }"
-      ],
-      "Weekly on Friday, ${ untilString }": [
-        "Щотижня в п'ятницю, ${ untilString }"
-      ],
-      "Every ${ interval } week on Friday, ${ untilString }": [
-        "Кожен ${ interval } тиждень у п'ятницю, ${ untilString }",
-        "Кожні ${ interval } тижні у п'ятницю, ${ untilString }",
-        "Кожні ${ interval } тижнів у п'ятницю, ${ untilString }",
-        "Кожні ${ interval } тижнів у п'ятницю, ${ untilString }"
-      ],
-      "Weekly on Saturday, ${ untilString }": [
-        "Щотижня в суботу, ${ untilString }"
-      ],
-      "Every ${ interval } week on Saturday, ${ untilString }": [
-        "Кожен ${ interval } тиждень у суботу, ${ untilString }",
-        "Кожні ${ interval } тижні у суботу, ${ untilString }",
-        "Кожні ${ interval } тижнів у суботу, ${ untilString }",
-        "Кожні ${ interval } тижнів у суботу, ${ untilString }"
-      ],
-      "Weekly on ${ multipleDaysString }, ${ untilString }": [
-        "Щотижня в ${ multipleDaysString }, ${ untilString }"
-      ],
-      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
-        "Кожен ${ interval } тиждень у ${ multipleDaysString }, ${ untilString }",
-        "Кожні ${ interval } тижні у ${ multipleDaysString }, ${ untilString }",
-        "Кожні ${ interval } тижнів у ${ multipleDaysString }, ${ untilString }",
-        "Кожні ${ interval } тижнів у ${ multipleDaysString }, ${ untilString }"
-      ]
-    },
-    "Monthly recurring event, frequency": {
-      "Monthly ${ onDayString }": [
-        "Щомісяця ${ onDayString }"
-      ],
-      "Every ${ interval } month ${ onDayString }": [
-        "Кожен ${ interval } місяць ${ onDayString }",
-        "Кожні ${ interval } місяці ${ onDayString }",
-        "Кожні ${ interval } місяців ${ onDayString }",
-        "Кожні ${ interval } місяців ${ onDayString }"
-      ],
-      "Monthly ${ onDayString }, ${ timesString }": [
-        "Щомісяця ${ onDayString }, ${ timesString }"
-      ],
-      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
-        "Кожен ${ interval } місяць ${ onDayString }, ${ timesString }",
-        "Кожні ${ interval } місяці ${ onDayString }, ${ timesString }",
-        "Кожні ${ interval } місяців ${ onDayString }, ${ timesString }",
-        "Кожні ${ interval } місяців ${ onDayString }, ${ timesString }"
-      ],
-      "Monthly ${ onDayString }, ${ untilString }": [
-        "Щомісяця ${ onDayString }, ${ untilString }"
-      ],
-      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
-        "Кожен ${ interval } місяць ${ onDayString }, ${ untilString }",
-        "Кожні ${ interval } місяці ${ onDayString }, ${ untilString }",
-        "Кожні ${ interval } місяців ${ onDayString }, ${ untilString }",
-        "Кожні ${ interval } місяців ${ onDayString }, ${ untilString }"
-      ]
-    },
-    "Yearly recurring event, frequency": {
-      "Yearly": [
-        "Щороку"
-      ],
-      "Every ${ interval } year": [
-        "Кожен ${ interval } рік",
-        "Кожні ${ interval } роки",
-        "Кожні ${ interval } років",
-        "Кожні ${ interval } років"
-      ],
-      "Yearly, ${ timesString }": [
-        "Щороку, ${ timesString }"
-      ],
-      "Every ${ interval } year, ${ timesString }": [
-        "Кожен ${ interval } рік, ${ timesString }",
-        "Кожні ${ interval } роки, ${ timesString }",
-        "Кожні ${ interval } років, ${ timesString }",
-        "Кожні ${ interval } років, ${ timesString }"
-      ],
-      "Yearly, ${ untilString }": [
-        "Щороку, ${ untilString }"
-      ],
-      "Every ${ interval } year, ${ untilString }": [
-        "Кожен ${ interval } рік, ${ untilString }",
-        "Кожні ${ interval } роки, ${ untilString }",
-        "Кожні ${ interval } років, ${ untilString }",
-        "Кожні ${ interval } років, ${ untilString }"
-      ]
-    },
-    "Action": {
-      "Close": [
-        "Закрити"
-      ],
-      "Cancel": [
-        "Скасувати"
-      ],
-      "Save": [
-        "Зберегти"
-      ],
-      "Upload picture": [
-        "Вивантажити зображення"
-      ],
-      "Insert": [
-        "Вставити"
-      ],
-      "Font": [
-        "Шрифт"
-      ],
-      "Size": [
-        "Розмір"
-      ],
-      "Color": [
-        "Колір"
-      ],
-      "Alignment": [
-        "Вирівнювання"
-      ],
-      "More": [
-        "Більше"
-      ],
-      "Unordered list": [
-        "Невпорядкований список"
-      ],
-      "Ordered list": [
-        "Впорядкований список"
-      ],
-      "Align left": [
-        "Вирівняти ліворуч"
-      ],
-      "Align center": [
-        "Вирівняти по центру"
-      ],
-      "Align right": [
-        "Вирівняти праворуч"
-      ],
-      "Justify": [
-        "За шириною"
-      ],
-      "Quote": [
-        "Цитувати"
-      ],
-      "Insert link": [
-        "Вставити посилання"
-      ],
-      "Clear all formatting": [
-        "Очистити форматування"
-      ],
-      "Insert image": [
-        "Вставити зображення"
-      ],
-      "Bold": [
-        "Жирний"
-      ],
-      "Italic": [
-        "Курсив"
-      ],
-      "Underline": [
-        "Підкреслення"
-      ],
-      "More info: ${ safeTitle }": [
-        "Докладніше: ${ safeTitle }"
-      ],
-      "Confirm": [
-        "Підтвердити"
-      ],
-      "Submit": [
-        "Відправити"
-      ],
-      "Close modal": [
-        "Закрити вікно"
-      ],
-      "Use “${ label }” setting": [
-        "Використовувати налаштування“${ label }”"
-      ],
-      "Remove": [
-        "Вилучити"
-      ],
-      "Next month": [
-        "Наступний місяць"
-      ],
-      "Previous month": [
-        "Минулий місяць"
-      ],
-      "Load image": [
-        "Завантажити зображення"
-      ],
-      "Confirm opening of link ${ link }": [
-        "Підтвердити відкриття посилання ${ link }"
-      ],
-      "Go to panel ${ index }": [
-        "Перейти до панелі ${ index }"
-      ],
-      "Close navigation": [
-        "Закрити панель навігації"
-      ],
-      "Open navigation": [
-        "Відкрити панель навігації"
-      ],
-      "Continue with Google": [
-        "Продовжити з Google"
-      ],
-      "Delete": [
-        "Видалити"
-      ],
-      "Go to page ${ page }": [
-        "Перейти до сторінки ${ page }"
-      ],
-      "Go to first page": [
-        "Перейти на першу сторінку"
-      ],
-      "Go to previous page": [
-        "Перейти на попередню сторінку"
-      ],
-      "Go to next page": [
-        "Перейти на наступну сторінку"
-      ],
-      "Go to last page": [
-        "Перейти на останню сторінку"
-      ],
-      "Signing out": [
-        "Вихід"
-      ],
-      "refresh the page": [
-        "оновити сторінку"
-      ],
-      "Log in": [
-        "Увійти"
-      ],
-      "View invoice": [
-        "Переглянути рахунок"
-      ],
-      "Get verification code": [
-        "Отримати код підтвердження"
-      ],
-      "Try another method": [
-        "Спробувати інший спосіб"
-      ],
-      "Request new code": [
-        "Запитати новий код"
-      ],
-      "Verify": [
-        "Перевірити"
-      ],
-      "Did not receive the code?": [
-        "Не отримали код?"
-      ],
-      "Edit email address": [
-        "Змінити адресу е-пошти"
-      ],
-      "Edit phone number": [
-        "Змінити номер телефону"
-      ],
-      "Upgrade": [
-        "Покращити"
-      ],
-      "Add": [
-        "Додати"
-      ],
-      "Edit": [
-        "Змінити"
-      ],
-      "Apply": [
-        "Застосувати"
-      ],
-      "Insert contact": [
-        "Вставити контакт"
-      ],
-      "Insert ${ totalChecked } contact": [
-        "Вставити ${ totalChecked } контакт",
-        "Вставити ${ totalChecked } контакти",
-        "Вставити ${ totalChecked } контактів",
-        "Вставити ${ totalChecked } контактів"
-      ],
-      "Done": [
-        "Готово"
-      ],
-      "Clear data": [
-        "Стерти дані"
-      ],
-      "Recover data": [
-        "Відновити дані"
-      ],
-      "Click here.": [
-        "Клацніть тут."
-      ],
-      "Re-sign": [
-        "Перепідписати"
-      ],
-      "Hide advanced PGP settings": [
-        "Приховати розширені налаштування PGP"
-      ],
-      "Show advanced PGP settings": [
-        "Показати розширені налаштування PGP"
-      ],
-      "Add to group": [
-        "Додати до групи"
-      ],
-      "Contact group": [
-        "Група контактів"
-      ],
-      "Create new contact": [
-        "Створити новий контакт"
-      ],
-      "clear it": [
-        "очистити це"
-      ],
-      "Export": [
-        "Експорт"
-      ],
-      "Download": [
-        "Завантажити"
-      ],
-      "Use for sending": [
-        "Використовувати для надсилання"
-      ],
-      "Trust": [
-        "Довіряти"
-      ],
-      "Untrust": [
-        "Не довіряти"
-      ],
-      "Email settings": [
-        "Налаштування е-пошти"
-      ],
-      "Merge": [
-        "Об'єднати"
-      ],
-      "View": [
-        "Вигляд"
-      ],
-      "Unmark for deletion": [
-        "Прибрати позначку для видалення"
-      ],
-      "Mark for deletion": [
-        "Позначити для видалення"
-      ],
-      "Preview contact": [
-        "Перегляд контакту"
-      ],
-      "Continue": [
-        "Продовжити"
-      ],
-      "Copy email to clipboard": [
-        "Копіювати е-пошту в буфер обміну"
-      ],
-      "Delete contact": [
-        "Видалити контакт"
-      ],
-      "Delete ${ selectedCount } contact": [
-        "Видалити ${ selectedCount } контакт",
-        "Видалити ${ selectedCount } контакти",
-        "Видалити ${ selectedCount } контактів",
-        "Видалити ${ selectedCount } контактів"
-      ],
-      "Deselect all": [
-        "Скасувати вибір"
-      ],
-      "Select all": [
-        "Вибрати все"
-      ],
-      "Compose": [
-        "Написати"
-      ],
-      "Forward as attachment": [
-        "Переслати як вкладення"
-      ],
-      "Merge contacts": [
-        "Об'єднати контакти"
-      ],
-      "Add new contact": [
-        "Додати новий контакт"
-      ],
-      "Add group": [
-        "Додати групу"
-      ],
-      "Clear query": [
-        "Очистити запит"
-      ],
-      "Add contact": [
-        "Додати контакт"
-      ],
-      "import": [
-        "імпортувати"
-      ],
-      "Delete contact group": [
-        "Видалити групу контактів"
-      ],
-      "Delete ${ selectedCount } contact group": [
-        "Видалити ${ selectedCount } групу контактів",
-        "Видалити ${ selectedCount } групи контактів",
-        "Видалити ${ selectedCount } груп контактів",
-        "Видалити ${ selectedCount } груп контактів"
-      ],
-      "Add new group": [
-        "Додати нову групу"
-      ],
-      "Export contacts": [
-        "Експортувати контакти"
-      ],
-      "Import contacts": [
-        "Імпортувати контакти"
-      ],
-      "Choose a file or drag it here": [
-        "Виберіть файл або перетягніть його сюди"
-      ],
-      "Import": [
-        "Імпорт"
-      ],
-      "Next": [
-        "Далі"
-      ],
-      "Use ${ label } theme": [
-        "Використовувати тему ${ label }"
-      ],
-      "OK": [
-        "OK"
-      ],
-      "Details": [
-        "Подробиці"
-      ],
-      "Share via link": [
-        "Спільний доступ за посиланням"
-      ],
-      "Sharing options": [
-        "Варіанти спільного доступу"
-      ],
-      "Zoom out": [
-        "Зменшити"
-      ],
-      "Reset zoom": [
-        "Скинути масштаб"
-      ],
-      "Zoom in": [
-        "Збільшити"
-      ],
-      "Previous": [
-        "Попередній"
-      ],
-      "Continue import": [
-        "Продовжити імпорт"
-      ],
-      "Discard": [
-        "Відхилити"
-      ],
-      "Reconnect": [
-        "Повторно з'єднатися"
-      ],
-      "Start import": [
-        "Розпочати імпорт"
-      ],
-      "Clear": [
-        "Очистити"
-      ],
-      "Add screenshot(s)": [
-        "Додати знімки екрана"
-      ],
-      "Hide info": [
-        "Приховати інформацію"
-      ],
-      "Show info": [
-        "Показати інформацію"
-      ],
-      "Get started": [
-        "Розпочнімо"
-      ],
-      "Start setup": [
-        "Почати налаштування"
-      ],
-      "Skip": [
-        "Пропустити"
-      ],
-      "Back": [
-        "Назад"
-      ],
-      "Copy to clipboard": [
-        "Копіювати до буфера обміну"
-      ],
-      "Create recovery phrase": [
-        "Створити фразу відновлення"
-      ],
-      "Don't secure account": [
-        "Не захищати обліковий запис"
-      ],
-      "Close this banner": [
-        "Закрити цей банер"
-      ],
-      "Refresh the page": [
-        "Оновити сторінку"
-      ],
-      "enable desktop notifications": [
-        "увімкнути сповіщення на робочому столі"
-      ],
-      "here": [
-        "тут"
-      ],
-      "Search": [
-        "Пошук"
-      ],
-      "${ BRAND_NAME } introduction": [
-        "Знайомство з ${ BRAND_NAME }"
-      ],
-      "Chat with us": [
-        "Чат з нами"
-      ],
-      "I have a question": [
-        "У мене є питання"
-      ],
-      "Request a feature": [
-        "Запит нової функції"
-      ],
-      "Report a problem": [
-        "Повідомити про проблему"
-      ],
-      "${ BRAND_NAME } shop": [
-        "Крамниця ${ BRAND_NAME }"
-      ],
-      "Switch account": [
-        "Перемкнути обліковий запис"
-      ],
-      "Sign out": [
-        "Вийти"
-      ],
-      "Go to settings": [
-        "Перейти до налаштувань"
-      ],
-      "Beta Access": [
-        "Бета-доступ"
-      ],
-      "Theme": [
-        "Тема"
-      ],
-      "Keyboard shortcuts": [
-        "Комбінації клавіш"
-      ],
-      "Mailbox layout": [
-        "Макет поштової скриньки"
-      ],
-      "Mailbox density": [
-        "Щільність поштової скриньки"
-      ],
-      "Composer size": [
-        "Розмір редактора"
-      ],
-      "Remove bonuses": [
-        "Вилучити бонуси"
-      ],
-      "Try again": [
-        "Спробувати знову"
-      ],
-      "Use a different card": [
-        "Скористатися іншою карткою"
-      ],
-      "Use a different payment method": [
-        "Скористайтеся іншим способом оплати"
-      ],
-      "Retry": [
-        "Повторити"
-      ],
-      "Loading verification": [
-        "Завантаження підтвердження"
-      ],
-      "Select plan": [
-        "Обрати тарифний план"
-      ],
-      "Compare all features": [
-        "Порівняти всі функції"
-      ],
-      "${ boldSave } by switching to annual billing": [
-        "${ boldSave } перейшовши на річну передплату"
-      ],
-      "Pay": [
-        "Сплатити"
-      ],
-      "Open ${ CALENDAR_APP_NAME } settings": [
-        "Відкрити налаштування ${ CALENDAR_APP_NAME }"
-      ],
-      "Remove gift code": [
-        "Вилучити подарунковий код"
-      ],
-      "annual billing": [
-        "річна передплата"
-      ],
-      "Compare plans": [
-        "Порівняти тарифні плани"
-      ],
-      "Decrease": [
-        "Зменшити"
-      ],
-      "Increase": [
-        "Збільшити"
-      ],
-      "Preview": [
-        "Перегляд"
-      ],
-      "Create label": [
-        "Створити мітку"
-      ],
-      "Create folder": [
-        "Створити теку"
-      ],
-      "Remove this label": [
-        "Вилучити цю мітку"
-      ],
-      "Add condition": [
-        "Додати умову"
-      ],
-      "label emails as": [
-        "позначати листи міткою"
-      ],
-      "move emails to": [
-        "перемістити листи"
-      ],
-      "mark emails as": [
-        "позначити листи"
-      ],
-      "send auto-reply email": [
-        "надіслати лист з автоматичною відповіддю"
-      ],
-      "Yes, I'll attend": [
-        "Підтверджую присутність"
-      ],
-      "Maybe I'll attend": [
-        "Присутність під сумнівом"
-      ],
-      "No, I won't attend": [
-        "Не підтверджую присутність"
-      ],
-      "Yes": [
-        "Так"
-      ],
-      "Maybe": [
-        "Можливо"
-      ],
-      "No": [
-        "Ні"
-      ],
-      "Add to ${ CALENDAR_APP_NAME }": [
-        "Додати до ${ CALENDAR_APP_NAME }"
-      ],
-      "Send anyway": [
-        "Все одно надіслати"
-      ],
-      "Got it": [
-        "Зрозуміло"
-      ],
-      "Maximize composer": [
-        "Розгорнути редактор"
-      ],
-      "Minimize composer": [
-        "Згорнути редактор"
-      ],
-      "Contract composer": [
-        "Зменшити редактор"
-      ],
-      "Expand composer": [
-        "Розгорнути редактор"
-      ],
-      "Close composer": [
-        "Закрити редактор"
-      ],
-      "Trust key": [
-        "Довіряти ключу",
-        "Довіряти ключам",
-        "Довіряти ключам",
-        "Довіряти ключам"
-      ],
-      "Copy address": [
-        "Копіювати адресу"
-      ],
-      "Edit address": [
-        "Редагувати адресу"
-      ],
-      "View contact details": [
-        "Подробиці контакту"
-      ],
-      "Copy addresses": [
-        "Копіювати адреси"
-      ],
-      "View recipients": [
-        "Переглянути отримувачів"
-      ],
-      "Carbon Copy, Blind Carbon Copy": [
-        "Копія, Прихована копія"
-      ],
-      "CC, BCC": [
-        "Копія, Прихована копія"
-      ],
-      "Send": [
-        "Надіслати"
-      ],
-      "Attachment": [
-        "Вкладення"
-      ],
-      "Inline": [
-        "Вбудований"
-      ],
-      "Cancel action": [
-        "Скасувати дію"
-      ],
-      "Loading${ ellipsis }": [
-        "Завантаження${ ellipsis }"
-      ],
-      "Saving${ _ellipsis }": [
-        "Збереження${ _ellipsis }"
-      ],
-      "Not saved": [
-        "Не збережено"
-      ],
-      "Schedule send": [
-        "Запланувати надсилання"
-      ],
-      "Expiration time": [
-        "Термін дії"
-      ],
-      "Encryption": [
-        "Шифрування"
-      ],
-      "Delete draft": [
-        "Видалити чернетку"
-      ],
-      "Set": [
-        "Встановити"
-      ],
-      "Schedule message": [
-        "Запланувати повідомлення"
-      ],
-      "Print": [
-        "Друкувати"
-      ],
-      "Address options": [
-        "Параметри адреси"
-      ],
-      "New message": [
-        "Нове повідомлення"
-      ],
-      "Trust Public Key": [
-        "Довіряти відкритому ключу"
-      ],
-      "Filter on...": [
-        "Фільтр..."
-      ],
-      "Move to...": [
-        "Перемістити до..."
-      ],
-      "Label as...": [
-        "Позначити міткою..."
-      ],
-      "Mark as unread": [
-        "Позначити непрочитаним"
-      ],
-      "Move to spam": [
-        "Перемістити до спаму"
-      ],
-      "Report phishing": [
-        "Звіт про шахрайство"
-      ],
-      "View source code": [
-        "Переглянути програмний код"
-      ],
-      "View rendered HTML": [
-        "Переглянути оброблений HTML"
-      ],
-      "View headers": [
-        "Перегляд заголовків"
-      ],
-      "Hide details": [
-        "Приховати подробиці"
-      ],
-      "Show details": [
-        "Показати подробиці"
-      ],
-      "Custom filter": [
-        "Власний фільтр"
-      ],
-      "Move to": [
-        "Перемістити"
-      ],
-      "Label as": [
-        "Позначити міткою"
-      ],
-      "Load": [
-        "Завантажити"
-      ],
-      "This message contains remote content.": [
-        "Це повідомлення містить зовнішній вміст."
-      ],
-      "This message contains embedded images.": [
-        "Це повідомлення містить вбудовані зображення."
-      ],
-      "Unsubscribe": [
-        "Відписатися"
-      ],
-      "Unsubscribing": [
-        "Скасувати підписку"
-      ],
-      "Mark legitimate": [
-        "Позначити надійним"
-      ],
-      "Send receipt": [
-        "Надіслати квитанцію"
-      ],
-      "Accept": [
-        "Схвалити"
-      ],
-      "Show": [
-        "Показати"
-      ],
-      "Show less": [
-        "Згорнути"
-      ],
-      "Never show": [
-        "Ніколи не показувати"
-      ],
-      "View keys": [
-        "Переглянути ключі"
-      ],
-      "Edit draft": [
-        "Редагувати чернетку"
-      ],
-      "Download ${ attachmentName }": [
-        "Завантажити ${ attachmentName }"
-      ],
-      "Preview ${ attachmentName }": [
-        "Переглянути ${ attachmentName }"
-      ],
-      "Remove ${ attachmentName }": [
-        "Вилучити ${ attachmentName }"
-      ],
-      "Hide attachment details": [
-        "Приховати подробиці вкладення"
-      ],
-      "Show attachment details": [
-        "Показати подробиці вкладення"
-      ],
-      "Hide": [
-        "Приховати"
-      ],
-      "Learn more": [
-        "Докладніше"
-      ],
-      "Undo": [
-        "Скасувати"
-      ],
-      "View message": [
-        "Переглянути повідомлення"
-      ],
-      "Enable": [
-        "Увімкнути"
-      ],
-      "Search message content": [
-        "Пошук вмісту повідомлень"
-      ],
-      "Activate": [
-        "Активувати"
-      ],
-      "Resume": [
-        "Продовжити"
-      ],
-      "Pause": [
-        "Призупинити"
-      ],
-      "Show less search options": [
-        "Менше варіантів пошуку"
-      ],
-      "Show more search options": [
-        "Більше варіантів пошуку"
-      ],
-      "Less search options": [
-        "Менше варіантів пошуку"
-      ],
-      "More search options": [
-        "Більше варіантів пошуку"
-      ],
-      "Advanced search": [
-        "Розширений пошук"
-      ],
-      "Clear browser data": [
-        "Очистити дані браузера"
-      ],
-      "Mark as read": [
-        "Позначити прочитаним"
-      ],
-      "Delete permanently": [
-        "Видалити остаточно"
-      ],
-      "Move to inbox": [
-        "Перемістити до вхідних"
-      ],
-      "Move to archive": [
-        "Перемістити до архіву"
-      ],
-      "Move to inbox (not spam)": [
-        "Перемістити до вхідних (не спам)"
-      ],
-      "Move to trash": [
-        "Перемістити до смітника"
-      ],
-      "Delete all": [
-        "Видалити все"
-      ],
-      "Deselect all messages": [
-        "Скасувати вибір усіх повідомлень"
-      ],
-      "Select all messages": [
-        "Вибрати усі повідомлення"
-      ],
-      "Select All": [
-        "Вибрати все"
-      ],
-      "All Read": [
-        "Усе прочитане"
-      ],
-      "All Unread": [
-        "Усі непрочитані"
-      ],
-      "All Starred": [
-        "Усі з зірочкою"
-      ],
-      "All Unstarred": [
-        "Усі без зірочки"
-      ],
-      "Load more": [
-        "Завантажити ще"
-      ],
-      "Previous page": [
-        "Попередня сторінка"
-      ],
-      "Change page": [
-        "Змінити сторінку"
-      ],
-      "Page ${ pageNumber }": [
-        "Сторінка ${ pageNumber }"
-      ],
-      "Next page": [
-        "Наступна сторінка"
-      ],
-      "Previous conversation": [
-        "Попередня розмова"
-      ],
-      "Previous message": [
-        "Попереднє повідомлення"
-      ],
-      "Next conversation": [
-        "Наступна розмова"
-      ],
-      "Next message": [
-        "Наступне повідомлення"
-      ],
-      "Show messages": [
-        "Показати повідомлення"
-      ],
-      "Hide messages": [
-        "Приховати повідомлення"
-      ],
-      "Create new message": [
-        "Створити повідомлення"
-      ],
-      "Open shop": [
-        "Відкрити магазин"
-      ],
-      "Open calendar": [
-        "Відкрити календар"
-      ],
-      "Import messages": [
-        "Імпортувати повідомлення"
-      ],
-      "Deselect": [
-        "Прибрати вибір"
-      ],
-      "Start using ${ appName }": [
-        "Розпочніть використання ${ appName }"
-      ]
-    },
-    "Title": {
-      "Open actions dropdown": [
-        "Випадне меню дій"
-      ],
-      "Expand content": [
-        "Розгорнути вміст"
-      ],
-      "Link confirmation": [
-        "Підтвердження посилання"
-      ],
-      "Keyboard Shortcuts": [
-        "Комбінації клавіш"
-      ],
-      "What's new": [
-        "Що нового"
-      ],
-      "Sign in again to continue": [
-        "Увійдіть знову для продовження"
-      ],
-      "Account suspended": [
-        "Обліковий запис призупинено"
-      ],
-      "Enter your username or ProtonMail email address": [
-        "Введіть своє ім'я користувача або електронну адресу ProtonMail"
-      ],
-      "Enter your password": [
-        "Введіть свій пароль"
-      ],
-      "Invalid verification code": [
-        "Недійсний код підтвердження"
-      ],
-      "Human verification": [
-        "Перевірка \"Я не робот\""
-      ],
-      "Upgrade required": [
-        "Необхідний платний тарифний план"
-      ],
-      "Delete ${ Name }": [
-        "Видалити ${ Name }"
-      ],
-      "Delete ${ count } contact group": [
-        "Видалити ${ count } групу контактів",
-        "Видалити ${ count } групи контактів",
-        "Видалити ${ count } груп контактів",
-        "Видалити ${ count } груп контактів"
-      ],
-      "Edit contact group": [
-        "Редагувати групу контактів"
-      ],
-      "Create new group": [
-        "Створити нову групу"
-      ],
-      "${ emailsCount } member": [
-        "${ emailsCount } учасник",
-        "${ emailsCount } учасники",
-        "${ emailsCount } учасників",
-        "${ emailsCount } учасників"
-      ],
-      "Edit image": [
-        "Змінити зображення"
-      ],
-      "Add to ${ groupName }": [
-        "Додати до ${ groupName }"
-      ],
-      "Add to ${ groupCount } group": [
-        "Додати до ${ groupCount } групи",
-        "Додати до ${ groupCount } груп",
-        "Додати до ${ groupCount } груп",
-        "Додати до ${ groupCount } груп"
-      ],
-      "Edit contact": [
-        "Змінити контакт"
-      ],
-      "Create contact": [
-        "Створити контакт"
-      ],
-      "Insert contacts": [
-        "Вставити контакти"
-      ],
-      "Delete ${ count } contact": [
-        "Видалити ${ count } контакт",
-        "Видалити ${ count } контакти",
-        "Видалити ${ count } контактів",
-        "Видалити ${ count } контактів"
-      ],
-      "Clearing data": [
-        "Стирання даних"
-      ],
-      "Warning": [
-        "Попередження"
-      ],
-      "Recover data": [
-        "Відновити дані"
-      ],
-      "Re-signing contacts": [
-        "Повторне підписання контактів"
-      ],
-      "Re-sign all contacts": [
-        "Повторно підписати всі контакти"
-      ],
-      "Email settings (${ emailAddress })": [
-        "Налаштування е-пошти (${ emailAddress })"
-      ],
-      "Exporting contacts": [
-        "Експортування контактів"
-      ],
-      "Contact group": [
-        "Група контактів"
-      ],
-      "Other names": [
-        "Інші імена"
-      ],
-      "Email addresses": [
-        "Адреси е-пошти"
-      ],
-      "Phone numbers": [
-        "Номери телефонів"
-      ],
-      "Addresses": [
-        "Адреси"
-      ],
-      "Other information": [
-        "Інша інформація"
-      ],
-      "Email settings": [
-        "Налаштування е-пошти"
-      ],
-      "Contact Details": [
-        "Подробиці контакту"
-      ],
-      "Merging contacts": [
-        "Об'єднання контактів"
-      ],
-      "Merge contacts": [
-        "Об'єднати контакти"
-      ],
-      "Deleting contacts": [
-        "Видалення контактів"
-      ],
-      "View contacts": [
-        "Переглянути контакти"
-      ],
-      "Contacts": [
-        "Контакти"
-      ],
-      "Groups": [
-        "Групи"
-      ],
-      "Settings": [
-        "Налаштування"
-      ],
-      "Select action to take on contact group": [
-        "Виберіть дію для групи контактів"
-      ],
-      "Add contact group name": [
-        "Додати назву групи контактів"
-      ],
-      "Select contact group": [
-        "Вибрати групу контактів"
-      ],
-      "Import groups": [
-        "Імпортувати групи"
-      ],
-      "Import contacts": [
-        "Імпортувати контакти"
-      ],
-      "Select a theme": [
-        "Вибрати тему"
-      ],
-      "Start import process": [
-        "Розпочати процес імпортування"
-      ],
-      "Import in progress": [
-        "Виконується імпортування"
-      ],
-      "Report a problem": [
-        "Повідомити про проблему"
-      ],
-      "${ appName } Keyboard Shortcuts": [
-        "Комбінації клавіш ${ appName }"
-      ],
-      "Mailbox density": [
-        "Щільність поштової скриньки"
-      ],
-      "Mailbox layout": [
-        "Макет поштової скриньки"
-      ],
-      "Composer mode": [
-        "Режим редактора"
-      ],
-      "Open help menu": [
-        "Відкрити меню довідки"
-      ],
-      "Back": [
-        "Назад"
-      ],
-      "Open settings menu": [
-        "Відкрити меню налаштувань"
-      ],
-      "Confirm loss of Proton bonuses": [
-        "Підтвердити втрату бонусів Proton"
-      ],
-      "Unsupported browser": [
-        "Браузер не підтримується"
-      ],
-      "Card verification": [
-        "Перевірка картки"
-      ],
-      "Payment verification": [
-        "Перевірка платежу"
-      ],
-      "Processing...": [
-        "Обробка..."
-      ],
-      "Card verification in progress": [
-        "Триває перевірка картки"
-      ],
-      "Payment verification in progress": [
-        "Триває перевірка платежу"
-      ],
-      "PayPal verification failed": [
-        "Не вдалося пройти перевірку PayPal"
-      ],
-      "3-D Secure verification failed": [
-        "Не вдалося пройти перевірку 3-D Secure"
-      ],
-      "Error": [
-        "Помилка"
-      ],
-      "ZIP / postal code": [
-        "Поштовий індекс"
-      ],
-      "Payment details": [
-        "Подробиці платежу"
-      ],
-      "Currency": [
-        "Валюта"
-      ],
-      "Billing cycle": [
-        "Платіжний цикл"
-      ],
-      "Current plan": [
-        "Поточний тарифний план"
-      ],
-      "Processing": [
-        "Обробка"
-      ],
-      "Apply gift code": [
-        "Застосувати подарунковий код"
-      ],
-      "Subtotal": [
-        "Попередній підсумок"
-      ],
-      "Coupon discount": [
-        "Знижка за купоном"
-      ],
-      "Total (monthly)": [
-        "Всього (щомісячно)"
-      ],
-      "Credits": [
-        "Кредити"
-      ],
-      "Gift code": [
-        "Подарунковий код"
-      ],
-      "Amount due": [
-        "До сплати"
-      ],
-      "Cancel subscription": [
-        "Скасувати передплату"
-      ],
-      "Network error": [
-        "Помилка мережі"
-      ],
-      "Select a plan": [
-        "Оберіть тарифний план"
-      ],
-      "Customize your plan": [
-        "Налаштуйте свій тарифний план"
-      ],
-      "Checkout": [
-        "Розрахунок"
-      ],
-      "Plan summary": [
-        "Підсумок плану"
-      ],
-      "${ appName } customization": [
-        "Налаштування ${ appName }"
-      ],
-      "Beta Access": [
-        "Бета-доступ"
-      ],
-      "Edit filter": [
-        "Змінити фільтр"
-      ],
-      "Add filter": [
-        "Додати фільтр"
-      ],
-      "Are you sure you want to close?": [
-        "Ви дійсно хочете закрити?"
-      ],
-      "Change my answer": [
-        "Змінити мою відповідь"
-      ],
-      "Image": [
-        "Зображення"
-      ],
-      "Sending notice": [
-        "Надсилання сповіщення"
-      ],
-      "Storage capacity warning": [
-        "Попередження про обсяг сховища"
-      ],
-      "Sending original message": [
-        "Надсилання оригінального повідомлення"
-      ],
-      "No recipient": [
-        "Немає отримувача"
-      ],
-      "Message without subject?": [
-        "Повідомлення без теми?"
-      ],
-      "No attachment found": [
-        "Вкладення не знайдено"
-      ],
-      "Re-sign contact": [
-        "Повторно підписати контакт"
-      ],
-      "Verification error": [
-        "Помилка підтвердження"
-      ],
-      "Decryption error": [
-        "Помилка розшифрування"
-      ],
-      "Delete draft": [
-        "Видалити чернетку"
-      ],
-      "Delete ${ count } draft": [
-        "Видалити ${ count } чернетку",
-        "Видалити ${ count } чернетки",
-        "Видалити ${ count } чернеток",
-        "Видалити ${ count } чернеток"
-      ],
-      "Delete message": [
-        "Видалити повідомлення"
-      ],
-      "Delete conversation": [
-        "Видалити розмову"
-      ],
-      "Delete ${ count } conversation": [
-        "Видалити ${ count } розмову",
-        "Видалити ${ count } розмови",
-        "Видалити ${ count } розмов",
-        "Видалити ${ count } розмов"
-      ],
-      "Delete ${ count } message": [
-        "Видалити ${ count } повідомлення",
-        "Видалити ${ count } повідомлення",
-        "Видалити ${ count } повідомлень",
-        "Видалити ${ count } повідомлень"
-      ],
-      "Delete all messages": [
-        "Видалити всі повідомлення"
-      ],
-      "Trust new key?": [
-        "Довіряти новому ключу?",
-        "Довіряти новим ключам?",
-        "Довіряти новим ключам?",
-        "Довіряти новим ключам?"
-      ],
-      "Add contacts": [
-        "Додати контакти"
-      ],
-      "To": [
-        "Кому"
-      ],
-      "CC": [
-        "Копія"
-      ],
-      "BCC": [
-        "Прихована копія"
-      ],
-      "Carbon Copy": [
-        "Копія"
-      ],
-      "Blind Carbon Copy": [
-        "Прихована копія"
-      ],
-      "Sending error": [
-        "Надсилання помилки"
-      ],
-      "Confirm recipient address?": [
-        "Підтвердити адресу отримувача?"
-      ],
-      "Send without expiration?": [
-        "Надіслати без терміну дії?"
-      ],
-      "Send with changed preferences?": [
-        "Надіслати зі зміненими налаштуваннями?"
-      ],
-      "Attachments": [
-        "Вкладення"
-      ],
-      "Expiration time": [
-        "Час завершення"
-      ],
-      "Encryption": [
-        "Шифрування"
-      ],
-      "Send email": [
-        "Надіслати лист"
-      ],
-      "Schedule send": [
-        "Запланувати надсилання"
-      ],
-      "New message": [
-        "Нове повідомлення"
-      ],
-      "Trust public key?": [
-        "Довіряти відкритому ключу?"
-      ],
-      "All recipients were added to the BCC field and cannot be disclosed": [
-        "Всі одержувачі були додані в поле прихованої копії та їх не буде видно"
-      ],
-      "Move to inbox (not spam)": [
-        "Перемістити до вхідних (не спам)"
-      ],
-      "Mark as unread": [
-        "Позначити непрочитаним"
-      ],
-      "Move to inbox": [
-        "Перемістити до вхідних"
-      ],
-      "Move to trash": [
-        "Перемістити до смітника"
-      ],
-      "More": [
-        "Більше"
-      ],
-      "More options": [
-        "Додаткові параметри"
-      ],
-      "Reply": [
-        "Відповісти"
-      ],
-      "Reply all": [
-        "Відповісти всім"
-      ],
-      "Forward": [
-        "Переслати"
-      ],
-      "Filter on": [
-        "Фільтр"
-      ],
-      "Move to": [
-        "Перемістити"
-      ],
-      "Label as": [
-        "Позначити міткою"
-      ],
-      "Load remote content": [
-        "Завантажити зовнішній вміст"
-      ],
-      "Load embedded images": [
-        "Завантажити вбудовані зображення"
-      ],
-      "Unsubscribe": [
-        "Відписатися"
-      ],
-      "Mark email as legitimate": [
-        "Позначити надійним"
-      ],
-      "Trust pinned keys?": [
-        "Довіряти прикріпленим ключам?"
-      ],
-      "Enable message content search": [
-        "Увімкнути пошук вмісту повідомлень"
-      ],
-      "Create a new folder": [
-        "Створити нову теку"
-      ],
-      "Create a new label": [
-        "Створити нову мітку"
-      ],
-      "More selections": [
-        "Інші варіанти вибору"
-      ],
-      "Previous conversation": [
-        "Попередня розмова"
-      ],
-      "Previous message": [
-        "Попереднє повідомлення"
-      ],
-      "Next conversation": [
-        "Наступна розмова"
-      ],
-      "Next message": [
-        "Наступне повідомлення"
-      ],
-      "Sort conversations": [
-        "Впорядкувати розмови"
-      ],
-      "Sort messages": [
-        "Впорядкувати повідомлення"
-      ],
-      "Create folder": [
-        "Створити теку"
-      ],
-      "Create label": [
-        "Створити мітку"
-      ],
-      "Conversation list": [
-        "Список розмов"
-      ],
-      "Message list": [
-        "Список повідомлень"
-      ],
-      "Welcome ${ userName }": [
-        "Вітаємо, ${ userName }"
-      ],
-      "Welcome": [
-        "Вітаємо"
-      ]
-    },
-    "Placeholder": {
-      "Link": [
-        "Посилання"
-      ],
-      "Fill in the URL link and text to test your link": [
-        "Введіть посилання URL і текст, щоб перевірити ваше посилання"
-      ],
-      "Email address": [
-        "Адреса е-пошти"
-      ],
-      "Fill in the email address and text to test your link": [
-        "Введіть адресу е-пошти і текст, щоб перевірити ваше посилання"
-      ],
-      "Phone number": [
-        "Номер телефону"
-      ],
-      "Fill in the phone number and text to test your link": [
-        "Введіть номер телефону і текст, щоб перевірити ваше посилання"
-      ],
-      "Text": [
-        "Текст"
-      ],
-      "E.g., ": [
-        "Наприклад, "
-      ],
-      "Mailbox password": [
-        "Пароль поштової скриньки"
-      ],
-      "Start typing an email address": [
-        "Почніть вводити адресу е-пошти"
-      ],
-      "Image URL": [
-        "URL-адреса зображення"
-      ],
-      "Search name, email or group": [
-        "Пошук імені, е-пошти чи групи"
-      ],
-      "Filter groups": [
-        "Фільтр груп"
-      ],
-      "Search for name or email": [
-        "Пошук за іменем чи е-поштою"
-      ],
-      "Search for group name": [
-        "Шукати назву групи"
-      ],
-      "Name": [
-        "Назва"
-      ],
-      "OS name": [
-        "Назва ОС"
-      ],
-      "OS version": [
-        "Версія ОС"
-      ],
-      "Proton username": [
-        "Ім'я користувача Proton"
-      ],
-      "A way to contact you": [
-        "Спосіб зв'язку з вами"
-      ],
-      "Please describe the problem and include any error messages": [
-        "Опишіть проблему та додайте повідомлення про помилку"
-      ],
-      "Browser name": [
-        "Назва браузера"
-      ],
-      "Browser version": [
-        "Версія браузера"
-      ],
-      "e.g. Julia Smith": [
-        "наприклад, Джулія Сміт"
-      ],
-      "ZIP": [
-        "Поштовий індекс"
-      ],
-      "Postal code": [
-        "Поштовий індекс"
-      ],
-      "Gift code": [
-        "Подарунковий код"
-      ],
-      "Type text or keyword": [
-        "Введіть текст чи ключове слово"
-      ],
-      "Subject": [
-        "Тема"
-      ],
-      "Write your message": [
-        "Напишіть повідомлення"
-      ],
-      "Password": [
-        "Пароль"
-      ],
-      "Confirm Password": [
-        "Підтвердити пароль"
-      ],
-      "Hint": [
-        "Підказка"
-      ],
-      "Search Messages": [
-        "Шукати повідомлення"
-      ],
-      "Start date": [
-        "Дата початку"
-      ],
-      "End date": [
-        "Дата завершення"
-      ],
-      "Name or email address": [
-        "Назва чи адреса е-пошти"
-      ],
-      "Search messages": [
-        "Шукати повідомлення"
-      ],
-      "Filter folders": [
-        "Фільтр тек"
-      ],
-      "Filter labels": [
-        "Фільтр міток"
-      ]
-    },
-    "Font Face Default": {
-      "Default": [
-        "Типовий"
-      ]
-    },
-    "Font Size Default": {
-      "Default": [
-        "Типовий"
+      "${ numberOfTrackers } email tracker found": [
+        "Знайдено ${ numberOfTrackers } елемент стеження",
+        "Знайдено ${ numberOfTrackers } елементи стеження",
+        "Знайдено ${ numberOfTrackers } елементів стеження",
+        "Знайдено ${ numberOfTrackers } елемента стеження"
       ]
     },
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "Ключ не можна використовувати для шифрування"
-      ]
-    },
-    "Link": {
-      "Learn more": [
-        "Докладніше"
-      ],
-      "Request an invite": [
-        "Запитати запрошення"
-      ],
-      "clearing your browser cache": [
-        "очищення кешу браузера"
-      ],
-      "Pay invoice": [
-        "Сплатити рахунок"
-      ],
-      "Upgrade account": [
-        "Покращити обліковий запис"
-      ],
-      "Upgrade": [
-        "Покращити"
-      ],
-      "Go to subscription plans": [
-        "Перейти до тарифних планів"
-      ],
-      "click here": [
-        "натисніть тут"
-      ],
-      "Add a gift code": [
-        "Додати подарунковий код"
-      ],
-      "You need to activate your calendar keys to add this event": [
-        "Щоб додати цю подію, вам необхідно активувати свої ключі календаря"
-      ],
-      "You need to activate your calendar keys to manage this invitation": [
-        "Щоб керувати цим запрошенням, вам необхідно активувати свої ключі календаря"
-      ],
-      "You need to activate your calendar keys to answer this invitation": [
-        "Щоб відповісти на це запрошення, вам необхідно активувати свої ключі календаря"
-      ],
-      "You need to activate your calendar keys to see the updated event": [
-        "Щоб переглянути оновлену подію, вам необхідно активувати свої ключі календаря"
-      ],
-      "You need to activate your calendar keys to see the updated invitation": [
-        "Щоб переглянути оновлене запрошення, вам необхідно активувати свої ключі календаря"
-      ],
-      "This ICS file contains more than one event. Please download it and import the events in ${ calendarAppName }": [
-        "Цей ICS-файл містить більше однієї події. Будь ласка, завантажте його та імпортуйте події в ${ calendarAppName }"
-      ],
-      "You need to reactivate your keys to manage this invitation": [
-        "Щоб керувати цим запрошенням, вам необхідно повторно активувати свої ключі"
-      ],
-      "You need to reactivate your keys to see the updated event": [
-        "Щоб переглянути оновлену подію, вам необхідно повторно активувати свої ключі"
-      ],
-      "You need to reactivate your keys to see the updated invitation": [
-        "Щоб переглянути оновлене запрошення, вам необхідно повторно активувати свої ключі"
-      ],
-      "Create a new calendar to add this event": [
-        "Створити новий календар для додавання цієї події"
-      ],
-      "Create a new calendar to answer this invitation": [
-        "Створити новий календар для відповіді на це запрошення"
-      ],
-      "Create a new calendar to manage your invitations": [
-        "Створити новий календар для керування запрошеннями"
-      ],
-      "Open updated event in ${ calendarAppName }": [
-        "Відкрити оновлену подію в ${ calendarAppName }"
-      ],
-      "Open in ${ calendarAppName }": [
-        "Відкрити в ${ calendarAppName }"
-      ],
-      "Inbox": [
-        "Вхідні"
-      ],
-      "Drafts": [
-        "Чернетки"
-      ],
-      "Sent": [
-        "Надіслані"
-      ],
-      "Trash": [
-        "Смітник"
-      ],
-      "Spam": [
-        "Спам"
-      ],
-      "All mail": [
-        "Уся пошта"
-      ],
-      "Archive": [
-        "Архів"
-      ],
-      "Starred": [
-        "Із зірочкою"
-      ],
-      "Outbox": [
-        "Вихідні"
-      ],
-      "Scheduled": [
-        "Заплановані"
-      ],
-      "Re-enable the address linked to this calendar to manage your invitation.": [
-        "Повторно активуйте адресу, пов'язану з цим календарем, щоб керувати вашим запрошенням."
-      ],
-      "Re-enable the address linked to this calendar to update your invitation.": [
-        "Повторно активуйте адресу, пов'язану з цим календарем, щоб оновити ваше запрошення."
-      ],
-      "Enable your address to answer this invitation.": [
-        "Активуйте вашу адресу, щоб відповісти на це запрошення."
-      ],
-      "Create a calendar linked to an active email address.": [
-        "Створіть календар, пов'язаний з активною адресою електронної пошти."
-      ],
-      "Enable an email address linked to one of your calendars.": [
-        "Активуйте адресу електронної пошти, пов'язану з одним з ваших календарів."
-      ],
-      "Or you can delete one of your calendars and create a new one linked to an active email address.": [
-        "Або ви можете видалити один з ваших календарів і створити новий, що пов'язаний з активною адресою електронної пошти."
-      ],
-      "Enable your address again to modify your answer.": [
-        "Активуйте вашу адресу знову, щоб змінити свою відповідь."
-      ],
-      "Enable the email address linked to the disabled calendar to cancel the event.": [
-        "Активуйте адресу електронної пошти, пов'язану з неактивним календарем, щоб скасувати цю подію."
-      ],
-      "Enable the email address linked to the disabled calendar to modify your answer.": [
-        "Активуйте адресу електронної пошти, пов'язану з неактивним календарем, щоб змінити цю подію."
-      ],
-      "Add folder": [
-        "Додати теку"
-      ],
-      "Add label": [
-        "Додати мітку"
-      ],
-      "Folders": [
-        "Теки"
-      ],
-      "Manage your folders": [
-        "Керуйте своїми теками"
-      ],
-      "Labels": [
-        "Мітки"
-      ],
-      "Manage your labels": [
-        "Керувати мітками"
       ]
     },
     "Label": {
@@ -4830,8 +3487,8 @@
       "Keyword": [
         "Ключове слово"
       ],
-      "Location": [
-        "Розташування"
+      "Search in": [
+        "Шукати в"
       ],
       "From": [
         "Від"
@@ -4850,6 +3507,128 @@
       ],
       "Also archive": [
         "Також архівувати"
+      ]
+    },
+    "Placeholder": {
+      "E.g., ": [
+        "Наприклад, "
+      ],
+      "Link": [
+        "Посилання"
+      ],
+      "Fill in the URL link and text to test your link": [
+        "Введіть посилання URL і текст, щоб перевірити ваше посилання"
+      ],
+      "Email address": [
+        "Адреса е-пошти"
+      ],
+      "Fill in the email address and text to test your link": [
+        "Введіть адресу е-пошти і текст, щоб перевірити ваше посилання"
+      ],
+      "Phone number": [
+        "Номер телефону"
+      ],
+      "Fill in the phone number and text to test your link": [
+        "Введіть номер телефону і текст, щоб перевірити ваше посилання"
+      ],
+      "Text": [
+        "Текст"
+      ],
+      "Mailbox password": [
+        "Пароль поштової скриньки"
+      ],
+      "Start typing an email address": [
+        "Почніть вводити адресу е-пошти"
+      ],
+      "Image URL": [
+        "URL-адреса зображення"
+      ],
+      "Search name, email or group": [
+        "Пошук імені, е-пошти чи групи"
+      ],
+      "Filter groups": [
+        "Фільтр груп"
+      ],
+      "Search for name or email": [
+        "Пошук за іменем чи е-поштою"
+      ],
+      "Search for group name": [
+        "Шукати назву групи"
+      ],
+      "Name": [
+        "Назва"
+      ],
+      "OS name": [
+        "Назва ОС"
+      ],
+      "OS version": [
+        "Версія ОС"
+      ],
+      "Proton username": [
+        "Ім'я користувача Proton"
+      ],
+      "A way to contact you": [
+        "Спосіб зв'язку з вами"
+      ],
+      "Please describe the problem and include any error messages": [
+        "Опишіть проблему та додайте повідомлення про помилку"
+      ],
+      "Browser name": [
+        "Назва браузера"
+      ],
+      "Browser version": [
+        "Версія браузера"
+      ],
+      "e.g. Julia Smith": [
+        "наприклад, Джулія Сміт"
+      ],
+      "ZIP": [
+        "Поштовий індекс"
+      ],
+      "Postal code": [
+        "Поштовий індекс"
+      ],
+      "Gift code": [
+        "Подарунковий код"
+      ],
+      "Type text or keyword": [
+        "Введіть текст чи ключове слово"
+      ],
+      "Subject": [
+        "Тема"
+      ],
+      "Write your message": [
+        "Напишіть повідомлення"
+      ],
+      "Password": [
+        "Пароль"
+      ],
+      "Confirm Password": [
+        "Підтвердити пароль"
+      ],
+      "Hint": [
+        "Підказка"
+      ],
+      "Search Messages": [
+        "Шукати повідомлення"
+      ],
+      "Start date": [
+        "Дата початку"
+      ],
+      "End date": [
+        "Дата завершення"
+      ],
+      "Name or email address": [
+        "Назва чи адреса е-пошти"
+      ],
+      "Search messages": [
+        "Шукати повідомлення"
+      ],
+      "Filter folders": [
+        "Фільтр тек"
+      ],
+      "Filter labels": [
+        "Фільтр міток"
       ]
     },
     "Time unit": {
@@ -4888,6 +3667,162 @@
         "${ secondsCountLeft } секунди",
         "${ secondsCountLeft } секунд",
         "${ secondsCountLeft } секунд"
+      ]
+    },
+    "Link": {
+      "Learn more": [
+        "Докладніше"
+      ],
+      "Request an invite": [
+        "Запитати запрошення"
+      ],
+      "clearing your browser cache": [
+        "очищення кешу браузера"
+      ],
+      "Pay invoice": [
+        "Сплатити рахунок"
+      ],
+      "Upgrade account": [
+        "Покращити обліковий запис"
+      ],
+      "Upgrade": [
+        "Покращити"
+      ],
+      "Go to subscription plans": [
+        "Перейти до тарифних планів"
+      ],
+      "click here": [
+        "натисніть тут"
+      ],
+      "Add a gift code": [
+        "Додати подарунковий код"
+      ],
+      "Inbox": [
+        "Вхідні"
+      ],
+      "Drafts": [
+        "Чернетки"
+      ],
+      "Sent": [
+        "Надіслані"
+      ],
+      "Trash": [
+        "Смітник"
+      ],
+      "Spam": [
+        "Спам"
+      ],
+      "All mail": [
+        "Уся пошта"
+      ],
+      "Archive": [
+        "Архів"
+      ],
+      "Starred": [
+        "Із зірочкою"
+      ],
+      "Outbox": [
+        "Вихідні"
+      ],
+      "Scheduled": [
+        "Заплановані"
+      ],
+      "You need to activate your calendar keys to add this event": [
+        "Щоб додати цю подію, вам необхідно активувати свої ключі календаря"
+      ],
+      "You need to activate your calendar keys to manage this invitation": [
+        "Щоб керувати цим запрошенням, вам необхідно активувати свої ключі календаря"
+      ],
+      "You need to activate your calendar keys to answer this invitation": [
+        "Щоб відповісти на це запрошення, вам необхідно активувати свої ключі календаря"
+      ],
+      "You need to activate your calendar keys to see the updated event": [
+        "Щоб переглянути оновлену подію, вам необхідно активувати свої ключі календаря"
+      ],
+      "You need to activate your calendar keys to see the updated invitation": [
+        "Щоб переглянути оновлене запрошення, вам необхідно активувати свої ключі календаря"
+      ],
+      "This ICS file contains more than one event. Please download it and import the events in ${ calendarAppName }": [
+        "Цей ICS-файл містить більше однієї події. Будь ласка, завантажте його та імпортуйте події в ${ calendarAppName }"
+      ],
+      "You need to reactivate your keys to manage this invitation": [
+        "Щоб керувати цим запрошенням, вам необхідно повторно активувати свої ключі"
+      ],
+      "You need to reactivate your keys to see the updated event": [
+        "Щоб переглянути оновлену подію, вам необхідно повторно активувати свої ключі"
+      ],
+      "You need to reactivate your keys to see the updated invitation": [
+        "Щоб переглянути оновлене запрошення, вам необхідно повторно активувати свої ключі"
+      ],
+      "Create a new calendar to add this event": [
+        "Створити новий календар для додавання цієї події"
+      ],
+      "Create a new calendar to answer this invitation": [
+        "Створити новий календар для відповіді на це запрошення"
+      ],
+      "Create a new calendar to manage your invitations": [
+        "Створити новий календар для керування запрошеннями"
+      ],
+      "Open updated event in ${ calendarAppName }": [
+        "Відкрити оновлену подію в ${ calendarAppName }"
+      ],
+      "Open in ${ calendarAppName }": [
+        "Відкрити в ${ calendarAppName }"
+      ],
+      "Re-enable the address linked to this calendar to manage your invitation.": [
+        "Повторно активуйте адресу, пов'язану з цим календарем, щоб керувати вашим запрошенням."
+      ],
+      "Re-enable the address linked to this calendar to update your invitation.": [
+        "Повторно активуйте адресу, пов'язану з цим календарем, щоб оновити ваше запрошення."
+      ],
+      "Enable your address to answer this invitation.": [
+        "Активуйте вашу адресу, щоб відповісти на це запрошення."
+      ],
+      "Create a calendar linked to an active email address.": [
+        "Створіть календар, пов'язаний з активною адресою електронної пошти."
+      ],
+      "Enable an email address linked to one of your calendars.": [
+        "Активуйте адресу електронної пошти, пов'язану з одним з ваших календарів."
+      ],
+      "Or you can delete one of your calendars and create a new one linked to an active email address.": [
+        "Або ви можете видалити один з ваших календарів і створити новий, що пов'язаний з активною адресою електронної пошти."
+      ],
+      "Enable your address again to modify your answer.": [
+        "Активуйте вашу адресу знову, щоб змінити свою відповідь."
+      ],
+      "Enable the email address linked to the disabled calendar to cancel the event.": [
+        "Активуйте адресу електронної пошти, пов'язану з неактивним календарем, щоб скасувати цю подію."
+      ],
+      "Enable the email address linked to the disabled calendar to modify your answer.": [
+        "Активуйте адресу електронної пошти, пов'язану з неактивним календарем, щоб змінити цю подію."
+      ],
+      "Add folder": [
+        "Додати теку"
+      ],
+      "Add label": [
+        "Додати мітку"
+      ],
+      "Folders": [
+        "Теки"
+      ],
+      "Manage your folders": [
+        "Керуйте своїми теками"
+      ],
+      "Labels": [
+        "Мітки"
+      ],
+      "Manage your labels": [
+        "Керувати мітками"
+      ]
+    },
+    "Font Face Default": {
+      "Default": [
+        "Типовий"
+      ]
+    },
+    "Font Size Default": {
+      "Default": [
+        "Типовий"
       ]
     },
     "Hint": {
@@ -5216,6 +4151,30 @@
       ],
       "No verification method available": [
         "Немає доступних способів перевірки"
+      ]
+    },
+    "Label to change density": {
+      "Comfortable": [
+        "Комфортний"
+      ],
+      "Compact": [
+        "Компактний"
+      ]
+    },
+    "Label to change view layout": {
+      "Column": [
+        "Стовпчик"
+      ],
+      "Row": [
+        "Рядок"
+      ]
+    },
+    "Label to change composer mode": {
+      "Normal": [
+        "Звичайний"
+      ],
+      "Maximized": [
+        "Розгорнутий"
       ]
     },
     "Table header": {
@@ -5652,35 +4611,6 @@
         "${ totalImported }/${ totalToImport } контактів зашифровано та додано до вашого списку контактів"
       ]
     },
-    "Select files": {
-      "Upload": [
-        "Вивантажити"
-      ]
-    },
-    "Label to change density": {
-      "Comfortable": [
-        "Комфортний"
-      ],
-      "Compact": [
-        "Компактний"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "Стовпчик"
-      ],
-      "Row": [
-        "Рядок"
-      ]
-    },
-    "Label to change composer mode": {
-      "Normal": [
-        "Звичайний"
-      ],
-      "Maximized": [
-        "Розгорнутий"
-      ]
-    },
     "Loading info": {
       "Connecting to your contacts provider": [
         "Підключення до вашого постачальника контактів"
@@ -5800,11 +4730,11 @@
       "Other category": [
         "Інша категорія"
       ],
-      "Custom folders": [
-        "Власні теки"
-      ],
       "Default folders": [
         "Типові теки"
+      ],
+      "Custom folders": [
+        "Власні теки"
       ],
       "Labels": [
         "Мітки"
@@ -5818,6 +4748,11 @@
     "Label, make it short please": {
       "Attach screenshot(s)": [
         "Додати знімки екрану"
+      ]
+    },
+    "Select files": {
+      "Upload": [
+        "Вивантажити"
       ]
     },
     "Onboarding Proton": {
@@ -6556,6 +5491,1095 @@
         "позначені зірочкою"
       ]
     },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "Пароль повинен містити принаймні ${ length } символ",
+        "Пароль повинен містити принаймні ${ length } символи",
+        "Пароль повинен містити принаймні ${ length } символів",
+        "Пароль повинен містити принаймні ${ length } символів"
+      ]
+    },
+    "file size format": {
+      "bytes": [
+        "байтів"
+      ],
+      "KB": [
+        "КБ"
+      ],
+      "MB": [
+        "МБ"
+      ],
+      "GB": [
+        "ГБ"
+      ]
+    },
+    "Contact field label": {
+      "Name": [
+        "Ім'я"
+      ],
+      "Email": [
+        "Е-пошта"
+      ],
+      "Phone": [
+        "Телефон"
+      ],
+      "Address": [
+        "Адреса"
+      ],
+      "Photo": [
+        "Фото"
+      ],
+      "Organization": [
+        "Організація"
+      ],
+      "Birthday": [
+        "День народження"
+      ],
+      "Anniversary": [
+        "Річниця"
+      ],
+      "Title": [
+        "Назва"
+      ],
+      "Role": [
+        "Роль"
+      ],
+      "Note": [
+        "Нотатка"
+      ],
+      "URL": [
+        "URL"
+      ],
+      "Gender": [
+        "Стать"
+      ],
+      "Language": [
+        "Мова"
+      ],
+      "Timezone": [
+        "Часовий пояс"
+      ],
+      "Geo": [
+        "Геолокація"
+      ],
+      "Logo": [
+        "Логотип"
+      ],
+      "Member": [
+        "Учасник"
+      ]
+    },
+    "Contact type label": {
+      "Work": [
+        "Робочий"
+      ],
+      "Personal": [
+        "Особистий"
+      ],
+      "Mobile": [
+        "Мобільний"
+      ],
+      "Main": [
+        "Основний"
+      ],
+      "Yomi": [
+        "Yomi"
+      ],
+      "Other": [
+        "Інше"
+      ],
+      "Fax": [
+        "Факс"
+      ],
+      "Pager": [
+        "Пейджер"
+      ]
+    },
+    "Property type": {
+      "Email": [
+        "Е-пошта"
+      ],
+      "Home": [
+        "Домашня"
+      ],
+      "Work": [
+        "Робоча"
+      ],
+      "Other": [
+        "Інша"
+      ],
+      "Phone": [
+        "Телефон"
+      ],
+      "Mobile": [
+        "Мобільний"
+      ],
+      "Main": [
+        "Основний"
+      ],
+      "Fax": [
+        "Факс"
+      ],
+      "Pager": [
+        "Пейджер"
+      ],
+      "Address": [
+        "Адреса"
+      ]
+    },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "Адресу е-пошти не знайдено серед ідентифікаторів користувачів, визначених у ключі надсилання (${ keyUserIds })"
+      ]
+    },
+    "Message": {
+      "Re:": [
+        "Re:"
+      ],
+      "Fw:": [
+        "Fw:"
+      ],
+      "On ${ date }, ${ name } ${ address } wrote:": [
+        "${ date }, ${ name } ${ address } пише:"
+      ]
+    },
+    "Default display name vcard": {
+      "Unknown": [
+        "Невідомо"
+      ]
+    },
+    "Import contact. Contact identifier": {
+      "unknown": [
+        "невідомо"
+      ]
+    },
+    "Error importing contact": {
+      "vCard versions < 3.0 not supported": [
+        "vCard версій < 3.0 не підтримуються"
+      ],
+      "Encryption failed": [
+        "Не вдалося зашифрувати"
+      ]
+    },
+    "Error importing calendar": {
+      "An unexpected error occurred. Import must be restarted.": [
+        "Сталася неочікувана помилка. Необхідно перезапустити імпорт."
+      ]
+    },
+    "Error importing contacts": {
+      "An error occurred uploading your file. No file has been selected.": [
+        "Помилка при вивантаженні вашого файлу. Файл не вибрано."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. No .csv or .vcf file selected": [
+        "Виникла помилка при вивантаженні вашого файлу ${ formattedFilename }. Не вибрано файл .csv чи .vcf"
+      ],
+      "Your file ${ formattedFilename } is empty.": [
+        "Ваш файл ${ formattedFilename } порожній."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
+        "Виникла помилка при вивантаженні вашого файлу ${ formattedFilename }. Максимальний розмір файлу ${ MAX_IMPORT_FILE_SIZE_STRING }."
+      ],
+      "Your file ${ formattedFilename } has no contacts to be imported.": [
+        "Ваш файл ${ formattedFilename } не містить контактів для імпортування."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
+        "Ваш файл ${ formattedFilename } містить понад ${ MAX_IMPORT_CONTACTS_STRING } контактів."
+      ],
+      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
+        "Виникла помилка при прочитанні вашого файлу ${ formattedFilename }. Файл має неправильний формат."
+      ]
+    },
+    "Keyboard shortcut section name": {
+      "Basic navigation": [
+        "Основна навігація"
+      ],
+      "Basic actions": [
+        "Основні дії"
+      ],
+      "Folder shortcuts": [
+        "Комбінації клавіш для тек"
+      ],
+      "Composer shortcuts": [
+        "Комбінації клавіш редактора"
+      ],
+      "List shortcuts": [
+        "Перелік комбінацій клавіш"
+      ],
+      "Action shortcuts": [
+        "Комбінації клавіш дій"
+      ],
+      "Message shortcuts": [
+        "Комбінації клавіш для повідомлення"
+      ]
+    },
+    "Keyboard shortcut name": {
+      "Move up": [
+        "Перемістити вгору"
+      ],
+      "Jump to first": [
+        "До першого"
+      ],
+      "Move down": [
+        "Перемістити вниз"
+      ],
+      "Jump to last": [
+        "До останнього"
+      ],
+      "Move right / expand": [
+        "Перемістити вправо / розгорнути"
+      ],
+      "Move left / collapse": [
+        "Перемістити вліво / згорнути"
+      ],
+      "Apply / open": [
+        "Застосувати / відкрити"
+      ],
+      "Cancel / close": [
+        "Скасувати / закрити"
+      ],
+      "Open this modal": [
+        "Відкрити це вікно"
+      ],
+      "Select / unselect": [
+        "Вибрати / прибрати вибір"
+      ],
+      "Go to Inbox": [
+        "Перейти до Вхідних"
+      ],
+      "Go to Archive": [
+        "Перейти до Архіву"
+      ],
+      "Go to Sent": [
+        "Перейти до Надісланих"
+      ],
+      "Go to Starred": [
+        "Перейти до Позначених зірочкою"
+      ],
+      "Go to Drafts": [
+        "Перейти до Чернеток"
+      ],
+      "Go to Trash": [
+        "Перейти до Смітника"
+      ],
+      "Go to Spam": [
+        "Перейти до Спаму"
+      ],
+      "Go to All Mail": [
+        "Перейти до всієї пошти"
+      ],
+      "Save draft": [
+        "Зберегти чернетку"
+      ],
+      "Send email": [
+        "Надіслати лист"
+      ],
+      "Close draft": [
+        "Закрити чернетку"
+      ],
+      "Minimize / maximize composer": [
+        "Згорнути / розгорнути редактор"
+      ],
+      "Expand / contract composer": [
+        "Розширити / зменшити редактор"
+      ],
+      "Attach file": [
+        "Вкласти файл"
+      ],
+      "Add expiration time": [
+        "Додати термін дії"
+      ],
+      "Add encryption": [
+        "Додати шифрування"
+      ],
+      "Discard draft": [
+        "Відхилити чернетку"
+      ],
+      "Open previous message": [
+        "Відкрити попереднє повідомлення"
+      ],
+      "Open next message": [
+        "Відкрити наступне повідомлення"
+      ],
+      "Show unread emails": [
+        "Показати непрочитані листи"
+      ],
+      "Show all emails": [
+        "Показати всі листи"
+      ],
+      "Select / unselect all": [
+        "Вибрати все / прибрати вибір"
+      ],
+      "Search": [
+        "Пошук"
+      ],
+      "New message": [
+        "Нове повідомлення"
+      ],
+      "Star": [
+        "Зірочка"
+      ],
+      "Mark as unread": [
+        "Позначити непрочитаним"
+      ],
+      "Label as...": [
+        "Позначити міткою..."
+      ],
+      "Create filter with...": [
+        "Створити фільтр..."
+      ],
+      "Move to...": [
+        "Перемістити..."
+      ],
+      "Move to Inbox": [
+        "Перемістити до Вхідних"
+      ],
+      "Move to Archive": [
+        "Перемістити до Архіву"
+      ],
+      "Move to Spam": [
+        "Перемістити до Спаму"
+      ],
+      "Move to Trash": [
+        "Перемістити до Смітника"
+      ],
+      "Delete permanently": [
+        "Видалити остаточно"
+      ],
+      "Reply": [
+        "Відповісти"
+      ],
+      "Reply all": [
+        "Відповісти всім"
+      ],
+      "Forward": [
+        "Переслати"
+      ],
+      "Load remote content": [
+        "Звантажувати зовнішній вміст"
+      ],
+      "Load embedded images": [
+        "Завантажити вбудовані зображення"
+      ],
+      "Show original message": [
+        "Показати оригінальне повідомлення"
+      ]
+    },
+    "Calendar status": {
+      "Syncing": [
+        "Синхронізація"
+      ],
+      "Not synced": [
+        "Не синхронізовано"
+      ]
+    },
+    "Calendar subscription not synced error": {
+      "Calendar is syncing": [
+        "Календар синхронізується"
+      ],
+      "More than 12 hours passed since last update": [
+        "Понад 12 годин минуло після попередньої синхронізації"
+      ],
+      "Calendar link is wrong": [
+        "Хибне посилання календаря"
+      ],
+      "Calendar is too big": [
+        "Календар завеликий"
+      ],
+      "Calendar link is not accessible": [
+        "Календар за посиланням недоступний"
+      ],
+      "Failed to sync calendar": [
+        "Не вдалося синхронізувати календар"
+      ],
+      "Calendar link is temporarily inaccessible": [
+        "Посилання календаря тимчасово недоступне"
+      ]
+    },
+    "Attached ics file error": {
+      "Invalid ICS file": [
+        "Недійсний файл ICS"
+      ],
+      "Invalid event": [
+        "Недійсна подія"
+      ],
+      "Unsupported event": [
+        "Непідтримувана подія"
+      ],
+      "Empty ICS file": [
+        "Порожній файл ICS"
+      ],
+      "Unsupported calendar component": [
+        "Непідтримуваний компонент календаря"
+      ],
+      "Invalid method": [
+        "Недійсний спосіб"
+      ]
+    },
+    "Event invitation error": {
+      "Invalid response": [
+        "Недійсна відповідь"
+      ],
+      "Invalid invitation": [
+        "Недійсне запрошення"
+      ],
+      "Unsupported response": [
+        "Непідтримувана відповідь"
+      ],
+      "Unsupported invitation": [
+        "Непідтримуване запрошення"
+      ],
+      "Attached ICS file could not be parsed": [
+        "Не вдається обробити вкладений ICS-файл"
+      ],
+      "Attached ICS file could not be decrypted": [
+        "Не вдається розшифрувати вкладений ICS-файл"
+      ],
+      "We could not retrieve the event from your calendar": [
+        "Не вдається видобути подію з вашого календаря"
+      ],
+      "We could not update the event in your calendar": [
+        "Не вдається оновити подію у вашому календарі"
+      ],
+      "Your answer was sent, but the event could not be added to your calendar": [
+        "Вашу відповідь надіслано, але подію не вдається додати до вашого календаря"
+      ],
+      "Your answer was sent, but the event could not be updated in your calendar": [
+        "Вашу відповідь надіслано, але подію не вдається оновити у вашому календарі"
+      ],
+      "We could not cancel the event in your calendar": [
+        "Не вдається скасувати подію у вашому календарі"
+      ],
+      "Unexpected error": [
+        "Неочікувана помилка"
+      ]
+    },
+    "Error importing event": {
+      "Component with wrong format": [
+        "Компонент з неправильним форматом"
+      ],
+      "Non-Gregorian": [
+        "Не григоріанський"
+      ],
+      "To-do entry": [
+        "Запис завдання"
+      ],
+      "Journal entry": [
+        "Запис журналу"
+      ],
+      "Free-busy time information": [
+        "Інформація про доступність та зайнятість"
+      ],
+      "Custom timezone": [
+        "Власний часовий пояс"
+      ],
+      "Invalid event": [
+        "Недійсна подія"
+      ],
+      "Unsupported event": [
+        "Непідтримувана подія"
+      ],
+      "Malformed all-day event": [
+        "Неправильна подія на цілий день"
+      ],
+      "Missing start time": [
+        "Відсутній час початку"
+      ],
+      "Malformed start time": [
+        "Неправильний час початку"
+      ],
+      "Floating times not supported": [
+        "Гнучкий час не підтримується"
+      ],
+      "Start time out of bounds": [
+        "Час початку поза припустимим діапазоном"
+      ],
+      "Malformed end time": [
+        "Неправильний час завершення"
+      ],
+      "End time out of bounds": [
+        "Час завершення поза припустимими межами"
+      ],
+      "Event duration not supported": [
+        "Тривалість події не підтримується"
+      ],
+      "Calendar timezone not supported": [
+        "Часовий пояс календаря не підтримується"
+      ],
+      "Timezone not supported": [
+        "Часовий пояс не підтримується"
+      ],
+      "Malformed recurring event": [
+        "Неправильна повторювана подія"
+      ],
+      "Recurring rule not supported": [
+        "Правило повторення не підтримується"
+      ],
+      "Edited event not supported": [
+        "Відредагована подія не підтримується"
+      ],
+      "Notification out of bounds": [
+        "Сповіщення поза межами"
+      ],
+      "Event validation failed": [
+        "Не вдалося перевірити подію"
+      ],
+      "Encryption failed": [
+        "Не вдалося зашифрувати"
+      ],
+      "Original recurring event could not be found": [
+        "Не вдається знайти оригінальну повторювану подію"
+      ],
+      "no UID, title or start time": [
+        "немає UID, заголовка або часу початку"
+      ]
+    },
+    "Event title": {
+      "(no title)": [
+        "(без назви)"
+      ]
+    },
+    "Participant name": {
+      "You": [
+        "Ви"
+      ]
+    },
+    "Email subject": {
+      "Invitation for an event on ${ formattedStart }": [
+        "Запрошення на подію ${ formattedStart }"
+      ],
+      "Update for an event on ${ formattedStart }": [
+        "Оновлення для події ${ formattedStart }"
+      ],
+      "Invitation for an event starting on ${ formattedStart }": [
+        "Запрошення на подію, що починається ${ formattedStart }"
+      ],
+      "Update for an event starting on ${ formattedStart }": [
+        "Оновлення для події, що починається ${ formattedStart }"
+      ],
+      "Cancellation of an event on ${ formattedStart }": [
+        "Скасування події ${ formattedStart }"
+      ],
+      "Cancellation of an event starting on ${ formattedStart }": [
+        "Скасування події, що починається ${ formattedStart }"
+      ]
+    },
+    "Email body for invitation (date part)": {
+      "When: ${ formattedStart } (all day)": [
+        "Коли: ${ formattedStart } (увесь день)"
+      ],
+      "When: ${ formattedStart } - ${ formattedEnd }": [
+        "Коли: ${ formattedStart } - ${ formattedEnd }"
+      ],
+      "When: ${ formattedStart }": [
+        "Коли: ${ formattedStart }"
+      ]
+    },
+    "Email body for invitation (location part)": {
+      "Where: ${ eventLocation }": [
+        "Де: ${ eventLocation }"
+      ]
+    },
+    "Email body for description (description part)": {
+      "Description: ${ eventDescription }": [
+        "Опис: ${ eventDescription }"
+      ]
+    },
+    "Email body for invitation": {
+      "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
+        "Вас запрошено на ${ eventTitle }\n${ eventDetailsText }"
+      ],
+      "${ eventTitle } has been updated.\n${ eventDetailsText }": [
+        "${ eventTitle } було оновлено.\n${ eventDetailsText }"
+      ],
+      "${ eventTitle } has been cancelled.": [
+        "${ eventTitle } було скасовано."
+      ]
+    },
+    "Email body for response to invitation": {
+      "${ emailAddress } has accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } приймає ваше запрошення на ${ eventTitle }"
+      ],
+      "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } приймає із сумнівом ваше запрошення на ${ eventTitle }"
+      ],
+      "${ emailAddress } has declined your invitation to ${ eventTitle }": [
+        "${ emailAddress } відхиляє ваше запрошення на ${ eventTitle }"
+      ]
+    },
+    "Monthly recurring event, repeats on": {
+      "on the first Sunday": [
+        "першої неділі"
+      ],
+      "on the first Monday": [
+        "першого понеділка"
+      ],
+      "on the first Tuesday": [
+        "першого вівторка"
+      ],
+      "on the first Wednesday": [
+        "першої середи"
+      ],
+      "on the first Thursday": [
+        "першого четверга"
+      ],
+      "on the first Friday": [
+        "першої п'ятниці"
+      ],
+      "on the first Saturday": [
+        "першої суботи"
+      ],
+      "on the second Sunday": [
+        "другої неділі"
+      ],
+      "on the second Monday": [
+        "другого понеділка"
+      ],
+      "on the second Tuesday": [
+        "другого вівторка"
+      ],
+      "on the second Wednesday": [
+        "другої середи"
+      ],
+      "on the second Thursday": [
+        "другого четверга"
+      ],
+      "on the second Friday": [
+        "другої п'ятниці"
+      ],
+      "on the second Saturday": [
+        "другої суботи"
+      ],
+      "on the third Sunday": [
+        "третьої неділі"
+      ],
+      "on the third Monday": [
+        "третього понеділка"
+      ],
+      "on the third Tuesday": [
+        "третього вівторка"
+      ],
+      "on the third Wednesday": [
+        "третьої середи"
+      ],
+      "on the third Thursday": [
+        "третього четверга"
+      ],
+      "on the third Friday": [
+        "третьої п'ятниці"
+      ],
+      "on the third Saturday": [
+        "третьої суботи"
+      ],
+      "on the fourth Sunday": [
+        "четвертої неділі"
+      ],
+      "on the fourth Monday": [
+        "четвертого понеділка"
+      ],
+      "on the fourth Tuesday": [
+        "четвертого вівторка"
+      ],
+      "on the fourth Wednesday": [
+        "четвертої середи"
+      ],
+      "on the fourth Thursday": [
+        "четвертого четверга"
+      ],
+      "on the fourth Friday": [
+        "четвертої п'ятниці"
+      ],
+      "on the fourth Saturday": [
+        "четвертої суботи"
+      ],
+      "on the last Sunday": [
+        "останньої неділі"
+      ],
+      "on the last Monday": [
+        "останнього понеділка"
+      ],
+      "on the last Tuesday": [
+        "останнього вівторка"
+      ],
+      "on the last Wednesday": [
+        "останньої середи"
+      ],
+      "on the last Thursday": [
+        "останнього четверга"
+      ],
+      "on the last Friday": [
+        "останньої п’ятниці"
+      ],
+      "on the last Saturday": [
+        "останньої суботи"
+      ],
+      "on day ${ dayOfMonth }": [
+        "${ dayOfMonth } дня"
+      ]
+    },
+    "Daily recurring event, frequency": {
+      "${ count } time": [
+        "${ count } раз",
+        "${ count } рази",
+        "${ count } разів",
+        "${ count } разів"
+      ],
+      "until ${ dateString }": [
+        "до ${ dateString }"
+      ],
+      "Daily": [
+        "Щодня"
+      ],
+      "Every ${ interval } day": [
+        "Щодня",
+        "Кожні ${ interval } дні",
+        "Кожні ${ interval } днів",
+        "Кожні ${ interval } днів"
+      ],
+      "Daily, ${ timesString }": [
+        "Щодня, ${ timesString }"
+      ],
+      "Every ${ interval } day, ${ timesString }": [
+        "Щодня, ${ timesString }",
+        "Кожні ${ interval } дні, ${ timesString }",
+        "Кожні ${ interval } днів, ${ timesString }",
+        "Кожні ${ interval } днів, ${ timesString }"
+      ],
+      "Daily, ${ untilString }": [
+        "Щодня, ${ untilString }"
+      ],
+      "Every ${ interval } day, ${ untilString }": [
+        "Щодня, ${ untilString }",
+        "Кожні ${ interval } дні, ${ untilString }",
+        "Кожні ${ interval } днів, ${ untilString }",
+        "Кожні ${ interval } днів, ${ untilString }"
+      ]
+    },
+    "Weekly recurring event, repeats on (multiple days), frequency": {
+      "Sunday": [
+        "Неділя"
+      ],
+      "Monday": [
+        "Понеділок"
+      ],
+      "Tuesday": [
+        "Вівторок"
+      ],
+      "Wednesday": [
+        "Середа"
+      ],
+      "Thursday": [
+        "Четвер"
+      ],
+      "Friday": [
+        "П'ятниця"
+      ],
+      "Saturday": [
+        "Субота"
+      ]
+    },
+    "Weekly recurring event, frequency": {
+      "Weekly on all days": [
+        "Щотижня в усі дні"
+      ],
+      "Every ${ interval } week on all days": [
+        "Кожен ${ interval } тиждень в усі дні",
+        "Кожні ${ interval } тижні в усі дні",
+        "Кожні ${ interval } тижнів в усі дні",
+        "Кожні ${ interval } тижнів в усі дні"
+      ],
+      "Weekly on Sunday": [
+        "Щотижня в неділю"
+      ],
+      "Every ${ interval } week on Sunday": [
+        "Кожен ${ interval } тиждень у неділю",
+        "Кожні ${ interval } тижні у неділю",
+        "Кожні ${ interval } тижнів у неділю",
+        "Кожні ${ interval } тижнів у неділю"
+      ],
+      "Weekly on Monday": [
+        "Щотижня в понеділок"
+      ],
+      "Every ${ interval } week on Monday": [
+        "Кожен ${ interval } тиждень у понеділок",
+        "Кожні ${ interval } тижні у понеділок",
+        "Кожні ${ interval } тижнів у понеділок",
+        "Кожні ${ interval } тижнів у понеділок"
+      ],
+      "Weekly on Tuesday": [
+        "Щотижня у вівторок"
+      ],
+      "Every ${ interval } week on Tuesday": [
+        "Кожен ${ interval } тиждень у вівторок",
+        "Кожні ${ interval } тижні у вівторок",
+        "Кожні ${ interval } тижнів у вівторок",
+        "Кожні ${ interval } тижнів у вівторок"
+      ],
+      "Weekly on Wednesday": [
+        "Щотижня в середу"
+      ],
+      "Every ${ interval } week on Wednesday": [
+        "Кожен ${ interval } тиждень у середу",
+        "Кожні ${ interval } тижні у середу",
+        "Кожні ${ interval } тижнів у середу",
+        "Кожні ${ interval } тижнів у середу"
+      ],
+      "Weekly on Thursday": [
+        "Щотижня у четвер"
+      ],
+      "Every ${ interval } week on Thursday": [
+        "Кожен ${ interval } тиждень у четвер",
+        "Кожні ${ interval } тижні у четвер",
+        "Кожні ${ interval } тижнів у четвер",
+        "Кожні ${ interval } тижнів у четвер"
+      ],
+      "Weekly on Friday": [
+        "Щотижня у п'ятницю"
+      ],
+      "Every ${ interval } week on Friday": [
+        "Кожен ${ interval } тиждень у п'ятницю",
+        "Кожні ${ interval } тижні у п'ятницю",
+        "Кожні ${ interval } тижнів у п'ятницю",
+        "Кожні ${ interval } тижнів у п'ятницю"
+      ],
+      "Weekly on Saturday": [
+        "Щотижня в суботу"
+      ],
+      "Every ${ interval } week on Saturday": [
+        "Кожен ${ interval } тиждень у суботу",
+        "Кожні ${ interval } тижні у суботу",
+        "Кожні ${ interval } тижнів у суботу",
+        "Кожні ${ interval } тижнів у суботу"
+      ],
+      "Weekly on ${ multipleDaysString }": [
+        "Щотижня ${ multipleDaysString }"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }": [
+        "Кожен ${ interval } тиждень ${ multipleDaysString }",
+        "Кожні ${ interval } тижні ${ multipleDaysString }",
+        "Кожні ${ interval } тижнів ${ multipleDaysString }",
+        "Кожні ${ interval } тижнів ${ multipleDaysString }"
+      ],
+      "Weekly on all days, ${ timesString }": [
+        "Щотижня кожен день, ${ timesString }"
+      ],
+      "Every ${ interval } week on all days, ${ timesString }": [
+        "Кожен ${ interval } тиждень щодня, ${ timesString }",
+        "Кожні ${ interval } тижні щодня, ${ timesString }",
+        "Кожні ${ interval } тижнів щодня, ${ timesString }",
+        "Кожні ${ interval } тижнів щодня, ${ timesString }"
+      ],
+      "Weekly on Sunday, ${ timesString }": [
+        "Щотижня у неділю, ${ timesString }"
+      ],
+      "Every ${ interval } week on Sunday, ${ timesString }": [
+        "Кожен ${ interval } тиждень у неділю, ${ timesString }",
+        "Кожні ${ interval } тижні у неділю, ${ timesString }",
+        "Кожні ${ interval } тижнів у неділю, ${ timesString }",
+        "Кожні ${ interval } тижнів у неділю, ${ timesString }"
+      ],
+      "Weekly on Monday, ${ timesString }": [
+        "Щотижня у понеділок, ${ timesString }"
+      ],
+      "Every ${ interval } week on Monday, ${ timesString }": [
+        "Кожен ${ interval } тиждень у понеділок, ${ timesString }",
+        "Кожні ${ interval } тижні у понеділок, ${ timesString }",
+        "Кожні ${ interval } тижнів у понеділок, ${ timesString }",
+        "Кожні ${ interval } тижнів у понеділок, ${ timesString }"
+      ],
+      "Weekly on Tuesday, ${ timesString }": [
+        "Щотижня у вівторок, ${ timesString }"
+      ],
+      "Every ${ interval } week on Tuesday, ${ timesString }": [
+        "Кожен ${ interval } тиждень у вівторок, ${ timesString }",
+        "Кожні ${ interval } тижні у вівторок, ${ timesString }",
+        "Кожні ${ interval } тижнів у вівторок, ${ timesString }",
+        "Кожні ${ interval } тижнів у вівторок, ${ timesString }"
+      ],
+      "Weekly on Wednesday, ${ timesString }": [
+        "Щотижня у середу, ${ timesString }"
+      ],
+      "Every ${ interval } week on Wednesday, ${ timesString }": [
+        "Кожен ${ interval } тиждень у середу, ${ timesString }",
+        "Кожні ${ interval } тижні у середу, ${ timesString }",
+        "Кожні ${ interval } тижнів у середу, ${ timesString }",
+        "Кожні ${ interval } тижнів у середу, ${ timesString }"
+      ],
+      "Weekly on Thursday, ${ timesString }": [
+        "Щотижня у четвер, ${ timesString }"
+      ],
+      "Every ${ interval } week on Thursday, ${ timesString }": [
+        "Кожен ${ interval } тиждень у четвер, ${ timesString }",
+        "Кожні ${ interval } тижні у четвер, ${ timesString }",
+        "Кожні ${ interval } тижнів у четвер, ${ timesString }",
+        "Кожні ${ interval } тижнів у четвер, ${ timesString }"
+      ],
+      "Weekly on Friday, ${ timesString }": [
+        "Щотижня у п'ятницю, ${ timesString }"
+      ],
+      "Every ${ interval } week on Friday, ${ timesString }": [
+        "Кожен ${ interval } тиждень у п'ятницю, ${ timesString }",
+        "Кожні ${ interval } тижні у п'ятницю, ${ timesString }",
+        "Кожні ${ interval } тижнів у п'ятницю, ${ timesString }",
+        "Кожні ${ interval } тижнів у п'ятницю, ${ timesString }"
+      ],
+      "Weekly on Saturday, ${ timesString }": [
+        "Щотижня у суботу, ${ timesString }"
+      ],
+      "Every ${ interval } week on Saturday, ${ timesString }": [
+        "Кожен ${ interval } тиждень у суботу, ${ timesString }",
+        "Кожні ${ interval } тижні у суботу, ${ timesString }",
+        "Кожні ${ interval } тижнів у суботу, ${ timesString }",
+        "Кожні ${ interval } тижнів у суботу, ${ timesString }"
+      ],
+      "Weekly on ${ multipleDaysString }, ${ timesString }": [
+        "Щотижня ${ multipleDaysString }, ${ timesString }"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
+        "Кожен ${ interval } тиждень ${ multipleDaysString }, ${ timesString }",
+        "Кожні ${ interval } тижні ${ multipleDaysString }, ${ timesString }",
+        "Кожні ${ interval } тижнів ${ multipleDaysString }, ${ timesString }",
+        "Кожні ${ interval } тижнів ${ multipleDaysString }, ${ timesString }"
+      ],
+      "Weekly on all days, ${ untilString }": [
+        "Щотижня кожен день, ${ untilString }"
+      ],
+      "Every ${ interval } week on all days, ${ untilString }": [
+        "Кожен ${ interval } тиждень щодня, ${ untilString }",
+        "Кожні ${ interval } тижні щодня, ${ untilString }",
+        "Кожні ${ interval } тижнів щодня, ${ untilString }",
+        "Кожні ${ interval } тижнів щодня, ${ untilString }"
+      ],
+      "Weekly on Sunday, ${ untilString }": [
+        "Щотижня в неділю, ${ untilString }"
+      ],
+      "Every ${ interval } week on Sunday, ${ untilString }": [
+        "Кожен ${ interval } тиждень у неділю, ${ untilString }",
+        "Кожні ${ interval } тижні у неділю, ${ untilString }",
+        "Кожні ${ interval } тижнів у неділю, ${ untilString }",
+        "Кожні ${ interval } тижнів у неділю, ${ untilString }"
+      ],
+      "Weekly on Monday, ${ untilString }": [
+        "Щотижня в понеділок, ${ untilString }"
+      ],
+      "Every ${ interval } week on Monday, ${ untilString }": [
+        "Кожен ${ interval } тиждень у понеділок, ${ untilString }",
+        "Кожні ${ interval } тижні у понеділок, ${ untilString }",
+        "Кожні ${ interval } тижнів у понеділок, ${ untilString }",
+        "Кожні ${ interval } тижнів у понеділок, ${ untilString }"
+      ],
+      "Weekly on Tuesday, ${ untilString }": [
+        "Щотижня у вівторок, ${ untilString }"
+      ],
+      "Every ${ interval } week on Tuesday, ${ untilString }": [
+        "Кожен ${ interval } тиждень у вівторок, ${ untilString }",
+        "Кожні ${ interval } тижні у вівторок, ${ untilString }",
+        "Кожні ${ interval } тижнів у вівторок, ${ untilString }",
+        "Кожні ${ interval } тижнів у вівторок, ${ untilString }"
+      ],
+      "Weekly on Wednesday, ${ untilString }": [
+        "Щотижня у середу, ${ untilString }"
+      ],
+      "Every ${ interval } week on Wednesday, ${ untilString }": [
+        "Кожен ${ interval } тиждень у середу, ${ untilString }",
+        "Кожні ${ interval } тижні у середу, ${ untilString }",
+        "Кожні ${ interval } тижнів у середу, ${ untilString }",
+        "Кожні ${ interval } тижнів у середу, ${ untilString }"
+      ],
+      "Weekly on Thursday, ${ untilString }": [
+        "Щотижня у четвер, ${ untilString }"
+      ],
+      "Every ${ interval } week on Thursday, ${ untilString }": [
+        "Кожен ${ interval } тиждень у четвер, ${ untilString }",
+        "Кожні ${ interval } тижні у четвер, ${ untilString }",
+        "Кожні ${ interval } тижнів у четвер, ${ untilString }",
+        "Кожні ${ interval } тижнів у четвер, ${ untilString }"
+      ],
+      "Weekly on Friday, ${ untilString }": [
+        "Щотижня в п'ятницю, ${ untilString }"
+      ],
+      "Every ${ interval } week on Friday, ${ untilString }": [
+        "Кожен ${ interval } тиждень у п'ятницю, ${ untilString }",
+        "Кожні ${ interval } тижні у п'ятницю, ${ untilString }",
+        "Кожні ${ interval } тижнів у п'ятницю, ${ untilString }",
+        "Кожні ${ interval } тижнів у п'ятницю, ${ untilString }"
+      ],
+      "Weekly on Saturday, ${ untilString }": [
+        "Щотижня в суботу, ${ untilString }"
+      ],
+      "Every ${ interval } week on Saturday, ${ untilString }": [
+        "Кожен ${ interval } тиждень у суботу, ${ untilString }",
+        "Кожні ${ interval } тижні у суботу, ${ untilString }",
+        "Кожні ${ interval } тижнів у суботу, ${ untilString }",
+        "Кожні ${ interval } тижнів у суботу, ${ untilString }"
+      ],
+      "Weekly on ${ multipleDaysString }, ${ untilString }": [
+        "Щотижня в ${ multipleDaysString }, ${ untilString }"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
+        "Кожен ${ interval } тиждень у ${ multipleDaysString }, ${ untilString }",
+        "Кожні ${ interval } тижні у ${ multipleDaysString }, ${ untilString }",
+        "Кожні ${ interval } тижнів у ${ multipleDaysString }, ${ untilString }",
+        "Кожні ${ interval } тижнів у ${ multipleDaysString }, ${ untilString }"
+      ]
+    },
+    "Monthly recurring event, frequency": {
+      "Monthly ${ onDayString }": [
+        "Щомісяця ${ onDayString }"
+      ],
+      "Every ${ interval } month ${ onDayString }": [
+        "Кожен ${ interval } місяць ${ onDayString }",
+        "Кожні ${ interval } місяці ${ onDayString }",
+        "Кожні ${ interval } місяців ${ onDayString }",
+        "Кожні ${ interval } місяців ${ onDayString }"
+      ],
+      "Monthly ${ onDayString }, ${ timesString }": [
+        "Щомісяця ${ onDayString }, ${ timesString }"
+      ],
+      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
+        "Кожен ${ interval } місяць ${ onDayString }, ${ timesString }",
+        "Кожні ${ interval } місяці ${ onDayString }, ${ timesString }",
+        "Кожні ${ interval } місяців ${ onDayString }, ${ timesString }",
+        "Кожні ${ interval } місяців ${ onDayString }, ${ timesString }"
+      ],
+      "Monthly ${ onDayString }, ${ untilString }": [
+        "Щомісяця ${ onDayString }, ${ untilString }"
+      ],
+      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
+        "Кожен ${ interval } місяць ${ onDayString }, ${ untilString }",
+        "Кожні ${ interval } місяці ${ onDayString }, ${ untilString }",
+        "Кожні ${ interval } місяців ${ onDayString }, ${ untilString }",
+        "Кожні ${ interval } місяців ${ onDayString }, ${ untilString }"
+      ]
+    },
+    "Yearly recurring event, frequency": {
+      "Yearly": [
+        "Щороку"
+      ],
+      "Every ${ interval } year": [
+        "Кожен ${ interval } рік",
+        "Кожні ${ interval } роки",
+        "Кожні ${ interval } років",
+        "Кожні ${ interval } років"
+      ],
+      "Yearly, ${ timesString }": [
+        "Щороку, ${ timesString }"
+      ],
+      "Every ${ interval } year, ${ timesString }": [
+        "Кожен ${ interval } рік, ${ timesString }",
+        "Кожні ${ interval } роки, ${ timesString }",
+        "Кожні ${ interval } років, ${ timesString }",
+        "Кожні ${ interval } років, ${ timesString }"
+      ],
+      "Yearly, ${ untilString }": [
+        "Щороку, ${ untilString }"
+      ],
+      "Every ${ interval } year, ${ untilString }": [
+        "Кожен ${ interval } рік, ${ untilString }",
+        "Кожні ${ interval } роки, ${ untilString }",
+        "Кожні ${ interval } років, ${ untilString }",
+        "Кожні ${ interval } років, ${ untilString }"
+      ]
+    },
     "Mailbox": {
       "Inbox": [
         "Вхідні"
@@ -6578,8 +6602,8 @@
       "Scheduled": [
         "Заплановані"
       ],
-      "All": [
-        "Усі"
+      "All mail": [
+        "Уся пошта"
       ],
       "Starred": [
         "Із зірочкою"
@@ -7015,6 +7039,12 @@
     "Spotlight": {
       "You can now schedule your messages to be sent later": [
         "Тепер ви можете планувати надсилання повідомлень"
+      ],
+      "Tracker protection": [
+        "Захист від стеження"
+      ],
+      "Proton blocked email trackers in this message in order to protect your privacy": [
+        "Proton заблокував елементи стеження в цьому листі з метою захисту вашої приватності"
       ]
     },
     "Message image": {
@@ -7099,12 +7129,6 @@
       "Organizer:": [
         "Організатор:"
       ],
-      "${ totalAttendees } Participant": [
-        "${ totalAttendees } учасник",
-        "${ totalAttendees } учасники",
-        "${ totalAttendees } учасників",
-        "${ totalAttendees } учасників"
-      ],
       "Repeats": [
         "Повторювання"
       ],
@@ -7116,6 +7140,12 @@
       ],
       "Participants": [
         "Учасники"
+      ],
+      "${ totalAttendees } participant": [
+        "${ totalAttendees } учасник",
+        "${ totalAttendees } учасники",
+        "${ totalAttendees } учасників",
+        "${ totalAttendees } учасника"
       ]
     },
     "Attachment signature verification": {

@@ -29,7 +29,7 @@
       "Calendar link is not accessible": [
         ""
       ],
-      "Calendar link is temporarily unaccessible": [
+      "Calendar link is temporarily inaccessible": [
         ""
       ],
       "Failed to sync calendar": [
@@ -571,11 +571,11 @@
       "No results found": [
         "Hasil tidak ada"
       ],
-      "Week": [
-        "Pekan"
-      ],
       "Loading": [
         "Memuat"
+      ],
+      "Week": [
+        "Pekan"
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Tautan ini mungkin serangan homograf dan tidak dapat dibuka oleh peramban Internet Explorer dan Edge. Jika Anda yakin tautan tersebut absah, silahkan gunakan peramban lain untuk membukanya."
@@ -730,12 +730,6 @@
       "* Customizable features": [
         "* Fitur yang dapat disesuaikan"
       ],
-      "Access your streaming services, like ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, no matter where you are.": [
-        "Akses layanan tontonan Anda, seperti ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, di mana pun Anda berada."
-      ],
-      "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
-        "Akses konten terblokir, seperti sosial media, berita, Wikipedia, YouTube, dan masih banyak lagi, di mana pun Anda berada."
-      ],
       "For getting started with private and secure emailing.": [
         "Untuk memulai pengiriman surel dengan privat dan aman."
       ],
@@ -759,6 +753,12 @@
       ],
       "For families and small teams; includes both Mail and VPN.": [
         "Untuk keluarga dan tim kecil; termasuk Mail dan VPN."
+      ],
+      "Access your streaming services, like ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, no matter where you are.": [
+        "Akses layanan tontonan Anda, seperti ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, di mana pun Anda berada."
+      ],
+      "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
+        "Akses konten terblokir, seperti sosial media, berita, Wikipedia, YouTube, dan masih banyak lagi, di mana pun Anda berada."
       ],
       "Save 20%": [
         "Hemat 20%"
@@ -1068,6 +1068,12 @@
       ],
       "Loading events": [
         "Memuat acara"
+      ],
+      "The organizer could not be notified that you changed your answer:": [
+        ""
+      ],
+      "The organizer cannot be notified that you want to change your answer:": [
+        ""
       ],
       "The organizer cannot be notified that you decline the invitation:": [
         "Penyelenggara tidak dapat diberitahu saat Anda menolak undangan:"
@@ -1443,14 +1449,14 @@
       "A group with this name already exists": [
         "Grup dengan nama ini sudah ada"
       ],
-      "Primary address key is not decrypted": [
-        "Kunci alamat utama tidak didekripsi"
-      ],
       "We were unable to connect to your service provider.": [
         ""
       ],
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         ""
+      ],
+      "Primary address key is not decrypted": [
+        "Kunci alamat utama tidak didekripsi"
       ],
       "No valid address found": [
         "Tidak ditemukan alamat valid"
@@ -2031,12 +2037,6 @@
       "Back": [
         "Kembali"
       ],
-      "Use ${ label } theme": [
-        "Gunakan tema ${ label }"
-      ],
-      "OK": [
-        "OK"
-      ],
       "Log in": [
         "Masuk"
       ],
@@ -2063,6 +2063,12 @@
       ],
       "Edit phone number": [
         "Edit nomor telepon"
+      ],
+      "Use ${ label } theme": [
+        "Gunakan tema ${ label }"
+      ],
+      "OK": [
+        "OK"
       ],
       "Clear": [
         "Bersihkan"
@@ -2402,9 +2408,6 @@
       "Give feedback": [
         "Berikan umpan balik"
       ],
-      "Select a theme": [
-        "Pilih tema"
-      ],
       "Sign in again to continue": [
         "Masuk lagi untuk melanjutkan"
       ],
@@ -2422,6 +2425,9 @@
       ],
       "Human verification": [
         "Verifikasi manusia"
+      ],
+      "Select a theme": [
+        "Pilih tema"
       ],
       "Report a problem": [
         "Laporkan sebuah masalah"
@@ -2495,8 +2501,8 @@
       "Amount due": [
         "Jumlah jatuh tempo"
       ],
-      "Cancel subscription": [
-        "Batalkan berlangganan"
+      "Downgrade account": [
+        ""
       ],
       "Network error": [
         "Kesalahan jaringan"
@@ -2790,6 +2796,11 @@
         "Edit acara"
       ]
     },
+    "PGP key encryption warning": {
+      "Key cannot be used for encryption": [
+        "Kunci tidak dapat digunakan untuk enkripsi"
+      ]
+    },
     "Storage": {
       "Your current storage:": [
         "Penyimpanan Anda saat ini:"
@@ -2799,11 +2810,6 @@
       ],
       "Release notes": [
         "Catatan rilis"
-      ]
-    },
-    "PGP key encryption warning": {
-      "Key cannot be used for encryption": [
-        "Kunci tidak dapat digunakan untuk enkripsi"
       ]
     },
     "Label": {
@@ -3083,7 +3089,7 @@
       "Your calendars": [
         "Kalender Anda"
       ],
-      "Participant": [
+      "participant": [
         ""
       ]
     },
@@ -4538,11 +4544,6 @@
         "Catatan: layanan akan dimuat setelah Anda menekan tombol Terapkan."
       ]
     },
-    "Select files": {
-      "Upload": [
-        "Unggah"
-      ]
-    },
     "Loading info": {
       "Connecting to your contacts provider": [
         ""
@@ -4562,6 +4563,11 @@
     "Confirm modal title": {
       "Quit import?": [
         ""
+      ]
+    },
+    "Select files": {
+      "Upload": [
+        "Unggah"
       ]
     },
     "Message display when a new app version is available": {
@@ -4703,11 +4709,6 @@
     "Placeholder for contact with no name": {
       "(No name)": [
         "(Tanpa nama)"
-      ]
-    },
-    "Reply to calendar invitation": {
-      "Cannot send to organizer address: ${ apiErrorMessage }": [
-        "Tidak dapat mengirim ke alamat penyelenggara: ${ apiErrorMessage }"
       ]
     },
     "Modal title": {

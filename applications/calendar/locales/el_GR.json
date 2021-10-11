@@ -29,7 +29,7 @@
       "Calendar link is not accessible": [
         ""
       ],
-      "Calendar link is temporarily unaccessible": [
+      "Calendar link is temporarily inaccessible": [
         ""
       ],
       "Failed to sync calendar": [
@@ -608,11 +608,11 @@
       "No results found": [
         "Δεν βρέθηκαν αποτελέσματα"
       ],
-      "Week": [
-        "Εβδομάδα"
-      ],
       "Loading": [
         "Φόρτωση"
+      ],
+      "Week": [
+        "Εβδομάδα"
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Αυτός ο σύνδεσμος μπορεί να είναι επίθεση ομογραφίας και δεν μπορεί να ανοίξει από προγράμματα περιήγησης Internet Explorer και Edge. Εάν είστε βέβαιοι ότι ο σύνδεσμος είναι αυθεντικός, χρησιμοποιήστε ένα διαφορετικό πρόγραμμα περιήγησης για να το ανοίξετε."
@@ -769,12 +769,6 @@
       "* Customizable features": [
         "*Προσαρμοσμένες λειτουργίες"
       ],
-      "Access your streaming services, like ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, no matter where you are.": [
-        "Πρόσβαση στις υπηρεσίες streaming, όπως ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, ανεξάρτητα από το πού βρίσκεστε."
-      ],
-      "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
-        "Πρόσβαση σε μπλοκαρισμένο περιεχόμενο, όπως μέσα κοινωνικής δικτύωσης, ειδήσεις, Wikipedia, YouTube, και πολλά άλλα, ανεξάρτητα από το πού βρίσκεστε."
-      ],
       "For getting started with private and secure emailing.": [
         ""
       ],
@@ -798,6 +792,12 @@
       ],
       "For families and small teams; includes both Mail and VPN.": [
         ""
+      ],
+      "Access your streaming services, like ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, no matter where you are.": [
+        "Πρόσβαση στις υπηρεσίες streaming, όπως ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, ανεξάρτητα από το πού βρίσκεστε."
+      ],
+      "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
+        "Πρόσβαση σε μπλοκαρισμένο περιεχόμενο, όπως μέσα κοινωνικής δικτύωσης, ειδήσεις, Wikipedia, YouTube, και πολλά άλλα, ανεξάρτητα από το πού βρίσκεστε."
       ],
       "Save 20%": [
         "Εξοικονομήστε 20%"
@@ -1113,6 +1113,12 @@
       ],
       "Loading events": [
         "Φόρτωση γεγονότων"
+      ],
+      "The organizer could not be notified that you changed your answer:": [
+        ""
+      ],
+      "The organizer cannot be notified that you want to change your answer:": [
+        ""
       ],
       "The organizer cannot be notified that you decline the invitation:": [
         "Ο διοργανωτής δεν μπορεί να ειδοποιηθεί ότι απορρίπτετε την πρόσκληση:"
@@ -1490,14 +1496,14 @@
       "A group with this name already exists": [
         "Υπάρχει ήδη μια ομάδα με αυτό το όνομα"
       ],
-      "Primary address key is not decrypted": [
-        "Το κύριο κλειδί διεύθυνσης δεν αποκρυπτογραφείται"
-      ],
       "We were unable to connect to your service provider.": [
         ""
       ],
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         ""
+      ],
+      "Primary address key is not decrypted": [
+        "Το κύριο κλειδί διεύθυνσης δεν αποκρυπτογραφείται"
       ],
       "No valid address found": [
         "Δεν βρέθηκε έγκυρη διεύθυνση"
@@ -2083,12 +2089,6 @@
       "Back": [
         "Πίσω"
       ],
-      "Use ${ label } theme": [
-        "Χρήση ${ label } θέματος"
-      ],
-      "OK": [
-        "ΟΚ"
-      ],
       "Log in": [
         "Είσοδος"
       ],
@@ -2115,6 +2115,12 @@
       ],
       "Edit phone number": [
         "Επεξεργασία αριθμού τηλεφώνου"
+      ],
+      "Use ${ label } theme": [
+        "Χρήση ${ label } θέματος"
+      ],
+      "OK": [
+        "ΟΚ"
       ],
       "Clear": [
         "Καθαρισμός"
@@ -2456,9 +2462,6 @@
       "Give feedback": [
         ""
       ],
-      "Select a theme": [
-        ""
-      ],
       "Sign in again to continue": [
         "Συνδεθείτε ξανά για να συνεχίσετε"
       ],
@@ -2476,6 +2479,9 @@
       ],
       "Human verification": [
         "Ανθρώπινη Επαλήθευση"
+      ],
+      "Select a theme": [
+        ""
       ],
       "Report a problem": [
         "Αναφορά προβλήματος"
@@ -2549,8 +2555,8 @@
       "Amount due": [
         "Οφειλόμενο ποσό"
       ],
-      "Cancel subscription": [
-        "Ακυρώστε τη συνδρομή"
+      "Downgrade account": [
+        ""
       ],
       "Network error": [
         "Σφάλμα δικτύου"
@@ -2848,6 +2854,11 @@
         "Επεξεργασία γεγονότος"
       ]
     },
+    "PGP key encryption warning": {
+      "Key cannot be used for encryption": [
+        ""
+      ]
+    },
     "Storage": {
       "Your current storage:": [
         ""
@@ -2857,11 +2868,6 @@
       ],
       "Release notes": [
         "Σημειώσεις έκδοσης"
-      ]
-    },
-    "PGP key encryption warning": {
-      "Key cannot be used for encryption": [
-        ""
       ]
     },
     "Label": {
@@ -3141,7 +3147,7 @@
       "Your calendars": [
         "Τα ημερολόγια σας"
       ],
-      "Participant": [
+      "participant": [
         "",
         ""
       ]
@@ -4626,11 +4632,6 @@
         ""
       ]
     },
-    "Select files": {
-      "Upload": [
-        "Μεταφόρτωση"
-      ]
-    },
     "Loading info": {
       "Connecting to your contacts provider": [
         ""
@@ -4650,6 +4651,11 @@
     "Confirm modal title": {
       "Quit import?": [
         ""
+      ]
+    },
+    "Select files": {
+      "Upload": [
+        "Μεταφόρτωση"
       ]
     },
     "Message display when a new app version is available": {
@@ -4811,11 +4817,6 @@
     "Placeholder for contact with no name": {
       "(No name)": [
         ""
-      ]
-    },
-    "Reply to calendar invitation": {
-      "Cannot send to organizer address: ${ apiErrorMessage }": [
-        "Αδυναμία αποστολής στη διεύθυνση του διοργανωτή: ${ apiErrorMessage }"
       ]
     },
     "Modal title": {

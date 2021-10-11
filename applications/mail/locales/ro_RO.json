@@ -5,87 +5,7 @@
   },
   "contexts": {
     "": {},
-    "Message": {
-      "Re:": [
-        "Re:"
-      ],
-      "Fw:": [
-        "Fw:"
-      ],
-      "On ${ date }, ${ name } ${ address } wrote:": [
-        "${ name } ${ address } - ${ date } a scris:"
-      ]
-    },
     "Error": {
-      "Email address disabled": [
-        "Adresă de e-mail dezactivată"
-      ],
-      "No keys retrieved for internal user": [
-        "Nicio cheie preluată pentru utilizatorul intern"
-      ],
-      "No valid keys retrieved for internal user": [
-        "Nicio cheie validă preluată pentru utilizatorul intern"
-      ],
-      "Contact signature could not be verified": [
-        "Semnătura contactului nu a putut fi verificată"
-      ],
-      "No key retrieved for internal user is valid for sending": [
-        "Nicio cheie preluată pentru utilizatorul intern nu este valabilă pentru trimitere"
-      ],
-      "Trusted keys are not valid for sending": [
-        "Cheile de încredere nu sunt valide pentru trimitere"
-      ],
-      "No WKD key retrieved for user is valid for sending": [
-        "Nicio cheie WKD recuperată pentru utilizator nu este validă pentru trimitere"
-      ],
-      "The sending key is not valid": [
-        "Cheia de trimitere nu este validă"
-      ],
-      "This field is required": [
-        "Acest câmp este obligatoriu"
-      ],
-      "This field requires a minimum of ${ minimumLength } characters.": [
-        "Acest câmp necesită un minimum de ${ minimumLength } caractere."
-      ],
-      "Email is not valid": [
-        "E-mailul nu este valid"
-      ],
-      "Not a valid number": [
-        "Nu este un număr valid"
-      ],
-      "Passwords do not match": [
-        "Parolele nu coincid"
-      ],
-      "Request timed out.": [
-        "Solicitarea a expirat."
-      ],
-      "Missing signature": [
-        "Semnătură lipsă"
-      ],
-      "Contact signature not verified": [
-        "Semnătura contactului nu a fost verificată"
-      ],
-      "Signature not verified": [
-        "Semnătură neverificată"
-      ],
-      "Invalid name": [
-        "Nume nevalid"
-      ],
-      "The key properties for ${ emailAddress } could not be extracted": [
-        "Proprietățile cheii pentru ${ emailAddress } nu au putut fi extrase"
-      ],
-      "Signature verification failed": [
-        "Eșuare verificare semnătură"
-      ],
-      "Could not find address ${ email }.": [
-        "Nu s-a putut găsi adresa ${ email }."
-      ],
-      "Address primary private key not found": [
-        "Nu s-a găsit adresa cheii private primare"
-      ],
-      "Calendar primary private key is not decrypted": [
-        "Cheia privată primară a calendarului nu este decriptată"
-      ],
       "Unknown error": [
         "Eroare necunoscută"
       ],
@@ -101,17 +21,20 @@
       "Authentication error.": [
         "Eroare autentificare."
       ],
+      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
+        "Navigatorul folosit nu permite autorizarea completă a plății. Folosiți un alt navigator sau conectați-vă de pe un calculator."
+      ],
+      "Email address invalid": [
+        "Adresă de e-mail nevalidă"
+      ],
+      "This field is required": [
+        "Acest câmp este obligatoriu"
+      ],
       "The composer failed to load.": [
         "Editorul de mesaje nu a putut fi încărcat."
       ],
       "Please refresh the page.": [
         "Reîmprospătați pagina."
-      ],
-      "Email address invalid": [
-        "Adresă de e-mail nevalidă"
-      ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "Navigatorul folosit nu permite autorizarea completă a plății. Folosiți un alt navigator sau conectați-vă de pe un calculator."
       ],
       "Incorrect mailbox password. Please try again": [
         "Parolă căsuță mesaje incorectă. Mai reîncercaţi."
@@ -130,6 +53,9 @@
       ],
       "Invalid verification code": [
         "Cod de verificare nevalid"
+      ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "Ceva nu a funcționat bine, ${ refresh } pagina pentru a continua. Dacă mai vedeți acest mesaj de eroare contactați ${ supportTeam }."
       ],
       "Some groups could not be deleted": [
         "Unele grupuri nu s-au putut șterge."
@@ -174,17 +100,17 @@
       "A group with this name already exists": [
         "Un grup cu acest nume există deja"
       ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Ceva nu a funcționat bine, ${ refresh } pagina pentru a continua. Dacă mai vedeți acest mesaj de eroare contactați ${ supportTeam }."
-      ],
-      "File has no contents to preview": [
-        "Fișierul nu are conținut de afișat"
+      "Invalid name": [
+        "Nume nevalid"
       ],
       "We were unable to connect to your service provider.": [
         "Nu s-a reușit conectarea la furnizorul dvs. de servicii."
       ],
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         "Încercați să vă reautentificați și asigurați-vă că permisiunile sunt setate corect."
+      ],
+      "File has no contents to preview": [
+        "Fișierul nu are conținut de afișat"
       ],
       "Process aborted": [
         "Proces abandonat."
@@ -263,6 +189,69 @@
       ],
       "Require at least one action": [
         "Necesită cel puțin o acțiune"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Acest câmp necesită un minimum de ${ minimumLength } caractere."
+      ],
+      "Email is not valid": [
+        "E-mailul nu este valid"
+      ],
+      "Not a valid number": [
+        "Nu este un număr valid"
+      ],
+      "Passwords do not match": [
+        "Parolele nu coincid"
+      ],
+      "Request timed out.": [
+        "Solicitarea a expirat."
+      ],
+      "Signature verification failed": [
+        "Eșuare verificare semnătură"
+      ],
+      "Could not find address ${ email }.": [
+        "Nu s-a putut găsi adresa ${ email }."
+      ],
+      "Email address disabled": [
+        "Adresă de e-mail dezactivată"
+      ],
+      "No keys retrieved for internal user": [
+        "Nicio cheie preluată pentru utilizatorul intern"
+      ],
+      "No valid keys retrieved for internal user": [
+        "Nicio cheie validă preluată pentru utilizatorul intern"
+      ],
+      "Contact signature could not be verified": [
+        "Semnătura contactului nu a putut fi verificată"
+      ],
+      "No key retrieved for internal user is valid for sending": [
+        "Nicio cheie preluată pentru utilizatorul intern nu este valabilă pentru trimitere"
+      ],
+      "Trusted keys are not valid for sending": [
+        "Cheile de încredere nu sunt valide pentru trimitere"
+      ],
+      "No WKD key retrieved for user is valid for sending": [
+        "Nicio cheie WKD recuperată pentru utilizator nu este validă pentru trimitere"
+      ],
+      "The sending key is not valid": [
+        "Cheia de trimitere nu este validă"
+      ],
+      "Missing signature": [
+        "Semnătură lipsă"
+      ],
+      "Contact signature not verified": [
+        "Semnătura contactului nu a fost verificată"
+      ],
+      "Signature not verified": [
+        "Semnătură neverificată"
+      ],
+      "The key properties for ${ emailAddress } could not be extracted": [
+        "Proprietățile cheii pentru ${ emailAddress } nu au putut fi extrase"
+      ],
+      "Address primary private key not found": [
+        "Nu s-a găsit adresa cheii private primare"
+      ],
+      "Calendar primary private key is not decrypted": [
+        "Cheia privată primară a calendarului nu este decriptată"
       ],
       "You did not provide a file.": [
         "Nu ați furnizat un fișier."
@@ -384,177 +373,1411 @@
         "Prea multe filtre active. Trebuie să treceți la un plan cu plată pentru a putea activa mai multe filtre."
       ]
     },
-    "file size format": {
-      "bytes": [
-        "octeți"
+    "Action": {
+      "Close": [
+        "Închidere"
       ],
-      "KB": [
-        "KB"
+      "Use “${ label }” setting": [
+        "Folosire setarea „${ label }”"
       ],
-      "MB": [
-        "MB"
+      "More info: ${ safeTitle }": [
+        "Mai multe informații: ${ safeTitle }"
       ],
-      "GB": [
-        "GB"
+      "Cancel": [
+        "Anulare"
+      ],
+      "Submit": [
+        "Trimite"
+      ],
+      "Close modal": [
+        "Închidere"
+      ],
+      "Confirm": [
+        "Confirmare"
+      ],
+      "Save": [
+        "Salvare"
+      ],
+      "Upload picture": [
+        "Încărcare imagine"
+      ],
+      "Insert": [
+        "Inserare"
+      ],
+      "Font": [
+        "Font"
+      ],
+      "Size": [
+        "Mărime"
+      ],
+      "Color": [
+        "Culoare"
+      ],
+      "Alignment": [
+        "Aliniere"
+      ],
+      "More": [
+        "Mai multe"
+      ],
+      "Unordered list": [
+        "Listă neordonată"
+      ],
+      "Ordered list": [
+        "Listă ordonată"
+      ],
+      "Align left": [
+        "Aliniere la stânga"
+      ],
+      "Align center": [
+        "Centrare"
+      ],
+      "Align right": [
+        "Aliniere la dreapta"
+      ],
+      "Justify": [
+        "Aliniere la margini"
+      ],
+      "Quote": [
+        "Citat"
+      ],
+      "Insert link": [
+        "Inserare legătură"
+      ],
+      "Clear all formatting": [
+        "Eliminare formatări"
+      ],
+      "Insert image": [
+        "Inserare imagine"
+      ],
+      "Bold": [
+        "Îngroşat"
+      ],
+      "Italic": [
+        "Înclinat"
+      ],
+      "Underline": [
+        "Subliniat"
+      ],
+      "Remove": [
+        "Eliminare"
+      ],
+      "Next month": [
+        "Luna viitoare"
+      ],
+      "Previous month": [
+        "Luna trecută"
+      ],
+      "Load image": [
+        "Încărcare imagine"
+      ],
+      "Confirm opening of link ${ link }": [
+        "Confirmați deschiderea legăturii ${ link }"
+      ],
+      "Go to panel ${ index }": [
+        "Salt la panoul ${ index }"
+      ],
+      "Close navigation": [
+        "Închidere navigare"
+      ],
+      "Open navigation": [
+        "Deschidere navigare"
+      ],
+      "Continue with Google": [
+        "Continuare cu Google"
+      ],
+      "Delete": [
+        "Ștergere"
+      ],
+      "Go to page ${ page }": [
+        "Salt la pagina ${ page }"
+      ],
+      "Go to first page": [
+        "Prima pagină"
+      ],
+      "Go to previous page": [
+        "Pagina anterioară"
+      ],
+      "Go to next page": [
+        "Pagina următoare"
+      ],
+      "Go to last page": [
+        "Ultima pagină"
+      ],
+      "Signing out": [
+        "Deconectare"
+      ],
+      "refresh the page": [
+        "împrospătați pagina"
+      ],
+      "Log in": [
+        "Conectare"
+      ],
+      "View invoice": [
+        "Afișare factură"
+      ],
+      "Get verification code": [
+        "Obținere cod de verificare"
+      ],
+      "Try another method": [
+        "Încercaţi o altă metodă"
+      ],
+      "Request new code": [
+        "Solicitare cod nou"
+      ],
+      "Verify": [
+        "Verifică"
+      ],
+      "Did not receive the code?": [
+        "Nu ați primit codul?"
+      ],
+      "Edit email address": [
+        "Editare adresa de e-mail"
+      ],
+      "Edit phone number": [
+        "Editare număr de telefon"
+      ],
+      "Use ${ label } theme": [
+        "Folosire tema ${ label }"
+      ],
+      "OK": [
+        "OK"
+      ],
+      "Upgrade": [
+        "Migrare"
+      ],
+      "Add": [
+        "Adăugare"
+      ],
+      "Edit": [
+        "Editare"
+      ],
+      "Apply": [
+        "Aplicare"
+      ],
+      "Insert contact": [
+        "Inserare contact"
+      ],
+      "Insert ${ totalChecked } contact": [
+        "Inserare un contact",
+        "Inserare ${ totalChecked } contacte",
+        "Inserare ${ totalChecked } de contacte"
+      ],
+      "Done": [
+        "Gata"
+      ],
+      "Clear data": [
+        "Ștergere date"
+      ],
+      "Recover data": [
+        "Recuperare date"
+      ],
+      "Click here.": [
+        "Apăsați aici."
+      ],
+      "Re-sign": [
+        "Reînregistrare"
+      ],
+      "Hide advanced PGP settings": [
+        "Ascundere setări PGP avansate"
+      ],
+      "Show advanced PGP settings": [
+        "Afișare setări PGP avansate"
+      ],
+      "Add to group": [
+        "Adăugare la grup"
+      ],
+      "Contact group": [
+        "Grup contacte"
+      ],
+      "Create new contact": [
+        "Creare contact nou"
+      ],
+      "clear it": [
+        "golire"
+      ],
+      "Export": [
+        "Exportare"
+      ],
+      "Download": [
+        "Descărcare"
+      ],
+      "Use for sending": [
+        "Folosire pentru trimitere"
+      ],
+      "Trust": [
+        "Aprobare"
+      ],
+      "Untrust": [
+        "Dezaprobare"
+      ],
+      "Email settings": [
+        "Setări e-mail"
+      ],
+      "Merge": [
+        "Îmbinare"
+      ],
+      "View": [
+        "Afișare"
+      ],
+      "Unmark for deletion": [
+        "Anulare marcare ștergere"
+      ],
+      "Mark for deletion": [
+        "Marcare pentru ștergere"
+      ],
+      "Preview contact": [
+        "Examinare contact"
+      ],
+      "Continue": [
+        "Continuare"
+      ],
+      "Copy email to clipboard": [
+        "Copiere mesaj în memorie"
+      ],
+      "Delete contact": [
+        "Ștergere contact"
+      ],
+      "Delete ${ selectedCount } contact": [
+        "Ștergere un contact",
+        "Ștergere ${ selectedCount } contacte",
+        "Ștergere ${ selectedCount } de contacte"
+      ],
+      "Deselect all": [
+        "Deselectare toate"
+      ],
+      "Select all": [
+        "Selectare toate"
+      ],
+      "Compose": [
+        "Compunere"
+      ],
+      "Forward as attachment": [
+        "Redirecționare ca atașament"
+      ],
+      "Merge contacts": [
+        "Îmbinare contacte"
+      ],
+      "Add new contact": [
+        "Adăugare contact"
+      ],
+      "Add group": [
+        "Adăugare grup"
+      ],
+      "Clear query": [
+        "Ștergere interogare"
+      ],
+      "Add contact": [
+        "Adăugare contact"
+      ],
+      "import": [
+        "importare"
+      ],
+      "Delete contact group": [
+        "Ștergere grup de contacte"
+      ],
+      "Delete ${ selectedCount } contact group": [
+        "Ștergere grup de contacte",
+        "Ștergere ${ selectedCount } contacte",
+        "Ștergere ${ selectedCount } de contacte"
+      ],
+      "Add new group": [
+        "Adăugare grup"
+      ],
+      "Export contacts": [
+        "Exportare contacte"
+      ],
+      "Import contacts": [
+        "Importare contacte"
+      ],
+      "Choose a file or drag it here": [
+        "Alegeți un fișier sau trageți-l aici"
+      ],
+      "Import": [
+        "Importare"
+      ],
+      "Next": [
+        "Înainte"
+      ],
+      "Continue import": [
+        "Continuare importare"
+      ],
+      "Discard": [
+        "Renunțare"
+      ],
+      "Reconnect": [
+        "Reconectare"
+      ],
+      "Start import": [
+        "Pornire importare"
+      ],
+      "Clear": [
+        "Eliminare"
+      ],
+      "Add screenshot(s)": [
+        "Adăugare captură"
+      ],
+      "Hide info": [
+        "Ascundere informații"
+      ],
+      "Show info": [
+        "Afișare informații"
+      ],
+      "Details": [
+        "Detalii"
+      ],
+      "Share via link": [
+        "Partajare prin legătură"
+      ],
+      "Sharing options": [
+        "Opțiuni de partajare"
+      ],
+      "Zoom out": [
+        "Micșorare"
+      ],
+      "Reset zoom": [
+        "Resetare dimensiune"
+      ],
+      "Zoom in": [
+        "Mărire"
+      ],
+      "Previous": [
+        "Anteriorul"
+      ],
+      "Get started": [
+        "Să începem"
+      ],
+      "Start setup": [
+        "Pornire configurare"
+      ],
+      "Skip": [
+        "Omitere"
+      ],
+      "Back": [
+        "Înapoi"
+      ],
+      "Copy to clipboard": [
+        "Copiere în memorie"
+      ],
+      "Create recovery phrase": [
+        "Creare frază de recuperare"
+      ],
+      "Don't secure account": [
+        "Fără securizare cont"
+      ],
+      "Close this banner": [
+        "Închidere acest banner"
+      ],
+      "Refresh the page": [
+        "Împrospătare pagină"
+      ],
+      "enable desktop notifications": [
+        "activare notificări pe desktop"
+      ],
+      "here": [
+        "aici"
+      ],
+      "Search": [
+        "Căutare"
+      ],
+      "${ BRAND_NAME } introduction": [
+        "Prezentare ${ BRAND_NAME }"
+      ],
+      "Chat with us": [
+        "Conversați cu noi"
+      ],
+      "I have a question": [
+        "Am o întrebare"
+      ],
+      "Request a feature": [
+        "Solicitare funcție"
+      ],
+      "Report a problem": [
+        "Raportare problemă"
+      ],
+      "${ BRAND_NAME } shop": [
+        "Magazin ${ BRAND_NAME }"
+      ],
+      "Switch account": [
+        "Comutare cont"
+      ],
+      "Sign out": [
+        "Deconectare"
+      ],
+      "Go to settings": [
+        "Accesare setări"
+      ],
+      "Beta Access": [
+        "Acces la Beta"
+      ],
+      "Theme": [
+        "Tema"
+      ],
+      "Keyboard shortcuts": [
+        "Combinații de taste listă mesaje"
+      ],
+      "Mailbox layout": [
+        "Aspect cutie poștală"
+      ],
+      "Mailbox density": [
+        "Densitate cutie poștală"
+      ],
+      "Composer size": [
+        "Dimensiune editor mesaje"
+      ],
+      "Remove bonuses": [
+        "Anulare bonusuri"
+      ],
+      "Try again": [
+        "Reîncercați"
+      ],
+      "Use a different card": [
+        "Folosire alt card"
+      ],
+      "Use a different payment method": [
+        "Folosire metodă de plată diferită"
+      ],
+      "Retry": [
+        "Reîncercare"
+      ],
+      "Loading verification": [
+        "În curs de verificare"
+      ],
+      "Select plan": [
+        "Selectare plan"
+      ],
+      "Compare all features": [
+        "Comparare funcții"
+      ],
+      "${ boldSave } by switching to annual billing": [
+        "${ boldSave } trecând la facturarea anuală"
+      ],
+      "Pay": [
+        "Plătire"
+      ],
+      "Open ${ CALENDAR_APP_NAME } settings": [
+        "Deschidere setări ${ CALENDAR_APP_NAME }"
+      ],
+      "Remove gift code": [
+        "Eliminare cod cadou"
+      ],
+      "annual billing": [
+        "plată anuală"
+      ],
+      "Compare plans": [
+        "Comparare planuri"
+      ],
+      "Decrease": [
+        "Reducere"
+      ],
+      "Increase": [
+        "Mărire"
+      ],
+      "Preview": [
+        "Examinare"
+      ],
+      "Create label": [
+        "Creare etichetă"
+      ],
+      "Create folder": [
+        "Creare folder"
+      ],
+      "Remove this label": [
+        "Eliminare etichetă"
+      ],
+      "Add condition": [
+        "Adăugare condiție"
+      ],
+      "label emails as": [
+        "etichetare mesaje ca"
+      ],
+      "move emails to": [
+        "mutare mesaje în"
+      ],
+      "mark emails as": [
+        "marcare mesaje ca"
+      ],
+      "send auto-reply email": [
+        "trimitere răspuns automat"
+      ],
+      "Yes, I'll attend": [
+        "Da, voi participa"
+      ],
+      "Maybe I'll attend": [
+        "Poate voi participa"
+      ],
+      "No, I won't attend": [
+        "Nu, nu voi participa"
+      ],
+      "Yes": [
+        "Da"
+      ],
+      "Maybe": [
+        "Probabil"
+      ],
+      "No": [
+        "Nu"
+      ],
+      "Add to ${ CALENDAR_APP_NAME }": [
+        "Adăugare la ${ CALENDAR_APP_NAME }"
+      ],
+      "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
+        "Utilizați mouse-ul pentru a redimensiona vizualizarea. Dacă folosiți tastatura, puteți utiliza tastele săgeată stânga și dreapta pentru redimensionare."
+      ],
+      "Send anyway": [
+        "Trimitere așa"
+      ],
+      "Got it": [
+        "Am înțeles"
+      ],
+      "Maximize composer": [
+        "Mărire panou editare"
+      ],
+      "Minimize composer": [
+        "Micșorare panou editare"
+      ],
+      "Contract composer": [
+        "Restrângere panou editare"
+      ],
+      "Expand composer": [
+        "Extindere panou editare"
+      ],
+      "Close composer": [
+        "Închidere panou editare"
+      ],
+      "Trust key": [
+        "Cheie de încredere",
+        "Chei de încredere",
+        "Chei de încredere"
+      ],
+      "Copy address": [
+        "Copiere adresă"
+      ],
+      "Edit address": [
+        "Editare adresă"
+      ],
+      "View contact details": [
+        "Afișare detalii contact"
+      ],
+      "Copy addresses": [
+        "Copiere adrese"
+      ],
+      "View recipients": [
+        "Afișare destinatari"
+      ],
+      "Carbon Copy, Blind Carbon Copy": [
+        "Copie, Copie ascunsă"
+      ],
+      "CC, BCC": [
+        "C, CA"
+      ],
+      "Send": [
+        "Trimitere"
+      ],
+      "Attachment": [
+        "Atașament"
+      ],
+      "Inline": [
+        "Integrat"
+      ],
+      "Cancel action": [
+        "Anulare acțiune"
+      ],
+      "Loading${ ellipsis }": [
+        "Se încarcă${ ellipsis }"
+      ],
+      "Saving${ _ellipsis }": [
+        "Se salvează${ _ellipsis }"
+      ],
+      "Not saved": [
+        "Nesalvat"
+      ],
+      "Schedule send": [
+        "Trimitere programată"
+      ],
+      "Expiration time": [
+        "Dată expirare"
+      ],
+      "Encryption": [
+        "Criptare"
+      ],
+      "Delete draft": [
+        "Ștergere ciornă"
+      ],
+      "Set": [
+        "Setare"
+      ],
+      "Schedule message": [
+        "Mesaj programat"
+      ],
+      "Print": [
+        "Tipărire"
+      ],
+      "Address options": [
+        "Opțiuni adresă"
+      ],
+      "New message": [
+        "Mesaj nou"
+      ],
+      "Trust Public Key": [
+        "Acceptare cheie publică"
+      ],
+      "Filter on...": [
+        "Filtrare după..."
+      ],
+      "Move to...": [
+        "Mutare în..."
+      ],
+      "Label as...": [
+        "Etichetare cu..."
+      ],
+      "Mark as unread": [
+        "Marcare ca necitit"
+      ],
+      "Move to spam": [
+        "Mutare în «Nedorite»"
+      ],
+      "Report phishing": [
+        "Raportare înșelăciune"
+      ],
+      "View source code": [
+        "Afișare cod sursă"
+      ],
+      "View rendered HTML": [
+        "Afișare HTML generat"
+      ],
+      "View headers": [
+        "Afișare antete"
+      ],
+      "Hide details": [
+        "Ascundere detalii"
+      ],
+      "Show details": [
+        "Afișare detalii"
+      ],
+      "Custom filter": [
+        "Filtru personal"
+      ],
+      "Move to": [
+        "Mutare în"
+      ],
+      "Label as": [
+        "Etichetare ca"
+      ],
+      "Load": [
+        "Încărcare"
+      ],
+      "This message contains remote content.": [
+        "Acest mesaj cuprinde conținut la distanță."
+      ],
+      "This message contains embedded images.": [
+        "Acest mesaj conține imagini încorporate."
+      ],
+      "Unsubscribe": [
+        "Dezabonare"
+      ],
+      "Unsubscribing": [
+        "Unsubscribing"
+      ],
+      "Mark legitimate": [
+        "Marcare ca legitim"
+      ],
+      "Send receipt": [
+        "Trimitere confirmare"
+      ],
+      "Accept": [
+        "Acceptare"
+      ],
+      "Show": [
+        "Afișare"
+      ],
+      "Show less": [
+        "Afișare mai puțin"
+      ],
+      "Never show": [
+        "Nu mai arăta"
+      ],
+      "View keys": [
+        "Afișare chei"
+      ],
+      "Edit draft": [
+        "Editare schiță"
+      ],
+      "Download ${ attachmentName }": [
+        "Descărcare atașament ${ attachmentName }"
+      ],
+      "Preview ${ attachmentName }": [
+        "Examinare ${ attachmentName }"
+      ],
+      "Remove ${ attachmentName }": [
+        "Eliminare ${ attachmentName }"
+      ],
+      "Hide attachment details": [
+        "Ascundere detalii atașament"
+      ],
+      "Show attachment details": [
+        "Afișare detalii atașament"
+      ],
+      "Hide": [
+        "Ascundere"
+      ],
+      "Learn more": [
+        "Detalii"
+      ],
+      "Undo": [
+        "Anulare"
+      ],
+      "View message": [
+        "Afișare mesaj"
+      ],
+      "Enable": [
+        "Activare"
+      ],
+      "Search message content": [
+        "Căutare în conținut mesaj"
+      ],
+      "Activate": [
+        "Activare"
+      ],
+      "Resume": [
+        "Reluare"
+      ],
+      "Pause": [
+        "Pauză"
+      ],
+      "Show less search options": [
+        "Mai puține opțiuni de căutare"
+      ],
+      "Show more search options": [
+        "Mai multe opțiuni de căutare"
+      ],
+      "Less search options": [
+        "Mai puține opțiuni de căutare"
+      ],
+      "More search options": [
+        "Mai multe opțiuni de căutare"
+      ],
+      "Advanced search": [
+        "Căutare avansată"
+      ],
+      "Clear browser data": [
+        "Ștergere date din navigator"
+      ],
+      "Mark as read": [
+        "Marcare ca citit"
+      ],
+      "Delete permanently": [
+        "Ștergere permanentă"
+      ],
+      "Move to inbox": [
+        "Mutare în «Primite»"
+      ],
+      "Move to archive": [
+        "Mutare în «Arhivă»"
+      ],
+      "Move to inbox (not spam)": [
+        "Mutare în «Primite» (nu e nesolicitat)"
+      ],
+      "Move to trash": [
+        "Mutare în «Gunoi»"
+      ],
+      "Delete all": [
+        "Ștergere toate"
+      ],
+      "Deselect all messages": [
+        "Deselectare toate mesajele"
+      ],
+      "Select all messages": [
+        "Selectare toate mesajele"
+      ],
+      "Select All": [
+        "Selectare toate"
+      ],
+      "All Read": [
+        "Toate citite"
+      ],
+      "All Unread": [
+        "Toate necitite"
+      ],
+      "All Starred": [
+        "Toate cu stea"
+      ],
+      "All Unstarred": [
+        "Toate fără stea"
+      ],
+      "Load more": [
+        "Încărcare mai multe"
+      ],
+      "Previous page": [
+        "Pagina anterioară"
+      ],
+      "Change page": [
+        "Schimbare pagină"
+      ],
+      "Page ${ pageNumber }": [
+        "Pagina ${ pageNumber }"
+      ],
+      "Next page": [
+        "Pagina următoare"
+      ],
+      "Previous conversation": [
+        "Conversație anterioară"
+      ],
+      "Previous message": [
+        "Mesaj anterior"
+      ],
+      "Next conversation": [
+        "Conversația următoare"
+      ],
+      "Next message": [
+        "Mesajul următor"
+      ],
+      "Show messages": [
+        "Afișare mesaje"
+      ],
+      "Hide messages": [
+        "Ascundere mesaje"
+      ],
+      "Create new message": [
+        "Creare mesaj"
+      ],
+      "Open shop": [
+        "Accesare magazin"
+      ],
+      "Open calendar": [
+        "Deschidere calendar"
+      ],
+      "Import messages": [
+        "Importare mesaje"
+      ],
+      "Deselect": [
+        "Deselectare"
+      ],
+      "Start using ${ appName }": [
+        "Începeți să utilizați ${ appName }"
       ]
     },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
-        "Parola trebuie să conțină cel puțin un caracter",
-        "Parola trebuie să conțină cel puțin ${ length } caractere.",
-        "Parola trebuie să conțină cel puțin ${ length } de caractere."
-      ]
-    },
-    "Contact field label": {
-      "Name": [
-        "Nume"
+    "Title": {
+      "Open actions dropdown": [
+        "Deschidere meniu acțiuni"
       ],
-      "Email": [
-        "E-mail"
+      "Expand content": [
+        "Extindere conținut"
       ],
-      "Phone": [
-        "Telefon"
+      "Link confirmation": [
+        "Legătură de confirmare"
       ],
-      "Address": [
-        "Adresa"
+      "Keyboard Shortcuts": [
+        "Combinații de taste"
       ],
-      "Photo": [
-        "Fotografie"
+      "What's new": [
+        "Ce este nou"
       ],
-      "Organization": [
-        "Organizația"
+      "Sign in again to continue": [
+        "Reconectați-vă pentru a continua"
       ],
-      "Birthday": [
-        "Data naşterii"
+      "Account suspended": [
+        "Cont suspendat"
       ],
-      "Anniversary": [
-        "Aniversare"
+      "Enter your username or ProtonMail email address": [
+        "Introduceți numele de utilizator sau adresa de e-mail ProtonMail"
       ],
-      "Title": [
-        "Titlu"
+      "Enter your password": [
+        "Introduceţi parola"
       ],
-      "Role": [
-        "Rol"
+      "Invalid verification code": [
+        "Cod de verificare nevalid"
       ],
-      "Note": [
-        "Observații"
+      "Human verification": [
+        "Verificare persoană"
       ],
-      "URL": [
-        "Adresa URL"
+      "Select a theme": [
+        "Selectaţi o temă"
       ],
-      "Gender": [
-        "Gen"
+      "Upgrade required": [
+        "Migrare necesară"
       ],
-      "Language": [
-        "Limba"
+      "Delete ${ Name }": [
+        "Ștergere ${ Name }"
       ],
-      "Timezone": [
-        "Fus orar"
+      "Delete ${ count } contact group": [
+        "Ștergere grup de contacte",
+        "Ștergere ${ count } grupuri de contacte",
+        "Ștergere ${ count } de grupuri de contacte"
       ],
-      "Geo": [
-        "Coordonate"
+      "Edit contact group": [
+        "Editare grup de contacte"
       ],
-      "Logo": [
-        "Siglă"
+      "Create new group": [
+        "Creare grup"
       ],
-      "Member": [
-        "Membru"
-      ]
-    },
-    "Contact type label": {
-      "Work": [
-        "Serviciu"
+      "${ emailsCount } member": [
+        "Un membru",
+        "${ emailsCount } membri",
+        "${ emailsCount } de membri"
       ],
-      "Personal": [
-        "Personal"
+      "Edit image": [
+        "Editare imagine"
       ],
-      "Mobile": [
-        "Mobil"
+      "Add to ${ groupName }": [
+        "Adăugare în ${ groupName }"
       ],
-      "Main": [
-        "Principal"
+      "Add to ${ groupCount } group": [
+        "Adăugare la un grup",
+        "Adăugare la ${ groupCount } grupuri",
+        "Adăugare la ${ groupCount } de grupuri"
       ],
-      "Yomi": [
-        "Yomi"
+      "Edit contact": [
+        "Editare contact"
       ],
-      "Other": [
-        "Altele"
+      "Create contact": [
+        "Creare contact"
       ],
-      "Fax": [
-        "Fax"
+      "Insert contacts": [
+        "Inserare contacte"
       ],
-      "Pager": [
-        "Pager"
-      ]
-    },
-    "Property type": {
-      "Email": [
-        "E-mail"
+      "Delete ${ count } contact": [
+        "Ștergere un contact",
+        "Ștergere ${ count } contacte",
+        "Ștergere ${ count } de contacte"
       ],
-      "Home": [
-        "Acasă"
+      "Clearing data": [
+        "Ştergere date"
       ],
-      "Work": [
-        "Serviciu"
+      "Warning": [
+        "Avertizare"
       ],
-      "Other": [
-        "Altele"
+      "Recover data": [
+        "Recuperare date"
       ],
-      "Phone": [
-        "Telefon"
+      "Re-signing contacts": [
+        "Resemnare contacte"
       ],
-      "Mobile": [
-        "Mobil"
+      "Re-sign all contacts": [
+        "Resemnare toate contactele"
       ],
-      "Main": [
-        "Principal"
+      "Email settings (${ emailAddress })": [
+        "Setări e-mail (${ emailAddress })"
       ],
-      "Fax": [
-        "Fax"
+      "Exporting contacts": [
+        "Exportare contacte"
       ],
-      "Pager": [
-        "Pager"
+      "Contact group": [
+        "Grup contacte"
       ],
-      "Address": [
-        "Adresa"
+      "Other names": [
+        "Alte nume"
+      ],
+      "Email addresses": [
+        "Adrese de e-mail"
+      ],
+      "Phone numbers": [
+        "Numere de telefon"
+      ],
+      "Addresses": [
+        "Adrese"
+      ],
+      "Other information": [
+        "Alte informații"
+      ],
+      "Email settings": [
+        "Setări e-mail"
+      ],
+      "Contact Details": [
+        "Detalii contact"
+      ],
+      "Merging contacts": [
+        "Îmbinare contacte"
+      ],
+      "Merge contacts": [
+        "Îmbinare contacte"
+      ],
+      "Deleting contacts": [
+        "Ștergere contacte"
+      ],
+      "View contacts": [
+        "Afișare contacte"
+      ],
+      "Contacts": [
+        "Contacte"
+      ],
+      "Groups": [
+        "Grupuri"
+      ],
+      "Settings": [
+        "Setări"
+      ],
+      "Select action to take on contact group": [
+        "Selectați acțiunea pentru un grup de contacte"
+      ],
+      "Add contact group name": [
+        "Adăugare nume grup contacte"
+      ],
+      "Select contact group": [
+        "Selectare grup contacte"
+      ],
+      "Import groups": [
+        "Importare grupuri"
+      ],
+      "Import contacts": [
+        "Importare contacte"
+      ],
+      "Start import process": [
+        "Începere proces de importare"
+      ],
+      "Import in progress": [
+        "Importare în derulare"
+      ],
+      "Report a problem": [
+        "Raportare problemă"
+      ],
+      "${ appName } Keyboard Shortcuts": [
+        "Combinații de taste ${ appName }"
+      ],
+      "Mailbox density": [
+        "Densitate cutie poștală"
+      ],
+      "Mailbox layout": [
+        "Aspect cutie poștală"
+      ],
+      "Composer mode": [
+        "Mod editor mesaje"
+      ],
+      "Open help menu": [
+        "Deschidere meniu ajutor"
+      ],
+      "Back": [
+        "Înapoi"
+      ],
+      "Open settings menu": [
+        "Deschidere meniu setări"
+      ],
+      "Confirm loss of Proton bonuses": [
+        "Confirmare pierdere bonusuri Proton"
+      ],
+      "Unsupported browser": [
+        "Navigator nesuportat"
+      ],
+      "Card verification": [
+        "Verificare card"
+      ],
+      "Payment verification": [
+        "Verificare plată"
+      ],
+      "Processing...": [
+        "Se procesează..."
+      ],
+      "Card verification in progress": [
+        "Verificare card în desfășurare"
+      ],
+      "Payment verification in progress": [
+        "Verificarea plății în desfășurare"
+      ],
+      "PayPal verification failed": [
+        "Verificarea PayPal a eșuat"
+      ],
+      "3-D Secure verification failed": [
+        "Verificarea cu 3-D Secure a eșuat"
+      ],
+      "Error": [
+        "Eroare"
+      ],
+      "ZIP / postal code": [
+        "ZIP/Cod poștal"
+      ],
+      "Payment details": [
+        "Detalii plată"
+      ],
+      "Currency": [
+        "Monedă"
+      ],
+      "Billing cycle": [
+        "Ciclu de facturare"
+      ],
+      "Current plan": [
+        "Plan actual"
+      ],
+      "Processing": [
+        "Se procesează"
+      ],
+      "Apply gift code": [
+        "Aplicare cod cadou"
+      ],
+      "Subtotal": [
+        "Subtotal"
+      ],
+      "Coupon discount": [
+        "Cupon reducere"
+      ],
+      "Total (monthly)": [
+        "Total (lunar)"
+      ],
+      "Credits": [
+        "Credite"
+      ],
+      "Gift code": [
+        "Cod cadou"
+      ],
+      "Amount due": [
+        "Suma datorată"
+      ],
+      "Downgrade account": [
+        "Retrogradare cont"
+      ],
+      "Network error": [
+        "Eroare de rețea"
+      ],
+      "Select a plan": [
+        "Selectare plan"
+      ],
+      "Customize your plan": [
+        "Personalizare plan"
+      ],
+      "Checkout": [
+        "Finalizare"
+      ],
+      "Plan summary": [
+        "Rezumat plan"
+      ],
+      "${ appName } customization": [
+        "Personalizare ${ appName }"
+      ],
+      "Beta Access": [
+        "Acces la Beta"
+      ],
+      "Edit filter": [
+        "Editare filtru"
+      ],
+      "Add filter": [
+        "Adăugare filtru"
+      ],
+      "Are you sure you want to close?": [
+        "Sigur doriți să închideți?"
+      ],
+      "Change my answer": [
+        "Schimbare răspuns"
+      ],
+      "Image": [
+        "Imagine"
+      ],
+      "Sending notice": [
+        "Notificare trimitere"
+      ],
+      "Storage capacity warning": [
+        "Avertizare spațiu de stocare"
+      ],
+      "Sending original message": [
+        "Se trimite mesajul original"
+      ],
+      "No recipient": [
+        "Lipsă destinatar"
+      ],
+      "Message without subject?": [
+        "Mesaj fără subiect?"
+      ],
+      "No attachment found": [
+        "Nu s-a găsit niciun atașament"
+      ],
+      "Re-sign contact": [
+        "Reînregistrare contact"
+      ],
+      "Verification error": [
+        "Eroare verificare"
+      ],
+      "Decryption error": [
+        "Eroare decriptare"
+      ],
+      "Delete draft": [
+        "Ștergere ciornă"
+      ],
+      "Delete ${ count } draft": [
+        "Ștergere o ciornă",
+        "Ștergere ${ count } ciorne",
+        "Ștergere ${ count } de ciorne"
+      ],
+      "Delete message": [
+        "Ștergere mesaj"
+      ],
+      "Delete conversation": [
+        "Ștergere conversație"
+      ],
+      "Delete ${ count } conversation": [
+        "Ștergere o conversație",
+        "Ștergere ${ count } conversații",
+        "Ștergere ${ count } de conversații"
+      ],
+      "Delete ${ count } message": [
+        "Ștergere un mesaj",
+        "Ștergere ${ count } mesaje",
+        "Ștergere ${ count } de mesaje"
+      ],
+      "Delete all messages": [
+        "Ștergere toate mesajele"
+      ],
+      "Trust new key?": [
+        "Aveți încredere în noua cheie?",
+        "Aveți încredere în noile chei?",
+        "Aveți încredere în noile chei?"
+      ],
+      "Add contacts": [
+        "Adăugare contacte"
+      ],
+      "To": [
+        "La"
+      ],
+      "CC": [
+        "CI"
+      ],
+      "BCC": [
+        "CA"
+      ],
+      "Carbon Copy": [
+        "Copie identică"
+      ],
+      "Blind Carbon Copy": [
+        "Copie ascunsă"
+      ],
+      "Sending error": [
+        "Eroare trimitere"
+      ],
+      "Confirm recipient address?": [
+        "Confirmați adresa destinatarului?"
+      ],
+      "Send without expiration?": [
+        "Trimitere fără expirare?"
+      ],
+      "Send with changed preferences?": [
+        "Trimitere cu preferințele schimbate?"
+      ],
+      "Attachments": [
+        "Atașamente"
+      ],
+      "Expiration time": [
+        "Dată expirare"
+      ],
+      "Encryption": [
+        "Criptare"
+      ],
+      "Send email": [
+        "Trimitere e-mail"
+      ],
+      "Schedule send": [
+        "Trimitere programată"
+      ],
+      "New message": [
+        "Mesaj nou"
+      ],
+      "Trust public key?": [
+        "Cheie publică de încredere?"
+      ],
+      "All recipients were added to the BCC field and cannot be disclosed": [
+        "Toți destinatarii au fost adăugați în câmpul CA și nu pot fi dezvăluiți"
+      ],
+      "Move to inbox (not spam)": [
+        "Mutare în «Primite» (nu e nesolicitat)"
+      ],
+      "Mark as unread": [
+        "Marcare ca necitit"
+      ],
+      "Move to inbox": [
+        "Mutare în «Primite»"
+      ],
+      "Move to trash": [
+        "Mutare în «Gunoi»"
+      ],
+      "More": [
+        "Mai multe"
+      ],
+      "More options": [
+        "Mai multe opțiuni"
+      ],
+      "Reply": [
+        "Răspuns"
+      ],
+      "Reply all": [
+        "Răspuns tuturor"
+      ],
+      "Forward": [
+        "Redirecționare"
+      ],
+      "Filter on": [
+        "Filtrare după"
+      ],
+      "Move to": [
+        "Mutare în"
+      ],
+      "Label as": [
+        "Etichetare ca"
+      ],
+      "Load remote content": [
+        "Încărcare conținut extern"
+      ],
+      "Load embedded images": [
+        "Încărcare imagini încorporate"
+      ],
+      "Unsubscribe": [
+        "Dezabonare"
+      ],
+      "Mark email as legitimate": [
+        "Marcare e-mail ca legitim"
+      ],
+      "Trust pinned keys?": [
+        "Chei fixate de încredere?"
+      ],
+      "Enable message content search": [
+        "Activați căutarea conținutului mesajului"
+      ],
+      "Create a new folder": [
+        "Creare folder"
+      ],
+      "Create a new label": [
+        "Creare etichetă"
+      ],
+      "More selections": [
+        "Mai multe selecții"
+      ],
+      "Previous conversation": [
+        "Conversația anterioară"
+      ],
+      "Previous message": [
+        "Mesajul anterior"
+      ],
+      "Next conversation": [
+        "Conversația următoare"
+      ],
+      "Next message": [
+        "Mesajul următor"
+      ],
+      "Sort conversations": [
+        "Sortare conversații"
+      ],
+      "Sort messages": [
+        "Sortare mesaje"
+      ],
+      "Create folder": [
+        "Creare folder"
+      ],
+      "Create label": [
+        "Creare etichetă"
+      ],
+      "Conversation list": [
+        "Lista conversații"
+      ],
+      "Message list": [
+        "Listă mesaje"
+      ],
+      "Welcome ${ userName }": [
+        "Bun venit, ${ userName }"
+      ],
+      "Welcome": [
+        "Bun venit"
       ]
     },
     "Info": {
-      "Session timed out.": [
-        "Sesiune expirată."
-      ],
-      "Internet connection lost.": [
-        "Conexiunea la internet s-a întrerupt."
-      ],
-      "Servers are unreachable.": [
-        "Servere sunt inaccesibile."
-      ],
-      "Custom daily": [
-        "Zilnic personalizat"
-      ],
-      "Custom weekly": [
-        "Săptămânal personalizat"
-      ],
-      "Custom monthly": [
-        "Lunar personalizat"
-      ],
-      "Custom yearly": [
-        "Anual personalizat"
-      ],
-      "Custom": [
-        "Personalizat"
-      ],
-      "Daily": [
-        "Zilnic"
-      ],
-      "Monthly ${ onDayString }": [
-        "Lunar, ${ onDayString }"
-      ],
-      "Yearly": [
-        "Anual"
-      ],
       "No results found": [
         "Nu s-au găsit rezultate"
+      ],
+      "Loading": [
+        "Se încarcă"
       ],
       "Insert image": [
         "Inserare imagine"
@@ -651,9 +1874,6 @@
       "Learn more": [
         "Detalii"
       ],
-      "Loading": [
-        "Se încarcă"
-      ],
       "Drop the file here to upload": [
         "Plasați fișierul aici pentru a fi încărcat"
       ],
@@ -698,6 +1918,9 @@
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Faceți clic pe „Solicitare cod nou” pentru a primi un cod nou de verificare trimis la $ { strong }. Dacă această acest număr de telefon nu este corect, apăsați pe „Editare” pentru a-l corecta."
+      ],
+      "support team": [
+        "echipa de suport"
       ],
       "No contacts added yet": [
         "Încă nu s-au adăugat contacte"
@@ -823,27 +2046,6 @@
         "${ addressCount } adrese de e-mail",
         "${ addressCount } de adrese de e-mail"
       ],
-      "support team": [
-        "echipa de suport"
-      ],
-      "Unsupported file": [
-        "Fişier nesuportat"
-      ],
-      "No preview available": [
-        "Nu e disponibilă examinarea"
-      ],
-      "Preview": [
-        "Examinare"
-      ],
-      "Loading preview": [
-        "Se încarcă previzualizarea"
-      ],
-      "This browser does not support previewing PDF documents. Please download the file.": [
-        "Acest navigator nu acceptă previzualizarea documentelor PDF. Descărcați fișierul."
-      ],
-      "of": [
-        "din"
-      ],
       "Import contacts": [
         "Importare contacte"
       ],
@@ -873,6 +2075,24 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Reîmprospătând pagina sau ${ link } veți rezolva majoritatea problemelor."
+      ],
+      "Unsupported file": [
+        "Fişier nesuportat"
+      ],
+      "No preview available": [
+        "Nu e disponibilă examinarea"
+      ],
+      "Preview": [
+        "Examinare"
+      ],
+      "Loading preview": [
+        "Se încarcă previzualizarea"
+      ],
+      "This browser does not support previewing PDF documents. Please download the file.": [
+        "Acest navigator nu acceptă previzualizarea documentelor PDF. Descărcați fișierul."
+      ],
+      "of": [
+        "din"
       ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Navigarea de bază și acțiunile rămân disponibile indiferent de combinațiile de taste care sunt active sau nu în setări."
@@ -1023,12 +2243,6 @@
       "* Customizable features": [
         "* Funcții personalizabile"
       ],
-      "Access your streaming services, like ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, no matter where you are.": [
-        "Accesați serviciile de trasmisie în flux, cum ar fi ${ netflix }, ${ disney }, ${ primeVideo }, ${ many } oriunde v-ați afla."
-      ],
-      "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
-        "Accesați conținutul blocat, cum ar fi platformele de comunicare socială, știri, Wikipedia, YouTube și multe altele, indiferent unde vă aflați."
-      ],
       "For getting started with private and secure emailing.": [
         "Pentru a folosi mesaje private și securizate."
       ],
@@ -1052,6 +2266,12 @@
       ],
       "For families and small teams; includes both Mail and VPN.": [
         "Pentru familii și echipe mici; include atât Mail, cât și VPN."
+      ],
+      "Access your streaming services, like ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, no matter where you are.": [
+        "Accesați serviciile de trasmisie în flux, cum ar fi ${ netflix }, ${ disney }, ${ primeVideo }, ${ many } oriunde v-ați afla."
+      ],
+      "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
+        "Accesați conținutul blocat, cum ar fi platformele de comunicare socială, știri, Wikipedia, YouTube și multe altele, indiferent unde vă aflați."
       ],
       "Save 20%": [
         "Economisiți 20%"
@@ -1213,6 +2433,39 @@
       ],
       "Are you sure you want to discard your changes?": [
         "Sigur doriți să renunțați la modificări?"
+      ],
+      "Session timed out.": [
+        "Sesiune expirată."
+      ],
+      "Internet connection lost.": [
+        "Conexiunea la internet s-a întrerupt."
+      ],
+      "Servers are unreachable.": [
+        "Servere sunt inaccesibile."
+      ],
+      "Custom daily": [
+        "Zilnic personalizat"
+      ],
+      "Custom weekly": [
+        "Săptămânal personalizat"
+      ],
+      "Custom monthly": [
+        "Lunar personalizat"
+      ],
+      "Custom yearly": [
+        "Anual personalizat"
+      ],
+      "Custom": [
+        "Personalizat"
+      ],
+      "Daily": [
+        "Zilnic"
+      ],
+      "Monthly ${ onDayString }": [
+        "Lunar, ${ onDayString }"
+      ],
+      "Yearly": [
+        "Anual"
       ],
       "Members": [
         "Membri"
@@ -1630,6 +2883,20 @@
       "No more results found": [
         "Nu s-au mai găsit rezultate"
       ],
+      "Protect yourself from trackers by turning on Proton email tracker protection.": [
+        "Protejați-vă de urmăritori activând protecția împotriva urmăritorilor de e-mail Proton."
+      ],
+      "No email trackers found.": [
+        "Nu s-au găsit urmăritori de e-mail."
+      ],
+      "Proton has blocked email trackers in this message in order to protect your privacy.": [
+        "Pentru a vă proteja confidențialitatea, Proton a blocat localizatoarele de e-mail în acest mesaj."
+      ],
+      "${ numberOfTrackers } email tracker blocked": [
+        "${ numberOfTrackers } tracker de e-mail blocat",
+        "${ numberOfTrackers } trackeri de e-mail blocați",
+        "${ numberOfTrackers } de trackeri de e-mail blocați"
+      ],
       "This conversation contains non-trashed messages.": [
         "Această conversație conține mesaje neșterse."
       ],
@@ -1790,2590 +3057,16 @@
       ],
       "Using your mobile device, scan this QR-Code or visit ${ link }.": [
         "Folosind dispozitivul mobil, scanați acest cod QR sau vizitați ${ link }."
-      ]
-    },
-    "Default display name vcard": {
-      "Unknown": [
-        "Necunoscut"
-      ]
-    },
-    "Import contact. Contact identifier": {
-      "unknown": [
-        "necunoscut"
-      ]
-    },
-    "Error importing contact": {
-      "vCard versions < 3.0 not supported": [
-        "versiunile vCard < 3.0 nu sunt suportate"
       ],
-      "Encryption failed": [
-        "Criptare eșuată"
-      ]
-    },
-    "Error importing calendar": {
-      "An unexpected error occurred. Import must be restarted.": [
-        "A apărut o eroare neașteptată. Importarea trebuie repornită."
-      ]
-    },
-    "Error importing contacts": {
-      "An error occurred uploading your file. No file has been selected.": [
-        "A apărut o eroare la încărcarea fișierului. Nu a fost selectat niciun fișier."
-      ],
-      "An error occurred uploading your file ${ formattedFilename }. No .csv or .vcf file selected": [
-        "A apărut o eroare la încărcarea fișierului ${ formattedFilename }. Nu s-a selectat un fișier în format .csv sau .vcf"
-      ],
-      "Your file ${ formattedFilename } is empty.": [
-        "Fișierul ${ formattedFilename } este gol."
-      ],
-      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
-        "A apărut o eroare la încărcarea fișierului ${ formattedFilename }. Dimensiunea maximă a fișierului este de ${ MAX_IMPORT_FILE_SIZE_STRING }."
-      ],
-      "Your file ${ formattedFilename } has no contacts to be imported.": [
-        "Fișierul ${ formattedFilename } nu are contacte de importat."
-      ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
-        "Fișierul ${ formattedFilename } conține mai mult de ${ MAX_IMPORT_CONTACTS_STRING } contacte."
-      ],
-      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "A apărut o eroare la citirea fișierului ${ formattedFilename }. Fișierul nu are formatul corect."
-      ]
-    },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "Adresa de e-mail nu a fost găsită printre id-urile de utilizatori definite în cheia de trimitere (${ keyUserIds })"
-      ]
-    },
-    "Keyboard shortcut section name": {
-      "Basic navigation": [
-        "Navigare de bază"
-      ],
-      "Basic actions": [
-        "Acțiuni de bază"
-      ],
-      "Folder shortcuts": [
-        "Combinații de taste foldere"
-      ],
-      "Composer shortcuts": [
-        "Combinații de taste editor mesaje"
-      ],
-      "List shortcuts": [
-        "Combinații de taste listă mesaje"
-      ],
-      "Action shortcuts": [
-        "Combinații de taste acțiuni"
-      ],
-      "Message shortcuts": [
-        "Combinații de taste mesaje"
-      ]
-    },
-    "Keyboard shortcut name": {
-      "Move up": [
-        "Mutare în sus"
-      ],
-      "Jump to first": [
-        "Salt la primul"
-      ],
-      "Move down": [
-        "Mutare în jos"
-      ],
-      "Jump to last": [
-        "Salt la ultimul"
-      ],
-      "Move right / expand": [
-        "Mutare la dreapta/extindere"
-      ],
-      "Move left / collapse": [
-        "Mutare la stânga/restrângere"
-      ],
-      "Apply / open": [
-        "Aplicare/deschidere"
-      ],
-      "Cancel / close": [
-        "Anulare/închidere"
-      ],
-      "Open this modal": [
-        "Deschidere ca fereastră"
-      ],
-      "Select / unselect": [
-        "Selectare/deselectare"
-      ],
-      "Go to Inbox": [
-        "Accesare «Primite»"
-      ],
-      "Go to Archive": [
-        "Accesare «Arhivă»"
-      ],
-      "Go to Sent": [
-        "Accesare «Trimise»"
-      ],
-      "Go to Starred": [
-        "Accesare «Cu stea»"
-      ],
-      "Go to Drafts": [
-        "Accesare «Ciorne»"
-      ],
-      "Go to Trash": [
-        "Accesare folder «Gunoi»"
-      ],
-      "Go to Spam": [
-        "Accesare «Nedorite»"
-      ],
-      "Go to All Mail": [
-        "Accesare «Toate mesajele»"
-      ],
-      "Save draft": [
-        "Salvare ciornă"
-      ],
-      "Send email": [
-        "Trimite e-mail"
-      ],
-      "Close draft": [
-        "Închidere ciornă"
-      ],
-      "Minimize / maximize composer": [
-        "Micșorare / mărire panou editare"
-      ],
-      "Expand / contract composer": [
-        "Extindere/restrângere panou editare"
-      ],
-      "Attach file": [
-        "Atașare fișier"
-      ],
-      "Add expiration time": [
-        "Adăugare dată de expirare"
-      ],
-      "Add encryption": [
-        "Adăugare criptare"
-      ],
-      "Discard draft": [
-        "Aruncare ciornă"
-      ],
-      "Open previous message": [
-        "Deschidere mesaj anterior"
-      ],
-      "Open next message": [
-        "Deschidere mesaj următor"
-      ],
-      "Show unread emails": [
-        "Afișare mesaje necitite"
-      ],
-      "Show all emails": [
-        "Afișare toate mesajele"
-      ],
-      "Select / unselect all": [
-        "Selectare/deselectare toate"
-      ],
-      "Search": [
-        "Căutare"
-      ],
-      "New message": [
-        "Mesaj nou"
-      ],
-      "Star": [
-        "Marcare cu stea"
-      ],
-      "Mark as unread": [
-        "Marcare ca necitit"
-      ],
-      "Label as...": [
-        "Etichetare ca..."
-      ],
-      "Create filter with...": [
-        "Creare filtru cu..."
-      ],
-      "Move to...": [
-        "Mutare în..."
-      ],
-      "Move to Inbox": [
-        "Mutare în «Primite»"
-      ],
-      "Move to Archive": [
-        "Mutare în «Arhivă»"
-      ],
-      "Move to Spam": [
-        "Mutare în «Nedorite»"
-      ],
-      "Move to Trash": [
-        "Mutare în «Gunoi»"
-      ],
-      "Delete permanently": [
-        "Ștergere permanentă"
-      ],
-      "Reply": [
-        "Răspuns"
-      ],
-      "Reply all": [
-        "Răspuns tuturor"
-      ],
-      "Forward": [
-        "Redirecționare"
-      ],
-      "Load remote content": [
-        "Încărcare conținut extern"
-      ],
-      "Load embedded images": [
-        "Încărcare imagini integrate"
-      ],
-      "Show original message": [
-        "Afișare mesaj original"
-      ]
-    },
-    "Calendar status": {
-      "Syncing": [
-        "Se sincronizează"
-      ],
-      "Not synced": [
-        "Nesincronizat"
-      ]
-    },
-    "Calendar subscription not synced error": {
-      "Calendar is syncing": [
-        "Calendarul se sincronizează."
-      ],
-      "More than 12 hours passed since last update": [
-        "Au trecut mai mult de 12 ore de la ultima actualizare."
-      ],
-      "Calendar link is wrong": [
-        "Legătura calendarului este greșită."
-      ],
-      "Calendar is too big": [
-        "Calendarul este prea mare."
-      ],
-      "Calendar link is not accessible": [
-        "Legătura calendarului nu este accesibilă."
-      ],
-      "Calendar link is temporarily unaccessible": [
-        "Legătura calendarului nu este disponibilă momentan."
-      ],
-      "Failed to sync calendar": [
-        "Eșuare sincronizare calendar."
-      ]
-    },
-    "Attached ics file error": {
-      "Invalid ICS file": [
-        "Fisier ICS nevalid."
-      ],
-      "Invalid event": [
-        "Eveniment nevalid"
-      ],
-      "Unsupported event": [
-        "Eveniment nesuportat"
-      ],
-      "Empty ICS file": [
-        "Fișier ICS gol"
-      ],
-      "Unsupported calendar component": [
-        "Componentă de calendar neacceptată"
-      ],
-      "Invalid method": [
-        "Metodă nevalidă"
-      ]
-    },
-    "Event invitation error": {
-      "Invalid response": [
-        "Răspuns nevalid"
-      ],
-      "Invalid invitation": [
-        "Invitație nevalidă"
-      ],
-      "Unsupported response": [
-        "Răspuns nesuportat"
-      ],
-      "Unsupported invitation": [
-        "Invitație nesuportată"
-      ],
-      "Attached ICS file could not be parsed": [
-        "Fișierul ICS atașat nu a putut fi analizat"
-      ],
-      "Attached ICS file could not be decrypted": [
-        "Fișierul ICS atașat nu a putut fi decriptat"
-      ],
-      "We could not retrieve the event from your calendar": [
-        "Nu s-a putut recupera evenimentul din calendar"
-      ],
-      "We could not update the event in your calendar": [
-        "Nu s-a putut actualiza evenimentul din calendar"
-      ],
-      "Your answer was sent, but the event could not be added to your calendar": [
-        "Răspunsul a fost trimis, dar evenimentul nu a putut fi adăugat în calendar."
-      ],
-      "Your answer was sent, but the event could not be updated in your calendar": [
-        "Răspunsul a fost trimis, dar evenimentul nu a putut fi actualizat în calendar."
-      ],
-      "We could not cancel the event in your calendar": [
-        "Nu s-a putut anula evenimentul din calendar"
-      ],
-      "Unexpected error": [
-        "Eroare neașteptată"
-      ]
-    },
-    "Error importing event": {
-      "Component with wrong format": [
-        "Componentă cu format greșit"
-      ],
-      "Non-Gregorian": [
-        "Non-Gregorian"
-      ],
-      "To-do entry": [
-        "Intrare de făcut"
-      ],
-      "Journal entry": [
-        "Intrare în jurnal"
-      ],
-      "Free-busy time information": [
-        "Informații timp liber/ocupat"
-      ],
-      "Custom timezone": [
-        "Fus orar personal"
-      ],
-      "Invalid event": [
-        "Eveniment nevalid"
-      ],
-      "Unsupported event": [
-        "Eveniment nesuportat"
-      ],
-      "Malformed all-day event": [
-        "Eveniment întreaga zi eronat"
-      ],
-      "Missing start time": [
-        "Lipsește ora de pornire"
-      ],
-      "Malformed start time": [
-        "Timp de pornire malformat"
-      ],
-      "Floating times not supported": [
-        "Orele flotante nu sunt suportate"
-      ],
-      "Start time out of bounds": [
-        "Timp de start în afara limitelor"
-      ],
-      "Malformed end time": [
-        "Timp final malformat"
-      ],
-      "End time out of bounds": [
-        "Timp final în afara limitelor"
-      ],
-      "Event duration not supported": [
-        "Durată eveniment nesuportată"
-      ],
-      "Calendar timezone not supported": [
-        "Fus orar calendar neacceptat"
-      ],
-      "Timezone not supported": [
-        "Fus orar nesuportat"
-      ],
-      "Malformed recurring event": [
-        "Eveniment repetitiv malformat"
-      ],
-      "Recurring rule not supported": [
-        "Regula recurentă nesuportată"
-      ],
-      "Edited event not supported": [
-        "Evenimentul editat nu este suportat"
-      ],
-      "Notification out of bounds": [
-        "Notificare în afara limitelor"
-      ],
-      "Event validation failed": [
-        "Validare eveniment eșuată"
-      ],
-      "Encryption failed": [
-        "Criptare eșuată"
-      ],
-      "Original recurring event could not be found": [
-        "Evenimentul recurent original nu a putut fi găsit"
-      ],
-      "no UID, title or start time": [
-        "Nu există UID, titlu sau timp de pornire"
-      ]
-    },
-    "Event title": {
-      "(no title)": [
-        "(fără titlu)"
-      ]
-    },
-    "Participant name": {
-      "You": [
-        "Dvs."
-      ]
-    },
-    "Email subject": {
-      "Invitation for an event on ${ formattedStart }": [
-        "Invitație la un eveniment ce are loc ${ formattedStart }"
-      ],
-      "Update for an event on ${ formattedStart }": [
-        "Actualizarea unui eveniment ce are loc ${ formattedStart }"
-      ],
-      "Invitation for an event starting on ${ formattedStart }": [
-        "Invitație la un eveniment care începe ${ formattedStart }"
-      ],
-      "Update for an event starting on ${ formattedStart }": [
-        "Actualizarea unui eveniment care începe ${ formattedStart }"
-      ],
-      "Cancellation of an event on ${ formattedStart }": [
-        "Anulare eveniment ce are loc ${ formattedStart }"
-      ],
-      "Cancellation of an event starting on ${ formattedStart }": [
-        "Anulare eveniment care începe ${ formattedStart }"
-      ]
-    },
-    "Email body for invitation (date part)": {
-      "When: ${ formattedStart } (all day)": [
-        "Când: ${ formattedStart } (toată ziua)"
-      ],
-      "When: ${ formattedStart } - ${ formattedEnd }": [
-        "Când: ${ formattedStart } - ${ formattedEnd }"
-      ],
-      "When: ${ formattedStart }": [
-        "Când: ${ formattedStart }"
-      ]
-    },
-    "Email body for invitation (location part)": {
-      "Where: ${ eventLocation }": [
-        "Unde: ${ eventLocation }"
-      ]
-    },
-    "Email body for description (description part)": {
-      "Description: ${ eventDescription }": [
-        "Descriere: ${ eventDescription }"
-      ]
-    },
-    "Email body for invitation": {
-      "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
-        "Invitație la ${ eventTitle }\n${ eventDetailsText }"
-      ],
-      "${ eventTitle } has been updated.\n${ eventDetailsText }": [
-        "${ eventTitle } a fost actualizat.\n${ eventDetailsText }"
-      ],
-      "${ eventTitle } has been cancelled.": [
-        "${ eventTitle } a fost anulat."
-      ]
-    },
-    "Email body for response to invitation": {
-      "${ emailAddress } has accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } v-a acceptat invitația la ${ eventTitle }"
-      ],
-      "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } v-a acceptat provizoriu invitația la ${ eventTitle }"
-      ],
-      "${ emailAddress } has declined your invitation to ${ eventTitle }": [
-        "${ emailAddress } v-a refuzat invitația la ${ eventTitle }"
-      ]
-    },
-    "Monthly recurring event, repeats on": {
-      "on the first Sunday": [
-        "în prima duminică"
-      ],
-      "on the first Monday": [
-        "în prima luni"
-      ],
-      "on the first Tuesday": [
-        "în prima marți"
-      ],
-      "on the first Wednesday": [
-        "în prima miercuri"
-      ],
-      "on the first Thursday": [
-        "în prima joi"
-      ],
-      "on the first Friday": [
-        "în prima vineri"
-      ],
-      "on the first Saturday": [
-        "în prima sâmbătă"
-      ],
-      "on the second Sunday": [
-        "în a doua duminică"
-      ],
-      "on the second Monday": [
-        "în a doua luni"
-      ],
-      "on the second Tuesday": [
-        "în a doua marți"
-      ],
-      "on the second Wednesday": [
-        "în a doua miercuri"
-      ],
-      "on the second Thursday": [
-        "în a doua joi"
-      ],
-      "on the second Friday": [
-        "în a doua vineri"
-      ],
-      "on the second Saturday": [
-        "în a doua sâmbătă"
-      ],
-      "on the third Sunday": [
-        "în a treia duminică"
-      ],
-      "on the third Monday": [
-        "în a treia luni"
-      ],
-      "on the third Tuesday": [
-        "în a treia marți"
-      ],
-      "on the third Wednesday": [
-        "în a treia miercuri"
-      ],
-      "on the third Thursday": [
-        "în a treia joi"
-      ],
-      "on the third Friday": [
-        "în a treia vineri"
-      ],
-      "on the third Saturday": [
-        "în a treia sâmbătă"
-      ],
-      "on the fourth Sunday": [
-        "în a patra duminică"
-      ],
-      "on the fourth Monday": [
-        "în a patra luni"
-      ],
-      "on the fourth Tuesday": [
-        "în a patra marți"
-      ],
-      "on the fourth Wednesday": [
-        "în a patra miercuri"
-      ],
-      "on the fourth Thursday": [
-        "în a patra joi"
-      ],
-      "on the fourth Friday": [
-        "în a patra vineri"
-      ],
-      "on the fourth Saturday": [
-        "în a patra sâmbătă"
-      ],
-      "on the last Sunday": [
-        "în ultima duminică"
-      ],
-      "on the last Monday": [
-        "în ultima luni"
-      ],
-      "on the last Tuesday": [
-        "în ultima marți"
-      ],
-      "on the last Wednesday": [
-        "în ultima miercuri"
-      ],
-      "on the last Thursday": [
-        "în ultima joi"
-      ],
-      "on the last Friday": [
-        "în ultima vineri"
-      ],
-      "on the last Saturday": [
-        "în ultima sâmbătă"
-      ],
-      "on day ${ dayOfMonth }": [
-        "în ziua ${ dayOfMonth }"
-      ]
-    },
-    "Daily recurring event, frequency": {
-      "${ count } time": [
-        "O dată",
-        "de ${ count } ori",
-        "de ${ count } de ori"
-      ],
-      "until ${ dateString }": [
-        "până la ${ dateString }"
-      ],
-      "Daily": [
-        "Zilnic"
-      ],
-      "Every ${ interval } day": [
-        "Zilnic",
-        "La fiecare ${ interval } zile",
-        "La fiecare ${ interval } de zile"
-      ],
-      "Daily, ${ timesString }": [
-        "Zilnic, ${ timesString }"
-      ],
-      "Every ${ interval } day, ${ timesString }": [
-        "Zilnic, ${ timesString }",
-        "La fiecare ${ interval } zile, ${ timesString }",
-        "La fiecare ${ interval } de zile, ${ timesString }"
-      ],
-      "Daily, ${ untilString }": [
-        "Zilnic, ${ untilString }"
-      ],
-      "Every ${ interval } day, ${ untilString }": [
-        "Zilnic, ${ untilString }",
-        "La fiecare ${ interval } zile, ${ untilString }",
-        "La fiecare ${ interval } de zile, ${ untilString }"
-      ]
-    },
-    "Weekly recurring event, repeats on (multiple days), frequency": {
-      "Sunday": [
-        "Duminică"
-      ],
-      "Monday": [
-        "Luni"
-      ],
-      "Tuesday": [
-        "Marţi"
-      ],
-      "Wednesday": [
-        "Miercuri"
-      ],
-      "Thursday": [
-        "Joi"
-      ],
-      "Friday": [
-        "Vineri"
-      ],
-      "Saturday": [
-        "Sâmbătă"
-      ]
-    },
-    "Weekly recurring event, frequency": {
-      "Weekly on all days": [
-        "Zilnic, săptămânal"
-      ],
-      "Every ${ interval } week on all days": [
-        "Zilnic, săptămânal",
-        "Zilnic, la fiecare ${ interval } săptămâni",
-        "Zilnic, la fiecare ${ interval } de săptămâni"
-      ],
-      "Weekly on Sunday": [
-        "Duminică, săptămânal"
-      ],
-      "Every ${ interval } week on Sunday": [
-        "Duminică, săptămânal",
-        "Duminică, la fiecare ${ interval } săptămâni",
-        "Duminică, la fiecare ${ interval } de săptămâni"
-      ],
-      "Weekly on Monday": [
-        "Luni, săptămânal"
-      ],
-      "Every ${ interval } week on Monday": [
-        "Luni, săptămânal",
-        "Luni, la fiecare ${ interval } săptămâni",
-        "Luni, la fiecare ${ interval } de săptămâni"
-      ],
-      "Weekly on Tuesday": [
-        "Marți, săptămânal"
-      ],
-      "Every ${ interval } week on Tuesday": [
-        "Marți, săptămânal",
-        "Marți, la fiecare ${ interval } săptămâni",
-        "Marți, la fiecare ${ interval } de săptămâni"
-      ],
-      "Weekly on Wednesday": [
-        "Miercuri, săptămânal"
-      ],
-      "Every ${ interval } week on Wednesday": [
-        "Miercuri, săptămânal",
-        "Miercuri, la fiecare ${ interval } săptămâni",
-        "Miercuri, la fiecare ${ interval } de săptămâni"
-      ],
-      "Weekly on Thursday": [
-        "Joi, săptămânal"
-      ],
-      "Every ${ interval } week on Thursday": [
-        "Joi, săptămânal",
-        "Joi, la fiecare ${ interval } săptămâni",
-        "Joi, la fiecare ${ interval } de săptămâni"
-      ],
-      "Weekly on Friday": [
-        "Vineri, săptămânal"
-      ],
-      "Every ${ interval } week on Friday": [
-        "Vineri, săptămânal",
-        "Vineri, la fiecare ${ interval } săptămâni",
-        "Vineri, la fiecare ${ interval } de săptămâni"
-      ],
-      "Weekly on Saturday": [
-        "Sâmbătă, săptămânal"
-      ],
-      "Every ${ interval } week on Saturday": [
-        "Sâmbătă, săptămânal",
-        "Sâmbătă, la fiecare ${ interval } săptămâni",
-        "Sâmbătă, la fiecare ${ interval } de săptămâni"
-      ],
-      "Weekly on ${ multipleDaysString }": [
-        "${ multipleDaysString }, săptămânal"
-      ],
-      "Every ${ interval } week on ${ multipleDaysString }": [
-        "Săptămânal, ${ multipleDaysString }",
-        "La fiecare ${ interval } săptămâni, ${ multipleDaysString }",
-        "La fiecare ${ interval } de săptămâni, ${ multipleDaysString }"
-      ],
-      "Weekly on all days, ${ timesString }": [
-        "Zilnic, săptămânal, ${ timesString }"
-      ],
-      "Every ${ interval } week on all days, ${ timesString }": [
-        "Săptămânal, zilnic, ${ timesString }",
-        "La fiecare ${ interval } săptămâni, zilnic, ${ timesString }",
-        "La fiecare ${ interval } de săptămâni, zilnic, ${ timesString }"
-      ],
-      "Weekly on Sunday, ${ timesString }": [
-        "Duminică, săptămânal, ${ timesString }"
-      ],
-      "Every ${ interval } week on Sunday, ${ timesString }": [
-        "Duminica, săptămânal, ${ timesString }",
-        "Duminica, la fiecare ${ interval } săptămâni, ${ timesString }",
-        "Duminica, la fiecare ${ interval } de săptămâni, ${ timesString }"
-      ],
-      "Weekly on Monday, ${ timesString }": [
-        "Luni, săptămânal, ${ timesString }"
-      ],
-      "Every ${ interval } week on Monday, ${ timesString }": [
-        "Luni, săptămânal, ${ timesString }",
-        "Luni, la fiecare ${ interval } săptămâni, ${ timesString }",
-        "Luni, la fiecare ${ interval } de săptămâni, ${ timesString }"
-      ],
-      "Weekly on Tuesday, ${ timesString }": [
-        "Marți, săptămânal, ${ timesString }"
-      ],
-      "Every ${ interval } week on Tuesday, ${ timesString }": [
-        "Marți, săptâmânal, ${ timesString }",
-        "Marți, la fiecare ${ interval } săptămâni, ${ timesString }",
-        "Marți, la fiecare ${ interval } de săptămâni, ${ timesString }"
-      ],
-      "Weekly on Wednesday, ${ timesString }": [
-        "Miercuri, săptămânal, ${ timesString }"
-      ],
-      "Every ${ interval } week on Wednesday, ${ timesString }": [
-        "Miercuri, săptâmânal, ${ timesString }",
-        "Miercuri, la fiecare ${ interval } săptămâni, ${ timesString }",
-        "Miercuri, la fiecare ${ interval } de săptămâni, ${ timesString }"
-      ],
-      "Weekly on Thursday, ${ timesString }": [
-        "Joi, săptămânal, ${ timesString }"
-      ],
-      "Every ${ interval } week on Thursday, ${ timesString }": [
-        "Joi, săptâmânal, ${ timesString }",
-        "Joi, la fiecare ${ interval } săptămâni, ${ timesString }",
-        "Joi, la fiecare ${ interval } de săptămâni, ${ timesString }"
-      ],
-      "Weekly on Friday, ${ timesString }": [
-        "Vineri, săptămânal, ${ timesString }"
-      ],
-      "Every ${ interval } week on Friday, ${ timesString }": [
-        "Vineri, săptâmânal, ${ timesString }",
-        "Vineri, la fiecare ${ interval } săptămâni, ${ timesString }",
-        "Vineri, la fiecare ${ interval } de săptămâni, ${ timesString }"
-      ],
-      "Weekly on Saturday, ${ timesString }": [
-        "Sâmbătă, săptămânal, ${ timesString }"
-      ],
-      "Every ${ interval } week on Saturday, ${ timesString }": [
-        "Sâmbătă, săptâmânal, ${ timesString }",
-        "Sâmbătă, la fiecare ${ interval } săptămâni, ${ timesString }",
-        "Sâmbătă, la fiecare ${ interval } de săptămâni, ${ timesString }"
-      ],
-      "Weekly on ${ multipleDaysString }, ${ timesString }": [
-        "Săptămânal ${ multipleDaysString }, ${ timesString }"
-      ],
-      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
-        "${ multipleDaysString }, săptâmânal, ${ timesString }",
-        "${ multipleDaysString }, la fiecare ${ interval } săptămâni, ${ timesString }",
-        "${ multipleDaysString }, la fiecare ${ interval } de săptămâni, ${ timesString }"
-      ],
-      "Weekly on all days, ${ untilString }": [
-        "Zilnic, săptămânal, ${ untilString }"
-      ],
-      "Every ${ interval } week on all days, ${ untilString }": [
-        "Zilnic, săptâmânal, ${ untilString }",
-        "Zilnic, la fiecare ${ interval } săptămâni, ${ untilString }",
-        "Zilnic, la fiecare ${ interval } de săptămâni, ${ untilString }"
-      ],
-      "Weekly on Sunday, ${ untilString }": [
-        "Duminică, săptămânal, ${ untilString }"
-      ],
-      "Every ${ interval } week on Sunday, ${ untilString }": [
-        "Duminică, săptâmânal, ${ untilString }",
-        "Duminică, la fiecare ${ interval } săptămâni, ${ untilString }",
-        "Duminică, la fiecare ${ interval } de săptămâni, ${ untilString }"
-      ],
-      "Weekly on Monday, ${ untilString }": [
-        "Luni, săptămânal, ${ untilString }"
-      ],
-      "Every ${ interval } week on Monday, ${ untilString }": [
-        "Luni, săptâmânal, ${ untilString }",
-        "Luni, la fiecare ${ interval } săptămâni, ${ untilString }",
-        "Luni, la fiecare ${ interval } de săptămâni, ${ untilString }"
-      ],
-      "Weekly on Tuesday, ${ untilString }": [
-        "Marți, săptămânal, ${ untilString }"
-      ],
-      "Every ${ interval } week on Tuesday, ${ untilString }": [
-        "Marți, săptâmânal, ${ untilString }",
-        "Marți, la fiecare ${ interval } săptămâni, ${ untilString }",
-        "Marți, la fiecare ${ interval } de săptămâni, ${ untilString }"
-      ],
-      "Weekly on Wednesday, ${ untilString }": [
-        "Miercuri, săptămânal, ${ untilString }"
-      ],
-      "Every ${ interval } week on Wednesday, ${ untilString }": [
-        "Miercuri, săptâmânal, ${ untilString }",
-        "Miercuri, la fiecare ${ interval } săptămâni, ${ untilString }",
-        "Miercuri, la fiecare ${ interval } de săptămâni, ${ untilString }"
-      ],
-      "Weekly on Thursday, ${ untilString }": [
-        "Joi, săptămânal, ${ untilString }"
-      ],
-      "Every ${ interval } week on Thursday, ${ untilString }": [
-        "Joi, săptămânal, ${ untilString }",
-        "Joi, la fiecare ${ interval } săptămâni, ${ untilString }",
-        "Joi, la fiecare ${ interval } de săptămâni, ${ untilString }"
-      ],
-      "Weekly on Friday, ${ untilString }": [
-        "Vineri, săptămânal, ${ untilString }"
-      ],
-      "Every ${ interval } week on Friday, ${ untilString }": [
-        "Vineri, săptâmânal, ${ untilString }",
-        "Vineri, la fiecare ${ interval } săptămâni, ${ untilString }",
-        "Vineri, la fiecare ${ interval } de săptămâni, ${ untilString }"
-      ],
-      "Weekly on Saturday, ${ untilString }": [
-        "Sâmbătă, săptămânal, ${ untilString }"
-      ],
-      "Every ${ interval } week on Saturday, ${ untilString }": [
-        "Sâmbătă, săptămânal, ${ untilString }",
-        "Sâmbătă, la fiecare ${ interval } săptămâni, ${ untilString }",
-        "Sâmbătă, la fiecare ${ interval } de săptămâni, ${ untilString }"
-      ],
-      "Weekly on ${ multipleDaysString }, ${ untilString }": [
-        "Săptămânal, ${ multipleDaysString }, ${ untilString }"
-      ],
-      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
-        "${ multipleDaysString }, săptâmânal, ${ untilString }",
-        "${ multipleDaysString }, la fiecare ${ interval } de săptămâni, ${ untilString }",
-        "${ multipleDaysString }, la fiecare ${ interval } de săptămâni, ${ untilString }"
-      ]
-    },
-    "Monthly recurring event, frequency": {
-      "Monthly ${ onDayString }": [
-        "Lunar, ${ onDayString }"
-      ],
-      "Every ${ interval } month ${ onDayString }": [
-        "${ onDayString }, lunar",
-        "${ onDayString }, la fiecare ${ interval } luni",
-        "${ onDayString }, la fiecare ${ interval } de luni"
-      ],
-      "Monthly ${ onDayString }, ${ timesString }": [
-        "Lunar, ${ onDayString }, ${ timesString }"
-      ],
-      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
-        "${ onDayString }, lunar, ${ timesString }",
-        "${ onDayString }, la fiecare ${ interval } luni, ${ timesString }",
-        "${ onDayString }, la fiecare ${ interval } de luni, ${ timesString }"
-      ],
-      "Monthly ${ onDayString }, ${ untilString }": [
-        "Lunar, ${ onDayString }, ${ untilString }"
-      ],
-      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
-        "${ onDayString }, lunar, ${ untilString }",
-        "${ onDayString }, la fiecare ${ interval } luni, ${ untilString }",
-        "${ onDayString }, la fiecare ${ interval } de luni, ${ untilString }"
-      ]
-    },
-    "Yearly recurring event, frequency": {
-      "Yearly": [
-        "Anual"
-      ],
-      "Every ${ interval } year": [
-        "Anual",
-        "La fiecare ${ interval } ani",
-        "La fiecare ${ interval } de ani"
-      ],
-      "Yearly, ${ timesString }": [
-        "Anual, ${ timesString }"
-      ],
-      "Every ${ interval } year, ${ timesString }": [
-        "Anual, ${ timesString }",
-        "La fiecare ${ interval } ani, ${ timesString }",
-        "La fiecare ${ interval } de ani, ${ timesString }"
-      ],
-      "Yearly, ${ untilString }": [
-        "Anual, ${ untilString }"
-      ],
-      "Every ${ interval } year, ${ untilString }": [
-        "Anual, ${ untilString }",
-        "La fiecare ${ interval } ani, ${ untilString }",
-        "La fiecare ${ interval } de ani, ${ untilString }"
-      ]
-    },
-    "Action": {
-      "Close": [
-        "Închidere"
-      ],
-      "Cancel": [
-        "Anulare"
-      ],
-      "Save": [
-        "Salvare"
-      ],
-      "Upload picture": [
-        "Încărcare imagine"
-      ],
-      "Insert": [
-        "Inserare"
-      ],
-      "Font": [
-        "Font"
-      ],
-      "Size": [
-        "Mărime"
-      ],
-      "Color": [
-        "Culoare"
-      ],
-      "Alignment": [
-        "Aliniere"
-      ],
-      "More": [
-        "Mai multe"
-      ],
-      "Unordered list": [
-        "Listă neordonată"
-      ],
-      "Ordered list": [
-        "Listă ordonată"
-      ],
-      "Align left": [
-        "Aliniere la stânga"
-      ],
-      "Align center": [
-        "Centrare"
-      ],
-      "Align right": [
-        "Aliniere la dreapta"
-      ],
-      "Justify": [
-        "Aliniere la margini"
-      ],
-      "Quote": [
-        "Citat"
-      ],
-      "Insert link": [
-        "Inserare legătură"
-      ],
-      "Clear all formatting": [
-        "Eliminare formatări"
-      ],
-      "Insert image": [
-        "Inserare imagine"
-      ],
-      "Bold": [
-        "Îngroşat"
-      ],
-      "Italic": [
-        "Înclinat"
-      ],
-      "Underline": [
-        "Subliniat"
-      ],
-      "More info: ${ safeTitle }": [
-        "Mai multe informații: ${ safeTitle }"
-      ],
-      "Confirm": [
-        "Confirmare"
-      ],
-      "Submit": [
-        "Trimite"
-      ],
-      "Close modal": [
-        "Închidere"
-      ],
-      "Use “${ label }” setting": [
-        "Folosire setarea „${ label }”"
-      ],
-      "Remove": [
-        "Eliminare"
-      ],
-      "Next month": [
-        "Luna viitoare"
-      ],
-      "Previous month": [
-        "Luna trecută"
-      ],
-      "Load image": [
-        "Încărcare imagine"
-      ],
-      "Confirm opening of link ${ link }": [
-        "Confirmați deschiderea legăturii ${ link }"
-      ],
-      "Go to panel ${ index }": [
-        "Salt la panoul ${ index }"
-      ],
-      "Close navigation": [
-        "Închidere navigare"
-      ],
-      "Open navigation": [
-        "Deschidere navigare"
-      ],
-      "Continue with Google": [
-        "Continuare cu Google"
-      ],
-      "Delete": [
-        "Ștergere"
-      ],
-      "Go to page ${ page }": [
-        "Salt la pagina ${ page }"
-      ],
-      "Go to first page": [
-        "Prima pagină"
-      ],
-      "Go to previous page": [
-        "Pagina anterioară"
-      ],
-      "Go to next page": [
-        "Pagina următoare"
-      ],
-      "Go to last page": [
-        "Ultima pagină"
-      ],
-      "Signing out": [
-        "Deconectare"
-      ],
-      "refresh the page": [
-        "împrospătați pagina"
-      ],
-      "Log in": [
-        "Conectare"
-      ],
-      "View invoice": [
-        "Afișare factură"
-      ],
-      "Get verification code": [
-        "Obținere cod de verificare"
-      ],
-      "Try another method": [
-        "Încercaţi o altă metodă"
-      ],
-      "Request new code": [
-        "Solicitare cod nou"
-      ],
-      "Verify": [
-        "Verifică"
-      ],
-      "Did not receive the code?": [
-        "Nu ați primit codul?"
-      ],
-      "Edit email address": [
-        "Editare adresa de e-mail"
-      ],
-      "Edit phone number": [
-        "Editare număr de telefon"
-      ],
-      "Upgrade": [
-        "Migrare"
-      ],
-      "Add": [
-        "Adăugare"
-      ],
-      "Edit": [
-        "Editare"
-      ],
-      "Apply": [
-        "Aplicare"
-      ],
-      "Insert contact": [
-        "Inserare contact"
-      ],
-      "Insert ${ totalChecked } contact": [
-        "Inserare un contact",
-        "Inserare ${ totalChecked } contacte",
-        "Inserare ${ totalChecked } de contacte"
-      ],
-      "Done": [
-        "Gata"
-      ],
-      "Clear data": [
-        "Ștergere date"
-      ],
-      "Recover data": [
-        "Recuperare date"
-      ],
-      "Click here.": [
-        "Apăsați aici."
-      ],
-      "Re-sign": [
-        "Reînregistrare"
-      ],
-      "Hide advanced PGP settings": [
-        "Ascundere setări PGP avansate"
-      ],
-      "Show advanced PGP settings": [
-        "Afișare setări PGP avansate"
-      ],
-      "Add to group": [
-        "Adăugare la grup"
-      ],
-      "Contact group": [
-        "Grup contacte"
-      ],
-      "Create new contact": [
-        "Creare contact nou"
-      ],
-      "clear it": [
-        "golire"
-      ],
-      "Export": [
-        "Exportare"
-      ],
-      "Download": [
-        "Descărcare"
-      ],
-      "Use for sending": [
-        "Folosire pentru trimitere"
-      ],
-      "Trust": [
-        "Aprobare"
-      ],
-      "Untrust": [
-        "Dezaprobare"
-      ],
-      "Email settings": [
-        "Setări e-mail"
-      ],
-      "Merge": [
-        "Îmbinare"
-      ],
-      "View": [
-        "Afișare"
-      ],
-      "Unmark for deletion": [
-        "Anulare marcare ștergere"
-      ],
-      "Mark for deletion": [
-        "Marcare pentru ștergere"
-      ],
-      "Preview contact": [
-        "Examinare contact"
-      ],
-      "Continue": [
-        "Continuare"
-      ],
-      "Copy email to clipboard": [
-        "Copiere mesaj în memorie"
-      ],
-      "Delete contact": [
-        "Ștergere contact"
-      ],
-      "Delete ${ selectedCount } contact": [
-        "Ștergere un contact",
-        "Ștergere ${ selectedCount } contacte",
-        "Ștergere ${ selectedCount } de contacte"
-      ],
-      "Deselect all": [
-        "Deselectare toate"
-      ],
-      "Select all": [
-        "Selectare toate"
-      ],
-      "Compose": [
-        "Compunere"
-      ],
-      "Forward as attachment": [
-        "Redirecționare ca atașament"
-      ],
-      "Merge contacts": [
-        "Îmbinare contacte"
-      ],
-      "Add new contact": [
-        "Adăugare contact"
-      ],
-      "Add group": [
-        "Adăugare grup"
-      ],
-      "Clear query": [
-        "Ștergere interogare"
-      ],
-      "Add contact": [
-        "Adăugare contact"
-      ],
-      "import": [
-        "importare"
-      ],
-      "Delete contact group": [
-        "Ștergere grup de contacte"
-      ],
-      "Delete ${ selectedCount } contact group": [
-        "Ștergere grup de contacte",
-        "Ștergere ${ selectedCount } contacte",
-        "Ștergere ${ selectedCount } de contacte"
-      ],
-      "Add new group": [
-        "Adăugare grup"
-      ],
-      "Export contacts": [
-        "Exportare contacte"
-      ],
-      "Import contacts": [
-        "Importare contacte"
-      ],
-      "Choose a file or drag it here": [
-        "Alegeți un fișier sau trageți-l aici"
-      ],
-      "Import": [
-        "Importare"
-      ],
-      "Next": [
-        "Înainte"
-      ],
-      "Use ${ label } theme": [
-        "Folosire tema ${ label }"
-      ],
-      "OK": [
-        "OK"
-      ],
-      "Details": [
-        "Detalii"
-      ],
-      "Share via link": [
-        "Partajare prin legătură"
-      ],
-      "Sharing options": [
-        "Opțiuni de partajare"
-      ],
-      "Zoom out": [
-        "Micșorare"
-      ],
-      "Reset zoom": [
-        "Resetare dimensiune"
-      ],
-      "Zoom in": [
-        "Mărire"
-      ],
-      "Previous": [
-        "Anteriorul"
-      ],
-      "Continue import": [
-        "Continuare importare"
-      ],
-      "Discard": [
-        "Renunțare"
-      ],
-      "Reconnect": [
-        "Reconectare"
-      ],
-      "Start import": [
-        "Pornire importare"
-      ],
-      "Clear": [
-        "Eliminare"
-      ],
-      "Add screenshot(s)": [
-        "Adăugare captură"
-      ],
-      "Hide info": [
-        "Ascundere informații"
-      ],
-      "Show info": [
-        "Afișare informații"
-      ],
-      "Get started": [
-        "Să începem"
-      ],
-      "Start setup": [
-        "Pornire configurare"
-      ],
-      "Skip": [
-        "Omitere"
-      ],
-      "Back": [
-        "Înapoi"
-      ],
-      "Copy to clipboard": [
-        "Copiere în memorie"
-      ],
-      "Create recovery phrase": [
-        "Creare frază de recuperare"
-      ],
-      "Don't secure account": [
-        "Fără securizare cont"
-      ],
-      "Close this banner": [
-        "Închidere acest banner"
-      ],
-      "Refresh the page": [
-        "Împrospătare pagină"
-      ],
-      "enable desktop notifications": [
-        "activare notificări pe desktop"
-      ],
-      "here": [
-        "aici"
-      ],
-      "Search": [
-        "Căutare"
-      ],
-      "${ BRAND_NAME } introduction": [
-        "Prezentare ${ BRAND_NAME }"
-      ],
-      "Chat with us": [
-        "Conversați cu noi"
-      ],
-      "I have a question": [
-        "Am o întrebare"
-      ],
-      "Request a feature": [
-        "Solicitare funcție"
-      ],
-      "Report a problem": [
-        "Raportare problemă"
-      ],
-      "${ BRAND_NAME } shop": [
-        "Magazin ${ BRAND_NAME }"
-      ],
-      "Switch account": [
-        "Comutare cont"
-      ],
-      "Sign out": [
-        "Deconectare"
-      ],
-      "Go to settings": [
-        "Accesare setări"
-      ],
-      "Beta Access": [
-        "Acces la Beta"
-      ],
-      "Theme": [
-        "Tema"
-      ],
-      "Keyboard shortcuts": [
-        "Combinații de taste listă mesaje"
-      ],
-      "Mailbox layout": [
-        "Aspect cutie poștală"
-      ],
-      "Mailbox density": [
-        "Densitate cutie poștală"
-      ],
-      "Composer size": [
-        "Dimensiune editor mesaje"
-      ],
-      "Remove bonuses": [
-        "Anulare bonusuri"
-      ],
-      "Try again": [
-        "Reîncercați"
-      ],
-      "Use a different card": [
-        "Folosire alt card"
-      ],
-      "Use a different payment method": [
-        "Folosire metodă de plată diferită"
-      ],
-      "Retry": [
-        "Reîncercare"
-      ],
-      "Loading verification": [
-        "În curs de verificare"
-      ],
-      "Select plan": [
-        "Selectare plan"
-      ],
-      "Compare all features": [
-        "Comparare funcții"
-      ],
-      "${ boldSave } by switching to annual billing": [
-        "${ boldSave } trecând la facturarea anuală"
-      ],
-      "Pay": [
-        "Plătire"
-      ],
-      "Open ${ CALENDAR_APP_NAME } settings": [
-        "Deschidere setări ${ CALENDAR_APP_NAME }"
-      ],
-      "Remove gift code": [
-        "Eliminare cod cadou"
-      ],
-      "annual billing": [
-        "plată anuală"
-      ],
-      "Compare plans": [
-        "Comparare planuri"
-      ],
-      "Decrease": [
-        "Reducere"
-      ],
-      "Increase": [
-        "Mărire"
-      ],
-      "Preview": [
-        "Examinare"
-      ],
-      "Create label": [
-        "Creare etichetă"
-      ],
-      "Create folder": [
-        "Creare folder"
-      ],
-      "Remove this label": [
-        "Eliminare etichetă"
-      ],
-      "Add condition": [
-        "Adăugare condiție"
-      ],
-      "label emails as": [
-        "etichetare mesaje ca"
-      ],
-      "move emails to": [
-        "mutare mesaje în"
-      ],
-      "mark emails as": [
-        "marcare mesaje ca"
-      ],
-      "send auto-reply email": [
-        "trimitere răspuns automat"
-      ],
-      "Yes, I'll attend": [
-        "Da, voi participa"
-      ],
-      "Maybe I'll attend": [
-        "Poate voi participa"
-      ],
-      "No, I won't attend": [
-        "Nu, nu voi participa"
-      ],
-      "Yes": [
-        "Da"
-      ],
-      "Maybe": [
-        "Probabil"
-      ],
-      "No": [
-        "Nu"
-      ],
-      "Add to ${ CALENDAR_APP_NAME }": [
-        "Adăugare la ${ CALENDAR_APP_NAME }"
-      ],
-      "Send anyway": [
-        "Trimitere așa"
-      ],
-      "Got it": [
-        "Am înțeles"
-      ],
-      "Maximize composer": [
-        "Mărire panou editare"
-      ],
-      "Minimize composer": [
-        "Micșorare panou editare"
-      ],
-      "Contract composer": [
-        "Restrângere panou editare"
-      ],
-      "Expand composer": [
-        "Extindere panou editare"
-      ],
-      "Close composer": [
-        "Închidere panou editare"
-      ],
-      "Trust key": [
-        "Cheie de încredere",
-        "Chei de încredere",
-        "Chei de încredere"
-      ],
-      "Copy address": [
-        "Copiere adresă"
-      ],
-      "Edit address": [
-        "Editare adresă"
-      ],
-      "View contact details": [
-        "Afișare detalii contact"
-      ],
-      "Copy addresses": [
-        "Copiere adrese"
-      ],
-      "View recipients": [
-        "Afișare destinatari"
-      ],
-      "Carbon Copy, Blind Carbon Copy": [
-        "Copie, Copie ascunsă"
-      ],
-      "CC, BCC": [
-        "C, CA"
-      ],
-      "Send": [
-        "Trimitere"
-      ],
-      "Attachment": [
-        "Atașament"
-      ],
-      "Inline": [
-        "Integrat"
-      ],
-      "Cancel action": [
-        "Anulare acțiune"
-      ],
-      "Loading${ ellipsis }": [
-        "Se încarcă${ ellipsis }"
-      ],
-      "Saving${ _ellipsis }": [
-        "Se salvează${ _ellipsis }"
-      ],
-      "Not saved": [
-        "Nesalvat"
-      ],
-      "Schedule send": [
-        "Trimitere programată"
-      ],
-      "Expiration time": [
-        "Dată expirare"
-      ],
-      "Encryption": [
-        "Criptare"
-      ],
-      "Delete draft": [
-        "Ștergere ciornă"
-      ],
-      "Set": [
-        "Setare"
-      ],
-      "Schedule message": [
-        "Mesaj programat"
-      ],
-      "Print": [
-        "Tipărire"
-      ],
-      "Address options": [
-        "Opțiuni adresă"
-      ],
-      "New message": [
-        "Mesaj nou"
-      ],
-      "Trust Public Key": [
-        "Acceptare cheie publică"
-      ],
-      "Filter on...": [
-        "Filtrare după..."
-      ],
-      "Move to...": [
-        "Mutare în..."
-      ],
-      "Label as...": [
-        "Etichetare cu..."
-      ],
-      "Mark as unread": [
-        "Marcare ca necitit"
-      ],
-      "Move to spam": [
-        "Mutare în «Nedorite»"
-      ],
-      "Report phishing": [
-        "Raportare înșelăciune"
-      ],
-      "View source code": [
-        "Afișare cod sursă"
-      ],
-      "View rendered HTML": [
-        "Afișare HTML generat"
-      ],
-      "View headers": [
-        "Afișare antete"
-      ],
-      "Hide details": [
-        "Ascundere detalii"
-      ],
-      "Show details": [
-        "Afișare detalii"
-      ],
-      "Custom filter": [
-        "Filtru personal"
-      ],
-      "Move to": [
-        "Mutare în"
-      ],
-      "Label as": [
-        "Etichetare ca"
-      ],
-      "Load": [
-        "Încărcare"
-      ],
-      "This message contains remote content.": [
-        "Acest mesaj cuprinde conținut la distanță."
-      ],
-      "This message contains embedded images.": [
-        "Acest mesaj conține imagini încorporate."
-      ],
-      "Unsubscribe": [
-        "Dezabonare"
-      ],
-      "Unsubscribing": [
-        "Unsubscribing"
-      ],
-      "Mark legitimate": [
-        "Marcare ca legitim"
-      ],
-      "Send receipt": [
-        "Trimitere confirmare"
-      ],
-      "Accept": [
-        "Acceptare"
-      ],
-      "Show": [
-        "Afișare"
-      ],
-      "Show less": [
-        "Afișare mai puțin"
-      ],
-      "Never show": [
-        "Nu mai arăta"
-      ],
-      "View keys": [
-        "Afișare chei"
-      ],
-      "Edit draft": [
-        "Editare schiță"
-      ],
-      "Download ${ attachmentName }": [
-        "Descărcare atașament ${ attachmentName }"
-      ],
-      "Preview ${ attachmentName }": [
-        "Examinare ${ attachmentName }"
-      ],
-      "Remove ${ attachmentName }": [
-        "Eliminare ${ attachmentName }"
-      ],
-      "Hide attachment details": [
-        "Ascundere detalii atașament"
-      ],
-      "Show attachment details": [
-        "Afișare detalii atașament"
-      ],
-      "Hide": [
-        "Ascundere"
-      ],
-      "Learn more": [
-        "Detalii"
-      ],
-      "Undo": [
-        "Anulare"
-      ],
-      "View message": [
-        "Afișare mesaj"
-      ],
-      "Enable": [
-        "Activare"
-      ],
-      "Search message content": [
-        "Căutare în conținut mesaj"
-      ],
-      "Activate": [
-        "Activare"
-      ],
-      "Resume": [
-        "Reluare"
-      ],
-      "Pause": [
-        "Pauză"
-      ],
-      "Show less search options": [
-        "Mai puține opțiuni de căutare"
-      ],
-      "Show more search options": [
-        "Mai multe opțiuni de căutare"
-      ],
-      "Less search options": [
-        "Mai puține opțiuni de căutare"
-      ],
-      "More search options": [
-        "Mai multe opțiuni de căutare"
-      ],
-      "Advanced search": [
-        "Căutare avansată"
-      ],
-      "Clear browser data": [
-        "Ștergere date din navigator"
-      ],
-      "Mark as read": [
-        "Marcare ca citit"
-      ],
-      "Delete permanently": [
-        "Ștergere permanentă"
-      ],
-      "Move to inbox": [
-        "Mutare în «Primite»"
-      ],
-      "Move to archive": [
-        "Mutare în «Arhivă»"
-      ],
-      "Move to inbox (not spam)": [
-        "Mutare în «Primite» (nu e nesolicitat)"
-      ],
-      "Move to trash": [
-        "Mutare în «Gunoi»"
-      ],
-      "Delete all": [
-        "Ștergere toate"
-      ],
-      "Deselect all messages": [
-        "Deselectare toate mesajele"
-      ],
-      "Select all messages": [
-        "Selectare toate mesajele"
-      ],
-      "Select All": [
-        "Selectare toate"
-      ],
-      "All Read": [
-        "Toate citite"
-      ],
-      "All Unread": [
-        "Toate necitite"
-      ],
-      "All Starred": [
-        "Toate cu stea"
-      ],
-      "All Unstarred": [
-        "Toate fără stea"
-      ],
-      "Load more": [
-        "Încărcare mai multe"
-      ],
-      "Previous page": [
-        "Pagina anterioară"
-      ],
-      "Change page": [
-        "Schimbare pagină"
-      ],
-      "Page ${ pageNumber }": [
-        "Pagina ${ pageNumber }"
-      ],
-      "Next page": [
-        "Pagina următoare"
-      ],
-      "Previous conversation": [
-        "Conversație anterioară"
-      ],
-      "Previous message": [
-        "Mesaj anterior"
-      ],
-      "Next conversation": [
-        "Conversația următoare"
-      ],
-      "Next message": [
-        "Mesajul următor"
-      ],
-      "Show messages": [
-        "Afișare mesaje"
-      ],
-      "Hide messages": [
-        "Ascundere mesaje"
-      ],
-      "Create new message": [
-        "Creare mesaj"
-      ],
-      "Open shop": [
-        "Accesare magazin"
-      ],
-      "Open calendar": [
-        "Deschidere calendar"
-      ],
-      "Import messages": [
-        "Importare mesaje"
-      ],
-      "Deselect": [
-        "Deselectare"
-      ],
-      "Start using ${ appName }": [
-        "Începeți să utilizați ${ appName }"
-      ]
-    },
-    "Title": {
-      "Open actions dropdown": [
-        "Deschidere meniu acțiuni"
-      ],
-      "Expand content": [
-        "Extindere conținut"
-      ],
-      "Link confirmation": [
-        "Legătură de confirmare"
-      ],
-      "Keyboard Shortcuts": [
-        "Combinații de taste"
-      ],
-      "What's new": [
-        "Ce este nou"
-      ],
-      "Sign in again to continue": [
-        "Reconectați-vă pentru a continua"
-      ],
-      "Account suspended": [
-        "Cont suspendat"
-      ],
-      "Enter your username or ProtonMail email address": [
-        "Introduceți numele de utilizator sau adresa de e-mail ProtonMail"
-      ],
-      "Enter your password": [
-        "Introduceţi parola"
-      ],
-      "Invalid verification code": [
-        "Cod de verificare nevalid"
-      ],
-      "Human verification": [
-        "Verificare persoană"
-      ],
-      "Upgrade required": [
-        "Migrare necesară"
-      ],
-      "Delete ${ Name }": [
-        "Ștergere ${ Name }"
-      ],
-      "Delete ${ count } contact group": [
-        "Ștergere grup de contacte",
-        "Ștergere ${ count } grupuri de contacte",
-        "Ștergere ${ count } de grupuri de contacte"
-      ],
-      "Edit contact group": [
-        "Editare grup de contacte"
-      ],
-      "Create new group": [
-        "Creare grup"
-      ],
-      "${ emailsCount } member": [
-        "Un membru",
-        "${ emailsCount } membri",
-        "${ emailsCount } de membri"
-      ],
-      "Edit image": [
-        "Editare imagine"
-      ],
-      "Add to ${ groupName }": [
-        "Adăugare în ${ groupName }"
-      ],
-      "Add to ${ groupCount } group": [
-        "Adăugare la un grup",
-        "Adăugare la ${ groupCount } grupuri",
-        "Adăugare la ${ groupCount } de grupuri"
-      ],
-      "Edit contact": [
-        "Editare contact"
-      ],
-      "Create contact": [
-        "Creare contact"
-      ],
-      "Insert contacts": [
-        "Inserare contacte"
-      ],
-      "Delete ${ count } contact": [
-        "Ștergere un contact",
-        "Ștergere ${ count } contacte",
-        "Ștergere ${ count } de contacte"
-      ],
-      "Clearing data": [
-        "Ştergere date"
-      ],
-      "Warning": [
-        "Avertizare"
-      ],
-      "Recover data": [
-        "Recuperare date"
-      ],
-      "Re-signing contacts": [
-        "Resemnare contacte"
-      ],
-      "Re-sign all contacts": [
-        "Resemnare toate contactele"
-      ],
-      "Email settings (${ emailAddress })": [
-        "Setări e-mail (${ emailAddress })"
-      ],
-      "Exporting contacts": [
-        "Exportare contacte"
-      ],
-      "Contact group": [
-        "Grup contacte"
-      ],
-      "Other names": [
-        "Alte nume"
-      ],
-      "Email addresses": [
-        "Adrese de e-mail"
-      ],
-      "Phone numbers": [
-        "Numere de telefon"
-      ],
-      "Addresses": [
-        "Adrese"
-      ],
-      "Other information": [
-        "Alte informații"
-      ],
-      "Email settings": [
-        "Setări e-mail"
-      ],
-      "Contact Details": [
-        "Detalii contact"
-      ],
-      "Merging contacts": [
-        "Îmbinare contacte"
-      ],
-      "Merge contacts": [
-        "Îmbinare contacte"
-      ],
-      "Deleting contacts": [
-        "Ștergere contacte"
-      ],
-      "View contacts": [
-        "Afișare contacte"
-      ],
-      "Contacts": [
-        "Contacte"
-      ],
-      "Groups": [
-        "Grupuri"
-      ],
-      "Settings": [
-        "Setări"
-      ],
-      "Select action to take on contact group": [
-        "Selectați acțiunea pentru un grup de contacte"
-      ],
-      "Add contact group name": [
-        "Adăugare nume grup contacte"
-      ],
-      "Select contact group": [
-        "Selectare grup contacte"
-      ],
-      "Import groups": [
-        "Importare grupuri"
-      ],
-      "Import contacts": [
-        "Importare contacte"
-      ],
-      "Select a theme": [
-        "Selectaţi o temă"
-      ],
-      "Start import process": [
-        "Începere proces de importare"
-      ],
-      "Import in progress": [
-        "Importare în derulare"
-      ],
-      "Report a problem": [
-        "Raportare problemă"
-      ],
-      "${ appName } Keyboard Shortcuts": [
-        "Combinații de taste ${ appName }"
-      ],
-      "Mailbox density": [
-        "Densitate cutie poștală"
-      ],
-      "Mailbox layout": [
-        "Aspect cutie poștală"
-      ],
-      "Composer mode": [
-        "Mod editor mesaje"
-      ],
-      "Open help menu": [
-        "Deschidere meniu ajutor"
-      ],
-      "Back": [
-        "Înapoi"
-      ],
-      "Open settings menu": [
-        "Deschidere meniu setări"
-      ],
-      "Confirm loss of Proton bonuses": [
-        "Confirmare pierdere bonusuri Proton"
-      ],
-      "Unsupported browser": [
-        "Navigator nesuportat"
-      ],
-      "Card verification": [
-        "Verificare card"
-      ],
-      "Payment verification": [
-        "Verificare plată"
-      ],
-      "Processing...": [
-        "Se procesează..."
-      ],
-      "Card verification in progress": [
-        "Verificare card în desfășurare"
-      ],
-      "Payment verification in progress": [
-        "Verificarea plății în desfășurare"
-      ],
-      "PayPal verification failed": [
-        "Verificarea PayPal a eșuat"
-      ],
-      "3-D Secure verification failed": [
-        "Verificarea cu 3-D Secure a eșuat"
-      ],
-      "Error": [
-        "Eroare"
-      ],
-      "ZIP / postal code": [
-        "ZIP/Cod poștal"
-      ],
-      "Payment details": [
-        "Detalii plată"
-      ],
-      "Currency": [
-        "Monedă"
-      ],
-      "Billing cycle": [
-        "Ciclu de facturare"
-      ],
-      "Current plan": [
-        "Plan actual"
-      ],
-      "Processing": [
-        "Se procesează"
-      ],
-      "Apply gift code": [
-        "Aplicare cod cadou"
-      ],
-      "Subtotal": [
-        "Subtotal"
-      ],
-      "Coupon discount": [
-        "Cupon reducere"
-      ],
-      "Total (monthly)": [
-        "Total (lunar)"
-      ],
-      "Credits": [
-        "Credite"
-      ],
-      "Gift code": [
-        "Cod cadou"
-      ],
-      "Amount due": [
-        "Suma datorată"
-      ],
-      "Cancel subscription": [
-        "Anulare abonament"
-      ],
-      "Network error": [
-        "Eroare de rețea"
-      ],
-      "Select a plan": [
-        "Selectare plan"
-      ],
-      "Customize your plan": [
-        "Personalizare plan"
-      ],
-      "Checkout": [
-        "Finalizare"
-      ],
-      "Plan summary": [
-        "Rezumat plan"
-      ],
-      "${ appName } customization": [
-        "Personalizare ${ appName }"
-      ],
-      "Beta Access": [
-        "Acces la Beta"
-      ],
-      "Edit filter": [
-        "Editare filtru"
-      ],
-      "Add filter": [
-        "Adăugare filtru"
-      ],
-      "Are you sure you want to close?": [
-        "Sigur doriți să închideți?"
-      ],
-      "Change my answer": [
-        "Schimbare răspuns"
-      ],
-      "Image": [
-        "Imagine"
-      ],
-      "Sending notice": [
-        "Notificare trimitere"
-      ],
-      "Storage capacity warning": [
-        "Avertizare spațiu de stocare"
-      ],
-      "Sending original message": [
-        "Se trimite mesajul original"
-      ],
-      "No recipient": [
-        "Lipsă destinatar"
-      ],
-      "Message without subject?": [
-        "Mesaj fără subiect?"
-      ],
-      "No attachment found": [
-        "Nu s-a găsit niciun atașament"
-      ],
-      "Re-sign contact": [
-        "Reînregistrare contact"
-      ],
-      "Verification error": [
-        "Eroare verificare"
-      ],
-      "Decryption error": [
-        "Eroare decriptare"
-      ],
-      "Delete draft": [
-        "Ștergere ciornă"
-      ],
-      "Delete ${ count } draft": [
-        "Ștergere o ciornă",
-        "Ștergere ${ count } ciorne",
-        "Ștergere ${ count } de ciorne"
-      ],
-      "Delete message": [
-        "Ștergere mesaj"
-      ],
-      "Delete conversation": [
-        "Ștergere conversație"
-      ],
-      "Delete ${ count } conversation": [
-        "Ștergere o conversație",
-        "Ștergere ${ count } conversații",
-        "Ștergere ${ count } de conversații"
-      ],
-      "Delete ${ count } message": [
-        "Ștergere un mesaj",
-        "Ștergere ${ count } mesaje",
-        "Ștergere ${ count } de mesaje"
-      ],
-      "Delete all messages": [
-        "Ștergere toate mesajele"
-      ],
-      "Trust new key?": [
-        "Aveți încredere în noua cheie?",
-        "Aveți încredere în noile chei?",
-        "Aveți încredere în noile chei?"
-      ],
-      "Add contacts": [
-        "Adăugare contacte"
-      ],
-      "To": [
-        "La"
-      ],
-      "CC": [
-        "CI"
-      ],
-      "BCC": [
-        "CA"
-      ],
-      "Carbon Copy": [
-        "Copie identică"
-      ],
-      "Blind Carbon Copy": [
-        "Copie ascunsă"
-      ],
-      "Sending error": [
-        "Eroare trimitere"
-      ],
-      "Confirm recipient address?": [
-        "Confirmați adresa destinatarului?"
-      ],
-      "Send without expiration?": [
-        "Trimitere fără expirare?"
-      ],
-      "Send with changed preferences?": [
-        "Trimitere cu preferințele schimbate?"
-      ],
-      "Attachments": [
-        "Atașamente"
-      ],
-      "Expiration time": [
-        "Dată expirare"
-      ],
-      "Encryption": [
-        "Criptare"
-      ],
-      "Send email": [
-        "Trimitere e-mail"
-      ],
-      "Schedule send": [
-        "Trimitere programată"
-      ],
-      "New message": [
-        "Mesaj nou"
-      ],
-      "Trust public key?": [
-        "Cheie publică de încredere?"
-      ],
-      "All recipients were added to the BCC field and cannot be disclosed": [
-        "Toți destinatarii au fost adăugați în câmpul CA și nu pot fi dezvăluiți"
-      ],
-      "Move to inbox (not spam)": [
-        "Mutare în «Primite» (nu e nesolicitat)"
-      ],
-      "Mark as unread": [
-        "Marcare ca necitit"
-      ],
-      "Move to inbox": [
-        "Mutare în «Primite»"
-      ],
-      "Move to trash": [
-        "Mutare în «Gunoi»"
-      ],
-      "More": [
-        "Mai multe"
-      ],
-      "More options": [
-        "Mai multe opțiuni"
-      ],
-      "Reply": [
-        "Răspuns"
-      ],
-      "Reply all": [
-        "Răspuns tuturor"
-      ],
-      "Forward": [
-        "Redirecționare"
-      ],
-      "Filter on": [
-        "Filtrare după"
-      ],
-      "Move to": [
-        "Mutare în"
-      ],
-      "Label as": [
-        "Etichetare ca"
-      ],
-      "Load remote content": [
-        "Încărcare conținut extern"
-      ],
-      "Load embedded images": [
-        "Încărcare imagini încorporate"
-      ],
-      "Unsubscribe": [
-        "Dezabonare"
-      ],
-      "Mark email as legitimate": [
-        "Marcare e-mail ca legitim"
-      ],
-      "Trust pinned keys?": [
-        "Chei fixate de încredere?"
-      ],
-      "Enable message content search": [
-        "Activați căutarea conținutului mesajului"
-      ],
-      "Create a new folder": [
-        "Creare folder"
-      ],
-      "Create a new label": [
-        "Creare etichetă"
-      ],
-      "More selections": [
-        "Mai multe selecții"
-      ],
-      "Previous conversation": [
-        "Conversația anterioară"
-      ],
-      "Previous message": [
-        "Mesajul anterior"
-      ],
-      "Next conversation": [
-        "Conversația următoare"
-      ],
-      "Next message": [
-        "Mesajul următor"
-      ],
-      "Sort conversations": [
-        "Sortare conversații"
-      ],
-      "Sort messages": [
-        "Sortare mesaje"
-      ],
-      "Create folder": [
-        "Creare folder"
-      ],
-      "Create label": [
-        "Creare etichetă"
-      ],
-      "Conversation list": [
-        "Lista conversații"
-      ],
-      "Message list": [
-        "Listă mesaje"
-      ],
-      "Welcome ${ userName }": [
-        "Bun venit, ${ userName }"
-      ],
-      "Welcome": [
-        "Bun venit"
-      ]
-    },
-    "Placeholder": {
-      "Link": [
-        "Legătura"
-      ],
-      "Fill in the URL link and text to test your link": [
-        "Completaţi adresa URL şi textul pentru a testa legătura"
-      ],
-      "Email address": [
-        "Adresă e-mail"
-      ],
-      "Fill in the email address and text to test your link": [
-        "Completaţi adresa de e-mail şi textul pentru a testa legătura"
-      ],
-      "Phone number": [
-        "Număr de telefon"
-      ],
-      "Fill in the phone number and text to test your link": [
-        "Completați numărul de telefon și textul pentru a testa legătura"
-      ],
-      "Text": [
-        "Text"
-      ],
-      "E.g., ": [
-        "Ex.: "
-      ],
-      "Mailbox password": [
-        "Parolă mesaje"
-      ],
-      "Start typing an email address": [
-        "Introduceți o adresă de e-mail"
-      ],
-      "Image URL": [
-        "URL imagine"
-      ],
-      "Search name, email or group": [
-        "Căutare nume, e-mail sau grup"
-      ],
-      "Filter groups": [
-        "Filtrare grupuri"
-      ],
-      "Search for name or email": [
-        "Căutare după nume sau e-mail"
-      ],
-      "Search for group name": [
-        "Căutare nume grup"
-      ],
-      "Name": [
-        "Nume"
-      ],
-      "OS name": [
-        "Sistem de operare"
-      ],
-      "OS version": [
-        "Versiune sistem de operare"
-      ],
-      "Proton username": [
-        "Utilizator Proton"
-      ],
-      "A way to contact you": [
-        "Modalitate de contactare"
-      ],
-      "Please describe the problem and include any error messages": [
-        "Descrieți problema incluzând și mesajele de eroare ce apar"
-      ],
-      "Browser name": [
-        "Nume navigator"
-      ],
-      "Browser version": [
-        "Versiune navigator"
-      ],
-      "e.g. Julia Smith": [
-        "ex: Iulia Sandu"
-      ],
-      "ZIP": [
-        "ZIP"
-      ],
-      "Postal code": [
-        "Cod poștal"
-      ],
-      "Gift code": [
-        "Cod cadou"
-      ],
-      "Type text or keyword": [
-        "Scrieți un text sau cuvânt cheie"
-      ],
-      "Subject": [
-        "Subiect"
-      ],
-      "Write your message": [
-        "Scrieți mesajul"
-      ],
-      "Password": [
-        "Parola"
-      ],
-      "Confirm Password": [
-        "Confirmare parolă"
-      ],
-      "Hint": [
-        "Indiciu"
-      ],
-      "Search Messages": [
-        "Căutare mesaje"
-      ],
-      "Start date": [
-        "Dată început"
-      ],
-      "End date": [
-        "Data sfârșit"
-      ],
-      "Name or email address": [
-        "Numele de utilizator sau adresa de e-mail"
-      ],
-      "Search messages": [
-        "Căutare mesaje"
-      ],
-      "Filter folders": [
-        "Filtrare foldere"
-      ],
-      "Filter labels": [
-        "Filtrare etichete"
-      ]
-    },
-    "Font Face Default": {
-      "Default": [
-        "Implicit"
-      ]
-    },
-    "Font Size Default": {
-      "Default": [
-        "Implicit"
+      "${ numberOfTrackers } email tracker found": [
+        "${ numberOfTrackers } tracker de e-mail găsit",
+        "${ numberOfTrackers } trackeri de e-mail găsiți",
+        "${ numberOfTrackers } de trackeri de e-mail găsiți"
       ]
     },
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "Cheia nu poate fi folosită pentru criptare."
-      ]
-    },
-    "Link": {
-      "Learn more": [
-        "Detalii"
-      ],
-      "Request an invite": [
-        "Solicitați o invitație"
-      ],
-      "clearing your browser cache": [
-        "golind bufferul navigatorului"
-      ],
-      "Pay invoice": [
-        "Plată factură"
-      ],
-      "Upgrade account": [
-        "Migrare cont"
-      ],
-      "Upgrade": [
-        "Migrare"
-      ],
-      "Go to subscription plans": [
-        "Accesare planuri abonamente"
-      ],
-      "click here": [
-        "apăsați aici"
-      ],
-      "Add a gift code": [
-        "Adăugare cod cadou"
-      ],
-      "You need to activate your calendar keys to add this event": [
-        "Trebuie să activați cheile calendarului pentru a adăuga acest eveniment"
-      ],
-      "You need to activate your calendar keys to manage this invitation": [
-        "Trebuie să activați cheile calendarului pentru a gestiona această invitație"
-      ],
-      "You need to activate your calendar keys to answer this invitation": [
-        "Trebuie să activați cheile calendarului pentru a răspunde la această invitație"
-      ],
-      "You need to activate your calendar keys to see the updated event": [
-        "Trebuie să activați cheile calendarului pentru a vedea evenimentul actualizat"
-      ],
-      "You need to activate your calendar keys to see the updated invitation": [
-        "Trebuie să activați cheile calendarului pentru a vedea invitația actualizată"
-      ],
-      "This ICS file contains more than one event. Please download it and import the events in ${ calendarAppName }": [
-        "Acest fișier ICS conține mai multe evenimente. Descărcați-l și importați evenimentele în ${ calendarAppName }"
-      ],
-      "You need to reactivate your keys to manage this invitation": [
-        "Trebuie să reactivați cheile pentru a gestiona această invitație"
-      ],
-      "You need to reactivate your keys to see the updated event": [
-        "Trebuie să activați cheile pentru a vedea evenimentul actualizat"
-      ],
-      "You need to reactivate your keys to see the updated invitation": [
-        "Trebuie să activați cheile pentru a vedea invitația actualizată"
-      ],
-      "Create a new calendar to add this event": [
-        "Creați un calendar nou pentru a adăuga acest eveniment"
-      ],
-      "Create a new calendar to answer this invitation": [
-        "Creați un calendar nou pentru a răspunde la această invitație"
-      ],
-      "Create a new calendar to manage your invitations": [
-        "Creați un calendar nou pentru a vă gestiona invitațiile"
-      ],
-      "Open updated event in ${ calendarAppName }": [
-        "Deschidere eveniment actualizat în ${ calendarAppName }"
-      ],
-      "Open in ${ calendarAppName }": [
-        "Deschidere în ${ calendarAppName }"
-      ],
-      "Inbox": [
-        "Primite"
-      ],
-      "Drafts": [
-        "Ciorne"
-      ],
-      "Sent": [
-        "Trimise"
-      ],
-      "Trash": [
-        "Gunoi"
-      ],
-      "Spam": [
-        "Nedorite"
-      ],
-      "All mail": [
-        "Toate mesajele"
-      ],
-      "Archive": [
-        "Arhivă"
-      ],
-      "Starred": [
-        "Cu stea"
-      ],
-      "Outbox": [
-        "De trimis"
-      ],
-      "Scheduled": [
-        "Programate"
-      ],
-      "Re-enable the address linked to this calendar to manage your invitation.": [
-        "Reactivați adresa asociată acestui calendar pentru a vă gestiona invitația."
-      ],
-      "Re-enable the address linked to this calendar to update your invitation.": [
-        "Reactivați adresa asociată acestui calendar pentru a vă actualiza invitația."
-      ],
-      "Enable your address to answer this invitation.": [
-        "Activați-vă adresa pentru a răspunde la această invitație."
-      ],
-      "Create a calendar linked to an active email address.": [
-        "Creaţi un calendar atașat de o adresă de e-mail activă."
-      ],
-      "Enable an email address linked to one of your calendars.": [
-        "Activați o adresă de e-mail asociată la unul dintre calendare."
-      ],
-      "Or you can delete one of your calendars and create a new one linked to an active email address.": [
-        "Sau puteți șterge unul dintre calendare și crea unul nou asociat la o adresă de e-mail activă."
-      ],
-      "Enable your address again to modify your answer.": [
-        "Activați adresa din nou pentru a modifica răspunsul."
-      ],
-      "Enable the email address linked to the disabled calendar to cancel the event.": [
-        "Activați adresa de e-mail asociată calendarului dezactivat pentru a anula evenimentul."
-      ],
-      "Enable the email address linked to the disabled calendar to modify your answer.": [
-        "Activați adresa de e-mail asociată calendarului dezactivat pentru a modifica răspunsul."
-      ],
-      "Add folder": [
-        "Adăugare folder"
-      ],
-      "Add label": [
-        "Adăugare etichetă"
-      ],
-      "Folders": [
-        "Foldere"
-      ],
-      "Manage your folders": [
-        "Gestionare foldere"
-      ],
-      "Labels": [
-        "Etichete"
-      ],
-      "Manage your labels": [
-        "Gestionare etichete"
       ]
     },
     "Label": {
@@ -4734,8 +3427,8 @@
       "Keyword": [
         "Cuvânt cheie"
       ],
-      "Location": [
-        "Loc"
+      "Search in": [
+        "Căutare în"
       ],
       "From": [
         "De la"
@@ -4754,6 +3447,128 @@
       ],
       "Also archive": [
         "Și arhivare"
+      ]
+    },
+    "Placeholder": {
+      "E.g., ": [
+        "Ex.: "
+      ],
+      "Link": [
+        "Legătura"
+      ],
+      "Fill in the URL link and text to test your link": [
+        "Completaţi adresa URL şi textul pentru a testa legătura"
+      ],
+      "Email address": [
+        "Adresă e-mail"
+      ],
+      "Fill in the email address and text to test your link": [
+        "Completaţi adresa de e-mail şi textul pentru a testa legătura"
+      ],
+      "Phone number": [
+        "Număr de telefon"
+      ],
+      "Fill in the phone number and text to test your link": [
+        "Completați numărul de telefon și textul pentru a testa legătura"
+      ],
+      "Text": [
+        "Text"
+      ],
+      "Mailbox password": [
+        "Parolă mesaje"
+      ],
+      "Start typing an email address": [
+        "Introduceți o adresă de e-mail"
+      ],
+      "Image URL": [
+        "URL imagine"
+      ],
+      "Search name, email or group": [
+        "Căutare nume, e-mail sau grup"
+      ],
+      "Filter groups": [
+        "Filtrare grupuri"
+      ],
+      "Search for name or email": [
+        "Căutare după nume sau e-mail"
+      ],
+      "Search for group name": [
+        "Căutare nume grup"
+      ],
+      "Name": [
+        "Nume"
+      ],
+      "OS name": [
+        "Sistem de operare"
+      ],
+      "OS version": [
+        "Versiune sistem de operare"
+      ],
+      "Proton username": [
+        "Utilizator Proton"
+      ],
+      "A way to contact you": [
+        "Modalitate de contactare"
+      ],
+      "Please describe the problem and include any error messages": [
+        "Descrieți problema incluzând și mesajele de eroare ce apar"
+      ],
+      "Browser name": [
+        "Nume navigator"
+      ],
+      "Browser version": [
+        "Versiune navigator"
+      ],
+      "e.g. Julia Smith": [
+        "ex: Iulia Sandu"
+      ],
+      "ZIP": [
+        "ZIP"
+      ],
+      "Postal code": [
+        "Cod poștal"
+      ],
+      "Gift code": [
+        "Cod cadou"
+      ],
+      "Type text or keyword": [
+        "Scrieți un text sau cuvânt cheie"
+      ],
+      "Subject": [
+        "Subiect"
+      ],
+      "Write your message": [
+        "Scrieți mesajul"
+      ],
+      "Password": [
+        "Parola"
+      ],
+      "Confirm Password": [
+        "Confirmare parolă"
+      ],
+      "Hint": [
+        "Indiciu"
+      ],
+      "Search Messages": [
+        "Căutare mesaje"
+      ],
+      "Start date": [
+        "Dată început"
+      ],
+      "End date": [
+        "Data sfârșit"
+      ],
+      "Name or email address": [
+        "Numele de utilizator sau adresa de e-mail"
+      ],
+      "Search messages": [
+        "Căutare mesaje"
+      ],
+      "Filter folders": [
+        "Filtrare foldere"
+      ],
+      "Filter labels": [
+        "Filtrare etichete"
       ]
     },
     "Time unit": {
@@ -4786,6 +3601,162 @@
         "O secundă",
         "${ secondsCountLeft } secunde",
         "${ secondsCountLeft } de secunde"
+      ]
+    },
+    "Link": {
+      "Learn more": [
+        "Detalii"
+      ],
+      "Request an invite": [
+        "Solicitați o invitație"
+      ],
+      "clearing your browser cache": [
+        "golind bufferul navigatorului"
+      ],
+      "Pay invoice": [
+        "Plată factură"
+      ],
+      "Upgrade account": [
+        "Migrare cont"
+      ],
+      "Upgrade": [
+        "Migrare"
+      ],
+      "Go to subscription plans": [
+        "Accesare planuri abonamente"
+      ],
+      "click here": [
+        "apăsați aici"
+      ],
+      "Add a gift code": [
+        "Adăugare cod cadou"
+      ],
+      "Inbox": [
+        "Primite"
+      ],
+      "Drafts": [
+        "Ciorne"
+      ],
+      "Sent": [
+        "Trimise"
+      ],
+      "Trash": [
+        "Gunoi"
+      ],
+      "Spam": [
+        "Nedorite"
+      ],
+      "All mail": [
+        "Toate mesajele"
+      ],
+      "Archive": [
+        "Arhivă"
+      ],
+      "Starred": [
+        "Cu stea"
+      ],
+      "Outbox": [
+        "De trimis"
+      ],
+      "Scheduled": [
+        "Programate"
+      ],
+      "You need to activate your calendar keys to add this event": [
+        "Trebuie să activați cheile calendarului pentru a adăuga acest eveniment"
+      ],
+      "You need to activate your calendar keys to manage this invitation": [
+        "Trebuie să activați cheile calendarului pentru a gestiona această invitație"
+      ],
+      "You need to activate your calendar keys to answer this invitation": [
+        "Trebuie să activați cheile calendarului pentru a răspunde la această invitație"
+      ],
+      "You need to activate your calendar keys to see the updated event": [
+        "Trebuie să activați cheile calendarului pentru a vedea evenimentul actualizat"
+      ],
+      "You need to activate your calendar keys to see the updated invitation": [
+        "Trebuie să activați cheile calendarului pentru a vedea invitația actualizată"
+      ],
+      "This ICS file contains more than one event. Please download it and import the events in ${ calendarAppName }": [
+        "Acest fișier ICS conține mai multe evenimente. Descărcați-l și importați evenimentele în ${ calendarAppName }"
+      ],
+      "You need to reactivate your keys to manage this invitation": [
+        "Trebuie să reactivați cheile pentru a gestiona această invitație"
+      ],
+      "You need to reactivate your keys to see the updated event": [
+        "Trebuie să activați cheile pentru a vedea evenimentul actualizat"
+      ],
+      "You need to reactivate your keys to see the updated invitation": [
+        "Trebuie să activați cheile pentru a vedea invitația actualizată"
+      ],
+      "Create a new calendar to add this event": [
+        "Creați un calendar nou pentru a adăuga acest eveniment"
+      ],
+      "Create a new calendar to answer this invitation": [
+        "Creați un calendar nou pentru a răspunde la această invitație"
+      ],
+      "Create a new calendar to manage your invitations": [
+        "Creați un calendar nou pentru a vă gestiona invitațiile"
+      ],
+      "Open updated event in ${ calendarAppName }": [
+        "Deschidere eveniment actualizat în ${ calendarAppName }"
+      ],
+      "Open in ${ calendarAppName }": [
+        "Deschidere în ${ calendarAppName }"
+      ],
+      "Re-enable the address linked to this calendar to manage your invitation.": [
+        "Reactivați adresa asociată acestui calendar pentru a vă gestiona invitația."
+      ],
+      "Re-enable the address linked to this calendar to update your invitation.": [
+        "Reactivați adresa asociată acestui calendar pentru a vă actualiza invitația."
+      ],
+      "Enable your address to answer this invitation.": [
+        "Activați-vă adresa pentru a răspunde la această invitație."
+      ],
+      "Create a calendar linked to an active email address.": [
+        "Creaţi un calendar atașat de o adresă de e-mail activă."
+      ],
+      "Enable an email address linked to one of your calendars.": [
+        "Activați o adresă de e-mail asociată la unul dintre calendare."
+      ],
+      "Or you can delete one of your calendars and create a new one linked to an active email address.": [
+        "Sau puteți șterge unul dintre calendare și crea unul nou asociat la o adresă de e-mail activă."
+      ],
+      "Enable your address again to modify your answer.": [
+        "Activați adresa din nou pentru a modifica răspunsul."
+      ],
+      "Enable the email address linked to the disabled calendar to cancel the event.": [
+        "Activați adresa de e-mail asociată calendarului dezactivat pentru a anula evenimentul."
+      ],
+      "Enable the email address linked to the disabled calendar to modify your answer.": [
+        "Activați adresa de e-mail asociată calendarului dezactivat pentru a modifica răspunsul."
+      ],
+      "Add folder": [
+        "Adăugare folder"
+      ],
+      "Add label": [
+        "Adăugare etichetă"
+      ],
+      "Folders": [
+        "Foldere"
+      ],
+      "Manage your folders": [
+        "Gestionare foldere"
+      ],
+      "Labels": [
+        "Etichete"
+      ],
+      "Manage your labels": [
+        "Gestionare etichete"
+      ]
+    },
+    "Font Face Default": {
+      "Default": [
+        "Implicit"
+      ]
+    },
+    "Font Size Default": {
+      "Default": [
+        "Implicit"
       ]
     },
     "Hint": {
@@ -5094,6 +4065,30 @@
       ],
       "No verification method available": [
         "Nicio metodă de verificare disponibilă"
+      ]
+    },
+    "Label to change density": {
+      "Comfortable": [
+        "Confortabilă"
+      ],
+      "Compact": [
+        "Compactă"
+      ]
+    },
+    "Label to change view layout": {
+      "Column": [
+        "Coloane"
+      ],
+      "Row": [
+        "Rânduri"
+      ]
+    },
+    "Label to change composer mode": {
+      "Normal": [
+        "Normal"
+      ],
+      "Maximized": [
+        "Maximizat"
       ]
     },
     "Table header": {
@@ -5520,35 +4515,6 @@
         "S-au criptat și adăugat în lista de contacte ${ totalImported }/${ totalToImport } de contacte."
       ]
     },
-    "Select files": {
-      "Upload": [
-        "Încărcare"
-      ]
-    },
-    "Label to change density": {
-      "Comfortable": [
-        "Confortabilă"
-      ],
-      "Compact": [
-        "Compactă"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "Coloane"
-      ],
-      "Row": [
-        "Rânduri"
-      ]
-    },
-    "Label to change composer mode": {
-      "Normal": [
-        "Normal"
-      ],
-      "Maximized": [
-        "Maximizat"
-      ]
-    },
     "Loading info": {
       "Connecting to your contacts provider": [
         "Conectare la furnizorul de contacte"
@@ -5668,11 +4634,11 @@
       "Other category": [
         "Altă categorie"
       ],
-      "Custom folders": [
-        "Foldere personale"
-      ],
       "Default folders": [
         "Foldere implicite"
+      ],
+      "Custom folders": [
+        "Foldere personale"
       ],
       "Labels": [
         "Etichete"
@@ -5686,6 +4652,11 @@
     "Label, make it short please": {
       "Attach screenshot(s)": [
         "Atașare captură ecran"
+      ]
+    },
+    "Select files": {
+      "Upload": [
+        "Încărcare"
       ]
     },
     "Onboarding Proton": {
@@ -6413,6 +5384,1057 @@
         "cu stea"
       ]
     },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "Parola trebuie să conțină cel puțin un caracter",
+        "Parola trebuie să conțină cel puțin ${ length } caractere.",
+        "Parola trebuie să conțină cel puțin ${ length } de caractere."
+      ]
+    },
+    "file size format": {
+      "bytes": [
+        "octeți"
+      ],
+      "KB": [
+        "KB"
+      ],
+      "MB": [
+        "MB"
+      ],
+      "GB": [
+        "GB"
+      ]
+    },
+    "Contact field label": {
+      "Name": [
+        "Nume"
+      ],
+      "Email": [
+        "E-mail"
+      ],
+      "Phone": [
+        "Telefon"
+      ],
+      "Address": [
+        "Adresa"
+      ],
+      "Photo": [
+        "Fotografie"
+      ],
+      "Organization": [
+        "Organizația"
+      ],
+      "Birthday": [
+        "Data naşterii"
+      ],
+      "Anniversary": [
+        "Aniversare"
+      ],
+      "Title": [
+        "Titlu"
+      ],
+      "Role": [
+        "Rol"
+      ],
+      "Note": [
+        "Observații"
+      ],
+      "URL": [
+        "Adresa URL"
+      ],
+      "Gender": [
+        "Gen"
+      ],
+      "Language": [
+        "Limba"
+      ],
+      "Timezone": [
+        "Fus orar"
+      ],
+      "Geo": [
+        "Coordonate"
+      ],
+      "Logo": [
+        "Siglă"
+      ],
+      "Member": [
+        "Membru"
+      ]
+    },
+    "Contact type label": {
+      "Work": [
+        "Serviciu"
+      ],
+      "Personal": [
+        "Personal"
+      ],
+      "Mobile": [
+        "Mobil"
+      ],
+      "Main": [
+        "Principal"
+      ],
+      "Yomi": [
+        "Yomi"
+      ],
+      "Other": [
+        "Altele"
+      ],
+      "Fax": [
+        "Fax"
+      ],
+      "Pager": [
+        "Pager"
+      ]
+    },
+    "Property type": {
+      "Email": [
+        "E-mail"
+      ],
+      "Home": [
+        "Acasă"
+      ],
+      "Work": [
+        "Serviciu"
+      ],
+      "Other": [
+        "Altele"
+      ],
+      "Phone": [
+        "Telefon"
+      ],
+      "Mobile": [
+        "Mobil"
+      ],
+      "Main": [
+        "Principal"
+      ],
+      "Fax": [
+        "Fax"
+      ],
+      "Pager": [
+        "Pager"
+      ],
+      "Address": [
+        "Adresa"
+      ]
+    },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "Adresa de e-mail nu a fost găsită printre id-urile de utilizatori definite în cheia de trimitere (${ keyUserIds })"
+      ]
+    },
+    "Message": {
+      "Re:": [
+        "Re:"
+      ],
+      "Fw:": [
+        "Fw:"
+      ],
+      "On ${ date }, ${ name } ${ address } wrote:": [
+        "${ name } ${ address } - ${ date } a scris:"
+      ]
+    },
+    "Default display name vcard": {
+      "Unknown": [
+        "Necunoscut"
+      ]
+    },
+    "Import contact. Contact identifier": {
+      "unknown": [
+        "necunoscut"
+      ]
+    },
+    "Error importing contact": {
+      "vCard versions < 3.0 not supported": [
+        "versiunile vCard < 3.0 nu sunt suportate"
+      ],
+      "Encryption failed": [
+        "Criptare eșuată"
+      ]
+    },
+    "Error importing calendar": {
+      "An unexpected error occurred. Import must be restarted.": [
+        "A apărut o eroare neașteptată. Importarea trebuie repornită."
+      ]
+    },
+    "Error importing contacts": {
+      "An error occurred uploading your file. No file has been selected.": [
+        "A apărut o eroare la încărcarea fișierului. Nu a fost selectat niciun fișier."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. No .csv or .vcf file selected": [
+        "A apărut o eroare la încărcarea fișierului ${ formattedFilename }. Nu s-a selectat un fișier în format .csv sau .vcf"
+      ],
+      "Your file ${ formattedFilename } is empty.": [
+        "Fișierul ${ formattedFilename } este gol."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
+        "A apărut o eroare la încărcarea fișierului ${ formattedFilename }. Dimensiunea maximă a fișierului este de ${ MAX_IMPORT_FILE_SIZE_STRING }."
+      ],
+      "Your file ${ formattedFilename } has no contacts to be imported.": [
+        "Fișierul ${ formattedFilename } nu are contacte de importat."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
+        "Fișierul ${ formattedFilename } conține mai mult de ${ MAX_IMPORT_CONTACTS_STRING } contacte."
+      ],
+      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
+        "A apărut o eroare la citirea fișierului ${ formattedFilename }. Fișierul nu are formatul corect."
+      ]
+    },
+    "Keyboard shortcut section name": {
+      "Basic navigation": [
+        "Navigare de bază"
+      ],
+      "Basic actions": [
+        "Acțiuni de bază"
+      ],
+      "Folder shortcuts": [
+        "Combinații de taste foldere"
+      ],
+      "Composer shortcuts": [
+        "Combinații de taste editor mesaje"
+      ],
+      "List shortcuts": [
+        "Combinații de taste listă mesaje"
+      ],
+      "Action shortcuts": [
+        "Combinații de taste acțiuni"
+      ],
+      "Message shortcuts": [
+        "Combinații de taste mesaje"
+      ]
+    },
+    "Keyboard shortcut name": {
+      "Move up": [
+        "Mutare în sus"
+      ],
+      "Jump to first": [
+        "Salt la primul"
+      ],
+      "Move down": [
+        "Mutare în jos"
+      ],
+      "Jump to last": [
+        "Salt la ultimul"
+      ],
+      "Move right / expand": [
+        "Mutare la dreapta/extindere"
+      ],
+      "Move left / collapse": [
+        "Mutare la stânga/restrângere"
+      ],
+      "Apply / open": [
+        "Aplicare/deschidere"
+      ],
+      "Cancel / close": [
+        "Anulare/închidere"
+      ],
+      "Open this modal": [
+        "Deschidere ca fereastră"
+      ],
+      "Select / unselect": [
+        "Selectare/deselectare"
+      ],
+      "Go to Inbox": [
+        "Accesare «Primite»"
+      ],
+      "Go to Archive": [
+        "Accesare «Arhivă»"
+      ],
+      "Go to Sent": [
+        "Accesare «Trimise»"
+      ],
+      "Go to Starred": [
+        "Accesare «Cu stea»"
+      ],
+      "Go to Drafts": [
+        "Accesare «Ciorne»"
+      ],
+      "Go to Trash": [
+        "Accesare folder «Gunoi»"
+      ],
+      "Go to Spam": [
+        "Accesare «Nedorite»"
+      ],
+      "Go to All Mail": [
+        "Accesare «Toate mesajele»"
+      ],
+      "Save draft": [
+        "Salvare ciornă"
+      ],
+      "Send email": [
+        "Trimite e-mail"
+      ],
+      "Close draft": [
+        "Închidere ciornă"
+      ],
+      "Minimize / maximize composer": [
+        "Micșorare / mărire panou editare"
+      ],
+      "Expand / contract composer": [
+        "Extindere/restrângere panou editare"
+      ],
+      "Attach file": [
+        "Atașare fișier"
+      ],
+      "Add expiration time": [
+        "Adăugare dată de expirare"
+      ],
+      "Add encryption": [
+        "Adăugare criptare"
+      ],
+      "Discard draft": [
+        "Aruncare ciornă"
+      ],
+      "Open previous message": [
+        "Deschidere mesaj anterior"
+      ],
+      "Open next message": [
+        "Deschidere mesaj următor"
+      ],
+      "Show unread emails": [
+        "Afișare mesaje necitite"
+      ],
+      "Show all emails": [
+        "Afișare toate mesajele"
+      ],
+      "Select / unselect all": [
+        "Selectare/deselectare toate"
+      ],
+      "Search": [
+        "Căutare"
+      ],
+      "New message": [
+        "Mesaj nou"
+      ],
+      "Star": [
+        "Marcare cu stea"
+      ],
+      "Mark as unread": [
+        "Marcare ca necitit"
+      ],
+      "Label as...": [
+        "Etichetare ca..."
+      ],
+      "Create filter with...": [
+        "Creare filtru cu..."
+      ],
+      "Move to...": [
+        "Mutare în..."
+      ],
+      "Move to Inbox": [
+        "Mutare în «Primite»"
+      ],
+      "Move to Archive": [
+        "Mutare în «Arhivă»"
+      ],
+      "Move to Spam": [
+        "Mutare în «Nedorite»"
+      ],
+      "Move to Trash": [
+        "Mutare în «Gunoi»"
+      ],
+      "Delete permanently": [
+        "Ștergere permanentă"
+      ],
+      "Reply": [
+        "Răspuns"
+      ],
+      "Reply all": [
+        "Răspuns tuturor"
+      ],
+      "Forward": [
+        "Redirecționare"
+      ],
+      "Load remote content": [
+        "Încărcare conținut extern"
+      ],
+      "Load embedded images": [
+        "Încărcare imagini integrate"
+      ],
+      "Show original message": [
+        "Afișare mesaj original"
+      ]
+    },
+    "Calendar status": {
+      "Syncing": [
+        "Se sincronizează"
+      ],
+      "Not synced": [
+        "Nesincronizat"
+      ]
+    },
+    "Calendar subscription not synced error": {
+      "Calendar is syncing": [
+        "Calendarul se sincronizează."
+      ],
+      "More than 12 hours passed since last update": [
+        "Au trecut mai mult de 12 ore de la ultima actualizare."
+      ],
+      "Calendar link is wrong": [
+        "Legătura calendarului este greșită."
+      ],
+      "Calendar is too big": [
+        "Calendarul este prea mare."
+      ],
+      "Calendar link is not accessible": [
+        "Legătura calendarului nu este accesibilă."
+      ],
+      "Failed to sync calendar": [
+        "Eșuare sincronizare calendar."
+      ],
+      "Calendar link is temporarily inaccessible": [
+        "Linkul calendarului este temporar inaccesibil"
+      ]
+    },
+    "Attached ics file error": {
+      "Invalid ICS file": [
+        "Fisier ICS nevalid."
+      ],
+      "Invalid event": [
+        "Eveniment nevalid"
+      ],
+      "Unsupported event": [
+        "Eveniment nesuportat"
+      ],
+      "Empty ICS file": [
+        "Fișier ICS gol."
+      ],
+      "Unsupported calendar component": [
+        "Componentă de calendar neacceptată."
+      ],
+      "Invalid method": [
+        "Metodă nevalidă"
+      ]
+    },
+    "Event invitation error": {
+      "Invalid response": [
+        "Răspuns nevalid"
+      ],
+      "Invalid invitation": [
+        "Invitație nevalidă"
+      ],
+      "Unsupported response": [
+        "Răspuns nesuportat"
+      ],
+      "Unsupported invitation": [
+        "Invitație nesuportată"
+      ],
+      "Attached ICS file could not be parsed": [
+        "Fișierul ICS atașat nu a putut fi analizat"
+      ],
+      "Attached ICS file could not be decrypted": [
+        "Fișierul ICS atașat nu a putut fi decriptat"
+      ],
+      "We could not retrieve the event from your calendar": [
+        "Nu s-a putut recupera evenimentul din calendar"
+      ],
+      "We could not update the event in your calendar": [
+        "Nu s-a putut actualiza evenimentul din calendar"
+      ],
+      "Your answer was sent, but the event could not be added to your calendar": [
+        "Răspunsul a fost trimis, dar evenimentul nu a putut fi adăugat în calendar."
+      ],
+      "Your answer was sent, but the event could not be updated in your calendar": [
+        "Răspunsul a fost trimis, dar evenimentul nu a putut fi actualizat în calendar."
+      ],
+      "We could not cancel the event in your calendar": [
+        "Nu s-a putut anula evenimentul din calendar"
+      ],
+      "Unexpected error": [
+        "Eroare neașteptată"
+      ]
+    },
+    "Error importing event": {
+      "Component with wrong format": [
+        "Componentă cu format greșit"
+      ],
+      "Non-Gregorian": [
+        "Non-Gregorian"
+      ],
+      "To-do entry": [
+        "Intrare de făcut"
+      ],
+      "Journal entry": [
+        "Intrare în jurnal"
+      ],
+      "Free-busy time information": [
+        "Informații timp liber/ocupat"
+      ],
+      "Custom timezone": [
+        "Fus orar personal"
+      ],
+      "Invalid event": [
+        "Eveniment nevalid"
+      ],
+      "Unsupported event": [
+        "Eveniment nesuportat"
+      ],
+      "Malformed all-day event": [
+        "Eveniment întreaga zi eronat"
+      ],
+      "Missing start time": [
+        "Lipsește ora de pornire"
+      ],
+      "Malformed start time": [
+        "Timp de pornire malformat"
+      ],
+      "Floating times not supported": [
+        "Orele flotante nu sunt suportate"
+      ],
+      "Start time out of bounds": [
+        "Timp de start în afara limitelor"
+      ],
+      "Malformed end time": [
+        "Timp final malformat"
+      ],
+      "End time out of bounds": [
+        "Timp final în afara limitelor"
+      ],
+      "Event duration not supported": [
+        "Durată eveniment nesuportată"
+      ],
+      "Calendar timezone not supported": [
+        "Fus orar calendar neacceptat"
+      ],
+      "Timezone not supported": [
+        "Fus orar nesuportat"
+      ],
+      "Malformed recurring event": [
+        "Eveniment repetitiv malformat"
+      ],
+      "Recurring rule not supported": [
+        "Regula recurentă nesuportată"
+      ],
+      "Edited event not supported": [
+        "Evenimentul editat nu este suportat"
+      ],
+      "Notification out of bounds": [
+        "Notificare în afara limitelor"
+      ],
+      "Event validation failed": [
+        "Validare eveniment eșuată"
+      ],
+      "Encryption failed": [
+        "Criptare eșuată"
+      ],
+      "Original recurring event could not be found": [
+        "Evenimentul recurent original nu a putut fi găsit"
+      ],
+      "no UID, title or start time": [
+        "Nu există UID, titlu sau timp de pornire"
+      ]
+    },
+    "Event title": {
+      "(no title)": [
+        "(fără titlu)"
+      ]
+    },
+    "Participant name": {
+      "You": [
+        "Dvs."
+      ]
+    },
+    "Email subject": {
+      "Invitation for an event on ${ formattedStart }": [
+        "Invitație la un eveniment ce are loc ${ formattedStart }"
+      ],
+      "Update for an event on ${ formattedStart }": [
+        "Actualizarea unui eveniment ce are loc ${ formattedStart }"
+      ],
+      "Invitation for an event starting on ${ formattedStart }": [
+        "Invitație la un eveniment care începe ${ formattedStart }"
+      ],
+      "Update for an event starting on ${ formattedStart }": [
+        "Actualizarea unui eveniment care începe ${ formattedStart }"
+      ],
+      "Cancellation of an event on ${ formattedStart }": [
+        "Anulare eveniment ce are loc ${ formattedStart }"
+      ],
+      "Cancellation of an event starting on ${ formattedStart }": [
+        "Anulare eveniment care începe ${ formattedStart }"
+      ]
+    },
+    "Email body for invitation (date part)": {
+      "When: ${ formattedStart } (all day)": [
+        "Când: ${ formattedStart } (toată ziua)"
+      ],
+      "When: ${ formattedStart } - ${ formattedEnd }": [
+        "Când: ${ formattedStart } - ${ formattedEnd }"
+      ],
+      "When: ${ formattedStart }": [
+        "Când: ${ formattedStart }"
+      ]
+    },
+    "Email body for invitation (location part)": {
+      "Where: ${ eventLocation }": [
+        "Unde: ${ eventLocation }"
+      ]
+    },
+    "Email body for description (description part)": {
+      "Description: ${ eventDescription }": [
+        "Descriere: ${ eventDescription }"
+      ]
+    },
+    "Email body for invitation": {
+      "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
+        "Invitație la ${ eventTitle }\n${ eventDetailsText }"
+      ],
+      "${ eventTitle } has been updated.\n${ eventDetailsText }": [
+        "${ eventTitle } a fost actualizat.\n${ eventDetailsText }"
+      ],
+      "${ eventTitle } has been cancelled.": [
+        "${ eventTitle } a fost anulat."
+      ]
+    },
+    "Email body for response to invitation": {
+      "${ emailAddress } has accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } v-a acceptat invitația la ${ eventTitle }"
+      ],
+      "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } v-a acceptat provizoriu invitația la ${ eventTitle }"
+      ],
+      "${ emailAddress } has declined your invitation to ${ eventTitle }": [
+        "${ emailAddress } v-a refuzat invitația la ${ eventTitle }"
+      ]
+    },
+    "Monthly recurring event, repeats on": {
+      "on the first Sunday": [
+        "în prima duminică"
+      ],
+      "on the first Monday": [
+        "în prima luni"
+      ],
+      "on the first Tuesday": [
+        "în prima marți"
+      ],
+      "on the first Wednesday": [
+        "în prima miercuri"
+      ],
+      "on the first Thursday": [
+        "în prima joi"
+      ],
+      "on the first Friday": [
+        "în prima vineri"
+      ],
+      "on the first Saturday": [
+        "în prima sâmbătă"
+      ],
+      "on the second Sunday": [
+        "în a doua duminică"
+      ],
+      "on the second Monday": [
+        "în a doua luni"
+      ],
+      "on the second Tuesday": [
+        "în a doua marți"
+      ],
+      "on the second Wednesday": [
+        "în a doua miercuri"
+      ],
+      "on the second Thursday": [
+        "în a doua joi"
+      ],
+      "on the second Friday": [
+        "în a doua vineri"
+      ],
+      "on the second Saturday": [
+        "în a doua sâmbătă"
+      ],
+      "on the third Sunday": [
+        "în a treia duminică"
+      ],
+      "on the third Monday": [
+        "în a treia luni"
+      ],
+      "on the third Tuesday": [
+        "în a treia marți"
+      ],
+      "on the third Wednesday": [
+        "în a treia miercuri"
+      ],
+      "on the third Thursday": [
+        "în a treia joi"
+      ],
+      "on the third Friday": [
+        "în a treia vineri"
+      ],
+      "on the third Saturday": [
+        "în a treia sâmbătă"
+      ],
+      "on the fourth Sunday": [
+        "în a patra duminică"
+      ],
+      "on the fourth Monday": [
+        "în a patra luni"
+      ],
+      "on the fourth Tuesday": [
+        "în a patra marți"
+      ],
+      "on the fourth Wednesday": [
+        "în a patra miercuri"
+      ],
+      "on the fourth Thursday": [
+        "în a patra joi"
+      ],
+      "on the fourth Friday": [
+        "în a patra vineri"
+      ],
+      "on the fourth Saturday": [
+        "în a patra sâmbătă"
+      ],
+      "on the last Sunday": [
+        "în ultima duminică"
+      ],
+      "on the last Monday": [
+        "în ultima luni"
+      ],
+      "on the last Tuesday": [
+        "în ultima marți"
+      ],
+      "on the last Wednesday": [
+        "în ultima miercuri"
+      ],
+      "on the last Thursday": [
+        "în ultima joi"
+      ],
+      "on the last Friday": [
+        "în ultima vineri"
+      ],
+      "on the last Saturday": [
+        "în ultima sâmbătă"
+      ],
+      "on day ${ dayOfMonth }": [
+        "în ziua ${ dayOfMonth }"
+      ]
+    },
+    "Daily recurring event, frequency": {
+      "${ count } time": [
+        "O dată",
+        "de ${ count } ori",
+        "de ${ count } de ori"
+      ],
+      "until ${ dateString }": [
+        "până la ${ dateString }"
+      ],
+      "Daily": [
+        "Zilnic"
+      ],
+      "Every ${ interval } day": [
+        "Zilnic",
+        "La fiecare ${ interval } zile",
+        "La fiecare ${ interval } de zile"
+      ],
+      "Daily, ${ timesString }": [
+        "Zilnic, ${ timesString }"
+      ],
+      "Every ${ interval } day, ${ timesString }": [
+        "Zilnic, ${ timesString }",
+        "La fiecare ${ interval } zile, ${ timesString }",
+        "La fiecare ${ interval } de zile, ${ timesString }"
+      ],
+      "Daily, ${ untilString }": [
+        "Zilnic, ${ untilString }"
+      ],
+      "Every ${ interval } day, ${ untilString }": [
+        "Zilnic, ${ untilString }",
+        "La fiecare ${ interval } zile, ${ untilString }",
+        "La fiecare ${ interval } de zile, ${ untilString }"
+      ]
+    },
+    "Weekly recurring event, repeats on (multiple days), frequency": {
+      "Sunday": [
+        "Duminică"
+      ],
+      "Monday": [
+        "Luni"
+      ],
+      "Tuesday": [
+        "Marţi"
+      ],
+      "Wednesday": [
+        "Miercuri"
+      ],
+      "Thursday": [
+        "Joi"
+      ],
+      "Friday": [
+        "Vineri"
+      ],
+      "Saturday": [
+        "Sâmbătă"
+      ]
+    },
+    "Weekly recurring event, frequency": {
+      "Weekly on all days": [
+        "Zilnic, săptămânal"
+      ],
+      "Every ${ interval } week on all days": [
+        "Zilnic, săptămânal",
+        "Zilnic, la fiecare ${ interval } săptămâni",
+        "Zilnic, la fiecare ${ interval } de săptămâni"
+      ],
+      "Weekly on Sunday": [
+        "Duminică, săptămânal"
+      ],
+      "Every ${ interval } week on Sunday": [
+        "Duminică, săptămânal",
+        "Duminică, la fiecare ${ interval } săptămâni",
+        "Duminică, la fiecare ${ interval } de săptămâni"
+      ],
+      "Weekly on Monday": [
+        "Luni, săptămânal"
+      ],
+      "Every ${ interval } week on Monday": [
+        "Luni, săptămânal",
+        "Luni, la fiecare ${ interval } săptămâni",
+        "Luni, la fiecare ${ interval } de săptămâni"
+      ],
+      "Weekly on Tuesday": [
+        "Marți, săptămânal"
+      ],
+      "Every ${ interval } week on Tuesday": [
+        "Marți, săptămânal",
+        "Marți, la fiecare ${ interval } săptămâni",
+        "Marți, la fiecare ${ interval } de săptămâni"
+      ],
+      "Weekly on Wednesday": [
+        "Miercuri, săptămânal"
+      ],
+      "Every ${ interval } week on Wednesday": [
+        "Miercuri, săptămânal",
+        "Miercuri, la fiecare ${ interval } săptămâni",
+        "Miercuri, la fiecare ${ interval } de săptămâni"
+      ],
+      "Weekly on Thursday": [
+        "Joi, săptămânal"
+      ],
+      "Every ${ interval } week on Thursday": [
+        "Joi, săptămânal",
+        "Joi, la fiecare ${ interval } săptămâni",
+        "Joi, la fiecare ${ interval } de săptămâni"
+      ],
+      "Weekly on Friday": [
+        "Vineri, săptămânal"
+      ],
+      "Every ${ interval } week on Friday": [
+        "Vineri, săptămânal",
+        "Vineri, la fiecare ${ interval } săptămâni",
+        "Vineri, la fiecare ${ interval } de săptămâni"
+      ],
+      "Weekly on Saturday": [
+        "Sâmbătă, săptămânal"
+      ],
+      "Every ${ interval } week on Saturday": [
+        "Sâmbătă, săptămânal",
+        "Sâmbătă, la fiecare ${ interval } săptămâni",
+        "Sâmbătă, la fiecare ${ interval } de săptămâni"
+      ],
+      "Weekly on ${ multipleDaysString }": [
+        "${ multipleDaysString }, săptămânal"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }": [
+        "Săptămânal, ${ multipleDaysString }",
+        "La fiecare ${ interval } săptămâni, ${ multipleDaysString }",
+        "La fiecare ${ interval } de săptămâni, ${ multipleDaysString }"
+      ],
+      "Weekly on all days, ${ timesString }": [
+        "Zilnic, săptămânal, ${ timesString }"
+      ],
+      "Every ${ interval } week on all days, ${ timesString }": [
+        "Săptămânal, zilnic, ${ timesString }",
+        "La fiecare ${ interval } săptămâni, zilnic, ${ timesString }",
+        "La fiecare ${ interval } de săptămâni, zilnic, ${ timesString }"
+      ],
+      "Weekly on Sunday, ${ timesString }": [
+        "Duminică, săptămânal, ${ timesString }"
+      ],
+      "Every ${ interval } week on Sunday, ${ timesString }": [
+        "Duminica, săptămânal, ${ timesString }",
+        "Duminica, la fiecare ${ interval } săptămâni, ${ timesString }",
+        "Duminica, la fiecare ${ interval } de săptămâni, ${ timesString }"
+      ],
+      "Weekly on Monday, ${ timesString }": [
+        "Luni, săptămânal, ${ timesString }"
+      ],
+      "Every ${ interval } week on Monday, ${ timesString }": [
+        "Luni, săptămânal, ${ timesString }",
+        "Luni, la fiecare ${ interval } săptămâni, ${ timesString }",
+        "Luni, la fiecare ${ interval } de săptămâni, ${ timesString }"
+      ],
+      "Weekly on Tuesday, ${ timesString }": [
+        "Marți, săptămânal, ${ timesString }"
+      ],
+      "Every ${ interval } week on Tuesday, ${ timesString }": [
+        "Marți, săptâmânal, ${ timesString }",
+        "Marți, la fiecare ${ interval } săptămâni, ${ timesString }",
+        "Marți, la fiecare ${ interval } de săptămâni, ${ timesString }"
+      ],
+      "Weekly on Wednesday, ${ timesString }": [
+        "Miercuri, săptămânal, ${ timesString }"
+      ],
+      "Every ${ interval } week on Wednesday, ${ timesString }": [
+        "Miercuri, săptâmânal, ${ timesString }",
+        "Miercuri, la fiecare ${ interval } săptămâni, ${ timesString }",
+        "Miercuri, la fiecare ${ interval } de săptămâni, ${ timesString }"
+      ],
+      "Weekly on Thursday, ${ timesString }": [
+        "Joi, săptămânal, ${ timesString }"
+      ],
+      "Every ${ interval } week on Thursday, ${ timesString }": [
+        "Joi, săptâmânal, ${ timesString }",
+        "Joi, la fiecare ${ interval } săptămâni, ${ timesString }",
+        "Joi, la fiecare ${ interval } de săptămâni, ${ timesString }"
+      ],
+      "Weekly on Friday, ${ timesString }": [
+        "Vineri, săptămânal, ${ timesString }"
+      ],
+      "Every ${ interval } week on Friday, ${ timesString }": [
+        "Vineri, săptâmânal, ${ timesString }",
+        "Vineri, la fiecare ${ interval } săptămâni, ${ timesString }",
+        "Vineri, la fiecare ${ interval } de săptămâni, ${ timesString }"
+      ],
+      "Weekly on Saturday, ${ timesString }": [
+        "Sâmbătă, săptămânal, ${ timesString }"
+      ],
+      "Every ${ interval } week on Saturday, ${ timesString }": [
+        "Sâmbătă, săptâmânal, ${ timesString }",
+        "Sâmbătă, la fiecare ${ interval } săptămâni, ${ timesString }",
+        "Sâmbătă, la fiecare ${ interval } de săptămâni, ${ timesString }"
+      ],
+      "Weekly on ${ multipleDaysString }, ${ timesString }": [
+        "Săptămânal ${ multipleDaysString }, ${ timesString }"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
+        "${ multipleDaysString }, săptâmânal, ${ timesString }",
+        "${ multipleDaysString }, la fiecare ${ interval } săptămâni, ${ timesString }",
+        "${ multipleDaysString }, la fiecare ${ interval } de săptămâni, ${ timesString }"
+      ],
+      "Weekly on all days, ${ untilString }": [
+        "Zilnic, săptămânal, ${ untilString }"
+      ],
+      "Every ${ interval } week on all days, ${ untilString }": [
+        "Zilnic, săptâmânal, ${ untilString }",
+        "Zilnic, la fiecare ${ interval } săptămâni, ${ untilString }",
+        "Zilnic, la fiecare ${ interval } de săptămâni, ${ untilString }"
+      ],
+      "Weekly on Sunday, ${ untilString }": [
+        "Duminică, săptămânal, ${ untilString }"
+      ],
+      "Every ${ interval } week on Sunday, ${ untilString }": [
+        "Duminică, săptâmânal, ${ untilString }",
+        "Duminică, la fiecare ${ interval } săptămâni, ${ untilString }",
+        "Duminică, la fiecare ${ interval } de săptămâni, ${ untilString }"
+      ],
+      "Weekly on Monday, ${ untilString }": [
+        "Luni, săptămânal, ${ untilString }"
+      ],
+      "Every ${ interval } week on Monday, ${ untilString }": [
+        "Luni, săptâmânal, ${ untilString }",
+        "Luni, la fiecare ${ interval } săptămâni, ${ untilString }",
+        "Luni, la fiecare ${ interval } de săptămâni, ${ untilString }"
+      ],
+      "Weekly on Tuesday, ${ untilString }": [
+        "Marți, săptămânal, ${ untilString }"
+      ],
+      "Every ${ interval } week on Tuesday, ${ untilString }": [
+        "Marți, săptâmânal, ${ untilString }",
+        "Marți, la fiecare ${ interval } săptămâni, ${ untilString }",
+        "Marți, la fiecare ${ interval } de săptămâni, ${ untilString }"
+      ],
+      "Weekly on Wednesday, ${ untilString }": [
+        "Miercuri, săptămânal, ${ untilString }"
+      ],
+      "Every ${ interval } week on Wednesday, ${ untilString }": [
+        "Miercuri, săptâmânal, ${ untilString }",
+        "Miercuri, la fiecare ${ interval } săptămâni, ${ untilString }",
+        "Miercuri, la fiecare ${ interval } de săptămâni, ${ untilString }"
+      ],
+      "Weekly on Thursday, ${ untilString }": [
+        "Joi, săptămânal, ${ untilString }"
+      ],
+      "Every ${ interval } week on Thursday, ${ untilString }": [
+        "Joi, săptămânal, ${ untilString }",
+        "Joi, la fiecare ${ interval } săptămâni, ${ untilString }",
+        "Joi, la fiecare ${ interval } de săptămâni, ${ untilString }"
+      ],
+      "Weekly on Friday, ${ untilString }": [
+        "Vineri, săptămânal, ${ untilString }"
+      ],
+      "Every ${ interval } week on Friday, ${ untilString }": [
+        "Vineri, săptâmânal, ${ untilString }",
+        "Vineri, la fiecare ${ interval } săptămâni, ${ untilString }",
+        "Vineri, la fiecare ${ interval } de săptămâni, ${ untilString }"
+      ],
+      "Weekly on Saturday, ${ untilString }": [
+        "Sâmbătă, săptămânal, ${ untilString }"
+      ],
+      "Every ${ interval } week on Saturday, ${ untilString }": [
+        "Sâmbătă, săptămânal, ${ untilString }",
+        "Sâmbătă, la fiecare ${ interval } săptămâni, ${ untilString }",
+        "Sâmbătă, la fiecare ${ interval } de săptămâni, ${ untilString }"
+      ],
+      "Weekly on ${ multipleDaysString }, ${ untilString }": [
+        "Săptămânal, ${ multipleDaysString }, ${ untilString }"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
+        "${ multipleDaysString }, săptâmânal, ${ untilString }",
+        "${ multipleDaysString }, la fiecare ${ interval } de săptămâni, ${ untilString }",
+        "${ multipleDaysString }, la fiecare ${ interval } de săptămâni, ${ untilString }"
+      ]
+    },
+    "Monthly recurring event, frequency": {
+      "Monthly ${ onDayString }": [
+        "Lunar, ${ onDayString }"
+      ],
+      "Every ${ interval } month ${ onDayString }": [
+        "${ onDayString }, lunar",
+        "${ onDayString }, la fiecare ${ interval } luni",
+        "${ onDayString }, la fiecare ${ interval } de luni"
+      ],
+      "Monthly ${ onDayString }, ${ timesString }": [
+        "Lunar, ${ onDayString }, ${ timesString }"
+      ],
+      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
+        "${ onDayString }, lunar, ${ timesString }",
+        "${ onDayString }, la fiecare ${ interval } luni, ${ timesString }",
+        "${ onDayString }, la fiecare ${ interval } de luni, ${ timesString }"
+      ],
+      "Monthly ${ onDayString }, ${ untilString }": [
+        "Lunar, ${ onDayString }, ${ untilString }"
+      ],
+      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
+        "${ onDayString }, lunar, ${ untilString }",
+        "${ onDayString }, la fiecare ${ interval } luni, ${ untilString }",
+        "${ onDayString }, la fiecare ${ interval } de luni, ${ untilString }"
+      ]
+    },
+    "Yearly recurring event, frequency": {
+      "Yearly": [
+        "Anual"
+      ],
+      "Every ${ interval } year": [
+        "Anual",
+        "La fiecare ${ interval } ani",
+        "La fiecare ${ interval } de ani"
+      ],
+      "Yearly, ${ timesString }": [
+        "Anual, ${ timesString }"
+      ],
+      "Every ${ interval } year, ${ timesString }": [
+        "Anual, ${ timesString }",
+        "La fiecare ${ interval } ani, ${ timesString }",
+        "La fiecare ${ interval } de ani, ${ timesString }"
+      ],
+      "Yearly, ${ untilString }": [
+        "Anual, ${ untilString }"
+      ],
+      "Every ${ interval } year, ${ untilString }": [
+        "Anual, ${ untilString }",
+        "La fiecare ${ interval } ani, ${ untilString }",
+        "La fiecare ${ interval } de ani, ${ untilString }"
+      ]
+    },
     "Mailbox": {
       "Inbox": [
         "Primite"
@@ -6435,8 +6457,8 @@
       "Scheduled": [
         "Programate"
       ],
-      "All": [
-        "Toate"
+      "All mail": [
+        "Toate mesajele"
       ],
       "Starred": [
         "Cu stea"
@@ -6864,6 +6886,12 @@
     "Spotlight": {
       "You can now schedule your messages to be sent later": [
         "Acum puteți să vă programați mesajele pentru a fi trimise mai târziu."
+      ],
+      "Tracker protection": [
+        "Protecție împotriva trackerului"
+      ],
+      "Proton blocked email trackers in this message in order to protect your privacy": [
+        "Proton a blocat trackerii de e-mail în acest mesaj pentru a vă proteja confidențialitatea"
       ]
     },
     "Message image": {
@@ -6948,11 +6976,6 @@
       "Organizer:": [
         "Organizator:"
       ],
-      "${ totalAttendees } Participant": [
-        "Un participant",
-        "${ totalAttendees } participanți",
-        "${ totalAttendees } de participanți"
-      ],
       "Repeats": [
         "Repetări"
       ],
@@ -6964,6 +6987,11 @@
       ],
       "Participants": [
         "Participanţi"
+      ],
+      "${ totalAttendees } participant": [
+        "${ totalAttendees } participant",
+        "${ totalAttendees } participanți",
+        "${ totalAttendees } de participanți"
       ]
     },
     "Attachment signature verification": {
