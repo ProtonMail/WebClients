@@ -1,10 +1,12 @@
 import { createAction, createAsyncThunk } from '@reduxjs/toolkit';
 import { noop } from '@proton/shared/lib/helpers/function';
-import { EventUpdates, NewStateParams, QueryParams, QueryResults } from './elementsTypes';
+import { ESResults, EventUpdates, NewStateParams, QueryParams, QueryResults } from './elementsTypes';
 import { Element } from '../../models/element';
 import { getQueryElementsParameters, queryElement, queryElements } from './helpers/elementQuery';
 
 export const reset = createAction<NewStateParams>('elements/reset');
+
+export const updatePage = createAction<number>('elements/updatePage');
 
 export const load = createAsyncThunk<QueryResults, QueryParams>('elements/load', async (queryParams: QueryParams) => {
     console.log('load', queryParams);
@@ -36,3 +38,9 @@ export const eventUpdates = createAsyncThunk<(Element | undefined)[], EventUpdat
         return Promise.all(toLoad.map(async (elementID) => queryElement(api, conversationMode, elementID).catch(noop)));
     }
 );
+
+export const manualPending = createAction<void>('elements/manualPending');
+
+export const manualFulfilled = createAction<void>('elements/manualFulfilled');
+
+export const addESResults = createAction<ESResults>('elements/addESResults');

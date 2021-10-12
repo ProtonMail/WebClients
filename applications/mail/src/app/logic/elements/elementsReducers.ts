@@ -1,26 +1,22 @@
-import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { Draft } from 'immer';
 import { PayloadAction } from '@reduxjs/toolkit';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
+import { range } from '@proton/shared/lib/helpers/array';
 import { newState } from './elementsSlice';
-import { ElementsState, EventUpdates, NewStateParams, QueryParams, QueryResults, RetryData } from './elementsTypes';
+import { ElementsState, ESResults, EventUpdates, NewStateParams, QueryParams, QueryResults } from './elementsTypes';
 import { Element } from '../../models/element';
 import { parseLabelIDsInEvent } from '../../helpers/elements';
+import { newRetry } from './helpers/elementQuery';
+import { MAX_ELEMENT_LIST_LOAD_RETRIES, PAGE_SIZE } from '../../constants';
 
 export const reset = (state: Draft<ElementsState>, action: PayloadAction<NewStateParams>) => {
     console.log('reset', state, action);
     Object.assign(state, newState(action.payload));
 };
 
-/**
- * A retry is the same request as before expecting a different result
- * @param payload: request params + expected total
- * @param error: optional error from last request
- */
-const newRetry = (retry: RetryData, payload: any, error: Error | undefined) => {
-    const count = error && isDeepEqual(payload, retry.payload) ? retry.count + 1 : 1;
-    return { payload, count, error };
+export const updatePage = (state: Draft<ElementsState>, action: PayloadAction<number>) => {
+    state.page = action.payload;
 };
 
 export const loadPending = (
@@ -51,6 +47,14 @@ export const loadFulfilled = (
     });
     state.pages.push(page);
     Object.assign(state.elements, toMap(Elements, 'ID'));
+};
+
+export const manualPending = (state: Draft<ElementsState>) => {
+    state.pendingRequest = true;
+};
+
+export const manualFulfilled = (state: Draft<ElementsState>) => {
+    state.pendingRequest = false;
 };
 
 export const removeExpired = (state: Draft<ElementsState>, action: PayloadAction<Element>) => {
@@ -86,5 +90,23 @@ export const eventUpdatesFulfilled = (
 ) => {
     action.payload.filter(isTruthy).forEach((element) => {
         state.elements[element.ID || ''] = element;
+    });
+};
+
+export const addESResults = (state: Draft<ElementsState>, action: PayloadAction<ESResults>) => {
+    const total = action.payload.elements.length;
+    const pages = range(0, Math.ceil(total / PAGE_SIZE));
+    // Retry is disabled for encrypted search results, to avoid re-triggering the search several times
+    // when there are no results
+    Object.assign(state, {
+        bypassFilter: [],
+        beforeFirstLoad: false,
+        invalidated: false,
+        pendingRequest: false,
+        page: action.payload.page,
+        total,
+        pages,
+        elements: toMap(action.payload.elements, 'ID'),
+        retry: { payload: undefined, count: MAX_ELEMENT_LIST_LOAD_RETRIES, error: undefined },
     });
 };
