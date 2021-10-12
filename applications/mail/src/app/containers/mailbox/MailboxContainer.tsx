@@ -296,17 +296,19 @@ const MailboxContainer = ({
                 )}
                 {showContentPanel && (
                     <>
-                        <div className="relative w10p resize-area-container" ref={resizeAreaRef}>
-                            <button
-                                type="button"
-                                className="cursor-col-resize w100 h100"
-                                onMouseDown={enableResize}
-                                onDoubleClick={resetWidth}
-                            >
-                                <span className="sr-only">{c('Action')
-                                    .t`Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.`}</span>
-                            </button>
-                        </div>
+                        {columnMode && (
+                            <div className="relative w10p resize-area-container" ref={resizeAreaRef}>
+                                <button
+                                    type="button"
+                                    className="cursor-col-resize w100 h100"
+                                    onMouseDown={enableResize}
+                                    onDoubleClick={resetWidth}
+                                >
+                                    <span className="sr-only">{c('Action')
+                                        .t`Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.`}</span>
+                                </button>
+                            </div>
+                        )}
                         <section
                             ref={messageContainerRef}
                             className="view-column-detail flex-no-min-children flex-column flex-item-fluid flex-nowrap scroll-if-needed relative"
