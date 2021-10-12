@@ -3,15 +3,14 @@ import { checkSubscription } from '@proton/shared/lib/api/payments';
 import { APPS, CYCLE, DEFAULT_CURRENCY, DEFAULT_CYCLE } from '@proton/shared/lib/constants';
 import { c } from 'ttag';
 import { Currency, Cycle, PlanIDs, SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
-import { isProductPayer } from '@proton/shared/lib/helpers/blackfriday';
 
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { FormModal, FullLoader, Button, Price, Info, Href } from '../../../components';
-import { useLoading, useApi, useSubscription } from '../../../hooks';
+import { useLoading, useApi } from '../../../hooks';
 import { classnames } from '../../../helpers';
+import { EligibleOffer } from '../interface';
 import CurrencySelector from '../CurrencySelector';
 import './BlackFridayModal.scss';
-import useBlackFridayModalTitle from './useBlackFridayModalTitle';
 
 const { MONTHLY, YEARLY, TWO_YEARS } = CYCLE;
 
@@ -26,9 +25,9 @@ export interface Bundle {
 
 interface Props {
     onSelect: (params: { planIDs: PlanIDs; cycle: Cycle; currency: Currency; couponCode?: string | null }) => void;
-    bundles: Bundle[];
     className?: string;
     onClose?: () => void;
+    offer: EligibleOffer;
 }
 
 interface Pricing {
@@ -39,14 +38,18 @@ interface Pricing {
     };
 }
 
-const BlackFridayModal = ({ bundles = [], onSelect, ...rest }: Props) => {
+const BlackFridayModal = ({ offer, onSelect, ...rest }: Props) => {
     const api = useApi();
-    const [subscription] = useSubscription();
-    const productPayer = isProductPayer(subscription);
     const [loading, withLoading] = useLoading();
     const [currency, updateCurrency] = useState<Currency>(DEFAULT_CURRENCY);
     const [pricing, updatePricing] = useState<Pricing>({});
-    const title = useBlackFridayModalTitle(productPayer);
+
+    const isBlackFridayOffer = offer.name === 'black-friday';
+    const isProductPayerOffer = offer.name === 'product-payer';
+
+    const title = isBlackFridayOffer
+        ? c('blackfriday Title').t`Get the special year-end offer on our Premium VPN PLUS plan`
+        : c('blackfriday Title').t`Save more when combining Mail and VPN`;
     const driveAppName = getAppName(APPS.PROTONDRIVE);
 
     const DEAL_TITLE = {
@@ -85,7 +88,7 @@ const BlackFridayModal = ({ bundles = [], onSelect, ...rest }: Props) => {
     };
 
     const getCTA = (popular?: boolean) => {
-        if (productPayer) {
+        if (isProductPayerOffer) {
             return c('blackfriday Action').t`Get the offer`;
         }
         if (popular) {
@@ -95,7 +98,7 @@ const BlackFridayModal = ({ bundles = [], onSelect, ...rest }: Props) => {
     };
 
     const getFooter = () => {
-        if (productPayer) {
+        if (isProductPayerOffer) {
             return (
                 <p className="text-xs color-weak text-center">
                     (1){' '}
@@ -120,7 +123,7 @@ const BlackFridayModal = ({ bundles = [], onSelect, ...rest }: Props) => {
                 </div>
                 <p className="text-xs mt0 mb0 color-weak text-center">{c('blackfriday Info')
                     .jt`Discounts are based on standard monthly pricing of ${standardMonthlyPricing}`}</p>
-                {bundles.map((b, index) => {
+                {offer.plans.map((_, index) => {
                     const key = `${index}`;
                     const { withoutCoupon = 0 } = pricing[index] || {};
                     const amount = (
@@ -141,7 +144,7 @@ const BlackFridayModal = ({ bundles = [], onSelect, ...rest }: Props) => {
     const getBundlePrices = async () => {
         try {
             const result = await Promise.all(
-                bundles.map(({ planIDs = [], cycle = DEFAULT_CYCLE, couponCode }) => {
+                offer.plans.map(({ planIDs = [], cycle = DEFAULT_CYCLE, couponCode }) => {
                     return Promise.all([
                         api<SubscriptionCheckResponse>(
                             checkSubscription({
@@ -190,21 +193,26 @@ const BlackFridayModal = ({ bundles = [], onSelect, ...rest }: Props) => {
     }, []);
 
     return (
-        <FormModal title={title} loading={loading} footer={null} {...rest}>
+        <FormModal
+            title={title}
+            loading={loading}
+            footer={null}
+            className={classnames(['blackfriday-mail-modal', offer.isVPNOnly && 'blackfriday-mail-modal--vpn'])}
+            {...rest}
+        >
             {loading ? (
                 <div className="text-center">
                     <FullLoader size={50} className="center flex mb2" />
                 </div>
             ) : (
                 <>
-                    {/* <BlackFridayModalDescription isProductPayer={productPayer} /> */}
                     <div
                         className={classnames([
                             'flex flex-nowrap flex-justify-space-around on-mobile-flex-column',
-                            productPayer ? 'mt2' : 'mt4',
+                            isProductPayerOffer ? 'mt2' : 'mt4',
                         ])}
                     >
-                        {bundles.map(({ name, cycle, planIDs, popular, couponCode }, index) => {
+                        {offer.plans.map(({ name, cycle, planIDs, popular, couponCode }, index) => {
                             const key = `${index}`;
                             const { withCoupon = 0, withoutCouponMonthly = 0 } = pricing[index] || {};
                             const withCouponMonthly = withCoupon / cycle;
@@ -235,7 +243,7 @@ const BlackFridayModal = ({ bundles = [], onSelect, ...rest }: Props) => {
                                     className={classnames([
                                         'relative flex blackfriday-plan-container',
                                         popular && 'blackfriday-plan-container--mostPopular',
-                                        productPayer && 'blackfriday-plan-container--productPayer',
+                                        isProductPayerOffer && 'blackfriday-plan-container--productPayer',
                                     ])}
                                 >
                                     {percentage ? (
@@ -284,7 +292,7 @@ const BlackFridayModal = ({ bundles = [], onSelect, ...rest }: Props) => {
                                         </div>
                                         <Button
                                             color="norm"
-                                            shape={popular || productPayer ? 'solid' : 'outline'}
+                                            shape={popular || isProductPayerOffer ? 'solid' : 'outline'}
                                             className={classnames(['mb1 text-uppercase'])}
                                             onClick={() => {
                                                 rest.onClose?.();
