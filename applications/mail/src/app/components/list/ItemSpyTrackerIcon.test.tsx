@@ -51,13 +51,13 @@ const messageWithoutTrackers: MessageExtended = {
 describe('ItemSpyTrackerIcon', () => {
     it.each`
         imageProxy                | showImage           | message                   | isIconDisplayed | isNumberDisplayed | expectedTooltip
-        ${IMAGE_PROXY_FLAGS.ALL}  | ${SHOW_IMAGES.ALL}  | ${messageWithTrackers}    | ${true}         | ${true}           | ${'Proton has blocked email trackers in this message in order to protect your privacy.'}
-        ${IMAGE_PROXY_FLAGS.ALL}  | ${SHOW_IMAGES.ALL}  | ${messageWithoutTrackers} | ${true}         | ${false}          | ${'No email trackers found.'}
-        ${IMAGE_PROXY_FLAGS.ALL}  | ${SHOW_IMAGES.NONE} | ${messageWithTrackers}    | ${true}         | ${true}           | ${'Proton has blocked email trackers in this message in order to protect your privacy.'}
-        ${IMAGE_PROXY_FLAGS.ALL}  | ${SHOW_IMAGES.NONE} | ${messageWithoutTrackers} | ${true}         | ${false}          | ${'No email trackers found.'}
-        ${IMAGE_PROXY_FLAGS.NONE} | ${SHOW_IMAGES.NONE} | ${messageWithTrackers}    | ${true}         | ${true}           | ${'Protect yourself from trackers by turning on Proton email tracker protection.'}
-        ${IMAGE_PROXY_FLAGS.NONE} | ${SHOW_IMAGES.NONE} | ${messageWithoutTrackers} | ${true}         | ${false}          | ${'Protect yourself from trackers by turning on Proton email tracker protection.'}
-        ${IMAGE_PROXY_FLAGS.NONE} | ${SHOW_IMAGES.ALL}  | ${messageWithTrackers}    | ${true}         | ${true}           | ${'Proton has blocked email trackers in this message in order to protect your privacy.'}
+        ${IMAGE_PROXY_FLAGS.ALL}  | ${SHOW_IMAGES.ALL}  | ${messageWithTrackers}    | ${true}         | ${true}           | ${'To protect your privacy, Proton blocked email trackers in this message'}
+        ${IMAGE_PROXY_FLAGS.ALL}  | ${SHOW_IMAGES.ALL}  | ${messageWithoutTrackers} | ${true}         | ${false}          | ${'No email trackers found'}
+        ${IMAGE_PROXY_FLAGS.ALL}  | ${SHOW_IMAGES.NONE} | ${messageWithTrackers}    | ${true}         | ${true}           | ${'To protect your privacy, Proton blocked email trackers in this message'}
+        ${IMAGE_PROXY_FLAGS.ALL}  | ${SHOW_IMAGES.NONE} | ${messageWithoutTrackers} | ${true}         | ${false}          | ${'No email trackers found'}
+        ${IMAGE_PROXY_FLAGS.NONE} | ${SHOW_IMAGES.NONE} | ${messageWithTrackers}    | ${true}         | ${true}           | ${'Protect yourself from trackers. Turn on email tracker protection in settings'}
+        ${IMAGE_PROXY_FLAGS.NONE} | ${SHOW_IMAGES.NONE} | ${messageWithoutTrackers} | ${true}         | ${false}          | ${'Protect yourself from trackers. Turn on email tracker protection in settings'}
+        ${IMAGE_PROXY_FLAGS.NONE} | ${SHOW_IMAGES.ALL}  | ${messageWithTrackers}    | ${true}         | ${true}           | ${'To protect your privacy, Proton blocked email trackers in this message'}
         ${IMAGE_PROXY_FLAGS.NONE} | ${SHOW_IMAGES.ALL}  | ${messageWithoutTrackers} | ${false}        | ${false}          | ${''}
     `(
         'should display the icon [$isIconDisplayed] with number [$isNumberDisplayed] and tooltip [$expectedTooltip]',
