@@ -36,7 +36,7 @@ const useResolveLockedSharesFlow = ({ onSuccess, onError }: ReactivationParams) 
 
     const handleDeleteLockedVolumesSubmit = async () => {
         try {
-            await deleteLockedVolumes(lockedShares.map((shareMeta) => shareMeta.ShareID));
+            await deleteLockedVolumes(lockedShares.map((shareMeta) => shareMeta.VolumeID));
             createNotification({
                 text: c('Notification').t`Your old files will be deleted in 72 hours`,
             });
