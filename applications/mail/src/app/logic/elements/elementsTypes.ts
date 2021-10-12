@@ -120,3 +120,8 @@ export interface EventUpdates {
     toLoad: string[];
     toDelete: string[];
 }
+
+export interface ESResults {
+    page: number;
+    elements: Element[];
+}

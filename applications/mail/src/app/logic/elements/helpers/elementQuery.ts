@@ -1,9 +1,10 @@
 import { getConversation, queryConversations } from '@proton/shared/lib/api/conversations';
 import { getMessage, queryMessageMetadata } from '@proton/shared/lib/api/messages';
+import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { Api } from '@proton/shared/lib/interfaces';
 import { ELEMENTS_CACHE_REQUEST_SIZE, PAGE_SIZE } from '../../../constants';
 import { Element } from '../../../models/element';
-import { QueryParams } from '../elementsTypes';
+import { QueryParams, RetryData } from '../elementsTypes';
 
 export const getQueryElementsParameters = ({ page, params: { labelID, sort, search, filter } }: QueryParams): any => ({
     Page: page,
@@ -42,6 +43,16 @@ export const queryElements = async (
         Total: result.Total,
         Elements: conversationMode ? result.Conversations : result.Messages,
     };
+};
+
+/**
+ * A retry is the same request as before expecting a different result
+ * @param payload: request params + expected total
+ * @param error: optional error from last request
+ */
+export const newRetry = (retry: RetryData, payload: any, error: Error | undefined) => {
+    const count = error && isDeepEqual(payload, retry.payload) ? retry.count + 1 : 1;
+    return { payload, count, error };
 };
 
 export const queryElement = async (api: Api, conversationMode: boolean, elementID: string): Promise<Element> => {

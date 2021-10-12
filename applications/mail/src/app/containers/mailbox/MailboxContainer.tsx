@@ -9,7 +9,7 @@ import { getSearchParams } from '@proton/shared/lib/helpers/url';
 import { c } from 'ttag';
 import { Sort, Filter, SearchParameters } from '../../models/tools';
 import { useMailboxPageTitle } from '../../hooks/mailbox/useMailboxPageTitle';
-import { useElements } from '../../hooks/mailbox/useElements';
+import { useElements, useGetElementsFromIDs } from '../../hooks/mailbox/useElements';
 import { isColumnMode, isConversationMode } from '../../helpers/mailSettings';
 import {
     pageFromUrl,
@@ -32,7 +32,6 @@ import { Breakpoints } from '../../models/utils';
 import { useWelcomeFlag } from '../../hooks/mailbox/useWelcomeFlag';
 import useNewEmailNotification from '../../hooks/mailbox/useNewEmailNotification';
 import { useDeepMemo } from '../../hooks/useDeepMemo';
-import { useGetElementsFromIDs } from '../../hooks/mailbox/useElementsCache';
 import { useMailboxHotkeys } from '../../hooks/mailbox/useMailboxHotkeys';
 import { useMailboxFocus } from '../../hooks/mailbox/useMailboxFocus';
 import { useOnCompose, useOnMailTo } from '../ComposeProvider';
@@ -40,6 +39,7 @@ import { useEncryptedSearchContext } from '../EncryptedSearchProvider';
 
 import './MailboxContainer.scss';
 import { useResizeMessageView } from '../../hooks/useResizeMessageView';
+import { useEncryptedSearch } from '../../hooks/mailbox/useEncryptedSearch';
 
 interface Props {
     labelID: string;
@@ -100,19 +100,7 @@ const MailboxContainer = ({
     const page = pageFromUrl(location);
     const searchParams = getSearchParams(location.hash);
     const isConversationContentView = mailSettings.ViewMode === VIEW_MODE.GROUP;
-    const searchParameters = useMemo<SearchParameters>(
-        () => extractSearchParameters(location),
-        [
-            searchParams.address,
-            searchParams.from,
-            searchParams.to,
-            searchParams.keyword,
-            searchParams.begin,
-            searchParams.end,
-            searchParams.attachments,
-            searchParams.wildcard,
-        ]
-    );
+    const searchParameters = useMemo<SearchParameters>(() => extractSearchParameters(location), [location]);
     const isSearch = testIsSearch(searchParameters);
     const sort = useMemo<Sort>(() => sortFromUrl(location, inputLabelID), [searchParams.sort, inputLabelID]);
     const filter = useMemo<Filter>(() => filterFromUrl(location), [searchParams.filter]);
@@ -128,7 +116,7 @@ const MailboxContainer = ({
     const onMessageLoad = () => setIsMessageOpening(true);
     const onMessageReady = useCallback(() => setIsMessageOpening(false), [setIsMessageOpening]);
 
-    const { labelID, elements, loading, placeholderCount, total } = useElements({
+    const elementsParams = {
         conversationMode: isConversationMode(inputLabelID, mailSettings, location),
         labelID: inputLabelID,
         page: pageFromUrl(location),
@@ -136,7 +124,10 @@ const MailboxContainer = ({
         filter,
         search: searchParameters,
         onPage: handlePage,
-    });
+    };
+
+    const { labelID, elements, loading, placeholderCount, total } = useElements(elementsParams);
+    useEncryptedSearch(elementsParams);
 
     const handleBack = useCallback(() => history.push(setParamsInLocation(history.location, { labelID })), [labelID]);
 
