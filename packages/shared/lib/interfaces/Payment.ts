@@ -36,3 +36,7 @@ export type PaymentMethod =
           Type: PAYMENT_METHOD_TYPES.CARD;
           Details: CardDetails;
       };
+
+export interface LatestSubscription {
+    LastSubscriptionEnd: number;
+}
