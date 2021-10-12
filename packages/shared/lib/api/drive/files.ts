@@ -111,6 +111,6 @@ export const queryDeleteFileRevision = (shareId: string, linkId: string, revisio
 export const queryDeleteLockedVolumes = (volumeId: string) => {
     return {
         method: 'put',
-        url: `/drive/volumes/${volumeId}/delete_locked`,
+        url: `drive/volumes/${volumeId}/delete_locked`,
     };
 };
