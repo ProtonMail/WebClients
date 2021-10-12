@@ -6,7 +6,7 @@ import { Currency, Cycle, PlanIDs, SubscriptionCheckResponse } from '@proton/sha
 import { isProductPayer } from '@proton/shared/lib/helpers/blackfriday';
 
 import { getAppName } from '@proton/shared/lib/apps/helper';
-import { FormModal, FullLoader, Button, Price, Info } from '../../../components';
+import { FormModal, FullLoader, Button, Price, Info, Href } from '../../../components';
 import { useLoading, useApi, useSubscription } from '../../../hooks';
 import { classnames } from '../../../helpers';
 import CurrencySelector from '../CurrencySelector';
@@ -50,15 +50,15 @@ const BlackFridayModal = ({ bundles = [], onSelect, ...rest }: Props) => {
     const driveAppName = getAppName(APPS.PROTONDRIVE);
 
     const DEAL_TITLE = {
-        [MONTHLY]: c('blackfriday Title').t`for 1 month`,
-        [YEARLY]: c('blackfriday Title').t`for 1 year`,
-        [TWO_YEARS]: c('blackfriday Title').t`for 2 years`,
+        [MONTHLY]: c('blackfriday Title').t`1-month plan`,
+        [YEARLY]: c('blackfriday Title').t`1-year plan`,
+        [TWO_YEARS]: c('blackfriday Title').t`2-year plan`,
     };
 
     const BILLED_DESCRIPTION = ({ cycle, amount, notice }: { cycle: Cycle; amount: ReactNode; notice: number }) => {
         const supNotice = <sup key="notice">{notice}</sup>;
         if (cycle === MONTHLY) {
-            return c('blackfriday Title').jt`Billed as ${amount} ${supNotice}`;
+            return c('blackfriday Title').jt`Billed monthly${supNotice}`;
         }
         if (cycle === YEARLY) {
             return c('blackfriday Title').jt`Billed as ${amount} ${supNotice}`;
@@ -71,25 +71,27 @@ const BlackFridayModal = ({ bundles = [], onSelect, ...rest }: Props) => {
 
     const AFTER_INFO = ({ amount, notice }: { amount: ReactNode; notice: number }) => {
         if (notice === 1) {
-            return c('blackfriday Title')
-                .jt`(${notice}) Renews after 1 year at a discounted annual price of ${amount} every year (20% discount).`;
+            return c('blackfriday Title').jt`(${notice}) Renews after 1 month at a standard monthly price of ${amount}`;
         }
         if (notice === 2) {
             return c('blackfriday Title')
-                .jt`(${notice}) Renews after 2 years at a discounted 2-year price of ${amount} every 2 years (47% discount).`;
+                .jt`(${notice}) Renews after 2 years at a standard discounted 2-year price of ${amount} (33% discount)`;
         }
         if (notice === 3) {
             return c('blackfriday Title')
-                .jt`(${notice}) Renews after 1 year at a discounted annual & bundle price of ${amount} every year (36% discount).`;
+                .jt`(${notice}) Renews after 1 year at a standard discounted annual price of ${amount} (20% discount)`;
         }
         return null;
     };
 
-    const getCTA = () => {
+    const getCTA = (popular?: boolean) => {
         if (productPayer) {
             return c('blackfriday Action').t`Get the offer`;
         }
-        return c('blackfriday Action').t`Get limited-time deal`;
+        if (popular) {
+            return c('blackfriday Action').t`Get the deal now`;
+        }
+        return c('blackfriday Action').t`Get the deal`;
     };
 
     const getFooter = () => {
@@ -102,8 +104,22 @@ const BlackFridayModal = ({ bundles = [], onSelect, ...rest }: Props) => {
                 </p>
             );
         }
+
+        const standardMonthlyPricing = (
+            <Price key="standard-pricing" currency={currency} suffix={c('Suffix for price').t`/ mo`}>
+                {pricing[0]?.withoutCoupon || 0}
+            </Price>
+        );
+
         return (
             <>
+                <div className="text-xs mt1 mb0 color-weak text-center">
+                    <Href url="https://protonvpn.com/support/year-end-offer-terms-2021">
+                        {c('blackfriday Info').t`Special offer Terms and Conditions`}
+                    </Href>
+                </div>
+                <p className="text-xs mt0 mb0 color-weak text-center">{c('blackfriday Info')
+                    .jt`Discounts are based on standard monthly pricing of ${standardMonthlyPricing}`}</p>
                 {bundles.map((b, index) => {
                     const key = `${index}`;
                     const { withoutCoupon = 0 } = pricing[index] || {};
@@ -118,10 +134,6 @@ const BlackFridayModal = ({ bundles = [], onSelect, ...rest }: Props) => {
                         </p>
                     );
                 })}
-                <p className="text-xs mt1 mb0 color-weak text-center">{c('blackfriday Info')
-                    .t`Discounts are based on monthly pricing.`}</p>
-                <p className="text-xs mt0 mb0 color-weak text-center">{c('blackfriday Info')
-                    .t`Offer valid only for first-time paid subscriptions.`}</p>
             </>
         );
     };
@@ -279,7 +291,7 @@ const BlackFridayModal = ({ bundles = [], onSelect, ...rest }: Props) => {
                                                 onSelect({ planIDs, cycle, currency, couponCode });
                                             }}
                                         >
-                                            {getCTA()}
+                                            {getCTA(popular)}
                                         </Button>
                                         <small className="text-bold">
                                             {BILLED_DESCRIPTION({ cycle, amount: amountDue, notice: index + 1 })}

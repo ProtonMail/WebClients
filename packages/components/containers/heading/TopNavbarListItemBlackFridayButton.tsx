@@ -29,7 +29,7 @@ const TopNavbarListItemBlackFridayButton = ({ plans, subscription }: Props) => {
         ? c('blackfriday Promo title, need to be short').t`Special offer`
         : cyberModay
         ? 'Cyber Monday'
-        : 'Black Friday';
+        : c('blackfriday Promo title, need to be short').t`Special offer`;
 
     const onSelect = ({
         planIDs,
