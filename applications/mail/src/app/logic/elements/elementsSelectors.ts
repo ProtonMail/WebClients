@@ -118,14 +118,14 @@ export const shouldUpdatePage = createSelector(
     (pageChanged, pageCached) => pageChanged && pageCached
 );
 
-export const useES = createSelector(
+export const isES = createSelector(
     [currentESDBStatus, currentParams],
     ({ dbExists, esEnabled, isCacheLimited }, { search }) =>
         dbExists && esEnabled && isSearch(search) && (!!search.keyword || !isCacheLimited)
 );
 
 export const shouldLoadMoreES = createSelector(
-    [currentESDBStatus, useES, pageChanged, pageCached],
+    [currentESDBStatus, isES, pageChanged, pageCached],
     ({ isCacheLimited, isSearchPartial }, useES, pageChanged, pageCached) =>
         useES && isCacheLimited && isSearchPartial && pageChanged && !pageCached
 );
@@ -176,3 +176,21 @@ export const loading = createSelector(
 );
 
 export const totalReturned = createSelector([dynamicTotal, total], (dynamicTotal, total) => dynamicTotal || total);
+
+export const expectingEmpty = createSelector([dynamicPageLength], (dynamicPageLength) => dynamicPageLength === 0);
+
+export const loadedEmpty = createSelector(
+    [beforeFirstLoad, pendingRequest, total],
+    (beforeFirstLoad, pendingRequest, total) => !beforeFirstLoad && pendingRequest === false && total === 0
+);
+
+export const partialESSearch = createSelector(
+    [isES, currentESDBStatus],
+    (useES, currentESDBStatus) => useES && currentESDBStatus.isCacheLimited && currentESDBStatus.isSearchPartial
+);
+
+export const stateInconsistency = createSelector(
+    [beforeFirstLoad, pendingRequest, retry, isES],
+    (beforeFirstLoad, pendingRequest, retry, useES) =>
+        !beforeFirstLoad && !pendingRequest && retry.error === undefined && retry.count === 3 && !useES
+);

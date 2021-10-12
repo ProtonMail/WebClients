@@ -1,14 +1,27 @@
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { createSlice } from '@reduxjs/toolkit';
 import { ElementsState, ElementsStateParams, NewStateParams } from './elementsTypes';
-import { reset, load, removeExpired, eventUpdates } from './elementsActions';
+import {
+    reset,
+    updatePage,
+    load,
+    removeExpired,
+    eventUpdates,
+    manualPending,
+    manualFulfilled,
+    addESResults,
+} from './elementsActions';
 import {
     reset as resetReducer,
+    updatePage as updatePageReducer,
     loadPending,
     loadFulfilled,
     removeExpired as removeExpiredReducer,
     eventUpdatesPending,
     eventUpdatesFulfilled,
+    manualPending as manualPendingReducer,
+    manualFulfilled as manualFulfilledReducer,
+    addESResults as addESResultsReducer,
 } from './elementsReducers';
 
 export const newState = ({
@@ -44,11 +57,15 @@ const elementsSlice = createSlice({
     reducers: {},
     extraReducers: (builder) => {
         builder.addCase(reset, resetReducer);
+        builder.addCase(updatePage, updatePageReducer);
         builder.addCase(load.pending, loadPending);
         builder.addCase(load.fulfilled, loadFulfilled);
         builder.addCase(removeExpired, removeExpiredReducer);
         builder.addCase(eventUpdates.pending, eventUpdatesPending);
         builder.addCase(eventUpdates.fulfilled, eventUpdatesFulfilled);
+        builder.addCase(manualPending, manualPendingReducer);
+        builder.addCase(manualFulfilled, manualFulfilledReducer);
+        builder.addCase(addESResults, addESResultsReducer);
     },
 });
 
