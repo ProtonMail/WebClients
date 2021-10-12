@@ -26,7 +26,7 @@ const useBlackFridayModalTitle = (productPayer: boolean) => {
         return c('blackfriday Title').t`Cyber Monday Sale`;
     }
 
-    return c('blackfriday Title').t`Black Friday Sale`;
+    return c('blackfriday Title').t`Get the special year-end offer on our Premium VPN PLUS plan`;
 };
 
 export default useBlackFridayModalTitle;

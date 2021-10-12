@@ -1,7 +1,9 @@
 import { c } from 'ttag';
-import { COUPON_CODES, BLACK_FRIDAY } from '@proton/shared/lib/constants';
-
+import { COUPON_CODES, BLACK_FRIDAY, APPS } from '@proton/shared/lib/constants';
+import { getAppName } from '@proton/shared/lib/apps/helper';
 import { Badge } from '../../components';
+
+const vpnAppName = getAppName(APPS.PROTONVPN_SETTINGS);
 
 const { BUNDLE, PROTONTEAM, BLACK_FRIDAY_2018, BLACK_FRIDAY_2019, BLACK_FRIDAY_2020 } = COUPON_CODES;
 
@@ -44,8 +46,11 @@ const DiscountBadge = ({ code }: Props) => {
 
     if (code === BLACK_FRIDAY.COUPON_CODE) {
         return (
-            <Badge type="success" tooltip={c('Info').t`Black Friday 2021 newcomer discount has been applied`}>
-                Black Friday
+            <Badge
+                type="success"
+                tooltip={c('Info').t`${vpnAppName} Plus Special Offer 2021 discount has been applied`}
+            >
+                {c('blackfriday Promo title, need to be short').t`Special offer`}
             </Badge>
         );
     }
