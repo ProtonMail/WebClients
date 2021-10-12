@@ -1,5 +1,6 @@
 import * as openpgp from 'openpgp';
-import { OpenPGPKey, SessionKey } from 'pmcrypto';
+// @ts-ignore
+import { OpenPGPKey, SessionKey, updateServerTime, serverTime } from 'pmcrypto';
 
 import {
     EncryptedBlock,
@@ -19,6 +20,7 @@ type StartMessage = {
     addressEmail: string;
     privateKey: Uint8Array;
     sessionKey: SessionKey;
+    pmcryptoTime: Date;
 };
 
 type CreatedBlocksMessage = {
@@ -132,6 +134,7 @@ export class UploadWorker {
                     (async (data) => {
                         const addressPrivateKey = await readOpenPGPKey(data.addressPrivateKey);
                         const privateKey = await readOpenPGPKey(data.privateKey);
+                        updateServerTime(data.pmcryptoTime);
                         start(
                             data.file,
                             data.thumbnailData,
@@ -263,6 +266,7 @@ export class UploadWorkerController {
         privateKey: OpenPGPKey,
         sessionKey: SessionKey
     ) {
+        const pmcryptoTime = serverTime();
         this.worker.postMessage({
             command: 'start',
             file,
@@ -271,6 +275,7 @@ export class UploadWorkerController {
             addressEmail,
             privateKey: privateKey.toPacketlist().write(),
             sessionKey,
+            pmcryptoTime,
         } as StartMessage);
     }
 
