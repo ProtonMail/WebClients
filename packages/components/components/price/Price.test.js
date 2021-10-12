@@ -10,7 +10,7 @@ describe('Price component', () => {
 
     it('should render price in EUR', () => {
         const { container } = render(<Price currency="EUR">{1500}</Price>);
-        expect(container.firstChild.textContent).toBe('15 €');
+        expect(container.firstChild.textContent).toBe('€15');
     });
 
     it('should use the divisor defined', () => {
