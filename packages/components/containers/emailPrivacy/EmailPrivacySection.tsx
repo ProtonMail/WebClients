@@ -31,10 +31,11 @@ const EmailPrivacySection = () => {
             <SettingsLayout>
                 <SettingsLayoutLeft>
                     <label htmlFor="remoteToggle" className="text-semibold">
-                        <span className="mr0-5">{c('Label').t`Confirm before loading remote content`}</span>
+                        <span className="mr0-5">{c('Label').t`Ask before loading remote content`}</span>
                         <Info
                             url="https://protonmail.com/support/knowledge-base/images-by-default/"
-                            title={c('Info').t`Prevents remote email content from loading automatically.`}
+                            title={c('Info')
+                                .t`Prevents content from the sender's server from loading without your permission.`}
                         />
                     </label>
                 </SettingsLayoutLeft>
@@ -52,11 +53,10 @@ const EmailPrivacySection = () => {
                     <SettingsLayout>
                         <SettingsLayoutLeft>
                             <label htmlFor="preventTrackingToggle" className="text-semibold">
-                                <span className="mr0-5">{c('Label').t`Protect against email tracking`}</span>
+                                <span className="mr0-5">{c('Label').t`Block email tracking`}</span>
                                 <Info
                                     url="https://protonmail.com/support/email-tracker-protection"
-                                    title={c('Info')
-                                        .t`Prevents senders from knowing whether and when you have opened a message.`}
+                                    title={c('Info').t`Blocks senders from seeing if and when you opened a message.`}
                                 />
                             </label>
                         </SettingsLayoutLeft>
@@ -73,6 +73,10 @@ const EmailPrivacySection = () => {
                             <SettingsLayoutLeft>
                                 <label htmlFor="protectiontModeToggle" className="text-semibold">
                                     <span className="mr0-5">{c('Label').t`Protection mode`}</span>
+                                    <Info
+                                        title={c('Info')
+                                            .t`Remote images can either be loaded through a proxy (recommended) or be stored as email attachments in addition.`}
+                                    />
                                 </label>
                             </SettingsLayoutLeft>
                             <SettingsLayoutRight className="pt0-5">
