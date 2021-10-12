@@ -132,7 +132,7 @@ type GetTimeZoneOptions = (
 ) => {
     text: string;
     value: string;
-    key: number;
+    key: string;
 }[];
 
 /**
@@ -164,11 +164,11 @@ export const getTimeZoneOptions: GetTimeZoneOptions = (
                 }
                 return diff;
             })
-            .map(({ name, offset }, i) => {
+            .map(({ name, offset }) => {
                 return {
                     text: formatter({ name, utcOffset: `GMT${formatTimezoneOffset(offset)}` }),
                     value: name,
-                    key: i,
+                    key: name,
                 };
             })
     );

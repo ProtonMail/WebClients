@@ -81,7 +81,17 @@ const SearchableSelect = <V extends any>({
         onOpen,
     });
 
-    const { isOpen, selectedIndex, open, close: handleClose, setFocusedIndex, handleChange } = select;
+    const {
+        isOpen,
+        selectedIndex,
+        open,
+        close: handleClose,
+        setFocusedIndex,
+        handleChange,
+        focusNextIndex,
+        focusPreviousIndex,
+        focusedIndex,
+    } = select;
 
     const close = (event?: MouseEvent<HTMLDivElement> | Event) => {
         if (event?.target instanceof Node && searchContainerRef?.current?.contains(event.target)) {
@@ -151,6 +161,8 @@ const SearchableSelect = <V extends any>({
             ? filteredOptions.findIndex((option) => children[selectedIndex] === option)
             : null;
 
+    const pressedDown = useRef(false);
+
     return (
         <SelectProvider {...select}>
             <SelectButton isOpen={isOpen} onClick={handleAnchorClick} aria-label={ariaLabel} ref={anchorRef} {...rest}>
@@ -166,11 +178,51 @@ const SearchableSelect = <V extends any>({
                 noCaret
                 noMaxWidth
                 sameAnchorWidth
+                disableDefaultArrowNavigation={!searchValue}
                 className={classnames([searchContainerRef?.current && 'dropdown--is-searchable'])}
             >
                 <div onKeyDown={handleDropdownContentKeyDown}>
                     <div className="dropdown-search" ref={searchContainerRef}>
                         <SearchInput
+                            onKeyDown={(e) => {
+                                if (searchValue) {
+                                    return;
+                                }
+
+                                if (e.key === 'ArrowDown') {
+                                    focusNextIndex();
+                                }
+
+                                if (e.key === 'ArrowUp') {
+                                    focusPreviousIndex();
+                                }
+
+                                if (e.key === 'Tab') {
+                                    handleClose();
+                                }
+
+                                if (e.key === 'Enter') {
+                                    pressedDown.current = true;
+                                }
+                            }}
+                            onKeyUp={(e) => {
+                                if (searchValue) {
+                                    return;
+                                }
+
+                                if (e.key === 'Enter' && pressedDown.current) {
+                                    if (focusedIndex) {
+                                        handleChange({
+                                            value: optionValues[focusedIndex],
+                                            selectedIndex: focusedIndex,
+                                        });
+
+                                        handleClose();
+                                    }
+
+                                    pressedDown.current = false;
+                                }
+                            }}
                             autoFocus
                             ref={searchInputRef}
                             value={searchValue}
