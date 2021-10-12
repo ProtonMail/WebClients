@@ -1,3 +1,28 @@
+## Release 4.0.9 - Oct 27, 2021
+
+### Improvements
+
+-   The composer window can now be moved horizontally allowing to customize the writing experience even further
+-   In column layout, the message view can now be resized by dragging the vertical separator between the list view and the message view
+-   Updated the UX of the location field inside the advanced search
+-   Improved focus management by placing the autofocus on the attachment popup when adding an attachment to the composer
+-   Improved the search mechanism by defaulting to the current location when opening advanced search
+-   Updated the icon for "Encryption & keys" in settings to match the encryption icon in the message view
+-   Improved the underlying technology for undoing various actions, like sending and moving messages
+-   Implemented various performance improvements to speed up loading times, including but not limited to: composer, sidebar, drag&drop elements, focus management and pagination
+
+### Bug fixes
+
+-   Fixed an issue where sending large attachments with non-Latin file names would cause a sending problem
+-   Fixed an issue where a wrong error message would be displayed if the sending limit has been reached
+-   Fixed an issue where the last day was excluded in search results if defining a specific date range in advanced search
+-   Fixed an issue where adding an image URL with extra URL parameters in contacts would show a broken image
+-   Fixed an issue where embedded images would not display correctly for some seconds while the message is in "Sending" state
+-   Fixed an issue where the "Drag&Drop" area would be activated too late when dragging attachments into the composer from particular directions
+-   Fixed an issue where if clicking into the composer body first, it would require two clicks to open the "CC/BCC" fields
+-   Fixed an issue where when moving messages from the Spam folder, the "Undo" action would sometimes not appear in the success notification
+-   Fixed an issue where moving a labelled message to Trash and undoing the action would result in missing labels Renamed all "X25519" key references to "Curve25519"
+
 ## Release 4.0.8 - Oct 13, 2021
 
 ### Improvements
