@@ -284,7 +284,7 @@ const BlackFridayModal = ({ bundles = [], onSelect, ...rest }: Props) => {
                                         </div>
                                         <Button
                                             color="norm"
-                                            shape={popular || productPayer ? 'solid' : undefined}
+                                            shape={popular || productPayer ? 'solid' : 'outline'}
                                             className={classnames(['mb1 text-uppercase'])}
                                             onClick={() => {
                                                 rest.onClose?.();
