@@ -19,9 +19,9 @@ const ProtectionModeSelect = ({ id, defaultProtectionMode, ...rest }: Props) => 
     const { call } = useEventManager();
 
     const options = [
-        { text: c('Option protection mode').t`Prevent tracking (recommended)`, value: IMAGE_PROXY_FLAGS.PROXY },
+        { text: c('Option protection mode').t`Block tracking (recommended)`, value: IMAGE_PROXY_FLAGS.PROXY },
         {
-            text: c('Option protection mode').t`Prevent tracking and store content locally`,
+            text: c('Option protection mode').t`Block tracking and store content locally`,
             value: IMAGE_PROXY_FLAGS.ALL,
         },
     ];

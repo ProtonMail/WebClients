@@ -32,10 +32,11 @@ const MessagesSection = () => {
                 <SettingsLayout>
                     <SettingsLayoutLeft>
                         <label htmlFor="remoteToggle" className="text-semibold">
-                            <span className="mr0-5">{c('Label').t`Confirm before loading remote content`}</span>
+                            <span className="mr0-5">{c('Label').t`Ask before loading remote content`}</span>
                             <Info
                                 url="https://protonmail.com/support/knowledge-base/images-by-default/"
-                                title={c('Info').t`Prevents remote email content from loading automatically.`}
+                                title={c('Info')
+                                    .t`Prevents content from the sender's server from loading without your permission.`}
                             />
                         </label>
                     </SettingsLayoutLeft>
