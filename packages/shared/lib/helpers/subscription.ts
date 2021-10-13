@@ -1,4 +1,4 @@
-import { PLAN_TYPES, PLAN_SERVICES, PLANS, CYCLE } from '../constants';
+import { PLAN_TYPES, PLAN_SERVICES, PLANS, CYCLE, ADDON_NAMES } from '../constants';
 import { Subscription, Plan, PlanIDs } from '../interfaces';
 
 const { PLAN, ADDON } = PLAN_TYPES;
@@ -70,7 +70,7 @@ export const hasVpnPlus = (subscription: Subscription) => {
     return Plans.some(({ Name }) => Name === VPNPLUS);
 };
 
-export const getMonthlyBaseAmount = (name: PLANS, plans: Plan[], subscription: Subscription) => {
+export const getMonthlyBaseAmount = (name: PLANS | ADDON_NAMES, plans: Plan[], subscription: Subscription) => {
     const base = plans.find(({ Name }) => Name === name);
     if (!base) {
         return 0;
