@@ -121,15 +121,15 @@ describe('encryptedSearch', () => {
         });
 
         it('should round end time', () => {
-            expect(normalisedSearchParams.end! - timeOffset).toEqual(1619740799);
+            expect(normalisedSearchParams.search.end! - timeOffset).toEqual(1619740799);
         });
 
         it('should match all other search parameters', () => {
-            expect(normalisedSearchParams.address).toEqual(searchParams.address);
-            expect(normalisedSearchParams.from).toEqual(searchParams.from);
-            expect(normalisedSearchParams.to).toEqual(searchParams.to);
-            expect(normalisedSearchParams.begin).toEqual(searchParams.begin);
-            expect(normalisedSearchParams.attachments).toEqual(searchParams.attachments);
+            expect(normalisedSearchParams.search.address).toEqual(searchParams.address);
+            expect(normalisedSearchParams.search.from).toEqual(searchParams.from);
+            expect(normalisedSearchParams.search.to).toEqual(searchParams.to);
+            expect(normalisedSearchParams.search.begin).toEqual(searchParams.begin);
+            expect(normalisedSearchParams.search.attachments).toEqual(searchParams.attachments);
         });
     });
 
@@ -143,7 +143,7 @@ describe('encryptedSearch', () => {
         it('should fail search due to address', () => {
             expect(
                 applySearch(
-                    { labelID: '0', address: 'address' } as NormalisedSearchParams,
+                    { labelID: '0', search: { address: 'address' } } as NormalisedSearchParams,
                     { ...esMessage, AddressID: 'AddressID' } as ESMessage
                 )
             ).toEqual(false);
@@ -152,7 +152,7 @@ describe('encryptedSearch', () => {
         it('should fail search due to begin', () => {
             expect(
                 applySearch(
-                    { labelID: '0', begin: 1619679525 } as NormalisedSearchParams,
+                    { labelID: '0', search: { begin: 1619679525 } } as NormalisedSearchParams,
                     { ...esMessage, Time: 1619679524 } as ESMessage
                 )
             ).toEqual(false);
@@ -161,7 +161,7 @@ describe('encryptedSearch', () => {
         it('should fail search due to end', () => {
             expect(
                 applySearch(
-                    { labelID: '0', end: 1619733599 } as NormalisedSearchParams,
+                    { labelID: '0', search: { end: 1619733599 } } as NormalisedSearchParams,
                     { ...esMessage, Time: 1619733600 } as ESMessage
                 )
             ).toEqual(false);
@@ -170,7 +170,7 @@ describe('encryptedSearch', () => {
         it('should fail search due to attachments', () => {
             expect(
                 applySearch(
-                    { labelID: '0', attachments: 0 } as NormalisedSearchParams,
+                    { labelID: '0', search: { attachments: 0 } } as NormalisedSearchParams,
                     { ...esMessage, NumAttachments: 1 } as ESMessage
                 )
             ).toEqual(false);

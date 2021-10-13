@@ -4,10 +4,10 @@ import { STATUS } from '@proton/shared/lib/models/cache';
 import { Address, DecryptedKey, Key } from '@proton/shared/lib/interfaces';
 import { ADDRESS_STATUS } from '@proton/shared/lib/constants';
 import { MessageExtended } from '../../models/message';
-import { ElementsCache, ELEMENTS_CACHE_KEY } from '../../hooks/mailbox/useElementsCache';
 import { Base64Cache } from '../../hooks/useBase64Cache';
 import { ConversationCacheEntry } from '../../models/conversation';
 import { addKeysToAddressKeysCache } from './crypto';
+import { ElementsState } from '../../logic/elements/elementsTypes';
 
 export interface ResolvedRequest<T> {
     status: STATUS;
@@ -31,12 +31,12 @@ export const attachmentsCache = createCache<string, DecryptResultPmcrypto>();
 export const addressKeysCache = createCache<string, { status: number; value: Partial<DecryptedKey>[] }>();
 export const base64Cache = createCache<string, string>() as Base64Cache;
 
-export const elementsCache: ElementsCache = {
+export const elementsCache: ElementsState = {
     beforeFirstLoad: true,
     invalidated: false,
     pendingRequest: false,
     elements: {},
-    params: { labelID: '', sort: { sort: 'Time', desc: true }, filter: {}, esEnabled: false },
+    params: { labelID: '', sort: { sort: 'Time', desc: true }, filter: {}, search: {}, esEnabled: false },
     pages: [],
     page: 0,
     total: 0,
@@ -95,5 +95,5 @@ export const addAddressToCache = (inputAddress: Partial<Address>) => {
 };
 
 export const minimalElementsCache = () => {
-    cache.set(ELEMENTS_CACHE_KEY, elementsCache);
+    // cache.set(ELEMENTS_CACHE_KEY, elementsCache);
 };

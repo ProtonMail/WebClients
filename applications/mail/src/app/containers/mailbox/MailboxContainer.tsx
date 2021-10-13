@@ -100,7 +100,7 @@ const MailboxContainer = ({
     const page = pageFromUrl(location);
     const searchParams = getSearchParams(location.hash);
     const isConversationContentView = mailSettings.ViewMode === VIEW_MODE.GROUP;
-    const searchParameters = useMemo<SearchParameters>(() => extractSearchParameters(location), [location]);
+    const searchParameters = useDeepMemo<SearchParameters>(() => extractSearchParameters(location), [location]);
     const isSearch = testIsSearch(searchParameters);
     const sort = useMemo<Sort>(() => sortFromUrl(location, inputLabelID), [searchParams.sort, inputLabelID]);
     const filter = useMemo<Filter>(() => filterFromUrl(location), [searchParams.filter]);
@@ -126,7 +126,7 @@ const MailboxContainer = ({
         onPage: handlePage,
     };
 
-    const { labelID, elements, loading, placeholderCount, total } = useElements(elementsParams);
+    const { labelID, elements, elementIDs, loading, placeholderCount, total } = useElements(elementsParams);
     useEncryptedSearch(elementsParams);
 
     const handleBack = useCallback(() => history.push(setParamsInLocation(history.location, { labelID })), [labelID]);
@@ -135,9 +135,9 @@ const MailboxContainer = ({
 
     useMailboxPageTitle(labelID, location);
 
-    const elementIDs = useDeepMemo(() => {
-        return elements.map((element) => element.ID || '');
-    }, [elements]);
+    // const elementIDs = useDeepMemo(() => {
+    //     return elements.map((element) => element.ID || '');
+    // }, [elements]);
 
     const {
         checkedIDs,

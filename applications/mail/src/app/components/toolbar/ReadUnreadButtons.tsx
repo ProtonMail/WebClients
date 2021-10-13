@@ -4,7 +4,7 @@ import { Icon, useLoading, useMailSettings, ToolbarButton } from '@proton/compon
 import { c } from 'ttag';
 
 import { useMarkAs, MARK_AS_STATUS } from '../../hooks/useMarkAs';
-import { useGetElementsFromIDs } from '../../hooks/mailbox/useElementsCache';
+import { useGetElementsFromIDs } from '../../hooks/mailbox/useElements';
 
 const { READ, UNREAD } = MARK_AS_STATUS;
 

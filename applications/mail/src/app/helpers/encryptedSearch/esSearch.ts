@@ -87,10 +87,12 @@ export const normaliseSearchParams = (
     const normalisedSearchParams: NormalisedSearchParams = {
         ...otherParams,
         labelID,
-        end: roundedEnd,
+        search: {
+            end: roundedEnd,
+            from: from ? from.toLocaleLowerCase() : undefined,
+            to: to ? to.toLocaleLowerCase() : undefined,
+        },
         normalisedKeywords,
-        from: from ? from.toLocaleLowerCase() : undefined,
-        to: to ? to.toLocaleLowerCase() : undefined,
         filter: filter || {},
         sort: sort || { sort: 'Time', desc: true },
     };
@@ -129,7 +131,12 @@ export const testMetadata = (
     recipients: string[],
     sender: string[]
 ) => {
-    const { address, from, to, begin, end, attachments, labelID, decryptionError, filter } = normalisedSearchParams;
+    const {
+        search: { address, from, to, begin, end, attachments },
+        labelID,
+        decryptionError,
+        filter,
+    } = normalisedSearchParams;
     const { AddressID, Time, LabelIDs, NumAttachments, decryptionError: messageError, Unread } = messageToSearch;
 
     if (
@@ -247,7 +254,7 @@ export const uncachedSearchAsc = async (
     const resultsArray: ESMessage[] = [];
 
     let lastEmail: LastEmail | undefined;
-    let lowerBound = [normalisedSearchParams.begin || (await getOldestTime(userID)), beginOrder || 0];
+    let lowerBound = [normalisedSearchParams.search.begin || (await getOldestTime(userID)), beginOrder || 0];
 
     while (!lastEmail) {
         if (abortSearchingRef && abortSearchingRef.current.signal.aborted) {
@@ -284,7 +291,10 @@ export const uncachedSearchAsc = async (
             lastEmail = { Time: lastCiphertext.Time, Order: lastCiphertext.Order };
         }
 
-        if (normalisedSearchParams.end && storedData[storedData.length - 1].Time > normalisedSearchParams.end) {
+        if (
+            normalisedSearchParams.search.end &&
+            storedData[storedData.length - 1].Time > normalisedSearchParams.search.end
+        ) {
             break;
         }
 
@@ -314,8 +324,8 @@ export const uncachedSearchDesc = async (
     const queryStart = await initialiseQuery(
         userID,
         beginOrder,
-        normalisedSearchParams.begin,
-        normalisedSearchParams.end
+        normalisedSearchParams.search.begin,
+        normalisedSearchParams.search.end
     );
     const { getTimes, initialTime } = queryStart;
     let { lower, upper, startingOrder } = queryStart;
@@ -397,7 +407,7 @@ export const uncachedSearch = async (
         return uncachedSearchDesc(
             indexKey,
             userID,
-            { ...normalisedSearchParams, end: lastEmailTime || normalisedSearchParams.end },
+            { ...normalisedSearchParams, search: { end: lastEmailTime || normalisedSearchParams.search.end } },
             options
         );
     }
@@ -405,7 +415,7 @@ export const uncachedSearch = async (
     return uncachedSearchAsc(
         indexKey,
         userID,
-        { ...normalisedSearchParams, begin: lastEmailTime || normalisedSearchParams.begin },
+        { ...normalisedSearchParams, search: { begin: lastEmailTime || normalisedSearchParams.search.begin } },
         options
     );
 };
@@ -508,13 +518,12 @@ export const hybridSearch = async (
         // hasn't been already covered by cache. The cache is ordered such that the last message is the oldest
         const { Time: startCache, Order } = esCacheRef.current.esCache[esCacheRef.current.esCache.length - 1];
         beginOrder = Order;
-        const intervalEnd = Math.min(startCache, normalisedSearchParams.end || Number.MAX_SAFE_INTEGER);
-        const intervalStart = normalisedSearchParams.begin || 0;
+        const intervalEnd = Math.min(startCache, normalisedSearchParams.search.end || Number.MAX_SAFE_INTEGER);
+        const intervalStart = normalisedSearchParams.search.begin || 0;
         shouldKeepSearching = intervalStart < startCache;
         normalisedSearchParams = {
             ...normalisedSearchParams,
-            begin: intervalStart,
-            end: intervalEnd,
+            search: { begin: intervalStart, end: intervalEnd },
         };
     }
 
@@ -552,17 +561,24 @@ export const shouldOnlySortResults = (
     normalisedSearchParams: NormalisedSearchParams,
     previousNormSearchParams: NormalisedSearchParams
 ) => {
-    const { labelID, filter, address, from, to, begin, end, attachments, normalisedKeywords, decryptionError } =
-        normalisedSearchParams;
+    const {
+        labelID,
+        filter,
+        search: { address, from, to, begin, end, attachments },
+        normalisedKeywords,
+        decryptionError,
+    } = normalisedSearchParams;
     const {
         labelID: prevLabelID,
         filter: prevFilter,
-        address: prevAddress,
-        from: prevFrom,
-        to: prevTo,
-        begin: prevBegin,
-        end: prevEnd,
-        attachments: prevAttachments,
+        search: {
+            address: prevAddress,
+            from: prevFrom,
+            to: prevTo,
+            begin: prevBegin,
+            end: prevEnd,
+            attachments: prevAttachments,
+        },
         normalisedKeywords: prevNormalisedKeywords,
         decryptionError: prevDecryptionError,
     } = previousNormSearchParams;
