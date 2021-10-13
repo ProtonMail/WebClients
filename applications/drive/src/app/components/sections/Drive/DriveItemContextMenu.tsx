@@ -29,7 +29,7 @@ const DriveItemContextMenu = ({
 
     const isOnlyOneItem = selectedItems.length === 1;
     const isOnlyOneFileItem = isOnlyOneItem && item.Type === LinkType.FILE;
-    const hasPreviewAvailable = isOnlyOneFileItem && item.MIMEType && isPreviewAvailable(item.MIMEType);
+    const hasPreviewAvailable = isOnlyOneFileItem && item.MIMEType && isPreviewAvailable(item.MIMEType, item.Size);
 
     useEffect(() => {
         if (position) {

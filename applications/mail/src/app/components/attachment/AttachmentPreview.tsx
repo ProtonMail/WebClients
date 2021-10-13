@@ -85,6 +85,7 @@ const AttachmentPreview = (
             contents={previewing.contents}
             fileName={previewing.attachment?.Name}
             mimeType={previewing.attachment?.MIMEType}
+            fileSize={previewing.attachment?.Size}
             onClose={handleClose}
             onSave={handleDownload}
             ref={rootRef}

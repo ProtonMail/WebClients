@@ -19,7 +19,7 @@ const SharedLinksItemContextMenu = ({
 }: ItemContextMenuProps) => {
     const isOnlyOneItem = selectedItems.length === 1;
     const hasPreviewAvailable =
-        isOnlyOneItem && item.Type === LinkType.FILE && item.MIMEType && isPreviewAvailable(item.MIMEType);
+        isOnlyOneItem && item.Type === LinkType.FILE && item.MIMEType && isPreviewAvailable(item.MIMEType, item.Size);
 
     useEffect(() => {
         if (position) {
