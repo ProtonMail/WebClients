@@ -4,6 +4,18 @@ import MimeIcon from '../icon/MimeIcon';
 
 const iconsMap: { [mimeType: string]: { name: string } } = {
     Folder: { name: 'folder' },
+
+    'application/x-rar-compressed': { name: 'zip' },
+    'application/x-zip-compressed': { name: 'zip' },
+    'application/zip': { name: 'zip' },
+    'application/x-7z-compressed': { name: 'zip' }, // .7z — 7-Zip compressed file
+    'application/arj': { name: 'zip' }, // .arj — ARJ compressed file
+    'application/x-debian-package': { name: 'zip' }, // .deb — Debian software package file
+    'application/octet-stream': { name: 'zip' }, // .pkg/.rpm
+    'application/vnd.rar': { name: 'zip' }, // .rar – RAR file
+    'application/gzip': { name: 'zip' }, // .tar.gz — Tarball compressed file
+    'application/x-compress': { name: 'zip' }, // .z — Z compressed file
+
     'application/msword': { name: 'doc' },
     'application/vnd.openxmlformats-officedocument.wordprocessingml.document': {
         name: 'doc',
@@ -12,9 +24,6 @@ const iconsMap: { [mimeType: string]: { name: string } } = {
     'application/vnd.openxmlformats-officedocument.presentationml.presentation': {
         name: 'ppt',
     },
-    'application/x-rar-compressed': { name: 'zip' },
-    'application/x-zip-compressed': { name: 'zip' },
-    'application/zip': { name: 'zip' },
     'application/vnd.ms-excel': { name: 'xls' },
     'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet': {
         name: 'xls',
