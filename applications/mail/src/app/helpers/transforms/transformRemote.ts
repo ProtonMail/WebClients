@@ -8,7 +8,7 @@ import { querySelectorAll } from '../message/messageContent';
 import { hasShowRemote } from '../mailSettings';
 import { getRemoteImages, insertImageAnchor } from '../message/messageImages';
 import { MessageCache } from '../../containers/MessageProvider';
-import { ATTRIBUTES, loadRemoteImages } from '../message/messageRemotes';
+import { ATTRIBUTES, loadRemoteImages, removeProtonPrefix } from '../message/messageRemotes';
 
 const WHITELIST = ['notify@protonmail.com'];
 
@@ -48,8 +48,12 @@ export const transformRemote = (
 
     matches.forEach((match) => {
         const id = generateUID('remote');
-        if (!draft && match.tagName === 'IMG') {
-            insertImageAnchor(id, 'remote', match);
+        if (match.tagName === 'IMG') {
+            if (draft) {
+                removeProtonPrefix(match);
+            } else {
+                insertImageAnchor(id, 'remote', match);
+            }
         }
         remoteImages.push({
             type: 'remote',
