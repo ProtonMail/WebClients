@@ -15,6 +15,8 @@ const isWebpSupported = () => {
     return true;
 };
 
+export const isImage = (mimeType: string) => mimeType.startsWith('image/');
+
 export const isFont = (MimeType: string) => MimeType.startsWith('font/');
 
 export const isSupportedImage = (mimeType: string) =>
