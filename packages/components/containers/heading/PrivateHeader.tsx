@@ -3,13 +3,13 @@ import { APPS } from '@proton/shared/lib/constants';
 import { c } from 'ttag';
 
 import { AppLink, Hamburger, Icon, SettingsLink } from '../../components';
-import { useConfig, useUser, usePlans, useSubscription } from '../../hooks';
+import { useConfig, useUser } from '../../hooks';
 import Header, { Props as HeaderProps } from '../../components/header/Header';
 
 import UserDropdown from './UserDropdown';
 import { AppsDropdown } from '../app';
 import TopNavbarListItemBlackFridayButton from './TopNavbarListItemBlackFridayButton';
-import useBlackFriday from './useBlackFriday';
+import usePromotionOffer from './usePromotionOffer';
 
 import { TopNavbar, TopNavbarList, TopNavbarListItem } from '../../components/topnavbar';
 import TopNavbarListItemButton from '../../components/topnavbar/TopNavbarListItemButton';
@@ -49,10 +49,8 @@ const PrivateHeader = ({
     title,
 }: Props) => {
     const [{ hasPaidMail, hasPaidVpn }] = useUser();
-    const [plans = []] = usePlans();
-    const [subscription] = useSubscription();
     const { APP_NAME } = useConfig();
-    const showBlackFridayButton = useBlackFriday();
+    const offer = usePromotionOffer();
 
     if (backUrl) {
         return (
@@ -89,9 +87,9 @@ const PrivateHeader = ({
             <TopNavbar>
                 <TopNavbarList>
                     {isNarrow && searchDropdown ? <TopNavbarListItem>{searchDropdown}</TopNavbarListItem> : null}
-                    {showBlackFridayButton ? (
+                    {offer ? (
                         <TopNavbarListItem noShrink>
-                            <TopNavbarListItemBlackFridayButton plans={plans} subscription={subscription} />
+                            <TopNavbarListItemBlackFridayButton offer={offer} />
                         </TopNavbarListItem>
                     ) : null}
                     {hasPaidMail || isVPN ? null : (
@@ -107,7 +105,7 @@ const PrivateHeader = ({
                             />
                         </TopNavbarListItem>
                     )}
-                    {hasPaidVpn || !isVPN ? null : (
+                    {hasPaidVpn || !isVPN || (isVPN && offer) ? null : (
                         <TopNavbarListItem noShrink collapsedOnDesktop={false}>
                             <TopNavbarListItemButton
                                 as={AppLink}

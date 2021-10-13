@@ -427,11 +427,11 @@ export enum CYCLE {
 }
 
 export const BLACK_FRIDAY = {
-    COUPON_CODE: 'BF2020',
-    START: new Date(Date.UTC(2020, 10, 16, 6)),
+    COUPON_CODE: 'BF2021',
+    START: new Date(Date.UTC(2021, 10, 1, 5)), // 6 AM CET
+    END: new Date(Date.UTC(2022, 0, 1, 17)), // 6 PM CET
     CYBER_START: new Date(Date.UTC(2020, 10, 30, 6)),
     CYBER_END: new Date(Date.UTC(2020, 11, 1, 6)),
-    END: new Date(Date.UTC(2020, 11, 15, 6)),
 };
 
 export const PRODUCT_PAYER = {
@@ -542,6 +542,7 @@ export enum COUPON_CODES {
     PROTONTEAM = 'PROTONTEAM',
     BLACK_FRIDAY_2018 = 'TWO4ONE2018',
     BLACK_FRIDAY_2019 = 'BF2019',
+    BLACK_FRIDAY_2020 = 'BF2020',
     LIFETIME = 'LIFETIME',
     VISIONARYFOREVER = 'VISIONARYFOREVER',
 }

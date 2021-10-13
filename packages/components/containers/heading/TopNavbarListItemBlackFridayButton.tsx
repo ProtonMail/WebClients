@@ -1,35 +1,27 @@
 import { c } from 'ttag';
 import { APPS } from '@proton/shared/lib/constants';
-import { PlanIDs, Cycle, Currency, Subscription, Plan } from '@proton/shared/lib/interfaces';
-import { isProductPayer } from '@proton/shared/lib/helpers/blackfriday';
+import { PlanIDs, Cycle, Currency } from '@proton/shared/lib/interfaces';
 
-import { useModals, useConfig, useCyberMondayPeriod, useUser } from '../../hooks';
+import { useModals, useConfig } from '../../hooks';
 import { Icon } from '../../components';
 import SubscriptionModal from '../payments/subscription/SubscriptionModal';
-import VPNBlackFridayModal from '../payments/subscription/VPNBlackFridayModal';
-import MailBlackFridayModal from '../payments/subscription/MailBlackFridayModal';
 import { SUBSCRIPTION_STEPS } from '../payments/subscription/constants';
+import { EligibleOffer } from '../payments/interface';
 import TopNavbarListItemButton, {
     TopNavbarListItemButtonProps,
 } from '../../components/topnavbar/TopNavbarListItemButton';
+import { BlackFridayModal } from '../payments';
 
 interface Props extends Omit<TopNavbarListItemButtonProps<'button'>, 'icon' | 'text' | 'as'> {
-    plans: Plan[];
-    subscription: Subscription;
+    offer: EligibleOffer;
 }
 
-const TopNavbarListItemBlackFridayButton = ({ plans, subscription }: Props) => {
+const TopNavbarListItemBlackFridayButton = ({ offer }: Props) => {
     const { APP_NAME } = useConfig();
     const { createModal } = useModals();
-    const [user] = useUser();
     const isVPN = APP_NAME === APPS.PROTONVPN_SETTINGS;
-    const hasRedDot = isVPN || user.isFree; // Is vpn app or have BF2020 free promo
-    const cyberModay = useCyberMondayPeriod();
-    const text = isProductPayer(subscription)
-        ? c('blackfriday Promo title, need to be short').t`Special offer`
-        : cyberModay
-        ? 'Cyber Monday'
-        : 'Black Friday';
+    const hasRedDot = isVPN || offer.name === 'black-friday';
+    const text = c('blackfriday: VPNspecialoffer Promo title, need to be short').t`Special offer`;
 
     const onSelect = ({
         planIDs,
@@ -62,11 +54,7 @@ const TopNavbarListItemBlackFridayButton = ({ plans, subscription }: Props) => {
             icon={<Icon name="bag-percent" />}
             text={text}
             onClick={() => {
-                if (APP_NAME === APPS.PROTONVPN_SETTINGS) {
-                    createModal(<VPNBlackFridayModal plans={plans} subscription={subscription} onSelect={onSelect} />);
-                    return;
-                }
-                createModal(<MailBlackFridayModal plans={plans} subscription={subscription} onSelect={onSelect} />);
+                createModal(<BlackFridayModal offer={offer} onSelect={onSelect} />);
             }}
         />
     );
