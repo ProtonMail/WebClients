@@ -1,14 +1,7 @@
 import { MailSettings } from '@proton/shared/lib/interfaces';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { act } from '@testing-library/react';
-import {
-    render,
-    clearAll,
-    conversationCache,
-    minimalElementsCache,
-    messageCache,
-    addApiMock,
-} from '../../helpers/test/helper';
+import { render, clearAll, conversationCache, messageCache, addApiMock } from '../../helpers/test/helper';
 import { Breakpoints } from '../../models/utils';
 import ConversationView from './ConversationView';
 import { Conversation, ConversationCacheEntry } from '../../models/conversation';
@@ -45,7 +38,6 @@ describe('ConversationView', () => {
     } as ConversationCacheEntry;
 
     const setup = async () => {
-        minimalElementsCache();
         const result = await render(<ConversationView {...props} />);
         const rerender = (newProps: Partial<typeof props> = {}) =>
             result.rerender(<ConversationView {...props} {...newProps} />);

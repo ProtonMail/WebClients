@@ -85,12 +85,12 @@ export const normaliseSearchParams = (
     }
 
     const normalisedSearchParams: NormalisedSearchParams = {
-        ...otherParams,
         labelID,
         search: {
             end: roundedEnd,
             from: from ? from.toLocaleLowerCase() : undefined,
             to: to ? to.toLocaleLowerCase() : undefined,
+            ...otherParams,
         },
         normalisedKeywords,
         filter: filter || {},
@@ -131,12 +131,8 @@ export const testMetadata = (
     recipients: string[],
     sender: string[]
 ) => {
-    const {
-        search: { address, from, to, begin, end, attachments },
-        labelID,
-        decryptionError,
-        filter,
-    } = normalisedSearchParams;
+    const { search, labelID, decryptionError, filter } = normalisedSearchParams;
+    const { address, from, to, begin, end, attachments } = search || {};
     const { AddressID, Time, LabelIDs, NumAttachments, decryptionError: messageError, Unread } = messageToSearch;
 
     if (

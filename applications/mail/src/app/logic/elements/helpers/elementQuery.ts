@@ -4,7 +4,7 @@ import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { Api } from '@proton/shared/lib/interfaces';
 import { ELEMENTS_CACHE_REQUEST_SIZE, PAGE_SIZE } from '../../../constants';
 import { Element } from '../../../models/element';
-import { QueryParams, RetryData } from '../elementsTypes';
+import { QueryParams, QueryResults, RetryData } from '../elementsTypes';
 
 export const getQueryElementsParameters = ({ page, params: { labelID, sort, search, filter } }: QueryParams): any => ({
     Page: page,
@@ -30,16 +30,18 @@ export const getQueryElementsParameters = ({ page, params: { labelID, sort, sear
 
 export const queryElements = async (
     api: Api,
+    abortController: AbortController | undefined,
     conversationMode: boolean,
     payload: QueryParams
-): Promise<{ Total: number; Elements: Element[] }> => {
-    // abortControllerRef.current?.abort();
-    // abortControllerRef.current = new AbortController();
+): Promise<QueryResults> => {
+    abortController?.abort();
+    const newAbortController = new AbortController();
     const query = conversationMode ? queryConversations : queryMessageMetadata;
 
-    const result: any = await api({ ...query(payload as any) /* , signal: abortControllerRef.current.signal */ });
+    const result: any = await api({ ...query(payload as any), signal: newAbortController.signal });
 
     return {
+        abortController: newAbortController,
         Total: result.Total,
         Elements: conversationMode ? result.Conversations : result.Messages,
     };

@@ -1,6 +1,5 @@
 import { createSelector } from 'reselect';
 import { LabelCount } from '@proton/shared/lib/interfaces';
-import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import {
     PAGE_SIZE,
@@ -10,7 +9,7 @@ import {
 } from '../../constants';
 import { hasLabel, isFilter, isSearch, isUnread, sort as sortElements } from '../../helpers/elements';
 import { RootState } from '../store';
-import { ElementsStateParams } from './elementsTypes';
+import { ElementsStateParams, Search } from './elementsTypes';
 import { ESDBStatus } from '../../models/encryptedSearch';
 import { getTotal } from './helpers/elementTotal';
 import { expectedPageLength } from '../../helpers/paging';
@@ -27,6 +26,7 @@ const invalidated = (state: RootState) => state.elements.invalidated;
 const total = (state: RootState) => state.elements.total;
 
 const currentPage = (_: RootState, { page }: { page: number }) => page;
+const currentSearch = (_: RootState, { search }: { search: Search }) => search;
 const currentParams = (_: RootState, { params }: { params: ElementsStateParams }) => params;
 const currentESDBStatus = (_: RootState, { esDBStatus }: { esDBStatus: ESDBStatus }) => esDBStatus;
 const currentCounts = (_: RootState, { counts }: { counts: { counts: LabelCount[]; loading: boolean } }) => counts;
@@ -87,7 +87,7 @@ export const paramsChanged = createSelector(
         currentParams.labelID !== params.labelID ||
         currentParams.sort !== params.sort ||
         currentParams.filter !== params.filter ||
-        isDeepEqual(currentParams.search, params.search) ||
+        currentParams.search !== params.search ||
         (currentParams.esEnabled !== params.esEnabled && isSearch(currentParams.search))
 );
 
@@ -103,16 +103,39 @@ export const pageIsConsecutive = createSelector(
 
 export const shouldResetCache = createSelector(
     [paramsChanged, pageIsConsecutive],
-    (paramsChanged, pageIsConsecutive) => paramsChanged || !pageIsConsecutive
+    (paramsChanged, pageIsConsecutive) => {
+        // console.log('shouldResetCache', {
+        //     paramsChanged,
+        //     pageIsConsecutive,
+        //     shouldResetCache: paramsChanged || !pageIsConsecutive,
+        // });
+        return paramsChanged || !pageIsConsecutive;
+    }
 );
 
 export const shouldSendRequest = createSelector(
     [shouldResetCache, pendingRequest, retry, needsMoreElements, invalidated, pageCached],
-    (shouldResetCache, pendingRequest, retry, needsMoreElements, invalidated, pageCached) =>
-        shouldResetCache ||
-        (!pendingRequest &&
-            retry.count < MAX_ELEMENT_LIST_LOAD_RETRIES &&
-            (needsMoreElements || invalidated || !pageCached))
+    (shouldResetCache, pendingRequest, retry, needsMoreElements, invalidated, pageCached) => {
+        // console.log('shouldSendRequest', {
+        //     shouldResetCache,
+        //     pendingRequest,
+        //     retry,
+        //     needsMoreElements,
+        //     invalidated,
+        //     pageCached,
+        //     shouldSendRequest:
+        //         shouldResetCache ||
+        //         (!pendingRequest &&
+        //             retry.count < MAX_ELEMENT_LIST_LOAD_RETRIES &&
+        //             (needsMoreElements || invalidated || !pageCached)),
+        // });
+        return (
+            shouldResetCache ||
+            (!pendingRequest &&
+                retry.count < MAX_ELEMENT_LIST_LOAD_RETRIES &&
+                (needsMoreElements || invalidated || !pageCached))
+        );
+    }
 );
 
 export const isLive = createSelector([params, pages], (params, pages) => !isSearch(params.search) && pages.includes(0));
@@ -123,8 +146,8 @@ export const shouldUpdatePage = createSelector(
 );
 
 export const isES = createSelector(
-    [currentESDBStatus, currentParams],
-    ({ dbExists, esEnabled, isCacheLimited }, { search }) =>
+    [currentESDBStatus, currentSearch],
+    ({ dbExists, esEnabled, isCacheLimited }, search) =>
         dbExists && esEnabled && isSearch(search) && (!!search.keyword || !isCacheLimited)
 );
 

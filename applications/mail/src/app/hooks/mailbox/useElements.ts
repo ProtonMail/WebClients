@@ -1,4 +1,4 @@
-import { useCallback, useEffect } from 'react';
+import { useCallback, useEffect, useRef } from 'react';
 import { useApi, useCache, useConversationCounts, useMessageCounts } from '@proton/components';
 import { omit } from '@proton/shared/lib/helpers/object';
 import { ConversationCountsModel, MessageCountsModel } from '@proton/shared/lib/models';
@@ -102,7 +102,7 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
     const dispatch = useDispatch();
 
     const api = useApi();
-    // const abortControllerRef = useRef<AbortController>();
+    const abortControllerRef = useRef<AbortController>();
 
     const [conversationCounts = [], loadingConversationCounts] = useConversationCounts() as [
         LabelCount[],
@@ -133,7 +133,7 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
     const elements = useSelector(elementsSelector);
     const elementIDs = useSelector(elementIDsSelector);
     const shouldLoadMoreES = useSelector((state: RootState) =>
-        shouldLoadMoreESSelector(state, { page, params, esDBStatus })
+        shouldLoadMoreESSelector(state, { page, search, esDBStatus })
     );
     const shouldResetCache = useSelector((state: RootState) => shouldResetCacheSelector(state, { page, params }));
     const shouldSendRequest = useSelector((state: RootState) => shouldSendRequestSelector(state, { page, params }));
@@ -144,9 +144,9 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
     const totalReturned = useSelector((state: RootState) => totalReturnedSelector(state, { counts }));
     const expectingEmpty = useSelector((state: RootState) => expectingEmptySelector(state, { counts }));
     const loadedEmpty = useSelector(loadedEmptySelector);
-    const partialESSearch = useSelector((state: RootState) => partialESSearchSelector(state, { params, esDBStatus }));
+    const partialESSearch = useSelector((state: RootState) => partialESSearchSelector(state, { search, esDBStatus }));
     const stateInconsistency = useSelector((state: RootState) =>
-        stateInconsistencySelector(state, { params, esDBStatus })
+        stateInconsistencySelector(state, { search, esDBStatus })
     );
 
     // Remove from cache expired elements
@@ -456,7 +456,9 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
             dispatch(reset({ page, params: { labelID, sort, filter, esEnabled, search } }));
         }
         if (shouldSendRequest && !isSearch(search)) {
-            void dispatch(loadAction({ api, conversationMode, page, params }));
+            void dispatch(
+                loadAction({ api, abortController: abortControllerRef.current, conversationMode, page, params })
+            );
         }
         if (shouldUpdatePage && !shouldLoadMoreES) {
             dispatch(updatePage(page));
