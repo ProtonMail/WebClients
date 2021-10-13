@@ -104,8 +104,8 @@ export function useLocationFieldOptions(): UseLocationFieldOptionsReturn {
         {
             value: hasBit(mailSettings?.ShowMoved || 0, SHOW_MOVED.SENT) ? ALL_SENT : SENT,
             text: c('Mailbox').t`Sent`,
-            icon: 'paper-plane',
             url: '/sent',
+            icon: 'paper-plane',
         },
         { value: STARRED, text: c('Mailbox').t`Starred`, url: '/starred', icon: 'star' },
         {
@@ -143,7 +143,7 @@ export function useLocationFieldOptions(): UseLocationFieldOptionsReturn {
             { id: 'LABELS', title: c('Group').t`Labels`, items: labelOptions },
         ],
         findItemByValue: (value: string) => all.find((item) => item.value === value),
-        isDefaultFolder: (item: Item): item is ItemDefaultFolder => 'url' in item,
+        isDefaultFolder: (item: Item): item is ItemDefaultFolder => 'url' in item && 'icon' in item,
         isCustomFolder: (item: Item): item is ItemCustomFolder => 'folderEntity' in item,
         isLabel: (item: Item): item is ItemLabel => 'color' in item,
     };
