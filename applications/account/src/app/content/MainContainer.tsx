@@ -26,6 +26,7 @@ import AccountSidebar from './AccountSidebar';
 import MailDomainNamesSettings from '../containers/mail/MailDomainNamesSettings';
 import OrganizationUsersAndAddressesSettings from '../containers/organization/OrganizationUsersAndAddressesSettings';
 import OrganizationKeysSettings from '../containers/organization/OrganizationKeysSettings';
+import AccountEasySwitchSettings from '../containers/account/AccountEasySwitchSettings';
 
 const MailSettingsRouter = lazy(() => import('../containers/mail/MailSettingsRouter'));
 const CalendarSettingsRouter = lazy(() => import('../containers/calendar/CalendarSettingsRouter'));
@@ -99,6 +100,9 @@ const MainContainer = () => {
                 </Route>
                 <Route path={`/${appSlug}/payment`}>
                     <AccountPaymentSettings location={location} setActiveSection={() => {}} />
+                </Route>
+                <Route path={`/${appSlug}/easy-switch`}>
+                    <AccountEasySwitchSettings location={location} setActiveSection={() => {}} />
                 </Route>
                 <Route path={`/${appSlug}/security`}>
                     <AccountSecuritySettings location={location} setActiveSection={() => {}} />

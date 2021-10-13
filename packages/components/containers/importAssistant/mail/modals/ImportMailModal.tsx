@@ -14,16 +14,15 @@ import { noop } from '@proton/shared/lib/helpers/function';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import { isNumber } from '@proton/shared/lib/helpers/validators';
 import { Address } from '@proton/shared/lib/interfaces';
+import { AuthenticationMethod, NormalizedImporter } from '@proton/shared/lib/interfaces/EasySwitch';
 
-import { useLoading, useModals, useApi, useEventManager, useErrorHandler, useNotifications } from '../../../../hooks';
-import useOAuthPopup, { getOAuthAuthorizationUrl } from '../../../../hooks/useOAuthPopup';
+import { useLoading, useModals, useApi, useEventManager, useErrorHandler } from '../../../../hooks';
 
-import { ConfirmModal, FormModal, Button, PrimaryButton, Alert, useDebounceInput } from '../../../../components';
+import { ConfirmModal, FormModal, Button, Alert, useDebounceInput } from '../../../../components';
 
 import Wizard from '../../../../components/wizard/Wizard';
 
 import { IMAPS } from '../constants';
-import { G_OAUTH_SCOPE_MAIL } from '../../constants';
 
 import {
     Step,
@@ -31,14 +30,12 @@ import {
     IMPORT_ERROR,
     MailImportFolder,
     FolderMapping,
-    Importer,
     TIME_UNIT,
     PROVIDER_INSTRUCTIONS,
     GMAIL_INSTRUCTIONS,
-    AuthenticationMethod,
 } from '../interfaces';
 
-import { OAUTH_PROVIDER, OAuthProps } from '../../interfaces';
+import { OAuthProps } from '../../interfaces';
 
 import ImportInstructionsStep from './steps/ImportInstructionsStep';
 import ImportStartStep from './steps/ImportStartStep';
@@ -82,7 +79,7 @@ interface ImporterFromServer {
 }
 
 interface Props {
-    currentImport?: Importer;
+    currentImport?: NormalizedImporter;
     onClose?: () => void;
     oauthProps?: OAuthProps;
     addresses: Address[];
@@ -95,21 +92,12 @@ const ImportMailModal = ({
     addresses,
     ...rest
 }: Props) => {
-    const [oauthError, setOauthError] = useState(false);
-    const [oauthProps, setOauthProps] = useState<OAuthProps | undefined>(initialOAuthProps);
     const isReconnectMode = !!currentImport;
 
     const [loading, withLoading] = useLoading();
-    // useLoading seems buggy in this context for some reason
-    const [oauthLoading, setOauthLoading] = useState(false);
 
     const { createModal } = useModals();
-    const { createNotification } = useNotifications();
     const errorHandler = useErrorHandler();
-
-    const { triggerOAuthPopup } = useOAuthPopup({
-        authorizationUrl: getOAuthAuthorizationUrl({ scope: G_OAUTH_SCOPE_MAIL }),
-    });
 
     const [providerInstructions, setProviderInstructions] = useState<PROVIDER_INSTRUCTIONS>();
     const [gmailInstructionsStep, setGmailInstructionsStep] = useState(GMAIL_INSTRUCTIONS.IMAP);
@@ -121,9 +109,6 @@ const ImportMailModal = ({
     const changeGmail2StepsTabIndex = (index: number) => setGmail2StepsTabIndex(index);
 
     const initialStep = () => {
-        if (oauthProps) {
-            return Step.PREPARE;
-        }
         if (isReconnectMode) {
             return Step.START;
         }
@@ -217,7 +202,7 @@ const ImportMailModal = ({
         });
     };
 
-    const handleSubmitStartError = (error: Error & { data: { Code: number; Error: string } }) => {
+    const handleSubmitStartError = (error: any & { data: { Code: number; Error: string } }) => {
         const { data: { Code, Error } = { Code: 0, Error: '' } } = error;
 
         if (
@@ -254,7 +239,7 @@ const ImportMailModal = ({
                     silence: true,
                 });
                 moveToPrepareStep(Importer, Folders);
-            } catch (error: any) {
+            } catch (error) {
                 handleSubmitStartError(error);
             }
             return;
@@ -281,7 +266,7 @@ const ImportMailModal = ({
 
                 const { Folders = [] } = await api(getMailImportFolders(Importer.ID, { Code: modalModel.password }));
                 moveToPrepareStep(Importer, Folders);
-            } catch (error: any) {
+            } catch (error) {
                 handleSubmitStartError(error);
             }
             return;
@@ -292,67 +277,6 @@ const ImportMailModal = ({
             imap: '',
             needIMAPDetails: true,
         });
-    };
-
-    const submitOAuth = async () => {
-        setOauthLoading(true);
-        try {
-            const { importID, imap, port } = modalModel;
-            if (oauthProps && importID) {
-                await api(
-                    updateMailImport(importID, {
-                        Code: oauthProps.code,
-                        ImapHost: imap,
-                        ImapPort: port,
-                        Sasl: AuthenticationMethod.OAUTH,
-                        RedirectUri: oauthProps?.redirectURI,
-                    })
-                );
-                await api(resumeMailImportJob(importID));
-                await call();
-
-                onClose();
-                return;
-            }
-
-            const { Importer } = await api({
-                ...createMailImport({
-                    ImapHost: oauthProps?.provider ? IMAPS[oauthProps.provider] : '',
-                    ImapPort: 993,
-                    Sasl: AuthenticationMethod.OAUTH,
-                    Code: oauthProps?.code,
-                    RedirectUri: oauthProps?.redirectURI,
-                }),
-                silence: true,
-            });
-            await call();
-
-            const { Folders = [] } = await api(getMailImportFolders(Importer.ID));
-
-            setOauthLoading(false);
-            moveToPrepareStep(Importer, Folders);
-        } catch (error: any) {
-            setOauthError(true);
-            setOauthLoading(false);
-
-            const { data: { Code, Error } = { Code: 0, Error: '' } } = error;
-
-            if (Code !== IMPORT_ERROR.IMAP_CONNECTION_ERROR) {
-                createNotification({
-                    text: Error,
-                    type: 'error',
-                });
-                onClose();
-                return;
-            }
-
-            setModalModel({
-                ...modalModel,
-                step: Step.PREPARE,
-                errorCode: Code,
-                errorLabel: Error,
-            });
-        }
     };
 
     const launchImport = async () => {
@@ -515,20 +439,8 @@ const ImportMailModal = ({
                     </Button>
                 );
             case Step.PREPARE:
-                if (oauthProps && oauthError) {
-                    return (
-                        <PrimaryButton
-                            onClick={() => {
-                                triggerOAuthPopup(OAUTH_PROVIDER.GOOGLE, setOauthProps);
-                            }}
-                        >
-                            {c('Action').t`Reconnect`}
-                        </PrimaryButton>
-                    );
-                }
-
                 return (
-                    <Button color="norm" loading={loading} disabled={oauthLoading || isPayloadInvalid} type="submit">
+                    <Button color="norm" loading={loading} disabled={isPayloadInvalid} type="submit">
                         {c('Action').t`Start import`}
                     </Button>
                 );
@@ -548,24 +460,8 @@ const ImportMailModal = ({
         modalModel.port,
         modalModel.isPayloadInvalid,
         loading,
-        oauthError,
-        oauthProps,
         gmail2StepsTabIndex,
     ]);
-
-    useEffect(() => {
-        if (oauthProps) {
-            setModalModel({
-                ...modalModel,
-                step: Step.PREPARE,
-                errorCode: 0,
-                errorLabel: '',
-            });
-            setOauthError(false);
-
-            void submitOAuth();
-        }
-    }, [oauthProps]);
 
     useEffect(() => {
         if (modalModel.step !== Step.START) {

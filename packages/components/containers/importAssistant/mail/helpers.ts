@@ -58,9 +58,8 @@ export const mappingHasUnavailableNames = (
     isLabelMapping: boolean
 ) => {
     const destinations = mapping
-        .map((m) =>
-            m.checked && isLabelMapping ? m.Destinations.Labels?.[0]?.Name : unescapeSlashes(m.Destinations.FolderPath)
-        )
+        .filter((m) => m.checked)
+        .map((m) => (isLabelMapping ? m.Destinations.Labels?.[0]?.Name : unescapeSlashes(m.Destinations.FolderPath)))
         .filter(isTruthy);
 
     return destinations.some((dest) => nameAlreadyExists(dest, collection));
