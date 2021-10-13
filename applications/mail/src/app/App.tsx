@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 import { LoaderPage, ProtonApp, StandardSetup } from '@proton/components';
-import { G_OAUTH_REDIRECT_PATH } from '@proton/components/containers/importAssistant/constants';
+import { G_OAUTH_REDIRECT_PATH } from '@proton/components/containers/easySwitch/constants';
 
 import { newVersionUpdater } from '@proton/shared/lib/busy';
 import sentry from '@proton/shared/lib/helpers/sentry';

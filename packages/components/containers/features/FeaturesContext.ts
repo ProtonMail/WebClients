@@ -51,6 +51,7 @@ export enum FeatureCode {
     Mnemonic = 'Mnemonic',
     SpyTrackerProtection = 'SpyTrackerProtection',
     SpotlightSpyTrackerProtection = 'SpotlightSpyTrackerProtection',
+    EasySwitch = 'EasySwitch',
 }
 
 export interface FeaturesContextValue {

@@ -1,13 +1,15 @@
 import { c } from 'ttag';
 
-import { useImporters, useImportHistory } from '../../../hooks';
+import { NormalizedImporter, ImportError, ImportStatus } from '@proton/shared/lib/interfaces/EasySwitch';
+
+import { useLegacyImporters, useImportHistory } from '../../../hooks';
 import { Loader, Alert, Table, TableBody, TableCell, Href } from '../../../components';
 
 import { SettingsParagraph, SettingsSectionWide } from '../../account';
 import ImportListRow from './list/ImportListRow';
-import { Importer, ImportHistory, ImportMailStatus, ImportMailError } from './interfaces';
+import { ImportHistory } from './interfaces';
 
-const sortActiveImports = (a: Importer, b: Importer) => {
+const sortActiveImports = (a: NormalizedImporter, b: NormalizedImporter) => {
     if (!a.Active || !b.Active) {
         return 0;
     }
@@ -18,7 +20,7 @@ const sortActiveImports = (a: Importer, b: Importer) => {
 const sortPastImports = (a: ImportHistory, b: ImportHistory) => (a.EndTime > b.EndTime ? -1 : 1);
 
 const ImportListSection = () => {
-    const [imports = [], importsLoading] = useImporters();
+    const [imports = [], importsLoading] = useLegacyImporters();
     const [pastImports = [], pastImportsLoading] = useImportHistory();
 
     const activeImports = imports.filter(({ Active }) => Active);
@@ -30,20 +32,15 @@ const ImportListSection = () => {
     }
 
     const hasStoragePausedImports = imports.some(({ Active }) => {
-        return (
-            Active?.State === ImportMailStatus.PAUSED && Active?.ErrorCode === ImportMailError.ERROR_CODE_QUOTA_LIMIT
-        );
+        return Active?.State === ImportStatus.PAUSED && Active?.ErrorCode === ImportError.ERROR_CODE_QUOTA_LIMIT;
     });
 
     const hasAuthPausedImports = imports.some(({ Active }) => {
-        return (
-            Active?.State === ImportMailStatus.PAUSED &&
-            Active?.ErrorCode === ImportMailError.ERROR_CODE_IMAP_CONNECTION
-        );
+        return Active?.State === ImportStatus.PAUSED && Active?.ErrorCode === ImportError.ERROR_CODE_IMAP_CONNECTION;
     });
 
     const delayedImport = imports.find(({ Active }) => {
-        return Active?.State === ImportMailStatus.DELAYED;
+        return Active?.State === ImportStatus.DELAYED;
     });
 
     const headerCells = [
