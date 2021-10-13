@@ -80,6 +80,7 @@ const InvoicesPreview = (
             loading={!previewing.contents}
             contents={previewing.contents}
             fileName={filename()}
+            fileSize={previewing.contents?.length}
             mimeType="application/pdf"
             onClose={handleClose}
             onSave={handleDownload}

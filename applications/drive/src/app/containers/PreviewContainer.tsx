@@ -67,7 +67,7 @@ const PreviewContainer = ({ match }: RouteComponentProps<{ shareId: string; link
         async () => {}
     );
 
-    const linksAvailableForPreview = sortedList.filter(({ MIMEType }) => isPreviewAvailable(MIMEType));
+    const linksAvailableForPreview = sortedList.filter(({ MIMEType, Size }) => isPreviewAvailable(MIMEType, Size));
 
     const currentOpenIndex = linksAvailableForPreview.findIndex(({ LinkID }) => LinkID === meta?.LinkID);
 
@@ -76,7 +76,7 @@ const PreviewContainer = ({ match }: RouteComponentProps<{ shareId: string; link
 
         const preloadFile = async () => {
             try {
-                const { ParentLinkID, MIMEType } = meta ?? (await getLinkMeta(shareId, linkId));
+                const { ParentLinkID, MIMEType, Size } = meta ?? (await getLinkMeta(shareId, linkId));
 
                 if (canceled) {
                     return;
@@ -86,7 +86,7 @@ const PreviewContainer = ({ match }: RouteComponentProps<{ shareId: string; link
 
                 fetchAllFolderPages(shareId, ParentLinkID).catch(console.error);
 
-                if (isPreviewAvailable(MIMEType)) {
+                if (isPreviewAvailable(MIMEType, Size)) {
                     const { contents, controls } = await downloadDriveFile(shareId, linkId);
                     downloadControls.current = controls;
                     setContents(await contents);
@@ -178,6 +178,7 @@ const PreviewContainer = ({ match }: RouteComponentProps<{ shareId: string; link
             fileName={meta?.Name}
             mimeType={meta?.MIMEType}
             sharedStatus={getSharedStatus(meta)}
+            fileSize={meta?.Size}
             onClose={navigateToParent}
             onSave={saveFile}
             onDetail={openDetails}

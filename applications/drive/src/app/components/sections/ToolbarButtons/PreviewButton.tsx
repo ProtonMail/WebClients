@@ -18,7 +18,7 @@ const PreviewButton = ({ shareId, selectedItems }: Props) => {
         isMultiSelect(selectedItems) ||
         hasFoldersSelected(selectedItems) ||
         !selectedItems[0]?.MIMEType ||
-        !isPreviewAvailable(selectedItems[0].MIMEType);
+        !isPreviewAvailable(selectedItems[0].MIMEType, selectedItems[0].Size);
 
     return (
         <ToolbarButton

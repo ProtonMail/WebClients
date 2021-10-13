@@ -6,7 +6,7 @@ import { useActiveBreakpoint } from '../../hooks';
 import { classnames } from '../../helpers';
 
 interface Props {
-    type?: 'file' | 'image';
+    type?: 'file' | 'image' | 'video';
     onSave?: () => void;
 }
 
