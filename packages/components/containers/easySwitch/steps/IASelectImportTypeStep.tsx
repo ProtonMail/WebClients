@@ -180,7 +180,7 @@ const IASelectImportTypeStep = ({
                 case TIME_PERIOD.LAST_MONTH:
                     return 'the last month';
                 case TIME_PERIOD.LAST_YEAR:
-                    return 'the last 12 monhts';
+                    return 'the last 12 months';
                 case TIME_PERIOD.BIG_BANG:
                 default:
                     return 'account creation date';
