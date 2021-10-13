@@ -5,6 +5,7 @@ import { APPS, BLACK_FRIDAY, CYCLE } from '@proton/shared/lib/constants';
 import { useLocation } from 'react-router';
 import { getLastCancelledSubscription } from '@proton/shared/lib/api/payments';
 import { toMap } from '@proton/shared/lib/helpers/object';
+import { dialogRootClassName } from '@proton/shared/lib/busy';
 
 import {
     useLoading,
@@ -161,7 +162,13 @@ const usePromotionOffer = (): EligibleOffer | undefined => {
     const offer = blackFridayOffer || productPayerOffer;
 
     useEffect(() => {
-        if (!onceRef.current && offer && (feature?.Value === false || openBlackFridayModal || hasBlackFridayCoupon)) {
+        if (
+            !onceRef.current &&
+            offer &&
+            (feature?.Value === false || openBlackFridayModal || hasBlackFridayCoupon) &&
+            // This is not great but don't want to trigger this if other modals are open, such as the welcome flow
+            !document.querySelector(`.${dialogRootClassName}`)
+        ) {
             onceRef.current = true;
             setModalState(true);
             createModal(<BlackFridayModal offer={offer} onSelect={handleOnSelect} />);
