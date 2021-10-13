@@ -88,43 +88,6 @@ export interface ImportPayloadModel {
     CustomFields?: number;
 }
 
-export enum ImportMailStatus {
-    QUEUED = 0,
-    RUNNING = 1,
-    DONE = 2,
-    FAILED = 3,
-    PAUSED = 4,
-    CANCELED = 5,
-    DELAYED = 6,
-}
-
-export enum ImportMailError {
-    ERROR_CODE_IMAP_CONNECTION = 1,
-    ERROR_CODE_QUOTA_LIMIT = 2,
-}
-
-export enum AuthenticationMethod {
-    PLAIN = 'PLAIN',
-    OAUTH = 'XOAUTH2',
-}
-
-export interface Importer {
-    ID: string;
-    Email: string;
-    ImapHost?: string;
-    ImapPort?: string;
-    Active?: {
-        CreateTime: number;
-        AddressID: string;
-        State: ImportMailStatus;
-        FilterStartDate: string;
-        FilterEndDate: string;
-        Mapping: ImportedFolder[];
-        ErrorCode?: ImportMailError;
-    };
-    Sasl: AuthenticationMethod;
-}
-
 export enum ImportMailReportStatus {
     QUEUED = 0,
     RUNNING = 1,
