@@ -1,4 +1,5 @@
-import { PAYMENT_METHOD_TYPE } from '@proton/shared/lib/constants';
+import { CYCLE, PAYMENT_METHOD_TYPE } from '@proton/shared/lib/constants';
+import { PlanIDs } from '@proton/shared/lib/interfaces';
 
 interface TokenPaymentDetails {
     Token: string;
@@ -44,4 +45,18 @@ export interface PaymentTokenResult {
     ApprovalURL: string;
     ReturnHost: string;
     Status: number;
+}
+
+export interface EligibleOfferPlans {
+    name: string;
+    cycle: CYCLE;
+    planIDs: PlanIDs;
+    couponCode?: string;
+    popular?: boolean;
+}
+
+export interface EligibleOffer {
+    name: 'black-friday' | 'product-payer';
+    isVPNOnly?: boolean;
+    plans: EligibleOfferPlans[];
 }

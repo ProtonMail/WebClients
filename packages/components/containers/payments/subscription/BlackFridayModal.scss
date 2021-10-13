@@ -57,6 +57,20 @@ $price-size: 21;
 		color: #262a33;
 	}
 
+	// VPN color override, if you want it to be applied in all cases, replace by .blackfriday-mail-modal
+	&.blackfriday-mail-modal--vpn {
+		background-image: none;
+		background-color: #171f3b;
+
+		--primary: #4da358 !important;
+		--primary-contrast: white !important;
+
+		--interaction-norm: #4da358 !important;
+		--interaction-norm-hover: #3e8447 !important;
+		--interaction-norm-active: #2e7037 !important;
+		--interaction-norm-contrast: white !important;
+	}
+
 	@include respond-to($breakpoint-medium) {
 		inline-size: 98%;
 		max-inline-size: 98%;
@@ -146,7 +160,7 @@ $price-size: 21;
 	.blackfriday-plan {
 		border-start-start-radius: 0;
 		border-start-end-radius: 0;
-		border-width: 2px;
+		//border-width: 2px;
 		//border-color: var(--primary);
 	}
 	.blackfriday-percentage {
