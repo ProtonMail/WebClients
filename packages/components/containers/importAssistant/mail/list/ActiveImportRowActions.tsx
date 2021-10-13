@@ -1,20 +1,17 @@
 import { c } from 'ttag';
-import { resumeMailImportJob, cancelMailImportJob, updateMailImport } from '@proton/shared/lib/api/mailImport';
+import { resumeMailImportJob, cancelMailImportJob } from '@proton/shared/lib/api/mailImport';
+import { NormalizedImporter, ImportStatus, ImportError } from '@proton/shared/lib/interfaces/EasySwitch';
 
 import { Alert, ConfirmModal, DropdownActions, Button } from '../../../../components';
 import { useApi, useLoading, useNotifications, useEventManager, useModals, useAddresses } from '../../../../hooks';
-import useOAuthPopup, { getOAuthAuthorizationUrl } from '../../../../hooks/useOAuthPopup';
 import ImportMailModal from '../modals/ImportMailModal';
-import { Importer, ImportMailStatus, ImportMailError, AuthenticationMethod } from '../interfaces';
-import { OAuthProps, OAUTH_PROVIDER } from '../../interfaces';
-import { G_OAUTH_SCOPE_MAIL } from '../../constants';
 
 interface Props {
-    currentImport: Importer;
+    currentImport: NormalizedImporter;
 }
 
 const ActiveImportRowActions = ({ currentImport }: Props) => {
-    const { ID, Active, Email, ImapHost, ImapPort, Sasl } = currentImport;
+    const { ID, Active } = currentImport;
     const { State, ErrorCode } = Active || {};
     const api = useApi();
     const { call } = useEventManager();
@@ -23,26 +20,6 @@ const ActiveImportRowActions = ({ currentImport }: Props) => {
     const [addresses, loadingAddresses] = useAddresses();
     const [loadingPrimaryAction, withLoadingPrimaryAction] = useLoading();
     const [loadingSecondaryAction, withLoadingSecondaryAction] = useLoading();
-
-    const { triggerOAuthPopup } = useOAuthPopup({
-        authorizationUrl: getOAuthAuthorizationUrl({ scope: G_OAUTH_SCOPE_MAIL, login_hint: Email }),
-    });
-
-    const handleReconnectOAuth = async () => {
-        triggerOAuthPopup(OAUTH_PROVIDER.GOOGLE, async (oauthProps: OAuthProps) => {
-            await api(
-                updateMailImport(ID, {
-                    Code: oauthProps.code,
-                    ImapHost,
-                    ImapPort,
-                    Sasl: AuthenticationMethod.OAUTH,
-                    RedirectUri: oauthProps?.redirectURI,
-                })
-            );
-            await api(resumeMailImportJob(ID));
-            await call();
-        });
-    };
 
     const handleResume = async (importID: string) => {
         await api(resumeMailImportJob(importID));
@@ -73,21 +50,19 @@ const ActiveImportRowActions = ({ currentImport }: Props) => {
         });
         await api(cancelMailImportJob(importID));
         await call();
-        createNotification({ text: c('Success').t`Import canceled` });
+        createNotification({ text: c('Success').t`Canceling import` });
     };
 
     const list = [];
 
-    if (State === ImportMailStatus.PAUSED) {
-        const isAuthError = ErrorCode === ImportMailError.ERROR_CODE_IMAP_CONNECTION;
+    if (State === ImportStatus.PAUSED) {
+        const isAuthError = ErrorCode === ImportError.ERROR_CODE_IMAP_CONNECTION;
 
         list.push({
             text: isAuthError ? c('Action').t`Reconnect` : c('Action').t`Resume`,
             onClick: () => {
                 if (isAuthError) {
-                    return withLoadingSecondaryAction(
-                        Sasl === AuthenticationMethod.OAUTH ? handleReconnectOAuth() : handleReconnect()
-                    );
+                    return withLoadingSecondaryAction(handleReconnect());
                 }
 
                 return withLoadingSecondaryAction(handleResume(ID));
@@ -101,7 +76,7 @@ const ActiveImportRowActions = ({ currentImport }: Props) => {
         text: c('Action').t`Cancel`,
         onClick: () => withLoadingPrimaryAction(handleCancel(ID)),
         loading: loadingPrimaryAction,
-        disabled: State === ImportMailStatus.CANCELED,
+        disabled: State === ImportStatus.CANCELED,
     });
 
     return <DropdownActions key="actions" size="small" list={list} />;

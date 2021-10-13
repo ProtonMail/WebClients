@@ -59,7 +59,7 @@ export { default as useGetPublicKeys } from './useGetPublicKeys';
 export { default as useHandler, useEventListener, useSubscribeEventManager, useInterval } from './useHandler';
 export { default as useHasSuspendedCounter } from './useHasSuspendedCounter';
 export * from './useHotkeys';
-export { default as useImporters, useImportHistory } from './useImporters';
+export * from './useImporters';
 export { default as useInstance } from './useInstance';
 export { default as useIsClosing } from './useIsClosing';
 export { default as useIsMounted } from './useIsMounted';

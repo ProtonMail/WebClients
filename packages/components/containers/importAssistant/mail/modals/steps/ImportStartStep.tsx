@@ -1,19 +1,21 @@
 import { ChangeEvent, useEffect } from 'react';
 import { c } from 'ttag';
 
+import { ImportError, NormalizedImporter } from '@proton/shared/lib/interfaces/EasySwitch';
+
 import { Alert, Row, Label, Field, PasswordInput, EmailInput, Input, Href } from '../../../../../components';
 import { OAUTH_PROVIDER } from '../../../interfaces';
 
 import { IMAPS } from '../../constants';
 
-import { Importer, ImportMailError, ImportMailModalModel, IMPORT_ERROR } from '../../interfaces';
+import { ImportMailModalModel, IMPORT_ERROR } from '../../interfaces';
 
 interface Props {
     modalModel: ImportMailModalModel;
     updateModalModel: (newModel: ImportMailModalModel) => void;
     needAppPassword: boolean;
     showPassword: boolean;
-    currentImport?: Importer;
+    currentImport?: NormalizedImporter;
     invalidPortError: boolean;
 }
 
@@ -36,7 +38,7 @@ const ImportStartStep = ({
     const isRateLimitError = errorCode === IMPORT_ERROR.RATE_LIMIT_EXCEEDED;
     const isAuthError = errorCode === IMPORT_ERROR.AUTHENTICATION_ERROR;
     const isIMAPError = errorCode === IMPORT_ERROR.IMAP_CONNECTION_ERROR;
-    const isReconnect = currentImport?.Active?.ErrorCode === ImportMailError.ERROR_CODE_IMAP_CONNECTION;
+    const isReconnect = currentImport?.Active?.ErrorCode === ImportError.ERROR_CODE_IMAP_CONNECTION;
 
     let imapPortError = isIMAPError ? errorLabel : undefined;
 

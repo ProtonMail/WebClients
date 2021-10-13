@@ -817,3 +817,8 @@ export const FORKABLE_APPS = new Set(
 );
 
 export const AES256 = 'aes256';
+
+/* Here is a list of product not to be translated */
+export const PRODUCT_NAMES = {
+    EASY_SWITCH: 'Easy Switch',
+};

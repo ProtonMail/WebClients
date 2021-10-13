@@ -13,12 +13,13 @@ import {
     SubscriptionModel,
     PaymentMethodsModel,
     ImportersModel,
-    ImportHistoriesModel,
+    ImportReportsModel,
     CalendarsModel,
     CalendarUserSettingsModel,
     ContactsModel,
     ContactEmailsModel,
 } from '@proton/shared/lib/models';
+import { LegacyImportersModel, ImportHistoriesModel } from '@proton/shared/lib/models/importersModel';
 
 const EVENT_MODELS = [
     UserModel,
@@ -32,7 +33,9 @@ const EVENT_MODELS = [
     OrganizationModel,
     MembersModel,
     PaymentMethodsModel,
+    ImportReportsModel,
     ImportersModel,
+    LegacyImportersModel,
     ImportHistoriesModel,
     CalendarsModel,
     CalendarUserSettingsModel,

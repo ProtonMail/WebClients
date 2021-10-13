@@ -2,11 +2,11 @@ import { useRef } from 'react';
 import { c } from 'ttag';
 
 import { generateProtonWebUID } from '@proton/shared/lib/helpers/uid';
+import { OAuthProps, OAUTH_PROVIDER } from '@proton/shared/lib/interfaces/EasySwitch';
 
 import useNotifications from './useNotifications';
 
-import { OAuthProps, OAUTH_PROVIDER } from '../containers/importAssistant/interfaces';
-import { G_OAUTH_CLIENT_ID, G_OAUTH_REDIRECT_PATH } from '../containers/importAssistant/constants';
+import { G_OAUTH_CLIENT_ID, G_OAUTH_REDIRECT_PATH } from '../containers/easySwitch/constants';
 
 const WINDOW_WIDTH = 500;
 const WINDOW_HEIGHT = 600;
@@ -35,20 +35,24 @@ export const getOAuthAuthorizationUrl = ({ scope, login_hint }: { scope: string;
     return `https://accounts.google.com/o/oauth2/v2/auth?${params.toString()}`;
 };
 
-interface OAuthHookContext {
-    authorizationUrl: string;
-}
-
-const useOAuthPopup = ({ authorizationUrl }: OAuthHookContext) => {
+const useOAuthPopup = () => {
     const { createNotification } = useNotifications();
     const stateId = useRef<string>();
 
-    const triggerOAuthPopup = (
-        provider: OAUTH_PROVIDER,
-        callback: (oauthProps: OAuthProps) => void | Promise<void>
-    ) => {
+    const triggerOAuthPopup = ({
+        provider,
+        scope,
+        login_hint,
+        callback,
+    }: {
+        provider: OAUTH_PROVIDER;
+        scope: string;
+        login_hint?: string;
+        callback: (oauthProps: OAuthProps) => void | Promise<void>;
+    }) => {
         let interval: number;
-        const redirectURI = getOAuthRedirectURL();
+        const authorizationUrl = getOAuthAuthorizationUrl({ scope, login_hint });
+        const RedirectUri = getOAuthRedirectURL();
 
         const uid = generateProtonWebUID();
         stateId.current = uid;
@@ -79,7 +83,7 @@ const useOAuthPopup = ({ authorizationUrl }: OAuthHookContext) => {
                     const url = new URL(authWindow.document.URL);
                     const params = new URLSearchParams(url.search);
 
-                    if (authWindow.document.URL.startsWith(redirectURI)) {
+                    if (authWindow.document.URL.startsWith(RedirectUri)) {
                         authWindow.close();
 
                         const error = params.get('error');
@@ -115,13 +119,13 @@ const useOAuthPopup = ({ authorizationUrl }: OAuthHookContext) => {
                             return;
                         }
 
-                        const code = params.get('code');
+                        const Code = params.get('code');
 
-                        if (!code) {
+                        if (!Code) {
                             return;
                         }
 
-                        void callback({ code, provider, redirectURI });
+                        void callback({ Code, Provider: provider, RedirectUri });
                     }
                 } catch (err: any) {
                     // silent error
