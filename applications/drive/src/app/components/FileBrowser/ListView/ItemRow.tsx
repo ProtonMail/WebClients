@@ -168,19 +168,19 @@ const ItemRow = ({
 
                 {columns.includes('uploaded') && (
                     <TableCell className="m0 w15">
-                        <TimeCell time={item.UploadTime} />
+                        <TimeCell time={item.ModifyTime} />
                     </TableCell>
                 )}
 
                 {columns.includes('modified') && (
                     <TableCell className="m0 w15">
-                        <TimeCell time={item.ModifyTime} />
+                        <TimeCell time={item.RealModifyTime} />
                     </TableCell>
                 )}
 
                 {columns.includes('trashed') && (
                     <TableCell className="m0 w25">
-                        <TimeCell time={item.Trashed || item.UploadTime} />
+                        <TimeCell time={item.Trashed || item.ModifyTime} />
                     </TableCell>
                 )}
 
