@@ -1,31 +1,17 @@
 import { c } from 'ttag';
 
-import { useAddresses, useModals, useUser } from '../../../hooks';
-import useOAuthPopup, { getOAuthAuthorizationUrl } from '../../../hooks/useOAuthPopup';
-import { PrimaryButton, GoogleButton } from '../../../components';
+import { useAddresses, useModals } from '../../../hooks';
+import { PrimaryButton } from '../../../components';
 
 import { SettingsSection, SettingsParagraph } from '../../account';
 
 import ImportMailModal from './modals/ImportMailModal';
-import { OAuthProps, OAUTH_PROVIDER } from '../interfaces';
-import { G_OAUTH_SCOPE_MAIL, OAUTH_TEST_IDS } from '../constants';
 
 const StartImportSection = () => {
-    const [user] = useUser();
     const { createModal } = useModals();
     const [addresses, loadingAddresses] = useAddresses();
 
-    const { triggerOAuthPopup } = useOAuthPopup({
-        authorizationUrl: getOAuthAuthorizationUrl({ scope: G_OAUTH_SCOPE_MAIL }),
-    });
-
     const handleClick = () => createModal(<ImportMailModal addresses={addresses} />);
-
-    const handleOAuthClick = () => {
-        triggerOAuthPopup(OAUTH_PROVIDER.GOOGLE, (oauthProps: OAuthProps) => {
-            createModal(<ImportMailModal addresses={addresses} oauthProps={oauthProps} />);
-        });
-    };
 
     return (
         <SettingsSection>
@@ -35,17 +21,13 @@ const StartImportSection = () => {
             </SettingsParagraph>
 
             <div>
-                {OAUTH_TEST_IDS.includes(user.ID) ? (
-                    <GoogleButton onClick={handleOAuthClick} disabled={loadingAddresses} />
-                ) : (
-                    <PrimaryButton
-                        className="inline-flex flex-justify-center flex-align-items-center mt0-5"
-                        onClick={handleClick}
-                        disabled={loadingAddresses}
-                    >
-                        {c('Action').t`Start import`}
-                    </PrimaryButton>
-                )}
+                <PrimaryButton
+                    className="inline-flex flex-justify-center flex-align-items-center mt0-5"
+                    onClick={handleClick}
+                    disabled={loadingAddresses}
+                >
+                    {c('Action').t`Start import`}
+                </PrimaryButton>
             </div>
         </SettingsSection>
     );

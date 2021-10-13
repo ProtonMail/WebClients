@@ -12,3 +12,4 @@ export { default as DeleteSection } from './DeleteSection';
 export { default as PasswordsSection } from './PasswordsSection';
 export { default as TwoFactorSection } from './TwoFactorSection';
 export { default as UpgradeBanner } from './UpgradeBanner';
+export { default as AccountEasySwitchSection } from './AccountEasySwitchSection';

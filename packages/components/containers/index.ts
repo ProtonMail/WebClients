@@ -11,6 +11,7 @@ export * from './compatibilityCheck';
 export * from './contacts';
 export * from './domains';
 export * from './earlyAccess';
+export * from './easySwitch';
 export * from './error';
 export * from './eventManager';
 export * from './emailPrivacy';

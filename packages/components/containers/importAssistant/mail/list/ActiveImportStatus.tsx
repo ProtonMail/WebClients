@@ -1,14 +1,13 @@
 import { c } from 'ttag';
+import { ImportStatus, ImportError } from '@proton/shared/lib/interfaces/EasySwitch';
 
 import { Badge, Tooltip, Icon, Progress } from '../../../../components';
-
-import { ImportMailStatus, ImportMailError } from '../interfaces';
 
 interface Props {
     processed: number;
     total: number;
-    state?: ImportMailStatus;
-    errorCode?: ImportMailError;
+    state?: ImportStatus;
+    errorCode?: ImportError;
 }
 
 const ActiveImportStatus = ({ processed, total, state, errorCode }: Props) => {
@@ -16,28 +15,28 @@ const ActiveImportStatus = ({ processed, total, state, errorCode }: Props) => {
     const percentageValue = Number.isNaN(percentage) ? 0 : Math.floor(percentage);
 
     switch (state) {
-        case ImportMailStatus.PAUSED:
+        case ImportStatus.PAUSED:
             return (
                 <>
                     <Badge type="warning">{c('Import status').t`${percentageValue}% paused`}</Badge>
 
-                    {errorCode === ImportMailError.ERROR_CODE_IMAP_CONNECTION && (
+                    {errorCode === ImportError.ERROR_CODE_IMAP_CONNECTION && (
                         <Tooltip title={c('Tooltip').t`Account is disconnected`}>
                             <Icon name="triangle-exclamation-filled" />
                         </Tooltip>
                     )}
-                    {errorCode === ImportMailError.ERROR_CODE_QUOTA_LIMIT && (
+                    {errorCode === ImportError.ERROR_CODE_QUOTA_LIMIT && (
                         <Tooltip title={c('Tooltip').t`Your ProtonMail inbox is almost full`}>
                             <Icon name="triangle-exclamation-filled" />
                         </Tooltip>
                     )}
                 </>
             );
-        case ImportMailStatus.QUEUED:
+        case ImportStatus.QUEUED:
             return <Badge type="primary">{c('Import status').t`Started`}</Badge>;
-        case ImportMailStatus.CANCELED:
+        case ImportStatus.CANCELED:
             return <Badge type="error">{c('Import status').t`Canceling`}</Badge>;
-        case ImportMailStatus.DELAYED:
+        case ImportStatus.DELAYED:
             return (
                 <>
                     <Badge type="warning">{c('Import status').t`Delayed`}</Badge>

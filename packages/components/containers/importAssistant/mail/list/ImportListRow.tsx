@@ -1,10 +1,11 @@
 import { format } from 'date-fns';
 
 import humanSize from '@proton/shared/lib/helpers/humanSize';
+import { NormalizedImporter } from '@proton/shared/lib/interfaces/EasySwitch';
 
 import { TableRow } from '../../../../components';
 
-import { Importer, ImportHistory } from '../interfaces';
+import { ImportHistory } from '../interfaces';
 
 import PastImportStatus from './PastImportStatus';
 import ActiveImportRowActions from './ActiveImportRowActions';
@@ -12,13 +13,13 @@ import ActiveImportStatus from './ActiveImportStatus';
 import PastImportRowActions from './PastImportRowActions';
 
 interface Props {
-    currentImport: Importer | ImportHistory;
+    currentImport: NormalizedImporter | ImportHistory;
 }
 
 const ImportListRow = ({ currentImport }: Props) => {
     const { ID, Email } = currentImport;
 
-    const { Active } = currentImport as Importer;
+    const { Active } = currentImport as NormalizedImporter;
     const { EndTime, TotalSize, State: ReportStatus, CanDeleteSource } = currentImport as ImportHistory;
 
     const isImportActive = !!Active;
@@ -68,7 +69,7 @@ const ImportListRow = ({ currentImport }: Props) => {
         !isImportActive ? (
             <PastImportRowActions key="button" email={Email} ID={ID} showDeleteSource={CanDeleteSource} />
         ) : (
-            <ActiveImportRowActions key="actions" currentImport={currentImport as Importer} />
+            <ActiveImportRowActions key="actions" currentImport={currentImport as NormalizedImporter} />
         ),
     ];
 
