@@ -16,6 +16,7 @@ import {
     params as paramsSelector,
     elementsMap as elementsMapSelector,
     elements as elementsSelector,
+    elementIDs as elementIDsSelector,
     shouldLoadMoreES as shouldLoadMoreESSelector,
     shouldResetCache as shouldResetCacheSelector,
     shouldSendRequest as shouldSendRequestSelector,
@@ -48,6 +49,7 @@ interface Options {
 interface ReturnValue {
     labelID: string;
     elements: Element[];
+    elementIDs: string[];
     placeholderCount: number;
     loading: boolean;
     total: number | undefined;
@@ -129,6 +131,7 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
     const stateParams = useSelector(paramsSelector);
     const elementsMap = useSelector(elementsMapSelector);
     const elements = useSelector(elementsSelector);
+    const elementIDs = useSelector(elementIDsSelector);
     const shouldLoadMoreES = useSelector((state: RootState) =>
         shouldLoadMoreESSelector(state, { page, params, esDBStatus })
     );
@@ -617,18 +620,34 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
     return {
         labelID: stateParams.labelID,
         elements,
+        elementIDs,
         placeholderCount,
         loading,
         total: totalReturned,
     };
 };
 
+/**
+ * Returns the element in the elements state for the given elementID
+ */
+export const useGetElementByID = () => {
+    const store = useStore<RootState>();
+
+    return useCallback((elementID: string): Element | undefined => {
+        return store.getState().elements.elements[elementID];
+    }, []);
+};
+
+/**
+ * This helper will get as much data as we can on the ids whatever the location of the data
+ * Don't use this for optimistic for example
+ */
 export const useGetElementsFromIDs = () => {
     const store = useStore();
     const messageCache = useMessageCache();
     const conversationCache = useConversationCache();
 
-    return useCallback((elementIDs: string[]) => {
+    return useCallback((elementIDs: string[]): Element[] => {
         const state = store.getState();
         return elementIDs
             .map((ID: string) => {

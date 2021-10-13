@@ -1,6 +1,14 @@
 import { createAction, createAsyncThunk } from '@reduxjs/toolkit';
 import { noop } from '@proton/shared/lib/helpers/function';
-import { ESResults, EventUpdates, NewStateParams, QueryParams, QueryResults } from './elementsTypes';
+import {
+    ESResults,
+    EventUpdates,
+    NewStateParams,
+    OptimisticDelete,
+    OptimisticUpdates,
+    QueryParams,
+    QueryResults,
+} from './elementsTypes';
 import { Element } from '../../models/element';
 import { getQueryElementsParameters, queryElement, queryElements } from './helpers/elementQuery';
 
@@ -9,7 +17,6 @@ export const reset = createAction<NewStateParams>('elements/reset');
 export const updatePage = createAction<number>('elements/updatePage');
 
 export const load = createAsyncThunk<QueryResults, QueryParams>('elements/load', async (queryParams: QueryParams) => {
-    console.log('load', queryParams);
     const queryParameters = getQueryElementsParameters(queryParams);
     try {
         return await queryElements(queryParams.api, queryParams.conversationMode, queryParameters);
@@ -44,3 +51,15 @@ export const manualPending = createAction<void>('elements/manualPending');
 export const manualFulfilled = createAction<void>('elements/manualFulfilled');
 
 export const addESResults = createAction<ESResults>('elements/addESResults');
+
+export const optimisticApplyLabels = createAction<OptimisticUpdates>('elements/optimistic/applyLabels');
+
+export const optimisticDelete = createAction<OptimisticDelete>('elements/optimistic/delete');
+
+export const optimisticRestoreDelete = createAction<OptimisticUpdates>('elements/optimistic/restoreDelete');
+
+export const optimisticEmptyLabel = createAction<void>('elements/optimistic/emptyLabel');
+
+export const optimisticRestoreEmptyLabel = createAction<OptimisticUpdates>('elements/optimistic/restoreEmptyLabel');
+
+export const optimisticMarkAs = createAction<OptimisticUpdates>('elements/optimistic/markAs');

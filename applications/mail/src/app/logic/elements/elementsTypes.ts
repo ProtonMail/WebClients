@@ -125,3 +125,15 @@ export interface ESResults {
     page: number;
     elements: Element[];
 }
+
+export interface OptimisticUpdates {
+    elements: Element[];
+    isMove?: boolean;
+    bypass?: boolean;
+    isMessage?: boolean;
+    conversationMode?: boolean;
+}
+
+export interface OptimisticDelete {
+    elementIDs: string[];
+}

@@ -3,7 +3,7 @@ import { useEffect, useState, useMemo } from 'react';
 
 import { MessageExtended } from '../../models/message';
 import { useMessageCache, getLocalID } from '../../containers/MessageProvider';
-import { useGetElementsFromIDs } from '../mailbox/useElementsCache';
+import { useGetElementsFromIDs } from '../mailbox/useElements';
 import { useConversationCache } from '../../containers/ConversationProvider';
 
 interface ReturnValue {

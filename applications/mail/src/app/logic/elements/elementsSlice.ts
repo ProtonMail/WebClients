@@ -10,6 +10,12 @@ import {
     manualPending,
     manualFulfilled,
     addESResults,
+    optimisticApplyLabels,
+    optimisticDelete,
+    optimisticRestoreDelete,
+    optimisticEmptyLabel,
+    optimisticRestoreEmptyLabel,
+    optimisticMarkAs,
 } from './elementsActions';
 import {
     reset as resetReducer,
@@ -22,6 +28,9 @@ import {
     manualPending as manualPendingReducer,
     manualFulfilled as manualFulfilledReducer,
     addESResults as addESResultsReducer,
+    optimisticUpdates,
+    optimisticDelete as optimisticDeleteReducer,
+    optimisticEmptyLabel as optimisticEmptyLabelReducer,
 } from './elementsReducers';
 
 export const newState = ({
@@ -63,9 +72,17 @@ const elementsSlice = createSlice({
         builder.addCase(removeExpired, removeExpiredReducer);
         builder.addCase(eventUpdates.pending, eventUpdatesPending);
         builder.addCase(eventUpdates.fulfilled, eventUpdatesFulfilled);
+
         builder.addCase(manualPending, manualPendingReducer);
         builder.addCase(manualFulfilled, manualFulfilledReducer);
         builder.addCase(addESResults, addESResultsReducer);
+
+        builder.addCase(optimisticApplyLabels, optimisticUpdates);
+        builder.addCase(optimisticDelete, optimisticDeleteReducer);
+        builder.addCase(optimisticRestoreDelete, optimisticUpdates);
+        builder.addCase(optimisticEmptyLabel, optimisticEmptyLabelReducer);
+        builder.addCase(optimisticRestoreEmptyLabel, optimisticUpdates);
+        builder.addCase(optimisticMarkAs, optimisticUpdates);
     },
 });
 
