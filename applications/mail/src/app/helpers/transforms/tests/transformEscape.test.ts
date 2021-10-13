@@ -369,6 +369,18 @@ describe('transformEscape', () => {
         });
     });
 
+    describe('base handling', () => {
+        it('Should preserve <base href> in <head>', () => {
+            const BASE = `<head><base href="https://bugzilla.mozilla.org/"></head>`;
+
+            const { document, querySelector } = setup(BASE);
+            expect(document.innerHTML).toMatch(/<base/);
+            const base = querySelector('base');
+            expect(base).toBeTruthy();
+            expect(base.getAttribute('href')).toEqual('https://bugzilla.mozilla.org/');
+        });
+    });
+
     describe('Not escape BACKGROUND_URL', () => {
         it('should not escape anything', () => {
             const { document } = setup(BACKGROUND_URL_SAFE);

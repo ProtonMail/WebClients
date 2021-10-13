@@ -26,7 +26,7 @@ const CONFIG: { [key: string]: any } = {
     raw: { WHOLE_DOCUMENT: true, RETURN_DOM: true },
     html: { WHOLE_DOCUMENT: false, RETURN_DOM: true },
     protonizer: {
-        FORBID_TAGS: ['input', 'form'], // Overide defaults to allow style (will be processed by juice afterward)
+        FORBID_TAGS: ['input', 'form'], // Override defaults to allow style (will be processed by juice afterward)
         FORBID_ATTR: {},
         ADD_ATTR: ['target', ...LIST_PROTON_ATTR.map((attr) => `proton-${attr}`)],
         WHOLE_DOCUMENT: true,
