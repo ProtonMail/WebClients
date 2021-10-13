@@ -1,4 +1,5 @@
-import { ChangeEvent, useState, useRef, useEffect, useMemo, KeyboardEvent, ReactNode, MouseEvent } from 'react';
+import { ChangeEvent, useState, useRef, useEffect, useMemo } from 'react';
+import * as React from 'react';
 import { c } from 'ttag';
 
 import { Folder } from '@proton/shared/lib/interfaces/Folder';
@@ -40,7 +41,7 @@ const DIMMED_OPACITY_CLASSNAME = 'opacity-30';
 
 interface WrapperProps {
     isLabel: boolean;
-    children: ReactNode;
+    children: React.ReactNode;
     checkboxId: string;
     className: string;
 }
@@ -188,18 +189,18 @@ const ImportManageFoldersRow = ({
         setEditMode(!editMode);
     };
 
-    const handleSave = (e: MouseEvent | KeyboardEvent) => {
+    const handleSave = (e: React.MouseEvent | React.KeyboardEvent) => {
         e.stopPropagation();
         setEditMode(false);
         initialValue.current = inputValue;
     };
 
-    const preventDefaultAndStopPropagation = (e: MouseEvent) => {
+    const preventDefaultAndStopPropagation = (e: React.MouseEvent) => {
         e.preventDefault();
         e.stopPropagation();
     };
 
-    const handleChange = ({ target }: ChangeEvent<HTMLInputElement>) => {
+    const handleChange = ({ target }: React.ChangeEvent<HTMLInputElement>) => {
         const { value } = target;
         setInputValue(value);
 
@@ -260,7 +261,7 @@ const ImportManageFoldersRow = ({
                 ref={inputRef}
                 value={inputValue}
                 onChange={handleChange}
-                onPressEnter={(e: KeyboardEvent) => {
+                onPressEnter={(e: React.KeyboardEvent) => {
                     e.preventDefault();
                     if (hasError) {
                         return;
@@ -318,7 +319,7 @@ const ImportManageFoldersRow = ({
         return SYSTEM_FOLDERS.includes(split[0]);
     }, [Source, Separator]);
 
-    const sourceIndentStyles = { '--margin-left-custom': `${level}em` };
+    const sourceIndentStyles = { marginLeft: `${level}em` };
 
     /*
      * For "regular" destination folders we keep the same level, capped at 2
@@ -326,7 +327,7 @@ const ImportManageFoldersRow = ({
      * then we apply the level minus one, but can't be less than 0 nor higher than 2
      * */
     const destinationIndentStyles = {
-        '--margin-left-custom': `${isParentSystemFolder ? Math.max(0, Math.min(level - 1, 2)) : Math.min(level, 2)}em`,
+        marginLeft: `${isParentSystemFolder ? Math.max(0, Math.min(level - 1, 2)) : Math.min(level, 2)}em`,
     };
 
     const renderDestination = () => {
@@ -441,10 +442,7 @@ const ImportManageFoldersRow = ({
 
         return (
             <div
-                className={classnames([
-                    'flex flex-nowrap flex-align-items-center flex-item-fluid-auto',
-                    !DestinationFolder && 'ml-custom',
-                ])}
+                className="flex flex-nowrap flex-align-items-center flex-item-fluid-auto"
                 style={DestinationFolder ? undefined : destinationIndentStyles}
             >
                 <Icon
@@ -542,10 +540,7 @@ const ImportManageFoldersRow = ({
                     ])}
                 >
                     <div className="flex w50 flex-nowrap flex-align-items-center flex-item-noshrink pr0-5">
-                        <div className={classnames([
-                            'flex-item-noshrink',
-                            !DestinationFolder && 'ml-custom',
-                        ])} style={DestinationFolder ? undefined : sourceIndentStyles}>
+                        <div className="flex-item-noshrink" style={DestinationFolder ? undefined : sourceIndentStyles}>
                             <Checkbox
                                 onChange={({ target: { checked } }: ChangeEvent<HTMLInputElement>) => {
                                     onToggleCheck(Source, checked);

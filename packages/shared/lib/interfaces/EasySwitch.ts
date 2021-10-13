@@ -1,0 +1,292 @@
+import { Label } from './Label';
+
+export enum OAUTH_PROVIDER {
+    GOOGLE = 1,
+}
+
+export enum PROVIDER_INSTRUCTIONS {
+    YAHOO = 'yahoo',
+}
+
+export interface OAuthProps {
+    Code: string;
+    Provider: OAUTH_PROVIDER;
+    RedirectUri: string;
+}
+
+export enum IAOauthModalModelStep {
+    INSTRUCTIONS = 3,
+    AUTHENTICATION = 0,
+    SELECT_IMPORT_TYPE = 1,
+    SUCCESS = 2,
+}
+
+export enum ImportType {
+    MAIL = 'Mail',
+    CALENDAR = 'Calendar',
+    CONTACTS = 'Contacts',
+    // DRIVE = 'Drive',
+}
+
+export interface IAOauthModalModelImportData {
+    [ImportType.MAIL]: {
+        importerID: string;
+        selectedPeriod: TIME_PERIOD;
+        providerFolders: ImportedMailFolder[];
+    };
+    [ImportType.CALENDAR]: {
+        importerID: string;
+        providerCalendars: ImportedCalendar[];
+    };
+    [ImportType.CONTACTS]: {
+        importerID: string;
+        numContacts: number;
+        numContactGroups: number;
+    };
+    // [ImportType.DRIVE]?: {
+    //     importerID: string;
+    // };
+}
+
+export interface IAOauthModalModel {
+    step: IAOauthModalModelStep;
+    oauthProps?: OAuthProps;
+    tokenScope?: ImportType[];
+    AddressID: string;
+    importedEmail: string;
+    payload: LaunchImportPayload;
+    data: IAOauthModalModelImportData;
+    isPayloadInvalid: boolean;
+}
+
+export type ImportPayloadType =
+    | MailImporterPayload
+    | CalendarImporterPayload
+    | ContactsImporterPayload
+    | DriveImporterPayload;
+
+export type CheckedProductMap = {
+    [K in ImportType.MAIL | ImportType.CALENDAR | ImportType.CONTACTS /* | ImportType.DRIVE */]: boolean;
+};
+
+export interface LaunchImportPayload {
+    ImporterID: string;
+    [ImportType.MAIL]?: MailImporterPayload;
+    [ImportType.CALENDAR]?: CalendarImporterPayload;
+    [ImportType.CONTACTS]?: ContactsImporterPayload;
+    // [ImportType.DRIVE]?: DriveImporterPayload;
+}
+
+/* Token */
+
+export interface ImportToken {
+    ID: string;
+    Account: string;
+    Provider: OAUTH_PROVIDER;
+    Products: ImportType[];
+}
+
+/* Mail Specific */
+
+export enum AuthenticationMethod {
+    PLAIN = 'PLAIN',
+    OAUTH = 'XOAUTH2',
+}
+
+export interface MailImportMapping {
+    Source: string;
+    Destinations: {
+        FolderPath?: string;
+        Labels?: Pick<Label, 'Name' | 'Color'>[];
+    };
+    checked?: boolean;
+}
+
+export interface MailImporterPayload {
+    ID?: string; // legacy
+    AddressID: string;
+    Code?: string;
+    ImportLabel?: Pick<Label, 'Name' | 'Color' | 'Type'>;
+    StartTime?: Date | number;
+    Mapping: MailImportMapping[];
+    CustomFields?: number;
+}
+
+export enum MailImportDestinationFolder {
+    INBOX = 'Inbox',
+    ALL_DRAFTS = 'All Drafts',
+    ALL_SENT = 'All Sent',
+    TRASH = 'Trash',
+    SPAM = 'Spam',
+    ALL_MAIL = 'All Mail',
+    STARRED = 'Starred',
+    ARCHIVE = 'Archive',
+    SENT = 'Sent',
+    DRAFTS = 'Drafts',
+}
+
+export enum TIME_PERIOD {
+    BIG_BANG = 'big_bang',
+    LAST_YEAR = 'last_year',
+    LAST_3_MONTHS = 'last_3_months',
+    LAST_MONTH = 'last_month',
+}
+
+export enum IMPORT_ERROR {
+    IMAP_CONNECTION_ERROR = 2900,
+    AUTHENTICATION_ERROR = 2901,
+    ALREADY_EXISTS = 2500,
+    OAUTH_INSUFFICIENT_SCOPES = 2027,
+    BANDWIDTH_LIMIT = 2902,
+    TEMP_PROVIDER_ERROR = 2902,
+    RATE_LIMIT_EXCEEDED = 429,
+}
+
+export interface ImportedFolder {
+    SourceFolder: string;
+    DestinationFolder?: MailImportDestinationFolder;
+    Processed: number;
+    Total: number;
+}
+
+export interface ImportedMailFolder {
+    Source: string;
+    Separator: string;
+    Total: number;
+    Flags: string[];
+    DestinationFolder?: MailImportDestinationFolder;
+    Size: number;
+}
+
+export enum MailImportPayloadError {
+    MAX_FOLDERS_LIMIT_REACHED = 'Max folders limit reached',
+    FOLDER_NAMES_TOO_LONG = 'Folder names too long',
+    LABEL_NAMES_TOO_LONG = 'Label names too long',
+    UNAVAILABLE_NAMES = 'Unavailable names',
+}
+
+export enum CustomFieldsBitmap {
+    Mapping = 1,
+    Label = 2,
+    Period = 4,
+}
+
+/* Calendar Specific */
+
+export interface CalendarImportMapping {
+    Source: string;
+    Destination: string;
+}
+
+export interface CalendarImporterPayload {
+    Mapping: CalendarImportMapping[];
+}
+
+export interface ImportedCalendar {
+    ID: string;
+    Source: string;
+}
+
+export enum CalendarImportPayloadError {
+    MAX_CALENDARS_LIMIT_REACHED = 'Max calendars limit reached',
+}
+
+/* Contacts Specific */
+
+export interface ContactsImporterPayload {}
+
+/* Drive Specific */
+
+export interface DriveImporterPayload {}
+
+/* Imports and Reports from Server */
+
+export enum ImportError {
+    ERROR_CODE_IMAP_CONNECTION = 1,
+    ERROR_CODE_QUOTA_LIMIT = 2,
+}
+
+export enum ImportStatus {
+    QUEUED = 0,
+    RUNNING = 1,
+    DONE = 2,
+    FAILED = 3,
+    PAUSED = 4,
+    CANCELED = 5,
+    DELAYED = 6,
+}
+
+export interface ImporterActiveProps {
+    CreateTime: number;
+    State: ImportStatus;
+    ErrorCode?: ImportError;
+    Mapping: ImportedFolder[];
+}
+
+export interface Importer {
+    ID: string;
+    TokenID: string;
+    Account: string;
+    Provider: number;
+    Product: ImportType[];
+    Active?: {
+        [ImportType.MAIL]?: ImporterActiveProps;
+        [ImportType.CALENDAR]?: ImporterActiveProps;
+        [ImportType.CONTACTS]?: ImporterActiveProps;
+    };
+    ImapHost?: string;
+    ImapPort?: string;
+    Sasl: AuthenticationMethod;
+    AllowSelfSigned: boolean;
+    Email: string; // Soon to be deprecated
+}
+
+export interface NormalizedImporter extends Pick<Importer, Exclude<keyof Importer, 'Active' | 'Product'>> {
+    Active: ImporterActiveProps;
+    Product: ImportType;
+}
+
+enum ImportReportStatus {
+    UNSENT = 0,
+    SENT = 1,
+}
+
+export interface ImportReportAggregated {
+    ID: string;
+    Account: string;
+    Provider: number;
+    State: ImportReportStatus;
+    TokenID: string;
+    CreateTime: number;
+    EndTime: number;
+    Summary: {
+        Mail?: {
+            NumMessages: number;
+            State: ImportStatus;
+            TotalSize: number;
+        };
+        Calendar?: {
+            NumEvents: number;
+            State: ImportStatus;
+            TotalSize: number;
+        };
+        Contacts?: {
+            NumContacts: number;
+            State: ImportStatus;
+            TotalSize: number;
+        };
+    };
+}
+
+export interface ImportReport {
+    ID: string;
+    Account: string;
+    Provider: number;
+    TokenID: string;
+    CreateTime: number;
+    EndTime: number;
+    NumItems: number;
+    State: ImportStatus;
+    TotalSize: number;
+    Product: ImportType;
+}

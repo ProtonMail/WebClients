@@ -1,13 +1,14 @@
 import { c } from 'ttag';
 
-import { Label, Field, Info, PrimaryButton, FullLoader, Tooltip, GoogleButton } from '../../../components';
-import { useAddresses, useContacts, useMailSettings, useModals, useUser, useUserKeys } from '../../../hooks';
-import useOAuthPopup, { getOAuthAuthorizationUrl } from '../../../hooks/useOAuthPopup';
+import { ImportType } from '@proton/shared/lib/interfaces/EasySwitch';
+
+import { Label, Field, Info, PrimaryButton, FullLoader, Tooltip, Button, GoogleButton } from '../../../components';
+import { useAddresses, useContacts, useFeature, useMailSettings, useModals, useUserKeys } from '../../../hooks';
+
 import AutoSaveContactsToggle from '../../general/AutoSaveContactsToggle';
-import { G_OAUTH_SCOPE_CONTACTS, OAUTH_TEST_IDS } from '../../importAssistant/constants';
-import { ImportContactsModal } from '../../importAssistant/contacts';
-import { OAuthProps, OAUTH_PROVIDER } from '../../importAssistant/interfaces';
+import { ImportAssistantOauthModal } from '../../easySwitch';
 import ExportContactsModal from '../modals/ExportContactsModal';
+import { FeatureCode } from '../../features';
 
 interface Props {
     onClose: () => void;
@@ -15,13 +16,14 @@ interface Props {
 }
 
 const ContactsWidgetSettingsContainer = ({ onClose, onImport }: Props) => {
-    const [user] = useUser();
     const [mailSettings, loadingMailSettings] = useMailSettings();
     const { AutoSaveContacts } = mailSettings || {};
     const { createModal } = useModals();
     const [userKeysList, loadingUserKeys] = useUserKeys();
     const [contacts, loadingContacts] = useContacts();
     const [addresses, loadingAddresses] = useAddresses();
+
+    const isEasySwitchEnabled = useFeature(FeatureCode.EasySwitch).feature?.Value;
 
     const hasNoContacts = !contacts?.length;
 
@@ -38,14 +40,8 @@ const ContactsWidgetSettingsContainer = ({ onClose, onImport }: Props) => {
         </PrimaryButton>
     );
 
-    const { triggerOAuthPopup } = useOAuthPopup({
-        authorizationUrl: getOAuthAuthorizationUrl({ scope: G_OAUTH_SCOPE_CONTACTS }),
-    });
-
     const handleOAuthClick = () => {
-        triggerOAuthPopup(OAUTH_PROVIDER.GOOGLE, (oauthProps: OAuthProps) => {
-            createModal(<ImportContactsModal addresses={addresses} oauthProps={oauthProps} />);
-        });
+        createModal(<ImportAssistantOauthModal addresses={addresses} defaultCheckedTypes={[ImportType.CONTACTS]} />);
     };
 
     return (
@@ -70,21 +66,19 @@ const ContactsWidgetSettingsContainer = ({ onClose, onImport }: Props) => {
                         <Label htmlFor="import-contacts-button" className="text-semibold">
                             <span role="heading" aria-level={2}>{c('Label').t`Import contacts`}</span>
                         </Label>
-                        {OAUTH_TEST_IDS.includes(user.ID) ? (
-                            <div className="mt1">
-                                <GoogleButton onClick={handleOAuthClick} disabled={loadingAddresses} />
-                            </div>
-                        ) : (
-                            <>
-                                <p className="color-weak mt0-5 mb1">
-                                    {c('Info')
-                                        .t`We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).`}
-                                </p>
-                                <PrimaryButton id="import-contacts-button" onClick={onImport}>
-                                    {c('Action').t`Import contacts`}
-                                </PrimaryButton>
-                            </>
+
+                        <p className="color-weak mt0-5 mb1">
+                            {c('Info')
+                                .t`We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).`}
+                        </p>
+
+                        {isEasySwitchEnabled && (
+                            <GoogleButton onClick={handleOAuthClick} disabled={loadingAddresses} className="mr1" />
                         )}
+
+                        <Button id="import-contacts-button" onClick={onImport}>
+                            {c('Action').t`Import from .csv or vCard`}
+                        </Button>
                     </div>
                     <div className="mb2">
                         <Label htmlFor="export-contacts-button" className="text-semibold">

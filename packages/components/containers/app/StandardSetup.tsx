@@ -12,7 +12,7 @@ import { PrivateAuthenticationStore, PublicAuthenticationStore } from './interfa
 import SSOPublicApp from './SSOPublicApp';
 import SSOForkConsumer from './SSOForkConsumer';
 import LoaderPage from './LoaderPage';
-import { G_OAUTH_REDIRECT_PATH } from '../importAssistant/constants';
+import { G_OAUTH_REDIRECT_PATH } from '../easySwitch/constants';
 
 const ReplaceToBase = () => {
     document.location.replace(document.location.origin);

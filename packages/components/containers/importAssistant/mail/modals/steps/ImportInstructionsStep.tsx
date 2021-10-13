@@ -5,7 +5,7 @@ import gmailImapFolderImg from '@proton/styles/assets/img/import-instructions/gm
 import gmailImapImg from '@proton/styles/assets/img/import-instructions/gmail-imap.jpg';
 import gmailLessSecureAppsImg from '@proton/styles/assets/img/import-instructions/gmail-less-secure-apps.jpg';
 import gmailAppPasswordImg from '@proton/styles/assets/img/import-instructions/gmail-2FA.jpg';
-import yahooAppPasswordImg from '@proton/styles/assets/img/import-instructions/yahoo.jpg';
+import yahooAppPasswordImg from '@proton/styles/assets/img/import-instructions/yahoo.png';
 
 import { Alert, Button, Href, Icon, Tabs } from '../../../../../components';
 
@@ -221,13 +221,13 @@ const ImportInstructionsStep = ({
         const boldAccountSec = (
             <strong key="boldAccountSec">{c('Import instructions emphasis').t`Account security`}</strong>
         );
-        const boldManageAppPass = (
-            <strong key="boldManageAppPass">{c('Import instructions emphasis').t`Manage app passwords`}</strong>
+        const boldAppPassword = (
+            <strong key="boldAppPassword">{c('Import instructions emphasis').t`Other ways to sign in`}</strong>
         );
 
-        // translator: the variables here are HTML tags, here is the complete sentence: "Log into Yahoo Mail and click on your name in the upper right corner to access Account info. In the Account security section, go to Manage app passwords to generate a password. You will need this password during the import."
+        // translator: the variables here are HTML tags, here is the complete sentence: "Log into Yahoo Mail and click on your name in the upper right corner to access Account info. In the Account security section, scroll to the Other ways to sign in section to generate an app password. You will need this password during the import."
         const yahooAppPasswordMessage = c('Import instructions')
-            .jt`Log into Yahoo Mail and click on your name in the upper right corner to access ${boldAccountInfo}. In the ${boldAccountSec} section, go to ${boldManageAppPass} to generate a password. You will need this password during the import.`;
+            .jt`Log into Yahoo Mail and click on your name in the upper right corner to access ${boldAccountInfo}. In the ${boldAccountSec} section, scroll to the ${boldAppPassword} section to generate an app password. You will need this password during the import.`;
 
         return (
             <>
