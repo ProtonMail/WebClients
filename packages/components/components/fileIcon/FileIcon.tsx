@@ -24,10 +24,11 @@ const iconsMap: { [mimeType: string]: { name: string } } = {
     'application/vnd.openxmlformats-officedocument.presentationml.presentation': {
         name: 'ppt',
     },
+
     'application/vnd.ms-excel': { name: 'xls' },
-    'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet': {
-        name: 'xls',
-    },
+    'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet': { name: 'xls' }, // .xlsm - Microsoft Excel file
+    'application/vnd.oasis.opendocument.spreadsheet': { name: 'xls' }, // .ods — OpenOffice Calc spreadsheet file
+
     'application/xliff+xml': { name: 'xml' },
     'application/xml': { name: 'xml' },
     'application/pgp-keys': { name: 'keytrust' },
