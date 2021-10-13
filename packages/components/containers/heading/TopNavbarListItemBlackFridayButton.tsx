@@ -21,7 +21,7 @@ const TopNavbarListItemBlackFridayButton = ({ offer }: Props) => {
     const { createModal } = useModals();
     const isVPN = APP_NAME === APPS.PROTONVPN_SETTINGS;
     const hasRedDot = isVPN || offer.name === 'black-friday';
-    const text = c('blackfriday Promo title, need to be short').t`Special offer`;
+    const text = c('blackfriday: VPNspecialoffer Promo title, need to be short').t`Special offer`;
 
     const onSelect = ({
         planIDs,

@@ -48,40 +48,41 @@ const BlackFridayModal = ({ offer, onSelect, ...rest }: Props) => {
     const isProductPayerOffer = offer.name === 'product-payer';
 
     const title = isBlackFridayOffer
-        ? c('blackfriday Title').t`Get the special year-end offer on our Premium VPN PLUS plan`
+        ? c('blackfriday: VPNspecialoffer Title').t`Get the special year-end offer on our Premium VPN PLUS plan`
         : c('blackfriday Title').t`Save more when combining Mail and VPN`;
     const driveAppName = getAppName(APPS.PROTONDRIVE);
 
     const DEAL_TITLE = {
-        [MONTHLY]: c('blackfriday Title').t`1-month plan`,
-        [YEARLY]: c('blackfriday Title').t`1-year plan`,
-        [TWO_YEARS]: c('blackfriday Title').t`2-year plan`,
+        [MONTHLY]: c('blackfriday: VPNspecialoffer Title').t`1-month plan`,
+        [YEARLY]: c('blackfriday: VPNspecialoffer Title').t`1-year plan`,
+        [TWO_YEARS]: c('blackfriday: VPNspecialoffer Title').t`2-year plan`,
     };
 
     const BILLED_DESCRIPTION = ({ cycle, amount, notice }: { cycle: Cycle; amount: ReactNode; notice: number }) => {
         const supNotice = <sup key="notice">{notice}</sup>;
         if (cycle === MONTHLY) {
-            return c('blackfriday Title').jt`Billed monthly${supNotice}`;
+            return c('blackfriday: VPNspecialoffer Title').jt`Billed monthly${supNotice}`;
         }
         if (cycle === YEARLY) {
-            return c('blackfriday Title').jt`Billed as ${amount} ${supNotice}`;
+            return c('blackfriday: VPNspecialoffer Title').jt`Billed as ${amount} ${supNotice}`;
         }
         if (cycle === TWO_YEARS) {
-            return c('blackfriday Title').jt`Billed as ${amount} ${supNotice}`;
+            return c('blackfriday: VPNspecialoffer Title').jt`Billed as ${amount} ${supNotice}`;
         }
         return null;
     };
 
     const AFTER_INFO = ({ amount, notice }: { amount: ReactNode; notice: number }) => {
         if (notice === 1) {
-            return c('blackfriday Title').jt`(${notice}) Renews after 1 month at a standard monthly price of ${amount}`;
+            return c('blackfriday: VPNspecialoffer Title')
+                .jt`(${notice}) Renews after 1 month at a standard monthly price of ${amount}`;
         }
         if (notice === 2) {
-            return c('blackfriday Title')
+            return c('blackfriday: VPNspecialoffer Title')
                 .jt`(${notice}) Renews after 2 years at a standard discounted 2-year price of ${amount} (33% discount)`;
         }
         if (notice === 3) {
-            return c('blackfriday Title')
+            return c('blackfriday: VPNspecialoffer Title')
                 .jt`(${notice}) Renews after 1 year at a standard discounted annual price of ${amount} (20% discount)`;
         }
         return null;
@@ -92,9 +93,9 @@ const BlackFridayModal = ({ offer, onSelect, ...rest }: Props) => {
             return c('blackfriday Action').t`Get the offer`;
         }
         if (popular) {
-            return c('blackfriday Action').t`Get the deal now`;
+            return c('blackfriday: VPNspecialoffer Action').t`Get the deal now`;
         }
-        return c('blackfriday Action').t`Get the deal`;
+        return c('blackfriday: VPNspecialoffer Action').t`Get the deal`;
     };
 
     const getFooter = () => {
@@ -118,10 +119,10 @@ const BlackFridayModal = ({ offer, onSelect, ...rest }: Props) => {
             <>
                 <div className="text-xs mt1 mb0 color-weak text-center">
                     <Href url="https://protonvpn.com/support/year-end-offer-terms-2021">
-                        {c('blackfriday Info').t`Special offer Terms and Conditions`}
+                        {c('blackfriday: VPNspecialoffer Info').t`Special offer Terms and Conditions`}
                     </Href>
                 </div>
-                <p className="text-xs mt0 mb0 color-weak text-center">{c('blackfriday Info')
+                <p className="text-xs mt0 mb0 color-weak text-center">{c('blackfriday: VPNspecialoffer Info')
                     .jt`Discounts are based on standard monthly pricing of ${standardMonthlyPricing}`}</p>
                 {offer.plans.map((_, index) => {
                     const key = `${index}`;
@@ -221,7 +222,7 @@ const BlackFridayModal = ({ offer, onSelect, ...rest }: Props) => {
                                 <Price
                                     currency={currency}
                                     className="blackfriday-monthly-price"
-                                    suffix={c('blackfriday info').t`per month`}
+                                    suffix={c('blackfriday: VPNspecialoffer info').t`per month`}
                                 >
                                     {withCoupon / cycle}
                                 </Price>
@@ -253,7 +254,7 @@ const BlackFridayModal = ({ offer, onSelect, ...rest }: Props) => {
                                                 popular ? 'bg-danger' : 'bg-primary',
                                             ])}
                                         >
-                                            {c('blackfriday Info').jt`Save ${percentage}%`}
+                                            {c('blackfriday: VPNspecialoffer Info').jt`Save ${percentage}%`}
                                         </span>
                                     ) : null}
                                     {popular ? (
