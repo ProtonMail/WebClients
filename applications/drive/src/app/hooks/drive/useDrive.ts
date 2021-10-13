@@ -207,21 +207,20 @@ function useDrive() {
     };
 
     const decryptLink = async (meta: LinkMeta, parentPrivateKey: OpenPGPKey): Promise<LinkMeta> => {
-        let modifyTime = meta.ModifyTime;
+        let realModifyTime = meta.ModifyTime;
         if (meta.XAttr) {
             // eslint-disable-next-line @typescript-eslint/no-use-before-define
             const { decryptedPassphrase } = await decryptLinkPassphraseWithParentKey(meta, parentPrivateKey);
             const nodePrivateKey = await decryptPrivateKey(meta.NodeKey, decryptedPassphrase);
             const xattr = await decryptExtendedAttributes(meta.XAttr, nodePrivateKey);
-            modifyTime = xattr.Common.ModificationTime || meta.ModifyTime;
+            realModifyTime = xattr.Common.ModificationTime || meta.ModifyTime;
         }
 
         return {
             ...meta,
             EncryptedName: meta.Name,
             Name: await decryptUnsigned({ armoredMessage: meta.Name, privateKey: parentPrivateKey }),
-            UploadTime: meta.ModifyTime,
-            ModifyTime: modifyTime,
+            RealModifyTime: realModifyTime,
         };
     };
 
