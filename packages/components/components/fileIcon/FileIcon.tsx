@@ -1,4 +1,4 @@
-import { isSupportedImage, isSupportedText, isPDF, isICS, isVideo } from '../../containers/filePreview/helpers';
+import { isSupportedImage, isSupportedText, isPDF, isICS, isVideo, isFont } from '../../containers/filePreview/helpers';
 import { IconProps } from '../icon/Icon';
 import MimeIcon from '../icon/MimeIcon';
 
@@ -40,6 +40,8 @@ const getIconName = (mimeType: string) => {
         name = 'pdf';
     } else if (isVideo(mimeType)) {
         name = 'video';
+    } else if (isFont(mimeType)) {
+        name = 'font';
     } else if (iconsMap[mimeType]) {
         name = iconsMap[mimeType].name;
     }
