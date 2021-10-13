@@ -32,7 +32,7 @@ export const inlineCss = (document: Element) => {
         declassify.pruneAttrs(['id', 'class'], cheerioDoc, DECLASSIFY_OPTIONS.ignore);
         // Extra security not to leak any global styling
         cheerioDoc('style').remove();
-        document.innerHTML = cheerioDoc('body').html();
+        document.innerHTML = cheerioDoc.html();
     } catch (err: any) {
         console.error(err);
     }
