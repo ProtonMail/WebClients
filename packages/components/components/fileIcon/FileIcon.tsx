@@ -31,6 +31,11 @@ const iconsMap: { [mimeType: string]: { name: string } } = {
     'application/xliff+xml': { name: 'xml' },
     'application/xml': { name: 'xml' },
     'application/pgp-keys': { name: 'keytrust' },
+
+    'application/rtf': { name: 'text' },
+    'application/x-tex': { name: 'text' },
+    'application/vnd.oasis.opendocument.text': { name: 'text' },
+    'application/vnd.wordperfect': { name: 'text' },
 };
 
 const getIconName = (mimeType: string) => {
