@@ -14,6 +14,7 @@ import {
     OptimisticUpdates,
     QueryParams,
     QueryResults,
+    RetryData,
 } from './elementsTypes';
 import { Element } from '../../models/element';
 import { parseLabelIDsInEvent } from '../../helpers/elements';
@@ -26,6 +27,13 @@ export const reset = (state: Draft<ElementsState>, action: PayloadAction<NewStat
 
 export const updatePage = (state: Draft<ElementsState>, action: PayloadAction<number>) => {
     state.page = action.payload;
+};
+
+export const retry = (state: Draft<ElementsState>, action: PayloadAction<RetryData>) => {
+    state.beforeFirstLoad = false;
+    state.invalidated = false;
+    state.pendingRequest = false;
+    state.retry = action.payload;
 };
 
 export const loadPending = (

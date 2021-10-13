@@ -19,6 +19,7 @@ import { ProtonConfig } from '@proton/shared/lib/interfaces';
 import AuthenticationProvider from '@proton/components/containers/authentication/Provider';
 import FeaturesProvider from '@proton/components/containers/features/FeaturesProvider';
 import { ConversationCountsModel, MessageCountsModel } from '@proton/shared/lib/models';
+import { Provider as ReduxProvider } from 'react-redux';
 import MessageProvider from '../../containers/MessageProvider';
 import ConversationProvider from '../../containers/ConversationProvider';
 import { minimalCache, cache, messageCache, conversationCache, attachmentsCache, contactCache } from './cache';
@@ -29,6 +30,7 @@ import EncryptedSearchProvider from '../../containers/EncryptedSearchProvider';
 import { MailContentRefProvider } from '../../hooks/useClickMailContent';
 import { ComposeProvider } from '../../containers/ComposeProvider';
 import NotificationsTestProvider from './notifications';
+import { store } from '../../logic/store';
 
 interface RenderResult extends OriginalRenderResult {
     rerender: (ui: React.ReactElement) => Promise<void>;
@@ -79,25 +81,27 @@ const TestProvider = ({ children }: Props) => {
                             <CacheProvider cache={cache}>
                                 <ModalsChildren />
                                 <EventModelListener models={[ConversationCountsModel, MessageCountsModel]} />
-                                <MessageProvider cache={messageCache}>
-                                    <ConversationProvider cache={conversationCache}>
-                                        <AttachmentProvider cache={attachmentsCache}>
-                                            <FeaturesProvider>
-                                                <ContactProvider cache={contactCache}>
-                                                    <MailContentRefProvider mailContentRef={contentRef}>
-                                                        <ComposeProvider onCompose={jest.fn()}>
-                                                            <Router history={history}>
-                                                                <EncryptedSearchProvider>
-                                                                    {children}
-                                                                </EncryptedSearchProvider>
-                                                            </Router>
-                                                        </ComposeProvider>
-                                                    </MailContentRefProvider>
-                                                </ContactProvider>
-                                            </FeaturesProvider>
-                                        </AttachmentProvider>
-                                    </ConversationProvider>
-                                </MessageProvider>
+                                <ReduxProvider store={store}>
+                                    <MessageProvider cache={messageCache}>
+                                        <ConversationProvider cache={conversationCache}>
+                                            <AttachmentProvider cache={attachmentsCache}>
+                                                <FeaturesProvider>
+                                                    <ContactProvider cache={contactCache}>
+                                                        <MailContentRefProvider mailContentRef={contentRef}>
+                                                            <ComposeProvider onCompose={jest.fn()}>
+                                                                <Router history={history}>
+                                                                    <EncryptedSearchProvider>
+                                                                        {children}
+                                                                    </EncryptedSearchProvider>
+                                                                </Router>
+                                                            </ComposeProvider>
+                                                        </MailContentRefProvider>
+                                                    </ContactProvider>
+                                                </FeaturesProvider>
+                                            </AttachmentProvider>
+                                        </ConversationProvider>
+                                    </MessageProvider>
+                                </ReduxProvider>
                             </CacheProvider>
                         </AuthenticationProvider>
                     </ModalsProvider>

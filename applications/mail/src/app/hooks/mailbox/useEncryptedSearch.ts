@@ -46,11 +46,11 @@ export const useEncryptedSearch = ({
 
     const params = { labelID, page, sort, filter, search, esEnabled };
 
-    const isES = useSelector((state: RootState) => isESSelector(state, { params, esDBStatus }));
+    const isES = useSelector((state: RootState) => isESSelector(state, { search, esDBStatus }));
     const shouldSendRequest = useSelector((state: RootState) => shouldSendRequestSelector(state, { page, params }));
     const shouldUpdatePage = useSelector((state: RootState) => shouldUpdatePageSelector(state, { page }));
     const shouldLoadMoreES = useSelector((state: RootState) =>
-        shouldLoadMoreESSelector(state, { page, params, esDBStatus })
+        shouldLoadMoreESSelector(state, { page, search, esDBStatus })
     );
 
     const setEncryptedSearchResults: ESSetsElementsCache = (elements, page) => {
@@ -97,7 +97,7 @@ export const useEncryptedSearch = ({
                     onPage(0);
                 } else {
                     // await load();
-                    void dispatch(loadAction({ api, conversationMode, page, params }));
+                    void dispatch(loadAction({ api, conversationMode, page, params, abortController: undefined }));
                 }
             }
         } catch (error: any) {
@@ -106,7 +106,7 @@ export const useEncryptedSearch = ({
                 type: 'error',
             });
             // await load();
-            void dispatch(loadAction({ api, conversationMode, page, params }));
+            void dispatch(loadAction({ api, conversationMode, page, params, abortController: undefined }));
         }
     };
 

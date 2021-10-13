@@ -4,27 +4,31 @@ import { useDispatch, useSelector } from 'react-redux';
 import { EventUpdates, Search } from '../../logic/elements/elementsTypes';
 import { ElementEvent, Event, ConversationEvent, MessageEvent } from '../../models/event';
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
-import { isSearch } from '../../helpers/elements';
 import { eventUpdates, invalidate } from '../../logic/elements/elementsActions';
-import { isLive as isLiveSelector, elementIDs as elementIDsSelector } from '../../logic/elements/elementsSelectors';
+import {
+    isLive as isLiveSelector,
+    elementIDs as elementIDsSelector,
+    isES as isESSelector,
+} from '../../logic/elements/elementsSelectors';
 import { Element } from '../../models/element';
+import { RootState } from '../../logic/store';
 
 export const useElementsEvents = (conversationMode: boolean, search: Search) => {
     const api = useApi();
     const { getESDBStatus } = useEncryptedSearchContext();
-    const { dbExists, esEnabled, isCacheLimited } = getESDBStatus();
-    const useES = dbExists && esEnabled && isSearch(search) && (!!search.keyword || !isCacheLimited);
+    const esDBStatus = getESDBStatus();
 
     const dispatch = useDispatch();
     const elementIDs = useSelector(elementIDsSelector);
     const isLive = useSelector(isLiveSelector);
+    const isES = useSelector((state: RootState) => isESSelector(state, { search, esDBStatus }));
 
     // Listen to event manager and update de cache
     useSubscribeEventManager(async ({ Conversations = [], Messages = [] }: Event) => {
         const Elements: ElementEvent[] = conversationMode ? Conversations : Messages;
 
         // If it's an encrypted search, its event manager will deal with the change
-        if (useES) {
+        if (isES) {
             return;
         }
 
@@ -89,7 +93,7 @@ export const useElementsEvents = (conversationMode: boolean, search: Search) => 
                 ({ toUpdate, toLoad }, element) => {
                     // const elementID = element.ID || '';
                     // const existingElement = cache.elements[elementID];
-                    const existingElement = elementIDs.includes(element.ID);
+                    const existingElement = elementIDs.includes(element.ID || '');
 
                     if (existingElement) {
                         // element = parseLabelIDsInEvent(existingElement, element);
@@ -123,6 +127,7 @@ export const useElementsEvents = (conversationMode: boolean, search: Search) => 
         //         elements: newElements,
         //     };
         // });
+
         void dispatch(eventUpdates({ api, conversationMode, toCreate, toUpdate, toLoad, toDelete }));
     });
 };

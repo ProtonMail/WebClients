@@ -8,32 +8,39 @@ import {
     OptimisticUpdates,
     QueryParams,
     QueryResults,
+    RetryData,
 } from './elementsTypes';
 import { Element } from '../../models/element';
-import { getQueryElementsParameters, queryElement, queryElements } from './helpers/elementQuery';
+import { getQueryElementsParameters, newRetry, queryElement, queryElements } from './helpers/elementQuery';
+import { RootState } from '../store';
 
 export const reset = createAction<NewStateParams>('elements/reset');
 
 export const updatePage = createAction<number>('elements/updatePage');
 
-export const load = createAsyncThunk<QueryResults, QueryParams>('elements/load', async (queryParams: QueryParams) => {
-    const queryParameters = getQueryElementsParameters(queryParams);
-    try {
-        return await queryElements(queryParams.api, queryParams.conversationMode, queryParameters);
-    } catch (error) {
-        // Wait a couple of seconds before retrying
-        setTimeout(() => {
-            // setCache((cache) => ({
-            //     ...cache,
-            //     beforeFirstLoad: false,
-            //     invalidated: false,
-            //     pendingRequest: false,
-            //     retry: newRetry(queryParameters, error),
-            // }));
-        }, 2000);
-        throw error;
+export const retry = createAction<RetryData>('elements/retry');
+
+export const load = createAsyncThunk<QueryResults, QueryParams>(
+    'elements/load',
+    async (queryParams: QueryParams, { getState, dispatch }) => {
+        const queryParameters = getQueryElementsParameters(queryParams);
+        try {
+            return await queryElements(
+                queryParams.api,
+                queryParams.abortController,
+                queryParams.conversationMode,
+                queryParameters
+            );
+        } catch (error: any | undefined) {
+            // Wait a couple of seconds before retrying
+            setTimeout(() => {
+                const currentRetry = (getState() as RootState).elements.retry;
+                dispatch(retry(newRetry(currentRetry, queryParameters, error)));
+            }, 2000);
+            throw error;
+        }
     }
-});
+);
 
 export const removeExpired = createAction<Element>('elements/removeExpired');
 

@@ -5,6 +5,13 @@ export const store = configureStore({
     reducer: {
         elements,
     },
+    middleware: (getDefaultMiddleware) =>
+        getDefaultMiddleware({
+            serializableCheck: {
+                // Ignore these field paths in all actions
+                ignoredActionPaths: ['payload.abortController', 'meta.arg.api'],
+            },
+        }),
 });
 
 // Infer the `RootState` and `AppDispatch` types from the store itself

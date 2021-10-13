@@ -95,12 +95,14 @@ export interface ElementsState {
 
 export interface QueryParams {
     api: Api;
+    abortController: AbortController | undefined;
     conversationMode: boolean;
     page: number;
     params: ElementsStateParams;
 }
 
 export interface QueryResults {
+    abortController: AbortController;
     Total: number;
     Elements: Element[];
 }
