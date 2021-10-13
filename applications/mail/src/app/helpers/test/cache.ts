@@ -93,7 +93,3 @@ export const addAddressToCache = (inputAddress: Partial<Address>) => {
     const Addresses = cache.get('Addresses') as ResolvedRequest<Address[]>;
     Addresses.value.push(address);
 };
-
-export const minimalElementsCache = () => {
-    // cache.set(ELEMENTS_CACHE_KEY, elementsCache);
-};

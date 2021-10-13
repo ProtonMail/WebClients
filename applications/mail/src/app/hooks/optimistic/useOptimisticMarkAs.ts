@@ -154,7 +154,6 @@ export const useOptimisticMarkAs = () => {
                 const messageElement = getElementByID(message.ID);
                 if (messageElement && messageElement.ID) {
                     const updatedMessage = applyMarkAsChangesOnMessage(messageElement as Message, changes);
-                    console.log('optimistic mark as message', updatedMessage);
                     updatedElements.push(updatedMessage);
 
                     // Update counters
@@ -164,7 +163,6 @@ export const useOptimisticMarkAs = () => {
                 // Update in elements cache if conversation mode
                 const conversationElement = getElementByID(message.ConversationID);
                 if (conversationElement && conversationElement.ID) {
-                    console.log('optimistic mark as conv', conversationElement);
                     updatedElements.push(
                         applyMarkAsChangesOnConversationWithMessages(conversationElement, labelID, changes)
                     );

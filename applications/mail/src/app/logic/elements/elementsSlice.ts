@@ -6,6 +6,7 @@ import {
     updatePage,
     load,
     removeExpired,
+    invalidate,
     eventUpdates,
     manualPending,
     manualFulfilled,
@@ -23,6 +24,7 @@ import {
     loadPending,
     loadFulfilled,
     removeExpired as removeExpiredReducer,
+    invalidate as invalidateReducer,
     eventUpdatesPending,
     eventUpdatesFulfilled,
     manualPending as manualPendingReducer,
@@ -70,6 +72,7 @@ const elementsSlice = createSlice({
         builder.addCase(load.pending, loadPending);
         builder.addCase(load.fulfilled, loadFulfilled);
         builder.addCase(removeExpired, removeExpiredReducer);
+        builder.addCase(invalidate, invalidateReducer);
         builder.addCase(eventUpdates.pending, eventUpdatesPending);
         builder.addCase(eventUpdates.fulfilled, eventUpdatesFulfilled);
 
