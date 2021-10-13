@@ -1,4 +1,4 @@
-import { isSupportedImage, isSupportedText, isPDF, isICS, isVideo, isFont } from '../../containers/filePreview/helpers';
+import { isImage, isSupportedText, isPDF, isICS, isVideo, isFont } from '../../containers/filePreview/helpers';
 import { IconProps } from '../icon/Icon';
 import MimeIcon from '../icon/MimeIcon';
 
@@ -27,7 +27,7 @@ const iconsMap: { [mimeType: string]: { name: string } } = {
 const getIconName = (mimeType: string) => {
     let name = 'unknown';
 
-    if (isSupportedImage(mimeType)) {
+    if (isImage(mimeType)) {
         name = 'image';
     } else if (mimeType === 'text/xml') {
         // Exception for XML to use it's own icon and not fallback as text
