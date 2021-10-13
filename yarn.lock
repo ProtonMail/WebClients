@@ -3642,6 +3642,7 @@ __metadata:
     card-validator: ^6.1.0
     codemirror: ^5.46.0
     date-fns: ^2.0.0
+    dompurify: ^2.3.3
     eslint: ^7.9.0
     execa: ^1.0.0
     intersection-observer: ^0.5.1
@@ -3841,7 +3842,7 @@ __metadata:
     "@types/webpack-env": ^1.16.2
     bip39: "github:ProtonMail/bip39#semver:^1.0.2"
     date-fns: ^2.2.1
-    dompurify: ^2.0.7
+    dompurify: ^2.3.3
     eslint: ^7.3.1
     file-saver: ^2.0.2
     hi-base32: ^0.5.0
@@ -12988,10 +12989,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dompurify@npm:^2.0.7":
-  version: 2.2.9
-  resolution: "dompurify@npm:2.2.9"
-  checksum: a7a8332ac7984c772176523fb239364873e70c3df62c9c16427851caaece04ee888d165cf89c8f25a94f59a9cf812e0a3f6dee5f4127d3ca593381d1bc74e53a
+"dompurify@npm:^2.3.3":
+  version: 2.3.3
+  resolution: "dompurify@npm:2.3.3"
+  checksum: 947e3661681bd183aae1cd08f991b14c6aa41fd188f6c801c5e916c2dc4575bbefbaa121ed06dbe0cb0f595545527d588a44b53bfc35d1cbb898c214dc0d7930
   languageName: node
   linkType: hard
 
@@ -24105,7 +24106,7 @@ fsevents@^1.2.7:
     babel-plugin-transform-require-context: ^0.1.1
     cross-env: ^7.0.3
     date-fns: ^2.5.0
-    dompurify: ^2.0.7
+    dompurify: ^2.3.3
     eslint: ^7.3.1
     interval-tree: "github:ProtonMail/interval-tree#semver:^1.0.0"
     jest: ^27.0.0
@@ -24194,7 +24195,7 @@ fsevents@^1.2.7:
     cross-env: ^7.0.3
     date-fns: ^2.4.1
     declassify: ^2.1.0
-    dompurify: ^2.0.7
+    dompurify: ^2.3.3
     eslint: ^7.3.1
     eslint-config-airbnb-typescript: ^7.2.1
     eslint-config-prettier: ^6.11.0
