@@ -15,7 +15,7 @@ import {
 } from '@proton/components';
 import { MnemonicPromptModal } from '@proton/components/containers/mnemonic';
 import { diff } from '@proton/shared/lib/helpers/array';
-import { getChecklist } from '@proton/shared/lib/api/checklist';
+import { getChecklist, seenCompletedChecklist } from '@proton/shared/lib/api/checklist';
 import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
 import gift from '@proton/styles/assets/img/get-started/gift.svg';
 
@@ -32,6 +32,47 @@ export enum ChecklistKey {
     RecoveryMethod = 'RecoveryMethod',
     Import = 'Import',
 }
+
+/*
+ * This component is separated out so that a "seen" request can be sent
+ * at the moment that it mounts. This wouldn't be possible if it was part
+ * of the larger checklist component as it is only rendered conditionally,
+ * mainly when the checklist is complete.
+ */
+const GetStartedChecklistComplete = ({ userIsFreeOrMailOnly }: { userIsFreeOrMailOnly: boolean }) => {
+    const api = useApi();
+
+    const protonMailAppName = getAppName(APPS.PROTONMAIL);
+
+    useEffect(() => {
+        api({ ...seenCompletedChecklist('get-started'), silence: true });
+    }, []);
+
+    return (
+        <div className="p1 text-center">
+            <img className="mb1-5 mt1-5" src={gift} width={48} />
+            <p className="h3 mb0 text-bold">{c('Get started checklist completion').t`You're a privacy champ!`}</p>
+            <p className="color-weak mt0-5 mb1-5">
+                <span className="get-started_completion-text">
+                    {!userIsFreeOrMailOnly
+                        ? c('Get started checklist completion')
+                              .t`We've added 1 GB of bonus storage to your account. For even more storage and premium features, upgrade your plan.`
+                        : c('Get started checklist completion')
+                              .t`We've added 1 GB of bonus storage to your account. Continue to explore ${BRAND_NAME} and share your ${protonMailAppName} address with your family, friends, and colleagues.`}
+                </span>
+            </p>
+            <ButtonLike
+                className="inline-flex flex-align-items-center"
+                shape="outline"
+                as={SettingsLink}
+                app={APPS.PROTONMAIL}
+                path="/"
+            >
+                {c('Action').t`Upgrade now`}
+            </ButtonLike>
+        </div>
+    );
+};
 
 interface GetStartedChecklistProps {
     hideDismissButton?: boolean;
@@ -66,33 +107,8 @@ const GetStartedChecklist = ({ hideDismissButton, onDismiss }: GetStartedCheckli
 
     if (allChecklistItemsComplete) {
         const { hasPaidMail, hasPaidVpn, isFree } = user;
-        const userIsFreeOrMailOnly = isFree || (hasPaidMail && !hasPaidVpn);
-        const protonMailAppName = getAppName(APPS.PROTONMAIL);
 
-        return (
-            <div className="p1 text-center">
-                <img className="mb1-5 mt1-5" src={gift} width={48} />
-                <p className="h3 mb0 text-bold">{c('Get started checklist completion').t`You're a privacy champ!`}</p>
-                <p className="color-weak mt0-5 mb1-5">
-                    <span className="get-started_completion-text">
-                        {!userIsFreeOrMailOnly
-                            ? c('Get started checklist completion')
-                                  .t`We've added 1 GB of bonus storage to your account. For even more storage and premium features, upgrade your plan.`
-                            : c('Get started checklist completion')
-                                  .t`We've added 1 GB of bonus storage to your account. Continue to explore ${BRAND_NAME} and share your ${protonMailAppName} address with your family, friends, and colleagues.`}
-                    </span>
-                </p>
-                <ButtonLike
-                    className="inline-flex flex-align-items-center"
-                    shape="outline"
-                    as={SettingsLink}
-                    app={APPS.PROTONMAIL}
-                    path="/"
-                >
-                    {c('Action').t`Upgrade now`}
-                </ButtonLike>
-            </div>
-        );
+        return <GetStartedChecklistComplete userIsFreeOrMailOnly={isFree || (hasPaidMail && !hasPaidVpn)} />;
     }
 
     const checklistItems = [
