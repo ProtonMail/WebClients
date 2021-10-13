@@ -132,7 +132,13 @@ const ContactModalProperties = (
                         <Icon name="align-justify visibility-hidden" />
                     </div>
                     <div className="flex flex-nowrap w95">
-                        <Button color="norm" shape="outline" className="mb1" onClick={onAdd}>
+                        <Button
+                            color="norm"
+                            shape="outline"
+                            className="mb1"
+                            onClick={onAdd}
+                            data-testid={field ? `add-${field}` : 'add-other'}
+                        >
                             {c('Action').t`Add`}
                         </Button>
                     </div>
