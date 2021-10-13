@@ -22,7 +22,7 @@ interface Props {
 }
 
 const LocationFieldDropdown = ({ value, onChange }: Props) => {
-    const { grouped: optionGroups, isLabel, isCustomFolder } = useLocationFieldOptions();
+    const { grouped: optionGroups, isLabel, isCustomFolder, isDefaultFolder } = useLocationFieldOptions();
     const [search, setSearch] = useState('');
     const [options, setOptions] = useState(optionGroups);
 
@@ -90,7 +90,7 @@ const LocationFieldDropdown = ({ value, onChange }: Props) => {
                                     <span className="button text-bold pl1">{group.title}</span>
                                     {group.items.map((item) => (
                                         <DropdownMenuButton
-                                            className="text-left pl2 text-ellipsis"
+                                            className="text-left text-ellipsis"
                                             isSelected={item.value === value}
                                             key={item.value}
                                             onClick={() => onChange(item.value)}
@@ -108,6 +108,9 @@ const LocationFieldDropdown = ({ value, onChange }: Props) => {
                                                         color={item.color}
                                                         className="flex-item-noshrink mr0-5"
                                                     />
+                                                )}
+                                                {isDefaultFolder(item) && (
+                                                    <Icon name={item.icon} className="flex-item-noshrink mr0-5" />
                                                 )}
                                                 {isCustomFolder(item) && (
                                                     <FolderIcon folder={item.folderEntity} className="mr0-5" />
