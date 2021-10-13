@@ -1,5 +1,7 @@
 import { createSelector } from 'reselect';
 import { LabelCount } from '@proton/shared/lib/interfaces';
+import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
+import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import {
     PAGE_SIZE,
     MAX_ELEMENT_LIST_LOAD_RETRIES,
@@ -58,7 +60,9 @@ export const elements = createSelector(
     }
 );
 
-export const elementIDs = createSelector(elements, (elements) => elements.map((element) => element.ID));
+export const elementIDs = createSelector(elements, (elements): string[] =>
+    elements.map((element) => element.ID).filter(isTruthy)
+);
 
 export const elementsLength = createSelector(elements, (elements) => elements.length);
 
@@ -83,7 +87,7 @@ export const paramsChanged = createSelector(
         currentParams.labelID !== params.labelID ||
         currentParams.sort !== params.sort ||
         currentParams.filter !== params.filter ||
-        currentParams.search !== params.search ||
+        isDeepEqual(currentParams.search, params.search) ||
         (currentParams.esEnabled !== params.esEnabled && isSearch(currentParams.search))
 );
 

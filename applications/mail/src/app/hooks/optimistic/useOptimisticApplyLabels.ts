@@ -5,8 +5,9 @@ import { MessageCountsModel, ConversationCountsModel } from '@proton/shared/lib/
 import { LabelCount } from '@proton/shared/lib/interfaces/Label';
 import { STATUS } from '@proton/shared/lib/models/cache';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { useDispatch } from 'react-redux';
 import { useMessageCache, getLocalID } from '../../containers/MessageProvider';
-import { useGetElementsCache, useSetElementsCache } from '../mailbox/useElementsCache';
+import { useGetElementByID } from '../mailbox/useElements';
 import { Conversation } from '../../models/conversation';
 import { Element } from '../../models/element';
 import { useConversationCache, useUpdateConversationCache } from '../../containers/ConversationProvider';
@@ -19,6 +20,7 @@ import {
     applyLabelChangesOnOneMessageOfAConversation,
 } from '../../helpers/labels';
 import { CacheEntry } from '../../models/tools';
+import { optimisticApplyLabels as optimisticApplyLabelsAction } from '../../logic/elements/elementsActions';
 
 const { SENT, DRAFTS } = MAILBOX_LABEL_IDS;
 
@@ -38,8 +40,8 @@ const computeRollbackLabelChanges = (element: Element, changes: LabelChanges) =>
 };
 
 export const useOptimisticApplyLabels = () => {
-    const getElementsCache = useGetElementsCache();
-    const setElementsCache = useSetElementsCache();
+    const dispatch = useDispatch();
+    const getElementByID = useGetElementByID();
     const messageCache = useMessageCache();
     const conversationCache = useConversationCache();
     const [folders = []] = useFolders();
@@ -63,9 +65,8 @@ export const useOptimisticApplyLabels = () => {
             unreadStatuses?: { id: string; unread: number }[],
             currentLabelID?: string
         ) => {
-            const elementsCache = getElementsCache();
             const rollbackChanges = [] as { element: Element; changes: LabelChanges }[];
-            const updatedElements = {} as { [elementID: string]: Element };
+            const updatedElements = [] as Element[];
             const elementsUnreadStatuses = [] as { id: string; unread: number }[];
             const isMessage = testIsMessage(elements[0]);
             let { value: messageCounters } = globalCache.get(MessageCountsModel.key) as CacheEntry<LabelCount[]>;
@@ -146,25 +147,21 @@ export const useOptimisticApplyLabels = () => {
                     }
 
                     // Updates in elements cache if message mode
-                    const messageElement = elementsCache.elements[message.ID] as Message | undefined;
-                    if (messageElement) {
-                        updatedElements[messageElement.ID] = applyLabelChangesOnMessage(
-                            messageElement,
-                            changes,
-                            unreadStatuses
+                    const messageElement = getElementByID(message.ID);
+                    if (messageElement && messageElement.ID) {
+                        updatedElements.push(
+                            applyLabelChangesOnMessage(messageElement as Message, changes, unreadStatuses)
                         );
                     }
 
                     // Update in elements cache if conversation mode
-                    const conversationElement = elementsCache.elements[message.ConversationID] as
-                        | Conversation
-                        | undefined;
+                    const conversationElement = getElementByID(message.ConversationID);
                     if (conversationElement && conversationElement.ID) {
                         const { updatedConversation } = applyLabelChangesOnOneMessageOfAConversation(
                             conversationElement,
                             changes
                         );
-                        updatedElements[conversationElement.ID] = updatedConversation;
+                        updatedElements.push(updatedConversation);
                     }
 
                     // Update message and conversation counters
@@ -187,12 +184,10 @@ export const useOptimisticApplyLabels = () => {
                     }
 
                     // Update in elements cache if conversation mode
-                    const conversationElement = elementsCache.elements[conversation.ID] as Conversation | undefined;
+                    const conversationElement = getElementByID(conversation.ID);
                     if (conversationElement && conversationElement.ID) {
-                        updatedElements[conversationElement.ID] = applyLabelChangesOnConversation(
-                            conversationElement,
-                            changes,
-                            unreadStatuses
+                        updatedElements.push(
+                            applyLabelChangesOnConversation(conversationElement, changes, unreadStatuses)
                         );
                     }
 
@@ -216,14 +211,8 @@ export const useOptimisticApplyLabels = () => {
                 }
             });
 
-            if (Object.keys(updatedElements).length) {
-                setElementsCache({
-                    ...elementsCache,
-                    elements: { ...elementsCache.elements, ...updatedElements },
-                    bypassFilter: isMove
-                        ? elementsCache.bypassFilter.filter((elementID) => !updatedElements[elementID])
-                        : elementsCache.bypassFilter,
-                });
+            if (updatedElements.length) {
+                dispatch(optimisticApplyLabelsAction({ elements: updatedElements, isMove }));
             }
 
             globalCache.set(MessageCountsModel.key, { value: messageCounters, status: STATUS.RESOLVED });

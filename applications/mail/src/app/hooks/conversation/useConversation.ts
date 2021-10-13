@@ -6,7 +6,7 @@ import {
     useConversationCache,
     useUpdateConversationCache,
 } from '../../containers/ConversationProvider';
-import { useGetElementsFromIDs } from '../mailbox/useElementsCache';
+import { useGetElementsFromIDs } from '../mailbox/useElements';
 import { LoadConversation, useLoadConversation } from './useLoadConversation';
 import { LOAD_RETRY_COUNT, LOAD_RETRY_DELAY } from '../../constants';
 import { hasError, hasErrorType } from '../../helpers/errors';

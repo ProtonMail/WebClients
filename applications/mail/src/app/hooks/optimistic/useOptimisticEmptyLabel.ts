@@ -1,19 +1,21 @@
 import { useHandler, useCache } from '@proton/components';
 import { MessageCountsModel, ConversationCountsModel } from '@proton/shared/lib/models';
 import { LabelCount } from '@proton/shared/lib/interfaces/Label';
+import { useStore, useDispatch } from 'react-redux';
 import { useMessageCache } from '../../containers/MessageProvider';
-import { useGetElementsCache, useSetElementsCache } from '../mailbox/useElementsCache';
 import { MessageExtended } from '../../models/message';
 import { useConversationCache, useUpdateConversationCache } from '../../containers/ConversationProvider';
 import { hasLabel } from '../../helpers/elements';
 import { replaceCounter } from '../../helpers/counter';
 import { CacheEntry } from '../../models/tools';
 import { ConversationCacheEntry } from '../../models/conversation';
+import { optimisticEmptyLabel, optimisticRestoreEmptyLabel } from '../../logic/elements/elementsActions';
+import { RootState } from '../../logic/store';
 
 export const useOptimisticEmptyLabel = () => {
+    const store = useStore<RootState>();
+    const dispatch = useDispatch();
     const globalCache = useCache();
-    const getElementsCache = useGetElementsCache();
-    const setElementsCache = useSetElementsCache();
     const messageCache = useMessageCache();
     const conversationCache = useConversationCache();
     const updateConversationCache = useUpdateConversationCache();
@@ -50,12 +52,14 @@ export const useOptimisticEmptyLabel = () => {
         });
 
         // Elements cache
-        const rollbackElements = getElementsCache();
-        setElementsCache({
-            ...rollbackElements,
-            elements: {},
-            page: 0,
-        });
+        // const rollbackElements = getElementsCache();
+        // setElementsCache({
+        //     ...rollbackElements,
+        //     elements: {},
+        //     page: 0,
+        // });
+        const rollbackElements = Object.values(store.getState().elements.elements);
+        dispatch(optimisticEmptyLabel());
 
         // Message counters
         const messageCounters = globalCache.get(MessageCountsModel.key) as CacheEntry<LabelCount[]>;
@@ -84,7 +88,8 @@ export const useOptimisticEmptyLabel = () => {
             rollbackConversations.forEach((conversation) => {
                 conversationCache.set(conversation.Conversation?.ID || '', conversation);
             });
-            setElementsCache(rollbackElements);
+            // setElementsCache(rollbackElements);
+            dispatch(optimisticRestoreEmptyLabel({ elements: rollbackElements }));
             Object.entries(rollbackCounters).forEach(([key, value]) => {
                 const entry = globalCache.get(key) as CacheEntry<LabelCount[]>;
                 globalCache.set(key, {
