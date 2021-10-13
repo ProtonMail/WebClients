@@ -18,7 +18,10 @@ const TrashItemContextMenu = ({
     close,
 }: ItemContextMenuProps) => {
     const hasPreviewAvailable =
-        selectedItems.length === 1 && item.Type === LinkType.FILE && item.MIMEType && isPreviewAvailable(item.MIMEType);
+        selectedItems.length === 1 &&
+        item.Type === LinkType.FILE &&
+        item.MIMEType &&
+        isPreviewAvailable(item.MIMEType, item.Size);
     const hasDownloadAvailable = !selectedItems.some((item) => item.Type === LinkType.FOLDER);
 
     useEffect(() => {
