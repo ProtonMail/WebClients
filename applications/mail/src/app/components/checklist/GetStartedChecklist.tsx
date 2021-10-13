@@ -28,9 +28,9 @@ import './GetStartedChecklist.scss';
 
 export enum ChecklistKey {
     SendMessage = 'SendMessage',
-    GetMobileApp = 'GetMobileApp',
-    AddARecoveryMethod = 'AddARecoveryMethod',
-    ImportContactsOrEmails = 'ImportContactsOrEmails',
+    MobileApp = 'MobileApp',
+    RecoveryMethod = 'RecoveryMethod',
+    Import = 'Import',
 }
 
 interface GetStartedChecklistProps {
@@ -105,7 +105,7 @@ const GetStartedChecklist = ({ hideDismissButton, onDismiss }: GetStartedCheckli
             },
         },
         {
-            key: ChecklistKey.GetMobileApp,
+            key: ChecklistKey.MobileApp,
             text: c('Get started checklist item').t`Get mobile app`,
             icon: 'mobile',
             onClick: () => {
@@ -113,7 +113,7 @@ const GetStartedChecklist = ({ hideDismissButton, onDismiss }: GetStartedCheckli
             },
         },
         {
-            key: ChecklistKey.AddARecoveryMethod,
+            key: ChecklistKey.RecoveryMethod,
             text: c('Get started checklist item').t`Activate your recovery phrase`,
             icon: 'lock',
             onClick: () => {
@@ -121,7 +121,7 @@ const GetStartedChecklist = ({ hideDismissButton, onDismiss }: GetStartedCheckli
             },
         },
         {
-            key: ChecklistKey.ImportContactsOrEmails,
+            key: ChecklistKey.Import,
             text: c('Get started checklist item').t`Import contacts or emails`,
             icon: 'arrow-down-to-screen',
             onClick: () => {
