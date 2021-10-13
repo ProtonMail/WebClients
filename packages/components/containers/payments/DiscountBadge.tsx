@@ -48,9 +48,10 @@ const DiscountBadge = ({ code }: Props) => {
         return (
             <Badge
                 type="success"
-                tooltip={c('Info').t`${vpnAppName} Plus Special Offer 2021 discount has been applied`}
+                tooltip={c('blackfriday: VPNspecialoffer Badge popup')
+                    .t`${vpnAppName} Plus Special Offer 2021 discount has been applied`}
             >
-                {c('blackfriday Promo title, need to be short').t`Special offer`}
+                {c('blackfriday: VPNspecialoffer Promo title, need to be short').t`Special offer`}
             </Badge>
         );
     }
