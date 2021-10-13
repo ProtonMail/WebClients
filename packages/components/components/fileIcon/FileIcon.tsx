@@ -20,7 +20,8 @@ const iconsMap: { [mimeType: string]: { name: string } } = {
     'application/vnd.openxmlformats-officedocument.wordprocessingml.document': {
         name: 'doc',
     },
-    'application/vnd.ms-powerpoint': { name: 'ppt' },
+
+    'application/vnd.ms-powerpoint': { name: 'ppt' }, // .ppt/.pps
     'application/vnd.openxmlformats-officedocument.presentationml.presentation': {
         name: 'ppt',
     },
