@@ -2,6 +2,7 @@ import { PLAN_SERVICES, PLAN_TYPES, ADDON_NAMES } from '@proton/shared/lib/const
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { getUnixTime } from 'date-fns';
 import { hasVpnBasic } from '@proton/shared/lib/helpers/subscription';
+import { Cycle, LatestSubscription, Plan, Subscription } from '@proton/shared/lib/interfaces';
 
 const { PLAN, ADDON } = PLAN_TYPES;
 const { MAIL, VPN } = PLAN_SERVICES;
@@ -9,22 +10,30 @@ const OCTOBER_01 = getUnixTime(new Date(Date.UTC(2021, 9, 1)));
 
 /**
  * Calculate total for a specific subscription configuration
- * @type any
  */
-export const getSubTotal = ({ plansMap, cycle, plans, services }) => {
-    return Object.entries(plansMap).reduce((acc, [planName, quantity]) => {
-        if (quantity) {
-            const { Pricing = {} } =
-                plans.find(({ Name, Services }) => {
-                    if (services) {
-                        return Name === planName && hasBit(Services, services);
-                    }
-                    return Name === planName;
-                }) || {};
-            const amount = Pricing[cycle] || 0;
-            return acc + quantity * amount;
+export const getSubTotal = ({
+    plansMap,
+    cycle,
+    plans,
+    services,
+}: {
+    plansMap: { [key: string]: number };
+    cycle: Cycle;
+    plans: Plan[];
+    services?: PLAN_SERVICES;
+}) => {
+    return Object.entries(plansMap).reduce<number>((acc, [planName, quantity]) => {
+        if (!quantity) {
+            return acc;
         }
-        return acc;
+        const plan = plans.find(({ Name, Services }) => {
+            if (services) {
+                return Name === planName && hasBit(Services, services);
+            }
+            return Name === planName;
+        });
+        const amount = plan?.Pricing?.[cycle] || 0;
+        return acc + quantity * amount;
     }, 0);
 };
 
@@ -33,7 +42,7 @@ export const getSubTotal = ({ plansMap, cycle, plans, services }) => {
  */
 const mergeAddons = (
     { Quantity = 0, Amount = 0, MaxDomains = 0, MaxAddresses = 0, MaxSpace = 0, MaxMembers = 0, MaxVPN = 0 } = {},
-    addon
+    addon: Plan
 ) => ({
     ...addon,
     MaxAddresses: MaxAddresses + addon.MaxAddresses,
@@ -48,8 +57,18 @@ const mergeAddons = (
 /**
  * Format plans to returns essential structure
  */
-export const formatPlans = (plans = []) => {
-    return plans.reduce((acc, plan) => {
+export const formatPlans = (plans: Plan[] = []) => {
+    return plans.reduce<
+        Partial<{
+            mailPlan: Plan;
+            vpnPlan: Plan;
+            domainAddon: Plan;
+            memberAddon: Plan;
+            vpnAddon: Plan;
+            addressAddon: Plan;
+            spaceAddon: Plan;
+        }>
+    >((acc, plan) => {
         if (plan.Type === PLAN) {
             // visionary is a special case because it contains mail and vpn services
             // we consider it as a mail plan
@@ -92,7 +111,7 @@ export const formatPlans = (plans = []) => {
 /**
  * Check if the current user is eligible to Black Friday discount
  */
-export const getBlackFridayEligibility = (subscription, latestSubscription) => {
+export const getBlackFridayEligibility = (subscription: Subscription, latestSubscription?: LatestSubscription) => {
     // Anyone who had a paid plan at any point in time after Oct 2021 is not eligible
     if ((latestSubscription?.LastSubscriptionEnd ?? 0) > OCTOBER_01) {
         return false;
