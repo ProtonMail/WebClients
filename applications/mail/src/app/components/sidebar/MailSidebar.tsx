@@ -8,6 +8,7 @@ import {
     useMailSettings,
     Tooltip,
     useModals,
+    useUserSettings,
 } from '@proton/components';
 import giftSvg from '@proton/styles/assets/img/get-started/gift.svg';
 
@@ -25,6 +26,7 @@ interface Props {
 
 const MailSidebar = ({ labelID, expanded = false, onToggleExpand }: Props) => {
     const onCompose = useOnCompose();
+    const [userSettings] = useUserSettings();
     const { createModal } = useModals();
 
     const handleCompose = useCallback(() => {
@@ -64,17 +66,20 @@ const MailSidebar = ({ labelID, expanded = false, onToggleExpand }: Props) => {
             logo={<MainLogo to="/inbox" />}
             version={<SidebarVersion />}
             storageGift={
-                <Tooltip
-                    title={c('Storage').t`Get 1 GB of bonus storage for completing your "get started" action items.`}
-                >
-                    <button type="button" className="ml0-5" onClick={handleGiftClick}>
-                        <img
-                            width={16}
-                            src={giftSvg}
-                            alt={c('Storage gift icon img alt attribute').t`Bonus storage gift icon`}
-                        />
-                    </button>
-                </Tooltip>
+                userSettings.Checklists?.includes('get-started') && (
+                    <Tooltip
+                        title={c('Storage')
+                            .t`Get 1 GB of bonus storage for completing your "get started" action items.`}
+                    >
+                        <button type="button" className="ml0-5" onClick={handleGiftClick}>
+                            <img
+                                width={16}
+                                src={giftSvg}
+                                alt={c('Storage gift icon img alt attribute').t`Bonus storage gift icon`}
+                            />
+                        </button>
+                    </Tooltip>
+                )
             }
         >
             <SidebarNav>
