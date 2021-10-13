@@ -32,6 +32,9 @@ const iconsMap: { [mimeType: string]: { name: string } } = {
 
     'application/xliff+xml': { name: 'xml' },
     'application/xml': { name: 'xml' },
+    'text/html': { name: 'xml' }, // .html/.htm
+    'application/xhtml+xml': { name: 'xml' }, // .xhtml
+
     'application/pgp-keys': { name: 'keytrust' },
 
     'application/rtf': { name: 'text' },
