@@ -29,11 +29,21 @@ const ContactFieldProperty = (
         onChange({ value: target.value, uid });
 
     if (field === 'email') {
-        return <EmailInput value={value as string} placeholder={labels.email} onChange={handleChange} {...rest} />;
+        return (
+            <EmailInput
+                value={value as string}
+                placeholder={labels.email}
+                onChange={handleChange}
+                data-testid={label}
+                {...rest}
+            />
+        );
     }
 
     if (field === 'tel') {
-        return <TelInput value={value} placeholder={labels.tel} onChange={handleChange} {...rest} />;
+        return (
+            <TelInput value={value} placeholder={labels.tel} onChange={handleChange} data-testid={label} {...rest} />
+        );
     }
 
     if (field === 'adr') {
@@ -42,7 +52,9 @@ const ContactFieldProperty = (
     }
 
     if (field === 'note') {
-        return <TextArea value={value} placeholder={labels.note} onChange={handleChange} {...rest} />;
+        return (
+            <TextArea value={value} placeholder={labels.note} onChange={handleChange} data-testid={label} {...rest} />
+        );
     }
 
     if (field === 'bday' || field === 'anniversary') {
@@ -54,7 +66,9 @@ const ContactFieldProperty = (
                 }
                 onChange({ value: formatISO(value, { representation: 'date' }), uid });
             };
-            return <DateInput placeholder={label} value={date} onChange={handleSelectDate} {...rest} />;
+            return (
+                <DateInput placeholder={label} value={date} onChange={handleSelectDate} data-testid={label} {...rest} />
+            );
         }
     }
 
@@ -63,7 +77,7 @@ const ContactFieldProperty = (
             const handleSubmit = (value: string) => onChange({ uid, value });
             createModal(<ContactImageModal url={value as string} onSubmit={handleSubmit} />);
         };
-        return <ContactImageField value={value as string} onChange={handleChangeImage} {...rest} />;
+        return <ContactImageField value={value as string} onChange={handleChangeImage} data-testid={label} {...rest} />;
     }
 
     if (field === 'fn') {
@@ -74,13 +88,14 @@ const ContactFieldProperty = (
                 placeholder={label}
                 onChange={handleChange}
                 isSubmitted={isSubmitted}
+                data-testid={label}
                 required
                 {...rest}
             />
         );
     }
 
-    return <Input value={value} placeholder={label} onChange={handleChange} {...rest} />;
+    return <Input value={value} placeholder={label} onChange={handleChange} data-testid={label} {...rest} />;
 };
 
 export default forwardRef(ContactFieldProperty);
