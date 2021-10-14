@@ -161,14 +161,20 @@ const ItemRow = ({
                 )}
 
                 {columns.includes('type') && (
-                    <TableCell className="m0 w20">
+                    <TableCell className="m0 w15">
                         <DescriptiveTypeCell mimeType={item.MIMEType} linkType={item.Type} />
                     </TableCell>
                 )}
 
-                {columns.includes('modified') && (
-                    <TableCell className="m0 w25">
+                {columns.includes('uploaded') && (
+                    <TableCell className="m0 w15">
                         <TimeCell time={item.ModifyTime} />
+                    </TableCell>
+                )}
+
+                {columns.includes('modified') && (
+                    <TableCell className="m0 w15">
+                        <TimeCell time={item.RealModifyTime} />
                     </TableCell>
                 )}
 

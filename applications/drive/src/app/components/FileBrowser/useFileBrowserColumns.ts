@@ -2,7 +2,7 @@ import { useActiveBreakpoint } from '@proton/components';
 import { FileBrowserLayouts, ItemRowColumns } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 
 const COLUMNS_DESKTOP: Record<FileBrowserLayouts, ItemRowColumns[]> = {
-    drive: ['type', 'modified', 'size'],
+    drive: ['type', 'uploaded', 'modified', 'size'],
     trash: ['location', 'type', 'trashed', 'size'],
     sharing: ['location', 'share_created', 'share_num_access', 'share_expires'],
 };
