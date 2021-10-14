@@ -25,8 +25,6 @@ import gift from '@proton/styles/assets/img/get-started/gift.svg';
 import { GetStartedChecklistKey } from '@proton/shared/lib/interfaces';
 
 import { Event } from '../../models/event';
-import { MESSAGE_ACTIONS } from '../../constants';
-import { useOnCompose } from '../../containers/ComposeProvider';
 import ModalGetMobileApp from './ModalGetMobileApp';
 import ModalImportEmails from './ModalImportEmails';
 import './GetStartedChecklist.scss';
@@ -75,14 +73,19 @@ const GetStartedChecklistComplete = ({ userIsFreeOrMailOnly }: { userIsFreeOrMai
 interface GetStartedChecklistProps {
     hideDismissButton?: boolean;
     limitedMaxWidth?: boolean;
+    onSendMessage: () => void;
     onDismiss?: () => void;
 }
 
-const GetStartedChecklist = ({ hideDismissButton, limitedMaxWidth, onDismiss }: GetStartedChecklistProps) => {
+const GetStartedChecklist = ({
+    hideDismissButton,
+    limitedMaxWidth,
+    onDismiss,
+    onSendMessage,
+}: GetStartedChecklistProps) => {
     const [checklist, setChecklist] = useState<GetStartedChecklistKey[]>([]);
     const api = useApi();
     const [user] = useUser();
-    const onCompose = useOnCompose();
     const { subscribe } = useEventManager();
     const { createModal } = useModals();
     const [loading, withLoading] = useLoading();
@@ -102,7 +105,7 @@ const GetStartedChecklist = ({ hideDismissButton, limitedMaxWidth, onDismiss }: 
             text: c('Get started checklist item').t`Send a message`,
             icon: 'paper-plane',
             onClick: () => {
-                onCompose({ action: MESSAGE_ACTIONS.NEW });
+                onSendMessage();
             },
         },
         {
