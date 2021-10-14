@@ -93,13 +93,17 @@ export function parseExtendedAttributes(xattrString: string) {
 }
 
 function parseModificationTime(xattr: any): number | undefined {
-    const modificationTime = new Date(xattr?.Common?.ModificationTime);
+    const modificationTime = xattr?.Common?.ModificationTime;
+    if (modificationTime === undefined) {
+        return undefined;
+    }
+    const modificationDate = new Date(modificationTime);
     // This is the best way to check if date is "Invalid Date". :shrug:
-    if (JSON.stringify(modificationTime) === 'null') {
+    if (JSON.stringify(modificationDate) === 'null') {
         console.warn(`XAttr modification time "${modificationTime}" is not valid`);
         return undefined;
     }
-    const modificationTimestamp = Math.trunc(modificationTime.getTime() / 1000);
+    const modificationTimestamp = Math.trunc(modificationDate.getTime() / 1000);
     if (Number.isNaN(modificationTimestamp)) {
         console.warn(`XAttr modification time "${modificationTime}" is not valid`);
         return undefined;
@@ -109,6 +113,9 @@ function parseModificationTime(xattr: any): number | undefined {
 
 function parseSize(xattr: any): number | undefined {
     const size = xattr?.Common?.Size;
+    if (size === undefined) {
+        return undefined;
+    }
     if (typeof size !== 'number') {
         console.warn(`XAttr file size "${size}" is not valid`);
         return undefined;
@@ -118,6 +125,9 @@ function parseSize(xattr: any): number | undefined {
 
 function parseBlockSizes(xattr: any): number[] | undefined {
     const blockSizes = xattr?.Common?.BlockSizes;
+    if (blockSizes === undefined) {
+        return undefined;
+    }
     if (!Array.isArray(blockSizes)) {
         console.warn(`XAttr block sizes "${blockSizes}" is not valid`);
         return undefined;
