@@ -53,7 +53,7 @@ const GetStartedChecklistComplete = ({ userIsFreeOrMailOnly }: { userIsFreeOrMai
             <img className="mb1-5 mt1-5" src={gift} width={48} />
             <p className="h3 mb0 text-bold">{c('Get started checklist completion').t`You're a privacy champ!`}</p>
             <p className="color-weak mt0-5 mb1-5">
-                <span className="get-started_completion-text">
+                <span className="get-started_completion-text inline-block">
                     {!userIsFreeOrMailOnly
                         ? c('Get started checklist completion')
                               .t`We've added 1 GB of bonus storage to your account. For even more storage and premium features, upgrade your plan.`
@@ -105,7 +105,7 @@ const GetStartedChecklist = ({ hideDismissButton, onDismiss }: GetStartedCheckli
         );
     }
 
-    if (allChecklistItemsComplete) {
+    if (!allChecklistItemsComplete) {
         const { hasPaidMail, hasPaidVpn, isFree } = user;
 
         return <GetStartedChecklistComplete userIsFreeOrMailOnly={isFree || (hasPaidMail && !hasPaidVpn)} />;
@@ -159,35 +159,43 @@ const GetStartedChecklist = ({ hideDismissButton, onDismiss }: GetStartedCheckli
 
     return (
         <div className="p1">
-            <div className="flex flex-align-items-center">
-                <div className="flex-item-fluid">
-                    <div className="flex">
-                        <span className="mr1">
-                            <img src={gift} />
-                        </span>
-                        <span className="flex-item-fluid text-bold">
-                            {
-                                /*
-                                 * translator: BRAND_NAME refers to the name of our brand
-                                 * e.g. "Get started with Proton"
-                                 */
-                                c('Get started checklist title').t`Get started with ${BRAND_NAME}`
-                            }
-                        </span>
-                        <span className="flex-justify-end">
-                            {c('Amount of completed get started checklist items')
-                                .t`${numberOfCompletedItems} of ${totalNumberOfChecklistItems} complete`}
-                        </span>
-                    </div>
-                    <Progress value={numberOfCompletedItems} max={totalNumberOfChecklistItems} />
-                </div>
+            <div className="flex flex-align-items-center flex-justify-space-between">
+                <span className="flex flex-align-items-center w80">
+                    <span className="mr1">
+                        {/*
+                         * if we don't put an empty alt attribute here, some vocalizers
+                         * will vocalize the src attribute
+                         */}
+                        <img src={gift} alt="" />
+                    </span>
+                    <span className="flex-item-fluid text-bold">
+                        {
+                            /*
+                             * translator: BRAND_NAME refers to the name of our brand
+                             * e.g. "Get started with Proton"
+                             */
+                            c('Get started checklist title').t`Get started with ${BRAND_NAME}`
+                        }
+                    </span>
+                    <span className="flex-justify-end">
+                        {c('Amount of completed get started checklist items')
+                            .t`${numberOfCompletedItems} of ${totalNumberOfChecklistItems} complete`}
+                    </span>
+                </span>
                 {!hideDismissButton && (
                     <div className="pl1">
                         <Button icon shape="ghost" onClick={onDismiss}>
-                            <Icon name="xmark" size={12} />
+                            <Icon name="xmark" size={12} alt={c('Action').t`Dismiss get started checklist`} />
                         </Button>
                     </div>
                 )}
+            </div>
+            <div className="w80">
+                <Progress
+                    className="progress-bar--success"
+                    value={numberOfCompletedItems}
+                    max={totalNumberOfChecklistItems}
+                />
             </div>
 
             <div>
