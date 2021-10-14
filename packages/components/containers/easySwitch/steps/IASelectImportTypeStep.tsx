@@ -156,8 +156,8 @@ const IASelectImportTypeStep = ({
     const errorBox = (
         <div className="rounded-bigger p1 mt1 bg-danger color-white text-semibold no-border">
             {c('Error').ngettext(
-                msgid`Please fix the highlighted conflicts to proceed.`,
-                `Please fix the highlighted conflict to proceed.`,
+                msgid`Please fix the highlighted conflict to proceed.`,
+                `Please fix the highlighted conflicts to proceed.`,
                 payloadErrors.length
             )}
         </div>
@@ -176,14 +176,18 @@ const IASelectImportTypeStep = ({
         const getPeriodFragment = () => {
             switch (selectedPeriod) {
                 case TIME_PERIOD.LAST_3_MONTHS:
-                    return 'the last 3 months';
+                    // translator: This fragment is to be used in a sentence, here is an example of a complete sentence: "Import all messages from 1 out of 5 labels since the last 3 months and label them as ..." followed by the label HTML element
+                    return c('Time period').t`the last 3 months`;
                 case TIME_PERIOD.LAST_MONTH:
-                    return 'the last month';
+                    // translator: This fragment is to be used in a sentence, here is an example of a complete sentence: "Import all messages from 4 labels since the last month and label them as ..." followed by the label HTML element
+                    return c('Time period').t`the last month`;
                 case TIME_PERIOD.LAST_YEAR:
-                    return 'the last 12 months';
+                    // translator: This fragment is to be used in a sentence, here is an example of a complete sentence: "Import all messages from 2 out of 4 labels since the last 12 months and label them as ..." followed by the label HTML element
+                    return c('Time period').t`the last 12 months`;
                 case TIME_PERIOD.BIG_BANG:
                 default:
-                    return 'account creation date';
+                    // translator: This fragment is to be used in a sentence, here is an example of a complete sentence: "Import all messages from 13 out of 15 labels since account creation date and label them as ..." followed by the label HTML element
+                    return c('Time period').t`account creation date`;
             }
         };
 
@@ -192,6 +196,7 @@ const IASelectImportTypeStep = ({
 
         const periodFragment = getPeriodFragment();
 
+        // translator: This fragment is to be used in a sentence, here is an example of a complete sentence: "Import all messages from 13 out of 15 labels since account creation date and label them as ..." followed by the label HTML element
         const messagesFragment =
             totalLabelsCount === selectedLabelsCount
                 ? `Import all messages from ${totalLabelsCount} labels`
@@ -209,6 +214,7 @@ const IASelectImportTypeStep = ({
             />
         );
 
+        // translator: here is an example of a complete sentence: "Import all messages from 3 out of 5 labels since the last month and label them as ..." followed by the label HTML element
         return c('Mail import summary').jt`${messagesFragment} since ${periodFragment} and label them as ${label}`;
     };
 
