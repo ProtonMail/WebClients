@@ -7,7 +7,7 @@ import {
     getDecryptedAddressKeysHelper,
 } from '../../lib/keys';
 import { KeyReactivationData, KeyReactivationRecord } from '../../lib/keys/reactivation/interface';
-import { getAddressKey, getLegacyAddressKey, getUserKey } from './keyDataHelper';
+import { getAddressKey, getAddressKeyHelper, getLegacyAddressKey, getUserKey } from './keyDataHelper';
 
 const DEFAULT_KEYPASSWORD = '1';
 
@@ -206,6 +206,55 @@ const getSetup2 = async () => {
     };
 };
 
+const getSetup3 = async () => {
+    const keyPassword = DEFAULT_KEYPASSWORD;
+    const oldKeyPassword = '2';
+    const userKeysFull = await Promise.all([getUserKey('1', keyPassword), getUserKey('2', oldKeyPassword)]);
+    const UserKeys = userKeysFull.map(({ Key }) => Key);
+    const User = {
+        Keys: UserKeys,
+    } as unknown as tsUser;
+    const address1 = 'test@test.com';
+    const userKeys = await getDecryptedUserKeysHelper(User, keyPassword);
+    const addressKeys1Full = await Promise.all([
+        getAddressKey('a', userKeysFull[0].key.privateKey, address1),
+        getAddressKeyHelper('b', userKeysFull[1].key.privateKey, userKeysFull[1].key.privateKey),
+    ]);
+    const AddressKeys1 = addressKeys1Full.map(({ Key }) => Key);
+    const Addresses = [
+        {
+            ID: 'my-address-1',
+            Email: address1,
+            Keys: AddressKeys1,
+        },
+    ] as unknown as tsAddress[];
+    const keyReactivationRecords = await getKeyActivationRecords(
+        [
+            {
+                user: User,
+                keysToReactivate: [{ ...userKeysFull[1], uploadedKey: true }],
+            },
+            {
+                address: Addresses[0],
+                keysToReactivate: [{ ...addressKeys1Full[1], uploadedKey: true }],
+            },
+        ],
+        userKeys,
+        keyPassword,
+        User
+    );
+
+    return {
+        keyPassword,
+        oldKeyPassword,
+        User,
+        Addresses,
+        userKeys,
+        expectedAddressKeysReactivated: [addressKeys1Full[1].key.privateKey],
+        keyReactivationRecords,
+    };
+};
+
 describe('reactivate keys', () => {
     it('reactivate user keys and the connected address keys', async () => {
         const { keyPassword, keyReactivationRecords, User, Addresses, userKeys, expectedAddressKeysReactivated } =
@@ -318,6 +367,45 @@ describe('reactivate keys', () => {
                     Signature: jasmine.any(String),
                 },
             },
+        });
+    });
+
+    it('reactivate user keys and the connected address keys', async () => {
+        const { keyPassword, keyReactivationRecords, User, Addresses, userKeys, expectedAddressKeysReactivated } =
+            await getSetup3();
+        const onReactivation = jasmine.createSpy('on reactivation');
+        const api = jasmine.createSpy('api').and.callFake(() => Promise.resolve());
+        await reactivateKeysProcess({
+            api,
+            user: User,
+            userKeys,
+            addresses: Addresses,
+            keyReactivationRecords,
+            keyPassword,
+            onReactivation,
+        });
+
+        expect(onReactivation.calls.count()).toEqual(2);
+        expect(onReactivation.calls.allArgs()).toEqual([
+            ['2', 'ok'],
+            ['b', 'ok'],
+        ]);
+
+        expect(api.calls.count()).toEqual(1);
+
+        expect(api.calls.argsFor(0)[0]).toEqual({
+            url: 'keys/user/2',
+            method: 'put',
+            data: jasmine.objectContaining({
+                PrivateKey: jasmine.any(String),
+                AddressKeyFingerprints: expectedAddressKeysReactivated.map((x) => x.getFingerprint()),
+                SignedKeyLists: {
+                    [Addresses[0].ID]: {
+                        Data: jasmine.any(String),
+                        Signature: jasmine.any(String),
+                    },
+                },
+            }),
         });
     });
 });
