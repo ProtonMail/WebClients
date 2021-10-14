@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom';
 import { Button, Icon, Label } from '@proton/components';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
-import useLocationFieldOptions from './useLocationFieldOptions';
+import { useLocationFieldOptions } from './useLocationFieldOptions';
 import LocationFieldDropdown from './LocationFieldDropdown';
 
 interface Props {
@@ -16,19 +16,19 @@ const { INBOX, ALL_MAIL, SENT, DRAFTS, ALL_SENT, ALL_DRAFTS } = MAILBOX_LABEL_ID
 const LOCATION_FIELD_MAIN_OPTIONS: string[] = [ALL_MAIL, INBOX, DRAFTS, SENT, ALL_SENT, ALL_DRAFTS];
 
 const LocationField = ({ value, onChange }: Props) => {
-    const { all: options } = useLocationFieldOptions();
+    const { all: options, isDefaultFolder } = useLocationFieldOptions();
     const history = useHistory();
     const firstOptions = options.filter(({ value }) => LOCATION_FIELD_MAIN_OPTIONS.includes(value));
-    const { getTextFromValue } = useLocationFieldOptions();
+    const { findItemByValue } = useLocationFieldOptions();
 
     const isCustomValue =
         value !== undefined && LOCATION_FIELD_MAIN_OPTIONS.every((optionValue) => optionValue !== value);
-    const customValueText = isCustomValue ? getTextFromValue(value)?.text : undefined;
+    const customValueText = isCustomValue ? findItemByValue(value)?.text : undefined;
     const showCustomValue = isCustomValue === true && customValueText !== undefined;
 
     useEffect(() => {
         const selectedValueFromUrl = options.reduce((acc, option) => {
-            if (option.url && history.location.pathname.includes(option.url)) {
+            if (isDefaultFolder(option) && history.location.pathname.includes(option.url)) {
                 return option.value;
             }
             return acc;
