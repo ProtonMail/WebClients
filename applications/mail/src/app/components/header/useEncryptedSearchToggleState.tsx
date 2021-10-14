@@ -7,7 +7,7 @@ import { getOldestTime, wasIndexingDone } from '../../helpers/encryptedSearch/es
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { ESIndexingState } from '../../models/encryptedSearch';
 import { defaultESIndexingState } from '../../constants';
-import { estimateIndexingTime } from '../../helpers/encryptedSearch/esBuild';
+import { estimateIndexingProgress } from '../../helpers/encryptedSearch/esBuild';
 
 const useEncryptedSearchToggleState = (isOpen: boolean) => {
     const [user] = useUser();
@@ -23,7 +23,8 @@ const useEncryptedSearchToggleState = (isOpen: boolean) => {
                 const [esProgress, esTotal] = getProgressRecorderRef().current;
                 const endTime = performance.now();
 
-                const { estimatedMinutes, currentProgressValue } = estimateIndexingTime(
+                const { estimatedMinutes, currentProgressValue } = estimateIndexingProgress(
+                    user.ID,
                     esProgress,
                     esTotal,
                     endTime,
@@ -66,6 +67,7 @@ const useEncryptedSearchToggleState = (isOpen: boolean) => {
                 totalIndexingMessages,
             };
         });
+        await wait(5 * SECOND);
         void setProgress();
     };
 
