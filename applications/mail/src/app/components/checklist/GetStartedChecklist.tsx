@@ -12,14 +12,15 @@ import {
     useLoading,
     Loader,
     useUser,
+    useIsMnemonicAvailable,
 } from '@proton/components';
 import { MnemonicPromptModal } from '@proton/components/containers/mnemonic';
-import { diff } from '@proton/shared/lib/helpers/array';
 import { getChecklist, seenCompletedChecklist } from '@proton/shared/lib/api/checklist';
 import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
+import isTruthy from '@proton/shared/lib/helpers/isTruthy';
+import { getAppName } from '@proton/shared/lib/apps/helper';
 import gift from '@proton/styles/assets/img/get-started/gift.svg';
 
-import { getAppName } from '@proton/shared/lib/apps/helper';
 import { MESSAGE_ACTIONS } from '../../constants';
 import { useOnCompose } from '../../containers/ComposeProvider';
 import ModalGetMobileApp from './ModalGetMobileApp';
@@ -86,30 +87,9 @@ const GetStartedChecklist = ({ hideDismissButton, onDismiss }: GetStartedCheckli
     const onCompose = useOnCompose();
     const { createModal } = useModals();
     const [loading, withLoading] = useLoading();
+    const isMnemonicAvailable = useIsMnemonicAvailable();
 
-    const allChecklistItemsComplete = diff(Object.values(ChecklistKey), checklist).length === 0;
-
-    useEffect(() => {
-        withLoading(
-            api<{ Items: ChecklistKey[] }>(getChecklist('get-started')).then(({ Items }) => setChecklist(Items))
-        );
-    }, []);
-
-    const numberOfCompletedItems = checklist.length;
-
-    if (loading) {
-        return (
-            <div className="p1">
-                <Loader />
-            </div>
-        );
-    }
-
-    if (!allChecklistItemsComplete) {
-        const { hasPaidMail, hasPaidVpn, isFree } = user;
-
-        return <GetStartedChecklistComplete userIsFreeOrMailOnly={isFree || (hasPaidMail && !hasPaidVpn)} />;
-    }
+    console.log(isMnemonicAvailable);
 
     const checklistItems = [
         {
@@ -128,7 +108,7 @@ const GetStartedChecklist = ({ hideDismissButton, onDismiss }: GetStartedCheckli
                 createModal(<ModalGetMobileApp />);
             },
         },
-        {
+        isMnemonicAvailable && {
             key: ChecklistKey.RecoveryMethod,
             text: c('Get started checklist item').t`Activate your recovery phrase`,
             icon: 'lock',
@@ -145,17 +125,36 @@ const GetStartedChecklist = ({ hideDismissButton, onDismiss }: GetStartedCheckli
             },
         },
     ]
+        .filter(isTruthy)
         .map(({ key, ...rest }) => ({
             key,
             complete: checklist.includes(key),
             ...rest,
-        }))
-        .sort(({ complete: completeA }, { complete: completeB }) => Number(completeA) - Number(completeB))
-        .map(({ key, text, icon, onClick }) => (
-            <ChecklistItem key={key} text={text} icon={icon} complete={checklist.includes(key)} onClick={onClick} />
-        ));
+        }));
 
-    const { length: totalNumberOfChecklistItems } = Object.keys(ChecklistKey);
+    useEffect(() => {
+        withLoading(
+            api<{ Items: ChecklistKey[] }>(getChecklist('get-started')).then(({ Items }) => setChecklist(Items))
+        );
+    }, []);
+
+    const numberOfCompletedItems = checklist.length;
+
+    if (loading) {
+        return (
+            <div className="p1">
+                <Loader />
+            </div>
+        );
+    }
+
+    if (checklistItems.every(({ complete }) => complete)) {
+        const { hasPaidMail, hasPaidVpn, isFree } = user;
+
+        return <GetStartedChecklistComplete userIsFreeOrMailOnly={isFree || (hasPaidMail && !hasPaidVpn)} />;
+    }
+
+    const { length: totalNumberOfChecklistItems } = checklistItems;
 
     return (
         <div className="p1">
@@ -199,7 +198,21 @@ const GetStartedChecklist = ({ hideDismissButton, onDismiss }: GetStartedCheckli
             </div>
 
             <div>
-                <ul className="unstyled">{checklistItems}</ul>
+                <ul className="unstyled">
+                    {checklistItems
+                        .sort(
+                            ({ complete: completeA }, { complete: completeB }) => Number(completeA) - Number(completeB)
+                        )
+                        .map(({ key, text, icon, onClick }) => (
+                            <ChecklistItem
+                                key={key}
+                                text={text}
+                                icon={icon}
+                                complete={checklist.includes(key)}
+                                onClick={onClick}
+                            />
+                        ))}
+                </ul>
             </div>
 
             <hr />
