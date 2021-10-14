@@ -14,7 +14,7 @@ import { noop } from '@proton/shared/lib/helpers/function';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import { isNumber } from '@proton/shared/lib/helpers/validators';
 import { Address } from '@proton/shared/lib/interfaces';
-import { AuthenticationMethod, NormalizedImporter } from '@proton/shared/lib/interfaces/EasySwitch';
+import { AuthenticationMethod, NormalizedImporter, OAuthProps } from '@proton/shared/lib/interfaces/EasySwitch';
 
 import { useLoading, useModals, useApi, useEventManager, useErrorHandler } from '../../../../hooks';
 
@@ -34,8 +34,6 @@ import {
     PROVIDER_INSTRUCTIONS,
     GMAIL_INSTRUCTIONS,
 } from '../interfaces';
-
-import { OAuthProps } from '../../interfaces';
 
 import ImportInstructionsStep from './steps/ImportInstructionsStep';
 import ImportStartStep from './steps/ImportStartStep';

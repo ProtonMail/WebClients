@@ -1,5 +1,6 @@
 import { c } from 'ttag';
-import { OAUTH_PROVIDER } from '../interfaces';
+import { OAUTH_PROVIDER } from '@proton/shared/lib/interfaces/EasySwitch';
+
 import { TIME_UNIT } from './interfaces';
 
 export const timeUnitLabels = {
