@@ -30,6 +30,7 @@ export interface FileUploadReady extends FileUpload {
 
 export interface FolderUpload extends LinkUpload {
     name: string;
+    modificationTime?: Date;
     meta: TransferMeta; // To be compatible with Upload of TransferManager.
     linkId?: string;
     originalIsFolder?: boolean;

@@ -71,6 +71,7 @@ import useDriveCrypto from './useDriveCrypto';
 import { LinkKeys, useDriveCache } from '../../components/DriveCache/DriveCacheProvider';
 import { useDriveEventManager, ShareEvent } from '../../components/DriveEventManager/DriveEventManagerProvider';
 import { GLOBAL_FORBIDDEN_CHARACTERS } from '../../utils/link';
+import { decryptExtendedAttributes, ecryptFolderExtendedAttributes } from '../../utils/drive/extendedAttributes';
 
 const { CREATE, DELETE, UPDATE, UPDATE_METADATA } = EVENT_TYPES;
 
@@ -205,11 +206,21 @@ function useDrive() {
         return keys;
     };
 
-    const decryptLink = async (meta: LinkMeta, privateKey: OpenPGPKey): Promise<LinkMeta> => {
+    const decryptLink = async (meta: LinkMeta, parentPrivateKey: OpenPGPKey): Promise<LinkMeta> => {
+        let realModifyTime = meta.ModifyTime;
+        if (meta.XAttr) {
+            // eslint-disable-next-line @typescript-eslint/no-use-before-define
+            const { decryptedPassphrase } = await decryptLinkPassphraseWithParentKey(meta, parentPrivateKey);
+            const nodePrivateKey = await decryptPrivateKey(meta.NodeKey, decryptedPassphrase);
+            const xattr = await decryptExtendedAttributes(meta.XAttr, nodePrivateKey);
+            realModifyTime = xattr.Common.ModificationTime || meta.ModifyTime;
+        }
+
         return {
             ...meta,
             EncryptedName: meta.Name,
-            Name: await decryptUnsigned({ armoredMessage: meta.Name, privateKey }),
+            Name: await decryptUnsigned({ armoredMessage: meta.Name, privateKey: parentPrivateKey }),
+            RealModifyTime: realModifyTime,
         };
     };
 
@@ -274,11 +285,11 @@ function useDrive() {
                   })
               ).Link;
 
-        const { privateKey } = Link.ParentLinkID
+        const { privateKey: parentPrivateKey } = Link.ParentLinkID
             ? await getLinkKeys(shareId, Link.ParentLinkID, config)
             : await getShareKeys(shareId);
 
-        const meta = await decryptLink(Link, privateKey);
+        const meta = await decryptLink(Link, parentPrivateKey);
         cache.set.linkMeta(meta, shareId, { rerender: !config.preventRerenders });
 
         return meta;
@@ -333,6 +344,16 @@ function useDrive() {
             getVerificationKey(linkMeta.SignatureAddress),
         ]);
 
+        return decryptPassphrase({
+            armoredPassphrase: linkMeta.NodePassphrase,
+            armoredSignature: linkMeta.NodePassphraseSignature,
+            privateKeys: [parentKey],
+            publicKeys,
+        });
+    };
+
+    const decryptLinkPassphraseWithParentKey = async (linkMeta: LinkMeta, parentKey: OpenPGPKey) => {
+        const publicKeys = await getVerificationKey(linkMeta.SignatureAddress);
         return decryptPassphrase({
             armoredPassphrase: linkMeta.NodePassphrase,
             armoredSignature: linkMeta.NodePassphraseSignature,
@@ -465,7 +486,7 @@ function useDrive() {
 
     const createNewFolder = queuedFunction(
         'createNewFolder',
-        async (shareId: string, ParentLinkID: string, name: string) => {
+        async (shareId: string, ParentLinkID: string, name: string, modificationTime?: Date) => {
             // Name Hash is generated from LC, for case-insensitive duplicate detection
             const error = validateLinkName(name);
 
@@ -491,6 +512,10 @@ function useDrive() {
 
             const { NodeHashKey } = await generateNodeHashKey(privateKey.toPublic(), privateKey);
 
+            const xattr = !modificationTime
+                ? undefined
+                : await ecryptFolderExtendedAttributes(modificationTime, privateKey, addressKey);
+
             return debouncedRequest<{ Folder: { ID: string } }>(
                 queryCreateFolder(shareId, {
                     Hash,
@@ -501,6 +526,7 @@ function useDrive() {
                     NodePassphraseSignature,
                     SignatureAddress: address.Email,
                     ParentLinkID,
+                    XAttr: xattr,
                 })
             );
         },
@@ -853,7 +879,7 @@ function useDrive() {
                                 ];
 
                                 // Updates locked shares
-                                debouncedRequest<UserShareResult>(queryUserShares()).then(({ Shares }) => {
+                                void debouncedRequest<UserShareResult>(queryUserShares()).then(({ Shares }) => {
                                     const lockedShares = Shares.filter(
                                         (share) => share.Locked && isPrimaryShare(share)
                                     );

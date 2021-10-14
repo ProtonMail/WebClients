@@ -28,17 +28,21 @@ const menuItems = (): {
         },
     },
     {
-        name: c('Action').t`Modified date: new to old`,
+        name: c('Action').t`Uploaded date: new to old`,
         icon: 'clock-rotate-right',
         sortParams: {
+            // On API its called ModifyTime, but its actually time when
+            // the last revision was uploaded. The real modify time is
+            // stored in encrypted extended attributes.
             sortField: 'ModifyTime',
             sortOrder: SORT_DIRECTION.DESC,
         },
     },
     {
-        name: c('Action').t`Modified date: old to new`,
+        name: c('Action').t`Uploaded date: old to new`,
         icon: 'clock-rotate-left',
         sortParams: {
+            // See the comment above.
             sortField: 'ModifyTime',
             sortOrder: SORT_DIRECTION.ASC,
         },
