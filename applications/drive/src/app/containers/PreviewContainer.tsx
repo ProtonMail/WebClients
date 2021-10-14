@@ -9,7 +9,8 @@ import {
     NavigationControl,
     useModals,
 } from '@proton/components';
-import { DriveSectionSortKeys, LinkMeta, LinkType, SortParams } from '@proton/shared/lib/interfaces/drive//link';
+import { DriveSectionSortKeys, LinkMeta, LinkType, SortParams } from '@proton/shared/lib/interfaces/drive/link';
+import { STATUS_CODE } from '@proton/shared/lib/drive/constants';
 
 import useActiveShare from '../hooks/drive/useActiveShare';
 import useFiles from '../hooks/drive/useFiles';
@@ -39,7 +40,7 @@ const getSharedStatus = (meta?: LinkMeta) => {
 
 const PreviewContainer = ({ match }: RouteComponentProps<{ shareId: string; linkId: string }>) => {
     const { shareId, linkId } = match.params;
-    const { navigateToLink, navigateToSharedURLs, navigateToTrash } = useNavigate();
+    const { navigateToLink, navigateToSharedURLs, navigateToTrash, navigateToRoot } = useNavigate();
     const cache = useDriveCache();
     const downloadControls = useRef<DownloadControls>();
     const { setFolder } = useActiveShare();
@@ -95,7 +96,9 @@ const PreviewContainer = ({ match }: RouteComponentProps<{ shareId: string; link
                     setContents(undefined);
                 }
             } catch (err: any) {
-                if (!isTransferCancelError(err)) {
+                if (err.status === STATUS_CODE.NOT_FOUND) {
+                    navigateToRoot();
+                } else if (!isTransferCancelError(err)) {
                     setError(() => {
                         throw err;
                     });
