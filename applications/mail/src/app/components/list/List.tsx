@@ -19,6 +19,8 @@ import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvi
 import useEncryptedSearchList from './useEncryptedSearchList';
 import GetStartedChecklist from '../checklist/GetStartedChecklist';
 import { isColumnMode } from '../../helpers/mailSettings';
+import { MESSAGE_ACTIONS } from '../../constants';
+import { useOnCompose } from '../../containers/ComposeProvider';
 
 const defaultCheckedIDs: string[] = [];
 const defaultElements: Element[] = [];
@@ -82,6 +84,7 @@ const List = (
     // Override compactness of the list view to accomodate body preview when showing encrypted search results
     const isCompactView = userSettings.Density === DENSITY.COMPACT && !shouldHighlight();
 
+    const onCompose = useOnCompose();
     const elements = usePlaceholders(inputElements, loading, placeholderCount);
     const pagingHandlers = usePaging(inputPage, inputTotal, onPage);
     const { page, total } = pagingHandlers;
@@ -185,6 +188,7 @@ const List = (
                                 <GetStartedChecklist
                                     limitedMaxWidth={!isColumnMode(mailSettings)}
                                     onDismiss={handleDismiss}
+                                    onSendMessage={() => onCompose({ action: MESSAGE_ACTIONS.NEW })}
                                 />
                             )}
 
