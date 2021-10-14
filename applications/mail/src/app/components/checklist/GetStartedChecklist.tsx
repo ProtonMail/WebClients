@@ -14,6 +14,7 @@ import {
     useUser,
     useIsMnemonicAvailable,
     classnames,
+    useEventManager,
 } from '@proton/components';
 import { MnemonicPromptModal } from '@proton/components/containers/mnemonic';
 import { getChecklist, seenCompletedChecklist } from '@proton/shared/lib/api/checklist';
@@ -21,19 +22,14 @@ import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import gift from '@proton/styles/assets/img/get-started/gift.svg';
+import { GetStartedChecklistKey } from '@proton/shared/lib/interfaces';
 
+import { Event } from '../../models/event';
 import { MESSAGE_ACTIONS } from '../../constants';
 import { useOnCompose } from '../../containers/ComposeProvider';
 import ModalGetMobileApp from './ModalGetMobileApp';
 import ModalImportEmails from './ModalImportEmails';
 import './GetStartedChecklist.scss';
-
-export enum ChecklistKey {
-    SendMessage = 'SendMessage',
-    MobileApp = 'MobileApp',
-    RecoveryMethod = 'RecoveryMethod',
-    Import = 'Import',
-}
 
 /*
  * This component is separated out so that a "seen" request can be sent
@@ -83,19 +79,26 @@ interface GetStartedChecklistProps {
 }
 
 const GetStartedChecklist = ({ hideDismissButton, limitedMaxWidth, onDismiss }: GetStartedChecklistProps) => {
-    const [checklist, setChecklist] = useState<ChecklistKey[]>([]);
+    const [checklist, setChecklist] = useState<GetStartedChecklistKey[]>([]);
     const api = useApi();
     const [user] = useUser();
     const onCompose = useOnCompose();
+    const { subscribe } = useEventManager();
     const { createModal } = useModals();
     const [loading, withLoading] = useLoading();
     const isMnemonicAvailable = useIsMnemonicAvailable();
 
-    console.log(isMnemonicAvailable);
+    useEffect(() => {
+        subscribe(({ ChecklistEvents }: Event) => {
+            ChecklistEvents?.forEach(({ CompletedItem }) => {
+                setChecklist((current) => [...current, CompletedItem]);
+            });
+        });
+    }, []);
 
     const checklistItems = [
         {
-            key: ChecklistKey.SendMessage,
+            key: GetStartedChecklistKey.SendMessage,
             text: c('Get started checklist item').t`Send a message`,
             icon: 'paper-plane',
             onClick: () => {
@@ -103,7 +106,7 @@ const GetStartedChecklist = ({ hideDismissButton, limitedMaxWidth, onDismiss }: 
             },
         },
         {
-            key: ChecklistKey.MobileApp,
+            key: GetStartedChecklistKey.MobileApp,
             text: c('Get started checklist item').t`Get mobile app`,
             icon: 'mobile',
             onClick: () => {
@@ -111,7 +114,7 @@ const GetStartedChecklist = ({ hideDismissButton, limitedMaxWidth, onDismiss }: 
             },
         },
         isMnemonicAvailable && {
-            key: ChecklistKey.RecoveryMethod,
+            key: GetStartedChecklistKey.RecoveryMethod,
             text: c('Get started checklist item').t`Activate your recovery phrase`,
             icon: 'lock',
             onClick: () => {
@@ -119,7 +122,7 @@ const GetStartedChecklist = ({ hideDismissButton, limitedMaxWidth, onDismiss }: 
             },
         },
         {
-            key: ChecklistKey.Import,
+            key: GetStartedChecklistKey.Import,
             text: c('Get started checklist item').t`Import emails`,
             icon: 'arrow-down-to-screen',
             onClick: () => {
@@ -136,7 +139,9 @@ const GetStartedChecklist = ({ hideDismissButton, limitedMaxWidth, onDismiss }: 
 
     useEffect(() => {
         withLoading(
-            api<{ Items: ChecklistKey[] }>(getChecklist('get-started')).then(({ Items }) => setChecklist(Items))
+            api<{ Items: GetStartedChecklistKey[] }>(getChecklist('get-started')).then(({ Items }) =>
+                setChecklist(Items)
+            )
         );
     }, []);
 
