@@ -24,7 +24,7 @@ import gift from '@proton/styles/assets/img/get-started/gift.svg';
 import { MESSAGE_ACTIONS } from '../../constants';
 import { useOnCompose } from '../../containers/ComposeProvider';
 import ModalGetMobileApp from './ModalGetMobileApp';
-import ModalImportContactsOrEmails from './ModalImportContactsOrEmails';
+import ModalImportEmails from './ModalImportEmails';
 import './GetStartedChecklist.scss';
 
 export enum ChecklistKey {
@@ -118,10 +118,10 @@ const GetStartedChecklist = ({ hideDismissButton, onDismiss }: GetStartedCheckli
         },
         {
             key: ChecklistKey.Import,
-            text: c('Get started checklist item').t`Import contacts or emails`,
+            text: c('Get started checklist item').t`Import emails`,
             icon: 'arrow-down-to-screen',
             onClick: () => {
-                createModal(<ModalImportContactsOrEmails />);
+                createModal(<ModalImportEmails />);
             },
         },
     ]

@@ -22,11 +22,11 @@ const ModalImportContactsOrEmails = ({ onClose, ...rest }: Partial<ModalPropsInj
                     />
                 </div>
                 <h1 className="mb0-5 text-2xl text-bold">
-                    {c('Get started checklist instructions').t`Import your contacts or messages`}
+                    {c('Get started checklist instructions').t`Import your messages`}
                 </h1>
                 <p className="mb2">
                     {c('Get started checklist instructions')
-                        .t`Quickly transfer your contacts or emails from any provider using our Easy Switch import assistant.`}
+                        .t`Quickly transfer your emails from any provider using our Easy Switch import assistant.`}
                 </p>
                 <ButtonLike
                     fullWidth
@@ -37,7 +37,7 @@ const ModalImportContactsOrEmails = ({ onClose, ...rest }: Partial<ModalPropsInj
                     target="_blank"
                     rel="noopener noreferrer"
                 >
-                    {c('Get started checklist instructions').t`Import contacts or messages`}
+                    {c('Get started checklist instructions').t`Import messages`}
                 </ButtonLike>
             </InnerModal>
         </DialogModal>
