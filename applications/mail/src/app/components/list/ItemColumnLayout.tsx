@@ -61,8 +61,8 @@ const ItemColumnLayout = ({
         ({ resultJSX: bodyContent, numOccurrences: occurrencesInBody } = highlightMetadata(body, unread, true));
     }
     const bodyTitle = c('Info').ngettext(
-        msgid`${occurrencesInBody} occurrence found`,
-        `${occurrencesInBody} occurrences found`,
+        msgid`${occurrencesInBody} occurrence found in the mail content`,
+        `${occurrencesInBody} occurrences found in the mail content`,
         occurrencesInBody
     );
 
@@ -132,7 +132,7 @@ const ItemColumnLayout = ({
             {useES && (
                 <>
                     <div
-                        className="flex flex-nowrap flex-align-items-center item-secondline max-w100 no-scroll"
+                        className="flex flex-nowrap flex-align-items-center item-secondline max-w80 no-scroll"
                         aria-hidden="true"
                     >
                         <div className="item-subject flex-item-fluid flex flex-nowrap flex-align-items-center">
