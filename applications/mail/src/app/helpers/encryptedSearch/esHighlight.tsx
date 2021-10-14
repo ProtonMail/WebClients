@@ -137,10 +137,20 @@ export const highlightJSX = (
                 {sanitisedPositions.map((position, index) => {
                     const oldPreviousIndex = previousIndex;
                     [, previousIndex] = position;
-                    const startingCharIndex = Math.max(0, position[0] - ES_MAX_INITIAL_CHARS);
+
+                    // Find where to trim and avoid breaking words
+                    const estimatedStartIndex = Math.max(0, position[0] - ES_MAX_INITIAL_CHARS);
+                    let exactStartIndex = estimatedStartIndex;
+                    if (estimatedStartIndex !== 0) {
+                        const firstSpaceIndex = metadata.slice(estimatedStartIndex).indexOf(' ');
+                        if (firstSpaceIndex !== -1) {
+                            exactStartIndex = estimatedStartIndex + firstSpaceIndex + 1;
+                        }
+                    }
+
                     const startingSlice =
                         index === 0 && trim
-                            ? `${startingCharIndex !== 0 ? '…' : ''}${metadata.slice(startingCharIndex, position[0])}`
+                            ? `${exactStartIndex !== 0 ? '…' : ''}${metadata.slice(exactStartIndex, position[0])}`
                             : metadata.slice(oldPreviousIndex, position[0]);
                     return (
                         <span
