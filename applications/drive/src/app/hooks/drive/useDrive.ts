@@ -71,7 +71,7 @@ import useDriveCrypto from './useDriveCrypto';
 import { LinkKeys, useDriveCache } from '../../components/DriveCache/DriveCacheProvider';
 import { useDriveEventManager, ShareEvent } from '../../components/DriveEventManager/DriveEventManagerProvider';
 import { GLOBAL_FORBIDDEN_CHARACTERS } from '../../utils/link';
-import { decryptExtendedAttributes } from '../../utils/drive/extendedAttributes';
+import { decryptExtendedAttributes, ecryptFolderExtendedAttributes } from '../../utils/drive/extendedAttributes';
 
 const { CREATE, DELETE, UPDATE, UPDATE_METADATA } = EVENT_TYPES;
 
@@ -486,7 +486,7 @@ function useDrive() {
 
     const createNewFolder = queuedFunction(
         'createNewFolder',
-        async (shareId: string, ParentLinkID: string, name: string) => {
+        async (shareId: string, ParentLinkID: string, name: string, modificationTime?: Date) => {
             // Name Hash is generated from LC, for case-insensitive duplicate detection
             const error = validateLinkName(name);
 
@@ -512,6 +512,10 @@ function useDrive() {
 
             const { NodeHashKey } = await generateNodeHashKey(privateKey.toPublic(), privateKey);
 
+            const xattr = !modificationTime
+                ? undefined
+                : await ecryptFolderExtendedAttributes(modificationTime, privateKey, addressKey);
+
             return debouncedRequest<{ Folder: { ID: string } }>(
                 queryCreateFolder(shareId, {
                     Hash,
@@ -522,6 +526,7 @@ function useDrive() {
                     NodePassphraseSignature,
                     SignatureAddress: address.Email,
                     ParentLinkID,
+                    XAttr: xattr,
                 })
             );
         },

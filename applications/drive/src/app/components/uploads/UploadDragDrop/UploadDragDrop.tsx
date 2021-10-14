@@ -66,7 +66,16 @@ const UploadDragDrop = ({ children, className, disabled }: UploadDragDropProps) 
                 }
                 if (item.isDirectory) {
                     const reader = item.createReader();
-                    filesToUpload.push({ path, folder: item.name });
+
+                    await new Promise<void>((resolve, reject) => {
+                        item.getMetadata(resolve, reject);
+                    }).then((metadata: any) => {
+                        filesToUpload.push({
+                            path,
+                            folder: item.name,
+                            modificationTime: metadata.modificationTime,
+                        });
+                    });
 
                     // Iterates over folders recursively and puts them into filesToUpload list
                     const getEntries = async () => {

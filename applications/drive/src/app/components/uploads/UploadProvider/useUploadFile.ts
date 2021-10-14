@@ -42,7 +42,7 @@ import {
 import { initUploadFileWorker } from '../initUploadFileWorker';
 import { ConflictStrategyHandler, UploadUserError } from './interface';
 import useUploadHelper from './useUploadHelper';
-import { ecryptExtendedAttributes } from '../../../utils/drive/extendedAttributes';
+import { ecryptFileExtendedAttributes } from '../../../utils/drive/extendedAttributes';
 
 interface FileRevision {
     isNewFile: boolean;
@@ -325,7 +325,7 @@ export default function useUploadFile() {
                     }
 
                     const addressKeyInfo = await addressKeyInfoPromise;
-                    const xattr = await ecryptExtendedAttributes(
+                    const xattr = await ecryptFileExtendedAttributes(
                         file,
                         createdFileRevision.privateKey,
                         addressKeyInfo.privateKey

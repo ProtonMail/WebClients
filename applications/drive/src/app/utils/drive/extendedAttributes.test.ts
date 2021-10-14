@@ -1,7 +1,7 @@
 import { FILE_CHUNK_SIZE } from '@proton/shared/lib/drive/constants';
 
 import { mockGlobalFile, testFile } from '../../helpers/test/file';
-import { createExtendedAttributes, parseExtendedAttributes } from './extendedAttributes';
+import { createFileExtendedAttributes, parseExtendedAttributes } from './extendedAttributes';
 
 const emptyExtendedAttributes = {
     Common: {
@@ -40,7 +40,7 @@ describe('extended attrbiutes', () => {
             ],
         ];
         testCases.forEach(([input, expectedAttributes]) => {
-            const xattrs = createExtendedAttributes(input);
+            const xattrs = createFileExtendedAttributes(input);
             expect(xattrs).toMatchObject(expectedAttributes);
         });
     });

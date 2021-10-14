@@ -21,10 +21,15 @@ export default function useUploadFolder() {
     const { trashLinks } = useTrash();
     const { findAvailableName, getLinkByName } = useUploadHelper();
 
-    const createEmptyFolder = async (shareId: string, parentId: string, folderName: string): Promise<Folder> => {
+    const createEmptyFolder = async (
+        shareId: string,
+        parentId: string,
+        folderName: string,
+        modificationTime?: Date
+    ): Promise<Folder> => {
         const {
             Folder: { ID: folderId },
-        } = await createNewFolder(shareId, parentId, folderName);
+        } = await createNewFolder(shareId, parentId, folderName, modificationTime);
         await events.call(shareId);
         return {
             folderId,
@@ -56,7 +61,8 @@ export default function useUploadFolder() {
         abortSignal: AbortSignal,
         shareId: string,
         parentId: string,
-        folderName: string
+        folderName: string,
+        modificationTime: Date | undefined
     ): Promise<Folder> => {
         const link = await getLinkByName(abortSignal, shareId, parentId, folderName);
         if (!link) {
@@ -64,7 +70,7 @@ export default function useUploadFolder() {
         }
         checkSignal(abortSignal, folderName);
         await trashLinks(shareId, parentId, [link.LinkID]);
-        return createEmptyFolder(shareId, parentId, folderName);
+        return createEmptyFolder(shareId, parentId, folderName, modificationTime);
     };
 
     const prepareFolder = (
@@ -72,6 +78,7 @@ export default function useUploadFolder() {
         shareId: string,
         parentId: string,
         folderName: string,
+        modificationTime: Date | undefined,
         getFolderConflictStrategy: ConflictStrategyHandler
     ): Promise<Folder> => {
         const lowercaseName = folderName.toLowerCase();
@@ -80,7 +87,7 @@ export default function useUploadFolder() {
             const { filename: newName } = await findAvailableName(abortSignal, shareId, parentId, folderName);
             checkSignal(abortSignal, folderName);
             if (folderName === newName) {
-                return createEmptyFolder(shareId, parentId, folderName);
+                return createEmptyFolder(shareId, parentId, folderName, modificationTime);
             }
 
             const link = await getLinkByName(abortSignal, shareId, parentId, folderName);
@@ -88,10 +95,10 @@ export default function useUploadFolder() {
             checkSignal(abortSignal, folderName);
             const conflictStrategy = await getFolderConflictStrategy(abortSignal, originalIsFolder);
             if (conflictStrategy === TransferConflictStrategy.Rename) {
-                return createEmptyFolder(shareId, parentId, newName);
+                return createEmptyFolder(shareId, parentId, newName, modificationTime);
             }
             if (conflictStrategy === TransferConflictStrategy.Replace) {
-                return replaceFolder(abortSignal, shareId, parentId, folderName);
+                return replaceFolder(abortSignal, shareId, parentId, folderName, modificationTime);
             }
             if (conflictStrategy === TransferConflictStrategy.Merge) {
                 return getFolder(abortSignal, shareId, parentId, folderName);
@@ -107,12 +114,20 @@ export default function useUploadFolder() {
         shareId: string,
         parentId: string,
         folderName: string,
+        modificationTime: Date | undefined,
         getFolderConflictStrategy: ConflictStrategyHandler
     ): UploadFolderControls => {
         const abortController = new AbortController();
         return {
             start: () => {
-                return prepareFolder(abortController.signal, shareId, parentId, folderName, getFolderConflictStrategy);
+                return prepareFolder(
+                    abortController.signal,
+                    shareId,
+                    parentId,
+                    folderName,
+                    modificationTime,
+                    getFolderConflictStrategy
+                );
             },
             cancel: () => {
                 abortController.abort();

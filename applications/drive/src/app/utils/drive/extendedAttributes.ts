@@ -6,8 +6,8 @@ import { FILE_CHUNK_SIZE } from '@proton/shared/lib/drive/constants';
 interface ExtendedAttributes {
     Common: {
         ModificationTime: string;
-        Size: number;
-        BlockSizes: number[];
+        Size?: number;
+        BlockSizes?: number[];
     };
 }
 
@@ -19,18 +19,29 @@ interface ParsedExtendedAttributes {
     };
 }
 
-export async function ecryptExtendedAttributes(file: File, nodePrivateKey: OpenPGPKey, addressPrivateKey: OpenPGPKey) {
-    const xattr = createExtendedAttributes(file);
-    const xattrString = JSON.stringify(xattr);
-    const { data } = await encryptMessage({
-        data: xattrString,
-        publicKeys: nodePrivateKey,
-        privateKeys: addressPrivateKey,
-    });
-    return data;
+export async function ecryptFolderExtendedAttributes(
+    modificationTime: Date,
+    nodePrivateKey: OpenPGPKey,
+    addressPrivateKey: OpenPGPKey
+) {
+    const xattr = {
+        Common: {
+            ModificationTime: modificationTime.toISOString(),
+        },
+    };
+    return encryptExtendedAttributes(xattr, nodePrivateKey, addressPrivateKey);
 }
 
-export function createExtendedAttributes(file: File): ExtendedAttributes {
+export async function ecryptFileExtendedAttributes(
+    file: File,
+    nodePrivateKey: OpenPGPKey,
+    addressPrivateKey: OpenPGPKey
+) {
+    const xattr = createFileExtendedAttributes(file);
+    return encryptExtendedAttributes(xattr, nodePrivateKey, addressPrivateKey);
+}
+
+export function createFileExtendedAttributes(file: File): ExtendedAttributes {
     const blockSizes = new Array(Math.floor(file.size / FILE_CHUNK_SIZE));
     blockSizes.fill(FILE_CHUNK_SIZE);
     blockSizes.push(file.size % FILE_CHUNK_SIZE);
@@ -41,6 +52,20 @@ export function createExtendedAttributes(file: File): ExtendedAttributes {
             BlockSizes: blockSizes,
         },
     };
+}
+
+async function encryptExtendedAttributes(
+    xattr: ExtendedAttributes,
+    nodePrivateKey: OpenPGPKey,
+    addressPrivateKey: OpenPGPKey
+) {
+    const xattrString = JSON.stringify(xattr);
+    const { data } = await encryptMessage({
+        data: xattrString,
+        publicKeys: nodePrivateKey,
+        privateKeys: addressPrivateKey,
+    });
+    return data;
 }
 
 export async function decryptExtendedAttributes(
