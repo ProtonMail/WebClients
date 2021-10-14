@@ -5,7 +5,7 @@ import { ImportType } from '@proton/shared/lib/interfaces/EasySwitch';
 import { Calendar } from '@proton/shared/lib/interfaces/calendar';
 import { CALENDAR_APP_NAME } from '@proton/shared/lib/calendar/constants';
 
-import { Alert, Button, GoogleButton } from '../../../components';
+import { Alert, Button, GoogleButton, Href, PrimaryButton } from '../../../components';
 
 import { useAddresses, useFeature, useModals } from '../../../hooks';
 
@@ -44,18 +44,28 @@ const CalendarImportSection = ({ activeCalendars, defaultCalendar, user }: Props
                     .t`You need to have an active personal calendar to import your events.`}</Alert>
             ) : null}
 
-            <SettingsParagraph learnMoreUrl="https://protonmail.com/support/knowledge-base/import-calendar-to-protoncalendar/">
-                {c('Info')
+            <SettingsParagraph>
+                {c('Calendar import section description')
                     .t`You can import ICS files from another calendar to ${CALENDAR_APP_NAME}. This lets you quickly import one event or your entire agenda.`}
+                <br />
+                <Href url="https://protonmail.com/support/knowledge-base/import-calendar-to-protoncalendar/">{c(
+                    'Knowledge base link label'
+                ).t`Here's how`}</Href>
             </SettingsParagraph>
 
-            {isEasySwitchEnabled && (
-                <GoogleButton onClick={handleOAuthClick} disabled={loadingAddresses} className="mr1" />
-            )}
+            {isEasySwitchEnabled ? (
+                <>
+                    <GoogleButton onClick={handleOAuthClick} disabled={loadingAddresses} className="mr1" />
 
-            <Button onClick={handleImport} disabled={!canImport}>
-                {c('Action').t`Import from .ics`}
-            </Button>
+                    <Button onClick={handleImport} disabled={!canImport}>
+                        {c('Action').t`Import from .ics`}
+                    </Button>
+                </>
+            ) : (
+                <PrimaryButton onClick={handleImport} disabled={!canImport}>
+                    {c('Action').t`Import from .ics`}
+                </PrimaryButton>
+            )}
         </SettingsSection>
     );
 };
