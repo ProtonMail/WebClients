@@ -1,3 +1,4 @@
+import { range } from '@proton/shared/lib/helpers/array';
 import { transformBase } from '../transformBase';
 
 describe('transformBase service', () => {
@@ -47,13 +48,34 @@ describe('transformBase service', () => {
         doc.head.appendChild(base);
         doc.body.innerHTML = DOM;
 
-        transformBase(doc as any);
+        transformBase(doc.documentElement);
 
         const querySelector = (selectors: string) => doc.querySelector(selectors);
         const querySelectorAll = (selectors: string) => [...doc.querySelectorAll(selectors)];
 
         return { document: doc, querySelector, querySelectorAll };
     };
+
+    describe('Remove base tag', () => {
+        it('should remove base tag from the head', () => {
+            const { querySelectorAll } = setup();
+            expect(querySelectorAll('base').length).toBe(0);
+        });
+
+        it('should remove multiple base tag from the head', () => {
+            const doc = document.implementation.createHTMLDocument('test transformBase');
+            range(0, 5).forEach((index) => {
+                const base = document.createElement('BASE') as HTMLBaseElement;
+                base.href = `https://something.com/${index}/`;
+                doc.head.appendChild(base);
+            });
+            doc.body.innerHTML = DOM;
+
+            transformBase(doc.documentElement);
+
+            expect(doc.querySelectorAll('base').length).toBe(0);
+        });
+    });
 
     describe('Escape base relative no slash', () => {
         describe('For a link', () => {
