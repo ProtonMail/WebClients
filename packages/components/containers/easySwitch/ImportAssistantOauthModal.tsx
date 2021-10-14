@@ -39,7 +39,6 @@ import { PRODUCT_NAMES, LABEL_COLORS } from '@proton/shared/lib/constants';
 import { noop, randomIntFromInterval } from '@proton/shared/lib/helpers/function';
 
 import { Button, FormModal, PrimaryButton, useSettingsLink } from '../../components';
-// import Wizard from '../../components/wizard/Wizard';
 
 import {
     G_OAUTH_SCOPE_DEFAULT,
@@ -235,7 +234,6 @@ const ImportAssistantOauthModal = ({ addresses, onClose = noop, defaultCheckedTy
                         const createdImports = await Promise.all(
                             tokenScope.map(async (importType) => {
                                 if (importType === MAIL) {
-                                    // const { Importer } = await api(createImportMail(ID));
                                     const { Importer } = await api(
                                         createImportMail({
                                             TokenID: ID,
@@ -492,12 +490,6 @@ const ImportAssistantOauthModal = ({ addresses, onClose = noop, defaultCheckedTy
         }
     };
 
-    // const wizardSteps = [
-    //     c('Wizard step').t`Authenticate`,
-    //     c('Wizard step').t`Configure Import`,
-    //     c('Wizard step').t`Import`,
-    // ];
-
     return (
         <FormModal
             title={titleRenderer()}
@@ -517,7 +509,6 @@ const ImportAssistantOauthModal = ({ addresses, onClose = noop, defaultCheckedTy
                 />
             ) : (
                 <>
-                    {/* <Wizard step={modalModel.step} steps={wizardSteps} /> */}
                     {[SELECT_IMPORT_TYPE, AUTHENTICATION].includes(modalModel.step) && (
                         <IASelectImportTypeStep
                             checkedTypes={checkedTypes}
