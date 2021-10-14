@@ -1,4 +1,4 @@
-import { OpenPGPKey } from 'pmcrypto';
+import { encryptPrivateKey, OpenPGPKey } from 'pmcrypto';
 import { generateAddressKey, generateAddressKeyTokens, generateUserKey } from '../../lib/keys';
 import { Key } from '../../lib/interfaces';
 import { ENCRYPTION_CONFIGS, ENCRYPTION_TYPES } from '../../lib/constants';
@@ -24,30 +24,33 @@ export const getUserKey = async (ID: string, keyPassword: string) => {
     };
 };
 
-export const getAddressKey = async (ID: string, userKey: OpenPGPKey, email: string) => {
+export const getAddressKeyHelper = async (ID: string, userKey: OpenPGPKey, privateKey: OpenPGPKey) => {
     const result = await generateAddressKeyTokens(userKey);
-
-    const key = await generateAddressKey({
-        email,
-        passphrase: result.token,
-        encryptionConfig,
-    });
-
+    const privateKeyArmored = await encryptPrivateKey(privateKey, result.token);
     return {
         key: {
             ID,
-            privateKey: key.privateKey,
-            publicKey: key.privateKey.toPublic(),
+            privateKey,
+            publicKey: privateKey.toPublic(),
         },
         Key: {
             ID,
-            PrivateKey: key.privateKeyArmored,
+            PrivateKey: privateKeyArmored,
             Signature: result.signature,
             Token: result.encryptedToken,
             Version: 3,
             Flags: 3,
         } as Key,
     };
+};
+
+export const getAddressKey = async (ID: string, userKey: OpenPGPKey, email: string) => {
+    const key = await generateAddressKey({
+        email,
+        passphrase: 'tmp',
+        encryptionConfig,
+    });
+    return getAddressKeyHelper(ID, userKey, key.privateKey);
 };
 
 export const getLegacyAddressKey = async (ID: string, password: string, email: string) => {
