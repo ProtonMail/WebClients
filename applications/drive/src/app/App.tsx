@@ -41,7 +41,7 @@ const App = () => {
             <Switch>
                 <Route path="/urls">
                     <StandardPublicApp locales={locales}>
-                        <ProminentContainer>
+                        <ProminentContainer heightClassName="h100v">
                             <PublicDriveLinkContainer />
                         </ProminentContainer>
                     </StandardPublicApp>
