@@ -13,6 +13,7 @@ import {
     Loader,
     useUser,
     useIsMnemonicAvailable,
+    classnames,
 } from '@proton/components';
 import { MnemonicPromptModal } from '@proton/components/containers/mnemonic';
 import { getChecklist, seenCompletedChecklist } from '@proton/shared/lib/api/checklist';
@@ -77,10 +78,11 @@ const GetStartedChecklistComplete = ({ userIsFreeOrMailOnly }: { userIsFreeOrMai
 
 interface GetStartedChecklistProps {
     hideDismissButton?: boolean;
+    limitedMaxWidth?: boolean;
     onDismiss?: () => void;
 }
 
-const GetStartedChecklist = ({ hideDismissButton, onDismiss }: GetStartedChecklistProps) => {
+const GetStartedChecklist = ({ hideDismissButton, limitedMaxWidth, onDismiss }: GetStartedChecklistProps) => {
     const [checklist, setChecklist] = useState<ChecklistKey[]>([]);
     const api = useApi();
     const [user] = useUser();
@@ -142,7 +144,7 @@ const GetStartedChecklist = ({ hideDismissButton, onDismiss }: GetStartedCheckli
 
     if (loading) {
         return (
-            <div className="p1">
+            <div className="p1 mauto">
                 <Loader />
             </div>
         );
@@ -157,17 +159,17 @@ const GetStartedChecklist = ({ hideDismissButton, onDismiss }: GetStartedCheckli
     const { length: totalNumberOfChecklistItems } = checklistItems;
 
     return (
-        <div className="p1">
+        <div className={classnames(['p1', limitedMaxWidth && 'get-started_root--limited-width mauto'])}>
             <div className="flex flex-align-items-center flex-justify-space-between">
                 <span className="flex flex-align-items-center w80">
-                    <span className="mr1">
+                    <span className="get-started_gift mr1">
                         {/*
                          * if we don't put an empty alt attribute here, some vocalizers
                          * will vocalize the src attribute
                          */}
                         <img src={gift} alt="" />
                     </span>
-                    <span className="flex-item-fluid text-bold">
+                    <span className="flex-item-fluid text-bold text-ellipsis">
                         {
                             /*
                              * translator: BRAND_NAME refers to the name of our brand
@@ -189,7 +191,7 @@ const GetStartedChecklist = ({ hideDismissButton, onDismiss }: GetStartedCheckli
                     </div>
                 )}
             </div>
-            <div className="w80">
+            <div className="w80 ml0-5">
                 <Progress
                     className="progress-bar--success"
                     value={numberOfCompletedItems}
@@ -197,23 +199,19 @@ const GetStartedChecklist = ({ hideDismissButton, onDismiss }: GetStartedCheckli
                 />
             </div>
 
-            <div>
-                <ul className="unstyled">
-                    {checklistItems
-                        .sort(
-                            ({ complete: completeA }, { complete: completeB }) => Number(completeA) - Number(completeB)
-                        )
-                        .map(({ key, text, icon, onClick }) => (
-                            <ChecklistItem
-                                key={key}
-                                text={text}
-                                icon={icon}
-                                complete={checklist.includes(key)}
-                                onClick={onClick}
-                            />
-                        ))}
-                </ul>
-            </div>
+            <ul className="unstyled ml0-5">
+                {checklistItems
+                    .sort(({ complete: completeA }, { complete: completeB }) => Number(completeA) - Number(completeB))
+                    .map(({ key, text, icon, onClick }) => (
+                        <ChecklistItem
+                            key={key}
+                            text={text}
+                            icon={icon}
+                            complete={checklist.includes(key)}
+                            onClick={onClick}
+                        />
+                    ))}
+            </ul>
 
             <hr />
 
