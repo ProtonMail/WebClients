@@ -5,6 +5,7 @@ import { c, msgid } from 'ttag';
 import { Address } from '@proton/shared/lib/interfaces';
 import { LABEL_TYPE } from '@proton/shared/lib/constants';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
+import { OAUTH_PROVIDER } from '@proton/shared/lib/interfaces/EasySwitch';
 
 import { useFolders, useUser, useModals, useLabels } from '../../../../../hooks';
 import {
@@ -31,7 +32,6 @@ import {
 } from '../../helpers';
 
 import CustomizeImportModal from '../CustomizeImportModal';
-import { OAUTH_PROVIDER } from '../../../interfaces';
 
 interface LabelColorMap {
     [key: string]: string;
