@@ -18,6 +18,7 @@ import ESSlowToolbar from './ESSlowToolbar';
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import useEncryptedSearchList from './useEncryptedSearchList';
 import GetStartedChecklist from '../checklist/GetStartedChecklist';
+import { isColumnMode } from '../../helpers/mailSettings';
 
 const defaultCheckedIDs: string[] = [];
 const defaultElements: Element[] = [];
@@ -180,7 +181,12 @@ const List = (
                         {userSettings.Checklists?.includes('get-started') &&
                             !loading &&
                             !(total > 1) &&
-                            !getStartedDismissed && <GetStartedChecklist onDismiss={handleDismiss} />}
+                            !getStartedDismissed && (
+                                <GetStartedChecklist
+                                    limitedMaxWidth={!isColumnMode(mailSettings)}
+                                    onDismiss={handleDismiss}
+                                />
+                            )}
 
                         {useLoadingElement && loadingElement}
 
