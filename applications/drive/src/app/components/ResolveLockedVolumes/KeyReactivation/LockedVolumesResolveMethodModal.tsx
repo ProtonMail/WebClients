@@ -27,7 +27,7 @@ const OptionLabel = ({ title, info }: { title: string; info: string }) => {
     return (
         <div className="ml0-5">
             <span className="text-bold">{title}</span>
-            <p className="m0">{info}</p>
+            <p className="m0 color-weak">{info}</p>
         </div>
     );
 };
@@ -103,7 +103,7 @@ const KeyReactivationModal = ({
                         value={radioGroupValue}
                         onChange={handleChange}
                         name="action-type"
-                        className="flex-nowrap"
+                        className="flex-nowrap mb1"
                     />
                 </InnerModal>
                 <FooterModal>
