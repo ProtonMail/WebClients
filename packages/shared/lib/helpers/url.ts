@@ -105,6 +105,11 @@ export const changeSearchParams = (
         }
     });
 
+    // Remove potential mailto query from the params, otherwise search will be concatenated to the mailto query
+    if (params.get('mailto')) {
+        params.delete('mailto');
+    }
+
     const queryString = params.toString();
     const urlFragment = (queryString === '' ? '' : '#') + queryString;
 
@@ -186,7 +191,7 @@ export const getApiSubdomainUrl = (pathname: string) => {
     url.hostname = getRelativeApiHostname(url.hostname);
     url.pathname = pathname;
     return url;
-}
+};
 
 export const getAppUrlFromApiUrl = (apiUrl: string, appName: APP_NAMES) => {
     const { subdomain } = APPS_CONFIGURATION[appName];
