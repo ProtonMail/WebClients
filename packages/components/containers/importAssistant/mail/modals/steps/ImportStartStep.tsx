@@ -1,10 +1,9 @@
 import { ChangeEvent, useEffect } from 'react';
 import { c } from 'ttag';
 
-import { ImportError, NormalizedImporter } from '@proton/shared/lib/interfaces/EasySwitch';
+import { ImportError, NormalizedImporter, OAUTH_PROVIDER } from '@proton/shared/lib/interfaces/EasySwitch';
 
 import { Alert, Row, Label, Field, PasswordInput, EmailInput, Input, Href } from '../../../../../components';
-import { OAUTH_PROVIDER } from '../../../interfaces';
 
 import { IMAPS } from '../../constants';
 
