@@ -74,19 +74,25 @@ const ListHeader = <T extends AllSortKeys>({
                     <TableHeaderCell
                         direction={getSortDirectionForKey('MIMEType')}
                         onSort={canSort(() => handleSort('MIMEType'))}
-                        className="w20"
+                        className="w15"
                     >
                         {c('TableHeader').t`Type`}
                     </TableHeaderCell>
                 )}
-                {columns.includes('modified') && (
+                {columns.includes('uploaded') && (
+                    // On API its called ModifyTime, but its actually time when
+                    // the last revision was uploaded. The real modify time is
+                    // stored in encrypted extended attributes.
                     <TableHeaderCell
-                        className="w25"
+                        className="w15"
                         direction={getSortDirectionForKey('ModifyTime')}
                         onSort={canSort(() => handleSort('ModifyTime'))}
                     >
-                        {c('TableHeader').t`Modified`}
+                        {c('TableHeader').t`Uploaded`}
                     </TableHeaderCell>
+                )}
+                {columns.includes('modified') && (
+                    <TableHeaderCell className="w15">{c('TableHeader').t`Modified`}</TableHeaderCell>
                 )}
                 {columns.includes('trashed') && (
                     <TableHeaderCell

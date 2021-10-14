@@ -302,6 +302,7 @@ export function addItemToQueue(shareId: string, newQueue: UploadQueue, item: Upl
         part.folders.push({
             ...generalAttributes,
             name: folderItem.folder,
+            modificationTime: folderItem.modificationTime,
             files: [],
             folders: [],
             meta: {

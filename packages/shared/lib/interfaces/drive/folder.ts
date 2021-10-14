@@ -7,4 +7,5 @@ export interface CreateNewFolder {
     SignatureAddress: string;
     NodeKey: string;
     NodeHashKey: string;
+    XAttr?: string;
 }

@@ -35,7 +35,7 @@ export interface UploadCallbacks {
 
 export type UploadFileList = (UploadFileItem | UploadFolderItem)[];
 export type UploadFileItem = { path: string[]; file: File };
-export type UploadFolderItem = { path: string[]; folder: string };
+export type UploadFolderItem = { path: string[]; folder: string; modificationTime?: Date };
 
 export type InitializedFileMeta = {
     fileName: string;
