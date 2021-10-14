@@ -80,10 +80,18 @@ const MailboxContainer = ({
 
     const { enableResize, resetWidth } = useResizeMessageView(mainAreaRef, resizeAreaRef, listRef);
 
+    const page = pageFromUrl(location);
+    const searchParams = getSearchParams(location.hash);
+    const isConversationContentView = mailSettings.ViewMode === VIEW_MODE.GROUP;
+    const searchParameters = useDeepMemo<SearchParameters>(() => extractSearchParameters(location), [location]);
+    const isSearch = testIsSearch(searchParameters);
+    const sort = useMemo<Sort>(() => sortFromUrl(location, inputLabelID), [searchParams.sort, inputLabelID]);
+    const filter = useMemo<Filter>(() => filterFromUrl(location), [searchParams.filter]);
+
     // Open a composer when the url contains a mailto query
     useEffect(() => {
-        if (location.search) {
-            const searchParams = location.search.substring(1).split('&');
+        if (!isSearch && location.hash) {
+            const searchParams = location.hash.substring(1).split('&');
             searchParams.forEach((param) => {
                 const pair = param.split('=');
                 if (pair[0] === MAILTO_PROTOCOL_HANDLER_SEARCH_PARAM) {
@@ -95,15 +103,7 @@ const MailboxContainer = ({
                 }
             });
         }
-    }, [location.search]);
-
-    const page = pageFromUrl(location);
-    const searchParams = getSearchParams(location.hash);
-    const isConversationContentView = mailSettings.ViewMode === VIEW_MODE.GROUP;
-    const searchParameters = useDeepMemo<SearchParameters>(() => extractSearchParameters(location), [location]);
-    const isSearch = testIsSearch(searchParameters);
-    const sort = useMemo<Sort>(() => sortFromUrl(location, inputLabelID), [searchParams.sort, inputLabelID]);
-    const filter = useMemo<Filter>(() => filterFromUrl(location), [searchParams.filter]);
+    }, [location.hash, isSearch]);
 
     const handlePage = useCallback((pageNumber: number) => {
         history.push(setPageInUrl(history.location, pageNumber));
