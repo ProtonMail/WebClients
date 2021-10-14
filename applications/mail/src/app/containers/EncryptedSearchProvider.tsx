@@ -62,8 +62,6 @@ import {
     checkIsDBLimited,
     correctDecryptionErrors,
     getEventFromLS,
-    migrateLS,
-    refreshLegacyIndex,
     syncMessageEvents,
 } from '../helpers/encryptedSearch/esSync';
 import { queryEvents, sendESMetrics } from '../helpers/encryptedSearch/esAPI';
@@ -952,60 +950,6 @@ const EncryptedSearchProvider = ({ children }: Props) => {
         return resumeIndexing();
     };
 
-    /**
-     * Recover an index built under a legacy userID
-     */
-    const recoverLegacyIndex = async (legacyUserID: string, indexKey: CryptoKey) => {
-        // If the DB is corrupt, there is no point in recovering it
-        const isIDBIntact = await canUseES(legacyUserID);
-        if (!isIDBIntact) {
-            throw new Error('DB is not intact');
-        }
-
-        // In case building was in process, it's safer to remove it and start over
-        if (!wasIndexingDone(legacyUserID)) {
-            throw new Error('Indexing was not done');
-        }
-
-        // Blobs in localStorage are initialised
-        await migrateLS(legacyUserID, userID, indexKey, getUserKeys);
-
-        setESStatus((esStatus) => {
-            return {
-                ...esStatus,
-                isRefreshing: true,
-                esEnabled: true,
-            };
-        });
-
-        // Otherwise we try to refresh the index and resort to removing it only if
-        // something fails
-        const messageCounts = await getMessageCounts();
-        await refreshLegacyIndex(legacyUserID, userID, api, indexKey, getMessageKeys, recordProgress, messageCounts);
-
-        // If the process is successful, the old DB and LS blobs are removed
-        await esDelete(legacyUserID);
-
-        setESStatus((esStatus) => {
-            return {
-                ...esStatus,
-                isRefreshing: false,
-                dbExists: true,
-                esEnabled: isESEnabled(userID),
-            };
-        });
-
-        // If the process is successful, catch up with any event happened during refreshing, which
-        // was stored in localStorage by refreshLegacyIndex
-        const currentEvent = await getEventFromLS(userID, api);
-
-        if (!currentEvent || hasBit(currentEvent.Refresh, EVENT_ERRORS.MAIL)) {
-            throw new Error('Refresh flag set');
-        }
-
-        void addSyncing(() => catchUpFromLS(indexKey, currentEvent));
-    };
-
     useSubscribeEventManager(async (event: Event) => {
         const { dbExists, cachedIndexKey } = esStatus;
         if (!dbExists) {
@@ -1061,8 +1005,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
                 return;
             }
 
-            // If there is more than one something is off, e.g. a migration was
-            // already attempted, and it's best to remove them all
+            // If there is more than one something is off and it's best to remove them all
             if (indexKeys.length > 1) {
                 await Promise.all(
                     indexKeys.map(async ({ userID }) => {
@@ -1073,16 +1016,11 @@ const EncryptedSearchProvider = ({ children }: Props) => {
             }
 
             // At this point there is only one key blob. If the stored user ID does not coincide with the
-            // current one, a migration is attempted; otherwise a migration already happened or is
-            // not needed at all
+            // current one, the old index is removed and a new one is automatically created
             const { userID: storedUserID, indexKey } = indexKeys[0];
             if (storedUserID !== userID) {
-                try {
-                    return recoverLegacyIndex(storedUserID, indexKey);
-                } catch (error: any) {
-                    await esDelete(storedUserID);
-                    return restartIndexing();
-                }
+                await esDelete(storedUserID);
+                return restartIndexing();
             }
 
             const isIDBIntact = await canUseES(userID);
