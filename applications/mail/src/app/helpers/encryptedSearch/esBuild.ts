@@ -1,7 +1,7 @@
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { Api } from '@proton/shared/lib/interfaces';
 import runInQueue from '@proton/shared/lib/helpers/runInQueue';
-import { MINUTE } from '@proton/shared/lib/constants';
+import { MINUTE, SECOND } from '@proton/shared/lib/constants';
 import { IDBPDatabase } from 'idb';
 import { decryptMessage as pmcryptoDecryptMessage, getMessage as pmcryptoGetMessage, encryptMessage } from 'pmcrypto';
 import { decryptMessage } from '../message/messageDecrypt';
@@ -24,6 +24,7 @@ import {
     OPENPGP_REFRESH_CUTOFF,
 } from '../../constants';
 import {
+    addESTimestamp,
     createESDB,
     deleteESDB,
     esSentryReport,
@@ -33,9 +34,10 @@ import {
     refreshOpenpgp,
     removeES,
     setES,
+    setOriginalEstimate,
     updateSizeIDB,
 } from './esUtils';
-import { queryEvents, queryMessage, queryMessagesCount, queryMessagesMetadata } from './esAPI';
+import { queryEvents, queryMessage, queryMessagesCount, queryMessagesMetadata, sendESMetrics } from './esAPI';
 import { toText } from '../parserHtml';
 import { sizeOfCachedMessage } from './esCache';
 
@@ -187,9 +189,10 @@ export const fetchMessage = async (
     api: Api,
     getMessageKeys: GetMessageKeys,
     signal?: AbortSignal,
-    messageMetadata?: Message
+    messageMetadata?: Message,
+    userID?: string
 ): Promise<ESMessage | undefined> => {
-    const message = await queryMessage(api, messageID, signal);
+    const message = await queryMessage(api, messageID, signal, userID);
     if (!message) {
         // If a permanent error happened and metadata was given, the returned
         // ESMessage is as if decryption failed
@@ -240,7 +243,8 @@ const storeMessages = async (
     api: Api,
     getMessageKeys: GetMessageKeys,
     abortIndexingRef: React.MutableRefObject<AbortController>,
-    recordLocalProgress: (localProgress: number) => void
+    recordLocalProgress: (localProgress: number) => void,
+    userID: string
 ) => {
     let batchSize = 0;
     let counter = 0;
@@ -257,7 +261,8 @@ const storeMessages = async (
             api,
             getMessageKeys,
             abortIndexingRef.current.signal,
-            message
+            message,
+            userID
         ))!;
 
         recordLocalProgress(++counter);
@@ -308,7 +313,8 @@ const storeMessagesBatches = async (
             EndID: inputLastMessage?.ID,
             End: inputLastMessage?.Time,
         },
-        abortIndexingRef.current.signal
+        abortIndexingRef.current.signal,
+        userID
     );
 
     if (!resultMetadata) {
@@ -332,7 +338,8 @@ const storeMessagesBatches = async (
             api,
             getMessageKeys,
             abortIndexingRef,
-            recordLocalProgress
+            recordLocalProgress,
+            userID
         ).catch((error: any) => {
             if (error.message !== 'Operation aborted') {
                 esSentryReport('storeMessagesBatches: storeMessages', { error });
@@ -368,7 +375,8 @@ const storeMessagesBatches = async (
                 EndID: recoveryPoint.ID,
                 End: recoveryPoint.Time,
             },
-            abortIndexingRef.current.signal
+            abortIndexingRef.current.signal,
+            userID
         );
 
         if (!resultMetadata) {
@@ -381,6 +389,8 @@ const storeMessagesBatches = async (
             await refreshOpenpgp();
             batchCount = 0;
         }
+
+        addESTimestamp(userID, 'step');
     }
 
     return true;
@@ -397,6 +407,7 @@ export const buildDB = async (
     abortIndexingRef: React.MutableRefObject<AbortController>,
     recordProgress: (progress: number) => void
 ) => {
+    addESTimestamp(userID, 'start');
     const esDB = await openESDB(userID);
 
     // Use the oldest message stored as recovery point
@@ -443,7 +454,7 @@ export const storeIndexKey = async (indexKey: CryptoKey, userID: string, getUser
 /**
  * Execute the initial steps of a new indexing, i.e. generating an index key and the DB itself
  */
-export const initialiseDB = async (userID: string, getUserKeys: GetUserKeys, api: Api) => {
+export const initialiseDB = async (userID: string, getUserKeys: GetUserKeys, api: Api, isRefreshed: boolean) => {
     const result: { notSupported: boolean; indexKey: CryptoKey | undefined } = {
         notSupported: false,
         indexKey: undefined,
@@ -474,7 +485,13 @@ export const initialiseDB = async (userID: string, getUserKeys: GetUserKeys, api
     // Save the event before starting building IndexedDB
     const previousEvent = await queryEvents(api);
     if (previousEvent && previousEvent.EventID) {
-        setES.Progress(userID, JSON.stringify({ totalMessages: initialiser.Total }));
+        setES.Progress(userID, {
+            totalMessages: initialiser.Total,
+            isRefreshed,
+            numPauses: 0,
+            timestamps: [],
+            originalEstimate: 0,
+        });
         setES.Event(userID, previousEvent.EventID);
     } else {
         return result;
@@ -512,7 +529,7 @@ export const initialiseDB = async (userID: string, getUserKeys: GetUserKeys, api
         return result;
     }
 
-    setES.Size(userID, '0');
+    setES.Size(userID, 0);
 
     return {
         ...result,
@@ -523,7 +540,8 @@ export const initialiseDB = async (userID: string, getUserKeys: GetUserKeys, api
 /**
  * Compute the estimated time remaining of indexing
  */
-export const estimateIndexingTime = (
+export const estimateIndexingProgress = (
+    userID: string,
     esProgress: number,
     esTotal: number,
     endTime: number,
@@ -535,6 +553,13 @@ export const estimateIndexingTime = (
     if (esTotal !== 0 && endTime !== esState.startTime && esProgress !== esState.esPrevProgress) {
         const remainingMessages = esTotal - esProgress;
 
+        setOriginalEstimate(
+            userID,
+            Math.floor(
+                (((endTime - esState.startTime) / (esProgress - esState.esPrevProgress)) * remainingMessages) / SECOND
+            )
+        );
+
         estimatedMinutes = Math.ceil(
             (((endTime - esState.startTime) / (esProgress - esState.esPrevProgress)) * remainingMessages) / MINUTE
         );
@@ -542,4 +567,53 @@ export const estimateIndexingTime = (
     }
 
     return { estimatedMinutes, currentProgressValue };
+};
+
+/**
+ * Compute the total indexing time based on locally cached timestamps
+ */
+const estimateIndexingDuration = (
+    timestamps: {
+        type: 'start' | 'step' | 'stop';
+        time: number;
+    }[]
+) => {
+    let indexTime = 0;
+    let totalInterruptions = 0;
+
+    for (let index = 0; index < timestamps.length - 1; index++) {
+        const [timestamp1, timestamp2] = timestamps.slice(index, index + 2);
+
+        if (timestamp1.type !== 'stop' && timestamp2.type !== 'start') {
+            indexTime += timestamp2.time - timestamp1.time;
+        } else if (timestamp1.type !== 'stop' || timestamp2.type !== 'stop') {
+            totalInterruptions++;
+        }
+    }
+
+    return { indexTime, totalInterruptions };
+};
+
+/**
+ * Send metrics about the indexing process
+ */
+export const sendIndexingMetrics = async (api: Api, userID: string) => {
+    addESTimestamp(userID, 'stop');
+    const progressBlob = getES.Progress(userID);
+    if (!progressBlob) {
+        return;
+    }
+
+    const { totalMessages: numMessagesIndexed, isRefreshed, numPauses, timestamps, originalEstimate } = progressBlob;
+    const { indexTime, totalInterruptions } = estimateIndexingDuration(timestamps);
+
+    return sendESMetrics(api, 'index', {
+        numInterruptions: totalInterruptions - numPauses,
+        indexSize: getES.Size(userID),
+        originalEstimate,
+        indexTime,
+        numMessagesIndexed,
+        isRefreshed,
+        numPauses,
+    });
 };
