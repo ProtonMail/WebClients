@@ -37,8 +37,6 @@ import {
     useSettingsLink,
 } from '../../../../components';
 
-// import Wizard from '../../../../components/wizard/Wizard';
-
 import { MailImportStep, ImportMailModalModel, Importer, AuthenticationMethod } from '../interfaces';
 
 import YahooMailImportInstructionsStep from './steps/YahooMailImportInstructionsStep';
@@ -126,12 +124,6 @@ const ImportMailModal = ({ onClose = noop, currentImport, providerInstructions, 
     });
     const api = useApi();
     const { call } = useEventManager();
-
-    // const wizardSteps = [
-    //     c('Wizard step').t`Authenticate`,
-    //     c('Wizard step').t`Configure Import`,
-    //     c('Wizard step').t`Import`,
-    // ];
 
     const debouncedEmail = useDebounceInput(modalModel.email);
 
@@ -447,9 +439,6 @@ const ImportMailModal = ({ onClose = noop, currentImport, providerInstructions, 
             ])}
             {...rest}
         >
-            {/* {!isReconnectMode && modalModel.step !== MailImportStep.INSTRUCTIONS && (
-                <Wizard step={modalModel.step} steps={wizardSteps} />
-            )} */}
             {modalModel.step === MailImportStep.INSTRUCTIONS &&
                 providerInstructions === PROVIDER_INSTRUCTIONS.YAHOO && <YahooMailImportInstructionsStep />}
             {modalModel.step === MailImportStep.START && (
