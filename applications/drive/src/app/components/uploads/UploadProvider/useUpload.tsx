@@ -136,6 +136,7 @@ export default function useUpload() {
             nextFolderUpload.shareId,
             nextFolderUpload.parentId,
             nextFolderUpload.name,
+            nextFolderUpload.modificationTime,
             getFolderConflictHandler(nextFolderUpload.id)
         );
         control.add(nextFolderUpload.id, controls);
