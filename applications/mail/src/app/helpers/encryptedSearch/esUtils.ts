@@ -7,11 +7,12 @@ import { wait } from '@proton/shared/lib/helpers/promise';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { IDBPDatabase, openDB, deleteDB } from 'idb';
 import { Location, History } from 'history';
-import { EncryptedSearchDB, GetUserKeys } from '../../models/encryptedSearch';
+import { EncryptedSearchDB, ESProgressBlob, GetUserKeys } from '../../models/encryptedSearch';
 import { ES_MAX_PARALLEL_MESSAGES } from '../../constants';
 import { decryptIndexKey } from './esBuild';
 import { extractSearchParameters, filterFromUrl, pageFromUrl, setSortInUrl, sortFromUrl } from '../mailboxUrl';
 import { isSearch } from '../elements';
+import { roundMilliseconds } from './esSearch';
 
 /**
  * Helpers to work with ES blobs in localStorage
@@ -32,17 +33,18 @@ export const removeESFlags = (userID: string) => {
 export const getES = {
     Key: (userID: string) => getESItem(userID, 'Key'),
     Event: (userID: string) => getESItem(userID, 'Event'),
-    Progress: (userID: string) => getESItem(userID, 'BuildProgress'),
-    Size: (userID: string) => getESItem(userID, 'SizeIDB'),
-    Pause: (userID: string) => getESItem(userID, 'Pause'),
-    Enabled: (userID: string) => getESItem(userID, 'ESEnabled'),
+    Progress: (userID: string): ESProgressBlob | null => JSON.parse(getESItem(userID, 'BuildProgress') || 'null'),
+    Size: (userID: string) => parseInt(getESItem(userID, 'SizeIDB') || '0', 10) || 0,
+    Pause: (userID: string) => getESItem(userID, 'Pause') === 'true',
+    Enabled: (userID: string) => getESItem(userID, 'ESEnabled') === 'true',
 };
 // Setters
 export const setES = {
-    Key: (userID: string, blobValue: string) => setESItem(userID, 'Key', blobValue),
-    Event: (userID: string, blobValue: string) => setESItem(userID, 'Event', blobValue),
-    Progress: (userID: string, blobValue: string) => setESItem(userID, 'BuildProgress', blobValue),
-    Size: (userID: string, blobValue: string) => setESItem(userID, 'SizeIDB', blobValue),
+    Key: (userID: string, armoredKey: string) => setESItem(userID, 'Key', armoredKey),
+    Event: (userID: string, eventID: string) => setESItem(userID, 'Event', eventID),
+    Progress: (userID: string, esProgressBlob: ESProgressBlob) =>
+        setESItem(userID, 'BuildProgress', JSON.stringify(esProgressBlob)),
+    Size: (userID: string, size: number) => setESItem(userID, 'SizeIDB', `${size}`),
     Pause: (userID: string) => setESItem(userID, 'Pause', 'true'),
     Enabled: (userID: string) => setESItem(userID, 'ESEnabled', 'true'),
 };
@@ -84,29 +86,14 @@ export const esSentryReport = (errorMessage: string, extra?: any) => {
 export const indexKeyExists = (userID: string) => !!getES.Key(userID);
 
 /**
- * Check whether indexing is paused
- */
-export const isPaused = (userID: string) => !!getES.Pause(userID);
-
-/**
- * Check whether a recovery point exists
- */
-export const isRecoveryNeeded = (userID: string) => !!getES.Progress(userID);
-
-/**
  * Check whether a previously started indexing process has terminated successfully
  */
-export const isDBReadyAfterBuilding = (userID: string) => !isRecoveryNeeded(userID);
+export const isDBReadyAfterBuilding = (userID: string) => !getES.Progress(userID);
 
 /**
  * Check whether a key exists and the corresponding indexing process has terminated successfully
  */
 export const wasIndexingDone = (userID: string) => indexKeyExists(userID) && isDBReadyAfterBuilding(userID);
-
-/**
- * Check whether the user has enabled encrypted search
- */
-export const isESEnabled = (userID: string) => !!getES.Enabled(userID);
 
 /**
  * Fetch the oldest message from IDB
@@ -147,71 +134,95 @@ export const getNumMessagesDB = async (userID: string) => {
  * Fetch the number of messages in the mailbox when indexing had started, i.e.
  * excluding those that have changed since then
  */
-export const getTotalFromBuildProgress = (userID: string) => {
-    const buildBlob = getES.Progress(userID);
-    if (!buildBlob) {
-        return 0;
-    }
-    const { totalMessages }: { totalMessages: number } = JSON.parse(buildBlob);
-    return totalMessages;
+export const getESTotal = (userID: string) => {
+    return getES.Progress(userID)?.totalMessages || 0;
 };
 
 /**
  * Fetch the indexing progress from BuildProgress
  */
-export const getProgressFromBuildProgress = (userID: string) => {
-    const buildBlob = getES.Progress(userID);
-    if (!buildBlob) {
+export const getESCurrentProgress = (userID: string) => {
+    const progressBlob = getES.Progress(userID);
+    if (!progressBlob) {
         return 0;
     }
-    const { currentMessages, totalMessages }: { currentMessages: number | undefined; totalMessages: number } =
-        JSON.parse(buildBlob);
-
+    const { currentMessages, totalMessages } = progressBlob;
     return Math.ceil(((currentMessages || 0) / totalMessages) * 100);
+};
+
+/**
+ * Overwrites the BuildProgress blob in localStorage
+ */
+export const setESProgress = (userID: string, newProperties: Partial<ESProgressBlob>) => {
+    const progressBlob = getES.Progress(userID);
+    if (!progressBlob) {
+        return;
+    }
+    setES.Progress(userID, {
+        ...progressBlob,
+        ...newProperties,
+    });
 };
 
 /**
  * Set the number of messages already indexed in BuildProgress and save it to localStorage
  */
-export const setCurrentToBuildProgress = (userID: string, currentMessages: number) => {
-    const buildBlob = getES.Progress(userID);
-    if (!buildBlob) {
-        return;
-    }
-    const { totalMessages }: { totalMessages: number } = JSON.parse(buildBlob);
+export const setESCurrent = (userID: string, currentMessages: number) => {
     // Since messages are stored to IDB in batches, we only store up the current
     // number modulo the batch size
-    setES.Progress(
-        userID,
-        JSON.stringify({
-            totalMessages,
-            currentMessages: Math.floor(currentMessages / ES_MAX_PARALLEL_MESSAGES) * ES_MAX_PARALLEL_MESSAGES,
-        })
-    );
+    setESProgress(userID, {
+        currentMessages: Math.floor(currentMessages / ES_MAX_PARALLEL_MESSAGES) * ES_MAX_PARALLEL_MESSAGES,
+    });
 };
 
 /**
- * Read the rolling estimated size of IDB
+ * Increase by 1 the locally cached number of times the user has paused indexing
  */
-export const getSizeIDB = (userID: string) => {
-    const sizeBlob = getES.Size(userID);
-    if (!sizeBlob) {
-        return 0;
+export const increaseNumPauses = (userID: string) => {
+    setESProgress(userID, {
+        numPauses: (getES.Progress(userID)?.numPauses || 0) + 1,
+    });
+};
+
+/**
+ * Add a timestamp to the locally cached set of indexing timestamps
+ */
+export const addESTimestamp = (userID: string, type: 'start' | 'step' | 'stop') => {
+    const progressBlob = getES.Progress(userID);
+    if (!progressBlob) {
+        return;
     }
-    const sizeIDB = parseInt(sizeBlob, 10);
-    if (Number.isNaN(sizeIDB)) {
-        return 0;
+
+    const { timestamps } = progressBlob;
+    timestamps.push({ type, time: roundMilliseconds(Date.now()) });
+
+    setESProgress(userID, {
+        timestamps,
+    });
+};
+/**
+ * Stores the initial estimate in seconds, but only if it's the first of such predictions
+ */
+export const setOriginalEstimate = (userID: string, inputEstimate: number) => {
+    const progressBlob = getES.Progress(userID);
+    if (!progressBlob) {
+        return;
     }
-    return sizeIDB;
+
+    if (progressBlob.originalEstimate === 0) {
+        setESProgress(userID, {
+            originalEstimate: inputEstimate,
+        });
+    }
 };
 
 /**
  * Update the rolling estimated size of IDB
  */
 export const updateSizeIDB = (userID: string, addend: number) => {
-    const sizeIDB = getSizeIDB(userID);
+    const sizeIDB = getES.Size(userID);
     const newSize = sizeIDB + addend;
-    setES.Size(userID, `${newSize}`);
+    setES.Size(userID, newSize);
 };
 
 /**

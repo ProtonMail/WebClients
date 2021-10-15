@@ -29,17 +29,15 @@ import {
     ESMessage,
     IsSearchResult,
     ESCache,
+    ResumeIndexing,
 } from '../models/encryptedSearch';
 import { defaultESCache, defaultESStatus, PAGE_SIZE } from '../constants';
 import {
     indexKeyExists,
-    isPaused,
-    isRecoveryNeeded,
     getNumMessagesDB,
-    isESEnabled,
     wasIndexingDone,
-    getTotalFromBuildProgress,
-    setCurrentToBuildProgress,
+    getESTotal,
+    setESCurrent,
     canUseES,
     deleteESDB,
     removeESFlags,
@@ -49,11 +47,16 @@ import {
     checkNewUserID,
     parseSearchParams,
     resetSort,
+    increaseNumPauses,
+    addESTimestamp,
+    getES,
+    isDBReadyAfterBuilding,
 } from '../helpers/encryptedSearch/esUtils';
-import { buildDB, getIndexKey, initialiseDB } from '../helpers/encryptedSearch/esBuild';
+import { buildDB, getIndexKey, initialiseDB, sendIndexingMetrics } from '../helpers/encryptedSearch/esBuild';
 import {
     hybridSearch,
     normaliseSearchParams,
+    sendSearchingMetrics,
     shouldOnlySortResults,
     uncachedSearch,
 } from '../helpers/encryptedSearch/esSearch';
@@ -64,7 +67,7 @@ import {
     getEventFromLS,
     syncMessageEvents,
 } from '../helpers/encryptedSearch/esSync';
-import { queryEvents, sendESMetrics } from '../helpers/encryptedSearch/esAPI';
+import { queryEvents } from '../helpers/encryptedSearch/esAPI';
 import { highlightJSX, insertMarks } from '../helpers/encryptedSearch/esHighlight';
 
 const EncryptedSearchContext = createContext<EncryptedSearchFunctions>(null as any);
@@ -556,6 +559,8 @@ const EncryptedSearchProvider = ({ children }: Props) => {
             };
         });
         setES.Pause(userID);
+        increaseNumPauses(userID);
+        addESTimestamp(userID, 'stop');
         const isIDBIntact = await canUseES(userID);
         if (!isIDBIntact) {
             return dbCorruptError();
@@ -565,8 +570,8 @@ const EncryptedSearchProvider = ({ children }: Props) => {
     /**
      * Resume an existing indexing operation or start one anew
      */
-    const resumeIndexing = async () => {
-        const isResumed = isPaused(userID);
+    const resumeIndexing: ResumeIndexing = async (isRefreshed = false) => {
+        const isResumed = getES.Pause(userID);
 
         setESStatus((esStatus) => {
             return {
@@ -592,7 +597,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
 
         let indexKey: CryptoKey;
         if (!indexKeyExists(userID) && !isResumed) {
-            const { notSupported, indexKey: newIndexKey } = await initialiseDB(userID, getUserKeys, api);
+            const { notSupported, indexKey: newIndexKey } = await initialiseDB(userID, getUserKeys, api, isRefreshed);
             if (!newIndexKey) {
                 return showError(notSupported);
             }
@@ -605,7 +610,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
             indexKey = existingIndexKey;
         }
 
-        const totalMessages = getTotalFromBuildProgress(userID);
+        const totalMessages = getESTotal(userID);
         const mailboxEmpty = totalMessages === 0;
         recordProgress(await getNumMessagesDB(userID), totalMessages);
 
@@ -622,14 +627,14 @@ const EncryptedSearchProvider = ({ children }: Props) => {
             recordProgress(currentMessages, totalMessages);
             const recordProgressLocal = (progress: number) => {
                 const newProgress = currentMessages + progress;
-                setCurrentToBuildProgress(userID, newProgress);
+                setESCurrent(userID, newProgress);
                 recordProgress(newProgress, totalMessages);
             };
 
             success = await buildDB(userID, indexKey, getMessageKeys, api, abortIndexingRef, recordProgressLocal);
 
             // Kill switch in case user logs out or pauses
-            if (abortIndexingRef.current.signal.aborted || isPaused(userID)) {
+            if (abortIndexingRef.current.signal.aborted || getES.Pause(userID)) {
                 return;
             }
 
@@ -640,6 +645,8 @@ const EncryptedSearchProvider = ({ children }: Props) => {
 
             await wait(2 * SECOND);
         }
+
+        await sendIndexingMetrics(api, userID);
 
         // Finalise IndexedDB building by catching up with new messages
         setESStatus((esStatus) => {
@@ -664,7 +671,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
         await catchUpPromise;
 
         // Note that it's safe to remove the BuildProgress blob because the event to catch
-        // up from is stored in the Event blob
+        // up from is stored in the Event blob and because the metrics report has already been sent
         removeES.Progress(userID);
 
         setESStatus((esStatus) => {
@@ -692,6 +699,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
             isSearchPartial: wasSearchPartial,
             cachedIndexKey,
             isCaching,
+            isFirstSearch,
         } = esStatus;
 
         if (!dbExists || !esEnabled) {
@@ -728,14 +736,9 @@ const EncryptedSearchProvider = ({ children }: Props) => {
                 ...esStatus,
                 isSearching: true,
                 isSearchPartial: true,
+                isFirstSearch: false,
             };
         });
-
-        // Record the number of messages that were actually searched (i.e. not discarded by means of filters)
-        let numMessagesSearched = 0;
-        const incrementMessagesSearched = () => {
-            numMessagesSearched++;
-        };
 
         abortSearchingRef.current = new AbortController();
         const controlledSetCache = (Elements: Element[]) => {
@@ -754,7 +757,6 @@ const EncryptedSearchProvider = ({ children }: Props) => {
                 cachedIndexKey,
                 getUserKeys,
                 userID,
-                incrementMessagesSearched,
                 controlledSetCache,
                 abortSearchingRef
             ));
@@ -786,14 +788,12 @@ const EncryptedSearchProvider = ({ children }: Props) => {
             setCache(searchResults, pageRef.current);
 
             const t2 = performance.now();
-            void sendESMetrics(
+            void sendSearchingMetrics(
                 api,
                 userID,
                 esCacheRef.current.cacheSize,
-                numMessagesSearched,
                 Math.ceil(t2 - t1),
-                searchResults.length,
-                !esCacheRef.current.isCacheReady,
+                isFirstSearch,
                 esCacheRef.current.isCacheLimited
             );
         }
@@ -947,7 +947,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
      */
     const restartIndexing = async () => {
         await esDelete();
-        return resumeIndexing();
+        return resumeIndexing(true);
     };
 
     useSubscribeEventManager(async (event: Event) => {
@@ -1032,14 +1032,14 @@ const EncryptedSearchProvider = ({ children }: Props) => {
                 return {
                     ...esStatus,
                     dbExists: wasIndexingDone(userID),
-                    esEnabled: isESEnabled(userID),
+                    esEnabled: getES.Enabled(userID),
                 };
             });
 
             // If indexing was not successful, try to recover (unless it was paused).
             // Otherwise, just set the correct parameters to ESDBStatus
-            if (isRecoveryNeeded(userID)) {
-                if (!isPaused(userID)) {
+            if (!isDBReadyAfterBuilding(userID)) {
+                if (!getES.Pause(userID)) {
                     await resumeIndexing();
                 }
                 return;
