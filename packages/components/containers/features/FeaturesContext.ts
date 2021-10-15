@@ -55,6 +55,7 @@ export enum FeatureCode {
     SpyTrackerProtection = 'SpyTrackerProtection',
     SpyTrackerProtectionIncorporator = 'SpyTrackerProtectionIncorporator',
     SpotlightSpyTrackerProtection = 'SpotlightSpyTrackerProtection',
+    SpotlightGetStartedChecklist = 'SpotlightGetStartedChecklist',
     EasySwitch = 'EasySwitch',
 }
 

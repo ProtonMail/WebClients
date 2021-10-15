@@ -1,4 +1,4 @@
-import { useCallback, memo } from 'react';
+import { useCallback, memo, useContext } from 'react';
 import { c } from 'ttag';
 import {
     Sidebar,
@@ -9,6 +9,9 @@ import {
     Tooltip,
     useModals,
     useUserSettings,
+    Spotlight,
+    useSpotlightOnFeature,
+    FeatureCode,
 } from '@proton/components';
 import giftSvg from '@proton/styles/assets/img/get-started/gift.svg';
 
@@ -17,6 +20,7 @@ import { MESSAGE_ACTIONS } from '../../constants';
 import MailGetStartedChecklistModal from '../checklist/GetStartedChecklistModal';
 import MailSidebarList from './MailSidebarList';
 import SidebarVersion from './SidebarVersion';
+import { GetStartedChecklistContext } from '../../containers/GetStartedChecklistProvider';
 
 interface Props {
     labelID: string;
@@ -28,7 +32,8 @@ const MailSidebar = ({ labelID, expanded = false, onToggleExpand }: Props) => {
     const onCompose = useOnCompose();
     const [userSettings] = useUserSettings();
     const { createModal } = useModals();
-
+    const { show, onDisplayed } = useSpotlightOnFeature(FeatureCode.SpotlightGetStartedChecklist);
+    const { dismissed: getStartedChecklistDismissed } = useContext(GetStartedChecklistContext);
     const handleCompose = useCallback(() => {
         onCompose({ action: MESSAGE_ACTIONS.NEW });
     }, [onCompose]);
@@ -67,14 +72,21 @@ const MailSidebar = ({ labelID, expanded = false, onToggleExpand }: Props) => {
             version={<SidebarVersion />}
             storageGift={
                 userSettings.Checklists?.includes('get-started') && (
-                    <Tooltip
-                        title={c('Storage')
-                            .t`Get 1 GB of bonus storage for completing your "get started" action items.`}
+                    <Spotlight
+                        content={c('Get started checklist spotlight').t`You can access the checklist anytime from here`}
+                        show={getStartedChecklistDismissed && show}
+                        onDisplayed={onDisplayed}
+                        originalPlacement="top"
                     >
                         <button type="button" className="ml0-5" onClick={handleGiftClick}>
-                            <img width={16} src={giftSvg} alt={c('Action').t`Open get started checklist modal`} />
+                            <Tooltip
+                                title={c('Storage')
+                                    .t`Get 1 GB of bonus storage for completing your "get started" action items.`}
+                            >
+                                <img width={16} src={giftSvg} alt={c('Action').t`Open get started checklist modal`} />
+                            </Tooltip>
                         </button>
-                    </Tooltip>
+                    </Spotlight>
                 )
             }
         >

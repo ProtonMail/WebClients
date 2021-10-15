@@ -17,6 +17,7 @@ import PageContainer from './containers/PageContainer';
 import { MAIN_ROUTE_PATH } from './constants';
 import ContactProvider from './containers/ContactProvider';
 import EncryptedSearchProvider from './containers/EncryptedSearchProvider';
+import GetStartedChecklistProvider from './containers/GetStartedChecklistProvider';
 import { MailContentRefProvider } from './hooks/useClickMailContent';
 import { store } from './logic/store';
 
@@ -46,6 +47,7 @@ const MainContainer = () => {
                         <ContactProvider>
                             <EncryptedSearchProvider>
                                 <MailContentRefProvider mailContentRef={mailContentRef}>
+                                <GetStartedChecklistProvider>
                                     <ComposerContainer breakpoints={breakpoints}>
                                         {({ isComposerOpened }) => (
                                             <>
@@ -65,6 +67,7 @@ const MainContainer = () => {
                                             </>
                                         )}
                                     </ComposerContainer>
+                                    </GetStartedChecklistProvider>
                                 </MailContentRefProvider>
                             </EncryptedSearchProvider>
                         </ContactProvider>
