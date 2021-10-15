@@ -1,14 +1,13 @@
-import { OpenPGPKey } from 'pmcrypto';
+import { encryptPrivateKey, OpenPGPKey } from 'pmcrypto';
 import { Api, User as tsUser, Address as tsAddress, DecryptedKey, Address, ActiveKey } from '../../interfaces';
 import { KeyReactivationData, KeyReactivationRecord, OnKeyReactivationCallback } from './interface';
 import { getPrimaryKey } from '../getPrimaryKey';
-import { USER_KEY_USERID } from '../userKeys';
 import { getAddressReactivationPayload, getReactivatedAddressesKeys } from './reactivateKeyHelper';
 import { reactivateUserKeyRouteV2, reactiveLegacyAddressKeyRouteV2 } from '../../api/keys';
 import { getHasMigratedAddressKey } from '../keyMigration';
 import { getDecryptedAddressKeysHelper } from '../getDecryptedAddressKeys';
 import { getSignedKeyList } from '../signedKeyList';
-import { generateAddressKeyTokens, reformatAddressKey } from '../addressKeys';
+import { generateAddressKeyTokens } from '../addressKeys';
 import { getActiveKeyObject, getActiveKeys, getPrimaryFlag, getReactivatedKeyFlag } from '../getActiveKeys';
 import { SimpleMap } from '../../interfaces/utils';
 
@@ -49,19 +48,11 @@ export const reactivateUserKeys = async ({
         const { id, Key, privateKey: decryptedPrivateKey } = keyToReactivate;
         const { ID } = Key;
         try {
-            const email = USER_KEY_USERID;
-
             if (!decryptedPrivateKey) {
                 throw new Error('Missing key');
             }
-
-            const { privateKey: reformattedPrivateKey, privateKeyArmored } = await reformatAddressKey({
-                email,
-                passphrase: keyPassword,
-                privateKey: decryptedPrivateKey,
-            });
-
-            const newActiveKey = await getActiveKeyObject(reformattedPrivateKey, {
+            const privateKeyArmored = await encryptPrivateKey(decryptedPrivateKey, keyPassword);
+            const newActiveKey = await getActiveKeyObject(decryptedPrivateKey, {
                 ID,
                 primary: getPrimaryFlag(mutableActiveKeys),
             });
@@ -139,7 +130,6 @@ interface ReactivateAddressKeysV2Arguments {
 
 export const reactivateAddressKeysV2 = async ({
     api,
-    address,
     activeKeys,
     keysToReactivate,
     onReactivation,
@@ -151,20 +141,13 @@ export const reactivateAddressKeysV2 = async ({
         const { id, Key, privateKey: decryptedPrivateKey } = keyToReactivate;
         const { ID, Flags } = Key;
         try {
-            const email = address.Email;
-
             if (!decryptedPrivateKey) {
                 throw new Error('Missing key');
             }
 
             const { token, encryptedToken, signature } = await generateAddressKeyTokens(userKey);
-            const { privateKey: reformattedPrivateKey, privateKeyArmored } = await reformatAddressKey({
-                email,
-                passphrase: token,
-                privateKey: decryptedPrivateKey,
-            });
-
-            const newActiveKey = await getActiveKeyObject(reformattedPrivateKey, {
+            const privateKeyArmored = await encryptPrivateKey(decryptedPrivateKey, token);
+            const newActiveKey = await getActiveKeyObject(decryptedPrivateKey, {
                 ID,
                 primary: getPrimaryFlag(mutableActiveKeys),
                 flags: getReactivatedKeyFlag(Flags),

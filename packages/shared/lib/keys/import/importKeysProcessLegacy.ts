@@ -1,6 +1,6 @@
+import { encryptPrivateKey } from 'pmcrypto';
 import { KeyImportData, OnKeyImportCallback } from './interface';
 import { Address, Api, DecryptedKey } from '../../interfaces';
-import { reformatAddressKey } from '../addressKeys';
 import { getSignedKeyList } from '../signedKeyList';
 import reactivateKeysProcessLegacy from '../reactivation/reactivateKeysProcessLegacy';
 import { createAddressKeyRoute } from '../../api/keys';
@@ -43,14 +43,9 @@ const importKeysProcessLegacy = async ({
     for (const keyImportRecord of keysToImport) {
         try {
             const { privateKey } = keyImportRecord;
+            const privateKeyArmored = await encryptPrivateKey(privateKey, keyPassword);
 
-            const { privateKey: reformattedPrivateKey, privateKeyArmored } = await reformatAddressKey({
-                email: address.Email,
-                passphrase: keyPassword,
-                privateKey,
-            });
-
-            const newActiveKey = await getActiveKeyObject(reformattedPrivateKey, {
+            const newActiveKey = await getActiveKeyObject(privateKey, {
                 ID: 'tmp',
                 primary: getPrimaryFlag(mutableActiveKeys),
             });
