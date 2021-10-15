@@ -82,7 +82,7 @@ export const useOptimisticApplyLabels = () => {
                         ? [currentLabelID as string]
                         : getCurrentFolderIDs(element, folders);
 
-                    const isMoveToCurrentFolder = currentFolderIDs.some((folderID) => changes[folderID]);
+                    const isMoveToCurrentFolder = currentFolderIDs.every((folderID) => changes[folderID]);
 
                     if (isMoveToCurrentFolder) {
                         // It's a move to the folder where the elements is already, so nothing to do or undo
