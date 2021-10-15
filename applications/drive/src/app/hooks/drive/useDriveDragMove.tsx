@@ -26,7 +26,17 @@ export default function useDriveDragMove(
     const getHandleItemDrop =
         <T extends FileBrowserItem | LinkMeta>(item: T) =>
         async (e: React.DragEvent) => {
-            const toMove: T[] = JSON.parse(e.dataTransfer.getData(CUSTOM_DATA_FORMAT));
+            let toMove: T[];
+            try {
+                toMove = JSON.parse(e.dataTransfer.getData(CUSTOM_DATA_FORMAT));
+            } catch (err: any) {
+                // Data should be set by useFileBrowserItem when drag starts.
+                // If the data transfer was not available or the move was so
+                // fast that the data were not set yet, we should ignore the
+                // event.
+                console.warn('Could not finish move operation due to', err);
+                return;
+            }
             const toMoveIds = toMove.map(({ LinkID }) => LinkID);
             const parentFolderId = activeFolder?.linkId;
             dragEnterCounter.current = 0;
