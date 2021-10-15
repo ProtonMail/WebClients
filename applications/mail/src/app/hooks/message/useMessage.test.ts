@@ -10,7 +10,6 @@ describe('useMessage', () => {
     const ID = 'ID';
 
     const setup = (localID: string) => {
-        // cache.set(ELEMENTS_CACHE_KEY, elementsCache);
         return renderHook((id = localID) => useMessage(id));
     };
 

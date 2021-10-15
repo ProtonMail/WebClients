@@ -1,32 +1,13 @@
 import { Api } from '@proton/shared/lib/interfaces';
 import { Element } from '../../models/element';
 import { LabelIDsChanges } from '../../models/event';
-
-export interface Filter {
-    [key: string]: number;
-}
-
-export interface Sort {
-    sort: 'Time' | 'Size';
-    desc: boolean;
-}
-
-export interface Search {
-    address?: string;
-    from?: string;
-    to?: string;
-    keyword?: string;
-    begin?: number;
-    end?: number;
-    attachments?: number;
-    wildcard?: number;
-}
+import { Filter, SearchParameters, Sort } from '../../models/tools';
 
 export interface ElementsStateParams {
     labelID: string;
     sort: Sort;
     filter: Filter;
-    search: Search;
+    search: SearchParameters;
     esEnabled: boolean;
 }
 
