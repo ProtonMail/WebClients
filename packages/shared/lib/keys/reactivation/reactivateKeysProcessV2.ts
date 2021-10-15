@@ -39,8 +39,8 @@ export const reactivateUserKeys = async ({
         });
         return acc;
     }, {});
-
     const reactivatedAddressKeysMap: SimpleMap<boolean> = {};
+    const allReactivatedAddressKeysMap: SimpleMap<boolean> = {};
 
     let mutableActiveKeys = activeKeys;
     let mutableAddresses = addresses;
@@ -100,6 +100,7 @@ export const reactivateUserKeys = async ({
             // Notify all the address keys that got reactivated from this user key
             reactivatedAddressKeysResult.forEach(({ reactivatedKeys }) => {
                 reactivatedKeys?.forEach(({ ID }) => {
+                    allReactivatedAddressKeysMap[ID] = true;
                     const reactivationData = keyReactivationDataMap[ID];
                     if (reactivationData) {
                         onReactivation(reactivationData.id, 'ok');
@@ -123,6 +124,7 @@ export const reactivateUserKeys = async ({
     return {
         userKeys: mutableActiveKeys,
         addresses: mutableAddresses,
+        allReactivatedAddressKeysMap,
     };
 };
 
@@ -251,6 +253,7 @@ const reactivateKeysProcessV2 = async ({
 
     let userKeys = oldUserKeys;
     let addresses = oldAddresses;
+    let allReactivatedAddressKeysMap: SimpleMap<boolean> = {};
     if (userRecord) {
         try {
             const activeUserKeys = await getActiveKeys(null, user.Keys, userKeys);
@@ -266,6 +269,7 @@ const reactivateKeysProcessV2 = async ({
             });
             userKeys = userKeysReactivationResult.userKeys;
             addresses = userKeysReactivationResult.addresses;
+            allReactivatedAddressKeysMap = userKeysReactivationResult.allReactivatedAddressKeysMap;
         } catch (e: any) {
             userRecord.keysToReactivate.forEach(({ id }) => onReactivation(id, e));
             addressRecordsInV2Format.forEach(({ keysToReactivate }) => {
@@ -277,6 +281,17 @@ const reactivateKeysProcessV2 = async ({
     const primaryPrivateUserKey = getPrimaryKey(userKeys)?.privateKey;
 
     for (const { address: oldAddress, keysToReactivate } of addressRecordsInLegacyFormatOrWithBackup) {
+        const keysLeftToReactivate: KeyReactivationData[] = [];
+        keysToReactivate.forEach((x) => {
+            // Even if this key was uploaded, it may have gotten reactivated from a user key earlier, and so it
+            // should not be attempted to be reactivated again
+            const alreadyReactivated = allReactivatedAddressKeysMap[x.Key.ID] === true;
+            if (alreadyReactivated) {
+                onReactivation(x.id, 'ok');
+            } else {
+                keysLeftToReactivate.push(x);
+            }
+        });
         try {
             const address = addresses.find(({ ID: otherID }) => oldAddress?.ID === otherID);
             if (!address || !primaryPrivateUserKey) {
@@ -292,10 +307,10 @@ const reactivateKeysProcessV2 = async ({
                 activeKeys: activeAddressKeys,
                 userKey: primaryPrivateUserKey,
                 onReactivation,
-                keysToReactivate,
+                keysToReactivate: keysLeftToReactivate,
             });
         } catch (e: any) {
-            keysToReactivate.forEach(({ id }) => onReactivation(id, e));
+            keysLeftToReactivate.forEach(({ id }) => onReactivation(id, e));
         }
     }
 };
