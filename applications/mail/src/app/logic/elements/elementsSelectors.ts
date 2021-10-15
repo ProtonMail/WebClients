@@ -9,10 +9,11 @@ import {
 } from '../../constants';
 import { hasLabel, isFilter, isSearch, isUnread, sort as sortElements } from '../../helpers/elements';
 import { RootState } from '../store';
-import { ElementsStateParams, Search } from './elementsTypes';
+import { ElementsStateParams } from './elementsTypes';
 import { ESDBStatus } from '../../models/encryptedSearch';
 import { getTotal } from './helpers/elementTotal';
 import { expectedPageLength } from '../../helpers/paging';
+import { SearchParameters } from '../../models/tools';
 
 const beforeFirstLoad = (state: RootState) => state.elements.beforeFirstLoad;
 export const elementsMap = (state: RootState) => state.elements.elements;
@@ -26,7 +27,7 @@ const invalidated = (state: RootState) => state.elements.invalidated;
 const total = (state: RootState) => state.elements.total;
 
 const currentPage = (_: RootState, { page }: { page: number }) => page;
-const currentSearch = (_: RootState, { search }: { search: Search }) => search;
+const currentSearch = (_: RootState, { search }: { search: SearchParameters }) => search;
 const currentParams = (_: RootState, { params }: { params: ElementsStateParams }) => params;
 const currentESDBStatus = (_: RootState, { esDBStatus }: { esDBStatus: ESDBStatus }) => esDBStatus;
 const currentCounts = (_: RootState, { counts }: { counts: { counts: LabelCount[]; loading: boolean } }) => counts;
@@ -104,11 +105,6 @@ export const pageIsConsecutive = createSelector(
 export const shouldResetCache = createSelector(
     [paramsChanged, pageIsConsecutive],
     (paramsChanged, pageIsConsecutive) => {
-        // console.log('shouldResetCache', {
-        //     paramsChanged,
-        //     pageIsConsecutive,
-        //     shouldResetCache: paramsChanged || !pageIsConsecutive,
-        // });
         return paramsChanged || !pageIsConsecutive;
     }
 );
@@ -116,19 +112,6 @@ export const shouldResetCache = createSelector(
 export const shouldSendRequest = createSelector(
     [shouldResetCache, pendingRequest, retry, needsMoreElements, invalidated, pageCached],
     (shouldResetCache, pendingRequest, retry, needsMoreElements, invalidated, pageCached) => {
-        // console.log('shouldSendRequest', {
-        //     shouldResetCache,
-        //     pendingRequest,
-        //     retry,
-        //     needsMoreElements,
-        //     invalidated,
-        //     pageCached,
-        //     shouldSendRequest:
-        //         shouldResetCache ||
-        //         (!pendingRequest &&
-        //             retry.count < MAX_ELEMENT_LIST_LOAD_RETRIES &&
-        //             (needsMoreElements || invalidated || !pageCached)),
-        // });
         return (
             shouldResetCache ||
             (!pendingRequest &&

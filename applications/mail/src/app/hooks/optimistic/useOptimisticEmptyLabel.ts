@@ -52,12 +52,6 @@ export const useOptimisticEmptyLabel = () => {
         });
 
         // Elements cache
-        // const rollbackElements = getElementsCache();
-        // setElementsCache({
-        //     ...rollbackElements,
-        //     elements: {},
-        //     page: 0,
-        // });
         const rollbackElements = Object.values(store.getState().elements.elements);
         dispatch(optimisticEmptyLabel());
 
@@ -88,7 +82,6 @@ export const useOptimisticEmptyLabel = () => {
             rollbackConversations.forEach((conversation) => {
                 conversationCache.set(conversation.Conversation?.ID || '', conversation);
             });
-            // setElementsCache(rollbackElements);
             dispatch(optimisticRestoreEmptyLabel({ elements: rollbackElements }));
             Object.entries(rollbackCounters).forEach(([key, value]) => {
                 const entry = globalCache.get(key) as CacheEntry<LabelCount[]>;

@@ -58,19 +58,6 @@ const useOptimisticDelete = () => {
         });
 
         // Elements cache
-        // const rollbackElements = getElementsCache();
-        // setElementsCache({
-        //     ...rollbackElements,
-        //     elements: Object.entries(rollbackElements.elements).reduce<{ [ID: string]: Element }>(
-        //         (acc, [elementID, element]) => {
-        //             if (!elementIDs.includes(elementID)) {
-        //                 acc[elementID] = element;
-        //             }
-        //             return acc;
-        //         },
-        //         {}
-        //     ),
-        // });
         const rollbackElements = elementIDs.map((elementID) => getElementByID(elementID)).filter(isTruthy);
         dispatch(optimisticDelete({ elementIDs }));
 
@@ -113,7 +100,6 @@ const useOptimisticDelete = () => {
             rollbackConversations.forEach((conversation) => {
                 conversationCache.set(conversation?.Conversation?.ID || '', conversation);
             });
-            // setElementsCache(rollbackElements);
             dispatch(optimisticRestoreDelete({ elements: rollbackElements }));
             Object.entries(rollbackCounters).forEach(([key, value]) => {
                 const entry = globalCache.get(key) as CacheEntry<LabelCount[]>;
