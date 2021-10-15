@@ -110,7 +110,7 @@ const BlackFridayModal = ({ offer, onSelect, ...rest }: Props) => {
         }
 
         const standardMonthlyPricing = (
-            <Price key="standard-pricing" currency={currency} suffix={c('Suffix for price').t`/ mo`}>
+            <Price key="standard-pricing" currency={currency} suffix={c('Suffix for price').t`/ month`}>
                 {pricing[0]?.withoutCoupon || 0}
             </Price>
         );
@@ -128,7 +128,7 @@ const BlackFridayModal = ({ offer, onSelect, ...rest }: Props) => {
                     const key = `${index}`;
                     const { withoutCoupon = 0 } = pricing[index] || {};
                     const amount = (
-                        <Price key={key} currency={currency}>
+                        <Price key={key} currency={currency} isDisplayedInSentence>
                             {withoutCoupon}
                         </Price>
                     );
@@ -223,12 +223,13 @@ const BlackFridayModal = ({ offer, onSelect, ...rest }: Props) => {
                                     currency={currency}
                                     className="blackfriday-monthly-price"
                                     suffix={c('blackfriday: VPNspecialoffer info').t`per month`}
+                                    isDisplayedInSentence
                                 >
                                     {withCoupon / cycle}
                                 </Price>
                             );
                             const amountDue = (
-                                <Price key={key} currency={currency}>
+                                <Price key={key} currency={currency} isDisplayedInSentence>
                                     {withCoupon}
                                 </Price>
                             );
