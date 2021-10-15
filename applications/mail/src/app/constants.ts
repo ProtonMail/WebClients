@@ -168,6 +168,7 @@ export const defaultESStatus: ESStatus = {
     isSearchPartial: false,
     isSearching: false,
     isCaching: false,
+    isFirstSearch: true,
 };
 export const defaultESCache: ESCache = {
     esCache: [],

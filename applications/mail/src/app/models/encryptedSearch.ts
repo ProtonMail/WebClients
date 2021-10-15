@@ -4,16 +4,24 @@ import { DBSchema } from 'idb';
 import { Element } from './element';
 import { ElementsCacheParams } from '../hooks/mailbox/useElementsCache';
 
-export interface ESMetricsReport {
-    numMessagesIDB: number;
-    sizeIDBOnDisk?: number;
-    sizeIDB: number;
-    sizeCache: number;
-    numMessagesSearched: number;
-    searchTime: number;
-    numMessagesFound: number;
+export interface ESMetrics {
+    indexSize: number;
+    numMessagesIndexed: number;
+}
+
+export interface ESSearchMetrics extends ESMetrics {
+    cacheSize: number;
     isFirstSearch: boolean;
     isCacheLimited: boolean;
+    searchTime: number;
+}
+
+export interface ESIndexMetrics extends ESMetrics {
+    numPauses: number;
+    originalEstimate: number;
+    numInterruptions: number;
+    isRefreshed: boolean;
+    indexTime: number;
 }
 
 export type ESBaseMessage = Pick<
@@ -94,6 +102,7 @@ export interface ESStatus {
     isSearchPartial: boolean;
     isSearching: boolean;
     isCaching: boolean;
+    isFirstSearch: boolean;
 }
 
 export interface ESCache {
@@ -129,7 +138,6 @@ export interface ESIndexingState {
 }
 
 export interface UncachedSearchOptions {
-    incrementMessagesSearched?: () => void;
     messageLimit?: number;
     setCache?: (newResults: ESMessage[]) => void;
     beginOrder?: number;
@@ -138,6 +146,15 @@ export interface UncachedSearchOptions {
 }
 
 export type GetUserKeys = () => Promise<DecryptedKey[]>;
+
+export interface ESProgressBlob {
+    totalMessages: number;
+    numPauses: number;
+    isRefreshed: boolean;
+    timestamps: { type: 'start' | 'step' | 'stop'; time: number }[];
+    currentMessages?: number;
+    originalEstimate: number;
+}
 
 export type EncryptedSearch = (labelID: string, setCache: ESSetsElementsCache) => Promise<boolean>;
 
@@ -157,15 +174,17 @@ export type HighlightMetadata = (
 
 export type IsSearchResult = (ID: string) => boolean;
 
+export type ResumeIndexing = (isRefreshed?: boolean) => Promise<void>;
+
 export interface EncryptedSearchFunctions {
     encryptedSearch: EncryptedSearch;
     highlightString: HighlightString;
     highlightMetadata: HighlightMetadata;
     isSearchResult: IsSearchResult;
+    resumeIndexing: ResumeIndexing;
     getESDBStatus: () => ESDBStatus;
     getProgressRecorderRef: () => React.MutableRefObject<[number, number]>;
     toggleEncryptedSearch: () => void;
-    resumeIndexing: () => Promise<void>;
     pauseIndexing: () => Promise<void>;
     cacheIndexedDB: () => Promise<void>;
     incrementSearch: IncrementSearch;

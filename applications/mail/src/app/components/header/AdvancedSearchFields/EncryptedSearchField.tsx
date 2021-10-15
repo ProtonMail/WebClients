@@ -15,11 +15,11 @@ import {
 } from '@proton/components';
 
 import {
-    getProgressFromBuildProgress,
-    getTotalFromBuildProgress,
+    getESCurrentProgress,
+    getESTotal,
     indexKeyExists,
     isDBReadyAfterBuilding,
-    isPaused,
+    getES,
     wasIndexingDone,
 } from '../../../helpers/encryptedSearch/esUtils';
 import { useEncryptedSearchContext } from '../../../containers/EncryptedSearchProvider';
@@ -60,7 +60,7 @@ const EncryptedSearchField = ({ showMore, toggleShowMore, esState }: Props) => {
         estimatedMinutes === 0 && (totalIndexingMessages === 0 || esProgress !== totalIndexingMessages);
 
     // ES progress
-    const progressFromBuildEvent = isRefreshing ? 0 : getProgressFromBuildProgress(user.ID);
+    const progressFromBuildEvent = isRefreshing ? 0 : getESCurrentProgress(user.ID);
     const progressValue = isEstimating ? progressFromBuildEvent : currentProgressValue;
 
     // Header
@@ -112,9 +112,9 @@ const EncryptedSearchField = ({ showMore, toggleShowMore, esState }: Props) => {
     );
 
     // Progress indicator
-    const totalProgressToShow = Math.max(esProgress, getTotalFromBuildProgress(user.ID));
+    const totalProgressToShow = Math.max(esProgress, getESTotal(user.ID));
     let progressStatus: string = '';
-    if (isPaused(user.ID)) {
+    if (getES.Pause(user.ID)) {
         progressStatus = c('Info').t`Indexing paused`;
     } else if (isEstimating) {
         progressStatus = c('Info').t`Estimating time remaining...`;
@@ -140,18 +140,18 @@ const EncryptedSearchField = ({ showMore, toggleShowMore, esState }: Props) => {
             aria-describedby="timeRemaining"
             className={classnames([
                 'mt1 mb1 flex-item-fluid',
-                isPaused(user.ID) ? 'progress-bar--disabled' : undefined,
+                getES.Pause(user.ID) ? 'progress-bar--disabled' : undefined,
             ])}
         />
     );
     const disablePauseResumeButton = wasIndexingDone(user.ID) && isBuilding;
     const showPauseResumeButton = showProgress && (!wasIndexingDone(user.ID) || isBuilding) && !isRefreshing;
-    const pauseResumeButton = isPaused(user.ID) ? (
+    const pauseResumeButton = getES.Pause(user.ID) ? (
         <Button
             shape="solid"
             color="norm"
             className="ml1 w25"
-            onClick={resumeIndexing}
+            onClick={() => resumeIndexing()}
             disabled={disablePauseResumeButton}
         >
             {c('Action').t`Resume`}
@@ -201,7 +201,7 @@ const EncryptedSearchField = ({ showMore, toggleShowMore, esState }: Props) => {
                         aria-atomic="true"
                         className={classnames([
                             'color-weak relative advanced-search-time-remaining mt0-5',
-                            isEstimating || isPaused(user.ID) ? 'visibility-hidden' : undefined,
+                            isEstimating || getES.Pause(user.ID) ? 'visibility-hidden' : undefined,
                         ])}
                     >
                         {etaMessage}

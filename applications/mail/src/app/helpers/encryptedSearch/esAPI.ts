@@ -4,11 +4,11 @@ import { getEvents, getLatestID } from '@proton/shared/lib/api/events';
 import { getMessage, queryMessageMetadata } from '@proton/shared/lib/api/messages';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { SECOND } from '@proton/shared/lib/constants';
-import { ESMetricsReport } from '../../models/encryptedSearch';
 import { Event } from '../../models/event';
 import { ES_MAX_PARALLEL_MESSAGES } from '../../constants';
-import { esSentryReport, getNumMessagesDB, getSizeIDB } from './esUtils';
+import { addESTimestamp, esSentryReport } from './esUtils';
 import { isNetworkError } from '../errors';
+import { ESIndexMetrics, ESSearchMetrics } from '../../models/encryptedSearch';
 
 // Error message codes that trigger a retry
 const ES_TEMPORARY_ERRORS = [408, 429, 502, 503];
@@ -20,7 +20,8 @@ const apiHelper = async <T>(
     api: Api,
     signal: AbortSignal | undefined,
     options: Object,
-    callingContext: string
+    callingContext: string,
+    userID?: string
 ): Promise<T | undefined> => {
     let apiResponse: T;
     try {
@@ -41,9 +42,13 @@ const apiHelper = async <T>(
                 retryAfterSeconds = headers ? parseInt(headers.get('retry-after') || '1', 10) : retryAfterSeconds;
             }
 
+            if (userID) {
+                addESTimestamp(userID, 'stop');
+            }
+
             await wait(retryAfterSeconds * SECOND);
 
-            return apiHelper<T>(api, signal, options, callingContext);
+            return apiHelper<T>(api, signal, options, callingContext, userID);
         }
 
         esSentryReport(`apiHelper: ${callingContext}`, { error });
@@ -75,7 +80,8 @@ export const queryMessagesMetadata = async (
         PageSize?: number;
         Page?: number;
     },
-    signal?: AbortSignal
+    signal?: AbortSignal,
+    userID?: string
 ) => {
     return apiHelper<{ Total: number; Messages: Message[] }>(
         api,
@@ -87,7 +93,8 @@ export const queryMessagesMetadata = async (
             Desc: 1,
             ...options,
         } as any),
-        'queryMessageMetadata'
+        'queryMessageMetadata',
+        userID
     );
 };
 
@@ -105,57 +112,22 @@ export const queryMessagesCount = async (api: Api, signal?: AbortSignal) => {
 /**
  * Fetch one message
  */
-export const queryMessage = async (api: Api, messageID: string, signal?: AbortSignal) => {
-    const result = await apiHelper<{ Message: Message }>(api, signal, getMessage(messageID), 'getMessage');
+export const queryMessage = async (api: Api, messageID: string, signal?: AbortSignal, userID?: string) => {
+    const result = await apiHelper<{ Message: Message }>(api, signal, getMessage(messageID), 'getMessage', userID);
     return result?.Message;
 };
 
 /**
  * Send metrics about encrypted search usage
  */
-export const sendESMetrics = async (
-    api: Api,
-    userID: string,
-    sizeCache: number,
-    numMessagesSearched: number,
-    searchTime: number,
-    numMessagesFound: number,
-    isFirstSearch: boolean,
-    isCacheLimited: boolean
-) => {
-    const Log = 'encrypted_search';
-    // Random number of seconds between 1 second and 3 minutes, expressed in milliseconds
-    const randomDelay = 1000 * Math.floor(180 * Math.random() + 1);
-    const storeManager = navigator.storage;
-
-    const [numMessagesIDB, sizeIDBOnDisk] = await Promise.all([
-        getNumMessagesDB(userID),
-        storeManager
-            ?.estimate()
-            .then((storageDetails) => storageDetails.usage)
-            .catch(() => undefined),
-        wait(randomDelay),
-    ]);
-
-    const Data: ESMetricsReport = {
-        numMessagesIDB,
-        sizeIDB: getSizeIDB(userID),
-        sizeIDBOnDisk,
-        sizeCache,
-        numMessagesSearched,
-        searchTime,
-        numMessagesFound,
-        isFirstSearch,
-        isCacheLimited,
-    };
-
+export const sendESMetrics = async (api: Api, Title: string, Data: ESSearchMetrics | ESIndexMetrics) => {
     return apiHelper<{ Code: number }>(
         api,
         undefined,
         {
             method: 'post',
             url: 'metrics',
-            data: { Log, Data },
+            data: { Log: 'encrypted_search', Title, Data },
         },
         'metrics'
     );
