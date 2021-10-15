@@ -45,27 +45,38 @@ const Price = ({
         <span className={classnames(['prefix', isDisplayedInSentence && 'mr0-25'])}>{prefix}</span>
     ) : null;
 
-    if (currency === 'USD') {
+    if (currency === 'CHF') {
         return (
             <span className={classnames(['price flex-item-noshrink inline-flex', className])} data-currency={currency}>
                 {pr}
                 {p}
-                {c}
+                <>{c} </>
                 {v}
                 {s}
             </span>
-        ); // -$2/month
+        ); // -CHF 2/month
     }
 
+    if (currency === 'EUR') {
+        return (
+            <span className={classnames(['price flex-item-noshrink inline-flex', className])} data-currency={currency}>
+                {pr}
+                {p}
+                {v}
+                <> {c}</>
+                {s}
+            </span>
+        ); // -2 EUR/month
+    }
     return (
         <span className={classnames(['price flex-item-noshrink inline-flex', className])} data-currency={currency}>
             {pr}
             {p}
+            {currency ? c : null}
             {v}
-            {currency ? <> {c}</> : null}
             {s}
         </span>
-    ); // -2 EUR/month
+    ); // -$2/month
 };
 
 export default Price;
