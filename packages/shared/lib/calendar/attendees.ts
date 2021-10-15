@@ -211,10 +211,8 @@ export const withPmAttendees = async (
                 return supportedAttendee;
             }
             const canonicalEmail = canonicalEmailMap[emailAddress];
-            if (!canonicalEmail) {
-                throw new Error('No canonical email provided');
-            }
-            const token = await generateAttendeeToken(canonicalEmail, uid.value);
+            // If the participant has an invalid email, we fall back to the provided email address
+            const token = await generateAttendeeToken(canonicalEmail || emailAddress, uid.value);
             return {
                 ...supportedAttendee,
                 parameters: {
