@@ -10,12 +10,12 @@ describe('Price component', () => {
 
     it('should render price with EUR in suffix', () => {
         const { container } = render(<Price currency="EUR">{1500}</Price>);
-        expect(container.firstChild.textContent).toBe('15 €');
+        expect(container.firstChild.textContent).toBe('15 €');
     });
 
     it('should render price with CHF in prefix', () => {
         const { container } = render(<Price currency="CHF">{1500}</Price>);
-        expect(container.firstChild.textContent).toBe('CHF 15');
+        expect(container.firstChild.textContent).toBe('CHF 15');
     });
 
     it('should use the divisor defined', () => {

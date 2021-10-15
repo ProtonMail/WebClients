@@ -30,7 +30,6 @@ const Price = ({
 }: Props) => {
     const value = humanPrice(amount, divisor);
     const [integer, decimal] = `${value}`.split('.');
-    const c = <span className="currency">{CURRENCIES[currency as Currency] || currency}</span>;
     const p = amount < 0 ? <span className="prefix">-</span> : null;
     const v = (
         <span className="amount">
@@ -50,7 +49,7 @@ const Price = ({
             <span className={classnames(['price flex-item-noshrink inline-flex', className])} data-currency={currency}>
                 {pr}
                 {p}
-                <>{c} </>
+                <span className="currency">CHF&nbsp;</span>
                 {v}
                 {s}
             </span>
@@ -63,16 +62,16 @@ const Price = ({
                 {pr}
                 {p}
                 {v}
-                <> {c}</>
+                <span className="currency">&nbsp;€</span>
                 {s}
             </span>
-        ); // -2 EUR/month
+        ); // -2 €/month
     }
     return (
         <span className={classnames(['price flex-item-noshrink inline-flex', className])} data-currency={currency}>
             {pr}
             {p}
-            {currency ? c : null}
+            {!!currency && <span className="currency">{CURRENCIES[currency as Currency] || currency}</span>}
             {v}
             {s}
         </span>
