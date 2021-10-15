@@ -2,6 +2,7 @@ import { ReactNode, useState, useCallback, SyntheticEvent } from 'react';
 import * as React from 'react';
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/components/hooks';
 import dragdropImageSvg from '@proton/styles/assets/img/placeholders/drag-and-drop.svg';
 
 import useActiveShare from '../../../hooks/drive/useActiveShare';
@@ -16,6 +17,7 @@ interface UploadDragDropProps {
 }
 
 const UploadDragDrop = ({ children, className, disabled }: UploadDragDropProps) => {
+    const { createNotification } = useNotifications();
     const { activeFolder } = useActiveShare();
     const { uploadFiles } = useUploadProvider();
 
@@ -60,7 +62,14 @@ const UploadDragDrop = ({ children, className, disabled }: UploadDragDropProps) 
                                 filesToUpload.push({ path, file });
                                 resolve();
                             },
-                            (error: Error) => reject(new Error(`Unable to get File ${item}: ${error}`))
+                            (error: Error) => {
+                                createNotification({
+                                    type: 'warning',
+                                    // translator: here is an example of full sentence: File ".abc" cannot be uploaded due to "browser specific error such as hidden files are not allowed" error
+                                    text: c('Error').t`File "${item.name}" cannot be uploaded due to "${error}" error`,
+                                });
+                                reject(new Error(`Unable to get File ${item}: ${error}`));
+                            }
                         );
                     });
                 }
