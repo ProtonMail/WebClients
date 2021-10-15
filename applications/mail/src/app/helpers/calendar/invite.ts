@@ -7,6 +7,10 @@ import {
     ICAL_METHODS_ATTENDEE,
 } from '@proton/shared/lib/calendar/constants';
 import { generateVeventHashUID } from '@proton/shared/lib/calendar/helper';
+import {
+    EVENT_INVITATION_ERROR_TYPE,
+    EventInvitationError,
+} from '@proton/shared/lib/calendar/icsSurgery/EventInvitationError';
 import { getSupportedEvent } from '@proton/shared/lib/calendar/icsSurgery/vevent';
 import { findAttendee, getParticipant, getSelfAddressData } from '@proton/shared/lib/calendar/integration/invite';
 import { getOccurrencesBetween } from '@proton/shared/lib/calendar/recurring';
@@ -29,11 +33,12 @@ import {
     getIsTimezoneComponent,
     getIsValidMethod,
     getIsXOrIanaComponent,
+    getIsYahooEvent,
     getPmSharedEventID,
     getPmSharedSessionKey,
     getSequence,
 } from '@proton/shared/lib/calendar/vcalHelper';
-import { getIsEventCancelled } from '@proton/shared/lib/calendar/veventHelper';
+import { getIsEventCancelled, withDtstamp } from '@proton/shared/lib/calendar/veventHelper';
 import { SECOND } from '@proton/shared/lib/constants';
 import { fromUTCDate, getSupportedTimezone } from '@proton/shared/lib/date/timezone';
 import { getIsAddressActive, getIsAddressDisabled } from '@proton/shared/lib/helpers/address';
@@ -41,6 +46,7 @@ import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { canonizeEmailByGuess, canonizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import { splitExtension } from '@proton/shared/lib/helpers/file';
 import { unary } from '@proton/shared/lib/helpers/function';
+import { omit } from '@proton/shared/lib/helpers/object';
 import { Address } from '@proton/shared/lib/interfaces';
 import {
     Calendar,
@@ -63,10 +69,7 @@ import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message'
 import { RequireSome, Unwrap } from '@proton/shared/lib/interfaces/utils';
 import { getOriginalTo } from '@proton/shared/lib/mail/messages';
 import { getUnixTime } from 'date-fns';
-import {
-    EVENT_INVITATION_ERROR_TYPE,
-    EventInvitationError,
-} from '@proton/shared/lib/calendar/icsSurgery/EventInvitationError';
+import { serverTime } from 'pmcrypto';
 import { MessageExtendedWithData } from '../../models/message';
 import { FetchAllEventsByUID } from './inviteApi';
 
@@ -134,6 +137,12 @@ interface NonRFCCompliantVcalendar extends VcalVcalendar {
 
 export const getHasInvitation = (model: InvitationModel): model is RequireSome<InvitationModel, 'invitationIcs'> => {
     return !!model.invitationIcs;
+};
+
+export const getInvitationHasMethod = (
+    invitation: EventInvitation
+): invitation is RequireSome<EventInvitation, 'method'> => {
+    return invitation.method !== undefined;
 };
 
 export const getInvitationHasEventID = (
@@ -274,14 +283,22 @@ export const getIsProtonInvite = ({
     invitationIcs,
     invitationApi,
     pmData,
+    xYahooUserStatus,
 }: {
     invitationIcs: RequireSome<EventInvitation, 'method'>;
     invitationApi?: RequireSome<EventInvitation, 'calendarEvent'>;
     pmData?: PmInviteData;
+    xYahooUserStatus?: string;
 }) => {
     const { method } = invitationIcs;
     const { sharedEventID, isProtonReply } = pmData || {};
-    const isLinked = sharedEventID === invitationApi?.calendarEvent.SharedEventID;
+    /*
+        If a custom Yahoo property is present, we can be sure that it's not a Proton invite.
+        If we do not include the condition, we will be tricked into thinking it's a Proton invite
+        given that Yahoo sends back the X-PM-SHARED-EVENT-ID in the REPLY. Once we transition to
+        the full-fledged Proton-Proton invite flow (via the X-PM-PROTON-REPLY property), the Yahoo check can be dropped
+     */
+    const isLinked = xYahooUserStatus ? false : sharedEventID === invitationApi?.calendarEvent.SharedEventID;
     if ([ICAL_METHOD.REQUEST, ICAL_METHOD.CANCEL].includes(method)) {
         if (!invitationApi) {
             return !!sharedEventID;
@@ -382,7 +399,7 @@ export const processEventInvitation = <T>(
 ): ProcessedInvitation<T> => {
     const { vevent, calendarEvent, method } = invitation;
     const isImport = method === ICAL_METHOD.PUBLISH;
-    const timeStatus = getEventTimeStatus(vevent, Date.now());
+    const timeStatus = getEventTimeStatus(vevent, +serverTime());
     const attendees = vevent.attendee || [];
     const { organizer } = vevent;
     const originalTo = getOriginalTo(message.data);
@@ -428,6 +445,7 @@ export const processEventInvitation = <T>(
                 emailTo: originalTo,
                 index,
                 calendarAttendees: calendarEvent?.Attendees,
+                xYahooUserStatus: vevent['x-yahoo-user-status']?.value,
             });
         }
     } else if (selfAttendee) {
@@ -488,12 +506,20 @@ export const getInitialInvitationModel = ({
             error: invitationOrError,
         };
     }
+    if (!getInvitationHasMethod(invitationOrError)) {
+        throw new Error('Initial invitation lacks ICAL method');
+    }
     const { isOrganizerMode, isImport, timeStatus, isAddressActive, isAddressDisabled, invitation } =
-        processEventInvitation(invitationOrError, message, contactEmails, ownAddresses);
+        processEventInvitation<RequireSome<EventInvitation, 'method'>>(
+            invitationOrError,
+            message,
+            contactEmails,
+            ownAddresses
+        );
     const result: InvitationModel = {
         isOrganizerMode,
         isImport,
-        hasMultipleVevents: invitation.hasMultipleVevents,
+        hasMultipleVevents: !!invitation.hasMultipleVevents,
         timeStatus,
         isAddressActive,
         isAddressDisabled,
@@ -533,6 +559,12 @@ export const getInitialInvitationModel = ({
             pmData.sharedSessionKey = sharedSessionKey;
         }
         result.pmData = pmData;
+    }
+    const isYahooEvent = getIsYahooEvent(invitation.vevent);
+    if (isYahooEvent) {
+        // Yahoo does not send an updated DTSTAMP in their invite ICS's. This breaks all of our flow.
+        // To avoid that, we substitute the event DTSTAMP by the message DTSTAMP
+        invitation.vevent = withDtstamp(omit(invitation.vevent, ['dtstamp']), message.data.Time * SECOND);
     }
 
     return result;
