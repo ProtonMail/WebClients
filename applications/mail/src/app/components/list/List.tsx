@@ -1,9 +1,8 @@
-import { useEffect, ChangeEvent, Ref, memo, forwardRef, MutableRefObject, useState } from 'react';
+import { useEffect, ChangeEvent, Ref, memo, forwardRef, MutableRefObject, useContext } from 'react';
 import { c, msgid } from 'ttag';
 import { useLabels, classnames, PaginationRow, useItemsDraggable } from '@proton/components';
 import { MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
 import { DENSITY } from '@proton/shared/lib/constants';
-import * as sessionStorage from '@proton/shared/lib/helpers/sessionStorage';
 
 import Item from './Item';
 import { Element } from '../../models/element';
@@ -21,10 +20,11 @@ import GetStartedChecklist from '../checklist/GetStartedChecklist';
 import { isColumnMode } from '../../helpers/mailSettings';
 import { MESSAGE_ACTIONS } from '../../constants';
 import { useOnCompose } from '../../containers/ComposeProvider';
+import { GetStartedChecklistContext } from '../../containers/GetStartedChecklistProvider';
 
 const defaultCheckedIDs: string[] = [];
 const defaultElements: Element[] = [];
-const GET_STARTED_CHECKLIST_DISMISSED_STORAGE_KEY = 'GET_STARTED_CHECKLIST_DISMISSED_STORAGE_KEY';
+
 interface Props {
     labelID: string;
     loading: boolean;
@@ -87,10 +87,8 @@ const List = (
     const onCompose = useOnCompose();
     const elements = usePlaceholders(inputElements, loading, placeholderCount);
     const pagingHandlers = usePaging(inputPage, inputTotal, onPage);
+    const { dismissed: getStartedDismissed, handleDismiss } = useContext(GetStartedChecklistContext);
     const { page, total } = pagingHandlers;
-    const [getStartedDismissed, setGetStartedDismissed] = useState(() =>
-        JSON.parse(sessionStorage.getItem(GET_STARTED_CHECKLIST_DISMISSED_STORAGE_KEY) || JSON.stringify(false))
-    );
 
     // Scroll top when changing page
     useEffect(() => {
@@ -105,10 +103,6 @@ const List = (
         page,
         total
     );
-    const handleDismiss = () => {
-        setGetStartedDismissed(true);
-        sessionStorage.setItem(GET_STARTED_CHECKLIST_DISMISSED_STORAGE_KEY, JSON.stringify(true));
-    };
 
     const { draggedIDs, handleDragStart, handleDragEnd } = useItemsDraggable(
         elements,

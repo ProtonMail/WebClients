@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useContext } from 'react';
 import { c } from 'ttag';
 import {
     Button,
@@ -9,22 +9,21 @@ import {
     SettingsLink,
     useModals,
     useApi,
-    useLoading,
     Loader,
     useUser,
     useIsMnemonicAvailable,
     classnames,
-    useEventManager,
+    useSettingsLink,
 } from '@proton/components';
 import { MnemonicPromptModal } from '@proton/components/containers/mnemonic';
-import { getChecklist, seenCompletedChecklist } from '@proton/shared/lib/api/checklist';
+import { seenCompletedChecklist } from '@proton/shared/lib/api/checklist';
 import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import gift from '@proton/styles/assets/img/get-started/gift.svg';
 import { GetStartedChecklistKey } from '@proton/shared/lib/interfaces';
 
-import { Event } from '../../models/event';
+import { GetStartedChecklistContext } from '../../containers/GetStartedChecklistProvider';
 import ModalGetMobileApp from './ModalGetMobileApp';
 import ModalImportEmails from './ModalImportEmails';
 import './GetStartedChecklist.scss';
@@ -83,21 +82,11 @@ const GetStartedChecklist = ({
     onDismiss,
     onSendMessage,
 }: GetStartedChecklistProps) => {
-    const [checklist, setChecklist] = useState<GetStartedChecklistKey[]>([]);
-    const api = useApi();
     const [user] = useUser();
-    const { subscribe } = useEventManager();
+    const { checklist, loading } = useContext(GetStartedChecklistContext);
     const { createModal } = useModals();
-    const [loading, withLoading] = useLoading();
     const isMnemonicAvailable = useIsMnemonicAvailable();
-
-    useEffect(() => {
-        subscribe(({ ChecklistEvents }: Event) => {
-            ChecklistEvents?.forEach(({ CompletedItem }) => {
-                setChecklist((current) => [...current, CompletedItem]);
-            });
-        });
-    }, []);
+    const goToSettings = useSettingsLink();
 
     const checklistItems = [
         {
@@ -116,12 +105,18 @@ const GetStartedChecklist = ({
                 createModal(<ModalGetMobileApp />);
             },
         },
-        isMnemonicAvailable && {
+        {
             key: GetStartedChecklistKey.RecoveryMethod,
-            text: c('Get started checklist item').t`Activate your recovery phrase`,
+            text: isMnemonicAvailable
+                ? c('Get started checklist item').t`Activate your recovery phrase`
+                : c('Get started checklist item').t`Activate a recovery method`,
             icon: 'lock',
             onClick: () => {
-                createModal(<MnemonicPromptModal />);
+                if (isMnemonicAvailable) {
+                    createModal(<MnemonicPromptModal />);
+                } else {
+                    goToSettings('/authentication#recovery-notification');
+                }
             },
         },
         {
@@ -139,14 +134,6 @@ const GetStartedChecklist = ({
             complete: checklist.includes(key),
             ...rest,
         }));
-
-    useEffect(() => {
-        withLoading(
-            api<{ Items: GetStartedChecklistKey[] }>(getChecklist('get-started')).then(({ Items }) =>
-                setChecklist(Items)
-            )
-        );
-    }, []);
 
     const numberOfCompletedItems = checklist.length;
 
