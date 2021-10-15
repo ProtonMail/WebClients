@@ -83,6 +83,7 @@ export interface CreateLinkedCalendarEventData
     extends RequireSome<Partial<CreateCalendarEventData>, 'SharedKeyPacket'> {
     UID: string;
     SharedEventID: string;
+    SourceCalendarID?: string;
 }
 
 export interface QueryCalendarAlarms {
