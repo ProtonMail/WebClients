@@ -4,7 +4,6 @@ import { useApi, useNotifications } from '@proton/components';
 import { useEffect } from 'react';
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { isSearch } from '../../helpers/elements';
-import { Filter, Sort } from '../../logic/elements/elementsTypes';
 import { manualPending, load as loadAction, manualFulfilled, addESResults } from '../../logic/elements/elementsActions';
 import { ESSetsElementsCache } from '../../models/encryptedSearch';
 import { RootState } from '../../logic/store';
@@ -14,7 +13,7 @@ import {
     shouldSendRequest as shouldSendRequestSelector,
     shouldUpdatePage as shouldUpdatePageSelector,
 } from '../../logic/elements/elementsSelectors';
-import { SearchParameters } from '../../models/tools';
+import { Filter, SearchParameters, Sort } from '../../models/tools';
 
 interface EncryptedSearchParams {
     conversationMode: boolean;
@@ -42,7 +41,6 @@ export const useEncryptedSearch = ({
     const { getESDBStatus, encryptedSearch, incrementSearch } = useEncryptedSearchContext();
     const esDBStatus = getESDBStatus();
     const { esEnabled } = esDBStatus;
-    // const useES = dbExists && esEnabled && isSearch(search) && (!!search.keyword || !isCacheLimited);
 
     const params = { labelID, page, sort, filter, search, esEnabled };
 
@@ -54,29 +52,10 @@ export const useEncryptedSearch = ({
     );
 
     const setEncryptedSearchResults: ESSetsElementsCache = (elements, page) => {
-        // const Total = Elements.length;
-        // const pages = range(0, Math.ceil(Total / PAGE_SIZE));
-        // // Retry is disabled for encrypted search results, to avoid re-triggering the search several times
-        // // when there are no results
-        // setCache((cache) => {
-        //     return {
-        //         params: cache.params,
-        //         bypassFilter: [],
-        //         beforeFirstLoad: false,
-        //         invalidated: false,
-        //         pendingRequest: false,
-        //         page: inputPage,
-        //         total: Total,
-        //         pages,
-        //         elements: toMap(Elements, 'ID'),
-        //         retry: { payload: undefined, count: MAX_ELEMENT_LIST_LOAD_RETRIES, error: undefined },
-        //     };
-        // });
         dispatch(addESResults({ elements, page }));
     };
 
     const executeSearch = async () => {
-        // setPendingRequest();
         dispatch(manualPending());
         try {
             let success = false;
@@ -92,11 +71,9 @@ export const useEncryptedSearch = ({
                             .t`Your search matched too many results. Please limit your search and try again.`,
                         type: 'error',
                     });
-                    // setCache((cache) => ({ ...cache, pendingRequest: false }));
                     dispatch(manualFulfilled());
                     onPage(0);
                 } else {
-                    // await load();
                     void dispatch(loadAction({ api, conversationMode, page, params, abortController: undefined }));
                 }
             }
@@ -105,7 +82,6 @@ export const useEncryptedSearch = ({
                 text: c('Error').t`There has been an issue with content search. Default search has been used instead.`,
                 type: 'error',
             });
-            // await load();
             void dispatch(loadAction({ api, conversationMode, page, params, abortController: undefined }));
         }
     };

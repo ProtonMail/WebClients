@@ -135,10 +135,6 @@ const MailboxContainer = ({
 
     useMailboxPageTitle(labelID, location);
 
-    // const elementIDs = useDeepMemo(() => {
-    //     return elements.map((element) => element.ID || '');
-    // }, [elements]);
-
     const {
         checkedIDs,
         selectedIDs,

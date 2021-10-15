@@ -1,7 +1,7 @@
 import { useApi, useSubscribeEventManager } from '@proton/components';
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import { useDispatch, useSelector } from 'react-redux';
-import { EventUpdates, Search } from '../../logic/elements/elementsTypes';
+import { EventUpdates } from '../../logic/elements/elementsTypes';
 import { ElementEvent, Event, ConversationEvent, MessageEvent } from '../../models/event';
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { eventUpdates, invalidate } from '../../logic/elements/elementsActions';
@@ -12,8 +12,9 @@ import {
 } from '../../logic/elements/elementsSelectors';
 import { Element } from '../../models/element';
 import { RootState } from '../../logic/store';
+import { SearchParameters } from '../../models/tools';
 
-export const useElementsEvents = (conversationMode: boolean, search: Search) => {
+export const useElementsEvents = (conversationMode: boolean, search: SearchParameters) => {
     const api = useApi();
     const { getESDBStatus } = useEncryptedSearchContext();
     const esDBStatus = getESDBStatus();
@@ -38,7 +39,6 @@ export const useElementsEvents = (conversationMode: boolean, search: Search) => 
 
         if (!isLive) {
             if (Elements.length) {
-                // setCache((cache) => ({ ...cache, invalidated: true }));
                 dispatch(invalidate());
             }
             return;
@@ -68,65 +68,22 @@ export const useElementsEvents = (conversationMode: boolean, search: Search) => 
             { toCreate: [], toUpdate: [], toDelete: [] }
         );
 
-        // const toUpdateCompleted = (
-        //     await Promise.all(
-        //         toUpdate
-        //             .filter(({ ID = '' }) => !toDelete.includes(ID)) // No need to get deleted element
-        //             .map(async (element) => {
-        //                 const elementID = element.ID || '';
-        //                 const existingElement = cache.elements[elementID];
-
-        //                 if (existingElement) {
-        //                     element = parseLabelIDsInEvent(existingElement, element);
-        //                 }
-
-        //                 return existingElement
-        //                     ? { ...existingElement, ...element }
-        //                     : queryElement(elementID).catch(noop);
-        //             })
-        //     )
-        // ).filter(isTruthy);
-
         const { toUpdate, toLoad } = toUpdateOrLoad
             .filter(({ ID = '' }) => !toDelete.includes(ID)) // No need to get deleted element
             .reduce<Pick<EventUpdates, 'toUpdate' | 'toLoad'>>(
                 ({ toUpdate, toLoad }, element) => {
-                    // const elementID = element.ID || '';
-                    // const existingElement = cache.elements[elementID];
                     const existingElement = elementIDs.includes(element.ID || '');
 
                     if (existingElement) {
-                        // element = parseLabelIDsInEvent(existingElement, element);
                         toUpdate.push(element);
                     } else {
                         toLoad.push(element.ID || '');
                     }
 
-                    // return existingElement ? { ...existingElement, ...element } : queryElement(elementID).catch(noop);
                     return { toUpdate, toLoad };
                 },
                 { toUpdate: [], toLoad: [] }
             );
-
-        // setCache((cache) => {
-        //     const newReplacements: { [ID: string]: Element } = {};
-
-        //     [...toCreate, ...toUpdateCompleted].forEach((element) => {
-        //         newReplacements[element.ID || ''] = element;
-        //     });
-        //     const newElements = {
-        //         ...cache.elements,
-        //         ...newReplacements,
-        //     };
-        //     toDelete.forEach((elementID) => {
-        //         delete newElements[elementID];
-        //     });
-
-        //     return {
-        //         ...cache,
-        //         elements: newElements,
-        //     };
-        // });
 
         void dispatch(eventUpdates({ api, conversationMode, toCreate, toUpdate, toLoad, toDelete }));
     });
