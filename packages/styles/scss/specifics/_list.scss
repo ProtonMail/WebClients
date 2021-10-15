@@ -144,6 +144,12 @@ $item-container-row-height-compact-mode: rem(40) !default;
 			color: var(--email-item-unread-icon-text-color);
 		}
 	}
+
+	// Encrypted search shows a preview of the body in the item,
+	// which therefore has to be bigger
+	&.es-three-rows {
+		height: rem(76);
+	}
 }
 
 .item-container {

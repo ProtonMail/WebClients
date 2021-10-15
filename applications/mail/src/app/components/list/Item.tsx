@@ -13,6 +13,7 @@ import { getSenders, getRecipients as getConversationRecipients } from '../../he
 import { isCustomLabel } from '../../helpers/labels';
 import { Breakpoints } from '../../models/utils';
 import { useRecipientLabel } from '../../hooks/contact/useRecipientLabel';
+import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 
 const { SENT, ALL_SENT, ALL_MAIL, STARRED, DRAFTS, ALL_DRAFTS } = MAILBOX_LABEL_IDS;
 
@@ -57,6 +58,9 @@ const Item = ({
     breakpoints,
     onFocus,
 }: Props) => {
+    const { shouldHighlight, getESDBStatus } = useEncryptedSearchContext();
+    const { dbExists, esEnabled } = getESDBStatus();
+    const useES = dbExists && esEnabled && shouldHighlight();
     const elementRef = useRef<HTMLDivElement>(null);
     const [hasFocus, setHasFocus] = useState(false);
     const displayRecipients =
@@ -126,6 +130,7 @@ const Item = ({
                 dragged && 'item-dragging',
                 loading && 'item-is-loading',
                 hasFocus && 'item-is-focused',
+                useES && columnLayout && 'es-three-rows',
             ])}
             style={{ '--index': index }}
             ref={elementRef}
