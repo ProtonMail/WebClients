@@ -1,10 +1,9 @@
+import { encryptPrivateKey } from 'pmcrypto';
 import { Address, Api, DecryptedKey, Key } from '../../interfaces';
 import { reactivateKeyRoute } from '../../api/keys';
 import { getSignedKeyList } from '../signedKeyList';
 import { KeyReactivationData, KeyReactivationRecord, OnKeyReactivationCallback } from './interface';
 import { getActiveKeyObject, getActiveKeys, getPrimaryFlag } from '../getActiveKeys';
-import { reformatAddressKey } from '../addressKeys';
-import { USER_KEY_USERID } from '../userKeys';
 
 interface ReactivateKeysProcessArguments {
     api: Api;
@@ -36,15 +35,8 @@ export const reactivateKeysProcess = async ({
             if (!decryptedPrivateKey) {
                 throw new Error('Missing private key');
             }
-            const email = address ? address.Email : USER_KEY_USERID;
-
-            const { privateKey: reformattedPrivateKey, privateKeyArmored } = await reformatAddressKey({
-                email,
-                passphrase: keyPassword,
-                privateKey: decryptedPrivateKey,
-            });
-
-            const newActiveKey = await getActiveKeyObject(reformattedPrivateKey, {
+            const privateKeyArmored = await encryptPrivateKey(decryptedPrivateKey, keyPassword);
+            const newActiveKey = await getActiveKeyObject(decryptedPrivateKey, {
                 ID,
                 primary: getPrimaryFlag(mutableActiveKeys),
             });
