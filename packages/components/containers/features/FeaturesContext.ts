@@ -35,6 +35,7 @@ export enum FeatureCode {
     EnabledEarlyAccessDesynchronization = 'EnabledEarlyAccessDesynchronization',
     WelcomeImportModalShown = 'WelcomeImportModalShown',
     BlackFridayPromoShown = 'BlackFridayPromoShown',
+    VPNSpecialOfferPromo = 'VPNSpecialOfferPromo',
     BundlePromoShown = 'BundlePromoShown',
     UsedMailMobileApp = 'UsedMailMobileApp',
     UsedContactsImport = 'UsedContactsImport',
