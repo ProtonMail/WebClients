@@ -6,6 +6,7 @@ import { useLocation } from 'react-router';
 import { getLastCancelledSubscription } from '@proton/shared/lib/api/payments';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { dialogRootClassName } from '@proton/shared/lib/busy';
+import { noop } from '@proton/shared/lib/helpers/function';
 
 import {
     useLoading,
@@ -38,6 +39,7 @@ const usePromotionOffer = (): EligibleOffer | undefined => {
     const { feature, update: setModalState } = useFeature(
         isFree ? FeatureCode.BlackFridayPromoShown : FeatureCode.BundlePromoShown
     );
+    const vpnSpecialOfferFeature = useFeature(FeatureCode.VPNSpecialOfferPromo);
     const location = useLocation();
     const { createModal } = useModals();
     const [loading, withLoading] = useLoading();
@@ -75,6 +77,7 @@ const usePromotionOffer = (): EligibleOffer | undefined => {
         !!subscription &&
         !!latestSubscription &&
         !isDelinquent &&
+        vpnSpecialOfferFeature?.feature?.Value &&
         isBlackFridayPeriod &&
         getBlackFridayEligibility(subscription, latestSubscription);
 
@@ -144,6 +147,10 @@ const usePromotionOffer = (): EligibleOffer | undefined => {
         // Only fetching this during the black friday period
         if (!isBlackFridayPeriod) {
             return;
+        }
+        if (isBlackFridayPeriod && vpnSpecialOfferFeature?.feature?.Value === false) {
+            // If it becomes the black friday period and the vpn special offer feature flag is still disabled, re-fetch it to check if has become enabled
+            vpnSpecialOfferFeature.get().catch(noop);
         }
         if (!isFree) {
             setLatestSubscription({ LastSubscriptionEnd: 0 });
