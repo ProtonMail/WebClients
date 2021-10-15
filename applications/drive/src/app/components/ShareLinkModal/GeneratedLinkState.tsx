@@ -19,6 +19,7 @@ import {
     Details,
     Summary,
     Tooltip,
+    FileNameDisplay,
 } from '@proton/components';
 
 import ExpirationTimeDatePicker from './ExpirationTimeDatePicker';
@@ -140,8 +141,8 @@ function GeneratedLinkState({
     };
 
     const boldNameText = (
-        <b key="name" className="text-break text-pre-wrap">
-            {`${itemName}`}
+        <b key="name">
+            <FileNameDisplay text={itemName} className="max-w80" />
         </b>
     );
 
