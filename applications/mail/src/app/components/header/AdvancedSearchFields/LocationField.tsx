@@ -60,15 +60,19 @@ const LocationField = ({ value, onChange }: Props) => {
                 <LocationFieldDropdown onChange={onChange} value={value} />
                 {showCustomValue ? (
                     <Button
-                        className="no-border rounded align-baseline text-ellipsis"
+                        className="no-border rounded align-baseline"
                         color="norm"
                         onClick={() => onChange(ALL_MAIL)}
                         shape="solid"
                         size="small"
                         type="button"
                     >
-                        {customValueText}
-                        <Icon name="xmark" className="ml0-5" size={12} title={c('Action').t`Remove`} />
+                        <span className="flex flex-nowrap">
+                            <span className="text-ellipsis">{customValueText}</span>
+                            <span className="flex-item-noshrink">
+                                <Icon name="xmark" className="ml0-5" size={12} title={c('Action').t`Remove`} />
+                            </span>
+                        </span>
                     </Button>
                 ) : null}
             </div>
