@@ -1,4 +1,5 @@
 import React, { createContext, ReactNode, useEffect, useState } from 'react';
+import { addDays, fromUnixTime } from 'date-fns';
 import { useApi, useEventManager, useLoading } from '@proton/components';
 import { getChecklist } from '@proton/shared/lib/api/checklist';
 import { GetStartedChecklistKey } from '@proton/shared/lib/interfaces';
@@ -8,11 +9,17 @@ import { Event } from '../models/event';
 
 const GET_STARTED_CHECKLIST_DISMISSED_STORAGE_KEY = 'GET_STARTED_CHECKLIST_DISMISSED_STORAGE_KEY';
 
+interface ChecklistApiResponse {
+    Items: GetStartedChecklistKey[];
+    CreatedAt: number;
+}
+
 interface GetStartedChecklistContextValue {
     loading: boolean;
     dismissed: boolean;
     handleDismiss: () => void;
-    checklist: GetStartedChecklistKey[];
+    checklist: ChecklistApiResponse['Items'];
+    expires: Date;
 }
 
 export const GetStartedChecklistContext = createContext<GetStartedChecklistContextValue>(
@@ -20,7 +27,11 @@ export const GetStartedChecklistContext = createContext<GetStartedChecklistConte
 );
 
 const GetStartedChecklistProvider = ({ children }: { children: ReactNode }) => {
-    const [checklist, setChecklist] = useState<GetStartedChecklistKey[]>([]);
+    const [checklist, setChecklist] = useState<ChecklistApiResponse>({
+        Items: [],
+        CreatedAt: 0,
+    });
+
     const [loading, withLoading] = useLoading();
     const { subscribe } = useEventManager();
     const api = useApi();
@@ -36,21 +47,23 @@ const GetStartedChecklistProvider = ({ children }: { children: ReactNode }) => {
 
     useEffect(() => {
         withLoading(
-            api<{ Items: GetStartedChecklistKey[] }>(getChecklist('get-started')).then(({ Items }) =>
-                setChecklist(Items)
-            )
+            api<{ Items: GetStartedChecklistKey[]; CreatedAt: number }>(getChecklist('get-started')).then(setChecklist)
         );
 
         subscribe(({ ChecklistEvents }: Event) => {
             ChecklistEvents?.forEach(({ CompletedItem }) => {
-                setChecklist((current) => [...current, CompletedItem]);
+                setChecklist((current) => ({
+                    ...current,
+                    Items: [...current.Items, CompletedItem],
+                }));
             });
         });
     }, []);
 
     const context = {
         loading,
-        checklist,
+        checklist: checklist.Items,
+        expires: addDays(fromUnixTime(checklist.CreatedAt), 30),
         dismissed,
         handleDismiss,
     };
