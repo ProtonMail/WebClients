@@ -1,4 +1,4 @@
-import { AuthenticationMethod, ImportType, LaunchImportPayload, OAuthProps } from '../interfaces/EasySwitch';
+import { CreateImportPayload, ImportType, LaunchImportPayload, OAuthProps } from '../interfaces/EasySwitch';
 
 export const createToken = (data: OAuthProps) => ({
     url: 'importer/v1/tokens',
@@ -6,31 +6,10 @@ export const createToken = (data: OAuthProps) => ({
     data,
 });
 
-export const createImportMail = (data: {
-    TokenID: string;
-    ImapHost: string;
-    ImapPort: number;
-    Sasl: AuthenticationMethod;
-}) => ({
-    url: 'importer/v1/mail/importers',
+export const createImport = (data: CreateImportPayload) => ({
+    url: 'importer/v1/importers',
     method: 'post',
     data,
-});
-
-export const createImportCalendar = (TokenID: string) => ({
-    url: 'importer/v1/calendar/importers',
-    method: 'post',
-    data: {
-        TokenID,
-    },
-});
-
-export const createImportContacts = (TokenID: string) => ({
-    url: 'importer/v1/contacts/importers',
-    method: 'post',
-    data: {
-        TokenID,
-    },
 });
 
 export const startImportTask = (data: LaunchImportPayload) => ({
@@ -46,6 +25,21 @@ export const getImportsList = () => ({
 
 export const getImportReportsList = () => ({
     url: 'importer/v1/reports',
+    method: 'get',
+});
+
+export const getMailImportData = (importerID: string) => ({
+    url: `importer/v1/mail/importers/${importerID}`,
+    method: 'get',
+});
+
+export const getCalendarImportData = (importerID: string) => ({
+    url: `importer/v1/calendar/importers/${importerID}`,
+    method: 'get',
+});
+
+export const getContactsImportData = (importerID: string) => ({
+    url: `importer/v1/contacts/importers/${importerID}`,
     method: 'get',
 });
 
