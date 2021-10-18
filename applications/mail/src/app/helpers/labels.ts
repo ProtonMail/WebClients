@@ -219,7 +219,10 @@ export const applyLabelChangesOnConversation = (
                     ContextNumMessages: conversation.NumMessages || 1,
                 });
             } else {
-                Labels[index].ContextNumMessages = conversation.NumMessages || 1;
+                Labels[index] = {
+                    ...Labels[index],
+                    ContextNumMessages: conversation.NumMessages || 1,
+                };
             }
         } else if (index >= 0) {
             Labels.splice(index, 1);
@@ -249,7 +252,7 @@ export const applyLabelChangesOnOneMessageOfAConversation = (
 
         if (changes[labelID]) {
             if (hasLabel) {
-                Labels[index].ContextNumMessages = numMessages + 1;
+                Labels[index] = { ...Labels[index], ContextNumMessages: numMessages + 1 };
             } else {
                 Labels.push({ ID: labelID, ContextNumMessages: 1 });
                 conversationChanges[labelID] = true;
@@ -259,7 +262,7 @@ export const applyLabelChangesOnOneMessageOfAConversation = (
                 Labels.splice(index, 1);
                 conversationChanges[labelID] = false;
             } else {
-                Labels[index].ContextNumMessages = numMessages - 1;
+                Labels[index] = { ...Labels[index], ContextNumMessages: numMessages - 1 };
             }
         }
     });
