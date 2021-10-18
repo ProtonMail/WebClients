@@ -2,18 +2,23 @@ import { createContext, ReactNode, useContext, useState, useEffect, useRef, useM
 import { useLocation, useHistory } from 'react-router-dom';
 import { c } from 'ttag';
 import {
+    FeatureCode,
     useApi,
+    useFeatures,
     useGetMessageCounts,
     useGetUserKeys,
     useNotifications,
     useOnLogout,
     useSubscribeEventManager,
     useUser,
+    useWelcomeFlags,
 } from '@proton/components';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { EVENT_ACTIONS, SECOND } from '@proton/shared/lib/constants';
 import { EVENT_ERRORS } from '@proton/shared/lib/errors';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
+import { isMobile } from '@proton/shared/lib/helpers/browser';
+import { isPaid } from '@proton/shared/lib/user/helpers';
 import { useGetMessageKeys } from '../hooks/message/useGetMessageKeys';
 import { Event } from '../models/event';
 import { Element } from '../models/element';
@@ -83,10 +88,16 @@ const EncryptedSearchProvider = ({ children }: Props) => {
     const getUserKeys = useGetUserKeys();
     const getMessageKeys = useGetMessageKeys();
     const api = useApi();
-    const [{ ID: userID }] = useUser();
+    const [user] = useUser();
+    const { ID: userID } = user;
     const { createNotification } = useNotifications();
     const getMessageCounts = useGetMessageCounts();
     const { isSearch, page } = parseSearchParams(location);
+    const [{ get: getESFeature }, { update: updateSpotlightES }] = useFeatures([
+        FeatureCode.EnabledEncryptedSearch,
+        FeatureCode.SpotlightEncryptedSearch,
+    ]);
+    const [welcomeFlags] = useWelcomeFlags();
 
     // Keep a state of search results to update in case of new events
     // and information on the status of IndexedDB
@@ -570,7 +581,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
     /**
      * Resume an existing indexing operation or start one anew
      */
-    const resumeIndexing: ResumeIndexing = async (isRefreshed = false) => {
+    const resumeIndexing: ResumeIndexing = async ({ notify, isRefreshed } = { notify: true, isRefreshed: false }) => {
         const isResumed = getES.Pause(userID);
 
         setESStatus((esStatus) => {
@@ -597,7 +608,12 @@ const EncryptedSearchProvider = ({ children }: Props) => {
 
         let indexKey: CryptoKey;
         if (!indexKeyExists(userID) && !isResumed) {
-            const { notSupported, indexKey: newIndexKey } = await initialiseDB(userID, getUserKeys, api, isRefreshed);
+            const { notSupported, indexKey: newIndexKey } = await initialiseDB(
+                userID,
+                getUserKeys,
+                api,
+                isRefreshed || false
+            );
             if (!newIndexKey) {
                 return showError(notSupported);
             }
@@ -681,9 +697,11 @@ const EncryptedSearchProvider = ({ children }: Props) => {
             };
         });
 
-        createNotification({
-            text: c('Success').t`Message content search activated`,
-        });
+        if (notify) {
+            createNotification({
+                text: c('Success').t`Message content search activated`,
+            });
+        }
     };
 
     /**
@@ -947,7 +965,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
      */
     const restartIndexing = async () => {
         await esDelete();
-        return resumeIndexing(true);
+        return resumeIndexing({ isRefreshed: true });
     };
 
     useSubscribeEventManager(async (event: Event) => {
@@ -997,6 +1015,19 @@ const EncryptedSearchProvider = ({ children }: Props) => {
 
     useEffect(() => {
         const run = async () => {
+            const esFeature = await getESFeature<boolean>();
+            if (
+                welcomeFlags.isWelcomeFlow &&
+                !isMobile() &&
+                !!esFeature.Value &&
+                !indexKeyExists(userID) &&
+                isPaid(user)
+            ) {
+                // Start indexing for new users and prevent showing the spotlight on ES to them
+                await updateSpotlightES(false);
+                return resumeIndexing({ notify: false });
+            }
+
             // Check all keys that decrypt under the current user's key
             const indexKeys = await checkNewUserID(getUserKeys);
 
