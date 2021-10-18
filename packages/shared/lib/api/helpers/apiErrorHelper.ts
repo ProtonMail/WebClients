@@ -43,14 +43,22 @@ export const getIsUnreachableError = (e: any) => {
     if (!e) {
         return false;
     }
-    return [HTTP_ERROR_CODES.BAD_GATEWAY, HTTP_ERROR_CODES.SERVICE_UNAVAILABLE].includes(e.status);
+    // On 503, even if there's response, it's an unreachable error
+    if (e.status === HTTP_ERROR_CODES.SERVICE_UNAVAILABLE) {
+        return true;
+    }
+    // On 502 or 504, we verify that the API did not actually give a response. It can return these codes when acting as a proxy (e.g. email-list unsubscribe).
+    return (
+        [HTTP_ERROR_CODES.BAD_GATEWAY, HTTP_ERROR_CODES.GATEWAY_TIMEOUT].includes(e.status) &&
+        e.data?.Code === undefined
+    );
 };
 
 export const getIsTimeoutError = (e: any) => {
     if (!e) {
         return false;
     }
-    return e.name === 'TimeoutError' || [HTTP_ERROR_CODES.GATEWAY_TIMEOUT].includes(e.status);
+    return e.name === 'TimeoutError';
 };
 
 export const getApiErrorMessage = (e: Error) => {
@@ -62,7 +70,7 @@ export const getApiErrorMessage = (e: Error) => {
         return message || c('Info').t`Internet connection lost.`;
     }
     if (getIsUnreachableError(e)) {
-        return message || c('Info').t`Servers are unreachable.`;
+        return message || c('Info').t`Servers are unreachable. Please try again in a few minutes`;
     }
     if (getIsTimeoutError(e)) {
         return message || c('Error').t`Request timed out.`;
