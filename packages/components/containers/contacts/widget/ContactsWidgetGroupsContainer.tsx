@@ -3,7 +3,6 @@ import { c, msgid } from 'ttag';
 import { Recipient } from '@proton/shared/lib/interfaces';
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import { normalize } from '@proton/shared/lib/helpers/string';
-import { noop } from '@proton/shared/lib/helpers/function';
 import { orderContactGroups } from '@proton/shared/lib/helpers/contactGroups';
 
 import { FullLoader, SearchInput } from '../../../components';
@@ -203,7 +202,6 @@ const ContactsWidgetGroupsContainer = ({ onClose, onCompose, customActions }: Pr
                         type={groups.length ? EmptyType.Search : EmptyType.AllGroups}
                         onClearSearch={handleClearSearch}
                         onCreate={handleCreate}
-                        onImport={noop}
                     />
                 ) : null}
                 {showList ? (

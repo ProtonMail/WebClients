@@ -1,16 +1,16 @@
 import { forwardRef, useState } from 'react';
 import { c } from 'ttag';
 import { Recipient } from '@proton/shared/lib/interfaces';
+import { Dropdown, DropdownButton, Icon, Tabs, usePopperAnchor } from '@proton/components';
+import { generateUID } from '@proton/components/helpers';
+import TopNavbarListItemButton, {
+    TopNavbarListItemButtonProps,
+} from '@proton/components/components/topnavbar/TopNavbarListItemButton';
 
-import { Dropdown, DropdownButton, Icon, Tabs, usePopperAnchor } from '../../../components';
-import { generateUID } from '../../../helpers';
 import ContactsWidgetContainer from './ContactsWidgetContainer';
 import ContactsWidgetGroupsContainer from './ContactsWidgetGroupsContainer';
 import ContactsWidgetSettingsContainer from './ContactsWidgetSettingsContainer';
 import './ContactsWidget.scss';
-import TopNavbarListItemButton, {
-    TopNavbarListItemButtonProps,
-} from '../../../components/topnavbar/TopNavbarListItemButton';
 import { CONTACT_WIDGET_TABS, CustomAction } from './types';
 
 const TopNavbarListItemContactsButton = forwardRef(
