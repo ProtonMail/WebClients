@@ -216,7 +216,7 @@ export interface VcalVeventComponent {
     attendee?: VcalAttendeeProperty[];
     description?: VcalStringProperty;
     summary?: VcalStringProperty;
-    duration?: VcalDurationValue;
+    duration?: VcalDurationProperty;
     location?: VcalStringProperty;
     geo?: VcalNumberArrayProperty;
     class?: VcalStringProperty;
