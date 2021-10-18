@@ -1,6 +1,15 @@
 import { useState, ReactNode, useEffect } from 'react';
 import { c } from 'ttag';
-import { Icon, useLoading, Button, LinkButton, classnames, TableRowBusy, FileIcon } from '@proton/components';
+import {
+    Icon,
+    useLoading,
+    Button,
+    LinkButton,
+    classnames,
+    TableRowBusy,
+    FileIcon,
+    FileNameDisplay,
+} from '@proton/components';
 import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 
 interface Props {
@@ -99,9 +108,7 @@ const ExpandableRow = ({
                         className="folder-tree-list-item-name flex flex-align-items-center flex-nowrap w100"
                     >
                         <FileIcon mimeType={type === LinkType.FOLDER ? 'Folder' : mimeType} />
-                        <span className="text-ellipsis text-pre" title={name}>
-                            {name}
-                        </span>
+                        <FileNameDisplay text={name} />
                     </div>
                     {isSelected && (
                         <div className="folder-tree-list-item-selected flex flex-item-noshrink">
