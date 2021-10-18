@@ -1,9 +1,10 @@
 import { useEffect, useContext } from 'react';
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 import {
     Button,
     ButtonLike,
     ChecklistItem,
+    Countdown,
     Icon,
     Progress,
     SettingsLink,
@@ -83,7 +84,7 @@ const GetStartedChecklist = ({
     onSendMessage,
 }: GetStartedChecklistProps) => {
     const [user] = useUser();
-    const { checklist, loading } = useContext(GetStartedChecklistContext);
+    const { expires, checklist, loading } = useContext(GetStartedChecklistContext);
     const { createModal } = useModals();
     const isMnemonicAvailable = useIsMnemonicAvailable();
     const goToSettings = useSettingsLink();
@@ -216,7 +217,18 @@ const GetStartedChecklist = ({
                 </div>
             </div>
             <div>
-                <div className="color-weak">{c('Get started checklist incentive').t`Only 28 days left`}</div>
+                <Countdown
+                    end={expires}
+                    render={({ days }) => (
+                        <div className="color-weak">
+                            {c('Get started checklist incentive').ngettext(
+                                msgid`Only ${days} day left`,
+                                `Only ${days} days left`,
+                                days
+                            )}
+                        </div>
+                    )}
+                />
             </div>
         </div>
     );
