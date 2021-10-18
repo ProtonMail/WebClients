@@ -32,6 +32,8 @@ const OptionLabel = ({ title, info }: { title: string; info: string }) => {
     );
 };
 
+const BrElement = <br />;
+
 const KeyReactivationModal = ({
     onClose = noop,
     onSubmit = noop,
@@ -48,24 +50,21 @@ const KeyReactivationModal = ({
     };
 
     const modalTitleID = 'KeyReactivationModal';
-    // TODO: There's no link nor article yet
-    // const LearnMoreLink = null;
 
-    const INFO_TEXT = c('Info').ngettext(
-        msgid`We are unable to unlock one of your encrypted drive.
-            This is most likely due to a recent password reset.`,
-        `We are unable to unlock one of your encrypted drives.
-            This is most likely due to a recent password reset.`,
-        volumeCount
-    );
-    const deleteDriveLabelText = c('Info').ngettext(msgid`Delete Drive`, `Delete Drives`, volumeCount);
+    const questionText = <strong>{c('Info').t`What would you like to do?`}</strong>;
+    const infoText = c('Info')
+        .jt`One of your encrypted drives is locked. This is most likely due to a recent password reset.${BrElement}
+        ${BrElement}
+        ${questionText}`;
+
+    const deleteDriveLabelText = c('Info').ngettext(msgid`Delete drive`, `Delete drives`, volumeCount);
 
     const radioOptions = [
         {
             label: (
                 <OptionLabel
-                    title={c('Label').t`Unlock Drive (Recommended)`}
-                    info={c('Info').t`Recover the locked Drive.`}
+                    title={c('Label').t`Unlock drive (recommended)`}
+                    info={c('Info').t`Unlock drive to recover files`}
                 />
             ),
             value: LockedVolumeResolveMethod.ReactivateKeys,
@@ -74,7 +73,7 @@ const KeyReactivationModal = ({
             label: (
                 <OptionLabel
                     title={c('Label').t`Unlock later`}
-                    info={c('Info').t`Continue using ${appName} and recover the locked Drive later.`}
+                    info={c('Info').t`Continue using ${appName} and unlock drive later`}
                 />
             ),
             value: LockedVolumeResolveMethod.UnlockLater,
@@ -83,7 +82,7 @@ const KeyReactivationModal = ({
             label: (
                 <OptionLabel
                     title={deleteDriveLabelText}
-                    info={c('Info').t`The locked Drive and all files in it will be deleted.`}
+                    info={c('Info').t`Permanently delete all files in your drive`}
                 />
             ),
             value: LockedVolumeResolveMethod.DeleteOldFiles,
@@ -97,7 +96,7 @@ const KeyReactivationModal = ({
             </HeaderModal>
             <ContentModal onReset={noop} onSubmit={() => onSubmit(radioGroupValue)}>
                 <InnerModal className="mb1">
-                    <p className="mt0">{INFO_TEXT}</p>
+                    <p className="mt0">{infoText}</p>
                     <RadioGroup
                         options={radioOptions}
                         value={radioGroupValue}
