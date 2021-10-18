@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { c, msgid } from 'ttag';
+
 import {
     Alert,
     Button,
@@ -10,8 +12,11 @@ import {
     InnerModal,
     useLoading,
 } from '@proton/components';
-import { c, msgid } from 'ttag';
 import { noop } from '@proton/shared/lib/helpers/function';
+import { getAppName } from '@proton/shared/lib/apps/helper';
+import { APPS } from '@proton/shared/lib/constants';
+
+const appName = getAppName(APPS.PROTONDRIVE);
 
 interface Props {
     onClose?: () => void;
@@ -24,11 +29,11 @@ const DeleteLockedVolumesConfirmModal = ({ onClose = noop, onSubmit, onBack, vol
     const [isChecked, setIsChecked] = useState(false);
     const [isLoading, withLoading] = useLoading();
 
-    const modalTitle = c('Label').ngettext(msgid`Delete Drive`, `Delete Drives`, volumeCount);
+    const modalTitle = c('Label').ngettext(msgid`Delete Drive?`, `Delete Drives?`, volumeCount);
 
-    const warningTitle = c('Label').t`WARNING: DELETION IS PERMANENT`;
-    const warningInfo = c('Info').t`Are you sure you want to delete your old files
-        permanently? Your old files will be deleted in 72 hours.`;
+    const warningTitle = c('Label').t`This will permanently delete all files in your locked drive.`;
+    const warningInfo = c('Info')
+        .t`Note: Data may still be available locally on devices where you have installed ${appName}.`;
     const confirmationText = c('Label').t`Yes, I want to permanently delete
         my old files`;
 
@@ -47,10 +52,10 @@ const DeleteLockedVolumesConfirmModal = ({ onClose = noop, onSubmit, onBack, vol
                 <InnerModal className="mb1">
                     <Alert type="warning" className="mb2">
                         <span>
-                            <strong className="text-uppercase">{warningTitle}</strong>
+                            <strong>{warningTitle}</strong>
                         </span>
-                        <p className="m0">{warningInfo}</p>
                     </Alert>
+                    <p>{warningInfo}</p>
                     <Checkbox onChange={handleChange}>{confirmationText}</Checkbox>
                 </InnerModal>
                 <FooterModal>
