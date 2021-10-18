@@ -9,9 +9,10 @@ const iconsMap: { [mimeType: string]: { name: string } } = {
     'application/x-zip-compressed': { name: 'zip' },
     'application/zip': { name: 'zip' },
     'application/x-7z-compressed': { name: 'zip' }, // .7z — 7-Zip compressed file
-    'application/arj': { name: 'zip' }, // .arj — ARJ compressed file
+    'application/x-arj': { name: 'zip' }, // .arj — ARJ compressed file
     'application/x-debian-package': { name: 'zip' }, // .deb — Debian software package file
-    'application/octet-stream': { name: 'zip' }, // .pkg/.rpm
+    'application/octet-stream': { name: 'zip' }, // .pkg
+    'application/x-redhat-package-manager': { name: 'zip' }, // .rpm
     'application/vnd.rar': { name: 'zip' }, // .rar – RAR file
     'application/gzip': { name: 'zip' }, // .tar.gz — Tarball compressed file
     'application/x-compress': { name: 'zip' }, // .z — Z compressed file
@@ -29,6 +30,7 @@ const iconsMap: { [mimeType: string]: { name: string } } = {
     'application/vnd.ms-excel': { name: 'xls' },
     'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet': { name: 'xls' }, // .xlsm - Microsoft Excel file
     'application/vnd.oasis.opendocument.spreadsheet': { name: 'xls' }, // .ods — OpenOffice Calc spreadsheet file
+    'application/vnd.oasis.opendocument.presentation': { name: 'ppt' }, // .ods — OpenOffice Calc presentation file
 
     'application/xliff+xml': { name: 'xml' },
     'application/xml': { name: 'xml' },
@@ -41,12 +43,16 @@ const iconsMap: { [mimeType: string]: { name: string } } = {
     'application/x-tex': { name: 'text' },
     'application/vnd.oasis.opendocument.text': { name: 'text' },
     'application/vnd.wordperfect': { name: 'text' },
+
+    'application/vnd.ms-fontobject': { name: 'font' },
 };
 
 const getIconName = (mimeType: string) => {
     let name = 'unknown';
 
-    if (isImage(mimeType)) {
+    if (iconsMap[mimeType]) {
+        name = iconsMap[mimeType].name;
+    } else if (isImage(mimeType)) {
         name = 'image';
     } else if (mimeType === 'text/xml') {
         // Exception for XML to use it's own icon and not fallback as text
@@ -61,8 +67,6 @@ const getIconName = (mimeType: string) => {
         name = 'video';
     } else if (isFont(mimeType)) {
         name = 'font';
-    } else if (iconsMap[mimeType]) {
-        name = iconsMap[mimeType].name;
     }
 
     return name;
