@@ -4,9 +4,9 @@ import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import { exportContacts } from '@proton/shared/lib/contacts/helpers/export';
 import { extractMergeable } from '@proton/shared/lib/contacts/helpers/merge';
 import { Recipient } from '@proton/shared/lib/interfaces';
+import { FullLoader, SearchInput } from '@proton/components';
+import { useApi, useModals, useNotifications, useUser, useUserKeys, useUserSettings } from '@proton/components/hooks';
 
-import { FullLoader, SearchInput } from '../../../components';
-import { useApi, useModals, useNotifications, useUser, useUserKeys, useUserSettings } from '../../../hooks';
 import MergeModal from '../merge/MergeModal';
 import ContactsList from '../ContactsList';
 import ContactDetailsModal from '../modals/ContactDetailsModal';
@@ -14,6 +14,7 @@ import useContactList from '../useContactList';
 import ContactsWidgetToolbar from './ContactsWidgetToolbar';
 import ContactDeleteModal from '../modals/ContactDeleteModal';
 import ContactModal from '../modals/ContactModal';
+
 import ContactsWidgetPlaceholder, { EmptyType } from './ContactsWidgetPlaceholder';
 import MergeContactBanner from './MergeContactBanner';
 import { CustomAction } from './types';

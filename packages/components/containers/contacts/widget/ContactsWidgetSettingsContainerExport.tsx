@@ -39,7 +39,7 @@ const ContactsWidgetSettingsContainerExport = ({ onExportButtonClick }: Props) =
     const hasNoContacts = !contacts?.length;
 
     return (
-        <div className="mb2">
+        <>
             <Label htmlFor="export-contacts-button" className="text-semibold">
                 <span role="heading" aria-level={2}>{c('Label').t`Export contacts`}</span>
             </Label>
@@ -56,7 +56,7 @@ const ContactsWidgetSettingsContainerExport = ({ onExportButtonClick }: Props) =
             ) : (
                 <ExportButton onClick={onExportButtonClick} hasNoContacts={hasNoContacts} />
             )}
-        </div>
+        </>
     );
 };
 
