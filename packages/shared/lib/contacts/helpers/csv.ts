@@ -196,7 +196,35 @@ export const toVcard = (preVcards: PreVcardProperty[]): ContactPropertyWithDispl
 };
 
 /**
+ * This helper sanitizes multiple-valued email properties that we may get from a CSV import
+ * The RFC does not allow the EMAIL property to have multiple values: https://datatracker.ietf.org/doc/html/rfc6350#section-6.4.2
+ * Instead, one should use multiple single-valued email properties
+ */
+const sanitizeEmailProperties = (contacts: ContactProperties[]): ContactProperties[] => {
+    return contacts.map((contact) => {
+        return contact.reduce<ContactProperties>((acc, property) => {
+            if (property.field !== 'email' || !Array.isArray(property.value)) {
+                return [...acc, property];
+            }
+            // If the property is an email having an array of emails as value
+            return [
+                ...acc,
+                ...property.value.map((value) => {
+                    return {
+                        ...property,
+                        display: value,
+                        value,
+                    };
+                }),
+            ];
+        }, []);
+    });
+};
+
+/**
  * Transform pre-vCards contacts into vCard contacts
  */
 export const toVcardContacts = (preVcardsContacts: PreVcardsContact[]): ContactProperties[] =>
-    preVcardsContacts.map((preVcardsContact) => preVcardsContact.map(toVcard).filter(isTruthy).sort(sortByPref));
+    sanitizeEmailProperties(
+        preVcardsContacts.map((preVcardsContact) => preVcardsContact.map(toVcard).filter(isTruthy).sort(sortByPref))
+    );
