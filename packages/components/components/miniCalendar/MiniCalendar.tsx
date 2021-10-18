@@ -154,7 +154,9 @@ const MiniCalendar = ({
                                 className="on-rtl-mirror"
                                 color="weak"
                                 size="small"
+                                disabled={min && startOfMonth(addMonths(activeDate, -1)) < startOfMonth(min)}
                                 onClick={() => handleSwitchMonth(-1)}
+                                data-testid="minicalendar:previous-month"
                             >
                                 <Icon name="angle-down" className="rotateZ-90 minicalendar-icon" alt={prevMonth} />
                             </Button>
@@ -166,7 +168,9 @@ const MiniCalendar = ({
                                 className="on-rtl-mirror"
                                 color="weak"
                                 size="small"
+                                disabled={max && endOfMonth(addMonths(activeDate, 1)) > endOfMonth(max)}
                                 onClick={() => handleSwitchMonth(1)}
+                                data-testid="minicalendar:next-month"
                             >
                                 <Icon name="angle-down" className="rotateZ-270 minicalendar-icon" alt={nextMonth} />
                             </Button>

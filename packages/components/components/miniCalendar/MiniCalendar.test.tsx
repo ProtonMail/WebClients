@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import MiniCalendar from './MiniCalendar';
 
 describe('MiniCalendar', () => {
@@ -9,21 +9,52 @@ describe('MiniCalendar', () => {
         jest.useFakeTimers('modern').setSystemTime(getFakeNow().getTime());
     });
 
-    it('disables today button if out of range', async () => {
+    it('disables today button when out of range', async () => {
         const { rerender } = render(<MiniCalendar date={getFakeNow()} hasToday min={getFakeNow()} />);
 
-        expect(screen.getByTestId(/minicalendar:today/)).not.toBeDisabled();
+        const getTodayButton = () => screen.getByTestId(/minicalendar:today/);
+
+        expect(getTodayButton()).not.toBeDisabled();
 
         const fakeTomorrow = getFakeNow();
         fakeTomorrow.setUTCDate(getFakeNow().getUTCDate() + 1);
         rerender(<MiniCalendar date={getFakeNow()} hasToday min={fakeTomorrow} />);
 
-        expect(screen.getByTestId(/minicalendar:today/)).toBeDisabled();
+        expect(getTodayButton()).toBeDisabled();
 
         const fakeYesterday = getFakeNow();
         fakeYesterday.setUTCDate(getFakeNow().getUTCDate() - 1);
         rerender(<MiniCalendar date={getFakeNow()} hasToday max={fakeYesterday} />);
 
-        expect(screen.getByTestId(/minicalendar:today/)).toBeDisabled();
+        expect(getTodayButton()).toBeDisabled();
+    });
+
+    it('disables month navigation when out of range', async () => {
+        const { rerender } = render(<MiniCalendar date={getFakeNow()} min={getFakeNow()} max={getFakeNow()} />);
+
+        const getPrevMonthButton = () => screen.getByTestId(/minicalendar:previous-month/);
+        const getNextMonthButton = () => screen.getByTestId(/minicalendar:next-month/);
+
+        expect(getPrevMonthButton()).toBeDisabled();
+        expect(getNextMonthButton()).toBeDisabled();
+
+        const fakeNextMonth = getFakeNow();
+        const fakePrevMonth = getFakeNow();
+        fakePrevMonth.setUTCMonth(getFakeNow().getUTCMonth() - 1);
+        fakeNextMonth.setUTCMonth(getFakeNow().getUTCMonth() + 1);
+
+        rerender(<MiniCalendar date={getFakeNow()} hasToday min={fakePrevMonth} max={fakeNextMonth} />);
+
+        expect(getPrevMonthButton()).not.toBeDisabled();
+        expect(getNextMonthButton()).not.toBeDisabled();
+
+        fireEvent.click(getNextMonthButton());
+
+        expect(getNextMonthButton()).toBeDisabled();
+
+        fireEvent.click(getPrevMonthButton());
+        fireEvent.click(getPrevMonthButton());
+
+        expect(getPrevMonthButton()).toBeDisabled();
     });
 });
