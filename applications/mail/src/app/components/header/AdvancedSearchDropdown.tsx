@@ -20,8 +20,12 @@ import {
     useMailSettings,
     useToggle,
     useUser,
-    useFeature,
     FeatureCode,
+    useSpotlightOnFeature,
+    Spotlight,
+    Href,
+    useWelcomeFlags,
+    useFeatures,
 } from '@proton/components';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
@@ -101,8 +105,11 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow }: Props) =>
     const [user] = useUser();
     const { getESDBStatus, cacheIndexedDB } = useEncryptedSearchContext();
     const { isDBLimited } = getESDBStatus();
-    const { loading: loadingESFeature, feature: esFeature } = useFeature(FeatureCode.EnabledEncryptedSearch);
-    const { loading: loadingScheduledFeature } = useFeature(FeatureCode.ScheduledSend);
+    const [{ loading: loadingESFeature, feature: esFeature }, { loading: loadingScheduledFeature }] = useFeatures([
+        FeatureCode.EnabledEncryptedSearch,
+        FeatureCode.ScheduledSend,
+    ]);
+    const [welcomeFlags] = useWelcomeFlags();
     const esState = useEncryptedSearchToggleState(isOpen);
 
     // Get right keyword value depending on the current situation
@@ -185,26 +192,51 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow }: Props) =>
         },
     };
 
+    const { show: showSpotlight, onDisplayed } = useSpotlightOnFeature(
+        FeatureCode.SpotlightEncryptedSearch,
+        showEncryptedSearch && !welcomeFlags.isWelcomeFlow && !isOpen
+    );
+
     return (
         <>
-            {isNarrow ? (
-                <DropdownButton as={TopNavbarListItemSearchButton} {...dropdownSearchButtonProps} />
-            ) : (
-                <DropdownButton
-                    as={Button}
-                    icon
-                    shape="ghost"
-                    color="weak"
-                    className="searchbox-advanced-search-button flex"
-                    {...dropdownSearchButtonProps}
-                >
-                    <Icon
-                        name="angle-down"
-                        className={classnames(['searchbox-advanced-search-icon mauto', isOpen && 'rotateX-180'])}
-                        alt={c('Action').t`Advanced search`}
-                    />
-                </DropdownButton>
-            )}
+            <Spotlight
+                originalPlacement="bottom-left"
+                show={showSpotlight}
+                onDisplayed={onDisplayed}
+                anchorRef={anchorRef}
+                content={
+                    <>
+                        <div className="text-bold text-lg mauto">{c('Spotlight').t`Message Content Search`}</div>
+                        {c('Spotlight').t`You can now search the content of your encrypted emails.`}
+                        <br />
+                        <Href
+                            url="https://protonmail.com/support/knowledge-base/search-message-content/"
+                            title="Message Content Search"
+                        >
+                            {c('Info').t`Learn more`}
+                        </Href>
+                    </>
+                }
+            >
+                {isNarrow ? (
+                    <DropdownButton as={TopNavbarListItemSearchButton} {...dropdownSearchButtonProps} />
+                ) : (
+                    <DropdownButton
+                        as={Button}
+                        icon
+                        shape="ghost"
+                        color="weak"
+                        className="searchbox-advanced-search-button flex"
+                        {...dropdownSearchButtonProps}
+                    >
+                        <Icon
+                            name="angle-down"
+                            className={classnames(['searchbox-advanced-search-icon mauto', isOpen && 'rotateX-180'])}
+                            alt={c('Action').t`Advanced search`}
+                        />
+                    </DropdownButton>
+                )}
+            </Spotlight>
             <Dropdown
                 id={uid}
                 originalPlacement="bottom-right"

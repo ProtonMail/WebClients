@@ -42,7 +42,7 @@ const EncryptedSearchField = ({ showMore, toggleShowMore, esState }: Props) => {
     const confirmationToIndex = () => {
         createModal(
             <ConfirmModal
-                onConfirm={resumeIndexing}
+                onConfirm={() => resumeIndexing()}
                 title={c('Title').t`Enable message content search`}
                 confirm={c('Action').t`Enable`}
                 mode="alert"
