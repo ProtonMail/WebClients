@@ -169,7 +169,7 @@ const ContactPgpSettings = ({ model, setModel, mailSettings }: Props) => {
             {!model.isPGPInternal && (
                 <Row>
                     <Label>
-                        {c('Label').t`Cryptographic scheme`}
+                        {c('Label').t`PGP scheme`}
                         <Info
                             className="ml0-5"
                             title={c('Tooltip')

@@ -114,7 +114,7 @@ const ExternalPGPSettingsSection = () => {
             <SettingsLayout>
                 <SettingsLayoutLeft>
                     <label htmlFor="PGPSchemeSelect" className="text-semibold">
-                        <span className="mr0-5">{c('Label').t`Default PGP settings`}</span>
+                        <span className="mr0-5">{c('Label').t`Default PGP scheme`}</span>
                         <Info
                             url="https://protonmail.com/support/knowledge-base/pgp-mime-pgp-inline/"
                             title={c('Tooltip default pgp scheme')
