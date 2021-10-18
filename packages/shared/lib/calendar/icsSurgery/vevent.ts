@@ -1,11 +1,12 @@
-import { addDays } from 'date-fns';
+import { addDays, fromUnixTime } from 'date-fns';
 import { getIsDateOutOfBounds, getIsWellFormedDateOrDateTime, getSupportedUID } from '../helper';
 import { EVENT_INVITATION_ERROR_TYPE, EventInvitationError } from './EventInvitationError';
-import { convertUTCDateTimeToZone, getSupportedTimezone } from '../../date/timezone';
+import { convertUTCDateTimeToZone, fromUTCDate, getSupportedTimezone } from '../../date/timezone';
 import { unique } from '../../helpers/array';
 import { truncate } from '../../helpers/string';
 import {
     VcalDateOrDateTimeProperty,
+    VcalDurationValue,
     VcalFloatingDateTimeProperty,
     VcalVeventComponent,
 } from '../../interfaces/calendar';
@@ -14,7 +15,7 @@ import { getAttendeeEmail, getSupportedAttendee, getSupportedOrganizer } from '.
 import { ICAL_METHOD, MAX_LENGTHS } from '../constants';
 import { getHasConsistentRrule, getSupportedRrule } from '../rrule';
 import {
-    getDateProperty,
+    dateToProperty,
     getDateTimeProperty,
     getDateTimePropertyInDifferentTimezone,
     propertyToUTCDate,
@@ -22,6 +23,38 @@ import {
 import { getIsPropertyAllDay, getPropertyTzid } from '../vcalHelper';
 import { IMPORT_EVENT_ERROR_TYPE, ImportEventError } from './ImportEventError';
 import { getSupportedAlarms } from './valarm';
+import { durationToMilliseconds } from '../vcal';
+import { DAY } from '../../constants';
+
+export const getDtendPropertyFromDuration = (dtstart: VcalDateOrDateTimeProperty, duration: VcalDurationValue) => {
+    const startDateUTC = propertyToUTCDate(dtstart);
+    const durationInMs = durationToMilliseconds(duration);
+    const timestamp = +startDateUTC + durationInMs;
+    const end = fromUTCDate(fromUnixTime(timestamp / 1000));
+
+    if (getIsPropertyAllDay(dtstart)) {
+        // The all-day event lasts one day, we don't need DTEND in this case
+        if (durationInMs <= DAY) {
+            return;
+        }
+
+        const shouldAddDay = !!(durationInMs <= 0 || end.hours || end.minutes || end.seconds);
+        const finalEnd = shouldAddDay
+            ? fromUTCDate(addDays(propertyToUTCDate({ value: { ...end, isUTC: true } }), 1))
+            : { ...end };
+
+        return dateToProperty(finalEnd);
+    }
+
+    if (durationInMs <= 0) {
+        // The part-day event has zero duration, we don't need DTEND in this case
+        return;
+    }
+
+    const tzid = getPropertyTzid(dtstart);
+
+    return getDateTimeProperty(convertUTCDateTimeToZone(end, tzid!), tzid!);
+};
 
 export const getSupportedDateOrDateTimeProperty = ({
     property,
@@ -45,7 +78,7 @@ export const getSupportedDateOrDateTimeProperty = ({
     guessTzid?: string;
 }) => {
     if (getIsPropertyAllDay(property)) {
-        return getDateProperty(property.value);
+        return dateToProperty(property.value);
     }
 
     const partDayProperty = property;
@@ -106,7 +139,7 @@ export const getLinkedDateTimeProperty = ({
     isInvite?: boolean;
 }): VcalDateOrDateTimeProperty => {
     if (isAllDay) {
-        return getDateProperty(property.value);
+        return dateToProperty(property.value);
     }
     if (getIsPropertyAllDay(property)) {
         if (isInvite) {
@@ -266,11 +299,9 @@ export const getSupportedEvent = ({
             if (eventDuration > 0) {
                 validated.dtend = supportedDtend;
             }
-        } else if (duration) {
-            if (isEventInvitation) {
-                throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_UNSUPPORTED, { method });
-            }
-            throw new ImportEventError(IMPORT_EVENT_ERROR_TYPE.VEVENT_DURATION, 'vevent', componentId);
+        } else if (duration && !isImport) {
+            // We won't support duration for invitations until other clients adapt
+            throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_UNSUPPORTED, { method });
         }
         const isAllDayEnd = validated.dtend ? getIsPropertyAllDay(validated.dtend) : undefined;
         if (isAllDayEnd !== undefined && +isAllDayStart ^ +isAllDayEnd) {
@@ -350,6 +381,18 @@ export const getSupportedEvent = ({
 
         // import-specific surgery
         if (isImport) {
+            if (!dtend && duration) {
+                const dtendFromDuration = getDtendPropertyFromDuration(validated.dtstart, duration.value);
+
+                if (dtendFromDuration) {
+                    validated.dtend = dtendFromDuration;
+                }
+
+                if (validated.dtend && getIsDateOutOfBounds(validated.dtend)) {
+                    throw new ImportEventError(IMPORT_EVENT_ERROR_TYPE.DTEND_OUT_OF_BOUNDS, 'vevent', componentId);
+                }
+            }
+
             if (!isEventInvitation) {
                 const alarms = components?.filter(({ component }) => component === 'valarm') || [];
                 const supportedAlarms = getSupportedAlarms(alarms, dtstart, enabledEmailNotifications);
