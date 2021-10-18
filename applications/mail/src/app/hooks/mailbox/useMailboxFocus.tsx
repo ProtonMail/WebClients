@@ -14,7 +14,7 @@ export const useMailboxFocus = ({ elementIDs, showList, listRef, labelID, isComp
 
     const getFocusedId = useCallback(
         () => (focusIndex !== undefined ? elementIDs[focusIndex] : undefined),
-        [focusIndex]
+        [focusIndex, elementIDs]
     );
 
     const labelIDRef = useRef(labelID);
