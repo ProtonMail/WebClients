@@ -29,22 +29,19 @@ export enum ImportType {
 }
 
 export interface IAOauthModalModelImportData {
+    importerID: string;
     [ImportType.MAIL]: {
-        importerID: string;
         selectedPeriod: TIME_PERIOD;
         providerFolders: ImportedMailFolder[];
     };
     [ImportType.CALENDAR]: {
-        importerID: string;
         providerCalendars: ImportedCalendar[];
     };
     [ImportType.CONTACTS]: {
-        importerID: string;
         numContacts: number;
         numContactGroups: number;
     };
-    // [ImportType.DRIVE]?: {
-    //     importerID: string;
+    // [ImportType.DRIVE]: {
     // };
 }
 
@@ -68,6 +65,20 @@ export type ImportPayloadType =
 export type CheckedProductMap = {
     [K in ImportType.MAIL | ImportType.CALENDAR | ImportType.CONTACTS /* | ImportType.DRIVE */]: boolean;
 };
+
+export interface CreateImportPayload {
+    TokenID?: string;
+    [ImportType.MAIL]?: {
+        Email: string;
+        ImapHost: string;
+        ImapPort: number;
+        Sasl: AuthenticationMethod;
+        Code?: string;
+        AllowSelfSigned?: number;
+    };
+    [ImportType.CALENDAR]?: {};
+    [ImportType.CONTACTS]?: {};
+}
 
 export interface LaunchImportPayload {
     ImporterID: string;

@@ -561,13 +561,10 @@ const IASelectImportTypeStep = ({
         }
 
         const payload: LaunchImportPayload = {
-            ImporterID:
-                modalModel.data[MAIL].importerID ||
-                modalModel.data[CALENDAR].importerID ||
-                modalModel.data[CONTACTS].importerID,
+            ImporterID: modalModel.data.importerID,
         };
 
-        if (modalModel.data[MAIL].importerID) {
+        if (modalModel.data[MAIL]) {
             payload[MAIL] = {
                 AddressID: addresses[0].ID,
                 Mapping: getDefaultMapping(),
@@ -576,7 +573,7 @@ const IASelectImportTypeStep = ({
             };
         }
 
-        if (modalModel.data[CALENDAR].importerID) {
+        if (modalModel.data[CALENDAR]) {
             const calendarDefaultMapping = modalModel.data[CALENDAR].providerCalendars.map(({ ID, Source }) => ({
                 Source: ID,
                 Destination: `${CALENDAR_TO_BE_CREATED_PREFIX}${Source}`,
@@ -588,10 +585,11 @@ const IASelectImportTypeStep = ({
             };
         }
 
-        if (modalModel.data[CONTACTS].importerID) {
+        if (modalModel.data[CONTACTS]) {
             payload[CONTACTS] = {};
         }
-        // if (modalModel.data[DRIVE].importerID) {
+
+        // if (modalModel.data[DRIVE]) {
         //     payload[DRIVE] = {};
         // }
 
