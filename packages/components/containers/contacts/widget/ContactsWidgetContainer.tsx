@@ -20,13 +20,12 @@ import { CustomAction } from './types';
 
 interface Props {
     onClose: () => void;
-    onImport: () => void;
     onCompose?: (recipients: Recipient[], attachments: File[]) => void;
     onMailTo?: (src: string) => void;
     customActions: CustomAction[];
 }
 
-const ContactsWidgetContainer = ({ onClose, onImport, onCompose, onMailTo, customActions }: Props) => {
+const ContactsWidgetContainer = ({ onClose, onCompose, onMailTo, customActions }: Props) => {
     const [user, loadingUser] = useUser();
     const [userSettings, loadingUserSettings] = useUserSettings();
     const [userKeysList, loadingUserKeys] = useUserKeys();
@@ -231,7 +230,7 @@ const ContactsWidgetContainer = ({ onClose, onImport, onCompose, onMailTo, custo
                         type={contactsLength ? EmptyType.Search : EmptyType.All}
                         onClearSearch={handleClearSearch}
                         onCreate={handleCreate}
-                        onImport={onImport}
+                        onClose={onClose}
                     />
                 ) : null}
                 {showList ? (
