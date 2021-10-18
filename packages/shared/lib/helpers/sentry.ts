@@ -55,6 +55,7 @@ function main({ SENTRY_DSN, COMMIT, APP_VERSION }: Pick<ProtonConfig, 'SENTRY_DS
             'TransferCancel', // User action to interrupt upload or download in Drive.
             'UploadConflictError', // User uploading the same file again in Drive.
             'UploadUserError', // Upload error on user's side in Drive.
+            'ChunkLoadError', // WebPack loading source code.
         ],
     });
 
