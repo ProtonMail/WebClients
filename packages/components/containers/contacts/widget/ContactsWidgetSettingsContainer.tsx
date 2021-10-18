@@ -36,8 +36,12 @@ const ContactsWidgetSettingsContainer = ({ onClose }: Props) => {
                             <AutoSaveContactsToggle autoSaveContacts={!!AutoSaveContacts} id="saveContactToggle" />
                         </Field>
                     </div>
-                    <ContactsWidgetSettingsContainerImport onImportButtonClick={onClose} />
-                    <ContactsWidgetSettingsContainerExport onExportButtonClick={onClose} />
+                    <div className="mb2">
+                        <ContactsWidgetSettingsContainerImport onImportButtonClick={onClose} />
+                    </div>
+                    <div className="mb2">
+                        <ContactsWidgetSettingsContainerExport onExportButtonClick={onClose} />
+                    </div>
                 </div>
             )}
         </>

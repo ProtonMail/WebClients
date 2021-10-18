@@ -2,10 +2,10 @@ import { ReactNode, MouseEvent } from 'react';
 import { c } from 'ttag';
 import noContactsImg from '@proton/styles/assets/img/placeholders/empty-address-book.svg';
 import noResultsImg from '@proton/styles/assets/img/placeholders/empty-search.svg';
+import { useModals, InlineLinkButton } from '@proton/components';
+
 import { IllustrationPlaceholder } from '../../illustration';
-import { InlineLinkButton } from '../../../components';
 import ImportModal from '../import/ImportModal';
-import { useModals } from '../../..';
 
 export enum EmptyType {
     All,
@@ -17,7 +17,7 @@ interface Props {
     type: EmptyType | undefined;
     onClearSearch: (event: MouseEvent) => void;
     onCreate: () => void;
-    onClose: () => void;
+    onClose?: () => void;
 }
 
 const ContactsWidgetPlaceholder = ({ type, onClearSearch, onCreate, onClose }: Props) => {
@@ -63,7 +63,9 @@ const ContactsWidgetPlaceholder = ({ type, onClearSearch, onCreate, onClose }: P
                     key="import"
                     onClick={() => {
                         createModal(<ImportModal />);
-                        onClose();
+                        if (onClose) {
+                            onClose();
+                        }
                     }}
                 >
                     {c('Action').t`import`}
