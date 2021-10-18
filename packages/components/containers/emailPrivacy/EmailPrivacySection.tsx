@@ -51,7 +51,7 @@ const EmailPrivacySection = () => {
                 <>
                     <SettingsLayout>
                         <SettingsLayoutLeft>
-                            <label htmlFor="remoteToggle" className="text-semibold">
+                            <label htmlFor="preventTrackingToggle" className="text-semibold">
                                 <span className="mr0-5">{c('Label').t`Protect against email tracking`}</span>
                                 <Info
                                     url="https://protonmail.com/support/email-tracker-protection"
@@ -71,13 +71,13 @@ const EmailPrivacySection = () => {
                     {ImageProxy !== IMAGE_PROXY_FLAGS.NONE && (
                         <SettingsLayout>
                             <SettingsLayoutLeft>
-                                <label htmlFor="remoteToggle" className="text-semibold">
+                                <label htmlFor="protectiontModeToggle" className="text-semibold">
                                     <span className="mr0-5">{c('Label').t`Protection mode`}</span>
                                 </label>
                             </SettingsLayoutLeft>
                             <SettingsLayoutRight className="pt0-5">
                                 <ProtectionModeSelect
-                                    id="remoteToggle"
+                                    id="protectiontModeToggle"
                                     defaultProtectionMode={ImageProxy}
                                     data-testid="privacy:protect-mode-select"
                                 />
