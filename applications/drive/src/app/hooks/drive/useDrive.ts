@@ -663,21 +663,23 @@ function useDrive() {
         );
         const lockedShareMetaList = await Promise.all(lockedShareMetaPromises);
 
-        const decryptionPromises = lockedShareMetaList.map(async (meta) => {
-            try {
-                const signature = await getSignature(meta.PassphraseSignature);
-                const matchingPrivateKey = await getMatchingKey(signature, privateKeys);
+        const decryptionPromises = lockedShareMetaList
+            .filter((meta) => !meta.VolumeSoftDeleted)
+            .map(async (meta) => {
+                try {
+                    const signature = await getSignature(meta.PassphraseSignature);
+                    const matchingPrivateKey = await getMatchingKey(signature, privateKeys);
 
-                if (matchingPrivateKey) {
-                    const decryptedPassphrase = await decryptLockedSharePassphrase(matchingPrivateKey, meta);
-                    if (decryptedPassphrase) {
-                        return { lockedShareMeta: meta, decryptedPassphrase };
+                    if (matchingPrivateKey) {
+                        const decryptedPassphrase = await decryptLockedSharePassphrase(matchingPrivateKey, meta);
+                        if (decryptedPassphrase) {
+                            return { lockedShareMeta: meta, decryptedPassphrase };
+                        }
                     }
+                } catch {
+                    return undefined;
                 }
-            } catch {
-                return undefined;
-            }
-        });
+            });
         return (await Promise.all(decryptionPromises)).filter(isTruthy);
     };
 
