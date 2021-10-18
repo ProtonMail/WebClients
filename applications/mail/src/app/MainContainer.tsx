@@ -9,7 +9,6 @@ import {
     FeatureCode,
     useFeatures,
 } from '@proton/components';
-import MessageProvider from './containers/MessageProvider';
 import ComposerContainer from './containers/ComposerContainer';
 import PageContainer from './containers/PageContainer';
 import { MAIN_ROUTE_PATH } from './constants';
@@ -37,35 +36,35 @@ const MainContainer = () => {
 
     return (
         <ReduxProvider store={store}>
-            <MessageProvider>
-                        <ContactProvider>
-                            <EncryptedSearchProvider>
-                                <MailContentRefProvider mailContentRef={mailContentRef}>
-                                    <GetStartedChecklistProvider>
-                                        <ComposerContainer breakpoints={breakpoints}>
-                                            {({ isComposerOpened }) => (
-                                                <>
-                                                    <ModalsChildren />
-                                                    <Switch>
-                                                        <Route
-                                                            path={MAIN_ROUTE_PATH}
-                                                            render={() => (
-                                                                <PageContainer
-                                                                    ref={mailContentRef}
-                                                                    breakpoints={breakpoints}
-                                                                    isComposerOpened={isComposerOpened}
-                                                                />
-                                                            )}
-                                                        />
-                                                    </Switch>
-                                                </>
-                                            )}
-                                        </ComposerContainer>
-                                    </GetStartedChecklistProvider>
-                                </MailContentRefProvider>
-                            </EncryptedSearchProvider>
-                        </ContactProvider>
-            </MessageProvider>
+            {/* <MessageProvider> */}
+            <ContactProvider>
+                <EncryptedSearchProvider>
+                    <MailContentRefProvider mailContentRef={mailContentRef}>
+                        <GetStartedChecklistProvider>
+                            <ComposerContainer breakpoints={breakpoints}>
+                                {({ isComposerOpened }) => (
+                                    <>
+                                        <ModalsChildren />
+                                        <Switch>
+                                            <Route
+                                                path={MAIN_ROUTE_PATH}
+                                                render={() => (
+                                                    <PageContainer
+                                                        ref={mailContentRef}
+                                                        breakpoints={breakpoints}
+                                                        isComposerOpened={isComposerOpened}
+                                                    />
+                                                )}
+                                            />
+                                        </Switch>
+                                    </>
+                                )}
+                            </ComposerContainer>
+                        </GetStartedChecklistProvider>
+                    </MailContentRefProvider>
+                </EncryptedSearchProvider>
+            </ContactProvider>
+            {/* </MessageProvider> */}
         </ReduxProvider>
     );
 };
