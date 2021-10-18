@@ -4,6 +4,7 @@ import { HOUR } from '@proton/shared/lib/constants';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { Severity } from '@sentry/types';
 import TopBanner from './TopBanner';
+import LearnMore from '../../components/link/LearnMore';
 
 import useApiServerTime from '../../hooks/useApiServerTime';
 
@@ -43,10 +44,11 @@ const TimeOutOfSyncTopBanner = () => {
         return null;
     }
 
-    // TODO add 'Learn More' link once KB article is ready
+    const learnMore = <LearnMore url="https://protonmail.com/support/knowledge-base/device-time-warning/" />;
+
     return (
         <TopBanner onClose={() => setIgnore(true)} className="bg-warning">
-            {c('Warning').jt`Your local date & time settings seem to be out of sync.`}
+            {c('Warning').jt`The date and time settings on your device are out of sync. ${learnMore}`}
         </TopBanner>
     );
 };
