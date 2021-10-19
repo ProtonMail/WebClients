@@ -50,8 +50,8 @@ const GetStartedChecklistProvider = ({ children }: { children: ReactNode }) => {
             api<{ Items: GetStartedChecklistKey[]; CreatedAt: number }>(getChecklist('get-started')).then(setChecklist)
         );
 
-        subscribe(({ ChecklistEvents }: Event) => {
-            ChecklistEvents?.forEach(({ CompletedItem }) => {
+        subscribe(({ Checklist }: Event) => {
+            Checklist?.forEach(({ CompletedItem }) => {
                 setChecklist((current) => ({
                     ...current,
                     Items: [...current.Items, CompletedItem],
