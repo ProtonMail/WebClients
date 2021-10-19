@@ -8,15 +8,12 @@ import {
     Icon,
     Progress,
     SettingsLink,
-    useModals,
     useApi,
     Loader,
     useUser,
     useIsMnemonicAvailable,
     classnames,
-    useSettingsLink,
 } from '@proton/components';
-import { MnemonicPromptModal } from '@proton/components/containers/mnemonic';
 import { seenCompletedChecklist } from '@proton/shared/lib/api/checklist';
 import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
@@ -25,8 +22,6 @@ import gift from '@proton/styles/assets/img/get-started/gift.svg';
 import { GetStartedChecklistKey } from '@proton/shared/lib/interfaces';
 
 import { GetStartedChecklistContext } from '../../containers/GetStartedChecklistProvider';
-import ModalGetMobileApp from './ModalGetMobileApp';
-import ModalImportEmails from './ModalImportEmails';
 import './GetStartedChecklist.scss';
 
 /*
@@ -73,7 +68,7 @@ const GetStartedChecklistComplete = ({ userIsFreeOrMailOnly }: { userIsFreeOrMai
 interface GetStartedChecklistProps {
     hideDismissButton?: boolean;
     limitedMaxWidth?: boolean;
-    onSendMessage: () => void;
+    onItemSelection: (key: GetStartedChecklistKey) => () => void;
     onDismiss?: () => void;
 }
 
@@ -81,30 +76,22 @@ const GetStartedChecklist = ({
     hideDismissButton,
     limitedMaxWidth,
     onDismiss,
-    onSendMessage,
+    onItemSelection,
 }: GetStartedChecklistProps) => {
     const [user] = useUser();
     const { expires, checklist, loading } = useContext(GetStartedChecklistContext);
-    const { createModal } = useModals();
     const isMnemonicAvailable = useIsMnemonicAvailable();
-    const goToSettings = useSettingsLink();
 
     const checklistItems = [
         {
             key: GetStartedChecklistKey.SendMessage,
             text: c('Get started checklist item').t`Send a message`,
             icon: 'paper-plane',
-            onClick: () => {
-                onSendMessage();
-            },
         },
         {
             key: GetStartedChecklistKey.MobileApp,
             text: c('Get started checklist item').t`Get mobile app`,
             icon: 'mobile',
-            onClick: () => {
-                createModal(<ModalGetMobileApp />);
-            },
         },
         {
             key: GetStartedChecklistKey.RecoveryMethod,
@@ -112,27 +99,18 @@ const GetStartedChecklist = ({
                 ? c('Get started checklist item').t`Activate your recovery phrase`
                 : c('Get started checklist item').t`Activate a recovery method`,
             icon: 'lock',
-            onClick: () => {
-                if (isMnemonicAvailable) {
-                    createModal(<MnemonicPromptModal />);
-                } else {
-                    goToSettings('/authentication#recovery-notification');
-                }
-            },
         },
         {
             key: GetStartedChecklistKey.Import,
             text: c('Get started checklist item').t`Import emails`,
             icon: 'arrow-down-to-screen',
-            onClick: () => {
-                createModal(<ModalImportEmails />);
-            },
         },
     ]
         .filter(isTruthy)
         .map(({ key, ...rest }) => ({
             key,
             complete: checklist.includes(key),
+            onClick: onItemSelection(key),
             ...rest,
         }));
 
