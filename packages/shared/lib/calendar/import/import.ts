@@ -12,6 +12,7 @@ import { Api } from '../../interfaces';
 import {
     CalendarEvent,
     EncryptedEvent,
+    ImportCalendarModel,
     VcalCalendarComponentOrError,
     VcalVeventComponent,
     VcalVtimezoneComponent,
@@ -20,6 +21,7 @@ import {
 import { ICAL_METHOD, IMPORT_ERROR_TYPE, MAX_CALENDARS_PER_USER, MAX_IMPORT_EVENTS } from '../constants';
 import getComponentFromCalendarEvent from '../getComponentFromCalendarEvent';
 import { generateVeventHashUID } from '../helper';
+import { IMPORT_EVENT_ERROR_TYPE, ImportEventError } from '../icsSurgery/ImportEventError';
 import { getLinkedDateTimeProperty, getSupportedEvent } from '../icsSurgery/vevent';
 import { parseWithErrors, serialize } from '../vcal';
 import {
@@ -36,7 +38,6 @@ import {
     getPropertyTzid,
 } from '../vcalHelper';
 import { withDtstamp } from '../veventHelper';
-import { IMPORT_EVENT_ERROR_TYPE, ImportEventError } from '../icsSurgery/ImportEventError';
 import { ImportFileError } from './ImportFileError';
 
 const getParsedComponentHasError = (component: VcalCalendarComponentOrError): component is { error: Error } => {
@@ -202,6 +203,7 @@ export const getSupportedEvents = async ({
                 if (e instanceof ImportEventError && e.type === IMPORT_EVENT_ERROR_TYPE.TIMEZONE_IGNORE) {
                     return;
                 }
+
                 return e;
             }
         })
@@ -240,6 +242,22 @@ export const splitErrors = <T>(events: (T | ImportEventError)[]) => {
             return acc;
         },
         { errors: [], rest: [] }
+    );
+};
+
+// Separate errors that we want to hide
+export const splitHiddenErrors = (errors: ImportEventError[]) => {
+    return errors.reduce<{ hidden: ImportEventError[]; visible: ImportEventError[] }>(
+        (acc, error) => {
+            if (error.type === IMPORT_EVENT_ERROR_TYPE.NO_OCCURRENCES) {
+                // Importing an event without occurrences is the same as not importing it
+                acc.hidden.push(error);
+            } else {
+                acc.visible.push(error);
+            }
+            return acc;
+        },
+        { hidden: [], visible: [] }
     );
 };
 
@@ -324,4 +342,20 @@ export const getSupportedEventsWithRecurrenceId = async ({
             return new ImportEventError(IMPORT_EVENT_ERROR_TYPE.VALIDATION_ERROR, 'vevent', uid);
         }
     });
+};
+
+export const extractTotals = (model: ImportCalendarModel) => {
+    const { eventsParsed, totalEncrypted, totalImported, visibleErrors, hiddenErrors } = model;
+    const totalToImport = eventsParsed.length + hiddenErrors.length;
+    const totalToProcess = 2 * totalToImport; // count encryption and submission equivalently for the progress
+    const totalEncryptedFake = totalEncrypted + hiddenErrors.length;
+    const totalImportedFake = totalImported + hiddenErrors.length;
+    const totalVisibleErrors = visibleErrors.length;
+    const totalProcessed = totalEncryptedFake + totalImportedFake + totalVisibleErrors;
+    return {
+        totalToImport,
+        totalToProcess,
+        totalImported: totalImportedFake,
+        totalProcessed,
+    };
 };

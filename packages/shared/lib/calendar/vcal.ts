@@ -117,6 +117,10 @@ const getInternalRecur = (value?: any): VcalRrulePropertyValue | undefined => {
     const result = {
         ...value.toJSON(),
     };
+    // COUNT = 0 gets ignored in the above step
+    if (value.count === 0) {
+        result.count = 0;
+    }
     const until = getInternalUntil(value.until);
     if (until) {
         result.until = until;
@@ -249,7 +253,6 @@ const fromIcalProperties = (properties = []) => {
         if (!name) {
             return acc;
         }
-
         const { type } = property;
         const values = property.getValues().map((value: any) => icalValueToInternalValue(type, value));
 
