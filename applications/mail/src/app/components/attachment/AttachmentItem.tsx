@@ -1,9 +1,19 @@
 import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { useState, useEffect } from 'react';
 import { c } from 'ttag';
-import { Icon, classnames, useLoading, FileIcon, useIsMounted, useRightToLeft, CircleLoader } from '@proton/components';
+import {
+    Icon,
+    classnames,
+    useLoading,
+    FileIcon,
+    useIsMounted,
+    useRightToLeft,
+    CircleLoader,
+    FileNameDisplay,
+} from '@proton/components';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
+import { rtlSanitize } from '@proton/shared/lib/helpers/string';
 import { PendingUpload } from '../../hooks/composer/useAttachments';
 import { AttachmentAction, AttachmentHandler } from './AttachmentList';
 
@@ -82,7 +92,8 @@ const AttachmentItem = ({
         }
     }, []);
 
-    const name = attachment ? attachment.Name || '' : pendingUpload?.file.name || '';
+    const nameRaw = `${attachment ? attachment.Name || '' : pendingUpload?.file.name || ''}`;
+    const name = rtlSanitize(nameRaw);
     const value = Math.round(progression * 100);
     const progressionHappening = progression !== 0;
     const directionLoadingProgress = isRTL ? 'left' : 'right';
@@ -141,7 +152,9 @@ const AttachmentItem = ({
                         onClick={handleAction(true)}
                     >
                         <span className="mtauto mbauto flex flex-align-items-center flex-nowrap">
-                            <span className="text-ellipsis pr0-25 align-baseline inline-block">{name}</span>
+                            <span className="text-ellipsis pr0-25 align-baseline inline-block">
+                                <FileNameDisplay text={name} />
+                            </span>
                             <span className="message-attachmentSize align-baseline inline-block flex-item-noshrink">
                                 {humanAttachmentSize}
                             </span>
