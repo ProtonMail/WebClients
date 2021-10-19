@@ -28,7 +28,14 @@ describe('email', () => {
         });
 
         it('should reject invalid domains', () => {
-            const domains = ['protonmail', '-mail.proton.me.', '1234', '[123.32]', 'pro*ton.mail.com'];
+            const domains = [
+                'protonmail',
+                '-mail.proton.me.',
+                '1234',
+                '[123.32]',
+                'pro*ton.mail.com',
+                'protonmail.com/',
+            ];
             const results = domains.map((domain) => validateDomain(domain));
             const expected = domains.map(() => false);
             expect(results).toEqual(expected);

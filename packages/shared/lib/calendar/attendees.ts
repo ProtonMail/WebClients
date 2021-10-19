@@ -186,7 +186,8 @@ export const getCanonicalEmails = async (
 
 export const withPmAttendees = async (
     vevent: VcalVeventComponent,
-    getCanonicalEmailsMap: GetCanonicalEmailsMap
+    getCanonicalEmailsMap: GetCanonicalEmailsMap,
+    ignoreErrors = false
 ): Promise<VcalPmVeventComponent> => {
     const { uid, attendee: vcalAttendee } = vevent;
     if (!vcalAttendee?.length) {
@@ -211,10 +212,11 @@ export const withPmAttendees = async (
                 return supportedAttendee;
             }
             const canonicalEmail = canonicalEmailMap[emailAddress];
-            if (!canonicalEmail) {
+            if (!canonicalEmail && !ignoreErrors) {
                 throw new Error('No canonical email provided');
             }
-            const token = await generateAttendeeToken(canonicalEmail, uid.value);
+            // If the participant has an invalid email and we ignore errors, we fall back to the provided email address
+            const token = await generateAttendeeToken(canonicalEmail || emailAddress, uid.value);
             return {
                 ...supportedAttendee,
                 parameters: {
