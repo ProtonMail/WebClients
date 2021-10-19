@@ -6,7 +6,6 @@ import { LabelCount } from '@proton/shared/lib/interfaces/Label';
 import { STATUS } from '@proton/shared/lib/models/cache';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { useDispatch } from 'react-redux';
-import { useMessageCache, getLocalID } from '../../containers/MessageProvider';
 import { useGetElementByID } from '../mailbox/useElements';
 import { Conversation } from '../../models/conversation';
 import { Element } from '../../models/element';
@@ -47,7 +46,6 @@ const computeRollbackLabelChanges = (element: Element, changes: LabelChanges) =>
 export const useOptimisticApplyLabels = () => {
     const dispatch = useDispatch();
     const getElementByID = useGetElementByID();
-    const messageCache = useMessageCache();
     const [folders = []] = useFolders();
     const globalCache = useCache();
     const getConversation = useGetConversation();

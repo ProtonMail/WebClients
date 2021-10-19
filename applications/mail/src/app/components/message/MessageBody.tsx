@@ -3,18 +3,17 @@ import { isPlainText } from '@proton/shared/lib/mail/messages';
 import { scrollIntoView } from '@proton/shared/lib/helpers/dom';
 import { classnames, Button, Tooltip } from '@proton/components';
 import { c } from 'ttag';
-import { MessageExtended } from '../../models/message';
 import { locateBlockquote } from '../../helpers/message/messageBlockquote';
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
-
-import './MessageBody.scss';
 import MessageBodyImage from './MessageBodyImage';
+import { MessageState } from '../../logic/messages/messagesTypes';
+import './MessageBody.scss';
 
 interface Props {
     messageLoaded: boolean;
     bodyLoaded: boolean;
     sourceMode: boolean;
-    message: MessageExtended;
+    message: MessageState;
     originalMessageMode: boolean;
     toggleOriginalMessage?: () => void;
     /**
@@ -45,8 +44,11 @@ const MessageBody = ({
     const plain = isPlainText(message.data);
 
     const [content, blockquote] = useMemo(
-        () => (plain ? [message.plainText as string, ''] : locateBlockquote(message.document)),
-        [message.document?.innerHTML, message.plainText, plain]
+        () =>
+            plain
+                ? [message.messageDocument?.plainText as string, '']
+                : locateBlockquote(message.messageDocument?.document),
+        [message.messageDocument?.document?.innerHTML, message.messageDocument?.plainText, plain]
     );
 
     const [, forceRefresh] = useState({});
@@ -94,7 +96,7 @@ const MessageBody = ({
             data-testid="message-content:body"
         >
             {encryptedMode && <pre>{message.data?.Body}</pre>}
-            {sourceMode && <pre>{message.decryptedBody}</pre>}
+            {sourceMode && <pre>{message.decryption?.decryptedBody}</pre>}
             {(loadingMode || decryptingMode) && (
                 <>
                     <div className="message-content-loading-placeholder mb0-25 max-w8e" />

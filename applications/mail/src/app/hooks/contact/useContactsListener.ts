@@ -9,7 +9,6 @@ import { parse } from '@proton/shared/lib/contacts/vcard';
 import { Contact } from '@proton/shared/lib/interfaces/contacts';
 import { splitKeys } from '@proton/shared/lib/keys/keys';
 import { CACHE_KEY } from '@proton/components/hooks/useGetEncryptionPreferences';
-import { MessageCache, updateMessageCache, useMessageCache } from '../../containers/MessageProvider';
 import { Event } from '../../models/event';
 
 /**
@@ -24,8 +23,8 @@ import { Event } from '../../models/event';
 const processContactUpdate = async (
     contact: Contact | undefined,
     publicKeys: OpenPGPKey[],
-    globalCache: Cache<string, any>,
-    messageCache: MessageCache
+    globalCache: Cache<string, any>
+    // messageCache: MessageCache
 ) => {
     const signedCard = contact?.Cards.find(({ Type }) => Type === CONTACT_CARD_TYPE.SIGNED);
     if (!signedCard) {
@@ -56,7 +55,7 @@ const processContactUpdate = async (
 
 export const useContactsListener = () => {
     const globalCache = useCache();
-    const messageCache = useMessageCache();
+    // const messageCache = useMessageCache();
     const { subscribe } = useEventManager();
     const [userKeys = []] = useUserKeys();
 
@@ -66,7 +65,7 @@ export const useContactsListener = () => {
         () =>
             subscribe(({ Contacts = [] }: Event) => {
                 for (const { Contact } of Contacts) {
-                    void processContactUpdate(Contact, publicKeys, globalCache, messageCache);
+                    void processContactUpdate(Contact, publicKeys, globalCache);
                 }
             }),
         [publicKeys]

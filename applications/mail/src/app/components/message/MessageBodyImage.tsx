@@ -4,7 +4,7 @@ import { classnames, Icon, Loader, Tooltip } from '@proton/components';
 import { createPortal } from 'react-dom';
 import { c } from 'ttag';
 import { getAnchor } from '../../helpers/message/messageImages';
-import { MessageImage } from '../../models/message';
+import { MessageImage } from '../../logic/messages/messagesTypes';
 
 const sizeProps: ['width', 'height'] = ['width', 'height'];
 

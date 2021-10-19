@@ -1,41 +1,55 @@
-import { Api, MailSettings } from '@proton/shared/lib/interfaces';
-import { DecryptResultPmcrypto } from 'pmcrypto';
+import { MailSettings } from '@proton/shared/lib/interfaces';
+import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { transformEscape, attachBase64 } from './transformEscape';
 import { Base64Cache } from '../../hooks/useBase64Cache';
 import { transformBase } from './transformBase';
 import { transformLinks } from './transformLinks';
 import { transformEmbedded } from './transformEmbedded';
-import { MessageExtended, MessageKeys } from '../../models/message';
 import { transformWelcome } from './transformWelcome';
 import { transformStylesheet } from './transformStylesheet';
 import { transformRemote } from './transformRemote';
 import { transformLinkify } from './transformLinkify';
-import { MessageCache } from '../../containers/MessageProvider';
+import {
+    LoadEmbeddedResults,
+    MessageImage,
+    MessageRemoteImage,
+    MessageState,
+} from '../../logic/messages/messagesTypes';
+
+export interface Preparation {
+    plainText?: string;
+    document?: Element;
+    showEmbeddedImages?: boolean;
+    showRemoteImages?: boolean;
+    hasRemoteImages?: boolean;
+    hasEmbeddedImages?: boolean;
+    remoteImages?: MessageImage[];
+    embeddedImages?: MessageImage[];
+}
 
 export const prepareHtml = async (
-    message: MessageExtended,
-    messageKeys: MessageKeys,
-    messageCache: MessageCache,
+    message: MessageState,
     base64Cache: Base64Cache,
-    getAttachment: (ID: string) => DecryptResultPmcrypto | undefined,
-    onUpdateAttachment: (ID: string, attachment: DecryptResultPmcrypto) => void,
-    api: Api,
-    mailSettings: MailSettings | undefined
-) => {
-    const document = transformEscape(message.decryptedBody, base64Cache);
+    mailSettings: MailSettings | undefined,
+    onLoadEmbeddedImages: (attachments: Attachment[]) => Promise<LoadEmbeddedResults>,
+    onLoadRemoteImagesProxy: (imagesToLoad: MessageRemoteImage[]) => void,
+    onLoadFakeImagesProxy: (imagesToLoad: MessageRemoteImage[]) => void,
+    onLoadRemoteImagesDirect: (imagesToLoad: MessageRemoteImage[]) => void
+): Promise<Preparation> => {
+    const document = transformEscape(message.decryption?.decryptedBody, base64Cache);
 
     transformBase(document);
 
     transformLinks(document);
 
     const { showEmbeddedImages, hasEmbeddedImages, embeddedImages } = await transformEmbedded(
-        { ...message, document },
-        messageKeys,
-        messageCache,
-        getAttachment,
-        onUpdateAttachment,
-        api,
-        mailSettings
+        { ...message, messageDocument: { document } },
+        // messageKeys,
+        // messageCache,
+        // attachmentsCache,
+        // api,
+        mailSettings,
+        onLoadEmbeddedImages
     );
 
     transformWelcome(document);
@@ -43,10 +57,11 @@ export const prepareHtml = async (
     transformStylesheet(document);
 
     const { showRemoteImages, hasRemoteImages, remoteImages } = transformRemote(
-        { ...message, document },
+        { ...message, messageDocument: { document } },
         mailSettings,
-        api,
-        messageCache
+        onLoadRemoteImagesProxy,
+        onLoadFakeImagesProxy,
+        onLoadRemoteImagesDirect
     );
 
     attachBase64(document, base64Cache);
@@ -62,7 +77,7 @@ export const prepareHtml = async (
     };
 };
 
-export const preparePlainText = async (body: string, isDraft: boolean) => {
+export const preparePlainText = async (body: string, isDraft: boolean): Promise<Preparation> => {
     const plainText = isDraft ? body : transformLinkify(body);
 
     return { plainText };

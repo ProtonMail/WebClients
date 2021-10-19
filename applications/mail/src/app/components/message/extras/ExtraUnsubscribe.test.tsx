@@ -14,8 +14,8 @@ import {
     waitForEventManagerCall,
     waitForNotification,
 } from '../../../helpers/test/helper';
-import { MessageExtended } from '../../../models/message';
 import ExtraUnsubscribe from './ExtraUnsubscribe';
+import { MessageState } from '../../../logic/messages/messagesTypes';
 
 loudRejection();
 
@@ -32,9 +32,9 @@ describe('Unsubscribe banner', () => {
     const defaultMessage = {
         localID: messageID,
         data: { ID: messageID, Subject: 'test', ParsedHeaders: { 'X-Original-To': toAddress } } as any,
-        initialized: true,
+        messageDocument: { initialized: true },
         verification: {},
-    } as MessageExtended;
+    } as MessageState;
 
     afterEach(clearAll);
 

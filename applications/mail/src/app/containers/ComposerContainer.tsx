@@ -1,7 +1,6 @@
 import { ReactNode, useState, useEffect, memo, useRef } from 'react';
 import { useWindowSize, useHandler, useBeforeUnload } from '@proton/components';
 import { c } from 'ttag';
-import { useMessageCache } from './MessageProvider';
 import { Breakpoints, WindowSize } from '../models/utils';
 import { MAX_ACTIVE_COMPOSER_MOBILE, MAX_ACTIVE_COMPOSER_DESKTOP } from '../helpers/composerPositioning';
 import { useCompose } from '../hooks/composer/useCompose';
@@ -20,7 +19,7 @@ const ComposerContainer = ({ breakpoints, children }: Props) => {
     const [focusedMessageID, setFocusedMessageID] = useState<string>();
     const [width, height] = useWindowSize();
     const windowSize: WindowSize = { width, height };
-    const messageCache = useMessageCache();
+    // const messageCache = useMessageCache();
     useClickMailContent(() => setFocusedMessageID(undefined));
 
     const returnFocusToElement = useRef<HTMLElement | null>(null);
@@ -62,7 +61,8 @@ const ComposerContainer = ({ breakpoints, children }: Props) => {
         }
     }, [messageIDs]);
 
-    useEffect(() => messageCache.subscribe(messageDeletionListener), [messageCache]);
+    // TODO
+    // useEffect(() => messageCache.subscribe(messageDeletionListener), [messageCache]);
 
     const openComposer = (messageID: string, returnFocusTo?: HTMLElement | null) => {
         setMessageIDs((messageIDs) => [...messageIDs, messageID]);

@@ -1,8 +1,10 @@
-import { OpenPGPKey, OpenPGPSignature } from 'pmcrypto';
-import { RequireSome, SimpleMap } from '@proton/shared/lib/interfaces';
+import { OpenPGPKey, OpenPGPSignature, DecryptResultPmcrypto } from 'pmcrypto';
+import { Api, RequireSome, SimpleMap } from '@proton/shared/lib/interfaces';
 import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import { MESSAGE_ACTIONS } from '../../constants';
+import { Preparation } from '../../helpers/transforms/transforms';
+import { DecryptMessageResult } from '../../helpers/message/messageDecrypt';
 
 export interface MessageKeys {
     publicKeys: OpenPGPKey[];
@@ -248,3 +250,43 @@ export type MessageStateWithData = RequireSome<MessageState, 'data'>;
  * Common helper to have a partial MessageExtended including a Partial Message
  */
 export type PartialMessageState = Partial<Omit<MessageState, 'data'> & { data: Partial<Message> }>;
+
+export interface LoadParams {
+    ID: string;
+    api: Api;
+}
+
+export interface DocumentInitializeParams {
+    ID: string;
+    dataChanges: Partial<Message>;
+    initialized?: boolean;
+    preparation?: Preparation;
+    decryption?: DecryptMessageResult;
+    errors?: MessageErrors;
+    messageImages?: MessageImages;
+}
+
+export interface LoadEmbeddedParams {
+    ID: string;
+    attachments: Attachment[];
+    api: Api;
+    messageVerification?: MessageVerification;
+    messageKeys: MessageKeys;
+    getAttachment: (ID: string) => DecryptResultPmcrypto | undefined;
+    onUpdateAttachment: (ID: string, attachment: DecryptResultPmcrypto) => void;
+}
+
+export type LoadEmbeddedResults = { attachment: Attachment; blob: string }[];
+
+export interface LoadRemoteParams {
+    ID: string;
+    imagesToLoad: MessageRemoteImage[];
+    api: Api;
+}
+
+export interface LoadRemoteProxyResults {
+    image: MessageRemoteImage;
+    blob?: Blob;
+    tracker?: string;
+    error?: unknown;
+}

@@ -13,21 +13,19 @@ import {
 } from '@proton/components';
 import { isOutbox, isScheduledSend } from '@proton/shared/lib/mail/messages';
 import { forceSend } from '@proton/shared/lib/api/messages';
-
-import { MessageExtended, PartialMessageExtended } from '../../models/message';
 import { useDraft } from '../useDraft';
 import { isDirtyAddress } from '../../helpers/addresses';
-import { useMessageCache, getLocalID, updateMessageCache } from '../../containers/MessageProvider';
 import { MESSAGE_ACTIONS } from '../../constants';
+import { MessageState, PartialMessageState } from '../../logic/messages/messagesTypes';
 
 export interface ComposeExisting {
-    existingDraft: MessageExtended;
+    existingDraft: MessageState;
     fromUndo: boolean;
 }
 
 export interface ComposeNew {
     action: MESSAGE_ACTIONS;
-    referenceMessage?: PartialMessageExtended;
+    referenceMessage?: PartialMessageState;
 }
 
 export type ComposeArgs = (ComposeExisting | ComposeNew) & {
@@ -62,7 +60,7 @@ export const useCompose = (
     const { createNotification } = useNotifications();
     const { createModal } = useModals();
     const createDraft = useDraft();
-    const messageCache = useMessageCache();
+    // const messageCache = useMessageCache();
     const goToSettings = useSettingsLink();
     const api = useApi();
     const { call } = useEventManager();

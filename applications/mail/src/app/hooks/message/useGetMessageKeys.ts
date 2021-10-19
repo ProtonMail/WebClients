@@ -2,7 +2,7 @@ import { useCallback } from 'react';
 import { useGetAddressKeys } from '@proton/components';
 import { splitKeys } from '@proton/shared/lib/keys/keys';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
-import { MessageKeys } from '../../models/message';
+import { MessageKeys } from '../../logic/messages/messagesTypes';
 
 export type GetMessageKeys = (message: Pick<Message, 'AddressID'>) => Promise<MessageKeys>;
 export type UseGetMessageKeys = () => GetMessageKeys;
