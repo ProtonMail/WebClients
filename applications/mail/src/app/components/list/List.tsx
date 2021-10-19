@@ -1,6 +1,6 @@
 import { useEffect, ChangeEvent, Ref, memo, forwardRef, MutableRefObject } from 'react';
 import { c, msgid } from 'ttag';
-import { useLabels, classnames, PaginationRow, useItemsDraggable, EllipsisLoader } from '@proton/components';
+import { useLabels, classnames, PaginationRow, useItemsDraggable } from '@proton/components';
 import { MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
 import { DENSITY } from '@proton/shared/lib/constants';
 import Item from './Item';
@@ -12,7 +12,9 @@ import { Breakpoints } from '../../models/utils';
 import { Sort, Filter } from '../../models/tools';
 import { usePaging } from '../../hooks/usePaging';
 import ListSettings from './ListSettings';
+import ESSlowToolbar from './ESSlowToolbar';
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
+import useEncryptedSearchList from './useEncryptedSearchList';
 
 const defaultCheckedIDs: string[] = [];
 const defaultElements: Element[] = [];
@@ -72,8 +74,7 @@ const List = (
     ref: Ref<HTMLDivElement>
 ) => {
     const [labels] = useLabels();
-    const { getESDBStatus, shouldHighlight } = useEncryptedSearchContext();
-    const { dbExists, esEnabled, isSearchPartial, isCacheLimited, isSearching } = getESDBStatus();
+    const { shouldHighlight } = useEncryptedSearchContext();
     // Override compactness of the list view to accomodate body preview when showing encrypted search results
     const isCompactView = userSettings.Density === DENSITY.COMPACT && !shouldHighlight();
 
@@ -85,6 +86,15 @@ const List = (
     useEffect(() => {
         (ref as MutableRefObject<HTMLElement | null>).current?.scroll?.({ top: 0 });
     }, [loading, page]);
+
+    // ES options: offer users the option to turn off ES if it's taking too long, and
+    // enable/disable UI elements for incremental partial searches
+    const { showESSlowToolbar, loadingElement, disableGoToLast, useLoadingElement } = useEncryptedSearchList(
+        isSearch,
+        loading,
+        page,
+        total
+    );
 
     const { draggedIDs, handleDragStart, handleDragEnd } = useItemsDraggable(
         elements,
@@ -105,18 +115,6 @@ const List = (
                       selectionCount
                   );
         }
-    );
-
-    const searchLimitedMode = isSearch && !loading && dbExists && esEnabled && isCacheLimited;
-    const disableGoToLast = searchLimitedMode && isSearchPartial;
-    const isLastPage = page === total;
-    const useLoadingElement = searchLimitedMode && (isSearching || !isSearchPartial) && isLastPage;
-    const loadingText = isSearching ? c('Info').t`Loading` : c('Info').t`No more results found`;
-    const loadingElement = (
-        <div className="flex flex-nowrap flex-align-items-center flex-justify-center color-weak mt1-5 mb1-5">
-            {loadingText}
-            {isSearching && <EllipsisLoader />}
-        </div>
     );
 
     return (
@@ -141,6 +139,7 @@ const List = (
                     isSearch={isSearch}
                     labelID={labelID}
                 />
+                {showESSlowToolbar && <ESSlowToolbar />}
                 {elements.length === 0 ? (
                     <EmptyView labelID={labelID} isSearch={isSearch} />
                 ) : (

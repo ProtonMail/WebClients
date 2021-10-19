@@ -173,8 +173,17 @@ const EncryptedSearchProvider = ({ children }: Props) => {
      * Report the status of IndexedDB
      */
     const getESDBStatus = () => {
-        const { dbExists, isBuilding, isDBLimited, esEnabled, isRefreshing, isSearchPartial, isSearching, isCaching } =
-            esStatus;
+        const {
+            dbExists,
+            isBuilding,
+            isDBLimited,
+            esEnabled,
+            isRefreshing,
+            isSearchPartial,
+            isSearching,
+            isCaching,
+            dropdownOpened,
+        } = esStatus;
         const { isCacheLimited } = esCacheRef.current;
         const esDBStatus: ESDBStatus = {
             dbExists,
@@ -186,6 +195,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
             isSearchPartial,
             isSearching,
             isCaching,
+            dropdownOpened,
         };
         return esDBStatus;
     };
@@ -708,6 +718,16 @@ const EncryptedSearchProvider = ({ children }: Props) => {
      * Execute an encrypted search
      */
     const encryptedSearch: EncryptedSearch = async (labelID, setCache) => {
+        // Prevent old searches from interfering with newer ones
+        abortSearchingRef.current.abort();
+        setESStatus((esStatus) => {
+            return {
+                ...esStatus,
+                isSearching: false,
+                isSearchPartial: false,
+            };
+        });
+
         const t1 = performance.now();
         const {
             dbExists,
@@ -729,8 +749,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
             return dbCorruptError().then(() => false);
         }
 
-        // Prevent old searches from interfering with newer ones
-        abortSearchingRef.current.abort();
+        abortSearchingRef.current = new AbortController();
 
         // Caching needs to be triggered here for when a refresh happens on a search URL
         if (!isCaching && !esCacheRef.current.isCacheReady) {
@@ -758,7 +777,6 @@ const EncryptedSearchProvider = ({ children }: Props) => {
             };
         });
 
-        abortSearchingRef.current = new AbortController();
         const controlledSetCache = (Elements: Element[]) => {
             if (!abortSearchingRef.current.signal.aborted) {
                 setCache(Elements, pageRef.current);
@@ -968,6 +986,30 @@ const EncryptedSearchProvider = ({ children }: Props) => {
         return resumeIndexing({ isRefreshed: true });
     };
 
+    /**
+     * Open the advanced search dropdown
+     */
+    const openDropdown = () => {
+        setESStatus((esStatus) => {
+            return {
+                ...esStatus,
+                dropdownOpened: true,
+            };
+        });
+    };
+
+    /**
+     * Close the advanced search dropdown
+     */
+    const closeDropdown = () => {
+        setESStatus((esStatus) => {
+            return {
+                ...esStatus,
+                dropdownOpened: false,
+            };
+        });
+    };
+
     useSubscribeEventManager(async (event: Event) => {
         const { dbExists, cachedIndexKey } = esStatus;
         if (!dbExists) {
@@ -1110,6 +1152,8 @@ const EncryptedSearchProvider = ({ children }: Props) => {
             shouldHighlight,
             isSearchResult,
             esDelete,
+            openDropdown,
+            closeDropdown,
         }),
         [userID, esStatus]
     );

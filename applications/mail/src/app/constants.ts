@@ -169,6 +169,7 @@ export const defaultESStatus: ESStatus = {
     isSearching: false,
     isCaching: false,
     isFirstSearch: true,
+    dropdownOpened: false,
 };
 export const defaultESCache: ESCache = {
     esCache: [],
