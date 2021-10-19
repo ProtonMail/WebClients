@@ -58,11 +58,26 @@ export const sanitizeProperties = (properties: ContactProperties = []): ContactP
             return Array.isArray(property.value) ? property : { ...property, value: property.value.toString() };
         })
         .map((property) => {
-            const { field, value } = property;
+            const { field } = property;
+            let { value } = property;
+
+            // Remove values starting by "=" to prevent any arbitraty execution if that value ends up in an Excel file
+            // https://jira.protontech.ch/browse/SEC-451
+            if (!Array.isArray(value) && value.startsWith('=')) {
+                value = value.replace(/^=+/, '');
+            }
+            if (Array.isArray(value) && value.some((value) => value.startsWith('='))) {
+                value = value.map((value) => {
+                    if (value.startsWith('=')) {
+                        return value.slice(1);
+                    }
+                    return value;
+                });
+            }
+
             if ((field === 'adr' || field === 'org') && !Array.isArray(value)) {
                 // assume the bad formatting used commas instead of semicolons
-                const newValue = value.split(',').slice(0, 6);
-                return { ...property, value: newValue };
+                value = value.split(',').slice(0, 6);
             }
             if (field === 'categories' && Array.isArray(value)) {
                 // Array-valued categories pose problems to ICAL (even though a vcard with CATEGORIES:ONE,TWO
@@ -70,7 +85,7 @@ export const sanitizeProperties = (properties: ContactProperties = []): ContactP
                 // an array-valued category into several properties
                 return value.map((category) => ({ ...property, value: category }));
             }
-            return property;
+            return { ...property, value };
         })
         .flat();
 };
