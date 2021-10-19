@@ -34,7 +34,6 @@ const ModalImportEmails = ({ onClose, ...rest }: Partial<ModalPropsInjection>) =
                     as={SettingsLink}
                     app={APPS.PROTONMAIL}
                     path="/import-export"
-                    target="_blank"
                     rel="noopener noreferrer"
                 >
                     {c('Get started checklist instructions').t`Import messages`}
