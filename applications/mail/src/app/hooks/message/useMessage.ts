@@ -58,7 +58,7 @@ export const useMessage: UseMessage = (inputLocalID: string, conversationID = ''
         const message = messageFromCache ? { localID, data: messageFromCache } : { localID };
 
         // cache.set(localID, message);
-        dispatch(initialize(messageFromCache));
+        dispatch(initialize(message));
         return message;
     };
 

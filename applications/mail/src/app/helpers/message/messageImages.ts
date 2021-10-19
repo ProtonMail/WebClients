@@ -3,8 +3,8 @@ import {
     MessageImage,
     MessageImages,
     MessageRemoteImage,
-    PartialMessageExtended,
-} from '../../models/message';
+    PartialMessageState,
+} from '../../logic/messages/messagesTypes';
 import { setEmbeddedAttr } from './messageEmbeddeds';
 import { ATTRIBUTES } from './messageRemotes';
 
@@ -23,10 +23,10 @@ export const getAnchor = (document: Element | null | undefined, image: MessageIm
     ) as HTMLElement | null;
 };
 
-export const getRemoteImages = ({ messageImages }: PartialMessageExtended) =>
+export const getRemoteImages = ({ messageImages }: PartialMessageState) =>
     (messageImages?.images.filter(({ type }) => type === 'remote') || []) as MessageRemoteImage[];
 
-export const getEmbeddedImages = ({ messageImages }: PartialMessageExtended) =>
+export const getEmbeddedImages = ({ messageImages }: PartialMessageState) =>
     (messageImages?.images.filter(({ type }) => type === 'embedded') || []) as MessageEmbeddedImage[];
 
 export const updateImages = (

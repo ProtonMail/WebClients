@@ -6,7 +6,6 @@ import { LabelCount } from '@proton/shared/lib/interfaces/Label';
 import { STATUS } from '@proton/shared/lib/models/cache';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import { useMessageCache, getLocalID } from '../../containers/MessageProvider';
 import { Conversation } from '../../models/conversation';
 import { Element } from '../../models/element';
 import { isMessage as testIsMessage, isUnread } from '../../helpers/elements';
@@ -21,6 +20,7 @@ import {
 } from '../../logic/conversations/conversationsActions';
 import { isConversationMode } from '../../helpers/mailSettings';
 import { useGetConversation } from '../conversation/useConversation';
+import { useGetMessage } from '../message/useMessage';
 
 export type MarkAsChanges = { status: MARK_AS_STATUS };
 
@@ -101,7 +101,7 @@ const applyMarkAsChangesOnConversationWithMessages = (
 export const useOptimisticMarkAs = () => {
     const dispatch = useDispatch();
     const getElementByID = useGetElementByID();
-    const messageCache = useMessageCache();
+    const getMessage = useGetMessage();
     const globalCache = useCache();
     const [mailSettings] = useMailSettings();
     const history = useHistory();
@@ -118,16 +118,17 @@ export const useOptimisticMarkAs = () => {
 
             if (testIsMessage(element)) {
                 const message = element as Message;
-                const localID = getLocalID(messageCache, message.ID);
+                // const localID = getLocalID(message.ID);
 
                 // Update in message cache
-                const messageFromCache = messageCache.get(localID);
+                const messageFromCache = getMessage(message.ID);
 
                 if (messageFromCache && messageFromCache.data) {
-                    messageCache.set(localID, {
-                        ...messageFromCache,
-                        data: applyMarkAsChangesOnMessage(messageFromCache.data, changes),
-                    });
+                    // TODO
+                    // messageCache.set(localID, {
+                    //     ...messageFromCache,
+                    //     data: applyMarkAsChangesOnMessage(messageFromCache.data, changes),
+                    // });
                 }
 
                 // Update in conversation cache
@@ -203,15 +204,16 @@ export const useOptimisticMarkAs = () => {
                             return;
                         }
 
-                        const localID = getLocalID(messageCache, message.ID);
+                        // const localID = getLocalID(messageCache, message.ID);
 
                         // Update in message cache
-                        const messageFromCache = messageCache.get(localID);
+                        const messageFromCache = getMessage(message.ID);
                         if (messageFromCache && messageFromCache.data) {
-                            messageCache.set(localID, {
-                                ...messageFromCache,
-                                data: applyMarkAsChangesOnMessage(messageFromCache.data, changes),
-                            });
+                            // TODO
+                            // messageCache.set(localID, {
+                            //     ...messageFromCache,
+                            //     data: applyMarkAsChangesOnMessage(messageFromCache.data, changes),
+                            // });
                         }
                     });
                 }

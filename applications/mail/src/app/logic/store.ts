@@ -13,10 +13,24 @@ export const store = configureStore({
     },
     middleware: (getDefaultMiddleware) =>
         getDefaultMiddleware({
+            // Serialization checks have to be restored
+            // But we need some kind of regex ignore capacities
             serializableCheck: {
+                // Ignore these field paths in state
+                // ignoredPaths: [],
+
+                // TODO
                 ignoreState: true,
+
                 // Ignore these field paths in all actions
-                ignoredActionPaths: ['payload.abortController', 'meta.arg.api', 'payload.attachment'],
+                ignoredActionPaths: [
+                    'meta.arg',
+                    'payload.abortController',
+                    'payload.preparation',
+                    'payload.decryption',
+                    'payload',
+                    'payload.attachment',
+                ],
             },
         }),
 });
