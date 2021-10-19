@@ -2,9 +2,7 @@ import { c } from 'ttag';
 import { getEmailMismatchWarning } from '@proton/shared/lib/keys/publicKeys';
 
 import { OpenPGPKey } from 'pmcrypto';
-import Icon from './Icon';
-import { Tooltip } from '../tooltip';
-import { classnames } from '../../helpers';
+import WarningIcon from './WarningIcon';
 
 interface Props {
     publicKey: OpenPGPKey;
@@ -13,11 +11,11 @@ interface Props {
     supportsEncryption?: boolean;
     className?: string;
 }
-const KeyWarningIcon = ({ publicKey, emailAddress, isInternal, supportsEncryption, className }: Props) => {
+const ContactKeyWarningIcon = ({ publicKey, emailAddress, isInternal, supportsEncryption, className }: Props) => {
     if (!emailAddress) {
         return null;
     }
-    const icon = <Icon name="triangle-exclamation" className={classnames([className, 'color-warning'])} />;
+
     const encryptionWarnings =
         supportsEncryption === false ? [c('PGP key encryption warning').t`Key cannot be used for encryption`] : [];
 
@@ -29,7 +27,7 @@ const KeyWarningIcon = ({ publicKey, emailAddress, isInternal, supportsEncryptio
         return null;
     }
 
-    return <Tooltip title={warnings.join(' • ')}>{icon}</Tooltip>;
+    return <WarningIcon warning={warnings.join(' • ')} className={className} />;
 };
 
-export default KeyWarningIcon;
+export default ContactKeyWarningIcon;
