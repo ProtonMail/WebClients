@@ -1,6 +1,14 @@
 import { useCallback } from 'react';
 import { c, msgid } from 'ttag';
-import { useApi, useNotifications, useEventManager, useLabels } from '@proton/components';
+import {
+    useApi,
+    useNotifications,
+    useEventManager,
+    useLabels,
+    useModals,
+    ConfirmModal,
+    Alert,
+} from '@proton/components';
 import { labelMessages, unlabelMessages } from '@proton/shared/lib/api/messages';
 import { labelConversations, unlabelConversations } from '@proton/shared/lib/api/conversations';
 import { undoActions } from '@proton/shared/lib/api/mailUndoActions';
@@ -14,8 +22,9 @@ import { getMessagesAuthorizedToMove } from '../helpers/message/messages';
 import { Element } from '../models/element';
 import { useOptimisticApplyLabels } from './optimistic/useOptimisticApplyLabels';
 import { SUCCESS_NOTIFICATION_EXPIRATION } from '../constants';
+import { Conversation } from '../models/conversation';
 
-const { SPAM, TRASH } = MAILBOX_LABEL_IDS;
+const { SPAM, TRASH, SCHEDULED } = MAILBOX_LABEL_IDS;
 
 const getNotificationTextStarred = (isMessage: boolean, elementsCount: number) => {
     if (isMessage) {
@@ -271,6 +280,54 @@ export const useMoveToFolder = () => {
     const { createNotification } = useNotifications();
     const [labels = []] = useLabels();
     const optimisticApplyLabels = useOptimisticApplyLabels();
+    const { createModal } = useModals();
+    let canUndo = true; // Used to not display the Undo button if moving only scheduled messages/conversations to trash
+
+    /*
+     * Opens a modal when finding scheduled messages that are moved to trash.
+     * If all selected are scheduled elements, we prevent doing a Undo because trashed scheduled becomes draft.
+     * And undoing this action transforms the draft into another draft.
+     */
+    const searchForScheduled = async (folderID: string, isMessage: boolean, elements: Element[]) => {
+        if (folderID === TRASH) {
+            let numberOfScheduledMessages;
+
+            if (isMessage) {
+                numberOfScheduledMessages = (elements as Message[]).filter((element) =>
+                    element.LabelIDs.includes(SCHEDULED)
+                ).length;
+            } else {
+                numberOfScheduledMessages = (elements as Conversation[]).filter((element) =>
+                    element.Labels?.some((label) => label.ID === SCHEDULED)
+                ).length;
+            }
+
+            if (numberOfScheduledMessages > 0 && numberOfScheduledMessages === elements.length) {
+                canUndo = false;
+            }
+
+            if (!canUndo) {
+                const text = isMessage
+                    ? c('Info').t`Scheduled send of this message will be cancelled.`
+                    : c('Info')
+                          .t`This conversation contains a scheduled message. Sending of this message will be cancelled.`;
+
+                await new Promise<void>((resolve, reject) => {
+                    createModal(
+                        <ConfirmModal
+                            onConfirm={resolve}
+                            onClose={reject}
+                            title={c('Title').t`Moving a scheduled message`}
+                            confirm={c('Action').t`OK`}
+                            cancel={c('Action').t`Cancel`}
+                        >
+                            <Alert type="warning">{text}</Alert>
+                        </ConfirmModal>
+                    );
+                });
+            }
+        }
+    };
 
     const moveToFolder = useCallback(
         async (elements: Element[], folderID: string, folderName: string, fromLabelID: string, silent = false) => {
@@ -279,6 +336,10 @@ export const useMoveToFolder = () => {
             }
 
             const isMessage = testIsMessage(elements[0]);
+
+            // Open a modal when moving a scheduled message/conversation to trash to inform the user that it will be cancelled
+            await searchForScheduled(folderID, isMessage, elements);
+
             const action = isMessage ? labelMessages : labelConversations;
             const authorizedToMove = isMessage
                 ? getMessagesAuthorizedToMove(elements as Message[], folderID)
@@ -339,7 +400,11 @@ export const useMoveToFolder = () => {
                 };
 
                 createNotification({
-                    text: <UndoActionNotification onUndo={handleUndo}>{notificationText}</UndoActionNotification>,
+                    text: (
+                        <UndoActionNotification onUndo={canUndo ? handleUndo : undefined}>
+                            {notificationText}
+                        </UndoActionNotification>
+                    ),
                     expiration: SUCCESS_NOTIFICATION_EXPIRATION,
                 });
             }
