@@ -1,6 +1,6 @@
 import { useMemo, useState, useEffect, FormEvent, useRef } from 'react';
-import { addMonths, endOfMonth, startOfMonth, format, isSameMonth } from 'date-fns';
-import { dateLocale } from '@proton/shared/lib/i18n';
+import { addMonths, endOfMonth, startOfMonth, isSameMonth } from 'date-fns';
+import { c } from 'ttag';
 
 import { useElementRect } from '../../hooks';
 import { getDaysInMonth, getDateTupleFromWeekNumber } from './helper';
@@ -89,9 +89,7 @@ const MiniCalendar = ({
         return `${months[activeDate.getMonth()]} ${activeDate.getFullYear()}`;
     }, [activeDate, months]);
 
-    const todayTitle = useMemo(() => {
-        return format(now, 'PP', { locale: dateLocale });
-    }, [now, dateLocale]);
+    const todayTitle = c('Today icon tooltip in mini calendar').t`Today`;
 
     const handleSwitchMonth = (direction: -1 | 1) => {
         const newDate = addMonths(activeDate, direction);
@@ -133,7 +131,15 @@ const MiniCalendar = ({
 
                 {hasToday ? (
                     <Tooltip title={todayTitle}>
-                        <Button icon shape="ghost" color="weak" size="small" onClick={() => onSelectDate?.(now)}>
+                        <Button
+                            icon
+                            shape="ghost"
+                            color="weak"
+                            size="small"
+                            onClick={() => onSelectDate?.(now)}
+                            disabled={(min && +now < +min) || (max && +now > +max)}
+                            data-testid="minicalendar:today"
+                        >
                             <Icon name="calendar-day" className="minicalendar-icon" alt={todayTitle} />
                         </Button>
                     </Tooltip>
@@ -142,12 +148,30 @@ const MiniCalendar = ({
                 {hasCursors ? (
                     <>
                         <Tooltip title={prevMonth}>
-                            <Button icon shape="ghost" className="on-rtl-mirror" color="weak" size="small" onClick={() => handleSwitchMonth(-1)}>
+                            <Button
+                                icon
+                                shape="ghost"
+                                className="on-rtl-mirror"
+                                color="weak"
+                                size="small"
+                                disabled={min && startOfMonth(addMonths(activeDate, -1)) < startOfMonth(min)}
+                                onClick={() => handleSwitchMonth(-1)}
+                                data-testid="minicalendar:previous-month"
+                            >
                                 <Icon name="angle-down" className="rotateZ-90 minicalendar-icon" alt={prevMonth} />
                             </Button>
                         </Tooltip>
                         <Tooltip title={nextMonth}>
-                            <Button icon shape="ghost" className="on-rtl-mirror" color="weak" size="small" onClick={() => handleSwitchMonth(1)}>
+                            <Button
+                                icon
+                                shape="ghost"
+                                className="on-rtl-mirror"
+                                color="weak"
+                                size="small"
+                                disabled={max && endOfMonth(addMonths(activeDate, 1)) > endOfMonth(max)}
+                                onClick={() => handleSwitchMonth(1)}
+                                data-testid="minicalendar:next-month"
+                            >
                                 <Icon name="angle-down" className="rotateZ-270 minicalendar-icon" alt={nextMonth} />
                             </Button>
                         </Tooltip>
