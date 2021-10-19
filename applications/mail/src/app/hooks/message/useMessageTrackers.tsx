@@ -31,9 +31,9 @@ export const useMessageTrackers = ({ message, isDetails = false }: Props) => {
         let title;
 
         if (needsMoreProtection) {
-            title = c('Info').t`Protect yourself from trackers by turning on Proton email tracker protection.`;
+            title = c('Info').t`Protect yourself from trackers. Turn on email tracker protection in settings`;
         } else if (hasProtection && numberOfTrackers === 0) {
-            title = c('Info').t`No email trackers found.`;
+            title = c('Info').t`No email trackers found`;
         } else if (isDetails) {
             title = c('Info').ngettext(
                 msgid`${numberOfTrackers} email tracker found`,
@@ -41,7 +41,7 @@ export const useMessageTrackers = ({ message, isDetails = false }: Props) => {
                 numberOfTrackers
             );
         } else {
-            title = c('Info').t`Proton has blocked email trackers in this message in order to protect your privacy.`;
+            title = c('Info').t`To protect your privacy, Proton blocked email trackers in this message`;
         }
 
         setTitle(title);
