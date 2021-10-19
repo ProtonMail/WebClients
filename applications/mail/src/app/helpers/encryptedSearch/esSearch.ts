@@ -17,7 +17,7 @@ import {
     UncachedSearchOptions,
 } from '../../models/encryptedSearch';
 import { ES_MAX_MESSAGES_PER_BATCH, PAGE_SIZE } from '../../constants';
-import { getES, getNumMessagesDB, getOldestTime, openESDB } from './esUtils';
+import { esSentryReport, getES, getNumMessagesDB, getOldestTime, openESDB } from './esUtils';
 import { decryptFromDB } from './esSync';
 import { getIndexKey } from './esBuild';
 import { sendESMetrics } from './esAPI';
@@ -619,4 +619,16 @@ export const sendSearchingMetrics = async (
         isFirstSearch,
         isCacheLimited,
     });
+};
+
+/**
+ * Send a sentry report for when ES is too slow
+ */
+export const sendSlowSearchReport = async (userID: string) => {
+    const numMessagesIndexed = await getNumMessagesDB(userID);
+
+    // Random number of seconds between 1 second and 3 minutes, expressed in milliseconds
+    await wait(1000 * Math.floor(180 * Math.random() + 1));
+
+    esSentryReport('Search is taking too long, showing warning banner', { numMessagesIndexed });
 };
