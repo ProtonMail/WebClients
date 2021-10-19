@@ -103,8 +103,8 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow }: Props) =>
     const [model, updateModel] = useState<SearchModel>(DEFAULT_MODEL);
     const { state: showMore, toggle: toggleShowMore } = useToggle(false);
     const [user] = useUser();
-    const { getESDBStatus, cacheIndexedDB } = useEncryptedSearchContext();
-    const { isDBLimited } = getESDBStatus();
+    const { getESDBStatus, cacheIndexedDB, closeDropdown } = useEncryptedSearchContext();
+    const { isDBLimited, dropdownOpened } = getESDBStatus();
     const [{ loading: loadingESFeature, feature: esFeature }, { loading: loadingScheduledFeature }] = useFeatures([
         FeatureCode.EnabledEncryptedSearch,
         FeatureCode.ScheduledSend,
@@ -172,8 +172,16 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow }: Props) =>
                     filter,
                 };
             });
+        } else {
+            closeDropdown();
         }
     }, [isOpen]);
+
+    useEffect(() => {
+        if (dropdownOpened) {
+            toggle();
+        }
+    }, [dropdownOpened]);
 
     const loading =
         loadingLabels || loadingFolders || loadingMailSettings || loadingESFeature || loadingScheduledFeature;
