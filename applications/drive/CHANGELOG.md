@@ -1,4 +1,18 @@
-# [4.0.0 - Beta 20] - 2021-10-06
+# [4.0.0-beta.21] - 2021-10-27
+
+## Improved
+
+-   Sorting can be done from Shared section
+-   New media player for video files up to 100 MB
+-   Design tweaks on files icons
+-   Allow to delete locked files
+
+## Fixed
+
+-   Issue with uploads, page scrolling on Firefox mobile
+-   Issue on folders being skipped during upload
+
+# [4.0.0-beta.20] - 2021-10-06
 
 This release is focused on improvements of existing features.
 
