@@ -74,8 +74,9 @@ const EmailPrivacySection = () => {
                                 <label htmlFor="protectiontModeToggle" className="text-semibold">
                                     <span className="mr0-5">{c('Label').t`Protection mode`}</span>
                                     <Info
+                                        url="https://protonmail.com/support/email-tracker-protection"
                                         title={c('Info')
-                                            .t`Remote images can either be loaded through a proxy (recommended) or be stored as email attachments in addition.`}
+                                            .t`Hides identifying information by loading remote content through a proxy. Option to store content as attachments.`}
                                     />
                                 </label>
                             </SettingsLayoutLeft>
