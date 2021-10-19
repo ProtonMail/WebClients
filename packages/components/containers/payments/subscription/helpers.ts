@@ -118,7 +118,7 @@ export const getBlackFridayEligibility = (subscription: Subscription, latestSubs
     }
 
     // Eligible if you are on a vpn basic or free plan
-    if (hasVpnBasic(subscription) || !subscription?.Plans?.length) {
+    if ((hasVpnBasic(subscription) && subscription?.Plans?.length === 1) || !subscription?.Plans?.length) {
         return true;
     }
 
