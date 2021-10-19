@@ -6,8 +6,22 @@ import { initMessage, setup } from './Message.test.helpers';
 
 describe('Message attachments', () => {
     const cid = 'cid';
-    const attachment1 = { ID: 'id1', Name: 'attachment-name-unknown', Size: 100, Headers: { 'content-id': cid } };
-    const attachment2 = { ID: 'id2', Name: 'attachment-name-pdf.pdf', Size: 200, MIMEType: 'application/pdf' };
+    const attachment1 = {
+        ID: 'id1',
+        Name: 'attachment-name-unknown',
+        Size: 100,
+        Headers: { 'content-id': cid },
+        nameSplitStart: 'attachment-name-unkn',
+        nameSplitEnd: 'own',
+    };
+    const attachment2 = {
+        ID: 'id2',
+        Name: 'attachment-name-pdf.pdf',
+        Size: 200,
+        MIMEType: 'application/pdf',
+        nameSplitStart: 'attachment-name-p',
+        nameSplitEnd: 'df.pdf',
+    };
     const attachment3 = {
         ID: 'id3',
         Name: 'attachment-name-png.png',
@@ -20,6 +34,8 @@ describe('Message attachments', () => {
             signatures: [],
             verified: VERIFICATION_STATUS.NOT_SIGNED,
         },
+        nameSplitStart: 'attachment-name-p',
+        nameSplitEnd: 'ng.png',
     };
     const Attachments = [attachment1, attachment2, attachment3];
     const NumAttachments = Attachments.length;
@@ -40,7 +56,8 @@ describe('Message attachments', () => {
         expect(items.length).toBe(NumAttachments);
         for (let i = 0; i < NumAttachments; i++) {
             const { getByText } = within(items[i]);
-            getByText(Attachments[i].Name);
+            getByText(Attachments[i].nameSplitStart);
+            getByText(Attachments[i].nameSplitEnd);
             getByText(Attachments[i].Size, { exact: false });
             assertIcon(items[i].querySelector('svg'), icons[i], undefined, 'mime');
         }

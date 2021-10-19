@@ -198,3 +198,12 @@ export const stripLeadingAndTrailingSlash = (str: string) => str.replace(/^\/+|\
 export const removeDiacritics = (str: string) => {
     return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
 };
+
+/**
+ * Replace LTR and RTL override unicode chars which can lead to security issues on filenames
+ * 202D and 202E should be the only unicode chars concerned
+ * https://jira.protontech.ch/browse/SEC-644
+ */
+export const rtlSanitize = (str: string) => {
+    return str.replace(/[\u202D\u202E]/g, '_');
+};
