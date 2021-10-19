@@ -5,7 +5,7 @@ import { DialogModal, ModalCloseButton, InnerModal, ModalPropsInjection, QRCode,
 
 const protonMailAppName = getAppName(APPS.PROTONMAIL);
 
-const ModalProtectYourSchedule = ({ onClose, ...rest }: Partial<ModalPropsInjection>) => (
+const ModalGetMobileApp = ({ onClose, ...rest }: Partial<ModalPropsInjection>) => (
     <DialogModal intermediate onClose={onClose} {...rest}>
         <ModalCloseButton onClose={onClose} />
         <InnerModal className="modal-content pb2 pt2 text-center">
@@ -25,4 +25,4 @@ const ModalProtectYourSchedule = ({ onClose, ...rest }: Partial<ModalPropsInject
     </DialogModal>
 );
 
-export default ModalProtectYourSchedule;
+export default ModalGetMobileApp;
