@@ -39,7 +39,7 @@ const ItemAttachmentIcon = ({ element = {}, className, onClick }: Props) => {
             {React.createElement(
                 isButton ? 'button' : 'div',
                 { ...commonProps, ...(isButton ? buttonProps : {}) },
-                <Icon name="paperclip" size={14} alt={title} />
+                <Icon name="paperclip" size={16} alt={title} />
             )}
         </Tooltip>
     );
