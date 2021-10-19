@@ -1,6 +1,6 @@
+import { extractTotals } from '@proton/shared/lib/calendar/import/import';
 import { c, msgid } from 'ttag';
 import { ImportCalendarModel } from '@proton/shared/lib/interfaces/calendar';
-import { extractTotals } from '@proton/shared/lib/calendar/import/encryptAndSubmit';
 
 import ErrorDetails from './ErrorDetails';
 import { Alert, DynamicProgress } from '../../../components';
@@ -51,7 +51,7 @@ const ImportSummaryModalContent = ({ model }: Props) => {
                 success={isSuccess}
                 partialSuccess={isPartialSuccess}
             />
-            <ErrorDetails errors={model.errors} />
+            <ErrorDetails errors={model.visibleErrors} />
         </>
     );
 };

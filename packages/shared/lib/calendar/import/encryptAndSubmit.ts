@@ -1,23 +1,22 @@
-import {
-    SyncMultipleApiResponses,
-    SyncMultipleApiResponse,
-    DecryptedCalendarKey,
-    ImportCalendarModel,
-    ImportedEvent,
-    VcalVeventComponent,
-    EncryptedEvent,
-} from '../../interfaces/calendar';
-import { HOUR } from '../../constants';
-import { CreateCalendarEventSyncData } from '../../interfaces/calendar/Api';
-import { getIsSuccessSyncApiResponse } from '../helper';
-import { splitErrors } from './import';
-import { IMPORT_EVENT_ERROR_TYPE, ImportEventError } from '../icsSurgery/ImportEventError';
 import { syncMultipleEvents } from '../../api/calendars';
-import { createCalendarEvent, getHasSharedEventContent, getHasSharedKeyPacket } from '../serialize';
-import getCreationKeys from '../integration/getCreationKeys';
+import { HOUR } from '../../constants';
 import { chunk } from '../../helpers/array';
 import { wait } from '../../helpers/promise';
 import { Api, DecryptedKey } from '../../interfaces';
+import {
+    DecryptedCalendarKey,
+    EncryptedEvent,
+    ImportedEvent,
+    SyncMultipleApiResponse,
+    SyncMultipleApiResponses,
+    VcalVeventComponent,
+} from '../../interfaces/calendar';
+import { CreateCalendarEventSyncData } from '../../interfaces/calendar/Api';
+import { getIsSuccessSyncApiResponse } from '../helper';
+import { IMPORT_EVENT_ERROR_TYPE, ImportEventError } from '../icsSurgery/ImportEventError';
+import getCreationKeys from '../integration/getCreationKeys';
+import { createCalendarEvent, getHasSharedEventContent, getHasSharedKeyPacket } from '../serialize';
+import { splitErrors } from './import';
 
 const BATCH_SIZE = 10;
 
@@ -163,13 +162,4 @@ export const processInBatches = async ({
         importedEvents: imported.flat(),
         importErrors: errored.flat(),
     };
-};
-
-export const extractTotals = (model: ImportCalendarModel) => {
-    const { eventsParsed, totalEncrypted, totalImported, errors } = model;
-    const totalToImport = eventsParsed.length;
-    const totalToProcess = 2 * totalToImport; // count encryption and submission equivalently for the progress
-    const totalErrors = errors.length;
-    const totalProcessed = totalEncrypted + totalImported + totalErrors;
-    return { totalToImport, totalToProcess, totalImported, totalProcessed };
 };
