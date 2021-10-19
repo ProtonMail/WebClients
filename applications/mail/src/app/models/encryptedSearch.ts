@@ -103,6 +103,7 @@ export interface ESStatus {
     isSearching: boolean;
     isCaching: boolean;
     isFirstSearch: boolean;
+    dropdownOpened: boolean;
 }
 
 export interface ESCache {
@@ -123,6 +124,7 @@ export interface ESDBStatus
             | 'isSearchPartial'
             | 'isSearching'
             | 'isCaching'
+            | 'dropdownOpened'
         >,
         Pick<ESCache, 'isCacheLimited'> {}
 
@@ -190,4 +192,6 @@ export interface EncryptedSearchFunctions {
     incrementSearch: IncrementSearch;
     shouldHighlight: () => boolean;
     esDelete: () => Promise<void>;
+    openDropdown: () => void;
+    closeDropdown: () => void;
 }
