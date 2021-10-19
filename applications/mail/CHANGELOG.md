@@ -21,7 +21,8 @@
 -   Fixed an issue where the "Drag&Drop" area would be activated too late when dragging attachments into the composer from particular directions
 -   Fixed an issue where if clicking into the composer body first, it would require two clicks to open the "CC/BCC" fields
 -   Fixed an issue where when moving messages from the Spam folder, the "Undo" action would sometimes not appear in the success notification
--   Fixed an issue where moving a labelled message to Trash and undoing the action would result in missing labels Renamed all "X25519" key references to "Curve25519"
+-   Fixed an issue where moving a labelled message to Trash and undoing the action would result in missing labels
+-   Renamed all "X25519" key references to "Curve25519"
 
 ## Release 4.0.8 - Oct 13, 2021
 
