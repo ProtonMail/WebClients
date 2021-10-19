@@ -15,6 +15,7 @@ import EncryptionStatusIcon from '../EncryptionStatusIcon';
 import ItemLocation from '../../list/ItemLocation';
 import SpyTrackerIcon from '../SpyTrackerIcon';
 import { useMessageTrackers } from '../../../hooks/message/useMessageTrackers';
+import ItemAttachmentIcon from '../../list/ItemAttachmentIcon';
 
 interface Props {
     labelID: string;
@@ -22,9 +23,17 @@ interface Props {
     mailSettings: MailSettings;
     message: MessageExtended;
     messageViewIcons: MessageViewIcons;
+    onAttachmentIconClick: () => void;
 }
 
-const HeaderExpandedDetails = ({ labelID, labels, message, messageViewIcons, mailSettings }: Props) => {
+const HeaderExpandedDetails = ({
+    labelID,
+    labels,
+    message,
+    messageViewIcons,
+    mailSettings,
+    onAttachmentIconClick,
+}: Props) => {
     const icon = messageViewIcons.globalIcon;
 
     const [customFolders = []] = useFolders();
@@ -115,8 +124,8 @@ const HeaderExpandedDetails = ({ labelID, labels, message, messageViewIcons, mai
             </div>
             {attachmentsText && (
                 <div className="mb0-5 flex flex-nowrap">
-                    <span className="container-to flex">
-                        <Icon name="paperclip" className="mauto" alt={c('Alt').t`Has attachments`} />
+                    <span className="container-to flex flex-justify-center flex-align-items-center">
+                        <ItemAttachmentIcon element={message.data} onClick={onAttachmentIconClick} />
                     </span>
                     <span className="flex-align-self-center mr0-5 text-ellipsis" title={attachmentsText}>
                         {attachmentsText}
