@@ -43,8 +43,7 @@ const ItemSpyTrackerIcon = ({ message, className }: Props) => {
             anchorRef={anchorRef}
             content={
                 <>
-                    <div className="text-bold text-lg mauto">{c('Spotlight').t`Tracker protection`}</div>
-                    {c('Spotlight').t`Proton blocked email trackers in this message in order to protect your privacy`}
+                    {c('Spotlight').t`To protect your privacy, Proton blocked email trackers in this message`}
                     <br />
                     <Href url="https://protonmail.com/support/email-tracker-protection" title="Tracker protection">
                         {c('Info').t`Learn more`}
