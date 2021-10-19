@@ -183,10 +183,8 @@ const MergingModalContent = ({
                 return;
             }
 
-            for (const {
-                Code,
-                Contact: { ID },
-            } of responses) {
+            for (const [index, { Code }] of responses.entries()) {
+                const ID = contacts[index].contactId;
                 const groupIDs = beMergedModel[ID];
                 const beDeletedAfterMergeIDs = groupIDs.slice(1);
                 if (Code === SINGLE_SUCCESS) {
