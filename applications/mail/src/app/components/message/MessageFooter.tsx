@@ -1,11 +1,10 @@
 import { getAttachments } from '@proton/shared/lib/mail/messages';
 import { classnames } from '@proton/components';
-import { MessageExtended, MessageExtendedWithData } from '../../models/message';
-
 import AttachmentList, { AttachmentAction } from '../attachment/AttachmentList';
+import { MessageState, MessageStateWithData } from '../../logic/messages/messagesTypes';
 
 interface Props {
-    message: MessageExtended;
+    message: MessageState;
 
     /**
      * Needed for print message
@@ -25,7 +24,7 @@ const MessageFooter = ({ message, showActions = true }: Props) => {
         >
             <AttachmentList
                 attachments={attachments}
-                message={message as MessageExtendedWithData}
+                message={message as MessageStateWithData}
                 primaryAction={AttachmentAction.Preview}
                 secondaryAction={showActions ? AttachmentAction.Download : AttachmentAction.None}
                 collapsable={false}

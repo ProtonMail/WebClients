@@ -1,14 +1,13 @@
 import generateUID from '@proton/shared/lib/helpers/generateUID';
-import { Api, MailSettings } from '@proton/shared/lib/interfaces';
+import { MailSettings } from '@proton/shared/lib/interfaces';
 import { isDraft } from '@proton/shared/lib/mail/messages';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { IMAGE_PROXY_FLAGS } from '@proton/shared/lib/constants';
-import { MessageExtended } from '../../models/message';
 import { querySelectorAll } from '../message/messageContent';
 import { hasShowRemote } from '../mailSettings';
 import { getRemoteImages, insertImageAnchor } from '../message/messageImages';
-import { MessageCache } from '../../containers/MessageProvider';
-import { ATTRIBUTES, loadRemoteImages, removeProtonPrefix, loadFakeThroughProxy } from '../message/messageRemotes';
+import { ATTRIBUTES, loadRemoteImages, removeProtonPrefix } from '../message/messageRemotes';
+import { MessageRemoteImage, MessageState } from '../../logic/messages/messagesTypes';
 
 const WHITELIST = ['notify@protonmail.com'];
 
@@ -46,10 +45,13 @@ const getRemoteImageMatches = (message: MessageExtended) => {
 };
 
 export const transformRemote = (
-    message: MessageExtended,
+    message: MessageState,
     mailSettings: Partial<MailSettings> | undefined,
-    api: Api,
-    messageCache: MessageCache
+    // api: Api,
+    // messageCache: MessageCache
+    onLoadRemoteImagesProxy: (imagesToLoad: MessageRemoteImage[]) => void,
+    onLoadFakeImagesProxy: (imagesToLoad: MessageRemoteImage[]) => void,
+    onLoadRemoteImagesDirect: (imagesToLoad: MessageRemoteImage[]) => void
 ) => {
     const showRemoteImages =
         message.messageImages?.showRemoteImages ||
@@ -105,10 +107,12 @@ export const transformRemote = (
         });
     });
 
+    console.log('transformRemote', useProxy, remoteImages, onLoadRemoteImagesProxy, onLoadRemoteImagesDirect);
+
     if (showRemoteImages) {
-        void loadRemoteImages(useProxy, message.localID, remoteImages, messageCache, api, message?.document);
+        void loadRemoteImages(useProxy, remoteImages, onLoadRemoteImagesProxy, onLoadRemoteImagesDirect);
     } else if (useProxy) {
-        void loadFakeThroughProxy(message.localID, remoteImages, messageCache, api);
+        void onLoadFakeImagesProxy(remoteImages);
     }
 
     return {

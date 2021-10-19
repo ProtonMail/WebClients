@@ -2,8 +2,6 @@ import { useHandler, useCache } from '@proton/components';
 import { MessageCountsModel, ConversationCountsModel } from '@proton/shared/lib/models';
 import { LabelCount } from '@proton/shared/lib/interfaces/Label';
 import { useStore, useDispatch } from 'react-redux';
-import { useMessageCache } from '../../containers/MessageProvider';
-import { MessageExtended } from '../../models/message';
 import { hasLabel } from '../../helpers/elements';
 import { replaceCounter } from '../../helpers/counter';
 import { CacheEntry } from '../../models/tools';
@@ -16,24 +14,24 @@ import {
 import { RootState } from '../../logic/store';
 import { ConversationState } from '../../logic/conversations/conversationsTypes';
 import { useGetAllConversations } from '../conversation/useConversation';
+import { MessageState } from '../../logic/messages/messagesTypes';
 
 export const useOptimisticEmptyLabel = () => {
     const store = useStore<RootState>();
     const dispatch = useDispatch();
     const globalCache = useCache();
-    const messageCache = useMessageCache();
     const getAllConversations = useGetAllConversations();
 
     return useHandler((labelID: string) => {
-        const rollbackMessages = [] as MessageExtended[];
+        const rollbackMessages = [] as MessageState[];
         const rollbackConversations = [] as ConversationState[];
         const rollbackCounters = {} as { [key: string]: LabelCount };
 
         // Message cache
         const messageIDs = [...messageCache.keys()];
         messageIDs.forEach((messageID) => {
-            const message = messageCache.get(messageID) as MessageExtended;
-            if (hasLabel(message.data, labelID)) {
+            const message = messageCache.get(messageID) as MessageState;
+            if (hasLabel(message.data || {}, labelID)) {
                 messageCache.delete(messageID);
                 rollbackMessages.push(message);
             }

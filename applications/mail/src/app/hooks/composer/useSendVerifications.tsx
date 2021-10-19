@@ -14,15 +14,15 @@ import { serverTime } from 'pmcrypto/lib/serverTime';
 import { languageCode, localeCode } from '@proton/shared/lib/i18n';
 import SendWithErrorsModal from '../../components/composer/addresses/SendWithErrorsModal';
 import { removeMessageRecipients, uniqueMessageRecipients } from '../../helpers/message/cleanMessage';
-import { MessageExtendedWithData } from '../../models/message';
 import SendWithWarningsModal from '../../components/composer/addresses/SendWithWarningsModal';
 import SendWithExpirationModal from '../../components/composer/addresses/SendWithExpirationModal';
 import SendWithChangedPreferencesModal from '../../components/composer/addresses/SendWithChangedPreferencesModal';
 import { useContactCache } from '../../containers/ContactProvider';
 import { MapSendInfo } from '../../models/crypto';
 import { locateBlockquote } from '../../helpers/message/messageBlockquote';
-import { useMessageCache } from '../../containers/MessageProvider';
 import { MESSAGE_ALREADY_SENT_INTERNAL_ERROR } from '../../constants';
+import { MessageStateWithData } from '../../logic/messages/messagesTypes';
+import { useGetMessage } from '../message/useMessage';
 
 const FR_REGEX =
     /voir pi\u00e8ce jointe|voir pi\u00e8ces jointes|voir fichier joint|voir fichiers joints|voir fichier associ\u00e9|voir fichiers associ\u00e9s|joint|joints|jointe|jointes|joint \u00e0 cet e-mail|jointe \u00e0 cet e-mail|joints \u00e0 cet e-mail|jointes \u00e0 cet e-mail|joint \u00e0 ce message|jointe \u00e0 ce message|joints \u00e0 ce message|jointes \u00e0 ce message|je joins|j'ai joint|ci-joint|pi\u00e8ce jointe|pi\u00e8ces jointes|fichier joint|fichiers joints|voir le fichier joint|voir les fichiers joints|voir la pi\u00e8ce jointe|voir les pi\u00e8ces jointes/gi;
@@ -53,10 +53,12 @@ export const useSendVerifications = (
     const { createNotification } = useNotifications();
     const getEncryptionPreferences = useGetEncryptionPreferences();
     const { contactsMap } = useContactCache();
-    const messageCache = useMessageCache();
+    // const messageCache = useMessageCache();
+    const getMessage = useGetMessage();
 
-    const preliminaryVerifications = useCallback(async (message: MessageExtendedWithData): Promise<void> => {
-        const { isSentDraft } = messageCache.get(message.localID) as MessageExtendedWithData;
+    const preliminaryVerifications = useCallback(async (message: MessageStateWithData): Promise<void> => {
+        const { draftFlags } = getMessage(message.localID) as MessageStateWithData;
+        const { isSentDraft } = draftFlags || {};
 
         // Message already sent
         if (isSentDraft) {
@@ -77,7 +79,7 @@ export const useSendVerifications = (
             }
         }
 
-        const [contentBeforeBlockquote] = locateBlockquote(message.document);
+        const [contentBeforeBlockquote] = locateBlockquote(message.messageDocument?.document);
         const normalized = normalize(`${message.data.Subject} ${contentBeforeBlockquote || ''}`);
 
         const [keyword] =
@@ -103,10 +105,10 @@ export const useSendVerifications = (
 
     const extendedVerifications = useCallback(
         async (
-            message: MessageExtendedWithData,
+            message: MessageStateWithData,
             trustedMapSendInfo: MapSendInfo
         ): Promise<{
-            cleanMessage: MessageExtendedWithData;
+            cleanMessage: MessageStateWithData;
             mapSendPrefs: SimpleMap<SendPreferences>;
             hasChanged: boolean;
         }> => {
@@ -193,7 +195,7 @@ export const useSendVerifications = (
                     if (sendPreferences.error) {
                         sendErrors[email] = sendPreferences.error;
                     }
-                    if (message.expiresIn && !sendPreferences.encrypt) {
+                    if (message.draftFlags?.expiresIn && !sendPreferences.encrypt) {
                         expiresNotEncrypted.push(email);
                     }
                 })
@@ -266,7 +268,7 @@ export const useSendVerifications = (
             const cleanMessage = {
                 ...message,
                 data: removeMessageRecipients(uniqueMessage.data, emailsWithErrors),
-            } as MessageExtendedWithData;
+            } as MessageStateWithData;
 
             return { cleanMessage, mapSendPrefs, hasChanged: emailsWithErrors.length > 0 };
         },

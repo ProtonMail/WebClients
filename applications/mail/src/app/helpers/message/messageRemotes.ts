@@ -1,26 +1,30 @@
-import { getImage } from '@proton/shared/lib/api/images';
 import { wait } from '@proton/shared/lib/helpers/promise';
-import { Api } from '@proton/shared/lib/interfaces';
-import { MessageCache, updateMessageCache } from '../../containers/MessageProvider';
-import { MessageRemoteImage } from '../../models/message';
-import { getRemoteImages, updateImages } from './messageImages';
-import { preloadImage } from '../dom';
+import { MessageRemoteImage } from '../../logic/messages/messagesTypes';
 
 export const ATTRIBUTES = ['url', 'xlink:href', 'srcset', 'src', 'svg', 'background', 'poster'];
-const urlCreator = () => window.URL || window.webkitURL;
 
-const updateRemoteImages = (messageCache: MessageCache, localID: string, images: MessageRemoteImage[]) => {
-    const message = messageCache.get(localID);
-    if (!message || !message.messageImages) {
-        return;
-    }
-    const currentImages = getRemoteImages(message);
-    const updatedImages = currentImages.map(
-        (currentImage) => images.find((image) => image.id === currentImage.id) || currentImage
-    );
-    const messageImages = updateImages(message.messageImages, undefined, updatedImages, undefined);
-    updateMessageCache(messageCache, localID, { messageImages });
-};
+export const urlCreator = () => window.URL || window.webkitURL;
+
+// const updateRemoteImages = (messageCache: MessageCache, localID: string, images: MessageRemoteImage[]) => {
+//     const message = messageCache.get(localID);
+//     if (!message || !message.messageImages) {
+//         return;
+//     }
+//     const currentImages = getRemoteImages(message);
+//     const updatedImages = currentImages.map(
+//         (currentImage) => images.find((image) => image.id === currentImage.id) || currentImage
+//     );
+//     const messageImages = updateImages(message.messageImages, undefined, updatedImages, undefined);
+//     updateMessageCache(messageCache, localID, { messageImages });
+// };
+
+export const preloadImage = async (url: string) =>
+    new Promise((resolve, reject) => {
+        const img = document.createElement('img');
+        img.src = url;
+        img.onload = resolve;
+        img.onerror = reject;
+    });
 
 export const removeProtonPrefix = (match: HTMLElement) => {
     ATTRIBUTES.forEach((attr) => {
@@ -101,167 +105,147 @@ export const loadElementOtherThanImages = (images: MessageRemoteImage[], message
     });
 };
 
-const loadImagesWithoutProxy = async (
-    localID: string,
-    images: MessageRemoteImage[],
-    messageCache: MessageCache,
-    messageDocument?: Element
-) => {
-    const imagesToLoad = images.filter((image) => image.status === 'not-loaded');
+// const loadImagesWithoutProxy = async (localID: string, images: MessageRemoteImage[], messageCache: MessageCache) => {
+//     const imagesToLoad = images.filter((image) => image.status === 'not-loaded');
 
-    const promises = Promise.all(
-        imagesToLoad.map(async (image): Promise<[MessageRemoteImage, unknown]> => {
-            try {
-                await preloadImage(image.url as string);
-                return [image, undefined];
-            } catch (error) {
-                return [image, error];
-            }
-        })
-    );
+//     const promises = Promise.all(
+//         imagesToLoad.map(async (image): Promise<[MessageRemoteImage, unknown]> => {
+//             try {
+//                 await preloadImage(image.url as string);
+//                 return [image, undefined];
+//             } catch (error) {
+//                 return [image, error];
+//             }
+//         })
+//     );
 
-    const imagesLoading = imagesToLoad.map((image) => ({ ...image, status: 'loading' as 'loading' }));
+//     const imagesLoading = imagesToLoad.map((image) => ({ ...image, status: 'loading' as 'loading' }));
 
-    updateRemoteImages(messageCache, localID, imagesLoading);
+//     updateRemoteImages(messageCache, localID, imagesLoading);
 
-    const results = await promises;
+//     const results = await promises;
 
-    imagesToLoad.forEach((image) => {
-        removeProtonPrefix(image.original as HTMLElement);
-    });
+//     imagesToLoad.forEach((image) => {
+//         removeProtonPrefix(image.original as HTMLElement);
+//     });
 
-    const imagesLoaded = results.map(([image, error]) => ({
-        ...image,
-        originalURL: image.url,
-        error,
-        status: 'loaded' as 'loaded',
-    }));
+//     const imagesLoaded = results.map(([image, error]) => ({ ...image, error, status: 'loaded' as 'loaded' }));
 
-    loadElementOtherThanImages(imagesLoaded, messageDocument);
+//     updateRemoteImages(messageCache, localID, imagesLoaded);
+// };
 
-    loadBackgroundImages({ document: messageDocument, images: imagesLoaded });
+// const loadImagesThroughProxy = async (
+//     localID: string,
+//     images: MessageRemoteImage[],
+//     messageCache: MessageCache,
+//     api: Api
+// ) => {
+//     const imagesToLoad = images.filter((image) => image.status === 'not-loaded');
 
-    updateMessageCache(messageCache, localID, { document: messageDocument });
+//     const promises = Promise.all(
+//         imagesToLoad.map(async (image) => {
+//             if (!image.url) {
+//                 return { image, error: 'No URL' };
+//             }
 
-    updateRemoteImages(messageCache, localID, imagesLoaded);
-};
+//             try {
+//                 const response: Response = await api({
+//                     ...getImage(image.url as string),
+//                     output: 'raw',
+//                     silence: true,
+//                 });
 
-const loadImagesThroughProxy = async (
-    localID: string,
-    images: MessageRemoteImage[],
-    messageCache: MessageCache,
-    api: Api,
-    messageDocument?: Element
-) => {
-    const imagesToLoad = images.filter((image) => image.status === 'not-loaded');
+//                 return {
+//                     image,
+//                     blob: await response.blob(),
+//                     // Warning: in local dev it will not work due to CORS limitations
+//                     // https://stackoverflow.com/questions/43344819/reading-response-headers-with-fetch-api#44816592
+//                     tracker: response.headers.get('x-pm-tracker-provider') || undefined,
+//                 };
+//             } catch (error) {
+//                 return { image, error };
+//             }
+//         })
+//     );
 
-    const promises = Promise.all(
-        imagesToLoad.map(async (image) => {
-            if (!image.url) {
-                return { image, error: 'No URL' };
-            }
+//     const imagesLoading = imagesToLoad.map((image) => ({ ...image, url: undefined, status: 'loading' as 'loading' }));
 
-            try {
-                const response: Response = await api({
-                    ...getImage(image.url as string),
-                    output: 'raw',
-                    silence: true,
-                });
+//     updateRemoteImages(messageCache, localID, imagesLoading);
 
-                return {
-                    image,
-                    blob: await response.blob(),
-                    tracker: response.headers.get('x-pm-tracker-provider') || '',
-                };
-            } catch (error) {
-                return { image, error };
-            }
-        })
-    );
+//     const results = await promises;
 
-    const imagesLoading = imagesToLoad.map((image) => ({ ...image, url: undefined, status: 'loading' as 'loading' }));
+//     const imagesLoaded = results.map(({ image, blob, tracker, error }) => ({
+//         ...image,
+//         url: blob ? urlCreator().createObjectURL(blob) : undefined,
+//         error,
+//         tracker,
+//         status: 'loaded' as 'loaded',
+//     }));
 
-    updateRemoteImages(messageCache, localID, imagesLoading);
+//     updateRemoteImages(messageCache, localID, imagesLoaded);
+// };
 
-    const results = await promises;
+// export const loadFakeThroughProxy = async (
+//     localID: string,
+//     images: MessageRemoteImage[],
+//     messageCache: MessageCache,
+//     api: Api
+// ) => {
+//     // Not really happy with this hack but we need to "wait" that the message transform process is finished
+//     // And update the message cache before updating image statuses
+//     await wait(0);
 
-    const imagesLoaded = results.map(({ image, blob, tracker, error }) => ({
-        ...image,
-        originalURL: image.url,
-        url: blob ? urlCreator().createObjectURL(blob) : undefined,
-        error,
-        tracker,
-        status: 'loaded' as 'loaded',
-    }));
+//     const results = await Promise.all(
+//         images
+//             .filter((image) => image.tracker === undefined)
+//             .map(async (image) => {
+//                 if (!image.url) {
+//                     return { image, error: 'No URL' };
+//                 }
 
-    loadElementOtherThanImages(imagesLoaded, messageDocument);
+//                 try {
+//                     const response: Response = await api({
+//                         ...getImage(image.url as string, 1),
+//                         output: 'raw',
+//                         silence: true,
+//                     });
 
-    loadBackgroundImages({ document: messageDocument, images: imagesLoaded });
+//                     return {
+//                         image,
+//                         tracker: response.headers.get('x-pm-tracker-provider') || '',
+//                     };
+//                 } catch (error) {
+//                     return { image, error };
+//                 }
+//             })
+//     );
 
-    updateMessageCache(messageCache, localID, { document: messageDocument });
+//     const imagesLoaded = results.map(({ image, tracker, error }) => ({
+//         ...image,
+//         error,
+//         originalURL: image.url,
+//         tracker,
+//     }));
 
-    updateRemoteImages(messageCache, localID, imagesLoaded);
-};
+//     updateRemoteImages(messageCache, localID, imagesLoaded);
+// };
 
 export const loadRemoteImages = async (
     useProxy: boolean,
-    localID: string,
     images: MessageRemoteImage[],
-    messageCache: MessageCache,
-    api: Api,
-    messageDocument?: Element
+    onLoadRemoteImagesProxy: (imagesToLoad: MessageRemoteImage[]) => void,
+    onLoadRemoteImagesDirect: (imagesToLoad: MessageRemoteImage[]) => void
 ) => {
     // Not really happy with this hack but we need to "wait" that the message transform process is finished
     // And update the message cache before updating image statuses
     await wait(0);
+
+    const imagesToLoad = images.filter((image) => image.status === 'not-loaded');
 
     if (useProxy) {
-        return loadImagesThroughProxy(localID, images, messageCache, api, messageDocument);
+        // return loadImagesThroughProxy(localID, images, messageCache, api);
+        return onLoadRemoteImagesProxy(imagesToLoad);
     }
-    return loadImagesWithoutProxy(localID, images, messageCache, messageDocument);
-};
-
-export const loadFakeThroughProxy = async (
-    localID: string,
-    images: MessageRemoteImage[],
-    messageCache: MessageCache,
-    api: Api
-) => {
-    // Not really happy with this hack but we need to "wait" that the message transform process is finished
-    // And update the message cache before updating image statuses
-    await wait(0);
-
-    const results = await Promise.all(
-        images
-            .filter((image) => image.tracker === undefined)
-            .map(async (image) => {
-                if (!image.url) {
-                    return { image, error: 'No URL' };
-                }
-
-                try {
-                    const response: Response = await api({
-                        ...getImage(image.url as string, 1),
-                        output: 'raw',
-                        silence: true,
-                    });
-
-                    return {
-                        image,
-                        tracker: response.headers.get('x-pm-tracker-provider') || '',
-                    };
-                } catch (error) {
-                    return { image, error };
-                }
-            })
-    );
-
-    const imagesLoaded = results.map(({ image, tracker, error }) => ({
-        ...image,
-        error,
-        originalURL: image.url,
-        tracker,
-    }));
-
-    updateRemoteImages(messageCache, localID, imagesLoaded);
+    // return loadImagesWithoutProxy(localID, images, messageCache);
+    return onLoadRemoteImagesDirect(imagesToLoad);
 };

@@ -1,9 +1,7 @@
 import generateUID from '@proton/shared/lib/helpers/generateUID';
-import { Api, MailSettings } from '@proton/shared/lib/interfaces';
+import { MailSettings } from '@proton/shared/lib/interfaces';
 import { getAttachments, isDraft } from '@proton/shared/lib/mail/messages';
-import { DecryptResultPmcrypto } from 'pmcrypto';
-import { MessageEmbeddedImage, MessageExtended, MessageKeys } from '../../models/message';
-import { MessageCache } from '../../containers/MessageProvider';
+import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { hasShowEmbedded } from '../mailSettings';
 import { getEmbeddedImages, insertImageAnchor } from '../message/messageImages';
 import {
@@ -15,15 +13,12 @@ import {
     setEmbeddedAttr,
     matchSameCidOrLoc,
 } from '../message/messageEmbeddeds';
+import { LoadEmbeddedResults, MessageEmbeddedImage, MessageState } from '../../logic/messages/messagesTypes';
 
 export const transformEmbedded = async (
-    message: MessageExtended,
-    messageKeys: MessageKeys,
-    messageCache: MessageCache,
-    getAttachment: (ID: string) => DecryptResultPmcrypto | undefined,
-    onUpdateAttachment: (ID: string, attachment: DecryptResultPmcrypto) => void,
-    api: Api,
-    mailSettings: MailSettings | undefined
+    message: MessageState,
+    mailSettings: MailSettings | undefined,
+    onLoadEmbeddedImages: (attachments: Attachment[]) => Promise<LoadEmbeddedResults>
 ) => {
     const draft = isDraft(message.data);
 
@@ -32,7 +27,9 @@ export const transformEmbedded = async (
     const existingEmbeddedImage = getEmbeddedImages(message);
     let newEmbeddedImages: MessageEmbeddedImage[] = [];
 
-    if (message.document) {
+    if (message.messageDocument?.document) {
+        const { document } = message.messageDocument;
+
         newEmbeddedImages = getAttachments(message.data)
             .map((attachment) => {
                 const { cid, cloc } = readContentIDandLocation(attachment);
@@ -45,7 +42,7 @@ export const transformEmbedded = async (
                     return [];
                 }
 
-                const matches = findEmbedded(cid, cloc, message.document as Element);
+                const matches = findEmbedded(cid, cloc, document);
 
                 return matches.map((match) => {
                     const id = generateUID('embedded');
@@ -74,24 +71,15 @@ export const transformEmbedded = async (
     const hasEmbeddedImages = !!embeddedImages.length;
 
     if (showEmbeddedImages) {
-        const { updatedImages, downloadPromise } = decryptEmbeddedImages(
-            embeddedImages,
-            message.localID,
-            message.verification,
-            messageKeys,
-            messageCache,
-            getAttachment,
-            onUpdateAttachment,
-            api
-        );
+        const { updatedImages, downloadPromise } = decryptEmbeddedImages(embeddedImages, onLoadEmbeddedImages);
         embeddedImages = updatedImages;
 
         // In draft, we actually want image in the document
         if (draft) {
             const downloadResults = await downloadPromise;
             embeddedImages = markEmbeddedImagesAsLoaded(embeddedImages, downloadResults);
-            if (message.document) {
-                insertBlobImages(message.document, embeddedImages);
+            if (message.messageDocument?.document) {
+                insertBlobImages(message.messageDocument.document, embeddedImages);
             }
         }
     }
