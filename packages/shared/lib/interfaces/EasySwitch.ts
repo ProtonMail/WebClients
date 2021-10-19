@@ -114,7 +114,6 @@ export interface MailImportMapping {
 }
 
 export interface MailImporterPayload {
-    ID?: string; // legacy
     AddressID: string;
     Code?: string;
     ImportLabel?: Pick<Label, 'Name' | 'Color' | 'Type'>;
