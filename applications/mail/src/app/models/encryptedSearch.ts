@@ -174,7 +174,7 @@ export type HighlightMetadata = (
 
 export type IsSearchResult = (ID: string) => boolean;
 
-export type ResumeIndexing = (isRefreshed?: boolean) => Promise<void>;
+export type ResumeIndexing = (options?: { notify?: boolean; isRefreshed?: boolean }) => Promise<void>;
 
 export interface EncryptedSearchFunctions {
     encryptedSearch: EncryptedSearch;
