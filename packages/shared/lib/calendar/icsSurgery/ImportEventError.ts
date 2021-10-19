@@ -27,9 +27,13 @@ export enum IMPORT_EVENT_ERROR_TYPE {
     ENCRYPTION_ERROR,
     PARENT_EVENT_MISSING,
     EXTERNAL_ERROR,
+    NO_OCCURRENCES,
 }
 
 const getErrorMessage = (errorType: IMPORT_EVENT_ERROR_TYPE, externalError?: Error) => {
+    if (errorType === IMPORT_EVENT_ERROR_TYPE.NO_OCCURRENCES) {
+        return c('Error importing event').t`Recurring event has no occurrences`;
+    }
     if (errorType === IMPORT_EVENT_ERROR_TYPE.WRONG_FORMAT) {
         return c('Error importing event').t`Component with wrong format`;
     }
@@ -47,6 +51,9 @@ const getErrorMessage = (errorType: IMPORT_EVENT_ERROR_TYPE, externalError?: Err
     }
     if (errorType === IMPORT_EVENT_ERROR_TYPE.TIMEZONE_FORMAT) {
         return c('Error importing event').t`Custom timezone`;
+    }
+    if (errorType === IMPORT_EVENT_ERROR_TYPE.TIMEZONE_IGNORE) {
+        return 'Timezone component ignored';
     }
     if (errorType === IMPORT_EVENT_ERROR_TYPE.VEVENT_INVALID) {
         return c('Error importing event').t`Invalid event`;
