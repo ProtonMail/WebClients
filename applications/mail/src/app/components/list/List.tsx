@@ -1,7 +1,17 @@
 import { useEffect, ChangeEvent, Ref, memo, forwardRef, MutableRefObject, useContext } from 'react';
 import { c, msgid } from 'ttag';
-import { useLabels, classnames, PaginationRow, useItemsDraggable } from '@proton/components';
-import { MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
+import {
+    useLabels,
+    classnames,
+    MnemonicPromptModal,
+    PaginationRow,
+    useItemsDraggable,
+    EllipsisLoader,
+    useModals,
+    useIsMnemonicAvailable,
+    useSettingsLink,
+} from '@proton/components';
+import { GetStartedChecklistKey, MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
 import { DENSITY } from '@proton/shared/lib/constants';
 
 import Item from './Item';
@@ -21,6 +31,8 @@ import { isColumnMode } from '../../helpers/mailSettings';
 import { MESSAGE_ACTIONS } from '../../constants';
 import { useOnCompose } from '../../containers/ComposeProvider';
 import { GetStartedChecklistContext } from '../../containers/GetStartedChecklistProvider';
+import ModalImportEmails from '../checklist/ModalImportEmails';
+import ModalGetMobileApp from '../checklist/ModalGetMobileApp';
 
 const defaultCheckedIDs: string[] = [];
 const defaultElements: Element[] = [];
@@ -85,9 +97,12 @@ const List = (
     const isCompactView = userSettings.Density === DENSITY.COMPACT && !shouldHighlight();
 
     const onCompose = useOnCompose();
+    const { createModal } = useModals();
+    const isMnemonicAvailable = useIsMnemonicAvailable();
+    const goToSettings = useSettingsLink();
     const elements = usePlaceholders(inputElements, loading, placeholderCount);
-    const pagingHandlers = usePaging(inputPage, inputTotal, onPage);
     const { dismissed: getStartedDismissed, handleDismiss } = useContext(GetStartedChecklistContext);
+    const pagingHandlers = usePaging(inputPage, inputTotal, onPage);
     const { page, total } = pagingHandlers;
 
     // Scroll top when changing page
@@ -182,7 +197,34 @@ const List = (
                                 <GetStartedChecklist
                                     limitedMaxWidth={!isColumnMode(mailSettings)}
                                     onDismiss={handleDismiss}
-                                    onSendMessage={() => onCompose({ action: MESSAGE_ACTIONS.NEW })}
+                                    onItemSelection={(key: GetStartedChecklistKey) => () => {
+                                        /* eslint-disable default-case */
+                                        switch (key) {
+                                            case GetStartedChecklistKey.SendMessage: {
+                                                onCompose({ action: MESSAGE_ACTIONS.NEW });
+                                                break;
+                                            }
+
+                                            case GetStartedChecklistKey.MobileApp: {
+                                                createModal(<ModalGetMobileApp />);
+                                                break;
+                                            }
+
+                                            case GetStartedChecklistKey.RecoveryMethod: {
+                                                if (isMnemonicAvailable) {
+                                                    createModal(<MnemonicPromptModal />);
+                                                } else {
+                                                    goToSettings('/authentication#recovery-notification');
+                                                }
+                                                break;
+                                            }
+
+                                            case GetStartedChecklistKey.Import: {
+                                                createModal(<ModalImportEmails />);
+                                                break;
+                                            }
+                                        }
+                                    }}
                                 />
                             )}
 

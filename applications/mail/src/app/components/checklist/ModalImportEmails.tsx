@@ -10,7 +10,7 @@ import {
 import { APPS } from '@proton/shared/lib/constants';
 import onboardingImportAssistant from '@proton/styles/assets/img/onboarding/import-assistant.svg';
 
-const ModalImportContactsOrEmails = ({ onClose, ...rest }: Partial<ModalPropsInjection>) => {
+const ModalImportEmails = ({ onClose, ...rest }: Partial<ModalPropsInjection>) => {
     return (
         <DialogModal intermediate onClose {...rest}>
             <ModalCloseButton onClose={onClose} />
@@ -44,4 +44,4 @@ const ModalImportContactsOrEmails = ({ onClose, ...rest }: Partial<ModalPropsInj
     );
 };
 
-export default ModalImportContactsOrEmails;
+export default ModalImportEmails;
