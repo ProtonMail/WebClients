@@ -12,6 +12,17 @@ export const createImport = (data: CreateImportPayload) => ({
     data,
 });
 
+export const getImport = (importerID: string) => ({
+    url: `importer/v1/importers/${importerID}`,
+    method: 'get',
+});
+
+export const updateImport = (importerID: string, data: CreateImportPayload) => ({
+    url: `importer/v1/importers/${importerID}`,
+    method: 'put',
+    data,
+});
+
 export const startImportTask = (data: LaunchImportPayload) => ({
     url: 'importer/v1/importers/start',
     method: 'post',
