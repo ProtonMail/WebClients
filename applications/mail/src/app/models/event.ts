@@ -26,7 +26,7 @@ export interface Event {
     MessageCounts?: LabelCount[];
     Contacts?: ContactEvent[];
     Addresses?: AddressEvent[];
-    ChecklistEvents?: ChecklistEvent[];
+    Checklist?: ChecklistEvent[];
 }
 
 export interface ConversationEvent extends EventType {
