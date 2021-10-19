@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { Icon, Tooltip, useModals } from '@proton/components';
 
-import { useDriveCache } from '../DriveCache/DriveCacheProvider';
+import { useDriveCache } from '../../DriveCache/DriveCacheProvider';
 import FilesRecoveryModal from './FilesRecoveryModal';
 
 interface Props {

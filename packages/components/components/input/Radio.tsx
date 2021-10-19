@@ -13,7 +13,7 @@ const Radio = ({ id, children, className = 'inline-flex', name, ...rest }: Props
         className={classnames([!className?.includes('increase-click-surface') && 'relative', className])}
     >
         <input id={id} type="radio" className="radio" name={name} {...rest} />
-        <span className="radio-fakeradio" />
+        <span className="radio-fakeradio flex-item-noshrink" />
         {children}
     </label>
 );

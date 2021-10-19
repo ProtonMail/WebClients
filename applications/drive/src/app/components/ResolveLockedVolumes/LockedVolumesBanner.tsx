@@ -1,34 +1,27 @@
 import { useEffect, useCallback } from 'react';
 import { c } from 'ttag';
 
-import {
-    SettingsLink,
-    InlineLinkButton,
-    TopBanner,
-    useModals,
-    useAddressesKeys,
-    useUser,
-    useLoading,
-} from '@proton/components';
-import { APPS } from '@proton/shared/lib/constants';
+import { InlineLinkButton, TopBanner, useModals, useAddressesKeys, useUser, useLoading } from '@proton/components';
 import { Address, DecryptedKey } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 
-import FilesRecoveryModal from './FilesRecoveryModal';
+import FilesRecoveryModal from './FileRecovery/FilesRecoveryModal';
 import { useDriveCache } from '../DriveCache/DriveCacheProvider';
 import useDrive from '../../hooks/drive/useDrive';
+import useResolveLockedSharesFlow from './KeyReactivation/useResolveLockedSharesFlow';
 
 interface Props {
     onClose: () => void;
 }
 
-const FileRecoveryBanner = ({ onClose }: Props) => {
+const LockedVolumesBanner = ({ onClose }: Props) => {
     const cache = useDriveCache();
     const { createModal } = useModals();
     const [User] = useUser();
     const [addressesKeys] = useAddressesKeys();
     const [loading, withLoading] = useLoading(true);
     const { getSharesReadyToRestore } = useDrive();
+    const { openKeyReactivationModal } = useResolveLockedSharesFlow({ onSuccess: onClose, onError: onClose });
 
     const getReadyToRestoreData = useCallback(
         (
@@ -58,12 +51,7 @@ const FileRecoveryBanner = ({ onClose }: Props) => {
         }
     }, [User.Email, addressesKeys, getReadyToRestoreData]);
 
-    const mailSettingsLink = (
-        <SettingsLink key="link-to-mail-settings" path="/encryption-keys" app={APPS.PROTONMAIL}>{c('Info')
-            .t`More`}</SettingsLink>
-    );
-
-    const startRecoveryButton = (
+    const StartRecoveryButton = (
         <InlineLinkButton
             key="file-recovery-more"
             onClick={() => {
@@ -74,16 +62,28 @@ const FileRecoveryBanner = ({ onClose }: Props) => {
         </InlineLinkButton>
     );
 
-    const reactivateMessage = c('Info')
-        .jt`Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${mailSettingsLink}`;
-    const recoveryMessage = c('Info')
-        .jt`Some of your files are no longer accessible. Restore the access to your files. ${startRecoveryButton}`;
+    const lockedShares = cache.lockedShares.filter((share) => !share.VolumeSoftDeleted);
 
-    return !loading && cache.lockedShares.length ? (
+    const KeyReactivationButton = (
+        <InlineLinkButton
+            key="key-reactivation"
+            onClick={openKeyReactivationModal}
+            data-test-id="recovery-banner:key-reactivation-button"
+        >
+            {c('Info').t`Learn more`}
+        </InlineLinkButton>
+    );
+
+    const reactivateMessage = c('Info')
+        .jt`Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${KeyReactivationButton}`;
+    const recoveryMessage = c('Info')
+        .jt`Some of your files are no longer accessible. Restore the access to your files. ${StartRecoveryButton}`;
+
+    return !loading && lockedShares.length ? (
         <TopBanner className="bg-danger" onClose={onClose}>
             {cache.sharesReadyToRestore.length ? recoveryMessage : reactivateMessage}
         </TopBanner>
     ) : null;
 };
 
-export default FileRecoveryBanner;
+export default LockedVolumesBanner;
