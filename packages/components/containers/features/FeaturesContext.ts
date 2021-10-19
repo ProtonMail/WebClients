@@ -40,6 +40,7 @@ export enum FeatureCode {
     UsedMailMobileApp = 'UsedMailMobileApp',
     UsedContactsImport = 'UsedContactsImport',
     EnabledEncryptedSearch = 'EnabledEncryptedSearch',
+    SpotlightEncryptedSearch = 'SpotlightEncryptedSearch',
     EnabledProtonProtonInvites = 'EnabledProtonProtonInvites',
     CalendarSubscription = 'CalendarSubscription',
     CalendarSubscriptionBeta = 'CalendarSubscriptionBeta',

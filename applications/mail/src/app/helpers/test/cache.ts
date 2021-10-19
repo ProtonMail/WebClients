@@ -72,7 +72,7 @@ export const minimalCache = () => {
     addToCache('User', { UsedSpace: 10, MaxSpace: 100 });
     addToCache('Addresses', []);
     addToCache('MailSettings', {});
-    addToCache('UserSettings', {});
+    addToCache('UserSettings', { Flags: {} });
     addToCache('ContactEmails', []);
     addToCache('Labels', []);
     addToCache('MessageCounts', []);
