@@ -55,7 +55,7 @@ export interface SyncEventActionOperations {
     operations: SyncEventActionOperation[];
 }
 
-interface SyncMultipleEventsArguments {
+export interface SyncMultipleEventsArguments {
     sync: SyncEventActionOperations;
     getCalendarKeys: ReturnType<typeof useGetCalendarKeys>;
     getAddressKeys: ReturnType<typeof useGetAddressKeys>;
@@ -205,6 +205,7 @@ const getSyncMultipleEventsPayload = async ({ getAddressKeys, getCalendarKeys, s
                     return {
                         Event: {
                             ...dataComplete,
+                            SourceCalendarID: oldCalendarID,
                             UID: veventComponent.uid.value,
                             SharedEventID: Event.SharedEventID,
                         },
