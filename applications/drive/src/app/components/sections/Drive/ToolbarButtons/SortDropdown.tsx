@@ -6,7 +6,7 @@ import { DriveSectionSortKeys, SortParams } from '@proton/shared/lib/interfaces/
 import { useDriveContent } from '../DriveContentProvider';
 import SortDropdown from '../../ToolbarButtons/SortDropdown';
 
-const menuItems = (): {
+const getMenuItems = (): {
     name: string;
     icon: string;
     sortParams: SortParams<DriveSectionSortKeys>;
@@ -84,7 +84,7 @@ const menuItems = (): {
 const SortDropdownDrive = () => {
     const { sortParams, setSorting } = useDriveContent();
 
-    return <SortDropdown menuItems={menuItems()} sortParams={sortParams} setSorting={setSorting} />;
+    return <SortDropdown menuItems={getMenuItems()} sortParams={sortParams} setSorting={setSorting} />;
 };
 
 export default SortDropdownDrive;

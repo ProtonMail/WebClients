@@ -4,7 +4,7 @@ import { decryptMessage, getMessage, getSignature } from 'pmcrypto';
 import { useApi } from '@proton/components';
 import { getStreamMessage } from '@proton/shared/lib/keys/driveKeys';
 
-import { queryFileRevision } from '@proton/shared/lib/api/drive/files';
+import { queryDeleteLockedVolumes, queryFileRevision } from '@proton/shared/lib/api/drive/files';
 import { DriveFileRevisionResult, NestedFileStream, DriveFileBlock } from '@proton/shared/lib/interfaces/drive/file';
 import { LinkType, LinkMeta } from '@proton/shared/lib/interfaces/drive/link';
 import { TransferMeta, DownloadInfo } from '@proton/shared/lib/interfaces/drive/transfer';
@@ -248,11 +248,16 @@ function useFiles() {
         await Promise.all(fileStreamPromises);
     };
 
+    const deleteLockedVolumes = async (volumeIds: string[]) => {
+        return Promise.all(volumeIds.map((volumeId) => api(queryDeleteLockedVolumes(volumeId))));
+    };
+
     return {
         startFileTransfer,
         startFolderTransfer,
         downloadDriveFile,
         saveFileTransferFromBuffer,
+        deleteLockedVolumes,
     };
 }
 

@@ -1,11 +1,11 @@
 import { ReadableStream } from 'web-streams-polyfill';
 import { decryptMessage, decryptPrivateKey, getMessage, OpenPGPKey, SessionKey } from 'pmcrypto';
+
 import { computeKeyPassword } from '@proton/srp';
 import { useApi } from '@proton/components';
 import { srpAuth } from '@proton/shared/lib/srp';
 import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 import { decryptUnsigned, getStreamMessage } from '@proton/shared/lib/keys/driveKeys';
-
 import { queryInitSRPHandshake, queryGetSharedLinkPayload } from '@proton/shared/lib/api/drive/sharing';
 import { InitHandshake, SharedLinkPayload, SharedLinkInfo, ThumbnailURLInfo } from '@proton/shared/lib/interfaces/drive/sharing';
 import { DriveFileBlock } from '@proton/shared/lib/interfaces/drive/file';
