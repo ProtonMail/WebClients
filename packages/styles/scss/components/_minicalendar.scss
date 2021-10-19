@@ -25,11 +25,14 @@
 			align-items: stretch;
 			inline-size: var(--cell-width, auto);
 
-			@supports (aspect-ratio: 1 / 1) {
+			// Chrome since v94 has a jiggling bug provoked by a cascade of minicalendar re-sizings at
+			// the threshold for the scrollbar to appear in the sidebar.
+			// We use a rather edgy browser check to avoid using aspect-ratio in Chrome because of this bug
+			@supports (aspect-ratio: 1 / 1) and (-moz-appearance: none) {
 				aspect-ratio: 1 / 1;
 			}
 
-			@supports not (aspect-ratio: 1 / 1) {
+			@supports (not (aspect-ratio: 1 / 1)) or (not (-moz-appearance: none)) {
 				block-size: var(--cell-height, initial);
 			}
 		}
@@ -58,7 +61,10 @@
 			--cell-width: var(--fixed-cell-size);
 		}
 
-		@supports not (aspect-ratio: 1 / 1) {
+		// Chrome since v94 has a jiggling bug provoked by a cascade of minicalendar re-sizings at
+		// the threshold for the scrollbar to appear in the sidebar.
+		// We use a rather edgy browser check to avoid using aspect-ratio in Chrome because of this bug
+		@supports (not (aspect-ratio: 1 / 1)) or (not (-moz-appearance: none)) {
 			@include respond-to($breakpoint-small) {
 				// Ensure the aspect ratio while waiting for aspect-ratio property
 				--cell-height: var(--computed-cell-width, var(--fixed-cell-size));
