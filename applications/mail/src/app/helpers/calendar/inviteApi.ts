@@ -338,7 +338,7 @@ const updateEventApi = async ({
         return Event;
     }
     // attendee mode
-    const veventWithPmAttendees = await withPmAttendees(vevent, getCanonicalEmailsMap);
+    const veventWithPmAttendees = await withPmAttendees(vevent, getCanonicalEmailsMap, true);
     const creationKeys = await getCreationKeys({
         Event: createSingleEdit ? undefined : calendarEvent,
         addressKeys,
@@ -571,7 +571,7 @@ export const updateEventInvitation = async ({
                         enabledEmailNotifications,
                     })
                 );
-                const updatedPmVevent = await withPmAttendees(updatedVevent, getCanonicalEmailsMap);
+                const updatedPmVevent = await withPmAttendees(updatedVevent, getCanonicalEmailsMap, true);
                 const updatedCalendarEvent = await updateEventApi({
                     calendarEvent,
                     vevent: updatedPmVevent,
@@ -728,7 +728,7 @@ export const createCalendarEventFromInvitation = async ({
     } else {
         veventToSave.attendee[attendeeIndex] = vcalAttendeeToSave;
     }
-    const veventToSaveWithPmAttendees = await withPmAttendees(veventToSave, getCanonicalEmailsMap);
+    const veventToSaveWithPmAttendees = await withPmAttendees(veventToSave, getCanonicalEmailsMap, true);
     const vcalPmAttendeeToSave = pmData
         ? veventToSaveWithPmAttendees?.attendee?.[0]
         : veventToSaveWithPmAttendees?.attendee?.[attendeeIndex];
