@@ -77,7 +77,13 @@ function useSharing() {
         linkId: string,
         password: string,
         shareInfo?: { ID: string; sessionKey: SessionKey }
-    ) => {
+    ): Promise<{
+        ShareURL: ShareURL;
+        keyInfo: {
+            shareSessionKey: SessionKey;
+            sharePasswordSalt: string;
+        };
+    }> => {
         const credentials = { password };
 
         const { ID, sessionKey } = shareInfo
@@ -129,6 +135,14 @@ function useSharing() {
                 Password,
             })
         );
+
+        /*
+         * We need to update cache with newly created shared link meta.
+         * One particular case would be access count for a shared link. While
+         * empty link being already added to cache upon opening sharing modal,
+         * meta never gets updated.
+         */
+        cache.set.shareURLs(new Map([[ShareURL.ShareURLID, ShareURL]]), shareId);
 
         return {
             ShareURL: {
