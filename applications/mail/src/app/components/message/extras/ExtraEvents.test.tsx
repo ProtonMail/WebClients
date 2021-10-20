@@ -280,7 +280,7 @@ END:VCALENDAR`;
         expect(screen.queryByTestId('extra-event-date-header')).toBeInTheDocument();
 
         // test event warning
-        expect(screen.queryByText('This event has already happened')).toBeInTheDocument();
+        expect(screen.queryByText('Event already ended')).toBeInTheDocument();
 
         // test link
         expect(screen.queryByText('Open in ProtonCalendar')).not.toBeInTheDocument();
@@ -394,7 +394,7 @@ END:VCALENDAR`;
         expect(screen.queryByText('Walk on Mars')).toBeInTheDocument();
 
         // test event warning
-        expect(screen.queryByText('This event has already happened')).toBeInTheDocument();
+        expect(screen.queryByText('Event already ended')).toBeInTheDocument();
 
         // test link
         expect(screen.queryByText('Open in ProtonCalendar')).toBeInTheDocument();

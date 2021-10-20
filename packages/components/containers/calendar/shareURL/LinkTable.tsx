@@ -75,7 +75,7 @@ const LinkTable = ({ linksMap, onCopyLink, onDelete, onEdit, isLoadingMap, user 
                                             <div className="grid-align-icon">
                                                 <CalendarSelectIcon
                                                     color={color}
-                                                    className="flex-noshrink mr0-75 keep-left"
+                                                    className="flex-item-noshrink mr0-75 keep-left"
                                                 />
                                                 <div className="text-ellipsis" title={calendarName}>
                                                     {calendarName}
