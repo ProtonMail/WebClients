@@ -1,0 +1,11 @@
+.modal-two-content {
+  margin: 0 var(--margin);
+
+  & > *:first-child {
+    margin-block-start: 0;
+  }
+
+  & > *:last-child {
+    margin-block-end: 0;
+  }
+}

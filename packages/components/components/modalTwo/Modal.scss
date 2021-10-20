@@ -1,0 +1,109 @@
+@import '~@proton/styles/scss/config';
+
+.modal-two {
+  --size: #{rem(480)}; // medium
+  --margin: #{rem(48)};
+
+  @include respond-to(392) {
+    --margin: #{rem(24)};
+  }
+
+  position: relative;
+  display: flex;
+  max-inline-size: var(--size);
+  overflow: hidden;
+  padding: 0;
+  margin: auto;
+  transform-origin: center top;
+  flex: 0 1 auto;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  border-radius: var(--border-radius-large);
+  box-shadow: var(--shadow-lifted);
+  background: var(--background-norm);
+  color: var(--text-norm);
+  animation: .25s easing(easeOutCubic) forwards;
+  animation-name: anime-modal-two-in;
+
+  &--small {
+    --size: #{rem(392)};
+    --margin: #{rem(24)};
+  }
+  
+  &--large {
+    --size: #{rem(600)};
+  }
+  
+  &--full {
+    --size: 100%;
+    inline-size: var(--size);
+  }
+
+  &-backdrop--out & {
+    animation-name: anime-modal-two-out;
+  }
+
+  @keyframes anime-modal-two-in {
+    0% {
+      transform: scale(0.9);
+    }
+
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  @keyframes anime-modal-two-out {
+    0% {
+      transform: scale(1);
+    }
+
+    100% {
+      transform: scale(0.9);
+    }
+  }
+
+  &-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 666;
+    display: flex;
+    padding: 2em;
+    overflow: hidden;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    background: var(--backdrop-norm);
+    animation: 0.1s ease-out forwards;
+    animation-name: anime-modal-two-backdrop-in;
+
+    @include respond-to(392) {
+      padding: 1em;
+    }
+
+    &--out {
+      animation-name: anime-modal-two-backdrop-out;
+    }
+  }
+
+  @keyframes anime-modal-two-backdrop-in {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes anime-modal-two-backdrop-out {
+    from {
+      opacity: 1;
+    }
+
+    to {
+      opacity: 0;
+    }
+  }
+}

@@ -1,0 +1,101 @@
+@import '~@proton/styles/scss/config';
+
+$scrollshadow-size: rem(5) !default;
+
+.scroll {
+	&-outer {
+		&-horizontal {
+			position: relative;
+
+			.scroll-child {
+				/*
+				 * the reason this is using inline-block is because
+				 * we need direct access to a child element of the scroll
+				 * container in order to know when the edges of these two
+				 * elements overlap (that way we can tell that the scroll
+				 * is either at the very start, at the very end or somewhere
+				 * in the middle)
+				 *
+				 * however, a block element always takes the width of their
+				 * parent, whereas an inline-block element will take the width
+				 * of their child, which would be the overflowing scrollable
+				 * content in this case
+				 *
+				 * "width: 100%" in order to maintain a block element behaviour
+				 * even though using "display: inline-block"
+				 * 
+				 */
+				display: inline-block;
+				min-inline-size: 100%;
+			}
+
+			.scroll-inner {
+				overflow-x: auto;
+			}
+
+			.scroll-start-shadow,
+			.scroll-end-shadow {
+				z-index: 1;
+				position: absolute;
+				inset-block-start: 0;
+				inset-block-start: 0;
+				inline-size: $scrollshadow-size;
+			}
+
+			.scroll-start-shadow {
+				inset-inline-start: 0;
+				background-image: radial-gradient(
+					farthest-side at 0 50%,
+					rgb(0 0 0 / var(--shadow-norm-opacity)),
+					transparent
+				);
+			}
+
+			.scroll-end-shadow {
+				inset-inline-end: 0;
+				background-image: radial-gradient(
+					farthest-side at 100% 50%,
+					rgb(0 0 0 / var(--shadow-norm-opacity)),
+					transparent
+				);
+			}
+		}
+
+		&-vertical {
+			block-size: 100%;
+			position: relative;
+
+			.scroll-inner {
+				block-size: 100%;
+				overflow-y: auto;
+			}
+
+			.scroll-start-shadow,
+			.scroll-end-shadow {
+				z-index: 1;
+				position: absolute;
+				inset-inline-start: 0;
+				inset-inline-end: 0;
+				block-size: $scrollshadow-size;
+			}
+
+			.scroll-start-shadow {
+				inset-block-start: 0;
+				background-image: radial-gradient(
+					farthest-side at 50% 0,
+					rgb(0 0 0 / var(--shadow-norm-opacity)),
+					transparent
+				);
+			}
+
+			.scroll-end-shadow {
+				inset-block-end: 0;
+				background-image: radial-gradient(
+					farthest-side at 50% 100%,
+					rgb(0 0 0 / var(--shadow-norm-opacity)),
+					transparent
+				);
+			}
+		}
+	}
+}
