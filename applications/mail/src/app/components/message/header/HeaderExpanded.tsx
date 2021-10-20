@@ -373,6 +373,7 @@ const HeaderExpanded = ({
                     messageViewIcons={messageViewIcons}
                     labels={labels}
                     mailSettings={mailSettings}
+                    onAttachmentIconClick={handleAttachmentIconClick}
                 />
             )}
 
@@ -478,7 +479,11 @@ const HeaderExpanded = ({
                                 onClick={handleCompose(MESSAGE_ACTIONS.REPLY)}
                                 data-testid="message-view:reply"
                             >
-                                <Icon name="arrow-up-and-left-big" className="on-rtl-mirror" alt={c('Title').t`Reply`} />
+                                <Icon
+                                    name="arrow-up-and-left-big"
+                                    className="on-rtl-mirror"
+                                    alt={c('Title').t`Reply`}
+                                />
                             </Button>
                         </Tooltip>
                         <Tooltip title={titleReplyAll}>
@@ -488,7 +493,11 @@ const HeaderExpanded = ({
                                 onClick={handleCompose(MESSAGE_ACTIONS.REPLY_ALL)}
                                 data-testid="message-view:reply-all"
                             >
-                                <Icon name="arrow-up-and-left-double-big" className="on-rtl-mirror" alt={c('Title').t`Reply all`} />
+                                <Icon
+                                    name="arrow-up-and-left-double-big"
+                                    className="on-rtl-mirror"
+                                    alt={c('Title').t`Reply all`}
+                                />
                             </Button>
                         </Tooltip>
                         <Tooltip title={titleForward}>
