@@ -3,8 +3,8 @@
 
 .advanced-search {
 	&-dropdown {
-		--min-width: 30em;
-		--max-width: 30em;
+		--min-width: 35em;
+		--max-width: 35em;
 
 		@include respond-to(1200, 'min') {
 			--max-width: calc(100vw * #{math.div($conversations-column-width, 100%)} - 1em);

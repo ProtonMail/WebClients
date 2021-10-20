@@ -179,7 +179,7 @@ const EncryptedSearchField = ({ showMore, toggleShowMore, esState }: Props) => {
     return (
         <div className="pt1-5">
             <div className="flex flex-column">
-                <div className="flex flew-nowrap mb0-5 flex-align-items-center">
+                <div className="flex flex-nowrap mb0-5 flex-align-items-center">
                     {esHeader}
                     {esCTA}
                 </div>
