@@ -220,9 +220,6 @@
       "Create folder": [
         "Map maken"
       ],
-      "Create key": [
-        "Sleutel aanmaken"
-      ],
       "Create label": [
         "Label maken"
       ],
@@ -348,6 +345,9 @@
       ],
       "Font": [
         "Lettertype"
+      ],
+      "Generate key": [
+        ""
       ],
       "Get ProtonVPN Plus": [
         "Neem ProtonVPN Plus"
@@ -2248,6 +2248,9 @@
       "Original recurring event could not be found": [
         "Oorspronkelijke terugkerende afspraak kan niet worden gevonden"
       ],
+      "Recurring event has no occurrences": [
+        ""
+      ],
       "Recurring rule not supported": [
         "Herhalingsvoorwaarde niet ondersteund"
       ],
@@ -3307,6 +3310,9 @@
       "Black Friday 2020 newcomer discount has been applied": [
         "Black Friday 2020 nieuwkomer korting is toegepast"
       ],
+      "Blocks senders from seeing if and when you opened a message.": [
+        ""
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Door het downgraden naar een gratis abonnement verliest u deze voordelen, zelfs als u in de toekomst opnieuw upgrade."
       ],
@@ -3572,6 +3578,9 @@
       ],
       "here": [
         "hier"
+      ],
+      "Hides identifying information by loading remote content through a proxy. Option to store content as attachments.": [
+        ""
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Wanneer een andere beheerder dit wachtwoord heeft aangepast, dan moet u hem naar het nieuwe organisatiewachtwoord vragen."
@@ -3943,10 +3952,7 @@
       "Plus or Visionary subscription required": [
         "Plus- of Visionary-abonnement vereist"
       ],
-      "Prevents remote email content from loading automatically.": [
-        ""
-      ],
-      "Prevents senders from knowing whether and when you have opened a message.": [
+      "Prevents content from the sender's server from loading without your permission.": [
         ""
       ],
       "Preview": [
@@ -4947,6 +4953,9 @@
       "App password": [
         "App-wachtwoord"
       ],
+      "Ask before loading remote content": [
+        ""
+      ],
       "Attach public key": [
         "Publieke sleutel bijvoegen"
       ],
@@ -4967,6 +4976,9 @@
       ],
       "Backup keys": [
         "Back-up sleutels"
+      ],
+      "Block email tracking": [
+        ""
       ],
       "bonus storage": [
         "bonus opslag"
@@ -5021,9 +5033,6 @@
       ],
       "Conditions": [
         "Voorwaarden"
-      ],
-      "Confirm before loading remote content": [
-        ""
       ],
       "Confirm login password": [
         "Bevestig inlogwachtwoord"
@@ -5390,9 +5399,6 @@
       ],
       "Proration": [
         "Verrekening"
-      ],
-      "Protect against email tracking": [
-        ""
       ],
       "Protection mode": [
         ""
@@ -6475,10 +6481,10 @@
       ]
     },
     "Option protection mode": {
-      "Prevent tracking (recommended)": [
+      "Load content via proxy (recommended)": [
         ""
       ],
-      "Prevent tracking and store content locally": [
+      "Load content via proxy and store as attachments": [
         ""
       ]
     },
@@ -6513,6 +6519,11 @@
       ],
       "PayPal": [
         "PayPal"
+      ]
+    },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        ""
       ]
     },
     "Placeholder": {
@@ -7569,9 +7580,6 @@
       "Create calendar": [
         "Agenda aanmaken"
       ],
-      "Create key": [
-        "Sleutel aanmaken"
-      ],
       "Create your Proton Account": [
         "Maak uw Proton Account aan"
       ],
@@ -7739,6 +7747,9 @@
       ],
       "General": [
         "Algemeen"
+      ],
+      "Generate key": [
+        ""
       ],
       "Generate missing keys": [
         "Ontbrekende sleutels genereren"
@@ -8199,6 +8210,11 @@
         "Rol"
       ]
     },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        ""
+      ]
+    },
     "Tooltip": {
       "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
         "Toegang tot geo-geblokkeerde inhoud (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) waar u ook bent."
@@ -8585,6 +8601,9 @@
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Rapporten zijn niet versleuteld met end-to-end-versleuteling, stuur geen gevoelige informatie."
       ],
+      "The date and time settings on your device are out of sync. ${ learnMore }": [
+        ""
+      ],
       "This action will ${ boldWarning }. You will not be able to recover the messages on ${ domain }.": [
         "Deze actie zal ${ boldWarning }. U kunt de berichten niet herstellen op ${ domain }."
       ],
@@ -8608,9 +8627,6 @@
       ],
       "You will not see this import record in the list anymore.": [
         "U ziet dit importrecord niet meer in de lijst."
-      ],
-      "Your local date & time settings seem to be out of sync.": [
-        "Uw lokale datum- en tijdinstellingen lijken niet gesynchroniseerd te zijn."
       ]
     },
     "Warning for domain modal": {
@@ -8619,6 +8635,11 @@
       ],
       "It can take up to a day for DNS changes to update.": [
         "Het kan een dag duren voordat DNS-veranderingen zijn bijgewerkt."
+      ]
+    },
+    "Weak personal key warning": {
+      "This key no longer meets our security standards. We suggest you mark it as obsolete and generate a new key.": [
+        ""
       ]
     },
     "Weekly recurring event, frequency": {

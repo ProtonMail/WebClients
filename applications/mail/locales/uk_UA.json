@@ -641,6 +641,9 @@
       "Recover data": [
         "Відновити дані"
       ],
+      "Refine your search": [
+        "Вдоскональте свій пошук"
+      ],
       "refresh the page": [
         "оновити сторінку"
       ],
@@ -2422,6 +2425,9 @@
       "Original recurring event could not be found": [
         "Не вдається знайти оригінальну повторювану подію"
       ],
+      "Recurring event has no occurrences": [
+        "Повторювана подія не має випадків"
+      ],
       "Recurring rule not supported": [
         "Правило повторення не підтримується"
       ],
@@ -3591,8 +3597,8 @@
       "No email address": [
         "Немає адреси е-пошти"
       ],
-      "No email trackers found.": [
-        "Стеження не виявлено."
+      "No email trackers found": [
+        "Стеження не виявлено"
       ],
       "No folder found": [
         "Теку не знайдено"
@@ -3720,14 +3726,11 @@
       "Print email": [
         "Друкувати лист"
       ],
-      "Protect yourself from trackers by turning on Proton email tracker protection.": [
-        "Захистіть себе від стеження, увімкнувши захист від стеження електронної пошти Proton."
+      "Protect yourself from trackers. Turn on email tracker protection in settings": [
+        "Захистіть себе. Увімкніть захист пошти від стеження в налаштуваннях"
       ],
       "Proton doesn't make money by abusing privacy.": [
         "Proton не заробляє грошей на порушенні приватності."
-      ],
-      "Proton has blocked email trackers in this message in order to protect your privacy.": [
-        "З метою захисту вашої приватності Proton заблокував стеження в цьому повідомленні."
       ],
       "ProtonMail can protect your business as well.": [
         "ProtonMail також може захистити ваш бізнес."
@@ -3858,6 +3861,9 @@
       "Switch to ${ professionalPlan } to add more users.": [
         "Перейдіть на ${ professionalPlan }, щоб додати більше користувачів."
       ],
+      "Taking too long?": [
+        "Триває надто довго?"
+      ],
       "Test link": [
         "Тестове посилання"
       ],
@@ -3974,6 +3980,9 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "З метою протидії спаму та зловживанням, будь ласка, підтвердьте, що ви людина."
+      ],
+      "To protect your privacy, Proton blocked email trackers in this message": [
+        "Щоб захистити вашу приватність, Proton заблокував елементи стеження в цьому повідомленні"
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "Щоб повторно підписати контакти, нам необхідно перевірити кожен контакт на відповідність списку ключів шифрування, доступних у вашому обліковому записі. Якщо збігів не знайдеться, ваш контакт буде повторно підписано з використанням основного ключа шифрування."
@@ -6149,14 +6158,17 @@
       ]
     },
     "Spotlight": {
-      "Proton blocked email trackers in this message in order to protect your privacy": [
-        "Proton заблокував елементи стеження в цьому листі з метою захисту вашої приватності"
+      "Message Content Search": [
+        "Пошук у вмісті повідомлень"
       ],
-      "Tracker protection": [
-        "Захист від стеження"
+      "To protect your privacy, Proton blocked email trackers in this message": [
+        "Щоб захистити вашу приватність, Proton заблокував елементи стеження в цьому повідомленні"
       ],
       "You can now schedule your messages to be sent later": [
         "Тепер ви можете планувати надсилання повідомлень"
+      ],
+      "You can now search the content of your encrypted emails.": [
+        "Тепер ви можете шукати у вмісті ваших зашифрованих листів."
       ]
     },
     "Status": {
@@ -7110,6 +7122,11 @@
         "Поштовий індекс"
       ]
     },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "Сьогодні"
+      ]
+    },
     "Tooltip": {
       "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
         "Доступ до вмісту, обмеженого розташуванням (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube тощо), незалежно від того, де ви знаходитесь."
@@ -7356,6 +7373,9 @@
       "The contact failed to load.": [
         "Не вдалося завантажити контакт."
       ],
+      "The date and time settings on your device are out of sync. ${ learnMore }": [
+        "Дата й час на вашому пристрої не синхронізуються. ${ learnMore }"
+      ],
       "The decryption of the encrypted content failed.": [
         "Не вдалося розшифрувати зашифрований вміст."
       ],
@@ -7373,9 +7393,6 @@
       ],
       "You will lose any customization you made so far.": [
         "Ви втратите будь-які попередні налаштування."
-      ],
-      "Your local date & time settings seem to be out of sync.": [
-        "Здається, ваші локальні налаштування дати та часу не синхронізовані."
       ]
     },
     "Weekly recurring event, frequency": {

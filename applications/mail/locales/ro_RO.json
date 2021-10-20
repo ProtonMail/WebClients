@@ -638,6 +638,9 @@
       "Recover data": [
         "Recuperare date"
       ],
+      "Refine your search": [
+        ""
+      ],
       "refresh the page": [
         "împrospătați pagina"
       ],
@@ -2398,6 +2401,9 @@
       "Original recurring event could not be found": [
         "Evenimentul recurent original nu a putut fi găsit"
       ],
+      "Recurring event has no occurrences": [
+        ""
+      ],
       "Recurring rule not supported": [
         "Regula recurentă nesuportată"
       ],
@@ -3516,8 +3522,8 @@
       "No email address": [
         "Lipsă adresă de e-mail"
       ],
-      "No email trackers found.": [
-        "Nu s-au găsit urmăritori de e-mail."
+      "No email trackers found": [
+        ""
       ],
       "No folder found": [
         "Nu există folder"
@@ -3645,14 +3651,11 @@
       "Print email": [
         "Tipărire e-mail"
       ],
-      "Protect yourself from trackers by turning on Proton email tracker protection.": [
-        "Protejați-vă de urmăritori activând protecția din Proton împotriva urmăririi."
+      "Protect yourself from trackers. Turn on email tracker protection in settings": [
+        ""
       ],
       "Proton doesn't make money by abusing privacy.": [
         "Proton nu face bani abuzând de viața privată."
-      ],
-      "Proton has blocked email trackers in this message in order to protect your privacy.": [
-        "Pentru a vă proteja confidențialitatea, Proton a blocat urmăritorii de e-mail din acest mesaj."
       ],
       "ProtonMail can protect your business as well.": [
         "ProtonMail vă poate proteja și afacerea."
@@ -3782,6 +3785,9 @@
       "Switch to ${ professionalPlan } to add more users.": [
         "Treceţi la ${ professionalPlan } pentru a adăuga mai mulți utilizatori."
       ],
+      "Taking too long?": [
+        ""
+      ],
       "Test link": [
         "Testare legătură"
       ],
@@ -3897,6 +3903,9 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Pentru a combate mesajele nedorite, dovediți că sunteți o persoană."
+      ],
+      "To protect your privacy, Proton blocked email trackers in this message": [
+        ""
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "Pentru a vă resemna contactele, trebuie să verificăm fiecare contact în lista de chei de criptare disponibile în cont. Dacă nu se găsește nicio potrivire, contactul va fi resemnat cu cheia de criptare primară."
@@ -6045,14 +6054,17 @@
       ]
     },
     "Spotlight": {
-      "Proton blocked email trackers in this message in order to protect your privacy": [
-        "Pentru a vă proteja confidențialitatea, Proton a blocat urmăritorii de e-mail din acest mesaj"
+      "Message Content Search": [
+        ""
       ],
-      "Tracker protection": [
-        "Protejare împotriva urmăririi"
+      "To protect your privacy, Proton blocked email trackers in this message": [
+        ""
       ],
       "You can now schedule your messages to be sent later": [
         "Acum puteți să vă programați mesajele pentru a fi trimise mai târziu."
+      ],
+      "You can now search the content of your encrypted emails.": [
+        ""
       ]
     },
     "Status": {
@@ -6969,6 +6981,11 @@
         "ZIP/Cod poștal"
       ]
     },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        ""
+      ]
+    },
     "Tooltip": {
       "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
         "Accesați conținutul blocat geografic (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube etc.) indiferent unde vă aflați."
@@ -7211,6 +7228,9 @@
       "The contact failed to load.": [
         "Nu s-a putut încărca contactul."
       ],
+      "The date and time settings on your device are out of sync. ${ learnMore }": [
+        ""
+      ],
       "The decryption of the encrypted content failed.": [
         "Decriptarea conținutului criptat a eșuat."
       ],
@@ -7228,9 +7248,6 @@
       ],
       "You will lose any customization you made so far.": [
         "Veți pierde orice modificare făcută până acum."
-      ],
-      "Your local date & time settings seem to be out of sync.": [
-        "Setările locale de dată și oră par să nu fie sincronizate."
       ]
     },
     "Weekly recurring event, frequency": {

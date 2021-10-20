@@ -220,9 +220,6 @@
       "Create folder": [
         "Creare folder"
       ],
-      "Create key": [
-        "Creare cheie"
-      ],
       "Create label": [
         "Creare etichetă"
       ],
@@ -348,6 +345,9 @@
       ],
       "Font": [
         "Font"
+      ],
+      "Generate key": [
+        ""
       ],
       "Get ProtonVPN Plus": [
         "Obțineți „ProtonVPN Plus”"
@@ -2269,6 +2269,9 @@
       "Original recurring event could not be found": [
         "Evenimentul recurent original nu a putut fi găsit"
       ],
+      "Recurring event has no occurrences": [
+        ""
+      ],
       "Recurring rule not supported": [
         "Regula recurentă nesuportată"
       ],
@@ -3357,6 +3360,9 @@
       "Black Friday 2020 newcomer discount has been applied": [
         "Reducerea de Vinerea Neagră 2020 pentru utilizatorii noi a fost aplicată"
       ],
+      "Blocks senders from seeing if and when you opened a message.": [
+        ""
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Revenind la planul gratuit, veți pierde permanent aceste avantaje, chiar dacă ulterior veți trece la unul cu plată."
       ],
@@ -3624,6 +3630,9 @@
       ],
       "here": [
         "aici"
+      ],
+      "Hides identifying information by loading remote content through a proxy. Option to store content as attachments.": [
+        ""
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Dacă un alt administrator a schimbat această parolă, va trebui să-i solicitați noua parolă a organizației."
@@ -3996,11 +4005,8 @@
       "Plus or Visionary subscription required": [
         "Este necesar abonamentul „Plus” sau „Visionary”"
       ],
-      "Prevents remote email content from loading automatically.": [
-        "Se împiedică încărcarea automată a conținutului e-mailurilor de la distanță."
-      ],
-      "Prevents senders from knowing whether and when you have opened a message.": [
-        "Împiedică expeditorii să știe dacă și când ați deschis un mesaj."
+      "Prevents content from the sender's server from loading without your permission.": [
+        ""
       ],
       "Preview": [
         "Examinare"
@@ -5005,6 +5011,9 @@
       "App password": [
         "Parola aplicației"
       ],
+      "Ask before loading remote content": [
+        ""
+      ],
       "Attach public key": [
         "Atașare cheie publică"
       ],
@@ -5025,6 +5034,9 @@
       ],
       "Backup keys": [
         "Chei de rezervă"
+      ],
+      "Block email tracking": [
+        ""
       ],
       "bonus storage": [
         "spațiu bonus"
@@ -5079,9 +5091,6 @@
       ],
       "Conditions": [
         "Condiții"
-      ],
-      "Confirm before loading remote content": [
-        "Confirmare înainte de încărcarea conținutul de la distanță"
       ],
       "Confirm login password": [
         "Confirmare parolă conectare"
@@ -5448,9 +5457,6 @@
       ],
       "Proration": [
         "Proporții"
-      ],
-      "Protect against email tracking": [
-        "Protejare împotriva urmăririi e-mailurilor"
       ],
       "Protection mode": [
         "Mod de protejare"
@@ -6542,11 +6548,11 @@
       ]
     },
     "Option protection mode": {
-      "Prevent tracking (recommended)": [
-        "Prevenire urmărire (recomandat)"
+      "Load content via proxy (recommended)": [
+        ""
       ],
-      "Prevent tracking and store content locally": [
-        "Prevenire urmărire și stocare conținut la nivel local"
+      "Load content via proxy and store as attachments": [
+        ""
       ]
     },
     "OS compatibility": {
@@ -6580,6 +6586,11 @@
       ],
       "PayPal": [
         "PayPal"
+      ]
+    },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        ""
       ]
     },
     "Placeholder": {
@@ -7644,9 +7655,6 @@
       "Create calendar": [
         "Creare calendar"
       ],
-      "Create key": [
-        "Creare cheie"
-      ],
       "Create your Proton Account": [
         "Creare cont Proton"
       ],
@@ -7814,6 +7822,9 @@
       ],
       "General": [
         "Generale"
+      ],
+      "Generate key": [
+        ""
       ],
       "Generate missing keys": [
         "Generare chei lipsă"
@@ -8274,6 +8285,11 @@
         "Rol"
       ]
     },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        ""
+      ]
+    },
     "Tooltip": {
       "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
         "Accesați conținutul blocat geografic (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube etc.) indiferent unde vă aflați."
@@ -8663,6 +8679,9 @@
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Rapoartele nu sunt criptate în ambele părți. Nu trimiteți informații confidențiale."
       ],
+      "The date and time settings on your device are out of sync. ${ learnMore }": [
+        ""
+      ],
       "This action will ${ boldWarning }. You will not be able to recover the messages on ${ domain }.": [
         "Această acțiune va ${ boldWarning } . Nu veți putea recupera mesajele de pe ${ domain }."
       ],
@@ -8686,9 +8705,6 @@
       ],
       "You will not see this import record in the list anymore.": [
         "Nu veți mai vedea această înregistrare importată în listă."
-      ],
-      "Your local date & time settings seem to be out of sync.": [
-        "Setările locale de dată și oră par să nu fie sincronizate."
       ]
     },
     "Warning for domain modal": {
@@ -8697,6 +8713,11 @@
       ],
       "It can take up to a day for DNS changes to update.": [
         "Actualizarea schimbării DNS poate dura până la o zi."
+      ]
+    },
+    "Weak personal key warning": {
+      "This key no longer meets our security standards. We suggest you mark it as obsolete and generate a new key.": [
+        ""
       ]
     },
     "Weekly recurring event, frequency": {
