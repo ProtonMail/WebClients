@@ -39,9 +39,21 @@ export const getImportReportsList = () => ({
     method: 'get',
 });
 
-export const getMailImportData = (importerID: string) => ({
+export const getMailImportData = (
+    importerID: string,
+    params: {
+        Code: string;
+    }
+) => ({
     url: `importer/v1/mail/importers/${importerID}`,
     method: 'get',
+    params,
+});
+
+export const getAuthenticationMethod = (params: { Email: string }) => ({
+    url: 'importer/v1/mail/importers/authinfo',
+    method: 'get',
+    params,
 });
 
 export const getCalendarImportData = (importerID: string) => ({
