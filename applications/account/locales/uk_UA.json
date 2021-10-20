@@ -1276,6 +1276,11 @@
         "20 / користувач *"
       ]
     },
+    "Calendar import section description": {
+      "You can import ICS files from another calendar to ${ CALENDAR_APP_NAME }. This lets you quickly import one event or your entire agenda.": [
+        "Ви можете імпортувати ICS файли з іншого календаря до ${ CALENDAR_APP_NAME }. Це дасть змогу швидко імпортувати одну подію або весь ваш порядок денний."
+      ]
+    },
     "Calendar limit warning": {
       "You have reached the maximum of ${ calendarsLimit } calendar.": [
         "Ви досягли максимальної кількості ${ calendarsLimit } календаря.",
@@ -1974,7 +1979,7 @@
       "Please enable multi-user support before adding users to your organization.": [
         "Будь ласка, увімкніть підтримку декількох користувачів, перш ніж додавати користувачів до вашої організації."
       ],
-      "Please fix the highlighted conflicts to proceed.": [
+      "Please fix the highlighted conflict to proceed.": [
         "Виправте вказану проблему, щоб продовжити.",
         "Виправте вказані проблеми, щоб продовжити.",
         "Виправте вказані проблеми, щоб продовжити.",
@@ -2116,7 +2121,7 @@
         "Неправильний код перевірки. Переконайтеся, що ви правильно скопіювали код і спробуйте знову. Застосування змін може тривати до 24 годин."
       ],
       "You have lost access to your organization keys. Without restoration you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
-        "Ви втратили доступ до ваших ключів організації. Без них ви не можете створювати нові облікові записи, додаткові адреси для існуючих користувачів, або отримати доступ до не приватних користувачів."
+        "Ви втратили доступ до ваших ключів організації. Без відновлення ви не зможете створювати нових користувачів, додавати адреси наявним користувачам або мати доступ до неприватних облікових записів."
       ],
       "You have no invoices.": [
         "У вас немає рахунків."
@@ -2128,7 +2133,7 @@
         "Ви вже використали усіх користувачів у своєму тарифному плані. Щоб додати нового користувача, необхідно покращити тарифний план."
       ],
       "You must activate your organization keys. Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
-        "Вам необхідно активувати ваші ключі організації. Без активації ви не можете створювати нові облікові записи, додаткові адреси для існуючих користувачів, або отримати доступ до не приватних користувачів."
+        "Вам необхідно активувати ваші ключі організації. Без активації ви не можете створювати нові облікові записи, додаткові адреси для наявних користувачів, або отримати доступ до не приватних облікових записів користувачів."
       ],
       "You must privatize all users before generating new organization keys": [
         "Ви повинні зробити приватизувати всіх користувачів перед генеруванням нових ключів організації"
@@ -2242,9 +2247,6 @@
       ],
       "Event": [
         "Подія"
-      ],
-      "Event duration not supported": [
-        "Тривалість події не підтримується"
       ],
       "Event validation failed": [
         "Не вдалося перевірити подію"
@@ -3487,7 +3489,7 @@
         "Власне щодня"
       ],
       "Custom filters work on all new emails, including incoming emails as well as sent emails. Filters can be edited and created directly via Sieve programming language.": [
-        "Власні поля доступні в усіх нових повідомленнях, включаючи вхідні та надіслані. Фільтри можна редагувати й створювати безпосередньо через мову програмування Sieve."
+        "Власні поля доступні в усіх нових повідомленнях, включно з вхідними та надісланими. Фільтри можна редагувати й створювати безпосередньо через мову програмування Sieve."
       ],
       "Custom monthly": [
         "Власне щомісяця"
@@ -3565,7 +3567,7 @@
         "Змінити мітку"
       ],
       "Effortlessly and securely move your emails from your current provider to Proton. If you use Google, we also support calendar, and contacts imports.": [
-        "Легко і безпечно переміщуйте свої електронні листи від свого поточного постачальника до Proton. Якщо ви користуєтеся Google, ми також підтримуємо імпорт календаря та контактів."
+        "Легко і безпечно перемістіть свої електронні листи від поточного постачальника до Proton. Якщо ви користуєтеся Google, ми також підтримуємо імпорт календаря та контактів."
       ],
       "Email address": [
         "Адреса електронної пошти"
@@ -3661,7 +3663,7 @@
         "Звільніть місце або зверніться до свого адміністратора."
       ],
       "free up space by deleting older messages or other data": [
-        "звільнити простір, видаливши старіші повідомлення чи інші дані"
+        "звільнити простір, видаливши давніші повідомлення чи інші дані"
       ],
       "Full-featured VPN with speed up to 10 Gbps.": [
         "Повнофункціональний VPN зі швидкістю до 10 Гбіт/с."
@@ -4146,8 +4148,8 @@
       "Server load": [
         "Навантаження сервера"
       ],
-      "Servers are unreachable.": [
-        "Сервери недоступні."
+      "Servers are unreachable. Please try again in a few minutes": [
+        "Сервери недоступні. Спробуйте знову за кілька хвилин"
       ],
       "Session timed out.": [
         "Сеанс звершився."
@@ -4466,9 +4468,6 @@
       ],
       "You can generate a new encryption key if you think your previous key has been compromised.": [
         "Ви можете генерувати новий ключ шифрування, якщо ви вважаєте, що попередній ключ був скомпрометований."
-      ],
-      "You can import ICS files from another calendar to ${ CALENDAR_APP_NAME }. This lets you quickly import one event or your entire agenda.": [
-        "Ви можете імпортувати ICS файли з іншого календаря до ${ CALENDAR_APP_NAME }. Це дасть змогу швидко імпортувати одну подію або весь ваш порядок денний."
       ],
       "You can now receive messages to your @pm.me address. Upgrade to a paid plan to also send emails using your @pm.me address and create additional @pm.me addresses.": [
         "Тепер ви можете отримувати повідомлення на свою адресу @pm.me. Перейдіть на платний тарифний план, щоб мати можливість надсилати пошту з адреси @pm.me, а також створювати додаткові адреси @pm.me."
@@ -5211,8 +5210,8 @@
       "Default notifications": [
         "Типові сповіщення"
       ],
-      "Default PGP settings": [
-        "Типові налаштування PGP"
+      "Default PGP scheme": [
+        "Типова схема PGP"
       ],
       "Default view": [
         "Типовий вигляд"
@@ -5926,6 +5925,9 @@
     },
     "Loading info": {
       "${ createdCalendars } of ${ calendarsToBeCreated } created": [
+        "${ createdCalendars } з ${ calendarsToBeCreated } створено",
+        "${ createdCalendars } з ${ calendarsToBeCreated } створено",
+        "${ createdCalendars } з ${ calendarsToBeCreated } створено",
         "${ createdCalendars } з ${ calendarsToBeCreated } створено"
       ],
       "Almost there": [
@@ -7430,9 +7432,6 @@
       ]
     },
     "Suffix for price": {
-      "/ mo": [
-        "/ місяць"
-      ],
       "/ month": [
         "/ місяць"
       ]
@@ -7474,6 +7473,20 @@
       ],
       "vCard field": [
         "Поле vCard"
+      ]
+    },
+    "Time period": {
+      "account creation date": [
+        "дата створення облікового запису"
+      ],
+      "the last 12 months": [
+        "останні 12 місяців"
+      ],
+      "the last 3 months": [
+        "останні 3 місяці"
+      ],
+      "the last month": [
+        "останній місяць"
       ]
     },
     "Time unit": {
@@ -8747,7 +8760,7 @@
         "Ви повинні ${ activateLink } ключі організації перед додаванням електронної адреси для неприватного учасника."
       ],
       "You will lose any customization you made so far.": [
-        "Ви втратите будь-які налаштування, зроблені досі."
+        "Ви втратите будь-які попередні налаштування."
       ],
       "You will not see this import record in the list anymore.": [
         "Ви більше не побачите цей запис імпорту в списку."

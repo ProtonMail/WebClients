@@ -2332,9 +2332,6 @@
       "End time out of bounds": [
         "Hora final fuera de límites"
       ],
-      "Event duration not supported": [
-        "Duración del evento no compatible"
-      ],
       "Event validation failed": [
         "Falló la validación del evento"
       ],
@@ -3634,6 +3631,9 @@
       "Scheduled": [
         "Programado"
       ],
+      "Scheduled send of this message will be cancelled.": [
+        "El envío programado de este mensaje será cancelado."
+      ],
       "Scheduling message...": [
         "Programando mensaje..."
       ],
@@ -3658,8 +3658,8 @@
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
         "El envío de mensajes desde la dirección @pm.me es una función de pago. Su mensaje será enviado desde su dirección predeterminada ${ email }"
       ],
-      "Servers are unreachable.": [
-        "Los servidores no están disponibles."
+      "Servers are unreachable. Please try again in a few minutes": [
+        "No hay conexión con los servidores. Intente de nuevo en unos minutos."
       ],
       "Session timed out.": [
         "Sesión agotada."
@@ -3754,6 +3754,9 @@
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Este navegador no admite la previsualización de documentos PDF. Descargue el archivo."
+      ],
+      "This conversation contains a scheduled message. Sending of this message will be cancelled.": [
+        "Esta conversación contiene un mensaje programado. Se cancelará el envío de este mensaje."
       ],
       "This conversation contains non-trashed messages.": [
         "Esta conversación contiene mensajes no borrados."
@@ -4450,9 +4453,6 @@
       "Country": [
         "País"
       ],
-      "Cryptographic scheme": [
-        "Esquema criptográfico"
-      ],
       "CVV code": [
         "Código CVV"
       ],
@@ -4611,6 +4611,9 @@
       ],
       "Payer": [
         "Pagador"
+      ],
+      "PGP scheme": [
+        "Esquema PGP"
       ],
       "Phone number": [
         "Número telefónico"
@@ -6636,6 +6639,9 @@
       ],
       "Move to trash": [
         "Mover a la papelera"
+      ],
+      "Moving a scheduled message": [
+        "Mover un mensaje programado"
       ],
       "Network error": [
         "Error de red"

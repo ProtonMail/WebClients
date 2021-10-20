@@ -2356,9 +2356,6 @@
       "End time out of bounds": [
         "Krajnje vrijeme je van granica"
       ],
-      "Event duration not supported": [
-        "Duljina događaja nije podržana"
-      ],
       "Event validation failed": [
         "Neuspjela provjera valjanosti događaja"
       ],
@@ -3710,6 +3707,9 @@
       "Scheduled": [
         "Zakazano"
       ],
+      "Scheduled send of this message will be cancelled.": [
+        ""
+      ],
       "Scheduling message...": [
         "Zakazivanje poruke..."
       ],
@@ -3734,8 +3734,8 @@
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
         "Slanje poruka s @pm.me adrese je plaćena značajka. Vaša će poruka biti poslana s Vaše zadane adrese ${ email }"
       ],
-      "Servers are unreachable.": [
-        "Poslužitelji nisu dostupni."
+      "Servers are unreachable. Please try again in a few minutes": [
+        ""
       ],
       "Session timed out.": [
         "Sesija je istekla."
@@ -3831,6 +3831,9 @@
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Ovaj preglednik ne podržava pregled PDF dokumenata. Preuzmite datoteku."
+      ],
+      "This conversation contains a scheduled message. Sending of this message will be cancelled.": [
+        ""
       ],
       "This conversation contains non-trashed messages.": [
         "Ovaj razgovor sadrži poruke koje nisu u otpadu."
@@ -4537,9 +4540,6 @@
       "Country": [
         "Država"
       ],
-      "Cryptographic scheme": [
-        "Kriptografska shema"
-      ],
       "CVV code": [
         "CVV kôd"
       ],
@@ -4698,6 +4698,9 @@
       ],
       "Payer": [
         "Platitelj"
+      ],
+      "PGP scheme": [
+        ""
       ],
       "Phone number": [
         "Broj telefona"
@@ -6776,6 +6779,9 @@
       ],
       "Move to trash": [
         "Premjesti u otpad"
+      ],
+      "Moving a scheduled message": [
+        ""
       ],
       "Network error": [
         "Pogreška mreže"

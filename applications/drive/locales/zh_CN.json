@@ -1322,6 +1322,9 @@
       "You must set a name": [
         "您必须设置一个名称"
       ],
+      "Your browser does not support uploading folders": [
+        ""
+      ],
       "Your import will not be processed.": [
         "您的导入将不会被处理。"
       ]
@@ -2115,8 +2118,8 @@
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20-personal-calendar limit. You can also merge imported calendars with existing Proton calendars.": [
         ""
       ],
-      "Servers are unreachable.": [
-        "无法连接服务器。"
+      "Servers are unreachable. Please try again in a few minutes": [
+        ""
       ],
       "Session timed out.": [
         "会话已超时。"
@@ -2495,7 +2498,7 @@
         "加载嵌入图像"
       ],
       "Load remote content": [
-        "加载外部内容"
+        "加载外链内容"
       ],
       "Mark as unread": [
         "标记为未读"
@@ -2688,9 +2691,6 @@
       "Country": [
         "国家"
       ],
-      "Cryptographic scheme": [
-        "加密格式"
-      ],
       "CVV code": [
         "CVV 码"
       ],
@@ -2822,6 +2822,9 @@
       ],
       "Payer": [
         "付款人"
+      ],
+      "PGP scheme": [
+        ""
       ],
       "Phone number": [
         "手机号码"
@@ -3739,9 +3742,6 @@
       ]
     },
     "Suffix for price": {
-      "/ mo": [
-        ""
-      ],
       "/ month": [
         "/月"
       ]

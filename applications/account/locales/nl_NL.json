@@ -1258,6 +1258,11 @@
         "20 / gebruiker *"
       ]
     },
+    "Calendar import section description": {
+      "You can import ICS files from another calendar to ${ CALENDAR_APP_NAME }. This lets you quickly import one event or your entire agenda.": [
+        ""
+      ]
+    },
     "Calendar limit warning": {
       "You have reached the maximum of ${ calendarsLimit } calendar.": [
         "U hebt het maximum van één agenda bereikt.",
@@ -1934,7 +1939,7 @@
       "Please enable multi-user support before adding users to your organization.": [
         "Activeer multi-user ondersteuning voordat u gebruikers toevoegt aan uw organisatie."
       ],
-      "Please fix the highlighted conflicts to proceed.": [
+      "Please fix the highlighted conflict to proceed.": [
         "",
         ""
       ],
@@ -2200,9 +2205,6 @@
       ],
       "Event": [
         "Afspraak"
-      ],
-      "Event duration not supported": [
-        "Afspraakduur niet ondersteund"
       ],
       "Event validation failed": [
         "Validatie van afspraak mislukt"
@@ -4038,8 +4040,8 @@
       "Server load": [
         "Serverbelasting"
       ],
-      "Servers are unreachable.": [
-        "Servers zijn onbereikbaar."
+      "Servers are unreachable. Please try again in a few minutes": [
+        ""
       ],
       "Session timed out.": [
         "Sessie verlopen."
@@ -4358,9 +4360,6 @@
       ],
       "You can generate a new encryption key if you think your previous key has been compromised.": [
         "U kunt een nieuwe versleutelingssleutel genereren als u denkt dat uw vorige sleutel uitgelekt is."
-      ],
-      "You can import ICS files from another calendar to ${ CALENDAR_APP_NAME }. This lets you quickly import one event or your entire agenda.": [
-        ""
       ],
       "You can now receive messages to your @pm.me address. Upgrade to a paid plan to also send emails using your @pm.me address and create additional @pm.me addresses.": [
         "U kunt nu berichten ontvangen op uw @pm.me-adres. Upgrade naar een betaald abonnement om ook e-mails te versturen met behulp van uw @pm.me-adres en maak additionele @pm.me-adressen."
@@ -5095,8 +5094,8 @@
       "Default notifications": [
         "Standaardinstellingen van meldingen"
       ],
-      "Default PGP settings": [
-        "Standaard PGP-instellingen"
+      "Default PGP scheme": [
+        ""
       ],
       "Default view": [
         "Standaardweergave"
@@ -5810,6 +5809,7 @@
     },
     "Loading info": {
       "${ createdCalendars } of ${ calendarsToBeCreated } created": [
+        "",
         ""
       ],
       "Almost there": [
@@ -7286,9 +7286,6 @@
       ]
     },
     "Suffix for price": {
-      "/ mo": [
-        ""
-      ],
       "/ month": [
         "/ maand"
       ]
@@ -7330,6 +7327,20 @@
       ],
       "vCard field": [
         "vCard-veld"
+      ]
+    },
+    "Time period": {
+      "account creation date": [
+        ""
+      ],
+      "the last 12 months": [
+        ""
+      ],
+      "the last 3 months": [
+        ""
+      ],
+      "the last month": [
+        ""
       ]
     },
     "Time unit": {

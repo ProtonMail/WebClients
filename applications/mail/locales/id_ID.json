@@ -1945,7 +1945,7 @@
         "Masukkan 6 digit"
       ],
       "Error connecting to the Bitcoin API.": [
-        "Gagal sambung ke API Bitcoin."
+        "Gagal menyambungkan ke API Bitcoin."
       ],
       "Error in one of the conditions": [
         "Kesalahan pada salah satu kondisi"
@@ -2308,9 +2308,6 @@
       "End time out of bounds": [
         "Waktu akhif di luar batas"
       ],
-      "Event duration not supported": [
-        "Durasi acara tidak didukung"
-      ],
       "Event validation failed": [
         "Validasi acara gagal"
       ],
@@ -2413,7 +2410,7 @@
         "Berkas ICS terlampir tidak dapat didekripsi"
       ],
       "Attached ICS file could not be parsed": [
-        "Berkas ICS terlampir tidak dapar diurai"
+        "Berkas ICS terlampir tidak dapat diurai"
       ],
       "Invalid invitation": [
         "Undangan tidak valid"
@@ -3558,6 +3555,9 @@
       "Scheduled": [
         "Dijadwalkan"
       ],
+      "Scheduled send of this message will be cancelled.": [
+        "Pesan-pesan yang terjadwal tidak akan terkirim."
+      ],
       "Scheduling message...": [
         "Menjadwalkan pesan..."
       ],
@@ -3582,8 +3582,8 @@
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
         "Pengiriman pesan dari alamat @pm.me hanya tersedia bagi pengguna yang menggunakan layanan berbayar. Pesan Anda akan dikirim dari alamat bawaan Anda ${ email }"
       ],
-      "Servers are unreachable.": [
-        "Server tidak terjangkau."
+      "Servers are unreachable. Please try again in a few minutes": [
+        "Server-server kami sedang tidak dapat dijangkau. Silakan coba lagi dalam beberapa menit"
       ],
       "Session timed out.": [
         "Sesi habis."
@@ -3677,6 +3677,9 @@
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Peramban web ini tidak mendukung untuk melakukan pratinjau dokumen PDF. Silahkan unduh berkas tersebut."
+      ],
+      "This conversation contains a scheduled message. Sending of this message will be cancelled.": [
+        "Percakapan ini mengandung pesan yang terjadwal. Pesan ini tidak akan terkirim."
       ],
       "This conversation contains non-trashed messages.": [
         "Percakapan ini berisi pesan yang tidak dibuang."
@@ -4363,9 +4366,6 @@
       "Country": [
         "Negara"
       ],
-      "Cryptographic scheme": [
-        "Skema kriptografi"
-      ],
       "CVV code": [
         "Kode CVV"
       ],
@@ -4524,6 +4524,9 @@
       ],
       "Payer": [
         "Pembayar"
+      ],
+      "PGP scheme": [
+        "Skema PGP"
       ],
       "Phone number": [
         "Nomor telepon"
@@ -6496,6 +6499,9 @@
       ],
       "Move to trash": [
         "Pindahkan ke sampah"
+      ],
+      "Moving a scheduled message": [
+        "Memindahkan pesan yang terjadwal"
       ],
       "Network error": [
         "Kesalahan jaringan"

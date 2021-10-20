@@ -2356,9 +2356,6 @@
       "End time out of bounds": [
         "Timp final în afara limitelor"
       ],
-      "Event duration not supported": [
-        "Durată eveniment nesuportată"
-      ],
       "Event validation failed": [
         "Validare eveniment eșuată"
       ],
@@ -3710,6 +3707,9 @@
       "Scheduled": [
         "Programate"
       ],
+      "Scheduled send of this message will be cancelled.": [
+        "Trimiterea programată a acestui mesaj va fi anulată."
+      ],
       "Scheduling message...": [
         "Se programează mesajul..."
       ],
@@ -3734,8 +3734,8 @@
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
         "Trimiterea mesajelor de la o adresă @pm.me este o funcție cu plată. Mesajul va fi trimis de la adresa implicită ${ email }."
       ],
-      "Servers are unreachable.": [
-        "Servere sunt inaccesibile."
+      "Servers are unreachable. Please try again in a few minutes": [
+        "Serverele sunt inaccesibile. Vă rugăm să încercați din nou în câteva minute"
       ],
       "Session timed out.": [
         "Sesiune expirată."
@@ -3831,6 +3831,9 @@
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Acest navigator nu acceptă previzualizarea documentelor PDF. Descărcați fișierul."
+      ],
+      "This conversation contains a scheduled message. Sending of this message will be cancelled.": [
+        "Această conversație conține un mesaj programat. Trimiterea acestui mesaj va fi anulată."
       ],
       "This conversation contains non-trashed messages.": [
         "Această conversație conține mesaje neșterse."
@@ -4537,9 +4540,6 @@
       "Country": [
         "Țara"
       ],
-      "Cryptographic scheme": [
-        "Schemă criptografică"
-      ],
       "CVV code": [
         "Cod CVV"
       ],
@@ -4698,6 +4698,9 @@
       ],
       "Payer": [
         "Payer"
+      ],
+      "PGP scheme": [
+        "Schema PGP"
       ],
       "Phone number": [
         "Număr de telefon"
@@ -6776,6 +6779,9 @@
       ],
       "Move to trash": [
         "Mutare în «Gunoi»"
+      ],
+      "Moving a scheduled message": [
+        "Mutarea unui mesaj programat"
       ],
       "Network error": [
         "Eroare de rețea"

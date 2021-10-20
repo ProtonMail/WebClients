@@ -1251,6 +1251,9 @@
       "You must set a name": [
         "Vous devez définir un nom"
       ],
+      "Your browser does not support uploading folders": [
+        ""
+      ],
       "Your import will not be processed.": [
         "Votre importation ne sera pas traitée."
       ]
@@ -2077,8 +2080,8 @@
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20-personal-calendar limit. You can also merge imported calendars with existing Proton calendars.": [
         ""
       ],
-      "Servers are unreachable.": [
-        "Les serveurs sont inaccessibles."
+      "Servers are unreachable. Please try again in a few minutes": [
+        ""
       ],
       "Session timed out.": [
         "Session expirée."
@@ -2651,9 +2654,6 @@
       "Country": [
         "Pays"
       ],
-      "Cryptographic scheme": [
-        "Protocole de chiffrement"
-      ],
       "CVV code": [
         "Code CVC"
       ],
@@ -2785,6 +2785,9 @@
       ],
       "Payer": [
         "Payeur"
+      ],
+      "PGP scheme": [
+        ""
       ],
       "Phone number": [
         "Numéro de téléphone"
@@ -3736,9 +3739,6 @@
       ]
     },
     "Suffix for price": {
-      "/ mo": [
-        ""
-      ],
       "/ month": [
         "/mois"
       ]

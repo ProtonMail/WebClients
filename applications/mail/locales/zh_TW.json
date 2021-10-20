@@ -2308,9 +2308,6 @@
       "End time out of bounds": [
         "結束時間超出界限"
       ],
-      "Event duration not supported": [
-        "事件時長不受支援"
-      ],
       "Event validation failed": [
         "事件驗證失敗"
       ],
@@ -3558,6 +3555,9 @@
       "Scheduled": [
         "已排程"
       ],
+      "Scheduled send of this message will be cancelled.": [
+        ""
+      ],
       "Scheduling message...": [
         "排程傳送郵件中…"
       ],
@@ -3582,8 +3582,8 @@
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
         "從 @pm.me 電子郵件地址寄送郵件是付費功能。您的郵件將從您的預設電子郵件地址 ${ email } 傳送"
       ],
-      "Servers are unreachable.": [
-        "無法連上伺服器。"
+      "Servers are unreachable. Please try again in a few minutes": [
+        ""
       ],
       "Session timed out.": [
         "工作階段已逾時。"
@@ -3677,6 +3677,9 @@
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "此瀏覽器不支援預覽 PDF 文件。請下載該檔案。"
+      ],
+      "This conversation contains a scheduled message. Sending of this message will be cancelled.": [
+        ""
       ],
       "This conversation contains non-trashed messages.": [
         "此會話包含不在垃圾桶中的郵件。"
@@ -4363,9 +4366,6 @@
       "Country": [
         "國家"
       ],
-      "Cryptographic scheme": [
-        "加密配置"
-      ],
       "CVV code": [
         "信用卡安全碼"
       ],
@@ -4524,6 +4524,9 @@
       ],
       "Payer": [
         "付款人"
+      ],
+      "PGP scheme": [
+        ""
       ],
       "Phone number": [
         "電話號碼"
@@ -6496,6 +6499,9 @@
       ],
       "Move to trash": [
         "移動至垃圾桶"
+      ],
+      "Moving a scheduled message": [
+        ""
       ],
       "Network error": [
         "網路錯誤"

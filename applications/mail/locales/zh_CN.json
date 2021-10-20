@@ -2308,9 +2308,6 @@
       "End time out of bounds": [
         "结束时间超出限制"
       ],
-      "Event duration not supported": [
-        "不支持此事件持续时间"
-      ],
       "Event validation failed": [
         "事件验证失败"
       ],
@@ -3558,6 +3555,9 @@
       "Scheduled": [
         "已加入日程"
       ],
+      "Scheduled send of this message will be cancelled.": [
+        ""
+      ],
       "Scheduling message...": [
         "定时发送邮件中..."
       ],
@@ -3582,8 +3582,8 @@
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
         "从 @pm.me 地址发送邮件需要付费。您的邮件仍将从您的首选地址 ${ email } 发送。"
       ],
-      "Servers are unreachable.": [
-        "无法连接服务器。"
+      "Servers are unreachable. Please try again in a few minutes": [
+        ""
       ],
       "Session timed out.": [
         "会话已超时。"
@@ -3678,6 +3678,9 @@
       "This browser does not support previewing PDF documents. Please download the file.": [
         "您目前使用的浏览器不支持查看 PDF 文件，请下载后打开。"
       ],
+      "This conversation contains a scheduled message. Sending of this message will be cancelled.": [
+        ""
+      ],
       "This conversation contains non-trashed messages.": [
         "此会话包含不在废件箱中的邮件。"
       ],
@@ -3685,7 +3688,7 @@
         "此会话包含废件箱中的邮件。"
       ],
       "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded!": [
-        "此电子邮件与其域的身份要求验证失败。它可能是欺骗或不当转发!"
+        "不能确定此邮件是否来自该域名，这可能是欺诈邮件，也可能是投递过程出现了问题。"
       ],
       "This invitation is saved in a disabled calendar.": [
         "此邀请被保存到一个禁用的日历。"
@@ -4146,7 +4149,7 @@
         "加载嵌入图像"
       ],
       "Load remote content": [
-        "加载外部内容"
+        "加载外链内容"
       ],
       "Mark as unread": [
         "标记为未读"
@@ -4363,9 +4366,6 @@
       "Country": [
         "国家"
       ],
-      "Cryptographic scheme": [
-        "加密方案"
-      ],
       "CVV code": [
         "CVV 码"
       ],
@@ -4524,6 +4524,9 @@
       ],
       "Payer": [
         "付款人"
+      ],
+      "PGP scheme": [
+        ""
       ],
       "Phone number": [
         "电话号码"
@@ -6450,7 +6453,7 @@
         "加载嵌入图像"
       ],
       "Load remote content": [
-        "加载外部内容"
+        "加载外链内容"
       ],
       "Mailbox density": [
         "邮箱密度"
@@ -6496,6 +6499,9 @@
       ],
       "Move to trash": [
         "移至废件箱"
+      ],
+      "Moving a scheduled message": [
+        ""
       ],
       "Network error": [
         "网络错误"

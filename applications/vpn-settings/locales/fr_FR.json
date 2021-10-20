@@ -1609,8 +1609,8 @@
       "Server load": [
         "Charge du serveur"
       ],
-      "Servers are unreachable.": [
-        "Les serveurs sont inaccessibles."
+      "Servers are unreachable. Please try again in a few minutes": [
+        "Les serveurs sont inaccessibles. Veuillez réessayer dans quelques minutes"
       ],
       "Session timed out.": [
         "Session expirée."
@@ -3094,9 +3094,6 @@
       ]
     },
     "Suffix for price": {
-      "/ mo": [
-        "/mois"
-      ],
       "/ month": [
         "/mois"
       ]
@@ -3769,11 +3766,11 @@
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Les rapports d’erreur ne sont pas chiffrés de bout en bout, merci de ne pas envoyer d'informations sensibles."
       ],
+      "The date and time settings on your device are out of sync. ${ learnMore }": [
+        "Les paramètres de date et heure de votre appareil ne sont pas synchronisés. ${ learnMore }"
+      ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Malheureusement, nous ne sommes pas en ligne pour le moment. Veuillez remplir le formulaire ci-dessous pour décrire votre problème, nous l'examinerons et vous contacterons lorsque nous serons de nouveau en ligne."
-      ],
-      "Your local date & time settings seem to be out of sync.": [
-        "Vos paramètres de date et d'heure locaux semblent désynchronisés."
       ]
     }
   }
