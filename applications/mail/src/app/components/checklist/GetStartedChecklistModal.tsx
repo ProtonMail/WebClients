@@ -47,7 +47,7 @@ const MailGetStartedChecklistModal = ({ onClose, ...rest }: Partial<ModalPropsIn
                                 if (isMnemonicAvailable) {
                                     createModal(<MnemonicPromptModal />);
                                 } else {
-                                    goToSettings('/authentication#recovery-notification');
+                                    goToSettings('/authentication#recovery-notification', undefined, true);
                                 }
                                 break;
                             }
