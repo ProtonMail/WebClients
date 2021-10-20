@@ -1,4 +1,3 @@
-import useCalendarEmailNotificationsFeature from '@proton/components/hooks/useCalendarEmailNotificationsFeature';
 import { updateAttendeePartstat, updateCalendar, updatePersonalEventPart } from '@proton/shared/lib/api/calendars';
 import { processApiRequestsSafe } from '@proton/shared/lib/api/helpers/safeApiRequests';
 import { toApiPartstat } from '@proton/shared/lib/calendar/attendees';
@@ -56,6 +55,7 @@ import {
     useGetCalendarEventRaw,
     useModals,
     useNotifications,
+    useCalendarEmailNotificationsFeature,
 } from '@proton/components';
 import { useReadCalendarBootstrap } from '@proton/components/hooks/useGetCalendarBootstrap';
 import useGetCalendarEventPersonal from '@proton/components/hooks/useGetCalendarEventPersonal';

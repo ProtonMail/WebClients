@@ -61,7 +61,12 @@ const AttachingModalContent = ({
             {alert}
             <Bordered className={classnames(['flex relative', !!model.failure && 'bordered-container--error'])}>
                 {model.fileAttached ? (
-                    <AttachedFile file={model.fileAttached} iconName="calendar-days" onClear={onClear} />
+                    <AttachedFile
+                        file={model.fileAttached}
+                        iconName="calendar-days"
+                        clear={c('Action').t`Delete`}
+                        onClear={onClear}
+                    />
                 ) : (
                     <Dropzone
                         isHovered={isDropzoneHovered}

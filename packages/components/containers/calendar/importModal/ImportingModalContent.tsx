@@ -1,3 +1,6 @@
+import { ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
+import { ImportEventError } from '@proton/shared/lib/calendar/icsSurgery/ImportEventError';
+import { processInBatches } from '@proton/shared/lib/calendar/import/encryptAndSubmit';
 import {
     extractTotals,
     getSupportedEventsWithRecurrenceId,
@@ -6,8 +9,7 @@ import {
     splitHiddenErrors,
 } from '@proton/shared/lib/calendar/import/import';
 import { ImportFatalError } from '@proton/shared/lib/calendar/import/ImportFatalError';
-import { Dispatch, SetStateAction, useEffect } from 'react';
-import { c } from 'ttag';
+import { getEventWithCalendarAlarms } from '@proton/shared/lib/calendar/integration/invite';
 
 import {
     EncryptedEvent,
@@ -15,11 +17,11 @@ import {
     ImportCalendarModel,
     ImportedEvent,
 } from '@proton/shared/lib/interfaces/calendar';
-import { ImportEventError } from '@proton/shared/lib/calendar/icsSurgery/ImportEventError';
-import { processInBatches } from '@proton/shared/lib/calendar/import/encryptAndSubmit';
+import { Dispatch, SetStateAction, useEffect } from 'react';
+import { c } from 'ttag';
 
 import { Alert, DynamicProgress } from '../../../components';
-import { useApi, useBeforeUnload, useGetCalendarInfo } from '../../../hooks';
+import { useApi, useBeforeUnload, useGetCalendarInfo, useCalendarEmailNotificationsFeature } from '../../../hooks';
 
 interface Props {
     model: ImportCalendarModel;
@@ -28,7 +30,8 @@ interface Props {
 }
 const ImportingModalContent = ({ model, setModel, onFinish }: Props) => {
     const api = useApi();
-    const getIdsAndKeys = useGetCalendarInfo();
+    const getCalendarInfo = useGetCalendarInfo();
+    const enabledEmailNotifications = useCalendarEmailNotificationsFeature();
 
     useBeforeUnload(c('Alert').t`By leaving now, some events may not be imported`);
 
@@ -63,8 +66,17 @@ const ImportingModalContent = ({ model, setModel, onFinish }: Props) => {
 
         const process = async () => {
             try {
-                const { memberID, addressKeys, decryptedCalendarKeys } = await getIdsAndKeys(model.calendar.ID);
-                const { withoutRecurrenceId, withRecurrenceId } = splitByRecurrenceId(model.eventsParsed);
+                const { memberID, addressKeys, decryptedCalendarKeys, calendarSettings } = await getCalendarInfo(
+                    model.calendar.ID
+                );
+                // add calendar alarms to invitations
+                const vevents =
+                    model.method !== ICAL_METHOD.PUBLISH
+                        ? model.eventsParsed.map((vevent) =>
+                              getEventWithCalendarAlarms(vevent, calendarSettings, enabledEmailNotifications)
+                          )
+                        : [...model.eventsParsed];
+                const { withoutRecurrenceId, withRecurrenceId } = splitByRecurrenceId(vevents);
                 const processData = {
                     events: withoutRecurrenceId,
                     calendarID: model.calendar.ID,
