@@ -1,4 +1,3 @@
-import useCalendarEmailNotificationsFeature from '@proton/components/hooks/useCalendarEmailNotificationsFeature';
 import { Address, UserSettings } from '@proton/shared/lib/interfaces';
 import { Calendar } from '@proton/shared/lib/interfaces/calendar';
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
@@ -16,6 +15,7 @@ import {
     useGetCalendarEventRaw,
     useGetCalendarInfo,
     useLoading,
+    useCalendarEmailNotificationsFeature,
 } from '@proton/components';
 import { useGetCanonicalEmailsMap } from '@proton/components/hooks/useGetCanonicalEmailsMap';
 import { c } from 'ttag';

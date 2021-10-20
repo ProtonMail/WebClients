@@ -51,6 +51,22 @@ export const generateVeventHashUID = async (binaryString: string, uid = '') => {
     return `${sandwichedHash}${croppedUID}`;
 };
 
+export const getOriginalUID = (uid = '') => {
+    if (!uid) {
+        return '';
+    }
+    const regexWithOriginalUid = new RegExp(`^${HASH_UID_PREFIX}[abcdef\\d]{40}${ORIGINAL_UID_PREFIX}(.*)`);
+    const [, match] = uid.match(regexWithOriginalUid) || [];
+    if (match) {
+        return match;
+    }
+    const regexWithoutOriginalUid = new RegExp(`^${HASH_UID_PREFIX}[abcdef\\d]{40}$`);
+    if (regexWithoutOriginalUid.test(uid)) {
+        return '';
+    }
+    return uid;
+};
+
 export const getSupportedUID = (uid: VcalUidProperty) => {
     // The API does not accept UIDs longer than 191 characters
     const uidLength = uid.value.length;

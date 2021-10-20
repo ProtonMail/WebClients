@@ -20,9 +20,8 @@ import {
     TextArea,
     Toggle,
 } from '../../../components';
-import useCalendarEmailNotificationsFeature from '../../../hooks/useCalendarEmailNotificationsFeature';
 import { getCalendarPayload, getCalendarSettingsPayload, getDefaultModel, validate } from './calendarModalState';
-import { useLoading } from '../../../hooks';
+import { useLoading, useCalendarEmailNotificationsFeature } from '../../../hooks';
 import { GenericError } from '../../error';
 import Notifications from '../notifications/Notifications';
 import useGetCalendarSetup from '../hooks/useGetCalendarSetup';

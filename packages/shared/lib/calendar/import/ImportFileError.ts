@@ -33,7 +33,8 @@ const getErrorMessage = (errorType: IMPORT_ERROR_TYPE, filename = '') => {
             .t`${CALENDAR_APP_NAME} only supports importing calendars with iCal version 2.0.`;
     }
     if (errorType === IMPORT_ERROR_TYPE.INVALID_METHOD) {
-        return c('Error importing calendar').t`Your file ${formattedFilename} is an invitation and cannot be imported.`;
+        return c('Error importing calendar')
+            .t`Your file ${formattedFilename} has an invalid method and cannot be imported.`;
     }
     if (errorType === IMPORT_ERROR_TYPE.NO_EVENTS) {
         return c('Error importing calendar').t`Your file ${formattedFilename} has no events to be imported.`;
