@@ -1,5 +1,6 @@
 export * from './addressesAutomplete';
 export * from './alert';
+export * from './alertModal';
 export * from './attachedFile';
 export * from './autocomplete';
 export * from './badge';
@@ -36,6 +37,7 @@ export * from './loader';
 export * from './logo';
 export * from './miniCalendar';
 export * from './modal';
+export * from './modalTwo';
 export * from './option';
 export * from './orderable';
 export * from './orderableTable';

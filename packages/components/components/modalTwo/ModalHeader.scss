@@ -1,0 +1,13 @@
+.modal-two-header {
+  margin: 1em 1em .5em var(--margin);
+
+  &--with-back {
+    margin-inline-start: 1em;
+  }
+
+  &-actions {
+    * + * {
+      margin-inline-start: .25em;
+    } 
+  }
+}

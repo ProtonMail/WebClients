@@ -18,6 +18,7 @@ export { default as useCalendarSubscribeFeature } from './useCalendarSubscribeFe
 export { default as useCalendarEmailNotificationsFeature } from './useCalendarEmailNotificationsFeature';
 export * from './useCalendarUserSettings';
 export { default as useCanReactivateKeys } from './useCanReactivateKeys';
+export { default as useChanged } from './useChanged';
 export { useLabels, useFolders, useContactGroups } from './useCategories';
 export { default as useClickOutside } from './useClickOutside';
 export { default as useCombinedRefs } from './useCombinedRefs';
