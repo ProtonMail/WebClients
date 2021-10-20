@@ -1336,6 +1336,9 @@
       "You must set a name": [
         "Meg kell adnia egy nevet"
       ],
+      "Your browser does not support uploading folders": [
+        ""
+      ],
       "Your import will not be processed.": [
         "Az importálás nem lesz feldolgozva."
       ]
@@ -2162,8 +2165,8 @@
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20-personal-calendar limit. You can also merge imported calendars with existing Proton calendars.": [
         ""
       ],
-      "Servers are unreachable.": [
-        "A szerverek nem érhetők el."
+      "Servers are unreachable. Please try again in a few minutes": [
+        ""
       ],
       "Session timed out.": [
         "A munkamenet lejárt."
@@ -2736,9 +2739,6 @@
       "Country": [
         "Ország"
       ],
-      "Cryptographic scheme": [
-        "Titkosítási séma"
-      ],
       "CVV code": [
         "CVV kód"
       ],
@@ -2870,6 +2870,9 @@
       ],
       "Payer": [
         "Teherviselő"
+      ],
+      "PGP scheme": [
+        ""
       ],
       "Phone number": [
         "Telefonszám"
@@ -3821,9 +3824,6 @@
       ]
     },
     "Suffix for price": {
-      "/ mo": [
-        ""
-      ],
       "/ month": [
         "/ hó"
       ]

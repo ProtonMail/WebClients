@@ -1258,6 +1258,11 @@
         "20 / aseqdac *"
       ]
     },
+    "Calendar import section description": {
+      "You can import ICS files from another calendar to ${ CALENDAR_APP_NAME }. This lets you quickly import one event or your entire agenda.": [
+        ""
+      ]
+    },
     "Calendar limit warning": {
       "You have reached the maximum of ${ calendarsLimit } calendar.": [
         "Tessawḍeḍ amḍan afellay n ${ calendarsLimit } n uwitay.",
@@ -1934,7 +1939,7 @@
       "Please enable multi-user support before adding users to your organization.": [
         "Rme ma ulac aɣilif asefrek n ddeqs n yiseqdacen send ad ternuḍ iseqdacen ar tuddsa-ik."
       ],
-      "Please fix the highlighted conflicts to proceed.": [
+      "Please fix the highlighted conflict to proceed.": [
         "",
         ""
       ],
@@ -2200,9 +2205,6 @@
       ],
       "Event": [
         "Amaynut"
-      ],
-      "Event duration not supported": [
-        "Tanzagt n tedyant ur tettusefrak ara"
       ],
       "Event validation failed": [
         "Asentem n tedyant yecceḍ"
@@ -4038,8 +4040,8 @@
       "Server load": [
         "Aqeddac yuli-d"
       ],
-      "Servers are unreachable.": [
-        "Iqeddacen ur ttwawaḍen ara."
+      "Servers are unreachable. Please try again in a few minutes": [
+        ""
       ],
       "Session timed out.": [
         "Yemmed wakud n tɣimit."
@@ -4358,9 +4360,6 @@
       ],
       "You can generate a new encryption key if you think your previous key has been compromised.": [
         "Tzemreḍ ad tessirweḍ tasarut n uwgelhen tamaynut ma tcukkeḍ tasarut-ik n zik tettwaker."
-      ],
-      "You can import ICS files from another calendar to ${ CALENDAR_APP_NAME }. This lets you quickly import one event or your entire agenda.": [
-        ""
       ],
       "You can now receive messages to your @pm.me address. Upgrade to a paid plan to also send emails using your @pm.me address and create additional @pm.me addresses.": [
         "Tzemreḍ tura ad d-tremseḍ iznan ɣer tansa-inek·inem @pm.me. Leqqem ɣer uɣawas n lexlaṣ iwakken daɣen ad tazneḍ imaylen s useqdec n tansa @pm.me syei rnu tansiwin-nniḍen @pm.me."
@@ -5095,8 +5094,8 @@
       "Default notifications": [
         "Alɣuten imezwar"
       ],
-      "Default PGP settings": [
-        "Iɣewwaren n PGP imezwer"
+      "Default PGP scheme": [
+        ""
       ],
       "Default view": [
         "Asken amezwer"
@@ -5810,6 +5809,7 @@
     },
     "Loading info": {
       "${ createdCalendars } of ${ calendarsToBeCreated } created": [
+        "",
         ""
       ],
       "Almost there": [
@@ -7286,9 +7286,6 @@
       ]
     },
     "Suffix for price": {
-      "/ mo": [
-        ""
-      ],
       "/ month": [
         "/ aggur"
       ]
@@ -7330,6 +7327,20 @@
       ],
       "vCard field": [
         "urti vCard"
+      ]
+    },
+    "Time period": {
+      "account creation date": [
+        ""
+      ],
+      "the last 12 months": [
+        ""
+      ],
+      "the last 3 months": [
+        ""
+      ],
+      "the last month": [
+        ""
       ]
     },
     "Time unit": {

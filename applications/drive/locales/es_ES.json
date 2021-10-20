@@ -6,7 +6,7 @@
   "contexts": {
     "Action": {
       "${ boldSave } by switching to annual billing": [
-        "${ boldSave } al cambiar a facturación anual"
+        "${ boldSave } al cambiar a la facturación anual"
       ],
       "${ BRAND_NAME } introduction": [
         "${ BRAND_NAME } introducción"
@@ -60,7 +60,7 @@
         "Cancelar transferencias"
       ],
       "Cancel upload": [
-        "Cancelar carga"
+        "Cancelar subida"
       ],
       "Chat with us": [
         "Chatea con nosotros"
@@ -99,7 +99,7 @@
         "Cerrar transferencias"
       ],
       "Compare all features": [
-        "Comparar todas las funciones"
+        "Comparar todas las funcionalidades"
       ],
       "Compare plans": [
         "Comparar planes"
@@ -1077,7 +1077,7 @@
         "Cantidad por encima del máximo."
       ],
       "Amount below minimum.": [
-        "Cantidad inferior al mínimo."
+        "Cantidad por debajo del mínimo."
       ],
       "Authentication canceled.": [
         "Autenticación cancelada."
@@ -1336,6 +1336,9 @@
       "You must set a name": [
         "Debes establecer un nombre"
       ],
+      "Your browser does not support uploading folders": [
+        ""
+      ],
       "Your import will not be processed.": [
         "Tu importación no será procesada."
       ]
@@ -1586,7 +1589,7 @@
         ""
       ],
       "${ canceledCount } Canceled": [
-        "${ canceledCount } cancelados",
+        "${ canceledCount } cancelado",
         "${ canceledCount } cancelados"
       ],
       "${ contactEmailsLength } Member": [
@@ -1610,19 +1613,19 @@
         "${ contactsEnumeration } contiene múltiples direcciones de correo electrónico. Selecciona qué dirección de correo electrónico o direcciones añadir a este grupo."
       ],
       "${ doneCount } Finished": [
-        "${ doneCount } finalizados",
+        "${ doneCount } finalizado",
         "${ doneCount } finalizados"
       ],
       "${ doneDownloadsCount } Downloaded": [
-        "${ doneDownloadsCount } descargados",
+        "${ doneDownloadsCount } descargado",
         "${ doneDownloadsCount } descargados"
       ],
       "${ doneUploadsCount } Uploaded": [
-        "${ doneUploadsCount } subidos",
+        "${ doneUploadsCount } subido",
         "${ doneUploadsCount } subidos"
       ],
       "${ errorCount } Failed": [
-        "${ errorCount } fallidos",
+        "${ errorCount } fallido",
         "${ errorCount } fallidos"
       ],
       "${ groupCounts } group found": [
@@ -1633,7 +1636,7 @@
         "${ mailAppName } Gratuito"
       ],
       "${ mailAppName } Professional starts with one user, and each user adds 5 GB and 5 email addresses to the organization’s pool.": [
-        "${ mailAppName } Professional comienza con un usuario, y cada usuario agrega 5 GB y 5 direcciones de correo electrónico al grupo de la organización."
+        "${ mailAppName } Professional comienza con un usuario, y cada usuario añade 5 GB y 5 direcciones de correo al grupo de la organización."
       ],
       "${ namesWithoutLast } and ${ nameOfLast }": [
         "${ namesWithoutLast } y ${ nameOfLast }"
@@ -1745,10 +1748,10 @@
         ""
       ],
       "Allows you to host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
-        "Te permite alojar correos electrónicos para tu(s) propio(s) dominio(s) en ${ mailAppName }, p. ej., john.smith@example.com"
+        "Te permite alojar correos electrónicos para tu(s) propio(s) dominio(s) en ${ mailAppName }, p. ej., severo.ochoa@ejemplo.com"
       ],
       "Amount below minimum (${ amount }).": [
-        "Cantidad inferior al mínimo (${ amount })."
+        "Cantidad por debajo del mínimo (${ amount })."
       ],
       "and": [
         ""
@@ -2162,8 +2165,8 @@
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20-personal-calendar limit. You can also merge imported calendars with existing Proton calendars.": [
         ""
       ],
-      "Servers are unreachable.": [
-        "No se puede establecer conexión con los servidores."
+      "Servers are unreachable. Please try again in a few minutes": [
+        ""
       ],
       "Session timed out.": [
         "El tiempo de la sesión ha expirado."
@@ -2193,10 +2196,10 @@
         "equipo de soporte"
       ],
       "Switch to ${ professionalPlan } to add more connections.": [
-        "Cambia a ${ professionalPlan } para agregar más conexiones."
+        "Cambia a ${ professionalPlan } para añadir más conexiones."
       ],
       "Switch to ${ professionalPlan } to add more users.": [
-        "Cambia a ${ professionalPlan } para agregar más usuarios."
+        "Cambia a ${ professionalPlan } para añadir más usuarios."
       ],
       "Thank you for supporting our mission.": [
         "Gracias por apoyar nuestra misión."
@@ -2299,7 +2302,7 @@
         "Soportamos la importación de archivos CSV desde Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora y otras aplicaciones. También soportamos la importación de la codificación vCard 4.0 (codificación UTF-8)."
       ],
       "We use 3-D Secure to protect your payments.": [
-        "Utilizamos 3-D Secure para proteger sus pagos."
+        "Utilizamos 3-D Secure para proteger tus pagos."
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Le redirigiremos a PayPal en una pestaña nueva del navegador para completar esta transacción. Si usa cualquier bloqueador emergente, desactívelo para continuar."
@@ -2736,9 +2739,6 @@
       "Country": [
         "País"
       ],
-      "Cryptographic scheme": [
-        "Esquema criptográfico"
-      ],
       "CVV code": [
         "Código CVV"
       ],
@@ -2770,7 +2770,7 @@
         "Expirado"
       ],
       "Expires": [
-        "Caduca"
+        "Expira"
       ],
       "Expiry date": [
         "Fecha de expiración"
@@ -2870,6 +2870,9 @@
       ],
       "Payer": [
         "Emisor del pago"
+      ],
+      "PGP scheme": [
+        ""
       ],
       "Phone number": [
         "Número de teléfono"
@@ -3242,7 +3245,7 @@
         "\"${ firstItemName }\" eliminado permanentemente de la papelera"
       ],
       "\"${ firstItemName }\" failed to be moved": [
-        "\"${ firstItemName }\" no se ha podido mover"
+        "\"${ firstItemName }\" no se pudo mover"
       ],
       "\"${ firstItemName }\" moved to trash": [
         "\"${ firstItemName }\" movido a la papelera"
@@ -3821,9 +3824,6 @@
       ]
     },
     "Suffix for price": {
-      "/ mo": [
-        ""
-      ],
       "/ month": [
         "/ mes"
       ]
@@ -3859,7 +3859,7 @@
     },
     "TableHeader": {
       "# of accesses": [
-        "No. de accesos"
+        "# de accesos"
       ],
       "Actions": [
         "Acciones"
@@ -3877,7 +3877,7 @@
         "Eliminado"
       ],
       "Expires": [
-        "Caduca"
+        "Expira"
       ],
       "Import": [
         "Importar"
@@ -3938,7 +3938,7 @@
     },
     "Title": {
       "# of accesses": [
-        "No. de accesos"
+        "# de accesos"
       ],
       "${ appName } customization": [
         "${ appName } personalización"
@@ -4024,7 +4024,7 @@
         "Cupón de descuento"
       ],
       "Create a new folder": [
-        "Crear una nueva carpeta"
+        ""
       ],
       "Create contact": [
         "Crear contacto"
@@ -4524,7 +4524,7 @@
         "Kill Switch / VPN siempre activa"
       ],
       "Languages supported": [
-        "Idiomas compatibles"
+        "Idiomas admitidos"
       ],
       "Locations/Countries": [
         "Ubicaciones/Países"

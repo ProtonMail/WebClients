@@ -1609,8 +1609,8 @@
       "Server load": [
         "Serverauslastung"
       ],
-      "Servers are unreachable.": [
-        "Server sind nicht erreichbar."
+      "Servers are unreachable. Please try again in a few minutes": [
+        "Die Server sind unerreichbar. Bitte versuche es in ein paar Minuten erneut"
       ],
       "Session timed out.": [
         "Zeitüberschreitung der Sitzung."
@@ -3094,9 +3094,6 @@
       ]
     },
     "Suffix for price": {
-      "/ mo": [
-        ""
-      ],
       "/ month": [
         "/Monat"
       ]
@@ -3769,11 +3766,11 @@
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Berichte sind nicht Ende-zu-Ende-verschlüsselt. Bitte senden Sie daher keine sensiblen Informationen."
       ],
+      "The date and time settings on your device are out of sync. ${ learnMore }": [
+        "Die Datums- und Zeiteinstellungen auf Ihrem Gerät sind nicht synchronisiert. ${ learnMore }"
+      ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Leider ist unser Team derzeit nicht online. Bitte füllen Sie das nachstehende Formular aus, um Ihr Problem zu beschreiben. Wir werden es prüfen und uns melden, sobald wir wieder online sind."
-      ],
-      "Your local date & time settings seem to be out of sync.": [
-        "Ihre lokalen Datums- und Zeiteinstellungen scheinen nicht synchronisiert zu sein."
       ]
     }
   }

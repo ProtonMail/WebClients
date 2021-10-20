@@ -1350,6 +1350,9 @@
       "You must set a name": [
         "Morate postaviti naziv"
       ],
+      "Your browser does not support uploading folders": [
+        ""
+      ],
       "Your import will not be processed.": [
         "Vaš uvoz nije moguće obraditi."
       ]
@@ -2209,8 +2212,8 @@
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20-personal-calendar limit. You can also merge imported calendars with existing Proton calendars.": [
         ""
       ],
-      "Servers are unreachable.": [
-        "Poslužitelji nisu dostupni."
+      "Servers are unreachable. Please try again in a few minutes": [
+        ""
       ],
       "Session timed out.": [
         "Sesija je istekla."
@@ -2784,9 +2787,6 @@
       "Country": [
         "Država"
       ],
-      "Cryptographic scheme": [
-        "Kriptografska shema"
-      ],
       "CVV code": [
         "CVV kôd"
       ],
@@ -2918,6 +2918,9 @@
       ],
       "Payer": [
         "Platitelj"
+      ],
+      "PGP scheme": [
+        ""
       ],
       "Phone number": [
         "Broj telefona"
@@ -3903,9 +3906,6 @@
       ]
     },
     "Suffix for price": {
-      "/ mo": [
-        ""
-      ],
       "/ month": [
         "/ mjesečno"
       ]

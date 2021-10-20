@@ -549,10 +549,10 @@
         "Вивантажити зображення"
       ],
       "Uploaded date: new to old": [
-        ""
+        "Дата вивантаження: від новіших до давніших"
       ],
       "Uploaded date: old to new": [
-        ""
+        "Дата вивантаження: від давніших до новіших"
       ],
       "Use ${ label } theme": [
         "Використовувати тему ${ label }"
@@ -1149,7 +1149,7 @@
         "Помилка підключення до Bitcoin API."
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
-        ""
+        "Не вдалося вивантажити файл \"${ item.name }\" через помилку \"${ error }\""
       ],
       "File cannot be merged with folder": [
         "Не можна об'єднувати файл з текою"
@@ -1245,10 +1245,10 @@
         "Обробка платежу не підтримується"
       ],
       "Please fix the highlighted conflict to proceed.": [
-        "",
-        "",
-        "",
-        ""
+        "Виправте вказану проблему, щоб продовжити.",
+        "Виправте вказані проблеми, щоб продовжити.",
+        "Виправте вказані проблеми, щоб продовжити.",
+        "Виправте вказані проблеми, щоб продовжити."
       ],
       "Preferences could not be saved": [
         "Не вдалося зберегти налаштування"
@@ -1363,6 +1363,9 @@
       ],
       "You must set a name": [
         "Ви повинні вказати назву"
+      ],
+      "Your browser does not support uploading folders": [
+        "Ваш браузер не підтримує вивантаження тек"
       ],
       "Your import will not be processed.": [
         "Ваш імпорт не буде оброблений."
@@ -1708,7 +1711,7 @@
         "${ numContactGroups } група контактів",
         "${ numContactGroups } групи контактів",
         "${ numContactGroups } груп контактів",
-        "${ numContactGroups } груп контактів"
+        "${ numContactGroups } групи контактів"
       ],
       "${ numContacts } contact": [
         "${ numContacts } контакт",
@@ -2256,8 +2259,8 @@
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20-personal-calendar limit. You can also merge imported calendars with existing Proton calendars.": [
         "Виберіть календарі для імпорту. Новий календар буде створено для кожного імпортованого календаря з обмеженням у 20 особистих календарів. Ви також можете об’єднати імпортовані календарі з наявними календарями Proton."
       ],
-      "Servers are unreachable.": [
-        "Сервери недоступні."
+      "Servers are unreachable. Please try again in a few minutes": [
+        "Сервери недоступні. Спробуйте знову за кілька хвилин"
       ],
       "Session timed out.": [
         "Сеанс завершився."
@@ -2832,9 +2835,6 @@
       "Country": [
         "Країна"
       ],
-      "Cryptographic scheme": [
-        "Криптографічна схема"
-      ],
       "CVV code": [
         "Код CVV"
       ],
@@ -2966,6 +2966,9 @@
       ],
       "Payer": [
         "Платник"
+      ],
+      "PGP scheme": [
+        "PGP-схема"
       ],
       "Phone number": [
         "Номер телефону"
@@ -3191,10 +3194,10 @@
     },
     "Loading info": {
       "${ createdCalendars } of ${ calendarsToBeCreated } created": [
-        "",
-        "",
-        "",
-        ""
+        "${ createdCalendars } з ${ calendarsToBeCreated } створено",
+        "${ createdCalendars } з ${ calendarsToBeCreated } створено",
+        "${ createdCalendars } з ${ calendarsToBeCreated } створено",
+        "${ createdCalendars } з ${ calendarsToBeCreated } створено"
       ],
       "Almost there": [
         "Майже готово"
@@ -3985,9 +3988,6 @@
       ]
     },
     "Suffix for price": {
-      "/ mo": [
-        "/ місяць"
-      ],
       "/ month": [
         "/ місяць"
       ]
@@ -4062,7 +4062,7 @@
         "Тип"
       ],
       "Uploaded": [
-        ""
+        "Вивантажено"
       ],
       "Values": [
         "Значення"
@@ -4078,16 +4078,16 @@
     },
     "Time period": {
       "account creation date": [
-        ""
+        "дата створення облікового запису"
       ],
       "the last 12 months": [
-        ""
+        "останні 12 місяців"
       ],
       "the last 3 months": [
-        ""
+        "останні 3 місяці"
       ],
       "the last month": [
-        ""
+        "останній місяць"
       ]
     },
     "Time unit": {
@@ -4526,7 +4526,7 @@
         "Необхідний платний тарифний план"
       ],
       "Uploaded": [
-        ""
+        "Вивантажено"
       ],
       "Uploaded by": [
         "Вивантажено"

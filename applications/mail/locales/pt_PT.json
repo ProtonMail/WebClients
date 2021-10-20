@@ -528,10 +528,10 @@
         "Mover para a caixa de entrada"
       ],
       "Move to inbox (not spam)": [
-        "Mover para caixa de entrada (não é assédio)"
+        "Mover para caixa de entrada (não é spam)"
       ],
       "Move to spam": [
-        "Mover para o assédio"
+        "Mover para spam"
       ],
       "Move to trash": [
         "Mover para o lixo"
@@ -2332,9 +2332,6 @@
       "End time out of bounds": [
         "Hora final fora dos limites"
       ],
-      "Event duration not supported": [
-        "Duração do evento não suportada"
-      ],
       "Event validation failed": [
         "Falha ao validar o evento"
       ],
@@ -2500,7 +2497,7 @@
         "Seleccionar uma pasta"
       ],
       "Spam": [
-        "Assédio"
+        "Spam"
       ],
       "Trash": [
         "Lixo"
@@ -3308,7 +3305,7 @@
         "Se acredita que houve um erro, por favor, contacte-nos em ${ contactLink }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
-        "Se não encontra o email na sua caixa de entrada, veja na pasta de assédio."
+        "Se não encontra o email na sua caixa de entrada, veja na pasta de spam."
       ],
       "Image URL": [
         "URL da imagem"
@@ -3634,6 +3631,9 @@
       "Scheduled": [
         "Agendado"
       ],
+      "Scheduled send of this message will be cancelled.": [
+        ""
+      ],
       "Scheduling message...": [
         ""
       ],
@@ -3658,8 +3658,8 @@
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
         "O envio de mensagens de um endereço @pm.me é uma funcionalidade paga. A sua mensagem será enviada do seu endereço predefinido ${ email }"
       ],
-      "Servers are unreachable.": [
-        "Os servidores estão inacessíveis."
+      "Servers are unreachable. Please try again in a few minutes": [
+        ""
       ],
       "Session timed out.": [
         "A sessão expirou."
@@ -3755,6 +3755,9 @@
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Este navegador não suporta a antevisão de documentos PDF. Por favor, transfira o ficheiro."
       ],
+      "This conversation contains a scheduled message. Sending of this message will be cancelled.": [
+        ""
+      ],
       "This conversation contains non-trashed messages.": [
         "Esta conversa contém mensagens não enviadas para o lixo."
       ],
@@ -3816,7 +3819,7 @@
         "Isto permite a utilização do PayPal para pagar a sua subscrição Proton. Será redireccionado para o PayPal num novo separador do navegador. Se usa qualquer bloqueador de janelas, por favor desactive-o para continuar."
       ],
       "To fight spam and abuse, please verify you are human.": [
-        "Para combater o assédio e o abuso, por favor confirme que é um ser humano."
+        "Para combater spam e abuso, verifique se você é humano."
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "Para assinar novamente os contactos, temos de os verificar todos contra a lista de chaves de encriptação disponíveis na conta. Se não houver correspondências, o contacto será assinado de novo com a chave principal."
@@ -4095,7 +4098,7 @@
         "Funcionalidades personalizáveis"
       ],
       "ProtonMail cannot be used for mass emailing or spamming. Legitimate emails are unlimited.": [
-        "O ProtonMail não pode ser utilizado para enviar emails em lote ou para assédio. O envio de emails legítimos é ilimitado."
+        "O ProtonMail não pode ser utilizado para enviar emails em lote ou para spam. O envio de emails legítimos é ilimitado."
       ]
     },
     "Info for cash payment method": {
@@ -4212,7 +4215,7 @@
         "Ir para Enviado"
       ],
       "Go to Spam": [
-        "Ir para Assédio"
+        "Ir para Spam"
       ],
       "Go to Starred": [
         "Ir para Com estrela"
@@ -4257,7 +4260,7 @@
         "Mover para Caixa de entrada"
       ],
       "Move to Spam": [
-        "Mover para Assédio"
+        "Mover para Spam"
       ],
       "Move to Trash": [
         "Mover para Lixo"
@@ -4450,9 +4453,6 @@
       "Country": [
         "País"
       ],
-      "Cryptographic scheme": [
-        "Esquema de encriptação"
-      ],
       "CVV code": [
         "Código CVV"
       ],
@@ -4611,6 +4611,9 @@
       ],
       "Payer": [
         "Pagante"
+      ],
+      "PGP scheme": [
+        ""
       ],
       "Phone number": [
         "Número de telefone"
@@ -4933,7 +4936,7 @@
         "Enviado"
       ],
       "Spam": [
-        "Assédio"
+        "Spam"
       ],
       "Starred": [
         "Com estrela"
@@ -5102,7 +5105,7 @@
         "Enviado"
       ],
       "Spam": [
-        "Assédio"
+        "Spam"
       ],
       "Starred": [
         "Com estrela"
@@ -6019,8 +6022,8 @@
         "${ elementsCount } conversas movidas para ${ folderName }."
       ],
       "${ elementsCount } conversation moved to spam and sender added to Block List.": [
-        "${ elementsCount } conversa movida para Assédio e remetente adicionado à lista de bloqueio.",
-        "${ elementsCount } conversas movidas para Assédio e remetente adicionado à lista de bloqueio."
+        "${ elementsCount } conversa movida para spam e remetente adicionado à lista de bloqueio.",
+        "${ elementsCount } conversas movidas para spam e remetente adicionado à lista de bloqueio."
       ],
       "${ elementsCount } conversation removed from ${ labelName }.": [
         "${ elementsCount } conversa removida de ${ labelName }.",
@@ -6051,8 +6054,8 @@
         "${ elementsCount } mensagens movidas para ${ folderName }."
       ],
       "${ elementsCount } message moved to spam and sender added to Block List.": [
-        "${ elementsCount } mensagem movida para Assédio e remetente adicionado à lista de bloqueio.",
-        "${ elementsCount } mensagens movidas para Assédio e remetente adicionado à lista de bloqueio."
+        "${ elementsCount } mensagem movida para spam e remetente adicionado à lista de bloqueio.",
+        "${ elementsCount } mensagens movidas para spam e remetente adicionado à lista de bloqueio."
       ],
       "${ elementsCount } message removed from ${ labelName }.": [
         "${ elementsCount } mensagem removida de ${ labelName }.",
@@ -6106,7 +6109,7 @@
         "Conversa movida para ${ folderName }."
       ],
       "Conversation moved to spam and sender added to Block List.": [
-        "Conversa movida para Assédio e remetente adicionado à lista de bloqueio."
+        "Conversa movida para spam e remetente adicionado à lista de bloqueio."
       ],
       "Conversation removed from ${ labelName }": [
         "Conversa removida de ${ labelName }"
@@ -6157,13 +6160,13 @@
         ""
       ],
       "Message moved to ${ folderName } and sender added to Allow List.": [
-        ""
+        "A mensagem foi movida para ${ folderName } e o remetente foi adicionado à Lista de Permissões."
       ],
       "Message moved to ${ folderName }.": [
         "Mensagem movida para ${ folderName }."
       ],
       "Message moved to spam and sender added to Block List.": [
-        "Mensagem movida para Assédio e remetente adicionado à lista de bloqueio."
+        "Mensagem movida para spam e remetente adicionado à lista de bloqueio."
       ],
       "Message removed from ${ labelName }": [
         "Mensagem removida de ${ labelName }"
@@ -6632,10 +6635,13 @@
         "Mover para a caixa de entrada"
       ],
       "Move to inbox (not spam)": [
-        "Mover para caixa de entrada (não é assédio)"
+        "Mover para caixa de entrada (não é spam)"
       ],
       "Move to trash": [
         "Mover para o lixo"
+      ],
+      "Moving a scheduled message": [
+        ""
       ],
       "Network error": [
         "Erro de rede"

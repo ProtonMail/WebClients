@@ -1276,6 +1276,11 @@
         "20 / użytkownika *"
       ]
     },
+    "Calendar import section description": {
+      "You can import ICS files from another calendar to ${ CALENDAR_APP_NAME }. This lets you quickly import one event or your entire agenda.": [
+        ""
+      ]
+    },
     "Calendar limit warning": {
       "You have reached the maximum of ${ calendarsLimit } calendar.": [
         "Osiągnąłeś maksymalną liczbę kalendarzy (${ calendarsLimit }).",
@@ -1974,7 +1979,7 @@
       "Please enable multi-user support before adding users to your organization.": [
         "Przed dodaniem użytkowników do organizacji, włącz obsługę wielu użytkowników."
       ],
-      "Please fix the highlighted conflicts to proceed.": [
+      "Please fix the highlighted conflict to proceed.": [
         "",
         "",
         "",
@@ -2242,9 +2247,6 @@
       ],
       "Event": [
         "Wydarzenie"
-      ],
-      "Event duration not supported": [
-        "Czas wydarzenia nie jest obsługiwany"
       ],
       "Event validation failed": [
         "Weryfikacja wydarzenia nie powiodła się"
@@ -4146,8 +4148,8 @@
       "Server load": [
         "Obciążenie serwera"
       ],
-      "Servers are unreachable.": [
-        "Serwery są nieosiągalne."
+      "Servers are unreachable. Please try again in a few minutes": [
+        ""
       ],
       "Session timed out.": [
         "Upłynął limit czasu sesji."
@@ -4466,9 +4468,6 @@
       ],
       "You can generate a new encryption key if you think your previous key has been compromised.": [
         "Możesz wygenerować nowy klucz szyfrowania, jeśli uważasz, że poprzedni został naruszony."
-      ],
-      "You can import ICS files from another calendar to ${ CALENDAR_APP_NAME }. This lets you quickly import one event or your entire agenda.": [
-        ""
       ],
       "You can now receive messages to your @pm.me address. Upgrade to a paid plan to also send emails using your @pm.me address and create additional @pm.me addresses.": [
         "Możesz odbierać wiadomości przy użyciu adresu @pm.me. Ulepsz do płatnego planu, aby wysyłać wiadomości z adresu @pm.me oraz tworzyć dodatkowe adresy."
@@ -5211,8 +5210,8 @@
       "Default notifications": [
         "Domyślne powiadomienia"
       ],
-      "Default PGP settings": [
-        "Domyślne ustawienia PGP"
+      "Default PGP scheme": [
+        "Domyślny schemat PGP"
       ],
       "Default view": [
         "Domyślny widok"
@@ -5926,7 +5925,10 @@
     },
     "Loading info": {
       "${ createdCalendars } of ${ calendarsToBeCreated } created": [
-        "Tworzenie nowych kalendarzy (${ createdCalendars }/${ calendarsToBeCreated })"
+        "",
+        "",
+        "",
+        ""
       ],
       "Almost there": [
         "Już prawie"
@@ -7430,9 +7432,6 @@
       ]
     },
     "Suffix for price": {
-      "/ mo": [
-        "/ miesiąc"
-      ],
       "/ month": [
         "/ miesiąc"
       ]
@@ -7474,6 +7473,20 @@
       ],
       "vCard field": [
         "Pole vCard"
+      ]
+    },
+    "Time period": {
+      "account creation date": [
+        ""
+      ],
+      "the last 12 months": [
+        ""
+      ],
+      "the last 3 months": [
+        ""
+      ],
+      "the last month": [
+        ""
       ]
     },
     "Time unit": {

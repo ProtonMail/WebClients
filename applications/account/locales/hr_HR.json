@@ -1267,6 +1267,11 @@
         "20 / korisnik *"
       ]
     },
+    "Calendar import section description": {
+      "You can import ICS files from another calendar to ${ CALENDAR_APP_NAME }. This lets you quickly import one event or your entire agenda.": [
+        ""
+      ]
+    },
     "Calendar limit warning": {
       "You have reached the maximum of ${ calendarsLimit } calendar.": [
         "",
@@ -1954,7 +1959,7 @@
       "Please enable multi-user support before adding users to your organization.": [
         "Molimo vas da omogućite višekorisničku podršku prije dodavanja korisnika u vašu organizaciju."
       ],
-      "Please fix the highlighted conflicts to proceed.": [
+      "Please fix the highlighted conflict to proceed.": [
         "",
         "",
         ""
@@ -2221,9 +2226,6 @@
       ],
       "Event": [
         "Događaj"
-      ],
-      "Event duration not supported": [
-        "Duljina događaja nije podržana"
       ],
       "Event validation failed": [
         "Neuspjela provjera valjanosti događaja"
@@ -4092,8 +4094,8 @@
       "Server load": [
         "Opterećenje poslužitelja"
       ],
-      "Servers are unreachable.": [
-        "Poslužitelji nisu dostupni."
+      "Servers are unreachable. Please try again in a few minutes": [
+        ""
       ],
       "Session timed out.": [
         "Sesija je istekla."
@@ -4412,9 +4414,6 @@
       ],
       "You can generate a new encryption key if you think your previous key has been compromised.": [
         "Možete stvoriti novi ključ za šifriranje ako mislite da je vaš prethodni ključ bio ugrožen."
-      ],
-      "You can import ICS files from another calendar to ${ CALENDAR_APP_NAME }. This lets you quickly import one event or your entire agenda.": [
-        ""
       ],
       "You can now receive messages to your @pm.me address. Upgrade to a paid plan to also send emails using your @pm.me address and create additional @pm.me addresses.": [
         ""
@@ -5153,8 +5152,8 @@
       "Default notifications": [
         "Zadane obavijesti"
       ],
-      "Default PGP settings": [
-        "Zadane PGP postavke"
+      "Default PGP scheme": [
+        ""
       ],
       "Default view": [
         "Zadani prikaz"
@@ -5868,6 +5867,8 @@
     },
     "Loading info": {
       "${ createdCalendars } of ${ calendarsToBeCreated } created": [
+        "",
+        "",
         ""
       ],
       "Almost there": [
@@ -7358,9 +7359,6 @@
       ]
     },
     "Suffix for price": {
-      "/ mo": [
-        ""
-      ],
       "/ month": [
         "/ mjesečno"
       ]
@@ -7402,6 +7400,20 @@
       ],
       "vCard field": [
         "vCard polje"
+      ]
+    },
+    "Time period": {
+      "account creation date": [
+        ""
+      ],
+      "the last 12 months": [
+        ""
+      ],
+      "the last 3 months": [
+        ""
+      ],
+      "the last month": [
+        ""
       ]
     },
     "Time unit": {

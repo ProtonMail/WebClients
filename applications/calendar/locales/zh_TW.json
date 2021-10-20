@@ -1459,7 +1459,7 @@
       "Please create an address first.": [
         "請先建立一個地址。"
       ],
-      "Please fix the highlighted conflicts to proceed.": [
+      "Please fix the highlighted conflict to proceed.": [
         ""
       ],
       "Preferences could not be saved": [
@@ -2339,8 +2339,8 @@
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20-personal-calendar limit. You can also merge imported calendars with existing Proton calendars.": [
         ""
       ],
-      "Servers are unreachable.": [
-        "無法連線到伺服器。"
+      "Servers are unreachable. Please try again in a few minutes": [
+        ""
       ],
       "Session timed out.": [
         "工作階段已逾時。"
@@ -2921,9 +2921,6 @@
       "Country": [
         "國家"
       ],
-      "Cryptographic scheme": [
-        "加密配置"
-      ],
       "CVV code": [
         "信用卡安全碼"
       ],
@@ -3079,6 +3076,9 @@
       ],
       "Payer": [
         "付款人"
+      ],
+      "PGP scheme": [
+        ""
       ],
       "Phone number": [
         "電話號碼"
@@ -4224,9 +4224,6 @@
       ]
     },
     "Suffix for price": {
-      "/ mo": [
-        ""
-      ],
       "/ month": [
         "/ 月"
       ]
@@ -4286,6 +4283,20 @@
     "Text": {
       "Settings": [
         "設定"
+      ]
+    },
+    "Time period": {
+      "account creation date": [
+        ""
+      ],
+      "the last 12 months": [
+        ""
+      ],
+      "the last 3 months": [
+        ""
+      ],
+      "the last month": [
+        ""
       ]
     },
     "Time unit": {

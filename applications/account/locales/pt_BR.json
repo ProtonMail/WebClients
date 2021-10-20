@@ -1258,6 +1258,11 @@
         "20 / usuário *"
       ]
     },
+    "Calendar import section description": {
+      "You can import ICS files from another calendar to ${ CALENDAR_APP_NAME }. This lets you quickly import one event or your entire agenda.": [
+        ""
+      ]
+    },
     "Calendar limit warning": {
       "You have reached the maximum of ${ calendarsLimit } calendar.": [
         "Você atingiu o número máximo de ${ calendarsLimit } calendário.",
@@ -1934,7 +1939,7 @@
       "Please enable multi-user support before adding users to your organization.": [
         "Ative o suporte a múltiplos usuários antes de adicionar usuários à sua organização."
       ],
-      "Please fix the highlighted conflicts to proceed.": [
+      "Please fix the highlighted conflict to proceed.": [
         "",
         ""
       ],
@@ -2200,9 +2205,6 @@
       ],
       "Event": [
         "Evento"
-      ],
-      "Event duration not supported": [
-        "Duração do evento não suportada"
       ],
       "Event validation failed": [
         "Falha na validação do evento"
@@ -4038,8 +4040,8 @@
       "Server load": [
         "Carga do servidor"
       ],
-      "Servers are unreachable.": [
-        "Os servidores estão inacessíveis."
+      "Servers are unreachable. Please try again in a few minutes": [
+        ""
       ],
       "Session timed out.": [
         "Sessão expirada."
@@ -4358,9 +4360,6 @@
       ],
       "You can generate a new encryption key if you think your previous key has been compromised.": [
         "Você pode gerar uma nova chave de criptografia, caso acredite que sua chave anterior tenha sido comprometida."
-      ],
-      "You can import ICS files from another calendar to ${ CALENDAR_APP_NAME }. This lets you quickly import one event or your entire agenda.": [
-        ""
       ],
       "You can now receive messages to your @pm.me address. Upgrade to a paid plan to also send emails using your @pm.me address and create additional @pm.me addresses.": [
         "Agora você pode receber mensagens em seu endereço @pm.me Atualize para um plano pago para também enviar e-mails usando seu endereço @pm.me e criar endereços @pm.me adicionais."
@@ -5095,8 +5094,8 @@
       "Default notifications": [
         "Notificações padrão"
       ],
-      "Default PGP settings": [
-        "Configuração PGP padrão"
+      "Default PGP scheme": [
+        ""
       ],
       "Default view": [
         "Visualização padrão"
@@ -5810,6 +5809,7 @@
     },
     "Loading info": {
       "${ createdCalendars } of ${ calendarsToBeCreated } created": [
+        "",
         ""
       ],
       "Almost there": [
@@ -7286,9 +7286,6 @@
       ]
     },
     "Suffix for price": {
-      "/ mo": [
-        ""
-      ],
       "/ month": [
         "/ mês"
       ]
@@ -7330,6 +7327,20 @@
       ],
       "vCard field": [
         "campo vCard"
+      ]
+    },
+    "Time period": {
+      "account creation date": [
+        ""
+      ],
+      "the last 12 months": [
+        ""
+      ],
+      "the last 3 months": [
+        ""
+      ],
+      "the last month": [
+        ""
       ]
     },
     "Time unit": {

@@ -1525,7 +1525,7 @@
       "Please create an address first.": [
         "Спочатку створіть адресу."
       ],
-      "Please fix the highlighted conflicts to proceed.": [
+      "Please fix the highlighted conflict to proceed.": [
         "Виправте вказану проблему, щоб продовжити.",
         "Виправте вказані проблеми, щоб продовжити.",
         "Виправте вказані проблеми, щоб продовжити.",
@@ -2486,8 +2486,8 @@
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20-personal-calendar limit. You can also merge imported calendars with existing Proton calendars.": [
         "Виберіть календарі для імпорту. Новий календар буде створено для кожного імпортованого календаря з обмеженням у 20 особистих календарів. Ви також можете об’єднати імпортовані календарі з наявними календарями Proton."
       ],
-      "Servers are unreachable.": [
-        "Сервери недоступні."
+      "Servers are unreachable. Please try again in a few minutes": [
+        "Сервери недоступні. Спробуйте знову за кілька хвилин"
       ],
       "Session timed out.": [
         "Сеанс завершився."
@@ -3068,9 +3068,6 @@
       "Country": [
         "Країна"
       ],
-      "Cryptographic scheme": [
-        "Криптографічна схема"
-      ],
       "CVV code": [
         "Код CVV"
       ],
@@ -3229,6 +3226,9 @@
       ],
       "Payer": [
         "Платник"
+      ],
+      "PGP scheme": [
+        "PGP-схема"
       ],
       "Phone number": [
         "Номер телефону"
@@ -3433,6 +3433,9 @@
     },
     "Loading info": {
       "${ createdCalendars } of ${ calendarsToBeCreated } created": [
+        "${ createdCalendars } з ${ calendarsToBeCreated } створено",
+        "${ createdCalendars } з ${ calendarsToBeCreated } створено",
+        "${ createdCalendars } з ${ calendarsToBeCreated } створено",
         "${ createdCalendars } з ${ calendarsToBeCreated } створено"
       ],
       "Almost there": [
@@ -4482,9 +4485,6 @@
       ]
     },
     "Suffix for price": {
-      "/ mo": [
-        "/ місяць"
-      ],
       "/ month": [
         "/ місяць"
       ]
@@ -4544,6 +4544,20 @@
     "Text": {
       "Settings": [
         "Налаштування"
+      ]
+    },
+    "Time period": {
+      "account creation date": [
+        "дата створення облікового запису"
+      ],
+      "the last 12 months": [
+        "останні 12 місяців"
+      ],
+      "the last 3 months": [
+        "останні 3 місяці"
+      ],
+      "the last month": [
+        "останній місяць"
       ]
     },
     "Time unit": {
@@ -5233,7 +5247,7 @@
         "Proton об'єднає усі теки з однаковими назвами. Щоб уникнути цього, змініть їх назви перед імпортуванням."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
-        "Повідомлення не шифруються наскрізно. Будь ласка, не відправляйте в них будь-яку конфіденційну інформацію."
+        "Звіти не захищаються наскрізним шифруванням. Будь ласка, не надсилайте в них жодних приватних даних."
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "Деякі об'єднувані контакти мають помилки. Будь ласка, перегляньте їх окремо"
