@@ -21,7 +21,6 @@ const LockedVolumesBanner = ({ onClose }: Props) => {
     const [addressesKeys] = useAddressesKeys();
     const [loading, withLoading] = useLoading(true);
     const { getSharesReadyToRestore } = useDrive();
-    const { openKeyReactivationModal } = useResolveLockedSharesFlow({ onSuccess: onClose, onError: onClose });
 
     const getReadyToRestoreData = useCallback(
         (
@@ -44,6 +43,13 @@ const LockedVolumesBanner = ({ onClose }: Props) => {
         },
         [cache.get.lockedShares]
     );
+
+    const { openKeyReactivationModal } = useResolveLockedSharesFlow({
+        onSuccess: () => {
+            getReadyToRestoreData(addressesKeys).catch(console.error);
+        },
+        onError: onClose,
+    });
 
     useEffect(() => {
         if (addressesKeys) {
