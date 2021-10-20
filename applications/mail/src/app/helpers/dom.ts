@@ -43,7 +43,7 @@ export const inlineCss = (document: Element) => {
                 }
             });
         });
-        document.innerHTML = cheerioDoc('body').html();
+        document.innerHTML = cheerioDoc.html();
     } catch (err: any) {
         console.error(err);
     }
