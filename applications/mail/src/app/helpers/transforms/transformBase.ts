@@ -5,7 +5,7 @@ const ELEMENTS = [
     },
     {
         selector: 'img:not([src^="http"]):not([proton-src^="cid"])',
-        attribute: 'proton-src',
+        attribute: 'src',
     },
 ];
 
@@ -51,11 +51,16 @@ export const transformBase = (document: Element) => {
                 Bind the value only when we need, if there is a proton-src we don't need
                 to add the src else it will generate a request to the domain
              */
-            if (ptValue) {
+            if (ptValue || (attribute === 'src' && !value)) {
                 bindAttribute(el, keyproton, ptValue);
             } else {
                 bindAttribute(el, attribute, url);
             }
         });
+    });
+
+    // Remove base element, even if there are several
+    document.querySelectorAll('base').forEach((base) => {
+        base.parentElement?.removeChild(base);
     });
 };
