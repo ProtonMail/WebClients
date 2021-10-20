@@ -41,7 +41,7 @@ export const getImportReportsList = () => ({
 
 export const getMailImportData = (
     importerID: string,
-    params: {
+    params?: {
         Code: string;
     }
 ) => ({
