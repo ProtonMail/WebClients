@@ -111,6 +111,7 @@ const loadImagesThroughProxy = async (
 
     const imagesLoaded = results.map(({ image, blob, tracker, error }) => ({
         ...image,
+        originalURL: image.url,
         url: blob ? urlCreator().createObjectURL(blob) : undefined,
         error,
         tracker,
