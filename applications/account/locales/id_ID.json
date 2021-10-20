@@ -220,9 +220,6 @@
       "Create folder": [
         "Buat Folder"
       ],
-      "Create key": [
-        "Buat kunci"
-      ],
       "Create label": [
         "Buat label"
       ],
@@ -348,6 +345,9 @@
       ],
       "Font": [
         "Fon"
+      ],
+      "Generate key": [
+        "Hasilkan kunci"
       ],
       "Get ProtonVPN Plus": [
         "Dapatkan ProtonVPN Plus"
@@ -2227,6 +2227,9 @@
       "Original recurring event could not be found": [
         "Acara berulang yang asli tidak ditemukan"
       ],
+      "Recurring event has no occurrences": [
+        "Acara berulang tidak terlaksana"
+      ],
       "Recurring rule not supported": [
         "Aturan berulang tidak didukung"
       ],
@@ -3257,6 +3260,9 @@
       "Black Friday 2020 newcomer discount has been applied": [
         "Diskon Black Friday 2020 untuk pengguna baru telah diterapkan"
       ],
+      "Blocks senders from seeing if and when you opened a message.": [
+        ""
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Dengan beralih ke paket Free, Anda akan kehilangan manfaat ini secara permanen, bahkan jika Anda meningkatkan paket di masa mendatang."
       ],
@@ -3520,6 +3526,9 @@
       ],
       "here": [
         "di sini"
+      ],
+      "Hides identifying information by loading remote content through a proxy. Option to store content as attachments.": [
+        ""
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Jika administrator lain mengubah kata sandi ini, Anda harus menanyakan Kata sandi Organisasi yang baru kepada mereka."
@@ -3890,11 +3899,8 @@
       "Plus or Visionary subscription required": [
         "Dibutuhkan langganan Plus atau Visionary"
       ],
-      "Prevents remote email content from loading automatically.": [
-        "Mencegah remote content yang ada di dalam badan email untuk dapat termuat secara otomatis."
-      ],
-      "Prevents senders from knowing whether and when you have opened a message.": [
-        "Mencegah pengirim untuk dapat mengetahui apakah Anda telah membuka pesan yang mereka kirim atau belum."
+      "Prevents content from the sender's server from loading without your permission.": [
+        "Mencegah konten-konten yang berasal dari server milik pengirim pesan untuk dapat termuat tanpa seizin Anda."
       ],
       "Preview": [
         "Pratinjau"
@@ -4889,6 +4895,9 @@
       "App password": [
         "Kata Sandi Aplikasi"
       ],
+      "Ask before loading remote content": [
+        "Tampilkan dialog konfirmasi sebelum memuat remote content"
+      ],
       "Attach public key": [
         "Lampirkan kunci publik"
       ],
@@ -4909,6 +4918,9 @@
       ],
       "Backup keys": [
         "Kunci cadangan"
+      ],
+      "Block email tracking": [
+        "Blokir program pelacak email"
       ],
       "bonus storage": [
         "bonus penyimpanan"
@@ -4963,9 +4975,6 @@
       ],
       "Conditions": [
         "Syarat"
-      ],
-      "Confirm before loading remote content": [
-        "Tampilkan dialog konfirmasi sebelum memuat remote content"
       ],
       "Confirm login password": [
         "Konfirmasi kata sandi untuk masuk"
@@ -5332,9 +5341,6 @@
       ],
       "Proration": [
         "Prorasi"
-      ],
-      "Protect against email tracking": [
-        "Perlindungan dari pelacakan email"
       ],
       "Protection mode": [
         "Mode proteksi"
@@ -6408,11 +6414,11 @@
       ]
     },
     "Option protection mode": {
-      "Prevent tracking (recommended)": [
-        "Cegah pelacakan email (disarankan)"
+      "Load content via proxy (recommended)": [
+        "Muat konten melalui proxy (disarankan)"
       ],
-      "Prevent tracking and store content locally": [
-        "Cegah pelacakan email dan simpan konten-konten yang ada secara lokal"
+      "Load content via proxy and store as attachments": [
+        "Muat konten melalui proxy dan simpan sebagai lampiran"
       ]
     },
     "OS compatibility": {
@@ -6446,6 +6452,11 @@
       ],
       "PayPal": [
         "PayPal"
+      ]
+    },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "Alamat email tidak ditemukan di antara id-id pengguna yang terhubung dengan kunci pengiriman (${ keyUserIds })"
       ]
     },
     "Placeholder": {
@@ -7494,9 +7505,6 @@
       "Create calendar": [
         "Buat kalender"
       ],
-      "Create key": [
-        "Buat kunci"
-      ],
       "Create your Proton Account": [
         "Buat Akun Proton Anda"
       ],
@@ -7664,6 +7672,9 @@
       ],
       "General": [
         "Umum"
+      ],
+      "Generate key": [
+        "Hasilkan kunci"
       ],
       "Generate missing keys": [
         "Buat kunci yang hilang"
@@ -8124,6 +8135,11 @@
         "Peran"
       ]
     },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "Hari ini"
+      ]
+    },
     "Tooltip": {
       "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
         "Akses konten yang diblokir per negara (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, dll) di mana saja."
@@ -8507,6 +8523,9 @@
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Laporan tidak dienkripsi end-to-end, mohon tidak mengirim informasi sensitif."
       ],
+      "The date and time settings on your device are out of sync. ${ learnMore }": [
+        "Tanggal dan waktu yang terpasang pada piranti Anda tidak sesuai dengan tanggal dan waktu saat ini. ${ learnMore }"
+      ],
       "This action will ${ boldWarning }. You will not be able to recover the messages on ${ domain }.": [
         "Tindakan ini akan ${ boldWarning }. Anda tidak akan lagi dapat memulihkan pesan-pesan yang ada di ${ domain }."
       ],
@@ -8530,9 +8549,6 @@
       ],
       "You will not see this import record in the list anymore.": [
         "Anda tidak akan lagi melihat rekaman impor ini di daftar."
-      ],
-      "Your local date & time settings seem to be out of sync.": [
-        "Pengaturan waktu & tanggal lokal Anda sepertinya tidak tersinkronisasi."
       ]
     },
     "Warning for domain modal": {
@@ -8541,6 +8557,11 @@
       ],
       "It can take up to a day for DNS changes to update.": [
         "Pembaruan perubahan DNS perlu waktu sampai satu hari."
+      ]
+    },
+    "Weak personal key warning": {
+      "This key no longer meets our security standards. We suggest you mark it as obsolete and generate a new key.": [
+        "Kunci ini sudah tidak lagi memenuhi standar keamanan yang berlaku. Kami menyarankan Anda untuk menandai kunci ini sebagai kunci yang telah usang dan membuat kunci baru."
       ]
     },
     "Weekly recurring event, frequency": {

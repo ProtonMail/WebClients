@@ -220,9 +220,6 @@
       "Create folder": [
         "Crear carpeta"
       ],
-      "Create key": [
-        "Crear clau"
-      ],
       "Create label": [
         "Crear etiqueta"
       ],
@@ -348,6 +345,9 @@
       ],
       "Font": [
         "Font"
+      ],
+      "Generate key": [
+        ""
       ],
       "Get ProtonVPN Plus": [
         "Obtenir ProtonVPN Plus"
@@ -2248,6 +2248,9 @@
       "Original recurring event could not be found": [
         "El esdeveniment recurrent original no ha pogut ser trobat"
       ],
+      "Recurring event has no occurrences": [
+        ""
+      ],
       "Recurring rule not supported": [
         "Regla recurrent no compatible"
       ],
@@ -3307,6 +3310,9 @@
       "Black Friday 2020 newcomer discount has been applied": [
         "S'ha aplicat el descompte per a nouvinguts del Black Friday 2020"
       ],
+      "Blocks senders from seeing if and when you opened a message.": [
+        ""
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Si baixeu a un pla gratuït, perdreu per sempre aquests avantatges, fins i tot si en tornareu a actualitzar."
       ],
@@ -3572,6 +3578,9 @@
       ],
       "here": [
         "aquí"
+      ],
+      "Hides identifying information by loading remote content through a proxy. Option to store content as attachments.": [
+        ""
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Si un altre administrador ha canviat aquesta contrasenya, haureu de preguntar-li quina és la nova contrasenya d'organització."
@@ -3943,11 +3952,8 @@
       "Plus or Visionary subscription required": [
         "Es requereix una subscripció Plus o Visionary"
       ],
-      "Prevents remote email content from loading automatically.": [
-        "Evita que el contingut remot del correu electrònic es carregui automàticament."
-      ],
-      "Prevents senders from knowing whether and when you have opened a message.": [
-        "Evita que els remitents sàpiguen si heu obert un missatge o quan ho heu fet."
+      "Prevents content from the sender's server from loading without your permission.": [
+        ""
       ],
       "Preview": [
         "Previsualització"
@@ -4947,6 +4953,9 @@
       "App password": [
         "Contrasenya de l'aplicació"
       ],
+      "Ask before loading remote content": [
+        ""
+      ],
       "Attach public key": [
         "Adjunta la clau pública"
       ],
@@ -4967,6 +4976,9 @@
       ],
       "Backup keys": [
         "Copiar les claus"
+      ],
+      "Block email tracking": [
+        ""
       ],
       "bonus storage": [
         "bonus d’emmagatzematge"
@@ -5021,9 +5033,6 @@
       ],
       "Conditions": [
         "Condicions"
-      ],
-      "Confirm before loading remote content": [
-        "Confirmar abans de carregar contingut remot"
       ],
       "Confirm login password": [
         "Confirma la contrasenya d'inici de sessió"
@@ -5390,9 +5399,6 @@
       ],
       "Proration": [
         "Prorrateig"
-      ],
-      "Protect against email tracking": [
-        "Protegir contra rastreig de correu electrònic"
       ],
       "Protection mode": [
         "Mode de protecció"
@@ -6475,11 +6481,11 @@
       ]
     },
     "Option protection mode": {
-      "Prevent tracking (recommended)": [
-        "Prevenir rastrejadors (recomanat)"
+      "Load content via proxy (recommended)": [
+        ""
       ],
-      "Prevent tracking and store content locally": [
-        "Evita el rastreig i emmagatzematge de contingut localment"
+      "Load content via proxy and store as attachments": [
+        ""
       ]
     },
     "OS compatibility": {
@@ -6513,6 +6519,11 @@
       ],
       "PayPal": [
         "PayPal"
+      ]
+    },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        ""
       ]
     },
     "Placeholder": {
@@ -7569,9 +7580,6 @@
       "Create calendar": [
         "Crear calendari"
       ],
-      "Create key": [
-        "Crear clau"
-      ],
       "Create your Proton Account": [
         "Creant el teu compte Proton"
       ],
@@ -7739,6 +7747,9 @@
       ],
       "General": [
         "General"
+      ],
+      "Generate key": [
+        ""
       ],
       "Generate missing keys": [
         "Generar claus perdudes"
@@ -8199,6 +8210,11 @@
         "Rol"
       ]
     },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        ""
+      ]
+    },
     "Tooltip": {
       "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
         "Accedeix al contingut geobloquejat (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc.) sense importar on sigueu."
@@ -8585,6 +8601,9 @@
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Els informes no estan xifrats d'extrem a extrem, si us plau no envieu informació sensible."
       ],
+      "The date and time settings on your device are out of sync. ${ learnMore }": [
+        ""
+      ],
       "This action will ${ boldWarning }. You will not be able to recover the messages on ${ domain }.": [
         "Aquesta acció ${ boldWarning }. No podreu recuperar els missatges de ${ domain }."
       ],
@@ -8608,9 +8627,6 @@
       ],
       "You will not see this import record in the list anymore.": [
         "Ja no veureu aquest registre d'importació a la llista."
-      ],
-      "Your local date & time settings seem to be out of sync.": [
-        "La vostra configuració de data i hora local no sembla estar sincronitzada."
       ]
     },
     "Warning for domain modal": {
@@ -8619,6 +8635,11 @@
       ],
       "It can take up to a day for DNS changes to update.": [
         "Els canvis DNS poden trigar fins a un dia a actualitzar-se."
+      ]
+    },
+    "Weak personal key warning": {
+      "This key no longer meets our security standards. We suggest you mark it as obsolete and generate a new key.": [
+        ""
       ]
     },
     "Weekly recurring event, frequency": {

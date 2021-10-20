@@ -641,6 +641,9 @@
       "Recover data": [
         "Восстановить данные"
       ],
+      "Refine your search": [
+        "Уточните свой поиск"
+      ],
       "refresh the page": [
         "обновить страницу"
       ],
@@ -1972,10 +1975,10 @@
         "Ошибка расшифровки: при расшифровке зашифрованного содержимого этого сообщения произошёл сбой."
       ],
       "Deselect at least ${ calendarToFixCount } calendar or": [
-        "",
-        "",
-        "",
-        ""
+        "Отмените выбор по крайней мере ${ calendarToFixCount } календарь или",
+        "Отмените выбор по крайней мере ${ calendarToFixCount } календарей или",
+        "Отмените выбор по крайней мере ${ calendarToFixCount } календарей или",
+        "Отмените выбор по крайней мере ${ calendarToFixCount } календаря(ей) или"
       ],
       "Draft could not be saved. Try again.": [
         "Черновик не сохранился. Попробуйте еще раз."
@@ -2062,10 +2065,10 @@
         "Название ярлыка не может быть пустым"
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
-        "",
-        "",
-        "",
-        ""
+        "Объедините по крайней мере ${ calendarToFixCount } календарь с существующим календарем Proton",
+        "Объединить по крайней мере ${ calendarToFixCount } календарей с существующим календарем Proton",
+        "Объединить по крайней мере ${ calendarToFixCount } календарей с существующим календарем Proton",
+        "Объединить по крайней мере ${ calendarToFixCount } календарь(ей) с существующим календарем Proton"
       ],
       "Message needs to be sent first": [
         "Сначала нужно отправить сообщение"
@@ -2137,10 +2140,10 @@
         "Активируйте поиск по содержимому еще раз"
       ],
       "Please fix the highlighted conflict to proceed.": [
-        "",
-        "",
-        "",
-        ""
+        "Пожалуйста, исправьте выделенный конфликт, чтобы продолжить.",
+        "Пожалуйста, исправьте выделенные конфликты, чтобы продолжить.",
+        "Пожалуйста, исправьте выделенные конфликты, чтобы продолжить.",
+        "Пожалуйста, исправьте выделенные конфликты, чтобы продолжить."
       ],
       "Please refresh the page.": [
         "Пожалуйста, обновите страницу."
@@ -2194,10 +2197,10 @@
         "Некоторые группы не могут быть удалены"
       ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
-        ""
+        "Некоторые имена ваших ярлыков недоступны. Пожалуйста, настройте импорт для редактирования этих имен."
       ],
       "Some of your label names exceed ProtonMail's maximum character limit. Please customize the import to edit these names.": [
-        ""
+        "Некоторые названия ваших ярлыков превышают максимальный лимит символов ProtonMail. Пожалуйста, настройте импорт для редактирования этих имен."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Что-то пошло не так. Пожалуйста ${ refresh } чтобы продолжить. Если вы все еще видите сообщение об ошибке, пожалуйста свяжитесь нашей ${ supportTeam }."
@@ -2421,6 +2424,9 @@
       ],
       "Original recurring event could not be found": [
         "Исходное повторяющееся событие не найдено"
+      ],
+      "Recurring event has no occurrences": [
+        ""
       ],
       "Recurring rule not supported": [
         "Правило для повторения не поддерживается"
@@ -2947,8 +2953,8 @@
         ""
       ],
       "${ selectedFoldersCount } folder selected": [
-        "",
-        "",
+        "${ selectedFoldersCount } папка выбрана",
+        "${ selectedFoldersCount } папки выбраны",
         "",
         ""
       ],
@@ -3591,8 +3597,8 @@
       "No email address": [
         "Нет адреса эл. почты"
       ],
-      "No email trackers found.": [
-        "Почтовые трекеры не найдены."
+      "No email trackers found": [
+        ""
       ],
       "No folder found": [
         "Папки не найдены"
@@ -3720,14 +3726,11 @@
       "Print email": [
         "Распечатать письмо"
       ],
-      "Protect yourself from trackers by turning on Proton email tracker protection.": [
-        "Защитите себя от трекеров, включив защиту от трекеров электронной почты Proton."
+      "Protect yourself from trackers. Turn on email tracker protection in settings": [
+        ""
       ],
       "Proton doesn't make money by abusing privacy.": [
         "Протон не делает деньги на нарушении конфиденциальности."
-      ],
-      "Proton has blocked email trackers in this message in order to protect your privacy.": [
-        "Proton заблокировал почтовые трекеры в этом сообщении для защиты вашей конфиденциальности."
       ],
       "ProtonMail can protect your business as well.": [
         "ProtonMail может защитить и ваш бизнес."
@@ -3858,6 +3861,9 @@
       "Switch to ${ professionalPlan } to add more users.": [
         "Переключиться на ${ professionalPlan } , чтобы добавить больше пользователей."
       ],
+      "Taking too long?": [
+        ""
+      ],
       "Test link": [
         "Тестовая ссылка"
       ],
@@ -3974,6 +3980,9 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Для предотвращения распространения спама и иных злоупотреблений нашим сервисом, нам нужно убедиться, что вы человек."
+      ],
+      "To protect your privacy, Proton blocked email trackers in this message": [
+        ""
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "Для повторной подписи контактов нам необходимо проверить каждый контакт с помощью списка ключей шифрования, доступных в вашем аккаунте. Если совпадение не найдено, ваш контакт будет повторно подписан основным ключом шифрования."
@@ -4736,7 +4745,7 @@
         "Только последние 3 месяца"
       ],
       "Last month only": [
-        ""
+        "Только за последний месяц"
       ],
       "Mailbox password": [
         "Пароль почтового ящика"
@@ -6149,14 +6158,17 @@
       ]
     },
     "Spotlight": {
-      "Proton blocked email trackers in this message in order to protect your privacy": [
-        "Proton заблокировал почтовые трекеры в этом сообщении для защиты вашей конфиденциальности"
+      "Message Content Search": [
+        "Поиск содержимого сообщения"
       ],
-      "Tracker protection": [
-        "Защита от трекеров"
+      "To protect your privacy, Proton blocked email trackers in this message": [
+        "Чтобы защитить вашу конфиденциальность, Proton заблокировал почтовые трекеры в этом сообщении"
       ],
       "You can now schedule your messages to be sent later": [
         "Сейчас вы можете запланировать отправку ваших сообщений на более позднее время"
+      ],
+      "You can now search the content of your encrypted emails.": [
+        "Теперь вы можете искать по содержимому зашифрованной электронной почты."
       ]
     },
     "Status": {
@@ -6344,7 +6356,7 @@
         "Цепочка писем удалена"
       ],
       "Conversation marked as read.": [
-        ""
+        "Цепочка писем помечена как прочитанная."
       ],
       "Conversation marked as Starred": [
         "Цепочка писем отмечена звездочкой"
@@ -7110,6 +7122,11 @@
         "ZIP-код / почтовый индекс"
       ]
     },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "Сегодня"
+      ]
+    },
     "Tooltip": {
       "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
         "Доступ к содержимому, заблокированному по географическому признаку (Netflix, Amazon Prime Video, BBC iPlayer, Википедии, Facebook, YouTube и т. д.), независимо от того, где вы находитесь."
@@ -7356,6 +7373,9 @@
       "The contact failed to load.": [
         "Контакт не загрузился."
       ],
+      "The date and time settings on your device are out of sync. ${ learnMore }": [
+        ""
+      ],
       "The decryption of the encrypted content failed.": [
         "Не удалось расшифровать зашифрованный контент."
       ],
@@ -7373,9 +7393,6 @@
       ],
       "You will lose any customization you made so far.": [
         ""
-      ],
-      "Your local date & time settings seem to be out of sync.": [
-        "Ваши локальные параметры даты и времени не синхронизированы."
       ]
     },
     "Weekly recurring event, frequency": {

@@ -632,6 +632,9 @@
       "Recover data": [
         "データを復元する"
       ],
+      "Refine your search": [
+        ""
+      ],
       "refresh the page": [
         "ページを更新"
       ],
@@ -2350,6 +2353,9 @@
       "Original recurring event could not be found": [
         "元の定期的な予定が見つかりませんでした"
       ],
+      "Recurring event has no occurrences": [
+        ""
+      ],
       "Recurring rule not supported": [
         "繰り返しルールはサポートされていません"
       ],
@@ -3366,7 +3372,7 @@
       "No email address": [
         "メールアドレスなし"
       ],
-      "No email trackers found.": [
+      "No email trackers found": [
         ""
       ],
       "No folder found": [
@@ -3495,14 +3501,11 @@
       "Print email": [
         "メールを印刷"
       ],
-      "Protect yourself from trackers by turning on Proton email tracker protection.": [
+      "Protect yourself from trackers. Turn on email tracker protection in settings": [
         ""
       ],
       "Proton doesn't make money by abusing privacy.": [
         "Proton がプライバシーを悪用して資金を入手することはありません。"
-      ],
-      "Proton has blocked email trackers in this message in order to protect your privacy.": [
-        ""
       ],
       "ProtonMail can protect your business as well.": [
         "ProtonMail はビジネスも同様に保護します。"
@@ -3630,6 +3633,9 @@
       "Switch to ${ professionalPlan } to add more users.": [
         "${ professionalPlan } に切り替えるとさらにユーザーを追加できます。"
       ],
+      "Taking too long?": [
+        ""
+      ],
       "Test link": [
         "リンクをテスト"
       ],
@@ -3743,6 +3749,9 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "迷惑メールや悪用を防止するために、あなたがコンピューターではないことを確認します。"
+      ],
+      "To protect your privacy, Proton blocked email trackers in this message": [
+        ""
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "連絡先に再署名するには、すべての連絡先をあなたのアカウントで利用可能な暗号鍵のリストに照らして確認する必要があります。 一致するものが見つからない場合、連絡先はプライマリ暗号鍵で再署名されます。"
@@ -5837,13 +5846,16 @@
       ]
     },
     "Spotlight": {
-      "Proton blocked email trackers in this message in order to protect your privacy": [
+      "Message Content Search": [
         ""
       ],
-      "Tracker protection": [
+      "To protect your privacy, Proton blocked email trackers in this message": [
         ""
       ],
       "You can now schedule your messages to be sent later": [
+        ""
+      ],
+      "You can now search the content of your encrypted emails.": [
         ""
       ]
     },
@@ -6687,6 +6699,11 @@
         "郵便番号"
       ]
     },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        ""
+      ]
+    },
     "Tooltip": {
       "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
         "どこにいてもアクセス制限があるコンテンツ (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube など) にアクセスできます。"
@@ -6921,6 +6938,9 @@
       "The contact failed to load.": [
         "連絡先の読み込みに失敗しました。"
       ],
+      "The date and time settings on your device are out of sync. ${ learnMore }": [
+        ""
+      ],
       "The decryption of the encrypted content failed.": [
         "暗号化されたコンテンツの復号に失敗しました。"
       ],
@@ -6937,9 +6957,6 @@
         ""
       ],
       "You will lose any customization you made so far.": [
-        ""
-      ],
-      "Your local date & time settings seem to be out of sync.": [
         ""
       ]
     },

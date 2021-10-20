@@ -220,9 +220,6 @@
       "Create folder": [
         "Δημιουργία φακέλου"
       ],
-      "Create key": [
-        "Δημιουργία κλειδιού"
-      ],
       "Create label": [
         "Δημιουργία ετικέτας"
       ],
@@ -348,6 +345,9 @@
       ],
       "Font": [
         "Γραμματοσειρά"
+      ],
+      "Generate key": [
+        "Δημιουργία κλειδιού"
       ],
       "Get ProtonVPN Plus": [
         "Αποκτήστε ProtonVPN Plus"
@@ -2163,6 +2163,9 @@
       "Original recurring event could not be found": [
         "Δεν βρέθηκε το αρχικό επαναλαμβανόμενο συμβάν"
       ],
+      "Recurring event has no occurrences": [
+        "Η επαναλαμβανόμενη εκδήλωση δεν έχει διοργανώσεις"
+      ],
       "Recurring rule not supported": [
         "Ο επαναλαμβανόμενος κανόνας δεν υποστηρίζεται"
       ],
@@ -3222,6 +3225,9 @@
       "Black Friday 2020 newcomer discount has been applied": [
         "Η νεοφερμένη έκπτωση Black Friday 2020 έχει εφαρμοστεί"
       ],
+      "Blocks senders from seeing if and when you opened a message.": [
+        ""
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Με την υποβάθμιση σε ένα Δωρεάν Λογαριασμό, θα χάσετε μόνιμα αυτά τα οφέλη, ακόμη και αν αναβαθμίσετε ξανά στο μέλλον."
       ],
@@ -3487,6 +3493,9 @@
       ],
       "here": [
         "εδώ"
+      ],
+      "Hides identifying information by loading remote content through a proxy. Option to store content as attachments.": [
+        ""
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Εάν ένας άλλος διαχειριστής άλλαξε αυτόν τον κωδικό πρόσβασης, θα πρέπει να του ζητήσετε τον νέο κωδικό οργανισμού."
@@ -3858,11 +3867,8 @@
       "Plus or Visionary subscription required": [
         "Απαιτείται συνδρομή Plus ή Visionary"
       ],
-      "Prevents remote email content from loading automatically.": [
-        "Αποτρέπει την αυτόματη λήψη απομακρυσμένων περιεχομένων μηνυμάτων."
-      ],
-      "Prevents senders from knowing whether and when you have opened a message.": [
-        "Αποτρέπει τη γνωστοποίηση στους αποστολείς του αν και πότε ανοίξατε ένα μήνυμα."
+      "Prevents content from the sender's server from loading without your permission.": [
+        ""
       ],
       "Preview": [
         "Προεπισκόπηση"
@@ -4862,6 +4868,9 @@
       "App password": [
         "Κωδικός πρόσβασης εφαρμογής"
       ],
+      "Ask before loading remote content": [
+        "Ερώτηση πριν τη φόρτωση απομακρυσμένου περιεχομένου"
+      ],
       "Attach public key": [
         "Επισυνάψτε το δημόσιο κλειδί"
       ],
@@ -4882,6 +4891,9 @@
       ],
       "Backup keys": [
         "Αντίγραφο ασφαλείας κλειδιού"
+      ],
+      "Block email tracking": [
+        "Φραγή ιχνηλάτησης μηνυμάτων"
       ],
       "bonus storage": [
         "μπόνους αποθηκευτικός χώρος"
@@ -4936,9 +4948,6 @@
       ],
       "Conditions": [
         "Προϋποθέσεις"
-      ],
-      "Confirm before loading remote content": [
-        "Επιβεβαίωση πριν τη λήψη απομακρυσμένου περιεχομένου"
       ],
       "Confirm login password": [
         "Επιβεβαίωση κωδικού σύνδεσης"
@@ -5305,9 +5314,6 @@
       ],
       "Proration": [
         "Προμήθεια"
-      ],
-      "Protect against email tracking": [
-        "Προστασία κατά της ιχνηλάτησης μηνυμάτων"
       ],
       "Protection mode": [
         "Μέθοδος προστασίας"
@@ -6390,11 +6396,11 @@
       ]
     },
     "Option protection mode": {
-      "Prevent tracking (recommended)": [
-        "Αποτροπή ιχνηλάτησης (συστήνεται)"
+      "Load content via proxy (recommended)": [
+        "Φόρτωση περιεχομένου μέσω ενδιάμεσου (συστήνεται)"
       ],
-      "Prevent tracking and store content locally": [
-        "Αποτροπή ιχνηλάτησης μέσω τοπικής αποθήκευσης περιεχομένου"
+      "Load content via proxy and store as attachments": [
+        "Φόρτωση περιεχομένου μέσω ενδιάμεσου και αποθήκευση ως συνημμένου"
       ]
     },
     "OS compatibility": {
@@ -6428,6 +6434,11 @@
       ],
       "PayPal": [
         "PayPal"
+      ]
+    },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "Η ηλ. διεύθυνση δεν βρέθηκε μεταξύ των αναγνωριστικών χρήστη που ορίζονται στο κλειδί αποστολής (${ keyUserIds })"
       ]
     },
     "Placeholder": {
@@ -7484,9 +7495,6 @@
       "Create calendar": [
         "Δημιουργία ημερολογίου"
       ],
-      "Create key": [
-        "Δημιουργία κλειδιού"
-      ],
       "Create your Proton Account": [
         "Δημιουργήστε τον λογαριασμό σας Proton"
       ],
@@ -7654,6 +7662,9 @@
       ],
       "General": [
         "Γενικά"
+      ],
+      "Generate key": [
+        "Δημιουργία κλειδιού"
       ],
       "Generate missing keys": [
         "Δημιουργία των κλειδιών που λείπουν"
@@ -8114,6 +8125,11 @@
         "Ρόλος"
       ]
     },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "Σήμερα"
+      ]
+    },
     "Tooltip": {
       "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
         "Αποκτήστε πρόσβαση σε γεωγραφικά αποκλεισμένο περιεχόμενο (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, Youtube κ. λπ.) όπου κι αν βρίσκεστε."
@@ -8500,6 +8516,9 @@
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Οι αναφορές δεν είναι κρυπτογραφημένες από άκρο σε άκρο, παρακαλούμε μην στέλνετε ευαίσθητες πληροφορίες."
       ],
+      "The date and time settings on your device are out of sync. ${ learnMore }": [
+        ""
+      ],
       "This action will ${ boldWarning }. You will not be able to recover the messages on ${ domain }.": [
         "Αυτή η ενέργεια θα ${ boldWarning }. Δεν θα είστε σε θέση να ανακτήσετε τα μηνύματα στο ${ domain }."
       ],
@@ -8523,9 +8542,6 @@
       ],
       "You will not see this import record in the list anymore.": [
         "Δεν θα βλέπετε πλέον αυτήν την καρτέλα εισαγωγής στη λίστα."
-      ],
-      "Your local date & time settings seem to be out of sync.": [
-        "Οι τοπικές ρυθμίσεις ημερομηνίας και ώρας φαίνεται να είναι εκτός συγχρονισμού."
       ]
     },
     "Warning for domain modal": {
@@ -8534,6 +8550,11 @@
       ],
       "It can take up to a day for DNS changes to update.": [
         "Μπορεί να χρειαστεί έως και μια ημέρα για να ενημερωθούν οι αλλαγές DNS."
+      ]
+    },
+    "Weak personal key warning": {
+      "This key no longer meets our security standards. We suggest you mark it as obsolete and generate a new key.": [
+        ""
       ]
     },
     "Weekly recurring event, frequency": {

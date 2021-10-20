@@ -220,9 +220,6 @@
       "Create folder": [
         "Ordner erstellen"
       ],
-      "Create key": [
-        "Schlüssel erstellen"
-      ],
       "Create label": [
         "Kategorie erstellen"
       ],
@@ -348,6 +345,9 @@
       ],
       "Font": [
         "Font"
+      ],
+      "Generate key": [
+        "Schlüssel generieren"
       ],
       "Get ProtonVPN Plus": [
         "Holen Sie sich ProtonVPN Plus"
@@ -2248,6 +2248,9 @@
       "Original recurring event could not be found": [
         "Ursprüngliches wiederkehrendes Ereignis konnte nicht gefunden werden"
       ],
+      "Recurring event has no occurrences": [
+        ""
+      ],
       "Recurring rule not supported": [
         "Wiederkehrende Regel nicht unterstützt"
       ],
@@ -3307,6 +3310,9 @@
       "Black Friday 2020 newcomer discount has been applied": [
         "Black Friday 2020-Rabatt für Neukunden wurde eingelöst"
       ],
+      "Blocks senders from seeing if and when you opened a message.": [
+        "Verhindert, dass Absender erfahren, ob und wann Sie eine Nachricht geöffnet haben."
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Durch den Wechsel auf das kostenlose Abonnement verlieren Sie diese Leistungen dauerhaft, auch wenn Sie in Zukunft wieder auf ein kostenpflichtiges Abonnement umsteigen."
       ],
@@ -3572,6 +3578,9 @@
       ],
       "here": [
         "hier"
+      ],
+      "Hides identifying information by loading remote content through a proxy. Option to store content as attachments.": [
+        "Verbirgt identifizierende Informationen durch das Laden externer Inhalte über einen Proxy. Option zum Speichern von Inhalten als Anhänge."
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Wenn ein anderer Administrator dieses Passwort geändert hat, müssen Sie ihn um das neue Organisationspasswort bitten."
@@ -3943,11 +3952,8 @@
       "Plus or Visionary subscription required": [
         "Plus‐ oder Visionary‐Abonnement benötigt"
       ],
-      "Prevents remote email content from loading automatically.": [
-        "Verhindert, dass Inhalte in Nachrichten aus externen Quellen automatisch geladen werden."
-      ],
-      "Prevents senders from knowing whether and when you have opened a message.": [
-        "Verhindert, dass Absender erfahren, ob und wann Sie eine Nachricht geöffnet haben."
+      "Prevents content from the sender's server from loading without your permission.": [
+        "Verhindert, dass Inhalte vom Server des Absenders ohne Ihre Zustimmung geladen werden."
       ],
       "Preview": [
         "Vorschau"
@@ -4947,6 +4953,9 @@
       "App password": [
         "App-Passwort"
       ],
+      "Ask before loading remote content": [
+        "Vor dem Laden externer Inhalte Bestätigung nachfragen"
+      ],
       "Attach public key": [
         "Öffentlichen Schlüssel anhängen"
       ],
@@ -4967,6 +4976,9 @@
       ],
       "Backup keys": [
         "Wiederherstellungs-Schlüssel"
+      ],
+      "Block email tracking": [
+        "E-Mail-Tracking sperren"
       ],
       "bonus storage": [
         "Zusätzlicher Speicherplatz"
@@ -5021,9 +5033,6 @@
       ],
       "Conditions": [
         "Bedingungen"
-      ],
-      "Confirm before loading remote content": [
-        "Vor dem Laden externer Inhalte Bestätigung anfordern"
       ],
       "Confirm login password": [
         "Anmeldepasswort bestätigen"
@@ -5390,9 +5399,6 @@
       ],
       "Proration": [
         "Verrechnung"
-      ],
-      "Protect against email tracking": [
-        "Schutz vor E-Mail-Nachverfolgung"
       ],
       "Protection mode": [
         "Schutzmodus"
@@ -6475,11 +6481,11 @@
       ]
     },
     "Option protection mode": {
-      "Prevent tracking (recommended)": [
-        "Nachverfolgung verhindern (empfohlen)"
+      "Load content via proxy (recommended)": [
+        "Inhalte über einen Proxy laden (empfohlen)"
       ],
-      "Prevent tracking and store content locally": [
-        "Nachverfolgung verhindern und Inhalte lokal speichern"
+      "Load content via proxy and store as attachments": [
+        "Inhalte über einen Proxy laden und als Anhänge speichern"
       ]
     },
     "OS compatibility": {
@@ -6513,6 +6519,11 @@
       ],
       "PayPal": [
         "PayPal"
+      ]
+    },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "E-Mail-Adresse wurde nicht unter den im Sendeschlüssel definierten Benutzer-IDs (${ keyUserIds }) gefunden"
       ]
     },
     "Placeholder": {
@@ -7569,9 +7580,6 @@
       "Create calendar": [
         "Kalender erstellen"
       ],
-      "Create key": [
-        "Schlüssel erstellen"
-      ],
       "Create your Proton Account": [
         "Erstellen Sie Ihr Proton-Konto"
       ],
@@ -7739,6 +7747,9 @@
       ],
       "General": [
         "Allgemein"
+      ],
+      "Generate key": [
+        "Schlüssel generieren"
       ],
       "Generate missing keys": [
         "Fehlende Schlüssel erzeugen"
@@ -8199,6 +8210,11 @@
         "Rolle"
       ]
     },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "Heute"
+      ]
+    },
     "Tooltip": {
       "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
         "Zugriff auf durch Landessperren unzugängliche Inhalte (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube usw.), unabhängig davon, wo Sie sich derzeit aufhalten."
@@ -8585,6 +8601,9 @@
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Berichte sind nicht Ende-zu-Ende-verschlüsselt, bitte senden Sie keine sensiblen Informationen."
       ],
+      "The date and time settings on your device are out of sync. ${ learnMore }": [
+        "Die Datums- und Zeiteinstellungen auf Ihrem Gerät sind nicht synchronisiert. ${ learnMore }"
+      ],
       "This action will ${ boldWarning }. You will not be able to recover the messages on ${ domain }.": [
         "Durch diese Aktion werden ${ boldWarning }. Es wird Ihnen nicht möglich sein, die Nachrichten auf ${ domain } wiederherzustellen."
       ],
@@ -8608,9 +8627,6 @@
       ],
       "You will not see this import record in the list anymore.": [
         "Sie werden diesen Import-Eintrag in der Liste nicht mehr sehen."
-      ],
-      "Your local date & time settings seem to be out of sync.": [
-        "Ihre lokalen Datums- und Zeiteinstellungen scheinen nicht synchronisiert zu sein."
       ]
     },
     "Warning for domain modal": {
@@ -8619,6 +8635,11 @@
       ],
       "It can take up to a day for DNS changes to update.": [
         "Es kann bis zu einem Tag dauern, bis DNS-Änderungen aktualisiert werden."
+      ]
+    },
+    "Weak personal key warning": {
+      "This key no longer meets our security standards. We suggest you mark it as obsolete and generate a new key.": [
+        "Dieser Schlüssel entspricht nicht mehr unseren Sicherheitsstandards. Wir empfehlen Ihnen, ihn als veraltet zu kennzeichnen und einen neuen Schlüssel zu erzeugen."
       ]
     },
     "Weekly recurring event, frequency": {
