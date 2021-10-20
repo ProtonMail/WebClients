@@ -220,9 +220,6 @@
       "Create folder": [
         "Створити теку"
       ],
-      "Create key": [
-        "Створити ключ"
-      ],
       "Create label": [
         "Створити мітку"
       ],
@@ -348,6 +345,9 @@
       ],
       "Font": [
         "Шрифт"
+      ],
+      "Generate key": [
+        "Генерувати ключ"
       ],
       "Get ProtonVPN Plus": [
         "Отримати ProtonVPN Plus"
@@ -2290,6 +2290,9 @@
       "Original recurring event could not be found": [
         "Не вдається знайти оригінальну повторювану подію"
       ],
+      "Recurring event has no occurrences": [
+        "Повторювана подія не має випадків"
+      ],
       "Recurring rule not supported": [
         "Правило повторення не підтримується"
       ],
@@ -3407,6 +3410,9 @@
       "Black Friday 2020 newcomer discount has been applied": [
         "До вашої передплати застосовано знижку до Чорної П'ятниці 2020"
       ],
+      "Blocks senders from seeing if and when you opened a message.": [
+        "Не дозволяє відправникам бачити чи ви відкрили повідомлення."
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Повернувшись на безплатний тарифний план, ви остаточно втратите ці переваги, навіть якщо в майбутньому поновите передплату."
       ],
@@ -3676,6 +3682,9 @@
       ],
       "here": [
         "тут"
+      ],
+      "Hides identifying information by loading remote content through a proxy. Option to store content as attachments.": [
+        "Приховує інформацію, що може вас ідентифікувати, завантажуючи зовнішній вміст через проксі. Можливість зберігати вміст у вигляді вкладень."
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Якщо інший адміністратор змінив цей пароль, вам необхідно запитати в нього новий пароль організації."
@@ -4049,11 +4058,8 @@
       "Plus or Visionary subscription required": [
         "Необхідна передплата Plus або Visionary"
       ],
-      "Prevents remote email content from loading automatically.": [
-        "Запобігає автоматичному завантаженню зовнішнього вмісту в повідомленнях."
-      ],
-      "Prevents senders from knowing whether and when you have opened a message.": [
-        "Не дозволяє відправникам дізнаватися чи ви відкривали повідомлення."
+      "Prevents content from the sender's server from loading without your permission.": [
+        "Не дозволяє вмісту з сервера відправника завантажуватись без вашого схвалення."
       ],
       "Preview": [
         "Попередній перегляд"
@@ -5063,6 +5069,9 @@
       "App password": [
         "Пароль програми"
       ],
+      "Ask before loading remote content": [
+        "Запитувати перед завантаженням зовнішнього вмісту"
+      ],
       "Attach public key": [
         "Приєднати відкритий ключ"
       ],
@@ -5083,6 +5092,9 @@
       ],
       "Backup keys": [
         "Ключі відновлення"
+      ],
+      "Block email tracking": [
+        "Блокувати відстеження листів"
       ],
       "bonus storage": [
         "бонусне сховище"
@@ -5137,9 +5149,6 @@
       ],
       "Conditions": [
         "Умови"
-      ],
-      "Confirm before loading remote content": [
-        "Підтверджувати перед завантаженням зовнішнього вмісту"
       ],
       "Confirm login password": [
         "Підтвердити пароль входу"
@@ -5506,9 +5515,6 @@
       ],
       "Proration": [
         "Розподілення"
-      ],
-      "Protect against email tracking": [
-        "Захист пошти від стеження"
       ],
       "Protection mode": [
         "Режим захисту"
@@ -6609,11 +6615,11 @@
       ]
     },
     "Option protection mode": {
-      "Prevent tracking (recommended)": [
-        "Запобігати стеженню (рекомендовано)"
+      "Load content via proxy (recommended)": [
+        "Завантажувати вміст через проксі (рекомендовано)"
       ],
-      "Prevent tracking and store content locally": [
-        "Запобігати стеженню та локальному збереженню вмісту"
+      "Load content via proxy and store as attachments": [
+        "Завантажувати вміст через проксі та зберігати як вкладення"
       ]
     },
     "OS compatibility": {
@@ -6647,6 +6653,11 @@
       ],
       "PayPal": [
         "PayPal"
+      ]
+    },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "Адресу е-пошти не знайдено серед ідентифікаторів користувачів, визначених у ключі надсилання (${ keyUserIds })"
       ]
     },
     "Placeholder": {
@@ -7719,9 +7730,6 @@
       "Create calendar": [
         "Створити календар"
       ],
-      "Create key": [
-        "Створити ключ"
-      ],
       "Create your Proton Account": [
         "Створіть свій обліковий запис Proton"
       ],
@@ -7889,6 +7897,9 @@
       ],
       "General": [
         "Загальні"
+      ],
+      "Generate key": [
+        "Генерувати ключ"
       ],
       "Generate missing keys": [
         "Генерувати відсутні ключі"
@@ -8349,6 +8360,11 @@
         "Роль"
       ]
     },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "Сьогодні"
+      ]
+    },
     "Tooltip": {
       "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
         "Доступ до вмісту, обмеженого розташуванням (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube тощо), незалежно від того, де ви знаходитесь."
@@ -8741,6 +8757,9 @@
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Повідомлення не шифруються наскрізно. Будь ласка, не відправляйте будь-яку конфіденційну інформацію."
       ],
+      "The date and time settings on your device are out of sync. ${ learnMore }": [
+        "Дата й час на вашому пристрої не синхронізуються. ${ learnMore }"
+      ],
       "This action will ${ boldWarning }. You will not be able to recover the messages on ${ domain }.": [
         "Ця дія ${ boldWarning }. Ви не зможете відновити повідомлення від ${ domain }."
       ],
@@ -8764,9 +8783,6 @@
       ],
       "You will not see this import record in the list anymore.": [
         "Ви більше не побачите цей запис імпорту в списку."
-      ],
-      "Your local date & time settings seem to be out of sync.": [
-        "Здається, ваші локальні налаштування дати та часу не синхронізовані."
       ]
     },
     "Warning for domain modal": {
@@ -8775,6 +8791,11 @@
       ],
       "It can take up to a day for DNS changes to update.": [
         "Оновлення DNS може тривати цілий день."
+      ]
+    },
+    "Weak personal key warning": {
+      "This key no longer meets our security standards. We suggest you mark it as obsolete and generate a new key.": [
+        "Цей ключ більше не задовольняє наші стандарти безпеки. Ми пропонуємо вам позначити його застарілим і згенерувати новий."
       ]
     },
     "Weekly recurring event, frequency": {

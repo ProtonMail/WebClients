@@ -220,9 +220,6 @@
       "Create folder": [
         "Создать папку"
       ],
-      "Create key": [
-        "Создать ключ"
-      ],
       "Create label": [
         "Создать ярлык"
       ],
@@ -348,6 +345,9 @@
       ],
       "Font": [
         "Шрифт"
+      ],
+      "Generate key": [
+        "Сгенерировать ключ"
       ],
       "Get ProtonVPN Plus": [
         "Перейти на ProtonVPN Plus"
@@ -2290,6 +2290,9 @@
       "Original recurring event could not be found": [
         "Исходное повторяющееся событие не найдено"
       ],
+      "Recurring event has no occurrences": [
+        "Повторяющееся событие не происходило"
+      ],
       "Recurring rule not supported": [
         "Правило для повторения не поддерживается"
       ],
@@ -3407,6 +3410,9 @@
       "Black Friday 2020 newcomer discount has been applied": [
         "Мы применили скидку для новых пользователей на черную пятницу 2020"
       ],
+      "Blocks senders from seeing if and when you opened a message.": [
+        "Запрещает отправителям видеть, открывали ли вы сообщение и когда."
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Перейдя на бесплатный тарифный план, вы навсегда потеряете эти преимущества, даже если в будущем вы снова улучшите его."
       ],
@@ -3676,6 +3682,9 @@
       ],
       "here": [
         "здесь"
+      ],
+      "Hides identifying information by loading remote content through a proxy. Option to store content as attachments.": [
+        "Скрывает идентификационную информацию, загружая внешнее содержимое через прокси-сервер. Возможность сохранения содержимого в виде вложений."
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Если другой администратор изменил этот пароль, вам нужно будет спросить у него новый пароль организации."
@@ -4049,11 +4058,8 @@
       "Plus or Visionary subscription required": [
         "Требуется подписка Plus или Visionary"
       ],
-      "Prevents remote email content from loading automatically.": [
-        "Предотвращает автоматическую загрузку удаленного содержимого электронной почты."
-      ],
-      "Prevents senders from knowing whether and when you have opened a message.": [
-        "Не позволяет отправителям узнать, открывали ли вы сообщение и, если да, то когда."
+      "Prevents content from the sender's server from loading without your permission.": [
+        "Предотвращает загрузку содержимого с сервера отправителя без вашего разрешения."
       ],
       "Preview": [
         "Предпросмотр"
@@ -5063,6 +5069,9 @@
       "App password": [
         "Пароль приложения"
       ],
+      "Ask before loading remote content": [
+        "Спрашивать перед загрузкой внешнего содержимого"
+      ],
       "Attach public key": [
         "Присоединить публичный ключ"
       ],
@@ -5083,6 +5092,9 @@
       ],
       "Backup keys": [
         "Резервный ключ"
+      ],
+      "Block email tracking": [
+        "Блокировать отслеживание электронной почты"
       ],
       "bonus storage": [
         "бонусное хранилище"
@@ -5137,9 +5149,6 @@
       ],
       "Conditions": [
         "Условия"
-      ],
-      "Confirm before loading remote content": [
-        "Подтвердите перед загрузкой удаленного содержимого"
       ],
       "Confirm login password": [
         "Подтвердите пароль входа"
@@ -5506,9 +5515,6 @@
       ],
       "Proration": [
         "Пропорциональное распределение"
-      ],
-      "Protect against email tracking": [
-        "Защищать от почтовых трекеров"
       ],
       "Protection mode": [
         "Режим защиты"
@@ -6609,11 +6615,11 @@
       ]
     },
     "Option protection mode": {
-      "Prevent tracking (recommended)": [
-        "Предотвращать отслеживание (рекомендуется)"
+      "Load content via proxy (recommended)": [
+        "Загрузка содержимого через прокси-сервер (рекомендуется)"
       ],
-      "Prevent tracking and store content locally": [
-        "Защита от отслеживание и локальное сохранение содержимого"
+      "Load content via proxy and store as attachments": [
+        "Загрузка содержимого через прокси-сервер и сохранение в виде вложений"
       ]
     },
     "OS compatibility": {
@@ -6647,6 +6653,11 @@
       ],
       "PayPal": [
         "PayPal"
+      ]
+    },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "Адрес электронной почты не найден среди идентификаторов пользователей, определенных в ключе отправки (${ keyUserIds })"
       ]
     },
     "Placeholder": {
@@ -7719,9 +7730,6 @@
       "Create calendar": [
         "Создать календарь"
       ],
-      "Create key": [
-        "Создание ключа"
-      ],
       "Create your Proton Account": [
         "Создание учётной записи Proton"
       ],
@@ -7889,6 +7897,9 @@
       ],
       "General": [
         "Основные"
+      ],
+      "Generate key": [
+        "Сгенерировать ключ"
       ],
       "Generate missing keys": [
         "Создать недостающие ключи"
@@ -8349,6 +8360,11 @@
         "Роль"
       ]
     },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "Сегодня"
+      ]
+    },
     "Tooltip": {
       "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
         "Доступ к содержимому, заблокированному по географическому признаку (Netflix, Amazon Prime Video, BBC iPlayer, Википедии, Facebook, YouTube и т. д.), независимо от того, где вы находитесь."
@@ -8741,6 +8757,9 @@
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Отчеты отправляются без сквозного шифрования. Пожалуйста, не указывайте никакой конфиденциальной информации."
       ],
+      "The date and time settings on your device are out of sync. ${ learnMore }": [
+        "Настройки даты и времени на вашем устройстве не синхронизированы. ${ learnMore }"
+      ],
       "This action will ${ boldWarning }. You will not be able to recover the messages on ${ domain }.": [
         "Это действие будет ${ boldWarning }. Вы не сможете восстановить сообщения на ${ domain }."
       ],
@@ -8764,9 +8783,6 @@
       ],
       "You will not see this import record in the list anymore.": [
         "Вы больше не увидите в списке эту запись об импорте."
-      ],
-      "Your local date & time settings seem to be out of sync.": [
-        "Ваши локальные параметры даты и времени не синхронизированы."
       ]
     },
     "Warning for domain modal": {
@@ -8775,6 +8791,11 @@
       ],
       "It can take up to a day for DNS changes to update.": [
         "Вступление в силу настроек DNS может занять до 1 дня."
+      ]
+    },
+    "Weak personal key warning": {
+      "This key no longer meets our security standards. We suggest you mark it as obsolete and generate a new key.": [
+        "Этот ключ больше не соответствует нашим стандартам безопасности. Мы предлагаем вам пометить его как устаревший и сгенерировать новый ключ."
       ]
     },
     "Weekly recurring event, frequency": {

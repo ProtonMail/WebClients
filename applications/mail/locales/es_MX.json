@@ -635,6 +635,9 @@
       "Recover data": [
         "Recuperar datos"
       ],
+      "Refine your search": [
+        ""
+      ],
       "refresh the page": [
         "refresque la página"
       ],
@@ -2374,6 +2377,9 @@
       "Original recurring event could not be found": [
         "No se pudo encontrar el evento original recurrente"
       ],
+      "Recurring event has no occurrences": [
+        ""
+      ],
       "Recurring rule not supported": [
         "Regla recurrente no compatible"
       ],
@@ -3441,8 +3447,8 @@
       "No email address": [
         "No hay dirección de correo"
       ],
-      "No email trackers found.": [
-        "No se encontraron rastreadores de correo."
+      "No email trackers found": [
+        ""
       ],
       "No folder found": [
         "Ninguna carpeta encontrada"
@@ -3570,14 +3576,11 @@
       "Print email": [
         "Imprimir correo"
       ],
-      "Protect yourself from trackers by turning on Proton email tracker protection.": [
-        "Protéjase de los rastreadores activando la protección del rastreador de correo de Proton."
+      "Protect yourself from trackers. Turn on email tracker protection in settings": [
+        ""
       ],
       "Proton doesn't make money by abusing privacy.": [
         "Proton no genera dinero abusando de la privacidad."
-      ],
-      "Proton has blocked email trackers in this message in order to protect your privacy.": [
-        "Proton ha bloqueado los rastreadores de correo en este mensaje para proteger su privacidad."
       ],
       "ProtonMail can protect your business as well.": [
         "ProtonMail también puede proteger su negocio."
@@ -3706,6 +3709,9 @@
       "Switch to ${ professionalPlan } to add more users.": [
         "Cambiar a ${ professionalPlan } para añadir más usuarios."
       ],
+      "Taking too long?": [
+        ""
+      ],
       "Test link": [
         "Prueba de enlace"
       ],
@@ -3820,6 +3826,9 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Para luchar contra el spam y el abuso, verifique que es humano."
+      ],
+      "To protect your privacy, Proton blocked email trackers in this message": [
+        ""
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "Para volver a firmar sus contactos, necesitamos verificar cada contacto contra la lista de claves de cifrado disponibles en su cuenta. Si no se encuentra ninguna coincidencia, su contacto volverá a estar firmado con la clave de cifrado principal."
@@ -5941,14 +5950,17 @@
       ]
     },
     "Spotlight": {
-      "Proton blocked email trackers in this message in order to protect your privacy": [
-        "Proton bloqueó los rastreadores de correo en este mensaje para proteger su privacidad"
+      "Message Content Search": [
+        ""
       ],
-      "Tracker protection": [
-        "Protección de rastreo"
+      "To protect your privacy, Proton blocked email trackers in this message": [
+        ""
       ],
       "You can now schedule your messages to be sent later": [
         "Ya puede programar sus mensajes para ser enviados posteriormente"
+      ],
+      "You can now search the content of your encrypted emails.": [
+        ""
       ]
     },
     "Status": {
@@ -6828,6 +6840,11 @@
         "ZIP/código postal"
       ]
     },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        ""
+      ]
+    },
     "Tooltip": {
       "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
         "Acceda al contenido geobloqueado (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) sin importar dónde se encuentre."
@@ -7066,6 +7083,9 @@
       "The contact failed to load.": [
         "No se pudo cargar el contacto."
       ],
+      "The date and time settings on your device are out of sync. ${ learnMore }": [
+        ""
+      ],
       "The decryption of the encrypted content failed.": [
         "Falló el descifrado del contenido cifrado."
       ],
@@ -7083,9 +7103,6 @@
       ],
       "You will lose any customization you made so far.": [
         "Perderá cualquier personalización que haya hecho hasta ahora."
-      ],
-      "Your local date & time settings seem to be out of sync.": [
-        "Los ajustes de fecha y hora locales parecen no estar sincronizados."
       ]
     },
     "Weekly recurring event, frequency": {

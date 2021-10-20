@@ -220,9 +220,6 @@
       "Create folder": [
         "Crea cartella"
       ],
-      "Create key": [
-        "Crea chiave"
-      ],
       "Create label": [
         "Crea etichetta"
       ],
@@ -348,6 +345,9 @@
       ],
       "Font": [
         "Carattere"
+      ],
+      "Generate key": [
+        ""
       ],
       "Get ProtonVPN Plus": [
         "Ottieni ProtonVPN Plus"
@@ -2248,6 +2248,9 @@
       "Original recurring event could not be found": [
         "Impossibile trovare l'evento ricorrente originale"
       ],
+      "Recurring event has no occurrences": [
+        ""
+      ],
       "Recurring rule not supported": [
         "Regola ricorrente non supportata"
       ],
@@ -3307,6 +3310,9 @@
       "Black Friday 2020 newcomer discount has been applied": [
         "Il nuovo sconto Black Friday 2020 è stato applicato"
       ],
+      "Blocks senders from seeing if and when you opened a message.": [
+        ""
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Declassando ad un piano gratuito, perderai definitivamente questi benefici, anche se in futuro effettuerai un nuovo upgrade."
       ],
@@ -3572,6 +3578,9 @@
       ],
       "here": [
         "qui"
+      ],
+      "Hides identifying information by loading remote content through a proxy. Option to store content as attachments.": [
+        ""
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Se un altro amministratore cambia questa password, sarà necessario chiedergli una nuova password dell'organizzazione."
@@ -3943,10 +3952,7 @@
       "Plus or Visionary subscription required": [
         "Abbonamento Plus o Visionary richiesto"
       ],
-      "Prevents remote email content from loading automatically.": [
-        ""
-      ],
-      "Prevents senders from knowing whether and when you have opened a message.": [
+      "Prevents content from the sender's server from loading without your permission.": [
         ""
       ],
       "Preview": [
@@ -4947,6 +4953,9 @@
       "App password": [
         "Password app"
       ],
+      "Ask before loading remote content": [
+        ""
+      ],
       "Attach public key": [
         "Allega chiave pubblica"
       ],
@@ -4967,6 +4976,9 @@
       ],
       "Backup keys": [
         "Chiave di backup"
+      ],
+      "Block email tracking": [
+        ""
       ],
       "bonus storage": [
         "spazio bonus"
@@ -5021,9 +5033,6 @@
       ],
       "Conditions": [
         "Condizioni"
-      ],
-      "Confirm before loading remote content": [
-        ""
       ],
       "Confirm login password": [
         "Confermare password"
@@ -5390,9 +5399,6 @@
       ],
       "Proration": [
         "Calcolo proporzionale"
-      ],
-      "Protect against email tracking": [
-        ""
       ],
       "Protection mode": [
         ""
@@ -6475,10 +6481,10 @@
       ]
     },
     "Option protection mode": {
-      "Prevent tracking (recommended)": [
+      "Load content via proxy (recommended)": [
         ""
       ],
-      "Prevent tracking and store content locally": [
+      "Load content via proxy and store as attachments": [
         ""
       ]
     },
@@ -6513,6 +6519,11 @@
       ],
       "PayPal": [
         "PayPal"
+      ]
+    },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        ""
       ]
     },
     "Placeholder": {
@@ -7569,9 +7580,6 @@
       "Create calendar": [
         "Crea calendario"
       ],
-      "Create key": [
-        "Crea chiave"
-      ],
       "Create your Proton Account": [
         "Crea il tuo Account Proton"
       ],
@@ -7739,6 +7747,9 @@
       ],
       "General": [
         "Generale"
+      ],
+      "Generate key": [
+        ""
       ],
       "Generate missing keys": [
         "Genera chiavi mancanti"
@@ -8199,6 +8210,11 @@
         "Ruolo"
       ]
     },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        ""
+      ]
+    },
     "Tooltip": {
       "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
         "Accedi ai contenuti geo-bloccati (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, ecc.) indipendentemente da dove ti trovi."
@@ -8585,6 +8601,9 @@
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "I report non sono crittografati end-to-end, non inviare alcuna informazione sensibile."
       ],
+      "The date and time settings on your device are out of sync. ${ learnMore }": [
+        ""
+      ],
       "This action will ${ boldWarning }. You will not be able to recover the messages on ${ domain }.": [
         "Questa azione sarà ${ boldWarning }. Non sarai in grado di recuperare i messaggi su ${ domain }."
       ],
@@ -8608,9 +8627,6 @@
       ],
       "You will not see this import record in the list anymore.": [
         "Non vedrai più questo record di importazione nella lista."
-      ],
-      "Your local date & time settings seem to be out of sync.": [
-        "Le tue impostazioni di data e ora locale non sembrano essere sincronizzate."
       ]
     },
     "Warning for domain modal": {
@@ -8619,6 +8635,11 @@
       ],
       "It can take up to a day for DNS changes to update.": [
         "Può essere necessario fino ad un giorno perché si diffondano i cambiamenti dei DNS."
+      ]
+    },
+    "Weak personal key warning": {
+      "This key no longer meets our security standards. We suggest you mark it as obsolete and generate a new key.": [
+        ""
       ]
     },
     "Weekly recurring event, frequency": {

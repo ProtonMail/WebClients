@@ -641,6 +641,9 @@
       "Recover data": [
         "Odzyskaj dane"
       ],
+      "Refine your search": [
+        ""
+      ],
       "refresh the page": [
         "Odśwież stronę"
       ],
@@ -2422,6 +2425,9 @@
       "Original recurring event could not be found": [
         "Oryginalne wydarzenie cykliczne nie zostało znalezione"
       ],
+      "Recurring event has no occurrences": [
+        ""
+      ],
       "Recurring rule not supported": [
         "Reguła powtórzeń nie jest obsługiwana"
       ],
@@ -3591,8 +3597,8 @@
       "No email address": [
         "Brak adresu e-mail"
       ],
-      "No email trackers found.": [
-        "Brak skryptów śledzących w wiadomości."
+      "No email trackers found": [
+        ""
       ],
       "No folder found": [
         "Nie znaleziono folderu"
@@ -3720,14 +3726,11 @@
       "Print email": [
         "Drukuj wiadomość"
       ],
-      "Protect yourself from trackers by turning on Proton email tracker protection.": [
+      "Protect yourself from trackers. Turn on email tracker protection in settings": [
         ""
       ],
       "Proton doesn't make money by abusing privacy.": [
         "Proton nie zarabia pieniędzy, naruszając prywatność."
-      ],
-      "Proton has blocked email trackers in this message in order to protect your privacy.": [
-        ""
       ],
       "ProtonMail can protect your business as well.": [
         "ProtonMail może chronić również Twój biznes."
@@ -3858,6 +3861,9 @@
       "Switch to ${ professionalPlan } to add more users.": [
         "Zmień na plan ${ professionalPlan }, aby dodać więcej użytkowników."
       ],
+      "Taking too long?": [
+        ""
+      ],
       "Test link": [
         "Podgląd linku"
       ],
@@ -3974,6 +3980,9 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Weryfikacja antyspamowa i nadużyć. Udowodnij, że jesteś człowiekiem."
+      ],
+      "To protect your privacy, Proton blocked email trackers in this message": [
+        ""
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "Aby podpisać ponownie kontakty, musimy porównać każdy kontakt z listą dostępnych kluczy szyfrowania na koncie. Jeśli dopasowanie nie zostanie znalezione, kontakt zostanie podpisany ponownie za pomocą głównego klucza szyfrowania."
@@ -6149,14 +6158,17 @@
       ]
     },
     "Spotlight": {
-      "Proton blocked email trackers in this message in order to protect your privacy": [
+      "Message Content Search": [
         ""
       ],
-      "Tracker protection": [
-        "Ochrona przed skryptami śledzącymi"
+      "To protect your privacy, Proton blocked email trackers in this message": [
+        ""
       ],
       "You can now schedule your messages to be sent later": [
         "Możesz zaplanować wysyłanie wiadomości w późniejszym czasie"
+      ],
+      "You can now search the content of your encrypted emails.": [
+        ""
       ]
     },
     "Status": {
@@ -7110,6 +7122,11 @@
         "Kod pocztowy"
       ]
     },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        ""
+      ]
+    },
     "Tooltip": {
       "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
         "Uzyskaj dostęp do treści zablokowanych geograficznie (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube itp.) gdziekolwiek jesteś."
@@ -7356,6 +7373,9 @@
       "The contact failed to load.": [
         "Nie udało się załadować kontaktu."
       ],
+      "The date and time settings on your device are out of sync. ${ learnMore }": [
+        ""
+      ],
       "The decryption of the encrypted content failed.": [
         "Odszyfrowanie zawartości nie powiodło się."
       ],
@@ -7373,9 +7393,6 @@
       ],
       "You will lose any customization you made so far.": [
         "Dotychczasowa personalizacja importu zostanie utracona."
-      ],
-      "Your local date & time settings seem to be out of sync.": [
-        "Twoje ustawienia daty i czasu nie są zsynchronizowane."
       ]
     },
     "Weekly recurring event, frequency": {
