@@ -54,6 +54,9 @@ export const readContentIDandLocation = ({ Headers = {} }: Attachment = {}) => {
     return { cid, cloc };
 };
 
+export const matchSameCidOrLoc = (image: MessageEmbeddedImage, cid: string, cloc: string) =>
+    (cid !== '' && image.cid === cid) || (cloc !== '' && image.cloc === cloc);
+
 /**
  * Generate CID from input and email
  */
@@ -162,7 +165,7 @@ export const replaceEmbeddedAttachments = (
     const newEmbeddedImages = embeddedImages.map((image) => {
         const attachment = attachments.find((attachment) => {
             const { cid, cloc } = readContentIDandLocation(attachment);
-            return (cid !== '' && image.cid === cid) || (cloc !== '' && image.cloc === cloc);
+            return matchSameCidOrLoc(image, cid, cloc);
         });
         if (attachment) {
             return { ...image, attachment };
