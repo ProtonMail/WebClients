@@ -2308,9 +2308,6 @@
       "End time out of bounds": [
         "終了日時が指定可能な範囲を超えています"
       ],
-      "Event duration not supported": [
-        ""
-      ],
       "Event validation failed": [
         ""
       ],
@@ -3558,6 +3555,9 @@
       "Scheduled": [
         "計画休止の利用"
       ],
+      "Scheduled send of this message will be cancelled.": [
+        ""
+      ],
       "Scheduling message...": [
         "メッセージをスケジューリングしています..."
       ],
@@ -3582,8 +3582,8 @@
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
         "@pm.me から送信されたメッセージは有料プランの機能です。メッセージは ${ email } から送信されます"
       ],
-      "Servers are unreachable.": [
-        "サーバーに接続できません。"
+      "Servers are unreachable. Please try again in a few minutes": [
+        ""
       ],
       "Session timed out.": [
         "セッションがタイムアウトしました。"
@@ -3677,6 +3677,9 @@
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "このブラウザーは PDF ドキュメントのプレビューに対応していません。ファイルをダウンロードしてください。"
+      ],
+      "This conversation contains a scheduled message. Sending of this message will be cancelled.": [
+        ""
       ],
       "This conversation contains non-trashed messages.": [
         "この会話には、ごみ箱に入れていないメッセージが含まれています。"
@@ -4363,9 +4366,6 @@
       "Country": [
         "国"
       ],
-      "Cryptographic scheme": [
-        "暗号化方式"
-      ],
       "CVV code": [
         "CVV コード"
       ],
@@ -4524,6 +4524,9 @@
       ],
       "Payer": [
         "支払人"
+      ],
+      "PGP scheme": [
+        ""
       ],
       "Phone number": [
         "電話番号"
@@ -6496,6 +6499,9 @@
       ],
       "Move to trash": [
         "ごみ箱に移動"
+      ],
+      "Moving a scheduled message": [
+        ""
       ],
       "Network error": [
         "ネットワークエラー"

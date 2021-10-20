@@ -1249,6 +1249,11 @@
         "20 / ユーザー *"
       ]
     },
+    "Calendar import section description": {
+      "You can import ICS files from another calendar to ${ CALENDAR_APP_NAME }. This lets you quickly import one event or your entire agenda.": [
+        ""
+      ]
+    },
     "Calendar limit warning": {
       "You have reached the maximum of ${ calendarsLimit } calendar.": [
         ""
@@ -1914,7 +1919,7 @@
       "Please enable multi-user support before adding users to your organization.": [
         "組織にユーザーを追加する前に、マルチユーザー対応を有効にしてください。"
       ],
-      "Please fix the highlighted conflicts to proceed.": [
+      "Please fix the highlighted conflict to proceed.": [
         ""
       ],
       "Please generate keys before you try to change your password.": [
@@ -2179,9 +2184,6 @@
       ],
       "Event": [
         "予定"
-      ],
-      "Event duration not supported": [
-        ""
       ],
       "Event validation failed": [
         ""
@@ -3984,8 +3986,8 @@
       "Server load": [
         "サーバー利用率"
       ],
-      "Servers are unreachable.": [
-        "サーバーに接続できません。"
+      "Servers are unreachable. Please try again in a few minutes": [
+        ""
       ],
       "Session timed out.": [
         "セッションがタイムアウトしました。"
@@ -4304,9 +4306,6 @@
       ],
       "You can generate a new encryption key if you think your previous key has been compromised.": [
         "現在の鍵が侵害されたと思われる場合は、新しい暗号鍵を生成できます。"
-      ],
-      "You can import ICS files from another calendar to ${ CALENDAR_APP_NAME }. This lets you quickly import one event or your entire agenda.": [
-        ""
       ],
       "You can now receive messages to your @pm.me address. Upgrade to a paid plan to also send emails using your @pm.me address and create additional @pm.me addresses.": [
         "@pm.me アドレスを使ってメッセージを受信できるようになりました。 有料プランにアップグレードすると、@pm.me アドレスを使用してメールを送信したり、追加の @pm.me アドレスを作成することもできます。"
@@ -5037,8 +5036,8 @@
       "Default notifications": [
         "既定の通知"
       ],
-      "Default PGP settings": [
-        "デフォルトの PGP 設定"
+      "Default PGP scheme": [
+        ""
       ],
       "Default view": [
         "既定の表示形式"
@@ -7214,9 +7213,6 @@
       ]
     },
     "Suffix for price": {
-      "/ mo": [
-        ""
-      ],
       "/ month": [
         "/月"
       ]
@@ -7257,6 +7253,20 @@
         ""
       ],
       "vCard field": [
+        ""
+      ]
+    },
+    "Time period": {
+      "account creation date": [
+        ""
+      ],
+      "the last 12 months": [
+        ""
+      ],
+      "the last 3 months": [
+        ""
+      ],
+      "the last month": [
         ""
       ]
     },

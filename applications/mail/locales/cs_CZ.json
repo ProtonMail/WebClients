@@ -2380,9 +2380,6 @@
       "End time out of bounds": [
         "Čas ukončení mimo meze"
       ],
-      "Event duration not supported": [
-        "Doba trvání události není podporována"
-      ],
       "Event validation failed": [
         "Ověření události se nezdařilo"
       ],
@@ -3786,6 +3783,9 @@
       "Scheduled": [
         "Naplánováno"
       ],
+      "Scheduled send of this message will be cancelled.": [
+        ""
+      ],
       "Scheduling message...": [
         "Plánování zprávy..."
       ],
@@ -3810,8 +3810,8 @@
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
         "Odesílání zpráv z @pm.me adresy je placená služba. Vaše zpráva bude odeslána z vaší standardní adresy ${ email }"
       ],
-      "Servers are unreachable.": [
-        "Servery jsou nedostupné."
+      "Servers are unreachable. Please try again in a few minutes": [
+        ""
       ],
       "Session timed out.": [
         "Relace vypršela."
@@ -3908,6 +3908,9 @@
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Váš internetový prohlížeč nepodporuje zobrazení PDF dokumentů. Soubor si proto stáhněte."
+      ],
+      "This conversation contains a scheduled message. Sending of this message will be cancelled.": [
+        ""
       ],
       "This conversation contains non-trashed messages.": [
         "Tato konverzace obsahuje nesmazané zprávy."
@@ -4624,9 +4627,6 @@
       "Country": [
         "Země"
       ],
-      "Cryptographic scheme": [
-        "Šifrovací schéma"
-      ],
       "CVV code": [
         "Kód CVV"
       ],
@@ -4785,6 +4785,9 @@
       ],
       "Payer": [
         "Plátce"
+      ],
+      "PGP scheme": [
+        ""
       ],
       "Phone number": [
         "Telefonní číslo"
@@ -6916,6 +6919,9 @@
       ],
       "Move to trash": [
         "Přesunout do koše"
+      ],
+      "Moving a scheduled message": [
+        ""
       ],
       "Network error": [
         "Chyba sítě"

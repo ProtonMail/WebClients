@@ -1481,9 +1481,9 @@
       "Please create an address first.": [
         "Primero cree una dirección."
       ],
-      "Please fix the highlighted conflicts to proceed.": [
-        "",
-        ""
+      "Please fix the highlighted conflict to proceed.": [
+        "Solucione el conflicto resaltado para continuar.",
+        "Solucione los conflictos resaltados para continuar."
       ],
       "Preferences could not be saved": [
         "No se pudieron guardar las preferencias"
@@ -2388,8 +2388,8 @@
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20-personal-calendar limit. You can also merge imported calendars with existing Proton calendars.": [
         "Seleccione los calendarios que desea importar. Se creará un calendario nuevo por cada calendario importado hasta el límite de 20 calendarios personales. También puede fusionar los calendarios importados con los calendarios existentes de Proton."
       ],
-      "Servers are unreachable.": [
-        "Los servidores no están disponibles."
+      "Servers are unreachable. Please try again in a few minutes": [
+        "No hay conexión con los servidores. Intente de nuevo en unos minutos."
       ],
       "Session timed out.": [
         "Sesión agotada."
@@ -2970,9 +2970,6 @@
       "Country": [
         "País"
       ],
-      "Cryptographic scheme": [
-        "Esquema criptográfico"
-      ],
       "CVV code": [
         "Código CVV"
       ],
@@ -3129,6 +3126,9 @@
       ],
       "Payer": [
         "Pagador"
+      ],
+      "PGP scheme": [
+        "Esquema PGP"
       ],
       "Phone number": [
         "Número telefónico"
@@ -3333,6 +3333,7 @@
     },
     "Loading info": {
       "${ createdCalendars } of ${ calendarsToBeCreated } created": [
+        "${ createdCalendars } de ${ calendarsToBeCreated } creado",
         "${ createdCalendars } de ${ calendarsToBeCreated } creados"
       ],
       "Almost there": [
@@ -4310,9 +4311,6 @@
       ]
     },
     "Suffix for price": {
-      "/ mo": [
-        "/mes"
-      ],
       "/ month": [
         "/mes"
       ]
@@ -4372,6 +4370,20 @@
     "Text": {
       "Settings": [
         "Ajustes"
+      ]
+    },
+    "Time period": {
+      "account creation date": [
+        "fecha de creación de la cuenta"
+      ],
+      "the last 12 months": [
+        "los últimos 12 meses"
+      ],
+      "the last 3 months": [
+        "los últimos 3 meses"
+      ],
+      "the last month": [
+        "el último mes"
       ]
     },
     "Time unit": {

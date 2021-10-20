@@ -1258,6 +1258,11 @@
         "20 / utilizador *"
       ]
     },
+    "Calendar import section description": {
+      "You can import ICS files from another calendar to ${ CALENDAR_APP_NAME }. This lets you quickly import one event or your entire agenda.": [
+        ""
+      ]
+    },
     "Calendar limit warning": {
       "You have reached the maximum of ${ calendarsLimit } calendar.": [
         "",
@@ -1934,7 +1939,7 @@
       "Please enable multi-user support before adding users to your organization.": [
         "Por favor, active o suporte multi-utilizador antes de adicionar utilizadores à sua organização."
       ],
-      "Please fix the highlighted conflicts to proceed.": [
+      "Please fix the highlighted conflict to proceed.": [
         "",
         ""
       ],
@@ -2201,9 +2206,6 @@
       "Event": [
         "Evento"
       ],
-      "Event duration not supported": [
-        "Duração do evento não suportada"
-      ],
       "Event validation failed": [
         "Falha ao validar o evento"
       ],
@@ -2458,7 +2460,7 @@
         "Seleccionar uma pasta"
       ],
       "Spam": [
-        "Assédio"
+        "Spam"
       ],
       "Trash": [
         "Lixo"
@@ -2510,7 +2512,7 @@
         "Adicione um filtro personalizado para executar automaticamente certas acções, como etiquetar ou arquivar mensagens."
       ],
       "Apply sender-specific spam rules. Messages from addresses or domains on the Allow List always go to your Inbox while messages from addresses or domains on the Block List always go to Spam. Marking a message as spam adds its address to the Block List. Marking a message as not spam adds it to the Allow List.": [
-        "Aplica regras de assédio específicas ao remetente. Mensagens de endereços ou domínios na lista de permissões vão sempre para a caixa de entrada, enquanto mensagens de endereços ou domínios na lista de bloqueios vão sempre para o assédio. Marcar uma mensagem como assédio adiciona o remetente à lista de bloqueios. Marcar uma mensagem como não-assédio adiciona o remetente à lista de permissões."
+        "Aplique regras de spam específicas do remetente. As mensagens de endereços ou domínios na Lista de Permissões sempre vão para sua Caixa de Entrada, enquanto as mensagens de endereços ou domínios na Lista de Bloqueios sempre vão para Spam. Marcar uma mensagem como spam adiciona seu endereço à Lista de Bloqueios. Marcar uma mensagem como não spam a adiciona à Lista de Permissões."
       ],
       "Search in Allow List and Block List": [
         "Procurar nas listas de permissões e bloqueios"
@@ -3485,7 +3487,7 @@
         "Insira o código enviado para o seu número de telefone ${ phone }."
       ],
       "Enter the code that was sent to ${ email }. If you can't find the message in your inbox, please check your spam folder.": [
-        "Insira o código enviado para ${ email }. Se não encontrar o correio na sua caixa de entrada, por favor verifique a pasta de assédio."
+        "Insira o código enviado para ${ email }. Se não encontrar o correio na sua caixa de entrada, por favor verifique a pasta de spam."
       ],
       "Enter the credentials of the email account you want to import from.": [
         "Insira as credenciais da conta de email da qual deseja importar."
@@ -3590,7 +3592,7 @@
         "Se acredita que houve um erro, por favor, contacte-nos em ${ contactLink }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
-        "Se não encontra o email na sua caixa de entrada, veja na pasta de assédio."
+        "Se não encontra o email na sua caixa de entrada, veja na pasta de spam."
       ],
       "If you have a custom domain with ProtonMail, you can set a catch-all email address that will receive messages sent to your domain but to an invalid email address (e.g., typos).": [
         "Se tem um domínio personalizado com o ProtonMail, pode definir um endereço de email captura tudo, que receberá mensagens enviadas para o seu domínio, mas para um endereço de email inválido (e.g., erros ortográficos)."
@@ -3602,7 +3604,7 @@
         "Se nunca utilizou autenticação em dois passos antes, recomendamos vivamente ${ guideButton }."
       ],
       "If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly.": [
-        "Se definiu SPF e DKIM, o DMARC permite-lhe especificar como outros serviços de email devem entregar emails no seu domínio, se as verificações SPF e DKIM falharam. Isto pode tornar dificultar o assédio, mas também pode causar problemas de entrega se não for feito adequadamente."
+        "Se você tiver definido o SPF e o DKIM, o DMARC permitirá que você especifique como outros serviços de e-mail devem entregar e-mails para o seu domínio se as verificações SPF e DKIM falharem. Isso pode dificultar os spammers que fingem ser você, mas também pode causar problemas de entrega se não forem feitos corretamente."
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to log into your account. Each code can only be used once.": [
         "Se perder o seu dispositivo com autenticação em dois passos, poderá utilizar estes códigos em vez do código 2FA de 6 algarismos para entrar na conta. Cada código só pode ser utilizado uma vez."
@@ -4038,8 +4040,8 @@
       "Server load": [
         "Carga do servidor"
       ],
-      "Servers are unreachable.": [
-        "Os servidores estão inacessíveis."
+      "Servers are unreachable. Please try again in a few minutes": [
+        ""
       ],
       "Session timed out.": [
         "A sessão expirou."
@@ -4165,7 +4167,7 @@
         "para continuar para ${ toAppName }"
       ],
       "To fight spam and abuse, please verify you are human.": [
-        "Para combater o assédio e o abuso, por favor confirme que é um ser humano."
+        "Para combater spam e abuso, verifique se você é humano."
       ],
       "To keep up with the latest development at Proton products, you can subscribe to our various emails and visit our blog from time to time.": [
         "Para acompanhar o mais recente desenvolvimento dos produtos Proton, pode subscrever os nossos vários emails e visitar o nosso blogue de tempos a tempos."
@@ -4359,9 +4361,6 @@
       "You can generate a new encryption key if you think your previous key has been compromised.": [
         "Pode gerar uma nova chave de encriptação se acha que a sua chave anterior foi comprometida."
       ],
-      "You can import ICS files from another calendar to ${ CALENDAR_APP_NAME }. This lets you quickly import one event or your entire agenda.": [
-        ""
-      ],
       "You can now receive messages to your @pm.me address. Upgrade to a paid plan to also send emails using your @pm.me address and create additional @pm.me addresses.": [
         ""
       ],
@@ -4525,7 +4524,7 @@
         "Funcionalidades personalizáveis"
       ],
       "ProtonMail cannot be used for mass emailing or spamming. Legitimate emails are unlimited.": [
-        "O ProtonMail não pode ser utilizado para enviar emails em lote ou para assédio. O envio de emails legítimos é ilimitado."
+        "O ProtonMail não pode ser utilizado para enviar emails em lote ou para spam. O envio de emails legítimos é ilimitado."
       ]
     },
     "Info for cash payment method": {
@@ -4709,7 +4708,7 @@
         "Ir para Enviado"
       ],
       "Go to Spam": [
-        "Ir para Assédio"
+        "Ir para Spam"
       ],
       "Go to Starred": [
         "Ir para Com estrela"
@@ -4754,7 +4753,7 @@
         "Mover para Caixa de entrada"
       ],
       "Move to Spam": [
-        "Mover para Assédio"
+        "Mover para Spam"
       ],
       "Move to Trash": [
         "Mover para Lixo"
@@ -5095,8 +5094,8 @@
       "Default notifications": [
         "Notificações predefinidas"
       ],
-      "Default PGP settings": [
-        "Predefinições PGP"
+      "Default PGP scheme": [
+        ""
       ],
       "Default view": [
         "Vista predefinida"
@@ -5810,6 +5809,7 @@
     },
     "Loading info": {
       "${ createdCalendars } of ${ calendarsToBeCreated } created": [
+        "",
         ""
       ],
       "Almost there": [
@@ -7286,9 +7286,6 @@
       ]
     },
     "Suffix for price": {
-      "/ mo": [
-        ""
-      ],
       "/ month": [
         "/mês"
       ]
@@ -7330,6 +7327,20 @@
       ],
       "vCard field": [
         "Campo vCard"
+      ]
+    },
+    "Time period": {
+      "account creation date": [
+        ""
+      ],
+      "the last 12 months": [
+        ""
+      ],
+      "the last 3 months": [
+        ""
+      ],
+      "the last month": [
+        ""
       ]
     },
     "Time unit": {
@@ -8021,7 +8032,7 @@
         "Ordenar etiquetas alfabeticamente"
       ],
       "Spam filters": [
-        "Filtros de assédio"
+        "Filtros de spam"
       ],
       "Spy Tracker Protection": [
         ""

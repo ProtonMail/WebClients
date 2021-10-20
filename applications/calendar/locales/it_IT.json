@@ -937,7 +937,7 @@
     },
     "Confirm modal title": {
       "Quit import customization?": [
-        ""
+        "Abbandona la personalizzazione dell'importazione?"
       ]
     },
     "Contact field label": {
@@ -1365,7 +1365,7 @@
         "Recupero dell'occorrenza originale nella serie non riuscito"
       ],
       "Folder name cannot be empty": [
-        ""
+        "Il nome della cartella non può essere vuoto"
       ],
       "Image upload failed": [
         "Caricamento dell'immagine fallito"
@@ -1419,7 +1419,7 @@
         "È possibile spostare eventi solo tra ${ minDateString } - ${ maxDateString }"
       ],
       "Label name cannot be empty": [
-        ""
+        "Il nome dell'etichetta non può essere vuoto"
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "",
@@ -1481,7 +1481,7 @@
       "Please create an address first.": [
         "Per favore prima crea un indirizzo."
       ],
-      "Please fix the highlighted conflicts to proceed.": [
+      "Please fix the highlighted conflict to proceed.": [
         "",
         ""
       ],
@@ -1516,10 +1516,10 @@
         "Impossibile eliminare alcuni gruppi"
       ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
-        ""
+        "Alcuni nomi delle tue etichette non sono disponibili. Personalizza l'importazione per modificare questi nomi."
       ],
       "Some of your label names exceed ProtonMail's maximum character limit. Please customize the import to edit these names.": [
-        ""
+        "Alcuni nomi delle etichette superano il limite massimo di caratteri di ProtonMail. Personalizza l'importazione per modificare questi nomi."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Qualcosa è andato storto, ${ refresh } per procedere. Se continui a vedere questo errore contatta il nostro ${ supportTeam }."
@@ -1534,10 +1534,10 @@
         "Il browser che stai utilizzando non consente di autorizzare completamente il pagamento. Per favore usa un altro browser o effettua il login tramite un computer."
       ],
       "The folder name is too long. Please choose a different name.": [
-        ""
+        "Il nome della cartella è troppo lungo. Scegli un nome diverso."
       ],
       "The label name is too long. Please choose a different name.": [
-        ""
+        "Il nome dell'etichetta è troppo lungo. Scegli un nome diverso."
       ],
       "The minimum amount of credit that can be added is ${ _price }": [
         "L'importo minimo di credito che può essere aggiunto è di ${ _price }"
@@ -1552,7 +1552,7 @@
         "La chiave di invio non è valida"
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
-        ""
+        "Ci sono troppe cartelle nel tuo account esterno. Personalizza l'importazione per eliminare alcune cartelle."
       ],
       "There was an error when exporting the contacts vCards": [
         "Si è verificato un errore nell'esportazione delle vCard dei contatti"
@@ -1564,10 +1564,10 @@
         "Questo campo richiede un minimo di ${ minimumLength } caratteri."
       ],
       "This folder name is not available. Please choose a different name": [
-        ""
+        "Questo nome della cartella non è disponibile. Scegli un nome diverso"
       ],
       "This label name is not available. Please choose a different name": [
-        ""
+        "Questo nome dell'etichetta non è disponibile. Scegli un nome diverso"
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "Questo messaggio potrebbe contenere alcuni link URL che non possono essere aperti correttamente dal browser corrente"
@@ -1731,7 +1731,7 @@
     },
     "Filter notification": {
       "${ Label.Name } updated": [
-        ""
+        "${ Label.Name } aggiornato"
       ]
     },
     "Free price": {
@@ -1918,8 +1918,8 @@
         ""
       ],
       "${ numContacts } contact": [
-        "",
-        ""
+        "${ numContacts } contatto",
+        "${ numContacts } contatti"
       ],
       "${ save20 } on your subscription by switching to ${ annualBilling }": [
         "${ save20 } sul tuo abbonamento passando alla ${ annualBilling }"
@@ -1935,12 +1935,12 @@
         ""
       ],
       "${ selectedFoldersCount } folder selected": [
-        "",
-        ""
+        "${ selectedFoldersCount } cartella selezionata",
+        "${ selectedFoldersCount } cartelle selezionate"
       ],
       "${ selectedFoldersCount } label selected": [
-        "",
-        ""
+        "${ selectedFoldersCount } etichetta selezionata",
+        "${ selectedFoldersCount } etichette selezionate"
       ],
       "${ updated } contact updated successfully.": [
         "${ updated } contatto aggiornato con successo.",
@@ -2015,12 +2015,12 @@
         "Dopo aver effettuato il pagamento in Bitcoin, segui le istruzioni qui sotto per effettuare l'upgrade."
       ],
       "All (${ totalFoldersCount } folder)": [
-        "",
-        ""
+        "Tutti (${ totalFoldersCount } cartella)",
+        "Tutte (${ totalFoldersCount } cartelle)"
       ],
       "All (${ totalFoldersCount } label)": [
-        "",
-        ""
+        "Tutta la (${ totalFoldersCount } etichetta)",
+        "Tutte le (${ totalFoldersCount } etichette)"
       ],
       "Allows you to host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
         "Consente di ospitare gli indirizzi di posta elettronica per i tuoi domini su ${ mailAppName }, ad esempio john.smith@example.com"
@@ -2035,7 +2035,7 @@
         "Un invito verrà inviato ai partecipanti all'evento."
       ],
       "and": [
-        ""
+        "e"
       ],
       "At most 100 participants are allowed per invitation": [
         "Sono ammessi al massimo 100 partecipanti per invito"
@@ -2090,10 +2090,10 @@
         ""
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
-        ""
+        "Crea un'etichetta per i messaggi importati, il periodo di tempo dell'importazione e le cartelle che desideri importare."
       ],
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
-        ""
+        "Crea un'etichetta per i messaggi importati, il periodo di tempo dell'importazione e le etichette che desideri importare."
       ],
       "Create a new contact group": [
         "Crea un nuovo gruppo di contatto"
@@ -2205,10 +2205,10 @@
         ""
       ],
       "Import from": [
-        ""
+        "Importa da"
       ],
       "Import in progress": [
-        ""
+        "Importazione in corso"
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         ""
@@ -2265,7 +2265,7 @@
         ""
       ],
       "New": [
-        ""
+        "Nuovo"
       ],
       "Next you'll need to log in to your Google account and allow us to access your data.": [
         ""
@@ -2331,7 +2331,7 @@
         "Rimuovi i duplicati e riprova."
       ],
       "Please select the folders you would like to import:": [
-        ""
+        "Si prega di selezionare le cartelle che si desidera importare:"
       ],
       "Please try again, use a different payment method, or call your bank for assistance.": [
         "Per favore riprova, usa un altro metodo di pagamento o contatta la tua banca per assistenza."
@@ -2388,8 +2388,8 @@
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20-personal-calendar limit. You can also merge imported calendars with existing Proton calendars.": [
         ""
       ],
-      "Servers are unreachable.": [
-        "I server non sono raggiungibili."
+      "Servers are unreachable. Please try again in a few minutes": [
+        ""
       ],
       "Session timed out.": [
         "Sessione scaduta."
@@ -2938,7 +2938,7 @@
         "Importo BTC:"
       ],
       "Calendar": [
-        ""
+        "Calendario"
       ],
       "Cancel": [
         "Annulla"
@@ -2962,16 +2962,13 @@
         "Città"
       ],
       "Contacts": [
-        ""
+        "Contatti"
       ],
       "Copy": [
         "Copia"
       ],
       "Country": [
         "Paese"
-      ],
-      "Cryptographic scheme": [
-        "Schema crittografico"
       ],
       "CVV code": [
         "Codice CVV"
@@ -3007,7 +3004,7 @@
         "Formato email"
       ],
       "Emails": [
-        ""
+        "Email"
       ],
       "Enable Beta Access": [
         "Abilita Accesso Beta"
@@ -3049,10 +3046,10 @@
         "Indirizzo completo"
       ],
       "Folder location": [
-        ""
+        "Percorso cartella"
       ],
       "From: ${ importedEmail }": [
-        ""
+        "Da: ${ importedEmail }"
       ],
       "Hide password": [
         "Nascondi password"
@@ -3061,40 +3058,40 @@
         "Quanto è probabile che consigli ${ calendarAppName } ad un amico o collega?"
       ],
       "Import all messages": [
-        ""
+        "Importa tutti i messaggi"
       ],
       "Import contacts": [
         "Importa i contatti"
       ],
       "Import interval": [
-        ""
+        "Intervallo di importazione"
       ],
       "Import to email address": [
-        ""
+        "Importa nell'indirizzo email"
       ],
       "Keyboard shortcuts": [
         "Scorciatoie da tastiera"
       ],
       "Label messages as": [
-        ""
+        "Etichetta messaggi come"
       ],
       "Last 12 months only": [
-        ""
+        "Solo gli ultimi 12 mesi"
       ],
       "Last 3 months only": [
-        ""
+        "Solo ultimi 3 mesi"
       ],
       "Last month only": [
-        ""
+        "Solo il mese scorso"
       ],
       "Mailbox password": [
         "Password della casella email"
       ],
       "Manage folders": [
-        ""
+        "Gestisci cartelle"
       ],
       "Manage labels": [
-        ""
+        "Gestisci le etichette"
       ],
       "Name": [
         "Nome"
@@ -3103,7 +3100,7 @@
         "Nome sulla carta"
       ],
       "Notification": [
-        ""
+        "Notifica"
       ],
       "Operating system": [
         "Sistema operativo"
@@ -3129,6 +3126,9 @@
       ],
       "Payer": [
         "Pagante"
+      ],
+      "PGP scheme": [
+        ""
       ],
       "Phone number": [
         "Numero di telefono"
@@ -3191,7 +3191,7 @@
         "Ora dell'evento"
       ],
       "To: ${ emailAddress }": [
-        ""
+        "A: ${ emailAddress }"
       ],
       "Total": [
         "Totale"
@@ -3268,21 +3268,21 @@
     },
     "Label/folder modal": {
       "Create folder": [
-        ""
+        "Crea cartella"
       ],
       "Create label": [
-        ""
+        "Crea etichetta"
       ],
       "Edit folder": [
-        ""
+        "Modifica cartella"
       ],
       "Edit label": [
-        ""
+        "Modifica etichetta"
       ]
     },
     "label/folder notification": {
       "${ Label.Name } created": [
-        ""
+        "${ Label.Name } creato"
       ]
     },
     "Layout mode": {
@@ -3333,6 +3333,7 @@
     },
     "Loading info": {
       "${ createdCalendars } of ${ calendarsToBeCreated } created": [
+        "",
         ""
       ],
       "Almost there": [
@@ -3608,13 +3609,13 @@
     },
     "New Label form": {
       "Color": [
-        ""
+        "Colore"
       ],
       "Folder name": [
-        ""
+        "Nome cartella"
       ],
       "Label name": [
-        ""
+        "Nome etichetta"
       ]
     },
     "Notification": {
@@ -3814,7 +3815,7 @@
         "Mesi"
       ],
       "No parent folder": [
-        ""
+        "Nessuna cartella superiore"
       ],
       "This and future events": [
         "Questo ed eventi futuri"
@@ -4310,9 +4311,6 @@
       ]
     },
     "Suffix for price": {
-      "/ mo": [
-        ""
-      ],
       "/ month": [
         "/ mese"
       ]
@@ -4372,6 +4370,20 @@
     "Text": {
       "Settings": [
         "Impostazioni"
+      ]
+    },
+    "Time period": {
+      "account creation date": [
+        ""
+      ],
+      "the last 12 months": [
+        ""
+      ],
+      "the last 3 months": [
+        ""
+      ],
+      "the last month": [
+        ""
       ]
     },
     "Time unit": {
@@ -4846,7 +4858,7 @@
         "Sconto applicato per ciclo di fatturazione biennale"
       ],
       "Each imported email will have this label": [
-        ""
+        "Ogni email importata avrà questa etichetta"
       ],
       "Email encryption forces email signature to help authenticate your sent messages": [
         "La crittografia email impone la firma email per autenticare i messaggi inviati"
@@ -4885,10 +4897,10 @@
         "Supporto per protocolli di condivisione dei file come BitTorrent."
       ],
       "System subfolders will show up as separate folders in ProtonMail": [
-        ""
+        "Le sottocartelle di sistema verranno visualizzate come cartelle separate in ProtonMail"
       ],
       "The import will start with the most recent messages.": [
-        ""
+        "L'importazione inizierà con i messaggi più recenti."
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Carica una chiave pubblica per abilitare l'invio di email crittografate end-to-end a questa email"
@@ -5040,7 +5052,7 @@
         "Scegliendo questo metodo di pagamento, il tuo account non potrà essere aggiornato immediatamente. Aggiorneremo il tuo account una volta che il pagamento sarà stato completato."
       ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
-        ""
+        "Proton unirà tutte le cartelle con lo stesso nome. Per evitare ciò, cambia i nomi prima dell'importazione."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "I report non sono crittografati end-to-end, non inviare alcuna informazione sensibile."
@@ -5067,7 +5079,7 @@
         "Sfortunatamente, al momento non sei online. Per favore completa il modulo sotto per descrivere il problema, lo esamineremo e ti contatteremo quando quando saremo di nuovo online."
       ],
       "You will lose any customization you made so far.": [
-        ""
+        "Perderai ogni personalizzazione che hai fatto finora."
       ],
       "Your local date & time settings seem to be out of sync.": [
         "Le tue impostazioni di data e ora locale non sembrano essere sincronizzate."

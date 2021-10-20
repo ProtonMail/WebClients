@@ -2332,9 +2332,6 @@
       "End time out of bounds": [
         "Eindtijd valt buiten de grenzen"
       ],
-      "Event duration not supported": [
-        "Afspraakduur niet ondersteund"
-      ],
       "Event validation failed": [
         "Validatie van afspraak mislukt"
       ],
@@ -3634,6 +3631,9 @@
       "Scheduled": [
         "Gepland"
       ],
+      "Scheduled send of this message will be cancelled.": [
+        ""
+      ],
       "Scheduling message...": [
         ""
       ],
@@ -3658,8 +3658,8 @@
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
         "Berichten versturen vanaf een @pm.me-adres is enkel beschikbaar voor betalende gebruikers. Uw bericht wordt verzonden vanaf ${ email }"
       ],
-      "Servers are unreachable.": [
-        "Servers zijn onbereikbaar."
+      "Servers are unreachable. Please try again in a few minutes": [
+        "De servers zijn onbereikbaar, probeer het over enkele minuten opnieuw"
       ],
       "Session timed out.": [
         "Sessie time-out."
@@ -3754,6 +3754,9 @@
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Deze browser ondersteunt geen voorbeeld PDF-documenten. Download het bestand."
+      ],
+      "This conversation contains a scheduled message. Sending of this message will be cancelled.": [
+        ""
       ],
       "This conversation contains non-trashed messages.": [
         "Dit gesprek bevat berichten die zich niet in de prullenbak bevinden."
@@ -4450,9 +4453,6 @@
       "Country": [
         "Land"
       ],
-      "Cryptographic scheme": [
-        "Cryptografisch schema"
-      ],
       "CVV code": [
         "CVV code"
       ],
@@ -4611,6 +4611,9 @@
       ],
       "Payer": [
         "Betaler"
+      ],
+      "PGP scheme": [
+        "PGP-schema"
       ],
       "Phone number": [
         "Telefoonnummer"
@@ -6636,6 +6639,9 @@
       ],
       "Move to trash": [
         "Naar prullenbak verplaatsen"
+      ],
+      "Moving a scheduled message": [
+        ""
       ],
       "Network error": [
         "Netwerkfout"

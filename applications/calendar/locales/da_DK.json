@@ -1481,7 +1481,7 @@
       "Please create an address first.": [
         "Opret en adresse først."
       ],
-      "Please fix the highlighted conflicts to proceed.": [
+      "Please fix the highlighted conflict to proceed.": [
         "",
         ""
       ],
@@ -2388,8 +2388,8 @@
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20-personal-calendar limit. You can also merge imported calendars with existing Proton calendars.": [
         ""
       ],
-      "Servers are unreachable.": [
-        "Serverne er utilgængelige."
+      "Servers are unreachable. Please try again in a few minutes": [
+        ""
       ],
       "Session timed out.": [
         "Session er udløbet."
@@ -2970,9 +2970,6 @@
       "Country": [
         "Land"
       ],
-      "Cryptographic scheme": [
-        "Krypteringsmetode"
-      ],
       "CVV code": [
         "CVV-kode"
       ],
@@ -3129,6 +3126,9 @@
       ],
       "Payer": [
         "Betaler"
+      ],
+      "PGP scheme": [
+        ""
       ],
       "Phone number": [
         "Telefonnummer"
@@ -3333,6 +3333,7 @@
     },
     "Loading info": {
       "${ createdCalendars } of ${ calendarsToBeCreated } created": [
+        "",
         ""
       ],
       "Almost there": [
@@ -4310,9 +4311,6 @@
       ]
     },
     "Suffix for price": {
-      "/ mo": [
-        ""
-      ],
       "/ month": [
         "/ måned"
       ]
@@ -4372,6 +4370,20 @@
     "Text": {
       "Settings": [
         "Indstillinger"
+      ]
+    },
+    "Time period": {
+      "account creation date": [
+        ""
+      ],
+      "the last 12 months": [
+        ""
+      ],
+      "the last 3 months": [
+        ""
+      ],
+      "the last month": [
+        ""
       ]
     },
     "Time unit": {

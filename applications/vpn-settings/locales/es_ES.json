@@ -813,7 +813,7 @@
         "Cantidad superior al máximo."
       ],
       "Amount below minimum.": [
-        "Cantidad inferior al mínimo."
+        "Cantidad por debajo del mínimo."
       ],
       "Can't check username, try again later": [
         "No se puede comprobar el nombre de usuario, inténtelo de nuevo más tarde"
@@ -1234,7 +1234,7 @@
         "Te permite alojar correos electrónicos para tu(s) propio(s) dominio(s) en ${ mailAppName }, p. ej., john.smith@example.com"
       ],
       "Amount below minimum (${ amount }).": [
-        "Cantidad inferior al mínimo. (${ amount })."
+        "Cantidad por debajo del mínimo (${ amount })."
       ],
       "Are you sure you want to continue?": [
         ""
@@ -1477,7 +1477,7 @@
         "Ingrese manualmente esta información en el dispositivo de autenticación de dos factores para configurar su cuenta. ${ _switchButton }."
       ],
       "NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "NetShield protege tu dispositivo y acelera la navegación bloqueando anuncios, rastreadores y malware."
+        "NetShield protege tu dispositivo y acelera tu navegación bloqueando anuncios, rastreadores y malware."
       ],
       "No payment is required at this time.": [
         "No se requiere ningún pago en este momento."
@@ -1609,8 +1609,8 @@
       "Server load": [
         "Carga del servidor"
       ],
-      "Servers are unreachable.": [
-        "Los servidores no están disponibles."
+      "Servers are unreachable. Please try again in a few minutes": [
+        ""
       ],
       "Session timed out.": [
         "El tiempo de la sesión ha expirado."
@@ -2904,7 +2904,7 @@
         "Acceso a ${ driveAppName } (beta)"
       ],
       "Adblocker (NetShield)": [
-        "Bloqueador de Anuncios (NetShield)"
+        "Bloqueador de anuncios (NetShield)"
       ],
       "All ${ PLAN_NAMES[PLAN.PLUS] } plan features": [
         "Todas las características del plan ${ PLAN_NAMES[PLAN.PLUS] }"
@@ -3094,9 +3094,6 @@
       ]
     },
     "Suffix for price": {
-      "/ mo": [
-        ""
-      ],
       "/ month": [
         "/ mes"
       ]
@@ -3769,11 +3766,11 @@
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Los informes no están cifrados de extremo a extremo, no envíes ninguna información confidencial."
       ],
-      "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
+      "The date and time settings on your device are out of sync. ${ learnMore }": [
         ""
       ],
-      "Your local date & time settings seem to be out of sync.": [
-        "La configuración de fecha y hora local parece no estar sincronizada."
+      "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
+        ""
       ]
     }
   }

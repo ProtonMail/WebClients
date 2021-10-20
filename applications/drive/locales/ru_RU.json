@@ -66,7 +66,7 @@
         "Переписывайтесь с нами"
       ],
       "Check import progress": [
-        ""
+        "Проверить хода импорта"
       ],
       "Choose a file or drag it here": [
         "Выберите файл или перетащите его сюда"
@@ -147,7 +147,7 @@
         "Дата создания: от старых к новым"
       ],
       "Customize": [
-        ""
+        "Настроить"
       ],
       "Decrease": [
         "Уменьшить"
@@ -198,7 +198,7 @@
         "Изменить адрес эл. почты"
       ],
       "Edit label": [
-        ""
+        "Изменить ярлык"
       ],
       "Edit phone number": [
         "Изменить номер телефона"
@@ -249,13 +249,13 @@
         "Скрыть расширенные настройки PGP"
       ],
       "Hide folders": [
-        ""
+        "Скрыть папки"
       ],
       "Hide info": [
         "Скрыть информацию"
       ],
       "Hide labels": [
-        ""
+        "Скрыть ярлыки"
       ],
       "I have a question": [
         "У меня есть вопрос"
@@ -369,7 +369,7 @@
         "Предыдущий месяц"
       ],
       "Quit": [
-        ""
+        "Выйти"
       ],
       "Re-sign": [
         "Подписать повторно"
@@ -462,13 +462,13 @@
         "Показать расширенные настройки PGP"
       ],
       "Show folders": [
-        ""
+        "Показать папки"
       ],
       "Show info": [
         "Показать информацию"
       ],
       "Show labels": [
-        ""
+        "Показать ярлыки"
       ],
       "Show shared link details": [
         "Показать подробности ссылки, которой вы поделились"
@@ -498,7 +498,7 @@
         "Приступить к настройке"
       ],
       "Stay": [
-        ""
+        "Остаться"
       ],
       "Stop sharing": [
         "Закрыть доступ"
@@ -1158,7 +1158,7 @@
         "В файле нет содержимого для предпросмотра"
       ],
       "Folder name cannot be empty": [
-        ""
+        "Название папки не может быть пустым"
       ],
       "Image upload failed": [
         "Сбой загрузки изображения"
@@ -1197,7 +1197,7 @@
         "Неверный проверочный код"
       ],
       "Label name cannot be empty": [
-        ""
+        "Название ярлыка не может быть пустым"
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "",
@@ -1254,7 +1254,7 @@
         "Настройки не могут быть сохранены"
       ],
       "Primary address key is not decrypted": [
-        ""
+        "Основной ключ адреса не расшифрован"
       ],
       "Primary address key is not decrypted.": [
         ""
@@ -1293,10 +1293,10 @@
         "Используемый вами браузер не позволяет полностью авторизовать платеж. Пожалуйста, используйте другой браузер или войдите в через компьютер."
       ],
       "The folder name is too long. Please choose a different name.": [
-        ""
+        "Название папки слишком длинное. Пожалуйста, выберите другое название."
       ],
       "The label name is too long. Please choose a different name.": [
-        ""
+        "Название ярлыка слишком длинное. Пожалуйста, выберите другое название."
       ],
       "The minimum amount of credit that can be added is ${ _price }": [
         "Минимальная сумма, которую можно добавить, составляет ${ _price }"
@@ -1341,10 +1341,10 @@
         "Минимальная длина для этого поля: ${ minimumLength }."
       ],
       "This folder name is not available. Please choose a different name": [
-        ""
+        "Это имя папки недоступно. Пожалуйста, выберите другое название"
       ],
       "This label name is not available. Please choose a different name": [
-        ""
+        "Это название ярлыка недоступно. Пожалуйста, выберите другое название"
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "Это сообщение может содержать ссылки, которые не могут быть правильно открыты вашим текущим браузером"
@@ -1363,6 +1363,9 @@
       ],
       "You must set a name": [
         "Вы должны задать имя"
+      ],
+      "Your browser does not support uploading folders": [
+        ""
       ],
       "Your import will not be processed.": [
         "Ваш импорт не будет обработан."
@@ -1921,7 +1924,7 @@
         "Создать новую группу контактов"
       ],
       "Create in": [
-        ""
+        "Создать в"
       ],
       "Create links and share your files with others.": [
         "Создавайте ссылки и делитесь файлами с другими."
@@ -2116,7 +2119,7 @@
         "Проблема с сетью"
       ],
       "New": [
-        ""
+        "Новый"
       ],
       "Next you'll need to log in to your Google account and allow us to access your data.": [
         ""
@@ -2256,8 +2259,8 @@
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20-personal-calendar limit. You can also merge imported calendars with existing Proton calendars.": [
         ""
       ],
-      "Servers are unreachable.": [
-        "Серверы недоступны."
+      "Servers are unreachable. Please try again in a few minutes": [
+        ""
       ],
       "Session timed out.": [
         "Время сессии истекло."
@@ -2800,7 +2803,7 @@
         "Сумма в биткоинах:"
       ],
       "Calendar": [
-        ""
+        "Календарь"
       ],
       "Cancel": [
         "Отменить"
@@ -2824,16 +2827,13 @@
         "Завершено"
       ],
       "Contacts": [
-        ""
+        "Контакты"
       ],
       "Copy": [
         "Копировать"
       ],
       "Country": [
         "Страна"
-      ],
-      "Cryptographic scheme": [
-        "Криптографическая схема"
       ],
       "CVV code": [
         "Код CVV"
@@ -2851,7 +2851,7 @@
         "Формат эл. почты"
       ],
       "Emails": [
-        ""
+        "Электронные письма"
       ],
       "Enable Beta Access": [
         "Включить доступ к бета-версии"
@@ -2890,7 +2890,7 @@
         "Папка"
       ],
       "Folder location": [
-        ""
+        "Размещение папки"
       ],
       "Folder name": [
         "Название папки"
@@ -2953,7 +2953,7 @@
         "Никогда"
       ],
       "Notification": [
-        ""
+        "Уведомление"
       ],
       "Operating system": [
         "Операционная система"
@@ -2966,6 +2966,9 @@
       ],
       "Payer": [
         "Плательщик"
+      ],
+      "PGP scheme": [
+        "Схема PGP"
       ],
       "Phone number": [
         "Номер телефона"
@@ -3126,16 +3129,16 @@
     },
     "Label/folder modal": {
       "Create folder": [
-        ""
+        "Создать папку"
       ],
       "Create label": [
-        ""
+        "Создать ярлык"
       ],
       "Edit folder": [
-        ""
+        "Изменить папку"
       ],
       "Edit label": [
-        ""
+        "Изменить ярлык"
       ]
     },
     "label/folder notification": {
@@ -3197,19 +3200,19 @@
         ""
       ],
       "Almost there": [
-        ""
+        "Почти там"
       ],
       "Creating new calendars": [
-        ""
+        "Создание новых календарей"
       ],
       "Gathering your data": [
-        ""
+        "Сбираются ваши данные"
       ],
       "We're gathering your data from your provider": [
         ""
       ],
       "Your import is starting": [
-        ""
+        "Ваш импорт начался"
       ]
     },
     "Mail feature": {
@@ -3323,13 +3326,13 @@
     },
     "New Label form": {
       "Color": [
-        ""
+        "Цвет"
       ],
       "Folder name": [
-        ""
+        "Название папки"
       ],
       "Label name": [
-        ""
+        "Название ярлыка"
       ]
     },
     "Notification": {
@@ -3605,15 +3608,15 @@
         "Игнорировать группу"
       ],
       "No parent folder": [
-        ""
+        "Без родительской папки"
       ]
     },
     "Option group label": {
       "Create new calendar": [
-        ""
+        "Создать календарь"
       ],
       "Merge with calendar": [
-        ""
+        "Объединение с календарем"
       ]
     },
     "Payment method option": {
@@ -3985,9 +3988,6 @@
       ]
     },
     "Suffix for price": {
-      "/ mo": [
-        ""
-      ],
       "/ month": [
         "в месяц"
       ]
@@ -4062,7 +4062,7 @@
         "Тип"
       ],
       "Uploaded": [
-        ""
+        "Загружено"
       ],
       "Values": [
         "Значения"
@@ -4081,13 +4081,13 @@
         ""
       ],
       "the last 12 months": [
-        ""
+        "последние 12 месяцев"
       ],
       "the last 3 months": [
-        ""
+        "последние 3 месяца"
       ],
       "the last month": [
-        ""
+        "последний месяц"
       ]
     },
     "Time unit": {

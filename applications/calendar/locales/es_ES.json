@@ -6,7 +6,7 @@
   "contexts": {
     "Action": {
       "${ boldSave } by switching to annual billing": [
-        "${ boldSave } al cambiar a facturación anual"
+        "${ boldSave } al cambiar a la facturación anual"
       ],
       "${ BRAND_NAME } introduction": [
         "${ BRAND_NAME } introducción"
@@ -129,7 +129,7 @@
         "Crear evento"
       ],
       "Customize": [
-        ""
+        "Personalizar"
       ],
       "Decrease": [
         "Reducir"
@@ -173,7 +173,7 @@
         "Editar dirección de correo electrónico"
       ],
       "Edit label": [
-        ""
+        "Editar etiqueta"
       ],
       "Edit phone number": [
         "Editar número de teléfono"
@@ -212,13 +212,13 @@
         "Ocultar ajustes PGP avanzados"
       ],
       "Hide folders": [
-        ""
+        "Ocultar carpetas"
       ],
       "Hide info": [
         "Ocultar información"
       ],
       "Hide labels": [
-        ""
+        "Ocultar etiquetas"
       ],
       "Hide time zones": [
         "Ocultar zonas horarias"
@@ -233,7 +233,7 @@
         "Importar"
       ],
       "Import from .csv or vCard": [
-        ""
+        "Importar desde .csv o vCard"
       ],
       "Increase": [
         "Incrementar"
@@ -335,7 +335,7 @@
         "Año anterior"
       ],
       "Quit": [
-        ""
+        "Salir"
       ],
       "Re-sign": [
         "Volver a firmar"
@@ -365,7 +365,7 @@
         "Eliminar a este participante"
       ],
       "Rename": [
-        ""
+        "Renombrar"
       ],
       "Report a problem": [
         "Notificar un problema"
@@ -401,13 +401,13 @@
         "Mostrar ajustes PGP avanzados"
       ],
       "Show folders": [
-        ""
+        "Mostrar carpetas"
       ],
       "Show info": [
         "Mostrar información"
       ],
       "Show labels": [
-        ""
+        "Mostrar etiquetas"
       ],
       "Show less": [
         "Mostrar menos"
@@ -434,7 +434,7 @@
         "Iniciar la configuración"
       ],
       "Stay": [
-        ""
+        "Permanecer"
       ],
       "Submit": [
         "Enviar"
@@ -634,7 +634,7 @@
     },
     "Attendee role": {
       "Optional": [
-        ""
+        "Opcional"
       ]
     },
     "Beta access description": {
@@ -879,7 +879,7 @@
     },
     "Calendar status": {
       "Not synced": [
-        ""
+        "No sincronizado"
       ],
       "Syncing": [
         "Sincronizando"
@@ -899,13 +899,13 @@
         ""
       ],
       "Calendar link is wrong": [
-        ""
+        "El enlace del calendario es erróneo"
       ],
       "Failed to sync calendar": [
         ""
       ],
       "More than 12 hours passed since last update": [
-        ""
+        "Han pasado más de 12 horas desde la última actualización"
       ]
     },
     "Calendar view": {
@@ -921,10 +921,10 @@
     },
     "Collapsible tooltip": {
       "Close": [
-        ""
+        "Cerrar"
       ],
       "Open": [
-        ""
+        "Abrir"
       ]
     },
     "Composer size": {
@@ -1182,12 +1182,12 @@
     },
     "Early Access Disabled": {
       "Off": [
-        ""
+        "Desactivado"
       ]
     },
     "Early Access Enabled": {
       "On": [
-        ""
+        "Activado"
       ]
     },
     "Email body for description (description part)": {
@@ -1283,7 +1283,7 @@
         "Cantidad por encima del máximo."
       ],
       "Amount below minimum.": [
-        "Cantidad inferior al mínimo."
+        "Cantidad por debajo del mínimo."
       ],
       "Answer failed to be sent": [
         "No se ha podido enviar la respuesta"
@@ -1481,7 +1481,7 @@
       "Please create an address first.": [
         "Por favor, primero crea una dirección."
       ],
-      "Please fix the highlighted conflicts to proceed.": [
+      "Please fix the highlighted conflict to proceed.": [
         "",
         ""
       ],
@@ -1731,7 +1731,7 @@
     },
     "Filter notification": {
       "${ Label.Name } updated": [
-        ""
+        "${ Label.Name } actualizado"
       ]
     },
     "Free price": {
@@ -1764,7 +1764,7 @@
         "Contactos, grupos y ajustes"
       ],
       "Get help": [
-        "Mostrar ayuda"
+        "Obtener ayuda"
       ],
       "Name": [
         "Nombre"
@@ -1869,16 +1869,16 @@
         ""
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
-        "",
-        ""
+        "${ calendarsToBeCreatedCount } calendario nuevo",
+        "${ calendarsToBeCreatedCount } calendarios nuevos"
       ],
       "${ calendarsToBeMerged } merged calendar": [
         "",
         ""
       ],
       "${ calendarsToBeMergedCount } merged calendar": [
-        "",
-        ""
+        "${ calendarsToBeMergedCount } calendario fusionado",
+        "${ calendarsToBeMergedCount } calendarios fusionados"
       ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } Miembro",
@@ -1914,12 +1914,12 @@
         "${ namesWithoutLast } y ${ nameOfLast }"
       ],
       "${ numContactGroups } contact group": [
-        "",
-        ""
+        "${ numContactGroups } grupo de contactos",
+        "${ numContactGroups } grupos de contactos"
       ],
       "${ numContacts } contact": [
-        "",
-        ""
+        "${ numContacts } contacto",
+        "${ numContacts } contactos"
       ],
       "${ save20 } on your subscription by switching to ${ annualBilling }": [
         "${ save20 } en tu suscripción cambiando a la ${ annualBilling }"
@@ -1931,16 +1931,16 @@
         "${ saveExtra20 } tanto en VPN como en correo añadiendo una suscripción VPN."
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
-        "",
-        ""
+        "${ selectedCalendarsTotal } de ${ providerCalendars.length } calendario",
+        "${ selectedCalendarsTotal } de ${ providerCalendars.length } calendarios"
       ],
       "${ selectedFoldersCount } folder selected": [
-        "",
-        ""
+        "${ selectedFoldersCount } carpeta seleccionada",
+        "${ selectedFoldersCount } carpetas seleccionadas"
       ],
       "${ selectedFoldersCount } label selected": [
-        "",
-        ""
+        "${ selectedFoldersCount } etiqueta seleccionada",
+        "${ selectedFoldersCount } etiquetas seleccionadas"
       ],
       "${ updated } contact updated successfully.": [
         "${ updated } contacto actualizado con éxito.",
@@ -2026,7 +2026,7 @@
         "Te permite alojar correos electrónicos para tu(s) propio(s) dominio(s) en ${ mailAppName }, p. ej., john.smith@example.com"
       ],
       "Amount below minimum (${ amount }).": [
-        "Cantidad inferior al mínimo (${ amount })."
+        "Cantidad por debajo del mínimo (${ amount })."
       ],
       "An invitation will be sent to added participants.": [
         "Se enviará una invitación a los participantes agregados."
@@ -2035,7 +2035,7 @@
         "Se enviará una invitación a los participantes del evento."
       ],
       "and": [
-        ""
+        "y"
       ],
       "At most 100 participants are allowed per invitation": [
         "Se permiten hasta 100 participantes por invitación"
@@ -2099,7 +2099,7 @@
         "Crear un nuevo grupo de contactos"
       ],
       "Create in": [
-        ""
+        "Crear en"
       ],
       "Custom": [
         "Personalizado"
@@ -2205,7 +2205,7 @@
         ""
       ],
       "Import from": [
-        ""
+        "Importar desde"
       ],
       "Import in progress": [
         ""
@@ -2256,7 +2256,7 @@
         "Gestionar tus calendarios"
       ],
       "Merged": [
-        ""
+        "Fusionado"
       ],
       "Monthly ${ onDayString }": [
         "Mensualmente ${ onDayString }"
@@ -2265,7 +2265,7 @@
         ""
       ],
       "New": [
-        ""
+        "Nuevo"
       ],
       "Next you'll need to log in to your Google account and allow us to access your data.": [
         ""
@@ -2388,8 +2388,8 @@
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20-personal-calendar limit. You can also merge imported calendars with existing Proton calendars.": [
         ""
       ],
-      "Servers are unreachable.": [
-        "Los servidores no están disponibles."
+      "Servers are unreachable. Please try again in a few minutes": [
+        ""
       ],
       "Session timed out.": [
         "El tiempo de la sesión ha expirado."
@@ -2895,12 +2895,12 @@
     },
     "Keyboard Shortcuts Disabled": {
       "Off": [
-        ""
+        "Desactivados"
       ]
     },
     "Keyboard Shortcuts Enabled": {
       "On": [
-        ""
+        "Activados"
       ]
     },
     "Label": {
@@ -2938,7 +2938,7 @@
         "Cantidad BTC:"
       ],
       "Calendar": [
-        ""
+        "Calendario"
       ],
       "Cancel": [
         "Cancelar"
@@ -2962,16 +2962,13 @@
         "Ciudad"
       ],
       "Contacts": [
-        ""
+        "Contactos"
       ],
       "Copy": [
         "Copiar"
       ],
       "Country": [
         "País"
-      ],
-      "Cryptographic scheme": [
-        "Esquema criptográfico"
       ],
       "CVV code": [
         "Código CVV"
@@ -3007,7 +3004,7 @@
         "Formato de correo"
       ],
       "Emails": [
-        ""
+        "Correos electrónicos"
       ],
       "Enable Beta Access": [
         "Habilitar acceso beta"
@@ -3016,7 +3013,7 @@
         "Cifrar correos electrónicos"
       ],
       "Ends": [
-        ""
+        "Termina"
       ],
       "Enter the 6-digit code": [
         "Introduce el código de 6 dígitos"
@@ -3037,7 +3034,7 @@
         "Título del evento"
       ],
       "Expires": [
-        "Caduca"
+        "Expira"
       ],
       "Expiry date": [
         "Fecha de expiración"
@@ -3049,10 +3046,10 @@
         "Dirección ampliada"
       ],
       "Folder location": [
-        ""
+        "Ubicación de la carpeta"
       ],
       "From: ${ importedEmail }": [
-        ""
+        "De: ${ importedEmail }"
       ],
       "Hide password": [
         "Ocultar contraseña"
@@ -3061,7 +3058,7 @@
         ""
       ],
       "Import all messages": [
-        ""
+        "Importar todos los mensajes"
       ],
       "Import contacts": [
         "Importar contactos"
@@ -3079,22 +3076,22 @@
         ""
       ],
       "Last 12 months only": [
-        ""
+        "Solo los últimos 12 meses"
       ],
       "Last 3 months only": [
-        ""
+        "Solo los últimos 3 meses"
       ],
       "Last month only": [
-        ""
+        "Solo el último mes"
       ],
       "Mailbox password": [
         "Contraseña del buzón"
       ],
       "Manage folders": [
-        ""
+        "Gestionar carpetas"
       ],
       "Manage labels": [
-        ""
+        "Gestionar etiquetas"
       ],
       "Name": [
         "Nombre"
@@ -3103,7 +3100,7 @@
         "Titular de la tarjeta"
       ],
       "Notification": [
-        ""
+        "Notificación"
       ],
       "Operating system": [
         "Sistema operativo"
@@ -3118,8 +3115,8 @@
         "Organizador"
       ],
       "participant": [
-        "",
-        ""
+        "participante",
+        "participantes"
       ],
       "Participants": [
         "Participantes"
@@ -3129,6 +3126,9 @@
       ],
       "Payer": [
         "Emisor del pago"
+      ],
+      "PGP scheme": [
+        ""
       ],
       "Phone number": [
         "Número de teléfono"
@@ -3268,21 +3268,21 @@
     },
     "Label/folder modal": {
       "Create folder": [
-        ""
+        "Crear carpeta"
       ],
       "Create label": [
-        ""
+        "Crear etiqueta"
       ],
       "Edit folder": [
-        ""
+        "Editar carpeta"
       ],
       "Edit label": [
-        ""
+        "Editar etiqueta"
       ]
     },
     "label/folder notification": {
       "${ Label.Name } created": [
-        ""
+        "${ Label.Name } creado"
       ]
     },
     "Layout mode": {
@@ -3322,7 +3322,7 @@
         "Solicitar una invitación"
       ],
       "Subscribed calendars": [
-        ""
+        "Calendarios suscritos"
       ],
       "Upgrade": [
         "Mejorar"
@@ -3333,6 +3333,7 @@
     },
     "Loading info": {
       "${ createdCalendars } of ${ calendarsToBeCreated } created": [
+        "",
         ""
       ],
       "Almost there": [
@@ -3342,10 +3343,10 @@
         ""
       ],
       "Gathering your data": [
-        ""
+        "Obteniendo datos"
       ],
       "We're gathering your data from your provider": [
-        ""
+        "Estamos obteniendo los datos desde tu proveedor"
       ],
       "Your import is starting": [
         ""
@@ -3434,7 +3435,7 @@
     },
     "Mail import summary": {
       "${ messagesFragment } since ${ periodFragment } and label them as ${ label }": [
-        ""
+        "${ messagesFragment } desde ${ periodFragment } y etiquetarlos como ${ label }"
       ]
     },
     "Many Others": {
@@ -3608,13 +3609,13 @@
     },
     "New Label form": {
       "Color": [
-        ""
+        "Color"
       ],
       "Folder name": [
-        ""
+        "Nombre de la carpeta"
       ],
       "Label name": [
-        ""
+        "Nombre de la etiqueta"
       ]
     },
     "Notification": {
@@ -3736,7 +3737,7 @@
         "En el momento del evento"
       ],
       "On the same day at ${ time }": [
-        "En el mismo día a las ${ time }"
+        "El mismo día a las ${ time }"
       ],
       "Unknown": [
         "Desconocido"
@@ -3833,10 +3834,10 @@
     },
     "Option group label": {
       "Create new calendar": [
-        ""
+        "Crear un calendario nuevo"
       ],
       "Merge with calendar": [
-        ""
+        "Combinar con el calendario"
       ]
     },
     "Participant name": {
@@ -4154,7 +4155,7 @@
     },
     "Sidebar calendar edit tooltip": {
       "Manage calendar": [
-        ""
+        "Gestionar calendario"
       ]
     },
     "Storage": {
@@ -4194,7 +4195,7 @@
         "Error notificado"
       ],
       "Calendar added. It might take a few minutes to sync.": [
-        ""
+        "Calendario añadido. La sincronización puede tardar unos minutos."
       ],
       "Calendar created": [
         "Calendario creado"
@@ -4310,9 +4311,6 @@
       ]
     },
     "Suffix for price": {
-      "/ mo": [
-        ""
-      ],
       "/ month": [
         "/ mes"
       ]
@@ -4372,6 +4370,20 @@
     "Text": {
       "Settings": [
         "Configuración"
+      ]
+    },
+    "Time period": {
+      "account creation date": [
+        "fecha de creación de la cuenta"
+      ],
+      "the last 12 months": [
+        "los últimos 12 meses"
+      ],
+      "the last 3 months": [
+        "los últimos 3 meses"
+      ],
+      "the last month": [
+        "el último mes"
       ]
     },
     "Time unit": {
@@ -4516,7 +4528,7 @@
         "Plan actual"
       ],
       "Customize and confirm": [
-        ""
+        "Personalizar y confirmar"
       ],
       "Customize calendar import": [
         ""
@@ -4548,7 +4560,7 @@
         "Eliminando contactos"
       ],
       "Downgrade account": [
-        ""
+        "Degradar cuenta"
       ],
       "Edit contact": [
         "Editar contacto"
@@ -4755,7 +4767,7 @@
         "Selecciona la forma de envío de esta notificación"
       ],
       "Select what to import": [
-        ""
+        "Selecciona qué importar"
       ],
       "Select when this event will stop happening": [
         "Selecciona cuándo dejará de ocurrir este evento"

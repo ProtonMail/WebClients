@@ -1364,6 +1364,9 @@
       "You must set a name": [
         "Musisz wpisać nazwę"
       ],
+      "Your browser does not support uploading folders": [
+        ""
+      ],
       "Your import will not be processed.": [
         "Twój import nie zostanie przetworzony."
       ]
@@ -2256,8 +2259,8 @@
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20-personal-calendar limit. You can also merge imported calendars with existing Proton calendars.": [
         ""
       ],
-      "Servers are unreachable.": [
-        "Serwery są nieosiągalne."
+      "Servers are unreachable. Please try again in a few minutes": [
+        ""
       ],
       "Session timed out.": [
         "Upłynął limit czasu sesji."
@@ -2832,9 +2835,6 @@
       "Country": [
         "Kraj"
       ],
-      "Cryptographic scheme": [
-        "Schemat szyfrowania"
-      ],
       "CVV code": [
         "Kod CVV"
       ],
@@ -2966,6 +2966,9 @@
       ],
       "Payer": [
         "Płatnik"
+      ],
+      "PGP scheme": [
+        "Schemat PGP"
       ],
       "Phone number": [
         "Numer telefonu"
@@ -3197,19 +3200,19 @@
         ""
       ],
       "Almost there": [
-        ""
+        "Już prawie"
       ],
       "Creating new calendars": [
-        ""
+        "Tworzenie nowych kalendarzy"
       ],
       "Gathering your data": [
-        ""
+        "Pobieranie danych"
       ],
       "We're gathering your data from your provider": [
-        ""
+        "Pobieramy dane od Twojego dostawcy usługi"
       ],
       "Your import is starting": [
-        ""
+        "Proces importowania danych został rozpoczęty"
       ]
     },
     "Mail feature": {
@@ -3985,9 +3988,6 @@
       ]
     },
     "Suffix for price": {
-      "/ mo": [
-        "/ miesiąc"
-      ],
       "/ month": [
         "/ miesiąc"
       ]
@@ -4214,10 +4214,10 @@
         "Obecny plan"
       ],
       "Customize and confirm": [
-        ""
+        "Dostosuj i potwierdź"
       ],
       "Customize calendar import": [
-        ""
+        "Dostosuj proces importowana kalendarza"
       ],
       "Customize your mail import": [
         ""
@@ -4582,7 +4582,7 @@
         "Zniżka za wykupienie planu dwuletniego została naliczona"
       ],
       "Each imported email will have this label": [
-        ""
+        "Każda zaimportowana wiadomość będzie posiadała tę etykietę"
       ],
       "Email encryption forces email signature to help authenticate your sent messages": [
         "Szyfrowanie wiadomości wymusza ich podpisywanie w celu uwierzytelnienia wysłanych wiadomości"
@@ -4627,10 +4627,10 @@
         "Wsparcie dla protokołów udostępniania plików, takich jak BitTorrent."
       ],
       "System subfolders will show up as separate folders in ProtonMail": [
-        ""
+        "Podfoldery systemowe będą widoczne jako oddzielne foldery w poczcie ProtonMail"
       ],
       "The import will start with the most recent messages.": [
-        ""
+        "Proces importowania rozpocznie się od najnowszych wiadomości."
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Prześlij klucz publiczny, aby włączyć wysyłanie wiadomości zaszyfrowanych end-to-end dla tego adresu e-mail"
@@ -4835,7 +4835,7 @@
         "Jesteśmy teraz niedostępni. Wypełnij formularz, na który odpowiemy kiedy będziemy ponownie dostępni."
       ],
       "You will lose any customization you made so far.": [
-        ""
+        "Dotychczasowa personalizacja importu zostanie utracona."
       ],
       "Your local date & time settings seem to be out of sync.": [
         "Twoje ustawienia daty i czasu nie są zsynchronizowane."

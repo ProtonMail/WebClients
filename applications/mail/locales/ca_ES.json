@@ -219,7 +219,7 @@
         "Filtre personalitzat"
       ],
       "Customize": [
-        ""
+        "Personalitzar"
       ],
       "Decrease": [
         "Reduir"
@@ -293,7 +293,7 @@
         "Editar l'adreça de correu electrònic"
       ],
       "Edit label": [
-        ""
+        "Editar etiqueta"
       ],
       "Edit phone number": [
         "Editar el número de telèfon"
@@ -377,13 +377,13 @@
         "Amagar els detalls"
       ],
       "Hide folders": [
-        ""
+        "Amagar carpetes"
       ],
       "Hide info": [
         "Amagar informació"
       ],
       "Hide labels": [
-        ""
+        "Amagar etiquetes"
       ],
       "Hide messages": [
         "Amagar missatges"
@@ -624,7 +624,7 @@
         "Imprimir"
       ],
       "Quit": [
-        ""
+        "Sortir"
       ],
       "Quote": [
         "Cita"
@@ -657,7 +657,7 @@
         "Elimina aquesta etiqueta"
       ],
       "Rename": [
-        ""
+        "Reanomenar"
       ],
       "Report a problem": [
         "Avisar d'un problema"
@@ -744,13 +744,13 @@
         "Mostrar els detalls"
       ],
       "Show folders": [
-        ""
+        "Mostrar carpetes"
       ],
       "Show info": [
         "Mostra informació"
       ],
       "Show labels": [
-        ""
+        "Mostrar etiquetes"
       ],
       "Show less": [
         "Mostrar menys"
@@ -786,7 +786,7 @@
         "Començar a utilitzar ${ appName }"
       ],
       "Stay": [
-        ""
+        "Mantenir"
       ],
       "Submit": [
         "Enviar"
@@ -2332,9 +2332,6 @@
       "End time out of bounds": [
         "Hora de finalització fora de límits"
       ],
-      "Event duration not supported": [
-        "Durada d'esdeveniment no compatible"
-      ],
       "Event validation failed": [
         "Ha fallat la validació de l'esdeveniment"
       ],
@@ -2756,16 +2753,16 @@
         "${ appName } necessita el vostre permís per ${ enableDesktopNotifications }."
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
-        "",
-        ""
+        "${ calendarsToBeCreatedCount } nou calendari",
+        "${ calendarsToBeCreatedCount } nous calendaris"
       ],
       "${ calendarsToBeMerged } merged calendar": [
         "",
         ""
       ],
       "${ calendarsToBeMergedCount } merged calendar": [
-        "",
-        ""
+        "${ calendarsToBeMergedCount } calendari combinat",
+        "${ calendarsToBeMergedCount } calendaris combinats"
       ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } Membre",
@@ -2850,8 +2847,8 @@
         "${ saveExtra20 } en VPN i Correu afegint una subscripció de VPN."
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
-        "",
-        ""
+        "${ selectedCalendarsTotal } de ${ providerCalendars.length } calendari",
+        "${ selectedCalendarsTotal } de ${ providerCalendars.length } calendaris"
       ],
       "${ selectedFoldersCount } folder selected": [
         "${ selectedFoldersCount } carpeta seleccionada",
@@ -3130,7 +3127,7 @@
         "Crear un nou grup de contactes"
       ],
       "Create in": [
-        ""
+        "Crear a"
       ],
       "Create recovery phrase": [
         "Crear una frase de recuperació"
@@ -3324,7 +3321,7 @@
         ""
       ],
       "Import from": [
-        ""
+        "Importar des de"
       ],
       "Import in progress": [
         ""
@@ -3634,6 +3631,9 @@
       "Scheduled": [
         "Programat"
       ],
+      "Scheduled send of this message will be cancelled.": [
+        ""
+      ],
       "Scheduling message...": [
         "Programant missatge..."
       ],
@@ -3647,7 +3647,7 @@
         "Seleccioni el format de correu electronic que vols fer us per defecte quan enviis un correu electronic a aquesta direcció."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20-personal-calendar limit. You can also merge imported calendars with existing Proton calendars.": [
-        ""
+        "Seleccioneu els calendaris a importar. Es crearà un nou calendari per cada calendari importat fins al límit de 20 personals. També podeu combinar els calendaris importants amb els de Proton existents."
       ],
       "Sending": [
         "Enviant"
@@ -3658,8 +3658,8 @@
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
         "L'enviament de missatges des de l'adreça @pm.me és una funció de pagament. El vostre missatge s'enviarà des de la vostra adreça per defecte ${ email }"
       ],
-      "Servers are unreachable.": [
-        "Els servidors no són accessibles."
+      "Servers are unreachable. Please try again in a few minutes": [
+        "Servidors inaccessibles. Torneu a provar-ho en uns minuts"
       ],
       "Session timed out.": [
         "Temps de sessió esgotat."
@@ -3754,6 +3754,9 @@
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Aquest navegador no suporta la previsualització de documents PDF. Descarregueu-vos l'arxiu."
+      ],
+      "This conversation contains a scheduled message. Sending of this message will be cancelled.": [
+        ""
       ],
       "This conversation contains non-trashed messages.": [
         "Aquesta conversa conté missatges no esborrats."
@@ -4450,9 +4453,6 @@
       "Country": [
         "País"
       ],
-      "Cryptographic scheme": [
-        "Esquema criptogràfic"
-      ],
       "CVV code": [
         "Codi CVV"
       ],
@@ -4611,6 +4611,9 @@
       ],
       "Payer": [
         "Pagador"
+      ],
+      "PGP scheme": [
+        ""
       ],
       "Phone number": [
         "Número de telèfon"
@@ -6636,6 +6639,9 @@
       ],
       "Move to trash": [
         "Moure a la paperera"
+      ],
+      "Moving a scheduled message": [
+        ""
       ],
       "Network error": [
         "Error de xarxa"

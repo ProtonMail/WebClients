@@ -1322,6 +1322,9 @@
       "You must set a name": [
         "Anda harus membuat nama"
       ],
+      "Your browser does not support uploading folders": [
+        "Browser Anda tidak mendukung pengunggahan folder"
+      ],
       "Your import will not be processed.": [
         "Impor Anda tidak akan diproses."
       ]
@@ -2115,8 +2118,8 @@
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20-personal-calendar limit. You can also merge imported calendars with existing Proton calendars.": [
         "Pilih kalender-kalender mana saja yang akan diimpor. Untuk setiap kalender yang Anda impor, sistem kami akan membuat kalender baru hingga batas maksimum 20 kalender. Anda juga dapat menggabungkan kalender-kalender yang diimpor dengan kalender-kalender Proton yang telah Anda miliki sebelumnya."
       ],
-      "Servers are unreachable.": [
-        "Server tidak dapat dijangkau."
+      "Servers are unreachable. Please try again in a few minutes": [
+        "Server-server kami sedang tidak dapat dijangkau. Silakan coba lagi dalam beberapa menit"
       ],
       "Session timed out.": [
         "Sesi habis."
@@ -2688,9 +2691,6 @@
       "Country": [
         "Negara"
       ],
-      "Cryptographic scheme": [
-        "Skema kriptografi"
-      ],
       "CVV code": [
         "Kode CVV"
       ],
@@ -2822,6 +2822,9 @@
       ],
       "Payer": [
         "Pembayar"
+      ],
+      "PGP scheme": [
+        "Skema PGP"
       ],
       "Phone number": [
         "Nomor telepon"
@@ -3739,9 +3742,6 @@
       ]
     },
     "Suffix for price": {
-      "/ mo": [
-        "/ bln"
-      ],
       "/ month": [
         "/ bulan"
       ]
