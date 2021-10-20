@@ -638,6 +638,9 @@
       "Recover data": [
         "Oporavi podatke"
       ],
+      "Refine your search": [
+        ""
+      ],
       "refresh the page": [
         "osvježi stranicu"
       ],
@@ -2398,6 +2401,9 @@
       "Original recurring event could not be found": [
         "Originalni ponavljajući događaj nije pronađen"
       ],
+      "Recurring event has no occurrences": [
+        ""
+      ],
       "Recurring rule not supported": [
         "Ponavljajuće pravilo nije podržano"
       ],
@@ -3516,7 +3522,7 @@
       "No email address": [
         "Nema adresa e-pošte"
       ],
-      "No email trackers found.": [
+      "No email trackers found": [
         ""
       ],
       "No folder found": [
@@ -3645,13 +3651,10 @@
       "Print email": [
         "Ispiši e-poštu"
       ],
-      "Protect yourself from trackers by turning on Proton email tracker protection.": [
+      "Protect yourself from trackers. Turn on email tracker protection in settings": [
         ""
       ],
       "Proton doesn't make money by abusing privacy.": [
-        ""
-      ],
-      "Proton has blocked email trackers in this message in order to protect your privacy.": [
         ""
       ],
       "ProtonMail can protect your business as well.": [
@@ -3782,6 +3785,9 @@
       "Switch to ${ professionalPlan } to add more users.": [
         "Prebacite se na ${ professionalPlan } za dodavanje još korisnika."
       ],
+      "Taking too long?": [
+        ""
+      ],
       "Test link": [
         "Testiraj poveznicu"
       ],
@@ -3897,6 +3903,9 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "U borbi protiv spama i zlouporabe, molimo potvrdite da ste čovjek."
+      ],
+      "To protect your privacy, Proton blocked email trackers in this message": [
+        ""
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "Da bismo ponovno potpisali svoje kontakte, moramo svaki kontakt provjeriti s popisom ključeva za šifriranje dostupnih na vašem računu. Ako se ne pronađe podudaranje, vaš će se kontakt ponovo potpisati s primarnim ključem šifriranja."
@@ -6045,13 +6054,16 @@
       ]
     },
     "Spotlight": {
-      "Proton blocked email trackers in this message in order to protect your privacy": [
+      "Message Content Search": [
         ""
       ],
-      "Tracker protection": [
+      "To protect your privacy, Proton blocked email trackers in this message": [
         ""
       ],
       "You can now schedule your messages to be sent later": [
+        ""
+      ],
+      "You can now search the content of your encrypted emails.": [
         ""
       ]
     },
@@ -6969,6 +6981,11 @@
         "Poštanski broj"
       ]
     },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        ""
+      ]
+    },
     "Tooltip": {
       "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
         "Pristupite geo-blokiranom sadržaju (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube itd.) bez obzira gdje se nalazite."
@@ -7211,6 +7228,9 @@
       "The contact failed to load.": [
         "Neuspješno učitavanje kontakta."
       ],
+      "The date and time settings on your device are out of sync. ${ learnMore }": [
+        ""
+      ],
       "The decryption of the encrypted content failed.": [
         "Dešifriranje šifriranog sadržaja nije uspjelo."
       ],
@@ -7228,9 +7248,6 @@
       ],
       "You will lose any customization you made so far.": [
         ""
-      ],
-      "Your local date & time settings seem to be out of sync.": [
-        "Vaše lokalne postavke datuma i vremena nisu sinkronizirane."
       ]
     },
     "Weekly recurring event, frequency": {

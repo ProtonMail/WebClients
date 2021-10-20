@@ -220,9 +220,6 @@
       "Create folder": [
         "Opret mappe"
       ],
-      "Create key": [
-        "Opret nøgle"
-      ],
       "Create label": [
         "Opret etiket"
       ],
@@ -348,6 +345,9 @@
       ],
       "Font": [
         "Skrifttype"
+      ],
+      "Generate key": [
+        ""
       ],
       "Get ProtonVPN Plus": [
         "Få ProtonVPN Plus"
@@ -2248,6 +2248,9 @@
       "Original recurring event could not be found": [
         "Oprindelig tilbagevendende begivenhed kunne ikke findes"
       ],
+      "Recurring event has no occurrences": [
+        ""
+      ],
       "Recurring rule not supported": [
         "Tilbagevendende regel understøttes ikke"
       ],
@@ -3307,6 +3310,9 @@
       "Black Friday 2020 newcomer discount has been applied": [
         "Black Friday 2020-nybruger-rabat er tilføjet"
       ],
+      "Blocks senders from seeing if and when you opened a message.": [
+        ""
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Ved at nedgradere til et gratis abonnement mister du disse fordele permanent, selvom du senere opgraderer igen."
       ],
@@ -3572,6 +3578,9 @@
       ],
       "here": [
         "her"
+      ],
+      "Hides identifying information by loading remote content through a proxy. Option to store content as attachments.": [
+        ""
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Hvis en anden administrator ændrede denne adgangskode, må du bede dem om den nye Organisationsadgangskode."
@@ -3943,11 +3952,8 @@
       "Plus or Visionary subscription required": [
         "Plus- eller Visionary abonnement påkrævet"
       ],
-      "Prevents remote email content from loading automatically.": [
-        "Forhindrer automatisk indlæsning af eksternt e-mail-indhold."
-      ],
-      "Prevents senders from knowing whether and when you have opened a message.": [
-        "Forhindrer afsendere i at vide, om og hvornår du har åbnet en besked."
+      "Prevents content from the sender's server from loading without your permission.": [
+        ""
       ],
       "Preview": [
         "Forhåndsvisning"
@@ -4947,6 +4953,9 @@
       "App password": [
         "App-adgangskode"
       ],
+      "Ask before loading remote content": [
+        ""
+      ],
       "Attach public key": [
         "Vedhæft offentlig nøgle"
       ],
@@ -4967,6 +4976,9 @@
       ],
       "Backup keys": [
         "Backup-nøgler"
+      ],
+      "Block email tracking": [
+        ""
       ],
       "bonus storage": [
         "bonuslagerplads"
@@ -5021,9 +5033,6 @@
       ],
       "Conditions": [
         "Betingelser"
-      ],
-      "Confirm before loading remote content": [
-        "Bekræft før indlæsning af fjernindhold"
       ],
       "Confirm login password": [
         "Bekræft adgangskode til login"
@@ -5390,9 +5399,6 @@
       ],
       "Proration": [
         "Proration"
-      ],
-      "Protect against email tracking": [
-        "Beskyt mod sporing af e-mail"
       ],
       "Protection mode": [
         "Beskyttelsestilstand"
@@ -6475,11 +6481,11 @@
       ]
     },
     "Option protection mode": {
-      "Prevent tracking (recommended)": [
-        "Forhindr sporting (anbefalet)"
+      "Load content via proxy (recommended)": [
+        ""
       ],
-      "Prevent tracking and store content locally": [
-        "Forhindr sporing og gem indhold lokalt"
+      "Load content via proxy and store as attachments": [
+        ""
       ]
     },
     "OS compatibility": {
@@ -6513,6 +6519,11 @@
       ],
       "PayPal": [
         "Paypal"
+      ]
+    },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        ""
       ]
     },
     "Placeholder": {
@@ -7569,9 +7580,6 @@
       "Create calendar": [
         "Opret kalender"
       ],
-      "Create key": [
-        "Opret nøgle"
-      ],
       "Create your Proton Account": [
         "Opret din Proton-konto"
       ],
@@ -7739,6 +7747,9 @@
       ],
       "General": [
         "Generelt"
+      ],
+      "Generate key": [
+        ""
       ],
       "Generate missing keys": [
         "Generér manglende nøgler"
@@ -8199,6 +8210,11 @@
         "Rolle"
       ]
     },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        ""
+      ]
+    },
     "Tooltip": {
       "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
         "Få adgang til geo-blokeret indhold (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube etc) uanset hvor du er."
@@ -8585,6 +8601,9 @@
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Fejlrapporter er ikke end-to-end krypterede. Send derfor ikke følsomme oplysninger."
       ],
+      "The date and time settings on your device are out of sync. ${ learnMore }": [
+        ""
+      ],
       "This action will ${ boldWarning }. You will not be able to recover the messages on ${ domain }.": [
         "Denne handling vil ${ boldWarning }. Du vil ikke kunne gendanne beskederne på ${ domain }."
       ],
@@ -8608,9 +8627,6 @@
       ],
       "You will not see this import record in the list anymore.": [
         "Du vil ikke længere se denne import-postering på listen."
-      ],
-      "Your local date & time settings seem to be out of sync.": [
-        "Det ser ud til, at dine lokale dato- og tidsindstillinger ikke er synkroniseret."
       ]
     },
     "Warning for domain modal": {
@@ -8619,6 +8635,11 @@
       ],
       "It can take up to a day for DNS changes to update.": [
         "DNS-ændringer kan tage op til én dag at effektuere."
+      ]
+    },
+    "Weak personal key warning": {
+      "This key no longer meets our security standards. We suggest you mark it as obsolete and generate a new key.": [
+        ""
       ]
     },
     "Weekly recurring event, frequency": {

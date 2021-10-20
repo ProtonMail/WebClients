@@ -220,9 +220,6 @@
       "Create folder": [
         "フォルダーを作成"
       ],
-      "Create key": [
-        "鍵を作成"
-      ],
       "Create label": [
         "ラベルを作成"
       ],
@@ -348,6 +345,9 @@
       ],
       "Font": [
         "フォント"
+      ],
+      "Generate key": [
+        ""
       ],
       "Get ProtonVPN Plus": [
         "ProtonVPN Plus を入手"
@@ -2227,6 +2227,9 @@
       "Original recurring event could not be found": [
         "元の定期的な予定が見つかりませんでした"
       ],
+      "Recurring event has no occurrences": [
+        ""
+      ],
       "Recurring rule not supported": [
         "繰り返しルールはサポートされていません"
       ],
@@ -3257,6 +3260,9 @@
       "Black Friday 2020 newcomer discount has been applied": [
         "ブラックフライデー 2020 の新規登録者向け割引が適用されました。"
       ],
+      "Blocks senders from seeing if and when you opened a message.": [
+        ""
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "FREEプランへダウングレードすると、現在の特典は利用できなくなります。今後アップグレードしても現在の特典は復活しません。"
       ],
@@ -3520,6 +3526,9 @@
       ],
       "here": [
         "こちら"
+      ],
+      "Hides identifying information by loading remote content through a proxy. Option to store content as attachments.": [
+        ""
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "別の管理者がこのパスワードを変更した場合、変更した人に新しい組織パスワードを問合せてください。"
@@ -3890,10 +3899,7 @@
       "Plus or Visionary subscription required": [
         "PLUS または VISIONARY プランが必要です"
       ],
-      "Prevents remote email content from loading automatically.": [
-        ""
-      ],
-      "Prevents senders from knowing whether and when you have opened a message.": [
+      "Prevents content from the sender's server from loading without your permission.": [
         ""
       ],
       "Preview": [
@@ -4889,6 +4895,9 @@
       "App password": [
         "アプリのパスワード"
       ],
+      "Ask before loading remote content": [
+        ""
+      ],
       "Attach public key": [
         "公開鍵の添付"
       ],
@@ -4908,6 +4917,9 @@
         ""
       ],
       "Backup keys": [
+        ""
+      ],
+      "Block email tracking": [
         ""
       ],
       "bonus storage": [
@@ -4963,9 +4975,6 @@
       ],
       "Conditions": [
         "条件"
-      ],
-      "Confirm before loading remote content": [
-        ""
       ],
       "Confirm login password": [
         "ログインパスワードの確認"
@@ -5332,9 +5341,6 @@
       ],
       "Proration": [
         "日割り計算"
-      ],
-      "Protect against email tracking": [
-        ""
       ],
       "Protection mode": [
         ""
@@ -6408,10 +6414,10 @@
       ]
     },
     "Option protection mode": {
-      "Prevent tracking (recommended)": [
+      "Load content via proxy (recommended)": [
         ""
       ],
-      "Prevent tracking and store content locally": [
+      "Load content via proxy and store as attachments": [
         ""
       ]
     },
@@ -6446,6 +6452,11 @@
       ],
       "PayPal": [
         "PayPal"
+      ]
+    },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        ""
       ]
     },
     "Placeholder": {
@@ -7494,9 +7505,6 @@
       "Create calendar": [
         "カレンダーの作成"
       ],
-      "Create key": [
-        "鍵の作成"
-      ],
       "Create your Proton Account": [
         "Proton アカウントを作成"
       ],
@@ -7664,6 +7672,9 @@
       ],
       "General": [
         "一般"
+      ],
+      "Generate key": [
+        ""
       ],
       "Generate missing keys": [
         "紛失した鍵の生成"
@@ -8124,6 +8135,11 @@
         "権限"
       ]
     },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        ""
+      ]
+    },
     "Tooltip": {
       "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
         "どこにいてもアクセス制限があるコンテンツ (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube など) にアクセスできます。"
@@ -8507,6 +8523,9 @@
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "報告はエンドツーエンド暗号化されないため、機密情報は含めないでください。"
       ],
+      "The date and time settings on your device are out of sync. ${ learnMore }": [
+        ""
+      ],
       "This action will ${ boldWarning }. You will not be able to recover the messages on ${ domain }.": [
         ""
       ],
@@ -8530,9 +8549,6 @@
       ],
       "You will not see this import record in the list anymore.": [
         ""
-      ],
-      "Your local date & time settings seem to be out of sync.": [
-        ""
       ]
     },
     "Warning for domain modal": {
@@ -8541,6 +8557,11 @@
       ],
       "It can take up to a day for DNS changes to update.": [
         "DNS の更新には最大1日かかる場合があります。"
+      ]
+    },
+    "Weak personal key warning": {
+      "This key no longer meets our security standards. We suggest you mark it as obsolete and generate a new key.": [
+        ""
       ]
     },
     "Weekly recurring event, frequency": {

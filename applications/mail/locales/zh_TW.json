@@ -632,6 +632,9 @@
       "Recover data": [
         "恢復資料"
       ],
+      "Refine your search": [
+        ""
+      ],
       "refresh the page": [
         "更新頁面"
       ],
@@ -2350,6 +2353,9 @@
       "Original recurring event could not be found": [
         "找不到原始的週期性事件"
       ],
+      "Recurring event has no occurrences": [
+        ""
+      ],
       "Recurring rule not supported": [
         "週期性規則不受支援"
       ],
@@ -3366,8 +3372,8 @@
       "No email address": [
         "沒有電子郵件地址"
       ],
-      "No email trackers found.": [
-        "找不到電子郵件追蹤程式。"
+      "No email trackers found": [
+        ""
       ],
       "No folder found": [
         "找不到資料夾"
@@ -3495,14 +3501,11 @@
       "Print email": [
         "列印電子郵件"
       ],
-      "Protect yourself from trackers by turning on Proton email tracker protection.": [
-        "透過開啟 Proton 的電子郵件追蹤防護來保護您免受追蹤程式的威脅。"
+      "Protect yourself from trackers. Turn on email tracker protection in settings": [
+        ""
       ],
       "Proton doesn't make money by abusing privacy.": [
         "Proton 不會透過濫用隱私來賺錢。"
-      ],
-      "Proton has blocked email trackers in this message in order to protect your privacy.": [
-        "Proton 已封鎖郵件中的電子郵件追蹤程式來保護您的隱私。"
       ],
       "ProtonMail can protect your business as well.": [
         "ProtonMail 也能保護您的業務。"
@@ -3630,6 +3633,9 @@
       "Switch to ${ professionalPlan } to add more users.": [
         "改用 ${ professionalPlan } 以新增更多使用者。"
       ],
+      "Taking too long?": [
+        ""
+      ],
       "Test link": [
         "測試連結"
       ],
@@ -3743,6 +3749,9 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "為防止垃圾郵件及濫用，請驗證您是真人。"
+      ],
+      "To protect your privacy, Proton blocked email trackers in this message": [
+        ""
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "若要重新簽署您的聯絡人，我們需要依照您的帳號中可用的加密金鑰清單逐一檢查每一聯絡人。若找不到匹配時，您的聯絡人將使用主要加密金鑰重新簽署。"
@@ -5837,14 +5846,17 @@
       ]
     },
     "Spotlight": {
-      "Proton blocked email trackers in this message in order to protect your privacy": [
-        "Proton 已封鎖郵件中的電子郵件追蹤程式來保護您的隱私。"
+      "Message Content Search": [
+        ""
       ],
-      "Tracker protection": [
-        "追蹤程式保護"
+      "To protect your privacy, Proton blocked email trackers in this message": [
+        ""
       ],
       "You can now schedule your messages to be sent later": [
         "您現在可以安排稍後傳送訊息"
+      ],
+      "You can now search the content of your encrypted emails.": [
+        ""
       ]
     },
     "Status": {
@@ -6687,6 +6699,11 @@
         "郵編/郵遞區號"
       ]
     },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        ""
+      ]
+    },
     "Tooltip": {
       "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
         "無論您身在何處，都可以存取有地域限制的內容 (Netflix、Amazon Prime Video、BBC iPlayer、維基百科、Facebook、YouTube 等)。"
@@ -6921,6 +6938,9 @@
       "The contact failed to load.": [
         "聯絡人載入失敗。"
       ],
+      "The date and time settings on your device are out of sync. ${ learnMore }": [
+        ""
+      ],
       "The decryption of the encrypted content failed.": [
         "已加密內容的解密失敗。"
       ],
@@ -6938,9 +6958,6 @@
       ],
       "You will lose any customization you made so far.": [
         ""
-      ],
-      "Your local date & time settings seem to be out of sync.": [
-        "您的本機日期和時間設定似乎出現偏差。"
       ]
     },
     "Weekly recurring event, frequency": {
