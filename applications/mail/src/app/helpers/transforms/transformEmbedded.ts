@@ -13,6 +13,7 @@ import {
     markEmbeddedImagesAsLoaded,
     insertBlobImages,
     setEmbeddedAttr,
+    matchSameCidOrLoc,
 } from '../message/messageEmbeddeds';
 
 export const transformEmbedded = async (
@@ -35,8 +36,8 @@ export const transformEmbedded = async (
             .map((attachment) => {
                 const { cid, cloc } = readContentIDandLocation(attachment);
 
-                const existing = existingEmbeddedImage.find(
-                    (embeddedImage) => embeddedImage.cid === cid || embeddedImage.cloc === cloc
+                const existing = existingEmbeddedImage.find((embeddedImage) =>
+                    matchSameCidOrLoc(embeddedImage, cid, cloc)
                 );
 
                 if (existing) {
