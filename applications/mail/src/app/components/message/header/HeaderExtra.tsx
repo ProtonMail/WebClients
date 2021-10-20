@@ -1,5 +1,6 @@
 import { isReceived, isScheduled } from '@proton/shared/lib/mail/messages';
 import { FeatureCode, useFeature } from '@proton/components';
+
 import ExtraImages from '../extras/ExtraImages';
 import ExtraUnsubscribe from '../extras/ExtraUnsubscribe';
 import ExtraSpamScore from '../extras/ExtraSpamScore';
@@ -13,6 +14,7 @@ import { MessageExtended } from '../../../models/message';
 import ExtraErrors from '../extras/ExtraErrors';
 import ExtraDecryptedSubject from '../extras/ExtraDecryptedSubject';
 import ExtraScheduledMessage from '../extras/ExtraScheduledMessage';
+import EmailReminderWidget from '../extras/calendar/EmailReminderWidget';
 
 interface Props {
     message: MessageExtended;
@@ -55,6 +57,8 @@ const HeaderExtra = ({
             />
             {!sourceMode && <ExtraImages message={message} type="remote" onLoadImages={onLoadRemoteImages} />}
             {!sourceMode && <ExtraImages message={message} type="embedded" onLoadImages={onLoadEmbeddedImages} />}
+            {/* TODO: Add error boundary for the email reminder widget */}
+            {messageLoaded && received && <EmailReminderWidget message={message} />}
             {messageLoaded && received ? <ExtraEvents message={message} /> : null}
             {isScheduledMessage && scheduledFeature?.Value ? <ExtraScheduledMessage message={message} /> : null}
         </section>

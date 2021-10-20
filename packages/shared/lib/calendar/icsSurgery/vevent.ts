@@ -26,9 +26,12 @@ import { getSupportedAlarms } from './valarm';
 import { durationToMilliseconds } from '../vcal';
 import { DAY } from '../../constants';
 
-export const getDtendPropertyFromDuration = (dtstart: VcalDateOrDateTimeProperty, duration: VcalDurationValue) => {
+export const getDtendPropertyFromDuration = (
+    dtstart: VcalDateOrDateTimeProperty,
+    duration: VcalDurationValue | number
+) => {
     const startDateUTC = propertyToUTCDate(dtstart);
-    const durationInMs = durationToMilliseconds(duration);
+    const durationInMs = typeof duration === 'number' ? duration : durationToMilliseconds(duration);
     const timestamp = +startDateUTC + durationInMs;
     const end = fromUTCDate(fromUnixTime(timestamp / 1000));
 

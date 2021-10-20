@@ -2,6 +2,10 @@ import { hasBit } from '../helpers/bitset';
 import { CALENDAR_FLAGS, MAX_CALENDARS_PER_FREE_USER, MAX_CALENDARS_PER_USER, SETTINGS_VIEW } from './constants';
 import { Calendar, CalendarUserSettings } from '../interfaces/calendar';
 
+export const getDoesCalendarNeedUserAction = ({ Flags }: Calendar) => {
+    return hasBit(Flags, CALENDAR_FLAGS.RESET_NEEDED) || hasBit(Flags, CALENDAR_FLAGS.UPDATE_PASSPHRASE);
+};
+
 export const getIsCalendarActive = ({ Flags } = { Flags: 0 }) => {
     return hasBit(Flags, CALENDAR_FLAGS.ACTIVE);
 };

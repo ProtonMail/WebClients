@@ -8,7 +8,7 @@ describe('CalendarEventDateHeader', () => {
             render(
                 <CalendarEventDateHeader
                     startDate={new Date(Date.UTC(2021, 10, 2))}
-                    endDate={new Date(Date.UTC(2021, 10, 2))}
+                    endDate={new Date(Date.UTC(2021, 10, 3))}
                     isAllDay
                     hasFakeUtcDates
                     formatOptions={{ locale: enUS }}
@@ -21,10 +21,10 @@ describe('CalendarEventDateHeader', () => {
         it('for multi-day events', () => {
             render(
                 <CalendarEventDateHeader
-                    startDate={new Date(Date.UTC(2021, 10, 2))}
-                    endDate={new Date(Date.UTC(2021, 10, 3))}
+                    startDate={new Date(2021, 10, 2)}
+                    endDate={new Date(2021, 10, 3)}
                     isAllDay
-                    hasFakeUtcDates
+                    hasModifiedAllDayEndDate
                     formatOptions={{ locale: enUS }}
                 />
             );
@@ -36,10 +36,9 @@ describe('CalendarEventDateHeader', () => {
         it('for single-day events', () => {
             render(
                 <CalendarEventDateHeader
-                    startDate={new Date(Date.UTC(2021, 10, 2, 12, 0))}
-                    endDate={new Date(Date.UTC(2021, 10, 2, 16, 30))}
+                    startDate={new Date(2021, 10, 2, 12, 0)}
+                    endDate={new Date(2021, 10, 2, 16, 30)}
                     isAllDay={false}
-                    hasFakeUtcDates
                     formatOptions={{ locale: enUS }}
                 />
             );
@@ -47,7 +46,7 @@ describe('CalendarEventDateHeader', () => {
             expect(screen.getByText(/Nov/)).toHaveTextContent('Tue, Nov 2, 2021, 12:00 PM–4:30 PM');
         });
 
-        it('for single-day events', () => {
+        it('for multi-day events', () => {
             render(
                 <CalendarEventDateHeader
                     startDate={new Date(Date.UTC(2021, 10, 2, 12, 0))}
@@ -70,6 +69,7 @@ describe('CalendarEventDateHeader', () => {
                     endDate={new Date(Date.UTC(2021, 10, 2))}
                     isAllDay
                     hasFakeUtcDates
+                    hasModifiedAllDayEndDate
                     formatOptions={{ locale: pt }}
                 />
             );
@@ -80,10 +80,9 @@ describe('CalendarEventDateHeader', () => {
         it('for part-day events', () => {
             render(
                 <CalendarEventDateHeader
-                    startDate={new Date(Date.UTC(2021, 10, 2, 12, 0))}
-                    endDate={new Date(Date.UTC(2021, 10, 2, 16, 30))}
+                    startDate={new Date(2021, 10, 2, 12, 0)}
+                    endDate={new Date(2021, 10, 2, 16, 30)}
                     isAllDay={false}
-                    hasFakeUtcDates
                     formatOptions={{ locale: pt }}
                 />
             );

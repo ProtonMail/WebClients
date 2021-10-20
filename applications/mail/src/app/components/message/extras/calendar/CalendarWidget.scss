@@ -1,0 +1,49 @@
+@import '~@proton/styles/scss/config/variables';
+@import '~@proton/styles/scss/config/functions/easing';
+@import '~@proton/styles/scss/specifics/placeholder-loading';
+
+.calendar-widget {
+	&-skeleton {
+		&::before {
+			@extend %item-loading-pseudo;
+			@extend %placeholder-loading;
+		}
+
+		&--title {
+			&::before {
+				inline-size: 50%;
+			}
+		}
+
+		&--date {
+			&::before {
+				inline-size: 60%;
+			}
+		}
+
+		&--link {
+			&::before {
+				inline-size: 30%;
+			}
+		}
+
+		&--details {
+			&::before {
+				inline-size: 45%;
+			}
+		}
+
+		&--icon {
+			&::before {
+				height: 100%;
+				width: 100%;
+				border-radius: 50%;
+			}
+		}
+	}
+
+	// Removing the margin of the last IconRow item
+	.form--icon-labels:last-child {
+		margin-bottom: 0;
+	}
+}

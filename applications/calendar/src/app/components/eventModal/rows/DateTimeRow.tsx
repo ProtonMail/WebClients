@@ -2,7 +2,14 @@ import { MAXIMUM_DATE, MINIMUM_DATE, DATE_INPUT_ID } from '@proton/shared/lib/ca
 import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 import { convertUTCDateTimeToZone, fromUTCDate, toUTCDate } from '@proton/shared/lib/date/timezone';
 import { useMemo, useState } from 'react';
-import { DateInput, LinkButton, TimeInput, classnames, TimezoneSelector } from '@proton/components';
+import {
+    DateInput,
+    LinkButton,
+    TimeInput,
+    classnames,
+    TimezoneSelector,
+    MemoizedIconRow as IconRow,
+} from '@proton/components';
 import { c } from 'ttag';
 import { EventModel } from '@proton/shared/lib/interfaces/calendar';
 
@@ -10,7 +17,6 @@ import getFrequencyModelChange from '../eventForm/getFrequencyModelChange';
 import { getAllDayCheck } from '../eventForm/stateActions';
 import { getDateTime, getDateTimeState, getTimeInUtc } from '../eventForm/time';
 import useDateTimeFormHandlers from '../hooks/useDateTimeFormHandlers';
-import IconRow from '../IconRow';
 import AllDayCheckbox from '../inputs/AllDayCheckbox';
 
 interface Props {
