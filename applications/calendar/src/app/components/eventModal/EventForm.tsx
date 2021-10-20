@@ -1,4 +1,3 @@
-import useCalendarEmailNotificationsFeature from '@proton/components/hooks/useCalendarEmailNotificationsFeature';
 import { c } from 'ttag';
 import {
     FREQUENCY,
@@ -19,7 +18,14 @@ import { Address } from '@proton/shared/lib/interfaces';
 
 import { EventModel, EventModelErrors, NotificationModel } from '@proton/shared/lib/interfaces/calendar';
 import { HTMLAttributes, useRef } from 'react';
-import { Alert, classnames, Input, Notifications, TextArea } from '@proton/components';
+import {
+    Alert,
+    classnames,
+    Input,
+    Notifications,
+    TextArea,
+    useCalendarEmailNotificationsFeature,
+} from '@proton/components';
 import { isEmailNotification } from '@proton/shared/lib/calendar/alarms';
 
 import createHandlers from './eventForm/createPropFactory';

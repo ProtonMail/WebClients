@@ -602,12 +602,13 @@ export const getSupportedEventInvitation = async ({
     }
     const completeVevent = withOutsideUIDAndSequence(vevent, vcalComponent);
     const hasMultipleVevents = getHasMultipleVevents(vcalComponent);
+    const isImport = supportedMethod === ICAL_METHOD.PUBLISH;
     // To filter potentially equivalent invitation ics's, we have to generate a reliable
     // unique identifier (resistant to format differences, like \n --> \r\n) for the ics if it has no UID
     const originalUID = completeVevent.uid?.value;
     const originalUniqueIdentifier =
         hasMultipleVevents || !originalUID ? await generateVeventHashUID(serialize(vcalComponent)) : originalUID;
-    if (supportedMethod === ICAL_METHOD.PUBLISH) {
+    if (isImport) {
         const sha1Uid = await generateVeventHashUID(icsBinaryString, completeVevent.uid?.value);
         completeVevent.uid = { value: sha1Uid };
         if (completeVevent['recurrence-id']) {
