@@ -635,6 +635,9 @@
       "Recover data": [
         "Recuperar dados"
       ],
+      "Refine your search": [
+        ""
+      ],
       "refresh the page": [
         "actualizar a página"
       ],
@@ -2374,6 +2377,9 @@
       "Original recurring event could not be found": [
         "O evento recorrente original não pôde ser encontrado"
       ],
+      "Recurring event has no occurrences": [
+        ""
+      ],
       "Recurring rule not supported": [
         "Regra recorrente não suportada"
       ],
@@ -3441,7 +3447,7 @@
       "No email address": [
         "Sem endereço de email"
       ],
-      "No email trackers found.": [
+      "No email trackers found": [
         ""
       ],
       "No folder found": [
@@ -3570,13 +3576,10 @@
       "Print email": [
         "Imprimir email"
       ],
-      "Protect yourself from trackers by turning on Proton email tracker protection.": [
+      "Protect yourself from trackers. Turn on email tracker protection in settings": [
         ""
       ],
       "Proton doesn't make money by abusing privacy.": [
-        ""
-      ],
-      "Proton has blocked email trackers in this message in order to protect your privacy.": [
         ""
       ],
       "ProtonMail can protect your business as well.": [
@@ -3706,6 +3709,9 @@
       "Switch to ${ professionalPlan } to add more users.": [
         "Mude para ${ professionalPlan } para adicionar mais utilizadores."
       ],
+      "Taking too long?": [
+        ""
+      ],
       "Test link": [
         "Testar ligação"
       ],
@@ -3820,6 +3826,9 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Para combater spam e abuso, verifique se você é humano."
+      ],
+      "To protect your privacy, Proton blocked email trackers in this message": [
+        ""
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "Para assinar novamente os contactos, temos de os verificar todos contra a lista de chaves de encriptação disponíveis na conta. Se não houver correspondências, o contacto será assinado de novo com a chave principal."
@@ -5941,13 +5950,16 @@
       ]
     },
     "Spotlight": {
-      "Proton blocked email trackers in this message in order to protect your privacy": [
+      "Message Content Search": [
         ""
       ],
-      "Tracker protection": [
+      "To protect your privacy, Proton blocked email trackers in this message": [
         ""
       ],
       "You can now schedule your messages to be sent later": [
+        ""
+      ],
+      "You can now search the content of your encrypted emails.": [
         ""
       ]
     },
@@ -6828,6 +6840,11 @@
         "Código postal"
       ]
     },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        ""
+      ]
+    },
     "Tooltip": {
       "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
         "Aceda a conteúdo geo-bloqueado (Netflix, Amazon Prime Vídeo, BBC iPlayer, Wikipedia, Facebook, Youtube, etc) não importa onde esteja."
@@ -7066,6 +7083,9 @@
       "The contact failed to load.": [
         "Falha ao carregar o contacto."
       ],
+      "The date and time settings on your device are out of sync. ${ learnMore }": [
+        ""
+      ],
       "The decryption of the encrypted content failed.": [
         "Falha ao desencriptar o conteúdo encriptado."
       ],
@@ -7083,9 +7103,6 @@
       ],
       "You will lose any customization you made so far.": [
         ""
-      ],
-      "Your local date & time settings seem to be out of sync.": [
-        "As definições locais de data e hora não parecem estar sincronizadas."
       ]
     },
     "Weekly recurring event, frequency": {

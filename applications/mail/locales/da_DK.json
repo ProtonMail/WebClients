@@ -635,6 +635,9 @@
       "Recover data": [
         "Gendan data"
       ],
+      "Refine your search": [
+        ""
+      ],
       "refresh the page": [
         "opdater siden"
       ],
@@ -2374,6 +2377,9 @@
       "Original recurring event could not be found": [
         "Oprindelig tilbagevendende begivenhed kunne ikke findes"
       ],
+      "Recurring event has no occurrences": [
+        ""
+      ],
       "Recurring rule not supported": [
         "Tilbagevendende regel understøttes ikke"
       ],
@@ -3441,8 +3447,8 @@
       "No email address": [
         "Ingen e-mailadresse"
       ],
-      "No email trackers found.": [
-        "Ingen e-mail-trackere fundet."
+      "No email trackers found": [
+        ""
       ],
       "No folder found": [
         "Ingen mappe fundet"
@@ -3570,14 +3576,11 @@
       "Print email": [
         "Udskriv e-mail"
       ],
-      "Protect yourself from trackers by turning on Proton email tracker protection.": [
-        "Beskyt dig mod trackere ved at aktivere Proton e-mail-trackerbeskyttelse."
+      "Protect yourself from trackers. Turn on email tracker protection in settings": [
+        ""
       ],
       "Proton doesn't make money by abusing privacy.": [
         "Proton tjener ikke penge ved at misbruge privatlivets fred."
-      ],
-      "Proton has blocked email trackers in this message in order to protect your privacy.": [
-        "Proton har blokeret e-mail-trackere i denne besked for at beskytte dit privatliv."
       ],
       "ProtonMail can protect your business as well.": [
         "ProtonMail kan også beskytte din virksomhed."
@@ -3706,6 +3709,9 @@
       "Switch to ${ professionalPlan } to add more users.": [
         "Skift til ${ professionalPlan } for at tilføje flere brugere."
       ],
+      "Taking too long?": [
+        ""
+      ],
       "Test link": [
         "Test link"
       ],
@@ -3820,6 +3826,9 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "For at bekæmpe spam og misbrug bedes du bekræfte, at du er et menneske."
+      ],
+      "To protect your privacy, Proton blocked email trackers in this message": [
+        ""
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "For at gensignere dine kontaktpersoner, skal vi kontrollere alle kontaktpersoner mod listen over krypteringsnøgler på din konto. Hvis der ikke findes nogen match, vil din kontakt blive gensigneret med den primære krypteringsnøgle."
@@ -5941,14 +5950,17 @@
       ]
     },
     "Spotlight": {
-      "Proton blocked email trackers in this message in order to protect your privacy": [
-        "Proton blokerede e-mail-trackere i denne besked for at beskytte dit privatliv"
+      "Message Content Search": [
+        ""
       ],
-      "Tracker protection": [
-        "Tracker-beskyttelse"
+      "To protect your privacy, Proton blocked email trackers in this message": [
+        ""
       ],
       "You can now schedule your messages to be sent later": [
         "Du kan nu planlægge dine beskeder til senere afsendelse"
+      ],
+      "You can now search the content of your encrypted emails.": [
+        ""
       ]
     },
     "Status": {
@@ -6828,6 +6840,11 @@
         "Postnummer"
       ]
     },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        ""
+      ]
+    },
     "Tooltip": {
       "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
         "Få adgang til geo-blokeret indhold (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube etc) uanset hvor du er."
@@ -7066,6 +7083,9 @@
       "The contact failed to load.": [
         "Kontakten kunne ikke indlæses."
       ],
+      "The date and time settings on your device are out of sync. ${ learnMore }": [
+        ""
+      ],
       "The decryption of the encrypted content failed.": [
         "Dekryptering af det krypterede indhold mislykkedes."
       ],
@@ -7083,9 +7103,6 @@
       ],
       "You will lose any customization you made so far.": [
         ""
-      ],
-      "Your local date & time settings seem to be out of sync.": [
-        "Det ser ud til, at dine lokale dato- og tidsindstillinger ikke er synkroniseret."
       ]
     },
     "Weekly recurring event, frequency": {

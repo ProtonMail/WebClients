@@ -641,6 +641,9 @@
       "Recover data": [
         "Obnovit data"
       ],
+      "Refine your search": [
+        ""
+      ],
       "refresh the page": [
         "obnovit stránku"
       ],
@@ -2422,6 +2425,9 @@
       "Original recurring event could not be found": [
         "Původní opakující se událost nebyla nalezena"
       ],
+      "Recurring event has no occurrences": [
+        ""
+      ],
       "Recurring rule not supported": [
         "Pravidlo opakování není podporováno"
       ],
@@ -3591,7 +3597,7 @@
       "No email address": [
         "Žádná e-mailová adresa"
       ],
-      "No email trackers found.": [
+      "No email trackers found": [
         ""
       ],
       "No folder found": [
@@ -3720,14 +3726,11 @@
       "Print email": [
         "Vytisknout email"
       ],
-      "Protect yourself from trackers by turning on Proton email tracker protection.": [
+      "Protect yourself from trackers. Turn on email tracker protection in settings": [
         ""
       ],
       "Proton doesn't make money by abusing privacy.": [
         "Proton nevydělává peníze zneužitím soukromí."
-      ],
-      "Proton has blocked email trackers in this message in order to protect your privacy.": [
-        ""
       ],
       "ProtonMail can protect your business as well.": [
         "ProtonMail může chránit i Váš podnikání."
@@ -3858,6 +3861,9 @@
       "Switch to ${ professionalPlan } to add more users.": [
         "Chcete-li přidat více uživatelů, přepněte na ${ professionalPlan }."
       ],
+      "Taking too long?": [
+        ""
+      ],
       "Test link": [
         "Testovací odkaz"
       ],
@@ -3974,6 +3980,9 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Abyste zamezili spamu a obtěžování, potvrďte, že jste člověk."
+      ],
+      "To protect your privacy, Proton blocked email trackers in this message": [
+        ""
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "Pro znovu přihlášení Vašich kontaktů, potřebujeme prověřit každý kontakt ze seznamu šifrovacích klíčů, které jsou dostupné ve Vašem účtu. Jestliže nebude nalezena shoda s Vaším kontaktem, bude znovu provedeno přihlášení se základním šifrovacím klíčem."
@@ -6149,14 +6158,17 @@
       ]
     },
     "Spotlight": {
-      "Proton blocked email trackers in this message in order to protect your privacy": [
+      "Message Content Search": [
         ""
       ],
-      "Tracker protection": [
+      "To protect your privacy, Proton blocked email trackers in this message": [
         ""
       ],
       "You can now schedule your messages to be sent later": [
         "Nyní můžete naplánovat odesílání zpráv později"
+      ],
+      "You can now search the content of your encrypted emails.": [
+        ""
       ]
     },
     "Status": {
@@ -7110,6 +7122,11 @@
         "ZIP / PSČ"
       ]
     },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        ""
+      ]
+    },
     "Tooltip": {
       "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
         "Přístup ke geograficky blokovanému obsahu (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, atd.) Nezáleží na tom, kde se nacházíte."
@@ -7356,6 +7373,9 @@
       "The contact failed to load.": [
         "Kontakt selhal v načtení."
       ],
+      "The date and time settings on your device are out of sync. ${ learnMore }": [
+        ""
+      ],
       "The decryption of the encrypted content failed.": [
         "Dešifrování šifrovacího obsahu selhalo."
       ],
@@ -7373,9 +7393,6 @@
       ],
       "You will lose any customization you made so far.": [
         ""
-      ],
-      "Your local date & time settings seem to be out of sync.": [
-        "Zdá se, že Vaše místní nastavení data a času není synchronizováno."
       ]
     },
     "Weekly recurring event, frequency": {

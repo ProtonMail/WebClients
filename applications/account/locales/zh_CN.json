@@ -220,9 +220,6 @@
       "Create folder": [
         "创建文件夹"
       ],
-      "Create key": [
-        "创建密钥"
-      ],
       "Create label": [
         "创建标签"
       ],
@@ -348,6 +345,9 @@
       ],
       "Font": [
         "字体"
+      ],
+      "Generate key": [
+        ""
       ],
       "Get ProtonVPN Plus": [
         "开通 ProtonVPN 高级版"
@@ -2227,6 +2227,9 @@
       "Original recurring event could not be found": [
         "找不到原始重复事件"
       ],
+      "Recurring event has no occurrences": [
+        ""
+      ],
       "Recurring rule not supported": [
         "不支持重复规则"
       ],
@@ -3257,6 +3260,9 @@
       "Black Friday 2020 newcomer discount has been applied": [
         "2020 年黑色星期五新用户优惠已计入"
       ],
+      "Blocks senders from seeing if and when you opened a message.": [
+        ""
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "降级为免费用户后，您将永远失去这些特权，哪怕今后再次开通付费账户。"
       ],
@@ -3520,6 +3526,9 @@
       ],
       "here": [
         "此处"
+      ],
+      "Hides identifying information by loading remote content through a proxy. Option to store content as attachments.": [
+        ""
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "若其他管理员更改了此密码，您需要向其询问新的机构密码。"
@@ -3890,10 +3899,7 @@
       "Plus or Visionary subscription required": [
         "需要订阅 Plus 或 Visionary 套餐"
       ],
-      "Prevents remote email content from loading automatically.": [
-        ""
-      ],
-      "Prevents senders from knowing whether and when you have opened a message.": [
+      "Prevents content from the sender's server from loading without your permission.": [
         ""
       ],
       "Preview": [
@@ -4889,6 +4895,9 @@
       "App password": [
         "应用密码"
       ],
+      "Ask before loading remote content": [
+        ""
+      ],
       "Attach public key": [
         "附上公钥"
       ],
@@ -4909,6 +4918,9 @@
       ],
       "Backup keys": [
         "备份密钥"
+      ],
+      "Block email tracking": [
+        ""
       ],
       "bonus storage": [
         "奖励存储空间"
@@ -4963,9 +4975,6 @@
       ],
       "Conditions": [
         "条件"
-      ],
-      "Confirm before loading remote content": [
-        "加载外链内容前需要弹窗确认"
       ],
       "Confirm login password": [
         "确认登录密码"
@@ -5332,9 +5341,6 @@
       ],
       "Proration": [
         "比例"
-      ],
-      "Protect against email tracking": [
-        "防止电子邮件跟踪"
       ],
       "Protection mode": [
         "保护模式"
@@ -6408,10 +6414,10 @@
       ]
     },
     "Option protection mode": {
-      "Prevent tracking (recommended)": [
+      "Load content via proxy (recommended)": [
         ""
       ],
-      "Prevent tracking and store content locally": [
+      "Load content via proxy and store as attachments": [
         ""
       ]
     },
@@ -6446,6 +6452,11 @@
       ],
       "PayPal": [
         "Paypal"
+      ]
+    },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        ""
       ]
     },
     "Placeholder": {
@@ -7494,9 +7505,6 @@
       "Create calendar": [
         "创建日历"
       ],
-      "Create key": [
-        "创建密钥"
-      ],
       "Create your Proton Account": [
         "创建您的帐户"
       ],
@@ -7664,6 +7672,9 @@
       ],
       "General": [
         "常规"
+      ],
+      "Generate key": [
+        ""
       ],
       "Generate missing keys": [
         "生成缺失的密钥"
@@ -8124,6 +8135,11 @@
         "角色"
       ]
     },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        ""
+      ]
+    },
     "Tooltip": {
       "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
         "无论身在何方，Netflix, Amazon Prime, BBC iPlayer, Wikipedia, Facebook, YouTube 等均触手可及。"
@@ -8507,6 +8523,9 @@
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "反馈内容不会经过端对端加密，请勿发送敏感信息。"
       ],
+      "The date and time settings on your device are out of sync. ${ learnMore }": [
+        ""
+      ],
       "This action will ${ boldWarning }. You will not be able to recover the messages on ${ domain }.": [
         "此操作将${ boldWarning }，您将无法恢复 ${ domain } 上的信息。"
       ],
@@ -8530,9 +8549,6 @@
       ],
       "You will not see this import record in the list anymore.": [
         "此处将不会再出现这条导入记录。"
-      ],
-      "Your local date & time settings seem to be out of sync.": [
-        "您的本地日期和时间设置似乎不同步。"
       ]
     },
     "Warning for domain modal": {
@@ -8541,6 +8557,11 @@
       ],
       "It can take up to a day for DNS changes to update.": [
         "DNS 更新可能需要一天的时间。"
+      ]
+    },
+    "Weak personal key warning": {
+      "This key no longer meets our security standards. We suggest you mark it as obsolete and generate a new key.": [
+        ""
       ]
     },
     "Weekly recurring event, frequency": {
