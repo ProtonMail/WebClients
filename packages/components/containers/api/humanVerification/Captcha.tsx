@@ -4,6 +4,7 @@ import { getApiSubdomainUrl } from '@proton/shared/lib/helpers/url';
 const getIframeUrl = (token: string) => {
     const url = getApiSubdomainUrl('/core/v4/captcha');
     url.searchParams.set('Token', token);
+    url.searchParams.set('ForceWebMessaging', '1');
     return url;
 };
 
