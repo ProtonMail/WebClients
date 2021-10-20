@@ -11,7 +11,6 @@ import {
     useApi,
     Loader,
     useUser,
-    useIsMnemonicAvailable,
     classnames,
 } from '@proton/components';
 import { seenCompletedChecklist } from '@proton/shared/lib/api/checklist';
@@ -80,30 +79,27 @@ const GetStartedChecklist = ({
 }: GetStartedChecklistProps) => {
     const [user] = useUser();
     const { expires, checklist, loading } = useContext(GetStartedChecklistContext);
-    const isMnemonicAvailable = useIsMnemonicAvailable();
 
     const checklistItems = [
+        {
+            key: GetStartedChecklistKey.Import,
+            text: c('Get started checklist item').t`Import contacts or emails`,
+            icon: 'arrow-down-to-screen',
+        },
         {
             key: GetStartedChecklistKey.SendMessage,
             text: c('Get started checklist item').t`Send a message`,
             icon: 'paper-plane',
         },
         {
-            key: GetStartedChecklistKey.MobileApp,
-            text: c('Get started checklist item').t`Get mobile app`,
-            icon: 'mobile',
-        },
-        {
             key: GetStartedChecklistKey.RecoveryMethod,
-            text: isMnemonicAvailable
-                ? c('Get started checklist item').t`Activate your recovery phrase`
-                : c('Get started checklist item').t`Activate a recovery method`,
+            text: c('Get started checklist item').t`Protect your account with a recovery method`,
             icon: 'lock',
         },
         {
-            key: GetStartedChecklistKey.Import,
-            text: c('Get started checklist item').t`Import emails`,
-            icon: 'arrow-down-to-screen',
+            key: GetStartedChecklistKey.MobileApp,
+            text: c('Get started checklist item').t`Get mobile app`,
+            icon: 'mobile',
         },
     ]
         .filter(isTruthy)
@@ -144,13 +140,16 @@ const GetStartedChecklist = ({
                         <img src={gift} alt="" />
                     </span>
                     <span className="flex-item-fluid text-bold text-ellipsis">
-                        {
-                            /*
-                             * translator: BRAND_NAME refers to the name of our brand
-                             * e.g. "Get started with Proton"
-                             */
-                            c('Get started checklist title').t`Get started with ${BRAND_NAME}`
-                        }
+                        <span className="no-mobile">
+                            {
+                                /*
+                                 * translator: BRAND_NAME refers to the name of our brand
+                                 * e.g. "Get started with Proton"
+                                 */
+                                c('Get started checklist title').t`Get started with ${BRAND_NAME}`
+                            }
+                        </span>
+                        <span className="no-tablet no-desktop">{c('Get started checklist title').t`Get started`}</span>
                     </span>
                     <span className="flex-justify-end">
                         {c('Amount of completed get started checklist items')
@@ -191,7 +190,7 @@ const GetStartedChecklist = ({
 
             <div className="flex">
                 <div className="text-bold">
-                    {c('Get started checklist incentive').t`Get 1 GB of extra storage by completing all steps`}
+                    {c('Get started checklist incentive').t`Complete all steps and get a total of 2 GB on your account`}
                 </div>
             </div>
             <div>
