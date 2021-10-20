@@ -10,7 +10,7 @@ import {
 } from '../../interfaces/calendar';
 import { dedupeAlarmsWithNormalizedTriggers } from '../alarms';
 import { getAttendeeEmail, getSupportedAttendee, getSupportedOrganizer } from '../attendees';
-import { ICAL_METHOD, MAX_LENGTHS } from '../constants';
+import { ICAL_METHOD, MAX_LENGTHS_API } from '../constants';
 import { getIsDateOutOfBounds, getIsWellFormedDateOrDateTime, getSupportedUID } from '../helper';
 import { getHasConsistentRrule, getHasOccurrences, getSupportedRrule } from '../rrule';
 import {
@@ -219,7 +219,7 @@ export const getSupportedEvent = ({
 
         const validated: VcalVeventComponent = {
             component,
-            uid: getSupportedUID(uid),
+            uid: { value: getSupportedUID(uid.value) },
             dtstamp: { ...dtstamp },
             dtstart: { ...dtstart },
         };
@@ -228,19 +228,19 @@ export const getSupportedEvent = ({
         if (trimmedSummaryValue) {
             validated.summary = {
                 ...summary,
-                value: truncate(trimmedSummaryValue, MAX_LENGTHS.TITLE),
+                value: truncate(trimmedSummaryValue, MAX_LENGTHS_API.TITLE),
             };
         }
         if (trimmedDescriptionValue) {
             validated.description = {
                 ...description,
-                value: truncate(trimmedDescriptionValue, MAX_LENGTHS.EVENT_DESCRIPTION),
+                value: truncate(trimmedDescriptionValue, MAX_LENGTHS_API.EVENT_DESCRIPTION),
             };
         }
         if (trimmedLocationValue) {
             validated.location = {
                 ...location,
-                value: truncate(trimmedLocationValue, MAX_LENGTHS.LOCATION),
+                value: truncate(trimmedLocationValue, MAX_LENGTHS_API.LOCATION),
             };
         }
         const sequenceValue = sequence?.value || 0;

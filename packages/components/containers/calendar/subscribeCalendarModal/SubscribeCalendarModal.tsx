@@ -1,5 +1,5 @@
 import { ChangeEvent, useState } from 'react';
-import { MAX_LENGTHS } from '@proton/shared/lib/calendar/constants';
+import { MAX_LENGTHS_API } from '@proton/shared/lib/calendar/constants';
 import { truncateMore } from '@proton/shared/lib/helpers/string';
 import { c } from 'ttag';
 
@@ -53,7 +53,7 @@ const SubscribeCalendarModal = ({ ...rest }: Props) => {
     const handleProcessCalendar = async () => {
         const formattedModel = {
             ...model,
-            name: truncateMore({ string: calendarURL, charsToDisplay: MAX_LENGTHS.CALENDAR_NAME }),
+            name: truncateMore({ string: calendarURL, charsToDisplay: MAX_LENGTHS_API.CALENDAR_NAME }),
             url: calendarURL,
         };
         const calendarPayload = getCalendarPayload(formattedModel);

@@ -1,4 +1,4 @@
-import { ICAL_EVENT_STATUS, MAX_LENGTHS } from '@proton/shared/lib/calendar/constants';
+import { ICAL_EVENT_STATUS, MAX_LENGTHS_API } from '@proton/shared/lib/calendar/constants';
 import { withRequiredProperties } from '@proton/shared/lib/calendar/veventHelper';
 import {
     buildVcalOrganizer,
@@ -61,7 +61,7 @@ export const modelToGeneralProperties = ({
     const properties = omit(rest, ['dtstart', 'dtend']);
 
     if (title) {
-        properties.summary = { value: title.trim().slice(0, MAX_LENGTHS.TITLE) };
+        properties.summary = { value: title.trim().slice(0, MAX_LENGTHS_API.TITLE) };
     }
 
     if (uid) {
@@ -69,11 +69,11 @@ export const modelToGeneralProperties = ({
     }
 
     if (location) {
-        properties.location = { value: location.slice(0, MAX_LENGTHS.LOCATION) };
+        properties.location = { value: location.slice(0, MAX_LENGTHS_API.LOCATION) };
     }
 
     if (description) {
-        properties.description = { value: description.slice(0, MAX_LENGTHS.EVENT_DESCRIPTION) };
+        properties.description = { value: description.slice(0, MAX_LENGTHS_API.EVENT_DESCRIPTION) };
     }
     properties.status = { value: status || ICAL_EVENT_STATUS.CONFIRMED };
 
