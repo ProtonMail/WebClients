@@ -220,9 +220,6 @@
       "Create folder": [
         "Stvori mapu"
       ],
-      "Create key": [
-        "Stvori ključ"
-      ],
       "Create label": [
         "Stvori oznaku"
       ],
@@ -348,6 +345,9 @@
       ],
       "Font": [
         "Font"
+      ],
+      "Generate key": [
+        ""
       ],
       "Get ProtonVPN Plus": [
         "Nabavite ProtonVPN Plus"
@@ -2269,6 +2269,9 @@
       "Original recurring event could not be found": [
         "Originalni ponavljajući događaj nije pronađen"
       ],
+      "Recurring event has no occurrences": [
+        ""
+      ],
       "Recurring rule not supported": [
         "Ponavljajuće pravilo nije podržano"
       ],
@@ -3357,6 +3360,9 @@
       "Black Friday 2020 newcomer discount has been applied": [
         "Primijenjen je popust za pridošlice za Crni petak 2020"
       ],
+      "Blocks senders from seeing if and when you opened a message.": [
+        ""
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Prelaskom na Free plan, trajno ćete izgubiti ove prednosti, čak i ako nadogradite plan opet u budućnosti."
       ],
@@ -3624,6 +3630,9 @@
       ],
       "here": [
         "ovdje"
+      ],
+      "Hides identifying information by loading remote content through a proxy. Option to store content as attachments.": [
+        ""
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Ako je drugi administrator promijenio ovu lozinku, morat ćete ih pitati za novu lozinku organizacije."
@@ -3996,10 +4005,7 @@
       "Plus or Visionary subscription required": [
         "Plus ili Visionary pretplata je potrebna"
       ],
-      "Prevents remote email content from loading automatically.": [
-        ""
-      ],
-      "Prevents senders from knowing whether and when you have opened a message.": [
+      "Prevents content from the sender's server from loading without your permission.": [
         ""
       ],
       "Preview": [
@@ -5005,6 +5011,9 @@
       "App password": [
         "Lozinka aplikacije"
       ],
+      "Ask before loading remote content": [
+        ""
+      ],
       "Attach public key": [
         "Pridodajte javni ključ"
       ],
@@ -5024,6 +5033,9 @@
         ""
       ],
       "Backup keys": [
+        ""
+      ],
+      "Block email tracking": [
         ""
       ],
       "bonus storage": [
@@ -5079,9 +5091,6 @@
       ],
       "Conditions": [
         "Uvjeti"
-      ],
-      "Confirm before loading remote content": [
-        ""
       ],
       "Confirm login password": [
         "Potvrdi lozinku za prijavu"
@@ -5448,9 +5457,6 @@
       ],
       "Proration": [
         "Proration"
-      ],
-      "Protect against email tracking": [
-        ""
       ],
       "Protection mode": [
         ""
@@ -6542,10 +6548,10 @@
       ]
     },
     "Option protection mode": {
-      "Prevent tracking (recommended)": [
+      "Load content via proxy (recommended)": [
         ""
       ],
-      "Prevent tracking and store content locally": [
+      "Load content via proxy and store as attachments": [
         ""
       ]
     },
@@ -6580,6 +6586,11 @@
       ],
       "PayPal": [
         "PayPal"
+      ]
+    },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        ""
       ]
     },
     "Placeholder": {
@@ -7644,9 +7655,6 @@
       "Create calendar": [
         "Stvori kalendar"
       ],
-      "Create key": [
-        "Stvori ključ"
-      ],
       "Create your Proton Account": [
         "Stvorite svoj Proton račun"
       ],
@@ -7814,6 +7822,9 @@
       ],
       "General": [
         "Općenito"
+      ],
+      "Generate key": [
+        ""
       ],
       "Generate missing keys": [
         "Generirajte ključeve koji nedostaju"
@@ -8274,6 +8285,11 @@
         "Uloga"
       ]
     },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        ""
+      ]
+    },
     "Tooltip": {
       "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
         "Pristupite geo-blokiranom sadržaju (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube itd.) bez obzira gdje se nalazite."
@@ -8663,6 +8679,9 @@
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Izvještaji nisu end-to-end šifrirani. Molimo da ne šaljete nikakve osjetljive podatke."
       ],
+      "The date and time settings on your device are out of sync. ${ learnMore }": [
+        ""
+      ],
       "This action will ${ boldWarning }. You will not be able to recover the messages on ${ domain }.": [
         "Ova radnja će ${ boldWarning }. Nećete moći vratiti e-poruke od ${ domain }."
       ],
@@ -8686,9 +8705,6 @@
       ],
       "You will not see this import record in the list anymore.": [
         "Ovaj zapis o uvozu više nećete vidjeti na popisu."
-      ],
-      "Your local date & time settings seem to be out of sync.": [
-        "Vaše lokalne postavke datuma i vremena nisu sinkronizirane."
       ]
     },
     "Warning for domain modal": {
@@ -8697,6 +8713,11 @@
       ],
       "It can take up to a day for DNS changes to update.": [
         "Može potrajati do jedan dan da se DNS promjene ažuriraju."
+      ]
+    },
+    "Weak personal key warning": {
+      "This key no longer meets our security standards. We suggest you mark it as obsolete and generate a new key.": [
+        ""
       ]
     },
     "Weekly recurring event, frequency": {

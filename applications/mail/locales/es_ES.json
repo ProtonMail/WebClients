@@ -635,6 +635,9 @@
       "Recover data": [
         "Recuperar datos"
       ],
+      "Refine your search": [
+        ""
+      ],
       "refresh the page": [
         "actualizar la página"
       ],
@@ -2374,6 +2377,9 @@
       "Original recurring event could not be found": [
         "No se pudo encontrar el evento original recurrente"
       ],
+      "Recurring event has no occurrences": [
+        ""
+      ],
       "Recurring rule not supported": [
         "Regla recurrente no admitida"
       ],
@@ -3441,7 +3447,7 @@
       "No email address": [
         "No hay dirección de correo electrónico"
       ],
-      "No email trackers found.": [
+      "No email trackers found": [
         ""
       ],
       "No folder found": [
@@ -3570,13 +3576,10 @@
       "Print email": [
         "Imprimir correo electrónico"
       ],
-      "Protect yourself from trackers by turning on Proton email tracker protection.": [
+      "Protect yourself from trackers. Turn on email tracker protection in settings": [
         ""
       ],
       "Proton doesn't make money by abusing privacy.": [
-        ""
-      ],
-      "Proton has blocked email trackers in this message in order to protect your privacy.": [
         ""
       ],
       "ProtonMail can protect your business as well.": [
@@ -3706,6 +3709,9 @@
       "Switch to ${ professionalPlan } to add more users.": [
         "Cambia a ${ professionalPlan } para añadir más usuarios."
       ],
+      "Taking too long?": [
+        ""
+      ],
       "Test link": [
         "Enlace de prueba"
       ],
@@ -3820,6 +3826,9 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Para luchar contra el spam y el abuso, verifica que eres humano."
+      ],
+      "To protect your privacy, Proton blocked email trackers in this message": [
+        ""
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "Para volver a firmar tus contactos, necesitamos verificar cada contacto respecto a la lista de claves de cifrado disponibles en tu cuenta. Si no se encuentra ninguna coincidencia, tu contacto volverá a estar firmado con la clave de cifrado principal."
@@ -5941,14 +5950,17 @@
       ]
     },
     "Spotlight": {
-      "Proton blocked email trackers in this message in order to protect your privacy": [
+      "Message Content Search": [
         ""
       ],
-      "Tracker protection": [
+      "To protect your privacy, Proton blocked email trackers in this message": [
         ""
       ],
       "You can now schedule your messages to be sent later": [
         "Ahora puedes programar tus mensajes para que sean enviados más tarde"
+      ],
+      "You can now search the content of your encrypted emails.": [
+        ""
       ]
     },
     "Status": {
@@ -6828,6 +6840,11 @@
         "CP / código postal"
       ]
     },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        ""
+      ]
+    },
     "Tooltip": {
       "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
         "Accede a contenido bloqueado geográficamente (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc.) no importa donde estés."
@@ -7066,6 +7083,9 @@
       "The contact failed to load.": [
         "No se ha podido cargar el contacto."
       ],
+      "The date and time settings on your device are out of sync. ${ learnMore }": [
+        ""
+      ],
       "The decryption of the encrypted content failed.": [
         "El descifrado del contenido cifrado ha fallado."
       ],
@@ -7083,9 +7103,6 @@
       ],
       "You will lose any customization you made so far.": [
         ""
-      ],
-      "Your local date & time settings seem to be out of sync.": [
-        "La configuración de fecha y hora local parece no estar sincronizada."
       ]
     },
     "Weekly recurring event, frequency": {
