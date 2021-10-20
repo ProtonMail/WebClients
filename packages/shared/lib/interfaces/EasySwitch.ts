@@ -178,8 +178,14 @@ export interface CalendarImportMapping {
     Destination: string;
 }
 
+export enum IsCustomCalendarMapping {
+    TRUE = 1,
+    FALSE = 0,
+}
+
 export interface CalendarImporterPayload {
     Mapping: CalendarImportMapping[];
+    CustomCalendarMapping: IsCustomCalendarMapping;
 }
 
 export interface ImportedCalendar {
