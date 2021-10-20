@@ -1,16 +1,18 @@
+import { getSupportedUID } from '@proton/shared/lib/calendar/helper';
+import { getIsAllDay } from '@proton/shared/lib/calendar/vcalHelper';
 import { omit } from '@proton/shared/lib/helpers/object';
 import { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
 import { getSafeRruleCount, getSafeRruleUntil } from './helper';
 import { CalendarEventRecurring } from '../../../interfaces/CalendarEvents';
 
-const getRecurrenceOffsetID = (date: Date) => {
+const getRecurrenceOffsetID = (date: Date, isAllDay: boolean) => {
     const dateString = [date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate()]
         .map((n) => `${n}`.padStart(2, '0'))
         .join('');
     const timeString = [date.getUTCHours(), date.getUTCMinutes(), date.getUTCSeconds()]
         .map((n) => `${n}`.padStart(2, '0'))
         .join('');
-    return `R${dateString}T${timeString}`;
+    return isAllDay ? `R${dateString}` : `R${dateString}T${timeString}`;
 };
 
 const getComponentWithUpdatedRrule = (
@@ -52,15 +54,14 @@ const getComponentWithUpdatedRrule = (
     };
 };
 
-export const getFutureRecurrenceUID = (oldUID: string, localStart: Date) => {
-    const offset = getRecurrenceOffsetID(localStart);
-    const endIdx = oldUID.lastIndexOf('@');
-    if (endIdx === -1) {
-        return `${oldUID}_${offset}`;
-    }
-    const pre = oldUID.slice(0, endIdx);
-    const post = oldUID.slice(endIdx);
-    return `${pre}_${offset}${post}`;
+export const getFutureRecurrenceUID = (oldUID: string, localStart: Date, isAllDay: boolean) => {
+    const offset = getRecurrenceOffsetID(localStart, isAllDay);
+    const endIndex = oldUID.lastIndexOf('@');
+    const pre = endIndex === -1 ? oldUID : oldUID.slice(0, endIndex);
+    const post = endIndex === -1 ? '' : oldUID.slice(endIndex);
+    // we remove any possible previous recurrence offsets (we match our own type of offset)
+    const cleanPre = pre.replace(/(?:_R\d{8}(?:T\d{6})?)+$/, '');
+    return getSupportedUID(`${cleanPre}_${offset}${post}`);
 };
 
 const createFutureRecurrence = (
@@ -70,7 +71,13 @@ const createFutureRecurrence = (
 ) => {
     const veventWithNewUID = {
         ...component,
-        uid: { value: getFutureRecurrenceUID(originalComponent.uid.value, recurrence.localStart) },
+        uid: {
+            value: getFutureRecurrenceUID(
+                originalComponent.uid.value,
+                recurrence.localStart,
+                getIsAllDay(originalComponent)
+            ),
+        },
     };
 
     const veventStripped = omit(veventWithNewUID, ['recurrence-id', 'exdate']);

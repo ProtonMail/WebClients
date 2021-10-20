@@ -93,7 +93,7 @@ export const MAX_CALENDARS_PER_FREE_USER = 1;
 export const MAX_CALENDARS_PER_USER = 20;
 export const MAX_SUBSCRIBED_CALENDARS_PER_USER = 5;
 
-export const MAX_LENGTHS = {
+export const MAX_LENGTHS_API = {
     UID: 191,
     CALENDAR_NAME: 100,
     CALENDAR_DESCRIPTION: 255,
