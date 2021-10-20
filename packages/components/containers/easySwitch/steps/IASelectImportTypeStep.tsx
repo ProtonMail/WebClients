@@ -17,6 +17,7 @@ import {
     MailImportPayloadError,
     CalendarImportPayloadError,
     CustomFieldsBitmap,
+    IsCustomCalendarMapping,
 } from '@proton/shared/lib/interfaces/EasySwitch';
 import { Calendar } from '@proton/shared/lib/interfaces/calendar';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
@@ -117,12 +118,23 @@ const IASelectImportTypeStep = ({
     };
 
     const updateCalendarMapping = (Mapping: CalendarImportMapping[]) => {
+        const initialCalendarPayload = initialModel.current?.payload[ImportType.CALENDAR];
+
+        if (!initialCalendarPayload) {
+            return;
+        }
+
+        const CustomCalendarMapping = !isDeepEqual(initialCalendarPayload.Mapping, Mapping)
+            ? IsCustomCalendarMapping.TRUE
+            : IsCustomCalendarMapping.FALSE;
+
         updateModalModel({
             ...modalModel,
             payload: {
                 ...modalModel.payload,
                 [CALENDAR]: {
                     Mapping,
+                    CustomCalendarMapping,
                 },
             },
         });
@@ -572,6 +584,7 @@ const IASelectImportTypeStep = ({
 
             payload[CALENDAR] = {
                 Mapping: calendarDefaultMapping,
+                CustomCalendarMapping: IsCustomCalendarMapping.FALSE,
             };
         }
 
