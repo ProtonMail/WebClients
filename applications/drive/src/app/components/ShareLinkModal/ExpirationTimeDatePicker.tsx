@@ -85,6 +85,7 @@ const ExpirationTimeDatePicker = ({ expiration, handleExpirationChange, disabled
                 max={MAX_DATE}
                 placeholder={c('Title').t`Date`}
                 title={c('Title').t`Select link expiration date`}
+                hasToday={false}
                 data-testid="epirationDateInputId"
             />
             {allowTime && expTime && (
