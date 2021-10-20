@@ -3,6 +3,7 @@ import { decryptMessage, getMessage, getSignature } from 'pmcrypto';
 
 import { useApi } from '@proton/components';
 import { getStreamMessage } from '@proton/shared/lib/keys/driveKeys';
+import { ShareMetaShort } from '@proton/shared/lib/interfaces/drive/share';
 
 import { queryDeleteLockedVolumes, queryFileRevision } from '@proton/shared/lib/api/drive/files';
 import { DriveFileRevisionResult, NestedFileStream, DriveFileBlock } from '@proton/shared/lib/interfaces/drive/file';
@@ -248,8 +249,17 @@ function useFiles() {
         await Promise.all(fileStreamPromises);
     };
 
-    const deleteLockedVolumes = async (volumeIds: string[]) => {
-        return Promise.all(volumeIds.map((volumeId) => api(queryDeleteLockedVolumes(volumeId))));
+    const deleteLockedVolumes = async (sharesToDelete: ShareMetaShort[]) => {
+        const volumeIdsToDelete = sharesToDelete.map((shareMeta) => shareMeta.VolumeID);
+        const res = await Promise.all(volumeIdsToDelete.map((volumeId) => api(queryDeleteLockedVolumes(volumeId))));
+
+        cache.set.mainShareIdList((mainShareIdList) => {
+            return mainShareIdList.filter((mainShareId) => {
+                return !sharesToDelete.map((meta) => meta.ShareID).includes(mainShareId);
+            });
+        });
+
+        return res;
     };
 
     return {
