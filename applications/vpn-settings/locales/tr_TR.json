@@ -1477,7 +1477,7 @@
         "Hesabınızı kurmak için bu bilgileri iki faktörlü kimlik doğrulama cihazınıza el ile girin. ${ _switchButton }."
       ],
       "NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "NetShield cihazınızı korur ve reklamları, izleyicileri, kötü amaçlı yazılımları engelleyerek internette gezinmenizi hızlandırır."
+        ""
       ],
       "No payment is required at this time.": [
         "Şu anda herhangi bir ödeme gerekmiyor."
@@ -1609,8 +1609,8 @@
       "Server load": [
         "Sunucu yükü"
       ],
-      "Servers are unreachable.": [
-        "Sunuculara ulaşılamıyor."
+      "Servers are unreachable. Please try again in a few minutes": [
+        ""
       ],
       "Session timed out.": [
         "Oturum zaman aşımına uğradı."
@@ -3094,9 +3094,6 @@
       ]
     },
     "Suffix for price": {
-      "/ mo": [
-        ""
-      ],
       "/ month": [
         "/ ay"
       ]
@@ -3769,11 +3766,11 @@
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Raporlar uçtan uca şifrelenmez, lütfen hassas bilgiler göndermeyin."
       ],
-      "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
+      "The date and time settings on your device are out of sync. ${ learnMore }": [
         ""
       ],
-      "Your local date & time settings seem to be out of sync.": [
-        "Yerel tarih ve saat ayarlarınız eşitlenmemiş gibi görünüyor."
+      "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
+        ""
       ]
     }
   }

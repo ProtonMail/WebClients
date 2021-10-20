@@ -1336,6 +1336,9 @@
       "You must set a name": [
         "U moet een naam instellen"
       ],
+      "Your browser does not support uploading folders": [
+        "Je browser heeft geen ondersteuning voor het uploaden van mappen"
+      ],
       "Your import will not be processed.": [
         "Uw import zal niet worden verwerkt."
       ]
@@ -2162,8 +2165,8 @@
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20-personal-calendar limit. You can also merge imported calendars with existing Proton calendars.": [
         ""
       ],
-      "Servers are unreachable.": [
-        "Servers zijn onbereikbaar."
+      "Servers are unreachable. Please try again in a few minutes": [
+        ""
       ],
       "Session timed out.": [
         "Sessie verlopen."
@@ -2736,9 +2739,6 @@
       "Country": [
         "Land"
       ],
-      "Cryptographic scheme": [
-        "Cryptografisch schema"
-      ],
       "CVV code": [
         "CVV code"
       ],
@@ -2870,6 +2870,9 @@
       ],
       "Payer": [
         "Betaler"
+      ],
+      "PGP scheme": [
+        ""
       ],
       "Phone number": [
         "Telefoonnummer"
@@ -3821,9 +3824,6 @@
       ]
     },
     "Suffix for price": {
-      "/ mo": [
-        ""
-      ],
       "/ month": [
         "/ maand"
       ]

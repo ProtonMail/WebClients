@@ -1641,8 +1641,8 @@
       "Server load": [
         "Obciążenie serwera"
       ],
-      "Servers are unreachable.": [
-        "Serwery są nieosiągalne."
+      "Servers are unreachable. Please try again in a few minutes": [
+        ""
       ],
       "Session timed out.": [
         "Upłynął limit czasu sesji."
@@ -3156,9 +3156,6 @@
       ]
     },
     "Suffix for price": {
-      "/ mo": [
-        "/ miesiąc"
-      ],
       "/ month": [
         "/ miesiąc"
       ]
@@ -3833,11 +3830,11 @@
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Raporty nie są szyfrowane end-to-end. Nie wysyłaj żadnych poufnych informacji."
       ],
+      "The date and time settings on your device are out of sync. ${ learnMore }": [
+        ""
+      ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Jesteśmy teraz niedostępni. Wypełnij formularz, na który odpowiemy kiedy będziemy ponownie dostępni."
-      ],
-      "Your local date & time settings seem to be out of sync.": [
-        "Twoje ustawienia daty i czasu nie są zsynchronizowane."
       ]
     }
   }

@@ -1267,6 +1267,11 @@
         "20 / utilizator *"
       ]
     },
+    "Calendar import section description": {
+      "You can import ICS files from another calendar to ${ CALENDAR_APP_NAME }. This lets you quickly import one event or your entire agenda.": [
+        "Puteți importa fișiere ICS din alt calendar în ${ CALENDAR_APP_NAME }. Acest lucru vă permite să importați rapid un eveniment sau întreaga agendă."
+      ]
+    },
     "Calendar limit warning": {
       "You have reached the maximum of ${ calendarsLimit } calendar.": [
         "Ați atins numărul maxim de un calendar.",
@@ -1954,10 +1959,10 @@
       "Please enable multi-user support before adding users to your organization.": [
         "Activați suportul pentru utilizatori multipli înainte de a adăuga utilizatori la organizație."
       ],
-      "Please fix the highlighted conflicts to proceed.": [
-        "Remediați conflictul evidențiat pentru a continua.",
+      "Please fix the highlighted conflict to proceed.": [
         "Remediați conflictele evidențiate pentru a continua.",
-        "Remediați conflictele evidențiate pentru a continua."
+        "Remediați conflictele evidențiate pentru a continua.",
+        "Remediați conflictul evidențiat pentru a continua."
       ],
       "Please generate keys before you try to change your password.": [
         "Generați cheile înainte de a vă schimba parola."
@@ -2221,9 +2226,6 @@
       ],
       "Event": [
         "Eveniment"
-      ],
-      "Event duration not supported": [
-        "Durată eveniment nesuportată"
       ],
       "Event validation failed": [
         "Validare eveniment eșuată"
@@ -4092,8 +4094,8 @@
       "Server load": [
         "Încărcare server"
       ],
-      "Servers are unreachable.": [
-        "Servere sunt inaccesibile."
+      "Servers are unreachable. Please try again in a few minutes": [
+        "Serverele sunt inaccesibile. Vă rugăm să încercați din nou în câteva minute"
       ],
       "Session timed out.": [
         "Sesiune expirată."
@@ -4412,9 +4414,6 @@
       ],
       "You can generate a new encryption key if you think your previous key has been compromised.": [
         "Puteți genera o nouă cheie de criptare dacă credeți că cea anterioară a fost compromisă."
-      ],
-      "You can import ICS files from another calendar to ${ CALENDAR_APP_NAME }. This lets you quickly import one event or your entire agenda.": [
-        "Puteți importa fișiere ICS din alt calendar în ${ CALENDAR_APP_NAME }. Acest lucru vă permite să importați rapid un eveniment sau întreaga agendă."
       ],
       "You can now receive messages to your @pm.me address. Upgrade to a paid plan to also send emails using your @pm.me address and create additional @pm.me addresses.": [
         "Acum puteți primi mesaje la adresa @pm.me. Treceți la un plan cu plată pentru a trimite, de asemenea, e-mailuri folosind adresa dvs. @pm.me și pentru a crea adrese @pm.me suplimentare."
@@ -5153,8 +5152,8 @@
       "Default notifications": [
         "Notificări implicite"
       ],
-      "Default PGP settings": [
-        "Setări PGP implicite"
+      "Default PGP scheme": [
+        "Schema PGP implicită"
       ],
       "Default view": [
         "Afișare implicită"
@@ -5868,6 +5867,8 @@
     },
     "Loading info": {
       "${ createdCalendars } of ${ calendarsToBeCreated } created": [
+        "S-au creat: ${ createdCalendars } din ${ calendarsToBeCreated }",
+        "S-au creat: ${ createdCalendars } din ${ calendarsToBeCreated }",
         "S-au creat: ${ createdCalendars } din ${ calendarsToBeCreated }"
       ],
       "Almost there": [
@@ -7358,9 +7359,6 @@
       ]
     },
     "Suffix for price": {
-      "/ mo": [
-        "/ lună"
-      ],
       "/ month": [
         "/ lună"
       ]
@@ -7402,6 +7400,20 @@
       ],
       "vCard field": [
         "Câmp vCard"
+      ]
+    },
+    "Time period": {
+      "account creation date": [
+        "data creării contului"
+      ],
+      "the last 12 months": [
+        "ultimele 12 luni"
+      ],
+      "the last 3 months": [
+        "ultimele 3 luni"
+      ],
+      "the last month": [
+        "ultima lună"
       ]
     },
     "Time unit": {

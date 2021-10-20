@@ -1258,6 +1258,11 @@
         "20 / bruger *"
       ]
     },
+    "Calendar import section description": {
+      "You can import ICS files from another calendar to ${ CALENDAR_APP_NAME }. This lets you quickly import one event or your entire agenda.": [
+        ""
+      ]
+    },
     "Calendar limit warning": {
       "You have reached the maximum of ${ calendarsLimit } calendar.": [
         "Du har nået det maksimale antal på ${ calendarsLimit } kalender.",
@@ -1934,7 +1939,7 @@
       "Please enable multi-user support before adding users to your organization.": [
         "Aktivér flerbrugerunderstøttelse inden du tilføjer brugere til din organisation."
       ],
-      "Please fix the highlighted conflicts to proceed.": [
+      "Please fix the highlighted conflict to proceed.": [
         "",
         ""
       ],
@@ -2200,9 +2205,6 @@
       ],
       "Event": [
         "Begivenhed"
-      ],
-      "Event duration not supported": [
-        "Begivenhedens varighed understøttes ikke"
       ],
       "Event validation failed": [
         "Validering af begivenhed mislykkedes"
@@ -4038,8 +4040,8 @@
       "Server load": [
         "Serverbelastning"
       ],
-      "Servers are unreachable.": [
-        "Serverne er utilgængelige."
+      "Servers are unreachable. Please try again in a few minutes": [
+        ""
       ],
       "Session timed out.": [
         "Session er udløbet."
@@ -4358,9 +4360,6 @@
       ],
       "You can generate a new encryption key if you think your previous key has been compromised.": [
         "Du kan generere en ny krypteringsnøgle, hvis du mener, at din tidligere nøgle er blevet kompromitteret."
-      ],
-      "You can import ICS files from another calendar to ${ CALENDAR_APP_NAME }. This lets you quickly import one event or your entire agenda.": [
-        ""
       ],
       "You can now receive messages to your @pm.me address. Upgrade to a paid plan to also send emails using your @pm.me address and create additional @pm.me addresses.": [
         "Du kan nu modtage beskeder til din @pm.me-adresse. Opgrader til et betalt abonnement for også at kunne sende e-mails ved hjælp af din @pm.me-adresse og oprette yderligere @pm.me-adresser."
@@ -5095,8 +5094,8 @@
       "Default notifications": [
         "Standardnotifikationer"
       ],
-      "Default PGP settings": [
-        "Standard PGP-indstillinger"
+      "Default PGP scheme": [
+        ""
       ],
       "Default view": [
         "Standardvisning"
@@ -5810,6 +5809,7 @@
     },
     "Loading info": {
       "${ createdCalendars } of ${ calendarsToBeCreated } created": [
+        "",
         ""
       ],
       "Almost there": [
@@ -7286,9 +7286,6 @@
       ]
     },
     "Suffix for price": {
-      "/ mo": [
-        ""
-      ],
       "/ month": [
         "/ måned"
       ]
@@ -7330,6 +7327,20 @@
       ],
       "vCard field": [
         "vCard-felt"
+      ]
+    },
+    "Time period": {
+      "account creation date": [
+        ""
+      ],
+      "the last 12 months": [
+        ""
+      ],
+      "the last 3 months": [
+        ""
+      ],
+      "the last month": [
+        ""
       ]
     },
     "Time unit": {

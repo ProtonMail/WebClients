@@ -1503,10 +1503,10 @@
       "Please create an address first.": [
         "Mai întâi creați o adresă."
       ],
-      "Please fix the highlighted conflicts to proceed.": [
-        "Remediați conflictul evidențiat pentru a continua.",
-        "Remediați conflictele evidențiate pentru a continua.",
-        "Remediați conflictele evidențiate pentru a continua."
+      "Please fix the highlighted conflict to proceed.": [
+        "",
+        "",
+        ""
       ],
       "Preferences could not be saved": [
         "Preferințele nu au putut fi salvate."
@@ -2437,8 +2437,8 @@
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20-personal-calendar limit. You can also merge imported calendars with existing Proton calendars.": [
         "Selectați ce calendare să importați. Se va crea un calendar nou pentru fiecare calendar importat, până la limita de 20 de calendare personale. De asemenea, puteți fuziona calendarele importate cu calendarele Proton existente."
       ],
-      "Servers are unreachable.": [
-        "Serverele nu sunt accesibile."
+      "Servers are unreachable. Please try again in a few minutes": [
+        ""
       ],
       "Session timed out.": [
         "Sesiune expirată."
@@ -3019,9 +3019,6 @@
       "Country": [
         "Țara"
       ],
-      "Cryptographic scheme": [
-        "Schemă criptografică"
-      ],
       "CVV code": [
         "Cod CVV"
       ],
@@ -3179,6 +3176,9 @@
       ],
       "Payer": [
         "Plătitor"
+      ],
+      "PGP scheme": [
+        ""
       ],
       "Phone number": [
         "Număr de telefon"
@@ -3383,7 +3383,9 @@
     },
     "Loading info": {
       "${ createdCalendars } of ${ calendarsToBeCreated } created": [
-        "S-au creat: ${ createdCalendars } din ${ calendarsToBeCreated }"
+        "",
+        "",
+        ""
       ],
       "Almost there": [
         "Aproape terminat"
@@ -4396,9 +4398,6 @@
       ]
     },
     "Suffix for price": {
-      "/ mo": [
-        "/ lună"
-      ],
       "/ month": [
         "/ lună"
       ]
@@ -4458,6 +4457,20 @@
     "Text": {
       "Settings": [
         "Setări"
+      ]
+    },
+    "Time period": {
+      "account creation date": [
+        ""
+      ],
+      "the last 12 months": [
+        ""
+      ],
+      "the last 3 months": [
+        ""
+      ],
+      "the last month": [
+        ""
       ]
     },
     "Time unit": {

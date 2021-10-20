@@ -1364,6 +1364,9 @@
       "You must set a name": [
         "Musíte nastavit jméno"
       ],
+      "Your browser does not support uploading folders": [
+        ""
+      ],
       "Your import will not be processed.": [
         "Váš import nebude zpracován."
       ]
@@ -2256,8 +2259,8 @@
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20-personal-calendar limit. You can also merge imported calendars with existing Proton calendars.": [
         ""
       ],
-      "Servers are unreachable.": [
-        "Servery jsou nedostupné."
+      "Servers are unreachable. Please try again in a few minutes": [
+        ""
       ],
       "Session timed out.": [
         "Relace vypršela."
@@ -2832,9 +2835,6 @@
       "Country": [
         "Země"
       ],
-      "Cryptographic scheme": [
-        "Kryptografické schéma"
-      ],
       "CVV code": [
         "Kód CVV"
       ],
@@ -2966,6 +2966,9 @@
       ],
       "Payer": [
         "Plátce"
+      ],
+      "PGP scheme": [
+        ""
       ],
       "Phone number": [
         "Telefonní číslo"
@@ -3985,9 +3988,6 @@
       ]
     },
     "Suffix for price": {
-      "/ mo": [
-        ""
-      ],
       "/ month": [
         "/ měsíc"
       ]

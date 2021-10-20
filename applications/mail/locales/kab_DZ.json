@@ -2332,9 +2332,6 @@
       "End time out of bounds": [
         "Akud n taggara akkin i tlisa"
       ],
-      "Event duration not supported": [
-        "Tanzagt n tedyant ur tettusefrak ara"
-      ],
       "Event validation failed": [
         "Asentem n tedyant yecceḍ"
       ],
@@ -3634,6 +3631,9 @@
       "Scheduled": [
         "Yettwasihel"
       ],
+      "Scheduled send of this message will be cancelled.": [
+        ""
+      ],
       "Scheduling message...": [
         "Asɣiwes n yizen..."
       ],
@@ -3658,8 +3658,8 @@
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
         "Tuzna n yiznan seg @pm.me d tamahilt s uxelleṣ. Izen-inek ad itwazen seg tansa-inek tamezwart ${ email }"
       ],
-      "Servers are unreachable.": [
-        "Iqeddacen ur ttwawaḍen ara."
+      "Servers are unreachable. Please try again in a few minutes": [
+        ""
       ],
       "Session timed out.": [
         "Yemmed wakud n tɣimit."
@@ -3754,6 +3754,9 @@
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Iminig-agi ur yedhil ara tamuɣli n yisemliyen PDF. Ttxil-k•m sader afaylu."
+      ],
+      "This conversation contains a scheduled message. Sending of this message will be cancelled.": [
+        ""
       ],
       "This conversation contains non-trashed messages.": [
         "Adiwenni-a yegber iznan beṛṛa n iḍumman."
@@ -4450,9 +4453,6 @@
       "Country": [
         "Tamurt"
       ],
-      "Cryptographic scheme": [
-        "Tamuddemt n uwgelhen"
-      ],
       "CVV code": [
         "Tangalt CVV"
       ],
@@ -4611,6 +4611,9 @@
       ],
       "Payer": [
         "Amxellaṣ"
+      ],
+      "PGP scheme": [
+        ""
       ],
       "Phone number": [
         "Uṭṭun n tiliɣri"
@@ -6636,6 +6639,9 @@
       ],
       "Move to trash": [
         "Awi ar iḍumman"
+      ],
+      "Moving a scheduled message": [
+        ""
       ],
       "Network error": [
         "Tuccḍa deg uzeṭṭa"

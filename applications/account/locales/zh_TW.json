@@ -1249,6 +1249,11 @@
         "20 個 / 使用者 *"
       ]
     },
+    "Calendar import section description": {
+      "You can import ICS files from another calendar to ${ CALENDAR_APP_NAME }. This lets you quickly import one event or your entire agenda.": [
+        ""
+      ]
+    },
     "Calendar limit warning": {
       "You have reached the maximum of ${ calendarsLimit } calendar.": [
         "您已達到 ${ calendarsLimit } 個行事曆的最大數量。"
@@ -1914,7 +1919,7 @@
       "Please enable multi-user support before adding users to your organization.": [
         "請先啟用多使用者支援，然後才新增使用者到您的組織。"
       ],
-      "Please fix the highlighted conflicts to proceed.": [
+      "Please fix the highlighted conflict to proceed.": [
         ""
       ],
       "Please generate keys before you try to change your password.": [
@@ -2179,9 +2184,6 @@
       ],
       "Event": [
         "事件"
-      ],
-      "Event duration not supported": [
-        "事件時長不受支援"
       ],
       "Event validation failed": [
         "事件驗證失敗"
@@ -3984,8 +3986,8 @@
       "Server load": [
         "伺服器負載"
       ],
-      "Servers are unreachable.": [
-        "無法連上伺服器。"
+      "Servers are unreachable. Please try again in a few minutes": [
+        ""
       ],
       "Session timed out.": [
         "工作階段已逾時。"
@@ -4304,9 +4306,6 @@
       ],
       "You can generate a new encryption key if you think your previous key has been compromised.": [
         "若您認為之前的金鑰已被洩露，可以產生一個新的加密金鑰。"
-      ],
-      "You can import ICS files from another calendar to ${ CALENDAR_APP_NAME }. This lets you quickly import one event or your entire agenda.": [
-        ""
       ],
       "You can now receive messages to your @pm.me address. Upgrade to a paid plan to also send emails using your @pm.me address and create additional @pm.me addresses.": [
         "現可使用您的 @pm.me 電子郵件地址接收郵件。升級至付費方案後，更可使用您的 @pm.me 電子郵件地址傳送電子郵件並建立額外的 @pm.me 電子郵件地址。"
@@ -5037,8 +5036,8 @@
       "Default notifications": [
         "預設通知"
       ],
-      "Default PGP settings": [
-        "預設 PGP 設定"
+      "Default PGP scheme": [
+        ""
       ],
       "Default view": [
         "預設檢視"
@@ -7214,9 +7213,6 @@
       ]
     },
     "Suffix for price": {
-      "/ mo": [
-        ""
-      ],
       "/ month": [
         "/ 月"
       ]
@@ -7258,6 +7254,20 @@
       ],
       "vCard field": [
         "vCard 欄位"
+      ]
+    },
+    "Time period": {
+      "account creation date": [
+        ""
+      ],
+      "the last 12 months": [
+        ""
+      ],
+      "the last 3 months": [
+        ""
+      ],
+      "the last month": [
+        ""
       ]
     },
     "Time unit": {

@@ -1558,7 +1558,7 @@
         ""
       ],
       "Recovery phrase has been disabled": [
-        ""
+        "Frasa pemulihan telah dinonaktifkan"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Menyegarkan halaman atau ${ link } akan secara otomatis mengatasi sebagian besar masalah."
@@ -1593,8 +1593,8 @@
       "Server load": [
         "Beban server"
       ],
-      "Servers are unreachable.": [
-        "Server tidak terjangkau."
+      "Servers are unreachable. Please try again in a few minutes": [
+        "Server-server kami sedang tidak dapat dijangkau. Silakan coba lagi dalam beberapa menit"
       ],
       "Session timed out.": [
         "Sesi habis."
@@ -3063,9 +3063,6 @@
       ]
     },
     "Suffix for price": {
-      "/ mo": [
-        ""
-      ],
       "/ month": [
         "/ bulan"
       ]
@@ -3737,11 +3734,11 @@
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Laporan tidak dienkripsi end-to-end, mohon tidak mengirim informasi sensitif."
       ],
-      "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
+      "The date and time settings on your device are out of sync. ${ learnMore }": [
         ""
       ],
-      "Your local date & time settings seem to be out of sync.": [
-        "Pengaturan waktu & tanggal lokal Anda sepertinya tidak selaras."
+      "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
+        ""
       ]
     }
   }

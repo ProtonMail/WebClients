@@ -1336,6 +1336,9 @@
       "You must set a name": [
         "Yessefk ad tesbaduḍ isem"
       ],
+      "Your browser does not support uploading folders": [
+        ""
+      ],
       "Your import will not be processed.": [
         "Taktert-inek•m ur tettwasekkar ara."
       ]
@@ -2162,8 +2165,8 @@
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20-personal-calendar limit. You can also merge imported calendars with existing Proton calendars.": [
         ""
       ],
-      "Servers are unreachable.": [
-        "Iqeddacen ur ttwawaḍen ara."
+      "Servers are unreachable. Please try again in a few minutes": [
+        ""
       ],
       "Session timed out.": [
         "Yekfa wakud n tɣimit."
@@ -2736,9 +2739,6 @@
       "Country": [
         "Tamurt"
       ],
-      "Cryptographic scheme": [
-        "Tamuddemt n uwgelhen"
-      ],
       "CVV code": [
         "Tangalt CVC"
       ],
@@ -2870,6 +2870,9 @@
       ],
       "Payer": [
         "Amxellaṣ"
+      ],
+      "PGP scheme": [
+        ""
       ],
       "Phone number": [
         "Uṭṭun n tiliɣri"
@@ -3821,9 +3824,6 @@
       ]
     },
     "Suffix for price": {
-      "/ mo": [
-        ""
-      ],
       "/ month": [
         "/ ayyur"
       ]

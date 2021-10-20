@@ -1258,6 +1258,11 @@
         "20 / kullanıcı *"
       ]
     },
+    "Calendar import section description": {
+      "You can import ICS files from another calendar to ${ CALENDAR_APP_NAME }. This lets you quickly import one event or your entire agenda.": [
+        ""
+      ]
+    },
     "Calendar limit warning": {
       "You have reached the maximum of ${ calendarsLimit } calendar.": [
         "${ calendarsLimit } takvim üst sınır sayısına eriştiniz.",
@@ -1934,7 +1939,7 @@
       "Please enable multi-user support before adding users to your organization.": [
         "Lütfen kuruluşunuza kullanıcı eklemeden önce çoklu kullanıcı desteğini etkinleştirin."
       ],
-      "Please fix the highlighted conflicts to proceed.": [
+      "Please fix the highlighted conflict to proceed.": [
         "",
         ""
       ],
@@ -2200,9 +2205,6 @@
       ],
       "Event": [
         "Etkinlik"
-      ],
-      "Event duration not supported": [
-        "Etkinlik süresi desteklenmiyor"
       ],
       "Event validation failed": [
         "Etkinlik doğrulaması başarısız oldu"
@@ -4038,8 +4040,8 @@
       "Server load": [
         "Sunucu yükü"
       ],
-      "Servers are unreachable.": [
-        "Sunuculara ulaşılamıyor."
+      "Servers are unreachable. Please try again in a few minutes": [
+        ""
       ],
       "Session timed out.": [
         "Oturum zaman aşımına uğradı."
@@ -4358,9 +4360,6 @@
       ],
       "You can generate a new encryption key if you think your previous key has been compromised.": [
         "Önceki anahtarınızın tehlikede olduğunu düşünüyorsanız, yeni bir şifreleme anahtarı oluşturabilirsiniz."
-      ],
-      "You can import ICS files from another calendar to ${ CALENDAR_APP_NAME }. This lets you quickly import one event or your entire agenda.": [
-        ""
       ],
       "You can now receive messages to your @pm.me address. Upgrade to a paid plan to also send emails using your @pm.me address and create additional @pm.me addresses.": [
         "Artık, @pm.me adresine iletilerinizi alabilirsiniz. @pm.me adresinizi kullanarak e-postalar göndermek ve ek olarak @pm.me adresleri oluşturmak için paralı bir plana yükseltin."
@@ -5095,8 +5094,8 @@
       "Default notifications": [
         "Varsayılan bildirimler"
       ],
-      "Default PGP settings": [
-        "Varsayılan PGP ayarları"
+      "Default PGP scheme": [
+        ""
       ],
       "Default view": [
         "Varsayılan görünüm"
@@ -5810,6 +5809,7 @@
     },
     "Loading info": {
       "${ createdCalendars } of ${ calendarsToBeCreated } created": [
+        "",
         ""
       ],
       "Almost there": [
@@ -7286,9 +7286,6 @@
       ]
     },
     "Suffix for price": {
-      "/ mo": [
-        ""
-      ],
       "/ month": [
         "/ ay"
       ]
@@ -7330,6 +7327,20 @@
       ],
       "vCard field": [
         "vCard alanı"
+      ]
+    },
+    "Time period": {
+      "account creation date": [
+        ""
+      ],
+      "the last 12 months": [
+        ""
+      ],
+      "the last 3 months": [
+        ""
+      ],
+      "the last month": [
+        ""
       ]
     },
     "Time unit": {

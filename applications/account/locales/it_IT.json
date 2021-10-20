@@ -1258,6 +1258,11 @@
         "20 / utente *"
       ]
     },
+    "Calendar import section description": {
+      "You can import ICS files from another calendar to ${ CALENDAR_APP_NAME }. This lets you quickly import one event or your entire agenda.": [
+        "È possibile importare i file ICS da un altro calendario su ${ CALENDAR_APP_NAME }. Questo consente di importare rapidamente un evento o un'intera agenda."
+      ]
+    },
     "Calendar limit warning": {
       "You have reached the maximum of ${ calendarsLimit } calendar.": [
         "Hai raggiunto il massimo di ${ calendarsLimit } calendario.",
@@ -1600,7 +1605,7 @@
         ""
       ],
       "I use a different Proton account": [
-        ""
+        "Uso un altro account Proton"
       ],
       "Missing feature(s) ": [
         ""
@@ -1934,7 +1939,7 @@
       "Please enable multi-user support before adding users to your organization.": [
         "Per favore, abilita il supporto multi-utente prima di aggiungere utenti all'organizzazione."
       ],
-      "Please fix the highlighted conflicts to proceed.": [
+      "Please fix the highlighted conflict to proceed.": [
         "",
         ""
       ],
@@ -2200,9 +2205,6 @@
       ],
       "Event": [
         "Evento"
-      ],
-      "Event duration not supported": [
-        "Durata dell'evento non supportata"
       ],
       "Event validation failed": [
         "Convalida dell'evento fallita"
@@ -2982,13 +2984,13 @@
     },
     "Import type": {
       "Calendar": [
-        ""
+        "Calendario"
       ],
       "Contacts": [
-        ""
+        "Contatti"
       ],
       "Mail": [
-        ""
+        "Email"
       ]
     },
     "Import warning": {
@@ -3057,8 +3059,8 @@
         ""
       ],
       "${ numContacts } contact": [
-        "",
-        ""
+        "${ numContacts } contatto",
+        "${ numContacts } contatti"
       ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } cartella trovata",
@@ -3204,7 +3206,7 @@
         "Importo inferiore al minimo (${ amount })."
       ],
       "and": [
-        ""
+        "e"
       ],
       "Anyone with this link can see all the event details of this calendar such as title, location or participants.": [
         "Chiunque abbia questo link può vedere tutti i dettagli dell'evento di questo calendario, come titolo, posizione o partecipanti."
@@ -3642,7 +3644,7 @@
         ""
       ],
       "Import from": [
-        ""
+        "Importa da"
       ],
       "Import in progress": [
         ""
@@ -3789,7 +3791,7 @@
         "Dai un nome alla tua cartella e selezione la cartella genitore nella quale deve essere contenuta. Se non selezioni la cartella genitore questa cartella verrà creata come una cartella di primo livello."
       ],
       "New": [
-        ""
+        "Nuovo"
       ],
       "New to ${ BRAND_NAME }? ${ signupLink }": [
         "Nuovo su ${ BRAND_NAME }? ${ signupLink }"
@@ -4038,8 +4040,8 @@
       "Server load": [
         "Carico del server"
       ],
-      "Servers are unreachable.": [
-        "I server non sono raggiungibili."
+      "Servers are unreachable. Please try again in a few minutes": [
+        ""
       ],
       "Session timed out.": [
         "Disconnesso."
@@ -4359,9 +4361,6 @@
       "You can generate a new encryption key if you think your previous key has been compromised.": [
         "Se pensi che la tua precedente chiave sia stata compromessa, puoi generare una nuova chiave di crittografia."
       ],
-      "You can import ICS files from another calendar to ${ CALENDAR_APP_NAME }. This lets you quickly import one event or your entire agenda.": [
-        ""
-      ],
       "You can now receive messages to your @pm.me address. Upgrade to a paid plan to also send emails using your @pm.me address and create additional @pm.me addresses.": [
         "Ora puoi ricevere messaggi al tuo indirizzo @pm.me. Passa ad un piano a pagamento per inviare email utilizzando anche il tuo indirizzo @pm.me e creare ulteriori indirizzi @pm.me."
       ],
@@ -4653,7 +4652,7 @@
     },
     "Key type option": {
       "${ compatibility } RSA 4096-bit (Slower, but increased compatibility with legacy software)": [
-        ""
+        "${ compatibility } RSA 4096-bit (Più lento, ma compatibilità migliorata con il software ereditario)"
       ],
       "${ stateOfTheArt } ECC Curve25519 (Fastest, most modern)": [
         ""
@@ -4985,7 +4984,7 @@
         "Importo BTC:"
       ],
       "Calendar": [
-        ""
+        "Calendario"
       ],
       "Cancel": [
         "Annulla"
@@ -5042,7 +5041,7 @@
         "Confermare password"
       ],
       "Contacts": [
-        ""
+        "Contatti"
       ],
       "Conversation grouping": [
         "Raggruppamento conversazioni"
@@ -5095,8 +5094,8 @@
       "Default notifications": [
         "Notifiche predefinite"
       ],
-      "Default PGP settings": [
-        "Impostazioni PGP predefinite"
+      "Default PGP scheme": [
+        ""
       ],
       "Default view": [
         "Vista predefinita"
@@ -5147,7 +5146,7 @@
         "Email o username"
       ],
       "Emails": [
-        ""
+        "Email"
       ],
       "End date": [
         "Data di fine"
@@ -5189,10 +5188,10 @@
         "Da: ${ fromEmailAddress }"
       ],
       "From: ${ importedEmail }": [
-        ""
+        "Da: ${ importedEmail }"
       ],
       "From: ${ importedEmailAddress }": [
-        ""
+        "Da: ${ importedEmailAddress }"
       ],
       "From: ${ modalModel.email }": [
         "Da: ${ modalModel.email }"
@@ -5330,7 +5329,7 @@
         "Versione del sistema operativo"
       ],
       "Optional": [
-        ""
+        "Facoltativo"
       ],
       "OR": [
         "O"
@@ -5501,7 +5500,7 @@
         "A: ${ emailAddress }"
       ],
       "To: ${ PMEmailAddress }": [
-        ""
+        "A: ${ PMEmailAddress }"
       ],
       "To: ${ toEmailAddress }": [
         "A: ${ toEmailAddress }"
@@ -5810,6 +5809,7 @@
     },
     "Loading info": {
       "${ createdCalendars } of ${ calendarsToBeCreated } created": [
+        "",
         ""
       ],
       "Almost there": [
@@ -6610,7 +6610,7 @@
         "Ricerca utenti"
       ],
       "Select a reason": [
-        ""
+        "Seleziona un motivo"
       ],
       "Text": [
         "Testo"
@@ -6850,10 +6850,10 @@
     },
     "Remark about a key type option": {
       "Compatibility": [
-        ""
+        "Compatibilità"
       ],
       "State of the art": [
-        ""
+        "Stato dell'arte"
       ]
     },
     "Restore administrator panel": {
@@ -7286,9 +7286,6 @@
       ]
     },
     "Suffix for price": {
-      "/ mo": [
-        ""
-      ],
       "/ month": [
         "/ mese"
       ]
@@ -7330,6 +7327,20 @@
       ],
       "vCard field": [
         "campo vCard"
+      ]
+    },
+    "Time period": {
+      "account creation date": [
+        ""
+      ],
+      "the last 12 months": [
+        ""
+      ],
+      "the last 3 months": [
+        ""
+      ],
+      "the last month": [
+        ""
       ]
     },
     "Time unit": {
