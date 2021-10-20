@@ -8,9 +8,8 @@ import {
 } from '@proton/shared/lib/calendar/icsSurgery/EventInvitationError';
 import { useEffect, useState } from 'react';
 import {
-    Icon,
+    Banner,
     InlineLinkButton,
-    Loader,
     useApi,
     useGetCalendarEventRaw,
     useGetCalendarInfo,
@@ -20,6 +19,7 @@ import {
 import { useGetCanonicalEmailsMap } from '@proton/components/hooks/useGetCanonicalEmailsMap';
 import { c } from 'ttag';
 import useGetCalendarEventPersonal from '@proton/components/hooks/useGetCalendarEventPersonal';
+import { BannerBackgroundColor } from '@proton/components/components/banner/Banner';
 import {
     EventInvitation,
     getEventTimeStatus,
@@ -41,6 +41,9 @@ import ExtraEventDetails from './ExtraEventDetails';
 import ExtraEventHeader from './ExtraEventHeader';
 import ExtraEventSummary from './ExtraEventSummary';
 import ExtraEventWarning from './ExtraEventWarning';
+import EmailReminderWidgetSkeleton from './EmailReminderWidgetSkeleton';
+
+import './CalendarWidget.scss';
 
 const {
     DECRYPTION_ERROR,
@@ -268,11 +271,7 @@ const ExtraEvent = ({
     }, [retryCount]);
 
     if (loading) {
-        return (
-            <div className="rounded bordered bg-norm mb0-5 pl1 pr1 pt0-5 pb0-5">
-                <Loader />
-            </div>
-        );
+        return <EmailReminderWidgetSkeleton />;
     }
 
     if (model.error && ![EVENT_CREATION_ERROR, EVENT_UPDATE_ERROR].includes(model.error.type)) {
@@ -282,17 +281,21 @@ const ExtraEvent = ({
         );
 
         return (
-            <div className="bg-danger rounded p0-5 mb0-5 flex flex-nowrap">
-                <Icon name="triangle-exclamation" className="flex-item-noshrink mtauto mbauto" />
-                <span className="pl0-5 pr0-5 flex-item-fluid">{message}</span>
-                {canTryAgain && (
-                    <span className="flex-item-noshrink flex">
-                        <InlineLinkButton onClick={handleRetry} className="text-underline color-inherit">
-                            {c('Action').t`Try again`}
-                        </InlineLinkButton>
-                    </span>
-                )}
-            </div>
+            <Banner
+                backgroundColor={BannerBackgroundColor.DANGER}
+                icon="triangle-exclamation"
+                action={
+                    canTryAgain && (
+                        <span className="flex-item-noshrink flex">
+                            <InlineLinkButton onClick={handleRetry} className="text-underline color-inherit">
+                                {c('Action').t`Try again`}
+                            </InlineLinkButton>
+                        </span>
+                    )
+                }
+            >
+                {message}
+            </Banner>
         );
     }
 
@@ -301,11 +304,14 @@ const ExtraEvent = ({
     }
 
     return (
-        <div className="rounded bordered bg-norm mb0-5 pl1 pr1 pt0-5 pb0-5 scroll-if-needed">
-            <ExtraEventSummary model={model} />
-            <ExtraEventHeader model={model} />
-            <ExtraEventWarning model={model} />
-            <ExtraEventButtons model={model} setModel={setModel} message={message} />
+        <div className="calendar-widget rounded bordered bg-norm mb0-5 scroll-if-needed">
+            <div className="p1-5">
+                <ExtraEventSummary model={model} />
+                <ExtraEventHeader model={model} />
+                <ExtraEventWarning model={model} />
+                <ExtraEventButtons model={model} setModel={setModel} message={message} />
+            </div>
+            <hr className="m0" />
             <ExtraEventDetails model={model} weekStartsOn={getWeekStartsOn(userSettings)} />
         </div>
     );

@@ -8,13 +8,8 @@ import {
     toApiPartstat,
     withPmAttendees,
 } from '@proton/shared/lib/calendar/attendees';
-import { getIsCalendarDisabled } from '@proton/shared/lib/calendar/calendar';
-import {
-    CALENDAR_FLAGS,
-    ICAL_ATTENDEE_STATUS,
-    ICAL_EVENT_STATUS,
-    ICAL_METHOD,
-} from '@proton/shared/lib/calendar/constants';
+import { getDoesCalendarNeedUserAction, getIsCalendarDisabled } from '@proton/shared/lib/calendar/calendar';
+import { ICAL_ATTENDEE_STATUS, ICAL_EVENT_STATUS, ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
 import {
     CreateCalendarEventSyncData,
     CreateLinkedCalendarEventsSyncData,
@@ -52,7 +47,6 @@ import {
 } from '@proton/shared/lib/calendar/vcalHelper';
 import { getIsEventCancelled, withDtstamp } from '@proton/shared/lib/calendar/veventHelper';
 import { API_CODES } from '@proton/shared/lib/constants';
-import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { noop } from '@proton/shared/lib/helpers/function';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import { omit, pick } from '@proton/shared/lib/helpers/object';
@@ -150,7 +144,7 @@ export type FetchAllEventsByUID = ({
     supportedRecurrenceId?: VcalDateOrDateTimeProperty;
 }>;
 
-const fetchAllEventsByUID: FetchAllEventsByUID = async ({ uid, api, recurrenceId }) => {
+export const fetchAllEventsByUID: FetchAllEventsByUID = async ({ uid, api, recurrenceId }) => {
     const timestamp = recurrenceId ? getUnixTime(propertyToUTCDate(recurrenceId)) : undefined;
     const promises: Promise<CalendarEventWithMetadata[]>[] = [getPaginatedEventsByUID({ api, uid })];
     if (recurrenceId) {
@@ -240,9 +234,7 @@ export const fetchEventInvitation: FetchEventInvitation = async ({
         calendar,
         calendarSettings,
         isCalendarDisabled: getIsCalendarDisabled(calendar),
-        calendarNeedsUserAction:
-            hasBit(calendar.Flags, CALENDAR_FLAGS.RESET_NEEDED) ||
-            hasBit(calendar.Flags, CALENDAR_FLAGS.UPDATE_PASSPHRASE),
+        calendarNeedsUserAction: getDoesCalendarNeedUserAction(calendar),
         memberID,
         addressKeys,
         calendarKeys: decryptedCalendarKeys,

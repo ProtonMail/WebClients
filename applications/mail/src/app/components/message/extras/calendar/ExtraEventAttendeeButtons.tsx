@@ -13,15 +13,9 @@ import {
     getErrorMessage,
 } from '@proton/shared/lib/calendar/icsSurgery/EventInvitationError';
 import { useCallback, Dispatch, SetStateAction } from 'react';
-import {
-    Icon,
-    InlineLinkButton,
-    Loader,
-    useLoading,
-    useNotifications,
-    CalendarInviteButtons,
-} from '@proton/components';
+import { InlineLinkButton, Loader, useLoading, useNotifications, CalendarInviteButtons } from '@proton/components';
 import { c } from 'ttag';
+import Banner, { BannerBackgroundColor } from '@proton/components/components/banner/Banner';
 import {
     getDisableButtons,
     getIsProtonInvite,
@@ -210,21 +204,25 @@ const ExtraEventAttendeeButtons = ({ model, setModel, message }: Props) => {
         }
 
         return (
-            <div className="bg-danger rounded p0-5 mb0-5 flex flex-nowrap">
-                <Icon name="triangle-exclamation" className="flex-item-noshrink mtauto mbauto" />
-                <span className="pl0-5 pr0-5 flex-item-fluid">{message}</span>
-                <span className="flex-item-noshrink flex">
-                    <InlineLinkButton onClick={handleRetry} className="text-underline color-inherit">
-                        {c('Action').t`Try again`}
-                    </InlineLinkButton>
-                </span>
-            </div>
+            <Banner
+                backgroundColor={BannerBackgroundColor.DANGER}
+                icon="triangle-exclamation"
+                action={
+                    <span className="flex-item-noshrink flex">
+                        <InlineLinkButton onClick={handleRetry} className="text-underline color-inherit">
+                            {c('Action').t`Try again`}
+                        </InlineLinkButton>
+                    </span>
+                }
+            >
+                {message}
+            </Banner>
         );
     }
 
     if (method === ICAL_METHOD.REQUEST && partstat) {
         return (
-            <div className="mt1-5 mb0-5 flex flex-align-items-center">
+            <div className="mt1-5 flex flex-align-items-center">
                 <div className="text-bold mr1">{c('Calendar invite buttons label').t`Attending?`}</div>
                 <CalendarInviteButtons actions={actions} partstat={partstat} disabled={buttonsDisabled} />
             </div>

@@ -277,7 +277,7 @@ export const getAttendeeSummaryText = (model: RequireSome<InvitationModel, 'invi
     if (method === REQUEST) {
         if (isOutdated) {
             if (veventApi && getEventStatus(veventApi) === CANCELLED) {
-                return c('Calendar invite info').t`This invitation is out of date. The event has been cancelled.`;
+                return c('Calendar invite info').t`This invitation is out of date. The event has been canceled.`;
             }
             return c('Calendar invite info').t`This invitation is out of date. The event has been updated.`;
         }
@@ -298,7 +298,7 @@ export const getAttendeeSummaryText = (model: RequireSome<InvitationModel, 'invi
     }
 
     if (method === CANCEL) {
-        return c('Calendar invite info').t`This event has been cancelled.`;
+        return c('Calendar invite info').t`This event has been canceled.`;
     }
 
     if (method === ADD) {
@@ -307,7 +307,7 @@ export const getAttendeeSummaryText = (model: RequireSome<InvitationModel, 'invi
         }
         if (isOutdated) {
             if (getEventStatus(veventApi) === CANCELLED) {
-                return c('Calendar invite info').t`This invitation is out of date. The event has been cancelled.`;
+                return c('Calendar invite info').t`This invitation is out of date. The event has been canceled.`;
             }
             return c('Calendar invite info').t`This invitation is out of date. The event has been updated.`;
         }

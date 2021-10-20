@@ -1,13 +1,11 @@
-import { fromUnixTime } from 'date-fns';
 import { readSessionKeys } from '@proton/shared/lib/calendar/deserialize';
-import { convertUTCDateTimeToZone, fromUTCDate, toUTCDate } from '@proton/shared/lib/date/timezone';
+import { toUTCDate } from '@proton/shared/lib/date/timezone';
 import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 import { CalendarEvent } from '@proton/shared/lib/interfaces/calendar';
 import { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
 import { getRecurrenceId } from '@proton/shared/lib/calendar/vcalHelper';
 import { splitKeys } from '@proton/shared/lib/keys';
 import { useGetCalendarKeys } from '@proton/components/hooks/useGetDecryptedPassphraseAndCalendarKeys';
-import { toExdate } from '../recurrence/helper';
 
 export const getRecurrenceIdDate = (component: VcalVeventComponent) => {
     const rawRecurrenceId = getRecurrenceId(component);
@@ -19,15 +17,6 @@ export const getRecurrenceIdDate = (component: VcalVeventComponent) => {
 
 export const getUidValue = (component: VcalVeventComponent) => {
     return component.uid.value;
-};
-
-export const utcTimestampToTimezone = (unixTime: number, timezone: string) => {
-    return convertUTCDateTimeToZone(fromUTCDate(fromUnixTime(unixTime)), timezone);
-};
-
-export const getRecurrenceIdValueFromTimestamp = (timestamp: number, isAllDay: boolean, startTimezone: string) => {
-    const localStartDateTime = utcTimestampToTimezone(timestamp, startTimezone);
-    return toExdate(localStartDateTime, isAllDay, startTimezone);
 };
 
 export const getSharedEventIDAndSessionKey = async ({
