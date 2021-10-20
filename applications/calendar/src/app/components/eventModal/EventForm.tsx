@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 import {
     FREQUENCY,
-    MAX_LENGTHS,
+    MAX_LENGTHS_API,
     MAX_NOTIFICATIONS,
     CALENDAR_INPUT_ID,
     DESCRIPTION_INPUT_ID,
@@ -130,7 +130,7 @@ const EventForm = ({
                 placeholder={c('Placeholder').t`Add title`}
                 title={c('Title').t`Add event title`}
                 autoFocus
-                maxLength={MAX_LENGTHS.TITLE}
+                maxLength={MAX_LENGTHS_API.TITLE}
                 {...createHandlers({ model, setModel, field: 'title' }).native}
             />
         </IconRow>
@@ -171,7 +171,7 @@ const EventForm = ({
             <Input
                 id={LOCATION_INPUT_ID}
                 placeholder={c('Placeholder').t`Add location`}
-                maxLength={MAX_LENGTHS.LOCATION}
+                maxLength={MAX_LENGTHS_API.LOCATION}
                 title={c('Title').t`Add event location`}
                 {...createHandlers({ model, setModel, field: 'location' }).native}
             />
@@ -190,7 +190,7 @@ const EventForm = ({
                 minRows={2}
                 autoGrow
                 placeholder={c('Placeholder').t`Add description`}
-                maxLength={MAX_LENGTHS.EVENT_DESCRIPTION}
+                maxLength={MAX_LENGTHS_API.EVENT_DESCRIPTION}
                 style={{ '--max-height-custom': `${textareaMaxHeight}px` }}
                 className="max-h-custom"
                 title={c('Title').t`Add more information related to this event`}
