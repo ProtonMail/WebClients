@@ -18,15 +18,15 @@ const ModalImportEmails = ({ onClose, ...rest }: Partial<ModalPropsInjection>) =
                 <div className="mlauto mrauto">
                     <img
                         src={onboardingImportAssistant}
-                        alt={c('Get started checklist instructions').t`Import your messages`}
+                        alt={c('Get started checklist instructions').t`Import your contacts or messages`}
                     />
                 </div>
                 <h1 className="mb0-5 text-2xl text-bold">
-                    {c('Get started checklist instructions').t`Import your messages`}
+                    {c('Get started checklist instructions').t`Import your contacts or messages`}
                 </h1>
                 <p className="mb2">
                     {c('Get started checklist instructions')
-                        .t`Quickly transfer your emails from any provider using our Easy Switch import assistant.`}
+                        .t`Quickly transfer your contacts or emails from any provider using our Easy Switch import assistant.`}
                 </p>
                 <ButtonLike
                     fullWidth
@@ -35,8 +35,9 @@ const ModalImportEmails = ({ onClose, ...rest }: Partial<ModalPropsInjection>) =
                     app={APPS.PROTONMAIL}
                     path="/import-export"
                     rel="noopener noreferrer"
+                    target="_blank"
                 >
-                    {c('Get started checklist instructions').t`Import messages`}
+                    {c('Get started checklist instructions').t`Import contacts or emails`}
                 </ButtonLike>
             </InnerModal>
         </DialogModal>
