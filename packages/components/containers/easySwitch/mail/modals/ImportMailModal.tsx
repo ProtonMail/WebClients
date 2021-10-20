@@ -2,9 +2,8 @@ import { useState, useMemo, FormEvent, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { c } from 'ttag';
 
-import { getAuthenticationMethod } from '@proton/shared/lib/api/mailImport';
-
 import {
+    getAuthenticationMethod,
     createImport,
     startImportTask,
     getMailImportData,
@@ -207,7 +206,7 @@ const ImportMailModal = ({ onClose = noop, currentImport, providerInstructions, 
                 const { Importer } = await api(getImport(modalModel.importID));
 
                 const { Folders = [] } = await api({
-                    ...getMailImportData(Importer.ID),
+                    ...getMailImportData(Importer.ID, { Code: modalModel.password }),
                     /*
                         For this call we display a custom
                         error message on top of the form
@@ -243,7 +242,7 @@ const ImportMailModal = ({ onClose = noop, currentImport, providerInstructions, 
                 });
                 await call();
 
-                const { Folders = [] } = await api(getMailImportData(Importer.ID));
+                const { Folders = [] } = await api(getMailImportData(Importer.ID, { Code: modalModel.password }));
                 moveToPrepareStep(Importer, Folders);
             } catch (error: any) {
                 handleSubmitStartError(error);
