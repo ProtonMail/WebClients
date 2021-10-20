@@ -143,7 +143,7 @@
         "Dialoguez avec nous"
       ],
       "Check import progress": [
-        ""
+        "Vérifier la progression de l'importation"
       ],
       "Choose a file or drag it here": [
         "Choisissez un fichier ou faites-le glisser ici"
@@ -386,7 +386,7 @@
         "Importer des contacts"
       ],
       "Import from .ics": [
-        ""
+        "Importer depuis un .ics"
       ],
       "Import key": [
         "Importer la clé"
@@ -674,7 +674,7 @@
         "Trier"
       ],
       "Start ${ PRODUCT_NAMES.EASY_SWITCH }": [
-        ""
+        "Commencer ${ PRODUCT_NAMES.EASY_SWITCH }"
       ],
       "Start import": [
         "Démarrer l'importation"
@@ -1171,6 +1171,11 @@
       ],
       "20 / user *": [
         "20/utilisateur*"
+      ]
+    },
+    "Calendar import section description": {
+      "You can import ICS files from another calendar to ${ CALENDAR_APP_NAME }. This lets you quickly import one event or your entire agenda.": [
+        "Vous pouvez importer des fichiers ICS depuis un autre calendrier vers ${ CALENDAR_APP_NAME }. Ceci vous permet d'importer rapidement un événement ou tout votre agenda."
       ]
     },
     "Calendar limit warning": {
@@ -1677,7 +1682,7 @@
         "Les réponses automatiques sont une fonctionnalité payante. Veuillez passer à un compte payant pour utiliser cette fonctionnalité."
       ],
       "Calendar limit reached": [
-        ""
+        "Limite de calendrier atteinte"
       ],
       "Calendar primary private key is not decrypted": [
         "La clé privée principale du calendrier n'est pas déchiffrée"
@@ -1686,7 +1691,7 @@
         "Impossible de vérifier le nom d'utilisateur•rice, réessayez plus tard"
       ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
-        ""
+        "Impossible de créer de nouveaux calendriers pour tous les calendriers importés en raison de la limite de calendriers personnels."
       ],
       "Can't validate email, try again later": [
         "Impossible de valider le courriel, veuillez réessayer plus tard"
@@ -1707,8 +1712,8 @@
         "Impossible de trouver l'adresse ${ email }."
       ],
       "Deselect at least ${ calendarToFixCount } calendar or": [
-        "",
-        ""
+        "Désélectionnez au moins ${ calendarToFixCount } calendrier ou",
+        "Désélectionnez au moins ${ calendarToFixCount } calendriers ou"
       ],
       "Domain not available, try again later": [
         "Domaine non disponible, veuillez réessayer plus tard"
@@ -1798,8 +1803,8 @@
         "Le nom du label ne peut pas être vide"
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
-        "",
-        ""
+        "Fusionnez au moins ${ calendarToFixCount } calendrier avec un calendrier Proton existant",
+        "Fusionnez au moins ${ calendarToFixCount } calendriers avec des calendriers Proton existants"
       ],
       "Missing signature": [
         "Signature manquante"
@@ -1849,9 +1854,9 @@
       "Please enable multi-user support before adding users to your organization.": [
         "Veuillez activer le support multi-utilisateur avant d'ajouter des utilisateurs à votre organisation."
       ],
-      "Please fix the highlighted conflicts to proceed.": [
-        "",
-        ""
+      "Please fix the highlighted conflict to proceed.": [
+        "Veuillez corriger le conflit en surbrillance pour continuer.",
+        "Veuillez corriger les conflits en surbrillance pour continuer."
       ],
       "Please generate keys before you try to change your password.": [
         "Veuillez générer des clés avant d'essayer de changer votre mot de passe."
@@ -2115,9 +2120,6 @@
       ],
       "Event": [
         "Événement"
-      ],
-      "Event duration not supported": [
-        "Durée de l'événement non prise en charge"
       ],
       "Event validation failed": [
         "Échec de la validation d'événement"
@@ -2798,7 +2800,7 @@
         "Dans vos ${ boldGmailSettings }, allez à ${ boldForwarding } et assurez-vous que ${ boldIMAPAccess } est activé."
       ],
       "Log into Yahoo Mail and click on your name in the upper right corner to access ${ boldAccountInfo }. In the ${ boldAccountSec } section, scroll to the ${ boldAppPassword } section to generate an app password. You will need this password during the import.": [
-        ""
+        "Connectez-vous à Yahoo Mail et cliquez sur votre nom dans le coin supérieur droit pour accéder à ${ boldAccountInfo }. Dans la section ${ boldAccountSec }, faites défiler jusqu'à la section ${ boldAppPassword } pour générer un mot de passe d'application. Vous aurez besoin de ce mot de passe lors de l'importation."
       ]
     },
     "Import instructions emphasis": {
@@ -2827,7 +2829,7 @@
         "Labels"
       ],
       "Other ways to sign in": [
-        ""
+        "Autres manières de se connecter"
       ],
       "Security": [
         "Sécurité"
@@ -2897,13 +2899,13 @@
     },
     "Import type": {
       "Calendar": [
-        ""
+        "Calendrier"
       ],
       "Contacts": [
-        ""
+        "Contacts"
       ],
       "Mail": [
-        ""
+        "Courrier"
       ]
     },
     "Import warning": {
@@ -2931,16 +2933,16 @@
         "${ calendarName } sera défini comme calendrier par défaut."
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
-        "",
-        ""
+        "${ calendarsToBeCreatedCount } nouveau calendrier",
+        "${ calendarsToBeCreatedCount } nouveaux calendriers"
       ],
       "${ calendarsToBeMerged } merged calendar": [
-        "",
-        ""
+        "${ calendarsToBeMerged } calendrier fusionné",
+        "${ calendarsToBeMerged } calendriers fusionnés"
       ],
       "${ calendarsToBeMergedCount } merged calendar": [
-        "",
-        ""
+        "${ calendarsToBeMergedCount } calendrier fusionné",
+        "${ calendarsToBeMergedCount } calendriers fusionnés"
       ],
       "${ mailAppName } Free": [
         "${ mailAppName } Free"
@@ -2968,12 +2970,12 @@
         "${ numberOfNonPrivateKeys } fichiers téléversés ne sont pas des clés privées valides. Veuillez vérifier et réessayer."
       ],
       "${ numContactGroups } contact group": [
-        "",
-        ""
+        "${ numContactGroups } groupe de contacts",
+        "${ numContactGroups } groupes de contacts"
       ],
       "${ numContacts } contact": [
-        "",
-        ""
+        "${ numContacts } contact",
+        "${ numContacts } contacts"
       ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } dossier trouvé",
@@ -2993,8 +2995,8 @@
         "${ saveExtra20 } sur VPN et Mail en ajoutant un abonnement RPV."
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
-        "",
-        ""
+        "${ selectedCalendarsTotal } sur ${ providerCalendars.length } calendrier",
+        "${ selectedCalendarsTotal } sur ${ providerCalendars.length } calendriers"
       ],
       "${ selectedFoldersCount } folder selected": [
         "${ selectedFoldersCount } dossier sélectionné",
@@ -3119,7 +3121,7 @@
         "Montant inférieur au minimum requis (${ amount })."
       ],
       "and": [
-        ""
+        "et"
       ],
       "Anyone with this link can see all the event details of this calendar such as title, location or participants.": [
         "N'importe qui ayant ce lien peut voir tous les détails des événements de ce calendrier comme le titre, l'emplacement ou les participants."
@@ -3251,7 +3253,7 @@
         "Cliquez sur « Demander un nouveau code » pour envoyer un nouveau code de vérification à ${ strong }. Si ce numéro de téléphone est incorrect, cliquez sur « Modifier » pour le corriger."
       ],
       "Close this screen to exit.": [
-        ""
+        "Fermez cet écran pour quitter."
       ],
       "Connections": [
         "Connexions"
@@ -3260,8 +3262,8 @@
         "Continuer quand même?"
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
-        "",
-        ""
+        "Créer ${ calendarsToBeCreated } nouveau calendrier",
+        "Créer ${ calendarsToBeCreated } nouveaux calendriers"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Choisissez un label pour les messages importés, une plage de temps pour cette importation et les dossiers que vous souhaitez importer."
@@ -3279,7 +3281,7 @@
         "Créez des adresses électroniques pour d'autres personnes, gérez ProtonMail pour une entreprise, une école ou un groupe. Commencez par ajouter le nom de votre organisation et le domaine personnalisé (par exemple @votreentreprise.com). "
       ],
       "Create in": [
-        ""
+        "Créer dans"
       ],
       "Creating a new recovery phrase will deactivate your old one.": [
         "La création d’une nouvelle phrase de récupération désactivera l’ancienne."
@@ -3376,7 +3378,7 @@
         "Modifier le label"
       ],
       "Effortlessly and securely move your emails from your current provider to Proton. If you use Google, we also support calendar, and contacts imports.": [
-        ""
+        "Transférez vos courriels sans effort et en toute sécurité depuis votre fournisseur actuel vers Proton. Si vous utilisez Google, nous prenons également en charge les importations de calendrier et de contacts."
       ],
       "Email address": [
         "Adresse courriel"
@@ -3550,17 +3552,17 @@
         "Les images ont été supprimées, car elles ne sont pas autorisées dans la réponse automatique."
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
-        ""
+        "Importer $ { contactsFragment } et ${ contactsGroupsFragment }"
       ],
       "Import ${ selectedCalendarsCount } of ${ totalCalendarsCount } calendar": [
-        "",
-        ""
+        "Importer ${ selectedCalendarsCount } de ${ totalCalendarsCount } calendrier",
+        "Importer ${ selectedCalendarsCount } de ${ totalCalendarsCount } calendriers"
       ],
       "Import from": [
-        ""
+        "Importer depuis"
       ],
       "Import in progress": [
-        ""
+        "Importation en cours"
       ],
       "Import mailbox": [
         "Importer une boîte aux lettres"
@@ -3575,7 +3577,7 @@
         "IMPORTANT: certains registraires n’acceptent pas les valeurs CNAME avec une période à la fin (tandis que d’autres la requièrent). Si votre registraire n’accepte pas vos enregistrements CNAME, veuillez supprimer la période à la fin de chaque valeur CNAME et réessayer."
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
-        ""
+        "Importation de vos données de ${ importedEmailAddress } vers ${ toEmail }."
       ],
       "Included": [
         "Inclus"
@@ -3611,7 +3613,7 @@
         "Connexion Internet rétablie."
       ],
       "Just confirm your selection and we'll do the rest.": [
-        ""
+        "Confirmez simplement votre sélection et nous ferons le reste."
       ],
       "Justify": [
         "Justifier"
@@ -3632,7 +3634,7 @@
         "Les importations importantes peuvent prendre plusieurs jours."
       ],
       "Large imports can take several days.": [
-        ""
+        "Les importations importantes peuvent prendre plusieurs jours."
       ],
       "Learn how to log in to ProtonVPN with third-party VPN applications.": [
         "Apprenez à vous connecter à ProtonVPN avec des applications VPN tierces."
@@ -3686,7 +3688,7 @@
         "Entrez manuellement ces informations dans votre périphérique d'authentification à deux facteurs pour configurer votre compte. ${ _switchButton }."
       ],
       "Merged": [
-        ""
+        "Fusionné"
       ],
       "Monthly ${ onDayString }": [
         "Mensuellement, ${ onDayString }"
@@ -3704,13 +3706,13 @@
         "Nommez votre nouveau dossier et sélectionnez le dossier parent dans lequel vous voulez le mettre. Si vous ne sélectionnez pas de dossier parent, ce nouveau dossier sera créé en tant que dossier de premier niveau."
       ],
       "New": [
-        ""
+        "Nouveau"
       ],
       "New to ${ BRAND_NAME }? ${ signupLink }": [
         "Nouveau sur ${ BRAND_NAME }? ${ signupLink }"
       ],
       "Next you'll need to log in to your Google account and allow us to access your data.": [
-        ""
+        "Ensuite, vous devrez vous connecter à votre compte Google et nous permettre d'accéder à vos données."
       ],
       "No action selected": [
         "Aucune action sélectionnée"
@@ -3942,10 +3944,10 @@
         "Capture(s) d'écran jointe(s)"
       ],
       "Select a service provider to get started": [
-        ""
+        "Sélectionnez un fournisseur de services pour commencer"
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20-personal-calendar limit. You can also merge imported calendars with existing Proton calendars.": [
-        ""
+        "Sélectionnez les calendriers à importer. Un nouveau calendrier sera créé pour chaque calendrier importé jusqu'à la limite de 20 calendriers personnels. Vous pouvez également fusionner des calendriers importés avec des calendriers Proton existants."
       ],
       "Server is currently down": [
         "Ce serveur est actuellement indisponible"
@@ -3953,8 +3955,8 @@
       "Server load": [
         "Charge du serveur"
       ],
-      "Servers are unreachable.": [
-        "Les serveurs sont inaccessibles."
+      "Servers are unreachable. Please try again in a few minutes": [
+        "Les serveurs sont inaccessibles. Veuillez réessayer dans quelques minutes"
       ],
       "Session timed out.": [
         "Session expirée."
@@ -4209,7 +4211,7 @@
         "Nous vous enverrons un lien de récupération vers cette adresse courriel si vous oubliez votre mot de passe ou si vous ne pouvez pas accéder à votre compte."
       ],
       "We'll notify you when the import is done.": [
-        ""
+        "Nous vous informerons quand l'importation sera terminée."
       ],
       "Web URL": [
         "URL Web"
@@ -4221,7 +4223,7 @@
         "Les vues hebdomadaires et mensuelles ne s'appliquent qu’à la version de bureau."
       ],
       "What do you want to import from your Google account?": [
-        ""
+        "Que voulez-vous importer depuis votre compte Google?"
       ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "Lorsque cette option est désactivée, ceci empêche toutes les images de se charger sur votre appareil à votre insu.\t"
@@ -4257,7 +4259,7 @@
         "Vous êtes actuellement connecté·e en tant que ${ user.Name } (${ user.Email }) et avez un accès restreint."
       ],
       "You can check the progress ${ importProgressLink }.": [
-        ""
+        "Vous pouvez vérifier la progression ${ importProgressLink }."
       ],
       "You can continue using Proton services as usual.": [
         "Vous pouvez continuer à utiliser les services Proton comme d'habitude."
@@ -4273,9 +4275,6 @@
       ],
       "You can generate a new encryption key if you think your previous key has been compromised.": [
         "Vous pouvez générer une nouvelle clé de chiffrement si vous pensez que votre clé précédente a été compromise."
-      ],
-      "You can import ICS files from another calendar to ${ CALENDAR_APP_NAME }. This lets you quickly import one event or your entire agenda.": [
-        ""
       ],
       "You can now receive messages to your @pm.me address. Upgrade to a paid plan to also send emails using your @pm.me address and create additional @pm.me addresses.": [
         "Vous pouvez maintenant recevoir des messages sur votre adresse @pm.me. Passez à une offre payante afin de pouvoir également envoyer des courriels en utilisant votre adresse @pm.me et créer des adresses @pm.me supplémentaires."
@@ -4365,13 +4364,13 @@
         "Votre liste de blocage est vide."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
-        ""
+        "Vos données sont prêtes à être importées de ${ importedEmailAddressStrong } vers votre compte Proton."
       ],
       "Your email will only be used for this one-time verification.": [
         "Votre adresse électronique ne sera utilisée que pour cette vérification unique."
       ],
       "Your import from ${ delayedImport.Account } is temporarily delayed.": [
-        ""
+        "Votre importation à partir de ${ delayedImport.Account } est temporairement retardée."
       ],
       "Your import from ${ delayedImport.Email } is temporarily delayed.": [
         "Votre importation à partir de ${ delayedImport.Email } est temporairement retardée."
@@ -4900,7 +4899,7 @@
         "Montant BTC:"
       ],
       "Calendar": [
-        ""
+        "Calendrier"
       ],
       "Cancel": [
         "Annuler"
@@ -4957,7 +4956,7 @@
         "Confirmer le mot de passe"
       ],
       "Contacts": [
-        ""
+        "Contacts"
       ],
       "Conversation grouping": [
         "Regroupement de conversation"
@@ -5010,8 +5009,8 @@
       "Default notifications": [
         "Notifications par défaut"
       ],
-      "Default PGP settings": [
-        "Paramètres PGP par défaut"
+      "Default PGP scheme": [
+        "Protocole PGP par défaut"
       ],
       "Default view": [
         "Vue par défaut"
@@ -5062,7 +5061,7 @@
         "Adresse courriel ou nom d'utilisateur·rice"
       ],
       "Emails": [
-        ""
+        "Courriels"
       ],
       "End date": [
         "Date de fin"
@@ -5104,10 +5103,10 @@
         "De: ${ fromEmailAddress }"
       ],
       "From: ${ importedEmail }": [
-        ""
+        "De: ${ importedEmail }"
       ],
       "From: ${ importedEmailAddress }": [
-        ""
+        "De: ${ importedEmailAddress }"
       ],
       "From: ${ modalModel.email }": [
         "De: ${ modalModel.email }"
@@ -5416,7 +5415,7 @@
         "À: ${ emailAddress }"
       ],
       "To: ${ PMEmailAddress }": [
-        ""
+        "À: ${ PMEmailAddress }"
       ],
       "To: ${ toEmailAddress }": [
         "À: ${ toEmailAddress }"
@@ -5725,25 +5724,26 @@
     },
     "Loading info": {
       "${ createdCalendars } of ${ calendarsToBeCreated } created": [
-        ""
+        "${ createdCalendars } sur ${ calendarsToBeCreated } créé",
+        "${ createdCalendars } sur ${ calendarsToBeCreated } créés"
       ],
       "Almost there": [
-        ""
+        "Nous y sommes presque"
       ],
       "Connecting to your email provider": [
         "Connexion à votre fournisseur de messagerie"
       ],
       "Creating new calendars": [
-        ""
+        "Création de nouveaux calendriers"
       ],
       "Gathering your data": [
-        ""
+        "Collecte de vos données"
       ],
       "We're gathering your data from your provider": [
-        ""
+        "Nous collectons vos données auprès de votre fournisseur"
       ],
       "Your import is starting": [
-        ""
+        "Votre importation commence"
       ]
     },
     "Log preference": {
@@ -5837,7 +5837,7 @@
     },
     "Mail import summary": {
       "${ messagesFragment } since ${ periodFragment } and label them as ${ label }": [
-        ""
+        "${ messagesFragment } depuis ${ periodFragment } et les labelliser comme ${ label }"
       ]
     },
     "Mail upsell feature": {
@@ -6383,10 +6383,10 @@
     },
     "Option group label": {
       "Create new calendar": [
-        ""
+        "Créer un nouveau calendrier"
       ],
       "Merge with calendar": [
-        ""
+        "Fusionner avec le calendrier"
       ]
     },
     "Option protection mode": {
@@ -6858,7 +6858,7 @@
         "Importation & exportation"
       ],
       "Import/Export": [
-        ""
+        "Importation/Exportation"
       ],
       "Multi-user support": [
         "Prise en charge multiutilisateur·rice"
@@ -7040,7 +7040,7 @@
         "Calendrier mis à jour"
       ],
       "Canceling import": [
-        ""
+        "Annulation de l'importation"
       ],
       "Catch-all address updated": [
         "Adresse attrape-tout mise à jour"
@@ -7124,7 +7124,7 @@
         "Adresse premium créée"
       ],
       "Resuming import": [
-        ""
+        "Reprendre l'importation"
       ],
       "Session revoked": [
         "Session révoquée"
@@ -7201,9 +7201,6 @@
       ]
     },
     "Suffix for price": {
-      "/ mo": [
-        ""
-      ],
       "/ month": [
         "/mois"
       ]
@@ -7245,6 +7242,20 @@
       ],
       "vCard field": [
         "Champ vCard"
+      ]
+    },
+    "Time period": {
+      "account creation date": [
+        "date de création du compte"
+      ],
+      "the last 12 months": [
+        "les 12 derniers mois"
+      ],
+      "the last 3 months": [
+        "les 3 derniers mois"
+      ],
+      "the last month": [
+        "le dernier mois"
       ]
     },
     "Time unit": {
@@ -7501,16 +7512,16 @@
         "Filtres personnalisés"
       ],
       "Customize and confirm": [
-        ""
+        "Personnaliser et confirmer"
       ],
       "Customize calendar import": [
-        ""
+        "Personnaliser l'importation du calendrier"
       ],
       "Customize import": [
         "Personnaliser l'importation"
       ],
       "Customize your mail import": [
-        ""
+        "Personnalisez l’importation de votre courrier"
       ],
       "Customize your plan": [
         "Personnalisez votre offre"
@@ -7687,13 +7698,13 @@
         "Importer la clé"
       ],
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
-        ""
+        "Importer via ${ PRODUCT_NAMES.EASY_SWITCH }"
       ],
       "Import-Export app": [
         "Application Import-Export"
       ],
       "Import/Export": [
-        ""
+        "Import/Export"
       ],
       "Invalid verification code": [
         "Code de vérification invalide"
@@ -7888,7 +7899,7 @@
         "Sélectionnez le mode d'envoi de cette notification"
       ],
       "Select what to import": [
-        ""
+        "Sélectionnez ce qu'il faut importer"
       ],
       "Select when you want this notification to be sent": [
         "Choisissez quand vous souhaitez que cette notification soit envoyée"
@@ -7948,7 +7959,7 @@
         "Démarrer le processus d'importation"
       ],
       "Start new import": [
-        ""
+        "Démarrer une nouvelle importation"
       ],
       "Status": [
         "État"

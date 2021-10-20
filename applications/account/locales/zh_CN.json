@@ -143,7 +143,7 @@
         "联系我们"
       ],
       "Check import progress": [
-        ""
+        "查看导入进度"
       ],
       "Choose a file or drag it here": [
         "选择文件或将其拖至此处"
@@ -386,7 +386,7 @@
         "导入联系人"
       ],
       "Import from .ics": [
-        ""
+        "从 .ics 文件导入"
       ],
       "Import key": [
         "导入密钥"
@@ -617,7 +617,7 @@
         "设为默认"
       ],
       "Set catch-all": [
-        "设置全部抓取功能"
+        "设置揽取邮箱"
       ],
       "Share via link": [
         "通过链接分享"
@@ -674,7 +674,7 @@
         "排序"
       ],
       "Start ${ PRODUCT_NAMES.EASY_SWITCH }": [
-        ""
+        "启动 ${ PRODUCT_NAMES.EASY_SWITCH }"
       ],
       "Start import": [
         "开始导入"
@@ -1249,6 +1249,11 @@
         "20 个 / 用户 *"
       ]
     },
+    "Calendar import section description": {
+      "You can import ICS files from another calendar to ${ CALENDAR_APP_NAME }. This lets you quickly import one event or your entire agenda.": [
+        ""
+      ]
+    },
     "Calendar limit warning": {
       "You have reached the maximum of ${ calendarsLimit } calendar.": [
         "您已达到创建日历的最大值 ${ calendarsLimit } 个。"
@@ -1744,7 +1749,7 @@
         "自动回复为付费功能，请升级到付费账户以使用此功能。"
       ],
       "Calendar limit reached": [
-        ""
+        "日历数量达到上限"
       ],
       "Calendar primary private key is not decrypted": [
         "日历主密钥未解密。"
@@ -1753,7 +1758,7 @@
         "无法检查用户名，请稍后再试"
       ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
-        ""
+        "由于个人日历限制，无法为所有导入的日历创建新日历。"
       ],
       "Can't validate email, try again later": [
         "无法验证电子邮件，请稍后再试"
@@ -1774,7 +1779,7 @@
         "找不到邮箱 ${ email }。"
       ],
       "Deselect at least ${ calendarToFixCount } calendar or": [
-        ""
+        "取消选择至少 ${ calendarToFixCount } 个日历或者"
       ],
       "Domain not available, try again later": [
         "网站域名不可用，请稍后再试"
@@ -1864,7 +1869,7 @@
         "标签名称不能为空"
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
-        ""
+        "将至少 ${ calendarToFixCount } 个日历与现有的 Proton 日历合并"
       ],
       "Missing signature": [
         "缺少签名"
@@ -1914,8 +1919,8 @@
       "Please enable multi-user support before adding users to your organization.": [
         "添加用户前请先开启多用户功能。"
       ],
-      "Please fix the highlighted conflicts to proceed.": [
-        ""
+      "Please fix the highlighted conflict to proceed.": [
+        "请修复高亮的冲突以继续。"
       ],
       "Please generate keys before you try to change your password.": [
         "更改密码前请先生成密钥。"
@@ -2080,7 +2085,7 @@
         "您的导入将不会被处理。"
       ],
       "Zero keys reactivated": [
-        ""
+        "未重新激活任何密钥"
       ]
     },
     "Error importing calendar": {
@@ -2179,9 +2184,6 @@
       ],
       "Event": [
         "日程"
-      ],
-      "Event duration not supported": [
-        "不支持对此日程设置持续时间"
       ],
       "Event validation failed": [
         "事件验证失败"
@@ -3984,8 +3986,8 @@
       "Server load": [
         "服务器加载"
       ],
-      "Servers are unreachable.": [
-        "无法连接服务器。"
+      "Servers are unreachable. Please try again in a few minutes": [
+        ""
       ],
       "Session timed out.": [
         "会话已超时。"
@@ -4304,9 +4306,6 @@
       ],
       "You can generate a new encryption key if you think your previous key has been compromised.": [
         "如果您认定旧密钥已泄露，可以创建一个新密钥。"
-      ],
-      "You can import ICS files from another calendar to ${ CALENDAR_APP_NAME }. This lets you quickly import one event or your entire agenda.": [
-        ""
       ],
       "You can now receive messages to your @pm.me address. Upgrade to a paid plan to also send emails using your @pm.me address and create additional @pm.me addresses.": [
         "您现在可以开始使用以 @pm.me 为域名的邮箱地址接收邮件了，若想使用 @pm.me 为后缀发信，或创建更多的 @pm.me 地址，请升级到付费计划。"
@@ -4676,7 +4675,7 @@
         "加载嵌入图像"
       ],
       "Load remote content": [
-        "加载外部内容"
+        "加载外链内容"
       ],
       "Mark as unread": [
         "标为未读"
@@ -4831,16 +4830,16 @@
         "、${ l }"
       ],
       "${ n } VPN connection available": [
-        "${ n } 个 VPN 连接可用"
+        "${ n } 台设备可同时接入 VPN"
       ],
       "${ UsedAddresses } of ${ MaxAddresses } email address": [
-        "${ UsedAddresses } / ${ MaxAddresses } 邮箱地址"
+        "邮箱地址数量：${ UsedAddresses } / ${ MaxAddresses }"
       ],
       "${ UsedDomains } of ${ MaxDomains } custom domain": [
-        "${ UsedDomains }/${ MaxDomains } 个自定义域"
+        "自有域名数量：${ UsedDomains } / ${ MaxDomains }"
       ],
       "${ UsedMembers } of ${ MaxMembers } user": [
-        "${ UsedMembers }/${ MaxMembers } 用户数"
+        "用户数量：${ UsedMembers } / ${ MaxMembers }"
       ],
       "Account storage": [
         "账户存储空间"
@@ -4927,7 +4926,7 @@
         "比特币金额："
       ],
       "Calendar": [
-        ""
+        "日历"
       ],
       "Cancel": [
         "取消"
@@ -4966,7 +4965,7 @@
         "条件"
       ],
       "Confirm before loading remote content": [
-        ""
+        "加载外链内容前需要弹窗确认"
       ],
       "Confirm login password": [
         "确认登录密码"
@@ -4984,7 +4983,7 @@
         "确认密码"
       ],
       "Contacts": [
-        ""
+        "通信录"
       ],
       "Conversation grouping": [
         "会话分组"
@@ -5037,8 +5036,8 @@
       "Default notifications": [
         "预设提醒时间"
       ],
-      "Default PGP settings": [
-        "默认 PGP 设置"
+      "Default PGP scheme": [
+        ""
       ],
       "Default view": [
         "首选视图"
@@ -5089,7 +5088,7 @@
         "邮箱或账户名"
       ],
       "Emails": [
-        ""
+        "电子邮件"
       ],
       "End date": [
         "结束日期"
@@ -5131,13 +5130,13 @@
         "来自: ${ fromEmailAddress }"
       ],
       "From: ${ importedEmail }": [
-        ""
+        "来自：${ importedEmail }"
       ],
       "From: ${ importedEmailAddress }": [
-        ""
+        "来自：${ importedEmailAddress }"
       ],
       "From: ${ modalModel.email }": [
-        "从：${ modalModel.email }"
+        "来自：${ modalModel.email }"
       ],
       "Gift code": [
         "礼品码"
@@ -5155,7 +5154,7 @@
         "如果"
       ],
       "Import all messages": [
-        "导入所有信件"
+        "导入所有邮件"
       ],
       "Import interval": [
         "导入间隔"
@@ -5164,7 +5163,7 @@
         "导入到电子邮件地址"
       ],
       "Import to:": [
-        "导入到"
+        "导入到："
       ],
       "Inbox": [
         "收件箱"
@@ -5335,10 +5334,10 @@
         "比例"
       ],
       "Protect against email tracking": [
-        ""
+        "防止电子邮件跟踪"
       ],
       "Protection mode": [
-        ""
+        "保护模式"
       ],
       "Proton username": [
         "Proton 用户名"
@@ -5440,10 +5439,10 @@
         "时区"
       ],
       "To: ${ emailAddress }": [
-        "收件人：{ emailAddress }"
+        "导入到：${ emailAddress }"
       ],
       "To: ${ PMEmailAddress }": [
-        ""
+        "导入到：${ PMEmailAddress }"
       ],
       "To: ${ toEmailAddress }": [
         "导入到：${ toEmailAddress }"
@@ -5491,7 +5490,7 @@
         "用户名"
       ],
       "Using ${ humanUsedSpace } of ${ humanMaxSpace }": [
-        "已使用 ${ humanUsedSpace } / ${ humanMaxSpace }"
+        "存储空间：${ humanUsedSpace } / ${ humanMaxSpace }"
       ],
       "Verification code": [
         "验证码"
@@ -5798,7 +5797,7 @@
         "自动回复"
       ],
       "Catch-All email": [
-        ""
+        "揽取邮箱"
       ],
       "Contact groups": [
         "联系人群组"
@@ -5910,7 +5909,7 @@
         "配置一个自有域名邮箱地址（例如 you@yourcompany.com）。只需要几分钟，我们的向导将指导您完成整个过程。"
       ],
       "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to use a catch-all address and unlock premium features": [
-        "升级到 ${ PLAN_NAMES[PLANS.VISIONARY] } 或 ${ PLAN_NAMES[PLANS.PROFESSIONAL] } 套餐以使用 catch-all 邮箱并解锁高级功能"
+        "升级到 ${ PLAN_NAMES[PLANS.VISIONARY] } 或 ${ PLAN_NAMES[PLANS.PROFESSIONAL] } 套餐以使用揽取邮箱并解锁高级功能"
       ],
       "Upgrade to any paid plan to use custom domains and unlock premium features": [
         "开通付费账户方可使用自有域名等高级功能"
@@ -6575,7 +6574,7 @@
         "${ mailAppName } 免费版"
       ],
       "Free": [
-        "免费"
+        "免费版"
       ]
     },
     "Plan Feature": {
@@ -7074,7 +7073,7 @@
         "DMARC 内容已复制！"
       ],
       "Domain verified": [
-        "域已验证"
+        "域名已验证"
       ],
       "Email address copied to clipboard": [
         "邮箱地址已复制到剪贴板"
@@ -7214,9 +7213,6 @@
       ]
     },
     "Suffix for price": {
-      "/ mo": [
-        ""
-      ],
       "/ month": [
         "/月"
       ]
@@ -7258,6 +7254,20 @@
       ],
       "vCard field": [
         "vCard 字段"
+      ]
+    },
+    "Time period": {
+      "account creation date": [
+        ""
+      ],
+      "the last 12 months": [
+        ""
+      ],
+      "the last 3 months": [
+        ""
+      ],
+      "the last month": [
+        ""
       ]
     },
     "Time unit": {
@@ -7326,7 +7336,7 @@
         "充值"
       ],
       "Add domain": [
-        "添加域"
+        "添加域名"
       ],
       "Add filter": [
         "创建规则"
@@ -7587,7 +7597,7 @@
         "编辑信用卡/借记卡"
       ],
       "Edit domain": [
-        "编辑域"
+        "更改域名设置"
       ],
       "Edit filter": [
         "更改规则"

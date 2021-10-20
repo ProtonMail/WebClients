@@ -651,7 +651,7 @@
         "Eliminar beneficios"
       ],
       "Remove gift code": [
-        "Eliminar código de regalo"
+        "Eliminar código promocional"
       ],
       "Remove this label": [
         "Eliminar esta etiqueta"
@@ -1371,7 +1371,7 @@
         "Agregar ocurrencias a un evento no es compatible por el momento."
       ],
       "An occurrence has been added to the event ${ veventIcsTitle }": [
-        "Se ha agregado una ocurrencia al evento ${ veventIcsTitle }"
+        "Se ha añadido una ocurrencia al evento ${ veventIcsTitle }"
       ],
       "Event refreshing is not supported for the moment.": [
         "La actualización de eventos no es compatible por el momento."
@@ -1928,7 +1928,7 @@
         "Firma del contacto no verificada"
       ],
       "Contact your organization’s administrator to resolve this.": [
-        "Contacte con el administrador de su organización para resolver esto."
+        "Contacta con el administrador de tu organización para resolver esto."
       ],
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser": [
         ""
@@ -2332,9 +2332,6 @@
       "End time out of bounds": [
         "Hora final fuera de límites"
       ],
-      "Event duration not supported": [
-        "Duración del evento no admitido"
-      ],
       "Event validation failed": [
         "Falló la validación del evento"
       ],
@@ -2602,7 +2599,7 @@
         "Carpetas personalizadas"
       ],
       "Default folders": [
-        "Carpetas predeterminadas"
+        "Carpetas por defecto"
       ],
       "Labels": [
         "Etiquetas"
@@ -2997,13 +2994,13 @@
         "Todos los cambios se perderán."
       ],
       "Allows you to host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
-        "Te permite alojar correos electrónicos para tu(s) propio(s) dominio(s) en ${ mailAppName }, p. ej., john.smith@example.com"
+        "Te permite alojar correos electrónicos para tu(s) propio(s) dominio(s) en ${ mailAppName }, p. ej., severo.ochoa@ejemplo.com"
       ],
       "Amount below minimum (${ amount }).": [
-        "Cantidad inferior al mínimo (${ amount })."
+        "Cantidad por debajo del mínimo (${ amount })."
       ],
       "An unknown public key has been detected for this recipient.": [
-        "Se detectó una clave pública desconocida para este destinatario."
+        "Se ha detectado una clave pública desconocida para este destinatario."
       ],
       "and": [
         "y"
@@ -3018,25 +3015,25 @@
         "¿Estás seguro de que quieres descartar los cambios?"
       ],
       "Are you sure you want to permanently delete ${ count } conversation?": [
-        "¿Estás seguro de que deseas eliminar permanentemente ${ count } conversación?",
-        "¿Estás seguro de que deseas eliminar permanentemente ${ count } conversaciones?"
+        "¿Estás seguro de que quieres eliminar permanentemente ${ count } conversación?",
+        "¿Estás seguro de que quieres eliminar permanentemente ${ count } conversaciones?"
       ],
       "Are you sure you want to permanently delete ${ count } draft?": [
-        "¿Estás seguro de que deseas eliminar permanentemente ${ count } borrador?",
-        "¿Estás seguro de que deseas eliminar permanentemente ${ count } borradores?"
+        "¿Estás seguro de que quieres eliminar permanentemente ${ count } borrador?",
+        "¿Estás seguro de que quieres eliminar permanentemente ${ count } borradores?"
       ],
       "Are you sure you want to permanently delete ${ count } message?": [
-        "¿Estás seguro de que deseas eliminar permanentemente ${ count } mensaje?",
-        "¿Estás seguro de que deseas eliminar permanentemente ${ count } mensajes?"
+        "¿Estás seguro de que quieres eliminar permanentemente ${ count } mensaje?",
+        "¿Estás seguro de que quieres eliminar permanentemente ${ count } mensajes?"
       ],
       "Are you sure you want to permanently delete this conversation?": [
-        "¿Estás seguro de que deseas eliminar permanentemente esta conversación?"
+        "¿Estás seguro de que quieres eliminar permanentemente esta conversación?"
       ],
       "Are you sure you want to permanently delete this draft?": [
         "¿Estás seguro de que quieres eliminar permanentemente este borrador?"
       ],
       "Are you sure you want to permanently delete this message?": [
-        "¿Estás seguro de que deseas eliminar permanentemente este mensaje?"
+        "¿Estás seguro de que quieres eliminar permanentemente este mensaje?"
       ],
       "Attach Public Key": [
         "Adjuntar clave pública"
@@ -3054,7 +3051,7 @@
         "Facturado como ${ billedPrice } al año"
       ],
       "Billed at the end of your current billing cycle (renews on ${ renewalDate })": [
-        "Facturado al final de tu ciclo de facturación actual (se renueva en ${ renewalDate })"
+        "Facturado al final de tu ciclo de facturación actual (se renueva el ${ renewalDate })"
       ],
       "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
         "Las transacciones de Bitcoin pueden tomar un tiempo para ser confirmadas (hasta 24 horas). Una vez confirmadas, añadiremos los créditos a su cuenta. Después de la confirmación de la transacción, podrá pagar su factura con los créditos."
@@ -3364,7 +3361,7 @@
         "Se ha restablecido la conexión a Internet."
       ],
       "Just confirm your selection and we'll do the rest.": [
-        "Sólo tiene que confirmar su selección y nosotros haremos el resto."
+        "Sólo tienes que confirmar tu selección y nosotros haremos el resto."
       ],
       "Justify": [
         "Justificar"
@@ -3634,6 +3631,9 @@
       "Scheduled": [
         "Programado"
       ],
+      "Scheduled send of this message will be cancelled.": [
+        ""
+      ],
       "Scheduling message...": [
         ""
       ],
@@ -3658,8 +3658,8 @@
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
         "El envío de mensajes desde la dirección @pm.me es una característica de pago. Tu mensaje será enviado desde tu dirección por defecto ${ email }"
       ],
-      "Servers are unreachable.": [
-        "Los servidores no están disponibles."
+      "Servers are unreachable. Please try again in a few minutes": [
+        ""
       ],
       "Session timed out.": [
         "El tiempo de la sesión ha expirado."
@@ -3701,10 +3701,10 @@
         "equipo de soporte"
       ],
       "Switch to ${ professionalPlan } to add more connections.": [
-        "Cambia a ${ professionalPlan } para agregar más conexiones."
+        "Cambia a ${ professionalPlan } para añadir más conexiones."
       ],
       "Switch to ${ professionalPlan } to add more users.": [
-        "Cambia a ${ professionalPlan } para agregar más usuarios."
+        "Cambia a ${ professionalPlan } para añadir más usuarios."
       ],
       "Test link": [
         "Enlace de prueba"
@@ -3755,6 +3755,9 @@
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Este navegador no admite la previsualización de documentos PDF. Por favor, descarga el archivo."
       ],
+      "This conversation contains a scheduled message. Sending of this message will be cancelled.": [
+        ""
+      ],
       "This conversation contains non-trashed messages.": [
         "Esta conversación contiene mensajes no borrados."
       ],
@@ -3801,7 +3804,7 @@
         "Este mensaje expirará el ${ formattedDate }"
       ],
       "This message will expire in": [
-        "Este mensaje caducará en"
+        "Este mensaje expirará en"
       ],
       "This message will expire in ${ formattedDelay }": [
         "Este mensaje expirará en ${ formattedDelay }"
@@ -4450,9 +4453,6 @@
       "Country": [
         "País"
       ],
-      "Cryptographic scheme": [
-        "Esquema criptográfico"
-      ],
       "CVV code": [
         "Código CVV"
       ],
@@ -4490,7 +4490,7 @@
         "Introduce el código de 6 dígitos"
       ],
       "Expires": [
-        "Caduca"
+        "Expira"
       ],
       "Expiry date": [
         "Fecha de expiración"
@@ -4611,6 +4611,9 @@
       ],
       "Payer": [
         "Emisor del pago"
+      ],
+      "PGP scheme": [
+        ""
       ],
       "Phone number": [
         "Número de teléfono"
@@ -4984,7 +4987,7 @@
         "Ya casi está"
       ],
       "Creating new calendars": [
-        "Creación de nuevos calendarios"
+        ""
       ],
       "Gathering your data": [
         "Recogida de datos"
@@ -5411,7 +5414,7 @@
     },
     "Option group label": {
       "Create new calendar": [
-        "Crear un nuevo calendario"
+        ""
       ],
       "Merge with calendar": [
         "Combinar con el calendario"
@@ -5764,13 +5767,13 @@
         "Mensaje PGP cifrado de remitente verificado"
       ],
       "PGP-signed message": [
-        "Mensaje PGP firmado"
+        "Mensaje firmado con PGP"
       ],
       "PGP-signed message from verified sender": [
-        "Mensaje PGP firmado de remitente verificado"
+        "Mensaje firmado con PGP de un remitente verificado"
       ],
       "PGP-signed message. Sender verification failed": [
-        "Mensaje PGP firmado. La verificación del remitente ha fallado"
+        "Mensaje firmado con PGP. La verificación del remitente ha fallado"
       ],
       "Sent by ProtonMail with zero-access encryption": [
         "Enviado por ProtonMail con cifrado de acceso cero"
@@ -5853,8 +5856,8 @@
         "Las siguientes direcciones no son válidas: ${ invalidAddresses }"
       ],
       "We have detected some warnings. The following email address may not receive emails:": [
-        "Hemos detectado algunas advertencias. Es posible que la siguiente dirección de correo electrónico no reciba correo electrónico:",
-        "Hemos detectado algunas advertencias. Es posible que las siguientes direcciones de correo electrónico no reciban correo electrónico:"
+        "Hemos detectado algunos errores. Es posible que la siguiente dirección de correo electrónico no reciba correo electrónico:",
+        "Hemos detectado algunos errores. Es posible que las siguientes direcciones de correo electrónico no reciban correo electrónico:"
       ]
     },
     "Sent email icon": {
@@ -5896,8 +5899,8 @@
         "Enviado por ti con cifrado de extremo a extremo"
       ],
       "Sent by you with end-to-end encryption to verified recipient": [
-        "Enviado por usted con cifrado de extremo a extremo al destinatario verificado",
-        "Enviado por usted con cifrado de extremo a extremo a los destinatarios verificados"
+        "Enviado por ti con cifrado de extremo a extremo al destinatario verificado",
+        "Enviado por ti con cifrado de extremo a extremo a los destinatarios verificados"
       ],
       "Stored with zero-access encryption": [
         "Almacenado con cifrado de acceso cero"
@@ -5908,7 +5911,7 @@
         "Mensaje PGP cifrado. La verificación del remitente ha fallado: ${ _verificationErrorsMessage }"
       ],
       "PGP-signed message. Sender verification failed: ${ _verificationErrorsMessage2 }": [
-        "Mensaje PGP firmado. La verificación del remitente ha fallado: ${ _verificationErrorsMessage2 }"
+        "Mensaje firmado con PGP. La verificación del remitente ha fallado: ${ _verificationErrorsMessage2 }"
       ],
       "Sender could not be verified: Message not signed": [
         "El remitente ha podido ser verificado: mensaje no firmado"
@@ -5925,7 +5928,7 @@
     },
     "Sort option": {
       "Largest first": [
-        "Más grande primero"
+        "Más grandes primero"
       ],
       "Newest first": [
         "Más recientes primero"
@@ -6542,7 +6545,7 @@
         "Expandir contenido"
       ],
       "Expiration time": [
-        "Tiempo de caducidad"
+        "Tiempo de expiración"
       ],
       "Exporting contacts": [
         "Exportando contactos"
@@ -6637,6 +6640,9 @@
       "Move to trash": [
         "Mover a la papelera"
       ],
+      "Moving a scheduled message": [
+        ""
+      ],
       "Network error": [
         "Error de red"
       ],
@@ -6644,10 +6650,10 @@
         "Nuevo mensaje"
       ],
       "Next conversation": [
-        "Conversación siguiente"
+        "Siguiente conversación"
       ],
       "Next message": [
-        "Mensaje siguiente"
+        "Siguiente mensaje"
       ],
       "No attachment found": [
         ""

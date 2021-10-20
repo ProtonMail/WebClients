@@ -219,7 +219,7 @@
         "Filtro personalizzato"
       ],
       "Customize": [
-        ""
+        "Personalizza"
       ],
       "Decrease": [
         "Riduci"
@@ -293,7 +293,7 @@
         "Modifica l'indirizzo email"
       ],
       "Edit label": [
-        ""
+        "Modifica dell'etichetta"
       ],
       "Edit phone number": [
         "Modifica il numero di telefono"
@@ -377,13 +377,13 @@
         "Nascondi i dettagli"
       ],
       "Hide folders": [
-        ""
+        "Nascondi cartelle"
       ],
       "Hide info": [
         "Nascondi informazioni"
       ],
       "Hide labels": [
-        ""
+        "Nascondi etichette"
       ],
       "Hide messages": [
         "Nascondi i messaggi"
@@ -624,7 +624,7 @@
         "Stampa"
       ],
       "Quit": [
-        ""
+        "Chiudi"
       ],
       "Quote": [
         "Cita"
@@ -657,7 +657,7 @@
         "Rimuovi questa etichetta"
       ],
       "Rename": [
-        ""
+        "Rinomina"
       ],
       "Report a problem": [
         "Segnala un problema"
@@ -744,13 +744,13 @@
         "Mostra i dettagli"
       ],
       "Show folders": [
-        ""
+        "Mostra cartelle"
       ],
       "Show info": [
         "Mostra informazioni"
       ],
       "Show labels": [
-        ""
+        "Mostra etichette"
       ],
       "Show less": [
         "Mostra meno"
@@ -786,7 +786,7 @@
         "Inizia a usare ${ appName }"
       ],
       "Stay": [
-        ""
+        "Resta"
       ],
       "Submit": [
         "Invia"
@@ -1533,7 +1533,7 @@
         "Messaggio salvato nelle Bozze"
       ],
       "Quit import customization?": [
-        ""
+        "Abbandona la personalizzazione dell'importazione?"
       ]
     },
     "Contact field label": {
@@ -1986,7 +1986,7 @@
         "Esiste già un filtro con questo nome"
       ],
       "Folder name cannot be empty": [
-        ""
+        "Il nome della cartella non può essere vuoto"
       ],
       "Image upload failed": [
         "Caricamento dell'immagine fallito"
@@ -2025,7 +2025,7 @@
         "Codice di verifica non valido"
       ],
       "Label name cannot be empty": [
-        ""
+        "Il nome dell'etichetta non può essere vuoto"
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "",
@@ -2059,7 +2059,7 @@
         "Nessuna chiave recuperata per l'utente interno"
       ],
       "No valid address found": [
-        ""
+        "Nessun indirizzo valido trovato"
       ],
       "No valid keys retrieved for internal user": [
         "Nessuna chiave valida recuperata per l'utente interno"
@@ -2107,10 +2107,10 @@
         "Le preferenze non possono essere salvate"
       ],
       "Primary address key is not decrypted": [
-        ""
+        "Chiave dell'indirizzo principale non decriptata"
       ],
       "Primary address key is not decrypted.": [
-        ""
+        "Chiave dell'indirizzo principale non decriptata."
       ],
       "Process aborted": [
         "Processo interrotto"
@@ -2175,13 +2175,13 @@
         "Il compositore non è riuscito a caricare."
       ],
       "The folder name is too long. Please choose a different name.": [
-        ""
+        "Il nome della cartella è troppo lungo. Scegli un nome diverso."
       ],
       "The key properties for ${ emailAddress } could not be extracted": [
         "Le proprietà della chiave per ${ emailAddress } non possono essere estratte"
       ],
       "The label name is too long. Please choose a different name.": [
-        ""
+        "Il nome dell'etichetta è troppo lungo. Scegli un nome diverso."
       ],
       "The maximum expiration is 4 weeks.": [
         "La scadenza massima è di 4 settimane."
@@ -2214,10 +2214,10 @@
         "Questo campo richiede un minimo di ${ minimumLength } caratteri."
       ],
       "This folder name is not available. Please choose a different name": [
-        ""
+        "Questo nome della cartella non è disponibile. Scegli un nome diverso"
       ],
       "This label name is not available. Please choose a different name": [
-        ""
+        "Questo nome dell'etichetta non è disponibile. Scegli un nome diverso"
       ],
       "This message has already been sent.": [
         "Il messaggio è stato già inviato."
@@ -2331,9 +2331,6 @@
       ],
       "End time out of bounds": [
         "Ora di fine fuori dai limiti"
-      ],
-      "Event duration not supported": [
-        "Durata dell'evento non supportata"
       ],
       "Event validation failed": [
         "Convalida dell'evento fallita"
@@ -2659,8 +2656,8 @@
     },
     "ICS widget label for event details": {
       "${ totalAttendees } participant": [
-        "",
-        ""
+        "${ totalAttendees } partecipante",
+        "${ totalAttendees } partecipanti"
       ],
       "Calendar": [
         "Calendario"
@@ -2854,12 +2851,12 @@
         ""
       ],
       "${ selectedFoldersCount } folder selected": [
-        "",
-        ""
+        "${ selectedFoldersCount } cartella selezionata",
+        "${ selectedFoldersCount } cartelle selezionate"
       ],
       "${ selectedFoldersCount } label selected": [
-        "",
-        ""
+        "${ selectedFoldersCount } etichetta selezionata",
+        "${ selectedFoldersCount } etichette selezionate"
       ],
       "${ total } conversation": [
         "${ total } conversazione",
@@ -2977,12 +2974,12 @@
         "Allinea a destra"
       ],
       "All (${ totalFoldersCount } folder)": [
-        "",
-        ""
+        "Tutti (${ totalFoldersCount } cartella)",
+        "Tutte (${ totalFoldersCount } cartelle)"
       ],
       "All (${ totalFoldersCount } label)": [
-        "",
-        ""
+        "Tutta la (${ totalFoldersCount } etichetta)",
+        "Tutte le (${ totalFoldersCount } etichette)"
       ],
       "All messages stored in this folder will be permanently deleted.": [
         "Tutti i messaggi memorizzati in questa cartella saranno eliminati permanentemente."
@@ -3121,10 +3118,10 @@
         ""
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
-        ""
+        "Crea un'etichetta per i messaggi importati, il periodo di tempo dell'importazione e le cartelle che desideri importare."
       ],
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
-        ""
+        "Crea un'etichetta per i messaggi importati, il periodo di tempo dell'importazione e le etichette che desideri importare."
       ],
       "Create a new contact group": [
         "Crea un nuovo gruppo di contatto"
@@ -3324,7 +3321,7 @@
         ""
       ],
       "Import from": [
-        ""
+        "Importa da"
       ],
       "Import in progress": [
         ""
@@ -3430,7 +3427,7 @@
         "Dai un nome alla tua cartella e selezione la cartella genitore nella quale deve essere contenuta. Se non selezioni la cartella genitore questa cartella verrà creata come una cartella di primo livello."
       ],
       "New": [
-        ""
+        "Nuovo"
       ],
       "Next you'll need to log in to your Google account and allow us to access your data.": [
         ""
@@ -3535,7 +3532,7 @@
         "Sei pregato di notare che cliccando il pulsante Conferma, il tuo profilo avrà ${ creditsRemaining } crediti rimanenti."
       ],
       "Please select the folders you would like to import:": [
-        ""
+        "Si prega di selezionare le cartelle che si desidera importare:"
       ],
       "Please select the type of link you want to insert and fill in all the fields.": [
         "Seleziona il tipo di link che vuoi inserire e compila tutti i campi."
@@ -3634,6 +3631,9 @@
       "Scheduled": [
         "Pianificato"
       ],
+      "Scheduled send of this message will be cancelled.": [
+        ""
+      ],
       "Scheduling message...": [
         "Pianificando il messaggio..."
       ],
@@ -3658,8 +3658,8 @@
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
         "L'invio dei messaggi dall'indirizzo @pm.me è una funzionalità a pagamento. Il tuo messaggio sarà inviato dal tuo indirizzo predefinito ${ email }"
       ],
-      "Servers are unreachable.": [
-        "I server non sono raggiungibili."
+      "Servers are unreachable. Please try again in a few minutes": [
+        ""
       ],
       "Session timed out.": [
         "Sessione scaduta."
@@ -3754,6 +3754,9 @@
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Questo browser non supporta l'anteprima dei documenti PDF. Scarica il file."
+      ],
+      "This conversation contains a scheduled message. Sending of this message will be cancelled.": [
+        ""
       ],
       "This conversation contains non-trashed messages.": [
         "Questa conversazione contiene messaggi non cestinati."
@@ -4412,7 +4415,7 @@
         "Importo BTC:"
       ],
       "Calendar": [
-        ""
+        "Calendario"
       ],
       "Cancel": [
         "Annulla"
@@ -4442,16 +4445,13 @@
         "Condizioni"
       ],
       "Contacts": [
-        ""
+        "Contatti"
       ],
       "Copy": [
         "Copia"
       ],
       "Country": [
         "Paese"
-      ],
-      "Cryptographic scheme": [
-        "Schema crittografico"
       ],
       "CVV code": [
         "Codice CVV"
@@ -4478,7 +4478,7 @@
         "Formato email"
       ],
       "Emails": [
-        ""
+        "Email"
       ],
       "Enable Beta Access": [
         "Abilita Accesso Beta"
@@ -4514,7 +4514,7 @@
         "Da:"
       ],
       "From: ${ importedEmail }": [
-        ""
+        "Da: ${ importedEmail }"
       ],
       "Group": [
         "Gruppo"
@@ -4529,16 +4529,16 @@
         "Se"
       ],
       "Import all messages": [
-        ""
+        "Importa tutti i messaggi"
       ],
       "Import contacts": [
         "Importa i contatti"
       ],
       "Import interval": [
-        ""
+        "Intervallo di importazione"
       ],
       "Import to email address": [
-        ""
+        "Importa nell'indirizzo email"
       ],
       "Keyboard shortcuts": [
         "Scorciatoie da tastiera"
@@ -4550,28 +4550,28 @@
         "Etichetta come"
       ],
       "Label messages as": [
-        ""
+        "Etichetta messaggi come"
       ],
       "Labels:": [
         "Etichette:"
       ],
       "Last 12 months only": [
-        ""
+        "Solo gli ultimi 12 mesi"
       ],
       "Last 3 months only": [
-        ""
+        "Solo ultimi 3 mesi"
       ],
       "Last month only": [
-        ""
+        "Solo il mese scorso"
       ],
       "Mailbox password": [
         "Password della casella email"
       ],
       "Manage folders": [
-        ""
+        "Gestisci cartelle"
       ],
       "Manage labels": [
-        ""
+        "Gestisci le etichette"
       ],
       "Mark as": [
         "Segna come"
@@ -4611,6 +4611,9 @@
       ],
       "Payer": [
         "Pagante"
+      ],
+      "PGP scheme": [
+        ""
       ],
       "Phone number": [
         "Numero di telefono"
@@ -4715,7 +4718,7 @@
         "A:"
       ],
       "To: ${ emailAddress }": [
-        ""
+        "A: ${ emailAddress }"
       ],
       "Total": [
         "Totale"
@@ -6148,7 +6151,7 @@
         "Messaggio contrassegnato come legittimo"
       ],
       "Message marked as read.": [
-        ""
+        "Messaggio segnato come letto."
       ],
       "Message marked as Starred": [
         "Messaggio segnato come preferito"
@@ -6270,7 +6273,7 @@
     },
     "Time period": {
       "account creation date": [
-        ""
+        "data di creazione dell'account"
       ],
       "the last 12 months": [
         ""
@@ -6636,6 +6639,9 @@
       ],
       "Move to trash": [
         "Sposta nel cestino"
+      ],
+      "Moving a scheduled message": [
+        ""
       ],
       "Network error": [
         "Errore di rete"

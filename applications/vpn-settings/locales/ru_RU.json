@@ -1641,8 +1641,8 @@
       "Server load": [
         "Нагрузка сервера"
       ],
-      "Servers are unreachable.": [
-        "Серверы недоступны."
+      "Servers are unreachable. Please try again in a few minutes": [
+        "Серверы недоступны. Попробуйте снова через несколько минут"
       ],
       "Session timed out.": [
         "Время сессии истекло."
@@ -3156,9 +3156,6 @@
       ]
     },
     "Suffix for price": {
-      "/ mo": [
-        ""
-      ],
       "/ month": [
         "/ месяц"
       ]
@@ -3833,11 +3830,11 @@
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Отчеты не защищены сквозным шифрованием. Не указывайте в них конфиденциальную информацию."
       ],
+      "The date and time settings on your device are out of sync. ${ learnMore }": [
+        ""
+      ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "К сожалению, в данный момент мы не работаем в режиме онлайн. Пожалуйста, заполните форму ниже, чтобы описать вашу проблему, мы рассмотрим ее и свяжемся с вами, когда вернемся к работе."
-      ],
-      "Your local date & time settings seem to be out of sync.": [
-        "Ваши локальные параметры даты и времени не синхронизированы."
       ]
     }
   }

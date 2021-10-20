@@ -2332,9 +2332,6 @@
       "End time out of bounds": [
         "Bitiş zamanı sınır dışında"
       ],
-      "Event duration not supported": [
-        "Etkinlik süresi desteklenmiyor"
-      ],
       "Event validation failed": [
         "Etkinlik doğrulaması başarısız oldu"
       ],
@@ -3634,6 +3631,9 @@
       "Scheduled": [
         "Planlama"
       ],
+      "Scheduled send of this message will be cancelled.": [
+        ""
+      ],
       "Scheduling message...": [
         "İleti planlanıyor..."
       ],
@@ -3658,8 +3658,8 @@
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
         "@pm.me adresinden ileti göndermek ücretli bir özelliktir. İletiniz varsayılan ${ email } adresinizden gönderilecektir"
       ],
-      "Servers are unreachable.": [
-        "Sunuculara ulaşılamıyor."
+      "Servers are unreachable. Please try again in a few minutes": [
+        ""
       ],
       "Session timed out.": [
         "Oturum zaman aşımına uğradı."
@@ -3754,6 +3754,9 @@
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Bu tarayıcı, PDF belgelerinin önizlemesini desteklemiyor. Lütfen dosyayı indirin."
+      ],
+      "This conversation contains a scheduled message. Sending of this message will be cancelled.": [
+        ""
       ],
       "This conversation contains non-trashed messages.": [
         "Bu konuşmada çöpe atılmamış iletiler var."
@@ -4450,9 +4453,6 @@
       "Country": [
         "Ülke"
       ],
-      "Cryptographic scheme": [
-        "Şifreleme düzeni"
-      ],
       "CVV code": [
         "CVV kodu"
       ],
@@ -4611,6 +4611,9 @@
       ],
       "Payer": [
         "Ödeyen"
+      ],
+      "PGP scheme": [
+        ""
       ],
       "Phone number": [
         "Telefon numarası"
@@ -6636,6 +6639,9 @@
       ],
       "Move to trash": [
         "Çöp kutusuna taşı"
+      ],
+      "Moving a scheduled message": [
+        ""
       ],
       "Network error": [
         "Ağ hatası"

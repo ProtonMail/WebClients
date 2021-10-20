@@ -1276,6 +1276,11 @@
         "20 / uživatel *"
       ]
     },
+    "Calendar import section description": {
+      "You can import ICS files from another calendar to ${ CALENDAR_APP_NAME }. This lets you quickly import one event or your entire agenda.": [
+        ""
+      ]
+    },
     "Calendar limit warning": {
       "You have reached the maximum of ${ calendarsLimit } calendar.": [
         "Byla dosaženo maximální číslo ${ calendarsLimit } kalendáře.",
@@ -1974,7 +1979,7 @@
       "Please enable multi-user support before adding users to your organization.": [
         "Zapněte prosím podporu pro více uživatelů před přidáváním uživatelů do vaší organizace."
       ],
-      "Please fix the highlighted conflicts to proceed.": [
+      "Please fix the highlighted conflict to proceed.": [
         "",
         "",
         "",
@@ -2242,9 +2247,6 @@
       ],
       "Event": [
         "Událost"
-      ],
-      "Event duration not supported": [
-        "Doba trvání události není podporována"
       ],
       "Event validation failed": [
         "Ověření události se nezdařilo"
@@ -4146,8 +4148,8 @@
       "Server load": [
         "Vytížení serveru"
       ],
-      "Servers are unreachable.": [
-        "Servery jsou nedostupné."
+      "Servers are unreachable. Please try again in a few minutes": [
+        ""
       ],
       "Session timed out.": [
         "Relace vypršela."
@@ -4466,9 +4468,6 @@
       ],
       "You can generate a new encryption key if you think your previous key has been compromised.": [
         "Můžete vytvořit nový šifrovací klíč, pokud si myslíte, že byl Váš stávající prolomen."
-      ],
-      "You can import ICS files from another calendar to ${ CALENDAR_APP_NAME }. This lets you quickly import one event or your entire agenda.": [
-        ""
       ],
       "You can now receive messages to your @pm.me address. Upgrade to a paid plan to also send emails using your @pm.me address and create additional @pm.me addresses.": [
         ""
@@ -5211,8 +5210,8 @@
       "Default notifications": [
         "Výchozí upozornění"
       ],
-      "Default PGP settings": [
-        "Výchozí nastavení PGP"
+      "Default PGP scheme": [
+        ""
       ],
       "Default view": [
         "Výchozí zobrazení"
@@ -5926,6 +5925,9 @@
     },
     "Loading info": {
       "${ createdCalendars } of ${ calendarsToBeCreated } created": [
+        "",
+        "",
+        "",
         ""
       ],
       "Almost there": [
@@ -7430,9 +7432,6 @@
       ]
     },
     "Suffix for price": {
-      "/ mo": [
-        ""
-      ],
       "/ month": [
         "/ měsíc"
       ]
@@ -7474,6 +7473,20 @@
       ],
       "vCard field": [
         "Pole vCard"
+      ]
+    },
+    "Time period": {
+      "account creation date": [
+        ""
+      ],
+      "the last 12 months": [
+        ""
+      ],
+      "the last 3 months": [
+        ""
+      ],
+      "the last month": [
+        ""
       ]
     },
     "Time unit": {

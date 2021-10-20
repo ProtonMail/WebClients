@@ -147,7 +147,7 @@
         "按建立日期排序：最舊到最新"
       ],
       "Customize": [
-        ""
+        "自訂"
       ],
       "Decrease": [
         "減"
@@ -192,7 +192,7 @@
         "編輯電子郵件地址"
       ],
       "Edit label": [
-        ""
+        "編輯標籤"
       ],
       "Edit phone number": [
         "編輯電話號碼"
@@ -243,13 +243,13 @@
         "隱藏進階 PGP 設定"
       ],
       "Hide folders": [
-        ""
+        "隱藏資料夾"
       ],
       "Hide info": [
         "隱藏資訊"
       ],
       "Hide labels": [
-        ""
+        "隱藏標籤"
       ],
       "I have a question": [
         "我要發問"
@@ -261,7 +261,7 @@
         "匯入"
       ],
       "Import from .csv or vCard": [
-        ""
+        "從 .csv 或 vCard 匯入"
       ],
       "Increase": [
         "加"
@@ -363,7 +363,7 @@
         "上個月"
       ],
       "Quit": [
-        ""
+        "退出"
       ],
       "Re-sign": [
         "重新簽署"
@@ -456,13 +456,13 @@
         "顯示進階 PGP 設定"
       ],
       "Show folders": [
-        ""
+        "顯示資料夾"
       ],
       "Show info": [
         "顯示資訊"
       ],
       "Show labels": [
-        ""
+        "顯示標籤"
       ],
       "Show shared link details": [
         "顯示共享鏈結詳細說明"
@@ -492,7 +492,7 @@
         "開始設置"
       ],
       "Stay": [
-        ""
+        "停留"
       ],
       "Stop sharing": [
         "停止分享"
@@ -1322,6 +1322,9 @@
       "You must set a name": [
         "您必須設定名稱"
       ],
+      "Your browser does not support uploading folders": [
+        ""
+      ],
       "Your import will not be processed.": [
         "將不會處理您的匯入。"
       ]
@@ -1630,7 +1633,7 @@
         ""
       ],
       "${ selectedFoldersCount } label selected": [
-        ""
+        "已選取 ${ selectedFoldersCount } 個標籤"
       ],
       "${ speed }/s": [
         "${ speed }/秒"
@@ -1696,7 +1699,7 @@
         "在進行您的比特幣付款後，請隨著下面的指示來升級。"
       ],
       "All (${ totalFoldersCount } folder)": [
-        ""
+        "全部（${ totalFoldersCount } 資料夾）"
       ],
       "All (${ totalFoldersCount } label)": [
         ""
@@ -1906,7 +1909,7 @@
         "匯入自"
       ],
       "Import in progress": [
-        ""
+        "匯入進行中"
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         ""
@@ -1936,7 +1939,7 @@
         "金鑰指紋"
       ],
       "Large imports can take several days.": [
-        ""
+        "大型匯入可能要數天才能完成。"
       ],
       "Learn more": [
         "瞭解更多"
@@ -2115,8 +2118,8 @@
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20-personal-calendar limit. You can also merge imported calendars with existing Proton calendars.": [
         ""
       ],
-      "Servers are unreachable.": [
-        "無法連線到伺服器。"
+      "Servers are unreachable. Please try again in a few minutes": [
+        ""
       ],
       "Session timed out.": [
         "工作階段已逾時。"
@@ -2284,7 +2287,7 @@
         "您目前已登入為 ${ user.Name } (${ user.Email })，帳號的存取受限。"
       ],
       "You can check the progress ${ importProgressLink }.": [
-        ""
+        "您可以檢查進度 ${ importProgressLink }。"
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "您可以開啟通知，以便在新的電子郵件訊息抵達此資料夾時收到提示。"
@@ -2688,9 +2691,6 @@
       "Country": [
         "國家"
       ],
-      "Cryptographic scheme": [
-        "加密配置"
-      ],
       "CVV code": [
         "信用卡安全碼"
       ],
@@ -2822,6 +2822,9 @@
       ],
       "Payer": [
         "付款人"
+      ],
+      "PGP scheme": [
+        ""
       ],
       "Phone number": [
         "電話號碼"
@@ -3739,9 +3742,6 @@
       ]
     },
     "Suffix for price": {
-      "/ mo": [
-        "/ 月"
-      ],
       "/ month": [
         "/ 月"
       ]

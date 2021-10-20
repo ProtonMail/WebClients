@@ -1350,6 +1350,9 @@
       "You must set a name": [
         "Trebuie specificat un nume."
       ],
+      "Your browser does not support uploading folders": [
+        "Browserul vostru nu acceptă încărcarea de foldere"
+      ],
       "Your import will not be processed.": [
         "Importarea nu va fi procesată."
       ]
@@ -2209,8 +2212,8 @@
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20-personal-calendar limit. You can also merge imported calendars with existing Proton calendars.": [
         "Selectați ce calendare să importați. Se va crea un calendar nou pentru fiecare calendar importat, până la limita de 20 de calendare personale. De asemenea, puteți fuziona calendarele importate cu calendarele Proton existente."
       ],
-      "Servers are unreachable.": [
-        "Servere sunt inaccesibile."
+      "Servers are unreachable. Please try again in a few minutes": [
+        "Serverele sunt inaccesibile. Vă rugăm să încercați din nou în câteva minute"
       ],
       "Session timed out.": [
         "Sesiune expirată."
@@ -2784,9 +2787,6 @@
       "Country": [
         "Țara"
       ],
-      "Cryptographic scheme": [
-        "Schema criptografică"
-      ],
       "CVV code": [
         "Cod CVV"
       ],
@@ -2918,6 +2918,9 @@
       ],
       "Payer": [
         "Plătitor"
+      ],
+      "PGP scheme": [
+        "Schema PGP"
       ],
       "Phone number": [
         "Număr de telefon"
@@ -3903,9 +3906,6 @@
       ]
     },
     "Suffix for price": {
-      "/ mo": [
-        "/ lună"
-      ],
       "/ month": [
         "/ lună"
       ]

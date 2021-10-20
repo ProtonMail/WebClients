@@ -1258,6 +1258,11 @@
         "20 / usuari *"
       ]
     },
+    "Calendar import section description": {
+      "You can import ICS files from another calendar to ${ CALENDAR_APP_NAME }. This lets you quickly import one event or your entire agenda.": [
+        ""
+      ]
+    },
     "Calendar limit warning": {
       "You have reached the maximum of ${ calendarsLimit } calendar.": [
         "Heu assolit el nombre màxim d'${ calendarsLimit } calendari.",
@@ -1934,7 +1939,7 @@
       "Please enable multi-user support before adding users to your organization.": [
         "Si us plau activeu la compatibilitat multi-usuari abans d'afegir usuaris a la seva organització."
       ],
-      "Please fix the highlighted conflicts to proceed.": [
+      "Please fix the highlighted conflict to proceed.": [
         "",
         ""
       ],
@@ -2200,9 +2205,6 @@
       ],
       "Event": [
         "Esdeveniment"
-      ],
-      "Event duration not supported": [
-        "Duració d'esdeveniment no compatible"
       ],
       "Event validation failed": [
         "La validació de l'esdeveniment ha fallat"
@@ -4038,8 +4040,8 @@
       "Server load": [
         "Càrrega de servidor"
       ],
-      "Servers are unreachable.": [
-        "Els servidors no són accessibles."
+      "Servers are unreachable. Please try again in a few minutes": [
+        ""
       ],
       "Session timed out.": [
         "Temps de sessió esgotat."
@@ -4358,9 +4360,6 @@
       ],
       "You can generate a new encryption key if you think your previous key has been compromised.": [
         "Podeu generar una clau de xifrat nova si creieu que l'anterior ha estat compromesa."
-      ],
-      "You can import ICS files from another calendar to ${ CALENDAR_APP_NAME }. This lets you quickly import one event or your entire agenda.": [
-        ""
       ],
       "You can now receive messages to your @pm.me address. Upgrade to a paid plan to also send emails using your @pm.me address and create additional @pm.me addresses.": [
         "Ara podeu rebre missatges a la vostra adreça @pm.me. Actualitzeu a un pla de pagament per enviar també correus electrònics usant la vostra adreça @pm.me i per crear adreces @pm.me addicionals."
@@ -5095,8 +5094,8 @@
       "Default notifications": [
         "Notificacions per defecte"
       ],
-      "Default PGP settings": [
-        "Configuració PGP per defecte"
+      "Default PGP scheme": [
+        ""
       ],
       "Default view": [
         "Vista per defecte"
@@ -5810,6 +5809,7 @@
     },
     "Loading info": {
       "${ createdCalendars } of ${ calendarsToBeCreated } created": [
+        "",
         ""
       ],
       "Almost there": [
@@ -7286,9 +7286,6 @@
       ]
     },
     "Suffix for price": {
-      "/ mo": [
-        ""
-      ],
       "/ month": [
         "/mes"
       ]
@@ -7330,6 +7327,20 @@
       ],
       "vCard field": [
         "Camp vCard"
+      ]
+    },
+    "Time period": {
+      "account creation date": [
+        ""
+      ],
+      "the last 12 months": [
+        ""
+      ],
+      "the last 3 months": [
+        ""
+      ],
+      "the last month": [
+        ""
       ]
     },
     "Time unit": {

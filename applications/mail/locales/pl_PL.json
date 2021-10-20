@@ -2380,9 +2380,6 @@
       "End time out of bounds": [
         "Czas zakończenia jest poza zakresem"
       ],
-      "Event duration not supported": [
-        "Czas wydarzenia nie jest obsługiwany"
-      ],
       "Event validation failed": [
         "Weryfikacja wydarzenia nie powiodła się"
       ],
@@ -3786,6 +3783,9 @@
       "Scheduled": [
         "Zaplanowane"
       ],
+      "Scheduled send of this message will be cancelled.": [
+        ""
+      ],
       "Scheduling message...": [
         "Planowanie wiadomości..."
       ],
@@ -3810,8 +3810,8 @@
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
         "Wysyłanie wiadomości z adresu @pm.me jest płatną funkcją. Wiadomości zostaną wysłane z Twojego domyślnego adresu ${ email }"
       ],
-      "Servers are unreachable.": [
-        "Serwery są nieosiągalne."
+      "Servers are unreachable. Please try again in a few minutes": [
+        ""
       ],
       "Session timed out.": [
         "Upłynął limit czasu sesji."
@@ -3908,6 +3908,9 @@
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Ta przeglądarka nie obsługuje podglądu dokumentów PDF. Pobierz plik."
+      ],
+      "This conversation contains a scheduled message. Sending of this message will be cancelled.": [
+        ""
       ],
       "This conversation contains non-trashed messages.": [
         "Ten wątek zawiera nieusunięte wiadomości."
@@ -4624,9 +4627,6 @@
       "Country": [
         "Kraj"
       ],
-      "Cryptographic scheme": [
-        "Schemat szyfrowania"
-      ],
       "CVV code": [
         "Kod CVV"
       ],
@@ -4785,6 +4785,9 @@
       ],
       "Payer": [
         "Płatnik"
+      ],
+      "PGP scheme": [
+        "Schemat PGP"
       ],
       "Phone number": [
         "Numer telefonu"
@@ -6916,6 +6919,9 @@
       ],
       "Move to trash": [
         "Przenieś do Kosza"
+      ],
+      "Moving a scheduled message": [
+        ""
       ],
       "Network error": [
         "Błąd sieci"

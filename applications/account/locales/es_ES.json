@@ -110,7 +110,7 @@
         "Aplicar"
       ],
       "Authenticate": [
-        "Autentificar"
+        "Autenticar"
       ],
       "Back": [
         "Atrás"
@@ -329,7 +329,7 @@
         "Habilitar soporte multiusuario"
       ],
       "Enter password to continue": [
-        "Introduzca la contraseña para continuar"
+        "Introduce la contraseña para continuar"
       ],
       "Export": [
         "Exportar"
@@ -1258,6 +1258,11 @@
         "20/usuario *"
       ]
     },
+    "Calendar import section description": {
+      "You can import ICS files from another calendar to ${ CALENDAR_APP_NAME }. This lets you quickly import one event or your entire agenda.": [
+        "Puedes importar archivos ICS de otro calendario a ${ CALENDAR_APP_NAME }. Esto te permite importar rápidamente un evento o toda tu agenda."
+      ]
+    },
     "Calendar limit warning": {
       "You have reached the maximum of ${ calendarsLimit } calendar.": [
         "",
@@ -1716,7 +1721,7 @@
     },
     "Email Unsubscribe": {
       "Which emails do you want to receive from Proton?": [
-        "¿Quecorreos quieres recibir de Proton?"
+        ""
       ],
       "You resubscribed to ${ categoriesJsx } emails.": [
         "Has vuelto a suscribirte a los correos de ${ categoriesJsx }."
@@ -1934,7 +1939,7 @@
       "Please enable multi-user support before adding users to your organization.": [
         "Por favor, habilita el soporte multiusuario antes de añadir usuarios a tu organización."
       ],
-      "Please fix the highlighted conflicts to proceed.": [
+      "Please fix the highlighted conflict to proceed.": [
         "",
         ""
       ],
@@ -2201,9 +2206,6 @@
       "Event": [
         "Evento"
       ],
-      "Event duration not supported": [
-        "Duración del evento no admitido"
-      ],
       "Event validation failed": [
         "Falló la validación del evento"
       ],
@@ -2341,13 +2343,13 @@
         "Respuesta no soportada"
       ],
       "We could not cancel the event in your calendar": [
-        "No hemos podido cancelar el evento en tu calendario"
+        "No hemos podido cancelar el evento de tu calendario"
       ],
       "We could not retrieve the event from your calendar": [
         "No hemos podido recuperar el evento de tu calendario"
       ],
       "We could not update the event in your calendar": [
-        "No hemos podido actualizar el evento en tu calendario"
+        "No hemos podido actualizar el evento de tu calendario"
       ],
       "Your answer was sent, but the event could not be added to your calendar": [
         "Tu respuesta ha sido enviada, pero el evento no ha podido ser añadido a tu calendario"
@@ -3201,7 +3203,7 @@
         "¿Ya tienes una cuenta? ${ loginLink }"
       ],
       "Amount below minimum (${ amount }).": [
-        "Cantidad inferior al mínimo (${ amount })."
+        "Cantidad por debajo del mínimo (${ amount })."
       ],
       "and": [
         ""
@@ -3216,7 +3218,7 @@
         "Cualquier persona con este enlace no podrá sincronizar ni obtener actualizaciones futuras para tu calendario. Si quieres darles acceso de nuevo, tendrás que crear un nuevo enlace."
       ],
       "AOL reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
-        "AOL lee tus datos personales con el fin de facilitar el acceso a los anunciantes y a terceros. Para una mejor privacidad, crea una dirección de correo electrónico segura."
+        "AOL lee tus datos personales con el fin de facilitar el acceso a anunciantes y a terceros. Para una mejor privacidad, crea una dirección de correo electrónico segura."
       ],
       "Are you sure you want to continue?": [
         ""
@@ -4038,8 +4040,8 @@
       "Server load": [
         "Carga del servidor"
       ],
-      "Servers are unreachable.": [
-        "Los servidores no están disponibles."
+      "Servers are unreachable. Please try again in a few minutes": [
+        ""
       ],
       "Session timed out.": [
         "El tiempo de la sesión ha expirado."
@@ -4358,9 +4360,6 @@
       ],
       "You can generate a new encryption key if you think your previous key has been compromised.": [
         "Puedes generar una clave de cifrado nueva si crees que la anterior ha sido comprometida."
-      ],
-      "You can import ICS files from another calendar to ${ CALENDAR_APP_NAME }. This lets you quickly import one event or your entire agenda.": [
-        ""
       ],
       "You can now receive messages to your @pm.me address. Upgrade to a paid plan to also send emails using your @pm.me address and create additional @pm.me addresses.": [
         ""
@@ -4967,7 +4966,7 @@
         "Clave de respaldo"
       ],
       "Backup keys": [
-        "Clave de respaldo"
+        "Claves de respaldo"
       ],
       "bonus storage": [
         "almacenamiento adicional"
@@ -5095,8 +5094,8 @@
       "Default notifications": [
         "Notificaciones por defecto"
       ],
-      "Default PGP settings": [
-        "Ajustes PGP predeterminados"
+      "Default PGP scheme": [
+        ""
       ],
       "Default view": [
         "Vista por defecto"
@@ -5763,7 +5762,7 @@
         "Crear una cuenta"
       ],
       "Forgot username?": [
-        "¿Olvidó su nombre de usuario?"
+        "¿Has olvidado tu nombre de usuario?"
       ],
       "General": [
         "General"
@@ -5810,13 +5809,14 @@
     },
     "Loading info": {
       "${ createdCalendars } of ${ calendarsToBeCreated } created": [
+        "${ createdCalendars } de ${ calendarsToBeCreated } creado",
         ""
       ],
       "Almost there": [
         ""
       ],
       "Connecting to your email provider": [
-        "Conectando con tu proveedor de correo"
+        "Conectando con tu proveedor de correo eléctronico"
       ],
       "Creating new calendars": [
         ""
@@ -6148,7 +6148,7 @@
         "Volver a Drive"
       ],
       "Back to Mail": [
-        "Volver al correo"
+        "Volver al Correo"
       ]
     },
     "Netflix": {
@@ -7286,9 +7286,6 @@
       ]
     },
     "Suffix for price": {
-      "/ mo": [
-        ""
-      ],
       "/ month": [
         "/ mes"
       ]
@@ -7330,6 +7327,20 @@
       ],
       "vCard field": [
         "Campo vCard"
+      ]
+    },
+    "Time period": {
+      "account creation date": [
+        "fecha de creación de la cuenta"
+      ],
+      "the last 12 months": [
+        "los últimos 12 meses"
+      ],
+      "the last 3 months": [
+        "los últimos 3 meses"
+      ],
+      "the last month": [
+        "el último mes"
       ]
     },
     "Time unit": {
@@ -7460,7 +7471,7 @@
         "Añadir código promocional"
       ],
       "Are you human?": [
-        "¿Es humano?"
+        "¿Eres un humano?"
       ],
       "Are you sure you want to close?": [
         "¿Estás seguro de que quieres cerrarlo?"
@@ -7676,7 +7687,7 @@
         "Correo electrónico"
       ],
       "Email encryption keys": [
-        "Claves de cifrado de correo electrónico"
+        "Claves de cifrado del correo electrónico"
       ],
       "Email privacy": [
         ""
@@ -7943,7 +7954,7 @@
         "Restablecer contraseña"
       ],
       "Reset password?": [
-        "Restablecer contraseña?"
+        "¿Restablecer contraseña?"
       ],
       "Restore administrator privileges": [
         "Restaurar los privilegios de administrador"
@@ -7979,7 +7990,7 @@
         "Selecciona cuándo quieres que se envíe esta notificación"
       ],
       "Session management": [
-        "Administración de sesiones"
+        "Gestión de sesiones"
       ],
       "Set new password": [
         "Establecer una nueva contraseña"
@@ -8066,7 +8077,7 @@
         "Total (mensual)"
       ],
       "Two-factor authentication": [
-        "Autenticación de dos factores"
+        "Autenticación de doble factor"
       ],
       "Type": [
         "Tipo"

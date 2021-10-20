@@ -245,13 +245,13 @@
         "Απόκρυψη προηγμένων ρυθμίσεων PGP"
       ],
       "Hide folders": [
-        ""
+        "Απόκρυψη φακέλων"
       ],
       "Hide info": [
         "Απόκρυψη πληροφοριών"
       ],
       "Hide labels": [
-        ""
+        "Απόκρυψη ετικετών"
       ],
       "I have a question": [
         "Έχω μια ερώτηση"
@@ -458,16 +458,16 @@
         "Εμφάνιση προηγμένων ρυθμίσεων PGP"
       ],
       "Show folders": [
-        ""
+        "Εμφάνιση φακέλων"
       ],
       "Show info": [
         "Εμφάνιση πληροφοριών"
       ],
       "Show labels": [
-        ""
+        "Εμφάνιση ετικετών"
       ],
       "Show shared link details": [
-        ""
+        "Εμφάνιση λεπτομερειών κοινόχρηστων συνδέσεων"
       ],
       "Sign out": [
         "Αποσύνδεση"
@@ -629,7 +629,7 @@
     },
     "Alert": {
       "By leaving now, some contacts may not be imported": [
-        "Αφήνοντας τώρα, ορισμένες επαφές ενδέχεται να μην εισαχθούν"
+        "Φεύγοντας τώρα, κάποιες επαφές ενδέχεται να μην εισαχθούν"
       ]
     },
     "Apps dropdown": {
@@ -645,10 +645,10 @@
     },
     "Beta access description": {
       "Beta Access lets you use the beta version of ProtonMail, Proton Calendar, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        ""
+        "Η Beta Πρόσβαση σας επιτρέπει να χρησιμοποιήσετε την έκδοση beta του ProtonMail, του Proton Ημερολογίου και του Proton Drive πριν κυκλοφορήσουν στο κοινό. Αυτό σημαίνει ότι μπορείτε να είστε οι πρώτοι που θα δοκιμάσετε νέα προϊόντα, θα λάβετε νέες ενημερώσεις και θα χρησιμοποιήσετε νέες δυνατότητες."
       ],
       "If you encounter issues, you can always disable Beta Access.": [
-        ""
+        "Εάν αντιμετωπίσετε προβλήματα, μπορείτε πάντα να απενεργοποιήσετε την Πρόσβαση Beta."
       ]
     },
     "Billing cycle option": {
@@ -826,19 +826,19 @@
     },
     "Calendar feature": {
       "Calendar import": [
-        ""
+        "Εισαγωγή ημερολογίου"
       ],
       "Invitations": [
         "Προσκλήσεις"
       ],
       "Multiple calendars": [
-        ""
+        "Πολλαπλά ημερολόγια"
       ],
       "Recurring events": [
         "Επαναλαμβανόμενες εκδηλώσεις"
       ],
       "Share Calendar via link": [
-        ""
+        "Κοινοποίηση Ημερολογίου μέσω συνδέσμου"
       ]
     },
     "Calendar feature option": {
@@ -890,7 +890,7 @@
     },
     "Confirm modal title": {
       "Quit import customization?": [
-        ""
+        "Ακύρωση προσαρμογής εισαγωγής;"
       ]
     },
     "Contact field label": {
@@ -992,7 +992,7 @@
     },
     "Default encryption scheme": {
       "Use global default (${ defaultValueText })": [
-        "Χρησιμοποιήστε την παγκόσμια προεπιλογή (${ defaultValueText })"
+        "Χρήση γενικής προεπιλογής (${ defaultValueText })"
       ]
     },
     "Delinquent modal title": {
@@ -1010,19 +1010,19 @@
     },
     "Description": {
       "Decrypting contacts... This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
-        "Αποκρυπτογράφηση επαφών... Αυτό μπορεί να διαρκέσει μερικά λεπτά. Όταν ολοκληρωθεί η διαδικασία, θα μπορείτε να κάνετε λήψη του αρχείου με όλες τις επαφές που έχουν εξαχθεί."
+        "Γίνεται αποκρυπτογράφηση επαφών... Αυτή η διαδικασία ίσως πάρει μερικά λεπτά. Όταν ολοκληρωθεί, θα μπορείτε να κατεβάσετε το αρχείο με όλες τις επαφές σας εξαγμένες."
       ],
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
-        "Διαγραφή επαφών... Αυτό μπορεί να διαρκέσει μερικά λεπτά. Όταν ολοκληρωθεί η διαδικασία, μπορείτε να κλείσετε αυτό το παράθυρο."
+        "Γίνεται διαγραφή επαφών... Αυτή η διαδικασία ίσως πάρει μερικά λεπτά. Όταν ολοκληρωθεί, μπορείτε να κλείσετε αυτό το παράθυρο."
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
-        "Κρυπτογράφηση και εισαγωγή επαφών... Αυτό μπορεί να διαρκέσει μερικά λεπτά. Όταν ολοκληρωθεί η διαδικασία, μπορείτε να κλείσετε αυτό το παράθυρο."
+        "Γίνεται κρυπτογράφηση και εισαγωγή επαφών... Αυτή η διαδικασία ίσως πάρει μερικά λεπτά. Όταν ολοκληρωθεί, μπορείτε να κλείσετε αυτό το παράθυρο."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Φαίνεται ότι η λίστα επαφών που εισάγετε περιέχει κάποιες ομάδες. Παρακαλούμε εξετάστε τον τρόπο εισαγωγής αυτών των ομάδων."
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
-        "Συγχώνευση επαφών... Αυτό μπορεί να διαρκέσει μερικά λεπτά. Όταν ολοκληρωθεί η διαδικασία, μπορείτε να κλείσετε αυτό το παράθυρο."
+        "Γίνεται συγχώνευση επαφών... Αυτή η διαδικασία ίσως πάρει μερικά λεπτά. Όταν ολοκληρωθεί, μπορείτε να κλείσετε αυτό το παράθυρο."
       ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "Το αρχείο πρέπει να έχει μέγιστο μέγεθος ${ MAX_IMPORT_FILE_SIZE_STRING } και να έχει\nμέχρι και ${ MAX_IMPORT_CONTACTS_STRING } επαφές. Εάν το αρχείο σας είναι μεγαλύτερο, διαχωρίστε το σε μικρότερα αρχεία.",
@@ -1050,23 +1050,23 @@
     },
     "Drive feature": {
       "Access via Web": [
-        ""
+        "Πρόσβαση μέσω Web"
       ],
       "Share files via link": [
-        ""
+        "Κοινή χρήση αρχείων με συνδέσμους"
       ],
       "Upload / download files": [
-        ""
+        "Ανέβασμα / λήψη αρχείων"
       ]
     },
     "Early Access Disabled": {
       "Off": [
-        ""
+        "Ανενεργό"
       ]
     },
     "Early Access Enabled": {
       "On": [
-        ""
+        "Ενεργό"
       ]
     },
     "Error": {
@@ -1089,7 +1089,7 @@
         "Εξάντληση ορίου ημερολογίων"
       ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
-        ""
+        "Δεν είναι δυνατή η δημιουργία νέων ημερολογίων για όλα τα εισαγόμενα ημερολόγια λόγω του προσωπικού ορίου συνολικών ημερολογίων."
       ],
       "Can't validate email, try again later": [
         "Αδυναμία επικύρωσης διεύθυνσης ηλ. ταχυδρομείου, παρακαλούμε δοκιμάστε ξανά αργότερα"
@@ -1226,7 +1226,7 @@
         "Αδυναμία αποθήκευσης προτιμήσεων"
       ],
       "Primary address key is not decrypted": [
-        ""
+        "Το κύριο κλειδί διεύθυνσης δεν αποκρυπτογραφείται"
       ],
       "Primary address key is not decrypted.": [
         "Το πρωτεύον κλειδί διεύθυνσης δεν είναι αποκρυπτογραφημένο."
@@ -1250,10 +1250,10 @@
         "Αδυναμία διαγραφής ορισμένων ομάδων επαφών"
       ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
-        ""
+        "Ορισμένα από τα ονόματα ετικετών σας δεν είναι διαθέσιμα. Προσαρμόστε την εισαγωγή για να επεξεργαστείτε αυτά τα ονόματα."
       ],
       "Some of your label names exceed ProtonMail's maximum character limit. Please customize the import to edit these names.": [
-        ""
+        "Ορισμένα από τα ονόματα ετικετών σας υπερβαίνουν το μέγιστο όριο χαρακτήρων του ProtonMail. Προσαρμόστε την εισαγωγή για να επεξεργαστείτε αυτά τα ονόματα."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Κάτι πήγε στραβά, παρακαλούμε ${ refresh } για να προχωρήσετε. Εάν εξακολουθείτε να βλέπετε αυτό το μήνυμα σφάλματος, παρακαλούμε επικοινωνήστε με την ${ supportTeam }."
@@ -1301,7 +1301,7 @@
         "Ο αρχικός φάκελος ή το αρχείο δε βρέθηκε"
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
-        ""
+        "Υπάρχουν πάρα πολλοί φάκελοι στον εξωτερικό λογαριασμό σας. Προσαρμόστε την εισαγωγή για να διαγράψετε ορισμένους φακέλους."
       ],
       "There was an error when exporting the contacts vCards": [
         "Παρουσιάστηκε σφάλμα κατά την εξαγωγή επαφών vCards"
@@ -1335,6 +1335,9 @@
       ],
       "You must set a name": [
         "Πρέπει να ορίσετε ένα όνομα"
+      ],
+      "Your browser does not support uploading folders": [
+        "Ο περιηγητής σας δεν υποστηρίζει ανέβασμα φακέλων"
       ],
       "Your import will not be processed.": [
         "Η εισαγωγή σας δεν θα υποβληθεί σε επεξεργασία."
@@ -1464,10 +1467,10 @@
         "Επαφές"
       ],
       "Contacts, groups and settings": [
-        ""
+        "Επαφές, ομάδες και ρυθμίσεις"
       ],
       "Get help": [
-        ""
+        "Λάβετε βοήθεια"
       ]
     },
     "Hint": {
@@ -1574,16 +1577,16 @@
         "${ appName } χρειάζεται την άδειά σας για να ${ enableDesktopNotifications }."
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
-        "",
-        ""
+        "${ calendarsToBeCreatedCount } νέο ημερολόγιο",
+        "${ calendarsToBeCreatedCount } νέα ημερολόγια"
       ],
       "${ calendarsToBeMerged } merged calendar": [
-        "",
-        ""
+        "${ calendarsToBeMerged } συγχωνευμένο ημερολόγιο",
+        "${ calendarsToBeMerged } συγχωνευμένα ημερολόγια"
       ],
       "${ calendarsToBeMergedCount } merged calendar": [
-        "",
-        ""
+        "${ calendarsToBeMergedCount } συγχωνευμένο ημερολόγιο",
+        "${ calendarsToBeMergedCount } συγχωνευμένα ημερολόγια"
       ],
       "${ canceledCount } Canceled": [
         "${ canceledCount } Ακυρώθηκε",
@@ -1660,8 +1663,8 @@
         "${ saveExtra20 } τόσο στο VPN όσο και στο Mail προσθέτοντας μια συνδρομή VPN."
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
-        "",
-        ""
+        "${ selectedCalendarsTotal } από ${ providerCalendars.length } ημερολόγιο",
+        "${ selectedCalendarsTotal } από ${ providerCalendars.length } ημερολόγια"
       ],
       "${ selectedFoldersCount } folder selected": [
         "${ selectedFoldersCount } επιλεγμένος φάκελος",
@@ -1806,7 +1809,7 @@
         "Κάντε κλικ στην επιλογή \"Αίτηση νέου κωδικού\" για να σταλεί ένας νέος κωδικός επαλήθευσης στο ${ strong }. Εάν αυτός ο αριθμός τηλεφώνου είναι εσφαλμένος, κάντε κλικ στο \"Επεξεργασία\" για να τον διορθώσετε."
       ],
       "Close this screen to exit.": [
-        ""
+        "Κλείστε αυτήν την οθόνη για έξοδο."
       ],
       "Closing transfer manager will cancel all active transfers, are you sure?": [
         "Κλείνωντας το διαχειριστή μεταφορών, θα ακυρώσει όλες τις ενεργές μεταφορές, είστε σίγουροι;"
@@ -1818,8 +1821,8 @@
         "Συνδέσεις"
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
-        "",
-        ""
+        "Δημιουργήστε ${ calendarsToBeCreated } νέο ημερολόγιο",
+        "Δημιουργήστε ${ calendarsToBeCreated } νέα ημερολόγια"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Δημιουργήστε μια ετικέτα για τα εισαγόμενα μηνύματα, μια χρονική έκταση για αυτήν την εισαγωγή, και τους φακέλους που θα θέλατε να εισάγετε."
@@ -1942,11 +1945,11 @@
         "Εάν δεν βρείτε το email στα εισερχόμενα σας, ελέγξτε το φάκελο ανεπιθύμητων."
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
-        ""
+        "Εισαγωγή ${ contactsFragment } και ${ contactsGroupsFragment }"
       ],
       "Import ${ selectedCalendarsCount } of ${ totalCalendarsCount } calendar": [
-        "",
-        ""
+        "Εισαγωγή ${ selectedCalendarsCount } από ${ totalCalendarsCount } ημερολόγιο",
+        "Εισαγωγή ${ selectedCalendarsCount } από ${ totalCalendarsCount } ημερολόγια"
       ],
       "Import from": [
         "Εισαγωγή από"
@@ -1955,7 +1958,7 @@
         "Εισαγωγή σε εξέλιξη"
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
-        ""
+        "Γίνεται εισαγωγή δεδομένων από ${ importedEmailAddress } προς ${ toEmail }."
       ],
       "Included": [
         "Περιλαμβάνεται"
@@ -1976,7 +1979,7 @@
         "Έγινε επαναφορά της σύνδεσης στο Διαδίκτυο."
       ],
       "Just confirm your selection and we'll do the rest.": [
-        ""
+        "Απλά επιβεβαίωσε την επιλογή σου και εμείς θα κάνουμε τα υπόλοιπα."
       ],
       "Key fingerprint": [
         "Κλειδί αποτυπώματος"
@@ -2006,7 +2009,7 @@
         "Φόρτωση κοινοποίησης"
       ],
       "Merged": [
-        ""
+        "Συγχωνευμένα"
       ],
       "More": [
         "Περισσότερα"
@@ -2018,16 +2021,16 @@
         "Οι Σύνδεσμοι Μου"
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
-        ""
+        "Ονομάστε τον νέο σας φάκελο και επιλέξτε τον γονικό φάκελο στον οποίο θέλετε να τον τοποθετήσετε. Εάν δεν επιλέξετε γονικό φάκελο, ο νέος φάκελος θα δημιουργηθεί ως φάκελος ανώτατου επιπέδου."
       ],
       "Network issue": [
         "Πρόβλημα δικτύου"
       ],
       "New": [
-        ""
+        "Νέο"
       ],
       "Next you'll need to log in to your Google account and allow us to access your data.": [
-        ""
+        "Στη συνέχεια, θα πρέπει να συνδεθείτε στον λογαριασμό σας Google και να μας επιτρέψετε να έχουμε πρόσβαση στα δεδομένα σας."
       ],
       "No": [
         "Όχι"
@@ -2075,7 +2078,7 @@
         "Σε παύση"
       ],
       "Payment can take a few minutes to fully verify.": [
-        "Η πληρωμή μπορεί να πάρει μερικά λεπτά προκειμένου να επαληθευτεί πλήρως."
+        "Η πληρωμή μπορεί να πάρει μερικά λεπτά μέχρι να επαληθευτεί πλήρως."
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Οι πληρωμές προστατεύονται με κρυπτογράφηση TLS και από τους ελβετικούς νόμους περί ιδιωτικότητας."
@@ -2090,7 +2093,7 @@
         "Σημειώστε ότι οι διευθύνσεις που έχουν αντιστοιχιστεί σε αυτήν την ομάδα ΔΕ θα διαγραφούν."
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
-        "Παρακαλείστε να σημειώσετε ότι αυτή η διαδικασία μπορεί να διαρκέσει κάποιο χρόνο, ανάλογα με το μέγεθος του βιβλίου διευθύνσεών σας."
+        "Παρακαλούμε σημειώστε ότι αυτή η διαδικασία ίσως πάρει κάποιο χρόνο, ανάλογο του μεγέθους του βιβλίου διευθύνσεών σας."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "Λάβετε υπόψη ότι όταν κάνετε κλικ στο κουμπί Επιβεβαίωση, ο λογαριασμός σας θα έχει υπόλοιπο ${ creditsRemaining }."
@@ -2160,10 +2163,10 @@
         "Ορίστε την προεπιλεγμένη μορφή των μηνυμάτων που αποστέλλονται προς αυτήν την ηλ. διεύθυνση."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20-personal-calendar limit. You can also merge imported calendars with existing Proton calendars.": [
-        ""
+        "Επιλέξτε ποια ημερολόγια θα εισαγάγετε. Θα δημιουργηθεί ένα νέο ημερολόγιο για κάθε εισαγόμενο ημερολόγιο μέχρι το όριο των 20 προσωπικών ημερολογίων. Μπορείτε επίσης να συγχωνεύσετε εισαγόμενα ημερολόγια με υπάρχοντα ημερολόγια Proton."
       ],
-      "Servers are unreachable.": [
-        "Αδυναμία πρόσβασης σε διακομιστή."
+      "Servers are unreachable. Please try again in a few minutes": [
+        "Οι διακομιστές είναι απρόσιτοι. Παρακαλούμε δοκιμάστε ξανά σε λίγα λεπτά"
       ],
       "Session timed out.": [
         "Η χρονική περίοδος σύνδεσης έληξε."
@@ -2223,7 +2226,7 @@
         "Αυτός ο σύνδεσμος μπορεί να είναι επίθεση ομογραφίας. Βεβαιωθείτε ότι πρόκειται για το σύνδεσμο που θέλετε να επισκεφθείτε, ή μην το ανοίξετε."
       ],
       "This link was created in a previous version and can not be modified. Delete this link and create a new one to change the settings.": [
-        "Ο σύνδεσμος έχει δημιουργηθεί σε προηγούμενη έκδοση και δεν μπορεί να τροποποιηθεί. Διαγράψτε τον σύνδεσμο και δημιουργήστε έναν νέο προκειμένου να αλλάξετε τις ρυθμίσεις."
+        "Αυτός ο σύνδεσμος δεν μπορεί να τροποποιηθεί, επειδή δημιουργήθηκε σε προηγούμενη έκδοση. Για να αλλάξετε τη σύνδεση, διαγράψτε τον και δημιουργήστε έναν νέο."
       ],
       "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
         "Αυτός ο σύνδεσμος θα απενεργοποιηθεί μόνιμα. Κανείς με αυτόν τον σύνδεσμο δε θα έχει πρόσβαση στο αρχείο. Για επαναδιαμοιρασμό του αρχείου, θα χρειαστείτε έναν νέο σύνδεσμο."
@@ -2278,7 +2281,7 @@
         "Ανέβασμα"
       ],
       "Uploading hundreds of files at once may have a performance impact.": [
-        "Το ανέβασμα εκατοντάδων αρχείων με τη μία, μπορεί να μειώσει τις επιδόσεις."
+        "Το ανέβασμα εκατοντάδων αρχείων με τη μία ενδέχεται να μειώσει τις επιδόσεις."
       ],
       "Users": [
         "Χρήστες"
@@ -2305,7 +2308,7 @@
         "Θα σας ανακατευθύνουμε στο PayPal, σε μια νέα καρτέλα προγράμματος περιήγησης, για να ολοκληρώσετε αυτήν τη συναλλαγή. Εάν έχετε ενεργοποιημένο τον αποκλεισμό αναδυόμενων παραθύρων, παρακαλώ απενεργοποιήστε τον για να συνεχίσετε."
       ],
       "We'll notify you when the import is done.": [
-        ""
+        "Θα σας ειδοποιήσουμε όταν ολοκληρωθεί η εισαγωγή."
       ],
       "Week": [
         "Εβδομάδα"
@@ -2314,7 +2317,7 @@
         "Τι θέλετε να κάνετε;"
       ],
       "What do you want to import from your Google account?": [
-        ""
+        "Τι θέλετε να εισαγάγετε από τον λογαριασμό σας Google;"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Θέλετε να λάβετε έναν νέο κωδικό επαλήθευσης ή να χρησιμοποιήσετε μια εναλλακτική μέθοδο επαλήθευσης;"
@@ -2332,10 +2335,10 @@
         "Αυτήν τη στιγμή είστε συνδεδεμένοι ως χρήστης ${ user.Name } (${ user.Email }) και έχετε περιορισμένη πρόσβαση."
       ],
       "You can check the progress ${ importProgressLink }.": [
-        ""
+        "Μπορείτε να δείτε την πρόοδο ${ importProgressLink }."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
-        ""
+        "Μπορείτε να ενεργοποιήσετε τις ειδοποιήσεις, για να λαμβάνετε ειδοποιήσεις όταν φτάνουν νέα email σε αυτόν το φάκελο."
       ],
       "You cannot undo this action.": [
         "Δεν μπορείτε να αναιρέσετε αυτήν την ενέργεια."
@@ -2377,7 +2380,7 @@
         "Ο λογαριασμός σας έχει τουλάχιστον ένα εκπρόθεσμο τιμολόγιο. Η πρόσβαση σας σύντομα θα περιοριστεί. ${ payInvoiceLink }"
       ],
       "Your account is being upgraded, this may take up to 30 seconds.": [
-        "Ο λογαριασμός σας αναβαθμίζεται, αυτό μπορεί να διαρκέσει έως 30 δευτερόλεπτα."
+        "Γίνεται αναβάθμιση του λογαριασμού σας, η οποία ίσως διαρκέσει έως 30 δευτερόλεπτα."
       ],
       "Your account will be updated once the payment is cleared.": [
         "Ο λογαριασμός σας θα ενημερωθεί μόλις γίνει εκκαθάριση της πληρωμής."
@@ -2386,7 +2389,7 @@
         "Η τράπεζα σας, απαιτεί ασφαλή επαλήθευση 3-D για λόγους ασφαλείας."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
-        ""
+        "Τα δεδομένα σας είναι έτοιμα για εισαγωγή από ${ importedEmailAddressStrong } στο λογαριασμό σας στο Proton."
       ],
       "Your download has been canceled.": [
         "Η λήψη σας έχει ακυρωθεί."
@@ -2444,7 +2447,7 @@
     },
     "Info, no need for singular": {
       "Multiple contacts look identical. ${ mergeAction }": [
-        ""
+        "Πολλαπλές επαφές φαίνονται ίδιες. ${ mergeAction }"
       ]
     },
     "information": {
@@ -2649,12 +2652,12 @@
     },
     "Keyboard Shortcuts Disabled": {
       "Off": [
-        ""
+        "Ανενεργό"
       ]
     },
     "Keyboard Shortcuts Enabled": {
       "On": [
-        ""
+        "Ενεργό"
       ]
     },
     "Label": {
@@ -2683,7 +2686,7 @@
         "Εφαρμογή σε όλους τους ομώνυμους φακέλους"
       ],
       "Apply to selection": [
-        ""
+        "Εφαρμογή στην επιλογή"
       ],
       "Audio file": [
         "Αρχείο ήχου"
@@ -2725,7 +2728,7 @@
         "Πόλη"
       ],
       "Completed": [
-        ""
+        "Ολοκληρωμένο"
       ],
       "Contacts": [
         "Επαφές"
@@ -2735,9 +2738,6 @@
       ],
       "Country": [
         "Χώρα"
-      ],
-      "Cryptographic scheme": [
-        "Σχέδιο Κρυπτογράφησης"
       ],
       "CVV code": [
         "Κωδικός CVV"
@@ -2758,7 +2758,7 @@
         "Μηνύματα"
       ],
       "Enable Beta Access": [
-        ""
+        "Ενεργοποίηση πρόσβασης Beta"
       ],
       "Encrypt emails": [
         "Κρυπτογραφημένα E-mails"
@@ -2821,22 +2821,22 @@
         "Μεσοδιάστημα εισαγωγών"
       ],
       "Import to email address": [
-        ""
+        "Εισαγωγή σε διεύθυνση email"
       ],
       "Keyboard shortcuts": [
         "Συντομεύσεις πληκτρολογίου"
       ],
       "Label messages as": [
-        ""
+        "Επισήμανση μηνυμάτων ως"
       ],
       "Last 12 months only": [
-        ""
+        "Τελευταίοι 12 μήνες μόνο"
       ],
       "Last 3 months only": [
-        ""
+        "Τελευταίοι 3 μήνες μόνο"
       ],
       "Last month only": [
-        ""
+        "Τελευταίο μήνα μόνο"
       ],
       "Mailbox password": [
         "Κωδικός Θυρίδας"
@@ -2871,6 +2871,9 @@
       "Payer": [
         "Πληρωτής"
       ],
+      "PGP scheme": [
+        "Σχήμα PGP"
+      ],
       "Phone number": [
         "Αριθμός τηλεφώνου"
       ],
@@ -2884,7 +2887,7 @@
         "Προμήθεια"
       ],
       "Protect with password": [
-        ""
+        "Προστασία με κωδικό πρόσβασης"
       ],
       "Proton username": [
         "Όνομα χρήστη Proton"
@@ -2911,19 +2914,19 @@
         "Επιλέξτε μέθοδο"
       ],
       "Select how your composer opens by default.": [
-        ""
+        "Επιλέξτε τον τρόπο με τον οποίο ανοίγει ο συνθέτης σας από προεπιλογή."
       ],
       "Select how your list of messages looks like by default.": [
-        ""
+        "Επιλέξτε πώς μοιάζει η λίστα μηνυμάτων σας από προεπιλογή."
       ],
       "Select how your mailbox looks like by default.": [
-        ""
+        "Επιλέξτε πώς μοιάζει το γραμματοκιβώτιό σας από προεπιλογή."
       ],
       "Select your country": [
         "Επιλέξτε τη χώρα σας"
       ],
       "Set expiration date": [
-        ""
+        "Ορισμός ημερομηνίας λήξης"
       ],
       "Sign emails": [
         "Υπογραφή ηλεκτρονικών ταχυδρομείων"
@@ -2962,10 +2965,10 @@
         "Άγνωστο αρχείο"
       ],
       "Up to ${ parentLinkName }": [
-        ""
+        "Πίσω στο ${ parentLinkName }"
       ],
       "Up to the parent folder": [
-        ""
+        "Πίσω στο γονικό φάκελο"
       ],
       "Upload anyway": [
         "Ανέβασμα οπωσδήποτε"
@@ -3066,7 +3069,7 @@
         "κάντε κλικ εδώ"
       ],
       "Go to subscription plans": [
-        ""
+        "Μεταβείτε σε πλάνα συνδρομής"
       ],
       "Learn more": [
         "Μάθετε περισσότερα"
@@ -3099,10 +3102,10 @@
         "Δημιουργήθηκαν ${ createdCalendars } από ${ calendarsToBeCreated }"
       ],
       "Almost there": [
-        ""
+        "Σχεδόν εκεί"
       ],
       "Creating new calendars": [
-        ""
+        "Δημιουργία νέων ημερολόγιων"
       ],
       "Gathering your data": [
         "Συγκέντρωση των δεδομένων σας"
@@ -3111,7 +3114,7 @@
         "Συγκεντρώνουμε τα δεδομένα σας από τον πάροχό σας"
       ],
       "Your import is starting": [
-        ""
+        "Γίνεται εκκίνηση της εισαγωγής σας"
       ]
     },
     "Mail feature": {
@@ -3170,7 +3173,7 @@
         "Υποστήριξη"
       ],
       "Use @pm.me address": [
-        ""
+        "Χρήση διεύθυνσης @pm.me"
       ],
       "Users": [
         "Χρήστες"
@@ -3197,7 +3200,7 @@
     },
     "Mail import summary": {
       "${ messagesFragment } since ${ periodFragment } and label them as ${ label }": [
-        ""
+        "${ messagesFragment } μέχρι ${ periodFragment } και επισημάνετε τα ως ${ label }"
       ]
     },
     "Many Others": {
@@ -3337,14 +3340,14 @@
         "Αποτυχία ανεβάσματος αρχείων: ${ err }"
       ],
       "File or folder \"${ filename }\" and ${ count } other are already uploading": [
-        "",
-        ""
+        "Το αρχείο ή ο φάκελος \"${ filename }\" και ${ count } άλλο ήδη μεταφορτώνονται",
+        "Το αρχείο ή ο φάκελος \"${ filename }\" και ${ count } άλλα ήδη μεταφορτώνονται"
       ],
       "File or folder \"${ filename }\" is already uploading": [
-        ""
+        "Το αρχείο ή ο φάκελος \"${ filename }\" ήδη μεταφορτώνονται"
       ],
       "File or folder is missing a name": [
-        ""
+        "Το αρχείο ή ο φάκελος λείπει ένα όνομα"
       ],
       "Move ${ itemsToMoveCount } file": [
         "Μετακίνηση ${ itemsToMoveCount } αρχείου",
@@ -3371,7 +3374,7 @@
         "Μετακίνηση ${ movingCount } στοιχείων"
       ],
       "Not enough space to upload ${ formattedTotal }": [
-        ""
+        "Δεν υπάρχει αρκετός χώρος για αποστολή ${ formattedTotal }"
       ],
       "The link to your file failed to be deleted.": [
         "Ο σύνδεσμος στο αρχείο σας απέτυχε να διαγραφεί."
@@ -3385,39 +3388,39 @@
     },
     "Onboarding Proton": {
       "Choose a display name": [
-        ""
+        "Επιλέξτε ένα εμφανιζόμενο όνομα"
       ],
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
-        ""
+        "Ρυθμίστε τις παραμέτρους του οργανισμού σας, συνδέστε το όνομα τομέα σας και δημιουργήστε λογαριασμούς για να διασφαλίσετε ότι όλα τα μέλη του οργανισμού σας προστατεύονται."
       ],
       "Discover all Proton services": [
-        ""
+        "Ανακαλύψτε όλες τις υπηρεσίες Proton"
       ],
       "Our mission is to build an internet where you are in control of your data and your privacy. We have recently updated Proton - welcome to the secure internet.": [
-        ""
+        "Η αποστολή μας είναι να δημιουργήσουμε ένα διαδίκτυο όπου θα έχετε τον έλεγχο των δεδομένων σας και της ιδιωτικής σας ζωής. Πρόσφατα ενημερώσαμε το Proton - καλώς ήρθατε στο ασφαλές διαδίκτυο."
       ],
       "Select a theme": [
-        ""
+        "Επιλέξτε ένα θέμα"
       ],
       "Set up your organization": [
-        ""
+        "Ρυθμίστε τον οργανισμό σας"
       ],
       "This is what people will see when you send them an email, invite them to an event, or share a file with them.": [
-        ""
+        "Αυτό θα βλέπουν οι χρήστες όταν τους στέλνετε ένα μήνυμα ηλεκτρονικού ταχυδρομείου, τους προσκαλείτε σε μια εκδήλωση ή κάνετε κοινή χρήση ενός αρχείου μαζί τους."
       ],
       "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
-        ""
+        "Χρησιμοποιήστε τον επιλογέα εφαρμογών πάνω αριστερά για να αποκτήσετε πρόσβαση σε άλλες υπηρεσίες Proton, συμπεριλαμβανομένων του VPN, του Ημερολογίου και του Χώρου Αποθήκευσης στο cloud."
       ],
       "Welcome to Proton": [
         "Καλώς ήρθατε στο Proton"
       ],
       "You can change this anytime in your settings.": [
-        ""
+        "Μπορείτε να το αλλάξετε αυτό οποιαδήποτε στιγμή στις ρυθμίσεις σας."
       ]
     },
     "Onboarding Proton Drive Action": {
       "Enable Beta Access": [
-        ""
+        "Ενεργοποίηση πρόσβασης Beta"
       ],
       "Start using ${ appName }": [
         "Ξεκινήστε να χρησιμοποιείτε το ${ appName }"
@@ -3428,24 +3431,24 @@
     },
     "Onboarding Proton Drive Info": {
       "${ appName } is currently in early access and only available to users with a paid plan.": [
-        ""
+        "${ appName } είναι αυτήν τη στιγμή στην πρόωρη πρόσβαση και μόνο διαθέσιμος σε χρήστες πλάνων επί πληρωμή."
       ],
       "${ appName } is currently only available if you enable Beta Access.": [
-        ""
+        "${ appName } είναι διαθέσιμη προς το παρόν μόνο εάν ενεργοποιήσετε την Πρόσβαση Beta."
       ],
       "Protect all your files with end-to-end encryption. Use ${ appName } to store and share your files securely.": [
-        ""
+        "Προστατέψτε όλα τα αρχεία σας με κρυπτογράφηση από άκρο σε άκρο. Χρησιμοποιήστε το ${ appName } για να αποθηκεύσετε και να μοιραστείτε τα αρχεία σας με ασφάλεια."
       ]
     },
     "Onboarding Proton Drive Title": {
       "${ appName } is in Beta": [
-        ""
+        "${ appName } είναι σε Beta"
       ],
       "Meet your new secure file storage": [
-        ""
+        "Γνωρίστε τον νέο ασφαλή χώρο αποθήκευσης αρχείων"
       ],
       "Upgrade to access ${ appName }": [
-        ""
+        "Αναβάθμιση σε πρόσβαση σε ${ appName }"
       ]
     },
     "Option": {
@@ -3627,7 +3630,7 @@
         "Πρόσβαση σε μπλοκαρισμένο περιεχόμενο"
       ],
       "Access to ${ driveAppName } (beta)": [
-        ""
+        "Πρόσβαση στο ${ driveAppName } (beta)"
       ],
       "All ${ PLAN_NAMES[PLANS.VPNPLUS] } plan features": [
         "Όλα ${ PLAN_NAMES[PLANS.VPNPLUS] } χαρακτηριστικά πλάνου"
@@ -3737,7 +3740,7 @@
     },
     "Refresh on apply warning": {
       "Note: the service will reload after you click the Apply button.": [
-        ""
+        "Σημείωση: η υπηρεσία θα φορτωθεί ξανά αφού κάνετε κλικ στο κουμπί Εφαρμογή."
       ]
     },
     "Select files": {
@@ -3753,7 +3756,7 @@
         "Αναβάθμιση αποθηκευτικού χώρου"
       ],
       "Your current storage:": [
-        ""
+        "Ο τρέχων χώρος αποθήκευσης:"
       ]
     },
     "Success": {
@@ -3777,8 +3780,8 @@
         "Οι επαφές διαγράφηκαν"
       ],
       "Contact group deleted": [
-        "",
-        ""
+        "Η ομάδα επαφών διαγράφηκε",
+        "Η ομάδες επαφών διαγράφηκαν"
       ],
       "Contact saved": [
         "Η επαφή αποθηκεύτηκε"
@@ -3821,9 +3824,6 @@
       ]
     },
     "Suffix for price": {
-      "/ mo": [
-        "/ μήνα"
-      ],
       "/ month": [
         "/ μήνα"
       ]
@@ -3859,7 +3859,7 @@
     },
     "TableHeader": {
       "# of accesses": [
-        ""
+        "# των προσβάσεων"
       ],
       "Actions": [
         "Ενέργειες"
@@ -3938,7 +3938,7 @@
     },
     "Title": {
       "# of accesses": [
-        ""
+        "# των προσβάσεων"
       ],
       "${ appName } customization": [
         "Προσαρμογή ${ appName }"
@@ -3982,7 +3982,7 @@
         "Πίσω"
       ],
       "Beta Access": [
-        ""
+        "Beta Πρόσβαση"
       ],
       "Billing cycle": [
         "Κύκλος χρέωσης"
@@ -4083,13 +4083,13 @@
         "Υποβάθμιση λογαριασμού"
       ],
       "Download canceled": [
-        ""
+        "Η λήψη ακυρώθηκε"
       ],
       "Download completed": [
         "Η λήψη ολοκληρώθηκε"
       ],
       "Download failed": [
-        ""
+        "Η λήψη απέτυχε"
       ],
       "Downloading": [
         "Γίνεται Λήψη"
@@ -4191,7 +4191,7 @@
         "Διαχείριση ασφαλούς συνδέσμου"
       ],
       "Manage share": [
-        ""
+        "Διαχείριση κοινής χρήσης"
       ],
       "Merge contacts": [
         "Συγχώνευση επαφών"
@@ -4224,7 +4224,7 @@
         "Έγινε άνοιγμα μενού βοήθειας"
       ],
       "Open settings menu": [
-        ""
+        "Άνοιγμα μενού ρυθμίσεων"
       ],
       "Other information": [
         "Άλλες πληροφορίες"
@@ -4302,7 +4302,7 @@
         "Ρυθμίσεις"
       ],
       "Share via link": [
-        ""
+        "Κοινοποίηση με σύνδεσμο"
       ],
       "Shared": [
         "Κοινοποιημένα"
@@ -4323,7 +4323,7 @@
         "Διακοπή κοινής χρήσης"
       ],
       "Stop sharing with everyone?": [
-        ""
+        "Σταμάτημα κοινωποίησης με όλους;"
       ],
       "Subtotal": [
         "Υποσύνολο"
@@ -4344,7 +4344,7 @@
         "Τύπος"
       ],
       "Unsupported browser": [
-        "Μη υποστηριζόμενο πρόγραμμα περιήγησης"
+        "Μη υποστηριζόμενος περιηγητής"
       ],
       "Upgrade required": [
         "Απαιτείται Ενημέρωση"
@@ -4391,7 +4391,7 @@
         "Η επιλογή \"Αυτόματο\" υποδεικνύει ότι θα χρησιμοποιηθεί η μορφή κειμένου στην σύνταξη, για την αποστολή του μηνύματος στον συγκεκριμένο χρήστη. Το \"απλό κείμενο\" υποδηλώνει ότι το μήνυμα θα μετατρέπεται πάντα σε απλό κείμενο κατά την αποστολή."
       ],
       "Create multiple email addresses linked to your account, e.g. username2@protonmail.com": [
-        ""
+        "Δημιουργήστε πολλαπλές διευθύνσεις ηλεκτρονικού ταχυδρομείου που συνδέονται με το λογαριασμό σας, π.χ. username2@protonmail.com"
       ],
       "Defends against threats to VPN privacy by passing your Internet traffic through multiple servers.": [
         "Αμύνεται κατά των απειλών ενάντια στο απόρρητο του VPN, κατευθύνοντας τη διαδικτυακή σας κίνηση διαμέσου πολλαπλών διακομιστών."
@@ -4406,7 +4406,7 @@
         "Η έκπτωση ισχύει για τον κύκλο χρέωσης δύο ετών"
       ],
       "Each imported email will have this label": [
-        ""
+        "Κάθε εισαγόμενο μήνυμα ηλεκτρονικού ταχυδρομείου θα έχει αυτήν την ετικέτα"
       ],
       "Email encryption forces email signature to help authenticate your sent messages": [
         "Η κρυπτογράφηση μέσω ηλεκτρονικού ταχυδρομείου υποχρεώνει την ύπαρξη υπογραφής ηλεκτρονικού ταχυδρομείου για να σας βοηθήσει να πιστοποιήσετε τα απεσταλμένα μηνύματα"
@@ -4433,7 +4433,7 @@
         "Αν έχετε αγοράσει έναν κωδικό δώρου ή έχετε λάβει ένα από την ομάδα υποστήριξης, μπορείτε να τον εισάγετε εδώ."
       ],
       "Inactive sharing link": [
-        ""
+        "Απενεργός σύνδεσμος κοινής χρήσης"
       ],
       "Multi-user support is only applicable to plans with 2 or more users": [
         "Η υποστήριξη πολλαπλών χρηστών ισχύει μόνο για πρόγραμμα με 2 ή περισσότερους χρήστες"
@@ -4445,16 +4445,16 @@
         "Δρομολογήστε την κυκλοφορία σας στο Διαδίκτυο μέσω του δικτύου Tor με ένα μόνο κλικ."
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
-        "Επιλέξτε το σχέδιο PGP που θα χρησιμοποιηθεί κατά την υπογραφή ή την κρυπτογράφηση σε ένα χρήστη. Σημειώστε ότι το PGP / Inline αναγκάζει την προβολή ως απλά μηνύματα κειμένου"
+        "Επιλέξτε το σχέδιο PGP για χρήση στην υπογραφή και κρυπτογράφηση προς έναν χρήστη. Σημειώστε ότι το ενσωματωμένο PGP επιβάλει μηνύματα απλού κειμένου"
       ],
       "Support for file sharing protocols such as BitTorrent.": [
         "Υποστήριξη για πρωτόκολλα κοινής χρήσης αρχείων όπως το BitTorrent."
       ],
       "System subfolders will show up as separate folders in ProtonMail": [
-        ""
+        "Οι υποφάκελοι συστήματος θα εμφανιστούν ως ξεχωριστοί φάκελοι στο ProtonMail"
       ],
       "The import will start with the most recent messages.": [
-        ""
+        "Η εισαγωγή θα ξεκινήσει με τα πιο πρόσφατα μηνύματα."
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Μεταφορτώστε ένα δημόσιο κλειδί (public key), για να ενεργοποιήσετε την αποστολή από άκρο σε άκρο κρυπτογραφημένων ηλεκτρονικών μηνυμάτων, από το ένα email σε άλλο email, στο παρόν μήνυμα ηλεκτρονικού ταχυδρομείου"
@@ -4463,7 +4463,7 @@
         "Χρήση πολλαπλών διευθύνσεων / ψευδωνύμων που συνδέονται με το λογαριασμό σας, π.χ. username2@protonmail.com"
       ],
       "Use the personal address username@pm.me to send emails": [
-        ""
+        "Χρησιμοποιήστε την προσωπική διεύθυνση username@pm.me για να στείλετε μηνύματα ηλεκτρονικού ταχυδρομείου"
       ],
       "You do not have any contacts to export": [
         "Δεν έχετε επαφές προς εξαγωγή"
@@ -4600,8 +4600,8 @@
     },
     "Warning": {
       "Are you sure you want to permanently delete ${ count } contact group?": [
-        "",
-        ""
+        "Είστε βέβαιοι ότι θέλετε να διαγράψετε οριστικά ${ count } ομάδα επαφής;",
+        "Είστε βέβαιοι ότι θέλετε να διαγράψετε οριστικά τις ${ count } ομάδα επαφών;"
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Είστε βέβαιοι ότι θέλετε να διαγράψετε οριστικά ${ count } επαφή;",
@@ -4629,7 +4629,7 @@
         "Το Proton θα συγχωνεύσει όλους τους φακέλους ίδιου ονόματος. Για αποφυγή της συγχώνευσης, αλλάξτε τα ονόματα πριν την εισαγωγή."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
-        ""
+        "Οι αναφορές δεν είναι κρυπτογραφημένες από άκρο σε άκρο, παρακαλούμε μην στέλνετε ευαίσθητες πληροφορίες."
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "Ορισμένες από τις επαφές που θα συγχωνευθούν, εμφανίζουν σφάλματα. Ελέγξτε τα ξεχωριστά"
@@ -4650,13 +4650,13 @@
         "Αυτή η λειτουργία απαιτεί πληρωμένο λογαριασμό Proton"
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
-        ""
+        "Δυστυχώς, δεν είμαστε συνδεδεμένοι αυτή τη στιγμή. Παρακαλούμε συμπληρώστε την παρακάτω φόρμα για να περιγράψετε το πρόβλημά σας και θα το εξετάσουμε και θα επικοινωνήσουμε μαζί σας όταν επιστρέψουμε στο διαδίκτυο."
       ],
       "You will lose any customization you made so far.": [
-        ""
+        "Θα χάσετε οποιαδήποτε προσαρμογές που κάνατε μέχρι στιγμής."
       ],
       "Your local date & time settings seem to be out of sync.": [
-        ""
+        "Οι τοπικές ρυθμίσεις σας ημερομηνίας και ώρας φαίνονται να είναι εκτός συγχρονισμού."
       ]
     }
   }
