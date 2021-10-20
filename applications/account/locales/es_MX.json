@@ -1258,6 +1258,11 @@
         "20/usuario *"
       ]
     },
+    "Calendar import section description": {
+      "You can import ICS files from another calendar to ${ CALENDAR_APP_NAME }. This lets you quickly import one event or your entire agenda.": [
+        "Puede importar archivos ICS de otro calendario a ${ CALENDAR_APP_NAME }. Esto le permite importar rápidamente un evento o toda su agenda."
+      ]
+    },
     "Calendar limit warning": {
       "You have reached the maximum of ${ calendarsLimit } calendar.": [
         "Ha alcanzado el máximo de ${ calendarsLimit } calendario.",
@@ -1934,9 +1939,9 @@
       "Please enable multi-user support before adding users to your organization.": [
         "Habilite el soporte multi usuario antes de añadir usuarios a su organización."
       ],
-      "Please fix the highlighted conflicts to proceed.": [
-        "",
-        ""
+      "Please fix the highlighted conflict to proceed.": [
+        "Solucione el conflicto resaltado para continuar.",
+        "Solucione los conflictos resaltados para continuar."
       ],
       "Please generate keys before you try to change your password.": [
         "Genere claves antes de intentar cambiar su contraseña."
@@ -2200,9 +2205,6 @@
       ],
       "Event": [
         "Evento"
-      ],
-      "Event duration not supported": [
-        "Duración del evento no admitido"
       ],
       "Event validation failed": [
         "Falló la validación del evento"
@@ -4038,8 +4040,8 @@
       "Server load": [
         "Carga del servidor"
       ],
-      "Servers are unreachable.": [
-        "Los servidores no están disponibles."
+      "Servers are unreachable. Please try again in a few minutes": [
+        "No hay conexión con los servidores. Intente de nuevo en unos minutos."
       ],
       "Session timed out.": [
         "Sesión agotada."
@@ -4358,9 +4360,6 @@
       ],
       "You can generate a new encryption key if you think your previous key has been compromised.": [
         "Puede generar una clave de cifrado nueva si cree que la anterior ha sido comprometida."
-      ],
-      "You can import ICS files from another calendar to ${ CALENDAR_APP_NAME }. This lets you quickly import one event or your entire agenda.": [
-        "Puede importar archivos ICS de otro calendario a ${ CALENDAR_APP_NAME }. Esto le permite importar rápidamente un evento o toda su agenda."
       ],
       "You can now receive messages to your @pm.me address. Upgrade to a paid plan to also send emails using your @pm.me address and create additional @pm.me addresses.": [
         "Ahora puede recibir mensajes a su dirección @pm.me. Actualice a un plan de pago para enviar también correos usando su dirección @pm.me y crear direcciones @pm.me adicionales."
@@ -5095,8 +5094,8 @@
       "Default notifications": [
         "Notificaciones por defecto"
       ],
-      "Default PGP settings": [
-        "Ajustes PGP por defecto"
+      "Default PGP scheme": [
+        "Esquema PGP por defecto"
       ],
       "Default view": [
         "Vista por defecto"
@@ -5810,6 +5809,7 @@
     },
     "Loading info": {
       "${ createdCalendars } of ${ calendarsToBeCreated } created": [
+        "${ createdCalendars } de ${ calendarsToBeCreated } creado",
         "${ createdCalendars } de ${ calendarsToBeCreated } creados"
       ],
       "Almost there": [
@@ -7286,9 +7286,6 @@
       ]
     },
     "Suffix for price": {
-      "/ mo": [
-        "/mes"
-      ],
       "/ month": [
         "/mes"
       ]
@@ -7330,6 +7327,20 @@
       ],
       "vCard field": [
         "Campo vCard"
+      ]
+    },
+    "Time period": {
+      "account creation date": [
+        "fecha de creación de la cuenta"
+      ],
+      "the last 12 months": [
+        "los últimos 12 meses"
+      ],
+      "the last 3 months": [
+        "los últimos 3 meses"
+      ],
+      "the last month": [
+        "el último mes"
       ]
     },
     "Time unit": {

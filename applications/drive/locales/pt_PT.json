@@ -1336,6 +1336,9 @@
       "You must set a name": [
         "Tem de definir um nome"
       ],
+      "Your browser does not support uploading folders": [
+        ""
+      ],
       "Your import will not be processed.": [
         "A sua importação não será processada."
       ]
@@ -1939,7 +1942,7 @@
         "Se acredita que houve um erro, por favor, contacte-nos em ${ contactLink }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
-        "Se não encontra o email na sua caixa de entrada, veja na pasta de assédio."
+        "Se não encontra o email na sua caixa de entrada, veja na pasta de spam."
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         ""
@@ -2162,8 +2165,8 @@
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20-personal-calendar limit. You can also merge imported calendars with existing Proton calendars.": [
         ""
       ],
-      "Servers are unreachable.": [
-        "Os servidores estão inacessíveis."
+      "Servers are unreachable. Please try again in a few minutes": [
+        ""
       ],
       "Session timed out.": [
         "A sessão expirou."
@@ -2242,7 +2245,7 @@
         "Isto vai sobrescrever a pasta existente"
       ],
       "To fight spam and abuse, please verify you are human.": [
-        "Para combater o assédio e o abuso, por favor confirme que é um ser humano."
+        "Para combater spam e abuso, verifique se você é humano."
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "Para assinar novamente os contactos, temos de os verificar todos contra a lista de chaves de encriptação disponíveis na conta. Se não houver correspondências, o contacto será assinado de novo com a chave principal."
@@ -2429,7 +2432,7 @@
         "Funcionalidades personalizáveis"
       ],
       "ProtonMail cannot be used for mass emailing or spamming. Legitimate emails are unlimited.": [
-        "O ProtonMail não pode ser utilizado para enviar emails em lote ou para assédio. O envio de emails legítimos é ilimitado."
+        "O ProtonMail não pode ser utilizado para enviar emails em lote ou para spam. O envio de emails legítimos é ilimitado."
       ]
     },
     "Info for cash payment method": {
@@ -2522,7 +2525,7 @@
         "Ir para Enviado"
       ],
       "Go to Spam": [
-        "Ir para Assédio"
+        "Ir para Spam"
       ],
       "Go to Starred": [
         "Ir para Com estrela"
@@ -2567,7 +2570,7 @@
         "Mover para Caixa de entrada"
       ],
       "Move to Spam": [
-        "Mover para Assédio"
+        "Mover para Spam"
       ],
       "Move to Trash": [
         "Mover para Lixo"
@@ -2736,9 +2739,6 @@
       "Country": [
         "País"
       ],
-      "Cryptographic scheme": [
-        "Esquema de encriptação"
-      ],
       "CVV code": [
         "Código CVV"
       ],
@@ -2870,6 +2870,9 @@
       ],
       "Payer": [
         "Pagante"
+      ],
+      "PGP scheme": [
+        ""
       ],
       "Phone number": [
         "Número de telefone"
@@ -3821,9 +3824,6 @@
       ]
     },
     "Suffix for price": {
-      "/ mo": [
-        ""
-      ],
       "/ month": [
         "/mês"
       ]

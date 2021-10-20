@@ -297,7 +297,7 @@
         "Змінити адресу е-пошти"
       ],
       "Edit label": [
-        "Змінити мітку"
+        "Редагувати мітку"
       ],
       "Edit phone number": [
         "Змінити номер телефону"
@@ -1897,7 +1897,7 @@
         "${ error.message } для <${ email }>. Щоб розв'язати проблему можете додати інший ключ або вимкнути шифрування для цього контакту."
       ],
       "A group with this name already exists": [
-        "Група з таким іменем вже існує"
+        "Група з такою назвою вже існує"
       ],
       "A problem occurred, please try again": [
         "Виникла проблема. Повторіть спробу"
@@ -2137,10 +2137,10 @@
         "Активуйте пошук вмісту знову"
       ],
       "Please fix the highlighted conflict to proceed.": [
-        "",
-        "",
-        "",
-        ""
+        "Виправте вказану проблему, щоб продовжити.",
+        "Виправте вказані проблеми, щоб продовжити.",
+        "Виправте вказані проблеми, щоб продовжити.",
+        "Виправте вказані проблеми, щоб продовжити."
       ],
       "Please refresh the page.": [
         "Будь ласка, оновіть сторінку."
@@ -2379,9 +2379,6 @@
       ],
       "End time out of bounds": [
         "Час завершення поза припустимими межами"
-      ],
-      "Event duration not supported": [
-        "Тривалість події не підтримується"
       ],
       "Event validation failed": [
         "Не вдалося перевірити подію"
@@ -2923,10 +2920,10 @@
         "Знайдено ${ occurrencesInBody } повторень"
       ],
       "${ occurrencesInBody } occurrence found in the mail content": [
-        "",
-        "",
-        "",
-        ""
+        "Знайдено ${ occurrencesInBody } випадок у вмісті пошти",
+        "Знайдено ${ occurrencesInBody } випадки у вмісті пошти",
+        "Знайдено ${ occurrencesInBody } випадків у вмісті пошти",
+        "Знайдено ${ occurrencesInBody } випадки у вмісті пошти"
       ],
       "${ pureAttachmentsCount } file attached": [
         "${ pureAttachmentsCount } вкладений файл",
@@ -3382,10 +3379,10 @@
         "вкладених файлів"
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name and a valid Sieve script.": [
-        "Фільтри працюють для всіх листів, включаючи вхідні та надіслані. Кожен фільтр повинен містити принаймні назву та дійсний сценарій Sieve."
+        "Фільтри працюють для всіх листів, включно з вхідними та надісланими. Кожен фільтр повинен містити принаймні назву та дійсний сценарій Sieve."
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
-        "Фільтри працюють для всіх листів, включаючи вхідні та надіслані. Кожен фільтр повинен містити принаймні назву, умову та дію."
+        "Фільтри працюють для всіх листів, включно з вхідними та надісланими. Кожен фільтр повинен містити принаймні назву, умову та дію."
       ],
       "For families and small teams; includes both Mail and VPN.": [
         "Для сімей та невеликих команд; включає пошту і VPN."
@@ -3786,6 +3783,9 @@
       "Scheduled": [
         "Заплановано"
       ],
+      "Scheduled send of this message will be cancelled.": [
+        "Заплановане надсилання цього повідомлення буде скасовано."
+      ],
       "Scheduling message...": [
         "Планування повідомлення..."
       ],
@@ -3810,8 +3810,8 @@
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
         "Надсилання повідомлень з адреси @pm.me є платною функцією. Ваше повідомлення буде надіслано зі стандартної адреси ${ email }"
       ],
-      "Servers are unreachable.": [
-        "Сервери недоступні."
+      "Servers are unreachable. Please try again in a few minutes": [
+        "Сервери недоступні. Спробуйте знову за кілька хвилин"
       ],
       "Session timed out.": [
         "Сеанс завершився."
@@ -3908,6 +3908,9 @@
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Цей браузер не підтримує перегляд PDF документів. Будь ласка, завантажте файл."
+      ],
+      "This conversation contains a scheduled message. Sending of this message will be cancelled.": [
+        "Ця розмова має заплановане повідомлення. Надсилання цього повідомлення буде скасовано."
       ],
       "This conversation contains non-trashed messages.": [
         "Ця розмова містить не видалені повідомлення."
@@ -4624,9 +4627,6 @@
       "Country": [
         "Країна"
       ],
-      "Cryptographic scheme": [
-        "Криптографічна схема"
-      ],
       "CVV code": [
         "Код CVV"
       ],
@@ -4785,6 +4785,9 @@
       ],
       "Payer": [
         "Платник"
+      ],
+      "PGP scheme": [
+        "PGP-схема"
       ],
       "Phone number": [
         "Номер телефону"
@@ -5151,10 +5154,10 @@
     },
     "Loading info": {
       "${ createdCalendars } of ${ calendarsToBeCreated } created": [
-        "",
-        "",
-        "",
-        ""
+        "${ createdCalendars } з ${ calendarsToBeCreated } створено",
+        "${ createdCalendars } з ${ calendarsToBeCreated } створено",
+        "${ createdCalendars } з ${ calendarsToBeCreated } створено",
+        "${ createdCalendars } з ${ calendarsToBeCreated } створено"
       ],
       "Almost there": [
         "Майже готово"
@@ -6230,7 +6233,7 @@
         "${ elementsCount } розмову позначено непрочитаною.",
         "${ elementsCount } розмови позначено непрочитаними.",
         "${ elementsCount } розмов позначено непрочитаними.",
-        "${ elementsCount } розмову позначено непрочитаною."
+        "${ elementsCount } розмови позначено непрочитаною."
       ],
       "${ elementsCount } conversation moved to ${ folderName } and sender added to Allow List.": [
         "{ elementsCount } розмову переміщено до ${ folderName }, а відправника додано до списку дозволених.",
@@ -6524,16 +6527,16 @@
     },
     "Time period": {
       "account creation date": [
-        ""
+        "дата створення облікового запису"
       ],
       "the last 12 months": [
-        ""
+        "останні 12 місяців"
       ],
       "the last 3 months": [
-        ""
+        "останні 3 місяці"
       ],
       "the last month": [
-        ""
+        "останній місяць"
       ]
     },
     "Time unit": {
@@ -6916,6 +6919,9 @@
       ],
       "Move to trash": [
         "Перемістити до смітника"
+      ],
+      "Moving a scheduled message": [
+        "Переміщення запланованого повідомлення"
       ],
       "Network error": [
         "Помилка мережі"
@@ -7336,7 +7342,7 @@
         "Proton об'єднає всі теки з однаковими назвами. Щоб уникнути цього, змініть їх назви перед імпортуванням."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
-        "Повідомлення не шифруються наскрізно. Будь ласка, не відправляйте в них будь-яку конфіденційну інформацію."
+        "Звіти не захищаються наскрізним шифруванням. Будь ласка, не надсилайте в них жодних приватних даних."
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "Деякі об'єднувані контакти мають помилки. Будь ласка, перегляньте їх окремо"

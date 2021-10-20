@@ -2332,9 +2332,6 @@
       "End time out of bounds": [
         "Sluttid uden for grænserne"
       ],
-      "Event duration not supported": [
-        "Begivenhedens varighed understøttes ikke"
-      ],
       "Event validation failed": [
         "Validering af begivenhed mislykkedes"
       ],
@@ -3634,6 +3631,9 @@
       "Scheduled": [
         "Planlagt"
       ],
+      "Scheduled send of this message will be cancelled.": [
+        ""
+      ],
       "Scheduling message...": [
         "Planlægger besked..."
       ],
@@ -3658,8 +3658,8 @@
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
         "Afsendelse af beskeder fra @pm.me-adresse er en betalt funktion. Din besked afsendes via din standardadresse ${ email }"
       ],
-      "Servers are unreachable.": [
-        "Serverne er utilgængelige."
+      "Servers are unreachable. Please try again in a few minutes": [
+        ""
       ],
       "Session timed out.": [
         "Din session er udløbet."
@@ -3754,6 +3754,9 @@
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Denne browser understøtter ikke forhåndsvisning af PDF-dokumenter. Download venligst filen."
+      ],
+      "This conversation contains a scheduled message. Sending of this message will be cancelled.": [
+        ""
       ],
       "This conversation contains non-trashed messages.": [
         "Denne samtale indeholder ikke-kasserede beskeder."
@@ -4450,9 +4453,6 @@
       "Country": [
         "Land"
       ],
-      "Cryptographic scheme": [
-        "Krypteringsmetode"
-      ],
       "CVV code": [
         "CVV-kode"
       ],
@@ -4611,6 +4611,9 @@
       ],
       "Payer": [
         "Betaler"
+      ],
+      "PGP scheme": [
+        ""
       ],
       "Phone number": [
         "Telefonnummer"
@@ -6636,6 +6639,9 @@
       ],
       "Move to trash": [
         "Flyt til papirkurv"
+      ],
+      "Moving a scheduled message": [
+        ""
       ],
       "Network error": [
         "Netværksfejl"

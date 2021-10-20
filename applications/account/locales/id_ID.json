@@ -1249,6 +1249,11 @@
         "20 / pengguna *"
       ]
     },
+    "Calendar import section description": {
+      "You can import ICS files from another calendar to ${ CALENDAR_APP_NAME }. This lets you quickly import one event or your entire agenda.": [
+        "Anda dapat mengimpor berkas-berkas ICS dari kalender lain ke dalam ${ CALENDAR_APP_NAME }. Dengan ini, Anda dapat mengimpor berbagai acara maupun agenda yang Anda miliki secara cepat."
+      ]
+    },
     "Calendar limit warning": {
       "You have reached the maximum of ${ calendarsLimit } calendar.": [
         "Anda mencapai batas maksimal ${ calendarsLimit } kalender."
@@ -1914,7 +1919,7 @@
       "Please enable multi-user support before adding users to your organization.": [
         "Harap aktifkan dukungan multi-pengguna sebelum menambahkan pengguna ke organisasi Anda."
       ],
-      "Please fix the highlighted conflicts to proceed.": [
+      "Please fix the highlighted conflict to proceed.": [
         "Harap selesaikan permasalahan yang ada terlebih dahulu sebelum melanjutkan."
       ],
       "Please generate keys before you try to change your password.": [
@@ -2180,9 +2185,6 @@
       "Event": [
         "Peristiwa"
       ],
-      "Event duration not supported": [
-        "Durasi acara tidak didukung"
-      ],
       "Event validation failed": [
         "Validasi acara gagal"
       ],
@@ -2302,7 +2304,7 @@
         "Berkas ICS terlampir tidak dapat didekripsi"
       ],
       "Attached ICS file could not be parsed": [
-        "Berkas ICS terlampir tidak dapar diurai"
+        "Berkas ICS terlampir tidak dapat diurai"
       ],
       "Invalid invitation": [
         "Undangan tidak valid"
@@ -2384,7 +2386,7 @@
         "Koneksi internet terputus, menyebabkan proses ekspor gagal. Silakan coba lagi."
       ],
       "You can save an ICS file of the events that were successfully exported.": [
-        "Anda dapat menyimpan berkas ICS acara yang berhasil diekspor."
+        "Anda dapat menyimpan berkas ICS milik acara yang telah berhasil diekspor."
       ]
     },
     "Feature": {
@@ -3984,8 +3986,8 @@
       "Server load": [
         "Beban server"
       ],
-      "Servers are unreachable.": [
-        "Server tidak terjangkau."
+      "Servers are unreachable. Please try again in a few minutes": [
+        "Server-server kami sedang tidak dapat dijangkau. Silakan coba lagi dalam beberapa menit"
       ],
       "Session timed out.": [
         "Sesi habis."
@@ -4304,9 +4306,6 @@
       ],
       "You can generate a new encryption key if you think your previous key has been compromised.": [
         "Anda dapat membuat kunci enkripsi baru jika Anda pikir kunci sebelumnya bocor."
-      ],
-      "You can import ICS files from another calendar to ${ CALENDAR_APP_NAME }. This lets you quickly import one event or your entire agenda.": [
-        "Anda dapat mengimpor berkas-berkas ICS dari kalender lain ke dalam ${ CALENDAR_APP_NAME }. Dengan ini, Anda dapat mengimpor acara ataupun agenda yang Anda miliki secara cepat."
       ],
       "You can now receive messages to your @pm.me address. Upgrade to a paid plan to also send emails using your @pm.me address and create additional @pm.me addresses.": [
         "Kini Anda dapat menerima pesan melalui alamat @pm.me. Aktifkan paket berbayar supaya bisa mengirim email dari alamat @pm.me dan membuat alamat @pm.me tambahan."
@@ -5037,8 +5036,8 @@
       "Default notifications": [
         "Notifikasi bawaan"
       ],
-      "Default PGP settings": [
-        "Pengaturan PGP bawaan"
+      "Default PGP scheme": [
+        "Skema PGP default"
       ],
       "Default view": [
         "Tampilan bawaan"
@@ -7214,9 +7213,6 @@
       ]
     },
     "Suffix for price": {
-      "/ mo": [
-        "/ bln"
-      ],
       "/ month": [
         "/ bulan"
       ]
@@ -7258,6 +7254,20 @@
       ],
       "vCard field": [
         "Bidang vCard"
+      ]
+    },
+    "Time period": {
+      "account creation date": [
+        "tanggal pembuatan akun"
+      ],
+      "the last 12 months": [
+        "12 bulan terakhir"
+      ],
+      "the last 3 months": [
+        "3 bulan terakhir"
+      ],
+      "the last month": [
+        "sebulan terakhir"
       ]
     },
     "Time unit": {

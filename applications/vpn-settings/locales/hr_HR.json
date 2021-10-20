@@ -1625,8 +1625,8 @@
       "Server load": [
         "Opterećenje poslužitelja"
       ],
-      "Servers are unreachable.": [
-        "Poslužitelji nisu dostupni."
+      "Servers are unreachable. Please try again in a few minutes": [
+        ""
       ],
       "Session timed out.": [
         "Sesija je istekla."
@@ -3125,9 +3125,6 @@
       ]
     },
     "Suffix for price": {
-      "/ mo": [
-        ""
-      ],
       "/ month": [
         "/ mjesečno"
       ]
@@ -3801,11 +3798,11 @@
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Izvještaji nisu end-to-end šifrirani. Molimo da ne šaljete nikakve osjetljive podatke."
       ],
-      "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
+      "The date and time settings on your device are out of sync. ${ learnMore }": [
         ""
       ],
-      "Your local date & time settings seem to be out of sync.": [
-        "Vaše lokalne postavke datuma i vremena nisu sinkronizirane."
+      "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
+        ""
       ]
     }
   }
