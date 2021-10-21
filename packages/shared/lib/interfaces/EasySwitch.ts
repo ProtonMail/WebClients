@@ -75,6 +75,7 @@ export interface CreateImportPayload {
         Sasl: AuthenticationMethod;
         Code?: string;
         AllowSelfSigned?: number;
+        RedirectUri?: string; // for reconnection
     };
     [ImportType.CALENDAR]?: {};
     [ImportType.CONTACTS]?: {};
@@ -250,8 +251,8 @@ export interface Importer {
         [ImportType.CALENDAR]?: ImporterActiveProps;
         [ImportType.CONTACTS]?: ImporterActiveProps;
     };
-    ImapHost?: string;
-    ImapPort?: string;
+    ImapHost: string;
+    ImapPort: string;
     Sasl: AuthenticationMethod;
     AllowSelfSigned: boolean;
     Email: string; // Soon to be deprecated

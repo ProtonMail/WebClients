@@ -1,25 +1,88 @@
 import { c } from 'ttag';
-import { cancelImport, resumeImport } from '@proton/shared/lib/api/easySwitch';
+import { cancelImport, createToken, resumeImport, updateImport } from '@proton/shared/lib/api/easySwitch';
+import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 
-import { NormalizedImporter, ImportStatus } from '@proton/shared/lib/interfaces/EasySwitch';
+import {
+    NormalizedImporter,
+    ImportStatus,
+    ImportError,
+    AuthenticationMethod,
+    OAUTH_PROVIDER,
+    ImportType,
+    OAuthProps,
+    ImportToken,
+} from '@proton/shared/lib/interfaces/EasySwitch';
 
 import { Alert, ConfirmModal, DropdownActions, Button } from '../../../components';
-import { useApi, useLoading, useEventManager, useModals, useNotifications } from '../../../hooks';
+import { useApi, useLoading, useEventManager, useModals, useNotifications, useAddresses } from '../../../hooks';
+import useOAuthPopup from '../../../hooks/useOAuthPopup';
+import {
+    G_OAUTH_SCOPE_CALENDAR,
+    G_OAUTH_SCOPE_CONTACTS,
+    G_OAUTH_SCOPE_DEFAULT,
+    G_OAUTH_SCOPE_MAIL,
+} from '../constants';
+
+import ImportMailModal from '../mail/modals/ImportMailModal';
 
 interface Props {
     activeImport: NormalizedImporter;
 }
 
 const ActiveImportRowActions = ({ activeImport }: Props) => {
-    const { ID, Active, Product } = activeImport;
-    const { State } = Active || {};
+    const { ID, Active, Product, Sasl } = activeImport;
+    const { State, ErrorCode } = Active || {};
+
+    const { triggerOAuthPopup } = useOAuthPopup();
 
     const api = useApi();
+    const [addresses, loadingAddresses] = useAddresses();
     const { call } = useEventManager();
     const { createModal } = useModals();
     const { createNotification } = useNotifications();
     const [loadingPrimaryAction, withLoadingPrimaryAction] = useLoading();
     const [loadingSecondaryAction, withLoadingSecondaryAction] = useLoading();
+
+    const handleReconnectOAuth = async (ImporterID: string) => {
+        const scopes = [
+            ...G_OAUTH_SCOPE_DEFAULT,
+            Product === ImportType.MAIL && G_OAUTH_SCOPE_MAIL,
+            Product === ImportType.CALENDAR && G_OAUTH_SCOPE_CALENDAR,
+            Product === ImportType.CONTACTS && G_OAUTH_SCOPE_CONTACTS,
+            // checkedTypes[DRIVE] && G_OAUTH_SCOPE_DRIVE,
+        ]
+            .filter(isTruthy)
+            .flat(1);
+
+        triggerOAuthPopup({
+            provider: OAUTH_PROVIDER.GOOGLE,
+            scope: scopes.join(' '),
+            callback: async ({ Code, Provider, RedirectUri }: OAuthProps) => {
+                const { Token }: { Token: ImportToken } = await api(
+                    createToken({
+                        Provider,
+                        Code,
+                        RedirectUri,
+                        // @todo Source: 'import-settings',
+                    })
+                );
+
+                await api(updateImport(ID, { TokenID: Token.ID }));
+                await api(
+                    resumeImport({
+                        ImporterID,
+                        Products: [Product],
+                    })
+                );
+                await call();
+                createNotification({ text: c('Success').t`Resuming import` });
+            },
+        });
+    };
+
+    const handleReconnect = async () => {
+        await createModal(<ImportMailModal addresses={addresses} currentImport={activeImport} />);
+    };
 
     const handleResume = async (ImporterID: string) => {
         await api(
@@ -62,12 +125,21 @@ const ActiveImportRowActions = ({ activeImport }: Props) => {
     const list = [];
 
     if (State === ImportStatus.PAUSED) {
+        const isAuthError = ErrorCode === ImportError.ERROR_CODE_IMAP_CONNECTION;
+
         list.push({
-            text: c('Action').t`Resume`,
+            text: isAuthError ? c('Action').t`Reconnect` : c('Action').t`Resume`,
             onClick: () => {
+                if (isAuthError) {
+                    return withLoadingSecondaryAction(
+                        Sasl === AuthenticationMethod.OAUTH ? handleReconnectOAuth(ID) : handleReconnect()
+                    );
+                }
+
                 return withLoadingSecondaryAction(handleResume(ID));
             },
             loading: loadingSecondaryAction,
+            disabled: loadingAddresses,
         });
     }
 
