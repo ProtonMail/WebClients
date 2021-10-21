@@ -137,7 +137,7 @@ export const useCompose = (
 
             const existingMessage = messageCache.get(localID);
 
-            if (existingMessage?.sending) {
+            if (existingMessage?.sending && !fromUndo) {
                 return;
             }
 
