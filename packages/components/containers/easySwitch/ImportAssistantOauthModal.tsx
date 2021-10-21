@@ -147,7 +147,8 @@ const ImportAssistantOauthModal = ({ addresses, onClose = noop, defaultCheckedTy
 
     const selectedImportTypes = Object.keys(checkedTypes).reduce<ImportType[]>((acc, k) => {
         const key = k as ImportType;
-        if (checkedTypes[key]) {
+        const inTokenScope = modalModel.tokenScope ? modalModel.tokenScope.includes(key) : true;
+        if (checkedTypes[key] && inTokenScope) {
             acc.push(key);
         }
         return acc;
