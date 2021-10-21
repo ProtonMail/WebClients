@@ -69,7 +69,7 @@ export const useMarkAs = () => {
     const history = useHistory();
     const { createNotification } = useNotifications();
 
-    const markAs = useCallback((elements: Element[], labelID = '', status: MARK_AS_STATUS, silent = false) => {
+    const markAs = useCallback((elements: Element[], labelID = '', status: MARK_AS_STATUS, silent = true) => {
         if (!elements.length) {
             return;
         }
