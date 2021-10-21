@@ -59,7 +59,9 @@ const Transfer = <T extends TransferType>({ stats, transfer, type, className, ..
 
             <div className="transfers-manager-list-item-size text-right text-ellipsis" title={`${percentageDone}%`}>
                 {(isProgress || isPaused) && <span className="no-tablet no-mobile">{humanSize(progress)} / </span>}
-                {fileSize !== undefined && humanSize(fileSize)}
+                {fileSize !== undefined
+                    ? humanSize(fileSize)
+                    : isProgress && <Loader className="inline" size="small" />}
             </div>
 
             <div className="transfers-manager-list-item-status flex flex-nowrap flex-align-items-center flex-justify-end text-ellipsis">

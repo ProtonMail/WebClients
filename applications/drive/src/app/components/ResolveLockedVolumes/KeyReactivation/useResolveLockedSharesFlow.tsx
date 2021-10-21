@@ -6,7 +6,7 @@ import { useModals, useNotifications } from '@proton/components';
 import DeleteLockedVolumesConfirmModal from './DeleteLockedVolumesConfirmModal';
 import UnlockDriveConfirmationDialog from './UnlockDriveConfirmationDialog';
 import KeyReactivationModal from './LockedVolumesResolveMethodModal';
-import useFiles from '../../../hooks/drive/useFiles';
+import useDrive from '../../../hooks/drive/useDrive';
 import { useDriveCache } from '../../DriveCache/DriveCacheProvider';
 import { LockedVolumeResolveMethod } from './interfaces';
 
@@ -19,7 +19,7 @@ const useResolveLockedSharesFlow = ({ onSuccess, onError }: ReactivationParams) 
     const lastResolveMethod = useRef<LockedVolumeResolveMethod>(LockedVolumeResolveMethod.ReactivateKeys);
     const currentModalRef = useRef<string | null>(null);
 
-    const { deleteLockedVolumes } = useFiles();
+    const { deleteLockedVolumes } = useDrive();
     const { createModal, removeModal } = useModals();
     const { createNotification } = useNotifications();
     const cache = useDriveCache();

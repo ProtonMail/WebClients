@@ -1,56 +1,37 @@
-import { generateUID } from '@proton/components';
-import { orderBy, areUint8Arrays } from '@proton/shared/lib/helpers/array';
 import { ReadableStream } from 'web-streams-polyfill';
-import { createReadableStreamWrapper } from '@mattiasbuelens/web-streams-adapter';
-import { Api } from '@proton/shared/lib/interfaces';
+
+import { orderBy, areUint8Arrays } from '@proton/shared/lib/helpers/array';
 import runInQueue from '@proton/shared/lib/helpers/runInQueue';
 import { getIsUnreachableError, getIsOfflineError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
-import { noop } from '@proton/shared/lib/helpers/function';
 import { DriveFileBlock } from '@proton/shared/lib/interfaces/drive/file';
-import { queryFileBlock } from '@proton/shared/lib/api/drive/files';
-import { API, TransferCancel } from '@proton/shared/lib/interfaces/drive/transfer';
-import {
-    MAX_THREADS_PER_DOWNLOAD,
-    DOWNLOAD_TIMEOUT,
-    STATUS_CODE,
-    DOWNLOAD_RETRIES_ON_TIMEOUT,
-    BATCH_REQUEST_SIZE,
-} from '@proton/shared/lib/drive/constants';
+import { TransferCancel } from '@proton/shared/lib/interfaces/drive/transfer';
+import { MAX_THREADS_PER_DOWNLOAD, STATUS_CODE, BATCH_REQUEST_SIZE } from '@proton/shared/lib/drive/constants';
 
-import { ObserverStream, streamToBuffer, untilStreamEnd } from '../../utils/stream';
-import { waitUntil } from '../../utils/async';
-import { isTransferCancelError } from '../../utils/transfer';
-import { MAX_RETRIES_BEFORE_FAIL, MAX_TOTAL_BUFFER_SIZE, TIME_TO_RESET_RETRIES } from './constants';
-
-const toPolyfillReadable = createReadableStreamWrapper(ReadableStream);
+import { ObserverStream, untilStreamEnd } from '../../../utils/stream';
+import { waitUntil } from '../../../utils/async';
+import { isTransferCancelError } from '../../../utils/transfer';
+import { MAX_RETRIES_BEFORE_FAIL, MAX_DOWNLOADING_BLOCKS, TIME_TO_RESET_RETRIES } from '../constants';
+import { DownloadStreamControls, DownloadCallbacks } from '../interface';
+import downloadBlock from './downloadBlock';
 
 export type StreamTransformer = (
     stream: ReadableStream<Uint8Array>,
     EncSignature: string
 ) => Promise<ReadableStream<Uint8Array>>;
 
-export interface DownloadControls {
-    start: (api: API) => Promise<void>;
-    cancel: () => void;
-    pause: () => Promise<void>;
-    resume: () => void;
-}
-
-export interface DownloadCallbacks {
+export type DownloadBlocksCallbacks = Omit<
+    DownloadCallbacks,
+    'getBlocks' | 'onInit' | 'onSignatureIssue' | 'getChildren' | 'getKeys'
+> & {
     getBlocks: (
         abortSignal: AbortSignal,
-        pagination?: {
+        pagination: {
             FromBlockIndex: number;
             PageSize: number;
         }
     ) => Promise<DriveFileBlock[] | Uint8Array[]>;
-    onStart?: (stream: ReadableStream<Uint8Array>) => void;
-    onProgress?: (bytes: number) => void;
-    onFinish?: () => void;
-    onError?: (err: any) => void;
-    onNetworkError?: (id: string, err: any) => void;
     transformBlockStream?: StreamTransformer;
-}
+};
 
 /**
  * initDownload prepares download transfer for the DownloadProvider queue.
@@ -58,16 +39,10 @@ export interface DownloadCallbacks {
  * DownloadProvider.
  * How the download itself starts, see start function inside.
  */
-export const initDownload = ({
-    getBlocks,
-    onStart,
-    onProgress,
-    onFinish,
-    onError,
-    onNetworkError,
-    transformBlockStream,
-}: DownloadCallbacks) => {
-    const id = generateUID('drive-transfers');
+export default function initDownloadBlocks(
+    { getBlocks, transformBlockStream, onProgress, onError, onNetworkError, onFinish }: DownloadBlocksCallbacks,
+    downloadBlockCallback = downloadBlock
+) {
     const fileStream = new ObserverStream();
     const fsWriter = fileStream.writable.getWriter();
 
@@ -82,14 +57,17 @@ export const initDownload = ({
     // openpgpjs library. The data exchanges are a bit of downside, therefore
     // we want create web workers manually  in the future that will do download
     // and decryption together. See MAX_THREADS_PER_DOWNLOAD for more info.
-    const start = async (api: Api) => {
+    const start = () => {
         if (abortController.signal.aborted) {
-            throw new TransferCancel({ id });
+            throw new TransferCancel({ message: `Transfer canceled` });
         }
 
         const buffers = new Map<number, { done: boolean; chunks: Uint8Array[] }>();
         let blocksOrBuffer: DriveFileBlock[] | Uint8Array[] = [];
         let fromBlockIndex = 1;
+
+        let blocks: DriveFileBlock[] = [];
+        let activeIndex = 1;
 
         const hasMorePages = (currentPageLength: number) => currentPageLength === BATCH_REQUEST_SIZE;
 
@@ -100,7 +78,7 @@ export const initDownload = ({
                 // If paused before blocks/meta is fetched (DOM Error), restart on resume pause
                 if (paused && isTransferCancelError(err)) {
                     await waitUntil(() => paused === false);
-                    await start(api);
+                    await start();
                     return false;
                 }
                 throw err;
@@ -108,14 +86,6 @@ export const initDownload = ({
 
             return true;
         };
-
-        // Downloads initial page
-        if (!(await getBlocksPaged({ FromBlockIndex: fromBlockIndex, PageSize: BATCH_REQUEST_SIZE }))) {
-            return false;
-        }
-
-        await fsWriter.ready;
-        onStart?.(fileStream.readable);
 
         const preloadBuffer = async () => {
             for (const buffer of blocksOrBuffer) {
@@ -137,15 +107,6 @@ export const initDownload = ({
             await fsWriter.ready;
             await fsWriter.close();
         };
-
-        // If initialized with preloaded buffer instead of blocks to download
-        if (areUint8Arrays(blocksOrBuffer)) {
-            await preloadBuffer();
-            return;
-        }
-
-        let blocks = blocksOrBuffer as DriveFileBlock[];
-        let activeIndex = 1;
 
         const flushBuffer = async (Index: number) => {
             const currentBuffer = buffers.get(Index);
@@ -220,28 +181,17 @@ export const initDownload = ({
                 ongoingNumberOfDownloads++;
                 try {
                     if (!buffers.get(Index)?.done) {
-                        await waitUntil(() => buffers.size < MAX_TOTAL_BUFFER_SIZE || abortController.signal.aborted);
+                        await waitUntil(() => buffers.size < MAX_DOWNLOADING_BLOCKS || abortController.signal.aborted);
 
                         if (abortController.signal.aborted) {
-                            throw new TransferCancel({ id });
+                            throw new TransferCancel({ message: `Transfer canceled` });
                         }
 
-                        const blockStream = toPolyfillReadable(
-                            await api({
-                                ...queryFileBlock(BareURL),
-                                timeout: DOWNLOAD_TIMEOUT,
-                                retriesOnTimeout: DOWNLOAD_RETRIES_ON_TIMEOUT,
-                                signal: abortController.signal,
-                                silence: true,
-                                headers: {
-                                    'pm-storage-token': Token,
-                                },
-                            })
-                        ) as ReadableStream<Uint8Array>;
+                        const blockStream = await downloadBlockCallback(abortController, BareURL, Token);
 
                         const progressStream = new ObserverStream((value) => {
                             if (abortController.signal.aborted) {
-                                throw new TransferCancel({ id });
+                                throw new TransferCancel({ message: `Transfer canceled` });
                             }
                             incompleteProgress.set(Index, (incompleteProgress.get(Index) ?? 0) + value.length);
                             onProgress?.(value.length);
@@ -249,14 +199,13 @@ export const initDownload = ({
                         const rawContentStream = blockStream.pipeThrough(progressStream);
 
                         // Decrypt the file block content using streaming decryption
-                        // TODO: make EncSignature type of string, when downloadShared payload will contain encSignature
                         const transformedContentStream = transformBlockStream
                             ? await transformBlockStream(rawContentStream, EncSignature || '')
                             : rawContentStream;
 
                         await untilStreamEnd(transformedContentStream, async (data) => {
                             if (abortController.signal.aborted) {
-                                throw new TransferCancel({ id });
+                                throw new TransferCancel({ message: `Transfer canceled` });
                             }
                             const buffer = buffers.get(Index);
                             if (buffer) {
@@ -300,11 +249,17 @@ export const initDownload = ({
                      * from the active index
                      */
                     if (e.status === STATUS_CODE.NOT_FOUND && numRetries < MAX_RETRIES_BEFORE_FAIL) {
-                        console.error(`Blocks for download ${id}, might have expired. Retry num: ${numRetries}`);
+                        console.warn(`Blocks for download might have expired. Retry num: ${numRetries}`);
                         return retryDownload(activeIndex);
                     }
 
-                    if (onNetworkError && (getIsUnreachableError(e) || getIsOfflineError(e))) {
+                    // Sometimes the error can be thrown from untilStreamEnd,
+                    // where its simple network error during reading the stream.
+                    // Would be nice if this could be avoided after refactor.
+                    if (
+                        onNetworkError &&
+                        (getIsUnreachableError(e) || getIsOfflineError(e) || e.message === 'network error')
+                    ) {
                         revertProgress();
 
                         // onNetworkError sets the state of the transfer and
@@ -312,7 +267,7 @@ export const initDownload = ({
                         // pausing has to be done first to avoid race (resuming
                         // sooner than pausing).
                         paused = true;
-                        onNetworkError(id, e);
+                        onNetworkError(e);
 
                         // Transfer can be resumed faster than ongoing block
                         // downloads are aborted. Therefore, first we need to
@@ -323,7 +278,9 @@ export const initDownload = ({
                         return;
                     }
 
-                    fsWriter.abort(e).catch(console.error);
+                    if (!isTransferCancelError(e)) {
+                        fsWriter.abort(e).catch(console.error);
+                    }
                     throw e;
                 }
 
@@ -349,20 +306,49 @@ export const initDownload = ({
             return true;
         };
 
-        await startDownload(getBlockQueue());
-        if (!(await downloadTheRestOfBlocks())) {
-            return;
-        }
+        const run = async () => {
+            // Downloads initial page
+            if (!(await getBlocksPaged({ FromBlockIndex: fromBlockIndex, PageSize: BATCH_REQUEST_SIZE }))) {
+                return;
+            }
 
-        // Wait for stream to be flushed
-        await fsWriter.ready;
-        await fsWriter.close();
+            await fsWriter.ready;
+
+            // If initialized with preloaded buffer instead of blocks to download
+            if (areUint8Arrays(blocksOrBuffer)) {
+                await preloadBuffer();
+                return;
+            }
+
+            blocks = blocksOrBuffer;
+
+            await startDownload(getBlockQueue());
+            if (!(await downloadTheRestOfBlocks())) {
+                return;
+            }
+
+            // Wait for stream to be flushed
+            await fsWriter.ready;
+            await fsWriter.close();
+        };
+
+        void run()
+            .then(() => {
+                onFinish?.();
+            })
+            .catch((err) => {
+                abortController.abort();
+                fsWriter.abort(err).catch(console.error);
+                onError?.(err);
+            });
+
+        return fileStream.readable;
     };
 
     const cancel = () => {
         paused = false;
         abortController.abort();
-        const error = new TransferCancel({ id });
+        const error = new TransferCancel({ message: `Transfer canceled` });
         fsWriter.abort(error).catch(console.error);
         onError?.(error);
     };
@@ -380,54 +366,12 @@ export const initDownload = ({
         paused = false;
     };
 
-    const downloadControls: DownloadControls = {
-        start: (api) =>
-            start(api)
-                .then(() => {
-                    onFinish?.();
-                })
-                .catch((err) => {
-                    onError?.(err);
-                    throw err;
-                }),
+    const downloadControls: DownloadStreamControls = {
+        start,
         cancel,
         pause,
         resume,
     };
 
-    return { id, downloadControls };
-};
-
-/**
- * Use startDownload to initialize and start a file download
- * without tracking or necessarily controlling its progress.
- *
- * This function can be utilized when a file need to be downloaded without
- * being added to Transfer Manager. Such use-cases might be thumbnail
- * downloads or showing file previews.
- */
-export const startDownload = (
-    api: API,
-    { getBlocks, transformBlockStream }: Pick<DownloadCallbacks, 'getBlocks' | 'transformBlockStream'>
-) => {
-    let resolve: (value: Promise<Uint8Array[]>) => void = noop;
-    let reject: (reason?: any) => any = noop;
-
-    const contentsPromise = new Promise<Uint8Array[]>((res, rej) => {
-        resolve = res;
-        reject = rej;
-    });
-
-    const { downloadControls } = initDownload({
-        transformBlockStream,
-        getBlocks,
-        onStart: (stream) => resolve(streamToBuffer(stream)),
-    });
-
-    downloadControls.start(api).catch(reject);
-
-    return {
-        contents: contentsPromise,
-        controls: downloadControls,
-    };
-};
+    return downloadControls;
+}
