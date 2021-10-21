@@ -141,7 +141,6 @@ const HeaderExpandedDetails = ({
                             needsMoreProtection={needsMoreProtection}
                             title={title}
                             className="mauto"
-                            isDetails
                         />
                     </span>
                     <span className="flex-align-self-center mr0-5 text-ellipsis" title={title}>
