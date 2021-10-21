@@ -19,6 +19,7 @@ import { getEmbeddedImages, updateImages } from '../../helpers/message/messageIm
 import {
     createEmbeddedImageFromUpload,
     isEmbeddable,
+    matchSameCidOrLoc,
     readContentIDandLocation,
 } from '../../helpers/message/messageEmbeddeds';
 import { MESSAGE_ALREADY_SENT_INTERNAL_ERROR } from '../../constants';
@@ -223,8 +224,8 @@ export const useAttachments = ({
 
             const { cid, cloc } = readContentIDandLocation(attachment);
             const embeddedImages = getEmbeddedImages(message);
-            const embeddedImage = embeddedImages.find((image) => image.cid === cid || image.cloc === cloc);
-            const newEmbeddedImages = embeddedImages.filter((image) => image.cid !== cid || image.cloc === cloc);
+            const embeddedImage = embeddedImages.find((image) => matchSameCidOrLoc(image, cid, cloc));
+            const newEmbeddedImages = embeddedImages.filter((image) => !matchSameCidOrLoc(image, cid, cloc));
 
             if (embeddedImage) {
                 setTimeout(() => {
