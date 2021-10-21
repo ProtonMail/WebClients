@@ -15,7 +15,7 @@ import { ImportFatalError } from '@proton/shared/lib/contacts/errors/ImportFatal
 import { useApi, useBeforeUnload, useGetUserKeys } from '../../../hooks';
 import { Alert, DynamicProgress } from '../../../components';
 
-import { extractTotals, processInBatches } from './encryptAndSubmit';
+import { extractTotals, processContactsInBatches } from './encryptAndSubmit';
 
 interface Props {
     model: ImportContactsModel;
@@ -63,7 +63,7 @@ const ImportingModalContent = ({ model, setModel, onFinish }: Props) => {
                     publicKeys: [publicKey],
                 } = splitKeys(await getUserKeys());
                 const keyPair = { privateKey, publicKey };
-                const importedContacts = await processInBatches({
+                const importedContacts = await processContactsInBatches({
                     contacts: model.parsedVcardContacts,
                     labels: CATEGORIES.IGNORE,
                     overwrite: OVERWRITE.OVERWRITE_CONTACT,
@@ -71,6 +71,7 @@ const ImportingModalContent = ({ model, setModel, onFinish }: Props) => {
                     api: apiWithAbort,
                     signal,
                     onProgress: handleImportProgress,
+                    isImport: true,
                 });
                 if (signal.aborted) {
                     return;
