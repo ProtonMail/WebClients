@@ -9,15 +9,14 @@ interface Props {
     needsMoreProtection: boolean;
     title: string;
     className?: string;
-    isDetails?: boolean;
 }
 
-const SpyTrackerIcon = ({ numberOfTrackers, needsMoreProtection, title, className, isDetails = false }: Props) => {
+const SpyTrackerIcon = ({ numberOfTrackers, needsMoreProtection, title, className }: Props) => {
     const icon = (
         <>
             <Icon
                 name="shield"
-                size={isDetails ? 16 : 14}
+                size={16}
                 alt={title}
                 data-testid="privacy:tracker-icon"
                 className={classnames([needsMoreProtection && numberOfTrackers === 0 ? 'color-weak' : 'color-primary'])}
