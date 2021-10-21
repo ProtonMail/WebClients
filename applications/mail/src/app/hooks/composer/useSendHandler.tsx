@@ -51,28 +51,35 @@ export const useSendHandler = ({
     const messageCache = useMessageCache();
 
     const handleSendAfterUploads = useHandler(async (notifManager: SendingMessageNotificationManager) => {
-        await pendingSave.promise; // Wait for potential ongoing save request
-
         let verificationResults;
+        let inputMessage;
+        let mapSendPrefs;
+        let alreadySaved;
+
         try {
+            await pendingSave.promise; // Wait for potential ongoing save request
+
             verificationResults = await extendedVerifications(modelMessage as MessageExtendedWithData, mapSendInfo);
-        } catch {
+            mapSendPrefs = verificationResults.mapSendPrefs;
+
+            const messageFromCache = messageCache.get(modelMessage.localID);
+            alreadySaved =
+                !!messageFromCache?.data?.ID && !pendingAutoSave.isPending && !verificationResults.hasChanged;
+            autoSave.abort?.(); // Save will take place in the send process
+            inputMessage = alreadySaved
+                ? (messageFromCache as MessageExtendedWithData)
+                : verificationResults.cleanMessage;
+
+            // sendMessage expect a saved and up to date message
+            // If there is anything new or pending, we have to make a last save
+            if (!alreadySaved) {
+                await saveNow(inputMessage);
+                await call();
+            }
+        } catch (error) {
             hideNotification(notifManager.ID);
             onCompose({ existingDraft: modelMessage, fromUndo: true });
-            return;
-        }
-
-        const messageFromCache = messageCache.get(modelMessage.localID);
-        const { cleanMessage, mapSendPrefs, hasChanged } = verificationResults;
-        const alreadySaved = !!messageFromCache?.data?.ID && !pendingAutoSave.isPending && !hasChanged;
-        autoSave.abort?.(); // Save will take place in the send process
-        const inputMessage = alreadySaved ? (messageFromCache as MessageExtendedWithData) : cleanMessage;
-
-        // sendMessage expect a saved and up to date message
-        // If there is anything new or pending, we have to make a last save
-        if (!alreadySaved) {
-            await saveNow(inputMessage);
-            await call();
+            throw error;
         }
 
         try {
@@ -162,7 +169,7 @@ export const useSendHandler = ({
                 });
                 console.error('Error while uploading attachments.', error);
                 onCompose({ existingDraft: modelMessage, fromUndo: true });
-                return;
+                throw error;
             }
 
             // Split handlers to have the updated version of the message
