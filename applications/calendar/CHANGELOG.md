@@ -2,10 +2,10 @@
 
 ### Improvements
 
--   Allow to import invitations
+-   Allow importing invitations
 -   Do not leak event title in the email subject when replying to invitations from Calendar
--   Fix erroneous "not synced" status that could be displayed erroneously for subscribed calendars under some circumstances
--   Support importing events with DURATION field
+-   Fix "not synced" status that could be displayed erroneously for subscribed calendars under some circumstances
+-   Support events with DURATION field via import
 -   Improve support for non-standard replies sent by Yahoo Calendar
 -   Update favicon without reloading the tab when day changes
 -   Minor UI and accessibility improvements
@@ -13,7 +13,7 @@
 ### Fixes
 
 -   Fix faulty keyboard navigation in time zone selector
--   Allow to add invitations with unsupported email addresses to calendar when replying to them
+-   Allow adding invitations with unsupported email addresses to Calendar when replying to them
 -   Fix issue where editing multiple times a recurring event with the "this and following" option would result in an error
 
 ## Release: 4.0.4 — September 22, 2021
