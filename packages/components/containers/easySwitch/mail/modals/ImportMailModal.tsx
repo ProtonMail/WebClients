@@ -24,6 +24,7 @@ import {
     PROVIDER_INSTRUCTIONS,
     ImportedMailFolder,
     ImportType,
+    NormalizedImporter,
 } from '@proton/shared/lib/interfaces/EasySwitch';
 import { toMap } from '@proton/shared/lib/helpers/object';
 
@@ -39,7 +40,7 @@ import {
     useSettingsLink,
 } from '../../../../components';
 
-import { MailImportStep, ImportMailModalModel, Importer, AuthenticationMethod } from '../interfaces';
+import { MailImportStep, ImportMailModalModel, AuthenticationMethod } from '../interfaces';
 
 import YahooMailImportInstructionsStep from './steps/YahooMailImportInstructionsStep';
 import ImportStartStep from './steps/ImportStartStep';
@@ -80,7 +81,7 @@ interface ImporterFromServer {
 }
 
 interface Props {
-    currentImport?: Importer;
+    currentImport?: NormalizedImporter;
     onClose?: () => void;
     addresses: Address[];
     providerInstructions?: PROVIDER_INSTRUCTIONS;
