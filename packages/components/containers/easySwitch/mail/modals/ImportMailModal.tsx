@@ -76,9 +76,6 @@ interface ImporterFromServer {
     ID: string;
     ImapHost: string;
     ImapPort: number;
-    MailboxSize: {
-        [key: string]: number;
-    };
     Sasl: AuthenticationMethod;
 }
 
@@ -223,7 +220,7 @@ const ImportMailModal = ({ onClose = noop, currentImport, providerInstructions, 
 
         if ((modalModel.imap && modalModel.port) || needIMAPDetails) {
             try {
-                const { Importer } = await api({
+                const { ImporterID } = await api({
                     ...createImport({
                         [ImportType.MAIL]: {
                             Email: modalModel.email,
@@ -242,8 +239,17 @@ const ImportMailModal = ({ onClose = noop, currentImport, providerInstructions, 
                 });
                 await call();
 
-                const { Folders = [] } = await api(getMailImportData(Importer.ID, { Code: modalModel.password }));
-                moveToPrepareStep(Importer, Folders);
+                const { Folders = [] } = await api(getMailImportData(ImporterID, { Code: modalModel.password }));
+                moveToPrepareStep(
+                    {
+                        ID: ImporterID,
+                        Email: modalModel.email,
+                        ImapHost: modalModel.imap,
+                        ImapPort: parseInt(modalModel.port, 10),
+                        Sasl: AuthenticationMethod.PLAIN,
+                    },
+                    Folders
+                );
             } catch (error: any) {
                 handleSubmitStartError(error);
             }
