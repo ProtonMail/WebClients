@@ -17,6 +17,8 @@ const isWebpSupported = () => {
 
 export const isImage = (mimeType: string) => mimeType.startsWith('image/');
 
+export const isExcel = (mimeType: string) => mimeType.startsWith('application/vnd.ms-excel');
+
 export const isFont = (MimeType: string) => MimeType.startsWith('font/');
 
 export const isSupportedImage = (mimeType: string) =>
