@@ -4,6 +4,6 @@
 	align-items: center;
 }
 
-.grid-align-icon > *:not(svg) {
+.grid-align-icon > *:not(svg):not(.keep-left) {
 	grid-column-start: 2;
 }
