@@ -1,11 +1,8 @@
 import {
-    ImportedFolder,
     MailImporterPayload,
     ImportedMailFolder,
     TIME_PERIOD,
     ImportType,
-    ImportStatus,
-    ImportError,
 } from '@proton/shared/lib/interfaces/EasySwitch';
 
 export enum MailImportStep {
@@ -34,24 +31,6 @@ export interface ImportMailModalModel {
 export enum AuthenticationMethod {
     PLAIN = 'PLAIN',
     OAUTH = 'XOAUTH2',
-}
-
-/* @todo to be deprecated */
-export interface Importer {
-    ID: string;
-    Email: string;
-    ImapHost?: string;
-    ImapPort?: string;
-    Active?: {
-        CreateTime: number;
-        AddressID: string;
-        State: ImportStatus;
-        Mapping: ImportedFolder[];
-        ErrorCode?: ImportError;
-    };
-    Sasl: AuthenticationMethod;
-    /* Update from oAuth refacto */
-    Product?: ImportType;
 }
 
 /* @todo to be deprecated */
