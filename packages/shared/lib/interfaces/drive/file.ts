@@ -1,5 +1,3 @@
-import { ReadableStream } from 'web-streams-polyfill';
-
 export enum FileRevisionState {
     Draft = 0,
     Active = 1,
@@ -84,10 +82,4 @@ export interface DriveFileRevisionResult {
 export interface DriveFileRevisionThumbnailResult {
     ThumbnailBareURL: string;
     ThumbnailToken: string;
-}
-
-export interface NestedFileStream {
-    stream: ReadableStream<Uint8Array>;
-    parentPath: string;
-    fileName: string;
 }

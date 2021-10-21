@@ -1,30 +1,24 @@
 import { useEffect, useState, useCallback, useRef } from 'react';
 import { RouteComponentProps, useLocation } from 'react-router-dom';
 
-import {
-    useLoading,
-    usePreventLeave,
-    isPreviewAvailable,
-    FilePreview,
-    NavigationControl,
-    useModals,
-} from '@proton/components';
+import { useLoading, isPreviewAvailable, FilePreview, NavigationControl, useModals } from '@proton/components';
 import { DriveSectionSortKeys, LinkMeta, LinkType, SortParams } from '@proton/shared/lib/interfaces/drive/link';
 import { STATUS_CODE } from '@proton/shared/lib/drive/constants';
 
 import useActiveShare from '../hooks/drive/useActiveShare';
-import useFiles from '../hooks/drive/useFiles';
 import useDrive from '../hooks/drive/useDrive';
 import useDriveSorting from '../hooks/drive/useDriveSorting';
 import useNavigate from '../hooks/drive/useNavigate';
-import FileSaver from '../utils/FileSaver/FileSaver';
-import { isTransferCancelError, getMetaForTransfer } from '../utils/transfer';
-import { DownloadControls } from '../components/downloads/download';
+import { isTransferCancelError } from '../utils/transfer';
+import { DownloadStreamControls } from '../components/downloads/interface';
+import { useDownloadProvider } from '../components/downloads/DownloadProvider';
+import useDownload from '../components/downloads/useDownload';
 import { useDriveCache } from '../components/DriveCache/DriveCacheProvider';
 import { mapLinksToChildren } from '../components/sections/helpers';
 import DetailsModal from '../components/DetailsModal';
 import ShareLinkModal from '../components/ShareLinkModal/ShareLinkModal';
 import useUserSettings from '../hooks/drive/useUserSettings';
+import { streamToBuffer } from '../utils/stream';
 
 const getSharedStatus = (meta?: LinkMeta) => {
     if (!meta?.Shared) {
@@ -42,15 +36,15 @@ const PreviewContainer = ({ match }: RouteComponentProps<{ shareId: string; link
     const { shareId, linkId } = match.params;
     const { navigateToLink, navigateToSharedURLs, navigateToTrash, navigateToRoot } = useNavigate();
     const cache = useDriveCache();
-    const downloadControls = useRef<DownloadControls>();
+    const downloadControls = useRef<DownloadStreamControls>();
     const { setFolder } = useActiveShare();
     const { getLinkMeta, fetchAllFolderPages } = useDrive();
-    const { downloadDriveFile, saveFileTransferFromBuffer, startFileTransfer } = useFiles();
-    const { preventLeave } = usePreventLeave();
     const [loading, withLoading] = useLoading(true);
     const [contents, setContents] = useState<Uint8Array[]>();
     const [, setError] = useState();
     const { createModal } = useModals();
+    const { download } = useDownloadProvider();
+    const { downloadStream } = useDownload();
 
     const referer = new URLSearchParams(useLocation().search).get('r');
     const useNavigation = !referer?.startsWith('/shared-urls') && !referer?.startsWith('/trash');
@@ -77,7 +71,7 @@ const PreviewContainer = ({ match }: RouteComponentProps<{ shareId: string; link
 
         const preloadFile = async () => {
             try {
-                const { ParentLinkID, MIMEType, Size } = meta ?? (await getLinkMeta(shareId, linkId));
+                const { ParentLinkID, MIMEType, Size, Name, Type } = meta ?? (await getLinkMeta(shareId, linkId));
 
                 if (canceled) {
                     return;
@@ -88,9 +82,18 @@ const PreviewContainer = ({ match }: RouteComponentProps<{ shareId: string; link
                 fetchAllFolderPages(shareId, ParentLinkID).catch(console.error);
 
                 if (isPreviewAvailable(MIMEType, Size)) {
-                    const { contents, controls } = await downloadDriveFile(shareId, linkId);
+                    const { stream, controls } = await downloadStream([
+                        {
+                            type: Type,
+                            shareId,
+                            linkId,
+                            name: Name,
+                            mimeType: MIMEType,
+                            size: Size,
+                        },
+                    ]);
                     downloadControls.current = controls;
-                    setContents(await contents);
+                    setContents(await streamToBuffer(stream));
                 } else {
                     downloadControls.current = undefined;
                     setContents(undefined);
@@ -144,13 +147,17 @@ const PreviewContainer = ({ match }: RouteComponentProps<{ shareId: string; link
         if (!meta) {
             return;
         }
-
-        const transferMeta = getMetaForTransfer(meta);
-        const fileStream = await (contents
-            ? saveFileTransferFromBuffer(contents, transferMeta, { ShareID: shareId, LinkID: linkId })
-            : startFileTransfer(shareId, linkId, transferMeta));
-
-        preventLeave(FileSaver.saveAsFile(fileStream, transferMeta)).catch(console.error);
+        void download([
+            {
+                type: meta.Type,
+                shareId,
+                linkId,
+                name: meta.Name,
+                mimeType: meta.MIMEType,
+                size: meta.Size,
+                buffer: contents,
+            },
+        ]);
     }, [meta, contents, shareId, linkId]);
 
     const openDetails = useCallback(() => {
