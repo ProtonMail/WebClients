@@ -8,6 +8,7 @@ import {
     StartMailImportSection,
     MailImportListSection,
     MailImportExportSection,
+    MailImportCsvSection,
     useUser,
 } from '@proton/components';
 import { UserModel } from '@proton/shared/lib/interfaces';
@@ -28,6 +29,10 @@ export const getImportPage = (user: UserModel, isEasySwitchEnabled: boolean) => 
             !isEasySwitchEnabled && {
                 text: c('Title').t`Current & past imports`,
                 id: 'import-list',
+            },
+            {
+                text: c('Title').t`Import contacts`,
+                id: 'import-csv',
             },
             !user.isFree && {
                 text: c('Title').t`Import-Export app`,
@@ -51,6 +56,7 @@ const MailImportAndExportSettings = ({ setActiveSection, location }: SettingsPro
     const sections = [
         !isEasySwitchEnabled && <StartMailImportSection key="start-import" />,
         !isEasySwitchEnabled && <MailImportListSection key="import-list" />,
+        <MailImportCsvSection key="import-csv" />,
         !user.isFree && importExportSection,
     ].filter(isTruthy);
 
