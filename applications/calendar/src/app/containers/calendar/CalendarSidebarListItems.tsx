@@ -112,7 +112,7 @@ const CalendarSidebarListItems = ({
                                 )}
                                 {isCalendarDisabled && (
                                     <div className="flex-item-noshrink">
-                                        &nbsp;({c('Disabled calendar name suffix').t`disabled`})
+                                        &nbsp;({c('Disabled calendar name suffix').t`Disabled`})
                                     </div>
                                 )}
                             </div>
