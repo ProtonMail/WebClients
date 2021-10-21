@@ -28,6 +28,7 @@ import {
 } from '@proton/components';
 import { isEmailNotification } from '@proton/shared/lib/calendar/alarms';
 
+import CalendarSelectIcon from '@proton/components/components/calendarSelect/CalendarSelectIcon';
 import createHandlers from './eventForm/createPropFactory';
 import IconRow from './IconRow';
 import CreateEventCalendarSelect from './inputs/CreateEventCalendarSelect';
@@ -258,9 +259,21 @@ const EventForm = ({
         </IconRow>
     );
 
+    const getCalendarIcon = () => {
+        if (calendars.length === 1) {
+            return <CalendarSelectIcon className="mt0-25" color={calendars[0].color} />;
+        }
+
+        if (!canChangeCalendar) {
+            return <CalendarSelectIcon className="mt0-25" color={model.calendar.color} />;
+        }
+
+        return 'calendar-days';
+    };
+
     const calendarRow = (
         <IconRow
-            icon="calendar-days"
+            icon={getCalendarIcon()}
             title={c('Label').t`Your calendars`}
             id={CALENDAR_INPUT_ID}
             className="flex-item-fluid relative"

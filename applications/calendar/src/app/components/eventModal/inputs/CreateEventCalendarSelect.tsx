@@ -79,6 +79,7 @@ const CreateEventCalendarSelect = ({ model, setModel, isCreateEvent, frozen = fa
     return (
         <CalendarSelect
             calendarID={calendarID}
+            displayColor={options.length > 1}
             options={options}
             onChange={({ value }) => withLoading(handleChangeCalendar(value))}
             loading={loading}

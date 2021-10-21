@@ -1,11 +1,13 @@
-import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import { MouseEvent, useMemo } from 'react';
 import { c } from 'ttag';
+
 import { Nullable, SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import { ACCESS_LEVEL, CalendarLink } from '@proton/shared/lib/interfaces/calendar';
 import { UserModel } from '@proton/shared/lib/interfaces';
+import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 
-import { Table, TableHeader, TableBody, TableRow, Info, DropdownActions, Icon } from '../../../components';
+import { Table, TableHeader, TableBody, TableRow, Info, DropdownActions } from '../../../components';
+import CalendarSelectIcon from '../../../components/calendarSelect/CalendarSelectIcon';
 
 interface Props {
     linksMap: SimpleMap<CalendarLink[]>;
@@ -70,21 +72,18 @@ const LinkTable = ({ linksMap, onCopyLink, onDelete, onEdit, isLoadingMap, user 
                                     key={CalendarUrlID}
                                     cells={[
                                         <div key="calendar">
-                                            <div className="flex flex-nowrap">
-                                                <Icon
-                                                    name="calendar-days"
-                                                    style={{ color }}
-                                                    className="mr0-75 flex-item-noshrink"
+                                            <div className="grid-align-icon">
+                                                <CalendarSelectIcon
+                                                    color={color}
+                                                    className="flex-noshrink mr0-75 keep-left"
                                                 />
-                                                <div>
-                                                    <div className="text-ellipsis" title={calendarName}>
-                                                        {calendarName}
-                                                    </div>
-                                                    <div className="text-sm color-weak m0">
-                                                        {accessLevel === ACCESS_LEVEL.FULL
-                                                            ? c('Access level').t`Full`
-                                                            : c('Access level').t`Limited`}
-                                                    </div>
+                                                <div className="text-ellipsis" title={calendarName}>
+                                                    {calendarName}
+                                                </div>
+                                                <div className="text-sm color-weak m0">
+                                                    {accessLevel === ACCESS_LEVEL.FULL
+                                                        ? c('Access level').t`Full`
+                                                        : c('Access level').t`Limited`}
                                                 </div>
                                             </div>
                                         </div>,
