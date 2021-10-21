@@ -65,6 +65,7 @@ const usePromotionOffer = (): EligibleOffer | undefined => {
                 currency={currency}
                 coupon={couponCode}
                 step={SUBSCRIPTION_STEPS.CHECKOUT}
+                disableBackButton
             />
         );
     };

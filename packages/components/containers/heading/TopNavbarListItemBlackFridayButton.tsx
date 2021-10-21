@@ -41,6 +41,7 @@ const TopNavbarListItemBlackFridayButton = ({ offer }: Props) => {
                 currency={currency}
                 coupon={couponCode}
                 step={SUBSCRIPTION_STEPS.CHECKOUT}
+                disableBackButton
             />
         );
     };
