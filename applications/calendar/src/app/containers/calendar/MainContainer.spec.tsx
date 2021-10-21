@@ -8,7 +8,7 @@ import createCache from '@proton/shared/lib/helpers/cache';
 import { CacheProvider } from '@proton/components/containers/cache';
 import useCalendars from '@proton/components/hooks/useCalendars';
 import { CalendarDisplay, CALENDAR_TYPE } from '@proton/shared/lib/interfaces/calendar';
-import { CALENDAR_FLAGS, MAX_LENGTHS } from '@proton/shared/lib/calendar/constants';
+import { CALENDAR_FLAGS, MAX_LENGTHS_API } from '@proton/shared/lib/calendar/constants';
 import ModalsProvider from '@proton/components/containers/modals/Provider';
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 
@@ -457,13 +457,13 @@ describe('MainContainer', () => {
             const locationInput = screen.queryByTitle(/Add event location/) as HTMLInputElement;
 
             // Using paste since it is much faster
-            userEvent.paste(titleInput, '1'.repeat(MAX_LENGTHS.TITLE + 2));
-            userEvent.paste(descriptionTextarea, '1'.repeat(MAX_LENGTHS.EVENT_DESCRIPTION + 2));
-            userEvent.paste(locationInput, '1'.repeat(MAX_LENGTHS.LOCATION + 2));
+            userEvent.paste(titleInput, '1'.repeat(MAX_LENGTHS_API.TITLE + 2));
+            userEvent.paste(descriptionTextarea, '1'.repeat(MAX_LENGTHS_API.EVENT_DESCRIPTION + 2));
+            userEvent.paste(locationInput, '1'.repeat(MAX_LENGTHS_API.LOCATION + 2));
 
-            expect(descriptionTextarea.value.length).toBe(MAX_LENGTHS.EVENT_DESCRIPTION);
-            expect(titleInput.value.length).toBe(MAX_LENGTHS.TITLE);
-            expect(locationInput.value.length).toBe(MAX_LENGTHS.LOCATION);
+            expect(descriptionTextarea.value.length).toBe(MAX_LENGTHS_API.EVENT_DESCRIPTION);
+            expect(titleInput.value.length).toBe(MAX_LENGTHS_API.TITLE);
+            expect(locationInput.value.length).toBe(MAX_LENGTHS_API.LOCATION);
 
             // fireEvent.focus(screen.getByTitle(/Select event end date/));
             // const now = new Date();

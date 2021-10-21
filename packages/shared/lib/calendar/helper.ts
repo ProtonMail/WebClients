@@ -9,9 +9,8 @@ import {
     SyncMultipleApiSuccessResponses,
     VcalDateOrDateTimeProperty,
     VcalDateTimeProperty,
-    VcalUidProperty,
 } from '../interfaces/calendar';
-import { MAX_LENGTHS, MAXIMUM_DATE_UTC, MINIMUM_DATE_UTC } from './constants';
+import { MAX_LENGTHS_API, MAXIMUM_DATE_UTC, MINIMUM_DATE_UTC } from './constants';
 import { propertyToUTCDate } from './vcalConverter';
 import { getIsPropertyAllDay } from './vcalHelper';
 
@@ -46,7 +45,7 @@ export const generateVeventHashUID = async (binaryString: string, uid = '') => {
     }
     const sandwichedHash = `${HASH_UID_PREFIX}${hash}${ORIGINAL_UID_PREFIX}`;
     const uidLength = uid.length;
-    const availableLength = MAX_LENGTHS.UID - sandwichedHash.length;
+    const availableLength = MAX_LENGTHS_API.UID - sandwichedHash.length;
     const croppedUID = uid.substring(uidLength - availableLength, uidLength);
     return `${sandwichedHash}${croppedUID}`;
 };
@@ -67,11 +66,9 @@ export const getOriginalUID = (uid = '') => {
     return uid;
 };
 
-export const getSupportedUID = (uid: VcalUidProperty) => {
-    // The API does not accept UIDs longer than 191 characters
-    const uidLength = uid.value.length;
-    const croppedUID = uid.value.substring(uidLength - MAX_LENGTHS.UID, uidLength);
-    return { value: croppedUID };
+export const getSupportedUID = (uid: string) => {
+    const uidLength = uid.length;
+    return uid.substring(uidLength - MAX_LENGTHS_API.UID, uidLength);
 };
 
 const getIsWellFormedDateTime = (property: VcalDateTimeProperty) => {
