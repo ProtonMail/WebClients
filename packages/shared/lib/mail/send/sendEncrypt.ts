@@ -11,6 +11,7 @@ import {
     OpenPGPKey,
     encryptSessionKey,
 } from 'pmcrypto';
+import { enums } from 'openpgp';
 import { hasBit } from '../../helpers/bitset';
 import { uint8ArrayToBase64String } from '../../helpers/encoding';
 import { identity } from '../../helpers/function';
@@ -125,6 +126,7 @@ const encryptDraftBodyPackage = async ({
         publicKeys: cleanPublicKeys,
         privateKeys,
         returnSessionKey: true,
+        compression: enums.compression.zlib,
     });
 
     const packets = await splitMessage(data);
@@ -163,6 +165,7 @@ const encryptBodyPackage = async ({
         sessionKey: cleanPublicKeys.length ? undefined : await generateSessionKeyHelper(),
         privateKeys,
         returnSessionKey: true,
+        compression: enums.compression.zlib,
     });
 
     const { asymmetric: keys, encrypted } = await splitMessage(data);
