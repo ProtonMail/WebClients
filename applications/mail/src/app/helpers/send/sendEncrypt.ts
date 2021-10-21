@@ -16,6 +16,7 @@ import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { getAttachments } from '@proton/shared/lib/mail/messages';
 import { getSessionKey } from '@proton/shared/lib/mail/send/attachments';
 import { AES256, MIME_TYPES, PACKAGE_TYPE } from '@proton/shared/lib/constants';
+import { enums } from 'openpgp';
 
 import { MessageExtended, MessageKeys } from '../../models/message';
 import { arrayToBase64 } from '../base64';
@@ -119,6 +120,7 @@ const encryptBodyPackage = async (pack: Package, messageKeys: MessageKeys, publi
         sessionKey: cleanPublicKeys.length ? undefined : await generateSessionKeyHelper(),
         privateKeys,
         returnSessionKey: true,
+        compression: enums.compression.zlib,
     });
 
     const { asymmetric: keys, encrypted } = await splitMessage(data);
@@ -146,6 +148,7 @@ const encryptDraftBodyPackage = async (
         publicKeys: cleanPublicKeys,
         privateKeys,
         returnSessionKey: true,
+        compression: enums.compression.zlib,
     });
 
     const packets = await splitMessage(data);
