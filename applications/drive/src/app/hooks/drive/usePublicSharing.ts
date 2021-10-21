@@ -7,17 +7,19 @@ import { srpAuth } from '@proton/shared/lib/srp';
 import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 import { decryptUnsigned, getStreamMessage } from '@proton/shared/lib/keys/driveKeys';
 import { queryInitSRPHandshake, queryGetSharedLinkPayload } from '@proton/shared/lib/api/drive/sharing';
-import { InitHandshake, SharedLinkPayload, SharedLinkInfo, ThumbnailURLInfo } from '@proton/shared/lib/interfaces/drive/sharing';
+import {
+    InitHandshake,
+    SharedLinkPayload,
+    SharedLinkInfo,
+    ThumbnailURLInfo,
+} from '@proton/shared/lib/interfaces/drive/sharing';
 import { DriveFileBlock } from '@proton/shared/lib/interfaces/drive/file';
 import { TransferMeta } from '@proton/shared/lib/interfaces/drive/transfer';
 import { getDecryptedSessionKey } from '@proton/shared/lib/keys/drivePassphrase';
-
-import { startDownload, StreamTransformer } from '../../components/downloads/download';
-import { useDownloadProvider } from '../../components/downloads/DownloadProvider';
+import { StreamTransformer } from '../../components/downloads/download/downloadBlocks';
 
 function usePublicSharing() {
     const api = useApi();
-    const { addToDownloadQueue } = useDownloadProvider();
 
     const initSRPHandshake = async (token: string) => {
         return api<InitHandshake>(queryInitSRPHandshake(token));
@@ -125,6 +127,7 @@ function usePublicSharing() {
         password: string,
         initailBlocks: DriveFileBlock[]
     ) => {
+        // @ts-ignore TODO
         return addToDownloadQueue(
             meta,
             { ShareID: 'SharedFile', LinkID: 'SharedFile' },
@@ -145,6 +148,7 @@ function usePublicSharing() {
     };
 
     const downloadThumbnail = (sessionKey: SessionKey, privateKey: OpenPGPKey, params: ThumbnailURLInfo) => {
+        // @ts-ignore TODO
         return startDownload(api, {
             getBlocks: async () => [
                 {

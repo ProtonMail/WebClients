@@ -125,7 +125,8 @@ export default function useUploadQueue() {
             const updateFileOrFolder = <T extends FileUpload | FolderUpload>(item: T) => {
                 callback?.(item);
                 const newState = newStateCallback(item);
-                // If pause is set twice, prefer resumeState set already before.
+                // If pause is set twice, prefer resumeState set already before
+                // to not be locked in paused state forever.
                 item.resumeState = newState === TransferState.Paused ? item.resumeState || item.state : undefined;
                 item.state = newState;
                 if (mimeType) {
@@ -134,9 +135,7 @@ export default function useUploadQueue() {
                 if (name) {
                     item.meta.filename = name;
                 }
-                if (error) {
-                    item.error = error;
-                }
+                item.error = error;
             };
             const updateFile = (file: FileUpload): FileUpload => {
                 if (filter(file)) {

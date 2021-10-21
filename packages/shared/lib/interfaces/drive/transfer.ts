@@ -1,6 +1,5 @@
 /* eslint-disable max-classes-per-file */
 import { FileBrowserItem } from './fileBrowser';
-import { LinkType } from './link';
 
 export enum TransferState {
     Initializing = 'initializing',
@@ -63,11 +62,8 @@ export interface DownloadInfo {
 export interface Download {
     id: string;
     meta: TransferMeta;
-    downloadInfo: DownloadInfo;
     state: TransferState;
-    type: LinkType;
     startDate: Date;
-    resumeState?: TransferState;
     error?: Error;
 }
 

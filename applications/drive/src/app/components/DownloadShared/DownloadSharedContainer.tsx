@@ -10,7 +10,7 @@ import { STATUS_CODE, BATCH_REQUEST_SIZE } from '@proton/shared/lib/drive/consta
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
 import usePublicSharing from '../../hooks/drive/usePublicSharing';
-import FileSaver from '../../utils/FileSaver/FileSaver';
+import FileSaver from '../downloads/fileSaver/fileSaver';
 import DownloadSharedInfo from './DownloadSharedInfo';
 import EnterPasswordInfo from './EnterPasswordInfo';
 import LinkDoesNotExistInfo from './LinkDoesNotExistInfo';

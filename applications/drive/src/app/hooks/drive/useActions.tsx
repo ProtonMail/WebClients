@@ -1,14 +1,11 @@
 import { c, msgid } from 'ttag';
 
-import { usePreventLeave, useModals } from '@proton/components';
-import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
+import { useModals } from '@proton/components';
 import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 
-import { DriveFolder } from './useActiveShare';
-import { getMetaForTransfer } from '../../utils/transfer';
+import { useDownloadProvider } from '../../components/downloads/DownloadProvider';
 import CreateFolderModal from '../../components/CreateFolderModal';
 import DetailsModal from '../../components/DetailsModal';
-import FileSaver from '../../utils/FileSaver/FileSaver';
 import FilesDetailsModal from '../../components/FilesDetailsModal';
 import MoveToFolderModal from '../../components/MoveToFolderModal/MoveToFolderModal';
 import RenameModal from '../../components/RenameModal';
@@ -16,10 +13,10 @@ import SelectedFileToShareModal from '../../components/SelectedFileToShareModal/
 import ShareLinkModal from '../../components/ShareLinkModal/ShareLinkModal';
 import ShareModal from '../../components/ShareModal/ShareModal';
 import useConfirm from '../util/useConfirm';
+import useListNotifications from '../util/useListNotifications';
+import { DriveFolder } from './useActiveShare';
 import useDrive from './useDrive';
 import useDriveEvents from './useDriveEvents';
-import useFiles from './useFiles';
-import useListNotifications from '../util/useListNotifications';
 import useNavigate from './useNavigate';
 import useQueuedFunction from '../util/useQueuedFunction';
 import useSharing from './useSharing';
@@ -28,13 +25,12 @@ import useTrash from './useTrash';
 function useActions() {
     const queuedFunction = useQueuedFunction();
     const { navigateToLink } = useNavigate();
-    const { startFileTransfer, startFolderTransfer } = useFiles();
-    const { preventLeave } = usePreventLeave();
     const { createModal } = useModals();
     const { deleteTrashedLinks, restoreLinks, trashLinks } = useTrash();
     const { deleteMultipleSharedLinks } = useSharing();
     const { deleteShare } = useDrive();
     const driveEvents = useDriveEvents();
+    const { download: downloadLinks } = useDownloadProvider();
 
     const {
         createDeleteLinksNotifications,
@@ -45,40 +41,16 @@ function useActions() {
     const { openConfirmModal } = useConfirm();
 
     const download = async (shareId: string, itemsToDownload: FileBrowserItem[]) => {
-        if (itemsToDownload.length === 1 && itemsToDownload[0].Type === LinkType.FILE) {
-            const item = itemsToDownload[0];
-            const meta = getMetaForTransfer(item);
-            const fileStream = await startFileTransfer(shareId, item.LinkID, meta);
-            preventLeave(FileSaver.saveAsFile(fileStream, meta)).catch(console.error);
-        } else {
-            const { name, linkID, children } =
-                itemsToDownload.length === 1
-                    ? {
-                          name: itemsToDownload[0].Name,
-                          linkID: itemsToDownload[0].LinkID,
-                          children: [],
-                      }
-                    : {
-                          name: `My files ${new Date().toISOString().substring(0, 19)}`,
-                          linkID: '',
-                          children: itemsToDownload,
-                      };
-
-            const zipSaver = await FileSaver.saveAsZip(name);
-            if (zipSaver) {
-                try {
-                    await preventLeave(
-                        startFolderTransfer(name, shareId, linkID, children, {
-                            onStartFileTransfer: zipSaver.addFile,
-                            onStartFolderTransfer: zipSaver.addFolder,
-                        })
-                    );
-                    await zipSaver.close();
-                } catch (e: any) {
-                    await zipSaver.abort(e);
-                }
-            }
-        }
+        return downloadLinks(
+            itemsToDownload.map((item) => ({
+                type: item.Type,
+                shareId,
+                linkId: item.LinkID,
+                name: item.Name,
+                mimeType: item.MIMEType,
+                size: item.Size,
+            }))
+        );
     };
 
     const openCreateFolder = async () => {
