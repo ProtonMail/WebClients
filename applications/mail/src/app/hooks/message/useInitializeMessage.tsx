@@ -93,7 +93,7 @@ export const useInitializeMessage = (localID: string, labelID?: string) => {
             }
 
             if (isUnreadMessage(getData())) {
-                markAs([getData()], labelID, MARK_AS_STATUS.READ, true);
+                markAs([getData()], labelID, MARK_AS_STATUS.READ);
                 dataChanges = { ...dataChanges, Unread: 0 };
             }
 
