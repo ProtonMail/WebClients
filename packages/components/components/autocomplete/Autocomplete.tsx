@@ -74,7 +74,7 @@ const Autocomplete = <T,>({
                 {filteredOptions.map(({ chunks, text, option }, index) => {
                     return (
                         <Option
-                            key={text}
+                            key={getOptionID(index)}
                             id={getOptionID(index)}
                             title={text}
                             value={option}
