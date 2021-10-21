@@ -177,6 +177,7 @@ const ImportAssistantOauthModal = ({ addresses, onClose = noop, defaultCheckedTy
                         Description: '',
                         Display: 1,
                         AddressID: addressID,
+                        IsImport: 1,
                     })
                 );
 
