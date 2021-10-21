@@ -6,7 +6,7 @@ import { noop } from '@proton/shared/lib/helpers/function';
 import { Calendar, SubscribedCalendar } from '@proton/shared/lib/interfaces/calendar';
 import { dedupeNotifications, sortNotificationsByAscendingTrigger } from '@proton/shared/lib/calendar/alarms';
 
-import { MAX_DEFAULT_NOTIFICATIONS, MAX_LENGTHS } from '@proton/shared/lib/calendar/constants';
+import { MAX_DEFAULT_NOTIFICATIONS, MAX_LENGTHS_API } from '@proton/shared/lib/calendar/constants';
 import {
     ColorPicker,
     Field,
@@ -143,7 +143,7 @@ export const CalendarModal = ({
                                 id="calendar-name-input"
                                 value={model.name}
                                 error={errors.name}
-                                maxLength={MAX_LENGTHS.CALENDAR_NAME}
+                                maxLength={MAX_LENGTHS_API.CALENDAR_NAME}
                                 isSubmitted={isSubmitted}
                                 placeholder={c('Placeholder').t`Add a calendar name`}
                                 onChange={({ target }: ChangeEvent<HTMLInputElement>) =>
@@ -204,7 +204,7 @@ export const CalendarModal = ({
                                 onChange={({ target }: ChangeEvent<HTMLTextAreaElement>) =>
                                     setModel({ ...model, description: target.value })
                                 }
-                                maxLength={MAX_LENGTHS.CALENDAR_DESCRIPTION}
+                                maxLength={MAX_LENGTHS_API.CALENDAR_DESCRIPTION}
                                 error={errors.description}
                                 isSubmitted={isSubmitted}
                             />
