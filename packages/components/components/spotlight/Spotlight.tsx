@@ -8,6 +8,7 @@ import { useCombinedRefs, useIsClosing } from '../../hooks';
 import { Button } from '../button';
 import { Icon } from '../icon';
 import { usePopper, usePopperAnchor } from '../popper';
+import { shouldShowSideRadius } from '../popper/utils';
 
 interface Props {
     children: ReactElement;
@@ -47,6 +48,7 @@ const Spotlight = ({
         isOpen,
         originalPlacement: isRTL ? rtlAdjustedPlacement : originalPlacement,
     });
+    const showSideRadius = shouldShowSideRadius(position, placement, 8);
 
     const [isClosing, isClosed, setIsClosed] = useIsClosing(isOpen);
 
@@ -85,7 +87,12 @@ const Spotlight = ({
                     ref={setPopperEl}
                     id={uid}
                     style={position}
-                    className={classnames(['spotlight', `spotlight--${placement}`, isClosing && 'is-spotlight-out'])}
+                    className={classnames([
+                        'spotlight',
+                        `spotlight--${placement}`,
+                        isClosing && 'is-spotlight-out',
+                        !showSideRadius && 'spotlight--no-side-radius',
+                    ])}
                     onAnimationEnd={handleAnimationEnd}
                 >
                     <div className="spotlight-inner">{content}</div>
