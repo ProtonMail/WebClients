@@ -1,12 +1,23 @@
 import { useState, ChangeEvent, useMemo } from 'react';
 import { c, msgid } from 'ttag';
 import { randomIntFromInterval, noop } from '@proton/shared/lib/helpers/function';
-import { diff, orderBy } from '@proton/shared/lib/helpers/array';
+import { diff } from '@proton/shared/lib/helpers/array';
 import { LABEL_COLORS } from '@proton/shared/lib/constants';
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contact';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
-import { FormModal, Input, Row, Field, Label, ColorPicker, Autocomplete, Button } from '../../../components';
+import {
+    FormModal,
+    Input,
+    Row,
+    Field,
+    Label,
+    ColorPicker,
+    Autocomplete,
+    Button,
+    getContactsAutocompleteItems,
+    AddressesAutocompleteItem,
+} from '../../../components';
 import { useContactEmails, useContactGroups } from '../../../hooks';
 import ContactGroupTable from '../ContactGroupTable';
 import useUpdateGroup from '../useUpdateGroup';
@@ -48,9 +59,9 @@ const ContactGroupModal = ({
     });
     const contactEmailIDs = model.contactEmails.map(({ ID }: ContactEmail) => ID);
 
-    const options = orderBy(contactEmails as ContactEmail[], 'Email').filter(
-        ({ ID }: ContactEmail) => !contactEmailIDs.includes(ID)
-    );
+    const contactsAutocompleteItems = useMemo(() => {
+        return [...getContactsAutocompleteItems(contactEmails, ({ ID }) => !contactEmailIDs.includes(ID))];
+    }, [contactEmails, contactEmailIDs]);
 
     const handleChangeName = ({ target }: ChangeEvent<HTMLInputElement>) => setModel({ ...model, name: target.value });
     const handleChangeColor = (color: string) => setModel({ ...model, color });
@@ -66,14 +77,17 @@ const ContactGroupModal = ({
         setValue('');
     };
 
-    const handleSelect = (newContactEmail: ContactEmail | string) => {
-        if (typeof newContactEmail === 'string') {
+    const handleSelect = (newContactEmail: AddressesAutocompleteItem) => {
+        if (newContactEmail.type === 'major') {
             handleAdd();
         } else {
-            setModel((model) => ({
-                ...model,
-                contactEmails: [...model.contactEmails, newContactEmail],
-            }));
+            const newContact = contactEmails.find((contact: ContactEmail) => contact.ID === newContactEmail.value.ID);
+            if (newContact) {
+                setModel((model) => ({
+                    ...model,
+                    contactEmails: [...model.contactEmails, newContact],
+                }));
+            }
             setValue('');
         }
     };
@@ -145,17 +159,17 @@ const ContactGroupModal = ({
                     <ColorPicker color={model.color} onChange={handleChangeColor} />
                 </Field>
             </Row>
-            {options.length ? (
+            {contactsAutocompleteItems.length ? (
                 <div className="flex flex-nowrap mb1 on-mobile-flex-column">
                     <Label htmlFor="contactGroupEmail">{c('Label').t`Add email address`}</Label>
                     <Field className="flex-item-fluid">
                         <Autocomplete
                             id="contactGroupEmail"
-                            options={options}
+                            options={contactsAutocompleteItems}
                             limit={6}
                             value={value}
                             onChange={setValue}
-                            getData={({ Email, Name }) => (Email === Name ? `<${Email}>` : `${Name} <${Email}>`)}
+                            getData={(value) => value.label}
                             type="search"
                             placeholder={c('Placeholder').t`Start typing an email address`}
                             onSelect={handleSelect}
