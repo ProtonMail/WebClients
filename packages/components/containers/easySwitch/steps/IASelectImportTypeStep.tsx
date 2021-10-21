@@ -457,7 +457,7 @@ const IASelectImportTypeStep = ({
             return null;
         }
 
-        const showSummary = oauthProps && !disableCalendar && checkedTypes[CONTACTS];
+        const showSummary = oauthProps && !disableContacts && checkedTypes[CONTACTS];
 
         return (
             <FormLabel
