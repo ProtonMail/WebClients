@@ -12,10 +12,11 @@ import { useAddresses, useFeature, useModals } from '@proton/components/hooks';
 import ImportModal from '@proton/components/containers/contacts/import/ImportModal';
 
 interface Props {
+    hideEasySwitch: boolean;
     onImportButtonClick?: () => void;
 }
 
-const ImportCsvContactButton = ({ onImportButtonClick }: Props) => {
+const ImportCsvContactButton = ({ hideEasySwitch, onImportButtonClick }: Props) => {
     const { createModal } = useModals();
     const [addresses, loadingAddresses] = useAddresses();
 
@@ -33,7 +34,7 @@ const ImportCsvContactButton = ({ onImportButtonClick }: Props) => {
         return <Loader />;
     }
 
-    return isEasySwitchEnabled ? (
+    return isEasySwitchEnabled && !hideEasySwitch ? (
         <>
             <GoogleButton
                 onClick={() => {
