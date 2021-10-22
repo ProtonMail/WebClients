@@ -147,7 +147,11 @@ const Verification = () => {
     );
 
     if (isEmbedded) {
-        return <main ref={registerRootRef}>{hv}</main>;
+        return (
+            <main className="pl2 pr2" ref={registerRootRef}>
+                {hv}
+            </main>
+        );
     }
 
     return wrapInMain(hv);
