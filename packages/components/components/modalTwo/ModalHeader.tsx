@@ -23,7 +23,7 @@ const ModalHeader = ({ title, subline, actions: actionsProp, onBack, ...rest }: 
         <div
             className={classnames([
                 'modal-two-header flex flex-nowrap flex-item-noshrink flex-justify-space-between flex-align-items-start',
-                onBack && 'modal-two-header--with-back'
+                onBack && 'modal-two-header--with-back',
             ])}
             {...rest}
         >
@@ -45,7 +45,7 @@ const ModalHeader = ({ title, subline, actions: actionsProp, onBack, ...rest }: 
             <div className="modal-two-header-actions flex flex-item-noshrink flex-nowrap flex-align-items-stretch">
                 {actions && (
                     <>
-                        {actions} <Vr className="mt0-25 mb0-25" />
+                        {actions} <Vr className="my0-25" />
                     </>
                 )}
 
