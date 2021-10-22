@@ -101,7 +101,7 @@ export const useLoadEmbeddedImages = (localID: string) => {
             onUpdateAttachment
         );
 
-        // TODO
+        // TODO REDUX
         // updateMessageCache(messageCache, localID, {
         //     document: message.document,
         //     messageImages: updateImages(message.messageImages, { showEmbeddedImages: true }, undefined, embeddedImages),

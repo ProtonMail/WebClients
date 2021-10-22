@@ -11,7 +11,6 @@ import { Api } from '@proton/shared/lib/interfaces';
 import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { getAttachments, isPlainText } from '@proton/shared/lib/mail/messages';
 import { getSessionKey } from '@proton/shared/lib/mail/send/attachments';
-import { MessageExtended, MessageExtendedWithData, MessageKeys } from '../../models/message';
 import { getDocumentContent, getPlainTextContent } from './messageContent';
 import { constructMimeFromSource } from '../send/sendMimeBuilder';
 import { splitMail, combineHeaders } from '../mail';
@@ -19,18 +18,19 @@ import { GetMessageKeys } from '../../hooks/message/useGetMessageKeys';
 import { MESSAGE_ACTIONS } from '../../constants';
 import { restoreAllPrefixedAttributes } from './messageImages';
 import { insertActualEmbeddedImages } from './messageEmbeddeds';
+import { MessageKeys, MessageState, MessageStateWithData } from '../../logic/messages/messagesTypes';
 
 const removePasswordFromRequests: Pick<Message, 'Password' | 'PasswordHint'> = {
     Password: undefined,
     PasswordHint: undefined,
 };
 
-export const prepareExport = (message: MessageExtended) => {
-    if (!message.document) {
+export const prepareExport = (message: MessageState) => {
+    if (!message.messageDocument?.document) {
         return '';
     }
 
-    const document = message.document.cloneNode(true) as Element;
+    const document = message.messageDocument.document.cloneNode(true) as Element;
 
     // Embedded images
     insertActualEmbeddedImages(document);
@@ -56,7 +56,7 @@ const encryptBody = async (content: string, messageKeys: MessageKeys) => {
     return data;
 };
 
-export const prepareAndEncryptBody = async (message: MessageExtended, messageKeys: MessageKeys) => {
+export const prepareAndEncryptBody = async (message: MessageState, messageKeys: MessageKeys) => {
     const plainText = isPlainText(message.data);
     const content = plainText ? getPlainTextContent(message) : prepareExport(message);
     return encryptBody(content, messageKeys);
@@ -88,7 +88,7 @@ export const encryptAttachmentKeyPackets = async (
 };
 
 export const createMessage = async (
-    message: MessageExtendedWithData,
+    message: MessageStateWithData,
     api: Api,
     getMessageKeys: GetMessageKeys
 ): Promise<Message> => {
@@ -99,7 +99,7 @@ export const createMessage = async (
     let AttachmentKeyPackets;
     if (attachments?.length) {
         const originalMessageKeys = await getMessageKeys({
-            AddressID: message.originalAddressID || message.data?.AddressID,
+            AddressID: message.draftFlags?.originalAddressID || message.data?.AddressID,
         });
         AttachmentKeyPackets = await encryptAttachmentKeyPackets(
             attachments,
@@ -110,9 +110,9 @@ export const createMessage = async (
 
     const { Message: updatedMessage } = await api(
         createDraft({
-            Action: message.action !== MESSAGE_ACTIONS.NEW ? message.action : undefined,
+            Action: message.draftFlags?.action !== MESSAGE_ACTIONS.NEW ? message.draftFlags?.action : undefined,
             Message: { ...message.data, Body, ...removePasswordFromRequests },
-            ParentID: message.ParentID,
+            ParentID: message.draftFlags?.ParentID,
             AttachmentKeyPackets,
         })
     );
@@ -127,7 +127,7 @@ export const createMessage = async (
  * @param api Api handler to use
  */
 export const updateMessage = async (
-    message: MessageExtendedWithData,
+    message: MessageStateWithData,
     previousAddressID: string,
     api: Api,
     getMessageKeys: GetMessageKeys
@@ -160,7 +160,7 @@ export const updateMessage = async (
  * Use mime format, don't encrypt,
  */
 export const exportBlob = async (
-    message: MessageExtended,
+    message: MessageState,
     messageKeys: MessageKeys,
     getAttachment: (ID: string) => DecryptResultPmcrypto | undefined,
     onUpdateAttachment: (ID: string, attachment: DecryptResultPmcrypto) => void,

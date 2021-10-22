@@ -124,7 +124,7 @@ export const useOptimisticMarkAs = () => {
                 const messageFromCache = getMessage(message.ID);
 
                 if (messageFromCache && messageFromCache.data) {
-                    // TODO
+                    // TODO REDUX
                     // messageCache.set(localID, {
                     //     ...messageFromCache,
                     //     data: applyMarkAsChangesOnMessage(messageFromCache.data, changes),
@@ -209,7 +209,7 @@ export const useOptimisticMarkAs = () => {
                         // Update in message cache
                         const messageFromCache = getMessage(message.ID);
                         if (messageFromCache && messageFromCache.data) {
-                            // TODO
+                            // TODO REDUX
                             // messageCache.set(localID, {
                             //     ...messageFromCache,
                             //     data: applyMarkAsChangesOnMessage(messageFromCache.data, changes),

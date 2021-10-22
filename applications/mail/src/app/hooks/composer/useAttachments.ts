@@ -8,10 +8,8 @@ import { readFileAsBuffer } from '@proton/shared/lib/helpers/file';
 import { useDispatch } from 'react-redux';
 import { Upload } from '../../helpers/upload';
 import { UploadResult, ATTACHMENT_ACTION, isSizeExceeded, upload } from '../../helpers/attachment/attachmentUploader';
-import { MessageExtended, MessageExtendedWithData } from '../../models/message';
 import { EditorActionsRef } from '../../components/composer/editor/SquireEditorWrapper';
 import { MessageChange } from '../../components/composer/Composer';
-import { useMessageCache } from '../../containers/MessageProvider';
 import { useGetMessageKeys } from '../message/useGetMessageKeys';
 import { useLongLivingState } from '../useLongLivingState';
 import { usePromise } from '../usePromise';
@@ -24,6 +22,8 @@ import {
 } from '../../helpers/message/messageEmbeddeds';
 import { MESSAGE_ALREADY_SENT_INTERNAL_ERROR } from '../../constants';
 import { addAttachment } from '../../logic/attachments/attachmentsActions';
+import { MessageState, MessageStateWithData } from '../../logic/messages/messagesTypes';
+import { useGetMessage } from '../message/useMessage';
 
 export interface PendingUpload {
     file: File;
@@ -31,7 +31,7 @@ export interface PendingUpload {
 }
 
 interface UseAttachmentsParameters {
-    message: MessageExtended;
+    message: MessageState;
     onChange: MessageChange;
     onSaveNow: () => Promise<void>;
     editorActionsRef: EditorActionsRef;
@@ -48,7 +48,8 @@ export const useAttachments = ({
     const api = useApi();
     const { createNotification } = useNotifications();
     const auth = useAuthentication();
-    const messageCache = useMessageCache();
+    // const messageCache = useMessageCache();
+    const getMessage = useGetMessage();
     const getMessageKeys = useGetMessageKeys();
     const dispatch = useDispatch();
 
@@ -94,7 +95,8 @@ export const useAttachments = ({
     const ensureMessageIsCreated = async () => {
         await onSaveNow();
         // Message from cache has data because we just saved it if not
-        return messageCache.get(localID) as MessageExtendedWithData;
+        // return messageCache.get(localID) as MessageExtendedWithData;
+        return getMessage(localID) as MessageStateWithData;
     };
 
     /**
@@ -114,7 +116,7 @@ export const useAttachments = ({
             );
 
             // Warning, that change function can be called multiple times, don't do any side effect in it
-            onChange((message: MessageExtended) => {
+            onChange((message: MessageState) => {
                 // New attachment list
                 const Attachments = [...getAttachments(message.data), upload.attachment];
                 const embeddedImages = getEmbeddedImages(message);
@@ -172,7 +174,7 @@ export const useAttachments = ({
             const messageKeys = await getMessageKeys(messageFromCache.data);
 
             // Message already sent
-            if (messageFromCache.isSentDraft) {
+            if (messageFromCache.draftFlags?.isSentDraft) {
                 onMessageAlreadySent();
                 return;
             }
@@ -225,7 +227,7 @@ export const useAttachments = ({
             await api(removeAttachment(attachment.ID, message.data.ID));
         }
 
-        onChange((message: MessageExtended) => {
+        onChange((message: MessageState) => {
             const Attachments = message.data?.Attachments?.filter((a: Attachment) => a.ID !== attachment.ID) || [];
 
             const { cid, cloc } = readContentIDandLocation(attachment);

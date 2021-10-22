@@ -3,9 +3,14 @@ import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message'
 import { attachmentsSize } from '@proton/shared/lib/mail/messages';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { uniqueBy } from '@proton/shared/lib/helpers/array';
-import { MessageExtended, MessageExtendedWithData, MessageImages, PartialMessageExtended } from '../../models/message';
 import { getContent, setContent } from './messageContent';
 import { getEmbeddedImages } from './messageImages';
+import {
+    MessageImages,
+    MessageState,
+    MessageStateWithData,
+    PartialMessageState,
+} from '../../logic/messages/messagesTypes';
 
 const { ALL_DRAFTS, ALL_SENT, DRAFTS, SENT, SPAM, INBOX } = MAILBOX_LABEL_IDS;
 
@@ -37,18 +42,22 @@ export const getAttachmentCounts = (attachments: Attachment[], messageImages: Me
  * Apply updates from the message model to the message in state
  */
 export const mergeMessages = (
-    messageState: MessageExtended | undefined,
-    messageModel: PartialMessageExtended
-): MessageExtended => {
-    if (messageState?.document && messageModel.document) {
+    messageState: MessageState | undefined,
+    messageModel: PartialMessageState
+): MessageState => {
+    if (messageState?.messageDocument?.document && messageModel.messageDocument?.document) {
         setContent(messageState, getContent(messageModel));
     }
     return {
         ...messageState,
         ...messageModel,
         data: { ...messageState?.data, ...messageModel.data } as Message,
+        decryption: { ...messageState?.decryption, ...messageModel.decryption },
+        messageDocument: { ...messageState?.messageDocument, ...messageModel.messageDocument },
+        verification: { ...messageState?.verification, ...messageModel.verification },
+        draftFlags: { ...messageState?.draftFlags, ...messageModel.draftFlags },
         errors: { ...messageState?.errors, ...messageModel.errors },
-    } as MessageExtended;
+    } as MessageState;
 };
 
 export const getMessagesAuthorizedToMove = (messages: Message[], destinationFolderID: string) => {
@@ -68,4 +77,4 @@ export const getMessagesAuthorizedToMove = (messages: Message[], destinationFold
     });
 };
 
-export const getMessageHasData = (message: MessageExtended): message is MessageExtendedWithData => !!message.data;
+export const getMessageHasData = (message: MessageState): message is MessageStateWithData => !!message.data;

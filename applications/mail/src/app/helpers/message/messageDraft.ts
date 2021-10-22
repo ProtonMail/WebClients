@@ -21,7 +21,6 @@ import { generateUID } from '@proton/components';
 import { c } from 'ttag';
 import { DEFAULT_FONT_FACE, DEFAULT_FONT_SIZE } from '@proton/components/components/editor/squireConfig';
 import { DecryptResultPmcrypto } from 'pmcrypto';
-import { MessageExtendedWithData, PartialMessageExtended } from '../../models/message';
 import { MESSAGE_ACTIONS } from '../../constants';
 import { getFromAddress } from '../addresses';
 import { formatFullDate } from '../date';
@@ -31,6 +30,7 @@ import { exportPlainText, getDocumentContent, plainTextToHTML } from './messageC
 import { getEmbeddedImages, restoreImages, updateImages } from './messageImages';
 import { insertSignature } from './messageSignature';
 import { convertToFile } from '../attachment/attachmentConverter';
+import { MessageStateWithData, PartialMessageState } from '../../logic/messages/messagesTypes';
 
 // Reference: Angular/src/app/message/services/messageBuilder.js
 
@@ -39,7 +39,7 @@ export const CLASSNAME_BLOCKQUOTE = 'protonmail_quote';
 /**
  * Copy embeddeds images from the reference message
  */
-export const keepEmbeddeds = (message: PartialMessageExtended) => {
+export const keepEmbeddeds = (message: PartialMessageState) => {
     const embeddedImages = getEmbeddedImages(message);
     const Attachments = embeddedImages.map((image) => image.attachment);
     const messageImages = updateImages(message.messageImages, undefined, [], embeddedImages);
@@ -54,10 +54,10 @@ export const keepEmbeddeds = (message: PartialMessageExtended) => {
 const newCopy = (
     {
         data: { Subject = '', ToList = [], CCList = [], BCCList = [] } = {},
-        decryptedSubject = '',
-    }: PartialMessageExtended = {},
+        decryption: { decryptedSubject = '' } = {},
+    }: PartialMessageState = {},
     useEncrypted = false
-): PartialMessageExtended => {
+): PartialMessageState => {
     return {
         data: { Subject: useEncrypted ? decryptedSubject : Subject, ToList, CCList, BCCList },
     };
@@ -66,9 +66,9 @@ const newCopy = (
 /**
  * Format and build a reply
  */
-const reply = (referenceMessage: PartialMessageExtended, useEncrypted = false): PartialMessageExtended => {
+const reply = (referenceMessage: PartialMessageState, useEncrypted = false): PartialMessageState => {
     const Subject = formatSubject(
-        useEncrypted ? referenceMessage.decryptedSubject : referenceMessage.data?.Subject,
+        useEncrypted ? referenceMessage.decryption?.decryptedSubject : referenceMessage.data?.Subject,
         RE_PREFIX
     );
     const ToList =
@@ -88,11 +88,11 @@ const reply = (referenceMessage: PartialMessageExtended, useEncrypted = false): 
  * Format and build a replyAll
  */
 const replyAll = (
-    referenceMessage: PartialMessageExtended,
+    referenceMessage: PartialMessageState,
     useEncrypted = false,
     addresses: Address[]
-): PartialMessageExtended => {
-    const { data = {}, decryptedSubject = '' } = referenceMessage;
+): PartialMessageState => {
+    const { data = {}, decryption: { decryptedSubject = '' } = {} } = referenceMessage;
 
     const Subject = formatSubject(useEncrypted ? decryptedSubject : data.Subject, RE_PREFIX);
 
@@ -118,8 +118,8 @@ const replyAll = (
 /**
  * Format and build a forward
  */
-const forward = (referenceMessage: PartialMessageExtended, useEncrypted = false): PartialMessageExtended => {
-    const { data, decryptedSubject = '' } = referenceMessage;
+const forward = (referenceMessage: PartialMessageState, useEncrypted = false): PartialMessageState => {
+    const { data, decryption: { decryptedSubject = '' } = {} } = referenceMessage;
     const Subject = formatSubject(useEncrypted ? decryptedSubject : data?.Subject, FW_PREFIX);
     const Attachments = data?.Attachments;
 
@@ -130,12 +130,12 @@ const forward = (referenceMessage: PartialMessageExtended, useEncrypted = false)
 
 export const handleActions = (
     action: MESSAGE_ACTIONS,
-    referenceMessage: PartialMessageExtended = {},
+    referenceMessage: PartialMessageState = {},
     addresses: Address[] = []
-): PartialMessageExtended => {
+): PartialMessageState => {
     // TODO: I would prefere manage a confirm modal from elsewhere
     // const useEncrypted = !!referenceMessage.encryptedSubject && (await promptEncryptedSubject(currentMsg));
-    const useEncrypted = !!referenceMessage?.decryptedSubject;
+    const useEncrypted = !!referenceMessage?.decryption?.decryptedSubject;
 
     switch (action) {
         case MESSAGE_ACTIONS.REPLY:
@@ -154,7 +154,7 @@ export const handleActions = (
  * Generate blockquote of the referenced message to the content of the new mail
  */
 const generateBlockquote = (
-    referenceMessage: PartialMessageExtended,
+    referenceMessage: PartialMessageState,
     mailSettings: MailSettings,
     addresses: Address[]
 ) => {
@@ -165,8 +165,13 @@ const generateBlockquote = (
     const previousContent = referenceMessage.errors?.decryption
         ? referenceMessage.data?.Body
         : isPlainText(referenceMessage.data)
-        ? plainTextToHTML(referenceMessage.data as Message, referenceMessage.decryptedBody, mailSettings, addresses)
-        : getDocumentContent(restoreImages(referenceMessage.document, referenceMessage.messageImages));
+        ? plainTextToHTML(
+              referenceMessage.data as Message,
+              referenceMessage.decryption?.decryptedBody,
+              mailSettings,
+              addresses
+          )
+        : getDocumentContent(restoreImages(referenceMessage.messageDocument?.document, referenceMessage.messageImages));
 
     return `<div class="${CLASSNAME_BLOCKQUOTE}">
         ${ORIGINAL_MESSAGE}<br>
@@ -179,11 +184,11 @@ const generateBlockquote = (
 
 export const createNewDraft = (
     action: MESSAGE_ACTIONS,
-    referenceMessage: PartialMessageExtended | undefined,
+    referenceMessage: PartialMessageState | undefined,
     mailSettings: MailSettings,
     addresses: Address[],
     getAttachment: (ID: string) => DecryptResultPmcrypto | undefined
-): PartialMessageExtended => {
+): PartialMessageState => {
     const MIMEType = referenceMessage?.data?.MIMEType || (mailSettings.DraftMIMEType as unknown as MIME_TYPES);
     const { FontFace, FontSize, RightToLeft } = mailSettings;
 
@@ -205,7 +210,7 @@ export const createNewDraft = (
 
     const originalTo = getOriginalTo(referenceMessage?.data);
     const originalAddressID = referenceMessage?.data?.AddressID;
-    const initialAttachments = [...(referenceMessage?.initialAttachments || []), ...pgpAttachments];
+    const initialAttachments = [...(referenceMessage?.draftFlags?.initialAttachments || []), ...pgpAttachments];
 
     const senderAddress = getFromAddress(addresses, originalTo, referenceMessage?.data?.AddressID);
 
@@ -218,12 +223,12 @@ export const createNewDraft = (
 
     let content =
         action === MESSAGE_ACTIONS.NEW
-            ? referenceMessage?.decryptedBody
-                ? referenceMessage?.decryptedBody
+            ? referenceMessage?.decryption?.decryptedBody
+                ? referenceMessage?.decryption?.decryptedBody
                 : ''
             : generateBlockquote(referenceMessage || {}, mailSettings, addresses);
     content =
-        action === MESSAGE_ACTIONS.NEW && referenceMessage?.decryptedBody
+        action === MESSAGE_ACTIONS.NEW && referenceMessage?.decryption?.decryptedBody
             ? insertSignature(content, senderAddress?.Signature, action, mailSettings, true)
             : insertSignature(content, senderAddress?.Signature, action, mailSettings);
 
@@ -254,23 +259,30 @@ export const createNewDraft = (
             AddressID,
             Unread: 0,
         },
-        ParentID,
-        document,
-        plainText,
-        action,
-        originalTo,
-        originalAddressID,
-        initialized: true,
+        messageDocument: {
+            initialized: true,
+            document,
+            plainText,
+        },
+        draftFlags: {
+            ParentID,
+            action,
+            originalTo,
+            originalAddressID,
+            initialAttachments,
+        },
         messageImages,
-        initialAttachments,
     };
 };
 
-export const cloneDraft = (draft: MessageExtendedWithData): MessageExtendedWithData => {
+export const cloneDraft = (draft: MessageStateWithData): MessageStateWithData => {
     return {
         ...draft,
         data: { ...draft.data },
-        document: draft.document?.cloneNode(true) as Element,
+        messageDocument: {
+            ...draft.messageDocument,
+            document: draft.messageDocument?.document?.cloneNode(true) as Element,
+        },
     };
 };
 

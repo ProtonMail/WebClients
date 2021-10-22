@@ -4,9 +4,9 @@ import createListeners from '@proton/shared/lib/helpers/listeners';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { AppLink, useIsMounted } from '@proton/components';
 import { VIEW_MODE } from '@proton/shared/lib/constants';
+import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import UndoButton from './UndoButton';
 import { formatDateToHuman } from '../../helpers/date';
-import { MessageCache } from '../../containers/MessageProvider';
 
 export const createSendingMessageNotificationManager = () => {
     const listeners = createListeners();
@@ -23,9 +23,8 @@ export type SendingMessageNotificationManager = ReturnType<typeof createSendingM
 interface SendingMessageNotificationProps {
     manager: SendingMessageNotificationManager;
     scheduledAt?: number;
-    localID: string;
-    messageCache: MessageCache;
     viewMode: number;
+    message: Message | undefined;
 }
 
 enum SendingStep {
@@ -34,13 +33,7 @@ enum SendingStep {
     sentWithUndo,
 }
 
-const SendingMessageNotification = ({
-    manager,
-    scheduledAt,
-    localID,
-    messageCache,
-    viewMode,
-}: SendingMessageNotificationProps) => {
+const SendingMessageNotification = ({ manager, scheduledAt, viewMode, message }: SendingMessageNotificationProps) => {
     const [state, setState] = useState(SendingStep.sending);
     const onUndoRef = useRef<() => Promise<void> | undefined>();
     const isMounted = useIsMounted();
@@ -58,10 +51,7 @@ const SendingMessageNotification = ({
          */
         const notification = c('Info').t`Message will be sent ${dateString} at ${formattedTime}`;
 
-        const linkID =
-            viewMode === VIEW_MODE.GROUP
-                ? messageCache.get(localID)?.data?.ConversationID
-                : messageCache.get(localID)?.data?.ID;
+        const linkID = viewMode === VIEW_MODE.GROUP ? message?.ConversationID : message?.ID;
 
         return (
             <>

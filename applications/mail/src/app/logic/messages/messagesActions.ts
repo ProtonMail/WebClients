@@ -1,7 +1,7 @@
 import { getImage } from '@proton/shared/lib/api/images';
 import { getMessage } from '@proton/shared/lib/api/messages';
 import { wait } from '@proton/shared/lib/helpers/promise';
-import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import { Message, Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { createAction, createAsyncThunk } from '@reduxjs/toolkit';
 import { LOAD_RETRY_DELAY } from '../../constants';
 import { get } from '../../helpers/attachment/attachmentLoader';
@@ -17,6 +17,7 @@ import {
     LoadParams,
     LoadRemoteParams,
     LoadRemoteProxyResults,
+    MessageEmbeddedImage,
     MessageRemoteImage,
     MessageState,
 } from './messagesTypes';
@@ -146,3 +147,26 @@ export const loadRemoteDirect = createAsyncThunk<[MessageRemoteImage, unknown][]
         );
     }
 );
+
+export const createDraft = createAction<MessageState>('message/draft/create');
+
+export const openDraft = createAction<{ ID: string; fromUndo: boolean }>('messages/draft/open');
+
+export const removeInitialAttachments = createAction<string>('messages/draft/removeInitialAttachments');
+
+export const draftSaved = createAction<{ ID: string; message: Message }>('message/draft/saved');
+
+export const startSending = createAction<string>('messages/send/start');
+
+export const sendModifications =
+    createAction<{ ID: string; attachments: Attachment[]; images: MessageEmbeddedImage[] }>(
+        'messages/send/modifications'
+    );
+
+export const endUndo = createAction<string>('message/send/endUndo');
+
+export const sent = createAction<Message>('message/send/sent');
+
+export const endSending = createAction<string>('messages/send/end');
+
+export const deleteDraft = createAction<string>('messages/deleteDraft');

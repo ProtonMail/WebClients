@@ -12,13 +12,13 @@ import {
 import { c } from 'ttag';
 import { APPS } from '@proton/shared/lib/constants';
 import { SelectChangeEvent } from '@proton/components/components/selectTwo/select';
-import { MessageExtended } from '../../../models/message';
 import { getAddressFromEmail, getFromAddresses } from '../../../helpers/addresses';
-import { MessageChange } from '../Composer';
 import { changeSignature } from '../../../helpers/message/messageSignature';
+import { MessageState } from '../../../logic/messages/messagesTypes';
+import { MessageChange } from '../Composer';
 
 interface Props {
-    message: MessageExtended;
+    message: MessageState;
     disabled: boolean;
     onChange: MessageChange;
     onChangeContent: (content: string, refreshContent: boolean) => void;
@@ -32,7 +32,7 @@ const SelectSender = ({ message, disabled, onChange, onChangeContent, addressesB
 
     const [uid] = useState(generateUID('select-sender'));
 
-    const addressesOptions = getFromAddresses(addresses, message.originalTo).map((address) => (
+    const addressesOptions = getFromAddresses(addresses, message.draftFlags?.originalTo).map((address) => (
         <Option value={address.Email} title={address.Email} key={address.Email}>
             <span className="inline-flex flex-nowrap flex-row flex-align-items-center max-w100">
                 <span className="text-ellipsis">{address.Email}</span>

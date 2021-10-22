@@ -3,11 +3,11 @@ import { arrayToBinaryString, DecryptResultPmcrypto } from 'pmcrypto';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import { Api } from '@proton/shared/lib/interfaces';
 import { getAttachments, isPlainText as testIsPlainText } from '@proton/shared/lib/mail/messages';
-import { MessageEmbeddedImage, MessageExtended, MessageImages, MessageKeys } from '../../models/message';
 import { getPlainText } from '../message/messageContent';
 import { prepareExport } from '../message/messageExport';
 import { Download, formatDownload } from '../attachment/attachmentDownloader';
 import { readContentIDandLocation } from '../message/messageEmbeddeds';
+import { MessageEmbeddedImage, MessageImages, MessageKeys, MessageState } from '../../logic/messages/messagesTypes';
 
 // Reference: Angular/src/app/composer/services/mimeMessageBuilder.js
 
@@ -150,7 +150,7 @@ const build = (
 };
 
 const fetchMimeDependencies = async (
-    message: MessageExtended,
+    message: MessageState,
     messageKeys: MessageKeys,
     getAttachment: (ID: string) => DecryptResultPmcrypto | undefined,
     onUpdateAttachment: (ID: string, attachment: DecryptResultPmcrypto) => void,
@@ -164,7 +164,7 @@ const fetchMimeDependencies = async (
 };
 
 export const constructMime = async (
-    message: MessageExtended,
+    message: MessageState,
     messageKeys: MessageKeys,
     getAttachment: (ID: string) => DecryptResultPmcrypto | undefined,
     onUpdateAttachment: (ID: string, attachment: DecryptResultPmcrypto) => void,
@@ -179,7 +179,7 @@ export const constructMime = async (
 };
 
 export const constructMimeFromSource = async (
-    message: MessageExtended,
+    message: MessageState,
     messageKeys: MessageKeys,
     getAttachment: (ID: string) => DecryptResultPmcrypto | undefined,
     onUpdateAttachment: (ID: string, attachment: DecryptResultPmcrypto) => void,
@@ -193,8 +193,8 @@ export const constructMimeFromSource = async (
         plaintext = message.data?.Body;
     } else {
         const isPlainText = testIsPlainText(message.data);
-        plaintext = isPlainText ? message.decryptedBody : undefined;
-        html = isPlainText ? undefined : message.decryptedBody;
+        plaintext = isPlainText ? message.decryption?.decryptedBody : undefined;
+        html = isPlainText ? undefined : message.decryption?.decryptedBody;
     }
 
     const attachments = await fetchMimeDependencies(message, messageKeys, getAttachment, onUpdateAttachment, api);

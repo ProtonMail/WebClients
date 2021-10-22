@@ -6,7 +6,7 @@ import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import { getAttachments, isEO } from '@proton/shared/lib/mail/messages';
 import { Api } from '@proton/shared/lib/interfaces';
 import { srpGetVerify } from '@proton/shared/lib/srp';
-import { MessageExtendedWithData } from '../../models/message';
+import { MessageStateWithData } from '../../logic/messages/messagesTypes';
 
 const { PLAINTEXT, DEFAULT, MIME } = MIME_TYPES;
 const { SEND_PM, SEND_CLEAR, SEND_PGP_INLINE, SEND_PGP_MIME, SEND_EO, SEND_CLEAR_MIME } = PACKAGE_TYPE;
@@ -100,7 +100,7 @@ const sendClear = async () => ({ Type: SEND_CLEAR, Signature: 0 });
  */
 export const attachSubPackages = async (
     packages: Packages,
-    message: MessageExtendedWithData,
+    message: MessageStateWithData,
     emails: string[],
     mapSendPrefs: SimpleMap<SendPreferences>,
     api: Api
