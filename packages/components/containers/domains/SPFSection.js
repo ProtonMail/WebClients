@@ -4,7 +4,7 @@ import { useNotifications } from '../../hooks';
 
 const SPFSection = () => {
     const { createNotification } = useNotifications();
-    const handleCopy = () => createNotification({ text: c('Success').t`SPF value copied to clipboard!` });
+    const handleCopy = () => createNotification({ text: c('Success').t`SPF value copied to clipboard` });
     const spf = <code>include:_spf.protonmail.ch</code>;
     const spfValue = <code>v=spf1</code>;
     const valueToCopy = 'v=spf1 include:_spf.protonmail.ch mx ~all';

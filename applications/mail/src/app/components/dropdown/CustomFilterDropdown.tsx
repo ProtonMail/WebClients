@@ -117,7 +117,7 @@ const CustomFilterDropdown = ({ message, onClose }: Props) => {
     const handleNext = () => {
         if (!isPaid(user) && filters.filter((filter) => filter.Status === FILTER_STATUS.ENABLED).length > 0) {
             createNotification({
-                text: c('Error').t`Too many active filters. Please upgrade to a paid plan to activate more filters`,
+                text: c('Error').t`Too many active filters. Please upgrade to a paid plan to activate more filters.`,
                 type: 'error',
             });
             onClose();

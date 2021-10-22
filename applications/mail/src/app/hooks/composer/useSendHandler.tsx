@@ -112,7 +112,7 @@ export const useSendHandler = ({
             }
 
             createNotification({
-                text: c('Error').t`Error while sending the message. Message is not sent`,
+                text: c('Error').t`Error while sending the message. Message is not sent.`,
                 type: 'error',
             });
             console.error('Error while sending the message.', error);
@@ -164,7 +164,7 @@ export const useSendHandler = ({
             } catch (error: any) {
                 hideNotification(notifManager.ID);
                 createNotification({
-                    text: c('Error').t`Error while uploading attachments. Message is not sent`,
+                    text: c('Error').t`Error while uploading attachments. Message is not sent.`,
                     type: 'error',
                 });
                 console.error('Error while uploading attachments.', error);

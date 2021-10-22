@@ -29,7 +29,7 @@ const ComposerPasswordModal = ({ message, onClose, onChange }: Props) => {
         if (password !== passwordVerif) {
             createNotification({
                 type: 'error',
-                text: c('Error').t`Message passwords do not match.`,
+                text: c('Error').t`Message passwords do not match`,
             });
             return;
         }

@@ -120,7 +120,7 @@ const UsersAndAddressesSection = () => {
             return createNotification({ type: 'error', text: error });
         }
         if (!organizationKey?.privateKey) {
-            return createNotification({ type: 'error', text: c('Error').t`Organization key is not decrypted.` });
+            return createNotification({ type: 'error', text: c('Error').t`Organization key is not decrypted` });
         }
 
         createModal(

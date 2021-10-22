@@ -5,7 +5,7 @@ import { useNotifications } from '../../hooks';
 
 const VerifySection = ({ domain }) => {
     const { createNotification } = useNotifications();
-    const handleCopy = () => createNotification({ text: c('Success').t`Verification code copied to clipboard!` });
+    const handleCopy = () => createNotification({ text: c('Success').t`Verification code copied to clipboard` });
     const domainName = domain.DomainName;
     return (
         <>
