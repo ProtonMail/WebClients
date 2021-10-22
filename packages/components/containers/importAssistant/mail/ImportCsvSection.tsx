@@ -2,7 +2,11 @@ import { c } from 'ttag';
 import { SettingsParagraph, SettingsSection } from '@proton/components';
 import ImportCsvContactButton from '@proton/components/containers/contacts/widget/ImportCsvContactButton';
 
-const ImportCsvSection = () => (
+interface Props {
+    hideEasySwitch?: boolean;
+}
+
+const ImportCsvSection = ({ hideEasySwitch = false }: Props) => (
     <SettingsSection>
         <SettingsParagraph>
             {c('Info')
@@ -10,7 +14,7 @@ const ImportCsvSection = () => (
         </SettingsParagraph>
 
         <div>
-            <ImportCsvContactButton />
+            <ImportCsvContactButton hideEasySwitch={hideEasySwitch} />
         </div>
     </SettingsSection>
 );
