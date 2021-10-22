@@ -1,3 +1,30 @@
+## Release 4.0.10 - Nov 10, 2021
+
+### Improvements
+
+-   Added the contact import functionality to the Mail Settings "Import/Export" page
+-   Added a warning for keys that are considered less secure in Settings
+-   Added an option to filter locations in the advanced search widget
+-   Improved the autocomplete functionality that displays when adding contacts to a group to display most frequently used contacts first
+-   Added file preview support for videos up to 100MB
+-   Added icons for additional attachment file types
+-   Clicking on the attachment icon in the expanded message view redirects to the attachment list
+-   Removed the success banner when marking messages as read/unread
+
+### Bug fixes
+
+-   Fixed an issue where if two attachments had the same name, both attachments would be removed if attempting to remove one inside the composer
+-   Fixed an issue where for emails with certain styles, the styles would be displayed outside of the email boundaries
+-   Fixed an issue where particular HTML content would look broken if pasted from an external source and saved as a draft
+-   Fixed an issue where the wrong conversation would be opened if pressing "Enter" after archiving something
+-   Fixed an issue where importing a contacts csv file from Google would fail if the file contains multiple addresses of the same type
+-   Fixed an issue where base tag support would not work properly in some cases
+-   Fixed an issue where after moving several messages to Trash one by one, the whole conversation would appear as moved to Trash for a short moment
+-   Fixed an issue where under certain circumstances a "Sending..." banner would be displayed in addition to a failure banner if a message actually failed to be sent
+-   Fixed an issue where some dropdown elements would stay on the screen when scrolling
+-   Fixed an issue where the "Delete" option would not display if adding a search location with a lot of characters
+-   Updated "Inline PGP" wording to be "PGP/Inline" in contacts
+
 ## Release 4.0.9 - Oct 27, 2021
 
 ### Improvements
