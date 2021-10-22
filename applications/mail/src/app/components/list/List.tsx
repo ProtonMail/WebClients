@@ -6,7 +6,6 @@ import {
     MnemonicPromptModal,
     PaginationRow,
     useItemsDraggable,
-    EllipsisLoader,
     useModals,
     useIsMnemonicAvailable,
     useSettingsLink,
@@ -214,7 +213,11 @@ const List = (
                                                 if (isMnemonicAvailable) {
                                                     createModal(<MnemonicPromptModal />);
                                                 } else {
-                                                    goToSettings('/authentication#recovery-notification', undefined, true);
+                                                    goToSettings(
+                                                        '/authentication#recovery-notification',
+                                                        undefined,
+                                                        true
+                                                    );
                                                 }
                                                 break;
                                             }
