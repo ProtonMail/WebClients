@@ -57,6 +57,8 @@ const Verification = () => {
 
     const [, setTheme] = useTheme();
 
+    const isEmbedded = windowIsEmbedded || embed;
+
     useEffect(() => {
         if (theme) {
             setTheme(Number(theme));
@@ -83,7 +85,7 @@ const Verification = () => {
     const resizeObserver = useInstance(() => new ResizeObserver(sendHeight));
 
     const registerRootRef = (el: HTMLElement) => {
-        if (el && windowIsEmbedded) {
+        if (el && isEmbedded) {
             resizeObserver.observe(el);
         }
     };
@@ -105,7 +107,7 @@ const Verification = () => {
             payload: { token, type },
         });
 
-        if (!windowIsEmbedded) {
+        if (!isEmbedded) {
             /*
              * window.close() will only be allowed to execute should the current window
              * have been opened programatically, otherwise the following error is thrown:
@@ -140,11 +142,11 @@ const Verification = () => {
             defaultCountry={defaultCountry}
             defaultEmail={defaultEmail}
             defaultPhone={defaultPhone}
-            isEmbedded={windowIsEmbedded}
+            isEmbedded={isEmbedded}
         />
     );
 
-    if (embed || windowIsEmbedded) {
+    if (isEmbedded) {
         return <main ref={registerRootRef}>{hv}</main>;
     }
 
