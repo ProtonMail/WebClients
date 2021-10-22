@@ -1,21 +1,26 @@
 import { c } from 'ttag';
 import { useHandler, useNotifications } from '@proton/components';
-import { MessageExtended, MessageExtendedWithData } from '../../models/message';
+import { useDispatch } from 'react-redux';
 import { useCreateDraft } from '../message/useSaveDraft';
-import { useMessageCache } from '../../containers/MessageProvider';
+import { MessageState, MessageStateWithData } from '../../logic/messages/messagesTypes';
+import { useGetMessage } from '../message/useMessage';
+import { deleteDraft } from '../../logic/messages/messagesActions';
 
 interface UseHandleMessageAlreadySentParameters {
-    modelMessage: MessageExtended;
+    modelMessage: MessageState;
     onClose: () => void;
 }
 
 export const useHandleMessageAlreadySent = ({ modelMessage, onClose }: UseHandleMessageAlreadySentParameters) => {
     const { createNotification } = useNotifications();
     const createDraft = useCreateDraft();
-    const messageCache = useMessageCache();
+    // const messageCache = useMessageCache();
+    const getMessage = useGetMessage();
+    const dispatch = useDispatch();
 
     const duplicateDraft = useHandler(() => {
-        const messageFromCache = messageCache.get(modelMessage.localID) as MessageExtendedWithData;
+        // const messageFromCache = messageCache.get(modelMessage.localID) as MessageExtendedWithData;
+        const messageFromCache = getMessage(modelMessage.localID) as MessageStateWithData;
 
         void createDraft({
             ...messageFromCache,
@@ -27,7 +32,8 @@ export const useHandleMessageAlreadySent = ({ modelMessage, onClose }: UseHandle
         });
 
         // remove the old draft from message cache (which will close the composer)
-        messageCache.delete(modelMessage.localID);
+        // messageCache.delete(modelMessage.localID);
+        dispatch(deleteDraft(modelMessage.localID));
     });
 
     const handleMessageAlreadySent = () => {

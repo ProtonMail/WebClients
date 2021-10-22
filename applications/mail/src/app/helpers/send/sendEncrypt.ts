@@ -1,23 +1,14 @@
-import {
-    encryptMessage,
-    splitMessage,
-    armorBytes,
-    concatArrays,
-    generateSessionKey,
-    encryptSessionKey,
-    SessionKey,
-    OpenPGPKey,
-} from 'pmcrypto';
+import { encryptMessage, splitMessage, generateSessionKey, encryptSessionKey, SessionKey, OpenPGPKey } from 'pmcrypto';
 import { identity } from '@proton/shared/lib/helpers/function';
 import { Package, Packages } from '@proton/shared/lib/interfaces/mail/crypto';
-import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
+import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { getAttachments } from '@proton/shared/lib/mail/messages';
 import { getSessionKey } from '@proton/shared/lib/mail/send/attachments';
 import { AES256, MIME_TYPES, PACKAGE_TYPE } from '@proton/shared/lib/constants';
 import { enums } from 'openpgp';
-import { MessageExtended, MessageKeys } from '../../models/message';
 import { arrayToBase64 } from '../base64';
+import { MessageKeys, MessageState } from '../../logic/messages/messagesTypes';
 
 const MEGABYTE = 1024 * 1024;
 
@@ -59,7 +50,7 @@ const encryptKeyPacket = async ({
 /**
  * Encrypt the attachment session keys and add them to the package
  */
-const encryptAttachmentKeys = async (pack: Package, message: MessageExtended, attachmentKeys: AttachmentKeys[]) => {
+const encryptAttachmentKeys = async (pack: Package, message: MessageState, attachmentKeys: AttachmentKeys[]) => {
     // multipart/mixed bodies already include the attachments so we don't add them here
     if (pack.MIMEType === MIME_TYPES.MIME) {
         return;
@@ -112,7 +103,7 @@ const encryptBodyPackage = async (
     pack: Package,
     messageKeys: MessageKeys,
     publicKeys: OpenPGPKey[],
-    message: MessageExtended
+    message: MessageState
 ) => {
     const cleanPublicKeys = publicKeys.filter(identity);
 
@@ -143,12 +134,7 @@ const encryptBodyPackage = async (
  * (the encrypted body in the message object) is the same as the other emails so we can use 1 blob for them in the api
  * (i.e. deduplication)
  */
-const encryptDraftBodyPackage = async (
-    pack: Package,
-    messageKeys: MessageKeys,
-    publicKeys: OpenPGPKey[],
-    message: MessageExtended
-) => {
+const encryptDraftBodyPackage = async (pack: Package, messageKeys: MessageKeys, publicKeys: OpenPGPKey[]) => {
     const cleanPublicKeys = [...messageKeys.publicKeys, ...publicKeys].filter(identity);
 
     // Always encrypt with a single private key
@@ -167,10 +153,11 @@ const encryptDraftBodyPackage = async (
 
     // rebuild the data without the send keypackets
     packets.asymmetric = packets.asymmetric.slice(0, messageKeys.publicKeys.length);
-    // combine message
-    const value = concatArrays(Object.values(packets).flat() as Uint8Array[]);
 
-    (message.data as Message).Body = await armorBytes(value);
+    // combine message
+    // const value = concatArrays(Object.values(packets).flat() as Uint8Array[]);
+
+    // (message.data as Message).Body = await armorBytes(value);
 
     return { keys: asymmetric.slice(messageKeys.publicKeys.length), encrypted, sessionKey };
 };
@@ -179,7 +166,7 @@ const encryptDraftBodyPackage = async (
  * Encrypts the body of the package and then overwrites the body in the package and adds the encrypted session keys
  * to the subpackages. If we send clear message the unencrypted session key is added to the (top-level) package too.
  */
-const encryptBody = async (pack: Package, messageKeys: MessageKeys, message: MessageExtended): Promise<void> => {
+const encryptBody = async (pack: Package, messageKeys: MessageKeys, message: MessageState): Promise<void> => {
     const addressKeys = Object.keys(pack.Addresses || {});
     const addresses = Object.values(pack.Addresses || {});
     const publicKeysList = addresses.map(({ PublicKey }) => PublicKey as OpenPGPKey);
@@ -227,7 +214,7 @@ const encryptBody = async (pack: Package, messageKeys: MessageKeys, message: Mes
 
 const encryptPackage = async (
     pack: Package,
-    message: MessageExtended,
+    message: MessageState,
     messageKeys: MessageKeys,
     attachmentKeys: AttachmentKeys[]
 ): Promise<Package> => {
@@ -238,7 +225,7 @@ const encryptPackage = async (
     return pack;
 };
 
-const getAttachmentKeys = async (message: MessageExtended, messageKeys: MessageKeys): Promise<AttachmentKeys[]> =>
+const getAttachmentKeys = async (message: MessageState, messageKeys: MessageKeys): Promise<AttachmentKeys[]> =>
     Promise.all(
         getAttachments(message.data).map(async (attachment) => ({
             Attachment: attachment,
@@ -250,7 +237,7 @@ const getAttachmentKeys = async (message: MessageExtended, messageKeys: MessageK
  * Encrypts the packages and removes all temporary values that should not be send to the API
  */
 export const encryptPackages = async (
-    message: MessageExtended,
+    message: MessageState,
     messageKeys: MessageKeys,
     packages: Packages
 ): Promise<Packages> => {

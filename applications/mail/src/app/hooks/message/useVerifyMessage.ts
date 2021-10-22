@@ -83,7 +83,7 @@ export const useVerifyMessage = (localID: string) => {
                     errors.signature = [error];
                 }
             } finally {
-                // TODO
+                // TODO REDUX
                 // updateMessageCache(messageCache, localID, {
                 //     verification: {
                 //         senderPinnedKeys: encryptionPreferences?.pinnedKeys,

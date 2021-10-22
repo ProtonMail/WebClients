@@ -218,7 +218,7 @@ const ExtraEvents = ({ message }: Props) => {
             } else {
                 errors.unknown = [error];
             }
-            // TODO
+            // TODO REDUX
             // updateMessageCache(messageCache, message.localID, { errors });
         }
     }, [message.data, message.errors, loadingConfigs, message.data?.ID]);

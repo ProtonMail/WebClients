@@ -219,16 +219,6 @@ export interface MessageState {
     verification?: MessageVerification;
 
     /**
-     * All kind of errors that appears during message processing
-     */
-    errors?: MessageErrors;
-
-    /**
-     * Counter of load retry
-     */
-    loadRetry?: number;
-
-    /**
      * All data relative to remote and embedded images present in the message
      */
     messageImages?: MessageImages;
@@ -237,6 +227,16 @@ export interface MessageState {
      * Drafts specifics flags
      */
     draftFlags?: MessageDraftFlags;
+
+    /**
+     * Counter of load retry
+     */
+    loadRetry?: number;
+
+    /**
+     * All kind of errors that appears during message processing
+     */
+    errors?: MessageErrors;
 }
 
 export type MessagesState = SimpleMap<MessageState>;

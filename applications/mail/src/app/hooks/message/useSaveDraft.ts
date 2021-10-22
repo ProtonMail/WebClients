@@ -1,5 +1,4 @@
 import { useDispatch } from 'react-redux';
-import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { useCallback } from 'react';
 import { useApi, useEventManager, useFolders, useMailSettings, useNotifications } from '@proton/components';
 import { deleteMessages } from '@proton/shared/lib/api/messages';
@@ -8,9 +7,7 @@ import { MAILBOX_LABEL_IDS, SHOW_MOVED } from '@proton/shared/lib/constants';
 import { c } from 'ttag';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { useGetMessageKeys } from './useGetMessageKeys';
-import { mergeMessages } from '../../helpers/message/messages';
 import { createMessage, updateMessage } from '../../helpers/message/messageExport';
-import { replaceEmbeddedAttachments } from '../../helpers/message/messageEmbeddeds';
 import { SAVE_DRAFT_ERROR_CODES } from '../../constants';
 import { isNetworkError } from '../../helpers/errors';
 import { getCurrentFolderID } from '../../helpers/labels';
@@ -18,31 +15,32 @@ import { deleteConversation } from '../../logic/conversations/conversationsActio
 import { useGetConversation } from '../conversation/useConversation';
 import { MessageState, MessageStateWithData } from '../../logic/messages/messagesTypes';
 import { useGetMessage } from './useMessage';
+import { draftSaved } from '../../logic/messages/messagesActions';
 
 const { ALL_DRAFTS } = MAILBOX_LABEL_IDS;
 
-/**
- * Only takes technical stuff from the updated message
- */
-export const mergeSavedMessage = (messageSaved: Message, messageReturned: Message): Message => ({
-    ...messageSaved,
-    ID: messageReturned.ID,
-    Time: messageReturned.Time,
-    ConversationID: messageReturned.ConversationID,
-    LabelIDs: messageReturned.LabelIDs,
-});
+// /**
+//  * Only takes technical stuff from the updated message
+//  */
+// export const mergeSavedMessage = (messageSaved: Message, messageReturned: Message): Message => ({
+//     ...messageSaved,
+//     ID: messageReturned.ID,
+//     Time: messageReturned.Time,
+//     ConversationID: messageReturned.ConversationID,
+//     LabelIDs: messageReturned.LabelIDs,
+// });
 
 export const useCreateDraft = () => {
     const api = useApi();
     // const messageCache = useMessageCache();
+    const dispatch = useDispatch();
     const { call } = useEventManager();
     const getMessageKeys = useGetMessageKeys();
 
     return useCallback(async (message: MessageStateWithData) => {
-        const messageKeys = await getMessageKeys(message.data);
+        // const messageKeys = await getMessageKeys(message.data);
         const newMessage = await createMessage(message, api, getMessageKeys);
-        const messageImages = replaceEmbeddedAttachments(message, newMessage.Attachments);
-        // TODO
+        // const messageImages = replaceEmbeddedAttachments(message, newMessage.Attachments);
         // updateMessageCache(messageCache, message.localID, {
         //     data: {
         //         ...mergeSavedMessage(message.data, newMessage),
@@ -54,6 +52,7 @@ export const useCreateDraft = () => {
         //     plainText: message.plainText,
         //     messageImages,
         // });
+        dispatch(draftSaved({ ID: message.localID, message: newMessage }));
         await call();
     }, []);
 };
@@ -61,6 +60,7 @@ export const useCreateDraft = () => {
 const useUpdateDraft = () => {
     const api = useApi();
     // const messageCache = useMessageCache();
+    const dispatch = useDispatch();
     const getMessage = useGetMessage();
     const { call } = useEventManager();
     const getMessageKeys = useGetMessageKeys();
@@ -70,10 +70,13 @@ const useUpdateDraft = () => {
         try {
             const messageFromCache = getMessage(message.localID) as MessageState;
             const previousAddressID = messageFromCache.data?.AddressID || '';
-            const newMessageKeys = await getMessageKeys(message.data);
-            const messageToSave = mergeMessages(messageFromCache, message) as MessageStateWithData;
+            // const messageToSave = mergeMessages(messageFromCache, message) as MessageStateWithData;
+            const messageToSave = {
+                ...messageFromCache,
+                ...message,
+                data: { ...messageFromCache.data, ...message.data },
+            };
             const newMessage = await updateMessage(messageToSave, previousAddressID, api, getMessageKeys);
-            // TODO
             // updateMessageCache(messageCache, message.localID, {
             //     ...newMessageKeys,
             //     data: {
@@ -85,6 +88,7 @@ const useUpdateDraft = () => {
             //     plainText: message.plainText,
             //     messageImages: message.messageImages,
             // });
+            dispatch(draftSaved({ ID: message.localID, message: newMessage }));
             await call();
         } catch (error: any) {
             if (!error.data) {
@@ -102,7 +106,7 @@ const useUpdateDraft = () => {
             }
 
             if (error.data.Code === SAVE_DRAFT_ERROR_CODES.DRAFT_DOES_NOT_EXIST) {
-                // TODO
+                // TODO REDUX
                 // messageCache.delete(message.localID);
             }
 
@@ -162,7 +166,7 @@ export const useDeleteDraft = () => {
                 throw error;
             }
 
-            // TODO
+            // TODO REDUX
             // messageCache.delete(message.localID || '');
 
             const conversationID = message.data?.ConversationID || '';

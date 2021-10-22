@@ -13,12 +13,13 @@ import {
     useMailSettings,
 } from '@proton/components';
 import { isPaid } from '@proton/shared/lib/user/helpers';
-
+import { useDispatch } from 'react-redux';
 import { createNewDraft, cloneDraft } from '../helpers/message/messageDraft';
 import { findSender } from '../helpers/addresses';
 import { MESSAGE_ACTIONS } from '../constants';
 import { useGetAttachment } from './useAttachment';
 import { MessageState, MessageStateWithData, PartialMessageState } from '../logic/messages/messagesTypes';
+import { createDraft as createDraftAction } from '../logic/messages/messagesActions';
 
 const CACHE_KEY = 'Draft';
 
@@ -62,6 +63,7 @@ export const useDraft = () => {
     const getMailSettings = useGetMailSettings();
     const getAddresses = useGetAddresses();
     // const messageCache = useMessageCache();
+    const dispatch = useDispatch();
     const draftVerifications = useDraftVerifications();
     const [addresses] = useAddresses();
     const [mailSettings] = useMailSettings();
@@ -99,8 +101,9 @@ export const useDraft = () => {
             }
 
             message.localID = generateUID('draft');
-            // TODO
+            // TODO REDUX
             // messageCache.set(message.localID, message);
+            dispatch(createDraftAction(message));
             return message.localID;
         },
         [cache, getMailSettings, getAddresses, draftVerifications]

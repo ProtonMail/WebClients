@@ -3,18 +3,16 @@ import { getAttachments } from '@proton/shared/lib/mail/messages';
 import { MutableRefObject, DragEvent, useState, DragEventHandler } from 'react';
 import { c } from 'ttag';
 import { classnames, EllipsisLoader } from '@proton/components';
-
 import dragAndDrop from '@proton/styles/assets/img/placeholders/drag-and-drop-img.svg';
-import { MessageExtended, MessageExtendedWithData } from '../../models/message';
-import AttachmentList, { AttachmentAction } from '../attachment/AttachmentList';
 import SquireEditorWrapper, { EditorActionsRef } from './editor/SquireEditorWrapper';
 import { isDragFile } from '../../helpers/dom';
 import { PendingUpload } from '../../hooks/composer/useAttachments';
 import { MessageChange } from './Composer';
 import { Breakpoints } from '../../models/utils';
+import { MessageState, MessageStateWithData } from '../../logic/messages/messagesTypes';
 
 interface Props {
-    message: MessageExtended;
+    message: MessageState;
     disabled: boolean;
     breakpoints: Breakpoints;
     onEditorReady: () => void;
@@ -140,7 +138,7 @@ const ComposerContent = ({
                     <AttachmentList
                         attachments={attachments}
                         pendingUploads={pendingUploads}
-                        message={message as MessageExtendedWithData}
+                        message={message as MessageStateWithData}
                         primaryAction={AttachmentAction.Preview}
                         secondaryAction={AttachmentAction.Remove}
                         collapsable

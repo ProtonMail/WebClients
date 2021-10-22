@@ -8,7 +8,7 @@ export const useResignContact = (localID: string) => {
     const api = useApi();
 
     return useCallback(async () => {
-        // TODO
+        // TODO REDUX
         // const messageFromCache = messageCache.get(localID) as MessageExtended;
         const message = await loadMessage(messageFromCache, api);
         const address = message.data.Sender?.Address;
