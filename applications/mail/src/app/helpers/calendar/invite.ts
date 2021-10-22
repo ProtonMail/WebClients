@@ -491,20 +491,20 @@ export const getInitialInvitationModel = ({
     maxUserCalendarsDisabled,
     mustReactivateCalendars,
 }: GetInitialInvitationModelArgs) => {
+    const errorModel = {
+        isImport: false,
+        hasMultipleVevents: false,
+        isOrganizerMode: false,
+        isAddressDisabled: false,
+        isAddressActive: true,
+        canCreateCalendar,
+        maxUserCalendarsDisabled,
+        mustReactivateCalendars,
+        hasNoCalendars,
+        timeStatus: EVENT_TIME_STATUS.FUTURE,
+    };
     if (invitationOrError instanceof EventInvitationError) {
-        return {
-            isImport: false,
-            hasMultipleVevents: false,
-            isOrganizerMode: false,
-            isAddressDisabled: false,
-            isAddressActive: true,
-            canCreateCalendar,
-            maxUserCalendarsDisabled,
-            mustReactivateCalendars,
-            hasNoCalendars,
-            timeStatus: EVENT_TIME_STATUS.FUTURE,
-            error: invitationOrError,
-        };
+        return { ...errorModel, error: invitationOrError };
     }
     if (!getInvitationHasMethod(invitationOrError)) {
         throw new Error('Initial invitation lacks ICAL method');
@@ -516,6 +516,15 @@ export const getInitialInvitationModel = ({
             contactEmails,
             ownAddresses
         );
+    if (invitation.method === ICAL_METHOD.REPLY && !invitation.attendee) {
+        // If we couldn't find the attendee in the REPLY ics, something is wrong in the ics
+        return {
+            ...errorModel,
+            error: new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_INVALID, {
+                method: invitation.method,
+            }),
+        };
+    }
     const result: InvitationModel = {
         isOrganizerMode,
         isImport,
