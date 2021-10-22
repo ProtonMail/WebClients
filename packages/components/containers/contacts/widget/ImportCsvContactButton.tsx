@@ -12,11 +12,11 @@ import { useAddresses, useFeature, useModals } from '@proton/components/hooks';
 import ImportModal from '@proton/components/containers/contacts/import/ImportModal';
 
 interface Props {
-    hideEasySwitch: boolean;
+    hideEasySwitch?: boolean;
     onImportButtonClick?: () => void;
 }
 
-const ImportCsvContactButton = ({ hideEasySwitch, onImportButtonClick }: Props) => {
+const ImportCsvContactButton = ({ hideEasySwitch = false, onImportButtonClick }: Props) => {
     const { createModal } = useModals();
     const [addresses, loadingAddresses] = useAddresses();
 
