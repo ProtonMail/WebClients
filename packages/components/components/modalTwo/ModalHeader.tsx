@@ -15,7 +15,7 @@ interface ModalHeaderProps extends Omit<ComponentPropsWithRef<'div'>, 'children'
 }
 
 const ModalHeader = ({ title, subline, actions: actionsProp, onBack, ...rest }: ModalHeaderProps) => {
-    const { onClose } = useContext(ModalContext);
+    const { id, onClose } = useContext(ModalContext);
 
     const actions = actionsProp?.map((button) => cloneElement(button, { icon: true, shape: 'ghost', size: 'medium' }));
 
@@ -37,7 +37,9 @@ const ModalHeader = ({ title, subline, actions: actionsProp, onBack, ...rest }: 
 
             {title && (
                 <div className={classnames(['mt0-5', onBack && 'text-center'])}>
-                    <h3 className="text-lg text-bold">{title}</h3>
+                    <h3 id={id} className="text-lg text-bold">
+                        {title}
+                    </h3>
                     {subline && <div className="color-weak">{subline}</div>}
                 </div>
             )}
