@@ -347,7 +347,7 @@ const ChangePasswordModal = ({ onClose, mode, ...rest }: Props) => {
                 if (userKeysList.length === 0) {
                     return createNotification({
                         type: 'error',
-                        text: c('Error').t`Please generate keys before you try to change your password.`,
+                        text: c('Error').t`Please generate keys before you try to change your password`,
                     });
                 }
                 setIsSubmitted(true);

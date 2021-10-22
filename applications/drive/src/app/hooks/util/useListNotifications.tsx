@@ -290,10 +290,10 @@ const useListNotifications = () => {
         if (deletedCount) {
             const notificationText =
                 deletedCount === 1
-                    ? c('Notification').t`The link to your file was deleted.`
+                    ? c('Notification').t`The link to your file was deleted`
                     : c('Notification').ngettext(
-                          msgid`${deletedCount} link to your file was deleted.`,
-                          `${deletedCount} links to your files were deleted.`,
+                          msgid`${deletedCount} link to your file was deleted`,
+                          `${deletedCount} links to your files were deleted`,
                           deletedCount
                       );
 
@@ -303,10 +303,10 @@ const useListNotifications = () => {
         if (failedCount) {
             const notificationText =
                 failedCount === 1
-                    ? c('Notification').t`The link to your file failed to be deleted.`
+                    ? c('Notification').t`The link to your file failed to be deleted`
                     : c('Notification').ngettext(
-                          msgid`${failedCount} link to your file failed to be deleted.`,
-                          `${failedCount} links to your files failed to be deleted.`,
+                          msgid`${failedCount} link to your file failed to be deleted`,
+                          `${failedCount} links to your files failed to be deleted`,
                           failedCount
                       );
 

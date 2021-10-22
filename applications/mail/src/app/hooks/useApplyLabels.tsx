@@ -29,7 +29,7 @@ const { SPAM, TRASH, SCHEDULED } = MAILBOX_LABEL_IDS;
 const getNotificationTextStarred = (isMessage: boolean, elementsCount: number) => {
     if (isMessage) {
         if (elementsCount === 1) {
-            return c('Success').t`Message marked as Starred`;
+            return c('Success').t`Message marked as Starred.`;
         }
         return c('Success').ngettext(
             msgid`${elementsCount} message marked as Starred.`,
@@ -39,7 +39,7 @@ const getNotificationTextStarred = (isMessage: boolean, elementsCount: number) =
     }
 
     if (elementsCount === 1) {
-        return c('Success').t`Conversation marked as Starred`;
+        return c('Success').t`Conversation marked as Starred.`;
     }
     return c('Success').ngettext(
         msgid`${elementsCount} conversation marked as Starred.`,
@@ -51,7 +51,7 @@ const getNotificationTextStarred = (isMessage: boolean, elementsCount: number) =
 const getNotificationTextRemoved = (isMessage: boolean, elementsCount: number, labelName: string) => {
     if (isMessage) {
         if (elementsCount === 1) {
-            return c('Success').t`Message removed from ${labelName}`;
+            return c('Success').t`Message removed from ${labelName}.`;
         }
         return c('Success').ngettext(
             msgid`${elementsCount} message removed from ${labelName}.`,
@@ -61,7 +61,7 @@ const getNotificationTextRemoved = (isMessage: boolean, elementsCount: number, l
     }
 
     if (elementsCount === 1) {
-        return c('Success').t`Conversation removed from ${labelName}`;
+        return c('Success').t`Conversation removed from ${labelName}.`;
     }
     return c('Success').ngettext(
         msgid`${elementsCount} conversation removed from ${labelName}.`,
@@ -73,7 +73,7 @@ const getNotificationTextRemoved = (isMessage: boolean, elementsCount: number, l
 const getNotificationTextAdded = (isMessage: boolean, elementsCount: number, labelName: string) => {
     if (isMessage) {
         if (elementsCount === 1) {
-            return c('Success').t`Message added to ${labelName}`;
+            return c('Success').t`Message added to ${labelName}.`;
         }
         return c('Success').ngettext(
             msgid`${elementsCount} message added to ${labelName}.`,
@@ -83,7 +83,7 @@ const getNotificationTextAdded = (isMessage: boolean, elementsCount: number, lab
     }
 
     if (elementsCount === 1) {
-        return c('Success').t`Conversation added to ${labelName}`;
+        return c('Success').t`Conversation added to ${labelName}.`;
     }
     return c('Success').ngettext(
         msgid`${elementsCount} conversation added to ${labelName}.`,

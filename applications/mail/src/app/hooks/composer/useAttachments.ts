@@ -143,7 +143,7 @@ export const useAttachments = ({
         if (sizeExcedeed) {
             createNotification({
                 type: 'error',
-                text: c('Error').t`Attachments are limited to 25 MB.`,
+                text: c('Error').t`Attachments are limited to 25 MB`,
             });
         }
         return sizeExcedeed;

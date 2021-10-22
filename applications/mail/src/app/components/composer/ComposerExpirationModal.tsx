@@ -69,7 +69,7 @@ const ComposerExpirationModal = ({ message, onClose, onChange }: Props) => {
         if (Number.isNaN(valueInHours)) {
             createNotification({
                 type: 'error',
-                text: c('Error').t`Invalid expiration time.`,
+                text: c('Error').t`Invalid expiration time`,
             });
             return;
         }
@@ -82,7 +82,7 @@ const ComposerExpirationModal = ({ message, onClose, onChange }: Props) => {
         if (valueInHours > MAX_EXPIRATION_TIME) {
             createNotification({
                 type: 'error',
-                text: c('Error').t`The maximum expiration is 4 weeks.`,
+                text: c('Error').t`The maximum expiration is 4 weeks`,
             });
             return;
         }

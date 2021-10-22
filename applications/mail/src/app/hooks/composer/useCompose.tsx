@@ -77,9 +77,9 @@ export const useCompose = (
                 type: 'error',
                 text: (
                     <>
-                        {c('Error').t`No address with keys available to compose a message.`}
+                        {c('Error').t`No address with keys available to compose a message`}
                         <br />
-                        {c('Error').t`Contact your organization’s administrator to resolve this.`}
+                        {c('Error').t`Contact your organization’s administrator to resolve this`}
                     </>
                 ),
             });
@@ -114,8 +114,8 @@ export const useCompose = (
                 type: 'error',
                 // translator: maxActiveComposer should never be 1, is fixed to 3 today but can potentially vary from 2 to 5(?) in the future.
                 text: c('Error').ngettext(
-                    msgid`You cannot open more than ${maxActiveComposer} composer window at a time.`,
-                    `You cannot open more than ${maxActiveComposer} composer windows at a time.`,
+                    msgid`You cannot open more than ${maxActiveComposer} composer window at a time`,
+                    `You cannot open more than ${maxActiveComposer} composer windows at a time`,
                     maxActiveComposer
                 ),
             });

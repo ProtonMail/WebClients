@@ -413,7 +413,7 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
                     // Fortunately notification system use a de-duplication system
                     createNotification({
                         text: c('Error')
-                            .t`Your search matched too many results. Please limit your search and try again`,
+                            .t`Your search matched too many results. Please limit your search and try again.`,
                         type: 'error',
                     });
                     setCache((cache) => ({ ...cache, pendingRequest: false }));
@@ -424,7 +424,7 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
             }
         } catch (error: any) {
             createNotification({
-                text: c('Error').t`There has been an issue with content search. Default search has been used instead`,
+                text: c('Error').t`There has been an issue with content search. Default search has been used instead.`,
                 type: 'error',
             });
             await load();
