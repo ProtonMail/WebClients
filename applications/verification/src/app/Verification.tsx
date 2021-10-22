@@ -65,15 +65,7 @@ const Verification = () => {
         }
     }, []);
 
-    const getOriginError = () => {
-        return new Error('origin parameter missing');
-    };
-
     const sendHeight = (resizes: ResizeObserverEntry[]) => {
-        if (!origin) {
-            throw getOriginError();
-        }
-
         const [entry] = resizes;
 
         broadcast({
@@ -98,10 +90,6 @@ const Verification = () => {
     );
 
     const handleSubmit = (token: string, type: HumanVerificationMethodType) => {
-        if (!origin) {
-            throw getOriginError();
-        }
-
         broadcast({
             type: MessageType.HUMAN_VERIFICATION_SUCCESS,
             payload: { token, type },
