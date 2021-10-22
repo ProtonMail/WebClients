@@ -1,19 +1,24 @@
 import { ChangeEvent, useEffect } from 'react';
 import { c } from 'ttag';
 
-import { OAUTH_PROVIDER, IMPORT_ERROR, ImportError } from '@proton/shared/lib/interfaces/EasySwitch';
+import {
+    OAUTH_PROVIDER,
+    IMPORT_ERROR,
+    ImportError,
+    NormalizedImporter,
+} from '@proton/shared/lib/interfaces/EasySwitch';
 
 import { Alert, Row, Label, Field, PasswordInput, EmailInput, Input, Href } from '../../../../../components';
 import { IMAPS } from '../../../constants';
 
-import { Importer, ImportMailModalModel } from '../../interfaces';
+import { ImportMailModalModel } from '../../interfaces';
 
 interface Props {
     modalModel: ImportMailModalModel;
     updateModalModel: (newModel: ImportMailModalModel) => void;
     needAppPassword: boolean;
     showPassword: boolean;
-    currentImport?: Importer;
+    currentImport?: NormalizedImporter;
     invalidPortError: boolean;
 }
 
