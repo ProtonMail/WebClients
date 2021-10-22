@@ -6,9 +6,9 @@ import './ModalContent.scss';
 
 const ModalContent = ({ className, ...rest }: ComponentPropsWithoutRef<'div'>) => {
     return (
-      <Scroll className="overflow-hidden mt1 mb1">
-          <div className={classnames([className, 'modal-two-content'])} {...rest} />
-      </Scroll>
+        <Scroll className="overflow-hidden my1">
+            <div className={classnames([className, 'modal-two-content'])} {...rest} />
+        </Scroll>
     );
 };
 
