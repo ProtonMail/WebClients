@@ -30,7 +30,7 @@ export const getImportPage = (user: UserModel, isEasySwitchEnabled: boolean) => 
                 text: c('Title').t`Current & past imports`,
                 id: 'import-list',
             },
-            {
+            !isEasySwitchEnabled && {
                 text: c('Title').t`Import contacts`,
                 id: 'import-csv',
             },
@@ -56,7 +56,7 @@ const MailImportAndExportSettings = ({ setActiveSection, location }: SettingsPro
     const sections = [
         !isEasySwitchEnabled && <StartMailImportSection key="start-import" />,
         !isEasySwitchEnabled && <MailImportListSection key="import-list" />,
-        <MailImportCsvSection key="import-csv" />,
+        !isEasySwitchEnabled && <MailImportCsvSection key="import-csv" />,
         !user.isFree && importExportSection,
     ].filter(isTruthy);
 
