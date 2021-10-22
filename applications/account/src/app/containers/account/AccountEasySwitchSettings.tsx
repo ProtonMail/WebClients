@@ -7,6 +7,7 @@ import {
     useFeature,
     FeatureCode,
     useSettingsLink,
+    MailImportCsvSection,
 } from '@proton/components';
 import { PRODUCT_NAMES } from '@proton/shared/lib/constants';
 
@@ -26,6 +27,10 @@ export const getEasySwitchPage = () => {
             {
                 text: c('Title').t`Current & past imports`,
                 id: 'import-list',
+            },
+            {
+                text: c('Title').t`Import contacts`,
+                id: 'import-contacts',
             },
         ],
     };
@@ -52,6 +57,7 @@ const AccountEasySwitchSettings = ({ setActiveSection, location }: SettingsProps
         >
             <AccountEasySwitchSection />
             <ImportListSection />
+            <MailImportCsvSection hideEasySwitch />,
         </PrivateMainSettingsAreaWithPermissions>
     ) : null;
 };
