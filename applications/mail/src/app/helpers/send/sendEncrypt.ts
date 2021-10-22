@@ -106,11 +106,18 @@ const generateSessionKeyHelper = async (): Promise<SessionKey> => ({
  * Encrypt the body in the given package. Should only be used if the package body differs from message body
  * (i.e. the draft body)
  */
-const encryptBodyPackage = async (pack: Package, messageKeys: MessageKeys, publicKeys: OpenPGPKey[]) => {
+const encryptBodyPackage = async (
+    pack: Package,
+    messageKeys: MessageKeys,
+    publicKeys: OpenPGPKey[],
+    message: MessageExtended
+) => {
     const cleanPublicKeys = publicKeys.filter(identity);
 
     // Always encrypt with a single private key
     const privateKeys = messageKeys.privateKeys.slice(0, 1);
+
+    const containsInlinedAttachments = pack.MIMEType === MIME_TYPES.MIME && getAttachments(message.data).length;
 
     const { data, sessionKey } = await encryptMessage({
         data: pack.Body || '',
@@ -118,7 +125,8 @@ const encryptBodyPackage = async (pack: Package, messageKeys: MessageKeys, publi
         sessionKey: cleanPublicKeys.length ? undefined : await generateSessionKeyHelper(),
         privateKeys,
         returnSessionKey: true,
-        compression: enums.compression.zlib,
+        // We enable compression for MIME messages that include attachments to reduce the size of the inlined base64 attachment data
+        compression: containsInlinedAttachments ? enums.compression.zlib : enums.compression.uncompressed,
     });
 
     const { asymmetric: keys, encrypted } = await splitMessage(data);
@@ -146,7 +154,6 @@ const encryptDraftBodyPackage = async (
         publicKeys: cleanPublicKeys,
         privateKeys,
         returnSessionKey: true,
-        compression: enums.compression.zlib,
     });
 
     const packets = await splitMessage(data);
