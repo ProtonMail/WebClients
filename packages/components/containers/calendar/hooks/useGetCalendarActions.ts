@@ -58,7 +58,7 @@ const useGetCalendarActions = ({
 
         const { privateKey: primaryAddressKey } = getPrimaryKey(addressKeys) || {};
         if (!primaryAddressKey) {
-            createNotification({ text: c('Error').t`Primary address key is not decrypted.`, type: 'error' });
+            createNotification({ text: c('Error').t`Primary address key is not decrypted`, type: 'error' });
             setError(true);
             throw new Error('Missing primary key');
         }

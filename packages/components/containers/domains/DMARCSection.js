@@ -8,7 +8,7 @@ const DMARCSection = () => {
     const none = <strong key="none">p=none</strong>;
     const quarantine = <strong key="quarantine">p=quarantine</strong>;
     const { createNotification } = useNotifications();
-    const handleCopy = () => createNotification({ text: c('Success').t`DMARC value copied to clipboard!` });
+    const handleCopy = () => createNotification({ text: c('Success').t`DMARC value copied to clipboard` });
     const dmarcValue = 'v=DMARC1; p=none';
     const [value, setValue] = useState(dmarcValue);
     return (

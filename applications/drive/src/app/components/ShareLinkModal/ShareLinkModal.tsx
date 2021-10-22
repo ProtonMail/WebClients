@@ -137,7 +137,7 @@ function ShareLinkModal({ modalTitleID = 'share-link-modal', onClose, shareId, i
 
         const updatedFields = await withSaving(update());
         createNotification({
-            text: c('Notification').t`Your settings have been changed successfully.`,
+            text: c('Notification').t`Your settings have been changed successfully`,
         });
         setShareUrlInfo({
             ...shareUrlInfo,
@@ -176,7 +176,7 @@ function ShareLinkModal({ modalTitleID = 'share-link-modal', onClose, shareId, i
             await deleteShare(ShareID);
             await events.call(shareId);
             createNotification({
-                text: c('Notification').t`The link to your file was deleted.`,
+                text: c('Notification').t`The link to your file was deleted`,
             });
             onClose?.();
         };

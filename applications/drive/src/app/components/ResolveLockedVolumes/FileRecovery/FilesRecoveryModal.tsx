@@ -26,7 +26,7 @@ const FilesRecoveryModal = ({ lockedShareList, onClose, ...rest }: Props) => {
             restoreVolumes(lockedShareList)
                 .then(() => {
                     createNotification({
-                        text: c('Success').t`Recovery has started.`,
+                        text: c('Success').t`Recovery has started`,
                     });
                 })
                 .catch(() => onClose?.())

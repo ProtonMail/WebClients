@@ -171,7 +171,7 @@ const SubscriptionModal = ({
 
             if (Code === API_CUSTOM_ERROR_CODES.PAYMENTS_SUBSCRIPTION_AMOUNT_MISMATCH) {
                 await check(); // eslint-disable-line @typescript-eslint/no-use-before-define
-                createNotification({ text: c('Error').t`Checkout expired, please try again.`, type: 'error' });
+                createNotification({ text: c('Error').t`Checkout expired, please try again`, type: 'error' });
             }
             setModel({ ...model, step: SUBSCRIPTION_STEPS.CHECKOUT });
             throw error;
