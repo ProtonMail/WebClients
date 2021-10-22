@@ -8,16 +8,16 @@ import {
     useState,
 } from 'react';
 
-import { useChanged } from '../../hooks';
-import { classnames } from '../../helpers';
+import { useChanged, useInstance } from '../../hooks';
+import { classnames, generateUID } from '../../helpers';
 import { Portal } from '../portal';
 import './Modal.scss';
 
-type ModalContextValue = Omit<ModalOwnProps, 'children'>;
+type ModalContextValue = Omit<ModalOwnProps, 'children'> & { id: string };
 
 export const ModalContext = createContext({} as ModalContextValue);
 
-const ModalProvider = ({ children, ...rest }: ModalOwnProps & { children: ReactNode }) => {
+const ModalProvider = ({ children, ...rest }: ModalContextValue & { children: ReactNode }) => {
     return <ModalContext.Provider value={rest}>{children}</ModalContext.Provider>;
 };
 
@@ -48,9 +48,19 @@ export type ModalProps = ModalOwnProps & ComponentPropsWithoutRef<'div'>;
 const Modal = (props: ModalProps) => {
     const { open, small, large, full, children, onClose, disableCloseOnEscape, className, ...rest } = props;
 
-    const ownProps: ModalOwnProps = { open, small, large, full, onClose, disableCloseOnEscape };
-
     const [exiting, setExiting] = useState(false);
+
+    const id = useInstance(() => generateUID('modal'));
+
+    const modalContextValue: ModalContextValue = {
+        id,
+        open,
+        small,
+        large,
+        full,
+        onClose,
+        disableCloseOnEscape,
+    };
 
     useChanged(
         {
@@ -101,8 +111,13 @@ const Modal = (props: ModalProps) => {
     return (
         <Portal>
             <div className={backdropClassname} onAnimationEnd={handleAnimationEnd}>
-                <dialog className={dialogClassName} {...rest}>
-                    <ModalProvider {...ownProps}>{children}</ModalProvider>
+                <dialog
+                    className={dialogClassName}
+                    aria-labelledby={id}
+                    aria-describedby={`${id}-description`}
+                    {...rest}
+                >
+                    <ModalProvider {...modalContextValue}>{children}</ModalProvider>
                 </dialog>
             </div>
         </Portal>
