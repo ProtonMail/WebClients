@@ -65,17 +65,8 @@
 		// the threshold for the scrollbar to appear in the sidebar.
 		// We use a rather edgy browser check to avoid using aspect-ratio in Chrome because of this bug
 		@supports (not (aspect-ratio: 1 / 1)) or (not (-moz-appearance: none)) {
-			@include respond-to($breakpoint-small) {
-				// Ensure the aspect ratio while waiting for aspect-ratio property
-				--cell-height: var(--computed-cell-width, var(--fixed-cell-size));
-			}
-
-			@include respond-to($breakpoint-small, 'min') {
-				&:not(.is-fixed-size) {
-					// Ensure the aspect ratio while waiting for aspect-ratio property
-					--cell-height: var(--computed-cell-width, var(--fixed-cell-size));
-				}
-			}
+			// Ensure the aspect ratio while waiting for aspect-ratio property
+			--cell-height: var(--computed-cell-width, var(--fixed-cell-size));
 		}
 	}
 
