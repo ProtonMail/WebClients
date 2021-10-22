@@ -10,7 +10,6 @@ import { diff } from '@proton/shared/lib/helpers/array';
 import { noop } from '@proton/shared/lib/helpers/function';
 import useIsMounted from '@proton/components/hooks/useIsMounted';
 import { pick } from '@proton/shared/lib/helpers/object';
-import { MessageExtended } from '../../../models/message';
 import { Breakpoints } from '../../../models/utils';
 import { MessageChange } from '../Composer';
 import {
@@ -27,10 +26,11 @@ import {
     readContentIDandLocation,
     removeEmbeddedHTML,
 } from '../../../helpers/message/messageEmbeddeds';
+import { MessageState } from '../../../logic/messages/messagesTypes';
 
 interface ExternalEditorActions {
     getContent: () => string;
-    setContent: (message: MessageExtended) => void;
+    setContent: (message: MessageState) => void;
     insertEmbedded: (attachment: Attachment, data: string | Uint8Array) => void;
     removeEmbedded: (attachment: Attachment) => void;
 }
@@ -38,7 +38,7 @@ interface ExternalEditorActions {
 export type EditorActionsRef = MutableRefObject<ExternalEditorActions | undefined>;
 
 interface Props {
-    message: MessageExtended;
+    message: MessageState;
     disabled: boolean;
     breakpoints: Breakpoints;
     onReady: () => void;
@@ -101,13 +101,13 @@ const SquireEditorWrapper = ({
 
     // Detect document ready
     useEffect(() => {
-        if (isPlainText && message.plainText !== undefined) {
+        if (isPlainText && message.messageDocument?.plainText !== undefined) {
             setDocumentReady(true);
         }
-        if (!isPlainText && message.document?.innerHTML) {
+        if (!isPlainText && message.messageDocument?.document?.innerHTML) {
             setDocumentReady(true);
         }
-    }, [isPlainText, message.plainText, message.document?.innerHTML]);
+    }, [isPlainText, message.messageDocument?.plainText, message.messageDocument?.document?.innerHTML]);
 
     const handleGetContent = useHandler(() => {
         const editorContent = squireEditorRef.current?.value || '';
@@ -147,13 +147,13 @@ const SquireEditorWrapper = ({
         { debounce: 500 }
     );
 
-    const handleSetContent = (message: MessageExtended) => {
+    const handleSetContent = (message: MessageState) => {
         let content;
 
         if (isPlainText) {
             content = getContent(message);
         } else {
-            const [contentBeforeBlockquote, blockquote] = locateBlockquote(message.document);
+            const [contentBeforeBlockquote, blockquote] = locateBlockquote(message.messageDocument?.document);
 
             if (blockquoteSaved === undefined) {
                 // Means it's the first content initialization
@@ -217,13 +217,13 @@ const SquireEditorWrapper = ({
         const MIMEType = MIME_TYPES.PLAINTEXT;
         const plainText = exportPlainText(handleGetContent());
         const messageImages = message.messageImages ? { ...message.messageImages, images: [] } : undefined;
-        onChange({ plainText, data: { MIMEType }, messageImages });
+        onChange({ messageDocument: { plainText }, data: { MIMEType }, messageImages });
     };
     const switchToHTML = () => {
         const MIMEType = MIME_TYPES.DEFAULT;
-        const content = plainTextToHTML(message.data, message.plainText, mailSettings, addresses);
-        const document = setDocumentContent(message.document, content);
-        onChange({ document, data: { MIMEType } });
+        const content = plainTextToHTML(message.data, message.messageDocument?.plainText, mailSettings, addresses);
+        const document = setDocumentContent(message.messageDocument?.document, content);
+        onChange({ messageDocument: { document }, data: { MIMEType } });
     };
 
     const handleChangeMetadata = useHandler((change: Partial<SquireEditorMetadata>) => {

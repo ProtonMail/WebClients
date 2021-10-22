@@ -6,20 +6,20 @@ import { c } from 'ttag';
 import SavingDraftNotification, {
     SavingDraftNotificationAction,
 } from '../../components/notifications/SavingDraftNotification';
-import { MessageExtended, MessageExtendedWithData } from '../../models/message';
 import { useOnCompose } from '../../containers/ComposeProvider';
-import { useMessageCache } from '../../containers/MessageProvider';
 import { PromiseHandlers } from '../usePromise';
+import { MessageState } from '../../logic/messages/messagesTypes';
 
 export interface UseCloseHandlerParameters {
-    modelMessage: MessageExtended;
+    modelMessage: MessageState;
+    syncedMessage: MessageState;
     lock: boolean;
     ensureMessageContent: () => void;
     uploadInProgress: boolean;
     promiseUpload: Promise<void>;
     pendingAutoSave: PromiseHandlers<void>;
-    autoSave: ((message: MessageExtended) => Promise<void>) & Abortable;
-    saveNow: (message: MessageExtended) => Promise<void>;
+    autoSave: ((message: MessageState) => Promise<void>) & Abortable;
+    saveNow: (message: MessageState) => Promise<void>;
     onClose: () => void;
     onDicard: () => void;
     onMessageAlreadySent: () => void;
@@ -27,6 +27,7 @@ export interface UseCloseHandlerParameters {
 
 export const useCloseHandler = ({
     modelMessage,
+    syncedMessage,
     lock,
     ensureMessageContent,
     saveNow,
@@ -38,7 +39,7 @@ export const useCloseHandler = ({
     onMessageAlreadySent,
 }: UseCloseHandlerParameters) => {
     const { createNotification, hideNotification } = useNotifications();
-    const messageCache = useMessageCache();
+    // const messageCache = useMessageCache();
     const isMounted = useIsMounted();
     const onCompose = useOnCompose();
 
@@ -66,10 +67,10 @@ export const useCloseHandler = ({
     });
 
     const handleManualSave = useHandler(async () => {
-        const messageFromCache = messageCache.get(modelMessage.localID) as MessageExtendedWithData;
+        // const messageFromCache = messageCache.get(modelMessage.localID) as MessageExtendedWithData;
 
         // Message already sent
-        if (messageFromCache.isSentDraft) {
+        if (syncedMessage.draftFlags?.isSentDraft) {
             onMessageAlreadySent();
             return;
         }
@@ -109,9 +110,9 @@ export const useCloseHandler = ({
         // Closing the composer instantly, all the save process will be in background
         onClose();
 
-        const messageFromCache = messageCache.get(modelMessage.localID) as MessageExtendedWithData;
+        // const messageFromCache = messageCache.get(modelMessage.localID) as MessageExtendedWithData;
 
-        if (messageFromCache.isSentDraft) {
+        if (syncedMessage.draftFlags?.isSentDraft) {
             createNotification({
                 text: c('Error').t`This message has already been sent`,
                 type: 'error',

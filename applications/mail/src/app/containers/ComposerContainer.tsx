@@ -1,13 +1,15 @@
 import { ReactNode, useState, useEffect, memo, useRef } from 'react';
-import { useWindowSize, useHandler, useBeforeUnload } from '@proton/components';
+import { useWindowSize, useBeforeUnload, useHandler } from '@proton/components';
 import { c } from 'ttag';
+import { useStore } from 'react-redux';
 import { Breakpoints, WindowSize } from '../models/utils';
 import { MAX_ACTIVE_COMPOSER_MOBILE, MAX_ACTIVE_COMPOSER_DESKTOP } from '../helpers/composerPositioning';
 import { useCompose } from '../hooks/composer/useCompose';
 import ComposerFrame from '../components/composer/ComposerFrame';
-import '../components/composer/composer.scss';
 import { useClickMailContent } from '../hooks/useClickMailContent';
 import { ComposeProvider } from './ComposeProvider';
+import '../components/composer/composer.scss';
+import { useGetMessage } from '../hooks/message/useMessage';
 
 interface Props {
     breakpoints: Breakpoints;
@@ -20,6 +22,8 @@ const ComposerContainer = ({ breakpoints, children }: Props) => {
     const [width, height] = useWindowSize();
     const windowSize: WindowSize = { width, height };
     // const messageCache = useMessageCache();
+    const store = useStore();
+    const getMessage = useGetMessage();
     useClickMailContent(() => setFocusedMessageID(undefined));
 
     const returnFocusToElement = useRef<HTMLElement | null>(null);
@@ -46,12 +50,26 @@ const ComposerContainer = ({ breakpoints, children }: Props) => {
         });
     };
 
-    // Automatically close draft which has been deleted (could happen through the message list)
-    const messageDeletionListener = useHandler((changedMessageID: string) => {
-        if (messageIDs.includes(changedMessageID) && !messageCache.has(changedMessageID)) {
-            handleClose(changedMessageID)();
-        }
+    // const messageDeletionListener = useHandler((changedMessageID: string) => {
+    //     if (messageIDs.includes(changedMessageID) && !messageCache.has(changedMessageID)) {
+    //         handleClose(changedMessageID)();
+    //     }
+    // });
+
+    // useEffect(() => messageCache.subscribe(messageDeletionListener), [messageCache]);
+
+    const messageDeletionListener = useHandler(() => {
+        messageIDs.forEach((messageID) => {
+            const message = getMessage(messageID);
+            if (!message) {
+                handleClose(messageID)();
+            }
+        });
     });
+
+    // Automatically close draft which has been deleted (could happen through the message list)
+    // Doesnt use a useSelector to avoir render on a child component update
+    useEffect(() => store.subscribe(messageDeletionListener), [store]);
 
     // After closing all composers, focus goes back to previously focused element
     useEffect(() => {
@@ -60,9 +78,6 @@ const ComposerContainer = ({ breakpoints, children }: Props) => {
             returnFocusToElement.current = null;
         }
     }, [messageIDs]);
-
-    // TODO
-    // useEffect(() => messageCache.subscribe(messageDeletionListener), [messageCache]);
 
     const openComposer = (messageID: string, returnFocusTo?: HTMLElement | null) => {
         setMessageIDs((messageIDs) => [...messageIDs, messageID]);

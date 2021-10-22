@@ -17,10 +17,7 @@ import { noop } from '@proton/shared/lib/helpers/function';
 import { setBit, clearBit } from '@proton/shared/lib/helpers/bitset';
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import { canonizeEmail } from '@proton/shared/lib/helpers/email';
-import { MessageExtended, MessageExtendedWithData, PartialMessageExtended } from '../../models/message';
-import ComposerMeta from './ComposerMeta';
-import ComposerContent from './ComposerContent';
-import ComposerActions from './ComposerActions';
+import { useDispatch } from 'react-redux';
 import { mergeMessages } from '../../helpers/message/messages';
 import { getContent, setContent } from '../../helpers/message/messageContent';
 import { useMessage } from '../../hooks/message/useMessage';
@@ -34,7 +31,6 @@ import { useHasScroll } from '../../hooks/useHasScroll';
 import { useReloadSendInfo, useMessageSendInfo } from '../../hooks/useSendInfo';
 import { DRAG_ADDRESS_KEY } from '../../constants';
 import { useComposerHotkeys } from '../../hooks/composer/useComposerHotkeys';
-import { updateMessageCache, useMessageCache } from '../../containers/MessageProvider';
 import { ATTACHMENT_ACTION } from '../../helpers/attachment/attachmentUploader';
 import { useSendHandler } from '../../hooks/composer/useSendHandler';
 import { useCloseHandler } from '../../hooks/composer/useCloseHandler';
@@ -47,8 +43,10 @@ import { useAutoSave } from '../../hooks/composer/useAutoSave';
 import { useLongLivingState } from '../../hooks/useLongLivingState';
 import ComposerInnerModals from './modals/ComposerInnerModals';
 import { ComposerInnerModalStates, useComposerInnerModals } from '../../hooks/composer/useComposerInnerModals';
+import { MessageState, MessageStateWithData, PartialMessageState } from '../../logic/messages/messagesTypes';
+import { removeInitialAttachments } from '../../logic/messages/messagesActions';
 
-export type MessageUpdate = PartialMessageExtended | ((message: MessageExtended) => PartialMessageExtended);
+export type MessageUpdate = PartialMessageState | ((message: MessageState) => PartialMessageState);
 
 export interface MessageChange {
     (update: MessageUpdate, reloadSendInfo?: boolean): void;
@@ -88,7 +86,8 @@ const Composer = (
     }: Props,
     ref: Ref<ComposerAction>
 ) => {
-    const messageCache = useMessageCache();
+    const dispatch = useDispatch();
+    // const messageCache = useMessageCache();
     const { createNotification } = useNotifications();
 
     const bodyRef = useRef<HTMLDivElement>(null);
@@ -103,7 +102,7 @@ const Composer = (
     const [editorReady, setEditorReady] = useState(false);
 
     // Model value of the edited message in the composer
-    const [modelMessage, setModelMessage] = useLongLivingState<MessageExtended>({
+    const [modelMessage, setModelMessage] = useLongLivingState<MessageState>({
         localID: messageID,
     });
 
@@ -160,8 +159,8 @@ const Composer = (
         if (
             !pendingSave.isPending &&
             (syncedMessage.data?.ID || (!syncedMessage.data?.ID && !isNewDraft(syncedMessage.localID))) &&
-            syncedMessage.initialized === undefined &&
-            modelMessage.initialized === undefined
+            syncedMessage.messageDocument?.initialized === undefined &&
+            modelMessage.messageDocument?.initialized === undefined
         ) {
             void initialize();
         }
@@ -169,8 +168,8 @@ const Composer = (
         pendingSave.isPending,
         syncedMessage.localID,
         syncedMessage.data?.ID,
-        syncedMessage.initialized,
-        modelMessage.initialized,
+        syncedMessage.messageDocument?.initialized,
+        modelMessage.messageDocument?.initialized,
     ]);
 
     // Manage populating the model from the server
@@ -206,10 +205,11 @@ const Composer = (
 
     // Manage initializing the message from an existing draft
     useEffect(() => {
-        const firstInitialization = !modelMessage.initialized && syncedMessage.initialized;
+        const firstInitialization =
+            !modelMessage.messageDocument?.initialized && syncedMessage.messageDocument?.initialized;
 
         if (firstInitialization) {
-            const isOpenFromUndo = syncedMessage.openDraftFromUndo === true;
+            const isOpenFromUndo = syncedMessage.draftFlags?.openDraftFromUndo === true;
             const password = isOpenFromUndo
                 ? // Keep password on undo
                   {}
@@ -219,22 +219,28 @@ const Composer = (
             const newModelMessage = {
                 ...syncedMessage,
                 ...modelMessage,
-                document: syncedMessage.document,
-                plainText: syncedMessage.plainText,
-                messageImages: syncedMessage.messageImages,
-                initialized: true,
                 data: {
                     ...syncedMessage.data,
                     ...password,
                     ...modelMessage.data,
                     Attachments: syncedMessage.data?.Attachments,
                 } as Message,
+                messageDocument: {
+                    ...syncedMessage.messageDocument,
+                    initialized: true,
+                },
+                messageImages: syncedMessage.messageImages,
             };
 
             setModelMessage(newModelMessage);
             void reloadSendInfo(messageSendInfo, newModelMessage);
         }
-    }, [pendingSave.isPending, syncedMessage.document, syncedMessage.plainText, syncedMessage.initialized]);
+    }, [
+        pendingSave.isPending,
+        syncedMessage.messageDocument?.document,
+        syncedMessage.messageDocument?.plainText,
+        syncedMessage.messageDocument?.initialized,
+    ]);
 
     const timeoutRef = useRef(0);
 
@@ -379,22 +385,23 @@ const Composer = (
     // Manage opening
     useEffect(() => {
         // New attachments to upload from scratch
-        const attachmentToUpload = !!syncedMessage.initialAttachments?.length;
+        const attachmentToUpload = !!syncedMessage.draftFlags?.initialAttachments?.length;
 
         if (attachmentToUpload) {
             const uploadInitialAttachments = async () => {
-                const files = syncedMessage.initialAttachments;
-                updateMessageCache(messageCache, messageID, { initialAttachments: undefined });
+                const files = syncedMessage.draftFlags?.initialAttachments;
+                // updateMessageCache(messageCache, messageID, { initialAttachments: undefined });
+                dispatch(removeInitialAttachments(messageID));
                 await saveNow(syncedMessage);
                 await handleAddAttachmentsUpload(ATTACHMENT_ACTION.ATTACHMENT, files);
             };
             void uploadInitialAttachments();
         }
 
-        if (editorReady && syncedMessage.initialized && !attachmentToUpload) {
+        if (editorReady && syncedMessage.messageDocument?.initialized && !attachmentToUpload) {
             setOpening(false);
         }
-    }, [editorReady, syncedMessage.data, syncedMessage.initialized]);
+    }, [editorReady, syncedMessage.data, syncedMessage.messageDocument?.initialized]);
 
     useEffect(() => {
         if (uploadInProgress) {
@@ -405,9 +412,9 @@ const Composer = (
     }, [uploadInProgress]);
 
     const handleDiscard = async () => {
-        const messageFromCache = messageCache.get(modelMessage.localID) as MessageExtended;
-        if (messageFromCache.data?.ID) {
-            await deleteDraft(messageFromCache);
+        // const messageFromCache = messageCache.get(modelMessage.localID) as MessageExtended;
+        if (syncedMessage.data?.ID) {
+            await deleteDraft(syncedMessage);
         }
         createNotification({ text: c('Info').t`Draft discarded` });
     };
@@ -422,6 +429,7 @@ const Composer = (
     };
 
     const { saving, handleManualSave, handleClose } = useCloseHandler({
+        syncedMessage,
         modelMessage,
         lock,
         ensureMessageContent,
@@ -471,7 +479,7 @@ const Composer = (
     });
 
     const { loadingScheduleCount, handleScheduleSendModal, handleScheduleSend } = useScheduleSend({
-        modelMessage: modelMessage as MessageExtendedWithData,
+        modelMessage: modelMessage as MessageStateWithData,
         setInnerModal,
         ComposerInnerModal: ComposerInnerModalStates,
         setModelMessage,

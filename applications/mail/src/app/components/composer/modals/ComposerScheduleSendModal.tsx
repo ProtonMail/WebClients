@@ -15,10 +15,9 @@ import {
 } from 'date-fns';
 import { c, msgid } from 'ttag';
 import { Alert, DateInput, ErrorZone, generateUID, Label, TimeInput } from '@proton/components';
-
 import ComposerInnerModal from './ComposerInnerModal';
 import { SCHEDULED_MAX_DATE_DAYS } from '../../../constants';
-import { useMessageCache } from '../../../containers/MessageProvider';
+import { MessageState } from '../../../logic/messages/messagesTypes';
 
 const formatDateInput = (value: Date, locale: Locale) => {
     if (isToday(value)) {
@@ -32,21 +31,21 @@ const formatDateInput = (value: Date, locale: Locale) => {
     return format(value, 'PP', { locale });
 };
 interface Props {
+    message: MessageState;
     onClose: () => void;
     onSubmit: (timestamp: number) => void;
-    messageLocalID: string;
 }
 
-const ComposerScheduleSendModal = ({ onClose, onSubmit, messageLocalID }: Props) => {
-    const messageCache = useMessageCache();
-    const messageFromCache = messageCache.get(messageLocalID);
+const ComposerScheduleSendModal = ({ message, onClose, onSubmit }: Props) => {
+    // const messageCache = useMessageCache();
+    // const messageFromCache = messageCache.get(messageLocalID);
 
     const defaultDate =
-        messageFromCache && messageFromCache.scheduledAt
-            ? new Date(messageFromCache.scheduledAt * 1000)
+        message && message.draftFlags?.scheduledAt
+            ? new Date(message.draftFlags?.scheduledAt * 1000)
             : addDays(new Date(), 1);
 
-    if (!messageFromCache || (messageFromCache && !messageFromCache.scheduledAt)) {
+    if (!message || (message && !message.draftFlags?.scheduledAt)) {
         defaultDate.setHours(9, 0, 0, 0);
     }
 
@@ -65,8 +64,8 @@ const ComposerScheduleSendModal = ({ onClose, onSubmit, messageLocalID }: Props)
 
         // Save scheduled date in the cache so that the user can have the date fields completed
         // if he cancel scheduling to re-schedule it later or if he edits the message and re-schedules it
-        if (messageFromCache) {
-            messageFromCache.scheduledAt = getUnixTime(tmpDate);
+        if (message && message.draftFlags) {
+            message.draftFlags.scheduledAt = getUnixTime(tmpDate);
         }
 
         return tmpDate;
