@@ -124,7 +124,10 @@ const LoginForm = ({ onSubmit, defaultUsername = '' }: Props) => {
                     {c('Info').jt`Not your computer? Use a Private Browsing window to sign in. ${learnMore}`}
                 </div>
                 <Button size="large" color="norm" type="submit" fullWidth loading={loading} className="mt1-75">
-                    {c('Action').t`Sign in`}
+                    {
+                        // translator: when the "sign in" button is in loading state, it gets updated to "Signing in"
+                        loading ? c('Action').t`Signing in` : c('Action').t`Sign in`
+                    }
                 </Button>
                 <div className="text-center mt2">{c('Info').jt`New to ${BRAND_NAME}? ${signupLink}`}</div>
             </form>
