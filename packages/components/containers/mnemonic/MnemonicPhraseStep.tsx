@@ -2,7 +2,7 @@ import { MouseEvent } from 'react';
 import { c } from 'ttag';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
-import { useNotifications, useUser } from '../../hooks';
+import { useNotifications } from '../../hooks';
 import { InputFieldTwo, TextAreaTwo, Button } from '../../components';
 
 export const MnemonicPhraseStepContent = ({ mnemonic }: { mnemonic: string }) => {
@@ -30,12 +30,11 @@ export const MnemonicPhraseStepContent = ({ mnemonic }: { mnemonic: string }) =>
 };
 
 export const MnemonicPhraseStepButtons = ({ mnemonic }: { mnemonic: string }) => {
-    const [{ Name }] = useUser();
     const { createNotification } = useNotifications();
 
     const handleDownload = async () => {
         const blob = new Blob([mnemonic], { type: 'data:text/plain;charset=utf-8;' });
-        downloadFile(blob, `recovery_phrase-${Name}.txt`);
+        downloadFile(blob, `proton_recovery_phrase.txt`);
     };
 
     const handleCopy = (event: MouseEvent<HTMLButtonElement>) => {
