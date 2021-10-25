@@ -63,7 +63,7 @@ const ActiveImportRowActions = ({ activeImport }: Props) => {
                         Provider,
                         Code,
                         RedirectUri,
-                        // @todo Source: 'import-settings',
+                        Source: 'reconnect-import',
                     })
                 );
 

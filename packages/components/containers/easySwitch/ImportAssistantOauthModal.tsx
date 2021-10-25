@@ -69,6 +69,7 @@ interface Props {
     addresses: Address[];
     onClose?: () => void;
     defaultCheckedTypes?: ImportType[];
+    source: string;
 }
 
 const {
@@ -82,7 +83,7 @@ const { AUTHENTICATION, SELECT_IMPORT_TYPE, SUCCESS } = IAOauthModalModelStep;
 
 const DEFAULT_IMAP_PORT = 993;
 
-const ImportAssistantOauthModal = ({ addresses, onClose = noop, defaultCheckedTypes = [], ...rest }: Props) => {
+const ImportAssistantOauthModal = ({ addresses, onClose = noop, defaultCheckedTypes = [], source, ...rest }: Props) => {
     const activeAddresses = getActiveAddresses(addresses);
     const getAddressKeys = useGetAddressKeys();
     const location = useLocation();
@@ -222,7 +223,7 @@ const ImportAssistantOauthModal = ({ addresses, onClose = noop, defaultCheckedTy
                                 Provider,
                                 Code,
                                 RedirectUri,
-                                // @todo Source: 'import-settings',
+                                Source: source,
                             })
                         );
 
