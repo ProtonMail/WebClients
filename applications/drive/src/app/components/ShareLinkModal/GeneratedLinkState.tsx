@@ -106,7 +106,7 @@ function GeneratedLinkState({
         if (contentRef.current) {
             textToClipboard(url, contentRef.current);
             createNotification({
-                text: c('Success').t`The link to your file was successfully copied.`,
+                text: c('Success').t`The link to your file was successfully copied`,
             });
         }
     };

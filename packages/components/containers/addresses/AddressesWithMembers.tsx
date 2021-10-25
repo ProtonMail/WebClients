@@ -68,7 +68,7 @@ const AddressesWithMembers = ({ user, organization, memberID, isOnlySelf }: Prop
 
     const handleAddAddress = (member: Member) => {
         if (member.Private === MEMBER_PRIVATE.READABLE && !organizationKey?.privateKey) {
-            createNotification({ type: 'error', text: c('Error').t`The organization key must be activated first.` });
+            createNotification({ type: 'error', text: c('Error').t`The organization key must be activated first` });
             throw new Error('Organization key is not decrypted');
         }
         createModal(<AddressModal member={member} members={members} organizationKey={organizationKey} />);
