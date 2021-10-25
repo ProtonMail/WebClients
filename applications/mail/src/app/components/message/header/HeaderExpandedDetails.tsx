@@ -109,6 +109,7 @@ const HeaderExpandedDetails = ({
                             shouldStack
                             showTooltip={false}
                             withDefaultMargin={false}
+                            ignoreIconFilter
                         />
                     </span>
                 </span>
