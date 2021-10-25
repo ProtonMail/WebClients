@@ -8,7 +8,7 @@ const handleExport = (name: string, publicKey: OpenPGPKey) => {
     const fingerprint = publicKey.getFingerprint();
     const filename = ['publickey.', name, '-', fingerprint, KEY_FILE_EXTENSION].join('');
     const armoredPublicKey = publicKey.armor();
-    const blob = new Blob([armoredPublicKey], { type: 'data:text/plain;charset=utf-8;' });
+    const blob = new Blob([armoredPublicKey], { type: 'text/plain' });
     downloadFile(blob, filename);
 };
 

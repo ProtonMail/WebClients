@@ -123,7 +123,7 @@ const ContactsWidgetContainer = ({ onClose, onCompose, onMailTo, customActions }
             const exportedContacts = await exportContacts(selectedIDs, userKeys, api);
 
             const files = exportedContacts.map(
-                ({ name, vcard }) => new File([vcard], name, { type: 'data:text/plain;charset=utf-8;' })
+                ({ name, vcard }) => new File([vcard], name, { type: 'text/plain;charset=utf-8' })
             );
 
             onCompose?.([], files);
