@@ -34,7 +34,13 @@ const CalendarImportSection = ({ activeCalendars, defaultCalendar, user }: Props
             : undefined;
 
     const handleOAuthClick = () => {
-        createModal(<ImportAssistantOauthModal addresses={addresses} defaultCheckedTypes={[ImportType.CALENDAR]} />);
+        createModal(
+            <ImportAssistantOauthModal
+                source="import-calendar-settings"
+                addresses={addresses}
+                defaultCheckedTypes={[ImportType.CALENDAR]}
+            />
+        );
     };
 
     return (

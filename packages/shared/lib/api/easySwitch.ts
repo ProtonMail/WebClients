@@ -1,6 +1,10 @@
 import { CreateImportPayload, ImportType, LaunchImportPayload, OAuthProps } from '../interfaces/EasySwitch';
 
-export const createToken = (data: OAuthProps) => ({
+export const createToken = (
+    data: OAuthProps & {
+        Source: string;
+    }
+) => ({
     url: 'importer/v1/tokens',
     method: 'post',
     data,

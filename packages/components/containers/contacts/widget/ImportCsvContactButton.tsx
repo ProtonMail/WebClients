@@ -14,9 +14,14 @@ import ImportModal from '@proton/components/containers/contacts/import/ImportMod
 interface Props {
     hideEasySwitch?: boolean;
     onImportButtonClick?: () => void;
+    easySwitchSource?: string;
 }
 
-const ImportCsvContactButton = ({ hideEasySwitch = false, onImportButtonClick }: Props) => {
+const ImportCsvContactButton = ({
+    hideEasySwitch = false,
+    easySwitchSource = 'import-contacts-button',
+    onImportButtonClick,
+}: Props) => {
     const { createModal } = useModals();
     const [addresses, loadingAddresses] = useAddresses();
 
@@ -39,7 +44,11 @@ const ImportCsvContactButton = ({ hideEasySwitch = false, onImportButtonClick }:
             <GoogleButton
                 onClick={() => {
                     createModal(
-                        <ImportAssistantOauthModal addresses={addresses} defaultCheckedTypes={[ImportType.CONTACTS]} />
+                        <ImportAssistantOauthModal
+                            source={easySwitchSource}
+                            addresses={addresses}
+                            defaultCheckedTypes={[ImportType.CONTACTS]}
+                        />
                     );
                 }}
                 disabled={loadingAddresses}
