@@ -93,7 +93,7 @@ const GetStartedChecklist = ({
         },
         {
             key: GetStartedChecklistKey.RecoveryMethod,
-            text: c('Get started checklist item').t`Protect your account with a recovery method`,
+            text: c('Get started checklist item').t`Set up a recovery method`,
             icon: 'lock',
         },
         {
@@ -140,15 +140,7 @@ const GetStartedChecklist = ({
                         <img src={gift} alt="" />
                     </span>
                     <span className="flex-item-fluid text-bold text-ellipsis">
-                        <span className="no-mobile">
-                            {
-                                /*
-                                 * translator: BRAND_NAME refers to the name of our brand
-                                 * e.g. "Get started with Proton"
-                                 */
-                                c('Get started checklist title').t`Get started with ${BRAND_NAME}`
-                            }
-                        </span>
+                        <span className="no-mobile">{c('Get started checklist title').t`Get started`}</span>
                         <span className="no-tablet no-desktop">{c('Get started checklist title').t`Get started`}</span>
                     </span>
                     <span className="flex-justify-end">
