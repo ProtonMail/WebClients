@@ -15,10 +15,7 @@ export const G_OAUTH_SCOPE_CONTACTS = [
     'https://www.googleapis.com/auth/contacts.other.readonly',
     'https://www.googleapis.com/auth/contacts.readonly',
 ];
-export const G_OAUTH_SCOPE_CALENDAR = [
-    'https://www.googleapis.com/auth/calendar.readonly',
-    'https://www.googleapis.com/auth/calendar.events.readonly',
-];
+export const G_OAUTH_SCOPE_CALENDAR = ['https://www.googleapis.com/auth/calendar.readonly'];
 // export const G_OAUTH_SCOPE_DRIVE = [];
 
 export const IA_PATHNAME_REGEX = /\/easy-switch/;
