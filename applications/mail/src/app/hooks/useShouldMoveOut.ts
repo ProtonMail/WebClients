@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux';
-import { useEffect, useMemo, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { useFolders } from '@proton/components';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
@@ -10,7 +10,8 @@ import { useGetConversation } from './conversation/useConversation';
 import { conversationByID } from '../logic/conversations/conversationsSelectors';
 import { RootState } from '../logic/store';
 import { MessageState } from '../logic/messages/messagesTypes';
-import { useGetLocalID, useGetMessage } from './message/useMessage';
+import { useGetMessage } from './message/useMessage';
+import { messageByID } from '../logic/messages/messagesSelectors';
 
 const { ALL_MAIL } = MAILBOX_LABEL_IDS;
 
@@ -30,19 +31,19 @@ const cacheEntryIsFailedLoading = (
 
 export const useShouldMoveOut = (
     conversationMode: boolean,
-    inputID: string | undefined,
+    ID: string | undefined,
     loading: boolean,
     onBack: () => void
 ) => {
-    const getLocalID = useGetLocalID();
     const getMessage = useGetMessage();
     const getConversation = useGetConversation();
     const [folders = []] = useFolders();
 
     const previousVersionRef = useRef<MessageState | ConversationState | undefined>();
 
-    const ID = useMemo(() => (conversationMode ? inputID : getLocalID(inputID || '')), [inputID]);
+    // const ID = useMemo(() => (conversationMode ? inputID : getLocalID(inputID || '')), [inputID]);
 
+    const message = useSelector((state: RootState) => messageByID(state, { ID: ID || '' }));
     const conversation = useSelector((state: RootState) => conversationByID(state, { ID: ID || '' }));
 
     const onChange = (cacheEntry: MessageState | ConversationState | undefined) => {
@@ -78,6 +79,12 @@ export const useShouldMoveOut = (
             previousVersionRef.current = undefined;
         }
     }, [ID]);
+
+    useEffect(() => {
+        if (!conversationMode) {
+            onChange(message);
+        }
+    }, [message]);
 
     useEffect(() => {
         // If the conversation is not in the state yet, it will move out from it without even loading it

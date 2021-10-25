@@ -2,11 +2,10 @@ import { requireReadReceipt } from '@proton/shared/lib/mail/messages';
 import { c } from 'ttag';
 import { Icon, InlineLinkButton, useApi, useEventManager, useNotifications, useLoading } from '@proton/components';
 import { readReceipt } from '@proton/shared/lib/api/messages';
-
-import { MessageExtended } from '../../../models/message';
+import { MessageState } from '../../../logic/messages/messagesTypes';
 
 interface Props {
-    message: MessageExtended;
+    message: MessageState;
 }
 
 const ExtraReadReceipt = ({ message }: Props) => {

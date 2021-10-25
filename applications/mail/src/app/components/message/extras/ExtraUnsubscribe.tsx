@@ -40,9 +40,8 @@ const ExtraUnsubscribe = ({ message }: Props) => {
     const { createModal } = useModals();
     const [addresses] = useAddresses();
     const { extendedVerifications: sendVerification } = useSendVerifications();
-    // TODO REDUX
-    // const saveDraft = useSaveDraft();
-    // const sendMessage = useSendMessage();
+    const saveDraft = useSaveDraft();
+    const sendMessage = useSendMessage();
     const [loading, withLoading] = useLoading();
     const onCompose = useOnCompose();
     const toAddress = getOriginalTo(message.data);

@@ -1,6 +1,6 @@
-import { MessageExtended } from '../../models/message';
+import { MessageState } from '../../logic/messages/messagesTypes';
 
-export const updateKeyPackets = (modelMessage: MessageExtended, syncedMessage: MessageExtended) => {
+export const updateKeyPackets = (modelMessage: MessageState, syncedMessage: MessageState) => {
     let changed = false;
     const Attachments = modelMessage.data?.Attachments?.map((attachment) => {
         const match = syncedMessage?.data?.Attachments.find(

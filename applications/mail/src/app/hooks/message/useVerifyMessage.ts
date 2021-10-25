@@ -12,6 +12,7 @@ import { updateAttachment } from '../../logic/attachments/attachmentsActions';
 import { useGetAttachment } from '../useAttachment';
 import { MessageErrors, MessageStateWithData } from '../../logic/messages/messagesTypes';
 import { useGetMessage } from './useMessage';
+import { verificationComplete } from '../../logic/messages/messagesActions';
 
 export const useVerifyMessage = (localID: string) => {
     const api = useApi();
@@ -83,7 +84,6 @@ export const useVerifyMessage = (localID: string) => {
                     errors.signature = [error];
                 }
             } finally {
-                // TODO REDUX
                 // updateMessageCache(messageCache, localID, {
                 //     verification: {
                 //         senderPinnedKeys: encryptionPreferences?.pinnedKeys,
@@ -95,6 +95,16 @@ export const useVerifyMessage = (localID: string) => {
                 //     },
                 //     errors,
                 // });
+                dispatch(
+                    verificationComplete({
+                        ID: localID,
+                        encryptionPreferences,
+                        verification,
+                        signingPublicKey,
+                        attachedPublicKeys,
+                        errors,
+                    })
+                );
             }
         },
         [localID, contactsMap]

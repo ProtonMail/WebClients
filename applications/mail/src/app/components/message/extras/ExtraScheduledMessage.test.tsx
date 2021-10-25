@@ -6,9 +6,9 @@ import { fireEvent } from '@testing-library/dom';
 import { act, getByText as getByTextDefault } from '@testing-library/react';
 import { render } from '../../../helpers/test/render';
 import ExtraScheduledMessage from './ExtraScheduledMessage';
-import { MessageExtended } from '../../../models/message';
 import { formatDateToHuman } from '../../../helpers/date';
 import { addApiMock, clearAll, getModal } from '../../../helpers/test/helper';
+import { MessageState } from '../../../logic/messages/messagesTypes';
 
 const getMessage = (sendingDate: Date) => {
     return {
@@ -19,7 +19,7 @@ const getMessage = (sendingDate: Date) => {
             Time: sendingDate.getTime() / 1000,
             LabelIDs: [MAILBOX_LABEL_IDS.SENT, MAILBOX_LABEL_IDS.SCHEDULED],
         },
-    } as MessageExtended;
+    } as MessageState;
 };
 
 describe('Scheduled messages banner', () => {

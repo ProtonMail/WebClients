@@ -63,18 +63,18 @@ export const useInitializeMessage = (localID: string, labelID?: string) => {
 
         // Cache entry will be (at least) initialized by the queue system
         // const messageFromCache = messageCache.get(localID) as MessageExtended;
-        const messageFromCache = getMessage(localID) as MessageState;
+        const messageFromState = { ...getMessage(localID) } as MessageState;
 
         // If the message is not yet loaded at all, the localID is the message ID
-        if (!messageFromCache || !messageFromCache.data) {
-            messageFromCache.data = { ID: localID } as Message;
+        if (!messageFromState || !messageFromState.data) {
+            messageFromState.data = { ID: localID } as Message;
         }
 
         // updateMessageCache(messageCache, localID, { initialized: false });
         dispatch(documentInitializePending(localID));
 
         const errors: MessageErrors = {};
-        const { loadRetry = 0 } = messageFromCache;
+        const { loadRetry = 0 } = messageFromState;
         let initialized: boolean | undefined = true;
         let decryption;
         let preparation: Preparation | undefined;
@@ -83,9 +83,9 @@ export const useInitializeMessage = (localID: string, labelID?: string) => {
 
         try {
             // Ensure the message data is loaded
-            const message = await loadMessage(messageFromCache, api);
+            const message = await loadMessage(messageFromState, api);
             // updateMessageCache(messageCache, localID, { data: message.data });
-            dispatch(load.fulfilled(message, load.fulfilled.toString(), { ID: localID, api }));
+            dispatch(load.fulfilled(message.data, load.fulfilled.toString(), { ID: localID, api }));
 
             const messageKeys = await getMessageKeys(message.data);
 
@@ -123,19 +123,17 @@ export const useInitializeMessage = (localID: string, labelID?: string) => {
                         attachments,
                         api,
                         messageKeys,
-                        messageVerification: message.messageVerification,
+                        messageVerification: message.verification,
                         getAttachment,
                         onUpdateAttachment,
                     })
                 ) as any as Promise<PayloadAction<LoadEmbeddedResults, string, { arg: LoadEmbeddedParams }>>;
                 const { payload } = await dispatchResult;
-                console.log('handleLoadEmbeddedImages', payload);
                 return payload;
             };
 
             const handleLoadRemoteImagesProxy = (imagesToLoad: MessageRemoteImage[]) => {
                 const dispatchResult = dispatch(loadRemoteProxy({ ID: localID, imagesToLoad, api }));
-                console.log('handleLoadRemoteImagesProxy', dispatchResult);
                 return dispatchResult as any as Promise<LoadRemoteProxyResults[]>;
             };
 
@@ -147,7 +145,6 @@ export const useInitializeMessage = (localID: string, labelID?: string) => {
 
             const handleLoadRemoteImagesDirect = (imagesToLoad: MessageRemoteImage[]) => {
                 const dispatchResult = dispatch(loadRemoteDirect({ ID: localID, imagesToLoad, api }));
-                console.log('handleLoadRemoteImagesDirect', dispatchResult);
                 return dispatchResult as any as Promise<[MessageRemoteImage, unknown][]>;
             };
 

@@ -100,8 +100,6 @@ export const useSendMessage = () => {
 
                 const emails = unique(getRecipientsAddresses(inputMessage.data));
 
-                console.log('sending before', emails, inputMessage.data);
-
                 const hasHtml = Object.values(mapSendPrefs).some(
                     (sendPref) => sendPref?.mimeType === MIME_TYPES.DEFAULT
                 );
@@ -121,8 +119,6 @@ export const useSendMessage = () => {
                 );
                 packages = await attachSubPackages(packages, message, emails, mapSendPrefs, api);
                 packages = await encryptPackages(message, messageKeys, packages);
-
-                console.log('sending', packages);
 
                 // expiresIn is not saved on the API and then empty in `message`, we need to refer to `inputMessage`
                 const { expiresIn, autoSaveContacts, scheduledAt } = inputMessage.draftFlags || {};

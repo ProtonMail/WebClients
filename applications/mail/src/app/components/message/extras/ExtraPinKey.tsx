@@ -23,8 +23,8 @@ import {
 import { c } from 'ttag';
 import { useContactCache } from '../../../containers/ContactProvider';
 import { getContactEmail } from '../../../helpers/addresses';
-import { MessageVerification } from '../../../models/message';
 import TrustPublicKeyModal from '../modals/TrustPublicKeyModal';
+import { MessageVerification } from '../../../logic/messages/messagesTypes';
 
 const { NOT_VERIFIED, SIGNED_AND_INVALID } = VERIFICATION_STATUS;
 

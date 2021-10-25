@@ -45,6 +45,7 @@ import { updateAttachment } from '../../../logic/attachments/attachmentsActions'
 import { useGetAttachment } from '../../../hooks/useAttachment';
 import { getOrCreatePersonalCalendarsAndSettings } from '../../../helpers/calendar/inviteApi';
 import { MessageStateWithData, MessageErrors } from '../../../logic/messages/messagesTypes';
+import { errors as errorsAction } from '../../../logic/messages/messagesActions';
 
 interface Props {
     message: MessageStateWithData;
@@ -218,8 +219,8 @@ const ExtraEvents = ({ message }: Props) => {
             } else {
                 errors.unknown = [error];
             }
-            // TODO REDUX
             // updateMessageCache(messageCache, message.localID, { errors });
+            dispatch(errorsAction({ ID: message.localID, errors }));
         }
     }, [message.data, message.errors, loadingConfigs, message.data?.ID]);
 

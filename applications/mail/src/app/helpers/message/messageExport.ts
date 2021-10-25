@@ -25,6 +25,12 @@ const removePasswordFromRequests: Pick<Message, 'Password' | 'PasswordHint'> = {
     PasswordHint: undefined,
 };
 
+const restorePasswordFromResults = (resultMessage: Message, originalMessage: Message): Message => ({
+    ...resultMessage,
+    Password: originalMessage.Password,
+    PasswordHint: originalMessage.PasswordHint,
+});
+
 export const prepareExport = (message: MessageState) => {
     if (!message.messageDocument?.document) {
         return '';
@@ -116,7 +122,7 @@ export const createMessage = async (
             AttachmentKeyPackets,
         })
     );
-    return updatedMessage;
+    return restorePasswordFromResults(updatedMessage, message.data);
 };
 
 /**
@@ -152,7 +158,7 @@ export const updateMessage = async (
         ),
         silence: true,
     });
-    return updatedMessage;
+    return restorePasswordFromResults(updatedMessage, message.data);
 };
 
 /**

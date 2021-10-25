@@ -5,9 +5,9 @@ import { act, getByText } from '@testing-library/react';
 import { fireEvent } from '@testing-library/dom';
 import { addApiMock, clearAll, getDropdown, getModal, render } from '../../../helpers/test/helper';
 import AddressesEditor from './AddressesEditor';
-import { MessageExtended } from '../../../models/message';
 import { MessageSendInfo } from '../../../hooks/useSendInfo';
 import { mergeMessages } from '../../../helpers/message/messages';
+import { MessageState } from '../../../logic/messages/messagesTypes';
 
 const email1 = 'test@test.com';
 const email2 = 'test2@test.com';
@@ -22,7 +22,7 @@ const contact2ID = '2';
 const recipient1: Recipient = { Address: email1, Name: email1Name, ContactID: contact1ID };
 const recipient2: Recipient = { Address: email2, Name: email2Name, ContactID: contact2ID };
 
-const message: MessageExtended = {
+const message: MessageState = {
     localID: 'localId',
     data: {
         ToList: [recipient1, recipient2],

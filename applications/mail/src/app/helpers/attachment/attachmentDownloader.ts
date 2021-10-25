@@ -5,9 +5,8 @@ import { splitExtension } from '@proton/shared/lib/helpers/file';
 import { Api } from '@proton/shared/lib/interfaces';
 import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
-
-import { MessageKeys, MessageVerification } from '../../models/message';
 import { getAndVerify } from './attachmentLoader';
+import { MessageKeys, MessageVerification } from '../../logic/messages/messagesTypes';
 
 export interface Download {
     attachment: Attachment;

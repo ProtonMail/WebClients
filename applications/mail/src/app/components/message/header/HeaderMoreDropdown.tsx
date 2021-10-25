@@ -27,10 +27,8 @@ import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { reportPhishing } from '@proton/shared/lib/api/reports';
 import { deleteMessages } from '@proton/shared/lib/api/messages';
 import { MailSettings } from '@proton/shared/lib/interfaces';
-
 import { useDispatch } from 'react-redux';
 import { DecryptResultPmcrypto } from 'pmcrypto';
-import { MessageExtended, MessageExtendedWithData } from '../../../models/message';
 import MessageHeadersModal from '../modals/MessageHeadersModal';
 import { getDate } from '../../../helpers/elements';
 import { formatFileNameDate } from '../../../helpers/date';
@@ -50,12 +48,13 @@ import { getDeleteTitle, getModalText, getNotificationText } from '../../../hook
 import { isConversationMode } from '../../../helpers/mailSettings';
 import { updateAttachment } from '../../../logic/attachments/attachmentsActions';
 import { useGetAttachment } from '../../../hooks/useAttachment';
+import { MessageState, MessageStateWithData } from '../../../logic/messages/messagesTypes';
 
 const { INBOX, TRASH, SPAM } = MAILBOX_LABEL_IDS;
 
 interface Props {
     labelID: string;
-    message: MessageExtended;
+    message: MessageState;
     messageLoaded: boolean;
     sourceMode: boolean;
     onBack: () => void;
@@ -117,7 +116,7 @@ const HeaderMoreDropdown = ({
             reportPhishing({
                 MessageID: message.data?.ID,
                 MIMEType: message.data?.MIMEType === 'text/plain' ? 'text/plain' : 'text/html', // Accept only 'text/plain' / 'text/html'
-                Body: message.decryptedBody,
+                Body: message.decryption?.decryptedBody,
             })
         );
 
@@ -174,7 +173,7 @@ const HeaderMoreDropdown = ({
     };
 
     const handlePrint = async () => {
-        createModal(<MessagePrintModal message={message as MessageExtendedWithData} labelID={labelID} />);
+        createModal(<MessagePrintModal message={message as MessageStateWithData} labelID={labelID} />);
     };
 
     const messageLabelIDs = message.data?.LabelIDs || [];

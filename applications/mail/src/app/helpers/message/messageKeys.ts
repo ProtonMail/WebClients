@@ -5,8 +5,8 @@ import { Api } from '@proton/shared/lib/interfaces';
 import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { getParsedAutocryptHeader } from '@proton/shared/lib/mail/autocrypt';
 import { LARGE_KEY_SIZE } from '../../constants';
-import { MessageKeys } from '../../models/message';
 import { get } from '../attachment/attachmentLoader';
+import { MessageKeys } from '../../logic/messages/messagesTypes';
 
 /**
  * Look through a message attachments if there are keys

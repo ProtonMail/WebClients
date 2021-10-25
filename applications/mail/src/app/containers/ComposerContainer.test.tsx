@@ -3,13 +3,13 @@ import { MIME_TYPES } from '@proton/shared/lib/constants';
 import { Recipient } from '@proton/shared/lib/interfaces';
 import { addAddressToCache, clearAll, minimalCache, render, tick } from '../helpers/test/helper';
 import { OnCompose } from '../hooks/composer/useCompose';
-import { MessageExtended } from '../models/message';
 import { Breakpoints } from '../models/utils';
 import ComposerContainer from './ComposerContainer';
 import { preparePlainText } from '../helpers/transforms/transforms';
 import { formatFullDate } from '../helpers/date';
 import { MESSAGE_ACTIONS } from '../constants';
 import { useOnCompose } from './ComposeProvider';
+import { MessageState } from '../logic/messages/messagesTypes';
 
 const ID = 'ID';
 const Email = 'me@test.com';
@@ -33,7 +33,6 @@ with a link -> https://protonmail.com/`;
 
         const message = {
             localID: ID,
-            initialized: true,
             data: {
                 ID,
                 MIMEType: 'text/plain' as MIME_TYPES,
@@ -41,16 +40,21 @@ with a link -> https://protonmail.com/`;
                 Sender,
                 ToList: [] as Recipient[],
             },
-            decryptedBody: content,
+            decryption: {
+                decryptedBody: content,
+            },
+            messageDocument: {
+                initialized: true,
+            },
             ...(await preparePlainText(content, false)),
-        } as MessageExtended;
+        } as MessageState;
 
         const Inside = () => {
             onCompose = useOnCompose();
             return null;
         };
 
-        const { findByTestId } = await render(
+        const { findByTestId, unmount } = await render(
             <ComposerContainer breakpoints={{} as Breakpoints}>{() => <Inside />}</ComposerContainer>,
             false
         );
@@ -80,5 +84,8 @@ On ${formatFullDate(new Date(0))}, ${Sender.Name} <${Sender.Address}> wrote:
 
         // Wait for Address focus action
         await tick();
+
+        // Unmount unless the container will listen the reset action
+        unmount();
     });
 });

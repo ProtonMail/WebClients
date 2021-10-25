@@ -4,7 +4,7 @@ import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { c, msgid } from 'ttag';
 import React, { useEffect, useState } from 'react';
 import PreventTrackingToggle from '@proton/components/containers/emailPrivacy/PreventTrackingToggle';
-import { MessageExtended } from '../../models/message';
+import { MessageState } from '../../logic/messages/messagesTypes';
 import { emailTrackerProtectionURL } from '../../constants';
 import NumberOfElementsBubble from '../../components/list/spy-tracker/NumberOfElementsBubble';
 
@@ -14,7 +14,7 @@ interface Tracker {
 }
 
 interface Props {
-    message: MessageExtended;
+    message: MessageState;
     isDetails?: boolean;
 }
 

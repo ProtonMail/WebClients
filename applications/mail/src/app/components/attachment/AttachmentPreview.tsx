@@ -3,8 +3,8 @@ import { forwardRef, MutableRefObject, Ref, useEffect, useState, useRef } from '
 import { FilePreview, NavigationControl } from '@proton/components';
 import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import Portal from '@proton/components/components/portal/Portal';
-import { MessageExtendedWithData } from '../../models/message';
 import { useDownload, usePreview } from '../../hooks/useDownload';
+import { MessageStateWithData } from '../../logic/messages/messagesTypes';
 
 export interface AttachmentPreviewControls {
     preview: (attachment: Attachment) => void;
@@ -17,7 +17,7 @@ interface Preview {
 
 interface Props {
     attachments: Attachment[];
-    message: MessageExtendedWithData;
+    message: MessageStateWithData;
     onDownload: (attachment: Attachment, verificationStatus: VERIFICATION_STATUS) => void;
 }
 

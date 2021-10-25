@@ -1,12 +1,16 @@
 import { MailSettings } from '@proton/shared/lib/interfaces';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
-import { render, clearAll, messageCache, addApiMock } from '../../helpers/test/helper';
+import { render, clearAll, addApiMock } from '../../helpers/test/helper';
 import { Breakpoints } from '../../models/utils';
 import ConversationView from './ConversationView';
 import { Conversation } from '../../models/conversation';
 import { ConversationState } from '../../logic/conversations/conversationsTypes';
 import { store } from '../../logic/store';
-import { initialize, updateConversation } from '../../logic/conversations/conversationsActions';
+import {
+    initialize as initializeConversation,
+    updateConversation,
+} from '../../logic/conversations/conversationsActions';
+import { initialize as initializeMessage } from '../../logic/messages/messagesActions';
 
 describe('ConversationView', () => {
     const props = {
@@ -48,15 +52,15 @@ describe('ConversationView', () => {
     beforeEach(clearAll);
 
     it('should return store value', async () => {
-        store.dispatch(initialize(conversationCacheEntry));
-        messageCache.set(message.ID, { localID: message.ID, data: message });
+        store.dispatch(initializeConversation(conversationCacheEntry));
+        store.dispatch(initializeMessage({ localID: message.ID, data: message }));
         const { getByText } = await setup();
         getByText(conversation.Subject as string);
     });
 
     it('should update value if store is updated', async () => {
-        store.dispatch(initialize(conversationCacheEntry));
-        messageCache.set(message.ID, { localID: message.ID, data: message });
+        store.dispatch(initializeConversation(conversationCacheEntry));
+        store.dispatch(initializeMessage({ localID: message.ID, data: message }));
         const { getByText, rerender } = await setup();
         getByText(conversation.Subject as string);
 
@@ -89,8 +93,8 @@ describe('ConversationView', () => {
             errors: {},
         } as ConversationState;
 
-        store.dispatch(initialize(conversationCacheEntry));
-        store.dispatch(initialize(conversationCacheEntry2));
+        store.dispatch(initializeConversation(conversationCacheEntry));
+        store.dispatch(initializeConversation(conversationCacheEntry2));
 
         const { getByText, rerender } = await setup();
         getByText(conversation.Subject as string);

@@ -101,7 +101,6 @@ export const useDraft = () => {
             }
 
             message.localID = generateUID('draft');
-            // TODO REDUX
             // messageCache.set(message.localID, message);
             dispatch(createDraftAction(message));
             return message.localID;

@@ -71,6 +71,7 @@ const elementsSlice = createSlice({
     reducers: {},
     extraReducers: (builder) => {
         builder.addCase(globalReset, globalResetReducer);
+
         builder.addCase(reset, resetReducer);
         builder.addCase(updatePage, updatePageReducer);
         builder.addCase(load.pending, loadPending);
