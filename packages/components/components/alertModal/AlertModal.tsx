@@ -1,6 +1,6 @@
 import { classnames } from '../../helpers';
 import { ModalTwo, ModalProps, ModalTwoContent, ModalTwoFooter } from '../modalTwo';
-import './AlertModal.scss'
+import './AlertModal.scss';
 
 interface AlertModalProps extends ModalProps {
     title: string;
@@ -11,17 +11,15 @@ interface AlertModalProps extends ModalProps {
 
 const AlertModal = ({ title, subline, text, buttons, className, ...rest }: AlertModalProps) => {
     return (
-        <ModalTwo small {...rest} className={classnames([ className, 'alert-modal' ])}>
+        <ModalTwo small {...rest} className={classnames([className, 'alert-modal'])}>
             <div className="alert-modal-header">
                 <h3 className="text-lg text-bold">{title}</h3>
-                {subline && <div className="color-weak mt0-5">{subline}</div>}
+                {subline && <div className="color-weak">{subline}</div>}
             </div>
             <ModalTwoContent>
                 <p>{text}</p>
             </ModalTwoContent>
-            <ModalTwoFooter className="flex-column flex-align-items-stretch">
-                {buttons}
-            </ModalTwoFooter>
+            <ModalTwoFooter className="flex-column flex-align-items-stretch">{buttons}</ModalTwoFooter>
         </ModalTwo>
     );
 };
