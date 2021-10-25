@@ -15,7 +15,7 @@ const ContactsWidgetSettingsContainerImport = ({ onImportButtonClick }: Props) =
 
         <p className="color-weak mt0-5 mb1">
             {c('Info')
-                .t`We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).`}
+                .t`CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.`}
         </p>
 
         <ImportCsvContactButton
