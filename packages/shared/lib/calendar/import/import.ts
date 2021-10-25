@@ -167,12 +167,9 @@ export const extractSupportedEvent = async ({
         throw new ImportEventError(IMPORT_EVENT_ERROR_TYPE.DTSTART_MISSING, 'vevent', componentId);
     }
     const validVevent = withDtstamp(vcalComponent);
-    if (!validVevent.uid?.value || isInvitation) {
+    const generateHashUid = !validVevent.uid?.value || isInvitation;
+    if (generateHashUid) {
         validVevent.uid = { value: await generateVeventHashUID(serialize(vcalComponent), vcalComponent?.uid?.value) };
-    }
-    if (isInvitation && validVevent.components) {
-        // do not import alarms
-        validVevent.components = validVevent.components.filter(({ component }) => component !== 'valarm');
     }
     return getSupportedEvent({
         vcalVeventComponent: validVevent,
@@ -181,6 +178,7 @@ export const extractSupportedEvent = async ({
         guessTzid,
         method,
         isEventInvitation: false,
+        generatedHashUid: generateHashUid,
         componentId,
         enabledEmailNotifications,
     });
