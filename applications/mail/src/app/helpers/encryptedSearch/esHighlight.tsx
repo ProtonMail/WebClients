@@ -7,7 +7,7 @@ import { ES_MAX_INITIAL_CHARS } from '../../constants';
  * Traverse an email's body to highlight only text within HTML tags
  */
 const recursiveBodyTraversal = (node: Node, applySearchMarkup: (text: string) => HTMLSpanElement | undefined) => {
-    if (node.nodeName === 'STYLE') {
+    if (node.nodeName === 'STYLE' || node.nodeName === 'SCRIPT') {
         return;
     }
     if (node.nodeName === '#text') {
