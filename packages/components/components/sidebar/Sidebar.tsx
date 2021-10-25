@@ -1,4 +1,4 @@
-import { ReactNode, useRef, useMemo } from 'react';
+import { ReactNode, useRef, useMemo, ComponentPropsWithoutRef } from 'react';
 import { c } from 'ttag';
 
 import { APPS } from '@proton/shared/lib/constants';
@@ -14,7 +14,7 @@ import MobileAppsLinks from './MobileAppsLinks';
 import { useFocusTrap } from '../focus';
 import { classnames } from '../../helpers';
 
-interface Props {
+interface Props extends ComponentPropsWithoutRef<'div'> {
     logo?: ReactNode;
     expanded?: boolean;
     onToggleExpand?: () => void;
@@ -24,7 +24,16 @@ interface Props {
     hasAppLinks?: boolean;
 }
 
-const Sidebar = ({ expanded = false, onToggleExpand, hasAppLinks = true, logo, primary, children, version }: Props) => {
+const Sidebar = ({
+    expanded = false,
+    onToggleExpand,
+    hasAppLinks = true,
+    logo,
+    primary,
+    children,
+    version,
+    ...rest
+}: Props) => {
     const rootRef = useRef<HTMLDivElement>(null);
     const focusTrapProps = useFocusTrap({
         active: expanded,
@@ -66,6 +75,7 @@ const Sidebar = ({ expanded = false, onToggleExpand, hasAppLinks = true, logo, p
             ref={rootRef}
             className="sidebar flex flex-nowrap flex-column no-print no-outline"
             data-expanded={expanded}
+            {...rest}
             {...focusTrapProps}
         >
             <div className="no-desktop no-tablet flex-item-noshrink">
