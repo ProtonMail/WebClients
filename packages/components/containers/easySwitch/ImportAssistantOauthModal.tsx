@@ -224,6 +224,13 @@ const ImportAssistantOauthModal = ({ addresses, onClose = noop, defaultCheckedTy
                                 Code,
                                 RedirectUri,
                                 Source: source,
+                                Products: (Object.keys(checkedTypes) as ImportType[]).reduce<ImportType[]>((acc, k) => {
+                                    if (checkedTypes[k]) {
+                                        return [...acc, k];
+                                    }
+
+                                    return acc;
+                                }, []),
                             })
                         );
 
