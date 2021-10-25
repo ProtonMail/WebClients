@@ -841,48 +841,14 @@ END:VEVENT`;
         });
     });
 
-    it('should add a uid if the invitation has none', async () => {
-        const vevent = `
-BEGIN:VEVENT
-DTSTAMP:19980309T231000Z
-DTSTART;TZID=Europe/Brussels:20021231T203000
-DTEND;TZID=Europe/Brussels:20030101T003000
-LOCATION:1CP Conference Room 4350
-END:VEVENT`;
-        const tzid = 'Europe/Brussels';
-        const event = parse(vevent) as VcalVeventComponent & Required<Pick<VcalVeventComponent, 'dtend'>>;
-        const supportedEvent = await extractSupportedEvent({
-            method: ICAL_METHOD.REQUEST,
-            vcalComponent: event,
-            calendarTzid: tzid,
-            hasXWrTimezone: true,
-        });
-        expect(supportedEvent).toEqual({
-            component: 'vevent',
-            uid: { value: 'sha1-uid-0ff30d1f26a94abe627d9f715db16714b01be84c' },
-            dtstamp: {
-                value: { year: 1998, month: 3, day: 9, hours: 23, minutes: 10, seconds: 0, isUTC: true },
-            },
-            dtstart: {
-                value: { year: 2002, month: 12, day: 31, hours: 20, minutes: 30, seconds: 0, isUTC: false },
-                parameters: { tzid: 'Europe/Brussels' },
-            },
-            dtend: {
-                value: { year: 2003, month: 1, day: 1, hours: 0, minutes: 30, seconds: 0, isUTC: false },
-                parameters: { tzid: 'Europe/Brussels' },
-            },
-            location: { value: '1CP Conference Room 4350' },
-            sequence: { value: 0 },
-        });
-    });
-
-    it('should override the uid if the event is an invitation, and preserve it in the new uid', async () => {
+    it('should override the uid if the event is an invitation, preserve it in the new uid, and drop recurrence-id', async () => {
         const vevent = `
 BEGIN:VEVENT
 UID:lalalala
 DTSTAMP:19980309T231000Z
 DTSTART;TZID=Europe/Brussels:20021231T203000
 DTEND;TZID=Europe/Brussels:20030101T003000
+RECURRENCE-ID:20110618T150000Z
 LOCATION:1CP Conference Room 4350
 END:VEVENT`;
         const tzid = 'Europe/Brussels';
@@ -895,7 +861,7 @@ END:VEVENT`;
         });
         expect(supportedEvent).toEqual({
             component: 'vevent',
-            uid: { value: 'sha1-uid-c4f5344f25afb36ff7870a5418d346a939aa66dd-original-uid-lalalala' },
+            uid: { value: 'sha1-uid-d39ba53e577d2eae6ba0baf8539e1fa468fbeabb-original-uid-lalalala' },
             dtstamp: {
                 value: { year: 1998, month: 3, day: 9, hours: 23, minutes: 10, seconds: 0, isUTC: true },
             },
@@ -912,12 +878,13 @@ END:VEVENT`;
         });
     });
 
-    it('should add a uid if the event has none', async () => {
+    it('should drop the recurrence id if we overrode the uid', async () => {
         const vevent = `
 BEGIN:VEVENT
 DTSTAMP:19980309T231000Z
 DTSTART;TZID=Europe/Brussels:20021231T203000
 DTEND;TZID=Europe/Brussels:20030101T003000
+RECURRENCE-ID:20110618T150000Z
 LOCATION:1CP Conference Room 4350
 END:VEVENT`;
         const tzid = 'Europe/Brussels';
@@ -930,7 +897,7 @@ END:VEVENT`;
         });
         expect(supportedEvent).toEqual({
             component: 'vevent',
-            uid: { value: 'sha1-uid-0ff30d1f26a94abe627d9f715db16714b01be84c' },
+            uid: { value: 'sha1-uid-ab36432982bccb6dad294500ece330c5829f93ad' },
             dtstamp: {
                 value: { year: 1998, month: 3, day: 9, hours: 23, minutes: 10, seconds: 0, isUTC: true },
             },
