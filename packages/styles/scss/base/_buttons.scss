@@ -36,6 +36,7 @@
 		box-shadow: inset 0 0 0 var(--button-hover-border-width, 0) var(--button-hover-border-color, transparent);
 		background-color: var(--button-hover-background-color, transparent);
 		color: var(--button-hover-text-color, inherit);
+		opacity: 1; // In case the button is invisible as default
 	}
 
 	&:active,
@@ -48,6 +49,7 @@
 		box-shadow: inset 0 0 0 var(--button-active-border-width, 0) var(--button-active-border-color, transparent);
 		background-color: var(--button-active-background-color, transparent);
 		color: var(--button-active-text-color, inherit);
+		opacity: 1; // In case the button is invisible as default
 	}
 
 	&[disabled],

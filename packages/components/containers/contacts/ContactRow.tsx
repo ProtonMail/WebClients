@@ -74,7 +74,7 @@ const ContactRow = ({
             onDragStart={onDragStart}
             onDragEnd={onDragEnd}
             className={classnames([
-                'item-container item-contact flex cursor-pointer bg-global-white button-show-on-hover',
+                'item-container item-contact flex cursor-pointer bg-global-white',
                 dragged && 'item-dragging',
                 hasFocus && 'item-is-focused',
             ])}
@@ -84,7 +84,7 @@ const ContactRow = ({
             data-element-id={contact.ID}
             data-shortcut-target="contact-container"
         >
-            <div className="flex flex-nowrap w100 h100 mtauto mbauto flex-align-items-center">
+            <div className="flex flex-nowrap w100 h100 mtauto mbauto flex-align-items-center opacity-on-hover-container">
                 <ItemCheckbox ID={ID} name={Name} checked={checked} onChange={onCheck} />
                 <div className="flex-item-fluid pl1 flex flex-column flex-justify-space-between conversation-titlesender">
                     <div className="flex flex-nowrap flex-align-items-center item-firstline max-w100">
@@ -114,7 +114,7 @@ const ContactRow = ({
                 {emails[0] && (
                     <Copy
                         value={emails[0]}
-                        className="button-show-on-hover-element"
+                        className="opacity-on-hover"
                         onCopy={handleCopyEmail}
                         tooltipText={c('Action').t`Copy email to clipboard`}
                         size="small"
