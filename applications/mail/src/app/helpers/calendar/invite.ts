@@ -611,10 +611,6 @@ export const getSupportedEventInvitation = async ({
     if (isImport) {
         const sha1Uid = await generateVeventHashUID(icsBinaryString, completeVevent.uid?.value);
         completeVevent.uid = { value: sha1Uid };
-        if (completeVevent['recurrence-id']) {
-            // Since we changed the UID, we ignore the RECURRENCE-ID if present
-            delete completeVevent['recurrence-id'];
-        }
     } else if (!completeVevent.organizer) {
         // The ORGANIZER field is mandatory in an invitation
         const guessOrganizerEmail = ICAL_METHODS_ATTENDEE.includes(supportedMethod)
@@ -634,6 +630,7 @@ export const getSupportedEventInvitation = async ({
             calendarTzid,
             guessTzid,
             isEventInvitation: true,
+            generatedHashUid: isImport,
         });
         return {
             method: supportedMethod,

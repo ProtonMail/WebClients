@@ -174,6 +174,7 @@ export const getSupportedEvent = ({
     guessTzid,
     componentId = '',
     isEventInvitation,
+    generatedHashUid = false,
     enabledEmailNotifications,
 }: {
     method?: ICAL_METHOD;
@@ -183,6 +184,7 @@ export const getSupportedEvent = ({
     guessTzid?: string;
     componentId?: string;
     isEventInvitation?: boolean;
+    generatedHashUid?: boolean;
     enabledEmailNotifications?: boolean;
 }): VcalVeventComponent => {
     const isPublish = method === ICAL_METHOD.PUBLISH;
@@ -342,10 +344,8 @@ export const getSupportedEvent = ({
                 })
             );
         }
-        // Do not keep recurrence ids when importing invitations. In those cases we override the UID,
-        // so the RECURRENCE-ID is meaningless
-        const keepRecurrenceId = isEventInvitation ? !isPublish : isPublish;
-        if (recurrenceId && keepRecurrenceId) {
+        // Do not keep recurrence ids when we generated a hash UID, as the RECURRENCE-ID is meaningless then
+        if (recurrenceId && !generatedHashUid) {
             if (rrule) {
                 if (method === ICAL_METHOD.REPLY) {
                     // the external provider forgot to remove the RRULE
@@ -409,12 +409,14 @@ export const getSupportedEvent = ({
                 }
             }
 
-            const alarms = components?.filter(({ component }) => component === 'valarm') || [];
-            const supportedAlarms = getSupportedAlarms(alarms, dtstart, enabledEmailNotifications);
-            const dedupedAlarms = dedupeAlarmsWithNormalizedTriggers(supportedAlarms);
+            if (!isEventInvitation && isPublish) {
+                const alarms = components?.filter(({ component }) => component === 'valarm') || [];
+                const supportedAlarms = getSupportedAlarms(alarms, dtstart, enabledEmailNotifications);
+                const dedupedAlarms = dedupeAlarmsWithNormalizedTriggers(supportedAlarms);
 
-            if (dedupedAlarms.length) {
-                validated.components = dedupedAlarms;
+                if (dedupedAlarms.length) {
+                    validated.components = dedupedAlarms;
+                }
             }
         }
 
