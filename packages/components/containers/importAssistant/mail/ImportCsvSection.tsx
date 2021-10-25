@@ -14,7 +14,7 @@ const ImportCsvSection = ({ hideEasySwitch = false }: Props) => (
         </SettingsParagraph>
 
         <div>
-            <ImportCsvContactButton hideEasySwitch={hideEasySwitch} />
+            <ImportCsvContactButton easySwitchSource="import-contacts-settings" hideEasySwitch={hideEasySwitch} />
         </div>
     </SettingsSection>
 );

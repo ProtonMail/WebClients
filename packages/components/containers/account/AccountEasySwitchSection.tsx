@@ -21,6 +21,7 @@ const AccountEasySwitchSection = () => {
     const handleOAuthClick = () => {
         createModal(
             <ImportAssistantOauthModal
+                source="easy-switch-settings"
                 addresses={addresses}
                 defaultCheckedTypes={[ImportType.MAIL, ImportType.CALENDAR, ImportType.CONTACTS]}
             />

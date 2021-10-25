@@ -17,7 +17,7 @@ const ContactsWidgetSettingsContainerImport = ({ onImportButtonClick }: Props) =
                 .t`We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).`}
         </p>
 
-        <ImportCsvContactButton onImportButtonClick={onImportButtonClick} />
+        <ImportCsvContactButton easySwitchSource="contacts-widget-settings" onImportButtonClick={onImportButtonClick} />
     </>
 );
 
