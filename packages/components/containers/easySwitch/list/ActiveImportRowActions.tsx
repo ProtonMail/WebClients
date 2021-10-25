@@ -64,6 +64,7 @@ const ActiveImportRowActions = ({ activeImport }: Props) => {
                         Code,
                         RedirectUri,
                         Source: 'reconnect-import',
+                        Products: [Product],
                     })
                 );
 
