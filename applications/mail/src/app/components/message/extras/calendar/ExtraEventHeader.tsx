@@ -53,6 +53,7 @@ const ExtraEventHeader = ({ model }: Props) => {
                         endDate={endDate}
                         isAllDay={isAllDay}
                         hasAllDayUtcDates
+                        data-testid="extra-event-date-header"
                     />
                     {optionalHeader && <div className="text-sm color-weak">{optionalHeader}</div>}
                 </>
