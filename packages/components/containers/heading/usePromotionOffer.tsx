@@ -1,16 +1,13 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { isProductPayer } from '@proton/shared/lib/helpers/blackfriday';
-import { PlanIDs, Cycle, Currency, LatestSubscription } from '@proton/shared/lib/interfaces';
+import { LatestSubscription } from '@proton/shared/lib/interfaces';
 import { APPS, BLACK_FRIDAY, CYCLE } from '@proton/shared/lib/constants';
-import { useLocation } from 'react-router';
 import { getLastCancelledSubscription } from '@proton/shared/lib/api/payments';
 import { toMap } from '@proton/shared/lib/helpers/object';
-import { dialogRootClassName } from '@proton/shared/lib/busy';
 import { noop } from '@proton/shared/lib/helpers/function';
 
 import {
     useLoading,
-    useModals,
     useUser,
     useSubscription,
     usePlans,
@@ -20,8 +17,6 @@ import {
     useFeature,
     useBlackFridayPeriod,
 } from '../../hooks';
-import { BlackFridayModal, SubscriptionModal } from '../payments';
-import { SUBSCRIPTION_STEPS } from '../payments/subscription/constants';
 import { FeatureCode } from '../features';
 import { EligibleOffer } from '../payments/interface';
 import { getBlackFridayEligibility } from '../payments/subscription/helpers';
@@ -36,39 +31,8 @@ const usePromotionOffer = (): EligibleOffer | undefined => {
     const [latestSubscription, setLatestSubscription] = useState<LatestSubscription | undefined>(undefined);
     const isBlackFridayPeriod = useBlackFridayPeriod();
     const isProductPayerPeriod = useProductPayerPeriod();
-    const { feature, update: setModalState } = useFeature(
-        isFree ? FeatureCode.BlackFridayPromoShown : FeatureCode.BundlePromoShown
-    );
     const vpnSpecialOfferFeature = useFeature(FeatureCode.VPNSpecialOfferPromo);
-    const location = useLocation();
-    const { createModal } = useModals();
     const [loading, withLoading] = useLoading();
-    const params = new URLSearchParams(location.search);
-    const openBlackFridayModal = (params.get('modal') || '').toLowerCase() === BLACK_FRIDAY.COUPON_CODE.toLowerCase();
-    const hasBlackFridayCoupon = (params.get('coupon') || '').toLowerCase() === BLACK_FRIDAY.COUPON_CODE.toLowerCase();
-
-    const handleOnSelect = ({
-        planIDs,
-        cycle,
-        currency,
-        couponCode,
-    }: {
-        planIDs: PlanIDs;
-        cycle: Cycle;
-        currency: Currency;
-        couponCode?: string | null;
-    }) => {
-        createModal(
-            <SubscriptionModal
-                planIDs={planIDs}
-                cycle={cycle}
-                currency={currency}
-                coupon={couponCode}
-                step={SUBSCRIPTION_STEPS.CHECKOUT}
-                disableBackButton
-            />
-        );
-    };
 
     const plansMap = toMap(plans, 'Name');
 
@@ -166,25 +130,7 @@ const usePromotionOffer = (): EligibleOffer | undefined => {
         withLoading(run());
     }, [isBlackFridayPeriod, isFree]);
 
-    const onceRef = useRef(false);
-    const offer = blackFridayOffer || productPayerOffer;
-
-    useEffect(() => {
-        if (
-            !onceRef.current &&
-            offer &&
-            (feature?.Value === false || openBlackFridayModal || hasBlackFridayCoupon) &&
-            // This is not great but don't want to trigger this if other modals are open, such as the welcome flow
-            !document.querySelector(`.${dialogRootClassName}`)
-        ) {
-            onceRef.current = true;
-            setModalState(true);
-            createModal(<BlackFridayModal offer={offer} onSelect={handleOnSelect} />);
-        }
-        // Listening to booleans instead of the offers to have a stable value...
-    }, [feature, !!blackFridayOffer, !!productPayerOffer]);
-
-    return offer;
+    return blackFridayOffer || productPayerOffer;
 };
 
 export default usePromotionOffer;
