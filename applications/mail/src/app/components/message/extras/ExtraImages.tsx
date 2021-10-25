@@ -1,12 +1,11 @@
 import { shiftKey } from '@proton/shared/lib/helpers/browser';
 import { Icon, useMailSettings, Tooltip } from '@proton/components';
 import { c } from 'ttag';
-
 import { hasShowEmbedded, hasShowRemote } from '../../../helpers/mailSettings';
-import { MessageExtended } from '../../../models/message';
+import { MessageState } from '../../../logic/messages/messagesTypes';
 
 interface Props {
-    message: MessageExtended;
+    message: MessageState;
     type: string;
     onLoadImages: () => void;
 }

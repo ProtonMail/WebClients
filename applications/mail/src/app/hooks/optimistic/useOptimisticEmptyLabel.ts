@@ -5,7 +5,10 @@ import { useStore, useDispatch } from 'react-redux';
 import { hasLabel } from '../../helpers/elements';
 import { replaceCounter } from '../../helpers/counter';
 import { CacheEntry } from '../../models/tools';
-import { optimisticEmptyLabel, optimisticRestoreEmptyLabel } from '../../logic/elements/elementsActions';
+import {
+    optimisticEmptyLabel as optimisticEmptyLabelElements,
+    optimisticRestoreEmptyLabel as optimisticRestoreEmptyLabelElements,
+} from '../../logic/elements/elementsActions';
 import {
     optimisticDelete as optimisticDeleteConversationAction,
     optimisticDeleteConversationMessages as optimisticDeleteConversationMessagesAction,
@@ -15,6 +18,10 @@ import { RootState } from '../../logic/store';
 import { ConversationState } from '../../logic/conversations/conversationsTypes';
 import { useGetAllConversations } from '../conversation/useConversation';
 import { MessageState } from '../../logic/messages/messagesTypes';
+import {
+    optimisticEmptyLabel as optimisticEmptyLabelMessage,
+    optimisticRestore as optimisticRestoreMessage,
+} from '../../logic/messages/messagesActions';
 
 export const useOptimisticEmptyLabel = () => {
     const store = useStore<RootState>();
@@ -28,14 +35,15 @@ export const useOptimisticEmptyLabel = () => {
         const rollbackCounters = {} as { [key: string]: LabelCount };
 
         // Message cache
-        const messageIDs = [...messageCache.keys()];
-        messageIDs.forEach((messageID) => {
-            const message = messageCache.get(messageID) as MessageState;
-            if (hasLabel(message.data || {}, labelID)) {
-                messageCache.delete(messageID);
-                rollbackMessages.push(message);
-            }
-        });
+        // const messageIDs = [...messageCache.keys()];
+        // messageIDs.forEach((messageID) => {
+        //     const message = messageCache.get(messageID) as MessageState;
+        //     if (hasLabel(message.data || {}, labelID)) {
+        //         messageCache.delete(messageID);
+        //         rollbackMessages.push(message);
+        //     }
+        // });
+        dispatch(optimisticEmptyLabelMessage(labelID));
 
         // Conversation cache
         const allConversations = getAllConversations();
@@ -56,7 +64,7 @@ export const useOptimisticEmptyLabel = () => {
 
         // Elements cache
         const rollbackElements = Object.values(store.getState().elements.elements);
-        dispatch(optimisticEmptyLabel());
+        dispatch(optimisticEmptyLabelElements());
 
         // Message counters
         const messageCounters = globalCache.get(MessageCountsModel.key) as CacheEntry<LabelCount[]>;
@@ -79,12 +87,9 @@ export const useOptimisticEmptyLabel = () => {
         });
 
         return () => {
-            rollbackMessages.forEach((message) => {
-                messageCache.set(message.localID, message);
-            });
+            dispatch(optimisticRestoreMessage(rollbackMessages));
             dispatch(optimisticRestoreConversationsAction(rollbackConversations));
-
-            dispatch(optimisticRestoreEmptyLabel({ elements: rollbackElements }));
+            dispatch(optimisticRestoreEmptyLabelElements({ elements: rollbackElements }));
             Object.entries(rollbackCounters).forEach(([key, value]) => {
                 const entry = globalCache.get(key) as CacheEntry<LabelCount[]>;
                 globalCache.set(key, {

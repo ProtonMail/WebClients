@@ -203,7 +203,7 @@ export const markEmbeddedImagesAsLoaded = (
     loadResults: { attachment: Attachment; blob: string }[]
 ) => {
     return embeddedImages.map((image) => {
-        const result = loadResults.find((loadResult) => loadResult.attachment === image.attachment);
+        const result = loadResults.find((loadResult) => loadResult.attachment.ID === image.attachment.ID);
         if (result) {
             return { ...image, url: result?.blob, status: 'loaded' as 'loaded' };
         }

@@ -1,10 +1,12 @@
 import { Message, Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { isScheduledSend, isSent, isDraft as testIsDraft, setFlag } from '@proton/shared/lib/mail/messages';
 import { EVENT_ACTIONS, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { canonizeEmail } from '@proton/shared/lib/helpers/email';
 import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
 import { PayloadAction } from '@reduxjs/toolkit';
 import { Draft } from 'immer';
-import { parseLabelIDsInEvent } from '../../helpers/elements';
+import { hasLabel, parseLabelIDsInEvent } from '../../helpers/elements';
+import { applyLabelChangesOnMessage, LabelChanges } from '../../helpers/labels';
 import { markEmbeddedImagesAsLoaded, replaceEmbeddedAttachments } from '../../helpers/message/messageEmbeddeds';
 import { getEmbeddedImages, getRemoteImages, updateImages } from '../../helpers/message/messageImages';
 import {
@@ -13,6 +15,8 @@ import {
     removeProtonPrefix,
     urlCreator,
 } from '../../helpers/message/messageRemotes';
+import { applyMarkAsChangesOnMessage } from '../../helpers/message/messages';
+import { MarkAsChanges } from '../../hooks/optimistic/useOptimisticMarkAs';
 import { LabelIDsChanges, MessageEvent } from '../../models/event';
 import { RootState } from '../store';
 import { localID as localIDSelector, messageByID } from './messagesSelectors';
@@ -24,10 +28,12 @@ import {
     LoadRemoteParams,
     LoadRemoteProxyResults,
     MessageEmbeddedImage,
+    MessageErrors,
     MessageRemoteImage,
     MessagesState,
     MessageState,
     PartialMessageState,
+    VerificationParams,
 } from './messagesTypes';
 
 /**
@@ -47,8 +53,25 @@ const getLocalID = (state: Draft<MessagesState>, ID: string) =>
 
 const getMessage = (state: Draft<MessagesState>, ID: string) => messageByID({ messages: state } as RootState, { ID });
 
+export const reset = (state: Draft<MessagesState>) => {
+    Object.keys(state).forEach((ID) => {
+        delete state[ID];
+    });
+};
+
 export const initialize = (state: Draft<MessagesState>, action: PayloadAction<MessageState>) => {
     state[action.payload.localID] = action.payload as any; // TS error with writing Element
+};
+
+export const errors = (
+    state: Draft<MessagesState>,
+    { payload: { ID, errors } }: PayloadAction<{ ID: string; errors: MessageErrors }>
+) => {
+    const messageState = getMessage(state, ID);
+
+    if (messageState) {
+        messageState.errors = errors;
+    }
 };
 
 export const event = (state: Draft<MessagesState>, action: PayloadAction<MessageEvent>) => {
@@ -145,6 +168,47 @@ export const documentInitializeFulfilled = (
     }
 };
 
+export const verificationComplete = (
+    state: Draft<MessagesState>,
+    {
+        payload: { ID, encryptionPreferences, verification, attachedPublicKeys, signingPublicKey, errors },
+    }: PayloadAction<VerificationParams>
+) => {
+    const messageState = getMessage(state, ID);
+
+    if (messageState) {
+        messageState.verification = {
+            senderPinnedKeys: encryptionPreferences?.pinnedKeys,
+            signingPublicKey,
+            attachedPublicKeys,
+            senderVerified: encryptionPreferences?.isContactSignatureVerified,
+            verificationStatus: verification?.verified,
+            verificationErrors: verification?.verificationErrors,
+        };
+        messageState.errors = errors;
+    }
+};
+
+export const resign = (
+    state: Draft<MessagesState>,
+    { payload: { ID, isContactSignatureVerified } }: PayloadAction<{ ID: string; isContactSignatureVerified?: boolean }>
+) => {
+    const messageState = getMessage(state, ID);
+
+    if (messageState && messageState.verification) {
+        messageState.verification.senderVerified = isContactSignatureVerified;
+    }
+};
+
+export const resetVerification = (state: Draft<MessagesState>, { payload: emails }: PayloadAction<string[]>) => {
+    Object.values(state).forEach((message) => {
+        const senderAddress = canonizeEmail(message?.data?.Sender.Address || '');
+        if (message && emails.includes(senderAddress)) {
+            message.verification = undefined;
+        }
+    });
+};
+
 export const loadEmbeddedFulfilled = (
     state: Draft<MessagesState>,
     {
@@ -159,6 +223,7 @@ export const loadEmbeddedFulfilled = (
     if (messageState && messageState.messageImages) {
         const embeddedImages = getEmbeddedImages(messageState);
         const updatedEmbeddedImages = markEmbeddedImagesAsLoaded(embeddedImages, payload);
+
         messageState.messageImages = updateImages(
             messageState.messageImages,
             undefined,
@@ -275,9 +340,56 @@ export const loadRemoteDirectFulFilled = (
     }
 };
 
+export const optimisticApplyLabels = (
+    state: Draft<MessagesState>,
+    {
+        payload: { ID, changes, unreadStatuses },
+    }: PayloadAction<{ ID: string; changes: LabelChanges; unreadStatuses?: { id: string; unread: number }[] }>
+) => {
+    const messageState = getMessage(state, ID);
+
+    if (messageState && messageState.data) {
+        messageState.data = applyLabelChangesOnMessage(messageState.data, changes, unreadStatuses);
+    }
+};
+
+export const optimisticMarkAs = (
+    state: Draft<MessagesState>,
+    { payload: { ID, changes } }: PayloadAction<{ ID: string; changes: MarkAsChanges }>
+) => {
+    const messageState = getMessage(state, ID);
+
+    if (messageState && messageState.data) {
+        messageState.data = applyMarkAsChangesOnMessage(messageState.data, changes);
+    }
+};
+
+export const optimisticDelete = (state: Draft<MessagesState>, { payload: IDs }: PayloadAction<string[]>) => {
+    IDs.forEach((ID) => {
+        const localID = getLocalID(state, ID);
+        delete state[localID];
+    });
+};
+
+export const optimisticEmptyLabel = (state: Draft<MessagesState>, { payload: labelID }: PayloadAction<string>) => {
+    Object.entries(state).forEach(([ID, message]) => {
+        if (message && message.data && hasLabel(message.data, labelID)) {
+            delete state[ID];
+        }
+    });
+};
+
+export const optimisticRestore = (
+    state: Draft<MessagesState>,
+    { payload: messages }: PayloadAction<MessageState[]>
+) => {
+    messages.forEach((message) => {
+        state[message.localID] = message as any;
+    });
+};
+
 export const createDraft = (state: Draft<MessagesState>, { payload: message }: PayloadAction<MessageState>) => {
     (state as MessagesState)[message.localID] = message;
-    // (state as MessagesState)[message.localID] = { ...message, messageDocument: { ...message.messageDocument } };
 };
 
 export const openDraft = (
@@ -324,6 +436,38 @@ export const draftSaved = (
             messageState.data as PartialMessageState,
             message.Attachments
         );
+    } else {
+        state[ID] = { localID: ID, data: message } as any;
+    }
+};
+
+export const updateScheduled = (
+    state: Draft<MessagesState>,
+    { payload: { ID, scheduledAt } }: PayloadAction<{ ID: string; scheduledAt: number }>
+) => {
+    const messageState = getMessage(state, ID);
+
+    if (messageState) {
+        if (messageState.draftFlags) {
+            messageState.draftFlags.scheduledAt = scheduledAt;
+        } else {
+            messageState.draftFlags = { scheduledAt };
+        }
+    }
+};
+
+export const updateExpires = (
+    state: Draft<MessagesState>,
+    { payload: { ID, expiresIn } }: PayloadAction<{ ID: string; expiresIn: number }>
+) => {
+    const messageState = getMessage(state, ID);
+
+    if (messageState) {
+        if (messageState.draftFlags) {
+            messageState.draftFlags.expiresIn = expiresIn;
+        } else {
+            messageState.draftFlags = { expiresIn };
+        }
     }
 };
 

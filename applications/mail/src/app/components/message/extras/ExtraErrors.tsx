@@ -2,8 +2,8 @@ import { useState } from 'react';
 import { Button, Icon, SettingsLink } from '@proton/components';
 import { c } from 'ttag';
 import { APPS } from '@proton/shared/lib/constants';
-import { MessageExtended, MessageErrors } from '../../../models/message';
 import { useReloadMessage } from '../../../hooks/message/useLoadMessage';
+import { MessageErrors, MessageState } from '../../../logic/messages/messagesTypes';
 
 const getTranslations = (key: keyof MessageErrors, alreadyTried: boolean) => {
     switch (key) {
@@ -23,7 +23,7 @@ const getTranslations = (key: keyof MessageErrors, alreadyTried: boolean) => {
 };
 
 interface Props {
-    message: MessageExtended;
+    message: MessageState;
 }
 
 const ExtraErrors = ({ message }: Props) => {

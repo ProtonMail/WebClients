@@ -2,14 +2,13 @@ import { MailSettings } from '@proton/shared/lib/interfaces';
 import { PM_SIGNATURE } from '@proton/shared/lib/constants';
 import { isPlainText } from '@proton/shared/lib/mail/messages';
 import { message } from '@proton/shared/lib/sanitize';
-
 import { dedentTpl } from '../dedent';
 import { replaceLineBreaks } from '../string';
 import { parseInDiv, isHTMLEmpty } from '../dom';
-import { MessageExtended } from '../../models/message';
 import { getPlainTextContent, exportPlainText } from './messageContent';
 import { CLASSNAME_BLOCKQUOTE } from './messageDraft';
 import { MESSAGE_ACTIONS } from '../../constants';
+import { MessageState } from '../../logic/messages/messagesTypes';
 
 export const CLASSNAME_SIGNATURE_CONTAINER = 'protonmail_signature_block';
 export const CLASSNAME_SIGNATURE_USER = 'protonmail_signature_block-user';
@@ -118,7 +117,7 @@ export const insertSignature = (
  * Return the content of the message with the signature switched from the old one to the new one
  */
 export const changeSignature = (
-    message: MessageExtended,
+    message: MessageState,
     mailSettings: Partial<MailSettings> | undefined,
     oldSignature: string,
     newSignature: string
@@ -131,7 +130,7 @@ export const changeSignature = (
         const newSignatureText = exportPlainText(newTemplate).trim();
         return content.replace(oldSignatureText, newSignatureText);
     }
-    const document = message.document as Element;
+    const document = message.messageDocument?.document as Element;
 
     const userSignature = [...document.querySelectorAll(`.${CLASSNAME_SIGNATURE_USER}`)].find(
         (element) => element.closest(`.${CLASSNAME_BLOCKQUOTE}`) === null

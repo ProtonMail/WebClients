@@ -1,10 +1,9 @@
 import { Address, MailSettings } from '@proton/shared/lib/interfaces';
 import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
 import { formatSubject, FW_PREFIX, RE_PREFIX } from '@proton/shared/lib/mail/messages';
-
 import { handleActions, createNewDraft } from './messageDraft';
-import { MessageExtendedWithData } from '../../models/message';
 import { MESSAGE_ACTIONS } from '../../constants';
+import { MessageStateWithData } from '../../logic/messages/messagesTypes';
 
 const ID = 'ID';
 const Time = 0;
@@ -81,7 +80,7 @@ describe('messageDraft', () => {
                     CCList: [recipient2],
                     BCCList: [recipient3],
                 },
-            } as MessageExtendedWithData);
+            } as MessageStateWithData);
             expect(result.data?.Subject).toEqual(Subject);
             expect(result.data?.ToList).toEqual([recipient1]);
             expect(result.data?.CCList).toEqual([recipient2]);
@@ -94,7 +93,7 @@ describe('messageDraft', () => {
                     ...message,
                     Flags: MESSAGE_FLAGS.FLAG_RECEIVED,
                 },
-            } as MessageExtendedWithData);
+            } as MessageStateWithData);
 
             expect(result.data?.Subject).toEqual(`${RE_PREFIX} ${Subject}`);
             expect(result.data?.ToList).toEqual([recipient4]);
@@ -106,7 +105,7 @@ describe('messageDraft', () => {
                     ...message,
                     Flags: MESSAGE_FLAGS.FLAG_SENT,
                 },
-            } as MessageExtendedWithData);
+            } as MessageStateWithData);
 
             expect(result.data?.Subject).toEqual(`${RE_PREFIX} ${Subject}`);
             expect(result.data?.ToList).toEqual([recipient1]);
@@ -118,7 +117,7 @@ describe('messageDraft', () => {
                     ...message,
                     Flags: MESSAGE_FLAGS.FLAG_SENT | MESSAGE_FLAGS.FLAG_RECEIVED,
                 },
-            } as MessageExtendedWithData);
+            } as MessageStateWithData);
 
             expect(result.data?.Subject).toEqual(`${RE_PREFIX} ${Subject}`);
             expect(result.data?.ToList).toEqual([recipient1]);
@@ -130,7 +129,7 @@ describe('messageDraft', () => {
                     ...message,
                     Flags: MESSAGE_FLAGS.FLAG_RECEIVED,
                 },
-            } as MessageExtendedWithData);
+            } as MessageStateWithData);
 
             expect(result.data?.Subject).toEqual(`${RE_PREFIX} ${Subject}`);
             expect(result.data?.ToList).toEqual([recipient4]);
@@ -144,7 +143,7 @@ describe('messageDraft', () => {
                     ...message,
                     Flags: MESSAGE_FLAGS.FLAG_SENT,
                 },
-            } as MessageExtendedWithData);
+            } as MessageStateWithData);
 
             expect(result.data?.Subject).toEqual(`${RE_PREFIX} ${Subject}`);
             expect(result.data?.ToList).toEqual([recipient1]);
@@ -158,7 +157,7 @@ describe('messageDraft', () => {
                     ...message,
                     Flags: MESSAGE_FLAGS.FLAG_SENT | MESSAGE_FLAGS.FLAG_RECEIVED,
                 },
-            } as MessageExtendedWithData);
+            } as MessageStateWithData);
 
             expect(result.data?.Subject).toEqual(`${RE_PREFIX} ${Subject}`);
             expect(result.data?.ToList).toEqual([recipient1]);
@@ -167,7 +166,7 @@ describe('messageDraft', () => {
         });
 
         it('should prepare a forward', () => {
-            const result = handleActions(MESSAGE_ACTIONS.FORWARD, { data: message } as MessageExtendedWithData);
+            const result = handleActions(MESSAGE_ACTIONS.FORWARD, { data: message } as MessageStateWithData);
 
             expect(result.data?.Subject).toEqual(`${FW_PREFIX} ${Subject}`);
             expect(result.data?.ToList).toEqual([]);
@@ -180,12 +179,12 @@ describe('messageDraft', () => {
         it('should use insertSignature', () => {
             const result = createNewDraft(
                 action,
-                { data: message } as MessageExtendedWithData,
+                { data: message } as MessageStateWithData,
                 mailSettings,
                 addresses,
                 jest.fn()
             );
-            expect(result.document?.innerHTML).toContain(address.Signature);
+            expect(result.messageDocument?.document?.innerHTML).toContain(address.Signature);
         });
 
         // TODO: Feature to implement
@@ -201,7 +200,7 @@ describe('messageDraft', () => {
         it('should load the sender', () => {
             const result = createNewDraft(
                 action,
-                { data: message } as MessageExtendedWithData,
+                { data: message } as MessageStateWithData,
                 mailSettings,
                 addresses,
                 jest.fn()
@@ -213,12 +212,12 @@ describe('messageDraft', () => {
             notNewActions.forEach((action) => {
                 const result = createNewDraft(
                     action,
-                    { data: message } as MessageExtendedWithData,
+                    { data: message } as MessageStateWithData,
                     mailSettings,
                     addresses,
                     jest.fn()
                 );
-                expect(result.ParentID).toBe(ID);
+                expect(result.draftFlags?.ParentID).toBe(ID);
             });
         });
 
@@ -226,7 +225,7 @@ describe('messageDraft', () => {
             allActions.forEach((action) => {
                 const result = createNewDraft(
                     action,
-                    { data: message } as MessageExtendedWithData,
+                    { data: message } as MessageStateWithData,
                     mailSettings,
                     addresses,
                     jest.fn()
@@ -245,7 +244,7 @@ describe('messageDraft', () => {
         it('should use values from handleActions', () => {
             const result = createNewDraft(
                 MESSAGE_ACTIONS.REPLY_ALL,
-                { data: { ...message, Flags: MESSAGE_FLAGS.FLAG_RECEIVED } } as MessageExtendedWithData,
+                { data: { ...message, Flags: MESSAGE_FLAGS.FLAG_RECEIVED } } as MessageStateWithData,
                 mailSettings,
                 addresses,
                 jest.fn()
@@ -259,7 +258,7 @@ describe('messageDraft', () => {
         it('should use values from findSender', () => {
             const result = createNewDraft(
                 action,
-                { data: message } as MessageExtendedWithData,
+                { data: message } as MessageStateWithData,
                 mailSettings,
                 addresses,
                 jest.fn()

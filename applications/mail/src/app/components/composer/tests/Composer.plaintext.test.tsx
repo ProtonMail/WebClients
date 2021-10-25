@@ -34,7 +34,9 @@ describe('Composer switch plaintext <-> html', () => {
                 MIMEType: 'text/plain' as MIME_TYPES,
                 ToList: [],
             },
-            plainText: content,
+            messageDocument: {
+                plainText: content,
+            },
         });
 
         const { findByTestId } = await render(<Composer {...props} messageID={ID} />);
@@ -64,7 +66,9 @@ describe('Composer switch plaintext <-> html', () => {
                 MIMEType: 'text/html' as MIME_TYPES,
                 ToList: [],
             },
-            document: createDocument(content),
+            messageDocument: {
+                document: createDocument(content),
+            },
         });
 
         const { findByTestId } = await render(<Composer {...props} messageID={ID} />);

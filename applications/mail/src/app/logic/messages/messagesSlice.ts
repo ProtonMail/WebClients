@@ -8,6 +8,7 @@ import {
     endUndo,
     event,
     initialize,
+    errors,
     load,
     loadEmbedded,
     loadRemoteDirect,
@@ -19,12 +20,24 @@ import {
     sendModifications,
     sent,
     startSending,
+    verificationComplete,
+    resign,
+    optimisticApplyLabels,
+    optimisticMarkAs,
+    optimisticDelete,
+    optimisticEmptyLabel,
+    optimisticRestore,
+    resetVerification,
+    updateScheduled,
+    updateExpires,
 } from './messagesActions';
 import {
     initialize as initializeReducer,
+    errors as errorsReducer,
     event as eventReducer,
     loadFulfilled,
     loadRejected,
+    verificationComplete as verificationCompleteReducer,
     documentInitializePending as documentInitializePendingReducer,
     documentInitializeFulfilled as documentInitializeFulfilledReducer,
     loadEmbeddedFulfilled,
@@ -42,18 +55,35 @@ import {
     sent as sentReducer,
     endSending as endSendingReducer,
     deleteDraft as deleteDraftReducer,
-} from './messagesReducer';
+    resign as resignReducer,
+    optimisticApplyLabels as optimisticApplyLabelsReducer,
+    optimisticMarkAs as optimisticMarkAsReducer,
+    optimisticDelete as optimisticDeleteReducer,
+    optimisticEmptyLabel as optimisticEmptyLabelReducer,
+    optimisticRestore as optimisticRestoreReducer,
+    resetVerification as resetVerificationReducer,
+    reset as globalResetReducer,
+    updateScheduled as updateScheduledReducer,
+    updateExpires as updateExpiresReducer,
+} from './messagesReducers';
 import { MessagesState } from './messagesTypes';
+import { resetAction as globalReset } from '../actions';
 
 const messagesSlice = createSlice({
     name: 'messages',
     initialState: {} as MessagesState,
     reducers: {},
     extraReducers: (builder) => {
+        builder.addCase(globalReset, globalResetReducer);
+
         builder.addCase(initialize, initializeReducer);
+        builder.addCase(errors, errorsReducer);
         builder.addCase(event, eventReducer);
         builder.addCase(load.fulfilled, loadFulfilled);
         builder.addCase(load.rejected, loadRejected);
+        builder.addCase(verificationComplete, verificationCompleteReducer);
+        builder.addCase(resign, resignReducer);
+        builder.addCase(resetVerification, resetVerificationReducer);
 
         builder.addCase(documentInitializePending, documentInitializePendingReducer);
         builder.addCase(documentInitializeFulfilled, documentInitializeFulfilledReducer);
@@ -65,10 +95,18 @@ const messagesSlice = createSlice({
         builder.addCase(loadRemoteDirect.pending, loadRemotePending);
         builder.addCase(loadRemoteDirect.fulfilled, loadRemoteDirectFulFilled);
 
+        builder.addCase(optimisticApplyLabels, optimisticApplyLabelsReducer);
+        builder.addCase(optimisticMarkAs, optimisticMarkAsReducer);
+        builder.addCase(optimisticDelete, optimisticDeleteReducer);
+        builder.addCase(optimisticEmptyLabel, optimisticEmptyLabelReducer);
+        builder.addCase(optimisticRestore, optimisticRestoreReducer);
+
         builder.addCase(createDraft, createDraftReducer);
         builder.addCase(openDraft, openDraftReducer);
         builder.addCase(removeInitialAttachments, removeInitialAttachmentsReducer);
         builder.addCase(draftSaved, draftSavedSelector);
+        builder.addCase(updateScheduled, updateScheduledReducer);
+        builder.addCase(updateExpires, updateExpiresReducer);
         builder.addCase(startSending, startSendingReducer);
         builder.addCase(sendModifications, sendModificationsReducer);
         builder.addCase(endUndo, endUndoReducer);

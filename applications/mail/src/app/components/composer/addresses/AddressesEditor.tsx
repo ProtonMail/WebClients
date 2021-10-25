@@ -2,14 +2,14 @@ import { useState, MutableRefObject, MouseEvent } from 'react';
 import { c } from 'ttag';
 import { Label, generateUID, classnames, Button, Icon, Tooltip } from '@proton/components';
 import { Recipient } from '@proton/shared/lib/interfaces/Address';
-import { MessageExtended } from '../../../models/message';
 import { RecipientType } from '../../../models/address';
 import { MessageChange } from '../Composer';
 import { MessageSendInfo } from '../../../hooks/useSendInfo';
 import AddressesInput from './AddressesInput';
+import { MessageState } from '../../../logic/messages/messagesTypes';
 
 interface Props {
-    message: MessageExtended;
+    message: MessageState;
     messageSendInfo: MessageSendInfo;
     onChange: MessageChange;
     expanded: boolean;

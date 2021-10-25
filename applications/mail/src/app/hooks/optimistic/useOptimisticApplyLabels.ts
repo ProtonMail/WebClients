@@ -19,12 +19,14 @@ import {
     UnreadStatus,
 } from '../../helpers/labels';
 import { CacheEntry } from '../../models/tools';
-import { optimisticApplyLabels as optimisticApplyLabelsAction } from '../../logic/elements/elementsActions';
+import { optimisticApplyLabels as optimisticApplyLabelsElementsAction } from '../../logic/elements/elementsActions';
 import {
     applyLabelsOnConversation,
     applyLabelsOnConversationMessages,
 } from '../../logic/conversations/conversationsActions';
 import { useGetConversation } from '../conversation/useConversation';
+
+import { optimisticApplyLabels as optimisticApplyLabelsMessageAction } from '../../logic/messages/messagesActions';
 
 const { SENT, DRAFTS } = MAILBOX_LABEL_IDS;
 
@@ -118,16 +120,19 @@ export const useOptimisticApplyLabels = () => {
 
                 if (isMessage) {
                     const message = element as Message;
-                    const localID = getLocalID(messageCache, message.ID);
+                    // // const localID = getLocalID(messageCache, message.ID);
 
-                    // Update in message cache
-                    const messageFromCache = messageCache.get(localID);
-                    if (messageFromCache && messageFromCache.data) {
-                        messageCache.set(localID, {
-                            ...messageFromCache,
-                            data: applyLabelChangesOnMessage(messageFromCache.data, changes, unreadStatuses),
-                        });
-                    }
+                    // // Update in message cache
+                    // // const messageFromCache = messageCache.get(localID);
+                    // const messageFromState = getMessage(message.ID);
+                    // if (messageFromState && messageFromState.data) {
+                    //     messageCache.set(localID, {
+                    //         ...messageFromCache,
+                    //         data: applyLabelChangesOnMessage(messageFromCache.data, changes, unreadStatuses),
+                    //     });
+                    // }
+
+                    dispatch(optimisticApplyLabelsMessageAction({ ID: element.ID || '', changes, unreadStatuses }));
 
                     // Update in conversation cache
                     const conversationResult = getConversation(message.ConversationID);
@@ -186,19 +191,21 @@ export const useOptimisticApplyLabels = () => {
                     }
 
                     // Update messages from the conversation (if loaded)
-                    const messages = conversationFromState?.Messages;
-                    messages?.forEach((message) => {
-                        const localID = getLocalID(messageCache, message.ID);
-
-                        // Update in message cache
-                        const messageFromCache = messageCache.get(localID);
-                        if (messageFromCache && messageFromCache.data) {
-                            messageCache.set(localID, {
-                                ...messageFromCache,
-                                data: applyLabelChangesOnMessage(messageFromCache.data, changes, unreadStatuses),
-                            });
-                        }
+                    conversationFromState?.Messages?.forEach((message) => {
+                        dispatch(optimisticApplyLabelsMessageAction({ ID: message.ID, changes, unreadStatuses }));
                     });
+                    // messages?.forEach((message) => {
+                    //     const localID = getLocalID(messageCache, message.ID);
+
+                    //     // Update in message cache
+                    //     const messageFromCache = messageCache.get(localID);
+                    //     if (messageFromCache && messageFromCache.data) {
+                    //         messageCache.set(localID, {
+                    //             ...messageFromCache,
+                    //             data: applyLabelChangesOnMessage(messageFromCache.data, changes, unreadStatuses),
+                    //         });
+                    //     }
+                    // });
 
                     // Update conversation counters
                     conversationCounters = updateCounters(conversation, conversationCounters, changes);
@@ -206,7 +213,7 @@ export const useOptimisticApplyLabels = () => {
             });
 
             if (updatedElements.length) {
-                dispatch(optimisticApplyLabelsAction({ elements: updatedElements, isMove }));
+                dispatch(optimisticApplyLabelsElementsAction({ elements: updatedElements, isMove }));
             }
 
             globalCache.set(MessageCountsModel.key, { value: messageCounters, status: STATUS.RESOLVED });

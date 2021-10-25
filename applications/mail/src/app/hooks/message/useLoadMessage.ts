@@ -26,6 +26,7 @@ export const useLoadMessage = (inputMessage: Message) => {
         //         throw error;
         //     }
         // }
+
         dispatch(load({ ID: inputMessage.ID, api }));
     }, [inputMessage]);
 };

@@ -1,17 +1,16 @@
 import { MutableRefObject, useEffect, useRef, MouseEvent, useCallback } from 'react';
 import { ContactListModal, useModals, useToggle } from '@proton/components';
 import { noop } from '@proton/shared/lib/helpers/function';
-
 import { Recipient } from '@proton/shared/lib/interfaces';
-import { MessageExtended } from '../../../models/message';
 import AddressesEditor from './AddressesEditor';
 import AddressesSummary from './AddressesSummary';
 import { MessageChange } from '../Composer';
 import { MessageSendInfo } from '../../../hooks/useSendInfo';
 import { RecipientType } from '../../../models/address';
+import { MessageState } from '../../../logic/messages/messagesTypes';
 
 interface Props {
-    message: MessageExtended;
+    message: MessageState;
     messageSendInfo: MessageSendInfo;
     disabled: boolean;
     onChange: MessageChange;

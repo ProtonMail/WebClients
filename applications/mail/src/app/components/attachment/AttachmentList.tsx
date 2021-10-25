@@ -5,11 +5,11 @@ import { Icon, classnames, CircleLoader, InlineLinkButton } from '@proton/compon
 import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import AttachmentItem from './AttachmentItem';
-import { MessageExtendedWithData } from '../../models/message';
 import { PendingUpload } from '../../hooks/composer/useAttachments';
 import { useDownload, useDownloadAll } from '../../hooks/useDownload';
 import AttachmentPreview, { AttachmentPreviewControls } from './AttachmentPreview';
 import { getAttachmentCounts } from '../../helpers/message/messages';
+import { MessageStateWithData } from '../../logic/messages/messagesTypes';
 
 export enum AttachmentAction {
     Download,
@@ -25,7 +25,7 @@ export type AttachmentHandler =
 interface Props {
     attachments: Attachment[];
     pendingUploads?: PendingUpload[];
-    message: MessageExtendedWithData;
+    message: MessageStateWithData;
     primaryAction: AttachmentAction;
     secondaryAction: AttachmentAction;
     collapsable: boolean;
@@ -184,7 +184,7 @@ const AttachmentList = ({
                             type="button"
                             onClick={handleDownloadAll}
                             className="link text-strong"
-                            disabled={!message.initialized}
+                            disabled={!message.messageDocument?.initialized}
                         >
                             {c('Download attachments').t`Download all`}
                         </button>
