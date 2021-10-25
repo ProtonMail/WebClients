@@ -22,8 +22,9 @@ const ModalHeader = ({ title, subline, actions: actionsProp, onBack, ...rest }: 
     return (
         <div
             className={classnames([
-                'modal-two-header flex flex-nowrap flex-item-noshrink flex-justify-space-between flex-align-items-start',
+                'modal-two-header flex flex-nowrap flex-item-noshrink flex-align-items-start',
                 onBack && 'modal-two-header--with-back',
+                onBack || title ? 'flex-justify-space-between' : 'flex-justify-end',
             ])}
             {...rest}
         >
