@@ -9,6 +9,7 @@ import {
     Button,
     AlertModal,
     Icon,
+    RadioGroup,
 } from '@proton/components';
 
 import { getTitle } from '../../helpers/title';
@@ -17,6 +18,7 @@ import mdx from './Modal.mdx';
 
 export default {
     component: ModalTwo,
+    subcomponents: { ModalTwoHeader, AlertModal },
     title: getTitle(__filename, false),
     parameters: {
         docs: {
@@ -26,45 +28,19 @@ export default {
 };
 
 export const Primary = () => {
+    const sizes = ['small', 'medium', 'large', 'full'];
+    const [size, setSize] = useState<null | string>('medium');
     const [open, setOpen] = useState(false);
-    const [size, setSize] = useState<null | string>(null);
 
     return (
-        <div>
+        <div className="text-center">
             <Button
                 className="mr0-5"
                 onClick={() => {
-                    setSize('small');
                     setOpen(true);
                 }}
             >
-                Small
-            </Button>
-            <Button
-                className="mr0-5"
-                onClick={() => {
-                    setSize(null);
-                    setOpen(true);
-                }}
-            >
-                Default
-            </Button>
-            <Button
-                className="mr0-5"
-                onClick={() => {
-                    setSize('large');
-                    setOpen(true);
-                }}
-            >
-                Large
-            </Button>
-            <Button
-                onClick={() => {
-                    setSize('full');
-                    setOpen(true);
-                }}
-            >
-                Full
+                Open size modal
             </Button>
             <ModalTwo
                 small={size === 'small'}
@@ -73,8 +49,54 @@ export const Primary = () => {
                 open={open}
                 onClose={() => setOpen(false)}
             >
-                <ModalTwoHeader title="Title in header" subline="Subline" onBack={() => {}} />
+                <ModalTwoHeader />
                 <ModalTwoContent>
+                    <ModalTwoTitle>Size</ModalTwoTitle>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium unde, blanditiis rem
+                        accusamus obcaecati enim amet, voluptatibus nemo facilis illum aut itaque in? Deleniti iure amet
+                        qui vero, blanditiis quos?
+                    </p>
+
+                    <div className="mr2">
+                        <strong className="block mb1">Shape</strong>
+                        <RadioGroup
+                            name="selected-shape"
+                            onChange={setSize}
+                            value={size}
+                            options={sizes.map((size) => ({ value: size, label: size }))}
+                        />
+                    </div>
+                </ModalTwoContent>
+                <ModalTwoFooter>
+                    <Button>Secondary action</Button>
+                    <Button color="norm">Primary action</Button>
+                </ModalTwoFooter>
+            </ModalTwo>
+        </div>
+    );
+};
+
+export const Header = () => {
+    const [open, setOpen] = useState(false);
+
+    return (
+        <div className="text-center">
+            <Button
+                onClick={() => {
+                    setOpen(true);
+                }}
+            >
+                Open modal with header extras
+            </Button>
+            <ModalTwo open={open} onClose={() => setOpen(false)}>
+                <ModalTwoHeader
+                    title="Title in ModalHeader"
+                    subline="Subline in ModalHeader"
+                    onBack={() => window.alert('ModalHeader.onBack fired')}
+                />
+                <ModalTwoContent>
+                    <ModalTwoTitle>Title h3 in content</ModalTwoTitle>
                     <p className="m0">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium unde, blanditiis rem
                         accusamus obcaecati enim amet, voluptatibus nemo facilis illum aut itaque in? Deleniti iure amet
@@ -94,18 +116,16 @@ export const HeaderActions = () => {
     const [open, setOpen] = useState(false);
 
     return (
-        <div>
+        <div className="text-center">
             <Button
                 onClick={() => {
                     setOpen(true);
                 }}
             >
-                Actions
+                Open actions modal
             </Button>
             <ModalTwo open={open} onClose={() => setOpen(false)}>
                 <ModalTwoHeader
-                    title="Title in header"
-                    subline="Subline"
                     actions={[
                         <Button icon>
                             <Icon name="circle-question" />
@@ -136,27 +156,16 @@ export const ALotOfContent = () => {
     const [open, setOpen] = useState(false);
 
     return (
-        <div>
+        <div className="text-center">
             <Button
                 onClick={() => {
                     setOpen(true);
                 }}
             >
-                A lot of content
+                Open modal with a lot of content
             </Button>
             <ModalTwo open={open} onClose={() => setOpen(false)}>
-                <ModalTwoHeader
-                    title="Lorem ipsum dolor sit amet, consectetur adipiscing elit"
-                    subline="Lorem ipsum dolor sit amet, consectetur adipiscing elit"
-                    actions={[
-                        <Button icon>
-                            <Icon name="circle-question" />
-                        </Button>,
-                        <Button icon>
-                            <Icon name="arrows-rotate" />
-                        </Button>,
-                    ]}
-                />
+                <ModalTwoHeader />
                 <ModalTwoContent>
                     <ModalTwoTitle>Title h3 in content</ModalTwoTitle>
                     <p>
@@ -223,7 +232,7 @@ export const Alert = () => {
     const [open, setOpen] = useState(false);
 
     return (
-        <div>
+        <div className="text-center">
             <Button onClick={() => setOpen(true)}>Open Alert Modal</Button>
             <AlertModal
                 title="Title"
