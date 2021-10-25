@@ -1,4 +1,4 @@
-import { MessageErrors } from '../models/message';
+import { MessageErrors } from '../logic/messages/messagesTypes';
 import { ConversationErrors } from '../logic/conversations/conversationsTypes';
 
 /**

@@ -15,7 +15,7 @@ import { deleteConversation } from '../../logic/conversations/conversationsActio
 import { useGetConversation } from '../conversation/useConversation';
 import { MessageState, MessageStateWithData } from '../../logic/messages/messagesTypes';
 import { useGetMessage } from './useMessage';
-import { draftSaved } from '../../logic/messages/messagesActions';
+import { deleteDraft, draftSaved } from '../../logic/messages/messagesActions';
 
 const { ALL_DRAFTS } = MAILBOX_LABEL_IDS;
 
@@ -106,8 +106,8 @@ const useUpdateDraft = () => {
             }
 
             if (error.data.Code === SAVE_DRAFT_ERROR_CODES.DRAFT_DOES_NOT_EXIST) {
-                // TODO REDUX
                 // messageCache.delete(message.localID);
+                dispatch(deleteDraft(message.localID));
             }
 
             createNotification({
@@ -166,8 +166,8 @@ export const useDeleteDraft = () => {
                 throw error;
             }
 
-            // TODO REDUX
             // messageCache.delete(message.localID || '');
+            dispatch(deleteDraft(message.localID));
 
             const conversationID = message.data?.ConversationID || '';
             const conversationFromConversationState = getConversation(conversationID);

@@ -1,6 +1,7 @@
-import { canonizeEmail } from '@proton/shared/lib/helpers/email';
 import { useEffect } from 'react';
 import { OpenPGPKey } from 'pmcrypto';
+import { useDispatch } from 'react-redux';
+import { canonizeEmail } from '@proton/shared/lib/helpers/email';
 import { useEventManager, useUserKeys, useCache } from '@proton/components';
 import { Cache } from '@proton/shared/lib/helpers/cache';
 import { CONTACT_CARD_TYPE } from '@proton/shared/lib/constants';
@@ -10,6 +11,7 @@ import { Contact } from '@proton/shared/lib/interfaces/contacts';
 import { splitKeys } from '@proton/shared/lib/keys/keys';
 import { CACHE_KEY } from '@proton/components/hooks/useGetEncryptionPreferences';
 import { Event } from '../../models/event';
+import { resetVerification } from '../../logic/messages/messagesActions';
 
 /**
  * Deal with contact update from the event manager
@@ -23,8 +25,9 @@ import { Event } from '../../models/event';
 const processContactUpdate = async (
     contact: Contact | undefined,
     publicKeys: OpenPGPKey[],
-    globalCache: Cache<string, any>
+    globalCache: Cache<string, any>,
     // messageCache: MessageCache
+    onResetMessageForEmails: (emails: string[]) => void
 ) => {
     const signedCard = contact?.Cards.find(({ Type }) => Type === CONTACT_CARD_TYPE.SIGNED);
     if (!signedCard) {
@@ -45,27 +48,33 @@ const processContactUpdate = async (
     });
 
     // Looking in the Message cache to check if there is message signed from one of the contact addresses
-    messageCache.forEach((message, localID) => {
-        const senderAddress = canonizeEmail(message.data?.Sender.Address || '');
-        if (emails.includes(senderAddress)) {
-            updateMessageCache(messageCache, localID, { verification: undefined });
-        }
-    });
+    // messageCache.forEach((message, localID) => {
+    //     const senderAddress = canonizeEmail(message.data?.Sender.Address || '');
+    //     if (emails.includes(senderAddress)) {
+    //         updateMessageCache(messageCache, localID, { verification: undefined });
+    //     }
+    // });
+    onResetMessageForEmails(emails);
 };
 
 export const useContactsListener = () => {
     const globalCache = useCache();
+    const dispatch = useDispatch();
     // const messageCache = useMessageCache();
     const { subscribe } = useEventManager();
     const [userKeys = []] = useUserKeys();
 
     const { publicKeys } = splitKeys(userKeys);
 
+    const handleResetMessageForEmails = (emails: string[]) => {
+        dispatch(resetVerification(emails));
+    };
+
     useEffect(
         () =>
             subscribe(({ Contacts = [] }: Event) => {
                 for (const { Contact } of Contacts) {
-                    void processContactUpdate(Contact, publicKeys, globalCache);
+                    void processContactUpdate(Contact, publicKeys, globalCache, handleResetMessageForEmails);
                 }
             }),
         [publicKeys]

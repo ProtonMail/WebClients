@@ -107,8 +107,6 @@ export const transformRemote = (
         });
     });
 
-    console.log('transformRemote', useProxy, remoteImages, onLoadRemoteImagesProxy, onLoadRemoteImagesDirect);
-
     if (showRemoteImages) {
         void loadRemoteImages(useProxy, remoteImages, onLoadRemoteImagesProxy, onLoadRemoteImagesDirect);
     } else if (useProxy) {

@@ -1,7 +1,7 @@
 import { generateProtonWebUID } from '@proton/shared/lib/helpers/uid';
 import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';
-import { MessageExtended } from '../../models/message';
 import { generateCid, setEmbeddedAttr } from './messageEmbeddeds';
+import { MessageState } from '../../logic/messages/messagesTypes';
 
 // Reference Angular/src/app/composer/services/extractDataURI.js
 
@@ -28,12 +28,12 @@ const dataUrlToFile = (fileName: string, dataUrl: string) => {
 /**
  * Transform every data-uri in the message content to embedded attachment
  */
-export const replaceDataUrl = (message: MessageExtended) => {
-    if (!message.document) {
+export const replaceDataUrl = (message: MessageState) => {
+    if (!message.messageDocument?.document) {
         return [];
     }
 
-    return [...message.document.querySelectorAll('img')]
+    return [...message.messageDocument?.document.querySelectorAll('img')]
         .map((image) => ({ image, src: image.src || '' }))
         .filter(({ src }) => /data:image/.test(src)) // only data:uri image
         .filter(({ src }) => src.includes(',')) // remove invalid data:uri

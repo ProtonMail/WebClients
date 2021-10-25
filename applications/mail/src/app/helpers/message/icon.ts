@@ -4,8 +4,8 @@ import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import { getParsedHeadersFirstValue, inSigningPeriod } from '@proton/shared/lib/mail/messages';
 import { c, msgid } from 'ttag';
+import { MessageState, MessageVerification } from '../../logic/messages/messagesTypes';
 import { MapStatusIcons, STATUS_ICONS_FILLS, StatusIcon, X_PM_HEADERS } from '../../models/crypto';
-import { MessageExtended, MessageVerification } from '../../models/message';
 
 // The logic for determining the status icons can be found here:
 // https://confluence.protontech.ch/display/MAILFE/Encryption+status+for+outgoing+and+incoming+email
@@ -255,7 +255,7 @@ export const getSentStatusIcon = ({
     }
 };
 
-export const getSentStatusIconInfo = (message: MessageExtended): MessageViewIcons => {
+export const getSentStatusIconInfo = (message: MessageState): MessageViewIcons => {
     if (!message.data?.ParsedHeaders) {
         return { mapStatusIcon: {} };
     }

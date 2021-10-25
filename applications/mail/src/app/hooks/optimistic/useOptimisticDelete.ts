@@ -9,7 +9,7 @@ import { isConversation, isUnread } from '../../helpers/elements';
 import { CacheEntry } from '../../models/tools';
 import {
     optimisticDelete as optimisticDeleteElementAction,
-    optimisticRestoreDelete,
+    optimisticRestoreDelete as optimisticRestoreDeleteElementAction,
 } from '../../logic/elements/elementsActions';
 import {
     optimisticDelete as optimisticDeleteConversationAction,
@@ -20,12 +20,18 @@ import { useGetElementByID } from '../mailbox/useElements';
 import { ConversationState } from '../../logic/conversations/conversationsTypes';
 import { useGetAllConversations } from '../conversation/useConversation';
 import { MessageState } from '../../logic/messages/messagesTypes';
+import { useGetMessage } from '../message/useMessage';
+import {
+    optimisticDelete as optimisticDeleteMessageAction,
+    optimisticRestore as optimisticRestoreMessageAction,
+} from '../../logic/messages/messagesActions';
 
 const useOptimisticDelete = () => {
     const dispatch = useDispatch();
     const getElementByID = useGetElementByID();
     const globalCache = useCache();
     const getAllConversations = useGetAllConversations();
+    const getMessage = useGetMessage();
 
     return useHandler((elements: Element[], labelID: string) => {
         const elementIDs = elements.map(({ ID }) => ID || '');
@@ -37,14 +43,21 @@ const useOptimisticDelete = () => {
         const rollbackCounters = {} as { [key: string]: LabelCount };
 
         // Message cache
-        const messageIDs = [...messageCache.keys()];
-        messageIDs.forEach((messageID) => {
-            const message = messageCache.get(messageID) as MessageState;
-            if (elementIDs.includes(messageID)) {
-                messageCache.delete(messageID);
+        // const messageIDs = [...messageCache.keys()];
+        // messageIDs.forEach((messageID) => {
+        //     const message = messageCache.get(messageID) as MessageState;
+        //     if (elementIDs.includes(messageID)) {
+        //         messageCache.delete(messageID);
+        //         rollbackMessages.push(message);
+        //     }
+        // });
+        elementIDs.forEach((elementID) => {
+            const message = getMessage(elementID);
+            if (message) {
                 rollbackMessages.push(message);
             }
         });
+        dispatch(optimisticDeleteMessageAction(elementIDs));
 
         // Conversation cache
         const allConversations = getAllConversations();
@@ -98,13 +111,9 @@ const useOptimisticDelete = () => {
         }
 
         return () => {
-            rollbackMessages.forEach((message) => {
-                messageCache.set(message.localID, message);
-            });
-
+            dispatch(optimisticRestoreMessageAction(rollbackMessages));
             dispatch(optimisticRestoreConversationsAction(rollbackConversations));
-
-            dispatch(optimisticRestoreDelete({ elements: rollbackElements }));
+            dispatch(optimisticRestoreDeleteElementAction({ elements: rollbackElements }));
             Object.entries(rollbackCounters).forEach(([key, value]) => {
                 const entry = globalCache.get(key) as CacheEntry<LabelCount[]>;
                 globalCache.set(key, {

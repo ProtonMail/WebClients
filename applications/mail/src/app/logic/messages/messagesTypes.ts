@@ -2,6 +2,7 @@ import { OpenPGPKey, OpenPGPSignature, DecryptResultPmcrypto } from 'pmcrypto';
 import { Api, RequireSome, SimpleMap } from '@proton/shared/lib/interfaces';
 import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
+import { EncryptionPreferences } from '@proton/shared/lib/mail/encryptionPreferences';
 import { MESSAGE_ACTIONS } from '../../constants';
 import { Preparation } from '../../helpers/transforms/transforms';
 import { DecryptMessageResult } from '../../helpers/message/messageDecrypt';
@@ -264,6 +265,19 @@ export interface DocumentInitializeParams {
     decryption?: DecryptMessageResult;
     errors?: MessageErrors;
     messageImages?: MessageImages;
+}
+
+export interface VerificationParams {
+    ID: string;
+    encryptionPreferences?: EncryptionPreferences;
+    verification?: {
+        verified: VERIFICATION_STATUS;
+        signature?: OpenPGPSignature;
+        verificationErrors?: Error[];
+    };
+    signingPublicKey?: OpenPGPKey;
+    attachedPublicKeys?: OpenPGPKey[];
+    errors?: MessageErrors;
 }
 
 export interface LoadEmbeddedParams {

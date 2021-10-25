@@ -11,6 +11,8 @@ import {
     MessageStateWithData,
     PartialMessageState,
 } from '../../logic/messages/messagesTypes';
+import { MARK_AS_STATUS } from '../../hooks/useMarkAs';
+import { MarkAsChanges } from '../../hooks/optimistic/useOptimisticMarkAs';
 
 const { ALL_DRAFTS, ALL_SENT, DRAFTS, SENT, SPAM, INBOX } = MAILBOX_LABEL_IDS;
 
@@ -78,3 +80,8 @@ export const getMessagesAuthorizedToMove = (messages: Message[], destinationFold
 };
 
 export const getMessageHasData = (message: MessageState): message is MessageStateWithData => !!message.data;
+
+export const applyMarkAsChangesOnMessage = (message: Message, { status }: MarkAsChanges) => ({
+    ...message,
+    Unread: status === MARK_AS_STATUS.UNREAD ? 1 : 0,
+});

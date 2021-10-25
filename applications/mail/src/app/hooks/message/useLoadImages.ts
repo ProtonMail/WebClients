@@ -31,13 +31,11 @@ export const useLoadRemoteImages = (localID: string) => {
 
         const handleLoadRemoteImagesProxy = (imagesToLoad: MessageRemoteImage[]) => {
             const dispatchResult = dispatch(loadRemoteProxy({ ID: localID, imagesToLoad, api }));
-            console.log('handleLoadRemoteImagesProxy', dispatchResult);
             return dispatchResult as any as Promise<LoadRemoteProxyResults[]>;
         };
 
         const handleLoadRemoteImagesDirect = (imagesToLoad: MessageRemoteImage[]) => {
             const dispatchResult = dispatch(loadRemoteDirect({ ID: localID, imagesToLoad, api }));
-            console.log('handleLoadRemoteImagesDirect', dispatchResult);
             return dispatchResult as any as Promise<[MessageRemoteImage, unknown][]>;
         };
 
@@ -86,11 +84,10 @@ export const useLoadEmbeddedImages = (localID: string) => {
                     attachmentsCache,
                 })
             );
-            console.log('handleLoadEmbeddedImages', dispatchResult);
             return dispatchResult as any as Promise<LoadEmbeddedResults>;
         };
 
-        const { embeddedImages } = await transformEmbedded(
+        await transformEmbedded(
             {
                 ...message,
                 messageImages: updateImages(message.messageImages, { showEmbeddedImages: true }, undefined, undefined),
@@ -101,7 +98,6 @@ export const useLoadEmbeddedImages = (localID: string) => {
             onUpdateAttachment
         );
 
-        // TODO REDUX
         // updateMessageCache(messageCache, localID, {
         //     document: message.document,
         //     messageImages: updateImages(message.messageImages, { showEmbeddedImages: true }, undefined, embeddedImages),

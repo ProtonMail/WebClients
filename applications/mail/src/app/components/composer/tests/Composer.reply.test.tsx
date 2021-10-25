@@ -53,7 +53,7 @@ describe('Composer reply and forward', () => {
 
     it('send content with blockquote collapsed', async () => {
         const message = prepareMessage({
-            document: createDocument(content),
+            messageDocument: { document: createDocument(content) },
             data: { MIMEType: MIME_TYPES.DEFAULT },
         });
 
@@ -79,7 +79,7 @@ describe('Composer reply and forward', () => {
 
     it('send content with blockquote expanded', async () => {
         const message = prepareMessage({
-            document: createDocument(content),
+            messageDocument: { document: createDocument(content) },
             data: { MIMEType: MIME_TYPES.DEFAULT },
         });
 
