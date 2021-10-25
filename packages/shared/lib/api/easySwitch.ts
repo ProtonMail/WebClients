@@ -2,6 +2,7 @@ import { CreateImportPayload, ImportType, LaunchImportPayload, OAuthProps } from
 
 export const createToken = (
     data: OAuthProps & {
+        Products: ImportType[];
         Source: string;
     }
 ) => ({
