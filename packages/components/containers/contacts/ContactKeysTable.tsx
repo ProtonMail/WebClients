@@ -158,7 +158,7 @@ const ContactKeysTable = ({ model, setModel }: Props) => {
                                 text: c('Action').t`Download`,
                                 onClick: () => {
                                     const blob = new Blob([publicKey.armor()], {
-                                        type: 'data:text/plain;charset=utf-8;',
+                                        type: 'text/plain',
                                     });
                                     const filename = `publickey - ${model.emailAddress} - 0x${fingerprint
                                         .slice(0, 8)

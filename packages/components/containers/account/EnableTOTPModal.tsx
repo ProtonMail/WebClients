@@ -247,7 +247,7 @@ const EnableTOTPModal = (props: any) => {
                             <Button
                                 onClick={() => {
                                     const blob = new Blob([recoveryCodes.join('\r\n')], {
-                                        type: 'text/plain;charset=utf-8;',
+                                        type: 'text/plain;charset=utf-8',
                                     });
                                     const filename = 'proton_recovery_codes.txt';
                                     downloadFile(blob, filename);

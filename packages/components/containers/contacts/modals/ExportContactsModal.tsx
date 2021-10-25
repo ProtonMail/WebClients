@@ -47,7 +47,7 @@ const ExportContactsModal = ({ contactGroupID: LabelID, userKeysList, onSave = n
 
     const handleSave = (vcards: string[]) => {
         const allVcards = vcards.join('\n');
-        const blob = new Blob([allVcards], { type: 'data:text/plain;charset=utf-8;' });
+        const blob = new Blob([allVcards], { type: 'text/plain;charset=utf-8' });
         downloadFile(blob, `${DOWNLOAD_FILENAME}-${format(Date.now(), 'yyyy-MM-dd')}.vcf`);
         onSave();
         rest.onClose?.();
