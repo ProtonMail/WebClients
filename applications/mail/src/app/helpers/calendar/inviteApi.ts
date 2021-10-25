@@ -282,6 +282,7 @@ export const fetchEventInvitation: FetchEventInvitation = async ({
         }
         return result;
     } catch (e: any) {
+        console.error(e.message);
         // We need to detect if the error is due to a failed decryption of the event.
         // We don't have a great way of doing this as the error comes from openpgp
         return { calendarData, hasDecryptionError: e.message.includes('decrypt') };

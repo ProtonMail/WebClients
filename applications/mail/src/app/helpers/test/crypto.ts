@@ -1,3 +1,4 @@
+import { generatePassphrase } from '@proton/shared/lib/keys/calendarKeys';
 import * as openpgp from 'openpgp';
 import {
     OpenPGPKey,
@@ -9,8 +10,12 @@ import {
     encryptSessionKey as realEncryptSessionKey,
     decryptSessionKey as realDecryptSessionKey,
     splitMessage,
+    generateKey,
+    encryptMessage,
+    createMessage,
+    armorBytes,
 } from 'pmcrypto';
-import { KEY_FLAG, RECIPIENT_TYPES } from '@proton/shared/lib/constants';
+import { ENCRYPTION_CONFIGS, ENCRYPTION_TYPES, KEY_FLAG, RECIPIENT_TYPES } from '@proton/shared/lib/constants';
 
 import { addressKeysCache, resolvedRequest, cache } from './cache';
 import { addApiMock } from './api';
@@ -77,6 +82,39 @@ export const generateKeys = async (name: string, email: string): Promise<Generat
         privateKeyArmored,
         publicKeys,
         privateKeys,
+    };
+};
+
+export const generateCalendarKeysAndPassphrase = async (addressKey: GeneratedKey | Promise<GeneratedKey>) => {
+    const { publicKeys: addressPublicKeys, privateKeys: addressPrivateKeys } =
+        addressKey instanceof Promise ? await addressKey : addressKey;
+    const passphrase = generatePassphrase();
+    const { privateKeyArmored, publicKeyArmored } = await generateKey({
+        userIds: [{ name: 'Calendar key' }],
+        passphrase,
+        ...ENCRYPTION_CONFIGS[ENCRYPTION_TYPES.CURVE25519],
+    });
+    const publicKeys = await getKeys(publicKeyArmored);
+    const privateKeys = await getKeys(privateKeyArmored);
+    const { data, signature } = await encryptMessage({
+        message: await createMessage(passphrase),
+        publicKeys: addressPublicKeys,
+        privateKeys: addressPrivateKeys,
+        detached: true,
+    });
+
+    return {
+        calendarKey: {
+            publicKeyArmored,
+            privateKeyArmored,
+            publicKeys,
+            privateKeys,
+        },
+        passphrase: {
+            clearText: passphrase,
+            armored: await armorBytes(data),
+            signature,
+        },
     };
 };
 
