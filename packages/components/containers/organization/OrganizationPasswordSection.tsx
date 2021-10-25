@@ -69,7 +69,7 @@ const OrganizationPasswordSection = ({ organization, onceRef }: Props) => {
 
     const handleChangeOrganizationPassword = () => {
         if (!organizationKey?.privateKey) {
-            return createNotification({ text: c('Error').t`Organization key is not decrypted.`, type: 'error' });
+            return createNotification({ text: c('Error').t`Organization key is not decrypted`, type: 'error' });
         }
 
         createModal(

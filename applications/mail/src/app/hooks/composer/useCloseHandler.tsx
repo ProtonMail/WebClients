@@ -113,7 +113,7 @@ export const useCloseHandler = ({
 
         if (messageFromCache.isSentDraft) {
             createNotification({
-                text: c('Error').t`This message has already been sent.`,
+                text: c('Error').t`This message has already been sent`,
                 type: 'error',
             });
             return;

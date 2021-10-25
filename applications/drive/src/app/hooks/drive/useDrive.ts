@@ -887,7 +887,7 @@ function useDrive() {
                                     );
                                     cache.setLockedShares(lockedShares);
                                     createNotification({
-                                        text: c('Success').t`Your files were successfully recovered to "My files".`,
+                                        text: c('Success').t`Your files were successfully recovered to "My files"`,
                                     });
                                 });
                             } else if (Link.Trashed) {

@@ -84,7 +84,7 @@ const AutoReplySection = () => {
         if (containsImages) {
             createNotification({
                 type: 'warning',
-                text: c('Info').t`Images have been removed because they are not allowed in auto-reply.`,
+                text: c('Info').t`Images have been removed because they are not allowed in auto-reply`,
             });
 
             updateModel('message').bind(message);

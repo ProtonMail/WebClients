@@ -100,7 +100,7 @@ const SendingMessageNotification = ({
         }
         return (
             <>
-                <span className="mr1">{c('Info').t`Message sent`}</span>
+                <span className="mr1">{c('Info').t`Message sent.`}</span>
                 <UndoButton onUndo={onUndo} />
             </>
         );

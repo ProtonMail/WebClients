@@ -226,7 +226,7 @@ const FilterModal = ({ filter, onClose = noop, ...rest }: Props) => {
             if (containsImages) {
                 createNotification({
                     type: 'warning',
-                    text: c('Info').t`Images have been removed because they are not allowed in auto-reply.`,
+                    text: c('Info').t`Images have been removed because they are not allowed in auto-reply`,
                 });
             }
             newModel = { ...model, actions: { ...actions, autoReply: message } };
