@@ -162,3 +162,27 @@
 	position: absolute;
 	inset: 0;
 }
+
+// Make hover-only interaction focusable with keyboard
+.opacity-on-hover {
+	opacity: 0;
+	// Do not use visibility to keep it focusable even when invisible
+
+	/*
+	 * Opacity on focus is managed in buttons focus state
+	&:focus {
+		opacity: 1;
+	}
+	*/
+
+	// Need a container to manage with focus-within
+	&-container:focus-within & {
+		opacity: 1;
+	}
+
+	@media (hover: hover) and (pointer: fine) {
+		&-container:hover & {
+			opacity: 1;
+		}
+	}
+}

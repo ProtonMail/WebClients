@@ -197,7 +197,7 @@ const UserDropdown = ({ onOpenChat, ...rest }: Props) => {
                         ) : null}
 
                         {Email ? (
-                            <div className="flex flex-nowrap flex-justify-space-between flex-align-items-center button-show-on-hover">
+                            <div className="flex flex-nowrap flex-justify-space-between flex-align-items-center opacity-on-hover-container">
                                 <span
                                     className={classnames([
                                         'text-ellipsis user-select',
@@ -214,7 +214,7 @@ const UserDropdown = ({ onOpenChat, ...rest }: Props) => {
                                 </span>
                                 <Copy
                                     value={Email}
-                                    className="mr-6p button-show-on-hover-element"
+                                    className="mr-6p opacity-on-hover"
                                     onCopy={handleCopyEmail}
                                     tooltipText={c('Action').t`Copy email to clipboard`}
                                     size="small"

@@ -153,7 +153,7 @@ const SwitchAccountContainer = ({ toApp, onLogin, activeSessions, onAddAccount, 
                 return (
                     <div
                         key={LocalID}
-                        className={`${listItemClassName} button-show-on-hover flex-align-items-center button-account no-outline relative`}
+                        className={`${listItemClassName} opacity-on-hover-container flex-align-items-center button-account no-outline relative`}
                     >
                         <span className="user-initials rounded p0-25 mb0-5 inline-flex bg-primary">
                             <span className="dropdown-logout-text mauto text-semibold" aria-hidden="true">
@@ -173,7 +173,7 @@ const SwitchAccountContainer = ({ toApp, onLogin, activeSessions, onAddAccount, 
                                     {PrimaryEmail}
                                 </div>
                             </button>
-                            <div className="ml1 block text-no-wrap no-tiny-mobile no-scroll button-show-on-hover-element button-account-login text-sm m0 flex flex-align-items-center color-primary">
+                            <div className="ml1 block text-no-wrap no-tiny-mobile no-scroll opacity-on-hover button-account-login text-sm m0 flex flex-align-items-center color-primary">
                                 {loadingMap[LocalID] ? (
                                     <CircleLoader />
                                 ) : (
