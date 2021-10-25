@@ -250,7 +250,7 @@ const IASelectImportTypeStep = ({
             <FormLabel
                 htmlFor="mail"
                 className={classnames([
-                    'pt2 pb2 border-bottom flex label w100',
+                    'pt1-5 pb1-5 border-bottom flex label w100',
                     disableMail && 'cursor-default color-weak',
                 ])}
             >
@@ -385,7 +385,7 @@ const IASelectImportTypeStep = ({
             <FormLabel
                 htmlFor="calendar"
                 className={classnames([
-                    'pt2 pb2 border-bottom flex label w100',
+                    'pt1-5 pb1-5 border-bottom flex label w100',
                     disableCalendar && 'cursor-default color-weak',
                 ])}
             >
@@ -462,7 +462,7 @@ const IASelectImportTypeStep = ({
         return (
             <FormLabel
                 htmlFor="contacts"
-                className={classnames(['pt2 pb2 flex label w100', disableContacts && 'cursor-default color-weak'])}
+                className={classnames(['pt1-5 pb1-5 flex label w100', disableContacts && 'cursor-default color-weak'])}
             >
                 <Checkbox
                     id="contacts"
@@ -485,7 +485,7 @@ const IASelectImportTypeStep = ({
         return (
             <FormLabel
                 htmlFor="drive"
-                className={classnames(['pt2 pb2 flex label w100', disableDrive && 'cursor-default color-weak'])}
+                className={classnames(['pt1-5 pb1-5 flex label w100', disableDrive && 'cursor-default color-weak'])}
             >
                 <Checkbox
                     id="drive"
