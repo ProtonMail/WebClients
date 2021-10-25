@@ -10,7 +10,7 @@ interface Props {
     content?: React.ReactNode;
 }
 
-const SupportDropdown = ({ content = c('Action').t`Need help?`, children }: Props) => {
+const SupportDropdown = ({ content = c('Action').t`Need help?`, children, ...rest }: Props) => {
     const [uid] = useState(generateUID('dropdown'));
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
 
@@ -23,6 +23,7 @@ const SupportDropdown = ({ content = c('Action').t`Need help?`, children }: Prop
                 isOpen={isOpen}
                 noCaret
                 onClick={toggle}
+                {...rest}
             >
                 {content}
             </SupportDropdownButton>
