@@ -1,4 +1,4 @@
-import '@testing-library/jest-dom/extend-expect';
+import '@testing-library/jest-dom';
 import { init } from 'pmcrypto/lib/pmcrypto';
 import * as openpgp from 'openpgp';
 

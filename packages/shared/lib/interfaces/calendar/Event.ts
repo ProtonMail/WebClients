@@ -17,6 +17,7 @@ import {
 import { API_CODES } from '../../constants';
 import { pick } from '../../helpers/object';
 import { Address } from '../Address';
+import { Nullable } from '../utils';
 import { NotificationModel } from './Notification';
 import { VcalRrulePropertyValue, VcalVeventComponent } from './VcalModel';
 
@@ -68,9 +69,9 @@ export interface CalendarEventMetadata {
     EndTime: number;
     EndTimezone: string;
     FullDay: number;
-    RRule: string;
+    RRule: Nullable<string>;
     UID: string;
-    RecurrenceID: number;
+    RecurrenceID: Nullable<number>;
     Exdates: number[];
 }
 
