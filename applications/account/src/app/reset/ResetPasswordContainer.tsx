@@ -79,7 +79,7 @@ const ResetPasswordContainer = ({ onLogin, onBack }: Props) => {
         if (result.to === STEPS.VALIDATE_RESET_TOKEN) {
             const destination = result.cache.value;
             if (destination) {
-                createNotification({ text: c('Info').t`Done! We sent a code to ${destination}`, expiration: 5000 });
+                createNotification({ text: c('Info').t`Done! We sent a code to ${destination}.`, expiration: 5000 });
             }
         }
         cacheRef.current = result.cache;

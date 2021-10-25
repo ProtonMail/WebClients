@@ -6,7 +6,7 @@ import { useNotifications } from '../../hooks';
 
 const DKIMSection = ({ domain }) => {
     const { createNotification } = useNotifications();
-    const handleCopy = () => createNotification({ text: c('Success').t`Value copied to clipboard!` });
+    const handleCopy = () => createNotification({ text: c('Success').t`Value copied to clipboard` });
     const {
         DKIM: { Config, State },
     } = domain;
