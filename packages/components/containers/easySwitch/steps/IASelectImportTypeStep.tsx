@@ -1,8 +1,6 @@
 import { useEffect, useMemo, useRef } from 'react';
 import { c, msgid } from 'ttag';
 
-import importStartedSvg from '@proton/styles/assets/img/onboarding/import-assistant.svg';
-
 import { Folder } from '@proton/shared/lib/interfaces/Folder';
 import { Address, Label } from '@proton/shared/lib/interfaces';
 import {
@@ -605,12 +603,6 @@ const IASelectImportTypeStep = ({
 
     return (
         <>
-            {!oauthProps && (
-                <div className="text-center">
-                    <img src={importStartedSvg} alt="" className="w40" />
-                </div>
-            )}
-
             {topParagraphRenderer()}
 
             {payloadErrors.length > 0 && errorBox}
