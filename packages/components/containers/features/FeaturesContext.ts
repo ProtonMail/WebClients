@@ -51,6 +51,7 @@ export enum FeatureCode {
     KeyMigration = 'KeyMigration',
     CalendarEmailNotification = 'CalendarEmailNotification',
     Mnemonic = 'Mnemonic',
+    SeenMnemonicPrompt = 'SeenMnemonicPrompt',
     SpyTrackerProtection = 'SpyTrackerProtection',
     SpotlightSpyTrackerProtection = 'SpotlightSpyTrackerProtection',
     EasySwitch = 'EasySwitch',
