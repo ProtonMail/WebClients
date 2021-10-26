@@ -46,7 +46,18 @@ interface ModalOwnProps {
 export type ModalProps = ModalOwnProps & ComponentPropsWithoutRef<'div'>;
 
 const Modal = (props: ModalProps) => {
-    const { open, small, large, full, children, onClose, disableCloseOnEscape, className, ...rest } = props;
+    const {
+        open,
+        small,
+        large,
+        full,
+        fullscreenOnMobile,
+        children,
+        onClose,
+        disableCloseOnEscape,
+        className,
+        ...rest
+    } = props;
 
     const [exiting, setExiting] = useState(false);
 
@@ -98,7 +109,11 @@ const Modal = (props: ModalProps) => {
         }
     };
 
-    const backdropClassname = classnames(['modal-two-backdrop', exiting && 'modal-two-backdrop--out']);
+    const backdropClassname = classnames([
+        'modal-two-backdrop',
+        exiting && 'modal-two-backdrop--out',
+        fullscreenOnMobile && 'modal-two-backdrop--fullscreen-on-mobile',
+    ]);
 
     const dialogClassName = classnames([
         'modal-two',
