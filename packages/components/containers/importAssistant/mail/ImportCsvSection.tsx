@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 import { SettingsParagraph, SettingsSection } from '@proton/components';
 import ImportCsvContactButton from '@proton/components/containers/contacts/widget/ImportCsvContactButton';
+import { EASY_SWITCH_SOURCE } from '@proton/shared/lib/interfaces/EasySwitch';
 
 interface Props {
     hideEasySwitch?: boolean;
@@ -14,7 +15,10 @@ const ImportCsvSection = ({ hideEasySwitch = false }: Props) => (
         </SettingsParagraph>
 
         <div>
-            <ImportCsvContactButton easySwitchSource="import-contacts-settings" hideEasySwitch={hideEasySwitch} />
+            <ImportCsvContactButton
+                easySwitchSource={EASY_SWITCH_SOURCE.IMPORT_CONTACT_SETTINGS}
+                hideEasySwitch={hideEasySwitch}
+            />
         </div>
     </SettingsSection>
 );
