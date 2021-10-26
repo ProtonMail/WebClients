@@ -1,4 +1,8 @@
 import '@testing-library/jest-dom/extend-expect';
+import { init } from 'pmcrypto/lib/pmcrypto';
+import * as openpgp from 'openpgp';
+
+init(openpgp);
 
 // Silence warnings on expect to throw https://github.com/testing-library/react-testing-library/issues/157
 // console.error = () => {};

@@ -54,7 +54,7 @@ export const getOriginalUID = (uid = '') => {
     if (!uid) {
         return '';
     }
-    const regexWithOriginalUid = new RegExp(`^${HASH_UID_PREFIX}[abcdef\\d]{40}${ORIGINAL_UID_PREFIX}(.*)`);
+    const regexWithOriginalUid = new RegExp(`^${HASH_UID_PREFIX}[abcdef\\d]{40}${ORIGINAL_UID_PREFIX}(.+)`);
     const [, match] = uid.match(regexWithOriginalUid) || [];
     if (match) {
         return match;
