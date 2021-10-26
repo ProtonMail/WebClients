@@ -1,9 +1,11 @@
 import { forwardRef, memo, Ref, useEffect, useRef } from 'react';
 import { Redirect, useRouteMatch, useHistory, useLocation } from 'react-router-dom';
 import {
+    FeatureCode,
     useMailSettings,
     useUserSettings,
     useLabels,
+    useFeature,
     useFolders,
     useWelcomeFlags,
     useModals,
@@ -45,6 +47,7 @@ const PageContainer = (
     const isMnemonicAvailable = useIsMnemonicAvailable();
     const [user] = useUser();
     const onceRef = useRef(false);
+    const { feature: hasSeenMnemonicPrompt } = useFeature(FeatureCode.SeenMnemonicPrompt);
 
     useEffect(() => {
         if (onceRef.current) {
@@ -63,7 +66,10 @@ const PageContainer = (
         // userSettings is used to avoid waiting to load features from useEarlyAccess
         const shouldOpenBetaOnboardingModal = hasBetaParam && !userSettings.EarlyAccess;
 
-        const shouldOpenMnemonicPrompt = isMnemonicAvailable && user.MnemonicStatus === MNEMONIC_STATUS.PROMPT;
+        const shouldOpenMnemonicPrompt =
+            isMnemonicAvailable &&
+            user.MnemonicStatus === MNEMONIC_STATUS.PROMPT &&
+            hasSeenMnemonicPrompt?.Value === false;
 
         if (welcomeFlags.isWelcomeFlow) {
             onceRef.current = true;
@@ -91,7 +97,7 @@ const PageContainer = (
             onceRef.current = true;
             createModal(<MnemonicPromptModal />);
         }
-    }, [isMnemonicAvailable]);
+    }, [isMnemonicAvailable, hasSeenMnemonicPrompt]);
 
     useContactsListener();
 
