@@ -4,6 +4,9 @@ import { c } from 'ttag';
 import Icon from '../icon/Icon';
 import Input, { Props } from './Input';
 
+/**
+ * @deprecated please use PasswordInputTwo instead
+ */
 const PasswordInput = ({ disabled = false, ...rest }: Props) => {
     const [type, setType] = useState('password');
     const toggle = () => {
