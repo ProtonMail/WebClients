@@ -38,26 +38,25 @@ $scrollshadow-size: rem(5) !default;
 				z-index: 1;
 				position: absolute;
 				inset-block-start: 0;
-				inset-block-start: 0;
 				inline-size: $scrollshadow-size;
+				height: 100%;
+				opacity: 0;
+				transition: 250ms easing(easeOutCubic);
 			}
 
 			.scroll-start-shadow {
 				inset-inline-start: 0;
-				background-image: radial-gradient(
-					farthest-side at 0 50%,
-					rgb(0 0 0 / var(--shadow-norm-opacity)),
-					transparent
-				);
+				background: linear-gradient(90deg, rgb(0 0 0 / var(--shadow-norm-opacity)), transparent);
 			}
 
 			.scroll-end-shadow {
 				inset-inline-end: 0;
-				background-image: radial-gradient(
-					farthest-side at 100% 50%,
-					rgb(0 0 0 / var(--shadow-norm-opacity)),
-					transparent
-				);
+				background: linear-gradient(270deg, rgb(0 0 0 / var(--shadow-norm-opacity)), transparent);
+			}
+
+			.scroll-start-shadow-visible,
+			.scroll-end-shadow-visible {
+				opacity: 1;
 			}
 		}
 
@@ -77,24 +76,23 @@ $scrollshadow-size: rem(5) !default;
 				inset-inline-start: 0;
 				inset-inline-end: 0;
 				block-size: $scrollshadow-size;
+				transition: 250ms easing(easeOutCubic);
+				opacity: 0;
 			}
 
 			.scroll-start-shadow {
 				inset-block-start: 0;
-				background-image: radial-gradient(
-					farthest-side at 50% 0,
-					rgb(0 0 0 / var(--shadow-norm-opacity)),
-					transparent
-				);
+				background: linear-gradient(180deg, rgb(0 0 0 / var(--shadow-norm-opacity)), transparent);
 			}
 
 			.scroll-end-shadow {
 				inset-block-end: 0;
-				background-image: radial-gradient(
-					farthest-side at 50% 100%,
-					rgb(0 0 0 / var(--shadow-norm-opacity)),
-					transparent
-				);
+				background: linear-gradient(0deg, rgb(0 0 0 / var(--shadow-norm-opacity)), transparent);
+			}
+
+			.scroll-start-shadow-visible,
+			.scroll-end-shadow-visible {
+				opacity: 1;
 			}
 		}
 	}
