@@ -9,11 +9,12 @@ import { createCalendar, removeCalendar } from '@proton/shared/lib/api/calendars
 import { setupCalendarKey } from '@proton/components/containers/keys/calendar';
 import { getPrimaryKey } from '@proton/shared/lib/keys';
 import {
-    createImportCalendar,
-    createImportContacts,
-    createImportMail,
+    createImport,
     createToken,
     startImportTask,
+    getMailImportData,
+    getCalendarImportData,
+    getContactsImportData,
 } from '@proton/shared/lib/api/easySwitch';
 import {
     CheckedProductMap,
@@ -30,9 +31,9 @@ import {
     AuthenticationMethod,
     MailImporterPayload,
     MailImportMapping,
-    ImportedMailFolder,
-    ImportedCalendar,
     CalendarImportMapping,
+    CreateImportPayload,
+    EASY_SWITCH_SOURCE,
 } from '@proton/shared/lib/interfaces/EasySwitch';
 import { getActiveAddresses } from '@proton/shared/lib/helpers/address';
 import { PRODUCT_NAMES, LABEL_COLORS } from '@proton/shared/lib/constants';
@@ -69,6 +70,7 @@ interface Props {
     addresses: Address[];
     onClose?: () => void;
     defaultCheckedTypes?: ImportType[];
+    source: EASY_SWITCH_SOURCE;
 }
 
 const {
@@ -82,7 +84,18 @@ const { AUTHENTICATION, SELECT_IMPORT_TYPE, SUCCESS } = IAOauthModalModelStep;
 
 const DEFAULT_IMAP_PORT = 993;
 
-const ImportAssistantOauthModal = ({ addresses, onClose = noop, defaultCheckedTypes = [], ...rest }: Props) => {
+// This function returns an array of ImportType give a checked product map
+// e.g. { [MAIL]: true, [CALENDAR]: false } => [CALENDAR]
+const getCheckedProducts = (checkedTypes: CheckedProductMap): ImportType[] =>
+    (Object.keys(checkedTypes) as ImportType[]).reduce<ImportType[]>((acc, k) => {
+        if (checkedTypes[k]) {
+            return [...acc, k];
+        }
+
+        return acc;
+    }, []);
+
+const ImportAssistantOauthModal = ({ addresses, onClose = noop, defaultCheckedTypes = [], source, ...rest }: Props) => {
     const activeAddresses = getActiveAddresses(addresses);
     const getAddressKeys = useGetAddressKeys();
     const location = useLocation();
@@ -107,22 +120,19 @@ const ImportAssistantOauthModal = ({ addresses, onClose = noop, defaultCheckedTy
         },
         isPayloadInvalid: false,
         data: {
+            importerID: '',
             [MAIL]: {
-                importerID: '',
                 selectedPeriod: TIME_PERIOD.BIG_BANG,
                 providerFolders: [],
             },
             [CALENDAR]: {
-                importerID: '',
                 providerCalendars: [],
             },
             [CONTACTS]: {
-                importerID: '',
                 numContacts: 0,
                 numContactGroups: 0,
             },
             // [DRIVE]: {
-            //     importerID: '',
             // },
         },
     });
@@ -150,7 +160,8 @@ const ImportAssistantOauthModal = ({ addresses, onClose = noop, defaultCheckedTy
 
     const selectedImportTypes = Object.keys(checkedTypes).reduce<ImportType[]>((acc, k) => {
         const key = k as ImportType;
-        if (checkedTypes[key]) {
+        const inTokenScope = modalModel.tokenScope ? modalModel.tokenScope.includes(key) : true;
+        if (checkedTypes[key] && inTokenScope) {
             acc.push(key);
         }
         return acc;
@@ -179,6 +190,7 @@ const ImportAssistantOauthModal = ({ addresses, onClose = noop, defaultCheckedTy
                         Description: '',
                         Display: 1,
                         AddressID: addressID,
+                        IsImport: 1,
                     })
                 );
 
@@ -223,7 +235,8 @@ const ImportAssistantOauthModal = ({ addresses, onClose = noop, defaultCheckedTy
                                 Provider,
                                 Code,
                                 RedirectUri,
-                                // @todo Source: 'import-settings',
+                                Source: source,
+                                Products: getCheckedProducts(checkedTypes),
                             })
                         );
 
@@ -231,61 +244,62 @@ const ImportAssistantOauthModal = ({ addresses, onClose = noop, defaultCheckedTy
 
                         const tokenScope = Products;
 
-                        const createdImports = await Promise.all(
+                        const createImportPayload: CreateImportPayload = { TokenID: ID };
+
+                        if (Products.includes(ImportType.MAIL)) {
+                            createImportPayload[ImportType.MAIL] = {
+                                Email: Account,
+                                ImapHost: IMAPS[Provider],
+                                ImapPort: DEFAULT_IMAP_PORT,
+                                Sasl: AuthenticationMethod.OAUTH,
+                            };
+                        }
+
+                        // Calendar and contacts need empty payload
+                        if (Products.includes(ImportType.CALENDAR)) {
+                            createImportPayload[ImportType.CALENDAR] = {};
+                        }
+
+                        if (Products.includes(ImportType.CONTACTS)) {
+                            createImportPayload[ImportType.CONTACTS] = {};
+                        }
+
+                        const { ImporterID } = await api(createImport(createImportPayload));
+
+                        const importsRawData = await Promise.all(
                             tokenScope.map(async (importType) => {
                                 if (importType === MAIL) {
-                                    const { Importer } = await api(
-                                        createImportMail({
-                                            TokenID: ID,
-                                            ImapHost: IMAPS[Provider],
-                                            ImapPort: DEFAULT_IMAP_PORT,
-                                            Sasl: AuthenticationMethod.OAUTH,
-                                        })
-                                    );
+                                    const { Folders } = await api(getMailImportData(ImporterID));
 
                                     return {
                                         importType,
-                                        importID: Importer.ID,
-                                        Folders: Importer.Folders,
+                                        Folders,
                                     };
                                 }
 
                                 if (importType === CALENDAR) {
-                                    const { Importer } = await api(createImportCalendar(ID));
+                                    const { Calendars } = await api(getCalendarImportData(ImporterID));
 
                                     return {
                                         importType,
-                                        importID: Importer.ID,
-                                        Calendars: Importer.Calendars,
+                                        Calendars,
                                     };
                                 }
 
                                 if (importType === CONTACTS) {
-                                    const { Importer } = await api(createImportContacts(ID));
-                                    const { NumContacts, NumGroups } = Importer;
+                                    const { Contacts } = await api(getContactsImportData(ImporterID));
 
                                     return {
                                         importType,
-                                        importID: Importer.ID,
-                                        NumContacts,
-                                        NumGroups,
+                                        Contacts,
                                     };
                                 }
                             })
                         );
 
-                        const filteredCreatedImports: {
-                            importType: ImportType;
-                            importID: string;
-                            Folders?: ImportedMailFolder[];
-                            Calendars?: ImportedCalendar[];
-                            NumContacts?: number;
-                            NumGroups?: number;
-                        }[] = createdImports.filter(isTruthy);
-
-                        const data = filteredCreatedImports.reduce<IAOauthModalModelImportData>(
+                        const data = importsRawData.filter(isTruthy).reduce<IAOauthModalModelImportData>(
                             (acc, currentImport) => {
-                                const { importType, importID: importerID } = currentImport;
+                                const { importType } = currentImport;
 
                                 if (importType === MAIL && currentImport.Folders) {
                                     acc[importType].providerFolders = currentImport.Folders;
@@ -296,20 +310,20 @@ const ImportAssistantOauthModal = ({ addresses, onClose = noop, defaultCheckedTy
                                 }
 
                                 if (importType === CONTACTS) {
-                                    acc[importType].numContacts = currentImport.NumContacts || 0;
-                                    acc[importType].numContactGroups = currentImport.NumGroups || 0;
+                                    acc[importType].numContacts = currentImport.Contacts.NumContacts || 0;
+                                    acc[importType].numContactGroups = currentImport.Contacts.NumGroups || 0;
                                 }
 
                                 return {
                                     ...acc,
                                     [importType]: {
                                         ...acc[importType],
-                                        importerID,
                                     },
                                 };
                             },
                             {
                                 ...modalModel.data,
+                                importerID: ImporterID,
                             }
                         );
 

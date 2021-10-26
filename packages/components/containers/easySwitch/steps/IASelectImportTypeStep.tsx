@@ -1,8 +1,6 @@
 import { useEffect, useMemo, useRef } from 'react';
 import { c, msgid } from 'ttag';
 
-import importStartedSvg from '@proton/styles/assets/img/onboarding/import-assistant.svg';
-
 import { Folder } from '@proton/shared/lib/interfaces/Folder';
 import { Address, Label } from '@proton/shared/lib/interfaces';
 import {
@@ -250,7 +248,7 @@ const IASelectImportTypeStep = ({
             <FormLabel
                 htmlFor="mail"
                 className={classnames([
-                    'pt2 pb2 border-bottom flex label w100',
+                    'pt1-5 pb1-5 border-bottom flex label w100',
                     disableMail && 'cursor-default color-weak',
                 ])}
             >
@@ -385,7 +383,7 @@ const IASelectImportTypeStep = ({
             <FormLabel
                 htmlFor="calendar"
                 className={classnames([
-                    'pt2 pb2 border-bottom flex label w100',
+                    'pt1-5 pb1-5 border-bottom flex label w100',
                     disableCalendar && 'cursor-default color-weak',
                 ])}
             >
@@ -457,12 +455,12 @@ const IASelectImportTypeStep = ({
             return null;
         }
 
-        const showSummary = oauthProps && !disableCalendar && checkedTypes[CONTACTS];
+        const showSummary = oauthProps && !disableContacts && checkedTypes[CONTACTS];
 
         return (
             <FormLabel
                 htmlFor="contacts"
-                className={classnames(['pt2 pb2 flex label w100', disableContacts && 'cursor-default color-weak'])}
+                className={classnames(['pt1-5 pb1-5 flex label w100', disableContacts && 'cursor-default color-weak'])}
             >
                 <Checkbox
                     id="contacts"
@@ -485,7 +483,7 @@ const IASelectImportTypeStep = ({
         return (
             <FormLabel
                 htmlFor="drive"
-                className={classnames(['pt2 pb2 flex label w100', disableDrive && 'cursor-default color-weak'])}
+                className={classnames(['pt1-5 pb1-5 flex label w100', disableDrive && 'cursor-default color-weak'])}
             >
                 <Checkbox
                     id="drive"
@@ -561,13 +559,10 @@ const IASelectImportTypeStep = ({
         }
 
         const payload: LaunchImportPayload = {
-            ImporterID:
-                modalModel.data[MAIL].importerID ||
-                modalModel.data[CALENDAR].importerID ||
-                modalModel.data[CONTACTS].importerID,
+            ImporterID: modalModel.data.importerID,
         };
 
-        if (modalModel.data[MAIL].importerID) {
+        if (modalModel.data[MAIL]) {
             payload[MAIL] = {
                 AddressID: addresses[0].ID,
                 Mapping: getDefaultMapping(),
@@ -576,7 +571,7 @@ const IASelectImportTypeStep = ({
             };
         }
 
-        if (modalModel.data[CALENDAR].importerID) {
+        if (modalModel.data[CALENDAR]) {
             const calendarDefaultMapping = modalModel.data[CALENDAR].providerCalendars.map(({ ID, Source }) => ({
                 Source: ID,
                 Destination: `${CALENDAR_TO_BE_CREATED_PREFIX}${Source}`,
@@ -588,10 +583,11 @@ const IASelectImportTypeStep = ({
             };
         }
 
-        if (modalModel.data[CONTACTS].importerID) {
+        if (modalModel.data[CONTACTS]) {
             payload[CONTACTS] = {};
         }
-        // if (modalModel.data[DRIVE].importerID) {
+
+        // if (modalModel.data[DRIVE]) {
         //     payload[DRIVE] = {};
         // }
 
@@ -607,12 +603,6 @@ const IASelectImportTypeStep = ({
 
     return (
         <>
-            {!oauthProps && (
-                <div className="text-center">
-                    <img src={importStartedSvg} alt="" className="w40" />
-                </div>
-            )}
-
             {topParagraphRenderer()}
 
             {payloadErrors.length > 0 && errorBox}

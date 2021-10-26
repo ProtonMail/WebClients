@@ -178,7 +178,6 @@ const ImportPrepareStep = ({ modalModel, updateModalModel, addresses }: Props) =
             ...modalModel,
             payload: {
                 ...modalModel.payload,
-                ID: modalModel.importID,
                 Code: password,
                 Mapping: getDefaultMapping(),
                 ImportLabel: getDefaultLabel(),

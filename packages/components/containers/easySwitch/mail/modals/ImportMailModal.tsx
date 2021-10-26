@@ -4,13 +4,14 @@ import { c } from 'ttag';
 
 import {
     getAuthenticationMethod,
-    createMailImport,
-    startMailImportJob,
-    getMailImportFolders,
-    getMailImport,
-    updateMailImport,
-    resumeMailImportJob,
-} from '@proton/shared/lib/api/mailImport';
+    createImport,
+    startImportTask,
+    getMailImportData,
+    updateImport,
+    getImport,
+    resumeImport,
+} from '@proton/shared/lib/api/easySwitch';
+
 import { noop } from '@proton/shared/lib/helpers/function';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import { isNumber } from '@proton/shared/lib/helpers/validators';
@@ -22,6 +23,8 @@ import {
     IMPORT_ERROR,
     PROVIDER_INSTRUCTIONS,
     ImportedMailFolder,
+    ImportType,
+    NormalizedImporter,
 } from '@proton/shared/lib/interfaces/EasySwitch';
 import { toMap } from '@proton/shared/lib/helpers/object';
 
@@ -37,7 +40,7 @@ import {
     useSettingsLink,
 } from '../../../../components';
 
-import { MailImportStep, ImportMailModalModel, Importer, AuthenticationMethod } from '../interfaces';
+import { MailImportStep, ImportMailModalModel, AuthenticationMethod } from '../interfaces';
 
 import YahooMailImportInstructionsStep from './steps/YahooMailImportInstructionsStep';
 import ImportStartStep from './steps/ImportStartStep';
@@ -74,14 +77,11 @@ interface ImporterFromServer {
     ID: string;
     ImapHost: string;
     ImapPort: number;
-    MailboxSize: {
-        [key: string]: number;
-    };
     Sasl: AuthenticationMethod;
 }
 
 interface Props {
-    currentImport?: Importer;
+    currentImport?: NormalizedImporter;
     onClose?: () => void;
     addresses: Address[];
     providerInstructions?: PROVIDER_INSTRUCTIONS;
@@ -115,7 +115,6 @@ const ImportMailModal = ({ onClose = noop, currentImport, providerInstructions, 
         needIMAPDetails: false,
         selectedPeriod: TIME_PERIOD.BIG_BANG,
         payload: {
-            ID: '',
             AddressID: addresses[0].ID,
             Mapping: [],
             CustomFields: 0,
@@ -202,9 +201,10 @@ const ImportMailModal = ({ onClose = noop, currentImport, providerInstructions, 
         /* If we already have an importID we can just fetch the folders and move on */
         if (modalModel.importID) {
             try {
-                const { Importer } = await api(getMailImport(modalModel.importID));
+                const { Importer } = await api(getImport(modalModel.importID));
+
                 const { Folders = [] } = await api({
-                    ...getMailImportFolders(Importer.ID, { Code: modalModel.password }),
+                    ...getMailImportData(Importer.ID, { Code: modalModel.password }),
                     /*
                         For this call we display a custom
                         error message on top of the form
@@ -221,13 +221,15 @@ const ImportMailModal = ({ onClose = noop, currentImport, providerInstructions, 
 
         if ((modalModel.imap && modalModel.port) || needIMAPDetails) {
             try {
-                const { Importer } = await api({
-                    ...createMailImport({
-                        Email: modalModel.email,
-                        ImapHost: modalModel.imap,
-                        ImapPort: parseInt(modalModel.port, 10),
-                        Sasl: AuthenticationMethod.PLAIN,
-                        Code: modalModel.password,
+                const { ImporterID } = await api({
+                    ...createImport({
+                        [ImportType.MAIL]: {
+                            Email: modalModel.email,
+                            ImapHost: modalModel.imap,
+                            ImapPort: parseInt(modalModel.port, 10),
+                            Sasl: AuthenticationMethod.PLAIN,
+                            Code: modalModel.password,
+                        },
                     }),
                     /*
                         For this call we display a custom
@@ -238,8 +240,17 @@ const ImportMailModal = ({ onClose = noop, currentImport, providerInstructions, 
                 });
                 await call();
 
-                const { Folders = [] } = await api(getMailImportFolders(Importer.ID, { Code: modalModel.password }));
-                moveToPrepareStep(Importer, Folders);
+                const { Folders = [] } = await api(getMailImportData(ImporterID, { Code: modalModel.password }));
+                moveToPrepareStep(
+                    {
+                        ID: ImporterID,
+                        Email: modalModel.email,
+                        ImapHost: modalModel.imap,
+                        ImapPort: parseInt(modalModel.port, 10),
+                        Sasl: AuthenticationMethod.PLAIN,
+                    },
+                    Folders
+                );
             } catch (error: any) {
                 handleSubmitStartError(error);
             }
@@ -254,26 +265,27 @@ const ImportMailModal = ({ onClose = noop, currentImport, providerInstructions, 
     };
 
     const formatImportPayload = () => {
-        const { payload } = modalModel;
+        const { payload, importID } = modalModel;
 
         return {
-            ...payload,
-            StartTime: payload.StartTime ? dateToTimestamp(payload.StartTime as Date) : undefined,
-            Mapping: payload.Mapping.filter(({ checked }: MailImportMapping) => checked).map(
-                ({ Source, Destinations }: MailImportMapping) => ({
-                    Source,
-                    Destinations,
-                })
-            ),
+            ImporterID: importID,
+            [ImportType.MAIL]: {
+                ...payload,
+                StartTime: payload.StartTime ? dateToTimestamp(payload.StartTime as Date) : undefined,
+                Mapping: payload.Mapping.filter(({ checked }: MailImportMapping) => checked).map(
+                    ({ Source, Destinations }: MailImportMapping) => ({
+                        Source,
+                        Destinations,
+                    })
+                ),
+            },
         };
     };
 
     const launchImport = async () => {
-        const { importID } = modalModel;
-
         const payload = formatImportPayload();
 
-        await api(startMailImportJob(importID, payload));
+        await api(startImportTask(payload));
         await call();
 
         setModalModel({
@@ -282,17 +294,24 @@ const ImportMailModal = ({ onClose = noop, currentImport, providerInstructions, 
         });
     };
 
-    const resumeImport = async () => {
+    const resumeImporter = async () => {
         await api(
-            updateMailImport(modalModel.importID, {
-                Email: modalModel.email,
-                Code: modalModel.password,
-                ImapHost: modalModel.imap,
-                ImapPort: parseInt(modalModel.port, 10),
-                Sasl: AuthenticationMethod.PLAIN,
+            updateImport(modalModel.importID, {
+                [ImportType.MAIL]: {
+                    Email: modalModel.email,
+                    Code: modalModel.password,
+                    ImapHost: modalModel.imap,
+                    ImapPort: parseInt(modalModel.port, 10),
+                    Sasl: AuthenticationMethod.PLAIN,
+                },
             })
         );
-        await api(resumeMailImportJob(modalModel.importID));
+        await api(
+            resumeImport({
+                ImporterID: modalModel.importID,
+                Products: [ImportType.MAIL],
+            })
+        );
         await call();
         onClose();
     };
@@ -323,7 +342,7 @@ const ImportMailModal = ({ onClose = noop, currentImport, providerInstructions, 
         switch (modalModel.step) {
             case MailImportStep.START:
                 if (isReconnectMode) {
-                    await withLoading(resumeImport());
+                    await withLoading(resumeImporter());
                     return;
                 }
                 await withLoading(submitAuthentication(modalModel.needIMAPDetails));
