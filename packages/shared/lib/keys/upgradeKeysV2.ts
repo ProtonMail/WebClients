@@ -24,6 +24,7 @@ import { toMap } from '../helpers/object';
 import { USER_KEY_USERID } from './userKeys';
 import { getActiveKeys } from './getActiveKeys';
 import { getSignedKeyList } from './signedKeyList';
+import { getHasMigratedAddressKeys } from './keyMigration';
 
 export const getV2KeyToUpgrade = (Key: tsKey) => {
     return Key.Version < 3;
@@ -222,7 +223,6 @@ interface UpgradeV2KeysHelperArgs {
     keyPassword: string;
     api: Api;
     isOnePasswordMode?: boolean;
-    hasAddressKeyMigration: boolean;
 }
 
 export const upgradeV2KeysHelper = async ({
@@ -233,7 +233,6 @@ export const upgradeV2KeysHelper = async ({
     keyPassword,
     isOnePasswordMode,
     api,
-    hasAddressKeyMigration,
 }: UpgradeV2KeysHelperArgs) => {
     const userKeys = await getDecryptedUserKeysHelper(user, keyPassword);
 
@@ -278,7 +277,7 @@ export const upgradeV2KeysHelper = async ({
         return;
     }
 
-    if (hasAddressKeyMigration) {
+    if (getHasMigratedAddressKeys(addresses)) {
         return upgradeV2KeysV2({
             api,
             userKeys,
