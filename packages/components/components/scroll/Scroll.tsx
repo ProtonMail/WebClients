@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react';
 
 import { classnames } from '../../helpers';
-import './Scroll.scss'
+import './Scroll.scss';
 
 const TOLERANCE = 4;
 
@@ -77,9 +77,15 @@ const Scroll = ({ children, horizontal, className, ...rest }: ScrollProps) => {
         setShadows(scrollContainer, scrollChild);
     };
 
-    const outerClassName = classnames([ className, horizontal ? 'scroll-outer-horizontal' : 'scroll-outer-vertical' ]);
-    const startShadowClassName = classnames(['no-pointer-events', showStartShadow && 'scroll-start-shadow']);
-    const endShadowClassName = classnames(['no-pointer-events', showEndShadow && 'scroll-end-shadow']);
+    const outerClassName = classnames([className, horizontal ? 'scroll-outer-horizontal' : 'scroll-outer-vertical']);
+    const startShadowClassName = classnames([
+        'scroll-start-shadow no-pointer-events',
+        showStartShadow && 'scroll-start-shadow-visible',
+    ]);
+    const endShadowClassName = classnames([
+        'scroll-end-shadow no-pointer-events',
+        showEndShadow && 'scroll-end-shadow-visible',
+    ]);
 
     return (
         <div {...rest} className={outerClassName}>
