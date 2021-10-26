@@ -26,7 +26,7 @@ const MailSettingsSidebarList = () => {
 
     const easySwitchSidebarListItem = !user.isFree ? (
         <SettingsListItem to={`${path}/import-export`} icon="arrow-up-from-screen">
-            {c('Settings section title').t`Import/Export`}
+            {c('Settings section title').t`Backup & Export`}
         </SettingsListItem>
     ) : null;
 
@@ -66,6 +66,9 @@ const MailSettingsSidebarList = () => {
             <SettingsListItem to={`${path}/encryption-keys`} icon="lock-filled">
                 {c('Settings section title').t`Encryption & keys`}
             </SettingsListItem>
+            <SettingsListItem to={`${path}/imap-smtp`} icon="servers">
+                {c('Settings section title').t`IMAP/SMTP`}
+            </SettingsListItem>
             {isEasySwitchEnabled ? (
                 easySwitchSidebarListItem
             ) : (
@@ -73,9 +76,6 @@ const MailSettingsSidebarList = () => {
                     {user.isFree ? c('Title').t`Import Assistant` : c('Settings section title').t`Import & export`}
                 </SettingsListItem>
             )}
-            <SettingsListItem to={`${path}/imap-smtp`} icon="servers">
-                {c('Settings section title').t`IMAP/SMTP`}
-            </SettingsListItem>
         </SidebarList>
     );
 };
