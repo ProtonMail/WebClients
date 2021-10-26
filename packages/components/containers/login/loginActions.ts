@@ -161,8 +161,6 @@ const handleKeyUpgrade = async ({
             keyPassword,
             clearKeyPassword,
             isOnePasswordMode,
-            // The API checks if the user has migrated keys, not if ToMigrate is truthy
-            hasAddressKeyMigration: false,
             api: authApi,
         }).catch((e) => {
             captureMessage('Key upgrade error', { extra: { error: e } });
