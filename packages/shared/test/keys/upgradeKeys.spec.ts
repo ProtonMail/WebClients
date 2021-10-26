@@ -3,6 +3,7 @@ import { upgradeV2KeysHelper } from '../../lib/keys/upgradeKeysV2';
 import { Modulus } from '../authentication/login.data';
 import { User as tsUser, Address as tsAddress } from '../../lib/interfaces';
 import { getDecryptedAddressKeysHelper, getDecryptedUserKeysHelper } from '../../lib/keys';
+import { getAddressKey, getUserKey } from './keyDataHelper';
 
 const DEFAULT_EMAIL = 'test@test.com';
 const DEFAULT_KEYPASSWORD = '1';
@@ -19,52 +20,27 @@ describe('upgrade keys v2', () => {
     describe('do v2 upgrade', () => {
         it('should upgrade v2 keys', async () => {
             const keyPassword = DEFAULT_KEYPASSWORD;
-            const [userKey1, userKey2, addressKey1, addressKey2, addressKey3] = await Promise.all([
-                getKey(),
-                getKey(),
-                getKey(),
-                getKey(),
-                getKey(),
+            const [userKey1, userKey2] = await Promise.all([
+                getUserKey('a', keyPassword, 2),
+                getUserKey('b', keyPassword, 2),
             ]);
             const User = {
-                Keys: [
-                    {
-                        ID: 'a',
-                        PrivateKey: userKey1.privateKeyArmored,
-                        Version: 2,
-                    },
-                    {
-                        ID: 'b',
-                        PrivateKey: userKey2.privateKeyArmored,
-                        Version: 2,
-                    },
-                ],
+                Keys: [userKey1.Key, userKey2.Key],
             } as tsUser;
+            const keys = await Promise.all([
+                getAddressKey('c', userKey1.key.privateKey, 'test@test.com', 2),
+                getAddressKey('d', userKey1.key.privateKey, 'test@test.com', 2),
+                getAddressKey('e', userKey2.key.privateKey, 'test2@test.com', 2),
+            ]);
+
             const Addresses = [
                 {
                     Email: 'test@test.com',
-                    Keys: [
-                        {
-                            ID: 'c',
-                            PrivateKey: addressKey1.privateKeyArmored,
-                            Version: 2,
-                        },
-                        {
-                            ID: 'd',
-                            PrivateKey: addressKey2.privateKeyArmored,
-                            Version: 2,
-                        },
-                    ],
+                    Keys: [keys[0].Key, keys[1].Key],
                 },
                 {
                     Email: 'test2@test.com',
-                    Keys: [
-                        {
-                            ID: 'e',
-                            PrivateKey: addressKey3.privateKeyArmored,
-                            Version: 2,
-                        },
-                    ],
+                    Keys: [keys[2].Key],
                 },
             ] as tsAddress[];
             const api = jasmine.createSpy('api').and.returnValues(Promise.resolve({ Modulus }), Promise.resolve());
@@ -76,7 +52,6 @@ describe('upgrade keys v2', () => {
                 clearKeyPassword: keyPassword,
                 isOnePasswordMode: true,
                 api,
-                hasAddressKeyMigration: true,
             });
             if (!newKeyPassword) {
                 throw new Error('Missing new password');
@@ -172,7 +147,6 @@ describe('upgrade keys v2', () => {
                 clearKeyPassword: keyPassword,
                 isOnePasswordMode: true,
                 api,
-                hasAddressKeyMigration: false,
             });
             if (!newKeyPassword) {
                 throw new Error('Missing new password');
@@ -247,7 +221,6 @@ describe('upgrade keys v2', () => {
                 clearKeyPassword: keyPassword,
                 isOnePasswordMode: false,
                 api,
-                hasAddressKeyMigration: false,
             });
             expect(api.calls.all().length).toBe(1);
             if (!newKeyPassword) {
@@ -321,7 +294,6 @@ describe('upgrade keys v2', () => {
                 clearKeyPassword: keyPassword,
                 isOnePasswordMode: false,
                 api,
-                hasAddressKeyMigration: false,
             });
             if (!newKeyPassword) {
                 throw new Error('Missing password');
@@ -392,7 +364,6 @@ describe('upgrade keys v2', () => {
                 clearKeyPassword: keyPassword,
                 isOnePasswordMode: false,
                 api,
-                hasAddressKeyMigration: false,
             });
             expect(api.calls.all().length).toBe(0);
             expect(newKeyPassword).toBeUndefined();
@@ -437,7 +408,6 @@ describe('upgrade keys v2', () => {
                 clearKeyPassword: keyPassword,
                 isOnePasswordMode: true,
                 api,
-                hasAddressKeyMigration: false,
             });
             expect(api.calls.all().length).toBe(0);
             expect(newKeyPassword).toBeUndefined();
