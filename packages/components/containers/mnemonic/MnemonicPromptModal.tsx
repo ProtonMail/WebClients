@@ -4,8 +4,9 @@ import { reactivateMnemonicPhrase } from '@proton/shared/lib/api/settingsMnemoni
 import { generateMnemonicPayload, generateMnemonicWithSalt, MnemonicData } from '@proton/shared/lib/mnemonic';
 import userPromptSvg from '@proton/styles/assets/img/mnemonic/user-prompt.svg';
 import { Button, FormModal } from '../../components';
-import { useApi, useGetUserKeys, useUser } from '../../hooks';
+import { useApi, useFeature, useGetUserKeys, useUser } from '../../hooks';
 import { MnemonicPhraseStepButtons, MnemonicPhraseStepContent } from './MnemonicPhraseStep';
+import { FeatureCode } from '../features';
 
 enum STEPS {
     INFO,
@@ -36,6 +37,16 @@ const MnemonicPromptModal = (props: Props) => {
 
         void generateMnemonicData();
     }, []);
+
+    const { feature: hasSeenMnemonicPrompt, update: setSeenMnemonicPrompt } = useFeature(
+        FeatureCode.SeenMnemonicPrompt
+    );
+
+    useEffect(() => {
+        if (hasSeenMnemonicPrompt?.Value === false) {
+            void setSeenMnemonicPrompt(true);
+        }
+    }, [hasSeenMnemonicPrompt]);
 
     const { section, ...modalProps } = (() => {
         if (step === STEPS.INFO) {
