@@ -32,8 +32,7 @@ const MnemonicInputField = ({
     bigger = true,
     rows = 3,
     label = c('Label').t`Recovery phrase`,
-    placeholder = c('Label').t`Your recovery phrase`,
-    assistiveText = c('Label').t`Recovery phrase contains 12 words`,
+    assistiveText = c('Label').t`Phrase consists of 12 unique words in a specific order`,
     onValue,
     ...rest
 }: Props) => {
@@ -44,7 +43,6 @@ const MnemonicInputField = ({
             as={TextAreaTwo}
             rows={rows}
             label={label}
-            placeholder={placeholder}
             assistiveText={assistiveText}
             onValue={(newValue: string) => {
                 const splitWords = newValue.split(/\s+/);

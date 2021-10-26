@@ -24,7 +24,6 @@ import {
 import { getInitialStates } from './state';
 import { getReactivatedKeys } from './reactivateHelper';
 import { AuthModal } from '../../password';
-import BackupKeysTabContent from './BackupKeysTabContent';
 import RecoveryFileTabContent from './RecoveryFileTabContent';
 import MnemonicInputField, { useMnemonicInputValidation } from '../../mnemonic/MnemonicInputField';
 
@@ -40,7 +39,7 @@ interface Props {
     onProcess: (keysToReactivate: KeyReactivationRecord[], onReactivation: OnKeyReactivationCallback) => Promise<void>;
 }
 
-type TabId = 'recoveryPhrase' | 'recoveryFile' | 'password' | 'backupKey';
+type TabId = 'phrase' | 'password' | 'file';
 
 const ReactivateKeysModal = ({ userKeys, keyReactivationRequests, onProcess, onClose, ...rest }: Props) => {
     const api = useApi();
@@ -57,24 +56,20 @@ const ReactivateKeysModal = ({ userKeys, keyReactivationRequests, onProcess, onC
     const mnemonicValidation = useMnemonicInputValidation(mnemonic);
 
     const [password, setPassword] = useState('');
-    const [uploadedRecoveryFileKeys, setUploadedRecoveryFileKeys] = useState<OpenPGPKey[]>([]);
-    const [uploadedBackupKeys, setUploadedBackupKeys] = useState<OpenPGPKey[]>([]);
+    const [uploadedFileKeys, setUploadedFileKeys] = useState<OpenPGPKey[]>([]);
 
     const recoverySecrets = useRecoverySecrets();
-    const showRecoveryFileTab = !!recoverySecrets.length;
+    const recoveryFileAvailable = !!recoverySecrets.length;
+
+    const fileDescription = recoveryFileAvailable
+        ? c('Info').t`This is a recovery file or encryption key you may have previously saved.`
+        : c('Info').t`This is an encryption key you may have previously saved.`;
 
     const [isMnemonicAvailable] = useIsMnemonicAvailable();
     const mnemonicOperationStatus = useMnemonicOperationStatus();
     const showMnemonicTab = isMnemonicAvailable && mnemonicOperationStatus.dataRecovery;
 
-    const tabs: TabId[] = (
-        [
-            showMnemonicTab ? 'recoveryPhrase' : undefined,
-            showRecoveryFileTab ? 'recoveryFile' : undefined,
-            'password',
-            'backupKey',
-        ] as const
-    ).filter(isTruthy);
+    const tabs: TabId[] = ([showMnemonicTab ? 'phrase' : undefined, 'password', 'file'] as const).filter(isTruthy);
     const [tab, setTab] = useState(0);
 
     useEffect(() => {
@@ -238,9 +233,9 @@ const ReactivateKeysModal = ({ userKeys, keyReactivationRequests, onProcess, onC
         });
     };
 
-    const processPrivateKeys = async (keys: OpenPGPKey[]) => {
+    const onFileSubmit = async () => {
         const mapToUploadedPrivateKey = ({ id, Key, fingerprint }: KeyReactivationRequestStateData) => {
-            const uploadedPrivateKey = keys.find((decryptedBackupKey) => {
+            const uploadedPrivateKey = uploadedFileKeys.find((decryptedBackupKey) => {
                 return fingerprint === decryptedBackupKey.getFingerprint();
             });
             if (!uploadedPrivateKey) {
@@ -274,19 +269,11 @@ const ReactivateKeysModal = ({ userKeys, keyReactivationRequests, onProcess, onC
         createKeyReactivationNotification(reactivatedKeysState);
     };
 
-    const onRecoveryFileSubmit = async () => {
-        await processPrivateKeys(uploadedRecoveryFileKeys);
-    };
-
-    const onBackupKeySubmit = async () => {
-        await processPrivateKeys(uploadedBackupKeys);
-    };
-
     return (
         <FormModal
-            title={c('Title').t`Reactivate keys`}
+            title={c('Title').t`Recover data`}
             close={c('Action').t`Cancel`}
-            submit={c('Action').t`Reactivate keys`}
+            submit={c('Action').t`Recover data`}
             onClose={onClose}
             onSubmit={async () => {
                 if (!onFormSubmit()) {
@@ -294,14 +281,12 @@ const ReactivateKeysModal = ({ userKeys, keyReactivationRequests, onProcess, onC
                 }
 
                 const submit = async () => {
-                    if (tab === tabs.indexOf('recoveryPhrase')) {
+                    if (tab === tabs.indexOf('phrase')) {
                         await onRecoveryPhraseSubmit();
-                    } else if (tab === tabs.indexOf('recoveryFile')) {
-                        await onRecoveryFileSubmit();
                     } else if (tab === tabs.indexOf('password')) {
                         await onPasswordSubmit();
-                    } else if (tab === tabs.indexOf('backupKey')) {
-                        await onBackupKeySubmit();
+                    } else if (tab === tabs.indexOf('file')) {
+                        await onFileSubmit();
                     }
                 };
 
@@ -315,12 +300,12 @@ const ReactivateKeysModal = ({ userKeys, keyReactivationRequests, onProcess, onC
             intermediate
             {...rest}
         >
+            <p className="mt0">{c('Info')
+                .t`To decrypt and view your locked data after a password reset, select a recovery method.`}</p>
             {loading ? (
                 <Loader />
             ) : (
                 <>
-                    <p>{c('Info')
-                        .t`To access your old messages, you will need to reactivate your old encryption keys using one of the following recovery methods.`}</p>
                     <Tabs
                         value={tab}
                         tabs={[
@@ -329,80 +314,66 @@ const ReactivateKeysModal = ({ userKeys, keyReactivationRequests, onProcess, onC
                                       // translator: 'Phrase' here refers to the 'Recovery phrase'
                                       title: c('Label').t`Phrase`,
                                       content: (
-                                          <MnemonicInputField
-                                              disableChange={isSubmitting}
-                                              value={mnemonic}
-                                              onValue={setMnemonic}
-                                              autoFocus
-                                              error={validator(
-                                                  tab === tabs.indexOf('recoveryPhrase')
-                                                      ? [requiredValidator(mnemonic), ...mnemonicValidation]
-                                                      : []
-                                              )}
-                                          />
-                                      ),
-                                  }
-                                : undefined,
-                            showRecoveryFileTab
-                                ? {
-                                      // translator: 'File' here refers to the 'Recovery file'
-                                      title: c('Label').t`File`,
-                                      content: (
-                                          <RecoveryFileTabContent
-                                              recoverySecrets={recoverySecrets}
-                                              uploadedKeys={uploadedRecoveryFileKeys}
-                                              setUploadedKeys={setUploadedRecoveryFileKeys}
-                                              disabled={isSubmitting}
-                                              error={validator(
-                                                  tab === tabs.indexOf('recoveryFile')
-                                                      ? [
-                                                            requiredValidator(
-                                                                uploadedRecoveryFileKeys
-                                                                    .map((key) => key.getFingerprint())
-                                                                    .join()
-                                                            ),
-                                                        ]
-                                                      : []
-                                              )}
-                                          />
+                                          <>
+                                              <p className="mt0-5">{c('Info')
+                                                  .t`This is a 12-word phrase that you were prompted to set.`}</p>
+                                              <MnemonicInputField
+                                                  disableChange={isSubmitting}
+                                                  value={mnemonic}
+                                                  onValue={setMnemonic}
+                                                  autoFocus
+                                                  error={validator(
+                                                      tab === tabs.indexOf('phrase')
+                                                          ? [requiredValidator(mnemonic), ...mnemonicValidation]
+                                                          : []
+                                                  )}
+                                              />
+                                          </>
                                       ),
                                   }
                                 : undefined,
                             {
                                 title: c('Label').t`Password`,
                                 content: (
-                                    <InputFieldTwo
-                                        id="password"
-                                        label={c('Label').t`Password`}
-                                        placeholder={c('Label').t`Password`}
-                                        as={PasswordInputTwo}
-                                        error={validator(
-                                            tab === tabs.indexOf('password') ? [requiredValidator(password)] : []
-                                        )}
-                                        value={password}
-                                        onValue={setPassword}
-                                        autoFocus
-                                        disabled={isSubmitting}
-                                    />
+                                    <>
+                                        <p className="mt0-5">{c('Info')
+                                            .t`This is the password you used before the password reset.`}</p>
+                                        <InputFieldTwo
+                                            id="password"
+                                            label={c('Label').t`Previous password`}
+                                            as={PasswordInputTwo}
+                                            error={validator(
+                                                tab === tabs.indexOf('password') ? [requiredValidator(password)] : []
+                                            )}
+                                            value={password}
+                                            onValue={setPassword}
+                                            autoFocus
+                                            disabled={isSubmitting}
+                                        />
+                                    </>
                                 ),
                             },
                             {
-                                title: c('Label').t`Backup keys`,
+                                title: c('Label').t`File`,
                                 content: (
-                                    <BackupKeysTabContent
-                                        uploadedKeys={uploadedBackupKeys}
-                                        setUploadedKeys={setUploadedBackupKeys}
-                                        disabled={isSubmitting}
-                                        error={validator(
-                                            tab === tabs.indexOf('backupKey')
-                                                ? [
-                                                      requiredValidator(
-                                                          uploadedBackupKeys.map((key) => key.getFingerprint()).join()
-                                                      ),
-                                                  ]
-                                                : []
-                                        )}
-                                    />
+                                    <>
+                                        <p className="mt0-5">{fileDescription}</p>
+                                        <RecoveryFileTabContent
+                                            recoverySecrets={recoverySecrets}
+                                            uploadedKeys={uploadedFileKeys}
+                                            setUploadedKeys={setUploadedFileKeys}
+                                            disabled={isSubmitting}
+                                            error={validator(
+                                                tab === tabs.indexOf('file')
+                                                    ? [
+                                                          requiredValidator(
+                                                              uploadedFileKeys.map((key) => key.getFingerprint()).join()
+                                                          ),
+                                                      ]
+                                                    : []
+                                            )}
+                                        />
+                                    </>
                                 ),
                             },
                         ].filter(isTruthy)}
