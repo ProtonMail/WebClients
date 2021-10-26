@@ -14,6 +14,10 @@ export interface Props extends DetailedHTMLProps<TextareaHTMLAttributes<HTMLText
     minRows?: number;
     autoGrow?: boolean;
 }
+
+/**
+ * @deprecated please use TextAreaTwo instead
+ */
 const TextArea = ({
     className = '',
     error,
