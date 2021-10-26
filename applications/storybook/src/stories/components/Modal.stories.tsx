@@ -228,6 +228,42 @@ export const ALotOfContent = () => {
     );
 };
 
+export const FullscreenOnMobile = () => {
+    const [open, setOpen] = useState(false);
+
+    return (
+        <div className="text-center">
+            <Button
+                className="mr0-5"
+                onClick={() => {
+                    setOpen(true);
+                }}
+            >
+                Open full screen on mobile modal
+            </Button>
+            <ModalTwo fullscreenOnMobile open={open} onClose={() => setOpen(false)}>
+                <ModalTwoHeader />
+                <ModalTwoContent>
+                    <ModalTwoTitle>I&apos;m full screen on mobile</ModalTwoTitle>
+                    <p>
+                        If I&apos;m not full screen you&apos;ll have to make your screen&apos;s width smaller. If you
+                        did that and I&apos;m still not fullscreen that means my developers did a shlopey job.
+                    </p>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium unde, blanditiis rem
+                        accusamus obcaecati enim amet, voluptatibus nemo facilis illum aut itaque in? Deleniti iure amet
+                        qui vero, blanditiis quos?
+                    </p>
+                </ModalTwoContent>
+                <ModalTwoFooter>
+                    <Button>Secondary action</Button>
+                    <Button color="norm">Primary action</Button>
+                </ModalTwoFooter>
+            </ModalTwo>
+        </div>
+    );
+};
+
 export const Alert = () => {
     const [open, setOpen] = useState(false);
 
