@@ -53,21 +53,21 @@ const BlackFridayModal = ({ offer, onSelect, ...rest }: Props) => {
     const driveAppName = getAppName(APPS.PROTONDRIVE);
 
     const DEAL_TITLE = {
-        [MONTHLY]: c('blackfriday: VPNspecialoffer Title').t`1-month plan`,
-        [YEARLY]: c('blackfriday: VPNspecialoffer Title').t`1-year plan`,
-        [TWO_YEARS]: c('blackfriday: VPNspecialoffer Title').t`2-year plan`,
+        [MONTHLY]: c('blackfriday: VPNspecialoffer Title').t`1 month`,
+        [YEARLY]: c('blackfriday: VPNspecialoffer Title').t`12 months`,
+        [TWO_YEARS]: c('blackfriday: VPNspecialoffer Title').t`24 months`,
     };
 
     const BILLED_DESCRIPTION = ({ cycle, amount, notice }: { cycle: Cycle; amount: ReactNode; notice: number }) => {
         const supNotice = <sup key="notice">{notice}</sup>;
         if (cycle === MONTHLY) {
-            return c('blackfriday: VPNspecialoffer Title').jt`Billed monthly${supNotice}`;
+            return c('blackfriday: VPNspecialoffer Title').jt`Billed at ${amount} for the first month.${supNotice}`;
         }
         if (cycle === YEARLY) {
-            return c('blackfriday: VPNspecialoffer Title').jt`Billed as ${amount} ${supNotice}`;
+            return c('blackfriday: VPNspecialoffer Title').jt`Billed at ${amount} for the first year.${supNotice}`;
         }
         if (cycle === TWO_YEARS) {
-            return c('blackfriday: VPNspecialoffer Title').jt`Billed as ${amount} ${supNotice}`;
+            return c('blackfriday: VPNspecialoffer Title').jt`Billed at ${amount} for the first 2 years.${supNotice}`;
         }
         return null;
     };
@@ -75,15 +75,15 @@ const BlackFridayModal = ({ offer, onSelect, ...rest }: Props) => {
     const AFTER_INFO = ({ amount, notice }: { amount: ReactNode; notice: number }) => {
         if (notice === 1) {
             return c('blackfriday: VPNspecialoffer Title')
-                .jt`(${notice}) Renews after 1 month at a standard monthly price of ${amount}`;
+                .jt`(${notice}) Renews after 2 years at a standard discounted 2-year price of ${amount} (33% discount)`;
         }
         if (notice === 2) {
             return c('blackfriday: VPNspecialoffer Title')
-                .jt`(${notice}) Renews after 2 years at a standard discounted 2-year price of ${amount} (33% discount)`;
+                .jt`(${notice}) Renews after 1 year at a standard discounted annual price of ${amount} (20% discount)`;
         }
         if (notice === 3) {
             return c('blackfriday: VPNspecialoffer Title')
-                .jt`(${notice}) Renews after 1 year at a standard discounted annual price of ${amount} (20% discount)`;
+                .jt`(${notice}) Renews after 1 month at a standard monthly price of ${amount}`;
         }
         return null;
     };
@@ -234,7 +234,7 @@ const BlackFridayModal = ({ offer, onSelect, ...rest }: Props) => {
                                 </Price>
                             );
                             const regularPrice = (
-                                <span className="text-strike" key={key}>
+                                <span className={classnames([offer.isVPNOnly === false && 'text-strike'])} key={key}>
                                     <Price currency={currency}>{withoutCouponMonthly * cycle}</Price>
                                 </span>
                             );
@@ -259,9 +259,11 @@ const BlackFridayModal = ({ offer, onSelect, ...rest }: Props) => {
                                         </span>
                                     ) : null}
                                     {popular ? (
-                                        <div className="text-uppercase absolute text-bold bg-primary pt0-75 pb0-5 mt0 mb0 text-center blackfriday-mostPopular">{c(
-                                            'blackfriday Title'
-                                        ).t`Most popular`}</div>
+                                        <div className="text-uppercase absolute text-bold bg-primary pt0-75 pb0-5 mt0 mb0 text-center blackfriday-mostPopular">
+                                            {offer.isVPNOnly
+                                                ? c('blackfriday Title').t`Best deal`
+                                                : c('blackfriday Title').t`Most popular`}
+                                        </div>
                                     ) : null}
                                     <div
                                         className={classnames([
@@ -303,12 +305,30 @@ const BlackFridayModal = ({ offer, onSelect, ...rest }: Props) => {
                                         >
                                             {getCTA(popular)}
                                         </Button>
-                                        <small className="text-bold">
-                                            {BILLED_DESCRIPTION({ cycle, amount: amountDue, notice: index + 1 })}
-                                        </small>
-                                        <small className="color-weak blackfriday-standardPrice mb1">{c(
-                                            'blackfriday Info'
-                                        ).jt`Standard price: ${regularPrice}`}</small>
+                                        {offer.isVPNOnly ? (
+                                            <>
+                                                <small className="text-bold text-center color-weak">
+                                                    {BILLED_DESCRIPTION({
+                                                        cycle,
+                                                        amount: amountDue,
+                                                        notice: index + 1,
+                                                    })}
+                                                </small>
+                                            </>
+                                        ) : (
+                                            <>
+                                                <small className="text-bold">
+                                                    {BILLED_DESCRIPTION({
+                                                        cycle,
+                                                        amount: amountDue,
+                                                        notice: index + 1,
+                                                    })}
+                                                </small>
+                                                <small className="color-weak blackfriday-standardPrice mb1">{c(
+                                                    'blackfriday Info'
+                                                ).jt`Standard price: ${regularPrice}`}</small>
+                                            </>
+                                        )}
                                     </div>
                                 </div>
                             );
