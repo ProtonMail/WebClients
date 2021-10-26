@@ -7,6 +7,7 @@ import { ACCESS_LEVEL } from './Link';
 export type CalendarCreateData = Omit<Calendar, 'Flags' | 'ID' | 'Type'> & { URL?: string };
 
 export interface CalendarCreateArguments extends CalendarCreateData {
+    IsImport?: 0 | 1;
     AddressID: string;
 }
 

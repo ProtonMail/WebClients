@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { ImportType, PROVIDER_INSTRUCTIONS } from '@proton/shared/lib/interfaces/EasySwitch';
+import { EASY_SWITCH_SOURCE, ImportType, PROVIDER_INSTRUCTIONS } from '@proton/shared/lib/interfaces/EasySwitch';
 
 import { useAddresses, useModals } from '../../hooks';
 import { ProviderCard } from '../../components';
@@ -21,6 +21,7 @@ const AccountEasySwitchSection = () => {
     const handleOAuthClick = () => {
         createModal(
             <ImportAssistantOauthModal
+                source={EASY_SWITCH_SOURCE.EASY_SWITCH_SETTINGS}
                 addresses={addresses}
                 defaultCheckedTypes={[ImportType.MAIL, ImportType.CALENDAR, ImportType.CONTACTS]}
             />
