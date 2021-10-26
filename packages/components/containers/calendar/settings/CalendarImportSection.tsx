@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { UserModel } from '@proton/shared/lib/interfaces';
-import { ImportType } from '@proton/shared/lib/interfaces/EasySwitch';
+import { EASY_SWITCH_SOURCE, ImportType } from '@proton/shared/lib/interfaces/EasySwitch';
 import { Calendar } from '@proton/shared/lib/interfaces/calendar';
 import { CALENDAR_APP_NAME } from '@proton/shared/lib/calendar/constants';
 
@@ -36,7 +36,7 @@ const CalendarImportSection = ({ activeCalendars, defaultCalendar, user }: Props
     const handleOAuthClick = () => {
         createModal(
             <ImportAssistantOauthModal
-                source="import-calendar-settings"
+                source={EASY_SWITCH_SOURCE.IMPORT_CALENDAR_SETTINGS}
                 addresses={addresses}
                 defaultCheckedTypes={[ImportType.CALENDAR]}
             />

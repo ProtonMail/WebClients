@@ -33,6 +33,7 @@ import {
     MailImportMapping,
     CalendarImportMapping,
     CreateImportPayload,
+    EASY_SWITCH_SOURCE,
 } from '@proton/shared/lib/interfaces/EasySwitch';
 import { getActiveAddresses } from '@proton/shared/lib/helpers/address';
 import { PRODUCT_NAMES, LABEL_COLORS } from '@proton/shared/lib/constants';
@@ -69,7 +70,7 @@ interface Props {
     addresses: Address[];
     onClose?: () => void;
     defaultCheckedTypes?: ImportType[];
-    source: string;
+    source: EASY_SWITCH_SOURCE;
 }
 
 const {
@@ -82,6 +83,17 @@ const {
 const { AUTHENTICATION, SELECT_IMPORT_TYPE, SUCCESS } = IAOauthModalModelStep;
 
 const DEFAULT_IMAP_PORT = 993;
+
+// This function returns an array of ImportType give a checked product map
+// e.g. { [MAIL]: true, [CALENDAR]: false } => [CALENDAR]
+const getCheckedProducts = (checkedTypes: CheckedProductMap): ImportType[] =>
+    (Object.keys(checkedTypes) as ImportType[]).reduce<ImportType[]>((acc, k) => {
+        if (checkedTypes[k]) {
+            return [...acc, k];
+        }
+
+        return acc;
+    }, []);
 
 const ImportAssistantOauthModal = ({ addresses, onClose = noop, defaultCheckedTypes = [], source, ...rest }: Props) => {
     const activeAddresses = getActiveAddresses(addresses);
@@ -224,13 +236,7 @@ const ImportAssistantOauthModal = ({ addresses, onClose = noop, defaultCheckedTy
                                 Code,
                                 RedirectUri,
                                 Source: source,
-                                Products: (Object.keys(checkedTypes) as ImportType[]).reduce<ImportType[]>((acc, k) => {
-                                    if (checkedTypes[k]) {
-                                        return [...acc, k];
-                                    }
-
-                                    return acc;
-                                }, []),
+                                Products: getCheckedProducts(checkedTypes),
                             })
                         );
 
