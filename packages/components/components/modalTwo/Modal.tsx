@@ -6,10 +6,12 @@ import {
     useEffect,
     useLayoutEffect,
     useState,
+    useRef,
 } from 'react';
 
 import { useChanged, useInstance } from '../../hooks';
 import { classnames, generateUID } from '../../helpers';
+import { useFocusTrap } from '../focus';
 import { Portal } from '../portal';
 import './Modal.scss';
 
@@ -60,8 +62,12 @@ const Modal = (props: ModalProps) => {
     } = props;
 
     const [exiting, setExiting] = useState(false);
-
     const id = useInstance(() => generateUID('modal'));
+    const dialogRef = useRef(null);
+    const focusTrapProps = useFocusTrap({
+        active: open,
+        rootRef: dialogRef,
+    });
 
     const modalContextValue: ModalContextValue = {
         id,
@@ -127,10 +133,12 @@ const Modal = (props: ModalProps) => {
         <Portal>
             <div className={backdropClassname} onAnimationEnd={handleAnimationEnd}>
                 <dialog
+                    ref={dialogRef}
                     className={dialogClassName}
                     aria-labelledby={id}
                     aria-describedby={`${id}-description`}
                     {...rest}
+                    {...focusTrapProps}
                 >
                     <ModalProvider {...modalContextValue}>{children}</ModalProvider>
                 </dialog>
