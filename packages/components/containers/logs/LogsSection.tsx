@@ -56,7 +56,7 @@ const LogsSection = () => {
 
         const filename = 'logs.csv';
         const csvString = data.join('\r\n');
-        const blob = new Blob([csvString], { type: 'text/csv;charset=utf-8;' });
+        const blob = new Blob([csvString], { type: 'text/csv;charset=utf-8' });
 
         downloadFile(blob, filename);
     };
