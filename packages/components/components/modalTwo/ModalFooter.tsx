@@ -1,10 +1,19 @@
-import { ComponentPropsWithoutRef } from 'react';
+import { ComponentPropsWithoutRef, useContext } from 'react';
 
 import { classnames } from '../../helpers';
-import './ModalFooter.scss'
+import { ModalContext } from './Modal';
+import './ModalFooter.scss';
 
-const ModalFooter = ({ className, ...rest }: ComponentPropsWithoutRef<'div'>) => (
-  <div className={classnames([ className, 'modal-two-footer flex-item-noshrink flex flex-justify-space-between'])} {...rest} />
-)
+const ModalFooter = ({ className: classNameProp, ...rest }: ComponentPropsWithoutRef<'div'>) => {
+    const { full } = useContext(ModalContext);
 
-export default ModalFooter
+    const className = classnames([
+        classNameProp,
+        'modal-two-footer flex-item-noshrink flex',
+        full && 'modal-two-footer--full',
+    ]);
+
+    return <div className={className} {...rest} />;
+};
+
+export default ModalFooter;

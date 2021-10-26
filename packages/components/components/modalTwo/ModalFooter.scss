@@ -1,3 +1,22 @@
+@import '~@proton/styles/scss/config';
+
 .modal-two-footer {
-	margin: 1.5em var(--margin) var(--margin) var(--margin);
+	margin: 1.5em var(--margin) calc(var(--margin) - 0.5em) var(--margin);
+	justify-content: space-between;
+	flex-wrap: wrap-reverse;
+
+	&--full {
+		@include respond-to($breakpoint-tiny, 'min') {
+			justify-content: flex-end;
+
+			& > *:not(:first-child) {
+				margin-inline-start: 0.5em;
+			}
+		}
+	}
+
+	& > * {
+		// When children are stacked
+		margin-block-end: 0.5em;
+	}
 }
