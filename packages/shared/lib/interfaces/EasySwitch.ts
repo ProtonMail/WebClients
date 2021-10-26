@@ -29,22 +29,19 @@ export enum ImportType {
 }
 
 export interface IAOauthModalModelImportData {
+    importerID: string;
     [ImportType.MAIL]: {
-        importerID: string;
         selectedPeriod: TIME_PERIOD;
         providerFolders: ImportedMailFolder[];
     };
     [ImportType.CALENDAR]: {
-        importerID: string;
         providerCalendars: ImportedCalendar[];
     };
     [ImportType.CONTACTS]: {
-        importerID: string;
         numContacts: number;
         numContactGroups: number;
     };
-    // [ImportType.DRIVE]?: {
-    //     importerID: string;
+    // [ImportType.DRIVE]: {
     // };
 }
 
@@ -68,6 +65,21 @@ export type ImportPayloadType =
 export type CheckedProductMap = {
     [K in ImportType.MAIL | ImportType.CALENDAR | ImportType.CONTACTS /* | ImportType.DRIVE */]: boolean;
 };
+
+export interface CreateImportPayload {
+    TokenID?: string;
+    [ImportType.MAIL]?: {
+        Email: string;
+        ImapHost: string;
+        ImapPort: number;
+        Sasl: AuthenticationMethod;
+        Code?: string;
+        AllowSelfSigned?: number;
+        RedirectUri?: string; // for reconnection
+    };
+    [ImportType.CALENDAR]?: {};
+    [ImportType.CONTACTS]?: {};
+}
 
 export interface LaunchImportPayload {
     ImporterID: string;
@@ -103,7 +115,6 @@ export interface MailImportMapping {
 }
 
 export interface MailImporterPayload {
-    ID?: string; // legacy
     AddressID: string;
     Code?: string;
     ImportLabel?: Pick<Label, 'Name' | 'Color' | 'Type'>;
@@ -240,8 +251,8 @@ export interface Importer {
         [ImportType.CALENDAR]?: ImporterActiveProps;
         [ImportType.CONTACTS]?: ImporterActiveProps;
     };
-    ImapHost?: string;
-    ImapPort?: string;
+    ImapHost: string;
+    ImapPort: string;
     Sasl: AuthenticationMethod;
     AllowSelfSigned: boolean;
     Email: string; // Soon to be deprecated
@@ -295,4 +306,13 @@ export interface ImportReport {
     State: ImportStatus;
     TotalSize: number;
     Product: ImportType;
+}
+
+export enum EASY_SWITCH_SOURCE {
+    EASY_SWITCH_SETTINGS = 'easy-switch-settings',
+    IMPORT_CONTACT_SETTINGS = 'import-contacts-settings',
+    CONTACTS_WIDGET_SETTINGS = 'contacts-widget-settings',
+    IMPORT_CALENDAR_SETTINGS = 'import-calendar-settings',
+    RECONNECT_IMPORT = 'reconnect-import',
+    IMPORT_CONTACTS_BUTTON = 'import-contacts-button', // fallback for Import Contacts button
 }

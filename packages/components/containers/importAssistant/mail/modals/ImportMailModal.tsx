@@ -70,9 +70,6 @@ interface ImporterFromServer {
     ID: string;
     ImapHost: string;
     ImapPort: number;
-    MailboxSize: {
-        [key: string]: number;
-    };
     Sasl: AuthenticationMethod;
 }
 
