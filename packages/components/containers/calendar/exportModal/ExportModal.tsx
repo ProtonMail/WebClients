@@ -79,7 +79,7 @@ export const ExportModal = ({ calendar, ...rest }: Props) => {
                     vtimezones: uniqueTimezones,
                 });
                 updateModel({ step: EXPORT_STEPS.FINISHED, exportErrors, error: undefined });
-                setCalendarBlob(new Blob([ics], { type: 'data:text/plain;charset=utf-8;' }));
+                setCalendarBlob(new Blob([ics], { type: 'text/plain;charset=utf-8' }));
             };
 
             return {

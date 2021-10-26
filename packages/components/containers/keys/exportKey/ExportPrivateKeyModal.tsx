@@ -13,7 +13,7 @@ const handleExport = async (name: string, privateKey: OpenPGPKey, password: stri
     const fingerprint = privateKey.getFingerprint();
     const filename = ['privatekey.', name, '-', fingerprint, KEY_FILE_EXTENSION].join('');
     const armoredEncryptedKey = await encryptPrivateKey(privateKey, password);
-    const blob = new Blob([armoredEncryptedKey], { type: 'data:text/plain;charset=utf-8;' });
+    const blob = new Blob([armoredEncryptedKey], { type: 'text/plain' });
     downloadFile(blob, filename);
 };
 
