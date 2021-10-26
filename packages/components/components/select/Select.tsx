@@ -59,6 +59,9 @@ export interface Props extends DetailedHTMLProps<SelectHTMLAttributes<HTMLSelect
     classNameContainer?: string;
 }
 
+/**
+ * @deprecated please use SelectTwo instead
+ */
 const Select = forwardRef<HTMLSelectElement, Props>(
     (
         {

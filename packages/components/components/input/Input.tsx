@@ -31,6 +31,9 @@ export interface Props extends DetailedHTMLProps<InputHTMLAttributes<HTMLInputEl
     loading?: boolean;
 }
 
+/**
+ * @deprecated please use InputTwo or InputFieldTwo instead
+ */
 const Input = forwardRef<HTMLInputElement, Props>(
     (
         {
