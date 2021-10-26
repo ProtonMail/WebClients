@@ -33,7 +33,7 @@ export const MnemonicPhraseStepButtons = ({ mnemonic }: { mnemonic: string }) =>
     const { createNotification } = useNotifications();
 
     const handleDownload = async () => {
-        const blob = new Blob([mnemonic], { type: 'data:text/plain;charset=utf-8;' });
+        const blob = new Blob([mnemonic], { type: 'text/plain;charset=utf-8' });
         downloadFile(blob, `proton_recovery_phrase.txt`);
     };
 
