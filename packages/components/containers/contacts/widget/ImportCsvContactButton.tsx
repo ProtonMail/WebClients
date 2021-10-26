@@ -1,5 +1,5 @@
 import { c } from 'ttag';
-import { ImportType } from '@proton/shared/lib/interfaces/EasySwitch';
+import { EASY_SWITCH_SOURCE, ImportType } from '@proton/shared/lib/interfaces/EasySwitch';
 import {
     Button,
     GoogleButton,
@@ -14,12 +14,12 @@ import ImportModal from '@proton/components/containers/contacts/import/ImportMod
 interface Props {
     hideEasySwitch?: boolean;
     onImportButtonClick?: () => void;
-    easySwitchSource?: string;
+    easySwitchSource?: EASY_SWITCH_SOURCE;
 }
 
 const ImportCsvContactButton = ({
     hideEasySwitch = false,
-    easySwitchSource = 'import-contacts-button',
+    easySwitchSource = EASY_SWITCH_SOURCE.IMPORT_CONTACTS_BUTTON,
     onImportButtonClick,
 }: Props) => {
     const { createModal } = useModals();

@@ -11,6 +11,7 @@ import {
     ImportType,
     OAuthProps,
     ImportToken,
+    EASY_SWITCH_SOURCE,
 } from '@proton/shared/lib/interfaces/EasySwitch';
 
 import { Alert, ConfirmModal, DropdownActions, Button } from '../../../components';
@@ -63,7 +64,7 @@ const ActiveImportRowActions = ({ activeImport }: Props) => {
                         Provider,
                         Code,
                         RedirectUri,
-                        Source: 'reconnect-import',
+                        Source: EASY_SWITCH_SOURCE.RECONNECT_IMPORT,
                         Products: [Product],
                     })
                 );
