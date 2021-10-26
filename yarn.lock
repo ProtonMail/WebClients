@@ -19124,15 +19124,15 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"jszip@npm:^3.2.2":
-  version: 3.6.0
-  resolution: "jszip@npm:3.6.0"
+"jszip@npm:^3.7.1":
+  version: 3.7.1
+  resolution: "jszip@npm:3.7.1"
   dependencies:
     lie: ~3.3.0
     pako: ~1.0.2
     readable-stream: ~2.3.6
     set-immediate-shim: ~1.0.1
-  checksum: dd82d93fa5c6a22e83d3393c86442a58f9e7effad1a3171abcf504901f3d9d6d618fb9a5ac7b0ceeee2abc15a167298101b5ada1e153ab8301bcfd80b3605f07
+  checksum: 67d737a82b294cc102e7451e32d5acbbab29860399be460cae598084327e6f2ea0c9bca2d3dad701da6a75ddf77f34c6a1dd7db0c3d5c0fec5998b7e56d6d59d
   languageName: node
   linkType: hard
 
@@ -24202,7 +24202,7 @@ fsevents@^1.2.7:
     idb: ^6.0.0
     jest: ^27.0.0
     jest-junit: ^12.0.0
-    jszip: ^3.2.2
+    jszip: ^3.7.1
     juice: ^8.0.0
     linkify-it: ^3.0.2
     loud-rejection: ^2.2.0
