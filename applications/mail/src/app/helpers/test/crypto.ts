@@ -1,5 +1,4 @@
 import * as openpgp from 'openpgp';
-import { init } from 'pmcrypto/lib/pmcrypto';
 import {
     OpenPGPKey,
     SessionKey,
@@ -18,8 +17,6 @@ import { addApiMock } from './api';
 import { base64ToArray } from '../base64';
 
 const { TYPE_INTERNAL, TYPE_EXTERNAL } = RECIPIENT_TYPES;
-
-init(openpgp);
 
 export interface GeneratedKey {
     name: string;
