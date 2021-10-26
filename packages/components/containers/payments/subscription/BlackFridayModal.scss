@@ -69,6 +69,10 @@ $price-size: 21;
 		--interaction-norm-hover: #3e8447 !important;
 		--interaction-norm-active: #2e7037 !important;
 		--interaction-norm-contrast: white !important;
+
+		.blackfriday-standardPrice .price {
+			text-decoration: none;
+		}
 	}
 
 	@include respond-to($breakpoint-medium) {
@@ -172,10 +176,6 @@ $price-size: 21;
 @include respond-to($breakpoint-small) {
 	.blackfriday-plan-container {
 		margin-block-end: 2em;
-
-		&:first-of-type {
-			order: 10;
-		}
 	}
 	.blackfriday-plan-container--productPayer {
 		margin-block-end: 0;
