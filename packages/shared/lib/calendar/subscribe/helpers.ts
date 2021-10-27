@@ -19,6 +19,8 @@ const {
     HTTP_REQUEST_FAILED_NOT_FOUND,
     HTTP_REQUEST_FAILED_GENERIC,
     HTTP_REQUEST_FAILED_INTERNAL_SERVER_ERROR,
+    PROTON_CALENDAR_NOT_FOUND,
+    PROTON_CALENDAR_NOT_DECRYPTABLE,
 } = CALENDAR_SUBSCRIPTION_STATUS;
 
 export const getIsCalendarSubscriptionEventManagerDelete = (
@@ -105,6 +107,14 @@ export const getCalendarIsNotSyncedInfo = (calendar: SubscribedCalendar) => {
         return getNotSyncedInfo(
             c('Calendar subscription not synced error').t`Calendar link is temporarily inaccessible`
         );
+    }
+
+    if (Status === PROTON_CALENDAR_NOT_FOUND) {
+        return getNotSyncedInfo(c('Calendar subscription not synced error').t`Calendar could not be found`);
+    }
+
+    if (Status === PROTON_CALENDAR_NOT_DECRYPTABLE) {
+        return getNotSyncedInfo(c('Calendar subscription not synced error').t`Calendar could not be decrypted`);
     }
 
     return getNotSyncedInfo(c('Calendar subscription not synced error').t`Failed to sync calendar`);
