@@ -136,6 +136,7 @@ const DashboardContainer = ({ setActiveSection, location }: SettingsPropsShared)
                 currency={Currency}
                 cycle={Cycle}
                 step={SUBSCRIPTION_STEPS.CUSTOMIZATION}
+                coupon={coupon}
             />
         );
     }, [loadingPlans, loadingSubscription, loadingOrganization]);
