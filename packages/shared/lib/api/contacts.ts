@@ -41,17 +41,19 @@ export const addContacts = ({
     Contacts,
     Overwrite,
     Labels,
+    Import,
 }: {
     Contacts: {
         Cards: Card[];
     }[];
     Overwrite: 0 | 1;
+    Import?: 0 | 1;
     Labels?: number;
     timeout?: number;
 }) => ({
     url: 'contacts/v4/contacts',
     method: 'post',
-    data: { Contacts, Overwrite, Labels },
+    data: { Contacts, Overwrite, Labels, Import },
 });
 
 export const updateContact = (contactID: string, { Cards }: { Cards: Card[] }) => ({
