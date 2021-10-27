@@ -31,6 +31,22 @@ function main({ SENTRY_DSN, COMMIT, APP_VERSION }: Pick<ProtonConfig, 'SENTRY_DS
             if (stack && stack.match(/ferdi|franz/i)) {
                 return null;
             }
+
+            // Remove the hash from the request URL and navigation breadcrumbs to avoid
+            // leaking the search parameters of encrypted searches
+            if (event.request && event.request.url) {
+                [event.request.url] = event.request.url.split('#');
+            }
+            if (event.breadcrumbs) {
+                event.breadcrumbs = event.breadcrumbs.map((breadcrumb) => {
+                    if (breadcrumb.category === 'navigation' && breadcrumb.data) {
+                        [breadcrumb.data.from] = breadcrumb.data.from.split('#');
+                        [breadcrumb.data.to] = breadcrumb.data.to.split('#');
+                    }
+                    return breadcrumb;
+                });
+            }
+
             return event;
         },
         ignoreErrors: [
