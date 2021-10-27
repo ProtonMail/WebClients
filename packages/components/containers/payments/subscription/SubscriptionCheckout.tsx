@@ -3,14 +3,14 @@ import { c, msgid } from 'ttag';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { orderBy } from '@proton/shared/lib/helpers/array';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
-import { PLAN_SERVICES, PLAN_TYPES, CYCLE, PLANS, ADDON_NAMES, APPS, BLACK_FRIDAY } from '@proton/shared/lib/constants';
+import { ADDON_NAMES, APPS, BLACK_FRIDAY, CYCLE, PLAN_SERVICES, PLAN_TYPES, PLANS } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { getTimeRemaining } from '@proton/shared/lib/date/date';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
-import { Plan, Currency, Cycle, PlanIDs, SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
+import { Currency, Cycle, Plan, PlanIDs, SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 
-import { Time, Info } from '../../../components';
+import { Badge, Info, Time } from '../../../components';
 import { useConfig } from '../../../hooks';
 import { getSubTotal } from './helpers';
 import CycleDiscountBadge from '../CycleDiscountBadge';
@@ -86,20 +86,34 @@ const SubscriptionCheckout = ({
         }
         return quantity;
     };
+    const plansConfigurationMap = Object.entries(planIDs).reduce<{ [key: string]: number }>(
+        (acc, [planID, quantity]) => {
+            const { Name } = plansMap[planID];
+            acc[Name] = getQuantity(Name, quantity);
+            return acc;
+        },
+        {}
+    );
     const subTotal =
         getSubTotal({
             cycle,
             plans,
-            plansMap: Object.entries(planIDs).reduce<{ [key: string]: number }>((acc, [planID, quantity]) => {
-                const { Name } = plansMap[planID];
-                acc[Name] = getQuantity(Name, quantity);
-                return acc;
-            }, {}),
+            plansMap: plansConfigurationMap,
         }) / cycle;
 
     const total = isUpdating
         ? (checkResult.AmountDue || 0) - (checkResult.Credit || 0)
         : (checkResult.Amount || 0) + (checkResult.CouponDiscount || 0);
+
+    const totalWithoutAnyDiscount =
+        getSubTotal({
+            cycle: CYCLE.MONTHLY,
+            plans,
+            plansMap: plansConfigurationMap,
+        }) * cycle;
+
+    const totalDiscount = 100 - Math.round((total * 100) / totalWithoutAnyDiscount);
+
     const monthlyTotal = ((checkResult.Amount || 0) + (checkResult.CouponDiscount || 0)) / cycle;
     const discount = monthlyTotal - subTotal;
     const collection = orderBy(
@@ -263,6 +277,9 @@ const SubscriptionCheckout = ({
                             title={
                                 <>
                                     <span className="mr0-5">{totalLabel}</span>
+                                    {!loading && coupon === BLACK_FRIDAY.COUPON_CODE && totalDiscount > 0 && (
+                                        <Badge type="success">-{totalDiscount}%</Badge>
+                                    )}
                                     {isUpdating ? (
                                         <Info
                                             buttonClass="mb0-5"
