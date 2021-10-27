@@ -35,8 +35,8 @@ import {
     minimalCache,
     render,
 } from '../../../helpers/test/helper';
-import { MessageExtended } from '../../../models/message';
 import ExtraEvents from './ExtraEvents';
+import { MessageStateWithData } from '../../../logic/messages/messagesTypes';
 
 const dummyUserName = 'test';
 const dummyUserEmailAddress = 'test@pm.me';
@@ -197,7 +197,7 @@ const getSetup = async ({
                 },
             ],
         },
-    } as MessageExtended;
+    } as MessageStateWithData;
 };
 
 describe('ICS widget', () => {

@@ -83,7 +83,6 @@ const useShowConfirmModal = () => {
  */
 const useSyncedMessageKeys = () => {
     const getMessage = useGetMessage();
-    // const messageCache = useMessageCache();
     const getMessageKeys = useGetMessageKeys();
 
     return (localID: string) => {

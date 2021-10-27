@@ -21,7 +21,6 @@ const ComposerContainer = ({ breakpoints, children }: Props) => {
     const [focusedMessageID, setFocusedMessageID] = useState<string>();
     const [width, height] = useWindowSize();
     const windowSize: WindowSize = { width, height };
-    // const messageCache = useMessageCache();
     const store = useStore();
     const getMessage = useGetMessage();
     useClickMailContent(() => setFocusedMessageID(undefined));
@@ -49,14 +48,6 @@ const ComposerContainer = ({ breakpoints, children }: Props) => {
             return newMessageIDs;
         });
     };
-
-    // const messageDeletionListener = useHandler((changedMessageID: string) => {
-    //     if (messageIDs.includes(changedMessageID) && !messageCache.has(changedMessageID)) {
-    //         handleClose(changedMessageID)();
-    //     }
-    // });
-
-    // useEffect(() => messageCache.subscribe(messageDeletionListener), [messageCache]);
 
     const messageDeletionListener = useHandler(() => {
         messageIDs.forEach((messageID) => {

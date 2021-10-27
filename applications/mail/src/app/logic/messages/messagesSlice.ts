@@ -1,36 +1,37 @@
 import { createSlice } from '@reduxjs/toolkit';
 import {
-    createDraft,
-    deleteDraft,
     documentInitializeFulfilled,
     documentInitializePending,
-    endSending,
-    endUndo,
     event,
     initialize,
     errors,
     load,
-    loadEmbedded,
-    loadRemoteDirect,
-    loadFakeProxy,
-    loadRemoteProxy,
+    verificationComplete,
+    resign,
+    resetVerification,
+} from './read/messagesReadActions';
+import { loadEmbedded, loadFakeProxy, loadRemoteDirect, loadRemoteProxy } from './images/messagesImagesActions';
+import {
+    optimisticApplyLabels,
+    optimisticMarkAs,
+    optimisticDelete,
+    optimisticEmptyLabel,
+    optimisticRestore,
+} from './optimistic/messagesOptimisticActions';
+import {
+    createDraft,
+    deleteDraft,
+    endSending,
+    endUndo,
     openDraft,
     removeInitialAttachments,
     draftSaved,
     sendModifications,
     sent,
     startSending,
-    verificationComplete,
-    resign,
-    optimisticApplyLabels,
-    optimisticMarkAs,
-    optimisticDelete,
-    optimisticEmptyLabel,
-    optimisticRestore,
-    resetVerification,
     updateScheduled,
     updateExpires,
-} from './messagesActions';
+} from './draft/messagesDraftActions';
 import {
     initialize as initializeReducer,
     errors as errorsReducer,
@@ -40,11 +41,25 @@ import {
     verificationComplete as verificationCompleteReducer,
     documentInitializePending as documentInitializePendingReducer,
     documentInitializeFulfilled as documentInitializeFulfilledReducer,
+    resign as resignReducer,
+    resetVerification as resetVerificationReducer,
+    reset as globalResetReducer,
+} from './read/messagesReadReducers';
+import {
     loadEmbeddedFulfilled,
     loadRemotePending,
     loadRemoteDirectFulFilled,
     loadFakeProxyFulFilled,
     loadRemoteProxyFulFilled,
+} from './images/messagesImagesReducers';
+import {
+    optimisticApplyLabels as optimisticApplyLabelsReducer,
+    optimisticMarkAs as optimisticMarkAsReducer,
+    optimisticDelete as optimisticDeleteReducer,
+    optimisticEmptyLabel as optimisticEmptyLabelReducer,
+    optimisticRestore as optimisticRestoreReducer,
+} from './optimistic/messagesOptimisticReducers';
+import {
     createDraft as createDraftReducer,
     openDraft as openDraftReducer,
     removeInitialAttachments as removeInitialAttachmentsReducer,
@@ -55,17 +70,9 @@ import {
     sent as sentReducer,
     endSending as endSendingReducer,
     deleteDraft as deleteDraftReducer,
-    resign as resignReducer,
-    optimisticApplyLabels as optimisticApplyLabelsReducer,
-    optimisticMarkAs as optimisticMarkAsReducer,
-    optimisticDelete as optimisticDeleteReducer,
-    optimisticEmptyLabel as optimisticEmptyLabelReducer,
-    optimisticRestore as optimisticRestoreReducer,
-    resetVerification as resetVerificationReducer,
-    reset as globalResetReducer,
     updateScheduled as updateScheduledReducer,
     updateExpires as updateExpiresReducer,
-} from './messagesReducers';
+} from './draft/messagesDraftReducers';
 import { MessagesState } from './messagesTypes';
 import { resetAction as globalReset } from '../actions';
 

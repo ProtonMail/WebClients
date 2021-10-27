@@ -53,7 +53,6 @@ export const useSendVerifications = (
     const { createNotification } = useNotifications();
     const getEncryptionPreferences = useGetEncryptionPreferences();
     const { contactsMap } = useContactCache();
-    // const messageCache = useMessageCache();
     const getMessage = useGetMessage();
 
     const preliminaryVerifications = useCallback(async (message: MessageStateWithData): Promise<void> => {

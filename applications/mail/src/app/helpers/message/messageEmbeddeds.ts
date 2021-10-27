@@ -216,14 +216,6 @@ export const markEmbeddedImagesAsLoaded = (
  */
 export const decryptEmbeddedImages = (
     images: MessageEmbeddedImage[],
-    // localID: string,
-    // messageVerification: MessageVerification | undefined,
-    // messageKeys: MessageKeys,
-    // messageCache: MessageCache,
-    // attachmentCache: AttachmentsCache,
-    // api: Api
-    // getAttachment: (ID: string) => DecryptResultPmcrypto | undefined,
-    // onUpdateAttachment: (ID: string, attachment: DecryptResultPmcrypto) => void,
     onLoadEmbeddedImages: (attachments: Attachment[]) => Promise<LoadEmbeddedResults>
 ) => {
     const attachments = unique(
@@ -239,28 +231,6 @@ export const decryptEmbeddedImages = (
         }
         return image;
     });
-
-    // const download = async () => {
-    //     const results = await Promise.all(
-    //         attachments.map(async (attachment) => {
-    //             const buffer = await get(attachment, messageVerification, messageKeys, attachmentCache, api);
-    //             return {
-    //                 attachment,
-    //                 blob: createBlob(attachment, buffer.data as Uint8Array),
-    //             };
-    //         })
-    //     );
-
-    //     const message = messageCache.get(localID);
-    //     if (message && message.messageImages) {
-    //         const embeddedImages = getEmbeddedImages(message);
-    //         const updatedEmbeddedImages = markEmbeddedImagesAsLoaded(embeddedImages, results);
-    //         const messageImages = updateImages(message.messageImages, undefined, undefined, updatedEmbeddedImages);
-    //         messageCache.set(localID, { ...message, messageImages });
-    //     }
-
-    //     return results;
-    // };
 
     const downloadPromise = onLoadEmbeddedImages(attachments);
 

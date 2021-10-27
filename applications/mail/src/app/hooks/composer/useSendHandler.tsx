@@ -14,7 +14,7 @@ import { SAVE_DRAFT_ERROR_CODES, SEND_EMAIL_ERROR_CODES, MESSAGE_ALREADY_SENT_IN
 import { PromiseHandlers } from '../usePromise';
 import { MessageState, MessageStateWithData } from '../../logic/messages/messagesTypes';
 import { useGetMessage } from '../message/useMessage';
-import { endSending, startSending } from '../../logic/messages/messagesActions';
+import { endSending, startSending } from '../../logic/messages/draft/messagesDraftActions';
 
 export interface UseSendHandlerParameters {
     modelMessage: MessageState;
@@ -61,7 +61,6 @@ export const useSendHandler = ({
 
     const onCompose = useOnCompose();
 
-    // const messageCache = useMessageCache();
     const getMessage = useGetMessage();
 
     const handleSendAfterUploads = useHandler(async (notifManager: SendingMessageNotificationManager) => {
@@ -167,7 +166,6 @@ export const useSendHandler = ({
         ensureMessageContent();
 
         try {
-            // updateMessageCache(messageCache, localID, { sending: true });
             dispatch(startSending(localID));
 
             // Closing the composer instantly, all the send process will be in background
@@ -193,7 +191,6 @@ export const useSendHandler = ({
                 // Receive all updates about the current message before "releasing" it to prevent any flickering
                 await call();
                 // Whatever happens once the composer is closed, the sending flag is reset when finished
-                // updateMessageCache(messageCache, localID, { sending: false });
                 dispatch(endSending(localID));
             };
             void asyncFinally();

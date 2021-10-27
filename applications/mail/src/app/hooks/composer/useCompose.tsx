@@ -19,7 +19,7 @@ import { isDirtyAddress } from '../../helpers/addresses';
 import { MESSAGE_ACTIONS } from '../../constants';
 import { MessageState, PartialMessageState } from '../../logic/messages/messagesTypes';
 import { useGetLocalID, useGetMessage } from '../message/useMessage';
-import { openDraft } from '../../logic/messages/messagesActions';
+import { openDraft } from '../../logic/messages/draft/messagesDraftActions';
 
 export interface ComposeExisting {
     existingDraft: MessageState;
@@ -64,7 +64,6 @@ export const useCompose = (
     const { createModal } = useModals();
     const dispatch = useDispatch();
     const createDraft = useDraft();
-    // const messageCache = useMessageCache();
     const goToSettings = useSettingsLink();
     const api = useApi();
     const { call } = useEventManager();
@@ -145,23 +144,6 @@ export const useCompose = (
                 return;
             }
 
-            // if (existingMessage) {
-            //     // Drafts have a different sanitization as mail content
-            //     // So we have to restart the sanitization process on a cached draft
-            //     updateMessageCache(messageCache, localID, {
-            //         initialized: undefined,
-            //         plainText: undefined,
-            //         document: undefined,
-            //         openDraftFromUndo: fromUndo,
-            //         isSentDraft: false,
-            //         messageImages: undefined,
-            //     });
-            // } else {
-            //     messageCache.set(localID, {
-            //         localID,
-            //         openDraftFromUndo: fromUndo,
-            //     });
-            // }
             dispatch(openDraft({ ID: localID, fromUndo }));
 
             openComposer(localID, returnFocusTo);

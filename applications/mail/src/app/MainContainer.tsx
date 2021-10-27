@@ -36,7 +36,6 @@ const MainContainer = () => {
 
     return (
         <ReduxProvider store={store}>
-            {/* <MessageProvider> */}
             <ContactProvider>
                 <EncryptedSearchProvider>
                     <MailContentRefProvider mailContentRef={mailContentRef}>
@@ -64,7 +63,6 @@ const MainContainer = () => {
                     </MailContentRefProvider>
                 </EncryptedSearchProvider>
             </ContactProvider>
-            {/* </MessageProvider> */}
         </ReduxProvider>
     );
 };

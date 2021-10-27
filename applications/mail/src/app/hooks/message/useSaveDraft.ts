@@ -15,43 +15,18 @@ import { deleteConversation } from '../../logic/conversations/conversationsActio
 import { useGetConversation } from '../conversation/useConversation';
 import { MessageState, MessageStateWithData } from '../../logic/messages/messagesTypes';
 import { useGetMessage } from './useMessage';
-import { deleteDraft, draftSaved } from '../../logic/messages/messagesActions';
+import { deleteDraft, draftSaved } from '../../logic/messages/draft/messagesDraftActions';
 
 const { ALL_DRAFTS } = MAILBOX_LABEL_IDS;
 
-// /**
-//  * Only takes technical stuff from the updated message
-//  */
-// export const mergeSavedMessage = (messageSaved: Message, messageReturned: Message): Message => ({
-//     ...messageSaved,
-//     ID: messageReturned.ID,
-//     Time: messageReturned.Time,
-//     ConversationID: messageReturned.ConversationID,
-//     LabelIDs: messageReturned.LabelIDs,
-// });
-
 export const useCreateDraft = () => {
     const api = useApi();
-    // const messageCache = useMessageCache();
     const dispatch = useDispatch();
     const { call } = useEventManager();
     const getMessageKeys = useGetMessageKeys();
 
     return useCallback(async (message: MessageStateWithData) => {
-        // const messageKeys = await getMessageKeys(message.data);
         const newMessage = await createMessage(message, api, getMessageKeys);
-        // const messageImages = replaceEmbeddedAttachments(message, newMessage.Attachments);
-        // updateMessageCache(messageCache, message.localID, {
-        //     data: {
-        //         ...mergeSavedMessage(message.data, newMessage),
-        //         Attachments: newMessage.Attachments,
-        //         Subject: newMessage.Subject,
-        //     },
-        //     ...messageKeys,
-        //     document: message.document,
-        //     plainText: message.plainText,
-        //     messageImages,
-        // });
         dispatch(draftSaved({ ID: message.localID, message: newMessage }));
         await call();
     }, []);
@@ -59,7 +34,6 @@ export const useCreateDraft = () => {
 
 const useUpdateDraft = () => {
     const api = useApi();
-    // const messageCache = useMessageCache();
     const dispatch = useDispatch();
     const getMessage = useGetMessage();
     const { call } = useEventManager();
@@ -70,24 +44,12 @@ const useUpdateDraft = () => {
         try {
             const messageFromCache = getMessage(message.localID) as MessageState;
             const previousAddressID = messageFromCache.data?.AddressID || '';
-            // const messageToSave = mergeMessages(messageFromCache, message) as MessageStateWithData;
             const messageToSave = {
                 ...messageFromCache,
                 ...message,
                 data: { ...messageFromCache.data, ...message.data },
             };
             const newMessage = await updateMessage(messageToSave, previousAddressID, api, getMessageKeys);
-            // updateMessageCache(messageCache, message.localID, {
-            //     ...newMessageKeys,
-            //     data: {
-            //         ...mergeSavedMessage(message.data, newMessage),
-            //         // If sender has changed, attachments are re-encrypted and then have to be updated
-            //         Attachments: newMessage.Attachments,
-            //     },
-            //     document: message.document,
-            //     plainText: message.plainText,
-            //     messageImages: message.messageImages,
-            // });
             dispatch(draftSaved({ ID: message.localID, message: newMessage }));
             await call();
         } catch (error: any) {
@@ -106,7 +68,6 @@ const useUpdateDraft = () => {
             }
 
             if (error.data.Code === SAVE_DRAFT_ERROR_CODES.DRAFT_DOES_NOT_EXIST) {
-                // messageCache.delete(message.localID);
                 dispatch(deleteDraft(message.localID));
             }
 
@@ -124,7 +85,6 @@ interface UseUpdateDraftParameters {
 }
 
 export const useSaveDraft = ({ onMessageAlreadySent }: UseUpdateDraftParameters = {}) => {
-    // const messageCache = useMessageCache();
     const getMessage = useGetMessage();
     const updateDraft = useUpdateDraft();
     const createDraft = useCreateDraft();
@@ -166,7 +126,6 @@ export const useDeleteDraft = () => {
                 throw error;
             }
 
-            // messageCache.delete(message.localID || '');
             dispatch(deleteDraft(message.localID));
 
             const conversationID = message.data?.ConversationID || '';

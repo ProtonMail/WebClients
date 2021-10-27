@@ -19,7 +19,7 @@ import { Alert, DateInput, ErrorZone, generateUID, Label, TimeInput } from '@pro
 import ComposerInnerModal from './ComposerInnerModal';
 import { SCHEDULED_MAX_DATE_DAYS } from '../../../constants';
 import { MessageState } from '../../../logic/messages/messagesTypes';
-import { updateScheduled } from '../../../logic/messages/messagesActions';
+import { updateScheduled } from '../../../logic/messages/draft/messagesDraftActions';
 
 const formatDateInput = (value: Date, locale: Locale) => {
     if (isToday(value)) {
@@ -39,8 +39,6 @@ interface Props {
 }
 
 const ComposerScheduleSendModal = ({ message, onClose, onSubmit }: Props) => {
-    // const messageCache = useMessageCache();
-    // const messageFromCache = messageCache.get(messageLocalID);
     const dispatch = useDispatch();
 
     const defaultDate =
@@ -64,13 +62,6 @@ const ComposerScheduleSendModal = ({ message, onClose, onSubmit }: Props) => {
         const minutes = getMinutes(time);
 
         tmpDate.setHours(hours, minutes, 0, 0);
-
-        // // Save scheduled date in the cache so that the user can have the date fields completed
-        // // if he cancel scheduling to re-schedule it later or if he edits the message and re-schedules it
-        // if (message && message.draftFlags) {
-        //     // message.draftFlags.scheduledAt = getUnixTime(tmpDate);
-        //     dispatch(updateScheduled({ ID: message.localID, scheduledAt: getUnixTime(tmpDate) }));
-        // }
 
         return tmpDate;
     }, [date, time]);
