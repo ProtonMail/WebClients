@@ -71,10 +71,13 @@ const EncryptedSearchField = ({ showMore, toggleShowMore, esState }: Props) => {
         // translator: the variable is a date, which is already localised
         <span className="color-weak mr0-5">{c('Info').jt`For messages newer than ${oldestDate}`}</span>
     );
-    const esToggleTooltip =
-        wasIndexingDone(user.ID) && !isBuilding
+    let esToggleTooltip = c('Info').t`Activation in progress`;
+    if (wasIndexingDone(user.ID) && !isBuilding) {
+        esToggleTooltip = esEnabled
             ? c('Info').t`Turn off content search. Activation progress won't be lost.`
-            : c('Info').t`Activation in progress`;
+            : c('Info').t`Turn on to search the content of your messages`;
+    }
+
     const esCTA = indexKeyExists(user.ID) ? (
         <Tooltip title={esToggleTooltip}>
             <span>
