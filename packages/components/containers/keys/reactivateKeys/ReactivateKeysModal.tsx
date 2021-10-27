@@ -196,7 +196,7 @@ const ReactivateKeysModal = ({ userKeys, keyReactivationRequests, onProcess, onC
 
         createNotification({
             type: 'info',
-            text: c('Info').t`Unable to decrypt. Recovery phrase is not associated with any keys.`,
+            text: c('Info').t`Recovery phrase is not associated with any keys.`,
         });
     };
 
@@ -315,8 +315,8 @@ const ReactivateKeysModal = ({ userKeys, keyReactivationRequests, onProcess, onC
                                       title: c('Label').t`Phrase`,
                                       content: (
                                           <>
-                                              <p className="mt0-5">{c('Info')
-                                                  .t`This is a 12-word phrase that you were prompted to set.`}</p>
+                                              <div className="mb1">{c('Info')
+                                                  .t`This is a 12-word phrase that you were prompted to set.`}</div>
                                               <MnemonicInputField
                                                   disableChange={isSubmitting}
                                                   value={mnemonic}
@@ -336,8 +336,8 @@ const ReactivateKeysModal = ({ userKeys, keyReactivationRequests, onProcess, onC
                                 title: c('Label').t`Password`,
                                 content: (
                                     <>
-                                        <p className="mt0-5">{c('Info')
-                                            .t`This is the password you used before the password reset.`}</p>
+                                        <div className="mb1">{c('Info')
+                                            .t`This is the password you used before the password reset.`}</div>
                                         <InputFieldTwo
                                             id="password"
                                             label={c('Label').t`Previous password`}
@@ -357,7 +357,7 @@ const ReactivateKeysModal = ({ userKeys, keyReactivationRequests, onProcess, onC
                                 title: c('Label').t`File`,
                                 content: (
                                     <>
-                                        <p className="mt0-5">{fileDescription}</p>
+                                        <div className="mb1">{fileDescription}</div>
                                         <RecoveryFileTabContent
                                             recoverySecrets={recoverySecrets}
                                             uploadedKeys={uploadedFileKeys}
