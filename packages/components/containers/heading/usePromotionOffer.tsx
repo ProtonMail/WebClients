@@ -26,8 +26,8 @@ const usePromotionOffer = (): EligibleOffer | undefined => {
     const api = useApi();
     const { APP_NAME } = useConfig();
     const [{ isFree, isDelinquent }] = useUser();
-    const [plans = []] = usePlans();
-    const [subscription] = useSubscription();
+    const [plans = [], loadingPlans] = usePlans();
+    const [subscription, loadingSubscription] = useSubscription();
     const [latestSubscription, setLatestSubscription] = useState<LatestSubscription | undefined>(undefined);
     const isBlackFridayPeriod = useBlackFridayPeriod();
     const isProductPayerPeriod = useProductPayerPeriod();
@@ -36,8 +36,10 @@ const usePromotionOffer = (): EligibleOffer | undefined => {
 
     const plansMap = toMap(plans, 'Name');
 
+    const loadingDependencies = loading || loadingPlans || loadingSubscription || vpnSpecialOfferFeature.loading;
+
     const hasBlackFridayOffer =
-        !loading &&
+        !loadingDependencies &&
         !!plans.length &&
         !!subscription &&
         !!latestSubscription &&
@@ -47,9 +49,9 @@ const usePromotionOffer = (): EligibleOffer | undefined => {
         getBlackFridayEligibility(subscription, latestSubscription);
 
     const hasProductPayerOffer =
-        !loading &&
+        !loadingDependencies &&
         !!plans.length &&
-        subscription &&
+        !!subscription &&
         !isDelinquent &&
         !hasBlackFridayOffer &&
         isProductPayerPeriod &&
