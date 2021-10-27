@@ -962,9 +962,6 @@
       "Forwarded": [
         "Doorgestuurd"
       ],
-      "Has attachments": [
-        "Heeft bijlagen"
-      ],
       "Replied to": [
         "Geantwoord aan"
       ],
@@ -1884,8 +1881,8 @@
       "Amount below minimum.": [
         "Bedrag onder het minimum."
       ],
-      "Attachments are limited to 25 MB.": [
-        "Het limiet voor de grootte van bijlagen is 25 MB."
+      "Attachments are limited to 25 MB": [
+        ""
       ],
       "Authentication canceled.": [
         "Authenticatie geannuleerd."
@@ -1908,8 +1905,8 @@
       "Can't validate phone, try again later": [
         "Kan telefoon niet valideren, probeer het later opnieuw"
       ],
-      "Checkout expired, please try again.": [
-        "Checkout is verlopen, probeer het opnieuw."
+      "Checkout expired, please try again": [
+        ""
       ],
       "Choose a date in the future.": [
         "Kies een datum in de toekomst."
@@ -1930,11 +1927,11 @@
       "Contact signature not verified": [
         "Handtekening van contact niet geverifieerd"
       ],
-      "Contact your organization’s administrator to resolve this.": [
-        "Neem contact op met de beheerder van uw bedrijf om dit probleem op te lossen."
+      "Contact your organization’s administrator to resolve this": [
+        ""
       ],
-      "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser": [
-        "Zoeken op inhoud kan niet worden ingeschakeld in deze browser. Gelieve de private browsing modus te verlaten of een andere browser te gebruiken"
+      "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
+        ""
       ],
       "Could not find address ${ email }.": [
         "Kon adres ${ email } niet vinden."
@@ -1970,14 +1967,14 @@
       "Error in one of the conditions": [
         "Fout in de volgende voorwaarden"
       ],
-      "Error while saving draft. Please try again": [
+      "Error while saving draft. Please try again.": [
         ""
       ],
-      "Error while sending the message. Message is not sent": [
-        "Fout tijdens het versturen van het bericht. Bericht is niet verzonden"
+      "Error while sending the message. Message is not sent.": [
+        ""
       ],
-      "Error while uploading attachments. Message is not sent": [
-        "Fout tijdens het uploaden van bijlagen. Bericht is niet verzonden"
+      "Error while uploading attachments. Message is not sent.": [
+        ""
       ],
       "Failed to encrypt attachment. Please try again.": [
         "Fout tijdens het versleutelen van de bijlage. Probeer alstublieft opnieuw."
@@ -2012,8 +2009,8 @@
       "Invalid expiration date": [
         "Ongeldige vervaldatum"
       ],
-      "Invalid expiration time.": [
-        "Ongeldige verlooptijd."
+      "Invalid expiration time": [
+        ""
       ],
       "Invalid name": [
         "Ongeldige naam"
@@ -2037,8 +2034,8 @@
       "Message needs to be sent first": [
         "Bericht moet eerst verzonden worden"
       ],
-      "Message passwords do not match.": [
-        "Wachtwoorden van het bericht komen niet overeen."
+      "Message passwords do not match": [
+        ""
       ],
       "Message processing error.": [
         "Verwerkingsfout in bericht."
@@ -2052,8 +2049,8 @@
       "Network error: Please check your connection and try again.": [
         "Netwerkfout. Controleer uw verbinding en probeer het opnieuw."
       ],
-      "No address with keys available to compose a message.": [
-        "Geen adres met sleutels beschikbaar om een bericht aan te maken."
+      "No address with keys available to compose a message": [
+        ""
       ],
       "No key retrieved for internal user is valid for sending": [
         "Geen enkele ontvangen sleutel van interne gebruiker is geldig om mee te verzenden"
@@ -2186,8 +2183,8 @@
       "The label name is too long. Please choose a different name.": [
         ""
       ],
-      "The maximum expiration is 4 weeks.": [
-        "De maximale verlooptijd is 4 weken."
+      "The maximum expiration is 4 weeks": [
+        ""
       ],
       "The minimum amount of credit that can be added is ${ _price }": [
         "Het minimumbedrag dat kan worden toegevoegd is ${ _price }"
@@ -2204,8 +2201,8 @@
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         ""
       ],
-      "There has been an issue with content search. Default search has been used instead": [
-        "Er is een probleem opgetreden met het zoeken naar inhoud. In plaats daarvan is de standaard zoekopdracht gebruikt"
+      "There has been an issue with content search. Default search has been used instead.": [
+        ""
       ],
       "There was an error when exporting the contacts vCards": [
         "Er is een fout opgetreden bij het exporteren van de contacten vCards"
@@ -2222,8 +2219,8 @@
       "This label name is not available. Please choose a different name": [
         ""
       ],
-      "This message has already been sent.": [
-        "Dit bericht is al verstuurd."
+      "This message has already been sent": [
+        ""
       ],
       "This message has already been sent. A new draft has been saved.": [
         "Dit bericht is al verzonden. Er is een nieuw ontwerp opgeslagen."
@@ -2231,8 +2228,8 @@
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "Dit bericht kan links bevatten die niet op de juiste wijze geopend worden door uw huidige browser"
       ],
-      "Too many active filters. Please upgrade to a paid plan to activate more filters": [
-        "Te veel actieve filters. Upgrade naar een betaald abonnement om meer filters te activeren"
+      "Too many active filters. Please upgrade to a paid plan to activate more filters.": [
+        ""
       ],
       "Trusted keys are not valid for sending": [
         "Vertrouwde sleutels zijn niet geldig om mee te verzenden"
@@ -2252,9 +2249,9 @@
       "You can't send vCards of more than 10 contacts": [
         "U kunt geen vCards van meer dan 10 contacten verzenden"
       ],
-      "You cannot open more than ${ maxActiveComposer } composer window at a time.": [
-        "U kunt niet meer danéén componistenvenster tegelijk openen.",
-        "U kunt niet meer dan ${ maxActiveComposer } componistenvensters tegelijk openen."
+      "You cannot open more than ${ maxActiveComposer } composer window at a time": [
+        "",
+        ""
       ],
       "You did not provide a file.": [
         "U heeft geen bestand geselecteerd."
@@ -2271,8 +2268,8 @@
       "Your import will not be processed.": [
         "Uw import zal niet worden verwerkt."
       ],
-      "Your search matched too many results. Please limit your search and try again": [
-        "Uw zoekopdracht leverde te veel resultaten op. Verfijn uw zoekopdracht en probeer het opnieuw"
+      "Your search matched too many results. Please limit your search and try again.": [
+        ""
       ]
     },
     "Error display when performing invalid move on message": {
@@ -3316,7 +3313,7 @@
       "Image URL": [
         "Afbeeldings-URL"
       ],
-      "Images have been removed because they are not allowed in auto-reply.": [
+      "Images have been removed because they are not allowed in auto-reply": [
         ""
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
@@ -3422,6 +3419,9 @@
       ],
       "Message sent": [
         "Bericht verzonden"
+      ],
+      "Message sent.": [
+        ""
       ],
       "Message will be sent ${ dateString } at ${ formattedTime }": [
         ""
@@ -6099,8 +6099,8 @@
       "Contacts deleted": [
         "Contactpersonen verwijderd"
       ],
-      "Conversation added to ${ labelName }": [
-        "Gesprek toegevoegd aan ${ labelName }"
+      "Conversation added to ${ labelName }.": [
+        ""
       ],
       "Conversation deleted": [
         "Gesprek verwijderd"
@@ -6108,8 +6108,8 @@
       "Conversation marked as read.": [
         ""
       ],
-      "Conversation marked as Starred": [
-        "Gesprek gemarkeerd met Ster"
+      "Conversation marked as Starred.": [
+        ""
       ],
       "Conversation marked as unread.": [
         ""
@@ -6123,8 +6123,8 @@
       "Conversation moved to spam and sender added to Block List.": [
         "Conversatie verplaatst naar spam en afzender toegevoegd aan de blokkadelijst."
       ],
-      "Conversation removed from ${ labelName }": [
-        "Gesprek verwijderd van ${ labelName }"
+      "Conversation removed from ${ labelName }.": [
+        ""
       ],
       "Draft deleted": [
         "Concept verwijderd"
@@ -6150,8 +6150,8 @@
       "Mail list unsubscribed": [
         "Afgemeld van nieuwsbrieven"
       ],
-      "Message added to ${ labelName }": [
-        "Bericht toegevoegd aan ${ labelName }"
+      "Message added to ${ labelName }.": [
+        ""
       ],
       "Message content search activated": [
         "Zoeken naar berichtinhoud geactiveerd"
@@ -6165,8 +6165,8 @@
       "Message marked as read.": [
         ""
       ],
-      "Message marked as Starred": [
-        "Bericht gemarkeerd met ster"
+      "Message marked as Starred.": [
+        ""
       ],
       "Message marked as unread.": [
         ""
@@ -6180,8 +6180,8 @@
       "Message moved to spam and sender added to Block List.": [
         "Bericht verplaatst naar spam en afzender toegevoegd aan de blokkadelijst."
       ],
-      "Message removed from ${ labelName }": [
-        "Bericht verwijderd van ${ labelName }"
+      "Message removed from ${ labelName }.": [
+        ""
       ],
       "Move ${ selectionCount } conversation": [
         "Verplaats ${ selectionCount } gesprek",

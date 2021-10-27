@@ -187,6 +187,9 @@
       "Download": [
         "İndir"
       ],
+      "Drive Locked": [
+        ""
+      ],
       "Edit": [
         "Düzenle"
       ],
@@ -1097,8 +1100,8 @@
       "Can't validate phone, try again later": [
         "Telefon numarası doğrulanamıyor, daha sonra tekrar deneyin"
       ],
-      "Checkout expired, please try again.": [
-        "Ödeme zaman aşımına uğradı, lütfen tekrar deneyin."
+      "Checkout expired, please try again": [
+        ""
       ],
       "Contact could not be saved": [
         "Kişi kaydedilemedi"
@@ -1687,6 +1690,10 @@
       "${ vpnAppName } Free": [
         "${ vpnAppName } Ücretsiz"
       ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } üye)",
+        "(${ memberCount } üye)"
+      ],
       "(Mail + VPN)": [
         "(Posta + VPN)"
       ],
@@ -1753,6 +1760,9 @@
       "Amount below minimum (${ amount }).": [
         "Tutar, en düşük tutarın altında (${ amount })."
       ],
+      "An active recovery file": [
+        "Geçerli bir kurtarma dosyası"
+      ],
       "and": [
         ""
       ],
@@ -1768,6 +1778,9 @@
       ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Temel gezinme ve eylemler, ayarlardaki klavye kısayollarının etkin olup olmamasından bağımsız olarak kullanılabilir kalır."
+      ],
+      "Because ${ appName } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
+        "${ appName } uçtan uca şifreli olduğundan, dosyalarınıza erişemeyiz ve onların şifresini çözemeyiz. Şifre yenilemesi sonrası Sürücü kilidini açmak için belirtilenlerden birine sahip olmanız gerekir:"
       ],
       "Billed as ${ billedPrice } every 2 years": [
         "Her 2 yılda bir ${ billedPrice } olarak faturalandırılır"
@@ -1820,6 +1833,9 @@
       "Connections": [
         "Bağlantılar"
       ],
+      "Continue using ${ appName } and unlock drive later": [
+        "${ appName } kullanmayı sürdür ve sürücünün kilidini daha sonra aç"
+      ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "",
         ""
@@ -1847,6 +1863,10 @@
       ],
       "Creating share": [
         ""
+      ],
+      "Delete drive": [
+        "Sürücüyü sil",
+        "Sürücüleri sil"
       ],
       "Discount applied to your subscription with coupon ${ code }": [
         "${ code } kuponu ile aboneliğinize indirim uygulandı"
@@ -1943,6 +1963,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "E-postayı gelen kutunuzda bulamazsanız, lütfen spam klasörünüzü kontrol edin."
+      ],
+      "If you have one of these, continue to Proton account setting to\ncontinue the unblock process.": [
+        "Bunlardan birine sahipseniz, blok kaldırma işlemini sürdürmek için Proton hesabı ayarıyla devam edin."
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         ""
@@ -2071,6 +2094,9 @@
       "of": [
         "/"
       ],
+      "One of your encrypted drives is locked. This is most likely due to a recent password reset.${ BrElement }\n${ BrElement }\n${ questionText }": [
+        "Şifreli sürücülerinizden biri kilitli. Bu büyük olasılıkla, yakın zamandaki şifre yenilemesinden kaynaklı.${ BrElement }\n${ BrElement }\n${ questionText }"
+      ],
       "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
         "Bu ayarları yalnızca ProtonMail dışındaki alıcılarla PGP kullanıyorsanız değiştirin."
       ],
@@ -2085,6 +2111,9 @@
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Ödemeler TLS şifrelemesi ve İşviçre gizlilik yasaları ile korunmaktadır."
+      ],
+      "Permanently delete all files in your drive": [
+        "Sürücüdeki tüm dosyaları kalıcı olarak sil"
       ],
       "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
         "PGP/Satır içi yalnızca Düz Metin formatıyla uyumludur. ProtonMail'in her zaman şifrelenmiş mesajları imzaladığını lütfen unutmayın."
@@ -2183,8 +2212,8 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Sadık bir kullanıcı olduğunuz için, hesabınızda ek özellikler etkinleştirilmiştir."
       ],
-      "Some of your files are no longer accessible. Restore the access to your files. ${ startRecoveryButton }": [
-        ""
+      "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
+        "Dosyalarınızdan bazıları artık erişilebilir değil. Dosyaları erişimi geri getirin. ${ StartRecoveryButton }"
       ],
       "Something went wrong, please try again later.": [
         ""
@@ -2274,6 +2303,9 @@
       "Trash": [
         "Çöp Kutusu"
       ],
+      "Unlock drive to recover files": [
+        "Dosyaları kurtarmak için sürücünün kilidini aç"
+      ],
       "Unsupported file": [
         "Desteklenmeyen dosya"
       ],
@@ -2321,6 +2353,9 @@
       ],
       "What do you want to import from your Google account?": [
         ""
+      ],
+      "What would you like to do?": [
+        "Ne yapmak istersiniz?"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Yeni bir doğrulama kodu almak veya alternatif bir doğrulama yöntemi kullanmak ister misiniz?"
@@ -2409,14 +2444,20 @@
       "Your file is being downloaded.": [
         ""
       ],
-      "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ mailSettingsLink }": [
-        ""
+      "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ KeyReactivationButton }": [
+        "Şifre yenilemesinden kaynaklı dosyalarınız erişilebilir değil. Erişimi yeniden sağlamak için eski şifreleme anahtarını yeniden yükleyin. ${ KeyReactivationButton }"
       ],
       "Your files will be encrypted and then saved.": [
         "Dosyalarınız şifrelenecek ve ardından kaydedilecektir."
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Telefon numaranız yalnızca bu tek seferlik doğrulama için kullanılacaktır."
+      ],
+      "Your previous password": [
+        "Bir önceki şifreniz"
+      ],
+      "Your previous recovery phrase": [
+        "Bir önceki kurtarma kelimeniz"
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "Proton hesabınız şu anda beklemede. Hesabınızı kullanmaya devam etmek için, lütfen gecikmiş faturaları ödeyin."
@@ -2745,6 +2786,10 @@
       "CVV code": [
         "CVV kodu"
       ],
+      "Delete Drive?": [
+        "Sürücü silinsin mi?",
+        "Sürücüler silinsin mi?"
+      ],
       "Display name": [
         "Görünen ad"
       ],
@@ -2952,6 +2997,9 @@
       "Text": [
         "Metin"
       ],
+      "This will permanently delete all files in your locked drive.": [
+        "Bu, kilitli sürücünüzdeki bütün dosyaları kalıcı olarak silecek."
+      ],
       "To: ${ emailAddress }": [
         ""
       ],
@@ -2966,6 +3014,15 @@
       ],
       "Unknown file": [
         "Bilinmeyen dosya"
+      ],
+      "Unlock Drive": [
+        "Sürücünün kilidini aç"
+      ],
+      "Unlock drive (recommended)": [
+        "Sürücünün kilidini aç (önerilir)"
+      ],
+      "Unlock later": [
+        "Kilidi daha sonra aç"
       ],
       "Up to ${ parentLinkName }": [
         ""
@@ -2990,6 +3047,9 @@
       ],
       "What happened?": [
         "Ne oldu?"
+      ],
+      "Yes, I want to permanently delete\nmy old files": [
+        "Evet, eski dosyalarımı kalıcı olarak silmek istiyorum"
       ],
       "ZIP": [
         "ZIP"
@@ -3256,7 +3316,7 @@
       "\"${ firstItemName }\" restored from trash": [
         "\"${ firstItemName }\" çöp kutusundan yeniden yüklendi"
       ],
-      "${ deletedCount } link to your file was deleted.": [
+      "${ deletedCount } link to your file was deleted": [
         "",
         ""
       ],
@@ -3272,7 +3332,7 @@
         "",
         ""
       ],
-      "${ failedCount } link to your file failed to be deleted.": [
+      "${ failedCount } link to your file failed to be deleted": [
         "",
         ""
       ],
@@ -3379,14 +3439,17 @@
       "Not enough space to upload ${ formattedTotal }": [
         ""
       ],
-      "The link to your file failed to be deleted.": [
+      "The link to your file failed to be deleted": [
         ""
       ],
-      "The link to your file was deleted.": [
+      "The link to your file was deleted": [
         ""
       ],
-      "Your settings have been changed successfully.": [
-        "Ayarlarınız başarıyla değiştirildi."
+      "Your old files will be deleted in 72 hours": [
+        "Eski dosyalarınız 72 saat içerisinde silinecek"
+      ],
+      "Your settings have been changed successfully": [
+        ""
       ]
     },
     "Onboarding Proton": {
@@ -3810,11 +3873,11 @@
       "Preferences saved": [
         "Tercihler kaydedildi"
       ],
-      "Recovery has started.": [
+      "Recovery has started": [
         ""
       ],
-      "The link to your file was successfully copied.": [
-        "Dosya bağlantınız başarıyla kopyalandı."
+      "The link to your file was successfully copied": [
+        ""
       ],
       "Verification successful": [
         "Doğrulama başarılı"
@@ -3822,8 +3885,8 @@
       "You have successfully unsubscribed": [
         "Aboneliğinizi başarıyla iptal ettiniz"
       ],
-      "Your files were successfully recovered to \"My files\".": [
-        "Dosyalarınız başarıyla \"Dosyalarım\" klasörüne geri yüklendi."
+      "Your files were successfully recovered to \"My files\"": [
+        ""
       ]
     },
     "Suffix for price": {
@@ -4383,6 +4446,11 @@
         "ZIP / posta kodu"
       ]
     },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "Bugün"
+      ]
+    },
     "Tooltip": {
       "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
         "Nerede olduğunuz fark etmeksizin coğrafi olarak engellenen içeriğe (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube vb.) erişin."
@@ -4639,6 +4707,9 @@
       ],
       "The contact failed to load.": [
         "Kişi yüklenemedi."
+      ],
+      "The date and time settings on your device are out of sync. ${ learnMore }": [
+        "Aygıtınızdaki tarih ve saat ayarlarının eşzamanlaması etkin değil. ${ learnMore }"
       ],
       "The decryption of the encrypted content failed.": [
         "Şifrelenmiş içeriğin şifresi çözülemedi."

@@ -57,7 +57,7 @@
         "Chat med os"
       ],
       "Check import progress": [
-        ""
+        "Kontroller importforløbet"
       ],
       "Choose a file or drag it here": [
         "Vælg en fil eller træk den hertil"
@@ -129,7 +129,7 @@
         "Opret begivenhed"
       ],
       "Customize": [
-        ""
+        "Tilpas"
       ],
       "Decrease": [
         "Formindsk"
@@ -173,7 +173,7 @@
         "Rediger e-mailadresse"
       ],
       "Edit label": [
-        ""
+        "Redigér etikette"
       ],
       "Edit phone number": [
         "Rediger telefonnummer"
@@ -212,13 +212,13 @@
         "Skjul avancerede PGP-indstillinger"
       ],
       "Hide folders": [
-        ""
+        "Skjul mapper"
       ],
       "Hide info": [
         "Skjul info"
       ],
       "Hide labels": [
-        ""
+        "Skjul etiketter"
       ],
       "Hide time zones": [
         "Skjul tidszoner"
@@ -233,7 +233,7 @@
         "Importér"
       ],
       "Import from .csv or vCard": [
-        ""
+        "Importer fra .csv eller vCard"
       ],
       "Increase": [
         "Forøg"
@@ -335,7 +335,7 @@
         "Sidste år"
       ],
       "Quit": [
-        ""
+        "Afslut"
       ],
       "Re-sign": [
         "Gensignér"
@@ -365,7 +365,7 @@
         "Fjern denne deltager"
       ],
       "Rename": [
-        ""
+        "Omdøb"
       ],
       "Report a problem": [
         "Anmeld et problem"
@@ -401,13 +401,13 @@
         "Vis avancerede PGP-indstillinger"
       ],
       "Show folders": [
-        ""
+        "Vis mapper"
       ],
       "Show info": [
         "Vis info"
       ],
       "Show labels": [
-        ""
+        "Vis etiketter"
       ],
       "Show less": [
         "Vis mindre"
@@ -434,7 +434,7 @@
         "Start opsætning"
       ],
       "Stay": [
-        ""
+        "Bliv her"
       ],
       "Submit": [
         "Indsend"
@@ -634,7 +634,7 @@
     },
     "Attendee role": {
       "Optional": [
-        ""
+        "Valgfri"
       ]
     },
     "Beta access description": {
@@ -937,7 +937,7 @@
     },
     "Confirm modal title": {
       "Quit import customization?": [
-        ""
+        "Afslut importtilpasning?"
       ]
     },
     "Contact field label": {
@@ -1141,8 +1141,8 @@
       ]
     },
     "Disabled calendar name suffix": {
-      "disabled": [
-        "deaktiveret"
+      "Disabled": [
+        "Deaktiveret"
       ]
     },
     "Disabled calendar tooltip": {
@@ -1295,13 +1295,13 @@
         "Godkendelsesfejl."
       ],
       "Calendar limit reached": [
-        ""
+        "Kalendergrænse nået"
       ],
       "Calendar primary private key is not decrypted": [
         "Kalenders primære private nøgle er ikke dekrypteret"
       ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
-        ""
+        "Kan ikke oprette nye kalendere for alle importerede kalendere på grund af begrænsningen for personlige kalendere."
       ],
       "Can't validate email, try again later": [
         "Kan ikke bekræfte e-mail, prøv igen senere"
@@ -1312,8 +1312,8 @@
       "Cancellation failed to be sent": [
         "Aflysning kunne ikke sendes"
       ],
-      "Checkout expired, please try again.": [
-        "Checkout udløbet, prøv venligst igen."
+      "Checkout expired, please try again": [
+        ""
       ],
       "Contact could not be saved": [
         "Kontakt kunne ikke gemmes"
@@ -1331,8 +1331,8 @@
         "Dekrypteringsfejl: Dekryptering af denne begivenheds indhold mislykkedes."
       ],
       "Deselect at least ${ calendarToFixCount } calendar or": [
-        "",
-        ""
+        "Fravælg mindst ${ calendarToFixCount } kalender eller",
+        "Fravælg mindst ${ calendarToFixCount } kalendere eller"
       ],
       "Email address disabled": [
         "E-mailadresse deaktiveret"
@@ -1365,7 +1365,7 @@
         "Kunne ikke hente original forekomst i serie"
       ],
       "Folder name cannot be empty": [
-        ""
+        "Mappenavn må ikke være tomt"
       ],
       "Image upload failed": [
         "Billed-upload mislykkedes"
@@ -1419,11 +1419,11 @@
         "Det er kun muligt at flytte begivenheder mellem ${ minDateString } - ${ maxDateString }"
       ],
       "Label name cannot be empty": [
-        ""
+        "Etikettenavn må ikke være tomt"
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
-        "",
-        ""
+        "Flet mindst ${ calendarToFixCount } kalender med en eksisterende Proton-kalender",
+        "Flet mindst ${ calendarToFixCount } kalendere med eksisterende Proton-kalendere"
       ],
       "Missing signature": [
         "Manglende signatur"
@@ -1482,8 +1482,8 @@
         "Opret en adresse først."
       ],
       "Please fix the highlighted conflict to proceed.": [
-        "",
-        ""
+        "Løs venligst den fremhævede konflikt for at fortsætte.",
+        "Løs venligst de fremhævede konflikter for at fortsætte."
       ],
       "Preferences could not be saved": [
         "Præferencer kunne ikke gemmes"
@@ -1516,10 +1516,10 @@
         "Nogle grupper kunne ikke slettes"
       ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
-        ""
+        "Nogle af dine etikettenavne er ikke tilgængelige. Tilpas venligst importen for at redigere disse navne."
       ],
       "Some of your label names exceed ProtonMail's maximum character limit. Please customize the import to edit these names.": [
-        ""
+        "Nogle af dine etikettenavne overskrider ProtonMail's maksimale tegngrænse. Tilpas venligst importen for at ændre disse navne."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Noget gik galt. ${ refresh } siden for at fortsætte. Ser du fortsat denne fejlmeddelelse, bedes du kontakte vores ${ supportTeam }."
@@ -1534,10 +1534,10 @@
         "Din aktuelle browser tillader ikke fuld godkendelse af betalingen. Benyt en anden browser eller log ind via en computer."
       ],
       "The folder name is too long. Please choose a different name.": [
-        ""
+        "Mappenavnet er for langt. Vælg venligst et andet navn."
       ],
       "The label name is too long. Please choose a different name.": [
-        ""
+        "Etikettenavnet er for langt. Vælg venligst et andet navn."
       ],
       "The minimum amount of credit that can be added is ${ _price }": [
         "Det mindste kreditstørrelse, der kan tilføjes, er ${ _price }"
@@ -1552,7 +1552,7 @@
         "Afsendelsesnøglen er ikke gyldig"
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
-        ""
+        "Der er for mange mapper i din eksterne konto. Rediger venligst importen for at slette nogle mapper."
       ],
       "There was an error when exporting the contacts vCards": [
         "Der opstod en fejl under eksport af kontakternes vCards"
@@ -1564,10 +1564,10 @@
         "Dette felt kræver minimum ${ minimumLength } tegn."
       ],
       "This folder name is not available. Please choose a different name": [
-        ""
+        "Dette mappenavn er ikke tilgængeligt. Vælg venligst et andet navn"
       ],
       "This label name is not available. Please choose a different name": [
-        ""
+        "Dette etikettenavn er ikke tilgængeligt. Vælg venligst et andet navn"
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "Denne besked kan indeholde links, som ikke kan åbnes korrekt af din aktuelle browser"
@@ -1731,7 +1731,7 @@
     },
     "Filter notification": {
       "${ Label.Name } updated": [
-        ""
+        "${ Label.Name } opdateret"
       ]
     },
     "Free price": {
@@ -1869,16 +1869,16 @@
         "${ calendarAppName } er blevet tilføjet til Proton-suiten. Vi vil gerne høre hvad du synes om den!"
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
-        "",
-        ""
+        "${ calendarsToBeCreatedCount } ny kalender",
+        "${ calendarsToBeCreatedCount } nye kalendere"
       ],
       "${ calendarsToBeMerged } merged calendar": [
-        "",
-        ""
+        "${ calendarsToBeMerged } flettet kalender",
+        "${ calendarsToBeMerged } flettede kalendere"
       ],
       "${ calendarsToBeMergedCount } merged calendar": [
-        "",
-        ""
+        "${ calendarsToBeMergedCount } flettet kalender",
+        "${ calendarsToBeMergedCount } flettede kalendere"
       ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } medlem",
@@ -1914,12 +1914,12 @@
         "${ namesWithoutLast } og ${ nameOfLast }"
       ],
       "${ numContactGroups } contact group": [
-        "",
-        ""
+        "${ numContactGroups } kontaktgruppe",
+        "${ numContactGroups } kontaktgrupper"
       ],
       "${ numContacts } contact": [
-        "",
-        ""
+        "${ numContacts } kontakt",
+        "${ numContacts } kontakter"
       ],
       "${ save20 } on your subscription by switching to ${ annualBilling }": [
         "${ save20 } på dit abonnement ved at skifte til ${ annualBilling }"
@@ -1931,16 +1931,16 @@
         "${ saveExtra20 } på både VPN og Mail ved at tilføje et VPN-abonnement."
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
-        "",
-        ""
+        "${ selectedCalendarsTotal } af ${ providerCalendars.length } kalender",
+        "${ selectedCalendarsTotal } af ${ providerCalendars.length } kalendere"
       ],
       "${ selectedFoldersCount } folder selected": [
-        "",
-        ""
+        "${ selectedFoldersCount } mappe valgt",
+        "${ selectedFoldersCount } mapper valgt"
       ],
       "${ selectedFoldersCount } label selected": [
-        "",
-        ""
+        "${ selectedFoldersCount } etikette valgt",
+        "${ selectedFoldersCount } etiketter valgt"
       ],
       "${ updated } contact updated successfully.": [
         "${ updated } kontakt blev opdateret.",
@@ -2015,12 +2015,12 @@
         "Når du har foretaget din Bitcoin-betaling, skal du følge anvisningerne nedenfor for at opgradere."
       ],
       "All (${ totalFoldersCount } folder)": [
-        "",
-        ""
+        "Alle (${ totalFoldersCount } mappe)",
+        "Alle (${ totalFoldersCount } mapper)"
       ],
       "All (${ totalFoldersCount } label)": [
-        "",
-        ""
+        "Alle (${ totalFoldersCount } etiket)",
+        "Alle (${ totalFoldersCount } etiketter)"
       ],
       "Allows you to host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
         "Lader dig hoste e-mails til dine egne domæner på ${ mailAppName }, f.eks. jens.hansen@eksempel.dk"
@@ -2035,7 +2035,7 @@
         "En invitation vil blive sendt til begivenhedens deltagere."
       ],
       "and": [
-        ""
+        "og"
       ],
       "At most 100 participants are allowed per invitation": [
         "Højst 100 deltagere er tilladt pr. invitation"
@@ -2080,26 +2080,26 @@
         "Klik på \"Anmod om ny kode\" for at få en ny bekræftelseskode sendt til ${ strong }. Hvis dette telefonnummer er forkert, skal du klikke på \"Redigér\" for at rette det."
       ],
       "Close this screen to exit.": [
-        ""
+        "Luk denne skærm for at afslutte."
       ],
       "Connections": [
         "Forbindelser"
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
-        "",
-        ""
+        "Opret ${ calendarsToBeCreated } ny kalender",
+        "Opret ${ calendarsToBeCreated } nye kalendere"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
-        ""
+        "Opret et mærkat til de importerede beskeder, et tidsinterval for importen og de mapper du gerne vil importere."
       ],
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
-        ""
+        "Opret en etikette til de importerede beskeder, et tidsinterval for denne import og de etiketter, du gerne vil importere."
       ],
       "Create a new contact group": [
         "Opret ny kontaktgruppe"
       ],
       "Create in": [
-        ""
+        "Opret i"
       ],
       "Custom": [
         "Tilpasset"
@@ -2198,26 +2198,26 @@
         "Hvis du ikke kan se mailen i din indbakke, bedes du tjekke din spammappe."
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
-        ""
+        "Importer ${ contactsFragment } og ${ contactsGroupsFragment }"
       ],
       "Import ${ selectedCalendarsCount } of ${ totalCalendarsCount } calendar": [
-        "",
-        ""
+        "Importer ${ selectedCalendarsCount } af ${ totalCalendarsCount } kalender",
+        "Importer ${ selectedCalendarsCount } af ${ totalCalendarsCount } kalendere"
       ],
       "Import from": [
-        ""
+        "Importer fra"
       ],
       "Import in progress": [
-        ""
+        "Import i gang"
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
-        ""
+        "Importerer dine data fra ${ importedEmailAddress } til ${ toEmail }."
       ],
       "Included": [
         "Inkluderet"
       ],
       "Inherited from parent folder": [
-        ""
+        "Nedarvet fra overordnet mappe"
       ],
       "Internet connection lost.": [
         "Internetforbindelse afbrudt."
@@ -2229,13 +2229,13 @@
         "Internetforbindelse genoprettet."
       ],
       "Just confirm your selection and we'll do the rest.": [
-        ""
+        "Du skal blot bekræfte dit valg, og så klarer vi resten."
       ],
       "Key fingerprint": [
         "Nøglefingeraftryk"
       ],
       "Large imports can take several days.": [
-        ""
+        "Store importer kan tage adskillige dage."
       ],
       "Learn more": [
         "Få mere at vide"
@@ -2256,19 +2256,19 @@
         "Administrer dine kalendere"
       ],
       "Merged": [
-        ""
+        "Flettet"
       ],
       "Monthly ${ onDayString }": [
         "Månedlig ${ onDayString }"
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
-        ""
+        "Navngiv din nye mappe og vælg den overordnede mappe, du vil placere den i. Hvis du ikke vælger en overordnet mappe, vil denne nye mappe blive oprettet som en topniveau-mappe."
       ],
       "New": [
-        ""
+        "Ny"
       ],
       "Next you'll need to log in to your Google account and allow us to access your data.": [
-        ""
+        "Derefter skal du logge ind på din Google-konto og give os adgang til dine data."
       ],
       "No contacts added yet": [
         "Ingen kontakter tilføjet endnu"
@@ -2331,7 +2331,7 @@
         "Fjern venligst dubletterne og prøv igen."
       ],
       "Please select the folders you would like to import:": [
-        ""
+        "Vælg venligst de mapper, du ønsker at importere:"
       ],
       "Please try again, use a different payment method, or call your bank for assistance.": [
         "Forsøg igen. Benyt en anden betalingsmetode, eller kontakt din bank for hjælp."
@@ -2386,10 +2386,10 @@
         "Vælg det e-mail-format der som standard skal benyttes, når du sender en e-mail til denne e-mailadresse."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20-personal-calendar limit. You can also merge imported calendars with existing Proton calendars.": [
-        ""
+        "Vælg hvilke kalendere der skal importeres. Der oprettes en ny kalender for hver importeret kalender op til grænsen på 20 personlige kalendere. Du kan også flette importerede kalendere med eksisterende Proton-kalendere."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
-        ""
+        "Servere er utilgængelige. Prøv igen om nogle få minutter"
       ],
       "Session timed out.": [
         "Session er udløbet."
@@ -2518,13 +2518,13 @@
         "Du omdirigeres til PayPal i en ny browserfane for at gennemføre denne transaktion. Benytter du evt. pop-up blockere, så deaktivér venligst disse for at fortsætte."
       ],
       "We'll notify you when the import is done.": [
-        ""
+        "Vi giver dig besked, når importen er færdig."
       ],
       "Week": [
         "Uge"
       ],
       "What do you want to import from your Google account?": [
-        ""
+        "Hvad ønsker du at importere fra din Google-konto?"
       ],
       "Which event would you like to delete?": [
         "Hvilken begivenhed ønsker du at slette?"
@@ -2566,13 +2566,13 @@
         "Du er i øjeblikket logget ind som ${ user.Name } (${ user.Email }) og har begrænset adgang."
       ],
       "You can check the progress ${ importProgressLink }.": [
-        ""
+        "Du kan tjekke fremskridtet ${ importProgressLink }."
       ],
       "You can only modify personal event properties as you can't send emails from the organizer address.": [
         "Du kan kun ændre personlige begivenhedsegenskaber, da du ikke kan sende e-mails fra arrangørens adresse."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
-        ""
+        "Du kan aktivere notifikationer for at blive underrettet, når nye e-mails ankommer i denne mappe."
       ],
       "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
         "Du har deaktiveret Beta-adgang. Klik på ${ refreshButton } for at bruge den stabile version af ${ appName }. Applikationen vil blive genindlæst."
@@ -2650,7 +2650,7 @@
         "Din bank kræver 3-D Secure-bekræftelse af sikkerhedshensyn."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
-        ""
+        "Dine data er klar til at blive importeret fra ${ importedEmailAddressStrong } til din Proton-konto."
       ],
       "Your email will only be used for this one-time verification.": [
         "Din e-mail vil kun blive brugt til denne engangsbekræftelse."
@@ -2938,7 +2938,7 @@
         "BTC-beløb:"
       ],
       "Calendar": [
-        ""
+        "Kalender"
       ],
       "Cancel": [
         "Afbryd"
@@ -2962,7 +2962,7 @@
         "By"
       ],
       "Contacts": [
-        ""
+        "Kontakter"
       ],
       "Copy": [
         "Kopiér"
@@ -3004,7 +3004,7 @@
         "E-mailformattering"
       ],
       "Emails": [
-        ""
+        "E-mails"
       ],
       "Enable Beta Access": [
         "Aktivér beta-adgang"
@@ -3046,10 +3046,10 @@
         "Udvidet adresse"
       ],
       "Folder location": [
-        ""
+        "Mappeplacering"
       ],
       "From: ${ importedEmail }": [
-        ""
+        "Fra: ${ importedEmail }"
       ],
       "Hide password": [
         "Skjul adgangskode"
@@ -3058,40 +3058,40 @@
         "Hvor sandsynligt er det, at du vil anbefale ${ calendarAppName } til en ven eller kollega?"
       ],
       "Import all messages": [
-        ""
+        "Importer alle beskeder"
       ],
       "Import contacts": [
         "Importér kontakter"
       ],
       "Import interval": [
-        ""
+        "Importinterval"
       ],
       "Import to email address": [
-        ""
+        "Importer til e-mailadresse"
       ],
       "Keyboard shortcuts": [
         "Tastaturgenveje"
       ],
       "Label messages as": [
-        ""
+        "Giv beskeder etiketten"
       ],
       "Last 12 months only": [
-        ""
+        "Kun seneste 12 måneder"
       ],
       "Last 3 months only": [
-        ""
+        "Kun seneste 3 måneder"
       ],
       "Last month only": [
-        ""
+        "Kun seneste måned"
       ],
       "Mailbox password": [
         "Postkasseadgangskode"
       ],
       "Manage folders": [
-        ""
+        "Administrer mapper"
       ],
       "Manage labels": [
-        ""
+        "Administrer etiketter"
       ],
       "Name": [
         "Navn"
@@ -3100,7 +3100,7 @@
         "Navn på kort"
       ],
       "Notification": [
-        ""
+        "Notifikation"
       ],
       "Operating system": [
         "Operativsystem"
@@ -3128,7 +3128,7 @@
         "Betaler"
       ],
       "PGP scheme": [
-        ""
+        "PGP-metode"
       ],
       "Phone number": [
         "Telefonnummer"
@@ -3191,7 +3191,7 @@
         "Tidspunkt for begivenheden"
       ],
       "To: ${ emailAddress }": [
-        ""
+        "Til: ${ emailAddress }"
       ],
       "Total": [
         "I alt"
@@ -3268,21 +3268,21 @@
     },
     "Label/folder modal": {
       "Create folder": [
-        ""
+        "Opret mappe"
       ],
       "Create label": [
-        ""
+        "Opret etikette"
       ],
       "Edit folder": [
-        ""
+        "Redigér mappe"
       ],
       "Edit label": [
-        ""
+        "Redigér etikette"
       ]
     },
     "label/folder notification": {
       "${ Label.Name } created": [
-        ""
+        "${ Label.Name } oprettet"
       ]
     },
     "Layout mode": {
@@ -3333,23 +3333,23 @@
     },
     "Loading info": {
       "${ createdCalendars } of ${ calendarsToBeCreated } created": [
-        "",
-        ""
+        "${ createdCalendars } af ${ calendarsToBeCreated } oprettet",
+        "${ createdCalendars } af ${ calendarsToBeCreated } oprettet"
       ],
       "Almost there": [
-        ""
+        "Næsten færdig"
       ],
       "Creating new calendars": [
-        ""
+        "Opretter nye kalendere"
       ],
       "Gathering your data": [
-        ""
+        "Indsamler dine data"
       ],
       "We're gathering your data from your provider": [
-        ""
+        "Vi indsamler dine data fra din udbyder"
       ],
       "Your import is starting": [
-        ""
+        "Din import starter"
       ]
     },
     "Mail feature": {
@@ -3435,7 +3435,7 @@
     },
     "Mail import summary": {
       "${ messagesFragment } since ${ periodFragment } and label them as ${ label }": [
-        ""
+        "${ messagesFragment } siden ${ periodFragment } og giv dem etiketten ${ label }"
       ]
     },
     "Many Others": {
@@ -3609,13 +3609,13 @@
     },
     "New Label form": {
       "Color": [
-        ""
+        "Farve"
       ],
       "Folder name": [
-        ""
+        "Mappenavn"
       ],
       "Label name": [
-        ""
+        "Etikettenavn"
       ]
     },
     "Notification": {
@@ -3815,7 +3815,7 @@
         "Måneder"
       ],
       "No parent folder": [
-        ""
+        "Ingen overordnet mappe"
       ],
       "This and future events": [
         "Denne og fremtidige begivenheder"
@@ -3834,10 +3834,10 @@
     },
     "Option group label": {
       "Create new calendar": [
-        ""
+        "Opret ny kalender"
       ],
       "Merge with calendar": [
-        ""
+        "Flet med kalender"
       ]
     },
     "Participant name": {
@@ -4374,16 +4374,16 @@
     },
     "Time period": {
       "account creation date": [
-        ""
+        "oprettelsesdato for konto"
       ],
       "the last 12 months": [
-        ""
+        "de sidste 12 måneder"
       ],
       "the last 3 months": [
-        ""
+        "de sidste 3 måneder"
       ],
       "the last month": [
-        ""
+        "den sidste måned"
       ]
     },
     "Time unit": {
@@ -4528,13 +4528,13 @@
         "Nuværende abonnement"
       ],
       "Customize and confirm": [
-        ""
+        "Tilpas og bekræft"
       ],
       "Customize calendar import": [
-        ""
+        "Tilpas kalender-import"
       ],
       "Customize your mail import": [
-        ""
+        "Tilpas din mail-import"
       ],
       "Customize your plan": [
         "Tilpas dit abonnement"
@@ -4767,7 +4767,7 @@
         "Vælg måden at sende denne notifikation på"
       ],
       "Select what to import": [
-        ""
+        "Vælg, hvad der skal importeres"
       ],
       "Select when this event will stop happening": [
         "Vælg hvornår denne begivenhed ophører med at forekomme"
@@ -4837,7 +4837,7 @@
     },
     "Today icon tooltip in mini calendar": {
       "Today": [
-        ""
+        "I dag"
       ]
     },
     "Tooltip": {
@@ -4863,7 +4863,7 @@
         "Rabat er fratrukket den toårige faktureringsperiode"
       ],
       "Each imported email will have this label": [
-        ""
+        "Hver importeret e-mail vil have denne etiket"
       ],
       "Email encryption forces email signature to help authenticate your sent messages": [
         "E-mailkryptering gennemtvinger e-mailsignatur som hjælp til godkendelse af dine sendte beskeder"
@@ -4902,10 +4902,10 @@
         "Understøttelse af fildelingsprotokoller såsom BitTorrent."
       ],
       "System subfolders will show up as separate folders in ProtonMail": [
-        ""
+        "Systemundermapper vil blive vist som separate mapper i ProtonMail"
       ],
       "The import will start with the most recent messages.": [
-        ""
+        "Importen vil starte med de seneste beskeder."
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Upload en offentlig nøgle for at aktivere afsendelse af end-to-end krypterede e-mails til denne e-mail"
@@ -5057,7 +5057,7 @@
         "Bemærk venligst at ved at vælge denne betalingsmetode kan din konto ikke opgraderes med det samme. Vi opdaterer din konto, når betalingen er gået igennem."
       ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
-        ""
+        "Proton vil sammenflette alle mapper med det samme navn. For at undgå dette, skal du ændre navnene før importen."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Fejlrapporter er ikke end-to-end krypterede. Send derfor venligst ikke følsomme oplysninger."
@@ -5069,7 +5069,7 @@
         "Kontakten kunne ikke indlæses."
       ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
-        ""
+        "Dato- og tidsindstillingerne på din enhed er ikke synkroniseret. ${ learnMore }"
       ],
       "The decryption of the encrypted content failed.": [
         "Dekrypteringen af det krypterede indhold mislykkedes."
@@ -5087,7 +5087,7 @@
         "Vi er desværre ikke online i øjeblikket. Udfyld venligst formularen nedenfor for at beskrive dit problem. Så vil vi se på det og vende tilbage, når vi er tilbage online."
       ],
       "You will lose any customization you made so far.": [
-        ""
+        "Du vil miste enhver tilpasning, du har foretaget indtil videre."
       ]
     },
     "Weekly recurring event, frequency": {

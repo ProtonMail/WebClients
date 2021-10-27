@@ -708,7 +708,7 @@
         "选择所有邮件"
       ],
       "Select plan": [
-        "选择套餐"
+        "开通"
       ],
       "Send": [
         "发送​​"
@@ -954,9 +954,6 @@
       "Forwarded": [
         "已转发"
       ],
-      "Has attachments": [
-        "含附件"
-      ],
       "Replied to": [
         "答复给"
       ],
@@ -964,13 +961,13 @@
         "全部答复"
       ],
       "Star conversation": [
-        "星际会话"
+        "星标会话"
       ],
       "Star message": [
         "星标邮件"
       ],
       "Unstar conversation": [
-        "取消星际会话"
+        "取消星标会话"
       ],
       "Unstar message": [
         "取消星标"
@@ -1869,8 +1866,8 @@
       "Amount below minimum.": [
         "金额太小。"
       ],
-      "Attachments are limited to 25 MB.": [
-        "附件总大小不能超过 25 MB。"
+      "Attachments are limited to 25 MB": [
+        ""
       ],
       "Authentication canceled.": [
         "验证已取消。"
@@ -1893,8 +1890,8 @@
       "Can't validate phone, try again later": [
         "无法验证手机，请稍候再试"
       ],
-      "Checkout expired, please try again.": [
-        "支付超时，请重试。"
+      "Checkout expired, please try again": [
+        ""
       ],
       "Choose a date in the future.": [
         "选择未来的日期。"
@@ -1914,11 +1911,11 @@
       "Contact signature not verified": [
         "未验证联系人签名"
       ],
-      "Contact your organization’s administrator to resolve this.": [
-        "请联系机构管理员寻求解决办法。"
+      "Contact your organization’s administrator to resolve this": [
+        ""
       ],
-      "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser": [
-        "此浏览器无法开启全文搜索，请退出隐私浏览模式或使用其他浏览器"
+      "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
+        ""
       ],
       "Could not find address ${ email }.": [
         "找不到邮箱 ${ email }。"
@@ -1953,14 +1950,14 @@
       "Error in one of the conditions": [
         "条件存在错误"
       ],
-      "Error while saving draft. Please try again": [
-        "保存草稿失败，请重试"
+      "Error while saving draft. Please try again.": [
+        ""
       ],
-      "Error while sending the message. Message is not sent": [
-        "发送消息时出错。消息未发送"
+      "Error while sending the message. Message is not sent.": [
+        ""
       ],
-      "Error while uploading attachments. Message is not sent": [
-        "上传附件时发生错误，邮件未能发送"
+      "Error while uploading attachments. Message is not sent.": [
+        ""
       ],
       "Failed to encrypt attachment. Please try again.": [
         "加密附件失败，请重试。"
@@ -1995,8 +1992,8 @@
       "Invalid expiration date": [
         "有效期不正确"
       ],
-      "Invalid expiration time.": [
-        "有效期不正确。"
+      "Invalid expiration time": [
+        ""
       ],
       "Invalid name": [
         "名称无效"
@@ -2019,8 +2016,8 @@
       "Message needs to be sent first": [
         "需要先发送邮件"
       ],
-      "Message passwords do not match.": [
-        "邮件解密密码不匹配。"
+      "Message passwords do not match": [
+        ""
       ],
       "Message processing error.": [
         "邮件处理错误。"
@@ -2034,8 +2031,8 @@
       "Network error: Please check your connection and try again.": [
         "网络错误：请检查网络后重试。"
       ],
-      "No address with keys available to compose a message.": [
-        "没有可用于撰写邮件的密钥。"
+      "No address with keys available to compose a message": [
+        ""
       ],
       "No key retrieved for internal user is valid for sending": [
         "没有为内部用户检索到的密钥用于发送"
@@ -2163,8 +2160,8 @@
       "The label name is too long. Please choose a different name.": [
         ""
       ],
-      "The maximum expiration is 4 weeks.": [
-        "有效期不能超过四周。"
+      "The maximum expiration is 4 weeks": [
+        ""
       ],
       "The minimum amount of credit that can be added is ${ _price }": [
         "充值金额不能低于 ${ _price }"
@@ -2181,8 +2178,8 @@
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         ""
       ],
-      "There has been an issue with content search. Default search has been used instead": [
-        "全文搜索出现问题，正在使用普通搜索"
+      "There has been an issue with content search. Default search has been used instead.": [
+        ""
       ],
       "There was an error when exporting the contacts vCards": [
         "导出联系人 vCards 时出错"
@@ -2199,8 +2196,8 @@
       "This label name is not available. Please choose a different name": [
         ""
       ],
-      "This message has already been sent.": [
-        "此邮件已发送。"
+      "This message has already been sent": [
+        ""
       ],
       "This message has already been sent. A new draft has been saved.": [
         "此邮件已发送，已保存新草稿。"
@@ -2208,8 +2205,8 @@
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "此邮件含有浏览器不能打开的链接"
       ],
-      "Too many active filters. Please upgrade to a paid plan to activate more filters": [
-        "规则数量已达上限，须开通付费账户方可启用更多筛选规则"
+      "Too many active filters. Please upgrade to a paid plan to activate more filters.": [
+        ""
       ],
       "Trusted keys are not valid for sending": [
         "已信任的密钥对发送无效"
@@ -2229,8 +2226,8 @@
       "You can't send vCards of more than 10 contacts": [
         "您不能发送超过 10 个联系人的 vCard"
       ],
-      "You cannot open more than ${ maxActiveComposer } composer window at a time.": [
-        "您不能同时打开超过 ${ maxActiveComposer } 个编辑窗口。"
+      "You cannot open more than ${ maxActiveComposer } composer window at a time": [
+        ""
       ],
       "You did not provide a file.": [
         "您尚未选择文件。"
@@ -2247,8 +2244,8 @@
       "Your import will not be processed.": [
         "此次导入将不会进行。"
       ],
-      "Your search matched too many results. Please limit your search and try again": [
-        "搜索结果过多，请缩小搜索范围后重试"
+      "Your search matched too many results. Please limit your search and try again.": [
+        ""
       ]
     },
     "Error display when performing invalid move on message": {
@@ -2857,7 +2854,7 @@
         "(无收件人)"
       ],
       "* Customizable features": [
-        "可自定义功能"
+        "* 可以根据需求自行调整"
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } 特权存储空间"
@@ -3040,7 +3037,7 @@
         "点击查看群组详情"
       ],
       "Close this screen to exit.": [
-        ""
+        "关闭这个窗口以退出"
       ],
       "Confirm Password": [
         "确认密码"
@@ -3184,7 +3181,7 @@
         "适合初次体验安全隐私邮件服务的新手。"
       ],
       "For increased security, activate 2FA.": [
-        "为了提高安全性，请激活 2FA."
+        "开启双重验证可进一步提升账户安全性。"
       ],
       "For individuals that need a fully-featured mailbox with advanced protection.": [
         "适合需要具有高级保护功能的全能邮箱的个人。"
@@ -3243,8 +3240,8 @@
       "Image URL": [
         "图片地址"
       ],
-      "Images have been removed because they are not allowed in auto-reply.": [
-        "图片已删除，因为自动回复中不能包含图片。"
+      "Images have been removed because they are not allowed in auto-reply": [
+        ""
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         ""
@@ -3256,13 +3253,13 @@
         ""
       ],
       "Import in progress": [
-        ""
+        "导入中"
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
-        ""
+        "将您的数据从${ importedEmailAddress } 导入到${ toEmail }"
       ],
       "Included": [
-        "已包含"
+        "已包含在内"
       ],
       "Increase storage space starting at": [
         "邮箱扩容低至"
@@ -3301,7 +3298,7 @@
         "指纹码"
       ],
       "Large imports can take several days.": [
-        ""
+        "大批量的导入可能需要几天才能完成。"
       ],
       "Learn more": [
         "了解详情"
@@ -3347,6 +3344,9 @@
       ],
       "Message sent": [
         "邮件已发送"
+      ],
+      "Message sent.": [
+        ""
       ],
       "Message will be sent ${ dateString } at ${ formattedTime }": [
         "邮件将${ dateString } ${ formattedTime } 发送"
@@ -3862,7 +3862,7 @@
         "我们将在新标签页中为您打开 PayPal 完成支付，如果您使用了弹窗屏蔽插件，请将其关闭后再继续。"
       ],
       "We'll notify you when the import is done.": [
-        ""
+        "当导入完成时我们将通知您"
       ],
       "Web URL": [
         "网址"
@@ -3892,7 +3892,7 @@
         "您已登录 ${ user.Name }（${ user.Email }），并且权限有限。"
       ],
       "You can check the progress ${ importProgressLink }.": [
-        ""
+        "您可以在${ importProgressLink } 查看导入进度"
       ],
       "You can either update your search query or ${ button }": [
         "您可以更改搜索条件或${ button }。"
@@ -4917,7 +4917,7 @@
         ""
       ],
       "Your import is starting": [
-        ""
+        "您的导入已开始"
       ]
     },
     "Mail feature": {
@@ -4931,19 +4931,19 @@
         "地址验证"
       ],
       "Addresses": [
-        "邮箱地址"
+        "邮箱地址数量"
       ],
       "Autoresponder": [
         "自动回复"
       ],
       "Catch-All email": [
-        ""
+        "收取发至自有域名未分配地址的邮件"
       ],
       "Contact groups": [
         "联系人群组"
       ],
       "Custom email addresses": [
-        "自定义电子邮件地址"
+        "自有域名地址"
       ],
       "Custom filters": [
         "定制筛选规则"
@@ -4952,34 +4952,34 @@
         "通讯录加密"
       ],
       "Folders / labels": [
-        "个文件夹/标签"
+        "文件夹和标签个数"
       ],
       "IMAP / SMTP": [
         "IMAP / SMTP"
       ],
       "Limited": [
-        "受限"
+        "有限"
       ],
       "Messages per day": [
-        "邮件/天"
+        "每天可发邮件数量"
       ],
       "Multi-user support": [
         "多用户功能"
       ],
       "Priority": [
-        "优先级"
+        "优先享受"
       ],
       "Storage": [
         "存储空间"
       ],
       "Support": [
-        "客服"
+        "客户服务"
       ],
       "Use @pm.me address": [
         "可使用 @pm.me 地址"
       ],
       "Users": [
-        "用户"
+        "用户数量"
       ]
     },
     "Mail feature option": {
@@ -5974,8 +5974,8 @@
       "Contacts deleted": [
         "联系人已删除"
       ],
-      "Conversation added to ${ labelName }": [
-        "会话已添加 ${ labelName } 标签"
+      "Conversation added to ${ labelName }.": [
+        ""
       ],
       "Conversation deleted": [
         "会话已删除"
@@ -5983,8 +5983,8 @@
       "Conversation marked as read.": [
         ""
       ],
-      "Conversation marked as Starred": [
-        "会话已加星标"
+      "Conversation marked as Starred.": [
+        ""
       ],
       "Conversation marked as unread.": [
         ""
@@ -5998,8 +5998,8 @@
       "Conversation moved to spam and sender added to Block List.": [
         "会话中的邮件已标为垃圾邮件，其发件人已加入黑名单。"
       ],
-      "Conversation removed from ${ labelName }": [
-        "会话已移除 ${ labelName } 标签"
+      "Conversation removed from ${ labelName }.": [
+        ""
       ],
       "Draft deleted": [
         "草稿已删除"
@@ -6025,8 +6025,8 @@
       "Mail list unsubscribed": [
         "邮件订阅已取消订阅"
       ],
-      "Message added to ${ labelName }": [
-        "邮件已添加 ${ labelName } 标签"
+      "Message added to ${ labelName }.": [
+        ""
       ],
       "Message content search activated": [
         "邮件全文搜索已开启"
@@ -6040,8 +6040,8 @@
       "Message marked as read.": [
         ""
       ],
-      "Message marked as Starred": [
-        "邮件已加星标"
+      "Message marked as Starred.": [
+        ""
       ],
       "Message marked as unread.": [
         ""
@@ -6055,8 +6055,8 @@
       "Message moved to spam and sender added to Block List.": [
         "邮件已标为垃圾邮件，其发件人已加入黑名单。"
       ],
-      "Message removed from ${ labelName }": [
-        "邮件已移除 ${ labelName } 标签"
+      "Message removed from ${ labelName }.": [
+        ""
       ],
       "Move ${ selectionCount } conversation": [
         "移动 ${ selectionCount } 条会话"
@@ -6745,13 +6745,13 @@
         "使用 ${ mailAppName } 托管您自己的域名，如 zhangsan@example.com"
       ],
       "Host emails for your own domain(s) at ProtonMail, e.g. john.smith@example.com": [
-        "使用 ProtonMail 托管您自己的域名，如 zhangsan@example.com"
+        "使用 ProtonMail 为您自己的域名收取邮件，如 zhangsan@example.com"
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "若您已购买或从我们的客服团队处获得了礼品码，可以在此输入。"
       ],
       "Multi-user support is only applicable to plans with 2 or more users": [
-        "多用户支持仅适用于 2 名及以上用户方案"
+        "仅对两名以上用户的账户等级适用"
       ],
       "NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware.": [
         "NetShield通过屏蔽广告、跟踪和恶意软件来保护您的设备并加快您的浏览速度。"
@@ -6769,7 +6769,7 @@
         ""
       ],
       "The import will start with the most recent messages.": [
-        ""
+        "导入将从最近的信息开始。"
       ],
       "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
         "此操作将从服务器下载所有邮件并在本地进行搜索，清除浏览器数据将禁用此选项。"
@@ -6781,10 +6781,10 @@
         "上传公钥后方可向其发送端到端加密的邮件"
       ],
       "Use multiple addresses / aliases linked to your account, e.g. username2@protonmail.com": [
-        "使用多个电子邮箱地址 / 别名连接到您的帐户，例如 username2@protonmail.com"
+        "在同一个账户中使用多个邮箱地址，如 username2@protonmail.com"
       ],
       "Use the personal address username@pm.me to send emails": [
-        "使用个人邮箱地址 username@pm.me 发送邮件"
+        "使用个性化的邮箱地址 username@pm.me 发送邮件"
       ],
       "You do not have any contacts to export": [
         "您没有任何联系人可导出"

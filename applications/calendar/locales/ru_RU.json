@@ -57,7 +57,7 @@
         "Переписывайтесь с нами"
       ],
       "Check import progress": [
-        ""
+        "Проверить хода импорта"
       ],
       "Choose a file or drag it here": [
         "Выберите файл или перетащите его сюда"
@@ -129,7 +129,7 @@
         "Создать событие"
       ],
       "Customize": [
-        ""
+        "Настроить"
       ],
       "Decrease": [
         "Уменьшить"
@@ -177,7 +177,7 @@
         "Изменить адрес эл. почты"
       ],
       "Edit label": [
-        ""
+        "Изменить ярлык"
       ],
       "Edit phone number": [
         "Изменить номер телефона"
@@ -216,13 +216,13 @@
         "Скрыть расширенные настройки PGP"
       ],
       "Hide folders": [
-        ""
+        "Скрыть папки"
       ],
       "Hide info": [
         "Скрыть информацию"
       ],
       "Hide labels": [
-        ""
+        "Скрыть ярлыки"
       ],
       "Hide time zones": [
         "Скрыть часовые пояса"
@@ -237,7 +237,7 @@
         "Импорт"
       ],
       "Import from .csv or vCard": [
-        ""
+        "Импорт из .csv или vCard"
       ],
       "Increase": [
         "Увеличить"
@@ -339,7 +339,7 @@
         "Предыдущий год"
       ],
       "Quit": [
-        ""
+        "Выйти"
       ],
       "Re-sign": [
         "Подписать повторно"
@@ -369,7 +369,7 @@
         "Удалить этого участника"
       ],
       "Rename": [
-        ""
+        "Переименовать"
       ],
       "Report a problem": [
         "Сообщить о проблеме"
@@ -405,13 +405,13 @@
         "Показать расширенные настройки PGP"
       ],
       "Show folders": [
-        ""
+        "Показать папки"
       ],
       "Show info": [
         "Показать информацию"
       ],
       "Show labels": [
-        ""
+        "Показать ярлыки"
       ],
       "Show less": [
         "Показать меньше"
@@ -438,7 +438,7 @@
         "Приступить к настройкам"
       ],
       "Stay": [
-        ""
+        "Остаться"
       ],
       "Submit": [
         "Отправить"
@@ -646,7 +646,7 @@
     },
     "Attendee role": {
       "Optional": [
-        ""
+        "Необязательно"
       ]
     },
     "Beta access description": {
@@ -908,7 +908,7 @@
         "Ссылка на календарь недоступна"
       ],
       "Calendar link is temporarily inaccessible": [
-        ""
+        "Ссылка на календарь временно недоступна"
       ],
       "Calendar link is wrong": [
         "Неверная ссылка календаря"
@@ -949,7 +949,7 @@
     },
     "Confirm modal title": {
       "Quit import customization?": [
-        ""
+        "Прекратить настройку импорта?"
       ]
     },
     "Contact field label": {
@@ -1169,8 +1169,8 @@
       ]
     },
     "Disabled calendar name suffix": {
-      "disabled": [
-        "отключен"
+      "Disabled": [
+        "Отключен"
       ]
     },
     "Disabled calendar tooltip": {
@@ -1331,13 +1331,13 @@
         "Ошибка аутентификации."
       ],
       "Calendar limit reached": [
-        ""
+        "Достигнут лимит календаря"
       ],
       "Calendar primary private key is not decrypted": [
         "Основной секретный ключ календаря не расшифрован"
       ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
-        ""
+        "Невозможно создать новые календари для всех импортированных календарей из-за персонального лимита календарей."
       ],
       "Can't validate email, try again later": [
         "Не удается проверить адрес электронной почты. Повторите попытку позже."
@@ -1348,8 +1348,8 @@
       "Cancellation failed to be sent": [
         "Не удалось отправить сообщение об отмене события"
       ],
-      "Checkout expired, please try again.": [
-        "Срок действия заказа истек, попробуйте еще раз."
+      "Checkout expired, please try again": [
+        "Срок оформления истек, пожалуйста, попробуйте снова"
       ],
       "Contact could not be saved": [
         "Контакт не может быть сохранён"
@@ -1367,10 +1367,10 @@
         "Ошибка расшифровки: не удалось расшифровать содержимое этого события."
       ],
       "Deselect at least ${ calendarToFixCount } calendar or": [
-        "",
-        "",
-        "",
-        ""
+        "Отмените выбор по крайней мере ${ calendarToFixCount } календарь или",
+        "Отмените выбор по крайней мере ${ calendarToFixCount } календарей или",
+        "Отмените выбор по крайней мере ${ calendarToFixCount } календарь или",
+        "Отмените выбор по крайней мере ${ calendarToFixCount } календаря(ей) или"
       ],
       "Email address disabled": [
         "Эл. адрес отключен"
@@ -1403,7 +1403,7 @@
         "Не удалось загрузить начальное вхождение в серию событий"
       ],
       "Folder name cannot be empty": [
-        ""
+        "Название папки не может быть пустым"
       ],
       "Image upload failed": [
         "Сбой загрузки изображения"
@@ -1457,13 +1457,13 @@
         "Перемещать события можно только в интервале ${ minDateString } - ${ maxDateString }"
       ],
       "Label name cannot be empty": [
-        ""
+        "Название ярлыка не может быть пустым"
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
-        "",
-        "",
-        "",
-        ""
+        "Объедините по крайней мере ${ calendarToFixCount } календарь с существующим календарем Proton",
+        "Объединить по крайней мере ${ calendarToFixCount } календарей с существующим календарем Proton",
+        "Объединить по крайней мере ${ calendarToFixCount } календарей с существующим календарем Proton",
+        "Объединить по крайней мере ${ calendarToFixCount } календарь(ей) с существующим календарем Proton"
       ],
       "Missing signature": [
         "Подпись отсутствует"
@@ -1526,10 +1526,10 @@
         "Пожалуйста, сначала создайте адрес."
       ],
       "Please fix the highlighted conflict to proceed.": [
-        "",
-        "",
-        "",
-        ""
+        "Пожалуйста, исправьте выделенный конфликт, чтобы продолжить.",
+        "Пожалуйста, исправьте выделенные конфликты, чтобы продолжить.",
+        "Пожалуйста, исправьте выделенные конфликты, чтобы продолжить.",
+        "Пожалуйста, исправьте выделенные конфликты, чтобы продолжить."
       ],
       "Preferences could not be saved": [
         "Настройки не могут быть сохранены"
@@ -1562,10 +1562,10 @@
         "Некоторые группы не могут быть удалены"
       ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
-        ""
+        "Некоторые из имен ярлыков недоступны. Пожалуйста, настройте импорт, чтобы изменить эти имена."
       ],
       "Some of your label names exceed ProtonMail's maximum character limit. Please customize the import to edit these names.": [
-        ""
+        "Имена некоторых ваших ярлыков превышают максимальное количество символов ProtonMail. Пожалуйста, настройте импорт, чтобы изменить эти имена."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Что-то пошло не так, пожалуйста, ${ refresh }, чтобы продолжить. Если вы всё же видите это сообщение об ошибке, пожалуйста, свяжитесь с нашей службой поддержки ${ supportTeam }."
@@ -1580,10 +1580,10 @@
         "Ваш браузер не позволяет завершить платеж. Пожалуйста, используйте другой браузер или войдите с компьютера."
       ],
       "The folder name is too long. Please choose a different name.": [
-        ""
+        "Название папки слишком длинное. Пожалуйста, выберите другое название."
       ],
       "The label name is too long. Please choose a different name.": [
-        ""
+        "Название ярлыка слишком длинное. Пожалуйста, выберите другое название."
       ],
       "The minimum amount of credit that can be added is ${ _price }": [
         "Минимальная сумма, которую можно добавить, составляет ${ _price }"
@@ -1598,7 +1598,7 @@
         "Ключ отправки недействительный"
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
-        ""
+        "В вашей внешней учетной записи слишком много папок. Пожалуйста, настройте импорт, чтобы удалить некоторые папки."
       ],
       "There was an error when exporting the contacts vCards": [
         "Произошла ошибка при экспорте визитных карточек контактов"
@@ -1610,10 +1610,10 @@
         "Минимальная длина для этого поля: ${ minimumLength }."
       ],
       "This folder name is not available. Please choose a different name": [
-        ""
+        "Это имя папки недоступно. Пожалуйста, выберите другое название"
       ],
       "This label name is not available. Please choose a different name": [
-        ""
+        "Это название ярлыка недоступно. Пожалуйста, выберите другое название"
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "Это сообщение может содержать ссылки, которые не могут быть правильно открыты вашим текущим браузером"
@@ -1779,7 +1779,7 @@
     },
     "Filter notification": {
       "${ Label.Name } updated": [
-        ""
+        "${ Label.Name } обновлён"
       ]
     },
     "Free price": {
@@ -1929,22 +1929,22 @@
         "${ calendarAppName } был добавлен в набор Proton. Мы будем рады услышать, что вы думаете об этом!"
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
-        "",
-        "",
-        "",
-        ""
+        "${ calendarsToBeCreatedCount } новый календарь",
+        "${ calendarsToBeCreatedCount } новых календарей",
+        "${ calendarsToBeCreatedCount } новых календарей",
+        "${ calendarsToBeCreatedCount } новых(ый) календарь(я,ей)"
       ],
       "${ calendarsToBeMerged } merged calendar": [
-        "",
-        "",
-        "",
-        ""
+        "${ calendarsToBeMerged } объединенный календарь",
+        "${ calendarsToBeMerged } объединенных календарей",
+        "${ calendarsToBeMerged } объединенных календарей",
+        "${ calendarsToBeMerged } объединенный(х) календарь(я,ей)"
       ],
       "${ calendarsToBeMergedCount } merged calendar": [
-        "",
-        "",
-        "",
-        ""
+        "${ calendarsToBeMergedCount } объединенный календарь",
+        "${ calendarsToBeMergedCount } объединенных календарей",
+        "${ calendarsToBeMergedCount } объединенных календарей",
+        "${ calendarsToBeMergedCount } объединенный(х) календарь(я,ей)"
       ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } участник",
@@ -1986,16 +1986,16 @@
         "${ namesWithoutLast } и ${ nameOfLast }"
       ],
       "${ numContactGroups } contact group": [
-        "",
-        "",
-        "",
-        ""
+        "${ numContactGroups } группа контактов",
+        "${ numContactGroups } группа контактов",
+        "${ numContactGroups } группа контактов",
+        "${ numContactGroups } групп(а,ы) контактов"
       ],
       "${ numContacts } contact": [
-        "",
-        "",
-        "",
-        ""
+        "${ numContacts } контакт",
+        "${ numContacts } контактов",
+        "${ numContacts } контактов",
+        "${ numContacts } контакт(а,ов)"
       ],
       "${ save20 } on your subscription by switching to ${ annualBilling }": [
         "${ save20 } для вашей подписки, переключившись на ${ annualBilling }"
@@ -2007,22 +2007,22 @@
         "${ saveExtra20 } на VPN и почте, добавив подписку на VPN."
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
-        "",
-        "",
-        "",
-        ""
+        "${ selectedCalendarsTotal } из ${ providerCalendars.length } календаря",
+        "${ selectedCalendarsTotal } из ${ providerCalendars.length } календарей",
+        "${ selectedCalendarsTotal } из ${ providerCalendars.length } календарей",
+        "${ selectedCalendarsTotal } из ${ providerCalendars.length } календаря(ей)"
       ],
       "${ selectedFoldersCount } folder selected": [
-        "",
-        "",
-        "",
-        ""
+        "${ selectedFoldersCount } папка выбрана",
+        "${ selectedFoldersCount } папок выбрано",
+        "${ selectedFoldersCount } папок выбрано",
+        "${ selectedFoldersCount } папок(а,и) выбрано(на)"
       ],
       "${ selectedFoldersCount } label selected": [
-        "",
-        "",
-        "",
-        ""
+        "${ selectedFoldersCount } ярлык выбран",
+        "${ selectedFoldersCount } ярлыков выбрано",
+        "${ selectedFoldersCount } ярлыков выбрано",
+        "${ selectedFoldersCount } ярлык(а,ов) выбран(о)"
       ],
       "${ updated } contact updated successfully.": [
         "${ updated } контакт успешно обновлен.",
@@ -2103,16 +2103,16 @@
         "После внесения оплаты Bitcoin, пожалуйста, следуйте согласно указаниям ниже, чтобы произвести улучшение."
       ],
       "All (${ totalFoldersCount } folder)": [
-        "",
-        "",
-        "",
-        ""
+        "Вся (${ totalFoldersCount } папка)",
+        "Все (${ totalFoldersCount } папок)",
+        "Все (${ totalFoldersCount } папок)",
+        "Все (${ totalFoldersCount } папки(ок))"
       ],
       "All (${ totalFoldersCount } label)": [
-        "",
-        "",
-        "",
-        ""
+        "Все (${ totalFoldersCount } ярлык)",
+        "Все (${ totalFoldersCount } ярлыков)",
+        "Все (${ totalFoldersCount } ярлыков)",
+        "Все (${ totalFoldersCount } ярлыка(ов)"
       ],
       "Allows you to host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
         "Позволяет использовать почту с вашим доменным именем на ${ mailAppName }, например john.smith@example.com"
@@ -2127,7 +2127,7 @@
         "Участникам мероприятия будет отправлено приглашение."
       ],
       "and": [
-        ""
+        "и"
       ],
       "At most 100 participants are allowed per invitation": [
         "Для одного приглашения разрешено не более 100 участников"
@@ -2172,28 +2172,28 @@
         "Нажмите \"Запросить новый код\", и мы отправим новый проверочный код на ${ strong }. Если этот номер телефона недействителен, выберите \"Изменить\" для обновления."
       ],
       "Close this screen to exit.": [
-        ""
+        "Закройте этот экран, чтобы выйти."
       ],
       "Connections": [
         "Соединений"
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
-        "",
-        "",
-        "",
-        ""
+        "Создать ${ calendarsToBeCreated } новый календарь",
+        "Создать ${ calendarsToBeCreated } новых календарей",
+        "Создать ${ calendarsToBeCreated } новых календарей",
+        "Создать ${ calendarsToBeCreated } календарь(я,ей)"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
-        ""
+        "Создайте ярлык для импортированных сообщений, укажите диапазон времени для этого импорта и папки, которые вы хотите импортировать."
       ],
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
-        ""
+        "Создайте ярлык для импортированных сообщений, укажите диапазон времени для этого импорта и ярлыки, которые вы хотите импортировать."
       ],
       "Create a new contact group": [
         "Создать новую группу контактов"
       ],
       "Create in": [
-        ""
+        "Создать в"
       ],
       "Custom": [
         "Пользовательский"
@@ -2292,28 +2292,28 @@
         "Если сообщения нет в папке \"Входящие\" — проверьте, не попало ли оно в папку «спам»."
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
-        ""
+        "Импорт ${ contactsFragment } и ${ contactsGroupsFragment }"
       ],
       "Import ${ selectedCalendarsCount } of ${ totalCalendarsCount } calendar": [
-        "",
-        "",
-        "",
-        ""
+        "Импортируйте ${ selectedCalendarsCount } из ${ totalCalendarsCount } календарей(я,ей)",
+        "Импортируйте ${ selectedCalendarsCount } из ${ totalCalendarsCount } календарей",
+        "Импортируйте ${ selectedCalendarsCount } из ${ totalCalendarsCount } календарей",
+        "Импортируйте ${ selectedCalendarsCount } из ${ totalCalendarsCount } календарей(я,ей)"
       ],
       "Import from": [
-        ""
+        "Импортировать из"
       ],
       "Import in progress": [
-        ""
+        "Выполняется импорт"
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
-        ""
+        "Импорт ваших данных из ${ importedEmailAddress } в ${ toEmail }."
       ],
       "Included": [
         "Включено"
       ],
       "Inherited from parent folder": [
-        ""
+        "Унаследовано от родительской папки"
       ],
       "Internet connection lost.": [
         "Подключение к Интернету прервано."
@@ -2325,13 +2325,13 @@
         "Соединение с интернет восстановлено."
       ],
       "Just confirm your selection and we'll do the rest.": [
-        ""
+        "Просто подтвердите свой выбор, а остальное мы сделаем сами."
       ],
       "Key fingerprint": [
         "Отпечаток ключа"
       ],
       "Large imports can take several days.": [
-        ""
+        "Большой импорт может занять несколько дней."
       ],
       "Learn more": [
         "Подробнее"
@@ -2352,19 +2352,19 @@
         "Управление календарями"
       ],
       "Merged": [
-        ""
+        "Объединённые"
       ],
       "Monthly ${ onDayString }": [
         "Ежемесячно ${ onDayString }"
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
-        ""
+        "Назовите новую папку и выберите родительскую папку, в которую вы хотите ее поместить. Если вы не выберете родительскую папку, то эта новая папка будет создана как папка верхнего уровня."
       ],
       "New": [
-        ""
+        "Новый"
       ],
       "Next you'll need to log in to your Google account and allow us to access your data.": [
-        ""
+        "Далее вам нужно будет войти в свой аккаунт Google и разрешить нам доступ к вашим данным."
       ],
       "No contacts added yet": [
         "Контакты ещё не добавлены"
@@ -2427,7 +2427,7 @@
         "Пожалуйста, удалите дубликаты и повторите попытку."
       ],
       "Please select the folders you would like to import:": [
-        ""
+        "Пожалуйста, выберите папки для импорта:"
       ],
       "Please try again, use a different payment method, or call your bank for assistance.": [
         "Пожалуйста, попробуйте еще раз, используйте другой способ оплаты или позвоните в ваш банк за справкой."
@@ -2484,10 +2484,10 @@
         "Выберите формат письма, который вы хотите использовать по умолчанию при отправке почты на этот адрес."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20-personal-calendar limit. You can also merge imported calendars with existing Proton calendars.": [
-        ""
+        "Выберите, какие календари необходимо импортировать. Для каждого импортированного календаря будет создан новый календарь в пределах лимита в 20 личных календарей. Вы также можете объединить импортированные календари с существующими календарями Proton."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
-        ""
+        "Серверы недоступны. Попробуйте снова через несколько минут"
       ],
       "Session timed out.": [
         "Время сессии истекло."
@@ -2529,10 +2529,10 @@
         "Организатор не может быть уведомлен, что вы отклонили приглашение:"
       ],
       "The organizer cannot be notified that you want to change your answer:": [
-        ""
+        "Организатор не может быть уведомлен о том, что вы хотите изменить свой ответ:"
       ],
       "The organizer could not be notified that you changed your answer:": [
-        ""
+        "Организатор не может быть уведомлен о том, что вы изменили свой ответ:"
       ],
       "The organizer has updated some of the events in this series. Changing the calendar is not supported yet for this type of recurring events.": [
         "Организатор обновил некоторые события в этой серии.\nИзменение календаря пока не поддерживается для этого типа повторяющихся событий."
@@ -2616,13 +2616,13 @@
         "Для завершения этой транзакции мы перенаправим вас на сайт PayPal в новой вкладке браузера. Если вы пользуетесь какими-нибудь блокировщиками всплывающих окон, пожалуйста, временно отключите их перед продолжением."
       ],
       "We'll notify you when the import is done.": [
-        ""
+        "Мы уведомим вас, когда импорт будет завершен."
       ],
       "Week": [
         "Неделя"
       ],
       "What do you want to import from your Google account?": [
-        ""
+        "Что вы хотите импортировать из своего аккаунта Google?"
       ],
       "Which event would you like to delete?": [
         "Какое событие вы хотите удалить?"
@@ -2664,13 +2664,13 @@
         "В настоящее время вы вошли как ${ user.Name } (${ user.Email }), и Ваш доступ ограничен."
       ],
       "You can check the progress ${ importProgressLink }.": [
-        ""
+        "Вы можете проверить процесс ${ importProgressLink }."
       ],
       "You can only modify personal event properties as you can't send emails from the organizer address.": [
         "Вы можете изменять только свою копию события, так как вы не можете отправлять письма с адреса организатора."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
-        ""
+        "Вы можете включить уведомления, чтобы получать оповещения при появлении новых сообщений в этой папке."
       ],
       "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
         "Вы выключили доступ к Beta. Нажмите ${ refreshButton }, чтобы использовать стабильную версию ${ appName }. Приложение будет перезагружено."
@@ -2748,7 +2748,7 @@
         "Ваш банк требует проверки 3-D Secure в целях безопасности."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
-        ""
+        "Ваши данные готовы к импорту из ${ importedEmailAddressStrong } в ваш аккаунт Proton."
       ],
       "Your email will only be used for this one-time verification.": [
         "Ваш адрес электронной почты будет использован только для этой разовой проверки."
@@ -3036,7 +3036,7 @@
         "Сумма BTC:"
       ],
       "Calendar": [
-        ""
+        "Календарь"
       ],
       "Cancel": [
         "Отменить"
@@ -3060,7 +3060,7 @@
         "Город"
       ],
       "Contacts": [
-        ""
+        "Контакты"
       ],
       "Copy": [
         "Копировать"
@@ -3102,7 +3102,7 @@
         "Формат письма"
       ],
       "Emails": [
-        ""
+        "Электронные письма"
       ],
       "Enable Beta Access": [
         "Включить доступ к Beta"
@@ -3144,10 +3144,10 @@
         "Расширенный адрес"
       ],
       "Folder location": [
-        ""
+        "Размещение папки"
       ],
       "From: ${ importedEmail }": [
-        ""
+        "От: ${ importedEmail }"
       ],
       "Hide password": [
         "Скрыть пароль"
@@ -3156,40 +3156,40 @@
         "Насколько вероятно, что вы порекомендуете ${ calendarAppName } другу или коллеге?"
       ],
       "Import all messages": [
-        ""
+        "Импортировать все сообщения"
       ],
       "Import contacts": [
         "Импортировать контакты"
       ],
       "Import interval": [
-        ""
+        "Интервал импорта"
       ],
       "Import to email address": [
-        ""
+        "Импортировать в адреса электронной почты"
       ],
       "Keyboard shortcuts": [
         "Сочетания клавиш"
       ],
       "Label messages as": [
-        ""
+        "Отметить сообщения как"
       ],
       "Last 12 months only": [
-        ""
+        "Только последние 12 месяцев"
       ],
       "Last 3 months only": [
-        ""
+        "Только последние 3 месяца"
       ],
       "Last month only": [
-        ""
+        "Только за последний месяц"
       ],
       "Mailbox password": [
         "Пароль почтового ящика"
       ],
       "Manage folders": [
-        ""
+        "Управление папками"
       ],
       "Manage labels": [
-        ""
+        "Управление ярлыками"
       ],
       "Name": [
         "Имя"
@@ -3198,7 +3198,7 @@
         "Имя на карте"
       ],
       "Notification": [
-        ""
+        "Уведомление"
       ],
       "Operating system": [
         "Операционная система"
@@ -3213,10 +3213,10 @@
         "Организатор"
       ],
       "participant": [
-        "",
-        "",
-        "",
-        ""
+        "участник",
+        "участники",
+        "участники",
+        "участники"
       ],
       "Participants": [
         "Участники"
@@ -3228,7 +3228,7 @@
         "Плательщик"
       ],
       "PGP scheme": [
-        ""
+        "Схема PGP"
       ],
       "Phone number": [
         "Номер телефона"
@@ -3291,7 +3291,7 @@
         "Время события"
       ],
       "To: ${ emailAddress }": [
-        ""
+        "Кому: ${ emailAddress }"
       ],
       "Total": [
         "Всего"
@@ -3368,21 +3368,21 @@
     },
     "Label/folder modal": {
       "Create folder": [
-        ""
+        "Создать папку"
       ],
       "Create label": [
-        ""
+        "Создать ярлык"
       ],
       "Edit folder": [
-        ""
+        "Изменить папку"
       ],
       "Edit label": [
-        ""
+        "Изменить ярлык"
       ]
     },
     "label/folder notification": {
       "${ Label.Name } created": [
-        ""
+        "${ Label.Name } создан"
       ]
     },
     "Layout mode": {
@@ -3433,25 +3433,25 @@
     },
     "Loading info": {
       "${ createdCalendars } of ${ calendarsToBeCreated } created": [
-        "",
-        "",
-        "",
-        ""
+        "${ createdCalendars } из ${ calendarsToBeCreated } создан",
+        "${ createdCalendars } из ${ calendarsToBeCreated } создан",
+        "${ createdCalendars } из ${ calendarsToBeCreated } создан",
+        "${ createdCalendars } из ${ calendarsToBeCreated } создан"
       ],
       "Almost there": [
-        ""
+        "Почти там"
       ],
       "Creating new calendars": [
-        ""
+        "Создание новых календарей"
       ],
       "Gathering your data": [
-        ""
+        "Сбираются ваши данные"
       ],
       "We're gathering your data from your provider": [
-        ""
+        "Мы собираем ваши данные у вашего поставщика услуг"
       ],
       "Your import is starting": [
-        ""
+        "Ваш импорт начался"
       ]
     },
     "Mail feature": {
@@ -3537,7 +3537,7 @@
     },
     "Mail import summary": {
       "${ messagesFragment } since ${ periodFragment } and label them as ${ label }": [
-        ""
+        "${ messagesFragment } с ${ periodFragment } и пометить их как ${ label }"
       ]
     },
     "Many Others": {
@@ -3717,13 +3717,13 @@
     },
     "New Label form": {
       "Color": [
-        ""
+        "Цвет"
       ],
       "Folder name": [
-        ""
+        "Название папки"
       ],
       "Label name": [
-        ""
+        "Название ярлыка"
       ]
     },
     "Notification": {
@@ -3967,7 +3967,7 @@
         "Месяцев"
       ],
       "No parent folder": [
-        ""
+        "Без родительской папки"
       ],
       "This and future events": [
         "Это и будущие события"
@@ -3990,10 +3990,10 @@
     },
     "Option group label": {
       "Create new calendar": [
-        ""
+        "Создать календарь"
       ],
       "Merge with calendar": [
-        ""
+        "Объединение с календарем"
       ]
     },
     "Participant name": {
@@ -4548,16 +4548,16 @@
     },
     "Time period": {
       "account creation date": [
-        ""
+        "дата создания аккаунта"
       ],
       "the last 12 months": [
-        ""
+        "последние 12 месяцев"
       ],
       "the last 3 months": [
-        ""
+        "последние 3 месяца"
       ],
       "the last month": [
-        ""
+        "последний месяц"
       ]
     },
     "Time unit": {
@@ -4710,13 +4710,13 @@
         "Текущий тариф"
       ],
       "Customize and confirm": [
-        ""
+        "Настройте и подтвердите"
       ],
       "Customize calendar import": [
-        ""
+        "Настройка импорта календаря"
       ],
       "Customize your mail import": [
-        ""
+        "Настройка импорта вашей почты"
       ],
       "Customize your plan": [
         "Настроить свой план"
@@ -4953,7 +4953,7 @@
         "Выберите способ отправки этого уведомления"
       ],
       "Select what to import": [
-        ""
+        "Виберете что импортировать"
       ],
       "Select when this event will stop happening": [
         "Выберите, когда это событие прекратится"
@@ -5023,7 +5023,7 @@
     },
     "Today icon tooltip in mini calendar": {
       "Today": [
-        ""
+        "Сегодня"
       ]
     },
     "Tooltip": {
@@ -5049,7 +5049,7 @@
         "Скидка применяется при оплате на 2 года вперёд"
       ],
       "Each imported email will have this label": [
-        ""
+        "У каждого импортированного письма будет этот ярлык"
       ],
       "Email encryption forces email signature to help authenticate your sent messages": [
         "Добавление цифровой подписи при шифровании позволяет подтверждать подлинность отправленных сообщений"
@@ -5088,10 +5088,10 @@
         "Поддержка протоколов обмена файлами, таких как Bittorrent."
       ],
       "System subfolders will show up as separate folders in ProtonMail": [
-        ""
+        "Системные подпапки будут отображаться как отдельные папки в ProtonMail"
       ],
       "The import will start with the most recent messages.": [
-        ""
+        "Импорт начнется с самых последних сообщений."
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Загрузите публичный ключ, чтобы включить отправку зашифрованных писем на этот адрес"
@@ -5249,7 +5249,7 @@
         "Пожалуйста, обратите внимание, что при выборе этого способа оплаты ваш аккаунт не может быть немедленно обновлен. Мы обновим ваш счет после подтверждения оплаты."
       ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
-        ""
+        "Proton объединит все папки с одинаковым названием. Чтобы избежать этого, измените названия перед импортом."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Отчеты отправляются без сквозного шифрования. Пожалуйста, не указывайте никакой конфиденциальной информации."
@@ -5261,7 +5261,7 @@
         "Контакт не загрузился."
       ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
-        ""
+        "Настройки даты и времени на вашем устройстве не синхронизированы. ${ learnMore }"
       ],
       "The decryption of the encrypted content failed.": [
         "Не удалось расшифровать зашифрованное содержимое."
@@ -5279,7 +5279,7 @@
         "К сожалению, в данный момент мы не работаем в режиме онлайн. Пожалуйста, заполните форму ниже, чтобы описать вашу проблему, мы рассмотрим ее и свяжемся с вами, когда вернемся к работе."
       ],
       "You will lose any customization you made so far.": [
-        ""
+        "Вы потеряете все сделанные вами до этого настройки."
       ]
     },
     "Weekly recurring event, frequency": {

@@ -69,13 +69,13 @@
         "Semua membaca"
       ],
       "All Starred": [
-        "Semua berkilau"
+        "Semua Berbintang"
       ],
       "All Unread": [
         "Semua belum dibaca"
       ],
       "All Unstarred": [
-        "Semua Unstarred"
+        "Semua Tak Berbintang"
       ],
       "annual billing": [
         "penagihan tahunan"
@@ -168,7 +168,7 @@
         "Tulis"
       ],
       "Composer size": [
-        "Ukuran kotak tulis"
+        "Ukuran komposer"
       ],
       "Confirm": [
         "Konfirmasi"
@@ -186,7 +186,7 @@
         "Lanjutkan dengan Google"
       ],
       "Contract composer": [
-        "Kembalikan ukuran komposer"
+        "Ciutkan komposer"
       ],
       "Copy address": [
         "Salin alamat"
@@ -954,9 +954,6 @@
       "Forwarded": [
         "Diteruskan"
       ],
-      "Has attachments": [
-        "Ada Lampiran"
-      ],
       "Replied to": [
         "Balas ke"
       ],
@@ -1208,7 +1205,7 @@
         "Masalah pemutaran konten"
       ],
       "Update problem": [
-        "Masalah pemutakhiran"
+        "Masalah pembaruan aplikasi"
       ],
       "VPN problem": [
         "Masalah VPN"
@@ -1869,8 +1866,8 @@
       "Amount below minimum.": [
         "Jumlah di bawah minimum."
       ],
-      "Attachments are limited to 25 MB.": [
-        "Lampiran terbatas hingga 25 MB."
+      "Attachments are limited to 25 MB": [
+        "Lampiran terbatas hingga 25 MB"
       ],
       "Authentication canceled.": [
         "Autentikasi dibatalkan."
@@ -1893,8 +1890,8 @@
       "Can't validate phone, try again later": [
         "Tidak dapat memvalidasi telepon, coba lagi nanti"
       ],
-      "Checkout expired, please try again.": [
-        "Pembayaran kedaluwarsa, silakan coba lagi."
+      "Checkout expired, please try again": [
+        "Sesi pembayaran telah kedaluwarsa, silakan coba lagi"
       ],
       "Choose a date in the future.": [
         "Pilih tanggal yang akan datang."
@@ -1914,11 +1911,11 @@
       "Contact signature not verified": [
         "Tanda tangan kontak tidak terverifikasi"
       ],
-      "Contact your organization’s administrator to resolve this.": [
-        "Hubungi administrator organisasi Anda untuk menyelesaikan ini."
+      "Contact your organization’s administrator to resolve this": [
+        "Hubungi administrator organisasi Anda untuk menyelesaikan masalah ini"
       ],
-      "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser": [
-        "Pencarian konten tidak dapat diaktifkan di peramban ini. Mohon keluar dari mode jelajah privat atau gunakan peramban lain"
+      "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
+        "Pencarian konten tidak dapat dilangsungkan pada browser ini. Mohon keluar dari mode private browsing atau gunakan browser lain."
       ],
       "Could not find address ${ email }.": [
         "Tidak dapat menemukan alamat ${ email }."
@@ -1953,14 +1950,14 @@
       "Error in one of the conditions": [
         "Kesalahan pada salah satu kondisi"
       ],
-      "Error while saving draft. Please try again": [
-        "Terjadi kesalahan dalam menyimpan draf. Silakan coba lagi"
+      "Error while saving draft. Please try again.": [
+        "Terjadi kesalahan dalam menyimpan draf. Silakan coba lagi."
       ],
-      "Error while sending the message. Message is not sent": [
-        "Kesalahan saat mengirim pesan. Pesan tidak terkirim"
+      "Error while sending the message. Message is not sent.": [
+        "Terjadi kesalahan dalam mengirim pesan. Pesan tidak terkirim."
       ],
-      "Error while uploading attachments. Message is not sent": [
-        "Kesalahan saat mengunggah lampiran. Pesan tidak terkirim"
+      "Error while uploading attachments. Message is not sent.": [
+        "Terjadi kesalahan dalam mengunggah lampiran. Pesan tidak terkirim."
       ],
       "Failed to encrypt attachment. Please try again.": [
         "Gagal mengenkripsi lampiran. Silakan coba lagi."
@@ -1995,8 +1992,8 @@
       "Invalid expiration date": [
         "Tanggal kedaluwarsa tidak valid"
       ],
-      "Invalid expiration time.": [
-        "Waktu kedaluwarsa tidak valid."
+      "Invalid expiration time": [
+        "Waktu kedaluwarsa tidak valid"
       ],
       "Invalid name": [
         "Nama tidak valid"
@@ -2019,8 +2016,8 @@
       "Message needs to be sent first": [
         "Pesan perlu dikirim lebih dahulu"
       ],
-      "Message passwords do not match.": [
-        "Sandi pesan tidak cocok."
+      "Message passwords do not match": [
+        "Kata sandi pesan tidak cocok"
       ],
       "Message processing error.": [
         "Kesalahan pemprosesan pesan."
@@ -2034,8 +2031,8 @@
       "Network error: Please check your connection and try again.": [
         "Kesalahan jaringan: Cek koneksi Anda dan coba lagi."
       ],
-      "No address with keys available to compose a message.": [
-        "Tidak ada alamat dengan kunci yang tersedia untuk menulis pesan."
+      "No address with keys available to compose a message": [
+        "Tidak ada alamat dengan kunci yang tersedia untuk dapat menulis pesan"
       ],
       "No key retrieved for internal user is valid for sending": [
         "Tidak ada kunci yang diambil untuk pengguna internal yang valid untuk pengiriman"
@@ -2152,7 +2149,7 @@
         "Peramban yang Anda gunakan tidak mengizinkan pembayaran secara penuh diotorisasi. Sila gunakan peramban lain atau masuk via komputer."
       ],
       "The composer failed to load.": [
-        "Komposer gagal memuat."
+        "Komposer gagal termuat."
       ],
       "The folder name is too long. Please choose a different name.": [
         "Nama folder terlalu panjang. Mohon pilih nama lain."
@@ -2163,8 +2160,8 @@
       "The label name is too long. Please choose a different name.": [
         "Nama label terlalu panjang. Mohon pilih nama lain."
       ],
-      "The maximum expiration is 4 weeks.": [
-        "Jangka waktu kedaluwarsa maksimum adalah 4 minggu."
+      "The maximum expiration is 4 weeks": [
+        "Jangka waktu kedaluwarsa maksimum adalah 4 minggu"
       ],
       "The minimum amount of credit that can be added is ${ _price }": [
         "Tambahan kredit minimal ${ _price }"
@@ -2181,8 +2178,8 @@
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Ada terlalu banyak folder di dalam akun eksternal Anda. Mohon sesuaikan parameter impor Anda agar sebagian folder dapat terhapus."
       ],
-      "There has been an issue with content search. Default search has been used instead": [
-        "Telah terjadi sebuah masalah dengan pencarian konten. Pencarian standar telah digunakan sebagai gantinya"
+      "There has been an issue with content search. Default search has been used instead.": [
+        "Terjadi suatu kesalahan dengan pencarian konten. Pencarian standar telah digunakan sebagai gantinya."
       ],
       "There was an error when exporting the contacts vCards": [
         "Ada kesalahan saat mengekspor kontak vCard"
@@ -2199,8 +2196,8 @@
       "This label name is not available. Please choose a different name": [
         "Nama label ini tidak dapat digunakan. Mohon pilih nama lain"
       ],
-      "This message has already been sent.": [
-        "Pesan ini telah terkirim."
+      "This message has already been sent": [
+        "Pesan ini telah terkirim"
       ],
       "This message has already been sent. A new draft has been saved.": [
         "Pesan ini telah terkirim. Draf baru telah tersimpan."
@@ -2208,8 +2205,8 @@
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "Pesan ini mungkin berisi tautan URL yang tidak dapat dibuka dengan benar lewat peramban Anda"
       ],
-      "Too many active filters. Please upgrade to a paid plan to activate more filters": [
-        "Terlalu banyak filter aktif. Mohon tingkatkan ke paket berbayar untuk mengaktifkan lebih banyak filter"
+      "Too many active filters. Please upgrade to a paid plan to activate more filters.": [
+        "Terlalu banyak filter yang aktif. Mohon tingkatkan jenis akun Anda ke akun berbayar untuk dapat mengaktifkan lebih banyak filter."
       ],
       "Trusted keys are not valid for sending": [
         "Kunci terpercaya tidak valid untuk mengirim"
@@ -2229,8 +2226,8 @@
       "You can't send vCards of more than 10 contacts": [
         "Anda tidak dapat mengirim vCard lebih dari 10 kontak"
       ],
-      "You cannot open more than ${ maxActiveComposer } composer window at a time.": [
-        "Anda tidak dapat membuka lebih dari ${ maxActiveComposer } jendela komposer sekaligus."
+      "You cannot open more than ${ maxActiveComposer } composer window at a time": [
+        "Anda tidak dapat membuka lebih dari ${ maxActiveComposer } dalam satu waktu"
       ],
       "You did not provide a file.": [
         "Anda tidak menyediakan berkas."
@@ -2247,8 +2244,8 @@
       "Your import will not be processed.": [
         "Impor Anda tidak akan diproses."
       ],
-      "Your search matched too many results. Please limit your search and try again": [
-        "Hasil pencarian Anda cocok dengan terlalu banyak hasil. Silahkan batasi pencarian Anda dan coba lagi"
+      "Your search matched too many results. Please limit your search and try again.": [
+        "Pencarian Anda membuahkan terlalu banyak hasil. Harap persempit kriteria pencarian Anda dan coba lagi."
       ]
     },
     "Error display when performing invalid move on message": {
@@ -3205,7 +3202,7 @@
         "Kosongkan beberapa ruang atau hubungi administrator Anda."
       ],
       "From": [
-        "Sejak"
+        "Dari"
       ],
       "Full-featured VPN with speed up to 10 Gbps.": [
         "VPN berfitur lengkap dengan kecepatan hingga 10 Gbps."
@@ -3243,8 +3240,8 @@
       "Image URL": [
         "URL gambar"
       ],
-      "Images have been removed because they are not allowed in auto-reply.": [
-        "Gambar dihapus karena tidak dibolehkan dalam fitur balas otomatis."
+      "Images have been removed because they are not allowed in auto-reply": [
+        "Gambar-gambar yang ada telah dihapus karena tidak dapat diikutsertakan dalam pesan balasan otomatis"
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Impor ${ contactsFragment } dan ${ contactsGroupsFragment }"
@@ -3347,6 +3344,9 @@
       ],
       "Message sent": [
         "Pesan terkirim"
+      ],
+      "Message sent.": [
+        "Pesan terkirim."
       ],
       "Message will be sent ${ dateString } at ${ formattedTime }": [
         "Pesan akan terkirim pada tanggal ${ dateString }, pukul ${ formattedTime }"
@@ -3613,7 +3613,7 @@
         "Subjek"
       ],
       "Subject is end-to-end encrypted": [
-        "Subjek dienkripsi end-to-end"
+        "Subjek terenkripsi secara end-to-end"
       ],
       "Subject:": [
         "Subjek:"
@@ -3937,7 +3937,7 @@
         "Anda telah mengaktifkan Akses Beta. Klik ${ refreshButton } untuk menggunakan versi terbaru dari ${ appName }. Aplikasi akan dimuat ulang."
       ],
       "You have not given your email any subject. Do you want to send the message anyway?": [
-        "Anda belum menulis subjek surel. Yakin ingin mengirimnya?"
+        "Anda belum menulis subjek email. Apakah Anda yakin untuk tetap mengirim email ini?"
       ],
       "You have reached 100% of your storage capacity. Consider freeing up some space or upgrading your account with additional storage space to compose new messages.": [
         "Kapasitas penyimpanan Anda mencapai 100%. Pertimbangkan untuk mengosongkan ruang atau meningkatkan akun dengan ruang penyimpanan tambahan untuk menulis pesan baru."
@@ -4116,7 +4116,7 @@
         "Buang draf"
       ],
       "Expand / contract composer": [
-        "Buka / lebarkan komposer"
+        "Lebarkan / ciutkan komposer"
       ],
       "Forward": [
         "Teruskan"
@@ -4577,7 +4577,7 @@
         "Pilih metode"
       ],
       "Select how your composer opens by default.": [
-        "Pilih bagaimana komposer Anda tebuka secara bawaan."
+        "Tentukan bagaimana jendela komposer Anda akan terbuka."
       ],
       "Select how your list of messages looks like by default.": [
         "Pilih bagaimana daftar pesan Anda akan telihat secara bawaan."
@@ -4855,13 +4855,13 @@
         "Dijadwalkan"
       ],
       "Sent": [
-        "Dikirim"
+        "Terkirim"
       ],
       "Spam": [
         "Spam"
       ],
       "Starred": [
-        "Dibintangi"
+        "Bintang"
       ],
       "This ICS file contains more than one event. Please download it and import the events in ${ calendarAppName }": [
         "Berkas ICS ini berisi lebih dari satu acara. Silakan unduh dan impor acara di ${ calendarAppName }"
@@ -5023,13 +5023,13 @@
         "Dijadwalkan"
       ],
       "Sent": [
-        "Dikirim"
+        "Terkirim"
       ],
       "Spam": [
         "Spam"
       ],
       "Starred": [
-        "Dibintangi"
+        "Bintang"
       ],
       "Trash": [
         "Sampah"
@@ -5453,7 +5453,7 @@
         "Cari nama grup"
       ],
       "Search for name or email": [
-        "Cari nama atau surel"
+        "Cari nama atau email"
       ],
       "Search Messages": [
         "Cari Pesan"
@@ -5462,7 +5462,7 @@
         "Cari pesan"
       ],
       "Search name, email or group": [
-        "Cari nama, surel, atau grup"
+        "Cari nama, email, atau grup"
       ],
       "Start date": [
         "Tanggal mulai"
@@ -5974,8 +5974,8 @@
       "Contacts deleted": [
         "Kontak dihapus"
       ],
-      "Conversation added to ${ labelName }": [
-        "Percakapan ditambahkan ke ${ labelName }"
+      "Conversation added to ${ labelName }.": [
+        "Percakapan ditambahkan ke ${ labelName }."
       ],
       "Conversation deleted": [
         "Percakapan dihapus"
@@ -5983,8 +5983,8 @@
       "Conversation marked as read.": [
         "Percakapan ditandai telah dibaca."
       ],
-      "Conversation marked as Starred": [
-        "Percakapan ditandai dengan Bintang"
+      "Conversation marked as Starred.": [
+        "Percakapan ditandai dengan Bintang."
       ],
       "Conversation marked as unread.": [
         "Percakapan ditandai belum dibaca."
@@ -5998,8 +5998,8 @@
       "Conversation moved to spam and sender added to Block List.": [
         "Percakapan dipindah ke spam dan pengirim masuk Daftar Blokir."
       ],
-      "Conversation removed from ${ labelName }": [
-        "Percakapan dihapus dari ${ labelName }"
+      "Conversation removed from ${ labelName }.": [
+        "Percakapan dihapus dari ${ labelName }."
       ],
       "Draft deleted": [
         "Draf terhapus"
@@ -6025,8 +6025,8 @@
       "Mail list unsubscribed": [
         "Berhenti langganan milis"
       ],
-      "Message added to ${ labelName }": [
-        "Pesan ditambahkan ke ${ labelName }"
+      "Message added to ${ labelName }.": [
+        "Pesan ditambahkan ke ${ labelName }."
       ],
       "Message content search activated": [
         "Pencarian konten pesan diaktifkan"
@@ -6040,8 +6040,8 @@
       "Message marked as read.": [
         "Pesan ditandai telah dibaca."
       ],
-      "Message marked as Starred": [
-        "Pesan ditandai dengan Bintang"
+      "Message marked as Starred.": [
+        "Pesan ditandai dengan Bintang."
       ],
       "Message marked as unread.": [
         "Pesan ditandai belum dibaca."
@@ -6055,8 +6055,8 @@
       "Message moved to spam and sender added to Block List.": [
         "Pesan dipindah ke spam dan pengirim masuk Daftar Blokir."
       ],
-      "Message removed from ${ labelName }": [
-        "Pesan dihapus dari ${ labelName }"
+      "Message removed from ${ labelName }.": [
+        "Pesan dihapus dari ${ labelName }."
       ],
       "Move ${ selectionCount } conversation": [
         "${ selectionCount } percakapan dipindahkan"
@@ -6276,7 +6276,7 @@
         "Membersihkan data"
       ],
       "Composer mode": [
-        "Mode menulis"
+        "Mode komposer"
       ],
       "Confirm loss of Proton bonuses": [
         "Konfirmasi kehilangan bonus Proton"
@@ -6408,7 +6408,7 @@
         "Masukkan sandi Anda"
       ],
       "Enter your username or ProtonMail email address": [
-        "Masukkan nama pengguna atau alamat surel ProtonMail"
+        "Masukkan nama pengguna atau alamat email ProtonMail Anda"
       ],
       "Error": [
         "Kesalahan"
@@ -6489,7 +6489,7 @@
         "Daftar pesan"
       ],
       "Message without subject?": [
-        "Pesan tanpa subjek?"
+        "Kirim pesan tanpa subjek?"
       ],
       "More": [
         "Lainnya"
@@ -6597,7 +6597,7 @@
         "Balas semua"
       ],
       "Report a problem": [
-        "Laporkan sebuah masalah"
+        "Laporkan masalah"
       ],
       "Schedule send": [
         "Jadwalkan pengiriman"

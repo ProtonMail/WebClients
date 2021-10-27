@@ -187,6 +187,9 @@
       "Download": [
         "Λήψη"
       ],
+      "Drive Locked": [
+        ""
+      ],
       "Edit": [
         "Επεξεργασία"
       ],
@@ -317,10 +320,10 @@
         "Μετακίνηση στον κάδο απορριμμάτων"
       ],
       "Name: A to Z": [
-        "Όνομα: Α έως το Ω"
+        "Όνομα: Α προς Ω"
       ],
       "Name: Z to A": [
-        "Όνομα: Ω ως Α"
+        "Όνομα: Ω προς Α"
       ],
       "New upload": [
         "Νέο ανέβασμα"
@@ -560,7 +563,7 @@
         "Χρησιμοποιήστε διαφορετικό τρόπο πληρωμής"
       ],
       "Use for sending": [
-        "Χρησιμοποιήστε την για αποστολή"
+        "Χρήση για αποστολή"
       ],
       "Use “${ label }” setting": [
         "Χρησιμοποιήστε τη ρύθμιση “${ label }”"
@@ -1050,7 +1053,7 @@
     },
     "Drive feature": {
       "Access via Web": [
-        "Πρόσβαση μέσω Web"
+        "Πρόσβαση μέσω Ιστού"
       ],
       "Share files via link": [
         "Κοινή χρήση αρχείων με συνδέσμους"
@@ -1097,8 +1100,8 @@
       "Can't validate phone, try again later": [
         "Αδυναμία επικύρωσης αριθμού τηλεφώνου, παρακαλούμε δοκιμάστε ξανά αργότερα"
       ],
-      "Checkout expired, please try again.": [
-        "Η ταμειακή διαδικασία εξέπνευσε, παρακαλούμε δοκιμάστε ξανά."
+      "Checkout expired, please try again": [
+        "Η ταμειακή διαδικασία εξέπνευσε, παρακαλούμε δοκιμάστε ξανά"
       ],
       "Contact could not be saved": [
         "Αποτυχία αποθήκευσης επαφής"
@@ -1687,6 +1690,10 @@
       "${ vpnAppName } Free": [
         "${ vpnAppName } Δωρεάν"
       ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } μέλος)",
+        "(${ memberCount } μέλη)"
+      ],
       "(Mail + VPN)": [
         "(Mail + VPN)"
       ],
@@ -1753,11 +1760,14 @@
       "Amount below minimum (${ amount }).": [
         "Ποσό χαμηλότερο από το ελάχιστο. (${ amount })."
       ],
+      "An active recovery file": [
+        "Ένα ενεργό αρχείο ανάκτησης"
+      ],
       "and": [
         "και"
       ],
       "Anyone with this link can access your file.": [
-        "Οποιοσδήποτε με αυτόν τον σύνδεσμο μπορεί να έχει πρόσβαση το αρχείο."
+        "Οποιοσδήποτε έχει αυτόν τον σύνδεσμο μπορεί να προσπελάσει το αρχείο σας."
       ],
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "Είστε βέβαιοι ότι θέλετε να αδειάσετε τον κάδο απορριμμάτων και να διαγράψετε οριστικά όλα τα στοιχεία;"
@@ -1768,6 +1778,9 @@
       ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Η βασική πλοήγηση και οι ενέργειες παραμένουν διαθέσιμες ανεξάρτητα από τις συντομεύσεις πληκτρολογίου που είναι ενεργές ή όχι στις ρυθμίσεις."
+      ],
+      "Because ${ appName } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
+        "Επειδή το ${ appName } είναι κρυπτογραφημένο από άκρο σε άκρο, δεν μπορούμε να έχουμε πρόσβαση\nή να αποκρυπτογραφήσουμε τα αρχεία για εσάς. Για να ξεκλειδώσετε τη μονάδα δίσκου μετά από επαναφορά κωδικού πρόσβασης,\nπρέπει να έχετε ένα από τα παρακάτω:"
       ],
       "Billed as ${ billedPrice } every 2 years": [
         "Χρεώνεται ως ${ billedPrice } κάθε 2 χρόνια"
@@ -1820,6 +1833,9 @@
       "Connections": [
         "Συνδέσεις"
       ],
+      "Continue using ${ appName } and unlock drive later": [
+        "Συνέχιση χρήσης ${ appName } και ξεκλείδωμα αρχειοθήκης αργότερα"
+      ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "Δημιουργήστε ${ calendarsToBeCreated } νέο ημερολόγιο",
         "Δημιουργήστε ${ calendarsToBeCreated } νέα ημερολόγια"
@@ -1847,6 +1863,10 @@
       ],
       "Creating share": [
         "Δημιουργία κοινοποίησης"
+      ],
+      "Delete drive": [
+        "Διαγραφή αρχειοθήκης",
+        "Διαγραφή αρχειοθηκών"
       ],
       "Discount applied to your subscription with coupon ${ code }": [
         "Εφαρμόστηκε έκπτωση στη συνδρομή σας, με το κουπόνι ${ code }"
@@ -1944,6 +1964,9 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Εάν δεν βρείτε το email στα εισερχόμενα σας, ελέγξτε το φάκελο ανεπιθύμητων."
       ],
+      "If you have one of these, continue to Proton account setting to\ncontinue the unblock process.": [
+        "Εάν έχετε ένα από αυτά, συνεχίστε στη ρύθμιση λογαριασμού Proton σε\nσυνεχίστε τη διαδικασία ξεμπλοκαρίσματος."
+      ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Εισαγωγή ${ contactsFragment } και ${ contactsGroupsFragment }"
       ],
@@ -2018,7 +2041,7 @@
         "Μετακίνηση αρχείων"
       ],
       "My Links": [
-        "Οι Σύνδεσμοι Μου"
+        "Οι Σύνδεσμοί μου"
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Ονομάστε τον νέο σας φάκελο και επιλέξτε τον γονικό φάκελο στον οποίο θέλετε να τον τοποθετήσετε. Εάν δεν επιλέξετε γονικό φάκελο, ο νέος φάκελος θα δημιουργηθεί ως φάκελος ανώτατου επιπέδου."
@@ -2030,7 +2053,7 @@
         "Νέο"
       ],
       "Next you'll need to log in to your Google account and allow us to access your data.": [
-        "Στη συνέχεια, θα πρέπει να συνδεθείτε στον λογαριασμό σας Google και να μας επιτρέψετε να έχουμε πρόσβαση στα δεδομένα σας."
+        "Μετά πρέπει να εισέλθετε στον λογαριασμό σας στο Google και να μας παραχωρήσετε πρόσβαση στα δεδομένα σας."
       ],
       "No": [
         "Όχι"
@@ -2063,7 +2086,7 @@
         "Μη παραμετροποιήσιμο"
       ],
       "Note: Data may still be available locally on devices where you have installed ${ appName }.": [
-        ""
+        "Σημείωση: Σε συσκευές όπου εγκαταστήσατε το ${ appName }, κάποια δεδομένα ίσως είναι ακόμα διαθέσιμα."
       ],
       "Number of VPN connections which can be assigned to users. Each connected device consumes one VPN connection.": [
         "Αριθμός συνδέσεων VPN που μπορούν να αντιστοιχιστούν στους χρήστες. Κάθε συνδεδεμένη συσκευή καταναλώνει μία σύνδεση VPN."
@@ -2071,11 +2094,14 @@
       "of": [
         "από"
       ],
+      "One of your encrypted drives is locked. This is most likely due to a recent password reset.${ BrElement }\n${ BrElement }\n${ questionText }": [
+        "Μία από τις κρυπτογραφημένες αρχειοθήκες σας είναι κλειδωμένη. Αυτό πιθανότατα οφείλεται σε μια πρόσφατη επαναφορά κωδικού πρόσβασης.${ BrElement }\n${ BrElement }\n${ questionText }"
+      ],
       "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
         "Αλλάξτε αυτές τις ρυθμίσεις μόνο αν χρησιμοποιείτε PGP με παραλήπτες που δεν ανήκουν στο ProtonMail."
       ],
       "Only the people with the link and the password can access this file.": [
-        "Μόνο άτομα που κατέχουν τον σύνδεσμο και το συνθηματικό έχουν πρόσβαση στο αρχείο."
+        "Μόνο τα άτομα που έχουν τον σύνδεσμο και τον κωδικό πρόσβασης μπορούν να προσπελάσουν αυτό το αρχείο."
       ],
       "Paused": [
         "Σε παύση"
@@ -2085,6 +2111,9 @@
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Οι πληρωμές προστατεύονται με κρυπτογράφηση TLS και από τους ελβετικούς νόμους περί ιδιωτικότητας."
+      ],
+      "Permanently delete all files in your drive": [
+        "Μόνιμη διαγραφή όλων των αρχείων στην αρχειοθήκη σας"
       ],
       "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
         "Το PGP / Inline είναι συμβατό μόνο με τη μορφή απλού κειμένου. Παρακαλούμε σημειώστε ότι το ProtonMail πάντα υπογράφει κρυπτογραφημένα μηνύματα."
@@ -2183,8 +2212,8 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Επειδή είστε πιστός χρήστης, ο λογαριασμός σας έχει ενεργοποιημένες πρόσθετες λειτουργίες."
       ],
-      "Some of your files are no longer accessible. Restore the access to your files. ${ startRecoveryButton }": [
-        "Μερικά από τα αρχεία σας δεν είναι πλέον προσβάσιμα. Αποκαταστήστε την πρόσβαση στα αρχεία σας. ${ startRecoveryButton }"
+      "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
+        "Κάποια από τα αρχεία σας δεν είναι πλέον προσβάσιμα. Αποκαταστήστε την πρόσβαση στα αρχεία σας. ${ StartRecoveryButton }"
       ],
       "Something went wrong, please try again later.": [
         "Κάτι πήγε στραβά, παρακαλούμε δοκιμάστε ξανά αργότερα."
@@ -2274,6 +2303,9 @@
       "Trash": [
         "Κάδος Απορριμμάτων"
       ],
+      "Unlock drive to recover files": [
+        "Ξεκλείδωμα αρχειοθήκης προς ανάκτηση αρχείων"
+      ],
       "Unsupported file": [
         "Μη υποστηριζόμενο αρχείο"
       ],
@@ -2320,7 +2352,10 @@
         "Τι θέλετε να κάνετε;"
       ],
       "What do you want to import from your Google account?": [
-        "Τι θέλετε να εισαγάγετε από τον λογαριασμό σας Google;"
+        "Τι θέλετε να εισαγάγετε από τον λογαριασμό σας στο Google;"
+      ],
+      "What would you like to do?": [
+        "Τι θα θέλατε να κάνετε;"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Θέλετε να λάβετε έναν νέο κωδικό επαλήθευσης ή να χρησιμοποιήσετε μια εναλλακτική μέθοδο επαλήθευσης;"
@@ -2409,8 +2444,8 @@
       "Your file is being downloaded.": [
         "Γίνεται λήψη του αρχείου σας."
       ],
-      "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ mailSettingsLink }": [
-        "Τα αρχεία σας δεν είναι πλέον προσβάσιμα λόγω επαναφοράς του κωδικού πρόσβασης. Επαναφορτώστε το παλιό κλειδί κρυπτογράφησης για να αποκτήσετε ξανά πρόσβαση. ${ mailSettingsLink }"
+      "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ KeyReactivationButton }": [
+        "Τα αρχεία σας δεν είναι πλέον προσβάσιμα, λόγω επαναφοράς κωδικού πρόσβασης. Για επαναπόκτηση πρόσβασης, ανεβάστε ξανά το παλιό κλειδί κρυπτογράφησης. ${ KeyReactivationButton }"
       ],
       "Your files will be encrypted and then saved.": [
         "Τα αρχεία σας θα κρυπτογραφηθούν και στη συνέχεια θα αποθηκευτούν."
@@ -2418,11 +2453,17 @@
       "Your phone number will only be used for this one-time verification.": [
         "Ο αριθμός τηλεφώνου σας θα χρησιμοποιηθεί μόνο για αυτή την εφάπαξ επαλήθευση."
       ],
+      "Your previous password": [
+        "Ο προηγούμενος κωδικός πρόσβασής σας"
+      ],
+      "Your previous recovery phrase": [
+        "Η προηγούμενη φράση ανάκτησής σας"
+      ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "Ο λογαριασμός Proton βρίσκεται σε αναμονή. Για να συνεχίσετε να χρησιμοποιείτε το λογαριασμό σας, παρακαλούμε να πληρώσετε τυχόν εκπρόθεσμα τιμολόγια."
       ],
       "Your secure, shareable link for ${ boldNameText }:": [
-        "Ο ασφαλής σύνδεσμος διαμοιρασμού για το ${ boldNameText }:"
+        "Ο ασφαλής κοινοποιήσιμος σύνδεσμός σας για το ${ boldNameText }:"
       ]
     },
     "info": {
@@ -2665,7 +2706,7 @@
     },
     "Label": {
       "(Expired)": [
-        "(Expired)"
+        "(Ληγμένο)"
       ],
       "Active": [
         "Ενεργό"
@@ -2744,6 +2785,10 @@
       ],
       "CVV code": [
         "Κωδικός CVV"
+      ],
+      "Delete Drive?": [
+        "Διαγραφή Αρχειοθήκης;",
+        "Διαγραφή Αρχειοθηκών;"
       ],
       "Display name": [
         "Εμφανιζόμενο Όνομα"
@@ -2923,7 +2968,7 @@
         "Επιλέξτε πώς μοιάζει η λίστα μηνυμάτων σας από προεπιλογή."
       ],
       "Select how your mailbox looks like by default.": [
-        "Επιλέξτε πώς μοιάζει το γραμματοκιβώτιό σας από προεπιλογή."
+        "Επιλογή προεπιλεγμένης όψης της θυρίδας σας."
       ],
       "Select your country": [
         "Επιλέξτε τη χώρα σας"
@@ -2952,6 +2997,9 @@
       "Text": [
         "Κείμενο"
       ],
+      "This will permanently delete all files in your locked drive.": [
+        "Αυτό θα διαγράψει μόνιμα όλα τα αρχεία στην κλειδωμένη αρχειοθήκη σας."
+      ],
       "To: ${ emailAddress }": [
         "Προς: ${ emailAddress }"
       ],
@@ -2966,6 +3014,15 @@
       ],
       "Unknown file": [
         "Άγνωστο αρχείο"
+      ],
+      "Unlock Drive": [
+        "Ξεκλείδωμα Αρχειοθήκης"
+      ],
+      "Unlock drive (recommended)": [
+        "Ξεκλείδωμα αρχειοθήκης (συστήνεται)"
+      ],
+      "Unlock later": [
+        "Ξεκλείδωμα αργότερα"
       ],
       "Up to ${ parentLinkName }": [
         "Πίσω στο ${ parentLinkName }"
@@ -2990,6 +3047,9 @@
       ],
       "What happened?": [
         "Τι συνέβη;"
+      ],
+      "Yes, I want to permanently delete\nmy old files": [
+        "Ναι, επιθυμώ τη μόνιμη διαγραφή των παλιών αρχείων μου"
       ],
       "ZIP": [
         "T.K"
@@ -3256,9 +3316,9 @@
       "\"${ firstItemName }\" restored from trash": [
         "\"${ firstItemName }\" επαναφέρθηκε από τον κάδο απορριμμάτων"
       ],
-      "${ deletedCount } link to your file was deleted.": [
-        "${ deletedCount } σύνδεσμος προς το αρχείο σας διαγράφηκε.",
-        "${ deletedCount } σύνδεσμοι προς τα αρχεία σας διαγράφηκαν."
+      "${ deletedCount } link to your file was deleted": [
+        "διαγράφηκε ${ deletedCount } σύνδεσμος προς το αρχείο σας",
+        "διαγράφηκαν ${ deletedCount } σύνδεσμοι προς τα αρχεία σας"
       ],
       "${ deletedItemsCount } file deleted permanently from trash": [
         "${ deletedItemsCount } αρχείο διαγράφηκε οριστικά από τον Κάδο απορριμμάτων",
@@ -3272,9 +3332,9 @@
         "${ deletedItemsCount } στοιχείο διαγράφηκε οριστικά από τον κάδο απορριμμάτων",
         "${ deletedItemsCount } στοιχεία διαγράφηκαν οριστικά από τον Κάδο απορριμμάτων"
       ],
-      "${ failedCount } link to your file failed to be deleted.": [
-        "${ failedCount } σύνδεσμος στο αρχείο σας απέτυχε να διαγραφεί.",
-        "${ failedCount } σύνδεσμοι στα αρχεία σας απέτυχαν να διαγραφούν."
+      "${ failedCount } link to your file failed to be deleted": [
+        "${ failedCount } σύνδεσμος προς το αρχείο σας απέτυχε να διαγραφεί",
+        "${ failedCount } σύνδεσμοι προς τα αρχεία σας απέτυχαν να διαγραφούν"
       ],
       "${ failedMovesCount } file failed to be moved": [
         "${ failedMovesCount } αρχείο απέτυχε να μετακινηθεί",
@@ -3289,16 +3349,16 @@
         "${ failedMovesCount } στοιχεία απέτυχαν να μετακινηθούν"
       ],
       "${ movedLinksCount } file successfully moved": [
-        "${ movedLinksCount } αρχείο μετακινήθηκε επιτυχώς",
-        "${ movedLinksCount } αρχεία μετακινήθηκαν επιτυχώς"
+        "μετακινήθηκε επιτυχώς ${ movedLinksCount } αρχείο",
+        "μετακινήθηκαν επιτυχώς ${ movedLinksCount } αρχεία"
       ],
       "${ movedLinksCount } folder successfully moved": [
-        "${ movedLinksCount } φάκελος μετακινήθηκε επιτυχώς",
-        "${ movedLinksCount } φάκελοι μετακινήθηκαν επιτυχώς"
+        "μετακινήθηκε επιτυχώς ${ movedLinksCount } φάκελος",
+        "μετακινήθηκαν επιτυχώς ${ movedLinksCount } φάκελοι"
       ],
       "${ movedLinksCount } item successfully moved": [
-        "${ movedLinksCount } στοιχείο μετακινήθηκε επιτυχώς",
-        "${ movedLinksCount } στοιχεία μετακινήθηκαν επιτυχώς"
+        "μετακινήθηκε επιτυχώς ${ movedLinksCount } στοιχείο",
+        "μετακινήθηκαν επιτυχώς ${ movedLinksCount } στοιχεία"
       ],
       "${ restoredItemsCount } file restored from trash": [
         "${ restoredItemsCount } αρχείο επαναφέρθηκε από τον κάδο απορριμμάτων",
@@ -3350,7 +3410,7 @@
         "Το αρχείο ή ο φάκελος \"${ filename }\" ήδη μεταφορτώνονται"
       ],
       "File or folder is missing a name": [
-        "Το αρχείο ή ο φάκελος λείπει ένα όνομα"
+        "Το αρχείο ή ο φάκελος στερείται ονόματος"
       ],
       "Move ${ itemsToMoveCount } file": [
         "Μετακίνηση ${ itemsToMoveCount } αρχείου",
@@ -3379,14 +3439,17 @@
       "Not enough space to upload ${ formattedTotal }": [
         "Δεν υπάρχει αρκετός χώρος για αποστολή ${ formattedTotal }"
       ],
-      "The link to your file failed to be deleted.": [
-        "Ο σύνδεσμος στο αρχείο σας απέτυχε να διαγραφεί."
+      "The link to your file failed to be deleted": [
+        "Ο σύνδεσμος προς το αρχείο σας απέτυχε να διαγραφεί"
       ],
-      "The link to your file was deleted.": [
-        "Ο σύνδεσμος στο αρχείο σας διαγράφηκε."
+      "The link to your file was deleted": [
+        "Ο σύνδεσμος προς το αρχείο σας διαγράφηκε"
       ],
-      "Your settings have been changed successfully.": [
-        "Οι ρυθμίσεις σας έχουν αλλάξει επιτυχώς."
+      "Your old files will be deleted in 72 hours": [
+        "Τα παλιά αρχεία σας θα διαγραφούν εντός 72 ωρών"
+      ],
+      "Your settings have been changed successfully": [
+        "Οι ρυθμίσεις σας άλλαξαν επιτυχώς"
       ]
     },
     "Onboarding Proton": {
@@ -3451,7 +3514,7 @@
         "Γνωρίστε τον νέο ασφαλή χώρο αποθήκευσης αρχείων"
       ],
       "Upgrade to access ${ appName }": [
-        "Αναβάθμιση σε πρόσβαση σε ${ appName }"
+        "Αναβαθμίστε για πρόσβαση στο ${ appName }"
       ]
     },
     "Option": {
@@ -3810,11 +3873,11 @@
       "Preferences saved": [
         "Οι προτιμήσεις αποθηκεύτηκαν"
       ],
-      "Recovery has started.": [
-        "Η ανάκτηση έχει ξεκινήσει."
+      "Recovery has started": [
+        "Η ανάκτηση έχει ξεκινήσει"
       ],
-      "The link to your file was successfully copied.": [
-        "Ο σύνδεσμος στο αρχείο σας αντιγράφηκε επιτυχώς."
+      "The link to your file was successfully copied": [
+        "Ο σύνδεσμος προς το αρχείο σας αντιγράφηκε επιτυχώς"
       ],
       "Verification successful": [
         "Επιτυχία επαλήθευσης"
@@ -3822,8 +3885,8 @@
       "You have successfully unsubscribed": [
         "Διαγραφήκατε με επιτυχία"
       ],
-      "Your files were successfully recovered to \"My files\".": [
-        "Τα αρχεία σας ανακτήθηκαν επιτυχώς στα \"Αρχεία μου\"."
+      "Your files were successfully recovered to \"My files\"": [
+        "Τα αρχεία σας ανακτήθηκαν επιτυχώς στα \"Αρχεία μου\""
       ]
     },
     "Suffix for price": {
@@ -4098,7 +4161,7 @@
         "Γίνεται Λήψη"
       ],
       "Drive": [
-        "Οδηγός"
+        "Αρχειοθήκη"
       ],
       "Drop to upload": [
         "Αφήστε εδώ για να ανεβεί"
@@ -4263,7 +4326,7 @@
         "Επανυπογραφή όλων των επαφών"
       ],
       "Re-signing contacts": [
-        "Επανυπογραφή επαφών"
+        "Γίνεται επανυπογραφή επαφών"
       ],
       "Recover data": [
         "Ανάκτηση δεδομένων"
@@ -4305,7 +4368,7 @@
         "Ρυθμίσεις"
       ],
       "Share via link": [
-        "Κοινοποίηση με σύνδεσμο"
+        "Κοινοποίηση μέσω συνδέσμου"
       ],
       "Shared": [
         "Κοινοποιημένα"
@@ -4326,7 +4389,7 @@
         "Διακοπή κοινής χρήσης"
       ],
       "Stop sharing with everyone?": [
-        "Σταμάτημα κοινωποίησης με όλους;"
+        "Διακοπή κοινοποίησης σε όλους;"
       ],
       "Subtotal": [
         "Υποσύνολο"
@@ -4383,6 +4446,11 @@
         "Τ.Κ / Ταχυδρομικός κώδικας"
       ]
     },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "Σήμερα"
+      ]
+    },
     "Tooltip": {
       "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
         "Αποκτήστε πρόσβαση σε γεωγραφικά αποκλεισμένο περιεχόμενο (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, Youtube κ. λπ.) όπου κι αν βρίσκεστε."
@@ -4400,7 +4468,7 @@
         "Αμύνεται κατά των απειλών ενάντια στο απόρρητο του VPN, κατευθύνοντας τη διαδικτυακή σας κίνηση διαμέσου πολλαπλών διακομιστών."
       ],
       "Digitally signing emails helps authenticating that messages are sent by you": [
-        "Η ψηφιακή υπογραφή μηνυμάτων e-mail βοηθά στην εξακρίβωση ταυτότητας, ότι τα μηνύματα αποστέλλονται από εσάς"
+        "Η ψηφιακή υπογραφή μηνυμάτων βοηθά στην ταυτοποίησή σας ως αποστολέα των μηνυμάτων σας"
       ],
       "Discount applied for annual billing cycle": [
         "Η έκπτωση ισχύει για τον ετήσιο κύκλο χρέωσης"
@@ -4436,7 +4504,7 @@
         "Αν έχετε αγοράσει έναν κωδικό δώρου ή έχετε λάβει ένα από την ομάδα υποστήριξης, μπορείτε να τον εισάγετε εδώ."
       ],
       "Inactive sharing link": [
-        "Απενεργός σύνδεσμος κοινής χρήσης"
+        "Ανενεργός σύνδεσμος κοινοποίησης"
       ],
       "Multi-user support is only applicable to plans with 2 or more users": [
         "Η υποστήριξη πολλαπλών χρηστών ισχύει μόνο για πρόγραμμα με 2 ή περισσότερους χρήστες"
@@ -4524,7 +4592,7 @@
         "Δικαιοδοσία"
       ],
       "Kill Switch / Always-on VPN": [
-        "Kill Switch / Πάντα ενεργό VPN"
+        "Ασφάλεια Αποσύνδεσης / VPN Πάντα σε λειτουργία"
       ],
       "Languages supported": [
         "Υποστηριζόμενες γλώσσες"
@@ -4639,6 +4707,9 @@
       ],
       "The contact failed to load.": [
         "Η επαφή απέτυχε να φορτωθεί."
+      ],
+      "The date and time settings on your device are out of sync. ${ learnMore }": [
+        "Οι ρυθμίσεις ημερομηνίας και ώρας στη συσκευή σας είναι εκτός συγχρονισμού. ${ learnMore }"
       ],
       "The decryption of the encrypted content failed.": [
         "Η αποκρυπτογράφηση του κρυπτογραφημένου περιεχομένου απέτυχε."
