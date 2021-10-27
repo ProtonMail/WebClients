@@ -46,6 +46,7 @@ import { handlePaymentToken } from '../paymentTokenHelper';
 import PlanCustomization from './PlanCustomization';
 import SubscriptionModalHeader from './SubscriptionModalHeader';
 import CalendarDowngradeModal from './CalendarDowngradeModal';
+import MemberDowngradeModal from '../MemberDowngradeModal';
 
 interface Props {
     step?: SUBSCRIPTION_STEPS;
@@ -141,6 +142,11 @@ const SubscriptionModal = ({
         if (hasBonuses(organization)) {
             await new Promise<void>((resolve, reject) => {
                 createModal(<LossLoyaltyModal organization={organization} onConfirm={resolve} onClose={reject} />);
+            });
+        }
+        if (organization.UsedMembers > 1) {
+            await new Promise<void>((resolve, reject) => {
+                createModal(<MemberDowngradeModal organization={organization} onConfirm={resolve} onClose={reject} />);
             });
         }
         await api(deleteSubscription());
