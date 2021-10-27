@@ -18,11 +18,9 @@ const MnemonicResetPasswordConfirmModal = (props: Props) => {
             }}
             {...props}
         >
-            <p className="mt0">
-                {c('Info')
-                    .t`If you proceed, you will be required to reset your password and you will be logged out of all other active sessions.`}
+            <p className="m0">
+                {c('Info').t`This will sign you out of any active sessions and disable 2-factor authentication.`}
             </p>
-            <p className="mb0">{c('Info').t`This will also disable two-factor authentication.`}</p>
         </ConfirmModal>
     );
 };
