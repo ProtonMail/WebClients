@@ -31,11 +31,11 @@
       "${ BRAND_NAME } shop": [
         "Botiga de ${ BRAND_NAME }"
       ],
-      "Activate": [
-        "Activar"
-      ],
       "activate": [
         "activar"
+      ],
+      "Activate": [
+        "Activar"
       ],
       "Activate ${ Name }@pm.me": [
         "Activar ${ Name }@pm.me"
@@ -385,6 +385,9 @@
       "Import contacts": [
         "Importar contactes"
       ],
+      "Import from .csv or vCard": [
+        ""
+      ],
       "Import from .ics": [
         ""
       ],
@@ -657,6 +660,9 @@
       ],
       "Sign out all accounts": [
         "Sortir de tots els comptes"
+      ],
+      "Signing in": [
+        ""
       ],
       "Signing out": [
         "Tancant la sessió"
@@ -1784,8 +1790,8 @@
       "Can't validate phone, try again later": [
         "No es pot validar el telèfon, torneu-ho a provar més tard"
       ],
-      "Checkout expired, please try again.": [
-        "El pagament ha caducat. Torneu-ho a provar."
+      "Checkout expired, please try again": [
+        ""
       ],
       "Condition incomplete": [
         "Condició incompleta"
@@ -1909,6 +1915,9 @@
       "Not a valid number": [
         "Número no vàlid"
       ],
+      "Organization key is not decrypted": [
+        ""
+      ],
       "Organization key is not decrypted.": [
         "La clau d'organització no está desxifrada."
       ],
@@ -1943,8 +1952,8 @@
         "",
         ""
       ],
-      "Please generate keys before you try to change your password.": [
-        "Genereu les claus abans d’intentar canviar la vostra contrasenya."
+      "Please generate keys before you try to change your password": [
+        ""
       ],
       "Please refresh the page.": [
         "Si us plau, refresqueu la pàgina."
@@ -1958,8 +1967,8 @@
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         "Si us plau, proveu de tornar-vos a autenticar i assegureu-vos que els permisos estan correctament configurats."
       ],
-      "Please upgrade to a Professional plan with more than 1 user, or a Visionary account, to get multi-user support.": [
-        "Actualitzi a un pla Professional amb més d'1 usuari o un compte Visionari per obtenir suport multi-usuari."
+      "Please upgrade to a Professional plan with more than 1 user, or a Visionary account, to get multi-user support": [
+        ""
       ],
       "Please upgrade to a Professional plan with more than 1 user, or a Visionary account, to manage multiple users.": [
         "Actualitzi a un pla Professional amb més d'1 usuari o un compte Visionari per obtenir suport multi-usuari."
@@ -2026,6 +2035,9 @@
       ],
       "The minimum payment we accept is ${ _price2 }": [
         "El pagament mínim que acceptem és ${ _price2 }"
+      ],
+      "The organization key must be activated first": [
+        ""
       ],
       "The organization key must be activated first.": [
         "S'ha d'activar primer la clau d'organització."
@@ -2131,11 +2143,11 @@
       "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } events.": [
         "El fitxer ${ formattedFilename } conté més de ${ MAX_IMPORT_EVENTS_STRING } esdeveniments."
       ],
+      "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
+        ""
+      ],
       "Your file ${ formattedFilename } has no events to be imported.": [
         "El teu arxiu ${ formattedFilename } no te esdeveniments per ser importats."
-      ],
-      "Your file ${ formattedFilename } is an invitation and cannot be imported.": [
-        "El seu arxiu ${ formattedFilename } es una invitació i no pot ser importat."
       ],
       "Your file ${ formattedFilename } is empty.": [
         "El teu arxiu ${ formattedFilename } és buit."
@@ -2683,38 +2695,27 @@
       ]
     },
     "Import calendar warning": {
-      "${ CALENDAR_APP_NAME } does not support ${ forNow }:": [
-        "El ${ CALENDAR_APP_NAME } no admet ${ forNow }:"
-      ],
-      "Attendees": [
-        "Participants"
-      ],
-      "Complex recurring rules": [
-        "Regles recurrents complexes"
-      ],
-      "Email notifications": [
-        "Avisos de correu electrònic"
-      ],
-      "for now": [
-        "per ara"
-      ],
-      "Free-busy time information": [
-        "Informació sobre temps lliure"
-      ],
-      "Journal entries": [
-        "Entradas en diari"
-      ],
-      "Non-Gregorian calendars": [
-        "Calendaris no Gregorians"
-      ],
-      "To-do entries": [
-        "Entradas a Per-Fer"
-      ],
-      "Unofficial or custom timezones": [
-        "Zones horàries no oficials o personalitzades"
+      "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
+        ""
       ],
       "vCard versions < 3.0": [
         "versions vCard < 3.0"
+      ]
+    },
+    "Import calendar; import invitation": {
+      "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your Proton email address.": [
+        ""
+      ],
+      "This file contains an event invitation:": [
+        "",
+        ""
+      ],
+      "This file contains an invitation response:": [
+        "",
+        ""
+      ],
+      "This file contains some data that we cannot import:": [
+        ""
       ]
     },
     "Import contact": {
@@ -3000,17 +3001,17 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } de ${ totalContacts } contactes no poden ser importats. Fes clic per detalls"
       ],
-      "${ totalEventsDiscarded } out of ${ totalEvents } events will not be imported. Click for details": [
-        "${ totalEventsDiscarded } de ${ totalEvents } esdeveniments no poden ser importats. Fes clic per detalls"
+      "${ totalEventsDiscarded } out of ${ totalEvents } events will not be imported. Expand for details.": [
+        ""
       ],
       "No contact can be imported. Click for details": [
         "No s’han pogut importar contactes. Fes clic per obtenir més informació"
       ],
-      "No event can be imported. Click for details": [
-        "No s’han pogut importar esdevenimens. Fes clic per obtenir més informació"
+      "No event can be imported. Expand for details.": [
+        ""
       ],
-      "Part of your calendar content is not supported and will not be imported": [
-        "Port del contingent del teu calendari no es compatible i no s'ha pogut importar"
+      "Part of your calendar content is not supported and will not be imported.": [
+        ""
       ]
     },
     "Info": {
@@ -3447,8 +3448,8 @@
       "Done": [
         "Fet"
       ],
-      "Done! We sent a code to ${ destination }": [
-        "Fet! Vam enviar un codi a ${ destination }"
+      "Done! We sent a code to ${ destination }.": [
+        ""
       ],
       "Downgrading will terminate any connections to paid ProtonVPN servers.": [
         "Baixant acabarà amb cualsevol connexió als servidors de pagament de ProtonVPN."
@@ -3469,7 +3470,7 @@
         "Editar etiqueta"
       ],
       "Effortlessly and securely move your emails from your current provider to Proton. If you use Google, we also support calendar, and contacts imports.": [
-        ""
+        "Mogui els seus correus electrònics del seu proveïdor actual a Proton sense esforç i amb seguretat. Si utilitzeu Google, també admetem la importació de calendaris i contactes."
       ],
       "Email address": [
         "Adreça de correu electrònic"
@@ -3642,8 +3643,8 @@
       "Image URL": [
         "URL de la imatge"
       ],
-      "Images have been removed because they are not allowed in auto-reply.": [
-        "Les imatges s'han eliminat perquè no estan permeses a les respostes automàtiques."
+      "Images have been removed because they are not allowed in auto-reply": [
+        ""
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         ""
@@ -7153,8 +7154,8 @@
       "Deleting original messages": [
         "Eliminant missatges originals"
       ],
-      "DMARC value copied to clipboard!": [
-        "Valor DMARC copiat al portaretalls!"
+      "DMARC value copied to clipboard": [
+        ""
       ],
       "Domain verified": [
         "Domini verificat"
@@ -7228,8 +7229,8 @@
       "Sessions revoked": [
         "Sessions revocades"
       ],
-      "SPF value copied to clipboard!": [
-        "Valor SPF copiat al portaretalls!"
+      "SPF value copied to clipboard": [
+        ""
       ],
       "User created": [
         "S'ha creat l'usuari"
@@ -7237,11 +7238,11 @@
       "User updated": [
         "S'ha actualitzat l'usuari"
       ],
-      "Value copied to clipboard!": [
-        "Valor copiat al portaretalls!"
+      "Value copied to clipboard": [
+        ""
       ],
-      "Verification code copied to clipboard!": [
-        "Codi de verificació copiat al porta-retalls!"
+      "Verification code copied to clipboard": [
+        ""
       ],
       "Verification successful": [
         "Èxit de verificació"
@@ -7571,6 +7572,9 @@
       "Contacts": [
         "Contactes"
       ],
+      "Continue with partial import?": [
+        ""
+      ],
       "Coupon discount": [
         "Cupó de descompte"
       ],
@@ -7775,6 +7779,10 @@
       "Import & export": [
         "Importació i exportació"
       ],
+      "Import as simple event?": [
+        "",
+        ""
+      ],
       "Import Assistant": [
         "Assistent d'importació"
       ],
@@ -7783,6 +7791,9 @@
       ],
       "Import events": [
         "Importa esdeveniments"
+      ],
+      "Import failed": [
+        ""
       ],
       "Import groups": [
         "Importar grups"

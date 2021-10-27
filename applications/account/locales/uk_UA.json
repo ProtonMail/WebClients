@@ -31,11 +31,11 @@
       "${ BRAND_NAME } shop": [
         "Крамниця ${ BRAND_NAME }"
       ],
-      "Activate": [
-        "Активувати"
-      ],
       "activate": [
         "активувати"
+      ],
+      "Activate": [
+        "Активувати"
       ],
       "Activate ${ Name }@pm.me": [
         "Активувати ${ Name }@pm.me"
@@ -385,6 +385,9 @@
       "Import contacts": [
         "Імпортувати контакти"
       ],
+      "Import from .csv or vCard": [
+        "Імпортувати з .csv або vCard"
+      ],
       "Import from .ics": [
         "Імпорт з .ics"
       ],
@@ -657,6 +660,9 @@
       ],
       "Sign out all accounts": [
         "Вийти з усіх облікових записів"
+      ],
+      "Signing in": [
+        "Виконується вхід"
       ],
       "Signing out": [
         "Вихід"
@@ -1820,8 +1826,8 @@
       "Can't validate phone, try again later": [
         "Не вдається перевіити номер телефону. Спробуйте знову пізніше"
       ],
-      "Checkout expired, please try again.": [
-        "Час оформлення замовлення минув, повторіть спробу."
+      "Checkout expired, please try again": [
+        "Час оформлення минув, повторіть спробу"
       ],
       "Condition incomplete": [
         "Неповна умова"
@@ -1949,6 +1955,9 @@
       "Not a valid number": [
         "Номер недійсний"
       ],
+      "Organization key is not decrypted": [
+        "Ключ організації не розшифровано"
+      ],
       "Organization key is not decrypted.": [
         "Ключ організації не розшифровано."
       ],
@@ -1985,8 +1994,8 @@
         "Виправте вказані проблеми, щоб продовжити.",
         "Виправте вказані проблеми, щоб продовжити."
       ],
-      "Please generate keys before you try to change your password.": [
-        "Будь ласка, згенеруйте ключі перед зміною пароля."
+      "Please generate keys before you try to change your password": [
+        "Будь ласка, згенеруйте ключі перед зміною пароля"
       ],
       "Please refresh the page.": [
         "Будь ласка, оновіть сторінку."
@@ -2000,8 +2009,8 @@
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         "Спробуйте пройти перевірку ще раз і переконайтеся, що дозволи встановлено належним чином."
       ],
-      "Please upgrade to a Professional plan with more than 1 user, or a Visionary account, to get multi-user support.": [
-        "Перейдіть на тарифний план Professional з більш ніж 1 користувачем, або Visionary, щоб отримати підтримку декількох користувачів."
+      "Please upgrade to a Professional plan with more than 1 user, or a Visionary account, to get multi-user support": [
+        "Перейдіть на тарифний план Professional з більш ніж 1 користувачем, або Visionary, щоб отримати підтримку декількох користувачів"
       ],
       "Please upgrade to a Professional plan with more than 1 user, or a Visionary account, to manage multiple users.": [
         "Перейдіть на тарифний план Professional з більш ніж 1 користувачем, або Visionary, щоб керувати багатьма користувачами."
@@ -2068,6 +2077,9 @@
       ],
       "The minimum payment we accept is ${ _price2 }": [
         "Найменший платіж, який ми приймаємо становить ${ _price2 }"
+      ],
+      "The organization key must be activated first": [
+        "Спочатку необхідно активувати ключ організації"
       ],
       "The organization key must be activated first.": [
         "Спочатку необхідно активувати ключ організації."
@@ -2173,11 +2185,11 @@
       "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } events.": [
         "Ваш файл ${ formattedFilename } містить понад ${ MAX_IMPORT_EVENTS_STRING } подій."
       ],
+      "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
+        "Ваш файл ${ formattedFilename } має недійсний метод і його неможливо імпортувати."
+      ],
       "Your file ${ formattedFilename } has no events to be imported.": [
         "Ваш файл ${ formattedFilename } не містить подій для імпортування."
-      ],
-      "Your file ${ formattedFilename } is an invitation and cannot be imported.": [
-        "Ваш файл ${ formattedFilename } є запрошенням і його неможливо імпортувати."
       ],
       "Your file ${ formattedFilename } is empty.": [
         "Ваш файл ${ formattedFilename } порожній."
@@ -2735,38 +2747,31 @@
       ]
     },
     "Import calendar warning": {
-      "${ CALENDAR_APP_NAME } does not support ${ forNow }:": [
-        "${ CALENDAR_APP_NAME } не підтримує ${ forNow }:"
-      ],
-      "Attendees": [
-        "Учасники"
-      ],
-      "Complex recurring rules": [
-        "Складні повторювані правила"
-      ],
-      "Email notifications": [
-        "Сповіщення електронною поштою"
-      ],
-      "for now": [
-        "зараз"
-      ],
-      "Free-busy time information": [
-        "Інформація про доступність та зайнятість"
-      ],
-      "Journal entries": [
-        "Записи журналу"
-      ],
-      "Non-Gregorian calendars": [
-        "Не Григоріанські календарі"
-      ],
-      "To-do entries": [
-        "Записи завдань"
-      ],
-      "Unofficial or custom timezones": [
-        "Неофіційні чи власні часові пояси"
+      "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
+        "${ CALENDAR_APP_NAME } наразі не підтримує певні типи подій, подробиць та форматів."
       ],
       "vCard versions < 3.0": [
         "vCard версії < 3.0"
+      ]
+    },
+    "Import calendar; import invitation": {
+      "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your Proton email address.": [
+        "Імпортовані запрошення з'являються в ${ CALENDAR_APP_NAME } як прості події без подробиць про організаторів та учасників. Для отримання оновлень подій та перегляду учасників попросіть організаторів запросити вас з використанням вашої адреси електронної пошти Proton."
+      ],
+      "This file contains an event invitation:": [
+        "Цей файл містить запрошення на подію:",
+        "Цей файл містить запрошення на події:",
+        "Цей файл містить запрошення на події:",
+        "Цей файл містить запрошення на події:"
+      ],
+      "This file contains an invitation response:": [
+        "Цей файл містить відповідь на запрошення:",
+        "Цей файл містить відповіді на запрошення:",
+        "Цей файл містить відповіді на запрошення:",
+        "Цей файл містить відповіді на запрошення:"
+      ],
+      "This file contains some data that we cannot import:": [
+        "Цей файл містить деякі дані, які ми не можемо імпортувати:"
       ]
     },
     "Import contact": {
@@ -3060,17 +3065,17 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } із ${ totalContacts } контактів не будуть імпортовані. Натисніть для подробиць"
       ],
-      "${ totalEventsDiscarded } out of ${ totalEvents } events will not be imported. Click for details": [
-        "${ totalEventsDiscarded } із ${ totalEvents } подій не буде імпортовано. Натисніть для подробиць"
+      "${ totalEventsDiscarded } out of ${ totalEvents } events will not be imported. Expand for details.": [
+        "${ totalEventsDiscarded } із ${ totalEvents } подій не буде імпортовано. Розгорніть для подробиць."
       ],
       "No contact can be imported. Click for details": [
         "Неможливо імпортувати контакти. Натисніть для подробиць"
       ],
-      "No event can be imported. Click for details": [
-        "Неможливо імпортувати події. Натисніть для подробиць"
+      "No event can be imported. Expand for details.": [
+        "Неможливо імпортувати події. Розгорніть для подробиць."
       ],
-      "Part of your calendar content is not supported and will not be imported": [
-        "Частина вмісту вашого календаря не підтримується і не буде імпортована"
+      "Part of your calendar content is not supported and will not be imported.": [
+        "Частина вмісту вашого календаря не підтримується і не буде імпортована."
       ]
     },
     "Info": {
@@ -3551,8 +3556,8 @@
       "Done": [
         "Виконано"
       ],
-      "Done! We sent a code to ${ destination }": [
-        "Готовоо! Ми надіслали код на ${ destination }"
+      "Done! We sent a code to ${ destination }.": [
+        "Готово! Ми надіслали код на ${ destination }."
       ],
       "Downgrading will terminate any connections to paid ProtonVPN servers.": [
         "Перехід на тарифний план нижчого рівня розірве усі з'єднання до платних серверів ProtonVPN."
@@ -3746,8 +3751,8 @@
       "Image URL": [
         "URL-адреса зображення"
       ],
-      "Images have been removed because they are not allowed in auto-reply.": [
-        "Зображення були вилучені, оскільки вони не дозволені в автовідповіді."
+      "Images have been removed because they are not allowed in auto-reply": [
+        "Зображення були вилучені, оскільки вони не дозволені в автовідповіді"
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Імпорт ${ contactsFragment } і ${ contactsGroupsFragment }"
@@ -7299,8 +7304,8 @@
       "Deleting original messages": [
         "Видалення оригінальних повідомлень"
       ],
-      "DMARC value copied to clipboard!": [
-        "Значення DMARC скопійовано в буфер обміну!"
+      "DMARC value copied to clipboard": [
+        "Значення DMARC скопійовано в буфер обміну"
       ],
       "Domain verified": [
         "Домен перевірено"
@@ -7374,8 +7379,8 @@
       "Sessions revoked": [
         "Сеанси відкликано"
       ],
-      "SPF value copied to clipboard!": [
-        "Значення SPF скопійовано в буфер обміну!"
+      "SPF value copied to clipboard": [
+        "Значення SPF скопійовано в буфер обміну"
       ],
       "User created": [
         "Користувача створено"
@@ -7383,11 +7388,11 @@
       "User updated": [
         "Користувача оновлено"
       ],
-      "Value copied to clipboard!": [
-        "Значення скопійовано в буфер обміну!"
+      "Value copied to clipboard": [
+        "Значення скопійовано в буфер обміну"
       ],
-      "Verification code copied to clipboard!": [
-        "Код перевірки скопійовано в буфер обміну!"
+      "Verification code copied to clipboard": [
+        "Код перевірки скопійовано в буфер обміну"
       ],
       "Verification successful": [
         "Перевірку виконано успішно"
@@ -7721,6 +7726,9 @@
       "Contacts": [
         "Контакти"
       ],
+      "Continue with partial import?": [
+        "Продовжити частковий імпорт?"
+      ],
       "Coupon discount": [
         "Знижка за купоном"
       ],
@@ -7925,6 +7933,12 @@
       "Import & export": [
         "Імпорт і експорт"
       ],
+      "Import as simple event?": [
+        "Імпортувати як просту подію?",
+        "Імпортувати як прості події?",
+        "Імпортувати як прості події?",
+        "Імпортувати як прості події?"
+      ],
       "Import Assistant": [
         "Помічник імпорту"
       ],
@@ -7933,6 +7947,9 @@
       ],
       "Import events": [
         "Імпорт подій"
+      ],
+      "Import failed": [
+        "Імпорт не вдався"
       ],
       "Import groups": [
         "Імпортувати групи"

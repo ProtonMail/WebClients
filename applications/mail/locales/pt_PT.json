@@ -486,7 +486,7 @@
         "Marcar para eliminação"
       ],
       "Mark legitimate": [
-        "Marcar como legítima"
+        "Marcar como legítimo"
       ],
       "Maximize composer": [
         "Maximizar compositor"
@@ -961,9 +961,6 @@
     "Alt": {
       "Forwarded": [
         "Encaminhado"
-      ],
-      "Has attachments": [
-        "Contém anexos"
       ],
       "Replied to": [
         "Responder a"
@@ -1884,8 +1881,8 @@
       "Amount below minimum.": [
         "Quantia abaixo do mínimo."
       ],
-      "Attachments are limited to 25 MB.": [
-        "Os anexos estão limitados a 25 MB."
+      "Attachments are limited to 25 MB": [
+        ""
       ],
       "Authentication canceled.": [
         "Autenticação cancelada."
@@ -1908,8 +1905,8 @@
       "Can't validate phone, try again later": [
         "Impossível validar o telefone, tente mais tarde"
       ],
-      "Checkout expired, please try again.": [
-        "Finalização expirada, por favor tente de novo."
+      "Checkout expired, please try again": [
+        ""
       ],
       "Choose a date in the future.": [
         ""
@@ -1930,10 +1927,10 @@
       "Contact signature not verified": [
         "Assinatura do contacto não verificada"
       ],
-      "Contact your organization’s administrator to resolve this.": [
-        "Contacte o administrador da sua organização para resolver isto."
+      "Contact your organization’s administrator to resolve this": [
+        ""
       ],
-      "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser": [
+      "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         ""
       ],
       "Could not find address ${ email }.": [
@@ -1970,14 +1967,14 @@
       "Error in one of the conditions": [
         "Erro numa das condições"
       ],
-      "Error while saving draft. Please try again": [
+      "Error while saving draft. Please try again.": [
         ""
       ],
-      "Error while sending the message. Message is not sent": [
-        "Erro ao enviar a mensagem. Mensagem não foi enviada"
+      "Error while sending the message. Message is not sent.": [
+        ""
       ],
-      "Error while uploading attachments. Message is not sent": [
-        "Erro ao enviar anexos. Mensagem não enviada"
+      "Error while uploading attachments. Message is not sent.": [
+        ""
       ],
       "Failed to encrypt attachment. Please try again.": [
         "Falha ao encriptar o anexo. Por favor, tente novamente."
@@ -2012,8 +2009,8 @@
       "Invalid expiration date": [
         "Data de validade inválida"
       ],
-      "Invalid expiration time.": [
-        "Data de validade inválida."
+      "Invalid expiration time": [
+        ""
       ],
       "Invalid name": [
         "Nome inválido"
@@ -2037,8 +2034,8 @@
       "Message needs to be sent first": [
         "Tem de enviar a mensagem primeiro"
       ],
-      "Message passwords do not match.": [
-        "As senhas da mensagem não correspondem."
+      "Message passwords do not match": [
+        ""
       ],
       "Message processing error.": [
         "Erro ao processar mensagem."
@@ -2052,8 +2049,8 @@
       "Network error: Please check your connection and try again.": [
         "Erro de rede: verifique a sua ligação e tente novamente."
       ],
-      "No address with keys available to compose a message.": [
-        "Nenhum endereço com chaves disponíveis para escrever uma mensagem."
+      "No address with keys available to compose a message": [
+        ""
       ],
       "No key retrieved for internal user is valid for sending": [
         "Nenhuma das chaves recuperadas para o utilizador interno é válida para o envio"
@@ -2186,8 +2183,8 @@
       "The label name is too long. Please choose a different name.": [
         ""
       ],
-      "The maximum expiration is 4 weeks.": [
-        "O tempo máximo de expiração são 4 semanas."
+      "The maximum expiration is 4 weeks": [
+        ""
       ],
       "The minimum amount of credit that can be added is ${ _price }": [
         "A quantia mínima de créditos que pode adicionar é ${ _price }"
@@ -2204,8 +2201,8 @@
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         ""
       ],
-      "There has been an issue with content search. Default search has been used instead": [
-        "Houve um problema com a procura de conteúdo. Foi utilizada antes a procura predefinida"
+      "There has been an issue with content search. Default search has been used instead.": [
+        ""
       ],
       "There was an error when exporting the contacts vCards": [
         "Ocorreu um erro ao exportar os vCards dos contactos"
@@ -2222,7 +2219,7 @@
       "This label name is not available. Please choose a different name": [
         ""
       ],
-      "This message has already been sent.": [
+      "This message has already been sent": [
         ""
       ],
       "This message has already been sent. A new draft has been saved.": [
@@ -2231,8 +2228,8 @@
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "Esta mensagem pode conter hiperligações que não podem ser abertas correctamente pelo seu navegador actual"
       ],
-      "Too many active filters. Please upgrade to a paid plan to activate more filters": [
-        "Demasiados filtros activos. Por favor, actualize para um plano pago para activar mais filtros"
+      "Too many active filters. Please upgrade to a paid plan to activate more filters.": [
+        ""
       ],
       "Trusted keys are not valid for sending": [
         "Chaves confiáveis não são válidas para enviar"
@@ -2252,9 +2249,9 @@
       "You can't send vCards of more than 10 contacts": [
         "Não pode enviar vCards de mais de 10 contactos"
       ],
-      "You cannot open more than ${ maxActiveComposer } composer window at a time.": [
-        "Não pode abrir mais de ${ maxActiveComposer } janela de composição de cada vez.",
-        "Não pode abrir mais de ${ maxActiveComposer } janelas de composição de cada vez."
+      "You cannot open more than ${ maxActiveComposer } composer window at a time": [
+        "",
+        ""
       ],
       "You did not provide a file.": [
         "Não forneceu um ficheiro."
@@ -2271,8 +2268,8 @@
       "Your import will not be processed.": [
         "A sua importação não será processada."
       ],
-      "Your search matched too many results. Please limit your search and try again": [
-        "A procura originou muitos resultados. Por favor, limite-a e tente novamente"
+      "Your search matched too many results. Please limit your search and try again.": [
+        ""
       ]
     },
     "Error display when performing invalid move on message": {
@@ -3311,12 +3308,12 @@
         "Se acredita que houve um erro, por favor, contacte-nos em ${ contactLink }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
-        "Se não encontra o email na sua caixa de entrada, veja na pasta de spam."
+        "Se não encontrar o e-mail na sua caixa de entrada, verifique a pasta de spam."
       ],
       "Image URL": [
         "URL da imagem"
       ],
-      "Images have been removed because they are not allowed in auto-reply.": [
+      "Images have been removed because they are not allowed in auto-reply": [
         ""
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
@@ -3422,6 +3419,9 @@
       ],
       "Message sent": [
         "Mensagem enviada"
+      ],
+      "Message sent.": [
+        ""
       ],
       "Message will be sent ${ dateString } at ${ formattedTime }": [
         ""
@@ -3771,7 +3771,7 @@
         "Esta conversa contém mensagens enviadas para o lixo."
       ],
       "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded!": [
-        "Este email falhou os requisitos de autenticação do seu domínio. Pode estar falsificado ou ter sido reencaminhado incorrectamente!"
+        "Este e-mail falhou os requisitos de autenticação do domínio. Pode ser falsificado ou ter sido reencaminhado incorretamente!"
       ],
       "This invitation is saved in a disabled calendar.": [
         "Este convite está gravado numa agenda desactivada."
@@ -3825,7 +3825,7 @@
         "Isto permite a utilização do PayPal para pagar a sua subscrição Proton. Será redireccionado para o PayPal num novo separador do navegador. Se usa qualquer bloqueador de janelas, por favor desactive-o para continuar."
       ],
       "To fight spam and abuse, please verify you are human.": [
-        "Para combater spam e abuso, verifique se você é humano."
+        "Para combater o spam e abusos, confirme que é um ser humano."
       ],
       "To protect your privacy, Proton blocked email trackers in this message": [
         ""
@@ -3924,7 +3924,7 @@
         "Pacote VPN + ${ mailAppName } para famílias e pequenas empresas."
       ],
       "We apologize. This might have been a mistake from our side. Can you please confirm that you want to mark this email as a legitimate one?": [
-        "Pedimos desculpa. Pode ter sido um erro do nosso lado. Pode confirmar que deseja marcar esta mensagem como legítima?"
+        "Lamentamos, pode ter ocorrido um erro do nosso lado. Pode confirmar que deseja marcar este e-mail como legítimo?"
       ],
       "We could not verify the sender's trusted keys.": [
         "Impossível verificar as chaves confiadas do remetente."
@@ -4107,7 +4107,7 @@
         "Funcionalidades personalizáveis"
       ],
       "ProtonMail cannot be used for mass emailing or spamming. Legitimate emails are unlimited.": [
-        "O ProtonMail não pode ser utilizado para enviar emails em lote ou para spam. O envio de emails legítimos é ilimitado."
+        "O ProtonMail não pode ser utilizado para enviar e-mails em massa ou spam. O envio de e-mails legítimos é ilimitado."
       ]
     },
     "Info for cash payment method": {
@@ -4224,7 +4224,7 @@
         "Ir para Enviado"
       ],
       "Go to Spam": [
-        "Ir para Spam"
+        "Ir para spam"
       ],
       "Go to Starred": [
         "Ir para Com estrela"
@@ -4269,7 +4269,7 @@
         "Mover para Caixa de entrada"
       ],
       "Move to Spam": [
-        "Mover para Spam"
+        "Mover para spam"
       ],
       "Move to Trash": [
         "Mover para Lixo"
@@ -6034,8 +6034,8 @@
         "${ elementsCount } conversas movidas para ${ folderName }."
       ],
       "${ elementsCount } conversation moved to spam and sender added to Block List.": [
-        "${ elementsCount } conversa movida para spam e remetente adicionado à lista de bloqueio.",
-        "${ elementsCount } conversas movidas para spam e remetente adicionado à lista de bloqueio."
+        "${ elementsCount } conversa movida para spam e remetente adicionado à lista de bloqueios.",
+        "${ elementsCount } conversas movidas para spam e remetentes adicionados à lista de bloqueios."
       ],
       "${ elementsCount } conversation removed from ${ labelName }.": [
         "${ elementsCount } conversa removida de ${ labelName }.",
@@ -6066,8 +6066,8 @@
         "${ elementsCount } mensagens movidas para ${ folderName }."
       ],
       "${ elementsCount } message moved to spam and sender added to Block List.": [
-        "${ elementsCount } mensagem movida para spam e remetente adicionado à lista de bloqueio.",
-        "${ elementsCount } mensagens movidas para spam e remetente adicionado à lista de bloqueio."
+        "${ elementsCount } mensagem movida para spam e remetente adicionado à lista de bloqueios.",
+        "${ elementsCount } mensagens movidas para spam e remetentes adicionados à lista de bloqueios."
       ],
       "${ elementsCount } message removed from ${ labelName }.": [
         "${ elementsCount } mensagem removida de ${ labelName }.",
@@ -6099,8 +6099,8 @@
       "Contacts deleted": [
         "Contactos eliminados"
       ],
-      "Conversation added to ${ labelName }": [
-        "Conversa adicionada a ${ labelName }"
+      "Conversation added to ${ labelName }.": [
+        ""
       ],
       "Conversation deleted": [
         "Conversa eliminada"
@@ -6108,8 +6108,8 @@
       "Conversation marked as read.": [
         ""
       ],
-      "Conversation marked as Starred": [
-        "Conversa marcada com estrela"
+      "Conversation marked as Starred.": [
+        ""
       ],
       "Conversation marked as unread.": [
         ""
@@ -6121,10 +6121,10 @@
         "Conversa movida para ${ folderName }."
       ],
       "Conversation moved to spam and sender added to Block List.": [
-        "Conversa movida para spam e remetente adicionado à lista de bloqueio."
+        "Conversa movida para spam e remetente adicionado à lista de bloqueios."
       ],
-      "Conversation removed from ${ labelName }": [
-        "Conversa removida de ${ labelName }"
+      "Conversation removed from ${ labelName }.": [
+        ""
       ],
       "Draft deleted": [
         "Rascunho eliminado"
@@ -6150,8 +6150,8 @@
       "Mail list unsubscribed": [
         "Lista de correio não subscrita"
       ],
-      "Message added to ${ labelName }": [
-        "Mensagem adicionada a ${ labelName }"
+      "Message added to ${ labelName }.": [
+        ""
       ],
       "Message content search activated": [
         "Procura de conteúdo da mensagem activada"
@@ -6165,23 +6165,23 @@
       "Message marked as read.": [
         ""
       ],
-      "Message marked as Starred": [
-        "Mensagem marcada com estrela"
+      "Message marked as Starred.": [
+        ""
       ],
       "Message marked as unread.": [
         ""
       ],
       "Message moved to ${ folderName } and sender added to Allow List.": [
-        "A mensagem foi movida para ${ folderName } e o remetente foi adicionado à Lista de Permissões."
+        "A mensagem foi movida para ${ folderName } e o remetente foi adicionado à lista de permissões."
       ],
       "Message moved to ${ folderName }.": [
         "Mensagem movida para ${ folderName }."
       ],
       "Message moved to spam and sender added to Block List.": [
-        "Mensagem movida para spam e remetente adicionado à lista de bloqueio."
+        "Mensagem movida para spam e remetente adicionado à lista de bloqueios."
       ],
-      "Message removed from ${ labelName }": [
-        "Mensagem removida de ${ labelName }"
+      "Message removed from ${ labelName }.": [
+        ""
       ],
       "Move ${ selectionCount } conversation": [
         "Mover ${ selectionCount } conversa",
@@ -6617,7 +6617,7 @@
         "Marcar como não lido"
       ],
       "Mark email as legitimate": [
-        "Marcar mensagem como legítima"
+        "Marcar e-mail como legítimo"
       ],
       "Merge contacts": [
         "Unir contactos"

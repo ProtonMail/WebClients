@@ -954,9 +954,6 @@
       "Forwarded": [
         "已轉寄"
       ],
-      "Has attachments": [
-        "連同附件"
-      ],
       "Replied to": [
         "已回覆"
       ],
@@ -1869,8 +1866,8 @@
       "Amount below minimum.": [
         "金額少於最低限度"
       ],
-      "Attachments are limited to 25 MB.": [
-        "附件總大小上限為 25 MB。"
+      "Attachments are limited to 25 MB": [
+        ""
       ],
       "Authentication canceled.": [
         "認證已取消。"
@@ -1893,8 +1890,8 @@
       "Can't validate phone, try again later": [
         "無法驗證電話號碼，請稍後再試"
       ],
-      "Checkout expired, please try again.": [
-        "結帳已逾時，請重試。"
+      "Checkout expired, please try again": [
+        ""
       ],
       "Choose a date in the future.": [
         "選擇一個未來的日期。"
@@ -1914,11 +1911,11 @@
       "Contact signature not verified": [
         "聯絡人簽章未驗證"
       ],
-      "Contact your organization’s administrator to resolve this.": [
-        "請聯絡您的組織的系統管理員以解決此問題。"
+      "Contact your organization’s administrator to resolve this": [
+        ""
       ],
-      "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser": [
-        "內容搜尋無法在此瀏覽器中啟用。請離開隱私瀏覽模式或使用其他瀏覽器"
+      "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
+        ""
       ],
       "Could not find address ${ email }.": [
         "找不到電子郵件地址 ${ email }。"
@@ -1953,14 +1950,14 @@
       "Error in one of the conditions": [
         "其中一個條件有誤"
       ],
-      "Error while saving draft. Please try again": [
-        "儲存草稿時發生錯誤。請再試一次"
+      "Error while saving draft. Please try again.": [
+        ""
       ],
-      "Error while sending the message. Message is not sent": [
-        "傳送此郵件時發生錯誤。郵件並未傳送"
+      "Error while sending the message. Message is not sent.": [
+        ""
       ],
-      "Error while uploading attachments. Message is not sent": [
-        "上載附件時發生錯誤。郵件並未傳送"
+      "Error while uploading attachments. Message is not sent.": [
+        ""
       ],
       "Failed to encrypt attachment. Please try again.": [
         "加密附件失敗，請再試一次。"
@@ -1995,8 +1992,8 @@
       "Invalid expiration date": [
         "無效的到期日"
       ],
-      "Invalid expiration time.": [
-        "過期時間無效。"
+      "Invalid expiration time": [
+        ""
       ],
       "Invalid name": [
         "名稱無效"
@@ -2019,8 +2016,8 @@
       "Message needs to be sent first": [
         "需要先傳送郵件"
       ],
-      "Message passwords do not match.": [
-        "郵件密碼不相符。"
+      "Message passwords do not match": [
+        ""
       ],
       "Message processing error.": [
         "郵件處理錯誤。"
@@ -2034,8 +2031,8 @@
       "Network error: Please check your connection and try again.": [
         "網路錯誤：請檢查您的連線，然後重試。"
       ],
-      "No address with keys available to compose a message.": [
-        "無備有金鑰的電子郵件地址以撰寫郵件。"
+      "No address with keys available to compose a message": [
+        ""
       ],
       "No key retrieved for internal user is valid for sending": [
         "內部使用者沒有提取到任何用於寄送的有效金鑰"
@@ -2163,8 +2160,8 @@
       "The label name is too long. Please choose a different name.": [
         ""
       ],
-      "The maximum expiration is 4 weeks.": [
-        "過期時限最長為 4 週。"
+      "The maximum expiration is 4 weeks": [
+        ""
       ],
       "The minimum amount of credit that can be added is ${ _price }": [
         "每筆餘額加值的最低金額為 ${ _price }"
@@ -2181,8 +2178,8 @@
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         ""
       ],
-      "There has been an issue with content search. Default search has been used instead": [
-        "內容搜尋發生問題。已改為使用預設搜尋"
+      "There has been an issue with content search. Default search has been used instead.": [
+        ""
       ],
       "There was an error when exporting the contacts vCards": [
         "匯出聯絡人 vCard 時發生錯誤"
@@ -2199,8 +2196,8 @@
       "This label name is not available. Please choose a different name": [
         ""
       ],
-      "This message has already been sent.": [
-        "這個郵件已經發送。"
+      "This message has already been sent": [
+        ""
       ],
       "This message has already been sent. A new draft has been saved.": [
         "這個郵件已經傳送。新的草稿已儲存。"
@@ -2208,8 +2205,8 @@
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "此郵件包含的某些連結 URL 或未能以您目前的瀏覽器正確開啟"
       ],
-      "Too many active filters. Please upgrade to a paid plan to activate more filters": [
-        "使用中篩選器太多。請升級至付費方案以啟用更多篩選器"
+      "Too many active filters. Please upgrade to a paid plan to activate more filters.": [
+        ""
       ],
       "Trusted keys are not valid for sending": [
         "信任的金鑰用於寄送時無效"
@@ -2229,8 +2226,8 @@
       "You can't send vCards of more than 10 contacts": [
         "您不得傳送超過 10 個聯絡人的 vCard"
       ],
-      "You cannot open more than ${ maxActiveComposer } composer window at a time.": [
-        "您無法同時開啟超過 ${ maxActiveComposer } 個撰寫郵件視窗。"
+      "You cannot open more than ${ maxActiveComposer } composer window at a time": [
+        ""
       ],
       "You did not provide a file.": [
         "您沒有提供一個檔案。"
@@ -2247,8 +2244,8 @@
       "Your import will not be processed.": [
         "您的匯入將不會處理。"
       ],
-      "Your search matched too many results. Please limit your search and try again": [
-        "匹配項目過多，請縮小搜尋範圍後再試。"
+      "Your search matched too many results. Please limit your search and try again.": [
+        ""
       ]
     },
     "Error display when performing invalid move on message": {
@@ -3243,8 +3240,8 @@
       "Image URL": [
         "圖片 URL"
       ],
-      "Images have been removed because they are not allowed in auto-reply.": [
-        "圖片已被移除，因為不允許在自動回覆中使用它們。"
+      "Images have been removed because they are not allowed in auto-reply": [
+        ""
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         ""
@@ -3347,6 +3344,9 @@
       ],
       "Message sent": [
         "郵件已傳送"
+      ],
+      "Message sent.": [
+        ""
       ],
       "Message will be sent ${ dateString } at ${ formattedTime }": [
         "郵件將於 ${ dateString } 的 ${ formattedTime } 傳送"
@@ -5974,8 +5974,8 @@
       "Contacts deleted": [
         "聯絡人已刪除"
       ],
-      "Conversation added to ${ labelName }": [
-        "會話已加上 ${ labelName } 標籤"
+      "Conversation added to ${ labelName }.": [
+        ""
       ],
       "Conversation deleted": [
         "會話已刪除"
@@ -5983,8 +5983,8 @@
       "Conversation marked as read.": [
         "會話已標記為已讀。"
       ],
-      "Conversation marked as Starred": [
-        "會話已加上星號"
+      "Conversation marked as Starred.": [
+        ""
       ],
       "Conversation marked as unread.": [
         "會話已標記為未讀。"
@@ -5998,8 +5998,8 @@
       "Conversation moved to spam and sender added to Block List.": [
         "會話已移動到垃圾郵件，並將寄件人新增到封鎖清單中。"
       ],
-      "Conversation removed from ${ labelName }": [
-        "會話已移除 ${ labelName } 標籤"
+      "Conversation removed from ${ labelName }.": [
+        ""
       ],
       "Draft deleted": [
         "草稿已刪除"
@@ -6025,8 +6025,8 @@
       "Mail list unsubscribed": [
         "已從郵寄清單取消訂閱"
       ],
-      "Message added to ${ labelName }": [
-        "郵件已加上 ${ labelName } 標籤"
+      "Message added to ${ labelName }.": [
+        ""
       ],
       "Message content search activated": [
         "郵件內容搜尋已啟用"
@@ -6040,8 +6040,8 @@
       "Message marked as read.": [
         "郵件標記為已讀。"
       ],
-      "Message marked as Starred": [
-        "郵件已加上星號"
+      "Message marked as Starred.": [
+        ""
       ],
       "Message marked as unread.": [
         "郵件標記為未讀。"
@@ -6055,8 +6055,8 @@
       "Message moved to spam and sender added to Block List.": [
         "郵件已移動到垃圾郵件，並將寄件人新增到封鎖清單中。"
       ],
-      "Message removed from ${ labelName }": [
-        "郵件已移除 ${ labelName } 標籤"
+      "Message removed from ${ labelName }.": [
+        ""
       ],
       "Move ${ selectionCount } conversation": [
         "移動 ${ selectionCount } 個會話"

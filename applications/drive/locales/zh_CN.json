@@ -185,6 +185,9 @@
       "Download": [
         "下載"
       ],
+      "Drive Locked": [
+        ""
+      ],
       "Edit": [
         "编辑"
       ],
@@ -222,7 +225,7 @@
         "作为附件转发"
       ],
       "Get started": [
-        "入门"
+        "开始入门"
       ],
       "Get verification code": [
         "获取验证码"
@@ -435,7 +438,7 @@
         "全选"
       ],
       "Select plan": [
-        "选择套餐"
+        "开通"
       ],
       "Share": [
         "分享"
@@ -1088,8 +1091,8 @@
       "Can't validate phone, try again later": [
         "无法验证手机，请稍候再重试"
       ],
-      "Checkout expired, please try again.": [
-        "支付超时，请重试。"
+      "Checkout expired, please try again": [
+        ""
       ],
       "Contact could not be saved": [
         "无法保存联系人"
@@ -1647,11 +1650,14 @@
       "${ vpnAppName } Free": [
         "${ vpnAppName } 免费"
       ],
+      "(${ memberCount } member)": [
+        ""
+      ],
       "(Mail + VPN)": [
         "(邮件 + VPN)"
       ],
       "* Customizable features": [
-        "可自定义功能"
+        "* 可以根据需求自行调整"
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } 特权存储空间"
@@ -1710,6 +1716,9 @@
       "Amount below minimum (${ amount }).": [
         "金额 ${ amount } 太小。"
       ],
+      "An active recovery file": [
+        ""
+      ],
       "and": [
         ""
       ],
@@ -1724,6 +1733,9 @@
       ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "无论设置中键盘快捷键是否激活，一些基本的导航和操作始终可用"
+      ],
+      "Because ${ appName } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
+        ""
       ],
       "Billed as ${ billedPrice } every 2 years": [
         "每两年支付 ${ billedPrice }"
@@ -1765,7 +1777,7 @@
         "点击 \"请求新验证码\" 将发送到 ${ strong }。如果此电话号码不正确，请点击 \"编辑\""
       ],
       "Close this screen to exit.": [
-        ""
+        "关闭这个窗口以退出"
       ],
       "Closing transfer manager will cancel all active transfers, are you sure?": [
         "关闭传输管理器将会取消所有活动传输，您确定吗？"
@@ -1775,6 +1787,9 @@
       ],
       "Connections": [
         "连接"
+      ],
+      "Continue using ${ appName } and unlock drive later": [
+        ""
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
         ""
@@ -1802,6 +1817,9 @@
       ],
       "Creating share": [
         "正在创建分享"
+      ],
+      "Delete drive": [
+        ""
       ],
       "Discount applied to your subscription with coupon ${ code }": [
         "优惠券 ${ code } 折扣已计入"
@@ -1899,6 +1917,9 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "若邮件没有出现在收件箱中，请检查其是否被归为垃圾邮件。"
       ],
+      "If you have one of these, continue to Proton account setting to\ncontinue the unblock process.": [
+        ""
+      ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         ""
       ],
@@ -1909,13 +1930,13 @@
         ""
       ],
       "Import in progress": [
-        ""
+        "导入中"
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
-        ""
+        "将您的数据从${ importedEmailAddress } 导入到${ toEmail }"
       ],
       "Included": [
-        "已包含"
+        "已包含在内"
       ],
       "Inherited from parent folder": [
         ""
@@ -1939,7 +1960,7 @@
         "指纹码"
       ],
       "Large imports can take several days.": [
-        ""
+        "大量的导入可能需要几天时间。"
       ],
       "Learn more": [
         "了解详情"
@@ -2025,6 +2046,9 @@
       "of": [
         "/"
       ],
+      "One of your encrypted drives is locked. This is most likely due to a recent password reset.${ BrElement }\n${ BrElement }\n${ questionText }": [
+        ""
+      ],
       "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
         "只有在与 ProtonMail 以外的邮箱使用 PGP 通讯时才应更改下列选项。"
       ],
@@ -2039,6 +2063,9 @@
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "支付安全由 TLS 加密和瑞士隐私法律保障。"
+      ],
+      "Permanently delete all files in your drive": [
+        ""
       ],
       "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
         "PGP/Inline 只能用于纯文本邮件。请注意 ProtonMail 会对所有加密邮件予以数字签名。"
@@ -2136,8 +2163,8 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "作为 Proton 忠实用户，您拥有以下特权。"
       ],
-      "Some of your files are no longer accessible. Restore the access to your files. ${ startRecoveryButton }": [
-        "您的某些文件无法再访问，请恢复对其的访问权限。${ startRecoveryButton }"
+      "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
+        ""
       ],
       "Something went wrong, please try again later.": [
         "出错了，请稍后再试。"
@@ -2226,6 +2253,9 @@
       "Trash": [
         "回收站"
       ],
+      "Unlock drive to recover files": [
+        ""
+      ],
       "Unsupported file": [
         "不支持文件"
       ],
@@ -2272,6 +2302,9 @@
         "您想要做什么？"
       ],
       "What do you want to import from your Google account?": [
+        ""
+      ],
+      "What would you like to do?": [
         ""
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
@@ -2361,14 +2394,20 @@
       "Your file is being downloaded.": [
         "正在下载您的文件。"
       ],
-      "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ mailSettingsLink }": [
-        "由于密码重置，无法再访问您的文件。请重新上传旧的加密密钥以重新获得访问权限。${ mailSettingsLink }"
+      "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ KeyReactivationButton }": [
+        ""
       ],
       "Your files will be encrypted and then saved.": [
         "您的文件将被加密并保存。"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "您的电话号码将只会用于此一次性验证"
+      ],
+      "Your previous password": [
+        ""
+      ],
+      "Your previous recovery phrase": [
+        ""
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "您的 Proton 账户已欠费停用，请先支付逾期账单再继续使用。"
@@ -2697,6 +2736,9 @@
       "CVV code": [
         "CVV 码"
       ],
+      "Delete Drive?": [
+        ""
+      ],
       "Display name": [
         "显示名称"
       ],
@@ -2904,6 +2946,9 @@
       "Text": [
         "文本"
       ],
+      "This will permanently delete all files in your locked drive.": [
+        ""
+      ],
       "To: ${ emailAddress }": [
         ""
       ],
@@ -2918,6 +2963,15 @@
       ],
       "Unknown file": [
         "未知文件格式"
+      ],
+      "Unlock Drive": [
+        ""
+      ],
+      "Unlock drive (recommended)": [
+        ""
+      ],
+      "Unlock later": [
+        ""
       ],
       "Up to ${ parentLinkName }": [
         ""
@@ -2942,6 +2996,9 @@
       ],
       "What happened?": [
         "发生了什么？"
+      ],
+      "Yes, I want to permanently delete\nmy old files": [
+        ""
       ],
       "ZIP": [
         "邮编"
@@ -3068,7 +3125,7 @@
         ""
       ],
       "Your import is starting": [
-        ""
+        "您的导入已开始"
       ]
     },
     "Mail feature": {
@@ -3082,19 +3139,19 @@
         "地址验证"
       ],
       "Addresses": [
-        "地址"
+        "邮箱地址数量"
       ],
       "Autoresponder": [
         "自动回复"
       ],
       "Catch-All email": [
-        ""
+        "收取发至自有域名未分配地址的邮件"
       ],
       "Contact groups": [
         "联系人群组"
       ],
       "Custom email addresses": [
-        "自定义电子邮件地址"
+        "自有域名地址"
       ],
       "Custom filters": [
         "定制筛选规则"
@@ -3103,34 +3160,34 @@
         "通讯录加密"
       ],
       "Folders / labels": [
-        "个文件夹/标签"
+        "文件夹和标签个数"
       ],
       "IMAP / SMTP": [
         "IMAP / SMTP"
       ],
       "Limited": [
-        "受限"
+        "有限"
       ],
       "Messages per day": [
-        "邮件/天"
+        "每天可发邮件数量"
       ],
       "Multi-user support": [
-        "多用户支持"
+        "多用户功能"
       ],
       "Priority": [
-        "优先级"
+        "优先享受"
       ],
       "Storage": [
         "存储空间"
       ],
       "Support": [
-        "帮助"
+        "客户服务"
       ],
       "Use @pm.me address": [
         "可使用 @pm.me 地址"
       ],
       "Users": [
-        "用户"
+        "用户数量"
       ]
     },
     "Mail feature option": {
@@ -3207,8 +3264,8 @@
       "\"${ firstItemName }\" restored from trash": [
         "\"${ firstItemName }\" 已从回收站恢复"
       ],
-      "${ deletedCount } link to your file was deleted.": [
-        "${ deletedCount } 个文件链接已删除。"
+      "${ deletedCount } link to your file was deleted": [
+        ""
       ],
       "${ deletedItemsCount } file deleted permanently from trash": [
         "${ deletedItemsCount } 个文件已从回收站永久删除"
@@ -3219,8 +3276,8 @@
       "${ deletedItemsCount } item deleted permanently from trash": [
         "${ deletedItemsCount } 个项目已从回收站永久删除"
       ],
-      "${ failedCount } link to your file failed to be deleted.": [
-        "${ failedCount } 个文件链接无法删除。"
+      "${ failedCount } link to your file failed to be deleted": [
+        ""
       ],
       "${ failedMovesCount } file failed to be moved": [
         "${ failedMovesCount } 个文件移动失败"
@@ -3306,14 +3363,17 @@
       "Not enough space to upload ${ formattedTotal }": [
         ""
       ],
-      "The link to your file failed to be deleted.": [
-        "无法删除文件链接。"
+      "The link to your file failed to be deleted": [
+        ""
       ],
-      "The link to your file was deleted.": [
-        "文件链接已删除。"
+      "The link to your file was deleted": [
+        ""
       ],
-      "Your settings have been changed successfully.": [
-        "已成功更改您的设置。"
+      "Your old files will be deleted in 72 hours": [
+        ""
+      ],
+      "Your settings have been changed successfully": [
+        ""
       ]
     },
     "Onboarding Proton": {
@@ -3728,11 +3788,11 @@
       "Preferences saved": [
         "设置已保存"
       ],
-      "Recovery has started.": [
-        "恢复已开始。"
+      "Recovery has started": [
+        ""
       ],
-      "The link to your file was successfully copied.": [
-        "已成功复制文件链接。"
+      "The link to your file was successfully copied": [
+        ""
       ],
       "Verification successful": [
         "验证成功"
@@ -3740,8 +3800,8 @@
       "You have successfully unsubscribed": [
         "您已成功降级"
       ],
-      "Your files were successfully recovered to \"My files\".": [
-        "您的文件已成功恢复到“我的文件”。"
+      "Your files were successfully recovered to \"My files\"": [
+        ""
       ]
     },
     "Suffix for price": {
@@ -4295,6 +4355,11 @@
         "邮政编码"
       ]
     },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        ""
+      ]
+    },
     "Tooltip": {
       "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
         "无论身在何方，Netflix、Amazon Prime、BBC iPlayer、Wikipedia、Facebook、YouTube 均触手可及。"
@@ -4342,7 +4407,7 @@
         "使用 ${ mailAppName } 托管您自己的域名，如 zhangsan@example.com"
       ],
       "Host emails for your own domain(s) at ProtonMail, e.g. john.smith@example.com": [
-        "使用 ProtonMail 托管您自己的域名，如 zhangsan@example.com"
+        "使用 ProtonMail 为您自己的域名收取邮件，如 zhangsan@example.com"
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "若您已购买或从我们的客服团队处获得了礼品码，可以在此输入。"
@@ -4351,7 +4416,7 @@
         "非活动的分享链接"
       ],
       "Multi-user support is only applicable to plans with 2 or more users": [
-        "多用户支持仅适用于 2 名及以上用户方案"
+        "仅对两名以上用户的账户等级适用"
       ],
       "NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware.": [
         "NetShield通过屏蔽广告、跟踪和恶意软件来保护您的设备并加快您的浏览速度。"
@@ -4369,16 +4434,16 @@
         ""
       ],
       "The import will start with the most recent messages.": [
-        ""
+        "导入将从最近的信息开始。"
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "上传公钥后方可向其发送端到端加密的邮件"
       ],
       "Use multiple addresses / aliases linked to your account, e.g. username2@protonmail.com": [
-        "使用多个电子邮箱地址 / 别名连接到您的帐户，例如 username2@protonmail.com"
+        "在同一个账户中使用多个邮箱地址，如 username2@protonmail.com"
       ],
       "Use the personal address username@pm.me to send emails": [
-        "使用个人邮箱地址 username@pm.me 发送邮件"
+        "使用个性化的邮箱地址 username@pm.me 发送邮件"
       ],
       "You do not have any contacts to export": [
         "您没有任何联系人可导出"
@@ -4548,6 +4613,9 @@
       ],
       "The contact failed to load.": [
         "联系人加载失败"
+      ],
+      "The date and time settings on your device are out of sync. ${ learnMore }": [
+        ""
       ],
       "The decryption of the encrypted content failed.": [
         "解密失败"

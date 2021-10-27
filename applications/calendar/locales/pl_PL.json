@@ -57,7 +57,7 @@
         "Czatuj z nami"
       ],
       "Check import progress": [
-        ""
+        "Sprawdź postęp importowania"
       ],
       "Choose a file or drag it here": [
         "Wybierz plik lub przeciągnij go tutaj"
@@ -237,7 +237,7 @@
         "Importuj"
       ],
       "Import from .csv or vCard": [
-        ""
+        "Importuj z pliku CSV lub vCard"
       ],
       "Increase": [
         "Zwiększ"
@@ -1169,8 +1169,8 @@
       ]
     },
     "Disabled calendar name suffix": {
-      "disabled": [
-        "wyłączony"
+      "Disabled": [
+        "Wyłączony"
       ]
     },
     "Disabled calendar tooltip": {
@@ -1337,7 +1337,7 @@
         "Główny klucz prywatny kalendarza nie został odszyfrowany"
       ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
-        ""
+        "Z powodu limitu maksymalnej liczby osobistych kalendarzy, nie możesz utworzyć nowych kalendarzy dla wszystkich zaimportowanych kalendarzy."
       ],
       "Can't validate email, try again later": [
         "Nie można zweryfikować adresu e-mail. Spróbuj ponownie później"
@@ -1348,8 +1348,8 @@
       "Cancellation failed to be sent": [
         "Wysłanie powiadomienia o anulowaniu wydarzenia nie powiodło się"
       ],
-      "Checkout expired, please try again.": [
-        "Płatność wygasła. Spróbuj ponownie."
+      "Checkout expired, please try again": [
+        "Płatność wygasła. Spróbuj ponownie"
       ],
       "Contact could not be saved": [
         "Kontakt nie mógł zostać zapisany"
@@ -1367,10 +1367,10 @@
         "Błąd odszyfrowywania: odszyfrowanie tego wydarzenia nie powiodło się."
       ],
       "Deselect at least ${ calendarToFixCount } calendar or": [
-        "",
-        "",
-        "",
-        ""
+        "Odznacz co najmniej ${ calendarToFixCount } kalendarz lub",
+        "Odznacz co najmniej ${ calendarToFixCount } kalendarze lub",
+        "Odznacz co najmniej ${ calendarToFixCount } kalendarzy lub",
+        "Odznacz co najmniej ${ calendarToFixCount } kalendarzy lub"
       ],
       "Email address disabled": [
         "Adres e-mail został wyłączony"
@@ -1460,10 +1460,10 @@
         "Nazwa etykiety nie może być pusta"
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
-        "",
-        "",
-        "",
-        ""
+        "Scal co najmniej ${ calendarToFixCount } kalendarz z obecnym kalendarzem Proton",
+        "Scal co najmniej ${ calendarToFixCount } kalendarze z obecnymi kalendarzami Proton",
+        "Scal co najmniej ${ calendarToFixCount } kalendarzy z obecnymi kalendarzami Proton",
+        "Scal co najmniej ${ calendarToFixCount } kalendarzy z obecnymi kalendarzami Proton"
       ],
       "Missing signature": [
         "Brak podpisu"
@@ -1526,10 +1526,10 @@
         "Najpierw utwórz adres."
       ],
       "Please fix the highlighted conflict to proceed.": [
-        "",
-        "",
-        "",
-        ""
+        "Popraw zaznaczony konflikt, aby kontynuować.",
+        "Popraw zaznaczone konflikty, aby kontynuować.",
+        "Popraw zaznaczone konflikty, aby kontynuować.",
+        "Popraw zaznaczone konflikty, aby kontynuować."
       ],
       "Preferences could not be saved": [
         "Ustawienia nie mogły zostać zapisane"
@@ -1580,10 +1580,10 @@
         "Przeglądarka, której używasz, nie pozwala na pełną autoryzację płatności. Skorzystaj z innej przeglądarki lub zaloguj się za pomocą komputera."
       ],
       "The folder name is too long. Please choose a different name.": [
-        ""
+        "Nazwa folderu jest zbyt długa. Wpisz krótszą nazwę."
       ],
       "The label name is too long. Please choose a different name.": [
-        ""
+        "Nazwa etykiety jest zbyt długa. Wpisz krótszą nazwę."
       ],
       "The minimum amount of credit that can be added is ${ _price }": [
         "Minimalna kwota doładowania wynosi ${ _price }"
@@ -1929,22 +1929,22 @@
         "Aplikacja ${ calendarAppName } została dodana do pakietu usług Proton. Chcemy poznać Twoją opinię!"
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
-        "",
-        "",
-        "",
-        ""
+        "${ calendarsToBeCreatedCount } nowy kalendarz",
+        "${ calendarsToBeCreatedCount } nowe kalendarze",
+        "${ calendarsToBeCreatedCount } nowych kalendarzy",
+        "${ calendarsToBeCreatedCount } nowych kalendarzy"
       ],
       "${ calendarsToBeMerged } merged calendar": [
-        "",
-        "",
-        "",
-        ""
+        "${ calendarsToBeMerged } scalony kalendarz",
+        "${ calendarsToBeMerged } scalone kalendarze",
+        "${ calendarsToBeMerged } scalonych kalendarzy",
+        "${ calendarsToBeMerged } scalonych kalendarzy"
       ],
       "${ calendarsToBeMergedCount } merged calendar": [
-        "",
-        "",
-        "",
-        ""
+        "${ calendarsToBeMergedCount } scalony kalendarz",
+        "${ calendarsToBeMergedCount } scalone kalendarze",
+        "${ calendarsToBeMergedCount } scalonych kalendarzy",
+        "${ calendarsToBeMergedCount } scalonych kalendarzy"
       ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } członek",
@@ -1986,16 +1986,16 @@
         "${ namesWithoutLast } i ${ nameOfLast }"
       ],
       "${ numContactGroups } contact group": [
-        "",
-        "",
-        "",
-        ""
+        "${ numContactGroups } grupę kontaktów",
+        "${ numContactGroups } grupy kontaktów",
+        "${ numContactGroups } grup kontaktów",
+        "${ numContactGroups } grup kontaktów"
       ],
       "${ numContacts } contact": [
-        "",
-        "",
-        "",
-        ""
+        "${ numContacts } kontakt",
+        "${ numContacts } kontakty",
+        "${ numContacts } kontaktów",
+        "${ numContacts } kontaktów"
       ],
       "${ save20 } on your subscription by switching to ${ annualBilling }": [
         "${ save20 } zmieniając na ${ annualBilling }"
@@ -2007,10 +2007,10 @@
         "${ saveExtra20 } na subskrypcji usługi VPN i poczty."
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
-        "",
-        "",
-        "",
-        ""
+        "${ selectedCalendarsTotal }/${ providerCalendars.length } kalendarz",
+        "${ selectedCalendarsTotal }/${ providerCalendars.length } kalendarze",
+        "${ selectedCalendarsTotal }/${ providerCalendars.length } kalendarzy",
+        "${ selectedCalendarsTotal }/${ providerCalendars.length } kalendarzy"
       ],
       "${ selectedFoldersCount } folder selected": [
         "${ selectedFoldersCount } zaznaczony folder",
@@ -2127,7 +2127,7 @@
         "Zaproszenie zostanie wysłane do uczestników wydarzenia."
       ],
       "and": [
-        ""
+        "i"
       ],
       "At most 100 participants are allowed per invitation": [
         "Zaproszenie może posiadać maksymalnie 100 uczestników"
@@ -2172,7 +2172,7 @@
         "Kliknij przycisk \"Poproś o nowy kod\", aby otrzymać nowy kod weryfikacyjny na numer telefonu ${ strong }. Jeśli numer jest nieprawidłowy, kliknij przycisk \"Edytuj\", aby go poprawić."
       ],
       "Close this screen to exit.": [
-        ""
+        "Zamknij te okno, aby wyjść."
       ],
       "Connections": [
         "Połączenia"
@@ -2193,7 +2193,7 @@
         "Utwórz nową grupę kontaktów"
       ],
       "Create in": [
-        ""
+        "Utwórz w"
       ],
       "Custom": [
         "Niestandardowe"
@@ -2292,13 +2292,13 @@
         "Jeśli nie widzisz wiadomości w skrzynce odbiorczej, sprawdź folder Spam."
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
-        ""
+        "Importuj ${ contactsFragment } i ${ contactsGroupsFragment }"
       ],
       "Import ${ selectedCalendarsCount } of ${ totalCalendarsCount } calendar": [
-        "",
-        "",
-        "",
-        ""
+        "Importuj kalendarz (${ selectedCalendarsCount }/${ totalCalendarsCount })",
+        "Importuj kalendarze (${ selectedCalendarsCount }/${ totalCalendarsCount })",
+        "Importuj kalendarze (${ selectedCalendarsCount }/${ totalCalendarsCount })",
+        "Importuj kalendarze (${ selectedCalendarsCount }/${ totalCalendarsCount })"
       ],
       "Import from": [
         "Importuj z"
@@ -2307,7 +2307,7 @@
         "Importowanie jest w toku"
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
-        ""
+        "Trwa importowanie danych z konta ${ importedEmailAddress } do ${ toEmail }."
       ],
       "Included": [
         "w zestawie"
@@ -2325,7 +2325,7 @@
         "Połączenie z Internetem zostało przywrócone."
       ],
       "Just confirm your selection and we'll do the rest.": [
-        ""
+        "Potwierdź swój wybór, a my zajmiemy się resztą."
       ],
       "Key fingerprint": [
         "Odcisk klucza"
@@ -2364,7 +2364,7 @@
         "Nowy"
       ],
       "Next you'll need to log in to your Google account and allow us to access your data.": [
-        ""
+        "Następnie będziesz musiał zalogować się na konto Google i zezwolić nam na dostęp do Twoich danych."
       ],
       "No contacts added yet": [
         "Nie dodano jeszcze żadnych kontaktów"
@@ -2484,10 +2484,10 @@
         "Wybierz domyślny format wiadomości, który ma zostać użyty podczas wysyłania wiadomości na ten adres e-mail."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20-personal-calendar limit. You can also merge imported calendars with existing Proton calendars.": [
-        ""
+        "Wybierz, które kalendarze chcesz zaimportować. Dla każdego importowanego kalendarza zostanie utworzony nowy kalendarz, aż do osiągnięcia limitu 20 osobistych kalendarzy. Możesz również scalić importowane kalendarze z obecnymi kalendarzami Proton."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
-        ""
+        "Serwery są nieosiągalne. Spróbuj ponownie za kilka minut"
       ],
       "Session timed out.": [
         "Upłynął limit czasu sesji."
@@ -2529,10 +2529,10 @@
         "Organizator nie mógł zostać powiadomiony o odrzuceniu zaproszenia:"
       ],
       "The organizer cannot be notified that you want to change your answer:": [
-        ""
+        "Organizator nie mógł zostać powiadomiony, że chcesz zmienić swoją odpowiedź:"
       ],
       "The organizer could not be notified that you changed your answer:": [
-        ""
+        "Organizator nie mógł zostać powiadomiony, że zmieniłeś swoją odpowiedź:"
       ],
       "The organizer has updated some of the events in this series. Changing the calendar is not supported yet for this type of recurring events.": [
         "Organizator zaktualizował niektóre wydarzenia w tej serii. Zmiana kalendarza nie jest obsługiwana dla tego typu wydarzeń cyklicznych."
@@ -2616,7 +2616,7 @@
         "Zostaniesz przekierowany na stronę PayPal w celu dokończenia transakcji. Jeśli używasz opcji blokowania wyskakujących okien, wyłącz ją, aby kontynuować."
       ],
       "We'll notify you when the import is done.": [
-        ""
+        "Powiadomimy Cię, kiedy proces importowania danych zostanie zakończony."
       ],
       "Week": [
         "Tydzień"
@@ -2664,7 +2664,7 @@
         "Jesteś obecnie zalogowany jako ${ user.Name } (${ user.Email }) i posiadasz ograniczony dostęp."
       ],
       "You can check the progress ${ importProgressLink }.": [
-        ""
+        "Możesz sprawdzić postęp ${ importProgressLink }."
       ],
       "You can only modify personal event properties as you can't send emails from the organizer address.": [
         "Możesz edytować tylko osobiste właściwości wydarzeń, ponieważ nie możesz wysyłać wiadomości z adresu organizatora."
@@ -2748,7 +2748,7 @@
         "Ze względów bezpieczeństwa, Twój bank wymaga weryfikacji 3-D Secure."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
-        ""
+        "Dane z konta ${ importedEmailAddressStrong } są gotowe do zaimportowania do konta Proton."
       ],
       "Your email will only be used for this one-time verification.": [
         "Adres e-mail zostanie użyty tylko do jednorazowej weryfikacji."
@@ -3433,10 +3433,10 @@
     },
     "Loading info": {
       "${ createdCalendars } of ${ calendarsToBeCreated } created": [
-        "",
-        "",
-        "",
-        ""
+        "Tworzenie nowych kalendarzy (${ createdCalendars }/${ calendarsToBeCreated })",
+        "Tworzenie nowych kalendarzy (${ createdCalendars }/${ calendarsToBeCreated })",
+        "Tworzenie nowych kalendarzy (${ createdCalendars }/${ calendarsToBeCreated })",
+        "Tworzenie nowych kalendarzy (${ createdCalendars }/${ calendarsToBeCreated })"
       ],
       "Almost there": [
         "Już prawie"
@@ -3537,7 +3537,7 @@
     },
     "Mail import summary": {
       "${ messagesFragment } since ${ periodFragment } and label them as ${ label }": [
-        ""
+        "${ messagesFragment } od ${ periodFragment } oznacz je etykietą ${ label }"
       ]
     },
     "Many Others": {
@@ -4548,16 +4548,16 @@
     },
     "Time period": {
       "account creation date": [
-        ""
+        "daty utworzenia konta"
       ],
       "the last 12 months": [
-        ""
+        "ostatnich 12 miesięcy"
       ],
       "the last 3 months": [
-        ""
+        "ostatnich 3 miesięcy"
       ],
       "the last month": [
-        ""
+        "ostatniego miesiąca"
       ]
     },
     "Time unit": {
@@ -4953,7 +4953,7 @@
         "Wymierz metodę otrzymania powiadomienia"
       ],
       "Select what to import": [
-        ""
+        "Wybierz co chcesz zaimportować"
       ],
       "Select when this event will stop happening": [
         "Wybierz, kiedy to wydarzenie się zakończy"
@@ -5023,7 +5023,7 @@
     },
     "Today icon tooltip in mini calendar": {
       "Today": [
-        ""
+        "Dzisiaj"
       ]
     },
     "Tooltip": {
@@ -5261,7 +5261,7 @@
         "Nie udało się załadować kontaktu."
       ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
-        ""
+        "Ustawienia daty i czasu na Twoim urządzeniu nie są zsynchronizowane. ${ learnMore }"
       ],
       "The decryption of the encrypted content failed.": [
         "Odszyfrowanie zawartości nie powiodło się."

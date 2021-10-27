@@ -31,11 +31,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } winkel"
       ],
-      "Activate": [
-        "Activeren"
-      ],
       "activate": [
         "activeer"
+      ],
+      "Activate": [
+        "Activeren"
       ],
       "Activate ${ Name }@pm.me": [
         "Activeer ${ Name }@pm.me"
@@ -347,7 +347,7 @@
         "Lettertype"
       ],
       "Generate key": [
-        ""
+        "Genereer sleutel"
       ],
       "Get ProtonVPN Plus": [
         "Neem ProtonVPN Plus"
@@ -385,8 +385,11 @@
       "Import contacts": [
         "Contactpersonen importeren"
       ],
+      "Import from .csv or vCard": [
+        "Importeer vanuit .csv of vCard"
+      ],
       "Import from .ics": [
-        ""
+        "Importeer vanuit .ics"
       ],
       "Import key": [
         "Sleutel importeren"
@@ -657,6 +660,9 @@
       ],
       "Sign out all accounts": [
         "Alle accounts uitloggen"
+      ],
+      "Signing in": [
+        ""
       ],
       "Signing out": [
         "Uitloggen"
@@ -1784,8 +1790,8 @@
       "Can't validate phone, try again later": [
         "Kan telefoon niet valideren, probeer het later opnieuw"
       ],
-      "Checkout expired, please try again.": [
-        "Checkout is verlopen, probeer het opnieuw."
+      "Checkout expired, please try again": [
+        ""
       ],
       "Condition incomplete": [
         "Onvolledig ingevulde voorwaarde"
@@ -1909,6 +1915,9 @@
       "Not a valid number": [
         "Ongeldig getal"
       ],
+      "Organization key is not decrypted": [
+        ""
+      ],
       "Organization key is not decrypted.": [
         "Organisatiesleutel is niet gedecodeerd."
       ],
@@ -1943,8 +1952,8 @@
         "",
         ""
       ],
-      "Please generate keys before you try to change your password.": [
-        "Genereer sleutels voordat u uw wachtwoord probeert te wijzigen."
+      "Please generate keys before you try to change your password": [
+        ""
       ],
       "Please refresh the page.": [
         "Vernieuw de pagina."
@@ -1958,8 +1967,8 @@
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         "Probeer opnieuw te verifiëren en zorg ervoor dat de machtigingen correct zijn ingesteld."
       ],
-      "Please upgrade to a Professional plan with more than 1 user, or a Visionary account, to get multi-user support.": [
-        "Upgrade naar het abonnement Professional dat meer dan 1 gebruiker ondersteunt, of upgrade naar het abonnement Visionary voor multi-user ondersteuning."
+      "Please upgrade to a Professional plan with more than 1 user, or a Visionary account, to get multi-user support": [
+        ""
       ],
       "Please upgrade to a Professional plan with more than 1 user, or a Visionary account, to manage multiple users.": [
         "Upgrade naar een Professional abonnement met meer dan 1 gebruiker, of een Visionary account, om meerdere gebruikers te beheren."
@@ -2026,6 +2035,9 @@
       ],
       "The minimum payment we accept is ${ _price2 }": [
         "De minimale betaling die we accepteren is ${ _price2 }"
+      ],
+      "The organization key must be activated first": [
+        ""
       ],
       "The organization key must be activated first.": [
         "De organisatiesleutel moet eerst geactiveerd worden."
@@ -2131,11 +2143,11 @@
       "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } events.": [
         "Uw bestand ${ formattedFilename } bevat meer dan ${ MAX_IMPORT_EVENTS_STRING } afspraken."
       ],
+      "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
+        ""
+      ],
       "Your file ${ formattedFilename } has no events to be imported.": [
         "Uw bestand ${ formattedFilename } heeft geen afspraken om te importeren."
-      ],
-      "Your file ${ formattedFilename } is an invitation and cannot be imported.": [
-        "Uw bestand ${ formattedFilename } is een uitnodiging en kan niet worden geïmporteerd."
       ],
       "Your file ${ formattedFilename } is empty.": [
         "Uw bestand ${ formattedFilename } is leeg."
@@ -2683,38 +2695,27 @@
       ]
     },
     "Import calendar warning": {
-      "${ CALENDAR_APP_NAME } does not support ${ forNow }:": [
-        "${ CALENDAR_APP_NAME } ondersteunt ${ forNow } nog geen:"
-      ],
-      "Attendees": [
-        "Aanwezigen"
-      ],
-      "Complex recurring rules": [
-        "Complex periodieke regels"
-      ],
-      "Email notifications": [
-        "E-mailnotificaties"
-      ],
-      "for now": [
-        "momenteel"
-      ],
-      "Free-busy time information": [
-        "Informatie over vrije tijd"
-      ],
-      "Journal entries": [
-        "Logboek items"
-      ],
-      "Non-Gregorian calendars": [
-        "Niet-Gregoriaanse agenda's"
-      ],
-      "To-do entries": [
-        "To-do items"
-      ],
-      "Unofficial or custom timezones": [
-        "Onofficiële of aangepaste tijdzones"
+      "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
+        ""
       ],
       "vCard versions < 3.0": [
         "vCard-versies < 3.0"
+      ]
+    },
+    "Import calendar; import invitation": {
+      "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your Proton email address.": [
+        ""
+      ],
+      "This file contains an event invitation:": [
+        "",
+        ""
+      ],
+      "This file contains an invitation response:": [
+        "",
+        ""
+      ],
+      "This file contains some data that we cannot import:": [
+        ""
       ]
     },
     "Import contact": {
@@ -3000,17 +3001,17 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } van de ${ totalContacts } contacten worden niet geïmporteerd. Klik voor details"
       ],
-      "${ totalEventsDiscarded } out of ${ totalEvents } events will not be imported. Click for details": [
-        "${ totalEventsDiscarded } van de ${ totalEvents } afspraken worden niet geïmporteerd. Klik voor details"
+      "${ totalEventsDiscarded } out of ${ totalEvents } events will not be imported. Expand for details.": [
+        ""
       ],
       "No contact can be imported. Click for details": [
         "Er kan geen contact worden geïmporteerd. Klik voor meer informatie"
       ],
-      "No event can be imported. Click for details": [
-        "Geen afspraak kon worden geïmporteerd. Klik voor meer informatie"
+      "No event can be imported. Expand for details.": [
+        ""
       ],
-      "Part of your calendar content is not supported and will not be imported": [
-        "Een deel van uw agenda-inhoud wordt niet ondersteund en zal niet worden geïmporteerd"
+      "Part of your calendar content is not supported and will not be imported.": [
+        ""
       ]
     },
     "Info": {
@@ -3447,8 +3448,8 @@
       "Done": [
         "Klaar"
       ],
-      "Done! We sent a code to ${ destination }": [
-        "Klaar! We hebben een code verzonden naar ${ destination }"
+      "Done! We sent a code to ${ destination }.": [
+        ""
       ],
       "Downgrading will terminate any connections to paid ProtonVPN servers.": [
         "Downgraden zal alle verbindingen naar betaalde ProtonVPN-servers beëindigen."
@@ -3642,8 +3643,8 @@
       "Image URL": [
         "Afbeeldings-URL"
       ],
-      "Images have been removed because they are not allowed in auto-reply.": [
-        "Afbeeldingen werden verwijderd omdat ze niet toegelaten zijn in automatisch antwoord."
+      "Images have been removed because they are not allowed in auto-reply": [
+        ""
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         ""
@@ -4954,7 +4955,7 @@
         "App-wachtwoord"
       ],
       "Ask before loading remote content": [
-        ""
+        "Vraag voordat externe inhoud wordt geladen"
       ],
       "Attach public key": [
         "Publieke sleutel bijvoegen"
@@ -4978,7 +4979,7 @@
         "Back-up sleutels"
       ],
       "Block email tracking": [
-        ""
+        "Blokkeer e-mailtracking"
       ],
       "bonus storage": [
         "bonus opslag"
@@ -4996,7 +4997,7 @@
         "BTC bedrag:"
       ],
       "Calendar": [
-        ""
+        "Agenda"
       ],
       "Cancel": [
         "Annuleren"
@@ -5050,7 +5051,7 @@
         "Bevestig wachtwoord"
       ],
       "Contacts": [
-        ""
+        "Contactpersonen"
       ],
       "Conversation grouping": [
         "Gesprek groeperen"
@@ -5059,13 +5060,13 @@
         "Kopiëren"
       ],
       "Could you please let us know which provider?": [
-        ""
+        "Kunt u aangeven om welke provider het gaat?"
       ],
       "Could you please specify which streaming service?": [
-        ""
+        "Kunt u aangeven om welke streamingservice het gaat?"
       ],
       "Could you please specify?": [
-        ""
+        "Kunt u nader specificeren?"
       ],
       "Country": [
         "Land"
@@ -5104,7 +5105,7 @@
         "Standaardinstellingen van meldingen"
       ],
       "Default PGP scheme": [
-        ""
+        "Standaard PGP-schema"
       ],
       "Default view": [
         "Standaardweergave"
@@ -5134,7 +5135,7 @@
         "Vraag niet opnieuw"
       ],
       "Do you have any suggestions for our team?": [
-        ""
+        "Heeft u suggesties voor ons team?"
       ],
       "Domain": [
         "Domeinnaam"
@@ -5155,7 +5156,7 @@
         "E-mailadres of gebruikersnaam"
       ],
       "Emails": [
-        ""
+        "E-mails"
       ],
       "End date": [
         "Einddatum"
@@ -5197,10 +5198,10 @@
         "Van: ${ fromEmailAddress }"
       ],
       "From: ${ importedEmail }": [
-        ""
+        "Van: { importedEmail }"
       ],
       "From: ${ importedEmailAddress }": [
-        ""
+        "Van: ${ importedEmailAddress }"
       ],
       "From: ${ modalModel.email }": [
         "Van: ${ modalModel.email }"
@@ -5338,7 +5339,7 @@
         "Versie van besturingssysteem"
       ],
       "Optional": [
-        ""
+        "Optioneel"
       ],
       "OR": [
         "OF"
@@ -5506,7 +5507,7 @@
         "Naar: ${ emailAddress }"
       ],
       "To: ${ PMEmailAddress }": [
-        ""
+        "Aan: { PMEmailAddress }"
       ],
       "To: ${ toEmailAddress }": [
         "Naar: ${ toEmailAddress }"
@@ -7136,7 +7137,7 @@
         "Agenda bijgewerkt"
       ],
       "Canceling import": [
-        ""
+        "Annuleer import"
       ],
       "Catch-all address updated": [
         "Catch-all adres bijgewerkt"
@@ -7153,8 +7154,8 @@
       "Deleting original messages": [
         "Originele berichten verwijderen"
       ],
-      "DMARC value copied to clipboard!": [
-        "DMARC-waarde gekopieerd naar klembord!"
+      "DMARC value copied to clipboard": [
+        ""
       ],
       "Domain verified": [
         "Domeinnaam geverifieerd"
@@ -7220,7 +7221,7 @@
         "Premium adres aangemaakt"
       ],
       "Resuming import": [
-        ""
+        "Hervat import"
       ],
       "Session revoked": [
         "Sessie ingetrokken"
@@ -7228,8 +7229,8 @@
       "Sessions revoked": [
         "Sessies ingetrokken"
       ],
-      "SPF value copied to clipboard!": [
-        "SPF-waarde gekopieerd naar klembord!"
+      "SPF value copied to clipboard": [
+        ""
       ],
       "User created": [
         "Gebruiker aangemaakt"
@@ -7237,11 +7238,11 @@
       "User updated": [
         "Gebruiker bijgewerkt"
       ],
-      "Value copied to clipboard!": [
-        "Gekopieerd naar klembord!"
+      "Value copied to clipboard": [
+        ""
       ],
-      "Verification code copied to clipboard!": [
-        "Verificatie code gekopieerd naar klembord!"
+      "Verification code copied to clipboard": [
+        ""
       ],
       "Verification successful": [
         "Verificatie gelukt"
@@ -7571,6 +7572,9 @@
       "Contacts": [
         "Contacten"
       ],
+      "Continue with partial import?": [
+        ""
+      ],
       "Coupon discount": [
         "Kortingscode"
       ],
@@ -7775,6 +7779,10 @@
       "Import & export": [
         "Importeren & exporteren"
       ],
+      "Import as simple event?": [
+        "",
+        ""
+      ],
       "Import Assistant": [
         "Importeer assistent"
       ],
@@ -7783,6 +7791,9 @@
       ],
       "Import events": [
         "Afspraken importeren"
+      ],
+      "Import failed": [
+        ""
       ],
       "Import groups": [
         "Importeer groepen"

@@ -978,9 +978,6 @@
       "Forwarded": [
         "Переслано"
       ],
-      "Has attachments": [
-        "Містить вкладення"
-      ],
       "Replied to": [
         "Відповідь"
       ],
@@ -1914,8 +1911,8 @@
       "Amount below minimum.": [
         "Сума менше допустимого обмеження."
       ],
-      "Attachments are limited to 25 MB.": [
-        "Розмір вкладень обмежується 25 МБ."
+      "Attachments are limited to 25 MB": [
+        "Розмір вкладень обмежується 25 МБ"
       ],
       "Authentication canceled.": [
         "Автентифікацію скасовано."
@@ -1938,8 +1935,8 @@
       "Can't validate phone, try again later": [
         "Не вдається підтвердити телефон. Спробуйте знову пізніше"
       ],
-      "Checkout expired, please try again.": [
-        "Час оформлення замовлення минув, повторіть спробу."
+      "Checkout expired, please try again": [
+        "Час оформлення минув, повторіть спробу"
       ],
       "Choose a date in the future.": [
         "Виберіть дату в майбутньому."
@@ -1962,11 +1959,11 @@
       "Contact signature not verified": [
         "Підпис для контакту не перевірено"
       ],
-      "Contact your organization’s administrator to resolve this.": [
-        "Щоб розв'язати цю проблему, зверніться до адміністратора вашої організації."
+      "Contact your organization’s administrator to resolve this": [
+        "Щоб розв'язати цю проблему, зверніться до адміністратора вашої організації"
       ],
-      "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser": [
-        "Пошук вмісту не можна увімкнути в цьому браузері. Вийдіть з режиму приватного перегляду або спробуйте інший браузер"
+      "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
+        "Пошук вмісту не можна увімкнути в цьому браузері. Вийдіть з режиму приватного перегляду або спробуйте інший браузер."
       ],
       "Could not find address ${ email }.": [
         "Неможливо знайти адресу ${ email }."
@@ -2004,14 +2001,14 @@
       "Error in one of the conditions": [
         "Помилка в одній з умов"
       ],
-      "Error while saving draft. Please try again": [
-        "Помилка збереження чернетки. Повторіть спробу"
+      "Error while saving draft. Please try again.": [
+        "Помилка збереження чернетки. Повторіть спробу."
       ],
-      "Error while sending the message. Message is not sent": [
-        "Помилка надсилання повідомлення. Повідомлення не надіслано"
+      "Error while sending the message. Message is not sent.": [
+        "Помилка при надсиланні повідомлення. Повідомлення не надіслано."
       ],
-      "Error while uploading attachments. Message is not sent": [
-        "Помилка завантаження вкладень. Повідомлення не надіслано"
+      "Error while uploading attachments. Message is not sent.": [
+        "Помилка завантаження вкладень. Повідомлення не надіслано."
       ],
       "Failed to encrypt attachment. Please try again.": [
         "Не вдалося зашифрувати вкладення. Спробуйте ще раз."
@@ -2046,8 +2043,8 @@
       "Invalid expiration date": [
         "Недійсний термін дії картки"
       ],
-      "Invalid expiration time.": [
-        "Хибний термін дії."
+      "Invalid expiration time": [
+        "Недійсний термін дії"
       ],
       "Invalid name": [
         "Неприпустиме ім'я"
@@ -2073,8 +2070,8 @@
       "Message needs to be sent first": [
         "Спершу необхідно надіслати повідомлення"
       ],
-      "Message passwords do not match.": [
-        "Паролі повідомлення відрізняються."
+      "Message passwords do not match": [
+        "Паролі повідомлення відрізняються"
       ],
       "Message processing error.": [
         "Помилка обробки повідомлення."
@@ -2088,8 +2085,8 @@
       "Network error: Please check your connection and try again.": [
         "Мережева помилка: Перевірте своє з'єднання з Інтернетом і повторіть спробу."
       ],
-      "No address with keys available to compose a message.": [
-        "Немає адреси з доступними ключами, щоб створити повідомлення."
+      "No address with keys available to compose a message": [
+        "Немає адреси з доступними ключами, щоб створити повідомлення"
       ],
       "No key retrieved for internal user is valid for sending": [
         "Для внутрішнього користувача не отримано жодного дійсного ключа для надсилання"
@@ -2232,8 +2229,8 @@
       "The label name is too long. Please choose a different name.": [
         "Назва мітки надто довга. Будь ласка, скоротіть назву."
       ],
-      "The maximum expiration is 4 weeks.": [
-        "Максимальний термін дії 4 тижні."
+      "The maximum expiration is 4 weeks": [
+        "Максимальний термін дії 4 тижні"
       ],
       "The minimum amount of credit that can be added is ${ _price }": [
         "Найменша сума, яку можна додати, становить ${ _price }"
@@ -2250,8 +2247,8 @@
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "У вашому зовнішньому обліковому записі надто багато тек. Будь ласка, налаштуйте імпорт для видалення деяких тек."
       ],
-      "There has been an issue with content search. Default search has been used instead": [
-        "Виникла проблема з пошуком вмісту. Натомість використано типовий пошук"
+      "There has been an issue with content search. Default search has been used instead.": [
+        "Виникла проблема з пошуком вмісту. Натомість використано типовий пошук."
       ],
       "There was an error when exporting the contacts vCards": [
         "При експортуванні vCards для контактів виникла помилка"
@@ -2268,8 +2265,8 @@
       "This label name is not available. Please choose a different name": [
         "Назва мітки недоступна. Будь ласка, виберіть іншу назву"
       ],
-      "This message has already been sent.": [
-        "Це повідомлення вже було надіслане."
+      "This message has already been sent": [
+        "Це повідомлення вже було надіслане"
       ],
       "This message has already been sent. A new draft has been saved.": [
         "Це повідомлення вже було надіслане. Нову чернетку збережено."
@@ -2277,8 +2274,8 @@
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "Це повідомлення може містити URL-посилання, які неможливо правильно відкрити в цьому браузері"
       ],
-      "Too many active filters. Please upgrade to a paid plan to activate more filters": [
-        "Забагато активних фільтрів. Перейдіть на платний тарифний план, щоб активувати більше фільтрів"
+      "Too many active filters. Please upgrade to a paid plan to activate more filters.": [
+        "Забагато активних фільтрів. Перейдіть на платний тарифний план, щоб активувати більше фільтрів."
       ],
       "Trusted keys are not valid for sending": [
         "Довірені ключі недійсні для надсилання"
@@ -2298,11 +2295,11 @@
       "You can't send vCards of more than 10 contacts": [
         "Ви не можете надіслати vCards для понад 10 контактів"
       ],
-      "You cannot open more than ${ maxActiveComposer } composer window at a time.": [
-        "Не можна відкрити понад ${ maxActiveComposer } вікно редактора одночасно.",
-        "Не можна відкрити понад ${ maxActiveComposer } вікна редактора одночасно.",
-        "Не можна відкрити понад ${ maxActiveComposer } вікон редактора одночасно.",
-        "Не можна відкрити понад ${ maxActiveComposer } вікон редактора одночасно."
+      "You cannot open more than ${ maxActiveComposer } composer window at a time": [
+        "Не можна відкрити понад ${ maxActiveComposer } вікно редактора одночасно",
+        "Не можна відкрити понад ${ maxActiveComposer } вікна редактора одночасно",
+        "Не можна відкрити понад ${ maxActiveComposer } вікон редактора одночасно",
+        "Не можна відкрити понад ${ maxActiveComposer } вікон редактора одночасно"
       ],
       "You did not provide a file.": [
         "Ви не надали файл."
@@ -2319,8 +2316,8 @@
       "Your import will not be processed.": [
         "Ваш імпорт не буде оброблений."
       ],
-      "Your search matched too many results. Please limit your search and try again": [
-        "За вашим пошуковим запитом знайдено надто багато результатів. Обмежте пошуковий запит і спробуйте знову"
+      "Your search matched too many results. Please limit your search and try again.": [
+        "За вашим пошуковим запитом знайдено надто багато результатів. Обмежте пошуковий запит і спробуйте знову."
       ]
     },
     "Error display when performing invalid move on message": {
@@ -3462,8 +3459,8 @@
       "Image URL": [
         "URL-адреса зображення"
       ],
-      "Images have been removed because they are not allowed in auto-reply.": [
-        "Зображення були вилучені, оскільки вони не дозволені в автовідповіді."
+      "Images have been removed because they are not allowed in auto-reply": [
+        "Зображення були вилучені, оскільки вони не дозволені в автовідповіді"
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Імпорт ${ contactsFragment } і ${ contactsGroupsFragment }"
@@ -3572,6 +3569,9 @@
       ],
       "Message sent": [
         "Повідомлення надіслано"
+      ],
+      "Message sent.": [
+        "Повідомлення надіслано."
       ],
       "Message will be sent ${ dateString } at ${ formattedTime }": [
         "Повідомлення буде надіслано ${ dateString }, ${ formattedTime }"
@@ -6349,8 +6349,8 @@
       "Contacts deleted": [
         "Контакти видалено"
       ],
-      "Conversation added to ${ labelName }": [
-        "Розмову додано до ${ labelName }"
+      "Conversation added to ${ labelName }.": [
+        "Розмову додано до ${ labelName }."
       ],
       "Conversation deleted": [
         "Розмову видалено"
@@ -6358,8 +6358,8 @@
       "Conversation marked as read.": [
         "Розмову позначено прочитаною."
       ],
-      "Conversation marked as Starred": [
-        "Розмову позначено зірочкою"
+      "Conversation marked as Starred.": [
+        "Розмову позначено зірочкою."
       ],
       "Conversation marked as unread.": [
         "Розмову позначено непрочитаною."
@@ -6373,8 +6373,8 @@
       "Conversation moved to spam and sender added to Block List.": [
         "Розмову переміщено до спаму, а відправника додано до списку блокування."
       ],
-      "Conversation removed from ${ labelName }": [
-        "Розмову вилучено з ${ labelName }"
+      "Conversation removed from ${ labelName }.": [
+        "Розмову вилучено з ${ labelName }."
       ],
       "Draft deleted": [
         "Чернетку видалено"
@@ -6400,8 +6400,8 @@
       "Mail list unsubscribed": [
         "Підписку на розсилку скасовано"
       ],
-      "Message added to ${ labelName }": [
-        "Повідомлення додано до ${ labelName }"
+      "Message added to ${ labelName }.": [
+        "Повідомлення додано до ${ labelName }."
       ],
       "Message content search activated": [
         "Пошук вмісту повідомлень активовано"
@@ -6415,8 +6415,8 @@
       "Message marked as read.": [
         "Повідомлення позначено прочитаним."
       ],
-      "Message marked as Starred": [
-        "Повідомлення позначено зірочкою"
+      "Message marked as Starred.": [
+        "Повідомлення позначено зірочкою."
       ],
       "Message marked as unread.": [
         "Повідомлення позначено непрочитаним."
@@ -6430,8 +6430,8 @@
       "Message moved to spam and sender added to Block List.": [
         "Повідомлення переміщено до спаму, а відправника до списку блокування."
       ],
-      "Message removed from ${ labelName }": [
-        "Повідомлення вилучено з ${ labelName }"
+      "Message removed from ${ labelName }.": [
+        "Повідомлення вилучено з ${ labelName }."
       ],
       "Move ${ selectionCount } conversation": [
         "Перемістити ${ selectionCount } розмову",

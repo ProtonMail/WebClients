@@ -189,6 +189,9 @@
       "Download": [
         "Preuzmi"
       ],
+      "Drive Locked": [
+        ""
+      ],
       "Edit": [
         "Uredi"
       ],
@@ -1106,8 +1109,8 @@
       "Can't validate phone, try again later": [
         "Nije moguće potvrditi broj telefona, pokušajte ponovo kasnije"
       ],
-      "Checkout expired, please try again.": [
-        "Naplata je istekla, pokušajte ponovo."
+      "Checkout expired, please try again": [
+        ""
       ],
       "Contact could not be saved": [
         "Nije moguće spremanje kontakata"
@@ -1727,6 +1730,11 @@
       "${ vpnAppName } Free": [
         "${ vpnAppName } Free"
       ],
+      "(${ memberCount } member)": [
+        "",
+        "",
+        ""
+      ],
       "(Mail + VPN)": [
         "(E-pošta + VPN)"
       ],
@@ -1796,6 +1804,9 @@
       "Amount below minimum (${ amount }).": [
         "Iznos ispod minimuma (${ amount })."
       ],
+      "An active recovery file": [
+        ""
+      ],
       "and": [
         ""
       ],
@@ -1812,6 +1823,9 @@
       ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Osnovna navigacija i radnje ostaju dostupni bez obzira jesu li tipkovni prečaci aktivni ili ne u postavkama."
+      ],
+      "Because ${ appName } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
+        ""
       ],
       "Billed as ${ billedPrice } every 2 years": [
         "Naplaćeno ${ billedPrice }} svako 2 godine"
@@ -1864,6 +1878,9 @@
       "Connections": [
         "Veze"
       ],
+      "Continue using ${ appName } and unlock drive later": [
+        ""
+      ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "",
         "",
@@ -1891,6 +1908,11 @@
         "Stvaranje poveznice za datoteku"
       ],
       "Creating share": [
+        ""
+      ],
+      "Delete drive": [
+        "",
+        "",
         ""
       ],
       "Discount applied to your subscription with coupon ${ code }": [
@@ -1988,6 +2010,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Ako ne pronađete e-poštu u pristigloj pošti, provjerite svoju mapu neželjene pošte."
+      ],
+      "If you have one of these, continue to Proton account setting to\ncontinue the unblock process.": [
+        ""
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         ""
@@ -2117,6 +2142,9 @@
       "of": [
         "od"
       ],
+      "One of your encrypted drives is locked. This is most likely due to a recent password reset.${ BrElement }\n${ BrElement }\n${ questionText }": [
+        ""
+      ],
       "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
         "Promijenite ove postavke samo ako koristite PGP s primateljima koji ne koriste ProtonMail."
       ],
@@ -2131,6 +2159,9 @@
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Plaćanja su zaštićena TLS enkripcijom i švicarskim zakonima o privatnosti."
+      ],
+      "Permanently delete all files in your drive": [
+        ""
       ],
       "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
         "PGP/Inline je kompatibilan samo s običnim tekstualnim oblikom. Imajte na umu da ProtonMail uvijek potpisuje šifrirane poruke."
@@ -2230,8 +2261,8 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Budući da ste odani korisnik, na vašem su računu omogućene dodatne značajke."
       ],
-      "Some of your files are no longer accessible. Restore the access to your files. ${ startRecoveryButton }": [
-        "Neke od vaših datoteka više nisu dostupne. Vratite pristup svojim datotekama. ${ startRecoveryButton }"
+      "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
+        ""
       ],
       "Something went wrong, please try again later.": [
         "Nešto je pošlo po zlu. Pokušajte ponovno."
@@ -2322,6 +2353,9 @@
       "Trash": [
         "Otpad"
       ],
+      "Unlock drive to recover files": [
+        ""
+      ],
       "Unsupported file": [
         "Nepodržana datoteka"
       ],
@@ -2368,6 +2402,9 @@
         "Što želite učiniti?"
       ],
       "What do you want to import from your Google account?": [
+        ""
+      ],
+      "What would you like to do?": [
         ""
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
@@ -2457,14 +2494,20 @@
       "Your file is being downloaded.": [
         "Vaša datoteka se preuzima."
       ],
-      "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ mailSettingsLink }": [
-        "Vaše datoteke više nisu dostupne zbog ponovnog postavljanja lozinke. Ponovno učitajte stari ključ za šifriranje da biste vratili pristup. ${ mailSettingsLink }"
+      "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ KeyReactivationButton }": [
+        ""
       ],
       "Your files will be encrypted and then saved.": [
         "Vaše datoteke će biti šifrirane i spremljene."
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Vaš broj telefona koristit će se samo za ovu jednokratnu provjeru."
+      ],
+      "Your previous password": [
+        ""
+      ],
+      "Your previous recovery phrase": [
+        ""
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "Vaš Proton račun je trenutno na čekanju. Da biste nastavili koristiti svoj račun, uplatite sve neplaćene fakture."
@@ -2793,6 +2836,11 @@
       "CVV code": [
         "CVV kôd"
       ],
+      "Delete Drive?": [
+        "",
+        "",
+        ""
+      ],
       "Display name": [
         "Zaslonski naziv"
       ],
@@ -3000,6 +3048,9 @@
       "Text": [
         "Tekst"
       ],
+      "This will permanently delete all files in your locked drive.": [
+        ""
+      ],
       "To: ${ emailAddress }": [
         ""
       ],
@@ -3014,6 +3065,15 @@
       ],
       "Unknown file": [
         "Nepoznata datoteka"
+      ],
+      "Unlock Drive": [
+        ""
+      ],
+      "Unlock drive (recommended)": [
+        ""
+      ],
+      "Unlock later": [
+        ""
       ],
       "Up to ${ parentLinkName }": [
         ""
@@ -3038,6 +3098,9 @@
       ],
       "What happened?": [
         "Što se dogodilo?"
+      ],
+      "Yes, I want to permanently delete\nmy old files": [
+        ""
       ],
       "ZIP": [
         "Poštanski broj"
@@ -3305,10 +3368,10 @@
       "\"${ firstItemName }\" restored from trash": [
         "\"${ firstItemName }\" vraćeno iz Otpada"
       ],
-      "${ deletedCount } link to your file was deleted.": [
-        "Uklonjena je ${ deletedCount } poveznica za vaše datoteke.",
-        "Uklonjene su ${ deletedCount } poveznice za vaše datoteke.",
-        "Uklonjeno je ${ deletedCount } poveznica za vaše datoteke."
+      "${ deletedCount } link to your file was deleted": [
+        "",
+        "",
+        ""
       ],
       "${ deletedItemsCount } file deleted permanently from trash": [
         "${ deletedItemsCount } datoteka je trajno izbrisana iz otpada",
@@ -3325,10 +3388,10 @@
         "${ deletedItemsCount } stavke su trajno izbrisane iz otpada",
         "${ deletedItemsCount } stavki je trajno izbrisano iz otpada"
       ],
-      "${ failedCount } link to your file failed to be deleted.": [
-        "Neuspješno brisanje ${ failedCount } poveznice do vaše datoteke.",
-        "Neuspješno brisanje ${ failedCount } poveznice do vaše datoteke.",
-        "Neuspješno brisanje ${ failedCount } poveznica do vaše datoteke."
+      "${ failedCount } link to your file failed to be deleted": [
+        "",
+        "",
+        ""
       ],
       "${ failedMovesCount } file failed to be moved": [
         "${ failedMovesCount } datoteka nije uspješno premještena",
@@ -3452,14 +3515,17 @@
       "Not enough space to upload ${ formattedTotal }": [
         ""
       ],
-      "The link to your file failed to be deleted.": [
-        "Neuspješno brisanje poveznice do vaše datoteke."
+      "The link to your file failed to be deleted": [
+        ""
       ],
-      "The link to your file was deleted.": [
-        "Poveznica do vaše datoteke je izbrisana."
+      "The link to your file was deleted": [
+        ""
       ],
-      "Your settings have been changed successfully.": [
-        "Vaše postavke su uspješno promijenjene."
+      "Your old files will be deleted in 72 hours": [
+        ""
+      ],
+      "Your settings have been changed successfully": [
+        ""
       ]
     },
     "Onboarding Proton": {
@@ -3892,11 +3958,11 @@
       "Preferences saved": [
         "Postavke su spremljene"
       ],
-      "Recovery has started.": [
-        "Oporavak je započet."
+      "Recovery has started": [
+        ""
       ],
-      "The link to your file was successfully copied.": [
-        "Poveznica do vaše datoteke je uspješno kopirana."
+      "The link to your file was successfully copied": [
+        ""
       ],
       "Verification successful": [
         "Uspješna provjera"
@@ -3904,8 +3970,8 @@
       "You have successfully unsubscribed": [
         "Uspješno ste poništili pretplatu"
       ],
-      "Your files were successfully recovered to \"My files\".": [
-        "Vaše datoteke su uspješno vraćene u \"Moje datoteke\"."
+      "Your files were successfully recovered to \"My files\"": [
+        ""
       ]
     },
     "Suffix for price": {
@@ -4471,6 +4537,11 @@
         "Poštanski broj"
       ]
     },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        ""
+      ]
+    },
     "Tooltip": {
       "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
         "Pristupite geo-blokiranom sadržaju (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube itd.) bez obzira gdje se nalazite."
@@ -4730,6 +4801,9 @@
       ],
       "The contact failed to load.": [
         "Neuspješno učitavanje kontakta."
+      ],
+      "The date and time settings on your device are out of sync. ${ learnMore }": [
+        ""
       ],
       "The decryption of the encrypted content failed.": [
         "Dešifriranje šifriranog sadržaja nije uspjelo."

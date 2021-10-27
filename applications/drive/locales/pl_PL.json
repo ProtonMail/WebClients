@@ -66,7 +66,7 @@
         "Czatuj z nami"
       ],
       "Check import progress": [
-        ""
+        "Sprawdź postęp importowania"
       ],
       "Choose a file or drag it here": [
         "Wybierz plik lub przeciągnij go tutaj"
@@ -191,6 +191,9 @@
       "Download": [
         "Pobierz"
       ],
+      "Drive Locked": [
+        "Dysk jest zablokowany"
+      ],
       "Edit": [
         "Edytuj"
       ],
@@ -267,7 +270,7 @@
         "Importuj"
       ],
       "Import from .csv or vCard": [
-        ""
+        "Importuj z pliku CSV lub vCard"
       ],
       "Increase": [
         "Zwiększ"
@@ -498,7 +501,7 @@
         "Rozpocznij konfigurację"
       ],
       "Stay": [
-        ""
+        "Pozostań"
       ],
       "Stop sharing": [
         "Zatrzymaj udostępnianie"
@@ -549,10 +552,10 @@
         "Prześlij zdjęcie"
       ],
       "Uploaded date: new to old": [
-        ""
+        "Data przesłania: od nowych do starych"
       ],
       "Uploaded date: old to new": [
-        ""
+        "Data przesłania: od starych do nowych"
       ],
       "Use ${ label } theme": [
         "Użyj motywu ${ label }"
@@ -880,7 +883,7 @@
         "Link kalendarza nie jest dostępny"
       ],
       "Calendar link is temporarily inaccessible": [
-        ""
+        "Link kalendarza jest tymczasowo niedostępny"
       ],
       "Calendar link is wrong": [
         "Link kalendarza jest nieprawidłowy"
@@ -1107,7 +1110,7 @@
         "Limit kalendarzy został osiągnięty"
       ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
-        ""
+        "Z powodu limitu maksymalnej liczby osobistych kalendarzy, nie możesz utworzyć nowych kalendarzy dla wszystkich zaimportowanych kalendarzy."
       ],
       "Can't validate email, try again later": [
         "Nie można zweryfikować adresu e-mail. Spróbuj ponownie później"
@@ -1115,8 +1118,8 @@
       "Can't validate phone, try again later": [
         "Nie można zweryfikować numeru telefonu. Spróbuj ponownie później"
       ],
-      "Checkout expired, please try again.": [
-        "Płatność wygasła. Spróbuj ponownie."
+      "Checkout expired, please try again": [
+        "Płatność wygasła. Spróbuj ponownie"
       ],
       "Contact could not be saved": [
         "Kontakt nie mógł zostać zapisany"
@@ -1131,10 +1134,10 @@
         "Nie można wygenerować pliku kluczy"
       ],
       "Deselect at least ${ calendarToFixCount } calendar or": [
-        "",
-        "",
-        "",
-        ""
+        "Odznacz co najmniej ${ calendarToFixCount } kalendarz lub",
+        "Odznacz co najmniej ${ calendarToFixCount } kalendarze lub",
+        "Odznacz co najmniej ${ calendarToFixCount } kalendarzy lub",
+        "Odznacz co najmniej ${ calendarToFixCount } kalendarzy lub"
       ],
       "Email address invalid": [
         "Adres e-mail jest nieprawidłowy"
@@ -1149,7 +1152,7 @@
         "Wystąpił błąd podczas łączenia z interfejsem API Bitcoina."
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
-        ""
+        "Plik \"${ item.name }\" nie może zostać przesłany z powodu błędu: ${ error }"
       ],
       "File cannot be merged with folder": [
         "Plik nie może zostać scalony z folderem"
@@ -1200,10 +1203,10 @@
         "Nazwa etykiety nie może być pusta"
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
-        "",
-        "",
-        "",
-        ""
+        "Scal co najmniej ${ calendarToFixCount } kalendarz z obecnym kalendarzem Proton",
+        "Scal co najmniej ${ calendarToFixCount } kalendarze z obecnymi kalendarzami Proton",
+        "Scal co najmniej ${ calendarToFixCount } kalendarzy z obecnymi kalendarzami Proton",
+        "Scal co najmniej ${ calendarToFixCount } kalendarzy z obecnymi kalendarzami Proton"
       ],
       "Missing signature": [
         "Brak podpisu"
@@ -1245,10 +1248,10 @@
         "Przetwarzanie płatności nie jest obsługiwane"
       ],
       "Please fix the highlighted conflict to proceed.": [
-        "",
-        "",
-        "",
-        ""
+        "Popraw zaznaczony konflikt, aby kontynuować.",
+        "Popraw zaznaczone konflikty, aby kontynuować.",
+        "Popraw zaznaczone konflikty, aby kontynuować.",
+        "Popraw zaznaczone konflikty, aby kontynuować."
       ],
       "Preferences could not be saved": [
         "Ustawienia nie mogły zostać zapisane"
@@ -1365,7 +1368,7 @@
         "Musisz wpisać nazwę"
       ],
       "Your browser does not support uploading folders": [
-        ""
+        "Twoja przeglądarka nie obsługuje przesyłania folderów"
       ],
       "Your import will not be processed.": [
         "Twój import nie zostanie przetworzony."
@@ -1621,28 +1624,28 @@
         "Aplikacja ${ appName } potrzebuje Twojej zgody, aby ${ enableDesktopNotifications }."
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
-        "",
-        "",
-        "",
-        ""
+        "${ calendarsToBeCreatedCount } nowy kalendarz",
+        "${ calendarsToBeCreatedCount } nowe kalendarze",
+        "${ calendarsToBeCreatedCount } nowych kalendarzy",
+        "${ calendarsToBeCreatedCount } nowych kalendarzy"
       ],
       "${ calendarsToBeMerged } merged calendar": [
-        "",
-        "",
-        "",
-        ""
+        "${ calendarsToBeMerged } scalony kalendarz",
+        "${ calendarsToBeMerged } scalone kalendarze",
+        "${ calendarsToBeMerged } scalonych kalendarzy",
+        "${ calendarsToBeMerged } scalonych kalendarzy"
       ],
       "${ calendarsToBeMergedCount } merged calendar": [
-        "",
-        "",
-        "",
-        ""
+        "${ calendarsToBeMergedCount } scalony kalendarz",
+        "${ calendarsToBeMergedCount } scalone kalendarze",
+        "${ calendarsToBeMergedCount } scalonych kalendarzy",
+        "${ calendarsToBeMergedCount } scalonych kalendarzy"
       ],
       "${ canceledCount } Canceled": [
         "Transfer ${ canceledCount } pliku został anulowany",
-        "Transfer ${ canceledCount } pliku został anulowany",
-        "Transfer ${ canceledCount } pliku został anulowany",
-        "Transfer ${ canceledCount } pliku został anulowany"
+        "Transfer ${ canceledCount } plików został anulowany",
+        "Transfer ${ canceledCount } plików został anulowany",
+        "Transfer ${ canceledCount } plików został anulowany"
       ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } członek",
@@ -1676,21 +1679,21 @@
       ],
       "${ doneDownloadsCount } Downloaded": [
         "Pobrano ${ doneDownloadsCount } plik",
-        "Pobrano ${ doneDownloadsCount } plik",
-        "Pobrano ${ doneDownloadsCount } plik",
-        "Pobrano ${ doneDownloadsCount } plik"
+        "Pobrano ${ doneDownloadsCount } pliki",
+        "Pobrano ${ doneDownloadsCount } plików",
+        "Pobrano ${ doneDownloadsCount } plików"
       ],
       "${ doneUploadsCount } Uploaded": [
         "Przesłano ${ doneUploadsCount } plik",
-        "Przesłano ${ doneUploadsCount } plik",
-        "Przesłano ${ doneUploadsCount } plik",
-        "Przesłano ${ doneUploadsCount } plik"
+        "Przesłano ${ doneUploadsCount } pliki",
+        "Przesłano ${ doneUploadsCount } plików",
+        "Przesłano ${ doneUploadsCount } plików"
       ],
       "${ errorCount } Failed": [
         "Transfer ${ errorCount } pliku zakończył się niepowodzeniem",
-        "Transfer ${ errorCount } pliku zakończył się niepowodzeniem",
-        "Transfer ${ errorCount } pliku zakończył się niepowodzeniem",
-        "Transfer ${ errorCount } pliku zakończył się niepowodzeniem"
+        "Transfer ${ errorCount } plików zakończył się niepowodzeniem",
+        "Transfer ${ errorCount } plików zakończył się niepowodzeniem",
+        "Transfer ${ errorCount } plików zakończył się niepowodzeniem"
       ],
       "${ groupCounts } group found": [
         "${ groupCounts } znaleziona grupa",
@@ -1708,22 +1711,22 @@
         "${ namesWithoutLast } i ${ nameOfLast }"
       ],
       "${ numContactGroups } contact group": [
-        "",
-        "",
-        "",
-        ""
+        "${ numContactGroups } grupę kontaktów",
+        "${ numContactGroups } grupy kontaktów",
+        "${ numContactGroups } grup kontaktów",
+        "${ numContactGroups } grup kontaktów"
       ],
       "${ numContacts } contact": [
-        "",
-        "",
-        "",
-        ""
+        "${ numContacts } kontakt",
+        "${ numContacts } kontakty",
+        "${ numContacts } kontaktów",
+        "${ numContacts } kontaktów"
       ],
       "${ pausedCount } Paused": [
         "Transfer ${ pausedCount } pliku został wstrzymany",
-        "Transfer ${ pausedCount } pliku został wstrzymany",
-        "Transfer ${ pausedCount } pliku został wstrzymany",
-        "Transfer ${ pausedCount } pliku został wstrzymany"
+        "Transfer ${ pausedCount } plików został wstrzymany",
+        "Transfer ${ pausedCount } plików został wstrzymany",
+        "Transfer ${ pausedCount } plików został wstrzymany"
       ],
       "${ save20 } on your subscription by switching to ${ annualBilling }": [
         "${ save20 } zmieniając na ${ annualBilling }"
@@ -1735,10 +1738,10 @@
         "${ saveExtra20 } na subskrypcji usługi VPN i poczty."
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
-        "",
-        "",
-        "",
-        ""
+        "${ selectedCalendarsTotal }/${ providerCalendars.length } kalendarz",
+        "${ selectedCalendarsTotal }/${ providerCalendars.length } kalendarze",
+        "${ selectedCalendarsTotal }/${ providerCalendars.length } kalendarzy",
+        "${ selectedCalendarsTotal }/${ providerCalendars.length } kalendarzy"
       ],
       "${ selectedFoldersCount } folder selected": [
         "${ selectedFoldersCount } zaznaczony folder",
@@ -1766,6 +1769,12 @@
       ],
       "${ vpnAppName } Free": [
         "${ vpnAppName } Free"
+      ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } członek)",
+        "(${ memberCount } członków)",
+        "(${ memberCount } członków)",
+        "(${ memberCount } członków)"
       ],
       "(Mail + VPN)": [
         "(poczta + VPN)"
@@ -1822,10 +1831,10 @@
         "Po dokonaniu płatności w Bitcoinach wykonaj tę instrukcję, aby ulepszyć konto."
       ],
       "All (${ totalFoldersCount } folder)": [
-        "",
-        "",
-        "",
-        ""
+        "Wszystkie (${ totalFoldersCount } folder)",
+        "Wszystkie (${ totalFoldersCount } foldery)",
+        "Wszystkie (${ totalFoldersCount } folderów)",
+        "Wszystkie (${ totalFoldersCount } folderów)"
       ],
       "All (${ totalFoldersCount } label)": [
         "Wszystkie (${ totalFoldersCount } etykieta)",
@@ -1839,8 +1848,11 @@
       "Amount below minimum (${ amount }).": [
         "Kwota poniżej minimum (${ amount })."
       ],
+      "An active recovery file": [
+        "Aktywny plik odzyskiwania"
+      ],
       "and": [
-        ""
+        "i"
       ],
       "Anyone with this link can access your file.": [
         "Każdy, kto posiada link, ma dostęp do pliku."
@@ -1856,6 +1868,9 @@
       ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Skróty klawiszowe podstawowej nawigacji i akcji są zawsze włączone."
+      ],
+      "Because ${ appName } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
+        "Ponieważ ${ appName } jest szyfrowany end-to-end, nie możemy\nodszyfrować Twoich plików. Aby odblokować dysk po zresetowaniu hasła,\nmusisz posiadać jeden z następujących elementów:"
       ],
       "Billed as ${ billedPrice } every 2 years": [
         "Płatne jako ${ billedPrice } co 2 lata"
@@ -1897,7 +1912,7 @@
         "Kliknij przycisk \"Poproś o nowy kod\", aby otrzymać nowy kod weryfikacyjny na numer telefonu ${ strong }. Jeśli numer jest nieprawidłowy, kliknij przycisk \"Edytuj\", aby go poprawić."
       ],
       "Close this screen to exit.": [
-        ""
+        "Zamknij te okno, aby wyjść."
       ],
       "Closing transfer manager will cancel all active transfers, are you sure?": [
         "Zamknięcie menedżera przesyłania spowoduje anulowanie wszystkich aktywnych transferów. Czy jesteś pewien?"
@@ -1908,11 +1923,14 @@
       "Connections": [
         "Połączenia"
       ],
+      "Continue using ${ appName } and unlock drive later": [
+        "Kontynuuj używanie aplikacji ${ appName } i odblokuj dysk później"
+      ],
       "Create ${ calendarsToBeCreated } new calendar": [
-        "",
-        "",
-        "",
-        ""
+        "Utwórz ${ calendarsToBeCreated } nowy kalendarz",
+        "Utwórz ${ calendarsToBeCreated } nowe kalendarze",
+        "Utwórz ${ calendarsToBeCreated } nowych kalendarzy",
+        "Utwórz ${ calendarsToBeCreated } nowych kalendarzy"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Utwórz etykietę dla zaimportowanych wiadomości, wybierz przedział czasowy dla tego importu oraz foldery, które chcesz zaimportować."
@@ -1924,7 +1942,7 @@
         "Utwórz nową grupę kontaktów"
       ],
       "Create in": [
-        ""
+        "Utwórz w"
       ],
       "Create links and share your files with others.": [
         "Utwórz linki i udostępnij pliki innym."
@@ -1937,6 +1955,12 @@
       ],
       "Creating share": [
         "Tworzenie linku udostępniania"
+      ],
+      "Delete drive": [
+        "Usuń dysk",
+        "Usuń dyski",
+        "Usuń dyski",
+        "Usuń dyski"
       ],
       "Discount applied to your subscription with coupon ${ code }": [
         "Zniżka za kupon ${ code } została wliczona do Twojej subskrypcji"
@@ -2034,23 +2058,26 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Jeśli nie widzisz wiadomości w skrzynce odbiorczej, sprawdź folder Spam."
       ],
+      "If you have one of these, continue to Proton account setting to\ncontinue the unblock process.": [
+        "Jeśli posiadasz jeden z tych elementów, przejdź do ustawień konta Proton,\naby odblokować dysk."
+      ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
-        ""
+        "Importuj ${ contactsFragment } i ${ contactsGroupsFragment }"
       ],
       "Import ${ selectedCalendarsCount } of ${ totalCalendarsCount } calendar": [
-        "",
-        "",
-        "",
-        ""
+        "Importuj kalendarz (${ selectedCalendarsCount }/${ totalCalendarsCount })",
+        "Importuj kalendarze (${ selectedCalendarsCount }/${ totalCalendarsCount })",
+        "Importuj kalendarze (${ selectedCalendarsCount }/${ totalCalendarsCount })",
+        "Importuj kalendarze (${ selectedCalendarsCount }/${ totalCalendarsCount })"
       ],
       "Import from": [
-        ""
+        "Importuj z"
       ],
       "Import in progress": [
-        ""
+        "Importowanie jest w toku"
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
-        ""
+        "Trwa importowanie danych z konta ${ importedEmailAddress } do ${ toEmail }."
       ],
       "Included": [
         "w zestawie"
@@ -2071,13 +2098,13 @@
         "Połączenie z Internetem zostało przywrócone."
       ],
       "Just confirm your selection and we'll do the rest.": [
-        ""
+        "Potwierdź swój wybór, a my zajmiemy się resztą."
       ],
       "Key fingerprint": [
         "Odcisk klucza"
       ],
       "Large imports can take several days.": [
-        ""
+        "Importowanie dużej ilości danych może potrwać kilka dni."
       ],
       "Learn more": [
         "Dowiedz się więcej"
@@ -2101,7 +2128,7 @@
         "Ładowanie linku udostępniania"
       ],
       "Merged": [
-        ""
+        "Scalony"
       ],
       "More": [
         "Więcej"
@@ -2113,16 +2140,16 @@
         "Moje linki"
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
-        ""
+        "Nazwij nowy folder i wybierz folder nadrzędny, do którego chcesz go dodać. Jeśli nie wybierzesz folderu nadrzędnego, nowy folder zostanie utworzony jako folder najwyższego poziomu."
       ],
       "Network issue": [
         "Błąd sieci"
       ],
       "New": [
-        ""
+        "Nowy"
       ],
       "Next you'll need to log in to your Google account and allow us to access your data.": [
-        ""
+        "Następnie będziesz musiał zalogować się na konto Google i zezwolić nam na dostęp do Twoich danych."
       ],
       "No": [
         "Nie"
@@ -2155,13 +2182,16 @@
         "Nie można dostosować"
       ],
       "Note: Data may still be available locally on devices where you have installed ${ appName }.": [
-        ""
+        "Uwaga: Dane mogą być nadal dostępne lokalnie na urządzeniach, na których zainstalowałeś aplikację ${ appName }."
       ],
       "Number of VPN connections which can be assigned to users. Each connected device consumes one VPN connection.": [
         "Liczba połączeń VPN, która może zostać przypisana do użytkowników. Każde podłączone urządzenie używa jednego połączenia VPN."
       ],
       "of": [
         "z"
+      ],
+      "One of your encrypted drives is locked. This is most likely due to a recent password reset.${ BrElement }\n${ BrElement }\n${ questionText }": [
+        "Jeden z zaszyfrowanych dysków jest zablokowany. To może być spowodowane zresetowaniem hasła.${ BrElement }\n${ BrElement }\n${ questionText }"
       ],
       "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
         "Zmień te ustawienia tylko, gdy używasz PGP z odbiorcami spoza ProtonMaila."
@@ -2177,6 +2207,9 @@
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Płatności są chronione szyfrowaniem TLS i szwajcarskim prawem ochrony danych."
+      ],
+      "Permanently delete all files in your drive": [
+        "Usuń trwale wszystkie pliki z dysku"
       ],
       "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
         "Schemat PGP/Inline jest kompatybilny tylko z trybem zwykłego tekstu. Pamiętaj, że ProtonMail zawsze podpisuje zaszyfrowane wiadomości."
@@ -2260,10 +2293,10 @@
         "Wybierz domyślny format wiadomości, który ma zostać użyty podczas wysyłania wiadomości na ten adres e-mail."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20-personal-calendar limit. You can also merge imported calendars with existing Proton calendars.": [
-        ""
+        "Wybierz, które kalendarze chcesz zaimportować. Dla każdego importowanego kalendarza zostanie utworzony nowy kalendarz, aż do osiągnięcia limitu 20 osobistych kalendarzy. Możesz również scalić importowane kalendarze z obecnymi kalendarzami Proton."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
-        ""
+        "Serwery są nieosiągalne. Spróbuj ponownie za kilka minut"
       ],
       "Session timed out.": [
         "Upłynął limit czasu sesji."
@@ -2277,8 +2310,8 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Dzięki temu, że od dawna jesteś użytkownikiem, Twoje konto posiada dodatkowe funkcje."
       ],
-      "Some of your files are no longer accessible. Restore the access to your files. ${ startRecoveryButton }": [
-        "Niektóre pliki nie są już dostępne. Przywróć dostęp do plików. ${ startRecoveryButton }"
+      "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
+        "Niektóre pliki nie są już dostępne. Przywróć dostęp do plików. ${ StartRecoveryButton }"
       ],
       "Something went wrong, please try again later.": [
         "Coś poszło nie tak. Spróbuj ponownie później."
@@ -2370,6 +2403,9 @@
       "Trash": [
         "Kosz"
       ],
+      "Unlock drive to recover files": [
+        "Odblokuj dysk, aby odzyskać pliki"
+      ],
       "Unsupported file": [
         "Plik jest nieobsługiwany"
       ],
@@ -2407,7 +2443,7 @@
         "Zostaniesz przekierowany na stronę PayPal w celu dokończenia transakcji. Jeśli używasz opcji blokowania wyskakujących okien, wyłącz ją, aby kontynuować."
       ],
       "We'll notify you when the import is done.": [
-        ""
+        "Powiadomimy Cię, kiedy proces importowania danych zostanie zakończony."
       ],
       "Week": [
         "Tydzień"
@@ -2416,7 +2452,10 @@
         "Co chcesz zrobić?"
       ],
       "What do you want to import from your Google account?": [
-        ""
+        "Co chcesz zaimportować z konta Google?"
+      ],
+      "What would you like to do?": [
+        "Co chcesz zrobić?"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Czy chcesz otrzymać nowy kod weryfikacyjny lub użyć innej metody weryfikacji?"
@@ -2434,7 +2473,7 @@
         "Jesteś obecnie zalogowany jako ${ user.Name } (${ user.Email }) i posiadasz ograniczony dostęp."
       ],
       "You can check the progress ${ importProgressLink }.": [
-        ""
+        "Możesz sprawdzić postęp ${ importProgressLink }."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Możesz włączyć powiadomienia, aby otrzymywać informacje o nowych wiadomościach w tym folderze."
@@ -2488,7 +2527,7 @@
         "Ze względów bezpieczeństwa, Twój bank wymaga weryfikacji 3-D Secure."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
-        ""
+        "Dane z konta ${ importedEmailAddressStrong } są gotowe do zaimportowania do konta Proton."
       ],
       "Your download has been canceled.": [
         "Pobieranie zostało anulowane."
@@ -2505,14 +2544,20 @@
       "Your file is being downloaded.": [
         "Trwa pobieranie pliku."
       ],
-      "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ mailSettingsLink }": [
-        "Twoje pliki nie są już dostępne z powodu zresetowania hasła. Prześlij ponownie starty klucz szyfrowania, aby odzyskać do nich dostęp. ${ mailSettingsLink }"
+      "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ KeyReactivationButton }": [
+        "Pliki nie są już dostępne z powodu zresetowania hasła. Prześlij ponownie stary klucz szyfrowania, aby odzyskać do nich dostęp. ${ KeyReactivationButton }"
       ],
       "Your files will be encrypted and then saved.": [
         "Twoje pliki przed zapisaniem zostaną zaszyfrowane."
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Numer telefonu zostanie użyty tylko do jednorazowej weryfikacji."
+      ],
+      "Your previous password": [
+        "Poprzednie hasło"
+      ],
+      "Your previous recovery phrase": [
+        "Poprzednie hasło odzyskiwania"
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "Twoje konto Proton jest obecnie zawieszone. Ureguluj zobowiązania."
@@ -2841,6 +2886,12 @@
       "CVV code": [
         "Kod CVV"
       ],
+      "Delete Drive?": [
+        "Usunąć dysk?",
+        "Usunąć dyski?",
+        "Usunąć dyski?",
+        "Usunąć dyski?"
+      ],
       "Display name": [
         "Nazwa wyświetlana"
       ],
@@ -3048,6 +3099,9 @@
       "Text": [
         "Tekst"
       ],
+      "This will permanently delete all files in your locked drive.": [
+        "Spowoduje to trwałe usunięcie wszystkich plików w zablokowanym dysku."
+      ],
       "To: ${ emailAddress }": [
         "Do: ${ emailAddress }"
       ],
@@ -3062,6 +3116,15 @@
       ],
       "Unknown file": [
         "Nieznany plik"
+      ],
+      "Unlock Drive": [
+        "Odblokuj dysk"
+      ],
+      "Unlock drive (recommended)": [
+        "Odblokuj dysk (zalecane)"
+      ],
+      "Unlock later": [
+        "Odblokuj później"
       ],
       "Up to ${ parentLinkName }": [
         "Przejdź do ${ parentLinkName }"
@@ -3086,6 +3149,9 @@
       ],
       "What happened?": [
         "Co się stało?"
+      ],
+      "Yes, I want to permanently delete\nmy old files": [
+        "Tak, chcę trwale usunąć\nstare pliki"
       ],
       "ZIP": [
         "Kod pocztowy"
@@ -3197,10 +3263,10 @@
     },
     "Loading info": {
       "${ createdCalendars } of ${ calendarsToBeCreated } created": [
-        "",
-        "",
-        "",
-        ""
+        "Tworzenie nowych kalendarzy (${ createdCalendars }/${ calendarsToBeCreated })",
+        "Tworzenie nowych kalendarzy (${ createdCalendars }/${ calendarsToBeCreated })",
+        "Tworzenie nowych kalendarzy (${ createdCalendars }/${ calendarsToBeCreated })",
+        "Tworzenie nowych kalendarzy (${ createdCalendars }/${ calendarsToBeCreated })"
       ],
       "Almost there": [
         "Już prawie"
@@ -3301,7 +3367,7 @@
     },
     "Mail import summary": {
       "${ messagesFragment } since ${ periodFragment } and label them as ${ label }": [
-        ""
+        "${ messagesFragment } od ${ periodFragment } oznacz je etykietą ${ label }"
       ]
     },
     "Many Others": {
@@ -3354,35 +3420,35 @@
       "\"${ firstItemName }\" restored from trash": [
         "Plik \"${ firstItemName }\" został przywrócony z Kosza"
       ],
-      "${ deletedCount } link to your file was deleted.": [
-        "Link do pliku został usunięty.",
-        "${ deletedCount } linki do plików zostały usunięte.",
-        "${ deletedCount } linków do plików zostało usuniętych.",
-        "${ deletedCount } linków do plików zostało usuniętych."
+      "${ deletedCount } link to your file was deleted": [
+        "Link do pliku został usunięty",
+        "${ deletedCount } linki do plików zostały usunięte",
+        "${ deletedCount } linków do plików zostało usuniętych",
+        "${ deletedCount } linków do plików zostało usuniętych"
       ],
       "${ deletedItemsCount } file deleted permanently from trash": [
-        "${ deletedItemsCount } plik został trwale usunięty",
+        "Plik został trwale usunięty",
         "${ deletedItemsCount } pliki zostały trwale usunięte",
         "${ deletedItemsCount } plików zostało trwale usuniętych",
         "${ deletedItemsCount } plików zostało trwale usuniętych"
       ],
       "${ deletedItemsCount } folder deleted permanently from trash": [
-        "${ deletedItemsCount } folder został trwale usunięty",
+        "Folder został trwale usunięty",
         "${ deletedItemsCount } foldery zostały trwale usunięte",
         "${ deletedItemsCount } folderów zostało trwale usuniętych",
         "${ deletedItemsCount } folderów zostało trwale usuniętych"
       ],
       "${ deletedItemsCount } item deleted permanently from trash": [
-        "${ deletedItemsCount } element został trwale usunięty",
+        "Element został trwale usunięty",
         "${ deletedItemsCount } elementy zostały trwale usunięte",
         "${ deletedItemsCount } elementów zostało trwale usuniętych",
         "${ deletedItemsCount } elementów zostało trwale usuniętych"
       ],
-      "${ failedCount } link to your file failed to be deleted.": [
-        "Nie udało się usunąć linku do pliku.",
-        "Nie udało się usunąć { failedCount } linków do plików.",
-        "Nie udało się usunąć { failedCount } linków do plików.",
-        "Nie udało się usunąć { failedCount } linków do plików."
+      "${ failedCount } link to your file failed to be deleted": [
+        "Nie udało się usunąć linku do pliku",
+        "Nie udało się usunąć { failedCount } linków do plików",
+        "Nie udało się usunąć { failedCount } linków do plików",
+        "Nie udało się usunąć { failedCount } linków do plików"
       ],
       "${ failedMovesCount } file failed to be moved": [
         "Przenoszenie ${ failedMovesCount } pliku nie powiodło się",
@@ -3403,55 +3469,55 @@
         "Przenoszenie ${ failedMovesCount } elementów nie powiodło się"
       ],
       "${ movedLinksCount } file successfully moved": [
-        "${ movedLinksCount } plik został przeniesiony",
+        "Plik został przeniesiony",
         "${ movedLinksCount } pliki zostały przeniesione",
         "${ movedLinksCount } plików zostało przeniesionych",
         "${ movedLinksCount } plików zostało przeniesionych"
       ],
       "${ movedLinksCount } folder successfully moved": [
-        "${ movedLinksCount } folder został przeniesiony",
+        "Folder został przeniesiony",
         "${ movedLinksCount } foldery zostały przeniesione",
         "${ movedLinksCount } folderów zostało przeniesionych",
         "${ movedLinksCount } folderów zostało przeniesionych"
       ],
       "${ movedLinksCount } item successfully moved": [
-        "${ movedLinksCount } element został przeniesiony",
+        "Element został przeniesiony",
         "${ movedLinksCount } elementy zostały przeniesione",
         "${ movedLinksCount } elementów zostało przeniesionych",
         "${ movedLinksCount } elementów zostało przeniesionych"
       ],
       "${ restoredItemsCount } file restored from trash": [
-        "${ restoredItemsCount } plik został przywrócony z Kosza",
+        "Plik został przywrócony z Kosza",
         "${ restoredItemsCount } pliki zostały przywrócone z Kosza",
         "${ restoredItemsCount } plików zostało przywróconych z Kosza",
         "${ restoredItemsCount } plików zostało przywróconych z Kosza"
       ],
       "${ restoredItemsCount } folder restored from trash": [
-        "${ restoredItemsCount } folder został przywrócony z Kosza",
+        "Folder został przywrócony z Kosza",
         "${ restoredItemsCount } foldery zostały przywrócone z Kosza",
         "${ restoredItemsCount } folderów zostało przywróconych z Kosza",
         "${ restoredItemsCount } folderów zostało przywróconych z Kosza"
       ],
       "${ restoredItemsCount } item restored from trash": [
-        "${ restoredItemsCount } element został przywrócony z Kosza",
+        "Element został przywrócony z Kosza",
         "${ restoredItemsCount } elementy zostały przywrócone z Kosza",
         "${ restoredItemsCount } elementów zostało przywróconych z Kosza",
         "${ restoredItemsCount } elementów zostało przywróconych z Kosza"
       ],
       "${ trashedLinksCount } file moved to trash": [
-        "${ trashedLinksCount } plik został przeniesiony do Kosza",
+        "Plik został przeniesiony do Kosza",
         "${ trashedLinksCount } pliki zostały przeniesione do Kosza",
         "${ trashedLinksCount } plików zostało przeniesionych do Kosza",
         "${ trashedLinksCount } plików zostało przeniesionych do Kosza"
       ],
       "${ trashedLinksCount } folder moved to trash": [
-        "${ trashedLinksCount } folder został przeniesiony do Kosza",
+        "Folder został przeniesiony do Kosza",
         "${ trashedLinksCount } foldery zostały przeniesione do Kosza",
         "${ trashedLinksCount } folderów zostało przeniesionych do Kosza",
         "${ trashedLinksCount } folderów zostało przeniesionych do Kosza"
       ],
       "${ trashedLinksCount } item moved to trash": [
-        "${ trashedLinksCount } element został przeniesiony do Kosza",
+        "Element został przeniesiony do Kosza",
         "${ trashedLinksCount } elementy zostały przeniesione do Kosza",
         "${ trashedLinksCount } elementów zostało przeniesionych do Kosza",
         "${ trashedLinksCount } elementów zostało przeniesionych do Kosza"
@@ -3525,14 +3591,17 @@
       "Not enough space to upload ${ formattedTotal }": [
         "Brak przestrzeni dyskowej do przesłania ${ formattedTotal }"
       ],
-      "The link to your file failed to be deleted.": [
-        "Nie udało się usunąć linku do pliku."
+      "The link to your file failed to be deleted": [
+        "Nie udało się usunąć linku do pliku"
       ],
-      "The link to your file was deleted.": [
-        "Link został usunięty."
+      "The link to your file was deleted": [
+        "Link został usunięty"
       ],
-      "Your settings have been changed successfully.": [
-        "Ustawienia zostały zmienione."
+      "Your old files will be deleted in 72 hours": [
+        "Stare pliki zostaną usunięte w ciągu 72 godzin"
+      ],
+      "Your settings have been changed successfully": [
+        "Ustawienia zostały zmienione"
       ]
     },
     "Onboarding Proton": {
@@ -3974,11 +4043,11 @@
       "Preferences saved": [
         "Ustawienia zostały zapisane"
       ],
-      "Recovery has started.": [
-        "Proces odzyskiwania został rozpoczęty."
+      "Recovery has started": [
+        "Proces odzyskiwania został rozpoczęty"
       ],
-      "The link to your file was successfully copied.": [
-        "Link został skopiowany."
+      "The link to your file was successfully copied": [
+        "Link został skopiowany"
       ],
       "Verification successful": [
         "Weryfikacja powiodła się"
@@ -3986,8 +4055,8 @@
       "You have successfully unsubscribed": [
         "Subskrypcja została anulowana"
       ],
-      "Your files were successfully recovered to \"My files\".": [
-        "Twoje pliki zostały pomyślnie odzyskane do \"Moje pliki\"."
+      "Your files were successfully recovered to \"My files\"": [
+        "Pliki zostały odzyskane do sekcji \"Moje pliki\""
       ]
     },
     "Suffix for price": {
@@ -4053,7 +4122,7 @@
         "Lokalizacja"
       ],
       "Modified": [
-        "Zmodyfikowano"
+        "Data modyfikacji"
       ],
       "Name": [
         "Nazwa"
@@ -4081,16 +4150,16 @@
     },
     "Time period": {
       "account creation date": [
-        ""
+        "daty utworzenia konta"
       ],
       "the last 12 months": [
-        ""
+        "ostatnich 12 miesięcy"
       ],
       "the last 3 months": [
-        ""
+        "ostatnich 3 miesięcy"
       ],
       "the last month": [
-        ""
+        "ostatniego miesiąca"
       ]
     },
     "Time unit": {
@@ -4223,7 +4292,7 @@
         "Dostosuj proces importowana kalendarza"
       ],
       "Customize your mail import": [
-        ""
+        "Dostosuj proces importowana poczty"
       ],
       "Customize your plan": [
         "Dostosuj plan"
@@ -4475,7 +4544,7 @@
         "Wybierz czas wygaśnięcia linku"
       ],
       "Select what to import": [
-        ""
+        "Wybierz co chcesz zaimportować"
       ],
       "Settings": [
         "Ustawienia"
@@ -4496,7 +4565,7 @@
         "Rozmiar"
       ],
       "Sort files/folders": [
-        "Sortuj pliki/foldery"
+        "Sortuj pliki / foldery"
       ],
       "Stop sharing": [
         "Zatrzymaj udostępnianie"
@@ -4557,6 +4626,11 @@
       ],
       "ZIP / postal code": [
         "Kod pocztowy"
+      ]
+    },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "Dzisiaj"
       ]
     },
     "Tooltip": {
@@ -4821,6 +4895,9 @@
       ],
       "The contact failed to load.": [
         "Nie udało się załadować kontaktu."
+      ],
+      "The date and time settings on your device are out of sync. ${ learnMore }": [
+        "Ustawienia daty i czasu na Twoim urządzeniu nie są zsynchronizowane. ${ learnMore }"
       ],
       "The decryption of the encrypted content failed.": [
         "Odszyfrowanie zawartości nie powiodło się."

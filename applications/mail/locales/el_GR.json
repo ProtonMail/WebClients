@@ -269,7 +269,7 @@
         "Απόρριψη"
       ],
       "Don't secure account": [
-        "Μην ασφαλίσετε το λογαριασμό"
+        "Χωρίς ασφάλιση λογαριασμού"
       ],
       "Done": [
         "Ολοκληρώθηκε"
@@ -435,7 +435,7 @@
         "Συντομεύσεις πληκτρολογίου"
       ],
       "Label as": [
-        "Σήμανση με ετικέτα ως"
+        "Απόδοση ετικετών"
       ],
       "Label as...": [
         "Ορίστε ετικέτα..."
@@ -456,7 +456,7 @@
         "Φόρτωση εικόνας"
       ],
       "Load more": [
-        "Φορτώστε περισσότερα"
+        "Φόρτωση περισσοτέρων"
       ],
       "Loading verification": [
         "Αναμονή για επαλήθευση"
@@ -962,9 +962,6 @@
       "Forwarded": [
         "Προωθημένα"
       ],
-      "Has attachments": [
-        "Έχει συνημμένα"
-      ],
       "Replied to": [
         "Απαντήθηκε σε"
       ],
@@ -972,10 +969,10 @@
         "Απαντήθηκε σε όλους"
       ],
       "Star conversation": [
-        "Αστέρι στη συνομιλία"
+        "Προσθήκη αστεριού στη συνομιλία"
       ],
       "Star message": [
-        "Αστέρι στο μήνυμα"
+        "Προσθήκη αστεριού στο μήνυμα"
       ],
       "Unstar conversation": [
         "Αφαίρεση αστεριού από τη συνομιλία"
@@ -1063,7 +1060,7 @@
         "Μηνιαία"
       ],
       "Two years SAVE 33%": [
-        "2 ετής ΕΞΟΙΚΟΝΟΜΗΣΗ 33%"
+        "Διετής ΕΞΟΙΚΟΝΟΜΗΣΗ 33%"
       ],
       "Two-year": [
         "Δύο έτη"
@@ -1444,7 +1441,7 @@
         "Το ημερολόγιο συγχρονίζεται"
       ],
       "Calendar is too big": [
-        "Το ημερολόγιο είναι πολύ μεγάλο"
+        "Υπερβολικά μεγάλο ημερολόγιο"
       ],
       "Calendar link is not accessible": [
         "Ο σύνδεσμος του ημερολογίου είναι μη προσβάσιμος"
@@ -1884,8 +1881,8 @@
       "Amount below minimum.": [
         "Ποσό χαμηλότερο από το κατώτερο επιτρεπόμενο."
       ],
-      "Attachments are limited to 25 MB.": [
-        "Τα συνημμένα περιορίζονται στα 25 MB."
+      "Attachments are limited to 25 MB": [
+        "Τα συνημμένα περιορίζονται στα 25 MB"
       ],
       "Authentication canceled.": [
         "Ο έλεγχος ταυτότητας ακυρώθηκε."
@@ -1908,8 +1905,8 @@
       "Can't validate phone, try again later": [
         "Δεν είναι δυνατή η επικύρωση του τηλεφώνου, προσπαθήστε ξανά αργότερα"
       ],
-      "Checkout expired, please try again.": [
-        "Η σελίδα έχει λήξει, παρακαλώ προσπαθήστε ξανά."
+      "Checkout expired, please try again": [
+        "Η ταμειακή διαδικασία εξέπνευσε, παρακαλούμε δοκιμάστε ξανά"
       ],
       "Choose a date in the future.": [
         "Επιλογή μελλοντικής ημερομηνίας."
@@ -1930,11 +1927,11 @@
       "Contact signature not verified": [
         "Η υπογραφή επαφής δεν πιστοποιήθηκε"
       ],
-      "Contact your organization’s administrator to resolve this.": [
-        "Επικοινωνήστε με το διαχειριστή του οργανισμού σας για να το επιλύσετε."
+      "Contact your organization’s administrator to resolve this": [
+        "Για επίλυση, επικοινωνήστε με τον διαχειριστή του οργανισμού σας"
       ],
-      "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser": [
-        "Δεν είναι δυνατή η ενεργοποίηση της αναζήτησης περιεχομένου σε αυτό το πρόγραμμα περιήγησης. Κλείστε τη λειτουργία ιδιωτικής περιήγησης ή χρησιμοποιήστε άλλο πρόγραμμα περιήγησης"
+      "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
+        "Η αναζήτηση περιεχομένου δεν γίνεται να ενεργοποιηθεί σε αυτόν τον περιηγητή. Παρακαλούμε τερματίστε τη λειτουργία ιδιωτικής περιήγησης ή χρησιμοποιήστε έναν άλλον περιηγητή."
       ],
       "Could not find address ${ email }.": [
         "Δεν ήταν δυνατή η εύρεση της διεύθυνσης ${ email }."
@@ -1970,14 +1967,14 @@
       "Error in one of the conditions": [
         "Λάθος σε μιά από τις συνθήκες"
       ],
-      "Error while saving draft. Please try again": [
-        "Σφάλμα κατά την αποθήκευση του πρόχειρου. Προσπαθήστε ξανά"
+      "Error while saving draft. Please try again.": [
+        "Σφάλμα κατά την αποθήκευση του πρόχειρου. Παρακαλούμε δοκιμάστε ξανά."
       ],
-      "Error while sending the message. Message is not sent": [
-        "Σφάλμα κατά την αποστολή του μηνύματος. Το μήνυμα δεν έχει σταλεί"
+      "Error while sending the message. Message is not sent.": [
+        "Σφάλμα κατά την αποστολή του μηνύματος. Το μήνυμα δεν έχει σταλεί."
       ],
-      "Error while uploading attachments. Message is not sent": [
-        "Σφάλμα κατά την ανάρτηση συνημμένων. Το μήνυμα δεν έχει σταλεί"
+      "Error while uploading attachments. Message is not sent.": [
+        "Σφάλμα κατά την ανάρτηση συνημμένων. Το μήνυμα δεν έχει σταλεί."
       ],
       "Failed to encrypt attachment. Please try again.": [
         "Αποτυχία κρυπτογράφησης του συννημένου. Παρακαλούμε δοκιμάστε ξανά."
@@ -2012,8 +2009,8 @@
       "Invalid expiration date": [
         "Μη έγκυρη ημερομηνία λήξης"
       ],
-      "Invalid expiration time.": [
-        "Μη έγκυρος χρόνος λήξης."
+      "Invalid expiration time": [
+        "Μη έγκυρος χρόνος λήξης"
       ],
       "Invalid name": [
         "Μη έγκυρο όνομα"
@@ -2035,10 +2032,10 @@
         "Συγχωνεύστε τουλάχιστον ${ calendarToFixCount } ημερολόγια με υπάρχοντα ημερολόγια του Proton"
       ],
       "Message needs to be sent first": [
-        "Το μήνυμα πρέπει να σταλεί πρώτα"
+        "Το μήνυμα πρέπει πρώτα να αποσταλεί"
       ],
-      "Message passwords do not match.": [
-        "Οι κωδικοί πρόσβασης του μηνύματος δεν ταιριάζουν."
+      "Message passwords do not match": [
+        "Οι κωδικοί πρόσβασης του μηνύματος δεν ταυτίζονται"
       ],
       "Message processing error.": [
         "Σφάλμα επεξεργασίας μηνύματος."
@@ -2050,10 +2047,10 @@
         "Απαιτείται το όνομα κατόχου της κάρτας"
       ],
       "Network error: Please check your connection and try again.": [
-        "Σφάλμα δικτύου. Παρακαλώ ελέγξτε τη σύνδεση σας και δοκιμάστε ξανά."
+        "Σφάλμα δικτύου. Παρακαλούμε ελέγξτε τη σύνδεσή σας και δοκιμάστε ξανά."
       ],
-      "No address with keys available to compose a message.": [
-        "Δεν υπάρχει διεύθυνση με διαθέσιμα κλειδιά για τη σύνταξη ενός μηνύματος."
+      "No address with keys available to compose a message": [
+        "Δεν υπάρχει διεύθυνση με διαθέσιμα κλειδιά για τη σύνταξη ενός μηνύματος"
       ],
       "No key retrieved for internal user is valid for sending": [
         "Κανένα κλειδί που ανακτήθηκε για τον εσωτερικό χρήστη δεν είναι έγκυρο για την αποστολή"
@@ -2186,8 +2183,8 @@
       "The label name is too long. Please choose a different name.": [
         "Υπερβολικό μήκος ονόματος ετικέτας. Παρακαλούμε δοκιμάστε ένα συντομότερο."
       ],
-      "The maximum expiration is 4 weeks.": [
-        "Η μέγιστη διάρκεια λήξης είναι 4 εβδομάδες."
+      "The maximum expiration is 4 weeks": [
+        "Η μέγιστη λήξη είναι 4 εβδομάδες"
       ],
       "The minimum amount of credit that can be added is ${ _price }": [
         "Το ελάχιστο ποσό χρημάτων που μπορεί να προστεθεί είναι ${ _price }"
@@ -2204,8 +2201,8 @@
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Υπάρχουν πάρα πολλοί φάκελοι στον εξωτερικό λογαριασμό σας. Προσαρμόστε την εισαγωγή για να διαγράψετε ορισμένους φακέλους."
       ],
-      "There has been an issue with content search. Default search has been used instead": [
-        "Υπήρξε κάποιο ζήτημα με την αναζήτηση περιεχομένων. Χρησιμοποιήθηκε στη θέση της η προεπιλεγμένη αναζήτηση"
+      "There has been an issue with content search. Default search has been used instead.": [
+        "Υπήρξε κάποιο ζήτημα με την αναζήτηση περιεχομένων. Χρησιμοποιήθηκε στη θέση της η προεπιλεγμένη αναζήτηση."
       ],
       "There was an error when exporting the contacts vCards": [
         "Παρουσιάστηκε σφάλμα κατά την εξαγωγή επαφών vCards"
@@ -2222,8 +2219,8 @@
       "This label name is not available. Please choose a different name": [
         "Μη διαθέσιμο όνομα ετικέτας. Παρακαλούμε δοκιμάστε ένα διαφορετικό"
       ],
-      "This message has already been sent.": [
-        "Αυτό το μήνυμα έχει ήδη αποσταλεί."
+      "This message has already been sent": [
+        "Αυτό το μήνυμα έχει ήδη αποσταλεί"
       ],
       "This message has already been sent. A new draft has been saved.": [
         "Αυτό το μήνυμα έχει ήδη αποσταλεί. Αποθηκεύτηκε ένα νέο πρόχειρο."
@@ -2231,8 +2228,8 @@
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "Αυτό το μήνυμα μπορεί να περιέχει κάποιο σύνδεσμο URL που δεν μπορεί να ανοίξει σωστά από το τρέχον πρόγραμμα περιήγησης"
       ],
-      "Too many active filters. Please upgrade to a paid plan to activate more filters": [
-        "Πάρα πολλά ενεργά φίλτρα. Παρακαλώ αναβαθμίστε σε ένα πληρωμένο πρόγραμμα για να ενεργοποιήσετε περισσότερα φίλτρα"
+      "Too many active filters. Please upgrade to a paid plan to activate more filters.": [
+        ""
       ],
       "Trusted keys are not valid for sending": [
         "Τα αξιόπιστα κλειδιά δεν είναι έγκυρα για την αποστολή"
@@ -2252,9 +2249,9 @@
       "You can't send vCards of more than 10 contacts": [
         "Δεν μπορείτε να στείλετε vCards για περισσότερες από 10 επαφές"
       ],
-      "You cannot open more than ${ maxActiveComposer } composer window at a time.": [
-        "Δεν μπορείτε να ανοίξετε πάνω από ${ maxActiveComposer } παράθυρο συντάκτη τη φορά.",
-        "Δεν μπορείτε να ανοίξετε πάνω από ${ maxActiveComposer } παράθυρα συντάκτη τη φορά."
+      "You cannot open more than ${ maxActiveComposer } composer window at a time": [
+        "Δεν μπορείτε να ανοίξετε πάνω από ${ maxActiveComposer } παράθυρο συντάκτη τη φορά",
+        "Δεν μπορείτε να ανοίξετε πάνω από ${ maxActiveComposer } παράθυρα συντάκτη τη φορά"
       ],
       "You did not provide a file.": [
         "Δεν έχετε παράσχει ένα αρχείο."
@@ -2271,8 +2268,8 @@
       "Your import will not be processed.": [
         "Η εισαγωγή σας δεν θα υποβληθεί σε επεξεργασία."
       ],
-      "Your search matched too many results. Please limit your search and try again": [
-        "Η αναζήτησή σας ταιριάζει με πάρα πολλά αποτελέσματα. Περιορίστε την αναζήτησή σας και δοκιμάστε ξανά"
+      "Your search matched too many results. Please limit your search and try again.": [
+        "Η αναζήτησή σας ταίριαξε με υπερβολικό αριθμό αποτελεσμάτων. Παρακαλούμε περιορίστε την αναζήτησή σας και δοκιμάστε ξανά."
       ]
     },
     "Error display when performing invalid move on message": {
@@ -2988,7 +2985,7 @@
         "Όλες (${ totalFoldersCount } ετικέτες)"
       ],
       "All messages stored in this folder will be permanently deleted.": [
-        "Όλα τα μηνύματα που είναι αποθηκευμένα σε αυτό το φάκελο θα διαγραφούν οριστικά."
+        "Όλα τα μηνύματα που είναι αποθηκευμένα σε αυτόν τον φάκελο θα διαγραφούν οριστικά."
       ],
       "All messages stored with this label will be permanently deleted.": [
         "Όλα τα μηνύματα που είναι αποθηκευμένα με αυτήν την ετικέτα θα διαγραφούν οριστικά."
@@ -3233,7 +3230,7 @@
         "Εκτίμηση απομένοντος χρόνου..."
       ],
       "Expiration Time": [
-        "Χρόνος λήξης"
+        "Χρόνος Λήξης"
       ],
       "Expired": [
         "Έχει λήξει"
@@ -3316,8 +3313,8 @@
       "Image URL": [
         "URL εικόνας"
       ],
-      "Images have been removed because they are not allowed in auto-reply.": [
-        "Οι εικόνες αφαιρέθηκαν, επειδή δεν επιτρέπονται στις αυτόματες απαντήσεις."
+      "Images have been removed because they are not allowed in auto-reply": [
+        "Οι εικόνες αφαιρέθηκαν, επειδή δεν επιτρέπονται στις αυτόματες απαντήσεις"
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Εισαγωγή ${ contactsFragment } και ${ contactsGroupsFragment }"
@@ -3367,7 +3364,7 @@
         "Έγινε επαναφορά της σύνδεσης στο Διαδίκτυο."
       ],
       "Just confirm your selection and we'll do the rest.": [
-        "Απλά επιβεβαίωσε την επιλογή σου και εμείς θα κάνουμε τα υπόλοιπα."
+        "Απλώς επιβεβαιώστε την επιλογή σας και εμείς θα κάνουμε τα υπόλοιπα."
       ],
       "Justify": [
         "Στοίχιση"
@@ -3422,6 +3419,9 @@
       ],
       "Message sent": [
         "Το μήνυμα στάλθηκε"
+      ],
+      "Message sent.": [
+        "Το μήνυμα στάλθηκε."
       ],
       "Message will be sent ${ dateString } at ${ formattedTime }": [
         "Το μήνυμα θα αποσταλεί ${ dateString } στις ${ formattedTime }"
@@ -3638,7 +3638,7 @@
         "Η προγραμματισμένη αποστολή αυτού του μηνύματος θα ακυρωθεί."
       ],
       "Scheduling message...": [
-        "Προγραμματίζεται το μηνύμα..."
+        "Γίνεται προγραμματισμός μηνύματος..."
       ],
       "Screenshot(s) attached": [
         "Το στιγμιότυπο/α οθόνης έχει επισυναφθεί"
@@ -3653,7 +3653,7 @@
         "Επιλέξτε ποια ημερολόγια θα εισαγάγετε. Θα δημιουργηθεί ένα νέο ημερολόγιο για κάθε εισαγόμενο ημερολόγιο μέχρι το όριο των 20 προσωπικών ημερολογίων. Μπορείτε επίσης να συγχωνεύσετε εισαγόμενα ημερολόγια με υπάρχοντα ημερολόγια Proton."
       ],
       "Sending": [
-        "Αποστολή σε εξέλιξη"
+        "Γίνεται αποστολή"
       ],
       "Sending message...": [
         "Αποστολή μηνύματος..."
@@ -3674,7 +3674,7 @@
         "Προβολή αρχικού μηνύματος"
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
-        "Επειδή είστε πιστός χρήστης, ο λογαριασμός σας έχει ενεργοποιημένες πρόσθετες λειτουργίες."
+        "Καθώς είστε αφοσιωμένος χρήστης, ο λογαριασμός σας έχει ενεργοποιημένα πρόσθετα χαρακτηριστικά."
       ],
       "Starter VPN service with P2P support.": [
         "Εκκίνηση υπηρεσίας VPN με υποστήριξη P2P."
@@ -3698,7 +3698,7 @@
         "Θέμα: "
       ],
       "Support privacy by upgrading for": [
-        "Υποστηρίξτε το απόρρητο με την αναβάθμιση για"
+        "Υποστηρίξτε την ιδιωτικότητα, μέσω αναβάθμισης σε"
       ],
       "support team": [
         "ομάδα υποστήριξης"
@@ -3786,7 +3786,7 @@
         "Αυτό το μήνυμα δημιουργείται αυτόματα ως απόκριση σε ένα προηγούμενο μήνυμα."
       ],
       "This message is expired!": [
-        "Αυτό το μήνυμα λήξει!"
+        "Αυτό το μήνυμα έχει λήξει!"
       ],
       "This message is from a mailing list.": [
         "Αυτό το μήνυμα προέρχεται από μια λίστα αλληλογραφίας."
@@ -3855,7 +3855,7 @@
         "Μη υποστηριζόμενο αρχείο"
       ],
       "Updating message content search...": [
-        "Ενημέρωση αναζήτησης εντός περιεχομένου μηνυμάτων..."
+        "Γίνεται ενημέρωση αναζήτησης εντός περιεχομένου μηνυμάτων..."
       ],
       "Upgrade to add more addresses to your account.": [
         "Αναβαθμίστε για να προσθέσετε περισσότερες διευθύνσεις στο λογαριασμό σας."
@@ -3948,7 +3948,7 @@
         "Εβδομάδα"
       ],
       "What do you want to import from your Google account?": [
-        "Τι θέλετε να εισαγάγετε από τον λογαριασμό σας Google;"
+        "Τι θέλετε να εισάγετε από τον λογαριασμό σας στο Google;"
       ],
       "When do you want your message to be sent?": [
         "Πότε θέλετε να αποσταλεί το μήνυμά σας;"
@@ -4670,7 +4670,7 @@
         "Επιλέξτε πώς μοιάζει η λίστα μηνυμάτων σας από προεπιλογή."
       ],
       "Select how your mailbox looks like by default.": [
-        "Επιλέξτε πώς μοιάζει το γραμματοκιβώτιό σας από προεπιλογή."
+        "Επιλογή προεπιλεγμένης όψης της θυρίδας σας."
       ],
       "Select your country": [
         "Επιλέξτε τη χώρα σας"
@@ -4867,7 +4867,7 @@
         "Δημιουργήστε ένα ημερολόγιο συνδεδεμένο με μια ενεργή διεύθυνση ηλεκτρονικού ταχυδρομείου."
       ],
       "Create a new calendar to add this event": [
-        "Δημιουργήστε ένα νέο ημερολόγιο για να προσθέσετε αυτό το γεγονός"
+        "Για να προσθέσετε αυτήν την εκδήλωση, δημιουργήστε ένα νέο ημερολόγιο"
       ],
       "Create a new calendar to answer this invitation": [
         "Δημιουργήστε ένα νέο ημερολόγιο για να απαντήσετε σε αυτήν την πρόσκληση"
@@ -5154,7 +5154,7 @@
     },
     "Message notification": {
       "Scheduling cancelled. Message has been moved to Drafts.": [
-        "Το χρονοδιάγραμα ακυρώθηκε. Το μήνυμα μεταφέρθηκε στα Πρόχειρα."
+        "Ο προγραμματισμός ακυρώθηκε. Το μήνυμα έχει μεταφερθεί στα Πρόχειρα."
       ],
       "Sending undone": [
         "Η αποστολή αναιρέθηκε"
@@ -5390,7 +5390,7 @@
         "Εισαγωγή των μηνυμάτων σας"
       ],
       "Meet your encrypted mailbox": [
-        "Γνωρίστε το κρυπτογραφημένο γραμματοκιβώτιό σας"
+        "Γνωρίστε την κρυπτογραφημένη θυρίδα σας"
       ],
       "Our Import Assistant quickly transfers all your emails to your new encrypted mailbox.": [
         "Ο Βοηθός Eισαγωγής μεταφέρει γρήγορα όλα τα μηνύματα ηλεκτρονικού ταχυδρομείου σας στο νέο κρυπτογραφημένο γραμματοκιβώτιό σας."
@@ -6099,8 +6099,8 @@
       "Contacts deleted": [
         "Οι επαφές διαγράφηκαν"
       ],
-      "Conversation added to ${ labelName }": [
-        "Η συνομιλία προστέθηκε σε ${ labelName }"
+      "Conversation added to ${ labelName }.": [
+        "Η συνομιλία προστέθηκε σε ${ labelName }."
       ],
       "Conversation deleted": [
         "Η συνομιλία διαγράφηκε"
@@ -6108,8 +6108,8 @@
       "Conversation marked as read.": [
         "Η συνομιλία σημάνθηκε ως διαβασμένη."
       ],
-      "Conversation marked as Starred": [
-        "Η συνομιλία σημειώθηκε ως Αγαπημένη"
+      "Conversation marked as Starred.": [
+        ""
       ],
       "Conversation marked as unread.": [
         "Η συνομιλία σημάνθηκε ως μη διαβασμένη."
@@ -6123,8 +6123,8 @@
       "Conversation moved to spam and sender added to Block List.": [
         "Η συνομιλία μετακινήθηκε στο spam και ο αποστολέας προστέθηκε στη Λίστα Αποκλεισμού."
       ],
-      "Conversation removed from ${ labelName }": [
-        "Η συνομιλία αφαιρέθηκε από ${ labelName }"
+      "Conversation removed from ${ labelName }.": [
+        "Η συνομιλία αφαιρέθηκε από ${ labelName }."
       ],
       "Draft deleted": [
         "Το πρόχειρο διαγράφηκε"
@@ -6150,8 +6150,8 @@
       "Mail list unsubscribed": [
         "Διαγραφή λίστας αλληλογραφίας"
       ],
-      "Message added to ${ labelName }": [
-        "Το μήνυμα προστέθηκε στο ${ labelName }"
+      "Message added to ${ labelName }.": [
+        "Το μήνυμα προστέθηκε σε ${ labelName }."
       ],
       "Message content search activated": [
         "Αναζήτηση εντός περιεχομένου μηνυμάτων ενεργή"
@@ -6165,8 +6165,8 @@
       "Message marked as read.": [
         "Το μήνυμα σημάνθηκε ως διαβασμένο."
       ],
-      "Message marked as Starred": [
-        "Το μήνυμα επισημάνθηκε ως Αγαπημένο"
+      "Message marked as Starred.": [
+        ""
       ],
       "Message marked as unread.": [
         "Το μήνυμα σημάνθηκε ως μη διαβασμένο."
@@ -6180,8 +6180,8 @@
       "Message moved to spam and sender added to Block List.": [
         "Το μήνυμα μετακινήθηκε στο spam και ο αποστολέας προστέθηκε στη λίστα αποκλεισμού."
       ],
-      "Message removed from ${ labelName }": [
-        "Το μήνυμα αφαιρέθηκε από ${ labelName }"
+      "Message removed from ${ labelName }.": [
+        "Το μήνυμα αφαιρέθηκε από ${ labelName }."
       ],
       "Move ${ selectionCount } conversation": [
         "Μετακίνηση συνομιλίας ${ selectionCount }",
@@ -6596,7 +6596,7 @@
         "Συντομεύσεις Πληκτρολογίου"
       ],
       "Label as": [
-        "Ετικέτα"
+        "Απόδοση ετικετών"
       ],
       "Link confirmation": [
         "Επιβεβαίωση συνδέσμου"
@@ -6641,7 +6641,7 @@
         "Περισσότερες επιλογές"
       ],
       "Move to": [
-        "Μετακίνηση προς"
+        "Μετακίνηση σε"
       ],
       "Move to inbox": [
         "Μετακίνηση στα Εισερχόμενα"
@@ -6963,7 +6963,7 @@
         "Δικαιοδοσία"
       ],
       "Kill Switch / Always-on VPN": [
-        "Kill Switch / Πάντα ενεργό VPN"
+        "Ασφάλεια Αποσύνδεσης / VPN Πάντα σε λειτουργία"
       ],
       "Languages supported": [
         "Υποστηριζόμενες γλώσσες"
@@ -7043,7 +7043,7 @@
     "Warning": {
       "Are you sure you want to permanently delete ${ count } contact group?": [
         "Είστε βέβαιοι ότι θέλετε να διαγράψετε οριστικά ${ count } ομάδα επαφής;",
-        "Είστε βέβαιοι ότι θέλετε να διαγράψετε οριστικά τις ${ count } ομάδα επαφών;"
+        "Είστε βέβαιοι ότι θέλετε να διαγράψετε οριστικά ${ count } ομάδες επαφών;"
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Είστε βέβαιοι ότι θέλετε να διαγράψετε οριστικά ${ count } επαφή;",
@@ -7084,7 +7084,7 @@
         "Η επαφή απέτυχε να φορτωθεί."
       ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
-        ""
+        "Οι ρυθμίσεις ημερομηνίας και ώρας στη συσκευή σας είναι εκτός συγχρονισμού. ${ learnMore }"
       ],
       "The decryption of the encrypted content failed.": [
         "Η αποκρυπτογράφηση του κρυπτογραφημένου περιεχομένου απέτυχε."

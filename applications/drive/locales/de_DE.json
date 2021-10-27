@@ -187,6 +187,9 @@
       "Download": [
         "Herunterladen"
       ],
+      "Drive Locked": [
+        "Laufwerk gesperrt"
+      ],
       "Edit": [
         "Bearbeiten"
       ],
@@ -1097,8 +1100,8 @@
       "Can't validate phone, try again later": [
         "Telefon konnte nicht bestätigt werden. Bitte versuchen Sie es später erneut."
       ],
-      "Checkout expired, please try again.": [
-        "Kaufabwicklung abgelaufen. Bitte versuchen Sie es noch einmal."
+      "Checkout expired, please try again": [
+        "Kaufabwicklung abgelaufen. Bitte versuche es noch einmal"
       ],
       "Contact could not be saved": [
         "Kontakt konnte nicht gespeichert werden"
@@ -1687,6 +1690,10 @@
       "${ vpnAppName } Free": [
         "${ vpnAppName } kostenlos"
       ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } Mitglied)",
+        "(${ memberCount } Mitglieder)"
+      ],
       "(Mail + VPN)": [
         "(Mail + VPN)"
       ],
@@ -1753,6 +1760,9 @@
       "Amount below minimum (${ amount }).": [
         "Mindestbetrag (${ amount }) unterschritten."
       ],
+      "An active recovery file": [
+        "Eine aktive Wiederherstellungsdatei"
+      ],
       "and": [
         "und"
       ],
@@ -1768,6 +1778,9 @@
       ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Die grundlegende Navigation und Aktionen bleiben verfügbar, unabhängig davon, ob in den Einstellungen Tastaturkürzel aktiviert sind oder nicht."
+      ],
+      "Because ${ appName } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
+        "Da ${ appName } Ende-zu-Ende verschlüsselt ist, haben wir keinen Zugriff oder Ihre Dateien und können sie auch nicht für Sie entschlüsseln. Um Ihr Laufwerk nach einem Zurücksetzen des Passworts zu entsperren, müssen Sie einen der folgenden Punkte erfüllen:"
       ],
       "Billed as ${ billedPrice } every 2 years": [
         "Abgerechnet mit ${ billedPrice } aller 2 Jahre"
@@ -1820,6 +1833,9 @@
       "Connections": [
         "Verbindungen"
       ],
+      "Continue using ${ appName } and unlock drive later": [
+        "${ appName } weiter verwenden und Laufwerk später entsperren"
+      ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "${ calendarsToBeCreated } neuen Kalender erstellen",
         "${ calendarsToBeCreated } neue Kalender erstellen"
@@ -1847,6 +1863,10 @@
       ],
       "Creating share": [
         "Freigabe wird erstellt"
+      ],
+      "Delete drive": [
+        "Laufwerk löschen",
+        "Laufwerke löschen"
       ],
       "Discount applied to your subscription with coupon ${ code }": [
         "Rabatt auf Ihr Abonnement mit Gutschein ${ code } eingelöst"
@@ -1943,6 +1963,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Wenn Sie die E-Mail nicht in Ihrem Posteingang finden, überprüfen Sie bitte Ihren Spam-Ordner."
+      ],
+      "If you have one of these, continue to Proton account setting to\ncontinue the unblock process.": [
+        "Wenn eines davon auf Sie zutrifft, fahren Sie mit den Proton-Kontoeinstellungen fort, um den Entsperrungsprozess fortzusetzen."
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "${ contactsFragment } und ${ contactsGroupsFragment } importieren"
@@ -2071,6 +2094,9 @@
       "of": [
         "von"
       ],
+      "One of your encrypted drives is locked. This is most likely due to a recent password reset.${ BrElement }\n${ BrElement }\n${ questionText }": [
+        "Eines Ihrer verschlüsselten Laufwerke ist gesperrt. Dies ist höchstwahrscheinlich auf ein kürzlich zurückgesetztes Passwort zurückzuführen.${ BrElement }\n${ BrElement }\n${ questionText }"
+      ],
       "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
         "Ändern Sie diese Einstellungen nur, wenn Sie PGP mit Nicht-ProtonMail-Empfängern verwenden."
       ],
@@ -2085,6 +2111,9 @@
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Zahlungen sind durch TLS-Verschlüsselung und Schweizer Datenschutzgesetze geschützt."
+      ],
+      "Permanently delete all files in your drive": [
+        "Alle Dateien auf Ihrem Laufwerk dauerhaft löschen"
       ],
       "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
         "PGP/Inline ist nur bei Nachrichten mit Klartextformat möglich. Bitte beachten Sie, dass ProtonMail verschlüsselte Nachrichten immer signiert."
@@ -2183,8 +2212,8 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Da Sie zu den Stammkunden gehören, wurden für Ihr Konto zusätzliche Funktionen aktiviert."
       ],
-      "Some of your files are no longer accessible. Restore the access to your files. ${ startRecoveryButton }": [
-        "Einige Ihrer Dateien sind nicht mehr zugänglich. Stellen Sie den Zugriff auf Ihre Dateien wieder her. ${ startRecoveryButton }"
+      "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
+        "Einige Ihrer Dateien sind nicht mehr zugänglich. Stellen Sie den Zugriff auf Ihre Dateien wieder her. ${ StartRecoveryButton }"
       ],
       "Something went wrong, please try again later.": [
         "Ein Problem ist aufgetreten. Bitte versuchen Sie es später noch einmal."
@@ -2274,6 +2303,9 @@
       "Trash": [
         "Papierkorb"
       ],
+      "Unlock drive to recover files": [
+        "Laufwerk entsperren, um Dateien wiederherzustellen"
+      ],
       "Unsupported file": [
         "Nicht unterstützte Datei"
       ],
@@ -2321,6 +2353,9 @@
       ],
       "What do you want to import from your Google account?": [
         "Welche Daten möchten Sie aus Ihrem Google-Konto importieren?"
+      ],
+      "What would you like to do?": [
+        "Was möchten Sie tun?"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Möchten Sie einen neuen Verifizierungscode erhalten oder eine alternative Verifizierungsmethode verwenden?"
@@ -2409,14 +2444,20 @@
       "Your file is being downloaded.": [
         "Ihre Datei wird derzeit heruntergeladen."
       ],
-      "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ mailSettingsLink }": [
-        "Ihre Dateien sind aufgrund eines Zurücksetzens des Passworts nicht mehr zugänglich. Laden Sie den alten Verschlüsselungsschlüssel erneut hoch, um den Zugriff erneut zu ermöglichen. ${ mailSettingsLink }"
+      "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ KeyReactivationButton }": [
+        "Ihre Dateien sind aufgrund eines Zurücksetzens des Passworts nicht mehr zugänglich. Laden Sie den alten Verschlüsselungsschlüssel erneut hoch. ${ KeyReactivationButton }"
       ],
       "Your files will be encrypted and then saved.": [
         "Ihre Dateien werden verschlüsselt und anschließend gespeichert."
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Ihre Telefonnummer wird nur für diese einmalige Verfizierung verwendet."
+      ],
+      "Your previous password": [
+        "Ihr bisheriges Passwort"
+      ],
+      "Your previous recovery phrase": [
+        "Ihre bisherige Wiederherstellungsphrase"
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "Ihr Proton-Konto ist derzeit gesperrt. Um Ihr Konto weiter nutzen zu können, begleichen Sie bitte alle überfälligen Rechnungen."
@@ -2745,6 +2786,10 @@
       "CVV code": [
         "CVV-Code (Sicherheitsnummer)"
       ],
+      "Delete Drive?": [
+        "Laufwerk löschen?",
+        "Laufwerke löschen?"
+      ],
       "Display name": [
         "Anzeigename"
       ],
@@ -2952,6 +2997,9 @@
       "Text": [
         "Text"
       ],
+      "This will permanently delete all files in your locked drive.": [
+        "Dadurch werden alle Dateien auf dem gesperrten Laufwerk unwiderruflich gelöscht."
+      ],
       "To: ${ emailAddress }": [
         "An: ${ emailAddress }"
       ],
@@ -2966,6 +3014,15 @@
       ],
       "Unknown file": [
         "Unbekannte Datei"
+      ],
+      "Unlock Drive": [
+        "Laufwerk entsperren"
+      ],
+      "Unlock drive (recommended)": [
+        "Laufwerk entsperren (empfohlen)"
+      ],
+      "Unlock later": [
+        "Später entsperren"
       ],
       "Up to ${ parentLinkName }": [
         "is zu ${ parentLinkName }"
@@ -2990,6 +3047,9 @@
       ],
       "What happened?": [
         "Was ist passiert?"
+      ],
+      "Yes, I want to permanently delete\nmy old files": [
+        "Ja, ich möchte meine alten Dateien dauerhaft löschen"
       ],
       "ZIP": [
         "PLZ"
@@ -3256,9 +3316,9 @@
       "\"${ firstItemName }\" restored from trash": [
         "„${ firstItemName }” aus Papierkorb wiederhergestellt"
       ],
-      "${ deletedCount } link to your file was deleted.": [
-        "${ deletedCount } Link zu Ihrer Datei wurde gelöscht.",
-        "${ deletedCount } Links zu Ihren Dateien wurden gelöscht."
+      "${ deletedCount } link to your file was deleted": [
+        "${ deletedCount } Link zu deiner Datei wurde gelöscht",
+        "${ deletedCount } Links zu deinen Dateien wurden gelöscht"
       ],
       "${ deletedItemsCount } file deleted permanently from trash": [
         "${ deletedItemsCount } Datei dauerhaft aus dem Papierkorb gelöscht",
@@ -3272,9 +3332,9 @@
         "${ deletedItemsCount } Element dauerhaft aus dem Papierkorb gelöscht",
         "${ deletedItemsCount } Elemente dauerhaft aus dem Papierkorb gelöscht"
       ],
-      "${ failedCount } link to your file failed to be deleted.": [
-        "${ failedCount } Link zu Ihrer Datei konnte nicht gelöscht werden.",
-        "${ failedCount } Links zu Ihren Dateien konnten nicht gelöscht werden."
+      "${ failedCount } link to your file failed to be deleted": [
+        "${ failedCount } Link zu deiner Datei konnte nicht gelöscht werden",
+        "${ failedCount } Links zu deinen Dateien konnten nicht gelöscht werden"
       ],
       "${ failedMovesCount } file failed to be moved": [
         "${ failedMovesCount } Datei konnte nicht verschoben werden",
@@ -3379,14 +3439,17 @@
       "Not enough space to upload ${ formattedTotal }": [
         "Nicht genug Speicherplatz, um ${ formattedTotal } hochzuladen"
       ],
-      "The link to your file failed to be deleted.": [
-        "Der Link zu Ihrer Datei konnte nicht gelöscht werden."
+      "The link to your file failed to be deleted": [
+        "Der Link zu deiner Datei konnte nicht gelöscht werden"
       ],
-      "The link to your file was deleted.": [
-        "Der Link zu Ihrer Datei wurde gelöscht."
+      "The link to your file was deleted": [
+        "Der Link zu deiner Datei wurde gelöscht"
       ],
-      "Your settings have been changed successfully.": [
-        "Ihre Einstellungen wurden erfolgreich geändert."
+      "Your old files will be deleted in 72 hours": [
+        "Ihre alten Dateien werden innerhalb der nächsten 72 Stunden gelöscht"
+      ],
+      "Your settings have been changed successfully": [
+        "Deine Einstellungen wurden erfolgreich geändert"
       ]
     },
     "Onboarding Proton": {
@@ -3810,11 +3873,11 @@
       "Preferences saved": [
         "Einstellungen gespeichert"
       ],
-      "Recovery has started.": [
-        "Wiederherstellung wurde gestartet."
+      "Recovery has started": [
+        "Wiederherstellung wurde gestartet"
       ],
-      "The link to your file was successfully copied.": [
-        "Der Link zu Ihrer Datei wurde erfolgreich kopiert."
+      "The link to your file was successfully copied": [
+        "Der Link zu deiner Datei wurde erfolgreich kopiert"
       ],
       "Verification successful": [
         "Verifizierung erfolgreich"
@@ -3822,8 +3885,8 @@
       "You have successfully unsubscribed": [
         "Sie haben Sich erfolgreich abgemeldet"
       ],
-      "Your files were successfully recovered to \"My files\".": [
-        "Ihre Dateien wurden erfolgreich in „Meine Dateien” wiederhergestellt."
+      "Your files were successfully recovered to \"My files\"": [
+        "Deine Dateien wurden erfolgreich in „Meine Dateien” wiederhergestellt"
       ]
     },
     "Suffix for price": {
@@ -4383,6 +4446,11 @@
         "PLZ/Postleitzahl"
       ]
     },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "Heute"
+      ]
+    },
     "Tooltip": {
       "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
         "Zugriff auf durch Landessperren unzugängliche Inhalte (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube usw.), unabhängig davon, wo Sie sich derzeit aufhalten."
@@ -4639,6 +4707,9 @@
       ],
       "The contact failed to load.": [
         "Der Kontakt konnte nicht geladen werden."
+      ],
+      "The date and time settings on your device are out of sync. ${ learnMore }": [
+        "Die Datums- und Zeiteinstellungen auf Ihrem Gerät sind nicht synchronisiert. ${ learnMore }"
       ],
       "The decryption of the encrypted content failed.": [
         "Die Entschlüsselung des verschlüsselten Inhalts ist fehlgeschlagen."

@@ -191,6 +191,9 @@
       "Download": [
         "Stáhnout"
       ],
+      "Drive Locked": [
+        ""
+      ],
       "Edit": [
         "Upravit"
       ],
@@ -1115,8 +1118,8 @@
       "Can't validate phone, try again later": [
         "Nemůžeme ověřit váš telefon, zkuste to později"
       ],
-      "Checkout expired, please try again.": [
-        "Objednávka vypršela, zkuste to prosím znovu."
+      "Checkout expired, please try again": [
+        ""
       ],
       "Contact could not be saved": [
         "Kontakt nebylo možné uložit"
@@ -1767,6 +1770,12 @@
       "${ vpnAppName } Free": [
         "${ vpnAppName } zdarma"
       ],
+      "(${ memberCount } member)": [
+        "",
+        "",
+        "",
+        ""
+      ],
       "(Mail + VPN)": [
         "(E-mail + VPN)"
       ],
@@ -1839,6 +1848,9 @@
       "Amount below minimum (${ amount }).": [
         "Částka je nižší než povolené minumum (${ amount })."
       ],
+      "An active recovery file": [
+        ""
+      ],
       "and": [
         ""
       ],
@@ -1856,6 +1868,9 @@
       ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Základní navigace a akce zůstávají k dispozici bez ohledu na aktivní nebo neaktivní klávesové zkratky v nastavení."
+      ],
+      "Because ${ appName } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
+        ""
       ],
       "Billed as ${ billedPrice } every 2 years": [
         "Vyúčtováno jako ${ billedPrice } každé 2 roky"
@@ -1908,6 +1923,9 @@
       "Connections": [
         "Připojení"
       ],
+      "Continue using ${ appName } and unlock drive later": [
+        ""
+      ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "",
         "",
@@ -1937,6 +1955,12 @@
       ],
       "Creating share": [
         "Vytvářím sdílení"
+      ],
+      "Delete drive": [
+        "",
+        "",
+        "",
+        ""
       ],
       "Discount applied to your subscription with coupon ${ code }": [
         "Sleva na Vaše předplatné s kupónem{ code }$"
@@ -2033,6 +2057,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Pokud jste nenašli e-mail ve vaší schránce, zkontrolujte prosím složku se spamem."
+      ],
+      "If you have one of these, continue to Proton account setting to\ncontinue the unblock process.": [
+        ""
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         ""
@@ -2163,6 +2190,9 @@
       "of": [
         "z"
       ],
+      "One of your encrypted drives is locked. This is most likely due to a recent password reset.${ BrElement }\n${ BrElement }\n${ questionText }": [
+        ""
+      ],
       "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
         "Tato nastavení změňte, pouze pokud používáte PGP s příjemci, kteří nepoužívají službu ProtonMail."
       ],
@@ -2177,6 +2207,9 @@
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Platby jsou chráněny šifrováním TLS a švýcarskými zákony o ochraně soukromí."
+      ],
+      "Permanently delete all files in your drive": [
+        ""
       ],
       "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
         "PGP/Inline je kompatibilní pouze s formátem prostého textu. Vezměte na vědomí, že ProtonMail vždy podepisuje šifrované zprávy."
@@ -2277,8 +2310,8 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Vzhledem k tomu, že jste věrný uživatel, má Váš účet povolené další funkce."
       ],
-      "Some of your files are no longer accessible. Restore the access to your files. ${ startRecoveryButton }": [
-        "Některé Vaše soubory nejsou více už přístupné. Obnovte přístup k souborům. ${ startRecoveryButton }"
+      "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
+        ""
       ],
       "Something went wrong, please try again later.": [
         "Něco se pokazilo, prosím zkuste to později."
@@ -2370,6 +2403,9 @@
       "Trash": [
         "Koš"
       ],
+      "Unlock drive to recover files": [
+        ""
+      ],
       "Unsupported file": [
         "Nepodporovaný soubor"
       ],
@@ -2416,6 +2452,9 @@
         "Co chcete udělat?"
       ],
       "What do you want to import from your Google account?": [
+        ""
+      ],
+      "What would you like to do?": [
         ""
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
@@ -2505,14 +2544,20 @@
       "Your file is being downloaded.": [
         "Soubor se stahuje."
       ],
-      "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ mailSettingsLink }": [
-        "Z důvodu změny hesla není už více možný přístup k Vašim souborům. Znovu nahrajte šifrovací klíč, aby jste získali znovu přístup. ${ mailSettingsLink }"
+      "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ KeyReactivationButton }": [
+        ""
       ],
       "Your files will be encrypted and then saved.": [
         "Vaše soubory budou zašifrovány a uloženy."
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Vaše telefonní číslo bude použito pouze pro toto jednorázové ověření."
+      ],
+      "Your previous password": [
+        ""
+      ],
+      "Your previous recovery phrase": [
+        ""
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "Váš Proton účet je momentálně pozastaven. Chcete-li Váš účet nadále používat, zaplaťte prosím všechny faktury po splatnosti."
@@ -2841,6 +2886,12 @@
       "CVV code": [
         "Kód CVV"
       ],
+      "Delete Drive?": [
+        "",
+        "",
+        "",
+        ""
+      ],
       "Display name": [
         "Zobrazované jméno"
       ],
@@ -3048,6 +3099,9 @@
       "Text": [
         "Text"
       ],
+      "This will permanently delete all files in your locked drive.": [
+        ""
+      ],
       "To: ${ emailAddress }": [
         ""
       ],
@@ -3062,6 +3116,15 @@
       ],
       "Unknown file": [
         "Neznámý soubor"
+      ],
+      "Unlock Drive": [
+        ""
+      ],
+      "Unlock drive (recommended)": [
+        ""
+      ],
+      "Unlock later": [
+        ""
       ],
       "Up to ${ parentLinkName }": [
         ""
@@ -3086,6 +3149,9 @@
       ],
       "What happened?": [
         "Co se stalo?"
+      ],
+      "Yes, I want to permanently delete\nmy old files": [
+        ""
       ],
       "ZIP": [
         "PSČ"
@@ -3354,11 +3420,11 @@
       "\"${ firstItemName }\" restored from trash": [
         "\"${ firstItemName }\" obnoveno z koše"
       ],
-      "${ deletedCount } link to your file was deleted.": [
-        "${ deletedCount } odkaz na Váš profil byl vymazán.",
-        "${ deletedCount } odkazy na Váš profil byly vymazány.",
-        "${ deletedCount } odkazů na Váš profil bylo vymazáno.",
-        "${ deletedCount } odkazů na Váš profil bylo vymazáno."
+      "${ deletedCount } link to your file was deleted": [
+        "",
+        "",
+        "",
+        ""
       ],
       "${ deletedItemsCount } file deleted permanently from trash": [
         "${ deletedItemsCount } soubor trvale odstraněn z koše",
@@ -3378,11 +3444,11 @@
         "${ deletedItemsCount } položky trvale odstraněné z koše",
         "${ deletedItemsCount } položky trvale odstraněné z koše"
       ],
-      "${ failedCount } link to your file failed to be deleted.": [
-        "${ failedCount } odkaz na Váš profil se nepodařilo vymazat.",
-        "${ failedCount } odkazy na Váš profil se nepodařilo vymazat.",
-        "${ failedCount } odkazů na Váš profil se nepodařilo vymazat.",
-        "${ failedCount } odkazů na Váš profil se nepodařilo vymazat."
+      "${ failedCount } link to your file failed to be deleted": [
+        "",
+        "",
+        "",
+        ""
       ],
       "${ failedMovesCount } file failed to be moved": [
         "${ failedMovesCount } soubor se nepodařilo přestěhovat",
@@ -3525,14 +3591,17 @@
       "Not enough space to upload ${ formattedTotal }": [
         ""
       ],
-      "The link to your file failed to be deleted.": [
-        "Odkaz na váš soubor se nepodařilo odstranit."
+      "The link to your file failed to be deleted": [
+        ""
       ],
-      "The link to your file was deleted.": [
-        "Odkaz na váš soubor byl odstraněn."
+      "The link to your file was deleted": [
+        ""
       ],
-      "Your settings have been changed successfully.": [
-        "Vaše nastavení bylo úspěšně změněno."
+      "Your old files will be deleted in 72 hours": [
+        ""
+      ],
+      "Your settings have been changed successfully": [
+        ""
       ]
     },
     "Onboarding Proton": {
@@ -3974,11 +4043,11 @@
       "Preferences saved": [
         "Nastavení bylo uloženo"
       ],
-      "Recovery has started.": [
-        "Obnova právě probíhá."
+      "Recovery has started": [
+        ""
       ],
-      "The link to your file was successfully copied.": [
-        "Odkaz na váš soubor byl úspěšně zkopírován."
+      "The link to your file was successfully copied": [
+        ""
       ],
       "Verification successful": [
         "Ověření proběhlo úspěšně"
@@ -3986,8 +4055,8 @@
       "You have successfully unsubscribed": [
         "Předplatné bylo úspěšně zrušeno"
       ],
-      "Your files were successfully recovered to \"My files\".": [
-        "Vaše soubory byly úspěšně obnoveny do složky \"Moje soubory\"."
+      "Your files were successfully recovered to \"My files\"": [
+        ""
       ]
     },
     "Suffix for price": {
@@ -4559,6 +4628,11 @@
         "ZIP / PSČ"
       ]
     },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        ""
+      ]
+    },
     "Tooltip": {
       "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
         "Přístup k geograficky blokovanému obsahu (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, atd.) Nezáleží na tom, kde se nacházíte."
@@ -4821,6 +4895,9 @@
       ],
       "The contact failed to load.": [
         "Kontakt se nepodařilo načíst."
+      ],
+      "The date and time settings on your device are out of sync. ${ learnMore }": [
+        ""
       ],
       "The decryption of the encrypted content failed.": [
         "Dešifrování zašifrovaného obsahu se nezdařilo."

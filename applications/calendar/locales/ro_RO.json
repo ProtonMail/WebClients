@@ -1155,8 +1155,8 @@
       ]
     },
     "Disabled calendar name suffix": {
-      "disabled": [
-        "dezactivat"
+      "Disabled": [
+        ""
       ]
     },
     "Disabled calendar tooltip": {
@@ -1330,8 +1330,8 @@
       "Cancellation failed to be sent": [
         "Anularea nu a putut fi trimisă."
       ],
-      "Checkout expired, please try again.": [
-        "Finalizarea comenzii a expirat, reîncercați."
+      "Checkout expired, please try again": [
+        ""
       ],
       "Contact could not be saved": [
         "Contactul nu a putut fi salvat"
@@ -1504,9 +1504,9 @@
         "Mai întâi creați o adresă."
       ],
       "Please fix the highlighted conflict to proceed.": [
-        "",
-        "",
-        ""
+        "Remediați conflictul evidențiat pentru a continua.",
+        "Remediați conflictele evidențiate pentru a continua.",
+        "Remediați conflictele evidențiate pentru a continua."
       ],
       "Preferences could not be saved": [
         "Preferințele nu au putut fi salvate."
@@ -2438,7 +2438,7 @@
         "Selectați ce calendare să importați. Se va crea un calendar nou pentru fiecare calendar importat, până la limita de 20 de calendare personale. De asemenea, puteți fuziona calendarele importate cu calendarele Proton existente."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
-        ""
+        "Serverele sunt inaccesibile. Mai reîncercați peste câteva minute."
       ],
       "Session timed out.": [
         "Sesiune expirată."
@@ -3178,7 +3178,7 @@
         "Plătitor"
       ],
       "PGP scheme": [
-        ""
+        "Schema PGP"
       ],
       "Phone number": [
         "Număr de telefon"
@@ -3383,9 +3383,9 @@
     },
     "Loading info": {
       "${ createdCalendars } of ${ calendarsToBeCreated } created": [
-        "",
-        "",
-        ""
+        "S-a creat: ${ createdCalendars } din ${ calendarsToBeCreated }",
+        "S-a creat: ${ createdCalendars } din ${ calendarsToBeCreated }",
+        "S-a creat: ${ createdCalendars } din ${ calendarsToBeCreated }"
       ],
       "Almost there": [
         "Aproape terminat"
@@ -4461,16 +4461,16 @@
     },
     "Time period": {
       "account creation date": [
-        ""
+        "data creării contului"
       ],
       "the last 12 months": [
-        ""
+        "ultimele 12 luni"
       ],
       "the last 3 months": [
-        ""
+        "ultimele 3 luni"
       ],
       "the last month": [
-        ""
+        "ultima lună"
       ]
     },
     "Time unit": {
@@ -4930,7 +4930,7 @@
     },
     "Today icon tooltip in mini calendar": {
       "Today": [
-        ""
+        "Astăzi"
       ]
     },
     "Tooltip": {
@@ -5165,7 +5165,7 @@
         "Nu s-a putut încărca contactul."
       ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
-        ""
+        "Setările de dată și oră de pe dispozitiv nu sunt sincronizate. ${ learnMore }"
       ],
       "The decryption of the encrypted content failed.": [
         "Decriptarea conținutului criptat a eșuat."

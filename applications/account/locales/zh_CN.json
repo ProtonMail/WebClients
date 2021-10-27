@@ -31,11 +31,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } 商店"
       ],
-      "Activate": [
-        "启用"
-      ],
       "activate": [
         "激活"
+      ],
+      "Activate": [
+        "启用"
       ],
       "Activate ${ Name }@pm.me": [
         "激活 ${ Name }@pm.me"
@@ -347,7 +347,7 @@
         "字体"
       ],
       "Generate key": [
-        ""
+        "生成密钥"
       ],
       "Get ProtonVPN Plus": [
         "开通 ProtonVPN 高级版"
@@ -384,6 +384,9 @@
       ],
       "Import contacts": [
         "导入联系人"
+      ],
+      "Import from .csv or vCard": [
+        "从 .csv 或 vCard 导入"
       ],
       "Import from .ics": [
         "从 .ics 文件导入"
@@ -599,7 +602,7 @@
         "选择文件"
       ],
       "Select plan": [
-        "选择套餐"
+        "开通"
       ],
       "Select timezone": [
         "选择时区"
@@ -617,7 +620,7 @@
         "设为默认"
       ],
       "Set catch-all": [
-        "设置揽取邮箱"
+        "设置替补邮箱"
       ],
       "Share via link": [
         "通过链接分享"
@@ -657,6 +660,9 @@
       ],
       "Sign out all accounts": [
         "退出所有账户"
+      ],
+      "Signing in": [
+        "正在登录"
       ],
       "Signing out": [
         "正在退出账户"
@@ -722,7 +728,7 @@
         "取消订阅"
       ],
       "Update": [
-        "更改"
+        "更新"
       ],
       "Upgrade": [
         "升级"
@@ -1290,7 +1296,7 @@
         "日历链接不能被访问"
       ],
       "Calendar link is temporarily inaccessible": [
-        ""
+        "日历链接暂时无法访问"
       ],
       "Calendar link is wrong": [
         "日历链接错误"
@@ -1766,8 +1772,8 @@
       "Can't validate phone, try again later": [
         "无法验证手机，请稍候再重试"
       ],
-      "Checkout expired, please try again.": [
-        "支付超时，请重试。"
+      "Checkout expired, please try again": [
+        ""
       ],
       "Condition incomplete": [
         "条件不完整"
@@ -1889,6 +1895,9 @@
       "Not a valid number": [
         "无效号码"
       ],
+      "Organization key is not decrypted": [
+        ""
+      ],
       "Organization key is not decrypted.": [
         "机构密钥尚未解密。"
       ],
@@ -1922,8 +1931,8 @@
       "Please fix the highlighted conflict to proceed.": [
         "请修复高亮的冲突以继续。"
       ],
-      "Please generate keys before you try to change your password.": [
-        "更改密码前请先生成密钥。"
+      "Please generate keys before you try to change your password": [
+        ""
       ],
       "Please refresh the page.": [
         "请刷新页面。"
@@ -1937,8 +1946,8 @@
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         "请尝试重新验证并确保权限正确。"
       ],
-      "Please upgrade to a Professional plan with more than 1 user, or a Visionary account, to get multi-user support.": [
-        "请升级到多用户的专业版或尊享版账户以使用多用户功能。"
+      "Please upgrade to a Professional plan with more than 1 user, or a Visionary account, to get multi-user support": [
+        ""
       ],
       "Please upgrade to a Professional plan with more than 1 user, or a Visionary account, to manage multiple users.": [
         "开通多用户的专业版或尊享版账户方可管理多个用户。"
@@ -2005,6 +2014,9 @@
       ],
       "The minimum payment we accept is ${ _price2 }": [
         "支付金额不能低于 ${ _price2 }"
+      ],
+      "The organization key must be activated first": [
+        ""
       ],
       "The organization key must be activated first.": [
         "必须先激活机构密钥。"
@@ -2110,11 +2122,11 @@
       "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } events.": [
         "文件 ${ formattedFilename } 中的日程数已超过 ${ MAX_IMPORT_EVENTS_STRING }。"
       ],
+      "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
+        ""
+      ],
       "Your file ${ formattedFilename } has no events to be imported.": [
         "文件 ${ formattedFilename } 中没有可导入的日程。"
-      ],
-      "Your file ${ formattedFilename } is an invitation and cannot be imported.": [
-        "您的文件 ${ formattedFilename } 是一个邀请函，不能导入。"
       ],
       "Your file ${ formattedFilename } is empty.": [
         "文件 ${ formattedFilename } 是空的。"
@@ -2657,38 +2669,25 @@
       ]
     },
     "Import calendar warning": {
-      "${ CALENDAR_APP_NAME } does not support ${ forNow }:": [
-        "${ CALENDAR_APP_NAME } ${ forNow } 不支持:"
-      ],
-      "Attendees": [
-        "活动参与者"
-      ],
-      "Complex recurring rules": [
-        "复杂的重复规则"
-      ],
-      "Email notifications": [
-        "电子邮件通知"
-      ],
-      "for now": [
-        "暂时"
-      ],
-      "Free-busy time information": [
-        "忙碌空闲时间信息"
-      ],
-      "Journal entries": [
-        "日记"
-      ],
-      "Non-Gregorian calendars": [
-        "格里历以外的其他历法"
-      ],
-      "To-do entries": [
-        "待办事项"
-      ],
-      "Unofficial or custom timezones": [
-        "非官方或自定义时区"
+      "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
+        ""
       ],
       "vCard versions < 3.0": [
         "vCard 版本小于3.0"
+      ]
+    },
+    "Import calendar; import invitation": {
+      "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your Proton email address.": [
+        ""
+      ],
+      "This file contains an event invitation:": [
+        ""
+      ],
+      "This file contains an invitation response:": [
+        ""
+      ],
+      "This file contains some data that we cannot import:": [
+        ""
       ]
     },
     "Import contact": {
@@ -2957,7 +2956,7 @@
     },
     "Import type": {
       "Calendar": [
-        ""
+        "日历"
       ],
       "Contacts": [
         ""
@@ -2970,17 +2969,17 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } /${ totalContacts } 联系人将不会被导入。点击查看详情"
       ],
-      "${ totalEventsDiscarded } out of ${ totalEvents } events will not be imported. Click for details": [
-        "${ totalEventsDiscarded }/${ totalEvents } 日程将不会被导入。点击查看详情"
+      "${ totalEventsDiscarded } out of ${ totalEvents } events will not be imported. Expand for details.": [
+        ""
       ],
       "No contact can be imported. Click for details": [
         "没有联系人可以导入。点击查看详情"
       ],
-      "No event can be imported. Click for details": [
-        "未能导入任何日程，点击查看详情"
+      "No event can be imported. Expand for details.": [
+        "未能导入任何日程，展开查看详情。"
       ],
-      "Part of your calendar content is not supported and will not be imported": [
-        "您的日程中有部分内容我们不支持，这些日程将不会被导入进来"
+      "Part of your calendar content is not supported and will not be imported.": [
+        "您的日程中有部分内容我们不支持，这些日程将不会被导入进来。"
       ]
     },
     "Info": {
@@ -2991,13 +2990,13 @@
         "${ calendarName } 将成为默认分类。"
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
-        ""
+        "${ calendarsToBeCreatedCount } 个新日历"
       ],
       "${ calendarsToBeMerged } merged calendar": [
         ""
       ],
       "${ calendarsToBeMergedCount } merged calendar": [
-        ""
+        "${ calendarsToBeMergedCount } 个合并日历"
       ],
       "${ mailAppName } Free": [
         "${ mailAppName } 免费"
@@ -3042,7 +3041,7 @@
         "添加 VPN 订阅，可整体享 ${ saveExtra20 } 优惠。"
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
-        ""
+        "已选中 ${ providerCalendars.length } 个日历中的 ${ selectedCalendarsTotal } 个"
       ],
       "${ selectedFoldersCount } folder selected": [
         "已选择 ${ selectedFoldersCount } 个文件夹"
@@ -3108,7 +3107,7 @@
         "账户已成功更新"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"ProtonMail me\" or \"Private Message me.\"": [
-        "为您的账户添加一个 @pm.me 的邮箱后缀，这个简短的域名代表“ProtonMail me”或“Private Message me”。"
+        "您可以增设一个后缀为 @pm.me 的邮箱地址，这个简短的域名代表 ProtonMail me 或者 Private Message me。"
       ],
       "Add additional addresses to your account like user2@protonmail.com": [
         "添加其他邮箱地址，如 username2@protonmail.com"
@@ -3294,7 +3293,7 @@
         "点击 \"请求新验证码\" 将发送到 ${ strong }。如果此电话号码不正确，请点击 \"编辑\"。"
       ],
       "Close this screen to exit.": [
-        ""
+        "关闭此窗口以退出。"
       ],
       "Connections": [
         "连接"
@@ -3395,8 +3394,8 @@
       "Done": [
         "完成"
       ],
-      "Done! We sent a code to ${ destination }": [
-        "完成！我们向 ${ destination } 发送了验证码"
+      "Done! We sent a code to ${ destination }.": [
+        ""
       ],
       "Downgrading will terminate any connections to paid ProtonVPN servers.": [
         "降级将导致与收费 ProtonVPN 服务器的所有连接断开。"
@@ -3417,7 +3416,7 @@
         "编辑标签"
       ],
       "Effortlessly and securely move your emails from your current provider to Proton. If you use Google, we also support calendar, and contacts imports.": [
-        ""
+        "轻松又安全地将您的电子邮件从您当前的提供商迁移到 Proton。如果您使用 Google，我们还支持日历和联系人导入。"
       ],
       "Email address": [
         "邮箱地址"
@@ -3552,7 +3551,7 @@
         "若邮件没有出现在收件箱中，请检查其是否被归为垃圾邮件。"
       ],
       "If you have a custom domain with ProtonMail, you can set a catch-all email address that will receive messages sent to your domain but to an invalid email address (e.g., typos).": [
-        "您可以为自有域名设置一个揽取邮箱地址，发往该域名下的无效地址（可能由发件人输错导致）的邮件都将被投递到揽取邮箱中。"
+        "您可以为自有域名设置一个替补邮箱。如果由于发件人不慎输错等原因，某封邮件的收件地址在该域名中尚未分配，此邮件就将由替补邮箱代收。"
       ],
       "If you have a gift code, enter it below to apply your discount.": [
         "如果您有礼品代码，请在下面输入以应用您的折扣。"
@@ -3590,8 +3589,8 @@
       "Image URL": [
         "图片链接"
       ],
-      "Images have been removed because they are not allowed in auto-reply.": [
-        "图片已删除，因为自动回复中不能包含图片。"
+      "Images have been removed because they are not allowed in auto-reply": [
+        ""
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         ""
@@ -3600,10 +3599,10 @@
         ""
       ],
       "Import from": [
-        ""
+        "导入自"
       ],
       "Import in progress": [
-        ""
+        "导入进行中"
       ],
       "Import mailbox": [
         "导入收件箱"
@@ -3612,7 +3611,7 @@
         "注意：下载私钥并采用不安全的媒介传输或存储会严重威胁您的账户安全！"
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
-        "注意：请确保您已记下恢复代码。否则，若您丢失两步验证设备，您将永远无法访问您的账户。"
+        "注意：请务必妥善保管恢复码，否则一旦丢失双重验证设备，您可能再也无法登录此账户。"
       ],
       "IMPORTANT: Some registrars do not accept CNAME values with a period at the end (while others require it). If your registrar does not accept your CNAME records, please delete the period at the end of each CNAME value and try again.": [
         "注意：某些域名注册商不允许 CNAME 以句点结尾（但某些注册商又要求必须如此）。如果您的注册商不接受这种格式的 CNAME，请将末尾的句点全部删除后再试一次。"
@@ -3621,7 +3620,7 @@
         ""
       ],
       "Included": [
-        "包含"
+        "已包含在内"
       ],
       "Inherited from parent folder": [
         "继承自母文件夹"
@@ -3729,7 +3728,7 @@
         "手动输入此信息到您的两步验证设备，以便设置您的帐户。${ _switchButton }。"
       ],
       "Merged": [
-        ""
+        "已合并"
       ],
       "Monthly ${ onDayString }": [
         "每月 ${ onDayString }"
@@ -3981,7 +3980,7 @@
         "已添加截图"
       ],
       "Select a service provider to get started": [
-        ""
+        "请选择一个服务提供商以开始导入"
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20-personal-calendar limit. You can also merge imported calendars with existing Proton calendars.": [
         ""
@@ -4407,7 +4406,7 @@
         "您的电子邮件将仅用于此一次性验证。"
       ],
       "Your import from ${ delayedImport.Account } is temporarily delayed.": [
-        ""
+        "您的 ${ delayedImport.Account } 导入被暂时推迟。"
       ],
       "Your import from ${ delayedImport.Email } is temporarily delayed.": [
         "您从 ${ delayedImport.Email } 导入被暂时推迟。"
@@ -4473,10 +4472,10 @@
     },
     "Info concerning plan features": {
       "Customizable features": [
-        "可自定义功能"
+        "可以根据需求自行调整"
       ],
       "ProtonMail cannot be used for mass emailing or spamming. Legitimate emails are unlimited.": [
-        "ProtonMail 不能用于群发电子邮件或垃圾邮件。合法的电子邮件是无限的。"
+        "ProtonMail 不允许发送垃圾邮件或大规模群发邮件，合理的邮件没有数量限制。"
       ]
     },
     "Info for cash payment method": {
@@ -4896,7 +4895,7 @@
         "应用密码"
       ],
       "Ask before loading remote content": [
-        ""
+        "加载外链内容前需要确认"
       ],
       "Attach public key": [
         "附上公钥"
@@ -4920,7 +4919,7 @@
         "备份密钥"
       ],
       "Block email tracking": [
-        ""
+        "阻止电子邮件追踪"
       ],
       "bonus storage": [
         "奖励存储空间"
@@ -5046,7 +5045,7 @@
         "预设提醒时间"
       ],
       "Default PGP scheme": [
-        ""
+        "默认 PGP 加密方案"
       ],
       "Default view": [
         "首选视图"
@@ -5797,55 +5796,55 @@
         "地址验证"
       ],
       "Addresses": [
-        "个地址"
+        "邮箱地址数量"
       ],
       "Autoresponder": [
         "自动回复"
       ],
       "Catch-All email": [
-        "揽取邮箱"
+        "收取发至自有域名未分配地址的邮件"
       ],
       "Contact groups": [
         "联系人群组"
       ],
       "Custom email addresses": [
-        "自定义邮箱地址"
+        "自有域名地址"
       ],
       "Custom filters": [
-        "自定义过滤规则"
+        "定制筛选规则"
       ],
       "Encrypted contacts": [
         "通讯录加密"
       ],
       "Folders / labels": [
-        "个文件夹/标签"
+        "文件夹和标签个数"
       ],
       "IMAP / SMTP": [
         "IMAP / SMTP"
       ],
       "Limited": [
-        "受限"
+        "有限"
       ],
       "Messages per day": [
-        "封邮件/天"
+        "每天可发邮件数量"
       ],
       "Multi-user support": [
-        "多用户支持"
+        "多用户功能"
       ],
       "Priority": [
-        "优先权"
+        "优先享受"
       ],
       "Storage": [
         "存储空间"
       ],
       "Support": [
-        "客服"
+        "客户服务"
       ],
       "Use @pm.me address": [
         "可使用 @pm.me 地址"
       ],
       "Users": [
-        "位用户"
+        "用户数量"
       ]
     },
     "Mail feature option": {
@@ -5915,7 +5914,7 @@
         "配置一个自有域名邮箱地址（例如 you@yourcompany.com）。只需要几分钟，我们的向导将指导您完成整个过程。"
       ],
       "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to use a catch-all address and unlock premium features": [
-        "升级到 ${ PLAN_NAMES[PLANS.VISIONARY] } 或 ${ PLAN_NAMES[PLANS.PROFESSIONAL] } 套餐以使用揽取邮箱并解锁高级功能"
+        "开通 ${ PLAN_NAMES[PLANS.VISIONARY] } 或 ${ PLAN_NAMES[PLANS.PROFESSIONAL] } 账户即可使用替补邮箱等高级功能"
       ],
       "Upgrade to any paid plan to use custom domains and unlock premium features": [
         "开通付费账户方可使用自有域名等高级功能"
@@ -6407,7 +6406,7 @@
     },
     "Option group label": {
       "Create new calendar": [
-        ""
+        "创建新日历"
       ],
       "Merge with calendar": [
         ""
@@ -6415,10 +6414,10 @@
     },
     "Option protection mode": {
       "Load content via proxy (recommended)": [
-        ""
+        "通过代理加载外链内容（推荐）"
       ],
       "Load content via proxy and store as attachments": [
-        ""
+        "通过代理加载外链内容并存储为附件"
       ]
     },
     "OS compatibility": {
@@ -6456,7 +6455,7 @@
     },
     "PGP key warning": {
       "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        ""
+        "在发送密钥（${ keyUserIds }）中定义的用户 ID 中找不到电子邮件地址"
       ]
     },
     "Placeholder": {
@@ -6857,7 +6856,7 @@
         "域名"
       ],
       "Email privacy": [
-        ""
+        "电子邮件隐私"
       ],
       "Encryption & keys": [
         "加密与密钥"
@@ -6881,7 +6880,7 @@
         "导入与导出"
       ],
       "Import/Export": [
-        ""
+        "导入/导出"
       ],
       "Multi-user support": [
         "多用户功能"
@@ -7063,10 +7062,10 @@
         "日历已更新"
       ],
       "Canceling import": [
-        ""
+        "正在取消导入"
       ],
       "Catch-all address updated": [
-        "揽取地址已更新"
+        "替补邮箱已更改"
       ],
       "Code sent to ${ methodTo }": [
         "验证码已发至 ${ methodTo }"
@@ -7080,8 +7079,8 @@
       "Deleting original messages": [
         "正在删除原始邮件"
       ],
-      "DMARC value copied to clipboard!": [
-        "DMARC 内容已复制！"
+      "DMARC value copied to clipboard": [
+        ""
       ],
       "Domain verified": [
         "域名已验证"
@@ -7147,7 +7146,7 @@
         "地址已激活"
       ],
       "Resuming import": [
-        ""
+        "正在恢复导入"
       ],
       "Session revoked": [
         "该设备已下线"
@@ -7155,8 +7154,8 @@
       "Sessions revoked": [
         "设备已下线"
       ],
-      "SPF value copied to clipboard!": [
-        "SPF 内容已复制"
+      "SPF value copied to clipboard": [
+        ""
       ],
       "User created": [
         "用户已创建"
@@ -7164,11 +7163,11 @@
       "User updated": [
         "用户已更新"
       ],
-      "Value copied to clipboard!": [
-        "内容已复制！"
+      "Value copied to clipboard": [
+        ""
       ],
-      "Verification code copied to clipboard!": [
-        "验证码已复制到剪贴板！"
+      "Verification code copied to clipboard": [
+        ""
       ],
       "Verification successful": [
         "验证成功"
@@ -7269,16 +7268,16 @@
     },
     "Time period": {
       "account creation date": [
-        ""
+        "账户创建"
       ],
       "the last 12 months": [
-        ""
+        "最近 12 个月"
       ],
       "the last 3 months": [
-        ""
+        "最近 3 个月"
       ],
       "the last month": [
-        ""
+        "上个月"
       ]
     },
     "Time unit": {
@@ -7440,10 +7439,10 @@
         "正在验证银行卡"
       ],
       "Catch-All address": [
-        "揽取地址"
+        "替补邮箱"
       ],
       "Catch-all address": [
-        "揽取地址"
+        "替补邮箱"
       ],
       "Change login password": [
         "更改登录密码"
@@ -7496,6 +7495,9 @@
       "Contacts": [
         "通讯录"
       ],
+      "Continue with partial import?": [
+        "继续以部分导入进行吗？"
+      ],
       "Coupon discount": [
         "优惠券折扣"
       ],
@@ -7530,16 +7532,16 @@
         "定制筛选规则"
       ],
       "Customize and confirm": [
-        ""
+        "自定义并确认"
       ],
       "Customize calendar import": [
-        ""
+        "自定义日历导入"
       ],
       "Customize import": [
         "自定义导入"
       ],
       "Customize your mail import": [
-        ""
+        "自定义您的邮件导入"
       ],
       "Customize your plan": [
         "自定义您的套餐"
@@ -7623,7 +7625,7 @@
         "邮件加密密钥"
       ],
       "Email privacy": [
-        ""
+        "电子邮件隐私"
       ],
       "Email subscriptions": [
         "邮件订阅"
@@ -7674,7 +7676,7 @@
         "常规"
       ],
       "Generate key": [
-        ""
+        "生成密钥"
       ],
       "Generate missing keys": [
         "生成缺失的密钥"
@@ -7700,6 +7702,9 @@
       "Import & export": [
         "导入与导出"
       ],
+      "Import as simple event?": [
+        ""
+      ],
       "Import Assistant": [
         "导入助手"
       ],
@@ -7708,6 +7713,9 @@
       ],
       "Import events": [
         "导入事件"
+      ],
+      "Import failed": [
+        "导入失败"
       ],
       "Import groups": [
         "导入群组"
@@ -7719,13 +7727,13 @@
         "导入密钥"
       ],
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
-        ""
+        "通过 ${ PRODUCT_NAMES.EASY_SWITCH } 导入"
       ],
       "Import-Export app": [
         "「导入/导出」应用程序"
       ],
       "Import/Export": [
-        ""
+        "导入/导出"
       ],
       "Invalid verification code": [
         "无效的验证码"
@@ -7911,7 +7919,7 @@
         "选择联系人群组"
       ],
       "Select plan": [
-        "选择套餐"
+        "开通"
       ],
       "Select the time to send this notification": [
         "选择发送该通知的时间"
@@ -7920,7 +7928,7 @@
         "选择发送该通知的方式"
       ],
       "Select what to import": [
-        ""
+        "选择要导入的内容"
       ],
       "Select when you want this notification to be sent": [
         "选择您希望发送该通知的时间"
@@ -7971,7 +7979,7 @@
         "垃圾邮件过滤"
       ],
       "Spy Tracker Protection": [
-        ""
+        "间谍跟踪防护"
       ],
       "Start a new import": [
         "开始导入"
@@ -7980,7 +7988,7 @@
         "开始导入过程"
       ],
       "Start new import": [
-        ""
+        "开始新的导入"
       ],
       "Status": [
         "状态"
@@ -8101,7 +8109,7 @@
         "邮箱地址"
       ],
       "Catch-All": [
-        "全部捕获"
+        "替补邮箱"
       ],
       "Status": [
         "状态"
@@ -8137,7 +8145,7 @@
     },
     "Today icon tooltip in mini calendar": {
       "Today": [
-        ""
+        "今天"
       ]
     },
     "Tooltip": {
@@ -8193,7 +8201,7 @@
         "使用 ${ mailAppName } 托管您自己的域名，如 zhangsan@example.com"
       ],
       "Host emails for your own domain(s) at ProtonMail, e.g. john.smith@example.com": [
-        "使用 ProtonMail 托管您自己的域名，如 zhangsan@example.com"
+        "使用 ProtonMail 为您自己的域名收取邮件，如 zhangsan@example.com"
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "若您已购买或从我们的客服团队处获得了礼品码，可以在此输入。"
@@ -8202,7 +8210,7 @@
         "“已发送”或“草稿”文件夹中的邮件始终会显示在对应的文件夹中，不受移动邮件的影响。"
       ],
       "Multi-user support is only applicable to plans with 2 or more users": [
-        "多用户支持仅适用于 2 名及以上用户方案"
+        "仅对两名以上用户的账户等级适用"
       ],
       "NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware.": [
         "NetShield 保护您的设备，并可通过屏蔽广告、追踪器和恶意软件加速您的浏览。"
@@ -8250,10 +8258,10 @@
         "此密钥是由以前的密码加密的"
       ],
       "Use multiple addresses / aliases linked to your account, e.g. username2@protonmail.com": [
-        "使用多个电子邮箱地址 / 别名连接到您的帐户，例如 username2@protonmail.com"
+        "在同一个账户中使用多个邮箱地址，如 username2@protonmail.com"
       ],
       "Use the personal address username@pm.me to send emails": [
-        "使用个人邮箱地址 username@pm.me 发送邮件"
+        "使用个性化的邮箱地址 username@pm.me 发送邮件"
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "我们检测到您的 DNS 配置存在问题，请确认您的记录与下方所示一致。若问题仍存在，我们将关闭 DKIM 签名功能。"
@@ -8561,7 +8569,7 @@
     },
     "Weak personal key warning": {
       "This key no longer meets our security standards. We suggest you mark it as obsolete and generate a new key.": [
-        ""
+        "此密钥不再符合我们的安全标准，我们建议您将其标记为过时并生成新密钥。"
       ]
     },
     "Weekly recurring event, frequency": {

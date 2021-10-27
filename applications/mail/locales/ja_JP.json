@@ -954,9 +954,6 @@
       "Forwarded": [
         ""
       ],
-      "Has attachments": [
-        "添付ファイル有り"
-      ],
       "Replied to": [
         ""
       ],
@@ -1869,8 +1866,8 @@
       "Amount below minimum.": [
         "最少金額を下回っています。"
       ],
-      "Attachments are limited to 25 MB.": [
-        "添付ファイルは25MBに制限されています。"
+      "Attachments are limited to 25 MB": [
+        ""
       ],
       "Authentication canceled.": [
         "認証がキャンセルされました。"
@@ -1893,8 +1890,8 @@
       "Can't validate phone, try again later": [
         "電話番号の検証ができませんでした。再度お試しください"
       ],
-      "Checkout expired, please try again.": [
-        "チェックアウトの有効期限が切れました。もう一度やり直してください。"
+      "Checkout expired, please try again": [
+        ""
       ],
       "Choose a date in the future.": [
         "未来の日付を入力してください。"
@@ -1914,11 +1911,11 @@
       "Contact signature not verified": [
         "連絡先の署名が検証されていません"
       ],
-      "Contact your organization’s administrator to resolve this.": [
-        "これを解決するには、組織の管理者に連絡してください。"
+      "Contact your organization’s administrator to resolve this": [
+        ""
       ],
-      "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser": [
-        "このブラウザでは、内容の検索を有効にできません。プライベートブラウジングモードを閉じるか別のブラウザーを使用してください"
+      "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
+        ""
       ],
       "Could not find address ${ email }.": [
         "メールアドレス ${ email } が見つかりませんでした。"
@@ -1953,14 +1950,14 @@
       "Error in one of the conditions": [
         "いずれかの条件にエラーがあります"
       ],
-      "Error while saving draft. Please try again": [
-        "下書きを保存しているときにエラーが発生しました。再度お試しください"
+      "Error while saving draft. Please try again.": [
+        ""
       ],
-      "Error while sending the message. Message is not sent": [
-        "メッセージの送信中にエラーが発生しました。メッセージは送信されていません"
+      "Error while sending the message. Message is not sent.": [
+        ""
       ],
-      "Error while uploading attachments. Message is not sent": [
-        "添付ファイルのアップロード中にエラーが発生しました。メッセージは送信されていません"
+      "Error while uploading attachments. Message is not sent.": [
+        ""
       ],
       "Failed to encrypt attachment. Please try again.": [
         "添付ファイルの暗号化に失敗しました。もう一度お試しください。"
@@ -1995,8 +1992,8 @@
       "Invalid expiration date": [
         "無効な有効期限です"
       ],
-      "Invalid expiration time.": [
-        "無効な有効期限です。"
+      "Invalid expiration time": [
+        ""
       ],
       "Invalid name": [
         "無効な名前です"
@@ -2019,8 +2016,8 @@
       "Message needs to be sent first": [
         "メッセージを最初に送信する必要があります"
       ],
-      "Message passwords do not match.": [
-        "メッセージパスワードが一致しません。"
+      "Message passwords do not match": [
+        ""
       ],
       "Message processing error.": [
         "メッセージの処理にエラーが発生しました。"
@@ -2034,8 +2031,8 @@
       "Network error: Please check your connection and try again.": [
         "ネットワークエラー：インターネット接続を確認し、もう一度やり直してください。"
       ],
-      "No address with keys available to compose a message.": [
-        "メールアドレスに有効な暗号鍵が設定さていないため、メッセージが作成できません。"
+      "No address with keys available to compose a message": [
+        ""
       ],
       "No key retrieved for internal user is valid for sending": [
         "送信に使用できる内部ユーザーの鍵がありません"
@@ -2163,8 +2160,8 @@
       "The label name is too long. Please choose a different name.": [
         ""
       ],
-      "The maximum expiration is 4 weeks.": [
-        "有効期限は最長4週間までです。"
+      "The maximum expiration is 4 weeks": [
+        ""
       ],
       "The minimum amount of credit that can be added is ${ _price }": [
         "追加クレジット金額は ${ _price } 以上から承っております。"
@@ -2181,8 +2178,8 @@
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         ""
       ],
-      "There has been an issue with content search. Default search has been used instead": [
-        "コンテンツ検索に問題があります。既定の検索が代わりに使用されています"
+      "There has been an issue with content search. Default search has been used instead.": [
+        ""
       ],
       "There was an error when exporting the contacts vCards": [
         "連絡先のvCardのエクスポート中にエラーが発生しました"
@@ -2199,8 +2196,8 @@
       "This label name is not available. Please choose a different name": [
         ""
       ],
-      "This message has already been sent.": [
-        "このメッセージは送信されています。"
+      "This message has already been sent": [
+        ""
       ],
       "This message has already been sent. A new draft has been saved.": [
         "このメッセージは送信されています。下書きが保存されました。"
@@ -2208,7 +2205,7 @@
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "このメッセージは、現在お使いのブラウザでは適切に開くことができないリンクのURLを含んでいる可能性があります"
       ],
-      "Too many active filters. Please upgrade to a paid plan to activate more filters": [
+      "Too many active filters. Please upgrade to a paid plan to activate more filters.": [
         ""
       ],
       "Trusted keys are not valid for sending": [
@@ -2229,7 +2226,7 @@
       "You can't send vCards of more than 10 contacts": [
         "10以上の連絡先のvcardを送信することはできません"
       ],
-      "You cannot open more than ${ maxActiveComposer } composer window at a time.": [
+      "You cannot open more than ${ maxActiveComposer } composer window at a time": [
         ""
       ],
       "You did not provide a file.": [
@@ -2247,7 +2244,7 @@
       "Your import will not be processed.": [
         "インポートできませんでした。"
       ],
-      "Your search matched too many results. Please limit your search and try again": [
+      "Your search matched too many results. Please limit your search and try again.": [
         ""
       ]
     },
@@ -3243,8 +3240,8 @@
       "Image URL": [
         "画像のURL"
       ],
-      "Images have been removed because they are not allowed in auto-reply.": [
-        "自動返信では許可されていないため画像は削除されました。"
+      "Images have been removed because they are not allowed in auto-reply": [
+        ""
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         ""
@@ -3347,6 +3344,9 @@
       ],
       "Message sent": [
         "メッセージが送信されました"
+      ],
+      "Message sent.": [
+        ""
       ],
       "Message will be sent ${ dateString } at ${ formattedTime }": [
         ""
@@ -5974,7 +5974,7 @@
       "Contacts deleted": [
         "連絡先が削除されました"
       ],
-      "Conversation added to ${ labelName }": [
+      "Conversation added to ${ labelName }.": [
         ""
       ],
       "Conversation deleted": [
@@ -5983,7 +5983,7 @@
       "Conversation marked as read.": [
         ""
       ],
-      "Conversation marked as Starred": [
+      "Conversation marked as Starred.": [
         ""
       ],
       "Conversation marked as unread.": [
@@ -5998,7 +5998,7 @@
       "Conversation moved to spam and sender added to Block List.": [
         ""
       ],
-      "Conversation removed from ${ labelName }": [
+      "Conversation removed from ${ labelName }.": [
         ""
       ],
       "Draft deleted": [
@@ -6025,8 +6025,8 @@
       "Mail list unsubscribed": [
         ""
       ],
-      "Message added to ${ labelName }": [
-        "メッセージが ${ labelName } に追加されました。"
+      "Message added to ${ labelName }.": [
+        ""
       ],
       "Message content search activated": [
         "メッセージ内容の検索が有効になりました"
@@ -6040,7 +6040,7 @@
       "Message marked as read.": [
         ""
       ],
-      "Message marked as Starred": [
+      "Message marked as Starred.": [
         ""
       ],
       "Message marked as unread.": [
@@ -6055,8 +6055,8 @@
       "Message moved to spam and sender added to Block List.": [
         "メッセージが迷惑メールに移動され、送信者がブロックリストに追加されました。"
       ],
-      "Message removed from ${ labelName }": [
-        "メッセージが ${ labelName } から削除されました。"
+      "Message removed from ${ labelName }.": [
+        ""
       ],
       "Move ${ selectionCount } conversation": [
         ""

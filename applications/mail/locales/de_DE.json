@@ -962,9 +962,6 @@
       "Forwarded": [
         "Weitergeleitet"
       ],
-      "Has attachments": [
-        "Enthält Anhänge"
-      ],
       "Replied to": [
         "Geantwortet"
       ],
@@ -1269,7 +1266,7 @@
         "${ participantName } hat Ihre Einladung bestätigt und eine alternative Zeit für dieses Ereignis vorgeschlagen."
       ],
       "${ participantName } accepted your invitation to one occurrence of the event.": [
-        "${ participantName } hat Ihre Einladung zu einem Ereignis angenommen."
+        "${ participantName } hat Ihre Einladung zu einem Termin des Ereignisses angenommen."
       ],
       "${ participantName } accepted your invitation.": [
         "${ participantName } hat Ihre Einladung angenommen."
@@ -1290,7 +1287,7 @@
         "${ participantName } hat Ihre Einladung abgelehnt und eine alternative Zeit für dieses Ereignis vorgeschlagen."
       ],
       "${ participantName } declined your invitation to one occurrence of the event.": [
-        "${ participantName } hat Ihre Einladung zu einem Ereignis abgelehnt."
+        "${ participantName } hat Ihre Einladung zu einem Termin dieses Ereignisses abgelehnt."
       ],
       "${ participantName } declined your invitation.": [
         "${ participantName } hat Ihre Einladung abgelehnt."
@@ -1308,7 +1305,7 @@
         "${ participantName } hatte Ihre Einladung abgelehnt und eine lternative Zeit für dieses Ereignis vorgeschlagen. Antwort und Vorschlag sind nicht mehr gültig."
       ],
       "${ participantName } had previously accepted your invitation to one occurrence of the event.": [
-        "${ participantName } hatte zuvor Ihre Einladung zu einem Ereignis angenommen."
+        "${ participantName } hatte bereits Ihre Einladung zu einem Termin des Ereignisses angenommen."
       ],
       "${ participantName } had previously accepted your invitation.": [
         "${ participantName } hatte Ihre Einladung bereits angenommen."
@@ -1320,7 +1317,7 @@
         "${ participantName } hatte Ihre Einladung bereits abgelehnt."
       ],
       "${ participantName } had previously tentatively accepted your invitation to one occurrence of the event.": [
-        "${ participantName } hatte Ihre Einladung zu einem Ereignis bereits vorläufig bestätigt."
+        "${ participantName } hatte bereits Ihre Einladung zu einem Termin des Ereignisses vorläufig angenommen."
       ],
       "${ participantName } had previously tentatively accepted your invitation.": [
         "${ participantName } hatte Ihre Einladung bereits unter Vorbehalt angenommen."
@@ -1362,7 +1359,7 @@
         "${ participantName } hat Ihre Einladung unter Vorbehalt angenommen und eine alternative Zeit für dieses Ereignis vorgeschlagen."
       ],
       "${ participantName } tentatively accepted your invitation to one occurrence of the event.": [
-        "${ participantName } hat Ihre Einladung zu einem Ereignis unter Vorbehalt angenommen."
+        "${ participantName } hat Ihre Einladung zu einem Termin des Ereignisses unter Vorbehalt angenommen."
       ],
       "${ participantName } tentatively accepted your invitation.": [
         "${ participantName } hat Ihre Einladung unter Vorbehalt angenommen."
@@ -1884,8 +1881,8 @@
       "Amount below minimum.": [
         "Mindestbetrag unterschritten."
       ],
-      "Attachments are limited to 25 MB.": [
-        "Anhänge sind auf 25 MB beschränkt."
+      "Attachments are limited to 25 MB": [
+        "Anhänge sind auf 25 MB beschränkt"
       ],
       "Authentication canceled.": [
         "Authentifizierung abgebrochen."
@@ -1908,8 +1905,8 @@
       "Can't validate phone, try again later": [
         "Das Gerät konnte nicht bestätigt werden. Bitte versuche es später noch einmal."
       ],
-      "Checkout expired, please try again.": [
-        "Kaufabwicklung abgelaufen. Bitte versuchen Sie es noch einmal."
+      "Checkout expired, please try again": [
+        "Kaufabwicklung abgelaufen. Bitte versuche es noch einmal"
       ],
       "Choose a date in the future.": [
         "Wählen Sie ein zukünftiges Datum."
@@ -1930,11 +1927,11 @@
       "Contact signature not verified": [
         "Kontaktsignatur nicht bestätigt"
       ],
-      "Contact your organization’s administrator to resolve this.": [
-        "Wenden Sie sich an den Administrator Ihrer Organisation, um dies zu klären."
+      "Contact your organization’s administrator to resolve this": [
+        "Wende dich an den Administrator deiner Organisation, um dies zu klären"
       ],
-      "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser": [
-        "Die Inhaltssuche kann in diesem Browser nicht aktiviert werden. Bitte beenden Sie den privaten Browsermodus oder verwenden Sie einen anderen Browser"
+      "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
+        "Die Inhaltssuche kann in diesem Browser nicht aktiviert werden. Bitte beende den privaten Browsermodus oder verwende einen anderen Browser."
       ],
       "Could not find address ${ email }.": [
         "Adresse ${ email } wurde nicht gefunden."
@@ -1970,13 +1967,13 @@
       "Error in one of the conditions": [
         "Fehler in einer der Bedingungen"
       ],
-      "Error while saving draft. Please try again": [
-        "Fehler beim Speichern des Entwurfs. Bitte versuchen Sie es erneut."
+      "Error while saving draft. Please try again.": [
+        "Fehler beim Speichern des Entwurfs. Bitte versuche es erneut."
       ],
-      "Error while sending the message. Message is not sent": [
-        "Fehler beim Senden der Nachricht. Die Nachricht wurde nicht gesendet."
+      "Error while sending the message. Message is not sent.": [
+        "Fehler beim Senden der Nachricht. Nachricht wurde nicht gesendet."
       ],
-      "Error while uploading attachments. Message is not sent": [
+      "Error while uploading attachments. Message is not sent.": [
         "Fehler beim Hochladen der Anhänge. Die Nachricht wurde nicht gesendet."
       ],
       "Failed to encrypt attachment. Please try again.": [
@@ -2012,8 +2009,8 @@
       "Invalid expiration date": [
         "Ungültiges Ablaufdatum"
       ],
-      "Invalid expiration time.": [
-        "Ungültiges Ablaufdatum."
+      "Invalid expiration time": [
+        "Ungültiges Ablaufdatum"
       ],
       "Invalid name": [
         "Ungültiger Name"
@@ -2037,8 +2034,8 @@
       "Message needs to be sent first": [
         "Die Nachricht muss zuerst gesendet werden"
       ],
-      "Message passwords do not match.": [
-        "Die eingegebenen Passwörter stimmen nicht überein."
+      "Message passwords do not match": [
+        "Die eingegebenen Passwörter stimmen nicht überein"
       ],
       "Message processing error.": [
         "Fehler bei der Verarbeitung der Nachricht."
@@ -2052,8 +2049,8 @@
       "Network error: Please check your connection and try again.": [
         "Netzwerkfehler Bitte überprüfen Sie Ihre Verbindung und versuchen Sie es erneut."
       ],
-      "No address with keys available to compose a message.": [
-        "Keine E-Mail-Adresse mit Schlüsseln zum Verfassen einer Nachricht verfügbar."
+      "No address with keys available to compose a message": [
+        "Keine Adresse mit Schlüsseln zum Verfassen einer Nachricht verfügbar"
       ],
       "No key retrieved for internal user is valid for sending": [
         "Kein für den internen Benutzer abgerufener Schlüssel ist für den Versand gültig"
@@ -2186,8 +2183,8 @@
       "The label name is too long. Please choose a different name.": [
         "Der Name der Kategorie ist zu lang. Bitte wählen Sie einen kürzeren Namen."
       ],
-      "The maximum expiration is 4 weeks.": [
-        "Die maximale Zeit zum Ablauf beträgt 4 Wochen."
+      "The maximum expiration is 4 weeks": [
+        "Der maximale Verfallszeitraum beträgt 4 Wochen"
       ],
       "The minimum amount of credit that can be added is ${ _price }": [
         "Der Mindestbetrag, der hinzugefügt werden kann, beträgt ${ _price }"
@@ -2204,8 +2201,8 @@
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Es gibt zu viele Ordner in Ihrem externen Konto. Bitte passen Sie den Import an, um einige Ordner zu löschen."
       ],
-      "There has been an issue with content search. Default search has been used instead": [
-        "Es gab ein Problem mit der Inhaltssuche. Stattdessen wurde die Standardsuche verwendet."
+      "There has been an issue with content search. Default search has been used instead.": [
+        "Es ist ein Problem mit der Suche nach Inhalten aufgetreten. Stattdessen wurde die Standardsuche verwendet."
       ],
       "There was an error when exporting the contacts vCards": [
         "Es gab einen Fehler beim Exportieren der vCards der Kontakte"
@@ -2222,8 +2219,8 @@
       "This label name is not available. Please choose a different name": [
         "Dieser Kategoriename ist nicht verfügbar. Bitte wählen Sie einen anderen Namen"
       ],
-      "This message has already been sent.": [
-        "Diese Nachricht wurde bereits gesendet."
+      "This message has already been sent": [
+        "Diese Nachricht wurde bereits gesendet"
       ],
       "This message has already been sent. A new draft has been saved.": [
         "Diese Nachricht wurde bereits gesendet. Es wurde ein neuer Entwurf gespeichert."
@@ -2231,8 +2228,8 @@
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "Diese Nachricht enthält möglicherweise Internetadressen, die von Ihrem aktuellen Browser nicht ordnungsgemäß geöffnet werden können."
       ],
-      "Too many active filters. Please upgrade to a paid plan to activate more filters": [
-        "Zu viele aktive Filter. Bitte steigen Sie zu einem kostenpflichtigen Paket um, um weitere Filter aktivieren zu können."
+      "Too many active filters. Please upgrade to a paid plan to activate more filters.": [
+        "Zu viele aktive Filter. Bitte wechsle zu einem kostenpflichtigen Paket, um weitere Filter zu aktivieren."
       ],
       "Trusted keys are not valid for sending": [
         "Die vertrauenswürdigen Schlüssel sind für den Versand nicht gültig"
@@ -2252,9 +2249,9 @@
       "You can't send vCards of more than 10 contacts": [
         "Du kannst nicht vCards von mehr als 10 Kontakten verschicken"
       ],
-      "You cannot open more than ${ maxActiveComposer } composer window at a time.": [
-        "Sie können nicht mehr als ${ maxActiveComposer } Verfassen-Fenster gleichzeitig öffnen.",
-        "Sie können nicht mehr als ${ maxActiveComposer } Verfassen-Fenster gleichzeitig öffnen."
+      "You cannot open more than ${ maxActiveComposer } composer window at a time": [
+        "Du kannst nicht mehr als ${ maxActiveComposer } Verfassen-Fenster auf einmal öffnen",
+        "Du kannst nicht mehr als ${ maxActiveComposer } Verfassen-Fenster auf einmal öffnen"
       ],
       "You did not provide a file.": [
         "Sie haben keine Datei angegeben."
@@ -2271,8 +2268,8 @@
       "Your import will not be processed.": [
         "Ihr Import wird nicht verarbeitet."
       ],
-      "Your search matched too many results. Please limit your search and try again": [
-        "Ihre Suche ergab zu viele Treffer. Bitte schränken Sie Ihre Suche ein und versuchen Sie es erneut."
+      "Your search matched too many results. Please limit your search and try again.": [
+        "Deine Suche ergab zu viele Treffer. Schränke deine Suche ein und versuche es erneut."
       ]
     },
     "Error display when performing invalid move on message": {
@@ -2378,7 +2375,7 @@
         "Ursprüngliches Terminserie konnte nicht gefunden werden"
       ],
       "Recurring event has no occurrences": [
-        ""
+        "Wiederkehrendes Ereignis enthält keine Termine"
       ],
       "Recurring rule not supported": [
         "Wiederkehrende Regel nicht unterstützt"
@@ -2832,12 +2829,12 @@
         "${ numContacts } Kontakte"
       ],
       "${ occurrencesInBody } occurrence found": [
-        "${ occurrencesInBody } Vorkommen gefunden",
-        "${ occurrencesInBody } Vorkommen gefunden"
+        "${ occurrencesInBody } Termin gefunden",
+        "${ occurrencesInBody } Termine gefunden"
       ],
       "${ occurrencesInBody } occurrence found in the mail content": [
-        "${ occurrencesInBody } Vorkommen im Nachrichteninhalt gefunden",
-        "${ occurrencesInBody } Vorkommen im Nachrichteninhalt gefunden"
+        "${ occurrencesInBody } Termin im Nachrichteninhalt gefunden",
+        "${ occurrencesInBody } Termine im Nachrichteninhalt gefunden"
       ],
       "${ pureAttachmentsCount } file attached": [
         "${ pureAttachmentsCount } Datei angehängt",
@@ -3316,8 +3313,8 @@
       "Image URL": [
         "Bild-URL"
       ],
-      "Images have been removed because they are not allowed in auto-reply.": [
-        "Bilder wurden entfernt, da diese in automatischen Antworten nicht zulässig sind."
+      "Images have been removed because they are not allowed in auto-reply": [
+        "Grafiken wurden entfernt, da diese in automatischen Antworten nicht zulässig sind"
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "${ contactsFragment } und ${ contactsGroupsFragment } importieren"
@@ -3422,6 +3419,9 @@
       ],
       "Message sent": [
         "Nachricht gesendet"
+      ],
+      "Message sent.": [
+        "Nachricht gesendet."
       ],
       "Message will be sent ${ dateString } at ${ formattedTime }": [
         "Nachricht wird am ${ dateString } um ${ formattedTime } gesendet"
@@ -3662,7 +3662,7 @@
         "Das Senden von Nachrichten von der E-Mail-Adresse @pm.me ist eine kostenpflichtige Funktion. Ihre Nachricht wird von Ihrer Standardadresse „${ email }” gesendet."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
-        "Die Server sind unerreichbar. Bitte versuche es in ein paar Minuten erneut"
+        "Die Server sind unerreichbar. Bitte versuchen Sie es in ein paar Minuten erneut"
       ],
       "Session timed out.": [
         "Zeitüberschreitung der Sitzung."
@@ -6099,8 +6099,8 @@
       "Contacts deleted": [
         "Kontakte gelöscht"
       ],
-      "Conversation added to ${ labelName }": [
-        "Thema zu „${ labelName }” hinzugefügt"
+      "Conversation added to ${ labelName }.": [
+        "Thema zu „${ labelName }” hinzugefügt."
       ],
       "Conversation deleted": [
         "Thema gelöscht"
@@ -6108,8 +6108,8 @@
       "Conversation marked as read.": [
         "Thema als „Gelesen” gekennzeichnet."
       ],
-      "Conversation marked as Starred": [
-        "Thema gekennzeichnet"
+      "Conversation marked as Starred.": [
+        "Thema gekennzeichnet."
       ],
       "Conversation marked as unread.": [
         "Thema als „Ungelesen” gekennzeichnet."
@@ -6123,8 +6123,8 @@
       "Conversation moved to spam and sender added to Block List.": [
         "Thema nach Spam verschoben und Absender zur Sperrliste hinzugefügt."
       ],
-      "Conversation removed from ${ labelName }": [
-        "Thema aus „${ labelName }” entfernt"
+      "Conversation removed from ${ labelName }.": [
+        "Thema aus „${ labelName }” entfernt."
       ],
       "Draft deleted": [
         "Entwurf wurde gelöscht"
@@ -6150,8 +6150,8 @@
       "Mail list unsubscribed": [
         "Aus Verteilerliste ausgetragen"
       ],
-      "Message added to ${ labelName }": [
-        "Nachricht zu „${ labelName }” hinzugefügt"
+      "Message added to ${ labelName }.": [
+        "Nachricht zu „${ labelName }” hinzugefügt."
       ],
       "Message content search activated": [
         "Suche nach Nachrichteninhalten aktiviert"
@@ -6165,8 +6165,8 @@
       "Message marked as read.": [
         "Nachricht als „Gelesen” gekennzeichnet."
       ],
-      "Message marked as Starred": [
-        "Nachricht gekennzeichnet"
+      "Message marked as Starred.": [
+        "Nachricht gekennzeichnet."
       ],
       "Message marked as unread.": [
         "Nachricht als „Ungelesen” gekennzeichnet."
@@ -6180,8 +6180,8 @@
       "Message moved to spam and sender added to Block List.": [
         "Nachricht nach Spam verschoben und Absender zur Sperrliste hinzugefügt."
       ],
-      "Message removed from ${ labelName }": [
-        "Nachricht aus „${ labelName }” entfernt"
+      "Message removed from ${ labelName }.": [
+        "Nachricht aus „${ labelName }” entfernt."
       ],
       "Move ${ selectionCount } conversation": [
         "${ selectionCount } Thema verschieben",

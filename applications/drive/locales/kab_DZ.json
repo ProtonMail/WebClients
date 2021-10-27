@@ -187,6 +187,9 @@
       "Download": [
         "Asader"
       ],
+      "Drive Locked": [
+        ""
+      ],
       "Edit": [
         "Ẓreg"
       ],
@@ -1097,8 +1100,8 @@
       "Can't validate phone, try again later": [
         "Ulamek aseɣbel n tiliɣri, eɛreḍ areḍqal"
       ],
-      "Checkout expired, please try again.": [
-        "Asenqed iɛedda wakud-is, ttxil-k·m ɛreḍ tikkelt-nniḍen."
+      "Checkout expired, please try again": [
+        ""
       ],
       "Contact could not be saved": [
         "Ur nezmir ara ad nsekles anermis"
@@ -1687,6 +1690,10 @@
       "${ vpnAppName } Free": [
         "${ vpnAppName } Baṭel"
       ],
+      "(${ memberCount } member)": [
+        "",
+        ""
+      ],
       "(Mail + VPN)": [
         "(Imayl + VPN)"
       ],
@@ -1753,6 +1760,9 @@
       "Amount below minimum (${ amount }).": [
         "Azal ddaw n wadday (${ amount })."
       ],
+      "An active recovery file": [
+        ""
+      ],
       "and": [
         ""
       ],
@@ -1768,6 +1778,9 @@
       ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Inig azaduran akked tigawin ad qqimen wejden ama remden neɣ ur rmiden ara yinegzumen n unasiw deg yiɣewwaren."
+      ],
+      "Because ${ appName } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
+        ""
       ],
       "Billed as ${ billedPrice } every 2 years": [
         "After s ${ billedPrice } yal 2 n yiseggasen"
@@ -1820,6 +1833,9 @@
       "Connections": [
         "Tuqqniwin"
       ],
+      "Continue using ${ appName } and unlock drive later": [
+        ""
+      ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "",
         ""
@@ -1847,6 +1863,10 @@
       ],
       "Creating share": [
         "Timerna n beṭṭu"
+      ],
+      "Delete drive": [
+        "",
+        ""
       ],
       "Discount applied to your subscription with coupon ${ code }": [
         "Yettwag usenqes ɣef umulteɣ-inek·inem s ukupun ${ code }"
@@ -1943,6 +1963,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Ma ur tufiḍ ara imayl deg tnaka n urmas, ttxil-k/m wali deg ukaram n ispamen."
+      ],
+      "If you have one of these, continue to Proton account setting to\ncontinue the unblock process.": [
+        ""
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         ""
@@ -2071,6 +2094,9 @@
       "of": [
         "n"
       ],
+      "One of your encrypted drives is locked. This is most likely due to a recent password reset.${ BrElement }\n${ BrElement }\n${ questionText }": [
+        ""
+      ],
       "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
         "Beddel iɣewwaren-agi ma yella tesseqdaceḍ PGP akked iɣerwaḍen ur nesseqdac ara ProtonMail."
       ],
@@ -2085,6 +2111,9 @@
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Lexlaṣ yemmesten s TLS akked leqwanen n tbaḍnit n Swis."
+      ],
+      "Permanently delete all files in your drive": [
+        ""
       ],
       "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
         "PGP/Inline yemṣada kan akked umasal aḍris. Ttxil-k ẓer d akken ProtonMail ittezmil dayem iznan iwgelhanen."
@@ -2183,8 +2212,8 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Segmi telliḍ d aseqdac imekdi, amiḍan-inek• inem yesɛa tiwuriwin n zzyada iremden."
       ],
-      "Some of your files are no longer accessible. Restore the access to your files. ${ startRecoveryButton }": [
-        "Kra seg yifuyla-inek·inem anekcum ɣur-sen d awezɣi. Err-d anekcum ɣer yifuyla-inek·inem. ${ startRecoveryButton }"
+      "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
+        ""
       ],
       "Something went wrong, please try again later.": [
         "Yella wayen ur nteddu ara akken iwata, ttxil-k·m ɛreḍ tikkelt-nniḍen."
@@ -2274,6 +2303,9 @@
       "Trash": [
         "Taqecwalt"
       ],
+      "Unlock drive to recover files": [
+        ""
+      ],
       "Unsupported file": [
         "Afaylu ur yettwasefrak ara"
       ],
@@ -2320,6 +2352,9 @@
         "Acu tebɣiḍ ad txedmeḍ?"
       ],
       "What do you want to import from your Google account?": [
+        ""
+      ],
+      "What would you like to do?": [
         ""
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
@@ -2409,14 +2444,20 @@
       "Your file is being downloaded.": [
         "Afaylu-inek·inem mazal-it ad d-yettali."
       ],
-      "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ mailSettingsLink }": [
-        "Dayen ur tettizmireḍ ara ad tkecmeḍ ɣer yifuyla-inek·inem ssebba n uwenez n wawal uffir. Ales asali n tsarut n uwgelhen taqburt i wakken ad d-terred anekcum. ${ mailSettingsLink }"
+      "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ KeyReactivationButton }": [
+        ""
       ],
       "Your files will be encrypted and then saved.": [
         "Ifuyla-k.m ad ttwawgelhen syin ad ttwaskelsen."
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Uṭṭun-ik n tiliɣṛi ad yettwaseqdec kan tikkelt deg usenqed-agi."
+      ],
+      "Your previous password": [
+        ""
+      ],
+      "Your previous recovery phrase": [
+        ""
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "Amiḍan-inek/m Proton yettwaḥbes akka tura. Akken ad tkemmleḍ aseqdec n umiḍan-inek/m, ttxil-k/m xelleṣ tifaturin yellan."
@@ -2745,6 +2786,10 @@
       "CVV code": [
         "Tangalt CVC"
       ],
+      "Delete Drive?": [
+        "",
+        ""
+      ],
       "Display name": [
         "Isem n uskan"
       ],
@@ -2952,6 +2997,9 @@
       "Text": [
         "Aḍris"
       ],
+      "This will permanently delete all files in your locked drive.": [
+        ""
+      ],
       "To: ${ emailAddress }": [
         ""
       ],
@@ -2966,6 +3014,15 @@
       ],
       "Unknown file": [
         "Afaylu arussin"
+      ],
+      "Unlock Drive": [
+        ""
+      ],
+      "Unlock drive (recommended)": [
+        ""
+      ],
+      "Unlock later": [
+        ""
       ],
       "Up to ${ parentLinkName }": [
         ""
@@ -2990,6 +3047,9 @@
       ],
       "What happened?": [
         "D acu akka ay yeḍran?"
+      ],
+      "Yes, I want to permanently delete\nmy old files": [
+        ""
       ],
       "ZIP": [
         "Tangalt n lpusṭa"
@@ -3256,9 +3316,9 @@
       "\"${ firstItemName }\" restored from trash": [
         "\"${ firstItemName }\" yettwarra-d seg tqecwalt"
       ],
-      "${ deletedCount } link to your file was deleted.": [
-        "Nufa-d ${ deletedCount } n useɣwen ɣer ufaylu-inek•m.",
-        "${ deletedCount } n yisɣewnen ɣer yifuyla-inek•m ttwakksen."
+      "${ deletedCount } link to your file was deleted": [
+        "",
+        ""
       ],
       "${ deletedItemsCount } file deleted permanently from trash": [
         "Ifuyla ${ deletedItemsCount } ttwakksen seg tqecwalt i lebda",
@@ -3272,9 +3332,9 @@
         "${ deletedItemsCount } n uferdis yettwakkes seg tqecwalt s wudem imezgi",
         "${ deletedItemsCount } n yiferdisen ttwakksen seg tqecwalt s wudem imezgi"
       ],
-      "${ failedCount } link to your file failed to be deleted.": [
-        "${ failedCount } n useɣwen ɣer ufaylu-inek•m ulamek ara yettwakkes.",
-        "${ failedCount } n yisɣewnen ɣer yifuyla-inek•m ulamek ara ttwakksen."
+      "${ failedCount } link to your file failed to be deleted": [
+        "",
+        ""
       ],
       "${ failedMovesCount } file failed to be moved": [
         "Asmutti n ${ failedMovesCount } n ufaylu ur yeddi ara",
@@ -3379,14 +3439,17 @@
       "Not enough space to upload ${ formattedTotal }": [
         ""
       ],
-      "The link to your file failed to be deleted.": [
-        "Ulamek tukksa n uaseɣwen ɣer ufaylu-inek•m."
+      "The link to your file failed to be deleted": [
+        ""
       ],
-      "The link to your file was deleted.": [
-        "Aseɣwen ɣer ufaylu-inek m yettwakkes."
+      "The link to your file was deleted": [
+        ""
       ],
-      "Your settings have been changed successfully.": [
-        "Iɣewwaren-ik·im ggwabeddlen war ugur."
+      "Your old files will be deleted in 72 hours": [
+        ""
+      ],
+      "Your settings have been changed successfully": [
+        ""
       ]
     },
     "Onboarding Proton": {
@@ -3810,11 +3873,11 @@
       "Preferences saved": [
         "Ismenyifen ttwaskelsen"
       ],
-      "Recovery has started.": [
-        "Tiririt tebda."
+      "Recovery has started": [
+        ""
       ],
-      "The link to your file was successfully copied.": [
-        "Aseɣwen ɣer ufaylu-inek m yettwanɣel akken iwata."
+      "The link to your file was successfully copied": [
+        ""
       ],
       "Verification successful": [
         "Asenqed yedda akken iwata"
@@ -3822,8 +3885,8 @@
       "You have successfully unsubscribed": [
         "Teffɣeḍ seg ujerred akken iwata"
       ],
-      "Your files were successfully recovered to \"My files\".": [
-        "Ifuyla-inek·inem ttwarran-d akken iwata ɣer \"Ifuyla-inu\"."
+      "Your files were successfully recovered to \"My files\"": [
+        ""
       ]
     },
     "Suffix for price": {
@@ -4383,6 +4446,11 @@
         "ZIP / tangalt n lpusṭa"
       ]
     },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        ""
+      ]
+    },
     "Tooltip": {
       "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
         "Kcem ɣer ugbur yettwagedlen sɣur timura (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, You Tube, atg) anda tebɣuḍ tiliḍ."
@@ -4639,6 +4707,9 @@
       ],
       "The contact failed to load.": [
         "Asali n unermis ur yeddi ara."
+      ],
+      "The date and time settings on your device are out of sync. ${ learnMore }": [
+        ""
       ],
       "The decryption of the encrypted content failed.": [
         "Tukksa n uwgelhen n ugbur awgelhan ur yeddi ara."
