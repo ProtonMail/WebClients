@@ -6,7 +6,6 @@ import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 
 import { Alert, Button, Href, LearnMore, Tabs } from '../../../components';
 import useApi from '../../../hooks/useApi';
-import useModals from '../../../hooks/useModals';
 import useNotifications from '../../../hooks/useNotifications';
 import useLoading from '../../../hooks/useLoading';
 import { VerificationModel } from './interface';
@@ -14,7 +13,6 @@ import { getRoute } from './helper';
 import Captcha from './Captcha';
 import EmailMethodForm from './EmailMethodForm';
 import PhoneMethodForm from './PhoneMethodForm';
-import InvalidVerificationCodeModal from './InvalidVerificationCodeModal';
 import VerifyCodeForm from './VerifyCodeForm';
 
 import './HumanVerificationModal.scss';
@@ -23,6 +21,7 @@ export enum HumanVerificationSteps {
     ENTER_DESTINATION,
     VERIFY_CODE,
     REQUEST_NEW_CODE,
+    INVALID_CODE,
 }
 
 const Text = ({ children }: { children: ReactNode }) => {
@@ -53,7 +52,6 @@ const HumanVerificationForm = ({
     onChangeStep,
 }: Props) => {
     const api = useApi();
-    const { createModal } = useModals();
     const { createNotification } = useNotifications();
     const [loadingResend, withLoadingResend] = useLoading();
 
@@ -85,7 +83,7 @@ const HumanVerificationForm = ({
             const { data: { Code } = { Code: 0 } } = error;
 
             if (Code === API_CUSTOM_ERROR_CODES.TOKEN_INVALID) {
-                createModal(<InvalidVerificationCodeModal onEdit={handleEditDestination} onResend={handleResend} />);
+                onChangeStep(HumanVerificationSteps.INVALID_CODE);
             }
         }
     };
@@ -189,18 +187,53 @@ const HumanVerificationForm = ({
         );
     }
 
+    if (step === HumanVerificationSteps.INVALID_CODE) {
+        return (
+            <>
+                <h1 className="h6 text-bold">{c('Title').t`Invalid verification code`}</h1>
+                <p>
+                    {c('Info')
+                        .t`Would you like to receive a new verification code or use an alternative verification method?`}
+                </p>
+                <Button
+                    fullWidth
+                    size="large"
+                    color="norm"
+                    type="button"
+                    loading={loadingResend}
+                    onClick={async () => {
+                        await withLoadingResend(handleResend());
+                        onChangeStep(HumanVerificationSteps.VERIFY_CODE);
+                    }}
+                >
+                    {c('Action').t`Request new code`}
+                </Button>
+                <Button
+                    fullWidth
+                    className="mt0-5"
+                    size="large"
+                    color="weak"
+                    type="button"
+                    onClick={handleEditDestination}
+                >
+                    {c('Action').t`Try another method`}
+                </Button>
+            </>
+        );
+    }
+
     if (step === HumanVerificationSteps.REQUEST_NEW_CODE && verificationModel) {
         const strong = <strong key="email">{verificationModel.value}</strong>;
 
         return (
             <>
-                <div className="mb2">
+                <p className="mt0">
                     {verificationModel.method === 'email'
                         ? c('Info')
                               .jt`Click "Request new code" to have a new verification code sent to ${strong}. If this email address is incorrect, click "Edit" to correct it.`
                         : c('Info')
                               .jt`Click "Request new code" to have a new verification code sent to ${strong}. If this phone number is incorrect, click "Edit" to correct it.`}
-                </div>
+                </p>
                 <Button
                     size="large"
                     color="norm"
