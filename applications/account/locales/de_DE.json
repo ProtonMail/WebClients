@@ -31,11 +31,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } - Shop"
       ],
-      "Activate": [
-        "Aktivieren"
-      ],
       "activate": [
         "aktivieren"
+      ],
+      "Activate": [
+        "Aktivieren"
       ],
       "Activate ${ Name }@pm.me": [
         "${ Name }@pm.me aktivieren"
@@ -385,6 +385,9 @@
       "Import contacts": [
         "Kontakte importieren"
       ],
+      "Import from .csv or vCard": [
+        "Aus CSV-Datei oder vCard importieren"
+      ],
       "Import from .ics": [
         "Aus .ICS-Datei importieren"
       ],
@@ -657,6 +660,9 @@
       ],
       "Sign out all accounts": [
         "Von allen Konten abmelden"
+      ],
+      "Signing in": [
+        "Anmelden …"
       ],
       "Signing out": [
         "Abmelden"
@@ -1784,8 +1790,8 @@
       "Can't validate phone, try again later": [
         "Telefon konnte nicht bestätigt werden. Bitte später erneut versuchen"
       ],
-      "Checkout expired, please try again.": [
-        "Kaufabwicklung abgelaufen. Bitte versuchen Sie es noch einmal."
+      "Checkout expired, please try again": [
+        "Kaufabwicklung abgelaufen. Bitte versuchen Sie es noch einmal"
       ],
       "Condition incomplete": [
         "Bedingung unvollständig"
@@ -1909,6 +1915,9 @@
       "Not a valid number": [
         "Keine gültige Ziffer"
       ],
+      "Organization key is not decrypted": [
+        "Organisationsschlüssel ist nicht entschlüsselt"
+      ],
       "Organization key is not decrypted.": [
         "Organisationsschlüssel wird nicht entschlüsselt."
       ],
@@ -1943,8 +1952,8 @@
         "Bitte beheben Sie den hervorgehobenen Konflikt, um fortfahren zu können.",
         "Bitte beheben Sie die hervorgehobenen Konflikte, um fortfahren zu können."
       ],
-      "Please generate keys before you try to change your password.": [
-        "Bitte generieren Sie Schlüssel, bevor Sie versuchen, Ihr Passwort zu ändern."
+      "Please generate keys before you try to change your password": [
+        "Bitte generieren Sie Schlüssel, bevor Sie versuchen, Ihr Passwort zu ändern"
       ],
       "Please refresh the page.": [
         "Bitte aktualisieren Sie die Seite."
@@ -1958,8 +1967,8 @@
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         "Bitte versuchen Sie, sich erneut zu authentifizieren und stellen Sie sicher, dass die Berechtigungen korrekt festgelegt wurden."
       ],
-      "Please upgrade to a Professional plan with more than 1 user, or a Visionary account, to get multi-user support.": [
-        "Bitte wechseln Sie zu einem Professional-Abonnement mit mehr als einem Benutzer oder zu einem Visionary-Konto, um Unterstützung für mehrere Benutzer zu erhalten."
+      "Please upgrade to a Professional plan with more than 1 user, or a Visionary account, to get multi-user support": [
+        "Bitte wechseln Sie zu einem Professional-Abonnement mit mehr als 1 Benutzer oder zu einem Visionary-Konto, um Unterstützung für mehrere Benutzer zu erhalten"
       ],
       "Please upgrade to a Professional plan with more than 1 user, or a Visionary account, to manage multiple users.": [
         "Bitte wechseln Sie auf ein Professional-Abonnement mit mehr als einem Benutzer oder ein Visionary-Konto, um mehrere Benutzer verwalten zu können."
@@ -2026,6 +2035,9 @@
       ],
       "The minimum payment we accept is ${ _price2 }": [
         "Die akzeptierte Mindestzahlbetrag beträgt ${ _price2 }"
+      ],
+      "The organization key must be activated first": [
+        "Der Organisationsschlüssel muss zunächst aktiviert werden"
       ],
       "The organization key must be activated first.": [
         "Der Organisationsschlüssel muss zuerst aktiviert werden."
@@ -2131,11 +2143,11 @@
       "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } events.": [
         "Ihre Datei „${ formattedFilename }” enthält mehr als ${ MAX_IMPORT_EVENTS_STRING } Ereignisse."
       ],
+      "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
+        "Ihre Datei ${ formattedFilename } hat eine ungültige Methode und kann nicht importiert werden."
+      ],
       "Your file ${ formattedFilename } has no events to be imported.": [
         "Ihre Datei „${ formattedFilename }” enthält keine zu importierenden Ereignisse."
-      ],
-      "Your file ${ formattedFilename } is an invitation and cannot be imported.": [
-        "Ihre Datei „${ formattedFilename }” ist eine Einladung und kann nicht importiert werden."
       ],
       "Your file ${ formattedFilename } is empty.": [
         "Ihre Datei „${ formattedFilename }” ist leer."
@@ -2249,7 +2261,7 @@
         "Ursprüngliches wiederkehrendes Ereignis konnte nicht gefunden werden"
       ],
       "Recurring event has no occurrences": [
-        ""
+        "Wiederkehrendes Ereignis enthält keine Termine"
       ],
       "Recurring rule not supported": [
         "Wiederkehrende Regel nicht unterstützt"
@@ -2683,38 +2695,27 @@
       ]
     },
     "Import calendar warning": {
-      "${ CALENDAR_APP_NAME } does not support ${ forNow }:": [
-        "${ CALENDAR_APP_NAME } unterstützt folgende Funktionen ${ forNow } nicht:"
-      ],
-      "Attendees": [
-        "Teilnehmer"
-      ],
-      "Complex recurring rules": [
-        "Komplexe wiederkehrende Regeln"
-      ],
-      "Email notifications": [
-        "E-Mail-Benachrichtigungen"
-      ],
-      "for now": [
-        "derzeit"
-      ],
-      "Free-busy time information": [
-        "Zeitinformationen zu Verfügbar/Beschäftigt"
-      ],
-      "Journal entries": [
-        "Tagebucheinträge"
-      ],
-      "Non-Gregorian calendars": [
-        "Nicht-Gregorianische Kalender"
-      ],
-      "To-do entries": [
-        "Einträge „Zu erledigen”"
-      ],
-      "Unofficial or custom timezones": [
-        "Inoffizielle oder benutzerdefinierte Zeitzonen"
+      "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
+        "${ CALENDAR_APP_NAME } unterstützt derzeit bestimmte Ereignistypen, Details und Formate nicht."
       ],
       "vCard versions < 3.0": [
         "vCard • Versionen < 3.0"
+      ]
+    },
+    "Import calendar; import invitation": {
+      "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your Proton email address.": [
+        "Importierte Einladungen werden in ${ CALENDAR_APP_NAME } als einzelne Ereignisse ohne Organisator- und Teilnehmerdetails angezeigt. Um Aktualisierungen der Ereignisse zu erhalten und die Teilnehmer anzuzeigen, bitten Sie die Organisatoren, Sie über Ihre Proton-E-Mail-Adresse einzuladen."
+      ],
+      "This file contains an event invitation:": [
+        "Diese Datei enthält eine Einladung zu einem Ereignis:",
+        "Diese Datei enthält Antworten auf eine Einladung:"
+      ],
+      "This file contains an invitation response:": [
+        "Diese Datei enthält eine Antwort auf eine Einladung:",
+        "Diese Datei enthält Antworten auf eine Einladung:"
+      ],
+      "This file contains some data that we cannot import:": [
+        "Diese Datei enthält einige Daten, die nicht importiert werden können:"
       ]
     },
     "Import contact": {
@@ -3000,17 +3001,17 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } von ${ totalContacts } Kontakt(en) werden nicht importiert. Anklicken, um Details anzuzeigen"
       ],
-      "${ totalEventsDiscarded } out of ${ totalEvents } events will not be imported. Click for details": [
-        "${ totalEventsDiscarded } von ${ totalEvents } Ereignissen werden nicht importiert. Klicken Sie für Details"
+      "${ totalEventsDiscarded } out of ${ totalEvents } events will not be imported. Expand for details.": [
+        "${ totalEventsDiscarded }/${ totalEvents } Ereignisse werden nicht importiert. Erweitern für Details."
       ],
       "No contact can be imported. Click for details": [
         "Kontakt(e) konnten nicht importiert werden. Anklicken, um Details anzuzeigen"
       ],
-      "No event can be imported. Click for details": [
-        "Kein Ereignis konnte importiert werden. Anklicken, um Details anzuzeigen"
+      "No event can be imported. Expand for details.": [
+        "Es konnte kein Ereignis importiert werden. Erweitern, um Details zu erfahren."
       ],
-      "Part of your calendar content is not supported and will not be imported": [
-        "Ein Teil Ihres Kalenderinhalts wird nicht unterstützt und wird nicht importiert"
+      "Part of your calendar content is not supported and will not be imported.": [
+        "Ein Teil Ihres Kalenderinhalts wird nicht unterstützt und wird nicht importiert."
       ]
     },
     "Info": {
@@ -3447,8 +3448,8 @@
       "Done": [
         "Fertig"
       ],
-      "Done! We sent a code to ${ destination }": [
-        "Geschafft! Es wurde ein Code an ${ destination } gesendet"
+      "Done! We sent a code to ${ destination }.": [
+        "Fertig! Es wurde ein Code an „${ destination }” gesendet."
       ],
       "Downgrading will terminate any connections to paid ProtonVPN servers.": [
         "Das Zurückstufen beendet alle Verbindungen zu kostenpflichtigen ProtonVPN-Servern."
@@ -3642,8 +3643,8 @@
       "Image URL": [
         "Bild-URL"
       ],
-      "Images have been removed because they are not allowed in auto-reply.": [
-        "Bilder wurden entfernt, da diese in automatischen Antworten nicht zulässig sind."
+      "Images have been removed because they are not allowed in auto-reply": [
+        "Grafiken wurden entfernt, da diese in automatischen Antworten nicht zulässig sind"
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "${ contactsFragment } und ${ contactsGroupsFragment } importieren"
@@ -7153,8 +7154,8 @@
       "Deleting original messages": [
         "Originalnachrichten werden gelöscht"
       ],
-      "DMARC value copied to clipboard!": [
-        "DMARC-Wert in die Zwischenablage kopiert!"
+      "DMARC value copied to clipboard": [
+        "DMARC-Wert wurde in die Zwischenablage kopiert"
       ],
       "Domain verified": [
         "Domain verifiziert"
@@ -7228,8 +7229,8 @@
       "Sessions revoked": [
         "Sitzungen zurückgenommen"
       ],
-      "SPF value copied to clipboard!": [
-        "SPF-Wert in die Zwischenablage kopiert!"
+      "SPF value copied to clipboard": [
+        "SPF-Wert wurde in die Zwischenablage kopiert"
       ],
       "User created": [
         "Benutzer erstellt"
@@ -7237,11 +7238,11 @@
       "User updated": [
         "Benutzer aktualisiert"
       ],
-      "Value copied to clipboard!": [
-        "Wert wurde in die Zwischenablage kopiert!"
+      "Value copied to clipboard": [
+        "Wert wurde in die Zwischenablage kopiert"
       ],
-      "Verification code copied to clipboard!": [
-        "Bestätigungscode in die Zwischenablage kopiert!"
+      "Verification code copied to clipboard": [
+        "Bestätigungscode wurde in die Zwischenablage kopiert"
       ],
       "Verification successful": [
         "Erfolgreich bestätigt"
@@ -7571,6 +7572,9 @@
       "Contacts": [
         "Kontakte"
       ],
+      "Continue with partial import?": [
+        "Mit Teilimport fortfahren?"
+      ],
       "Coupon discount": [
         "Gutscheinrabatt"
       ],
@@ -7775,6 +7779,10 @@
       "Import & export": [
         "Im-/Export"
       ],
+      "Import as simple event?": [
+        "Als einzelnes Ereignis importieren?",
+        "Als einzelne Ereignisse importieren?"
+      ],
       "Import Assistant": [
         "Importassistent"
       ],
@@ -7783,6 +7791,9 @@
       ],
       "Import events": [
         "Ereignisse importieren"
+      ],
+      "Import failed": [
+        "Import fehlgeschlagen"
       ],
       "Import groups": [
         "Gruppen importieren"

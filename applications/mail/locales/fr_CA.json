@@ -962,9 +962,6 @@
       "Forwarded": [
         "Transféré"
       ],
-      "Has attachments": [
-        "Comporte des pièces jointes"
-      ],
       "Replied to": [
         "Répondu à"
       ],
@@ -1067,6 +1064,91 @@
       ],
       "Two-year": [
         "Bisannuel"
+      ]
+    },
+    "blackfriday Action": {
+      "Get limited-time deal": [
+        ""
+      ],
+      "Upgrade": [
+        ""
+      ]
+    },
+    "blackfriday Info": {
+      "Discounts are based on monthly pricing.": [
+        ""
+      ],
+      "early access to": [
+        ""
+      ],
+      "Free": [
+        ""
+      ],
+      "Get early access to our new encrypted drive for FREE by upgrading to a Plus bundle now.": [
+        ""
+      ],
+      "Includes": [
+        ""
+      ],
+      "Offer valid only for first-time paid subscriptions.": [
+        ""
+      ],
+      "ProtonDrive": [
+        ""
+      ],
+      "Save ${ percentage }%": [
+        ""
+      ],
+      "Standard price: ${ regularPrice }": [
+        ""
+      ],
+      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
+        ""
+      ]
+    },
+    "blackfriday info": {
+      "per month": [
+        ""
+      ]
+    },
+    "blackfriday Promo title, need to be short": {
+      "Special offer": [
+        ""
+      ]
+    },
+    "blackfriday Title": {
+      "(${ notice }) Renews after 1 year at a discounted annual & bundle price of ${ amount } every year (36% discount).": [
+        ""
+      ],
+      "(${ notice }) Renews after 1 year at a discounted annual price of ${ amount } every year (20% discount).": [
+        ""
+      ],
+      "(${ notice }) Renews after 2 years at a discounted 2-year price of ${ amount } every 2 years (47% discount).": [
+        ""
+      ],
+      "Billed as ${ amount } ${ supNotice }": [
+        ""
+      ],
+      "Black Friday Sale": [
+        ""
+      ],
+      "Cyber Monday Sale": [
+        ""
+      ],
+      "for 1 month": [
+        ""
+      ],
+      "for 1 year": [
+        ""
+      ],
+      "for 2 years": [
+        ""
+      ],
+      "Most popular": [
+        ""
+      ],
+      "ProtonDrive early access offer": [
+        ""
       ]
     },
     "Bug category": {
@@ -1799,8 +1881,8 @@
       "Amount below minimum.": [
         "Montant inférieur au minimum autorisé."
       ],
-      "Attachments are limited to 25 MB.": [
-        "Les pièces jointes sont limitées à 25 Mo."
+      "Attachments are limited to 25 MB": [
+        ""
       ],
       "Authentication canceled.": [
         "Authentification annulée."
@@ -1809,13 +1891,13 @@
         "Erreur d'authentification."
       ],
       "Calendar limit reached": [
-        ""
+        "Limite de calendriers atteinte"
       ],
       "Calendar primary private key is not decrypted": [
         "La clé privée principale du calendrier n'est pas déchiffrée"
       ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
-        ""
+        "Impossible de créer de nouveaux calendriers pour tous les calendriers importés en raison de la limite de calendriers personnels."
       ],
       "Can't validate email, try again later": [
         "Impossible de valider l'adresse électronique, veuillez réessayer plus tard"
@@ -1823,8 +1905,8 @@
       "Can't validate phone, try again later": [
         "Impossible de valider le numéro de téléphone, veuillez réessayer plus tard"
       ],
-      "Checkout expired, please try again.": [
-        "La commande a expiré, veuillez réessayer."
+      "Checkout expired, please try again": [
+        ""
       ],
       "Choose a date in the future.": [
         "Choisissez une date dans le futur."
@@ -1845,11 +1927,11 @@
       "Contact signature not verified": [
         "Signature du contact non vérifiée"
       ],
-      "Contact your organization’s administrator to resolve this.": [
-        "Contactez l’administrateur de votre organisation pour résoudre ce problème."
+      "Contact your organization’s administrator to resolve this": [
+        ""
       ],
-      "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser": [
-        "La recherche de contenu ne peut pas être activée dans ce navigateur. Veuillez quitter la navigation privée ou essayer avec un autre navigateur"
+      "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
+        ""
       ],
       "Could not find address ${ email }.": [
         "Impossible de trouver l'adresse ${ email }."
@@ -1858,8 +1940,8 @@
         "Erreur de déchiffrement: le déchiffrement du contenu chiffré de ce message a échoué."
       ],
       "Deselect at least ${ calendarToFixCount } calendar or": [
-        "",
-        ""
+        "Désélectionnez au moins ${ calendarToFixCount } calendrier ou",
+        "Désélectionnez au moins ${ calendarToFixCount } calendriers ou"
       ],
       "Draft could not be saved. Try again.": [
         "Le brouillon n'a pas pu être enregistré. Veuillez réessayer."
@@ -1885,14 +1967,14 @@
       "Error in one of the conditions": [
         "Erreur dans une des conditions"
       ],
-      "Error while saving draft. Please try again": [
-        "Erreur lors de l'enregistrement du brouillon. Veuillez réessayer"
+      "Error while saving draft. Please try again.": [
+        ""
       ],
-      "Error while sending the message. Message is not sent": [
-        "Erreur lors de l'envoi du message. Le message n'est pas envoyé"
+      "Error while sending the message. Message is not sent.": [
+        ""
       ],
-      "Error while uploading attachments. Message is not sent": [
-        "Erreur lors du téléversement des pièces jointes. Le message n'est pas envoyé"
+      "Error while uploading attachments. Message is not sent.": [
+        ""
       ],
       "Failed to encrypt attachment. Please try again.": [
         "Échec du chiffrement de la pièce jointe. Veuillez essayer à nouveau."
@@ -1904,7 +1986,7 @@
         "Un filtre avec ce nom existe déjà"
       ],
       "Folder name cannot be empty": [
-        ""
+        "Le nom de dossier ne peut être vide"
       ],
       "Image upload failed": [
         "Échec du téléversement de l'image"
@@ -1927,8 +2009,8 @@
       "Invalid expiration date": [
         "Date d'expiration invalide"
       ],
-      "Invalid expiration time.": [
-        "Délai d'expiration invalide."
+      "Invalid expiration time": [
+        ""
       ],
       "Invalid name": [
         "Nom invalide"
@@ -1943,17 +2025,17 @@
         "Code de vérification invalide"
       ],
       "Label name cannot be empty": [
-        ""
+        "Le nom du label ne peut pas être vide"
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
-        "",
-        ""
+        "Fusionnez au moins ${ calendarToFixCount } calendrier avec un calendrier Proton existant",
+        "Fusionnez au moins ${ calendarToFixCount } calendriers avec des calendriers Proton existants"
       ],
       "Message needs to be sent first": [
         "Le message doit d'abord être envoyé"
       ],
-      "Message passwords do not match.": [
-        "Les mots de passe du message ne correspondent pas."
+      "Message passwords do not match": [
+        ""
       ],
       "Message processing error.": [
         "Erreur de traitement du message."
@@ -1967,8 +2049,8 @@
       "Network error: Please check your connection and try again.": [
         "Erreur réseau: veuillez vérifier votre connexion et réessayer."
       ],
-      "No address with keys available to compose a message.": [
-        "Aucune adresse avec des clés disponibles pour écrire un message."
+      "No address with keys available to compose a message": [
+        ""
       ],
       "No key retrieved for internal user is valid for sending": [
         "Aucune clé récupérée pour l'utilisateur interne n'est valide pour l'envoi"
@@ -1977,7 +2059,7 @@
         "Aucune clé récupérée pour l'utilisateur interne"
       ],
       "No valid address found": [
-        ""
+        "Aucune adresse valide trouvée"
       ],
       "No valid keys retrieved for internal user": [
         "Aucune clé valide récupérée pour l'utilisateur interne"
@@ -2015,8 +2097,8 @@
         "Veuillez réactiver la recherche de contenu"
       ],
       "Please fix the highlighted conflict to proceed.": [
-        "",
-        ""
+        "Veuillez corriger le conflit en surbrillance pour continuer.",
+        "Veuillez corriger les conflits en surbrillance pour continuer."
       ],
       "Please refresh the page.": [
         "Veuillez actualiser la page."
@@ -2025,10 +2107,10 @@
         "Les préférences n'ont pas pu être enregistrées"
       ],
       "Primary address key is not decrypted": [
-        ""
+        "La clé d'adresse principale n'est pas déchiffrée"
       ],
       "Primary address key is not decrypted.": [
-        ""
+        "La clé d'adresse principale n'est pas déchiffrée."
       ],
       "Process aborted": [
         "Processus annulé"
@@ -2068,10 +2150,10 @@
         "Certains groupes n'ont pas pu être supprimés"
       ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
-        ""
+        "Certains de vos noms de labels ne sont pas disponibles. Veuillez personnaliser l'importation pour modifier ces noms."
       ],
       "Some of your label names exceed ProtonMail's maximum character limit. Please customize the import to edit these names.": [
-        ""
+        "Certains de vos noms de labels dépassent la limite de caractères autorisée par ProtonMail. Veuillez personnaliser l'importation pour modifier ces noms."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Une erreur est survenue, veuillez ${ refresh } pour continuer. Si vous voyez toujours ce message d'erreur, veuillez contacter notre ${ supportTeam }."
@@ -2093,16 +2175,16 @@
         "Le composeur n'a pas pu être chargé."
       ],
       "The folder name is too long. Please choose a different name.": [
-        ""
+        "Le nom du dossier est trop long. Veuillez en choisir un autre."
       ],
       "The key properties for ${ emailAddress } could not be extracted": [
         "Les propriétés de la clé pour ${ emailAddress } n'ont pas pu être extraites"
       ],
       "The label name is too long. Please choose a different name.": [
-        ""
+        "Le nom du label est trop long. Veuillez en choisir un autre."
       ],
-      "The maximum expiration is 4 weeks.": [
-        "Le délai d’expiration maximal est de 4 semaines."
+      "The maximum expiration is 4 weeks": [
+        ""
       ],
       "The minimum amount of credit that can be added is ${ _price }": [
         "Le montant minimal de crédit qui peut être ajouté est ${ _price }"
@@ -2117,10 +2199,10 @@
         "La clé d'envoi n'est pas valide"
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
-        ""
+        "Il y a trop de dossiers dans votre compte externe. Veuillez personnaliser l'importation pour supprimer certains dossiers."
       ],
-      "There has been an issue with content search. Default search has been used instead": [
-        "Un problème est survenu avec la recherche de contenu. La recherche par défaut a été utilisée à la place"
+      "There has been an issue with content search. Default search has been used instead.": [
+        ""
       ],
       "There was an error when exporting the contacts vCards": [
         "Une erreur s'est produite lors de l'exportation des vCards des contacts"
@@ -2132,13 +2214,13 @@
         "Ce champ nécessite un minimum de ${ minimumLength } caractères."
       ],
       "This folder name is not available. Please choose a different name": [
-        ""
+        "Ce nom de dossier n'est pas disponible. Veuillez choisir un autre nom"
       ],
       "This label name is not available. Please choose a different name": [
-        ""
+        "Ce nom de label n'est pas disponible. Veuillez en choisir un autre"
       ],
-      "This message has already been sent.": [
-        "Ce message a déjà été envoyé."
+      "This message has already been sent": [
+        ""
       ],
       "This message has already been sent. A new draft has been saved.": [
         "Ce message a déjà été envoyé. Un nouveau brouillon a été enregistré."
@@ -2146,8 +2228,8 @@
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "Ce message peut contenir des liens URL qui pourraient ne pas être correctement ouverts par votre navigateur actuel"
       ],
-      "Too many active filters. Please upgrade to a paid plan to activate more filters": [
-        "Trop de filtres actifs. Veuillez passer à une offre payante pour activer plus de filtres"
+      "Too many active filters. Please upgrade to a paid plan to activate more filters.": [
+        ""
       ],
       "Trusted keys are not valid for sending": [
         "Les clés approuvées ne sont pas valides pour l'envoi"
@@ -2167,9 +2249,9 @@
       "You can't send vCards of more than 10 contacts": [
         "Vous ne pouvez pas envoyer de vCards de plus de 10 contacts"
       ],
-      "You cannot open more than ${ maxActiveComposer } composer window at a time.": [
-        "Vous ne pouvez pas ouvrir plus de ${ maxActiveComposer } fenêtre de composeur à la fois.",
-        "Vous ne pouvez pas ouvrir plus de ${ maxActiveComposer } fenêtres de composeur à la fois."
+      "You cannot open more than ${ maxActiveComposer } composer window at a time": [
+        "",
+        ""
       ],
       "You did not provide a file.": [
         "Vous n'avez pas fourni de fichier."
@@ -2186,8 +2268,8 @@
       "Your import will not be processed.": [
         "Votre importation ne sera pas traitée."
       ],
-      "Your search matched too many results. Please limit your search and try again": [
-        "Trop de résultats correspondent à votre recherche. Veuillez restreindre votre recherche et essayez à nouveau"
+      "Your search matched too many results. Please limit your search and try again.": [
+        ""
       ]
     },
     "Error display when performing invalid move on message": {
@@ -2772,12 +2854,12 @@
         ""
       ],
       "${ selectedFoldersCount } folder selected": [
-        "",
-        ""
+        "${ selectedFoldersCount } dossier sélectionné",
+        "${ selectedFoldersCount } dossiers sélectionnés"
       ],
       "${ selectedFoldersCount } label selected": [
-        "",
-        ""
+        "${ selectedFoldersCount } label sélectionné",
+        "${ selectedFoldersCount } labels sélectionnés"
       ],
       "${ total } conversation": [
         "${ total } conversation",
@@ -2895,12 +2977,12 @@
         "Aligner à droite"
       ],
       "All (${ totalFoldersCount } folder)": [
-        "",
-        ""
+        "Tous (${ totalFoldersCount } dossier)",
+        "Tous (${ totalFoldersCount } dossiers)"
       ],
       "All (${ totalFoldersCount } label)": [
-        "",
-        ""
+        "Tous (${ totalFoldersCount } label)",
+        "Tous (${ totalFoldersCount } labels)"
       ],
       "All messages stored in this folder will be permanently deleted.": [
         "Tous les messages stockés dans ce dossier seront définitivement supprimés."
@@ -3039,10 +3121,10 @@
         ""
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
-        ""
+        "Créez un label pour les messages importés, une plage de temps pour cette importation et les dossiers que vous souhaitez importer."
       ],
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
-        ""
+        "Créez un label pour les messages importés, une plage de temps pour cette importation et les dossiers que vous souhaitez importer."
       ],
       "Create a new contact group": [
         "Créer un nouveau groupe de contacts"
@@ -3231,8 +3313,8 @@
       "Image URL": [
         "URL de l'image"
       ],
-      "Images have been removed because they are not allowed in auto-reply.": [
-        "Les images ont été supprimées, car elles ne sont pas autorisées dans la réponse automatique."
+      "Images have been removed because they are not allowed in auto-reply": [
+        ""
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         ""
@@ -3337,6 +3419,9 @@
       ],
       "Message sent": [
         "Message envoyé"
+      ],
+      "Message sent.": [
+        ""
       ],
       "Message will be sent ${ dateString } at ${ formattedTime }": [
         "Le message va être envoyé le ${ dateString } à ${ formattedTime }"
@@ -3453,7 +3538,7 @@
         "Veuillez noter qu'en cliquant sur le bouton « Confirmer », votre compte disposera de ${ creditsRemaining } crédits restants."
       ],
       "Please select the folders you would like to import:": [
-        ""
+        "Veuillez sélectionner les dossiers que vous souhaitez importer:"
       ],
       "Please select the type of link you want to insert and fill in all the fields.": [
         "Veuillez sélectionner le type de lien que vous souhaitez insérer et remplir tous les champs."
@@ -3577,7 +3662,7 @@
         "L'envoi de messages depuis une adresse @pm.me est une fonctionnalité payante. Votre message sera envoyé à partir de votre adresse par défaut ${ email }"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
-        ""
+        "Les serveurs sont inaccessibles. Veuillez réessayer dans quelques minutes"
       ],
       "Session timed out.": [
         "Session expirée."
@@ -4904,23 +4989,23 @@
     },
     "Loading info": {
       "${ createdCalendars } of ${ calendarsToBeCreated } created": [
-        "",
-        ""
+        "${ createdCalendars } sur ${ calendarsToBeCreated } créé",
+        "${ createdCalendars } sur ${ calendarsToBeCreated } créés"
       ],
       "Almost there": [
         "Nous y sommes presque"
       ],
       "Creating new calendars": [
-        ""
+        "Création de nouveaux calendriers"
       ],
       "Gathering your data": [
         "Collecte de vos données"
       ],
       "We're gathering your data from your provider": [
-        ""
+        "Nous récupérons vos données auprès de votre fournisseur"
       ],
       "Your import is starting": [
-        ""
+        "Votre importation commence"
       ]
     },
     "Mail feature": {
@@ -5006,7 +5091,7 @@
     },
     "Mail import summary": {
       "${ messagesFragment } since ${ periodFragment } and label them as ${ label }": [
-        ""
+        "${ messagesFragment } depuis ${ periodFragment } et les labelliser comme ${ label }"
       ]
     },
     "Mailbox": {
@@ -5866,16 +5951,16 @@
     },
     "Spotlight": {
       "Message Content Search": [
-        ""
+        "Recherche de contenu de message"
       ],
       "To protect your privacy, Proton blocked email trackers in this message": [
-        ""
+        "Pour protéger votre vie privée, Proton a bloqué les traqueurs de courriel dans ce message"
       ],
       "You can now schedule your messages to be sent later": [
         "Vous pouvez maintenant programmer vos messages pour les envoyer plus tard"
       ],
       "You can now search the content of your encrypted emails.": [
-        ""
+        "Vous pouvez maintenant rechercher le contenu de vos courriels chiffrés."
       ]
     },
     "Status": {
@@ -6014,8 +6099,8 @@
       "Contacts deleted": [
         "Contacts supprimés"
       ],
-      "Conversation added to ${ labelName }": [
-        "Conversation ajoutée à ${ labelName }"
+      "Conversation added to ${ labelName }.": [
+        ""
       ],
       "Conversation deleted": [
         "Conversation supprimée"
@@ -6023,8 +6108,8 @@
       "Conversation marked as read.": [
         "Conversation marquée comme lue."
       ],
-      "Conversation marked as Starred": [
-        "Conversation marquée comme favorite"
+      "Conversation marked as Starred.": [
+        ""
       ],
       "Conversation marked as unread.": [
         "Conversation marquée comme non lue."
@@ -6038,8 +6123,8 @@
       "Conversation moved to spam and sender added to Block List.": [
         "Conversation déplacée vers les pourriels et expéditeur·rice ajouté·e à la liste de blocage."
       ],
-      "Conversation removed from ${ labelName }": [
-        "Conversation retirée de ${ labelName }"
+      "Conversation removed from ${ labelName }.": [
+        ""
       ],
       "Draft deleted": [
         "Brouillon supprimé"
@@ -6065,8 +6150,8 @@
       "Mail list unsubscribed": [
         "Désabonné·e de la liste de diffusion"
       ],
-      "Message added to ${ labelName }": [
-        "Message ajouté à ${ labelName }"
+      "Message added to ${ labelName }.": [
+        ""
       ],
       "Message content search activated": [
         "Recherche de contenu de message activée"
@@ -6080,8 +6165,8 @@
       "Message marked as read.": [
         "Message marqué comme lu."
       ],
-      "Message marked as Starred": [
-        "Message marqué comme favori"
+      "Message marked as Starred.": [
+        ""
       ],
       "Message marked as unread.": [
         "Message marqué comme non lu."
@@ -6095,8 +6180,8 @@
       "Message moved to spam and sender added to Block List.": [
         "Message déplacé vers les pourriels et expéditeur ajouté à la liste de blocage."
       ],
-      "Message removed from ${ labelName }": [
-        "Message retiré de ${ labelName }"
+      "Message removed from ${ labelName }.": [
+        ""
       ],
       "Move ${ selectionCount } conversation": [
         "Déplacer ${ selectionCount } conversation",
@@ -6203,13 +6288,13 @@
         "date de la création du compte"
       ],
       "the last 12 months": [
-        ""
+        "les 12 derniers mois"
       ],
       "the last 3 months": [
-        ""
+        "les 3 derniers mois"
       ],
       "the last month": [
-        ""
+        "le dernier mois"
       ]
     },
     "Time unit": {

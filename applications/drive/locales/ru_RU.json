@@ -191,6 +191,9 @@
       "Download": [
         "Скачать"
       ],
+      "Drive Locked": [
+        "Хранилище заблокировано"
+      ],
       "Edit": [
         "Изменить"
       ],
@@ -267,7 +270,7 @@
         "Импортировать"
       ],
       "Import from .csv or vCard": [
-        ""
+        "Импорт из .csv или vCard"
       ],
       "Increase": [
         "Увеличить"
@@ -549,10 +552,10 @@
         "Загрузить картинку"
       ],
       "Uploaded date: new to old": [
-        ""
+        "Дата загрузки: от новых к старым"
       ],
       "Uploaded date: old to new": [
-        ""
+        "Дата загрузки: от старых к новым"
       ],
       "Use ${ label } theme": [
         "Использовать тему ${ label }"
@@ -902,7 +905,7 @@
     },
     "Confirm modal title": {
       "Quit import customization?": [
-        ""
+        "Прекратить настройку импорта?"
       ]
     },
     "Contact field label": {
@@ -1104,10 +1107,10 @@
         "Ошибка аутентификации."
       ],
       "Calendar limit reached": [
-        ""
+        "Достигнут лимит календаря"
       ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
-        ""
+        "Невозможно создать новые календари для всех импортированных календарей из-за персонального лимита календарей."
       ],
       "Can't validate email, try again later": [
         "Не удается проверить адрес электронной почты. Повторите попытку позже."
@@ -1115,8 +1118,8 @@
       "Can't validate phone, try again later": [
         "Не удается проверить номер телефона. Повторите попытку позже."
       ],
-      "Checkout expired, please try again.": [
-        "Срок оформления заказа истек, пожалуйста, попробуйте еще раз."
+      "Checkout expired, please try again": [
+        "Срок оформления истек, пожалуйста, попробуйте снова"
       ],
       "Contact could not be saved": [
         "Контакт не может быть сохранён"
@@ -1131,10 +1134,10 @@
         "Невозможно сгенерировать ключи файла"
       ],
       "Deselect at least ${ calendarToFixCount } calendar or": [
-        "",
-        "",
-        "",
-        ""
+        "Отмените выбор по крайней мере ${ calendarToFixCount } календарь или",
+        "Отмените выбор по крайней мере ${ calendarToFixCount } календарей или",
+        "Отмените выбор по крайней мере ${ calendarToFixCount } календарей или",
+        "Отмените выбор по крайней мере ${ calendarToFixCount } календаря(ей) или"
       ],
       "Email address invalid": [
         "Неверный адрес электронной почты"
@@ -1149,7 +1152,7 @@
         "Ошибка при подключении к Bitcoin API."
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
-        ""
+        "Файл \"${ item.name }\" не может быть загружен из-за \"${ error }\" ошибки"
       ],
       "File cannot be merged with folder": [
         "Файл не может быть объединен с папкой"
@@ -1200,10 +1203,10 @@
         "Название ярлыка не может быть пустым"
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
-        "",
-        "",
-        "",
-        ""
+        "Объедините по крайней мере ${ calendarToFixCount } календарь с существующим календарем Proton",
+        "Объединить по крайней мере ${ calendarToFixCount } календарей с существующим календарем Proton",
+        "Объединить по крайней мере ${ calendarToFixCount } календарей с существующим календарем Proton",
+        "Объединить по крайней мере ${ calendarToFixCount } календарь(ей) с существующим календарем Proton"
       ],
       "Missing signature": [
         "Подпись отсутствует"
@@ -1245,10 +1248,10 @@
         "Процесс оплаты не поддерживается"
       ],
       "Please fix the highlighted conflict to proceed.": [
-        "",
-        "",
-        "",
-        ""
+        "Пожалуйста, исправьте выделенный конфликт, чтобы продолжить.",
+        "Пожалуйста, исправьте выделенные конфликты, чтобы продолжить.",
+        "Пожалуйста, исправьте выделенные конфликты, чтобы продолжить.",
+        "Пожалуйста, исправьте выделенные конфликты, чтобы продолжить."
       ],
       "Preferences could not be saved": [
         "Настройки не могут быть сохранены"
@@ -1257,7 +1260,7 @@
         "Основной ключ адреса не расшифрован"
       ],
       "Primary address key is not decrypted.": [
-        ""
+        "Основной ключ адреса не расшифрован."
       ],
       "Process aborted": [
         "Процесс прерван"
@@ -1278,10 +1281,10 @@
         "Некоторые группы не могут быть удалены"
       ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
-        ""
+        "Некоторые имена ваших ярлыков недоступны. Пожалуйста, настройте импорт для редактирования этих имен."
       ],
       "Some of your label names exceed ProtonMail's maximum character limit. Please customize the import to edit these names.": [
-        ""
+        "Некоторые названия ваших ярлыков превышают максимальный лимит символов ProtonMail. Пожалуйста, настройте импорт для редактирования этих имен."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Что-то пошло не так, пожалуйста ${ refresh } чтобы продолжить. Если вы все еще видите сообщение об ошибке, свяжитесь с нашей ${ supportTeam }."
@@ -1329,7 +1332,7 @@
         "Исходная папка или файл не найдены"
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
-        ""
+        "В вашей внешнем аккаунте слишком много папок. Пожалуйста, настройте импорт, чтобы удалить некоторые папки."
       ],
       "There was an error when exporting the contacts vCards": [
         "Произошла ошибка при экспорте визитных карточек контактов"
@@ -1365,7 +1368,7 @@
         "Вы должны задать имя"
       ],
       "Your browser does not support uploading folders": [
-        ""
+        "Ваш браузер не поддерживает загрузку папок"
       ],
       "Your import will not be processed.": [
         "Ваш импорт не будет обработан."
@@ -1465,7 +1468,7 @@
     },
     "Filter notification": {
       "${ Label.Name } updated": [
-        ""
+        "${ Label.Name } обновлён"
       ]
     },
     "Free price": {
@@ -1621,22 +1624,22 @@
         "${ appName } нужно ваше разрешение на ${ enableDesktopNotifications }."
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
-        "",
-        "",
-        "",
-        ""
+        "${ calendarsToBeCreatedCount } новый календарь",
+        "${ calendarsToBeCreatedCount } новых календарей",
+        "${ calendarsToBeCreatedCount } новых календарей",
+        "${ calendarsToBeCreatedCount } новых(ый) календарь(я,ей)"
       ],
       "${ calendarsToBeMerged } merged calendar": [
-        "",
-        "",
-        "",
-        ""
+        "${ calendarsToBeMerged } объединенный календарь",
+        "${ calendarsToBeMerged } объединенных календарей",
+        "${ calendarsToBeMerged } объединенных календарей",
+        "${ calendarsToBeMerged } объединенный(х) календарь(я,ей)"
       ],
       "${ calendarsToBeMergedCount } merged calendar": [
-        "",
-        "",
-        "",
-        ""
+        "${ calendarsToBeMergedCount } объединенный календарь",
+        "${ calendarsToBeMergedCount } объединенных календарей",
+        "${ calendarsToBeMergedCount } объединенных календарей",
+        "${ calendarsToBeMergedCount } объединенный(х) календарь(я,ей)"
       ],
       "${ canceledCount } Canceled": [
         "${ canceledCount } отменён",
@@ -1708,16 +1711,16 @@
         "${ namesWithoutLast } и ${ nameOfLast }"
       ],
       "${ numContactGroups } contact group": [
-        "",
-        "",
-        "",
-        ""
+        "${ numContactGroups } группа контактов",
+        "${ numContactGroups } групп контактов",
+        "${ numContactGroups } групп контактов",
+        "${ numContactGroups } групп(а,ы) контактов"
       ],
       "${ numContacts } contact": [
-        "",
-        "",
-        "",
-        ""
+        "${ numContacts } контакт",
+        "${ numContacts } контактов",
+        "${ numContacts } контактов",
+        "${ numContacts } контакт(а,ов)"
       ],
       "${ pausedCount } Paused": [
         "${ pausedCount } на паузе",
@@ -1735,22 +1738,22 @@
         "${ saveExtra20 } на VPN и Почте, добавив подписку на VPN."
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
-        "",
-        "",
-        "",
-        ""
+        "${ selectedCalendarsTotal } из ${ providerCalendars.length } календаря",
+        "${ selectedCalendarsTotal } из ${ providerCalendars.length } календарей",
+        "${ selectedCalendarsTotal } из ${ providerCalendars.length } календарей",
+        "${ selectedCalendarsTotal } из ${ providerCalendars.length } календаря(ей)"
       ],
       "${ selectedFoldersCount } folder selected": [
-        "",
-        "",
-        "",
-        ""
+        "${ selectedFoldersCount } папка выбрана",
+        "${ selectedFoldersCount } папок выбрано",
+        "${ selectedFoldersCount } папок выбрано",
+        "${ selectedFoldersCount } папок(а,и) выбрано(на)"
       ],
       "${ selectedFoldersCount } label selected": [
-        "",
-        "",
-        "",
-        ""
+        "${ selectedFoldersCount } ярлык выбран",
+        "${ selectedFoldersCount } ярлыков выбрано",
+        "${ selectedFoldersCount } ярлыков выбрано",
+        "${ selectedFoldersCount } ярлык(а,ов) выбран(о)"
       ],
       "${ speed }/s": [
         "${ speed }/с"
@@ -1766,6 +1769,12 @@
       ],
       "${ vpnAppName } Free": [
         "${ vpnAppName } Бесплатно"
+      ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } учасник)",
+        "(${ memberCount } учасники)",
+        "(${ memberCount } учасники)",
+        "(${ memberCount } учасники)"
       ],
       "(Mail + VPN)": [
         "(Почта + VPN)"
@@ -1822,16 +1831,16 @@
         "После платежа с использованием Bitcoin, пожалуйста, следуйте приведенным ниже инструкциям для обновления."
       ],
       "All (${ totalFoldersCount } folder)": [
-        "",
-        "",
-        "",
-        ""
+        "Вся (${ totalFoldersCount } папка)",
+        "Все (${ totalFoldersCount } папок)",
+        "Все (${ totalFoldersCount } папок)",
+        "Все (${ totalFoldersCount } папки(ок))"
       ],
       "All (${ totalFoldersCount } label)": [
-        "",
-        "",
-        "",
-        ""
+        "Все (${ totalFoldersCount } ярлык)",
+        "Все (${ totalFoldersCount } ярлыков)",
+        "Все (${ totalFoldersCount } ярлыков)",
+        "Все (${ totalFoldersCount } ярлыка(ов)"
       ],
       "Allows you to host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
         "Позволяет использовать электронную почту с вашим собственным доменным именем (именами) в ${ mailAppName }, например john.smith@example.com"
@@ -1839,8 +1848,11 @@
       "Amount below minimum (${ amount }).": [
         "Сумма ниже минимума (${ amount })."
       ],
+      "An active recovery file": [
+        "Активный файл восстановления"
+      ],
       "and": [
-        ""
+        "и"
       ],
       "Anyone with this link can access your file.": [
         "Доступ к файлу разрешен всем, у кого есть ссылка."
@@ -1856,6 +1868,9 @@
       ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Основные клавиши для навигации и действий остаются доступными независимо от того, включены ли сочетания клавиш в настройках."
+      ],
+      "Because ${ appName } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
+        "Поскольку ${ appName } зашифрован из конца в конец, мы не можем получить доступ\nили расшифровать ваши файлы. Чтобы разблокировать диск после сброса пароля,\nвы должны иметь одно из следующих устройств:"
       ],
       "Billed as ${ billedPrice } every 2 years": [
         "Оплачивается ${ billedPrice } каждые 2 года"
@@ -1897,7 +1912,7 @@
         "Нажмите «Запросить новый код», и мы отправим новый проверочный код на ${ strong }. Если этот номер телефона недействителен, выберите «Изменить» и обновите его."
       ],
       "Close this screen to exit.": [
-        ""
+        "Закройте этот экран, чтобы выйти."
       ],
       "Closing transfer manager will cancel all active transfers, are you sure?": [
         "Вы уверены? Если закрыть менеджера передачи, то вся передача информации будет прервана."
@@ -1908,17 +1923,20 @@
       "Connections": [
         "Соединений"
       ],
+      "Continue using ${ appName } and unlock drive later": [
+        "Продолжить использование ${ appName } и разблокировать хранилище позже"
+      ],
       "Create ${ calendarsToBeCreated } new calendar": [
-        "",
-        "",
-        "",
-        ""
+        "Создать ${ calendarsToBeCreated } новый календарь",
+        "Создать ${ calendarsToBeCreated } новых календарей",
+        "Создать ${ calendarsToBeCreated } новых календарей",
+        "Создать ${ calendarsToBeCreated } новых(ый) календарь(я,ей)"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
-        ""
+        "Создайте ярлык для импортированных сообщений, укажите диапазон времени для этого импорта и папки, которые вы хотите импортировать."
       ],
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
-        ""
+        "Создайте ярлык для импортированных сообщений, укажите диапазон времени для этого импорта и ярлыки, которые вы хотите импортировать."
       ],
       "Create a new contact group": [
         "Создать новую группу контактов"
@@ -1937,6 +1955,12 @@
       ],
       "Creating share": [
         "Создается совместное содержимое"
+      ],
+      "Delete drive": [
+        "Удалить хранилище",
+        "Удалить хранилища",
+        "Удалить хранилища",
+        "Удалить хранилища"
       ],
       "Discount applied to your subscription with coupon ${ code }": [
         "Скидка применена к вашей подписке с купоном ${ code }"
@@ -2034,29 +2058,32 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Если сообщения нет в папке \"Входящие\" — проверьте, не попало ли оно в папку «спам»."
       ],
+      "If you have one of these, continue to Proton account setting to\ncontinue the unblock process.": [
+        "Если у вас есть один из них, перейдите к настройкам аккаунта Proton, чтобы\nпродолжить процесс разблокировки."
+      ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
-        ""
+        "Импорт ${ contactsFragment } и ${ contactsGroupsFragment }"
       ],
       "Import ${ selectedCalendarsCount } of ${ totalCalendarsCount } calendar": [
-        "",
-        "",
-        "",
-        ""
+        "Импортируйте ${ selectedCalendarsCount } из ${ totalCalendarsCount } календаря",
+        "Импортируйте ${ selectedCalendarsCount } из ${ totalCalendarsCount } календарей",
+        "Импортируйте ${ selectedCalendarsCount } из ${ totalCalendarsCount } календарей",
+        "Импортируйте ${ selectedCalendarsCount } из ${ totalCalendarsCount } календаря(я,ей)"
       ],
       "Import from": [
-        ""
+        "Импортировать из"
       ],
       "Import in progress": [
-        ""
+        "Выполняется импорт"
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
-        ""
+        "Импорт ваших данных из ${ importedEmailAddress } в ${ toEmail }."
       ],
       "Included": [
         "Включено"
       ],
       "Inherited from parent folder": [
-        ""
+        "Унаследовано от родительской папки"
       ],
       "Initializing": [
         "Инициализация"
@@ -2071,13 +2098,13 @@
         "Соединение с интернет восстановлено."
       ],
       "Just confirm your selection and we'll do the rest.": [
-        ""
+        "Просто подтвердите свой выбор, а остальное мы сделаем сами."
       ],
       "Key fingerprint": [
         "Отпечаток ключа"
       ],
       "Large imports can take several days.": [
-        ""
+        "Большой импорт может занять несколько дней."
       ],
       "Learn more": [
         "Подробнее"
@@ -2101,7 +2128,7 @@
         "Загружается совместное содержимое"
       ],
       "Merged": [
-        ""
+        "Объединённые"
       ],
       "More": [
         "Ещё"
@@ -2113,7 +2140,7 @@
         "Мои ссылки"
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
-        ""
+        "Назовите новую папку и выберите родительскую папку, в которую вы хотите ее поместить. Если вы не выберете родительскую папку, то эта новая папка будет создана как папка верхнего уровня."
       ],
       "Network issue": [
         "Проблема с сетью"
@@ -2122,7 +2149,7 @@
         "Новый"
       ],
       "Next you'll need to log in to your Google account and allow us to access your data.": [
-        ""
+        "Далее вам нужно будет войти в свой аккаунт Google и разрешить нам доступ к вашим данным."
       ],
       "No": [
         "Нет"
@@ -2155,13 +2182,16 @@
         "Не настраивается"
       ],
       "Note: Data may still be available locally on devices where you have installed ${ appName }.": [
-        ""
+        "Примечание: Данные могут быть все еще доступны локально на устройствах, на которых вы установили ${ appName }."
       ],
       "Number of VPN connections which can be assigned to users. Each connected device consumes one VPN connection.": [
         "Количество VPN-соединений, которое может быть установлено для пользователей. Каждое подключенное устройство использует одно VPN-соединение."
       ],
       "of": [
         "из"
+      ],
+      "One of your encrypted drives is locked. This is most likely due to a recent password reset.${ BrElement }\n${ BrElement }\n${ questionText }": [
+        "Одно из ваших зашифрованных хранилищ заблокировано. Скорее всего, это связано с недавним сбросом пароля.${ BrElement }\n${ BrElement }\n${ questionText }"
       ],
       "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
         "Изменяйте эти настройки только в том случае, если применяете PGP для переписки с получателями вне ProtonMail."
@@ -2177,6 +2207,9 @@
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Платежи защищены шифрованием TLS и швейцарскими законами о конфиденциальности."
+      ],
+      "Permanently delete all files in your drive": [
+        "Окончательно удалить все файлы в вашем хранилище"
       ],
       "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
         "PGP/Inline совместим только с неформатированным текстом. Обратите внимание, что ProtonMail всегда подписывает зашифрованные сообщения."
@@ -2194,7 +2227,7 @@
         "Пожалуйста, учтите, что после нажатия на кнопку Подтвердить в вашей учетной записи останется ${ creditsRemaining } кредитов."
       ],
       "Please select the folders you would like to import:": [
-        ""
+        "Пожалуйста, выберите папки для импорта:"
       ],
       "Please try again, use a different payment method, or call your bank for assistance.": [
         "Пожалуйста, попробуйте еще раз, используйте другой способ оплаты или обратитесь в ваш банк за помощью."
@@ -2260,10 +2293,10 @@
         "Выберите формат письма, который вы хотите использовать по умолчанию при отправке почты на этот адрес."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20-personal-calendar limit. You can also merge imported calendars with existing Proton calendars.": [
-        ""
+        "Выберите, какие календари необходимо импортировать. Для каждого импортированного календаря будет создан новый календарь в пределах лимита в 20 личных календарей. Вы также можете объединить импортированные календари с существующими календарями Proton."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
-        ""
+        "Серверы недоступны. Попробуйте снова через несколько минут"
       ],
       "Session timed out.": [
         "Время сессии истекло."
@@ -2277,8 +2310,8 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Так как вы наш постоянный пользователь, в вашей учетной записи включены дополнительные функции."
       ],
-      "Some of your files are no longer accessible. Restore the access to your files. ${ startRecoveryButton }": [
-        "Некоторые из ваших файлов больше не доступны. Восстановите доступ к вашим файлам. ${ startRecoveryButton }"
+      "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
+        "Некоторые из ваших файлов больше недоступны. Восстановите доступ к своим файлам. ${ StartRecoveryButton }"
       ],
       "Something went wrong, please try again later.": [
         "Что-то пошло не так. Пожалуйста, повторите попытку позже."
@@ -2370,6 +2403,9 @@
       "Trash": [
         "Корзина"
       ],
+      "Unlock drive to recover files": [
+        "Разблокировать хранилище чтобы восстановить файлы"
+      ],
       "Unsupported file": [
         "Неподдерживаемый файл"
       ],
@@ -2407,7 +2443,7 @@
         "Для завершения этой транзакции мы перенаправим вас на сайт PayPal в новой вкладке браузера. Если вы пользуетесь какими-то блокировщиками всплывающих окон, пожалуйста, отключите их перед тем, как продолжить."
       ],
       "We'll notify you when the import is done.": [
-        ""
+        "Мы уведомим вас, когда импорт будет завершен."
       ],
       "Week": [
         "Неделя"
@@ -2416,7 +2452,10 @@
         "Что вы хотите сделать?"
       ],
       "What do you want to import from your Google account?": [
-        ""
+        "Что вы хотите импортировать из своего аккаунта Google?"
+      ],
+      "What would you like to do?": [
+        "Что вы хотели бы сделать?"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Вы хотите получить новый проверочный код или использовать другой метод проверки?"
@@ -2434,10 +2473,10 @@
         "В настоящее время вы вошли как ${ user.Name } (${ user.Email }), и Ваш доступ ограничен."
       ],
       "You can check the progress ${ importProgressLink }.": [
-        ""
+        "Вы можете проверить процесс ${ importProgressLink }."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
-        ""
+        "Вы можете включить уведомления, чтобы получать оповещения при появлении новых сообщений в этой папке."
       ],
       "You cannot undo this action.": [
         "Это действие нельзя отменить."
@@ -2488,7 +2527,7 @@
         "В целях безопасности ваш банк требует проверки 3-D Secure."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
-        ""
+        "Ваши данные готовы к импорту из ${ importedEmailAddressStrong } в ваш аккаунт Proton."
       ],
       "Your download has been canceled.": [
         "Загрузка отменена."
@@ -2505,14 +2544,20 @@
       "Your file is being downloaded.": [
         "Ваш файл скачивается."
       ],
-      "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ mailSettingsLink }": [
-        "Из-за сброса пароля ваши файлы стали недоступны. Чтобы получить к ним доступ, повторно загрузите старый ключ шифрования. ${ mailSettingsLink }"
+      "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ KeyReactivationButton }": [
+        "Ваши файлы больше недоступны из-за сброса пароля. Перезагрузите старый ключ шифрования, чтобы восстановить доступ. ${ KeyReactivationButton }"
       ],
       "Your files will be encrypted and then saved.": [
         "Ваши файлы будут зашифрованы, а затем сохранены."
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Ваш номер телефона будет использован только для этой разовой проверки."
+      ],
+      "Your previous password": [
+        "Ваш предыдущий пароль"
+      ],
+      "Your previous recovery phrase": [
+        "Ваша предыдущая фраза для восстановления"
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "Сейчас Ваш аккаунт Proton приостановлен. Чтобы продолжить использование вашего аккаунта, пожалуйста, оплатите просроченные счета."
@@ -2841,6 +2886,12 @@
       "CVV code": [
         "Код CVV"
       ],
+      "Delete Drive?": [
+        "Удалить хранилище?",
+        "Удалить хранилища?",
+        "Удалить хранилища?",
+        "Удалить хранилища?"
+      ],
       "Display name": [
         "Отображаемое имя"
       ],
@@ -2899,7 +2950,7 @@
         "Название папки"
       ],
       "From: ${ importedEmail }": [
-        ""
+        "От: ${ importedEmail }"
       ],
       "Get your own ${ appName }": [
         "Создайте свой собственный ${ appName }"
@@ -2911,40 +2962,40 @@
         "Изображение"
       ],
       "Import all messages": [
-        ""
+        "Импортировать все сообщения"
       ],
       "Import contacts": [
         "Импорт контактов"
       ],
       "Import interval": [
-        ""
+        "Интервал импорта"
       ],
       "Import to email address": [
-        ""
+        "Импортировать в адреса электронной почты"
       ],
       "Keyboard shortcuts": [
         "Сочетания клавиш"
       ],
       "Label messages as": [
-        ""
+        "Отметить сообщения как"
       ],
       "Last 12 months only": [
-        ""
+        "Только последние 12 месяцев"
       ],
       "Last 3 months only": [
-        ""
+        "Только последние 3 месяца"
       ],
       "Last month only": [
-        ""
+        "Только за последний месяц"
       ],
       "Mailbox password": [
         "Пароль почтового ящика"
       ],
       "Manage folders": [
-        ""
+        "Управление папками"
       ],
       "Manage labels": [
-        ""
+        "Управление метками"
       ],
       "Merge a folder": [
         "Объединить папку"
@@ -3048,8 +3099,11 @@
       "Text": [
         "Текст"
       ],
+      "This will permanently delete all files in your locked drive.": [
+        "Это окончательно удалит все ваши файлы в вашем закрытом хранилище."
+      ],
       "To: ${ emailAddress }": [
-        ""
+        "Кому: ${ emailAddress }"
       ],
       "Total": [
         "Итого"
@@ -3062,6 +3116,15 @@
       ],
       "Unknown file": [
         "Неизвестный файл"
+      ],
+      "Unlock Drive": [
+        "Разблокировать хранилище"
+      ],
+      "Unlock drive (recommended)": [
+        "Разблокировать хранилище (рекомендуется)"
+      ],
+      "Unlock later": [
+        "Разблокировать позже"
       ],
       "Up to ${ parentLinkName }": [
         "Вверх к ${ parentLinkName }"
@@ -3086,6 +3149,9 @@
       ],
       "What happened?": [
         "Что случилось?"
+      ],
+      "Yes, I want to permanently delete\nmy old files": [
+        "Да, я хочу окончательно удалить все мои старые файлы"
       ],
       "ZIP": [
         "ZIP-код"
@@ -3146,7 +3212,7 @@
     },
     "label/folder notification": {
       "${ Label.Name } created": [
-        ""
+        "${ Label.Name } создан"
       ]
     },
     "Layout mode": {
@@ -3197,10 +3263,10 @@
     },
     "Loading info": {
       "${ createdCalendars } of ${ calendarsToBeCreated } created": [
-        "",
-        "",
-        "",
-        ""
+        "${ createdCalendars } из ${ calendarsToBeCreated } создан",
+        "${ createdCalendars } из ${ calendarsToBeCreated } создано",
+        "${ createdCalendars } из ${ calendarsToBeCreated } создано",
+        "${ createdCalendars } из ${ calendarsToBeCreated } создан(о)"
       ],
       "Almost there": [
         "Почти там"
@@ -3212,7 +3278,7 @@
         "Сбираются ваши данные"
       ],
       "We're gathering your data from your provider": [
-        ""
+        "Мы собираем ваши данные у вашего поставщика услуг"
       ],
       "Your import is starting": [
         "Ваш импорт начался"
@@ -3301,7 +3367,7 @@
     },
     "Mail import summary": {
       "${ messagesFragment } since ${ periodFragment } and label them as ${ label }": [
-        ""
+        "${ messagesFragment } с ${ periodFragment } и пометить их как ${ label }"
       ]
     },
     "Many Others": {
@@ -3354,11 +3420,11 @@
       "\"${ firstItemName }\" restored from trash": [
         "\"${ firstItemName }\" восстановлено из корзины"
       ],
-      "${ deletedCount } link to your file was deleted.": [
-        "${ deletedCount } ссылка на ваш файл удалена.",
-        "${ deletedCount } ссылки на ваши файлы удалены.",
-        "${ deletedCount } ссылок на ваши файлы удалены.",
-        "${ deletedCount } ссылок на ваши файлы удалены."
+      "${ deletedCount } link to your file was deleted": [
+        "${ deletedCount } ссылка на ваш файл удалена",
+        "${ deletedCount } ссылок на ваш файл удалено",
+        "${ deletedCount } ссылок на ваш файл удалено",
+        "${ deletedCount } ссылок на ваш файл удалено"
       ],
       "${ deletedItemsCount } file deleted permanently from trash": [
         "${ deletedItemsCount } файл безвозвратно удалён из корзины",
@@ -3378,11 +3444,11 @@
         "${ deletedItemsCount } элементов безвозвратно удалено из корзины",
         "${ deletedItemsCount } элементов безвозвратно удалено из корзины"
       ],
-      "${ failedCount } link to your file failed to be deleted.": [
-        "Не удалось удалить ${ failedCount } ссылку на ваш файл.",
-        "Не удалось удалить ${ failedCount } ссылки на ваши файлы.",
-        "Не удалось удалить ${ failedCount } ссылок на ваши файлы.",
-        "Не удалось удалить ${ failedCount } ссылки на ваши файлы."
+      "${ failedCount } link to your file failed to be deleted": [
+        "${ failedCount } ссылку на ваш файл не удалось удалить",
+        "${ failedCount } ссылок на ваш файл не удалось удалить",
+        "${ failedCount } ссылок на ваш файл не удалось удалить",
+        "${ failedCount } ссылок на ваш файл не удалось удалить"
       ],
       "${ failedMovesCount } file failed to be moved": [
         "${ failedMovesCount } файл не удалось переместить",
@@ -3525,14 +3591,17 @@
       "Not enough space to upload ${ formattedTotal }": [
         "Недостаточно места для загрузки ${ formattedTotal }"
       ],
-      "The link to your file failed to be deleted.": [
-        "Не удалось удалить ссылку на ваш файл."
+      "The link to your file failed to be deleted": [
+        "Не удалось удалить ссылку на ваш файл"
       ],
-      "The link to your file was deleted.": [
-        "Ссылка на ваш файл удалена."
+      "The link to your file was deleted": [
+        "Ссылка на ваш файл удалена"
       ],
-      "Your settings have been changed successfully.": [
-        "Ваши настройки почты успешно изменены."
+      "Your old files will be deleted in 72 hours": [
+        "Ваши старые файлы будут удалены в течение 72 часов"
+      ],
+      "Your settings have been changed successfully": [
+        "Ваши настройки были успешно изменены"
       ]
     },
     "Onboarding Proton": {
@@ -3974,11 +4043,11 @@
       "Preferences saved": [
         "Настройки сохранены"
       ],
-      "Recovery has started.": [
-        "Начато восстановление."
+      "Recovery has started": [
+        "Восстановление началось"
       ],
-      "The link to your file was successfully copied.": [
-        "Ссылка на файл была успешно скопирована."
+      "The link to your file was successfully copied": [
+        "Ссылка на файл была успешно скопирована"
       ],
       "Verification successful": [
         "Проверка прошла успешно"
@@ -3986,8 +4055,8 @@
       "You have successfully unsubscribed": [
         "Вы успешно отписались"
       ],
-      "Your files were successfully recovered to \"My files\".": [
-        "Файлы успешно восстановлены. Вы найдете их в папке «Мои файлы»."
+      "Your files were successfully recovered to \"My files\"": [
+        "Файлы успешно восстановлены в «Мои файлы»"
       ]
     },
     "Suffix for price": {
@@ -4081,7 +4150,7 @@
     },
     "Time period": {
       "account creation date": [
-        ""
+        "дата создания аккаунта"
       ],
       "the last 12 months": [
         "последние 12 месяцев"
@@ -4217,13 +4286,13 @@
         "Текущий тарифный план"
       ],
       "Customize and confirm": [
-        ""
+        "Настройте и подтвердите"
       ],
       "Customize calendar import": [
-        ""
+        "Настройка импорта календаря"
       ],
       "Customize your mail import": [
-        ""
+        "Настройка импорта вашей почты"
       ],
       "Customize your plan": [
         "Настроить свой тарифный план"
@@ -4475,7 +4544,7 @@
         "Выберите время окончания действия ссылки"
       ],
       "Select what to import": [
-        ""
+        "Виберете что импортировать"
       ],
       "Settings": [
         "Настройки"
@@ -4529,7 +4598,7 @@
         "Требуется повышение тарифа"
       ],
       "Uploaded": [
-        ""
+        "Загружено"
       ],
       "Uploaded by": [
         "Загружено"
@@ -4559,6 +4628,11 @@
         "ZIP-код / почтовый индекс"
       ]
     },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "Сегодня"
+      ]
+    },
     "Tooltip": {
       "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
         "Доступ к содержимому, заблокированному по географическому признаку (Netflix, Amazon Prime Video, BBC iPlayer, Википедии, Facebook, YouTube и т. д.), независимо от того, где вы находитесь."
@@ -4585,7 +4659,7 @@
         "Скидка для двухлетнего платежного цикла"
       ],
       "Each imported email will have this label": [
-        ""
+        "У каждого импортированного письма будет этот ярлык"
       ],
       "Email encryption forces email signature to help authenticate your sent messages": [
         "Шифрование почты всегда подразумевает применение цифровой подписи, что позволяет подтверждать подлинность отправленных сообщений."
@@ -4630,10 +4704,10 @@
         "Поддержка протоколов обмена файлами, таких как Bittorrent."
       ],
       "System subfolders will show up as separate folders in ProtonMail": [
-        ""
+        "Системные подпапки будут отображаться как отдельные папки в ProtonMail"
       ],
       "The import will start with the most recent messages.": [
-        ""
+        "Импорт начнется с самых последних сообщений."
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Загрузите публичный ключ, чтобы включить отправку зашифрованных писем на этот адрес."
@@ -4811,7 +4885,7 @@
         "Пожалуйста, обратите внимание, что при выборе этого способа оплаты ваша учетная запись не может быть обновлена сразу. Мы обновим вашу учетную запись после подтверждения оплаты."
       ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
-        ""
+        "Proton объединит все папки с одинаковым названием. Чтобы избежать этого, измените названия перед импортом."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Отчеты отправляются без сквозного шифрования. Пожалуйста, не указывайте никакой конфиденциальной информации."
@@ -4821,6 +4895,9 @@
       ],
       "The contact failed to load.": [
         "Контакт не загрузился."
+      ],
+      "The date and time settings on your device are out of sync. ${ learnMore }": [
+        "Настройки даты и времени на вашем устройстве не синхронизированы. ${ learnMore }"
       ],
       "The decryption of the encrypted content failed.": [
         "Не удалось расшифровать зашифрованный контент."
@@ -4838,7 +4915,7 @@
         "К сожалению, в данный момент мы не работаем в режиме онлайн. Пожалуйста, заполните форму ниже, чтобы описать вашу проблему, мы рассмотрим ее и свяжемся с вами, когда вернемся к работе."
       ],
       "You will lose any customization you made so far.": [
-        ""
+        "Вы потеряете все сделанные вами до этого настройки."
       ],
       "Your local date & time settings seem to be out of sync.": [
         "Ваши локальные параметры даты и времени не синхронизированы."

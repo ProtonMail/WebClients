@@ -31,11 +31,11 @@
       "${ BRAND_NAME } shop": [
         "Toko ${ BRAND_NAME }"
       ],
-      "Activate": [
-        "Aktifkan"
-      ],
       "activate": [
         "aktifkan"
+      ],
+      "Activate": [
+        "Aktifkan"
       ],
       "Activate ${ Name }@pm.me": [
         "Aktifkan ${ Name }@pm.me"
@@ -385,6 +385,9 @@
       "Import contacts": [
         "Impor kontak"
       ],
+      "Import from .csv or vCard": [
+        "Impor dari .csv atau vCard"
+      ],
       "Import from .ics": [
         "Impor dari .ics"
       ],
@@ -500,7 +503,7 @@
         "Sambungkan kembali"
       ],
       "Refresh status": [
-        "Segarkan status"
+        "Muat ulang status"
       ],
       "refresh the page": [
         "muat ulang halaman"
@@ -657,6 +660,9 @@
       ],
       "Sign out all accounts": [
         "Keluar semua akun"
+      ],
+      "Signing in": [
+        "Masuk"
       ],
       "Signing out": [
         "Keluar"
@@ -1766,8 +1772,8 @@
       "Can't validate phone, try again later": [
         "Tidak dapat memvalidasi telepon, coba lagi nanti"
       ],
-      "Checkout expired, please try again.": [
-        "Pembayaran kadaluwarsa, silakan coba lagi."
+      "Checkout expired, please try again": [
+        "Sesi pembayaran telah kedaluwarsa, silakan coba lagi"
       ],
       "Condition incomplete": [
         "Kondisi tidak lengkap"
@@ -1889,6 +1895,9 @@
       "Not a valid number": [
         "Bukan nomor yang valid"
       ],
+      "Organization key is not decrypted": [
+        "Kunci organisasi tidak didekripsi"
+      ],
       "Organization key is not decrypted.": [
         "Kunci organisasi tidak didekripsi."
       ],
@@ -1922,8 +1931,8 @@
       "Please fix the highlighted conflict to proceed.": [
         "Harap selesaikan permasalahan yang ada terlebih dahulu sebelum melanjutkan."
       ],
-      "Please generate keys before you try to change your password.": [
-        "Mohon hasilkan kunci sebelum Anda mengubah kata sandi."
+      "Please generate keys before you try to change your password": [
+        "Harap buat kunci terlebih dahulu sebelum Anda mengubah kata sandi Anda"
       ],
       "Please refresh the page.": [
         "Harap muat ulang halaman ini."
@@ -1937,8 +1946,8 @@
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         "Coba autentikasi ulang dan pastikan izin disetel dengan benar."
       ],
-      "Please upgrade to a Professional plan with more than 1 user, or a Visionary account, to get multi-user support.": [
-        "Silakan tingkatkan ke paket Professional dengan lebih dari 1 pengguna, atau akun Visioner untuk mendapatkan dukungan multi-pengguna."
+      "Please upgrade to a Professional plan with more than 1 user, or a Visionary account, to get multi-user support": [
+        "Silakan tingkatkan jenis akun Anda ke Professional dengan lebih dari 1 pengguna atau Visionary untuk mendapatkan dukungan multi-pengguna"
       ],
       "Please upgrade to a Professional plan with more than 1 user, or a Visionary account, to manage multiple users.": [
         "Harap tingkatkan ke paket Professional dengan lebih dari 1 pengguna, atau akun Visioner, untuk mengelola banyak pengguna."
@@ -2005,6 +2014,9 @@
       ],
       "The minimum payment we accept is ${ _price2 }": [
         "Pembayaran minimal ${ _price2 }"
+      ],
+      "The organization key must be activated first": [
+        "Kunci organisasi harus diaktifkan terlebih dahulu"
       ],
       "The organization key must be activated first.": [
         "Kunci organisasi harus diaktifkan terlebih dahulu."
@@ -2110,11 +2122,11 @@
       "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } events.": [
         "Berkas ${ formattedFilename } berisi lebih dari ${ MAX_IMPORT_EVENTS_STRING } acara."
       ],
+      "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
+        "Berkas ${ formattedFilename } milik Anda tidak dapat diimpor karena mengandung metode yang tidak valid."
+      ],
       "Your file ${ formattedFilename } has no events to be imported.": [
         "Berkas ${ formattedFilename } tidak memiliki acara untuk diimpor."
-      ],
-      "Your file ${ formattedFilename } is an invitation and cannot be imported.": [
-        "Berkas Anda ${ formattedFilename } adalah undangan dan tidak dapat diimpor."
       ],
       "Your file ${ formattedFilename } is empty.": [
         "Berkas ${ formattedFilename } Anda kosong."
@@ -2657,38 +2669,25 @@
       ]
     },
     "Import calendar warning": {
-      "${ CALENDAR_APP_NAME } does not support ${ forNow }:": [
-        "${ CALENDAR_APP_NAME } untuk sekarang tidak mendukung ${ forNow }:"
-      ],
-      "Attendees": [
-        "Peserta acara"
-      ],
-      "Complex recurring rules": [
-        "Aturan berulang kompleks"
-      ],
-      "Email notifications": [
-        "Notifikasi surel"
-      ],
-      "for now": [
-        "untuk sekarang"
-      ],
-      "Free-busy time information": [
-        "Informasi waktu bebas-sibuk"
-      ],
-      "Journal entries": [
-        "Entri jurnal"
-      ],
-      "Non-Gregorian calendars": [
-        "Kalender non-gregorian"
-      ],
-      "To-do entries": [
-        "Entri to-do"
-      ],
-      "Unofficial or custom timezones": [
-        "Zona waktu khusus atau tidak resmi"
+      "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
+        "${ CALENDAR_APP_NAME } saat ini tidak mendukung tipe, rincian, dan format acara tertentu."
       ],
       "vCard versions < 3.0": [
         "versi vCard < 3.0"
+      ]
+    },
+    "Import calendar; import invitation": {
+      "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your Proton email address.": [
+        "Undangan-undangan yang diimpor akan muncul pada ${ CALENDAR_APP_NAME } dalam bentuk acara-acara sederhana (simple events) tanpa rincian nama penyelenggara dan peserta. Untuk dapat memperoleh daftar peserta dan informasi terkini seputar acara-acara ini, mintalah penyelenggara acara untuk mengundang Anda dengan menggunakan alamat email Proton Anda."
+      ],
+      "This file contains an event invitation:": [
+        "Berkas ini mengandung undangan acara berikut:"
+      ],
+      "This file contains an invitation response:": [
+        "Berkas ini mengandung balasan atas undangan acara yang terkirim sebagai berikut:"
+      ],
+      "This file contains some data that we cannot import:": [
+        "Berkas ini mengandung data-data yang tidak dapat kami impor sebagai berikut:"
       ]
     },
     "Import contact": {
@@ -2970,17 +2969,17 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } dari ${ totalContacts } kontak tidak akan diimpor. Klik untuk melihat rincian"
       ],
-      "${ totalEventsDiscarded } out of ${ totalEvents } events will not be imported. Click for details": [
-        "${ totalEventsDiscarded } dari ${ totalEvents } acara tidak akan diimpor. Klik untuk lebih lanjut"
+      "${ totalEventsDiscarded } out of ${ totalEvents } events will not be imported. Expand for details.": [
+        "${ totalEventsDiscarded } dari ${ totalEvents } acara tidak akan diimpor. Klik untuk melihat rincian lebih lanjut."
       ],
       "No contact can be imported. Click for details": [
         "Tidak ada kontak yang dapat diimpor. Klik untuk melihat rincian"
       ],
-      "No event can be imported. Click for details": [
-        "Acara tidak dapat diimpor. Klik untuk lebih lanjut"
+      "No event can be imported. Expand for details.": [
+        "Tidak ada acara yang dapat diimpor. Klik untuk melihat rincian lebih lanjut."
       ],
-      "Part of your calendar content is not supported and will not be imported": [
-        "Sebagian isi kalender Anda tidak didukung dan tidak akan diimpor"
+      "Part of your calendar content is not supported and will not be imported.": [
+        "Sebagian isi kalender Anda tidak didukung dan tidak akan diimpor."
       ]
     },
     "Info": {
@@ -3261,7 +3260,7 @@
         "Diskon Black Friday 2020 untuk pengguna baru telah diterapkan"
       ],
       "Blocks senders from seeing if and when you opened a message.": [
-        ""
+        "Mencegah pengirim pesan untuk dapat mengetahui apakah Anda telah membaca pesan yang bersangkutan atau belum."
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Dengan beralih ke paket Free, Anda akan kehilangan manfaat ini secara permanen, bahkan jika Anda meningkatkan paket di masa mendatang."
@@ -3395,8 +3394,8 @@
       "Done": [
         "Selesai"
       ],
-      "Done! We sent a code to ${ destination }": [
-        "Berhasil! Kami kirim kodenya ke ${ destination }"
+      "Done! We sent a code to ${ destination }.": [
+        "Berhasil! Kami telah mengirimkan kode Anda ke ${ destination }."
       ],
       "Downgrading will terminate any connections to paid ProtonVPN servers.": [
         "Proses penurunan akun akan mematikan koneksi apapun ke server ProtonVPN berbayar."
@@ -3528,7 +3527,7 @@
         "di sini"
       ],
       "Hides identifying information by loading remote content through a proxy. Option to store content as attachments.": [
-        ""
+        "Muat remote content yang terlampir melalui proxy agar informasi-informasi pribadi Anda tidak dapat dikenali oleh pihak ketiga. Remote content yang ada akan tetap dapat dilihat dan disimpan sebagai lampiran."
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Jika administrator lain mengubah kata sandi ini, Anda harus menanyakan Kata sandi Organisasi yang baru kepada mereka."
@@ -3590,8 +3589,8 @@
       "Image URL": [
         "URL gambar"
       ],
-      "Images have been removed because they are not allowed in auto-reply.": [
-        "Gambar dihapus karena tidak dibolehkan dalam fitur balas otomatis."
+      "Images have been removed because they are not allowed in auto-reply": [
+        "Gambar-gambar yang ada telah dihapus karena tidak dapat diikutsertakan dalam pesan balasan otomatis"
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Impor ${ contactsFragment } dan ${ contactsGroupsFragment }"
@@ -3651,7 +3650,7 @@
         "Koneksi internet putus. Mohon periksa koneksi pada perangkat Anda."
       ],
       "Internet connection restored.": [
-        "Koneksi internet dipulihkan."
+        "Koneksi internet telah pulih."
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Anda hanya perlu menentukan pilihan Anda -- biarkan kami yang mengurus sisanya."
@@ -3702,7 +3701,7 @@
         "Tautan telah dihapus"
       ],
       "Link type": [
-        "Jenis Tautan"
+        "Jenis tautan"
       ],
       "Loading": [
         "Memuat"
@@ -4023,7 +4022,7 @@
         "Pindah ke ${ professionalPlan } untuk menambah pengguna lebih banyak."
       ],
       "Test link": [
-        "Tes tautan"
+        "Contoh tautan"
       ],
       "Text color": [
         "Warna teks"
@@ -4047,7 +4046,7 @@
         "Nama akan terlihat pada pengguna Anda ketika mereka masuk."
       ],
       "There are no billing details available for your current subscription.": [
-        "Rincian tagihan tidak tersedia bagi langganan Anda saat ini."
+        "Rincian tagihan tidak tersedia bagi paket yang Anda langgan saat ini."
       ],
       "These configuration files let you choose which ProtonVPN server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         "Berkas konfigurasi ini memungkinkan Anda memilih server ProtonVPN mana yang ingin Anda sambungkan saat menggunakan aplikasi VPN pihak ketiga atau menyiapkan koneksi VPN di router."
@@ -4086,7 +4085,7 @@
         "Pemeriksaan dua langkah juga akan dimatikan."
       ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
-        "Ini akan membatalkan langganan berbayar Anda saat ini dan Anda akan kehilangan keuntungan loyalitas yang telah Anda kumpulkan. Saldo yang tersisa dari langganan Ada akan dikembalikan sebagai kredit akun."
+        "Tindakan ini akan membatalkan langganan berbayar yang Anda miliki saat ini beserta seluruh keuntungan loyalitas yang telah Anda kumpulkan. Saldo yang tersisa dari langganan Anda akan dikembalikan dalam bentuk kredit akun."
       ],
       "This will create an encryption key for your organization. 4096-bit keys only work on high performance computers, for most users, we recommend using 2048-bit keys.": [
         "Ini akan menciptakan kunci enkripsi baru untuk organisasi Anda. Kunci 4096-bit hanya bekerja pada komputer dengan kinerja tinggi, untuk sebagian besar pengguna, sebaiknya gunakan kunci 2048-bit."
@@ -4110,7 +4109,7 @@
         "ke"
       ],
       "To access your old messages, you will need to reactivate your old encryption keys using one of the following recovery methods.": [
-        "Untuk mengakses pesan lama, Anda perlu mengaktifkan ulang kunci enkripsi lama dengan metode pemulihan berikut ini."
+        "Untuk dapat mengakses pesan-pesan lama milik Anda, Anda harus terlebih dahulu mengaktifkan ulang kunci enkripsi lama Anda dengan salah satu metode pemulihan berikut."
       ],
       "To confirm, please enter the name of the user you wish to delete.": [
         "Untuk mengonfirmasi, harap masukkan nama pengguna yang ingin Anda hapus."
@@ -4227,7 +4226,7 @@
         "Kami merekomendasikan agar Anda memiliki alamat email atau nomor telepon yang ditautkan agar Anda dapat memulihkan akun Anda apabila suatu saat Anda kehilangan kata sandi Anda."
       ],
       "We recommend adding a linked email so you can recover your account if you lose your password.": [
-        "Kami merekomendasikan menambah surel tertaut sehingga Anda dapat memulihkan akun Anda jika Anda kehilangan sandi Anda."
+        "Kami merekomendasikan agar Anda memiliki alamat email yang ditautkan agar Anda dapat memulihkan akun Anda apabila suatu saat Anda kehilangan kata sandi Anda."
       ],
       "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
         "Kami menerima impor berkas CSV dari Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora dan beberapa program lain. Kami juga menerima impor vCard 4.0. (enkoding UTF-8)."
@@ -4639,7 +4638,7 @@
         "Buang draf"
       ],
       "Expand / contract composer": [
-        "Buka / lebarkan komposer"
+        "Lebarkan / ciutkan komposer"
       ],
       "Forward": [
         "Teruskan"
@@ -4866,10 +4865,10 @@
         "SEMUA"
       ],
       "Allow recovery by email": [
-        "Izinkan pemulihan dengan surel"
+        "Izinkan pemulihan akun melalui email"
       ],
       "Allow recovery by phone": [
-        "Izinkan pemulihan dengan nomor ponsel"
+        "Izinkan pemulihan akun melalui nomor ponsel"
       ],
       "Allow recovery by recovery phrase": [
         "Izinkan pemulihan menggunakan kalimat"
@@ -4971,7 +4970,7 @@
         "Mode komposer"
       ],
       "Composer text direction": [
-        "Arah teks komposer"
+        "Arah penulisan teks komposer"
       ],
       "Conditions": [
         "Syarat"
@@ -5184,7 +5183,7 @@
         "Interval"
       ],
       "Keep messages in Sent/Drafts": [
-        "Simpan pesan di Terkirim/Konsep"
+        "Simpan pesan di Terkirim/Draf"
       ],
       "Key": [
         "Kunci"
@@ -5602,13 +5601,13 @@
         "Proton untuk bisnis"
       ],
       "Proton for Business newsletter": [
-        "Newsletter Proton untuk Bisnis"
+        "Buletin berita Proton untuk Bisnis"
       ],
       "Proton major features": [
         "Fitur mayor Proton"
       ],
       "Proton newsletter": [
-        "Newsletter Proton"
+        "Buletin berita Proton"
       ],
       "Proton product announcements": [
         "Pengumuman Produk Proton"
@@ -7039,7 +7038,7 @@
         "Alamat ditambahkan"
       ],
       "Address updated": [
-        "Alamat Diperbarui"
+        "Alamat diperbarui"
       ],
       "Auto-reply disabled": [
         "Pesan balasan otomatis dinonaktifkan"
@@ -7078,16 +7077,16 @@
         "Kalendar bawaan diperbarui"
       ],
       "Deleting original messages": [
-        "Hapus pesan asli"
+        "Menghapus pesan-pesan asli"
       ],
-      "DMARC value copied to clipboard!": [
-        "Nilai DMARC disalin ke papan klip!"
+      "DMARC value copied to clipboard": [
+        "Nilai DMARC disalin ke clipboard"
       ],
       "Domain verified": [
         "Domain berhasil diverifikasi"
       ],
       "Email address copied to clipboard": [
-        "Alamat email disalin ke papan klip"
+        "Alamat email disalin ke clipboard"
       ],
       "Email updated": [
         "Email diperbarui"
@@ -7105,7 +7104,7 @@
         "Rekaman impor dihapus"
       ],
       "Import resumed": [
-        "Impor dilanjutkan"
+        "Proses impor dilanjutkan"
       ],
       "Invoice customized": [
         "Tagihan berhasil disesuaikan"
@@ -7153,10 +7152,10 @@
         "Sesi berhasil dicabut"
       ],
       "Sessions revoked": [
-        "Sesi berhasil dicabut"
+        "Sesi-sesi berhasil dicabut"
       ],
-      "SPF value copied to clipboard!": [
-        "Nilai SPF disalin ke papan klip!"
+      "SPF value copied to clipboard": [
+        "Nilai SPF disalin ke clipboard"
       ],
       "User created": [
         "Pengguna berhasil dibuat"
@@ -7164,11 +7163,11 @@
       "User updated": [
         "Pengguna berhasil diperbarui"
       ],
-      "Value copied to clipboard!": [
-        "Nilai disalin ke papan klip!"
+      "Value copied to clipboard": [
+        "Nilai disalin ke clipboard"
       ],
-      "Verification code copied to clipboard!": [
-        "Kode verifikasi telah disalin!"
+      "Verification code copied to clipboard": [
+        "Kode verifikasi disalin ke clipboard"
       ],
       "Verification successful": [
         "Verifikasi berhasil"
@@ -7496,6 +7495,9 @@
       "Contacts": [
         "Kontak"
       ],
+      "Continue with partial import?": [
+        "Lanjut impor walau hanya sebagian?"
+      ],
       "Coupon discount": [
         "Diskon kupon"
       ],
@@ -7700,6 +7702,9 @@
       "Import & export": [
         "Impor & ekspor"
       ],
+      "Import as simple event?": [
+        "Impor sebagai acara sederhana?"
+      ],
       "Import Assistant": [
         "Asisten Impor"
       ],
@@ -7708,6 +7713,9 @@
       ],
       "Import events": [
         "Impor acara"
+      ],
+      "Import failed": [
+        "Proses impor gagal"
       ],
       "Import groups": [
         "Impor grup"
@@ -8199,7 +8207,7 @@
         "Jika Anda telah membeli atau menerima kode hadiah dari tim dukungan kami, silakan masukkan di sini."
       ],
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
-        "Pesan didalam folder Terkirim atau Konsep akan selalu muncul pada folder itu, walaupun Anda memindahkannya ke folder yang lain."
+        "Pesan di folder Terkirim atau Draf akan selalu muncul di folder tersebut, walaupun Anda memindahkannya ke folder lain."
       ],
       "Multi-user support is only applicable to plans with 2 or more users": [
         "Dukungan banyak pengguna hanya dapat diterapkan ke paket dengan 2 atau lebih pengguna"

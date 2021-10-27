@@ -31,11 +31,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } negozio"
       ],
-      "Activate": [
-        "Attiva"
-      ],
       "activate": [
         "attiva"
+      ],
+      "Activate": [
+        "Attiva"
       ],
       "Activate ${ Name }@pm.me": [
         "Attiva ${ Name }@pm.me"
@@ -385,6 +385,9 @@
       "Import contacts": [
         "Importa contatti"
       ],
+      "Import from .csv or vCard": [
+        ""
+      ],
       "Import from .ics": [
         ""
       ],
@@ -658,6 +661,9 @@
       "Sign out all accounts": [
         "Disconnetti tutti gli account"
       ],
+      "Signing in": [
+        ""
+      ],
       "Signing out": [
         "Logout in corso"
       ],
@@ -910,7 +916,7 @@
     },
     "Attached ics file error": {
       "Empty ICS file": [
-        ""
+        "File ICS vuoto"
       ],
       "Invalid event": [
         "Evento non valido"
@@ -1301,7 +1307,7 @@
         "Il link del calendario non è accessibile"
       ],
       "Calendar link is temporarily inaccessible": [
-        ""
+        "Il link al calendario è temporaneamente inaccessibile"
       ],
       "Calendar link is wrong": [
         "Il link del calendario è sbagliato"
@@ -1784,8 +1790,8 @@
       "Can't validate phone, try again later": [
         "Impossibile convalidare il telefono, riprova più tardi"
       ],
-      "Checkout expired, please try again.": [
-        "Checkout scaduto, riprova."
+      "Checkout expired, please try again": [
+        ""
       ],
       "Condition incomplete": [
         "Condizione incompleta"
@@ -1909,6 +1915,9 @@
       "Not a valid number": [
         "Numero non valido"
       ],
+      "Organization key is not decrypted": [
+        ""
+      ],
       "Organization key is not decrypted.": [
         "La chiave dell'organizzazione non è decriptata."
       ],
@@ -1943,8 +1952,8 @@
         "",
         ""
       ],
-      "Please generate keys before you try to change your password.": [
-        "Per favore genera le chiavi prima di provare a cambiare la tua password."
+      "Please generate keys before you try to change your password": [
+        ""
       ],
       "Please refresh the page.": [
         "Per favore ricarica la pagina."
@@ -1958,8 +1967,8 @@
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         "Prova a riautenticarti e assicurati che i permessi siano impostati correttamente."
       ],
-      "Please upgrade to a Professional plan with more than 1 user, or a Visionary account, to get multi-user support.": [
-        "Per favore passa ad un piano Professional con più di un utente, o ad un account Visionary, per ottenere il supporto multi-utente."
+      "Please upgrade to a Professional plan with more than 1 user, or a Visionary account, to get multi-user support": [
+        ""
       ],
       "Please upgrade to a Professional plan with more than 1 user, or a Visionary account, to manage multiple users.": [
         "Per favore passa ad un piano Professional con più di un utente, o ad un account Visionary, per gestire più utenti."
@@ -2026,6 +2035,9 @@
       ],
       "The minimum payment we accept is ${ _price2 }": [
         "Il pagamento minimo che accettiamo è di ${ _price2 }"
+      ],
+      "The organization key must be activated first": [
+        ""
       ],
       "The organization key must be activated first.": [
         "La chiave dell'organizzazione deve essere prima attivata."
@@ -2131,11 +2143,11 @@
       "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } events.": [
         "Il tuo file ${ formattedFilename } contiene più di ${ MAX_IMPORT_EVENTS_STRING } eventi."
       ],
+      "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
+        ""
+      ],
       "Your file ${ formattedFilename } has no events to be imported.": [
         "Il tuo file ${ formattedFilename } non ha alcun evento da importare."
-      ],
-      "Your file ${ formattedFilename } is an invitation and cannot be imported.": [
-        "Il tuo file ${ formattedFilename } è un invito e non può essere importato."
       ],
       "Your file ${ formattedFilename } is empty.": [
         "Il tuo file ${ formattedFilename } è vuoto."
@@ -2683,38 +2695,27 @@
       ]
     },
     "Import calendar warning": {
-      "${ CALENDAR_APP_NAME } does not support ${ forNow }:": [
-        "${ CALENDAR_APP_NAME } non supporta ${ forNow }:"
-      ],
-      "Attendees": [
-        "Partecipanti"
-      ],
-      "Complex recurring rules": [
-        "Regole complesse ricorrenti"
-      ],
-      "Email notifications": [
-        "Notifiche via email"
-      ],
-      "for now": [
-        "per ora"
-      ],
-      "Free-busy time information": [
-        "Informazioni sul tempo libero/occupato"
-      ],
-      "Journal entries": [
-        "Voci del diario"
-      ],
-      "Non-Gregorian calendars": [
-        "Calendari non gregoriani"
-      ],
-      "To-do entries": [
-        "Voci da fare"
-      ],
-      "Unofficial or custom timezones": [
-        "Fusi orari non ufficiali o personalizzati"
+      "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
+        ""
       ],
       "vCard versions < 3.0": [
         "versioni di vCard < 3.0"
+      ]
+    },
+    "Import calendar; import invitation": {
+      "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your Proton email address.": [
+        ""
+      ],
+      "This file contains an event invitation:": [
+        "",
+        ""
+      ],
+      "This file contains an invitation response:": [
+        "",
+        ""
+      ],
+      "This file contains some data that we cannot import:": [
+        ""
       ]
     },
     "Import contact": {
@@ -3000,17 +3001,17 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } su ${ totalContacts } contatti non saranno importati. Clicca per i dettagli"
       ],
-      "${ totalEventsDiscarded } out of ${ totalEvents } events will not be imported. Click for details": [
-        "${ totalEventsDiscarded } su ${ totalEvents } eventi non saranno importati. Clicca per i dettagli"
+      "${ totalEventsDiscarded } out of ${ totalEvents } events will not be imported. Expand for details.": [
+        ""
       ],
       "No contact can be imported. Click for details": [
         "Nessun contatto può essere importato. Clicca per i dettagli"
       ],
-      "No event can be imported. Click for details": [
-        "Nessun evento può essere importato. Clicca per i dettagli"
+      "No event can be imported. Expand for details.": [
+        ""
       ],
-      "Part of your calendar content is not supported and will not be imported": [
-        "Parte del contenuto del calendario non è supportata e non sarà importata"
+      "Part of your calendar content is not supported and will not be imported.": [
+        ""
       ]
     },
     "Info": {
@@ -3447,8 +3448,8 @@
       "Done": [
         "Fatto"
       ],
-      "Done! We sent a code to ${ destination }": [
-        "Fatto! Abbiamo inviato un codice a ${ destination }"
+      "Done! We sent a code to ${ destination }.": [
+        ""
       ],
       "Downgrading will terminate any connections to paid ProtonVPN servers.": [
         "Il downgrading terminerà qualsiasi connessione ai server ProtonVPN a pagamento."
@@ -3642,8 +3643,8 @@
       "Image URL": [
         "URL dell'immagine"
       ],
-      "Images have been removed because they are not allowed in auto-reply.": [
-        "Le immagini sono state rimosse perché non sono permesse nella risposta automatica."
+      "Images have been removed because they are not allowed in auto-reply": [
+        ""
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         ""
@@ -5819,13 +5820,13 @@
         ""
       ],
       "Almost there": [
-        ""
+        "Già qui"
       ],
       "Connecting to your email provider": [
         "Connessione al tuo provider email"
       ],
       "Creating new calendars": [
-        ""
+        "Creazione nuovi calendari"
       ],
       "Gathering your data": [
         ""
@@ -5834,7 +5835,7 @@
         ""
       ],
       "Your import is starting": [
-        ""
+        "La tua importazione sta iniziando"
       ]
     },
     "Log preference": {
@@ -6474,10 +6475,10 @@
     },
     "Option group label": {
       "Create new calendar": [
-        ""
+        "Crea nuovo calendario"
       ],
       "Merge with calendar": [
-        ""
+        "Unisci con calendario"
       ]
     },
     "Option protection mode": {
@@ -6523,7 +6524,7 @@
     },
     "PGP key warning": {
       "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        ""
+        "Indirizzo email non trovato tra gli id utente definiti nell'invio della chiave (${ keyUserIds })"
       ]
     },
     "Placeholder": {
@@ -6930,7 +6931,7 @@
         "Nome dominio"
       ],
       "Email privacy": [
-        ""
+        "Privacy email"
       ],
       "Encryption & keys": [
         "Crittografia & chiavi"
@@ -6954,7 +6955,7 @@
         "Importa & esporta"
       ],
       "Import/Export": [
-        ""
+        "Importa/Esporta"
       ],
       "Multi-user support": [
         "Supporto multi-utente"
@@ -7153,8 +7154,8 @@
       "Deleting original messages": [
         "Eliminazione dei messaggi originali"
       ],
-      "DMARC value copied to clipboard!": [
-        "Valore DMARC copiato negli appunti!"
+      "DMARC value copied to clipboard": [
+        ""
       ],
       "Domain verified": [
         "Dominio verificato"
@@ -7228,8 +7229,8 @@
       "Sessions revoked": [
         "Sessioni revocate"
       ],
-      "SPF value copied to clipboard!": [
-        "Valore SPF copiato negli appunti!"
+      "SPF value copied to clipboard": [
+        ""
       ],
       "User created": [
         "Utente creato"
@@ -7237,11 +7238,11 @@
       "User updated": [
         "Utente aggiornato"
       ],
-      "Value copied to clipboard!": [
-        "Valore copiato negli appunti!"
+      "Value copied to clipboard": [
+        ""
       ],
-      "Verification code copied to clipboard!": [
-        "Codice di verifica copiato negli appunti!"
+      "Verification code copied to clipboard": [
+        ""
       ],
       "Verification successful": [
         "Verifica riuscita"
@@ -7342,16 +7343,16 @@
     },
     "Time period": {
       "account creation date": [
-        ""
+        "data di creazione dell'account"
       ],
       "the last 12 months": [
-        ""
+        "ultimi 12 mesi"
       ],
       "the last 3 months": [
-        ""
+        "ultimi 3 mesi"
       ],
       "the last month": [
-        ""
+        "ultimo mese"
       ]
     },
     "Time unit": {
@@ -7571,6 +7572,9 @@
       "Contacts": [
         "Contatti"
       ],
+      "Continue with partial import?": [
+        ""
+      ],
       "Coupon discount": [
         "Sconto coupon"
       ],
@@ -7775,6 +7779,10 @@
       "Import & export": [
         "Importa & esporta"
       ],
+      "Import as simple event?": [
+        "",
+        ""
+      ],
       "Import Assistant": [
         "Assistente di importazione"
       ],
@@ -7783,6 +7791,9 @@
       ],
       "Import events": [
         "Importa eventi"
+      ],
+      "Import failed": [
+        ""
       ],
       "Import groups": [
         "Importa gruppi"
@@ -8212,7 +8223,7 @@
     },
     "Today icon tooltip in mini calendar": {
       "Today": [
-        ""
+        "Oggi"
       ]
     },
     "Tooltip": {

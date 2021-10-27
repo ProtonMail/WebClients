@@ -31,11 +31,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } dućan"
       ],
-      "Activate": [
-        "Aktiviraj"
-      ],
       "activate": [
         "aktiviraj"
+      ],
+      "Activate": [
+        "Aktiviraj"
       ],
       "Activate ${ Name }@pm.me": [
         "Aktiviraj ${ Name }@pm.me"
@@ -385,6 +385,9 @@
       "Import contacts": [
         "Uvezi kontakte"
       ],
+      "Import from .csv or vCard": [
+        ""
+      ],
       "Import from .ics": [
         ""
       ],
@@ -657,6 +660,9 @@
       ],
       "Sign out all accounts": [
         "Odjavi sve račune"
+      ],
+      "Signing in": [
+        ""
       ],
       "Signing out": [
         "Odjavljivanje"
@@ -1802,8 +1808,8 @@
       "Can't validate phone, try again later": [
         "Nije moguće potvrditi broj telefona, pokušajte ponovo kasnije"
       ],
-      "Checkout expired, please try again.": [
-        "Naplata je istekla, pokušajte ponovo."
+      "Checkout expired, please try again": [
+        ""
       ],
       "Condition incomplete": [
         "Uvjet je nepotpun"
@@ -1929,6 +1935,9 @@
       "Not a valid number": [
         "Broj telefona nije važeći"
       ],
+      "Organization key is not decrypted": [
+        ""
+      ],
       "Organization key is not decrypted.": [
         "Organizacijski ključ nije dešifriran."
       ],
@@ -1964,8 +1973,8 @@
         "",
         ""
       ],
-      "Please generate keys before you try to change your password.": [
-        "Prije pokušaja promjene lozinke generirajte ključeve."
+      "Please generate keys before you try to change your password": [
+        ""
       ],
       "Please refresh the page.": [
         "Osvježite stranicu."
@@ -1979,8 +1988,8 @@
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         "Pokušajte ponovno potvrditi identitet i provjeriti jesu li dopuštenja ispravno postavljena."
       ],
-      "Please upgrade to a Professional plan with more than 1 user, or a Visionary account, to get multi-user support.": [
-        "Nadogradite na Professional plan s više od jednog korisnika ili na Visionary plan, kako biste dobili podršku za više korisnika."
+      "Please upgrade to a Professional plan with more than 1 user, or a Visionary account, to get multi-user support": [
+        ""
       ],
       "Please upgrade to a Professional plan with more than 1 user, or a Visionary account, to manage multiple users.": [
         "Nadogradite na Professional plan s više od jednog korisnika ili na Visionary plan, kako biste mogli upravljati s više korisnika."
@@ -2047,6 +2056,9 @@
       ],
       "The minimum payment we accept is ${ _price2 }": [
         "Minimalni iznos koji prihvaćamo je ${ _price2 }"
+      ],
+      "The organization key must be activated first": [
+        ""
       ],
       "The organization key must be activated first.": [
         "Prvo se mora aktivirati organizacijski ključ."
@@ -2152,11 +2164,11 @@
       "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } events.": [
         "Vaša datoteka ${ formattedFilename } sadrži više od ${ MAX_IMPORT_EVENTS_STRING } događaja."
       ],
+      "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
+        ""
+      ],
       "Your file ${ formattedFilename } has no events to be imported.": [
         "Vaša datoteka ${ formattedFilename } nema događaje za uvoz."
-      ],
-      "Your file ${ formattedFilename } is an invitation and cannot be imported.": [
-        "Vaša datoteka ${ formattedFilename } je pozivnica i ne može biti uvezena."
       ],
       "Your file ${ formattedFilename } is empty.": [
         "Vaša datoteka ${ formattedFilename } je prazna."
@@ -2709,38 +2721,29 @@
       ]
     },
     "Import calendar warning": {
-      "${ CALENDAR_APP_NAME } does not support ${ forNow }:": [
-        "${ CALENDAR_APP_NAME } ne podržava ${ forNow }:"
-      ],
-      "Attendees": [
-        "Sudionici"
-      ],
-      "Complex recurring rules": [
-        "Složena ponavljajuća pravila"
-      ],
-      "Email notifications": [
-        "Obavijesti e-pošte"
-      ],
-      "for now": [
-        "za sada"
-      ],
-      "Free-busy time information": [
-        "Informacije o slobodnom/zauzetom vremenu"
-      ],
-      "Journal entries": [
-        "Stavke dnevnika"
-      ],
-      "Non-Gregorian calendars": [
-        "Ne gregorijanski kalendar"
-      ],
-      "To-do entries": [
-        "Stavke liste zadataka"
-      ],
-      "Unofficial or custom timezones": [
-        "Ne službene i prilagođene vremenske zone"
+      "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
+        ""
       ],
       "vCard versions < 3.0": [
         "vCard verzije < 3.0"
+      ]
+    },
+    "Import calendar; import invitation": {
+      "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your Proton email address.": [
+        ""
+      ],
+      "This file contains an event invitation:": [
+        "",
+        "",
+        ""
+      ],
+      "This file contains an invitation response:": [
+        "",
+        "",
+        ""
+      ],
+      "This file contains some data that we cannot import:": [
+        ""
       ]
     },
     "Import contact": {
@@ -3030,17 +3033,17 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } od ${ totalContacts } kontakata neće biti uvezeno. Pritisnite za detalje"
       ],
-      "${ totalEventsDiscarded } out of ${ totalEvents } events will not be imported. Click for details": [
-        "${ totalEventsDiscarded } od ${ totalEvents } događaja neće biti uvezeno. Pritisnite za detalje"
+      "${ totalEventsDiscarded } out of ${ totalEvents } events will not be imported. Expand for details.": [
+        ""
       ],
       "No contact can be imported. Click for details": [
         "Nije moguće uvesti nijedan kontakt. Pritisnite za detalje"
       ],
-      "No event can be imported. Click for details": [
-        "Nije moguće uvesti nijedan događaj. Pritisnite za detalje"
+      "No event can be imported. Expand for details.": [
+        ""
       ],
-      "Part of your calendar content is not supported and will not be imported": [
-        "Dio sadržaja vašeg kalendara nije podržan i neće se uvesti"
+      "Part of your calendar content is not supported and will not be imported.": [
+        ""
       ]
     },
     "Info": {
@@ -3499,8 +3502,8 @@
       "Done": [
         "Gotovo"
       ],
-      "Done! We sent a code to ${ destination }": [
-        "Gotovo! Poslali smo kôd na ${ destination }"
+      "Done! We sent a code to ${ destination }.": [
+        ""
       ],
       "Downgrading will terminate any connections to paid ProtonVPN servers.": [
         "Snižavanje statusa prekida sve veze s plaćenim ProtonVPN poslužiteljima."
@@ -3694,7 +3697,7 @@
       "Image URL": [
         "URL slike"
       ],
-      "Images have been removed because they are not allowed in auto-reply.": [
+      "Images have been removed because they are not allowed in auto-reply": [
         ""
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
@@ -7226,8 +7229,8 @@
       "Deleting original messages": [
         "Brisanje originalnih poruka"
       ],
-      "DMARC value copied to clipboard!": [
-        "DMARC vrijednost spremljena u međuspremnik!"
+      "DMARC value copied to clipboard": [
+        ""
       ],
       "Domain verified": [
         "Domena je potvrđena"
@@ -7301,8 +7304,8 @@
       "Sessions revoked": [
         "Sesije su opozvane"
       ],
-      "SPF value copied to clipboard!": [
-        "SPF vrijednost spremljena u međuspremnik!"
+      "SPF value copied to clipboard": [
+        ""
       ],
       "User created": [
         "Korisnik je stvoren"
@@ -7310,10 +7313,10 @@
       "User updated": [
         "Korisnik je ažuriran"
       ],
-      "Value copied to clipboard!": [
-        "Vrijednost spremljena u međuspremnik!"
+      "Value copied to clipboard": [
+        ""
       ],
-      "Verification code copied to clipboard!": [
+      "Verification code copied to clipboard": [
         ""
       ],
       "Verification successful": [
@@ -7646,6 +7649,9 @@
       "Contacts": [
         "Kontakti"
       ],
+      "Continue with partial import?": [
+        ""
+      ],
       "Coupon discount": [
         "Kupon s popustom"
       ],
@@ -7850,6 +7856,11 @@
       "Import & export": [
         "Uvoz i izvoz"
       ],
+      "Import as simple event?": [
+        "",
+        "",
+        ""
+      ],
       "Import Assistant": [
         "Import Assistant"
       ],
@@ -7858,6 +7869,9 @@
       ],
       "Import events": [
         "Uvezi događaje"
+      ],
+      "Import failed": [
+        ""
       ],
       "Import groups": [
         "Uvezi grupe"

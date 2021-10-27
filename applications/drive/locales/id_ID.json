@@ -108,7 +108,7 @@
         "Tulis"
       ],
       "Composer size": [
-        "Ukuran kotak tulis"
+        "Ukuran komposer"
       ],
       "Confirm": [
         "Konfirmasi"
@@ -184,6 +184,9 @@
       ],
       "Download": [
         "Unduh"
+      ],
+      "Drive Locked": [
+        "Drive Terkunci"
       ],
       "Edit": [
         "Edit"
@@ -393,7 +396,7 @@
         "Ubah nama"
       ],
       "Report a problem": [
-        "Laporkan sebuah masalah"
+        "Laporkan masalah"
       ],
       "Request a feature": [
         "Minta fitur"
@@ -1088,8 +1091,8 @@
       "Can't validate phone, try again later": [
         "Tidak dapat memvalidasi telepon, coba lagi nanti"
       ],
-      "Checkout expired, please try again.": [
-        "Pembayaran kedaluwarsa, silakan coba lagi."
+      "Checkout expired, please try again": [
+        "Sesi pembayaran telah kedaluwarsa, silakan coba lagi"
       ],
       "Contact could not be saved": [
         "Kontak tidak dapat disimpan"
@@ -1296,7 +1299,7 @@
         "Kolom ini wajib diisi"
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
-        "Isi minimal ${ minimumLength } karakter."
+        "Kolom ini wajib diisi dengan minimal ${ minimumLength } karakter."
       ],
       "This folder name is not available. Please choose a different name": [
         "Nama folder ini tidak dapat digunakan. Mohon pilih nama lain"
@@ -1647,6 +1650,9 @@
       "${ vpnAppName } Free": [
         "${ vpnAppName } Gratis"
       ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } anggota)"
+      ],
       "(Mail + VPN)": [
         "(Mail + VPN)"
       ],
@@ -1710,6 +1716,9 @@
       "Amount below minimum (${ amount }).": [
         "Di bawah jumlah minimal (${ amount })."
       ],
+      "An active recovery file": [
+        "Berkas pemulihan yang aktif"
+      ],
       "and": [
         "dan"
       ],
@@ -1724,6 +1733,9 @@
       ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Navigasi dan tindakan dasar tetap tersedia terlepas pintasan papan ketik aktif atau tidak di pengaturan."
+      ],
+      "Because ${ appName } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
+        "Karena ${ appName } terenkripsi secara end-to-end, kami tidak dapat mengakses atau mendekripsi data-data Anda. Untuk dapat kembali masuk ke dalam drive milik Anda yang kata sandinya telah diatur ulang, Anda harus memiliki setidaknya salah satu hal berikut:"
       ],
       "Billed as ${ billedPrice } every 2 years": [
         "Ditagih ${ billedPrice } setiap 2 tahun"
@@ -1776,6 +1788,9 @@
       "Connections": [
         "Sambungan"
       ],
+      "Continue using ${ appName } and unlock drive later": [
+        "Lanjut gunakan ${ appName } tanpa membuka kunci berkas"
+      ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "Buat ${ calendarsToBeCreated } kalender baru"
       ],
@@ -1802,6 +1817,9 @@
       ],
       "Creating share": [
         "Membuat konten bersama"
+      ],
+      "Delete drive": [
+        "Hapus drive"
       ],
       "Discount applied to your subscription with coupon ${ code }": [
         "Diskon diterapkan untuk langganan anda dengan kupon ${ code }"
@@ -1882,7 +1900,7 @@
         "VPN berfitur lengkap dengan kecepatan hingga 10 Gbps."
       ],
       "Go to \"My files\" and upload some files first.": [
-        "Pergi ke \"Berkas saya\" dan unggah beberapa berkas pertama kali."
+        "Masuk ke \"Berkas-berkas saya\" dan unggah beberapa berkas terlebih dahulu."
       ],
       "Group assignment applied": [
         "Penugasan grup diterapkan"
@@ -1898,6 +1916,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Jika Anda tidak menemukan surel di kotak masuk, mohon periksa folder spam Anda."
+      ],
+      "If you have one of these, continue to Proton account setting to\ncontinue the unblock process.": [
+        "Apabila Anda memiliki setidaknya salah satu hal di atas, tuju menu pengaturan akun Proton untuk dapat mencabut blokir yang ada."
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Impor ${ contactsFragment } dan ${ contactsGroupsFragment }"
@@ -2025,6 +2046,9 @@
       "of": [
         "dari"
       ],
+      "One of your encrypted drives is locked. This is most likely due to a recent password reset.${ BrElement }\n${ BrElement }\n${ questionText }": [
+        "Terdapat salah satu drive milik Anda yang terkunci. Hal ini kemungkinan disebabkan oleh pengaturan ulang kata sandi yang berlangsung baru-baru ini. ${ BrElement }\n${ BrElement }\n${ questionText }"
+      ],
       "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
         "Hanya ubah pengaturan ini jika Anda menggunakan PGP dengan penerima bukan ProtonMail."
       ],
@@ -2039,6 +2063,9 @@
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Pembayaran dilindungi dengan enkripsi TLS dan undang-undang privasi Swiss."
+      ],
+      "Permanently delete all files in your drive": [
+        "Hapus berkas-berkas yang ada pada drive milik Anda secara permanen"
       ],
       "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
         "PGP/Inline hanya kompatibel dengan format Teks Polos. Mohon dicatat, ProtonMail selalu menandatangani pesan terenkripsi."
@@ -2136,8 +2163,8 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Karena Anda adalah pengguna yang loyal, akun Anda memiliki fitur-fitur tambahan yang diaktifkan."
       ],
-      "Some of your files are no longer accessible. Restore the access to your files. ${ startRecoveryButton }": [
-        "Beberapa berkas Anda tidak lagi dapat diakses. Pulihkan akses ke berkas Anda. ${ startRecoveryButton }"
+      "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
+        "Beberapa berkas Anda tidak lagi dapat diakses. Pulihkan akses ke berkas Anda. ${ StartRecoveryButton }"
       ],
       "Something went wrong, please try again later.": [
         "Ada sesuatu yang salah, silakan coba lagi nanti."
@@ -2226,6 +2253,9 @@
       "Trash": [
         "Sampah"
       ],
+      "Unlock drive to recover files": [
+        "Buka kunci drive untuk memulihkan berkas-berkas yang ada"
+      ],
       "Unsupported file": [
         "File tidak didukung"
       ],
@@ -2273,6 +2303,9 @@
       ],
       "What do you want to import from your Google account?": [
         "Apa yang hendak Anda impor dari akun Google Anda?"
+      ],
+      "What would you like to do?": [
+        "Apa yang ingin Anda lakukan?"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Apakah Anda mau menerima kode verifikasi baru atau menggunakan metode verifikasi alternatif?"
@@ -2361,14 +2394,20 @@
       "Your file is being downloaded.": [
         "Berkas Anda sedang diunduh."
       ],
-      "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ mailSettingsLink }": [
-        "Berkas Anda tidak lagi dapat diakses karena pengaturan ulang kata sandi. Unggah kembali kunci enkripsi lama untuk mendapatkan kembali akses. ${ mailSettingsLink }"
+      "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ KeyReactivationButton }": [
+        "Berkas-berkas Anda tidak lagi dapat diakses karena kata sandi yang ada telah diatur ulang. Unggah kembali kunci enkripsi lama untuk dapat kembali mengakses berkas-berkas Anda. ${ KeyReactivationButton }"
       ],
       "Your files will be encrypted and then saved.": [
         "Berkas Anda akan dienkripsi dan disimpan."
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Nomor telepon Anda hanya akan digunakan untuk verifikasi satu kali ini saja."
+      ],
+      "Your previous password": [
+        "Kata sandi Anda sebelumnya"
+      ],
+      "Your previous recovery phrase": [
+        "Frasa pemulihan Anda sebelumnya"
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "Akun Proton Anda sedang dalam masa tenggang. Untuk tetap menggunakan akun Anda, mohon lunasi tagihan yang sudah jatuh tempo."
@@ -2697,6 +2736,9 @@
       "CVV code": [
         "Kode CVV"
       ],
+      "Delete Drive?": [
+        "Hapus Drive?"
+      ],
       "Display name": [
         "Nama tampilan"
       ],
@@ -2869,7 +2911,7 @@
         "Pilih metode"
       ],
       "Select how your composer opens by default.": [
-        "Pilih bagaimana komposer Anda tebuka secara bawaan."
+        "Tentukan bagaimana jendela komposer Anda akan terbuka."
       ],
       "Select how your list of messages looks like by default.": [
         "Pilih bagaimana daftar pesan Anda akan telihat secara bawaan."
@@ -2904,6 +2946,9 @@
       "Text": [
         "Teks"
       ],
+      "This will permanently delete all files in your locked drive.": [
+        "Tindakan ini akan menghapus berkas-berkas yang ada pada drive milik Anda yang terkunci."
+      ],
       "To: ${ emailAddress }": [
         "Ke: ${ emailAddress }"
       ],
@@ -2918,6 +2963,15 @@
       ],
       "Unknown file": [
         "Berkas tidak diketahui"
+      ],
+      "Unlock Drive": [
+        "Buka Kunci Drive"
+      ],
+      "Unlock drive (recommended)": [
+        "Buka kunci drive (disarankan)"
+      ],
+      "Unlock later": [
+        "Buka di kemudian waktu"
       ],
       "Up to ${ parentLinkName }": [
         "Hingga ${ parentLinkName }"
@@ -2942,6 +2996,9 @@
       ],
       "What happened?": [
         "Apa yang terjadi?"
+      ],
+      "Yes, I want to permanently delete\nmy old files": [
+        "Ya, saya ingin menghapus berkas-berkas lama\nmilik saya secara permanen"
       ],
       "ZIP": [
         "Kode pos"
@@ -3030,7 +3087,7 @@
         "Pelajari lebih lanjut"
       ],
       "My files": [
-        "Berkas saya"
+        "Berkas-berkas saya"
       ],
       "Pay invoice": [
         "Bayar tagihan"
@@ -3207,8 +3264,8 @@
       "\"${ firstItemName }\" restored from trash": [
         "\"${ firstItemName }\" dikembalikan dari kotak sampah"
       ],
-      "${ deletedCount } link to your file was deleted.": [
-        "${ deletedCount } tautan ke berkas Anda dihapus."
+      "${ deletedCount } link to your file was deleted": [
+        "${ deletedCount } tautan ke berkas Anda telah dihapus"
       ],
       "${ deletedItemsCount } file deleted permanently from trash": [
         "${ deletedItemsCount } berkas dihapus permanen dari kotak sampah"
@@ -3219,8 +3276,8 @@
       "${ deletedItemsCount } item deleted permanently from trash": [
         "${ deletedItemsCount } item dihapus permanen dari kotak sampah"
       ],
-      "${ failedCount } link to your file failed to be deleted.": [
-        "${ failedCount } tautan ke berkas Anda gagal dihapus."
+      "${ failedCount } link to your file failed to be deleted": [
+        "${ failedCount } tautan ke berkas Anda gagal dihapus"
       ],
       "${ failedMovesCount } file failed to be moved": [
         "${ failedMovesCount } berkas gagal dipindahkan"
@@ -3306,14 +3363,17 @@
       "Not enough space to upload ${ formattedTotal }": [
         "Kapasitas penyimpanan tidak cukup untuk menampung ${ formattedTotal }"
       ],
-      "The link to your file failed to be deleted.": [
-        "Tautan ke berkas Anda gagal dihapus."
+      "The link to your file failed to be deleted": [
+        "Tautan ke berkas Anda gagal dihapus"
       ],
-      "The link to your file was deleted.": [
-        "Tautan ke berkas Anda dihapus."
+      "The link to your file was deleted": [
+        "Tautan ke berkas Anda telah dihapus"
       ],
-      "Your settings have been changed successfully.": [
-        "Pengaturan telah disimpan."
+      "Your old files will be deleted in 72 hours": [
+        "Berkas-berkas lama Anda akan terhapus dalam 72 jam"
+      ],
+      "Your settings have been changed successfully": [
+        "Pengaturan Anda telah disimpan"
       ]
     },
     "Onboarding Proton": {
@@ -3421,7 +3481,7 @@
     },
     "PGP key warning": {
       "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "Alamat surel tidak ditemukan di antara id pengguna yang terdefinisi di kunci (${ keyUserIds })"
+        "Alamat email tidak ditemukan di antara id-id pengguna yang terhubung dengan kunci pengiriman (${ keyUserIds })"
       ]
     },
     "Placeholder": {
@@ -3480,7 +3540,7 @@
         "Cari nama grup"
       ],
       "Search for name or email": [
-        "Cari nama atau surel"
+        "Cari berdasarkan nama atau email"
       ],
       "Start typing an email address": [
         "Mulai ketik alamat surel"
@@ -3728,11 +3788,11 @@
       "Preferences saved": [
         "Preferensi disimpan"
       ],
-      "Recovery has started.": [
-        "Pemulihan dimulai."
+      "Recovery has started": [
+        "Proses pemulihan telah dimulai"
       ],
-      "The link to your file was successfully copied.": [
-        "Tautan ke berkas Anda berhasil disalin."
+      "The link to your file was successfully copied": [
+        "Tautan ke berkas Anda berhasil disalin"
       ],
       "Verification successful": [
         "Verifikasi berhasil"
@@ -3740,8 +3800,8 @@
       "You have successfully unsubscribed": [
         "Anda telah berhenti berlangganan"
       ],
-      "Your files were successfully recovered to \"My files\".": [
-        "Berkas Anda telah dipulihkan ke \"Berkas saya\"."
+      "Your files were successfully recovered to \"My files\"": [
+        "Berkas-berkas Anda telah berhasil dipulihkan ke \"Berkas-berkas saya\""
       ]
     },
     "Suffix for price": {
@@ -4049,7 +4109,7 @@
         "Masukkan sandi Anda"
       ],
       "Enter your username or ProtonMail email address": [
-        "Masukkan nama pengguna atau alamat surel ProtonMail"
+        "Masukkan nama pengguna atau alamat email ProtonMail Anda"
       ],
       "Error": [
         "Kesalahan"
@@ -4121,7 +4181,7 @@
         "Dimodifikasi"
       ],
       "My files": [
-        "Berkas saya"
+        "Berkas-berkas saya"
       ],
       "Name": [
         "Nama"
@@ -4293,6 +4353,11 @@
       ],
       "ZIP / postal code": [
         "Kode pos"
+      ]
+    },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "Hari ini"
       ]
     },
     "Tooltip": {
@@ -4548,6 +4613,9 @@
       ],
       "The contact failed to load.": [
         "Kontak gagal dimuat."
+      ],
+      "The date and time settings on your device are out of sync. ${ learnMore }": [
+        "Tanggal dan waktu yang terpasang pada piranti Anda tidak sesuai dengan tanggal dan waktu saat ini. ${ learnMore }"
       ],
       "The decryption of the encrypted content failed.": [
         "Proses dekripsi konten terenkripsi gagal."

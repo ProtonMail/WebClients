@@ -31,11 +31,11 @@
       "${ BRAND_NAME } shop": [
         "Taḥanut ${ BRAND_NAME }"
       ],
-      "Activate": [
-        "Rmed"
-      ],
       "activate": [
         "rmed"
+      ],
+      "Activate": [
+        "Rmed"
       ],
       "Activate ${ Name }@pm.me": [
         "Rmed ${ Name }@pm.me"
@@ -290,7 +290,7 @@
         "Ṣub aleqqem"
       ],
       "Downgrade account": [
-        ""
+        "Sider aswir n umiḍan"
       ],
       "Downgrade to ${ BRAND_NAME } ${ downgradedPlanName }": [
         ""
@@ -347,7 +347,7 @@
         "Tasefsit"
       ],
       "Generate key": [
-        ""
+        "Sirew tasarut"
       ],
       "Get ProtonVPN Plus": [
         "Awi ProtonVPN Plus"
@@ -385,8 +385,11 @@
       "Import contacts": [
         "Sgaǧ-d tansiwin"
       ],
-      "Import from .ics": [
+      "Import from .csv or vCard": [
         ""
+      ],
+      "Import from .ics": [
+        "Kter seg .ics"
       ],
       "Import key": [
         "Kter tasarut"
@@ -413,7 +416,7 @@
         "Eǧǧ"
       ],
       "Keep my ${ BRAND_NAME } ${ currentPlanName } account": [
-        ""
+        "Eǧǧ amiḍan-iw ${ BRAND_NAME } ${ currentPlanName }"
       ],
       "label emails as": [
         "cṛeḍ imaylen am"
@@ -658,6 +661,9 @@
       "Sign out all accounts": [
         "Ffeɣ seg meṛṛa imiḍanen"
       ],
+      "Signing in": [
+        "Tuqqna"
+      ],
       "Signing out": [
         "Tuffɣa"
       ],
@@ -674,7 +680,7 @@
         "Smizzwer"
       ],
       "Start ${ PRODUCT_NAMES.EASY_SWITCH }": [
-        ""
+        "Sekker ${ PRODUCT_NAMES.EASY_SWITCH }"
       ],
       "Start import": [
         "Bdu akter"
@@ -1784,8 +1790,8 @@
       "Can't validate phone, try again later": [
         "Ulamek aseɣbel n tiliɣri, eɛreḍ areḍqal"
       ],
-      "Checkout expired, please try again.": [
-        "Asenqed iɛedda wakud-is, ttxil-k·m ɛreḍ tikkelt-nniḍen."
+      "Checkout expired, please try again": [
+        ""
       ],
       "Condition incomplete": [
         "Tawtilt tarummidt"
@@ -1909,6 +1915,9 @@
       "Not a valid number": [
         "Mačči d uṭṭun ameɣtu"
       ],
+      "Organization key is not decrypted": [
+        ""
+      ],
       "Organization key is not decrypted.": [
         "Tasarut n tuddsa ur tettwazmek ara."
       ],
@@ -1943,8 +1952,8 @@
         "",
         ""
       ],
-      "Please generate keys before you try to change your password.": [
-        "Ttxil sirew-d tisura send ad tɛerḍeḍ ad tbeddeleḍ awal-inek n uɛeddi."
+      "Please generate keys before you try to change your password": [
+        ""
       ],
       "Please refresh the page.": [
         "Ttxil smiren asebter."
@@ -1958,8 +1967,8 @@
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         "Ttxil-k·m εreḍ ad talseḍ asesteb, tḍemneḍ tisirag ttuwassetent akken iwata."
       ],
-      "Please upgrade to a Professional plan with more than 1 user, or a Visionary account, to get multi-user support.": [
-        "Ttxil-k sali aswir ar tikci Professional s wugar n 1 n useqdac, neɣ amiḍan Visionary akken ad trebḥeḍ asefrek n ddeqs n iseqdacen."
+      "Please upgrade to a Professional plan with more than 1 user, or a Visionary account, to get multi-user support": [
+        ""
       ],
       "Please upgrade to a Professional plan with more than 1 user, or a Visionary account, to manage multiple users.": [
         "Ttxil-k sali aswir ar tikci Professional s wugar n 1 n useqdac, neɣ amiḍan Visionary, akken ad tesferkeḍ ddeqs n iseqdacen."
@@ -2026,6 +2035,9 @@
       ],
       "The minimum payment we accept is ${ _price2 }": [
         "Lexlaṣ amezyan maḍi i nezmer ad neqbel d ${ _price2 }"
+      ],
+      "The organization key must be activated first": [
+        ""
       ],
       "The organization key must be activated first.": [
         "Ilaq deg tazwara tasarut n tuddsa ad tettwarmed."
@@ -2131,11 +2143,11 @@
       "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } events.": [
         "Afaylu-inek·inem ${ formattedFilename } deg-s ugar n ${ MAX_IMPORT_EVENTS_STRING } n tedyanin."
       ],
+      "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
+        ""
+      ],
       "Your file ${ formattedFilename } has no events to be imported.": [
         "Afaylu-inek/m ${ formattedFilename } ur yesɛi ara tidyanin ara nsifeḍ."
-      ],
-      "Your file ${ formattedFilename } is an invitation and cannot be imported.": [
-        "Afaylu-inek·inem ${ formattedFilename } d tinubga, ur yezmir ara ad yettwakter."
       ],
       "Your file ${ formattedFilename } is empty.": [
         "Afaylu-inek/m ${ formattedFilename } d ilem."
@@ -2683,38 +2695,27 @@
       ]
     },
     "Import calendar warning": {
-      "${ CALENDAR_APP_NAME } does not support ${ forNow }:": [
-        "${ CALENDAR_APP_NAME } ur issefrak ara ${ forNow }:"
-      ],
-      "Attendees": [
-        "Imttekkiyen"
-      ],
-      "Complex recurring rules": [
-        "Ilugan leqqayen i d-ittuɣalen"
-      ],
-      "Email notifications": [
-        "Ilɣa s yimayl"
-      ],
-      "for now": [
-        "ar tura"
-      ],
-      "Free-busy time information": [
-        "Talɣut ɣef wakud ilelli/i iceɣlen"
-      ],
-      "Journal entries": [
-        "Inekcumen ɣer uɣmis"
-      ],
-      "Non-Gregorian calendars": [
-        "Iwitayen mačči d igrguryaten"
-      ],
-      "To-do entries": [
-        "Inekcumen n twuriwin"
-      ],
-      "Unofficial or custom timezones": [
-        "Izḍi usrid mačči d unṣib neɣ d udmawan"
+      "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
+        ""
       ],
       "vCard versions < 3.0": [
         "lqem vCard < 3.0"
+      ]
+    },
+    "Import calendar; import invitation": {
+      "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your Proton email address.": [
+        ""
+      ],
+      "This file contains an event invitation:": [
+        "",
+        ""
+      ],
+      "This file contains an invitation response:": [
+        "",
+        ""
+      ],
+      "This file contains some data that we cannot import:": [
+        ""
       ]
     },
     "Import contact": {
@@ -3000,17 +3001,17 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "Inermisen ${ totalContactsDiscarded } ɣef ${ totalContacts } ur d-ttwaktaren ara. Sit ad teẓreḍ telqayt"
       ],
-      "${ totalEventsDiscarded } out of ${ totalEvents } events will not be imported. Click for details": [
-        "Tidyanin ${ totalEventsDiscarded } ɣef ${ totalEvents } ur d-ttwaktarent ara. Sit ad teẓreḍ telqayt"
+      "${ totalEventsDiscarded } out of ${ totalEvents } events will not be imported. Expand for details.": [
+        ""
       ],
       "No contact can be imported. Click for details": [
         "Ulac anermis i tzemreḍ ad d-tketreḍ. Sit ad teẓreḍ telqayt"
       ],
-      "No event can be imported. Click for details": [
-        "Ulac tadyant i tzemreḍ ad d-tketreḍ. Sit ad teẓreḍ telqayt"
+      "No event can be imported. Expand for details.": [
+        ""
       ],
-      "Part of your calendar content is not supported and will not be imported": [
-        "Aḥric seg ugbur n uwitay-ik·im ur yettusefrak ara rnu ur d-yettwaktar ara"
+      "Part of your calendar content is not supported and will not be imported.": [
+        ""
       ]
     },
     "Info": {
@@ -3058,12 +3059,12 @@
         ""
       ],
       "${ numContactGroups } contact group": [
-        "",
-        ""
+        "${ numContactGroups } n ugraw n unermes",
+        "${ numContactGroups } n yigrawen n unermes"
       ],
       "${ numContacts } contact": [
-        "",
-        ""
+        "${ numContacts } n unermis",
+        "${ numContacts } n yinermisen"
       ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } d ukaram yettwafen",
@@ -3194,7 +3195,7 @@
         "Akk (tibzimin ${ totalFoldersCount })"
       ],
       "All keys successfully reactivated": [
-        ""
+        "Akk tisura ulsent asermed akken iwata"
       ],
       "All your changes will be lost.": [
         "Ad ruḥen akk ibeddilen-inek/m."
@@ -3209,7 +3210,7 @@
         "Azal ddaw n wadday (${ amount })."
       ],
       "and": [
-        ""
+        "akked"
       ],
       "Anyone with this link can see all the event details of this calendar such as title, location or participants.": [
         "Yal yiwen yesεan aseɣwen-a yezmer ad iwali meṛṛa talqayt n tedyanin n uwitay-a am uzwel, adig neɣ imttekkiyen."
@@ -3372,7 +3373,7 @@
         "Rnu tansiwin n yimayl i yimdanen-nniḍen, sefrek ProtonMail i umahel, i uɣerbaz neɣ i ugraw. Bdu s tmerna n yisem n tkebbanit-ik·im d taɣult tudmawant (am. @takebbanit-ik·im.com). "
       ],
       "Create in": [
-        ""
+        "Snulfu-d di"
       ],
       "Creating a new recovery phrase will deactivate your old one.": [
         "Timerna n tefyirt n tririt tamaynut ad tsens tafyirt-ik·im taqburt."
@@ -3447,8 +3448,8 @@
       "Done": [
         "Yekfa"
       ],
-      "Done! We sent a code to ${ destination }": [
-        "Ifukk! Nuzen tangalt ɣer ${ destination }"
+      "Done! We sent a code to ${ destination }.": [
+        ""
       ],
       "Downgrading will terminate any connections to paid ProtonVPN servers.": [
         "Asader deg lqem ad iseḥbes akk tuqqniwin ɣer yiqeddacen s lexlaṣ n ProtonVPN."
@@ -3642,18 +3643,18 @@
       "Image URL": [
         "URL n tugna"
       ],
-      "Images have been removed because they are not allowed in auto-reply.": [
-        "Tugniwin ttwakksent acku ur ttusirgent ara deg tririt tawurmant."
+      "Images have been removed because they are not allowed in auto-reply": [
+        "Tugniwin ttwakksent acku ur ttusirgent ara deg tririt tawurmant"
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
-        ""
+        "Kter ${ contactsFragment } yerna ${ contactsGroupsFragment }"
       ],
       "Import ${ selectedCalendarsCount } of ${ totalCalendarsCount } calendar": [
         "",
         ""
       ],
       "Import from": [
-        ""
+        "Kter si"
       ],
       "Import in progress": [
         ""
@@ -3800,7 +3801,7 @@
         "Semmi akaram-ik·im amaynut syen fren akaram amaraw ideg tebɣiḍ ad t-terreḍ. Ma yella ur tefrneḍ ara akaram amaraw, akaram-a amaynut ad yettwarnu d akaram n uswir afellay."
       ],
       "New": [
-        ""
+        "Amynut"
       ],
       "New to ${ BRAND_NAME }? ${ signupLink }": [
         "Amaynut ɣer ${ BRAND_NAME }? ${ signupLink }"
@@ -4056,7 +4057,7 @@
         "Segmi telliḍ d aseqdac imekdi, amiḍan-inek• inem yesɛa tiwuriwin n zzyada iremden."
       ],
       "Some keys successfully reactivated": [
-        ""
+        "Kra n tsura ulsent asermed akken iwata"
       ],
       "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ProtonMail in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
         "SPF ittuseqdac i tumla n wid izemren ad yazen imayl i taɣult, ihi, ad k-nwelleh ad tsedduḍ ProtonMail deg ukalas SPF. Akken ad teggeḍ aya, rnu akalas TXT di twila-ik DNS. Abeddel-agi yezmer ad yettwag deg ugalis n usenqed n taɣulut-ik n umsefrak n yismawen n taɣult."
@@ -7136,7 +7137,7 @@
         "Awitay yettwasnifel"
       ],
       "Canceling import": [
-        ""
+        "Asefsex n tektert"
       ],
       "Catch-all address updated": [
         "Tansa n tuṭṭfa n yal izen tettwalqem"
@@ -7153,8 +7154,8 @@
       "Deleting original messages": [
         "Tukksa n yiznan inaṣliyen"
       ],
-      "DMARC value copied to clipboard!": [
-        "Azal DMARC yettwanɣel ɣef afus!"
+      "DMARC value copied to clipboard": [
+        ""
       ],
       "Domain verified": [
         "Isem n taɣult yettasenqed"
@@ -7228,8 +7229,8 @@
       "Sessions revoked": [
         "Tiɣimitin ttwaḥwint"
       ],
-      "SPF value copied to clipboard!": [
-        "Azal SPF yettwanɣel ɣef afus!"
+      "SPF value copied to clipboard": [
+        ""
       ],
       "User created": [
         "Aseqdac yettwarna"
@@ -7237,11 +7238,11 @@
       "User updated": [
         "Aseqdac yettwaleqqem"
       ],
-      "Value copied to clipboard!": [
-        "Azal yettwanɣel ɣef afus!"
-      ],
-      "Verification code copied to clipboard!": [
+      "Value copied to clipboard": [
         ""
+      ],
+      "Verification code copied to clipboard": [
+        "Tangalt n usenqed tettwaneɣlen ɣer tecfawit"
       ],
       "Verification successful": [
         "Asenqed yedda akken iwata"
@@ -7571,6 +7572,9 @@
       "Contacts": [
         "Inermisen"
       ],
+      "Continue with partial import?": [
+        ""
+      ],
       "Coupon discount": [
         "Acraw n ukupun"
       ],
@@ -7775,6 +7779,10 @@
       "Import & export": [
         "Kter & Sifeḍ"
       ],
+      "Import as simple event?": [
+        "",
+        ""
+      ],
       "Import Assistant": [
         "Kter tallelt"
       ],
@@ -7783,6 +7791,9 @@
       ],
       "Import events": [
         "Kter tidyanin"
+      ],
+      "Import failed": [
+        ""
       ],
       "Import groups": [
         "Kter igrawen"
