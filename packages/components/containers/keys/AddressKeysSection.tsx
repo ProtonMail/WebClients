@@ -181,7 +181,7 @@ const AddressKeysSection = () => {
     };
 
     const handleAddKey = () => {
-        if (isLoadingKey || !addressKeys) {
+        if (isLoadingKey || !addressKeys || !userKeys) {
             return;
         }
         if (!Address) {
@@ -213,7 +213,7 @@ const AddressKeysSection = () => {
     };
 
     const handleImportKey = () => {
-        if (isLoadingKey || !addressKeys) {
+        if (isLoadingKey || !addressKeys || !userKeys) {
             return;
         }
         if (!Address) {
@@ -268,6 +268,9 @@ const AddressKeysSection = () => {
     };
 
     const handleReactivateKeys = (keyReactivationRequests: KeyReactivationRequest[]) => {
+        if (!userKeys) {
+            return;
+        }
         createModal(
             <ReactivateKeysModal
                 userKeys={userKeys}
@@ -292,7 +295,7 @@ const AddressKeysSection = () => {
     const numberOfKeysToReactivate = getKeysToReactivateCount(allKeysToReactivate);
 
     const { isSubUser, isPrivate } = User;
-    const hasDecryptedUserKeys = userKeys.length > 0;
+    const hasDecryptedUserKeys = userKeys?.length > 0;
     const canReactivate = !isSubUser && numberOfKeysToReactivate > 0 && hasDecryptedUserKeys;
 
     const canAdd = !isSubUser && isPrivate && hasDecryptedUserKeys;
