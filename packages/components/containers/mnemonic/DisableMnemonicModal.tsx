@@ -43,8 +43,9 @@ const DisableMnemonicModal = (props: Props) => {
                 section: (
                     <>
                         <p className="mt0">{c('Info')
-                            .t`If you proceed, you will have to reset your password and will be logged out of any other active sessions.`}</p>
-                        <p className="mb0">{c('Info').t`This will also disable two-factor authentication.`}</p>
+                            .t`This will disable your current recovery phrase. You won't be able to use it to access your account or decrypt your data.`}</p>
+                        <p className="mb0">{c('Info')
+                            .t`Enabling recovery by phrase again will generate a new recovery phrase.`}</p>
                     </>
                 ),
                 footer: (

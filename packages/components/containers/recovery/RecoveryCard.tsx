@@ -44,12 +44,12 @@ const RecoveryCard = ({ ids }: Props) => {
     const accountRecoveryStatusText =
         accountRecoveryStatus === 'complete'
             ? c('Info').t`Your account recovery method is set`
-            : c('Info').t`No account recovery method set, you are at risk of losing access to your account`;
+            : c('Info').t`No account recovery method set; you are at risk of losing access to your account`;
 
     const dataRecoveryStatusText =
         dataRecoveryStatus === 'complete'
             ? c('Info').t`Your data recovery method is set`
-            : c('Info').t`No data recovery method set, you are at risk of losing access to your data`;
+            : c('Info').t`No data recovery method set; you are at risk of losing access to your data`;
 
     if (
         loadingRecoveryStatus ||

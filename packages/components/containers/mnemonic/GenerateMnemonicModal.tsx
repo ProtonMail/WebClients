@@ -94,11 +94,7 @@ const GenerateMnemonicModal = ({ confirmStep = false, onClose = () => {}, onSucc
                 tiny: true,
                 hasClose: false,
                 section: (
-                    <>
-                        <p className="mt0">{c('Info')
-                            .t`Generating a new recovery phrase will deactivate your old one.`}</p>
-                        <p className="mb0">{c('Info').t`Are you sure you want to continue?`}</p>
-                    </>
+                    <p className="m0">{c('Info').t`Generating a new recovery phrase will deactivate your old one.`}</p>
                 ),
                 footer: (
                     <div className="w100">
