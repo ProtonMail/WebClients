@@ -1,5 +1,5 @@
 import { computeKeyPassword, generateKeySalt } from '@proton/srp';
-import { decryptPrivateKey, OpenPGPKey } from 'pmcrypto';
+import { decryptPrivateKey, encryptPrivateKey, OpenPGPKey } from 'pmcrypto';
 
 import {
     Address as tsAddress,
@@ -10,6 +10,8 @@ import {
     CachedOrganizationKey,
     DecryptedKey,
     SignedKeyList,
+    User,
+    Key,
 } from '../interfaces';
 import { getOrganizationKeys } from '../api/organization';
 import { USER_ROLES } from '../constants';
@@ -44,14 +46,25 @@ export const getHasV2KeysToUpgrade = (User: tsUser, Addresses: tsAddress[]) => {
     );
 };
 
-const getReformattedKeys = (keys: DecryptedKey[], email: string, passphrase: string) => {
+const getReEncryptedKeys = (keys: DecryptedKey[], Keys: Key[], email: string, passphrase: string) => {
+    const keysMap = Keys.reduce<{ [key: string]: Key }>((acc, Key) => {
+        acc[Key.ID] = Key;
+        return acc;
+    }, {});
     return Promise.all(
         keys.map(async ({ privateKey, ID }) => {
-            const { privateKeyArmored } = await reformatAddressKey({
-                email,
-                passphrase,
-                privateKey,
-            });
+            if (keysMap[ID] && getV2KeyToUpgrade(keysMap[ID])) {
+                const { privateKeyArmored } = await reformatAddressKey({
+                    email,
+                    passphrase,
+                    privateKey,
+                });
+                return {
+                    ID,
+                    PrivateKey: privateKeyArmored,
+                };
+            }
+            const privateKeyArmored = await encryptPrivateKey(privateKey, passphrase);
             return {
                 ID,
                 PrivateKey: privateKeyArmored,
@@ -91,6 +104,7 @@ interface UpgradeV2KeysLegacyArgs {
     clearKeyPassword: string;
     api: Api;
     isOnePasswordMode?: boolean;
+    user: User;
     userKeys: DecryptedKey[];
     organizationKey?: CachedOrganizationKey;
     addressesKeys: {
@@ -100,6 +114,7 @@ interface UpgradeV2KeysLegacyArgs {
 }
 
 export const upgradeV2KeysLegacy = async ({
+    user,
     userKeys,
     addressesKeys,
     organizationKey,
@@ -112,10 +127,10 @@ export const upgradeV2KeysLegacy = async ({
     const newKeyPassword: string = await computeKeyPassword(clearKeyPassword, keySalt);
 
     const [reformattedUserKeys, reformattedAddressesKeys, reformattedOrganizationKey] = await Promise.all([
-        getReformattedKeys(userKeys, USER_KEY_USERID, newKeyPassword),
+        getReEncryptedKeys(userKeys, user.Keys, USER_KEY_USERID, newKeyPassword),
         Promise.all(
             addressesKeys.map(({ address, keys }) => {
-                return getReformattedKeys(keys, address.Email, newKeyPassword);
+                return getReEncryptedKeys(keys, address.Keys, address.Email, newKeyPassword);
             })
         ),
         organizationKey?.privateKey ? reformatOrganizationKey(organizationKey.privateKey, newKeyPassword) : undefined,
@@ -143,6 +158,7 @@ export const upgradeV2KeysLegacy = async ({
 };
 
 export const upgradeV2KeysV2 = async ({
+    user,
     userKeys,
     addressesKeys,
     organizationKey,
@@ -157,7 +173,7 @@ export const upgradeV2KeysV2 = async ({
     const keySalt = generateKeySalt();
     const newKeyPassword: string = await computeKeyPassword(clearKeyPassword, keySalt);
     const [reformattedUserKeys, reformattedOrganizationKey] = await Promise.all([
-        getReformattedKeys(userKeys, USER_KEY_USERID, newKeyPassword),
+        getReEncryptedKeys(userKeys, user.Keys, USER_KEY_USERID, newKeyPassword),
         organizationKey?.privateKey ? reformatOrganizationKey(organizationKey.privateKey, newKeyPassword) : undefined,
     ]);
 
@@ -280,6 +296,7 @@ export const upgradeV2KeysHelper = async ({
     if (getHasMigratedAddressKeys(addresses)) {
         return upgradeV2KeysV2({
             api,
+            user,
             userKeys,
             addressesKeys,
             organizationKey,
@@ -291,6 +308,7 @@ export const upgradeV2KeysHelper = async ({
 
     return upgradeV2KeysLegacy({
         api,
+        user,
         userKeys,
         addressesKeys,
         organizationKey,
