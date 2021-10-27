@@ -4,6 +4,7 @@ import { reactivateKeyRoute } from '../../api/keys';
 import { getSignedKeyList } from '../signedKeyList';
 import { KeyReactivationData, KeyReactivationRecord, OnKeyReactivationCallback } from './interface';
 import { getActiveKeyObject, getActiveKeys, getPrimaryFlag } from '../getActiveKeys';
+import { resetUserId } from './reactivateKeyHelper';
 
 interface ReactivateKeysProcessArguments {
     api: Api;
@@ -29,14 +30,17 @@ export const reactivateKeysProcess = async ({
     let mutableActiveKeys = activeKeys;
 
     for (const keyToReactivate of keysToReactivate) {
-        const { id, Key, privateKey: decryptedPrivateKey } = keyToReactivate;
+        const { id, Key, privateKey: reactivatedKey } = keyToReactivate;
         const { ID } = Key;
         try {
-            if (!decryptedPrivateKey) {
-                throw new Error('Missing private key');
+            if (!reactivatedKey) {
+                throw new Error('Missing key');
             }
-            const privateKeyArmored = await encryptPrivateKey(decryptedPrivateKey, keyPassword);
-            const newActiveKey = await getActiveKeyObject(decryptedPrivateKey, {
+
+            await resetUserId(Key, reactivatedKey);
+
+            const privateKeyArmored = await encryptPrivateKey(reactivatedKey, keyPassword);
+            const newActiveKey = await getActiveKeyObject(reactivatedKey, {
                 ID,
                 primary: getPrimaryFlag(mutableActiveKeys),
             });

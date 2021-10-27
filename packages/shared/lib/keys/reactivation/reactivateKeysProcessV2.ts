@@ -2,7 +2,7 @@ import { encryptPrivateKey, OpenPGPKey } from 'pmcrypto';
 import { Api, User as tsUser, Address as tsAddress, DecryptedKey, Address, ActiveKey } from '../../interfaces';
 import { KeyReactivationData, KeyReactivationRecord, OnKeyReactivationCallback } from './interface';
 import { getPrimaryKey } from '../getPrimaryKey';
-import { getAddressReactivationPayload, getReactivatedAddressesKeys } from './reactivateKeyHelper';
+import { getAddressReactivationPayload, getReactivatedAddressesKeys, resetUserId } from './reactivateKeyHelper';
 import { reactivateUserKeyRouteV2, reactiveLegacyAddressKeyRouteV2 } from '../../api/keys';
 import { getHasMigratedAddressKey } from '../keyMigration';
 import { getDecryptedAddressKeysHelper } from '../getDecryptedAddressKeys';
@@ -45,14 +45,17 @@ export const reactivateUserKeys = async ({
     let mutableAddresses = addresses;
 
     for (const keyToReactivate of keysToReactivate) {
-        const { id, Key, privateKey: decryptedPrivateKey } = keyToReactivate;
+        const { id, Key, privateKey: reactivatedKey } = keyToReactivate;
         const { ID } = Key;
         try {
-            if (!decryptedPrivateKey) {
+            if (!reactivatedKey) {
                 throw new Error('Missing key');
             }
-            const privateKeyArmored = await encryptPrivateKey(decryptedPrivateKey, keyPassword);
-            const newActiveKey = await getActiveKeyObject(decryptedPrivateKey, {
+
+            await resetUserId(Key, reactivatedKey);
+
+            const privateKeyArmored = await encryptPrivateKey(reactivatedKey, keyPassword);
+            const newActiveKey = await getActiveKeyObject(reactivatedKey, {
                 ID,
                 primary: getPrimaryFlag(mutableActiveKeys),
             });
@@ -138,16 +141,18 @@ export const reactivateAddressKeysV2 = async ({
     let mutableActiveKeys = activeKeys;
 
     for (const keyToReactivate of keysToReactivate) {
-        const { id, Key, privateKey: decryptedPrivateKey } = keyToReactivate;
+        const { id, Key, privateKey: reactivatedKey } = keyToReactivate;
         const { ID, Flags } = Key;
         try {
-            if (!decryptedPrivateKey) {
+            if (!reactivatedKey) {
                 throw new Error('Missing key');
             }
 
+            await resetUserId(Key, reactivatedKey);
+
             const { token, encryptedToken, signature } = await generateAddressKeyTokens(userKey);
-            const privateKeyArmored = await encryptPrivateKey(decryptedPrivateKey, token);
-            const newActiveKey = await getActiveKeyObject(decryptedPrivateKey, {
+            const privateKeyArmored = await encryptPrivateKey(reactivatedKey, token);
+            const newActiveKey = await getActiveKeyObject(reactivatedKey, {
                 ID,
                 primary: getPrimaryFlag(mutableActiveKeys),
                 flags: getReactivatedKeyFlag(Flags),
