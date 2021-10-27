@@ -2,7 +2,7 @@ import { Address, DecryptedKey, Key, UserModel } from '@proton/shared/lib/interf
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import { KeyReactivationRequest } from './interface';
 
-const getKeysToReactivate = (Keys: Key[], keys: DecryptedKey[] = []) => {
+const getKeysToReactivate = (Keys: Key[] = [], keys: DecryptedKey[] = []) => {
     const set = new Set(keys.map(({ ID }) => ID));
     return Keys.filter((Key) => {
         return !set.has(Key.ID);
