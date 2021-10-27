@@ -42,7 +42,19 @@ const encryptContact = async (contact: ContactProperties, { privateKey, publicKe
     }
 };
 
-const submitContacts = async (contacts: EncryptedContact[], labels: CATEGORIES, overwrite: OVERWRITE, api: Api) => {
+const submitContacts = async ({
+    contacts,
+    labels,
+    overwrite,
+    api,
+    isImport,
+}: {
+    contacts: EncryptedContact[];
+    labels: CATEGORIES;
+    overwrite: OVERWRITE;
+    api: Api;
+    isImport?: boolean;
+}) => {
     // submit the data
     let responses: AddContactsApiResponse[] = [];
     try {
@@ -51,6 +63,7 @@ const submitContacts = async (contacts: EncryptedContact[], labels: CATEGORIES, 
                 Contacts: contacts.map(({ contact }) => contact),
                 Overwrite: overwrite,
                 Labels: labels,
+                Import: isImport ? 1 : 0,
             }),
             timeout: HOUR,
             silence: true,
@@ -90,15 +103,18 @@ interface ProcessData {
     keyPair: KeyPair;
     api: Api;
     signal: AbortSignal;
+    isImport?: boolean;
     onProgress: (encrypted: EncryptedContact[], imported: ImportedContact[], errors: ImportContactError[]) => void;
 }
-export const processInBatches = async ({
+
+export const processContactsInBatches = async ({
     contacts,
     labels,
     overwrite,
     keyPair,
     api,
     signal,
+    isImport,
     onProgress,
 }: ProcessData) => {
     const batches = chunk(contacts, BATCH_SIZE);
@@ -122,7 +138,7 @@ export const processInBatches = async ({
         }
         onProgress(encrypted, [], errors);
         if (encrypted.length) {
-            const promise = submitContacts(encrypted, labels, overwrite, api).then(
+            const promise = submitContacts({ contacts: encrypted, labels, overwrite, isImport, api }).then(
                 (result: (ImportedContact | ImportContactError)[]) => {
                     const { errors, rest: importedSuccess } = splitErrors(result);
                     imported.push(importedSuccess);
