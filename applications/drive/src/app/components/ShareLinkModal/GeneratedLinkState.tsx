@@ -94,8 +94,8 @@ function GeneratedLinkState({
         withPassword: c('Info').t`Only the people with the link and the password can access this file.`,
     };
 
-    const PASSWORD_TOGGLE_DISABLE_REASON = c('Info').t`This link was created in \
-        a previous version and can not be modified. Delete this link and create a \
+    const PASSWORD_TOGGLE_DISABLE_REASON = c('Info').t`This link was created in
+        a previous version and can not be modified. Delete this link and create a
         new one to change the settings.`;
 
     useEffect(() => {
