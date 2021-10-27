@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { c } from 'ttag';
 
 import {
@@ -41,12 +42,14 @@ const AccountEasySwitchSettings = ({ setActiveSection, location }: SettingsProps
     const easySwitchFeature = useFeature(FeatureCode.EasySwitch);
     const isEasySwitchEnabled = easySwitchFeature.feature?.Value;
 
+    useEffect(() => {
+        if (!isEasySwitchEnabled) {
+            goToSettings('/dashboard');
+        }
+    }, [isEasySwitchEnabled]);
+
     if (easySwitchFeature.loading) {
         return <PrivateMainAreaLoading />;
-    }
-
-    if (!isEasySwitchEnabled) {
-        goToSettings('/dashboard');
     }
 
     return isEasySwitchEnabled ? (
