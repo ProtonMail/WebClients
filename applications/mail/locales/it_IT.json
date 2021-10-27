@@ -962,9 +962,6 @@
       "Forwarded": [
         "Inoltrato"
       ],
-      "Has attachments": [
-        "Ha allegati"
-      ],
       "Replied to": [
         "Ha risposto a"
       ],
@@ -1007,7 +1004,7 @@
     },
     "Attached ics file error": {
       "Empty ICS file": [
-        ""
+        "File ICS vuoto"
       ],
       "Invalid event": [
         "Evento non valido"
@@ -1884,8 +1881,8 @@
       "Amount below minimum.": [
         "Importo sotto al minimo."
       ],
-      "Attachments are limited to 25 MB.": [
-        "Gli allegati sono limitati a 25 MB."
+      "Attachments are limited to 25 MB": [
+        ""
       ],
       "Authentication canceled.": [
         "Autenticazione annullata."
@@ -1908,8 +1905,8 @@
       "Can't validate phone, try again later": [
         "Impossibile convalidare il telefono, riprova più tardi"
       ],
-      "Checkout expired, please try again.": [
-        "Pagamento scaduto, sei pregato di riprovare."
+      "Checkout expired, please try again": [
+        ""
       ],
       "Choose a date in the future.": [
         "Scegli una data nel futuro."
@@ -1930,11 +1927,11 @@
       "Contact signature not verified": [
         "Firma del contatto non verificata"
       ],
-      "Contact your organization’s administrator to resolve this.": [
-        "Contatti l'amministratore della sua organizzazione per risolverlo."
+      "Contact your organization’s administrator to resolve this": [
+        ""
       ],
-      "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser": [
-        "La ricerca del contenuto non può essere abilitata in questo browser. Per favore esci dalla modalità in incognito o usa un altro browser"
+      "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
+        ""
       ],
       "Could not find address ${ email }.": [
         "Impossibile trovare l'indirizzo ${ email }."
@@ -1970,14 +1967,14 @@
       "Error in one of the conditions": [
         "Errore in una delle condizioni"
       ],
-      "Error while saving draft. Please try again": [
-        "Errore nel salvataggio della bozza. Per favore riprova"
+      "Error while saving draft. Please try again.": [
+        ""
       ],
-      "Error while sending the message. Message is not sent": [
-        "Errore durante l'invio del messaggio. Messaggio non inviato"
+      "Error while sending the message. Message is not sent.": [
+        ""
       ],
-      "Error while uploading attachments. Message is not sent": [
-        "Errore durante il caricamento degli allegati. Il messaggio non è stato inviato"
+      "Error while uploading attachments. Message is not sent.": [
+        ""
       ],
       "Failed to encrypt attachment. Please try again.": [
         "Fallito nel crittografare l'allegato. Per favore, riprova."
@@ -2012,8 +2009,8 @@
       "Invalid expiration date": [
         "Data di scadenza non valida"
       ],
-      "Invalid expiration time.": [
-        "Data di scadenza non valida."
+      "Invalid expiration time": [
+        ""
       ],
       "Invalid name": [
         "Nome non valido"
@@ -2037,8 +2034,8 @@
       "Message needs to be sent first": [
         "Il messaggio deve essere prima inviato"
       ],
-      "Message passwords do not match.": [
-        "Le password del messaggio non corrispondono."
+      "Message passwords do not match": [
+        ""
       ],
       "Message processing error.": [
         "Errore elaborazione messaggio."
@@ -2052,8 +2049,8 @@
       "Network error: Please check your connection and try again.": [
         "Errore di rete: per favore controlla la tua connessione e riprova."
       ],
-      "No address with keys available to compose a message.": [
-        "Non c'è un indirizzo con chiavi disponibile per comporre un messaggio."
+      "No address with keys available to compose a message": [
+        ""
       ],
       "No key retrieved for internal user is valid for sending": [
         "Nessuna chiave recuperata per l'utente locale è valida per l'invio"
@@ -2153,10 +2150,10 @@
         "Impossibile eliminare alcuni gruppi"
       ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
-        ""
+        "Alcuni nomi delle tue etichette non sono disponibili. Personalizza l'importazione per modificare questi nomi."
       ],
       "Some of your label names exceed ProtonMail's maximum character limit. Please customize the import to edit these names.": [
-        ""
+        "Alcuni nomi delle etichette superano il limite massimo di caratteri di ProtonMail. Personalizza l'importazione per modificare questi nomi."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Qualcosa è andato storto, ${ refresh } per procedere. Se continui a vedere questo errore contatta il nostro ${ supportTeam }."
@@ -2186,8 +2183,8 @@
       "The label name is too long. Please choose a different name.": [
         "Il nome dell'etichetta è troppo lungo. Scegli un nome diverso."
       ],
-      "The maximum expiration is 4 weeks.": [
-        "La scadenza massima è di 4 settimane."
+      "The maximum expiration is 4 weeks": [
+        ""
       ],
       "The minimum amount of credit that can be added is ${ _price }": [
         "L'importo minimo di credito aggiungibile è di ${ _price }"
@@ -2204,8 +2201,8 @@
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         ""
       ],
-      "There has been an issue with content search. Default search has been used instead": [
-        "Si è verificato un problema con la ricerca di contenuti. E' stata utilizzata la ricerca predefinita"
+      "There has been an issue with content search. Default search has been used instead.": [
+        ""
       ],
       "There was an error when exporting the contacts vCards": [
         "Si è verificato un errore nell'esportazione delle vCard dei contatti"
@@ -2222,8 +2219,8 @@
       "This label name is not available. Please choose a different name": [
         "Questo nome dell'etichetta non è disponibile. Scegli un nome diverso"
       ],
-      "This message has already been sent.": [
-        "Il messaggio è stato già inviato."
+      "This message has already been sent": [
+        ""
       ],
       "This message has already been sent. A new draft has been saved.": [
         "Questo messaggio è già stato inviato. È stata salvata una nuova bozza."
@@ -2231,8 +2228,8 @@
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "Questo messaggio potrebbe contenere alcuni link URL che non possono essere aperti correttamente dal browser corrente"
       ],
-      "Too many active filters. Please upgrade to a paid plan to activate more filters": [
-        "Troppi filtri attivi. Effettua l'upgrade ad un piano a pagamento per attivare più filtri"
+      "Too many active filters. Please upgrade to a paid plan to activate more filters.": [
+        ""
       ],
       "Trusted keys are not valid for sending": [
         "Le chiavi attendibili non sono valide per l'invio"
@@ -2252,9 +2249,9 @@
       "You can't send vCards of more than 10 contacts": [
         "Non è possibile inviare vCard con più di 10 contatti"
       ],
-      "You cannot open more than ${ maxActiveComposer } composer window at a time.": [
-        "Non puoi aprire più di ${ maxActiveComposer } finestra del compositore per volta.",
-        "Non puoi aprire più di ${ maxActiveComposer } finestre del compositore per volta."
+      "You cannot open more than ${ maxActiveComposer } composer window at a time": [
+        "",
+        ""
       ],
       "You did not provide a file.": [
         "Non hai fornito un file."
@@ -2271,8 +2268,8 @@
       "Your import will not be processed.": [
         "La tua importazione non verrà elaborata."
       ],
-      "Your search matched too many results. Please limit your search and try again": [
-        "Abbiamo trovato troppi risultati. Si prega di limitare la ricerca e riprovare"
+      "Your search matched too many results. Please limit your search and try again.": [
+        ""
       ]
     },
     "Error display when performing invalid move on message": {
@@ -2828,8 +2825,8 @@
         ""
       ],
       "${ numContacts } contact": [
-        "",
-        ""
+        "${ numContacts } contatto",
+        "${ numContacts } contatti"
       ],
       "${ occurrencesInBody } occurrence found": [
         "${ occurrencesInBody } occorrenza trovata",
@@ -3009,7 +3006,7 @@
         "Una chiave pubblica sconosciuta è stata rilevata per questo destinatario."
       ],
       "and": [
-        ""
+        "e"
       ],
       "Are you sure you want to delete all messages in this folder?": [
         "Sei sicuro di voler eliminare tutti i messaggi in questa cartella?"
@@ -3133,7 +3130,7 @@
         "Crea un nuovo gruppo di contatto"
       ],
       "Create in": [
-        ""
+        "Crea in"
       ],
       "Create recovery phrase": [
         "Crea frase di recupero"
@@ -3316,8 +3313,8 @@
       "Image URL": [
         "URL dell'immagine"
       ],
-      "Images have been removed because they are not allowed in auto-reply.": [
-        "Le immagini sono state rimosse perché non sono permesse nella risposta automatica."
+      "Images have been removed because they are not allowed in auto-reply": [
+        ""
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         ""
@@ -3330,7 +3327,7 @@
         "Importa da"
       ],
       "Import in progress": [
-        ""
+        "Importazione in corso"
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         ""
@@ -3409,7 +3406,7 @@
         "Membri"
       ],
       "Merged": [
-        ""
+        "Unito"
       ],
       "Message expiration works out-of-the-box when sending emails to other ProtonMail users. To send expiring emails to non-ProtonMail users, please cancel and add password protection to your email.": [
         "Il messaggio con scadenza funziona quando si inviano email ad altri utenti di ProtonMail. Per inviare email che scadono agli utenti non ProtonMail, annulla e aggiungi una protezione con password alla tua email."
@@ -3422,6 +3419,9 @@
       ],
       "Message sent": [
         "Messaggio inviato"
+      ],
+      "Message sent.": [
+        ""
       ],
       "Message will be sent ${ dateString } at ${ formattedTime }": [
         "Il messaggio verrà inviato ${ dateString } alle ${ formattedTime }"
@@ -4622,7 +4622,7 @@
         "Pagante"
       ],
       "PGP scheme": [
-        ""
+        "Schema PGP"
       ],
       "Phone number": [
         "Numero di telefono"
@@ -4993,7 +4993,7 @@
         ""
       ],
       "Almost there": [
-        ""
+        "Già qui"
       ],
       "Creating new calendars": [
         ""
@@ -5423,10 +5423,10 @@
     },
     "Option group label": {
       "Create new calendar": [
-        ""
+        "Crea nuovo calendario"
       ],
       "Merge with calendar": [
-        ""
+        "Unisci con calendario"
       ]
     },
     "Participant name": {
@@ -6099,8 +6099,8 @@
       "Contacts deleted": [
         "Contatti eliminati"
       ],
-      "Conversation added to ${ labelName }": [
-        "Conversazione aggiunta a ${ labelName }"
+      "Conversation added to ${ labelName }.": [
+        ""
       ],
       "Conversation deleted": [
         "Conversazione eliminata"
@@ -6108,8 +6108,8 @@
       "Conversation marked as read.": [
         ""
       ],
-      "Conversation marked as Starred": [
-        "Conversazione contrassegnata come preferita"
+      "Conversation marked as Starred.": [
+        ""
       ],
       "Conversation marked as unread.": [
         ""
@@ -6123,8 +6123,8 @@
       "Conversation moved to spam and sender added to Block List.": [
         "Conversazione spostata in spam e mittente aggiunto alla Lista Bloccati."
       ],
-      "Conversation removed from ${ labelName }": [
-        "Conversazione rimossa da ${ labelName }"
+      "Conversation removed from ${ labelName }.": [
+        ""
       ],
       "Draft deleted": [
         "Bozza eliminata"
@@ -6150,8 +6150,8 @@
       "Mail list unsubscribed": [
         "Disiscritto dalla lista di posta"
       ],
-      "Message added to ${ labelName }": [
-        "Messaggio aggiunto a ${ labelName }"
+      "Message added to ${ labelName }.": [
+        ""
       ],
       "Message content search activated": [
         "Ricerca contenuto messaggio attivata"
@@ -6165,8 +6165,8 @@
       "Message marked as read.": [
         "Messaggio segnato come letto."
       ],
-      "Message marked as Starred": [
-        "Messaggio segnato come preferito"
+      "Message marked as Starred.": [
+        ""
       ],
       "Message marked as unread.": [
         ""
@@ -6180,8 +6180,8 @@
       "Message moved to spam and sender added to Block List.": [
         "Messaggio spostato in spam e mittente aggiunto alla Lista Bloccati."
       ],
-      "Message removed from ${ labelName }": [
-        "Messaggio rimosso da ${ labelName }"
+      "Message removed from ${ labelName }.": [
+        ""
       ],
       "Move ${ selectionCount } conversation": [
         "Sposta ${ selectionCount } conversazione",
@@ -6288,13 +6288,13 @@
         "data di creazione dell'account"
       ],
       "the last 12 months": [
-        ""
+        "ultimi 12 mesi"
       ],
       "the last 3 months": [
-        ""
+        "ultimi 3 mesi"
       ],
       "the last month": [
-        ""
+        "ultimo mese"
       ]
     },
     "Time unit": {
@@ -6842,7 +6842,7 @@
     },
     "Today icon tooltip in mini calendar": {
       "Today": [
-        ""
+        "Oggi"
       ]
     },
     "Tooltip": {
@@ -6868,7 +6868,7 @@
         "Sconto applicato per il ciclo di fatturazione biennale"
       ],
       "Each imported email will have this label": [
-        ""
+        "Ogni email importata avrà questa etichetta"
       ],
       "Email encryption forces email signature to help authenticate your sent messages": [
         "La crittografia email impone la firma email per autenticare i messaggi inviati"
@@ -6907,10 +6907,10 @@
         "Supporto per i protocolli di condivisione dei file come BitTorrent."
       ],
       "System subfolders will show up as separate folders in ProtonMail": [
-        ""
+        "Le sottocartelle di sistema verranno visualizzate come cartelle separate in ProtonMail"
       ],
       "The import will start with the most recent messages.": [
-        ""
+        "L'importazione inizierà con i messaggi più recenti."
       ],
       "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
         "Questa azione scaricherà tutti i messaggi in modo che possano essere ricercati localmente. La cancellazione dei dati del browser disattiverà questa opzione."
@@ -7102,7 +7102,7 @@
         "Sfortunatamente, al momento non sei online. Per favore completa il modulo sotto per descrivere il problema, lo esamineremo e ti contatteremo quando quando saremo di nuovo online."
       ],
       "You will lose any customization you made so far.": [
-        ""
+        "Perderai ogni personalizzazione che hai fatto finora."
       ]
     },
     "Weekly recurring event, frequency": {

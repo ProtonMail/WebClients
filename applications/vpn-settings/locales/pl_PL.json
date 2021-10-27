@@ -161,7 +161,7 @@
         "Obniż plan"
       ],
       "Downgrade to ${ BRAND_NAME } ${ downgradedPlanName }": [
-        ""
+        "Obniż plan do ${ BRAND_NAME } ${ downgradedPlanName }"
       ],
       "Download": [
         "Pobierz"
@@ -227,7 +227,7 @@
         "Zwiększ"
       ],
       "Keep my ${ BRAND_NAME } ${ currentPlanName } account": [
-        ""
+        "Zachowaj konto ${ BRAND_NAME } ${ currentPlanName }"
       ],
       "Loading verification": [
         "Ładowanie weryfikacji"
@@ -727,7 +727,7 @@
         "Link kalendarza nie jest dostępny"
       ],
       "Calendar link is temporarily inaccessible": [
-        ""
+        "Link kalendarza jest tymczasowo niedostępny"
       ],
       "Calendar link is wrong": [
         "Link kalendarza jest nieprawidłowy"
@@ -785,33 +785,33 @@
     },
     "Downgrade account reason": {
       "Bugs or quality issue": [
-        ""
+        "Błędy lub problemy z jakością usługi"
       ],
       "I use a different Proton account": [
         "Korzystam z innego konta Proton"
       ],
       "Missing feature(s) ": [
-        ""
+        "Brakujące funkcje"
       ],
       "My reason isn't listed, please comment": [
-        ""
+        "Inna, niewymieniona wyżej przyczyna"
       ],
       "Streaming service unsupported": [
-        ""
+        "Usługi streamingu są nieobsługiwane"
       ],
       "Subscription is too expensive": [
         "Cena jest zbyt wysoka"
       ],
       "Switching to a different provider": [
-        ""
+        "Używam innej usługi"
       ],
       "Temporary need, may come back in the future": [
-        ""
+        "Potrzebowałem konto tymczasowo"
       ]
     },
     "Downgrade modal exit survey title": {
       "Help us improve!": [
-        ""
+        "Pomóż nam ulepszyć usługę!"
       ]
     },
     "Drive feature": {
@@ -846,8 +846,8 @@
       "Can't validate phone, try again later": [
         "Nie można zweryfikować numeru telefonu. Spróbuj ponownie później"
       ],
-      "Checkout expired, please try again.": [
-        "Płatność wygasła. Spróbuj ponownie."
+      "Checkout expired, please try again": [
+        "Płatność wygasła. Spróbuj ponownie"
       ],
       "Code wrong or not valid anymore": [
         "Kod jest nieprawidłowy lub stracił ważność"
@@ -924,8 +924,8 @@
       "Please enter '${ dangerWord }'": [
         "Wpisz '${ dangerWord }'"
       ],
-      "Please generate keys before you try to change your password.": [
-        "Wygeneruj klucze, zanim spróbujesz zmienić hasło."
+      "Please generate keys before you try to change your password": [
+        "Wygeneruj klucze, zanim spróbujesz zmienić hasło"
       ],
       "Please set a recovery phone number first": [
         "Ustaw numer pomocniczy"
@@ -1303,7 +1303,7 @@
         "Obniżając plan do wersji Free, utracisz te bonusy na zawsze, nawet jeśli w przyszłości ponownie ulepszysz swoje konto."
       ],
       "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
-        ""
+        "Obniżając plan, utracisz następujące bonusy. Czy na pewno chcesz kontynuować?"
       ],
       "By leaving now, changes may not be saved": [
         "Jeśli wyjdziesz teraz, zmiany nie zostaną zapisane"
@@ -1642,7 +1642,7 @@
         "Obciążenie serwera"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
-        ""
+        "Serwery są nieosiągalne. Spróbuj ponownie za kilka minut"
       ],
       "Session timed out.": [
         "Upłynął limit czasu sesji."
@@ -2091,13 +2091,13 @@
         "Kopiuj"
       ],
       "Could you please let us know which provider?": [
-        ""
+        "Co to za dostawca usługi?"
       ],
       "Could you please specify which streaming service?": [
-        ""
+        "Jaka usługa streamingu nie działa?"
       ],
       "Could you please specify?": [
-        ""
+        "Jakie to błędy lub problemy?"
       ],
       "Country": [
         "Kraj"
@@ -2130,7 +2130,7 @@
         "Nazwa wyświetlana"
       ],
       "Do you have any suggestions for our team?": [
-        ""
+        "Czy masz sugestie dla naszego zespołu?"
       ],
       "Email": [
         "Adres e-mail"
@@ -2205,7 +2205,7 @@
         "Wersja systemu operacyjnego"
       ],
       "Optional": [
-        ""
+        "Opcjonalnie"
       ],
       "Other amount": [
         "Inna kwota"
@@ -2722,7 +2722,7 @@
         "Adres e-mail"
       ],
       "Enter coupon code": [
-        "Wprowadź kod kuponu"
+        "Wpisz kod kuponu"
       ],
       "Enter the word '${ dangerWord }' here": [
         "Tu wpisz słowo '${ dangerWord }'"
@@ -2834,7 +2834,7 @@
       ],
       "${ maxConnections } VPN connection": [
         "${ maxConnections } połączenie VPN",
-        "${ maxConnections } połączeń VPN",
+        "${ maxConnections } połączenia VPN",
         "${ maxConnections } połączeń VPN",
         "${ maxConnections } połączeń VPN"
       ],
@@ -3028,10 +3028,10 @@
     },
     "Plan time remaining": {
       "You still have ${ daysRemaining } day left on your ${ BRAND_NAME } ${ currentPlanName } account.": [
-        "",
-        "",
-        "",
-        ""
+        "Nadal posiadasz ${ daysRemaining } dzień konta ${ BRAND_NAME } ${ currentPlanName }.",
+        "Nadal posiadasz ${ daysRemaining } dni konta ${ BRAND_NAME } ${ currentPlanName }.",
+        "Nadal posiadasz ${ daysRemaining } dni konta ${ BRAND_NAME } ${ currentPlanName }.",
+        "Nadal posiadasz ${ daysRemaining } dni konta ${ BRAND_NAME } ${ currentPlanName }."
       ]
     },
     "Plan upsell": {
@@ -3107,8 +3107,8 @@
       "Gift code applied": [
         "Kod podarunkowy został zastosowany"
       ],
-      "If you entered a valid notification email we will send you an email with your usernames in the next minute.": [
-        "Jeśli wpisałeś prawidłowy adres pomocniczy, w ciągu minuty wyślemy Ci wiadomość z Twoimi nazwami użytkowników."
+      "If you entered a valid notification email we will send you an email with your usernames in the next minute": [
+        "Jeśli wpisałeś prawidłowy adres pomocniczy, w ciągu minuty wyślemy Ci wiadomość z Twoimi nazwami użytkowników"
       ],
       "Invoice customized": [
         "Faktura została dostosowana"
@@ -3831,7 +3831,7 @@
         "Raporty nie są szyfrowane end-to-end. Nie wysyłaj żadnych poufnych informacji."
       ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
-        ""
+        "Ustawienia daty i czasu na Twoim urządzeniu nie są zsynchronizowane. ${ learnMore }"
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Jesteśmy teraz niedostępni. Wypełnij formularz, na który odpowiemy kiedy będziemy ponownie dostępni."

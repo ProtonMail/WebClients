@@ -31,11 +31,11 @@
       "${ BRAND_NAME } shop": [
         "Loja ${ BRAND_NAME }"
       ],
-      "Activate": [
-        "Ativar"
-      ],
       "activate": [
         "ativar"
+      ],
+      "Activate": [
+        "Ativar"
       ],
       "Activate ${ Name }@pm.me": [
         "Ativar ${ Name }@pm.me"
@@ -385,6 +385,9 @@
       "Import contacts": [
         "Importar contatos"
       ],
+      "Import from .csv or vCard": [
+        ""
+      ],
       "Import from .ics": [
         ""
       ],
@@ -657,6 +660,9 @@
       ],
       "Sign out all accounts": [
         "Sair de todas as contas"
+      ],
+      "Signing in": [
+        "Iniciando sessão"
       ],
       "Signing out": [
         "Encerrando a sessão"
@@ -1784,8 +1790,8 @@
       "Can't validate phone, try again later": [
         "Não foi possível validar o telefone, tente novamente mais tarde"
       ],
-      "Checkout expired, please try again.": [
-        "Pedido expirado. Por favor, tente novamente."
+      "Checkout expired, please try again": [
+        ""
       ],
       "Condition incomplete": [
         "Condição incompleta"
@@ -1909,6 +1915,9 @@
       "Not a valid number": [
         "Não é um número válido"
       ],
+      "Organization key is not decrypted": [
+        ""
+      ],
       "Organization key is not decrypted.": [
         "A chave de organização não está descriptografada."
       ],
@@ -1943,8 +1952,8 @@
         "",
         ""
       ],
-      "Please generate keys before you try to change your password.": [
-        "Por favor, crie novas chaves antes de tentar alterar sua senha."
+      "Please generate keys before you try to change your password": [
+        ""
       ],
       "Please refresh the page.": [
         "Por favor atualize a página."
@@ -1958,8 +1967,8 @@
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         "Por favor, tente reautenticar e certifique-se de que as permissões estão definidas corretamente."
       ],
-      "Please upgrade to a Professional plan with more than 1 user, or a Visionary account, to get multi-user support.": [
-        "Por favor, faça o upgrade para um plano Profissional com mais de 1 usuário ou uma conta Visionária para obter suporte para múltiplos usuários."
+      "Please upgrade to a Professional plan with more than 1 user, or a Visionary account, to get multi-user support": [
+        ""
       ],
       "Please upgrade to a Professional plan with more than 1 user, or a Visionary account, to manage multiple users.": [
         "Por favor, faça o upgrade para um plano Profissional com mais de 1 usuário ou uma conta Visionária para gerenciar múltiplos usuários."
@@ -2026,6 +2035,9 @@
       ],
       "The minimum payment we accept is ${ _price2 }": [
         "O pagamento mínimo que aceitamos é ${ _price2 }"
+      ],
+      "The organization key must be activated first": [
+        ""
       ],
       "The organization key must be activated first.": [
         "A chave da organização deve ser ativada primeiro."
@@ -2131,11 +2143,11 @@
       "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } events.": [
         "O arquivo ${ formattedFilename } contém mais de ${ MAX_IMPORT_EVENTS_STRING } eventos."
       ],
+      "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
+        ""
+      ],
       "Your file ${ formattedFilename } has no events to be imported.": [
         "O arquivo ${ formattedFilename } não tem eventos para serem importados."
-      ],
-      "Your file ${ formattedFilename } is an invitation and cannot be imported.": [
-        "Seu arquivo ${ formattedFilename } é um convite e não pode ser importado."
       ],
       "Your file ${ formattedFilename } is empty.": [
         "O arquivo ${ formattedFilename } está vazio."
@@ -2683,38 +2695,27 @@
       ]
     },
     "Import calendar warning": {
-      "${ CALENDAR_APP_NAME } does not support ${ forNow }:": [
-        "${ CALENDAR_APP_NAME } não suporta ${ forNow }:"
-      ],
-      "Attendees": [
-        "Participantes"
-      ],
-      "Complex recurring rules": [
-        "Regras recorrentes complexas"
-      ],
-      "Email notifications": [
-        "Notificações por e-mail"
-      ],
-      "for now": [
-        "por enquanto"
-      ],
-      "Free-busy time information": [
-        "Informação de horário disponível"
-      ],
-      "Journal entries": [
-        "Entradas no diário"
-      ],
-      "Non-Gregorian calendars": [
-        "Calendários não gregorianos"
-      ],
-      "To-do entries": [
-        "Entrada de tarefas"
-      ],
-      "Unofficial or custom timezones": [
-        "Fusos horários não oficiais ou personalizados"
+      "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
+        ""
       ],
       "vCard versions < 3.0": [
         "versões vCard < 3.0"
+      ]
+    },
+    "Import calendar; import invitation": {
+      "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your Proton email address.": [
+        ""
+      ],
+      "This file contains an event invitation:": [
+        "",
+        ""
+      ],
+      "This file contains an invitation response:": [
+        "",
+        ""
+      ],
+      "This file contains some data that we cannot import:": [
+        ""
       ]
     },
     "Import contact": {
@@ -3000,17 +3001,17 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } de ${ totalContacts } contatos não serão importados. Clique para detalhes"
       ],
-      "${ totalEventsDiscarded } out of ${ totalEvents } events will not be imported. Click for details": [
-        "${ totalEventsDiscarded } de ${ totalEvents } eventos não serão importados. Clique para detalhes"
+      "${ totalEventsDiscarded } out of ${ totalEvents } events will not be imported. Expand for details.": [
+        "${ totalEventsDiscarded } de ${ totalEvents } eventos não serão importados. Expanda para detalhes."
       ],
       "No contact can be imported. Click for details": [
         "Nenhum contato pôde ser importado. Clique para maiores detalhes"
       ],
-      "No event can be imported. Click for details": [
-        "Nenhum evento pôde ser importado. Clique para detalhes"
+      "No event can be imported. Expand for details.": [
+        ""
       ],
-      "Part of your calendar content is not supported and will not be imported": [
-        "Parte do conteúdo de seu calendário não é suportado e por isso não será importado"
+      "Part of your calendar content is not supported and will not be imported.": [
+        ""
       ]
     },
     "Info": {
@@ -3447,8 +3448,8 @@
       "Done": [
         "Concluído"
       ],
-      "Done! We sent a code to ${ destination }": [
-        "Pronto! Enviamos um código para ${ destination }"
+      "Done! We sent a code to ${ destination }.": [
+        ""
       ],
       "Downgrading will terminate any connections to paid ProtonVPN servers.": [
         "O downgrade irá encerrar qualquer conexão com servidores pagos do ProtonVPN."
@@ -3642,8 +3643,8 @@
       "Image URL": [
         "Imagem URL"
       ],
-      "Images have been removed because they are not allowed in auto-reply.": [
-        "Imagens foram removidas porque não estão permitidas na reposta automática."
+      "Images have been removed because they are not allowed in auto-reply": [
+        ""
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         ""
@@ -4047,7 +4048,7 @@
         "Carga do servidor"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
-        ""
+        "Os servidores estão inacessíveis. Por favor, tente novamente em alguns minutos"
       ],
       "Session timed out.": [
         "Sessão expirada."
@@ -5104,7 +5105,7 @@
         "Notificações padrão"
       ],
       "Default PGP scheme": [
-        ""
+        "Esquema PGP padrão"
       ],
       "Default view": [
         "Visualização padrão"
@@ -7153,8 +7154,8 @@
       "Deleting original messages": [
         "Excluindo mensagens originais"
       ],
-      "DMARC value copied to clipboard!": [
-        "Valor DMARC copiado para a área de transferência!"
+      "DMARC value copied to clipboard": [
+        ""
       ],
       "Domain verified": [
         "Domínio verificado"
@@ -7228,8 +7229,8 @@
       "Sessions revoked": [
         "Sessões revogadas"
       ],
-      "SPF value copied to clipboard!": [
-        "Valor SPF copiado para a área de transferência!"
+      "SPF value copied to clipboard": [
+        ""
       ],
       "User created": [
         "Usuário criado"
@@ -7237,11 +7238,11 @@
       "User updated": [
         "Usuário atualizado"
       ],
-      "Value copied to clipboard!": [
-        "Valor copiado para a área de transferência!"
+      "Value copied to clipboard": [
+        ""
       ],
-      "Verification code copied to clipboard!": [
-        "Código de verificação copiado para a área de transferência!"
+      "Verification code copied to clipboard": [
+        ""
       ],
       "Verification successful": [
         "Verificado com sucesso"
@@ -7571,6 +7572,9 @@
       "Contacts": [
         "Contatos"
       ],
+      "Continue with partial import?": [
+        ""
+      ],
       "Coupon discount": [
         "Cupom de desconto"
       ],
@@ -7775,6 +7779,10 @@
       "Import & export": [
         "Importar & exportar"
       ],
+      "Import as simple event?": [
+        "",
+        ""
+      ],
       "Import Assistant": [
         "Assistente de importação"
       ],
@@ -7783,6 +7791,9 @@
       ],
       "Import events": [
         "Importar eventos"
+      ],
+      "Import failed": [
+        "Falha na importação"
       ],
       "Import groups": [
         "Importar grupos"

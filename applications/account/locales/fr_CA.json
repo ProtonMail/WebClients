@@ -31,11 +31,11 @@
       "${ BRAND_NAME } shop": [
         "Boutique ${ BRAND_NAME }"
       ],
-      "Activate": [
-        "Activer"
-      ],
       "activate": [
         "activer"
+      ],
+      "Activate": [
+        "Activer"
       ],
       "Activate ${ Name }@pm.me": [
         "Activer ${ Name }@pm.me"
@@ -385,6 +385,9 @@
       "Import contacts": [
         "Importer des contacts"
       ],
+      "Import from .csv or vCard": [
+        ""
+      ],
       "Import from .ics": [
         "Importer depuis un .ics"
       ],
@@ -657,6 +660,9 @@
       ],
       "Sign out all accounts": [
         "Déconnecter tous les comptes"
+      ],
+      "Signing in": [
+        ""
       ],
       "Signing out": [
         "Déconnexion"
@@ -1070,6 +1076,91 @@
       ],
       "Two-year": [
         "Bisannuel"
+      ]
+    },
+    "blackfriday Action": {
+      "Get limited-time deal": [
+        ""
+      ],
+      "Upgrade": [
+        ""
+      ]
+    },
+    "blackfriday Info": {
+      "Discounts are based on monthly pricing.": [
+        ""
+      ],
+      "early access to": [
+        ""
+      ],
+      "Free": [
+        ""
+      ],
+      "Get early access to our new encrypted drive for FREE by upgrading to a Plus bundle now.": [
+        ""
+      ],
+      "Includes": [
+        ""
+      ],
+      "Offer valid only for first-time paid subscriptions.": [
+        ""
+      ],
+      "ProtonDrive": [
+        ""
+      ],
+      "Save ${ percentage }%": [
+        ""
+      ],
+      "Standard price: ${ regularPrice }": [
+        ""
+      ],
+      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
+        ""
+      ]
+    },
+    "blackfriday info": {
+      "per month": [
+        ""
+      ]
+    },
+    "blackfriday Promo title, need to be short": {
+      "Special offer": [
+        ""
+      ]
+    },
+    "blackfriday Title": {
+      "(${ notice }) Renews after 1 year at a discounted annual & bundle price of ${ amount } every year (36% discount).": [
+        ""
+      ],
+      "(${ notice }) Renews after 1 year at a discounted annual price of ${ amount } every year (20% discount).": [
+        ""
+      ],
+      "(${ notice }) Renews after 2 years at a discounted 2-year price of ${ amount } every 2 years (47% discount).": [
+        ""
+      ],
+      "Billed as ${ amount } ${ supNotice }": [
+        ""
+      ],
+      "Black Friday Sale": [
+        ""
+      ],
+      "Cyber Monday Sale": [
+        ""
+      ],
+      "for 1 month": [
+        ""
+      ],
+      "for 1 year": [
+        ""
+      ],
+      "for 2 years": [
+        ""
+      ],
+      "Most popular": [
+        ""
+      ],
+      "ProtonDrive early access offer": [
+        ""
       ]
     },
     "Bridge version load failed": {
@@ -1699,8 +1790,8 @@
       "Can't validate phone, try again later": [
         "Impossible de valider le numéro de téléphone, veuillez réessayer plus tard"
       ],
-      "Checkout expired, please try again.": [
-        "La commande a expiré, veuillez réessayer."
+      "Checkout expired, please try again": [
+        ""
       ],
       "Condition incomplete": [
         "Condition incomplète"
@@ -1824,6 +1915,9 @@
       "Not a valid number": [
         "Numéro invalide"
       ],
+      "Organization key is not decrypted": [
+        ""
+      ],
       "Organization key is not decrypted.": [
         "La clé de l'organisation n'est pas déchiffrée."
       ],
@@ -1858,8 +1952,8 @@
         "Veuillez corriger le conflit en surbrillance pour continuer.",
         "Veuillez corriger les conflits en surbrillance pour continuer."
       ],
-      "Please generate keys before you try to change your password.": [
-        "Veuillez générer des clés avant d'essayer de changer votre mot de passe."
+      "Please generate keys before you try to change your password": [
+        ""
       ],
       "Please refresh the page.": [
         "Veuillez actualiser la page."
@@ -1873,8 +1967,8 @@
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         "Veuillez essayer de vous authentifier à nouveau et assurez-vous que les autorisations soient définies correctement."
       ],
-      "Please upgrade to a Professional plan with more than 1 user, or a Visionary account, to get multi-user support.": [
-        "Veuillez passer à une offre Professional avec plus d'un utilisateur, ou à un compte Visionary pour bénéficier du support multi-utilisateur."
+      "Please upgrade to a Professional plan with more than 1 user, or a Visionary account, to get multi-user support": [
+        ""
       ],
       "Please upgrade to a Professional plan with more than 1 user, or a Visionary account, to manage multiple users.": [
         "Veuillez passer à un abonnement Professional avec plus d'un utilisateur, ou à un abonnement Visionary, pour gérer plusieurs utilisateurs."
@@ -1941,6 +2035,9 @@
       ],
       "The minimum payment we accept is ${ _price2 }": [
         "Le paiement minimal que nous acceptons est ${ _price2 }"
+      ],
+      "The organization key must be activated first": [
+        ""
       ],
       "The organization key must be activated first.": [
         "La clé de l'organisation doit d'abord être activée."
@@ -2046,11 +2143,11 @@
       "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } events.": [
         "Votre fichier ${ formattedFilename } contient plus de ${ MAX_IMPORT_EVENTS_STRING } événements."
       ],
+      "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
+        ""
+      ],
       "Your file ${ formattedFilename } has no events to be imported.": [
         "Votre fichier ${ formattedFilename } n'a pas d'événements à importer."
-      ],
-      "Your file ${ formattedFilename } is an invitation and cannot be imported.": [
-        "Votre fichier ${ formattedFilename } est une invitation et ne peut pas être importé."
       ],
       "Your file ${ formattedFilename } is empty.": [
         "Votre fichier ${ formattedFilename } est vide."
@@ -2598,38 +2695,27 @@
       ]
     },
     "Import calendar warning": {
-      "${ CALENDAR_APP_NAME } does not support ${ forNow }:": [
-        "${ CALENDAR_APP_NAME } ne prend pas en charge ${ forNow }:"
-      ],
-      "Attendees": [
-        "Participants"
-      ],
-      "Complex recurring rules": [
-        "Règles récurrentes complexes"
-      ],
-      "Email notifications": [
-        "Notifications par courriel"
-      ],
-      "for now": [
-        "pour l'instant"
-      ],
-      "Free-busy time information": [
-        "Information de disponibilité"
-      ],
-      "Journal entries": [
-        "Entrées du journal"
-      ],
-      "Non-Gregorian calendars": [
-        "Calendriers non grégoriens"
-      ],
-      "To-do entries": [
-        "Entrées à faire"
-      ],
-      "Unofficial or custom timezones": [
-        "Fuseaux horaires non officiels ou personnalisés"
+      "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
+        ""
       ],
       "vCard versions < 3.0": [
         "versions de vCard < 3.0"
+      ]
+    },
+    "Import calendar; import invitation": {
+      "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your Proton email address.": [
+        ""
+      ],
+      "This file contains an event invitation:": [
+        "",
+        ""
+      ],
+      "This file contains an invitation response:": [
+        "",
+        ""
+      ],
+      "This file contains some data that we cannot import:": [
+        ""
       ]
     },
     "Import contact": {
@@ -2915,17 +3001,17 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } contacts sur ${ totalContacts } ne seront pas importés. Cliquez pour plus de détails"
       ],
-      "${ totalEventsDiscarded } out of ${ totalEvents } events will not be imported. Click for details": [
-        "${ totalEventsDiscarded } sur ${ totalEvents } événements ne seront pas importés. Cliquez pour plus de détails"
+      "${ totalEventsDiscarded } out of ${ totalEvents } events will not be imported. Expand for details.": [
+        ""
       ],
       "No contact can be imported. Click for details": [
         "Aucun contact ne peut être importé. Cliquez pour plus de détails"
       ],
-      "No event can be imported. Click for details": [
-        "Aucun événement ne peut être importé. Cliquez pour plus de détails"
+      "No event can be imported. Expand for details.": [
+        ""
       ],
-      "Part of your calendar content is not supported and will not be imported": [
-        "Une partie du contenu de votre calendrier n'est pas prise en charge et ne sera pas importée"
+      "Part of your calendar content is not supported and will not be imported.": [
+        ""
       ]
     },
     "Info": {
@@ -3362,8 +3448,8 @@
       "Done": [
         "Terminé"
       ],
-      "Done! We sent a code to ${ destination }": [
-        "C'est fait! Nous avons envoyé un code à ${ destination }"
+      "Done! We sent a code to ${ destination }.": [
+        ""
       ],
       "Downgrading will terminate any connections to paid ProtonVPN servers.": [
         "La rétrogradation mettra fin à toutes les connexions vers les serveurs payants ProtonVPN."
@@ -3557,8 +3643,8 @@
       "Image URL": [
         "URL de l'image"
       ],
-      "Images have been removed because they are not allowed in auto-reply.": [
-        "Les images ont été supprimées, car elles ne sont pas autorisées dans la réponse automatique."
+      "Images have been removed because they are not allowed in auto-reply": [
+        ""
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Importer $ { contactsFragment } et ${ contactsGroupsFragment }"
@@ -7068,8 +7154,8 @@
       "Deleting original messages": [
         "Suppression des messages d'origine"
       ],
-      "DMARC value copied to clipboard!": [
-        "La valeur DMARC a été copiée dans le presse-papiers!"
+      "DMARC value copied to clipboard": [
+        ""
       ],
       "Domain verified": [
         "Domaine vérifié"
@@ -7143,8 +7229,8 @@
       "Sessions revoked": [
         "Sessions révoquées"
       ],
-      "SPF value copied to clipboard!": [
-        "La valeur du SPF a été copiée dans le presse-papiers!"
+      "SPF value copied to clipboard": [
+        ""
       ],
       "User created": [
         "Utilisateur créé"
@@ -7152,11 +7238,11 @@
       "User updated": [
         "Utilisateur mis à jour"
       ],
-      "Value copied to clipboard!": [
-        "Valeur copiée dans le presse-papiers!"
+      "Value copied to clipboard": [
+        ""
       ],
-      "Verification code copied to clipboard!": [
-        "Code de vérification copié dans le presse-papiers!"
+      "Verification code copied to clipboard": [
+        ""
       ],
       "Verification successful": [
         "Vérification réussie"
@@ -7486,6 +7572,9 @@
       "Contacts": [
         "Contacts"
       ],
+      "Continue with partial import?": [
+        ""
+      ],
       "Coupon discount": [
         "Bon de réduction"
       ],
@@ -7690,6 +7779,10 @@
       "Import & export": [
         "Importation & exportation"
       ],
+      "Import as simple event?": [
+        "",
+        ""
+      ],
       "Import Assistant": [
         "Assistant d'importation"
       ],
@@ -7698,6 +7791,9 @@
       ],
       "Import events": [
         "Importer des événements"
+      ],
+      "Import failed": [
+        ""
       ],
       "Import groups": [
         "Importer des groupes"

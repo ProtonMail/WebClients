@@ -187,6 +187,9 @@
       "Download": [
         "Downloaden"
       ],
+      "Drive Locked": [
+        ""
+      ],
       "Edit": [
         "Bewerken"
       ],
@@ -1097,8 +1100,8 @@
       "Can't validate phone, try again later": [
         "Kan telefoonnummer niet valideren, probeer het later opnieuw"
       ],
-      "Checkout expired, please try again.": [
-        "Checkout is verlopen, probeer het opnieuw."
+      "Checkout expired, please try again": [
+        ""
       ],
       "Contact could not be saved": [
         "Contact kon niet worden opgeslagen"
@@ -1687,6 +1690,10 @@
       "${ vpnAppName } Free": [
         "${ vpnAppName } Free"
       ],
+      "(${ memberCount } member)": [
+        "",
+        ""
+      ],
       "(Mail + VPN)": [
         "(Mail + VPN)"
       ],
@@ -1753,6 +1760,9 @@
       "Amount below minimum (${ amount }).": [
         "Bedrag onder minimum (${ amount })."
       ],
+      "An active recovery file": [
+        ""
+      ],
       "and": [
         ""
       ],
@@ -1768,6 +1778,9 @@
       ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Basisnavigatie en -acties blijven beschikbaar, ongeacht de sneltoetsen die actief zijn of niet in de instellingen."
+      ],
+      "Because ${ appName } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
+        ""
       ],
       "Billed as ${ billedPrice } every 2 years": [
         "Gefactureerd als ${ billedPrice } elke 2 jaar"
@@ -1820,6 +1833,9 @@
       "Connections": [
         "Verbindingen"
       ],
+      "Continue using ${ appName } and unlock drive later": [
+        ""
+      ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "",
         ""
@@ -1846,6 +1862,10 @@
         "Link naar bestand maken"
       ],
       "Creating share": [
+        ""
+      ],
+      "Delete drive": [
+        "",
         ""
       ],
       "Discount applied to your subscription with coupon ${ code }": [
@@ -1943,6 +1963,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Als u de mail niet kunt vinden in uw inbox, check dan eerst de map 'Spam'."
+      ],
+      "If you have one of these, continue to Proton account setting to\ncontinue the unblock process.": [
+        ""
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         ""
@@ -2071,6 +2094,9 @@
       "of": [
         "van"
       ],
+      "One of your encrypted drives is locked. This is most likely due to a recent password reset.${ BrElement }\n${ BrElement }\n${ questionText }": [
+        ""
+      ],
       "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
         "Wijzig deze instellingen alleen als u PGP met niet-ProtonMail-ontvangers gebruikt."
       ],
@@ -2085,6 +2111,9 @@
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Betalingen worden beschermd met TLS-versleuteling en Zwitserse privacywetten."
+      ],
+      "Permanently delete all files in your drive": [
+        ""
       ],
       "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
         "PGP/Inline is alleen compatibel met tekst zonder opmaak. Houd er rekening mee dat ProtonMail altijd versleutelde berichten tekent."
@@ -2183,8 +2212,8 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Aangezien u een loyale gebruiker bent, heeft uw account extra functies ingeschakeld."
       ],
-      "Some of your files are no longer accessible. Restore the access to your files. ${ startRecoveryButton }": [
-        "Sommige bestanden zijn niet meer toegankelijk. Herstel de toegang tot uw bestanden. ${ startRecoveryButton }"
+      "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
+        ""
       ],
       "Something went wrong, please try again later.": [
         "Er ging iets mis. Probeer het later nog eens."
@@ -2274,6 +2303,9 @@
       "Trash": [
         "Prullenbak"
       ],
+      "Unlock drive to recover files": [
+        ""
+      ],
       "Unsupported file": [
         "Niet-ondersteund bestand"
       ],
@@ -2320,6 +2352,9 @@
         "Wat wilt u doen?"
       ],
       "What do you want to import from your Google account?": [
+        ""
+      ],
+      "What would you like to do?": [
         ""
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
@@ -2409,14 +2444,20 @@
       "Your file is being downloaded.": [
         "Uw bestand wordt gedownload."
       ],
-      "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ mailSettingsLink }": [
-        "Uw bestanden zijn niet meer toegankelijk vanwege een wachtwoord-reset. Upload de oude versleutelingssleutel om weer toegang te krijgen. ${ mailSettingsLink }"
+      "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ KeyReactivationButton }": [
+        ""
       ],
       "Your files will be encrypted and then saved.": [
         "Uw bestanden worden versleuteld en vervolgens opgeslagen."
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Uw telefoonnummer wordt alleen gebruikt voor deze eenmalige verificatie."
+      ],
+      "Your previous password": [
+        ""
+      ],
+      "Your previous recovery phrase": [
+        ""
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "Uw Proton-account is bevroren. Betaal onbetaalde facturen om uw account weer te gebruiken."
@@ -2745,6 +2786,10 @@
       "CVV code": [
         "CVV code"
       ],
+      "Delete Drive?": [
+        "",
+        ""
+      ],
       "Display name": [
         "Weergavenaam"
       ],
@@ -2952,6 +2997,9 @@
       "Text": [
         "Tekst"
       ],
+      "This will permanently delete all files in your locked drive.": [
+        ""
+      ],
       "To: ${ emailAddress }": [
         ""
       ],
@@ -2966,6 +3014,15 @@
       ],
       "Unknown file": [
         "Onbekend bestand"
+      ],
+      "Unlock Drive": [
+        ""
+      ],
+      "Unlock drive (recommended)": [
+        ""
+      ],
+      "Unlock later": [
+        ""
       ],
       "Up to ${ parentLinkName }": [
         ""
@@ -2990,6 +3047,9 @@
       ],
       "What happened?": [
         "Wat is er gebeurd?"
+      ],
+      "Yes, I want to permanently delete\nmy old files": [
+        ""
       ],
       "ZIP": [
         "Postcode"
@@ -3256,9 +3316,9 @@
       "\"${ firstItemName }\" restored from trash": [
         "\"${ firstItemName }\" uit de prullenbak hersteld"
       ],
-      "${ deletedCount } link to your file was deleted.": [
-        "${ deletedCount } link naar uw bestand is verwijderd.",
-        "${ deletedCount } linken naar uw bestanden zijn verwijderd."
+      "${ deletedCount } link to your file was deleted": [
+        "",
+        ""
       ],
       "${ deletedItemsCount } file deleted permanently from trash": [
         "${ deletedItemsCount } bestand uit de prullenbak permanent verwijderd",
@@ -3272,9 +3332,9 @@
         "${ deletedItemsCount } item permanent verwijderd uit de prullenbak",
         "${ deletedItemsCount } items permanent verwijderd uit de prullenbak"
       ],
-      "${ failedCount } link to your file failed to be deleted.": [
-        "${ failedCount } link naar uw bestand kon niet worden verwijderd.",
-        "${ failedCount } linken naar uw bestanden konden niet worden verwijderd."
+      "${ failedCount } link to your file failed to be deleted": [
+        "",
+        ""
       ],
       "${ failedMovesCount } file failed to be moved": [
         "${ failedMovesCount } bestand kon niet worden verplaatst",
@@ -3379,14 +3439,17 @@
       "Not enough space to upload ${ formattedTotal }": [
         ""
       ],
-      "The link to your file failed to be deleted.": [
-        "De link naar uw bestand kon niet worden verwijderd."
+      "The link to your file failed to be deleted": [
+        ""
       ],
-      "The link to your file was deleted.": [
-        "De link naar uw bestand is verwijderd."
+      "The link to your file was deleted": [
+        ""
       ],
-      "Your settings have been changed successfully.": [
-        "Uw instellingen zijn succesvol gewijzigd."
+      "Your old files will be deleted in 72 hours": [
+        ""
+      ],
+      "Your settings have been changed successfully": [
+        ""
       ]
     },
     "Onboarding Proton": {
@@ -3810,11 +3873,11 @@
       "Preferences saved": [
         "Voorkeuren opgeslagen"
       ],
-      "Recovery has started.": [
-        "Herstel is gestart."
+      "Recovery has started": [
+        ""
       ],
-      "The link to your file was successfully copied.": [
-        "De link naar uw bestand is succesvol gekopieerd."
+      "The link to your file was successfully copied": [
+        ""
       ],
       "Verification successful": [
         "Verificatie gelukt"
@@ -3822,8 +3885,8 @@
       "You have successfully unsubscribed": [
         "U bent succesvol afgemeld"
       ],
-      "Your files were successfully recovered to \"My files\".": [
-        "Uw bestanden zijn hersteld naar \"Mijn bestanden\"."
+      "Your files were successfully recovered to \"My files\"": [
+        ""
       ]
     },
     "Suffix for price": {
@@ -4383,6 +4446,11 @@
         "Postcode"
       ]
     },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        ""
+      ]
+    },
     "Tooltip": {
       "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
         "Toegang tot geografisch beperkte inhoud (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) waar u ook bent."
@@ -4639,6 +4707,9 @@
       ],
       "The contact failed to load.": [
         "Het laden van het contactpersoon is mislukt."
+      ],
+      "The date and time settings on your device are out of sync. ${ learnMore }": [
+        ""
       ],
       "The decryption of the encrypted content failed.": [
         "Decoderen van de versleutelde inhoud is mislukt."

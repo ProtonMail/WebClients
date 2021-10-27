@@ -31,11 +31,11 @@
       "${ BRAND_NAME } shop": [
         "магазин ${ BRAND_NAME }"
       ],
-      "Activate": [
-        "Активировать"
-      ],
       "activate": [
         "включить"
+      ],
+      "Activate": [
+        "Активировать"
       ],
       "Activate ${ Name }@pm.me": [
         "Активировать ${ Name }@pm.me"
@@ -385,6 +385,9 @@
       "Import contacts": [
         "Импортировать контакты"
       ],
+      "Import from .csv or vCard": [
+        "Импорт из .csv или vCard"
+      ],
       "Import from .ics": [
         "Импорт из .ics"
       ],
@@ -657,6 +660,9 @@
       ],
       "Sign out all accounts": [
         "Выйти из всех учётных записей"
+      ],
+      "Signing in": [
+        "Выполняется вход"
       ],
       "Signing out": [
         "Производится выход"
@@ -1820,8 +1826,8 @@
       "Can't validate phone, try again later": [
         "Не удается проверить телефон, повторите попытку позже"
       ],
-      "Checkout expired, please try again.": [
-        "Срок действия заказа истек, попробуйте еще раз."
+      "Checkout expired, please try again": [
+        "Срок оформления истек, пожалуйста, попробуйте снова"
       ],
       "Condition incomplete": [
         "Условие неполное"
@@ -1949,6 +1955,9 @@
       "Not a valid number": [
         "Неверный номер"
       ],
+      "Organization key is not decrypted": [
+        "Ключ организации не расшифрован"
+      ],
       "Organization key is not decrypted.": [
         "Ключ организации не расшифрован."
       ],
@@ -1985,8 +1994,8 @@
         "Пожалуйста, исправьте выделенные конфликты, чтобы продолжить.",
         "Пожалуйста, исправьте выделенные конфликты, чтобы продолжить."
       ],
-      "Please generate keys before you try to change your password.": [
-        "Пожалуйста, создайте ключи до изменения пароля."
+      "Please generate keys before you try to change your password": [
+        "Пожалуйста, сгенерируйте ключи, прежде чем пытаться изменить пароль"
       ],
       "Please refresh the page.": [
         "Пожалуйста, обновите страницу."
@@ -2000,8 +2009,8 @@
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         "Пожалуйста, попробуйте повторить аутентификацию и убедитесь, что права доступа установлены правильно."
       ],
-      "Please upgrade to a Professional plan with more than 1 user, or a Visionary account, to get multi-user support.": [
-        "Пожалуйста, перейдите на тариф Professional с более чем 1 пользователем, или на Visionary, чтобы получить поддержку многопользовательского режима."
+      "Please upgrade to a Professional plan with more than 1 user, or a Visionary account, to get multi-user support": [
+        "Пожалуйста, перейдите на тариф Professional с более чем 1 пользователем, или на Visionary, чтобы получить поддержку многопользовательского режима"
       ],
       "Please upgrade to a Professional plan with more than 1 user, or a Visionary account, to manage multiple users.": [
         "Для того, чтобы иметь несколько пользователей, пожалуйста, перейдите на тариф Professional или Visionary."
@@ -2068,6 +2077,9 @@
       ],
       "The minimum payment we accept is ${ _price2 }": [
         "Минимальная оплата, которую мы принимаем, составляет ${ _price2 }"
+      ],
+      "The organization key must be activated first": [
+        "Сначала должен быть активирован ключ организации"
       ],
       "The organization key must be activated first.": [
         "Сначала должен быть активирован ключ организации."
@@ -2173,11 +2185,11 @@
       "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } events.": [
         "Ваш файл ${ formattedFilename } содержит более ${ MAX_IMPORT_EVENTS_STRING } событий."
       ],
+      "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
+        "Ваш файл ${ formatedFilename } имеет недопустимый метод и не может быть импортирован."
+      ],
       "Your file ${ formattedFilename } has no events to be imported.": [
         "Ваш файл ${ formattedFilename } не содержит событий для импорта."
-      ],
-      "Your file ${ formattedFilename } is an invitation and cannot be imported.": [
-        "Ваш файл ${ formattedFilename } является приглашением и не может быть импортирован."
       ],
       "Your file ${ formattedFilename } is empty.": [
         "Ваш файл ${ formattedFilename } пуст."
@@ -2735,38 +2747,31 @@
       ]
     },
     "Import calendar warning": {
-      "${ CALENDAR_APP_NAME } does not support ${ forNow }:": [
-        "${ CALENDAR_APP_NAME } ${ forNow } не поддерживает:"
-      ],
-      "Attendees": [
-        "Участники"
-      ],
-      "Complex recurring rules": [
-        "Сложные правила повторений"
-      ],
-      "Email notifications": [
-        "Уведомления по электронной почте"
-      ],
-      "for now": [
-        "пока"
-      ],
-      "Free-busy time information": [
-        "Информация о свободном и занятом времени"
-      ],
-      "Journal entries": [
-        "Записи в журнале"
-      ],
-      "Non-Gregorian calendars": [
-        "Не грегорианские календари"
-      ],
-      "To-do entries": [
-        "Записи списка задач"
-      ],
-      "Unofficial or custom timezones": [
-        "Неофициальный или пользовательский часовой пояс"
+      "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
+        "${ CALENDAR_APP_NAME } в настоящее время не поддерживает определенные типы, детали и форматы событий."
       ],
       "vCard versions < 3.0": [
         "Версии vCard < 3.0"
+      ]
+    },
+    "Import calendar; import invitation": {
+      "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your Proton email address.": [
+        "Импортированные приглашения появляются в ${ CALENDAR_APP_NAME } как простые события без сведений об организаторах и участниках. Чтобы получать обновления событий и видеть участников, попросите организаторов пригласить вас, используя ваш адрес электронной почты Proton."
+      ],
+      "This file contains an event invitation:": [
+        "Этот файл содержит приглашение на мероприятие:",
+        "Этот файл содержит приглашение на мероприятия:",
+        "Этот файл содержит приглашение на мероприятия:",
+        "Этот файл содержит приглашение на мероприятия:"
+      ],
+      "This file contains an invitation response:": [
+        "Этот файл содержит ответ на приглашение:",
+        "Этот файл содержит ответ на приглашения:",
+        "Этот файл содержит ответ на приглашения:",
+        "Этот файл содержит ответ на приглашения:"
+      ],
+      "This file contains some data that we cannot import:": [
+        "Этот файл содержит некоторые данные, которые мы не можем импортировать:"
       ]
     },
     "Import contact": {
@@ -3060,17 +3065,17 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } из ${ totalContacts } контактов не будут импортированы. Нажмите, чтобы узнать подробности"
       ],
-      "${ totalEventsDiscarded } out of ${ totalEvents } events will not be imported. Click for details": [
-        "${ totalEventsDiscarded } событий из ${ totalEvents } не будут импортированы. Нажмите, чтобы узнать подробности"
+      "${ totalEventsDiscarded } out of ${ totalEvents } events will not be imported. Expand for details.": [
+        "${ totalEventsDiscarded } из ${ totalEvents } событий не будут импортированы. Разверните для получения подробной информации."
       ],
       "No contact can be imported. Click for details": [
         "Не можем импортировать контакты. Нажмите, чтобы узнать подробности"
       ],
-      "No event can be imported. Click for details": [
-        "Нельзя импортировать события. Нажмите для получения подробной информации"
+      "No event can be imported. Expand for details.": [
+        "Ни одно событие не может быть импортировано. Разверните для получения подробной информации."
       ],
-      "Part of your calendar content is not supported and will not be imported": [
-        "Часть содержимого вашего календаря не поддерживается и не будет импортирована"
+      "Part of your calendar content is not supported and will not be imported.": [
+        "Часть содержимого вашего календаря не поддерживается и не будет импортирована."
       ]
     },
     "Info": {
@@ -3084,19 +3089,19 @@
         "${ calendarsToBeCreatedCount } новый календарь",
         "${ calendarsToBeCreatedCount } новых календарей",
         "${ calendarsToBeCreatedCount } новых календарей",
-        "${ calendarsToBeCreatedCount } новых календарь(ей)"
+        "${ calendarsToBeCreatedCount } новых(ый) календарь(я,ей)"
       ],
       "${ calendarsToBeMerged } merged calendar": [
         "${ calendarsToBeMerged } объединенный календарь",
         "${ calendarsToBeMerged } объединенных календарей",
         "${ calendarsToBeMerged } объединенных календарей",
-        "${ calendarsToBeMerged } объединенный(х) календарь(ей)"
+        "${ calendarsToBeMerged } объединенный(х) календарь(я,ей)"
       ],
       "${ calendarsToBeMergedCount } merged calendar": [
         "${ calendarsToBeMergedCount } объединенный календарь",
         "${ calendarsToBeMergedCount } объединенных календарей",
         "${ calendarsToBeMergedCount } объединенных календарей",
-        "${ calendarsToBeMergedCount } объединенный(х) календарь(ей)"
+        "${ calendarsToBeMergedCount } объединенный(х) календарь(я,ей)"
       ],
       "${ mailAppName } Free": [
         "Бесплатная версия ${ mailAppName }"
@@ -3132,16 +3137,16 @@
         "${ numberOfNonPrivateKeys } загруженные файлы не являются действительными закрытыми ключами. Пожалуйста, проверьте и повторите попытку."
       ],
       "${ numContactGroups } contact group": [
-        "${ numContactGroups } контактная группа",
-        "${ numContactGroups } контактных групп",
-        "${ numContactGroups } контактных групп",
-        "${ numContactGroups } контактных(ая) групп(а)"
+        "${ numContactGroups } группа контактов",
+        "${ numContactGroups } групп контактов",
+        "${ numContactGroups } групп контактов",
+        "${ numContactGroups } групп(а,ы) контактов"
       ],
       "${ numContacts } contact": [
         "${ numContacts } контакт",
         "${ numContacts } контактов",
         "${ numContacts } контактов",
-        "${ numContacts } контакта(ов)"
+        "${ numContacts } контакт(а,ов)"
       ],
       "${ providerFoldersNumLocalized } folder found": [
         "Найдена ${ providerFoldersNumLocalized } папка",
@@ -3172,27 +3177,27 @@
       ],
       "${ selectedFoldersCount } folder selected": [
         "${ selectedFoldersCount } папка выбрана",
-        "${ selectedFoldersCount } папки выбраны",
         "${ selectedFoldersCount } папок выбрано",
-        "${ selectedFoldersCount } папок выбрано"
+        "${ selectedFoldersCount } папок выбрано",
+        "${ selectedFoldersCount } папок(а,и) выбрано(на)"
       ],
       "${ selectedFoldersCount } label selected": [
         "${ selectedFoldersCount } ярлык выбран",
         "${ selectedFoldersCount } ярлыка выбран",
         "${ selectedFoldersCount } ярлыков выбран",
-        "${ selectedFoldersCount } ярлыков выбран"
+        "${ selectedFoldersCount } ярлык(а,ов) выбран(о)"
       ],
       "${ selectedFoldersCountLocalized } folder selected": [
         "${ selectedFoldersCountLocalized } папка выбрана",
         "${ selectedFoldersCountLocalized } папки выбраны",
         "${ selectedFoldersCountLocalized } папок выбрано",
-        "${ selectedFoldersCountLocalized } папок выбрано"
+        "${ selectedFoldersCountLocalized } папок(а,и) выбрано(на)"
       ],
       "${ selectedFoldersCountLocalized } label selected": [
         "Выбрано ${ selectedFoldersCountLocalized } ярлык",
         "Выбрано ${ selectedFoldersCountLocalized } ярлыка",
         "Выбрано ${ selectedFoldersCountLocalized } ярлыков",
-        "Выбрано ${ selectedFoldersCountLocalized } ярлыков"
+        "Выбран(о) ${ selectedFoldersCountLocalized } ярлык(а,ов)"
       ],
       "${ strongAddressAvailable } You will use this email address to sign into all ${ BRAND_NAME } services.": [
         "${ strongAddressAvailable } Вы будете использовать этот адрес электронной почты для входа во все сервисы ${ BRAND_NAME }."
@@ -3456,7 +3461,7 @@
         "Создать ${ calendarsToBeCreated } календарь",
         "Создать ${ calendarsToBeCreated } календарей",
         "Создать ${ calendarsToBeCreated } календарей",
-        "Создать ${ calendarsToBeCreated } календарь(ей)"
+        "Создать ${ calendarsToBeCreated } календарь(я,ей)"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Создайте ярлык для импортированных сообщений, укажите диапазон времени для этого импорта и папки, которые вы хотите импортировать."
@@ -3551,8 +3556,8 @@
       "Done": [
         "Готово"
       ],
-      "Done! We sent a code to ${ destination }": [
-        "Готово! Мы отправили код на ${ destination }"
+      "Done! We sent a code to ${ destination }.": [
+        "Готово! Мы отправили код на ${ destination }."
       ],
       "Downgrading will terminate any connections to paid ProtonVPN servers.": [
         "Снижение тарифа разорвет все действующие подключения к платным серверам ProtonVPN."
@@ -3746,8 +3751,8 @@
       "Image URL": [
         "URL изображения"
       ],
-      "Images have been removed because they are not allowed in auto-reply.": [
-        "Изображения были удалены, поскольку они не допускаются в автоответчике."
+      "Images have been removed because they are not allowed in auto-reply": [
+        "Изображения были удалены, поскольку они не допускаются в автоответчике"
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Импорт ${ contactsFragment } и ${ contactsGroupsFragment }"
@@ -3756,7 +3761,7 @@
         "Импортируйте ${ selectedCalendarsCount } из ${ totalCalendarsCount } календарей",
         "Импортируйте ${ selectedCalendarsCount } из ${ totalCalendarsCount } календарей",
         "Импортируйте ${ selectedCalendarsCount } из ${ totalCalendarsCount } календарей",
-        "Импортируйте ${ selectedCalendarsCount } из ${ totalCalendarsCount } календарей(ей)"
+        "Импортируйте ${ selectedCalendarsCount } из ${ totalCalendarsCount } календарей(я,ей)"
       ],
       "Import from": [
         "Импортировать из"
@@ -6363,7 +6368,7 @@
         "Настройте свою организацию, привяжите свое доменное имя и создайте учетные записи, чтобы обеспечить защиту всех членов вашей организации."
       ],
       "Discover all Proton services": [
-        "Откройте для себя все сервисы Proton"
+        "Откройте для себя все службы Proton"
       ],
       "Our mission is to build an internet where you are in control of your data and your privacy. We have recently updated Proton - welcome to the secure internet.": [
         "Наша миссия состоит в создании интернета, в котором вы контролируете ваши данные и вашу конфиденциальность. Мы недавно обновили Proton — добро пожаловать в безопасный интернет."
@@ -7299,8 +7304,8 @@
       "Deleting original messages": [
         "Удалить исходные сообщения"
       ],
-      "DMARC value copied to clipboard!": [
-        "Значение DMARC скопировано в буфер обмена!"
+      "DMARC value copied to clipboard": [
+        "Значение DMARC скопировано в буфер обмена"
       ],
       "Domain verified": [
         "Домен подтверждён"
@@ -7374,8 +7379,8 @@
       "Sessions revoked": [
         "Сессии прерваны"
       ],
-      "SPF value copied to clipboard!": [
-        "Значение SPF скопировано в буфер обмена!"
+      "SPF value copied to clipboard": [
+        "Значение SPF скопировано в буфер обмена"
       ],
       "User created": [
         "Пользователь создан"
@@ -7383,11 +7388,11 @@
       "User updated": [
         "Данные пользователя обновлены"
       ],
-      "Value copied to clipboard!": [
-        "Значение скопировано в буфер обмена!"
+      "Value copied to clipboard": [
+        "Значение скопировано в буфер обмена"
       ],
-      "Verification code copied to clipboard!": [
-        "Код подтверждения скопирован в буфер обмена!"
+      "Verification code copied to clipboard": [
+        "Код подтверждения скопирован в буфер обмена"
       ],
       "Verification successful": [
         "Проверка прошла успешно"
@@ -7721,6 +7726,9 @@
       "Contacts": [
         "Контакты"
       ],
+      "Continue with partial import?": [
+        "Продолжить частичный импорт?"
+      ],
       "Coupon discount": [
         "Скидка по купону"
       ],
@@ -7925,6 +7933,12 @@
       "Import & export": [
         "Импорт и экспорт"
       ],
+      "Import as simple event?": [
+        "Импортировать как простое событие?",
+        "Импортировать как простые события?",
+        "Импортировать как простые события?",
+        "Импортировать как простые события?"
+      ],
       "Import Assistant": [
         "Помощник по импорту"
       ],
@@ -7933,6 +7947,9 @@
       ],
       "Import events": [
         "Импорт событий"
+      ],
+      "Import failed": [
+        "Импорт не удался"
       ],
       "Import groups": [
         "Импортировать группы"

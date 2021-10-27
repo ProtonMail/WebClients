@@ -31,11 +31,11 @@
       "${ BRAND_NAME } shop": [
         "Magazin ${ BRAND_NAME }"
       ],
-      "Activate": [
-        "Activare"
-      ],
       "activate": [
         "activare"
+      ],
+      "Activate": [
+        "Activare"
       ],
       "Activate ${ Name }@pm.me": [
         "Activare ${ Name }@pm.me"
@@ -347,7 +347,7 @@
         "Font"
       ],
       "Generate key": [
-        ""
+        "Generare cheie"
       ],
       "Get ProtonVPN Plus": [
         "Obțineți „ProtonVPN Plus”"
@@ -384,6 +384,9 @@
       ],
       "Import contacts": [
         "Importare contacte"
+      ],
+      "Import from .csv or vCard": [
+        "Importare din .csv sau vCard"
       ],
       "Import from .ics": [
         "Importare din .ics"
@@ -657,6 +660,9 @@
       ],
       "Sign out all accounts": [
         "Deconectare toate conturile"
+      ],
+      "Signing in": [
+        "Conectarea"
       ],
       "Signing out": [
         "Deconectare"
@@ -1802,8 +1808,8 @@
       "Can't validate phone, try again later": [
         "Nu se poate valida telefonul, reîncercați mai târziu."
       ],
-      "Checkout expired, please try again.": [
-        "Finalizarea comenzii a expirat, reîncercaţi."
+      "Checkout expired, please try again": [
+        "Finalizarea comenzii a expirat, reîncercați"
       ],
       "Condition incomplete": [
         "Condiție incompletă"
@@ -1929,6 +1935,9 @@
       "Not a valid number": [
         "Nu este un număr valid"
       ],
+      "Organization key is not decrypted": [
+        "Cheia organizației nu este decriptată"
+      ],
       "Organization key is not decrypted.": [
         "Cheia organizației nu este decriptată."
       ],
@@ -1960,12 +1969,12 @@
         "Activați suportul pentru utilizatori multipli înainte de a adăuga utilizatori la organizație."
       ],
       "Please fix the highlighted conflict to proceed.": [
+        "Remediați conflictul evidențiat pentru a continua.",
         "Remediați conflictele evidențiate pentru a continua.",
-        "Remediați conflictele evidențiate pentru a continua.",
-        "Remediați conflictul evidențiat pentru a continua."
+        "Remediați conflictele evidențiate pentru a continua."
       ],
-      "Please generate keys before you try to change your password.": [
-        "Generați cheile înainte de a vă schimba parola."
+      "Please generate keys before you try to change your password": [
+        "Generați cheile înainte de a vă schimba parola"
       ],
       "Please refresh the page.": [
         "Reîmprospătați pagina."
@@ -1979,8 +1988,8 @@
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         "Încercați să vă reautentificați și asigurați-vă că permisiunile sunt setate corect."
       ],
-      "Please upgrade to a Professional plan with more than 1 user, or a Visionary account, to get multi-user support.": [
-        "Treceți la planul „Professional” cu mai mult de un utilizator sau la cel Visionary, pentru a obține suport pentru utilizatori multipli."
+      "Please upgrade to a Professional plan with more than 1 user, or a Visionary account, to get multi-user support": [
+        "Treceți la planul Professional cu mai mult de un utilizator sau la cel Visionary, pentru a avea suport pentru multiutilizatori"
       ],
       "Please upgrade to a Professional plan with more than 1 user, or a Visionary account, to manage multiple users.": [
         "Pentru a putea gestiona utilizatori multipli trebuie să treceți la planul Professional cu mai mult de un utilizator sau la cel Visionary."
@@ -2047,6 +2056,9 @@
       ],
       "The minimum payment we accept is ${ _price2 }": [
         "Plata minimă acceptată este de ${ _price2 }."
+      ],
+      "The organization key must be activated first": [
+        "Cheia organizației trebuie mai întâi activată"
       ],
       "The organization key must be activated first.": [
         "Cheia organizației trebuie mai întâi activată."
@@ -2152,11 +2164,11 @@
       "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } events.": [
         "Fișierul ${ formattedFilename } conține mai mult de ${ MAX_IMPORT_EVENTS_STRING } evenimente."
       ],
+      "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
+        "Fișierul vostru ${ formattedFilename } are o metodă invalidă și nu poate fi importat."
+      ],
       "Your file ${ formattedFilename } has no events to be imported.": [
         "Fișierul ${ formattedFilename } nu are evenimente de importat."
-      ],
-      "Your file ${ formattedFilename } is an invitation and cannot be imported.": [
-        "Fișierul ${ formattedFilename } este o invitație și nu poate fi importat."
       ],
       "Your file ${ formattedFilename } is empty.": [
         "Fișierul ${ formattedFilename } este gol."
@@ -2270,7 +2282,7 @@
         "Evenimentul recurent original nu a putut fi găsit"
       ],
       "Recurring event has no occurrences": [
-        ""
+        "Evenimentul recurent nu are nicio apariție."
       ],
       "Recurring rule not supported": [
         "Regula recurentă nesuportată"
@@ -2709,38 +2721,29 @@
       ]
     },
     "Import calendar warning": {
-      "${ CALENDAR_APP_NAME } does not support ${ forNow }:": [
-        "${ CALENDAR_APP_NAME } nu acceptă ${ forNow }:"
-      ],
-      "Attendees": [
-        "Participanți"
-      ],
-      "Complex recurring rules": [
-        "Reguli complexe recurente"
-      ],
-      "Email notifications": [
-        "Notificări prin e-mail"
-      ],
-      "for now": [
-        "momentan"
-      ],
-      "Free-busy time information": [
-        "Informații timp liber/ocupat"
-      ],
-      "Journal entries": [
-        "Intrări în jurnal"
-      ],
-      "Non-Gregorian calendars": [
-        "Calendare non-Gregoriene"
-      ],
-      "To-do entries": [
-        "Intrare de făcut"
-      ],
-      "Unofficial or custom timezones": [
-        "Fus orar neoficial sau personalizat"
+      "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
+        "${ CALENDAR_APP_NAME } nu acceptă în prezent anumite tipuri de evenimente, detalii și formate."
       ],
       "vCard versions < 3.0": [
         "versiuni vCard < 3.0"
+      ]
+    },
+    "Import calendar; import invitation": {
+      "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your Proton email address.": [
+        "Invitațiile importate apar în ${ CALENDAR_APP_NAME } ca evenimente simple, fără detalii despre organizator și participant. Pentru a primi actualizări ale evenimentelor și a vedea participanții, solicitați organizatorilor să vă invite folosind adresa dvs. de e-mail Proton."
+      ],
+      "This file contains an event invitation:": [
+        "Acest fișier conține o invitație la un eveniment:",
+        "Acest fișier conține invitații la evenimente:",
+        "Acest fișier conține invitații la evenimente:"
+      ],
+      "This file contains an invitation response:": [
+        "Acest fișier conține un răspuns la invitație:",
+        "Acest fișier conține răspunsurile la invitații:",
+        "Acest fișier conține răspunsurile la invitații:"
+      ],
+      "This file contains some data that we cannot import:": [
+        "Acest fișier conține unele date pe care nu le putem importa:"
       ]
     },
     "Import contact": {
@@ -3030,17 +3033,17 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } din ${ totalContacts } contacte nu vor fi importate. Faceți clic pentru detalii."
       ],
-      "${ totalEventsDiscarded } out of ${ totalEvents } events will not be imported. Click for details": [
-        "${ totalEventsDiscarded } din ${ totalEvents } evenimente nu vor fi importate. Faceți clic pentru detalii."
+      "${ totalEventsDiscarded } out of ${ totalEvents } events will not be imported. Expand for details.": [
+        "${ totalEventsDiscarded } din ${ totalEvents } evenimentele nu vor fi importate. Extindeți pentru detalii."
       ],
       "No contact can be imported. Click for details": [
         "Nu se pot importa contacte. Faceți clic pentru detalii."
       ],
-      "No event can be imported. Click for details": [
-        "Niciun eveniment nu poate fi importat. Faceți clic pentru detalii."
+      "No event can be imported. Expand for details.": [
+        "Nu poate fi importat niciun eveniment. Extindeți pentru detalii."
       ],
-      "Part of your calendar content is not supported and will not be imported": [
-        "O parte din conținutul calendarului nu este suportat și nu va fi importat."
+      "Part of your calendar content is not supported and will not be imported.": [
+        "O parte din conținutul calendarului dvs. nu este acceptat și nu va fi importat."
       ]
     },
     "Info": {
@@ -3361,7 +3364,7 @@
         "Reducerea de Vinerea Neagră 2020 pentru utilizatorii noi a fost aplicată"
       ],
       "Blocks senders from seeing if and when you opened a message.": [
-        ""
+        "Împiedică expeditorii să vadă dacă și când ați deschis un mesaj."
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Revenind la planul gratuit, veți pierde permanent aceste avantaje, chiar dacă ulterior veți trece la unul cu plată."
@@ -3499,8 +3502,8 @@
       "Done": [
         "Gata"
       ],
-      "Done! We sent a code to ${ destination }": [
-        "Gata! S-a trimis un cod către ${ destination }"
+      "Done! We sent a code to ${ destination }.": [
+        "Gata! Am trimis un cod către ${ destination }."
       ],
       "Downgrading will terminate any connections to paid ProtonVPN servers.": [
         "Retrogradarea va opri orice conexiune către serverele ProtonVPN cu plată."
@@ -3632,7 +3635,7 @@
         "aici"
       ],
       "Hides identifying information by loading remote content through a proxy. Option to store content as attachments.": [
-        ""
+        "Ascunde informațiile de identificare prin încărcarea conținutului de la distanță prin intermediul unui proxy. Opțiunea de a stoca conținutul ca atașament."
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Dacă un alt administrator a schimbat această parolă, va trebui să-i solicitați noua parolă a organizației."
@@ -3694,8 +3697,8 @@
       "Image URL": [
         "URL imagine"
       ],
-      "Images have been removed because they are not allowed in auto-reply.": [
-        "Imaginile au fost eliminate deoarece nu sunt permise în răspunsurile automate."
+      "Images have been removed because they are not allowed in auto-reply": [
+        "Imaginile au fost eliminate deoarece nu sunt permise în răspunsurile automate"
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Importare ${ contactsFragment } și ${ contactsGroupsFragment }"
@@ -4006,7 +4009,7 @@
         "Este necesar abonamentul „Plus” sau „Visionary”"
       ],
       "Prevents content from the sender's server from loading without your permission.": [
-        ""
+        "Împiedică încărcarea conținutului de pe serverul expeditorului dacă nu doriți asta."
       ],
       "Preview": [
         "Examinare"
@@ -4101,7 +4104,7 @@
         "Încărcare server"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
-        "Serverele sunt inaccesibile. Vă rugăm să încercați din nou în câteva minute"
+        "Serverele sunt inaccesibile. Mai reîncercați peste câteva minute."
       ],
       "Session timed out.": [
         "Sesiune expirată."
@@ -5012,7 +5015,7 @@
         "Parola aplicației"
       ],
       "Ask before loading remote content": [
-        ""
+        "Întrebare înainte de a încărca conținutul de la distanță"
       ],
       "Attach public key": [
         "Atașare cheie publică"
@@ -5036,7 +5039,7 @@
         "Chei de rezervă"
       ],
       "Block email tracking": [
-        ""
+        "Blocare urmărire e-mailuri"
       ],
       "bonus storage": [
         "spațiu bonus"
@@ -5873,7 +5876,7 @@
     },
     "Loading info": {
       "${ createdCalendars } of ${ calendarsToBeCreated } created": [
-        "S-au creat: ${ createdCalendars } din ${ calendarsToBeCreated }",
+        "S-a creat: ${ createdCalendars } din ${ calendarsToBeCreated }",
         "S-au creat: ${ createdCalendars } din ${ calendarsToBeCreated }",
         "S-au creat: ${ createdCalendars } din ${ calendarsToBeCreated }"
       ],
@@ -6549,10 +6552,10 @@
     },
     "Option protection mode": {
       "Load content via proxy (recommended)": [
-        ""
+        "Încărcare conținut prin proxy (recomandat)"
       ],
       "Load content via proxy and store as attachments": [
-        ""
+        "Încărcare conținut prin proxy și stocare ca atașamente"
       ]
     },
     "OS compatibility": {
@@ -6590,7 +6593,7 @@
     },
     "PGP key warning": {
       "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        ""
+        "Adresa de e-mail nu a fost găsită printre identificatorii de utilizatori definiți în cheia de trimitere (${ keyUserIds })."
       ]
     },
     "Placeholder": {
@@ -7226,8 +7229,8 @@
       "Deleting original messages": [
         "Se șterg mesajele originale"
       ],
-      "DMARC value copied to clipboard!": [
-        "Valoare DMARC copiată în memorie!"
+      "DMARC value copied to clipboard": [
+        "Valoare DMARC copiată în memorie"
       ],
       "Domain verified": [
         "Domeniu verificat"
@@ -7301,8 +7304,8 @@
       "Sessions revoked": [
         "Sesiuni anulate"
       ],
-      "SPF value copied to clipboard!": [
-        "Valoare SPF copiată în memorie!"
+      "SPF value copied to clipboard": [
+        "Valoare SPF copiată în memorie"
       ],
       "User created": [
         "Utilizator creat"
@@ -7310,11 +7313,11 @@
       "User updated": [
         "Utilizator actualizat"
       ],
-      "Value copied to clipboard!": [
-        "Valoare copiată în memorie!"
+      "Value copied to clipboard": [
+        "Valoare copiată în memorie"
       ],
-      "Verification code copied to clipboard!": [
-        "Codul de verificare a fost copiat în memorie!"
+      "Verification code copied to clipboard": [
+        "Cod de verificare copiat în memorie"
       ],
       "Verification successful": [
         "Verificare reușită"
@@ -7646,6 +7649,9 @@
       "Contacts": [
         "Contacte"
       ],
+      "Continue with partial import?": [
+        "Continuați cu importul parțial?"
+      ],
       "Coupon discount": [
         "Cupon reducere"
       ],
@@ -7824,7 +7830,7 @@
         "Generale"
       ],
       "Generate key": [
-        ""
+        "Generare cheie"
       ],
       "Generate missing keys": [
         "Generare chei lipsă"
@@ -7850,6 +7856,11 @@
       "Import & export": [
         "Importare și exportare"
       ],
+      "Import as simple event?": [
+        "Importați ca simplu eveniment?",
+        "Importați ca simple evenimente?",
+        "Importați ca simple evenimente?"
+      ],
       "Import Assistant": [
         "Asistent importare"
       ],
@@ -7858,6 +7869,9 @@
       ],
       "Import events": [
         "Importare evenimente"
+      ],
+      "Import failed": [
+        "Importul a eșuat"
       ],
       "Import groups": [
         "Import grupuri"
@@ -8287,7 +8301,7 @@
     },
     "Today icon tooltip in mini calendar": {
       "Today": [
-        ""
+        "Astăzi"
       ]
     },
     "Tooltip": {
@@ -8680,7 +8694,7 @@
         "Rapoartele nu sunt criptate în ambele părți. Nu trimiteți informații confidențiale."
       ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
-        ""
+        "Setările de dată și oră de pe dispozitiv nu sunt sincronizate. ${ learnMore }"
       ],
       "This action will ${ boldWarning }. You will not be able to recover the messages on ${ domain }.": [
         "Această acțiune va ${ boldWarning } . Nu veți putea recupera mesajele de pe ${ domain }."
@@ -8717,7 +8731,7 @@
     },
     "Weak personal key warning": {
       "This key no longer meets our security standards. We suggest you mark it as obsolete and generate a new key.": [
-        ""
+        "Această cheie nu mai corespunde standardelor noastre de securitate. Vă sugerăm să o marcați ca fiind învechită și să generați o nouă cheie."
       ]
     },
     "Weekly recurring event, frequency": {

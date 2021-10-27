@@ -978,9 +978,6 @@
       "Forwarded": [
         "Přeposláno"
       ],
-      "Has attachments": [
-        "S přílohami"
-      ],
       "Replied to": [
         "Odpovědět"
       ],
@@ -1914,8 +1911,8 @@
       "Amount below minimum.": [
         "Hodnota je nižší, než minimální částka."
       ],
-      "Attachments are limited to 25 MB.": [
-        "Přílohy nemohou být větší než 25 MB."
+      "Attachments are limited to 25 MB": [
+        ""
       ],
       "Authentication canceled.": [
         "Přihlášení zrušeno."
@@ -1938,8 +1935,8 @@
       "Can't validate phone, try again later": [
         "Nemůžeme ověřit váš telefon, zkuste to později"
       ],
-      "Checkout expired, please try again.": [
-        "Objednávka vypršela, zkuste to prosím znovu."
+      "Checkout expired, please try again": [
+        ""
       ],
       "Choose a date in the future.": [
         "Vyberte budoucí datum."
@@ -1962,11 +1959,11 @@
       "Contact signature not verified": [
         "Podpis kontaktu nebyl ověřen"
       ],
-      "Contact your organization’s administrator to resolve this.": [
-        "Obraťte se na svého správce ogranizace, abyste to vyřešili."
+      "Contact your organization’s administrator to resolve this": [
+        ""
       ],
-      "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser": [
-        "V tomto prohlížeči nelze povolit vyhledávání obsahu. Ukončete režim soukromého procházení nebo použijte jiný prohlížeč"
+      "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
+        ""
       ],
       "Could not find address ${ email }.": [
         "Nenalezena adresa ${ email }"
@@ -2004,14 +2001,14 @@
       "Error in one of the conditions": [
         "Chyba v jedné z podmínek"
       ],
-      "Error while saving draft. Please try again": [
-        "Chyba při ukládání konceptu. Zkuste to znovu prosím"
+      "Error while saving draft. Please try again.": [
+        ""
       ],
-      "Error while sending the message. Message is not sent": [
-        "Selhalo odeslání zprávy. Zpráva neodeslána"
+      "Error while sending the message. Message is not sent.": [
+        ""
       ],
-      "Error while uploading attachments. Message is not sent": [
-        "Selhalo náhrání příloh. Zpráva neodeslána"
+      "Error while uploading attachments. Message is not sent.": [
+        ""
       ],
       "Failed to encrypt attachment. Please try again.": [
         "Selhalo rozšifrování zprávy, zkuste to znovu."
@@ -2046,8 +2043,8 @@
       "Invalid expiration date": [
         "Neplatné datum expirace"
       ],
-      "Invalid expiration time.": [
-        "Neplatný čas expirace."
+      "Invalid expiration time": [
+        ""
       ],
       "Invalid name": [
         "Neplatný název"
@@ -2073,8 +2070,8 @@
       "Message needs to be sent first": [
         "Nejdříve je potřeba zaslat zprávu"
       ],
-      "Message passwords do not match.": [
-        "Heslo zprávy se neshoduje."
+      "Message passwords do not match": [
+        ""
       ],
       "Message processing error.": [
         "Chyba při zpracování zprávy."
@@ -2088,8 +2085,8 @@
       "Network error: Please check your connection and try again.": [
         "Chyba sítě, zkontrolujte přípojení a zkuste to znovu."
       ],
-      "No address with keys available to compose a message.": [
-        "Není k dispozici adresa s klíči pro vytvoření zprávy."
+      "No address with keys available to compose a message": [
+        ""
       ],
       "No key retrieved for internal user is valid for sending": [
         "Žádný z klíčů pro interního uživatele není možné použít pro odesílání"
@@ -2232,8 +2229,8 @@
       "The label name is too long. Please choose a different name.": [
         ""
       ],
-      "The maximum expiration is 4 weeks.": [
-        "Maximální doba vypršení jsou 4 týdny."
+      "The maximum expiration is 4 weeks": [
+        ""
       ],
       "The minimum amount of credit that can be added is ${ _price }": [
         "Minimální objem kreditu, který lze přidat, je { _price }"
@@ -2250,8 +2247,8 @@
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         ""
       ],
-      "There has been an issue with content search. Default search has been used instead": [
-        "V obsahu vyhledávání je problém. Bylo nahrazeno výchozím vyhledáváním"
+      "There has been an issue with content search. Default search has been used instead.": [
+        ""
       ],
       "There was an error when exporting the contacts vCards": [
         "Při exportu kontaktů do vCard došlo k chybě"
@@ -2268,8 +2265,8 @@
       "This label name is not available. Please choose a different name": [
         ""
       ],
-      "This message has already been sent.": [
-        "Tato zpráva již byla odeslána."
+      "This message has already been sent": [
+        ""
       ],
       "This message has already been sent. A new draft has been saved.": [
         "Tato zpráva již byla odeslána. Nový koncept byl uložen."
@@ -2277,8 +2274,8 @@
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "Tato zpráva obsahuje URL odkazy, které nelze otevřít Vašim prohlížečem"
       ],
-      "Too many active filters. Please upgrade to a paid plan to activate more filters": [
-        "Příliš mnoho aktivních filtrů. Přejděte na placenou verzi pro aktivaci více filtrů"
+      "Too many active filters. Please upgrade to a paid plan to activate more filters.": [
+        ""
       ],
       "Trusted keys are not valid for sending": [
         "Důvěryhodné klíče nejsou použitelné pro odesílání"
@@ -2298,11 +2295,11 @@
       "You can't send vCards of more than 10 contacts": [
         "Není možné odeslat vCard s více jak 10 kontakty"
       ],
-      "You cannot open more than ${ maxActiveComposer } composer window at a time.": [
-        "Nemůžete otevřít více než{ maxActiveComposer } správce knihoven okna v daném momentě.",
-        "Nemůžete otevřít více než{ maxActiveComposer } správce knihoven oken v daném momentě.",
-        "Nemůžete otevřít více než{ maxActiveComposer } správce knihoven oken v daném momentě.",
-        "Nemůžete otevřít více než{ maxActiveComposer } správce knihoven oken v daném momentě."
+      "You cannot open more than ${ maxActiveComposer } composer window at a time": [
+        "",
+        "",
+        "",
+        ""
       ],
       "You did not provide a file.": [
         "Neposkytli jste soubor."
@@ -2319,8 +2316,8 @@
       "Your import will not be processed.": [
         "Váš import nebude zpracován."
       ],
-      "Your search matched too many results. Please limit your search and try again": [
-        "Výsledek vyhledávání uzavřel příliš mnoho výsledků. Upřesněte hledání a zkuste to prosím znovu"
+      "Your search matched too many results. Please limit your search and try again.": [
+        ""
       ]
     },
     "Error display when performing invalid move on message": {
@@ -3462,7 +3459,7 @@
       "Image URL": [
         "URL adresa obrázku"
       ],
-      "Images have been removed because they are not allowed in auto-reply.": [
+      "Images have been removed because they are not allowed in auto-reply": [
         ""
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
@@ -3572,6 +3569,9 @@
       ],
       "Message sent": [
         "Zpráva odeslána"
+      ],
+      "Message sent.": [
+        ""
       ],
       "Message will be sent ${ dateString } at ${ formattedTime }": [
         "Zpráva bude odeslána ${ dateString } v ${ formattedTime }"
@@ -6349,8 +6349,8 @@
       "Contacts deleted": [
         "Kontakty byly smazány"
       ],
-      "Conversation added to ${ labelName }": [
-        "Konverzace přidána k ${ labelName }"
+      "Conversation added to ${ labelName }.": [
+        ""
       ],
       "Conversation deleted": [
         "Konverzace byla smazána"
@@ -6358,8 +6358,8 @@
       "Conversation marked as read.": [
         ""
       ],
-      "Conversation marked as Starred": [
-        "Konverzace označena hvězdičkou"
+      "Conversation marked as Starred.": [
+        ""
       ],
       "Conversation marked as unread.": [
         ""
@@ -6373,8 +6373,8 @@
       "Conversation moved to spam and sender added to Block List.": [
         "Konverzace byla přesunuta do spamu a odesílatele přidána do seznamu blokovaných kontaktů."
       ],
-      "Conversation removed from ${ labelName }": [
-        "Konverzace odstraněna z ${ labelName }"
+      "Conversation removed from ${ labelName }.": [
+        ""
       ],
       "Draft deleted": [
         "Návrh vymazán"
@@ -6400,8 +6400,8 @@
       "Mail list unsubscribed": [
         "Neodebíraný seznam Mailů"
       ],
-      "Message added to ${ labelName }": [
-        "Zpráva přidána k ${ labelName }"
+      "Message added to ${ labelName }.": [
+        ""
       ],
       "Message content search activated": [
         "Vyhledání obsahu zprávy aktivováno"
@@ -6415,8 +6415,8 @@
       "Message marked as read.": [
         ""
       ],
-      "Message marked as Starred": [
-        "Zpráva označena hvězdičkou"
+      "Message marked as Starred.": [
+        ""
       ],
       "Message marked as unread.": [
         ""
@@ -6430,8 +6430,8 @@
       "Message moved to spam and sender added to Block List.": [
         "Zpráva byla přesunuta do spamu a odesílatele přidána do seznamu blokovaných kontaktů."
       ],
-      "Message removed from ${ labelName }": [
-        "Zpráva odstraněna z ${ labelName }"
+      "Message removed from ${ labelName }.": [
+        ""
       ],
       "Move ${ selectionCount } conversation": [
         "Přestěhovat ${ selectionCount } konverzaci",

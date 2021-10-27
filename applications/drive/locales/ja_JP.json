@@ -185,6 +185,9 @@
       "Download": [
         "ダウンロード"
       ],
+      "Drive Locked": [
+        ""
+      ],
       "Edit": [
         "編集"
       ],
@@ -1088,8 +1091,8 @@
       "Can't validate phone, try again later": [
         "電話番号の検証ができませんでした。再度お試しください"
       ],
-      "Checkout expired, please try again.": [
-        "チェックアウトの有効期限が切れました。もう一度やり直してください。"
+      "Checkout expired, please try again": [
+        ""
       ],
       "Contact could not be saved": [
         "連絡先を保存できませんでした"
@@ -1647,6 +1650,9 @@
       "${ vpnAppName } Free": [
         "${ vpnAppName } Free"
       ],
+      "(${ memberCount } member)": [
+        ""
+      ],
       "(Mail + VPN)": [
         "(メール + VPN)"
       ],
@@ -1710,6 +1716,9 @@
       "Amount below minimum (${ amount }).": [
         "最少金額 (${ amount }) を下回っています。"
       ],
+      "An active recovery file": [
+        ""
+      ],
       "and": [
         ""
       ],
@@ -1723,6 +1732,9 @@
         "選択されたアイテムをごみ箱から完全に削除してよろしいですか？"
       ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
+        ""
+      ],
+      "Because ${ appName } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
         ""
       ],
       "Billed as ${ billedPrice } every 2 years": [
@@ -1776,6 +1788,9 @@
       "Connections": [
         "接続"
       ],
+      "Continue using ${ appName } and unlock drive later": [
+        ""
+      ],
       "Create ${ calendarsToBeCreated } new calendar": [
         ""
       ],
@@ -1802,6 +1817,9 @@
       ],
       "Creating share": [
         "共有を作成しています"
+      ],
+      "Delete drive": [
+        ""
       ],
       "Discount applied to your subscription with coupon ${ code }": [
         "クーポン ${ code } 付きのサブスクリプションに割引が適用されます"
@@ -1898,6 +1916,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "受信トレイに関連するメッセージを見つけなかった場合、迷惑メールフォルダを確認してください。"
+      ],
+      "If you have one of these, continue to Proton account setting to\ncontinue the unblock process.": [
+        ""
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         ""
@@ -2025,6 +2046,9 @@
       "of": [
         " / "
       ],
+      "One of your encrypted drives is locked. This is most likely due to a recent password reset.${ BrElement }\n${ BrElement }\n${ questionText }": [
+        ""
+      ],
       "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
         "PGP を利用している ProtonMail 以外の宛先がある場合にのみ、これらの設定を変更してください。"
       ],
@@ -2039,6 +2063,9 @@
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "支払い情報は TLS で暗号化され、スイスのプライバシー法によっても保護されます。"
+      ],
+      "Permanently delete all files in your drive": [
+        ""
       ],
       "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
         "PGP/Inline はプレーンテキスト形式としか互換性がありません。 ProtonMail は暗号化されたメッセージに常に署名することに注意してください。"
@@ -2136,7 +2163,7 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "あなたは忠実なユーザーですので、あなたのアカウントには追加機能が有効になっています。"
       ],
-      "Some of your files are no longer accessible. Restore the access to your files. ${ startRecoveryButton }": [
+      "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         ""
       ],
       "Something went wrong, please try again later.": [
@@ -2226,6 +2253,9 @@
       "Trash": [
         "ごみ箱"
       ],
+      "Unlock drive to recover files": [
+        ""
+      ],
       "Unsupported file": [
         "非対応のファイル"
       ],
@@ -2272,6 +2302,9 @@
         "どのようにしますか?"
       ],
       "What do you want to import from your Google account?": [
+        ""
+      ],
+      "What would you like to do?": [
         ""
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
@@ -2361,7 +2394,7 @@
       "Your file is being downloaded.": [
         "ファイルをダウンロード中です。"
       ],
-      "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ mailSettingsLink }": [
+      "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ KeyReactivationButton }": [
         ""
       ],
       "Your files will be encrypted and then saved.": [
@@ -2369,6 +2402,12 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "電話番号は、この一度限りの認証にのみ使用されます。"
+      ],
+      "Your previous password": [
+        ""
+      ],
+      "Your previous recovery phrase": [
+        ""
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "あなたの Proton アカウントは現在利用停止中です。引き続きアカウントを使用する場合は、すべての未払いの請求書を精算してください。"
@@ -2697,6 +2736,9 @@
       "CVV code": [
         "CVV コード"
       ],
+      "Delete Drive?": [
+        ""
+      ],
       "Display name": [
         "表示名"
       ],
@@ -2904,6 +2946,9 @@
       "Text": [
         "テキスト"
       ],
+      "This will permanently delete all files in your locked drive.": [
+        ""
+      ],
       "To: ${ emailAddress }": [
         ""
       ],
@@ -2918,6 +2963,15 @@
       ],
       "Unknown file": [
         "不明なファイル"
+      ],
+      "Unlock Drive": [
+        ""
+      ],
+      "Unlock drive (recommended)": [
+        ""
+      ],
+      "Unlock later": [
+        ""
       ],
       "Up to ${ parentLinkName }": [
         "${ parentLinkName } へ"
@@ -2942,6 +2996,9 @@
       ],
       "What happened?": [
         "どのような症状がでましたか？"
+      ],
+      "Yes, I want to permanently delete\nmy old files": [
+        ""
       ],
       "ZIP": [
         "郵便番号"
@@ -3207,8 +3264,8 @@
       "\"${ firstItemName }\" restored from trash": [
         "「${ firstItemName }」がごみ箱から復元されました"
       ],
-      "${ deletedCount } link to your file was deleted.": [
-        "${ deletedCount } 件のリンクが削除されました。"
+      "${ deletedCount } link to your file was deleted": [
+        ""
       ],
       "${ deletedItemsCount } file deleted permanently from trash": [
         "${ deletedItemsCount } 件のファイルがごみ箱から完全に削除されました"
@@ -3219,8 +3276,8 @@
       "${ deletedItemsCount } item deleted permanently from trash": [
         "${ deletedItemsCount } 件のアイテムがごみ箱から完全に削除されました"
       ],
-      "${ failedCount } link to your file failed to be deleted.": [
-        "${ failedCount } 件のリンクが削除できませんでした。"
+      "${ failedCount } link to your file failed to be deleted": [
+        ""
       ],
       "${ failedMovesCount } file failed to be moved": [
         "${ failedMovesCount } 件のファイルの移動に失敗しました"
@@ -3306,14 +3363,17 @@
       "Not enough space to upload ${ formattedTotal }": [
         ""
       ],
-      "The link to your file failed to be deleted.": [
-        "ファイルへのリンクが削除できませんでした。"
+      "The link to your file failed to be deleted": [
+        ""
       ],
-      "The link to your file was deleted.": [
-        "ファイルへのリンクが削除されました。"
+      "The link to your file was deleted": [
+        ""
       ],
-      "Your settings have been changed successfully.": [
-        "設定が変更されました。"
+      "Your old files will be deleted in 72 hours": [
+        ""
+      ],
+      "Your settings have been changed successfully": [
+        ""
       ]
     },
     "Onboarding Proton": {
@@ -3728,11 +3788,11 @@
       "Preferences saved": [
         "設定が保存されました。"
       ],
-      "Recovery has started.": [
-        "復元は開始しました。"
+      "Recovery has started": [
+        ""
       ],
-      "The link to your file was successfully copied.": [
-        "ファイルへのリンクがコピーされました。"
+      "The link to your file was successfully copied": [
+        ""
       ],
       "Verification successful": [
         "検証に成功しました"
@@ -3740,8 +3800,8 @@
       "You have successfully unsubscribed": [
         "退会手続きが正常に行なわれました。"
       ],
-      "Your files were successfully recovered to \"My files\".": [
-        "ファイルは正常に復元され「マイファイル」に保存されました。"
+      "Your files were successfully recovered to \"My files\"": [
+        ""
       ]
     },
     "Suffix for price": {
@@ -4295,6 +4355,11 @@
         "郵便番号"
       ]
     },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        ""
+      ]
+    },
     "Tooltip": {
       "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
         "どこにいてもアクセス制限があるコンテンツ (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube など) にアクセスできます。"
@@ -4548,6 +4613,9 @@
       ],
       "The contact failed to load.": [
         "連絡先の読み込みに失敗しました。"
+      ],
+      "The date and time settings on your device are out of sync. ${ learnMore }": [
+        ""
       ],
       "The decryption of the encrypted content failed.": [
         "暗号化されたコンテンツの復号に失敗しました。"

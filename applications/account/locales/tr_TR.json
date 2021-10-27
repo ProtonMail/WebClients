@@ -31,11 +31,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } mağazası"
       ],
-      "Activate": [
-        "Etkinleştir"
-      ],
       "activate": [
         "etkinleştir"
+      ],
+      "Activate": [
+        "Etkinleştir"
       ],
       "Activate ${ Name }@pm.me": [
         "${ Name }@pm.me adresini etkinleştir"
@@ -385,6 +385,9 @@
       "Import contacts": [
         "Kişileri içe aktar"
       ],
+      "Import from .csv or vCard": [
+        ".csv ya da vCard dosyasından iç aktar"
+      ],
       "Import from .ics": [
         ""
       ],
@@ -657,6 +660,9 @@
       ],
       "Sign out all accounts": [
         "Tüm hesapların oturumunu kapat"
+      ],
+      "Signing in": [
+        "Giriş yapılıyor"
       ],
       "Signing out": [
         "Oturumu kapatılıyor"
@@ -1784,8 +1790,8 @@
       "Can't validate phone, try again later": [
         "Telefon doğrulanamıyor, daha sonra tekrar deneyin"
       ],
-      "Checkout expired, please try again.": [
-        "Ödeme süresi doldu, lütfen tekrar deneyin."
+      "Checkout expired, please try again": [
+        ""
       ],
       "Condition incomplete": [
         "Koşul eksik"
@@ -1909,6 +1915,9 @@
       "Not a valid number": [
         "Geçerli bir sayı değil"
       ],
+      "Organization key is not decrypted": [
+        ""
+      ],
       "Organization key is not decrypted.": [
         "Kuruluş anahtarının şifresi çözülmedi."
       ],
@@ -1943,8 +1952,8 @@
         "",
         ""
       ],
-      "Please generate keys before you try to change your password.": [
-        "Lütfen parolanızı değiştirmeyi denemeden önce anahtarlar oluşturun."
+      "Please generate keys before you try to change your password": [
+        ""
       ],
       "Please refresh the page.": [
         "Lütfen sayfayı yenileyin."
@@ -1958,8 +1967,8 @@
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         "Lütfen yeniden kimlik doğrulaması yapmayı deneyin ve izinlerin doğru ayarlandığından emin olun."
       ],
-      "Please upgrade to a Professional plan with more than 1 user, or a Visionary account, to get multi-user support.": [
-        "Çok kullanıcılı destek almak için lütfen birden fazla kullanıcıya sahip Profesyonel plana ve Visionary hesabına yükseltin."
+      "Please upgrade to a Professional plan with more than 1 user, or a Visionary account, to get multi-user support": [
+        ""
       ],
       "Please upgrade to a Professional plan with more than 1 user, or a Visionary account, to manage multiple users.": [
         "Birden fazla kullanıcıyı yönetmek için lütfen 1'den fazla kullanıcılı bir Profesyonel plana veya bir Visionary hesabına yükseltin."
@@ -2026,6 +2035,9 @@
       ],
       "The minimum payment we accept is ${ _price2 }": [
         "Kabul ettiğimiz en düşük ödeme ${ _price2 }"
+      ],
+      "The organization key must be activated first": [
+        ""
       ],
       "The organization key must be activated first.": [
         "Önce kuruluş anahtarı etkinleştirilmelidir."
@@ -2131,11 +2143,11 @@
       "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } events.": [
         "${ formattedFilename } dosyanız birden fazla ${ MAX_IMPORT_EVENTS_STRING } etkinliği içerir."
       ],
+      "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
+        "${ formattedFilename } dosyanız geçersiz bir yönteme sahip ve içe aktarılamıyor."
+      ],
       "Your file ${ formattedFilename } has no events to be imported.": [
         "${ formattedFilename } dosyanızın içe aktarılacak hiçbir etkinliği yoktur."
-      ],
-      "Your file ${ formattedFilename } is an invitation and cannot be imported.": [
-        "${ formattedFilename } dosyanız bir davettir ve içe aktarılamaz."
       ],
       "Your file ${ formattedFilename } is empty.": [
         "${ formattedFilename } dosyanız boş."
@@ -2683,38 +2695,27 @@
       ]
     },
     "Import calendar warning": {
-      "${ CALENDAR_APP_NAME } does not support ${ forNow }:": [
-        "${ CALENDAR_APP_NAME } ${ forNow } desteklemiyor:"
-      ],
-      "Attendees": [
-        "Katılımcılar"
-      ],
-      "Complex recurring rules": [
-        "Karmaşık yinelenen kurallar"
-      ],
-      "Email notifications": [
-        "E-posta bildirimleri"
-      ],
-      "for now": [
-        "şimdilik"
-      ],
-      "Free-busy time information": [
-        "Serbest yoğun zaman bilgisi"
-      ],
-      "Journal entries": [
-        "Günlük girişleri"
-      ],
-      "Non-Gregorian calendars": [
-        "Miladi olmayan takvimler"
-      ],
-      "To-do entries": [
-        "Yapılacakları girin"
-      ],
-      "Unofficial or custom timezones": [
-        "Resmi olmayan veya özel zaman dilimleri"
+      "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
+        "${ CALENDAR_APP_NAME } şu anda belirli etkinlik türlerini, ayrıntılarını ve biçimlerini desteklemiyor."
       ],
       "vCard versions < 3.0": [
         "vCard sürümleri < 3.0"
+      ]
+    },
+    "Import calendar; import invitation": {
+      "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your Proton email address.": [
+        "İçe aktarılan davetler ${ CALENDAR_APP_NAME } içerisinde düzenleyici ve katılımcı ayrıntıları olmayan sıradan etkinlikler olarak görünüyor."
+      ],
+      "This file contains an event invitation:": [
+        "Bu dosya bir etkinlik daveti içermektedir:",
+        "Bu dosya etkinlik davetleri içermektedir:"
+      ],
+      "This file contains an invitation response:": [
+        "Bu dosya bir davet yanıtı içermektedir:",
+        "Bu dosya davet yanıtı içermektedir:"
+      ],
+      "This file contains some data that we cannot import:": [
+        "Bu dosya içe aktaramayacağımız bazı verileri içeriyor:"
       ]
     },
     "Import contact": {
@@ -3000,17 +3001,17 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded }/${ totalContacts } kişi içe aktarılmayacak. Daha fazla bilgi için tıklayın"
       ],
-      "${ totalEventsDiscarded } out of ${ totalEvents } events will not be imported. Click for details": [
-        "${ totalEventsDiscarded }/${ totalEvents } etkinlik içe aktarılmayacak. Ayrıntılar için tıklayın"
+      "${ totalEventsDiscarded } out of ${ totalEvents } events will not be imported. Expand for details.": [
+        "${ totalEvents } etkinlikten ${ totalEventsDiscarded } tanesi içe aktarılmayacak. Ayrıntılar için genişlet."
       ],
       "No contact can be imported. Click for details": [
         "Kişi içe aktarılamadı. Ayrıntılar için tıklayın"
       ],
-      "No event can be imported. Click for details": [
-        "Hiçbir olay içe aktarılamaz. Detaylar için tıklayın"
+      "No event can be imported. Expand for details.": [
+        "Hiçbir etkinlik içe aktarılamadı. Ayrıntılar için genişlet."
       ],
-      "Part of your calendar content is not supported and will not be imported": [
-        "Takvim içeriğinizin bir kısmı desteklenmiyor ve içe aktarılmayacak"
+      "Part of your calendar content is not supported and will not be imported.": [
+        "Takvim içeriğinin bir bölümü desteklenmiyor ve içe aktarılmayacak."
       ]
     },
     "Info": {
@@ -3447,8 +3448,8 @@
       "Done": [
         "Tamamlandı"
       ],
-      "Done! We sent a code to ${ destination }": [
-        "Tamam! ${ destination } için bir kod gönderiyoruz"
+      "Done! We sent a code to ${ destination }.": [
+        ""
       ],
       "Downgrading will terminate any connections to paid ProtonVPN servers.": [
         "Sürüm düşürme, ücretli ProtonVPN sunucularına herhangi bir bağlantıyı sonlandıracaktır."
@@ -3642,7 +3643,7 @@
       "Image URL": [
         "Görüntü URL'si"
       ],
-      "Images have been removed because they are not allowed in auto-reply.": [
+      "Images have been removed because they are not allowed in auto-reply": [
         ""
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
@@ -7153,8 +7154,8 @@
       "Deleting original messages": [
         "İletilerin aslı siliniyor"
       ],
-      "DMARC value copied to clipboard!": [
-        "DMARC değeri panoya kopyalandı!"
+      "DMARC value copied to clipboard": [
+        ""
       ],
       "Domain verified": [
         "Etki alanı doğrulandı"
@@ -7228,8 +7229,8 @@
       "Sessions revoked": [
         "Oturumlar iptal edildi"
       ],
-      "SPF value copied to clipboard!": [
-        "SPF değeri panoya kopyalandı!"
+      "SPF value copied to clipboard": [
+        ""
       ],
       "User created": [
         "Kullanıcı oluşturuldu"
@@ -7237,11 +7238,11 @@
       "User updated": [
         "Kullanıcı güncellendi"
       ],
-      "Value copied to clipboard!": [
-        "Değer panoya kopyalandı!"
+      "Value copied to clipboard": [
+        ""
       ],
-      "Verification code copied to clipboard!": [
-        "Doğrulama kodu panoya kopyalandı!"
+      "Verification code copied to clipboard": [
+        ""
       ],
       "Verification successful": [
         "Doğrulama başarılı"
@@ -7571,6 +7572,9 @@
       "Contacts": [
         "Kişiler"
       ],
+      "Continue with partial import?": [
+        "Kısmi içe aktarmayla devam edilsin mi?"
+      ],
       "Coupon discount": [
         "Kupon İndirimi"
       ],
@@ -7775,6 +7779,10 @@
       "Import & export": [
         "İçe/Dışa aktarma"
       ],
+      "Import as simple event?": [
+        "Sıradan etkinlik olarak içe aktarılsın mı?",
+        "Sıradan etkinlikler olarak içe aktarılsın mı?"
+      ],
       "Import Assistant": [
         "Import Assistant"
       ],
@@ -7783,6 +7791,9 @@
       ],
       "Import events": [
         "Etkinlikleri içe aktar"
+      ],
+      "Import failed": [
+        "İçe aktarma başarısız oldu"
       ],
       "Import groups": [
         "Grupları içeri aktar"

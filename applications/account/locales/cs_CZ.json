@@ -31,11 +31,11 @@
       "${ BRAND_NAME } shop": [
         "Obchod ${ BRAND_NAME }"
       ],
-      "Activate": [
-        "Aktivovat"
-      ],
       "activate": [
         "aktivovat"
+      ],
+      "Activate": [
+        "Aktivovat"
       ],
       "Activate ${ Name }@pm.me": [
         "Aktivovat ${ Name }@pm.me"
@@ -385,6 +385,9 @@
       "Import contacts": [
         "Importovat kontakty"
       ],
+      "Import from .csv or vCard": [
+        ""
+      ],
       "Import from .ics": [
         ""
       ],
@@ -657,6 +660,9 @@
       ],
       "Sign out all accounts": [
         "Odhlásit se ze všech účtů"
+      ],
+      "Signing in": [
+        ""
       ],
       "Signing out": [
         "Odhlašování"
@@ -1820,8 +1826,8 @@
       "Can't validate phone, try again later": [
         "Nelze ověřit telefon, opakujte akci později"
       ],
-      "Checkout expired, please try again.": [
-        "Objednávka vypršela, zkuste to prosím znovu."
+      "Checkout expired, please try again": [
+        ""
       ],
       "Condition incomplete": [
         "Neúplná podmínka"
@@ -1949,6 +1955,9 @@
       "Not a valid number": [
         "Neplatné číslo"
       ],
+      "Organization key is not decrypted": [
+        ""
+      ],
       "Organization key is not decrypted.": [
         "Klíč organizace není dešifrován."
       ],
@@ -1985,8 +1994,8 @@
         "",
         ""
       ],
-      "Please generate keys before you try to change your password.": [
-        "Než se pokusíte změnit heslo, vytvořte si prosím klíče."
+      "Please generate keys before you try to change your password": [
+        ""
       ],
       "Please refresh the page.": [
         "Prosím obnovte stránku."
@@ -2000,8 +2009,8 @@
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         "Zkuste se znovu ověřit a zkontrolujte, zda jsou oprávnění nastavena správně."
       ],
-      "Please upgrade to a Professional plan with more than 1 user, or a Visionary account, to get multi-user support.": [
-        "Chcete-li získat podporu pro 1 nebo více uživatelů, přejděte prosím na tarif Professional nebo Visionary."
+      "Please upgrade to a Professional plan with more than 1 user, or a Visionary account, to get multi-user support": [
+        ""
       ],
       "Please upgrade to a Professional plan with more than 1 user, or a Visionary account, to manage multiple users.": [
         "Chcete-li získat podporu pro více než jednoho uživatele, přejděte na tarif Professional nebo Visionary."
@@ -2068,6 +2077,9 @@
       ],
       "The minimum payment we accept is ${ _price2 }": [
         "Minimální platba, kterou přijímáme, je ${ _price2 }"
+      ],
+      "The organization key must be activated first": [
+        ""
       ],
       "The organization key must be activated first.": [
         "Nejprve musí být aktivován klíč organizace."
@@ -2173,11 +2185,11 @@
       "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } events.": [
         "Váš soubor ${ formattedFilename } obsahuje více než ${ MAX_IMPORT_EVENTS_STRING } událostí."
       ],
+      "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
+        ""
+      ],
       "Your file ${ formattedFilename } has no events to be imported.": [
         "Váš soubor ${ formattedFilename } nemá žádné události pro import."
-      ],
-      "Your file ${ formattedFilename } is an invitation and cannot be imported.": [
-        "Váš soubor ${ formattedFilename } je pozvánka a nemůže být importována."
       ],
       "Your file ${ formattedFilename } is empty.": [
         "Váš soubor ${ formattedFilename } je prázdný."
@@ -2735,38 +2747,31 @@
       ]
     },
     "Import calendar warning": {
-      "${ CALENDAR_APP_NAME } does not support ${ forNow }:": [
-        "${ CALENDAR_APP_NAME } nepodporuje ${ forNow }:"
-      ],
-      "Attendees": [
-        "Účastníci"
-      ],
-      "Complex recurring rules": [
-        "Složitá opakující se pravidla"
-      ],
-      "Email notifications": [
-        "Emailová notifikace"
-      ],
-      "for now": [
-        "prozatím"
-      ],
-      "Free-busy time information": [
-        "Volno-zaneprázdněn informace o čase"
-      ],
-      "Journal entries": [
-        "Položka v deníku"
-      ],
-      "Non-Gregorian calendars": [
-        "Ne-Gregoriánské kalendáře"
-      ],
-      "To-do entries": [
-        "Úkoly"
-      ],
-      "Unofficial or custom timezones": [
-        "Neoficiální nebo vlastní časová pásma"
+      "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
+        ""
       ],
       "vCard versions < 3.0": [
         "vCard verze < 3.0"
+      ]
+    },
+    "Import calendar; import invitation": {
+      "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your Proton email address.": [
+        ""
+      ],
+      "This file contains an event invitation:": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "This file contains an invitation response:": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "This file contains some data that we cannot import:": [
+        ""
       ]
     },
     "Import contact": {
@@ -3060,17 +3065,17 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } mimo ${ totalContacts } kontakty nebudou nahrané. Klikněte pro detaily"
       ],
-      "${ totalEventsDiscarded } out of ${ totalEvents } events will not be imported. Click for details": [
-        "${ totalEventsDiscarded } mimo ${ totalEvents } události nebudou naimportovány. Klikněte pro detaily"
+      "${ totalEventsDiscarded } out of ${ totalEvents } events will not be imported. Expand for details.": [
+        ""
       ],
       "No contact can be imported. Click for details": [
         "Kontakt nemůže být importován. Klikněte pro detaily"
       ],
-      "No event can be imported. Click for details": [
-        "Událost nemůže být importována. Klikněte pro detaily"
+      "No event can be imported. Expand for details.": [
+        ""
       ],
-      "Part of your calendar content is not supported and will not be imported": [
-        "Část obsahu kalendáře není podporován a nebude naimportován"
+      "Part of your calendar content is not supported and will not be imported.": [
+        ""
       ]
     },
     "Info": {
@@ -3551,8 +3556,8 @@
       "Done": [
         "Hotovo"
       ],
-      "Done! We sent a code to ${ destination }": [
-        "Hotovo! Poslali jsme kód na ${ destination }"
+      "Done! We sent a code to ${ destination }.": [
+        ""
       ],
       "Downgrading will terminate any connections to paid ProtonVPN servers.": [
         "Změnou plánu ukončíte všechna spojení s placenými ProtonVPN servery."
@@ -3746,7 +3751,7 @@
       "Image URL": [
         "URL adresa obrázku"
       ],
-      "Images have been removed because they are not allowed in auto-reply.": [
+      "Images have been removed because they are not allowed in auto-reply": [
         ""
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
@@ -7299,8 +7304,8 @@
       "Deleting original messages": [
         "Mazání původních zpráv"
       ],
-      "DMARC value copied to clipboard!": [
-        "Hodnota DMARC byla zkopírována do schránky!"
+      "DMARC value copied to clipboard": [
+        ""
       ],
       "Domain verified": [
         "Doména ověřena"
@@ -7374,8 +7379,8 @@
       "Sessions revoked": [
         "Relace byla zrušena"
       ],
-      "SPF value copied to clipboard!": [
-        "Hodnota SPF záznamu zkopírována do schránky!"
+      "SPF value copied to clipboard": [
+        ""
       ],
       "User created": [
         "Uživatel vytvořen"
@@ -7383,10 +7388,10 @@
       "User updated": [
         "Uživatel aktualizován"
       ],
-      "Value copied to clipboard!": [
-        "Hodnota byla zkopírována do schránky!"
+      "Value copied to clipboard": [
+        ""
       ],
-      "Verification code copied to clipboard!": [
+      "Verification code copied to clipboard": [
         ""
       ],
       "Verification successful": [
@@ -7721,6 +7726,9 @@
       "Contacts": [
         "Kontakty"
       ],
+      "Continue with partial import?": [
+        ""
+      ],
       "Coupon discount": [
         "Slevový kupón"
       ],
@@ -7925,6 +7933,12 @@
       "Import & export": [
         "Import a export"
       ],
+      "Import as simple event?": [
+        "",
+        "",
+        "",
+        ""
+      ],
       "Import Assistant": [
         "Import Assistant"
       ],
@@ -7933,6 +7947,9 @@
       ],
       "Import events": [
         "Import událostí"
+      ],
+      "Import failed": [
+        ""
       ],
       "Import groups": [
         "Importovat skupiny"
