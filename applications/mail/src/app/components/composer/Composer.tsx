@@ -44,7 +44,10 @@ import { useLongLivingState } from '../../hooks/useLongLivingState';
 import ComposerInnerModals from './modals/ComposerInnerModals';
 import { ComposerInnerModalStates, useComposerInnerModals } from '../../hooks/composer/useComposerInnerModals';
 import { MessageState, MessageStateWithData, PartialMessageState } from '../../logic/messages/messagesTypes';
-import { removeInitialAttachments } from '../../logic/messages/messagesActions';
+import { removeInitialAttachments } from '../../logic/messages/draft/messagesDraftActions';
+import ComposerMeta from './ComposerMeta';
+import ComposerContent from './ComposerContent';
+import ComposerActions from './ComposerActions';
 
 export type MessageUpdate = PartialMessageState | ((message: MessageState) => PartialMessageState);
 
@@ -87,7 +90,6 @@ const Composer = (
     ref: Ref<ComposerAction>
 ) => {
     const dispatch = useDispatch();
-    // const messageCache = useMessageCache();
     const { createNotification } = useNotifications();
 
     const bodyRef = useRef<HTMLDivElement>(null);
@@ -390,7 +392,6 @@ const Composer = (
         if (attachmentToUpload) {
             const uploadInitialAttachments = async () => {
                 const files = syncedMessage.draftFlags?.initialAttachments;
-                // updateMessageCache(messageCache, messageID, { initialAttachments: undefined });
                 dispatch(removeInitialAttachments(messageID));
                 await saveNow(syncedMessage);
                 await handleAddAttachmentsUpload(ATTACHMENT_ACTION.ATTACHMENT, files);
@@ -412,7 +413,6 @@ const Composer = (
     }, [uploadInProgress]);
 
     const handleDiscard = async () => {
-        // const messageFromCache = messageCache.get(modelMessage.localID) as MessageExtended;
         if (syncedMessage.data?.ID) {
             await deleteDraft(syncedMessage);
         }

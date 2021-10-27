@@ -9,11 +9,16 @@ import { useGetMessageKeys } from './useGetMessageKeys';
 import { updateImages } from '../../helpers/message/messageImages';
 import { updateAttachment } from '../../logic/attachments/attachmentsActions';
 import { useGetAttachment } from '../useAttachment';
-import { loadRemoteProxy, loadRemoteDirect, loadEmbedded } from '../../logic/messages/messagesActions';
+import {
+    loadRemoteProxy,
+    loadRemoteDirect,
+    loadEmbedded,
+    loadFakeProxy,
+} from '../../logic/messages/images/messagesImagesActions';
 import {
     MessageState,
     MessageRemoteImage,
-    LoadRemoteProxyResults,
+    LoadRemoteResults,
     LoadEmbeddedResults,
     MessageStateWithData,
 } from '../../logic/messages/messagesTypes';
@@ -23,7 +28,6 @@ export const useLoadRemoteImages = (localID: string) => {
     const dispatch = useDispatch();
     const api = useApi();
     const getMessage = useGetMessage();
-    // const messageCache = useMessageCache();
     const [mailSettings] = useMailSettings();
 
     return useCallback(async () => {
@@ -31,12 +35,17 @@ export const useLoadRemoteImages = (localID: string) => {
 
         const handleLoadRemoteImagesProxy = (imagesToLoad: MessageRemoteImage[]) => {
             const dispatchResult = dispatch(loadRemoteProxy({ ID: localID, imagesToLoad, api }));
-            return dispatchResult as any as Promise<LoadRemoteProxyResults[]>;
+            return dispatchResult as any as Promise<LoadRemoteResults[]>;
+        };
+
+        const handleLoadFakeImagesProxy = (imagesToLoad: MessageRemoteImage[]) => {
+            const dispatchResult = dispatch(loadFakeProxy({ ID: localID, imagesToLoad, api }));
+            return dispatchResult as any as Promise<LoadRemoteResults[]>;
         };
 
         const handleLoadRemoteImagesDirect = (imagesToLoad: MessageRemoteImage[]) => {
             const dispatchResult = dispatch(loadRemoteDirect({ ID: localID, imagesToLoad, api }));
-            return dispatchResult as any as Promise<[MessageRemoteImage, unknown][]>;
+            return dispatchResult as any as Promise<LoadRemoteResults[]>;
         };
 
         transformRemote(
@@ -46,13 +55,9 @@ export const useLoadRemoteImages = (localID: string) => {
             },
             mailSettings,
             handleLoadRemoteImagesProxy,
+            handleLoadFakeImagesProxy,
             handleLoadRemoteImagesDirect
         );
-
-        // updateMessageCache(messageCache, localID, {
-        //     document: message.document,
-        //     messageImages: updateImages(message.messageImages, { showRemoteImages: true }, remoteImages, undefined),
-        // });
     }, [localID]);
 };
 
@@ -61,7 +66,6 @@ export const useLoadEmbeddedImages = (localID: string) => {
     const api = useApi();
     const getAttachment = useGetAttachment();
     const getMessage = useGetMessage();
-    // const messageCache = useMessageCache();
     const getMessageKeys = useGetMessageKeys();
     const [mailSettings] = useMailSettings();
 
@@ -81,7 +85,8 @@ export const useLoadEmbeddedImages = (localID: string) => {
                     api,
                     messageKeys,
                     messageVerification: message.verification,
-                    attachmentsCache,
+                    getAttachment,
+                    onUpdateAttachment,
                 })
             );
             return dispatchResult as any as Promise<LoadEmbeddedResults>;
@@ -93,14 +98,7 @@ export const useLoadEmbeddedImages = (localID: string) => {
                 messageImages: updateImages(message.messageImages, { showEmbeddedImages: true }, undefined, undefined),
             },
             mailSettings,
-            handleLoadEmbeddedImages,
-            getAttachment,
-            onUpdateAttachment
+            handleLoadEmbeddedImages
         );
-
-        // updateMessageCache(messageCache, localID, {
-        //     document: message.document,
-        //     messageImages: updateImages(message.messageImages, { showEmbeddedImages: true }, undefined, embeddedImages),
-        // });
     }, [localID]);
 };

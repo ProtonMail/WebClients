@@ -23,7 +23,7 @@ import {
     MessageStateWithData,
     LoadEmbeddedResults,
     MessageRemoteImage,
-    LoadRemoteProxyResults,
+    LoadRemoteResults,
     LoadEmbeddedParams,
 } from '../../logic/messages/messagesTypes';
 import { useGetMessage } from './useMessage';
@@ -31,11 +31,13 @@ import {
     documentInitializePending,
     documentInitializeFulfilled,
     load,
+} from '../../logic/messages/read/messagesReadActions';
+import {
     loadEmbedded,
     loadRemoteProxy,
     loadRemoteDirect,
     loadFakeProxy,
-} from '../../logic/messages/messagesActions';
+} from '../../logic/messages/images/messagesImagesActions';
 import { useGetAttachment } from '../useAttachment';
 import { updateAttachment } from '../../logic/attachments/attachmentsActions';
 
@@ -44,7 +46,6 @@ export const useInitializeMessage = (localID: string, labelID?: string) => {
     const markAs = useMarkAs();
     const dispatch = useDispatch();
     const getMessage = useGetMessage();
-    // const messageCache = useMessageCache();
     const getMessageKeys = useGetMessageKeys();
     const getAttachment = useGetAttachment();
     const base64Cache = useBase64Cache();
@@ -58,11 +59,9 @@ export const useInitializeMessage = (localID: string, labelID?: string) => {
     return useCallback(async () => {
         // Message can change during the whole initilization sequence
         // To have the most up to date version, best is to get back to the cache version each time
-        // const getData = () => (messageCache.get(localID) as MessageExtendedWithData).data;
         const getData = () => (getMessage(localID) as MessageStateWithData).data;
 
         // Cache entry will be (at least) initialized by the queue system
-        // const messageFromCache = messageCache.get(localID) as MessageExtended;
         const messageFromState = { ...getMessage(localID) } as MessageState;
 
         // If the message is not yet loaded at all, the localID is the message ID
@@ -70,7 +69,6 @@ export const useInitializeMessage = (localID: string, labelID?: string) => {
             messageFromState.data = { ID: localID } as Message;
         }
 
-        // updateMessageCache(messageCache, localID, { initialized: false });
         dispatch(documentInitializePending(localID));
 
         const errors: MessageErrors = {};
@@ -84,7 +82,6 @@ export const useInitializeMessage = (localID: string, labelID?: string) => {
         try {
             // Ensure the message data is loaded
             const message = await loadMessage(messageFromState, api);
-            // updateMessageCache(messageCache, localID, { data: message.data });
             dispatch(load.fulfilled(message.data, load.fulfilled.toString(), { ID: localID, api }));
 
             const messageKeys = await getMessageKeys(message.data);
@@ -134,18 +131,17 @@ export const useInitializeMessage = (localID: string, labelID?: string) => {
 
             const handleLoadRemoteImagesProxy = (imagesToLoad: MessageRemoteImage[]) => {
                 const dispatchResult = dispatch(loadRemoteProxy({ ID: localID, imagesToLoad, api }));
-                return dispatchResult as any as Promise<LoadRemoteProxyResults[]>;
+                return dispatchResult as any as Promise<LoadRemoteResults[]>;
             };
 
             const handleLoadFakeImagesProxy = (imagesToLoad: MessageRemoteImage[]) => {
                 const dispatchResult = dispatch(loadFakeProxy({ ID: localID, imagesToLoad, api }));
-                console.log('handleLoadFakeImagesProxy', dispatchResult);
-                return dispatchResult as any as Promise<LoadRemoteProxyResults[]>;
+                return dispatchResult as any as Promise<LoadRemoteResults[]>;
             };
 
             const handleLoadRemoteImagesDirect = (imagesToLoad: MessageRemoteImage[]) => {
                 const dispatchResult = dispatch(loadRemoteDirect({ ID: localID, imagesToLoad, api }));
-                return dispatchResult as any as Promise<[MessageRemoteImage, unknown][]>;
+                return dispatchResult as any as Promise<LoadRemoteResults[]>;
             };
 
             preparation = isPlainText({ MIMEType })
@@ -185,20 +181,6 @@ export const useInitializeMessage = (localID: string, labelID?: string) => {
             }
             console.error('Message initialization error', error);
         } finally {
-            // updateMessageCache(messageCache, localID, {
-            //     data: dataChanges,
-            //     document: preparation?.document,
-            //     plainText: preparation?.plainText,
-            //     decryptedBody: decryption?.decryptedBody,
-            //     decryptedRawContent: decryption?.decryptedRawContent,
-            //     signature: decryption?.signature,
-            //     decryptedSubject: decryption?.decryptedSubject,
-            //     errors,
-            //     loadRetry: loadRetry + 1,
-            //     initialized,
-            //     messageImages,
-            // });
-
             dispatch(
                 documentInitializeFulfilled({
                     ID: localID,

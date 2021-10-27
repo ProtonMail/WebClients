@@ -18,9 +18,9 @@ import {
     optimisticMarkAsConversation,
     optimisticMarkAsConversationMessages,
 } from '../../logic/conversations/conversationsActions';
+import { optimisticMarkAs as optimisticMarkAsMessageAction } from '../../logic/messages/optimistic/messagesOptimisticActions';
 import { isConversationMode } from '../../helpers/mailSettings';
 import { useGetConversation } from '../conversation/useConversation';
-import { optimisticMarkAs as optimisticMarkAsMessageAction } from '../../logic/messages/messagesActions';
 import { applyMarkAsChangesOnMessage } from '../../helpers/message/messages';
 
 export type MarkAsChanges = { status: MARK_AS_STATUS };
@@ -118,16 +118,6 @@ export const useOptimisticMarkAs = () => {
 
             if (testIsMessage(element)) {
                 const message = element as Message;
-                // const localID = getLocalID(message.ID);
-
-                // // Update in message cache
-                // const messageFromCache = getMessage(message.ID);
-                // if (messageFromCache && messageFromCache.data) {
-                //     // messageCache.set(localID, {
-                //     //     ...messageFromCache,
-                //     //     data: applyMarkAsChangesOnMessage(messageFromCache.data, changes),
-                //     // });
-                // }
 
                 dispatch(optimisticMarkAsMessageAction({ ID: message.ID, changes }));
 
@@ -203,16 +193,6 @@ export const useOptimisticMarkAs = () => {
                         if (!message.LabelIDs.find((id) => id === labelID)) {
                             return;
                         }
-
-                        // // const localID = getLocalID(messageCache, message.ID);
-                        // // Update in message cache
-                        // const messageFromCache = getMessage(message.ID);
-                        // if (messageFromCache && messageFromCache.data) {
-                        //     // messageCache.set(localID, {
-                        //     //     ...messageFromCache,
-                        //     //     data: applyMarkAsChangesOnMessage(messageFromCache.data, changes),
-                        //     // });
-                        // }
 
                         dispatch(optimisticMarkAsMessageAction({ ID: message.ID, changes }));
                     });

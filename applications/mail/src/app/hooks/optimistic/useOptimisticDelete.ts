@@ -24,7 +24,7 @@ import { useGetMessage } from '../message/useMessage';
 import {
     optimisticDelete as optimisticDeleteMessageAction,
     optimisticRestore as optimisticRestoreMessageAction,
-} from '../../logic/messages/messagesActions';
+} from '../../logic/messages/optimistic/messagesOptimisticActions';
 
 const useOptimisticDelete = () => {
     const dispatch = useDispatch();
@@ -43,14 +43,6 @@ const useOptimisticDelete = () => {
         const rollbackCounters = {} as { [key: string]: LabelCount };
 
         // Message cache
-        // const messageIDs = [...messageCache.keys()];
-        // messageIDs.forEach((messageID) => {
-        //     const message = messageCache.get(messageID) as MessageState;
-        //     if (elementIDs.includes(messageID)) {
-        //         messageCache.delete(messageID);
-        //         rollbackMessages.push(message);
-        //     }
-        // });
         elementIDs.forEach((elementID) => {
             const message = getMessage(elementID);
             if (message) {

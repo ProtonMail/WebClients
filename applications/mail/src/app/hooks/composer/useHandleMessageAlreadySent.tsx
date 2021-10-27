@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import { useCreateDraft } from '../message/useSaveDraft';
 import { MessageState, MessageStateWithData } from '../../logic/messages/messagesTypes';
 import { useGetMessage } from '../message/useMessage';
-import { deleteDraft } from '../../logic/messages/messagesActions';
+import { deleteDraft } from '../../logic/messages/draft/messagesDraftActions';
 
 interface UseHandleMessageAlreadySentParameters {
     modelMessage: MessageState;
@@ -14,12 +14,10 @@ interface UseHandleMessageAlreadySentParameters {
 export const useHandleMessageAlreadySent = ({ modelMessage, onClose }: UseHandleMessageAlreadySentParameters) => {
     const { createNotification } = useNotifications();
     const createDraft = useCreateDraft();
-    // const messageCache = useMessageCache();
     const getMessage = useGetMessage();
     const dispatch = useDispatch();
 
     const duplicateDraft = useHandler(() => {
-        // const messageFromCache = messageCache.get(modelMessage.localID) as MessageExtendedWithData;
         const messageFromCache = getMessage(modelMessage.localID) as MessageStateWithData;
 
         void createDraft({
@@ -32,7 +30,6 @@ export const useHandleMessageAlreadySent = ({ modelMessage, onClose }: UseHandle
         });
 
         // remove the old draft from message cache (which will close the composer)
-        // messageCache.delete(modelMessage.localID);
         dispatch(deleteDraft(modelMessage.localID));
     });
 

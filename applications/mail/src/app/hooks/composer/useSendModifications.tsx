@@ -10,17 +10,15 @@ import { createEmbeddedImageFromUpload } from '../../helpers/message/messageEmbe
 import { useGetMessageKeys } from '../message/useGetMessageKeys';
 import { MessageStateWithData, MessageEmbeddedImage } from '../../logic/messages/messagesTypes';
 import { useGetMessage } from '../message/useMessage';
-import { sendModifications } from '../../logic/messages/messagesActions';
+import { sendModifications } from '../../logic/messages/draft/messagesDraftActions';
 
 export const useSendMoficiations = () => {
-    // const messageCache = useMessageCache();
     const getMessage = useGetMessage();
     const dispatch = useDispatch();
     const getMessageKeys = useGetMessageKeys();
     const auth = useAuthentication();
 
     return useCallback(async (inputMessage: MessageStateWithData) => {
-        // const message = messageCache.get(inputMessage.localID) as MessageExtendedWithData;
         const message = getMessage(inputMessage.localID) as MessageStateWithData;
         const messageKeys = await getMessageKeys(message.data);
         const attachments: Attachment[] = [];
@@ -47,14 +45,6 @@ export const useSendMoficiations = () => {
 
         // Centralized update cache after modifications
         // Theses changes are willingly not saved to the draft
-        // return updateMessageCache(messageCache, inputMessage.localID, {
-        //     data: {
-        //         Attachments: attachments,
-        //         // Needed to keep encryption flags right after saving
-        //         Flags: inputMessage.data.Flags,
-        //     },
-        //     messageImages: updateImages(message.messageImages, undefined, undefined, embeddedImages),
-        // });
         dispatch(sendModifications({ ID: inputMessage.localID, attachments, images }));
 
         return getMessage(inputMessage.localID);

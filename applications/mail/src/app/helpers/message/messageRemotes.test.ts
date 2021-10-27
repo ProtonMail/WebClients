@@ -1,5 +1,5 @@
+import { MessageRemoteImage } from '../../logic/messages/messagesTypes';
 import { createDocument } from '../test/message';
-import { MessageRemoteImage } from '../../models/message';
 import { loadElementOtherThanImages, loadBackgroundImages } from './messageRemotes';
 
 describe('messageRemote', () => {

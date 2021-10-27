@@ -12,12 +12,11 @@ import { updateAttachment } from '../../logic/attachments/attachmentsActions';
 import { useGetAttachment } from '../useAttachment';
 import { MessageErrors, MessageStateWithData } from '../../logic/messages/messagesTypes';
 import { useGetMessage } from './useMessage';
-import { verificationComplete } from '../../logic/messages/messagesActions';
+import { verificationComplete } from '../../logic/messages/read/messagesReadActions';
 
 export const useVerifyMessage = (localID: string) => {
     const api = useApi();
     const getMessage = useGetMessage();
-    // const messageCache = useMessageCache();
     const getAttachment = useGetAttachment();
     const dispatch = useDispatch();
     const getEncryptionPreferences = useGetEncryptionPreferences();
@@ -32,7 +31,6 @@ export const useVerifyMessage = (localID: string) => {
         async (decryptedRawContent: Uint8Array = new Uint8Array(), signature?: OpenPGPSignature) => {
             // Message can change during the whole sequence
             // To have the most up to date version, best is to get back to the cache version each time
-            // const getData = () => (messageCache.get(localID) as MessageExtendedWithData).data;
             const getData = () => (getMessage(localID) as MessageStateWithData).data;
 
             const errors: MessageErrors = {};
@@ -84,17 +82,6 @@ export const useVerifyMessage = (localID: string) => {
                     errors.signature = [error];
                 }
             } finally {
-                // updateMessageCache(messageCache, localID, {
-                //     verification: {
-                //         senderPinnedKeys: encryptionPreferences?.pinnedKeys,
-                //         signingPublicKey,
-                //         attachedPublicKeys,
-                //         senderVerified: encryptionPreferences?.isContactSignatureVerified,
-                //         verificationStatus: verification?.verified,
-                //         verificationErrors: verification?.verificationErrors,
-                //     },
-                //     errors,
-                // });
                 dispatch(
                     verificationComplete({
                         ID: localID,

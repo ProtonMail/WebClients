@@ -47,8 +47,6 @@ const getRemoteImageMatches = (message: MessageExtended) => {
 export const transformRemote = (
     message: MessageState,
     mailSettings: Partial<MailSettings> | undefined,
-    // api: Api,
-    // messageCache: MessageCache
     onLoadRemoteImagesProxy: (imagesToLoad: MessageRemoteImage[]) => void,
     onLoadFakeImagesProxy: (imagesToLoad: MessageRemoteImage[]) => void,
     onLoadRemoteImagesDirect: (imagesToLoad: MessageRemoteImage[]) => void

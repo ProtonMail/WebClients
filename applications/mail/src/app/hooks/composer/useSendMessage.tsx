@@ -28,7 +28,7 @@ import { updateAttachment } from '../../logic/attachments/attachmentsActions';
 import { useGetAttachment } from '../useAttachment';
 import { MessageStateWithData } from '../../logic/messages/messagesTypes';
 import { useGetMessage } from '../message/useMessage';
-import { endUndo, sent } from '../../logic/messages/messagesActions';
+import { endUndo, sent } from '../../logic/messages/draft/messagesDraftActions';
 
 const MIN_DELAY_SENT_NOTIFICATION = 2500;
 
@@ -49,7 +49,6 @@ export const useSendMessage = () => {
     const getAttachment = useGetAttachment();
     const dispatch = useDispatch();
     const { call } = useEventManager();
-    // const messageCache = useMessageCache();
     const getMessage = useGetMessage();
     const history = useHistory<any>();
     const delaySendSeconds = useDelaySendSeconds();
@@ -75,7 +74,6 @@ export const useSendMessage = () => {
                 if (sendingMessageNotificationManager) {
                     hideNotification(sendingMessageNotificationManager.ID);
                 }
-                // const savedMessage = messageCache.get(localID) as MessageExtendedWithData;
                 const savedMessage = getMessage(localID) as MessageStateWithData;
                 await api(cancelSend(savedMessage.data.ID));
                 createNotification({ text: c('Message notification').t`Sending undone` });
@@ -162,26 +160,12 @@ export const useSendMessage = () => {
                         // It's a bit more complicated in reallity, the server will take a few more seconds to actully send the message
                         // It creates a small window of time during which the UI allow to reply to message in the outbox
                         // This should be handled by the backend
-                        // const message = messageCache.get(localID) as MessageExtendedWithData;
-                        // updateMessageCache(messageCache, localID, {
-                        //     data: {
-                        //         LabelIDs: message.data.LabelIDs.filter((value) => value !== MAILBOX_LABEL_IDS.OUTBOX),
-                        //         Flags: setFlag(MESSAGE_FLAGS.FLAG_SENT)(message.data),
-                        //     },
-                        // });
                         dispatch(endUndo(localID));
                     }
                 };
 
                 void endSending();
 
-                // updateMessageCache(messageCache, localID, {
-                //     data: Sent,
-                //     initialized: undefined,
-                //     plainText: undefined,
-                //     document: undefined,
-                //     messageImages: undefined,
-                // });
                 dispatch(sent(Sent));
 
                 // Navigation to the sent message

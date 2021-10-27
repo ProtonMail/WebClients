@@ -12,7 +12,7 @@ import * as messageDecrypt from '../../../helpers/message/messageDecrypt';
 import { mergeMessages } from '../../../helpers/message/messages';
 import { MessageState, PartialMessageState } from '../../../logic/messages/messagesTypes';
 import { store } from '../../../logic/store';
-import { initialize } from '../../../logic/messages/messagesActions';
+import { initialize } from '../../../logic/messages/read/messagesReadActions';
 
 loudRejection();
 
@@ -55,7 +55,6 @@ export const setup = async (specificProps: Partial<MessageViewProps> = {}, useMi
             ref.current?.expand();
             // Wait for message initialization to be finished before continuing
             await waitFor(() => {
-                // const message = messageCache.get(props.message.ID);
                 const message = store.getState().messages[props.message.ID];
                 expect(message?.messageDocument?.initialized).toBe(true);
             });
@@ -87,6 +86,5 @@ export const initMessage = (inputMessage: PartialMessageState = {}) => {
 
     const message = mergeMessages(defaultMessage, inputMessage);
 
-    // messageCache.set(messageID, message);
     store.dispatch(initialize(message));
 };

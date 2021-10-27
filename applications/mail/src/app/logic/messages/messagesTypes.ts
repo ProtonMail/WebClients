@@ -298,7 +298,7 @@ export interface LoadRemoteParams {
     api: Api;
 }
 
-export interface LoadRemoteProxyResults {
+export interface LoadRemoteResults {
     image: MessageRemoteImage;
     blob?: Blob;
     tracker?: string;
