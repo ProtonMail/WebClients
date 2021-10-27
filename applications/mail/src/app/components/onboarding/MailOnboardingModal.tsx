@@ -22,6 +22,8 @@ const MailOnboardingModal = (props: any) => {
     const [imports, importsLoading] = useImporters();
     const hasAlreadyImported = !importsLoading && imports.length;
     const { feature } = useFeature(FeatureCode.UsedMailMobileApp);
+    const easySwitchFeature = useFeature(FeatureCode.EasySwitch);
+    const isEasySwitchEnabled = easySwitchFeature.feature?.Value;
 
     return (
         <OnboardingModal {...props}>
@@ -62,7 +64,11 @@ const MailOnboardingModal = (props: any) => {
                         <OnboardingStep
                             submit={c('Action').t`Import messages`}
                             onSubmit={() => {
-                                goToSettings('/import-export', APPS.PROTONMAIL, true);
+                                goToSettings(
+                                    isEasySwitchEnabled ? '/easy-switch' : '/import-export',
+                                    isEasySwitchEnabled ? APPS.PROTONACCOUNT : APPS.PROTONMAIL,
+                                    true
+                                );
                                 onNext();
                             }}
                             onClose={onNext}
