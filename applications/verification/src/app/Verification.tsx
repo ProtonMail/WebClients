@@ -1,46 +1,22 @@
 import { ReactNode, useEffect, useState } from 'react';
 import { useLocation } from 'react-router';
+import { c } from 'ttag';
 import { HumanVerificationMethodType } from '@proton/shared/lib/interfaces';
-import { ThemeTypes } from '@proton/shared/lib/themes/themes';
-import { HumanVerificationForm, HumanVerificationSteps, useInstance, useTheme } from '@proton/components';
+import { queryCheckVerificationCode } from '@proton/shared/lib/api/user';
+import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+
+import {
+    HumanVerificationForm,
+    HumanVerificationSteps,
+    useInstance,
+    useTheme,
+    useApi,
+    useNotifications,
+} from '@proton/components';
 
 import broadcast, { MessageType } from './broadcast';
-
+import { VerificationSearchParameters } from './types';
 import './Verification.scss';
-
-interface VerificationSearchParameters {
-    /*
-     * Human verification start token
-     */
-    token?: string;
-    /*
-     * Available human verification methods
-     * captcha | payment | sms | email | invite | coupon
-     */
-    methods?: HumanVerificationMethodType[];
-    /*
-     * Force embed in case the checks fail to detect it for some reason
-     */
-    embed?: boolean;
-    /*
-     * Which theme to render the hv app in
-     * Default - 0
-     * Dark - 1
-     * Light - 2
-     * Monokai - 3
-     * Contrast - 4
-     * Legacy - 5
-     */
-    theme?: ThemeTypes;
-    /* Which language to display the app in */
-    locale?: string;
-    /* Default country, used in defaulting the phone number for example */
-    defaultCountry?: string;
-    /* Default email value, used in email input display */
-    defaultEmail?: string;
-    /* Default phone number, used in the phone input display */
-    defaultPhone?: string;
-}
 
 const windowIsEmbedded = window.location !== window.parent.location;
 
@@ -48,14 +24,14 @@ const parseSearch = (search: string) => Object.fromEntries(new URLSearchParams(s
 
 const Verification = () => {
     const [step, setStep] = useState(HumanVerificationSteps.ENTER_DESTINATION);
-
+    const [, setTheme] = useTheme();
+    const api = useApi();
+    const { createNotification } = useNotifications();
     const location = useLocation();
 
     const search = parseSearch(location.search) as VerificationSearchParameters;
 
     const { methods, embed, theme, token, defaultCountry, defaultEmail, defaultPhone } = search;
-
-    const [, setTheme] = useTheme();
 
     const isEmbedded = windowIsEmbedded || embed;
 
@@ -89,20 +65,38 @@ const Verification = () => {
         []
     );
 
-    const handleSubmit = (token: string, type: HumanVerificationMethodType) => {
-        broadcast({
-            type: MessageType.HUMAN_VERIFICATION_SUCCESS,
-            payload: { token, type },
-        });
+    const handleSubmit = async (token: string, type: HumanVerificationMethodType) => {
+        if (type !== 'captcha') {
+            try {
+                await api({ ...queryCheckVerificationCode(token, type, 1), silence: true });
 
-        if (!isEmbedded) {
-            /*
-             * window.close() will only be allowed to execute should the current window
-             * have been opened programatically, otherwise the following error is thrown:
-             *
-             * "Scripts may close only the windows that were opened by it."
-             */
-            window.close();
+                broadcast({
+                    type: MessageType.HUMAN_VERIFICATION_SUCCESS,
+                    payload: { token, type },
+                });
+
+                if (!isEmbedded) {
+                    /*
+                     * window.close() will only be allowed to execute should the current window
+                     * have been opened programatically, otherwise the following error is thrown:
+                     *
+                     * "Scripts may close only the windows that were opened by it."
+                     */
+                    window.close();
+                }
+            } catch (e: any) {
+                createNotification({
+                    type: 'error',
+                    text: getApiErrorMessage(e) || c('Error').t`Unknown error`,
+                });
+
+                throw e;
+            }
+        } else {
+            broadcast({
+                type: MessageType.HUMAN_VERIFICATION_SUCCESS,
+                payload: { token, type },
+            });
         }
     };
 
