@@ -1,11 +1,10 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { SHOW_IMAGES } from '@proton/shared/lib/constants';
 
-import { Info } from '../../components';
-import { useFeature, useMailSettings } from '../../hooks';
-
+import { Info, Button } from '../../components';
+import { useFeature, useMailSettings, useModals } from '../../hooks';
 import EmbeddedToggle from './EmbeddedToggle';
 import ShowMovedToggle from './ShowMovedToggle';
 import RequestLinkConfirmationToggle from './RequestLinkConfirmationToggle';
@@ -15,16 +14,29 @@ import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
 import SettingsLayoutRight from '../account/SettingsLayoutRight';
 import { FeatureCode } from '../features';
 import { RemoteToggle } from '../emailPrivacy';
+import MailShortCutsModal from '../mail/MailShortcutsModal';
+import ShortcutsToggle from '../general/ShortcutsToggle';
 
 const { EMBEDDED } = SHOW_IMAGES;
 
 const MessagesSection = () => {
-    const [{ ShowImages = EMBEDDED, ConfirmLink = 1, DelaySendSeconds = 10 } = {}] = useMailSettings();
+    const { createModal } = useModals();
+    const [{ ShowImages = EMBEDDED, ConfirmLink = 1, DelaySendSeconds = 10, Shortcuts = 0 } = {}] = useMailSettings();
+    const [, setShortcuts] = useState(Shortcuts);
     const [showImages, setShowImages] = useState(ShowImages);
     const handleChange = (newValue: number) => setShowImages(newValue);
     const { feature: spyTrackerFeature } = useFeature(FeatureCode.SpyTrackerProtection);
 
     const handleChangeShowImage = (newValue: number) => setShowImages(newValue);
+
+    const openShortcutsModal = () => {
+        createModal(<MailShortCutsModal />, 'shortcuts-modal');
+    };
+
+    // Handle updates from the Event Manager.
+    useEffect(() => {
+        setShortcuts(Shortcuts);
+    }, [Shortcuts]);
 
     return (
         <>
@@ -100,6 +112,23 @@ const MessagesSection = () => {
                 </SettingsLayoutLeft>
                 <SettingsLayoutRight>
                     <DelaySendSecondsSelect id="delaySendSecondsSelect" delaySendSeconds={DelaySendSeconds} />
+                </SettingsLayoutRight>
+            </SettingsLayout>
+            <SettingsLayout>
+                <SettingsLayoutLeft>
+                    <label htmlFor="shortcutsToggle" className="text-semibold">
+                        {c('Title').t`Enable keyboard shortcuts`}
+                    </label>
+                </SettingsLayoutLeft>
+                <SettingsLayoutRight className="flex flex-item-fluid flex-align-items-center">
+                    <ShortcutsToggle className="mr1" id="shortcutsToggle" />
+                    <Button
+                        shape="outline"
+                        onClick={openShortcutsModal}
+                        className="flex-item-noshrink flex-item-nogrow"
+                    >
+                        {c('Action').t`Show shortcuts`}
+                    </Button>
                 </SettingsLayoutRight>
             </SettingsLayout>
         </>
