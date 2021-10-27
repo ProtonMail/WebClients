@@ -1,10 +1,9 @@
 import { useState, useEffect } from 'react';
 import { c } from 'ttag';
 
-import { checkSubscription, deleteSubscription } from '@proton/shared/lib/api/payments';
+import { checkSubscription } from '@proton/shared/lib/api/payments';
 import { DEFAULT_CURRENCY, DEFAULT_CYCLE, PLAN_SERVICES, APPS } from '@proton/shared/lib/constants';
 import { getPlanIDs } from '@proton/shared/lib/helpers/subscription';
-import { hasBonuses } from '@proton/shared/lib/helpers/organization';
 import {
     Currency,
     Organization,
@@ -21,18 +20,13 @@ import {
     useOrganization,
     usePlans,
     useApi,
-    useUser,
     useModals,
-    useEventManager,
-    useNotifications,
     useConfig,
     useLoading,
     useVPNCountriesCount,
 } from '../../hooks';
 
 import SubscriptionModal from './subscription/SubscriptionModal';
-import DowngradeModal from './DowngradeModal';
-import LossLoyaltyModal from './LossLoyaltyModal';
 import MozillaInfoPanel from '../account/MozillaInfoPanel';
 import { SUBSCRIPTION_STEPS } from './subscription/constants';
 import PlanSelection from './subscription/PlanSelection';
@@ -41,11 +35,8 @@ const FREE_SUBSCRIPTION = {} as Subscription;
 const FREE_ORGANIZATION = {} as Organization;
 
 const PlansSection = () => {
-    const { call } = useEventManager();
     const { APP_NAME } = useConfig();
-    const { createNotification } = useNotifications();
     const { createModal } = useModals();
-    const [user] = useUser();
     const [loading, withLoading] = useLoading();
     const [vpnCountries] = useVPNCountriesCount();
     const [subscription = FREE_SUBSCRIPTION, loadingSubscription] = useSubscription();
@@ -62,31 +53,9 @@ const PlansSection = () => {
     const [cycle, setCycle] = useState(DEFAULT_CYCLE);
     const { CouponCode } = subscription;
 
-    const handleUnsubscribe = async () => {
-        await api(deleteSubscription());
-        await call();
-        createNotification({ text: c('Success').t`You have successfully unsubscribed` });
-    };
-
-    const handleDowngrade = async () => {
-        if (user.isFree) {
-            return createNotification({ type: 'error', text: c('Info').t`You already have a free account` });
-        }
-        await new Promise<void>((resolve, reject) => {
-            createModal(<DowngradeModal user={user} onConfirm={resolve} onClose={reject} />);
-        });
-        if (hasBonuses(organization)) {
-            await new Promise<void>((resolve, reject) => {
-                createModal(<LossLoyaltyModal organization={organization} onConfirm={resolve} onClose={reject} />);
-            });
-        }
-        return handleUnsubscribe();
-    };
-
     const handleModal = async (newPlanIDs: PlanIDs) => {
         if (!hasPlanIDs(newPlanIDs)) {
-            handleDowngrade();
-            return;
+            throw new Error('Downgrade not supported');
         }
 
         const couponCode = CouponCode || undefined; // From current subscription; CouponCode can be null
