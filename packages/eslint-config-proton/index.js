@@ -11,7 +11,7 @@ module.exports = {
     parserOptions: {
         project: './tsconfig.json',
     },
-    plugins: ['react', 'react-hooks', 'import', '@typescript-eslint', 'es', 'monorepo-cop'],
+    plugins: ['react', 'react-hooks', 'import', '@typescript-eslint', 'es', 'monorepo-cop', 'deprecation'],
     rules: {
         '@typescript-eslint/array-type': [
             'error',
@@ -94,6 +94,7 @@ module.exports = {
         'jsx-a11y/alt-text': ['warn'],
         'jsx-a11y/no-autofocus': ['off'],
         'es/no-regexp-lookbehind-assertions': 'error',
+        'deprecation/deprecation': 'warn',
     },
     settings: {
         'import/resolver': {
