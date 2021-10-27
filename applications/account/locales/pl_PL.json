@@ -31,11 +31,11 @@
       "${ BRAND_NAME } shop": [
         "Sklep ${ BRAND_NAME }"
       ],
-      "Activate": [
-        "Aktywuj"
-      ],
       "activate": [
         "aktywować"
+      ],
+      "Activate": [
+        "Aktywuj"
       ],
       "Activate ${ Name }@pm.me": [
         "Aktywuj adres ${ Name }@pm.me"
@@ -143,7 +143,7 @@
         "Czatuj z nami"
       ],
       "Check import progress": [
-        ""
+        "Sprawdź postęp importowania"
       ],
       "Choose a file or drag it here": [
         "Wybierz plik lub przeciągnij go tutaj"
@@ -293,7 +293,7 @@
         "Obniż plan"
       ],
       "Downgrade to ${ BRAND_NAME } ${ downgradedPlanName }": [
-        ""
+        "Obniż plan do ${ BRAND_NAME } ${ downgradedPlanName }"
       ],
       "Download": [
         "Pobierz"
@@ -347,7 +347,7 @@
         "Czcionka"
       ],
       "Generate key": [
-        ""
+        "Generuj klucz"
       ],
       "Get ProtonVPN Plus": [
         "Wybierz plan ProtonVPN Plus"
@@ -385,8 +385,11 @@
       "Import contacts": [
         "Importuj kontakty"
       ],
+      "Import from .csv or vCard": [
+        "Importuj z pliku CSV lub vCard"
+      ],
       "Import from .ics": [
-        ""
+        "Importuj plik ICS"
       ],
       "Import key": [
         "Importuj klucz"
@@ -413,7 +416,7 @@
         "Zachowaj"
       ],
       "Keep my ${ BRAND_NAME } ${ currentPlanName } account": [
-        ""
+        "Zachowaj konto ${ BRAND_NAME } ${ currentPlanName }"
       ],
       "label emails as": [
         "oznacz wiadomości jako"
@@ -658,6 +661,9 @@
       "Sign out all accounts": [
         "Wyloguj się ze wszystkich kont"
       ],
+      "Signing in": [
+        "Logowanie"
+      ],
       "Signing out": [
         "Wylogowywanie"
       ],
@@ -674,7 +680,7 @@
         "Sortuj"
       ],
       "Start ${ PRODUCT_NAMES.EASY_SWITCH }": [
-        ""
+        "Zacznij korzystać z aplikacji ${ PRODUCT_NAMES.EASY_SWITCH }"
       ],
       "Start import": [
         "Rozpocznij importowanie"
@@ -928,7 +934,7 @@
     },
     "Attached ics file error": {
       "Empty ICS file": [
-        ""
+        "Plik ICS jest pusty"
       ],
       "Invalid event": [
         "Wydarzenie jest nieprawidłowe"
@@ -940,7 +946,7 @@
         "Metoda jest nieprawidłowa"
       ],
       "Unsupported calendar component": [
-        ""
+        "Komponent kalendarza jest nieobsługiwany"
       ],
       "Unsupported event": [
         "Wydarzenie jest nieobsługiwane"
@@ -1278,7 +1284,7 @@
     },
     "Calendar import section description": {
       "You can import ICS files from another calendar to ${ CALENDAR_APP_NAME }. This lets you quickly import one event or your entire agenda.": [
-        ""
+        "Możesz zaimportować pliki ICS z innego kalendarza ${ CALENDAR_APP_NAME }. Pozwala to na szybkie zaimportowanie pojedynczego wydarzenia lub całego harmonogramu."
       ]
     },
     "Calendar limit warning": {
@@ -1323,7 +1329,7 @@
         "Link kalendarza nie jest dostępny"
       ],
       "Calendar link is temporarily inaccessible": [
-        ""
+        "Link kalendarza jest tymczasowo niedostępny"
       ],
       "Calendar link is wrong": [
         "Link kalendarza jest nieprawidłowy"
@@ -1638,19 +1644,19 @@
     },
     "Downgrade account reason": {
       "Bugs or quality issue": [
-        ""
+        "Błędy lub problemy z jakością usługi"
       ],
       "I use a different Proton account": [
         "Korzystam z innego konta Proton"
       ],
       "Missing feature(s) ": [
-        ""
+        "Brakujące funkcje"
       ],
       "My reason isn't listed, please comment": [
-        ""
+        "Inna, niewymieniona wyżej przyczyna"
       ],
       "Streaming service unsupported": [
-        ""
+        "Usługi streamingu są nieobsługiwane"
       ],
       "Subscription is too expensive": [
         "Cena jest zbyt wysoka"
@@ -1659,12 +1665,12 @@
         "Używam innej usługi"
       ],
       "Temporary need, may come back in the future": [
-        ""
+        "Potrzebowałem konto tymczasowo"
       ]
     },
     "Downgrade modal exit survey title": {
       "Help us improve!": [
-        ""
+        "Pomóż nam ulepszyć usługę!"
       ]
     },
     "Drive feature": {
@@ -1812,7 +1818,7 @@
         "Nie można sprawdzić nazwy użytkownika. Spróbuj ponownie później"
       ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
-        ""
+        "Z powodu limitu maksymalnej liczby osobistych kalendarzy, nie możesz utworzyć nowych kalendarzy dla wszystkich zaimportowanych kalendarzy."
       ],
       "Can't validate email, try again later": [
         "Nie można zweryfikować adresu e-mail. Spróbuj ponownie później"
@@ -1820,8 +1826,8 @@
       "Can't validate phone, try again later": [
         "Nie można zweryfikować numeru telefonu. Spróbuj ponownie później"
       ],
-      "Checkout expired, please try again.": [
-        "Płatność wygasła. Spróbuj ponownie."
+      "Checkout expired, please try again": [
+        "Płatność wygasła. Spróbuj ponownie"
       ],
       "Condition incomplete": [
         "Warunek jest niekompletny"
@@ -1833,10 +1839,10 @@
         "Adres e-mail ${ email } nie został znaleziony."
       ],
       "Deselect at least ${ calendarToFixCount } calendar or": [
-        "",
-        "",
-        "",
-        ""
+        "Odznacz co najmniej ${ calendarToFixCount } kalendarz lub",
+        "Odznacz co najmniej ${ calendarToFixCount } kalendarze lub",
+        "Odznacz co najmniej ${ calendarToFixCount } kalendarzy lub",
+        "Odznacz co najmniej ${ calendarToFixCount } kalendarzy lub"
       ],
       "Domain not available, try again later": [
         "Domena nie jest dostępna. Spróbuj ponownie później"
@@ -1926,10 +1932,10 @@
         "Nazwa etykiety nie może być pusta"
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
-        "",
-        "",
-        "",
-        ""
+        "Scal co najmniej ${ calendarToFixCount } kalendarz z obecnym kalendarzem Proton",
+        "Scal co najmniej ${ calendarToFixCount } kalendarze z obecnymi kalendarzami Proton",
+        "Scal co najmniej ${ calendarToFixCount } kalendarzy z obecnymi kalendarzami Proton",
+        "Scal co najmniej ${ calendarToFixCount } kalendarzy z obecnymi kalendarzami Proton"
       ],
       "Missing signature": [
         "Brak podpisu"
@@ -1948,6 +1954,9 @@
       ],
       "Not a valid number": [
         "Numer telefonu nie jest prawidłowy"
+      ],
+      "Organization key is not decrypted": [
+        "Klucz organizacji nie został odszyfrowany"
       ],
       "Organization key is not decrypted.": [
         "Klucz organizacji nie został odszyfrowany."
@@ -1980,13 +1989,13 @@
         "Przed dodaniem użytkowników do organizacji, włącz obsługę wielu użytkowników."
       ],
       "Please fix the highlighted conflict to proceed.": [
-        "",
-        "",
-        "",
-        ""
+        "Popraw zaznaczony konflikt, aby kontynuować.",
+        "Popraw zaznaczone konflikty, aby kontynuować.",
+        "Popraw zaznaczone konflikty, aby kontynuować.",
+        "Popraw zaznaczone konflikty, aby kontynuować."
       ],
-      "Please generate keys before you try to change your password.": [
-        "Wygeneruj klucze, zanim spróbujesz zmienić hasło."
+      "Please generate keys before you try to change your password": [
+        "Wygeneruj klucze, zanim spróbujesz zmienić hasło"
       ],
       "Please refresh the page.": [
         "Odśwież stronę."
@@ -2000,8 +2009,8 @@
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         "Wykonaj ponowne uwierzytelnianie i upewnij się, że uprawnienia są poprawnie ustawione."
       ],
-      "Please upgrade to a Professional plan with more than 1 user, or a Visionary account, to get multi-user support.": [
-        "Ulepsz do planu Professional z więcej niż 1 użytkownikiem, lub do planu Visionary, aby uzyskać obsługę wielu użytkowników."
+      "Please upgrade to a Professional plan with more than 1 user, or a Visionary account, to get multi-user support": [
+        "Ulepsz do planu Professional z więcej niż 1 użytkownikiem, lub do planu Visionary, aby uzyskać obsługę wielu użytkowników"
       ],
       "Please upgrade to a Professional plan with more than 1 user, or a Visionary account, to manage multiple users.": [
         "Ulepsz do planu Professional z więcej niż 1 użytkownikiem, lub do planu Visionary, aby uzyskać obsługę wielu użytkowników."
@@ -2068,6 +2077,9 @@
       ],
       "The minimum payment we accept is ${ _price2 }": [
         "Minimalna kwota akceptowanej płatności wynosi ${ _price2 }"
+      ],
+      "The organization key must be activated first": [
+        "Najpierw musisz aktywować klucz organizacji"
       ],
       "The organization key must be activated first.": [
         "Najpierw musisz aktywować klucz organizacji."
@@ -2173,11 +2185,11 @@
       "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } events.": [
         "Plik ${ formattedFilename } posiada więcej niż ${ MAX_IMPORT_EVENTS_STRING } wydarzeń."
       ],
+      "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
+        "Plik ${ formattedFilename } jest nieprawidłowy i nie może zostać zaimportowany."
+      ],
       "Your file ${ formattedFilename } has no events to be imported.": [
         "Plik ${ formattedFilename } nie posiada wydarzeń do zaimportowania."
-      ],
-      "Your file ${ formattedFilename } is an invitation and cannot be imported.": [
-        "Plik ${ formattedFilename } jest zaproszeniem i nie może zostać zaimportowany."
       ],
       "Your file ${ formattedFilename } is empty.": [
         "Plik ${ formattedFilename } jest pusty."
@@ -2291,7 +2303,7 @@
         "Oryginalne wydarzenie cykliczne nie zostało znalezione"
       ],
       "Recurring event has no occurrences": [
-        ""
+        "Wydarzenie cykliczne nie posiada powtórzeń"
       ],
       "Recurring rule not supported": [
         "Reguła powtórzeń nie jest obsługiwana"
@@ -2735,38 +2747,31 @@
       ]
     },
     "Import calendar warning": {
-      "${ CALENDAR_APP_NAME } does not support ${ forNow }:": [
-        "${ CALENDAR_APP_NAME } nie obsługuje ${ forNow }:"
-      ],
-      "Attendees": [
-        "Uczestników wydarzeń"
-      ],
-      "Complex recurring rules": [
-        "Skomplikowanych reguł powtórzeń"
-      ],
-      "Email notifications": [
-        "Powiadomienia e-mail"
-      ],
-      "for now": [
-        "obecnie"
-      ],
-      "Free-busy time information": [
-        "Informacji o stanie wolny/zajęty"
-      ],
-      "Journal entries": [
-        "Wpisów w formacie dziennika"
-      ],
-      "Non-Gregorian calendars": [
-        "Kalendarzy w formacie innym niż gregoriański"
-      ],
-      "To-do entries": [
-        "Wpisów w formacie listy zadań"
-      ],
-      "Unofficial or custom timezones": [
-        "Nieoficjalnych lub niestandardowych stref czasowych"
+      "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
+        "{ CALENDAR_APP_NAME } nie obsługuje niektórych typów wydarzeń, szczegółów i formatów."
       ],
       "vCard versions < 3.0": [
         "Wersja vCard jest starsza niż 3.0"
+      ]
+    },
+    "Import calendar; import invitation": {
+      "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your Proton email address.": [
+        "Zaimportowane zaproszenia pojawiają się w ${ CALENDAR_APP_NAME } jako zwykłe wydarzenia bez szczegółów organizatora i uczestników. Aby otrzymywać aktualizacje wydarzeń i zobaczyć listę uczestników, poproś organizatorów o zaproszenie, używając swojego adresu e-mail Proton."
+      ],
+      "This file contains an event invitation:": [
+        "Plik zawiera zaproszenie do wydarzenia:",
+        "Plik zawiera zaproszenia do wydarzeń:",
+        "Plik zawiera zaproszenia do wydarzeń:",
+        "Plik zawiera zaproszenia do wydarzeń:"
+      ],
+      "This file contains an invitation response:": [
+        "Plik zawiera odpowiedź na zaproszenie:",
+        "Plik zawiera odpowiedzi na zaproszenia:",
+        "Plik zawiera odpowiedzi na zaproszenia:",
+        "Plik zawiera odpowiedzi na zaproszenia:"
+      ],
+      "This file contains some data that we cannot import:": [
+        "Plik zawiera dane, których nie możemy zaimportować:"
       ]
     },
     "Import contact": {
@@ -2948,7 +2953,7 @@
         "W ${ boldGmailSettings } przejdź do sekcji ${ boldForwarding } i upewnij się, że ${ boldIMAPAccess } jest włączony."
       ],
       "Log into Yahoo Mail and click on your name in the upper right corner to access ${ boldAccountInfo }. In the ${ boldAccountSec } section, scroll to the ${ boldAppPassword } section to generate an app password. You will need this password during the import.": [
-        ""
+        "Zaloguj się do poczty Yahoo Mail i kliknij w swoją nazwę użytkownika w prawym górnym rogu, aby uzyskać dostęp do sekcji ${ boldAccountInfo }. W sekcji ${ boldAccountSec } przewiń do sekcji ${ boldAppPassword }, aby wygenerować hasło aplikacji. Będziesz potrzebować tego hasła podczas procesu importowania."
       ]
     },
     "Import instructions emphasis": {
@@ -2977,7 +2982,7 @@
         "Etykiety"
       ],
       "Other ways to sign in": [
-        ""
+        "Inne metody logowania"
       ],
       "Security": [
         "Bezpieczeństwo"
@@ -3060,17 +3065,17 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "Niektóre kontakty (${ totalContactsDiscarded }/${ totalContacts }) nie mogą zostać zaimportowane. Kliknij po szczegóły"
       ],
-      "${ totalEventsDiscarded } out of ${ totalEvents } events will not be imported. Click for details": [
-        "Niektóre wydarzenia (${ totalEventsDiscarded }/${ totalEvents }) nie mogą zostać zaimportowane. Kliknij po szczegóły"
+      "${ totalEventsDiscarded } out of ${ totalEvents } events will not be imported. Expand for details.": [
+        "Niektóre wydarzenia (${ totalEventsDiscarded }/${ totalEvents }) nie mogą zostać zaimportowane. Rozwiń szczegóły."
       ],
       "No contact can be imported. Click for details": [
         "Żaden kontakt nie może zostać zaimportowany. Kliknij po szczegóły"
       ],
-      "No event can be imported. Click for details": [
-        "Żadne wydarzenie nie może zostać zaimportowane. Kliknij po szczegóły"
+      "No event can be imported. Expand for details.": [
+        "Żadne wydarzenie nie może zostać zaimportowane. Rozwiń szczegóły."
       ],
-      "Part of your calendar content is not supported and will not be imported": [
-        "Część zawartości kalendarza nie jest obsługiwana i nie zostanie zaimportowana"
+      "Part of your calendar content is not supported and will not be imported.": [
+        "Część zawartości kalendarza nie jest obsługiwana i nie zostanie zaimportowana."
       ]
     },
     "Info": {
@@ -3081,22 +3086,22 @@
         "Kalendarz ${ calendarName } zostanie ustawiony jako domyślny kalendarz."
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
-        "",
-        "",
-        "",
-        ""
+        "${ calendarsToBeCreatedCount } nowy kalendarz",
+        "${ calendarsToBeCreatedCount } nowe kalendarze",
+        "${ calendarsToBeCreatedCount } nowych kalendarzy",
+        "${ calendarsToBeCreatedCount } nowych kalendarzy"
       ],
       "${ calendarsToBeMerged } merged calendar": [
-        "",
-        "",
-        "",
-        ""
+        "${ calendarsToBeMerged } scalony kalendarz",
+        "${ calendarsToBeMerged } scalone kalendarze",
+        "${ calendarsToBeMerged } scalonych kalendarzy",
+        "${ calendarsToBeMerged } scalonych kalendarzy"
       ],
       "${ calendarsToBeMergedCount } merged calendar": [
-        "",
-        "",
-        "",
-        ""
+        "${ calendarsToBeMergedCount } scalony kalendarz",
+        "${ calendarsToBeMergedCount } scalone kalendarze",
+        "${ calendarsToBeMergedCount } scalonych kalendarzy",
+        "${ calendarsToBeMergedCount } scalonych kalendarzy"
       ],
       "${ mailAppName } Free": [
         "${ mailAppName } Free"
@@ -3132,16 +3137,16 @@
         "${ numberOfNonPrivateKeys } przesłanych plików nie są prawidłowymi kluczami prywatnymi. Zweryfikuj pliki i spróbuj ponownie."
       ],
       "${ numContactGroups } contact group": [
-        "",
-        "",
-        "",
-        ""
+        "${ numContactGroups } grupę kontaktów",
+        "${ numContactGroups } grupy kontaktów",
+        "${ numContactGroups } grup kontaktów",
+        "${ numContactGroups } grup kontaktów"
       ],
       "${ numContacts } contact": [
-        "",
-        "",
-        "",
-        ""
+        "${ numContacts } kontakt",
+        "${ numContacts } kontakty",
+        "${ numContacts } kontaktów",
+        "${ numContacts } kontaktów"
       ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } znaleziony folder",
@@ -3165,10 +3170,10 @@
         "${ saveExtra20 } na subskrypcji usługi VPN i poczty."
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
-        "",
-        "",
-        "",
-        ""
+        "${ selectedCalendarsTotal }/${ providerCalendars.length } kalendarz",
+        "${ selectedCalendarsTotal }/${ providerCalendars.length } kalendarze",
+        "${ selectedCalendarsTotal }/${ providerCalendars.length } kalendarzy",
+        "${ selectedCalendarsTotal }/${ providerCalendars.length } kalendarzy"
       ],
       "${ selectedFoldersCount } folder selected": [
         "${ selectedFoldersCount } zaznaczony folder",
@@ -3309,7 +3314,7 @@
         "Kwota poniżej minimum (${ amount })."
       ],
       "and": [
-        ""
+        "i"
       ],
       "Anyone with this link can see all the event details of this calendar such as title, location or participants.": [
         "Każdy, kto posiada link, może zobaczyć szczegóły wydarzenia w kalendarzu, w tym nazwę, lokalizację i uczestników."
@@ -3411,13 +3416,13 @@
         "Zniżka dla nowych użytkowników z okazji Czarnego Piątku 2020 została naliczona"
       ],
       "Blocks senders from seeing if and when you opened a message.": [
-        ""
+        "Blokuje nadawcom możliwość sprawdzenia, czy i kiedy otworzyłeś wiadomość."
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Obniżając plan do wersji Free, utracisz te bonusy na zawsze, nawet jeśli w przyszłości ponownie ulepszysz swoje konto."
       ],
       "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
-        ""
+        "Obniżając plan, utracisz następujące bonusy. Czy na pewno chcesz kontynuować?"
       ],
       "By leaving now, changes may not be saved": [
         "Jeśli wyjdziesz teraz, zmiany nie zostaną zapisane"
@@ -3444,7 +3449,7 @@
         "Kliknij przycisk \"Poproś o nowy kod\", aby otrzymać nowy kod weryfikacyjny na numer telefonu ${ strong }. Jeśli numer jest nieprawidłowy, kliknij przycisk \"Edytuj\", aby go poprawić."
       ],
       "Close this screen to exit.": [
-        ""
+        "Zamknij te okno, aby wyjść."
       ],
       "Connections": [
         "Połączenia"
@@ -3453,10 +3458,10 @@
         "Kontynuować mimo to?"
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
-        "",
-        "",
-        "",
-        ""
+        "Utwórz ${ calendarsToBeCreated } nowy kalendarz",
+        "Utwórz ${ calendarsToBeCreated } nowe kalendarze",
+        "Utwórz ${ calendarsToBeCreated } nowych kalendarzy",
+        "Utwórz ${ calendarsToBeCreated } nowych kalendarzy"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Utwórz etykietę dla zaimportowanych wiadomości, wybierz przedział czasowy dla tego importu oraz foldery, które chcesz zaimportować."
@@ -3474,7 +3479,7 @@
         "Utwórz adresy e-mail dla innych osób, zarządzaj ProtonMailem dla biznesu, szkoły lub grupy. Rozpocznij od dodania nazwy organizacji i niestandardowej domeny (np. @twojafirma.pl). "
       ],
       "Create in": [
-        ""
+        "Utwórz w"
       ],
       "Creating a new recovery phrase will deactivate your old one.": [
         "Nowe hasło odzyskiwania zastąpi stare."
@@ -3551,8 +3556,8 @@
       "Done": [
         "Gotowe"
       ],
-      "Done! We sent a code to ${ destination }": [
-        "Gotowe! Kod został wysłany do ${ destination }"
+      "Done! We sent a code to ${ destination }.": [
+        "Gotowe! Kod został wysłany do ${ destination }."
       ],
       "Downgrading will terminate any connections to paid ProtonVPN servers.": [
         "Obniżenie planu spowoduje zakończenie wszystkich połączeń z płatnymi serwerami ProtonVPN."
@@ -3573,7 +3578,7 @@
         "Edytuj etykietę"
       ],
       "Effortlessly and securely move your emails from your current provider to Proton. If you use Google, we also support calendar, and contacts imports.": [
-        ""
+        "Przenieś do Proton bezpiecznie i bezproblemowo swoje wiadomości od obecnego dostawy. Jeśli używasz konta Google, obsługujemy również importowanie kalendarza i kontaktów."
       ],
       "Email address": [
         "Adres e-mail"
@@ -3684,7 +3689,7 @@
         "tutaj"
       ],
       "Hides identifying information by loading remote content through a proxy. Option to store content as attachments.": [
-        ""
+        "Ukrywa informacje identyfikujące poprzez ładowanie zawartości zdalnej przez proxy. Zawartość zostanie przechowana jako załączniki."
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Jeśli inny administrator zmienił to hasło, poproś go, aby przekazał Ci nowe hasło organizacji."
@@ -3746,23 +3751,23 @@
       "Image URL": [
         "Adres URL obrazu"
       ],
-      "Images have been removed because they are not allowed in auto-reply.": [
-        "Obrazy zostały usunięte, ponieważ nie są dozwolone w automatycznej odpowiedzi."
+      "Images have been removed because they are not allowed in auto-reply": [
+        "Obrazy zostały usunięte, ponieważ nie są dozwolone w automatycznej odpowiedzi"
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
-        ""
+        "Importuj ${ contactsFragment } i ${ contactsGroupsFragment }"
       ],
       "Import ${ selectedCalendarsCount } of ${ totalCalendarsCount } calendar": [
-        "",
-        "",
-        "",
-        ""
+        "Importuj kalendarz (${ selectedCalendarsCount }/${ totalCalendarsCount })",
+        "Importuj kalendarze (${ selectedCalendarsCount }/${ totalCalendarsCount })",
+        "Importuj kalendarze (${ selectedCalendarsCount }/${ totalCalendarsCount })",
+        "Importuj kalendarze (${ selectedCalendarsCount }/${ totalCalendarsCount })"
       ],
       "Import from": [
         "Importuj z"
       ],
       "Import in progress": [
-        ""
+        "Importowanie jest w toku"
       ],
       "Import mailbox": [
         "Importuj skrzynkę pocztową"
@@ -3777,7 +3782,7 @@
         "WAŻNE: Niektórzy rejestratorzy nie akceptują rekordów CNAME z wartością zakończoną kropką (podczas gdy inni jej wymagają). Jeśli Twój rejestrator nie akceptuje takich rekordów, usuń kropkę na końcu każdej wartości CNAME i spróbuj ponownie."
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
-        ""
+        "Trwa importowanie danych z konta ${ importedEmailAddress } do ${ toEmail }."
       ],
       "Included": [
         "w zestawie"
@@ -3813,7 +3818,7 @@
         "Połączenie z Internetem zostało przywrócone."
       ],
       "Just confirm your selection and we'll do the rest.": [
-        ""
+        "Potwierdź swój wybór, a my zajmiemy się resztą."
       ],
       "Justify": [
         "Wyjustuj"
@@ -3912,7 +3917,7 @@
         "Jesteś nowym użytkownikiem usługi ${ BRAND_NAME }? ${ signupLink }"
       ],
       "Next you'll need to log in to your Google account and allow us to access your data.": [
-        ""
+        "Następnie będziesz musiał zalogować się na konto Google i zezwolić nam na dostęp do Twoich danych."
       ],
       "No action selected": [
         "Nie wybrałeś akcji"
@@ -4059,7 +4064,7 @@
         "Subskrypcja planu Plus lub Visionary jest wymagana"
       ],
       "Prevents content from the sender's server from loading without your permission.": [
-        ""
+        "Zapobiega ładowaniu zawartości z serwera nadawcy bez Twojej zgody."
       ],
       "Preview": [
         "Podgląd"
@@ -4143,10 +4148,10 @@
         "Zrzuty ekranu zostały dołączone"
       ],
       "Select a service provider to get started": [
-        ""
+        "Aby rozpocząć, wybierz dostawcę usługi"
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20-personal-calendar limit. You can also merge imported calendars with existing Proton calendars.": [
-        ""
+        "Wybierz, które kalendarze chcesz zaimportować. Dla każdego importowanego kalendarza zostanie utworzony nowy kalendarz, aż do osiągnięcia limitu 20 osobistych kalendarzy. Możesz również scalić importowane kalendarze z obecnymi kalendarzami Proton."
       ],
       "Server is currently down": [
         "Serwer jest obecnie wyłączony"
@@ -4155,7 +4160,7 @@
         "Obciążenie serwera"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
-        ""
+        "Serwery są nieosiągalne. Spróbuj ponownie za kilka minut"
       ],
       "Session timed out.": [
         "Upłynął limit czasu sesji."
@@ -4410,7 +4415,7 @@
         "Jeśli zapomnisz hasła lub zablokujesz konto, wyślemy link odzyskiwania na ten adres e-mail."
       ],
       "We'll notify you when the import is done.": [
-        ""
+        "Powiadomimy Cię, kiedy proces importowania danych zostanie zakończony."
       ],
       "Web URL": [
         "Adres URL"
@@ -4422,7 +4427,7 @@
         "Widoki tygodnia oraz miesiąca dostępne są tylko na komputerze."
       ],
       "What do you want to import from your Google account?": [
-        ""
+        "Co chcesz zaimportować z konta Google?"
       ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "Jeśli funkcja jest wyłączona, osadzone obrazy nie zostaną załadowane bez Twojej wiedzy."
@@ -4458,7 +4463,7 @@
         "Jesteś obecnie zalogowany jako ${ user.Name } (${ user.Email }) i posiadasz ograniczony dostęp."
       ],
       "You can check the progress ${ importProgressLink }.": [
-        ""
+        "Możesz sprawdzić postęp ${ importProgressLink }."
       ],
       "You can continue using Proton services as usual.": [
         "Możesz nadal normalnie korzystać z usług Proton."
@@ -4563,13 +4568,13 @@
         "Lista odrzuconych jest pusta."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
-        ""
+        "Dane z konta ${ importedEmailAddressStrong } są gotowe do zaimportowania do konta Proton."
       ],
       "Your email will only be used for this one-time verification.": [
         "Adres e-mail zostanie użyty tylko do jednorazowej weryfikacji."
       ],
       "Your import from ${ delayedImport.Account } is temporarily delayed.": [
-        ""
+        "Proces importowania z konta ${ delayedImport.Account } jest tymczasowo opóźniony."
       ],
       "Your import from ${ delayedImport.Email } is temporarily delayed.": [
         "Proces importowania z adresu e-mail ${ delayedImport.Email } jest tymczasowo opóźniony."
@@ -5070,7 +5075,7 @@
         "Hasło aplikacji"
       ],
       "Ask before loading remote content": [
-        ""
+        "Potwierdź ładowanie zawartości zdalnej"
       ],
       "Attach public key": [
         "Dołącz klucz publiczny"
@@ -5094,7 +5099,7 @@
         "Klucze zapasowe"
       ],
       "Block email tracking": [
-        ""
+        "Zablokuj śledzenie wiadomości"
       ],
       "bonus storage": [
         "bonusowa przestrzeń dyskowa"
@@ -5175,13 +5180,13 @@
         "Kopiuj"
       ],
       "Could you please let us know which provider?": [
-        ""
+        "Co to za dostawca usługi?"
       ],
       "Could you please specify which streaming service?": [
-        ""
+        "Jaka usługa streamingu nie działa?"
       ],
       "Could you please specify?": [
-        ""
+        "Jakie to błędy lub problemy?"
       ],
       "Country": [
         "Kraj"
@@ -5250,7 +5255,7 @@
         "Nie pytaj ponownie"
       ],
       "Do you have any suggestions for our team?": [
-        ""
+        "Czy masz sugestie dla naszego zespołu?"
       ],
       "Domain": [
         "Domena"
@@ -5454,7 +5459,7 @@
         "Wersja systemu operacyjnego"
       ],
       "Optional": [
-        ""
+        "Opcjonalnie"
       ],
       "OR": [
         "LUB"
@@ -5517,7 +5522,7 @@
         "Dzielenie proporcjonalne"
       ],
       "Protection mode": [
-        ""
+        "Tryb ochrony"
       ],
       "Proton username": [
         "Nazwa użytkownika Proton"
@@ -5931,10 +5936,10 @@
     },
     "Loading info": {
       "${ createdCalendars } of ${ calendarsToBeCreated } created": [
-        "",
-        "",
-        "",
-        ""
+        "Tworzenie nowych kalendarzy (${ createdCalendars }/${ calendarsToBeCreated })",
+        "Tworzenie nowych kalendarzy (${ createdCalendars }/${ calendarsToBeCreated })",
+        "Tworzenie nowych kalendarzy (${ createdCalendars }/${ calendarsToBeCreated })",
+        "Tworzenie nowych kalendarzy (${ createdCalendars }/${ calendarsToBeCreated })"
       ],
       "Almost there": [
         "Już prawie"
@@ -6046,7 +6051,7 @@
     },
     "Mail import summary": {
       "${ messagesFragment } since ${ periodFragment } and label them as ${ label }": [
-        ""
+        "${ messagesFragment } od ${ periodFragment } oznacz je etykietą ${ label }"
       ]
     },
     "Mail upsell feature": {
@@ -6616,10 +6621,10 @@
     },
     "Option protection mode": {
       "Load content via proxy (recommended)": [
-        ""
+        "Załaduj zawartość przez proxy (zalecane)"
       ],
       "Load content via proxy and store as attachments": [
-        ""
+        "Załaduj zawartość przez proxy i przechowuj jako załączniki"
       ]
     },
     "OS compatibility": {
@@ -6657,7 +6662,7 @@
     },
     "PGP key warning": {
       "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        ""
+        "Adres e-mail nie został znaleziony wśród identyfikatorów zdefiniowanych w kluczu przeznaczonym do wysyłania wiadomości (${ keyUserIds })"
       ]
     },
     "Placeholder": {
@@ -6911,10 +6916,10 @@
     },
     "Plan time remaining": {
       "You still have ${ daysRemaining } day left on your ${ BRAND_NAME } ${ currentPlanName } account.": [
-        "",
-        "",
-        "",
-        ""
+        "Nadal posiadasz ${ daysRemaining } dzień konta ${ BRAND_NAME } ${ currentPlanName }.",
+        "Nadal posiadasz ${ daysRemaining } dni konta ${ BRAND_NAME } ${ currentPlanName }.",
+        "Nadal posiadasz ${ daysRemaining } dni konta ${ BRAND_NAME } ${ currentPlanName }.",
+        "Nadal posiadasz ${ daysRemaining } dni konta ${ BRAND_NAME } ${ currentPlanName }."
       ]
     },
     "Price": {
@@ -7282,7 +7287,7 @@
         "Kalendarz został zaktualizowany"
       ],
       "Canceling import": [
-        ""
+        "Anulowanie procesu importowania"
       ],
       "Catch-all address updated": [
         "Adres catch-all został zaktualizowany"
@@ -7299,8 +7304,8 @@
       "Deleting original messages": [
         "Usuwanie oryginalnych wiadomości"
       ],
-      "DMARC value copied to clipboard!": [
-        "Wartość DMARC została skopiowana do schowka!"
+      "DMARC value copied to clipboard": [
+        "Wartość DMARC została skopiowana do schowka"
       ],
       "Domain verified": [
         "Domena została zweryfikowana"
@@ -7366,7 +7371,7 @@
         "Adres premium został utworzony"
       ],
       "Resuming import": [
-        ""
+        "Wznawianie procesu importowania"
       ],
       "Session revoked": [
         "Sesja została unieważniona"
@@ -7374,8 +7379,8 @@
       "Sessions revoked": [
         "Sesje zostały unieważnione"
       ],
-      "SPF value copied to clipboard!": [
-        "Wartość SPF została skopiowana do schowka!"
+      "SPF value copied to clipboard": [
+        "Wartość SPF została skopiowana do schowka"
       ],
       "User created": [
         "Użytkownik został utworzony"
@@ -7383,11 +7388,11 @@
       "User updated": [
         "Użytkownik został zaktualizowany"
       ],
-      "Value copied to clipboard!": [
-        "Wartość została skopiowana do schowka!"
+      "Value copied to clipboard": [
+        "Wartość została skopiowana do schowka"
       ],
-      "Verification code copied to clipboard!": [
-        "Kod weryfikacyjny został skopiowany do schowka!"
+      "Verification code copied to clipboard": [
+        "Kod weryfikacyjny został skopiowany do schowka"
       ],
       "Verification successful": [
         "Weryfikacja powiodła się"
@@ -7488,16 +7493,16 @@
     },
     "Time period": {
       "account creation date": [
-        ""
+        "daty utworzenia konta"
       ],
       "the last 12 months": [
-        ""
+        "ostatnich 12 miesięcy"
       ],
       "the last 3 months": [
-        ""
+        "ostatnich 3 miesięcy"
       ],
       "the last month": [
-        ""
+        "ostatniego miesiąca"
       ]
     },
     "Time unit": {
@@ -7721,6 +7726,9 @@
       "Contacts": [
         "Kontakty"
       ],
+      "Continue with partial import?": [
+        "Kontynuować częściowe importowanie?"
+      ],
       "Coupon discount": [
         "Kupon zniżkowy"
       ],
@@ -7899,7 +7907,7 @@
         "Ogólne"
       ],
       "Generate key": [
-        ""
+        "Generuj klucz"
       ],
       "Generate missing keys": [
         "Generuj brakujące klucze"
@@ -7925,6 +7933,12 @@
       "Import & export": [
         "Import i eksport"
       ],
+      "Import as simple event?": [
+        "Importować jako zwykłe wydarzenie?",
+        "Importować jako zwykłe wydarzenia?",
+        "Importować jako zwykłe wydarzenia?",
+        "Importować jako zwykłe wydarzenia?"
+      ],
       "Import Assistant": [
         "Import Assistant"
       ],
@@ -7933,6 +7947,9 @@
       ],
       "Import events": [
         "Importuj wydarzenia"
+      ],
+      "Import failed": [
+        "Importowanie nie powiodło się"
       ],
       "Import groups": [
         "Importuj grupy"
@@ -7944,7 +7961,7 @@
         "Importuj klucz"
       ],
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
-        ""
+        "Importuj przez ${ PRODUCT_NAMES.EASY_SWITCH }"
       ],
       "Import-Export app": [
         "Aplikacja Import-Export"
@@ -7968,7 +7985,7 @@
         "Język i czas"
       ],
       "Layout": [
-        "Układ graficzny"
+        "Widok"
       ],
       "Link confirmation": [
         "Potwierdź otwieranie linków"
@@ -8019,7 +8036,7 @@
         "Organizacja i klucze"
       ],
       "Other": [
-        "Inny"
+        "Inne"
       ],
       "Password": [
         "Hasło"
@@ -8145,7 +8162,7 @@
         "Wymierz metodę otrzymania powiadomienia"
       ],
       "Select what to import": [
-        ""
+        "Wybierz co chcesz zaimportować"
       ],
       "Select when you want this notification to be sent": [
         "Wybierz, kiedy to powiadomienie ma zostać wysłane"
@@ -8196,7 +8213,7 @@
         "Filtry antyspamowe"
       ],
       "Spy Tracker Protection": [
-        ""
+        "Ochrona przed śledzeniem"
       ],
       "Start a new import": [
         "Rozpocznij nowy import"
@@ -8253,7 +8270,7 @@
         "Zaktualizuj kalendarz"
       ],
       "Upgrade": [
-        "Aktualizuj"
+        "Ulepsz"
       ],
       "Users and addresses": [
         "Użytkownicy i adresy"
@@ -8362,7 +8379,7 @@
     },
     "Today icon tooltip in mini calendar": {
       "Today": [
-        ""
+        "Dzisiaj"
       ]
     },
     "Tooltip": {
@@ -8758,7 +8775,7 @@
         "Raporty nie są szyfrowane end-to-end. Nie wysyłaj żadnych poufnych informacji."
       ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
-        ""
+        "Ustawienia daty i czasu na Twoim urządzeniu nie są zsynchronizowane. ${ learnMore }"
       ],
       "This action will ${ boldWarning }. You will not be able to recover the messages on ${ domain }.": [
         "Ta akcja spowoduje ${ boldWarning }. Nie będziesz mógł odzyskać wiadomości domeny ${ domain }."
@@ -8795,7 +8812,7 @@
     },
     "Weak personal key warning": {
       "This key no longer meets our security standards. We suggest you mark it as obsolete and generate a new key.": [
-        ""
+        "Ten klucz nie spełnia naszych standardów bezpieczeństwa. Zalecamy oznaczenie go jako przestarzały i wygenerowanie nowego klucza."
       ]
     },
     "Weekly recurring event, frequency": {

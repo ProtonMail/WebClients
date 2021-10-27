@@ -636,7 +636,7 @@
         "Recuperar datos"
       ],
       "Refine your search": [
-        ""
+        "Refine su búsqueda"
       ],
       "refresh the page": [
         "refresque la página"
@@ -961,9 +961,6 @@
     "Alt": {
       "Forwarded": [
         "Reenviado"
-      ],
-      "Has attachments": [
-        "Tiene adjuntos"
       ],
       "Replied to": [
         "Respondido a"
@@ -1884,8 +1881,8 @@
       "Amount below minimum.": [
         "Cantidad inferior al mínimo."
       ],
-      "Attachments are limited to 25 MB.": [
-        "Los adjuntos están limitados a 25 MB."
+      "Attachments are limited to 25 MB": [
+        "Los adjuntos están limitados a 25 MB"
       ],
       "Authentication canceled.": [
         "Autenticación cancelada."
@@ -1908,8 +1905,8 @@
       "Can't validate phone, try again later": [
         "No se puede validar el teléfono, intente más tarde"
       ],
-      "Checkout expired, please try again.": [
-        "La compra ha expirado, intente de nuevo."
+      "Checkout expired, please try again": [
+        "La compra ha expirado, intente de nuevo"
       ],
       "Choose a date in the future.": [
         "Elija un día en el futuro."
@@ -1930,10 +1927,10 @@
       "Contact signature not verified": [
         "Firma del contacto no verificada"
       ],
-      "Contact your organization’s administrator to resolve this.": [
-        "Contacte con el administrador de su organización para resolver esto."
+      "Contact your organization’s administrator to resolve this": [
+        "Contacte con el administrador de su organización para resolver esto"
       ],
-      "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser": [
+      "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "La búsqueda de contenido no se puede habilitar en este navegador. Salga del modo de navegación privada o use otro navegador."
       ],
       "Could not find address ${ email }.": [
@@ -1970,13 +1967,13 @@
       "Error in one of the conditions": [
         "Error en una de las condiciones"
       ],
-      "Error while saving draft. Please try again": [
+      "Error while saving draft. Please try again.": [
         "Error al guardar el borrador. Intente de nuevo."
       ],
-      "Error while sending the message. Message is not sent": [
+      "Error while sending the message. Message is not sent.": [
         "Error al enviar el mensaje. El mensaje no se ha enviado."
       ],
-      "Error while uploading attachments. Message is not sent": [
+      "Error while uploading attachments. Message is not sent.": [
         "Error al subir los archivos adjuntos. El mensaje no se ha enviado."
       ],
       "Failed to encrypt attachment. Please try again.": [
@@ -2012,8 +2009,8 @@
       "Invalid expiration date": [
         "Fecha de expiración inválida"
       ],
-      "Invalid expiration time.": [
-        "Fecha de expiración inválida."
+      "Invalid expiration time": [
+        "Fecha de expiración inválida"
       ],
       "Invalid name": [
         "Nombre inválido"
@@ -2037,8 +2034,8 @@
       "Message needs to be sent first": [
         "El mensaje debe enviarse primero"
       ],
-      "Message passwords do not match.": [
-        "Las contraseñas del mensaje no coinciden."
+      "Message passwords do not match": [
+        "Las contraseñas del mensaje no coinciden"
       ],
       "Message processing error.": [
         "Error al procesar el mensaje."
@@ -2052,8 +2049,8 @@
       "Network error: Please check your connection and try again.": [
         "Error de red: compruebe su conexión e inténtelo de nuevo."
       ],
-      "No address with keys available to compose a message.": [
-        "No hay una dirección con claves disponibles para redactar el mensaje."
+      "No address with keys available to compose a message": [
+        "No hay una dirección con claves disponibles para redactar el mensaje"
       ],
       "No key retrieved for internal user is valid for sending": [
         "Ninguna clave recuperada para el usuario interno es válida para enviar"
@@ -2186,8 +2183,8 @@
       "The label name is too long. Please choose a different name.": [
         "El nombre de la etiqueta es demasiado largo. Elija un nombre diferente."
       ],
-      "The maximum expiration is 4 weeks.": [
-        "La expiración máxima es de 4 semanas."
+      "The maximum expiration is 4 weeks": [
+        "La expiración máxima es de 4 semanas"
       ],
       "The minimum amount of credit that can be added is ${ _price }": [
         "La cantidad mínima de crédito que puede añadirse es de ${ _price }"
@@ -2204,7 +2201,7 @@
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Hay demasiadas carpetas en su cuenta externa. Personalice la importación para eliminar algunas carpetas."
       ],
-      "There has been an issue with content search. Default search has been used instead": [
+      "There has been an issue with content search. Default search has been used instead.": [
         "Hubo un problema con la búsqueda de contenido. La búsqueda por defecto se ha usado en su lugar."
       ],
       "There was an error when exporting the contacts vCards": [
@@ -2222,8 +2219,8 @@
       "This label name is not available. Please choose a different name": [
         "Este nombre de etiqueta no está disponible. Elija un nombre diferente."
       ],
-      "This message has already been sent.": [
-        "Este mensaje ya fue enviado."
+      "This message has already been sent": [
+        "Este mensaje ya fue enviado"
       ],
       "This message has already been sent. A new draft has been saved.": [
         "Este mensaje ya fue enviado. Se guardó un borrador nuevo."
@@ -2231,8 +2228,8 @@
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "Este mensaje puede contener la URL de un enlace que no puede abrirse correctamente en el navegador actual"
       ],
-      "Too many active filters. Please upgrade to a paid plan to activate more filters": [
-        "Demasiados filtros activos. Actualice a un plan de pago para activar más filtros"
+      "Too many active filters. Please upgrade to a paid plan to activate more filters.": [
+        "Demasiados filtros activos. Actualice a un plan de pago para activar más filtros."
       ],
       "Trusted keys are not valid for sending": [
         "Las claves confiadas no son válidas para enviar"
@@ -2252,9 +2249,9 @@
       "You can't send vCards of more than 10 contacts": [
         "No puede enviar vCards de más de 10 contactos"
       ],
-      "You cannot open more than ${ maxActiveComposer } composer window at a time.": [
-        "No puede abrir más de ${ maxActiveComposer } ventana de compositor a la vez.",
-        "No puede abrir más de ${ maxActiveComposer } ventanas de compositor a la vez."
+      "You cannot open more than ${ maxActiveComposer } composer window at a time": [
+        "No puede abrir más de ${ maxActiveComposer } ventana de compositor a la vez",
+        "No puede abrir más de ${ maxActiveComposer } ventanas de compositor a la vez"
       ],
       "You did not provide a file.": [
         "No ha indicado un archivo."
@@ -2271,7 +2268,7 @@
       "Your import will not be processed.": [
         "Su importación no será procesada."
       ],
-      "Your search matched too many results. Please limit your search and try again": [
+      "Your search matched too many results. Please limit your search and try again.": [
         "Su búsqueda coincidió con muchos resultados. Limite su búsqueda e inténtelo de nuevo."
       ]
     },
@@ -2378,7 +2375,7 @@
         "No se pudo encontrar el evento original recurrente"
       ],
       "Recurring event has no occurrences": [
-        ""
+        "El evento recurrente no contiene ocurrencias"
       ],
       "Recurring rule not supported": [
         "Regla recurrente no compatible"
@@ -3316,8 +3313,8 @@
       "Image URL": [
         "URL de la imagen"
       ],
-      "Images have been removed because they are not allowed in auto-reply.": [
-        "Las imágenes se han eliminado porque no están permitidas en la respuesta automática."
+      "Images have been removed because they are not allowed in auto-reply": [
+        "Las imágenes se han eliminado porque no están permitidas en la respuesta automática"
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Importar ${ contactsFragment } y ${ contactsGroupsFragment }"
@@ -3423,6 +3420,9 @@
       "Message sent": [
         "Mensaje enviado"
       ],
+      "Message sent.": [
+        "Mensaje enviado."
+      ],
       "Message will be sent ${ dateString } at ${ formattedTime }": [
         "El mensaje se enviará el ${ dateString } a las ${ formattedTime }"
       ],
@@ -3448,7 +3448,7 @@
         "No hay dirección de correo"
       ],
       "No email trackers found": [
-        ""
+        "No se encontraron rastreadores de correo"
       ],
       "No folder found": [
         "Ninguna carpeta encontrada"
@@ -3577,7 +3577,7 @@
         "Imprimir correo"
       ],
       "Protect yourself from trackers. Turn on email tracker protection in settings": [
-        ""
+        "Protéjase de los rastreadores. Active la protección de rastreador de correo en los ajustes."
       ],
       "Proton doesn't make money by abusing privacy.": [
         "Proton no genera dinero abusando de la privacidad."
@@ -3710,7 +3710,7 @@
         "Cambiar a ${ professionalPlan } para añadir más usuarios."
       ],
       "Taking too long?": [
-        ""
+        "¿Tarda demasiado?"
       ],
       "Test link": [
         "Prueba de enlace"
@@ -3828,7 +3828,7 @@
         "Para luchar contra el spam y el abuso, verifique que es humano."
       ],
       "To protect your privacy, Proton blocked email trackers in this message": [
-        ""
+        "Para proteger su privacidad, Proton ha bloqueado los rastreadores de correo en este mensaje"
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "Para volver a firmar sus contactos, necesitamos verificar cada contacto contra la lista de claves de cifrado disponibles en su cuenta. Si no se encuentra ninguna coincidencia, su contacto volverá a estar firmado con la clave de cifrado principal."
@@ -5951,16 +5951,16 @@
     },
     "Spotlight": {
       "Message Content Search": [
-        ""
+        "Búsqueda de contenido de mensajes"
       ],
       "To protect your privacy, Proton blocked email trackers in this message": [
-        ""
+        "Para proteger su privacidad, Proton ha bloqueado los rastreadores de correo en este mensaje"
       ],
       "You can now schedule your messages to be sent later": [
         "Ya puede programar sus mensajes para ser enviados posteriormente"
       ],
       "You can now search the content of your encrypted emails.": [
-        ""
+        "Ahora puede buscar el contenido de sus correos electrónicos cifrados."
       ]
     },
     "Status": {
@@ -6099,8 +6099,8 @@
       "Contacts deleted": [
         "Contactos eliminados"
       ],
-      "Conversation added to ${ labelName }": [
-        "Conversación añadida a ${ labelName }"
+      "Conversation added to ${ labelName }.": [
+        "Conversación añadida a ${ labelName }."
       ],
       "Conversation deleted": [
         "Conversación eliminada"
@@ -6108,8 +6108,8 @@
       "Conversation marked as read.": [
         "Conversación marcada como leída."
       ],
-      "Conversation marked as Starred": [
-        "Conversación marcada como destacada"
+      "Conversation marked as Starred.": [
+        "Conversación marcada como destacada."
       ],
       "Conversation marked as unread.": [
         "Conversación marcada como no leída."
@@ -6123,8 +6123,8 @@
       "Conversation moved to spam and sender added to Block List.": [
         "Conversación movida a spam y el remitente añadido a la lista no deseada."
       ],
-      "Conversation removed from ${ labelName }": [
-        "Conversación eliminada de ${ labelName }"
+      "Conversation removed from ${ labelName }.": [
+        "Conversación eliminada de ${ labelName }."
       ],
       "Draft deleted": [
         "Borrador eliminado"
@@ -6150,8 +6150,8 @@
       "Mail list unsubscribed": [
         "Lista de correo desinscrita"
       ],
-      "Message added to ${ labelName }": [
-        "Mensaje añadido a ${ labelName }"
+      "Message added to ${ labelName }.": [
+        "Mensaje añadido a ${ labelName }."
       ],
       "Message content search activated": [
         "Búsqueda de contenido de mensajes habilitada"
@@ -6165,8 +6165,8 @@
       "Message marked as read.": [
         "Mensaje marcado como leído."
       ],
-      "Message marked as Starred": [
-        "Mensaje marcado como destacado"
+      "Message marked as Starred.": [
+        "Mensaje marcado como destacado."
       ],
       "Message marked as unread.": [
         "Mensaje marcado como no leído."
@@ -6180,8 +6180,8 @@
       "Message moved to spam and sender added to Block List.": [
         "Mensaje movido a spam y el remitente añadido a la lista no deseada."
       ],
-      "Message removed from ${ labelName }": [
-        "Mensaje eliminado de ${ labelName }"
+      "Message removed from ${ labelName }.": [
+        "Mensaje eliminado de ${ labelName }."
       ],
       "Move ${ selectionCount } conversation": [
         "Mover ${ selectionCount } conversación",
@@ -6842,7 +6842,7 @@
     },
     "Today icon tooltip in mini calendar": {
       "Today": [
-        ""
+        "Hoy"
       ]
     },
     "Tooltip": {
@@ -7084,7 +7084,7 @@
         "No se pudo cargar el contacto."
       ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
-        ""
+        "Los ajustes de fecha y hora en su dispositivo están desactualizados. ${ learnMore }"
       ],
       "The decryption of the encrypted content failed.": [
         "Falló el descifrado del contenido cifrado."

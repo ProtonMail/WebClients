@@ -113,16 +113,16 @@
         "Salin surel ke papan klip"
       ],
       "Copy to clipboard": [
-        ""
+        "Salin ke clipboard"
       ],
       "Create account": [
         "Buat akun"
       ],
       "Create new recovery phrase": [
-        ""
+        "Buat frasa pemulihan baru"
       ],
       "Create new recovery phrase?": [
-        ""
+        "Buat frasa pemulihan baru?"
       ],
       "Customize": [
         "Sesuaikan"
@@ -146,10 +146,10 @@
         "Tidak menerima kode?"
       ],
       "Disable recovery phrase": [
-        ""
+        "Nonaktifkan frasa pemulihan"
       ],
       "Disable recovery phrase?": [
-        ""
+        "Nonaktifkan frasa pemulihan?"
       ],
       "Done": [
         "Selesai"
@@ -158,10 +158,10 @@
         "Turunkan"
       ],
       "Downgrade account": [
-        ""
+        "Turunkan jenis akun"
       ],
       "Downgrade to ${ BRAND_NAME } ${ downgradedPlanName }": [
-        ""
+        "Turunkan jenis akun saya ke ${ BRAND_NAME } ${ downgradedPlanName }"
       ],
       "Download": [
         "Unduh"
@@ -185,7 +185,7 @@
         "mengaktifkan pemberitahuan desktop"
       ],
       "Enter password to continue": [
-        ""
+        "Masukkan kata sandi untuk melanjutkan"
       ],
       "Get a new password": [
         "Buat kata sandi baru"
@@ -227,7 +227,7 @@
         "Tingkatkan"
       ],
       "Keep my ${ BRAND_NAME } ${ currentPlanName } account": [
-        ""
+        "Pertahankan jenis akun ${ BRAND_NAME } ${ currentPlanName } yang saya miliki saat ini"
       ],
       "Loading verification": [
         "Memuat verifikasi"
@@ -683,7 +683,7 @@
     },
     "Calendar status": {
       "Not synced": [
-        ""
+        "Tidak disinkronkan"
       ],
       "Syncing": [
         "Menyinkronkan"
@@ -691,25 +691,25 @@
     },
     "Calendar subscription not synced error": {
       "Calendar is syncing": [
-        ""
+        "Kalender sedang menyinkronkan data"
       ],
       "Calendar is too big": [
-        ""
+        "Ukuran kalender terlalu besar"
       ],
       "Calendar link is not accessible": [
-        ""
+        "Tautan kalender tidak dapat diakses"
       ],
       "Calendar link is temporarily inaccessible": [
-        ""
+        "Tautan kalender untuk sementara tidak dapat diakses"
       ],
       "Calendar link is wrong": [
-        ""
+        "Tautan kalender tidak tepat"
       ],
       "Failed to sync calendar": [
-        ""
+        "Gagal menyinkronkan kalender"
       ],
       "More than 12 hours passed since last update": [
-        ""
+        "Lebih dari 12 jam telah berlalu sejak pembaruan terakhir"
       ]
     },
     "Confirmation message to delete payment method": {
@@ -752,33 +752,33 @@
     },
     "Downgrade account reason": {
       "Bugs or quality issue": [
-        ""
+        "Terdapat bug-bug yang mengganggu saya"
       ],
       "I use a different Proton account": [
         "Saya menggunakan akun Proton lain"
       ],
       "Missing feature(s) ": [
-        ""
+        "Terdapat fitur-fitur yang hilang "
       ],
       "My reason isn't listed, please comment": [
-        ""
+        "Lainnya (harap jelaskan)"
       ],
       "Streaming service unsupported": [
-        ""
+        "Layanan streaming yang saya gunakan tidak didukung"
       ],
       "Subscription is too expensive": [
-        ""
+        "Biaya berlangganan terlalu mahal"
       ],
       "Switching to a different provider": [
-        ""
+        "Saya telah berpindah ke layanan penyedia email lainnya"
       ],
       "Temporary need, may come back in the future": [
-        ""
+        "Saya hanya bermaksud menurunkan jenis akun saya untuk sementara waktu"
       ]
     },
     "Downgrade modal exit survey title": {
       "Help us improve!": [
-        ""
+        "Bantu kami untuk berkembang!"
       ]
     },
     "Drive feature": {
@@ -813,8 +813,8 @@
       "Can't validate phone, try again later": [
         "Tidak dapat memvalidasi telepon, coba lagi nanti"
       ],
-      "Checkout expired, please try again.": [
-        "Pembayaran kedaluwarsa, silakan coba lagi."
+      "Checkout expired, please try again": [
+        "Sesi pembayaran telah kedaluwarsa, silakan coba lagi"
       ],
       "Code wrong or not valid anymore": [
         "Kode salah atau sudah tidak valid"
@@ -891,8 +891,8 @@
       "Please enter '${ dangerWord }'": [
         "Silakan masukkan '${ dangerWord }'"
       ],
-      "Please generate keys before you try to change your password.": [
-        "Mohon hasilkan kunci sebelum Anda mengubah kata sandi."
+      "Please generate keys before you try to change your password": [
+        "Harap buat kunci terlebih dahulu sebelum Anda mengubah kata sandi Anda"
       ],
       "Please set a recovery phone number first": [
         "Harap setel nomor telepon pemulihan terlebih dahulu"
@@ -1222,7 +1222,7 @@
         "Di bawah jumlah minimum (${ amount })."
       ],
       "Are you sure you want to continue?": [
-        ""
+        "Apakah Anda yakin untuk melanjutkan?"
       ],
       "Basic, Plus or Visionary subscription required": [
         "Dibutuhkan langganan Basic, Plus atau Visionary"
@@ -1258,7 +1258,7 @@
         "Dengan menurunkan versi ke paket Free, Anda akan kehilangan manfaat ini secara permanen, bahkan jika Anda meningkatkan lagi di masa depan."
       ],
       "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
-        ""
+        "Dengan menurunkan jenis akun Anda, Anda tidak akan lagi dapat menikmati keutamaan-keutamaan berikut. Apakah Anda yakin untuk menurunkan jenis akun Anda?"
       ],
       "By leaving now, changes may not be saved": [
         "Dengan keluar sekarang, perubahan mungkin tidak tersimpan"
@@ -1555,7 +1555,7 @@
         ""
       ],
       "Recovery phrase copied to clipboard": [
-        ""
+        "Frasa pemulihan disalin ke clipboard"
       ],
       "Recovery phrase has been disabled": [
         "Frasa pemulihan telah dinonaktifkan"
@@ -1762,7 +1762,7 @@
         "Anda dapat menyesuaikan dan mengunduh faktur tagihan Anda untuk keperluan akuntansi."
       ],
       "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
-        ""
+        "Anda hanya dapat membuka satu jendela percakapan dalam satu waktu. Harap tutup jendela-jendela percakapan lainnya yang sedang terbuka."
       ],
       "You can use the following credentials to connect to a ProtonVPN server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Anda dapat menggunakan kredensial berikut untuk menyambungkan ke server ProtonVPN menggunakan aplikasi pihak ketiga, aplikasi VPN sumber terbuka, seperti Tunnerblick untuk macOS atau OpenVPN untuk GNU/Linux."
@@ -1810,7 +1810,7 @@
         "Akun Anda memiliki setidaknya satu tagihan yang belum dibayar. Akses akun Anda akan dibatasi. ${ payInvoiceLink }"
       ],
       "Your account has been successfully created. Please press the \"Close\" button to be taken back to the app.": [
-        "Akun anda telah berhasil dibuat. Silakan tekan tombol \"Tutup\" untuk kembali ke aplikasi."
+        "Akun Anda telah berhasil dibuat. Silakan tekan tombol \"Tutup\" untuk kembali ke aplikasi."
       ],
       "Your account is being upgraded, this may take up to 30 seconds.": [
         "Akun Anda sedang ditingkatkan, ini perlu waktu hingga 30 detik."
@@ -1846,7 +1846,7 @@
         "Frasa pemulihan Anda"
       ],
       "Your recovery phrase is a series of 12 words in a specific order.": [
-        ""
+        "Frasa pemulihan Anda tersusun atas 12 kata yang terangkai dalam urutan yang spesifik."
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Langganan Anda dikelola oleh Mozilla.\nHarap hubungi dukungan Mozilla."
@@ -1944,13 +1944,13 @@
         "${ n } koneksi VPN tersedia"
       ],
       "${ UsedAddresses } of ${ MaxAddresses } email address": [
-        ""
+        "${ UsedAddresses } dari ${ MaxAddresses } alamat email"
       ],
       "${ UsedDomains } of ${ MaxDomains } custom domain": [
-        ""
+        "${ UsedDomains } dari ${ MaxDomains } domain khusus"
       ],
       "${ UsedMembers } of ${ MaxMembers } user": [
-        ""
+        "${ UsedMembers } dari ${ MaxMembers } pengguna"
       ],
       "1 month": [
         "1 bulan"
@@ -1971,7 +1971,7 @@
         "Izinkan pemulihan dengan nomor ponsel"
       ],
       "Allow recovery by recovery phrase": [
-        ""
+        "Izinkan pemulihan akun melalui frasa pemulihan"
       ],
       "Amount": [
         "Jumlah"
@@ -2031,13 +2031,13 @@
         "Salin"
       ],
       "Could you please let us know which provider?": [
-        ""
+        "Dapatkah Anda memberitahu kami layanan penyedia email mana yang Anda maksud?"
       ],
       "Could you please specify which streaming service?": [
-        ""
+        "Dapatkah Anda memberitahu kami layanan streaming mana yang Anda maksud?"
       ],
       "Could you please specify?": [
-        ""
+        "Dapatkah Anda memberikan penjelasan lebih lanjut?"
       ],
       "Country": [
         "Negara"
@@ -2070,7 +2070,7 @@
         "Nama tampilan"
       ],
       "Do you have any suggestions for our team?": [
-        ""
+        "Apakah Anda memiliki saran untuk tim kami?"
       ],
       "Email": [
         "Surel"
@@ -2145,7 +2145,7 @@
         "Versi sistem operasi"
       ],
       "Optional": [
-        ""
+        "Opsional"
       ],
       "Other amount": [
         "Jumlah lain"
@@ -2172,7 +2172,7 @@
         "Alamat ProtonMail"
       ],
       "Recovery phrase": [
-        ""
+        "Frasa pemulihan"
       ],
       "Reveal password": [
         "Perlihatkan sandi"
@@ -2232,7 +2232,7 @@
         "Nama pengguna atau alamat ProtonMail"
       ],
       "Using ${ humanUsedSpace } of ${ humanMaxSpace }": [
-        ""
+        "Kapasitas terpakai: ${ humanUsedSpace } dari ${ humanMaxSpace }"
       ],
       "Verification code": [
         "Kode verifikasi"
@@ -2270,7 +2270,7 @@
         "Nomor telepon"
       ],
       "Recovery phrase": [
-        ""
+        "Frasa pemulihan"
       ]
     },
     "Label for news": {
@@ -2938,7 +2938,7 @@
     },
     "Plan time remaining": {
       "You still have ${ daysRemaining } day left on your ${ BRAND_NAME } ${ currentPlanName } account.": [
-        ""
+        "Anda memiliki ${ daysRemaining } hari tersisa pada ${ BRAND_NAME } ${ currentPlanName } milik Anda."
       ]
     },
     "Plan upsell": {
@@ -3014,8 +3014,8 @@
       "Gift code applied": [
         "Kode hadiah berhasil digunakan"
       ],
-      "If you entered a valid notification email we will send you an email with your usernames in the next minute.": [
-        "Apabila surel pemberitahuan yang Anda masukkan terdaftar, nama pengguna Anda akan dikirimkan via surel."
+      "If you entered a valid notification email we will send you an email with your usernames in the next minute": [
+        "Apabila Anda memasukkan alamat email yang valid, kami akan mengirimkan email yang berisi nama-nama pengguna Anda sesaat lagi"
       ],
       "Invoice customized": [
         "Tagihan berhasil disesuaikan"
@@ -3230,7 +3230,7 @@
         "Pencegahan kebocoran DNS"
       ],
       "Downgrade account": [
-        ""
+        "Turunkan jenis akun"
       ],
       "Downloads": [
         "Unduhan"
@@ -3726,7 +3726,7 @@
         "Dengan menghapus nomor telepon ini, Anda tidak akan bisa lagi memulihkan akun Anda."
       ],
       "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
-        ""
+        "Fitur live chat hanya tersedia bagi pengguna ProtonVPN versi berbayar. Apabila Anda merasa ada sesuatu yang salah, harap buka tiket layanan dukungan."
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Harap diperhatikan dengan memilih metode pembayaran ini, akun anda tidak dapat segera ditingkatkan. Kami akan memperbarui akun anda setelah pembayaran sah."
@@ -3735,10 +3735,10 @@
         "Laporan tidak dienkripsi end-to-end, mohon tidak mengirim informasi sensitif."
       ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
-        "Tanggal dan waktu yang terpasang pada piranti Anda tidak sesuai dengan server kami. ${ learnMore }"
+        "Tanggal dan waktu yang terpasang pada piranti Anda tidak sesuai dengan tanggal dan waktu saat ini. ${ learnMore }"
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
-        ""
+        "Sayangnya, kami sedang berada di luar jaringan. Harap jelaskan permasalahan Anda melalui formulir di bawah ini, dan kami akan memeriksanya di kemudian waktu."
       ]
     }
   }

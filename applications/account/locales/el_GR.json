@@ -31,11 +31,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } κατάστημα"
       ],
-      "Activate": [
-        "Ενεργοποίηση"
-      ],
       "activate": [
         "ενεργοποιήστε"
+      ],
+      "Activate": [
+        "Ενεργοποίηση"
       ],
       "Activate ${ Name }@pm.me": [
         "Ενεργοποίηση ${ Name }@pm.me"
@@ -385,6 +385,9 @@
       "Import contacts": [
         "Εισαγωγή επαφών"
       ],
+      "Import from .csv or vCard": [
+        "Εισαγωγή από αρχείο .csv ή vCard"
+      ],
       "Import from .ics": [
         "Εισαγωγή από αρχείο .ics"
       ],
@@ -657,6 +660,9 @@
       ],
       "Sign out all accounts": [
         "Αποσύνδεση από όλους τους λογαριασμούς"
+      ],
+      "Signing in": [
+        "Γίνεται είσοδος"
       ],
       "Signing out": [
         "Αποσύνδεση"
@@ -1043,7 +1049,7 @@
     },
     "Billing cycle": {
       "2-year billing (Renewal on ${ formattedEndTime })": [
-        "Χρέωση 2-χρόνων (Ανανέωση σε ${ formattedEndTime })"
+        "Διετής χρέωση (Ανανέωση σε ${ formattedEndTime })"
       ],
       "Billing (Renewal on ${ formattedEndTime })": [
         "Χρέωση (Ανανέωση σε ${ formattedEndTime })"
@@ -1074,7 +1080,7 @@
     },
     "Bridge version load failed": {
       "Failed to find latest version": [
-        "Απέτυχε η εύρεση της πιο πρόσφατης έκδοσης"
+        "Αποτυχία εύρεσης τελευταίας έκδοσης"
       ]
     },
     "Bug category": {
@@ -1548,7 +1554,7 @@
     },
     "Drive feature": {
       "Access via Web": [
-        "Πρόσβαση μέσω Web"
+        "Πρόσβαση μέσω Ιστού"
       ],
       "Share files via link": [
         "Κοινή χρήση αρχείων με συνδέσμους"
@@ -1699,8 +1705,8 @@
       "Can't validate phone, try again later": [
         "Δεν είναι δυνατή η επικύρωση του τηλεφώνου, προσπαθήστε ξανά αργότερα"
       ],
-      "Checkout expired, please try again.": [
-        "Η σελίδα έχει λήξει, παρακαλώ προσπαθήστε ξανά."
+      "Checkout expired, please try again": [
+        "Η ταμειακή διαδικασία εξέπνευσε, παρακαλούμε δοκιμάστε ξανά"
       ],
       "Condition incomplete": [
         "Μη ολοκληρωμένη συνθήκη"
@@ -1824,6 +1830,9 @@
       "Not a valid number": [
         "Μη έγκυρος αριθμός"
       ],
+      "Organization key is not decrypted": [
+        "Το κλειδί οργανισμού δεν είναι αποκρυπτογραφημένο"
+      ],
       "Organization key is not decrypted.": [
         "Το κλειδί οργανισμού δεν είναι αποκρυπτογραφημένο."
       ],
@@ -1858,8 +1867,8 @@
         "Παρακαλούμε επιλύστε την τονισμένη διένεξη προς συνέχιση.",
         "Παρακαλούμε επιλύστε τις τονισμένες διενέξεις προς συνέχιση."
       ],
-      "Please generate keys before you try to change your password.": [
-        "Παρακαλούμε δημιουργήστε κλειδιά πριν προσπαθήσετε να αλλάξετε τον κωδικό πρόσβασης σας."
+      "Please generate keys before you try to change your password": [
+        "Πριν δοκιμάσετε την αλλαγή των κωδικών πρόσβασής σας, παρακαλούμε δημιουργήστε κλειδιά"
       ],
       "Please refresh the page.": [
         "Παρακαλούμε ανανεώστε τη σελίδα."
@@ -1873,8 +1882,8 @@
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         "Προσπαθήστε να πραγματοποιήσετε εκ νέου έλεγχο ταυτότητας και βεβαιωθείτε ότι τα δικαιώματα έχουν οριστεί σωστά."
       ],
-      "Please upgrade to a Professional plan with more than 1 user, or a Visionary account, to get multi-user support.": [
-        "Παρακαλούμε αναβαθμίστε σε ένα επαγγελματικό λογαριασμό με περισσότερους από 1 χρήστες ή έναν λογαριασμό Visionary για να λάβετε υποστήριξη από πολλούς χρήστες."
+      "Please upgrade to a Professional plan with more than 1 user, or a Visionary account, to get multi-user support": [
+        ""
       ],
       "Please upgrade to a Professional plan with more than 1 user, or a Visionary account, to manage multiple users.": [
         "Παρακαλώ αναβαθμίστε σε ένα λογαριασμό Professional ή Visionary, με περισσότερους από 1 χρήστες προκειμένου να διαχειριστείτε πολλαπλούς χρήστες."
@@ -1941,6 +1950,9 @@
       ],
       "The minimum payment we accept is ${ _price2 }": [
         "Η ελάχιστη πληρωμή που γίνεται αποδεκτή είναι ${ _price2 }"
+      ],
+      "The organization key must be activated first": [
+        "Πρέπει να ενεργοποιηθεί πρώτα το κλειδί οργανισμού"
       ],
       "The organization key must be activated first.": [
         "Το κλειδί οργανισμού πρέπει πρώτα να ενεργοποιηθεί."
@@ -2046,11 +2058,11 @@
       "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } events.": [
         "Το αρχείο ${ formattedFilename } περιέχει περισσότερα από ${ MAX_IMPORT_EVENTS_STRING } γεγονότα."
       ],
+      "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
+        "Το αρχείο σας ${ formattedFilename } έχει μη έγκυρη μέθοδο και δεν μπορεί να εισαχθεί."
+      ],
       "Your file ${ formattedFilename } has no events to be imported.": [
         "Το αρχείο σας ${ formattedFilename } δεν έχει κανένα συμβάν για εισαγωγή."
-      ],
-      "Your file ${ formattedFilename } is an invitation and cannot be imported.": [
-        "Το αρχείο σας ${ formattedFilename } είναι μια πρόσκληση και δεν μπορεί να εισαχθεί."
       ],
       "Your file ${ formattedFilename } is empty.": [
         "Το αρχείο σας ${ formattedFilename } είναι άδειο."
@@ -2283,8 +2295,8 @@
     },
     "Export calendar": {
       "${ totalProcessed }/${ totalToProcess } event exported": [
-        "${ totalProcessed }/${ totalToProcess } γεγονός εξάγεται",
-        "${ totalProcessed }/${ totalToProcess } γεγονότα εξάγονται"
+        "εξάχθηκε ${ totalProcessed }/${ totalToProcess } εκδήλωση",
+        "εξάχθηκαν ${ totalProcessed }/${ totalToProcess } εκδηλώσεις"
       ],
       "Calendar successfully exported. You can now save the ICS file.": [
         "Το ημερολόγιο εξήχθη με επιτυχία. Μπορείτε τώρα να αποθηκεύσετε το αρχείο ICS."
@@ -2311,7 +2323,7 @@
         "Κανένα από τα συμβάντα δεν μπορούσε να εξαχθεί."
       ],
       "Password reset - event cannot be decrypted": [
-        "Επαναφορά κωδικού πρόσβασης - δεν είναι δυνατή η αποκρυπτογράφηση του γεγονότος"
+        "Επαναφορά κωδικού πρόσβασης - αδυναμία αποκρυπτογράφησης της εκδήλωσης"
       ],
       "Password reset - multiple events cannot be decrypted": [
         "Επαναφορά κωδικού πρόσβασης - δεν είναι δυνατή η αποκρυπτογράφηση πολλών γεγονότων"
@@ -2598,38 +2610,27 @@
       ]
     },
     "Import calendar warning": {
-      "${ CALENDAR_APP_NAME } does not support ${ forNow }:": [
-        "${ CALENDAR_APP_NAME } δεν υποστηρίζει ${ forNow }:"
-      ],
-      "Attendees": [
-        "Συμμετέχοντες"
-      ],
-      "Complex recurring rules": [
-        "Σύνθετοι επαναλαμβανόμενοι κανόνες"
-      ],
-      "Email notifications": [
-        "Ειδοποιήσεις email"
-      ],
-      "for now": [
-        "για τώρα"
-      ],
-      "Free-busy time information": [
-        "Πληροφορίες χρόνου Free-busy"
-      ],
-      "Journal entries": [
-        "Καταχωρήσεις χρονικού"
-      ],
-      "Non-Gregorian calendars": [
-        "Μη-Γρηγοριανό ημερολόγιο"
-      ],
-      "To-do entries": [
-        "Εγγραφές προς υλοποίηση"
-      ],
-      "Unofficial or custom timezones": [
-        "Ανεπίσημες ή προσαρμοσμένες ζώνες ώρας"
+      "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
+        "Η ${ CALENDAR_APP_NAME } δεν υποστηρίζει προς το παρόν συγκεκριμένους τύπους συμβάντων, λεπτομέρειες και μορφές."
       ],
       "vCard versions < 3.0": [
         "εκδόσεις vCard < 3.0"
+      ]
+    },
+    "Import calendar; import invitation": {
+      "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your Proton email address.": [
+        "Οι εισαγόμενες προσκλήσεις εμφανίζονται στο ${ CALENDAR_APP_NAME } ως απλές εκδηλώσεις χωρίς στοιχεία διοργανωτή και συμμετέχοντα. Για να λαμβάνετε ενημερώσεις για την εκδήλωση και να δείτε τους συμμετέχοντες, ζητήστε από τους διοργανωτές να σας προσκαλέσουν χρησιμοποιώντας τη διεύθυνση email της Proton."
+      ],
+      "This file contains an event invitation:": [
+        "Αυτό το αρχείο περιέχει μια πρόσκληση σε εκδήλωση:",
+        "Αυτό το αρχείο περιέχει προσκλήσεις σε εκδηλώσεις:"
+      ],
+      "This file contains an invitation response:": [
+        "Αυτό το αρχείο περιέχει μια απάντηση πρόσκλησης:",
+        "Αυτό το αρχείο περιέχει απαντήσεις πρόσκλησης:"
+      ],
+      "This file contains some data that we cannot import:": [
+        "Το αρχείο περιέχει κάποια δεδομένα που δεν μπορούμε να εισάγουμε:"
       ]
     },
     "Import contact": {
@@ -2843,10 +2844,10 @@
     },
     "Import instructions external link": {
       "login to Gmail": [
-        "σύνδεση στο Gmail"
+        "είσοδος στο Gmail"
       ],
       "then open this page to unlock captcha": [
-        "στη συνέχεια, ανοίξτε αυτήν τη σελίδα για να ξεκλειδώσετε το CAPTCHA"
+        "μετά ανοίξτε αυτήν τη σελίδα για ξεκλείδωμα του CAPTCHA"
       ]
     },
     "Import instructions image alternative text": {
@@ -2915,17 +2916,17 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } από ${ totalContacts } επαφές δεν θα εισαχθούν. Κάντε κλικ για λεπτομέρειες"
       ],
-      "${ totalEventsDiscarded } out of ${ totalEvents } events will not be imported. Click for details": [
-        "${ totalEventsDiscarded } από ${ totalEvents } εκδηλώσεις δεν θα εισαχθούν. Κάντε κλικ για λεπτομέρειες"
+      "${ totalEventsDiscarded } out of ${ totalEvents } events will not be imported. Expand for details.": [
+        "${ totalEventsDiscarded } από ${ totalEvents } συμβάντα δεν θα εισαχθούν. Αναπτύξτε το για λεπτομέρειες."
       ],
       "No contact can be imported. Click for details": [
         "Δεν είναι δυνατή η εισαγωγή καμίας επαφής. Κάντε κλικ για λεπτομέρειες"
       ],
-      "No event can be imported. Click for details": [
-        "Καμία εκδήλωση δεν μπορεί να εισαχθεί. Κάντε κλικ για λεπτομέρειες"
+      "No event can be imported. Expand for details.": [
+        "Δεν μπορεί να εισαχθεί κανένα γεγονός. Αναπτύξτε το για λεπτομέρειες."
       ],
-      "Part of your calendar content is not supported and will not be imported": [
-        "Μέρος του περιεχομένου του ημερολογίου σας δεν υποστηρίζεται και δεν θα εισαχθεί"
+      "Part of your calendar content is not supported and will not be imported.": [
+        "Μέρος του περιεχομένου του ημερολογίου σας δεν υποστηρίζεται και δεν θα εισαχθεί."
       ]
     },
     "Info": {
@@ -3018,7 +3019,7 @@
         "${ selectedFoldersCountLocalized } ετικέτες επιλέχθηκαν"
       ],
       "${ strongAddressAvailable } You will use this email address to sign into all ${ BRAND_NAME } services.": [
-        "${ strongAddressAvailable } Θα χρησιμοποιήσετε αυτή τη διεύθυνση email για να συνδεθείτε σε όλες τις υπηρεσίες ${ BRAND_NAME }."
+        "${ strongAddressAvailable } Θα χρησιμοποιείτε αυτήν τη διεύθυνση για να εισέρχεστε σε όλες τις υπηρεσίες του ${ BRAND_NAME }."
       ],
       "${ vpnAppName } Free": [
         "${ vpnAppName } Δωρεάν"
@@ -3055,7 +3056,7 @@
         "Ένα κλειδί με τον ίδιο αλγόριθμο κρυπτογράφησης είναι ήδη ενεργό για αυτήν τη διεύθυνση.\nΗ δημιουργία ενός άλλου κλειδιού θα προκαλέσει πιο αργή φόρτωση του λογαριασμού και η διαγραφή αυτού του κλειδιού μπορεί να προκαλέσει προβλήματα.\nΑν δημιουργείτε ένα νέο κλειδί επειδή το παλιό σας κλειδί είναι παραβιασμένο/εκτεθειμένο, επισημάνετε το κλειδί ως εκτεθειμένο.\nΕίστε σίγουροι ότι θέλετε να συνεχίσετε;"
       ],
       "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password.": [
-        "Μια φράση ανάκτησης σάς επιτρέπει να έχετε πρόσβαση στο λογαριασμό σας και να ανακτήσετε τα κρυπτογραφημένα μηνύματά σας εάν ξεχάσετε τον κωδικό πρόσβασής σας."
+        "Μια φράση ανάκτησης, σας επιτρέπει να έχετε πρόσβαση στο λογαριασμό σας και να ανακτήσετε τα κρυπτογραφημένα μηνύματά σας εάν ξεχάσετε τον κωδικό πρόσβασής σας."
       ],
       "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
         "Πρόσβαση σε μπλοκαρισμένο περιεχόμενο, όπως μέσα κοινωνικής δικτύωσης, ειδήσεις, Wikipedia, YouTube, και πολλά άλλα, ανεξάρτητα από το πού βρίσκεστε."
@@ -3226,7 +3227,7 @@
         "Η νεοφερμένη έκπτωση Black Friday 2020 έχει εφαρμοστεί"
       ],
       "Blocks senders from seeing if and when you opened a message.": [
-        ""
+        "Αποκλείει στους αποστολείς τη γνώση του αν και πότε ανοίξατε ένα μήνυμα."
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Με την υποβάθμιση σε ένα Δωρεάν Λογαριασμό, θα χάσετε μόνιμα αυτά τα οφέλη, ακόμη και αν αναβαθμίσετε ξανά στο μέλλον."
@@ -3329,13 +3330,13 @@
         "Διαγραφή συνδέσμου;"
       ],
       "Disabling this will prevent this email from being used for account recovery.": [
-        "Η απενεργοποίησή του θα αποτρέψει τη χρήση αυτού του email για την ανάκτηση λογαριασμού."
+        "Η απενεργοποίηση του θα αποτρέψει τη χρήση αυτού του email για την ανάκτηση λογαριασμού."
       ],
       "Disabling this will prevent this phone number from being used for account recovery.": [
-        "Η απενεργοποίησή του θα αποτρέψει τη χρήση αυτού του τηλεφώνου για την ανάκτηση λογαριασμού."
+        "Η απενεργοποίηση του θα αποτρέψει τη χρήση αυτού του τηλεφώνου για την ανάκτηση λογαριασμού."
       ],
       "Disabling this will prevent your recovery phrase from being used for account recovery.": [
-        "Η απενεργοποίησή του θα αποτρέψει τη χρήση αυτής της φράσης ανάκτησης για την ανάκτηση λογαριασμού."
+        "Η απενεργοποίηση του θα αποτρέψει τη χρήση αυτής της φράσης ανάκτησης για την ανάκτηση λογαριασμού."
       ],
       "Discount applied to your subscription with coupon ${ code }": [
         "Εφαρμόστηκε έκπτωση στη συνδρομή σας, με το κουπόνι ${ code }"
@@ -3362,8 +3363,8 @@
       "Done": [
         "Ολοκληρώθηκε"
       ],
-      "Done! We sent a code to ${ destination }": [
-        "Έγινε! Στείλαμε έναν κωδικό στο ${ destination }"
+      "Done! We sent a code to ${ destination }.": [
+        "Έγινε! Στείλαμε έναν κωδικό στο ${ destination }."
       ],
       "Downgrading will terminate any connections to paid ProtonVPN servers.": [
         "Η υποβάθμιση θα τερματίσει τυχόν συνδέσεις με πληρωμένους ProtonVPN servers."
@@ -3384,7 +3385,7 @@
         "Επεξεργασία ετικέτας"
       ],
       "Effortlessly and securely move your emails from your current provider to Proton. If you use Google, we also support calendar, and contacts imports.": [
-        "Μετακινήστε εύκολα και με ασφάλεια τα μηνύματα ηλεκτρονικού ταχυδρομείου σας από τον τρέχοντα πάροχο σας στο Proton. Αν χρησιμοποιείτε το Google, υποστηρίζουμε επίσης εισαγωγή ημερολολογίου και επαφών."
+        "Ασφαλή και ξεκούραστη μετακίνηση των μηνυμάτων σας από τον τρέχοντα πάροχό σας στο Proton. Αν χρησιμοποιείτε το Google, υποστηρίζουμε επίσης εισαγωγή ημερολογίου και επαφών."
       ],
       "Email address": [
         "Διεύθυνση email"
@@ -3408,7 +3409,7 @@
         "Εισάγετε τον κωδικό που στάλθηκε στον αριθμό τηλεφώνου σας ${ phone }."
       ],
       "Enter the code that was sent to ${ email }. If you can't find the message in your inbox, please check your spam folder.": [
-        "Εισάγετε τον κωδικό επαλήθευσης που στάλθηκε στο ${ email }. Αν δεν βρείτε το μήνυμα ηλεκτρονικού ταχυδρομείου στα Εισερχόμενα σας, ελέγξτε το φάκελο ανεπιθύμητης αλληλογραφίας."
+        "Εισάγετε τον κωδικό που στάλθηκε στο ${ email }. Αν δεν μπορείτε να βρείτε το μήνυμα στα εισερχόμενά σας, παρακαλούμε ελέγξτε τον φάκελό σας με τα ανεπιθύμητα."
       ],
       "Enter the credentials of the email account you want to import from.": [
         "Συμπληρώστε τα διαπιστευτήρια του λογαριασμού email από τον οποίο θέλετε να εισάγετε."
@@ -3432,7 +3433,7 @@
         "Εισάγετε τον δικό σας κωδικό πρόσβασης (ως διαχειριστής οργανισμού) και τον νέο κωδικό πρόσβασης αυτού του χρήστη."
       ],
       "Enter your Proton account email address or username.": [
-        "Εισαγάγετε τη διεύθυνση ηλεκτρονικού ταχυδρομείου ή το όνομα χρήστη του Proton λογαριασμού σας."
+        "Εισάγετε τη διεύθυνση email ή το όνομα χρήστη του Proton λογαριασμού σας."
       ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Εισάγετε τη διεύθυνση email ανάκτησης σας και θα σας στείλουμε το όνομα χρήστη ή τη διεύθυνση ηλεκτρονικού ταχυδρομείου σας."
@@ -3495,7 +3496,7 @@
         "εδώ"
       ],
       "Hides identifying information by loading remote content through a proxy. Option to store content as attachments.": [
-        ""
+        "Κρύβει τις πληροφορίες ταυτοποίησης μέσω φόρτωσης του απομακρυσμένου περιεχομένου από διαμεσολαβητή. Επιλογή αποθήκευσης περιεχομένου ως συνημμένα."
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Εάν ένας άλλος διαχειριστής άλλαξε αυτόν τον κωδικό πρόσβασης, θα πρέπει να του ζητήσετε τον νέο κωδικό οργανισμού."
@@ -3557,8 +3558,8 @@
       "Image URL": [
         "URL εικόνας"
       ],
-      "Images have been removed because they are not allowed in auto-reply.": [
-        "Οι εικόνες αφαιρέθηκαν, επειδή δεν επιτρέπονται στις αυτόματες απαντήσεις."
+      "Images have been removed because they are not allowed in auto-reply": [
+        "Οι εικόνες αφαιρέθηκαν, επειδή δεν επιτρέπονται στις αυτόματες απαντήσεις"
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Εισαγωγή ${ contactsFragment } και ${ contactsGroupsFragment }"
@@ -3622,7 +3623,7 @@
         "Έγινε επαναφορά της σύνδεσης στο Διαδίκτυο."
       ],
       "Just confirm your selection and we'll do the rest.": [
-        "Απλά επιβεβαίωσε την επιλογή σου και εμείς θα κάνουμε τα υπόλοιπα."
+        "Απλώς επιβεβαιώστε την επιλογή σας και εμείς θα κάνουμε τα υπόλοιπα."
       ],
       "Justify": [
         "Στοίχιση"
@@ -3718,10 +3719,10 @@
         "Νέο"
       ],
       "New to ${ BRAND_NAME }? ${ signupLink }": [
-        "New to ${ BRAND_NAME }? ${ signupLink }"
+        "Νέος στο ${ BRAND_NAME }? ${ signupLink }"
       ],
       "Next you'll need to log in to your Google account and allow us to access your data.": [
-        "Στη συνέχεια, θα πρέπει να συνδεθείτε στον λογαριασμό σας Google και να μας επιτρέψετε να έχουμε πρόσβαση στα δεδομένα σας."
+        "Μετά πρέπει να εισέλθετε στον λογαριασμό σας στο Google και να μας παραχωρήσετε πρόσβαση στα δεδομένα σας."
       ],
       "No action selected": [
         "Δεν έχει επιλεγεί καμία ενέργεια"
@@ -3769,7 +3770,7 @@
         "Μη ορισμένο"
       ],
       "Not your computer? Use a Private Browsing window to sign in. ${ learnMore }": [
-        "Δεν είναι ο υπολογιστής σας; Χρησιμοποιήστε ένα παράθυρο ιδιωτικής περιήγησης για να συνδεθείτε. ${ learnMore }"
+        "Δεν είναι ο υπολογιστής σας; Χρησιμοποιήστε ένα παράθυρο Ιδιωτικής Περιήγησης για είσοδο. ${ learnMore }"
       ],
       "Number of VPN connections which can be assigned to users. Each connected device consumes one VPN connection.": [
         "Αριθμός συνδέσεων VPN που μπορούν να αντιστοιχιστούν στους χρήστες. Κάθε συνδεδεμένη συσκευή καταναλώνει μία σύνδεση VPN."
@@ -3868,7 +3869,7 @@
         "Απαιτείται συνδρομή Plus ή Visionary"
       ],
       "Prevents content from the sender's server from loading without your permission.": [
-        ""
+        "Αποτρέπει τη φόρτωση περιεχομένου από τον διακομιστή του αποστολέα χωρίς την άδειά σας."
       ],
       "Preview": [
         "Προεπισκόπηση"
@@ -3914,7 +3915,7 @@
         "Σε ουρά"
       ],
       "read our two-factor authentication Guide first": [
-        "διαβάστε πρώτα τον Οδηγό μας πιστοποίησης δύο παραγόντων"
+        "διαβάστε πρώτα τον οδηγό ελέγχου ταυτότητας δύο παραγόντων"
       ],
       "Recovery phrase copied to clipboard": [
         "Η φράση ανάκτησης αντιγράφηκε στο πρόχειρο"
@@ -4031,7 +4032,7 @@
         "Αυτό μπορεί να πάρει μερικά δευτερόλεπτα ή μερικά λεπτά, αναλόγως της συσκευής σας"
       ],
       "This email address will only be used for recovery purposes.": [
-        "Αυτή η διεύθυνση ηλεκτρονικού ταχυδρομείου θα χρησιμοποιηθεί μόνο για σκοπούς ανάκτησης."
+        "Αυτή η διεύθυνση θα χρησιμοποιηθεί μόνο για σκοπούς ανάκτησης."
       ],
       "This feature is intended for advanced users only. After deleting this key, you will NOT be able to decrypt any message that has been encrypted with it. It may lead to data loss.": [
         "Αυτή η δυνατότητα προορίζεται μόνο για προχωρημένους χρήστες. Μετά τη διαγραφή αυτού του κλειδιού, ΔΕΝ θα είστε σε θέση να αποκρυπτογραφήσετε οποιοδήποτε μήνυμα έχει κρυπτογραφηθεί με αυτό. Μπορεί να οδηγήσει σε απώλεια δεδομένων."
@@ -4070,7 +4071,7 @@
         "Αυτό θα διαγράψει οριστικά το λογαριασμό σας και όλα τα δεδομένα του. Δεν θα μπορέσετε να επανενεργοποιήσετε αυτόν τον λογαριασμό."
       ],
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
-        "Αυτό θα αντικαταστήσει τον προσωρινό κωδικό πρόσβασής σας. Θα τον χρησιμοποιήσετε για να αποκτήσετε πρόσβαση στον λογαριασμό σας ${ BRAND_NAME } στο μέλλον."
+        "Αυτό θα αντικαταστήσει τον προσωρινό κωδικό πρόσβασης σας. Στο εξής θα τον χρησιμοποιείτε για την πρόσβαση στον λογαριασμό σας στο ${ BRAND_NAME }."
       ],
       "This wizard will enable Two-Factor Authentication (2FA) on your Proton account. Two-factor authentication will make your Proton account more secure so we recommend enabling it.": [
         "Αυτός ο οδηγός θα ενεργοποιήσει τον έλεγχο ταυτότητας δύο παραγόντων (2FA) στον λογαριασμό σας Proton. Ο έλεγχος ταυτότητας δύο παραγόντων (2FA) θα κάνει τον λογαριασμό σας Proton πιο ασφαλή, γι αυτό συνιστούμε να τον ενεργοποιήσετε."
@@ -4085,7 +4086,7 @@
         "Για επιβεβαίωση, παρακαλώ εισάγετε το όνομα του χρήστη που θέλετε να διαγράψετε."
       ],
       "to continue to ${ toAppName }": [
-        "να συνεχίσετε στο ${ toAppName }"
+        "για συνέχιση στο ${ toAppName }"
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Για την καταπολέμηση των ανεπιθύμητων μηνυμάτων και της κατάχρησης, επαληθεύστε ότι είστε άνθρωποι."
@@ -4229,7 +4230,7 @@
         "Οι προβολές εβδομάδας και μήνα ισχύουν μόνο για την επιφάνεια εργασίας."
       ],
       "What do you want to import from your Google account?": [
-        "Τι θέλετε να εισαγάγετε από τον λογαριασμό σας Google;"
+        "Τι θέλετε να εισάγετε από τον λογαριασμό σας στο Google;"
       ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "Όταν είναι απενεργοποιημένο, εμποδίζει τη φόρτωση αρχείων εικόνας στη συσκευή σας εν αγνοία σας."
@@ -4415,7 +4416,7 @@
         "Η διεύθυνση email ανάκτησης:"
       ],
       "Your recovery phrase": [
-        "Η φράση ανάκτησής σας"
+        "Η φράση ανάκτησης σας"
       ],
       "Your recovery phrase is a series of 12 words in a specific order.": [
         "Η φράση ανάκτησης είναι 12 λέξεις με συγκεκριμένη σειρά."
@@ -4809,8 +4810,8 @@
         "${ n } διαθέσιμες συνδέσεις VPN"
       ],
       "${ UsedAddresses } of ${ MaxAddresses } email address": [
-        "${ UsedAddresses } από ${ MaxAddresses } διεύθυνση ηλεκτρονικού ταχυδρομείου",
-        "${ UsedAddresses } από ${ MaxAddresses } διευθύνσεων ηλεκτρονικού ταχυδρομείου"
+        "${ UsedAddresses } από ${ MaxAddresses } διεύθυνση email",
+        "${ UsedAddresses } από ${ MaxAddresses } διευθύνσεων email"
       ],
       "${ UsedDomains } of ${ MaxDomains } custom domain": [
         "${ UsedDomains } από ${ MaxDomains } προσαρμοσμένος τομέας",
@@ -4977,10 +4978,10 @@
         "Θα μπορούσατε να μας γνωστοποιήσετε τον πάροχο;"
       ],
       "Could you please specify which streaming service?": [
-        "Θα μπορούσατε να μας γνωστοποιήσετε την υπηρεσία μετάδοσης;"
+        "Θα μπορούσατε να μας γνωστοποιήσετε την υπηρεσία streaming;"
       ],
       "Could you please specify?": [
-        "Θα μπορούσατε να συγκεκριμενοποιήσετε;"
+        "Θα μπορούσατε να προσδιορίσετε;"
       ],
       "Country": [
         "Χώρα"
@@ -5067,7 +5068,7 @@
         "Διεύθυνση email"
       ],
       "Email or username": [
-        "E-mail ή όνομα χρήστη"
+        "Διεύθυνση ή όνομα χρήστη"
       ],
       "Emails": [
         "Μηνύματα"
@@ -5520,13 +5521,13 @@
         "Η διεύθυνση URL του ημερολογίου σας"
       ],
       "Your calendar URL label": [
-        "Η ετικέτα της διεύθυνσης URL του ημερολογίου σας"
+        "Η ετικέτα διεύθυνσης URL του ημερολογίου σας"
       ],
       "Your password (admin)": [
         "Ο κωδικός σας (διαχειριστής)"
       ],
       "Your recovery phrase": [
-        "Η φράση ανάκτησής σας"
+        "Η φράση ανάκτησης σας"
       ],
       "ZIP": [
         "T.K"
@@ -5674,13 +5675,13 @@
         "κάντε κλικ εδώ"
       ],
       "Common sign in issues": [
-        "Συνήθη προβλήματα σύνδεσης"
+        "Συνήθη προβλήματα εισόδου"
       ],
       "Common sign up issues": [
         "Συνηθισμένα ζητήματα εγγραφής"
       ],
       "Create an account": [
-        "Δημιουργήστε νέο λογαριασμό"
+        "Δημιουργία λογαριασμού"
       ],
       "Forgot username?": [
         "Ξεχάσατε το όνομα χρήστη;"
@@ -5689,7 +5690,7 @@
         "Γενικά"
       ],
       "Go to subscription plans": [
-        "Μεταβείτε σε πλάνα συνδρομής"
+        "Μεταβείτε στα προγράμματα συνδρομής"
       ],
       "Learn more": [
         "Μάθετε περισσότερα"
@@ -5740,7 +5741,7 @@
         "Γίνεται σύνδεση με τον πάροχο ηλεκτρονικού ταχυδρομείου σας"
       ],
       "Creating new calendars": [
-        "Δημιουργία νέων ημερολόγιων"
+        "Γίνεται δημιουργία νέων ημερολόγιων"
       ],
       "Gathering your data": [
         "Γίνεται συγκέντρωση των δεδομένων σας"
@@ -6400,7 +6401,7 @@
         "Φόρτωση περιεχομένου μέσω ενδιάμεσου (συστήνεται)"
       ],
       "Load content via proxy and store as attachments": [
-        "Φόρτωση περιεχομένου μέσω ενδιάμεσου και αποθήκευση ως συνημμένου"
+        "Φόρτωση περιεχομένου μέσω διαμεσολαβητή και αποθήκευση ως συνημμένου"
       ]
     },
     "OS compatibility": {
@@ -7008,7 +7009,7 @@
         "Χρησιμοποιώντας αυτόν τον σύνδεσμο, η Google θα αλλάξει το ημερολόγιο που εγγράφεστε σε κοινό"
       ],
       "This link might be wrong": [
-        "Αυτός ο σύνδεσμος μπορεί να είναι λάθος"
+        "Αυτός ο σύνδεσμος ενδέχεται να είναι λανθασμένος"
       ]
     },
     "Subscribed calendar section description": {
@@ -7068,8 +7069,8 @@
       "Deleting original messages": [
         "Γίνεται διαγραφή αρχικών μηνυμάτων"
       ],
-      "DMARC value copied to clipboard!": [
-        "Η τιμή DMARC αντιγράφηκε στο πρόχειρο!"
+      "DMARC value copied to clipboard": [
+        "Η τιμή DMARC αντιγράφηκε στο πρόχειρο"
       ],
       "Domain verified": [
         "Ο τομέας επαληθεύτηκε"
@@ -7084,10 +7085,10 @@
         "Εφαρμόστηκε ο κωδικός δώρου"
       ],
       "If you entered a valid recovery email we will send you an email with your usernames in the next minute.": [
-        "Αν εισαγάγατε ένα έγκυρο email ανάκτησης θα σας στείλουμε ένα email με τα ονόματα χρηστών σας στο επόμενο λεπτό."
+        "Αν έχετε εισάγει ένα έγκυρο email ανάκτησης θα σας στείλουμε ένα email με τα ονόματα χρηστών σας στο επόμενο λεπτό."
       ],
       "If you entered a valid recovery phone we will send you an sms with your usernames in the next minute.": [
-        "Αν εισαγάγατε ένα έγκυρο τηλέφωνο ανάκτησης θα σας στείλουμε ένα sms με τα ονόματα χρήστη σας το επόμενο λεπτό."
+        "Αν έχετε εισάγει ένα έγκυρο τηλέφωνο ανάκτησης θα σας στείλουμε ένα sms με τα ονόματα χρήστη σας το επόμενο λεπτό."
       ],
       "Import record deleted": [
         "Η εισαγωγή εγγραφής διαγράφηκε"
@@ -7132,7 +7133,7 @@
         "Η προτίμηση αποθηκεύτηκε"
       ],
       "Premium address created": [
-        "Κορυφαία διεύθυνση δημιουργήθηκε"
+        "Δημιουργήθηκε Premium διεύθυνση"
       ],
       "Resuming import": [
         "Γίνεται συνέχιση εισαγωγής"
@@ -7143,8 +7144,8 @@
       "Sessions revoked": [
         "Οι συνεδρίες ανακλήθηκαν"
       ],
-      "SPF value copied to clipboard!": [
-        "Η τιμή SPF αντιγράφηκε στο πρόχειρο!"
+      "SPF value copied to clipboard": [
+        "Η τιμή SPF αντιγράφηκε στο πρόχειρο"
       ],
       "User created": [
         "Ο χρήστης δημιουργήθηκε"
@@ -7152,11 +7153,11 @@
       "User updated": [
         "Ο χρήστης ενημερώθηκε"
       ],
-      "Value copied to clipboard!": [
-        "Η τιμή αντιγράφηκε στο πρόχειρο!"
+      "Value copied to clipboard": [
+        "Η τιμή αντιγράφηκε στο πρόχειρο"
       ],
-      "Verification code copied to clipboard!": [
-        "Ο κωδικός επαλήθευσης αντιγράφηκε στο πρόχειρο!"
+      "Verification code copied to clipboard": [
+        "Ο κωδικός επαλήθευσης αντιγράφηκε στο πρόχειρο"
       ],
       "Verification successful": [
         "Επιτυχία επαλήθευσης"
@@ -7486,6 +7487,9 @@
       "Contacts": [
         "Επαφές"
       ],
+      "Continue with partial import?": [
+        "Συνέχιση με μερική εισαγωγή;"
+      ],
       "Coupon discount": [
         "Έκπτωση κουπονιού"
       ],
@@ -7690,6 +7694,10 @@
       "Import & export": [
         "Εισαγωγή & εξαγωγή"
       ],
+      "Import as simple event?": [
+        "Εισαγωγή ως απλή εκδήλωση;",
+        "Εισαγωγή ως απλές εκδηλώσεις;"
+      ],
       "Import Assistant": [
         "Βοηθός Εισαγωγής"
       ],
@@ -7698,6 +7706,9 @@
       ],
       "Import events": [
         "Εισαγωγή εκδηλώσεων"
+      ],
+      "Import failed": [
+        "Αποτυχία εισαγωγής"
       ],
       "Import groups": [
         "Εισαγωγή ομάδων"
@@ -8517,7 +8528,7 @@
         "Οι αναφορές δεν είναι κρυπτογραφημένες από άκρο σε άκρο, παρακαλούμε μην στέλνετε ευαίσθητες πληροφορίες."
       ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
-        ""
+        "Οι ρυθμίσεις ημερομηνίας και ώρας στη συσκευή σας είναι εκτός συγχρονισμού. ${ learnMore }"
       ],
       "This action will ${ boldWarning }. You will not be able to recover the messages on ${ domain }.": [
         "Αυτή η ενέργεια θα ${ boldWarning }. Δεν θα είστε σε θέση να ανακτήσετε τα μηνύματα στο ${ domain }."
@@ -8554,7 +8565,7 @@
     },
     "Weak personal key warning": {
       "This key no longer meets our security standards. We suggest you mark it as obsolete and generate a new key.": [
-        ""
+        "Αυτό το κλειδί δεν πληρεί πλέον τα πρότυπα ασφαλείας μας. Σας συστήνουμε τη σήμανσή του ως παρωχημένου και τη δημιουργία νέου κλειδιού."
       ]
     },
     "Weekly recurring event, frequency": {

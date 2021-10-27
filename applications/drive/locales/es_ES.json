@@ -147,7 +147,7 @@
         ""
       ],
       "Customize": [
-        ""
+        "Personalizar"
       ],
       "Decrease": [
         "Reducir"
@@ -187,6 +187,9 @@
       "Download": [
         "Descargar"
       ],
+      "Drive Locked": [
+        ""
+      ],
       "Edit": [
         "Editar"
       ],
@@ -194,7 +197,7 @@
         "Editar dirección de correo electrónico"
       ],
       "Edit label": [
-        ""
+        "Editar etiqueta"
       ],
       "Edit phone number": [
         "Editar número de teléfono"
@@ -245,13 +248,13 @@
         "Ocultar ajustes PGP avanzados"
       ],
       "Hide folders": [
-        ""
+        "Ocultar carpetas"
       ],
       "Hide info": [
         "Ocultar información"
       ],
       "Hide labels": [
-        ""
+        "Ocultar etiquetas"
       ],
       "I have a question": [
         "Tengo una pregunta"
@@ -365,7 +368,7 @@
         "Mes anterior"
       ],
       "Quit": [
-        ""
+        "Salir"
       ],
       "Re-sign": [
         "Volver a firmar"
@@ -865,13 +868,13 @@
         "El calendario es demasiado grande"
       ],
       "Calendar link is not accessible": [
-        ""
+        "El enlace del calendario no es accesible"
       ],
       "Calendar link is temporarily inaccessible": [
-        ""
+        "El enlace del calendario no está accesible temporalmente"
       ],
       "Calendar link is wrong": [
-        ""
+        "El enlace del calendario es erróneo"
       ],
       "Failed to sync calendar": [
         ""
@@ -1086,7 +1089,7 @@
         "Error de autenticación."
       ],
       "Calendar limit reached": [
-        ""
+        "Se ha alcanzado el límite del calendario"
       ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
         ""
@@ -1097,8 +1100,8 @@
       "Can't validate phone, try again later": [
         "No se ha podido validar el teléfono, inténtalo de nuevo más tarde"
       ],
-      "Checkout expired, please try again.": [
-        "La compra ha caducado, intenta de nuevo."
+      "Checkout expired, please try again": [
+        ""
       ],
       "Contact could not be saved": [
         "No se ha podido guardar el contacto"
@@ -1138,7 +1141,7 @@
         "El archivo no tiene contenido para previsualizar"
       ],
       "Folder name cannot be empty": [
-        ""
+        "El nombre de la carpeta no puede estar vacío"
       ],
       "Image upload failed": [
         "Error al cargar la imagen"
@@ -1177,7 +1180,7 @@
         "Código de verificación no válido"
       ],
       "Label name cannot be empty": [
-        ""
+        "El nombre de la etiqueta no puede estar vacío"
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "",
@@ -1337,7 +1340,7 @@
         "Debes establecer un nombre"
       ],
       "Your browser does not support uploading folders": [
-        ""
+        "Su navegador no soporta la carga de carpetas"
       ],
       "Your import will not be processed.": [
         "Tu importación no será procesada."
@@ -1437,7 +1440,7 @@
     },
     "Filter notification": {
       "${ Label.Name } updated": [
-        ""
+        "${ Label.Name } actualizada"
       ]
     },
     "Free price": {
@@ -1577,16 +1580,16 @@
         "${ appName } necesita tu permiso para ${ enableDesktopNotifications }."
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
-        "",
-        ""
+        "${ calendarsToBeCreatedCount } calendario nuevo",
+        "${ calendarsToBeCreatedCount } calendarios nuevos"
       ],
       "${ calendarsToBeMerged } merged calendar": [
-        "",
-        ""
+        "${ calendarsToBeMerged } calendario combinado",
+        "${ calendarsToBeMerged } calendarios combinados"
       ],
       "${ calendarsToBeMergedCount } merged calendar": [
-        "",
-        ""
+        "${ calendarsToBeMergedCount } calendario combinado",
+        "${ calendarsToBeMergedCount } calendarios combinados"
       ],
       "${ canceledCount } Canceled": [
         "${ canceledCount } cancelado",
@@ -1642,12 +1645,12 @@
         "${ namesWithoutLast } y ${ nameOfLast }"
       ],
       "${ numContactGroups } contact group": [
-        "",
-        ""
+        "${ numContactGroups } grupo de contactos",
+        "${ numContactGroups } grupos de contactos"
       ],
       "${ numContacts } contact": [
-        "",
-        ""
+        "${ numContacts } contacto",
+        "${ numContacts } contactos"
       ],
       "${ pausedCount } Paused": [
         "${ pausedCount } pausado",
@@ -1667,12 +1670,12 @@
         ""
       ],
       "${ selectedFoldersCount } folder selected": [
-        "",
-        ""
+        "${ selectedFoldersCount } carpeta seleccionada",
+        "${ selectedFoldersCount } carpetas seleccionadas"
       ],
       "${ selectedFoldersCount } label selected": [
-        "",
-        ""
+        "${ selectedFoldersCount } etiqueta seleccionada",
+        "${ selectedFoldersCount } etiquetas seleccionadas"
       ],
       "${ speed }/s": [
         "${ speed }/s"
@@ -1682,10 +1685,14 @@
         "${ updated } contactos actualizados con éxito."
       ],
       "${ uploadName } already exists in this location.": [
-        ""
+        "${ uploadName } ya existe en esta ubicación."
       ],
       "${ vpnAppName } Free": [
         "${ vpnAppName } Gratuito"
+      ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } miembro)",
+        "(${ memberCount } miembros)"
       ],
       "(Mail + VPN)": [
         "(Correo + VPN)"
@@ -1710,10 +1717,10 @@
         "Una Internet libre y sin censura debería estar disponible para todos."
       ],
       "A number will be added to the filename": [
-        ""
+        "Se añadirá un número al nombre del archivo"
       ],
       "A number will be added to the folder name": [
-        ""
+        "Se añadirá un número al nombre de la carpeta"
       ],
       "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
         "Accede a contenidos bloqueados, como redes sociales, noticias, Wikipedia, YouTube, y muchos otros, sin importar dónde estés."
@@ -1753,6 +1760,9 @@
       "Amount below minimum (${ amount }).": [
         "Cantidad por debajo del mínimo (${ amount })."
       ],
+      "An active recovery file": [
+        "Un archivo de recuperación activo"
+      ],
       "and": [
         ""
       ],
@@ -1768,6 +1778,9 @@
       ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "La navegación básica y las acciones siguen estando disponibles independientemente de que los atajos de teclado estén habilitados o no en los ajustes."
+      ],
+      "Because ${ appName } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
+        "Como ${ appName } está cifrado de extremo a extremo, no podemos acceder o descifrar tus archivos por ti. Para desbloquear su unidad después de un restablecimiento de la contraseña, debe tener uno de los siguientes:"
       ],
       "Billed as ${ billedPrice } every 2 years": [
         "Facturado como ${ billedPrice } cada 2 años"
@@ -1820,6 +1833,9 @@
       "Connections": [
         "Conexiones"
       ],
+      "Continue using ${ appName } and unlock drive later": [
+        "Continúa usando ${ appName } y desbloquea la unidad más tarde"
+      ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "",
         ""
@@ -1847,6 +1863,10 @@
       ],
       "Creating share": [
         ""
+      ],
+      "Delete drive": [
+        "Borrar la unidad",
+        "Borrar unidades"
       ],
       "Discount applied to your subscription with coupon ${ code }": [
         "Descuento aplicado a tu suscripción con el cupón ${ code }"
@@ -1944,6 +1964,9 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Si no encuentras el correo electrónico en tu bandeja de entrada, por favor, comprueba tu carpeta de spam."
       ],
+      "If you have one of these, continue to Proton account setting to\ncontinue the unblock process.": [
+        "Si tiene uno de estos, continúe con la configuración de la cuenta de Proton para continuar con el proceso de desbloqueo."
+      ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         ""
       ],
@@ -1985,7 +2008,7 @@
         "Huella digital de la clave"
       ],
       "Large imports can take several days.": [
-        ""
+        "Las importaciones grandes pueden tardar varios días."
       ],
       "Learn more": [
         "Más información"
@@ -2027,7 +2050,7 @@
         "Problema de red"
       ],
       "New": [
-        ""
+        "Nuevo"
       ],
       "Next you'll need to log in to your Google account and allow us to access your data.": [
         ""
@@ -2063,13 +2086,16 @@
         "No personalizable"
       ],
       "Note: Data may still be available locally on devices where you have installed ${ appName }.": [
-        ""
+        "Nota: Los datos pueden seguir estando disponibles localmente en los dispositivos en los que hayas instalado ${ appName }."
       ],
       "Number of VPN connections which can be assigned to users. Each connected device consumes one VPN connection.": [
         "Número de conexiones VPN que se pueden asignar a los usuarios. Cada dispositivo conectado consume una conexión VPN."
       ],
       "of": [
         "de"
+      ],
+      "One of your encrypted drives is locked. This is most likely due to a recent password reset.${ BrElement }\n${ BrElement }\n${ questionText }": [
+        "Una de sus unidades encriptadas está bloqueada. Lo más probable es que se deba a un reciente restablecimiento de la contraseña.${ BrElement }\n${ BrElement }\n${ questionText }"
       ],
       "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
         "Cambia estos ajustes sólo si estás usando PGP con destinatarios que no sean de ProtonMail."
@@ -2085,6 +2111,9 @@
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Los pagos están protegidos con cifrado TLS y por las leyes de privacidad suizas."
+      ],
+      "Permanently delete all files in your drive": [
+        "Borra permanentemente todos los archivos de tu disco"
       ],
       "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
         "PGP/Inline solo es compatible con el formato de texto plano. Ten en cuenta que ProtonMail siempre firma los mensajes cifrados."
@@ -2183,8 +2212,8 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Como eres un usuario leal, tu cuenta tiene habilitadas características adicionales."
       ],
-      "Some of your files are no longer accessible. Restore the access to your files. ${ startRecoveryButton }": [
-        "Algunos de tus archivos ya no son accesibles. Restaura el acceso a tus archivos. ${ startRecoveryButton }"
+      "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
+        "Algunos de tus archivos ya no son accesibles. Restablece el acceso a tus archivos. ${ StartRecoveryButton }"
       ],
       "Something went wrong, please try again later.": [
         "Inténtalo de nuevo más tarde."
@@ -2274,6 +2303,9 @@
       "Trash": [
         "Papelera"
       ],
+      "Unlock drive to recover files": [
+        "Desbloquear la unidad para recuperar los archivos"
+      ],
       "Unsupported file": [
         "Archivo no soportado"
       ],
@@ -2321,6 +2353,9 @@
       ],
       "What do you want to import from your Google account?": [
         ""
+      ],
+      "What would you like to do?": [
+        "¿Qué te gustaría hacer?"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "¿Te gustaría recibir un nuevo código de verificación o utilizar un método de verificación alternativo?"
@@ -2409,14 +2444,20 @@
       "Your file is being downloaded.": [
         "Tu archivo se está descargando."
       ],
-      "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ mailSettingsLink }": [
-        "Tus archivos ya no son accesibles debido a un restablecimiento de contraseña. Vuelve a subir la clave de cifrado antigua para recuperar el acceso. ${ mailSettingsLink }"
+      "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ KeyReactivationButton }": [
+        "Sus archivos ya no son accesibles debido a un restablecimiento de la contraseña. Vuelva a cargar la antigua clave de cifrado para recuperar el acceso. ${ KeyReactivationButton }"
       ],
       "Your files will be encrypted and then saved.": [
         "Tus archivos serán cifrados y posteriormente guardados."
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Tu número de teléfono sólo se utilizará para esta verificación única."
+      ],
+      "Your previous password": [
+        "Su contraseña anterior"
+      ],
+      "Your previous recovery phrase": [
+        "Su frase de recuperación anterior"
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "Tu cuenta de Proton está actualmente en espera. Para continuar usando tu cuenta, por favor abona cualquier factura atrasada."
@@ -2710,7 +2751,7 @@
         "Cantidad de BTC:"
       ],
       "Calendar": [
-        ""
+        "Calendario"
       ],
       "Cancel": [
         "Cancelar"
@@ -2734,7 +2775,7 @@
         "Completado"
       ],
       "Contacts": [
-        ""
+        "Contactos"
       ],
       "Copy": [
         "Copiar"
@@ -2744,6 +2785,10 @@
       ],
       "CVV code": [
         "Código CVV"
+      ],
+      "Delete Drive?": [
+        "¿Borrar la unidad?",
+        "¿Borrar unidades?"
       ],
       "Display name": [
         "Nombre a mostrar"
@@ -2803,7 +2848,7 @@
         "Nombre de la carpeta"
       ],
       "From: ${ importedEmail }": [
-        ""
+        "De: ${ importedEmail }"
       ],
       "Get your own ${ appName }": [
         "Obtén tu propio ${ appName }"
@@ -2830,25 +2875,25 @@
         "Atajos de teclado"
       ],
       "Label messages as": [
-        ""
+        "Etiquetar mensajes como"
       ],
       "Last 12 months only": [
-        ""
+        "Solo los últimos 12 meses"
       ],
       "Last 3 months only": [
-        ""
+        "Solo los últimos 3 meses"
       ],
       "Last month only": [
-        ""
+        "Solo el último mes"
       ],
       "Mailbox password": [
         "Contraseña del buzón"
       ],
       "Manage folders": [
-        ""
+        "Gestionar carpetas"
       ],
       "Manage labels": [
-        ""
+        "Gestionar etiquetas"
       ],
       "Merge a folder": [
         ""
@@ -2875,7 +2920,7 @@
         "Emisor del pago"
       ],
       "PGP scheme": [
-        ""
+        "Esquema PGP"
       ],
       "Phone number": [
         "Número de teléfono"
@@ -2902,7 +2947,7 @@
         "Estado"
       ],
       "Replace file": [
-        ""
+        "Reemplazar archivo"
       ],
       "Replace folder": [
         "Reemplazar carpeta"
@@ -2952,6 +2997,9 @@
       "Text": [
         "Texto"
       ],
+      "This will permanently delete all files in your locked drive.": [
+        "Esto eliminará permanentemente todos los archivos en su unidad bloqueada."
+      ],
       "To: ${ emailAddress }": [
         ""
       ],
@@ -2966,6 +3014,15 @@
       ],
       "Unknown file": [
         "Archivo desconocido"
+      ],
+      "Unlock Drive": [
+        "Desbloquear la unidad"
+      ],
+      "Unlock drive (recommended)": [
+        "Desbloquear la unidad (recomendado)"
+      ],
+      "Unlock later": [
+        "Desbloquear más tarde"
       ],
       "Up to ${ parentLinkName }": [
         ""
@@ -2990,6 +3047,9 @@
       ],
       "What happened?": [
         "¿Qué ha ocurrido?"
+      ],
+      "Yes, I want to permanently delete\nmy old files": [
+        "Sí, quiero borrar permanentemente\nmis archivos antiguos"
       ],
       "ZIP": [
         "ZIP"
@@ -3042,15 +3102,15 @@
         ""
       ],
       "Edit folder": [
-        ""
+        "Editar carpeta"
       ],
       "Edit label": [
-        ""
+        "Editar etiqueta"
       ]
     },
     "label/folder notification": {
       "${ Label.Name } created": [
-        ""
+        "${ Label.Name } creada"
       ]
     },
     "Layout mode": {
@@ -3111,7 +3171,7 @@
         ""
       ],
       "Gathering your data": [
-        ""
+        "Obteniendo tus datos"
       ],
       "We're gathering your data from your provider": [
         ""
@@ -3234,10 +3294,10 @@
         ""
       ],
       "Folder name": [
-        ""
+        "Nombre de la carpeta"
       ],
       "Label name": [
-        ""
+        "Nombre de la etiqueta"
       ]
     },
     "Notification": {
@@ -3256,9 +3316,9 @@
       "\"${ firstItemName }\" restored from trash": [
         "\"${ firstItemName }\" restaurado de la papelera"
       ],
-      "${ deletedCount } link to your file was deleted.": [
-        "${ deletedCount } enlace a tu archivo ha sido eliminado.",
-        "${ deletedCount } enlaces a tus archivos han sido eliminados."
+      "${ deletedCount } link to your file was deleted": [
+        "",
+        ""
       ],
       "${ deletedItemsCount } file deleted permanently from trash": [
         "${ deletedItemsCount } archivo eliminado permanentemente de la papelera",
@@ -3272,9 +3332,9 @@
         "${ deletedItemsCount } elemento eliminado permanentemente de la papelera",
         "${ deletedItemsCount } elementos eliminados permanentemente de la papelera"
       ],
-      "${ failedCount } link to your file failed to be deleted.": [
-        "No se ha podido eliminar ${ failedCount } enlace a tu archivo.",
-        "No se han podido eliminar ${ failedCount } enlaces a tus archivos."
+      "${ failedCount } link to your file failed to be deleted": [
+        "",
+        ""
       ],
       "${ failedMovesCount } file failed to be moved": [
         "${ failedMovesCount } archivo no se pudo mover",
@@ -3379,14 +3439,17 @@
       "Not enough space to upload ${ formattedTotal }": [
         ""
       ],
-      "The link to your file failed to be deleted.": [
-        "No se ha podido eliminar el enlace a tu archivo."
+      "The link to your file failed to be deleted": [
+        ""
       ],
-      "The link to your file was deleted.": [
-        "El enlace a tu archivo ha sido eliminado."
+      "The link to your file was deleted": [
+        ""
       ],
-      "Your settings have been changed successfully.": [
-        "Tus ajustes se han cambiado satisfactoriamente."
+      "Your old files will be deleted in 72 hours": [
+        "Tus archivos antiguos se borrarán en 72 horas"
+      ],
+      "Your settings have been changed successfully": [
+        ""
       ]
     },
     "Onboarding Proton": {
@@ -3470,7 +3533,7 @@
     },
     "Option group label": {
       "Create new calendar": [
-        ""
+        "Crear un calendario nuevo"
       ],
       "Merge with calendar": [
         ""
@@ -3810,11 +3873,11 @@
       "Preferences saved": [
         "Preferencias guardadas"
       ],
-      "Recovery has started.": [
-        "La recuperación ha comenzado."
+      "Recovery has started": [
+        ""
       ],
-      "The link to your file was successfully copied.": [
-        "El enlace a tu archivo se ha copiado correctamente."
+      "The link to your file was successfully copied": [
+        ""
       ],
       "Verification successful": [
         "Verificación completada con éxito"
@@ -3822,8 +3885,8 @@
       "You have successfully unsubscribed": [
         "Ha cancelado su suscripción satisfactoriamente"
       ],
-      "Your files were successfully recovered to \"My files\".": [
-        "Tus archivos fueron recuperados con éxito a \"Mis archivos\"."
+      "Your files were successfully recovered to \"My files\"": [
+        ""
       ]
     },
     "Suffix for price": {
@@ -3920,13 +3983,13 @@
         ""
       ],
       "the last 12 months": [
-        ""
+        "los últimos 12 meses"
       ],
       "the last 3 months": [
-        ""
+        "los últimos 3 meses"
       ],
       "the last month": [
-        ""
+        "el último mes"
       ]
     },
     "Time unit": {
@@ -4045,13 +4108,13 @@
         "Plan actual"
       ],
       "Customize and confirm": [
-        ""
+        "Personalizar y confirmar"
       ],
       "Customize calendar import": [
-        ""
+        "Personaliza la importación del calendario"
       ],
       "Customize your mail import": [
-        ""
+        "Personaliza la importación del correo"
       ],
       "Customize your plan": [
         "Personaliza tu plan"
@@ -4083,7 +4146,7 @@
         "¿Descartar los cambios?"
       ],
       "Downgrade account": [
-        ""
+        "Degradar cuenta"
       ],
       "Download canceled": [
         "Descarga cancelada"
@@ -4299,7 +4362,7 @@
         "Selecciona la hora de expiración del enlace"
       ],
       "Select what to import": [
-        ""
+        "Selecciona qué importar"
       ],
       "Settings": [
         "Configuración"
@@ -4381,6 +4444,11 @@
       ],
       "ZIP / postal code": [
         "CP / código postal"
+      ]
+    },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "Hoy"
       ]
     },
     "Tooltip": {
@@ -4639,6 +4707,9 @@
       ],
       "The contact failed to load.": [
         "No se ha podido cargar el contacto."
+      ],
+      "The date and time settings on your device are out of sync. ${ learnMore }": [
+        "La configuración de la fecha y la hora de tu dispositivo no están sincronizadas. ${ learnMore }"
       ],
       "The decryption of the encrypted content failed.": [
         "El descifrado del contenido cifrado ha fallado."

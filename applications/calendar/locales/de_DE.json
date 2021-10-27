@@ -173,7 +173,7 @@
         "E-Mail-Adresse bearbeiten"
       ],
       "Edit label": [
-        ""
+        "Kategorie bearbeiten"
       ],
       "Edit phone number": [
         "Rufnummer bearbeiten"
@@ -1141,8 +1141,8 @@
       ]
     },
     "Disabled calendar name suffix": {
-      "disabled": [
-        "deaktiviert"
+      "Disabled": [
+        "Deaktiviert"
       ]
     },
     "Disabled calendar tooltip": {
@@ -1301,7 +1301,7 @@
         "Privater Hauptschlüssel des Kalenders wird nicht entschlüsselt"
       ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
-        ""
+        "Es können keine neuen Kalender für alle zu importierenden Kalender erstellt werden, da die Anzahl der persönlichen Kalender beschränkt ist."
       ],
       "Can't validate email, try again later": [
         "E-Mail-Adresse konnte nicht bestätigt werden. Bitte versuchen Sie es später noch einmal."
@@ -1312,8 +1312,8 @@
       "Cancellation failed to be sent": [
         "Absage konnte nicht gesendet werden"
       ],
-      "Checkout expired, please try again.": [
-        "Kaufabwicklung abgelaufen. Bitte versuchen Sie es noch einmal."
+      "Checkout expired, please try again": [
+        "Kaufabwicklung abgelaufen. Bitte versuchen Sie es noch einmal"
       ],
       "Contact could not be saved": [
         "Kontakt konnte nicht gespeichert werden"
@@ -1331,8 +1331,8 @@
         "Entschlüsselungsfehler: Die Entschlüsselung des Inhalts dieses Ereignisses ist fehlgeschlagen."
       ],
       "Deselect at least ${ calendarToFixCount } calendar or": [
-        "",
-        ""
+        "Mindestens ${ calendarToFixCount } Kalender abwählen oder",
+        "Mindestens ${ calendarToFixCount } Kalender abwählen oder"
       ],
       "Email address disabled": [
         "E‐Mail‐Adresse deaktiviert"
@@ -1365,7 +1365,7 @@
         "Abrufen des ursprünglichen Serienelements fehlgeschlagen"
       ],
       "Folder name cannot be empty": [
-        ""
+        "Bitte Namen des Ordners angeben"
       ],
       "Image upload failed": [
         "Das Hochladen der Grafik ist fehlgeschlagen"
@@ -1419,7 +1419,7 @@
         "Ereignisse können nur zwischen ${ minDateString } und ${ maxDatumString } verschoben werden."
       ],
       "Label name cannot be empty": [
-        ""
+        "Name der Kategorie muss angegeben werden"
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "",
@@ -1534,10 +1534,10 @@
         "Der von Ihnen verwendete Browser erlaubt es nicht, die Zahlung vollständig zu autorisieren. Bitte verwenden Sie einen anderen Browser oder melden Sie sich über einen Computer an."
       ],
       "The folder name is too long. Please choose a different name.": [
-        ""
+        "Der Name des Ordners ist zu lang. Bitte wählen Sie einen kürzeren Namen."
       ],
       "The label name is too long. Please choose a different name.": [
-        ""
+        "Der Name der Kategorie ist zu lang. Bitte wählen Sie einen kürzeren Namen."
       ],
       "The minimum amount of credit that can be added is ${ _price }": [
         "Der Mindestbetrag, der hinzugefügt werden kann, beträgt ${ _price }"
@@ -1564,10 +1564,10 @@
         "In dieses Feld müssen mindestens ${ minimumLength } Zeichen eingegeben werden."
       ],
       "This folder name is not available. Please choose a different name": [
-        ""
+        "Dieser Ordnername ist nicht verfügbar. Bitte wähle einen anderen Namen"
       ],
       "This label name is not available. Please choose a different name": [
-        ""
+        "Dieser Kategoriename ist nicht verfügbar. Bitte wählen Sie einen anderen Namen"
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "Diese Nachricht kann einige Internetadressen enthalten, die von Ihrem aktuellen Browser nicht ordnungsgemäß geöffnet werden können"

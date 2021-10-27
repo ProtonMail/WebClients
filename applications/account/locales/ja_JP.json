@@ -31,11 +31,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } ショップ"
       ],
-      "Activate": [
-        "有効化"
-      ],
       "activate": [
         "アクティベート"
+      ],
+      "Activate": [
+        "有効化"
       ],
       "Activate ${ Name }@pm.me": [
         "${ Name }@pm.me を有効化"
@@ -290,7 +290,7 @@
         "ダウングレード"
       ],
       "Downgrade account": [
-        ""
+        "アカウントをダウングレード"
       ],
       "Downgrade to ${ BRAND_NAME } ${ downgradedPlanName }": [
         ""
@@ -384,6 +384,9 @@
       ],
       "Import contacts": [
         "連絡先をインポート"
+      ],
+      "Import from .csv or vCard": [
+        ""
       ],
       "Import from .ics": [
         ""
@@ -657,6 +660,9 @@
       ],
       "Sign out all accounts": [
         "すべてのアカウントからサインアウト"
+      ],
+      "Signing in": [
+        "サインイン中"
       ],
       "Signing out": [
         "サインアウトしています"
@@ -1766,8 +1772,8 @@
       "Can't validate phone, try again later": [
         "電話番号の検証ができませんでした。再度お試しください"
       ],
-      "Checkout expired, please try again.": [
-        "チェックアウトの有効期限が切れました。もう一度やり直してください。"
+      "Checkout expired, please try again": [
+        ""
       ],
       "Condition incomplete": [
         "条件が不完全です"
@@ -1889,6 +1895,9 @@
       "Not a valid number": [
         "無効な番号です"
       ],
+      "Organization key is not decrypted": [
+        ""
+      ],
       "Organization key is not decrypted.": [
         "組織の鍵が復号されていません。"
       ],
@@ -1922,8 +1931,8 @@
       "Please fix the highlighted conflict to proceed.": [
         ""
       ],
-      "Please generate keys before you try to change your password.": [
-        "パスワードを変更する前に鍵を生成してください。"
+      "Please generate keys before you try to change your password": [
+        ""
       ],
       "Please refresh the page.": [
         "ページを更新してください。"
@@ -1937,8 +1946,8 @@
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         "再認証を行い、権限が正しく設定されていることを確認してください。"
       ],
-      "Please upgrade to a Professional plan with more than 1 user, or a Visionary account, to get multi-user support.": [
-        "マルチユーザー対応が必要な場合、Visionaryプランまたは、1ユーザー以上を追加してProfessionalプランにアップグレードしてください。"
+      "Please upgrade to a Professional plan with more than 1 user, or a Visionary account, to get multi-user support": [
+        ""
       ],
       "Please upgrade to a Professional plan with more than 1 user, or a Visionary account, to manage multiple users.": [
         "複数ユーザーで利用する場合はPROFESSIONALプランもしくは、VISIONARYプランにアップグレードしてください。"
@@ -2005,6 +2014,9 @@
       ],
       "The minimum payment we accept is ${ _price2 }": [
         "最低 ${ _price2 } より受け付けています。"
+      ],
+      "The organization key must be activated first": [
+        ""
       ],
       "The organization key must be activated first.": [
         "組織の鍵を最初に有効にする必要があります。"
@@ -2110,10 +2122,10 @@
       "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } events.": [
         ""
       ],
-      "Your file ${ formattedFilename } has no events to be imported.": [
+      "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         ""
       ],
-      "Your file ${ formattedFilename } is an invitation and cannot be imported.": [
+      "Your file ${ formattedFilename } has no events to be imported.": [
         ""
       ],
       "Your file ${ formattedFilename } is empty.": [
@@ -2657,38 +2669,25 @@
       ]
     },
     "Import calendar warning": {
-      "${ CALENDAR_APP_NAME } does not support ${ forNow }:": [
-        "${ CALENDAR_APP_NAME } は ${ forNow } をサポートしていません。"
-      ],
-      "Attendees": [
-        "参加者"
-      ],
-      "Complex recurring rules": [
-        "複雑な繰り返しルール"
-      ],
-      "Email notifications": [
+      "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
         ""
-      ],
-      "for now": [
-        "現時点"
-      ],
-      "Free-busy time information": [
-        ""
-      ],
-      "Journal entries": [
-        "Journal のエントリー"
-      ],
-      "Non-Gregorian calendars": [
-        "グレゴリオ暦以外のカレンダー"
-      ],
-      "To-do entries": [
-        "To-do のエントリー"
-      ],
-      "Unofficial or custom timezones": [
-        "非公式または独自のタイムゾーン"
       ],
       "vCard versions < 3.0": [
         "vCard バージョン3.0以前"
+      ]
+    },
+    "Import calendar; import invitation": {
+      "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your Proton email address.": [
+        ""
+      ],
+      "This file contains an event invitation:": [
+        ""
+      ],
+      "This file contains an invitation response:": [
+        ""
+      ],
+      "This file contains some data that we cannot import:": [
+        ""
       ]
     },
     "Import contact": {
@@ -2970,16 +2969,16 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         ""
       ],
-      "${ totalEventsDiscarded } out of ${ totalEvents } events will not be imported. Click for details": [
+      "${ totalEventsDiscarded } out of ${ totalEvents } events will not be imported. Expand for details.": [
         ""
       ],
       "No contact can be imported. Click for details": [
         "連絡先をインポートすることはできません。詳細はクリックしてください"
       ],
-      "No event can be imported. Click for details": [
-        "予定をインポートできませんでした。クリックして詳細をご確認ください。"
+      "No event can be imported. Expand for details.": [
+        ""
       ],
-      "Part of your calendar content is not supported and will not be imported": [
+      "Part of your calendar content is not supported and will not be imported.": [
         ""
       ]
     },
@@ -3395,8 +3394,8 @@
       "Done": [
         "完了"
       ],
-      "Done! We sent a code to ${ destination }": [
-        "完了しました! コードを ${ destination } に送信しました。"
+      "Done! We sent a code to ${ destination }.": [
+        ""
       ],
       "Downgrading will terminate any connections to paid ProtonVPN servers.": [
         "ダウングレードすると有料の ProtonVPN サーバーとの接続が終了します。"
@@ -3590,7 +3589,7 @@
       "Image URL": [
         "画像の URL"
       ],
-      "Images have been removed because they are not allowed in auto-reply.": [
+      "Images have been removed because they are not allowed in auto-reply": [
         ""
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
@@ -4086,7 +4085,7 @@
         "2要素認証が無効化されます。"
       ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
-        ""
+        "この操作により、現在の有料サブスクリプションがキャンセルされ、これまでに蓄積されたロイヤルティ特典が失われます。ご利用料金の残高分はアカウントクレジットとして返金されます。"
       ],
       "This will create an encryption key for your organization. 4096-bit keys only work on high performance computers, for most users, we recommend using 2048-bit keys.": [
         "組織用の暗号鍵を作成します。4096ビット鍵は高性能コンピューターでのみ動作します。ほとんどのユーザーには2048ビット鍵の使用をお勧めします。"
@@ -6872,7 +6871,7 @@
         "一般"
       ],
       "Identity & addresses": [
-        ""
+        "ユーザー情報とアドレス"
       ],
       "IMAP/SMTP": [
         "IMAP/SMTP"
@@ -7080,8 +7079,8 @@
       "Deleting original messages": [
         ""
       ],
-      "DMARC value copied to clipboard!": [
-        "DMARC の値がクリップボードにコピーされました!"
+      "DMARC value copied to clipboard": [
+        ""
       ],
       "Domain verified": [
         "ドメインが確認されました"
@@ -7155,8 +7154,8 @@
       "Sessions revoked": [
         "セッションが取り消されました"
       ],
-      "SPF value copied to clipboard!": [
-        "SPF の値がクリップボードにコピーされました!"
+      "SPF value copied to clipboard": [
+        ""
       ],
       "User created": [
         "ユーザーが作成されました。"
@@ -7164,10 +7163,10 @@
       "User updated": [
         "ユーザが更新されました。"
       ],
-      "Value copied to clipboard!": [
-        "値をクリップボードにコピーしました!"
+      "Value copied to clipboard": [
+        ""
       ],
-      "Verification code copied to clipboard!": [
+      "Verification code copied to clipboard": [
         ""
       ],
       "Verification successful": [
@@ -7496,6 +7495,9 @@
       "Contacts": [
         "連絡先"
       ],
+      "Continue with partial import?": [
+        ""
+      ],
       "Coupon discount": [
         "クーポン割引"
       ],
@@ -7593,7 +7595,7 @@
         "ドメイン名"
       ],
       "Downgrade account": [
-        ""
+        "アカウントのダウングレード"
       ],
       "Edit Allow List": [
         "許可リストの編集"
@@ -7689,7 +7691,7 @@
         "人間であることの検証"
       ],
       "Identity & addresses": [
-        ""
+        "ユーザー情報とアドレス"
       ],
       "IMAP/SMTP": [
         "IMAP/SMTP"
@@ -7700,6 +7702,9 @@
       "Import & export": [
         "インポートとエクスポート"
       ],
+      "Import as simple event?": [
+        ""
+      ],
       "Import Assistant": [
         "Import Assistant"
       ],
@@ -7708,6 +7713,9 @@
       ],
       "Import events": [
         "予定のインポート"
+      ],
+      "Import failed": [
+        ""
       ],
       "Import groups": [
         "グループのインポート"

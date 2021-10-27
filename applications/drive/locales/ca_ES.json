@@ -187,6 +187,9 @@
       "Download": [
         "Descarregar"
       ],
+      "Drive Locked": [
+        ""
+      ],
       "Edit": [
         "Editar"
       ],
@@ -1097,8 +1100,8 @@
       "Can't validate phone, try again later": [
         "No es pot validar el telèfon, torneu-ho a provar més tard"
       ],
-      "Checkout expired, please try again.": [
-        "El pagament ha expirat, si us plau probeu de nou."
+      "Checkout expired, please try again": [
+        ""
       ],
       "Contact could not be saved": [
         "El contacte no s'ha pogut desar"
@@ -1646,8 +1649,8 @@
         ""
       ],
       "${ numContacts } contact": [
-        "",
-        ""
+        "${ numContacts } contacte",
+        "${ numContacts } contactes"
       ],
       "${ pausedCount } Paused": [
         "${ pausedCount } Pausat",
@@ -1686,6 +1689,10 @@
       ],
       "${ vpnAppName } Free": [
         "${ vpnAppName } Gratuït"
+      ],
+      "(${ memberCount } member)": [
+        "",
+        ""
       ],
       "(Mail + VPN)": [
         "(Correu + VPN)"
@@ -1753,8 +1760,11 @@
       "Amount below minimum (${ amount }).": [
         "Import inferior al mínim (${ amount })."
       ],
-      "and": [
+      "An active recovery file": [
         ""
+      ],
+      "and": [
+        "i"
       ],
       "Anyone with this link can access your file.": [
         "Qualsevol que tingui aquest enllaç pot accedir al vostre arxiu."
@@ -1768,6 +1778,9 @@
       ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "La navegació bàsica i les accions es mantenen disponibles independentment de que les dreceres de teclat estiguin actives o no a la configuració."
+      ],
+      "Because ${ appName } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
+        ""
       ],
       "Billed as ${ billedPrice } every 2 years": [
         "Facturat com ${ billedPrice } cada 2 anys"
@@ -1820,6 +1833,9 @@
       "Connections": [
         "Connexions"
       ],
+      "Continue using ${ appName } and unlock drive later": [
+        ""
+      ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "",
         ""
@@ -1847,6 +1863,10 @@
       ],
       "Creating share": [
         "Creant la compartició"
+      ],
+      "Delete drive": [
+        "",
+        ""
       ],
       "Discount applied to your subscription with coupon ${ code }": [
         "Descompte aplicat a la vostra subscripció amb un cupó ${ code }"
@@ -1944,6 +1964,9 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Si no trobeu el correu electrònic a la safata d'entrada, comproveu la vostra carpeta de correu brossa."
       ],
+      "If you have one of these, continue to Proton account setting to\ncontinue the unblock process.": [
+        ""
+      ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         ""
       ],
@@ -1955,7 +1978,7 @@
         ""
       ],
       "Import in progress": [
-        ""
+        "Importació en curs"
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         ""
@@ -2071,6 +2094,9 @@
       "of": [
         "de"
       ],
+      "One of your encrypted drives is locked. This is most likely due to a recent password reset.${ BrElement }\n${ BrElement }\n${ questionText }": [
+        ""
+      ],
       "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
         "Canvieu aquestes funcions només si esteu emprant PGP amb destinataris sense ProtonMail."
       ],
@@ -2085,6 +2111,9 @@
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Els pagaments estan protegits amb xifratge TLS i les lleis de privacitat suïsses."
+      ],
+      "Permanently delete all files in your drive": [
+        ""
       ],
       "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
         "PGP/Inline només és compatible amb el format de text net. Tingueu en compte que ProtonMail sempre signa els missatges xifrats."
@@ -2183,8 +2212,8 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Com que sou un usuari fidel, el vostre compte té característiques addicionals activades."
       ],
-      "Some of your files are no longer accessible. Restore the access to your files. ${ startRecoveryButton }": [
-        "Alguns dels vostres arxius ja no són accessibles. Restaureu l'accés als vostres arxius. ${ startRecoveryButton }"
+      "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
+        ""
       ],
       "Something went wrong, please try again later.": [
         "Alguna cosa ha anat malament, siusplau, intenta-ho més tard."
@@ -2274,6 +2303,9 @@
       "Trash": [
         "Paperera"
       ],
+      "Unlock drive to recover files": [
+        ""
+      ],
       "Unsupported file": [
         "Fitxer no compatible"
       ],
@@ -2320,6 +2352,9 @@
         "Què voleu fer?"
       ],
       "What do you want to import from your Google account?": [
+        ""
+      ],
+      "What would you like to do?": [
         ""
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
@@ -2409,14 +2444,20 @@
       "Your file is being downloaded.": [
         "S'està baixant el fitxer."
       ],
-      "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ mailSettingsLink }": [
-        "Els vostres arxius ja no són accessibles a causa d'un restabliment de contrasenya. Torneu a carregar la clau de xifratge antiga per recuperar-ne l'accés. ${ mailSettingsLink }"
+      "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ KeyReactivationButton }": [
+        ""
       ],
       "Your files will be encrypted and then saved.": [
         "Els teus arxius serán cifrats i desats."
       ],
       "Your phone number will only be used for this one-time verification.": [
         "El vostre número de telèfon només s’utilitzarà per a aquesta única verificació."
+      ],
+      "Your previous password": [
+        ""
+      ],
+      "Your previous recovery phrase": [
+        ""
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "Actualment, el vostre compte Proton està en suspensió. Per continuar utilitzant el vostre compte, pagueu qualsevol factura que hagi pendent."
@@ -2745,6 +2786,10 @@
       "CVV code": [
         "Codi CVV"
       ],
+      "Delete Drive?": [
+        "",
+        ""
+      ],
       "Display name": [
         "Mostrar el nom"
       ],
@@ -2952,6 +2997,9 @@
       "Text": [
         "Text"
       ],
+      "This will permanently delete all files in your locked drive.": [
+        ""
+      ],
       "To: ${ emailAddress }": [
         ""
       ],
@@ -2966,6 +3014,15 @@
       ],
       "Unknown file": [
         "Fitxer desconegut"
+      ],
+      "Unlock Drive": [
+        ""
+      ],
+      "Unlock drive (recommended)": [
+        ""
+      ],
+      "Unlock later": [
+        ""
       ],
       "Up to ${ parentLinkName }": [
         "Pujar a ${ parentLinkName }"
@@ -2990,6 +3047,9 @@
       ],
       "What happened?": [
         "Què ha passat?"
+      ],
+      "Yes, I want to permanently delete\nmy old files": [
+        ""
       ],
       "ZIP": [
         "Codi postal"
@@ -3256,9 +3316,9 @@
       "\"${ firstItemName }\" restored from trash": [
         "\"${ firstItemName }\" restaurat de la Paperera"
       ],
-      "${ deletedCount } link to your file was deleted.": [
-        "S'ha suprimit l'enllaç ${ deletedCount } al vostre fitxer.",
-        "S'han suprimit els enllaços ${ deletedCount } als vostre fitxers."
+      "${ deletedCount } link to your file was deleted": [
+        "",
+        ""
       ],
       "${ deletedItemsCount } file deleted permanently from trash": [
         "${ deletedItemsCount } arxiu esborrat permanentment de la Paperera",
@@ -3272,9 +3332,9 @@
         "${ deletedItemsCount } element esborrat permanentment de la Paperera",
         "${ deletedItemsCount } elements esborrats permanentment de la Paperera"
       ],
-      "${ failedCount } link to your file failed to be deleted.": [
-        "No s'ha pogut suprimir l'enllaç ${ failedCount } al fitxer.",
-        "No s'han pogut suprimir els enllaços ${ failedCount } als fitxers."
+      "${ failedCount } link to your file failed to be deleted": [
+        "",
+        ""
       ],
       "${ failedMovesCount } file failed to be moved": [
         "${ failedMovesCount } arxiu ha fallat al moure",
@@ -3379,14 +3439,17 @@
       "Not enough space to upload ${ formattedTotal }": [
         "No hi ha prou espai per carregar ${ formattedTotal }"
       ],
-      "The link to your file failed to be deleted.": [
-        "No s'ha pogut suprimir l'enllaç al fitxer."
+      "The link to your file failed to be deleted": [
+        ""
       ],
-      "The link to your file was deleted.": [
-        "El enllaç al teu fitxer ha estat esborrat."
+      "The link to your file was deleted": [
+        ""
       ],
-      "Your settings have been changed successfully.": [
-        "Les vostres preferències s'han modificat satisfactòriament."
+      "Your old files will be deleted in 72 hours": [
+        ""
+      ],
+      "Your settings have been changed successfully": [
+        ""
       ]
     },
     "Onboarding Proton": {
@@ -3810,11 +3873,11 @@
       "Preferences saved": [
         "Preferències desades"
       ],
-      "Recovery has started.": [
-        "La recuperació ha començat."
+      "Recovery has started": [
+        ""
       ],
-      "The link to your file was successfully copied.": [
-        "El enllaç al seu fitxer s’ha copiat satisfactòriament."
+      "The link to your file was successfully copied": [
+        ""
       ],
       "Verification successful": [
         "Èxit de verificació"
@@ -3822,8 +3885,8 @@
       "You have successfully unsubscribed": [
         "Heu anul·lat la subscripció amb èxit"
       ],
-      "Your files were successfully recovered to \"My files\".": [
-        "Els vostres arxius s'han recuperar satisfactòriament a \"Els meus arxius\"."
+      "Your files were successfully recovered to \"My files\"": [
+        ""
       ]
     },
     "Suffix for price": {
@@ -4383,6 +4446,11 @@
         "Zip/Codi postal"
       ]
     },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        ""
+      ]
+    },
     "Tooltip": {
       "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
         "Accedeix al contingut geobloquejat (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc.) sense importar on sigueu."
@@ -4639,6 +4707,9 @@
       ],
       "The contact failed to load.": [
         "No s'ha pogut carregar el contacte."
+      ],
+      "The date and time settings on your device are out of sync. ${ learnMore }": [
+        ""
       ],
       "The decryption of the encrypted content failed.": [
         "El desxifratge del contingut xifrat ha fallat."
