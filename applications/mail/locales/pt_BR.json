@@ -962,9 +962,6 @@
       "Forwarded": [
         "Encaminhado"
       ],
-      "Has attachments": [
-        "Contém anexos"
-      ],
       "Replied to": [
         "Respondeu para"
       ],
@@ -1884,8 +1881,8 @@
       "Amount below minimum.": [
         "Valor abaixo do mínimo permitido."
       ],
-      "Attachments are limited to 25 MB.": [
-        "Os anexos estão limitados a 25 MB."
+      "Attachments are limited to 25 MB": [
+        ""
       ],
       "Authentication canceled.": [
         "Autenticação cancelada."
@@ -1908,8 +1905,8 @@
       "Can't validate phone, try again later": [
         "Não foi possível validar o telefone, tente novamente mais tarde"
       ],
-      "Checkout expired, please try again.": [
-        "Pedido expirado. Por favor, tente novamente."
+      "Checkout expired, please try again": [
+        ""
       ],
       "Choose a date in the future.": [
         "Escolha uma data futura."
@@ -1930,11 +1927,11 @@
       "Contact signature not verified": [
         "Assinatura do contato não foi verificada"
       ],
-      "Contact your organization’s administrator to resolve this.": [
-        "Entre em contato com o administrador da sua organização para resolver isto."
+      "Contact your organization’s administrator to resolve this": [
+        ""
       ],
-      "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser": [
-        "A pesquisa de conteúdo não pode ser ativada neste navegador. Por favor, sai do modo de navegação privada ou use outro navegador"
+      "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
+        ""
       ],
       "Could not find address ${ email }.": [
         "Não foi possível encontrar o endereço ${ email }."
@@ -1970,14 +1967,14 @@
       "Error in one of the conditions": [
         "Ocorreu um erro em uma das condições"
       ],
-      "Error while saving draft. Please try again": [
-        "Erro ao salvar o rascunho. Tente novamente"
+      "Error while saving draft. Please try again.": [
+        ""
       ],
-      "Error while sending the message. Message is not sent": [
-        "Erro ao enviar a mensagem. A mensagem não foi enviada"
+      "Error while sending the message. Message is not sent.": [
+        ""
       ],
-      "Error while uploading attachments. Message is not sent": [
-        "Erro ao carregar anexos. Mensagem não enviada"
+      "Error while uploading attachments. Message is not sent.": [
+        ""
       ],
       "Failed to encrypt attachment. Please try again.": [
         "Falha na criptografia do anexo. Por favor, tente novamente."
@@ -1989,7 +1986,7 @@
         "Já existe um filtro com este nome"
       ],
       "Folder name cannot be empty": [
-        ""
+        "O nome da pasta não pode estar vazio"
       ],
       "Image upload failed": [
         "Falha no carregamento da imagem"
@@ -2012,8 +2009,8 @@
       "Invalid expiration date": [
         "Data de validade inválida"
       ],
-      "Invalid expiration time.": [
-        "Tempo de expiração inválido."
+      "Invalid expiration time": [
+        ""
       ],
       "Invalid name": [
         "Nome inválido"
@@ -2037,8 +2034,8 @@
       "Message needs to be sent first": [
         "A mensagem precisa ser enviada primeiro"
       ],
-      "Message passwords do not match.": [
-        "As senhas da mensagem não conferem."
+      "Message passwords do not match": [
+        ""
       ],
       "Message processing error.": [
         "Erro no processamento da mensagem."
@@ -2052,8 +2049,8 @@
       "Network error: Please check your connection and try again.": [
         "Erro de conexão: Por favor, verifique sua conexão com a internet e tente novamente."
       ],
-      "No address with keys available to compose a message.": [
-        "Nenhum endereço com chaves disponíveis para compor a mensagem."
+      "No address with keys available to compose a message": [
+        ""
       ],
       "No key retrieved for internal user is valid for sending": [
         "Nenhuma chave recuperada para o usuário interno é válida para o envio"
@@ -2062,7 +2059,7 @@
         "Nenhuma chave recuperada para o usuário interno"
       ],
       "No valid address found": [
-        ""
+        "Nenhum endereço válido encontrado"
       ],
       "No valid keys retrieved for internal user": [
         "Nenhuma chave válida recuperada para o usuário interno"
@@ -2186,8 +2183,8 @@
       "The label name is too long. Please choose a different name.": [
         ""
       ],
-      "The maximum expiration is 4 weeks.": [
-        "A validade máxima é de 4 semanas."
+      "The maximum expiration is 4 weeks": [
+        ""
       ],
       "The minimum amount of credit that can be added is ${ _price }": [
         "O valor mínimo de crédito que pode ser adicionado é ${ _price }"
@@ -2204,8 +2201,8 @@
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         ""
       ],
-      "There has been an issue with content search. Default search has been used instead": [
-        "Houve um problema com a pesquisa de conteúdo. Em vez disso, a pesquisa padrão foi usada"
+      "There has been an issue with content search. Default search has been used instead.": [
+        ""
       ],
       "There was an error when exporting the contacts vCards": [
         "Houve um erro ao exportar os vCards dos contatos"
@@ -2222,8 +2219,8 @@
       "This label name is not available. Please choose a different name": [
         ""
       ],
-      "This message has already been sent.": [
-        "Esta mensagem já foi enviada."
+      "This message has already been sent": [
+        ""
       ],
       "This message has already been sent. A new draft has been saved.": [
         "Esta mensagem já foi enviada. Um novo rascunho foi salvo."
@@ -2231,8 +2228,8 @@
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "Esta mensagem pode conter algum link que pode não ser aberto corretamente pelo seu navegador"
       ],
-      "Too many active filters. Please upgrade to a paid plan to activate more filters": [
-        "Muitos filtros ativos. Por favor, atualize para um plano pago para ativar mais filtros"
+      "Too many active filters. Please upgrade to a paid plan to activate more filters.": [
+        ""
       ],
       "Trusted keys are not valid for sending": [
         "As chaves confiáveis não são válidas para o envio"
@@ -2252,9 +2249,9 @@
       "You can't send vCards of more than 10 contacts": [
         "Você não pode enviar vCards de mais de 10 contatos"
       ],
-      "You cannot open more than ${ maxActiveComposer } composer window at a time.": [
-        "Você não pode abrir mais de ${ maxActiveComposer } janela do compositor por vez.",
-        "Você não pode abrir mais de ${ maxActiveComposer } janelas do compositor por vez."
+      "You cannot open more than ${ maxActiveComposer } composer window at a time": [
+        "",
+        ""
       ],
       "You did not provide a file.": [
         "Você não escolheu um arquivo."
@@ -2271,8 +2268,8 @@
       "Your import will not be processed.": [
         "Sua importação não será processada."
       ],
-      "Your search matched too many results. Please limit your search and try again": [
-        "A sua pesquisa correspondeu a muitos resultados. Por favor, limite sua busca e tente novamente"
+      "Your search matched too many results. Please limit your search and try again.": [
+        ""
       ]
     },
     "Error display when performing invalid move on message": {
@@ -2824,12 +2821,12 @@
         "${ numberOfTrackers } rastreadores de e-mail encontrados"
       ],
       "${ numContactGroups } contact group": [
-        "",
-        ""
+        "${ numContactGroups } grupo de contatos",
+        "${ numContactGroups } grupos de contatos"
       ],
       "${ numContacts } contact": [
-        "",
-        ""
+        "${ numContacts } contato",
+        "${ numContacts } contatos"
       ],
       "${ occurrencesInBody } occurrence found": [
         "${ occurrencesInBody } ocorrência encontrada",
@@ -3009,7 +3006,7 @@
         "Uma chave pública desconhecida foi detectada para este destinatário."
       ],
       "and": [
-        ""
+        "e"
       ],
       "Are you sure you want to delete all messages in this folder?": [
         "Você tem certeza que deseja excluir todas as mensagens nesta pasta?"
@@ -3105,7 +3102,7 @@
         "Clique para ver detalhes do grupo"
       ],
       "Close this screen to exit.": [
-        ""
+        "Feche esta tela para sair."
       ],
       "Confirm Password": [
         "Confirme a Senha"
@@ -3316,8 +3313,8 @@
       "Image URL": [
         "URL da imagem"
       ],
-      "Images have been removed because they are not allowed in auto-reply.": [
-        "As imagens foram removidas porque não são permitidas na resposta automática."
+      "Images have been removed because they are not allowed in auto-reply": [
+        ""
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         ""
@@ -3327,10 +3324,10 @@
         ""
       ],
       "Import from": [
-        ""
+        "Importar de"
       ],
       "Import in progress": [
-        ""
+        "Importação em andamento"
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         ""
@@ -3367,7 +3364,7 @@
         "Conexão com a internet restaurada."
       ],
       "Just confirm your selection and we'll do the rest.": [
-        ""
+        "Apenas confirme sua seleção e faremos o restante."
       ],
       "Justify": [
         "Justificar"
@@ -3422,6 +3419,9 @@
       ],
       "Message sent": [
         "Mensagem enviada"
+      ],
+      "Message sent.": [
+        ""
       ],
       "Message will be sent ${ dateString } at ${ formattedTime }": [
         "A mensagem será enviada ${ dateString } em ${ formattedTime }"
@@ -3635,7 +3635,7 @@
         "Agendado"
       ],
       "Scheduled send of this message will be cancelled.": [
-        ""
+        "O envio agendado desta mensagem será cancelado."
       ],
       "Scheduling message...": [
         "Agendando mensagem..."
@@ -3650,7 +3650,7 @@
         "Selecione o formato de e-mail que você deseja que seja usado por padrão ao enviar um e-mail para este endereço."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20-personal-calendar limit. You can also merge imported calendars with existing Proton calendars.": [
-        ""
+        "Selecione quais calendários importar. Um novo calendário será criado para cada calendário importado, até o limite de 20 calendários pessoais. Você também pode mesclar os calendários importados com os calendários Proton existentes."
       ],
       "Sending": [
         "Enviando"
@@ -3662,7 +3662,7 @@
         "O envio de mensagens de um endereço @pm.me é um recurso pago. A sua mensagem será enviada do seu endereço padrão ${ email }"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
-        ""
+        "Os servidores estão inacessíveis. Por favor, tente novamente em alguns minutos"
       ],
       "Session timed out.": [
         "Sessão expirada."
@@ -3762,7 +3762,7 @@
         "Este navegador não suporta pré-visualização de documentos PDF. Por favor, baixe o arquivo."
       ],
       "This conversation contains a scheduled message. Sending of this message will be cancelled.": [
-        ""
+        "Esta conversa contém uma mensagem programada. O envio desta mensagem será cancelado."
       ],
       "This conversation contains non-trashed messages.": [
         "Esta conversa contém mensagens que não estão na lixeira."
@@ -3948,7 +3948,7 @@
         "Semana"
       ],
       "What do you want to import from your Google account?": [
-        ""
+        "O que você deseja importar da sua conta do Google?"
       ],
       "When do you want your message to be sent?": [
         "Quando você deseja que sua mensagem seja enviada?"
@@ -3969,7 +3969,7 @@
         "Você está atualmente logado como ${ user.Name } (${ user.Email }) e tem acesso restrito."
       ],
       "You can check the progress ${ importProgressLink }.": [
-        ""
+        "Você pode verificar o progresso ${ importProgressLink }."
       ],
       "You can either update your search query or ${ button }": [
         "Você pode atualizar sua pesquisa de consulta ou ${ button }"
@@ -4079,7 +4079,7 @@
         "Por motivos de segurança, seu banco requer a verificação de segurança 3-D."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
-        ""
+        "Seus dados estão prontos para importação de ${ importedEmailAddressStrong } para sua conta Proton."
       ],
       "Your email will only be used for this one-time verification.": [
         "Seu e-mail só será utilizado para essa verificação única."
@@ -4622,7 +4622,7 @@
         "Pagador"
       ],
       "PGP scheme": [
-        ""
+        "Esquema PGP"
       ],
       "Phone number": [
         "Número do telefone"
@@ -5998,8 +5998,8 @@
     },
     "Success": {
       "${ count } conversation deleted": [
-        "$ { count } conversa excluída",
-        "$ { count } conversas excluídas"
+        "${ count } conversa excluída",
+        "${ count } conversas excluídas"
       ],
       "${ count } draft deleted": [
         "${ count } rascunho excluído",
@@ -6099,8 +6099,8 @@
       "Contacts deleted": [
         "Contatos excluídos"
       ],
-      "Conversation added to ${ labelName }": [
-        "Conversa adiciona em ${ labelName }"
+      "Conversation added to ${ labelName }.": [
+        ""
       ],
       "Conversation deleted": [
         "Conversa excluída"
@@ -6108,8 +6108,8 @@
       "Conversation marked as read.": [
         "Conversação marcada como lida."
       ],
-      "Conversation marked as Starred": [
-        "Conversa marcada com estrela"
+      "Conversation marked as Starred.": [
+        ""
       ],
       "Conversation marked as unread.": [
         "Conversação marcada como não lida."
@@ -6123,8 +6123,8 @@
       "Conversation moved to spam and sender added to Block List.": [
         "Conversa movida para spam e o remetente adicionado à lista de bloqueio."
       ],
-      "Conversation removed from ${ labelName }": [
-        "Mensagem removida de ${ labelName }"
+      "Conversation removed from ${ labelName }.": [
+        ""
       ],
       "Draft deleted": [
         "Rascunho excluído"
@@ -6150,8 +6150,8 @@
       "Mail list unsubscribed": [
         "Lista de e-mails cancelada"
       ],
-      "Message added to ${ labelName }": [
-        "Mensagem adicionada em ${ labelName }"
+      "Message added to ${ labelName }.": [
+        ""
       ],
       "Message content search activated": [
         "Pesquisa de conteúdo de mensagens ativada"
@@ -6165,8 +6165,8 @@
       "Message marked as read.": [
         "Mensagem marcada como lida."
       ],
-      "Message marked as Starred": [
-        "Mensagem marcada com estrela"
+      "Message marked as Starred.": [
+        ""
       ],
       "Message marked as unread.": [
         "Mensagem marcada como não lida."
@@ -6180,8 +6180,8 @@
       "Message moved to spam and sender added to Block List.": [
         "Mensagem movida para spam e remetente adicionado à lista de bloqueio."
       ],
-      "Message removed from ${ labelName }": [
-        "Mensagem removida de ${ labelName }"
+      "Message removed from ${ labelName }.": [
+        ""
       ],
       "Move ${ selectionCount } conversation": [
         "Mover ${ selectionCount } conversa",
@@ -6653,7 +6653,7 @@
         "Mover para lixeira"
       ],
       "Moving a scheduled message": [
-        ""
+        "Movendo uma mensagem agendada"
       ],
       "Network error": [
         "Erro de rede"

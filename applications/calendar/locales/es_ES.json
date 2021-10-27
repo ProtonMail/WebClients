@@ -353,7 +353,7 @@
         "Eliminar"
       ],
       "Remove bonuses": [
-        "Eliminar beneficios"
+        "Eliminar bonificaciones"
       ],
       "Remove gift code": [
         "Eliminar código promocional"
@@ -890,19 +890,19 @@
         "El calendario se está sincronizando"
       ],
       "Calendar is too big": [
-        ""
+        "El calendario es demasiado grande"
       ],
       "Calendar link is not accessible": [
-        ""
+        "El enlace del calendario no es accesible"
       ],
       "Calendar link is temporarily inaccessible": [
-        ""
+        "El enlace del calendario no está accesible temporalmente"
       ],
       "Calendar link is wrong": [
         "El enlace del calendario es erróneo"
       ],
       "Failed to sync calendar": [
-        ""
+        "Error al sincronizar el calendario"
       ],
       "More than 12 hours passed since last update": [
         "Han pasado más de 12 horas desde la última actualización"
@@ -1141,8 +1141,8 @@
       ]
     },
     "Disabled calendar name suffix": {
-      "disabled": [
-        "deshabilitado"
+      "Disabled": [
+        ""
       ]
     },
     "Disabled calendar tooltip": {
@@ -1274,7 +1274,7 @@
         "Ya existe un grupo con este nombre"
       ],
       "A maximum of 10 notifications is allowed": [
-        "Se permite un máximo de 10 notificaciones"
+        "Se permiten un máximo de 10 notificaciones"
       ],
       "Address primary private key not found": [
         "Clave privada principal de la dirección no encontrada"
@@ -1312,8 +1312,8 @@
       "Cancellation failed to be sent": [
         "No se ha podido enviar la cancelación"
       ],
-      "Checkout expired, please try again.": [
-        "La compra ha caducado, intenta de nuevo."
+      "Checkout expired, please try again": [
+        ""
       ],
       "Contact could not be saved": [
         "No se ha podido guardar el contacto"
@@ -1479,7 +1479,7 @@
         "No se ofrece soporte para este metodo de pago"
       ],
       "Please create an address first.": [
-        "Por favor, primero crea una dirección."
+        "Primero crea una dirección."
       ],
       "Please fix the highlighted conflict to proceed.": [
         "",
@@ -1540,7 +1540,7 @@
         ""
       ],
       "The minimum amount of credit that can be added is ${ _price }": [
-        "La cantidad mínima de crédito que se puede agregar es de ${ _price }"
+        "La cantidad mínima de crédito que se puede añadir es de ${ _price }"
       ],
       "The minimum amount that can be donated is ${ price }": [
         "La cantidad mínima que se puede donar es de ${ price }"
@@ -1693,7 +1693,7 @@
     },
     "Event popover close button": {
       "Close popover": [
-        ""
+        "Cerrar ventana emergente"
       ]
     },
     "Event reply": {
@@ -1704,7 +1704,7 @@
         "no"
       ],
       "unanswered": [
-        ""
+        "sin respuesta"
       ],
       "yes": [
         "sí"
@@ -1873,8 +1873,8 @@
         "${ calendarsToBeCreatedCount } calendarios nuevos"
       ],
       "${ calendarsToBeMerged } merged calendar": [
-        "",
-        ""
+        "${ calendarsToBeMerged } calendario combinado",
+        "${ calendarsToBeMerged } calendarios combinados"
       ],
       "${ calendarsToBeMergedCount } merged calendar": [
         "${ calendarsToBeMergedCount } calendario fusionado",
@@ -1994,7 +1994,7 @@
         "Acceso restringido a la cuenta por falta de pago. Contacta con tu administrador."
       ],
       "Account successfully updated": [
-        "Cuenta actualizada con éxito"
+        "La cuenta se ha actualizado correctamente"
       ],
       "Add additional addresses to your account like user2@protonmail.com": [
         "Agrega direcciones adicionales a tu cuenta como user2@protonmail.com"
@@ -2015,12 +2015,12 @@
         "Después de realizar el pago con Bitcoin, siga las instrucciones para actualizar."
       ],
       "All (${ totalFoldersCount } folder)": [
-        "",
-        ""
+        "Todo (${ totalFoldersCount } carpeta)",
+        "Todo (${ totalFoldersCount } carpetas)"
       ],
       "All (${ totalFoldersCount } label)": [
-        "",
-        ""
+        "Todo (${ totalFoldersCount } etiqueta)",
+        "Todo (${ totalFoldersCount } etiquetas)"
       ],
       "Allows you to host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
         "Te permite alojar correos electrónicos para tu(s) propio(s) dominio(s) en ${ mailAppName }, p. ej., john.smith@example.com"
@@ -2080,7 +2080,7 @@
         "Haz clic en \"Solicitar nuevo código\" para enviarte un nuevo código de verificación a ${ strong }. Si esta dirección de correo electrónico es incorrecta, haz clic en \"Editar\" para corregirla."
       ],
       "Close this screen to exit.": [
-        ""
+        "Cierra esta pantalla para salir."
       ],
       "Connections": [
         "Conexiones"
@@ -2153,7 +2153,7 @@
         "Se notificarán a los participantes existentes, agregados y eliminados."
       ],
       "Expired": [
-        "Caducada"
+        "Expirada"
       ],
       "For families and small teams; includes both Mail and VPN.": [
         "Para familias y pequeños equipos; incluye correo y VPN."
@@ -2198,20 +2198,20 @@
         "Si no encuentras el correo electrónico en tu bandeja de entrada, por favor, comprueba tu carpeta de spam."
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
-        ""
+        "Importar ${ contactsFragment } y ${ contactsGroupsFragment }"
       ],
       "Import ${ selectedCalendarsCount } of ${ totalCalendarsCount } calendar": [
-        "",
-        ""
+        "Importar ${ selectedCalendarsCount } de ${ totalCalendarsCount } calendario",
+        "Importar ${ selectedCalendarsCount } de ${ totalCalendarsCount } calendarios"
       ],
       "Import from": [
         "Importar desde"
       ],
       "Import in progress": [
-        ""
+        "Importación en curso"
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
-        ""
+        "Importando tus datos desde ${ importedEmailAddress } a ${ toEmail }."
       ],
       "Included": [
         "Incluido"
@@ -2235,7 +2235,7 @@
         "Huella digital de la clave"
       ],
       "Large imports can take several days.": [
-        ""
+        "Las importaciones grandes pueden tardar varios días."
       ],
       "Learn more": [
         "Más información"
@@ -2253,7 +2253,7 @@
         "Cargando eventos"
       ],
       "Manage your calendars": [
-        "Gestionar tus calendarios"
+        "Gestiona tus calendarios"
       ],
       "Merged": [
         "Fusionado"
@@ -2268,7 +2268,7 @@
         "Nuevo"
       ],
       "Next you'll need to log in to your Google account and allow us to access your data.": [
-        ""
+        "A continuación, deberás iniciar sesión en tu cuenta de Google y permitirnos acceder a sus datos."
       ],
       "No contacts added yet": [
         "Ningún contacto añadido aún"
@@ -2346,7 +2346,7 @@
         "Verifique la tarjeta en la pestaña nueva que se abrió."
       ],
       "Please verify the payment in the new tab.": [
-        "Por favor verifique el pago en la nueva pestaña."
+        "Verifica el pago en la nueva pestaña."
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Por favor, espera mientras buscamos contactos que puedan volver a firmarse con la clave de cifrado principal."
@@ -2410,7 +2410,7 @@
         "Almacenamiento en GB"
       ],
       "support team": [
-        "equipo de asistencia"
+        "equipo de soporte"
       ],
       "Switch to ${ professionalPlan } to add more connections.": [
         "Cambia a ${ professionalPlan } para añadir más conexiones."
@@ -2518,7 +2518,7 @@
         "Te redirigiremos a PayPal en una nueva pestaña de navegador para completar esta transacción. Si usas cualquier bloqueador emergente, por favor desactívalos para continuar."
       ],
       "We'll notify you when the import is done.": [
-        ""
+        "Te avisaremos cuando la importación haya terminado."
       ],
       "Week": [
         "Semana"
@@ -2566,7 +2566,7 @@
         "Actualmente estás conectado como ${ user.Name } (${ user.Email }) y tienes acceso restringido."
       ],
       "You can check the progress ${ importProgressLink }.": [
-        ""
+        "Puedes comprobar el progreso ${ importProgressLink }."
       ],
       "You can only modify personal event properties as you can't send emails from the organizer address.": [
         "Solo puedes modificar las propiedades del evento personal ya que no puedes enviar correos electrónicos desde la dirección del organizador."
@@ -2602,7 +2602,7 @@
         "Has alcanzado el 100% de tu capacidad de almacenamiento. No podrás enviar o recibir nuevos correos electrónicos. Libera algo de espacio o añade más espacio de almacenamiento. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You will be soon redirected to your bank to verify your payment.": [
-        "Pronto será redirigido a su banco para verificar su pago."
+        "Pronto serás redirigido a su banco para verificar tu pago."
       ],
       "You will lose all unsaved changes.": [
         "Perderás todos los cambios no guardados."
@@ -3064,16 +3064,16 @@
         "Importar contactos"
       ],
       "Import interval": [
-        ""
+        "Intervalo de importación"
       ],
       "Import to email address": [
-        ""
+        "Importar a la dirección de correo electrónico"
       ],
       "Keyboard shortcuts": [
         "Atajos de teclado"
       ],
       "Label messages as": [
-        ""
+        "Etiquetar mensajes como"
       ],
       "Last 12 months only": [
         "Solo los últimos 12 meses"
@@ -3128,7 +3128,7 @@
         "Emisor del pago"
       ],
       "PGP scheme": [
-        ""
+        "Esquema PGP"
       ],
       "Phone number": [
         "Número de teléfono"
@@ -3191,7 +3191,7 @@
         "Hora del evento"
       ],
       "To: ${ emailAddress }": [
-        ""
+        "Para: ${ emailAddress }"
       ],
       "Total": [
         "Total"
@@ -3333,11 +3333,11 @@
     },
     "Loading info": {
       "${ createdCalendars } of ${ calendarsToBeCreated } created": [
-        "",
-        ""
+        "${ createdCalendars } de ${ calendarsToBeCreated } creado",
+        "${ createdCalendars } de ${ calendarsToBeCreated } creados"
       ],
       "Almost there": [
-        ""
+        "Ya casi está"
       ],
       "Creating new calendars": [
         ""
@@ -3349,7 +3349,7 @@
         "Estamos obteniendo los datos desde tu proveedor"
       ],
       "Your import is starting": [
-        ""
+        "Tu importación está comenzando"
       ]
     },
     "Mail feature": {
@@ -3847,10 +3847,10 @@
     },
     "Participants expand button label": {
       "Collapse participants list": [
-        ""
+        "Contraer lista de participantes"
       ],
       "Expand participants list": [
-        ""
+        "Expandir lista de participantes"
       ]
     },
     "Payment method option": {
@@ -4089,12 +4089,12 @@
         "${ contactsExported.length } de ${ countContacts } contactos fueron exportados con éxito."
       ],
       "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
-        "",
-        ""
+        "${ model.deleted.length } de ${ totalBeDeleted } contacto eliminado con éxito.",
+        "${ model.deleted.length } de ${ totalBeDeleted } contactos eliminados con éxito."
       ],
       "${ model.submitted.length } out of ${ totalBeMerged } contact successfully merged.": [
-        "",
-        ""
+        "${ model.submitted.length } de ${ totalBeMerged } contacto combinado con éxito.",
+        "${ model.submitted.length } de ${ totalBeMerged } contactos combinados con éxito."
       ],
       "No contacts exported.": [
         "Ningún contacto exportado."
@@ -4269,7 +4269,7 @@
         "Invitación enviada y participantes agregados"
       ],
       "Invitation sent and participants added to all events": [
-        "Invitación enviada y participantes agregados a todos los eventos"
+        "Invitación enviada y participantes añadidos todos los eventos"
       ],
       "Keyboard shortcuts preferences updated": [
         "Preferencias de atajos de teclado actualizadas"
@@ -4531,10 +4531,10 @@
         "Personalizar y confirmar"
       ],
       "Customize calendar import": [
-        ""
+        "Personaliza la importación del calendario"
       ],
       "Customize your mail import": [
-        ""
+        "Personaliza la importación del correo"
       ],
       "Customize your plan": [
         "Personaliza tu plan"
@@ -4837,7 +4837,7 @@
     },
     "Today icon tooltip in mini calendar": {
       "Today": [
-        ""
+        "Hoy"
       ]
     },
     "Tooltip": {

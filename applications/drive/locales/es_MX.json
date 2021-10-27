@@ -187,6 +187,9 @@
       "Download": [
         "Descargar"
       ],
+      "Drive Locked": [
+        "Unidad bloqueada"
+      ],
       "Edit": [
         "Editar"
       ],
@@ -1097,8 +1100,8 @@
       "Can't validate phone, try again later": [
         "No se puede validar el teléfono, intente más tarde"
       ],
-      "Checkout expired, please try again.": [
-        "La compra ha expirado, intente de nuevo."
+      "Checkout expired, please try again": [
+        "La compra ha expirado, intente de nuevo"
       ],
       "Contact could not be saved": [
         "El contacto no se pudo guardar"
@@ -1687,6 +1690,10 @@
       "${ vpnAppName } Free": [
         "${ vpnAppName } Gratuito"
       ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } miembro)",
+        "(${ memberCount } miembros)"
+      ],
       "(Mail + VPN)": [
         "(Correo + VPN)"
       ],
@@ -1753,6 +1760,9 @@
       "Amount below minimum (${ amount }).": [
         "Cantidad inferior al mínimo (${ amount })."
       ],
+      "An active recovery file": [
+        "Un archivo de recuperación activo"
+      ],
       "and": [
         "y"
       ],
@@ -1768,6 +1778,9 @@
       ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "La navegación básica y las acciones siguen estando disponibles independientemente de que los atajos de teclado estén habilitados o no en los ajustes."
+      ],
+      "Because ${ appName } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
+        "Debido a que ${ appName } está cifrado de extremo a extremo, no podemos acceder\no descifrar sus archivos por usted. Para desbloquear su unidad después de restablecer la contraseña,\ndebe tener uno de los siguientes:"
       ],
       "Billed as ${ billedPrice } every 2 years": [
         "Facturado como ${ billedPrice } cada 2 años"
@@ -1820,6 +1833,9 @@
       "Connections": [
         "Conexiones"
       ],
+      "Continue using ${ appName } and unlock drive later": [
+        "Continuar usando ${ appName } y desbloquear la unidad después"
+      ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "Crear ${ calendarsToBeCreated } calendario nuevo",
         "Crear ${ calendarsToBeCreated } calendarios nuevos"
@@ -1847,6 +1863,10 @@
       ],
       "Creating share": [
         "Creando recurso compartido"
+      ],
+      "Delete drive": [
+        "Eliminar unidad",
+        "Eliminar unidades"
       ],
       "Discount applied to your subscription with coupon ${ code }": [
         "Descuento aplicado a su suscripción con el cupón ${ code }"
@@ -1943,6 +1963,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Si no encuentra el correo electrónico en su buzón, revise en la carpeta de spam."
+      ],
+      "If you have one of these, continue to Proton account setting to\ncontinue the unblock process.": [
+        "Si tiene uno de estos, continúe con la configuración de la cuenta de Proton para\ncontinuar con el proceso de desbloqueo."
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Importar ${ contactsFragment } y ${ contactsGroupsFragment }"
@@ -2063,13 +2086,16 @@
         "No personalizable"
       ],
       "Note: Data may still be available locally on devices where you have installed ${ appName }.": [
-        ""
+        "Nota: Los datos pueden seguir estando disponibles localmente en los dispositivos en los que haya instalado ${ appName }."
       ],
       "Number of VPN connections which can be assigned to users. Each connected device consumes one VPN connection.": [
         "Número de conexiones VPN que se pueden asignar a los usuarios. Cada dispositivo conectado consume una conexión VPN."
       ],
       "of": [
         "de"
+      ],
+      "One of your encrypted drives is locked. This is most likely due to a recent password reset.${ BrElement }\n${ BrElement }\n${ questionText }": [
+        "Una de sus unidades cifradas está bloqueada. Es muy probable que esto se deba a un restablecimiento de contraseña reciente.${ BrElement }\n${ BrElement }\n${ questionText }"
       ],
       "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
         "Solo cambie estos ajustes si está utilizando PGP con remitentes fuera de ProtonMail."
@@ -2085,6 +2111,9 @@
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Los pagos están protegidos con cifrado TLS y las leyes de privacidad suizas."
+      ],
+      "Permanently delete all files in your drive": [
+        "Elimina de forma permanente todos los archivos de su unidad"
       ],
       "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
         "PGP/Inline solo es compatible con el formato de texto plano. Tome en cuenta que ProtonMail siempre firma los mensajes cifrados."
@@ -2183,8 +2212,8 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Como es un usuario leal, su cuenta tiene habilitadas funciones adicionales."
       ],
-      "Some of your files are no longer accessible. Restore the access to your files. ${ startRecoveryButton }": [
-        "Algunos de sus archivos ya no son accesibles. Restaure el acceso a sus archivos. ${ startRecoveryButton }"
+      "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
+        "Algunos de sus archivos ya no son accesibles. Restaure el acceso a sus archivos. ${ StartRecoveryButton }"
       ],
       "Something went wrong, please try again later.": [
         "Algo salió mal, intente de nuevo más tarde."
@@ -2274,6 +2303,9 @@
       "Trash": [
         "Papelera"
       ],
+      "Unlock drive to recover files": [
+        "Desbloquear unidad para recuperar los archivos"
+      ],
       "Unsupported file": [
         "Archivo no soportado"
       ],
@@ -2321,6 +2353,9 @@
       ],
       "What do you want to import from your Google account?": [
         "¿Qué desea importar de su cuenta de Google?"
+      ],
+      "What would you like to do?": [
+        "¿Qué desea hacer?"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "¿Desea recibir un código de verificación nuevo o usar un método de verificación alternativo?"
@@ -2409,14 +2444,20 @@
       "Your file is being downloaded.": [
         "Su archivo se está descargando."
       ],
-      "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ mailSettingsLink }": [
-        "Sus archivos ya no son accesibles debido a un restablecimiento de contraseña. Vuelva a cargar la clave de cifrado antigua para recuperar el acceso. ${ mailSettingsLink }"
+      "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ KeyReactivationButton }": [
+        "Sus archivos ya no son accesibles debido a un restablecimiento de contraseña. Vuelva a cargar la clave de cifrado antigua para recuperar el acceso. ${ KeyReactivationButton }"
       ],
       "Your files will be encrypted and then saved.": [
         "Sus archivos serán cifrados y luego guardados."
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Su número de teléfono sólo se usará para esta verificación única."
+      ],
+      "Your previous password": [
+        "Su contraseña anterior"
+      ],
+      "Your previous recovery phrase": [
+        "Su frase de recuperación anterior"
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "Su cuenta de Proton está actualmente bloqueada. Para continuar usando su cuenta, por favor pague cualquier factura atrasada."
@@ -2745,6 +2786,10 @@
       "CVV code": [
         "Código CVV"
       ],
+      "Delete Drive?": [
+        "¿Eliminar unidad?",
+        "¿Eliminar unidades?"
+      ],
       "Display name": [
         "Nombre a mostrar"
       ],
@@ -2952,6 +2997,9 @@
       "Text": [
         "Texto"
       ],
+      "This will permanently delete all files in your locked drive.": [
+        "Esto eliminará permanentemente todos los archivos en su unidad bloqueada."
+      ],
       "To: ${ emailAddress }": [
         "Para: ${ emailAddress }"
       ],
@@ -2966,6 +3014,15 @@
       ],
       "Unknown file": [
         "Archivo desconocido"
+      ],
+      "Unlock Drive": [
+        "Desbloquear unidad"
+      ],
+      "Unlock drive (recommended)": [
+        "Desbloquear unidad (recomendado)"
+      ],
+      "Unlock later": [
+        "Desbloquear después"
       ],
       "Up to ${ parentLinkName }": [
         "Hasta ${ parentLinkName }"
@@ -2990,6 +3047,9 @@
       ],
       "What happened?": [
         "¿Qué ha ocurrido?"
+      ],
+      "Yes, I want to permanently delete\nmy old files": [
+        "Sí, deseo eliminar permanentemente\nmis archivos antiguos"
       ],
       "ZIP": [
         "ZIP"
@@ -3256,9 +3316,9 @@
       "\"${ firstItemName }\" restored from trash": [
         "\"${ firstItemName }\" restaurado de la papelera"
       ],
-      "${ deletedCount } link to your file was deleted.": [
-        "${ deletedCount } enlace a su archivo fue eliminado.",
-        "${ deletedCount } enlaces a sus archivos fueron eliminados."
+      "${ deletedCount } link to your file was deleted": [
+        "${ deletedCount } enlace a su archivo fue eliminado",
+        "${ deletedCount } enlaces a sus archivos fueron eliminados"
       ],
       "${ deletedItemsCount } file deleted permanently from trash": [
         "${ deletedItemsCount } archivo eliminado permanentemente de la papelera",
@@ -3272,9 +3332,9 @@
         "${ deletedItemsCount } elemento eliminado permanentemente de la papelera",
         "${ deletedItemsCount } elementos eliminados permanentemente de la papelera"
       ],
-      "${ failedCount } link to your file failed to be deleted.": [
-        "No se pudo eliminar ${ failedCount } enlace a su archivo.",
-        "No se pudieron eliminar ${ failedCount } enlaces a sus archivos."
+      "${ failedCount } link to your file failed to be deleted": [
+        "No se pudo eliminar ${ failedCount } enlace a su archivo",
+        "No se pudieron eliminar ${ failedCount } enlaces a sus archivos"
       ],
       "${ failedMovesCount } file failed to be moved": [
         "${ failedMovesCount } archivo no se pudo mover",
@@ -3379,14 +3439,17 @@
       "Not enough space to upload ${ formattedTotal }": [
         "No hay espacio suficiente para cargar ${ formattedTotal }"
       ],
-      "The link to your file failed to be deleted.": [
-        "No se pudo eliminar el enlace al archivo."
+      "The link to your file failed to be deleted": [
+        "No se pudo eliminar el enlace al archivo"
       ],
-      "The link to your file was deleted.": [
-        "El enlace a su archivo fue eliminado."
+      "The link to your file was deleted": [
+        "El enlace a su archivo fue eliminado"
       ],
-      "Your settings have been changed successfully.": [
-        "Los ajustes se han cambiado con éxito."
+      "Your old files will be deleted in 72 hours": [
+        "Sus archivos antiguos serán eliminados en 72 horas"
+      ],
+      "Your settings have been changed successfully": [
+        "Los ajustes se han cambiado con éxito"
       ]
     },
     "Onboarding Proton": {
@@ -3810,11 +3873,11 @@
       "Preferences saved": [
         "Preferencias guardadas"
       ],
-      "Recovery has started.": [
-        "La recuperación a comenzado."
+      "Recovery has started": [
+        "La recuperación ha comenzado"
       ],
-      "The link to your file was successfully copied.": [
-        "El enlace a su archivo se copió correctamente."
+      "The link to your file was successfully copied": [
+        "El enlace a su archivo se copió correctamente"
       ],
       "Verification successful": [
         "Verificación exitosa"
@@ -3822,8 +3885,8 @@
       "You have successfully unsubscribed": [
         "Ha cancelado la suscripción satisfactoriamente"
       ],
-      "Your files were successfully recovered to \"My files\".": [
-        "Sus archivos se recuperaron con éxito a \"Mis archivos\"."
+      "Your files were successfully recovered to \"My files\"": [
+        "Sus archivos se recuperaron con éxito a \"Mis archivos\""
       ]
     },
     "Suffix for price": {
@@ -4383,6 +4446,11 @@
         "ZIP/código postal"
       ]
     },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "Hoy"
+      ]
+    },
     "Tooltip": {
       "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
         "Acceda al contenido geobloqueado (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) sin importar dónde se encuentre."
@@ -4639,6 +4707,9 @@
       ],
       "The contact failed to load.": [
         "No se pudo cargar el contacto."
+      ],
+      "The date and time settings on your device are out of sync. ${ learnMore }": [
+        "Los ajustes de fecha y hora en su dispositivo están desactualizados. ${ learnMore }"
       ],
       "The decryption of the encrypted content failed.": [
         "Falló el descifrado del contenido cifrado."

@@ -31,10 +31,10 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } 商店"
       ],
-      "Activate": [
+      "activate": [
         "啟用"
       ],
-      "activate": [
+      "Activate": [
         "啟用"
       ],
       "Activate ${ Name }@pm.me": [
@@ -385,6 +385,9 @@
       "Import contacts": [
         "匯入聯絡人"
       ],
+      "Import from .csv or vCard": [
+        ""
+      ],
       "Import from .ics": [
         ""
       ],
@@ -657,6 +660,9 @@
       ],
       "Sign out all accounts": [
         "登出所有帳號"
+      ],
+      "Signing in": [
+        ""
       ],
       "Signing out": [
         "正在登出"
@@ -1766,8 +1772,8 @@
       "Can't validate phone, try again later": [
         "無法驗證電話號碼，請稍後再試"
       ],
-      "Checkout expired, please try again.": [
-        "結帳已逾時，請重試。"
+      "Checkout expired, please try again": [
+        ""
       ],
       "Condition incomplete": [
         "條件不完整"
@@ -1889,6 +1895,9 @@
       "Not a valid number": [
         "不是有效的數字"
       ],
+      "Organization key is not decrypted": [
+        ""
+      ],
       "Organization key is not decrypted.": [
         "組織金鑰尚未解密。"
       ],
@@ -1922,8 +1931,8 @@
       "Please fix the highlighted conflict to proceed.": [
         ""
       ],
-      "Please generate keys before you try to change your password.": [
-        "請先產生金鑰，然後才嘗試變更您的密碼。"
+      "Please generate keys before you try to change your password": [
+        ""
       ],
       "Please refresh the page.": [
         "請重新整理此頁面。"
@@ -1937,8 +1946,8 @@
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         "請嘗試重新認證並確保權限設定正確。"
       ],
-      "Please upgrade to a Professional plan with more than 1 user, or a Visionary account, to get multi-user support.": [
-        "請升級至 Professional 方案（並選用多於 1 個使用者）或者 Visionary 帳號，以取得多使用者支援。"
+      "Please upgrade to a Professional plan with more than 1 user, or a Visionary account, to get multi-user support": [
+        ""
       ],
       "Please upgrade to a Professional plan with more than 1 user, or a Visionary account, to manage multiple users.": [
         "請升級至 Professional 方案（並選用多於 1 個使用者）或者 Visionary 帳號，以取得多使用者支援。"
@@ -2005,6 +2014,9 @@
       ],
       "The minimum payment we accept is ${ _price2 }": [
         "付款的最低金額為 ${ _price2 }"
+      ],
+      "The organization key must be activated first": [
+        ""
       ],
       "The organization key must be activated first.": [
         "必須先啟用組織的金鑰。"
@@ -2110,11 +2122,11 @@
       "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } events.": [
         "您的檔案 ${ formattedFilename } 包含多於 ${ MAX_IMPORT_EVENTS_STRING } 個事件。"
       ],
+      "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
+        ""
+      ],
       "Your file ${ formattedFilename } has no events to be imported.": [
         "您的檔案 ${ formattedFilename } 沒有任何事件可供匯入。"
-      ],
-      "Your file ${ formattedFilename } is an invitation and cannot be imported.": [
-        "您的檔案 ${ formattedFilename } 是一則邀請，因此無法匯入。"
       ],
       "Your file ${ formattedFilename } is empty.": [
         "您的檔案 ${ formattedFilename } 是空的。"
@@ -2657,38 +2669,25 @@
       ]
     },
     "Import calendar warning": {
-      "${ CALENDAR_APP_NAME } does not support ${ forNow }:": [
-        "${ CALENDAR_APP_NAME } ${ forNow }並不支援："
-      ],
-      "Attendees": [
-        "出席者"
-      ],
-      "Complex recurring rules": [
-        "複雜的週期性規則"
-      ],
-      "Email notifications": [
-        "電子郵件通知"
-      ],
-      "for now": [
-        "暫時"
-      ],
-      "Free-busy time information": [
-        "空閒/忙碌時間資訊"
-      ],
-      "Journal entries": [
-        "日誌項目"
-      ],
-      "Non-Gregorian calendars": [
-        "非西曆行事曆"
-      ],
-      "To-do entries": [
-        "待辦事項"
-      ],
-      "Unofficial or custom timezones": [
-        "非正式或自訂時區"
+      "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
+        ""
       ],
       "vCard versions < 3.0": [
         "vCard 版本 < 3.0"
+      ]
+    },
+    "Import calendar; import invitation": {
+      "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your Proton email address.": [
+        ""
+      ],
+      "This file contains an event invitation:": [
+        ""
+      ],
+      "This file contains an invitation response:": [
+        ""
+      ],
+      "This file contains some data that we cannot import:": [
+        ""
       ]
     },
     "Import contact": {
@@ -2970,17 +2969,17 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContacts } 個聯絡人之中，有 ${ totalContactsDiscarded } 個將不會匯入。按一下以取得詳細資料"
       ],
-      "${ totalEventsDiscarded } out of ${ totalEvents } events will not be imported. Click for details": [
-        "${ totalEvents } 個事件之中，有 ${ totalEventsDiscarded } 個將不會匯入。按一下以取得詳細資料"
+      "${ totalEventsDiscarded } out of ${ totalEvents } events will not be imported. Expand for details.": [
+        ""
       ],
       "No contact can be imported. Click for details": [
         "無聯絡人可供匯入。按一下以取得詳細資料"
       ],
-      "No event can be imported. Click for details": [
-        "無事件可供匯入。按一下以取得詳細資料"
+      "No event can be imported. Expand for details.": [
+        ""
       ],
-      "Part of your calendar content is not supported and will not be imported": [
-        "您的行事曆中有部分內容未受支援，因此不會匯入"
+      "Part of your calendar content is not supported and will not be imported.": [
+        ""
       ]
     },
     "Info": {
@@ -3395,8 +3394,8 @@
       "Done": [
         "已完成"
       ],
-      "Done! We sent a code to ${ destination }": [
-        "完成！我們已將代碼傳送至 ${ destination }"
+      "Done! We sent a code to ${ destination }.": [
+        ""
       ],
       "Downgrading will terminate any connections to paid ProtonVPN servers.": [
         "降級將中斷任何與付費 ProtonVPN 伺服器的連線。"
@@ -3590,8 +3589,8 @@
       "Image URL": [
         "圖片 URL"
       ],
-      "Images have been removed because they are not allowed in auto-reply.": [
-        "圖片已被移除，因為不允許在自動回覆中使用它們。"
+      "Images have been removed because they are not allowed in auto-reply": [
+        ""
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         ""
@@ -7080,8 +7079,8 @@
       "Deleting original messages": [
         "正在刪除原始郵件"
       ],
-      "DMARC value copied to clipboard!": [
-        "DMARC 數值已複製到剪貼簿！"
+      "DMARC value copied to clipboard": [
+        ""
       ],
       "Domain verified": [
         "網域已驗證"
@@ -7155,8 +7154,8 @@
       "Sessions revoked": [
         "工作階段已撤銷"
       ],
-      "SPF value copied to clipboard!": [
-        "SPF 數值已複製到剪貼簿！"
+      "SPF value copied to clipboard": [
+        ""
       ],
       "User created": [
         "使用者已建立"
@@ -7164,11 +7163,11 @@
       "User updated": [
         "使用者已更新"
       ],
-      "Value copied to clipboard!": [
-        "數值已複製到剪貼簿！"
+      "Value copied to clipboard": [
+        ""
       ],
-      "Verification code copied to clipboard!": [
-        "驗證碼已複製到剪貼簿！"
+      "Verification code copied to clipboard": [
+        ""
       ],
       "Verification successful": [
         "驗證成功"
@@ -7496,6 +7495,9 @@
       "Contacts": [
         "聯絡人"
       ],
+      "Continue with partial import?": [
+        ""
+      ],
       "Coupon discount": [
         "優惠券折扣"
       ],
@@ -7700,6 +7702,9 @@
       "Import & export": [
         "匯入與匯出"
       ],
+      "Import as simple event?": [
+        ""
+      ],
       "Import Assistant": [
         "Import Assistant"
       ],
@@ -7708,6 +7713,9 @@
       ],
       "Import events": [
         "匯入活動"
+      ],
+      "Import failed": [
+        ""
       ],
       "Import groups": [
         "匯入群組"

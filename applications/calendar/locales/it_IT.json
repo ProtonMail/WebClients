@@ -57,7 +57,7 @@
         "Chatta con noi"
       ],
       "Check import progress": [
-        ""
+        "Controlla l'avanzamento dell'importazione"
       ],
       "Choose a file or drag it here": [
         "Scegli un file o trascinalo qui"
@@ -78,7 +78,7 @@
         "Chiudi"
       ],
       "Close event popover": [
-        ""
+        "Chiudi finestra evento"
       ],
       "Close modal": [
         "Chiudi finestra"
@@ -129,7 +129,7 @@
         "Crea evento"
       ],
       "Customize": [
-        ""
+        "Personalizza"
       ],
       "Decrease": [
         "Riduci"
@@ -173,7 +173,7 @@
         "Modifica l'indirizzo email"
       ],
       "Edit label": [
-        ""
+        "Modifica dell'etichetta"
       ],
       "Edit phone number": [
         "Modifica il numero di telefono"
@@ -212,13 +212,13 @@
         "Nascondi impostazioni PGP avanzate"
       ],
       "Hide folders": [
-        ""
+        "Nascondi cartelle"
       ],
       "Hide info": [
         "Nascondi informazioni"
       ],
       "Hide labels": [
-        ""
+        "Nascondi etichette"
       ],
       "Hide time zones": [
         "Nascondi fusi orari"
@@ -233,7 +233,7 @@
         "Importa"
       ],
       "Import from .csv or vCard": [
-        ""
+        "Importa da .csv o vCard"
       ],
       "Increase": [
         "Aumenta"
@@ -335,7 +335,7 @@
         "Anno precedente"
       ],
       "Quit": [
-        ""
+        "Chiudi"
       ],
       "Re-sign": [
         "Ri-firma"
@@ -365,7 +365,7 @@
         "Rimuovi questo partecipante"
       ],
       "Rename": [
-        ""
+        "Rinomina"
       ],
       "Report a problem": [
         "Segnala un problema"
@@ -401,13 +401,13 @@
         "Mostra impostazioni PGP avanzate"
       ],
       "Show folders": [
-        ""
+        "Mostra cartelle"
       ],
       "Show info": [
         "Mostra informazioni"
       ],
       "Show labels": [
-        ""
+        "Mostra etichette"
       ],
       "Show less": [
         "Mostra meno"
@@ -434,7 +434,7 @@
         "Avvia configurazione"
       ],
       "Stay": [
-        ""
+        "Resta"
       ],
       "Submit": [
         "Invia"
@@ -896,7 +896,7 @@
         "Il link del calendario non è accessibile"
       ],
       "Calendar link is temporarily inaccessible": [
-        ""
+        "Il link al calendario è temporaneamente inaccessibile"
       ],
       "Calendar link is wrong": [
         "Il link del calendario è sbagliato"
@@ -1141,8 +1141,8 @@
       ]
     },
     "Disabled calendar name suffix": {
-      "disabled": [
-        "disattivato"
+      "Disabled": [
+        "Disabilitato"
       ]
     },
     "Disabled calendar tooltip": {
@@ -1295,7 +1295,7 @@
         "Errore di autenticazione."
       ],
       "Calendar limit reached": [
-        ""
+        "Limite calendario raggiunto"
       ],
       "Calendar primary private key is not decrypted": [
         "La chiave privata primaria del calendario non è decifrata"
@@ -1312,8 +1312,8 @@
       "Cancellation failed to be sent": [
         "Annullamento non inviato"
       ],
-      "Checkout expired, please try again.": [
-        "Checkout scaduto, riprova."
+      "Checkout expired, please try again": [
+        ""
       ],
       "Contact could not be saved": [
         "Il contatto non può essere salvato"
@@ -1869,16 +1869,16 @@
         "${ calendarAppName } è stato aggiunto alla suite Proton. Ci piacerebbe sentire cosa ne pensi!"
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
-        "",
-        ""
+        "${ calendarsToBeCreatedCount } nuovo calendario",
+        "${ calendarsToBeCreatedCount } nuovi calendari"
       ],
       "${ calendarsToBeMerged } merged calendar": [
-        "",
-        ""
+        "${ calendarsToBeMerged } calendario unito",
+        "${ calendarsToBeMerged } calendari uniti"
       ],
       "${ calendarsToBeMergedCount } merged calendar": [
-        "",
-        ""
+        "${ calendarsToBeMergedCount } calendario unito",
+        "${ calendarsToBeMergedCount } calendari uniti"
       ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } Membro",
@@ -1914,8 +1914,8 @@
         "${ namesWithoutLast } e ${ nameOfLast }"
       ],
       "${ numContactGroups } contact group": [
-        "",
-        ""
+        "${ numContactGroups } gruppo di contatto",
+        "${ numContactGroups } gruppi di contatto"
       ],
       "${ numContacts } contact": [
         "${ numContacts } contatto",
@@ -1931,8 +1931,8 @@
         "${ saveExtra20 } sia su VPN che su Mail aggiungendo un abbonamento VPN."
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
-        "",
-        ""
+        "${ selectedCalendarsTotal } di ${ providerCalendars.length } calendario",
+        "${ selectedCalendarsTotal } di ${ providerCalendars.length } calendari"
       ],
       "${ selectedFoldersCount } folder selected": [
         "${ selectedFoldersCount } cartella selezionata",
@@ -2080,14 +2080,14 @@
         "Clicca \"Richiedi nuovo codice\" per ricevere un nuovo codice di verifica al ${ strong }. Se questo numero telefonico è incorretto, clicca su \"Modifica\" per correggerlo."
       ],
       "Close this screen to exit.": [
-        ""
+        "Chiudi questa schermata per uscire."
       ],
       "Connections": [
         "Connessioni"
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
-        "",
-        ""
+        "Crea ${ calendarsToBeCreated } nuovo calendario",
+        "Crea ${ calendarsToBeCreated } nuovi calendari"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Crea un'etichetta per i messaggi importati, il periodo di tempo dell'importazione e le cartelle che desideri importare."
@@ -2099,7 +2099,7 @@
         "Crea un nuovo gruppo di contatto"
       ],
       "Create in": [
-        ""
+        "Crea in"
       ],
       "Custom": [
         "Personalizzato"
@@ -2217,7 +2217,7 @@
         "Incluso"
       ],
       "Inherited from parent folder": [
-        ""
+        "Eredita dalla cartella principale"
       ],
       "Internet connection lost.": [
         "Connessione ad Internet interrotta."
@@ -2229,13 +2229,13 @@
         "Connessione Internet ripristinata."
       ],
       "Just confirm your selection and we'll do the rest.": [
-        ""
+        "Basta confermare la tua selezione e noi faremo il resto."
       ],
       "Key fingerprint": [
         "Impronta digitale della chiave"
       ],
       "Large imports can take several days.": [
-        ""
+        "Importazioni di grandi dimensioni possono richiedere diversi giorni."
       ],
       "Learn more": [
         "Per saperne di più"
@@ -2256,13 +2256,13 @@
         "Gestisci i tuoi calendari"
       ],
       "Merged": [
-        ""
+        "Unito"
       ],
       "Monthly ${ onDayString }": [
         "Mensile ${ onDayString }"
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
-        ""
+        "Dai un nome alla tua cartella e seleziona la cartella genitore nella quale deve essere contenuta. Se non selezioni la cartella genitore questa cartella verrà creata come una cartella di primo livello."
       ],
       "New": [
         "Nuovo"
@@ -2518,13 +2518,13 @@
         "Sarai reindirizzato su PayPal in una nuova scheda del browser per completare questa transazione. Se utilizzi un blocco pop-up, disattivalo per continuare."
       ],
       "We'll notify you when the import is done.": [
-        ""
+        "Ti avviseremo quando l'importazione sarà completata."
       ],
       "Week": [
         "Settimana"
       ],
       "What do you want to import from your Google account?": [
-        ""
+        "Cosa vuoi importare dal tuo account Google?"
       ],
       "Which event would you like to delete?": [
         "Quale evento vuoi eliminare?"
@@ -2572,7 +2572,7 @@
         "È possibile modificare solo le proprietà degli eventi personali in quanto non è possibile inviare email dall'indirizzo dell'organizzatore."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
-        ""
+        "Puoi attivare le notifiche per ricevere avvisi quando arrivano nuovi messaggi email in questa cartella."
       ],
       "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
         "Hai disabilitato l'Accesso Beta. Clicca ${ refreshButton } per usare la versione stabile di ${ appName }. L'applicazione sarà ricaricata."
@@ -3128,7 +3128,7 @@
         "Pagante"
       ],
       "PGP scheme": [
-        ""
+        "Schema PGP"
       ],
       "Phone number": [
         "Numero di telefono"
@@ -3333,23 +3333,23 @@
     },
     "Loading info": {
       "${ createdCalendars } of ${ calendarsToBeCreated } created": [
-        "",
-        ""
+        "${ createdCalendars } di ${ calendarsToBeCreated } creato",
+        "${ createdCalendars } di ${ calendarsToBeCreated } creato"
       ],
       "Almost there": [
-        ""
+        "Già qui"
       ],
       "Creating new calendars": [
-        ""
+        "Creazione nuovi calendari"
       ],
       "Gathering your data": [
-        ""
+        "Raccolta dei tuoi dati"
       ],
       "We're gathering your data from your provider": [
         ""
       ],
       "Your import is starting": [
-        ""
+        "La tua importazione sta iniziando"
       ]
     },
     "Mail feature": {
@@ -3834,10 +3834,10 @@
     },
     "Option group label": {
       "Create new calendar": [
-        ""
+        "Crea nuovo calendario"
       ],
       "Merge with calendar": [
-        ""
+        "Unisci con calendario"
       ]
     },
     "Participant name": {
@@ -4374,16 +4374,16 @@
     },
     "Time period": {
       "account creation date": [
-        ""
+        "data di creazione dell'account"
       ],
       "the last 12 months": [
-        ""
+        "ultimi 12 mesi"
       ],
       "the last 3 months": [
-        ""
+        "ultimi 3 mesi"
       ],
       "the last month": [
-        ""
+        "ultimo mese"
       ]
     },
     "Time unit": {
@@ -4528,13 +4528,13 @@
         "Piano attuale"
       ],
       "Customize and confirm": [
-        ""
+        "Personalizza e conferma"
       ],
       "Customize calendar import": [
-        ""
+        "Personalizza l'importazione del calendario"
       ],
       "Customize your mail import": [
-        ""
+        "Personalizza l'importazione della tua mail"
       ],
       "Customize your plan": [
         "Personalizza il tuo piano"
@@ -4560,7 +4560,7 @@
         "Eliminazione contatti"
       ],
       "Downgrade account": [
-        ""
+        "Effettua il downgrade dell'account"
       ],
       "Edit contact": [
         "Modifica contatto"
@@ -4767,7 +4767,7 @@
         "Seleziona il modo di inviare questa notifica"
       ],
       "Select what to import": [
-        ""
+        "Seleziona cosa importare"
       ],
       "Select when this event will stop happening": [
         "Seleziona quando questo evento terminerà"
@@ -4837,7 +4837,7 @@
     },
     "Today icon tooltip in mini calendar": {
       "Today": [
-        ""
+        "Oggi"
       ]
     },
     "Tooltip": {

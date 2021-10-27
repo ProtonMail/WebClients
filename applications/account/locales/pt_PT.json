@@ -31,11 +31,11 @@
       "${ BRAND_NAME } shop": [
         "$ Loja { BRAND_NAME }"
       ],
-      "Activate": [
-        "Activar"
-      ],
       "activate": [
         "activar"
+      ],
+      "Activate": [
+        "Activar"
       ],
       "Activate ${ Name }@pm.me": [
         "Activar ${ Name }@pm.me"
@@ -385,6 +385,9 @@
       "Import contacts": [
         "Importar contactos"
       ],
+      "Import from .csv or vCard": [
+        ""
+      ],
       "Import from .ics": [
         ""
       ],
@@ -657,6 +660,9 @@
       ],
       "Sign out all accounts": [
         "Sair de todas as contas"
+      ],
+      "Signing in": [
+        ""
       ],
       "Signing out": [
         "A terminar sessão"
@@ -1784,8 +1790,8 @@
       "Can't validate phone, try again later": [
         "Impossível validar o telefone, tente mais tarde"
       ],
-      "Checkout expired, please try again.": [
-        "Finalização expirada, por favor tente de novo."
+      "Checkout expired, please try again": [
+        ""
       ],
       "Condition incomplete": [
         "Condição incompleta"
@@ -1909,6 +1915,9 @@
       "Not a valid number": [
         "Número inválido"
       ],
+      "Organization key is not decrypted": [
+        ""
+      ],
       "Organization key is not decrypted.": [
         "A chave da organização não está desencriptada."
       ],
@@ -1943,8 +1952,8 @@
         "",
         ""
       ],
-      "Please generate keys before you try to change your password.": [
-        "Por favor, gere chaves antes de tentar alterar a sua senha."
+      "Please generate keys before you try to change your password": [
+        ""
       ],
       "Please refresh the page.": [
         "Por favor, actualize a página."
@@ -1958,8 +1967,8 @@
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         "Por favor, tente autenticar novamente e certifique-se de que as permissões estão definidas correctamente."
       ],
-      "Please upgrade to a Professional plan with more than 1 user, or a Visionary account, to get multi-user support.": [
-        "Por favor, actualize para um plano Professional com mais de 1 utilizador, ou uma conta Visionary para obter suporte a múltiplos utilizadores."
+      "Please upgrade to a Professional plan with more than 1 user, or a Visionary account, to get multi-user support": [
+        ""
       ],
       "Please upgrade to a Professional plan with more than 1 user, or a Visionary account, to manage multiple users.": [
         "Por favor, actualize para um plano Professional com mais de 1 utilizador, ou uma conta Visionary, para gerir múltiplos utilizadores."
@@ -2027,6 +2036,9 @@
       "The minimum payment we accept is ${ _price2 }": [
         "O pagamento mínimo que aceitamos é ${ _price2 }"
       ],
+      "The organization key must be activated first": [
+        ""
+      ],
       "The organization key must be activated first.": [
         "Tem de activar a chave da organização primeiro."
       ],
@@ -2037,7 +2049,7 @@
         "Há pastas demais na sua conta externa. Por favor, personalize a importação para eliminar algumas pastas."
       ],
       "This field is required": [
-        "Este campo é requerido"
+        "Este campo é obrigatório"
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Este campo requer um mínimo de ${ minimumLength } caracteres."
@@ -2131,11 +2143,11 @@
       "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } events.": [
         "O ficheiro ${ formattedFilename } contém mais de ${ MAX_IMPORT_EVENTS_STRING } eventos."
       ],
+      "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
+        ""
+      ],
       "Your file ${ formattedFilename } has no events to be imported.": [
         "O ficheiro ${ formattedFilename } não tem eventos para importar."
-      ],
-      "Your file ${ formattedFilename } is an invitation and cannot be imported.": [
-        "O seu ficheiro ${ formattedFilename } é um convite e não pode ser importado."
       ],
       "Your file ${ formattedFilename } is empty.": [
         "O ficheiro ${ formattedFilename } está vazio."
@@ -2515,7 +2527,7 @@
         "Adicione um filtro personalizado para executar automaticamente certas acções, como etiquetar ou arquivar mensagens."
       ],
       "Apply sender-specific spam rules. Messages from addresses or domains on the Allow List always go to your Inbox while messages from addresses or domains on the Block List always go to Spam. Marking a message as spam adds its address to the Block List. Marking a message as not spam adds it to the Allow List.": [
-        "Aplique regras de spam específicas do remetente. As mensagens de endereços ou domínios na Lista de Permissões sempre vão para sua Caixa de Entrada, enquanto as mensagens de endereços ou domínios na Lista de Bloqueios sempre vão para Spam. Marcar uma mensagem como spam adiciona seu endereço à Lista de Bloqueios. Marcar uma mensagem como não spam a adiciona à Lista de Permissões."
+        "Aplique regras de spam específicas para cada remetente. As mensagens de endereços ou domínios na lista de permissões vão sempre para a caixa de entrada, enquanto as mensagens de endereços ou domínios na lista de bloqueios vão sempre para o spam. Marcar uma mensagem como spam adiciona o seu endereço à lista de bloqueios. Marcar uma mensagem como não sendo spam adiciona-o à lista de permissões."
       ],
       "Search in Allow List and Block List": [
         "Procurar nas listas de permissões e bloqueios"
@@ -2683,38 +2695,27 @@
       ]
     },
     "Import calendar warning": {
-      "${ CALENDAR_APP_NAME } does not support ${ forNow }:": [
-        "O ${ CALENDAR_APP_NAME } não suporta ${ forNow }:"
-      ],
-      "Attendees": [
-        "Participantes"
-      ],
-      "Complex recurring rules": [
-        "Regras recorrentes complexas"
-      ],
-      "Email notifications": [
-        "Notificações de email"
-      ],
-      "for now": [
-        "por agora"
-      ],
-      "Free-busy time information": [
-        "Informação de tempo livre/ocupado"
-      ],
-      "Journal entries": [
-        "Entradas de diário"
-      ],
-      "Non-Gregorian calendars": [
-        "Calendários não-gregorianos"
-      ],
-      "To-do entries": [
-        "Entradas A fazer"
-      ],
-      "Unofficial or custom timezones": [
-        "Fusos horários não-oficiais ou personalizados"
+      "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
+        ""
       ],
       "vCard versions < 3.0": [
         "Versões vCard < 3.0"
+      ]
+    },
+    "Import calendar; import invitation": {
+      "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your Proton email address.": [
+        ""
+      ],
+      "This file contains an event invitation:": [
+        "",
+        ""
+      ],
+      "This file contains an invitation response:": [
+        "",
+        ""
+      ],
+      "This file contains some data that we cannot import:": [
+        ""
       ]
     },
     "Import contact": {
@@ -3000,17 +3001,17 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } de ${ totalContacts } contactos não serão importados. Clique para detalhes"
       ],
-      "${ totalEventsDiscarded } out of ${ totalEvents } events will not be imported. Click for details": [
-        "${ totalEventsDiscarded } de ${ totalEvents } eventos não serão importados. Clique para detalhes"
+      "${ totalEventsDiscarded } out of ${ totalEvents } events will not be imported. Expand for details.": [
+        ""
       ],
       "No contact can be imported. Click for details": [
         "Nenhum contacto pode ser importado. Clique para detalhes"
       ],
-      "No event can be imported. Click for details": [
-        "Nenhum evento pode ser importado. Clique para detalhes"
+      "No event can be imported. Expand for details.": [
+        ""
       ],
-      "Part of your calendar content is not supported and will not be imported": [
-        "Parte do conteúdo da sua agenda não é suportado e não será importado"
+      "Part of your calendar content is not supported and will not be imported.": [
+        ""
       ]
     },
     "Info": {
@@ -3447,8 +3448,8 @@
       "Done": [
         "Concluído"
       ],
-      "Done! We sent a code to ${ destination }": [
-        "Feito! Enviamos um código para ${ destination }"
+      "Done! We sent a code to ${ destination }.": [
+        ""
       ],
       "Downgrading will terminate any connections to paid ProtonVPN servers.": [
         "A regressão terminará todas as ligações a servidores pagos do ProtonVPN."
@@ -3493,7 +3494,7 @@
         "Insira o código enviado para o seu número de telefone ${ phone }."
       ],
       "Enter the code that was sent to ${ email }. If you can't find the message in your inbox, please check your spam folder.": [
-        "Insira o código enviado para ${ email }. Se não encontrar o correio na sua caixa de entrada, por favor verifique a pasta de spam."
+        "Insira o código enviado para ${ email }. Se não encontrar a mensagem na sua caixa de entrada, por favor verifique a pasta de spam."
       ],
       "Enter the credentials of the email account you want to import from.": [
         "Insira as credenciais da conta de email da qual deseja importar."
@@ -3601,7 +3602,7 @@
         "Se acredita que houve um erro, por favor, contacte-nos em ${ contactLink }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
-        "Se não encontra o email na sua caixa de entrada, veja na pasta de spam."
+        "Se não encontrar o e-mail na sua caixa de entrada, verifique a pasta de spam."
       ],
       "If you have a custom domain with ProtonMail, you can set a catch-all email address that will receive messages sent to your domain but to an invalid email address (e.g., typos).": [
         "Se tem um domínio personalizado com o ProtonMail, pode definir um endereço de email captura tudo, que receberá mensagens enviadas para o seu domínio, mas para um endereço de email inválido (e.g., erros ortográficos)."
@@ -3613,7 +3614,7 @@
         "Se nunca utilizou autenticação em dois passos antes, recomendamos vivamente ${ guideButton }."
       ],
       "If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly.": [
-        "Se você tiver definido o SPF e o DKIM, o DMARC permitirá que você especifique como outros serviços de e-mail devem entregar e-mails para o seu domínio se as verificações SPF e DKIM falharem. Isso pode dificultar os spammers que fingem ser você, mas também pode causar problemas de entrega se não forem feitos corretamente."
+        "Se tiver definido o SPF e o DKIM, o DMARC permitirá especificar de que forma outros serviços de e-mail devem entregar e-mails para o seu domínio, se as verificações SPF e DKIM falharem. Esta ação pode impedir a usurpação da sua identidade por parte de spammers, mas também pode causar problemas de entrega se não for executada corretamente."
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to log into your account. Each code can only be used once.": [
         "Se perder o seu dispositivo com autenticação em dois passos, poderá utilizar estes códigos em vez do código 2FA de 6 algarismos para entrar na conta. Cada código só pode ser utilizado uma vez."
@@ -3642,7 +3643,7 @@
       "Image URL": [
         "URL da imagem"
       ],
-      "Images have been removed because they are not allowed in auto-reply.": [
+      "Images have been removed because they are not allowed in auto-reply": [
         ""
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
@@ -4173,7 +4174,7 @@
         "para continuar para ${ toAppName }"
       ],
       "To fight spam and abuse, please verify you are human.": [
-        "Para combater spam e abuso, verifique se você é humano."
+        "Para combater o spam e abusos, confirme que é um ser humano."
       ],
       "To keep up with the latest development at Proton products, you can subscribe to our various emails and visit our blog from time to time.": [
         "Para acompanhar o mais recente desenvolvimento dos produtos Proton, pode subscrever os nossos vários emails e visitar o nosso blogue de tempos a tempos."
@@ -4530,7 +4531,7 @@
         "Funcionalidades personalizáveis"
       ],
       "ProtonMail cannot be used for mass emailing or spamming. Legitimate emails are unlimited.": [
-        "O ProtonMail não pode ser utilizado para enviar emails em lote ou para spam. O envio de emails legítimos é ilimitado."
+        "O ProtonMail não pode ser utilizado para enviar e-mails em massa ou spam. O envio de e-mails legítimos é ilimitado."
       ]
     },
     "Info for cash payment method": {
@@ -4714,7 +4715,7 @@
         "Ir para Enviado"
       ],
       "Go to Spam": [
-        "Ir para Spam"
+        "Ir para spam"
       ],
       "Go to Starred": [
         "Ir para Com estrela"
@@ -4759,7 +4760,7 @@
         "Mover para Caixa de entrada"
       ],
       "Move to Spam": [
-        "Mover para Spam"
+        "Mover para spam"
       ],
       "Move to Trash": [
         "Mover para Lixo"
@@ -5146,7 +5147,7 @@
         "Duração"
       ],
       "Email": [
-        "Email"
+        "E-mail"
       ],
       "Email address": [
         "Endereço de email"
@@ -7033,13 +7034,13 @@
         "${ domain } adicionado"
       ],
       "${ domain } updated": [
-        "${ domain } actualizado"
+        "${ domain } atualizado"
       ],
       "${ email } added": [
         "${ email } adicionado"
       ],
       "${ email } updated": [
-        "${ email } actualizado"
+        "${ email } atualizado"
       ]
     },
     "State": {
@@ -7153,8 +7154,8 @@
       "Deleting original messages": [
         "Eliminar mensagens originais"
       ],
-      "DMARC value copied to clipboard!": [
-        "Valor DMARC copiado para a área de transferência!"
+      "DMARC value copied to clipboard": [
+        ""
       ],
       "Domain verified": [
         "Domínio verificado"
@@ -7228,8 +7229,8 @@
       "Sessions revoked": [
         "Sessões revogadas"
       ],
-      "SPF value copied to clipboard!": [
-        "Valor SPF copiado para a área de transferência!"
+      "SPF value copied to clipboard": [
+        ""
       ],
       "User created": [
         "Utilizador criado"
@@ -7237,10 +7238,10 @@
       "User updated": [
         "Utilizador actualizado"
       ],
-      "Value copied to clipboard!": [
-        "Valor copiado para a área de transferência!"
+      "Value copied to clipboard": [
+        ""
       ],
-      "Verification code copied to clipboard!": [
+      "Verification code copied to clipboard": [
         ""
       ],
       "Verification successful": [
@@ -7571,6 +7572,9 @@
       "Contacts": [
         "Contactos"
       ],
+      "Continue with partial import?": [
+        ""
+      ],
       "Coupon discount": [
         "Cupão de desconto"
       ],
@@ -7775,6 +7779,10 @@
       "Import & export": [
         "Importar e exportar"
       ],
+      "Import as simple event?": [
+        "",
+        ""
+      ],
       "Import Assistant": [
         "Import Assistant"
       ],
@@ -7783,6 +7791,9 @@
       ],
       "Import events": [
         "Importar eventos"
+      ],
+      "Import failed": [
+        ""
       ],
       "Import groups": [
         "Importar grupos"

@@ -114,7 +114,7 @@
         "Xategeu amb nosaltres"
       ],
       "Check import progress": [
-        ""
+        "Comprovar el progrés de la importació"
       ],
       "Choose a file or drag it here": [
         "Trieu un fitxer o arrossegueu-lo aquí"
@@ -398,7 +398,7 @@
         "Importar"
       ],
       "Import from .csv or vCard": [
-        ""
+        "Importar des de .csv o vCard"
       ],
       "Import messages": [
         "Importar missatges"
@@ -636,7 +636,7 @@
         "Recuperar dades"
       ],
       "Refine your search": [
-        ""
+        "Afinar la cerca"
       ],
       "refresh the page": [
         "refresqueu la pàgina"
@@ -961,9 +961,6 @@
     "Alt": {
       "Forwarded": [
         "Reenviar"
-      ],
-      "Has attachments": [
-        "Té adjunts"
       ],
       "Replied to": [
         "Respost a"
@@ -1884,8 +1881,8 @@
       "Amount below minimum.": [
         "Quantitat per sota del mínim."
       ],
-      "Attachments are limited to 25 MB.": [
-        "Els fitxers adjunts no poden ser més grans que 25 MB."
+      "Attachments are limited to 25 MB": [
+        ""
       ],
       "Authentication canceled.": [
         "S'ha cancel·lat l'autenticació."
@@ -1908,8 +1905,8 @@
       "Can't validate phone, try again later": [
         "No es pot validar el telèfon, torneu-ho a provar més tard"
       ],
-      "Checkout expired, please try again.": [
-        "El pagament ha caducat. Torneu-ho a provar."
+      "Checkout expired, please try again": [
+        ""
       ],
       "Choose a date in the future.": [
         "Escolliu una data futura."
@@ -1930,11 +1927,11 @@
       "Contact signature not verified": [
         "Signatura del contacte no verificada"
       ],
-      "Contact your organization’s administrator to resolve this.": [
-        "Contacteu amb l'administrador de la vostra organització per solucionar això."
+      "Contact your organization’s administrator to resolve this": [
+        ""
       ],
-      "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser": [
-        "La cerca de continguts no es pot activar en aquest navegador. Tanqueu el mode de navegació privada o utilitzeu un altre navegador"
+      "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
+        ""
       ],
       "Could not find address ${ email }.": [
         "No s'ha pogut trobar el correu ${ email }."
@@ -1970,14 +1967,14 @@
       "Error in one of the conditions": [
         "Errada en una de les condicions"
       ],
-      "Error while saving draft. Please try again": [
-        "Error desant l'esborrany. Torneu a intentar-ho"
+      "Error while saving draft. Please try again.": [
+        ""
       ],
-      "Error while sending the message. Message is not sent": [
-        "Error durant el enviament del missatge. El missatge no s'ha enviat"
+      "Error while sending the message. Message is not sent.": [
+        ""
       ],
-      "Error while uploading attachments. Message is not sent": [
-        "Error carregant adjunts. No s'ha enviat el missatge"
+      "Error while uploading attachments. Message is not sent.": [
+        ""
       ],
       "Failed to encrypt attachment. Please try again.": [
         "No s'ha pogut xifrar el fitxer adjunt. Si us plau torna-ho a provar."
@@ -2012,8 +2009,8 @@
       "Invalid expiration date": [
         "Data de caducitat no vàlida"
       ],
-      "Invalid expiration time.": [
-        "Data de caducitat no vàlida."
+      "Invalid expiration time": [
+        ""
       ],
       "Invalid name": [
         "Nom no vàlid"
@@ -2037,8 +2034,8 @@
       "Message needs to be sent first": [
         "El missatge s'ha d'enviar prèviament"
       ],
-      "Message passwords do not match.": [
-        "Les contrasenyes del missatge no coincideixen."
+      "Message passwords do not match": [
+        ""
       ],
       "Message processing error.": [
         "Error de processament del missatge."
@@ -2052,8 +2049,8 @@
       "Network error: Please check your connection and try again.": [
         "Error de xarxa: comprovi la seva connexió i torneu a intentar."
       ],
-      "No address with keys available to compose a message.": [
-        "Cap adreça amb les claus disponibles per redactar un missatge."
+      "No address with keys available to compose a message": [
+        ""
       ],
       "No key retrieved for internal user is valid for sending": [
         "Cap enviament de cap clau per a l’usuari intern és vàlid per enviar-la"
@@ -2186,8 +2183,8 @@
       "The label name is too long. Please choose a different name.": [
         "El nom de l'etiqueta és massa llarg. Trieu-ne un de diferent."
       ],
-      "The maximum expiration is 4 weeks.": [
-        "El venciment màxim és de 4 setmanes."
+      "The maximum expiration is 4 weeks": [
+        ""
       ],
       "The minimum amount of credit that can be added is ${ _price }": [
         "La quantitat mínima de crèdit que es pot afegir és ${ _price }"
@@ -2204,8 +2201,8 @@
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Hi ha massa carpetes al vostre compte extern. Personalitzeu la importació per eliminar algunes carpetes."
       ],
-      "There has been an issue with content search. Default search has been used instead": [
-        "Hi ha hagut un problema amb la cerca de continguts. S'ha utilitzat la cerca per defecte"
+      "There has been an issue with content search. Default search has been used instead.": [
+        ""
       ],
       "There was an error when exporting the contacts vCards": [
         "Hi ha hagut un error exportant les vcards dels contactes"
@@ -2222,8 +2219,8 @@
       "This label name is not available. Please choose a different name": [
         "Aquest nom d'etiqueta no està disponible. Trieu-ne un de diferent"
       ],
-      "This message has already been sent.": [
-        "Aquest missatge ja s'ha enviat."
+      "This message has already been sent": [
+        ""
       ],
       "This message has already been sent. A new draft has been saved.": [
         "Aquest missatge ja s'ha enviat. S'ha guardat un esborrany nou."
@@ -2231,8 +2228,8 @@
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "Aquest missatge pot incloure enllaços d’URL que no es puguin obrir correctament al vostre navegador actual"
       ],
-      "Too many active filters. Please upgrade to a paid plan to activate more filters": [
-        "Massa filtres actius. Actualitzeu a un pla de pagament per activar més filtres"
+      "Too many active filters. Please upgrade to a paid plan to activate more filters.": [
+        ""
       ],
       "Trusted keys are not valid for sending": [
         "Les claus de confiança no són vàlides per enviar-les"
@@ -2252,9 +2249,9 @@
       "You can't send vCards of more than 10 contacts": [
         "No podeu enviar vcards de més de 10 contactes"
       ],
-      "You cannot open more than ${ maxActiveComposer } composer window at a time.": [
-        "No podeu obrir més d'${ maxActiveComposer } finestra d'edició a la vegada.",
-        "No podeu obrir més de ${ maxActiveComposer } finestres d'edició a la vegada."
+      "You cannot open more than ${ maxActiveComposer } composer window at a time": [
+        "",
+        ""
       ],
       "You did not provide a file.": [
         "No has proporcionat un arxiu."
@@ -2271,8 +2268,8 @@
       "Your import will not be processed.": [
         "La vostra importació no es processarà."
       ],
-      "Your search matched too many results. Please limit your search and try again": [
-        "La vostra cerca ha trobat masses resultats. Limiteu la cerca i torneu-ho a provar"
+      "Your search matched too many results. Please limit your search and try again.": [
+        ""
       ]
     },
     "Error display when performing invalid move on message": {
@@ -2763,8 +2760,8 @@
         "${ calendarsToBeCreatedCount } nous calendaris"
       ],
       "${ calendarsToBeMerged } merged calendar": [
-        "",
-        ""
+        "${ calendarsToBeMerged } calendari combinat",
+        "${ calendarsToBeMerged } calendaris combinats"
       ],
       "${ calendarsToBeMergedCount } merged calendar": [
         "${ calendarsToBeMergedCount } calendari combinat",
@@ -2824,12 +2821,12 @@
         "${ numberOfTrackers } rastrejadors de correu electrònic trobats"
       ],
       "${ numContactGroups } contact group": [
-        "",
-        ""
+        "${ numContactGroups } grup de contactes",
+        "${ numContactGroups } grups de contactes"
       ],
       "${ numContacts } contact": [
-        "",
-        ""
+        "${ numContacts } contacte",
+        "${ numContacts } contactes"
       ],
       "${ occurrencesInBody } occurrence found": [
         "${ occurrencesInBody } ocurrència trobada",
@@ -3009,7 +3006,7 @@
         "S'ha detectat una clau pública desconegut per aquest receptor."
       ],
       "and": [
-        ""
+        "i"
       ],
       "Are you sure you want to delete all messages in this folder?": [
         "Segur que voleu eliminar tots els missatges d'aquesta carpeta?"
@@ -3120,8 +3117,8 @@
         "Copiat al porta-retalls"
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
-        "",
-        ""
+        "Crear ${ calendarsToBeCreated } nou calendari",
+        "Crear ${ calendarsToBeCreated } nous calendaris"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Creeu una etiqueta per als missatges importats, un interval de temps per a aquesta importació, i les carpetes que vulgueu importar."
@@ -3316,24 +3313,24 @@
       "Image URL": [
         "URL de la imatge"
       ],
-      "Images have been removed because they are not allowed in auto-reply.": [
-        "Les imatges s'han eliminat perquè no estan permeses a les respostes automàtiques."
+      "Images have been removed because they are not allowed in auto-reply": [
+        ""
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
-        ""
+        "Importar ${ contactsFragment } i ${ contactsGroupsFragment }"
       ],
       "Import ${ selectedCalendarsCount } of ${ totalCalendarsCount } calendar": [
-        "",
-        ""
+        "Importar ${ selectedCalendarsCount } de ${ totalCalendarsCount } calendari",
+        "Importar ${ selectedCalendarsCount } de ${ totalCalendarsCount } calendaris"
       ],
       "Import from": [
         "Importar des de"
       ],
       "Import in progress": [
-        ""
+        "Importació en curs"
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
-        ""
+        "Important les vostres dades des de ${ importedEmailAddress } a ${ toEmail }."
       ],
       "Included": [
         "Inclòs"
@@ -3367,7 +3364,7 @@
         "S'ha restaurat la connexió a Internet."
       ],
       "Just confirm your selection and we'll do the rest.": [
-        ""
+        "Només confirmeu la vostra selecció i nosaltres farem la resta."
       ],
       "Justify": [
         "Justificat"
@@ -3423,6 +3420,9 @@
       "Message sent": [
         "Missatge enviat"
       ],
+      "Message sent.": [
+        ""
+      ],
       "Message will be sent ${ dateString } at ${ formattedTime }": [
         "El missatge s'enviarà el ${ dateString } a les ${ formattedTime }"
       ],
@@ -3436,7 +3436,7 @@
         "Nova"
       ],
       "Next you'll need to log in to your Google account and allow us to access your data.": [
-        ""
+        "Tot seguit haureu d'iniciar sessió al vostre compte de Google i permetre'ns accés a les vostres dades."
       ],
       "No action selected": [
         "No s'ha seleccionat cap acció"
@@ -3948,7 +3948,7 @@
         "Setmana"
       ],
       "What do you want to import from your Google account?": [
-        ""
+        "Què voleu importar del vostre compte de Google?"
       ],
       "When do you want your message to be sent?": [
         "Quan voleu que s'enviï el vostre missatge?"
@@ -4079,7 +4079,7 @@
         "El vostre banc requereix una verificació segura en 3-D amb finalitats de seguretat."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
-        ""
+        "Les vostres dades estan a punt per importar des de ${ importedEmailAddressStrong } al vostre compte de Proton."
       ],
       "Your email will only be used for this one-time verification.": [
         "El vostre correu electrònic només s’utilitzarà per a aquesta única verificació."
@@ -4424,7 +4424,7 @@
         "Import de BTC:"
       ],
       "Calendar": [
-        ""
+        "Calendari"
       ],
       "Cancel": [
         "Cancel·lar"
@@ -4454,7 +4454,7 @@
         "Condicions"
       ],
       "Contacts": [
-        ""
+        "Contactes"
       ],
       "Copy": [
         "Copia"
@@ -4487,7 +4487,7 @@
         "Format de correu electrònic"
       ],
       "Emails": [
-        ""
+        "Correus electrònics"
       ],
       "Enable Beta Access": [
         "Activar Accés Beta"
@@ -4523,7 +4523,7 @@
         "De:"
       ],
       "From: ${ importedEmail }": [
-        ""
+        "De: ${ importedEmail }"
       ],
       "Group": [
         "Grup"
@@ -4538,16 +4538,16 @@
         "Si"
       ],
       "Import all messages": [
-        ""
+        "Importar tots els missatges"
       ],
       "Import contacts": [
         "Importar contactes"
       ],
       "Import interval": [
-        ""
+        "Interval d'importació"
       ],
       "Import to email address": [
-        ""
+        "Importar a l'adreça de correu electrònic"
       ],
       "Keyboard shortcuts": [
         "Dreceres de teclat"
@@ -4559,28 +4559,28 @@
         "Etiqueta com a"
       ],
       "Label messages as": [
-        ""
+        "Etiquetar els missatges com"
       ],
       "Labels:": [
         "Etiquetes:"
       ],
       "Last 12 months only": [
-        ""
+        "Només els darrers 12 mesos"
       ],
       "Last 3 months only": [
-        ""
+        "Només els darrers 3 mesos"
       ],
       "Last month only": [
-        ""
+        "Només el darrer mes"
       ],
       "Mailbox password": [
         "Contrasenya de la bústia"
       ],
       "Manage folders": [
-        ""
+        "Gestionar carpetes"
       ],
       "Manage labels": [
-        ""
+        "Gestionar etiquetes"
       ],
       "Mark as": [
         "Marca com a"
@@ -4622,7 +4622,7 @@
         "Pagador"
       ],
       "PGP scheme": [
-        ""
+        "Esquema PGP"
       ],
       "Phone number": [
         "Número de telèfon"
@@ -4727,7 +4727,7 @@
         "Per a:"
       ],
       "To: ${ emailAddress }": [
-        ""
+        "A: ${ emailAddress }"
       ],
       "Total": [
         "Total"
@@ -6046,16 +6046,16 @@
         "${ elementsCount } missatges afegits a ${ labelName }."
       ],
       "${ elementsCount } message marked as read.": [
-        "",
-        ""
+        "${ elementsCount } missatge marcat com a llegit.",
+        "${ elementsCount } missatges marcats com a llegits."
       ],
       "${ elementsCount } message marked as Starred.": [
         "${ elementsCount } missatge marcat com a Destacat.",
         "${ elementsCount } missatges marcats com a Destacats."
       ],
       "${ elementsCount } message marked as unread.": [
-        "",
-        ""
+        "${ elementsCount } missatge marcat com a no llegit.",
+        "${ elementsCount } missatges marcats com a no llegits."
       ],
       "${ elementsCount } message moved to ${ folderName } and sender added to Allow List.": [
         "${ elementsCount } missatge mogut a ${ folderName } i remitent afegit a la Llista d'Autoritzats.",
@@ -6099,17 +6099,17 @@
       "Contacts deleted": [
         "Contactes esborrats"
       ],
-      "Conversation added to ${ labelName }": [
-        "Conversa afegida a ${ labelName }"
+      "Conversation added to ${ labelName }.": [
+        ""
       ],
       "Conversation deleted": [
         "S'ha suprimit la conversa"
       ],
       "Conversation marked as read.": [
-        ""
+        "Conversa marcada com a llegida."
       ],
-      "Conversation marked as Starred": [
-        "Conversa marcada com a Destacada"
+      "Conversation marked as Starred.": [
+        ""
       ],
       "Conversation marked as unread.": [
         ""
@@ -6123,8 +6123,8 @@
       "Conversation moved to spam and sender added to Block List.": [
         "La conversa s'ha mogut a correu brossa i el remitent s'ha afegit a la llista de bloqueig."
       ],
-      "Conversation removed from ${ labelName }": [
-        "Conversa esborrada de ${ labelName }"
+      "Conversation removed from ${ labelName }.": [
+        ""
       ],
       "Draft deleted": [
         "Esborrany eliminat"
@@ -6150,8 +6150,8 @@
       "Mail list unsubscribed": [
         "S'ha eliminat la suscripció a la llista de correu"
       ],
-      "Message added to ${ labelName }": [
-        "Missatge afegit a ${ labelName }"
+      "Message added to ${ labelName }.": [
+        ""
       ],
       "Message content search activated": [
         "Cerca de contingut del missatge activada"
@@ -6163,13 +6163,13 @@
         "Missatge marcat com a legítim"
       ],
       "Message marked as read.": [
-        ""
+        "Missatge marcat com a llegit."
       ],
-      "Message marked as Starred": [
-        "Missatge marcat com a Destacat"
+      "Message marked as Starred.": [
+        ""
       ],
       "Message marked as unread.": [
-        ""
+        "Missatge marcat com a no llegit."
       ],
       "Message moved to ${ folderName } and sender added to Allow List.": [
         "Missatge mogut a ${ folderName } i remitent afegit a la Llista d'Autoritzats."
@@ -6180,8 +6180,8 @@
       "Message moved to spam and sender added to Block List.": [
         "Missatge mogut a correu brossa i remitent afegit a la llista de bloqueig."
       ],
-      "Message removed from ${ labelName }": [
-        "Missatge esborrat de ${ labelName }"
+      "Message removed from ${ labelName }.": [
+        ""
       ],
       "Move ${ selectionCount } conversation": [
         "Mou ${ selectionCount } conversa",
@@ -6462,13 +6462,13 @@
         "Pla actual"
       ],
       "Customize and confirm": [
-        ""
+        "Personalitzeu i confirmeu"
       ],
       "Customize calendar import": [
-        ""
+        "Personalitzeu la importació del calendari"
       ],
       "Customize your mail import": [
-        ""
+        "Personalitzeu la importació del vostre correu electrònic"
       ],
       "Customize your plan": [
         "Personalitzeu el vostre pla"
@@ -6653,7 +6653,7 @@
         "Moure a la paperera"
       ],
       "Moving a scheduled message": [
-        ""
+        "Moure un missatge programat"
       ],
       "Network error": [
         "Error de xarxa"
@@ -6755,7 +6755,7 @@
         "Seleccionar grup de contactes"
       ],
       "Select what to import": [
-        ""
+        "Seleccioneu què voleu importar"
       ],
       "Send email": [
         "Enviar correu"
@@ -6842,7 +6842,7 @@
     },
     "Today icon tooltip in mini calendar": {
       "Today": [
-        ""
+        "Avui"
       ]
     },
     "Tooltip": {

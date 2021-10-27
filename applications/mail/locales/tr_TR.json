@@ -962,9 +962,6 @@
       "Forwarded": [
         "Gönderildi"
       ],
-      "Has attachments": [
-        "Eklentileri var"
-      ],
       "Replied to": [
         "Yanıtladı"
       ],
@@ -1884,8 +1881,8 @@
       "Amount below minimum.": [
         "Tutar, en düşük değerin altında."
       ],
-      "Attachments are limited to 25 MB.": [
-        "Ekler 25 MB ile sınırlıdır."
+      "Attachments are limited to 25 MB": [
+        ""
       ],
       "Authentication canceled.": [
         "Kimlik doğrulama iptal edildi."
@@ -1908,8 +1905,8 @@
       "Can't validate phone, try again later": [
         "Telefon doğrulanamıyor, daha sonra tekrar deneyin"
       ],
-      "Checkout expired, please try again.": [
-        "Ödeme zaman aşımına uğradı, lütfen tekrar deneyin."
+      "Checkout expired, please try again": [
+        ""
       ],
       "Choose a date in the future.": [
         "Gelecekten bir zaman seçiniz."
@@ -1930,10 +1927,10 @@
       "Contact signature not verified": [
         "Kişi imzası doğrulanamadı"
       ],
-      "Contact your organization’s administrator to resolve this.": [
-        "Bunu çözmek için kuruluşunuzun yöneticisi ile temasa geçin."
+      "Contact your organization’s administrator to resolve this": [
+        ""
       ],
-      "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser": [
+      "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         ""
       ],
       "Could not find address ${ email }.": [
@@ -1970,14 +1967,14 @@
       "Error in one of the conditions": [
         "Koşullardan birinde hata"
       ],
-      "Error while saving draft. Please try again": [
-        "Taslak kaydedilirken hata oluştu. Lütfen tekrar deneyin"
+      "Error while saving draft. Please try again.": [
+        ""
       ],
-      "Error while sending the message. Message is not sent": [
-        "İleti gönderilirken hata oluştu. İleti gönderilmedi"
+      "Error while sending the message. Message is not sent.": [
+        ""
       ],
-      "Error while uploading attachments. Message is not sent": [
-        "Ekler yüklenirken bir hata oluştu. İleti gönderilmedi"
+      "Error while uploading attachments. Message is not sent.": [
+        ""
       ],
       "Failed to encrypt attachment. Please try again.": [
         "Ekin şifrelemesi başarısız oldu. Lütfen tekrar deneyin."
@@ -2012,8 +2009,8 @@
       "Invalid expiration date": [
         "Geçersiz son kullanım tarihi"
       ],
-      "Invalid expiration time.": [
-        "Geçersiz son kullanma tarihi."
+      "Invalid expiration time": [
+        ""
       ],
       "Invalid name": [
         "Geçersiz isim"
@@ -2037,8 +2034,8 @@
       "Message needs to be sent first": [
         "Öncelikle iletinin gönderilmesi gerekiyor"
       ],
-      "Message passwords do not match.": [
-        "İleti şifreleri eşleşmiyor."
+      "Message passwords do not match": [
+        ""
       ],
       "Message processing error.": [
         "İleti işleme hatası."
@@ -2052,8 +2049,8 @@
       "Network error: Please check your connection and try again.": [
         "Ağ hatası: Lütfen bağlantınızı kontrol edin ve tekrar deneyin."
       ],
-      "No address with keys available to compose a message.": [
-        "Mesaj oluşturmak için anahtarlarla adres yok."
+      "No address with keys available to compose a message": [
+        ""
       ],
       "No key retrieved for internal user is valid for sending": [
         "Dahili kullanıcı için alınan hiçbir anahtar göndermek için geçerli değil"
@@ -2186,8 +2183,8 @@
       "The label name is too long. Please choose a different name.": [
         ""
       ],
-      "The maximum expiration is 4 weeks.": [
-        "En uzun sonlanma süresi 4 haftadır."
+      "The maximum expiration is 4 weeks": [
+        ""
       ],
       "The minimum amount of credit that can be added is ${ _price }": [
         "Eklenebilecek en düşük kredi tutarı ${ _price }"
@@ -2204,8 +2201,8 @@
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         ""
       ],
-      "There has been an issue with content search. Default search has been used instead": [
-        "İçerik aramasıyla ilgili bir sorunla karşılaşıldı. Varsayılan arama yöntemi kullanıldı"
+      "There has been an issue with content search. Default search has been used instead.": [
+        ""
       ],
       "There was an error when exporting the contacts vCards": [
         "Kişilerin vCard'larını dışa aktarırken bir hata oluştu"
@@ -2222,8 +2219,8 @@
       "This label name is not available. Please choose a different name": [
         ""
       ],
-      "This message has already been sent.": [
-        "Bu ileti zaten gönderildi."
+      "This message has already been sent": [
+        ""
       ],
       "This message has already been sent. A new draft has been saved.": [
         "Bu ileti zaten gönderildi. Yeni bir taslak kaydedildi."
@@ -2231,8 +2228,8 @@
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "Bu ileti, mevcut tarayıcınızda açılamayacak bazı bağlantı adreslerini içerebilir"
       ],
-      "Too many active filters. Please upgrade to a paid plan to activate more filters": [
-        "Çok fazla aktif filtre mevcut. Daha fazla aktif filtre kullanabilmek için ücretli plana geçin"
+      "Too many active filters. Please upgrade to a paid plan to activate more filters.": [
+        ""
       ],
       "Trusted keys are not valid for sending": [
         "Güvenilir anahtarlar göndermek için geçerli değil"
@@ -2252,9 +2249,9 @@
       "You can't send vCards of more than 10 contacts": [
         "10'dan daha fazla kişinin vCard'larını gönderemezsiniz"
       ],
-      "You cannot open more than ${ maxActiveComposer } composer window at a time.": [
-        "Aynı anda ${ maxActiveComposer } ileti penceresinden daha fazla pencere açamazsınız.",
-        "Aynı anda ${ maxActiveComposer } ileti penceresinden daha fazla pencere açamazsınız."
+      "You cannot open more than ${ maxActiveComposer } composer window at a time": [
+        "",
+        ""
       ],
       "You did not provide a file.": [
         "Bir dosya seçmediniz."
@@ -2271,8 +2268,8 @@
       "Your import will not be processed.": [
         "İçe aktarımınız işlenmeyecektir."
       ],
-      "Your search matched too many results. Please limit your search and try again": [
-        "Aramanız çok fazla sonuçla eşleşti. Lütfen aramanızı daraltın ve yeniden deneyin"
+      "Your search matched too many results. Please limit your search and try again.": [
+        ""
       ]
     },
     "Error display when performing invalid move on message": {
@@ -3316,7 +3313,7 @@
       "Image URL": [
         "Resim URL'si"
       ],
-      "Images have been removed because they are not allowed in auto-reply.": [
+      "Images have been removed because they are not allowed in auto-reply": [
         ""
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
@@ -3422,6 +3419,9 @@
       ],
       "Message sent": [
         "Mesaj gönderildi"
+      ],
+      "Message sent.": [
+        ""
       ],
       "Message will be sent ${ dateString } at ${ formattedTime }": [
         "İleti ${ dateString } tarihinde, ${ formattedTime } saatinde gönderilecek"
@@ -6099,8 +6099,8 @@
       "Contacts deleted": [
         "Kişiler silindi"
       ],
-      "Conversation added to ${ labelName }": [
-        "Konuşma ${ labelName } etiketine eklendi"
+      "Conversation added to ${ labelName }.": [
+        ""
       ],
       "Conversation deleted": [
         "Konuşma silindi"
@@ -6108,8 +6108,8 @@
       "Conversation marked as read.": [
         ""
       ],
-      "Conversation marked as Starred": [
-        "Sohbet yıldızlı olarak işaretlendi"
+      "Conversation marked as Starred.": [
+        ""
       ],
       "Conversation marked as unread.": [
         ""
@@ -6123,8 +6123,8 @@
       "Conversation moved to spam and sender added to Block List.": [
         "Konuşma gereksiz klasörüne taşındı ve gönderici Engellenen Listesine eklendi."
       ],
-      "Conversation removed from ${ labelName }": [
-        "${ labelName } etiketinden konuşma çıkarıldı"
+      "Conversation removed from ${ labelName }.": [
+        ""
       ],
       "Draft deleted": [
         "Taslak silindi"
@@ -6150,8 +6150,8 @@
       "Mail list unsubscribed": [
         "E-posta aboneliğinden çıkıldı"
       ],
-      "Message added to ${ labelName }": [
-        "${ labelName }'ne ileti eklendi"
+      "Message added to ${ labelName }.": [
+        ""
       ],
       "Message content search activated": [
         "İleti içeriği arama etkinleştirildi"
@@ -6165,8 +6165,8 @@
       "Message marked as read.": [
         ""
       ],
-      "Message marked as Starred": [
-        "İleti yıldızlı olarak işaretlendi"
+      "Message marked as Starred.": [
+        ""
       ],
       "Message marked as unread.": [
         ""
@@ -6180,8 +6180,8 @@
       "Message moved to spam and sender added to Block List.": [
         "İleti gereksiz klasörüne taşındı ve gönderici Engellenen Listesine eklendi."
       ],
-      "Message removed from ${ labelName }": [
-        "${ labelName }'den ileti kaldırıldı"
+      "Message removed from ${ labelName }.": [
+        ""
       ],
       "Move ${ selectionCount } conversation": [
         "${ selectionCount } konuşmayı taşı",

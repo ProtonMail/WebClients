@@ -191,6 +191,9 @@
       "Download": [
         "Завантажити"
       ],
+      "Drive Locked": [
+        "Сховище заблоковано"
+      ],
       "Edit": [
         "Редагувати"
       ],
@@ -1115,8 +1118,8 @@
       "Can't validate phone, try again later": [
         "Не вдається перевірити номер телефону. Спробуйте знову пізніше"
       ],
-      "Checkout expired, please try again.": [
-        "Час оформлення замовлення минув, повторіть спробу."
+      "Checkout expired, please try again": [
+        "Час оформлення минув, повторіть спробу"
       ],
       "Contact could not be saved": [
         "Не вдалося зберегти контакт"
@@ -1767,6 +1770,12 @@
       "${ vpnAppName } Free": [
         "${ vpnAppName } Безплатно"
       ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } учасник)",
+        "(${ memberCount } учасника)",
+        "(${ memberCount } учасників)",
+        "(${ memberCount } учасників)"
+      ],
       "(Mail + VPN)": [
         "(Пошта + VPN)"
       ],
@@ -1839,6 +1848,9 @@
       "Amount below minimum (${ amount }).": [
         "Сума нижче найменшої (${ amount })."
       ],
+      "An active recovery file": [
+        "Активний файл відновлення"
+      ],
       "and": [
         "та"
       ],
@@ -1856,6 +1868,9 @@
       ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Основні функції навігації та дії залишаються доступними, незалежно від того, активовані комбінації клавіш в налаштуваннях чи ні."
+      ],
+      "Because ${ appName } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
+        "Оскільки ${ appName } наскрізно зашифрований, ми не можемо отримати доступ\nчи розшифрувати ваші файли. Щоб розблокувати сховище після скидання пароля,\nви повинні мати будь-що з вказаного:"
       ],
       "Billed as ${ billedPrice } every 2 years": [
         "Сплачується ${ billedPrice } кожні 2 роки"
@@ -1908,6 +1923,9 @@
       "Connections": [
         "З'єднання"
       ],
+      "Continue using ${ appName } and unlock drive later": [
+        "Продовжити користуватися ${ appName } та розблокувати сховище згодом"
+      ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "Створити ${ calendarsToBeCreated } новий календар",
         "Створити ${ calendarsToBeCreated } нові календарі",
@@ -1937,6 +1955,12 @@
       ],
       "Creating share": [
         "Створення спільного доступу"
+      ],
+      "Delete drive": [
+        "Видалити сховище",
+        "Видалити сховища",
+        "Видалити сховища",
+        "Видалити сховища"
       ],
       "Discount applied to your subscription with coupon ${ code }": [
         "До вашої передплати застосовано знижку за кодом купона ${ code }"
@@ -2033,6 +2057,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Якщо ви не можете знайти лист у вхідних повідомленнях, перевірте свою теку спаму."
+      ],
+      "If you have one of these, continue to Proton account setting to\ncontinue the unblock process.": [
+        "Якщо у вас є будь-що з вказаного, перейдіть до налаштувань облікового запису Proton,\nщоб продовжити процес розблокування."
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Імпорт ${ contactsFragment } і ${ contactsGroupsFragment }"
@@ -2163,6 +2190,9 @@
       "of": [
         "з"
       ],
+      "One of your encrypted drives is locked. This is most likely due to a recent password reset.${ BrElement }\n${ BrElement }\n${ questionText }": [
+        "Одне з ваших зашифрованих сховищ заблоковано. Швидше за все, це пов'язано з недавнім скиданням пароля.${ BrElement }\n${ BrElement }\n${ questionText }"
+      ],
       "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
         "Змінюйте ці налаштування лише якщо ви використовуєте PGP з отримувачами поза ProtonMail."
       ],
@@ -2177,6 +2207,9 @@
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Платежі та приватність захищені TLS-шифруванням та швейцарським законодавством."
+      ],
+      "Permanently delete all files in your drive": [
+        "Остаточно видалити всі файли у сховищі"
       ],
       "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
         "PGP/Inline сумісний лише з форматом звичайного тексту. Зверніть увагу, що ProtonMail завжди підписує зашифровані повідомлення."
@@ -2277,8 +2310,8 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Оскільки ви лояльний користувач, ваш обліковий запис має увімкнені додаткові функції."
       ],
-      "Some of your files are no longer accessible. Restore the access to your files. ${ startRecoveryButton }": [
-        "Деякі з ваших файлів більше не доступні. Відновіть доступ до ваших файлів. ${ startRecoveryButton }"
+      "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
+        "Деякі з ваших файлів більше не доступні. Відновіть доступ до файлів. ${ StartRecoveryButton }"
       ],
       "Something went wrong, please try again later.": [
         "Сталася помилка, повторіть спробу пізніше."
@@ -2370,6 +2403,9 @@
       "Trash": [
         "Смітник"
       ],
+      "Unlock drive to recover files": [
+        "Розблокувати сховище, щоб відновити файли"
+      ],
       "Unsupported file": [
         "Непідтримуваний файл"
       ],
@@ -2417,6 +2453,9 @@
       ],
       "What do you want to import from your Google account?": [
         "Що ви хочете імпортувати зі свого облікового запису Google?"
+      ],
+      "What would you like to do?": [
+        "Що ви бажаєте зробити?"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Бажаєте отримати новий код перевірки чи скористатися іншим способом перевірки?"
@@ -2505,14 +2544,20 @@
       "Your file is being downloaded.": [
         "Ваш файл завантажується."
       ],
-      "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ mailSettingsLink }": [
-        "Ваші файли більше недоступні через відновлення пароля. Щоб відновити доступ, перезавантажте старий ключ шифрування, щоб відновити доступ. ${ mailSettingsLink }"
+      "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ KeyReactivationButton }": [
+        "У зв'язку зі скиданням пароля, ваші файли більше недоступні. Для відновлення доступу повторно вивантажте старий ключ шифрування. ${ KeyReactivationButton }"
       ],
       "Your files will be encrypted and then saved.": [
         "Ваші файли буде зашифровано, а потім збережено."
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Ваш номер телефону використається лише для цієї одноразової перевірки."
+      ],
+      "Your previous password": [
+        "Ваш попередній пароль"
+      ],
+      "Your previous recovery phrase": [
+        "Ваша попередня фраза відновлення"
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "Робота вашого облікового запису Proton тимчасово зупинена. Щоб відновити роботу, будь ласка, сплатіть прострочені рахунки."
@@ -2841,6 +2886,12 @@
       "CVV code": [
         "Код CVV"
       ],
+      "Delete Drive?": [
+        "Видалити сховище?",
+        "Видалити сховища?",
+        "Видалити сховища?",
+        "Видалити сховища?"
+      ],
       "Display name": [
         "Показуване ім'я"
       ],
@@ -3048,6 +3099,9 @@
       "Text": [
         "Текст"
       ],
+      "This will permanently delete all files in your locked drive.": [
+        "Це остаточно видалить усі файли у вашому сховищі."
+      ],
       "To: ${ emailAddress }": [
         "Кому: ${ emailAddress }"
       ],
@@ -3062,6 +3116,15 @@
       ],
       "Unknown file": [
         "Невідомий файл"
+      ],
+      "Unlock Drive": [
+        "Розблокувати сховище"
+      ],
+      "Unlock drive (recommended)": [
+        "Розблокувати сховище (рекомендується)"
+      ],
+      "Unlock later": [
+        "Розблокувати пізніше"
       ],
       "Up to ${ parentLinkName }": [
         "Повернутися до ${ parentLinkName }"
@@ -3086,6 +3149,9 @@
       ],
       "What happened?": [
         "Що сталося?"
+      ],
+      "Yes, I want to permanently delete\nmy old files": [
+        "Так, я хочу остаточно видалити\nмої старі файли"
       ],
       "ZIP": [
         "Поштовий індекс"
@@ -3354,11 +3420,11 @@
       "\"${ firstItemName }\" restored from trash": [
         "\"${ firstItemName }\" відновлено зі смітника"
       ],
-      "${ deletedCount } link to your file was deleted.": [
-        "${ deletedCount } посилання на ваш файл було видалено.",
-        "${ deletedCount } посилання на ваш файл було видалено.",
-        "${ deletedCount } посилань на ваш файл було видалено.",
-        "${ deletedCount } посилань на ваш файл було видалено."
+      "${ deletedCount } link to your file was deleted": [
+        "${ deletedCount } посилання на ваш файл було видалено",
+        "${ deletedCount } посилання на ваш файл було видалено",
+        "${ deletedCount } посилань на ваш файл було видалено",
+        "${ deletedCount } посилань на ваш файл було видалено"
       ],
       "${ deletedItemsCount } file deleted permanently from trash": [
         "${ deletedItemsCount } файл видалено зі смітника остаточно",
@@ -3378,11 +3444,11 @@
         "${ deletedItemsCount } елементів видалено зі смітника остаточно",
         "${ deletedItemsCount } елементів видалено зі смітника остаточно"
       ],
-      "${ failedCount } link to your file failed to be deleted.": [
-        "Не вдалося видалити ${ failedCount } посилання на ваш файл.",
-        "Не вдалося видалити ${ failedCount } посилання на ваш файл.",
-        "Не вдалося видалити ${ failedCount } посилань на ваш файл.",
-        "Не вдалося видалити ${ failedCount } посилань на ваш файл."
+      "${ failedCount } link to your file failed to be deleted": [
+        "Не вдалося видалити ${ failedCount } посилання на ваш файл",
+        "Не вдалося видалити ${ failedCount } посилань на ваш файл",
+        "Не вдалося видалити ${ failedCount } посилань на ваш файл",
+        "Не вдалося видалити ${ failedCount } посилань на ваш файл"
       ],
       "${ failedMovesCount } file failed to be moved": [
         "${ failedMovesCount } файл не вдалося перемістити",
@@ -3525,14 +3591,17 @@
       "Not enough space to upload ${ formattedTotal }": [
         "Недостатньо місця для вивантаження ${ formattedTotal }"
       ],
-      "The link to your file failed to be deleted.": [
-        "Не вдалося видалити посилання на ваш файл."
+      "The link to your file failed to be deleted": [
+        "Не вдалося видалити посилання на ваш файл"
       ],
-      "The link to your file was deleted.": [
-        "Посилання на ваш файл було видалено."
+      "The link to your file was deleted": [
+        "Посилання на ваш файл було видалено"
       ],
-      "Your settings have been changed successfully.": [
-        "Ваші налаштування успішно змінено."
+      "Your old files will be deleted in 72 hours": [
+        "Ваші старі файли будуть видалені протягом 72 годин"
+      ],
+      "Your settings have been changed successfully": [
+        "Ваші налаштування успішно змінено"
       ]
     },
     "Onboarding Proton": {
@@ -3974,11 +4043,11 @@
       "Preferences saved": [
         "Налаштування збережено"
       ],
-      "Recovery has started.": [
-        "Відновлення почалося."
+      "Recovery has started": [
+        "Відновлення почалося"
       ],
-      "The link to your file was successfully copied.": [
-        "Посилання на ваш файл успішно скопійовано."
+      "The link to your file was successfully copied": [
+        "Посилання на ваш файл успішно скопійовано"
       ],
       "Verification successful": [
         "Перевірку виконано успішно"
@@ -3986,8 +4055,8 @@
       "You have successfully unsubscribed": [
         "Ви успішно скасували передплату"
       ],
-      "Your files were successfully recovered to \"My files\".": [
-        "Ваші файли успішно відновлено до \"Мої файли\"."
+      "Your files were successfully recovered to \"My files\"": [
+        "Ваші файли успішно відновлено до \"Мої файли\""
       ]
     },
     "Suffix for price": {
@@ -4559,6 +4628,11 @@
         "Поштовий індекс"
       ]
     },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "Сьогодні"
+      ]
+    },
     "Tooltip": {
       "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
         "Доступ до вмісту, обмеженого розташуванням (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube тощо), незалежно від того, де ви знаходитесь."
@@ -4821,6 +4895,9 @@
       ],
       "The contact failed to load.": [
         "Не вдалося завантажити контакт."
+      ],
+      "The date and time settings on your device are out of sync. ${ learnMore }": [
+        "Дата й час на вашому пристрої не синхронізуються. ${ learnMore }"
       ],
       "The decryption of the encrypted content failed.": [
         "Не вдалося розшифрувати зашифрований вміст."

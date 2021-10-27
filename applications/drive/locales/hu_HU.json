@@ -187,6 +187,9 @@
       "Download": [
         "Letöltés"
       ],
+      "Drive Locked": [
+        ""
+      ],
       "Edit": [
         "Szerkesztés"
       ],
@@ -1097,8 +1100,8 @@
       "Can't validate phone, try again later": [
         "Telefonszám ellenőrzése nem sikerült, próbálja meg később"
       ],
-      "Checkout expired, please try again.": [
-        "A fizetés időtúllépéssel megszakadt, kérjük próbálja újra."
+      "Checkout expired, please try again": [
+        ""
       ],
       "Contact could not be saved": [
         "A névjegy mentése nem sikerült"
@@ -1687,6 +1690,10 @@
       "${ vpnAppName } Free": [
         "${ vpnAppName } Ingyenes"
       ],
+      "(${ memberCount } member)": [
+        "",
+        ""
+      ],
       "(Mail + VPN)": [
         "(E-mail + VPN)"
       ],
@@ -1753,6 +1760,9 @@
       "Amount below minimum (${ amount }).": [
         "Az összeg a minimum alatt. (${ amount })."
       ],
+      "An active recovery file": [
+        ""
+      ],
       "and": [
         ""
       ],
@@ -1768,6 +1778,9 @@
       ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Az alapvető navigációs lehetőségek akkor is megmaradnak, ha a beállításokban letiltotta a gyorsbillentyűket."
+      ],
+      "Because ${ appName } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
+        ""
       ],
       "Billed as ${ billedPrice } every 2 years": [
         "${ billedPrice } számlázva kétévente"
@@ -1820,6 +1833,9 @@
       "Connections": [
         "Kapcsolódás"
       ],
+      "Continue using ${ appName } and unlock drive later": [
+        ""
+      ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "",
         ""
@@ -1846,6 +1862,10 @@
         "A fájl linkjének létrehozása"
       ],
       "Creating share": [
+        ""
+      ],
+      "Delete drive": [
+        "",
         ""
       ],
       "Discount applied to your subscription with coupon ${ code }": [
@@ -1943,6 +1963,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Ha nem találja az e-mailt a beérkező leveleknél, ellenőrizze a Levélszemét közt."
+      ],
+      "If you have one of these, continue to Proton account setting to\ncontinue the unblock process.": [
+        ""
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         ""
@@ -2071,6 +2094,9 @@
       "of": [
         "/"
       ],
+      "One of your encrypted drives is locked. This is most likely due to a recent password reset.${ BrElement }\n${ BrElement }\n${ questionText }": [
+        ""
+      ],
       "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
         "Ezeket a beállításokat csak akkor változtassa meg, ha nem ProtonMail címzettekkel használ PGP titkosítást."
       ],
@@ -2085,6 +2111,9 @@
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Fizetés adatait TLS titkosítással védjük. Svájci adatvédelmi törvények vonatkoznak rá."
+      ],
+      "Permanently delete all files in your drive": [
+        ""
       ],
       "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
         "A PGP/Inline csak Egyszerű Szöveg formátummal működik. A ProtonMail mindig aláírja a titkosított üzeneteket."
@@ -2183,8 +2212,8 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Mivel ön a hűséges felhasználónk, fiókja extra funkciókat tartalmaz."
       ],
-      "Some of your files are no longer accessible. Restore the access to your files. ${ startRecoveryButton }": [
-        "Néhány fájlja már nem érhető el. A fájlok elérésének visszaállítása. ${ startRecoveryButton }"
+      "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
+        ""
       ],
       "Something went wrong, please try again later.": [
         "Hiba történt. Kérjük, próbálkozzon később."
@@ -2274,6 +2303,9 @@
       "Trash": [
         "Lomtár"
       ],
+      "Unlock drive to recover files": [
+        ""
+      ],
       "Unsupported file": [
         "Nem támogatott fájltípus"
       ],
@@ -2320,6 +2352,9 @@
         ""
       ],
       "What do you want to import from your Google account?": [
+        ""
+      ],
+      "What would you like to do?": [
         ""
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
@@ -2409,14 +2444,20 @@
       "Your file is being downloaded.": [
         "A fájl letöltés alatt."
       ],
-      "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ mailSettingsLink }": [
-        "A jelszó visszaállítása miatt, a fájljai már nem érhetők el. Töltse fel a korábbi titkosítási kulcsát, hogy újra elérhesse a fájljait. ${ mailSettingsLink }"
+      "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ KeyReactivationButton }": [
+        ""
       ],
       "Your files will be encrypted and then saved.": [
         "A fájlok titkosításra majd pedig feltöltésre kerülnek."
       ],
       "Your phone number will only be used for this one-time verification.": [
         "A telefonszám csak erre az egyszeri ellenőrzésre lesz felhasználva."
+      ],
+      "Your previous password": [
+        ""
+      ],
+      "Your previous recovery phrase": [
+        ""
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "A Proton fiók jelenleg fel van függesztve. A további használatához kérjük, egyenlítse ki a számlatartozását."
@@ -2745,6 +2786,10 @@
       "CVV code": [
         "CVV kód"
       ],
+      "Delete Drive?": [
+        "",
+        ""
+      ],
       "Display name": [
         "Megjelenített név"
       ],
@@ -2952,6 +2997,9 @@
       "Text": [
         "Szöveg"
       ],
+      "This will permanently delete all files in your locked drive.": [
+        ""
+      ],
       "To: ${ emailAddress }": [
         ""
       ],
@@ -2966,6 +3014,15 @@
       ],
       "Unknown file": [
         "Ismeretlen fájl"
+      ],
+      "Unlock Drive": [
+        ""
+      ],
+      "Unlock drive (recommended)": [
+        ""
+      ],
+      "Unlock later": [
+        ""
       ],
       "Up to ${ parentLinkName }": [
         ""
@@ -2990,6 +3047,9 @@
       ],
       "What happened?": [
         "Mi történt?"
+      ],
+      "Yes, I want to permanently delete\nmy old files": [
+        ""
       ],
       "ZIP": [
         "Irányítószám"
@@ -3256,9 +3316,9 @@
       "\"${ firstItemName }\" restored from trash": [
         "\"${ firstItemName }\" visszaállítva a lomtárból"
       ],
-      "${ deletedCount } link to your file was deleted.": [
-        "${ deletedCount } hivatkozás a fájlra törlésre került.",
-        "${ deletedCount } hivatkozás a fájlra törlésre került."
+      "${ deletedCount } link to your file was deleted": [
+        "",
+        ""
       ],
       "${ deletedItemsCount } file deleted permanently from trash": [
         "${ deletedItemsCount } fájl véglegesen törölve a lomtárból",
@@ -3272,9 +3332,9 @@
         "${ deletedItemsCount } elem véglegesen törölve a lomtárból",
         "${ deletedItemsCount } elem véglegesen törölve a lomtárból"
       ],
-      "${ failedCount } link to your file failed to be deleted.": [
-        "${ failedCount }, a fájlra vonatkozó hivatkozás törlése nem sikerült.",
-        "${ failedCount }, a fájlra vonatkozó hivatkozás törlése nem sikerült."
+      "${ failedCount } link to your file failed to be deleted": [
+        "",
+        ""
       ],
       "${ failedMovesCount } file failed to be moved": [
         "${ failedMovesCount } fájl áthelyezése nem sikerült",
@@ -3379,14 +3439,17 @@
       "Not enough space to upload ${ formattedTotal }": [
         ""
       ],
-      "The link to your file failed to be deleted.": [
-        "A fájlra vonatkozó hivatkozás törlése nem sikerült."
+      "The link to your file failed to be deleted": [
+        ""
       ],
-      "The link to your file was deleted.": [
-        "A fájlra vonatkozó hivatkozás törölve."
+      "The link to your file was deleted": [
+        ""
       ],
-      "Your settings have been changed successfully.": [
-        "A beállítások módosítása sikeresen megtörtént."
+      "Your old files will be deleted in 72 hours": [
+        ""
+      ],
+      "Your settings have been changed successfully": [
+        ""
       ]
     },
     "Onboarding Proton": {
@@ -3810,11 +3873,11 @@
       "Preferences saved": [
         "Beállítások mentve"
       ],
-      "Recovery has started.": [
-        "A helyreállítás megkezdődött."
+      "Recovery has started": [
+        ""
       ],
-      "The link to your file was successfully copied.": [
-        "A fájlra mutató hivatkozás sikeresen másolva."
+      "The link to your file was successfully copied": [
+        ""
       ],
       "Verification successful": [
         "Sikeres ellenőrzés"
@@ -3822,8 +3885,8 @@
       "You have successfully unsubscribed": [
         "Sikeresen leiratkozott"
       ],
-      "Your files were successfully recovered to \"My files\".": [
-        "A fájljai sikeresen visszaállítva a \"Saját fájlok\" alá."
+      "Your files were successfully recovered to \"My files\"": [
+        ""
       ]
     },
     "Suffix for price": {
@@ -4383,6 +4446,11 @@
         "Irányítószám"
       ]
     },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        ""
+      ]
+    },
     "Tooltip": {
       "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
         "Hozzáférés a földrajzilag blokkolt tartalmakhoz (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, Youtube stb.), bárhol is tartózkodik."
@@ -4639,6 +4707,9 @@
       ],
       "The contact failed to load.": [
         "A névjegy betöltése nem sikerült."
+      ],
+      "The date and time settings on your device are out of sync. ${ learnMore }": [
+        ""
       ],
       "The decryption of the encrypted content failed.": [
         "A titkosított tartalom visszafejtése nem sikerült."

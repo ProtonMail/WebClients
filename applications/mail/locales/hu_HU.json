@@ -962,9 +962,6 @@
       "Forwarded": [
         "Továbbított"
       ],
-      "Has attachments": [
-        "Mellékletet tartalmaz"
-      ],
       "Replied to": [
         "Válaszolt"
       ],
@@ -1884,8 +1881,8 @@
       "Amount below minimum.": [
         "Túl alacsony összeg."
       ],
-      "Attachments are limited to 25 MB.": [
-        "Mellékletek maximális mérete 25 MB."
+      "Attachments are limited to 25 MB": [
+        ""
       ],
       "Authentication canceled.": [
         "Hitelesítés megszakítva."
@@ -1908,8 +1905,8 @@
       "Can't validate phone, try again later": [
         "Telefonszám ellenőrzése nem sikerült, próbálja meg később"
       ],
-      "Checkout expired, please try again.": [
-        "A fizetés időtúllépéssel megszakadt, kérjük próbálja újra."
+      "Checkout expired, please try again": [
+        ""
       ],
       "Choose a date in the future.": [
         ""
@@ -1930,10 +1927,10 @@
       "Contact signature not verified": [
         "Névjegy aláírása nincs ellenőrizve"
       ],
-      "Contact your organization’s administrator to resolve this.": [
-        "A megoldáshoz lépjen kapcsolatba a szervezet adminisztrátorával."
+      "Contact your organization’s administrator to resolve this": [
+        ""
       ],
-      "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser": [
+      "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         ""
       ],
       "Could not find address ${ email }.": [
@@ -1970,14 +1967,14 @@
       "Error in one of the conditions": [
         "Hiba az egyik feltételben"
       ],
-      "Error while saving draft. Please try again": [
+      "Error while saving draft. Please try again.": [
         ""
       ],
-      "Error while sending the message. Message is not sent": [
-        "Hiba az üzenet elküldése közben. Nincs elküldve"
+      "Error while sending the message. Message is not sent.": [
+        ""
       ],
-      "Error while uploading attachments. Message is not sent": [
-        "Hiba történt a mellékletek feltöltése közben. Az üzenet nincs elküldve"
+      "Error while uploading attachments. Message is not sent.": [
+        ""
       ],
       "Failed to encrypt attachment. Please try again.": [
         "Hiba a melléklet titkosítása során. Próbálja újra."
@@ -2012,8 +2009,8 @@
       "Invalid expiration date": [
         "Érvénytelen lejárati dátum"
       ],
-      "Invalid expiration time.": [
-        "Érvénytelen lejárati dátum."
+      "Invalid expiration time": [
+        ""
       ],
       "Invalid name": [
         "Érvénytelen név"
@@ -2037,8 +2034,8 @@
       "Message needs to be sent first": [
         "Az üzenetet előbb el kell küldeni"
       ],
-      "Message passwords do not match.": [
-        "Az üzenetjelszavak nem egyeznek."
+      "Message passwords do not match": [
+        ""
       ],
       "Message processing error.": [
         "Üzenet feldolgozási hiba."
@@ -2052,8 +2049,8 @@
       "Network error: Please check your connection and try again.": [
         "Hálózati hiba: Ellenőrizze a kapcsolatot és próbálkozzon újra."
       ],
-      "No address with keys available to compose a message.": [
-        "Nincs elérhető kulcsokkal rendelkező cím az üzenet íráshoz."
+      "No address with keys available to compose a message": [
+        ""
       ],
       "No key retrieved for internal user is valid for sending": [
         "Nem található a küldéshez érvényes kulcs a belső felhasználóhoz"
@@ -2186,8 +2183,8 @@
       "The label name is too long. Please choose a different name.": [
         ""
       ],
-      "The maximum expiration is 4 weeks.": [
-        "A leghosszabb időkorlát 4 hét lehet."
+      "The maximum expiration is 4 weeks": [
+        ""
       ],
       "The minimum amount of credit that can be added is ${ _price }": [
         "Legalább ${ _price } kredit feltöltése szükséges"
@@ -2204,8 +2201,8 @@
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         ""
       ],
-      "There has been an issue with content search. Default search has been used instead": [
-        "Hiba történt a tartalomban való keresés közben. Alapértelmezett keresés történt"
+      "There has been an issue with content search. Default search has been used instead.": [
+        ""
       ],
       "There was an error when exporting the contacts vCards": [
         "Hiba történt a névjegyek vCard formátumra exportálásakor"
@@ -2222,7 +2219,7 @@
       "This label name is not available. Please choose a different name": [
         ""
       ],
-      "This message has already been sent.": [
+      "This message has already been sent": [
         ""
       ],
       "This message has already been sent. A new draft has been saved.": [
@@ -2231,8 +2228,8 @@
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "Ez az üzenet olyan linkeket tartalmazhat, amelyeket a böngészője nem tud megfelelően megnyitni"
       ],
-      "Too many active filters. Please upgrade to a paid plan to activate more filters": [
-        "Túl sok bekapcsolt szűrő. Váltson nagyobb csomagra további szűrők bekapcsolásához"
+      "Too many active filters. Please upgrade to a paid plan to activate more filters.": [
+        ""
       ],
       "Trusted keys are not valid for sending": [
         "A küldéshez nem érvényesek a megbízhatóként megjelölt kulcsok"
@@ -2252,7 +2249,7 @@
       "You can't send vCards of more than 10 contacts": [
         "Egyszerre nem küldhet el több mint 10 vCard névjegyet"
       ],
-      "You cannot open more than ${ maxActiveComposer } composer window at a time.": [
+      "You cannot open more than ${ maxActiveComposer } composer window at a time": [
         "",
         ""
       ],
@@ -2271,8 +2268,8 @@
       "Your import will not be processed.": [
         "Az importálás nem lesz feldolgozva."
       ],
-      "Your search matched too many results. Please limit your search and try again": [
-        "A keresés túl sok találatot eredményezett. Korlátozza a keresést majd próbálja meg újra"
+      "Your search matched too many results. Please limit your search and try again.": [
+        ""
       ]
     },
     "Error display when performing invalid move on message": {
@@ -3316,7 +3313,7 @@
       "Image URL": [
         "Kép URL"
       ],
-      "Images have been removed because they are not allowed in auto-reply.": [
+      "Images have been removed because they are not allowed in auto-reply": [
         ""
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
@@ -3422,6 +3419,9 @@
       ],
       "Message sent": [
         "Üzenet elküldve"
+      ],
+      "Message sent.": [
+        ""
       ],
       "Message will be sent ${ dateString } at ${ formattedTime }": [
         ""
@@ -6099,8 +6099,8 @@
       "Contacts deleted": [
         "Névjegyek törölve"
       ],
-      "Conversation added to ${ labelName }": [
-        "A beszélgetés megjelölve ${ labelName } címkével"
+      "Conversation added to ${ labelName }.": [
+        ""
       ],
       "Conversation deleted": [
         "Beszélgetés törölve"
@@ -6108,8 +6108,8 @@
       "Conversation marked as read.": [
         ""
       ],
-      "Conversation marked as Starred": [
-        "Beszélgetés csillaggal megjelölve"
+      "Conversation marked as Starred.": [
+        ""
       ],
       "Conversation marked as unread.": [
         ""
@@ -6123,8 +6123,8 @@
       "Conversation moved to spam and sender added to Block List.": [
         "Az beszélgetés átkerült a levélszeméthez, a feladó pedig a tiltólistára."
       ],
-      "Conversation removed from ${ labelName }": [
-        "${ labelName } címke eltávolítva a beszélgetésről"
+      "Conversation removed from ${ labelName }.": [
+        ""
       ],
       "Draft deleted": [
         "Piszkozat törölve"
@@ -6150,8 +6150,8 @@
       "Mail list unsubscribed": [
         "Leiratkozva a levelezési listáról"
       ],
-      "Message added to ${ labelName }": [
-        "Az üzenet ${ labelName } címkével megjelölve"
+      "Message added to ${ labelName }.": [
+        ""
       ],
       "Message content search activated": [
         "Keresés az üzenetek tartalmában aktiválva"
@@ -6165,8 +6165,8 @@
       "Message marked as read.": [
         ""
       ],
-      "Message marked as Starred": [
-        "Üzenet csillaggal megjelölve"
+      "Message marked as Starred.": [
+        ""
       ],
       "Message marked as unread.": [
         ""
@@ -6180,8 +6180,8 @@
       "Message moved to spam and sender added to Block List.": [
         "Az üzenet átkerült a levélszeméthez, a feladó pedig a tiltólistára."
       ],
-      "Message removed from ${ labelName }": [
-        "${ labelName } címke eltávolítva az üzenetről"
+      "Message removed from ${ labelName }.": [
+        ""
       ],
       "Move ${ selectionCount } conversation": [
         "${ selectionCount } beszélgetés áthelyezése",

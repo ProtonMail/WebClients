@@ -189,6 +189,9 @@
       "Download": [
         "Descărcare"
       ],
+      "Drive Locked": [
+        "Unitate blocată"
+      ],
       "Edit": [
         "Editare"
       ],
@@ -1106,8 +1109,8 @@
       "Can't validate phone, try again later": [
         "Nu se poate valida telefonul, reîncercați mai târziu."
       ],
-      "Checkout expired, please try again.": [
-        "Finalizarea comenzii a expirat, reîncercați."
+      "Checkout expired, please try again": [
+        "Finalizarea comenzii a expirat, reîncercați"
       ],
       "Contact could not be saved": [
         "Contactul nu a putut fi salvat"
@@ -1351,7 +1354,7 @@
         "Trebuie specificat un nume."
       ],
       "Your browser does not support uploading folders": [
-        "Browserul vostru nu acceptă încărcarea de foldere"
+        "Navigatorul curent nu acceptă încărcarea de foldere."
       ],
       "Your import will not be processed.": [
         "Importarea nu va fi procesată."
@@ -1727,6 +1730,11 @@
       "${ vpnAppName } Free": [
         "${ vpnAppName } gratuit"
       ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } membru)",
+        "(${ memberCount } membri)",
+        "(${ memberCount } de membri)"
+      ],
       "(Mail + VPN)": [
         "(e-mail + VPN)"
       ],
@@ -1796,6 +1804,9 @@
       "Amount below minimum (${ amount }).": [
         "Suma este sub minimul acceptat (${ amount })."
       ],
+      "An active recovery file": [
+        "Un fișier de recuperare activ"
+      ],
       "and": [
         "și"
       ],
@@ -1812,6 +1823,9 @@
       ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Navigarea de bază și acțiunile rămân disponibile indiferent de combinațiile de taste care sunt active sau nu în setări."
+      ],
+      "Because ${ appName } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
+        "Deoarece ${ appName } este criptat de la un capăt la altul, nu putem accesa\nsau decripta fișierele pentru dvs. Pentru a vă debloca unitatea după o resetare a parolei,\ntrebuie să aveți una dintre următoarele:"
       ],
       "Billed as ${ billedPrice } every 2 years": [
         "Facturat cu ${ billedPrice } la doi ani"
@@ -1864,6 +1878,9 @@
       "Connections": [
         "Conexiuni"
       ],
+      "Continue using ${ appName } and unlock drive later": [
+        "Continuați să utilizați ${ appName } și deblocați unitatea mai târziu"
+      ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "Creare un calendar",
         "Creare ${ calendarsToBeCreated } calendare",
@@ -1892,6 +1909,11 @@
       ],
       "Creating share": [
         "Creare partajare"
+      ],
+      "Delete drive": [
+        "Ștergeți unitatea",
+        "Ștergeți unitățile",
+        "Ștergerea de unități"
       ],
       "Discount applied to your subscription with coupon ${ code }": [
         "Cuponul ${ code } a aplicat o reducere de 20% la abonament."
@@ -1988,6 +2010,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Dacă nu vedeți mesajul verificați în folderul de mesaje nedorite."
+      ],
+      "If you have one of these, continue to Proton account setting to\ncontinue the unblock process.": [
+        "Dacă aveți unul dintre acestea, continuați la setările contului Proton pentru a\ncontinuați procesul de deblocare."
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Importare ${ contactsFragment } și ${ contactsGroupsFragment }"
@@ -2109,13 +2134,16 @@
         "Nu poate fi personalizat"
       ],
       "Note: Data may still be available locally on devices where you have installed ${ appName }.": [
-        ""
+        "Notă: Este posibil ca datele să fie încă disponibile local pe dispozitivele pe care ați instalat ${ appName }."
       ],
       "Number of VPN connections which can be assigned to users. Each connected device consumes one VPN connection.": [
         "Numărul de conexiuni VPN care poate fi atribuit utilizatorilor. Fiecare dispozitiv conectat consumă o conexiune VPN."
       ],
       "of": [
         "din"
+      ],
+      "One of your encrypted drives is locked. This is most likely due to a recent password reset.${ BrElement }\n${ BrElement }\n${ questionText }": [
+        "Una dintre unitățile criptate este blocată. Cel mai probabil, acest lucru se datorează unei resetări recente a parolei.${ BrElement }\n${ BrElement }\n${ questionText }"
       ],
       "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
         "Schimbați aceste setări doar dacă utilizați PGP cu destinatari non-ProtonMail."
@@ -2131,6 +2159,9 @@
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Plățile sunt protejate de criptarea TLS și de legile de confidențialitate elvețiene."
+      ],
+      "Permanently delete all files in your drive": [
+        "Ștergeți permanent toate fișierele din unitatea dumneavoastră"
       ],
       "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
         "PGP/integrat este compatibil doar cu formatul de text simplu. Rețineți că ProtonMail întotdeauna semnează mesajele criptate."
@@ -2216,7 +2247,7 @@
         "Selectați ce calendare să importați. Se va crea un calendar nou pentru fiecare calendar importat, până la limita de 20 de calendare personale. De asemenea, puteți fuziona calendarele importate cu calendarele Proton existente."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
-        "Serverele sunt inaccesibile. Vă rugăm să încercați din nou în câteva minute"
+        "Serverele sunt inaccesibile. Mai reîncercați peste câteva minute."
       ],
       "Session timed out.": [
         "Sesiune expirată."
@@ -2230,8 +2261,8 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Deoarece sunteți un utilizator loial, contul are funcții adiționale activate."
       ],
-      "Some of your files are no longer accessible. Restore the access to your files. ${ startRecoveryButton }": [
-        "Unele dintre fișiere nu mai sunt accesibile. Restaurați accesul la fișiere. ${ startRecoveryButton }"
+      "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
+        "Unele dintre fișierele dumneavoastră. Restabiliți accesul la fișierele voastre. ${ StartRecoveryButton }"
       ],
       "Something went wrong, please try again later.": [
         "A apărut o problemă. Reîncercați mai târziu."
@@ -2322,6 +2353,9 @@
       "Trash": [
         "Gunoi"
       ],
+      "Unlock drive to recover files": [
+        "Deblocați unitatea pentru a recupera fișierele"
+      ],
       "Unsupported file": [
         "Fişier nesuportat"
       ],
@@ -2369,6 +2403,9 @@
       ],
       "What do you want to import from your Google account?": [
         "Ce doriți să importați din contul Google personal?"
+      ],
+      "What would you like to do?": [
+        "Ce ți-ar plăcea să faci?"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Doriți să primiți un nou cod de verificare sau să folosiți o metodă alternativă de verificare?"
@@ -2457,14 +2494,20 @@
       "Your file is being downloaded.": [
         "Fișierul este în curs de descărcare."
       ],
-      "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ mailSettingsLink }": [
-        "Fișierele nu mai sunt accesibile datorită resetării parolei. Reîncărcați vechea cheie de criptare pentru a redobândi accesul. ${ mailSettingsLink }"
+      "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ KeyReactivationButton }": [
+        "Fișierele dvs. nu mai sunt accesibile din cauza unei parole resetate. Reîncărcați vechea cheie de criptare pentru a redobândi accesul. ${ KeyReactivationButton }"
       ],
       "Your files will be encrypted and then saved.": [
         "Fișierele vor fi criptate și apoi salvate."
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Numărul de telefon va fi folosit doar pentru această verificare unică."
+      ],
+      "Your previous password": [
+        "Parola dumneavoastră anterioară"
+      ],
+      "Your previous recovery phrase": [
+        "Fraza dumneavoastră anterioară de recuperare"
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "Contul Proton este momentan suspendat. Pentru a putea să-l utilizați, trebuie să plătiți orice factură restantă."
@@ -2793,6 +2836,11 @@
       "CVV code": [
         "Cod CVV"
       ],
+      "Delete Drive?": [
+        "Ștergeți Drive?",
+        "Ștergeți driverele?",
+        "Ștergeți driverele?"
+      ],
       "Display name": [
         "Nume afișat"
       ],
@@ -3000,6 +3048,9 @@
       "Text": [
         "Text"
       ],
+      "This will permanently delete all files in your locked drive.": [
+        "Acest lucru va șterge definitiv toate fișierele de pe unitatea blocată."
+      ],
       "To: ${ emailAddress }": [
         "Către: ${ emailAddress }"
       ],
@@ -3014,6 +3065,15 @@
       ],
       "Unknown file": [
         "Fișier necunoscut"
+      ],
+      "Unlock Drive": [
+        "Deblocare unitate"
+      ],
+      "Unlock drive (recommended)": [
+        "Unitate de deblocare (recomandată)"
+      ],
+      "Unlock later": [
+        "Deblocați mai târziu"
       ],
       "Up to ${ parentLinkName }": [
         "Până la ${ parentLinkName }"
@@ -3038,6 +3098,9 @@
       ],
       "What happened?": [
         "Ce s-a întâmplat?"
+      ],
+      "Yes, I want to permanently delete\nmy old files": [
+        "Da, vreau să șterg definitiv\nfișierele mele vechi"
       ],
       "ZIP": [
         "ZIP"
@@ -3305,10 +3368,10 @@
       "\"${ firstItemName }\" restored from trash": [
         "„${ firstItemName }” a fost restaurat din «Gunoi»."
       ],
-      "${ deletedCount } link to your file was deleted.": [
-        "A fost ștearsă legătura către un fișier.",
-        "S-au șters ${ deletedCount } legături către fișiere.",
-        "S-au șters ${ deletedCount } de legături către fișiere."
+      "${ deletedCount } link to your file was deleted": [
+        "${ deletedCount } link-ul către fișierul vostru a fost șters",
+        "${ deletedCount } legăturile către fișierele voastre au fost șterse",
+        "${ deletedCount } de legături către fișierele voastre au fost șterse"
       ],
       "${ deletedItemsCount } file deleted permanently from trash": [
         "Un fișier a fost eliminat permanent din «Gunoi»",
@@ -3325,10 +3388,10 @@
         "S-au eliminat definitiv ${ deletedItemsCount } elemente din «Gunoi».",
         "S-au eliminat definitiv ${ deletedItemsCount } de elemente din «Gunoi»."
       ],
-      "${ failedCount } link to your file failed to be deleted.": [
-        "Legătura către un fișier nu a putut fi ștearsă.",
-        "Nu s-au putut șterge ${ failedCount } legături către fișiere.",
-        "Nu s-au putut șterge ${ failedCount } de legături către fișiere."
+      "${ failedCount } link to your file failed to be deleted": [
+        "${ failedCount } linkul către fișierul vostru nu a reușit să fie șters",
+        "${ failedCount } legăturile către fișierul dumneavoastră nu au reușit să fie șterse",
+        "${ failedCount } de legături către fișierul dumneavoastră nu au reușit să fie șterse"
       ],
       "${ failedMovesCount } file failed to be moved": [
         "Un fișier nu a putut fi mutat.",
@@ -3452,14 +3515,17 @@
       "Not enough space to upload ${ formattedTotal }": [
         "Nu este suficient spațiu pentru a încărca ${ formattedTotal }."
       ],
-      "The link to your file failed to be deleted.": [
-        "Legătura către fișier nu a putut fi ștearsă."
+      "The link to your file failed to be deleted": [
+        "Legătura către fișier nu a putut fi ștearsă"
       ],
-      "The link to your file was deleted.": [
-        "Legătura către fișier a fost ștearsă."
+      "The link to your file was deleted": [
+        "Legătura către fișier a fost ștearsă"
       ],
-      "Your settings have been changed successfully.": [
-        "Setările au fost schimbate cu succes."
+      "Your old files will be deleted in 72 hours": [
+        "Fișierele voastre vechi vor fi șterse în 72 de ore"
+      ],
+      "Your settings have been changed successfully": [
+        "Setările voastre au fost modificate cu succes"
       ]
     },
     "Onboarding Proton": {
@@ -3892,11 +3958,11 @@
       "Preferences saved": [
         "Preferințe salvate"
       ],
-      "Recovery has started.": [
-        "Recuperarea a început."
+      "Recovery has started": [
+        "A început recuperarea"
       ],
-      "The link to your file was successfully copied.": [
-        "Legătura către fișier a fost copiată cu succes."
+      "The link to your file was successfully copied": [
+        "Legătura către fișier a fost copiată cu succes"
       ],
       "Verification successful": [
         "Verificare reușită"
@@ -3904,8 +3970,8 @@
       "You have successfully unsubscribed": [
         "Operația de dezabonare a fost finalizată."
       ],
-      "Your files were successfully recovered to \"My files\".": [
-        "Fișierele au fost recuperate cu succes în „Fișierele mele”."
+      "Your files were successfully recovered to \"My files\"": [
+        "Fișierele voastre au fost recuperate cu succes în \"Fișierele mele\""
       ]
     },
     "Suffix for price": {
@@ -4471,6 +4537,11 @@
         "ZIP/Cod poștal"
       ]
     },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "Astăzi"
+      ]
+    },
     "Tooltip": {
       "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
         "Accesați conținutul blocat geografic (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube etc.) indiferent unde vă aflați."
@@ -4730,6 +4801,9 @@
       ],
       "The contact failed to load.": [
         "Nu s-a putut încărca contactul."
+      ],
+      "The date and time settings on your device are out of sync. ${ learnMore }": [
+        "Setările de dată și oră de pe dispozitiv nu sunt sincronizate. ${ learnMore }"
       ],
       "The decryption of the encrypted content failed.": [
         "Decriptarea conținutului criptat a eșuat."

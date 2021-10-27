@@ -970,9 +970,6 @@
       "Forwarded": [
         "Proslijeđeno"
       ],
-      "Has attachments": [
-        "Ima privitke"
-      ],
       "Replied to": [
         "Odgovoreno"
       ],
@@ -1899,8 +1896,8 @@
       "Amount below minimum.": [
         "Iznos ispod minimuma."
       ],
-      "Attachments are limited to 25 MB.": [
-        "Privitci su ograničeni na 25 MB."
+      "Attachments are limited to 25 MB": [
+        ""
       ],
       "Authentication canceled.": [
         "Otkazana autentikacija."
@@ -1923,8 +1920,8 @@
       "Can't validate phone, try again later": [
         "Nije moguće potvrditi broj telefona, pokušajte ponovo kasnije"
       ],
-      "Checkout expired, please try again.": [
-        "Naplata je istekla, pokušajte ponovo."
+      "Checkout expired, please try again": [
+        ""
       ],
       "Choose a date in the future.": [
         "Odaberite datum u budućnosti."
@@ -1946,10 +1943,10 @@
       "Contact signature not verified": [
         "Potpis kontakta nije potvrđen"
       ],
-      "Contact your organization’s administrator to resolve this.": [
-        "Kontaktirajte administratora svoje organizacije kako biste to riješili."
+      "Contact your organization’s administrator to resolve this": [
+        ""
       ],
-      "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser": [
+      "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         ""
       ],
       "Could not find address ${ email }.": [
@@ -1987,14 +1984,14 @@
       "Error in one of the conditions": [
         "Pogreška u jednom od uvjeta"
       ],
-      "Error while saving draft. Please try again": [
+      "Error while saving draft. Please try again.": [
         ""
       ],
-      "Error while sending the message. Message is not sent": [
-        "Pogreška tijekom slanja poruke. Poruka nije poslana"
+      "Error while sending the message. Message is not sent.": [
+        ""
       ],
-      "Error while uploading attachments. Message is not sent": [
-        "Pogreška prilikom učitavanja privitaka. Poruka nije poslana"
+      "Error while uploading attachments. Message is not sent.": [
+        ""
       ],
       "Failed to encrypt attachment. Please try again.": [
         "Neuspješno šifriranje privitka. Molimo pokušajte ponovno."
@@ -2029,8 +2026,8 @@
       "Invalid expiration date": [
         "Nevažeći datum isteka"
       ],
-      "Invalid expiration time.": [
-        "Nevažeći datum isteka."
+      "Invalid expiration time": [
+        ""
       ],
       "Invalid name": [
         "Nevažeći naziv"
@@ -2055,8 +2052,8 @@
       "Message needs to be sent first": [
         "Poruka mora biti prvo poslana"
       ],
-      "Message passwords do not match.": [
-        "Lozinke poruke se ne podudaraju."
+      "Message passwords do not match": [
+        ""
       ],
       "Message processing error.": [
         "Pogreška pri obradi poruke."
@@ -2070,8 +2067,8 @@
       "Network error: Please check your connection and try again.": [
         "Mrežna pogreška: Molimo provjerite vašu vezu i pokušajte ponovo."
       ],
-      "No address with keys available to compose a message.": [
-        "Nema adrese s ključevima dostupnim za sastavljanje poruke."
+      "No address with keys available to compose a message": [
+        ""
       ],
       "No key retrieved for internal user is valid for sending": [
         "Nijedan ključ dohvaćen za unutarnjeg korisnika nije valjan za slanje"
@@ -2209,8 +2206,8 @@
       "The label name is too long. Please choose a different name.": [
         ""
       ],
-      "The maximum expiration is 4 weeks.": [
-        "Maksimalno razdoblje isteka je 4 tjedna."
+      "The maximum expiration is 4 weeks": [
+        ""
       ],
       "The minimum amount of credit that can be added is ${ _price }": [
         "Minimalni iznos kredita koji se može dodati je ${ _price }"
@@ -2227,8 +2224,8 @@
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         ""
       ],
-      "There has been an issue with content search. Default search has been used instead": [
-        "Došlo je do problema s pretraživanjem sadržaja. Umjesto toga korišteno je zadano pretraživanje"
+      "There has been an issue with content search. Default search has been used instead.": [
+        ""
       ],
       "There was an error when exporting the contacts vCards": [
         "Došlo je do pogreške prilikom izvoza vCards-a kontakata"
@@ -2245,8 +2242,8 @@
       "This label name is not available. Please choose a different name": [
         ""
       ],
-      "This message has already been sent.": [
-        "Ova poruka je već poslana."
+      "This message has already been sent": [
+        ""
       ],
       "This message has already been sent. A new draft has been saved.": [
         ""
@@ -2254,8 +2251,8 @@
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "Ova poruka može sadržavati URL poveznice koje trenutačni preglednik ne može ispravno otvoriti"
       ],
-      "Too many active filters. Please upgrade to a paid plan to activate more filters": [
-        "Previše aktivnih filtara. Nadogradite na plaćeni plan da aktivirate više filtara"
+      "Too many active filters. Please upgrade to a paid plan to activate more filters.": [
+        ""
       ],
       "Trusted keys are not valid for sending": [
         "Pouzdani ključevi nisu valjani za slanje"
@@ -2275,7 +2272,7 @@
       "You can't send vCards of more than 10 contacts": [
         "Ne možete slati vCards za više od 10 kontakata"
       ],
-      "You cannot open more than ${ maxActiveComposer } composer window at a time.": [
+      "You cannot open more than ${ maxActiveComposer } composer window at a time": [
         "",
         "",
         ""
@@ -2295,8 +2292,8 @@
       "Your import will not be processed.": [
         "Vaš uvoz nije moguće obraditi."
       ],
-      "Your search matched too many results. Please limit your search and try again": [
-        "Vaša pretraga je pronašla previše rezultata. Ograničite pretragu i pokušajte ponovno"
+      "Your search matched too many results. Please limit your search and try again.": [
+        ""
       ]
     },
     "Error display when performing invalid move on message": {
@@ -3389,7 +3386,7 @@
       "Image URL": [
         "URL slike"
       ],
-      "Images have been removed because they are not allowed in auto-reply.": [
+      "Images have been removed because they are not allowed in auto-reply": [
         ""
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
@@ -3497,6 +3494,9 @@
       ],
       "Message sent": [
         "Poruka je poslana"
+      ],
+      "Message sent.": [
+        ""
       ],
       "Message will be sent ${ dateString } at ${ formattedTime }": [
         ""
@@ -6224,8 +6224,8 @@
       "Contacts deleted": [
         "Kontakti su uklonjeni"
       ],
-      "Conversation added to ${ labelName }": [
-        "Razgovor dodan u ${ labelName }"
+      "Conversation added to ${ labelName }.": [
+        ""
       ],
       "Conversation deleted": [
         "Razgovor izbrisan"
@@ -6233,8 +6233,8 @@
       "Conversation marked as read.": [
         ""
       ],
-      "Conversation marked as Starred": [
-        "Razgovor je označen sa zvijezdicom"
+      "Conversation marked as Starred.": [
+        ""
       ],
       "Conversation marked as unread.": [
         ""
@@ -6248,8 +6248,8 @@
       "Conversation moved to spam and sender added to Block List.": [
         "Razgovor je premješten u neželjenu poštu, a pošiljatelj je dodan na popis nedopuštenih."
       ],
-      "Conversation removed from ${ labelName }": [
-        "Razgovor uklonjen iz ${ labelName }"
+      "Conversation removed from ${ labelName }.": [
+        ""
       ],
       "Draft deleted": [
         "Skica izbrisana"
@@ -6275,8 +6275,8 @@
       "Mail list unsubscribed": [
         "Otkazana pretplata na bilten"
       ],
-      "Message added to ${ labelName }": [
-        "Poruka dodana u ${ labelName }"
+      "Message added to ${ labelName }.": [
+        ""
       ],
       "Message content search activated": [
         "Aktivirano je pretraživanje sadržaja poruka"
@@ -6290,8 +6290,8 @@
       "Message marked as read.": [
         ""
       ],
-      "Message marked as Starred": [
-        "Poruka je označena sa zvijezdicom"
+      "Message marked as Starred.": [
+        ""
       ],
       "Message marked as unread.": [
         ""
@@ -6305,8 +6305,8 @@
       "Message moved to spam and sender added to Block List.": [
         "Poruka je premještena u neželjenu poštu, a pošiljatelj je dodan na popis nedopuštenih."
       ],
-      "Message removed from ${ labelName }": [
-        "Poruka uklonjena iz ${ labelName }"
+      "Message removed from ${ labelName }.": [
+        ""
       ],
       "Move ${ selectionCount } conversation": [
         "Premjesti ${ selectionCount } razgovor",
