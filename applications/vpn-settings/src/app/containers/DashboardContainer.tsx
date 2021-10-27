@@ -86,19 +86,19 @@ const DashboardContainer = ({ setActiveSection, location }: SettingsPropsShared)
 
         searchParams.delete('plan');
         history.replace({
-            search: searchParams.toString(),
+            search: undefined,
         });
         onceRef.current = true;
 
         const coupon = searchParams.get('coupon');
+
         const cycleParam = parseInt(searchParams.get('cycle') as any, 10);
+        const maybeCycle =
+            cycleParam && [CYCLE.MONTHLY, CYCLE.YEARLY, CYCLE.TWO_YEARS].includes(cycleParam) ? cycleParam : undefined;
+
         const currencyParam = searchParams.get('currency') as any;
-        const defaultCycle =
-            cycleParam && [CYCLE.MONTHLY, CYCLE.YEARLY, CYCLE.TWO_YEARS].includes(cycleParam)
-                ? cycleParam
-                : DEFAULT_CYCLE;
-        const defaultCurrency = currencyParam && CURRENCIES.includes(currencyParam) ? currencyParam : plans[0].Currency;
-        const { Cycle = defaultCycle, Currency = defaultCurrency } = subscription;
+        const maybeCurrency = currencyParam && CURRENCIES.includes(currencyParam) ? currencyParam : undefined;
+
         const plansMap = toMap(plans, 'Name') as PlansMap;
         if (user.isFree) {
             const planIDs = planName.split('_').reduce<PlanIDs>((acc, name) => {
@@ -111,8 +111,8 @@ const DashboardContainer = ({ setActiveSection, location }: SettingsPropsShared)
             createModal(
                 <SubscriptionModal
                     planIDs={planIDs}
-                    currency={defaultCurrency}
-                    cycle={defaultCycle}
+                    currency={maybeCurrency || plans[0].Currency}
+                    cycle={maybeCycle || DEFAULT_CYCLE}
                     coupon={coupon}
                     step={SUBSCRIPTION_STEPS.CHECKOUT}
                 />
@@ -133,8 +133,8 @@ const DashboardContainer = ({ setActiveSection, location }: SettingsPropsShared)
         createModal(
             <SubscriptionModal
                 planIDs={planIDs}
-                currency={Currency}
-                cycle={Cycle}
+                currency={maybeCurrency || subscription.Currency}
+                cycle={maybeCycle || subscription.Cycle}
                 step={SUBSCRIPTION_STEPS.CUSTOMIZATION}
                 coupon={coupon}
             />
