@@ -19,7 +19,7 @@ import { findSender } from '../helpers/addresses';
 import { MESSAGE_ACTIONS } from '../constants';
 import { useGetAttachment } from './useAttachment';
 import { MessageState, MessageStateWithData, PartialMessageState } from '../logic/messages/messagesTypes';
-import { createDraft as createDraftAction } from '../logic/messages/messagesActions';
+import { createDraft as createDraftAction } from '../logic/messages/draft/messagesDraftActions';
 
 const CACHE_KEY = 'Draft';
 
@@ -62,7 +62,6 @@ export const useDraft = () => {
     const cache = useCache();
     const getMailSettings = useGetMailSettings();
     const getAddresses = useGetAddresses();
-    // const messageCache = useMessageCache();
     const dispatch = useDispatch();
     const draftVerifications = useDraftVerifications();
     const [addresses] = useAddresses();
@@ -101,7 +100,6 @@ export const useDraft = () => {
             }
 
             message.localID = generateUID('draft');
-            // messageCache.set(message.localID, message);
             dispatch(createDraftAction(message));
             return message.localID;
         },

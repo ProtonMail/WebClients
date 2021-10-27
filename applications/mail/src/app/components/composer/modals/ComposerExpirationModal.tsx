@@ -7,7 +7,7 @@ import ComposerInnerModal from './ComposerInnerModal';
 import { MAX_EXPIRATION_TIME } from '../../../constants';
 import { MessageChange } from '../Composer';
 import { MessageState } from '../../../logic/messages/messagesTypes';
-import { updateExpires } from '../../../logic/messages/messagesActions';
+import { updateExpires } from '../../../logic/messages/draft/messagesDraftActions';
 
 // expiresIn value is in seconds and default is 7 days
 const ONE_WEEK = 3600 * 24 * 7;
@@ -39,8 +39,6 @@ interface Props {
 }
 
 const ComposerExpirationModal = ({ message, onClose, onChange }: Props) => {
-    // const messageCache = useMessageCache();
-    // const messageFromCache = message?.localID ? messageCache.get(message?.localID) : undefined;
     const dispatch = useDispatch();
 
     const [uid] = useState(generateUID('password-modal'));
@@ -90,10 +88,6 @@ const ComposerExpirationModal = ({ message, onClose, onChange }: Props) => {
         }
 
         onChange({ draftFlags: { expiresIn: valueInHours * 3600 } });
-        // const messageFromState = getMessage(message?.localID || '');
-        // if (messageFromState && messageFromState.draftFlags) {
-        //     messageFromState.draftFlags.expiresIn = valueInHours * 3600;
-        // }
         dispatch(updateExpires({ ID: message?.localID || '', expiresIn: valueInHours * 3600 }));
         onClose();
     };

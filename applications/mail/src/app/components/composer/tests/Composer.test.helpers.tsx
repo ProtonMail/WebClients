@@ -10,7 +10,7 @@ import { addApiMock, parseFormData } from '../../../helpers/test/api';
 import { waitForNoNotification, waitForNotification } from '../../../helpers/test/helper';
 import { MessageState, MessageStateWithData, PartialMessageState } from '../../../logic/messages/messagesTypes';
 import { store } from '../../../logic/store';
-import { initialize } from '../../../logic/messages/messagesActions';
+import { initialize } from '../../../logic/messages/read/messagesReadActions';
 
 // Fake timers fails for the complexe send action
 // These more manual trick is used to skip undo timing
@@ -63,7 +63,6 @@ export const prepareMessage = (message: PartialMessageState) => {
 
     const resultMessage = mergeMessages(baseMessage, message);
 
-    // messageCache.set(resultMessage.localID, resultMessage);
     store.dispatch(initialize(resultMessage));
 
     return resultMessage as MessageStateWithData;

@@ -44,10 +44,6 @@ export const prepareHtml = async (
 
     const { showEmbeddedImages, hasEmbeddedImages, embeddedImages } = await transformEmbedded(
         { ...message, messageDocument: { document } },
-        // messageKeys,
-        // messageCache,
-        // attachmentsCache,
-        // api,
         mailSettings,
         onLoadEmbeddedImages
     );

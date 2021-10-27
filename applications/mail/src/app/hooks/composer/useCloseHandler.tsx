@@ -39,7 +39,6 @@ export const useCloseHandler = ({
     onMessageAlreadySent,
 }: UseCloseHandlerParameters) => {
     const { createNotification, hideNotification } = useNotifications();
-    // const messageCache = useMessageCache();
     const isMounted = useIsMounted();
     const onCompose = useOnCompose();
 
@@ -67,8 +66,6 @@ export const useCloseHandler = ({
     });
 
     const handleManualSave = useHandler(async () => {
-        // const messageFromCache = messageCache.get(modelMessage.localID) as MessageExtendedWithData;
-
         // Message already sent
         if (syncedMessage.draftFlags?.isSentDraft) {
             onMessageAlreadySent();
@@ -109,8 +106,6 @@ export const useCloseHandler = ({
     const handleClose = useHandler(async () => {
         // Closing the composer instantly, all the save process will be in background
         onClose();
-
-        // const messageFromCache = messageCache.get(modelMessage.localID) as MessageExtendedWithData;
 
         if (syncedMessage.draftFlags?.isSentDraft) {
             createNotification({

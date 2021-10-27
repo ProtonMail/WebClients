@@ -21,7 +21,7 @@ import { MessageState } from '../../logic/messages/messagesTypes';
 import {
     optimisticEmptyLabel as optimisticEmptyLabelMessage,
     optimisticRestore as optimisticRestoreMessage,
-} from '../../logic/messages/messagesActions';
+} from '../../logic/messages/optimistic/messagesOptimisticActions';
 
 export const useOptimisticEmptyLabel = () => {
     const store = useStore<RootState>();
@@ -35,14 +35,6 @@ export const useOptimisticEmptyLabel = () => {
         const rollbackCounters = {} as { [key: string]: LabelCount };
 
         // Message cache
-        // const messageIDs = [...messageCache.keys()];
-        // messageIDs.forEach((messageID) => {
-        //     const message = messageCache.get(messageID) as MessageState;
-        //     if (hasLabel(message.data || {}, labelID)) {
-        //         messageCache.delete(messageID);
-        //         rollbackMessages.push(message);
-        //     }
-        // });
         dispatch(optimisticEmptyLabelMessage(labelID));
 
         // Conversation cache

@@ -11,7 +11,7 @@ import { Contact } from '@proton/shared/lib/interfaces/contacts';
 import { splitKeys } from '@proton/shared/lib/keys/keys';
 import { CACHE_KEY } from '@proton/components/hooks/useGetEncryptionPreferences';
 import { Event } from '../../models/event';
-import { resetVerification } from '../../logic/messages/messagesActions';
+import { resetVerification } from '../../logic/messages/read/messagesReadActions';
 
 /**
  * Deal with contact update from the event manager
@@ -20,13 +20,12 @@ import { resetVerification } from '../../logic/messages/messagesActions';
  * @param contact Contact data update from the event manager
  * @param publicKeys Public keys of the current user
  * @param globalCache Proton main cache
- * @param messageCache Message cache
+ * @param onResetMessageForEmails
  */
 const processContactUpdate = async (
     contact: Contact | undefined,
     publicKeys: OpenPGPKey[],
     globalCache: Cache<string, any>,
-    // messageCache: MessageCache
     onResetMessageForEmails: (emails: string[]) => void
 ) => {
     const signedCard = contact?.Cards.find(({ Type }) => Type === CONTACT_CARD_TYPE.SIGNED);
@@ -48,19 +47,12 @@ const processContactUpdate = async (
     });
 
     // Looking in the Message cache to check if there is message signed from one of the contact addresses
-    // messageCache.forEach((message, localID) => {
-    //     const senderAddress = canonizeEmail(message.data?.Sender.Address || '');
-    //     if (emails.includes(senderAddress)) {
-    //         updateMessageCache(messageCache, localID, { verification: undefined });
-    //     }
-    // });
     onResetMessageForEmails(emails);
 };
 
 export const useContactsListener = () => {
     const globalCache = useCache();
     const dispatch = useDispatch();
-    // const messageCache = useMessageCache();
     const { subscribe } = useEventManager();
     const [userKeys = []] = useUserKeys();
 

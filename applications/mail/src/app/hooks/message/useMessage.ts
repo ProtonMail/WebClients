@@ -6,7 +6,7 @@ import { useGetConversation } from '../conversation/useConversation';
 import { MessageState } from '../../logic/messages/messagesTypes';
 import { RootState } from '../../logic/store';
 import { localID, messageByID } from '../../logic/messages/messagesSelectors';
-import { initialize } from '../../logic/messages/messagesActions';
+import { initialize } from '../../logic/messages/read/messagesReadActions';
 
 export const useGetLocalID = () => {
     const store = useStore<RootState>();
@@ -29,20 +29,14 @@ interface UseMessage {
 }
 
 export const useMessage: UseMessage = (inputLocalID: string, conversationID = '') => {
-    // const cache = useMessageCache();
     const dispatch = useDispatch();
     const getLocalID = useGetLocalID();
     const getElementsFromIDs = useGetElementsFromIDs();
     const getConversationFromState = useGetConversation();
 
-    // const localID = useMemo(() => getLocalID(cache, inputLocalID), [inputLocalID]);
-
     const messageState = useSelector((state: RootState) => messageByID(state, { ID: inputLocalID }));
 
     const initMessage = () => {
-        // if (cache.has(localID)) {
-        //     return cache.get(localID) as MessageState;
-        // }
         if (messageState) {
             return messageState;
         }
@@ -57,7 +51,6 @@ export const useMessage: UseMessage = (inputLocalID: string, conversationID = ''
 
         const message = messageFromCache ? { localID, data: messageFromCache } : { localID };
 
-        // cache.set(localID, message);
         dispatch(initialize(message));
         return message;
     };
@@ -69,13 +62,6 @@ export const useMessage: UseMessage = (inputLocalID: string, conversationID = ''
     // Update message state and listen to cache for updates on the current message
     useEffect(() => {
         setMessage(initMessage());
-
-        // return cache.subscribe((changedMessageID) => {
-        //     // Prevent updates on message deletion from the cache to prevent undefined message in state.
-        //     if (changedMessageID === localID && cache.has(localID)) {
-        //         setMessage(cache.get(localID) as MessageState);
-        //     }
-        // });
     }, [localID]); // The hook can be re-used for a different message
 
     useEffect(() => {

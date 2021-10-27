@@ -48,7 +48,6 @@ export const useAttachments = ({
     const api = useApi();
     const { createNotification } = useNotifications();
     const auth = useAuthentication();
-    // const messageCache = useMessageCache();
     const getMessage = useGetMessage();
     const getMessageKeys = useGetMessageKeys();
     const dispatch = useDispatch();
@@ -95,7 +94,6 @@ export const useAttachments = ({
     const ensureMessageIsCreated = async () => {
         await onSaveNow();
         // Message from cache has data because we just saved it if not
-        // return messageCache.get(localID) as MessageExtendedWithData;
         return getMessage(localID) as MessageStateWithData;
     };
 
