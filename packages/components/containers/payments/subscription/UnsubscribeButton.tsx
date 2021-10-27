@@ -22,6 +22,7 @@ import LossLoyaltyModal from '../LossLoyaltyModal';
 import DowngradeModal from '../DowngradeModal';
 import SubscriptionCancelModal, { SubscriptionCancelModel } from './SubscriptionCancelModal';
 import CalendarDowngradeModal from './CalendarDowngradeModal';
+import MemberDowngradeModal from '../MemberDowngradeModal';
 
 interface Props extends Omit<ButtonProps, 'loading' | 'onClick'> {
     children: ReactNode;
@@ -87,6 +88,12 @@ const UnsubscribeButton = ({ className, children, ...rest }: Props) => {
         if (hasBonuses(organization)) {
             await new Promise<void>((resolve, reject) => {
                 createModal(<LossLoyaltyModal organization={organization} onConfirm={resolve} onClose={reject} />);
+            });
+        }
+
+        if (organization.UsedMembers > 1) {
+            await new Promise<void>((resolve, reject) => {
+                createModal(<MemberDowngradeModal organization={organization} onConfirm={resolve} onClose={reject} />);
             });
         }
 
