@@ -1,22 +1,22 @@
 import { ReactNode, useEffect, useState } from 'react';
 import { useLocation } from 'react-router';
+import { c } from 'ttag';
 import { HumanVerificationMethodType } from '@proton/shared/lib/interfaces';
-import { ThemeTypes } from '@proton/shared/lib/themes/themes';
-import { HumanVerificationForm, HumanVerificationSteps, useInstance, useTheme } from '@proton/components';
+import { queryCheckVerificationCode } from '@proton/shared/lib/api/user';
+import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+
+import {
+    HumanVerificationForm,
+    HumanVerificationSteps,
+    useInstance,
+    useTheme,
+    useApi,
+    useNotifications,
+} from '@proton/components';
 
 import broadcast, { MessageType } from './broadcast';
-
+import { VerificationSearchParameters } from './types';
 import './Verification.scss';
-
-interface VerificationSearchParameters {
-    methods?: HumanVerificationMethodType[];
-    embed?: boolean;
-    theme?: ThemeTypes;
-    token?: string;
-    defaultCountry?: string;
-    defaultEmail?: string;
-    defaultPhone?: string;
-}
 
 const windowIsEmbedded = window.location !== window.parent.location;
 
@@ -24,14 +24,16 @@ const parseSearch = (search: string) => Object.fromEntries(new URLSearchParams(s
 
 const Verification = () => {
     const [step, setStep] = useState(HumanVerificationSteps.ENTER_DESTINATION);
-
+    const [, setTheme] = useTheme();
+    const api = useApi();
+    const { createNotification } = useNotifications();
     const location = useLocation();
 
     const search = parseSearch(location.search) as VerificationSearchParameters;
 
     const { methods, embed, theme, token, defaultCountry, defaultEmail, defaultPhone } = search;
 
-    const [, setTheme] = useTheme();
+    const isEmbedded = windowIsEmbedded || embed;
 
     useEffect(() => {
         if (theme) {
@@ -39,15 +41,7 @@ const Verification = () => {
         }
     }, []);
 
-    const getOriginError = () => {
-        return new Error('origin parameter missing');
-    };
-
     const sendHeight = (resizes: ResizeObserverEntry[]) => {
-        if (!origin) {
-            throw getOriginError();
-        }
-
         const [entry] = resizes;
 
         broadcast({
@@ -59,7 +53,7 @@ const Verification = () => {
     const resizeObserver = useInstance(() => new ResizeObserver(sendHeight));
 
     const registerRootRef = (el: HTMLElement) => {
-        if (el && windowIsEmbedded) {
+        if (el && isEmbedded) {
             resizeObserver.observe(el);
         }
     };
@@ -71,24 +65,38 @@ const Verification = () => {
         []
     );
 
-    const handleSubmit = (token: string, type: HumanVerificationMethodType) => {
-        if (!origin) {
-            throw getOriginError();
-        }
+    const handleSubmit = async (token: string, type: HumanVerificationMethodType) => {
+        if (type !== 'captcha') {
+            try {
+                await api({ ...queryCheckVerificationCode(token, type, 1), silence: true });
 
-        broadcast({
-            type: MessageType.HUMAN_VERIFICATION_SUCCESS,
-            payload: { token, type },
-        });
+                broadcast({
+                    type: MessageType.HUMAN_VERIFICATION_SUCCESS,
+                    payload: { token, type },
+                });
 
-        if (!windowIsEmbedded) {
-            /*
-             * window.close() will only be allowed to execute should the current window
-             * have been opened programatically, otherwise the following error is thrown:
-             *
-             * "Scripts may close only the windows that were opened by it."
-             */
-            window.close();
+                if (!isEmbedded) {
+                    /*
+                     * window.close() will only be allowed to execute should the current window
+                     * have been opened programatically, otherwise the following error is thrown:
+                     *
+                     * "Scripts may close only the windows that were opened by it."
+                     */
+                    window.close();
+                }
+            } catch (e: any) {
+                createNotification({
+                    type: 'error',
+                    text: getApiErrorMessage(e) || c('Error').t`Unknown error`,
+                });
+
+                throw e;
+            }
+        } else {
+            broadcast({
+                type: MessageType.HUMAN_VERIFICATION_SUCCESS,
+                payload: { token, type },
+            });
         }
     };
 
@@ -116,12 +124,16 @@ const Verification = () => {
             defaultCountry={defaultCountry}
             defaultEmail={defaultEmail}
             defaultPhone={defaultPhone}
-            isEmbedded={windowIsEmbedded}
+            isEmbedded={isEmbedded}
         />
     );
 
-    if (embed || windowIsEmbedded) {
-        return <main ref={registerRootRef}>{hv}</main>;
+    if (isEmbedded) {
+        return (
+            <main className="p2" ref={registerRootRef}>
+                {hv}
+            </main>
+        );
     }
 
     return wrapInMain(hv);
