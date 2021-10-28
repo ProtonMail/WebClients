@@ -1,3 +1,4 @@
+import { getKeys, OpenPGPKey } from 'pmcrypto';
 import { User as tsUser, Address as tsAddress, KeyPair, SignedKeyList, DecryptedKey, Key } from '../../interfaces';
 
 import { unique } from '../../helpers/array';
@@ -138,4 +139,14 @@ export const getReactivatedAddressesKeys = async ({
         }
         return reactivatedKeys.length > 0;
     });
+};
+
+export const resetUserId = async (Key: Key, reactivatedKey: OpenPGPKey) => {
+    // Before the new key format imposed after key migration, the address and user key were the same key.
+    // Users may have exported one of the two. Upon reactivation the fingerprint could match a user key
+    // to the corresponding address key or vice versa. For that reason, the userids are reset to the userids
+    // of the old key.
+    const [inactiveKey] = await getKeys(Key.PrivateKey);
+    // Warning: This function mutates the key.
+    reactivatedKey.users = inactiveKey.users;
 };
