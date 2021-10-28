@@ -128,9 +128,11 @@ const ImportKeyModal = ({ onClose, onProcess, ...rest }: Props) => {
                     setStep(STEPS.SELECT_FILES);
                 },
                 children: (
-                    <Alert className="mb1">
-                        {c('Alert')
-                            .t`Are you sure you want to import a private key? Importing an insecurely generated or leaked private key can harm the security of your emails.`}
+                    <Alert className="text-pre-wrap">
+                        {c('Import key')
+                            .t`Are you sure you want to import a private key? Importing an insecurely generated or leaked private key can harm the security of your emails.
+
+Please also note that the public key corresponding to this private key will be publicly available from our key server. If the key contains personal details (such as your full name) which you do not want to publish, please edit the key before importing it.`}
                     </Alert>
                 ),
             };
