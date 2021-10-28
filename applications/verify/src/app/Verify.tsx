@@ -16,13 +16,13 @@ import {
 
 import broadcast, { MessageType } from './broadcast';
 import { VerificationSearchParameters } from './types';
-import './Verification.scss';
+import './Verify.scss';
 
 const windowIsEmbedded = window.location !== window.parent.location;
 
 const parseSearch = (search: string) => Object.fromEntries(new URLSearchParams(search).entries());
 
-const Verification = () => {
+const Verify = () => {
     const [step, setStep] = useState(HumanVerificationSteps.ENTER_DESTINATION);
     const [, setTheme] = useTheme();
     const api = useApi();
@@ -139,4 +139,4 @@ const Verification = () => {
     return wrapInMain(hv);
 };
 
-export default Verification;
+export default Verify;
