@@ -52,6 +52,7 @@ export enum FeatureCode {
     Mnemonic = 'Mnemonic',
     SeenMnemonicPrompt = 'SeenMnemonicPrompt',
     SpyTrackerProtection = 'SpyTrackerProtection',
+    SpyTrackerProtectionIncorporator = 'SpyTrackerProtectionIncorporator',
     SpotlightSpyTrackerProtection = 'SpotlightSpyTrackerProtection',
     EasySwitch = 'EasySwitch',
 }

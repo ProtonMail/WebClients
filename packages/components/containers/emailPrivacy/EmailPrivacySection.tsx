@@ -6,7 +6,7 @@ import { Info } from '../../components/link';
 import SettingsLayoutRight from '../account/SettingsLayoutRight';
 import RemoteToggle from './RemoteToggle';
 import SettingsLayout from '../account/SettingsLayout';
-import { useFeature, useMailSettings } from '../../hooks';
+import { useFeatures, useMailSettings } from '../../hooks';
 import PreventTrackingToggle from './PreventTrackingToggle';
 import { FeatureCode } from '../features';
 import ProtectionModeSelect from './ProtectionModeSelect';
@@ -17,7 +17,10 @@ const EmailPrivacySection = () => {
     const [{ ShowImages = REMOTE, ImageProxy = IMAGE_PROXY_FLAGS.PROXY } = {}] = useMailSettings();
     const [showImages, setShowImages] = useState(ShowImages);
     const [, setImageProxy] = useState(ImageProxy);
-    const { feature } = useFeature(FeatureCode.SpyTrackerProtection);
+    const [{ feature: featureSpyTracker }, { feature: featureSpyTrackerIncorporator }] = useFeatures([
+        FeatureCode.SpyTrackerProtection,
+        FeatureCode.SpyTrackerProtectionIncorporator,
+    ]);
 
     // Handle updates from the Event Manager.
     useEffect(() => {
@@ -25,6 +28,9 @@ const EmailPrivacySection = () => {
     }, [ImageProxy]);
 
     const handleChangeShowImage = (newValue: number) => setShowImages(newValue);
+
+    const showSpyTracker = featureSpyTracker?.Value;
+    const showProtectionMode = ImageProxy !== IMAGE_PROXY_FLAGS.NONE && featureSpyTrackerIncorporator?.Value;
 
     return (
         <>
@@ -48,7 +54,7 @@ const EmailPrivacySection = () => {
                     />
                 </SettingsLayoutRight>
             </SettingsLayout>
-            {feature?.Value && (
+            {showSpyTracker && (
                 <>
                     <SettingsLayout>
                         <SettingsLayoutLeft>
@@ -68,7 +74,7 @@ const EmailPrivacySection = () => {
                             />
                         </SettingsLayoutRight>
                     </SettingsLayout>
-                    {ImageProxy !== IMAGE_PROXY_FLAGS.NONE && (
+                    {showProtectionMode && (
                         <SettingsLayout>
                             <SettingsLayoutLeft>
                                 <label htmlFor="protectiontModeToggle" className="text-semibold">
