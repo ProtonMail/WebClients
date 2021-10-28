@@ -1,36 +1,41 @@
 import { OpenPGPKey, SessionKey } from 'pmcrypto';
 import { AuthVersion } from '../../authentication/interface';
 import { DriveFileBlock } from './file';
+import { LinkType } from './link';
+import { TransferState } from './transfer';
 
-export interface CreateSharedURL {
-    ExpirationDuration: number | null;
-    MaxAccesses: number;
+export enum TransferStatePublic {
+    Progress = TransferState.Progress,
+    Done = TransferState.Done,
+    Error = TransferState.Error,
+    Canceled = TransferState.Canceled,
+}
+
+type WithSRPPayload<T extends any> = T & {
+    SRPModulusID: string;
+    SRPVerifier: string;
+    UrlPasswordSalt: string;
+};
+
+/**
+ * drive/shares/{enc_shareID}/urls request payload
+ */
+export type CreateSharedURL = WithSRPPayload<{
     CreatorEmail: string;
-    UrlPasswordSalt: string;
-    SharePasswordSalt: string;
-    SRPVerifier: string;
-    SRPModulusID: string;
-    SharePassphraseKeyPacket: string;
-    Password: string;
-    Permissions: number; // Only read (4) in first iteration
-    Flags: number; // Unused in first iteration
-}
-
-export interface UpdateSharedURL {
-    ExpirationTime: number | null;
     ExpirationDuration: number | null;
+    Flags: number; // Unused in first iteration
     MaxAccesses: number;
-    UrlPasswordSalt: string;
-    SharePasswordSalt: string;
-    SRPVerifier: string;
-    SRPModulusID: string;
-    SharePassphraseKeyPacket: string;
     Password: string;
     Permissions: number; // Only read (4) in first iteration
-    Flags: number; // Unused in first iteration
-}
+    SharePassphraseKeyPacket: string;
+    SharePasswordSalt: string;
+}>;
 
-export interface ShareURL {
+/**
+ * drive/shares/{enc_shareID}/urls response payload
+ */
+export type ShareURL = WithSRPPayload<{
+    CreateTime: number;
     CreatorEmail: string;
     ExpirationTime: number | null;
     Flags: number;
@@ -39,31 +44,67 @@ export interface ShareURL {
     NumAccesses: number;
     Password: string;
     Permissions: number;
-    SRPModulusID: string;
-    SRPVerifier: string;
     ShareID: string;
-    ShareURLID: string;
     SharePassphraseKeyPacket: string;
     SharePasswordSalt: string;
+    ShareURLID: string;
     Token: string;
-    UrlPasswordSalt: string;
-}
+}>;
 
-export interface SharedURL {
-    URLID: string;
-    Token: string;
+export type UpdateSharedURL = WithSRPPayload<{
+    ExpirationDuration: number | null;
     ExpirationTime: number | null;
-    LastAccessTime: number;
+    Flags: number; // Unused in first iteration
     MaxAccesses: number;
-    NumAccesses: number;
-    CreatorEmail: string;
-    Permissions: number;
-    Flags: number;
     Password: string;
+    Permissions: number; // Only read (4) in first iteration
     SharePassphraseKeyPacket: string;
+    SharePasswordSalt: string;
+}>;
+
+/**
+ * drive/urls/{token} response payload
+ */
+export interface SharedURLInfo {
+    ContentKeyPacket: string;
+    ContentKeyPacketSignature: string;
+    CreateTime: number;
+    ExpirationTime: number | null;
+    LinkID: string;
+    LinkType: LinkType;
+    MIMEType: string;
+    Name: string;
+    NodeKey: string;
+    NodePassphrase: string;
+    ShareKey: string;
+    SharePassphrase: string;
+    SharePasswordSalt: string;
+    Size: number;
+    ThumbnailURLInfo: ThumbnailURLInfo;
+    Token: string;
 }
 
-export interface InitHandshake {
+/**
+ * drive/urls/{token}/files/{linkId} response payload
+ */
+export interface SharedURLRevision {
+    Blocks: DriveFileBlock[];
+    CreateTime: number;
+    ID: string;
+    ManifestSignature: string;
+    SignatureAddress: string;
+    Size: number;
+    State: number;
+    Thumbnail: number;
+    ThumbnailHash: string;
+    ThumbnailSize: number | null;
+    XAttr: string;
+}
+
+/**
+ * drive/urls/{token}/info response payload
+ */
+export interface SRPHandshakeInfo {
     Code: number;
     Modulus: string;
     ServerEphemeral: string;
@@ -86,24 +127,6 @@ export interface SharedLinkInfo {
     NodeKey: OpenPGPKey;
     SessionKey: SessionKey;
     Blocks: DriveFileBlock[];
-    ThumbnailURLInfo: ThumbnailURLInfo;
-}
-
-export interface SharedLinkPayload {
-    Name: string;
-    MIMEType: string;
-    ExpirationTime: number | null;
-    Size: number;
-    ContentKeyPacket: string;
-    NodeKey: string;
-    NodePassphrase: string;
-    ShareKey: string;
-    SharePassphrase: string;
-    SharePasswordSalt: string;
-    BlockURLs: {
-        BareURL: string;
-        Token: string;
-    }[];
     ThumbnailURLInfo: ThumbnailURLInfo;
 }
 

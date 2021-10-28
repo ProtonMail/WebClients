@@ -1,154 +1,178 @@
-import { ReactNode, useEffect, useMemo, useCallback, useState } from 'react';
+import { ReactNode, useEffect, useMemo, useState } from 'react';
 import { useLocation, Link } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { useLoading, LoaderPage, Icon, usePreventLeave, useNotifications } from '@proton/components';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
-import { InitHandshake, SharedLinkInfo } from '@proton/shared/lib/interfaces/drive/sharing';
-import { STATUS_CODE, BATCH_REQUEST_SIZE } from '@proton/shared/lib/drive/constants';
-
+import { SRPHandshakeInfo, TransferStatePublic } from '@proton/shared/lib/interfaces/drive/sharing';
+import { STATUS_CODE, SupportedMimeTypes } from '@proton/shared/lib/drive/constants';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
-import usePublicSharing from '../../hooks/drive/usePublicSharing';
-import FileSaver from '../downloads/fileSaver/fileSaver';
+import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
+
+import usePublicSharing, {
+    ERROR_CODE_INVALID_SRP_PARAMS,
+    SharedURLInfoDecrypted,
+} from '../../hooks/drive/usePublicSharing';
 import DownloadSharedInfo from './DownloadSharedInfo';
 import EnterPasswordInfo from './EnterPasswordInfo';
 import LinkDoesNotExistInfo from './LinkDoesNotExistInfo';
-import { useDownloadProvider } from '../downloads/DownloadProvider';
 import { hasCustomPassword, hasGeneratedPasswordIncluded } from '../../utils/link';
 
 const REPORT_ABUSE_EMAIL = 'abuse@protonmail.com';
-const ERROR_CODE_INVALID_SRP_PARAMS = 2026;
 const ERROR_CODE_COULD_NOT_IDENTIFY_TARGET = 2000;
+const ERROR_CODE_INVALID_TOKEN = 2501;
 
 const DownloadSharedContainer = () => {
-    const { clearDownloads } = useDownloadProvider();
     const [notFoundError, setNotFoundError] = useState<Error | undefined>();
     const [loading, withLoading] = useLoading(false);
-    const [handshakeInfo, setHandshakeInfo] = useState<InitHandshake | null>();
-    const [linkInfo, setLinkInfo] = useState<(SharedLinkInfo & { Password: string }) | null>();
-    const { initSRPHandshake, getSharedLinkPayload, startSharedFileTransfer, downloadThumbnail } = usePublicSharing();
+    const [handshakeInfo, setHandshakeInfo] = useState<SRPHandshakeInfo | null>();
+    const [linkInfo, setLinkInfo] = useState<(SharedURLInfoDecrypted & { password: string }) | null>();
+    const publicSharing = usePublicSharing();
     const { hash, pathname } = useLocation();
     const { preventLeave } = usePreventLeave();
     const { createNotification } = useNotifications();
     const appName = getAppName(APPS.PROTONDRIVE);
 
+    const [progress, setProgress] = useState<number>();
+    const [transferSize, setTransferSize] = useState<number>(0);
+    const [transferState, setTransferState] = useState<TransferStatePublic>();
+
     const token = useMemo(() => pathname.replace(/\/urls\/?/, ''), [pathname]);
     const urlPassword = useMemo(() => hash.replace('#', ''), [hash]);
     const [password, setPassword] = useState(urlPassword);
+    const [withCustomPassword, setWithCustomPassword] = useState(false);
 
-    const initHandshake = useCallback(async () => {
-        return initSRPHandshake(token)
-            .then((handshakeInfo) => {
-                if (hasCustomPassword(handshakeInfo)) {
-                    setPassword('');
-                }
-                setHandshakeInfo(handshakeInfo);
-            })
-            .catch((e) => {
-                console.error(e);
-                setNotFoundError(e);
-                setHandshakeInfo(null);
-            });
-    }, [token, password]);
-
-    const getSharedLinkInfo = useCallback(
-        async (password: string) => {
-            if (!handshakeInfo) {
-                return;
-            }
-
-            await getSharedLinkPayload(token, password, handshakeInfo, {
-                FromBlockIndex: 1,
-                PageSize: BATCH_REQUEST_SIZE,
-            })
-                .then((linkInfo) => {
-                    setLinkInfo({ ...linkInfo, Password: password });
-                    setHandshakeInfo(null);
-                })
-                .catch((e) => {
-                    console.error(e);
-                    const { code, status, message } = getApiError(e);
-                    let errorText = message;
-
-                    if (code === ERROR_CODE_INVALID_SRP_PARAMS) {
-                        setPassword('');
-                        errorText = c('Error').t`Incorrect password. Please try again.`;
-                        // SRP session ephemerals are destroyed when you retrieve them.
-                        initHandshake().catch(console.error);
-                    } else if (code === ERROR_CODE_COULD_NOT_IDENTIFY_TARGET || status === STATUS_CODE.NOT_FOUND) {
-                        setNotFoundError(e);
-                        errorText = null;
-                    }
-
-                    if (errorText) {
-                        createNotification({
-                            type: 'error',
-                            text: errorText,
-                        });
-                    }
-                    setLinkInfo(null);
-                });
-        },
-        [token, password, handshakeInfo]
-    );
+    const getShareURLInfo = async (token: string, password: string) => {
+        const urlInfo = await publicSharing.getSharedURLInfo(token, password);
+        setLinkInfo({ ...urlInfo, password });
+    };
 
     const downloadFile = async () => {
         if (!linkInfo) {
             return;
         }
 
-        const { Name, Size, MIMEType, SessionKey, NodeKey, Blocks, Password } = linkInfo;
-        const transferMeta = {
-            filename: Name,
-            size: Size,
-            mimeType: MIMEType,
+        const { name, mimeType, linkID, size, linkType } = linkInfo;
+
+        const transferListItem = {
+            type: linkType,
+            name,
+            mimeType: linkType === LinkType.FILE ? mimeType : SupportedMimeTypes.zip,
+            size: linkType === LinkType.FILE ? size : 0,
+            shareId: '',
+            linkId: linkID,
         };
 
-        const fileStream = await startSharedFileTransfer(SessionKey, NodeKey, transferMeta, token, Password, Blocks);
-        return preventLeave(FileSaver.saveAsFile(fileStream, transferMeta)).catch(console.error);
+        const controls = publicSharing.initDownload(
+            token,
+            password,
+            linkType === LinkType.FILE ? name : `${name}.zip`,
+            [transferListItem],
+            {
+                onInit: (size) => {
+                    setTransferSize(size);
+                },
+                onNetworkError: () => {
+                    controls.cancel();
+                    setTransferState(TransferStatePublic.Error);
+                },
+                onProgress: (bytes) => {
+                    setProgress((currentProgress) => {
+                        return (currentProgress || 0) + bytes;
+                    });
+                },
+            }
+        );
+
+        setTransferState(TransferStatePublic.Progress);
+
+        return preventLeave(
+            controls
+                .start()
+                .then(() => {
+                    setTransferState(TransferStatePublic.Done);
+                })
+                .catch((error) => {
+                    setTransferState(TransferStatePublic.Error);
+                    console.warn(error);
+                })
+        );
     };
 
-    const submitPassword = (customPassword: string) => {
+    const submitPassword = async (customPassword: string) => {
         let password = customPassword;
         if (handshakeInfo && hasGeneratedPasswordIncluded(handshakeInfo)) {
             password = urlPassword + customPassword;
         }
-        return getSharedLinkInfo(password).catch(console.error);
+        const handshakeInfoNew = await publicSharing.initHandshake(token);
+
+        try {
+            await publicSharing.initSession(token, password, handshakeInfoNew);
+            setHandshakeInfo(handshakeInfoNew);
+            getShareURLInfo(token, password).catch(console.warn);
+        } catch (error) {
+            console.error(error);
+            const { code, status, message } = getApiError(error);
+            let errorText = message;
+
+            if (code === ERROR_CODE_INVALID_SRP_PARAMS) {
+                setPassword('');
+                errorText = c('Error').t`Incorrect password. Please try again.`;
+            } else if (code === ERROR_CODE_COULD_NOT_IDENTIFY_TARGET || status === STATUS_CODE.NOT_FOUND) {
+                setNotFoundError(error as Error);
+                errorText = null;
+            }
+
+            if (errorText) {
+                createNotification({
+                    type: 'error',
+                    text: errorText,
+                });
+            }
+            setLinkInfo(null);
+        }
     };
 
     useEffect(() => {
-        clearDownloads();
         if (token && !handshakeInfo) {
             setNotFoundError(undefined);
-            withLoading(initHandshake()).catch(console.error);
         }
-    }, [token, password]);
-
-    useEffect(() => {
-        if (token && password && handshakeInfo) {
-            withLoading(getSharedLinkInfo(password)).catch(console.error);
-        }
-    }, [getSharedLinkInfo, token, password, handshakeInfo]);
+    }, [token, password, handshakeInfo]);
 
     const downloadLinkThumbnail = useMemo(async () => {
-        if (
-            !linkInfo?.SessionKey ||
-            !linkInfo?.NodeKey ||
-            !linkInfo?.ThumbnailURLInfo.BareURL ||
-            !linkInfo.ThumbnailURLInfo.Token
-        ) {
+        if (!linkInfo?.linkID || !linkInfo?.thumbnailURLInfo.BareURL || !linkInfo.thumbnailURLInfo.Token) {
             return null;
         }
 
-        const { contents: contentsPromise } = downloadThumbnail(
-            linkInfo.SessionKey,
-            linkInfo.NodeKey,
-            linkInfo.ThumbnailURLInfo
-        );
-        const data = await contentsPromise;
-        return URL.createObjectURL(new Blob(data, { type: 'image/jpeg' }));
+        const thumbnailData = await publicSharing.downloadThumbnail(linkInfo.linkID, linkInfo.thumbnailURLInfo);
+
+        return URL.createObjectURL(new Blob(thumbnailData, { type: 'image/jpeg' }));
     }, [linkInfo]);
+
+    useEffect(() => {
+        void withLoading(
+            publicSharing
+                .initHandshake(token)
+                .then((handshakeInfo) => {
+                    setHandshakeInfo(handshakeInfo);
+                    if (hasCustomPassword(handshakeInfo)) {
+                        setWithCustomPassword(true);
+                        return;
+                    }
+
+                    return publicSharing.initSession(token, password, handshakeInfo).then(() => {
+                        return getShareURLInfo(token, password);
+                    });
+                })
+                .catch((error) => {
+                    const apiError = getApiError(error);
+                    if (apiError.code === 404 || apiError.code === ERROR_CODE_INVALID_TOKEN) {
+                        setNotFoundError(error as Error);
+                    }
+                })
+        );
+    }, []);
 
     if (loading) {
         return <LoaderPage />;
@@ -158,17 +182,20 @@ const DownloadSharedContainer = () => {
     if (notFoundError || (!token && !password)) {
         content = <LinkDoesNotExistInfo />;
     } else if (linkInfo) {
+        const transferProgressPercentage = progress !== undefined ? Math.round((progress / transferSize) * 100) : 0;
         content = (
             <DownloadSharedInfo
-                name={linkInfo.Name}
-                size={linkInfo.Size}
-                MIMEType={linkInfo.MIMEType}
-                expirationTime={linkInfo.ExpirationTime}
+                name={linkInfo.name}
+                size={linkInfo.linkType === LinkType.FILE ? linkInfo.size : null}
+                MIMEType={linkInfo.mimeType}
+                expirationTime={linkInfo.expirationTime}
                 downloadThumbnail={downloadLinkThumbnail}
                 downloadFile={downloadFile}
+                progress={transferProgressPercentage}
+                transferState={transferState}
             />
         );
-    } else if (handshakeInfo && !password) {
+    } else if (withCustomPassword) {
         content = <EnterPasswordInfo submitPassword={submitPassword} />;
     }
 
