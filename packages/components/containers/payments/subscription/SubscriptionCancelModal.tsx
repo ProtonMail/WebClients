@@ -136,7 +136,7 @@ const SubscriptionCancelModal = ({ onSubmit, onClose, ...rest }: Props) => {
                   }
                 : undefined,
             {
-                title: c('Downgrade account reason').t`Missing feature(s) `,
+                title: c('Downgrade account reason').t`Missing feature(s)`,
                 value: MISSING_FEATURE,
             },
             {
