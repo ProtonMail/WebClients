@@ -11,8 +11,8 @@ interface Props {
     className?: string;
 }
 
-const ItemExpiration = ({ element = {}, className }: Props) => {
-    const { ExpirationTime } = element;
+const ItemExpiration = ({ element, className }: Props) => {
+    const { ExpirationTime } = element || {};
 
     const tooltipMessage = useMemo(() => {
         const date = fromUnixTime(ExpirationTime || 0);

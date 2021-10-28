@@ -4,48 +4,53 @@ import { LabelCount } from '@proton/shared/lib/interfaces/Label';
 import { useStore, useDispatch } from 'react-redux';
 import { useMessageCache } from '../../containers/MessageProvider';
 import { MessageExtended } from '../../models/message';
-import { useConversationCache, useUpdateConversationCache } from '../../containers/ConversationProvider';
 import { hasLabel } from '../../helpers/elements';
 import { replaceCounter } from '../../helpers/counter';
 import { CacheEntry } from '../../models/tools';
-import { ConversationCacheEntry } from '../../models/conversation';
 import { optimisticEmptyLabel, optimisticRestoreEmptyLabel } from '../../logic/elements/elementsActions';
+import {
+    optimisticDelete as optimisticDeleteConversationAction,
+    optimisticDeleteConversationMessages as optimisticDeleteConversationMessagesAction,
+    optimisticRestore as optimisticRestoreConversationsAction,
+} from '../../logic/conversations/conversationsActions';
 import { RootState } from '../../logic/store';
+import { ConversationState } from '../../logic/conversations/conversationsTypes';
+import { useGetAllConversations } from '../conversation/useConversation';
 
 export const useOptimisticEmptyLabel = () => {
     const store = useStore<RootState>();
     const dispatch = useDispatch();
     const globalCache = useCache();
     const messageCache = useMessageCache();
-    const conversationCache = useConversationCache();
-    const updateConversationCache = useUpdateConversationCache();
+    const getAllConversations = useGetAllConversations();
 
     return useHandler((labelID: string) => {
         const rollbackMessages = [] as MessageExtended[];
-        const rollbackConversations = [] as ConversationCacheEntry[];
+        const rollbackConversations = [] as ConversationState[];
         const rollbackCounters = {} as { [key: string]: LabelCount };
 
         // Message cache
         const messageIDs = [...messageCache.keys()];
         messageIDs.forEach((messageID) => {
             const message = messageCache.get(messageID) as MessageExtended;
-            if (hasLabel(message.data || {}, labelID)) {
+            if (hasLabel(message.data, labelID)) {
                 messageCache.delete(messageID);
                 rollbackMessages.push(message);
             }
         });
 
         // Conversation cache
-        const conversationIDs = [...conversationCache.keys()];
-        conversationIDs.forEach((conversationID) => {
-            const conversation = conversationCache.get(conversationID) as ConversationCacheEntry;
-            if (hasLabel(conversation.Conversation, labelID)) {
-                conversationCache.delete(conversationID);
+        const allConversations = getAllConversations();
+        allConversations.forEach((conversation) => {
+            if (conversation?.Conversation.ID && hasLabel(conversation.Conversation, labelID)) {
+                dispatch(optimisticDeleteConversationAction(conversation?.Conversation.ID));
                 rollbackConversations.push(conversation);
-            } else {
-                const messages = conversation.Messages?.filter((Message) => !hasLabel(Message, labelID));
-                if (messages?.length !== conversation.Messages?.length) {
-                    updateConversationCache(conversationID, () => ({ Messages: messages }));
+            } else if (conversation?.Messages) {
+                const messages = conversation.Messages?.filter((message) => !hasLabel(message, labelID));
+                if (conversation && messages?.length !== conversation?.Messages?.length) {
+                    dispatch(
+                        optimisticDeleteConversationMessagesAction({ ID: conversation.Conversation.ID, messages })
+                    );
                     rollbackConversations.push(conversation);
                 }
             }
@@ -79,9 +84,8 @@ export const useOptimisticEmptyLabel = () => {
             rollbackMessages.forEach((message) => {
                 messageCache.set(message.localID, message);
             });
-            rollbackConversations.forEach((conversation) => {
-                conversationCache.set(conversation.Conversation?.ID || '', conversation);
-            });
+            dispatch(optimisticRestoreConversationsAction(rollbackConversations));
+
             dispatch(optimisticRestoreEmptyLabel({ elements: rollbackElements }));
             Object.entries(rollbackCounters).forEach(([key, value]) => {
                 const entry = globalCache.get(key) as CacheEntry<LabelCount[]>;

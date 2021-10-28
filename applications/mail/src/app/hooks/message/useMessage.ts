@@ -1,10 +1,10 @@
-import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { useEffect, useState, useMemo } from 'react';
+import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
 import { MessageExtended } from '../../models/message';
 import { useMessageCache, getLocalID } from '../../containers/MessageProvider';
 import { useGetElementsFromIDs } from '../mailbox/useElements';
-import { useConversationCache } from '../../containers/ConversationProvider';
+import { useGetConversation } from '../conversation/useConversation';
 
 interface ReturnValue {
     message: MessageExtended;
@@ -19,7 +19,7 @@ interface UseMessage {
 export const useMessage: UseMessage = (inputLocalID: string, conversationID = '') => {
     const cache = useMessageCache();
     const getElementsFromIDs = useGetElementsFromIDs();
-    const conversationCache = useConversationCache();
+    const getConversationFromState = useGetConversation();
 
     const localID = useMemo(() => getLocalID(cache, inputLocalID), [inputLocalID]);
 
@@ -29,9 +29,10 @@ export const useMessage: UseMessage = (inputLocalID: string, conversationID = ''
         }
 
         const [messageFromElementsCache] = getElementsFromIDs([localID]) as Message[];
-        const conversationFromCache = conversationCache.get(conversationID);
-        const messageFromConversationCache = conversationFromCache?.Messages?.find((Message) => Message.ID === localID);
-        const messageFromCache = messageFromElementsCache || messageFromConversationCache;
+        const conversationState = getConversationFromState(conversationID);
+
+        const messageFromConversationState = conversationState?.Messages?.find((Message) => Message.ID === localID);
+        const messageFromCache = messageFromElementsCache || messageFromConversationState;
 
         const message = messageFromCache ? { localID, data: messageFromCache } : { localID };
 
