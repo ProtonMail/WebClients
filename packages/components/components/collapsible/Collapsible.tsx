@@ -32,8 +32,8 @@ const Collapsible = ({
 
     return (
         <div {...rest}>
-            <header className="flex flex-nowrap flex-justify-space-between flex-align-items-center">
-                <div id={headerId} className="mr1">
+            <header className="flex flex-nowrap flex-align-items-center">
+                <div id={headerId} className="flex-item-fluid">
                     {headerContent}
                 </div>
                 {showButton && (
