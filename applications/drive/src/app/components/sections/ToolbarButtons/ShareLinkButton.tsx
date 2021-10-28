@@ -4,7 +4,7 @@ import { Icon, ToolbarButton } from '@proton/components';
 import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 
 import useToolbarActions from '../../../hooks/drive/useActions';
-import { noSelection, isMultiSelect, hasFoldersSelected } from './utils';
+import { noSelection, isMultiSelect } from './utils';
 
 interface Props {
     shareId: string;
@@ -14,7 +14,7 @@ interface Props {
 const ShareLinkButton = ({ shareId, selectedItems }: Props) => {
     const { openLinkSharing } = useToolbarActions();
 
-    if (noSelection(selectedItems) || isMultiSelect(selectedItems) || hasFoldersSelected(selectedItems)) {
+    if (noSelection(selectedItems) || isMultiSelect(selectedItems)) {
         return null;
     }
 
