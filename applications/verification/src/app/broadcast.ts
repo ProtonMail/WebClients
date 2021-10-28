@@ -55,12 +55,12 @@ const broadcast = (message: Message) => {
 
     switch (client) {
         case 'ios': {
-            // window.location.href = 'recaptcha_response://' + response;
+            (window as any).webkit.messageHandlers.iOS.postMessage(serialized);
             break;
         }
 
         case 'android': {
-            // (window as any).AndroidInterface.receiveResponse(response);
+            (window as any).AndroidInterface.dispatch(serialized);
             break;
         }
 
