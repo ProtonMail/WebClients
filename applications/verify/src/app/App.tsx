@@ -1,7 +1,7 @@
 import { CreateNotificationOptions, ModalsChildren, ProtonApp } from '@proton/components';
 
 import * as config from './config';
-import Verification from './Verification';
+import Verify from './Verify';
 import NotificationsHijack from './NotificationsHijack';
 import broadcast, { MessageType } from './broadcast';
 import './app.scss';
@@ -26,7 +26,7 @@ const App = () => {
     return (
         <ProtonApp config={enhancedConfig}>
             <NotificationsHijack onCreate={handleNotificationCreate}>
-                <Verification />
+                <Verify />
                 <ModalsChildren />
             </NotificationsHijack>
         </ProtonApp>

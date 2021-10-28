@@ -33,7 +33,7 @@ export const APPS = {
     PROTONCALENDAR: 'proton-calendar',
     PROTONVPN_SETTINGS: 'proton-vpn-settings',
     PROTONADMIN: 'proton-admin',
-    PROTONVERIFICATION: 'proton-verification',
+    PROTONVERIFICATION: 'proton-verify',
 } as const;
 export const APPS_CONFIGURATION = {
     [APPS.PROTONACCOUNT]: {
@@ -101,10 +101,10 @@ export const APPS_CONFIGURATION = {
     },
     [APPS.PROTONVERIFICATION]: {
         publicPath: '',
-        subdomain: 'verification',
-        name: '',
-        bareName: '',
-        clientID: 'WebVerification',
+        subdomain: 'verify',
+        name: 'ProtonVerify',
+        bareName: 'Verify',
+        clientID: 'WebVerify',
         icon: '',
         settingsSlug: '',
     },
@@ -693,7 +693,7 @@ export enum CLIENT_IDS {
     WebVPNSettings = 'Web VPN Settings',
     WebDrive = 'Web Drive',
     WebAdmin = 'Web Admin',
-    WebVerification = 'Web Verification',
+    WebVerify = 'Web Verify',
     // Android
     AndroidTvVPN = 'AndroidTvVPN',
 }
