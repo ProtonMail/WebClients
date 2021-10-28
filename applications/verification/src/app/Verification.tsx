@@ -130,7 +130,7 @@ const Verification = () => {
 
     if (isEmbedded) {
         return (
-            <main className="pl2 pr2" ref={registerRootRef}>
+            <main className="p2" ref={registerRootRef}>
                 {hv}
             </main>
         );
