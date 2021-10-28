@@ -4,7 +4,6 @@ import { LatestSubscription } from '@proton/shared/lib/interfaces';
 import { APPS, BLACK_FRIDAY, CYCLE } from '@proton/shared/lib/constants';
 import { getLastCancelledSubscription } from '@proton/shared/lib/api/payments';
 import { toMap } from '@proton/shared/lib/helpers/object';
-import { noop } from '@proton/shared/lib/helpers/function';
 
 import {
     useLoading,
@@ -14,10 +13,8 @@ import {
     useApi,
     useConfig,
     useProductPayerPeriod,
-    useFeature,
     useBlackFridayPeriod,
 } from '../../hooks';
-import { FeatureCode } from '../features';
 import { EligibleOffer } from '../payments/interface';
 import { getBlackFridayEligibility } from '../payments/subscription/helpers';
 import useIsMounted from '../../hooks/useIsMounted';
@@ -31,12 +28,11 @@ const usePromotionOffer = (): EligibleOffer | undefined => {
     const [latestSubscription, setLatestSubscription] = useState<LatestSubscription | undefined>(undefined);
     const isBlackFridayPeriod = useBlackFridayPeriod();
     const isProductPayerPeriod = useProductPayerPeriod();
-    const vpnSpecialOfferFeature = useFeature(FeatureCode.VPNSpecialOfferPromo);
     const [loading, withLoading] = useLoading();
 
     const plansMap = toMap(plans, 'Name');
 
-    const loadingDependencies = loading || loadingPlans || loadingSubscription || vpnSpecialOfferFeature.loading;
+    const loadingDependencies = loading || loadingPlans || loadingSubscription;
 
     const hasBlackFridayOffer =
         !loadingDependencies &&
@@ -44,7 +40,6 @@ const usePromotionOffer = (): EligibleOffer | undefined => {
         !!subscription &&
         !!latestSubscription &&
         !isDelinquent &&
-        vpnSpecialOfferFeature?.feature?.Value &&
         isBlackFridayPeriod &&
         getBlackFridayEligibility(subscription, latestSubscription);
 
@@ -114,10 +109,6 @@ const usePromotionOffer = (): EligibleOffer | undefined => {
         // Only fetching this during the black friday period
         if (!isBlackFridayPeriod) {
             return;
-        }
-        if (isBlackFridayPeriod && vpnSpecialOfferFeature?.feature?.Value === false) {
-            // If it becomes the black friday period and the vpn special offer feature flag is still disabled, re-fetch it to check if has become enabled
-            vpnSpecialOfferFeature.get().catch(noop);
         }
         if (!isFree) {
             setLatestSubscription({ LastSubscriptionEnd: 0 });
