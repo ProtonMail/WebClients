@@ -10,7 +10,7 @@ import {
     useSettingsLink,
     MailImportCsvSection,
 } from '@proton/components';
-import { PRODUCT_NAMES } from '@proton/shared/lib/constants';
+import { APPS, PRODUCT_NAMES } from '@proton/shared/lib/constants';
 
 import PrivateMainAreaLoading from '../../components/PrivateMainAreaLoading';
 import PrivateMainSettingsAreaWithPermissions from '../../components/PrivateMainSettingsAreaWithPermissions';
@@ -44,7 +44,7 @@ const AccountEasySwitchSettings = ({ setActiveSection, location }: SettingsProps
 
     useEffect(() => {
         if (!isEasySwitchEnabled) {
-            goToSettings('/dashboard');
+            goToSettings('/import-export', APPS.PROTONMAIL);
         }
     }, [isEasySwitchEnabled]);
 
