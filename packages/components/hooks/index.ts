@@ -26,6 +26,7 @@ export { default as useConfig } from './useConfig';
 export { default as useContactEmails } from './useContactEmails';
 export { default as useContactEmailsSortedByName } from './useContactEmailsSortedByName';
 export { default as useContacts } from './useContacts';
+export { default as useControlled } from './useControlled';
 export * from './useConversationCounts';
 export { default as useCookieState } from './useCookieState';
 export { default as useCyberMondayPeriod } from './useCyberMondayPeriod';
