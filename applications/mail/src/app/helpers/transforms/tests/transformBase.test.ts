@@ -19,6 +19,7 @@ describe('transformBase service', () => {
         imgCID: 'cid:xxxxx',
         imghttp: 'https://cpp.li/robert3.jpg',
         ahttp: 'https://cpp.li/',
+        mailto: 'mailto:someone@domain.com',
     };
     const DOM = `
         <section>
@@ -37,6 +38,7 @@ describe('transformBase service', () => {
             <img proton-src="${LINKS.imgCID}" alt="" id="imgcid" />
             <img src="${LINKS.imghttp}" alt="" id="imghttp" />
             <a href="${LINKS.ahttp}"  id="ahttp">dew</a>
+            <a href="${LINKS.mailto}" id="mailto">Mailto</a>
         </section
     `;
     const DEFAULT_DOMAIN = 'http://lol.com';
@@ -282,6 +284,12 @@ describe('transformBase service', () => {
                 const { querySelector } = setup();
                 const nope = querySelector('#ahttp') as HTMLLinkElement;
                 expect(nope.href).toBe(LINKS.ahttp);
+            });
+
+            it('should not change the HREF for a mailto link', () => {
+                const { querySelector } = setup();
+                const nope = querySelector('#mailto') as HTMLLinkElement;
+                expect(nope.href).toBe(LINKS.mailto);
             });
         });
 
