@@ -48,7 +48,7 @@ import EncryptionStatusIcon from '../EncryptionStatusIcon';
 import { isSelfAddress } from '../../../helpers/addresses';
 import { useOnCompose } from '../../../containers/ComposeProvider';
 import { MESSAGE_ACTIONS } from '../../../constants';
-import ItemSpyTrackerIcon from '../../list/ItemSpyTrackerIcon';
+import ItemSpyTrackerIcon from '../../list/spy-tracker/ItemSpyTrackerIcon';
 
 interface Props {
     labelID: string;

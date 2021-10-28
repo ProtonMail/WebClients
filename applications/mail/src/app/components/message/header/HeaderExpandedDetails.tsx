@@ -13,7 +13,7 @@ import { getSize } from '../../../helpers/elements';
 import { MessageViewIcons } from '../../../helpers/message/icon';
 import EncryptionStatusIcon from '../EncryptionStatusIcon';
 import ItemLocation from '../../list/ItemLocation';
-import SpyTrackerIcon from '../SpyTrackerIcon';
+import SpyTrackerIcon from '../../list/spy-tracker/SpyTrackerIcon';
 import { useMessageTrackers } from '../../../hooks/message/useMessageTrackers';
 import ItemAttachmentIcon from '../../list/ItemAttachmentIcon';
 
@@ -43,10 +43,11 @@ const HeaderExpandedDetails = ({
 
     const sizeText = humanSize(getSize(message.data || {}));
 
-    const { hasProtection, hasShowImage, numberOfTrackers, needsMoreProtection, title } = useMessageTrackers({
-        message,
-        isDetails: true,
-    });
+    const { hasProtection, hasShowImage, numberOfTrackers, needsMoreProtection, title, openSpyTrackerModal } =
+        useMessageTrackers({
+            message,
+            isDetails: true,
+        });
     const displayTrackerIcon = !(!hasProtection && hasShowImage && numberOfTrackers === 0) && spyTrackerFeature?.Value;
 
     const { pureAttachmentsCount, embeddedAttachmentsCount } = getAttachmentCounts(
@@ -141,6 +142,7 @@ const HeaderExpandedDetails = ({
                             needsMoreProtection={needsMoreProtection}
                             title={title}
                             className="mauto"
+                            openSpyTrackerModal={openSpyTrackerModal}
                         />
                     </span>
                     <span className="flex-align-self-center mr0-5 text-ellipsis" title={title}>
