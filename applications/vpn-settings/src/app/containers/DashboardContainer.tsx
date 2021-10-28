@@ -1,21 +1,28 @@
 import { useEffect, useRef } from 'react';
 import {
-    PlansSection,
     BillingSection,
-    useUser,
+    CancelSubscriptionSection,
+    CreditsSection,
+    GiftCodeSection,
+    PlansSection,
     SettingsPropsShared,
-    useModals,
     SubscriptionModal,
+    useModals,
+    useOrganization,
     usePlans,
     useSubscription,
-    useOrganization,
+    useUser,
     YourPlanSection,
-    GiftCodeSection,
-    CreditsSection,
-    CancelSubscriptionSection,
 } from '@proton/components';
 import { useHistory } from 'react-router-dom';
-import { PERMISSIONS, DEFAULT_CYCLE, PLAN_SERVICES, CYCLE, CURRENCIES } from '@proton/shared/lib/constants';
+import {
+    BLACK_FRIDAY,
+    CURRENCIES,
+    CYCLE,
+    DEFAULT_CYCLE,
+    PERMISSIONS,
+    PLAN_SERVICES,
+} from '@proton/shared/lib/constants';
 import { Plan, PlanIDs, UserModel } from '@proton/shared/lib/interfaces';
 import { c } from 'ttag';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
@@ -130,13 +137,15 @@ const DashboardContainer = ({ setActiveSection, location }: SettingsPropsShared)
             service: PLAN_SERVICES.VPN,
             organization,
         });
+        const isBlackFridayCoupon = coupon === BLACK_FRIDAY.COUPON_CODE;
         createModal(
             <SubscriptionModal
                 planIDs={planIDs}
                 currency={maybeCurrency || subscription.Currency}
                 cycle={maybeCycle || subscription.Cycle}
-                step={SUBSCRIPTION_STEPS.CUSTOMIZATION}
                 coupon={coupon}
+                step={isBlackFridayCoupon ? SUBSCRIPTION_STEPS.CHECKOUT : SUBSCRIPTION_STEPS.CUSTOMIZATION}
+                disableBackButton={isBlackFridayCoupon}
             />
         );
     }, [loadingPlans, loadingSubscription, loadingOrganization]);
