@@ -79,10 +79,7 @@ const MailSidebar = ({ labelID, expanded = false, onToggleExpand }: Props) => {
                         originalPlacement="top"
                     >
                         <button type="button" className="ml0-5" onClick={handleGiftClick}>
-                            <Tooltip
-                                title={c('Storage')
-                                    .t`Get 1 GB of bonus storage for completing your "get started" action items.`}
-                            >
+                            <Tooltip title={c('Storage').t`Get extra storage for free`}>
                                 <img width={16} src={giftSvg} alt={c('Action').t`Open get started checklist modal`} />
                             </Tooltip>
                         </button>
