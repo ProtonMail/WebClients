@@ -206,12 +206,6 @@ const IASelectImportTypeStep = ({
 
         const periodFragment = getPeriodFragment();
 
-        // translator: This fragment is to be used in a sentence, here is an example of a complete sentence: "Import all messages from 13 out of 15 labels since account creation date and label them as ..." followed by the label HTML element
-        const messagesFragment =
-            totalLabelsCount === selectedLabelsCount
-                ? `Import all messages from ${totalLabelsCount} labels`
-                : `Import all messages from ${selectedLabelsCount} out of ${totalLabelsCount} labels`;
-
         const label = (
             <LabelStack
                 key="label"
@@ -224,8 +218,15 @@ const IASelectImportTypeStep = ({
             />
         );
 
-        // translator: here is an example of a complete sentence: "Import all messages from 3 out of 5 labels since the last month and label them as ..." followed by the label HTML element
-        return c('Mail import summary').jt`${messagesFragment} since ${periodFragment} and label them as ${label}`;
+        // translator: here is an example of a complete sentence: "Import all messages from 12 labels since the last month and label them as ..." followed by the label HTML element
+        const summaryAllLabels = c('Mail import summary')
+            .jt`Import all messages from ${totalLabelsCount} labels since ${periodFragment} and label them as ${label}`;
+
+        // translator: here is an example of a complete sentence: "Import all messages from 3 out of 5 labels since the last 3 months and label them as ..." followed by the label HTML element
+        const summarySelectedLabels = c('Mail import summary')
+            .jt`Import all messages from ${selectedLabelsCount} out of ${totalLabelsCount} labels since ${periodFragment} and label them as ${label}`;
+
+        return totalLabelsCount === selectedLabelsCount ? summaryAllLabels : summarySelectedLabels;
     };
 
     const mailRowRenderer = () => {
