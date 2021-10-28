@@ -24269,9 +24269,9 @@ fsevents@^1.2.7:
   languageName: unknown
   linkType: soft
 
-"proton-verification@workspace:applications/verification":
+"proton-verify@workspace:applications/verify":
   version: 0.0.0-use.local
-  resolution: "proton-verification@workspace:applications/verification"
+  resolution: "proton-verify@workspace:applications/verify"
   dependencies:
     "@proton/components": "workspace:packages/components"
     "@proton/i18n": "workspace:packages/i18n"
