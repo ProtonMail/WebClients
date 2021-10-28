@@ -46,6 +46,18 @@ export const getHasV2KeysToUpgrade = (User: tsUser, Addresses: tsAddress[]) => {
     );
 };
 
+const reEncryptOrReformatKey = async (privateKey: OpenPGPKey, Key: Key, email: string, passphrase: string) => {
+    if (Key && getV2KeyToUpgrade(Key)) {
+        return reformatAddressKey({
+            email,
+            passphrase,
+            privateKey,
+        });
+    }
+    const privateKeyArmored = await encryptPrivateKey(privateKey, passphrase);
+    return { privateKey, privateKeyArmored };
+};
+
 const getReEncryptedKeys = (keys: DecryptedKey[], Keys: Key[], email: string, passphrase: string) => {
     const keysMap = Keys.reduce<{ [key: string]: Key }>((acc, Key) => {
         acc[Key.ID] = Key;
@@ -53,18 +65,7 @@ const getReEncryptedKeys = (keys: DecryptedKey[], Keys: Key[], email: string, pa
     }, {});
     return Promise.all(
         keys.map(async ({ privateKey, ID }) => {
-            if (keysMap[ID] && getV2KeyToUpgrade(keysMap[ID])) {
-                const { privateKeyArmored } = await reformatAddressKey({
-                    email,
-                    passphrase,
-                    privateKey,
-                });
-                return {
-                    ID,
-                    PrivateKey: privateKeyArmored,
-                };
-            }
-            const privateKeyArmored = await encryptPrivateKey(privateKey, passphrase);
+            const { privateKeyArmored } = await reEncryptOrReformatKey(privateKey, keysMap[ID], email, passphrase);
             return {
                 ID,
                 PrivateKey: privateKeyArmored,
@@ -73,20 +74,25 @@ const getReEncryptedKeys = (keys: DecryptedKey[], Keys: Key[], email: string, pa
     );
 };
 
-const getReformattedAddressKeysV2 = (keys: DecryptedKey[], email: string, userKey: OpenPGPKey) => {
+const getReformattedAddressKeysV2 = (keys: DecryptedKey[], Keys: Key[], email: string, userKey: OpenPGPKey) => {
+    const keysMap = Keys.reduce<{ [key: string]: Key }>((acc, Key) => {
+        acc[Key.ID] = Key;
+        return acc;
+    }, {});
     return Promise.all(
-        keys.map(async ({ privateKey, ID }) => {
+        keys.map(async ({ ID, privateKey: originalPrivateKey }) => {
             const { token, encryptedToken, signature } = await generateAddressKeyTokens(userKey);
-            const { privateKey: reformattedPrivateKey, privateKeyArmored } = await reformatAddressKey({
+            const { privateKey, privateKeyArmored } = await reEncryptOrReformatKey(
+                originalPrivateKey,
+                keysMap[ID],
                 email,
-                passphrase: token,
-                privateKey,
-            });
+                token
+            );
             return {
                 decryptedKey: {
                     ID,
-                    privateKey: reformattedPrivateKey,
-                    publicKey: reformattedPrivateKey.toPublic(),
+                    privateKey,
+                    publicKey: privateKey.toPublic(),
                 },
                 Key: {
                     ID,
@@ -181,7 +187,12 @@ export const upgradeV2KeysV2 = async ({
 
     const reformattedAddressesKeys = await Promise.all(
         addressesKeys.map(async ({ address, keys }) => {
-            const reformattedAddressKeys = await getReformattedAddressKeysV2(keys, address.Email, primaryUserKey);
+            const reformattedAddressKeys = await getReformattedAddressKeysV2(
+                keys,
+                address.Keys,
+                address.Email,
+                primaryUserKey
+            );
             const [decryptedKeys, addressKeys] = reformattedAddressKeys.reduce<
                 [DecryptedKey[], UpgradeAddressKeyPayload[]]
             >(
