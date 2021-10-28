@@ -90,7 +90,7 @@ const MessageOnlyView = ({
             <ConversationHeader
                 className={classnames([hidden && 'hidden'])}
                 loading={!messageLoaded}
-                element={message.data || {}}
+                element={message.data}
                 labelID={labelID}
                 highlightKeywords={highlightKeywords}
             />

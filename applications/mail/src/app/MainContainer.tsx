@@ -10,7 +10,6 @@ import {
     useFeatures,
 } from '@proton/components';
 import MessageProvider from './containers/MessageProvider';
-import ConversationProvider from './containers/ConversationProvider';
 import ComposerContainer from './containers/ComposerContainer';
 import PageContainer from './containers/PageContainer';
 import { MAIN_ROUTE_PATH } from './constants';
@@ -41,7 +40,6 @@ const MainContainer = () => {
     return (
         <ReduxProvider store={store}>
             <MessageProvider>
-                <ConversationProvider>
                         <ContactProvider>
                             <EncryptedSearchProvider>
                                 <MailContentRefProvider mailContentRef={mailContentRef}>
@@ -69,7 +67,6 @@ const MainContainer = () => {
                                 </MailContentRefProvider>
                             </EncryptedSearchProvider>
                         </ContactProvider>
-                </ConversationProvider>
             </MessageProvider>
         </ReduxProvider>
     );

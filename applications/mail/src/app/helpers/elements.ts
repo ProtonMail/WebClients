@@ -33,8 +33,9 @@ export interface TypeParams {
 export const getCurrentType = ({ labelID, mailSettings, location }: TypeParams) =>
     isConversationMode(labelID, mailSettings, location) ? ELEMENT_TYPES.CONVERSATION : ELEMENT_TYPES.MESSAGE;
 
-export const isMessage = (element: Element = {}): boolean => typeof (element as Message).ConversationID === 'string';
-export const isConversation = (element: Element = {}): boolean => !isMessage(element);
+export const isMessage = (element: Element | undefined): boolean =>
+    typeof (element as Message)?.ConversationID === 'string';
+export const isConversation = (element: Element | undefined): boolean => !isMessage(element);
 
 /**
  * Get the date of an element.
@@ -97,7 +98,7 @@ export const hasLabel = (element: Element | undefined, labelID: string) =>
 
 export const isStarred = (element: Element) => hasLabel(element, MAILBOX_LABEL_IDS.STARRED);
 
-export const getSize = ({ Size = 0 }: Element) => Size;
+export const getSize = (element: Element) => element.Size || 0;
 
 export const sort = (elements: Element[], sort: Sort, labelID: string) => {
     const getValue = {

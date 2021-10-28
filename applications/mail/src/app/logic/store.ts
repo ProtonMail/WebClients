@@ -1,10 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit';
 import elements from './elements/elementsSlice';
 import attachments from './attachments/attachmentsSlice';
+import conversations from './conversations/conversationsSlice';
 
 export const store = configureStore({
     reducer: {
         elements,
+        conversations,
         attachments,
     },
     middleware: (getDefaultMiddleware) =>

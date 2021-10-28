@@ -1,13 +1,13 @@
 import { Conversation } from '../../models/conversation';
 
 interface Props {
-    conversation: Conversation;
+    conversation: Conversation | undefined;
     className?: string;
 }
 
 const NumMessages = ({ conversation, className }: Props) => {
-    // ContextNumMessages shoud not be used
-    const { NumMessages = 0 } = conversation;
+    // ContextNumMessages should not be used
+    const { NumMessages = 0 } = conversation || {};
 
     if (NumMessages <= 1) {
         return null;

@@ -10,7 +10,6 @@ import { useMessageCache, getLocalID } from '../../containers/MessageProvider';
 import { useGetElementByID } from '../mailbox/useElements';
 import { Conversation } from '../../models/conversation';
 import { Element } from '../../models/element';
-import { useConversationCache, useUpdateConversationCache } from '../../containers/ConversationProvider';
 import { isMessage as testIsMessage, hasLabel, getCurrentFolderIDs } from '../../helpers/elements';
 import { updateCounters } from '../../helpers/counter';
 import {
@@ -18,9 +17,15 @@ import {
     applyLabelChangesOnMessage,
     applyLabelChangesOnConversation,
     applyLabelChangesOnOneMessageOfAConversation,
+    UnreadStatus,
 } from '../../helpers/labels';
 import { CacheEntry } from '../../models/tools';
 import { optimisticApplyLabels as optimisticApplyLabelsAction } from '../../logic/elements/elementsActions';
+import {
+    applyLabelsOnConversation,
+    applyLabelsOnConversationMessages,
+} from '../../logic/conversations/conversationsActions';
+import { useGetConversation } from '../conversation/useConversation';
 
 const { SENT, DRAFTS } = MAILBOX_LABEL_IDS;
 
@@ -43,10 +48,9 @@ export const useOptimisticApplyLabels = () => {
     const dispatch = useDispatch();
     const getElementByID = useGetElementByID();
     const messageCache = useMessageCache();
-    const conversationCache = useConversationCache();
     const [folders = []] = useFolders();
     const globalCache = useCache();
-    const updateConversationCache = useUpdateConversationCache();
+    const getConversation = useGetConversation();
 
     /**
      * Apply optimistically changes in the cache
@@ -62,12 +66,12 @@ export const useOptimisticApplyLabels = () => {
             elements: Element[],
             inputChanges: LabelChanges,
             isMove = false,
-            unreadStatuses?: { id: string; unread: number }[],
+            unreadStatuses?: UnreadStatus[],
             currentLabelID?: string
         ) => {
             const rollbackChanges = [] as { element: Element; changes: LabelChanges }[];
             const updatedElements = [] as Element[];
-            const elementsUnreadStatuses = [] as { id: string; unread: number }[];
+            const elementsUnreadStatuses = [] as UnreadStatus[];
             const isMessage = testIsMessage(elements[0]);
             let { value: messageCounters } = globalCache.get(MessageCountsModel.key) as CacheEntry<LabelCount[]>;
             let { value: conversationCounters } = globalCache.get(ConversationCountsModel.key) as CacheEntry<
@@ -128,20 +132,21 @@ export const useOptimisticApplyLabels = () => {
                     }
 
                     // Update in conversation cache
-                    const conversationResult = conversationCache.get(message.ConversationID);
+                    const conversationResult = getConversation(message.ConversationID);
                     if (conversationResult && conversationResult.Conversation) {
                         const conversation = conversationResult.Conversation;
                         const { updatedConversation, conversationChanges } =
                             applyLabelChangesOnOneMessageOfAConversation(conversation, changes);
-                        updateConversationCache(message.ConversationID, () => ({
-                            Conversation: updatedConversation,
-                            Messages: conversationResult.Messages?.map((messageFromConversation) => {
-                                if (messageFromConversation.ID === message.ID) {
-                                    return applyLabelChangesOnMessage(messageFromConversation, changes, unreadStatuses);
-                                }
-                                return messageFromConversation;
-                            }),
-                        }));
+                        dispatch(
+                            applyLabelsOnConversationMessages({
+                                ID: message.ConversationID,
+                                messageID: message.ID,
+                                changes,
+                                unreadStatuses,
+                                updatedConversation,
+                                conversationResult, // TODO: Check if needed
+                            })
+                        );
                         // Update conversation count when the conversation is loaded
                         conversationCounters = updateCounters(conversation, conversationCounters, conversationChanges);
                     }
@@ -171,17 +176,8 @@ export const useOptimisticApplyLabels = () => {
                     const conversation = element as RequireSome<Conversation, 'ID'>;
 
                     // Update in conversation cache
-                    const conversationCacheEntry = conversationCache.get(conversation.ID);
-                    if (conversationCacheEntry && conversationCacheEntry.Conversation) {
-                        const conversationFromCache = conversationCacheEntry.Conversation;
-                        updateConversationCache(conversation.ID, () => ({
-                            Conversation: applyLabelChangesOnConversation(
-                                conversationFromCache,
-                                changes,
-                                unreadStatuses
-                            ),
-                        }));
-                    }
+                    const conversationFromState = getConversation(conversation.ID);
+                    dispatch(applyLabelsOnConversation({ ID: conversation.ID, changes, unreadStatuses }));
 
                     // Update in elements cache if conversation mode
                     const conversationElement = getElementByID(conversation.ID);
@@ -192,7 +188,7 @@ export const useOptimisticApplyLabels = () => {
                     }
 
                     // Update messages from the conversation (if loaded)
-                    const messages = conversationCacheEntry?.Messages;
+                    const messages = conversationFromState?.Messages;
                     messages?.forEach((message) => {
                         const localID = getLocalID(messageCache, message.ID);
 
