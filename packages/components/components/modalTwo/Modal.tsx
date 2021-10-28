@@ -15,7 +15,11 @@ import { useFocusTrap } from '../focus';
 import { Portal } from '../portal';
 import './Modal.scss';
 
-type ModalContextValue = Omit<ModalOwnProps, 'children'> & { id: string };
+/**
+ * Omission of id from ModalOwnProps because in ModalOwnProps "id"
+ * is optional, wheveas in ModalContextValue it is guaranteed.
+ */
+type ModalContextValue = Omit<ModalOwnProps, 'id'> & { id: string };
 
 export const ModalContext = createContext({} as ModalContextValue);
 
@@ -38,14 +42,26 @@ interface ModalOwnProps {
      */
     disableCloseOnEscape?: boolean;
     /**
+     * Optional id to overwrite the internally generated id, which
+     * is used for accessibility purposes (e.g.aria-labelledby & id
+     * of the ModalTitle or the Title in ModalHeader)
+     */
+    id?: string;
+    /**
      * Fires when the user clicks on the close button or when he
      * presses the escape key, unless 'disableCloseOnEscape' is
      * set to true.
      */
     onClose?: () => void;
+    /**
+     * Fires when the Modal has finished its exit animation.
+     */
+    onExit?: () => void;
 }
 
-export type ModalProps = ModalOwnProps & ComponentPropsWithoutRef<'div'>;
+type DivProps = ComponentPropsWithoutRef<'div'>;
+
+export type ModalProps = ModalOwnProps & Omit<DivProps, 'id'>;
 
 const Modal = (props: ModalProps) => {
     const {
@@ -54,10 +70,11 @@ const Modal = (props: ModalProps) => {
         large,
         full,
         fullscreenOnMobile,
-        children,
         onClose,
+        onExit,
         disableCloseOnEscape,
         className,
+        children,
         ...rest
     } = props;
 
@@ -112,6 +129,7 @@ const Modal = (props: ModalProps) => {
     const handleAnimationEnd = ({ animationName }: AnimationEvent<HTMLDivElement>) => {
         if (animationName === 'anime-modal-two-backdrop-out') {
             setExiting(false);
+            onExit?.();
         }
     };
 

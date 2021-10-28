@@ -126,14 +126,16 @@ export const HeaderActions = () => {
             </Button>
             <ModalTwo open={open} onClose={() => setOpen(false)}>
                 <ModalTwoHeader
-                    actions={[
-                        <Button icon>
-                            <Icon name="circle-question" />
-                        </Button>,
-                        <Button icon>
-                            <Icon name="arrows-rotate" />
-                        </Button>,
-                    ]}
+                    actions={
+                        <>
+                            <Button>
+                                <Icon name="circle-question" />
+                            </Button>
+                            <Button>
+                                <Icon name="arrows-rotate" />
+                            </Button>
+                        </>
+                    }
                 />
                 <ModalTwoContent>
                     <ModalTwoTitle>Title h3 in content</ModalTwoTitle>
@@ -275,16 +277,21 @@ export const Alert = () => {
                 subline="Subline"
                 open={open}
                 onClose={() => setOpen(false)}
-                text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium unde, blanditiis rem
-                        accusamus obcaecati enim amet, voluptatibus nemo facilis illum aut itaque in? Deleniti iure amet
-                        qui vero, blanditiis quos?"
-                buttons={[
-                    <Button className="mb0-5" color="danger">
-                        Continue
-                    </Button>,
-                    <Button onClick={() => setOpen(false)}>Cancel</Button>,
-                ]}
-            />
+                buttons={
+                    <>
+                        <Button className="mb0-5" color="danger">
+                            Continue
+                        </Button>
+                        <Button onClick={() => setOpen(false)}>Cancel</Button>,
+                    </>
+                }
+            >
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium unde, blanditiis rem accusamus
+                    obcaecati enim amet, voluptatibus nemo facilis illum aut itaque in? Deleniti iure amet qui vero,
+                    blanditiis quos?
+                </p>
+            </AlertModal>
         </div>
     );
 };
