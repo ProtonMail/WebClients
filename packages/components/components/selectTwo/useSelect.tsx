@@ -1,6 +1,6 @@
 import { createContext, ReactNode, useMemo, useState } from 'react';
 
-import useControlled from '../../hooks/useControlled';
+import { useControlled } from '../../hooks';
 import { SelectChangeEvent } from './select';
 
 interface UseSelectOptions<V> {
