@@ -1,4 +1,4 @@
-import { cloneElement, ComponentPropsWithRef, useContext } from 'react';
+import React, { ComponentPropsWithRef, useContext } from 'react';
 
 import { classnames } from '../../helpers';
 import { Icon } from '../icon';
@@ -8,16 +8,29 @@ import { ModalContext } from './Modal';
 import './ModalHeader.scss';
 
 interface ModalHeaderProps extends Omit<ComponentPropsWithRef<'div'>, 'children'> {
+    /**
+     * The title to render in the Modal header.
+     */
     title?: string;
+    /**
+     * A subline to render below the Title.
+     * Will not render unless "title" is passed as well.
+     */
     subline?: string;
-    actions?: [JSX.Element] | [JSX.Element, JSX.Element];
+    /**
+     * Intended for use with icon buttons.
+     * Slot for Element(s) to be rendered next to the close button.
+     */
+    actions?: JSX.Element;
+    /**
+     * If passed, renders a back button in the Modal's header.
+     * Fires on click of said back button.
+     */
     onBack?: () => void;
 }
 
-const ModalHeader = ({ title, subline, actions: actionsProp, onBack, ...rest }: ModalHeaderProps) => {
+const ModalHeader = ({ title, subline, actions, onBack, ...rest }: ModalHeaderProps) => {
     const { id, onClose } = useContext(ModalContext);
-
-    const actions = actionsProp?.map((button) => cloneElement(button, { icon: true, shape: 'ghost', size: 'medium' }));
 
     return (
         <div
