@@ -34,7 +34,7 @@ import { useElementsEvents } from '../events/useElementsEvents';
 import { RootState } from '../../logic/store';
 import { useExpirationCheck } from '../useExpiration';
 import { getLocalID, useMessageCache } from '../../containers/MessageProvider';
-import { useConversationCache } from '../../containers/ConversationProvider';
+import { conversationByID } from '../../logic/conversations/conversationsSelectors';
 
 interface Options {
     conversationMode: boolean;
@@ -203,7 +203,6 @@ export const useGetElementByID = () => {
 export const useGetElementsFromIDs = () => {
     const store = useStore();
     const messageCache = useMessageCache();
-    const conversationCache = useConversationCache();
 
     return useCallback((elementIDs: string[]): Element[] => {
         const state = store.getState();
@@ -215,7 +214,9 @@ export const useGetElementsFromIDs = () => {
 
                 const localID = getLocalID(messageCache, ID);
 
-                return messageCache.get(localID)?.data || conversationCache.get(ID)?.Conversation;
+                const conversationFromConversationState = conversationByID(state, { ID });
+
+                return messageCache.get(localID)?.data || conversationFromConversationState?.Conversation;
             })
             .filter(isTruthy);
     }, []);

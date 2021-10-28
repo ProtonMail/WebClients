@@ -10,7 +10,7 @@ import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvi
 interface Props {
     className: string;
     loading: boolean;
-    element: Element;
+    element?: Element;
     labelID: string;
     highlightKeywords?: boolean;
 }
@@ -21,10 +21,10 @@ const ConversationHeader = ({ className, loading, element, labelID, highlightKey
 
     const isConversation = testIsConversation(element);
     const subjectElement =
-        !!element.Subject && highlightKeywords ? (
+        !!element?.Subject && highlightKeywords ? (
             highlightMetadata(element.Subject, true).resultJSX
         ) : (
-            <span>{element.Subject}</span>
+            <span>{element?.Subject}</span>
         );
 
     return (
@@ -40,7 +40,7 @@ const ConversationHeader = ({ className, loading, element, labelID, highlightKey
             <div className="flex flex-nowrap">
                 <h1
                     className="message-conversation-summary-header mb0 h3 text-bold text-ellipsis-two-lines lh-rg flex-item-fluid pr1"
-                    title={element.Subject}
+                    title={element?.Subject}
                     data-testid="conversation-header:subject"
                 >
                     {!loading ? (

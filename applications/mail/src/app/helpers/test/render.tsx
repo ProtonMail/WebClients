@@ -21,8 +21,7 @@ import FeaturesProvider from '@proton/components/containers/features/FeaturesPro
 import { ConversationCountsModel, MessageCountsModel } from '@proton/shared/lib/models';
 import { Provider as ReduxProvider } from 'react-redux';
 import MessageProvider from '../../containers/MessageProvider';
-import ConversationProvider from '../../containers/ConversationProvider';
-import { minimalCache, cache, messageCache, conversationCache, contactCache } from './cache';
+import { minimalCache, cache, messageCache, contactCache } from './cache';
 import { api, registerFeatureFlagsApiMock, registerMinimalFlags } from './api';
 import ContactProvider from '../../containers/ContactProvider';
 import EncryptedSearchProvider from '../../containers/EncryptedSearchProvider';
@@ -82,21 +81,19 @@ const TestProvider = ({ children }: Props) => {
                                 <EventModelListener models={[ConversationCountsModel, MessageCountsModel]} />
                                 <ReduxProvider store={store}>
                                     <MessageProvider cache={messageCache}>
-                                        <ConversationProvider cache={conversationCache}>
-                                            <FeaturesProvider>
-                                                <ContactProvider cache={contactCache}>
-                                                    <MailContentRefProvider mailContentRef={contentRef}>
-                                                        <ComposeProvider onCompose={jest.fn()}>
-                                                            <Router history={history}>
-                                                                <EncryptedSearchProvider>
-                                                                    {children}
-                                                                </EncryptedSearchProvider>
-                                                            </Router>
-                                                        </ComposeProvider>
-                                                    </MailContentRefProvider>
-                                                </ContactProvider>
-                                            </FeaturesProvider>
-                                        </ConversationProvider>
+                                                <FeaturesProvider>
+                                                    <ContactProvider cache={contactCache}>
+                                                        <MailContentRefProvider mailContentRef={contentRef}>
+                                                            <ComposeProvider onCompose={jest.fn()}>
+                                                                <Router history={history}>
+                                                                    <EncryptedSearchProvider>
+                                                                        {children}
+                                                                    </EncryptedSearchProvider>
+                                                                </Router>
+                                                            </ComposeProvider>
+                                                        </MailContentRefProvider>
+                                                    </ContactProvider>
+                                                </FeaturesProvider>
                                     </MessageProvider>
                                 </ReduxProvider>
                             </CacheProvider>

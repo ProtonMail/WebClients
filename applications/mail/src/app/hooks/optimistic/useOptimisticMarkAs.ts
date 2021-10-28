@@ -9,14 +9,18 @@ import { useHistory } from 'react-router-dom';
 import { useMessageCache, getLocalID } from '../../containers/MessageProvider';
 import { Conversation } from '../../models/conversation';
 import { Element } from '../../models/element';
-import { useConversationCache, useUpdateConversationCache } from '../../containers/ConversationProvider';
 import { isMessage as testIsMessage, isUnread } from '../../helpers/elements';
 import { MARK_AS_STATUS } from '../useMarkAs';
 import { CacheEntry } from '../../models/tools';
 import { updateCountersForMarkAs } from '../../helpers/counter';
 import { useGetElementByID } from '../mailbox/useElements';
 import { optimisticMarkAs as optimisticMarkAsAction } from '../../logic/elements/elementsActions';
+import {
+    optimisticMarkAsConversation,
+    optimisticMarkAsConversationMessages,
+} from '../../logic/conversations/conversationsActions';
 import { isConversationMode } from '../../helpers/mailSettings';
+import { useGetConversation } from '../conversation/useConversation';
 
 export type MarkAsChanges = { status: MARK_AS_STATUS };
 
@@ -34,12 +38,16 @@ const computeRollbackMarkAsChanges = (element: Element, labelID: string, changes
     };
 };
 
-const applyMarkAsChangesOnMessage = (message: Message, { status }: MarkAsChanges) => ({
+export const applyMarkAsChangesOnMessage = (message: Message, { status }: MarkAsChanges) => ({
     ...message,
     Unread: status === MARK_AS_STATUS.UNREAD ? 1 : 0,
 });
 
-const applyMarkAsChangesOnConversation = (conversation: Conversation, labelID: string, { status }: MarkAsChanges) => {
+export const applyMarkAsChangesOnConversation = (
+    conversation: Conversation,
+    labelID: string,
+    { status }: MarkAsChanges
+) => {
     const { NumUnread = 0, Labels = [] } = conversation;
     const { ContextNumUnread = 0 } = Labels.find(({ ID }) => ID === labelID) || {};
     const updatedNumUnread =
@@ -94,11 +102,10 @@ export const useOptimisticMarkAs = () => {
     const dispatch = useDispatch();
     const getElementByID = useGetElementByID();
     const messageCache = useMessageCache();
-    const conversationCache = useConversationCache();
-    const updateConversationCache = useUpdateConversationCache();
     const globalCache = useCache();
     const [mailSettings] = useMailSettings();
     const history = useHistory();
+    const getConversation = useGetConversation();
 
     const optimisticMarkAs = useHandler((elements: Element[], labelID: string, changes: MarkAsChanges) => {
         const rollbackChanges = [] as { element: Element; changes: MarkAsChanges }[];
@@ -124,23 +131,23 @@ export const useOptimisticMarkAs = () => {
                 }
 
                 // Update in conversation cache
-                const conversationCacheEntry = conversationCache.get(message.ConversationID);
-                if (conversationCacheEntry && conversationCacheEntry.Conversation) {
-                    const conversation = conversationCacheEntry.Conversation;
+                const conversationState = getConversation(message.ConversationID);
+                if (conversationState && conversationState.Conversation) {
+                    const conversation = conversationState.Conversation;
                     const updatedConversation = applyMarkAsChangesOnConversationWithMessages(
                         conversation,
                         labelID,
                         changes
                     );
-                    updateConversationCache(message.ConversationID, () => ({
-                        Conversation: updatedConversation,
-                        Messages: conversationCacheEntry.Messages?.map((conversationMessage) => {
-                            if (conversationMessage.ID === message.ID) {
-                                return applyMarkAsChangesOnMessage(conversationMessage, changes);
-                            }
-                            return conversationMessage;
-                        }),
-                    }));
+
+                    dispatch(
+                        optimisticMarkAsConversationMessages({
+                            ID: message.ConversationID,
+                            messageID: message.ID,
+                            updatedConversation,
+                            changes,
+                        })
+                    );
 
                     // Update conversation count when the conversation is loaded
                     conversationCounters = updateCountersForMarkAs(
@@ -172,14 +179,7 @@ export const useOptimisticMarkAs = () => {
                 const conversation = element as RequireSome<Conversation, 'ID'>;
 
                 // Update in conversation cache
-                const conversationCacheEntry = conversationCache.get(conversation.ID);
-
-                if (conversationCacheEntry && conversationCacheEntry.Conversation) {
-                    const conversationFromCache = conversationCacheEntry.Conversation;
-                    updateConversationCache(conversation.ID, () => ({
-                        Conversation: applyMarkAsChangesOnConversation(conversationFromCache, labelID, changes),
-                    }));
-                }
+                dispatch(optimisticMarkAsConversation({ ID: conversation.ID, labelID, changes }));
 
                 // Update in elements cache if conversation mode
                 const conversationElement = getElementByID(conversation.ID);
@@ -197,7 +197,7 @@ export const useOptimisticMarkAs = () => {
 
                 // Update messages from the conversation (if loaded)
                 if (changes.status === MARK_AS_STATUS.READ) {
-                    const messages = conversationCacheEntry?.Messages;
+                    const messages = getConversation(conversation.ID)?.Messages;
                     messages?.forEach((message) => {
                         if (!message.LabelIDs.find((id) => id === labelID)) {
                             return;
