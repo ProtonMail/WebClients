@@ -1,11 +1,11 @@
-import { OpenPGPKey } from 'pmcrypto';
+import { encryptPrivateKey, OpenPGPKey } from 'pmcrypto';
 
 import { Address, Api, DecryptedKey } from '../../interfaces';
 import { KeyImportData, OnKeyImportCallback } from './interface';
 import { getActiveKeyObject, getActiveKeys, getPrimaryFlag } from '../getActiveKeys';
 import { getInactiveKeys } from '../getInactiveKeys';
 import { getFilteredImportRecords } from './helper';
-import { generateAddressKeyTokens, reformatAddressKey } from '../addressKeys';
+import { generateAddressKeyTokens } from '../addressKeys';
 import { getSignedKeyList } from '../signedKeyList';
 import { createAddressKeyRouteV2 } from '../../api/keys';
 import { reactivateAddressKeysV2 } from '../reactivation/reactivateKeysProcessV2';
@@ -48,14 +48,9 @@ const importKeysProcessV2 = async ({
             const { privateKey } = keyImportRecord;
 
             const { token, encryptedToken, signature } = await generateAddressKeyTokens(userKey);
+            const privateKeyArmored = await encryptPrivateKey(privateKey, token);
 
-            const { privateKey: reformattedPrivateKey, privateKeyArmored } = await reformatAddressKey({
-                email: address.Email,
-                passphrase: token,
-                privateKey,
-            });
-
-            const newActiveKey = await getActiveKeyObject(reformattedPrivateKey, {
+            const newActiveKey = await getActiveKeyObject(privateKey, {
                 ID: 'tmp',
                 primary: getPrimaryFlag(mutableActiveKeys),
             });

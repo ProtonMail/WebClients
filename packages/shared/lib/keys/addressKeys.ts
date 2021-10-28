@@ -89,6 +89,7 @@ interface AddressKeyTokenResult {
     signature: string;
     organizationSignature?: string;
 }
+
 interface AddressKeyOrgTokenResult extends AddressKeyTokenResult {
     organizationSignature: string;
 }
@@ -163,6 +164,7 @@ export const reformatAddressKey = async ({
 
     return { privateKey, privateKeyArmored };
 };
+
 export const getEncryptedArmoredAddressKey = async (
     privateKey: OpenPGPKey | undefined,
     email: string,
@@ -171,15 +173,6 @@ export const getEncryptedArmoredAddressKey = async (
     if (!privateKey?.isDecrypted?.()) {
         return;
     }
-
-    const userIds = privateKey.users;
-    const primaryUserId = userIds?.[0]?.userId?.userid;
-
-    if (userIds?.length !== 1 || !`${primaryUserId}`.endsWith(`<${email}>`)) {
-        const { privateKeyArmored } = await reformatAddressKey({ email, passphrase: newKeyPassword, privateKey });
-        return privateKeyArmored;
-    }
-
     return encryptPrivateKey(privateKey, newKeyPassword);
 };
 

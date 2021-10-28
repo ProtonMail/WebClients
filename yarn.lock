@@ -3753,7 +3753,7 @@ __metadata:
     karma-jasmine: ^4.0.1
     karma-webpack: ^5.0.0
     pkijs: ^2.1.90
-    pmcrypto: "github:ProtonMail/pmcrypto.git#semver:~6.5.0"
+    pmcrypto: "github:ProtonMail/pmcrypto.git#semver:~6.6.0"
     ts-loader: ^9.2.5
     typescript: ^4.4.3
     webpack: ^5.51.2
@@ -3860,7 +3860,7 @@ __metadata:
     mimemessage: "github:ProtonMail/mimemessage.js#semver:~v1.1.4"
     mutex-browser: "github:ProtonMail/mutex-browser#semver:^1.0.0"
     papaparse: ^5.0.0
-    pmcrypto: "github:ProtonMail/pmcrypto#semver:~6.5.0"
+    pmcrypto: "github:ProtonMail/pmcrypto#semver:~6.6.0"
     prettier: ^2.0.5
     puppeteer: ^10.1.0
     push.js: ^1.0.12
@@ -3891,7 +3891,7 @@ __metadata:
     eslint-plugin-import: ^2.16.0
     esm: ^3.2.4
     mocha: ^5.2.0
-    pmcrypto: "github:ProtonMail/pmcrypto#semver:~6.5.0"
+    pmcrypto: "github:ProtonMail/pmcrypto#semver:~6.6.0"
     prettier: ^2.3.2
     require-inject: ^1.4.4
   peerDependencies:
@@ -22981,14 +22981,14 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"pmcrypto@github:ProtonMail/pmcrypto#semver:~6.5.0, pmcrypto@github:ProtonMail/pmcrypto.git#semver:~6.5.0":
-  version: 6.5.0
-  resolution: "pmcrypto@https://github.com/ProtonMail/pmcrypto.git#commit=37bb55e5f67ef0756c15f7740139b777a02da3cb"
+"pmcrypto@github:ProtonMail/pmcrypto#semver:~6.6.0, pmcrypto@github:ProtonMail/pmcrypto.git#semver:~6.6.0":
+  version: 6.6.0
+  resolution: "pmcrypto@https://github.com/ProtonMail/pmcrypto.git#commit=2b5d380a5d89c19badd5cbec5fff15426909786b"
   dependencies:
     "@types/openpgp": ^4.4.18
     esm: ^3.0.84
     openpgp: ^4.10.8
-  checksum: ea1c8cb8866bcd262ea26bc34420ff9336f6124ea47013cbca785551946092ce6099742dafd2fe474a9e7bf5e59d95edf8b75a5b691d61d339b2a08067458867
+  checksum: 1737a687e896b3bd1dfba26b22761509ad6eb668fa55cd8fe05f03f6d91ca5d91d52d19d6795a9bb2effa62f26e08ba1318a2b1a37e94d9c0450d7111a2f4b4a
   languageName: node
   linkType: hard
 
