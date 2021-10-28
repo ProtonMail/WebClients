@@ -2,7 +2,7 @@
 @import '~@proton/styles/scss/config';
 
 $size-tracker: 1rem !default;
-.item-spy-tracker {
+.number-of-elements {
 	&-link {
 		height: 1.3rem; // just a trick to avoid tooltip positionned on the bubble
 	}
@@ -10,8 +10,8 @@ $size-tracker: 1rem !default;
 		width: $size-tracker;
 		height: $size-tracker;
 		// container is a bit higher than the usual icon size, this is why positionned from bottom
-		bottom: #{math.div($size-tracker, 2) + rem(1)}; // visual trick for better display
-		left: 50%;
+		inset-block-end: #{math.div($size-tracker, 2) + rem(1)}; // visual trick for better display
+		inset-inline-start: 50%;
 		&--9plus {
 			letter-spacing: -0.1rem; // for 9+ case
 		}

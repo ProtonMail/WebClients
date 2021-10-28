@@ -64,6 +64,7 @@ export interface AbstractMessageImage {
 export interface MessageRemoteImage extends AbstractMessageImage {
     type: 'remote';
     error?: unknown;
+    originalURL?: string;
 }
 
 export interface MessageEmbeddedImage extends AbstractMessageImage {
