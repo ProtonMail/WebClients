@@ -47,11 +47,13 @@ export type DownloadEventCallbacks = {
     onFinish?: () => void;
 };
 
-export type DownloadCallbacks = DownloadEventCallbacks & {
+export type DownloadBaseCallbacks = {
     getChildren: GetChildrenCallback;
     getBlocks: GetBlocksCallback;
     getKeys: GetKeysCallback;
 };
+
+export type DownloadCallbacks = DownloadEventCallbacks & DownloadBaseCallbacks;
 
 export type OnInitCallback = (size: number) => void;
 type OnProgressCallback = (bytes: number) => void;

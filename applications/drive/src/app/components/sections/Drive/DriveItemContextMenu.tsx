@@ -46,7 +46,7 @@ const DriveItemContextMenu = ({
             <DownloadButton shareId={shareId} items={selectedItems} close={close} />
             {isOnlyOneItem && <ShareButton shareId={shareId} item={item} close={close} />}
             {hasLink && <CopyLinkButton shareId={item.ShareUrlShareID as string} close={close} />}
-            {isOnlyOneFileItem && <ShareLinkButton shareId={shareId} item={item} close={close} />}
+            {isOnlyOneItem && <ShareLinkButton shareId={shareId} item={item} close={close} />}
             <ContextSeparator />
             {sourceFolder && <MoveToFolderButton sourceFolder={sourceFolder} items={selectedItems} close={close} />}
             {isOnlyOneItem && <RenameButton shareId={shareId} item={item} close={close} />}
