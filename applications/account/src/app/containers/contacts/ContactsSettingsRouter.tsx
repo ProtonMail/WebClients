@@ -3,7 +3,7 @@ import { Route, Redirect, Switch, useRouteMatch, useLocation } from 'react-route
 import ContactsGeneralSettings from './ContactsGeneralSettings';
 import ContactsImportSettings from './ContactsImportSettings';
 
-const ContactSettingsRouter = () => {
+const ContactsSettingsRouter = () => {
     const { path } = useRouteMatch();
     const location = useLocation();
 
@@ -20,4 +20,4 @@ const ContactSettingsRouter = () => {
     );
 };
 
-export default ContactSettingsRouter;
+export default ContactsSettingsRouter;
