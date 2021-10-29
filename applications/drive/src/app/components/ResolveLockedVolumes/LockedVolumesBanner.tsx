@@ -39,10 +39,10 @@ const LockedVolumesBanner = ({ onClose }: Props) => {
                 ];
             }, []);
 
-            const lockedShareIds = cache.lockedShares.map(({ ShareID }) => ShareID);
+            const lockedShareIds = cache.get.lockedShares.map(({ ShareID }) => ShareID);
             return getSharesReadyToRestore(possibleKeys, lockedShareIds).then(cache.setSharesReadyToRestore);
         },
-        [cache.lockedShares]
+        [cache.get.lockedShares]
     );
 
     useEffect(() => {
@@ -62,8 +62,6 @@ const LockedVolumesBanner = ({ onClose }: Props) => {
         </InlineLinkButton>
     );
 
-    const lockedShares = cache.lockedShares.filter((share) => !share.VolumeSoftDeleted);
-
     const KeyReactivationButton = (
         <InlineLinkButton
             key="key-reactivation"
@@ -79,7 +77,7 @@ const LockedVolumesBanner = ({ onClose }: Props) => {
     const recoveryMessage = c('Info')
         .jt`Some of your files are no longer accessible. Restore the access to your files. ${StartRecoveryButton}`;
 
-    return !loading && lockedShares.length ? (
+    return !loading && cache.get.lockedShares.length ? (
         <TopBanner className="bg-danger" onClose={onClose}>
             {cache.sharesReadyToRestore.length ? recoveryMessage : reactivateMessage}
         </TopBanner>
