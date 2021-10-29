@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {
-    AppLink,
+    SettingsLink,
     ButtonLike,
     FeatureCode,
     Href,
@@ -47,6 +47,8 @@ const WelcomePane = ({ mailSettings, location, labelCount }: Props) => {
     const { feature: featureUsedMailMobileApp, loading: loadingUsedMailMobileApp } = useFeature(
         FeatureCode.UsedMailMobileApp
     );
+    const easySwitchFeature = useFeature(FeatureCode.EasySwitch);
+    const isEasySwitchEnabled = easySwitchFeature.feature?.Value;
 
     const [user, loadingUser] = useUser();
     const [plans = [], loadingPlans] = usePlans();
@@ -144,11 +146,11 @@ const WelcomePane = ({ mailSettings, location, labelCount }: Props) => {
                         <div className="mb2 mt2" />
                         <div className="text-rg">
                             <ButtonLike
-                                as={AppLink}
+                                as={SettingsLink}
                                 color="weak"
                                 shape="outline"
-                                to="/mail/import-export"
-                                toApp={APPS.PROTONACCOUNT}
+                                path={isEasySwitchEnabled ? '/easy-switch' : '/import-export'}
+                                app={isEasySwitchEnabled ? APPS.PROTONACCOUNT : APPS.PROTONMAIL}
                                 target="_self"
                                 className="inline-block mtauto"
                             >{c('Action').t`Import messages`}</ButtonLike>
