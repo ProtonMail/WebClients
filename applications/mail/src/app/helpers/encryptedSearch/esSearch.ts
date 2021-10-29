@@ -4,6 +4,7 @@ import { IDBPDatabase } from 'idb';
 import { endOfDay, endOfToday, startOfDay, sub } from 'date-fns';
 import { getRecipients } from '@proton/shared/lib/mail/messages';
 import { wait } from '@proton/shared/lib/helpers/promise';
+import { removeDiacritics } from '@proton/shared/lib/helpers/string';
 import { Filter, SearchParameters, Sort } from '../../models/tools';
 import { Element } from '../../models/element';
 import {
@@ -26,7 +27,7 @@ import { sendESMetrics } from './esAPI';
  * Normalise keyword
  */
 const normaliseKeyword = (keyword: string) => {
-    const trimmedKeyword = keyword.trim().toLocaleLowerCase();
+    const trimmedKeyword = removeDiacritics(keyword.trim().toLocaleLowerCase());
     const quotesIndexes: number[] = [];
 
     let index = 0;
@@ -104,7 +105,9 @@ const testKeywords = (normalisedKeywords: string[], messageToSearch: ESMessage, 
     const { Subject, decryptedBody, decryptedSubject } = messageToSearch;
     const subject = decryptedSubject || Subject;
 
-    const messageStrings = [subject.toLocaleLowerCase(), ...addresses, (decryptedBody || '').toLocaleLowerCase()];
+    const messageStrings = [subject, ...addresses, decryptedBody || ''].map((string) =>
+        removeDiacritics(string.toLocaleLowerCase())
+    );
 
     let result = true;
     let index = 0;
