@@ -85,7 +85,7 @@ const ContactViewErrors = ({ contactID, errors, onReload }: Props) => {
             <div className="bg-danger rounded p0-5 mt1 flex flex-nowrap flex-align-items-center">
                 <Icon name="triangle-exclamation" className="flex-item-noshrink mtauto mbauto" />
                 <span className="flex-item-fluid pl0-5 pr0-5">
-                    {c('Warning').t`The contact data is corrupted and can't be parsed`}
+                    {c('Warning').t`The contact data is corrupted and cannot be displayed.`}
                 </span>
             </div>
         );
