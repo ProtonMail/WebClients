@@ -10,14 +10,15 @@ import {
 import { MnemonicPromptModal } from '@proton/components/containers/mnemonic';
 import { GetStartedChecklistKey } from '@proton/shared/lib/interfaces';
 
-import { MESSAGE_ACTIONS } from '../../constants';
-import { useOnCompose } from '../../containers/ComposeProvider';
 import GetStartedChecklist from './GetStartedChecklist';
 import ModalGetMobileApp from './ModalGetMobileApp';
 import ModalImportEmails from './ModalImportEmails';
 
-const MailGetStartedChecklistModal = ({ onClose, ...rest }: Partial<ModalPropsInjection>) => {
-    const onCompose = useOnCompose();
+interface MailGetStartedChecklistModalProps extends Partial<ModalPropsInjection> {
+    onSendMessage: () => void;
+}
+
+const MailGetStartedChecklistModal = ({ onClose, onSendMessage, ...rest }: MailGetStartedChecklistModalProps) => {
     const { createModal } = useModals();
     const isMnemonicAvailable = useIsMnemonicAvailable();
     const goToSettings = useSettingsLink();
@@ -34,7 +35,7 @@ const MailGetStartedChecklistModal = ({ onClose, ...rest }: Partial<ModalPropsIn
                         /* eslint-disable default-case */
                         switch (key) {
                             case GetStartedChecklistKey.SendMessage: {
-                                onCompose({ action: MESSAGE_ACTIONS.NEW });
+                                onSendMessage();
                                 break;
                             }
 

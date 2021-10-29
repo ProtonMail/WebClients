@@ -44,7 +44,14 @@ const PrivateLayout = ({ children, breakpoints, labelID, elementID, isBlurred }:
         />
     );
 
-    const sidebar = <MailSidebar labelID={labelID} expanded={expanded} onToggleExpand={handleToggleExpand} />;
+    const sidebar = (
+        <MailSidebar
+            labelID={labelID}
+            expanded={expanded}
+            onToggleExpand={handleToggleExpand}
+            onSendMessage={() => setExpand(false)}
+        />
+    );
 
     return (
         <PrivateAppContainer header={header} sidebar={sidebar} isBlurred={isBlurred} containerRef={ref}>
