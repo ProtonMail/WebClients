@@ -7,7 +7,7 @@ import { SECOND } from '@proton/shared/lib/constants';
 import { Event } from '../../models/event';
 import { ES_MAX_PARALLEL_MESSAGES } from '../../constants';
 import { addESTimestamp, esSentryReport } from './esUtils';
-import { isNetworkError } from '../errors';
+import { isNetworkError, isNotExistError } from '../errors';
 import { ESIndexMetrics, ESSearchMetrics } from '../../models/encryptedSearch';
 
 // Error message codes that trigger a retry
@@ -32,6 +32,13 @@ const apiHelper = async <T>(
             signal,
         });
     } catch (error: any) {
+        // If the message does not exist it means it's been deleted. By returning undefined its metadata
+        // will be stored anyway if this happens during indexing, but when new events are caught up after it
+        // they should be removed. If this happens during syncing, the message is ignored
+        if (isNotExistError(error)) {
+            return;
+        }
+
         // Network and temporary errors trigger a retry, for any other error undefined is returned
         if (isNetworkError(error) || (error?.status && ES_TEMPORARY_ERRORS.includes(error.status))) {
             let retryAfterSeconds = 1;
@@ -51,7 +58,10 @@ const apiHelper = async <T>(
             return apiHelper<T>(api, signal, options, callingContext, userID);
         }
 
-        esSentryReport(`apiHelper: ${callingContext}`, { error });
+        if (!(error.message && error.message === 'Operation aborted') && !(error.name && error.name === 'AbortError')) {
+            // This happens when the user pauses indexing, for which we don't need a sentry report
+            esSentryReport(`apiHelper: ${callingContext}`, { error });
+        }
         return;
     }
 
