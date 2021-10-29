@@ -56,10 +56,9 @@ const ReactivateKeysModal = ({ userKeys, keyReactivationRequests, onProcess, onC
     const duplicateBackupKeysRef = useRef<OpenPGPKey[]>([]);
 
     const isMnemonicAvailable = useIsMnemonicAvailable();
-    const showMnemonicTab =
-        isMnemonicAvailable &&
-        user.MnemonicStatus !== MNEMONIC_STATUS.DISABLED &&
-        user.MnemonicStatus !== MNEMONIC_STATUS.ENABLED;
+    const mnemonicDataRecoveryOperational =
+        user.MnemonicStatus === MNEMONIC_STATUS.OUTDATED || user.MnemonicStatus === MNEMONIC_STATUS.SET;
+    const showMnemonicTab = isMnemonicAvailable && mnemonicDataRecoveryOperational;
 
     const tabs: TabId[] = [showMnemonicTab ? 'recoveryPhrase' : undefined, 'password', 'backupKey'].filter(
         isTruthy
