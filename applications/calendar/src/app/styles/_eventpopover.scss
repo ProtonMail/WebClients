@@ -15,6 +15,7 @@
     animation-fill-mode: both;
     padding: rem(24);
     overflow: auto;
+    max-width: rem(392);
     // transition: all .25s ease; should be applied only when opened and end of animation <-- this is solved by react-transition-group
 
     &-actions {
@@ -38,6 +39,7 @@
 		inline-size: 100%;
 		block-size: 100%;
 		max-block-size: 100%;
+		max-width: none;
 	}
 
     .participant {
