@@ -20,8 +20,9 @@ interface ModalHeaderProps extends Omit<ComponentPropsWithRef<'div'>, 'children'
     /**
      * Intended for use with icon buttons.
      * Slot for Element(s) to be rendered next to the close button.
+     *
      */
-    actions?: JSX.Element;
+    actions?: JSX.Element | [JSX.Element] | [JSX.Element, JSX.Element];
     /**
      * If passed, renders a back button in the Modal's header.
      * Fires on click of said back button.
@@ -31,6 +32,8 @@ interface ModalHeaderProps extends Omit<ComponentPropsWithRef<'div'>, 'children'
 
 const ModalHeader = ({ title, subline, actions, onBack, ...rest }: ModalHeaderProps) => {
     const { id, onClose } = useContext(ModalContext);
+
+    const [firstAction, secondAction] = Array.isArray(actions) ? actions : [actions];
 
     return (
         <div
@@ -61,7 +64,9 @@ const ModalHeader = ({ title, subline, actions, onBack, ...rest }: ModalHeaderPr
             <div className="modal-two-header-actions flex flex-item-noshrink flex-nowrap flex-align-items-stretch">
                 {actions && (
                     <>
-                        {actions} <Vr className="my0-25" />
+                        {firstAction}
+                        {secondAction}
+                        <Vr className="my0-25" />
                     </>
                 )}
 
