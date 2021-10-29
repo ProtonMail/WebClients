@@ -26,9 +26,10 @@ interface Props {
     labelID: string;
     expanded?: boolean;
     onToggleExpand: () => void;
+    onSendMessage?: () => void;
 }
 
-const MailSidebar = ({ labelID, expanded = false, onToggleExpand }: Props) => {
+const MailSidebar = ({ labelID, expanded = false, onToggleExpand, onSendMessage }: Props) => {
     const onCompose = useOnCompose();
     const [userSettings] = useUserSettings();
     const { createModal } = useModals();
@@ -40,7 +41,14 @@ const MailSidebar = ({ labelID, expanded = false, onToggleExpand }: Props) => {
     const [{ Shortcuts = 0 } = {}] = useMailSettings();
 
     const handleGiftClick = () => {
-        createModal(<MailGetStartedChecklistModal />);
+        createModal(
+            <MailGetStartedChecklistModal
+                onSendMessage={() => {
+                    handleCompose();
+                    onSendMessage?.();
+                }}
+            />
+        );
     };
 
     const titlePrimaryButton = Shortcuts ? (
