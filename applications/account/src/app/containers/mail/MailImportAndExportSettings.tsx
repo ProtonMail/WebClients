@@ -7,7 +7,6 @@ import {
     useFeature,
     StartMailImportSection,
     MailImportListSection,
-    MailImportExportSection,
     MailImportCsvSection,
     useUser,
 } from '@proton/components';
@@ -17,8 +16,10 @@ import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import PrivateMainSettingsAreaWithPermissions from '../../components/PrivateMainSettingsAreaWithPermissions';
 
 export const getImportPage = (user: UserModel, isEasySwitchEnabled: boolean) => {
+    const IAtitle = user.isFree ? c('Title').t`Import Assistant` : c('Settings section title').t`Import & export`;
+
     return {
-        text: c('Title').t`Import/Export`,
+        text: isEasySwitchEnabled ? c('Title').t`Backup & Export` : IAtitle,
         to: '/mail/import-export',
         icon: 'arrow-down-to-screen',
         subsections: [
@@ -47,17 +48,11 @@ const MailImportAndExportSettings = ({ setActiveSection, location }: SettingsPro
 
     const isEasySwitchEnabled = useFeature(FeatureCode.EasySwitch).feature?.Value;
 
-    const importExportSection = !isEasySwitchEnabled ? (
-        <MailImportExportSection key="import-export" />
-    ) : (
-        <ImportExportSection key="import-export" />
-    );
-
     const sections = [
         !isEasySwitchEnabled && <StartMailImportSection key="start-import" />,
         !isEasySwitchEnabled && <MailImportListSection key="import-list" />,
         !isEasySwitchEnabled && <MailImportCsvSection key="import-csv" />,
-        !user.isFree && importExportSection,
+        !user.isFree && <ImportExportSection key="import-export" />,
     ].filter(isTruthy);
 
     return (

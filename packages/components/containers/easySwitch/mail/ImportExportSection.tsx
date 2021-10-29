@@ -15,7 +15,7 @@ const ImportExportSection = () => {
         <SettingsSection>
             <SettingsParagraph>
                 {c('Info')
-                    .t`For advanced security, the Import-Export app encrypts emails on your device before migrating them to Proton servers. You can also export messages for local backups.`}
+                    .t`The Import-Export app allows you to export messages for local backups and to restore previous backups to your account.`}
                 <br />
                 {c('Info').t`Available on macOS, Windows, and Linux.`}
             </SettingsParagraph>
