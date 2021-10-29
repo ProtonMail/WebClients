@@ -8,12 +8,17 @@ import { classnames } from '../../helpers';
 
 interface Props extends SortableContainerProps {
     className?: string;
+    helperClassname?: string;
     children?: ReactNode;
     caption?: string;
 }
 
-const OrderableTable = ({ children = [], className = '', caption, ...props }: Props) => (
-    <OrderableContainer helperClass="orderableHelper simple-table" useDragHandle {...props}>
+const OrderableTable = ({ children = [], className = '', helperClassname, caption, ...props }: Props) => (
+    <OrderableContainer
+        helperClass={classnames(['orderableHelper simple-table', helperClassname])}
+        useDragHandle
+        {...props}
+    >
         <Table caption={caption} className={classnames(['orderableTable', className])}>
             {children}
         </Table>

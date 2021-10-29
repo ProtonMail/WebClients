@@ -1,10 +1,17 @@
 import { useMemo } from 'react';
 import { ALL_MEMBERS_ID, MEMBER_PRIVATE } from '@proton/shared/lib/constants';
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 import { UserModel, Organization, Member } from '@proton/shared/lib/interfaces';
 
 import { Alert, Loader, Button, SettingsLink } from '../../components';
-import { useMembers, useMemberAddresses, useModals, useOrganizationKey, useNotifications } from '../../hooks';
+import {
+    useMembers,
+    useMemberAddresses,
+    useModals,
+    useOrganizationKey,
+    useNotifications,
+    useAddresses,
+} from '../../hooks';
 
 import { SettingsParagraph } from '../account';
 
@@ -33,8 +40,15 @@ const AddressesWithMembers = ({ user, organization, memberID, isOnlySelf }: Prop
     const { createModal } = useModals();
     const [members, loadingMembers] = useMembers();
     const [memberAddressesMap, loadingMemberAddresses] = useMemberAddresses(members);
+    const [addresses, loadingAddresses] = useAddresses();
     const [organizationKey, loadingOrganizationKey] = useOrganizationKey(organization);
     const { createNotification } = useNotifications();
+
+    const hasAddresses = Array.isArray(addresses) && addresses.length > 0;
+
+    const { UsedAddresses: OrganizationUsedAddresses, MaxAddresses: OrganizationMaxAddresses } = organization || {};
+    const UsedAddresses = hasAddresses ? OrganizationUsedAddresses || 1 : 0;
+    const MaxAddresses = OrganizationMaxAddresses || 1;
 
     const memberIndex = useMemo(() => {
         if (Array.isArray(members)) {
@@ -62,7 +76,7 @@ const AddressesWithMembers = ({ user, organization, memberID, isOnlySelf }: Prop
         return memberIndex === members.findIndex(({ Self }) => Self);
     }, [memberIndex, members]);
 
-    if (loadingMembers || memberIndex === -1 || (loadingMemberAddresses && !memberAddressesMap)) {
+    if (loadingMembers || loadingAddresses || memberIndex === -1 || (loadingMemberAddresses && !memberAddressesMap)) {
         return <Loader />;
     }
 
@@ -89,21 +103,30 @@ const AddressesWithMembers = ({ user, organization, memberID, isOnlySelf }: Prop
             </SettingsParagraph>
 
             {currentMember && (
-                <div className="mb1">
-                    {mustActivateOrganizationKey ? (
-                        <Alert className="mb1" type="warning">
-                            {c('Warning')
-                                .jt`You must ${activateLink} organization keys before adding an email address to a non-private member.`}
-                        </Alert>
-                    ) : (
-                        <Button
-                            shape="outline"
-                            onClick={() => handleAddAddress(currentMember)}
-                            data-testid="settings:identity-section:add-address"
-                        >
-                            {c('Action').t`Add address`}
-                        </Button>
-                    )}
+                <div className="mb1 flex flex-align-self-start flex-align-items-center">
+                    <div className="mr1">
+                        {mustActivateOrganizationKey ? (
+                            <Alert className="mb1" type="warning">
+                                {c('Warning')
+                                    .jt`You must ${activateLink} organization keys before adding an email address to a non-private member.`}
+                            </Alert>
+                        ) : (
+                            <Button
+                                shape="outline"
+                                onClick={() => handleAddAddress(currentMember)}
+                                data-testid="settings:identity-section:add-address"
+                            >
+                                {c('Action').t`Add address`}
+                            </Button>
+                        )}
+                    </div>
+                    <div>
+                        {c('Label').ngettext(
+                            msgid`${UsedAddresses} of ${MaxAddresses} email address`,
+                            `${UsedAddresses} of ${MaxAddresses} email addresses`,
+                            MaxAddresses
+                        )}
+                    </div>
                 </div>
             )}
 
