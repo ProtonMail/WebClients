@@ -1,5 +1,6 @@
 import { ReactNode } from 'react';
 import { classnames } from '@proton/components';
+import { removeDiacritics } from '@proton/shared/lib/helpers/string';
 import { HighlightMetadata } from '../../models/encryptedSearch';
 import { ES_MAX_INITIAL_CHARS } from '../../constants';
 
@@ -54,7 +55,7 @@ export const sanitisePositions = (positions: [number, number][]) => {
  */
 export const findOccurrences = (text: string, normalisedKeywords: string[]) => {
     const positions: [number, number][] = [];
-    const searchString = text.toLocaleLowerCase();
+    const searchString = removeDiacritics(text.toLocaleLowerCase());
     for (const keyword of normalisedKeywords) {
         let finder = 0;
         let startFrom = 0;
