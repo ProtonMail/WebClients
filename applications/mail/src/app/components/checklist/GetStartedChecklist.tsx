@@ -131,7 +131,7 @@ const GetStartedChecklist = ({
     return (
         <div className={classnames(['p1', limitedMaxWidth && 'get-started_root--limited-width mauto'])}>
             <div className="flex flex-align-items-center flex-justify-space-between">
-                <span className="flex flex-align-items-center w80">
+                <span className={classnames(['flex flex-align-items-center', hideDismissButton ? 'w100' : 'w80'])}>
                     <span className="get-started_gift mr1">
                         {/*
                          * if we don't put an empty alt attribute here, some vocalizers
@@ -156,7 +156,7 @@ const GetStartedChecklist = ({
                     </div>
                 )}
             </div>
-            <div className="w80 ml0-5">
+            <div className={classnames(['ml0-5', hideDismissButton ? 'w100' : 'w80'])}>
                 <Progress
                     className="progress-bar--success"
                     value={numberOfCompletedItems}
