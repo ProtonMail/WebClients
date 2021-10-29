@@ -1,6 +1,6 @@
 const ELEMENTS = [
     {
-        selector: 'a:not([href^="http"])',
+        selector: 'a:not([href^="http"]):not([href^="mailto:"])',
         attribute: 'href',
     },
     {
