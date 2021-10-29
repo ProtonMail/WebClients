@@ -42,5 +42,5 @@ export interface ShareMeta extends ShareMetaShort {
 }
 
 export enum ShareFlags {
-    PrimaryShare = 1,
+    MainShare = 1,
 }

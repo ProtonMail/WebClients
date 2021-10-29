@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Route, Redirect, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 
 import { TopBanners } from '@proton/components';
 import { LinkURLType } from '@proton/shared/lib/drive/constants';
@@ -28,7 +28,6 @@ const DriveContainer = () => {
             <DriveWindow topBanners={topBanners} PrimaryButton={UploadSidebarButton}>
                 <Switch>
                     <Route path="/:shareId?/:type?/:linkId?" component={DriveView} exact />
-                    <Redirect to="/" />
                 </Switch>
                 <Route path={`/:shareId?/${LinkURLType.FILE}/:linkId?`} component={PreviewContainer} exact />
             </DriveWindow>

@@ -25,7 +25,7 @@ const useResolveLockedSharesFlow = ({ onSuccess, onError }: ReactivationParams) 
     const cache = useDriveCache();
 
     const [currentModalType, setCurrentModalType] = useState<LockedVolumeResolveMethod | null>(null);
-    const lockedShares = cache.lockedShares.filter((share) => !share.VolumeSoftDeleted);
+    const lockedShares = cache.get.lockedShares.filter((share) => !share.VolumeSoftDeleted);
 
     const removeCurrentModal = () => {
         if (currentModalRef.current !== null) {

@@ -14,10 +14,12 @@ import {
 import { openpgp } from 'pmcrypto/lib/openpgp';
 import { ReadableStream as PolyfillReadableStream } from 'web-streams-polyfill';
 import { createReadableStreamWrapper } from '@mattiasbuelens/web-streams-adapter';
+
 import { ENCRYPTION_CONFIGS, ENCRYPTION_TYPES } from '../constants';
 import { generatePassphrase } from './calendarKeys';
 import { createSessionKey, getEncryptedSessionKey } from '../calendar/encrypt';
 import { uint8ArrayToBase64String } from '../helpers/encoding';
+import { LinkMeta } from '../interfaces/drive/link';
 
 const toPolyfillReadable = createReadableStreamWrapper(PolyfillReadableStream);
 
@@ -189,5 +191,13 @@ export const generateDriveBootstrap = async (addressPrivateKey: OpenPGPKey) => {
         },
         sharePrivateKey,
         folderPrivateKey,
+    };
+};
+
+export const decryptLink = async (meta: LinkMeta, privateKey: OpenPGPKey): Promise<LinkMeta> => {
+    return {
+        ...meta,
+        EncryptedName: meta.Name,
+        Name: await decryptUnsigned({ armoredMessage: meta.Name, privateKey }),
     };
 };

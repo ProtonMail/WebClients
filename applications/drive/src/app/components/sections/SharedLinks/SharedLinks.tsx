@@ -1,10 +1,12 @@
-import { useCallback } from 'react';
+import { useCallback, useEffect } from 'react';
 import { c } from 'ttag';
 
 import { FileBrowser } from '../../FileBrowser';
 import { useSharedLinksContent } from './SharedLinksContentProvider';
 import EmptyShared from './EmptyShared';
 import SharedLinksItemContextMenu from './SharedLinksItemContextMenu';
+import useDriveEvents from '../../../hooks/drive/useDriveEvents';
+import useDrive from '../../../hooks/drive/useDrive';
 
 type Props = {
     shareId: string;
@@ -13,16 +15,21 @@ type Props = {
 const SharedLinks = ({ shareId }: Props) => {
     const { loadNextPage, loading, initialized, complete, contents, fileBrowserControls, sortParams, setSorting } =
         useSharedLinksContent();
+    const driveEvents = useDriveEvents();
+    const { handleDriveEvents } = useDrive();
 
     const { clearSelections, selectedItems, selectItem, toggleSelectItem, toggleAllSelected, toggleRange } =
         fileBrowserControls;
 
     const handleScrollEnd = useCallback(() => {
-        // Only load on scroll after initial load from backend
         if (initialized && !complete) {
             loadNextPage();
         }
     }, [initialized, complete, loadNextPage]);
+
+    useEffect(() => {
+        void driveEvents.listenForShareEvents(shareId, handleDriveEvents(shareId));
+    }, [shareId]);
 
     return complete && !contents.length && !loading ? (
         <EmptyShared shareId={shareId} />
