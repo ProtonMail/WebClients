@@ -138,9 +138,13 @@ const EventPopover = ({
         if (dateStart === dateEnd) {
             return (
                 <>
-                    {dateStart} | {timeStart}
-                    <EnDash />
-                    {timeEnd}
+                    {dateStart}
+                    {', '}
+                    <span className="inline-block">
+                        {timeStart}
+                        <EnDash />
+                        {timeEnd}
+                    </span>
                 </>
             );
         }
@@ -270,7 +274,7 @@ const EventPopover = ({
                 <h1 className="eventpopover-title lh-rg text-hyphens scroll-if-needed mb0-25" title={eventTitleSafe}>
                     {eventTitleSafe}
                 </h1>
-                <div className="mb2">
+                <div className="mb1">
                     <div className="text-lg m0">{dateHeader}</div>
                     {!!frequencyString && <div className="color-weak">{frequencyString}</div>}
                 </div>
