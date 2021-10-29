@@ -225,7 +225,8 @@ export const fetchMessage = async (
             decryptionError = false;
         }
     } catch (error: any) {
-        esSentryReport('fetchMessage: decryption', { error });
+        // Decryption can legitimately fail if there are inactive keys. In this
+        // case the above three variables are left undefined
     }
 
     // Quotes are removed for all sent messages, and all other messages apart from forwarded ones
@@ -349,7 +350,11 @@ const storeMessagesBatches = async (
             recordLocalProgress,
             userID
         ).catch((error: any) => {
-            if (error.message !== 'Operation aborted') {
+            if (
+                !(error.message && error.message === 'Operation aborted') &&
+                !(error.name && error.name === 'AbortError')
+            ) {
+                // This happens when the user pauses indexing, for which we don't need a sentry report
                 esSentryReport('storeMessagesBatches: storeMessages', { error });
             }
 
