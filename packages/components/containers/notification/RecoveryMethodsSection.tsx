@@ -45,10 +45,7 @@ const RecoveryMethodsSection = () => {
 
     const isMnemonicAvailable = useIsMnemonicAvailable();
 
-    const mnemonicEnabled =
-        user.MnemonicStatus === MNEMONIC_STATUS.OUTDATED ||
-        user.MnemonicStatus === MNEMONIC_STATUS.ENABLED ||
-        user.MnemonicStatus === MNEMONIC_STATUS.SET;
+    const mnemonicAccountRecoveryOperational = user.MnemonicStatus === MNEMONIC_STATUS.SET;
     const [loadingMnemonic, withLoadingMnemonic] = useLoading();
 
     if (loadingUserSettings || !userSettings || loadingMyLocation) {
@@ -215,7 +212,7 @@ const RecoveryMethodsSection = () => {
                                         <Toggle
                                             className="mr0-5"
                                             loading={loadingMnemonic}
-                                            checked={mnemonicEnabled}
+                                            checked={mnemonicAccountRecoveryOperational}
                                             id="passwordMnemonicResetToggle"
                                             onChange={({ target: { checked } }) => {
                                                 const handleMnemonicToggle = async (willBeChecked: boolean) => {
@@ -252,7 +249,7 @@ const RecoveryMethodsSection = () => {
                                         </label>
                                     </div>
 
-                                    {mnemonicEnabled ? (
+                                    {mnemonicAccountRecoveryOperational ? (
                                         <Button
                                             shape="outline"
                                             onClick={async () => {
