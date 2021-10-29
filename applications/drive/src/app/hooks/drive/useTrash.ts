@@ -19,12 +19,14 @@ import { queryTrashList } from '@proton/shared/lib/api/drive/share';
 import { useDriveCache } from '../../components/DriveCache/DriveCacheProvider';
 import useDrive from './useDrive';
 import useDebouncedRequest from '../util/useDebouncedRequest';
+import useDriveEvents from './useDriveEvents';
 
 function useTrash() {
     const debouncedRequest = useDebouncedRequest();
     const { preventLeave } = usePreventLeave();
     const cache = useDriveCache();
-    const { events, getLinkMeta } = useDrive();
+    const { getLinkMeta } = useDrive();
+    const driveEvents = useDriveEvents();
 
     const fetchTrash = async (shareId: string, Page: number, PageSize: number) => {
         const { Links, Parents } = await debouncedRequest<{
@@ -70,7 +72,7 @@ function useTrash() {
 
         try {
             const trashed = await preventLeave(runInQueue(trashQueue, MAX_THREADS_PER_REQUEST));
-            await events.call(shareId);
+            await driveEvents.call(shareId);
             return ([] as string[]).concat(...trashed);
         } finally {
             cache.set.linksLocked(false, shareId, linkIds);
@@ -90,7 +92,7 @@ function useTrash() {
         );
         try {
             const responses = await preventLeave(runInQueue(restoreQueue, MAX_THREADS_PER_REQUEST));
-            await events.call(shareId);
+            await driveEvents.call(shareId);
             const results = responses.reduce(
                 (acc, { Responses }) => acc.concat(...Responses),
                 [] as {
@@ -135,7 +137,7 @@ function useTrash() {
         );
 
         const deletedBatches = await preventLeave(runInQueue(deleteQueue, MAX_THREADS_PER_REQUEST));
-        await events.callAll(shareId).catch(console.error);
+        await driveEvents.callAll(shareId).catch(console.error);
         return ([] as string[]).concat(...deletedBatches);
     };
 

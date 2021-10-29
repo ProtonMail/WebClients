@@ -6,7 +6,7 @@ import useActiveShare from '../../../hooks/drive/useActiveShare';
 import useTrash from '../../../hooks/drive/useTrash';
 import useConfirm from '../../../hooks/util/useConfirm';
 import { useDriveCache } from '../../DriveCache/DriveCacheProvider';
-import useDrive from '../../../hooks/drive/useDrive';
+import useDriveEvents from '../../../hooks/drive/useDriveEvents';
 
 interface Props {
     mobileVersion?: boolean;
@@ -15,11 +15,11 @@ interface Props {
 const EmptyTrashSidebarButton = ({ mobileVersion = false }: Props) => {
     const cache = useDriveCache();
     const { activeShareId } = useActiveShare();
-    const { events } = useDrive();
     const { emptyTrash } = useTrash();
     const { openConfirmModal } = useConfirm();
     const { createNotification } = useNotifications();
     const disabled = !cache.get.trashMetas(activeShareId).length;
+    const driveEvents = useDriveEvents();
 
     const handleEmptyTrashClick = () => {
         const title = c('Title').t`Empty trash`;
@@ -35,7 +35,7 @@ const EmptyTrashSidebarButton = ({ mobileVersion = false }: Props) => {
                     await emptyTrash(activeShareId);
                     const notificationText = c('Notification').t`All items will soon be permanently deleted from trash`;
                     createNotification({ text: notificationText });
-                    await events.callAll(activeShareId);
+                    await driveEvents.callAll(activeShareId);
                 } catch (e: any) {
                     console.error(e);
                 }
