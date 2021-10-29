@@ -25,7 +25,7 @@ const AddressStatus = ({ isDefault, isActive, isDisabled, isOrphan, isMissingKey
         isDisabled &&
             ({
                 text: c('Address status').t`Disabled`,
-                type: 'warning',
+                type: 'light',
             } as const),
         isOrphan &&
             ({

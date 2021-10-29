@@ -4,6 +4,7 @@ import { move } from '@proton/shared/lib/helpers/array';
 import { orderAddress } from '@proton/shared/lib/api/addresses';
 import { Address, CachedOrganizationKey, Member, UserModel } from '@proton/shared/lib/interfaces';
 import { ADDRESS_TYPE } from '@proton/shared/lib/constants';
+import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 
 import { Alert, OrderableTable, OrderableTableHeader, OrderableTableBody, OrderableTableRow } from '../../components';
 import { useApi, useEventManager, useAddresses, useNotifications } from '../../hooks';
@@ -28,6 +29,7 @@ const formatAddresses = (addresses?: Address[]) => {
 const AddressesUser = ({ user, member, organizationKey }: Props) => {
     const api = useApi();
     const { createNotification } = useNotifications();
+    const [isSaving, setIsSaving] = useState(false);
     const { call } = useEventManager();
     const [addresses, loadingAddresses] = useAddresses();
     const [list, setAddresses] = useState<Address[]>(formatAddresses(addresses));
@@ -42,6 +44,12 @@ const AddressesUser = ({ user, member, organizationKey }: Props) => {
                 const newList = move(list, oldIndex, newIndex);
                 const { isDisabled, isDefault } = getStatus(newList[0], 0);
 
+                if (isDeepEqual(list, newList)) {
+                    return;
+                }
+
+                setIsSaving(true);
+
                 if (isDisabled && isDefault) {
                     createNotification({
                         type: 'error',
@@ -54,9 +62,21 @@ const AddressesUser = ({ user, member, organizationKey }: Props) => {
                 setAddresses(newList);
                 await api(orderAddress(newList.map(({ ID }) => ID)));
                 await call();
+
+                setIsSaving(false);
             } catch (e: any) {
+                setIsSaving(false);
                 setAddresses(formatAddresses(addresses));
             }
+        },
+        [list, addresses]
+    );
+
+    const setDefaultAddress = useCallback(
+        (addressOldIndex) => {
+            return async () => {
+                await handleSortEnd({ oldIndex: addressOldIndex, newIndex: 0 });
+            };
         },
         [list, addresses]
     );
@@ -67,7 +87,11 @@ const AddressesUser = ({ user, member, organizationKey }: Props) => {
 
     return (
         <>
-            <OrderableTable onSortEnd={handleSortEnd} className="simple-table--has-actions">
+            <OrderableTable
+                onSortEnd={handleSortEnd}
+                className="simple-table--has-actions"
+                helperClassname="simple-table--has-actions"
+            >
                 <OrderableTableHeader
                     cells={[
                         c('Header for addresses table').t`Address`,
@@ -79,8 +103,8 @@ const AddressesUser = ({ user, member, organizationKey }: Props) => {
                     {list &&
                         list.map((address, i) => (
                             <OrderableTableRow
+                                key={i}
                                 index={i}
-                                key={address.ID}
                                 cells={[
                                     <div key={0} className="text-ellipsis" title={address.Email}>
                                         {address.Email}
@@ -92,6 +116,9 @@ const AddressesUser = ({ user, member, organizationKey }: Props) => {
                                         user={user}
                                         member={member}
                                         organizationKey={organizationKey}
+                                        onSetDefault={setDefaultAddress(i)}
+                                        isSaving={isSaving}
+                                        addressIndex={i}
                                     />,
                                 ]}
                             />
