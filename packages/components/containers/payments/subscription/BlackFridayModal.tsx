@@ -111,7 +111,7 @@ const BlackFridayModal = ({ offer, onSelect, ...rest }: Props) => {
 
         const standardMonthlyPricing = (
             <Price key="standard-pricing" currency={currency} suffix={c('Suffix for price').t`/ month`}>
-                {pricing[0]?.withoutCoupon || 0}
+                {pricing[2]?.withoutCoupon || 0}
             </Price>
         );
 
