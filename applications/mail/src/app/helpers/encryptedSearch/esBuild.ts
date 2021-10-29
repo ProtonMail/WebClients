@@ -88,21 +88,29 @@ export const getIndexKey = async (getUserKeys: GetUserKeys, userID: string) => {
 };
 
 /**
+ * Remove the specified tag from the given HTML element
+ */
+export const removeTag = (element: HTMLElement, tagName: string) => {
+    let removeTag = true;
+    while (removeTag) {
+        const tagInstances = element.getElementsByTagName(tagName);
+        const tagInstance = tagInstances.item(0);
+        if (tagInstance) {
+            tagInstance.remove();
+        }
+        removeTag = tagInstances.length !== 0;
+    }
+};
+
+/**
  * Remove quoted text and HTML tags from body
  */
 export const cleanText = (text: string, removeQuote: boolean) => {
     const domParser = new DOMParser();
 
     const { body } = domParser.parseFromString(text, 'text/html');
-    let removeStyle = true;
-    while (removeStyle) {
-        const styleElements = body.getElementsByTagName('style');
-        const styleElement = styleElements.item(0);
-        if (styleElement) {
-            styleElement.remove();
-        }
-        removeStyle = styleElements.length !== 0;
-    }
+    removeTag(body, 'style');
+    removeTag(body, 'script');
 
     let content = body.innerHTML;
     if (removeQuote) {
