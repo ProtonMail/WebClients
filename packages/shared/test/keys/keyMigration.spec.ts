@@ -11,14 +11,14 @@ import {
 
 const DEFAULT_KEYPASSWORD = '123';
 
-const getAddress = async (email: string, keyPassword: string, nKeys: number) => {
+const getAddress = async (id: number, email: string, keyPassword: string, nKeys: number) => {
     const addressKeysFull = await Promise.all(
         Array.from({ length: nKeys })
             .fill(undefined)
             .map((_, i) => getLegacyAddressKey(`${email}${i}`, keyPassword, email))
     );
     return {
-        ID: 'AddressID1',
+        ID: `AddressID${id}`,
         Email: email,
         Keys: addressKeysFull.map(({ Key }) => Key),
     } as unknown as tsAddress;
@@ -33,9 +33,9 @@ const getSetup1 = async () => {
     } as unknown as tsUser;
     const userKeys = await getDecryptedUserKeysHelper(User, keyPassword);
     const Addresses = await Promise.all([
-        getAddress('1@test.com', keyPassword, 3),
-        getAddress('2@test.com', keyPassword, 1),
-        getAddress('3@test.com', keyPassword, 2),
+        getAddress(1, '1@test.com', keyPassword, 3),
+        getAddress(2, '2@test.com', keyPassword, 1),
+        getAddress(3, '3@test.com', keyPassword, 2),
     ]);
     const addressKeys = await Promise.all(
         Addresses.map((address) => {
@@ -106,6 +106,20 @@ describe('key migration', () => {
                 expect(getOldUserIDEmailHelper(key.privateKey)).toEqual(Addresses[i].Email);
             });
         });
+    };
+
+    it('should migrate keys in the legacy format', async () => {
+        const { User, Addresses, userKeys, addressKeys, organizationKey } = await getSetup1();
+
+        const result = await migrateAddressKeys({ user: User, addresses: Addresses, keyPassword: DEFAULT_KEYPASSWORD });
+        await verifyStandard({
+            organizationKey,
+            Addresses,
+            User,
+            userKeys,
+            result,
+            addressKeys,
+        });
 
         expect(result.SignedKeyLists).toEqual({
             [Addresses[0].ID]: {
@@ -121,10 +135,16 @@ describe('key migration', () => {
                 Signature: jasmine.any(String),
             },
         });
-    };
 
-    it('should migrate keys in the legacy format', async () => {
+        // @ts-ignore
+        expect(result.AddressKeys[0].OrgSignature).not.toBeDefined();
+    });
+
+    it('should migrate keys in the legacy format where some addresses are missing keys', async () => {
         const { User, Addresses, userKeys, addressKeys, organizationKey } = await getSetup1();
+
+        Addresses[2].Keys.length = 0;
+        addressKeys[2].length = 0;
 
         const result = await migrateAddressKeys({ user: User, addresses: Addresses, keyPassword: DEFAULT_KEYPASSWORD });
         await verifyStandard({
@@ -134,6 +154,17 @@ describe('key migration', () => {
             userKeys,
             result,
             addressKeys,
+        });
+
+        expect(result.SignedKeyLists).toEqual({
+            [Addresses[0].ID]: {
+                Data: jasmine.any(String),
+                Signature: jasmine.any(String),
+            },
+            [Addresses[1].ID]: {
+                Data: jasmine.any(String),
+                Signature: jasmine.any(String),
+            },
         });
 
         // @ts-ignore
@@ -156,6 +187,21 @@ describe('key migration', () => {
             userKeys,
             result,
             addressKeys,
+        });
+
+        expect(result.SignedKeyLists).toEqual({
+            [Addresses[0].ID]: {
+                Data: jasmine.any(String),
+                Signature: jasmine.any(String),
+            },
+            [Addresses[1].ID]: {
+                Data: jasmine.any(String),
+                Signature: jasmine.any(String),
+            },
+            [Addresses[2].ID]: {
+                Data: jasmine.any(String),
+                Signature: jasmine.any(String),
+            },
         });
 
         const { privateKeys } = splitKeys(userKeys);
