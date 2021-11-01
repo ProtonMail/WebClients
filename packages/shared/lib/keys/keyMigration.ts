@@ -117,7 +117,7 @@ export async function getAddressKeysMigrationPayload(
             );
             return {
                 Address: address,
-                SignedKeyList: await getSignedKeyList(activeKeys),
+                SignedKeyList: activeKeys.length > 0 ? await getSignedKeyList(activeKeys) : (undefined as any),
                 AddressKeys: migratedKeys.map((migratedKey) => {
                     return {
                         ID: migratedKey.ID,
@@ -134,8 +134,11 @@ export async function getAddressKeysMigrationPayload(
     );
     return result.reduce<MigrationResult | MigrationOrgResult>(
         (acc, { AddressKeys, Address, SignedKeyList }) => {
-            acc.AddressKeys = acc.AddressKeys.concat(AddressKeys as any); // forcing any since it's typed in the promise result above
-            acc.SignedKeyLists[Address.ID] = SignedKeyList;
+            // Some addresses may not have keys and thus won't have generated a signed key list
+            if (AddressKeys.length > 0) {
+                acc.AddressKeys = acc.AddressKeys.concat(AddressKeys as any); // forcing any since it's typed in the promise result above
+                acc.SignedKeyLists[Address.ID] = SignedKeyList;
+            }
             return acc;
         },
         { AddressKeys: [], SignedKeyLists: {} }
