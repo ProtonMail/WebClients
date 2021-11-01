@@ -7,6 +7,7 @@ import { initLocales } from '@proton/shared/lib/i18n/locales';
 import { newVersionUpdater } from '@proton/shared/lib/busy';
 import { G_OAUTH_REDIRECT_PATH } from '@proton/components/containers/easySwitch/constants';
 import { getProdId, setVcalProdId } from '@proton/shared/lib/calendar/vcalConfig';
+import { initMainHost } from '@proton/cross-storage';
 
 import * as config from './config';
 import Setup from './Setup';
@@ -20,6 +21,7 @@ const enhancedConfig = {
     ...config,
 };
 
+initMainHost();
 newVersionUpdater(enhancedConfig);
 sentry(enhancedConfig);
 setVcalProdId(getProdId(enhancedConfig));
