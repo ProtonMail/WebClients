@@ -168,8 +168,8 @@ export const getPlanFeatures = (
         return [
             {
                 content: c('Plan feature').ngettext(
-                    msgid`1200+ servers in ${plusCountries} country`,
-                    `1200+ servers in ${plusCountries} countries`,
+                    msgid`1300+ servers in ${plusCountries} country`,
+                    `1300+ servers in ${plusCountries} countries`,
                     plusCountries
                 ),
             },
