@@ -17,6 +17,7 @@ const useSubscription = (): [tsSubscriptionModel, boolean, Error] => {
         if (user.isAdmin) {
             return SubscriptionModel.get(api);
         }
+        // Member cannot fetch subscription
         return Promise.resolve(FREE_SUBSCRIPTION);
     }, [api, cache]);
 
