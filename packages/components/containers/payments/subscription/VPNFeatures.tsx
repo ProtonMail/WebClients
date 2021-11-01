@@ -41,8 +41,8 @@ const getFeatures = (
             label: c('VPN feature').t`VPN servers`,
             free: serversCount.free_vpn,
             [PLANS.VPNBASIC]: '350+',
-            [PLANS.VPNPLUS]: '1200+',
-            [PLANS.VISIONARY]: '1200+',
+            [PLANS.VPNPLUS]: '1300+',
+            [PLANS.VISIONARY]: '1300+',
         },
         {
             name: 'countries',
