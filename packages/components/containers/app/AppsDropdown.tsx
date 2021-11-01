@@ -20,7 +20,7 @@ const AppsDropdown = () => {
             as="button"
             type="button"
             hasCaret={false}
-            content={<Icon name="grid-3" className="apps-dropdown-button-icon flex-item-noshrink" />}
+            content={<Icon name="grid-3" className="apps-dropdown-button-icon flex-item-noshrink no-print" />}
             className="apps-dropdown-button flex-item-noshrink"
             dropdownClassName="apps-dropdown"
             originalPlacement="bottom-left"

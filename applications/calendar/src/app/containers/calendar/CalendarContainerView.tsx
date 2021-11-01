@@ -36,12 +36,14 @@ import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import { Address } from '@proton/shared/lib/interfaces';
 import { canonizeInternalEmail, validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import { uniqueBy } from '@proton/shared/lib/helpers/array';
+import CalendarSelectIcon from '@proton/components/components/calendarSelect/CalendarSelectIcon';
 import CalendarSidebar from './CalendarSidebar';
 import CalendarToolbar from './CalendarToolbar';
 import DateCursorButtons from '../../components/DateCursorButtons';
 import ViewSelector from '../../components/ViewSelector';
 
 import getDateDiff from './getDateDiff';
+import getDateRangeText from '../../components/getDateRangeText';
 
 /**
  * Converts a local date into the corresponding UTC date at 0 hours.
@@ -417,16 +419,30 @@ const CalendarContainerView = ({
         </div>
     ) : null;
 
+    const currentRange = useMemo(() => {
+        return getDateRangeText(view, range, localDate, localDateRange);
+    }, [view, range, localDate, localDateRange]);
+
     return (
         <PrivateAppContainer header={header} sidebar={sidebar} isBlurred={isBlurred} containerRef={containerRef}>
             {loader}
+            <div className="only-print p1">
+                {tzid} <br />
+                {calendars
+                    .filter((calendar) => calendar.Display)
+                    .map(({ Color, Name }) => (
+                        <span className="flex flex-align-items-center">
+                            <CalendarSelectIcon color={Color} className="keep-color mr0-75" /> {Name}
+                        </span>
+                    ))}
+                <br />
+                {currentRange}
+            </div>
             <CalendarToolbar
                 dateCursorButtons={
                     <DateCursorButtons
                         view={view}
-                        range={range}
-                        dateRange={localDateRange}
-                        currentDate={localDate}
+                        currentRange={currentRange}
                         now={localNowDate}
                         onToday={onClickToday}
                         onNext={handleClickNext}
