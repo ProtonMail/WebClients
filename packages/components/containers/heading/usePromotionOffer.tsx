@@ -22,7 +22,7 @@ import useIsMounted from '../../hooks/useIsMounted';
 const usePromotionOffer = (): EligibleOffer | undefined => {
     const api = useApi();
     const { APP_NAME } = useConfig();
-    const [{ isFree, isDelinquent }] = useUser();
+    const [{ isFree, isDelinquent, canPay }] = useUser();
     const [plans = [], loadingPlans] = usePlans();
     const [subscription, loadingSubscription] = useSubscription();
     const [latestSubscription, setLatestSubscription] = useState<LatestSubscription | undefined>(undefined);
@@ -39,6 +39,7 @@ const usePromotionOffer = (): EligibleOffer | undefined => {
         !!plans.length &&
         !!subscription &&
         !!latestSubscription &&
+        canPay &&
         !isDelinquent &&
         isBlackFridayPeriod &&
         getBlackFridayEligibility(subscription, latestSubscription);
@@ -48,6 +49,7 @@ const usePromotionOffer = (): EligibleOffer | undefined => {
         !!plans.length &&
         !!subscription &&
         !isDelinquent &&
+        canPay &&
         !hasBlackFridayOffer &&
         isProductPayerPeriod &&
         isProductPayer(subscription);
