@@ -135,8 +135,8 @@ const getPlanFeatures = (plan, maxConnections, countries, freeServersCount) => {
             description: c('Plan Description').t`Advanced security features`,
             features: [
                 c('Plan Feature').ngettext(
-                    msgid`1200+ servers in ${countries[PLANS.VPNPLUS].count} country`,
-                    `1200+ servers in ${countries[PLANS.VPNPLUS].count} countries`,
+                    msgid`1300+ servers in ${countries[PLANS.VPNPLUS].count} country`,
+                    `1300+ servers in ${countries[PLANS.VPNPLUS].count} countries`,
                     countries[PLANS.VPNPLUS].count
                 ),
                 c('Plan Feature').ngettext(
@@ -213,8 +213,8 @@ const getPlanFeatures = (plan, maxConnections, countries, freeServersCount) => {
             description: c('Plan Description').t`Bundle plan`,
             features: [
                 c('Plan Feature').ngettext(
-                    msgid`1200+ servers in ${countries[PLANS.VPNPLUS].count} country`,
-                    `1200+ servers in ${countries[PLANS.VPNPLUS].count} countries`,
+                    msgid`1300+ servers in ${countries[PLANS.VPNPLUS].count} country`,
+                    `1300+ servers in ${countries[PLANS.VPNPLUS].count} countries`,
                     countries[PLANS.VPNPLUS].count
                 ),
                 c('Plan Feature').ngettext(
