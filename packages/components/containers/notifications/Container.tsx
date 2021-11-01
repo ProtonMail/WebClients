@@ -21,7 +21,7 @@ const NotificationsContainer = ({ notifications, removeNotification, hideNotific
         );
     });
 
-    return <div className="notifications-container flex flex-column flex-align-items-center">{list}</div>;
+    return <div className="notifications-container flex flex-column flex-align-items-center no-print">{list}</div>;
 };
 
 export default NotificationsContainer;

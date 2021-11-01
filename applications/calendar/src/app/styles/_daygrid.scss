@@ -17,9 +17,11 @@
 	}
 
 	&-day {
-		&[aria-current='true'] {
-			font-weight: bold;
-			color: var(--primary);
+		@media not print {
+			&[aria-current='true'] {
+				font-weight: bold;
+				color: var(--primary);
+			}
 		}
 	}
 

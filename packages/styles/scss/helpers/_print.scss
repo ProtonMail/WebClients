@@ -76,4 +76,18 @@
 	caption {
 		page-break-after: avoid;
 	}
+
+	.keep-color {
+		color-adjust: exact;
+	}
+
+	.main {
+		border: 0;
+	}
+}
+
+.only-print {
+	@media not print {
+		display: none;
+	}
 }
