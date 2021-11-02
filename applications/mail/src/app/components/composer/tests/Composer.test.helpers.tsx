@@ -8,7 +8,7 @@ import { MessageExtended, MessageExtendedWithData, PartialMessageExtended } from
 import Composer from '../Composer';
 import { render } from '../../../helpers/test/render';
 import { Breakpoints } from '../../../models/utils';
-import { addApiMock } from '../../../helpers/test/api';
+import { addApiMock, parseFormData } from '../../../helpers/test/api';
 import { waitForNoNotification, waitForNotification } from '../../../helpers/test/helper';
 
 // Fake timers fails for the complexe send action
@@ -89,6 +89,8 @@ export const clickSend = async (renderResult: RenderResult) => {
     expect(sendRequest.method).toBe('post');
 
     await waitForNoNotification();
+
+    sendRequest.data = parseFormData(sendRequest.data);
 
     return sendRequest;
 };

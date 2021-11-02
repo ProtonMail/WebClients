@@ -8,7 +8,6 @@ import {
     SessionKey,
     OpenPGPKey,
 } from 'pmcrypto';
-
 import { identity } from '@proton/shared/lib/helpers/function';
 import { Package, Packages } from '@proton/shared/lib/interfaces/mail/crypto';
 import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
@@ -17,7 +16,6 @@ import { getAttachments } from '@proton/shared/lib/mail/messages';
 import { getSessionKey } from '@proton/shared/lib/mail/send/attachments';
 import { AES256, MIME_TYPES, PACKAGE_TYPE } from '@proton/shared/lib/constants';
 import { enums } from 'openpgp';
-
 import { MessageExtended, MessageKeys } from '../../models/message';
 import { arrayToBase64 } from '../base64';
 
@@ -210,8 +208,9 @@ const encryptBody = async (pack: Package, messageKeys: MessageKeys, message: Mes
         // eslint-disable-next-line require-atomic-updates
         pack.BodyKey = packToBase64(sessionKey);
     }
-    // eslint-disable-next-line require-atomic-updates
-    pack.Body = arrayToBase64(encrypted[0]);
+
+    // eslint-disable-next-line prefer-destructuring
+    pack.Body = encrypted[0];
 };
 
 const encryptPackage = async (
