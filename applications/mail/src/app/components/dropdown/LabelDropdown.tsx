@@ -19,13 +19,12 @@ import { LABEL_COLORS, LABEL_TYPE, MAILBOX_IDENTIFIERS } from '@proton/shared/li
 import { randomIntFromInterval } from '@proton/shared/lib/helpers/function';
 import { Label } from '@proton/shared/lib/interfaces/Label';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
-
 import { Element } from '../../models/element';
 import { getLabelIDs } from '../../helpers/elements';
 import { useApplyLabels, useMoveToFolder } from '../../hooks/useApplyLabels';
 import { getStandardFolders } from '../../helpers/labels';
 import { Breakpoints } from '../../models/utils';
-import { useGetElementsFromIDs } from '../../hooks/mailbox/useElementsCache';
+import { useGetElementsFromIDs } from '../../hooks/mailbox/useElements';
 
 import './LabelDropdown.scss';
 

@@ -23,7 +23,7 @@ import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { isMessage as testIsMessage } from '../../helpers/elements';
 import { useMoveToFolder } from '../../hooks/useApplyLabels';
 import { Breakpoints } from '../../models/utils';
-import { useGetElementsFromIDs } from '../../hooks/mailbox/useElementsCache';
+import { useGetElementsFromIDs } from '../../hooks/mailbox/useElements';
 import { getMessagesAuthorizedToMove } from '../../helpers/message/messages';
 
 import './MoveDropdown.scss';

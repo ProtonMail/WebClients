@@ -2,7 +2,7 @@ import { fireEvent } from '@testing-library/dom';
 import loudRejection from 'loud-rejection';
 import { openNewTab } from '@proton/shared/lib/helpers/browser';
 import { mergeMessages } from '../../../helpers/message/messages';
-import { addAddressToCache, minimalCache, minimalElementsCache } from '../../../helpers/test/cache';
+import { addAddressToCache, minimalCache } from '../../../helpers/test/cache';
 import {
     addApiKeys,
     addApiMock,
@@ -43,7 +43,6 @@ describe('Unsubscribe banner', () => {
         const markUnsubscribedCall = jest.fn();
 
         minimalCache();
-        minimalElementsCache();
         addAddressToCache({ Email: toAddress });
         addApiMock(`mail/v4/messages/${messageID}/unsubscribe`, unsubscribeCall);
         addApiMock(`mail/v4/messages/mark/unsubscribed`, markUnsubscribedCall);
@@ -85,7 +84,6 @@ describe('Unsubscribe banner', () => {
         const markUnsubscribedCall = jest.fn();
 
         minimalCache();
-        minimalElementsCache();
         addAddressToCache({ ID: toAddressID, Email: toAddress });
         addApiKeys(false, mailto, []);
         addKeysToAddressKeysCache(toAddressID, keys);
@@ -127,7 +125,6 @@ describe('Unsubscribe banner', () => {
         const openNewTabMock = openNewTab as jest.Mock;
 
         minimalCache();
-        minimalElementsCache();
         addAddressToCache({ ID: toAddressID, Email: toAddress });
         addApiMock(`mail/v4/messages/mark/unsubscribed`, markUnsubscribedCall);
 

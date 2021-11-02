@@ -11,7 +11,7 @@ import {
 import { deleteConversations } from '@proton/shared/lib/api/conversations';
 import { deleteMessages } from '@proton/shared/lib/api/messages';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import { useGetElementsFromIDs } from './mailbox/useElementsCache';
+import { useGetElementsFromIDs } from './mailbox/useElements';
 import { isConversation } from '../helpers/elements';
 import useOptimisticDelete from './optimistic/useOptimisticDelete';
 

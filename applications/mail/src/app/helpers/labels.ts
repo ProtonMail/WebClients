@@ -181,7 +181,8 @@ export const applyLabelChangesOnMessage = (
     changes: LabelChanges,
     unreadStatuses?: { id: string; unread: number }[]
 ): Message => {
-    const { LabelIDs } = message;
+    const { LabelIDs: inputLabelIDs } = message;
+    const LabelIDs = [...inputLabelIDs];
 
     Object.keys(changes).forEach((labelID) => {
         const index = LabelIDs.findIndex((existingLabelID) => existingLabelID === labelID);
