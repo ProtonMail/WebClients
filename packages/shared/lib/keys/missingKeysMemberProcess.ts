@@ -1,7 +1,7 @@
 import { OpenPGPKey } from 'pmcrypto';
 import { createMemberAddressKeysLegacy, createMemberAddressKeysV2, getDecryptedMemberKey } from './memberKeys';
 import { Api, Address, Member, EncryptionConfig } from '../interfaces';
-import { getHasMigratedAddressKeys } from './keyMigration';
+import { getHasMemberMigratedAddressKeys } from './keyMigration';
 
 type OnUpdateCallback = (ID: string, update: { status: 'loading' | 'error' | 'ok'; result?: string }) => void;
 
@@ -32,8 +32,7 @@ export const missingKeysMemberProcess = async ({
         throw new Error('Member keys are not set up');
     }
 
-    const hasMigratedAddressKeys =
-        getHasMigratedAddressKeys(memberAddresses) || getHasMigratedAddressKeys(ownerAddresses);
+    const hasMigratedAddressKeys = getHasMemberMigratedAddressKeys(memberAddresses, ownerAddresses);
 
     const primaryMemberUserKey = await getDecryptedMemberKey(PrimaryKey, organizationKey);
 

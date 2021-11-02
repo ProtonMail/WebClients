@@ -25,6 +25,13 @@ export const getHasMigratedAddressKeys = (addresses: Address[]) => {
     return addresses.some((address) => address.Keys?.some(getHasMigratedAddressKey));
 };
 
+export const getHasMemberMigratedAddressKeys = (memberAddresses: Address[], ownerAddresses: Address[]) => {
+    const primaryMemberAddress = memberAddresses[0];
+    return primaryMemberAddress?.Keys?.length > 0
+        ? getHasMigratedAddressKeys(memberAddresses)
+        : getHasMigratedAddressKeys(ownerAddresses);
+};
+
 export const getHasKeyMigrationRunner = (value: number) => {
     return hasBit(value, 1);
 };
