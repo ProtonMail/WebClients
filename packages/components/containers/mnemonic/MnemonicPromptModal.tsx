@@ -18,7 +18,7 @@ interface Props {
 }
 
 const MnemonicPromptModal = (props: Props) => {
-    const { onClose, ...rest } = props;
+    const { onClose = () => {}, ...rest } = props;
     const [step, setStep] = useState(STEPS.INFO);
     const api = useApi();
     const getUserKeys = useGetUserKeys();
@@ -109,7 +109,7 @@ const MnemonicPromptModal = (props: Props) => {
             return {
                 title: c('Info').t`Your recovery phrase`,
                 section: <MnemonicPhraseStepContent mnemonic={mnemonic} />,
-                footer: <MnemonicPhraseStepButtons mnemonic={mnemonic} />,
+                footer: <MnemonicPhraseStepButtons mnemonic={mnemonic} onDone={onClose} />,
             };
         }
 
