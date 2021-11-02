@@ -1,4 +1,4 @@
-import { c, msgid } from 'ttag';
+import { c } from 'ttag';
 import { PLANS, PLAN_TYPES, CYCLE } from '@proton/shared/lib/constants';
 import { Info } from '@proton/components';
 
@@ -6,6 +6,7 @@ import freePlanSvg from '@proton/styles/assets/img/pv-images/plans/free.svg';
 import basicPlanSvg from '@proton/styles/assets/img/pv-images/plans/basic.svg';
 import plusPlanSvg from '@proton/styles/assets/img/pv-images/plans/plus.svg';
 import visionaryPlanSvg from '@proton/styles/assets/img/pv-images/plans/visionary.svg';
+import { getBasicServers, getFreeServers, getPlusServers, getVpnConnections } from '@proton/shared/lib/vpn/features';
 
 export const PLAN = {
     FREE: 'free',
@@ -29,17 +30,11 @@ export const PLAN_BUNDLES = {
 
 export const VPN_PLANS = [PLAN.FREE, PLAN.BASIC, PLAN.PLUS, PLAN.VISIONARY];
 
-const getPlanFeatures = (plan, maxConnections, countries, freeServersCount) => {
+const getPlanFeatures = (plan, maxConnections, countries, serversCount) => {
     const netflix = <b key={1}>{c('Netflix').t`Netflix`}</b>;
     const disney = <b key={2}>{c('Disney').t`Disney+`}</b>;
     const primeVideo = <b key={3}>{c('Prime Video').t`Prime Video`}</b>;
     const many = <b key={4}>{c('Many Others').t`and many others`}</b>;
-
-    const nFreeServers = c('Plan Feature').ngettext(
-        msgid`${freeServersCount.free_vpn} server`,
-        `${freeServersCount.free_vpn} servers`,
-        freeServersCount.free_vpn
-    );
 
     return {
         [PLAN.FREE]: {
@@ -48,26 +43,14 @@ const getPlanFeatures = (plan, maxConnections, countries, freeServersCount) => {
             upsell: {
                 planName: PLAN.BASIC,
                 features: [
-                    c('Plan Feature').ngettext(
-                        msgid`350+ servers in ${countries[PLANS.VPNBASIC].count} country`,
-                        `350+ servers in ${countries[PLANS.VPNBASIC].count}+ countries`,
-                        countries[PLANS.VPNBASIC].count
-                    ),
+                    getBasicServers(countries[PLANS.VPNBASIC].count),
                     c('Plan Feature').t`High speed`,
                     c('Plan Feature').t`Filesharing/P2P support`,
                 ],
             },
             features: [
-                c('Plan Feature').ngettext(
-                    msgid`${nFreeServers} in ${countries.free_vpn.count} country`,
-                    `${nFreeServers} in ${countries.free_vpn.count} countries`,
-                    countries.free_vpn.count
-                ),
-                c('Plan Feature').ngettext(
-                    msgid`${maxConnections} VPN connection`,
-                    `${maxConnections} VPN connections`,
-                    maxConnections
-                ),
+                getFreeServers(serversCount.free_vpn, countries.free_vpn.count),
+                getVpnConnections(maxConnections),
                 c('Plan Feature').t`Medium speed`,
                 c('Plan Feature').t`Strict no-logs policy`,
 
@@ -92,16 +75,8 @@ const getPlanFeatures = (plan, maxConnections, countries, freeServersCount) => {
                 ],
             },
             features: [
-                c('Plan Feature').ngettext(
-                    msgid`350+ servers in ${countries[PLANS.VPNBASIC].count} country`,
-                    `350+ servers in ${countries[PLANS.VPNBASIC].count}+ countries`,
-                    countries[PLANS.VPNBASIC].count
-                ),
-                c('Plan Feature').ngettext(
-                    msgid`${maxConnections} VPN connection`,
-                    `${maxConnections} VPN connections`,
-                    maxConnections
-                ),
+                getBasicServers(countries[PLANS.VPNBASIC].count),
+                getVpnConnections(maxConnections),
 
                 c('Plan Feature').t`High speed`,
                 c('Plan Feature').t`Strict no-logs policy`,
@@ -134,16 +109,8 @@ const getPlanFeatures = (plan, maxConnections, countries, freeServersCount) => {
             isBest: true,
             description: c('Plan Description').t`Advanced security features`,
             features: [
-                c('Plan Feature').ngettext(
-                    msgid`1300+ servers in ${countries[PLANS.VPNPLUS].count} country`,
-                    `1300+ servers in ${countries[PLANS.VPNPLUS].count} countries`,
-                    countries[PLANS.VPNPLUS].count
-                ),
-                c('Plan Feature').ngettext(
-                    msgid`${maxConnections} VPN connection`,
-                    `${maxConnections} VPN connections`,
-                    maxConnections
-                ),
+                getPlusServers(countries[PLANS.VPNPLUS].count),
+                getVpnConnections(maxConnections),
                 c('Plan Feature').t`Highest speed (up to 10 Gbps)`,
                 c('Plan Feature').t`Strict no-logs policy`,
                 <>
@@ -212,16 +179,8 @@ const getPlanFeatures = (plan, maxConnections, countries, freeServersCount) => {
             image: <img width={100} src={visionaryPlanSvg} alt={`${PLAN_NAMES[PLAN.VISIONARY]} plan`} />,
             description: c('Plan Description').t`Bundle plan`,
             features: [
-                c('Plan Feature').ngettext(
-                    msgid`1300+ servers in ${countries[PLANS.VPNPLUS].count} country`,
-                    `1300+ servers in ${countries[PLANS.VPNPLUS].count} countries`,
-                    countries[PLANS.VPNPLUS].count
-                ),
-                c('Plan Feature').ngettext(
-                    msgid`${maxConnections} VPN connection`,
-                    `${maxConnections} VPN connections`,
-                    maxConnections
-                ),
+                getPlusServers(countries[PLANS.VPNPLUS].count),
+                getVpnConnections(maxConnections),
                 c('Plan Feature').t`Highest speed (10 Gbps)`,
                 c('Plan Feature').t`Strict no-logs policy`,
                 <>
