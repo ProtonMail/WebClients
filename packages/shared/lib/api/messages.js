@@ -68,6 +68,13 @@ export const sendMessage = (
     data: { ExpirationTime, ExpiresIn, AutoSaveContacts, Packages, DelaySeconds, DeliveryTime },
 });
 
+export const sendMessageForm = (messageID, data) => ({
+    method: 'post',
+    url: `mail/v4/messages/${messageID}`,
+    input: 'form',
+    data,
+});
+
 export const sendMessageDirect = ({
     Message,
     ParentID,
