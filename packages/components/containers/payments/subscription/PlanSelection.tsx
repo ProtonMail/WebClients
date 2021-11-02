@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import { c, msgid } from 'ttag';
+import { c } from 'ttag';
 import {
     Currency,
     Cycle,
@@ -17,6 +17,7 @@ import { getAppName } from '@proton/shared/lib/apps/helper';
 import { getPlan } from '@proton/shared/lib/helpers/subscription';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import { FREE_MAIL_PLAN, FREE_VPN_PLAN } from '@proton/shared/lib/subscription/freePlans';
+import { getBasicServers, getFreeServers, getPlusServers, getVpnConnections } from '@proton/shared/lib/vpn/features';
 import { Button, Info } from '../../../components';
 
 import CurrencySelector from '../CurrencySelector';
@@ -27,11 +28,6 @@ import PlanCard from './PlanCard';
 import './PlanSelection.scss';
 import PlanSelectionComparison from './PlanSelectionComparison';
 import { useVPNServersCount } from '../../../hooks';
-
-const getVpnConnectionsText = (n = 0) =>
-    c('Plan Feature').ngettext(msgid`${n} VPN connection`, `${n} VPN connections`, n);
-
-const getFreeVpnServersText = (n = 0) => c('Plan Feature').ngettext(msgid`${n} server`, `${n} servers`, n);
 
 const NAMES = {
     free_mail: 'Free',
@@ -130,18 +126,11 @@ export const getPlanFeatures = (
         ),
     };
 
-    const vpnConnections = { content: getVpnConnectionsText(plan.MaxVPN) };
-    const freeServers = getFreeVpnServersText(serversCount.free_vpn);
+    const vpnConnections = { content: getVpnConnections(plan.MaxVPN) };
 
     if (planName === 'free_vpn') {
         return [
-            {
-                content: c('Plan feature').ngettext(
-                    msgid`${freeServers} in ${freeCountries} country`,
-                    `${freeServers} in ${freeCountries} countries`,
-                    freeCountries
-                ),
-            },
+            { content: getFreeServers(serversCount.free_vpn, freeCountries) },
             vpnConnections,
             { content: c('Plan feature').t`Medium speed` },
             accessBlocked,
@@ -150,13 +139,7 @@ export const getPlanFeatures = (
 
     if (planName === PLANS.VPNBASIC) {
         return [
-            {
-                content: c('Plan feature').ngettext(
-                    msgid`350+ servers in ${basicCountries} country`,
-                    `350+ servers in ${basicCountries}+ countries`,
-                    basicCountries
-                ),
-            },
+            { content: getBasicServers(basicCountries) },
             vpnConnections,
             { content: c('Plan feature').t`High speed` },
             accessBlocked,
@@ -166,13 +149,7 @@ export const getPlanFeatures = (
 
     if (planName === PLANS.VPNPLUS) {
         return [
-            {
-                content: c('Plan feature').ngettext(
-                    msgid`1300+ servers in ${plusCountries} country`,
-                    `1300+ servers in ${plusCountries} countries`,
-                    plusCountries
-                ),
-            },
+            { content: getPlusServers(plusCountries) },
             vpnConnections,
             { content: c('Plan feature').t`Highest speed (up to 10 Gbps)` },
             streamingService,
