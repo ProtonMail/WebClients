@@ -25,7 +25,7 @@ interface Props {
 }
 
 const GenerateMnemonicModal = (props: Props) => {
-    const { confirmStep = false, onClose, onSuccess, ...rest } = props;
+    const { confirmStep = false, onClose = () => {}, onSuccess, ...rest } = props;
     const [step, setStep] = useState(confirmStep ? STEPS.CONFIRM : STEPS.AUTH);
 
     const api = useApi();
@@ -102,7 +102,7 @@ const GenerateMnemonicModal = (props: Props) => {
                     if (code === PASSWORD_WRONG_ERROR) {
                         setAuthError(message);
                     } else {
-                        onClose?.();
+                        onClose();
                     }
                 }
             };
@@ -142,7 +142,7 @@ const GenerateMnemonicModal = (props: Props) => {
             return {
                 title: c('Info').t`Your recovery phrase`,
                 section: <MnemonicPhraseStepContent mnemonic={mnemonic} />,
-                footer: <MnemonicPhraseStepButtons mnemonic={mnemonic} />,
+                footer: <MnemonicPhraseStepButtons mnemonic={mnemonic} onDone={onClose} />,
             };
         }
 
