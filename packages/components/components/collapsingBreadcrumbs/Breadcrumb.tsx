@@ -1,5 +1,6 @@
 import { forwardRef, LiHTMLAttributes, Ref } from 'react';
 import { classnames } from '../../helpers';
+import { Button } from '../button';
 
 interface Props extends Omit<LiHTMLAttributes<HTMLLIElement>, 'onClick'> {
     children: string;
@@ -20,9 +21,9 @@ const Breadcrumb = ({ children, onClick, active, noShrink, className, ...rest }:
             className={classnames(['collapsing-breadcrumb', noShrink && 'collapsing-breadcrumb--no-shrink', className])}
         >
             {onClick ? (
-                <button type="button" title={children} onClick={onClick} className={textClass}>
+                <Button shape="ghost" color="weak" title={children} onClick={onClick} className={textClass}>
                     {children}
-                </button>
+                </Button>
             ) : (
                 <span title={children} className={textClass}>
                     {children}
