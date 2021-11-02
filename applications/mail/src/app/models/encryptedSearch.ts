@@ -2,7 +2,7 @@ import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { DecryptedKey } from '@proton/shared/lib/interfaces';
 import { DBSchema } from 'idb';
 import { Element } from './element';
-import { ElementsCacheParams } from '../hooks/mailbox/useElementsCache';
+import { ElementsStateParams } from '../logic/elements/elementsTypes';
 
 export interface ESMetrics {
     indexSize: number;
@@ -80,7 +80,7 @@ export interface LastEmail {
     Order: number;
 }
 
-export interface NormalisedSearchParams extends Omit<ElementsCacheParams, 'wildcard' | 'keyword' | 'esEnabled'> {
+export interface NormalisedSearchParams extends Omit<ElementsStateParams, 'wildcard' | 'keyword' | 'esEnabled'> {
     normalisedKeywords: string[] | undefined;
     decryptionError?: boolean;
 }

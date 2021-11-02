@@ -8,7 +8,6 @@ import {
     useEventManager,
     SidebarListItemLink,
     useLoading,
-    useCache,
     HotkeyTuple,
     useHotkeys,
     useMailSettings,
@@ -23,7 +22,7 @@ import { c, msgid } from 'ttag';
 import LocationAside from './LocationAside';
 import { LABEL_IDS_TO_HUMAN } from '../../constants';
 import { useApplyLabels, useMoveToFolder } from '../../hooks/useApplyLabels';
-import { ELEMENTS_CACHE_KEY } from '../../hooks/mailbox/useElementsCache';
+import { useGetElementsFromIDs } from '../../hooks/mailbox/useElements';
 
 const { ALL_MAIL, DRAFTS, ALL_DRAFTS, SENT, ALL_SENT, SCHEDULED } = MAILBOX_LABEL_IDS;
 
@@ -67,9 +66,9 @@ const SidebarItem = ({
     id,
 }: Props) => {
     const { call } = useEventManager();
-    const cache = useCache();
     const history = useHistory();
     const [{ Shortcuts = 0 } = {}] = useMailSettings();
+    const getElementsFromIDs = useGetElementsFromIDs();
 
     const [refreshing, withRefreshing] = useLoading(false);
 
@@ -105,9 +104,7 @@ const SidebarItem = ({
             !noDrop.includes(labelID), // Some destinations has no sense
         isFolder ? 'move' : 'link',
         (itemIDs) => {
-            // Avoid useElementsCache for perf issues
-            const elementsCache = cache.get(ELEMENTS_CACHE_KEY);
-            const elements = itemIDs.map((itemID) => elementsCache.elements[itemID]);
+            const elements = getElementsFromIDs(itemIDs);
             if (isFolder) {
                 void moveToFolder(elements, labelID, text, currentLabelID);
             } else {

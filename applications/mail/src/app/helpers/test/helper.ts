@@ -1,12 +1,10 @@
 import { act } from '@testing-library/react';
 import { waitFor } from '@testing-library/dom';
 import { useEventManager } from '@proton/components';
-import { ELEMENTS_CACHE_KEY } from '../../hooks/mailbox/useElementsCache';
 import {
     clearCache,
     messageCache,
     conversationCache,
-    cache,
     attachmentsCache,
     addressKeysCache,
     base64Cache,
@@ -38,7 +36,6 @@ export const clearAll = () => {
     attachmentsCache.clear();
     addressKeysCache.clear();
     base64Cache.clear();
-    cache.delete(ELEMENTS_CACHE_KEY);
     eventManagerListeners.splice(0, eventManagerListeners.length);
     clearContactCache();
     resetHistory();
