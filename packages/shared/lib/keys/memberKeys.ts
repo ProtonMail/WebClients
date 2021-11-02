@@ -16,7 +16,7 @@ import { srpVerify } from '../srp';
 import { createMemberKeyRoute, setupMemberKeyRoute } from '../api/memberKeys';
 import { generateMemberAddressKey } from './organizationKeys';
 import { generateUserKey } from './userKeys';
-import { getHasMigratedAddressKeys } from './keyMigration';
+import { getHasMemberMigratedAddressKeys } from './keyMigration';
 
 export const getDecryptedMemberKey = async ({ Token, PrivateKey }: tsKey, organizationKey: OpenPGPKey) => {
     if (!Token) {
@@ -26,7 +26,7 @@ export const getDecryptedMemberKey = async ({ Token, PrivateKey }: tsKey, organi
     return decryptPrivateKey(PrivateKey, decryptedToken);
 };
 
-interface SetupMemberKeySharedArgumentsS {
+interface SetupMemberKeySharedArguments {
     api: Api;
     member: tsMember;
     address: tsAddress;
@@ -42,7 +42,7 @@ export const setupMemberKeyLegacy = async ({
     password,
     organizationKey,
     encryptionConfig,
-}: SetupMemberKeySharedArgumentsS) => {
+}: SetupMemberKeySharedArguments) => {
     const { salt: keySalt, passphrase: memberMailboxPassword } = await generateKeySaltAndPassphrase(password);
 
     const { privateKey, privateKeyArmored } = await generateAddressKey({
@@ -98,7 +98,7 @@ export const setupMemberKeyV2 = async ({
     password,
     organizationKey,
     encryptionConfig,
-}: SetupMemberKeySharedArgumentsS) => {
+}: SetupMemberKeySharedArguments) => {
     const { salt: keySalt, passphrase: memberKeyPassword } = await generateKeySaltAndPassphrase(password);
 
     const { privateKey: userPrivateKey, privateKeyArmored: userPrivateKeyArmored } = await generateUserKey({
@@ -158,11 +158,13 @@ export const setupMemberKeyV2 = async ({
     return updatedActiveKeys;
 };
 
-interface SetupMemberKeyArguments extends SetupMemberKeySharedArgumentsS {
+interface SetupMemberKeyArguments extends SetupMemberKeySharedArguments {
     ownerAddresses: tsAddress[];
 }
+
 export const setupMemberKey = async ({ ownerAddresses, ...rest }: SetupMemberKeyArguments) => {
-    if (getHasMigratedAddressKeys(ownerAddresses)) {
+    // During member key setup, no address has keys, so we ignore checking it
+    if (getHasMemberMigratedAddressKeys([], ownerAddresses)) {
         return setupMemberKeyV2(rest);
     }
     return setupMemberKeyLegacy(rest);
