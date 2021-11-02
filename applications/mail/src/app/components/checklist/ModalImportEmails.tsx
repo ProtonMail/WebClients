@@ -37,7 +37,7 @@ const ModalImportEmails = ({ onClose, ...rest }: Partial<ModalPropsInjection>) =
                     fullWidth
                     color="norm"
                     as={SettingsLink}
-                    app={isEasySwitchEnabled ? APPS.PROTONACCOUNT : APPS.PROTONMAIL}
+                    app={APPS.PROTONMAIL}
                     path={isEasySwitchEnabled ? '/easy-switch' : '/import-export'}
                     rel="noopener noreferrer"
                     target="_blank"
