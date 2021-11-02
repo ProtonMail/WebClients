@@ -20,7 +20,6 @@ import DescriptiveTypeCell from './Cells/DescriptiveTypeCell';
 import TimeCell from './Cells/TimeCell';
 import SizeCell from './Cells/SizeCell';
 import NameCell from './Cells/NameCell';
-import ShareButton, { shouldRenderShareButton } from '../ShareButton';
 import SharedURLIcon from '../SharedURLIcon';
 import { useDriveCache } from '../../DriveCache/DriveCacheProvider';
 import { useThumbnailsDownloadProvider } from '../../downloads/ThumbnailDownloadProvider';
@@ -149,9 +148,6 @@ const ItemRow = ({
                     )}
                     <NameCell name={item.Name} />
                     {item.SharedUrl && <SharedURLIcon shareId={shareId} item={item} />}
-                    {shouldRenderShareButton(item) && (
-                        <ShareButton className="file-browser-list-item--share-button" shareId={shareId} item={item} />
-                    )}
                 </TableCell>
 
                 {columns.includes('location') && (
