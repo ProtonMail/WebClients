@@ -42,7 +42,11 @@ interface MimeProcessResult {
 }
 const processMIME = processMIMESource as (options: MimeProcessOptions, data: string) => Promise<MimeProcessResult>;
 
-const binaryToString = (data: Uint8Array) => utf8ArrayToString(data).replace(/\r\n/g, '\n');
+const binaryToString = (data: Uint8Array) =>
+    utf8ArrayToString(data)
+        .replace(/\r\n/g, '\n')
+        // nbsp can be contained in message body and "crash" DOMPurify
+        .replace(/\u00A0/g, ' ');
 
 export interface DecryptMessageResult {
     decryptedBody: string;
