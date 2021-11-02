@@ -66,7 +66,7 @@ const MailOnboardingModal = (props: any) => {
                             onSubmit={() => {
                                 goToSettings(
                                     isEasySwitchEnabled ? '/easy-switch' : '/import-export',
-                                    isEasySwitchEnabled ? APPS.PROTONACCOUNT : APPS.PROTONMAIL,
+                                    APPS.PROTONMAIL,
                                     true
                                 );
                                 onNext();
