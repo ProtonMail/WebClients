@@ -137,9 +137,7 @@ const loadImagesThroughProxy = async (
                 return {
                     image,
                     blob: await response.blob(),
-                    // Warning: in local dev it will not work due to CORS limitations
-                    // https://stackoverflow.com/questions/43344819/reading-response-headers-with-fetch-api#44816592
-                    tracker: response.headers.get('x-pm-tracker-provider') || undefined,
+                    tracker: response.headers.get('x-pm-tracker-provider') || '',
                 };
             } catch (error) {
                 return { image, error };
@@ -185,4 +183,49 @@ export const loadRemoteImages = async (
         return loadImagesThroughProxy(localID, images, messageCache, api, messageDocument);
     }
     return loadImagesWithoutProxy(localID, images, messageCache, messageDocument);
+};
+
+export const loadFakeThroughProxy = async (
+    localID: string,
+    images: MessageRemoteImage[],
+    messageCache: MessageCache,
+    api: Api
+) => {
+    // Not really happy with this hack but we need to "wait" that the message transform process is finished
+    // And update the message cache before updating image statuses
+    await wait(0);
+
+    const results = await Promise.all(
+        images
+            .filter((image) => image.tracker === undefined)
+            .map(async (image) => {
+                if (!image.url) {
+                    return { image, error: 'No URL' };
+                }
+
+                try {
+                    const response: Response = await api({
+                        ...getImage(image.url as string, 1),
+                        output: 'raw',
+                        silence: true,
+                    });
+
+                    return {
+                        image,
+                        tracker: response.headers.get('x-pm-tracker-provider') || '',
+                    };
+                } catch (error) {
+                    return { image, error };
+                }
+            })
+    );
+
+    const imagesLoaded = results.map(({ image, tracker, error }) => ({
+        ...image,
+        error,
+        originalURL: image.url,
+        tracker,
+    }));
+
+    updateRemoteImages(messageCache, localID, imagesLoaded);
 };
