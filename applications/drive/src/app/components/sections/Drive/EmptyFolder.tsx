@@ -7,7 +7,7 @@ import noContentSvg from '@proton/styles/assets/img/placeholders/empty-folder.sv
 import { UploadButton } from './UploadButton';
 import FolderContextMenu from './FolderContextMenu';
 
-const EmptyFolder = () => {
+const EmptyFolder = ({ shareId }: { shareId: string }) => {
     const { anchorRef, isOpen, open, close } = usePopperAnchor<HTMLDivElement>();
     const [contextMenuPosition, setContextMenuPosition] = useState<{ top: number; left: number }>();
 
@@ -46,6 +46,7 @@ const EmptyFolder = () => {
                 </EmptyViewContainer>
             </div>
             <FolderContextMenu
+                shareId={shareId}
                 isOpen={isOpen}
                 open={open}
                 close={close}
