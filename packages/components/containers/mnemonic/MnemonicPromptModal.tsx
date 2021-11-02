@@ -92,7 +92,7 @@ const MnemonicPromptModal = (props: Props) => {
                             {c('Action').t`Create recovery phrase`}
                         </Button>
                         <Button className="mt1" onClick={onClose} fullWidth>
-                            {c('Action').t`Don't secure account`}
+                            {c('Action').t`Skip`}
                         </Button>
                     </div>
                 ),
