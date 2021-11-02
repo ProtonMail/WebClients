@@ -14,6 +14,7 @@ interface Props {
     shouldStack?: boolean;
     showTooltip?: boolean;
     withDefaultMargin?: boolean;
+    ignoreIconFilter?: boolean;
 }
 
 const ItemLocation = ({
@@ -22,16 +23,19 @@ const ItemLocation = ({
     shouldStack = false,
     showTooltip = true,
     withDefaultMargin = true,
+    ignoreIconFilter = false,
 }: Props) => {
     const [mailSettings] = useMailSettings();
     const [customFolders = []] = useFolders();
     let infos = getCurrentFolders(element, labelID, customFolders, mailSettings);
 
-    // We want to display all icons except the current location for some folders
-    const labelsWithoutIcons: string[] = [ALL_SENT, ALL_DRAFTS];
-    if (labelsWithoutIcons.includes(labelID)) {
-        const labelsWithoutIconsToI18N = [getLabelIDsToI18N()[ALL_SENT], getLabelIDsToI18N()[ALL_DRAFTS]];
-        infos = infos.filter((info) => !labelsWithoutIconsToI18N.includes(info.name));
+    // At some places, we want to display all icons except the current location for some folders (all sent and all drafts)
+    if (!ignoreIconFilter) {
+        const labelsWithoutIcons: string[] = [ALL_SENT, ALL_DRAFTS];
+        if (labelsWithoutIcons.includes(labelID)) {
+            const labelsWithoutIconsToI18N = [getLabelIDsToI18N()[ALL_SENT], getLabelIDsToI18N()[ALL_DRAFTS]];
+            infos = infos.filter((info) => !labelsWithoutIconsToI18N.includes(info.name));
+        }
     }
 
     if (infos.length > 1 && shouldStack) {
