@@ -1,19 +1,22 @@
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { RequireSome } from '@proton/shared/lib/interfaces/utils';
-import { useCache, useHandler } from '@proton/components';
-
+import { useCache, useHandler, useMailSettings } from '@proton/components';
 import { ConversationCountsModel, MessageCountsModel } from '@proton/shared/lib/models';
 import { LabelCount } from '@proton/shared/lib/interfaces/Label';
 import { STATUS } from '@proton/shared/lib/models/cache';
+import { useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 import { useMessageCache, getLocalID } from '../../containers/MessageProvider';
-import { useGetElementsCache, useSetElementsCache } from '../mailbox/useElementsCache';
 import { Conversation } from '../../models/conversation';
 import { Element } from '../../models/element';
 import { useConversationCache, useUpdateConversationCache } from '../../containers/ConversationProvider';
-import { isMessage, isUnread } from '../../helpers/elements';
+import { isMessage as testIsMessage, isUnread } from '../../helpers/elements';
 import { MARK_AS_STATUS } from '../useMarkAs';
 import { CacheEntry } from '../../models/tools';
 import { updateCountersForMarkAs } from '../../helpers/counter';
+import { useGetElementByID } from '../mailbox/useElements';
+import { optimisticMarkAs as optimisticMarkAsAction } from '../../logic/elements/elementsActions';
+import { isConversationMode } from '../../helpers/mailSettings';
 
 export type MarkAsChanges = { status: MARK_AS_STATUS };
 
@@ -88,24 +91,25 @@ const applyMarkAsChangesOnConversationWithMessages = (
 };
 
 export const useOptimisticMarkAs = () => {
-    const getElementsCache = useGetElementsCache();
-    const setElementsCache = useSetElementsCache();
+    const dispatch = useDispatch();
+    const getElementByID = useGetElementByID();
     const messageCache = useMessageCache();
     const conversationCache = useConversationCache();
     const updateConversationCache = useUpdateConversationCache();
     const globalCache = useCache();
+    const [mailSettings] = useMailSettings();
+    const history = useHistory();
 
     const optimisticMarkAs = useHandler((elements: Element[], labelID: string, changes: MarkAsChanges) => {
-        const elementsCache = getElementsCache();
         const rollbackChanges = [] as { element: Element; changes: MarkAsChanges }[];
-        const updatedElements = {} as { [elementID: string]: Element };
+        const updatedElements = [] as Element[];
         let { value: messageCounters } = globalCache.get(MessageCountsModel.key) as CacheEntry<LabelCount[]>;
         let { value: conversationCounters } = globalCache.get(ConversationCountsModel.key) as CacheEntry<LabelCount[]>;
 
         elements.forEach((element) => {
             rollbackChanges.push({ element, changes: computeRollbackMarkAsChanges(element, labelID, changes) });
 
-            if (isMessage(element)) {
+            if (testIsMessage(element)) {
                 const message = element as Message;
                 const localID = getLocalID(messageCache, message.ID);
 
@@ -147,22 +151,20 @@ export const useOptimisticMarkAs = () => {
                 }
 
                 // Updates in elements cache if message mode
-                const messageElement = elementsCache.elements[message.ID] as Message | undefined;
-                if (messageElement) {
-                    const updatedMessage = applyMarkAsChangesOnMessage(messageElement, changes);
-                    updatedElements[messageElement.ID] = updatedMessage;
+                const messageElement = getElementByID(message.ID);
+                if (messageElement && messageElement.ID) {
+                    const updatedMessage = applyMarkAsChangesOnMessage(messageElement as Message, changes);
+                    updatedElements.push(updatedMessage);
 
                     // Update counters
                     messageCounters = updateCountersForMarkAs(message, updatedMessage, messageCounters);
                 }
 
                 // Update in elements cache if conversation mode
-                const conversationElement = elementsCache.elements[message.ConversationID] as Conversation | undefined;
+                const conversationElement = getElementByID(message.ConversationID);
                 if (conversationElement && conversationElement.ID) {
-                    updatedElements[conversationElement.ID] = applyMarkAsChangesOnConversationWithMessages(
-                        conversationElement,
-                        labelID,
-                        changes
+                    updatedElements.push(
+                        applyMarkAsChangesOnConversationWithMessages(conversationElement, labelID, changes)
                     );
                 }
             } else {
@@ -180,10 +182,10 @@ export const useOptimisticMarkAs = () => {
                 }
 
                 // Update in elements cache if conversation mode
-                const conversationElement = elementsCache.elements[conversation.ID] as Conversation | undefined;
+                const conversationElement = getElementByID(conversation.ID);
                 if (conversationElement && conversationElement.ID) {
                     const updatedConversation = applyMarkAsChangesOnConversation(conversationElement, labelID, changes);
-                    updatedElements[conversationElement.ID] = updatedConversation;
+                    updatedElements.push(updatedConversation);
 
                     // Update counters
                     conversationCounters = updateCountersForMarkAs(
@@ -216,11 +218,14 @@ export const useOptimisticMarkAs = () => {
             }
         });
 
-        if (Object.keys(updatedElements).length) {
-            setElementsCache({
-                ...elementsCache,
-                elements: { ...elementsCache.elements, ...updatedElements },
-            });
+        if (updatedElements.length) {
+            // When changing the read / unread status of an element
+            // We want them to stay on the current filter even if it doesn't match the filter anymore
+            // So we manually update the elements cache to mark these ids to bypass the filter logic
+            // This will last as long as the cache is not reset (cf useElements shouldResetCache)
+            const isMessage = testIsMessage(elements[0]);
+            const conversationMode = isConversationMode(labelID, mailSettings, history.location);
+            dispatch(optimisticMarkAsAction({ elements: updatedElements, bypass: true, isMessage, conversationMode }));
         }
 
         globalCache.set(MessageCountsModel.key, { value: messageCounters, status: STATUS.RESOLVED });

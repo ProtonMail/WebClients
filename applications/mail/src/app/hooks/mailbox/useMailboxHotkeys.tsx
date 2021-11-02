@@ -12,7 +12,7 @@ import { MARK_AS_STATUS, useMarkAs } from '../useMarkAs';
 import { usePermanentDelete } from '../usePermanentDelete';
 import { setParamsInLocation } from '../../helpers/mailboxUrl';
 import { isStarred } from '../../helpers/elements';
-import { useGetElementsFromIDs } from './useElementsCache';
+import { useGetElementsFromIDs } from './useElements';
 import { Element } from '../../models/element';
 import { Filter } from '../../models/tools';
 import { useFolderNavigationHotkeys } from './useFolderNavigationHotkeys';

@@ -1,10 +1,9 @@
-import { render, minimalElementsCache } from '../../../helpers/test/helper';
+import { render } from '../../../helpers/test/helper';
 import { MessageErrors, MessageExtended } from '../../../models/message';
 import ExtraErrors from './ExtraErrors';
 
 describe('Errors banner', () => {
     const setup = async (errors: MessageErrors) => {
-        minimalElementsCache();
         const message = { localID: 'localID', errors } as MessageExtended;
         const { getByTestId } = await render(<ExtraErrors message={message} />);
         return getByTestId('errors-banner');

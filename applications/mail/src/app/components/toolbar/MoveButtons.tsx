@@ -8,7 +8,7 @@ import { Folder } from '@proton/shared/lib/interfaces/Folder';
 import { Breakpoints } from '../../models/utils';
 import { getFolderName, isCustomFolder, isCustomLabel } from '../../helpers/labels';
 import { useMoveToFolder } from '../../hooks/useApplyLabels';
-import { useGetElementsFromIDs } from '../../hooks/mailbox/useElementsCache';
+import { useGetElementsFromIDs } from '../../hooks/mailbox/useElements';
 import DeleteButton from './DeleteButton';
 
 const { TRASH, SPAM, DRAFTS, ARCHIVE, SENT, INBOX, ALL_DRAFTS, ALL_SENT, STARRED, ALL_MAIL, SCHEDULED } =
