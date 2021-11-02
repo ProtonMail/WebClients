@@ -16,7 +16,6 @@ import { ItemProps } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 import useFileBrowserItem from '../useFileBrowserItem';
 import LocationCell from './Cells/LocationCell';
-import DescriptiveTypeCell from './Cells/DescriptiveTypeCell';
 import TimeCell from './Cells/TimeCell';
 import SizeCell from './Cells/SizeCell';
 import NameCell from './Cells/NameCell';
@@ -153,12 +152,6 @@ const ItemRow = ({
                 {columns.includes('location') && (
                     <TableCell className={classnames(['m0', isDesktop ? 'w20' : 'w25'])}>
                         <LocationCell shareId={shareId} parentLinkId={item.ParentLinkID} />
-                    </TableCell>
-                )}
-
-                {columns.includes('type') && (
-                    <TableCell className="m0 w15">
-                        <DescriptiveTypeCell mimeType={item.MIMEType} linkType={item.Type} />
                     </TableCell>
                 )}
 
