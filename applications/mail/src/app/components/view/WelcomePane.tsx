@@ -150,7 +150,7 @@ const WelcomePane = ({ mailSettings, location, labelCount }: Props) => {
                                 color="weak"
                                 shape="outline"
                                 path={isEasySwitchEnabled ? '/easy-switch' : '/import-export'}
-                                app={isEasySwitchEnabled ? APPS.PROTONACCOUNT : APPS.PROTONMAIL}
+                                app={APPS.PROTONMAIL}
                                 target="_self"
                                 className="inline-block mtauto"
                             >{c('Action').t`Import messages`}</ButtonLike>

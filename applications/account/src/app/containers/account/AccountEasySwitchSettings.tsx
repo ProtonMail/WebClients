@@ -43,10 +43,10 @@ const AccountEasySwitchSettings = ({ setActiveSection, location }: SettingsProps
     const isEasySwitchEnabled = easySwitchFeature.feature?.Value;
 
     useEffect(() => {
-        if (!isEasySwitchEnabled) {
+        if (!isEasySwitchEnabled && !easySwitchFeature.loading) {
             goToSettings('/import-export', APPS.PROTONMAIL);
         }
-    }, [isEasySwitchEnabled]);
+    }, [easySwitchFeature, isEasySwitchEnabled]);
 
     if (easySwitchFeature.loading) {
         return <PrivateMainAreaLoading />;
