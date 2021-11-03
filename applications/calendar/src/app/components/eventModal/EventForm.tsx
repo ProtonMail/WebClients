@@ -286,6 +286,7 @@ const EventForm = ({
                 model={model}
                 setModel={setModel}
                 isCreateEvent={isCreateEvent}
+                emailNotificationsEnabled={emailNotificationsEnabled}
             />
         </IconRow>
     );

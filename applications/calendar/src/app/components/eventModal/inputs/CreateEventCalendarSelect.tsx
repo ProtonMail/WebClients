@@ -1,6 +1,7 @@
 import { useLoading, useGetCalendarBootstrap, useGetAddresses } from '@proton/components';
 import CalendarSelect from '@proton/components/components/calendarSelect/CalendarSelect';
 import { Props as SelectProps } from '@proton/components/components/selectTwo/SelectTwo';
+import { getDeviceNotifications } from '@proton/shared/lib/calendar/notificationModel';
 import { EventModel } from '@proton/shared/lib/interfaces/calendar';
 import { notificationsToModel } from '@proton/shared/lib/calendar/notificationsToModel';
 import { getInitialMemberModel } from '../eventForm/state';
@@ -9,10 +10,18 @@ export interface Props extends Omit<SelectProps<string>, 'children'> {
     model: EventModel;
     setModel: (value: EventModel) => void;
     isCreateEvent: boolean;
+    emailNotificationsEnabled: boolean;
     frozen?: boolean;
 }
 
-const CreateEventCalendarSelect = ({ model, setModel, isCreateEvent, frozen = false, ...rest }: Props) => {
+const CreateEventCalendarSelect = ({
+    model,
+    setModel,
+    isCreateEvent,
+    frozen = false,
+    emailNotificationsEnabled,
+    ...rest
+}: Props) => {
     const [loading, withLoading] = useLoading();
     const getCalendarBootstrap = useGetCalendarBootstrap();
     const getAddresses = useGetAddresses();
@@ -71,8 +80,12 @@ const CreateEventCalendarSelect = ({ model, setModel, isCreateEvent, frozen = fa
             calendar: { id: newId, color: newColor, isSubscribed: false },
             ...getInitialMemberModel(Addresses, Members, Member, Address),
             defaultEventDuration,
-            partDayNotifications,
-            fullDayNotifications,
+            partDayNotifications: emailNotificationsEnabled
+                ? partDayNotifications
+                : getDeviceNotifications(partDayNotifications),
+            fullDayNotifications: emailNotificationsEnabled
+                ? fullDayNotifications
+                : getDeviceNotifications(fullDayNotifications),
         });
     };
 

@@ -368,7 +368,8 @@ const InteractiveCalendarView = ({
 
     const getUpdateModel = (
         { calendarData, eventData, eventReadResult, eventRecurrence }: CalendarViewEventData,
-        partstat?: ICAL_ATTENDEE_STATUS
+        partstat?: ICAL_ATTENDEE_STATUS,
+        emailNotificationsEnabled?: boolean
     ): EventModel | undefined => {
         if (
             !eventData ||
