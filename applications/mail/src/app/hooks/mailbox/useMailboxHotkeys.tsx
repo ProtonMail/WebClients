@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { MAILBOX_LABEL_IDS, VIEW_LAYOUT } from '@proton/shared/lib/constants';
 import { KeyboardKey } from '@proton/shared/lib/interfaces';
 import { HotkeyTuple, useFolders, useHotkeys, useLabels, useMailSettings } from '@proton/components';
 import { useHistory } from 'react-router-dom';
@@ -91,6 +91,10 @@ export const useMailboxHotkeys = (
     const star = useStar();
     const markAs = useMarkAs();
     const permanentDelete = usePermanentDelete(labelID);
+
+    // Disable selection shortcut in row mode when consulting an message
+    // If no element is selected, it means that the user is on the message list, where we want the shortcut to be enabled
+    const canSelectItem = mailSettings?.ViewLayout === VIEW_LAYOUT.COLUMN || !elementID;
 
     const getElementsForShortcuts = () => {
         let elements: Element[] = [];
@@ -226,7 +230,7 @@ export const useMailboxHotkeys = (
             (e) => {
                 const id = getFocusedId();
                 const { activeElement } = document;
-                if (id && activeElement?.tagName.toLocaleLowerCase() !== 'button') {
+                if (id && activeElement?.tagName.toLocaleLowerCase() !== 'button' && canSelectItem) {
                     e.preventDefault();
                     handleCheckOnlyOne(id);
                 }
