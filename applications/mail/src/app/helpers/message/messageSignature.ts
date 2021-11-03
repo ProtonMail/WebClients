@@ -2,6 +2,7 @@ import { MailSettings } from '@proton/shared/lib/interfaces';
 import { PM_SIGNATURE } from '@proton/shared/lib/constants';
 import { isPlainText } from '@proton/shared/lib/mail/messages';
 import { message } from '@proton/shared/lib/sanitize';
+import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import { dedentTpl } from '../dedent';
 import { replaceLineBreaks } from '../string';
 import { parseInDiv, isHTMLEmpty } from '../dom';
@@ -24,9 +25,15 @@ const getProtonSignature = (mailSettings: Partial<MailSettings> = {}) =>
 /**
  * Generate a space tag, it can be hidden from the UX via a className
  */
-const createSpace = (className = '') => {
-    const tagOpen = className ? `<div class="${className}">` : '<div>';
-    return `${tagOpen}<br /></div>`;
+const createSpace = (style?: string, className?: string) => {
+    const tagOpen = [
+        'div',
+        style === undefined ? undefined : `style="${style}"`,
+        className === undefined ? undefined : `class="${className}"`,
+    ]
+        .filter(isTruthy)
+        .join(' ');
+    return `<${tagOpen}><br /></div>`;
 };
 
 /**
@@ -36,13 +43,13 @@ const createSpace = (className = '') => {
  *     protonSignature: 2 spaces + protonSignature
  *     user + proton signature: 2 spaces + addressSignature + 1 space + protonSignature
  */
-const getSpaces = (signature: string, protonSignature: string, isReply = false) => {
+const getSpaces = (signature: string, protonSignature: string, fontStyle: string | undefined, isReply = false) => {
     const isUserEmpty = isHTMLEmpty(signature);
     const isEmptySignature = isUserEmpty && !protonSignature;
     return {
-        start: isEmptySignature ? createSpace() : createSpace() + createSpace(),
-        end: isReply ? createSpace() : '',
-        between: !isUserEmpty && protonSignature ? createSpace() : '',
+        start: isEmptySignature ? createSpace(fontStyle) : createSpace(fontStyle) + createSpace(fontStyle),
+        end: isReply ? createSpace(fontStyle) : '',
+        between: !isUserEmpty && protonSignature ? createSpace(fontStyle) : '',
     };
 };
 
@@ -65,15 +72,17 @@ const getClassNamesSignature = (signature: string, protonSignature: string) => {
 export const templateBuilder = (
     signature = '',
     mailSettings: Partial<MailSettings> | undefined = {},
+    fontStyle: string | undefined,
     isReply = false,
     noSpace = false
 ) => {
     const protonSignature = getProtonSignature(mailSettings);
     const { userClass, protonClass, containerClass } = getClassNamesSignature(signature, protonSignature);
-    const space = getSpaces(signature, protonSignature, isReply);
+    const space = getSpaces(signature, protonSignature, fontStyle, isReply);
 
+    const defaultStyle = fontStyle === undefined ? '' : `style="${fontStyle}" `;
     const template = dedentTpl`
-        <div class="${CLASSNAME_SIGNATURE_CONTAINER} ${containerClass}">
+        <div ${defaultStyle}class="${CLASSNAME_SIGNATURE_CONTAINER} ${containerClass}">
             <div class="${CLASSNAME_SIGNATURE_USER} ${userClass}">
                 ${replaceLineBreaks(signature)}
             </div>
@@ -101,10 +110,11 @@ export const insertSignature = (
     signature = '',
     action: MESSAGE_ACTIONS,
     mailSettings: MailSettings,
+    fontStyle: string | undefined,
     isAfter = false
 ) => {
     const position = isAfter ? 'beforeend' : 'afterbegin';
-    const template = templateBuilder(signature, mailSettings, action !== MESSAGE_ACTIONS.NEW);
+    const template = templateBuilder(signature, mailSettings, fontStyle, action !== MESSAGE_ACTIONS.NEW);
 
     // Parse the current message and append before it the signature
     const element = parseInDiv(content);
@@ -119,12 +129,13 @@ export const insertSignature = (
 export const changeSignature = (
     message: MessageState,
     mailSettings: Partial<MailSettings> | undefined,
+    fontStyle: string | undefined,
     oldSignature: string,
     newSignature: string
 ) => {
     if (isPlainText(message.data)) {
-        const oldTemplate = templateBuilder(oldSignature, mailSettings, false, true);
-        const newTemplate = templateBuilder(newSignature, mailSettings, false, true);
+        const oldTemplate = templateBuilder(oldSignature, mailSettings, fontStyle, false, true);
+        const newTemplate = templateBuilder(newSignature, mailSettings, fontStyle, false, true);
         const content = getPlainTextContent(message);
         const oldSignatureText = exportPlainText(oldTemplate).trim();
         const newSignatureText = exportPlainText(newTemplate).trim();

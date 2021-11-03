@@ -83,10 +83,9 @@ const SquireEditorWrapper = ({
 
     const isPlainText = testIsPlainText(message.data);
     const rightToLeft = message.data?.RightToLeft ? RIGHT_TO_LEFT.ON : RIGHT_TO_LEFT.OFF;
-    const defaultFont = useMemo(
-        () => (mailSettings ? pick(mailSettings, ['FontFace', 'FontSize']) : undefined),
-        [mailSettings]
-    );
+    const defaultFont = useMemo(() => {
+        return mailSettings ? pick(mailSettings, ['FontFace', 'FontSize']) : undefined;
+    }, [mailSettings]);
 
     const metadata: SquireEditorMetadata = useMemo(
         () => ({
