@@ -621,7 +621,7 @@
         "+ ${ storage } 存储空间"
       ],
       "+ ${ vpn } connection": [
-        "+ ${ vpn } VPN 连接数"
+        "+ ${ vpn } 台设备可同时接入 VPN"
       ]
     },
     "Alert": {
@@ -855,6 +855,12 @@
       ]
     },
     "Calendar subscription not synced error": {
+      "Calendar could not be decrypted": [
+        ""
+      ],
+      "Calendar could not be found": [
+        ""
+      ],
       "Calendar is syncing": [
         "日历正在同步中"
       ],
@@ -1092,7 +1098,7 @@
         "无法验证手机，请稍候再重试"
       ],
       "Checkout expired, please try again": [
-        ""
+        "支付超时，请重试"
       ],
       "Contact could not be saved": [
         "无法保存联系人"
@@ -1218,7 +1224,7 @@
         "主密钥尚未解密"
       ],
       "Primary address key is not decrypted.": [
-        ""
+        "主密钥尚未解密。"
       ],
       "Process aborted": [
         "操作已中止"
@@ -1326,7 +1332,7 @@
         "您必须设置一个名称"
       ],
       "Your browser does not support uploading folders": [
-        ""
+        "您的浏览器不支持上传文件夹"
       ],
       "Your import will not be processed.": [
         "您的导入将不会被处理。"
@@ -1558,7 +1564,7 @@
         "${ appName } 需要您的权限来${ enableDesktopNotifications }"
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
-        ""
+        "${ calendarsToBeCreatedCount } 个新日历"
       ],
       "${ calendarsToBeMerged } merged calendar": [
         ""
@@ -1612,10 +1618,10 @@
         "${ namesWithoutLast } 和 ${ nameOfLast }"
       ],
       "${ numContactGroups } contact group": [
-        ""
+        "${ numContactGroups } 个联系人群组"
       ],
       "${ numContacts } contact": [
-        ""
+        "${ numContacts } 名联系人"
       ],
       "${ pausedCount } Paused": [
         "${ pausedCount } 已暂停"
@@ -1630,13 +1636,13 @@
         "添加 VPN 订阅，可整体享 ${ saveExtra20 } 优惠。"
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
-        ""
+        "已选中 ${ providerCalendars.length } 个日历中的 ${ selectedCalendarsTotal } 个"
       ],
       "${ selectedFoldersCount } folder selected": [
-        ""
+        "已选择 ${ selectedFoldersCount } 个文件夹"
       ],
       "${ selectedFoldersCount } label selected": [
-        ""
+        "已选择 ${ selectedFoldersCount } 个标签"
       ],
       "${ speed }/s": [
         "${ speed }/s"
@@ -1648,13 +1654,13 @@
         "${ uploadName } 已存在于该路径。"
       ],
       "${ vpnAppName } Free": [
-        "${ vpnAppName } 免费"
+        "${ vpnAppName } 免费版"
       ],
       "(${ memberCount } member)": [
-        ""
+        "（${ memberCount } 位成员）"
       ],
       "(Mail + VPN)": [
-        "(邮件 + VPN)"
+        "(邮箱 + VPN)"
       ],
       "* Customizable features": [
         "* 可以根据需求自行调整"
@@ -1705,10 +1711,10 @@
         "使用比特币支付后，请按以下步骤升级账户。"
       ],
       "All (${ totalFoldersCount } folder)": [
-        ""
+        "全部（${ totalFoldersCount } 个文件夹）"
       ],
       "All (${ totalFoldersCount } label)": [
-        ""
+        "全部（${ totalFoldersCount } 个标签）"
       ],
       "Allows you to host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
         "允许您在自己的域名下使用${ mailAppName }，例如john.smith@example.com"
@@ -1717,7 +1723,7 @@
         "金额 ${ amount } 太小。"
       ],
       "An active recovery file": [
-        ""
+        "一个激活的恢复文件"
       ],
       "and": [
         ""
@@ -1735,7 +1741,7 @@
         "无论设置中键盘快捷键是否激活，一些基本的导航和操作始终可用"
       ],
       "Because ${ appName } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
-        ""
+        "因为 ${ appName } 是端到端加密的，我们无法为您\n访问或解密您的文件。要在密码重置后解锁您的网盘，\n您必须具备以下条件之一："
       ],
       "Billed as ${ billedPrice } every 2 years": [
         "每两年支付 ${ billedPrice }"
@@ -1759,7 +1765,7 @@
         "2020 年黑色星期五新用户优惠已计入"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
-        "降级为免费用户后，您将永远失去这些特权，无论以后是否再开通付费账户。"
+        "一旦降级为免费用户，无论今后是否再次付费升级，您都将永远失去这些特权。"
       ],
       "Canceled": [
         "已取消"
@@ -1795,10 +1801,10 @@
         ""
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
-        ""
+        "给导入的邮件加标签，指定导入的时间范围，并选择要导入的文件夹。"
       ],
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
-        ""
+        "给导入的邮件加标签，指定导入的时间范围，并选择要导入的标签。"
       ],
       "Create a new contact group": [
         "创建联系人群组"
@@ -1817,6 +1823,9 @@
       ],
       "Creating share": [
         "正在创建分享"
+      ],
+      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
+        "支持来自 Outlook、Outlook Express、雅虎邮箱、Hotmail、Eudora 和其他一些应用程序的 CSV 文件，以及 vCard 3.1 和 4.0 格式（UTF-8 编码）。"
       ],
       "Delete drive": [
         ""
@@ -1897,7 +1906,7 @@
         "释放一些空间或与您的管理员联系。"
       ],
       "Full-featured VPN with speed up to 10 Gbps.": [
-        "全功能的 VPN 速度最高为 10 Gbps."
+        "速度高达 10 Gbps 的全功能 VPN。"
       ],
       "Go to \"My files\" and upload some files first.": [
         "请先转到“我的文件”并上传一些文件。"
@@ -1921,13 +1930,13 @@
         ""
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
-        ""
+        "导入 ${ contactsFragment }和 ${ contactsGroupsFragment }"
       ],
       "Import ${ selectedCalendarsCount } of ${ totalCalendarsCount } calendar": [
-        ""
+        "导入 ${ selectedCalendarsCount }/${ totalCalendarsCount } 个日历"
       ],
       "Import from": [
-        ""
+        "导入自"
       ],
       "Import in progress": [
         "导入中"
@@ -1939,7 +1948,7 @@
         "已包含在内"
       ],
       "Inherited from parent folder": [
-        ""
+        "继承自父文件夹"
       ],
       "Initializing": [
         "正在初始化"
@@ -1954,7 +1963,7 @@
         "网络连接已恢复。"
       ],
       "Just confirm your selection and we'll do the rest.": [
-        ""
+        "只需确认您的选择，剩下的交由我们！"
       ],
       "Key fingerprint": [
         "指纹码"
@@ -1984,7 +1993,7 @@
         "正在加载分享"
       ],
       "Merged": [
-        ""
+        "已合并"
       ],
       "More": [
         "其他选项"
@@ -1996,7 +2005,7 @@
         "我的链接"
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
-        ""
+        "设置新文件夹的名称和位置，若不选取父文件夹，则将创建顶层文件夹。"
       ],
       "Network issue": [
         "网络问题"
@@ -2005,7 +2014,7 @@
         ""
       ],
       "Next you'll need to log in to your Google account and allow us to access your data.": [
-        ""
+        "接下来您需要登录 Google 账户并允许我们访问您的数据。"
       ],
       "No": [
         "否"
@@ -2038,7 +2047,7 @@
         "无法自定义"
       ],
       "Note: Data may still be available locally on devices where you have installed ${ appName }.": [
-        ""
+        "请注意：安装过 ${ appName } 的设备上仍可能存在本地数据。"
       ],
       "Number of VPN connections which can be assigned to users. Each connected device consumes one VPN connection.": [
         "可分配给用户的 VPN 连接数，每台连接设备占用一个名额。"
@@ -2083,7 +2092,7 @@
         "请注意，点击确认按钮后，您的账户余额将剩余 ${ creditsRemaining }。"
       ],
       "Please select the folders you would like to import:": [
-        ""
+        "请选择要导入的文件夹："
       ],
       "Please try again, use a different payment method, or call your bank for assistance.": [
         "请用其他方式支付，或联系银行寻求帮助。"
@@ -2119,7 +2128,7 @@
         "ProtonMail Plus 仅限一名用户使用，5 GB 存储空间起步。"
       ],
       "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } includes ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } VPN connection.": [
-        "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } 允许最多 ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } 个设备连接。"
+        "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } 最多允许 ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } 台设备同时连接。"
       ],
       "Queued": [
         "等待中"
@@ -2149,7 +2158,7 @@
         ""
       ],
       "Servers are unreachable. Please try again in a few minutes": [
-        ""
+        "服务器无法访问，请过几分钟后再试"
       ],
       "Session timed out.": [
         "会话已超时。"
@@ -2179,10 +2188,10 @@
         "客服团队"
       ],
       "Switch to ${ professionalPlan } to add more connections.": [
-        "升级到 ${ professionalPlan } 以添加更多连接数。"
+        "开通 ${ professionalPlan } 可连接更多设备。"
       ],
       "Switch to ${ professionalPlan } to add more users.": [
-        "升级到 ${ professionalPlan } 以添加更多用户。"
+        "开通 ${ professionalPlan } 可添加更多用户。"
       ],
       "Thank you for supporting our mission.": [
         "感谢您支持我们的使命。"
@@ -2208,8 +2217,8 @@
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "此链接可能使用了欺骗性域名，请确认可靠性后再打开。"
       ],
-      "This link was created in a previous version and can not be modified. Delete this link and create a new one to change the settings.": [
-        "此链接是通过先前版本创建的，且无法修改。请删除此链接并创建一个新链接以更改设置。"
+      "This link was created in\na previous version and can not be modified. Delete this link and create a\nnew one to change the settings.": [
+        ""
       ],
       "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
         "此链接将被永久禁用，无人再能通过此链接访问您的文件。您需要新建一个链接才能重新共享该文件。"
@@ -2239,16 +2248,16 @@
         "开启地址密钥验证前，您需要先信任其若干个公钥，包括您要用于发送邮件的密钥。这样可以防止其密钥被伪造。"
       ],
       "Transfer canceled for file \"${ name }\"": [
-        ""
+        "已取消文件“${ name }”的传输"
       ],
       "Transfer canceled for folder \"${ name }\"": [
-        ""
+        "已取消文件夹“${ name }”的传输"
       ],
       "Transfer skipped for file \"${ file.name }\"": [
-        ""
+        "已跳过文件“${ file.name }”的传输"
       ],
       "Transfer skipped for folder \"${ folderName }\"": [
-        ""
+        "已跳过文件夹“${ folderName }”的传输"
       ],
       "Trash": [
         "回收站"
@@ -2281,10 +2290,7 @@
         "验证将在新标签页中进行，请停止拦截弹窗。您不必为此付费，验证结束后所用金额将立即退还。"
       ],
       "VPN + ${ mailAppName } bundle for families and small businesses.": [
-        "VPN + ${ mailAppName } 捆包适合家庭和小企业。"
-      ],
-      "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
-        "我们支持从 Outlook、Outlook Express、Yahoo! Mail、Hotmail、Eudora 等应用中导入 CSV 文件或导入 （UTF-8 编码）的 vCard 4.0 文件。"
+        "VPN + ${ mailAppName } 套装，适合家庭和小企业。"
       ],
       "We use 3-D Secure to protect your payments.": [
         "我们使用 3-D Secure 保护您的支付安全。"
@@ -2293,7 +2299,7 @@
         "我们将在新标签页中为您打开 PayPal 完成支付，如果您使用了弹窗屏蔽插件，请将其关闭后再继续。"
       ],
       "We'll notify you when the import is done.": [
-        ""
+        "导入完成时我们将通知您。"
       ],
       "Week": [
         "周"
@@ -2302,7 +2308,7 @@
         "您想要做什么？"
       ],
       "What do you want to import from your Google account?": [
-        ""
+        "您想从您的 Google 账户中导入哪些内容？"
       ],
       "What would you like to do?": [
         ""
@@ -2323,10 +2329,10 @@
         "您已登录 ${ user.Name }（${ user.Email }），并且权限有限。"
       ],
       "You can check the progress ${ importProgressLink }.": [
-        ""
+        "您可以在 ${ importProgressLink } 查看导入进度。"
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
-        ""
+        "您可以开启通知功能，以便此文件夹有新邮件时收到提醒。"
       ],
       "You cannot undo this action.": [
         "您无法撤销此操作。"
@@ -2377,7 +2383,7 @@
         "您的发卡银行要求您进行 3-D Secure 验证以确保安全。"
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
-        ""
+        "从 ${ importedEmailAddressStrong } 到您的 Proton 账户的导入数据已准备就绪。"
       ],
       "Your download has been canceled.": [
         "您的下载已取消。"
@@ -2404,10 +2410,10 @@
         "您的电话号码将只会用于此一次性验证"
       ],
       "Your previous password": [
-        ""
+        "您先前的密码"
       ],
       "Your previous recovery phrase": [
-        ""
+        "您先前的恢复密语"
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "您的 Proton 账户已欠费停用，请先支付逾期账单再继续使用。"
@@ -2827,13 +2833,13 @@
         ""
       ],
       "Last 12 months only": [
-        ""
+        "仅过去 12 个月"
       ],
       "Last 3 months only": [
-        ""
+        "仅过去 3 个月"
       ],
       "Last month only": [
-        ""
+        "仅上个月"
       ],
       "Mailbox password": [
         "邮箱密码"
@@ -2869,7 +2875,7 @@
         "付款人"
       ],
       "PGP scheme": [
-        ""
+        "PGP 方案"
       ],
       "Phone number": [
         "手机号码"
@@ -2956,7 +2962,7 @@
         "合计"
       ],
       "Total (${ countdown })": [
-        "合计 (${ countdown })"
+        "合计（${ countdown }）"
       ],
       "Two-factor authentication code": [
         "双重验证码"
@@ -3210,7 +3216,10 @@
       ]
     },
     "Mail import summary": {
-      "${ messagesFragment } since ${ periodFragment } and label them as ${ label }": [
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        ""
+      ],
+      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
         ""
       ]
     },
@@ -3559,7 +3568,7 @@
         "${ n } 个服务器"
       ],
       "${ n } VPN connection": [
-        "${ n } VPN 连接"
+        "可同时连接 ${ n } 台设备"
       ]
     },
     "Plan feature": {
@@ -3578,8 +3587,8 @@
       "1 user": [
         "1 名用户"
       ],
-      "1200+ servers in ${ plusCountries } country": [
-        "1200+ 服务器在 ${ plusCountries } 国家"
+      "1300+ servers in ${ plusCountries } country": [
+        ""
       ],
       "20 GB storage": [
         "20 GB 存储空间"
@@ -3633,7 +3642,7 @@
         "速度较快"
       ],
       "Highest speed (up to 10 Gbps)": [
-        "速度最快（最高可达 10 Gbps）"
+        "速度最快（可达 10 Gbps）"
       ],
       "Includes 6 user accounts": [
         "包括6个用户帐户"
@@ -3800,7 +3809,7 @@
       "You have successfully unsubscribed": [
         "您已成功降级"
       ],
-      "Your files were successfully recovered to \"My files\"": [
+      "Your files were successfully recovered to \"My files\".": [
         ""
       ]
     },
@@ -4307,7 +4316,7 @@
         "该链接不存在或已失效"
       ],
       "Total (monthly)": [
-        "合计（按月）"
+        "合计（每月）"
       ],
       "Total size": [
         "总大小"
@@ -4634,9 +4643,6 @@
       ],
       "You will lose any customization you made so far.": [
         ""
-      ],
-      "Your local date & time settings seem to be out of sync.": [
-        "您的本地日期和时间设置似乎不同步。"
       ]
     }
   }

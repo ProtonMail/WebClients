@@ -826,6 +826,9 @@
       "Try another method": [
         "Isprobajte drugu metodu"
       ],
+      "Turn on tracker protection": [
+        ""
+      ],
       "Underline": [
         "Podvučeno"
       ],
@@ -1445,6 +1448,12 @@
       ]
     },
     "Calendar subscription not synced error": {
+      "Calendar could not be decrypted": [
+        ""
+      ],
+      "Calendar could not be found": [
+        ""
+      ],
       "Calendar is syncing": [
         ""
       ],
@@ -1464,6 +1473,14 @@
         ""
       ],
       "More than 12 hours passed since last update": [
+        ""
+      ]
+    },
+    "Collapsible tooltip": {
+      "Close": [
+        ""
+      ],
+      "Open": [
         ""
       ]
     },
@@ -2857,11 +2874,6 @@
         "",
         ""
       ],
-      "${ numberOfTrackers } email tracker found": [
-        "",
-        "",
-        ""
-      ],
       "${ numContactGroups } contact group": [
         "",
         "",
@@ -3201,6 +3213,9 @@
       "Create recovery phrase": [
         ""
       ],
+      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
+        ""
+      ],
       "Custom": [
         "Prilagođeno"
       ],
@@ -3273,6 +3288,20 @@
       ],
       "Email address": [
         "Adresa e-pošte"
+      ],
+      "Email tracker protection is disabled": [
+        ""
+      ],
+      "Email trackers can violate your privacy. Proton did not find any trackers on this message.": [
+        ""
+      ],
+      "Email trackers can violate your privacy. Proton found and blocked ${ numberOfTrackers } tracker.": [
+        "",
+        "",
+        ""
+      ],
+      "Email trackers can violate your privacy. Turn on tracker protection to prevent senders from knowing whether and when you have opened a message.": [
+        ""
       ],
       "embedded image": [
         "ugrađena slika",
@@ -3651,9 +3680,6 @@
       "Print email": [
         "Ispiši e-poštu"
       ],
-      "Protect yourself from trackers. Turn on email tracker protection in settings": [
-        ""
-      ],
       "Proton doesn't make money by abusing privacy.": [
         ""
       ],
@@ -3904,9 +3930,6 @@
       "To fight spam and abuse, please verify you are human.": [
         "U borbi protiv spama i zlouporabe, molimo potvrdite da ste čovjek."
       ],
-      "To protect your privacy, Proton blocked email trackers in this message": [
-        ""
-      ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "Da bismo ponovno potpisali svoje kontakte, moramo svaki kontakt provjeriti s popisom ključeva za šifriranje dostupnih na vašem računu. Ako se ne pronađe podudaranje, vaš će se kontakt ponovo potpisati s primarnim ključem šifriranja."
       ],
@@ -3927,6 +3950,9 @@
       ],
       "Turn off content search. Activation progress won't be lost.": [
         "Isključite pretraživanje sadržaja. Napredak aktivacije neće se izgubiti."
+      ],
+      "Turn on to search the content of your messages": [
+        ""
       ],
       "Unsupported file": [
         "Nepodržana datoteka"
@@ -4005,9 +4031,6 @@
       ],
       "We could not verify the sender's trusted keys.": [
         "Nismo uspjeli provjeriti pouzdane ključeve pošiljatelja."
-      ],
-      "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
-        "Podržavamo uvoz CSV datoteka iz Outlooka, Outlook Express-a, Yahoo! Mail, Hotmail, Eudora i drugih aplikacija. Također podržavamo uvoz vCard 4.0. (UTF-8 kodiranje)."
       ],
       "We use 3-D Secure to protect your payments.": [
         "Za zaštitu vaših plaćanja koristimo 3-D Secure."
@@ -5178,7 +5201,14 @@
       ]
     },
     "Mail import summary": {
-      "${ messagesFragment } since ${ periodFragment } and label them as ${ label }": [
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        "",
+        "",
+        ""
+      ],
+      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        "",
+        "",
         ""
       ]
     },
@@ -5673,24 +5703,7 @@
         "Naziv"
       ]
     },
-    "Plan Feature": {
-      "${ n } server": [
-        "${ n } poslužitelj",
-        "${ n } poslužitelja",
-        "${ n } poslužitelja"
-      ],
-      "${ n } VPN connection": [
-        "${ n } VPN veza",
-        "${ n } VPN veze",
-        "${ n } VPN veza"
-      ]
-    },
     "Plan feature": {
-      "${ freeServers } in ${ freeCountries } country": [
-        "",
-        "",
-        ""
-      ],
       "0.5 GB storage": [
         "0.5 GB prostora za pohranu"
       ],
@@ -5703,11 +5716,6 @@
       "1 user": [
         "1 korisnik"
       ],
-      "1200+ servers in ${ plusCountries } country": [
-        "1200+ poslužitelja u ${ plusCountries } državi",
-        "1200+ poslužitelja u ${ plusCountries } države",
-        "1200+ poslužitelja u ${ plusCountries } država"
-      ],
       "20 GB storage": [
         "20 GB prostora za pohranu"
       ],
@@ -5716,11 +5724,6 @@
       ],
       "3 folders / labels": [
         "3 mape / oznake"
-      ],
-      "350+ servers in ${ basicCountries } country": [
-        "350+ poslužitelja u ${ basicCountries } državi",
-        "",
-        ""
       ],
       "5 addresses": [
         "5 adresa"
@@ -7180,6 +7183,23 @@
       ],
       "Windows, macOS, iOS, Linux, Android, Android TV, Chromebook, Chromecast": [
         "Windows, macOS, iOS, Linux, Android, Android TV, Chromebook, Chromecast"
+      ]
+    },
+    "VPN Plan Feature": {
+      "${ n } server": [
+        "",
+        "",
+        ""
+      ],
+      "${ n } VPN connection": [
+        "",
+        "",
+        ""
+      ],
+      "${ numberOfServers } in ${ numberOfCountries } country": [
+        "",
+        "",
+        ""
       ]
     },
     "Warning": {

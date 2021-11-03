@@ -699,6 +699,12 @@
       ]
     },
     "Calendar subscription not synced error": {
+      "Calendar could not be decrypted": [
+        ""
+      ],
+      "Calendar could not be found": [
+        ""
+      ],
       "Calendar is syncing": [
         "De agenda wordt gesynchroniseerd"
       ],
@@ -768,7 +774,7 @@
       "I use a different Proton account": [
         "Ik gebruik een ander Proton account"
       ],
-      "Missing feature(s) ": [
+      "Missing feature(s)": [
         ""
       ],
       "My reason isn't listed, please comment": [
@@ -2785,71 +2791,7 @@
         "Gemiddeld"
       ]
     },
-    "Plan Feature": {
-      "${ freeServersCount.free_vpn } server": [
-        "${ freeServersCount.free_vpn } server",
-        "${ freeServersCount.free_vpn } servers"
-      ],
-      "${ maxConnections } VPN connection": [
-        "${ maxConnections } VPN-verbinding",
-        "${ maxConnections } VPN-verbindingen"
-      ],
-      "${ n } server": [
-        "${ n } server",
-        "${ n } servers"
-      ],
-      "${ n } VPN connection": [
-        "${ n } VPN-verbinding",
-        "${ n } VPN-verbindingen"
-      ],
-      "${ nFreeServers } in ${ countries.free_vpn.count } country": [
-        "",
-        ""
-      ],
-      "1200+ servers in ${ countries[PLANS.VPNPLUS].count } country": [
-        "1200 servers in ${ landen[PLANS.VPNPLUS].count } land",
-        "1200 servers in ${ landen[PLANS.VPNPLUS].count } landen"
-      ],
-      "350+ servers in ${ countries[PLANS.VPNBASIC].count } country": [
-        "Meer dan 350 servers in ${ landen[PLANS.VPNBASIC].count } land",
-        "Meer dan 350 servers in ${ landen[PLANS.VPNBASIC].count }+ landen"
-      ],
-      "All advanced security features": [
-        "Alle geavanceerde beveiligingsfuncties"
-      ],
-      "Filesharing/P2P support": [
-        "Filesharing/P2P support"
-      ],
-      "High speed": [
-        "Hoge Snelheid"
-      ],
-      "Highest speed (10 Gbps)": [
-        "Hoogste snelheid (10 Gbps)"
-      ],
-      "Highest speed (up to 10 Gbps)": [
-        "Hoogste snelheid (tot 10 Gbps)"
-      ],
-      "Medium speed": [
-        "Gemiddelde snelheid"
-      ],
-      "ProtonMail Plus account": [
-        "ProtonMail Plus account"
-      ],
-      "ProtonMail Visionary account": [
-        "ProtonMail Visionary account"
-      ],
-      "Streaming service support": [
-        "Streaming service ondersteuning"
-      ],
-      "Strict no-logs policy": [
-        "Strikt geen-logboekbeleid"
-      ]
-    },
     "Plan feature": {
-      "${ freeServers } in ${ freeCountries } country": [
-        "",
-        ""
-      ],
       "0.5 GB storage": [
         "0.5 GB opslagruimte"
       ],
@@ -2862,10 +2804,6 @@
       "1 user": [
         "1 gebruiker"
       ],
-      "1200+ servers in ${ plusCountries } country": [
-        "1200+ servers in ${ plusCountries } land",
-        "1200 servers in ${ plusCountries } landen"
-      ],
       "20 GB storage": [
         "20 GB opslagruimte"
       ],
@@ -2874,10 +2812,6 @@
       ],
       "3 folders / labels": [
         "3 mappen / labels"
-      ],
-      "350+ servers in ${ basicCountries } country": [
-        "350+ servers in ${ basicCountries } land",
-        "350+ servers in ${ basicCountries } landen"
       ],
       "5 addresses": [
         "5 adressen"
@@ -2956,6 +2890,38 @@
       ],
       "Unlimited folders / labels": [
         "Onbeperkte mappen / labels"
+      ]
+    },
+    "Plan Feature": {
+      "All advanced security features": [
+        "Alle geavanceerde beveiligingsfuncties"
+      ],
+      "Filesharing/P2P support": [
+        "Filesharing/P2P support"
+      ],
+      "High speed": [
+        "Hoge Snelheid"
+      ],
+      "Highest speed (10 Gbps)": [
+        "Hoogste snelheid (10 Gbps)"
+      ],
+      "Highest speed (up to 10 Gbps)": [
+        "Hoogste snelheid (tot 10 Gbps)"
+      ],
+      "Medium speed": [
+        "Gemiddelde snelheid"
+      ],
+      "ProtonMail Plus account": [
+        "ProtonMail Plus account"
+      ],
+      "ProtonMail Visionary account": [
+        "ProtonMail Visionary account"
+      ],
+      "Streaming service support": [
+        "Streaming service ondersteuning"
+      ],
+      "Strict no-logs policy": [
+        "Strikt geen-logboekbeleid"
       ]
     },
     "Plan info": {
@@ -3702,6 +3668,20 @@
     "VPN info": {
       "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, and more.": [
         "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now en meer."
+      ]
+    },
+    "VPN Plan Feature": {
+      "${ n } server": [
+        "",
+        ""
+      ],
+      "${ n } VPN connection": [
+        "",
+        ""
+      ],
+      "${ numberOfServers } in ${ numberOfCountries } country": [
+        "",
+        ""
       ]
     },
     "VPN upsell feature": {

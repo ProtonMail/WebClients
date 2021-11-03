@@ -177,7 +177,7 @@
         "Змінити електронну адресу"
       ],
       "Edit label": [
-        "Змінити мітку"
+        "Редагувати мітку"
       ],
       "Edit phone number": [
         "Змінити номер телефону"
@@ -898,6 +898,12 @@
       ]
     },
     "Calendar subscription not synced error": {
+      "Calendar could not be decrypted": [
+        "Календар неможливо розшифрувати"
+      ],
+      "Calendar could not be found": [
+        "Календар неможливо знайти"
+      ],
       "Calendar is syncing": [
         "Календар синхронізується"
       ],
@@ -1349,7 +1355,7 @@
         "Не вдалося надіслати скасування"
       ],
       "Checkout expired, please try again": [
-        ""
+        "Час оформлення минув, повторіть спробу"
       ],
       "Contact could not be saved": [
         "Не вдалося зберегти контакт"
@@ -2195,6 +2201,9 @@
       "Create in": [
         "Створити у"
       ],
+      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
+        "Підтримуються файли CSV з Outlook, Outlook Express, Yahoo! Maіl, Hotmaіl, Eudora і деяких інших застосунків, а також формати vCard 3.1 і 4.0 (кодування UTF-8)."
+      ],
       "Custom": [
         "Власне"
       ],
@@ -2211,7 +2220,7 @@
         "Власне щороку"
       ],
       "Daily": [
-        "Щоденно"
+        "Щодня"
       ],
       "Discard changes?": [
         "Відхилити зміни?"
@@ -2606,9 +2615,6 @@
       "VPN + ${ mailAppName } bundle for families and small businesses.": [
         "Комплект VPN + ${ mailAppName } для родин та малого бізнесу."
       ],
-      "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
-        "Ми підтримуємо імпорт файлів CSV з Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora та деяких інших програм. Ми також підтримуємо імпорт vCard 4.0. (UTF-8 кодування)."
-      ],
       "We use 3-D Secure to protect your payments.": [
         "Ми застосовуємо 3-D Secure для захисту ваших платежів."
       ],
@@ -2757,7 +2763,7 @@
         "Ваш номер телефону використається лише для цієї одноразової перевірки."
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
-        "Робота вашого облікового запису Proton тимчасово зупинена. Щоб відновити роботу, будь ласка, сплатіть прострочені рахунки."
+        "Робота вашого облікового запису Proton тимчасово призупинена. Щоб відновити роботу, будь ласка, сплатіть протерміновані рахунки."
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "Схоже, системний часовий пояс змінено на ${ timezone }. Хочете оновити налаштування часового поясу?"
@@ -3374,7 +3380,7 @@
         "Створити мітку"
       ],
       "Edit folder": [
-        "Змінити теку"
+        "Редагувати теку"
       ],
       "Edit label": [
         "Редагувати мітку"
@@ -3536,8 +3542,17 @@
       ]
     },
     "Mail import summary": {
-      "${ messagesFragment } since ${ periodFragment } and label them as ${ label }": [
-        "${ messagesFragment } за ${ periodFragment } та позначити їх ${ label }"
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        "Імпортувати всі повідомлення з ${ selectedLabelsCount } міткою з усіх ${ totalLabelsCount }, починаючи з ${ periodFragment } та позначити їх міткою ${ label }",
+        "Імпортувати всі повідомлення з ${ selectedLabelsCount } мітками з усіх ${ totalLabelsCount }, починаючи з ${ periodFragment } та позначити їх міткою ${ label }",
+        "Імпортувати всі повідомлення з ${ selectedLabelsCount } мітками з усіх ${ totalLabelsCount }, починаючи з ${ periodFragment } та позначити їх міткою ${ label }",
+        "Імпортувати всі повідомлення з ${ selectedLabelsCount } мітками з усіх ${ totalLabelsCount }, починаючи з ${ periodFragment } та позначити їх міткою ${ label }"
+      ],
+      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        "Імпортувати всі повідомлення з ${ totalLabelsCount } міткою, починаючи з ${ periodFragment } та позначити їх міткою ${ label }",
+        "Імпортувати всі повідомлення з ${ totalLabelsCount } мітками, починаючи з ${ periodFragment } та позначити їх міткою ${ label }",
+        "Імпортувати всі повідомлення з ${ totalLabelsCount } мітками, починаючи з ${ periodFragment } та позначити їх міткою ${ label }",
+        "Імпортувати всі повідомлення з ${ totalLabelsCount } мітками, починаючи з ${ periodFragment } та позначити їх міткою ${ label }"
       ]
     },
     "Many Others": {
@@ -3573,19 +3588,19 @@
     },
     "Monthly recurring event, frequency": {
       "Every ${ interval } month ${ onDayString }": [
-        "Кожен ${ interval } місяць ${ onDayString }",
+        "Щомісяця ${ onDayString }",
         "Кожні ${ interval } місяці ${ onDayString }",
         "Кожні ${ interval } місяців ${ onDayString }",
         "Кожні ${ interval } місяців ${ onDayString }"
       ],
       "Every ${ interval } month ${ onDayString }, ${ timesString }": [
-        "Кожен ${ interval } місяць ${ onDayString }, ${ timesString }",
+        "Щомісяця ${ onDayString }, ${ timesString }",
         "Кожні ${ interval } місяці ${ onDayString }, ${ timesString }",
         "Кожні ${ interval } місяців ${ onDayString }, ${ timesString }",
         "Кожні ${ interval } місяців ${ onDayString }, ${ timesString }"
       ],
       "Every ${ interval } month ${ onDayString }, ${ untilString }": [
-        "Кожен ${ interval } місяць ${ onDayString }, ${ untilString }",
+        "Щомісяця ${ onDayString }, ${ untilString }",
         "Кожні ${ interval } місяці ${ onDayString }, ${ untilString }",
         "Кожні ${ interval } місяців ${ onDayString }, ${ untilString }",
         "Кожні ${ interval } місяців ${ onDayString }, ${ untilString }"
@@ -5296,7 +5311,7 @@
         "Кожні ${ interval } тижня у ${ multipleDaysString }, ${ timesString }"
       ],
       "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
-        "Кожен ${ interval } тиждень у ${ multipleDaysString }, ${ untilString }",
+        "Щотижня у ${ multipleDaysString }, ${ untilString }",
         "Кожні ${ interval } тижні у ${ multipleDaysString }, ${ untilString }",
         "Кожні ${ interval } тижнів у ${ multipleDaysString }, ${ untilString }",
         "Кожні ${ interval } тижнів у ${ multipleDaysString }, ${ untilString }"
@@ -5314,7 +5329,7 @@
         "Кожні ${ interval } тижнів щодня, ${ timesString }"
       ],
       "Every ${ interval } week on all days, ${ untilString }": [
-        "Кожен ${ interval } тиждень щодня, ${ untilString }",
+        "Щотижня, щодня, ${ untilString }",
         "Кожні ${ interval } тижні щодня, ${ untilString }",
         "Кожні ${ interval } тижнів щодня, ${ untilString }",
         "Кожні ${ interval } тижнів щодня, ${ untilString }"
@@ -5326,13 +5341,13 @@
         "Щоп'ятниці впродовж ${ interval } тижнів"
       ],
       "Every ${ interval } week on Friday, ${ timesString }": [
-        "Кожен ${ interval } тиждень у п'ятницю, ${ timesString }",
+        "Щотижня у п'ятницю, ${ timesString }",
         "Кожні ${ interval } тижні у п'ятницю, ${ timesString }",
         "Кожні ${ interval } тижнів у п'ятницю, ${ timesString }",
         "Кожні ${ interval } тижнів у п'ятницю, ${ timesString }"
       ],
       "Every ${ interval } week on Friday, ${ untilString }": [
-        "Кожен ${ interval } тиждень у п'ятницю, ${ untilString }",
+        "Щотижня у п'ятницю, ${ untilString }",
         "Кожні ${ interval } тижні у п'ятницю, ${ untilString }",
         "Кожні ${ interval } тижнів у п'ятницю, ${ untilString }",
         "Кожні ${ interval } тижнів у п'ятницю, ${ untilString }"
@@ -5350,7 +5365,7 @@
         "Кожні ${ interval } тижнів у понеділок, ${ timesString }"
       ],
       "Every ${ interval } week on Monday, ${ untilString }": [
-        "Кожен ${ interval } тиждень у понеділок, ${ untilString }",
+        "Щотижня у понеділок, ${ untilString }",
         "Кожні ${ interval } тижні у понеділок, ${ untilString }",
         "Кожні ${ interval } тижнів у понеділок, ${ untilString }",
         "Кожні ${ interval } тижнів у понеділок, ${ untilString }"
@@ -5362,13 +5377,13 @@
         "Щосуботи впродовж ${ interval } тижнів"
       ],
       "Every ${ interval } week on Saturday, ${ timesString }": [
-        "Кожен ${ interval } тиждень у суботу, ${ timesString }",
+        "Щотижня у суботу, ${ timesString }",
         "Кожні ${ interval } тижні у суботу, ${ timesString }",
         "Кожні ${ interval } тижнів у суботу, ${ timesString }",
         "Кожні ${ interval } тижнів у суботу, ${ timesString }"
       ],
       "Every ${ interval } week on Saturday, ${ untilString }": [
-        "Кожен ${ interval } тиждень у суботу, ${ untilString }",
+        "Щотижня у суботу, ${ untilString }",
         "Кожні ${ interval } тижні у суботу, ${ untilString }",
         "Кожні ${ interval } тижнів у суботу, ${ untilString }",
         "Кожні ${ interval } тижнів у суботу, ${ untilString }"
@@ -5386,7 +5401,7 @@
         "Кожні ${ interval } тижнів у неділю, ${ timesString }"
       ],
       "Every ${ interval } week on Sunday, ${ untilString }": [
-        "Кожен ${ interval } тиждень у неділю, ${ untilString }",
+        "Щотижня у неділю, ${ untilString }",
         "Кожні ${ interval } тижні у неділю, ${ untilString }",
         "Кожні ${ interval } тижнів у неділю, ${ untilString }",
         "Кожні ${ interval } тижнів у неділю, ${ untilString }"
@@ -5404,7 +5419,7 @@
         "Кожні ${ interval } тижнів у четвер, ${ timesString }"
       ],
       "Every ${ interval } week on Thursday, ${ untilString }": [
-        "Кожен ${ interval } тиждень у четвер, ${ untilString }",
+        "Щотижня у четвер, ${ untilString }",
         "Кожні ${ interval } тижні у четвер, ${ untilString }",
         "Кожні ${ interval } тижнів у четвер, ${ untilString }",
         "Кожні ${ interval } тижнів у четвер, ${ untilString }"
@@ -5422,7 +5437,7 @@
         "Кожні ${ interval } тижнів у вівторок, ${ timesString }"
       ],
       "Every ${ interval } week on Tuesday, ${ untilString }": [
-        "Кожен ${ interval } тиждень у вівторок, ${ untilString }",
+        "Щотижня у вівторок, ${ untilString }",
         "Кожні ${ interval } тижні у вівторок, ${ untilString }",
         "Кожні ${ interval } тижнів у вівторок, ${ untilString }",
         "Кожні ${ interval } тижнів у вівторок, ${ untilString }"
@@ -5440,7 +5455,7 @@
         "Кожні ${ interval } тижнів у середу, ${ timesString }"
       ],
       "Every ${ interval } week on Wednesday, ${ untilString }": [
-        "Кожен ${ interval } тиждень у середу, ${ untilString }",
+        "Щотижня у середу, ${ untilString }",
         "Кожні ${ interval } тижні у середу, ${ untilString }",
         "Кожні ${ interval } тижнів у середу, ${ untilString }",
         "Кожні ${ interval } тижнів у середу, ${ untilString }"
@@ -5552,19 +5567,19 @@
     },
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
-        "Кожен ${ interval } рік",
+        "Щороку",
         "Кожні ${ interval } роки",
         "Кожні ${ interval } років",
         "Кожні ${ interval } років"
       ],
       "Every ${ interval } year, ${ timesString }": [
-        "Кожен ${ interval } рік, ${ timesString }",
+        "Щороку, ${ timesString }",
         "Кожні ${ interval } роки, ${ timesString }",
         "Кожні ${ interval } років, ${ timesString }",
         "Кожні ${ interval } років, ${ timesString }"
       ],
       "Every ${ interval } year, ${ untilString }": [
-        "Кожен ${ interval } рік, ${ untilString }",
+        "Щороку, ${ untilString }",
         "Кожні ${ interval } роки, ${ untilString }",
         "Кожні ${ interval } років, ${ untilString }",
         "Кожні ${ interval } років, ${ untilString }"

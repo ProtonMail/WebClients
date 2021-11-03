@@ -822,6 +822,9 @@
       "Try another method": [
         "Intente otro método"
       ],
+      "Turn on tracker protection": [
+        "Activar protección de rastreo"
+      ],
       "Underline": [
         "Subrayado"
       ],
@@ -1437,6 +1440,12 @@
       ]
     },
     "Calendar subscription not synced error": {
+      "Calendar could not be decrypted": [
+        "No se pudo descifrar el calendario"
+      ],
+      "Calendar could not be found": [
+        "No se pudo encontrar el calendario"
+      ],
       "Calendar is syncing": [
         "El calendario se está sincronizando"
       ],
@@ -1457,6 +1466,14 @@
       ],
       "More than 12 hours passed since last update": [
         "Han pasado más de 12 horas desde la última actualización"
+      ]
+    },
+    "Collapsible tooltip": {
+      "Close": [
+        "Cerrar"
+      ],
+      "Open": [
+        "Abrir"
       ]
     },
     "Composer email icon": {
@@ -2816,10 +2833,6 @@
         "${ numberOfTrackers } rastreador de correo bloqueado",
         "${ numberOfTrackers } rastreadores de correo bloqueados"
       ],
-      "${ numberOfTrackers } email tracker found": [
-        "${ numberOfTrackers } rastreador de correo encontrado",
-        "${ numberOfTrackers } rastreadores de correo encontrados"
-      ],
       "${ numContactGroups } contact group": [
         "${ numContactGroups } grupo de contactos",
         "${ numContactGroups } grupos de contactos"
@@ -3135,6 +3148,9 @@
       "Create recovery phrase": [
         "Crear frase de recuperación"
       ],
+      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
+        "Se admiten archivos CSV de Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora y algunas otras aplicaciones, así como los formatos vCard 3.1 y 4.0 (codificación UTF-8)."
+      ],
       "Custom": [
         "Personalizado"
       ],
@@ -3205,6 +3221,19 @@
       ],
       "Email address": [
         "Dirección de correo"
+      ],
+      "Email tracker protection is disabled": [
+        "Protección de rastreador de correo deshabilitada"
+      ],
+      "Email trackers can violate your privacy. Proton did not find any trackers on this message.": [
+        "Los rastreadores de correo pueden violar su privacidad. Proton no encontró ningún rastreador en este mensaje."
+      ],
+      "Email trackers can violate your privacy. Proton found and blocked ${ numberOfTrackers } tracker.": [
+        "Los rastreadores de correo pueden violar su privacidad. Proton encontró y bloqueó ${ numberOfTrackers } rastreador.",
+        "Los rastreadores de correo pueden violar su privacidad. Proton encontró y bloqueó ${ numberOfTrackers } rastreadores."
+      ],
+      "Email trackers can violate your privacy. Turn on tracker protection to prevent senders from knowing whether and when you have opened a message.": [
+        "Los rastreadores de correo pueden violar su privacidad. Active la protección del rastreador para evitar que los remitentes sepan si ha abierto un mensaje y cuándo lo ha hecho."
       ],
       "embedded image": [
         "imagen incrustada",
@@ -3576,9 +3605,6 @@
       "Print email": [
         "Imprimir correo"
       ],
-      "Protect yourself from trackers. Turn on email tracker protection in settings": [
-        "Protéjase de los rastreadores. Active la protección de rastreador de correo en los ajustes."
-      ],
       "Proton doesn't make money by abusing privacy.": [
         "Proton no genera dinero abusando de la privacidad."
       ],
@@ -3827,9 +3853,6 @@
       "To fight spam and abuse, please verify you are human.": [
         "Para luchar contra el spam y el abuso, verifique que es humano."
       ],
-      "To protect your privacy, Proton blocked email trackers in this message": [
-        "Para proteger su privacidad, Proton ha bloqueado los rastreadores de correo en este mensaje"
-      ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "Para volver a firmar sus contactos, necesitamos verificar cada contacto contra la lista de claves de cifrado disponibles en su cuenta. Si no se encuentra ninguna coincidencia, su contacto volverá a estar firmado con la clave de cifrado principal."
       ],
@@ -3850,6 +3873,9 @@
       ],
       "Turn off content search. Activation progress won't be lost.": [
         "Desactivar la búsqueda de contenido. El progreso de activación no se perderá."
+      ],
+      "Turn on to search the content of your messages": [
+        "Actívelo para buscar el contenido de sus mensajes"
       ],
       "Unsupported file": [
         "Archivo no soportado"
@@ -3928,9 +3954,6 @@
       ],
       "We could not verify the sender's trusted keys.": [
         "No hemos podido verificar las claves de confianza del remitente."
-      ],
-      "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
-        "Soportamos la importación de archivos CSV desde Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora y otras aplicaciones. También soportamos la importación de la codificación vCard 4.0 (codificación UTF-8)."
       ],
       "We use 3-D Secure to protect your payments.": [
         "Usamos seguridad 3-D para proteger sus pagos."
@@ -5090,8 +5113,13 @@
       ]
     },
     "Mail import summary": {
-      "${ messagesFragment } since ${ periodFragment } and label them as ${ label }": [
-        "${ messagesFragment } desde ${ periodFragment } y etiquetarlos como ${ label }"
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        "Importar todos los mensajes de ${ selectedLabelsCount } de ${ totalLabelsCount } etiqueta desde ${ periodFragment } y etiquetarlos como ${ label }",
+        "Importar todos los mensajes de ${ selectedLabelsCount } de ${ totalLabelsCount } etiquetas desde ${ periodFragment } y etiquetarlos como ${ label }"
+      ],
+      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        "Importar todos los mensajes de ${ totalLabelsCount } etiqueta desde ${ periodFragment } y etiquetarlos como ${ label }",
+        "Importar todos los mensajes de ${ totalLabelsCount } etiquetas desde ${ periodFragment } y etiquetarlos como ${ label }"
       ]
     },
     "Mailbox": {
@@ -5582,21 +5610,7 @@
         "Nombre"
       ]
     },
-    "Plan Feature": {
-      "${ n } server": [
-        "${ n } servidor",
-        "${ n } servidores"
-      ],
-      "${ n } VPN connection": [
-        "${ n } conexión VPN",
-        "${ n } conexiones VPN"
-      ]
-    },
     "Plan feature": {
-      "${ freeServers } in ${ freeCountries } country": [
-        "${ freeServers } en ${ freeCountries } país",
-        "${ freeServers } en ${ freeCountries } países"
-      ],
       "0.5 GB storage": [
         "0.5 GB de almacenamiento"
       ],
@@ -5609,10 +5623,6 @@
       "1 user": [
         "1 usuario"
       ],
-      "1200+ servers in ${ plusCountries } country": [
-        "Más de 1200 servidores en ${ plusCountries } país",
-        "Más de 1200 servidores en ${ plusCountries } países"
-      ],
       "20 GB storage": [
         "20 GB de almacenamiento"
       ],
@@ -5621,10 +5631,6 @@
       ],
       "3 folders / labels": [
         "3 carpetas/etiquetas"
-      ],
-      "350+ servers in ${ basicCountries } country": [
-        "Más de 350 servidores en ${ basicCountries } país",
-        "Más de 350 servidores en ${ basicCountries } países"
       ],
       "5 addresses": [
         "5 direcciones"
@@ -7038,6 +7044,20 @@
       ],
       "Windows, macOS, iOS, Linux, Android, Android TV, Chromebook, Chromecast": [
         "Windows, macOS, iOS, Linux, Android, Android TV, Chromebook, Chromecast"
+      ]
+    },
+    "VPN Plan Feature": {
+      "${ n } server": [
+        "${ n } servidor",
+        "${ n } servidores"
+      ],
+      "${ n } VPN connection": [
+        "${ n } conexión VPN",
+        "${ n } conexiones VPN"
+      ],
+      "${ numberOfServers } in ${ numberOfCountries } country": [
+        "${ numberOfServers } en ${ numberOfCountries } país",
+        "${ numberOfServers } en ${ numberOfCountries } países"
       ]
     },
     "Warning": {

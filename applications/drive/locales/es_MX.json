@@ -861,6 +861,12 @@
       ]
     },
     "Calendar subscription not synced error": {
+      "Calendar could not be decrypted": [
+        "No se pudo descifrar el calendario"
+      ],
+      "Calendar could not be found": [
+        "No se pudo encontrar el calendario"
+      ],
       "Calendar is syncing": [
         "El calendario se está sincronizando"
       ],
@@ -1864,6 +1870,9 @@
       "Creating share": [
         "Creando recurso compartido"
       ],
+      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
+        "Se admiten archivos CSV de Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora y algunas otras aplicaciones, así como los formatos vCard 3.1 y 4.0 (codificación UTF-8)."
+      ],
       "Delete drive": [
         "Eliminar unidad",
         "Eliminar unidades"
@@ -2257,8 +2266,8 @@
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Este enlace puede ser un ataque homógrafo. Verifique que este es el enlace que desea visitar o no lo abra."
       ],
-      "This link was created in a previous version and can not be modified. Delete this link and create a new one to change the settings.": [
-        "Este enlace fue creado con una versión anterior y no puede ser modificado. Elimine este enlace y cree uno nuevo para cambiar los ajustes."
+      "This link was created in\na previous version and can not be modified. Delete this link and create a\nnew one to change the settings.": [
+        "Este enlace fue creado con\nuna versión anterior y no puede ser modificado. Elimine este enlace y cree uno\nnuevo para cambiar los ajustes."
       ],
       "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
         "Este enlace se desactivará permanentemente. Nadie con este enlace podrá acceder a su archivo. Para volver a compartir el archivo, necesitará un enlace nuevo."
@@ -2332,9 +2341,6 @@
       ],
       "VPN + ${ mailAppName } bundle for families and small businesses.": [
         "Paquete VPN + ${ mailAppName } para familias y pequeñas empresas."
-      ],
-      "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
-        "Soportamos la importación de archivos CSV desde Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora y otras aplicaciones. También soportamos la importación de la codificación vCard 4.0 (codificación UTF-8)."
       ],
       "We use 3-D Secure to protect your payments.": [
         "Usamos seguridad 3-D para proteger sus pagos."
@@ -3262,8 +3268,13 @@
       ]
     },
     "Mail import summary": {
-      "${ messagesFragment } since ${ periodFragment } and label them as ${ label }": [
-        "${ messagesFragment } desde ${ periodFragment } y etiquetarlos como ${ label }"
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        "Importar todos los mensajes de ${ selectedLabelsCount } de ${ totalLabelsCount } etiqueta desde ${ periodFragment } y etiquetarlos como ${ label }",
+        "Importar todos los mensajes de ${ selectedLabelsCount } de ${ totalLabelsCount } etiquetas desde ${ periodFragment } y etiquetarlos como ${ label }"
+      ],
+      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        "Importar todos los mensajes de ${ totalLabelsCount } etiqueta desde ${ periodFragment } y etiquetarlos como ${ label }",
+        "Importar todos los mensajes de ${ totalLabelsCount } etiquetas desde ${ periodFragment } y etiquetarlos como ${ label }"
       ]
     },
     "Many Others": {
@@ -3657,9 +3668,9 @@
       "1 user": [
         "1 usuario"
       ],
-      "1200+ servers in ${ plusCountries } country": [
-        "Más de 1200 servidores en ${ plusCountries } país",
-        "Más de 1200 servidores en ${ plusCountries } países"
+      "1300+ servers in ${ plusCountries } country": [
+        "Más de 1300 servidores en ${ plusCountries } país",
+        "Más de 1300 servidores en ${ plusCountries } países"
       ],
       "20 GB storage": [
         "20 GB de almacenamiento"
@@ -3885,8 +3896,8 @@
       "You have successfully unsubscribed": [
         "Ha cancelado la suscripción satisfactoriamente"
       ],
-      "Your files were successfully recovered to \"My files\"": [
-        "Sus archivos se recuperaron con éxito a \"Mis archivos\""
+      "Your files were successfully recovered to \"My files\".": [
+        "Sus archivos se recuperaron con éxito a \"Mis archivos\"."
       ]
     },
     "Suffix for price": {
@@ -4728,9 +4739,6 @@
       ],
       "You will lose any customization you made so far.": [
         "Perderá cualquier personalización que haya hecho hasta ahora."
-      ],
-      "Your local date & time settings seem to be out of sync.": [
-        "Los ajustes de fecha y hora locales parecen no estar sincronizados."
       ]
     }
   }

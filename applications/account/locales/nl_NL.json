@@ -31,11 +31,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } winkel"
       ],
-      "activate": [
-        "activeer"
-      ],
       "Activate": [
         "Activeren"
+      ],
+      "activate": [
+        "activeer"
       ],
       "Activate ${ Name }@pm.me": [
         "Activeer ${ Name }@pm.me"
@@ -879,9 +879,6 @@
       ]
     },
     "Alert": {
-      "Are you sure you want to import a private key? Importing an insecurely generated or leaked private key can harm the security of your emails.": [
-        "Weet u zeker dat u een eigen privésleutel wil importeren? Als er een onveilig aangemaakte of gelekte sleutel geïmporteerd wordt kan dit negatieve gevolgen hebben voor de veiligheid van uw e-mailberichten."
-      ],
       "By leaving now, some contacts may not be imported": [
         "Door nu te verlaten, worden sommige contacten mogelijk niet geïmporteerd"
       ],
@@ -1297,6 +1294,12 @@
       ]
     },
     "Calendar subscription not synced error": {
+      "Calendar could not be decrypted": [
+        ""
+      ],
+      "Calendar could not be found": [
+        ""
+      ],
       "Calendar is syncing": [
         "De agenda wordt gesynchroniseerd"
       ],
@@ -1613,7 +1616,7 @@
       "I use a different Proton account": [
         ""
       ],
-      "Missing feature(s) ": [
+      "Missing feature(s)": [
         ""
       ],
       "My reason isn't listed, please comment": [
@@ -2960,6 +2963,11 @@
         "tweestapsverificatie (2FA) ingeschakeld"
       ]
     },
+    "Import key": {
+      "Are you sure you want to import a private key? Importing an insecurely generated or leaked private key can harm the security of your emails.\n\nPlease also note that the public key corresponding to this private key will be publicly available from our key server. If the key contains personal details (such as your full name) which you do not want to publish, please edit the key before importing it.": [
+        ""
+      ]
+    },
     "Import status": {
       "${ percentageValue }% paused": [
         "${ percentageValue }% gepauzeerd"
@@ -3381,6 +3389,9 @@
       "Creating your Proton account": [
         "Uw Proton account aanmaken"
       ],
+      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
+        ""
+      ],
       "Currently all available storage is allocated to the administrator account. Please reduce the admin account allocation to free up space for additional users. You can increase the total storage at any time by upgrading your account.": [
         "Alle beschikbare opslagruimte is momenteel toegewezen aan het beheerdersaccount. Beperk de toewijzingshoeveelheid om ruimte te creëren voor extra gebruikers. Door uw account te upgraden kunt u op elk gewenst moment de totale opslagcapaciteit verhogen."
       ],
@@ -3537,9 +3548,6 @@
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Filters werken op alle e-mails, zowel inkomende als verzonden e-mails. Elk filter moet minstens een naam, voorwaarde en actie bevatten."
-      ],
-      "For advanced security, the Import-Export app encrypts emails on your device before migrating them to Proton servers. You can also export messages for local backups.": [
-        "Voor geavanceerde beveiliging, versleutelt de Import-Export-app e-mails op uw apparaat voordat ze verplaatst worden naar Protonservers. U kunt ook berichten exporteren voor lokale backups."
       ],
       "For families and small teams; includes both Mail and VPN.": [
         "Voor families en kleine teams; omvat zowel Mail en VPN."
@@ -4098,6 +4106,9 @@
       "The email address you place at the top of the list is your default email address. Drag and drop to reorder your addresses.": [
         "Het e-mailadres dat u bovenaan de lijst plaatst is uw standaard e-mailadres. Slepen en neerzetten om uw adressen te rangschikken."
       ],
+      "The Import-Export app allows you to export messages for local backups and to restore previous backups to your account.": [
+        ""
+      ],
       "The name will be visible to your users while they are logged in.": [
         "De naam zal zichtbaar zijn voor uw gebruikers wanneer ze ingelogd zijn."
       ],
@@ -4283,9 +4294,6 @@
       ],
       "We recommend adding a linked email so you can recover your account if you lose your password.": [
         "We raden aan om een gekoppeld e-mailadres toe te voegen, zodat u uw account kunt herstellen als u uw wachtwoord kwijtraakt."
-      ],
-      "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
-        "We ondersteunen het importeren van CSV-bestanden uit Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora en enkele andere apps. We ondersteunen ook de import van vCard 4.0. (UTF-8 codering)."
       ],
       "We use 3-D Secure to protect your payments.": [
         "We gebruiken 3-D Secure om uw betalingen te beschermen."
@@ -5928,7 +5936,12 @@
       ]
     },
     "Mail import summary": {
-      "${ messagesFragment } since ${ periodFragment } and label them as ${ label }": [
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        "",
+        ""
+      ],
+      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        "",
         ""
       ]
     },
@@ -6656,21 +6669,7 @@
         "Gratis"
       ]
     },
-    "Plan Feature": {
-      "${ n } server": [
-        "${ n } server",
-        "${ n } servers"
-      ],
-      "${ n } VPN connection": [
-        "${ n } VPN-verbinding",
-        "${ n } VPN-verbindingen"
-      ]
-    },
     "Plan feature": {
-      "${ freeServers } in ${ freeCountries } country": [
-        "${ freeServers } in ${ freeCountries } land",
-        "${ freeServers } in ${ freeCountries } landen"
-      ],
       "0.5 GB storage": [
         "0.5 GB opslagruimte"
       ],
@@ -6683,10 +6682,6 @@
       "1 user": [
         "1 gebruiker"
       ],
-      "1200+ servers in ${ plusCountries } country": [
-        "1200 servers in ${ plusCountries } land",
-        "1200 servers in ${ plusCountries } landen"
-      ],
       "20 GB storage": [
         "20 GB opslagruimte"
       ],
@@ -6695,10 +6690,6 @@
       ],
       "3 folders / labels": [
         "3 mappen / labels"
-      ],
-      "350+ servers in ${ basicCountries } country": [
-        "350+ servers in ${ basicCountries } land",
-        "350+ servers in ${ basicCountries } landen"
       ],
       "5 addresses": [
         "5 adressen"
@@ -6921,6 +6912,9 @@
       "Auto reply": [
         "Automatisch antwoorden"
       ],
+      "Backup & Export": [
+        ""
+      ],
       "Calendars": [
         "Agenda's"
       ],
@@ -6953,9 +6947,6 @@
       ],
       "Import & export": [
         "Importeren & exporteren"
-      ],
-      "Import/Export": [
-        ""
       ],
       "Multi-user support": [
         "Ondersteuning voor meerdere gebruikers"
@@ -7497,6 +7488,9 @@
       "Back": [
         "Terug"
       ],
+      "Backup & Export": [
+        ""
+      ],
       "Billing cycle": [
         "Factuurperiode"
       ],
@@ -7809,9 +7803,6 @@
       ],
       "Import-Export app": [
         "Import-Export app"
-      ],
-      "Import/Export": [
-        ""
       ],
       "Invalid verification code": [
         "De ingevoerde code is ongeldig"
@@ -8527,6 +8518,20 @@
     "VPN info": {
       "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, and more.": [
         "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now en meer."
+      ]
+    },
+    "VPN Plan Feature": {
+      "${ n } server": [
+        "",
+        ""
+      ],
+      "${ n } VPN connection": [
+        "",
+        ""
+      ],
+      "${ numberOfServers } in ${ numberOfCountries } country": [
+        "",
+        ""
       ]
     },
     "VPN upsell feature": {

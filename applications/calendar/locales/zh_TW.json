@@ -57,7 +57,7 @@
         "與我們聊天"
       ],
       "Check import progress": [
-        ""
+        "查看匯入進度"
       ],
       "Choose a file or drag it here": [
         "選擇檔案或拖曳到此處"
@@ -129,7 +129,7 @@
         "建立事件"
       ],
       "Customize": [
-        ""
+        "自訂"
       ],
       "Decrease": [
         "減"
@@ -171,7 +171,7 @@
         "編輯電子郵件地址"
       ],
       "Edit label": [
-        ""
+        "編輯標籤"
       ],
       "Edit phone number": [
         "編輯電話號碼"
@@ -210,13 +210,13 @@
         "隱藏進階 PGP 設定"
       ],
       "Hide folders": [
-        ""
+        "隱藏資料夾"
       ],
       "Hide info": [
         "隱藏資訊"
       ],
       "Hide labels": [
-        ""
+        "隱藏標籤"
       ],
       "Hide time zones": [
         "隱藏時區"
@@ -231,7 +231,7 @@
         "匯入"
       ],
       "Import from .csv or vCard": [
-        ""
+        "從 .csv 或 vCard 匯入"
       ],
       "Increase": [
         "加"
@@ -333,7 +333,7 @@
         "去年"
       ],
       "Quit": [
-        ""
+        "退出"
       ],
       "Re-sign": [
         "重新簽署"
@@ -363,7 +363,7 @@
         "移除此參與者"
       ],
       "Rename": [
-        ""
+        "重新命名"
       ],
       "Report a problem": [
         "回報問題"
@@ -399,13 +399,13 @@
         "顯示進階 PGP 設定"
       ],
       "Show folders": [
-        ""
+        "顯示資料夾"
       ],
       "Show info": [
         "顯示資訊"
       ],
       "Show labels": [
-        ""
+        "顯示標籤"
       ],
       "Show less": [
         "顯示更少"
@@ -432,7 +432,7 @@
         "開始設置"
       ],
       "Stay": [
-        ""
+        "停留"
       ],
       "Submit": [
         "送出"
@@ -880,6 +880,12 @@
       ]
     },
     "Calendar subscription not synced error": {
+      "Calendar could not be decrypted": [
+        ""
+      ],
+      "Calendar could not be found": [
+        ""
+      ],
       "Calendar is syncing": [
         "日曆正在同步"
       ],
@@ -1277,13 +1283,13 @@
         "認證錯誤。"
       ],
       "Calendar limit reached": [
-        ""
+        "行事曆數目已達上限"
       ],
       "Calendar primary private key is not decrypted": [
         "行事曆主要私密金鑰並未解密"
       ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
-        ""
+        "鑒於個人行事曆上限，無法為所有已匯入行事曆建立新的行事曆。"
       ],
       "Can't validate email, try again later": [
         "無法驗證電子郵件，請稍後再試"
@@ -1295,7 +1301,7 @@
         "取消傳送失敗"
       ],
       "Checkout expired, please try again": [
-        ""
+        "結帳已逾時，請重試"
       ],
       "Contact could not be saved": [
         "無法儲存聯絡人"
@@ -1313,7 +1319,7 @@
         "解密失敗：此事件內容解密失敗。"
       ],
       "Deselect at least ${ calendarToFixCount } calendar or": [
-        ""
+        "請取消選取至少 ${ calendarToFixCount } 個行事曆或"
       ],
       "Email address disabled": [
         "電子郵件地址已停用"
@@ -1346,7 +1352,7 @@
         "無法取得系列中原本事件。"
       ],
       "Folder name cannot be empty": [
-        ""
+        "資料夾名稱不能留空"
       ],
       "Image upload failed": [
         "圖片上載失敗"
@@ -1400,10 +1406,10 @@
         "僅可在 ${ minDateString } - ${ maxDateString } 之間移動事件"
       ],
       "Label name cannot be empty": [
-        ""
+        "標籤名稱不能留空"
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
-        ""
+        "與現有的 Proton 行事曆合併至少 ${ calendarToFixCount } 個行事曆"
       ],
       "Missing signature": [
         "簽章遺失"
@@ -1460,7 +1466,7 @@
         "請先建立一個地址。"
       ],
       "Please fix the highlighted conflict to proceed.": [
-        ""
+        "請先修正已標示的衝突以便繼續。"
       ],
       "Preferences could not be saved": [
         "無法儲存喜好設定"
@@ -1493,10 +1499,10 @@
         "部份群組無法刪除"
       ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
-        ""
+        "其中一些標籤名稱無法使用。請自訂匯入以編輯該等名稱。"
       ],
       "Some of your label names exceed ProtonMail's maximum character limit. Please customize the import to edit these names.": [
-        ""
+        "其中一些標籤名稱超出 ProtonMail 字元數目上限。請自訂匯入以編輯該等名稱。"
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "發生錯誤，請${ refresh }以繼續。如果您仍看到此錯誤訊息，請聯絡我們的${ supportTeam }。"
@@ -1511,10 +1517,10 @@
         "您正在使用的瀏覽器不允許您完整授權付款。請使用其他瀏覽器或透過電腦登入。"
       ],
       "The folder name is too long. Please choose a different name.": [
-        ""
+        "資料夾名稱太長。請換另一個名稱。"
       ],
       "The label name is too long. Please choose a different name.": [
-        ""
+        "標籤名稱太長。請換另一個名稱。"
       ],
       "The minimum amount of credit that can be added is ${ _price }": [
         "能夠被儲值的最低金額是 ${ _price }"
@@ -1529,7 +1535,7 @@
         "寄送金鑰無效"
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
-        ""
+        "您的外部帳號有太多資料夾。請自訂匯入以刪除一些資料夾。"
       ],
       "There was an error when exporting the contacts vCards": [
         "匯出聯絡人 vCard 時發生錯誤"
@@ -1541,10 +1547,10 @@
         "此欄位至少須有 ${ minimumLength } 個字元。"
       ],
       "This folder name is not available. Please choose a different name": [
-        ""
+        "此資料夾名稱無法使用。請換另一個名稱"
       ],
       "This label name is not available. Please choose a different name": [
-        ""
+        "此標籤名稱無法使用。請換另一個名稱"
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "此郵件包含的某些連結 URL 或未能以您目前的瀏覽器正確開啟"
@@ -1839,13 +1845,13 @@
         "${ calendarAppName } 已被新增至 Proton 套裝中。我們想要聽聽您的想法！"
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
-        ""
+        "${ calendarsToBeCreatedCount } 個新增行事曆"
       ],
       "${ calendarsToBeMerged } merged calendar": [
-        ""
+        "${ calendarsToBeMerged } 個合併行事曆"
       ],
       "${ calendarsToBeMergedCount } merged calendar": [
-        ""
+        "${ calendarsToBeMergedCount } 個合併行事曆"
       ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } 個成員"
@@ -1878,10 +1884,10 @@
         "${ namesWithoutLast } 和 ${ nameOfLast }"
       ],
       "${ numContactGroups } contact group": [
-        ""
+        "${ numContactGroups } 個聯絡人群組"
       ],
       "${ numContacts } contact": [
-        ""
+        "${ numContacts } 個聯絡人"
       ],
       "${ save20 } on your subscription by switching to ${ annualBilling }": [
         "改用${ annualBilling }，您的訂閱即可${ save20 }"
@@ -1893,13 +1899,13 @@
         "新增 VPN 訂閱，同時選用 VPN 和 Mail 即可${ saveExtra20 }。"
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
-        ""
+        "${ selectedCalendarsTotal } 個，共 ${ providerCalendars.length } 個行事曆"
       ],
       "${ selectedFoldersCount } folder selected": [
-        ""
+        "已選取 ${ selectedFoldersCount } 個資料夾"
       ],
       "${ selectedFoldersCount } label selected": [
-        ""
+        "已選取 ${ selectedFoldersCount } 個標籤"
       ],
       "${ updated } contact updated successfully.": [
         "${ updated } 個聯絡人已成功更新。"
@@ -1971,10 +1977,10 @@
         "在進行您的比特幣付款後，請隨著下面的指示來升級。"
       ],
       "All (${ totalFoldersCount } folder)": [
-        ""
+        "全部 (${ totalFoldersCount } 個資料夾)"
       ],
       "All (${ totalFoldersCount } label)": [
-        ""
+        "全部 (${ totalFoldersCount } 個標籤)"
       ],
       "Allows you to host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
         "讓您在 ${ mailAppName } 上為自己的網域託管電子郵件，例如 john.smith@example.com"
@@ -1989,7 +1995,7 @@
         "邀請將發送給各事件參與者。"
       ],
       "and": [
-        ""
+        "和"
       ],
       "At most 100 participants are allowed per invitation": [
         "每一邀請允許最多 100 個參與者"
@@ -2040,18 +2046,21 @@
         "連線"
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
-        ""
+        "建立 ${ calendarsToBeCreated } 個新增行事曆"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
-        ""
+        "為匯入的郵件建立標籤、設定這次匯入的時間範圍以及要匯入的資料夾。"
       ],
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
-        ""
+        "為匯入的郵件建立標籤、設定這次匯入的時間範圍以及要匯入的標籤。"
       ],
       "Create a new contact group": [
         "建立新的聯絡人群組"
       ],
       "Create in": [
+        "建立在"
+      ],
+      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         ""
       ],
       "Custom": [
@@ -2151,13 +2160,13 @@
         "如果你看不到郵件，請檢查您的垃圾郵件文件夾。"
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
-        ""
+        "匯入 ${ contactsFragment }和 ${ contactsGroupsFragment }"
       ],
       "Import ${ selectedCalendarsCount } of ${ totalCalendarsCount } calendar": [
-        ""
+        "匯入 ${ selectedCalendarsCount } 個，共 ${ totalCalendarsCount } 個行事曆"
       ],
       "Import from": [
-        ""
+        "匯入自"
       ],
       "Import in progress": [
         ""
@@ -2169,7 +2178,7 @@
         "已包含"
       ],
       "Inherited from parent folder": [
-        ""
+        "繼承自上層資料夾"
       ],
       "Internet connection lost.": [
         "網際網路連線中斷。"
@@ -2181,7 +2190,7 @@
         "網際網路連線已恢復。"
       ],
       "Just confirm your selection and we'll do the rest.": [
-        ""
+        "現在只需確認您的選取，我們就會處理餘下一切。"
       ],
       "Key fingerprint": [
         "金鑰指紋"
@@ -2208,16 +2217,16 @@
         "管理您的行事曆"
       ],
       "Merged": [
-        ""
+        "合併"
       ],
       "Monthly ${ onDayString }": [
         "每月的 ${ onDayString }"
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
-        ""
+        "請命名您的新資料夾，並選取放置的上層資料夾。若您不選取上層資料夾，將以頂層資料夾建立。"
       ],
       "New": [
-        ""
+        "新增"
       ],
       "Next you'll need to log in to your Google account and allow us to access your data.": [
         ""
@@ -2283,7 +2292,7 @@
         "請移除重複項目後再試一次。"
       ],
       "Please select the folders you would like to import:": [
-        ""
+        "請選擇您想匯入的資料夾："
       ],
       "Please try again, use a different payment method, or call your bank for assistance.": [
         "請重試一次，使用不同的付款方式，或是聯絡你的銀行來協助。"
@@ -2459,9 +2468,6 @@
       "VPN + ${ mailAppName } bundle for families and small businesses.": [
         "VPN + ${ mailAppName } 組合，專為家庭和小企業而設。"
       ],
-      "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
-        "我們支援匯入來自 Outlook、Outlook Express、Yahoo! Mail、Hotmail、Eudora 及其他一些應用程式的 CSV 檔案。我們也支援匯入 vCard 4.0。(以 UTF-8 編碼)。"
-      ],
       "We use 3-D Secure to protect your payments.": [
         "我們使用 3-D Secure 保障您的付款。"
       ],
@@ -2475,7 +2481,7 @@
         "週"
       ],
       "What do you want to import from your Google account?": [
-        ""
+        "您想從您的 Google 帳號匯入甚麼？"
       ],
       "Which event would you like to delete?": [
         "您要刪除哪一個事件？"
@@ -2523,7 +2529,7 @@
         "您僅可以修改個人事件屬性，因為您無法以召集人電子郵件地址傳送電子郵件。"
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
-        ""
+        "您可以開啟通知，以便在新的電子郵件訊息抵達此資料夾時收到提示。"
       ],
       "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
         "您已停用了測試版體驗。按一下${ refreshButton }以使用穩定版本的 ${ appName }。應用程式將會重新載入。"
@@ -2601,7 +2607,7 @@
         "你的銀行為了安全的理由要求使用3-D安全驗證"
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
-        ""
+        "已準備好將您的資料從 ${ importedEmailAddressStrong } 匯入到您的 Proton 帳號。"
       ],
       "Your email will only be used for this one-time verification.": [
         "您的電子郵件只會用於此一次驗證。"
@@ -3383,7 +3389,10 @@
       ]
     },
     "Mail import summary": {
-      "${ messagesFragment } since ${ periodFragment } and label them as ${ label }": [
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        ""
+      ],
+      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
         ""
       ]
     },
@@ -4437,13 +4446,13 @@
         "目前方案"
       ],
       "Customize and confirm": [
-        ""
+        "自訂並確認"
       ],
       "Customize calendar import": [
-        ""
+        "自訂行事曆匯入"
       ],
       "Customize your mail import": [
-        ""
+        "自訂您的郵件匯入"
       ],
       "Customize your plan": [
         "自訂你的方案"
@@ -4674,7 +4683,7 @@
         "請選擇此通知發送的方式"
       ],
       "Select what to import": [
-        ""
+        "選取匯入內容"
       ],
       "Select when this event will stop happening": [
         "請選擇此事件發生到何時為止"

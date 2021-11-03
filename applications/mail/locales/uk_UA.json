@@ -830,6 +830,9 @@
       "Try another method": [
         "Спробувати інший спосіб"
       ],
+      "Turn on tracker protection": [
+        "Увімкнути захист від стеження"
+      ],
       "Underline": [
         "Підкреслення"
       ],
@@ -1453,6 +1456,12 @@
       ]
     },
     "Calendar subscription not synced error": {
+      "Calendar could not be decrypted": [
+        "Не вдалося розшифрувати календар"
+      ],
+      "Calendar could not be found": [
+        "Не вдалося знайти календар"
+      ],
       "Calendar is syncing": [
         "Календар синхронізується"
       ],
@@ -1473,6 +1482,14 @@
       ],
       "More than 12 hours passed since last update": [
         "Понад 12 годин минуло після попередньої синхронізації"
+      ]
+    },
+    "Collapsible tooltip": {
+      "Close": [
+        "Закрити"
+      ],
+      "Open": [
+        "Відкрити"
       ]
     },
     "Composer email icon": {
@@ -2898,12 +2915,6 @@
         "Заблоковано ${ numberOfTrackers } елементів стеження",
         "Заблоковано ${ numberOfTrackers } елементи стеження"
       ],
-      "${ numberOfTrackers } email tracker found": [
-        "Знайдено ${ numberOfTrackers } елемент стеження",
-        "Знайдено ${ numberOfTrackers } елементи стеження",
-        "Знайдено ${ numberOfTrackers } елементів стеження",
-        "Знайдено ${ numberOfTrackers } елемента стеження"
-      ],
       "${ numContactGroups } contact group": [
         "${ numContactGroups } група контактів",
         "${ numContactGroups } групи контактів",
@@ -3267,6 +3278,9 @@
       "Create recovery phrase": [
         "Створити фразу відновлення"
       ],
+      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
+        "Підтримуються файли CSV з Outlook, Outlook Express, Yahoo! Maіl, Hotmaіl, Eudora і деяких інших додатків, а також формати vCard 3.1 і 4.0 (кодування UTF- 8)."
+      ],
       "Custom": [
         "Власний"
       ],
@@ -3341,6 +3355,21 @@
       ],
       "Email address": [
         "Адреса е-пошти"
+      ],
+      "Email tracker protection is disabled": [
+        "Захист від стеження у пошті вимкнено"
+      ],
+      "Email trackers can violate your privacy. Proton did not find any trackers on this message.": [
+        "Елементи стеження в електронній пошті можуть порушити вашу приватність. Proton не виявив елементів стеження у цьому повідомленні."
+      ],
+      "Email trackers can violate your privacy. Proton found and blocked ${ numberOfTrackers } tracker.": [
+        "Елементи стеження в електронній пошті можуть порушувати вашу приватність. Proton знайшов і заблокував ${ numberOfTrackers } елемент стеження.",
+        "Елементи стеження в електронній пошті можуть порушувати вашу приватність. Proton знайшов і заблокував ${ numberOfTrackers } елементи стеження.",
+        "Елементи стеження в електронній пошті можуть порушувати вашу приватність. Proton знайшов і заблокував ${ numberOfTrackers } елементів стеження.",
+        "Елементи стеження в електронній пошті можуть порушувати вашу приватність. Proton знайшов і заблокував ${ numberOfTrackers } елементи стеження."
+      ],
+      "Email trackers can violate your privacy. Turn on tracker protection to prevent senders from knowing whether and when you have opened a message.": [
+        "Елементи стеження в електронній пошті можуть порушувати вашу приватність. Увімкніть захист від стеження, щоб відправники не могли довідатися, чи відкривали ви повідомлення і коли."
       ],
       "embedded image": [
         "вбудоване зображення",
@@ -3726,9 +3755,6 @@
       "Print email": [
         "Друкувати лист"
       ],
-      "Protect yourself from trackers. Turn on email tracker protection in settings": [
-        "Захистіть себе. Увімкніть захист пошти від стеження в налаштуваннях"
-      ],
       "Proton doesn't make money by abusing privacy.": [
         "Proton не заробляє грошей на порушенні приватності."
       ],
@@ -3981,9 +4007,6 @@
       "To fight spam and abuse, please verify you are human.": [
         "З метою протидії спаму та зловживанням, будь ласка, підтвердьте, що ви людина."
       ],
-      "To protect your privacy, Proton blocked email trackers in this message": [
-        "Щоб захистити вашу приватність, Proton заблокував елементи стеження в цьому повідомленні"
-      ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "Щоб повторно підписати контакти, нам необхідно перевірити кожен контакт на відповідність списку ключів шифрування, доступних у вашому обліковому записі. Якщо збігів не знайдеться, ваш контакт буде повторно підписано з використанням основного ключа шифрування."
       ],
@@ -4004,6 +4027,9 @@
       ],
       "Turn off content search. Activation progress won't be lost.": [
         "Вимкнути пошук вмісту. Поступ активації не буде втрачено."
+      ],
+      "Turn on to search the content of your messages": [
+        "Увімкніть, щоб шукати вміст своїх повідомлень"
       ],
       "Unsupported file": [
         "Непідтримуваний файл"
@@ -4082,9 +4108,6 @@
       ],
       "We could not verify the sender's trusted keys.": [
         "Нам не вдалося перевірити довірені ключі відправника."
-      ],
-      "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
-        "Ми підтримуємо імпорт файлів CSV з Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora та деяких інших програм. Ми також підтримуємо імпорт vCard 4.0. (UTF-8 кодування)."
       ],
       "We use 3-D Secure to protect your payments.": [
         "Ми використовуємо 3-D Secure для захисту ваших платежів."
@@ -5266,8 +5289,17 @@
       ]
     },
     "Mail import summary": {
-      "${ messagesFragment } since ${ periodFragment } and label them as ${ label }": [
-        "${ messagesFragment } за ${ periodFragment } та позначити їх ${ label }"
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        "Імпортувати всі повідомлення з ${ selectedLabelsCount } міткою з усіх ${ totalLabelsCount }, починаючи з ${ periodFragment } та позначити їх міткою ${ label }",
+        "Імпортувати всі повідомлення з ${ selectedLabelsCount } мітками з усіх ${ totalLabelsCount }, починаючи з ${ periodFragment } та позначити їх міткою ${ label }",
+        "Імпортувати всі повідомлення з ${ selectedLabelsCount } мітками з усіх ${ totalLabelsCount }, починаючи з ${ periodFragment } та позначити їх міткою ${ label }",
+        "Імпортувати всі повідомлення з ${ selectedLabelsCount } мітками з усіх ${ totalLabelsCount }, починаючи з ${ periodFragment } та позначити їх міткою ${ label }"
+      ],
+      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        "Імпортувати всі повідомлення з ${ totalLabelsCount } міткою, починаючи з ${ periodFragment } та позначити їх міткою ${ label }",
+        "Імпортувати всі повідомлення з ${ totalLabelsCount } мітками, починаючи з ${ periodFragment } та позначити їх міткою ${ label }",
+        "Імпортувати всі повідомлення з ${ totalLabelsCount } мітками, починаючи з ${ periodFragment } та позначити їх міткою ${ label }",
+        "Імпортувати всі повідомлення з ${ totalLabelsCount } мітками, починаючи з ${ periodFragment } та позначити їх міткою ${ label }"
       ]
     },
     "Mailbox": {
@@ -5764,27 +5796,7 @@
         "Назва"
       ]
     },
-    "Plan Feature": {
-      "${ n } server": [
-        "${ n } сервер",
-        "${ n } сервери",
-        "${ n } серверів",
-        "${ n } серверів"
-      ],
-      "${ n } VPN connection": [
-        "${ n } VPN-з'єднання",
-        "${ n } VPN-з'єднання",
-        "${ n } VPN-з'єднань",
-        "${ n } VPN-з'єднань"
-      ]
-    },
     "Plan feature": {
-      "${ freeServers } in ${ freeCountries } country": [
-        "${ freeServers } у ${ freeCountries } країні",
-        "${ freeServers } у ${ freeCountries } країнах",
-        "${ freeServers } у ${ freeCountries } країнах",
-        "${ freeServers } у ${ freeCountries } країнах"
-      ],
       "0.5 GB storage": [
         "0.5 ГБ сховища"
       ],
@@ -5797,12 +5809,6 @@
       "1 user": [
         "1 користувач"
       ],
-      "1200+ servers in ${ plusCountries } country": [
-        "1200+ серверів у ${ plusCountries } країні",
-        "1200+ серверів у ${ plusCountries } країнах",
-        "1200+ серверів у ${ plusCountries } країнах",
-        "1200+ серверів у ${ plusCountries } країнах"
-      ],
       "20 GB storage": [
         "20 ГБ сховища"
       ],
@@ -5811,12 +5817,6 @@
       ],
       "3 folders / labels": [
         "3 теки / мітки"
-      ],
-      "350+ servers in ${ basicCountries } country": [
-        "350+ серверів у ${ basicCountries } країні",
-        "350+ серверів у ${ basicCountries } країнах",
-        "350+ серверів у ${ basicCountries } країнах",
-        "350+ серверів у ${ basicCountries } країнах"
       ],
       "5 addresses": [
         "5 адрес"
@@ -7322,6 +7322,26 @@
       ],
       "Windows, macOS, iOS, Linux, Android, Android TV, Chromebook, Chromecast": [
         "Windows, macOS, iOS, Linux, Android, Android TV, Chromebook, Chromecast"
+      ]
+    },
+    "VPN Plan Feature": {
+      "${ n } server": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "${ n } VPN connection": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "${ numberOfServers } in ${ numberOfCountries } country": [
+        "",
+        "",
+        "",
+        ""
       ]
     },
     "Warning": {
