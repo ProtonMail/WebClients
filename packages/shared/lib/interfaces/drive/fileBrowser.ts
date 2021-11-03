@@ -41,6 +41,7 @@ export type ItemRowColumns =
     | 'share_created'
     | 'share_expires'
     | 'share_num_access'
+    | 'share_options'
     | 'size'
     | 'trashed';
 export type FileBrowserLayouts = 'trash' | 'sharing' | 'drive';

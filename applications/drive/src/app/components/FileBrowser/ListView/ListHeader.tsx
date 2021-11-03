@@ -124,6 +124,9 @@ const ListHeader = <T extends AllSortKeys>({
                         {c('TableHeader').t`Expires`}
                     </TableHeaderCell>
                 )}
+                {columns.includes('share_options') && (
+                    <TableHeaderCell className="file-browser-list--share-column" />
+                )}
             </TableRowSticky>
         </thead>
     );

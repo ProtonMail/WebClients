@@ -27,11 +27,10 @@ import ExpirationTimeDatePicker from './ExpirationTimeDatePicker';
 interface Props {
     itemName: string;
     initialExpiration: number | null;
-    token: string;
+    url: string;
     passwordToggledOn: boolean;
     isValidForPasswordRemoval: boolean;
     expirationToggledOn: boolean;
-    generatedPassword: string;
     customPassword: string;
     modalTitleID: string;
     deleting?: boolean;
@@ -49,8 +48,7 @@ function GeneratedLinkState({
     onClose,
     itemName,
     initialExpiration,
-    token,
-    generatedPassword,
+    url,
     customPassword,
     deleting,
     saving,
@@ -65,7 +63,6 @@ function GeneratedLinkState({
 }: Props) {
     const contentRef = useRef<HTMLDivElement>(null);
     const { createNotification } = useNotifications();
-    const baseUrl = `${window.location.origin}/urls`;
 
     const [password, setPassword] = useState(customPassword);
     const [expiration, setExpiration] = useState(initialExpiration);
@@ -82,8 +79,6 @@ function GeneratedLinkState({
 
     const isSaveDisabled =
         !isFormDirty || deleting || (passwordToggledOn && !password) || (expirationToggledOn && !expiration);
-
-    const url = `${baseUrl}/${token}${generatedPassword !== '' ? `#${generatedPassword}` : ''}`;
 
     const handleChangePassword = (e: React.ChangeEvent<HTMLInputElement>) => {
         setPassword(e.target.value);
