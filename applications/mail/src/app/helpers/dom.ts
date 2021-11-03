@@ -101,3 +101,11 @@ export const setTextAreaCursorStart = (textarea: HTMLTextAreaElement) => {
  * Check if a HTML content is considered empty
  */
 export const isHTMLEmpty = (html: string) => !html || html === '<div><br /></div>' || html === '<div><br></div>';
+
+export const preloadImage = async (url: string) =>
+    new Promise((resolve, reject) => {
+        const img = document.createElement('img');
+        img.src = url;
+        img.onload = resolve;
+        img.onerror = reject;
+    });

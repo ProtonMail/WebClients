@@ -55,9 +55,16 @@ export const transformRemote = (
                 insertImageAnchor(id, 'remote', match);
             }
         }
+
+        let url = '';
+        ATTRIBUTES.find((attribute) => {
+            url = match.getAttribute(`proton-${attribute}`) || '';
+            return url && url !== '';
+        });
+
         remoteImages.push({
             type: 'remote',
-            url: match.getAttribute('proton-src') || '',
+            url,
             original: match,
             id,
             tracker: undefined,
@@ -66,7 +73,7 @@ export const transformRemote = (
     });
 
     if (showRemoteImages) {
-        void loadRemoteImages(useProxy, message.localID, remoteImages, messageCache, api);
+        void loadRemoteImages(useProxy, message.localID, remoteImages, messageCache, api, message?.document);
     }
 
     return {
