@@ -52,6 +52,11 @@
 	display: none;
 }
 
+.file-browser-list--share-column {
+	width: 50px; // To fit one small icon + spacing around.
+	max-height: 100%;
+}
+
 .file-browser-list-item--thumbnail {
 	block-size: 1rem;
 	inline-size: 1rem;
