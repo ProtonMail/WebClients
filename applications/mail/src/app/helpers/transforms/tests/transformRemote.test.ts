@@ -8,7 +8,7 @@ import { addApiMock, api } from '../../test/api';
 import { transformRemote } from '../transformRemote';
 import { createDocument } from '../../test/message';
 
-describe('transformEmbedded', () => {
+describe('transformRemote', () => {
     const setup = (message: MessageExtended, mailSettings: MailSettings) => {
         return transformRemote(message, mailSettings, api, messageCache);
     };
@@ -20,7 +20,7 @@ describe('transformEmbedded', () => {
                         </div>`;
 
         const message: MessageExtended = {
-            localID: 'messageWithEmbedded',
+            localID: 'messageWithRemote',
             data: {
                 ID: 'messageID',
             } as Message,
@@ -50,7 +50,7 @@ describe('transformEmbedded', () => {
                         </div>`;
 
         const message: MessageExtended = {
-            localID: 'messageWithEmbedded',
+            localID: 'messageWithRemote',
             data: {
                 ID: 'messageID',
             } as Message,

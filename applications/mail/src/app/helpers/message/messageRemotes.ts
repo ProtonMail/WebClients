@@ -4,9 +4,9 @@ import { Api } from '@proton/shared/lib/interfaces';
 import { MessageCache, updateMessageCache } from '../../containers/MessageProvider';
 import { MessageRemoteImage } from '../../models/message';
 import { getRemoteImages, updateImages } from './messageImages';
+import { preloadImage } from '../dom';
 
 export const ATTRIBUTES = ['url', 'xlink:href', 'srcset', 'src', 'svg', 'background', 'poster'];
-
 const urlCreator = () => window.URL || window.webkitURL;
 
 const updateRemoteImages = (messageCache: MessageCache, localID: string, images: MessageRemoteImage[]) => {
@@ -22,14 +22,6 @@ const updateRemoteImages = (messageCache: MessageCache, localID: string, images:
     updateMessageCache(messageCache, localID, { messageImages });
 };
 
-const preloadImage = async (url: string) =>
-    new Promise((resolve, reject) => {
-        const img = document.createElement('img');
-        img.src = url;
-        img.onload = resolve;
-        img.onerror = reject;
-    });
-
 export const removeProtonPrefix = (match: HTMLElement) => {
     ATTRIBUTES.forEach((attr) => {
         const protonAttr = `proton-${attr}`;
@@ -40,7 +32,49 @@ export const removeProtonPrefix = (match: HTMLElement) => {
     });
 };
 
-const loadImagesWithoutProxy = async (localID: string, images: MessageRemoteImage[], messageCache: MessageCache) => {
+export const loadElementOtherThanImages = (images: MessageRemoteImage[], messageDocument?: Element) => {
+    const elementOtherThanImages = images.filter((image) => image.original?.tagName !== 'IMG');
+
+    const selector = ATTRIBUTES.map((name) => {
+        // https://stackoverflow.com/questions/23034283/is-it-possible-to-use-htmls-queryselector-to-select-by-xlink-attribute-in-an
+        if (name === 'xlink:href') {
+            return '[*|href]:not([href])';
+        }
+
+        return `[proton-${name}]`;
+    }).join(',');
+
+    // Get all elements in the mail which have a proton attribute
+    const foundElements = messageDocument ? messageDocument.querySelectorAll(selector) : [];
+
+    foundElements.forEach((element) => {
+        ATTRIBUTES.forEach((attr) => {
+            const protonAttr = `proton-${attr}`;
+            if (element.hasAttribute(protonAttr)) {
+                const elementValue = element.getAttribute(protonAttr) as string;
+
+                // Find the corresponding image to get its url (same url if loading without proxy, or blob if loading through proxy)
+                const elementWithOriginalURL = elementOtherThanImages.find((el) => {
+                    return elementValue === el.originalURL;
+                });
+
+                // Set attribute with the right URL (normal or blob depending on the setting)
+                if (elementWithOriginalURL && elementWithOriginalURL.url) {
+                    element.setAttribute(attr, elementWithOriginalURL.url);
+                }
+
+                element.removeAttribute(protonAttr);
+            }
+        });
+    });
+};
+
+const loadImagesWithoutProxy = async (
+    localID: string,
+    images: MessageRemoteImage[],
+    messageCache: MessageCache,
+    messageDocument?: Element
+) => {
     const imagesToLoad = images.filter((image) => image.status === 'not-loaded');
 
     const promises = Promise.all(
@@ -64,7 +98,16 @@ const loadImagesWithoutProxy = async (localID: string, images: MessageRemoteImag
         removeProtonPrefix(image.original as HTMLElement);
     });
 
-    const imagesLoaded = results.map(([image, error]) => ({ ...image, error, status: 'loaded' as 'loaded' }));
+    const imagesLoaded = results.map(([image, error]) => ({
+        ...image,
+        originalURL: image.url,
+        error,
+        status: 'loaded' as 'loaded',
+    }));
+
+    loadElementOtherThanImages(imagesLoaded, messageDocument);
+
+    updateMessageCache(messageCache, localID, { document: messageDocument });
 
     updateRemoteImages(messageCache, localID, imagesLoaded);
 };
@@ -73,7 +116,8 @@ const loadImagesThroughProxy = async (
     localID: string,
     images: MessageRemoteImage[],
     messageCache: MessageCache,
-    api: Api
+    api: Api,
+    messageDocument?: Element
 ) => {
     const imagesToLoad = images.filter((image) => image.status === 'not-loaded');
 
@@ -118,6 +162,10 @@ const loadImagesThroughProxy = async (
         status: 'loaded' as 'loaded',
     }));
 
+    loadElementOtherThanImages(imagesLoaded, messageDocument);
+
+    updateMessageCache(messageCache, localID, { document: messageDocument });
+
     updateRemoteImages(messageCache, localID, imagesLoaded);
 };
 
@@ -126,14 +174,15 @@ export const loadRemoteImages = async (
     localID: string,
     images: MessageRemoteImage[],
     messageCache: MessageCache,
-    api: Api
+    api: Api,
+    messageDocument?: Element
 ) => {
     // Not really happy with this hack but we need to "wait" that the message transform process is finished
     // And update the message cache before updating image statuses
     await wait(0);
 
     if (useProxy) {
-        return loadImagesThroughProxy(localID, images, messageCache, api);
+        return loadImagesThroughProxy(localID, images, messageCache, api, messageDocument);
     }
-    return loadImagesWithoutProxy(localID, images, messageCache);
+    return loadImagesWithoutProxy(localID, images, messageCache, messageDocument);
 };
