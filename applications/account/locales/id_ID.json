@@ -31,11 +31,11 @@
       "${ BRAND_NAME } shop": [
         "Toko ${ BRAND_NAME }"
       ],
-      "activate": [
-        "aktifkan"
-      ],
       "Activate": [
         "Aktifkan"
+      ],
+      "activate": [
+        "aktifkan"
       ],
       "Activate ${ Name }@pm.me": [
         "Aktifkan ${ Name }@pm.me"
@@ -870,9 +870,6 @@
       ]
     },
     "Alert": {
-      "Are you sure you want to import a private key? Importing an insecurely generated or leaked private key can harm the security of your emails.": [
-        "Yakin ingin mengimpor kunci pribadi Anda? Mengimpor kunci pribadi yang tidak aman atau yang bocor akan membahayakan surel Anda."
-      ],
       "By leaving now, some contacts may not be imported": [
         "Dengan keluar sekarang, beberapa kontak mungkin tidak diimpor"
       ],
@@ -883,7 +880,7 @@
         "Kunci yang dihapus tidak dapat dikembalikan lagi. Agar dapat mengakses pesan terenkripsi dengan kunci ini, Anda perlu membuat cadangan kunci ini untuk dipakai nanti."
       ],
       "You will face a permanent data loss by not making a backup of your key.": [
-        "Anda akan mengalami kehilangan data permanen tanpa membuat cadangan kunci Anda."
+        "Apabila Anda tidak membuat kunci cadangan, data-data yang Anda miliki akan hilang secara permanen."
       ]
     },
     "alert": {
@@ -1286,6 +1283,12 @@
       ]
     },
     "Calendar subscription not synced error": {
+      "Calendar could not be decrypted": [
+        "Kalender tidak dapat didekripsi"
+      ],
+      "Calendar could not be found": [
+        "Kalender tidak ditemukan"
+      ],
       "Calendar is syncing": [
         "Sedang sinkronisasi kalender"
       ],
@@ -1353,7 +1356,7 @@
     },
     "Confirm": {
       "Are you sure you want to delete this key without backing it up?": [
-        "Apakah Anda yakin mau menghapus kunci ini tanpa membuat cadangannya?"
+        "Apakah Anda yakin untuk menghapus kunci ini tanpa membuat cadangannya?"
       ],
       "Are you sure you want to permanently delete this key?": [
         "Apakah Anda yakin mau menghapus kunci ini secara permanen?"
@@ -1595,8 +1598,8 @@
       "I use a different Proton account": [
         "Saya menggunakan akun Proton lain"
       ],
-      "Missing feature(s) ": [
-        "Terdapat fitur-fitur yang hilang "
+      "Missing feature(s)": [
+        "Terdapat fitur-fitur yang hilang"
       ],
       "My reason isn't listed, please comment": [
         "Lainnya (harap berikan komentar)"
@@ -2928,6 +2931,11 @@
         "Verifikasi 2 langkah aktif"
       ]
     },
+    "Import key": {
+      "Are you sure you want to import a private key? Importing an insecurely generated or leaked private key can harm the security of your emails.\n\nPlease also note that the public key corresponding to this private key will be publicly available from our key server. If the key contains personal details (such as your full name) which you do not want to publish, please edit the key before importing it.": [
+        "Apakah Anda yakin untuk mengimpor kunci privat ini? Mengimpor kunci privat yang tidak dihasilkan secara aman atau yang telah bocor ke tangan pihak-pihak yang tidak bertanggung jawab dapat menempatkan email-email Anda dalam bahaya.\n\nHarap diingat bahwa kunci publik yang terhubung dengan kunci privat ini akan dapat dilihat oleh semua orang melalui server kunci kami. Apabila kunci ini mengandung data-data personal yang tidak ingin Anda publikasikan (semisal nama lengkap Anda), harap sunting isi kunci yang bersangkutan terlebih dahulu."
+      ]
+    },
     "Import status": {
       "${ percentageValue }% paused": [
         "${ percentageValue }% dijeda"
@@ -3328,6 +3336,9 @@
       "Creating your Proton account": [
         "Buat akun Proton Anda"
       ],
+      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
+        "Anda dapat mengimpor berkas-berkas CSV dari Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora, dan beberapa aplikasi lainnya serta berkas-berkas vCard versi 3.1 dan 4.0 (dengan encoding UTF-8)."
+      ],
       "Currently all available storage is allocated to the administrator account. Please reduce the admin account allocation to free up space for additional users. You can increase the total storage at any time by upgrading your account.": [
         "Saat ini semua ruang penyimpanan yang tersedia dialokasikan ke akun administrator. Harap kurangi alokasi untuk memberi jatah ruang kosong kepada pengguna tambahan. Anda dapat meningkatkan total ruang penyimpanan Anda kapan saja dengan meningkatkan akun Anda."
       ],
@@ -3483,9 +3494,6 @@
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Filter bekerja di semua surel, termasuk surel yang masuk dan terkirim. Setiap filter harus memuat minimal nama, kondisi dan tindakan."
-      ],
-      "For advanced security, the Import-Export app encrypts emails on your device before migrating them to Proton servers. You can also export messages for local backups.": [
-        "Untuk keamanan tingkat lanjut, aplikasi Import-Export mengenkripsi surel di perangkat Anda sebelum memindahkannya ke server Proton. Anda juga dapat mengekspor pesan untuk cadangan lokal."
       ],
       "For families and small teams; includes both Mail and VPN.": [
         "Untuk keluarga dan tim kecil; termasuk Mail dan VPN."
@@ -4042,6 +4050,9 @@
       "The email address you place at the top of the list is your default email address. Drag and drop to reorder your addresses.": [
         "Alamat email yang Anda tempatkan di bagian atas daftar adalah alamat email default Anda. Tarik dan lepas untuk menyusun ulang alamat Anda."
       ],
+      "The Import-Export app allows you to export messages for local backups and to restore previous backups to your account.": [
+        "Aplikasi Impor-Ekspor memungkinkan Anda untuk menyimpan salinan cadangan data-data Anda secara lokal dan mengembalikan salinan cadangan yang ada ke dalam akun Anda."
+      ],
       "The name will be visible to your users while they are logged in.": [
         "Nama akan terlihat pada pengguna Anda ketika mereka masuk."
       ],
@@ -4227,9 +4238,6 @@
       ],
       "We recommend adding a linked email so you can recover your account if you lose your password.": [
         "Kami merekomendasikan agar Anda memiliki alamat email yang ditautkan agar Anda dapat memulihkan akun Anda apabila suatu saat Anda kehilangan kata sandi Anda."
-      ],
-      "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
-        "Kami menerima impor berkas CSV dari Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora dan beberapa program lain. Kami juga menerima impor vCard 4.0. (enkoding UTF-8)."
       ],
       "We use 3-D Secure to protect your payments.": [
         "Kami menggunakan 3-D Secure untuk melindungi pembayaran anda."
@@ -4916,7 +4924,7 @@
         "Kunci cadangan"
       ],
       "Backup keys": [
-        "Kunci cadangan"
+        "Kunci-kunci cadangan"
       ],
       "Block email tracking": [
         "Blokir program pelacak email"
@@ -5474,7 +5482,7 @@
         "Unggah kunci cadangan Anda"
       ],
       "Uploaded private keys": [
-        "Kunci-kunci cadangan yang terunggah"
+        "Kunci-kunci privat yang terunggah"
       ],
       "URL": [
         "URL"
@@ -5867,8 +5875,11 @@
       ]
     },
     "Mail import summary": {
-      "${ messagesFragment } since ${ periodFragment } and label them as ${ label }": [
-        "${ messagesFragment } sejak ${ periodFragment } yang akan memiliki label ${ label }"
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        "Impor seluruh pesan yang memiliki ${ selectedLabelsCount } label terpilih dari total ${ totalLabelsCount } label yang ada sejak ${ periodFragment } dan labeli pesan-pesan tersebut dengan label ${ label }"
+      ],
+      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        "Impor seluruh pesan yang berlabel dari total ${ totalLabelsCount } label yang ada sejak ${ periodFragment } dan labeli pesan-pesan tersebut dengan label ${ label }"
       ]
     },
     "Mail upsell feature": {
@@ -6587,18 +6598,7 @@
         "Gratis"
       ]
     },
-    "Plan Feature": {
-      "${ n } server": [
-        "${ n } server"
-      ],
-      "${ n } VPN connection": [
-        "${ n } Koneksi VPN"
-      ]
-    },
     "Plan feature": {
-      "${ freeServers } in ${ freeCountries } country": [
-        "${ freeServers } di ${ freeCountries } negara"
-      ],
       "0.5 GB storage": [
         "Penyimpanan 0.5 GB"
       ],
@@ -6611,9 +6611,6 @@
       "1 user": [
         "1 pengguna"
       ],
-      "1200+ servers in ${ plusCountries } country": [
-        "1200+ server di ${ plusCountries } negara"
-      ],
       "20 GB storage": [
         "Penyimpanan 20 GB"
       ],
@@ -6622,9 +6619,6 @@
       ],
       "3 folders / labels": [
         "3 folder / label"
-      ],
-      "350+ servers in ${ basicCountries } country": [
-        "350+ server di ${ basicCountries } negara"
       ],
       "5 addresses": [
         "5 alamat"
@@ -6817,7 +6811,7 @@
     },
     "Select files": {
       "Browse": [
-        "Jelajah"
+        "Telusur"
       ],
       "Upload": [
         "Unggah"
@@ -6845,6 +6839,9 @@
       ],
       "Auto reply": [
         "Balasan otomatis"
+      ],
+      "Backup & Export": [
+        "Backup & Ekspor"
       ],
       "Calendars": [
         "Kalender"
@@ -6878,9 +6875,6 @@
       ],
       "Import & export": [
         "Impor & ekspor"
-      ],
-      "Import/Export": [
-        "Impor/Ekspor"
       ],
       "Multi-user support": [
         "Dukungan multi-pengguna"
@@ -7420,6 +7414,9 @@
       "Back": [
         "Kembali"
       ],
+      "Backup & Export": [
+        "Backup & Ekspor"
+      ],
       "Billing cycle": [
         "Siklus tagihan"
       ],
@@ -7731,9 +7728,6 @@
       ],
       "Import-Export app": [
         "Aplikasi Import-Export"
-      ],
-      "Import/Export": [
-        "Impor/Ekspor"
       ],
       "Invalid verification code": [
         "Kode verifikasi tidak valid"
@@ -8446,6 +8440,17 @@
     "VPN info": {
       "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, and more.": [
         "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, dan banyak lagi."
+      ]
+    },
+    "VPN Plan Feature": {
+      "${ n } server": [
+        "${ n } server"
+      ],
+      "${ n } VPN connection": [
+        "${ n } koneksi VPN"
+      ],
+      "${ numberOfServers } in ${ numberOfCountries } country": [
+        "${ numberOfServers } di ${ numberOfCountries } negara"
       ]
     },
     "VPN upsell feature": {

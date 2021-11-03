@@ -818,6 +818,9 @@
       "Try another method": [
         "換另一個方法試試"
       ],
+      "Turn on tracker protection": [
+        ""
+      ],
       "Underline": [
         "底線"
       ],
@@ -1429,6 +1432,12 @@
       ]
     },
     "Calendar subscription not synced error": {
+      "Calendar could not be decrypted": [
+        ""
+      ],
+      "Calendar could not be found": [
+        ""
+      ],
       "Calendar is syncing": [
         "日曆正在同步"
       ],
@@ -1449,6 +1458,14 @@
       ],
       "More than 12 hours passed since last update": [
         "距離上次更新已經過了12小時以上"
+      ]
+    },
+    "Collapsible tooltip": {
+      "Close": [
+        ""
+      ],
+      "Open": [
+        ""
       ]
     },
     "Composer email icon": {
@@ -2775,9 +2792,6 @@
       "${ numberOfTrackers } email tracker blocked": [
         "已封鎖 ${ numberOfTrackers } 個電子郵件追蹤程式"
       ],
-      "${ numberOfTrackers } email tracker found": [
-        "已找到 ${ numberOfTrackers } 個電子郵件追蹤程式"
-      ],
       "${ numContactGroups } contact group": [
         ""
       ],
@@ -3069,6 +3083,9 @@
       "Create recovery phrase": [
         "建立復原短語"
       ],
+      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
+        ""
+      ],
       "Custom": [
         "自訂"
       ],
@@ -3137,6 +3154,18 @@
       ],
       "Email address": [
         "電子郵件地址"
+      ],
+      "Email tracker protection is disabled": [
+        ""
+      ],
+      "Email trackers can violate your privacy. Proton did not find any trackers on this message.": [
+        ""
+      ],
+      "Email trackers can violate your privacy. Proton found and blocked ${ numberOfTrackers } tracker.": [
+        ""
+      ],
+      "Email trackers can violate your privacy. Turn on tracker protection to prevent senders from knowing whether and when you have opened a message.": [
+        ""
       ],
       "embedded image": [
         "內嵌圖片"
@@ -3501,9 +3530,6 @@
       "Print email": [
         "列印電子郵件"
       ],
-      "Protect yourself from trackers. Turn on email tracker protection in settings": [
-        ""
-      ],
       "Proton doesn't make money by abusing privacy.": [
         "Proton 不會透過濫用隱私來賺錢。"
       ],
@@ -3750,9 +3776,6 @@
       "To fight spam and abuse, please verify you are human.": [
         "為防止垃圾郵件及濫用，請驗證您是真人。"
       ],
-      "To protect your privacy, Proton blocked email trackers in this message": [
-        ""
-      ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "若要重新簽署您的聯絡人，我們需要依照您的帳號中可用的加密金鑰清單逐一檢查每一聯絡人。若找不到匹配時，您的聯絡人將使用主要加密金鑰重新簽署。"
       ],
@@ -3773,6 +3796,9 @@
       ],
       "Turn off content search. Activation progress won't be lost.": [
         "關閉內容搜尋。啟用流程不會遺失。"
+      ],
+      "Turn on to search the content of your messages": [
+        ""
       ],
       "Unsupported file": [
         "不支援的檔案"
@@ -3851,9 +3877,6 @@
       ],
       "We could not verify the sender's trusted keys.": [
         "我們無法驗證此寄件人的已信任金鑰。"
-      ],
-      "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
-        "我們支援匯入來自 Outlook、Outlook Express、Yahoo! Mail、Hotmail、Eudora 及其他一些應用程式的 CSV 檔案。我們也支援匯入 vCard 4.0。(以 UTF-8 編碼)。"
       ],
       "We use 3-D Secure to protect your payments.": [
         "我們使用 3-D Secure 保障您的付款。"
@@ -5002,7 +5025,10 @@
       ]
     },
     "Mail import summary": {
-      "${ messagesFragment } since ${ periodFragment } and label them as ${ label }": [
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        ""
+      ],
+      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
         ""
       ]
     },
@@ -5491,18 +5517,7 @@
         "名稱"
       ]
     },
-    "Plan Feature": {
-      "${ n } server": [
-        "${ n } 伺服器"
-      ],
-      "${ n } VPN connection": [
-        "${ n } 個 VPN 連線"
-      ]
-    },
     "Plan feature": {
-      "${ freeServers } in ${ freeCountries } country": [
-        "有 ${ freeServers } 分布在 ${ freeCountries } 國家地區"
-      ],
       "0.5 GB storage": [
         "0.5 GB 儲存空間"
       ],
@@ -5515,9 +5530,6 @@
       "1 user": [
         "1 個使用者"
       ],
-      "1200+ servers in ${ plusCountries } country": [
-        "1200+ 個伺服器，分布於 ${ plusCountries } 個國家"
-      ],
       "20 GB storage": [
         "20 GB 儲存空間"
       ],
@@ -5526,9 +5538,6 @@
       ],
       "3 folders / labels": [
         "3 個資料夾 / 標籤"
-      ],
-      "350+ servers in ${ basicCountries } country": [
-        "350+ 個伺服器，分布於 ${ basicCountries } 個國家"
       ],
       "5 addresses": [
         "5 個電子郵件地址"
@@ -6896,6 +6905,17 @@
       ],
       "Windows, macOS, iOS, Linux, Android, Android TV, Chromebook, Chromecast": [
         "Windows、macOS、iOS、Linux、Android、Android TV、Chromebook、Chromecast"
+      ]
+    },
+    "VPN Plan Feature": {
+      "${ n } server": [
+        ""
+      ],
+      "${ n } VPN connection": [
+        ""
+      ],
+      "${ numberOfServers } in ${ numberOfCountries } country": [
+        ""
       ]
     },
     "Warning": {

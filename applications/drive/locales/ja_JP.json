@@ -855,6 +855,12 @@
       ]
     },
     "Calendar subscription not synced error": {
+      "Calendar could not be decrypted": [
+        ""
+      ],
+      "Calendar could not be found": [
+        ""
+      ],
       "Calendar is syncing": [
         "カレンダーの同期中"
       ],
@@ -1818,6 +1824,9 @@
       "Creating share": [
         "共有を作成しています"
       ],
+      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
+        ""
+      ],
       "Delete drive": [
         ""
       ],
@@ -2208,7 +2217,7 @@
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "このリンクはホモグラフ攻撃の可能性があります。 これがあなたのアクセスしたいリンクであることを確認するか、開かないようにしてください。"
       ],
-      "This link was created in a previous version and can not be modified. Delete this link and create a new one to change the settings.": [
+      "This link was created in\na previous version and can not be modified. Delete this link and create a\nnew one to change the settings.": [
         ""
       ],
       "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
@@ -2282,9 +2291,6 @@
       ],
       "VPN + ${ mailAppName } bundle for families and small businesses.": [
         "家族と小さなビジネス向けの VPN と ${ mailAppName } バンドル"
-      ],
-      "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
-        "Outlook、Outlook Express、Yahoo! Mail、Hotmail、Eudora などのアプリからの、CSV ファイルのインポートに対応しています。また、vCard 4.0 (UTF-8 エンコード) のインポートにも対応しています。"
       ],
       "We use 3-D Secure to protect your payments.": [
         "お支払いを保護するために3Dセキュアを用いています。"
@@ -3210,7 +3216,10 @@
       ]
     },
     "Mail import summary": {
-      "${ messagesFragment } since ${ periodFragment } and label them as ${ label }": [
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        ""
+      ],
+      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
         ""
       ]
     },
@@ -3578,8 +3587,8 @@
       "1 user": [
         "1 ユーザー"
       ],
-      "1200+ servers in ${ plusCountries } country": [
-        "${ plusCountries } か国の 1200 以上のサーバー"
+      "1300+ servers in ${ plusCountries } country": [
+        ""
       ],
       "20 GB storage": [
         "20 GB のストレージ"
@@ -3800,7 +3809,7 @@
       "You have successfully unsubscribed": [
         "退会手続きが正常に行なわれました。"
       ],
-      "Your files were successfully recovered to \"My files\"": [
+      "Your files were successfully recovered to \"My files\".": [
         ""
       ]
     },
@@ -4634,9 +4643,6 @@
       ],
       "You will lose any customization you made so far.": [
         ""
-      ],
-      "Your local date & time settings seem to be out of sync.": [
-        "ローカルの日付と時間設定は同期されていないようです。"
       ]
     }
   }

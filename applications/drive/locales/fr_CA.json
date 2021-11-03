@@ -66,7 +66,7 @@
         "Dialoguez avec nous"
       ],
       "Check import progress": [
-        ""
+        "Vérifier la progression de l'importation"
       ],
       "Choose a file or drag it here": [
         "Choisissez un fichier ou faites-le glisser ici"
@@ -147,7 +147,7 @@
         "Date de création: du plus ancien au plus récent"
       ],
       "Customize": [
-        ""
+        "Personnaliser"
       ],
       "Decrease": [
         "Diminuer"
@@ -188,7 +188,7 @@
         "Télécharger"
       ],
       "Drive Locked": [
-        ""
+        "Disque verrouillé"
       ],
       "Edit": [
         "Modifier"
@@ -197,7 +197,7 @@
         "Modifier l'adresse courriel"
       ],
       "Edit label": [
-        ""
+        "Modifier le label"
       ],
       "Edit phone number": [
         "Modifier le numéro de téléphone"
@@ -248,13 +248,13 @@
         "Masquer les paramètres PGP avancés"
       ],
       "Hide folders": [
-        ""
+        "Masquer les dossiers"
       ],
       "Hide info": [
         "Masquer les infos"
       ],
       "Hide labels": [
-        ""
+        "Masquer les labels"
       ],
       "I have a question": [
         "J’ai une question"
@@ -266,7 +266,7 @@
         "Importer"
       ],
       "Import from .csv or vCard": [
-        ""
+        "Importer depuis un .csv ou une vCard"
       ],
       "Increase": [
         "Augmenter"
@@ -461,13 +461,13 @@
         "Afficher les paramètres PGP avancés"
       ],
       "Show folders": [
-        ""
+        "Afficher les dossiers"
       ],
       "Show info": [
         "Afficher les infos"
       ],
       "Show labels": [
-        ""
+        "Afficher les labels"
       ],
       "Show shared link details": [
         "Afficher les détails du lien partagé"
@@ -497,7 +497,7 @@
         "Démarrer la configuration"
       ],
       "Stay": [
-        ""
+        "Rester"
       ],
       "Stop sharing": [
         "Arrêter le partage"
@@ -548,10 +548,10 @@
         "Téléverser une image"
       ],
       "Uploaded date: new to old": [
-        ""
+        "Date de modification: du plus récent au plus ancien"
       ],
       "Uploaded date: old to new": [
-        ""
+        "Date de modification: du plus ancien au plus récent"
       ],
       "Use ${ label } theme": [
         "Utiliser le thème « ${ label } »"
@@ -861,6 +861,12 @@
       ]
     },
     "Calendar subscription not synced error": {
+      "Calendar could not be decrypted": [
+        "Le calendrier n'a pas pu être déchiffré"
+      ],
+      "Calendar could not be found": [
+        "Le calendrier n'a pas pu être trouvé"
+      ],
       "Calendar is syncing": [
         "Synchronisation du calendrier"
       ],
@@ -893,7 +899,7 @@
     },
     "Confirm modal title": {
       "Quit import customization?": [
-        ""
+        "Quitter la personnalisation de l'importation?"
       ]
     },
     "Contact field label": {
@@ -1101,7 +1107,7 @@
         "Impossible de valider le numéro de téléphone, veuillez réessayer plus tard"
       ],
       "Checkout expired, please try again": [
-        ""
+        "La commande a expiré, veuillez réessayer"
       ],
       "Contact could not be saved": [
         "Le contact n'a pas pu être enregistré"
@@ -1440,7 +1446,7 @@
     },
     "Filter notification": {
       "${ Label.Name } updated": [
-        ""
+        "${ Label.Name } mis à jour"
       ]
     },
     "Free price": {
@@ -1645,8 +1651,8 @@
         "${ namesWithoutLast } et ${ nameOfLast }"
       ],
       "${ numContactGroups } contact group": [
-        "",
-        ""
+        "${ numContactGroups } groupe de contacts",
+        "${ numContactGroups } groupes de contacts"
       ],
       "${ numContacts } contact": [
         "${ numContacts } contact",
@@ -1691,8 +1697,8 @@
         "${ vpnAppName } FREE"
       ],
       "(${ memberCount } member)": [
-        "",
-        ""
+        "(${ memberCount } membre)",
+        "(${ memberCount } membres)"
       ],
       "(Mail + VPN)": [
         "(ProtonMail + ProtonVPN)"
@@ -1761,7 +1767,7 @@
         "Montant inférieur au minimum requis (${ amount })."
       ],
       "An active recovery file": [
-        ""
+        "Un fichier de récupération actif"
       ],
       "and": [
         "et"
@@ -1780,7 +1786,7 @@
         "La navigation de base et les actions restent disponibles indépendamment des raccourcis clavier activés ou non dans les paramètres."
       ],
       "Because ${ appName } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
-        ""
+        "Étant donné que ${ appName } est chiffré de bout en bout, nous ne pouvons pas accéder\nou déchiffrer vos fichiers pour vous. Pour déverrouiller votre lecteur après une réinitialisation de mot de passe,\nvous devez avoir l'un des éléments suivants:"
       ],
       "Billed as ${ billedPrice } every 2 years": [
         "Facturé ${ billedPrice } tous les 2 ans"
@@ -1822,7 +1828,7 @@
         "Cliquez sur « Demander un nouveau code » pour envoyer un nouveau code de vérification à ${ strong }. Si ce numéro de téléphone est incorrect, cliquez sur « Modifier » pour le corriger."
       ],
       "Close this screen to exit.": [
-        ""
+        "Fermez cet écran pour quitter."
       ],
       "Closing transfer manager will cancel all active transfers, are you sure?": [
         "Fermer le gestionnaire de transferts annulera tous les transferts actifs, êtes-vous sûr·e?"
@@ -1834,7 +1840,7 @@
         "Connexions"
       ],
       "Continue using ${ appName } and unlock drive later": [
-        ""
+        "Continuez à utiliser ${ appName } et déverrouillez le lecteur plus tard"
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "Créer ${ calendarsToBeCreated } nouveau calendrier",
@@ -1864,9 +1870,12 @@
       "Creating share": [
         "Création du partage"
       ],
+      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
+        "Les fichiers CSV d'Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora et de certaines autres applications ainsi que les formats vCard 3.1 et 4.0 (encodage UTF-8) sont pris en charge."
+      ],
       "Delete drive": [
-        "",
-        ""
+        "Supprimer le disque",
+        "Supprimer les disques"
       ],
       "Discount applied to your subscription with coupon ${ code }": [
         "Remise appliquée à votre abonnement avec le code promo ${ code }"
@@ -1965,10 +1974,10 @@
         "Si vous ne trouvez pas le courriel dans votre boîte de réception, veuillez vérifier votre dossier de pourriel."
       ],
       "If you have one of these, continue to Proton account setting to\ncontinue the unblock process.": [
-        ""
+        "Si vous en possédez l’un de ces éléments, passez à la configuration du compte Proton pour\ncontinuer le processus de déblocage."
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
-        ""
+        "Importer ${ contactsFragment } et ${ contactsGroupsFragment }"
       ],
       "Import ${ selectedCalendarsCount } of ${ totalCalendarsCount } calendar": [
         "Importer ${ selectedCalendarsCount } de ${ totalCalendarsCount } calendrier",
@@ -1978,16 +1987,16 @@
         "Importer depuis"
       ],
       "Import in progress": [
-        ""
+        "Importation en cours"
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
-        ""
+        "Importation de vos données de ${ importedEmailAddress } vers ${ toEmail }."
       ],
       "Included": [
         "Inclus"
       ],
       "Inherited from parent folder": [
-        ""
+        "Hérité du dossier parent"
       ],
       "Initializing": [
         "Initialisation en cours"
@@ -2008,7 +2017,7 @@
         "Empreinte de la clé"
       ],
       "Large imports can take several days.": [
-        ""
+        "Les importations importantes peuvent prendre plusieurs jours."
       ],
       "Learn more": [
         "En savoir plus"
@@ -2044,7 +2053,7 @@
         "Mes liens"
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
-        ""
+        "Nommez votre nouveau dossier et sélectionnez le dossier parent dans lequel vous voulez le mettre. Si vous ne sélectionnez pas de dossier parent, ce nouveau dossier sera créé en tant que dossier de premier niveau."
       ],
       "Network issue": [
         "Problème de réseau"
@@ -2053,7 +2062,7 @@
         "Nouveau"
       ],
       "Next you'll need to log in to your Google account and allow us to access your data.": [
-        ""
+        "Ensuite, vous devrez vous connecter à votre compte Google et nous permettre d'accéder à vos données."
       ],
       "No": [
         "Non"
@@ -2086,7 +2095,7 @@
         "Non personnalisable"
       ],
       "Note: Data may still be available locally on devices where you have installed ${ appName }.": [
-        ""
+        "Remarque: les données peuvent toujours être disponibles localement au sein des appareils dans lesquels vous avez installé ${ appName }."
       ],
       "Number of VPN connections which can be assigned to users. Each connected device consumes one VPN connection.": [
         "Nombre de connexions RPV qui peuvent être assignées aux utilisateur·rice·s. Chaque appareil connecté utilise une connexion RPV."
@@ -2095,7 +2104,7 @@
         "de"
       ],
       "One of your encrypted drives is locked. This is most likely due to a recent password reset.${ BrElement }\n${ BrElement }\n${ questionText }": [
-        ""
+        "L'un de vos lecteurs chiffrés est verrouillé. Ceci est probablement dû à une récente réinitialisation du mot de passe.${ BrElement }\n${ BrElement }\n${ questionText }"
       ],
       "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
         "Ne changez ces paramètres que si vous utilisez PGP avec des destinataires qui ne sont pas sur ProtonMail."
@@ -2113,7 +2122,7 @@
         "Les paiements sont protégés par le chiffrement TLS et les lois suisses dédiées à la protection de la vie privée."
       ],
       "Permanently delete all files in your drive": [
-        ""
+        "Supprimez définitivement tous les fichiers de votre disque"
       ],
       "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
         "PGP/Inline est uniquement compatible avec le format texte brut. Veuillez noter que ProtonMail signe toujours les messages chiffrés."
@@ -2213,7 +2222,7 @@
         "Puisque vous êtes un·e utilisateur·rice fidèle, votre compte dispose de fonctionnalités supplémentaires activées."
       ],
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
-        ""
+        "Certains de vos fichiers ne sont plus accessibles. Restaurez l'accès à vos fichiers. ${ StartRecoveryButton }"
       ],
       "Something went wrong, please try again later.": [
         "Un problème est survenu, veuillez réessayer plus tard."
@@ -2257,7 +2266,7 @@
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Ce lien pourrait être une attaque homographique. Veuillez vous assurer qu'il s'agit bien du lien que vous souhaitez visiter ou ne l'ouvrez pas."
       ],
-      "This link was created in a previous version and can not be modified. Delete this link and create a new one to change the settings.": [
+      "This link was created in\na previous version and can not be modified. Delete this link and create a\nnew one to change the settings.": [
         "Ce lien a été créé dans une version précédente et ne peut pas être modifié. Supprimez ce lien et créez-en un nouveau pour modifier les paramètres."
       ],
       "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
@@ -2304,7 +2313,7 @@
         "Corbeille"
       ],
       "Unlock drive to recover files": [
-        ""
+        "Déverrouillez le disque pour récupérer des fichiers"
       ],
       "Unsupported file": [
         "Fichier non pris en charge"
@@ -2333,9 +2342,6 @@
       "VPN + ${ mailAppName } bundle for families and small businesses.": [
         "Offre groupée RPV + ${ mailAppName } pour les familles et les petites entreprises."
       ],
-      "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
-        "Nous prenons en charge l'importation de fichiers CSV depuis Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora et d'autres applications. Nous prenons également en charge l'importation de vCard 4.0. (codage UTF-8)."
-      ],
       "We use 3-D Secure to protect your payments.": [
         "Nous utilisons 3-D Secure pour protéger vos paiements."
       ],
@@ -2343,7 +2349,7 @@
         "Nous vous redirigerons vers PayPal dans un nouvel onglet du navigateur pour compléter cette transaction. Si vous utilisez des bloqueurs de fenêtres surgissantes, veuillez les désactiver pour continuer."
       ],
       "We'll notify you when the import is done.": [
-        ""
+        "Nous vous informerons lorsque l'importation sera terminée."
       ],
       "Week": [
         "Semaine"
@@ -2355,7 +2361,7 @@
         "Que voulez-vous importer depuis votre compte Google?"
       ],
       "What would you like to do?": [
-        ""
+        "Qu'aimeriez-vous faire?"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Souhaitez-vous recevoir un nouveau code de vérification ou utiliser une autre méthode de vérification?"
@@ -2373,10 +2379,10 @@
         "Vous êtes actuellement connecté·e en tant que ${ user.Name } (${ user.Email }) et avez un accès restreint."
       ],
       "You can check the progress ${ importProgressLink }.": [
-        ""
+        "Vous pouvez vérifier la progression ${ importProgressLink }."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
-        ""
+        "Vous pouvez activer les notifications pour recevoir des alertes lorsque de nouveaux messages arrivent dans ce dossier."
       ],
       "You cannot undo this action.": [
         "Vous ne pouvez pas annuler cette action."
@@ -2445,7 +2451,7 @@
         "Votre fichier est en cours de téléchargement."
       ],
       "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ KeyReactivationButton }": [
-        ""
+        "Vos fichiers ne sont plus accessibles en raison d'une réinitialisation de mot de passe. Téléversez à nouveau l'ancienne clé de chiffrement pour en récupérer l'accès. ${ KeyReactivationButton }"
       ],
       "Your files will be encrypted and then saved.": [
         "Vos fichiers seront chiffrés puis sauvegardés."
@@ -2454,10 +2460,10 @@
         "Votre numéro de téléphone ne sera utilisé que pour cette vérification unique."
       ],
       "Your previous password": [
-        ""
+        "Votre précédent mot de passe"
       ],
       "Your previous recovery phrase": [
-        ""
+        "Votre phrase de récupération précédente"
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "Votre compte Proton est actuellement suspendu. Pour continuer à utiliser votre compte, veuillez régler les factures impayées."
@@ -2848,7 +2854,7 @@
         "Nom du dossier"
       ],
       "From: ${ importedEmail }": [
-        ""
+        "De: ${ importedEmail }"
       ],
       "Get your own ${ appName }": [
         "Obtenez votre propre ${ appName }"
@@ -2860,7 +2866,7 @@
         "Image"
       ],
       "Import all messages": [
-        ""
+        "Importer tous les messages"
       ],
       "Import contacts": [
         "Importer des contacts"
@@ -2878,13 +2884,13 @@
         "Labelliser les messages comme"
       ],
       "Last 12 months only": [
-        ""
+        "Seulement les 12 derniers mois"
       ],
       "Last 3 months only": [
-        ""
+        "Seulement les 3 derniers mois"
       ],
       "Last month only": [
-        ""
+        "Le mois dernier seulement"
       ],
       "Mailbox password": [
         "Mot de passe de messagerie"
@@ -2920,7 +2926,7 @@
         "Payeur"
       ],
       "PGP scheme": [
-        ""
+        "Schéma PGP"
       ],
       "Phone number": [
         "Numéro de téléphone"
@@ -3001,7 +3007,7 @@
         "Supprimez définitivement tous les fichiers dans votre lecteur verrouillé."
       ],
       "To: ${ emailAddress }": [
-        ""
+        "À: ${ emailAddress }"
       ],
       "Total": [
         "Total"
@@ -3096,21 +3102,21 @@
     },
     "Label/folder modal": {
       "Create folder": [
-        ""
+        "Créer un dossier"
       ],
       "Create label": [
-        ""
+        "Créer un label"
       ],
       "Edit folder": [
-        ""
+        "Modifier le dossier"
       ],
       "Edit label": [
-        ""
+        "Modifier le label"
       ]
     },
     "label/folder notification": {
       "${ Label.Name } created": [
-        ""
+        "${ Label.Name } créé"
       ]
     },
     "Layout mode": {
@@ -3161,23 +3167,23 @@
     },
     "Loading info": {
       "${ createdCalendars } of ${ calendarsToBeCreated } created": [
-        "",
-        ""
+        "${ createdCalendars } sur ${ calendarsToBeCreated } créé",
+        "${ createdCalendars } sur ${ calendarsToBeCreated } créés"
       ],
       "Almost there": [
-        ""
+        "Nous y sommes presque"
       ],
       "Creating new calendars": [
-        ""
+        "Création de nouveaux calendriers"
       ],
       "Gathering your data": [
-        ""
+        "Collecte de vos données"
       ],
       "We're gathering your data from your provider": [
-        ""
+        "Nous récupérons vos données auprès de votre fournisseur"
       ],
       "Your import is starting": [
-        ""
+        "Votre importation commence"
       ]
     },
     "Mail feature": {
@@ -3262,8 +3268,13 @@
       ]
     },
     "Mail import summary": {
-      "${ messagesFragment } since ${ periodFragment } and label them as ${ label }": [
-        ""
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        "Importer tous les messages de ${ selectedLabelsCount } label sur ${ totalLabelsCount } depuis ${ periodFragment } et les labelliser comme ${ label }",
+        "Importer tous les messages de ${ selectedLabelsCount } labels sur ${ totalLabelsCount } depuis ${ periodFragment } et les labelliser comme ${ label }"
+      ],
+      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        "Importer tous les messages de ${ totalLabelsCount } label depuis ${ periodFragment } et les labelliser comme ${ label }",
+        "Importer tous les messages de ${ totalLabelsCount } labels depuis ${ periodFragment } et les labelliser comme ${ label }"
       ]
     },
     "Many Others": {
@@ -3291,13 +3302,13 @@
     },
     "New Label form": {
       "Color": [
-        ""
+        "Couleur"
       ],
       "Folder name": [
-        ""
+        "Nom du dossier"
       ],
       "Label name": [
-        ""
+        "Nom du label"
       ]
     },
     "Notification": {
@@ -3317,8 +3328,8 @@
         "« ${ firstItemName } » restauré depuis la corbeille"
       ],
       "${ deletedCount } link to your file was deleted": [
-        "",
-        ""
+        "${ deletedCount } lien vers votre fichier a été supprimé",
+        "${ deletedCount } liens vers vos fichiers ont été supprimés"
       ],
       "${ deletedItemsCount } file deleted permanently from trash": [
         "${ deletedItemsCount } fichier supprimé définitivement de la corbeille",
@@ -3333,8 +3344,8 @@
         "${ deletedItemsCount } éléments supprimés définitivement de la corbeille"
       ],
       "${ failedCount } link to your file failed to be deleted": [
-        "",
-        ""
+        "${ failedCount } lien vers votre fichier n’a pas pu être supprimé",
+        "${ failedCount } liens vers vos fichiers n'ont pas pu être supprimés"
       ],
       "${ failedMovesCount } file failed to be moved": [
         "${ failedMovesCount } fichier n'a pas pu être déplacé",
@@ -3440,16 +3451,16 @@
         "Espace insuffisant pour téléverser ${ formattedTotal }"
       ],
       "The link to your file failed to be deleted": [
-        ""
+        "Le lien vers votre fichier n'a pas pu être supprimé"
       ],
       "The link to your file was deleted": [
-        ""
+        "Le lien vers votre fichier a été supprimé"
       ],
       "Your old files will be deleted in 72 hours": [
-        ""
+        "Vos anciens fichiers seront supprimés dans 72 heures"
       ],
       "Your settings have been changed successfully": [
-        ""
+        "Vos réglages ont été correctement modifiés"
       ]
     },
     "Onboarding Proton": {
@@ -3528,15 +3539,15 @@
         "Ignorer le groupe"
       ],
       "No parent folder": [
-        ""
+        "Aucun dossier parent"
       ]
     },
     "Option group label": {
       "Create new calendar": [
-        ""
+        "Créer un nouveau calendrier"
       ],
       "Merge with calendar": [
-        ""
+        "Fusionner avec le calendrier"
       ]
     },
     "Payment method option": {
@@ -3657,9 +3668,9 @@
       "1 user": [
         "1 utilisateur•rice"
       ],
-      "1200+ servers in ${ plusCountries } country": [
-        "Plus de 1200 serveurs dans ${ plusCountries } pays",
-        "Plus de 1200 serveurs dans ${ plusCountries } pays"
+      "1300+ servers in ${ plusCountries } country": [
+        "",
+        ""
       ],
       "20 GB storage": [
         "20 Go de stockage"
@@ -3874,10 +3885,10 @@
         "Préférences enregistrées"
       ],
       "Recovery has started": [
-        ""
+        "La récupération a commencé"
       ],
       "The link to your file was successfully copied": [
-        ""
+        "Le lien vers votre fichier a été copié correctement"
       ],
       "Verification successful": [
         "Vérification réussie"
@@ -3885,8 +3896,8 @@
       "You have successfully unsubscribed": [
         "Vous vous êtes désabonné·e avec succès"
       ],
-      "Your files were successfully recovered to \"My files\"": [
-        ""
+      "Your files were successfully recovered to \"My files\".": [
+        "Vos fichiers ont été correctement récupérés dans « Mes fichiers »."
       ]
     },
     "Suffix for price": {
@@ -3964,7 +3975,7 @@
         "Type"
       ],
       "Uploaded": [
-        ""
+        "Téléversé"
       ],
       "Values": [
         "Valeurs"
@@ -3980,16 +3991,16 @@
     },
     "Time period": {
       "account creation date": [
-        ""
+        "date de création du compte"
       ],
       "the last 12 months": [
-        ""
+        "les 12 derniers mois"
       ],
       "the last 3 months": [
-        ""
+        "les 3 derniers mois"
       ],
       "the last month": [
-        ""
+        "le dernier mois"
       ]
     },
     "Time unit": {
@@ -4108,13 +4119,13 @@
         "Offre actuelle"
       ],
       "Customize and confirm": [
-        ""
+        "Personnaliser et confirmer"
       ],
       "Customize calendar import": [
-        ""
+        "Personnaliser l'importation du calendrier"
       ],
       "Customize your mail import": [
-        ""
+        "Personnalisez l’importation de votre courrier"
       ],
       "Customize your plan": [
         "Personnalisez votre offre"
@@ -4362,7 +4373,7 @@
         "Sélectionner le délai d'expiration du lien"
       ],
       "Select what to import": [
-        ""
+        "Sélectionnez ce qu'il faut importer"
       ],
       "Settings": [
         "Paramètres"
@@ -4416,7 +4427,7 @@
         "Offre supérieure requise"
       ],
       "Uploaded": [
-        ""
+        "Téléversé"
       ],
       "Uploaded by": [
         "Téléversé par"
@@ -4448,7 +4459,7 @@
     },
     "Today icon tooltip in mini calendar": {
       "Today": [
-        ""
+        "Aujourd'hui"
       ]
     },
     "Tooltip": {
@@ -4477,7 +4488,7 @@
         "Remise appliquée pour un cycle de facturation bisannuel"
       ],
       "Each imported email will have this label": [
-        ""
+        "Chaque courriel importé aura ce label"
       ],
       "Email encryption forces email signature to help authenticate your sent messages": [
         "Le chiffrement de courriel force la signature des courriers électroniques pour vous aider à authentifier vos messages envoyés"
@@ -4522,10 +4533,10 @@
         "Prise en charge des protocoles de partage de fichiers comme BitTorrent."
       ],
       "System subfolders will show up as separate folders in ProtonMail": [
-        ""
+        "Les sous-dossiers système apparaîtront sous la forme de dossiers séparés dans ProtonMail"
       ],
       "The import will start with the most recent messages.": [
-        ""
+        "L'importation commencera par les messages les plus récents."
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Téléversez une clé publique pour activer l'envoi de courriels chiffrés de bout en bout vers cette adresse électronique"
@@ -4709,7 +4720,7 @@
         "Le chargement du contact a échoué."
       ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
-        ""
+        "Les paramètres de date et heure de votre appareil ne sont pas synchronisés. ${ learnMore }"
       ],
       "The decryption of the encrypted content failed.": [
         "Le déchiffrement du contenu chiffré a échoué."
@@ -4727,10 +4738,7 @@
         "Malheureusement, nous ne sommes pas en ligne pour le moment. Veuillez remplir le formulaire ci-dessous pour décrire votre problème, nous l'examinerons et vous contacterons lorsque nous serons de nouveau en ligne."
       ],
       "You will lose any customization you made so far.": [
-        ""
-      ],
-      "Your local date & time settings seem to be out of sync.": [
-        "Vos paramètres de date et d'heure locaux semblent désynchronisés."
+        "Vous perdrez toutes les personnalisations que vous avez faites jusqu'à présent."
       ]
     }
   }

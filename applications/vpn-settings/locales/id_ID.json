@@ -690,6 +690,12 @@
       ]
     },
     "Calendar subscription not synced error": {
+      "Calendar could not be decrypted": [
+        "Kalender tidak dapat didekripsi"
+      ],
+      "Calendar could not be found": [
+        "Kalender tidak ditemukan"
+      ],
       "Calendar is syncing": [
         "Kalender sedang menyinkronkan data"
       ],
@@ -757,8 +763,8 @@
       "I use a different Proton account": [
         "Saya menggunakan akun Proton lain"
       ],
-      "Missing feature(s) ": [
-        "Terdapat fitur-fitur yang hilang "
+      "Missing feature(s)": [
+        "Terdapat fitur-fitur yang hilang"
       ],
       "My reason isn't listed, please comment": [
         "Lainnya (harap jelaskan)"
@@ -805,7 +811,7 @@
         "Jumlah di bawah minimal."
       ],
       "Can't check username, try again later": [
-        "Gagal periksa nama pengguna. Coba lagi nanti"
+        "Tidak dapat memeriksa nama pengguna, coba lagi nanti"
       ],
       "Can't validate email, try again later": [
         "Tidak dapat memvalidasi surel, coba lagi nanti"
@@ -1171,7 +1177,7 @@
         "Bonus penyimpanan +${ bonusSpace }"
       ],
       "+${ organization.BonusVPN } connection for ProtonVPN (allows you to connect more devices to VPN)": [
-        "+${ organization.BonusVPN } koneksi ProtonVPN (Anda bisa menyambungkan lebih banyak perangkat ke VPN)"
+        "+${ organization.BonusVPN } koneksi ProtonVPN (memungkinkan Anda untuk dapat menyambungkan lebih banyak perangkat ke VPN secara bersamaan dalam satu waktu)"
       ],
       "20% discount applied to your subscription with coupon ${ code }": [
         "Diskon 20% berlaku untuk langganan dengan kupon ${ code }"
@@ -1186,13 +1192,13 @@
         "Internet yang bebas dan tanpa sensor harus tersedia untuk semua."
       ],
       "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password.": [
-        ""
+        "Frasa pemulihan memungkinkan Anda untuk dapat mengakses akun Anda dan memulihkan pesan-pesan terenkripsi yang ada di dalamnya apabila Anda lupa kata sandi."
       ],
       "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
         "Akses konten terblokir, seperti sosial media, berita, Wikipedia, YouTube, dan masih banyak lagi, di mana pun Anda berada."
       ],
       "Access your streaming services, like ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, no matter where you are.": [
-        "Akses layanan tontonan Anda, seperti ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, di mana pun Anda berada."
+        "Akses berbagai layanan streaming yang Anda kehendaki seperti ${ netflix }, ${ disney }, ${ primeVideo }, ${ many } di manapun Anda berada."
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Akses akun dibatasi karena tagihan tidak dibayar. Silakan hubungi Administrator Anda."
@@ -1228,7 +1234,7 @@
         "Dibutuhkan langganan Basic, Plus atau Visionary"
       ],
       "billed as ${ billedPrice }": [
-        "ditagih sebagai ${ billedPrice }"
+        "tertagih dengan harga ${ billedPrice }"
       ],
       "Billed as ${ billedPrice } every 2 years": [
         "Ditagih ${ billedPrice } setiap 2 tahun"
@@ -1276,7 +1282,7 @@
         "Sambungan"
       ],
       "Creating a new recovery phrase will deactivate your old one.": [
-        ""
+        "Frasa pemulihan yang baru akan menggantikan frasa pemulihan yang terdahulu."
       ],
       "Creating your account": [
         "Membuat akun anda"
@@ -1291,7 +1297,7 @@
         "Menonaktifkan ini akan mencegah nomor ponsel ini digunakan untuk pemulihan akun."
       ],
       "Disabling this will prevent your recovery phrase from being used for account recovery.": [
-        ""
+        "Menonaktifkan opsi ini akan mencegah Anda untuk dapat memulihkan akun dengan menggunakan frasa pemulihan."
       ],
       "Discount applied to your subscription with coupon ${ code }": [
         "Diskon diterapkan untuk langganan anda dengan kupon ${ code }"
@@ -1375,7 +1381,7 @@
         "Jika Anda menemui masalah saat membuat akun, silakan minta undangan dan kami akan merespon dalam satu hari kerja."
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
-        "Jika anda yakin ini adalah kesalahan, silakan hubungi kami ${ contactLink }."
+        "Apabila Anda merasa ini adalah sebuah kesalahan, silakan hubungi kami melalui ${ contactLink }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Jika Anda tidak menemukan surel di kotak masuk, mohon periksa folder spam Anda."
@@ -1384,10 +1390,10 @@
         "Jika Anda punya kode hadiah, masukkan kode tersebut untuk menggunakan diskon Anda."
       ],
       "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
-        "Jika Anda belum pernah menggunakan otentikasi dua faktor, sangat kami anjurkan Anda ${ guideButton }."
+        "Apabila Anda belum pernah menggunakan otentikasi dua faktor sebelumnya, kami sangat menganjurkan Anda untuk ${ guideButton }."
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to log into your account. Each code can only be used once.": [
-        "Jika Anda kehilangan perangkat berkemampuan dua-faktor, kode ini dapat menggantikan kode 6 digit otentikasi dua faktor untuk masuk ke akun Anda. Setiap kode hanya dapat digunakan sekali."
+        "Apabila Anda kehilangan perangkat yang Anda daftarkan sebagai perangkat penerima kode otentikasi dua faktor, Anda dapat menggunakan kode-kode berikut untuk masuk ke akun Anda. Masing-masing kode hanya dapat digunakan satu kali."
       ],
       "If you proceed with the downgrade, you will lose access to ProtonMail and ProtonVPN paid features.": [
         "Jika Anda meneruskan penurunan akun, Anda akan kehilangan akses ke fitur-fitur ProtonMail dan ProtonVPN berbayar."
@@ -1399,19 +1405,19 @@
         "Jika Anda meneruskan penurunan akun, Anda akan kehilangan akses ke fitur-fitur ProtonVPN berbayar."
       ],
       "If you proceed, you will have to reset your password and will be logged out of any other active sessions.": [
-        ""
+        "Apabila Anda melanjutkan proses ini, Anda harus mengatur ulang kata sandi Anda dan seluruh sesi aktif yang Anda miliki akan diberhentikan."
       ],
       "If you remember your old password later, you can recover your existing messages.": [
         "Jika dikemudian hari Anda ingat kata sandi lama Anda, Anda bisa mendapatkan kembali pesan-pesan anda."
       ],
       "If you wish to combine this account with another one, do NOT delete it.": [
-        ""
+        "Apabila Anda ingin menggabungkan akun ini dengan akun lain, JANGAN hapus akun ini."
       ],
       "IMPORTANT: Do not close or navigate away from this page. You will need to enter the reset code into the field below once you receive it.": [
         "PENTING: Jangan tutup atau pindah dari halaman ini. Anda harus memasukkan kode set ulang ke bidang di bawah saat Anda sudah menerimanya."
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
-        "Penting: Pastikan Anda menyimpan kode pemulihan. Jika tidak, Anda dapat kehilangan akses ke akun Anda secara permanen jika kehilangan perangkat otentikasi dua faktor Anda."
+        "Penting: Pastikan Anda menyimpan kode-kodea pemulihan yang ada. Apabila tidak, Anda dapat kehilangan akses ke akun Anda secara permanen jika di kala Anda kehilangan daftarkan sebagai perangkat penerima kode otentikasi dua faktor."
       ],
       "Included": [
         "Termasuk"
@@ -1525,7 +1531,7 @@
         "Harap lakukan verifikasi pembayaran di tab baru."
       ],
       "Please write your recovery phrase down in the order it appears and keep it somewhere safe. Your recovery phrase can be used to fully recover access to your account and your encrypted messages.": [
-        ""
+        "Harap catat frasa pemulihan Anda sesuai urutan yang tertera dan simpan catatan tersebut di tempat yang aman. Frasa pemulihan ini nantinya akan dapat Anda gunakan untuk memulihkan akses menuju akun Anda beserta pesan-pesan yang terenkripsi di dalamnya apabila terjadi sesuatu yang tidak dikehendaki."
       ],
       "Plus or Visionary subscription required": [
         "Dibutuhkan langganan Plus atau Visionary"
@@ -1552,7 +1558,7 @@
         "Diperlukan paket ProtonVPN Plus atau Visionary untuk fitur Secure Core."
       ],
       "read our two-factor authentication Guide first": [
-        ""
+        "terlebih dahulu membaca panduan seputar otentikasi dua faktor berikut"
       ],
       "Recovery phrase copied to clipboard": [
         "Frasa pemulihan disalin ke clipboard"
@@ -1630,7 +1636,7 @@
         "Berkas konfigurasi ini memungkinkan Anda memilih server ProtonVPN mana yang ingin Anda sambungkan saat menggunakan aplikasi VPN pihak ketiga atau menyiapkan koneksi VPN di router."
       ],
       "This account has been suspended due to a potential policy violation.": [
-        "Akun ini telah ditangguhkan karena kemungkinan pelanggaran kebijakan."
+        "Akun ini telah ditangguhkan karena ditenggarai telah melanggar ketentuan penggunaan yang berlaku."
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Peramban ini tidak mendukung pratinjau dokumen PDF. Silakan unduh berkas tersebut."
@@ -1642,7 +1648,7 @@
         "Paket berlangganan ini diberhentikan sementara"
       ],
       "This will also disable two-factor authentication.": [
-        ""
+        "Tindakan ini akan turut menonaktifkan otentikasi dua faktor."
       ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
         "Ini akan membatalkan langganan berbayar Anda saat ini dan Anda akan kehilangan keuntungan loyalitas yang telah Anda kumpulkan. Saldo yang tersisa dari langganan Ada akan dikembalikan sebagai kredit akun."
@@ -1654,7 +1660,7 @@
         "Ini akan menghapus semua akun Anda dengan semua datanya secara permanen. Anda tidak akan dapat mengaktifkan ulang akun ini."
       ],
       "This wizard will enable Two-Factor Authentication (2FA) on your Proton account. Two-factor authentication will make your Proton account more secure so we recommend enabling it.": [
-        "Proses ini akan mengaktifkan Otentikasi Dua Faktor (2FA) di akun Proton Anda. Otentikasi Dua Faktor akan membuat akun Proton Anda lebih aman sehingga kami sarankan untuk mengaktifkannya."
+        "Proses ini akan mengaktifkan Otentikasi Dua Faktor (Two-Factor Authentication/2FA) pada akun Proton Anda. Kami sangat menyarankan Anda untuk mengaktifkan otentikasi dua faktor karena metode otentikasi ini akan membuat akun Proton Anda lebih aman."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Untuk melawan spam dan penyalahgunaan, mohon verifikasi Anda memang manusia."
@@ -1675,7 +1681,7 @@
         "Tor"
       ],
       "Two-factor authentication adds an extra layer of security to your account in case your password is compromised.": [
-        "Autentikasi dua faktor menambahkan lapisan keamanan ekstra ke akun Anda jika kata sandi Anda dipakai secara tidak benar."
+        "Otentikasi dua faktor akan menambahkan lapisan keamanan ekstra pada akun Anda di kala kata sandi Anda jatuh ke tangan pihak-pihak yang tidak bertanggung jawab."
       ],
       "Two-factor authentication disabled": [
         "Otentikasi dua-faktor dinonaktifkan"
@@ -1792,7 +1798,7 @@
         "Anda harus menghapus seluruh kalender tambahan dan tautan kalender yang yang telah dibagikan sebelum Anda membatalkan langganan Anda. ${ linkButton }"
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
-        "Kapasitas penyimpanan Anda mencapai ${ spaceDisplayed }%. ${ freeUpMessage } ${ upgradeLink }"
+        "Anda telah menggunakan ${ spaceDisplayed }% dari kapasitas penyimpanan yang Anda miliki. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
         "Kapasitas penyimpanan Anda mencapai 100%. Anda tidak dapat mengirim atau menerima pesan baru. ${ freeUpMessage } ${ upgradeLink }"
@@ -2765,63 +2771,7 @@
         "Sedang"
       ]
     },
-    "Plan Feature": {
-      "${ freeServersCount.free_vpn } server": [
-        "${ freeServersCount.free_vpn } server"
-      ],
-      "${ maxConnections } VPN connection": [
-        "${ maxConnections } koneksi VPN"
-      ],
-      "${ n } server": [
-        "${ n } server"
-      ],
-      "${ n } VPN connection": [
-        "${ n } Koneksi VPN"
-      ],
-      "${ nFreeServers } in ${ countries.free_vpn.count } country": [
-        "${ nFreeServers } di ${ countries.free_vpn.count } negara"
-      ],
-      "1200+ servers in ${ countries[PLANS.VPNPLUS].count } country": [
-        "1200+ server di ${ countries[PLANS.VPNPLUS].count } negara"
-      ],
-      "350+ servers in ${ countries[PLANS.VPNBASIC].count } country": [
-        "350+ server di ${ countries[PLANS.VPNBASIC].count } negara"
-      ],
-      "All advanced security features": [
-        "Semua fitur keamanan canggih"
-      ],
-      "Filesharing/P2P support": [
-        "Dukungan berbagi berkas/P2P"
-      ],
-      "High speed": [
-        "Kecepatan tinggi"
-      ],
-      "Highest speed (10 Gbps)": [
-        "Server tercepat (10 Gbps)"
-      ],
-      "Highest speed (up to 10 Gbps)": [
-        "Kecepatan tertinggi (sampai 10 Gbps)"
-      ],
-      "Medium speed": [
-        "Kecepatan sedang"
-      ],
-      "ProtonMail Plus account": [
-        "Akun ProtonMail Plus"
-      ],
-      "ProtonMail Visionary account": [
-        "Akun ProtonMail Visionary"
-      ],
-      "Streaming service support": [
-        "Dukungan layanan streaming"
-      ],
-      "Strict no-logs policy": [
-        "Kebijakan tanpa log ketat"
-      ]
-    },
     "Plan feature": {
-      "${ freeServers } in ${ freeCountries } country": [
-        "${ freeServers } di ${ freeCountries } negara"
-      ],
       "0.5 GB storage": [
         "Penyimpanan 0.5 GB"
       ],
@@ -2834,9 +2784,6 @@
       "1 user": [
         "1 pengguna"
       ],
-      "1200+ servers in ${ plusCountries } country": [
-        "1200+ server di ${ plusCountries } negara"
-      ],
       "20 GB storage": [
         "Penyimpanan 20 GB"
       ],
@@ -2845,9 +2792,6 @@
       ],
       "3 folders / labels": [
         "3 folder / label"
-      ],
-      "350+ servers in ${ basicCountries } country": [
-        "350+ server di ${ basicCountries } negara"
       ],
       "5 addresses": [
         "5 alamat"
@@ -2928,6 +2872,38 @@
         "Folder / label tak terbatas"
       ]
     },
+    "Plan Feature": {
+      "All advanced security features": [
+        "Semua fitur keamanan canggih"
+      ],
+      "Filesharing/P2P support": [
+        "Dukungan berbagi berkas/P2P"
+      ],
+      "High speed": [
+        "Kecepatan tinggi"
+      ],
+      "Highest speed (10 Gbps)": [
+        "Server tercepat (10 Gbps)"
+      ],
+      "Highest speed (up to 10 Gbps)": [
+        "Kecepatan tertinggi (sampai 10 Gbps)"
+      ],
+      "Medium speed": [
+        "Kecepatan sedang"
+      ],
+      "ProtonMail Plus account": [
+        "Akun ProtonMail Plus"
+      ],
+      "ProtonMail Visionary account": [
+        "Akun ProtonMail Visionary"
+      ],
+      "Streaming service support": [
+        "Dukungan layanan streaming"
+      ],
+      "Strict no-logs policy": [
+        "Kebijakan tanpa log ketat"
+      ]
+    },
     "Plan info": {
       "(current plan)": [
         "(paket saat ini)"
@@ -2954,7 +2930,7 @@
         "${ totalMonthlyPriceText } / bln"
       ],
       "Billed as ${ totalBilledText }": [
-        "Tertagih ${ totalBilledText }"
+        "Tertagih dengan harga ${ totalBilledText }"
       ],
       "SAVE ${ discountText }": [
         "HEMAT ${ discountText }"
@@ -3533,7 +3509,7 @@
         "Alihkan lalu lintas Internet Anda melalui jaringan Tor dengan sekali klik."
       ],
       "Save 20% when billed annually": [
-        "Hemat 20% apabila ditagih per tahun"
+        "Hemat 20% dengan tagihan tahunan"
       ],
       "Support for file sharing protocols such as BitTorrent.": [
         "Mendukung protokol berbagi berkas seperti BitTorrent."
@@ -3670,6 +3646,17 @@
     "VPN info": {
       "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, and more.": [
         "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, dan banyak lagi."
+      ]
+    },
+    "VPN Plan Feature": {
+      "${ n } server": [
+        "${ n } server"
+      ],
+      "${ n } VPN connection": [
+        "${ n } koneksi VPN"
+      ],
+      "${ numberOfServers } in ${ numberOfCountries } country": [
+        "${ numberOfServers } di ${ numberOfCountries } negara"
       ]
     },
     "VPN upsell feature": {

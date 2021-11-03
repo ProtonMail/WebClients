@@ -31,11 +31,11 @@
       "${ BRAND_NAME } shop": [
         "Boutique ${ BRAND_NAME }"
       ],
-      "activate": [
-        "activer"
-      ],
       "Activate": [
         "Activer"
+      ],
+      "activate": [
+        "activer"
       ],
       "Activate ${ Name }@pm.me": [
         "Activer ${ Name }@pm.me"
@@ -879,9 +879,6 @@
       ]
     },
     "Alert": {
-      "Are you sure you want to import a private key? Importing an insecurely generated or leaked private key can harm the security of your emails.": [
-        "Êtes-vous sûr de vouloir importer une clé privée ? L'importation d'une clé privée divulguée ou générée de façon non sécurisée peut nuire à la sécurité de vos courriels."
-      ],
       "By leaving now, some contacts may not be imported": [
         "En quittant maintenant, il est possible que certains contacts ne soient pas importés"
       ],
@@ -1139,7 +1136,7 @@
         "(${ notice }) Renouvellement après 2 ans à un prix bisannuel réduit de ${ amount } tous les 2 ans (47 % de réduction)."
       ],
       "Billed as ${ amount } ${ supNotice }": [
-        ""
+        "Facturé ${ amount } ${ supNotice }"
       ],
       "Black Friday Sale": [
         "Offre Black Friday"
@@ -1297,6 +1294,12 @@
       ]
     },
     "Calendar subscription not synced error": {
+      "Calendar could not be decrypted": [
+        "Le calendrier n'a pas pu être déchiffré"
+      ],
+      "Calendar could not be found": [
+        "Le calendrier n'a pas pu être trouvé"
+      ],
       "Calendar is syncing": [
         "Synchronisation du calendrier"
       ],
@@ -1613,8 +1616,8 @@
       "I use a different Proton account": [
         "J'utilise un autre compte Proton"
       ],
-      "Missing feature(s) ": [
-        "Fonctionnalité(s) manquante(s) "
+      "Missing feature(s)": [
+        "Fonctionnalité(s) manquante(s)"
       ],
       "My reason isn't listed, please comment": [
         "Ma raison n'est pas répertoriée, veuillez commenter"
@@ -2960,6 +2963,11 @@
         "Vérification en 2 étapes activée"
       ]
     },
+    "Import key": {
+      "Are you sure you want to import a private key? Importing an insecurely generated or leaked private key can harm the security of your emails.\n\nPlease also note that the public key corresponding to this private key will be publicly available from our key server. If the key contains personal details (such as your full name) which you do not want to publish, please edit the key before importing it.": [
+        "Êtes-vous sûr de vouloir importer une clé privée ? L'importation d'une clé privée divulguée ou générée de manière non sécurisée peut nuire à la sécurité de vos messages électroniques.\n\nVeuillez également noter que la clé publique correspondant à cette clé privée sera publiquement disponible à partir de notre serveur de clés. Si la clé contient des informations personnelles (comme votre nom complet) que vous ne souhaitez pas publier, veuillez modifier la clé avant de l'importer."
+      ]
+    },
     "Import status": {
       "${ percentageValue }% paused": [
         "${ percentageValue } % mis en pause"
@@ -3381,6 +3389,9 @@
       "Creating your Proton account": [
         "Création de votre compte Proton"
       ],
+      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
+        "Les fichiers CSV d'Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora et de certaines autres applications ainsi que les formats vCard 3.1 et 4.0 (encodage UTF-8) sont pris en charge."
+      ],
       "Currently all available storage is allocated to the administrator account. Please reduce the admin account allocation to free up space for additional users. You can increase the total storage at any time by upgrading your account.": [
         "Actuellement tout le stockage disponible est alloué au compte administrateur. Veuillez réduire le stockage du compte admin afin de libérer de l'espace pour les autres utilisateurs. Vous pouvez augmenter le stockage total à tout moment en améliorant votre compte."
       ],
@@ -3538,9 +3549,6 @@
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Les filtres fonctionnent sur tous les messages, y compris les courriels entrants et envoyés. Chaque filtre doit contenir au moins un nom, une condition et une action."
       ],
-      "For advanced security, the Import-Export app encrypts emails on your device before migrating them to Proton servers. You can also export messages for local backups.": [
-        "Pour une sécurité avancée, l'application Import-Export chiffre les courriels sur votre appareil avant de les migrer vers les serveurs Proton. Vous pouvez également exporter les messages pour des sauvegardes locales."
-      ],
       "For families and small teams; includes both Mail and VPN.": [
         "Pour les familles et les équipes réduites ; Mail et VPN inclus."
       ],
@@ -3647,7 +3655,7 @@
         "Les images ont été supprimées, car elles ne sont pas autorisées dans la réponse automatique"
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
-        "Importer $ { contactsFragment } et ${ contactsGroupsFragment }"
+        "Importer ${ contactsFragment } et ${ contactsGroupsFragment }"
       ],
       "Import ${ selectedCalendarsCount } of ${ totalCalendarsCount } calendar": [
         "Importer ${ selectedCalendarsCount } de ${ totalCalendarsCount } calendrier",
@@ -4098,6 +4106,9 @@
       "The email address you place at the top of the list is your default email address. Drag and drop to reorder your addresses.": [
         "L'adresse électronique que vous placez en haut de la liste est votre adresse par défaut. Glissez et déposez pour réorganiser vos adresses."
       ],
+      "The Import-Export app allows you to export messages for local backups and to restore previous backups to your account.": [
+        "L'application Import-Export permet d'exporter des messages pour des sauvegardes locales et de restaurer des sauvegardes précédentes sur votre compte."
+      ],
       "The name will be visible to your users while they are logged in.": [
         "Le nom sera visible par vos utilisateurs lorsqu'ils seront connectés."
       ],
@@ -4283,9 +4294,6 @@
       ],
       "We recommend adding a linked email so you can recover your account if you lose your password.": [
         "Nous vous recommandons d'ajouter une adresse électronique liée afin que vous puissiez récupérer votre compte si vous perdez votre mot de passe."
-      ],
-      "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
-        "Nous prenons en charge l'importation de fichiers CSV depuis Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora et d'autres applications. Nous prenons également en charge l'importation de vCard 4.0. (codage UTF-8)."
       ],
       "We use 3-D Secure to protect your payments.": [
         "Nous utilisons 3-D Secure pour protéger vos paiements."
@@ -5928,8 +5936,13 @@
       ]
     },
     "Mail import summary": {
-      "${ messagesFragment } since ${ periodFragment } and label them as ${ label }": [
-        "${ messagesFragment } depuis ${ periodFragment } et les labelliser comme ${ label }"
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        "",
+        ""
+      ],
+      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        "",
+        ""
       ]
     },
     "Mail upsell feature": {
@@ -6656,21 +6669,7 @@
         "Free"
       ]
     },
-    "Plan Feature": {
-      "${ n } server": [
-        "${ n } serveur",
-        "${ n } serveurs"
-      ],
-      "${ n } VPN connection": [
-        "${ n } connexion VPN",
-        "${ n } connexions VPN"
-      ]
-    },
     "Plan feature": {
-      "${ freeServers } in ${ freeCountries } country": [
-        "${ freeServers } dans ${ freeCountries } pays",
-        "${ freeServers } dans ${ freeCountries } pays"
-      ],
       "0.5 GB storage": [
         "0,5 Go de stockage"
       ],
@@ -6683,10 +6682,6 @@
       "1 user": [
         "1 utilisateur"
       ],
-      "1200+ servers in ${ plusCountries } country": [
-        "Plus de 1 200 serveurs dans ${ plusCountries } pays",
-        "Plus de 1 200 serveurs dans ${ plusCountries } pays"
-      ],
       "20 GB storage": [
         "20 Go de stockage"
       ],
@@ -6695,10 +6690,6 @@
       ],
       "3 folders / labels": [
         "3 dossiers/labels"
-      ],
-      "350+ servers in ${ basicCountries } country": [
-        "Plus de 350 serveurs dans ${ basicCountries } pays",
-        "Plus de 350 serveurs dans ${ basicCountries } pays"
       ],
       "5 addresses": [
         "5 adresses"
@@ -6921,6 +6912,9 @@
       "Auto reply": [
         "Réponses automatiques"
       ],
+      "Backup & Export": [
+        "Sauvegarde & exportation"
+      ],
       "Calendars": [
         "Calendriers"
       ],
@@ -6953,9 +6947,6 @@
       ],
       "Import & export": [
         "Importation & exportation"
-      ],
-      "Import/Export": [
-        "Importation/Exportation"
       ],
       "Multi-user support": [
         "Prise en charge du multiutilisateur"
@@ -7497,6 +7488,9 @@
       "Back": [
         "Retour"
       ],
+      "Backup & Export": [
+        "Sauvegarde & exportation"
+      ],
       "Billing cycle": [
         "Cycle de facturation"
       ],
@@ -7809,9 +7803,6 @@
       ],
       "Import-Export app": [
         "Application Import-Export"
-      ],
-      "Import/Export": [
-        "Import/Export"
       ],
       "Invalid verification code": [
         "Code de vérification non valide"
@@ -8527,6 +8518,20 @@
     "VPN info": {
       "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, and more.": [
         "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now et plus."
+      ]
+    },
+    "VPN Plan Feature": {
+      "${ n } server": [
+        "${ n } serveur",
+        ""
+      ],
+      "${ n } VPN connection": [
+        "${ n } connexion VPN",
+        "${ n } connexions VPN"
+      ],
+      "${ numberOfServers } in ${ numberOfCountries } country": [
+        "${ numberOfServers } dans ${ numberOfCountries } pays",
+        "${ numberOfServers } dans ${ numberOfCountries } pays"
       ]
     },
     "VPN upsell feature": {

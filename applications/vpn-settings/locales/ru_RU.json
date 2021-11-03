@@ -717,6 +717,12 @@
       ]
     },
     "Calendar subscription not synced error": {
+      "Calendar could not be decrypted": [
+        "Невозможно было расшифровать календарь"
+      ],
+      "Calendar could not be found": [
+        "Невозможно было найти Календарь"
+      ],
       "Calendar is syncing": [
         "Календарь синхронизируется"
       ],
@@ -790,8 +796,8 @@
       "I use a different Proton account": [
         "Я использую другой аккаунт Proton"
       ],
-      "Missing feature(s) ": [
-        "Отсутствующие функции"
+      "Missing feature(s)": [
+        "Отсутствующая(ие) функция(и)"
       ],
       "My reason isn't listed, please comment": [
         "Моя причина не указана, пожалуйста, прокомментируйте"
@@ -2825,87 +2831,7 @@
         "Средняя"
       ]
     },
-    "Plan Feature": {
-      "${ freeServersCount.free_vpn } server": [
-        "${ freeServersCount.free_vpn } сервер",
-        "${ freeServersCount.free_vpn } сервера",
-        "${ freeServersCount.free_vpn } серверов",
-        "${ freeServersCount.free_vpn } серверов"
-      ],
-      "${ maxConnections } VPN connection": [
-        "${ maxConnections } VPN-подключение",
-        "${ maxConnections } VPN подключения",
-        "${ maxConnections } VPN подключений",
-        "${ maxConnections } VPN подключений"
-      ],
-      "${ n } server": [
-        "${ n } сервер",
-        "${ n } сервера",
-        "${ n } серверов",
-        "${ n } серверов"
-      ],
-      "${ n } VPN connection": [
-        "${ n } VPN-подключение",
-        "${ n } VPN подключения",
-        "${ n } VPN-подключений",
-        "${ n } VPN-подключений"
-      ],
-      "${ nFreeServers } in ${ countries.free_vpn.count } country": [
-        "${ nFreeServers } серверов в ${ countries.free_vpn.count } стране",
-        "${ nFreeServers } серверов в ${ countries.free_vpn.count } странах",
-        "${ nFreeServers } серверов в ${ countries.free_vpn.count } странах",
-        "${ nFreeServers } серверов в ${ countries.free_vpn.count } странах"
-      ],
-      "1200+ servers in ${ countries[PLANS.VPNPLUS].count } country": [
-        "1200+ серверов в ${[PLANS.VPNPLUS].count } стране",
-        "1200+ серверов в ${[PLANS.VPNPLUS].count } странах",
-        "1200+ серверов в ${[PLANS.VPNPLUS].count } странах",
-        "1200+ серверов в ${[PLANS.VPNPLUS].count } странах"
-      ],
-      "350+ servers in ${ countries[PLANS.VPNBASIC].count } country": [
-        "350+ серверов в ${[PLANS.VPNBASIC].count } стране",
-        "350+ серверов в ${[PLANS.VPNBASIC].count } странах",
-        "350+ серверов в ${[PLANS.VPNBASIC].count } странах",
-        "350+ серверов в ${[PLANS.VPNBASIC].count } странах"
-      ],
-      "All advanced security features": [
-        "Все расширенные функции безопасности"
-      ],
-      "Filesharing/P2P support": [
-        "Обмен файлами/Поддержка P2P"
-      ],
-      "High speed": [
-        "Высокая скорость"
-      ],
-      "Highest speed (10 Gbps)": [
-        "Наивысшая скорость (10 Гбит/с)"
-      ],
-      "Highest speed (up to 10 Gbps)": [
-        "Наивысшая скорость (до 10 Гбит/с)"
-      ],
-      "Medium speed": [
-        "Средняя скорость"
-      ],
-      "ProtonMail Plus account": [
-        "Аккаунт ProtonMail Plus"
-      ],
-      "ProtonMail Visionary account": [
-        "Аккаунт ProtonMail Visionary"
-      ],
-      "Streaming service support": [
-        "Поддержка стриминговых сервисов"
-      ],
-      "Strict no-logs policy": [
-        "Строгая политика отсутствия журналов активности"
-      ]
-    },
     "Plan feature": {
-      "${ freeServers } in ${ freeCountries } country": [
-        "${ freeServers } серверов в ${ freeCountries } стране",
-        "${ freeServers } серверов в ${ freeCountries } странах",
-        "${ freeServers } серверов в ${ freeCountries } странах",
-        "${ freeServers } серверов в ${ freeCountries } странах"
-      ],
       "0.5 GB storage": [
         "0.5 ГБ хранилища"
       ],
@@ -2918,12 +2844,6 @@
       "1 user": [
         "1 пользователь"
       ],
-      "1200+ servers in ${ plusCountries } country": [
-        "1200 + серверов в ${ plusCountries } стране",
-        "1200 + серверов в ${ plusCountries } странах",
-        "1200 + серверов в ${ plusCountries } странах",
-        "1200 + серверов в ${ plusCountries } странах"
-      ],
       "20 GB storage": [
         "20 ГБ хранилища"
       ],
@@ -2932,12 +2852,6 @@
       ],
       "3 folders / labels": [
         "3 папки / ярлыка"
-      ],
-      "350+ servers in ${ basicCountries } country": [
-        "350+ серверов в ${ basicCountries } стране",
-        "350+ серверов в ${ basicCountries } странах",
-        "350+ серверов в ${ basicCountries } странах",
-        "350+ серверов в ${ basicCountries } странах"
       ],
       "5 addresses": [
         "5 адресов"
@@ -3016,6 +2930,38 @@
       ],
       "Unlimited folders / labels": [
         "Безлимитные папки / ярлыки"
+      ]
+    },
+    "Plan Feature": {
+      "All advanced security features": [
+        "Все расширенные функции безопасности"
+      ],
+      "Filesharing/P2P support": [
+        "Обмен файлами/Поддержка P2P"
+      ],
+      "High speed": [
+        "Высокая скорость"
+      ],
+      "Highest speed (10 Gbps)": [
+        "Наивысшая скорость (10 Гбит/с)"
+      ],
+      "Highest speed (up to 10 Gbps)": [
+        "Наивысшая скорость (до 10 Гбит/с)"
+      ],
+      "Medium speed": [
+        "Средняя скорость"
+      ],
+      "ProtonMail Plus account": [
+        "Аккаунт ProtonMail Plus"
+      ],
+      "ProtonMail Visionary account": [
+        "Аккаунт ProtonMail Visionary"
+      ],
+      "Streaming service support": [
+        "Поддержка стриминговых сервисов"
+      ],
+      "Strict no-logs policy": [
+        "Строгая политика отсутствия журналов активности"
       ]
     },
     "Plan info": {
@@ -3766,6 +3712,26 @@
     "VPN info": {
       "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, and more.": [
         "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now и многое другое."
+      ]
+    },
+    "VPN Plan Feature": {
+      "${ n } server": [
+        "${ n } сервер",
+        "",
+        "${ n } серверов",
+        ""
+      ],
+      "${ n } VPN connection": [
+        "${ n } VPN-соединение",
+        "",
+        "${ n } VPN-соединений",
+        ""
+      ],
+      "${ numberOfServers } in ${ numberOfCountries } country": [
+        "${ numberOfServers } серверов в ${ numberOfCountries } стране",
+        "",
+        "${ numberOfServers } серверов в ${ numberOfCountries } странах",
+        ""
       ]
     },
     "VPN upsell feature": {

@@ -855,6 +855,12 @@
       ]
     },
     "Calendar subscription not synced error": {
+      "Calendar could not be decrypted": [
+        "Kalender tidak dapat didekripsi"
+      ],
+      "Calendar could not be found": [
+        "Kalender tidak ditemukan"
+      ],
       "Calendar is syncing": [
         "Kalender sedang menyinkronkan data"
       ],
@@ -1818,6 +1824,9 @@
       "Creating share": [
         "Membuat konten bersama"
       ],
+      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
+        "Anda dapat mengimpor berkas-berkas CSV dari Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora, dan beberapa aplikasi lainnya serta berkas-berkas vCard versi 3.1 dan 4.0 (dengan encoding UTF-8)."
+      ],
       "Delete drive": [
         "Hapus drive"
       ],
@@ -2122,7 +2131,7 @@
         "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } termasuk ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } Koneksi VPN."
       ],
       "Queued": [
-        "Antri"
+        "Ditempatkan dalam antrian"
       ],
       "Recovery process might take some time.": [
         "Proses pemulihan mungkin membutuhkan waktu."
@@ -2208,8 +2217,8 @@
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Tautan ini mungkin adalah sebuah serangan homograf. Mohon verifikasi tautan yang ingin Anda kunjungi, atau jangan membukanya."
       ],
-      "This link was created in a previous version and can not be modified. Delete this link and create a new one to change the settings.": [
-        "Tautan ini dibuat di versi sebelumnya dan tidak dapat diubah. Hapus tautan ini dan buat yang baru untuk mengubah pengaturan."
+      "This link was created in\na previous version and can not be modified. Delete this link and create a\nnew one to change the settings.": [
+        "Tautan ini dibuat pada\nversi aplikasi yang sudah usang dan tidak dapat diubah lebih lanjut. Hapus tautan ini dan\nbuat tautan yang baru untuk dapat mengubah pengaturan."
       ],
       "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
         "Tautan ini akan dinonaktifkan secara permanen. Tidak ada yang bisa mengakses berkas Anda dengan tautan ini. Untuk membagikan ulang, Anda akan perlu tautan baru."
@@ -2283,9 +2292,6 @@
       "VPN + ${ mailAppName } bundle for families and small businesses.": [
         "Bundel VPN + ${ mailAppName } untuk keluarga dan usaha kecil."
       ],
-      "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
-        "Kami menerima impor berkas CSV dari Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora dan beberapa program lain. Kami juga menerima impor vCard 4.0. (encoding UTF-8)."
-      ],
       "We use 3-D Secure to protect your payments.": [
         "Kami menggunakan 3-D Secure untuk melindungi pembayaran anda."
       ],
@@ -2299,7 +2305,7 @@
         "Pekan"
       ],
       "What do you want to do?": [
-        "Apa yang ingin anda lakukan?"
+        "Apa yang ingin Anda lakukan?"
       ],
       "What do you want to import from your Google account?": [
         "Apa yang hendak Anda impor dari akun Google Anda?"
@@ -3210,8 +3216,11 @@
       ]
     },
     "Mail import summary": {
-      "${ messagesFragment } since ${ periodFragment } and label them as ${ label }": [
-        "${ messagesFragment } sejak ${ periodFragment } yang akan memiliki label ${ label }"
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        "Impor seluruh pesan yang memiliki ${ selectedLabelsCount } label terpilih dari total ${ totalLabelsCount } label yang ada sejak ${ periodFragment } dan labeli pesan-pesan tersebut dengan label ${ label }"
+      ],
+      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        "Impor seluruh pesan yang berlabel dari total ${ totalLabelsCount } label yang ada sejak ${ periodFragment } dan labeli pesan-pesan tersebut dengan label ${ label }"
       ]
     },
     "Many Others": {
@@ -3578,8 +3587,8 @@
       "1 user": [
         "1 pengguna"
       ],
-      "1200+ servers in ${ plusCountries } country": [
-        "1200+ server di ${ plusCountries } negara"
+      "1300+ servers in ${ plusCountries } country": [
+        "1300+ server di ${ plusCountries } negara"
       ],
       "20 GB storage": [
         "Kapasitas 20 GB"
@@ -3800,8 +3809,8 @@
       "You have successfully unsubscribed": [
         "Anda telah berhenti berlangganan"
       ],
-      "Your files were successfully recovered to \"My files\"": [
-        "Berkas-berkas Anda telah berhasil dipulihkan ke \"Berkas-berkas saya\""
+      "Your files were successfully recovered to \"My files\".": [
+        "Berkas-berkas Anda telah berhasil dipulihkan ke \"Berkas-berkas saya\"."
       ]
     },
     "Suffix for price": {
@@ -4634,9 +4643,6 @@
       ],
       "You will lose any customization you made so far.": [
         "Segala penyesuaian yang telah Anda buat sejauh ini tidak akan tersimpan."
-      ],
-      "Your local date & time settings seem to be out of sync.": [
-        "Pengaturan waktu & tanggal lokal Anda sepertinya tidak tersinkronisasi."
       ]
     }
   }

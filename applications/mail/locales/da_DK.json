@@ -822,6 +822,9 @@
       "Try another method": [
         "Prøv en anden metode"
       ],
+      "Turn on tracker protection": [
+        "Slå beskyttelse mod sporing til"
+      ],
       "Underline": [
         "Understreg"
       ],
@@ -1024,7 +1027,7 @@
     },
     "Attachment radio advanced search": {
       "All": [
-        "Alt"
+        "Alle"
       ],
       "With": [
         "Med"
@@ -1437,6 +1440,12 @@
       ]
     },
     "Calendar subscription not synced error": {
+      "Calendar could not be decrypted": [
+        "Kalender kunne ikke dekrypteres"
+      ],
+      "Calendar could not be found": [
+        "Kalender kunne ikke findes"
+      ],
       "Calendar is syncing": [
         "Kalender synkroniserer"
       ],
@@ -1457,6 +1466,14 @@
       ],
       "More than 12 hours passed since last update": [
         "Der er gået mere end 12 timer siden den seneste opdatering"
+      ]
+    },
+    "Collapsible tooltip": {
+      "Close": [
+        "Luk"
+      ],
+      "Open": [
+        "Åbn"
       ]
     },
     "Composer email icon": {
@@ -1882,7 +1899,7 @@
         "Beløb under minimum."
       ],
       "Attachments are limited to 25 MB": [
-        ""
+        "Vedhæftninger er begrænset til 25 MB"
       ],
       "Authentication canceled.": [
         "Godkendelse annulleret."
@@ -1906,7 +1923,7 @@
         "Kan ikke bekræfte telefonen, prøv igen senere"
       ],
       "Checkout expired, please try again": [
-        ""
+        "Betalingen er udløbet, prøv venligst igen"
       ],
       "Choose a date in the future.": [
         "Vælg en dato i fremtiden."
@@ -1928,10 +1945,10 @@
         "Kontaktsignatur ikke bekræftet"
       ],
       "Contact your organization’s administrator to resolve this": [
-        ""
+        "Kontakt din organisations administrator for at løse dette"
       ],
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
-        ""
+        "Indholdssøgning kan ikke aktiveres i denne browser. Afslut privat browsing eller brug en anden browser."
       ],
       "Could not find address ${ email }.": [
         "Kunne ikke finde adresse ${ email }."
@@ -1968,13 +1985,13 @@
         "Fejl i en af betingelserne"
       ],
       "Error while saving draft. Please try again.": [
-        ""
+        "Fejl under lagring af kladde. Prøv venligst igen."
       ],
       "Error while sending the message. Message is not sent.": [
-        ""
+        "Fejl under afsendelse af beskeden. Beskeden er ikke afsendt."
       ],
       "Error while uploading attachments. Message is not sent.": [
-        ""
+        "Der opstod en fejl under upload af vedhæftede filer. Besked er ikke afsendt."
       ],
       "Failed to encrypt attachment. Please try again.": [
         "Kryptering af vedhæftning mislykkedes. Forsøg igen."
@@ -2010,7 +2027,7 @@
         "Ugyldig udløbsdato"
       ],
       "Invalid expiration time": [
-        ""
+        "Ugyldigt udløbstidspunkt"
       ],
       "Invalid name": [
         "Ugyldigt navn"
@@ -2035,7 +2052,7 @@
         "Beskeden skal sendes først"
       ],
       "Message passwords do not match": [
-        ""
+        "Beskedadgangskoder stemmer ikke overens"
       ],
       "Message processing error.": [
         "Fejl i meddelelsesbehandling."
@@ -2050,7 +2067,7 @@
         "Netværksfejl: Tjek din forbindelse og forsøg igen."
       ],
       "No address with keys available to compose a message": [
-        ""
+        "Ingen adresse med nøgler er tilgængelig til at komponere en besked"
       ],
       "No key retrieved for internal user is valid for sending": [
         "Ingen nøgle hentet for intern bruger er gyldig til afsendelse"
@@ -2184,7 +2201,7 @@
         "Etikettenavnet er for langt. Vælg venligst et andet navn."
       ],
       "The maximum expiration is 4 weeks": [
-        ""
+        "Den maksimale udløbsperiode er 4 uger"
       ],
       "The minimum amount of credit that can be added is ${ _price }": [
         "Det mindste kreditstørrelse, der kan tilføjes, er ${ _price }"
@@ -2202,7 +2219,7 @@
         "Der er for mange mapper i din eksterne konto. Rediger venligst importen for at slette nogle mapper."
       ],
       "There has been an issue with content search. Default search has been used instead.": [
-        ""
+        "Der var et problem med indholdssøgning. Standardsøgning er blevet brugt i stedet."
       ],
       "There was an error when exporting the contacts vCards": [
         "Der opstod en fejl under eksport af kontakternes vCards"
@@ -2220,7 +2237,7 @@
         "Dette etikettenavn er ikke tilgængeligt. Vælg venligst et andet navn"
       ],
       "This message has already been sent": [
-        ""
+        "Denne besked er allerede blevet sendt"
       ],
       "This message has already been sent. A new draft has been saved.": [
         "Denne besked er allerede blevet sendt. En ny kladde er blevet gemt."
@@ -2229,7 +2246,7 @@
         "Denne besked kan indeholde links, som ikke kan åbnes korrekt af din aktuelle browser"
       ],
       "Too many active filters. Please upgrade to a paid plan to activate more filters.": [
-        ""
+        "For mange aktive filtre. Opgrader venligst til et betalt abonnement for at aktivere flere filtre."
       ],
       "Trusted keys are not valid for sending": [
         "Betroede nøgler er ikke gyldige til afsendelse"
@@ -2250,8 +2267,8 @@
         "Du kan ikke sende vCards med mere end 10 kontakter"
       ],
       "You cannot open more than ${ maxActiveComposer } composer window at a time": [
-        "",
-        ""
+        "Du kan ikke åbne mere end ${ maxActiveComposer } skrivervindue ad gangen",
+        "Du kan ikke åbne mere end ${ maxActiveComposer } skrivervinduer ad gangen"
       ],
       "You did not provide a file.": [
         "Du har ikke angivet en fil."
@@ -2269,7 +2286,7 @@
         "Din import vil ikke blive behandlet."
       ],
       "Your search matched too many results. Please limit your search and try again.": [
-        ""
+        "Din søgning gav for mange resultater. Begræns din søgning, og forsøg igen."
       ]
     },
     "Error display when performing invalid move on message": {
@@ -2553,13 +2570,13 @@
     },
     "Filter option": {
       "All": [
-        "Alt"
+        "Alle"
       ],
       "Hide moved message": [
         "Skjul flyttet besked"
       ],
       "Read": [
-        "Læs"
+        "Læst"
       ],
       "Show moved message": [
         "Vis flyttet besked"
@@ -2815,10 +2832,6 @@
       "${ numberOfTrackers } email tracker blocked": [
         "${ numberOfTrackers } e-mail-tracker blokeret",
         "${ numberOfTrackers } e-mail-trackere blokeret"
-      ],
-      "${ numberOfTrackers } email tracker found": [
-        "${ numberOfTrackers } e-mail-tracker fundet",
-        "${ numberOfTrackers } e-mail-trackere fundet"
       ],
       "${ numContactGroups } contact group": [
         "${ numContactGroups } kontaktgruppe",
@@ -3135,6 +3148,9 @@
       "Create recovery phrase": [
         "Opret gendannelsesfrase"
       ],
+      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
+        "CSV-filer fra Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora og nogle andre apps samt vCard 3.1 og 4.0-formater (UTF-8-kodning) understøttes."
+      ],
       "Custom": [
         "Tilpasset"
       ],
@@ -3205,6 +3221,19 @@
       ],
       "Email address": [
         "E-mail"
+      ],
+      "Email tracker protection is disabled": [
+        "Beskyttelse mod sporing af e-mail er deaktiveret"
+      ],
+      "Email trackers can violate your privacy. Proton did not find any trackers on this message.": [
+        "Sporing af e-mails kan krænke dit privatliv. Proton fandt ingen sporing af denne besked."
+      ],
+      "Email trackers can violate your privacy. Proton found and blocked ${ numberOfTrackers } tracker.": [
+        "Sporing af e-mails kan krænke dit privatliv. Proton fandt og blokerede ${ numberOfTrackers } tracker.",
+        "Sporing af e-mails kan krænke dit privatliv. Proton fandt og blokerede ${ numberOfTrackers } trackere."
+      ],
+      "Email trackers can violate your privacy. Turn on tracker protection to prevent senders from knowing whether and when you have opened a message.": [
+        "Sporing af e-mails kan krænke dit privatliv. Slå beskyttelse mod sporing til for at forhindre afsendere i at vide, om og hvornår du har åbnet en besked."
       ],
       "embedded image": [
         "indlejret billede",
@@ -3314,7 +3343,7 @@
         "Billed-URL"
       ],
       "Images have been removed because they are not allowed in auto-reply": [
-        ""
+        "Billeder er blevet fjernet, fordi de ikke er tilladte i auto-svar"
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Importer ${ contactsFragment } og ${ contactsGroupsFragment }"
@@ -3421,7 +3450,7 @@
         "Besked afsendt"
       ],
       "Message sent.": [
-        ""
+        "Besked afsendt."
       ],
       "Message will be sent ${ dateString } at ${ formattedTime }": [
         "Besked vil blive sendt ${ dateString } kl. ${ formattedTime }"
@@ -3575,9 +3604,6 @@
       ],
       "Print email": [
         "Udskriv e-mail"
-      ],
-      "Protect yourself from trackers. Turn on email tracker protection in settings": [
-        "Beskyt dig mod trackere. Slå beskyttelsen mod e-mail-trackere til i indstillingerne"
       ],
       "Proton doesn't make money by abusing privacy.": [
         "Proton tjener ikke penge ved at misbruge privatlivets fred."
@@ -3827,9 +3853,6 @@
       "To fight spam and abuse, please verify you are human.": [
         "For at bekæmpe spam og misbrug bedes du bekræfte, at du er et menneske."
       ],
-      "To protect your privacy, Proton blocked email trackers in this message": [
-        "For at beskytte dit privatliv har Proton blokeret e-mail-trackere i denne besked"
-      ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "For at gensignere dine kontaktpersoner, skal vi kontrollere alle kontaktpersoner mod listen over krypteringsnøgler på din konto. Hvis der ikke findes nogen match, vil din kontakt blive gensigneret med den primære krypteringsnøgle."
       ],
@@ -3850,6 +3873,9 @@
       ],
       "Turn off content search. Activation progress won't be lost.": [
         "Slå indholdssøgning fra. Aktiveringsfremskridt vil ikke gå tabt."
+      ],
+      "Turn on to search the content of your messages": [
+        "Slå til for at søge i indholdet af dine beskeder"
       ],
       "Unsupported file": [
         "Ikke-understøttet fil"
@@ -3928,9 +3954,6 @@
       ],
       "We could not verify the sender's trusted keys.": [
         "Vi kunne ikke bekræfte afsenderens betroede nøgler."
-      ],
-      "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
-        "Vi understøtter import af CSV-filer fra Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora og visse andre apps. Vi understøtter også import af vCard 4.0. (UTF-8-kodning)."
       ],
       "We use 3-D Secure to protect your payments.": [
         "Vi bruger 3-D Secure til at beskytte dine betalinger."
@@ -4643,7 +4666,7 @@
         "Offentlige nøgler"
       ],
       "Read": [
-        "Læs"
+        "Læst"
       ],
       "Recipient": [
         "Adressat"
@@ -5090,8 +5113,13 @@
       ]
     },
     "Mail import summary": {
-      "${ messagesFragment } since ${ periodFragment } and label them as ${ label }": [
-        "${ messagesFragment } siden ${ periodFragment } og giv dem etiketten ${ label }"
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        "Importer alle beskeder fra ${ selectedLabelsCount } ud af ${ totalLabelsCount } etikette siden ${ periodFragment } og giv dem etiketten ${ label }",
+        "Importer alle beskeder fra ${ selectedLabelsCount } ud af ${ totalLabelsCount } etiketter siden ${ periodFragment } og giv dem etiketten ${ label }"
+      ],
+      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        "Importer alle beskeder fra ${ totalLabelsCount } etiketten siden ${ periodFragment } og giv dem etiketten ${ label }",
+        "Importer alle beskeder fra ${ totalLabelsCount } etiketter siden ${ periodFragment } og giv dem etiketten ${ label }"
       ]
     },
     "Mailbox": {
@@ -5550,7 +5578,7 @@
         "Søg i beskeder"
       ],
       "Search messages": [
-        "Søg efter beskeder"
+        "Søg i beskeder"
       ],
       "Search name, email or group": [
         "Søg navn, e-mail eller gruppe"
@@ -5582,21 +5610,7 @@
         "Navn"
       ]
     },
-    "Plan Feature": {
-      "${ n } server": [
-        "${ n } server",
-        "${ n } servere"
-      ],
-      "${ n } VPN connection": [
-        "${ n } VPN-forbindelse",
-        "${ n } VPN-forbindelser"
-      ]
-    },
     "Plan feature": {
-      "${ freeServers } in ${ freeCountries } country": [
-        "${ freeServers } i ${ freeCountries } land",
-        "${ freeServers } i ${ freeCountries } lande"
-      ],
       "0.5 GB storage": [
         "0,5 GB lagerplads"
       ],
@@ -5609,10 +5623,6 @@
       "1 user": [
         "1 bruger"
       ],
-      "1200+ servers in ${ plusCountries } country": [
-        "1200+ servere i ${ plusCountries } land",
-        "1200+ servere i ${ plusCountries } lande"
-      ],
       "20 GB storage": [
         "20 GB lagerplads"
       ],
@@ -5621,10 +5631,6 @@
       ],
       "3 folders / labels": [
         "3 mapper / etiketter"
-      ],
-      "350+ servers in ${ basicCountries } country": [
-        "350+ servere i ${ basicCountries } land",
-        "350+ servere i ${ basicCountries } lande"
       ],
       "5 addresses": [
         "5 adresser"
@@ -6100,7 +6106,7 @@
         "Kontakter slettet"
       ],
       "Conversation added to ${ labelName }.": [
-        ""
+        "Samtale føjet til ${ labelName }."
       ],
       "Conversation deleted": [
         "Samtale slettet"
@@ -6109,7 +6115,7 @@
         "Samtale markeret som læst."
       ],
       "Conversation marked as Starred.": [
-        ""
+        "Samtale stjernemarkeret."
       ],
       "Conversation marked as unread.": [
         "Samtale markeret som ulæst."
@@ -6124,7 +6130,7 @@
         "Samtale flyttet til spam og afsender føjet til blokeringsliste."
       ],
       "Conversation removed from ${ labelName }.": [
-        ""
+        "Samtale fjernet fra ${ labelName }."
       ],
       "Draft deleted": [
         "Kladde slettet"
@@ -6151,7 +6157,7 @@
         "Mailliste afmeldt"
       ],
       "Message added to ${ labelName }.": [
-        ""
+        "Besked føjet til ${ labelName }."
       ],
       "Message content search activated": [
         "Beskedindholdssøgning aktiveret"
@@ -6166,7 +6172,7 @@
         "Besked markeret som læst."
       ],
       "Message marked as Starred.": [
-        ""
+        "Besked stjernemarkeret."
       ],
       "Message marked as unread.": [
         "Besked markeret som ulæst."
@@ -6181,7 +6187,7 @@
         "Besked flyttet til spam og afsender føjet til blokeringsliste."
       ],
       "Message removed from ${ labelName }.": [
-        ""
+        "Besked fjernet fra ${ labelName }."
       ],
       "Move ${ selectionCount } conversation": [
         "Flyt ${ selectionCount } samtale",
@@ -6506,7 +6512,7 @@
         "Slet samtale"
       ],
       "Delete draft": [
-        "Slet udkast"
+        "Slet kladde"
       ],
       "Delete message": [
         "Slet besked"
@@ -6515,7 +6521,7 @@
         "Sletter kontakter"
       ],
       "Downgrade account": [
-        "Nedpgradér konto"
+        "Nedgradér konto"
       ],
       "Edit contact": [
         "Rediger kontakt"
@@ -7038,6 +7044,20 @@
       ],
       "Windows, macOS, iOS, Linux, Android, Android TV, Chromebook, Chromecast": [
         "Windows, macOS, iOS, Linux, Android, Android TV, Chromebook, Chromecast"
+      ]
+    },
+    "VPN Plan Feature": {
+      "${ n } server": [
+        "",
+        ""
+      ],
+      "${ n } VPN connection": [
+        "",
+        ""
+      ],
+      "${ numberOfServers } in ${ numberOfCountries } country": [
+        "",
+        ""
       ]
     },
     "Warning": {

@@ -732,7 +732,7 @@
         "(${ notice }) Renouvellement après 2 ans à un prix bisannuel réduit de ${ amount } tous les 2 ans (47 % de réduction)."
       ],
       "Billed as ${ amount } ${ supNotice }": [
-        ""
+        "Facturé ${ amount } ${ supNotice }"
       ],
       "Black Friday Sale": [
         "Offre Black Friday"
@@ -861,6 +861,12 @@
       ]
     },
     "Calendar subscription not synced error": {
+      "Calendar could not be decrypted": [
+        "Le calendrier n'a pas pu être déchiffré"
+      ],
+      "Calendar could not be found": [
+        "Le calendrier n'a pas pu être trouvé"
+      ],
       "Calendar is syncing": [
         "Synchronisation du calendrier"
       ],
@@ -1864,6 +1870,9 @@
       "Creating share": [
         "Création du partage"
       ],
+      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
+        "Les fichiers CSV d'Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora et de certaines autres applications ainsi que les formats vCard 3.1 et 4.0 (encodage UTF-8) sont pris en charge."
+      ],
       "Delete drive": [
         "Supprimer le lecteur",
         "Supprimer les lecteurs"
@@ -1968,7 +1977,7 @@
         "Si vous en possédez l’un de ces éléments, passez à la configuration du compte Proton pour\ncontinuer le processus de déblocage."
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
-        "Importer $ { contactsFragment } et ${ contactsGroupsFragment }"
+        "Importer ${ contactsFragment } et ${ contactsGroupsFragment }"
       ],
       "Import ${ selectedCalendarsCount } of ${ totalCalendarsCount } calendar": [
         "Importer ${ selectedCalendarsCount } de ${ totalCalendarsCount } calendrier",
@@ -2257,7 +2266,7 @@
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Ce lien pourrait être une attaque homographique. Veuillez vous assurer qu'il s'agit bien du lien que vous souhaitez visiter ou ne l'ouvrez pas."
       ],
-      "This link was created in a previous version and can not be modified. Delete this link and create a new one to change the settings.": [
+      "This link was created in\na previous version and can not be modified. Delete this link and create a\nnew one to change the settings.": [
         "Ce lien a été créé dans une version précédente et ne peut pas être modifié. Supprimez ce lien et créez-en un nouveau pour modifier les paramètres."
       ],
       "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
@@ -2332,9 +2341,6 @@
       ],
       "VPN + ${ mailAppName } bundle for families and small businesses.": [
         "Offre groupée VPN + ${ mailAppName } pour les familles et les petites entreprises."
-      ],
-      "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
-        "Nous prenons en charge l'importation de fichiers CSV depuis Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora et d'autres applications. Nous prenons également en charge l'importation de vCard 4.0. (codage UTF-8)."
       ],
       "We use 3-D Secure to protect your payments.": [
         "Nous utilisons 3-D Secure pour protéger vos paiements."
@@ -3262,8 +3268,13 @@
       ]
     },
     "Mail import summary": {
-      "${ messagesFragment } since ${ periodFragment } and label them as ${ label }": [
-        "${ messagesFragment } depuis ${ periodFragment } et les labelliser comme ${ label }"
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        "",
+        ""
+      ],
+      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        "",
+        ""
       ]
     },
     "Many Others": {
@@ -3657,9 +3668,9 @@
       "1 user": [
         "1 utilisateur"
       ],
-      "1200+ servers in ${ plusCountries } country": [
-        "Plus de 1200 serveurs dans ${ plusCountries } pays",
-        "Plus de 1200 serveurs dans ${ plusCountries } pays"
+      "1300+ servers in ${ plusCountries } country": [
+        "",
+        ""
       ],
       "20 GB storage": [
         "20 Go de stockage"
@@ -3885,8 +3896,8 @@
       "You have successfully unsubscribed": [
         "Vous vous êtes correctement désabonné"
       ],
-      "Your files were successfully recovered to \"My files\"": [
-        "Vos fichiers ont été correctement récupérés dans « Mes fichiers »"
+      "Your files were successfully recovered to \"My files\".": [
+        "Vos fichiers ont été correctement récupérés dans « Mes fichiers »."
       ]
     },
     "Suffix for price": {
@@ -4728,9 +4739,6 @@
       ],
       "You will lose any customization you made so far.": [
         "Vous perdrez toutes les personnalisations que vous avez faites jusqu'à présent."
-      ],
-      "Your local date & time settings seem to be out of sync.": [
-        "Vos paramètres de date et d'heure locaux semblent désynchronisés."
       ]
     }
   }

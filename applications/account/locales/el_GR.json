@@ -31,11 +31,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } κατάστημα"
       ],
-      "activate": [
-        "ενεργοποιήστε"
-      ],
       "Activate": [
         "Ενεργοποίηση"
+      ],
+      "activate": [
+        "ενεργοποιήστε"
       ],
       "Activate ${ Name }@pm.me": [
         "Ενεργοποίηση ${ Name }@pm.me"
@@ -879,9 +879,6 @@
       ]
     },
     "Alert": {
-      "Are you sure you want to import a private key? Importing an insecurely generated or leaked private key can harm the security of your emails.": [
-        "Είστε βέβαιοι ότι θέλετε να εισάγετε ένα ιδιωτικό κλειδί; Η εισαγωγή ενός κλειδιού που δεν έχει δημιουργηθεί με ασφάλεια ή έχει διαρρεύσει μπορεί να βλάψει την ασφάλεια των email σας."
-      ],
       "By leaving now, some contacts may not be imported": [
         "Αφήνοντας τώρα, ορισμένες επαφές ενδέχεται να μην εισαχθούν"
       ],
@@ -1212,6 +1209,12 @@
       ]
     },
     "Calendar subscription not synced error": {
+      "Calendar could not be decrypted": [
+        "Αδυναμία αποκρυπτογράφησης ημερολογίου"
+      ],
+      "Calendar could not be found": [
+        "Αδυναμία εύρεσης ημερολογίου"
+      ],
       "Calendar is syncing": [
         "Το ημερολόγιο συγχρονίζεται"
       ],
@@ -1500,7 +1503,7 @@
     },
     "Description of the purpose of the import CSV modal": {
       "Also, we have automatically matched CSV fields with vCard fields. You can review and change this matching manually.": [
-        "Επίσης, έχουμε αντιστοιχίσει αυτόματα τα πεδία CSV με πεδία vCard. Μπορείτε να ελέγξετε και να αλλάξετε αυτήν την αντιστοίχιση με μη αυτόματο τρόπο."
+        "Επίσης, κάναμε αυτόματες αντιστοιχίσεις πεδίων CSV σε πεδία vCard. Μπορείτε να ελέγξετε αυτές τις αντιστοιχίσεις και να τις αλλάξετε χειροκίνητα."
       ],
       "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
         "Έχουμε εντοπίσει τα ακόλουθα πεδία στο αρχείο CSV που ανεβάσατε. Επιλέξτε αυτά που θέλετε να εισάγετε."
@@ -1528,8 +1531,8 @@
       "I use a different Proton account": [
         "Χρησιμοποιώ διαφορετικό λογαριασμό Proton"
       ],
-      "Missing feature(s) ": [
-        "Έλλειψη χαρακτηριστικών "
+      "Missing feature(s)": [
+        "Έλλειψη χαρακτηριστικών"
       ],
       "My reason isn't listed, please comment": [
         "Άλλη αιτιολογία, παρακαλώ σχολιάστε"
@@ -1883,7 +1886,7 @@
         "Προσπαθήστε να πραγματοποιήσετε εκ νέου έλεγχο ταυτότητας και βεβαιωθείτε ότι τα δικαιώματα έχουν οριστεί σωστά."
       ],
       "Please upgrade to a Professional plan with more than 1 user, or a Visionary account, to get multi-user support": [
-        ""
+        "Παρακαλούμε αναβαθμίστε σε ένα επαγγελματικό λογαριασμό με περισσότερους από 1 χρήστες ή έναν λογαριασμό Visionary για να λάβετε υποστήριξη από πολλούς χρήστες"
       ],
       "Please upgrade to a Professional plan with more than 1 user, or a Visionary account, to manage multiple users.": [
         "Παρακαλώ αναβαθμίστε σε ένα λογαριασμό Professional ή Visionary, με περισσότερους από 1 χρήστες προκειμένου να διαχειριστείτε πολλαπλούς χρήστες."
@@ -2875,6 +2878,11 @@
         "Η επαλήθευση 2 βημάτων είναι ενεργοποιημένη"
       ]
     },
+    "Import key": {
+      "Are you sure you want to import a private key? Importing an insecurely generated or leaked private key can harm the security of your emails.\n\nPlease also note that the public key corresponding to this private key will be publicly available from our key server. If the key contains personal details (such as your full name) which you do not want to publish, please edit the key before importing it.": [
+        "Είστε σίγουροι ότι θέλετε να εισαγάγετε ένα ιδιωτικό κλειδί; Η εισαγωγή ενός μη ανασφαλώς δημιουργημένου ή ιδιωτικού κλειδιού που έχει διαρρεύσει μπορεί να βλάψει την ασφάλεια των μηνυμάτων ηλεκτρονικού ταχυδρομείου σας.\n\nΛάβετε επίσης υπόψη ότι το δημόσιο κλειδί που αντιστοιχεί σε αυτό το ιδιωτικό κλειδί θα είναι διαθέσιμο στο κοινό από τον βασικό διακομιστή μας. Εάν το κλειδί περιέχει προσωπικά στοιχεία (όπως το ονοματεπώνυμο) τα οποία δεν θέλετε να δημοσιεύσετε, επεξεργαστείτε το κλειδί πριν το εισαγάγετε."
+      ]
+    },
     "Import status": {
       "${ percentageValue }% paused": [
         "${ percentageValue }% σε παύση"
@@ -3296,6 +3304,9 @@
       "Creating your Proton account": [
         "Γίνεται δημιουργία του λογαριασμού σας Proton"
       ],
+      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
+        "Υποστηρίζονται αρχεία CSV από Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora και κάποιες άλλες εφαρμογές, καθώς και μορφές vCard 3.1 και 4.0 (κωδικοποίηση UTF-8)."
+      ],
       "Currently all available storage is allocated to the administrator account. Please reduce the admin account allocation to free up space for additional users. You can increase the total storage at any time by upgrading your account.": [
         "Προς το παρόν, όλος ο διαθέσιμος αποθηκευτικός χώρος, διατίθεται στο λογαριασμό διαχειριστή. Μειώστε την κατανομή λογαριασμού διαχειριστή για να ελευθερώσετε χώρο για επιπλέον χρήστες. Μπορείτε να αυξήσετε το συνολικό χώρο αποθήκευσης ανά πάσα στιγμή, αναβαθμίζοντας το λογαριασμό σας."
       ],
@@ -3452,9 +3463,6 @@
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Τα φίλτρα λειτουργούν σε όλα τα μηνύματα ηλεκτρονικού ταχυδρομείου, συμπεριλαμβανομένων των εισερχόμενων καθώς και των απεσταλμένων μηνυμάτων ηλεκτρονικού ταχυδρομείου. Κάθε φίλτρο πρέπει να περιέχει τουλάχιστον ένα όνομα, μια συνθήκη και μια ενέργεια."
-      ],
-      "For advanced security, the Import-Export app encrypts emails on your device before migrating them to Proton servers. You can also export messages for local backups.": [
-        "Για προηγμένη ασφάλεια, η εφαρμογή Import-Export κρυπτογραφεί τα μηνύματα ηλεκτρονικού ταχυδρομείου στη συσκευή σας πριν τη μεταφορά τους στους διακομιστές της Proton. Μπορείτε επίσης να εξαγάγετε μηνύματα για τοπικά αντίγραφα ασφαλείας."
       ],
       "For families and small teams; includes both Mail and VPN.": [
         "Για οικογένειες και μικρές ομάδες· περιλαμβάνει Ηλεκτρονικό Ταχυδρομείο και VPN."
@@ -4013,6 +4021,9 @@
       "The email address you place at the top of the list is your default email address. Drag and drop to reorder your addresses.": [
         "Η διεύθυνση ηλεκτρονικού ταχυδρομείου που τοποθετείτε στην κορυφή της λίστας είναι η προεπιλεγμένη διεύθυνσή σας. Σύρετε και αφήστε για να αναδιατάξετε τις διευθύνσεις σας."
       ],
+      "The Import-Export app allows you to export messages for local backups and to restore previous backups to your account.": [
+        "Η εφαρμογή Import-Export επιτρέπει την εξαγωγή μηνυμάτων για τοπικά αντίγραφα ασφαλείας και την επαναφορά προηγουμένων αντιγράφων ασφαλείας στον λογαριασμό σας."
+      ],
       "The name will be visible to your users while they are logged in.": [
         "Το όνομα θα είναι ορατό στους χρήστες σας ενώ είναι συνδεδεμένοι."
       ],
@@ -4198,9 +4209,6 @@
       ],
       "We recommend adding a linked email so you can recover your account if you lose your password.": [
         "Σας συνιστούμε να προσθέσετε ένα συνδεδεμένο email, ώστε να μπορείτε να ανακτήσετε το λογαριασμό σας εάν χάσετε τον κωδικό πρόσβασής σας."
-      ],
-      "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
-        "Υποστηρίζουμε την εισαγωγή αρχείων CSV από το Outlook, το Outlook Express, το Yahoo! Mail, Hotmail, Eudora και κάποιες άλλες εφαρμογές. Υποστηρίζουμε επίσης την εισαγωγή του vCard 4.0. (Κωδικοποίηση UTF-8)."
       ],
       "We use 3-D Secure to protect your payments.": [
         "Χρησιμοποιούμε ασφάλεια 3-D για να προστατεύσουμε τις πληρωμές σας."
@@ -5843,8 +5851,13 @@
       ]
     },
     "Mail import summary": {
-      "${ messagesFragment } since ${ periodFragment } and label them as ${ label }": [
-        "${ messagesFragment } μέχρι ${ periodFragment } και επισημάνετε τα ως ${ label }"
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        "Εισαγάγετε όλα τα μηνύματα από ${ selectedLabelsCount } από ${ totalLabelsCount } ετικέτα από ${ periodFragment } και επισημάνετε τα με ετικέτα ${ label }",
+        "Εισαγάγετε όλα τα μηνύματα από ${ selectedLabelsCount } από ${ totalLabelsCount } ετικέτες από ${ periodFragment } και επισημάνετε τα με ετικέτα ${ label }"
+      ],
+      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        "Εισαγάγετε όλα τα μηνύματα από ${ totalLabelsCount } ετικέτα από ${ periodFragment } και επισημάνετε τα με ετικέτα ${ label }",
+        "Εισαγάγετε όλα τα μηνύματα από ${ totalLabelsCount } ετικέτες από ${ periodFragment } και επισημάνετε τα με ετικέτα ${ label }"
       ]
     },
     "Mail upsell feature": {
@@ -6571,21 +6584,7 @@
         "Δωρεάν"
       ]
     },
-    "Plan Feature": {
-      "${ n } server": [
-        "${ n } διακομιστής",
-        "${ n } διακομιστές"
-      ],
-      "${ n } VPN connection": [
-        "${ n } σύνδεση VPN",
-        "${ n } συνδέσεις VPN"
-      ]
-    },
     "Plan feature": {
-      "${ freeServers } in ${ freeCountries } country": [
-        "${ freeServers } σε ${ freeCountries } χώρα",
-        "${ freeServers } σε ${ freeCountries } χώρες"
-      ],
       "0.5 GB storage": [
         "0.5 GB αποθηκευτικός χώρος"
       ],
@@ -6598,10 +6597,6 @@
       "1 user": [
         "1 χρήστης"
       ],
-      "1200+ servers in ${ plusCountries } country": [
-        "1200+ διακομιστές σε ${ plusCountries } χώρα",
-        "1200+ διακομιστές σε ${ plusCountries } χώρες"
-      ],
       "20 GB storage": [
         "20 GB αποθηκευτικός χώρος"
       ],
@@ -6610,10 +6605,6 @@
       ],
       "3 folders / labels": [
         "3 φάκελοι / ετικέτες"
-      ],
-      "350+ servers in ${ basicCountries } country": [
-        "350+ διακομιστές σε ${ basicCountries } χώρα",
-        "350+ διακομιστές σε ${ basicCountries }+ χώρες"
       ],
       "5 addresses": [
         "5 διευθύνσεις"
@@ -6836,6 +6827,9 @@
       "Auto reply": [
         "Αυτόματη απάντηση"
       ],
+      "Backup & Export": [
+        "Αντίγραφο Ασφαλείας & Εξαγωγή"
+      ],
       "Calendars": [
         "Ημερολόγια"
       ],
@@ -6868,9 +6862,6 @@
       ],
       "Import & export": [
         "Εισαγωγή & εξαγωγή"
-      ],
-      "Import/Export": [
-        "Εισαγωγή/Εξαγωγή"
       ],
       "Multi-user support": [
         "Υποστήριξη Πολλαπλών Χρηστών"
@@ -7412,6 +7403,9 @@
       "Back": [
         "Πίσω"
       ],
+      "Backup & Export": [
+        "Αντίγραφο Ασφαλείας & Εξαγωγή"
+      ],
       "Billing cycle": [
         "Κύκλος χρέωσης"
       ],
@@ -7724,9 +7718,6 @@
       ],
       "Import-Export app": [
         "Εφαρμογή εισαγωγής-εξαγωγής"
-      ],
-      "Import/Export": [
-        "Εισαγωγή/Εξαγωγή"
       ],
       "Invalid verification code": [
         "Μη έγκυρος κωδικός επαλήθευσης"
@@ -8442,6 +8433,20 @@
     "VPN info": {
       "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, and more.": [
         "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, και άλλα."
+      ]
+    },
+    "VPN Plan Feature": {
+      "${ n } server": [
+        "${ n } διακομιστής",
+        "${ n }+ διακομιστές"
+      ],
+      "${ n } VPN connection": [
+        "${ n } σύνδεση VPN",
+        "${ n } συνδέσεις VPN"
+      ],
+      "${ numberOfServers } in ${ numberOfCountries } country": [
+        "${ numberOfServers } σε ${ numberOfCountries } χώρα",
+        "${ numberOfServers } σε ${ numberOfCountries } χώρες"
       ]
     },
     "VPN upsell feature": {

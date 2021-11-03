@@ -830,6 +830,9 @@
       "Try another method": [
         "Użyj innej metody"
       ],
+      "Turn on tracker protection": [
+        "Włącz ochronę przed śledzeniem"
+      ],
       "Underline": [
         "Podkreślenie"
       ],
@@ -1453,6 +1456,12 @@
       ]
     },
     "Calendar subscription not synced error": {
+      "Calendar could not be decrypted": [
+        "Kalendarz nie może zostać odszyfrowany"
+      ],
+      "Calendar could not be found": [
+        "Kalendarz nie został znaleziony"
+      ],
       "Calendar is syncing": [
         "Kalendarz jest synchronizowany"
       ],
@@ -1473,6 +1482,14 @@
       ],
       "More than 12 hours passed since last update": [
         "Od ostatniej aktualizacji minęło ponad 12 godzin"
+      ]
+    },
+    "Collapsible tooltip": {
+      "Close": [
+        "Zamknij"
+      ],
+      "Open": [
+        "Otwórz"
       ]
     },
     "Composer email icon": {
@@ -2893,16 +2910,10 @@
         "${ namesWithoutLast } i ${ nameOfLast }"
       ],
       "${ numberOfTrackers } email tracker blocked": [
-        "Zablokowano skrypt śledzący",
-        "Zablokowano ${ numberOfTrackers } skrypty śledzące",
-        "Zablokowano ${ numberOfTrackers } skryptów śledzących",
-        "Zablokowano ${ numberOfTrackers } skryptów śledzących"
-      ],
-      "${ numberOfTrackers } email tracker found": [
-        "${ numberOfTrackers } znaleziony skrypt śledzący",
-        "${ numberOfTrackers } znalezione skrypty śledzące",
-        "${ numberOfTrackers } znalezionych skryptów śledzących",
-        "${ numberOfTrackers } znalezionych skryptów śledzących"
+        "Zablokowano element śledzący",
+        "Zablokowano ${ numberOfTrackers } elementy śledzące",
+        "Zablokowano ${ numberOfTrackers } elementów śledzących",
+        "Zablokowano ${ numberOfTrackers } elementów śledzących"
       ],
       "${ numContactGroups } contact group": [
         "${ numContactGroups } grupę kontaktów",
@@ -2923,10 +2934,10 @@
         "${ occurrencesInBody } znalezionych powtórzeń"
       ],
       "${ occurrencesInBody } occurrence found in the mail content": [
-        "",
-        "",
-        "",
-        ""
+        "${ occurrencesInBody } znalezione powtórzenie w zawartości wiadomości",
+        "${ occurrencesInBody } znalezione powtórzenia w zawartości wiadomości",
+        "${ occurrencesInBody } znalezionych powtórzeń w zawartości wiadomości",
+        "${ occurrencesInBody } znalezionych powtórzeń w zawartości wiadomości"
       ],
       "${ pureAttachmentsCount } file attached": [
         "${ pureAttachmentsCount } załącznik",
@@ -3267,6 +3278,9 @@
       "Create recovery phrase": [
         "Utwórz hasło odzyskiwania"
       ],
+      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
+        "Pliki vCard w wersji 3.1 i 4.0 (kodowanie UTF-8) oraz CSV z programów Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora i kilku innych programów są obsługiwane."
+      ],
       "Custom": [
         "Niestandardowe"
       ],
@@ -3341,6 +3355,21 @@
       ],
       "Email address": [
         "Adres e-mail"
+      ],
+      "Email tracker protection is disabled": [
+        "Ochrona przed śledzeniem wiadomości jest wyłączona"
+      ],
+      "Email trackers can violate your privacy. Proton did not find any trackers on this message.": [
+        "Elementy śledzące w wiadomości mogą naruszyć Twoją prywatność. Proton nie znalazł żadnych takich elementów."
+      ],
+      "Email trackers can violate your privacy. Proton found and blocked ${ numberOfTrackers } tracker.": [
+        "Elementy śledzące w wiadomości mogą naruszyć Twoją prywatność. Proton znalazł i zablokował element śledzący.",
+        "Elementy śledzące w wiadomości mogą naruszyć Twoją prywatność. Proton znalazł i zablokował ${ numberOfTrackers } elementy śledzące.",
+        "Elementy śledzące w wiadomości mogą naruszyć Twoją prywatność. Proton znalazł i zablokował ${ numberOfTrackers } elementów śledzących.",
+        "Elementy śledzące w wiadomości mogą naruszyć Twoją prywatność. Proton znalazł i zablokował ${ numberOfTrackers } elementów śledzących."
+      ],
+      "Email trackers can violate your privacy. Turn on tracker protection to prevent senders from knowing whether and when you have opened a message.": [
+        "Elementy śledzące w wiadomości mogą naruszyć Twoją prywatność. Włącz ochronę przed śledzeniem, aby nadawca nie wiedział, czy i kiedy otworzyłeś wiadomość."
       ],
       "embedded image": [
         "osadzony obraz",
@@ -3598,7 +3627,7 @@
         "Brak adresu e-mail"
       ],
       "No email trackers found": [
-        "Brak skryptów śledzących w wiadomości"
+        "Brak elementów śledzących w wiadomości"
       ],
       "No folder found": [
         "Nie znaleziono folderu"
@@ -3725,9 +3754,6 @@
       ],
       "Print email": [
         "Drukuj wiadomość"
-      ],
-      "Protect yourself from trackers. Turn on email tracker protection in settings": [
-        "Chroń siebie przed skryptami śledzącymi. Włącz w ustawieniach ochronę przed śledzeniem"
       ],
       "Proton doesn't make money by abusing privacy.": [
         "Proton nie zarabia pieniędzy, naruszając prywatność."
@@ -3889,13 +3915,13 @@
         "Nadawca poprosił o potwierdzenie odczytu."
       ],
       "The verification of ${ contactName } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddress } or edit the contact.": [
-        "Weryfikacja adresu ${ contactName } nie powiodła się: kontakt nie jest prawidłowo podpisany.\nPowodem może być zresetowane hasło.\nMusisz ponownie podpisać lub edytować kontakt, aby móc wysyłać wiadomości na adres ${ contactAddress }."
+        "Weryfikacja adresu ${ contactName } nie powiodła się. Kontakt nie jest prawidłowo podpisany.\nPowodem może być zresetowane hasło.\nMusisz ponownie podpisać lub edytować kontakt, aby móc wysyłać wiadomości na adres ${ contactAddress }."
       ],
       "The verification of ${ contactNames } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddresses } or edit the contact.": [
-        "Weryfikacja adresu ${ contactNames } nie powiodła się: kontakt nie jest prawidłowo podpisany.\nPowodem może być zresetowane hasło.\nMusisz ponownie podpisać lub edytować kontakt, aby móc wysyłać wiadomości na adres ${ contactAddresses }.",
-        "Weryfikacja adresu ${ contactNames } nie powiodła się: kontakty nie są prawidłowo podpisane.\nPowodem może być zresetowane hasło.\nMusisz ponownie podpisać lub edytować kontakty, aby móc wysyłać wiadomości na adresy ${ contactAddresses }.",
-        "Weryfikacja adresu ${ contactNames } nie powiodła się: kontakty nie są prawidłowo podpisane.\nPowodem może być zresetowane hasło.\nMusisz ponownie podpisać lub edytować kontakty, aby móc wysyłać wiadomości na adresy ${ contactAddresses }.",
-        "Weryfikacja adresu ${ contactNames } nie powiodła się: kontakty nie są prawidłowo podpisane.\nPowodem może być zresetowane hasło.\nMusisz ponownie podpisać lub edytować kontakty, aby móc wysyłać wiadomości na adresy ${ contactAddresses }."
+        "Weryfikacja adresu ${ contactNames } nie powiodła się. Kontakt nie jest prawidłowo podpisany.\nPowodem może być zresetowane hasło.\nMusisz ponownie podpisać lub edytować kontakt, aby móc wysyłać wiadomości na adres ${ contactAddresses }.",
+        "Weryfikacja adresu ${ contactNames } nie powiodła się. Kontakty nie są prawidłowo podpisane.\nPowodem może być zresetowane hasło.\nMusisz ponownie podpisać lub edytować kontakty, aby móc wysyłać wiadomości na adresy ${ contactAddresses }.",
+        "Weryfikacja adresu ${ contactNames } nie powiodła się. Kontakty nie są prawidłowo podpisane.\nPowodem może być zresetowane hasło.\nMusisz ponownie podpisać lub edytować kontakty, aby móc wysyłać wiadomości na adresy ${ contactAddresses }.",
+        "Weryfikacja adresu ${ contactNames } nie powiodła się. Kontakty nie są prawidłowo podpisane.\nPowodem może być zresetowane hasło.\nMusisz ponownie podpisać lub edytować kontakty, aby móc wysyłać wiadomości na adresy ${ contactAddresses }."
       ],
       "Themes can give your inbox a new look.": [
         "Motywy zapewniają Twojej skrzynce nowy wygląd."
@@ -3981,9 +4007,6 @@
       "To fight spam and abuse, please verify you are human.": [
         "Weryfikacja antyspamowa i nadużyć. Udowodnij, że jesteś człowiekiem."
       ],
-      "To protect your privacy, Proton blocked email trackers in this message": [
-        "Aby chronić prywatność, Proton zablokował skrypty śledzące w tej wiadomości"
-      ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "Aby podpisać ponownie kontakty, musimy porównać każdy kontakt z listą dostępnych kluczy szyfrowania na koncie. Jeśli dopasowanie nie zostanie znalezione, kontakt zostanie podpisany ponownie za pomocą głównego klucza szyfrowania."
       ],
@@ -4004,6 +4027,9 @@
       ],
       "Turn off content search. Activation progress won't be lost.": [
         "Wyłącz wyszukiwanie zawartości. Postęp aktywacji nie zostanie utracony."
+      ],
+      "Turn on to search the content of your messages": [
+        "Włącz, aby wyszukiwać zawartość wiadomości"
       ],
       "Unsupported file": [
         "Plik jest nieobsługiwany"
@@ -4082,9 +4108,6 @@
       ],
       "We could not verify the sender's trusted keys.": [
         "Nie możemy zweryfikować zaufanych kluczy nadawcy."
-      ],
-      "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
-        "Wspieramy importowanie plików CSV z programów Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora i kilku innych. Możliwe jest także importowanie plików vCard 4.0. (kodowanie UTF-8)."
       ],
       "We use 3-D Secure to protect your payments.": [
         "Korzystamy z 3-D Secure, aby zabezpieczyć Twoje płatności."
@@ -4325,7 +4348,7 @@
         "Kliknięcie \"Zaufaj kluczowi\" spowoduje powiązanie klucza publicznego z nadawcą. Wiadomości przychodzące z tego adresu będą automatycznie weryfikowane kryptograficznie."
       ],
       "Clicking \"Trust Key\" will create a new contact and associate this public key with\nthis sender. Emails from this address will be automatically cryptographically verified.": [
-        "Kliknięcie \"Zaufaj kluczowi\" utworzy nowy kontakt i skojarzy klucz publiczny z tym nadawcą. Wiadomości z tego adresy będą automatycznie weryfikowane kryptograficznie."
+        "Kliknięcie \"Zaufaj kluczowi\" utworzy nowy kontakt i skojarzy klucz publiczny z tym nadawcą. Wiadomości z tego adresu będą automatycznie weryfikowane kryptograficznie."
       ],
       "Do you want to trust the following public key?": [
         "Czy chcesz zaufać temu kluczowi głównemu?"
@@ -5266,8 +5289,17 @@
       ]
     },
     "Mail import summary": {
-      "${ messagesFragment } since ${ periodFragment } and label them as ${ label }": [
-        "${ messagesFragment } od ${ periodFragment } oznacz je etykietą ${ label }"
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        "Importuj wiadomości z niektórymi etykietami (${ selectedLabelsCount }/${ totalLabelsCount }) od ${ periodFragment } i oznacz je etykietą ${ label }",
+        "Importuj wiadomości z niektórymi etykietami (${ selectedLabelsCount }/${ totalLabelsCount }) od ${ periodFragment } i oznacz je etykietą ${ label }",
+        "Importuj wiadomości z niektórymi etykietami (${ selectedLabelsCount }/${ totalLabelsCount }) od ${ periodFragment } i oznacz je etykietą ${ label }",
+        "Importuj wiadomości z niektórymi etykietami (${ selectedLabelsCount }/${ totalLabelsCount }) od ${ periodFragment } i oznacz je etykietą ${ label }"
+      ],
+      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        "Importuj wiadomości z ${ totalLabelsCount } etykietą od ${ periodFragment } i oznacz je etykietą ${ label }",
+        "Importuj wiadomości z ${ totalLabelsCount } etykiet od ${ periodFragment } i oznacz je etykietą ${ label }",
+        "Importuj wiadomości z ${ totalLabelsCount } etykiet od ${ periodFragment } i oznacz je etykietą ${ label }",
+        "Importuj wiadomości z ${ totalLabelsCount } etykiet od ${ periodFragment } i oznacz je etykietą ${ label }"
       ]
     },
     "Mailbox": {
@@ -5764,27 +5796,7 @@
         "Nazwa"
       ]
     },
-    "Plan Feature": {
-      "${ n } server": [
-        "${ n } serwer",
-        "${ n } serwery",
-        "${ n } serwerów",
-        "${ n } serwerów"
-      ],
-      "${ n } VPN connection": [
-        "${ n } połączenie VPN",
-        "${ n } połączenia VPN",
-        "${ n } połączeń VPN",
-        "${ n } połączeń VPN"
-      ]
-    },
     "Plan feature": {
-      "${ freeServers } in ${ freeCountries } country": [
-        "${ freeServers } w ${ freeCountries } kraju",
-        "${ freeServers } w ${ freeCountries } krajach",
-        "${ freeServers } w ${ freeCountries } krajach",
-        "${ freeServers } w ${ freeCountries } krajach"
-      ],
       "0.5 GB storage": [
         "500 MB przestrzeni dyskowej"
       ],
@@ -5797,12 +5809,6 @@
       "1 user": [
         "1 użytkownik"
       ],
-      "1200+ servers in ${ plusCountries } country": [
-        "Ponad 1200 serwerów w ${ plusCountries } kraju",
-        "Ponad 1200 serwerów w ${ plusCountries } krajach",
-        "Ponad 1200 serwerów w ${ plusCountries } krajach",
-        "Ponad 1200 serwerów w ${ plusCountries } krajach"
-      ],
       "20 GB storage": [
         "20 GB przestrzeni dyskowej"
       ],
@@ -5811,12 +5817,6 @@
       ],
       "3 folders / labels": [
         "3 foldery / etykiety"
-      ],
-      "350+ servers in ${ basicCountries } country": [
-        "Ponad 350 serwerów w ${ basicCountries } kraju",
-        "Ponad 350 serwerów w ${ basicCountries } krajach",
-        "Ponad 350 serwerów w ${ basicCountries } krajach",
-        "Ponad 350 serwerów w ${ basicCountries } krajach"
       ],
       "5 addresses": [
         "5 adresów"
@@ -6162,7 +6162,7 @@
         "Wyszukiwanie zawartości wiadomości"
       ],
       "To protect your privacy, Proton blocked email trackers in this message": [
-        "Aby chronić prywatność, Proton zablokował skrypty śledzące w tej wiadomości"
+        "Aby chronić prywatność, Proton zablokował elementy śledzące w tej wiadomości"
       ],
       "You can now schedule your messages to be sent later": [
         "Możesz zaplanować wysyłanie wiadomości w późniejszym czasie"
@@ -7322,6 +7322,26 @@
       ],
       "Windows, macOS, iOS, Linux, Android, Android TV, Chromebook, Chromecast": [
         "Windows, macOS, iOS, Linux, Android, Android TV, Chromebook, Chromecast"
+      ]
+    },
+    "VPN Plan Feature": {
+      "${ n } server": [
+        "${ n } serwer",
+        "Ponad ${ n } serwery",
+        "Ponad ${ n } serwerów",
+        "Ponad ${ n } serwerów"
+      ],
+      "${ n } VPN connection": [
+        "${ n } połączenie VPN",
+        "${ n } połączenia VPN",
+        "${ n } połączeń VPN",
+        "${ n } połączeń VPN"
+      ],
+      "${ numberOfServers } in ${ numberOfCountries } country": [
+        "${ numberOfServers } w ${ numberOfCountries } kraju",
+        "${ numberOfServers } w ${ numberOfCountries } krajach",
+        "${ numberOfServers } w ${ numberOfCountries } krajach",
+        "${ numberOfServers } w ${ numberOfCountries } krajach"
       ]
     },
     "Warning": {

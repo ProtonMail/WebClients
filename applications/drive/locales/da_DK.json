@@ -188,7 +188,7 @@
         "Hent"
       ],
       "Drive Locked": [
-        ""
+        "Drev låst"
       ],
       "Edit": [
         "Redigér"
@@ -861,6 +861,12 @@
       ]
     },
     "Calendar subscription not synced error": {
+      "Calendar could not be decrypted": [
+        "Kalender kunne ikke dekrypteres"
+      ],
+      "Calendar could not be found": [
+        "Kalender kunne ikke findes"
+      ],
       "Calendar is syncing": [
         "Kalender synkroniserer"
       ],
@@ -1101,7 +1107,7 @@
         "Kan ikke bekræfte telefon, prøv igen senere"
       ],
       "Checkout expired, please try again": [
-        ""
+        "Betalingen er udløbet, prøv venligst igen"
       ],
       "Contact could not be saved": [
         "Kontakt kunne ikke gemmes"
@@ -1864,6 +1870,9 @@
       "Creating share": [
         "Opretter deling"
       ],
+      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
+        "CSV-filer fra Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora og nogle andre apps samt vCard 3.1 og 4.0-formater (UTF-8-kodning) understøttes."
+      ],
       "Delete drive": [
         "Slet drev",
         "Slet drev"
@@ -2257,8 +2266,8 @@
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Dette link kan være et homografisk angreb og kan ikke åbnes af Internet Explorer og Edge browsere. Tjek at dette faktisk er det link, du ønsker at besøge, eller undlad at åbne det."
       ],
-      "This link was created in a previous version and can not be modified. Delete this link and create a new one to change the settings.": [
-        "Dette link blev oprettet i en tidligere version og kan ikke ændres. Slet dette link og opret et nyt for at ændre indstillingerne."
+      "This link was created in\na previous version and can not be modified. Delete this link and create a\nnew one to change the settings.": [
+        "Dette link blev oprettet i \nen tidligere version og kan ikke ændres. Slet dette link og opret et \nnyt for at ændre indstillingerne."
       ],
       "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
         "Dette link vil blive permanent deaktiveret. Ingen med dette link vil kunne tilgå din fil. For at gendele filen, skal du bruge et nyt link."
@@ -2332,9 +2341,6 @@
       ],
       "VPN + ${ mailAppName } bundle for families and small businesses.": [
         "VPN + ${ mailAppName } pakke for familier og små virksomheder."
-      ],
-      "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
-        "Vi understøtter import af CSV-filer fra Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora og visse andre apps. Vi understøtter også import af vCard 4.0. (UTF-8-kodning)."
       ],
       "We use 3-D Secure to protect your payments.": [
         "Vi bruger 3-D Secure til at beskytte dine betalinger."
@@ -3262,8 +3268,13 @@
       ]
     },
     "Mail import summary": {
-      "${ messagesFragment } since ${ periodFragment } and label them as ${ label }": [
-        "${ messagesFragment } siden ${ periodFragment } og giv dem etiketten ${ label }"
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        "Importer alle beskeder fra ${ selectedLabelsCount } ud af ${ totalLabelsCount } etikette siden ${ periodFragment } og giv dem etiketten ${ label }",
+        "Importer alle beskeder fra ${ selectedLabelsCount } ud af ${ totalLabelsCount } etiketter siden ${ periodFragment } og giv dem etiketten ${ label }"
+      ],
+      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        "Importer alle beskeder fra ${ totalLabelsCount } etiketten siden ${ periodFragment } og giv dem etiketten ${ label }",
+        "Importer alle beskeder fra ${ totalLabelsCount } etiketter siden ${ periodFragment } og giv dem etiketten ${ label }"
       ]
     },
     "Many Others": {
@@ -3317,8 +3328,8 @@
         "\"${ firstItemName }\" gendannet fra papirkurv"
       ],
       "${ deletedCount } link to your file was deleted": [
-        "",
-        ""
+        "${ deletedCount } link til din fil blev slettet",
+        "${ deletedCount } links til dine filer blev slettet"
       ],
       "${ deletedItemsCount } file deleted permanently from trash": [
         "${ deletedItemsCount } fil slettet permanent fra papirkurven",
@@ -3333,8 +3344,8 @@
         "${ deletedItemsCount } elementer slettet permanent fra papirkurven"
       ],
       "${ failedCount } link to your file failed to be deleted": [
-        "",
-        ""
+        "${ failedCount } link til din fil kunne ikke slettes",
+        "${ failedCount } links til dine filer kunne ikke slettes"
       ],
       "${ failedMovesCount } file failed to be moved": [
         "${ failedMovesCount } fil kunne ikke flyttes",
@@ -3440,16 +3451,16 @@
         "Ikke nok plads til at uploade ${ formattedTotal }"
       ],
       "The link to your file failed to be deleted": [
-        ""
+        "Linket til din fil kunne ikke slettes"
       ],
       "The link to your file was deleted": [
-        ""
+        "Linket til din fil blev slettet"
       ],
       "Your old files will be deleted in 72 hours": [
         "Dine gamle filer vil blive slettet om 72 timer"
       ],
       "Your settings have been changed successfully": [
-        ""
+        "Dine indstillinger er blevet ændret"
       ]
     },
     "Onboarding Proton": {
@@ -3657,9 +3668,9 @@
       "1 user": [
         "1 bruger"
       ],
-      "1200+ servers in ${ plusCountries } country": [
-        "1200+ servere i ${ plusCountries } land",
-        "1200+ servere i ${ plusCountries } lande"
+      "1300+ servers in ${ plusCountries } country": [
+        "",
+        ""
       ],
       "20 GB storage": [
         "20 GB lagerplads"
@@ -3874,10 +3885,10 @@
         "Præferencer gemt"
       ],
       "Recovery has started": [
-        ""
+        "Gendannelse er påbegyndt"
       ],
       "The link to your file was successfully copied": [
-        ""
+        "Linket til din fil blev kopieret korrekt"
       ],
       "Verification successful": [
         "Bekræftelse gennemført"
@@ -3885,8 +3896,8 @@
       "You have successfully unsubscribed": [
         "Du har nu afmeldt dig"
       ],
-      "Your files were successfully recovered to \"My files\"": [
-        ""
+      "Your files were successfully recovered to \"My files\".": [
+        "Dine filer er blevet gendannet under \"Mine filer\"."
       ]
     },
     "Suffix for price": {
@@ -4146,7 +4157,7 @@
         "Kassér ændringer?"
       ],
       "Downgrade account": [
-        "Nedpgradér konto"
+        "Nedgradér konto"
       ],
       "Download canceled": [
         "Download annulleret"
@@ -4728,9 +4739,6 @@
       ],
       "You will lose any customization you made so far.": [
         "Du vil miste enhver tilpasning, du har foretaget indtil videre."
-      ],
-      "Your local date & time settings seem to be out of sync.": [
-        "Det ser ud til, at dine lokale dato- og tidsindstillinger ikke er synkroniseret."
       ]
     }
   }

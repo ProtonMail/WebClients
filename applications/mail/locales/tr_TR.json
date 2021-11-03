@@ -822,6 +822,9 @@
       "Try another method": [
         "Başka bir yöntem dene"
       ],
+      "Turn on tracker protection": [
+        ""
+      ],
       "Underline": [
         "Alt çizgili"
       ],
@@ -1437,6 +1440,12 @@
       ]
     },
     "Calendar subscription not synced error": {
+      "Calendar could not be decrypted": [
+        "Takvimin şifresi çözülemedi"
+      ],
+      "Calendar could not be found": [
+        "Takvim bulunamadı"
+      ],
       "Calendar is syncing": [
         ""
       ],
@@ -1456,6 +1465,14 @@
         ""
       ],
       "More than 12 hours passed since last update": [
+        ""
+      ]
+    },
+    "Collapsible tooltip": {
+      "Close": [
+        ""
+      ],
+      "Open": [
         ""
       ]
     },
@@ -1882,7 +1899,7 @@
         "Tutar, en düşük değerin altında."
       ],
       "Attachments are limited to 25 MB": [
-        ""
+        "Ek dosyaların boyutu 25 MB ile sınırlıdır"
       ],
       "Authentication canceled.": [
         "Kimlik doğrulama iptal edildi."
@@ -1906,7 +1923,7 @@
         "Telefon doğrulanamıyor, daha sonra tekrar deneyin"
       ],
       "Checkout expired, please try again": [
-        ""
+        "Ödeme süresi doldu, lütfen tekrar deneyin"
       ],
       "Choose a date in the future.": [
         "Gelecekten bir zaman seçiniz."
@@ -1928,10 +1945,10 @@
         "Kişi imzası doğrulanamadı"
       ],
       "Contact your organization’s administrator to resolve this": [
-        ""
+        "Bunu çözmek için kuruluşunuzun yöneticisi ile temasa geçin"
       ],
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
-        ""
+        "Bu tarayıcıda içerik araması etkinleştirilemiyor. Lütfen gizli/özel tarayıcı modundan çıkın ya da farklı bir tarayıcıda deneyin."
       ],
       "Could not find address ${ email }.": [
         "${ email } adresi bulunamadı."
@@ -1968,13 +1985,13 @@
         "Koşullardan birinde hata"
       ],
       "Error while saving draft. Please try again.": [
-        ""
+        "Taslak kaydedilirken hata oluştu. Lütfen tekrar deneyin."
       ],
       "Error while sending the message. Message is not sent.": [
-        ""
+        "İleti gönderilirken hata oluştu. İleti gönderilmedi."
       ],
       "Error while uploading attachments. Message is not sent.": [
-        ""
+        "Ek dosyalar yüklenirken hata oluştu. İleti gönderilmedi."
       ],
       "Failed to encrypt attachment. Please try again.": [
         "Ekin şifrelemesi başarısız oldu. Lütfen tekrar deneyin."
@@ -2010,7 +2027,7 @@
         "Geçersiz son kullanım tarihi"
       ],
       "Invalid expiration time": [
-        ""
+        "Geçersiz son kullanma tarihi"
       ],
       "Invalid name": [
         "Geçersiz isim"
@@ -2035,7 +2052,7 @@
         "Öncelikle iletinin gönderilmesi gerekiyor"
       ],
       "Message passwords do not match": [
-        ""
+        "İleti şifreleri eşleşmiyor"
       ],
       "Message processing error.": [
         "İleti işleme hatası."
@@ -2050,7 +2067,7 @@
         "Ağ hatası: Lütfen bağlantınızı kontrol edin ve tekrar deneyin."
       ],
       "No address with keys available to compose a message": [
-        ""
+        "İleti oluşturmak için anahtarları olan adres yok"
       ],
       "No key retrieved for internal user is valid for sending": [
         "Dahili kullanıcı için alınan hiçbir anahtar göndermek için geçerli değil"
@@ -2184,7 +2201,7 @@
         ""
       ],
       "The maximum expiration is 4 weeks": [
-        ""
+        "En uzun sona erme süresi 4 haftadır"
       ],
       "The minimum amount of credit that can be added is ${ _price }": [
         "Eklenebilecek en düşük kredi tutarı ${ _price }"
@@ -2202,7 +2219,7 @@
         ""
       ],
       "There has been an issue with content search. Default search has been used instead.": [
-        ""
+        "İçerik aramasıyla ilgili bir sorun oluştu. Varsayılan arama yöntemi kullanıldı."
       ],
       "There was an error when exporting the contacts vCards": [
         "Kişilerin vCard'larını dışa aktarırken bir hata oluştu"
@@ -2220,7 +2237,7 @@
         ""
       ],
       "This message has already been sent": [
-        ""
+        "Bu ileti zaten gönderildi"
       ],
       "This message has already been sent. A new draft has been saved.": [
         "Bu ileti zaten gönderildi. Yeni bir taslak kaydedildi."
@@ -2229,7 +2246,7 @@
         "Bu ileti, mevcut tarayıcınızda açılamayacak bazı bağlantı adreslerini içerebilir"
       ],
       "Too many active filters. Please upgrade to a paid plan to activate more filters.": [
-        ""
+        "Çok fazla etkin filtre mevcut. Daha fazla etkin filtre kullanabilmek için ücretli plana geçin."
       ],
       "Trusted keys are not valid for sending": [
         "Güvenilir anahtarlar göndermek için geçerli değil"
@@ -2250,8 +2267,8 @@
         "10'dan daha fazla kişinin vCard'larını gönderemezsiniz"
       ],
       "You cannot open more than ${ maxActiveComposer } composer window at a time": [
-        "",
-        ""
+        "Aynı zamanda ${ maxActiveComposer } adetten fazla oluşturucu penceresi açamazsınız",
+        "Aynı zamanda ${ maxActiveComposer } adetten fazla oluşturucu penceresi açamazsınız"
       ],
       "You did not provide a file.": [
         "Bir dosya seçmediniz."
@@ -2269,7 +2286,7 @@
         "İçe aktarımınız işlenmeyecektir."
       ],
       "Your search matched too many results. Please limit your search and try again.": [
-        ""
+        "Aramanız çok fazla sonuçla eşleşti. Lütfen aramanızı sınırlandırın ve tekrar deneyin."
       ]
     },
     "Error display when performing invalid move on message": {
@@ -2816,10 +2833,6 @@
         "",
         ""
       ],
-      "${ numberOfTrackers } email tracker found": [
-        "",
-        ""
-      ],
       "${ numContactGroups } contact group": [
         "",
         ""
@@ -3135,6 +3148,9 @@
       "Create recovery phrase": [
         "Kurtarma anahtar metni oluştur"
       ],
+      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
+        ""
+      ],
       "Custom": [
         "Özel"
       ],
@@ -3205,6 +3221,19 @@
       ],
       "Email address": [
         "E-posta adresi"
+      ],
+      "Email tracker protection is disabled": [
+        ""
+      ],
+      "Email trackers can violate your privacy. Proton did not find any trackers on this message.": [
+        ""
+      ],
+      "Email trackers can violate your privacy. Proton found and blocked ${ numberOfTrackers } tracker.": [
+        "",
+        ""
+      ],
+      "Email trackers can violate your privacy. Turn on tracker protection to prevent senders from knowing whether and when you have opened a message.": [
+        ""
       ],
       "embedded image": [
         "gömülü resim",
@@ -3314,7 +3343,7 @@
         "Resim URL'si"
       ],
       "Images have been removed because they are not allowed in auto-reply": [
-        ""
+        "Görüntüler, otomatik yanıt içinde izin verilmediği için kaldırıldı"
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         ""
@@ -3421,7 +3450,7 @@
         "Mesaj gönderildi"
       ],
       "Message sent.": [
-        ""
+        "İleti gönderildi."
       ],
       "Message will be sent ${ dateString } at ${ formattedTime }": [
         "İleti ${ dateString } tarihinde, ${ formattedTime } saatinde gönderilecek"
@@ -3575,9 +3604,6 @@
       ],
       "Print email": [
         "E-postayı yazdır"
-      ],
-      "Protect yourself from trackers. Turn on email tracker protection in settings": [
-        ""
       ],
       "Proton doesn't make money by abusing privacy.": [
         "Proton güvenliğinizi kötüye kullanarak para kazanmaz."
@@ -3827,9 +3853,6 @@
       "To fight spam and abuse, please verify you are human.": [
         "Spam ve kötüye kullanımı önlemek için lütfen insan olduğunuzu doğrulayın."
       ],
-      "To protect your privacy, Proton blocked email trackers in this message": [
-        ""
-      ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "Kişilerinizi yeniden imzalamak için, her kişiyi hesabınızda bulunan şifreleme anahtarı listesine karşı kontrol etmemiz gerekir. Eşleşme bulunamazsa, kişiniz birincil şifreleme anahtarıyla yeniden imzalanır."
       ],
@@ -3850,6 +3873,9 @@
       ],
       "Turn off content search. Activation progress won't be lost.": [
         "İçerik aramasını kapat. İndirilmiş iletiler etkilenmeyecektir."
+      ],
+      "Turn on to search the content of your messages": [
+        "İletilerinizin içeriğini aramak için açın"
       ],
       "Unsupported file": [
         "Desteklenmeyen dosya"
@@ -3928,9 +3954,6 @@
       ],
       "We could not verify the sender's trusted keys.": [
         "Gönderecinin güvenilik anahtarını doğrulayamadık."
-      ],
-      "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
-        "CSV dosyalarını Outlook, Outlook Express, Yahoo! Posta, Hotmail, Eudora ve diğer bazı uygulamalar'dan içe aktarılmasını destekliyoruz. Ayrıca vCard 4.0 içe aktarmayı da destekliyoruz. (UTF-8 kodlamalı)."
       ],
       "We use 3-D Secure to protect your payments.": [
         "Ödemelerinizi korumak için 3-D Güvenliğini kullanıyoruz."
@@ -5090,7 +5113,12 @@
       ]
     },
     "Mail import summary": {
-      "${ messagesFragment } since ${ periodFragment } and label them as ${ label }": [
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        "",
+        ""
+      ],
+      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        "",
         ""
       ]
     },
@@ -5582,21 +5610,7 @@
         "Ad"
       ]
     },
-    "Plan Feature": {
-      "${ n } server": [
-        "${ n } sunucu",
-        "${ n } sunucu"
-      ],
-      "${ n } VPN connection": [
-        "${ n } VPN bağlantısı",
-        "${ n } VPN bağlantısı"
-      ]
-    },
     "Plan feature": {
-      "${ freeServers } in ${ freeCountries } country": [
-        "${ freeCountries } ülkesinde ${ freeServers }",
-        "${ freeCountries } ülkelerinde ${ freeServers }"
-      ],
       "0.5 GB storage": [
         "0.5 GB depolama alanı"
       ],
@@ -5609,10 +5623,6 @@
       "1 user": [
         "1 kullanıcı"
       ],
-      "1200+ servers in ${ plusCountries } country": [
-        "${ plusCountries } ülkede 1200'den fazla sunucu",
-        "${ plusCountries } ülkede 1200'den fazla sunucu"
-      ],
       "20 GB storage": [
         "20 GB depolama"
       ],
@@ -5621,10 +5631,6 @@
       ],
       "3 folders / labels": [
         "3 klasör / etiket"
-      ],
-      "350+ servers in ${ basicCountries } country": [
-        "${ basicCountries } ülkede 350'den fazla sunucu",
-        "${ basicCountries } ülkede 350'den fazla sunucu"
       ],
       "5 addresses": [
         "5 adres"
@@ -6100,7 +6106,7 @@
         "Kişiler silindi"
       ],
       "Conversation added to ${ labelName }.": [
-        ""
+        "İleti ${ labelName } içerisine eklendi."
       ],
       "Conversation deleted": [
         "Konuşma silindi"
@@ -6109,7 +6115,7 @@
         ""
       ],
       "Conversation marked as Starred.": [
-        ""
+        "Sohbet Yıldızlı olarak işaretlendi."
       ],
       "Conversation marked as unread.": [
         ""
@@ -6124,7 +6130,7 @@
         "Konuşma gereksiz klasörüne taşındı ve gönderici Engellenen Listesine eklendi."
       ],
       "Conversation removed from ${ labelName }.": [
-        ""
+        "Sohbet ${ labelName } içerisinden çıkarıldı."
       ],
       "Draft deleted": [
         "Taslak silindi"
@@ -6151,7 +6157,7 @@
         "E-posta aboneliğinden çıkıldı"
       ],
       "Message added to ${ labelName }.": [
-        ""
+        "İleti ${ labelName } içerisine eklendi."
       ],
       "Message content search activated": [
         "İleti içeriği arama etkinleştirildi"
@@ -6166,7 +6172,7 @@
         ""
       ],
       "Message marked as Starred.": [
-        ""
+        "İleti Yıldızlı olarak işaretlendi."
       ],
       "Message marked as unread.": [
         ""
@@ -6181,7 +6187,7 @@
         "İleti gereksiz klasörüne taşındı ve gönderici Engellenen Listesine eklendi."
       ],
       "Message removed from ${ labelName }.": [
-        ""
+        "İleti ${ labelName } içerisinden kaldırıldı."
       ],
       "Move ${ selectionCount } conversation": [
         "${ selectionCount } konuşmayı taşı",
@@ -7038,6 +7044,20 @@
       ],
       "Windows, macOS, iOS, Linux, Android, Android TV, Chromebook, Chromecast": [
         "Windows, macOS, iOS, Linux, Android, Android TV, Chromebook, Chromecast"
+      ]
+    },
+    "VPN Plan Feature": {
+      "${ n } server": [
+        "",
+        ""
+      ],
+      "${ n } VPN connection": [
+        "",
+        ""
+      ],
+      "${ numberOfServers } in ${ numberOfCountries } country": [
+        "",
+        ""
       ]
     },
     "Warning": {

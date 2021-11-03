@@ -822,6 +822,9 @@
       "Try another method": [
         "Ɛreḍ tarrayt nniḍen"
       ],
+      "Turn on tracker protection": [
+        ""
+      ],
       "Underline": [
         "Derrer"
       ],
@@ -1437,6 +1440,12 @@
       ]
     },
     "Calendar subscription not synced error": {
+      "Calendar could not be decrypted": [
+        ""
+      ],
+      "Calendar could not be found": [
+        ""
+      ],
       "Calendar is syncing": [
         "Awitay yemtawi"
       ],
@@ -1456,6 +1465,14 @@
         "Tuccḍa deg umtawi n uwitay"
       ],
       "More than 12 hours passed since last update": [
+        ""
+      ]
+    },
+    "Collapsible tooltip": {
+      "Close": [
+        ""
+      ],
+      "Open": [
         ""
       ]
     },
@@ -2816,10 +2833,6 @@
         "",
         ""
       ],
-      "${ numberOfTrackers } email tracker found": [
-        "",
-        ""
-      ],
       "${ numContactGroups } contact group": [
         "",
         ""
@@ -3135,6 +3148,9 @@
       "Create recovery phrase": [
         "Rnu tafyirt n tririt"
       ],
+      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
+        ""
+      ],
       "Custom": [
         "Udmawan"
       ],
@@ -3205,6 +3221,19 @@
       ],
       "Email address": [
         "Tansa imayl"
+      ],
+      "Email tracker protection is disabled": [
+        ""
+      ],
+      "Email trackers can violate your privacy. Proton did not find any trackers on this message.": [
+        ""
+      ],
+      "Email trackers can violate your privacy. Proton found and blocked ${ numberOfTrackers } tracker.": [
+        "",
+        ""
+      ],
+      "Email trackers can violate your privacy. Turn on tracker protection to prevent senders from knowing whether and when you have opened a message.": [
+        ""
       ],
       "embedded image": [
         "tugna tusliɣt",
@@ -3576,9 +3605,6 @@
       "Print email": [
         "Ziggez imayl"
       ],
-      "Protect yourself from trackers. Turn on email tracker protection in settings": [
-        ""
-      ],
       "Proton doesn't make money by abusing privacy.": [
         "Ur d-ixeddem ara Proton idrimen s uttɛeddi ɣef tbaḍnit."
       ],
@@ -3827,9 +3853,6 @@
       "To fight spam and abuse, please verify you are human.": [
         "Akken ad nennaɣ mgal ispament, senqed ma yella kečč d amdan."
       ],
-      "To protect your privacy, Proton blocked email trackers in this message": [
-        ""
-      ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "Akken ad tzemleḍ tikkelt-nniḍen inermisen-inek•m, nesra ad nsenqed yal anermis s tebdart n tsura n uwgelhen iwejden deg umiḍan-inek•m. Ma ur nufi ara ula d yiwet n tenmeɣrut, amiḍan-inek•m ad ittuzmel tikkelt-nniḍen s tsarut n uqgelhen tagejdant."
       ],
@@ -3850,6 +3873,9 @@
       ],
       "Turn off content search. Activation progress won't be lost.": [
         "Sens anadi n ugbur. Akala n usermed ur yettṛuḥu ara."
+      ],
+      "Turn on to search the content of your messages": [
+        ""
       ],
       "Unsupported file": [
         "Afaylu ur yettwadhel ara"
@@ -3928,9 +3954,6 @@
       ],
       "We could not verify the sender's trusted keys.": [
         "Ur nezmir ara ad nsenqed tisura yettwaḍmanen squr amazan."
-      ],
-      "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
-        "Nedhel taktert n yifuyla CSV si Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora akked kra n yisnasen-nniḍen. Nedhel daɣen taktert n 4.0. (Asettengel UTF-8)."
       ],
       "We use 3-D Secure to protect your payments.": [
         "Nesseqdac 3-D Secure akken ad nesseḥbiber ɣef lexlaṣ-nwen."
@@ -5090,7 +5113,12 @@
       ]
     },
     "Mail import summary": {
-      "${ messagesFragment } since ${ periodFragment } and label them as ${ label }": [
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        "",
+        ""
+      ],
+      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        "",
         ""
       ]
     },
@@ -5582,21 +5610,7 @@
         "Isem"
       ]
     },
-    "Plan Feature": {
-      "${ n } server": [
-        "Aqeddac ${ n }",
-        "Iqeddacen ${ n }"
-      ],
-      "${ n } VPN connection": [
-        "${ n } tuqqna VPN",
-        "${ n } n tuqqniwin VPN"
-      ]
-    },
     "Plan feature": {
-      "${ freeServers } in ${ freeCountries } country": [
-        "${ freeServers } deg ${ freeCountries } n tmurt",
-        "${ freeServers } deg ${ freeCountries } n tmura"
-      ],
       "0.5 GB storage": [
         "0.5 GAṬ n usekles"
       ],
@@ -5609,10 +5623,6 @@
       "1 user": [
         "1 n useqdac"
       ],
-      "1200+ servers in ${ plusCountries } country": [
-        "1200+ yiqeddacen deg ${ plusCountries } n tmurt",
-        "1200+ yiqeddacen deg ${ plusCountries } n tmura"
-      ],
       "20 GB storage": [
         "20 GAṬ n usekles"
       ],
@@ -5621,10 +5631,6 @@
       ],
       "3 folders / labels": [
         "3 n yikaramen / tibzimin"
-      ],
-      "350+ servers in ${ basicCountries } country": [
-        "350+ yiqeddacen deg ${ basicCountries } n tmurt",
-        "350+ yiqeddacen deg ${ basicCountries }+ n tmura"
       ],
       "5 addresses": [
         "5 n tansiwin"
@@ -7038,6 +7044,20 @@
       ],
       "Windows, macOS, iOS, Linux, Android, Android TV, Chromebook, Chromecast": [
         "Windows, macOS, iOS, Linux, Android, Android TV, Chromebook, Chromecast"
+      ]
+    },
+    "VPN Plan Feature": {
+      "${ n } server": [
+        "",
+        ""
+      ],
+      "${ n } VPN connection": [
+        "",
+        ""
+      ],
+      "${ numberOfServers } in ${ numberOfCountries } country": [
+        "",
+        ""
       ]
     },
     "Warning": {

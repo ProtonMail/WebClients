@@ -31,11 +31,11 @@
       "${ BRAND_NAME } shop": [
         "Magazin ${ BRAND_NAME }"
       ],
-      "activate": [
-        "activare"
-      ],
       "Activate": [
         "Activare"
+      ],
+      "activate": [
+        "activare"
       ],
       "Activate ${ Name }@pm.me": [
         "Activare ${ Name }@pm.me"
@@ -888,9 +888,6 @@
       ]
     },
     "Alert": {
-      "Are you sure you want to import a private key? Importing an insecurely generated or leaked private key can harm the security of your emails.": [
-        "Sigur doriți să importați o cheie privată? Importarea unei chei private generate nesigure sau furată poate afecta securitatea mesajelor."
-      ],
       "By leaving now, some contacts may not be imported": [
         "Renunțând acum, unele contacte nu vor fi importate."
       ],
@@ -1308,6 +1305,12 @@
       ]
     },
     "Calendar subscription not synced error": {
+      "Calendar could not be decrypted": [
+        "Calendarul nu a putut fi decriptat"
+      ],
+      "Calendar could not be found": [
+        "Calendarul nu a putut fi găsit"
+      ],
       "Calendar is syncing": [
         "Calendarul se sincronizează."
       ],
@@ -1631,8 +1634,8 @@
       "I use a different Proton account": [
         "Folosesc un alt cont Proton."
       ],
-      "Missing feature(s) ": [
-        "Funcții lipsă. "
+      "Missing feature(s)": [
+        "Funcție (funcții) lipsă"
       ],
       "My reason isn't listed, please comment": [
         "Motivul meu nu este afişat. Vă rugăm să comentați."
@@ -2992,6 +2995,11 @@
         "Verificarea în doi pași este activată"
       ]
     },
+    "Import key": {
+      "Are you sure you want to import a private key? Importing an insecurely generated or leaked private key can harm the security of your emails.\n\nPlease also note that the public key corresponding to this private key will be publicly available from our key server. If the key contains personal details (such as your full name) which you do not want to publish, please edit the key before importing it.": [
+        "Sunteți sigur că doriți să importați o cheie privată? Importul unei chei private generate în mod nesigur sau care a avut scurgeri de informații poate afecta securitatea mesajelor dumneavoastră de e-mail.\n\nRețineți, de asemenea, că cheia publică corespunzătoare acestei chei private va fi disponibilă public pe serverul nostru de chei. Dacă cheia conține detalii personale (cum ar fi numele dumneavoastră complet) pe care nu doriți să le publicați, vă rugăm să editați cheia înainte de a o importa."
+      ]
+    },
     "Import status": {
       "${ percentageValue }% paused": [
         "${ percentageValue }% întrerupt"
@@ -3434,6 +3442,9 @@
       "Creating your Proton account": [
         "Crearea contului tău Proton"
       ],
+      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
+        "Sunt acceptate fișierele CSV din Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora și alte aplicații, precum și formatele vCard 3.1 și 4.0 (codificare UTF-8)."
+      ],
       "Currently all available storage is allocated to the administrator account. Please reduce the admin account allocation to free up space for additional users. You can increase the total storage at any time by upgrading your account.": [
         "În prezent tot spațiul disponibil este alocat contului administratorului. Reduceți alocarea către acest cont pentru a elibera spațiu pentru utilizatorii suplimentari. Puteți mări spațiul total oricând trecând la un cont cu plată."
       ],
@@ -3591,9 +3602,6 @@
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Filtrele funcționează asupra tuturor mesajelor, incluzând atât cele primite cât și cele trimise. Fiecare filtru trebuie să conțină cel puțin un nume, o condiție și o acțiune."
-      ],
-      "For advanced security, the Import-Export app encrypts emails on your device before migrating them to Proton servers. You can also export messages for local backups.": [
-        "Pentru o securitate avansată, aplicația „Import-Export” criptează e-mailurile de pe dispozitiv înainte de a le migra pe serverele Proton. De asemenea, puteți exporta mesajele pentru conservare locală."
       ],
       "For families and small teams; includes both Mail and VPN.": [
         "Pentru familii şi echipe mici; include atât e-mail cât şi VPN."
@@ -4154,6 +4162,9 @@
       "The email address you place at the top of the list is your default email address. Drag and drop to reorder your addresses.": [
         "Adresa de e-mail pe care o plasați în partea de sus a listei este adresa de e-mail implicită. Pentru a le reordona, trageți și plasați adresele în poziția dorită."
       ],
+      "The Import-Export app allows you to export messages for local backups and to restore previous backups to your account.": [
+        "Aplicația Import-Export vă permite să exportați mesaje pentru copiile de rezervă locale și să restaurați copiile de rezervă anterioare în contul dumneavoastră."
+      ],
       "The name will be visible to your users while they are logged in.": [
         "Numele va fi vizibil utilizatorilor când sunt conectați."
       ],
@@ -4339,9 +4350,6 @@
       ],
       "We recommend adding a linked email so you can recover your account if you lose your password.": [
         "Vă recomandăm să adăugați o adresă de e-mail pentru a vă putea recupera contul, în cazul în care vă pierdeți parola."
-      ],
-      "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
-        "Este suportată importarea fișierelor CSV din Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora și alte aplicații. Este suportată și importarea fișierelor vCard 4.0 (codificate UTF-8)."
       ],
       "We use 3-D Secure to protect your payments.": [
         "Folosim 3-D Secure pentru a proteja plățile."
@@ -5989,8 +5997,15 @@
       ]
     },
     "Mail import summary": {
-      "${ messagesFragment } since ${ periodFragment } and label them as ${ label }": [
-        "${ messagesFragment } de la (din) ${ periodFragment } și etichetare ca ${ label }"
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        "Importați toate mesajele de la ${ selectedLabelsCount } din ${ totalLabelsCount } eticheta de la ${ periodFragment } și etichetați-le ca ${ label }",
+        "Importă toate mesajele din ${ selectedLabelsCount } din ${ totalLabelsCount } etichete de la ${ periodFragment } și le etichetează ca ${ label }",
+        "Importă toate mesajele din ${ selectedLabelsCount } din ${ totalLabelsCount } de etichete de la ${ periodFragment } și le etichetează ca ${ label }"
+      ],
+      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        "Importați toate mesajele de la eticheta ${ totalLabelsCount } de la ${ periodFragment } și etichetați-le ca ${ label }",
+        "Importați toate mesajele din ${ totalLabelsCount } etichete de la ${ periodFragment } și etichetați-le ca ${ label }",
+        "Importați toate mesajele din ${ totalLabelsCount } de etichete de la ${ periodFragment } și etichetați-le ca ${ label }"
       ]
     },
     "Mail upsell feature": {
@@ -6725,24 +6740,7 @@
         "Gratuit"
       ]
     },
-    "Plan Feature": {
-      "${ n } server": [
-        "un server",
-        "${ n } servere",
-        "${ n } de servere"
-      ],
-      "${ n } VPN connection": [
-        "O conexiune VPN",
-        "${ n } conexiuni VPN",
-        "${ n } de conexiuni VPN"
-      ]
-    },
     "Plan feature": {
-      "${ freeServers } in ${ freeCountries } country": [
-        "${ freeServers } dintr-o țară",
-        "${ freeServers } din ${ freeCountries } țări",
-        "${ freeServers } din ${ freeCountries } de țări"
-      ],
       "0.5 GB storage": [
         "0,5 GB spațiu"
       ],
@@ -6755,11 +6753,6 @@
       "1 user": [
         "Un utilizator"
       ],
-      "1200+ servers in ${ plusCountries } country": [
-        "Peste 1200 de servere într-o țară",
-        "Peste 1200 de servere în ${ plusCountries } țări",
-        "Peste 1200 de servere în ${ plusCountries } de țări"
-      ],
       "20 GB storage": [
         "20 GB spațiu"
       ],
@@ -6768,11 +6761,6 @@
       ],
       "3 folders / labels": [
         "3 foldere / etichete"
-      ],
-      "350+ servers in ${ basicCountries } country": [
-        "Peste 350 de servere într-o țară",
-        "Peste 350 de servere în ${ basicCountries } țări",
-        "Peste 350 de servere în ${ basicCountries } de țări"
       ],
       "5 addresses": [
         "5 adrese"
@@ -6996,6 +6984,9 @@
       "Auto reply": [
         "Auto răspuns"
       ],
+      "Backup & Export": [
+        "Copie de rezervă și Export"
+      ],
       "Calendars": [
         "Calendare"
       ],
@@ -7028,9 +7019,6 @@
       ],
       "Import & export": [
         "Importare și exportare"
-      ],
-      "Import/Export": [
-        "Importare/Exportare"
       ],
       "Multi-user support": [
         "Suport utilizatori multipli"
@@ -7574,6 +7562,9 @@
       "Back": [
         "Înapoi"
       ],
+      "Backup & Export": [
+        "Copie de rezervă și Export"
+      ],
       "Billing cycle": [
         "Ciclu de facturare"
       ],
@@ -7887,9 +7878,6 @@
       ],
       "Import-Export app": [
         "Aplicația „Import-Export”"
-      ],
-      "Import/Export": [
-        "Importare/Exportare"
       ],
       "Invalid verification code": [
         "Cod de verificare nevalid"
@@ -8608,6 +8596,23 @@
     "VPN info": {
       "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, and more.": [
         "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now şi multe altele."
+      ]
+    },
+    "VPN Plan Feature": {
+      "${ n } server": [
+        "${ n } un server",
+        "${ n }+ servere",
+        "${ n }+ de servere"
+      ],
+      "${ n } VPN connection": [
+        "${ n } conectare VPN",
+        "${ n } conectări VPN",
+        "${ n } de conectări VPN"
+      ],
+      "${ numberOfServers } in ${ numberOfCountries } country": [
+        "${ numberOfServers } în ${ numberOfCountries } țară",
+        "${ numberOfServers } în ${ numberOfCountries } țări",
+        "${ numberOfServers } în ${ numberOfCountries } de țări"
       ]
     },
     "VPN upsell feature": {

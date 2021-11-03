@@ -826,6 +826,9 @@
       "Try another method": [
         "Încercaţi o altă metodă"
       ],
+      "Turn on tracker protection": [
+        "Activați protecția împotriva urmăririi"
+      ],
       "Underline": [
         "Subliniat"
       ],
@@ -1445,6 +1448,12 @@
       ]
     },
     "Calendar subscription not synced error": {
+      "Calendar could not be decrypted": [
+        "Calendarul nu a putut fi decriptat"
+      ],
+      "Calendar could not be found": [
+        "Calendarul nu a putut fi găsit"
+      ],
       "Calendar is syncing": [
         "Calendarul se sincronizează."
       ],
@@ -1465,6 +1474,14 @@
       ],
       "More than 12 hours passed since last update": [
         "Au trecut mai mult de 12 ore de la ultima actualizare."
+      ]
+    },
+    "Collapsible tooltip": {
+      "Close": [
+        "Închideți"
+      ],
+      "Open": [
+        "Deschideți"
       ]
     },
     "Composer email icon": {
@@ -2857,11 +2874,6 @@
         "S-au blocat ${ numberOfTrackers } urmăritori de e-mail",
         "S-au blocat ${ numberOfTrackers } de urmăritori de e-mail"
       ],
-      "${ numberOfTrackers } email tracker found": [
-        "S-a găsit un urmăritor de e-mail",
-        "S-a găsit ${ numberOfTrackers } urmăritori de e-mail",
-        "S-a găsit ${ numberOfTrackers } de urmăritori de e-mail"
-      ],
       "${ numContactGroups } contact group": [
         "Un grup de contacte",
         "${ numContactGroups } grupuri de contact",
@@ -3201,6 +3213,9 @@
       "Create recovery phrase": [
         "Creare frază de recuperare"
       ],
+      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
+        "Sunt acceptate fișierele CSV din Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora și alte aplicații, precum și formatele vCard 3.1 și 4.0 (codificare UTF-8)."
+      ],
       "Custom": [
         "Personalizat"
       ],
@@ -3273,6 +3288,20 @@
       ],
       "Email address": [
         "Adresă e-mail"
+      ],
+      "Email tracker protection is disabled": [
+        "Protecția de urmărire a e-mailurilor este dezactivată"
+      ],
+      "Email trackers can violate your privacy. Proton did not find any trackers on this message.": [
+        "Urmăritoarele de e-mail vă pot încălca intimitatea. Proton nu a găsit niciun tracker pentru acest mesaj."
+      ],
+      "Email trackers can violate your privacy. Proton found and blocked ${ numberOfTrackers } tracker.": [
+        "Tracker-ele de e-mail vă pot încălca intimitatea. Proton a găsit și a blocat trackerul ${ numberOfTrackers }.",
+        "Tracker-ele de e-mail vă pot încălca intimitatea. Proton a găsit și a blocat trackerii ${ numberOfTrackers }.",
+        "Tracker-ele de e-mail vă pot încălca intimitatea. Proton a găsit și a blocat trackerii ${ numberOfTrackers }."
+      ],
+      "Email trackers can violate your privacy. Turn on tracker protection to prevent senders from knowing whether and when you have opened a message.": [
+        "Tracker-ele de e-mail vă pot încălca intimitatea. Activați protecția împotriva urmăririi pentru a împiedica expeditorii să știe dacă și când ați deschis un mesaj."
       ],
       "embedded image": [
         "imagine încorporată",
@@ -3651,9 +3680,6 @@
       "Print email": [
         "Tipărire e-mail"
       ],
-      "Protect yourself from trackers. Turn on email tracker protection in settings": [
-        "Protejați-vă de urmăritori. Activați protecția împotriva urmăririi mesajelor în setări."
-      ],
       "Proton doesn't make money by abusing privacy.": [
         "Proton nu face bani abuzând de viața privată."
       ],
@@ -3904,9 +3930,6 @@
       "To fight spam and abuse, please verify you are human.": [
         "Pentru a combate mesajele nedorite, dovediți că sunteți o persoană."
       ],
-      "To protect your privacy, Proton blocked email trackers in this message": [
-        "Pentru a vă proteja confidențialitatea, Proton a blocat urmăritorii din acest mesaj."
-      ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "Pentru a vă resemna contactele, trebuie să verificăm fiecare contact în lista de chei de criptare disponibile în cont. Dacă nu se găsește nicio potrivire, contactul va fi resemnat cu cheia de criptare primară."
       ],
@@ -3927,6 +3950,9 @@
       ],
       "Turn off content search. Activation progress won't be lost.": [
         "Dezactivați căutarea conținutului. Progresul de activare nu va fi pierdut."
+      ],
+      "Turn on to search the content of your messages": [
+        "Activați căutarea în conținutul mesajelor dumneavoastră"
       ],
       "Unsupported file": [
         "Fişier nesuportat"
@@ -4005,9 +4031,6 @@
       ],
       "We could not verify the sender's trusted keys.": [
         "Nu s-au putut verifica cheile de încredere ale expeditorului."
-      ],
-      "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
-        "Este suportată importarea fișierelor CSV din Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora și alte aplicații. Este suportată și importarea fișierelor vCard 4.0 (codificate UTF-8)."
       ],
       "We use 3-D Secure to protect your payments.": [
         "Folosim 3-D Secure pentru a proteja plățile."
@@ -5178,8 +5201,15 @@
       ]
     },
     "Mail import summary": {
-      "${ messagesFragment } since ${ periodFragment } and label them as ${ label }": [
-        "${ messagesFragment } de la (din) ${ periodFragment } și etichetare ca ${ label }"
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        "Importați toate mesajele de la ${ selectedLabelsCount } din ${ totalLabelsCount } eticheta de la ${ periodFragment } și etichetați-le ca ${ label }",
+        "Importă toate mesajele din ${ selectedLabelsCount } din ${ totalLabelsCount } etichete de la ${ periodFragment } și le etichetează ca ${ label }",
+        "Importă toate mesajele din ${ selectedLabelsCount } din ${ totalLabelsCount } de etichete de la ${ periodFragment } și le etichetează ca ${ label }"
+      ],
+      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        "Importați toate mesajele de la eticheta ${ totalLabelsCount } de la ${ periodFragment } și etichetați-le ca ${ label }",
+        "Importați toate mesajele din ${ totalLabelsCount } etichete de la ${ periodFragment } și etichetați-le ca ${ label }",
+        "Importați toate mesajele din ${ totalLabelsCount } de etichete de la ${ periodFragment } și etichetați-le ca ${ label }"
       ]
     },
     "Mailbox": {
@@ -5673,24 +5703,7 @@
         "Nume"
       ]
     },
-    "Plan Feature": {
-      "${ n } server": [
-        "Un server",
-        "${ n } servere",
-        "${ n } de servere"
-      ],
-      "${ n } VPN connection": [
-        "O conexiune VPN",
-        "${ n } Conexiuni VPN",
-        "${ n } de conexiuni VPN"
-      ]
-    },
     "Plan feature": {
-      "${ freeServers } in ${ freeCountries } country": [
-        "${ freeServers } dintr-o țară",
-        "${ freeServers } din ${ freeCountries } țări",
-        "${ freeServers } din ${ freeCountries } de țări"
-      ],
       "0.5 GB storage": [
         "0,5 GB spațiu"
       ],
@@ -5703,11 +5716,6 @@
       "1 user": [
         "Un utilizator"
       ],
-      "1200+ servers in ${ plusCountries } country": [
-        "Peste 1200 de servere într-o țară",
-        "Peste 1200 de servere în ${ plusCountries } de țări",
-        "Peste 1200 de servere în ${ plusCountries } de țări"
-      ],
       "20 GB storage": [
         "20 GB spațiu"
       ],
@@ -5716,11 +5724,6 @@
       ],
       "3 folders / labels": [
         "3 foldere / etichete"
-      ],
-      "350+ servers in ${ basicCountries } country": [
-        "Peste 350 de servere într-o țară",
-        "Peste 350 de servere în peste ${ basicCountries } țări",
-        "Peste 350 de servere în peste ${ basicCountries } de țări"
       ],
       "5 addresses": [
         "5 adrese"
@@ -7180,6 +7183,23 @@
       ],
       "Windows, macOS, iOS, Linux, Android, Android TV, Chromebook, Chromecast": [
         "Windows, macOS, iOS, Linux, Android, Android TV, Chromebook, Chromecast"
+      ]
+    },
+    "VPN Plan Feature": {
+      "${ n } server": [
+        "${ n } un server",
+        "${ n }+ servere",
+        "${ n }+ de servere"
+      ],
+      "${ n } VPN connection": [
+        "${ n } conectare VPN",
+        "${ n } conectări VPN",
+        "${ n } de conectări VPN"
+      ],
+      "${ numberOfServers } in ${ numberOfCountries } country": [
+        "${ numberOfServers } în ${ numberOfCountries } țară",
+        "${ numberOfServers } în ${ numberOfCountries } țări",
+        "${ numberOfServers } în ${ numberOfCountries } de țări"
       ]
     },
     "Warning": {

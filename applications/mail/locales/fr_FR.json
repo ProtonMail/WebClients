@@ -822,6 +822,9 @@
       "Try another method": [
         "Essayer une autre méthode"
       ],
+      "Turn on tracker protection": [
+        "Activer la protection contre les traqueurs"
+      ],
       "Underline": [
         "Souligner"
       ],
@@ -1127,7 +1130,7 @@
         "(${ notice }) Renouvellement après 2 ans à un prix bisannuel réduit de ${ amount } tous les 2 ans (47 % de réduction)."
       ],
       "Billed as ${ amount } ${ supNotice }": [
-        ""
+        "Facturé ${ amount } ${ supNotice }"
       ],
       "Black Friday Sale": [
         "Offre Black Friday"
@@ -1437,6 +1440,12 @@
       ]
     },
     "Calendar subscription not synced error": {
+      "Calendar could not be decrypted": [
+        "Le calendrier n'a pas pu être déchiffré"
+      ],
+      "Calendar could not be found": [
+        "Le calendrier n'a pas pu être trouvé"
+      ],
       "Calendar is syncing": [
         "Synchronisation du calendrier"
       ],
@@ -1457,6 +1466,14 @@
       ],
       "More than 12 hours passed since last update": [
         "Plus de 12 heures se sont écoulées depuis la dernière mise à jour"
+      ]
+    },
+    "Collapsible tooltip": {
+      "Close": [
+        "Fermer"
+      ],
+      "Open": [
+        "Ouvrir"
       ]
     },
     "Composer email icon": {
@@ -2816,10 +2833,6 @@
         "${ numberOfTrackers } traqueur de courriel bloqué",
         "${ numberOfTrackers } traqueurs de courriel bloqués"
       ],
-      "${ numberOfTrackers } email tracker found": [
-        "${ numberOfTrackers } traqueur de courriel trouvé",
-        "${ numberOfTrackers } traqueurs de courriel trouvés"
-      ],
       "${ numContactGroups } contact group": [
         "${ numContactGroups } groupe de contacts",
         "${ numContactGroups } groupes de contacts"
@@ -3135,6 +3148,9 @@
       "Create recovery phrase": [
         "Créer une phrase de récupération"
       ],
+      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
+        "Les fichiers CSV d'Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora et de certaines autres applications ainsi que les formats vCard 3.1 et 4.0 (encodage UTF-8) sont pris en charge."
+      ],
       "Custom": [
         "Personnalisé"
       ],
@@ -3205,6 +3221,19 @@
       ],
       "Email address": [
         "Adresse électronique"
+      ],
+      "Email tracker protection is disabled": [
+        "La protection contre les traqueurs dans les courriels est désactivée"
+      ],
+      "Email trackers can violate your privacy. Proton did not find any trackers on this message.": [
+        "Les traqueurs dans les courriels peuvent violer votre vie privée. Proton n'en a pas trouvé dans ce message."
+      ],
+      "Email trackers can violate your privacy. Proton found and blocked ${ numberOfTrackers } tracker.": [
+        "Les traqueurs dans les courriels peuvent violer votre vie privée. Proton a trouvé et bloqué ${ numberOfTrackers } traqueur.",
+        "Les traqueurs dans les courriels peuvent violer votre vie privée. Proton a trouvé et bloqué ${ numberOfTrackers } traqueurs."
+      ],
+      "Email trackers can violate your privacy. Turn on tracker protection to prevent senders from knowing whether and when you have opened a message.": [
+        "Les traqueurs dans les courriels peuvent violer votre vie privée. Activez la protection contre les traqueurs pour empêcher les expéditeurs de savoir si et quand vous avez ouvert un message."
       ],
       "embedded image": [
         "image intégrée",
@@ -3317,7 +3346,7 @@
         "Les images ont été supprimées, car elles ne sont pas autorisées dans la réponse automatique"
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
-        "Importer $ { contactsFragment } et ${ contactsGroupsFragment }"
+        "Importer ${ contactsFragment } et ${ contactsGroupsFragment }"
       ],
       "Import ${ selectedCalendarsCount } of ${ totalCalendarsCount } calendar": [
         "Importer ${ selectedCalendarsCount } de ${ totalCalendarsCount } calendrier",
@@ -3576,9 +3605,6 @@
       "Print email": [
         "Imprimer le courriel"
       ],
-      "Protect yourself from trackers. Turn on email tracker protection in settings": [
-        "Protégez-vous des traqueurs. Activez la protection du suivi des messages dans les paramètres"
-      ],
       "Proton doesn't make money by abusing privacy.": [
         "Proton ne gagne pas d'argent en abusant de la vie privée."
       ],
@@ -3827,9 +3853,6 @@
       "To fight spam and abuse, please verify you are human.": [
         "Pour lutter contre les messages indésirables et les abus, veuillez prouver que vous êtes humain."
       ],
-      "To protect your privacy, Proton blocked email trackers in this message": [
-        "Pour protéger votre vie privée, Proton a bloqué les traqueurs de courriel dans ce message"
-      ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "Pour signer une nouvelle fois vos contacts, nous devons vérifier chaque contact à l'aide de la liste des clés de chiffrement disponible dans votre compte. Si aucune correspondance n'est trouvée, votre contact sera de nouveau signé avec la clé de chiffrement principale."
       ],
@@ -3850,6 +3873,9 @@
       ],
       "Turn off content search. Activation progress won't be lost.": [
         "Désactiver la recherche de contenu. La progression d'activation ne sera pas perdue."
+      ],
+      "Turn on to search the content of your messages": [
+        "Activer pour rechercher dans le contenu de vos messages"
       ],
       "Unsupported file": [
         "Fichier non pris en charge"
@@ -3928,9 +3954,6 @@
       ],
       "We could not verify the sender's trusted keys.": [
         "Nous n'avons pas pu vérifier les clés approuvées de l'expéditeur."
-      ],
-      "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
-        "Nous prenons en charge l'importation de fichiers CSV depuis Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora et d'autres applications. Nous prenons également en charge l'importation de vCard 4.0. (codage UTF-8)."
       ],
       "We use 3-D Secure to protect your payments.": [
         "Nous utilisons 3-D Secure pour protéger vos paiements."
@@ -5090,8 +5113,13 @@
       ]
     },
     "Mail import summary": {
-      "${ messagesFragment } since ${ periodFragment } and label them as ${ label }": [
-        "${ messagesFragment } depuis ${ periodFragment } et les labelliser comme ${ label }"
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        "",
+        ""
+      ],
+      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        "",
+        ""
       ]
     },
     "Mailbox": {
@@ -5582,21 +5610,7 @@
         "Nom"
       ]
     },
-    "Plan Feature": {
-      "${ n } server": [
-        "${ n } serveur",
-        "${ n } serveurs"
-      ],
-      "${ n } VPN connection": [
-        "${ n } connexion VPN",
-        "${ n } connexions VPN"
-      ]
-    },
     "Plan feature": {
-      "${ freeServers } in ${ freeCountries } country": [
-        "${ freeServers } dans ${ freeCountries } pays",
-        "${ freeServers } dans ${ freeCountries } pays"
-      ],
       "0.5 GB storage": [
         "0,5 Go de stockage"
       ],
@@ -5609,10 +5623,6 @@
       "1 user": [
         "1 utilisateur"
       ],
-      "1200+ servers in ${ plusCountries } country": [
-        "Plus de 1200 serveurs dans ${ plusCountries } pays",
-        "Plus de 1200 serveurs dans ${ plusCountries } pays"
-      ],
       "20 GB storage": [
         "20 Go de stockage"
       ],
@@ -5621,10 +5631,6 @@
       ],
       "3 folders / labels": [
         "3 dossiers/labels"
-      ],
-      "350+ servers in ${ basicCountries } country": [
-        "Plus de 350 serveurs dans ${ basicCountries } pays",
-        "Plus de 350 serveurs dans ${ basicCountries } pays"
       ],
       "5 addresses": [
         "5 adresses"
@@ -7038,6 +7044,20 @@
       ],
       "Windows, macOS, iOS, Linux, Android, Android TV, Chromebook, Chromecast": [
         "Windows, macOS, iOS, Linux, Android, Android TV, Chromebook, Chromecast"
+      ]
+    },
+    "VPN Plan Feature": {
+      "${ n } server": [
+        "",
+        ""
+      ],
+      "${ n } VPN connection": [
+        "",
+        ""
+      ],
+      "${ numberOfServers } in ${ numberOfCountries } country": [
+        "",
+        ""
       ]
     },
     "Warning": {

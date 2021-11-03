@@ -861,6 +861,12 @@
       ]
     },
     "Calendar subscription not synced error": {
+      "Calendar could not be decrypted": [
+        "Kalender konnte nicht entschlüsselt werden"
+      ],
+      "Calendar could not be found": [
+        "Kalender konnte nicht gefunden werden"
+      ],
       "Calendar is syncing": [
         "Kalender wird synchronisiert"
       ],
@@ -1101,7 +1107,7 @@
         "Telefon konnte nicht bestätigt werden. Bitte versuchen Sie es später erneut."
       ],
       "Checkout expired, please try again": [
-        "Kaufabwicklung abgelaufen. Bitte versuche es noch einmal"
+        "Kaufabwicklung abgelaufen. Bitte versuchen Sie es noch einmal"
       ],
       "Contact could not be saved": [
         "Kontakt konnte nicht gespeichert werden"
@@ -1864,6 +1870,9 @@
       "Creating share": [
         "Freigabe wird erstellt"
       ],
+      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
+        "CSV-Dateien aus Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora und einigen anderen Anwendungen sowie die Formate vCard 3.1 und 4.0 (UTF-8-Kodierung) werden unterstützt."
+      ],
       "Delete drive": [
         "Laufwerk löschen",
         "Laufwerke löschen"
@@ -2257,7 +2266,7 @@
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Dieser Link ist möglicherweise ein homographischer Angriff (Vortäuschung einer falschen Identität). Bitte vergewissern Sie sich, dass dies der Link ist, den Sie besuchen möchten, oder öffnen Sie ihn nicht."
       ],
-      "This link was created in a previous version and can not be modified. Delete this link and create a new one to change the settings.": [
+      "This link was created in\na previous version and can not be modified. Delete this link and create a\nnew one to change the settings.": [
         "Dieser Link wurde in einer früheren Version erstellt und kann deshalb nicht geändert werden. Löschen Sie diesen Link und erstellen Sie anschließend einen neuen, um die Einstellungen ändern zu können."
       ],
       "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
@@ -2332,9 +2341,6 @@
       ],
       "VPN + ${ mailAppName } bundle for families and small businesses.": [
         "Ein Paket aus VPN + ${ mailAppName } für Familien und kleine Unternehmen."
-      ],
-      "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
-        "Wir unterstützen den Import von CSV-Dateien aus Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora und einigen anderen Anwendungen. Außerdem unterstützen wir den Import von vCard 4.0 (UTF-8-Kodierung)."
       ],
       "We use 3-D Secure to protect your payments.": [
         "Wir verwenden 3-D-Sicherheitsüberprüfung zum Schutz Ihrer Zahlungen."
@@ -3262,8 +3268,13 @@
       ]
     },
     "Mail import summary": {
-      "${ messagesFragment } since ${ periodFragment } and label them as ${ label }": [
-        "${ messagesFragment } seit ${ periodFragment } und der Kategorie ${ label } zuordnen"
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        "Importiert alle Nachrichten von ${ selectedLabelsCount }/${ totalLabelsCount } Kategorie seit ${ periodFragment } und kennzeichnet sie als ${ label }",
+        "Importiert alle Nachrichten von ${ selectedLabelsCount }/${ totalLabelsCount } Kategorien seit ${ periodFragment } und kennzeichnet sie als ${ label }"
+      ],
+      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        "Importiert alle Nachrichten aus ${ totalLabelsCount } Kategorie seit ${ periodFragment } und kennzeichnet sie als „${ label }”",
+        "Importiert alle Nachrichten aus ${ totalLabelsCount } Kategorien seit ${ periodFragment } und kennzeichnet sie als „${ label }”"
       ]
     },
     "Many Others": {
@@ -3317,8 +3328,8 @@
         "„${ firstItemName }” aus Papierkorb wiederhergestellt"
       ],
       "${ deletedCount } link to your file was deleted": [
-        "${ deletedCount } Link zu deiner Datei wurde gelöscht",
-        "${ deletedCount } Links zu deinen Dateien wurden gelöscht"
+        "${ deletedCount } Link zu Ihrer Datei wurde gelöscht",
+        "${ deletedCount } Links zu Ihren Dateien wurden gelöscht"
       ],
       "${ deletedItemsCount } file deleted permanently from trash": [
         "${ deletedItemsCount } Datei dauerhaft aus dem Papierkorb gelöscht",
@@ -3333,8 +3344,8 @@
         "${ deletedItemsCount } Elemente dauerhaft aus dem Papierkorb gelöscht"
       ],
       "${ failedCount } link to your file failed to be deleted": [
-        "${ failedCount } Link zu deiner Datei konnte nicht gelöscht werden",
-        "${ failedCount } Links zu deinen Dateien konnten nicht gelöscht werden"
+        "${ failedCount } Link zu Ihrer Datei konnte nicht gelöscht werden",
+        "${ failedCount } Links zu Ihren Dateien konnten nicht gelöscht werden"
       ],
       "${ failedMovesCount } file failed to be moved": [
         "${ failedMovesCount } Datei konnte nicht verschoben werden",
@@ -3440,16 +3451,16 @@
         "Nicht genug Speicherplatz, um ${ formattedTotal } hochzuladen"
       ],
       "The link to your file failed to be deleted": [
-        "Der Link zu deiner Datei konnte nicht gelöscht werden"
+        "Der Link zu Ihrer Datei konnte nicht gelöscht werden"
       ],
       "The link to your file was deleted": [
-        "Der Link zu deiner Datei wurde gelöscht"
+        "Der Link zu Ihrer Datei wurde gelöscht"
       ],
       "Your old files will be deleted in 72 hours": [
         "Ihre alten Dateien werden innerhalb der nächsten 72 Stunden gelöscht"
       ],
       "Your settings have been changed successfully": [
-        "Deine Einstellungen wurden erfolgreich geändert"
+        "Ihre Einstellungen wurden erfolgreich geändert"
       ]
     },
     "Onboarding Proton": {
@@ -3657,9 +3668,9 @@
       "1 user": [
         "1 Benutzer"
       ],
-      "1200+ servers in ${ plusCountries } country": [
-        "Mehr als 1.200 Server in ${ plusCountries } Land",
-        "Mehr als 1.200 Server in ${ plusCountries } Ländern"
+      "1300+ servers in ${ plusCountries } country": [
+        "",
+        ""
       ],
       "20 GB storage": [
         "20 GB Speicherplatz"
@@ -3877,7 +3888,7 @@
         "Wiederherstellung wurde gestartet"
       ],
       "The link to your file was successfully copied": [
-        "Der Link zu deiner Datei wurde erfolgreich kopiert"
+        "Der Link zu Ihrer Datei wurde erfolgreich kopiert"
       ],
       "Verification successful": [
         "Verifizierung erfolgreich"
@@ -3885,8 +3896,8 @@
       "You have successfully unsubscribed": [
         "Sie haben Sich erfolgreich abgemeldet"
       ],
-      "Your files were successfully recovered to \"My files\"": [
-        "Deine Dateien wurden erfolgreich in „Meine Dateien” wiederhergestellt"
+      "Your files were successfully recovered to \"My files\".": [
+        "Ihre Dateien wurden erfolgreich in „Meine Dateien” wiederhergestellt."
       ]
     },
     "Suffix for price": {
@@ -4728,9 +4739,6 @@
       ],
       "You will lose any customization you made so far.": [
         "Dabei gehen alle bisher vorgenommenen Anpassungen verloren."
-      ],
-      "Your local date & time settings seem to be out of sync.": [
-        "Ihre lokalen Datums- und Zeiteinstellungen scheinen nicht mehr synchron zu sein."
       ]
     }
   }

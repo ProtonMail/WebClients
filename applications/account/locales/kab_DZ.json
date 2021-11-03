@@ -31,11 +31,11 @@
       "${ BRAND_NAME } shop": [
         "Taḥanut ${ BRAND_NAME }"
       ],
-      "activate": [
-        "rmed"
-      ],
       "Activate": [
         "Rmed"
+      ],
+      "activate": [
+        "rmed"
       ],
       "Activate ${ Name }@pm.me": [
         "Rmed ${ Name }@pm.me"
@@ -879,9 +879,6 @@
       ]
     },
     "Alert": {
-      "Are you sure you want to import a private key? Importing an insecurely generated or leaked private key can harm the security of your emails.": [
-        "Tettḥeqqeḍ belli tebɣiḍ ad tketreḍ tasarut tusligt? Aktar n tsarut ittusirwen s tarrayt taraɣelsant neɣ yettwaseknen yezmer ad iḍur taɣellist n imaylen-inek."
-      ],
       "By leaving now, some contacts may not be imported": [
         "Ma teffɣeḍ tura, yezmer ur d-ttwaktaran ara kra n yinermisen"
       ],
@@ -1297,6 +1294,12 @@
       ]
     },
     "Calendar subscription not synced error": {
+      "Calendar could not be decrypted": [
+        ""
+      ],
+      "Calendar could not be found": [
+        ""
+      ],
       "Calendar is syncing": [
         "Amtawi n uwitay"
       ],
@@ -1613,7 +1616,7 @@
       "I use a different Proton account": [
         ""
       ],
-      "Missing feature(s) ": [
+      "Missing feature(s)": [
         ""
       ],
       "My reason isn't listed, please comment": [
@@ -2960,6 +2963,11 @@
         "Asenqed s sin yiḥricen yermed"
       ]
     },
+    "Import key": {
+      "Are you sure you want to import a private key? Importing an insecurely generated or leaked private key can harm the security of your emails.\n\nPlease also note that the public key corresponding to this private key will be publicly available from our key server. If the key contains personal details (such as your full name) which you do not want to publish, please edit the key before importing it.": [
+        ""
+      ]
+    },
     "Import status": {
       "${ percentageValue }% paused": [
         "${ percentageValue }% yettuḥbes i kra n wakud"
@@ -3381,6 +3389,9 @@
       "Creating your Proton account": [
         "Timerna n umiḍan-ik·im n Proton"
       ],
+      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
+        ""
+      ],
       "Currently all available storage is allocated to the administrator account. Please reduce the admin account allocation to free up space for additional users. You can increase the total storage at any time by upgrading your account.": [
         "Akka tura, akk amḍiq n usekles yellan yettunefk i unmidan anedbal. Ttxil-k, senɣes amḍiq n usekles n umiḍan anedbal akken ad tserrḥeḍ cwiṭ i yimiḍanen-nniḍen. Ad tizmireḍ ad ternuḍ amḍiq n usekles amatu melmi tebɣiḍ ticki yuli uswir n umiḍan-ik."
       ],
@@ -3537,9 +3548,6 @@
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Imsizedgen teddun ɣef meṛṛa imaylen, ula ɣef yimaylen yettwaremsen d wid yettwaznen. Yal amsizdeg ilaq ad yesɛu xerṣum isem, tawtilt d tigawt."
-      ],
-      "For advanced security, the Import-Export app encrypts emails on your device before migrating them to Proton servers. You can also export messages for local backups.": [
-        "I tɣellist leqqayen, asnas kter-sifeḍ ad iwgelhen imaylen yellan ɣef yibenk-ik·im send ad yinig yis-sen ɣer iqeddacen n Proton. Tzemreḍ daɣen ad tketreḍ iznan i waḥrazen idiganen."
       ],
       "For families and small teams; includes both Mail and VPN.": [
         "I twaculin akked terbaɛ timeẓyanin; yedda Imayl akked VPN."
@@ -4098,6 +4106,9 @@
       "The email address you place at the top of the list is your default email address. Drag and drop to reorder your addresses.": [
         "Tansa n yimayl i teskecmeḍ nnig n tebdart d tansa-inek·inem s wudem amezwer. Zuɣer syen sres i wakken ad tsuddseḍ tansiwin-ik·im."
       ],
+      "The Import-Export app allows you to export messages for local backups and to restore previous backups to your account.": [
+        ""
+      ],
       "The name will be visible to your users while they are logged in.": [
         "Isem ad d-yettban i yiseqdacen-ik•im mi ara qqnen."
       ],
@@ -4283,9 +4294,6 @@
       ],
       "We recommend adding a linked email so you can recover your account if you lose your password.": [
         "Ad ak·akem-nwelleh ɣer tmerna n tansa n yimayl neɣ uṭṭun n tiliɣri icudden i wakken ad tizmireḍ ad d-terreḍ amiḍan-ik·im ma yella tesruḥeḍ awal-ik·im uffir."
-      ],
-      "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
-        "Nedhel taktert n yifuyla CSV si Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora akked kra n yisnasen-nniḍen. Nedhel daɣen taktert n 4.0. (Asettengel UTF-8)."
       ],
       "We use 3-D Secure to protect your payments.": [
         "Nesseqdac 3-D Secure akken ad nesseḥbiber ɣef lexlaṣ-nwen."
@@ -5928,7 +5936,12 @@
       ]
     },
     "Mail import summary": {
-      "${ messagesFragment } since ${ periodFragment } and label them as ${ label }": [
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        "",
+        ""
+      ],
+      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        "",
         ""
       ]
     },
@@ -6656,21 +6669,7 @@
         "Baṭṭel"
       ]
     },
-    "Plan Feature": {
-      "${ n } server": [
-        "Aqeddac ${ n }",
-        "Iqeddacen ${ n }"
-      ],
-      "${ n } VPN connection": [
-        "${ n } tuqqna VPN",
-        "${ n } n tuqqniwin VPN"
-      ]
-    },
     "Plan feature": {
-      "${ freeServers } in ${ freeCountries } country": [
-        "${ freeServers } deg ${ freeCountries } n tmurt",
-        "${ freeServers } deg ${ freeCountries } n tmura"
-      ],
       "0.5 GB storage": [
         "0.5 GAṬ n usekles"
       ],
@@ -6683,10 +6682,6 @@
       "1 user": [
         "1 useqdac"
       ],
-      "1200+ servers in ${ plusCountries } country": [
-        "1200+ yiqeddacen deg ${ plusCountries } n tmurt",
-        "1200+ yiqeddacen deg ${ plusCountries } n tmura"
-      ],
       "20 GB storage": [
         "20 GAṬ n uḥraz"
       ],
@@ -6695,10 +6690,6 @@
       ],
       "3 folders / labels": [
         "3 n Ikaramen / Tebzimin"
-      ],
-      "350+ servers in ${ basicCountries } country": [
-        "350+ yiqeddacen deg ${ basicCountries } n tmurt",
-        "350+ yiqeddacen deg ${ basicCountries } n tmura"
       ],
       "5 addresses": [
         "5 n tansiwin"
@@ -6921,6 +6912,9 @@
       "Auto reply": [
         "Tiririt tawurmant"
       ],
+      "Backup & Export": [
+        ""
+      ],
       "Calendars": [
         "Iwitayen"
       ],
@@ -6953,9 +6947,6 @@
       ],
       "Import & export": [
         "Kter & Sifeḍ"
-      ],
-      "Import/Export": [
-        ""
       ],
       "Multi-user support": [
         "Tallelt n ddeqs n yiseqdacen"
@@ -7497,6 +7488,9 @@
       "Back": [
         "Ar deffir"
       ],
+      "Backup & Export": [
+        ""
+      ],
       "Billing cycle": [
         "Twala n ufter"
       ],
@@ -7809,9 +7803,6 @@
       ],
       "Import-Export app": [
         "Asnas Kter-Sifeḍ"
-      ],
-      "Import/Export": [
-        ""
       ],
       "Invalid verification code": [
         "Tangalt n usentem mačči d tameɣtut"
@@ -8527,6 +8518,20 @@
     "VPN info": {
       "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, and more.": [
         "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, d waṭas-nniḍen."
+      ]
+    },
+    "VPN Plan Feature": {
+      "${ n } server": [
+        "",
+        ""
+      ],
+      "${ n } VPN connection": [
+        "",
+        ""
+      ],
+      "${ numberOfServers } in ${ numberOfCountries } country": [
+        "",
+        ""
       ]
     },
     "VPN upsell feature": {

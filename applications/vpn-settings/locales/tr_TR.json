@@ -699,6 +699,12 @@
       ]
     },
     "Calendar subscription not synced error": {
+      "Calendar could not be decrypted": [
+        "Takvimin şifresi çözülemedi"
+      ],
+      "Calendar could not be found": [
+        "Takvim bulunamadı"
+      ],
       "Calendar is syncing": [
         ""
       ],
@@ -768,7 +774,7 @@
       "I use a different Proton account": [
         "Farklı bir Proton hesabı kullanıyorum"
       ],
-      "Missing feature(s) ": [
+      "Missing feature(s)": [
         ""
       ],
       "My reason isn't listed, please comment": [
@@ -825,7 +831,7 @@
         "Telefon doğrulanamıyor, daha sonra tekrar deneyin"
       ],
       "Checkout expired, please try again": [
-        ""
+        "Ödeme süresi doldu, lütfen tekrar deneyin"
       ],
       "Code wrong or not valid anymore": [
         "Kod yanlış veya artık geçersiz"
@@ -903,7 +909,7 @@
         "Lütfen girin '${ dangerWord }'"
       ],
       "Please generate keys before you try to change your password": [
-        ""
+        "Lütfen şifrenizi değiştirmeyi denemeden önce anahtarlar oluşturun"
       ],
       "Please set a recovery phone number first": [
         "Lütfen önce bir kurtarma telefon numarası ayarlayın"
@@ -2785,71 +2791,7 @@
         "Orta"
       ]
     },
-    "Plan Feature": {
-      "${ freeServersCount.free_vpn } server": [
-        "${ freeServersCount.free_vpn } sunucu",
-        "${ freeServersCount.free_vpn } sunucu"
-      ],
-      "${ maxConnections } VPN connection": [
-        "${ maxConnections } VPN bağlantısı",
-        "${ maxConnections } VPN bağlantıları"
-      ],
-      "${ n } server": [
-        "${ n } sunucusu",
-        "${ n } sunucu"
-      ],
-      "${ n } VPN connection": [
-        "${ n } VPN bağlantısı",
-        "${ n } VPN bağlantısı"
-      ],
-      "${ nFreeServers } in ${ countries.free_vpn.count } country": [
-        "${ countries.free_vpn.count } ülkesinde ${ nFreeServers }",
-        "${ countries.free_vpn.count } ülkelerinde ${ nFreeServers }"
-      ],
-      "1200+ servers in ${ countries[PLANS.VPNPLUS].count } country": [
-        "${ countries[PLANS.VPNPLUS].count } ülkede 1200'den fazla sunucu",
-        "${ countries[PLANS.VPNPLUS].count } ülkede 1200'den fazla sunucu"
-      ],
-      "350+ servers in ${ countries[PLANS.VPNBASIC].count } country": [
-        "${ countries[PLANS.VPNBASIC].count } ülkede 350'den fazla sunucu",
-        "${ countries[PLANS.VPNBASIC].count }+ ülkede 350'den fazla sunucu"
-      ],
-      "All advanced security features": [
-        "Tüm gelişmiş güvenlik özellikleri"
-      ],
-      "Filesharing/P2P support": [
-        "Dosya paylaşımı/P2P desteği"
-      ],
-      "High speed": [
-        "Yüksek hız"
-      ],
-      "Highest speed (10 Gbps)": [
-        "En yüksek hız (10 Gbps)"
-      ],
-      "Highest speed (up to 10 Gbps)": [
-        "En Yüksek hız (10 Gbps'ye kadar)"
-      ],
-      "Medium speed": [
-        "Orta hız"
-      ],
-      "ProtonMail Plus account": [
-        "ProtonMail Plus hesabı"
-      ],
-      "ProtonMail Visionary account": [
-        "ProtonMail Visionary hesabı"
-      ],
-      "Streaming service support": [
-        "Yayın hizmeti desteği"
-      ],
-      "Strict no-logs policy": [
-        "Sıkı kayıt tutmama politikası"
-      ]
-    },
     "Plan feature": {
-      "${ freeServers } in ${ freeCountries } country": [
-        "${ freeCountries } ülkesinde ${ freeServers }",
-        "${ freeCountries } ülkelerinde ${ freeServers }"
-      ],
       "0.5 GB storage": [
         "0.5 GB depolama"
       ],
@@ -2862,10 +2804,6 @@
       "1 user": [
         "1 kullanıcı"
       ],
-      "1200+ servers in ${ plusCountries } country": [
-        "${ plusCountries } ülkede 1200'den fazla sunucu",
-        "${ plusCountries } ülkede 1200'den fazla sunucu"
-      ],
       "20 GB storage": [
         "20 GB depolama"
       ],
@@ -2874,10 +2812,6 @@
       ],
       "3 folders / labels": [
         "3 klasör / etiket"
-      ],
-      "350+ servers in ${ basicCountries } country": [
-        "${ basicCountries } ülkede 350'den fazla sunucu",
-        "${ basicCountries } ülkede 350'den fazla sunucu"
       ],
       "5 addresses": [
         "5 adres"
@@ -2956,6 +2890,38 @@
       ],
       "Unlimited folders / labels": [
         "Sınırsız klasör / etiket"
+      ]
+    },
+    "Plan Feature": {
+      "All advanced security features": [
+        "Tüm gelişmiş güvenlik özellikleri"
+      ],
+      "Filesharing/P2P support": [
+        "Dosya paylaşımı/P2P desteği"
+      ],
+      "High speed": [
+        "Yüksek hız"
+      ],
+      "Highest speed (10 Gbps)": [
+        "En yüksek hız (10 Gbps)"
+      ],
+      "Highest speed (up to 10 Gbps)": [
+        "En Yüksek hız (10 Gbps'ye kadar)"
+      ],
+      "Medium speed": [
+        "Orta hız"
+      ],
+      "ProtonMail Plus account": [
+        "ProtonMail Plus hesabı"
+      ],
+      "ProtonMail Visionary account": [
+        "ProtonMail Visionary hesabı"
+      ],
+      "Streaming service support": [
+        "Yayın hizmeti desteği"
+      ],
+      "Strict no-logs policy": [
+        "Sıkı kayıt tutmama politikası"
       ]
     },
     "Plan info": {
@@ -3046,7 +3012,7 @@
         "Hediye kodu uygulandı"
       ],
       "If you entered a valid notification email we will send you an email with your usernames in the next minute": [
-        ""
+        "Geçerli bir bildirim e-postası girdiyseniz, birkaç dakika içinde size kullanıcı adlarınızı içeren bir e-posta göndereceğiz"
       ],
       "Invoice customized": [
         "Fatura özelleştirildi"
@@ -3702,6 +3668,20 @@
     "VPN info": {
       "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, and more.": [
         "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now ve daha fazlası."
+      ]
+    },
+    "VPN Plan Feature": {
+      "${ n } server": [
+        "",
+        ""
+      ],
+      "${ n } VPN connection": [
+        "",
+        ""
+      ],
+      "${ numberOfServers } in ${ numberOfCountries } country": [
+        "",
+        ""
       ]
     },
     "VPN upsell feature": {
