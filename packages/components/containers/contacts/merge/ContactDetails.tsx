@@ -21,7 +21,7 @@ interface Props extends ComponentProps<typeof FormModal> {
 const ContactDetails = ({ contactID, userKeysList, ...rest }: Props) => {
     const api = useApi();
     const [loading, withLoading] = useLoading(true);
-    const [model, setModel] = useState<{ properties: ContactProperties; errors: CryptoProcessingError[] }>({
+    const [model, setModel] = useState<{ properties: ContactProperties; errors: (CryptoProcessingError | Error)[] }>({
         properties: [],
         errors: [],
     });
