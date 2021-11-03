@@ -1,12 +1,6 @@
 import { c } from 'ttag';
 
-import {
-    MessagesSection,
-    MailGeneralAdvancedSection,
-    SettingsPropsShared,
-    PmMeSection,
-    useAddresses,
-} from '@proton/components';
+import { MessagesSection, SettingsPropsShared, PmMeSection, useAddresses } from '@proton/components';
 
 import { ADDRESS_TYPE } from '@proton/shared/lib/constants';
 import { UserModel } from '@proton/shared/lib/interfaces';
@@ -29,10 +23,6 @@ export const getGeneralPage = (user: UserModel, showPmMeSection: boolean) => {
             {
                 text: c('Title').t`Messages`,
                 id: 'messages',
-            },
-            {
-                text: c('Title').t`Advanced`,
-                id: 'advanced',
             },
             {
                 text: c('Title').t`Spy Tracker Protection`,
@@ -63,7 +53,6 @@ const MailGeneralSettings = ({ location, user }: Props) => {
         <PrivateMainSettingsAreaWithPermissions location={location} config={getGeneralPage(user, showPmMeSection)}>
             {showPmMeSection && <PmMeSection isPMAddressActive={isPMAddressActive} />}
             <MessagesSection />
-            <MailGeneralAdvancedSection />
         </PrivateMainSettingsAreaWithPermissions>
     );
 };
