@@ -25,6 +25,26 @@ const SELECTOR = ATTRIBUTES.map((name) => {
     return `[proton-${name}]`;
 }).join(',');
 
+const getRemoteImageMatches = (message: MessageExtended) => {
+    const imageElements = querySelectorAll(message, SELECTOR);
+
+    const elementsWithStyleTag = querySelectorAll(message, '[style]').reduce<HTMLElement[]>((acc, elWithStyleTag) => {
+        const styleTagValue = elWithStyleTag.getAttribute('style');
+        const hasSrcAttribute = elWithStyleTag.hasAttribute('src');
+
+        if (styleTagValue && !hasSrcAttribute && styleTagValue.includes('proton-url')) {
+            acc.push(elWithStyleTag);
+        }
+
+        return acc;
+    }, []);
+
+    return {
+        matchedElements: [...imageElements, ...elementsWithStyleTag],
+        hasRemoteImages: imageElements.length + elementsWithStyleTag.length > 0,
+    };
+};
+
 export const transformRemote = (
     message: MessageExtended,
     mailSettings: Partial<MailSettings> | undefined,
@@ -40,13 +60,11 @@ export const transformRemote = (
 
     const useProxy = hasBit(mailSettings?.ImageProxy, IMAGE_PROXY_FLAGS.PROXY);
 
-    const matches = querySelectorAll(message, SELECTOR);
-
-    const hasRemoteImages = !!matches.length;
+    const { matchedElements, hasRemoteImages } = getRemoteImageMatches(message);
 
     const remoteImages = getRemoteImages(message);
 
-    matches.forEach((match) => {
+    matchedElements.forEach((match) => {
         const id = generateUID('remote');
         if (match.tagName === 'IMG') {
             if (draft) {
@@ -57,10 +75,21 @@ export const transformRemote = (
         }
 
         let url = '';
-        ATTRIBUTES.find((attribute) => {
+
+        ATTRIBUTES.some((attribute) => {
             url = match.getAttribute(`proton-${attribute}`) || '';
             return url && url !== '';
         });
+
+        if (!url && match.hasAttribute('style') && match.getAttribute('style')?.includes('proton-url')) {
+            const styleContent = match.getAttribute('style');
+            if (styleContent !== null) {
+                const nextUrl = styleContent.match(/proton-url\((.*?)\)/)?.[1].replace(/('|")/g, '');
+                if (nextUrl) {
+                    url = nextUrl;
+                }
+            }
+        }
 
         remoteImages.push({
             type: 'remote',
