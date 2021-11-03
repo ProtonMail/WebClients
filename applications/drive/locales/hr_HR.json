@@ -867,6 +867,12 @@
       ]
     },
     "Calendar subscription not synced error": {
+      "Calendar could not be decrypted": [
+        ""
+      ],
+      "Calendar could not be found": [
+        ""
+      ],
       "Calendar is syncing": [
         ""
       ],
@@ -1910,6 +1916,9 @@
       "Creating share": [
         ""
       ],
+      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
+        ""
+      ],
       "Delete drive": [
         "",
         "",
@@ -2306,7 +2315,7 @@
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Ova poveznica može biti homografski napad. Potvrdite da je ovo poveznica koju želite posjetiti ili je nemojte otvarati."
       ],
-      "This link was created in a previous version and can not be modified. Delete this link and create a new one to change the settings.": [
+      "This link was created in\na previous version and can not be modified. Delete this link and create a\nnew one to change the settings.": [
         ""
       ],
       "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
@@ -2382,9 +2391,6 @@
       ],
       "VPN + ${ mailAppName } bundle for families and small businesses.": [
         "VPN + ${ mailAppName } paket za obitelji i male tvrtke."
-      ],
-      "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
-        "Podržavamo uvoz CSV datoteka iz Outlooka, Outlook Express-a, Yahoo! Mail, Hotmail, Eudora i drugih aplikacija. Također podržavamo uvoz vCard 4.0. (UTF-8 kodiranje)."
       ],
       "We use 3-D Secure to protect your payments.": [
         "Za zaštitu vaših plaćanja koristimo 3-D Secure."
@@ -3314,7 +3320,14 @@
       ]
     },
     "Mail import summary": {
-      "${ messagesFragment } since ${ periodFragment } and label them as ${ label }": [
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        "",
+        "",
+        ""
+      ],
+      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        "",
+        "",
         ""
       ]
     },
@@ -3736,10 +3749,10 @@
       "1 user": [
         "1 korisnik"
       ],
-      "1200+ servers in ${ plusCountries } country": [
-        "1200+ poslužitelja u ${ plusCountries } državi",
-        "1200+ poslužitelja u ${ plusCountries } države",
-        "1200+ poslužitelja u ${ plusCountries } država"
+      "1300+ servers in ${ plusCountries } country": [
+        "",
+        "",
+        ""
       ],
       "20 GB storage": [
         "20 GB prostora za pohranu"
@@ -3970,7 +3983,7 @@
       "You have successfully unsubscribed": [
         "Uspješno ste poništili pretplatu"
       ],
-      "Your files were successfully recovered to \"My files\"": [
+      "Your files were successfully recovered to \"My files\".": [
         ""
       ]
     },
@@ -4822,9 +4835,6 @@
       ],
       "You will lose any customization you made so far.": [
         ""
-      ],
-      "Your local date & time settings seem to be out of sync.": [
-        "Vaše lokalne postavke datuma i vremena nisu sinkronizirane."
       ]
     }
   }

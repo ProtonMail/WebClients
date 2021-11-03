@@ -873,6 +873,12 @@
       ]
     },
     "Calendar subscription not synced error": {
+      "Calendar could not be decrypted": [
+        "Невозможно было расшифровать Календарь"
+      ],
+      "Calendar could not be found": [
+        "Невозможно было найти Календарь"
+      ],
       "Calendar is syncing": [
         "Календарь синхронизируется"
       ],
@@ -1956,6 +1962,9 @@
       "Creating share": [
         "Создается совместное содержимое"
       ],
+      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
+        "Поддерживаются файлы CSV из Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora и некоторых других приложений, а также форматы vCard 3.1 и 4.0 (кодировка UTF-8)."
+      ],
       "Delete drive": [
         "Удалить хранилище",
         "Удалить хранилища",
@@ -2355,8 +2364,8 @@
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Эта ссылка может быть омографической атакой, при которой символы одного алфавита подменяются похожими символами из другого. Пожалуйста, проверьте, что это именно та ссылка, которую вы хотите посетить, или не переходите по ней."
       ],
-      "This link was created in a previous version and can not be modified. Delete this link and create a new one to change the settings.": [
-        "Эта ссылка была создана в предыдущей версии и не может быть изменена. Удалите эту ссылку и создайте новую, чтобы изменить настройки."
+      "This link was created in\na previous version and can not be modified. Delete this link and create a\nnew one to change the settings.": [
+        "Эта ссылка была создана в\nпредыдущей версии и не может быть изменена. Удалите эту ссылку и создайте\nновую, чтобы изменить настройки."
       ],
       "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
         "Доступ к файлу по этой ссылке будет закрыт. Чтобы поделиться файлом, нужно будет создать новую ссылку."
@@ -2432,9 +2441,6 @@
       ],
       "VPN + ${ mailAppName } bundle for families and small businesses.": [
         "VPN + ${ mailAppName } пакет для семей и малого бизнеса."
-      ],
-      "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
-        "Мы поддерживаем импорт CSV-файлов из Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora и из некоторых других почтовых клиентов и приложений. Также можно импортировать vCard 4.0 (кодировка UTF-8)."
       ],
       "We use 3-D Secure to protect your payments.": [
         "Мы используем 3-D Secure для защиты платежей."
@@ -3366,8 +3372,17 @@
       ]
     },
     "Mail import summary": {
-      "${ messagesFragment } since ${ periodFragment } and label them as ${ label }": [
-        "${ messagesFragment } с ${ periodFragment } и пометить их как ${ label }"
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        "Импортируйте все сообщения из ${ selectedLabelsCount } из ${ totalLabelsCount } ярлыка с ${ periodFragment } и пометьте их как ${ label }",
+        "Импортируйте все сообщения из ${ selectedLabelsCount } из ${ totalLabelsCount } ярлыков с ${ periodFragment } и пометьте их как ${ label }",
+        "Импортируйте все сообщения из ${ selectedLabelsCount } из ${ totalLabelsCount } ярлыков с ${ periodFragment } и пометьте их как ${ label }",
+        "Импортируйте все сообщения из ${ selectedLabelsCount } из ${ totalLabelsCount } ярлыков с ${ periodFragment } и пометьте их как ${ label }"
+      ],
+      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        "Импортируйте все сообщения из ярлыка ${ totalLabelsCount } с ${ periodFragment } и пометьте их как ${ label }",
+        "Импортируйте все сообщения из ярлыков ${ totalLabelsCount } с ${ periodFragment } и пометьте их как ${ label }",
+        "Импортируйте все сообщения из ярлыков ${ totalLabelsCount } с ${ periodFragment } и пометьте их как ${ label }",
+        "Импортируйте все сообщения из ярлыков ${ totalLabelsCount } с ${ periodFragment } и пометьте их как ${ label }"
       ]
     },
     "Many Others": {
@@ -3815,11 +3830,11 @@
       "1 user": [
         "1 пользователь"
       ],
-      "1200+ servers in ${ plusCountries } country": [
-        "Более 1200 серверов в ${ plusCountries } стране",
-        "Более 1200 серверов в ${ plusCountries } странах",
-        "Более 1200 серверов в ${ plusCountries } странах",
-        "Более 1200 серверов в ${ plusCountries } странах(е)"
+      "1300+ servers in ${ plusCountries } country": [
+        "более 1300 серверов в ${ plusCountries } стране",
+        "более 1300 серверов в ${ plusCountries } странах",
+        "более 1300 серверов в ${ plusCountries } странах",
+        "более 1300 серверов в ${ plusCountries } странах"
       ],
       "20 GB storage": [
         "20 ГБ хранилища"
@@ -4055,8 +4070,8 @@
       "You have successfully unsubscribed": [
         "Вы успешно отписались"
       ],
-      "Your files were successfully recovered to \"My files\"": [
-        "Файлы успешно восстановлены в «Мои файлы»"
+      "Your files were successfully recovered to \"My files\".": [
+        "Файлы успешно восстановлены в «Мои файлы»."
       ]
     },
     "Suffix for price": {
@@ -4916,9 +4931,6 @@
       ],
       "You will lose any customization you made so far.": [
         "Вы потеряете все сделанные вами до этого настройки."
-      ],
-      "Your local date & time settings seem to be out of sync.": [
-        "Ваши локальные параметры даты и времени не синхронизированы."
       ]
     }
   }

@@ -861,6 +861,12 @@
       ]
     },
     "Calendar subscription not synced error": {
+      "Calendar could not be decrypted": [
+        ""
+      ],
+      "Calendar could not be found": [
+        ""
+      ],
       "Calendar is syncing": [
         "El calendari s'està sincronitzant"
       ],
@@ -1864,6 +1870,9 @@
       "Creating share": [
         "Creant la compartició"
       ],
+      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
+        ""
+      ],
       "Delete drive": [
         "",
         ""
@@ -2257,8 +2266,8 @@
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Aquest enllaç pot ser un atac homògraf. Verifiqueu que aquest és l'enllaç que voleu visitar o declineu obrir-lo."
       ],
-      "This link was created in a previous version and can not be modified. Delete this link and create a new one to change the settings.": [
-        "Aquest enllaç es va crear en una versió anterior i no es pot modificar. Elimineu l'enllaç i creeu-ne un de nou per canviar-ne la configuració."
+      "This link was created in\na previous version and can not be modified. Delete this link and create a\nnew one to change the settings.": [
+        ""
       ],
       "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
         "Aquest enllaç es deshabilitarà permanentment. Ningú podrà accedir al vostre arxiu amb aquest enllaç. Per tornar a compartir l'arxiu necessitareu un nou enllaç."
@@ -2332,9 +2341,6 @@
       ],
       "VPN + ${ mailAppName } bundle for families and small businesses.": [
         "Pla combinat de VPN + ${ mailAppName } per famílies i petites empreses."
-      ],
-      "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
-        "Admetem la importació de fitxers CSV des d'Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora i algunes altres aplicacions. També admetem la importació de vCard 4.0. (Codificació UTF-8)."
       ],
       "We use 3-D Secure to protect your payments.": [
         "Utilitzem 3-D Secure per protegir els teus pagaments."
@@ -3262,7 +3268,12 @@
       ]
     },
     "Mail import summary": {
-      "${ messagesFragment } since ${ periodFragment } and label them as ${ label }": [
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        "",
+        ""
+      ],
+      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        "",
         ""
       ]
     },
@@ -3657,9 +3668,9 @@
       "1 user": [
         "1 usuari"
       ],
-      "1200+ servers in ${ plusCountries } country": [
-        "Més de 1200 servidors a ${ plusCountries } país",
-        "Més de 1200 servidors a ${ plusCountries } països"
+      "1300+ servers in ${ plusCountries } country": [
+        "",
+        ""
       ],
       "20 GB storage": [
         "20 GB d'emmagatzematge"
@@ -3885,7 +3896,7 @@
       "You have successfully unsubscribed": [
         "Heu anul·lat la subscripció amb èxit"
       ],
-      "Your files were successfully recovered to \"My files\"": [
+      "Your files were successfully recovered to \"My files\".": [
         ""
       ]
     },
@@ -4728,9 +4739,6 @@
       ],
       "You will lose any customization you made so far.": [
         ""
-      ],
-      "Your local date & time settings seem to be out of sync.": [
-        "La vostra configuració de data i hora local no sembla estar sincronitzada."
       ]
     }
   }

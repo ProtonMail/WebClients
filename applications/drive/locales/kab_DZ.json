@@ -861,6 +861,12 @@
       ]
     },
     "Calendar subscription not synced error": {
+      "Calendar could not be decrypted": [
+        ""
+      ],
+      "Calendar could not be found": [
+        ""
+      ],
       "Calendar is syncing": [
         "Awitay yemtawi"
       ],
@@ -1864,6 +1870,9 @@
       "Creating share": [
         "Timerna n beṭṭu"
       ],
+      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
+        ""
+      ],
       "Delete drive": [
         "",
         ""
@@ -2257,8 +2266,8 @@
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Aseɣwen-a yezmer ad yili d aẓdam homograph. Ttxil-k·m senqed ma d aseɣwen-a iwuɣur tebɣiḍ ad terzuḍ, neɣ ur tetteldi ara."
       ],
-      "This link was created in a previous version and can not be modified. Delete this link and create a new one to change the settings.": [
-        "Aseɣwen-a yettwarna deg lqem yezrin yerna ur yezmir ara ad yettwasenfel. Kkes aseɣwen-a ternuḍ wayeḍ d amaynut akken ad tbeddleḍ iɣewwaren."
+      "This link was created in\na previous version and can not be modified. Delete this link and create a\nnew one to change the settings.": [
+        ""
       ],
       "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
         "Aseɣwen-a dayen ad yens. Yiwen ur izemmer ad yekcem ɣer ufaylu-inek•inem s useɣwen-a. Akken ad tebḍuḍ afaylu tikkelt-nniḍen, ilaq-ak•am aseɣwen amaynut."
@@ -2332,9 +2341,6 @@
       ],
       "VPN + ${ mailAppName } bundle for families and small businesses.": [
         "VPN + ${ mailAppName } ttwamudden i twaculin akked yimahilin imecṭaḥ."
-      ],
-      "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
-        "Nedhel taktert n yifuyla CSV si Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora akked kra n yisnasen-nniḍen. Nedhel daɣen taktert n 4.0. (Asettengel UTF-8)."
       ],
       "We use 3-D Secure to protect your payments.": [
         "Nesseqdac 3-D Secure akken ad nesseḥbiber ɣef lexlaṣ-nwen."
@@ -3262,7 +3268,12 @@
       ]
     },
     "Mail import summary": {
-      "${ messagesFragment } since ${ periodFragment } and label them as ${ label }": [
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        "",
+        ""
+      ],
+      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        "",
         ""
       ]
     },
@@ -3657,9 +3668,9 @@
       "1 user": [
         "1 n useqdac"
       ],
-      "1200+ servers in ${ plusCountries } country": [
-        "1200+ yiqeddacen deg ${ plusCountries } n tmurt",
-        "1200+ yiqeddacen deg ${ plusCountries } n tmura"
+      "1300+ servers in ${ plusCountries } country": [
+        "",
+        ""
       ],
       "20 GB storage": [
         "20 GAṬ n usekles"
@@ -3885,7 +3896,7 @@
       "You have successfully unsubscribed": [
         "Teffɣeḍ seg ujerred akken iwata"
       ],
-      "Your files were successfully recovered to \"My files\"": [
+      "Your files were successfully recovered to \"My files\".": [
         ""
       ]
     },
@@ -4728,9 +4739,6 @@
       ],
       "You will lose any customization you made so far.": [
         ""
-      ],
-      "Your local date & time settings seem to be out of sync.": [
-        "Isefka-inek·inem n wadeg akked iɣewwaren n wakud ur mtawan ara."
       ]
     }
   }

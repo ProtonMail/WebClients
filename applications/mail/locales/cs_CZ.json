@@ -830,6 +830,9 @@
       "Try another method": [
         "Zkuste jinou metodu"
       ],
+      "Turn on tracker protection": [
+        ""
+      ],
       "Underline": [
         "Podtržení"
       ],
@@ -1453,6 +1456,12 @@
       ]
     },
     "Calendar subscription not synced error": {
+      "Calendar could not be decrypted": [
+        ""
+      ],
+      "Calendar could not be found": [
+        ""
+      ],
       "Calendar is syncing": [
         "Kalendář se synchronizuje"
       ],
@@ -1473,6 +1482,14 @@
       ],
       "More than 12 hours passed since last update": [
         "Od poslední aktualizace uběhlo už více jak 12 hodin"
+      ]
+    },
+    "Collapsible tooltip": {
+      "Close": [
+        ""
+      ],
+      "Open": [
+        ""
       ]
     },
     "Composer email icon": {
@@ -2898,12 +2915,6 @@
         "",
         ""
       ],
-      "${ numberOfTrackers } email tracker found": [
-        "",
-        "",
-        "",
-        ""
-      ],
       "${ numContactGroups } contact group": [
         "",
         "",
@@ -3267,6 +3278,9 @@
       "Create recovery phrase": [
         "Vytvořte novou obnovovací frázi"
       ],
+      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
+        ""
+      ],
       "Custom": [
         "Vlastní"
       ],
@@ -3341,6 +3355,21 @@
       ],
       "Email address": [
         "E-mailová adresa"
+      ],
+      "Email tracker protection is disabled": [
+        ""
+      ],
+      "Email trackers can violate your privacy. Proton did not find any trackers on this message.": [
+        ""
+      ],
+      "Email trackers can violate your privacy. Proton found and blocked ${ numberOfTrackers } tracker.": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "Email trackers can violate your privacy. Turn on tracker protection to prevent senders from knowing whether and when you have opened a message.": [
+        ""
       ],
       "embedded image": [
         "vložený obrázek",
@@ -3726,9 +3755,6 @@
       "Print email": [
         "Vytisknout email"
       ],
-      "Protect yourself from trackers. Turn on email tracker protection in settings": [
-        ""
-      ],
       "Proton doesn't make money by abusing privacy.": [
         "Proton nevydělává peníze zneužitím soukromí."
       ],
@@ -3981,9 +4007,6 @@
       "To fight spam and abuse, please verify you are human.": [
         "Abyste zamezili spamu a obtěžování, potvrďte, že jste člověk."
       ],
-      "To protect your privacy, Proton blocked email trackers in this message": [
-        ""
-      ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "Pro znovu přihlášení Vašich kontaktů, potřebujeme prověřit každý kontakt ze seznamu šifrovacích klíčů, které jsou dostupné ve Vašem účtu. Jestliže nebude nalezena shoda s Vaším kontaktem, bude znovu provedeno přihlášení se základním šifrovacím klíčem."
       ],
@@ -4004,6 +4027,9 @@
       ],
       "Turn off content search. Activation progress won't be lost.": [
         "Vypněte vyhledávání obsahu. Aktivace nebude ztracena."
+      ],
+      "Turn on to search the content of your messages": [
+        ""
       ],
       "Unsupported file": [
         "Nepodporovaný soubor"
@@ -4082,9 +4108,6 @@
       ],
       "We could not verify the sender's trusted keys.": [
         "Nemohli jsme ověřit důvěrné klíče odesílatele."
-      ],
-      "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
-        "Podporujeme import souborů CSV z aplikací Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora a některých dalších aplikací. Podporujeme také import vCard 4.0. (kódování UTF-8)."
       ],
       "We use 3-D Secure to protect your payments.": [
         "K zabezpečení Vašich plateb používáme 3-D Secure."
@@ -5266,7 +5289,16 @@
       ]
     },
     "Mail import summary": {
-      "${ messagesFragment } since ${ periodFragment } and label them as ${ label }": [
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        "",
+        "",
+        "",
         ""
       ]
     },
@@ -5764,27 +5796,7 @@
         "Jméno"
       ]
     },
-    "Plan Feature": {
-      "${ n } server": [
-        "${ n } server",
-        "${ n } servery",
-        "${ n } serverů",
-        "${ n } serverů"
-      ],
-      "${ n } VPN connection": [
-        "${ n } VPN připojení",
-        "${ n } VPN připojení",
-        "${ n } VPN připojení",
-        "${ n } VPN připojení"
-      ]
-    },
     "Plan feature": {
-      "${ freeServers } in ${ freeCountries } country": [
-        "${ freeServers } v ${ freeCountries } zemi",
-        "${ freeServers } v ${ freeCountries } zemích",
-        "${ freeServers } v ${ freeCountries } zemích",
-        "${ freeServers } v ${ freeCountries } zemích"
-      ],
       "0.5 GB storage": [
         "0,5 GB úložiště"
       ],
@@ -5797,12 +5809,6 @@
       "1 user": [
         "1 uživatel"
       ],
-      "1200+ servers in ${ plusCountries } country": [
-        "1200+ serverů v ${ plusCountries } zemi",
-        "1200+ serverů v ${ plusCountries } zemích",
-        "1200+ serverů v ${ plusCountries } zemích",
-        "1200+ serverů v ${ plusCountries } zemích"
-      ],
       "20 GB storage": [
         "20 GB úložiště"
       ],
@@ -5811,12 +5817,6 @@
       ],
       "3 folders / labels": [
         "3 složky / štítky"
-      ],
-      "350+ servers in ${ basicCountries } country": [
-        "350+ serverů v ${ basicCountries } zemi",
-        "350+ serverů v ${ basicCountries } zemích",
-        "350+ serverů v ${ basicCountries } zemích",
-        "350+ serverů v ${ basicCountries } zemích"
       ],
       "5 addresses": [
         "5 adres"
@@ -7322,6 +7322,26 @@
       ],
       "Windows, macOS, iOS, Linux, Android, Android TV, Chromebook, Chromecast": [
         "Windows, macOS, iOS, Linux, Android, Android TV, Chromebook, Chromecast"
+      ]
+    },
+    "VPN Plan Feature": {
+      "${ n } server": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "${ n } VPN connection": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "${ numberOfServers } in ${ numberOfCountries } country": [
+        "",
+        "",
+        "",
+        ""
       ]
     },
     "Warning": {

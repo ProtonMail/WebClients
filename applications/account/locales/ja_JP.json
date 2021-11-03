@@ -31,11 +31,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } ショップ"
       ],
-      "activate": [
-        "アクティベート"
-      ],
       "Activate": [
         "有効化"
+      ],
+      "activate": [
+        "アクティベート"
       ],
       "Activate ${ Name }@pm.me": [
         "${ Name }@pm.me を有効化"
@@ -870,9 +870,6 @@
       ]
     },
     "Alert": {
-      "Are you sure you want to import a private key? Importing an insecurely generated or leaked private key can harm the security of your emails.": [
-        "本当に秘密鍵をインポートしますか？安全に生成されていない鍵や漏洩した鍵のインポートはメールのセキュリティを危険にさらします。"
-      ],
       "By leaving now, some contacts may not be imported": [
         ""
       ],
@@ -1286,6 +1283,12 @@
       ]
     },
     "Calendar subscription not synced error": {
+      "Calendar could not be decrypted": [
+        ""
+      ],
+      "Calendar could not be found": [
+        ""
+      ],
       "Calendar is syncing": [
         "カレンダーの同期中"
       ],
@@ -1595,7 +1598,7 @@
       "I use a different Proton account": [
         ""
       ],
-      "Missing feature(s) ": [
+      "Missing feature(s)": [
         ""
       ],
       "My reason isn't listed, please comment": [
@@ -2928,6 +2931,11 @@
         "2 段階認証が有効"
       ]
     },
+    "Import key": {
+      "Are you sure you want to import a private key? Importing an insecurely generated or leaked private key can harm the security of your emails.\n\nPlease also note that the public key corresponding to this private key will be publicly available from our key server. If the key contains personal details (such as your full name) which you do not want to publish, please edit the key before importing it.": [
+        ""
+      ]
+    },
     "Import status": {
       "${ percentageValue }% paused": [
         "${ percentageValue }% 一時停止"
@@ -3328,6 +3336,9 @@
       "Creating your Proton account": [
         "Proton アカウントを作成中"
       ],
+      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
+        ""
+      ],
       "Currently all available storage is allocated to the administrator account. Please reduce the admin account allocation to free up space for additional users. You can increase the total storage at any time by upgrading your account.": [
         "現在利用可能なストレージは、全て管理者アカウントに割り当てられています。追加ユーザーに割り当てたい場合は、管理者アカウントへの割り当てを減らしてください。アカウントをアップグレードすることでいつでもストレージ全体の容量を増やすこともできます。"
       ],
@@ -3483,9 +3494,6 @@
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         ""
-      ],
-      "For advanced security, the Import-Export app encrypts emails on your device before migrating them to Proton servers. You can also export messages for local backups.": [
-        "Import-Export アプリは、電子メールをあなたの端末上で暗号化してから Proton サーバーにインポートします。これにより、より高度に安全な形でインポートを行えます。また、バックアップのためにメッセージをエクスポートすることも可能です。"
       ],
       "For families and small teams; includes both Mail and VPN.": [
         "家族や小規模なチームには、メールとVPNの両方が含まれています。"
@@ -4042,6 +4050,9 @@
       "The email address you place at the top of the list is your default email address. Drag and drop to reorder your addresses.": [
         "リストの一番上にあるものが、デフォルトのメールアドレスとして使用されます。メールアドレスを並び替えるには、ドラッグ＆ドロップしてください。"
       ],
+      "The Import-Export app allows you to export messages for local backups and to restore previous backups to your account.": [
+        ""
+      ],
       "The name will be visible to your users while they are logged in.": [
         "あなたのユーザがログインしている間は、この名前が表示されます。"
       ],
@@ -4227,9 +4238,6 @@
       ],
       "We recommend adding a linked email so you can recover your account if you lose your password.": [
         "パスワードを忘れた場合、アカウントを復元できるようにするためにリンクされたメールを追加することをおすすめします。"
-      ],
-      "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
-        "Outlook、Outlook Express、Yahoo! Mail、Hotmail、Eudora などのアプリからの、CSV ファイルのインポートに対応しています。また、vCard 4.0 (UTF-8 エンコード) のインポートにも対応しています。"
       ],
       "We use 3-D Secure to protect your payments.": [
         "お支払いを保護するために3Dセキュアを用いています。"
@@ -5867,7 +5875,10 @@
       ]
     },
     "Mail import summary": {
-      "${ messagesFragment } since ${ periodFragment } and label them as ${ label }": [
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        ""
+      ],
+      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
         ""
       ]
     },
@@ -6587,18 +6598,7 @@
         "Free"
       ]
     },
-    "Plan Feature": {
-      "${ n } server": [
-        "${ n } サーバー"
-      ],
-      "${ n } VPN connection": [
-        "${ n } VPN 接続"
-      ]
-    },
     "Plan feature": {
-      "${ freeServers } in ${ freeCountries } country": [
-        "${ freeCountries }か国の${ freeServers }"
-      ],
       "0.5 GB storage": [
         "0.5 GB のストレージ"
       ],
@@ -6611,9 +6611,6 @@
       "1 user": [
         "1 ユーザー"
       ],
-      "1200+ servers in ${ plusCountries } country": [
-        "${ plusCountries } か国の 1200 以上のサーバー"
-      ],
       "20 GB storage": [
         "20 GB のストレージ"
       ],
@@ -6622,9 +6619,6 @@
       ],
       "3 folders / labels": [
         "3フォルダー / 3ラベル"
-      ],
-      "350+ servers in ${ basicCountries } country": [
-        "${ basicCountries } か国の 350 以上のサーバー"
       ],
       "5 addresses": [
         "5 件のアドレス"
@@ -6846,6 +6840,9 @@
       "Auto reply": [
         "自動返信"
       ],
+      "Backup & Export": [
+        ""
+      ],
       "Calendars": [
         "カレンダー"
       ],
@@ -6878,9 +6875,6 @@
       ],
       "Import & export": [
         "インポートとエクスポート"
-      ],
-      "Import/Export": [
-        ""
       ],
       "Multi-user support": [
         "複数ユーザー対応"
@@ -7420,6 +7414,9 @@
       "Back": [
         "戻る"
       ],
+      "Backup & Export": [
+        ""
+      ],
       "Billing cycle": [
         "支払い間隔"
       ],
@@ -7731,9 +7728,6 @@
       ],
       "Import-Export app": [
         "Import-Export アプリ"
-      ],
-      "Import/Export": [
-        ""
       ],
       "Invalid verification code": [
         "無効な検証コードです"
@@ -8446,6 +8440,17 @@
     "VPN info": {
       "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, and more.": [
         "Netflix、Amazon Prime Video、BBC iPlayer、ESPN+、Disney+、HBO Now など"
+      ]
+    },
+    "VPN Plan Feature": {
+      "${ n } server": [
+        ""
+      ],
+      "${ n } VPN connection": [
+        ""
+      ],
+      "${ numberOfServers } in ${ numberOfCountries } country": [
+        ""
       ]
     },
     "VPN upsell feature": {

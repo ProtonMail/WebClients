@@ -822,6 +822,9 @@
       "Try another method": [
         "Proveu amb un altre mètode"
       ],
+      "Turn on tracker protection": [
+        ""
+      ],
       "Underline": [
         "Subratllat"
       ],
@@ -1437,6 +1440,12 @@
       ]
     },
     "Calendar subscription not synced error": {
+      "Calendar could not be decrypted": [
+        ""
+      ],
+      "Calendar could not be found": [
+        ""
+      ],
       "Calendar is syncing": [
         "El calendari s'està sincronitzant"
       ],
@@ -1457,6 +1466,14 @@
       ],
       "More than 12 hours passed since last update": [
         "Han passat més de 12 hores des de la darrera actualització"
+      ]
+    },
+    "Collapsible tooltip": {
+      "Close": [
+        "Tancar"
+      ],
+      "Open": [
+        "Obrir"
       ]
     },
     "Composer email icon": {
@@ -1882,7 +1899,7 @@
         "Quantitat per sota del mínim."
       ],
       "Attachments are limited to 25 MB": [
-        ""
+        "Els adjunts estan limitats a 25 MB"
       ],
       "Authentication canceled.": [
         "S'ha cancel·lat l'autenticació."
@@ -1906,7 +1923,7 @@
         "No es pot validar el telèfon, torneu-ho a provar més tard"
       ],
       "Checkout expired, please try again": [
-        ""
+        "El pagament ha expirat. Torneu-ho a provar"
       ],
       "Choose a date in the future.": [
         "Escolliu una data futura."
@@ -1928,10 +1945,10 @@
         "Signatura del contacte no verificada"
       ],
       "Contact your organization’s administrator to resolve this": [
-        ""
+        "Contacteu amb l'administrador de la vostra organització per solucionar això"
       ],
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
-        ""
+        "La cerca de continguts no es pot activar en aquest navegador. Tanqueu el mode de navegació privada o utilitzeu un altre navegador."
       ],
       "Could not find address ${ email }.": [
         "No s'ha pogut trobar el correu ${ email }."
@@ -1968,13 +1985,13 @@
         "Errada en una de les condicions"
       ],
       "Error while saving draft. Please try again.": [
-        ""
+        "Error desant l'esborrany. Torneu a intentar-ho."
       ],
       "Error while sending the message. Message is not sent.": [
-        ""
+        "Error durant l'enviament del missatge. El missatge no s'ha enviat."
       ],
       "Error while uploading attachments. Message is not sent.": [
-        ""
+        "Error carregant adjunts. No s'ha enviat el missatge."
       ],
       "Failed to encrypt attachment. Please try again.": [
         "No s'ha pogut xifrar el fitxer adjunt. Si us plau torna-ho a provar."
@@ -2010,7 +2027,7 @@
         "Data de caducitat no vàlida"
       ],
       "Invalid expiration time": [
-        ""
+        "Data de caducitat no vàlida"
       ],
       "Invalid name": [
         "Nom no vàlid"
@@ -2035,7 +2052,7 @@
         "El missatge s'ha d'enviar prèviament"
       ],
       "Message passwords do not match": [
-        ""
+        "Les contrasenyes del missatge no coincideixen"
       ],
       "Message processing error.": [
         "Error de processament del missatge."
@@ -2050,7 +2067,7 @@
         "Error de xarxa: comprovi la seva connexió i torneu a intentar."
       ],
       "No address with keys available to compose a message": [
-        ""
+        "Cap adreça amb les claus disponibles per redactar un missatge"
       ],
       "No key retrieved for internal user is valid for sending": [
         "Cap enviament de cap clau per a l’usuari intern és vàlid per enviar-la"
@@ -2184,7 +2201,7 @@
         "El nom de l'etiqueta és massa llarg. Trieu-ne un de diferent."
       ],
       "The maximum expiration is 4 weeks": [
-        ""
+        "El venciment màxim és de 4 setmanes"
       ],
       "The minimum amount of credit that can be added is ${ _price }": [
         "La quantitat mínima de crèdit que es pot afegir és ${ _price }"
@@ -2202,7 +2219,7 @@
         "Hi ha massa carpetes al vostre compte extern. Personalitzeu la importació per eliminar algunes carpetes."
       ],
       "There has been an issue with content search. Default search has been used instead.": [
-        ""
+        "Hi ha hagut un problema amb la cerca de continguts. S'ha utilitzat la cerca per defecte."
       ],
       "There was an error when exporting the contacts vCards": [
         "Hi ha hagut un error exportant les vcards dels contactes"
@@ -2220,7 +2237,7 @@
         "Aquest nom d'etiqueta no està disponible. Trieu-ne un de diferent"
       ],
       "This message has already been sent": [
-        ""
+        "Aquest missatge ja s'ha enviat"
       ],
       "This message has already been sent. A new draft has been saved.": [
         "Aquest missatge ja s'ha enviat. S'ha guardat un esborrany nou."
@@ -2229,7 +2246,7 @@
         "Aquest missatge pot incloure enllaços d’URL que no es puguin obrir correctament al vostre navegador actual"
       ],
       "Too many active filters. Please upgrade to a paid plan to activate more filters.": [
-        ""
+        "Massa filtres actius. Actualitzeu a un pla de pagament per activar més filtres."
       ],
       "Trusted keys are not valid for sending": [
         "Les claus de confiança no són vàlides per enviar-les"
@@ -2250,8 +2267,8 @@
         "No podeu enviar vcards de més de 10 contactes"
       ],
       "You cannot open more than ${ maxActiveComposer } composer window at a time": [
-        "",
-        ""
+        "No podeu obrir més de ${ maxActiveComposer } finestra d'editor a la vegada",
+        "No podeu obrir més de ${ maxActiveComposer } finestres d'editor a la vegada"
       ],
       "You did not provide a file.": [
         "No has proporcionat un arxiu."
@@ -2269,7 +2286,7 @@
         "La vostra importació no es processarà."
       ],
       "Your search matched too many results. Please limit your search and try again.": [
-        ""
+        "La vostra cerca coincideix amb massa resultats. Limiteu la cerca i torneu-ho a provar."
       ]
     },
     "Error display when performing invalid move on message": {
@@ -2816,10 +2833,6 @@
         "${ numberOfTrackers } rastrejador de correu electrònic bloquejat",
         "${ numberOfTrackers } rastrejadors de correu electrònic bloquejats"
       ],
-      "${ numberOfTrackers } email tracker found": [
-        "${ numberOfTrackers } rastrejador de correu electrònic trobat",
-        "${ numberOfTrackers } rastrejadors de correu electrònic trobats"
-      ],
       "${ numContactGroups } contact group": [
         "${ numContactGroups } grup de contactes",
         "${ numContactGroups } grups de contactes"
@@ -3102,7 +3115,7 @@
         "Feu clic per veure els detalls del grup"
       ],
       "Close this screen to exit.": [
-        ""
+        "Tanqueu la finestra per sortir."
       ],
       "Confirm Password": [
         "Confirmar contrasenya"
@@ -3134,6 +3147,9 @@
       ],
       "Create recovery phrase": [
         "Crear una frase de recuperació"
+      ],
+      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
+        "S'admeten fitxers CSV d'Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora i algunes altres aplicacions així com els formats vCard 3.1 i 4.0 (codificació UTF-8)."
       ],
       "Custom": [
         "Personalitzat"
@@ -3205,6 +3221,19 @@
       ],
       "Email address": [
         "Adreça de correu electrònic"
+      ],
+      "Email tracker protection is disabled": [
+        "La protecció de rastrejador de correu electrònic està desactivada"
+      ],
+      "Email trackers can violate your privacy. Proton did not find any trackers on this message.": [
+        "Els rastrejadors de correu electrònic poden violar la vostra privacitat. Proton no ha trobat cap rastrejador en aquest missatge."
+      ],
+      "Email trackers can violate your privacy. Proton found and blocked ${ numberOfTrackers } tracker.": [
+        "",
+        ""
+      ],
+      "Email trackers can violate your privacy. Turn on tracker protection to prevent senders from knowing whether and when you have opened a message.": [
+        "Els rastrejadors de correu electrònic poden violar la vostra privacitat. Activeu la protecció de rastrejadors per evitar que els remitents sàpiguen si heu obert un missatge o quan ho heu fet."
       ],
       "embedded image": [
         "imatge integrade",
@@ -3314,7 +3343,7 @@
         "URL de la imatge"
       ],
       "Images have been removed because they are not allowed in auto-reply": [
-        ""
+        "Les imatges s'han eliminat perquè no estan permeses a les respostes automàtiques"
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Importar ${ contactsFragment } i ${ contactsGroupsFragment }"
@@ -3373,7 +3402,7 @@
         "Clau d'empremta digital"
       ],
       "Large imports can take several days.": [
-        ""
+        "Imports grans poden trigar diversos dies."
       ],
       "Learn more": [
         "Més informació"
@@ -3448,7 +3477,7 @@
         "Sense adreça de correu electrònic"
       ],
       "No email trackers found": [
-        ""
+        "No s'han trobat rastrejadors de correu electrònic"
       ],
       "No folder found": [
         "No s'ha trobat cap carpeta"
@@ -3575,9 +3604,6 @@
       ],
       "Print email": [
         "Imprimir correu electrónic"
-      ],
-      "Protect yourself from trackers. Turn on email tracker protection in settings": [
-        ""
       ],
       "Proton doesn't make money by abusing privacy.": [
         "Proton no guanya diners abusant de la privacitat."
@@ -3827,9 +3853,6 @@
       "To fight spam and abuse, please verify you are human.": [
         "Per combatre el correu brossa, si us plau verifiqueu que sou humà."
       ],
-      "To protect your privacy, Proton blocked email trackers in this message": [
-        ""
-      ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "Per tornar a signar els vostres contactes necessitem comprovar cada contacte comparant-lo amb la llista de claus xifrades disponibles al vostre compte. Si no es troben coincidències, el vostre contacte es tornarà a signar amb la clau de xifratge primària."
       ],
@@ -3850,6 +3873,9 @@
       ],
       "Turn off content search. Activation progress won't be lost.": [
         "Desactivar la cerca de contingut. No es perdrà el procés d'activació."
+      ],
+      "Turn on to search the content of your messages": [
+        ""
       ],
       "Unsupported file": [
         "Fitxer no compatible"
@@ -3929,9 +3955,6 @@
       "We could not verify the sender's trusted keys.": [
         "No hem pogut verificar les claus de confiança de l’emissor."
       ],
-      "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
-        "Admetem la importació de fitxers CSV des d'Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora i algunes altres aplicacions. També admetem la importació de vCard 4.0. (Codificació UTF-8)."
-      ],
       "We use 3-D Secure to protect your payments.": [
         "Utilitzem 3-D Secure per protegir els vostres pagaments."
       ],
@@ -3939,7 +3962,7 @@
         "Us redirigirem a PayPal en una pestanya nova del navegador per completar aquesta transacció. Si utilitzeu bloquejadors de finestres emergents, desactiveu-los per continuar."
       ],
       "We'll notify you when the import is done.": [
-        ""
+        "Us notificarem quan la importació s'hagi realitzat."
       ],
       "Web URL": [
         "URL del web"
@@ -3969,7 +3992,7 @@
         "Actualment esteu registrat com a ${ user.Name } (${ user.Email }) i té accés restringit."
       ],
       "You can check the progress ${ importProgressLink }.": [
-        ""
+        "Podeu comprovar el progrés a ${ importProgressLink }."
       ],
       "You can either update your search query or ${ button }": [
         "Podeu actualitzar la cerca de consulta o ${ button }"
@@ -5090,7 +5113,12 @@
       ]
     },
     "Mail import summary": {
-      "${ messagesFragment } since ${ periodFragment } and label them as ${ label }": [
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        "",
+        ""
+      ],
+      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        "",
         ""
       ]
     },
@@ -5582,21 +5610,7 @@
         "Nom"
       ]
     },
-    "Plan Feature": {
-      "${ n } server": [
-        "${ n } servidor",
-        "${ n } servidors"
-      ],
-      "${ n } VPN connection": [
-        "${ n } connexió VPN",
-        "${ n } connexions VPN"
-      ]
-    },
     "Plan feature": {
-      "${ freeServers } in ${ freeCountries } country": [
-        "${ freeServers } a ${ freeCountries } país",
-        "${ freeServers } a ${ freeCountries } països"
-      ],
       "0.5 GB storage": [
         "0.5 GB d'emmagatzematge"
       ],
@@ -5609,10 +5623,6 @@
       "1 user": [
         "1 usuari"
       ],
-      "1200+ servers in ${ plusCountries } country": [
-        "Més de 1200 servidors a ${ plusCountries } país",
-        "Més de 1200 servidors a ${ plusCountries } països"
-      ],
       "20 GB storage": [
         "20 GB d'emmagatzematge"
       ],
@@ -5621,10 +5631,6 @@
       ],
       "3 folders / labels": [
         "3 carpetes / etiquetes"
-      ],
-      "350+ servers in ${ basicCountries } country": [
-        "Més de 350 servidors a ${ basicCountries } país",
-        "Més de 350 servidors a més de ${ basicCountries } països"
       ],
       "5 addresses": [
         "5 adreces"
@@ -7040,6 +7046,20 @@
         "Windows, macOS, iOS, Linux, Android, Android TV, Chromebook, Chromecast"
       ]
     },
+    "VPN Plan Feature": {
+      "${ n } server": [
+        "",
+        ""
+      ],
+      "${ n } VPN connection": [
+        "",
+        ""
+      ],
+      "${ numberOfServers } in ${ numberOfCountries } country": [
+        "",
+        ""
+      ]
+    },
     "Warning": {
       "Are you sure you want to permanently delete ${ count } contact group?": [
         "N'esteu segur, de voler eliminar permanentment ${ count } grup de contactes?",
@@ -7068,7 +7088,7 @@
         "Tingueu en compte que escollint aquest mètode de pagament, el vostre compte no es pot actualitzar immediatament. Actualitzarem el vostre compte un cop efectuat el pagament."
       ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
-        ""
+        "Proton combinarà totes les carpetes amb el mateix nom. Per evitar-ho, canvieu els noms abans d’importar-los."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Els informes no estan xifrats d'extrem a extrem. Si us plau, no envieu informació sensible."
@@ -7102,7 +7122,7 @@
         "Lamentablement no estem en línia en aquest moment. Completeu el formulari de sota per descriure el vostre problema, i ho mirarem i ens posarem en contacte quan tornem a estar en línia."
       ],
       "You will lose any customization you made so far.": [
-        ""
+        "Perdràs qualsevol personalització que hagis fet fins ara."
       ]
     },
     "Weekly recurring event, frequency": {
