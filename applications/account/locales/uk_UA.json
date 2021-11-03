@@ -31,11 +31,11 @@
       "${ BRAND_NAME } shop": [
         "Крамниця ${ BRAND_NAME }"
       ],
-      "activate": [
-        "активувати"
-      ],
       "Activate": [
         "Активувати"
+      ],
+      "activate": [
+        "активувати"
       ],
       "Activate ${ Name }@pm.me": [
         "Активувати ${ Name }@pm.me"
@@ -897,9 +897,6 @@
       ]
     },
     "Alert": {
-      "Are you sure you want to import a private key? Importing an insecurely generated or leaked private key can harm the security of your emails.": [
-        "Ви впевнені, що хочете імпортувати приватний ключ? Імпорт незахищеного або скомпрометованого приватного ключа може завдати шкоди безпеці ваших електронних листів."
-      ],
       "By leaving now, some contacts may not be imported": [
         "Якщо ви зараз вийдете, деякі контакти можуть не імпортуватися"
       ],
@@ -1319,6 +1316,12 @@
       ]
     },
     "Calendar subscription not synced error": {
+      "Calendar could not be decrypted": [
+        "Не вдалося розшифрувати календар"
+      ],
+      "Calendar could not be found": [
+        "Не вдалося знайти календар"
+      ],
       "Calendar is syncing": [
         "Календар синхронізується"
       ],
@@ -1649,7 +1652,7 @@
       "I use a different Proton account": [
         "Я використовую інший обліковий запис Proton"
       ],
-      "Missing feature(s) ": [
+      "Missing feature(s)": [
         "Відсутні функції"
       ],
       "My reason isn't listed, please comment": [
@@ -3024,6 +3027,11 @@
         "Двоетапна перевірка увімкнена"
       ]
     },
+    "Import key": {
+      "Are you sure you want to import a private key? Importing an insecurely generated or leaked private key can harm the security of your emails.\n\nPlease also note that the public key corresponding to this private key will be publicly available from our key server. If the key contains personal details (such as your full name) which you do not want to publish, please edit the key before importing it.": [
+        "Ви дійсно хочете імпортувати приватний ключ? Імпортування ненадійно згенерованого чи скомпрометованого приватного ключа може порушити безпеку вашої пошти.\n\nЗауважте, що відкритий ключ, пов'язаний з цим приватним ключем, буде загальнодоступним на нашому сервері ключів. Якщо ключ містить особисті дані (наприклад, ваше повне ім'я), які ви не хочете оприлюднювати, відредагуйте ключ перед імпортуванням."
+      ]
+    },
     "Import status": {
       "${ percentageValue }% paused": [
         "${ percentageValue }% зупинено"
@@ -3487,6 +3495,9 @@
       "Creating your Proton account": [
         "Створення вашого облікового запису Proton"
       ],
+      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
+        "Підтримуються файли CSV з Outlook, Outlook Express, Yahoo! Maіl, Hotmaіl, Eudora і деяких інших додатків, а також формати vCard 3.1 і 4.0 (кодування UTF- 8)."
+      ],
       "Currently all available storage is allocated to the administrator account. Please reduce the admin account allocation to free up space for additional users. You can increase the total storage at any time by upgrading your account.": [
         "Наразі весь доступний обсяг сховища призначено обліковому запису адміністратора. Зменште призначений обсяг, щоб звільнити місце для додаткових користувачів. Ви можете збільшити загальний обсяг сховища в будь-який час, покращивши свій тарифний план."
       ],
@@ -3645,9 +3656,6 @@
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Фільтри працюють для всіх листів, включаючи вхідні та надіслані. Кожен фільтр повинен містити принаймні назву, умову та дію."
-      ],
-      "For advanced security, the Import-Export app encrypts emails on your device before migrating them to Proton servers. You can also export messages for local backups.": [
-        "З міркувань безпеки додаток Import-Export шифрує електронні листи на вашому пристрої перед їх міграцією на сервер Proton. Також ви можете експортувати повідомлення для локальних резервних копій."
       ],
       "For families and small teams; includes both Mail and VPN.": [
         "Для сімей та невеликих команд; включає пошту і VPN."
@@ -4210,6 +4218,9 @@
       "The email address you place at the top of the list is your default email address. Drag and drop to reorder your addresses.": [
         "Адреса, яку ви розташуєте вгорі списку, є вашою типовою адресою. Пересовуйте для зміни порядку адрес."
       ],
+      "The Import-Export app allows you to export messages for local backups and to restore previous backups to your account.": [
+        "Додаток Іmport-Export дає змогу експортувати повідомлення до локальних резервних копій та відновлювати попередні резервні копії в обліковому записі."
+      ],
       "The name will be visible to your users while they are logged in.": [
         "Назва буде видимою вашим користувачам, коли вони увійшли в систему."
       ],
@@ -4395,9 +4406,6 @@
       ],
       "We recommend adding a linked email so you can recover your account if you lose your password.": [
         "Ми рекомендуємо додати пов'язану електронну пошту, щоб ви змогли відновити доступ до облікового запису при втраті пароля."
-      ],
-      "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
-        "Ми підтримуємо імпорт файлів CSV з Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora та деяких інших програм. Ми також підтримуємо імпорт vCard 4.0. (UTF-8 кодування)."
       ],
       "We use 3-D Secure to protect your payments.": [
         "Ми використовуємо 3-D Secure для захисту ваших платежів."
@@ -6050,8 +6058,17 @@
       ]
     },
     "Mail import summary": {
-      "${ messagesFragment } since ${ periodFragment } and label them as ${ label }": [
-        "${ messagesFragment } за ${ periodFragment } та позначити їх ${ label }"
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        "Імпортувати всі повідомлення з ${ selectedLabelsCount } міткою з усіх ${ totalLabelsCount }, починаючи з ${ periodFragment } та позначити їх міткою ${ label }",
+        "Імпортувати всі повідомлення з ${ selectedLabelsCount } мітками з усіх ${ totalLabelsCount }, починаючи з ${ periodFragment } та позначити їх міткою ${ label }",
+        "Імпортувати всі повідомлення з ${ selectedLabelsCount } мітками з усіх ${ totalLabelsCount }, починаючи з ${ periodFragment } та позначити їх міткою ${ label }",
+        "Імпортувати всі повідомлення з ${ selectedLabelsCount } мітками з усіх ${ totalLabelsCount }, починаючи з ${ periodFragment } та позначити їх міткою ${ label }"
+      ],
+      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        "Імпортувати всі повідомлення з ${ totalLabelsCount } міткою, починаючи з ${ periodFragment } та позначити їх міткою ${ label }",
+        "Імпортувати всі повідомлення з ${ totalLabelsCount } мітками, починаючи з ${ periodFragment } та позначити їх міткою ${ label }",
+        "Імпортувати всі повідомлення з ${ totalLabelsCount } мітками, починаючи з ${ periodFragment } та позначити їх міткою ${ label }",
+        "Імпортувати всі повідомлення з ${ totalLabelsCount } мітками, починаючи з ${ periodFragment } та позначити їх міткою ${ label }"
       ]
     },
     "Mail upsell feature": {
@@ -6794,27 +6811,7 @@
         "Безплатно"
       ]
     },
-    "Plan Feature": {
-      "${ n } server": [
-        "${ n } сервер",
-        "${ n } сервери",
-        "${ n } серверів",
-        "${ n } серверів"
-      ],
-      "${ n } VPN connection": [
-        "${ n } VPN-з'єднання",
-        "${ n } VPN-з'єднання",
-        "${ n } VPN-з'єднань",
-        "${ n } VPN-з'єднань"
-      ]
-    },
     "Plan feature": {
-      "${ freeServers } in ${ freeCountries } country": [
-        "${ freeServers } у ${ freeCountries } країні",
-        "${ freeServers } у ${ freeCountries } країнах",
-        "${ freeServers } у ${ freeCountries } країнах",
-        "${ freeServers } у ${ freeCountries } країнах"
-      ],
       "0.5 GB storage": [
         "0.5 ГБ сховища"
       ],
@@ -6827,12 +6824,6 @@
       "1 user": [
         "1 користувач"
       ],
-      "1200+ servers in ${ plusCountries } country": [
-        "1200+ серверів у ${ plusCountries } країні",
-        "1200+ серверів у ${ plusCountries } країнах",
-        "1200+ серверів у ${ plusCountries } країнах",
-        "1200+ серверів у ${ plusCountries } країнах"
-      ],
       "20 GB storage": [
         "20 ГБ сховища"
       ],
@@ -6841,12 +6832,6 @@
       ],
       "3 folders / labels": [
         "3 теки / мітки"
-      ],
-      "350+ servers in ${ basicCountries } country": [
-        "350+ серверів у ${ basicCountries } країні",
-        "350+ серверів у ${ basicCountries } країнах",
-        "350+ серверів у ${ basicCountries } країнах",
-        "350+ серверів у ${ basicCountries } країнах"
       ],
       "5 addresses": [
         "5 адрес"
@@ -7071,6 +7056,9 @@
       "Auto reply": [
         "Автовідповідач"
       ],
+      "Backup & Export": [
+        "Резервне копіювання та експорт"
+      ],
       "Calendars": [
         "Календарі"
       ],
@@ -7103,9 +7091,6 @@
       ],
       "Import & export": [
         "Імпорт і експорт"
-      ],
-      "Import/Export": [
-        "Імпорт/експорт"
       ],
       "Multi-user support": [
         "Підтримка кількох користувачів"
@@ -7651,6 +7636,9 @@
       "Back": [
         "Назад"
       ],
+      "Backup & Export": [
+        "Резервне копіювання та експорт"
+      ],
       "Billing cycle": [
         "Платіжний цикл"
       ],
@@ -7965,9 +7953,6 @@
       ],
       "Import-Export app": [
         "Програма для імпорту-експорту"
-      ],
-      "Import/Export": [
-        "Імпорт/експорт"
       ],
       "Invalid verification code": [
         "Недійсний код підтвердження"
@@ -8689,6 +8674,26 @@
     "VPN info": {
       "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, and more.": [
         "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now та інші."
+      ]
+    },
+    "VPN Plan Feature": {
+      "${ n } server": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "${ n } VPN connection": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "${ numberOfServers } in ${ numberOfCountries } country": [
+        "",
+        "",
+        "",
+        ""
       ]
     },
     "VPN upsell feature": {

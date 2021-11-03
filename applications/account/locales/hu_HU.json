@@ -31,11 +31,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } bolt"
       ],
-      "activate": [
-        "aktiválás"
-      ],
       "Activate": [
         "Aktiválás"
+      ],
+      "activate": [
+        "aktiválás"
       ],
       "Activate ${ Name }@pm.me": [
         "${ Name }@pm.me aktiválása"
@@ -879,9 +879,6 @@
       ]
     },
     "Alert": {
-      "Are you sure you want to import a private key? Importing an insecurely generated or leaked private key can harm the security of your emails.": [
-        "Biztos benne, hogy privát kulcsot szeretne importálni? A nem biztonságosan generált vagy kiszivárgott privát kulcsok negatív hatással lehetnek a levelei biztonságára."
-      ],
       "By leaving now, some contacts may not be imported": [
         "A folyamat megszakítása esetén, bizonyos névjegyek nem kerülnek importálásra"
       ],
@@ -916,22 +913,22 @@
     },
     "Attached ics file error": {
       "Empty ICS file": [
-        ""
+        "Üres ICS fájl"
       ],
       "Invalid event": [
-        ""
+        "Érvénytelen esemény"
       ],
       "Invalid ICS file": [
-        ""
+        "Érvénytelen ICS fájl"
       ],
       "Invalid method": [
         "Érvénytelen metódus"
       ],
       "Unsupported calendar component": [
-        ""
+        "Nem támogatott naptár komponens"
       ],
       "Unsupported event": [
-        ""
+        "Nem támogatott esemény"
       ]
     },
     "Autoresponse": {
@@ -1266,7 +1263,7 @@
     },
     "Calendar import section description": {
       "You can import ICS files from another calendar to ${ CALENDAR_APP_NAME }. This lets you quickly import one event or your entire agenda.": [
-        ""
+        "Más naptárakból kimentett ICS fájlokat importálhat a ${ CALENDAR_APP_NAME } naptárba. Így egy vagy több eseményt is könnyen áthozhat."
       ]
     },
     "Calendar limit warning": {
@@ -1297,26 +1294,32 @@
       ]
     },
     "Calendar subscription not synced error": {
+      "Calendar could not be decrypted": [
+        "A naptár visszafejtése nem sikerült"
+      ],
+      "Calendar could not be found": [
+        "A naptár nem található"
+      ],
       "Calendar is syncing": [
-        ""
+        "A naptár szinkronizál"
       ],
       "Calendar is too big": [
-        ""
+        "A naptár túl nagy"
       ],
       "Calendar link is not accessible": [
-        ""
+        "A naptár hivatkozás nem érhető el"
       ],
       "Calendar link is temporarily inaccessible": [
-        ""
+        "A naptár hivatkozás átmenetileg nem érhető el"
       ],
       "Calendar link is wrong": [
-        ""
+        "A naptár hivatkozás hibás"
       ],
       "Failed to sync calendar": [
-        ""
+        "A naptár szinkronizálása nem sikerült"
       ],
       "More than 12 hours passed since last update": [
-        ""
+        "Több mint 12 óra telt el a legutóbbi frissítés óta"
       ]
     },
     "Calendar view": {
@@ -1613,8 +1616,8 @@
       "I use a different Proton account": [
         "Másik Proton fiókot használok"
       ],
-      "Missing feature(s) ": [
-        "Funkciók hiányoznak "
+      "Missing feature(s)": [
+        "Funkciók hiányoznak"
       ],
       "My reason isn't listed, please comment": [
         "Nem a felsorolt indokok miatt. Kérjük írja le"
@@ -1773,7 +1776,7 @@
         "Az automatikus válasz egy fizetős funkció. Kérjük, váltson egy előfizetéses csomagra a lehetőség használatához."
       ],
       "Calendar limit reached": [
-        ""
+        "Elérte a naptárak maximális számát"
       ],
       "Calendar primary private key is not decrypted": [
         "A naptár elsődleges titkosító kulcsa nincs visszafejtve"
@@ -1791,7 +1794,7 @@
         "Telefonszám ellenőrzése nem sikerült, próbálja meg később"
       ],
       "Checkout expired, please try again": [
-        ""
+        "A fizetés időtúllépéssel megszakadt, kérjük próbálja újra"
       ],
       "Condition incomplete": [
         "Hiányos feltétel"
@@ -1916,7 +1919,7 @@
         "Érvénytelen szám"
       ],
       "Organization key is not decrypted": [
-        ""
+        "A szervezeti kulcs nincs visszafejtve"
       ],
       "Organization key is not decrypted.": [
         "A szervezeti kulcs nincs visszafejtve."
@@ -1949,11 +1952,11 @@
         "Engedélyezze a többfelhasználós módot, mielőtt felhasználókat venne fel a szervezethez."
       ],
       "Please fix the highlighted conflict to proceed.": [
-        "",
-        ""
+        "Javítsa ki a megjelölt hibát a folytatáshoz.",
+        "Javítsa ki a megjelölt hibákat a folytatáshoz."
       ],
       "Please generate keys before you try to change your password": [
-        ""
+        "Hozza létre a titkosítási kulcsokat mielőtt megváltoztatná a jelszavát"
       ],
       "Please refresh the page.": [
         "Kérjük frissítse az oldalt."
@@ -1968,7 +1971,7 @@
         "Próbálja meg újra az azonosítást vagy ellenőrizze a jogosultságok megadását."
       ],
       "Please upgrade to a Professional plan with more than 1 user, or a Visionary account, to get multi-user support": [
-        ""
+        "Kérjük, váltson Professional csomagra egynél több felhasználóval, vagy Visionary csomagra, hogy több felhasználót hozhasson létre"
       ],
       "Please upgrade to a Professional plan with more than 1 user, or a Visionary account, to manage multiple users.": [
         "Kérjük, váltson Professional csomagra egynél több felhasználóval, vagy Visionary csomagra, hogy több felhasználót kezelhessen."
@@ -2037,7 +2040,7 @@
         "Legalacsonyabb elfogadható összeg: ${ _price2 }"
       ],
       "The organization key must be activated first": [
-        ""
+        "Először a szervezeti kulcs aktiválása szükséges"
       ],
       "The organization key must be activated first.": [
         "Először a szervezeti kulcs aktiválása szükséges."
@@ -2228,7 +2231,7 @@
         "Szabad-elfoglalt információ"
       ],
       "Invalid event": [
-        ""
+        "Érvénytelen esemény"
       ],
       "Journal entry": [
         "Napló elem"
@@ -2282,7 +2285,7 @@
         "Ismeretlen"
       ],
       "Unsupported event": [
-        ""
+        "Nem támogatott esemény"
       ]
     },
     "Error message": {
@@ -2337,10 +2340,10 @@
     },
     "Event invitation error": {
       "Attached ICS file could not be decrypted": [
-        ""
+        "Nem sikerült a csatolt ICS fájl visszafejtése"
       ],
       "Attached ICS file could not be parsed": [
-        ""
+        "Nem sikerült a csatolt ICS fájl értelmezése"
       ],
       "Invalid invitation": [
         "Érvénytelen meghívó"
@@ -2535,7 +2538,7 @@
     },
     "Font Face Default": {
       "Default": [
-        ""
+        "Alap"
       ]
     },
     "Font Size Default": {
@@ -2889,7 +2892,7 @@
         "A ${ boldGmailSettings }-ben, válassza a ${ boldForwarding }-ot és engedélyezze az ${ boldIMAPAccess }-t."
       ],
       "Log into Yahoo Mail and click on your name in the upper right corner to access ${ boldAccountInfo }. In the ${ boldAccountSec } section, scroll to the ${ boldAppPassword } section to generate an app password. You will need this password during the import.": [
-        ""
+        "Jelentkezzen be a Yahoo Mailbe és kattintson a nevére a jobb felső sarokban a ${ boldAccountInfo } eléréséhez. A ${ boldAccountSec } szekcióban a ${ boldAppPassword } résznél hozzon létre egy alkalmazásjelszót. Erre a jelszóra szüksége lesz az importálás alatt."
       ]
     },
     "Import instructions emphasis": {
@@ -2918,7 +2921,7 @@
         "Címkék"
       ],
       "Other ways to sign in": [
-        ""
+        "További bejelentkezési lehetőségek"
       ],
       "Security": [
         "Biztonság"
@@ -2960,6 +2963,11 @@
         "Kétlépcsős hitelesítés bekapcsolva"
       ]
     },
+    "Import key": {
+      "Are you sure you want to import a private key? Importing an insecurely generated or leaked private key can harm the security of your emails.\n\nPlease also note that the public key corresponding to this private key will be publicly available from our key server. If the key contains personal details (such as your full name) which you do not want to publish, please edit the key before importing it.": [
+        ""
+      ]
+    },
     "Import status": {
       "${ percentageValue }% paused": [
         "${ percentageValue }% felfüggesztve"
@@ -2988,13 +2996,13 @@
     },
     "Import type": {
       "Calendar": [
-        ""
+        "Naptár"
       ],
       "Contacts": [
-        ""
+        "Névjegyek"
       ],
       "Mail": [
-        ""
+        "Lelevelezés"
       ]
     },
     "Import warning": {
@@ -3002,16 +3010,16 @@
         "${ totalContactsDiscarded } a ${ totalContacts } névjegyből nem kerül importálásra. Kattintson a részletekért"
       ],
       "${ totalEventsDiscarded } out of ${ totalEvents } events will not be imported. Expand for details.": [
-        ""
+        "${ totalEventsDiscarded } a ${ totalEvents } eseményből nem kerül importálásra. Nyissa meg a részletekért."
       ],
       "No contact can be imported. Click for details": [
         "Nem került importálásra névjegy. Kattintson a részletekért"
       ],
       "No event can be imported. Expand for details.": [
-        ""
+        "Nem került importálásra esemény. Nyissa meg a részletekért."
       ],
       "Part of your calendar content is not supported and will not be imported.": [
-        ""
+        "A naptár tartalmának bizonyos részei nem támogatottak és nem kerülnek importálásra."
       ]
     },
     "Info": {
@@ -3022,16 +3030,16 @@
         "${ calendarName } lesz az alapértelmezett naptár."
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
-        "",
-        ""
+        "${ calendarsToBeCreatedCount } új naptár",
+        "${ calendarsToBeCreatedCount } új naptár"
       ],
       "${ calendarsToBeMerged } merged calendar": [
-        "",
-        ""
+        "${ calendarsToBeMerged } egyesített naptár",
+        "${ calendarsToBeMerged } egyesített naptár"
       ],
       "${ calendarsToBeMergedCount } merged calendar": [
-        "",
-        ""
+        "${ calendarsToBeMergedCount } egyesített naptár",
+        "${ calendarsToBeMergedCount } egyesített naptár"
       ],
       "${ mailAppName } Free": [
         "${ mailAppName } Ingyenes"
@@ -3055,16 +3063,16 @@
         "${ number } kiszolgálók"
       ],
       "${ numberOfNonPrivateKeys } uploaded file is not a valid private key. Please verify and try again.": [
-        "",
-        ""
+        "${ numberOfNonPrivateKeys } feltöltött fájl nem egy érvényes titkos kulcs. Ellenőrizze és próbálja újra.",
+        "${ numberOfNonPrivateKeys } feltöltött fájl nem egy érvényes titkos kulcs. Ellenőrizze és próbálja újra."
       ],
       "${ numContactGroups } contact group": [
-        "",
-        ""
+        "${ numContactGroups } névjegy csoport",
+        "${ numContactGroups } névjegy csoport"
       ],
       "${ numContacts } contact": [
-        "",
-        ""
+        "${ numContacts } névjegy",
+        "${ numContacts } névjegy"
       ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } mappa található",
@@ -3084,8 +3092,8 @@
         "${ saveExtra20 } a VPN és az e-mail szolgáltatásokon a VPN előfizetés hozzáadásával."
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
-        "",
-        ""
+        "${ selectedCalendarsTotal } a(z) ${ providerCalendars.length } naptárból",
+        "${ selectedCalendarsTotal } a(z) ${ providerCalendars.length } naptárból"
       ],
       "${ selectedFoldersCount } folder selected": [
         "${ selectedFoldersCount } mappa kiválasztva",
@@ -3141,7 +3149,7 @@
         "Ehhez a címhez már vagy egy aktív kulcs ugyanilyen titkosítási algoritmussal. Újabb kulcs létrehozása le fogja lassítani a fiók betöltését és a kulcs törlése problémákat okozhat. Amennyiben azért hoz létre új kulcsot, mert a korábbi kompromittált, akkor jelölje meg azt a kulcsot kompromittáltként.\nBiztos, hogy folytatja?"
       ],
       "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password.": [
-        ""
+        "A helyreállító jelmondat segít visszaszerezni ez elérését a fiókjához és helyreállítani a titkosított leveleit, ha elfelejtené a jelszavát."
       ],
       "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
         "Hozzáférés blokkolt tartalomhoz, mint például közösségi oldalak, hírek, Wikipedia, YouTube és sok más, bárhol is tartózkodik."
@@ -3195,7 +3203,7 @@
         "Mind (${ totalFoldersCount } címke)"
       ],
       "All keys successfully reactivated": [
-        ""
+        "Minden kulcsot sikerült újraaktiválni"
       ],
       "All your changes will be lost.": [
         "A változtatások el fognak veszni."
@@ -3210,7 +3218,7 @@
         "Az összeg a minimum alatt (${ amount })."
       ],
       "and": [
-        ""
+        "és"
       ],
       "Anyone with this link can see all the event details of this calendar such as title, location or participants.": [
         "Bárki a link birtokában megtekintheti a naptár összes eseményének részleteit, beleértve a címét, helyét és résztvevőket."
@@ -3225,7 +3233,7 @@
         "Az AOL olvassa az ön személyes adatait, hogy hirdetőknek és más külső feleknek adja át. A személyes adatai védelme érdekében, hozza létre titkosított e-mail címét."
       ],
       "Are you sure you want to continue?": [
-        ""
+        "Biztos, hogy folytatja?"
       ],
       "Are you sure you want to delete this address?": [
         "Biztosan törli ezt a címet?"
@@ -3312,13 +3320,13 @@
         "A 2020. évi Black Friday új előfizetési akció került alkalmazásra"
       ],
       "Blocks senders from seeing if and when you opened a message.": [
-        ""
+        "Megakadályozza, hogy a feladó értesüljön arról amikor megnyitja az üzenetet."
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Az ingyenes verzióra való váltás során véglegesen elveszti a következő előnyeit, még akkor is, ha később ismét előfizetéses szolgáltatásra vált."
       ],
       "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
-        ""
+        "A lemondással elveszít az alábbi előnyöket. Biztos benne, hogy folytatja?"
       ],
       "By leaving now, changes may not be saved": [
         "Ha most kilép, a módosítások elveszhetnek"
@@ -3330,7 +3338,7 @@
         "Középre"
       ],
       "Change your default in settings": [
-        ""
+        "Az alapértéket a beállításoknál módosíthatja"
       ],
       "Check the status of current and previous imports.": [
         "Az aktuális és a korábbi importálások állapotának megtekintése."
@@ -3345,7 +3353,7 @@
         "Kattintson az \"Új kód kérése\" gombra, hogy a ${ strong } számra új ellenőrzési kódot küldjünk. Ha hibás ez a szám, kattintson a Szerkesztés gombra."
       ],
       "Close this screen to exit.": [
-        ""
+        "A kilépéshez zárja be ezt a képernyőt."
       ],
       "Connections": [
         "Kapcsolatok"
@@ -3354,8 +3362,8 @@
         "Mindenképp folytatja?"
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
-        "",
-        ""
+        "Létrehozandó ${ calendarsToBeCreated } új naptár",
+        "Létrehozandó ${ calendarsToBeCreated } új naptár"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Hozzon létre egy címkét az importált levelekhez, válassza ki a kívánt idő intervallumot és adja meg az importálandó mappákat."
@@ -3373,13 +3381,16 @@
         "Hozzon létre e-mail címeket mások számára, vállalkozásához, iskolájához vagy egy csoporthoz is használhat ProtonMailt. Az induláshoz adja meg a szervezet nevét és a használni kívánt domain nevet (pl. @azöncége.com). "
       ],
       "Create in": [
-        ""
+        "Létrehozás itt"
       ],
       "Creating a new recovery phrase will deactivate your old one.": [
-        ""
+        "Új helyreállító jelmondat létrehozása érvényteleníti a korábbit."
       ],
       "Creating your Proton account": [
         "Proton fiók létrehozása"
+      ],
+      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
+        ""
       ],
       "Currently all available storage is allocated to the administrator account. Please reduce the admin account allocation to free up space for additional users. You can increase the total storage at any time by upgrading your account.": [
         "Jelenleg az összes tárhely kiosztásra került az adminisztrátor fiókhoz. Kérjük csökkentse az adminisztrátor fiókhoz kiosztott tárhelyet, hogy helyet szabadítson fel a többi felhasználónak. Bármikor növelheti a rendelkezésre álló tárhelyet nagyobb csomagra váltással."
@@ -3421,7 +3432,7 @@
         "Ennek kikapcsolása megakadályozza, hogy ez a telefonszám használható legyen a fiók helyreállítására."
       ],
       "Disabling this will prevent your recovery phrase from being used for account recovery.": [
-        ""
+        "Ennek kikapcsolása megakadályozza, hogy a helyreállító jelmondat használható legyen a fiók helyreállítására."
       ],
       "Discount applied to your subscription with coupon ${ code }": [
         "Az előfizetésre érvényes árengedmény a kuponnal ${ code }"
@@ -3449,7 +3460,7 @@
         "Kész"
       ],
       "Done! We sent a code to ${ destination }.": [
-        ""
+        "Kész! Elküldtük a kódot ide: ${ destination }."
       ],
       "Downgrading will terminate any connections to paid ProtonVPN servers.": [
         "A lemondás megszünteti a fizetett ProtonVPN szerverekkel való összes kapcsolatot."
@@ -3470,7 +3481,7 @@
         "Címke szerkesztése"
       ],
       "Effortlessly and securely move your emails from your current provider to Proton. If you use Google, we also support calendar, and contacts imports.": [
-        ""
+        "Könnyedén és biztonságosan költöztesse át leveleit a jelenlegi szolgáltatójától a Protonhoz. Ha Google-t használ, a naptárát és a névjegyeit is áthozhatja."
       ],
       "Email address": [
         "E-mail cím"
@@ -3479,10 +3490,10 @@
         "E-mail beállítás elmentve"
       ],
       "Emails stored in this folder will not be deleted and can still be found in the All Mail folder.": [
-        ""
+        "Az ebben a mappában tárolt levelek nem kerülnek törlésre és megtalálhatók lesznek az Összes üzenet mappában."
       ],
       "Emails tagged with this label will not be deleted and can still be found in the respective folder.": [
-        ""
+        "Az ezzel a címkével megjelölt levelek nem kerülnek törlésre és megtalálhatók lesznek a megfelelő mappában."
       ],
       "Encryption setting updated": [
         "Titkosítási beállítás frissítve"
@@ -3506,7 +3517,7 @@
         "Adja meg a ${ BRAND_NAME } fiókhoz tartozó helyreállítási ${ recoveryMethodText }. Egy kódot fogunk küldeni, amellyel megerősítheti a jelszó visszaállítást."
       ],
       "Enter the recovery phrase associated with your ${ BRAND_NAME } Account.": [
-        ""
+        "Írja be a ${ BRAND_NAME } fiókhoz tartozó helyreállítási jelmondatát."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Írja be a ${ destinationText } címre küldött ellenőrző kódot."
@@ -3518,7 +3529,7 @@
         "Adja meg a saját (szervezeti adminisztrátor) jelszavát és a felhasználó új jelszavát."
       ],
       "Enter your Proton account email address or username.": [
-        ""
+        "Írja be a Proton fiókjához tartozó e-mail címet vagy felhasználónevet."
       ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Írja be a helyreállítási e-mail címét és elküldjük a felhasználónevét vagy e-mail címét."
@@ -3538,9 +3549,6 @@
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "A szűrők minden levélre vonatkoznak, a bejövő és az elküldött üzenetekre is. Minden szűrőnek szükséges legalább egy név, egy feltétel és egy művelet."
       ],
-      "For advanced security, the Import-Export app encrypts emails on your device before migrating them to Proton servers. You can also export messages for local backups.": [
-        "A maximális biztonság érdekében, az Import-Export alkalmazás az e-maileket az ön eszközén titkosítja, mielőtt azokat a Proton szervereihez továbbítaná. Helyi biztonsági mentéshez exportálhatja is az üzeneteket."
-      ],
       "For families and small teams; includes both Mail and VPN.": [
         "Családoknak és kisebb csoportoknak, a levelezést és VPN-t is tartalmazza."
       ],
@@ -3557,7 +3565,7 @@
         "Biztonsági okokból, kérjük, igazolja, hogy nem egy robot."
       ],
       "For Visa and MasterCard, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
-        ""
+        "Visa és MasterCard esetén, a 3 számjegy a kártya hátoldalán. American Express esetén a 4 számjegy a kártya elején."
       ],
       "Free up some space or add more storage space.": [
         "Szabadítson fel helyet vagy vásároljon több területet."
@@ -3629,35 +3637,35 @@
         "Ha folytatja a lemondást, elveszíti a hozzáférést a ProtonVPN fizetett szolgáltatásaihoz."
       ],
       "If you proceed, you will be required to reset your password and you will be logged out of all other active sessions.": [
-        ""
+        "Ha folytatja, új jelszót kell majd létrehoznia és minden aktív munkafolyamatból kiléptetésre kerül."
       ],
       "If you proceed, you will have to reset your password and will be logged out of any other active sessions.": [
-        ""
+        "Ha folytatja, új jelszót kell majd létrehoznia és minden aktív munkafolyamatból kiléptetésre kerül."
       ],
       "If you want to keep an existing SPF record, you can just add ${ spf } to it after the ${ spfValue }. Do not create multiple SPF records.": [
         "Amennyiben meg kívánja tartani a jelenlegi SPF rekordot, csak írja hozzá a ${ spf } értéket a ${ spfValue } után. Ne hozzon létre több különálló SPF rekordot."
       ],
       "If you wish to combine this account with another one, do NOT delete it.": [
-        ""
+        "Ha egy másik fiókkal szeretné összevonni ezt a fiókot, NE törölje."
       ],
       "Image URL": [
         "Kép URL"
       ],
       "Images have been removed because they are not allowed in auto-reply": [
-        ""
+        "A képek eltávolításra kerültek, mert automatikus válaszban nem engedélyezettek"
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
-        ""
+        "Importálandó ${ contactsFragment } és ${ contactsGroupsFragment }"
       ],
       "Import ${ selectedCalendarsCount } of ${ totalCalendarsCount } calendar": [
-        "",
-        ""
+        "Importálandó ${ selectedCalendarsCount } a(z) ${ totalCalendarsCount } naptárból",
+        "Importálandó ${ selectedCalendarsCount } a(z) ${ totalCalendarsCount } naptárból"
       ],
       "Import from": [
-        ""
+        "Importálás innen"
       ],
       "Import in progress": [
-        ""
+        "Importálás folyamatban"
       ],
       "Import mailbox": [
         "E-mail fiók importálása"
@@ -3672,7 +3680,7 @@
         "FONTOS: Bizonyos regisztrátorok nem engednek pontra végződő CNAME értéket (míg mások megkövetelik a pontot). Ha a regisztrátor nem megfelelőnek találja a CNAME rekordokat, törölje a pontot minden CNAME érték végéről és próbálja meg újra."
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
-        ""
+        "Adatok importálása a(z) ${ importedEmailAddress } címről a(z) ${ toEmail } címre."
       ],
       "Included": [
         "Tartalmazza"
@@ -3708,7 +3716,7 @@
         "Internet kapcsolat helyreállt."
       ],
       "Just confirm your selection and we'll do the rest.": [
-        ""
+        "Hagyja jóvá a kiválasztást aztán elindul a folyamat."
       ],
       "Justify": [
         "Sorkizárás"
@@ -3729,7 +3737,7 @@
         "Egy nagyobb importálás akár napokig is eltarthat."
       ],
       "Large imports can take several days.": [
-        ""
+        "Egy nagyobb importálás akár napokig is eltarthat."
       ],
       "Learn how to log in to ProtonVPN with third-party VPN applications.": [
         "Tudjon meg többet arról, hogyan jelentkezhet be VPN alkalmazásokkal a ProtonVPN-re."
@@ -3783,7 +3791,7 @@
         "Fiókjának beállításához kézileg írja be ezt a kódot a kétlépcsős hitelesítéshez használt eszközén. ${ _switchButton }."
       ],
       "Merged": [
-        ""
+        "Egyesítve"
       ],
       "Monthly ${ onDayString }": [
         "Havonta: ${ onDayString }"
@@ -3792,7 +3800,7 @@
         "több"
       ],
       "More Info": [
-        ""
+        "További információk"
       ],
       "Multi-user support not enabled.": [
         "Többfelhasználós mód nem engedélyezett."
@@ -3801,13 +3809,13 @@
         "Adjon nevet a mappának és válassza ki a szülő mappát, amelyben elhelyezi. Ha nem választ szülő mappát, akkor egy új felső szintű mappát hoz létre."
       ],
       "New": [
-        ""
+        "Új"
       ],
       "New to ${ BRAND_NAME }? ${ signupLink }": [
         "Új ${ BRAND_NAME } felhasználó? ${ signupLink }"
       ],
       "Next you'll need to log in to your Google account and allow us to access your data.": [
-        ""
+        "Következőként be kell jelentkeznie a Google fiókjába, hogy engedélyezze az adatokhoz való hozzáférést."
       ],
       "No action selected": [
         "Nincs kiválasztva művelet"
@@ -3948,13 +3956,13 @@
         "Kérjük, várjon..."
       ],
       "Please write your recovery phrase down in the order it appears and keep it somewhere safe. Your recovery phrase can be used to fully recover access to your account and your encrypted messages.": [
-        ""
+        "Írja le a helyreállító jelmondatot az eredeti sorrendjében és tárolja biztonságos helyen. A helyreállító jelmondat használható a fiók és titkosított üzenetek teljes helyreállításához."
       ],
       "Plus or Visionary subscription required": [
         "Plus vagy Visionary előfizetés szükséges"
       ],
       "Prevents content from the sender's server from loading without your permission.": [
-        ""
+        "Megakadályozza a küldő szerverén lévő tartalmak letöltését az engedélye nélkül."
       ],
       "Preview": [
         "Előnézet"
@@ -4000,13 +4008,13 @@
         "Sorba állítva"
       ],
       "read our two-factor authentication Guide first": [
-        ""
+        "először elolvasni a kétlépcsős hitelesítésről szóló útmutatót"
       ],
       "Recovery phrase copied to clipboard": [
-        ""
+        "A helyreállító jelmondat a vágólapra másolva"
       ],
       "Recovery phrase has been disabled": [
-        ""
+        "A helyreállító jelmondat kikpacsolva"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Az oldal frissítése vagy a ${ link } automatikusan megoldja a legtöbb problémát."
@@ -4036,10 +4044,10 @@
         "Képernyőkép(ek) csatolva"
       ],
       "Select a service provider to get started": [
-        ""
+        "Válaszon ki egy szolgáltatót a kezdéshez"
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20-personal-calendar limit. You can also merge imported calendars with existing Proton calendars.": [
-        ""
+        "Válassza ki az importálandó naptárakat. Minden importált naptárhoz egy új naptár fog létrejönni, a 20-as személyes naptár határig. Az importálandó naptárakat egyesítheti a meglévő naptárakkal is."
       ],
       "Server is currently down": [
         "A szerver jelenleg nem működik"
@@ -4048,7 +4056,7 @@
         "Szerver terheltség"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
-        ""
+        "A szerverek nem érhetők el. Próbálja meg egy pár perc múlva"
       ],
       "Session timed out.": [
         "A munkamenet lejárt."
@@ -4057,7 +4065,7 @@
         "Mivel ön a hűséges felhasználónk, fiókja extra funkciókat tartalmaz."
       ],
       "Some keys successfully reactivated": [
-        ""
+        "Néhány kulcsot sikerült újraaktiválni"
       ],
       "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ProtonMail in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
         "Az SPF feladata, hogy meghatározza, kik küldhetnek levelet az adott domain névvel. Emiatt erősen javasolt a ProtonMail felvétele az SPF rekordba. Kérjük vegye fel a következő TXT rekordot a DNS beállításaiban. Ezt általában a domain név regisztrátor adminisztrálási felületén állathatja be."
@@ -4098,6 +4106,9 @@
       "The email address you place at the top of the list is your default email address. Drag and drop to reorder your addresses.": [
         "Az e-mail cím, amit a lista tetejére helyez lesz az alapértelmezett címe. Húzással mozgassa a címeket annak érdekében hogy módosíthassa a sorrendet."
       ],
+      "The Import-Export app allows you to export messages for local backups and to restore previous backups to your account.": [
+        ""
+      ],
       "The name will be visible to your users while they are logged in.": [
         "A név látható lesz a bejelentkezett felhasználóinak."
       ],
@@ -4117,7 +4128,7 @@
         "Ez néhány másodpercet vagy néhány percet is igénybe vehet"
       ],
       "This email address will only be used for recovery purposes.": [
-        ""
+        "Ez az e-mail cím csak helyreállítási célokra lesz felhasználva."
       ],
       "This feature is intended for advanced users only. After deleting this key, you will NOT be able to decrypt any message that has been encrypted with it. It may lead to data loss.": [
         "Ezt a funkciót gyakorlott felhasználóknak szánták! A kulcs törlése után NEM fog tudni visszafejteni egyetlen üzenetet sem, amit ezzel a kulccsal titkosítottak. Ez adatvesztéshez vezethet."
@@ -4129,7 +4140,7 @@
         "Ez a link egy hamisított címre mutató (homográf) támadásnak néz ki. Ellenőrizze, hogy valóban ezt a linket kívánja-e megnyitni vagy ne nyissa meg."
       ],
       "This phone number will only be used for recovery purposes.": [
-        ""
+        "Ez a telefonszám csak helyreállítási célokra lesz felhasználva."
       ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Jelenleg ez a felhasználó felelős a szervezet szolgáltatásainak kifizetéséért. Ha lefokozza, az ön feladatává válik a kifizetés."
@@ -4138,7 +4149,7 @@
         "Ez a fiókhoz tartozó kétlépcsős hitelesítést is ki fogja kapcsolni."
       ],
       "This will also disable two-factor authentication.": [
-        ""
+        "Ez a kétlépcsős hitelesítést is kikapcsolja."
       ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
         "Ezzel megszünteti jelenlegi előfizetését és elveszít minden felhalmozott hűség bónuszt. A fennmaradó egyenlege elszámolásra kerül a fiókjában, mint felhasználható egyenleg."
@@ -4165,7 +4176,7 @@
         "ide:"
       ],
       "To access your old messages, you will need to reactivate your old encryption keys using one of the following recovery methods.": [
-        ""
+        "A korábbi üzenetek olvasásához újra kell aktiválnia a régi titkosítási kulcsait a következő helyreállító módszerek valamelyikével."
       ],
       "To confirm, please enter the name of the user you wish to delete.": [
         "A jóváhagyáshoz írja be a törölni kívánt felhasználó nevét."
@@ -4210,10 +4221,10 @@
         "A két jelszavas mód különválasztja a bejelentkezési jelszót és a levelek titkosításához használt jelszót. Ez egy kis biztonsági előnnyel járhat bizonyos esetekben, de általában inkább az egy jelszavas módot javasoljuk a legtöbb felhasználónak. A két jelszavas módra váltáshoz, először adja meg a bejelentkezési jelszót és aztán pedig az e-mail titkosítási jelszót."
       ],
       "Unable to decrypt. Recovery phrase is not associated with any keys.": [
-        ""
+        "Visszafejtés nem sikerült. A helyreállító jelmondat nem kapcsolható egyetlen kulcshoz sem."
       ],
       "Unable to decrypt. Recovery phrase is not associated with any outdated keys.": [
-        ""
+        "Visszafejtés nem sikerült. A helyreállító jelmondat nem kapcsolható egyetlen elavult kulcshoz sem."
       ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Sajnos, nincs helyreállítási mód beállítva ehhez a fiókhoz."
@@ -4225,7 +4236,7 @@
         "Ismeretlen file"
       ],
       "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to enable automatic replies for when you are out of the office.": [
-        ""
+        "Váltson ${ PLAN_NAMES[PLANS.VISIONARY] } vagy ${ PLAN_NAMES[PLANS.PROFESSIONAL] } csomagra, hogy távolléte esetén a automatikus válaszokat küldhessen a feladóknak."
       ],
       "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to get started.": [
         "Váltson a ${ PLAN_NAMES[PLANS.VISIONARY] } vagy ${ PLAN_NAMES[PLANS.PROFESSIONAL] } csomagra az induláshoz."
@@ -4240,7 +4251,7 @@
         "Kép feltöltése"
       ],
       "Uploaded file is not a valid private key. Please verify and try again.": [
-        ""
+        "A feltöltött fájl nem egy érvényes titkos kulcs. Ellenőrizze és próbálja újra."
       ],
       "URL link": [
         "URL link"
@@ -4273,7 +4284,7 @@
         "VPN + ${ mailAppName } csomag, családoknak és kisvállalkozásoknak."
       ],
       "Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts.": [
-        ""
+        "Figyelmeztetés: a törlés végleges. Ezzel elveszti az elérését az összes kapcsolódó szolgáltatáshoz és törli minden névjegyét."
       ],
       "We advise you to use official ProtonVPN applications when possible.": [
         "Amikor lehetséges, javasoljuk inkább a hivatalos ProtonVPN alkalmazás használatát."
@@ -4283,9 +4294,6 @@
       ],
       "We recommend adding a linked email so you can recover your account if you lose your password.": [
         "Javasoljuk, hogy adjon meg egy kapcsolódó e-mail címet, így helyreállíthatja a fiókját ha elfelejtené a jelszavát."
-      ],
-      "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
-        "CSV fájlok importálása támogatott a következőkből: Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora és néhány egyéb. vCard 4.0 importálása szintén támogatott (UTF-8 kódolással)."
       ],
       "We use 3-D Secure to protect your payments.": [
         "3D Secure kódot használunk a kifizetések védelme érdekében."
@@ -4303,7 +4311,7 @@
         "Erre a címre küldünk egy helyreállító linket, ha elfelejtené a jelszavát vagy kizáródna a fiókjából."
       ],
       "We'll notify you when the import is done.": [
-        ""
+        "Érdesíteni fogjuk az importálás végeztével."
       ],
       "Web URL": [
         "Weblap link"
@@ -4315,7 +4323,7 @@
         "A heti és havi nézet csak számítógépen érhető el."
       ],
       "What do you want to import from your Google account?": [
-        ""
+        "Mit szeretne importálni a Google fiókjából?"
       ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "Kikapcsolása megakadályozza, hogy az ön értesítése nélkül töltődjenek le képek az eszközére."
@@ -4351,7 +4359,7 @@
         "Jelenleg ${ user.Name } (${ user.Email }) fiókkal van bejelentkezve, hozzáférése korlátozott."
       ],
       "You can check the progress ${ importProgressLink }.": [
-        ""
+        "Figyelemmel kísérhezi a folyamatot: ${ importProgressLink }."
       ],
       "You can continue using Proton services as usual.": [
         "A Proton szolgáltatásait tovább használhatja közben."
@@ -4408,10 +4416,10 @@
         "PayPal számlájához hozzá kell rendelnie egy bankkártyát vagy egy bankszámlát. Ha ezek egyike sincs, kattintson a lentebbi gombra."
       ],
       "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
-        ""
+        "Az előfizetés lemondása előtt törölnie kell minden további személyes naptárat és megosztott naptár hivatkozást. ${ linkButton }"
       ],
       "You need to have a personal calendar to create a link.": [
-        ""
+        "Link létrehozásához rendelkeznie kell egy személyes naptárral."
       ],
       "You need to have an active personal calendar to import your events.": [
         "Az importáláshoz szükséges, hogy legyen egy aktív személyes naptára."
@@ -4456,13 +4464,13 @@
         "A tiltott lista üres."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
-        ""
+        "Az adatok a Proton fiókjába importálásra készen állnak a(z) ${ importedEmailAddressStrong } címről."
       ],
       "Your email will only be used for this one-time verification.": [
         "Az e-mail cím csak erre az egyszeri ellenőrzésre lesz felhasználva."
       ],
       "Your import from ${ delayedImport.Account } is temporarily delayed.": [
-        ""
+        "Az importálás a(z) ${ delayedImport.Account } címről átmenetileg késik."
       ],
       "Your import from ${ delayedImport.Email } is temporarily delayed.": [
         "Az importálásod a ${ delayedImport.Email } címről átmenetileg késik."
@@ -4501,10 +4509,10 @@
         "Az ön helyreállító e-mail címe:"
       ],
       "Your recovery phrase": [
-        ""
+        "Az ön helyreállító jelmondata"
       ],
       "Your recovery phrase is a series of 12 words in a specific order.": [
-        ""
+        "A helyreállító jelmondat egy 12 szóból álló sorozat, megadott sorrendben."
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Az előfizetését a Mozilla kezeli. Kérjük, forduljon a Mozilla ügyfélszolgálatához az előfizetés lemondásához."
@@ -4955,7 +4963,7 @@
         "Jelszó hozzáadása"
       ],
       "Ask before loading remote content": [
-        ""
+        "Megerősítés távoli tartalom betöltése előtt"
       ],
       "Attach public key": [
         "Nyilvános kulcs csatolása"
@@ -4979,7 +4987,7 @@
         "Tartalák kulcs"
       ],
       "Block email tracking": [
-        ""
+        "E-mail követés megakadályozása"
       ],
       "bonus storage": [
         "bónusz tárhely"
@@ -4997,7 +5005,7 @@
         "BTC összeg:"
       ],
       "Calendar": [
-        ""
+        "Naptár"
       ],
       "Cancel": [
         "Mégsem"
@@ -5051,7 +5059,7 @@
         "Jelszó megerősítése"
       ],
       "Contacts": [
-        ""
+        "Névjegyek"
       ],
       "Conversation grouping": [
         "Beszélgetések csoportosítása"
@@ -5105,7 +5113,7 @@
         "Alapértelmezett emlékeztetők"
       ],
       "Default PGP scheme": [
-        ""
+        "Alapértelmezett PGP séma"
       ],
       "Default view": [
         "Alapértelmezett nézet"
@@ -5156,7 +5164,7 @@
         "Email cím, vagy felhasználónév"
       ],
       "Emails": [
-        ""
+        "E-mailek"
       ],
       "End date": [
         "Befejező dátum"
@@ -5198,10 +5206,10 @@
         "Forrás: ${ fromEmailAddress }"
       ],
       "From: ${ importedEmail }": [
-        ""
+        "Forrás: ${ importedEmail }"
       ],
       "From: ${ importedEmailAddress }": [
-        ""
+        "Forrás: ${ importedEmailAddress }"
       ],
       "From: ${ modalModel.email }": [
         "Forrás: ${ modalModel.email }"
@@ -5507,7 +5515,7 @@
         "Ide: ${ emailAddress }"
       ],
       "To: ${ PMEmailAddress }": [
-        ""
+        "Cél: ${ PMEmailAddress }"
       ],
       "To: ${ toEmailAddress }": [
         "Cél: ${ toEmailAddress }"
@@ -5623,7 +5631,7 @@
         "Telefonszám"
       ],
       "Recovery phrase": [
-        ""
+        "Helyreállító jelmondat"
       ]
     },
     "Label for adding a new custom domain": {
@@ -5820,13 +5828,13 @@
         ""
       ],
       "Almost there": [
-        ""
+        "Majdnem kész"
       ],
       "Connecting to your email provider": [
         "Csatlakozás az e-mailszolgáltatójához"
       ],
       "Creating new calendars": [
-        ""
+        "Új naptárak lérehozása"
       ],
       "Gathering your data": [
         ""
@@ -5835,7 +5843,7 @@
         ""
       ],
       "Your import is starting": [
-        ""
+        "Az importálás indul"
       ]
     },
     "Log preference": {
@@ -5928,7 +5936,12 @@
       ]
     },
     "Mail import summary": {
-      "${ messagesFragment } since ${ periodFragment } and label them as ${ label }": [
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        "",
+        ""
+      ],
+      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        "",
         ""
       ]
     },
@@ -6155,7 +6168,7 @@
         "Vissza a Drive-ba"
       ],
       "Back to Mail": [
-        ""
+        "Vissza a levelekhez"
       ]
     },
     "Netflix": {
@@ -6475,10 +6488,10 @@
     },
     "Option group label": {
       "Create new calendar": [
-        ""
+        "Új naptár lérehozása"
       ],
       "Merge with calendar": [
-        ""
+        "Összefőzés naptárral"
       ]
     },
     "Option protection mode": {
@@ -6524,7 +6537,7 @@
     },
     "PGP key warning": {
       "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        ""
+        "Az e-mail cím nem található meg a küldő kulcsban definiált felhasználói azonosítók közt (${ keyUserIds })"
       ]
     },
     "Placeholder": {
@@ -6656,21 +6669,7 @@
         "Ingyenes"
       ]
     },
-    "Plan Feature": {
-      "${ n } server": [
-        "${ n } kiszolgáló",
-        "${ n } kiszolgálók"
-      ],
-      "${ n } VPN connection": [
-        "${ n } VPN kapcsolódás",
-        "${ n } VPN kapcsolódás"
-      ]
-    },
     "Plan feature": {
-      "${ freeServers } in ${ freeCountries } country": [
-        "${ freeServers } ${ freeCountries } országban",
-        "${ freeServers } ${ freeCountries } országban"
-      ],
       "0.5 GB storage": [
         "0.5 GB tárhely"
       ],
@@ -6683,10 +6682,6 @@
       "1 user": [
         "1 felhasználó"
       ],
-      "1200+ servers in ${ plusCountries } country": [
-        "1200+ szerver ${ plusCountries } országban",
-        "1200+ szerver ${ plusCountries } országban"
-      ],
       "20 GB storage": [
         "20 GB tárhely"
       ],
@@ -6695,10 +6690,6 @@
       ],
       "3 folders / labels": [
         "3 mappa és címke"
-      ],
-      "350+ servers in ${ basicCountries } country": [
-        "350+ szerver ${ basicCountries } országban",
-        "350+ szerver ${ basicCountries } országban"
       ],
       "5 addresses": [
         "5 cím"
@@ -6857,15 +6848,15 @@
         "Telefonszám"
       ],
       "Recovery phrase": [
-        ""
+        "Helyreállító jelmondat"
       ]
     },
     "Remark about a key type option": {
       "Compatibility": [
-        ""
+        "Kompatibilitás"
       ],
       "State of the art": [
-        ""
+        "Különösen korszerű"
       ]
     },
     "Restore administrator panel": {
@@ -6876,13 +6867,13 @@
         "Szervezeti jelszó megváltoztatása"
       ],
       "Creating new users": [
-        ""
+        "Új felhasználók létrehozása"
       ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "A jelszó megváltoztatása miatt, az ön szervezeti adminisztrátorai jogosultságai korlátozódtak. A következő műveletek már nem engedélyezettek:"
       ],
       "Reading emails of non-private users": [
-        ""
+        "Olvashatja a nem-privát felhasználók leveleit"
       ]
     },
     "Security phrase": {
@@ -6892,7 +6883,7 @@
     },
     "Select files": {
       "Browse": [
-        ""
+        "Tallózás"
       ],
       "Upload": [
         "Feltöltés"
@@ -6921,6 +6912,9 @@
       "Auto reply": [
         "Automatikus válasz"
       ],
+      "Backup & Export": [
+        ""
+      ],
       "Calendars": [
         "Naptárak"
       ],
@@ -6931,7 +6925,7 @@
         "Domain nevek"
       ],
       "Email privacy": [
-        ""
+        "E-mail adatvédelem"
       ],
       "Encryption & keys": [
         "Titkosítás és kulcsok"
@@ -6953,9 +6947,6 @@
       ],
       "Import & export": [
         "Importálás és exportálás"
-      ],
-      "Import/Export": [
-        ""
       ],
       "Multi-user support": [
         "Többfelhasználós lehetőség"
@@ -7078,7 +7069,7 @@
     },
     "Subscribe to calendar modal": {
       "Calendar URL": [
-        ""
+        "Naptár URL"
       ],
       "You can subscribe to someone else's calendar by pasting its URL below. This will give you access to a read-only version of this calendar.\n${ kbLink }": [
         ""
@@ -7094,7 +7085,7 @@
         ""
       ],
       "This link might be wrong": [
-        ""
+        "Ez a hivatkozás valószínűleg hibás"
       ]
     },
     "Subscribed calendar section description": {
@@ -7343,16 +7334,16 @@
     },
     "Time period": {
       "account creation date": [
-        ""
+        "fiók létrehozásának dátumától"
       ],
       "the last 12 months": [
-        ""
+        "az utóbbi 12 hónapból"
       ],
       "the last 3 months": [
-        ""
+        "az utóbbi 3 hónapból"
       ],
       "the last month": [
-        ""
+        "az utóbbi hónapból"
       ]
     },
     "Time unit": {
@@ -7497,6 +7488,9 @@
       "Back": [
         "Vissza"
       ],
+      "Backup & Export": [
+        ""
+      ],
       "Billing cycle": [
         "Számlázási ciklus"
       ],
@@ -7573,7 +7567,7 @@
         "Kapcsolatok"
       ],
       "Continue with partial import?": [
-        ""
+        "Folytatja részleges importálással?"
       ],
       "Coupon discount": [
         "Kupon kedvezmény"
@@ -7609,16 +7603,16 @@
         "Saját szűrők"
       ],
       "Customize and confirm": [
-        ""
+        "Testreszabás és jóváhagyás"
       ],
       "Customize calendar import": [
-        ""
+        "A naptár importálás testreszabása"
       ],
       "Customize import": [
         "Importálás beállításai"
       ],
       "Customize your mail import": [
-        ""
+        "Az e-mail importálás testreszabása"
       ],
       "Customize your plan": [
         "Csomag testreszabása"
@@ -7645,7 +7639,7 @@
         "${ Name } mappa törlése"
       ],
       "Delete ${ Name } label": [
-        ""
+        "${ Name } címke törlése"
       ],
       "Delete account": [
         "Fiók törlése"
@@ -7702,7 +7696,7 @@
         "E-mail titkosítási kulcsai"
       ],
       "Email privacy": [
-        ""
+        "E-mail adatvédelem"
       ],
       "Email subscriptions": [
         "E-mail feliratkozás"
@@ -7753,7 +7747,7 @@
         "Általános"
       ],
       "Generate key": [
-        ""
+        "Kulcs generálása"
       ],
       "Generate missing keys": [
         "Hiányzó kulcsok generálása"
@@ -7780,8 +7774,8 @@
         "Importálás és exportálás"
       ],
       "Import as simple event?": [
-        "",
-        ""
+        "Importálás egyszerű eseményként?",
+        "Importálás egyszerű eseményekként?"
       ],
       "Import Assistant": [
         "Import Assistant"
@@ -7793,7 +7787,7 @@
         "Események importálása"
       ],
       "Import failed": [
-        ""
+        "Importálás sikertelen"
       ],
       "Import groups": [
         "Csoportok importálása"
@@ -7805,13 +7799,10 @@
         "Kulcs importálása"
       ],
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
-        ""
+        "Importálás ${ PRODUCT_NAMES.EASY_SWITCH } segítségével"
       ],
       "Import-Export app": [
         "Import-Export alkalmazás"
-      ],
-      "Import/Export": [
-        ""
       ],
       "Invalid verification code": [
         "Érvénytelen ellenőrző kód"
@@ -7847,7 +7838,7 @@
         "Saját címek"
       ],
       "My calendars": [
-        ""
+        "Saját naptárak"
       ],
       "Network error": [
         "Hálózati hiba"
@@ -7970,7 +7961,7 @@
         "Új kód kérése"
       ],
       "Reset organization keys": [
-        ""
+        "Szervezeti kulcsok visszaállítása"
       ],
       "Reset password": [
         "Jelszó visszaállítása"
@@ -8006,7 +7997,7 @@
         "Válassza ki az emlékeztető elküldésének módját"
       ],
       "Select what to import": [
-        ""
+        "Válassza ki az importálandó dolgokat"
       ],
       "Select when you want this notification to be sent": [
         "Válassza ki az emlékeztető elküldésének időpontját"
@@ -8057,7 +8048,7 @@
         "Levélszemét szűrők"
       ],
       "Spy Tracker Protection": [
-        ""
+        "Kémkövető védelem"
       ],
       "Start a new import": [
         "Új importálás indítása"
@@ -8066,13 +8057,13 @@
         "Importálási folyamat indítása"
       ],
       "Start new import": [
-        ""
+        "Új importálás indítása"
       ],
       "Status": [
         "Állapot"
       ],
       "Subscribed calendars": [
-        ""
+        "Feliratkozott naptárak"
       ],
       "Subtotal": [
         "Részösszeg"
@@ -8223,7 +8214,7 @@
     },
     "Today icon tooltip in mini calendar": {
       "Today": [
-        ""
+        "Ma"
       ]
     },
     "Tooltip": {
@@ -8529,6 +8520,20 @@
         "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, és mások."
       ]
     },
+    "VPN Plan Feature": {
+      "${ n } server": [
+        "",
+        ""
+      ],
+      "${ n } VPN connection": [
+        "",
+        ""
+      ],
+      "${ numberOfServers } in ${ numberOfCountries } country": [
+        "",
+        ""
+      ]
+    },
     "VPN upsell feature": {
       "Access geo-blocked content (Netflix, YouTube, etc.)": [
         "Hozzáférés földrajzilag blokkol tartalomhoz (Netflix, YouTube stb.)"
@@ -8650,7 +8655,7 @@
     },
     "Weak personal key warning": {
       "This key no longer meets our security standards. We suggest you mark it as obsolete and generate a new key.": [
-        ""
+        "Ez a kulcs már nem felel meg a mai biztonsági igényeknek. Javasoljuk, hogy jelölje meg elavultként és hozzon létre új kulcsot."
       ]
     },
     "Weekly recurring event, frequency": {

@@ -873,6 +873,12 @@
       ]
     },
     "Calendar subscription not synced error": {
+      "Calendar could not be decrypted": [
+        "Kalendarz nie może zostać odszyfrowany"
+      ],
+      "Calendar could not be found": [
+        "Kalendarz nie został znaleziony"
+      ],
       "Calendar is syncing": [
         "Kalendarz jest synchronizowany"
       ],
@@ -1956,6 +1962,9 @@
       "Creating share": [
         "Tworzenie linku udostępniania"
       ],
+      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
+        "Pliki vCard w wersji 3.1 i 4.0 (kodowanie UTF-8) oraz CSV z programów Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora i kilku innych programów są obsługiwane."
+      ],
       "Delete drive": [
         "Usuń dysk",
         "Usuń dyski",
@@ -2338,7 +2347,7 @@
         "Zanim kontakty będą mogły zostać wyeksportowane, aplikacja musi je lokalnie odszyfrować. Pod koniec procesu zostanie wygenerowany plik VCF do pobrania."
       ],
       "There are no files yet": [
-        "Nie ma tu jeszcze żadnych plików"
+        "Nie masz tu jeszcze żadnych plików"
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Konto zostało zawieszone z powodu potencjalnego naruszenia regulaminu."
@@ -2355,8 +2364,8 @@
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Ten link może być atakiem homograficznym. Sprawdź, czy jest to link, który chcesz odwiedzić lub nie otwieraj go."
       ],
-      "This link was created in a previous version and can not be modified. Delete this link and create a new one to change the settings.": [
-        "Link został utworzony w poprzedniej wersji aplikacji i nie może być zmodyfikowany. Usuń link i utwórz nowy, aby zmienić jego ustawienia."
+      "This link was created in\na previous version and can not be modified. Delete this link and create a\nnew one to change the settings.": [
+        "Link został utworzony\nw poprzedniej wersji aplikacji i nie może być zmodyfikowany. Usuń link i utwórz nowy,\naby zmienić jego ustawienia."
       ],
       "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
         "Link zostanie wyłączony. Nikt, kto posiada link, nie będzie mógł uzyskać dostępu do pliku. Jeśli chcesz ponownie udostępnić plik, będziesz musiał utworzyć nowy link."
@@ -2432,9 +2441,6 @@
       ],
       "VPN + ${ mailAppName } bundle for families and small businesses.": [
         "Pakiet VPN + ${ mailAppName } dla rodzin i małych firm."
-      ],
-      "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
-        "Wspieramy importowanie plików CSV z programów Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora i kilku innych. Możliwe jest także importowanie plików vCard 4.0. (kodowanie UTF-8)."
       ],
       "We use 3-D Secure to protect your payments.": [
         "Korzystamy z 3-D Secure, aby zabezpieczyć Twoje płatności."
@@ -3366,8 +3372,17 @@
       ]
     },
     "Mail import summary": {
-      "${ messagesFragment } since ${ periodFragment } and label them as ${ label }": [
-        "${ messagesFragment } od ${ periodFragment } oznacz je etykietą ${ label }"
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        "Importuj wiadomości z niektórymi etykietami (${ selectedLabelsCount }/${ totalLabelsCount }) od ${ periodFragment } i oznacz je etykietą ${ label }",
+        "Importuj wiadomości z niektórymi etykietami (${ selectedLabelsCount }/${ totalLabelsCount }) od ${ periodFragment } i oznacz je etykietą ${ label }",
+        "Importuj wiadomości z niektórymi etykietami (${ selectedLabelsCount }/${ totalLabelsCount }) od ${ periodFragment } i oznacz je etykietą ${ label }",
+        "Importuj wiadomości z niektórymi etykietami (${ selectedLabelsCount }/${ totalLabelsCount }) od ${ periodFragment } i oznacz je etykietą ${ label }"
+      ],
+      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        "Importuj wiadomości z ${ totalLabelsCount } etykietą od ${ periodFragment } i oznacz je etykietą ${ label }",
+        "Importuj wiadomości z ${ totalLabelsCount } etykiet od ${ periodFragment } i oznacz je etykietą ${ label }",
+        "Importuj wiadomości z ${ totalLabelsCount } etykiet od ${ periodFragment } i oznacz je etykietą ${ label }",
+        "Importuj wiadomości z ${ totalLabelsCount } etykiet od ${ periodFragment } i oznacz je etykietą ${ label }"
       ]
     },
     "Many Others": {
@@ -3406,19 +3421,19 @@
     },
     "Notification": {
       "\"${ _firstItemName }\" successfully moved": [
-        "Plik \"${ _firstItemName }\" został przeniesiony"
+        "Element \"${ _firstItemName }\" został przeniesiony"
       ],
       "\"${ firstItemName }\" deleted permanently from trash": [
-        "Plik \"${ firstItemName }\" został trwale usunięty"
+        "Element \"${ firstItemName }\" został trwale usunięty"
       ],
       "\"${ firstItemName }\" failed to be moved": [
-        "Przenoszenie pliku \"${ firstItemName }\" nie powiodło się"
+        "Przenoszenie elementu \"${ firstItemName }\" nie powiodło się"
       ],
       "\"${ firstItemName }\" moved to trash": [
-        "Plik \"${ firstItemName }\" został przeniesiony do Kosza"
+        "Element \"${ firstItemName }\" został przeniesiony do Kosza"
       ],
       "\"${ firstItemName }\" restored from trash": [
-        "Plik \"${ firstItemName }\" został przywrócony z Kosza"
+        "Element \"${ firstItemName }\" został przywrócony z Kosza"
       ],
       "${ deletedCount } link to your file was deleted": [
         "Link do pliku został usunięty",
@@ -3815,11 +3830,11 @@
       "1 user": [
         "1 użytkownik"
       ],
-      "1200+ servers in ${ plusCountries } country": [
-        "Ponad 1200 serwerów w ${ plusCountries } kraju",
-        "Ponad 1200 serwerów w ${ plusCountries } krajach",
-        "Ponad 1200 serwerów w ${ plusCountries } krajach",
-        "Ponad 1200 serwerów w ${ plusCountries } krajach"
+      "1300+ servers in ${ plusCountries } country": [
+        "Ponad 1300 serwerów w ${ plusCountries } kraju",
+        "Ponad 1300 serwerów w ${ plusCountries } krajach",
+        "Ponad 1300 serwerów w ${ plusCountries } krajach",
+        "Ponad 1300 serwerów w ${ plusCountries } krajach"
       ],
       "20 GB storage": [
         "20 GB przestrzeni dyskowej"
@@ -4055,8 +4070,8 @@
       "You have successfully unsubscribed": [
         "Subskrypcja została anulowana"
       ],
-      "Your files were successfully recovered to \"My files\"": [
-        "Pliki zostały odzyskane do sekcji \"Moje pliki\""
+      "Your files were successfully recovered to \"My files\".": [
+        "Pliki zostały odzyskane do sekcji \"Moje pliki\"."
       ]
     },
     "Suffix for price": {
@@ -4916,9 +4931,6 @@
       ],
       "You will lose any customization you made so far.": [
         "Dotychczasowa personalizacja importu zostanie utracona."
-      ],
-      "Your local date & time settings seem to be out of sync.": [
-        "Twoje ustawienia daty i czasu nie są zsynchronizowane."
       ]
     }
   }

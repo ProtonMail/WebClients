@@ -818,6 +818,9 @@
       "Try another method": [
         "更换验证方式"
       ],
+      "Turn on tracker protection": [
+        ""
+      ],
       "Underline": [
         "下划线"
       ],
@@ -942,7 +945,7 @@
         "+ ${ storage } 存储空间"
       ],
       "+ ${ vpn } connection": [
-        "+ ${ vpn } VPN 连接数"
+        "+ ${ vpn } 台设备可同时接入 VPN"
       ]
     },
     "Alert": {
@@ -1429,6 +1432,12 @@
       ]
     },
     "Calendar subscription not synced error": {
+      "Calendar could not be decrypted": [
+        ""
+      ],
+      "Calendar could not be found": [
+        ""
+      ],
       "Calendar is syncing": [
         "日历正在同步中"
       ],
@@ -1449,6 +1458,14 @@
       ],
       "More than 12 hours passed since last update": [
         "离上一个更新已经超过了12小时"
+      ]
+    },
+    "Collapsible tooltip": {
+      "Close": [
+        ""
+      ],
+      "Open": [
+        ""
       ]
     },
     "Composer email icon": {
@@ -1867,7 +1884,7 @@
         "金额太小。"
       ],
       "Attachments are limited to 25 MB": [
-        ""
+        "附件大小不能超过 25 MB"
       ],
       "Authentication canceled.": [
         "验证已取消。"
@@ -1876,13 +1893,13 @@
         "验证出错。"
       ],
       "Calendar limit reached": [
-        ""
+        "日历数量达到上限"
       ],
       "Calendar primary private key is not decrypted": [
         "日历主密钥未解密。"
       ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
-        ""
+        "由于个人日历限制，无法为所有导入的日历创建新日历。"
       ],
       "Can't validate email, try again later": [
         "无法验证邮箱，请重试"
@@ -1891,7 +1908,7 @@
         "无法验证手机，请稍候再试"
       ],
       "Checkout expired, please try again": [
-        ""
+        "支付超时，请重试"
       ],
       "Choose a date in the future.": [
         "选择未来的日期。"
@@ -1915,7 +1932,7 @@
         ""
       ],
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
-        ""
+        "此浏览器无法开启全文搜索，请退出隐私浏览模式或使用其他浏览器。"
       ],
       "Could not find address ${ email }.": [
         "找不到邮箱 ${ email }。"
@@ -1924,7 +1941,7 @@
         "解密失败：此邮件内容解密失败"
       ],
       "Deselect at least ${ calendarToFixCount } calendar or": [
-        ""
+        "取消选择至少 ${ calendarToFixCount } 个日历或者"
       ],
       "Draft could not be saved. Try again.": [
         "草稿保存失败，请重试。"
@@ -1969,7 +1986,7 @@
         "这个名称已经用过了"
       ],
       "Folder name cannot be empty": [
-        ""
+        "文件夹名称不能为空"
       ],
       "Image upload failed": [
         "图像上传失败"
@@ -2008,10 +2025,10 @@
         "验证码无效"
       ],
       "Label name cannot be empty": [
-        ""
+        "标签名称不能为空"
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
-        ""
+        "将至少 ${ calendarToFixCount } 个日历与现有的 Proton 日历合并"
       ],
       "Message needs to be sent first": [
         "需要先发送邮件"
@@ -2041,7 +2058,7 @@
         "没有为内部用户检索到密钥"
       ],
       "No valid address found": [
-        ""
+        "未找到有效地址"
       ],
       "No valid keys retrieved for internal user": [
         "没有为内部用户检索到有效密钥"
@@ -2077,7 +2094,7 @@
         "请重新开启全文搜索"
       ],
       "Please fix the highlighted conflict to proceed.": [
-        ""
+        "请修复高亮的冲突以继续。"
       ],
       "Please refresh the page.": [
         "请刷新页面。"
@@ -2086,10 +2103,10 @@
         "设置保存失败"
       ],
       "Primary address key is not decrypted": [
-        ""
+        "主密钥尚未解密"
       ],
       "Primary address key is not decrypted.": [
-        ""
+        "主密钥尚未解密。"
       ],
       "Process aborted": [
         "操作已中止"
@@ -2128,10 +2145,10 @@
         "无法删除部分群组"
       ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
-        ""
+        "部分标签名称不可用，请自定导入内容并予以更改。"
       ],
       "Some of your label names exceed ProtonMail's maximum character limit. Please customize the import to edit these names.": [
-        ""
+        "部分标签名称超出了 ProtonMail 的长度限制，请自定导入内容并予以更改。"
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "发生错误，请${ refresh }后重试。若仍出现此错误，请联系我们的${ supportTeam }。"
@@ -2152,13 +2169,13 @@
         "编辑器加载失败。"
       ],
       "The folder name is too long. Please choose a different name.": [
-        ""
+        "文件夹名称过长，请重新填写。"
       ],
       "The key properties for ${ emailAddress } could not be extracted": [
         "无法提取${ emailAddress } 的密钥属性"
       ],
       "The label name is too long. Please choose a different name.": [
-        ""
+        "标签名称过长，请重新填写。"
       ],
       "The maximum expiration is 4 weeks": [
         ""
@@ -2176,7 +2193,7 @@
         "发送密钥无效"
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
-        ""
+        "待导入账户的文件夹过多，请自定义导入内容并删除部分文件夹。"
       ],
       "There has been an issue with content search. Default search has been used instead.": [
         ""
@@ -2191,13 +2208,13 @@
         "该字段至少需要 ${ minimumLength } 个字符。"
       ],
       "This folder name is not available. Please choose a different name": [
-        ""
+        "文件夹名称不可用，请重新填写。"
       ],
       "This label name is not available. Please choose a different name": [
-        ""
+        "标签名称不可用，请重新填写。"
       ],
       "This message has already been sent": [
-        ""
+        "此邮件已发送"
       ],
       "This message has already been sent. A new draft has been saved.": [
         "此邮件已发送，已保存新草稿。"
@@ -2761,7 +2778,7 @@
         "找到 ${ groupCounts } 个群组"
       ],
       "${ mailAppName } Free": [
-        "${ mailAppName } 免费"
+        "${ mailAppName } 免费版"
       ],
       "${ mailAppName } Professional starts with one user, and each user adds 5 GB and 5 email addresses to the organization’s pool.": [
         "${ mailAppName } Professional 最低一个用户，每添加一个用户，会为组织添加 5GB 空间和 5 个电子邮箱别名。"
@@ -2774,9 +2791,6 @@
       ],
       "${ numberOfTrackers } email tracker blocked": [
         "已屏蔽 ${ numberOfTrackers } 个电子邮件跟踪器"
-      ],
-      "${ numberOfTrackers } email tracker found": [
-        ""
       ],
       "${ numContactGroups } contact group": [
         ""
@@ -2836,7 +2850,7 @@
         "${ updated } 联系人更新成功。"
       ],
       "${ vpnAppName } Free": [
-        "${ vpnAppName } 免费"
+        "${ vpnAppName } 免费版"
       ],
       "(${ memberCount } member)": [
         "（${ memberCount } 位成员）"
@@ -2848,7 +2862,7 @@
         "（满足下列任一条件）"
       ],
       "(Mail + VPN)": [
-        "(邮件 + VPN)"
+        "(邮箱 + VPN)"
       ],
       "(No Recipient)": [
         "(无收件人)"
@@ -3007,7 +3021,7 @@
         "正文： "
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
-        "降级为免费用户后，您将永远失去这些特权，无论以后是否再开通付费账户。"
+        "一旦降级为免费用户，无论今后是否再次付费升级，您都将永远失去这些特权。"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "记不住密码？我们可以帮助您清除使用此密钥加密的所有联系人的加密数据，并在此过程中忽略警告。"
@@ -3068,6 +3082,9 @@
       ],
       "Create recovery phrase": [
         "创建恢复密语"
+      ],
+      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
+        ""
       ],
       "Custom": [
         "自定义"
@@ -3138,6 +3155,18 @@
       "Email address": [
         "邮箱地址"
       ],
+      "Email tracker protection is disabled": [
+        ""
+      ],
+      "Email trackers can violate your privacy. Proton did not find any trackers on this message.": [
+        ""
+      ],
+      "Email trackers can violate your privacy. Proton found and blocked ${ numberOfTrackers } tracker.": [
+        ""
+      ],
+      "Email trackers can violate your privacy. Turn on tracker protection to prevent senders from knowing whether and when you have opened a message.": [
+        ""
+      ],
       "embedded image": [
         "嵌入的图像"
       ],
@@ -3205,7 +3234,7 @@
         "发件人"
       ],
       "Full-featured VPN with speed up to 10 Gbps.": [
-        "全功能的 VPN 速度最高为 10 Gbps."
+        "速度高达 10 Gbps 的全功能 VPN。"
       ],
       "Get more storage and premium features.": [
         "获取更多存储空间和高级功能。"
@@ -3415,7 +3444,7 @@
         "无法自定义"
       ],
       "Number of VPN connections which can be assigned to users. Each connected device consumes one VPN connection.": [
-        "可以分配给用户的 VPN 连接数。每个已连接的设备消耗一个 VPN 连接。"
+        "可分配给用户的 VPN 连接数，每台连接设备占用一个名额。"
       ],
       "of": [
         "，共"
@@ -3501,9 +3530,6 @@
       "Print email": [
         "打印邮件"
       ],
-      "Protect yourself from trackers. Turn on email tracker protection in settings": [
-        ""
-      ],
       "Proton doesn't make money by abusing privacy.": [
         "Proton 不会通过滥用用户隐私来赚钱。"
       ],
@@ -3514,7 +3540,7 @@
         "ProtonMail Plus 仅限一名用户使用，5 GB 存储空间起步。"
       ],
       "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } includes ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } VPN connection.": [
-        "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } 允许最多 ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } 个设备连接。"
+        "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } 最多允许 ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } 台设备同时连接。"
       ],
       "Recipient: ": [
         "收件人："
@@ -3628,10 +3654,10 @@
         "客服团队"
       ],
       "Switch to ${ professionalPlan } to add more connections.": [
-        "升级到 ${ professionalPlan } 以添加更多用户。"
+        "开通 ${ professionalPlan } 可连接更多设备。"
       ],
       "Switch to ${ professionalPlan } to add more users.": [
-        "升级到 ${ professionalPlan } 以添加更多用户。"
+        "开通 ${ professionalPlan } 可添加更多用户。"
       ],
       "Taking too long?": [
         ""
@@ -3750,9 +3776,6 @@
       "To fight spam and abuse, please verify you are human.": [
         "为防止滥发邮件，请验证您是真人操作。"
       ],
-      "To protect your privacy, Proton blocked email trackers in this message": [
-        ""
-      ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "要给联系人重新签名，我们需要对照您账户中可用的密钥列表来检查每一位联系人。如果找不到匹配项，您的联系人将使用主密钥重新签名。"
       ],
@@ -3773,6 +3796,9 @@
       ],
       "Turn off content search. Activation progress won't be lost.": [
         "关闭全文搜索，现有进度不会丢失。"
+      ],
+      "Turn on to search the content of your messages": [
+        ""
       ],
       "Unsupported file": [
         "不支持文件"
@@ -3844,16 +3870,13 @@
         "访问我们的商店以获取 Proton 商品。"
       ],
       "VPN + ${ mailAppName } bundle for families and small businesses.": [
-        "VPN + ${ mailAppName } 捆包用于家庭和小企业。"
+        "VPN + ${ mailAppName } 套装，适合家庭和小企业。"
       ],
       "We apologize. This might have been a mistake from our side. Can you please confirm that you want to mark this email as a legitimate one?": [
         "很抱歉，这可能是我们的失误。确定要将此邮件标为非垃圾邮件吗？"
       ],
       "We could not verify the sender's trusted keys.": [
         "我们无法验证发件人的可信密钥。"
-      ],
-      "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
-        "我们支持从 Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora 等应用中导入 CSV 文件或导入 UTF-8 编码的 vCard 4.0 文件。"
       ],
       "We use 3-D Secure to protect your payments.": [
         "我们使用 3-D Secure 保护您的支付安全。"
@@ -4646,7 +4669,7 @@
         "合计"
       ],
       "Total (${ countdown })": [
-        "合计 (${ countdown })"
+        "合计（${ countdown }）"
       ],
       "Two-factor authentication code": [
         "双重认证验证码"
@@ -5002,7 +5025,10 @@
       ]
     },
     "Mail import summary": {
-      "${ messagesFragment } since ${ periodFragment } and label them as ${ label }": [
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        ""
+      ],
+      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
         ""
       ]
     },
@@ -5491,18 +5517,7 @@
         "姓名"
       ]
     },
-    "Plan Feature": {
-      "${ n } server": [
-        "${ n } 台服务器"
-      ],
-      "${ n } VPN connection": [
-        "${ n } VPN 连接"
-      ]
-    },
     "Plan feature": {
-      "${ freeServers } in ${ freeCountries } country": [
-        "${ freeCountries } 个国家的 ${ freeServers }"
-      ],
       "0.5 GB storage": [
         "0.5 GB 存储空间"
       ],
@@ -5515,9 +5530,6 @@
       "1 user": [
         "1 名用户"
       ],
-      "1200+ servers in ${ plusCountries } country": [
-        "${ plusCountries } 个国家的 1200+ 台服务器"
-      ],
       "20 GB storage": [
         "20 GB 存储空间"
       ],
@@ -5526,9 +5538,6 @@
       ],
       "3 folders / labels": [
         "3 个文件夹/标签"
-      ],
-      "350+ servers in ${ basicCountries } country": [
-        "${ basicCountries }+ 个国家的 350+ 台服务器"
       ],
       "5 addresses": [
         "5 个地址 *"
@@ -5570,7 +5579,7 @@
         "速度较快"
       ],
       "Highest speed (up to 10 Gbps)": [
-        "速度最快（最高可达 10 Gbps）"
+        "速度最快（可达 10 Gbps）"
       ],
       "Includes 6 user accounts": [
         "包括6个用户帐户"
@@ -6657,7 +6666,7 @@
         "收件人"
       ],
       "Total (monthly)": [
-        "合计（按月）"
+        "合计（每月）"
       ],
       "Trust new key?": [
         "信任新密钥？"
@@ -6869,7 +6878,7 @@
         "容量/带宽上限"
       ],
       "VPN Connections": [
-        "VPN 接入量"
+        "VPN 连接数"
       ],
       "VPN servers": [
         "VPN 服务器"
@@ -6896,6 +6905,17 @@
       ],
       "Windows, macOS, iOS, Linux, Android, Android TV, Chromebook, Chromecast": [
         "Windows、macOS、iOS、Linux、Android、Android TV、Chromebook、Chromecast"
+      ]
+    },
+    "VPN Plan Feature": {
+      "${ n } server": [
+        ""
+      ],
+      "${ n } VPN connection": [
+        ""
+      ],
+      "${ numberOfServers } in ${ numberOfCountries } country": [
+        ""
       ]
     },
     "Warning": {

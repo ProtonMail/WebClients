@@ -867,6 +867,12 @@
       ]
     },
     "Calendar subscription not synced error": {
+      "Calendar could not be decrypted": [
+        "Calendarul nu a putut fi decriptat"
+      ],
+      "Calendar could not be found": [
+        "Calendarul nu a putut fi găsit"
+      ],
       "Calendar is syncing": [
         "Calendarul se sincronizează."
       ],
@@ -1910,6 +1916,9 @@
       "Creating share": [
         "Creare partajare"
       ],
+      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
+        "Sunt acceptate fișierele CSV din Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora și alte aplicații, precum și formatele vCard 3.1 și 4.0 (codificare UTF-8)."
+      ],
       "Delete drive": [
         "Ștergeți unitatea",
         "Ștergeți unitățile",
@@ -2306,8 +2315,8 @@
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Această legătură ar putea fi un atac omoglific. Verificați adresa pe care doriți să o vizitați sau nu o deschideți."
       ],
-      "This link was created in a previous version and can not be modified. Delete this link and create a new one to change the settings.": [
-        "Această legătură a fost creată într-o versiune anterioară și nu poate fi modificată. Ștergeți-o și creați una nouă pentru a schimba setările."
+      "This link was created in\na previous version and can not be modified. Delete this link and create a\nnew one to change the settings.": [
+        "Acest link a fost creat în\no versiune anterioară și nu poate fi modificată. Ștergeți acest link și creați un link\nunul nou pentru a modifica setările."
       ],
       "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
         "Această legătură va fi dezactivată definitiv. Oricine are această legătură nu va mai putea accesa fişierul. Pentru a repartaja fișierul, veți avea nevoie de o legătură nouă."
@@ -2382,9 +2391,6 @@
       ],
       "VPN + ${ mailAppName } bundle for families and small businesses.": [
         "VPN + ${ mailAppName } pachet pentru familii și afaceri mici."
-      ],
-      "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
-        "Este suportată importarea fișierelor CSV din Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora și alte aplicații. Este suportată și importarea fișierelor vCard 4.0 (codificate UTF-8)."
       ],
       "We use 3-D Secure to protect your payments.": [
         "Folosim 3-D Secure pentru a vă proteja plățile."
@@ -3314,8 +3320,15 @@
       ]
     },
     "Mail import summary": {
-      "${ messagesFragment } since ${ periodFragment } and label them as ${ label }": [
-        "${ messagesFragment } de la (din) ${ periodFragment } și etichetare ca ${ label }"
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        "Importați toate mesajele de la ${ selectedLabelsCount } din ${ totalLabelsCount } eticheta de la ${ periodFragment } și etichetați-le ca ${ label }",
+        "Importă toate mesajele din ${ selectedLabelsCount } din ${ totalLabelsCount } etichete de la ${ periodFragment } și le etichetează ca ${ label }",
+        "Importă toate mesajele din ${ selectedLabelsCount } din ${ totalLabelsCount } de etichete de la ${ periodFragment } și le etichetează ca ${ label }"
+      ],
+      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        "Importați toate mesajele de la eticheta ${ totalLabelsCount } de la ${ periodFragment } și etichetați-le ca ${ label }",
+        "Importați toate mesajele din ${ totalLabelsCount } etichete de la ${ periodFragment } și etichetați-le ca ${ label }",
+        "Importați toate mesajele din ${ totalLabelsCount } de etichete de la ${ periodFragment } și etichetați-le ca ${ label }"
       ]
     },
     "Many Others": {
@@ -3736,10 +3749,10 @@
       "1 user": [
         "Un utilizator"
       ],
-      "1200+ servers in ${ plusCountries } country": [
-        "Peste 1200 de servere într-o țară",
-        "Peste 1200 de servere în ${ plusCountries } țări",
-        "Peste 1200 de servere în ${ plusCountries } de țări"
+      "1300+ servers in ${ plusCountries } country": [
+        "1300+ servere în ${ plusCountries } țară",
+        "1300+ servere în ${ plusCountries } țări",
+        "1300+ servers in ${ plusCountries } de țări"
       ],
       "20 GB storage": [
         "20 GB spațiu"
@@ -3970,8 +3983,8 @@
       "You have successfully unsubscribed": [
         "Operația de dezabonare a fost finalizată."
       ],
-      "Your files were successfully recovered to \"My files\"": [
-        "Fișierele voastre au fost recuperate cu succes în \"Fișierele mele\""
+      "Your files were successfully recovered to \"My files\".": [
+        "Fișierele au fost recuperate cu succes în „Fișierele mele”."
       ]
     },
     "Suffix for price": {
@@ -4822,9 +4835,6 @@
       ],
       "You will lose any customization you made so far.": [
         "Veți pierde orice modificare făcută până acum."
-      ],
-      "Your local date & time settings seem to be out of sync.": [
-        "Setările locale de dată și oră par să nu fie sincronizate."
       ]
     }
   }

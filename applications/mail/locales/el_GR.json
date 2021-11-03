@@ -822,6 +822,9 @@
       "Try another method": [
         "Δοκιμάστε μια άλλη μέθοδο"
       ],
+      "Turn on tracker protection": [
+        "Ενεργοποίηση προστασίας από ιχνηλάτες"
+      ],
       "Underline": [
         "Υπογράμμιση"
       ],
@@ -1437,6 +1440,12 @@
       ]
     },
     "Calendar subscription not synced error": {
+      "Calendar could not be decrypted": [
+        "Αδυναμία αποκρυπτογράφησης ημερολογίου"
+      ],
+      "Calendar could not be found": [
+        "Αδυναμία εύρεσης ημερολογίου"
+      ],
       "Calendar is syncing": [
         "Το ημερολόγιο συγχρονίζεται"
       ],
@@ -1457,6 +1466,14 @@
       ],
       "More than 12 hours passed since last update": [
         "Πέρασαν πάνω από 12 ώρες από την τελευταία ανανέωση"
+      ]
+    },
+    "Collapsible tooltip": {
+      "Close": [
+        "Κλείσιμο"
+      ],
+      "Open": [
+        "Άνοιγμα"
       ]
     },
     "Composer email icon": {
@@ -2229,7 +2246,7 @@
         "Αυτό το μήνυμα μπορεί να περιέχει κάποιο σύνδεσμο URL που δεν μπορεί να ανοίξει σωστά από το τρέχον πρόγραμμα περιήγησης"
       ],
       "Too many active filters. Please upgrade to a paid plan to activate more filters.": [
-        ""
+        "Πάρα πολλά ενεργά φίλτρα. Παρακαλώ αναβαθμίστε σε ένα πληρωμένο πρόγραμμα για να ενεργοποιήσετε περισσότερα φίλτρα."
       ],
       "Trusted keys are not valid for sending": [
         "Τα αξιόπιστα κλειδιά δεν είναι έγκυρα για την αποστολή"
@@ -2816,10 +2833,6 @@
         "${ numberOfTrackers } ιχνηλάτης μηνυμάτων εμποδίστηκε",
         "${ numberOfTrackers } ιχνηλάτες μηνυμάτων εμποδίστηκαν"
       ],
-      "${ numberOfTrackers } email tracker found": [
-        "Βρέθηκε ${ numberOfTrackers } ιχνηλάτης μηνυμάτων",
-        "Βρέθηκαν ${ numberOfTrackers } ιχνηλάτες μηνυμάτων"
-      ],
       "${ numContactGroups } contact group": [
         "${ numContactGroups } ομάδα επαφών",
         "${ numContactGroups } ομάδες επαφών"
@@ -3135,6 +3148,9 @@
       "Create recovery phrase": [
         "Δημιουργία φράσης ανάκτησης"
       ],
+      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
+        "Υποστηρίζονται αρχεία CSV από Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora και κάποιες άλλες εφαρμογές, καθώς και μορφές vCard 3.1 και 4.0 (κωδικοποίηση UTF-8)."
+      ],
       "Custom": [
         "Προσαρμοσμένο"
       ],
@@ -3205,6 +3221,19 @@
       ],
       "Email address": [
         "Διεύθυνση E-mail"
+      ],
+      "Email tracker protection is disabled": [
+        "Η προστασία από ιχνηλάτες είναι απενεργοποιημένη"
+      ],
+      "Email trackers can violate your privacy. Proton did not find any trackers on this message.": [
+        "Οι ιχνηλάτες μηνυμάτων μπορούν να παραβιάσουν το απόρρητό σας. Το Proton δεν βρήκε κανέναν ιχνηλάτη σε αυτό το μήνυμα."
+      ],
+      "Email trackers can violate your privacy. Proton found and blocked ${ numberOfTrackers } tracker.": [
+        "Οι ιχνηλάτες μηνυμάτων μπορούν να παραβιάσουν το απόρρητό σας. Το Proton βρήκε και απέκλεισε ${ numberOfTrackers } ιχνηλάτη.",
+        "Οι ιχνηλάτες μηνυμάτων μπορούν να παραβιάσουν το απόρρητό σας. Το Proton βρήκε και απέκλεισε ${ numberOfTrackers } ιχνηλάτες."
+      ],
+      "Email trackers can violate your privacy. Turn on tracker protection to prevent senders from knowing whether and when you have opened a message.": [
+        "Οι ιχνηλάτες μηνυμάτων μπορούν να παραβιάσουν το απόρρητό σας. Ενεργοποιείστε την προστασία από ιχνηλάτες, στερώντας στους αποστολείς τη γνώση του αν και πότε ανοίξατε ένα μήνυμα."
       ],
       "embedded image": [
         "ενσωματωμένη εικόνα",
@@ -3576,9 +3605,6 @@
       "Print email": [
         "Εκτύπωση email"
       ],
-      "Protect yourself from trackers. Turn on email tracker protection in settings": [
-        "Προστατευθείτε από ιχνηλάτες. Ενεργοποιήστε στις ρυθμίσεις την προστασία από ιχνηλάτες μηνυμάτων"
-      ],
       "Proton doesn't make money by abusing privacy.": [
         "Το Proton δε βγάζει λεφτά κάνοντας κατάχρηση απόρρητου."
       ],
@@ -3827,9 +3853,6 @@
       "To fight spam and abuse, please verify you are human.": [
         "Για την καταπολέμηση των ανεπιθύμητων μηνυμάτων και της κατάχρησης, επαληθεύστε ότι είστε άνθρωποι."
       ],
-      "To protect your privacy, Proton blocked email trackers in this message": [
-        "Για την προστασία του απορρήτου σας, το Proton απέκλεισε τους ιχνηλάτες εντός αυτού του μηνύματος"
-      ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "Για να υπογράψουμε εκ νέου τις επαφές σας, πρέπει να ελέγξουμε κάθε επαφή με τη λίστα των κλειδιών κρυπτογράφησης που είναι διαθέσιμα στο λογαριασμό σας. Αν δεν βρεθεί αντιστοιχία, η επαφή σας θα επανσυνδεθεί με το πρωτεύον κλειδί κρυπτογράφησης."
       ],
@@ -3850,6 +3873,9 @@
       ],
       "Turn off content search. Activation progress won't be lost.": [
         "Απενεργοποιήστε την αναζήτηση περιεχομένου. Η πρόοδος ενεργοποίησης δεν θα χαθεί."
+      ],
+      "Turn on to search the content of your messages": [
+        "Ενεργοποιήστε για αναζήτηση στο περιεχόμενο των μηνυμάτων σας"
       ],
       "Unsupported file": [
         "Μη υποστηριζόμενο αρχείο"
@@ -3928,9 +3954,6 @@
       ],
       "We could not verify the sender's trusted keys.": [
         "Δεν μπορούμε να επαληθεύσουμε τα έμπιστα κλειδιά του αποστολέα."
-      ],
-      "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
-        "Υποστηρίζουμε την εισαγωγή αρχείων CSV από το Outlook, το Outlook Express, το Yahoo! Mail, Hotmail, Eudora και κάποιες άλλες εφαρμογές. Υποστηρίζουμε επίσης την εισαγωγή του vCard 4.0. (Κωδικοποίηση UTF-8)."
       ],
       "We use 3-D Secure to protect your payments.": [
         "Χρησιμοποιούμε ασφάλεια 3-D για να προστατεύσουμε τις πληρωμές σας."
@@ -5090,8 +5113,13 @@
       ]
     },
     "Mail import summary": {
-      "${ messagesFragment } since ${ periodFragment } and label them as ${ label }": [
-        "${ messagesFragment } μέχρι ${ periodFragment } και επισημάνετε τα ως ${ label }"
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        "Εισαγάγετε όλα τα μηνύματα από ${ selectedLabelsCount } από ${ totalLabelsCount } ετικέτα από ${ periodFragment } και επισημάνετε τα με ετικέτα ${ label }",
+        "Εισαγάγετε όλα τα μηνύματα από ${ selectedLabelsCount } από ${ totalLabelsCount } ετικέτες από ${ periodFragment } και επισημάνετε τα με ετικέτα ${ label }"
+      ],
+      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        "Εισαγάγετε όλα τα μηνύματα από ${ totalLabelsCount } ετικέτα από ${ periodFragment } και επισημάνετε τα με ετικέτα ${ label }",
+        "Εισαγάγετε όλα τα μηνύματα από ${ totalLabelsCount } ετικέτες από ${ periodFragment } και επισημάνετε τα με ετικέτα ${ label }"
       ]
     },
     "Mailbox": {
@@ -5582,21 +5610,7 @@
         "Όνομα"
       ]
     },
-    "Plan Feature": {
-      "${ n } server": [
-        "${ n } διακομιστής",
-        "${ n } διακομιστές"
-      ],
-      "${ n } VPN connection": [
-        "${ n } σύνδεση VPN",
-        "${ n } συνδέσεις VPN"
-      ]
-    },
     "Plan feature": {
-      "${ freeServers } in ${ freeCountries } country": [
-        "${ freeServers } σε ${ freeCountries } χώρα",
-        "${ freeServers } σε ${ freeCountries } χώρες"
-      ],
       "0.5 GB storage": [
         "0.5 GB αποθηκευτικός χώρος"
       ],
@@ -5609,10 +5623,6 @@
       "1 user": [
         "1 χρήστης"
       ],
-      "1200+ servers in ${ plusCountries } country": [
-        "1200+ διακομιστές σε ${ plusCountries } χώρα",
-        "1200+ διακομιστές σε ${ plusCountries } χώρες"
-      ],
       "20 GB storage": [
         "20 GB αποθηκευτικός χώρος"
       ],
@@ -5621,10 +5631,6 @@
       ],
       "3 folders / labels": [
         "3 φάκελοι / ετικέτες"
-      ],
-      "350+ servers in ${ basicCountries } country": [
-        "350+ διακομιστές σε ${ basicCountries } χώρα",
-        "350+ διακομιστές σε ${ basicCountries }+ χώρες"
       ],
       "5 addresses": [
         "5 διευθύνσεις"
@@ -6109,7 +6115,7 @@
         "Η συνομιλία σημάνθηκε ως διαβασμένη."
       ],
       "Conversation marked as Starred.": [
-        ""
+        "Η συνομιλία σημάνθηκε με Αστέρι."
       ],
       "Conversation marked as unread.": [
         "Η συνομιλία σημάνθηκε ως μη διαβασμένη."
@@ -6166,7 +6172,7 @@
         "Το μήνυμα σημάνθηκε ως διαβασμένο."
       ],
       "Message marked as Starred.": [
-        ""
+        "Το μήνυμα σημάνθηκε με Αστέρι."
       ],
       "Message marked as unread.": [
         "Το μήνυμα σημάνθηκε ως μη διαβασμένο."
@@ -6677,7 +6683,7 @@
         "Άνοιγμα αναπτυσσόμενων επιλογών"
       ],
       "Open help menu": [
-        "Έγινε άνοιγμα μενού βοήθειας"
+        "Άνοιγμα μενού βοήθειας"
       ],
       "Open settings menu": [
         "Άνοιγμα μενού ρυθμίσεων"
@@ -6822,7 +6828,7 @@
         "Σφάλμα επαλήθευσης"
       ],
       "View contacts": [
-        "Εφαρμογή επαφών"
+        "Προβολή επαφών"
       ],
       "Warning": [
         "Προειδοποίηση"
@@ -7038,6 +7044,20 @@
       ],
       "Windows, macOS, iOS, Linux, Android, Android TV, Chromebook, Chromecast": [
         "Windows, macOS, iOS, Linux, Android, Android TV, Chromebook, Chromecast"
+      ]
+    },
+    "VPN Plan Feature": {
+      "${ n } server": [
+        "${ n } διακομιστής",
+        "${ n }+ διακομιστές"
+      ],
+      "${ n } VPN connection": [
+        "${ n } σύνδεση VPN",
+        "${ n } συνδέσεις VPN"
+      ],
+      "${ numberOfServers } in ${ numberOfCountries } country": [
+        "${ numberOfServers } σε ${ numberOfCountries } χώρα",
+        "${ numberOfServers } σε ${ numberOfCountries } χώρες"
       ]
     },
     "Warning": {

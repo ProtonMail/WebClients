@@ -886,6 +886,12 @@
       ]
     },
     "Calendar subscription not synced error": {
+      "Calendar could not be decrypted": [
+        "Kalender konnte nicht entschlüsselt werden"
+      ],
+      "Calendar could not be found": [
+        "Kalender konnte nicht gefunden werden"
+      ],
       "Calendar is syncing": [
         "Kalender wird synchronisiert"
       ],
@@ -2101,6 +2107,9 @@
       "Create in": [
         ""
       ],
+      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
+        "CSV-Dateien aus Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora und einigen anderen Anwendungen sowie die Formate vCard 3.1 und 4.0 (UTF-8-Kodierung) werden unterstützt."
+      ],
       "Custom": [
         "Benutzerdefiniert"
       ],
@@ -2507,9 +2516,6 @@
       ],
       "VPN + ${ mailAppName } bundle for families and small businesses.": [
         "Ein Paket aus VPN + ${ mailAppName } für Familien und kleine Unternehmen."
-      ],
-      "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
-        "Es wird der Import von CSV-Dateien aus Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora und einigen anderen Anwendungen unterstützt. Außerdem wird der Import von vCard 4.0 unterstützt (UTF-8-Kodierung)."
       ],
       "We use 3-D Secure to protect your payments.": [
         "Wir verwenden 3D-Sicherheitsüberprüfung zum Schutz Ihrer Zahlungen."
@@ -3434,8 +3440,13 @@
       ]
     },
     "Mail import summary": {
-      "${ messagesFragment } since ${ periodFragment } and label them as ${ label }": [
-        ""
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        "Importiert alle Nachrichten aus ${ selectedLabelsCount }/${ totalLabelsCount } Kategorie seit ${ periodFragment } und kennzeichnet diese als „${ label }”",
+        "Importiert alle Nachrichten aus ${ selectedLabelsCount }/${ totalLabelsCount } Kategorien seit ${ periodFragment } und kennzeichnet diese als „${ label }”"
+      ],
+      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        "Importiert alle Nachrichten aus ${ totalLabelsCount } Kategorie seit ${ periodFragment } und kennzeichnet sie als „${ label }”",
+        "Importiert alle Nachrichten aus ${ totalLabelsCount } Kategorien seit ${ periodFragment } und kennzeichnet sie als „${ label }”"
       ]
     },
     "Many Others": {

@@ -57,7 +57,7 @@
         "Dialoguez avec nous"
       ],
       "Check import progress": [
-        ""
+        "Vérifier la progression de l'importation"
       ],
       "Choose a file or drag it here": [
         "Choisissez un fichier ou faites-le glisser ici"
@@ -129,7 +129,7 @@
         "Créer un événement"
       ],
       "Customize": [
-        ""
+        "Personnaliser"
       ],
       "Decrease": [
         "Diminuer"
@@ -173,7 +173,7 @@
         "Modifier l'adresse électronique"
       ],
       "Edit label": [
-        ""
+        "Modifier le label"
       ],
       "Edit phone number": [
         "Modifier le numéro de téléphone"
@@ -212,13 +212,13 @@
         "Masquer les paramètres PGP avancés"
       ],
       "Hide folders": [
-        ""
+        "Masquer les dossiers"
       ],
       "Hide info": [
         "Masquer les infos"
       ],
       "Hide labels": [
-        ""
+        "Masquer les labels"
       ],
       "Hide time zones": [
         "Masquer les fuseaux horaires"
@@ -233,7 +233,7 @@
         "Importer"
       ],
       "Import from .csv or vCard": [
-        ""
+        "Importer depuis un .csv ou une vCard"
       ],
       "Increase": [
         "Augmenter"
@@ -335,7 +335,7 @@
         "Année précédente"
       ],
       "Quit": [
-        ""
+        "Quitter"
       ],
       "Re-sign": [
         "Signer à nouveau"
@@ -365,7 +365,7 @@
         "Supprimer ce·tte participant·e"
       ],
       "Rename": [
-        ""
+        "Renommer"
       ],
       "Report a problem": [
         "Signaler un problème"
@@ -401,13 +401,13 @@
         "Afficher les paramètres PGP avancés"
       ],
       "Show folders": [
-        ""
+        "Afficher les dossiers"
       ],
       "Show info": [
         "Afficher les infos"
       ],
       "Show labels": [
-        ""
+        "Afficher les labels"
       ],
       "Show less": [
         "En afficher moins"
@@ -434,7 +434,7 @@
         "Débuter la configuration"
       ],
       "Stay": [
-        ""
+        "Rester"
       ],
       "Submit": [
         "Envoyer"
@@ -886,6 +886,12 @@
       ]
     },
     "Calendar subscription not synced error": {
+      "Calendar could not be decrypted": [
+        "Le calendrier n'a pas pu être déchiffré"
+      ],
+      "Calendar could not be found": [
+        "Le calendrier n'a pas pu être trouvé"
+      ],
       "Calendar is syncing": [
         "Synchronisation du calendrier"
       ],
@@ -937,7 +943,7 @@
     },
     "Confirm modal title": {
       "Quit import customization?": [
-        ""
+        "Quitter la personnalisation de l'importation?"
       ]
     },
     "Contact field label": {
@@ -2099,6 +2105,9 @@
         "Créer un nouveau groupe de contacts"
       ],
       "Create in": [
+        "Créer dans"
+      ],
+      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         ""
       ],
       "Custom": [
@@ -2205,7 +2214,7 @@
         ""
       ],
       "Import from": [
-        ""
+        "Importer depuis"
       ],
       "Import in progress": [
         ""
@@ -2256,7 +2265,7 @@
         "Gérer vos calendriers"
       ],
       "Merged": [
-        ""
+        "Fusionné"
       ],
       "Monthly ${ onDayString }": [
         "Mensuellement le ${ onDayString }"
@@ -2265,7 +2274,7 @@
         ""
       ],
       "New": [
-        ""
+        "Nouveau"
       ],
       "Next you'll need to log in to your Google account and allow us to access your data.": [
         ""
@@ -2508,9 +2517,6 @@
       "VPN + ${ mailAppName } bundle for families and small businesses.": [
         "Offre groupée RPV + ${ mailAppName } pour les familles et les petites entreprises."
       ],
-      "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
-        "Nous prenons en charge l'importation de fichiers CSV depuis Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora et d'autres applications. Nous prenons également en charge l'importation de vCard 4.0. (encodage UTF-8)."
-      ],
       "We use 3-D Secure to protect your payments.": [
         "Nous utilisons 3-D Secure pour protéger vos paiements."
       ],
@@ -2524,7 +2530,7 @@
         "Semaine"
       ],
       "What do you want to import from your Google account?": [
-        ""
+        "Que voulez-vous importer depuis votre compte Google?"
       ],
       "Which event would you like to delete?": [
         "Quel événement souhaitez-vous supprimer?"
@@ -2938,7 +2944,7 @@
         "Montant en BTC:"
       ],
       "Calendar": [
-        ""
+        "Calendrier"
       ],
       "Cancel": [
         "Annuler"
@@ -2962,7 +2968,7 @@
         "Ville"
       ],
       "Contacts": [
-        ""
+        "Contacts"
       ],
       "Copy": [
         "Copier"
@@ -3004,7 +3010,7 @@
         "Format du courriel"
       ],
       "Emails": [
-        ""
+        "Courriels"
       ],
       "Enable Beta Access": [
         "Activer l'accès à la version bêta"
@@ -3046,10 +3052,10 @@
         "Complément d’adresse"
       ],
       "Folder location": [
-        ""
+        "Emplacement du dossier"
       ],
       "From: ${ importedEmail }": [
-        ""
+        "De: ${ importedEmail }"
       ],
       "Hide password": [
         "Masquer le mot de passe"
@@ -3058,40 +3064,40 @@
         "Quelle est la probabilité que vous recommandiez ${ calendarAppName } à un·e ami·e ou à un·e collègue?"
       ],
       "Import all messages": [
-        ""
+        "Importer tous les messages"
       ],
       "Import contacts": [
         "Importer les contacts"
       ],
       "Import interval": [
-        ""
+        "Intervalle d'importation"
       ],
       "Import to email address": [
-        ""
+        "Importer vers une adresse courriel"
       ],
       "Keyboard shortcuts": [
         "Raccourcis clavier"
       ],
       "Label messages as": [
-        ""
+        "Labelliser les messages comme"
       ],
       "Last 12 months only": [
-        ""
+        "Seulement les 12 derniers mois"
       ],
       "Last 3 months only": [
-        ""
+        "Seulement les 3 derniers mois"
       ],
       "Last month only": [
-        ""
+        "Le mois dernier seulement"
       ],
       "Mailbox password": [
         "Mot de passe de messagerie"
       ],
       "Manage folders": [
-        ""
+        "Gérer les dossiers"
       ],
       "Manage labels": [
-        ""
+        "Gérer les labels"
       ],
       "Name": [
         "Nom"
@@ -3100,7 +3106,7 @@
         "Nom sur la carte"
       ],
       "Notification": [
-        ""
+        "Notification"
       ],
       "Operating system": [
         "Système d'exploitation"
@@ -3128,7 +3134,7 @@
         "Payeur"
       ],
       "PGP scheme": [
-        ""
+        "Schéma PGP"
       ],
       "Phone number": [
         "Téléphone"
@@ -3191,7 +3197,7 @@
         "Heure de l'événement"
       ],
       "To: ${ emailAddress }": [
-        ""
+        "À: ${ emailAddress }"
       ],
       "Total": [
         "Total"
@@ -3434,7 +3440,12 @@
       ]
     },
     "Mail import summary": {
-      "${ messagesFragment } since ${ periodFragment } and label them as ${ label }": [
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        "",
+        ""
+      ],
+      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        "",
         ""
       ]
     },
@@ -3815,7 +3826,7 @@
         "Mois"
       ],
       "No parent folder": [
-        ""
+        "Aucun dossier parent"
       ],
       "This and future events": [
         "Cet événement et les suivants"
@@ -3834,10 +3845,10 @@
     },
     "Option group label": {
       "Create new calendar": [
-        ""
+        "Créer un nouveau calendrier"
       ],
       "Merge with calendar": [
-        ""
+        "Fusionner avec le calendrier"
       ]
     },
     "Participant name": {
@@ -4374,16 +4385,16 @@
     },
     "Time period": {
       "account creation date": [
-        ""
+        "date de création du compte"
       ],
       "the last 12 months": [
-        ""
+        "les 12 derniers mois"
       ],
       "the last 3 months": [
-        ""
+        "les 3 derniers mois"
       ],
       "the last month": [
-        ""
+        "le dernier mois"
       ]
     },
     "Time unit": {
@@ -4528,13 +4539,13 @@
         "Offre actuelle"
       ],
       "Customize and confirm": [
-        ""
+        "Personnaliser et confirmer"
       ],
       "Customize calendar import": [
-        ""
+        "Personnaliser l'importation du calendrier"
       ],
       "Customize your mail import": [
-        ""
+        "Personnalisez votre importation de courrier"
       ],
       "Customize your plan": [
         "Personnalisez votre offre"
@@ -4767,7 +4778,7 @@
         "Sélectionnez le mode d'envoi de cette notification"
       ],
       "Select what to import": [
-        ""
+        "Sélectionnez ce qu'il faut importer"
       ],
       "Select when this event will stop happening": [
         "Sélectionnez quand cet événement cessera de se produire"
@@ -4837,7 +4848,7 @@
     },
     "Today icon tooltip in mini calendar": {
       "Today": [
-        ""
+        "Aujourd'hui"
       ]
     },
     "Tooltip": {
@@ -4863,7 +4874,7 @@
         "Remise appliquée pour un cycle de facturation bisannuel"
       ],
       "Each imported email will have this label": [
-        ""
+        "Chaque courriel importé aura ce label"
       ],
       "Email encryption forces email signature to help authenticate your sent messages": [
         "Le chiffrement de courriel force la signature des courriers électroniques pour vous aider à authentifier vos messages envoyés"
@@ -4902,10 +4913,10 @@
         "Prise en charge des protocoles de partage de fichiers comme BitTorrent."
       ],
       "System subfolders will show up as separate folders in ProtonMail": [
-        ""
+        "Les sous-dossiers système apparaîtront sous la forme de dossiers séparés dans ProtonMail"
       ],
       "The import will start with the most recent messages.": [
-        ""
+        "L'importation commencera par les messages les plus récents."
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Téléversez une clé publique pour activer l'envoi de courriels chiffrés de bout en bout vers cette adresse électronique"
@@ -5057,7 +5068,7 @@
         "Veuillez noter qu'en choisissant ce mode de paiement, vous ne pourrez avoir accès à votre nouvelle offre immédiatement. Nous mettrons à jour votre compte une fois le paiement effectué."
       ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
-        ""
+        "Proton fusionnera tous les dossiers avec le même nom. Pour éviter ceci, changez les noms avant l'importation."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Les rapports d’erreur ne sont pas chiffrés de bout en bout, merci de ne pas envoyer d'informations sensibles."
@@ -5069,7 +5080,7 @@
         "Le chargement du contact a échoué."
       ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
-        ""
+        "Les paramètres de date et heure de votre appareil ne sont pas synchronisés. ${ learnMore }"
       ],
       "The decryption of the encrypted content failed.": [
         "Le déchiffrement du contenu chiffré a échoué."
@@ -5087,7 +5098,7 @@
         "Malheureusement, nous ne sommes pas en ligne pour le moment. Veuillez remplir le formulaire ci-dessous pour décrire votre problème, nous l'examinerons et vous contacterons lorsque nous serons de nouveau en ligne."
       ],
       "You will lose any customization you made so far.": [
-        ""
+        "Vous perdrez toutes les personnalisations que vous avez faites jusqu'à présent."
       ]
     },
     "Weekly recurring event, frequency": {

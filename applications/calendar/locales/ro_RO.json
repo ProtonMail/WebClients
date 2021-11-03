@@ -892,6 +892,12 @@
       ]
     },
     "Calendar subscription not synced error": {
+      "Calendar could not be decrypted": [
+        ""
+      ],
+      "Calendar could not be found": [
+        ""
+      ],
       "Calendar is syncing": [
         "Calendarul se sincronizează."
       ],
@@ -2148,6 +2154,9 @@
       "Create in": [
         "Creare în"
       ],
+      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
+        ""
+      ],
       "Custom": [
         "Personalizat"
       ],
@@ -2556,9 +2565,6 @@
       ],
       "VPN + ${ mailAppName } bundle for families and small businesses.": [
         "VPN + ${ mailAppName } pachet pentru familii și afaceri mici."
-      ],
-      "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
-        "Este suportată importarea fișierelor CSV din Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora și alte aplicații. Este suportată și importarea fișierelor vCard 4.0 (codificate UTF-8)."
       ],
       "We use 3-D Secure to protect your payments.": [
         "Folosim 3-D Secure pentru a vă proteja plățile."
@@ -3485,8 +3491,15 @@
       ]
     },
     "Mail import summary": {
-      "${ messagesFragment } since ${ periodFragment } and label them as ${ label }": [
-        "${ messagesFragment } de la (din) ${ periodFragment } și etichetare ca ${ label }"
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        "",
+        "",
+        ""
+      ],
+      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        "",
+        "",
+        ""
       ]
     },
     "Many Others": {

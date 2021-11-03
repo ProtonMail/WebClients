@@ -822,6 +822,9 @@
       "Try another method": [
         "Prova un altro metodo"
       ],
+      "Turn on tracker protection": [
+        ""
+      ],
       "Underline": [
         "Sottolineato"
       ],
@@ -1437,6 +1440,12 @@
       ]
     },
     "Calendar subscription not synced error": {
+      "Calendar could not be decrypted": [
+        ""
+      ],
+      "Calendar could not be found": [
+        ""
+      ],
       "Calendar is syncing": [
         "Il calendario si sta sincronizzando"
       ],
@@ -1457,6 +1466,14 @@
       ],
       "More than 12 hours passed since last update": [
         "Sono passate più di 12 ore dall'ultimo aggiornamento"
+      ]
+    },
+    "Collapsible tooltip": {
+      "Close": [
+        ""
+      ],
+      "Open": [
+        ""
       ]
     },
     "Composer email icon": {
@@ -2816,10 +2833,6 @@
         "",
         ""
       ],
-      "${ numberOfTrackers } email tracker found": [
-        "",
-        ""
-      ],
       "${ numContactGroups } contact group": [
         "",
         ""
@@ -3135,6 +3148,9 @@
       "Create recovery phrase": [
         "Crea frase di recupero"
       ],
+      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
+        ""
+      ],
       "Custom": [
         "Personalizzato"
       ],
@@ -3205,6 +3221,19 @@
       ],
       "Email address": [
         "Indirizzo email"
+      ],
+      "Email tracker protection is disabled": [
+        ""
+      ],
+      "Email trackers can violate your privacy. Proton did not find any trackers on this message.": [
+        ""
+      ],
+      "Email trackers can violate your privacy. Proton found and blocked ${ numberOfTrackers } tracker.": [
+        "",
+        ""
+      ],
+      "Email trackers can violate your privacy. Turn on tracker protection to prevent senders from knowing whether and when you have opened a message.": [
+        ""
       ],
       "embedded image": [
         "immagine incorporata",
@@ -3576,9 +3605,6 @@
       "Print email": [
         "Stampa email"
       ],
-      "Protect yourself from trackers. Turn on email tracker protection in settings": [
-        ""
-      ],
       "Proton doesn't make money by abusing privacy.": [
         "Proton non guadagna abusando della privacy."
       ],
@@ -3827,9 +3853,6 @@
       "To fight spam and abuse, please verify you are human.": [
         "Per contrastare spam e abusi, si prega di verificare di essere umano."
       ],
-      "To protect your privacy, Proton blocked email trackers in this message": [
-        ""
-      ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "Per firmare nuovamente i tuoi contatti, dobbiamo controllare ogni contatto con l'elenco delle chiavi di crittografia disponibili nel tuo account. Se non viene trovata alcuna corrispondenza, il contatto verrà nuovamente firmato con la chiave di crittografia primaria."
       ],
@@ -3850,6 +3873,9 @@
       ],
       "Turn off content search. Activation progress won't be lost.": [
         "Disattiva la ricerca dei contenuti. I progressi d'attivazione non saranno persi."
+      ],
+      "Turn on to search the content of your messages": [
+        ""
       ],
       "Unsupported file": [
         "File non supportato"
@@ -3928,9 +3954,6 @@
       ],
       "We could not verify the sender's trusted keys.": [
         "Non abbiamo potuto verificare le chiavi attendibili del mittente."
-      ],
-      "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
-        "Supportiamo l'importazione di file CSV da Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora e alcune altre app. Supportiamo anche l'importazione di vCard 4.0. (Codifica UTF-8)."
       ],
       "We use 3-D Secure to protect your payments.": [
         "Usiamo 3-D Secure per proteggere i tuoi pagamenti."
@@ -5090,7 +5113,12 @@
       ]
     },
     "Mail import summary": {
-      "${ messagesFragment } since ${ periodFragment } and label them as ${ label }": [
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        "",
+        ""
+      ],
+      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        "",
         ""
       ]
     },
@@ -5582,21 +5610,7 @@
         "Nome"
       ]
     },
-    "Plan Feature": {
-      "${ n } server": [
-        "${ n } server",
-        "${ n } server"
-      ],
-      "${ n } VPN connection": [
-        "${ n } connessione VPN",
-        "${ n } connessioni VPN"
-      ]
-    },
     "Plan feature": {
-      "${ freeServers } in ${ freeCountries } country": [
-        "${ freeServers } in ${ freeCountries } paese",
-        "${ freeServers } in ${ freeCountries } paesi"
-      ],
       "0.5 GB storage": [
         "Archiviazione 0.5 GB"
       ],
@@ -5609,10 +5623,6 @@
       "1 user": [
         "1 utente"
       ],
-      "1200+ servers in ${ plusCountries } country": [
-        "1200+ server in ${ plusCountries } paese",
-        "1200+ server in ${ plusCountries } paesi"
-      ],
       "20 GB storage": [
         "20 GB d'archiviazione"
       ],
@@ -5621,10 +5631,6 @@
       ],
       "3 folders / labels": [
         "3 cartelle / etichette"
-      ],
-      "350+ servers in ${ basicCountries } country": [
-        "350+ server in ${ basicCountries } paese",
-        "350+ server in ${ basicCountries }+ paesi"
       ],
       "5 addresses": [
         "5 indirizzi"
@@ -7038,6 +7044,20 @@
       ],
       "Windows, macOS, iOS, Linux, Android, Android TV, Chromebook, Chromecast": [
         "Windows, macOS, iOS, Linux, Android, Android TV, Chromebook, Chromecast"
+      ]
+    },
+    "VPN Plan Feature": {
+      "${ n } server": [
+        "",
+        ""
+      ],
+      "${ n } VPN connection": [
+        "",
+        ""
+      ],
+      "${ numberOfServers } in ${ numberOfCountries } country": [
+        "",
+        ""
       ]
     },
     "Warning": {

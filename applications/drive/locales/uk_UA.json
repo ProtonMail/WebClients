@@ -873,6 +873,12 @@
       ]
     },
     "Calendar subscription not synced error": {
+      "Calendar could not be decrypted": [
+        "Не вдалося розшифрувати календар"
+      ],
+      "Calendar could not be found": [
+        "Не вдалося знайти календар"
+      ],
       "Calendar is syncing": [
         "Календар синхронізується"
       ],
@@ -1956,6 +1962,9 @@
       "Creating share": [
         "Створення спільного доступу"
       ],
+      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
+        "Підтримуються файли CSV з Outlook, Outlook Express, Yahoo! Maіl, Hotmaіl, Eudora і деяких інших додатків, а також формати vCard 3.1 і 4.0 (кодування UTF- 8)."
+      ],
       "Delete drive": [
         "Видалити сховище",
         "Видалити сховища",
@@ -2355,8 +2364,8 @@
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Це посилання може бути гомографічною атакою. Впевніться, що це саме те посилання, яке ви хочете відвідати, або не відкривайте його."
       ],
-      "This link was created in a previous version and can not be modified. Delete this link and create a new one to change the settings.": [
-        "Це посилання було створено у попередній версії і не може бути змінене. Видаліть це посилання та створіть нове, щоб змінити налаштування."
+      "This link was created in\na previous version and can not be modified. Delete this link and create a\nnew one to change the settings.": [
+        "Це посилання було створено в\nпопередній версії й не може бути змінене. Видаліть це посилання і створіть\nнове, щоб змінити налаштування."
       ],
       "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
         "Це посилання буде вимкнено назавжди. Ніхто не матиме доступ до вашого файлу за цим посиланням. Щоб поділитися файлом, вам знадобиться нове посилання."
@@ -2432,9 +2441,6 @@
       ],
       "VPN + ${ mailAppName } bundle for families and small businesses.": [
         "Комплект VPN + ${ mailAppName } для родин та малого бізнесу."
-      ],
-      "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
-        "Ми підтримуємо імпорт файлів CSV з Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora та деяких інших програм. Ми також підтримуємо імпорт vCard 4.0. (UTF-8 кодування)."
       ],
       "We use 3-D Secure to protect your payments.": [
         "Ми застосовуємо 3-D Secure для захисту ваших платежів."
@@ -3366,8 +3372,17 @@
       ]
     },
     "Mail import summary": {
-      "${ messagesFragment } since ${ periodFragment } and label them as ${ label }": [
-        "${ messagesFragment } за ${ periodFragment } та позначити їх ${ label }"
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        "Імпортувати всі повідомлення з ${ selectedLabelsCount } міткою з усіх ${ totalLabelsCount }, починаючи з ${ periodFragment } та позначити їх міткою ${ label }",
+        "Імпортувати всі повідомлення з ${ selectedLabelsCount } мітками з усіх ${ totalLabelsCount }, починаючи з ${ periodFragment } та позначити їх міткою ${ label }",
+        "Імпортувати всі повідомлення з ${ selectedLabelsCount } мітками з усіх ${ totalLabelsCount }, починаючи з ${ periodFragment } та позначити їх міткою ${ label }",
+        "Імпортувати всі повідомлення з ${ selectedLabelsCount } мітками з усіх ${ totalLabelsCount }, починаючи з ${ periodFragment } та позначити їх міткою ${ label }"
+      ],
+      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        "Імпортувати всі повідомлення з ${ totalLabelsCount } міткою, починаючи з ${ periodFragment } та позначити їх міткою ${ label }",
+        "Імпортувати всі повідомлення з ${ totalLabelsCount } мітками, починаючи з ${ periodFragment } та позначити їх міткою ${ label }",
+        "Імпортувати всі повідомлення з ${ totalLabelsCount } мітками, починаючи з ${ periodFragment } та позначити їх міткою ${ label }",
+        "Імпортувати всі повідомлення з ${ totalLabelsCount } мітками, починаючи з ${ periodFragment } та позначити їх міткою ${ label }"
       ]
     },
     "Many Others": {
@@ -3446,7 +3461,7 @@
       ],
       "${ failedCount } link to your file failed to be deleted": [
         "Не вдалося видалити ${ failedCount } посилання на ваш файл",
-        "Не вдалося видалити ${ failedCount } посилань на ваш файл",
+        "Не вдалося видалити ${ failedCount } посилання на ваш файл",
         "Не вдалося видалити ${ failedCount } посилань на ваш файл",
         "Не вдалося видалити ${ failedCount } посилань на ваш файл"
       ],
@@ -3815,11 +3830,11 @@
       "1 user": [
         "1 користувач"
       ],
-      "1200+ servers in ${ plusCountries } country": [
-        "1200+ серверів у ${ plusCountries } країні",
-        "1200+ серверів у ${ plusCountries } країнах",
-        "1200+ серверів у ${ plusCountries } країнах",
-        "1200+ серверів у ${ plusCountries } країнах"
+      "1300+ servers in ${ plusCountries } country": [
+        "",
+        "",
+        "",
+        ""
       ],
       "20 GB storage": [
         "20 ГБ сховища"
@@ -4055,8 +4070,8 @@
       "You have successfully unsubscribed": [
         "Ви успішно скасували передплату"
       ],
-      "Your files were successfully recovered to \"My files\"": [
-        "Ваші файли успішно відновлено до \"Мої файли\""
+      "Your files were successfully recovered to \"My files\".": [
+        "Ваші файли успішно відновлено до \"Мої файли\"."
       ]
     },
     "Suffix for price": {
@@ -4916,9 +4931,6 @@
       ],
       "You will lose any customization you made so far.": [
         "Ви втратите будь-які попередні налаштування."
-      ],
-      "Your local date & time settings seem to be out of sync.": [
-        "Здається, ваші локальні налаштування дати та часу не синхронізовані."
       ]
     }
   }
