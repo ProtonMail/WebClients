@@ -5,7 +5,7 @@ import { message } from '@proton/shared/lib/sanitize';
 import { useHandler, useModals, useNotifications } from '../../hooks';
 import { getSquireRef, setSquireRef, initSquire, toggleEllipsisButton } from './squireConfig';
 import { getLinkAtCursor, makeLink, pasteFileHandler, scrollIntoViewIfNeeded } from './squireActions';
-import { SquireEditorMetadata, SquireType } from './interface';
+import { SquireEditorMetadata, SquireType, FontData } from './interface';
 import { InlineLinkButton } from '../button';
 import InsertLinkModal from './modals/InsertLinkModal';
 
@@ -22,6 +22,7 @@ interface Props {
     showEllipseButton: boolean;
     onEllipseClick: () => void;
     keydownHandler?: (e: KeyboardEvent) => void;
+    defaultFont?: FontData;
 }
 
 /**
@@ -41,6 +42,7 @@ const SquireIframe = (
         showEllipseButton,
         onEllipseClick,
         keydownHandler,
+        defaultFont,
         ...rest
     }: Props,
     ref: Ref<SquireType>
@@ -69,7 +71,7 @@ const SquireIframe = (
     useEffect(() => {
         const init = async (iframeDoc: Document) => {
             try {
-                const squire = await initSquire(iframeDoc, metadata.supportImages, onEllipseClick);
+                const squire = await initSquire(iframeDoc, metadata.supportImages, onEllipseClick, defaultFont);
                 setSquireRef(ref, squire);
                 setSquireReady(true);
                 onReady();

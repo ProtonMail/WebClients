@@ -172,6 +172,7 @@ const SquireEditor = (
                         onEllipseClick={onEllipseClick}
                         data-test-id="composer:body"
                         keydownHandler={keydownHandler}
+                        defaultFont={defaultFont}
                     />
                 )}
             </div>

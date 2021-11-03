@@ -19,8 +19,8 @@ import {
 } from '@proton/shared/lib/mail/messages';
 import { generateUID } from '@proton/components';
 import { c } from 'ttag';
-import { DEFAULT_FONT_FACE, DEFAULT_FONT_SIZE } from '@proton/components/components/editor/squireConfig';
 import { DecryptResultPmcrypto } from 'pmcrypto';
+import { defaultFontStyle } from '@proton/components/components/editor/squireConfig';
 import { MESSAGE_ACTIONS } from '../../constants';
 import { getFromAddress } from '../addresses';
 import { formatFullDate } from '../date';
@@ -227,17 +227,13 @@ export const createNewDraft = (
                 ? referenceMessage?.decryption?.decryptedBody
                 : ''
             : generateBlockquote(referenceMessage || {}, mailSettings, addresses);
-    content =
-        action === MESSAGE_ACTIONS.NEW && referenceMessage?.decryption?.decryptedBody
-            ? insertSignature(content, senderAddress?.Signature, action, mailSettings, true)
-            : insertSignature(content, senderAddress?.Signature, action, mailSettings);
+
+    const fontStyle = defaultFontStyle({ FontFace, FontSize });
 
     content =
-        FontFace || FontSize
-            ? `<div style="font-family: ${FontFace || DEFAULT_FONT_FACE}; font-size: ${
-                  FontSize ? `${FontSize}px` : `${DEFAULT_FONT_SIZE}px`
-              };">${content}</div>`
-            : content;
+        action === MESSAGE_ACTIONS.NEW && referenceMessage?.decryption?.decryptedBody
+            ? insertSignature(content, senderAddress?.Signature, action, mailSettings, fontStyle, true)
+            : insertSignature(content, senderAddress?.Signature, action, mailSettings, fontStyle);
 
     const plain = isPlainText({ MIMEType });
     const document = plain ? undefined : parseInDiv(content);

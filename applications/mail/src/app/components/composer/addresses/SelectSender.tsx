@@ -12,7 +12,7 @@ import {
 import { c } from 'ttag';
 import { APPS } from '@proton/shared/lib/constants';
 import { SelectChangeEvent } from '@proton/components/components/selectTwo/select';
-
+import { defaultFontStyle } from '@proton/components/components/editor/squireConfig';
 import { getAddressFromEmail, getFromAddresses } from '../../../helpers/addresses';
 import { changeSignature } from '../../../helpers/message/messageSignature';
 import { MessageState } from '../../../logic/messages/messagesTypes';
@@ -59,9 +59,17 @@ const SelectSender = ({ message, disabled, onChange, onChangeContent, addressesB
         const newAddress = getAddressFromEmail(addresses, email);
         const Sender = newAddress ? { Name: newAddress.DisplayName, Address: email } : undefined;
 
+        const fontStyle = defaultFontStyle(mailSettings);
+
         onChange({ data: { AddressID: newAddress?.ID, Sender } });
         onChangeContent(
-            changeSignature(message, mailSettings, currentAddress?.Signature || '', newAddress?.Signature || ''),
+            changeSignature(
+                message,
+                mailSettings,
+                fontStyle,
+                currentAddress?.Signature || '',
+                newAddress?.Signature || ''
+            ),
             true
         );
     };
