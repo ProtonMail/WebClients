@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 import { ProtonVPNClientsSection, SettingsPropsShared } from '@proton/components';
 
-import PrivateMainSettingsAreaWithPermissions from '../../content/PrivateMainSettingsAreaWithPermissions';
+import PrivateMainSettingsAreaWithPermissions from '../../components/PrivateMainSettingsAreaWithPermissions';
 import VpnUpgradeSection from './VpnUpgradeSection';
 
 export const getDownloadsPage = () => {
