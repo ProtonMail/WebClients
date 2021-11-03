@@ -8,7 +8,7 @@ import { Contact, ContactProperties } from '@proton/shared/lib/interfaces/contac
 export type ContactPropertiesModel = {
     ID?: string;
     properties?: ContactProperties;
-    errors?: CryptoProcessingError[];
+    errors?: (CryptoProcessingError | Error)[];
 };
 
 interface Props {

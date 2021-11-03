@@ -16,8 +16,27 @@ const importanceOrder = [FAIL_TO_LOAD, FAIL_TO_READ, FAIL_TO_DECRYPT, SIGNATURE_
 const matchType = (errors: CryptoProcessingError[], type: CRYPTO_PROCESSING_TYPES) =>
     errors.find((error) => error.type === type);
 
-const selectError = (errors: CryptoProcessingError[]) =>
-    importanceOrder.map((type) => matchType(errors, type)).filter(Boolean)[0];
+const splitErrors = (errors: (CryptoProcessingError | Error)[]) => {
+    return errors.reduce<{ cryptoErrors: CryptoProcessingError[]; otherErrors: Error[] }>(
+        (acc, error) => {
+            if (error instanceof Error) {
+                acc.otherErrors.push(error);
+            } else {
+                acc.cryptoErrors.push(error);
+            }
+            return acc;
+        },
+        { cryptoErrors: [], otherErrors: [] }
+    );
+};
+
+const selectError = (errors: (CryptoProcessingError | Error)[]) => {
+    const { cryptoErrors, otherErrors } = splitErrors(errors);
+    if (otherErrors.length) {
+        return otherErrors[0];
+    }
+    return importanceOrder.map((type) => matchType(cryptoErrors, type)).filter(Boolean)[0];
+};
 
 const getText = (errorType: CRYPTO_PROCESSING_TYPES) => {
     switch (errorType) {
@@ -43,7 +62,7 @@ const getButtonText = (errorType: CRYPTO_PROCESSING_TYPES) => {
 
 interface Props {
     contactID: string;
-    errors?: CryptoProcessingError[];
+    errors?: (CryptoProcessingError | Error)[];
     onReload: () => void;
 }
 
@@ -59,6 +78,17 @@ const ContactViewErrors = ({ contactID, errors, onReload }: Props) => {
     // Should not happen but satisfy type checking
     if (!error) {
         return null;
+    }
+
+    if (error instanceof Error) {
+        return (
+            <div className="bg-danger rounded p0-5 mt1 flex flex-nowrap flex-align-items-center">
+                <Icon name="triangle-exclamation" className="flex-item-noshrink mtauto mbauto" />
+                <span className="flex-item-fluid pl0-5 pr0-5">
+                    {c('Warning').t`The contact data is corrupted and cannot be displayed.`}
+                </span>
+            </div>
+        );
     }
 
     const isWarning = error.type === SIGNATURE_NOT_VERIFIED;
