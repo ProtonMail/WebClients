@@ -58,6 +58,17 @@ export const splitGeneratedAndCustomPassword = (password: string, sharedURL?: { 
     return [password, ''];
 };
 
+export const getSharedLink = (sharedURL?: { Token: string; Password: string; Flags?: number }): string | undefined => {
+    if (!sharedURL) {
+        return undefined;
+    }
+
+    const [generatedPassword] = splitGeneratedAndCustomPassword(sharedURL.Password, sharedURL);
+
+    const baseUrl = `${window.location.origin}/urls`;
+    return `${baseUrl}/${sharedURL.Token}${generatedPassword !== '' ? `#${generatedPassword}` : ''}`;
+};
+
 export const formatLinkName = (str: string) => str.trim();
 
 export const splitLinkName = (linkName: string) => {

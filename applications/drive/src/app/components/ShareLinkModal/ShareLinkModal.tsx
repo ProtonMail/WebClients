@@ -18,6 +18,7 @@ import {
     hasCustomPassword,
     hasGeneratedPasswordIncluded,
     splitGeneratedAndCustomPassword,
+    getSharedLink,
 } from '../../utils/link';
 import ModalContentLoader from '../ModalContentLoader';
 import useDriveEvents from '../../hooks/drive/useDriveEvents';
@@ -214,7 +215,9 @@ function ShareLinkModal({ modalTitleID = 'share-link-modal', onClose, shareId, i
 
     const loading = modalState === ShareLinkModalState.Loading;
 
-    const [generatedPassword, customPassword] = splitGeneratedAndCustomPassword(password, shareUrlInfo?.ShareURL);
+    const [, customPassword] = splitGeneratedAndCustomPassword(password, shareUrlInfo?.ShareURL);
+
+    const url = getSharedLink(shareUrlInfo?.ShareURL);
 
     const renderModalState = () => {
         if (loading) {
@@ -224,7 +227,7 @@ function ShareLinkModal({ modalTitleID = 'share-link-modal', onClose, shareId, i
             return <ModalContentLoader>{loadingMessage}</ModalContentLoader>;
         }
 
-        if (error || !shareUrlInfo || !item) {
+        if (error || !shareUrlInfo || !item || !url) {
             return <ErrorState modalTitleID={modalTitleID} onClose={onClose} error={error} isCreationError={!item} />;
         }
 
@@ -244,10 +247,9 @@ function ShareLinkModal({ modalTitleID = 'share-link-modal', onClose, shareId, i
                     onSaveLinkClick={handleSaveSharedLink}
                     onDeleteLinkClick={handleDeleteLinkClick}
                     onFormStateChange={handleFormStateChange}
-                    generatedPassword={generatedPassword}
                     customPassword={customPassword}
                     initialExpiration={initialExpiration}
-                    token={shareUrlInfo.ShareURL.Token}
+                    url={url}
                     isValidForPasswordRemoval={isValidForPasswordRemoval}
                     deleting={deleting}
                     saving={saving}
