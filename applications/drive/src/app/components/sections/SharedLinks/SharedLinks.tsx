@@ -1,10 +1,13 @@
 import { useCallback, useEffect } from 'react';
 import { c } from 'ttag';
 
+import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser';
+
 import { FileBrowser } from '../../FileBrowser';
 import { useSharedLinksContent } from './SharedLinksContentProvider';
 import EmptyShared from './EmptyShared';
 import SharedLinksItemContextMenu from './SharedLinksItemContextMenu';
+import useNavigate from '../../../hooks/drive/useNavigate';
 import useDriveEvents from '../../../hooks/drive/useDriveEvents';
 import useDrive from '../../../hooks/drive/useDrive';
 
@@ -13,6 +16,8 @@ type Props = {
 };
 
 const SharedLinks = ({ shareId }: Props) => {
+    const { navigateToLink } = useNavigate();
+
     const { loadNextPage, loading, initialized, complete, contents, fileBrowserControls, sortParams, setSorting } =
         useSharedLinksContent();
     const driveEvents = useDriveEvents();
@@ -31,6 +36,14 @@ const SharedLinks = ({ shareId }: Props) => {
         void driveEvents.listenForShareEvents(shareId, handleDriveEvents(shareId));
     }, [shareId]);
 
+    const handleClick = useCallback(
+        async (item: FileBrowserItem) => {
+            document.getSelection()?.removeAllRanges();
+            navigateToLink(shareId, item.LinkID, item.Type);
+        },
+        [navigateToLink, shareId]
+    );
+
     return complete && !contents.length && !loading ? (
         <EmptyShared shareId={shareId} />
     ) : (
@@ -43,6 +56,7 @@ const SharedLinks = ({ shareId }: Props) => {
             selectedItems={selectedItems}
             sortParams={sortParams}
             setSorting={setSorting}
+            onItemClick={handleClick}
             onToggleItemSelected={toggleSelectItem}
             clearSelections={clearSelections}
             onToggleAllSelected={toggleAllSelected}
