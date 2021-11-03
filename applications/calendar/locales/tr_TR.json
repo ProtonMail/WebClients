@@ -886,6 +886,12 @@
       ]
     },
     "Calendar subscription not synced error": {
+      "Calendar could not be decrypted": [
+        "Takvimin şifresi çözülemedi"
+      ],
+      "Calendar could not be found": [
+        "Takvim bulunamadı"
+      ],
       "Calendar is syncing": [
         "Takvim senkronize ediliyor"
       ],
@@ -1313,7 +1319,7 @@
         "İptal gönderim hatası"
       ],
       "Checkout expired, please try again": [
-        ""
+        "Ödeme süresi doldu, lütfen tekrar deneyin"
       ],
       "Contact could not be saved": [
         "Kişi kaydedilemedi"
@@ -2101,6 +2107,9 @@
       "Create in": [
         ""
       ],
+      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
+        ""
+      ],
       "Custom": [
         "Özel"
       ],
@@ -2507,9 +2516,6 @@
       ],
       "VPN + ${ mailAppName } bundle for families and small businesses.": [
         "VPN + ${ mailAppName } aileler ve küçük işletmeler için paket."
-      ],
-      "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
-        "CSV dosyalarının Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora ve diğer bazı uygulamalardan içe aktarımını destekliyoruz. Ayrıca vCard 4.0'ın içe aktarılmasını da destekliyoruz. (UTF-8 kodlaması)."
       ],
       "We use 3-D Secure to protect your payments.": [
         "Ödemelerinizi korumak için 3-D Güvenli Ödeme kullanıyoruz."
@@ -3434,7 +3440,12 @@
       ]
     },
     "Mail import summary": {
-      "${ messagesFragment } since ${ periodFragment } and label them as ${ label }": [
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        "",
+        ""
+      ],
+      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        "",
         ""
       ]
     },

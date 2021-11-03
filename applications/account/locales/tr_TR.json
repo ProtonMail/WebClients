@@ -31,11 +31,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } mağazası"
       ],
-      "activate": [
-        "etkinleştir"
-      ],
       "Activate": [
         "Etkinleştir"
+      ],
+      "activate": [
+        "etkinleştir"
       ],
       "Activate ${ Name }@pm.me": [
         "${ Name }@pm.me adresini etkinleştir"
@@ -879,9 +879,6 @@
       ]
     },
     "Alert": {
-      "Are you sure you want to import a private key? Importing an insecurely generated or leaked private key can harm the security of your emails.": [
-        "Özel anahtarı içe aktarmak istediğinizden emin misiniz? Güvenli olmayan bir şekilde oluşturulmuş veya sızdırılmış bir özel anahtarı içe aktarmak, e-postalarınızın güvenliğine zarar verebilir."
-      ],
       "By leaving now, some contacts may not be imported": [
         "Şimdi çıkarsanız bazı kişiler içe aktarılamaz"
       ],
@@ -1297,6 +1294,12 @@
       ]
     },
     "Calendar subscription not synced error": {
+      "Calendar could not be decrypted": [
+        "Takvimin şifresi çözülemedi"
+      ],
+      "Calendar could not be found": [
+        "Takvim bulunamadı"
+      ],
       "Calendar is syncing": [
         "Takvim senkronize ediliyor"
       ],
@@ -1613,7 +1616,7 @@
       "I use a different Proton account": [
         ""
       ],
-      "Missing feature(s) ": [
+      "Missing feature(s)": [
         ""
       ],
       "My reason isn't listed, please comment": [
@@ -1791,7 +1794,7 @@
         "Telefon doğrulanamıyor, daha sonra tekrar deneyin"
       ],
       "Checkout expired, please try again": [
-        ""
+        "Ödeme süresi doldu, lütfen tekrar deneyin"
       ],
       "Condition incomplete": [
         "Koşul eksik"
@@ -1916,7 +1919,7 @@
         "Geçerli bir sayı değil"
       ],
       "Organization key is not decrypted": [
-        ""
+        "Kuruluş anahtarının şifresi çözülmedi"
       ],
       "Organization key is not decrypted.": [
         "Kuruluş anahtarının şifresi çözülmedi."
@@ -1953,7 +1956,7 @@
         ""
       ],
       "Please generate keys before you try to change your password": [
-        ""
+        "Lütfen şifrenizi değiştirmeyi denemeden önce anahtarlar oluşturun"
       ],
       "Please refresh the page.": [
         "Lütfen sayfayı yenileyin."
@@ -1968,7 +1971,7 @@
         "Lütfen yeniden kimlik doğrulaması yapmayı deneyin ve izinlerin doğru ayarlandığından emin olun."
       ],
       "Please upgrade to a Professional plan with more than 1 user, or a Visionary account, to get multi-user support": [
-        ""
+        "Çok kullanıcılı destek almak için lütfen birden fazla kullanıcıya sahip profesyonel plana ya da Vizyoner hesaba yükseltin"
       ],
       "Please upgrade to a Professional plan with more than 1 user, or a Visionary account, to manage multiple users.": [
         "Birden fazla kullanıcıyı yönetmek için lütfen 1'den fazla kullanıcılı bir Profesyonel plana veya bir Visionary hesabına yükseltin."
@@ -2037,7 +2040,7 @@
         "Kabul ettiğimiz en düşük ödeme ${ _price2 }"
       ],
       "The organization key must be activated first": [
-        ""
+        "Önce kuruluş anahtarı etkinleştirilmelidir"
       ],
       "The organization key must be activated first.": [
         "Önce kuruluş anahtarı etkinleştirilmelidir."
@@ -2960,6 +2963,11 @@
         "2 adımlı doğrulama etkinleştirildi"
       ]
     },
+    "Import key": {
+      "Are you sure you want to import a private key? Importing an insecurely generated or leaked private key can harm the security of your emails.\n\nPlease also note that the public key corresponding to this private key will be publicly available from our key server. If the key contains personal details (such as your full name) which you do not want to publish, please edit the key before importing it.": [
+        ""
+      ]
+    },
     "Import status": {
       "${ percentageValue }% paused": [
         "%${ percentageValue } duraklatıldı"
@@ -3381,6 +3389,9 @@
       "Creating your Proton account": [
         "Proton hesabınızı oluşturun"
       ],
+      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
+        ""
+      ],
       "Currently all available storage is allocated to the administrator account. Please reduce the admin account allocation to free up space for additional users. You can increase the total storage at any time by upgrading your account.": [
         "Şu anda kullanılabilir tüm depolama alanı yönetici hesabına ayrılmıştır. Lütfen ek kullanıcılara yer açmak için yönetici hesabı ayırmasını azaltın. Hesabınızı yükselterek istediğiniz zaman toplam depolama alanını artırabilirsiniz."
       ],
@@ -3449,7 +3460,7 @@
         "Tamamlandı"
       ],
       "Done! We sent a code to ${ destination }.": [
-        ""
+        "Tamam! ${ destination } için bir kod gönderdik."
       ],
       "Downgrading will terminate any connections to paid ProtonVPN servers.": [
         "Sürüm düşürme, ücretli ProtonVPN sunucularına herhangi bir bağlantıyı sonlandıracaktır."
@@ -3537,9 +3548,6 @@
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Filtreler, gelen ve gönderilen e-postalar da dahil olmak üzere tüm e-postalarda çalışır. Her süzgeç en az bir ad, koşul ve eylem içermelidir."
-      ],
-      "For advanced security, the Import-Export app encrypts emails on your device before migrating them to Proton servers. You can also export messages for local backups.": [
-        "Gelişmiş güvenlik için, içe aktarma ve dışa aktarma uygulaması, Proton sunucularına aktarmadan önce cihazınızdaki e-postaları şifreler. İletileri yerel yedeklemeler için de dışa aktarabilirsiniz."
       ],
       "For families and small teams; includes both Mail and VPN.": [
         "Aileler ve küçük ekipler için; hem Posta hem de VPN içerir."
@@ -3644,7 +3652,7 @@
         "Görüntü URL'si"
       ],
       "Images have been removed because they are not allowed in auto-reply": [
-        ""
+        "Görüntüler, otomatik yanıt içinde izin verilmediği için kaldırıldı"
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         ""
@@ -4098,6 +4106,9 @@
       "The email address you place at the top of the list is your default email address. Drag and drop to reorder your addresses.": [
         "Listenin en üstüne yerleştirdiğiniz e-posta adresi, varsayılan e-posta adresinizdir. Adreslerinizi yeniden sıralamak için sürükleyip bırakın."
       ],
+      "The Import-Export app allows you to export messages for local backups and to restore previous backups to your account.": [
+        ""
+      ],
       "The name will be visible to your users while they are logged in.": [
         "Bu ad, oturum açtıklarında kullanıcılarınız tarafından görünür olacaktır."
       ],
@@ -4283,9 +4294,6 @@
       ],
       "We recommend adding a linked email so you can recover your account if you lose your password.": [
         "Şifrenizi kaybederseniz hesabınızı kurtarabilmeniz için bağlantılı bir e-posta eklemenizi öneririz."
-      ],
-      "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
-        "Outlook, Outlook Express, Yahoo! Posta, Hotmail, Eudora ve diğer bazı uygulamalardan CSV dosyalarını içe aktarmayı destekliyoruz. Ayrıca vCard 4.0 içe aktarmayı da destekliyoruz. (UTF-8 kodlaması)."
       ],
       "We use 3-D Secure to protect your payments.": [
         "Ödemelerinizi korumak için 3-D Güvenli Ödeme kullanıyoruz."
@@ -5928,7 +5936,12 @@
       ]
     },
     "Mail import summary": {
-      "${ messagesFragment } since ${ periodFragment } and label them as ${ label }": [
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        "",
+        ""
+      ],
+      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        "",
         ""
       ]
     },
@@ -6656,21 +6669,7 @@
         "Ücretsiz"
       ]
     },
-    "Plan Feature": {
-      "${ n } server": [
-        "${ n } sunucu",
-        "${ n } sunucular"
-      ],
-      "${ n } VPN connection": [
-        "${ n } VPN bağlantısı",
-        "${ n } VPN bağlantısı"
-      ]
-    },
     "Plan feature": {
-      "${ freeServers } in ${ freeCountries } country": [
-        "${ freeCountries } ülkesinde ${ freeServers }",
-        "${ freeCountries } ülkelerinde ${ freeServers }"
-      ],
       "0.5 GB storage": [
         "0.5 GB depolama alanı"
       ],
@@ -6683,10 +6682,6 @@
       "1 user": [
         "1 kullanıcı"
       ],
-      "1200+ servers in ${ plusCountries } country": [
-        "${ plusCountries } ülkede 1200'den fazla sunucu",
-        "${ plusCountries } ülkede 1200'den fazla sunucu"
-      ],
       "20 GB storage": [
         "20 GB depolama"
       ],
@@ -6695,10 +6690,6 @@
       ],
       "3 folders / labels": [
         "3 klasör / etiket"
-      ],
-      "350+ servers in ${ basicCountries } country": [
-        "${ basicCountries } ülkede 350'den fazla sunucu",
-        "${ basicCountries } ülkede 350'den fazla sunucu"
       ],
       "5 addresses": [
         "5 adres"
@@ -6921,6 +6912,9 @@
       "Auto reply": [
         "Otomatik Yanıt"
       ],
+      "Backup & Export": [
+        ""
+      ],
       "Calendars": [
         "Takvimler"
       ],
@@ -6953,9 +6947,6 @@
       ],
       "Import & export": [
         "İçe/Dışa aktarma"
-      ],
-      "Import/Export": [
-        ""
       ],
       "Multi-user support": [
         "Çoklu kullanıcı desteği"
@@ -7155,7 +7146,7 @@
         "İletilerin aslı siliniyor"
       ],
       "DMARC value copied to clipboard": [
-        ""
+        "DMARC değeri panoya kopyalandı"
       ],
       "Domain verified": [
         "Etki alanı doğrulandı"
@@ -7230,7 +7221,7 @@
         "Oturumlar iptal edildi"
       ],
       "SPF value copied to clipboard": [
-        ""
+        "SPF değeri panoya kopyalandı"
       ],
       "User created": [
         "Kullanıcı oluşturuldu"
@@ -7239,10 +7230,10 @@
         "Kullanıcı güncellendi"
       ],
       "Value copied to clipboard": [
-        ""
+        "Değer panoya kopyalandı"
       ],
       "Verification code copied to clipboard": [
-        ""
+        "Doğrulama kodu panoya kopyalandı"
       ],
       "Verification successful": [
         "Doğrulama başarılı"
@@ -7496,6 +7487,9 @@
       ],
       "Back": [
         "Geri"
+      ],
+      "Backup & Export": [
+        ""
       ],
       "Billing cycle": [
         "Fatura dönemi"
@@ -7809,9 +7803,6 @@
       ],
       "Import-Export app": [
         "Import-Export uygulaması"
-      ],
-      "Import/Export": [
-        ""
       ],
       "Invalid verification code": [
         "Geçersiz doğrulama kodu"
@@ -8527,6 +8518,20 @@
     "VPN info": {
       "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, and more.": [
         "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now ve daha fazlası."
+      ]
+    },
+    "VPN Plan Feature": {
+      "${ n } server": [
+        "",
+        ""
+      ],
+      "${ n } VPN connection": [
+        "",
+        ""
+      ],
+      "${ numberOfServers } in ${ numberOfCountries } country": [
+        "",
+        ""
       ]
     },
     "VPN upsell feature": {

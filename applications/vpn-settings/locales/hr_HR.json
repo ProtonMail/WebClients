@@ -708,6 +708,12 @@
       ]
     },
     "Calendar subscription not synced error": {
+      "Calendar could not be decrypted": [
+        ""
+      ],
+      "Calendar could not be found": [
+        ""
+      ],
       "Calendar is syncing": [
         ""
       ],
@@ -779,7 +785,7 @@
       "I use a different Proton account": [
         "Koristim drugi Proton račun"
       ],
-      "Missing feature(s) ": [
+      "Missing feature(s)": [
         ""
       ],
       "My reason isn't listed, please comment": [
@@ -2805,79 +2811,7 @@
         "Srednja"
       ]
     },
-    "Plan Feature": {
-      "${ freeServersCount.free_vpn } server": [
-        "${ freeServersCount.free_vpn } poslužitelj",
-        "${ freeServersCount.free_vpn } poslužitelja",
-        "${ freeServersCount.free_vpn } poslužitelja"
-      ],
-      "${ maxConnections } VPN connection": [
-        "${ maxConnections } VPN veza",
-        "${ maxConnections } VPN veze",
-        "${ maxConnections } VPN veza"
-      ],
-      "${ n } server": [
-        "${ n } poslužitelj",
-        "${ n } poslužitelja",
-        "${ n } poslužitelja"
-      ],
-      "${ n } VPN connection": [
-        "${ n } VPN veza",
-        "${ n } VPN veze",
-        "${ n } VPN veza"
-      ],
-      "${ nFreeServers } in ${ countries.free_vpn.count } country": [
-        "",
-        "",
-        ""
-      ],
-      "1200+ servers in ${ countries[PLANS.VPNPLUS].count } country": [
-        "1200+ poslužitelja u ${ countries[PLANS.VPNPLUS].count } državi",
-        "1200+ poslužitelja u ${ countries[PLANS.VPNPLUS].count } države",
-        "1200+ poslužitelja u ${ countries[PLANS.VPNPLUS].count } država"
-      ],
-      "350+ servers in ${ countries[PLANS.VPNBASIC].count } country": [
-        "350+ poslužitelja u ${ countries[PLANS.VPNBASIC].count } državi",
-        "350+ poslužitelja u ${ countries[PLANS.VPNBASIC].count } države",
-        "350+ poslužitelja u ${ countries[PLANS.VPNBASIC].count } država"
-      ],
-      "All advanced security features": [
-        "Sve napredne značajke sigurnosti"
-      ],
-      "Filesharing/P2P support": [
-        "Dijeljenje datoteka / P2P podrška"
-      ],
-      "High speed": [
-        "Visoka brzina"
-      ],
-      "Highest speed (10 Gbps)": [
-        "Najviša brzina (10 Gbps)"
-      ],
-      "Highest speed (up to 10 Gbps)": [
-        "Najviša brzina (do 10 Gbps)"
-      ],
-      "Medium speed": [
-        "Srednja brzina"
-      ],
-      "ProtonMail Plus account": [
-        "ProtonMail Plus račun"
-      ],
-      "ProtonMail Visionary account": [
-        "ProtonMail Visionary račun"
-      ],
-      "Streaming service support": [
-        "Podrška za streaming usluge"
-      ],
-      "Strict no-logs policy": [
-        "Stroga politika ne spremanja zapisa"
-      ]
-    },
     "Plan feature": {
-      "${ freeServers } in ${ freeCountries } country": [
-        "",
-        "",
-        ""
-      ],
       "0.5 GB storage": [
         "0.5 GB prostora za pohranu"
       ],
@@ -2890,11 +2824,6 @@
       "1 user": [
         "1 korisnik"
       ],
-      "1200+ servers in ${ plusCountries } country": [
-        "1200+ poslužitelja u ${ plusCountries } državi",
-        "1200+ poslužitelja u ${ plusCountries } države",
-        "1200+ poslužitelja u ${ plusCountries } država"
-      ],
       "20 GB storage": [
         "20 GB prostora za pohranu"
       ],
@@ -2903,11 +2832,6 @@
       ],
       "3 folders / labels": [
         "3 mape / oznake"
-      ],
-      "350+ servers in ${ basicCountries } country": [
-        "350+ poslužitelja u ${ basicCountries } državi",
-        "350+ poslužitelja u ${ basicCountries } države",
-        "350+ poslužitelja u ${ basicCountries } država"
       ],
       "5 addresses": [
         "5 adresa"
@@ -2986,6 +2910,38 @@
       ],
       "Unlimited folders / labels": [
         "Neograničeni broj mapa / oznaka"
+      ]
+    },
+    "Plan Feature": {
+      "All advanced security features": [
+        "Sve napredne značajke sigurnosti"
+      ],
+      "Filesharing/P2P support": [
+        "Dijeljenje datoteka / P2P podrška"
+      ],
+      "High speed": [
+        "Visoka brzina"
+      ],
+      "Highest speed (10 Gbps)": [
+        "Najviša brzina (10 Gbps)"
+      ],
+      "Highest speed (up to 10 Gbps)": [
+        "Najviša brzina (do 10 Gbps)"
+      ],
+      "Medium speed": [
+        "Srednja brzina"
+      ],
+      "ProtonMail Plus account": [
+        "ProtonMail Plus račun"
+      ],
+      "ProtonMail Visionary account": [
+        "ProtonMail Visionary račun"
+      ],
+      "Streaming service support": [
+        "Podrška za streaming usluge"
+      ],
+      "Strict no-logs policy": [
+        "Stroga politika ne spremanja zapisa"
       ]
     },
     "Plan info": {
@@ -3734,6 +3690,23 @@
     "VPN info": {
       "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, and more.": [
         "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now i drugi."
+      ]
+    },
+    "VPN Plan Feature": {
+      "${ n } server": [
+        "",
+        "",
+        ""
+      ],
+      "${ n } VPN connection": [
+        "",
+        "",
+        ""
+      ],
+      "${ numberOfServers } in ${ numberOfCountries } country": [
+        "",
+        "",
+        ""
       ]
     },
     "VPN upsell feature": {

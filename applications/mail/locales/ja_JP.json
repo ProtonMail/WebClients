@@ -818,6 +818,9 @@
       "Try another method": [
         "別の方法を試してください"
       ],
+      "Turn on tracker protection": [
+        ""
+      ],
       "Underline": [
         "下線"
       ],
@@ -1429,6 +1432,12 @@
       ]
     },
     "Calendar subscription not synced error": {
+      "Calendar could not be decrypted": [
+        ""
+      ],
+      "Calendar could not be found": [
+        ""
+      ],
       "Calendar is syncing": [
         "カレンダーの同期中"
       ],
@@ -1449,6 +1458,14 @@
       ],
       "More than 12 hours passed since last update": [
         "最後のアップデートから12時間以上経過しています"
+      ]
+    },
+    "Collapsible tooltip": {
+      "Close": [
+        ""
+      ],
+      "Open": [
+        ""
       ]
     },
     "Composer email icon": {
@@ -2775,9 +2792,6 @@
       "${ numberOfTrackers } email tracker blocked": [
         ""
       ],
-      "${ numberOfTrackers } email tracker found": [
-        ""
-      ],
       "${ numContactGroups } contact group": [
         ""
       ],
@@ -3069,6 +3083,9 @@
       "Create recovery phrase": [
         "回復フレーズを作成"
       ],
+      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
+        ""
+      ],
       "Custom": [
         "カスタム設定"
       ],
@@ -3137,6 +3154,18 @@
       ],
       "Email address": [
         "メールアドレス"
+      ],
+      "Email tracker protection is disabled": [
+        ""
+      ],
+      "Email trackers can violate your privacy. Proton did not find any trackers on this message.": [
+        ""
+      ],
+      "Email trackers can violate your privacy. Proton found and blocked ${ numberOfTrackers } tracker.": [
+        ""
+      ],
+      "Email trackers can violate your privacy. Turn on tracker protection to prevent senders from knowing whether and when you have opened a message.": [
+        ""
       ],
       "embedded image": [
         "個の埋め込み画像"
@@ -3501,9 +3530,6 @@
       "Print email": [
         "メールを印刷"
       ],
-      "Protect yourself from trackers. Turn on email tracker protection in settings": [
-        ""
-      ],
       "Proton doesn't make money by abusing privacy.": [
         "Proton がプライバシーを悪用して資金を入手することはありません。"
       ],
@@ -3750,9 +3776,6 @@
       "To fight spam and abuse, please verify you are human.": [
         "迷惑メールや悪用を防止するために、あなたがコンピューターではないことを確認します。"
       ],
-      "To protect your privacy, Proton blocked email trackers in this message": [
-        ""
-      ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "連絡先に再署名するには、すべての連絡先をあなたのアカウントで利用可能な暗号鍵のリストに照らして確認する必要があります。 一致するものが見つからない場合、連絡先はプライマリ暗号鍵で再署名されます。"
       ],
@@ -3773,6 +3796,9 @@
       ],
       "Turn off content search. Activation progress won't be lost.": [
         "コンテンツ検索をオフにします。アクティベーション進捗は失われません。"
+      ],
+      "Turn on to search the content of your messages": [
+        ""
       ],
       "Unsupported file": [
         "非対応のファイル"
@@ -3851,9 +3877,6 @@
       ],
       "We could not verify the sender's trusted keys.": [
         ""
-      ],
-      "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
-        "Outlook、Outlook Express、Yahoo! Mail、Hotmail、Eudora などのアプリからの、CSV ファイルのインポートに対応しています。また、vCard 4.0 (UTF-8 エンコード) のインポートにも対応しています。"
       ],
       "We use 3-D Secure to protect your payments.": [
         "お支払いを保護するために3Dセキュアを用いています。"
@@ -5002,7 +5025,10 @@
       ]
     },
     "Mail import summary": {
-      "${ messagesFragment } since ${ periodFragment } and label them as ${ label }": [
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        ""
+      ],
+      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
         ""
       ]
     },
@@ -5491,18 +5517,7 @@
         "名前"
       ]
     },
-    "Plan Feature": {
-      "${ n } server": [
-        "${ n } サーバー"
-      ],
-      "${ n } VPN connection": [
-        "${ n } VPN 接続"
-      ]
-    },
     "Plan feature": {
-      "${ freeServers } in ${ freeCountries } country": [
-        "${ freeCountries }か国の${ freeServers }"
-      ],
       "0.5 GB storage": [
         "0.5 GB のストレージ"
       ],
@@ -5515,9 +5530,6 @@
       "1 user": [
         "1 ユーザー"
       ],
-      "1200+ servers in ${ plusCountries } country": [
-        "${ plusCountries } ヵ国の 1,200 を超えるサーバー"
-      ],
       "20 GB storage": [
         "20 GB のストレージ"
       ],
@@ -5526,9 +5538,6 @@
       ],
       "3 folders / labels": [
         "3 件のフォルダー / ラベル"
-      ],
-      "350+ servers in ${ basicCountries } country": [
-        "${ basicCountries } か国の 350 以上のサーバー"
       ],
       "5 addresses": [
         "5 アドレス"
@@ -6896,6 +6905,17 @@
       ],
       "Windows, macOS, iOS, Linux, Android, Android TV, Chromebook, Chromecast": [
         "Windows, macOS, iOS, Linux, Android, Android TV, Chromebook, Chromecast"
+      ]
+    },
+    "VPN Plan Feature": {
+      "${ n } server": [
+        ""
+      ],
+      "${ n } VPN connection": [
+        ""
+      ],
+      "${ numberOfServers } in ${ numberOfCountries } country": [
+        ""
       ]
     },
     "Warning": {

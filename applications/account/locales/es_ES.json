@@ -31,11 +31,11 @@
       "${ BRAND_NAME } shop": [
         "Tienda ${ BRAND_NAME }"
       ],
-      "activate": [
-        "activar"
-      ],
       "Activate": [
         "Activar"
+      ],
+      "activate": [
+        "activar"
       ],
       "Activate ${ Name }@pm.me": [
         "Activar ${ Name }@pm.me"
@@ -879,9 +879,6 @@
       ]
     },
     "Alert": {
-      "Are you sure you want to import a private key? Importing an insecurely generated or leaked private key can harm the security of your emails.": [
-        "¿Estás seguro de que quieres importar una clave privada? Importar una clave privada generada de forma insegura o filtrada puede dañar la seguridad de tu correo electrónico."
-      ],
       "By leaving now, some contacts may not be imported": [
         "Al salir ahora, algunos contactos pueden no ser importados"
       ],
@@ -1297,6 +1294,12 @@
       ]
     },
     "Calendar subscription not synced error": {
+      "Calendar could not be decrypted": [
+        ""
+      ],
+      "Calendar could not be found": [
+        ""
+      ],
       "Calendar is syncing": [
         "El calendario se está sincronizando"
       ],
@@ -1613,7 +1616,7 @@
       "I use a different Proton account": [
         ""
       ],
-      "Missing feature(s) ": [
+      "Missing feature(s)": [
         ""
       ],
       "My reason isn't listed, please comment": [
@@ -2070,10 +2073,10 @@
         "Estado del token de pago desconocido"
       ],
       "Uploaded file is not a valid private key. Please verify and try again.": [
-        ""
+        "El archivo cargado no es una clave privada válida. Verifique e inténtelo de nuevo."
       ],
       "Uploaded files are not valid private keys. Please verify and try again.": [
-        ""
+        "Los archivo cargado no son claves privada válida. Verifique e inténtelo de nuevo."
       ],
       "Verification did not succeed, please try again in an hour.": [
         "La verificación no tuvo éxito, vuelve a intentarlo en una hora."
@@ -2960,6 +2963,11 @@
         "Verificación en dos pasos activada"
       ]
     },
+    "Import key": {
+      "Are you sure you want to import a private key? Importing an insecurely generated or leaked private key can harm the security of your emails.\n\nPlease also note that the public key corresponding to this private key will be publicly available from our key server. If the key contains personal details (such as your full name) which you do not want to publish, please edit the key before importing it.": [
+        ""
+      ]
+    },
     "Import status": {
       "${ percentageValue }% paused": [
         "${ percentageValue }% pausado"
@@ -3381,6 +3389,9 @@
       "Creating your Proton account": [
         "Creando tu cuenta Proton"
       ],
+      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
+        ""
+      ],
       "Currently all available storage is allocated to the administrator account. Please reduce the admin account allocation to free up space for additional users. You can increase the total storage at any time by upgrading your account.": [
         "Actualmente todo el almacenamiento disponible está asignado a la cuenta del administrador. Por favor, reduce la asignación de la cuenta del administrador para liberar espacio para usuarios adicionales. Puedes aumentar el almacenamiento total en cualquier momento mejorando tu cuenta."
       ],
@@ -3537,9 +3548,6 @@
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Los filtros funcionan en todos los correos electrónicos, incluidos los entrantes o enviados. Cada filtro debe contener al menos un nombre, una condición y una acción."
-      ],
-      "For advanced security, the Import-Export app encrypts emails on your device before migrating them to Proton servers. You can also export messages for local backups.": [
-        "Para seguridad avanzada, la aplicación Import-Export cifra los correos electrónicos en tu dispositivo antes de migrarlos a los servidores de Proton. También puedes exportar mensajes para copias de seguridad locales."
       ],
       "For families and small teams; includes both Mail and VPN.": [
         "Para familias y pequeños equipos; incluye correo y VPN."
@@ -4098,6 +4106,9 @@
       "The email address you place at the top of the list is your default email address. Drag and drop to reorder your addresses.": [
         "La dirección de correo electrónico que has colocado en la parte superior de la lista es tu dirección de correo electrónico predeterminada. Arrastra y suelta para reordenar tus direcciones."
       ],
+      "The Import-Export app allows you to export messages for local backups and to restore previous backups to your account.": [
+        ""
+      ],
       "The name will be visible to your users while they are logged in.": [
         "El nombre será visible para tus usuarios mientras estén conectados."
       ],
@@ -4283,9 +4294,6 @@
       ],
       "We recommend adding a linked email so you can recover your account if you lose your password.": [
         "Recomendamos añadir un correo electrónico vinculado para que puedas recuperar tu cuenta si pierdes tu contraseña."
-      ],
-      "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
-        "Soportamos la importación de archivos CSV desde Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora y otras aplicaciones. También soportamos la importación de la codificación vCard 4.0 (codificación UTF-8)."
       ],
       "We use 3-D Secure to protect your payments.": [
         "Utilizamos 3-D Secure para proteger tus pagos."
@@ -5928,7 +5936,12 @@
       ]
     },
     "Mail import summary": {
-      "${ messagesFragment } since ${ periodFragment } and label them as ${ label }": [
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        "",
+        ""
+      ],
+      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        "",
         ""
       ]
     },
@@ -6656,21 +6669,7 @@
         "Gratuito"
       ]
     },
-    "Plan Feature": {
-      "${ n } server": [
-        "${ n } servidor",
-        "${ n } servidores"
-      ],
-      "${ n } VPN connection": [
-        "${ n } conexión VPN",
-        "${ n } conexiones VPN"
-      ]
-    },
     "Plan feature": {
-      "${ freeServers } in ${ freeCountries } country": [
-        "${ freeServers } servidores en ${ freeCountries } país",
-        "${ freeServers } servidores en ${ freeCountries } países"
-      ],
       "0.5 GB storage": [
         "0.5 GB de almacenamiento"
       ],
@@ -6683,10 +6682,6 @@
       "1 user": [
         "1 usuario"
       ],
-      "1200+ servers in ${ plusCountries } country": [
-        "Más de 1200 servidores en ${ plusCountries } país",
-        "Más de 1200 servidores en ${ plusCountries } países"
-      ],
       "20 GB storage": [
         "20 GB de almacenamiento"
       ],
@@ -6695,10 +6690,6 @@
       ],
       "3 folders / labels": [
         "3 carpetas / etiquetas"
-      ],
-      "350+ servers in ${ basicCountries } country": [
-        "Más de 350 servidores en ${ basicCountries } país",
-        "Más de 350 servidores en ${ basicCountries } países"
       ],
       "5 addresses": [
         "5 direcciones"
@@ -6921,6 +6912,9 @@
       "Auto reply": [
         "Respuesta automática"
       ],
+      "Backup & Export": [
+        ""
+      ],
       "Calendars": [
         "Calendarios"
       ],
@@ -6953,9 +6947,6 @@
       ],
       "Import & export": [
         "Importación y exportación"
-      ],
-      "Import/Export": [
-        ""
       ],
       "Multi-user support": [
         "Soporte multiusuario"
@@ -7497,6 +7488,9 @@
       "Back": [
         "Atrás"
       ],
+      "Backup & Export": [
+        ""
+      ],
       "Billing cycle": [
         "Ciclo de facturación"
       ],
@@ -7809,9 +7803,6 @@
       ],
       "Import-Export app": [
         "Aplicación Import-Export"
-      ],
-      "Import/Export": [
-        ""
       ],
       "Invalid verification code": [
         "Código de verificación no válido"
@@ -8527,6 +8518,20 @@
     "VPN info": {
       "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, and more.": [
         "Netflix, Amazon Prime Video, BBC iPlayer, ESPN +, Disney +, HBO Now y más."
+      ]
+    },
+    "VPN Plan Feature": {
+      "${ n } server": [
+        "",
+        ""
+      ],
+      "${ n } VPN connection": [
+        "",
+        ""
+      ],
+      "${ numberOfServers } in ${ numberOfCountries } country": [
+        "",
+        ""
       ]
     },
     "VPN upsell feature": {

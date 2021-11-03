@@ -886,6 +886,12 @@
       ]
     },
     "Calendar subscription not synced error": {
+      "Calendar could not be decrypted": [
+        ""
+      ],
+      "Calendar could not be found": [
+        ""
+      ],
       "Calendar is syncing": [
         ""
       ],
@@ -2101,6 +2107,9 @@
       "Create in": [
         ""
       ],
+      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
+        ""
+      ],
       "Custom": [
         "Egyéni"
       ],
@@ -2507,9 +2516,6 @@
       ],
       "VPN + ${ mailAppName } bundle for families and small businesses.": [
         "VPN + ${ mailAppName } csomag, családoknak és kisvállalkozásoknak."
-      ],
-      "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
-        "CSV fájlok importálása támogatott a következőkből: Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora és néhány egyéb. vCard 4.0 importálása szintén támogatott (UTF-8 kódolással)."
       ],
       "We use 3-D Secure to protect your payments.": [
         "3D Secure kódot használunk a kifizetések védelme érdekében."
@@ -3434,7 +3440,12 @@
       ]
     },
     "Mail import summary": {
-      "${ messagesFragment } since ${ periodFragment } and label them as ${ label }": [
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        "",
+        ""
+      ],
+      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        "",
         ""
       ]
     },

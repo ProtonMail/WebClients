@@ -822,6 +822,9 @@
       "Try another method": [
         "Másik módszer"
       ],
+      "Turn on tracker protection": [
+        ""
+      ],
       "Underline": [
         "Aláhúzott"
       ],
@@ -1437,6 +1440,12 @@
       ]
     },
     "Calendar subscription not synced error": {
+      "Calendar could not be decrypted": [
+        ""
+      ],
+      "Calendar could not be found": [
+        ""
+      ],
       "Calendar is syncing": [
         ""
       ],
@@ -1456,6 +1465,14 @@
         ""
       ],
       "More than 12 hours passed since last update": [
+        ""
+      ]
+    },
+    "Collapsible tooltip": {
+      "Close": [
+        ""
+      ],
+      "Open": [
         ""
       ]
     },
@@ -2816,10 +2833,6 @@
         "",
         ""
       ],
-      "${ numberOfTrackers } email tracker found": [
-        "",
-        ""
-      ],
       "${ numContactGroups } contact group": [
         "",
         ""
@@ -3135,6 +3148,9 @@
       "Create recovery phrase": [
         ""
       ],
+      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
+        ""
+      ],
       "Custom": [
         "Egyéni"
       ],
@@ -3205,6 +3221,19 @@
       ],
       "Email address": [
         "E-mail cím"
+      ],
+      "Email tracker protection is disabled": [
+        ""
+      ],
+      "Email trackers can violate your privacy. Proton did not find any trackers on this message.": [
+        ""
+      ],
+      "Email trackers can violate your privacy. Proton found and blocked ${ numberOfTrackers } tracker.": [
+        "",
+        ""
+      ],
+      "Email trackers can violate your privacy. Turn on tracker protection to prevent senders from knowing whether and when you have opened a message.": [
+        ""
       ],
       "embedded image": [
         "beágyazott kép",
@@ -3576,9 +3605,6 @@
       "Print email": [
         "E-mail nyomtatása"
       ],
-      "Protect yourself from trackers. Turn on email tracker protection in settings": [
-        ""
-      ],
       "Proton doesn't make money by abusing privacy.": [
         ""
       ],
@@ -3827,9 +3853,6 @@
       "To fight spam and abuse, please verify you are human.": [
         "A visszaélések és a levélszemét megakadályozására kérjük bizonyítsa, hogy nem robot."
       ],
-      "To protect your privacy, Proton blocked email trackers in this message": [
-        ""
-      ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "A névjegyek újbóli aláírásához, összehasonlítjuk a névjegyeket a jelenlegi titkosítási kulcsaival. Amelyikhez nem található titkosítási kulcs, azok a névjegyek kerülnek újbóli aláírásra az elsődleges kulccsal."
       ],
@@ -3849,6 +3872,9 @@
         ""
       ],
       "Turn off content search. Activation progress won't be lost.": [
+        ""
+      ],
+      "Turn on to search the content of your messages": [
         ""
       ],
       "Unsupported file": [
@@ -3928,9 +3954,6 @@
       ],
       "We could not verify the sender's trusted keys.": [
         "Nem sikerült a feladó megbízható kulcsainak ellenőrzése."
-      ],
-      "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
-        "CSV fájlok importálása támogatott a következőkből: Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora és néhány egyéb. vCard 4.0 importálása szintén támogatott (UTF-8 kódolással)."
       ],
       "We use 3-D Secure to protect your payments.": [
         "3D Secure kódot használunk a kifizetések védelme érdekében."
@@ -5090,7 +5113,12 @@
       ]
     },
     "Mail import summary": {
-      "${ messagesFragment } since ${ periodFragment } and label them as ${ label }": [
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        "",
+        ""
+      ],
+      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        "",
         ""
       ]
     },
@@ -5582,21 +5610,7 @@
         "Név"
       ]
     },
-    "Plan Feature": {
-      "${ n } server": [
-        "${ n } kiszolgáló",
-        "${ n } kiszolgálók"
-      ],
-      "${ n } VPN connection": [
-        "${ n } VPN kapcsolódás",
-        "${ n } VPN kapcsolódás"
-      ]
-    },
     "Plan feature": {
-      "${ freeServers } in ${ freeCountries } country": [
-        "",
-        ""
-      ],
       "0.5 GB storage": [
         "0.5 GB tárhely"
       ],
@@ -5609,10 +5623,6 @@
       "1 user": [
         "1 felhasználó"
       ],
-      "1200+ servers in ${ plusCountries } country": [
-        "1200+ szerver ${ plusCountries } országban",
-        "1200+ szerver ${ plusCountries } országban"
-      ],
       "20 GB storage": [
         "20 GB tárhely"
       ],
@@ -5621,10 +5631,6 @@
       ],
       "3 folders / labels": [
         "3 mappa és címke"
-      ],
-      "350+ servers in ${ basicCountries } country": [
-        "350+ szerver ${ basicCountries } országban",
-        ""
       ],
       "5 addresses": [
         "5 cím"
@@ -7038,6 +7044,20 @@
       ],
       "Windows, macOS, iOS, Linux, Android, Android TV, Chromebook, Chromecast": [
         "Windows, macOS, iOS, Linux, Android, Android TV, Chromebook, Chromecast"
+      ]
+    },
+    "VPN Plan Feature": {
+      "${ n } server": [
+        "",
+        ""
+      ],
+      "${ n } VPN connection": [
+        "",
+        ""
+      ],
+      "${ numberOfServers } in ${ numberOfCountries } country": [
+        "",
+        ""
       ]
     },
     "Warning": {

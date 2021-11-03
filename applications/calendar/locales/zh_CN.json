@@ -57,7 +57,7 @@
         "联系我们"
       ],
       "Check import progress": [
-        ""
+        "查看导入进度"
       ],
       "Choose a file or drag it here": [
         "选择一个文件或将其拖到此处"
@@ -129,7 +129,7 @@
         "创建事件"
       ],
       "Customize": [
-        ""
+        "定制"
       ],
       "Decrease": [
         "减少"
@@ -171,7 +171,7 @@
         "编辑邮箱地址"
       ],
       "Edit label": [
-        ""
+        "编辑标签"
       ],
       "Edit phone number": [
         "编辑电话号码"
@@ -210,7 +210,7 @@
         "隐藏高级 PGP 设置"
       ],
       "Hide folders": [
-        ""
+        "隐藏文件夹"
       ],
       "Hide info": [
         "隐藏信息"
@@ -399,13 +399,13 @@
         "显示高级 PGP 设置"
       ],
       "Show folders": [
-        ""
+        "显示文件夹"
       ],
       "Show info": [
         "显示信息"
       ],
       "Show labels": [
-        ""
+        "显示标签"
       ],
       "Show less": [
         "显示更少"
@@ -880,6 +880,12 @@
       ]
     },
     "Calendar subscription not synced error": {
+      "Calendar could not be decrypted": [
+        ""
+      ],
+      "Calendar could not be found": [
+        ""
+      ],
       "Calendar is syncing": [
         "日历正在同步中"
       ],
@@ -1283,7 +1289,7 @@
         "日历主私钥未解密"
       ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
-        ""
+        "由于个人日历限制，无法为所有导入的日历创建新日历。"
       ],
       "Can't validate email, try again later": [
         "无法验证电子邮件，请稍后再试"
@@ -1295,7 +1301,7 @@
         "活动取消发送失败"
       ],
       "Checkout expired, please try again": [
-        ""
+        "支付超时，请重试"
       ],
       "Contact could not be saved": [
         "无法保存联系人"
@@ -1313,7 +1319,7 @@
         "解密失败：无法解密此日程的内容。"
       ],
       "Deselect at least ${ calendarToFixCount } calendar or": [
-        ""
+        "取消选择至少 ${ calendarToFixCount } 个日历或者"
       ],
       "Email address disabled": [
         "Email 地址已禁用"
@@ -1346,7 +1352,7 @@
         "无法获取序列中的原始事件"
       ],
       "Folder name cannot be empty": [
-        ""
+        "文件夹名称不能为空"
       ],
       "Image upload failed": [
         "图片上传失败"
@@ -1400,10 +1406,10 @@
         "只能在${ minDateString }到${ maxDateString }之间移动日程"
       ],
       "Label name cannot be empty": [
-        ""
+        "标签名称不能为空"
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
-        ""
+        "将至少 ${ calendarToFixCount } 个日历与现有的 Proton 日历合并"
       ],
       "Missing signature": [
         "缺少签名"
@@ -1511,10 +1517,10 @@
         "您使用的浏览器无法完成支付验证，请使用其他浏览器或电脑支付。"
       ],
       "The folder name is too long. Please choose a different name.": [
-        ""
+        "文件夹名称过长，请重新填写。"
       ],
       "The label name is too long. Please choose a different name.": [
-        ""
+        "标签名称过长，请重新填写。"
       ],
       "The minimum amount of credit that can be added is ${ _price }": [
         "充值金额不能低于 ${ _price }"
@@ -1541,10 +1547,10 @@
         "此字段至少需要 ${ minimumLength } 个字符。"
       ],
       "This folder name is not available. Please choose a different name": [
-        ""
+        "文件夹名称不可用，请重新填写。"
       ],
       "This label name is not available. Please choose a different name": [
-        ""
+        "标签名称不可用，请重新填写。"
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "此邮件含有浏览器不能打开的链接"
@@ -2054,6 +2060,9 @@
       "Create in": [
         ""
       ],
+      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
+        ""
+      ],
       "Custom": [
         "自定义"
       ],
@@ -2458,9 +2467,6 @@
       ],
       "VPN + ${ mailAppName } bundle for families and small businesses.": [
         "VPN + ${ mailAppName } 捆包用于家庭和小企业。"
-      ],
-      "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
-        "我们支持从 Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora 等应用中导入 CSV 文件或导入 UTF-8 编码的 vCard 4.0 文件"
       ],
       "We use 3-D Secure to protect your payments.": [
         "我们使用 3-D Secure 保护您的支付安全。"
@@ -3009,7 +3015,7 @@
         "您有多大可能向朋友或同事推荐 ${ calendarAppName }？"
       ],
       "Import all messages": [
-        ""
+        "导入所有邮件"
       ],
       "Import contacts": [
         "导入联系人"
@@ -3027,13 +3033,13 @@
         ""
       ],
       "Last 12 months only": [
-        ""
+        "仅过去 12 个月"
       ],
       "Last 3 months only": [
-        ""
+        "仅过去 3 个月"
       ],
       "Last month only": [
-        ""
+        "仅上个月"
       ],
       "Mailbox password": [
         "邮箱密码"
@@ -3078,7 +3084,7 @@
         "付款人"
       ],
       "PGP scheme": [
-        ""
+        "PGP 方案"
       ],
       "Phone number": [
         "电话号码"
@@ -3383,7 +3389,10 @@
       ]
     },
     "Mail import summary": {
-      "${ messagesFragment } since ${ periodFragment } and label them as ${ label }": [
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        ""
+      ],
+      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
         ""
       ]
     },
@@ -4440,10 +4449,10 @@
         ""
       ],
       "Customize calendar import": [
-        ""
+        "自定义日历导入"
       ],
       "Customize your mail import": [
-        ""
+        "自定义您的邮件导入"
       ],
       "Customize your plan": [
         "自定义您的套餐"
@@ -4674,7 +4683,7 @@
         "选择发送该通知的方式"
       ],
       "Select what to import": [
-        ""
+        "选择要导入的内容"
       ],
       "Select when this event will stop happening": [
         "选择日程停止该事件"

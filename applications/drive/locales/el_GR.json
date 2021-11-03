@@ -188,7 +188,7 @@
         "Λήψη"
       ],
       "Drive Locked": [
-        ""
+        "Το Drive είναι κλειδωμένο"
       ],
       "Edit": [
         "Επεξεργασία"
@@ -861,6 +861,12 @@
       ]
     },
     "Calendar subscription not synced error": {
+      "Calendar could not be decrypted": [
+        "Αδυναμία αποκρυπτογράφησης ημερολογίου"
+      ],
+      "Calendar could not be found": [
+        "Αδυναμία εύρεσης ημερολογίου"
+      ],
       "Calendar is syncing": [
         "Το ημερολόγιο συγχρονίζεται"
       ],
@@ -1864,6 +1870,9 @@
       "Creating share": [
         "Δημιουργία κοινοποίησης"
       ],
+      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
+        "Υποστηρίζονται αρχεία CSV από Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora και κάποιες άλλες εφαρμογές, καθώς και μορφές vCard 3.1 και 4.0 (κωδικοποίηση UTF-8)."
+      ],
       "Delete drive": [
         "Διαγραφή αρχειοθήκης",
         "Διαγραφή αρχειοθηκών"
@@ -2257,8 +2266,8 @@
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Αυτός ο σύνδεσμος μπορεί να είναι επίθεση ομογραφίας. Βεβαιωθείτε ότι πρόκειται για το σύνδεσμο που θέλετε να επισκεφθείτε, ή μην το ανοίξετε."
       ],
-      "This link was created in a previous version and can not be modified. Delete this link and create a new one to change the settings.": [
-        "Αυτός ο σύνδεσμος δεν μπορεί να τροποποιηθεί, επειδή δημιουργήθηκε σε προηγούμενη έκδοση. Για να αλλάξετε τη σύνδεση, διαγράψτε τον και δημιουργήστε έναν νέο."
+      "This link was created in\na previous version and can not be modified. Delete this link and create a\nnew one to change the settings.": [
+        "Αυτός ο σύνδεσμος δεν μπορεί να τροποποιηθεί,\nεπειδή δημιουργήθηκε σε προηγούμενη έκδοση.\nΓια να αλλάξετε τις ρυθμίσεις, διαγράψτε τον και δημιουργήστε έναν νέο."
       ],
       "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
         "Αυτός ο σύνδεσμος θα απενεργοποιηθεί μόνιμα. Κανείς με αυτόν τον σύνδεσμο δε θα έχει πρόσβαση στο αρχείο. Για επαναδιαμοιρασμό του αρχείου, θα χρειαστείτε έναν νέο σύνδεσμο."
@@ -2332,9 +2341,6 @@
       ],
       "VPN + ${ mailAppName } bundle for families and small businesses.": [
         "Πακέτο VPN + ${ mailAppName } για οικογένειες και μικρές επιχειρήσεις."
-      ],
-      "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
-        "Υποστηρίζουμε την εισαγωγή αρχείων CSV από το Outlook, το Outlook Express, το Yahoo! Mail, Hotmail, Eudora και κάποιες άλλες εφαρμογές. Υποστηρίζουμε επίσης την εισαγωγή του vCard 4.0. (Κωδικοποίηση UTF-8)."
       ],
       "We use 3-D Secure to protect your payments.": [
         "Χρησιμοποιούμε ασφάλεια 3-D για να προστατεύσουμε τις πληρωμές σας."
@@ -3262,8 +3268,13 @@
       ]
     },
     "Mail import summary": {
-      "${ messagesFragment } since ${ periodFragment } and label them as ${ label }": [
-        "${ messagesFragment } μέχρι ${ periodFragment } και επισημάνετε τα ως ${ label }"
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        "Εισαγάγετε όλα τα μηνύματα από ${ selectedLabelsCount } από ${ totalLabelsCount } ετικέτα από ${ periodFragment } και επισημάνετε τα με ετικέτα ${ label }",
+        "Εισαγάγετε όλα τα μηνύματα από ${ selectedLabelsCount } από ${ totalLabelsCount } ετικέτες από ${ periodFragment } και επισημάνετε τα με ετικέτα ${ label }"
+      ],
+      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        "Εισαγάγετε όλα τα μηνύματα από ${ totalLabelsCount } ετικέτα από ${ periodFragment } και επισημάνετε τα με ετικέτα ${ label }",
+        "Εισαγάγετε όλα τα μηνύματα από ${ totalLabelsCount } ετικέτες από ${ periodFragment } και επισημάνετε τα με ετικέτα ${ label }"
       ]
     },
     "Many Others": {
@@ -3657,9 +3668,9 @@
       "1 user": [
         "1 χρήστης"
       ],
-      "1200+ servers in ${ plusCountries } country": [
-        "1200+ διακομιστές σε ${ plusCountries } χώρα",
-        "1200+ διακομιστές σε ${ plusCountries } χώρες"
+      "1300+ servers in ${ plusCountries } country": [
+        "1300+ διακομιστές σε ${ plusCountries } χώρα",
+        "1300+ διακομιστές σε ${ plusCountries } χώρες"
       ],
       "20 GB storage": [
         "20 GB αποθηκευτικός χώρος"
@@ -3865,7 +3876,7 @@
         "Οι προτιμήσεις συντομεύσεων πληκτρολογίου ενημερώθηκαν"
       ],
       "Phone number copied to clipboard": [
-        "Το τηλέφωνο αντιγράφηκε στο πρόχειρο"
+        "Ο τηλεφωνικός αριθμός αντιγράφηκε στο πρόχειρο"
       ],
       "Preference saved": [
         "Η προτίμηση αποθηκεύτηκε"
@@ -3885,8 +3896,8 @@
       "You have successfully unsubscribed": [
         "Διαγραφήκατε με επιτυχία"
       ],
-      "Your files were successfully recovered to \"My files\"": [
-        "Τα αρχεία σας ανακτήθηκαν επιτυχώς στα \"Αρχεία μου\""
+      "Your files were successfully recovered to \"My files\".": [
+        "Τα αρχεία σας ανακτήθηκαν επιτυχώς στα \"Αρχεία μου\"."
       ]
     },
     "Suffix for price": {
@@ -4287,7 +4298,7 @@
         "Άνοιγμα αναπτυσσόμενων επιλογών"
       ],
       "Open help menu": [
-        "Έγινε άνοιγμα μενού βοήθειας"
+        "Άνοιγμα μενού βοήθειας"
       ],
       "Open settings menu": [
         "Άνοιγμα μενού ρυθμίσεων"
@@ -4422,7 +4433,7 @@
         "Ανέβηκε από"
       ],
       "View contacts": [
-        "Εφαρμογή επαφών"
+        "Προβολή επαφών"
       ],
       "Warning": [
         "Προειδοποίηση"
@@ -4706,7 +4717,7 @@
         "Ορισμένες από τις επαφές που θα συγχωνευθούν, εμφανίζουν σφάλματα. Ελέγξτε τα ξεχωριστά"
       ],
       "The contact failed to load.": [
-        "Η επαφή απέτυχε να φορτωθεί."
+        "Αποτυχία φόρτωσης επαφής."
       ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
         "Οι ρυθμίσεις ημερομηνίας και ώρας στη συσκευή σας είναι εκτός συγχρονισμού. ${ learnMore }"
@@ -4728,9 +4739,6 @@
       ],
       "You will lose any customization you made so far.": [
         "Θα χάσετε οποιαδήποτε προσαρμογές που κάνατε μέχρι στιγμής."
-      ],
-      "Your local date & time settings seem to be out of sync.": [
-        "Οι τοπικές ρυθμίσεις σας ημερομηνίας και ώρας φαίνονται να είναι εκτός συγχρονισμού."
       ]
     }
   }

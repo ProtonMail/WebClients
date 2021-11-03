@@ -822,6 +822,9 @@
       "Try another method": [
         "Prueba con otro método"
       ],
+      "Turn on tracker protection": [
+        ""
+      ],
       "Underline": [
         "Subrayado"
       ],
@@ -1437,6 +1440,12 @@
       ]
     },
     "Calendar subscription not synced error": {
+      "Calendar could not be decrypted": [
+        ""
+      ],
+      "Calendar could not be found": [
+        ""
+      ],
       "Calendar is syncing": [
         "El calendario se está sincronizando"
       ],
@@ -1457,6 +1466,14 @@
       ],
       "More than 12 hours passed since last update": [
         "Han pasado más de 12 horas desde la última actualización"
+      ]
+    },
+    "Collapsible tooltip": {
+      "Close": [
+        "Cerrar"
+      ],
+      "Open": [
+        "Abrir"
       ]
     },
     "Composer email icon": {
@@ -1723,7 +1740,7 @@
         "Descifrando contactos... Esto puede tardar unos minutos. Cuando el proceso se complete, podrás descargar el archivo con todos tus contactos exportados."
       ],
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
-        ""
+        "Borrando contactos... Esto puede tardar unos minutos. Cuando el proceso haya sido completado podrás cerrar esta ventana."
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Cifrando e importando contactos... Esto puede tardar unos minutos. Cuando el proceso se haya completado, puedes cerrar esta ventana."
@@ -2220,7 +2237,7 @@
         "Este nombre de etiqueta no está disponible. Por favor, elija otro nombre"
       ],
       "This message has already been sent": [
-        ""
+        "Este mensaje ya ha sido enviado"
       ],
       "This message has already been sent. A new draft has been saved.": [
         ""
@@ -2816,10 +2833,6 @@
         "${ numberOfTrackers } rastreador de correo electrónico bloqueado",
         "${ numberOfTrackers } rastreadores de correo electrónicos bloqueados"
       ],
-      "${ numberOfTrackers } email tracker found": [
-        "${ numberOfTrackers } rastreador de correo electrónico encontrado",
-        "${ numberOfTrackers } rastreadores de correo electrónico encontrados"
-      ],
       "${ numContactGroups } contact group": [
         "${ numContactGroups } grupo de contactos",
         "${ numContactGroups } grupos de contactos"
@@ -3135,6 +3148,9 @@
       "Create recovery phrase": [
         "Crear una frase de recuperación"
       ],
+      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
+        ""
+      ],
       "Custom": [
         "Personalizado"
       ],
@@ -3205,6 +3221,19 @@
       ],
       "Email address": [
         "Dirección de correo electrónico"
+      ],
+      "Email tracker protection is disabled": [
+        ""
+      ],
+      "Email trackers can violate your privacy. Proton did not find any trackers on this message.": [
+        ""
+      ],
+      "Email trackers can violate your privacy. Proton found and blocked ${ numberOfTrackers } tracker.": [
+        "",
+        ""
+      ],
+      "Email trackers can violate your privacy. Turn on tracker protection to prevent senders from knowing whether and when you have opened a message.": [
+        ""
       ],
       "embedded image": [
         "imagen incrustada",
@@ -3576,9 +3605,6 @@
       "Print email": [
         "Imprimir correo electrónico"
       ],
-      "Protect yourself from trackers. Turn on email tracker protection in settings": [
-        "Protégete de los rastreadores. Activar la protección de los rastreadores de correo electrónico en la configuración"
-      ],
       "Proton doesn't make money by abusing privacy.": [
         ""
       ],
@@ -3827,9 +3853,6 @@
       "To fight spam and abuse, please verify you are human.": [
         "Para luchar contra el spam y el abuso, verifica que eres humano."
       ],
-      "To protect your privacy, Proton blocked email trackers in this message": [
-        "Para proteger su privacidad, Proton ha bloqueado los rastreadores de correo electrónico en este mensaje"
-      ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "Para volver a firmar tus contactos, necesitamos verificar cada contacto respecto a la lista de claves de cifrado disponibles en tu cuenta. Si no se encuentra ninguna coincidencia, tu contacto volverá a estar firmado con la clave de cifrado principal."
       ],
@@ -3849,6 +3872,9 @@
         ""
       ],
       "Turn off content search. Activation progress won't be lost.": [
+        ""
+      ],
+      "Turn on to search the content of your messages": [
         ""
       ],
       "Unsupported file": [
@@ -3928,9 +3954,6 @@
       ],
       "We could not verify the sender's trusted keys.": [
         "No hemos podido verificar las claves de confianza del remitente."
-      ],
-      "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
-        "Soportamos la importación de archivos CSV desde Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora y otras aplicaciones. También soportamos la importación de la codificación vCard 4.0 (codificación UTF-8)."
       ],
       "We use 3-D Secure to protect your payments.": [
         "Utilizamos 3-D Secure para proteger tus pagos."
@@ -5090,7 +5113,12 @@
       ]
     },
     "Mail import summary": {
-      "${ messagesFragment } since ${ periodFragment } and label them as ${ label }": [
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        "",
+        ""
+      ],
+      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        "",
         ""
       ]
     },
@@ -5582,21 +5610,7 @@
         "Nombre"
       ]
     },
-    "Plan Feature": {
-      "${ n } server": [
-        "${ n } servidor",
-        "${ n } servidores"
-      ],
-      "${ n } VPN connection": [
-        "${ n } conexión VPN",
-        "${ n } conexiones VPN"
-      ]
-    },
     "Plan feature": {
-      "${ freeServers } in ${ freeCountries } country": [
-        "${ freeServers } servidores en ${ freeCountries } país",
-        "${ freeServers } servidores en ${ freeCountries } países"
-      ],
       "0.5 GB storage": [
         "0,5 GB de almacenamiento"
       ],
@@ -5609,10 +5623,6 @@
       "1 user": [
         "1 usuario"
       ],
-      "1200+ servers in ${ plusCountries } country": [
-        "Más de 1200 servidores en ${ plusCountries } país",
-        "Más de 1200 servidores en ${ plusCountries } países"
-      ],
       "20 GB storage": [
         "20 GB de almacenamiento"
       ],
@@ -5621,10 +5631,6 @@
       ],
       "3 folders / labels": [
         "3 carpetas / etiquetas"
-      ],
-      "350+ servers in ${ basicCountries } country": [
-        "Más de 350 servidores en ${ basicCountries } país",
-        "Más de 350 servidores en ${ basicCountries } países"
       ],
       "5 addresses": [
         "5 direcciones"
@@ -7038,6 +7044,20 @@
       ],
       "Windows, macOS, iOS, Linux, Android, Android TV, Chromebook, Chromecast": [
         "Windows, macOS, iOS, Linux, Android, Android TV, Chromebook, Chromecast"
+      ]
+    },
+    "VPN Plan Feature": {
+      "${ n } server": [
+        "",
+        ""
+      ],
+      "${ n } VPN connection": [
+        "",
+        ""
+      ],
+      "${ numberOfServers } in ${ numberOfCountries } country": [
+        "",
+        ""
       ]
     },
     "Warning": {

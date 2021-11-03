@@ -31,11 +31,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } butik"
       ],
-      "activate": [
-        "aktivér"
-      ],
       "Activate": [
         "Aktivér"
+      ],
+      "activate": [
+        "aktivér"
       ],
       "Activate ${ Name }@pm.me": [
         "Aktiver ${ Name }@pm.me"
@@ -290,7 +290,7 @@
         "Nedgradér"
       ],
       "Downgrade account": [
-        "Nedpgradér konto"
+        "Nedgradér konto"
       ],
       "Downgrade to ${ BRAND_NAME } ${ downgradedPlanName }": [
         "Nedgrader til ${ BRAND_NAME } ${ downgradedPlanName }"
@@ -879,9 +879,6 @@
       ]
     },
     "Alert": {
-      "Are you sure you want to import a private key? Importing an insecurely generated or leaked private key can harm the security of your emails.": [
-        "Sikker på, at du vil importere en privat nøgle? Import af en usikker genereret eller lækket privat nøgle kan kompromittere sikkerheden for dine e-mails."
-      ],
       "By leaving now, some contacts may not be imported": [
         "Ved at forlade nu, vil nogle kontakter måske ikke blive importeret"
       ],
@@ -1297,6 +1294,12 @@
       ]
     },
     "Calendar subscription not synced error": {
+      "Calendar could not be decrypted": [
+        "Kalender kunne ikke dekrypteres"
+      ],
+      "Calendar could not be found": [
+        "Kalender kunne ikke findes"
+      ],
       "Calendar is syncing": [
         "Kalender synkroniserer"
       ],
@@ -1613,8 +1616,8 @@
       "I use a different Proton account": [
         "Jeg bruger en anden Proton-konto"
       ],
-      "Missing feature(s) ": [
-        "Manglende funktion(er) "
+      "Missing feature(s)": [
+        "Manglende funktion(er)"
       ],
       "My reason isn't listed, please comment": [
         "Min begrundelse er ikke anført. Efterlad venligst en kommentar"
@@ -1791,7 +1794,7 @@
         "Kan ikke bekræfte telefonen, prøv igen senere"
       ],
       "Checkout expired, please try again": [
-        ""
+        "Betalingen er udløbet, prøv venligst igen"
       ],
       "Condition incomplete": [
         "Betingelse mangelfuld"
@@ -1916,7 +1919,7 @@
         "Ikke et gyldigt nummer"
       ],
       "Organization key is not decrypted": [
-        ""
+        "Organisationsnøgle er ikke dekrypteret"
       ],
       "Organization key is not decrypted.": [
         "Organisationsnøgle er ikke dekrypteret."
@@ -1953,7 +1956,7 @@
         "Løs venligst de fremhævede konflikter for at fortsætte."
       ],
       "Please generate keys before you try to change your password": [
-        ""
+        "Generér nøgler, inden du forsøger at ændre din adgangskode"
       ],
       "Please refresh the page.": [
         "Genopfrisk venligst siden."
@@ -1968,7 +1971,7 @@
         "Prøv at verificere igen og sørg for at tilladelserne er angivet korrekt."
       ],
       "Please upgrade to a Professional plan with more than 1 user, or a Visionary account, to get multi-user support": [
-        ""
+        "Opgradér til et Professional-abonnement med mere end 1 bruger eller en Visionary-konto for at få flerbrugerunderstøttelse"
       ],
       "Please upgrade to a Professional plan with more than 1 user, or a Visionary account, to manage multiple users.": [
         "Opgradér til et Professional-abonnement med mere end 1 bruger eller en Visionary-konto for at administrere flere brugere."
@@ -2037,7 +2040,7 @@
         "Den mindste betaling vi accepterer er ${ _price2 }"
       ],
       "The organization key must be activated first": [
-        ""
+        "Organisationsnøglen skal først aktiveres"
       ],
       "The organization key must be activated first.": [
         "Organisationsnøglen skal først aktiveres."
@@ -2960,6 +2963,11 @@
         "Totrinsbekræftelse aktiveret"
       ]
     },
+    "Import key": {
+      "Are you sure you want to import a private key? Importing an insecurely generated or leaked private key can harm the security of your emails.\n\nPlease also note that the public key corresponding to this private key will be publicly available from our key server. If the key contains personal details (such as your full name) which you do not want to publish, please edit the key before importing it.": [
+        "Er du sikker på, at du vil importere en privat nøgle? Hvis du importerer en usikkert genereret eller lækket privat nøgle, kan det skade dine e-mailes sikkerhed.\n\nBemærk også, at den offentlige nøgle, der svarer til denne private nøgle, vil være offentligt tilgængelig fra vores nøgleserver. Hvis nøglen indeholder personlige oplysninger (f.eks. dit fulde navn), som du ikke ønsker at offentliggøre, skal du redigere nøglen, før du importerer den."
+      ]
+    },
     "Import status": {
       "${ percentageValue }% paused": [
         "${ percentageValue }% sat på pause"
@@ -3381,6 +3389,9 @@
       "Creating your Proton account": [
         "Opretter din Proton-konto"
       ],
+      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
+        "CSV-filer fra Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora og nogle andre apps samt vCard 3.1 og 4.0-formater (UTF-8-kodning) understøttes."
+      ],
       "Currently all available storage is allocated to the administrator account. Please reduce the admin account allocation to free up space for additional users. You can increase the total storage at any time by upgrading your account.": [
         "Aktuelt allokeres al ledig lagerplads til administratorkontoen. Reducér administratorkontoallokeringen for at frigive lagerplads til yderligere brugere. Du kan altid forøge den samlede mængde lagerplads ved at opgradere din konto."
       ],
@@ -3449,7 +3460,7 @@
         "Udført"
       ],
       "Done! We sent a code to ${ destination }.": [
-        ""
+        "Færdig! Vi sendte en kode til ${ destination }."
       ],
       "Downgrading will terminate any connections to paid ProtonVPN servers.": [
         "Nedgradering vil afslutte alle forbindelser til betalte ProtonVPN-servere."
@@ -3537,9 +3548,6 @@
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Filtre virker på alle e-mails, herunder indgående samt sendte e-mails. Hvert filter skal indeholde mindst et navn, en betingelse og en handling."
-      ],
-      "For advanced security, the Import-Export app encrypts emails on your device before migrating them to Proton servers. You can also export messages for local backups.": [
-        "For avanceret sikkerhed krypterer Import-Export appen e-mails på din enhed, før de migreres til Protons servere. Du kan også eksportere beskeder til lokale sikkerhedskopier."
       ],
       "For families and small teams; includes both Mail and VPN.": [
         "For familier og små teams; inkluderer både Mail og VPN."
@@ -3644,7 +3652,7 @@
         "Billed-URL"
       ],
       "Images have been removed because they are not allowed in auto-reply": [
-        ""
+        "Billeder er blevet fjernet, fordi de ikke er tilladte i auto-svar"
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Importer ${ contactsFragment } og ${ contactsGroupsFragment }"
@@ -4098,6 +4106,9 @@
       "The email address you place at the top of the list is your default email address. Drag and drop to reorder your addresses.": [
         "Den e-mailadresse, du placerer øverst på listen, er din standard e-mailadresse. Træk og slip for at omarrangere dine adresser."
       ],
+      "The Import-Export app allows you to export messages for local backups and to restore previous backups to your account.": [
+        "Med appen Import-Eksport kan du eksportere beskeder til lokale sikkerhedskopier og genskabe tidligere sikkerhedskopier på din konto."
+      ],
       "The name will be visible to your users while they are logged in.": [
         "Navnet vil være synligt for dine brugere, mens de er logget ind."
       ],
@@ -4283,9 +4294,6 @@
       ],
       "We recommend adding a linked email so you can recover your account if you lose your password.": [
         "Vi anbefaler, at du tilføjer en tilknyttet e-mail eller telefonnummer, så du kan gendanne din konto, hvis du mister din adgangskode."
-      ],
-      "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
-        "Vi understøtter import af CSV-filer fra Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora og visse andre apps. Vi understøtter også import af vCard 4.0. (UTF-8-kodning)."
       ],
       "We use 3-D Secure to protect your payments.": [
         "Vi bruger 3-D Secure til at beskytte dine betalinger."
@@ -5519,10 +5527,10 @@
         "Total (${ countdown })"
       ],
       "Two-factor authentication": [
-        "Tofaktorgodkendelse"
+        "To-faktorgodkendelse"
       ],
       "Two-factor authentication code": [
-        "Tofaktorgodkendelseskode"
+        "To-faktorgodkendelseskode"
       ],
       "Two-password mode": [
         "To-adgangskodetilstand"
@@ -5661,13 +5669,13 @@
         "Proton til erhverv"
       ],
       "Proton for Business newsletter": [
-        "Proton til erhverv nyhedsbrev"
+        "Proton til erhverv-nyhedsbrev"
       ],
       "Proton major features": [
         "Proton vigtigste funktioner"
       ],
       "Proton newsletter": [
-        "Proton nyhedsbrev"
+        "Proton-nyhedsbrev"
       ],
       "Proton product announcements": [
         "Proton-produktannonceringer"
@@ -5928,8 +5936,13 @@
       ]
     },
     "Mail import summary": {
-      "${ messagesFragment } since ${ periodFragment } and label them as ${ label }": [
-        "${ messagesFragment } siden ${ periodFragment } og giv dem etiketten ${ label }"
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        "Importer alle beskeder fra ${ selectedLabelsCount } ud af ${ totalLabelsCount } etikette siden ${ periodFragment } og giv dem etiketten ${ label }",
+        "Importer alle beskeder fra ${ selectedLabelsCount } ud af ${ totalLabelsCount } etiketter siden ${ periodFragment } og giv dem etiketten ${ label }"
+      ],
+      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        "Importer alle beskeder fra ${ totalLabelsCount } etiketten siden ${ periodFragment } og giv dem etiketten ${ label }",
+        "Importer alle beskeder fra ${ totalLabelsCount } etiketter siden ${ periodFragment } og giv dem etiketten ${ label }"
       ]
     },
     "Mail upsell feature": {
@@ -5970,7 +5983,7 @@
     },
     "Message": {
       "Are you sure you want to disable two-factor authentication?": [
-        "Sikker på, at du vil deaktivere tofaktorgodkendelse?"
+        "Sikker på, at du vil deaktivere to-faktorgodkendelse?"
       ],
       "Set up a custom domain email address (e.g., you@yourcompany.com). It only takes a few minutes, and our wizard will guide you through the process.": [
         "Opsæt en brugerdefineret domænemailadresse (f.eks. dig@ditfirma.com). Det tager kun et par minutter, og vores guide vil føre dig gennem processen."
@@ -6628,7 +6641,7 @@
         "Tekst"
       ],
       "Two-factor authentication code": [
-        "Tofaktorgodkendelseskode"
+        "To-faktorgodkendelseskode"
       ],
       "Type text or keyword": [
         "Indtast tekst eller nøgleord"
@@ -6656,21 +6669,7 @@
         "Gratis"
       ]
     },
-    "Plan Feature": {
-      "${ n } server": [
-        "${ n } server",
-        "${ n } servere"
-      ],
-      "${ n } VPN connection": [
-        "${ n } VPN-forbindelse",
-        "${ n } VPN-forbindelser"
-      ]
-    },
     "Plan feature": {
-      "${ freeServers } in ${ freeCountries } country": [
-        "${ freeServers } i ${ freeCountries } land",
-        "${ freeServers } i ${ freeCountries } lande"
-      ],
       "0.5 GB storage": [
         "0,5 GB lagerplads"
       ],
@@ -6683,10 +6682,6 @@
       "1 user": [
         "1 bruger"
       ],
-      "1200+ servers in ${ plusCountries } country": [
-        "1200+ servere i ${ plusCountries } land",
-        "1200+ servere i ${ plusCountries } lande"
-      ],
       "20 GB storage": [
         "20 GB lagerplads"
       ],
@@ -6695,10 +6690,6 @@
       ],
       "3 folders / labels": [
         "3 mapper / etiketter"
-      ],
-      "350+ servers in ${ basicCountries } country": [
-        "350+ servere i ${ basicCountries } land",
-        "350+ servere i ${ basicCountries } lande"
       ],
       "5 addresses": [
         "5 adresser"
@@ -6921,6 +6912,9 @@
       "Auto reply": [
         "Autosvar"
       ],
+      "Backup & Export": [
+        "Backup & eksport"
+      ],
       "Calendars": [
         "Kalendere"
       ],
@@ -6953,9 +6947,6 @@
       ],
       "Import & export": [
         "Import & eksport"
-      ],
-      "Import/Export": [
-        "Import/eksport"
       ],
       "Multi-user support": [
         "Flerbrugerunderstøttelse"
@@ -7155,7 +7146,7 @@
         "Slet oprindelige beskeder"
       ],
       "DMARC value copied to clipboard": [
-        ""
+        "DMARC-værdi kopieret til udklipsholder"
       ],
       "Domain verified": [
         "Domæne bekræftet"
@@ -7230,7 +7221,7 @@
         "Sessioner tilbagekaldt"
       ],
       "SPF value copied to clipboard": [
-        ""
+        "SPF-værdi kopieret til udklipsholder"
       ],
       "User created": [
         "Bruger oprettet"
@@ -7239,10 +7230,10 @@
         "Bruger opdateret"
       ],
       "Value copied to clipboard": [
-        ""
+        "Værdi kopieret til udklipsholder"
       ],
       "Verification code copied to clipboard": [
-        ""
+        "Bekræftelseskode kopieret til udklipsholder"
       ],
       "Verification successful": [
         "Bekræftelse gennemført"
@@ -7497,6 +7488,9 @@
       "Back": [
         "Tilbage"
       ],
+      "Backup & Export": [
+        "Backup & eksport"
+      ],
       "Billing cycle": [
         "Faktureringscyklus"
       ],
@@ -7672,7 +7666,7 @@
         "Domænenavne"
       ],
       "Downgrade account": [
-        "Nedpgradér konto"
+        "Nedgradér konto"
       ],
       "Edit Allow List": [
         "Rediger godkendt-liste"
@@ -7809,9 +7803,6 @@
       ],
       "Import-Export app": [
         "Import-eksport-app"
-      ],
-      "Import/Export": [
-        "Import/eksport"
       ],
       "Invalid verification code": [
         "Ugyldig bekræftelseskode"
@@ -8099,7 +8090,7 @@
         "Total (månedlig)"
       ],
       "Two-factor authentication": [
-        "Tofaktorgodkendelse"
+        "To-faktorgodkendelse"
       ],
       "Type": [
         "Type"
@@ -8261,7 +8252,7 @@
         "Rediger etikettenavne"
       ],
       "Enable/disable desktop and mobile notifications": [
-        "Aktivér/deaktivér desktop- og mobilnotifikationer"
+        "Aktiver/deaktiver notifikationer på desktop og mobil"
       ],
       "Enabling advanced logs records the IP address for each event in the security log.": [
         "Aktivering af avancerede logoptegnelser registrerer IP-adressen for hver begivenhed i sikkerhedsloggen."
@@ -8527,6 +8518,20 @@
     "VPN info": {
       "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, and more.": [
         "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now og meget mere."
+      ]
+    },
+    "VPN Plan Feature": {
+      "${ n } server": [
+        "",
+        ""
+      ],
+      "${ n } VPN connection": [
+        "",
+        ""
+      ],
+      "${ numberOfServers } in ${ numberOfCountries } country": [
+        "",
+        ""
       ]
     },
     "VPN upsell feature": {

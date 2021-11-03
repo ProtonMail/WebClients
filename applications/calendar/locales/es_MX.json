@@ -886,6 +886,12 @@
       ]
     },
     "Calendar subscription not synced error": {
+      "Calendar could not be decrypted": [
+        "No se pudo descifrar el calendario"
+      ],
+      "Calendar could not be found": [
+        "No se pudo encontrar el calendario"
+      ],
       "Calendar is syncing": [
         "El calendario se está sincronizando"
       ],
@@ -2101,6 +2107,9 @@
       "Create in": [
         "Crear en"
       ],
+      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
+        "Se admiten archivos CSV de Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora y algunas otras aplicaciones, así como los formatos vCard 3.1 y 4.0 (codificación UTF-8)."
+      ],
       "Custom": [
         "Personalizado"
       ],
@@ -2507,9 +2516,6 @@
       ],
       "VPN + ${ mailAppName } bundle for families and small businesses.": [
         "Paquete VPN + ${ mailAppName } para familias y pequeñas empresas."
-      ],
-      "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
-        "Soportamos la importación de archivos CSV desde Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora y otras aplicaciones. También soportamos la importación de la codificación vCard 4.0 (codificación UTF-8)."
       ],
       "We use 3-D Secure to protect your payments.": [
         "Usamos seguridad 3-D para proteger sus pagos."
@@ -3434,8 +3440,13 @@
       ]
     },
     "Mail import summary": {
-      "${ messagesFragment } since ${ periodFragment } and label them as ${ label }": [
-        "${ messagesFragment } desde ${ periodFragment } y etiquetarlos como ${ label }"
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        "Importar todos los mensajes de ${ selectedLabelsCount } de ${ totalLabelsCount } etiqueta desde ${ periodFragment } y etiquetarlos como ${ label }",
+        "Importar todos los mensajes de ${ selectedLabelsCount } de ${ totalLabelsCount } etiquetas desde ${ periodFragment } y etiquetarlos como ${ label }"
+      ],
+      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        "Importar todos los mensajes de ${ totalLabelsCount } etiqueta desde ${ periodFragment } y etiquetarlos como ${ label }",
+        "Importar todos los mensajes de ${ totalLabelsCount } etiquetas desde ${ periodFragment } y etiquetarlos como ${ label }"
       ]
     },
     "Many Others": {

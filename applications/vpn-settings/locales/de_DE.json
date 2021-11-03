@@ -699,6 +699,12 @@
       ]
     },
     "Calendar subscription not synced error": {
+      "Calendar could not be decrypted": [
+        "Kalender konnte nicht entschlüsselt werden"
+      ],
+      "Calendar could not be found": [
+        "Kalender konnte nicht gefunden werden"
+      ],
       "Calendar is syncing": [
         "Kalender wird synchronisiert"
       ],
@@ -768,8 +774,8 @@
       "I use a different Proton account": [
         "Ich verwende ein anderes Proton-Konto"
       ],
-      "Missing feature(s) ": [
-        "Fehlende Funktion(en) "
+      "Missing feature(s)": [
+        "Fehlende Funktion(en)"
       ],
       "My reason isn't listed, please comment": [
         "Mein Grund ist nicht aufgeführt (bitte beschreiben Sie das Problem)"
@@ -2785,71 +2791,7 @@
         "Mittel"
       ]
     },
-    "Plan Feature": {
-      "${ freeServersCount.free_vpn } server": [
-        "${ freeServersCount.free_vpn } Server",
-        "${ freeServersCount.free_vpn } Server"
-      ],
-      "${ maxConnections } VPN connection": [
-        "${ maxConnections } VPN-Verbindung",
-        "${ maxConnections } VPN-Verbindungen"
-      ],
-      "${ n } server": [
-        "${ n } Server",
-        "${ n } Server"
-      ],
-      "${ n } VPN connection": [
-        "${ n } VPN-Verbindung",
-        "${ n } VPN-Verbindungen"
-      ],
-      "${ nFreeServers } in ${ countries.free_vpn.count } country": [
-        "${ nFreeServers } in ${ countries.free_vpn.count } Land",
-        "${ nFreeServers } in ${ countries.free_vpn.count } Ländern"
-      ],
-      "1200+ servers in ${ countries[PLANS.VPNPLUS].count } country": [
-        "Mehr als 1.200 Server in ${ countries[PLANS.VPNPLUS].count } Land",
-        "Mehr als 1.200 Server in ${ countries[PLANS.VPNPLUS].count } Ländern"
-      ],
-      "350+ servers in ${ countries[PLANS.VPNBASIC].count } country": [
-        "Mehr als 350 Server in ${ countries[PLANS.VPNBASIC].count } Land",
-        "Mehr als 350 Server in ${ countries[PLANS.VPNBASIC].count } Ländern"
-      ],
-      "All advanced security features": [
-        "Alle erweiterten Sicherheitsfunktionen"
-      ],
-      "Filesharing/P2P support": [
-        "Filesharing/P2P-Unterstützung"
-      ],
-      "High speed": [
-        "Hohe Geschwindigkeit"
-      ],
-      "Highest speed (10 Gbps)": [
-        "Höchstgeschwindigkeitsserver (10 GBit/s)"
-      ],
-      "Highest speed (up to 10 Gbps)": [
-        "Höchste Geschwindigkeit (bis zu 10 GBit/s)"
-      ],
-      "Medium speed": [
-        "Mittlere Geschwindigkeit"
-      ],
-      "ProtonMail Plus account": [
-        "ProtonMail Plus Konto"
-      ],
-      "ProtonMail Visionary account": [
-        "ProtonMail Visionär-Konto"
-      ],
-      "Streaming service support": [
-        "Unterstützung von Streaming-Diensten"
-      ],
-      "Strict no-logs policy": [
-        "Strenge Richtlinie, dass keine Protokollierung stattfindet"
-      ]
-    },
     "Plan feature": {
-      "${ freeServers } in ${ freeCountries } country": [
-        "${ freeServers } in ${ freeCountries } Land",
-        "${ freeServers } in ${ freeCountries } Ländern"
-      ],
       "0.5 GB storage": [
         "500 MB Speicherplatz"
       ],
@@ -2862,10 +2804,6 @@
       "1 user": [
         "1 Benutzer"
       ],
-      "1200+ servers in ${ plusCountries } country": [
-        "Mehr als 1.200 Server in ${ plusCountries } Land",
-        "Mehr als 1.200 Server in ${ plusCountries } Ländern"
-      ],
       "20 GB storage": [
         "20 GB Speicherplatz"
       ],
@@ -2874,10 +2812,6 @@
       ],
       "3 folders / labels": [
         "3 Ordner/Kategorien"
-      ],
-      "350+ servers in ${ basicCountries } country": [
-        "Mehr als 350 Server in ${ basicCountries } Land",
-        "Mehr als 350 Server in ${ basicCountries } Ländern"
       ],
       "5 addresses": [
         "5 E-Mail-Adressen"
@@ -2956,6 +2890,38 @@
       ],
       "Unlimited folders / labels": [
         "Unbegrenzte Anzahl von Ordnern/Kategorien"
+      ]
+    },
+    "Plan Feature": {
+      "All advanced security features": [
+        "Alle erweiterten Sicherheitsfunktionen"
+      ],
+      "Filesharing/P2P support": [
+        "Filesharing/P2P-Unterstützung"
+      ],
+      "High speed": [
+        "Hohe Geschwindigkeit"
+      ],
+      "Highest speed (10 Gbps)": [
+        "Höchstgeschwindigkeitsserver (10 GBit/s)"
+      ],
+      "Highest speed (up to 10 Gbps)": [
+        "Höchste Geschwindigkeit (bis zu 10 GBit/s)"
+      ],
+      "Medium speed": [
+        "Mittlere Geschwindigkeit"
+      ],
+      "ProtonMail Plus account": [
+        "ProtonMail Plus Konto"
+      ],
+      "ProtonMail Visionary account": [
+        "ProtonMail Visionär-Konto"
+      ],
+      "Streaming service support": [
+        "Unterstützung von Streaming-Diensten"
+      ],
+      "Strict no-logs policy": [
+        "Strenge Richtlinie, dass keine Protokollierung stattfindet"
       ]
     },
     "Plan info": {
@@ -3702,6 +3668,20 @@
     "VPN info": {
       "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, and more.": [
         "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now und weitere."
+      ]
+    },
+    "VPN Plan Feature": {
+      "${ n } server": [
+        "${ n } Server",
+        "Mehr als ${ n } Server"
+      ],
+      "${ n } VPN connection": [
+        "${ n } VPN-Verbindung",
+        "${ n } VPN-Verbindungen"
+      ],
+      "${ numberOfServers } in ${ numberOfCountries } country": [
+        "${ numberOfServers } in ${ numberOfCountries } Land",
+        "${ numberOfServers } in ${ numberOfCountries } Ländern"
       ]
     },
     "VPN upsell feature": {

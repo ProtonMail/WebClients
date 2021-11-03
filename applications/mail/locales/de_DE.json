@@ -822,6 +822,9 @@
       "Try another method": [
         "Eine andere Methode ausprobieren"
       ],
+      "Turn on tracker protection": [
+        "Tracker-Schutz aktivieren"
+      ],
       "Underline": [
         "Unterstreichen"
       ],
@@ -1437,6 +1440,12 @@
       ]
     },
     "Calendar subscription not synced error": {
+      "Calendar could not be decrypted": [
+        "Kalender konnte nicht entschlüsselt werden"
+      ],
+      "Calendar could not be found": [
+        "Kalender konnte nicht gefunden werden"
+      ],
       "Calendar is syncing": [
         "Kalender wird synchronisiert"
       ],
@@ -1457,6 +1466,14 @@
       ],
       "More than 12 hours passed since last update": [
         "Seit der letzten Aktualisierung sind mehr als 12 Stunden vergangen"
+      ]
+    },
+    "Collapsible tooltip": {
+      "Close": [
+        "Schließen"
+      ],
+      "Open": [
+        "Öffnen"
       ]
     },
     "Composer email icon": {
@@ -1906,7 +1923,7 @@
         "Das Gerät konnte nicht bestätigt werden. Bitte versuche es später noch einmal."
       ],
       "Checkout expired, please try again": [
-        "Kaufabwicklung abgelaufen. Bitte versuche es noch einmal"
+        "Kaufabwicklung abgelaufen. Bitte versuchen Sie es noch einmal"
       ],
       "Choose a date in the future.": [
         "Wählen Sie ein zukünftiges Datum."
@@ -1928,10 +1945,10 @@
         "Kontaktsignatur nicht bestätigt"
       ],
       "Contact your organization’s administrator to resolve this": [
-        "Wende dich an den Administrator deiner Organisation, um dies zu klären"
+        "Wenden Sie sich an den Administrator Ihrer Organisation, um dies zu klären"
       ],
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
-        "Die Inhaltssuche kann in diesem Browser nicht aktiviert werden. Bitte beende den privaten Browsermodus oder verwende einen anderen Browser."
+        "Die Inhaltssuche kann in diesem Browser nicht aktiviert werden. Bitte beenden Sie den privaten Browsermodus oder verwenden Sie einen anderen Browser."
       ],
       "Could not find address ${ email }.": [
         "Adresse ${ email } wurde nicht gefunden."
@@ -1968,7 +1985,7 @@
         "Fehler in einer der Bedingungen"
       ],
       "Error while saving draft. Please try again.": [
-        "Fehler beim Speichern des Entwurfs. Bitte versuche es erneut."
+        "Fehler beim Speichern des Entwurfs. Bitte versuchen Sie es erneut."
       ],
       "Error while sending the message. Message is not sent.": [
         "Fehler beim Senden der Nachricht. Nachricht wurde nicht gesendet."
@@ -2229,7 +2246,7 @@
         "Diese Nachricht enthält möglicherweise Internetadressen, die von Ihrem aktuellen Browser nicht ordnungsgemäß geöffnet werden können."
       ],
       "Too many active filters. Please upgrade to a paid plan to activate more filters.": [
-        "Zu viele aktive Filter. Bitte wechsle zu einem kostenpflichtigen Paket, um weitere Filter zu aktivieren."
+        "Zu viele aktive Filter. Bitte wechseln Sie zu einem kostenpflichtigen Paket, um weitere Filter aktivieren zu können."
       ],
       "Trusted keys are not valid for sending": [
         "Die vertrauenswürdigen Schlüssel sind für den Versand nicht gültig"
@@ -2250,7 +2267,7 @@
         "Du kannst nicht vCards von mehr als 10 Kontakten verschicken"
       ],
       "You cannot open more than ${ maxActiveComposer } composer window at a time": [
-        "Du kannst nicht mehr als ${ maxActiveComposer } Verfassen-Fenster auf einmal öffnen",
+        "Sie können nicht mehr als ${ maxActiveComposer } Verfassen-Fenster auf einmal öffnen",
         "Du kannst nicht mehr als ${ maxActiveComposer } Verfassen-Fenster auf einmal öffnen"
       ],
       "You did not provide a file.": [
@@ -2269,7 +2286,7 @@
         "Ihr Import wird nicht verarbeitet."
       ],
       "Your search matched too many results. Please limit your search and try again.": [
-        "Deine Suche ergab zu viele Treffer. Schränke deine Suche ein und versuche es erneut."
+        "Ihre Suche ergab zu viele Treffer. Schränken Sie Ihre Suche ein und versuchen Sie es erneut."
       ]
     },
     "Error display when performing invalid move on message": {
@@ -2816,10 +2833,6 @@
         "${ numberOfTrackers } E-Mail-Tracker gesperrt",
         "${ numberOfTrackers } E-Mail-Tracker gesperrt"
       ],
-      "${ numberOfTrackers } email tracker found": [
-        "${ numberOfTrackers } E-Mail-Tracker erkannt",
-        "${ numberOfTrackers } E-Mail-Tracker erkannt"
-      ],
       "${ numContactGroups } contact group": [
         "${ numContactGroups } Kontaktgruppe",
         "${ numContactGroups } Kontaktgruppen"
@@ -3135,6 +3148,9 @@
       "Create recovery phrase": [
         "Wiederherstellungsphrase erstellen"
       ],
+      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
+        "CSV-Dateien aus Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora und einigen anderen Anwendungen sowie die Formate vCard 3.1 und 4.0 (UTF-8-Kodierung) werden unterstützt."
+      ],
       "Custom": [
         "Benutzerdefiniert"
       ],
@@ -3205,6 +3221,19 @@
       ],
       "Email address": [
         "E-Mail-Adresse"
+      ],
+      "Email tracker protection is disabled": [
+        "E-Mail-Nachverfolgungsschutz ist deaktiviert"
+      ],
+      "Email trackers can violate your privacy. Proton did not find any trackers on this message.": [
+        "E-Mail-Tracker können Ihre Privatsphäre verletzen. Proton hat keine Tracker in dieser Nachricht gefunden."
+      ],
+      "Email trackers can violate your privacy. Proton found and blocked ${ numberOfTrackers } tracker.": [
+        "E-Mail-Tracker können Ihre Privatsphäre verletzen. Proton hat ${ numberOfTrackers } Tracker erkannt und gesperrt.",
+        "E-Mail-Tracker können Ihre Privatsphäre verletzen. Proton hat ${ numberOfTrackers } Tracker erkannt und gesperrt."
+      ],
+      "Email trackers can violate your privacy. Turn on tracker protection to prevent senders from knowing whether and when you have opened a message.": [
+        "E-Mail-Tracker können Ihre Privatsphäre verletzen. Aktivieren Sie den Nachverfolgungsschutz, damit Absender nicht erkennen können, ob und wann Sie eine Nachricht geöffnet haben."
       ],
       "embedded image": [
         "eingebettete Grafik",
@@ -3576,9 +3605,6 @@
       "Print email": [
         "E-Mail drucken"
       ],
-      "Protect yourself from trackers. Turn on email tracker protection in settings": [
-        "Schützen Sie sich vor Trackern. Aktivieren Sie den Einstellungen den Schutz vor E-Mail-Trackern"
-      ],
       "Proton doesn't make money by abusing privacy.": [
         "Proton verdient kein Geld durch Missbrauch der Privatsphäre."
       ],
@@ -3827,9 +3853,6 @@
       "To fight spam and abuse, please verify you are human.": [
         "Bitte beweise, dass du ein Mensch bist, um Spam und Missbrauch zu vermeiden."
       ],
-      "To protect your privacy, Proton blocked email trackers in this message": [
-        "Um Ihre Privatsphäre zu schützen, hat Proton E-Mail-Tracker in dieser Nachricht gesperrt."
-      ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "Um Ihre Kontakte neu zu signieren, muss jeder Kontakt mit der Liste der in Ihrem Konto verfügbaren Verschlüsselungsschlüssel verglichen werden. Wenn keine Übereinstimmung gefunden wird, wird Ihr Kontakt mit dem primären Verschlüsselungsschlüssel neu signiert."
       ],
@@ -3850,6 +3873,9 @@
       ],
       "Turn off content search. Activation progress won't be lost.": [
         "Deaktiviert die Inhaltssuche. Der Aktivierungsfortschritt geht nicht verloren."
+      ],
+      "Turn on to search the content of your messages": [
+        "Aktivieren, um den Inhalt Ihrer Nachrichten durchsuchen zu können"
       ],
       "Unsupported file": [
         "Nicht unterstützte Datei"
@@ -3928,9 +3954,6 @@
       ],
       "We could not verify the sender's trusted keys.": [
         "Die vertrauenswürdigen Schlüssel des Absenders konnten nicht verifiziert werden."
-      ],
-      "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
-        "Der Import von CSV-Dateien aus Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora und einigen anderen Anwendungen wird unterstützt. Außerdem ist der Import von vCard 4.0 möglich (UTF-8-Kodierung)."
       ],
       "We use 3-D Secure to protect your payments.": [
         "Wir verwenden 3D-Sicherheitsüberprüfung zum Schutz Ihrer Zahlungen."
@@ -5090,8 +5113,13 @@
       ]
     },
     "Mail import summary": {
-      "${ messagesFragment } since ${ periodFragment } and label them as ${ label }": [
-        "${ messagesFragment } seit ${ periodFragment } und der Kategorie ${ label } zuordnen"
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        "Importiert alle Nachrichten aus ${ selectedLabelsCount }/${ totalLabelsCount } Kategorie seit ${ periodFragment } und kennzeichnet sie als „${ label }”",
+        "Importiert alle Nachrichten aus ${ selectedLabelsCount }/${ totalLabelsCount } Kategorien seit ${ periodFragment } und kennzeichnet sie als „${ label }”"
+      ],
+      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        "Importiert alle Nachrichten aus ${ totalLabelsCount } Kategorie seit ${ periodFragment } und kennzeichnet sie als „${ label }”",
+        "Importiert alle Nachrichten aus ${ totalLabelsCount } Kategorien seit ${ periodFragment } und kennzeichnet sie als „${ label }”"
       ]
     },
     "Mailbox": {
@@ -5582,21 +5610,7 @@
         "Name"
       ]
     },
-    "Plan Feature": {
-      "${ n } server": [
-        "${ n } Server",
-        "${ n } Server"
-      ],
-      "${ n } VPN connection": [
-        "${ n } VPN-Verbindung",
-        "${ n } VPN-Verbindungen"
-      ]
-    },
     "Plan feature": {
-      "${ freeServers } in ${ freeCountries } country": [
-        "${ freeServers } in ${ freeCountries } Land",
-        "${ freeServers } in ${ freeCountries } Ländern"
-      ],
       "0.5 GB storage": [
         "500 MB Speicherplatz"
       ],
@@ -5609,10 +5623,6 @@
       "1 user": [
         "1 Benutzer"
       ],
-      "1200+ servers in ${ plusCountries } country": [
-        "Mehr als 1.200 Server in ${ plusCountries } Land",
-        "Mehr als 1.200 Server in ${ plusCountries } Ländern"
-      ],
       "20 GB storage": [
         "20 GB Speicherplatz"
       ],
@@ -5621,10 +5631,6 @@
       ],
       "3 folders / labels": [
         "3 Ordner/Kategorien"
-      ],
-      "350+ servers in ${ basicCountries } country": [
-        "Mehr als 350 Server in ${ basicCountries } Land",
-        "Mehr als 350 Server in ${ basicCountries } Ländern"
       ],
       "5 addresses": [
         "5 E-Mail-Adressen"
@@ -7038,6 +7044,20 @@
       ],
       "Windows, macOS, iOS, Linux, Android, Android TV, Chromebook, Chromecast": [
         "Windows, macOS, iOS, Linux, Android, Android TV, Chromebook, Chromecast"
+      ]
+    },
+    "VPN Plan Feature": {
+      "${ n } server": [
+        "",
+        ""
+      ],
+      "${ n } VPN connection": [
+        "",
+        ""
+      ],
+      "${ numberOfServers } in ${ numberOfCountries } country": [
+        "",
+        ""
       ]
     },
     "Warning": {

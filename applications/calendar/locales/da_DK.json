@@ -886,6 +886,12 @@
       ]
     },
     "Calendar subscription not synced error": {
+      "Calendar could not be decrypted": [
+        "Kalender kunne ikke dekrypteres"
+      ],
+      "Calendar could not be found": [
+        "Kalender kunne ikke findes"
+      ],
       "Calendar is syncing": [
         "Kalender synkroniserer"
       ],
@@ -1313,7 +1319,7 @@
         "Aflysning kunne ikke sendes"
       ],
       "Checkout expired, please try again": [
-        ""
+        "Betalingen er udløbet, prøv venligst igen"
       ],
       "Contact could not be saved": [
         "Kontakt kunne ikke gemmes"
@@ -2101,6 +2107,9 @@
       "Create in": [
         "Opret i"
       ],
+      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
+        "CSV-filer fra Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora og nogle andre apps samt vCard 3.1 og 4.0-formater (UTF-8-kodning) understøttes."
+      ],
       "Custom": [
         "Tilpasset"
       ],
@@ -2507,9 +2516,6 @@
       ],
       "VPN + ${ mailAppName } bundle for families and small businesses.": [
         "VPN + ${ mailAppName } pakke for familier og små virksomheder."
-      ],
-      "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
-        "Vi understøtter import af CSV-filer fra Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora og visse andre apps. Vi understøtter også import af vCard 4.0. (UTF-8-kodning)."
       ],
       "We use 3-D Secure to protect your payments.": [
         "Vi bruger 3-D Secure til at beskytte dine betalinger."
@@ -3434,8 +3440,13 @@
       ]
     },
     "Mail import summary": {
-      "${ messagesFragment } since ${ periodFragment } and label them as ${ label }": [
-        "${ messagesFragment } siden ${ periodFragment } og giv dem etiketten ${ label }"
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        "Importer alle beskeder fra ${ selectedLabelsCount } ud af ${ totalLabelsCount } etikette siden ${ periodFragment } og giv dem etiketten ${ label }",
+        "Importer alle beskeder fra ${ selectedLabelsCount } ud af ${ totalLabelsCount } etiketter siden ${ periodFragment } og giv dem etiketten ${ label }"
+      ],
+      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        "Importer alle beskeder fra ${ totalLabelsCount } etiketten siden ${ periodFragment } og giv dem etiketten ${ label }",
+        "Importer alle beskeder fra ${ totalLabelsCount } etiketter siden ${ periodFragment } og giv dem etiketten ${ label }"
       ]
     },
     "Many Others": {
