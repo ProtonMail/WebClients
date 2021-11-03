@@ -51,30 +51,12 @@ const HeaderExpandedDetails = ({
         });
     const displayTrackerIcon = !(!hasProtection && hasShowImage && numberOfTrackers === 0) && spyTrackerFeature?.Value;
 
-    const { pureAttachmentsCount, embeddedAttachmentsCount } = getAttachmentCounts(
-        getAttachments(message.data),
-        message.messageImages
+    const { pureAttachmentsCount } = getAttachmentCounts(getAttachments(message.data), message.messageImages);
+    const attachmentsText = c('Info').ngettext(
+        msgid`${pureAttachmentsCount} file attached`,
+        `${pureAttachmentsCount} files attached`,
+        pureAttachmentsCount
     );
-    const attachmentsTexts = [];
-    if (pureAttachmentsCount) {
-        attachmentsTexts.push(
-            c('Info').ngettext(
-                msgid`${pureAttachmentsCount} file attached`,
-                `${pureAttachmentsCount} files attached`,
-                pureAttachmentsCount
-            )
-        );
-    }
-    if (embeddedAttachmentsCount) {
-        attachmentsTexts.push(
-            c('Info').ngettext(
-                msgid`${embeddedAttachmentsCount} embedded image`,
-                `${embeddedAttachmentsCount} embedded images`,
-                embeddedAttachmentsCount
-            )
-        );
-    }
-    const attachmentsText = attachmentsTexts.join(', ');
 
     const labelIDs = (message.data?.LabelIDs || []).filter((labelID) => isCustomLabel(labelID, labels));
 
@@ -126,7 +108,7 @@ const HeaderExpandedDetails = ({
                     {sizeText}
                 </span>
             </div>
-            {attachmentsText && (
+            {pureAttachmentsCount > 0 && (
                 <div className="mb0-5 flex flex-nowrap">
                     <span className="container-to flex flex-justify-center flex-align-items-center">
                         <ItemAttachmentIcon element={message.data} onClick={onAttachmentIconClick} />

@@ -67,11 +67,16 @@ const AttachmentList = ({
     useEffect(() => {
         const dontCloseAfterUploadsWhenExpandedManually = manuallyExpanded && pendingUploads.length === 0;
 
-        if (dontCloseAfterUploadsWhenExpandedManually || collapsable === false) {
+        /*
+            Dont close the attachment list when manually expanded AND there are pure attachment left.
+            Otherwise, if we still have attachment, but which are not pureAttachment (embedded images), the list will remain open.
+            But in reality, the attachment list to display is empty because we do not display embedded images in the list anymore.
+         */
+        if ((dontCloseAfterUploadsWhenExpandedManually || collapsable === false) && pureAttachmentsCount > 0) {
             return;
         }
 
-        if (pureAttachmentsCount <= 0) {
+        if (pureAttachmentsCount <= 0 && !(pendingUploads.length > 0)) {
             // If attachment length is changing, and we don't have pure attachments anymore, close the attachment list
             setExpanded(false);
             return;
