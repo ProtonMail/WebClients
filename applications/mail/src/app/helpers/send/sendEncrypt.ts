@@ -19,6 +19,8 @@ import { enums } from 'openpgp';
 import { MessageExtended, MessageKeys } from '../../models/message';
 import { arrayToBase64 } from '../base64';
 
+const MEGABYTE = 1024 * 1024;
+
 // Reference: Angular/src/app/composer/services/encryptPackages.js
 
 interface AttachmentKeys {
@@ -106,11 +108,22 @@ const generateSessionKeyHelper = async (): Promise<SessionKey> => ({
  * Encrypt the body in the given package. Should only be used if the package body differs from message body
  * (i.e. the draft body)
  */
-const encryptBodyPackage = async (pack: Package, messageKeys: MessageKeys, publicKeys: OpenPGPKey[]) => {
+const encryptBodyPackage = async (
+    pack: Package,
+    messageKeys: MessageKeys,
+    publicKeys: OpenPGPKey[],
+    message: MessageExtended
+) => {
     const cleanPublicKeys = publicKeys.filter(identity);
 
     // Always encrypt with a single private key
     const privateKeys = messageKeys.privateKeys.slice(0, 1);
+
+    const containsEmbeddedAttachments = pack.MIMEType === MIME_TYPES.MIME && getAttachments(message.data).length > 0; // NB: `Message.NumAttachments` is a server-controlled value, so we cannot rely on it here
+    // We enable compression for MIME messages that include attachments to reduce the size of the inlined base64 attachment data,
+    // when the body is larger than 1MB. This is also to avoid enabling compression when the attached data is just the sender's public key,
+    // since its value is constant and known to the server, hence compressing it won't necessarily limit compression-based information leakage.
+    const shouldCompress = containsEmbeddedAttachments && pack.Body!.length > MEGABYTE;
 
     const { data, sessionKey } = await encryptMessage({
         data: pack.Body || '',
@@ -118,7 +131,7 @@ const encryptBodyPackage = async (pack: Package, messageKeys: MessageKeys, publi
         sessionKey: cleanPublicKeys.length ? undefined : await generateSessionKeyHelper(),
         privateKeys,
         returnSessionKey: true,
-        compression: enums.compression.zlib,
+        compression: shouldCompress ? enums.compression.zlib : enums.compression.uncompressed,
     });
 
     const { asymmetric: keys, encrypted } = await splitMessage(data);
@@ -146,7 +159,6 @@ const encryptDraftBodyPackage = async (
         publicKeys: cleanPublicKeys,
         privateKeys,
         returnSessionKey: true,
-        compression: enums.compression.zlib,
     });
 
     const packets = await splitMessage(data);
