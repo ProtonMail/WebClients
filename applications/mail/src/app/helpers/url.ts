@@ -2,6 +2,7 @@ import { Recipient } from '@proton/shared/lib/interfaces';
 import { message as purifyMessage, sanitizeString } from '@proton/shared/lib/sanitize';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { PartialMessageExtended } from '../models/message';
+import { MAILTO_PROTOCOL_HANDLER_PATH } from '../constants';
 
 /**
  * Split an addresses string to a list of recipients
@@ -64,4 +65,19 @@ export const mailtoParser = (mailto: string): PartialMessageExtended => {
     }
 
     return { data: message, decryptedBody };
+};
+
+export const registerMailToProtocolHandler = () => {
+    if ('registerProtocolHandler' in navigator) {
+        try {
+            navigator.registerProtocolHandler(
+                'mailto',
+                `${window.location.origin}${MAILTO_PROTOCOL_HANDLER_PATH}`,
+                // @ts-expect-error third arg is still recommended (cf. https://developer.mozilla.org/en-US/docs/Web/API/Navigator/registerProtocolHandler)
+                'ProtonMail'
+            );
+        } catch (e: any) {
+            console.error(e);
+        }
+    }
 };
