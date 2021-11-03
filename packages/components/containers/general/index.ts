@@ -1,4 +1,3 @@
-export { default as MailGeneralAdvancedSection } from './AdvancedSection';
 export { default as LanguageAndTimeSection } from './LanguageAndTimeSection';
 export { default as LanguageSection } from './LanguageSection';
 export { default as AutoSaveContactsToggle } from './AutoSaveContactsToggle';
