@@ -4,7 +4,7 @@ import { localisedForwardFlags } from '../../constants';
 import { ESMessage, ESBaseMessage, NormalisedSearchParams } from '../../models/encryptedSearch';
 import { SearchParameters } from '../../models/tools';
 import { isMessageForwarded, prepareMessageMetadata } from './esBuild';
-import { applySearch, getTimeLimits, normaliseSearchParams } from './esSearch';
+import { applySearch, normaliseSearchParams } from './esSearch';
 import { compareESBaseMessages } from './esSync';
 
 describe('encryptedSearch', () => {
@@ -211,37 +211,6 @@ describe('encryptedSearch', () => {
                     { ...esMessage, Subject: 'test', Sender: { Address: 'test2', Name: '' } } as ESMessage
                 )
             ).toEqual(true);
-        });
-    });
-
-    describe('getTimeLimits', () => {
-        it('should derive the correct time boundaries without begin and end', () => {
-            const { lower, upper } = getTimeLimits(1619679525, undefined, undefined);
-            expect(upper[0]).toEqual(1619679524);
-            expect(lower[1]).toEqual(0);
-            expect(upper[1]).toEqual(9007199254740991);
-        });
-
-        it('should derive the correct time boundaries without end', () => {
-            const { lower, upper } = getTimeLimits(1619679525, 1619279525, undefined);
-            expect(lower[0] - timeOffset).toEqual(1619568000);
-            expect(upper[0]).toEqual(1619679524);
-        });
-
-        it('should derive the correct time boundaries without begin', () => {
-            const { upper } = getTimeLimits(0, undefined, 1619679525);
-            expect(upper[0]).toEqual(1619679525);
-        });
-
-        it('should derive the correct time boundaries with both begin and end (less than 6 months)', () => {
-            const { lower, upper } = getTimeLimits(0, 1619679425, 1619679525);
-            expect(lower[0]).toEqual(1619679425);
-            expect(upper[0]).toEqual(1619679525);
-        });
-
-        it('should derive the correct time boundaries with both begin and end (more than 6 months)', () => {
-            const { upper } = getTimeLimits(0, 1519679525, 1619679525);
-            expect(upper[0]).toEqual(1619679525);
         });
     });
 });
