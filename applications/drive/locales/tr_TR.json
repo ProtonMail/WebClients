@@ -188,7 +188,7 @@
         "İndir"
       ],
       "Drive Locked": [
-        ""
+        "Drive kilitlendi"
       ],
       "Edit": [
         "Düzenle"
@@ -861,6 +861,12 @@
       ]
     },
     "Calendar subscription not synced error": {
+      "Calendar could not be decrypted": [
+        "Takvimin şifresi çözülemedi"
+      ],
+      "Calendar could not be found": [
+        "Takvim bulunamadı"
+      ],
       "Calendar is syncing": [
         ""
       ],
@@ -1101,7 +1107,7 @@
         "Telefon numarası doğrulanamıyor, daha sonra tekrar deneyin"
       ],
       "Checkout expired, please try again": [
-        ""
+        "Ödeme süresi doldu, lütfen tekrar deneyin"
       ],
       "Contact could not be saved": [
         "Kişi kaydedilemedi"
@@ -1864,6 +1870,9 @@
       "Creating share": [
         ""
       ],
+      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
+        ""
+      ],
       "Delete drive": [
         "Sürücüyü sil",
         "Sürücüleri sil"
@@ -2257,8 +2266,8 @@
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Bu bağlantı bir eşyazım saldırısı olabilir. Lütfen bunun ziyaret etmek istediğiniz bağlantı olduğunu doğrulayın veya açmayın."
       ],
-      "This link was created in a previous version and can not be modified. Delete this link and create a new one to change the settings.": [
-        ""
+      "This link was created in\na previous version and can not be modified. Delete this link and create a\nnew one to change the settings.": [
+        "Bu bağlantı bir önceki sürümde oluşturuldu ve düzenlenemiyor. Bu bağlantıyı silin ve ayarları değiştirmek için yeni bir tane oluşturun."
       ],
       "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
         "Bu bağlantı kalıcı olarak devre dışı bırakılacak. Bu bağlantıya sahip hiç kimse dosyanıza erişemez. Dosyayı yeniden paylaşmak için yeni bir bağlantıya ihtiyacınız olacak."
@@ -2332,9 +2341,6 @@
       ],
       "VPN + ${ mailAppName } bundle for families and small businesses.": [
         "Aileler ve küçük işletmeler için, VPN + ${ mailAppName } paketi."
-      ],
-      "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
-        "Outlook, Outlook Express, Yahoo! Posta, Hotmail, Eudora ve diğer bazı uygulamalardan CSV dosyalarını içe aktarmayı destekliyoruz. Ayrıca vCard 4.0 içe aktarmayı da destekliyoruz. (UTF-8 kodlaması)."
       ],
       "We use 3-D Secure to protect your payments.": [
         "Ödemelerinizi korumak için 3-D Güvenliğini kullanıyoruz."
@@ -3262,7 +3268,12 @@
       ]
     },
     "Mail import summary": {
-      "${ messagesFragment } since ${ periodFragment } and label them as ${ label }": [
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        "",
+        ""
+      ],
+      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        "",
         ""
       ]
     },
@@ -3317,8 +3328,8 @@
         "\"${ firstItemName }\" çöp kutusundan yeniden yüklendi"
       ],
       "${ deletedCount } link to your file was deleted": [
-        "",
-        ""
+        "${ deletedCount } adet dosya bağlantınız silindi",
+        "${ deletedCount } adet dosya bağlantınız silindi"
       ],
       "${ deletedItemsCount } file deleted permanently from trash": [
         "${ deletedItemsCount } dosya Çöp Kutusundan kalıcı olarak silindi",
@@ -3333,8 +3344,8 @@
         ""
       ],
       "${ failedCount } link to your file failed to be deleted": [
-        "",
-        ""
+        "${ failedCount } adet dosya erişim bağlantınız silinirken hata oluştu",
+        "${ failedCount } adet dosya erişim bağlantınız silinirken hata oluştu"
       ],
       "${ failedMovesCount } file failed to be moved": [
         "",
@@ -3440,16 +3451,16 @@
         ""
       ],
       "The link to your file failed to be deleted": [
-        ""
+        "Dosya erişim bağlantınız silinirken hata oluştu"
       ],
       "The link to your file was deleted": [
-        ""
+        "Dosya erişim bağlantınız silindi"
       ],
       "Your old files will be deleted in 72 hours": [
         "Eski dosyalarınız 72 saat içerisinde silinecek"
       ],
       "Your settings have been changed successfully": [
-        ""
+        "Ayarlarınız başarıyla değiştirildi"
       ]
     },
     "Onboarding Proton": {
@@ -3657,9 +3668,9 @@
       "1 user": [
         "1 kullanıcı"
       ],
-      "1200+ servers in ${ plusCountries } country": [
-        "${ plusCountries } ülkede 1200'den fazla sunucu",
-        "${ plusCountries } ülkede 1200'den fazla sunucu"
+      "1300+ servers in ${ plusCountries } country": [
+        "",
+        ""
       ],
       "20 GB storage": [
         "20 GB depolama alanı"
@@ -3874,10 +3885,10 @@
         "Tercihler kaydedildi"
       ],
       "Recovery has started": [
-        ""
+        "Kurtarma başlatıldı"
       ],
       "The link to your file was successfully copied": [
-        ""
+        "Dosya erişim bağlantınız başarıyla kopyalandı"
       ],
       "Verification successful": [
         "Doğrulama başarılı"
@@ -3885,7 +3896,7 @@
       "You have successfully unsubscribed": [
         "Aboneliğinizi başarıyla iptal ettiniz"
       ],
-      "Your files were successfully recovered to \"My files\"": [
+      "Your files were successfully recovered to \"My files\".": [
         ""
       ]
     },
@@ -4728,9 +4739,6 @@
       ],
       "You will lose any customization you made so far.": [
         ""
-      ],
-      "Your local date & time settings seem to be out of sync.": [
-        "Yerel tarih ve saat ayarlarınız eşitlenmemiş gibi görünüyor."
       ]
     }
   }

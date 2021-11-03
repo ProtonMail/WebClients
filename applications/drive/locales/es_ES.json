@@ -548,10 +548,10 @@
         "Cargar imagen"
       ],
       "Uploaded date: new to old": [
-        ""
+        "Fecha de subida: nueva a vieja"
       ],
       "Uploaded date: old to new": [
-        ""
+        "Fecha de subida: vieja a nueva"
       ],
       "Use ${ label } theme": [
         "Utilizar tema ${ label }"
@@ -861,6 +861,12 @@
       ]
     },
     "Calendar subscription not synced error": {
+      "Calendar could not be decrypted": [
+        ""
+      ],
+      "Calendar could not be found": [
+        ""
+      ],
       "Calendar is syncing": [
         "El calendario se está sincronizando"
       ],
@@ -1822,7 +1828,7 @@
         "Haz clic en \"Solicitar nuevo código\" para enviarte un nuevo código de verificación a ${ strong }. Si esta dirección de correo electrónico es incorrecta, haz clic en \"Editar\" para corregirla."
       ],
       "Close this screen to exit.": [
-        ""
+        "Cierra esta pantalla para salir."
       ],
       "Closing transfer manager will cancel all active transfers, are you sure?": [
         "Cerrar el administrador de transferencias cancelará todas las transferencias activas. ¿Estás seguro?"
@@ -1862,6 +1868,9 @@
         "Creando enlace al archivo"
       ],
       "Creating share": [
+        ""
+      ],
+      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         ""
       ],
       "Delete drive": [
@@ -2257,7 +2266,7 @@
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Este enlace puede ser un ataque homógrafo. Por favor, verifica que este es el enlace que quieres visitar o no lo abras."
       ],
-      "This link was created in a previous version and can not be modified. Delete this link and create a new one to change the settings.": [
+      "This link was created in\na previous version and can not be modified. Delete this link and create a\nnew one to change the settings.": [
         ""
       ],
       "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
@@ -2332,9 +2341,6 @@
       ],
       "VPN + ${ mailAppName } bundle for families and small businesses.": [
         "Paquete VPN + ${ mailAppName } para familias y pequeñas empresas."
-      ],
-      "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
-        "Soportamos la importación de archivos CSV desde Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora y otras aplicaciones. También soportamos la importación de la codificación vCard 4.0 (codificación UTF-8)."
       ],
       "We use 3-D Secure to protect your payments.": [
         "Utilizamos 3-D Secure para proteger tus pagos."
@@ -3262,7 +3268,12 @@
       ]
     },
     "Mail import summary": {
-      "${ messagesFragment } since ${ periodFragment } and label them as ${ label }": [
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        "",
+        ""
+      ],
+      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        "",
         ""
       ]
     },
@@ -3657,9 +3668,9 @@
       "1 user": [
         "1 usuario"
       ],
-      "1200+ servers in ${ plusCountries } country": [
-        "Más de 1200 servidores en ${ plusCountries } país",
-        "Más de 1200 servidores en ${ plusCountries } países"
+      "1300+ servers in ${ plusCountries } country": [
+        "",
+        ""
       ],
       "20 GB storage": [
         "20 GB de almacenamiento"
@@ -3885,7 +3896,7 @@
       "You have successfully unsubscribed": [
         "Ha cancelado su suscripción satisfactoriamente"
       ],
-      "Your files were successfully recovered to \"My files\"": [
+      "Your files were successfully recovered to \"My files\".": [
         ""
       ]
     },
@@ -4728,9 +4739,6 @@
       ],
       "You will lose any customization you made so far.": [
         ""
-      ],
-      "Your local date & time settings seem to be out of sync.": [
-        "La configuración de fecha y hora local parece no estar sincronizada."
       ]
     }
   }

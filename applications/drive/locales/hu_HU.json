@@ -861,6 +861,12 @@
       ]
     },
     "Calendar subscription not synced error": {
+      "Calendar could not be decrypted": [
+        ""
+      ],
+      "Calendar could not be found": [
+        ""
+      ],
       "Calendar is syncing": [
         ""
       ],
@@ -1864,6 +1870,9 @@
       "Creating share": [
         ""
       ],
+      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
+        ""
+      ],
       "Delete drive": [
         "",
         ""
@@ -2257,7 +2266,7 @@
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Ez a link egy hamisított címre mutató (homográf) támadásnak néz ki. Ellenőrizze, hogy valóban ezt a linket kívánja-e megnyitni vagy ne nyissa meg."
       ],
-      "This link was created in a previous version and can not be modified. Delete this link and create a new one to change the settings.": [
+      "This link was created in\na previous version and can not be modified. Delete this link and create a\nnew one to change the settings.": [
         ""
       ],
       "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
@@ -2332,9 +2341,6 @@
       ],
       "VPN + ${ mailAppName } bundle for families and small businesses.": [
         "VPN + ${ mailAppName } csomag, családoknak és kisvállalkozásoknak."
-      ],
-      "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
-        "CSV fájlok importálása támogatott a következőkből: Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora és néhány egyéb. vCard 4.0 importálása szintén támogatott (UTF-8 kódolással)."
       ],
       "We use 3-D Secure to protect your payments.": [
         "3D Secure kódot használunk a kifizetések védelme érdekében."
@@ -3262,7 +3268,12 @@
       ]
     },
     "Mail import summary": {
-      "${ messagesFragment } since ${ periodFragment } and label them as ${ label }": [
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        "",
+        ""
+      ],
+      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        "",
         ""
       ]
     },
@@ -3657,9 +3668,9 @@
       "1 user": [
         "1 felhasználó"
       ],
-      "1200+ servers in ${ plusCountries } country": [
-        "1200+ szerver ${ plusCountries } országban",
-        "1200+ szerver ${ plusCountries } országban"
+      "1300+ servers in ${ plusCountries } country": [
+        "",
+        ""
       ],
       "20 GB storage": [
         "20 GB tárhely"
@@ -3885,7 +3896,7 @@
       "You have successfully unsubscribed": [
         "Sikeresen leiratkozott"
       ],
-      "Your files were successfully recovered to \"My files\"": [
+      "Your files were successfully recovered to \"My files\".": [
         ""
       ]
     },
@@ -4728,9 +4739,6 @@
       ],
       "You will lose any customization you made so far.": [
         ""
-      ],
-      "Your local date & time settings seem to be out of sync.": [
-        "A helyi dátum és idő beállítása valószínűleg hibás."
       ]
     }
   }

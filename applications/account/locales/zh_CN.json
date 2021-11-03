@@ -31,11 +31,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } 商店"
       ],
-      "activate": [
-        "激活"
-      ],
       "Activate": [
         "启用"
+      ],
+      "activate": [
+        "激活"
       ],
       "Activate ${ Name }@pm.me": [
         "激活 ${ Name }@pm.me"
@@ -518,7 +518,7 @@
         "移除"
       ],
       "Remove bonuses": [
-        "移除额外奖励"
+        "放弃特权"
       ],
       "Remove calendar": [
         "删除日历"
@@ -602,7 +602,7 @@
         "选择文件"
       ],
       "Select plan": [
-        "开通"
+        "选择套餐"
       ],
       "Select timezone": [
         "选择时区"
@@ -818,7 +818,7 @@
         "+ ${ storage } 存储空间"
       ],
       "+ ${ vpn } connection": [
-        "+ ${ vpn } 个VPN连接"
+        "+ ${ vpn } 台设备可同时接入 VPN"
       ]
     },
     "Addon unit for subscription": {
@@ -832,10 +832,10 @@
         "${ memberAddon.MaxMembers } 位用户"
       ],
       "${ vpnAddon.MaxVPN } connection": [
-        "${ vpnAddon.MaxVPN } Vpn连接数"
+        "${ vpnAddon.MaxVPN } 台设备可同时接入 VPN"
       ],
       "${ vpnBonus } connection": [
-        "${ vpnBonus } 连接数"
+        "${ vpnBonus } 台设备可同时接入 VPN"
       ]
     },
     "Address action": {
@@ -870,9 +870,6 @@
       ]
     },
     "Alert": {
-      "Are you sure you want to import a private key? Importing an insecurely generated or leaked private key can harm the security of your emails.": [
-        "确定要导入私钥吗？导入生成方式不当的或已泄露的私钥会危害您的邮件安全。"
-      ],
       "By leaving now, some contacts may not be imported": [
         "如果现在离开，一些联系人可能无法导入"
       ],
@@ -932,22 +929,22 @@
     },
     "Badge": {
       "${ calendarAppName } for Android": [
-        "${ calendarAppName } 安卓版"
+        "${ calendarAppName } Android 客户端"
       ],
       "${ calendarAppName } for iOS": [
-        "${ calendarAppName } iOS 版"
+        "${ calendarAppName } iOS 客户端"
       ],
       "${ calendarAppName } for web": [
         "${ calendarAppName } 网页版"
       ],
       "${ driveAppName } for Android": [
-        "${ driveAppName } 安卓版"
+        "${ driveAppName } Android 客户端"
       ],
       "${ driveAppName } for iOS": [
-        "${ driveAppName } iOS 版"
+        "${ driveAppName } iOS 客户端"
       ],
       "${ driveAppName } for macOS": [
-        "${ driveAppName } macOS"
+        "${ driveAppName } macOS 客户端"
       ],
       "${ driveAppName } for web": [
         "${ driveAppName } 网页版"
@@ -965,19 +962,19 @@
         "ProtonMail Bridge"
       ],
       "ProtonMail Bridge for GNU/Linux": [
-        "ProtonMail Bridge GNU/Linux版"
+        "ProtonMail Bridge GNU/Linux 客户端"
       ],
       "ProtonMail Bridge for macOS": [
-        "ProtonMail Bridge macOS版"
+        "ProtonMail Bridge macOS 客户端"
       ],
       "ProtonMail Bridge for Windows": [
-        "ProtonMail Bridge Windows版"
+        "ProtonMail Bridge Windows 客户端"
       ],
       "ProtonMail for Android": [
-        "ProtonMail Android版"
+        "ProtonMail Android 客户端"
       ],
       "ProtonMail for iOS": [
-        "ProtonMail iOS版"
+        "ProtonMail iOS 客户端"
       ],
       "ProtonMail for web": [
         "ProtonMail 网页版"
@@ -986,37 +983,37 @@
         "ProtonMail 导入/导出"
       ],
       "ProtonMail Import-Export for GNU/Linux": [
-        "ProtonMail 导入/导出GNU/Linux版"
+        "ProtonMail GNU/Linux 导入/导出客户端"
       ],
       "ProtonMail Import-Export for macOS": [
-        "ProtonMail 导入/导出macOS版"
+        "ProtonMail macOS 导入/导出客户端"
       ],
       "ProtonMail Import-Export for Windows": [
-        "ProtonMail 导入/导出 Windows版"
+        "ProtonMail Windows 导入/导出客户端"
       ],
       "ProtonMail settings for web": [
         "ProtonMail 网页版设置"
       ],
       "ProtonVPN for Android": [
-        "ProtonMail Android版"
+        "ProtonVPN Android 客户端"
       ],
       "ProtonVPN for Android TV": [
-        "ProtonVPN Android TV 版"
+        "ProtonVPN Android TV 客户端"
       ],
       "ProtonVPN for GNU/Linux": [
-        "ProtonVPN GNU/Linux版"
+        "ProtonVPN GNU/Linux 客户端"
       ],
       "ProtonVPN for iOS": [
-        "ProtonVPN iOS版"
+        "ProtonVPN iOS 客户端"
       ],
       "ProtonVPN for macOS": [
-        "ProtonVPN macOS版"
+        "ProtonVPN macOS 客户端"
       ],
       "ProtonVPN for web": [
         "ProtonVPN 网页版"
       ],
       "ProtonVPN for Windows": [
-        "ProtonVPN Windows版"
+        "ProtonVPN Windows 客户端"
       ],
       "ProtonVPN settings for web": [
         "ProtonVPN 网页版设置"
@@ -1057,13 +1054,13 @@
         "按年付费"
       ],
       "Annually SAVE 20%": [
-        "每年省 20%"
+        "年费（省 20%）"
       ],
       "Monthly": [
         "按月"
       ],
       "Two years SAVE 33%": [
-        "每两年省 33%"
+        "两年计费（省 33%）"
       ],
       "Two-year": [
         "两年付费"
@@ -1286,6 +1283,12 @@
       ]
     },
     "Calendar subscription not synced error": {
+      "Calendar could not be decrypted": [
+        ""
+      ],
+      "Calendar could not be found": [
+        ""
+      ],
       "Calendar is syncing": [
         "日历正在同步中"
       ],
@@ -1595,8 +1598,8 @@
       "I use a different Proton account": [
         "我要改用其他 Proton 账户"
       ],
-      "Missing feature(s) ": [
-        "功能缺失 "
+      "Missing feature(s)": [
+        ""
       ],
       "My reason isn't listed, please comment": [
         "未列原因，请留言"
@@ -1773,7 +1776,7 @@
         "无法验证手机，请稍候再重试"
       ],
       "Checkout expired, please try again": [
-        ""
+        "支付超时，请重试"
       ],
       "Condition incomplete": [
         "条件不完整"
@@ -1896,7 +1899,7 @@
         "无效号码"
       ],
       "Organization key is not decrypted": [
-        ""
+        "机构密钥尚未解密"
       ],
       "Organization key is not decrypted.": [
         "机构密钥尚未解密。"
@@ -1932,7 +1935,7 @@
         "请修复高亮的冲突以继续。"
       ],
       "Please generate keys before you try to change your password": [
-        ""
+        "更改密码前请先生成密钥"
       ],
       "Please refresh the page.": [
         "请刷新页面。"
@@ -2016,7 +2019,7 @@
         "支付金额不能低于 ${ _price2 }"
       ],
       "The organization key must be activated first": [
-        ""
+        "必须先激活机构密钥"
       ],
       "The organization key must be activated first.": [
         "必须先激活机构密钥。"
@@ -2678,7 +2681,7 @@
     },
     "Import calendar; import invitation": {
       "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your Proton email address.": [
-        ""
+        "导入的邀请在 ${ CALENDAR_APP_NAME } 中显示为没有组织者和参与者详细信息的简单活动。要获取活动更新或者查看参与人员，请让组织者用您的 Proton 邮箱地址邀请您。"
       ],
       "This file contains an event invitation:": [
         ""
@@ -2928,6 +2931,11 @@
         "两步验证已开启"
       ]
     },
+    "Import key": {
+      "Are you sure you want to import a private key? Importing an insecurely generated or leaked private key can harm the security of your emails.\n\nPlease also note that the public key corresponding to this private key will be publicly available from our key server. If the key contains personal details (such as your full name) which you do not want to publish, please edit the key before importing it.": [
+        ""
+      ]
+    },
     "Import status": {
       "${ percentageValue }% paused": [
         "${ percentageValue }% 已暂停"
@@ -2959,15 +2967,15 @@
         "日历"
       ],
       "Contacts": [
-        ""
+        "通讯录"
       ],
       "Mail": [
-        ""
+        "邮件"
       ]
     },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
-        "${ totalContactsDiscarded } /${ totalContacts } 联系人将不会被导入。点击查看详情"
+        "${ totalContacts } 位联系人中有 ${ totalContactsDiscarded } 位不会被导入，点击查看详情"
       ],
       "${ totalEventsDiscarded } out of ${ totalEvents } events will not be imported. Expand for details.": [
         ""
@@ -2993,13 +3001,13 @@
         "${ calendarsToBeCreatedCount } 个新日历"
       ],
       "${ calendarsToBeMerged } merged calendar": [
-        ""
+        "将 ${ calendarsToBeMerged } 个日历与现有日历合并"
       ],
       "${ calendarsToBeMergedCount } merged calendar": [
         "${ calendarsToBeMergedCount } 个合并日历"
       ],
       "${ mailAppName } Free": [
-        "${ mailAppName } 免费"
+        "${ mailAppName } 免费版"
       ],
       "${ mailAppName } Professional starts with one user, and each user adds 5 GB and 5 email addresses to the organization’s pool.": [
         "${ mailAppName } Professional 最低一个用户，每添加一个用户，会为组织添加 5GB 空间和 5 个电子邮箱别名。"
@@ -3020,10 +3028,10 @@
         "上传的 ${ numberOfNonPrivateKeys } 个文件不是有效的私钥，请验证并重试。"
       ],
       "${ numContactGroups } contact group": [
-        ""
+        "${ numContactGroups } 个联系人群组"
       ],
       "${ numContacts } contact": [
-        ""
+        "${ numContacts } 名联系人"
       ],
       "${ providerFoldersNumLocalized } folder found": [
         "已找到 ${ providerFoldersNumLocalized } 个文件夹"
@@ -3059,7 +3067,7 @@
         "您可以使用 ${ strongAddressAvailable } 登录所有的 ${ BRAND_NAME } 服务。"
       ],
       "${ vpnAppName } Free": [
-        "${ vpnAppName } 免费"
+        "${ vpnAppName } 免费版"
       ],
       "(Filter if ALL of the following conditions are met)": [
         "（满足下列所有条件）"
@@ -3068,7 +3076,7 @@
         "（满足下列任一条件）"
       ],
       "(Mail + VPN)": [
-        "(邮件 + VPN)"
+        "(邮箱 + VPN)"
       ],
       "* Customizable features": [
         "* 可定制的功能"
@@ -3077,7 +3085,7 @@
         "+${ bonusSpace } 特权存储空间"
       ],
       "+${ organization.BonusVPN } connection for ProtonVPN (allows you to connect more devices to VPN)": [
-        "+${ organization.BonusVPN } ProtonVPN 连接数（允许你将更多设备连接至 VPN）"
+        "+${ organization.BonusVPN } 台设备可接入 ProtonVPN"
       ],
       "20% discount applied to your subscription with coupon ${ code }": [
         "使用优惠码 ${ code } 即可享受 20% 的优惠。"
@@ -3158,7 +3166,7 @@
         "金额 (${ amount }) 过小。"
       ],
       "and": [
-        ""
+        "并"
       ],
       "Anyone with this link can see all the event details of this calendar such as title, location or participants.": [
         "任何有此链接的人都可以查看此日历的所有活动详情。例如标题、地点或参与者。"
@@ -3260,10 +3268,10 @@
         "2020 年黑色星期五新用户优惠已计入"
       ],
       "Blocks senders from seeing if and when you opened a message.": [
-        ""
+        "阻止发件人查看您是否以及何时打开过邮件。"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
-        "降级为免费用户后，您将永远失去这些特权，哪怕今后再次开通付费账户。"
+        "一旦降级为免费用户，无论今后是否再次付费升级，您都将永远失去这些特权。"
       ],
       "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
         "降级后您将失去以下好处，确定要继续吗？"
@@ -3302,7 +3310,7 @@
         "仍然继续？"
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
-        ""
+        "新建 ${ calendarsToBeCreated } 个日历"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "给导入的邮件加标签，指定导入的时间范围，并选择要导入的文件夹。"
@@ -3320,7 +3328,7 @@
         "为企业、学校或社会团体创建电子邮件地址前，请先添加您的域名 (例如 @yourcompany.com) "
       ],
       "Create in": [
-        ""
+        "在此创建"
       ],
       "Creating a new recovery phrase will deactivate your old one.": [
         "新的恢复密语将取代旧的"
@@ -3328,11 +3336,14 @@
       "Creating your Proton account": [
         "正在为您创建 Proton 账户"
       ],
+      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
+        "支持来自 Outlook、Outlook Express、雅虎邮箱、Hotmail、Eudora 和其他一些应用程序的 CSV 文件，以及 vCard 3.1 和 4.0 格式（UTF-8 编码）。"
+      ],
       "Currently all available storage is allocated to the administrator account. Please reduce the admin account allocation to free up space for additional users. You can increase the total storage at any time by upgrading your account.": [
         "目前存储空间已全部分配给管理员账户，请留出部分空间给其他用户。您可以随时升级账户获得更大的存储空间。"
       ],
       "Currently all available VPN connections are allocated to the administrator account. Please select the number of connections you want to reserve for additional users.": [
-        "目前 VPN 接入量已全部分配给管理员，请为其他用户保留一定的接入量。"
+        "目前 VPN 连接数已全部分配给管理员，请为其他用户保留一定的连接数。"
       ],
       "Custom": [
         "自定义"
@@ -3395,7 +3406,7 @@
         "完成"
       ],
       "Done! We sent a code to ${ destination }.": [
-        ""
+        "搞定！我们向 ${ destination } 发送了一个验证码。"
       ],
       "Downgrading will terminate any connections to paid ProtonVPN servers.": [
         "降级将导致与收费 ProtonVPN 服务器的所有连接断开。"
@@ -3484,9 +3495,6 @@
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "筛选规则对所有邮件都有效，既包括收到的，也包括发出的。每条筛选规则至少应有名称、一个条件和一项操作。"
       ],
-      "For advanced security, the Import-Export app encrypts emails on your device before migrating them to Proton servers. You can also export messages for local backups.": [
-        "出于安全原因，「导入/导出」应用程序会在将您设备上的电子邮件迁移到 Proton 服务器之前对其进行加密。也可以导出为本地备份。"
-      ],
       "For families and small teams; includes both Mail and VPN.": [
         "适合家庭和小团队；包括邮件和 VPN。"
       ],
@@ -3515,7 +3523,7 @@
         "删除旧邮件和其他数据释放空间"
       ],
       "Full-featured VPN with speed up to 10 Gbps.": [
-        "全功能的 VPN 速度最高为 10 Gbps."
+        "速度高达 10 Gbps 的全功能 VPN。"
       ],
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
         "把公钥发给亲朋好友，或者挂到网上，这样大家就都能给你发端到端加密的邮件了！"
@@ -3527,7 +3535,7 @@
         "此处"
       ],
       "Hides identifying information by loading remote content through a proxy. Option to store content as attachments.": [
-        ""
+        "通过代理加载外链内容来隐藏身份识别信息，还可将内容存储为附件。"
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "若其他管理员更改了此密码，您需要向其询问新的机构密码。"
@@ -3590,13 +3598,13 @@
         "图片链接"
       ],
       "Images have been removed because they are not allowed in auto-reply": [
-        ""
+        "自动回复中不能包含图片（已删除）"
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
-        ""
+        "导入 ${ contactsFragment }和 ${ contactsGroupsFragment }"
       ],
       "Import ${ selectedCalendarsCount } of ${ totalCalendarsCount } calendar": [
-        ""
+        "导入 ${ selectedCalendarsCount }/${ totalCalendarsCount } 个日历"
       ],
       "Import from": [
         "导入自"
@@ -3617,7 +3625,7 @@
         "注意：某些域名注册商不允许 CNAME 以句点结尾（但某些注册商又要求必须如此）。如果您的注册商不接受这种格式的 CNAME，请将末尾的句点全部删除后再试一次。"
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
-        ""
+        "正在将您的数据从 ${ importedEmailAddress } 导入到 ${ toEmail }。"
       ],
       "Included": [
         "已包含在内"
@@ -3653,7 +3661,7 @@
         "互联网连接已恢复。"
       ],
       "Just confirm your selection and we'll do the rest.": [
-        ""
+        "只需确认您的选择，剩下的交由我们！"
       ],
       "Justify": [
         "对齐"
@@ -3674,7 +3682,7 @@
         "大批量的导入可能需要几天才能完成。"
       ],
       "Large imports can take several days.": [
-        ""
+        "大批量的导入可能需要几天才能完成。"
       ],
       "Learn how to log in to ProtonVPN with third-party VPN applications.": [
         "了解如何使用第三方 VPN 客户端登录到 ProtonVPN。"
@@ -3746,13 +3754,13 @@
         "设置新文件夹的名称和位置，若不选取父文件夹，则将创建顶层文件夹。"
       ],
       "New": [
-        ""
+        "新建"
       ],
       "New to ${ BRAND_NAME }? ${ signupLink }": [
         "初到 ${ BRAND_NAME }？${ signupLink }"
       ],
       "Next you'll need to log in to your Google account and allow us to access your data.": [
-        ""
+        "接下来您需要登录 Google 账户并允许我们获取您的数据。"
       ],
       "No action selected": [
         "未选择操作"
@@ -3803,7 +3811,7 @@
         "这不是您的私人电脑？请使用隐私窗口登录。${ learnMore }"
       ],
       "Number of VPN connections which can be assigned to users. Each connected device consumes one VPN connection.": [
-        "可以分配给用户的 VPN 连接数。每个已连接的设备消耗一个 VPN 连接。"
+        "可分配给用户的 VPN 连接数，每台连接设备占用一个名额。"
       ],
       "of": [
         "/"
@@ -3899,7 +3907,7 @@
         "需要订阅 Plus 或 Visionary 套餐"
       ],
       "Prevents content from the sender's server from loading without your permission.": [
-        ""
+        "阻止未经您的许可便加载来自发件人服务器的内容。"
       ],
       "Preview": [
         "预览"
@@ -3929,10 +3937,10 @@
         "ProtonMail 支持对自有域名予以 DKIM 数字签名。在您的域名 DNS 中加入下面的 CNAME 记录即可使用 DKIM，通常可以在域名注册商网站上设置。"
       ],
       "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } includes ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } VPN connection.": [
-        "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } 允许最多 ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } 个设备连接。"
+        "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } 最多允许 ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } 台设备同时连接。"
       ],
       "ProtonVPN Basic, Plus or Visionary required for Country level connection.": [
-        "国家级连接需升级为 ProtonVPN 基础版、专业版或尊享版。"
+        "开通 ProtonVPN 普通版、增强版或尊享版方可连接指定国家。"
       ],
       "ProtonVPN Plus or Visionary required for Secure Core feature.": [
         "安全核心功能需升级为 ProtonVPN 专业版或尊享版。"
@@ -3983,16 +3991,16 @@
         "请选择一个服务提供商以开始导入"
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20-personal-calendar limit. You can also merge imported calendars with existing Proton calendars.": [
-        ""
+        "请选择要导入的日历。将会为每个导入的日历创建一个新日历，最多可包含 20 个个人日历。您也可以将导入的日历与现有的 Proton 日历合并。"
       ],
       "Server is currently down": [
         "服务器目前不可用"
       ],
       "Server load": [
-        "服务器加载"
+        "服务器负荷"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
-        ""
+        "服务器无法访问，请过几分钟后再试"
       ],
       "Session timed out.": [
         "会话已超时。"
@@ -4016,10 +4024,10 @@
         "客服团队"
       ],
       "Switch to ${ professionalPlan } to add more connections.": [
-        "升级到 ${ professionalPlan } 以添加更多用户。"
+        "开通 ${ professionalPlan } 可连接更多设备。"
       ],
       "Switch to ${ professionalPlan } to add more users.": [
-        "升级到 ${ professionalPlan } 以添加更多用户。"
+        "开通 ${ professionalPlan } 可添加更多用户。"
       ],
       "Test link": [
         "测试链接"
@@ -4041,6 +4049,9 @@
       ],
       "The email address you place at the top of the list is your default email address. Drag and drop to reorder your addresses.": [
         "置顶列表的电子邮件地址是您的默认电子邮件地址，拖放可重新排列。"
+      ],
+      "The Import-Export app allows you to export messages for local backups and to restore previous backups to your account.": [
+        "Import-Export 应用程序能让您对邮件进行本地备份，以及恢复先前的备份到您的账户。"
       ],
       "The name will be visible to your users while they are logged in.": [
         "您的用户登录后即可看到机构名称。"
@@ -4214,7 +4225,7 @@
         "版本 ${ appVersion }"
       ],
       "VPN + ${ mailAppName } bundle for families and small businesses.": [
-        "VPN + ${ mailAppName } 捆包用于家庭和小企业。"
+        "VPN + ${ mailAppName } 套装，适合家庭和小企业。"
       ],
       "Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts.": [
         "警告：这是永久性删除，同时也会移除所有已连接服务的访问权限并删除您的所有联系人。"
@@ -4227,9 +4238,6 @@
       ],
       "We recommend adding a linked email so you can recover your account if you lose your password.": [
         "我们建议您添加一个密保邮箱，以便您能在密码丢失时找回账户。"
-      ],
-      "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
-        "我们支持从 Outlook、Outlook Express、Yahoo! Mail、Hotmail、Eudora 等应用中导入 CSV 文件或导入 （UTF-8 编码）的 vCard 4.0 文件。"
       ],
       "We use 3-D Secure to protect your payments.": [
         "我们使用 3-D Secure 保护您的支付安全。"
@@ -4247,7 +4255,7 @@
         "如果您忘记密码或无法登录账户，我们将把密码重置链接发至此邮箱。"
       ],
       "We'll notify you when the import is done.": [
-        ""
+        "导入完成时我们将通知您。"
       ],
       "Web URL": [
         "网址"
@@ -4259,7 +4267,7 @@
         "只有桌面版能查看周视图和月视图。"
       ],
       "What do you want to import from your Google account?": [
-        ""
+        "您想从您的 Google 账户中导入哪些内容？"
       ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "禁用后可防止图像文件在您不知情的情况下加载到您的设备上。"
@@ -4295,7 +4303,7 @@
         "您已登录 ${ user.Name }（${ user.Email }），并且权限有限。"
       ],
       "You can check the progress ${ importProgressLink }.": [
-        ""
+        "您可以在 ${ importProgressLink } 查看导入进度。"
       ],
       "You can continue using Proton services as usual.": [
         "您可以正常使用 Proton 服务。"
@@ -4400,7 +4408,7 @@
         "您的黑名单列表为空。"
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
-        ""
+        "从 ${ importedEmailAddressStrong } 到您的 Proton 账户的导入数据已准备就绪。"
       ],
       "Your email will only be used for this one-time verification.": [
         "您的电子邮件将仅用于此一次性验证。"
@@ -4835,7 +4843,7 @@
         "、${ l }"
       ],
       "${ n } VPN connection available": [
-        "${ n } 台设备可同时接入 VPN"
+        "可同时连接 ${ n } 台设备"
       ],
       "${ UsedAddresses } of ${ MaxAddresses } email address": [
         "邮箱地址数量：${ UsedAddresses } / ${ MaxAddresses }"
@@ -5339,7 +5347,7 @@
         "询问是否信任密钥"
       ],
       "Proration": [
-        "比例"
+        "当前等级结余"
       ],
       "Protection mode": [
         "保护模式"
@@ -5456,7 +5464,7 @@
         "合计"
       ],
       "Total (${ countdown })": [
-        "合计 (${ countdown })"
+        "合计（${ countdown }）"
       ],
       "Two-factor authentication": [
         "双重验证"
@@ -5501,10 +5509,10 @@
         "验证码"
       ],
       "VPN Connections": [
-        "VPN 连接"
+        "VPN 连接数"
       ],
       "VPN connections": [
-        "VPN 连接"
+        "VPN 连接数"
       ],
       "Want to add": [
         "类型"
@@ -5756,25 +5764,25 @@
     },
     "Loading info": {
       "${ createdCalendars } of ${ calendarsToBeCreated } created": [
-        ""
+        "已创建 ${ createdCalendars }/${ calendarsToBeCreated } 个日历"
       ],
       "Almost there": [
-        ""
+        "就快好了"
       ],
       "Connecting to your email provider": [
         "正在连接到您的邮件提供商"
       ],
       "Creating new calendars": [
-        ""
+        "正在创建新日历"
       ],
       "Gathering your data": [
-        ""
+        "正在收集您的数据"
       ],
       "We're gathering your data from your provider": [
-        ""
+        "我们正在加紧从您的提供商那里收集您的数据"
       ],
       "Your import is starting": [
-        ""
+        "您的导入正在开始"
       ]
     },
     "Log preference": {
@@ -5867,7 +5875,10 @@
       ]
     },
     "Mail import summary": {
-      "${ messagesFragment } since ${ periodFragment } and label them as ${ label }": [
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        ""
+      ],
+      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
         ""
       ]
     },
@@ -5889,7 +5900,7 @@
     },
     "Max VPN Connections": {
       "Connection": [
-        "台设备可同时连接"
+        "连接数"
       ]
     },
     "Member action": {
@@ -6587,18 +6598,7 @@
         "免费版"
       ]
     },
-    "Plan Feature": {
-      "${ n } server": [
-        "${ n } 个服务器"
-      ],
-      "${ n } VPN connection": [
-        "${ n } VPN 连接"
-      ]
-    },
     "Plan feature": {
-      "${ freeServers } in ${ freeCountries } country": [
-        "${ freeCountries } 个国家的 ${ freeServers } 台服务器"
-      ],
       "0.5 GB storage": [
         "0.5 GB 存储空间"
       ],
@@ -6611,9 +6611,6 @@
       "1 user": [
         "1 位用户"
       ],
-      "1200+ servers in ${ plusCountries } country": [
-        "${ plusCountries }+ 个国家的 1200+ 台服务器"
-      ],
       "20 GB storage": [
         "20 GB 存储空间"
       ],
@@ -6622,9 +6619,6 @@
       ],
       "3 folders / labels": [
         "3 个文件夹 / 标签"
-      ],
-      "350+ servers in ${ basicCountries } country": [
-        "${ basicCountries }+ 个国家的 350+ 台服务器"
       ],
       "5 addresses": [
         "5 个地址 *"
@@ -6666,7 +6660,7 @@
         "速度较快"
       ],
       "Highest speed (up to 10 Gbps)": [
-        "速度最快（最高可达 10 Gbps）"
+        "速度最快（可达 10 Gbps）"
       ],
       "Includes 6 user accounts": [
         "包括6个用户帐户"
@@ -6846,6 +6840,9 @@
       "Auto reply": [
         "自动回复"
       ],
+      "Backup & Export": [
+        ""
+      ],
       "Calendars": [
         "日历"
       ],
@@ -6878,9 +6875,6 @@
       ],
       "Import & export": [
         "导入与导出"
-      ],
-      "Import/Export": [
-        "导入/导出"
       ],
       "Multi-user support": [
         "多用户功能"
@@ -7080,7 +7074,7 @@
         "正在删除原始邮件"
       ],
       "DMARC value copied to clipboard": [
-        ""
+        "DMARC 内容已复制到剪贴板"
       ],
       "Domain verified": [
         "域名已验证"
@@ -7155,7 +7149,7 @@
         "设备已下线"
       ],
       "SPF value copied to clipboard": [
-        ""
+        "SPF 内容已复制到剪贴板"
       ],
       "User created": [
         "用户已创建"
@@ -7164,10 +7158,10 @@
         "用户已更新"
       ],
       "Value copied to clipboard": [
-        ""
+        "内容已复制到剪贴板"
       ],
       "Verification code copied to clipboard": [
-        ""
+        "验证码已复制到剪贴板"
       ],
       "Verification successful": [
         "验证成功"
@@ -7385,7 +7379,7 @@
         "分配存储空间"
       ],
       "Allocate VPN connections": [
-        "分配 VPN 连接"
+        "分配 VPN 连接数"
       ],
       "Allow List": [
         "白名单"
@@ -7420,6 +7414,9 @@
       "Back": [
         "返回"
       ],
+      "Backup & Export": [
+        "备份和导出"
+      ],
       "Billing cycle": [
         "计费周期"
       ],
@@ -7430,7 +7427,7 @@
         "黑名单"
       ],
       "Bridge for ${ platform }": [
-        ""
+        "Bridge ${ platform } 客户端"
       ],
       "Card verification": [
         "银行卡验证"
@@ -7703,7 +7700,7 @@
         "导入与导出"
       ],
       "Import as simple event?": [
-        ""
+        "导入为简单活动？"
       ],
       "Import Assistant": [
         "导入助手"
@@ -7731,9 +7728,6 @@
       ],
       "Import-Export app": [
         "「导入/导出」应用程序"
-      ],
-      "Import/Export": [
-        "导入/导出"
       ],
       "Invalid verification code": [
         "无效的验证码"
@@ -8018,7 +8012,7 @@
         "时区"
       ],
       "Total (monthly)": [
-        "合计（月费）"
+        "合计（每月）"
       ],
       "Two-factor authentication": [
         "双重验证"
@@ -8414,7 +8408,7 @@
         "容量/带宽上限"
       ],
       "VPN Connections": [
-        "VPN 连接"
+        "VPN 连接数"
       ],
       "VPN servers": [
         "VPN 服务器"
@@ -8448,12 +8442,23 @@
         "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, 应有尽有。"
       ]
     },
+    "VPN Plan Feature": {
+      "${ n } server": [
+        ""
+      ],
+      "${ n } VPN connection": [
+        ""
+      ],
+      "${ numberOfServers } in ${ numberOfCountries } country": [
+        ""
+      ]
+    },
     "VPN upsell feature": {
       "Access geo-blocked content (Netflix, YouTube, etc.)": [
         "访问地理受限内容 (Netflix, YouTube 等)"
       ],
       "Higher speed servers (up to 10Gbps)": [
-        "高速服务器（最高可达 10Gbps）"
+        "高速服务器（速度可达 10Gbps）"
       ],
       "Unlock advanced VPN features": [
         "解锁高级 VPN 功能"
@@ -8461,7 +8466,7 @@
     },
     "VPNClient": {
       "Android": [
-        "安卓"
+        "Android"
       ],
       "Android TV": [
         "Android TV"

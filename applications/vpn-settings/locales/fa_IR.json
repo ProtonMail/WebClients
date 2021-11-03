@@ -699,6 +699,12 @@
       ]
     },
     "Calendar subscription not synced error": {
+      "Calendar could not be decrypted": [
+        ""
+      ],
+      "Calendar could not be found": [
+        ""
+      ],
       "Calendar is syncing": [
         ""
       ],
@@ -768,7 +774,7 @@
       "I use a different Proton account": [
         "من از یک حساب پروتن دیگر استفاده می‌کنم"
       ],
-      "Missing feature(s) ": [
+      "Missing feature(s)": [
         ""
       ],
       "My reason isn't listed, please comment": [
@@ -2785,71 +2791,7 @@
         "متوسط"
       ]
     },
-    "Plan Feature": {
-      "${ freeServersCount.free_vpn } server": [
-        "${ freeServersCount.free_vpn } سرور",
-        "${ freeServersCount.free_vpn } سرور"
-      ],
-      "${ maxConnections } VPN connection": [
-        "${ maxConnections } اتصال VPN",
-        "${ maxConnections } اتصال VPN"
-      ],
-      "${ n } server": [
-        "${ n } سرور",
-        "${ n } سرور"
-      ],
-      "${ n } VPN connection": [
-        "${ n } اتصال VPN",
-        "${ n } اتصال VPN"
-      ],
-      "${ nFreeServers } in ${ countries.free_vpn.count } country": [
-        "${ nFreeServers } در ${ countries.free_vpn.count } کشور",
-        "${ nFreeServers } در ${ countries.free_vpn.count } کشور"
-      ],
-      "1200+ servers in ${ countries[PLANS.VPNPLUS].count } country": [
-        "+۱۲۰۰ سرور در ${ countries[PLANS.VPNPLUS].count } کشور",
-        "+۱۲۰۰ سرور در ${ countries[PLANS.VPNPLUS].count } کشور"
-      ],
-      "350+ servers in ${ countries[PLANS.VPNBASIC].count } country": [
-        "+۳۵۰ سرور در ${ countries[PLANS.VPNBASIC].count } کشور",
-        "+۳۵۰ سرور در +${ countries[PLANS.VPNBASIC].count } کشور"
-      ],
-      "All advanced security features": [
-        "همه امکانات امنیتی پیشرفته"
-      ],
-      "Filesharing/P2P support": [
-        "پشتیبانی Filesharing / P2P"
-      ],
-      "High speed": [
-        "سرعت بالا"
-      ],
-      "Highest speed (10 Gbps)": [
-        "بالاترین سرعت (۱۰ Gbps)"
-      ],
-      "Highest speed (up to 10 Gbps)": [
-        "بالاترین سرعت (تا ۱۰ گیگابیت بر ثانیه)"
-      ],
-      "Medium speed": [
-        "سرعت متوسط"
-      ],
-      "ProtonMail Plus account": [
-        "حساب کاربری ProtonMail Plus"
-      ],
-      "ProtonMail Visionary account": [
-        "حساب ProtonMail رویایی"
-      ],
-      "Streaming service support": [
-        "پشتیبانی از سرویس پخش آنلاین"
-      ],
-      "Strict no-logs policy": [
-        "سیاست سخت‌گیرانهٔ عدم ثبت رویدادها"
-      ]
-    },
     "Plan feature": {
-      "${ freeServers } in ${ freeCountries } country": [
-        "${ freeServers } در ${ freeCountries } کشور",
-        "${ freeServers } در ${ freeCountries } کشور"
-      ],
       "0.5 GB storage": [
         "۰. ۵ گیگابایت فضای ذخیره‌سازی"
       ],
@@ -2862,10 +2804,6 @@
       "1 user": [
         "۱ کاربر"
       ],
-      "1200+ servers in ${ plusCountries } country": [
-        "+۱۲۰۰ سرور در کشورهای ${ plusCountries }",
-        "+۱۲۰۰ سرور در کشورهای ${ plusCountries }"
-      ],
       "20 GB storage": [
         "۲۰ گیگابایت فضای ذخیره‌سازی"
       ],
@@ -2874,10 +2812,6 @@
       ],
       "3 folders / labels": [
         "۳ پوشه / برچسب"
-      ],
-      "350+ servers in ${ basicCountries } country": [
-        "+۳۵۰ سرور در کشورهای ${ basicCountries }",
-        "+۳۵۰ سرور در کشورهای ${ basicCountries }"
       ],
       "5 addresses": [
         "۵ نشانی"
@@ -2956,6 +2890,38 @@
       ],
       "Unlimited folders / labels": [
         "پوشه‌ها / برچسب‌های نامحدود"
+      ]
+    },
+    "Plan Feature": {
+      "All advanced security features": [
+        "همه امکانات امنیتی پیشرفته"
+      ],
+      "Filesharing/P2P support": [
+        "پشتیبانی Filesharing / P2P"
+      ],
+      "High speed": [
+        "سرعت بالا"
+      ],
+      "Highest speed (10 Gbps)": [
+        "بالاترین سرعت (۱۰ Gbps)"
+      ],
+      "Highest speed (up to 10 Gbps)": [
+        "بالاترین سرعت (تا ۱۰ گیگابیت بر ثانیه)"
+      ],
+      "Medium speed": [
+        "سرعت متوسط"
+      ],
+      "ProtonMail Plus account": [
+        "حساب کاربری ProtonMail Plus"
+      ],
+      "ProtonMail Visionary account": [
+        "حساب ProtonMail رویایی"
+      ],
+      "Streaming service support": [
+        "پشتیبانی از سرویس پخش آنلاین"
+      ],
+      "Strict no-logs policy": [
+        "سیاست سخت‌گیرانهٔ عدم ثبت رویدادها"
       ]
     },
     "Plan info": {
@@ -3702,6 +3668,20 @@
     "VPN info": {
       "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, and more.": [
         "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HB0 Now, و موارد بیشتر."
+      ]
+    },
+    "VPN Plan Feature": {
+      "${ n } server": [
+        "",
+        ""
+      ],
+      "${ n } VPN connection": [
+        "",
+        ""
+      ],
+      "${ numberOfServers } in ${ numberOfCountries } country": [
+        "",
+        ""
       ]
     },
     "VPN upsell feature": {

@@ -818,6 +818,9 @@
       "Try another method": [
         "Coba metode lain"
       ],
+      "Turn on tracker protection": [
+        "Aktifkan perlindungan pelacak email"
+      ],
       "Underline": [
         "Garis Bawah"
       ],
@@ -1429,6 +1432,12 @@
       ]
     },
     "Calendar subscription not synced error": {
+      "Calendar could not be decrypted": [
+        "Kalender tidak dapat didekripsi"
+      ],
+      "Calendar could not be found": [
+        "Kalender tidak ditemukan"
+      ],
       "Calendar is syncing": [
         "Kalender sedang menyinkronkan data"
       ],
@@ -1449,6 +1458,14 @@
       ],
       "More than 12 hours passed since last update": [
         "Lebih dari 12 jam telah berlalu sejak pembaharuan terakhir"
+      ]
+    },
+    "Collapsible tooltip": {
+      "Close": [
+        "Tutup"
+      ],
+      "Open": [
+        "Buka"
       ]
     },
     "Composer email icon": {
@@ -2775,9 +2792,6 @@
       "${ numberOfTrackers } email tracker blocked": [
         "${ numberOfTrackers } program pelacak email telah diblokir"
       ],
-      "${ numberOfTrackers } email tracker found": [
-        "${ numberOfTrackers } pelacak email ditemukan"
-      ],
       "${ numContactGroups } contact group": [
         "${ numContactGroups } grup kontak"
       ],
@@ -3069,6 +3083,9 @@
       "Create recovery phrase": [
         "Buat kalimat pemulihan"
       ],
+      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
+        "Anda dapat mengimpor berkas-berkas CSV dari Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora, dan beberapa aplikasi lainnya serta berkas-berkas vCard versi 3.1 dan 4.0 (dengan encoding UTF-8)."
+      ],
       "Custom": [
         "Sesuaikan"
       ],
@@ -3137,6 +3154,18 @@
       ],
       "Email address": [
         "Alamat surel"
+      ],
+      "Email tracker protection is disabled": [
+        "Perlindungan pelacak email dinonakifkan"
+      ],
+      "Email trackers can violate your privacy. Proton did not find any trackers on this message.": [
+        "Program-program pelacak email dapat mengusik privasi Anda. Proton tidak menemukan program pelacak apapun pada email ini."
+      ],
+      "Email trackers can violate your privacy. Proton found and blocked ${ numberOfTrackers } tracker.": [
+        "Program-program pelacak email dapat mengusik privasi Anda. Proton telah menemukan dan memblokir ${ numberOfTrackers } program pelacak yang terdapat pada email ini."
+      ],
+      "Email trackers can violate your privacy. Turn on tracker protection to prevent senders from knowing whether and when you have opened a message.": [
+        "Program-program pelacak email dapat mengusik privasi Anda. Aktifkan perlindungan pelacak email agar para pengirim pesan tidak dapat mengetahui apakah Anda telah membuka pesan-pesan yang Anda terima atau belum."
       ],
       "embedded image": [
         "gambar tertanam"
@@ -3501,9 +3530,6 @@
       "Print email": [
         "Cetak surel"
       ],
-      "Protect yourself from trackers. Turn on email tracker protection in settings": [
-        "Lindungi diri Anda dari program-program pelacak. Aktifkan perlindungan dari program-program pelacak email pada menu pengaturan"
-      ],
       "Proton doesn't make money by abusing privacy.": [
         "Proton hadir bukan untuk melanggar privasi."
       ],
@@ -3750,9 +3776,6 @@
       "To fight spam and abuse, please verify you are human.": [
         "Untuk melawan spam dan penyalahgunaan, mohon verifikasi Anda memang manusia."
       ],
-      "To protect your privacy, Proton blocked email trackers in this message": [
-        "Demi melindungi privasi Anda, Proton telah memblokir program-program pelacak email yang terdapat pada pesan ini"
-      ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "Untuk menandatangani ulang kontak Anda, kami perlu memeriksa setiap kontak dengan daftar kunci enkripsi yang tersedia di akun Anda. Jika tidak ada yang cocok, kontak Anda akan ditandatangani ulang dengan kunci enkripsi utama."
       ],
@@ -3773,6 +3796,9 @@
       ],
       "Turn off content search. Activation progress won't be lost.": [
         "Nonaktifkan pencarian konten. Kemajuan aktivasi tidak akan hilang."
+      ],
+      "Turn on to search the content of your messages": [
+        "Aktifkan untuk dapat mencari isi konten pesan-pesan Anda"
       ],
       "Unsupported file": [
         "Berkas tidak didukung"
@@ -3851,9 +3877,6 @@
       ],
       "We could not verify the sender's trusted keys.": [
         "Kami tidak dapat memverifikasi kunci yang dipercaya pengirim."
-      ],
-      "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
-        "Kami menerima impor berkas CSV dari Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora dan beberapa program lain. Kami juga menerima impor vCard 4.0. (encoding UTF-8)."
       ],
       "We use 3-D Secure to protect your payments.": [
         "Kami menggunakan 3-D Secure untuk melindungi pembayaran anda."
@@ -5002,8 +5025,11 @@
       ]
     },
     "Mail import summary": {
-      "${ messagesFragment } since ${ periodFragment } and label them as ${ label }": [
-        "${ messagesFragment } sejak ${ periodFragment } yang akan memiliki label ${ label }"
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        "Impor seluruh pesan yang memiliki ${ selectedLabelsCount } label terpilih dari total ${ totalLabelsCount } label yang ada sejak ${ periodFragment } dan labeli pesan-pesan tersebut dengan label ${ label }"
+      ],
+      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        "Impor seluruh pesan yang berlabel dari total ${ totalLabelsCount } label yang ada sejak ${ periodFragment } dan labeli pesan-pesan tersebut dengan label ${ label }"
       ]
     },
     "Mailbox": {
@@ -5491,18 +5517,7 @@
         "Nama"
       ]
     },
-    "Plan Feature": {
-      "${ n } server": [
-        "${ n } server"
-      ],
-      "${ n } VPN connection": [
-        "${ n } Koneksi VPN"
-      ]
-    },
     "Plan feature": {
-      "${ freeServers } in ${ freeCountries } country": [
-        "${ freeServers } di ${ freeCountries } negara"
-      ],
       "0.5 GB storage": [
         "Kapasitas 0,5 GB"
       ],
@@ -5515,9 +5530,6 @@
       "1 user": [
         "1 pengguna"
       ],
-      "1200+ servers in ${ plusCountries } country": [
-        "1200+ server di ${ plusCountries } negara"
-      ],
       "20 GB storage": [
         "Kapasitas 20 GB"
       ],
@@ -5526,9 +5538,6 @@
       ],
       "3 folders / labels": [
         "3 folder / label"
-      ],
-      "350+ servers in ${ basicCountries } country": [
-        "350+ server yang tersebar di ${ basicCountries } negara"
       ],
       "5 addresses": [
         "5 alamat"
@@ -6896,6 +6905,17 @@
       ],
       "Windows, macOS, iOS, Linux, Android, Android TV, Chromebook, Chromecast": [
         "Windows, macOS, iOS, Linux, Android, Android TV, Chromebook, Chromecast"
+      ]
+    },
+    "VPN Plan Feature": {
+      "${ n } server": [
+        "${ n } server"
+      ],
+      "${ n } VPN connection": [
+        "${ n } koneksi VPN"
+      ],
+      "${ numberOfServers } in ${ numberOfCountries } country": [
+        "${ numberOfServers } di ${ numberOfCountries } negara"
       ]
     },
     "Warning": {

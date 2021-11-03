@@ -31,10 +31,10 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } 商店"
       ],
-      "activate": [
+      "Activate": [
         "啟用"
       ],
-      "Activate": [
+      "activate": [
         "啟用"
       ],
       "Activate ${ Name }@pm.me": [
@@ -870,9 +870,6 @@
       ]
     },
     "Alert": {
-      "Are you sure you want to import a private key? Importing an insecurely generated or leaked private key can harm the security of your emails.": [
-        "您確定要匯入私鑰嗎？匯入一個非安全地產生或已外洩的私鑰可能會危及您電子郵件的安全性。"
-      ],
       "By leaving now, some contacts may not be imported": [
         "若您現在離開，有一些聯絡人或會無法匯入"
       ],
@@ -1286,6 +1283,12 @@
       ]
     },
     "Calendar subscription not synced error": {
+      "Calendar could not be decrypted": [
+        ""
+      ],
+      "Calendar could not be found": [
+        ""
+      ],
       "Calendar is syncing": [
         "日曆正在同步"
       ],
@@ -1595,8 +1598,8 @@
       "I use a different Proton account": [
         "我改用另一個 Proton 帳號"
       ],
-      "Missing feature(s) ": [
-        "缺少功能 "
+      "Missing feature(s)": [
+        ""
       ],
       "My reason isn't listed, please comment": [
         "我的理由未列出，請留言"
@@ -2928,6 +2931,11 @@
         "兩步驟驗證已啟用"
       ]
     },
+    "Import key": {
+      "Are you sure you want to import a private key? Importing an insecurely generated or leaked private key can harm the security of your emails.\n\nPlease also note that the public key corresponding to this private key will be publicly available from our key server. If the key contains personal details (such as your full name) which you do not want to publish, please edit the key before importing it.": [
+        ""
+      ]
+    },
     "Import status": {
       "${ percentageValue }% paused": [
         "${ percentageValue }% 已暫停"
@@ -3328,6 +3336,9 @@
       "Creating your Proton account": [
         "正在建立您的 Proton 帳號"
       ],
+      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
+        ""
+      ],
       "Currently all available storage is allocated to the administrator account. Please reduce the admin account allocation to free up space for additional users. You can increase the total storage at any time by upgrading your account.": [
         "目前所有可用的儲存空間已分配給系統管理員帳號。請減少系統管理員帳號的分配，以釋出空間給額外的使用者。您可隨時升級您的帳號，以增加總儲存空間。"
       ],
@@ -3483,9 +3494,6 @@
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "篩選器適用於所有電子郵件，包括內送及外寄電子郵件。每一個篩選器起碼必須包含一個名稱、一個條件及一個動作。"
-      ],
-      "For advanced security, the Import-Export app encrypts emails on your device before migrating them to Proton servers. You can also export messages for local backups.": [
-        "為確保進階安全，Import-Export 應用程式會先在您的裝置上加密電子郵件，然後才遷移至 Proton 伺服器上。您亦可匯出郵件以作本機備份。"
       ],
       "For families and small teams; includes both Mail and VPN.": [
         "對於家庭成員與小型團隊；同時包含了郵件與 VPN。"
@@ -4042,6 +4050,9 @@
       "The email address you place at the top of the list is your default email address. Drag and drop to reorder your addresses.": [
         "清單首列為您預設的電子郵件地址。請拖放以重新排序您的電子郵件地址。"
       ],
+      "The Import-Export app allows you to export messages for local backups and to restore previous backups to your account.": [
+        ""
+      ],
       "The name will be visible to your users while they are logged in.": [
         "您的使用者登入後，將可看到此名稱。"
       ],
@@ -4227,9 +4238,6 @@
       ],
       "We recommend adding a linked email so you can recover your account if you lose your password.": [
         "建議新增一個已連結的電子郵件地址，萬一您遺失密碼，也可以恢復您的帳號。"
-      ],
-      "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
-        "我們支援匯入來自 Outlook、Outlook Express、Yahoo! Mail、Hotmail、Eudora 及其他一些應用程式的 CSV 檔案。我們也支援匯入 vCard 4.0。(以 UTF-8 編碼)。"
       ],
       "We use 3-D Secure to protect your payments.": [
         "我們使用 3-D Secure 保障您的付款。"
@@ -5867,7 +5875,10 @@
       ]
     },
     "Mail import summary": {
-      "${ messagesFragment } since ${ periodFragment } and label them as ${ label }": [
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        ""
+      ],
+      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
         ""
       ]
     },
@@ -6587,18 +6598,7 @@
         "免費"
       ]
     },
-    "Plan Feature": {
-      "${ n } server": [
-        "${ n } 個伺服器"
-      ],
-      "${ n } VPN connection": [
-        "${ n } 個 VPN 連線"
-      ]
-    },
     "Plan feature": {
-      "${ freeServers } in ${ freeCountries } country": [
-        "有 ${ freeServers } 分布在 ${ freeCountries } 國家地區"
-      ],
       "0.5 GB storage": [
         "0.5 GB 儲存空間"
       ],
@@ -6611,9 +6611,6 @@
       "1 user": [
         "1 個使用者"
       ],
-      "1200+ servers in ${ plusCountries } country": [
-        "1200+ 個伺服器，分布於 ${ plusCountries } 個國家"
-      ],
       "20 GB storage": [
         "20 GB 儲存空間"
       ],
@@ -6622,9 +6619,6 @@
       ],
       "3 folders / labels": [
         "3 個資料夾 / 標籤"
-      ],
-      "350+ servers in ${ basicCountries } country": [
-        "350+ 個伺服器，分布於 ${ basicCountries } 個國家"
       ],
       "5 addresses": [
         "5 個電子郵件地址"
@@ -6846,6 +6840,9 @@
       "Auto reply": [
         "自動回覆"
       ],
+      "Backup & Export": [
+        ""
+      ],
       "Calendars": [
         "行事曆"
       ],
@@ -6878,9 +6875,6 @@
       ],
       "Import & export": [
         "匯入與匯出"
-      ],
-      "Import/Export": [
-        ""
       ],
       "Multi-user support": [
         "支援多使用者"
@@ -7420,6 +7414,9 @@
       "Back": [
         "返回"
       ],
+      "Backup & Export": [
+        ""
+      ],
       "Billing cycle": [
         "帳單週期"
       ],
@@ -7731,9 +7728,6 @@
       ],
       "Import-Export app": [
         "Import-Export 應用程式"
-      ],
-      "Import/Export": [
-        ""
       ],
       "Invalid verification code": [
         "驗證碼無效"
@@ -8446,6 +8440,17 @@
     "VPN info": {
       "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, and more.": [
         "Netflix、Amazon Prime Video、BBC iPlayer、ESPN+、Disney+、HBO Now，還有更多。"
+      ]
+    },
+    "VPN Plan Feature": {
+      "${ n } server": [
+        ""
+      ],
+      "${ n } VPN connection": [
+        ""
+      ],
+      "${ numberOfServers } in ${ numberOfCountries } country": [
+        ""
       ]
     },
     "VPN upsell feature": {

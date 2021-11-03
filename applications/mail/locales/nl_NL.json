@@ -822,6 +822,9 @@
       "Try another method": [
         "Andere methode proberen"
       ],
+      "Turn on tracker protection": [
+        ""
+      ],
       "Underline": [
         "Onderstreept"
       ],
@@ -1437,6 +1440,12 @@
       ]
     },
     "Calendar subscription not synced error": {
+      "Calendar could not be decrypted": [
+        ""
+      ],
+      "Calendar could not be found": [
+        ""
+      ],
       "Calendar is syncing": [
         "De agenda wordt gesynchroniseerd"
       ],
@@ -1457,6 +1466,14 @@
       ],
       "More than 12 hours passed since last update": [
         "Er zijn meer dan 12 uur verstreken sinds de laatste update"
+      ]
+    },
+    "Collapsible tooltip": {
+      "Close": [
+        ""
+      ],
+      "Open": [
+        ""
       ]
     },
     "Composer email icon": {
@@ -2559,7 +2576,7 @@
         "Verplaatst bericht verbergen"
       ],
       "Read": [
-        "Lezen"
+        "Gelezen"
       ],
       "Show moved message": [
         "Verplaatst bericht tonen"
@@ -2813,10 +2830,6 @@
         "${ namesWithoutLast } en ${ nameOfLast }"
       ],
       "${ numberOfTrackers } email tracker blocked": [
-        "",
-        ""
-      ],
-      "${ numberOfTrackers } email tracker found": [
         "",
         ""
       ],
@@ -3135,6 +3148,9 @@
       "Create recovery phrase": [
         ""
       ],
+      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
+        ""
+      ],
       "Custom": [
         "Aangepast"
       ],
@@ -3205,6 +3221,19 @@
       ],
       "Email address": [
         "E-mailadres"
+      ],
+      "Email tracker protection is disabled": [
+        ""
+      ],
+      "Email trackers can violate your privacy. Proton did not find any trackers on this message.": [
+        ""
+      ],
+      "Email trackers can violate your privacy. Proton found and blocked ${ numberOfTrackers } tracker.": [
+        "",
+        ""
+      ],
+      "Email trackers can violate your privacy. Turn on tracker protection to prevent senders from knowing whether and when you have opened a message.": [
+        ""
       ],
       "embedded image": [
         "ingesloten afbeelding",
@@ -3576,9 +3605,6 @@
       "Print email": [
         "E-mail afdrukken"
       ],
-      "Protect yourself from trackers. Turn on email tracker protection in settings": [
-        ""
-      ],
       "Proton doesn't make money by abusing privacy.": [
         ""
       ],
@@ -3827,9 +3853,6 @@
       "To fight spam and abuse, please verify you are human.": [
         "Bevestig dat u een natuurlijk persoon bent, om spam en misbruik tegen te gaan."
       ],
-      "To protect your privacy, Proton blocked email trackers in this message": [
-        ""
-      ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "Om uw contacten opnieuw te ondertekenen, moeten we elk contactpersoon controleren op de lijst met versleutelingssleuteld die beschikbaar zijn in uw account. Als er geen overeenkomst is gevonden, zal uw contactpersoon opnieuw worden ondertekend met de primaire versleutelingssleutel."
       ],
@@ -3850,6 +3873,9 @@
       ],
       "Turn off content search. Activation progress won't be lost.": [
         "Content zoeken uitschakelen. Activatie voortgang zal niet verloren gaan."
+      ],
+      "Turn on to search the content of your messages": [
+        ""
       ],
       "Unsupported file": [
         "Niet-ondersteund bestand"
@@ -3928,9 +3954,6 @@
       ],
       "We could not verify the sender's trusted keys.": [
         "We kunnen de vertrouwde sleutels van de afzender niet controleren."
-      ],
-      "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
-        "We ondersteunen het importeren van CSV-bestanden uit Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora en enkele andere apps. We ondersteunen ook de import van vCard 4.0. (UTF-8 codering)."
       ],
       "We use 3-D Secure to protect your payments.": [
         "We gebruiken 3-D Secure om je betalingen te beschermen."
@@ -5090,7 +5113,12 @@
       ]
     },
     "Mail import summary": {
-      "${ messagesFragment } since ${ periodFragment } and label them as ${ label }": [
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        "",
+        ""
+      ],
+      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        "",
         ""
       ]
     },
@@ -5582,21 +5610,7 @@
         "Naam"
       ]
     },
-    "Plan Feature": {
-      "${ n } server": [
-        "${ n } server",
-        "${ n } servers"
-      ],
-      "${ n } VPN connection": [
-        "${ n } VPN-verbinding",
-        "${ n } VPN-verbindingen"
-      ]
-    },
     "Plan feature": {
-      "${ freeServers } in ${ freeCountries } country": [
-        "",
-        ""
-      ],
       "0.5 GB storage": [
         "0,5 GB opslagruimte"
       ],
@@ -5609,10 +5623,6 @@
       "1 user": [
         "1 gebruiker"
       ],
-      "1200+ servers in ${ plusCountries } country": [
-        "1200+ servers in ${ plusCountries } land",
-        "1200+ servers in ${ plusCountries } landen"
-      ],
       "20 GB storage": [
         "20 GB opslagruimte"
       ],
@@ -5621,10 +5631,6 @@
       ],
       "3 folders / labels": [
         "3 mappen / labels"
-      ],
-      "350+ servers in ${ basicCountries } country": [
-        "350+ servers in ${ basicCountries } land",
-        ""
       ],
       "5 addresses": [
         "5 adressen"
@@ -7038,6 +7044,20 @@
       ],
       "Windows, macOS, iOS, Linux, Android, Android TV, Chromebook, Chromecast": [
         "Windows, macOS, Linux, Android, Android TV, Chromebook, Chromecast"
+      ]
+    },
+    "VPN Plan Feature": {
+      "${ n } server": [
+        "",
+        ""
+      ],
+      "${ n } VPN connection": [
+        "",
+        ""
+      ],
+      "${ numberOfServers } in ${ numberOfCountries } country": [
+        "",
+        ""
       ]
     },
     "Warning": {

@@ -886,6 +886,12 @@
       ]
     },
     "Calendar subscription not synced error": {
+      "Calendar could not be decrypted": [
+        "El calendari no es pot desxifrar"
+      ],
+      "Calendar could not be found": [
+        "No es pot trobar el calendari"
+      ],
       "Calendar is syncing": [
         "El calendari s'està sincronitzant"
       ],
@@ -2035,7 +2041,7 @@
         "S'enviarà una invitació als participants de l'esdeveniment."
       ],
       "and": [
-        ""
+        "i"
       ],
       "At most 100 participants are allowed per invitation": [
         "Es permet un màxim de 100 participants per invitació"
@@ -2080,7 +2086,7 @@
         "Feu clic a \"Sol·licitar un nou codi\" per rebre un codi de verificació nou a ${ strong }. Si aquest número de telèfon és incorrecte, feu clic a \"Editar\" per corregir-lo."
       ],
       "Close this screen to exit.": [
-        ""
+        "Tanqueu la finestra per sortir."
       ],
       "Connections": [
         "Connexions"
@@ -2099,6 +2105,9 @@
         "Crear un nou grup de contactes"
       ],
       "Create in": [
+        "Crear a"
+      ],
+      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         ""
       ],
       "Custom": [
@@ -2205,19 +2214,19 @@
         ""
       ],
       "Import from": [
-        ""
+        "Importar des de"
       ],
       "Import in progress": [
-        ""
+        "Importació en curs"
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
-        ""
+        "Important les vostres dades des de ${ importedEmailAddress } a ${ toEmail }."
       ],
       "Included": [
         "Inclòs"
       ],
       "Inherited from parent folder": [
-        ""
+        "Heretada d'una carpeta principal"
       ],
       "Internet connection lost.": [
         "S'ha perdut la connexió a Internet."
@@ -2235,7 +2244,7 @@
         "Empremta digital de la clau"
       ],
       "Large imports can take several days.": [
-        ""
+        "Imports grans poden trigar diversos dies."
       ],
       "Learn more": [
         "Saber-ne més"
@@ -2256,7 +2265,7 @@
         "Gestió dels teus calendaris"
       ],
       "Merged": [
-        ""
+        "Combinats"
       ],
       "Monthly ${ onDayString }": [
         "Mensual ${ onDayString }"
@@ -2265,7 +2274,7 @@
         ""
       ],
       "New": [
-        ""
+        "Nou"
       ],
       "Next you'll need to log in to your Google account and allow us to access your data.": [
         ""
@@ -2389,7 +2398,7 @@
         ""
       ],
       "Servers are unreachable. Please try again in a few minutes": [
-        ""
+        "Servidors inaccessibles. Torneu a provar-ho en uns minuts"
       ],
       "Session timed out.": [
         "Temps de sessió esgotat."
@@ -2508,9 +2517,6 @@
       "VPN + ${ mailAppName } bundle for families and small businesses.": [
         "Pla combinat de VPN + ${ mailAppName } per famílies i petites empreses."
       ],
-      "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
-        "Admetem la importació de fitxers CSV des d'Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora i algunes altres aplicacions. També admetem la importació de vCard 4.0. (Codificació UTF-8)."
-      ],
       "We use 3-D Secure to protect your payments.": [
         "Utilitzem 3-D Secure per protegir els vostres pagaments."
       ],
@@ -2518,13 +2524,13 @@
         "Us redirigirem a PayPal en una pestanya nova del navegador per completar aquesta transacció. Si utilitzeu bloquejadors de finestres emergents, desactiveu-los per continuar."
       ],
       "We'll notify you when the import is done.": [
-        ""
+        "Us notificarem quan la importació s'hagi realitzat."
       ],
       "Week": [
         "Setmana"
       ],
       "What do you want to import from your Google account?": [
-        ""
+        "Què voleu importar del vostre compte de Google?"
       ],
       "Which event would you like to delete?": [
         "Quin esdeveniment vol esborrar?"
@@ -2566,13 +2572,13 @@
         "Actualment esteu registrat com a ${ user.Name } (${ user.Email }) i té accés restringit."
       ],
       "You can check the progress ${ importProgressLink }.": [
-        ""
+        "Podeu comprovar el progrés a ${ importProgressLink }."
       ],
       "You can only modify personal event properties as you can't send emails from the organizer address.": [
         "Només podeu modificar propietats personals de l'esdeveniment perquè no podeu enviar correus des de l'adreça organitzadora."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
-        ""
+        "Podeu activar les notificacions per obtenir alertes quan arribin missatges de correu electrònic nous a aquesta carpeta."
       ],
       "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
         "Heu desactivat l'accés a la versió Beta. Cliqueu ${ refreshButton } per utilitzar la versió estable de ${ appName }. Es tornarà a carregar l'aplicació."
@@ -3434,7 +3440,12 @@
       ]
     },
     "Mail import summary": {
-      "${ messagesFragment } since ${ periodFragment } and label them as ${ label }": [
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        "",
+        ""
+      ],
+      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        "",
         ""
       ]
     },

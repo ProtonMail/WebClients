@@ -114,7 +114,7 @@
         "Dialoguez avec nous"
       ],
       "Check import progress": [
-        ""
+        "Voir l'évolution de l'importation"
       ],
       "Choose a file or drag it here": [
         "Choisissez un fichier ou faites-le glisser ici"
@@ -636,7 +636,7 @@
         "Récupérer les données"
       ],
       "Refine your search": [
-        ""
+        "Affinez votre recherche"
       ],
       "refresh the page": [
         "actualiser la page"
@@ -821,6 +821,9 @@
       ],
       "Try another method": [
         "Essayer une autre méthode"
+      ],
+      "Turn on tracker protection": [
+        "Activer la protection contre les traqueurs"
       ],
       "Underline": [
         "Souligné"
@@ -1437,6 +1440,12 @@
       ]
     },
     "Calendar subscription not synced error": {
+      "Calendar could not be decrypted": [
+        "Le calendrier n'a pas pu être déchiffré"
+      ],
+      "Calendar could not be found": [
+        "Le calendrier n'a pas pu être trouvé"
+      ],
       "Calendar is syncing": [
         "Synchronisation du calendrier"
       ],
@@ -1457,6 +1466,14 @@
       ],
       "More than 12 hours passed since last update": [
         "Plus de 12 heures se sont écoulées depuis la dernière mise à jour"
+      ]
+    },
+    "Collapsible tooltip": {
+      "Close": [
+        "Fermer"
+      ],
+      "Open": [
+        "Ouvrir"
       ]
     },
     "Composer email icon": {
@@ -1882,7 +1899,7 @@
         "Montant inférieur au minimum autorisé."
       ],
       "Attachments are limited to 25 MB": [
-        ""
+        "Les pièces jointes sont limitées à 25 Mo"
       ],
       "Authentication canceled.": [
         "Authentification annulée."
@@ -1906,7 +1923,7 @@
         "Impossible de valider le numéro de téléphone, veuillez réessayer plus tard"
       ],
       "Checkout expired, please try again": [
-        ""
+        "La commande a expiré, veuillez réessayer"
       ],
       "Choose a date in the future.": [
         "Choisissez une date dans le futur."
@@ -1928,10 +1945,10 @@
         "Signature du contact non vérifiée"
       ],
       "Contact your organization’s administrator to resolve this": [
-        ""
+        "Contactez l’administrateur de votre organisation pour résoudre ce problème"
       ],
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
-        ""
+        "La recherche de contenu ne peut pas être activée dans ce navigateur. Veuillez quitter la navigation privée ou essayer avec un autre navigateur."
       ],
       "Could not find address ${ email }.": [
         "Impossible de trouver l'adresse ${ email }."
@@ -1968,13 +1985,13 @@
         "Erreur dans une des conditions"
       ],
       "Error while saving draft. Please try again.": [
-        ""
+        "Erreur lors de l'enregistrement du brouillon. Veuillez réessayer."
       ],
       "Error while sending the message. Message is not sent.": [
-        ""
+        "Erreur lors de l'envoi du message. Le message n'est pas envoyé."
       ],
       "Error while uploading attachments. Message is not sent.": [
-        ""
+        "Erreur lors du téléversement des pièces jointes. Le message n'est pas envoyé."
       ],
       "Failed to encrypt attachment. Please try again.": [
         "Échec du chiffrement de la pièce jointe. Veuillez essayer à nouveau."
@@ -2010,7 +2027,7 @@
         "Date d'expiration invalide"
       ],
       "Invalid expiration time": [
-        ""
+        "Délai d'expiration invalide"
       ],
       "Invalid name": [
         "Nom invalide"
@@ -2035,7 +2052,7 @@
         "Le message doit d'abord être envoyé"
       ],
       "Message passwords do not match": [
-        ""
+        "Les mots de passe du message ne correspondent pas"
       ],
       "Message processing error.": [
         "Erreur de traitement du message."
@@ -2050,7 +2067,7 @@
         "Erreur réseau: veuillez vérifier votre connexion et réessayer."
       ],
       "No address with keys available to compose a message": [
-        ""
+        "Aucune adresse avec des clés disponibles pour écrire un message"
       ],
       "No key retrieved for internal user is valid for sending": [
         "Aucune clé récupérée pour l'utilisateur interne n'est valide pour l'envoi"
@@ -2184,7 +2201,7 @@
         "Le nom du label est trop long. Veuillez en choisir un autre."
       ],
       "The maximum expiration is 4 weeks": [
-        ""
+        "Le délai d’expiration maximal est de 4 semaines"
       ],
       "The minimum amount of credit that can be added is ${ _price }": [
         "Le montant minimal de crédit qui peut être ajouté est ${ _price }"
@@ -2202,7 +2219,7 @@
         "Il y a trop de dossiers dans votre compte externe. Veuillez personnaliser l'importation pour supprimer certains dossiers."
       ],
       "There has been an issue with content search. Default search has been used instead.": [
-        ""
+        "Un problème est survenu avec la recherche de contenu. La recherche par défaut a été utilisée à la place."
       ],
       "There was an error when exporting the contacts vCards": [
         "Une erreur s'est produite lors de l'exportation des vCards des contacts"
@@ -2220,7 +2237,7 @@
         "Ce nom de label n'est pas disponible. Veuillez en choisir un autre"
       ],
       "This message has already been sent": [
-        ""
+        "Ce message a déjà été envoyé"
       ],
       "This message has already been sent. A new draft has been saved.": [
         "Ce message a déjà été envoyé. Un nouveau brouillon a été enregistré."
@@ -2229,7 +2246,7 @@
         "Ce message peut contenir des liens URL qui pourraient ne pas être correctement ouverts par votre navigateur actuel"
       ],
       "Too many active filters. Please upgrade to a paid plan to activate more filters.": [
-        ""
+        "Trop de filtres actifs. Veuillez passer à une offre payante pour activer plus de filtres."
       ],
       "Trusted keys are not valid for sending": [
         "Les clés approuvées ne sont pas valides pour l'envoi"
@@ -2250,8 +2267,8 @@
         "Vous ne pouvez pas envoyer de vCards de plus de 10 contacts"
       ],
       "You cannot open more than ${ maxActiveComposer } composer window at a time": [
-        "",
-        ""
+        "Vous ne pouvez pas ouvrir plus de ${ maxActiveComposer } fenêtre de composeur à la fois",
+        "Vous ne pouvez pas ouvrir plus de ${ maxActiveComposer } fenêtres de composeur à la fois"
       ],
       "You did not provide a file.": [
         "Vous n'avez pas fourni de fichier."
@@ -2269,7 +2286,7 @@
         "Votre importation ne sera pas traitée."
       ],
       "Your search matched too many results. Please limit your search and try again.": [
-        ""
+        "Votre recherche a retourné trop de résultats. Veuillez la limiter et réessayer."
       ]
     },
     "Error display when performing invalid move on message": {
@@ -2375,7 +2392,7 @@
         "L'événement récurrent original n'a pas pu être trouvé"
       ],
       "Recurring event has no occurrences": [
-        ""
+        "L'événement récurrent n'a pas d'occurrence"
       ],
       "Recurring rule not supported": [
         "Récurrence non prise en charge"
@@ -2756,16 +2773,16 @@
         "${ appName } a besoin de votre permission pour ${ enableDesktopNotifications }."
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
-        "",
-        ""
+        "${ calendarsToBeCreatedCount } nouveau calendrier",
+        "${ calendarsToBeCreatedCount } nouveaux calendriers"
       ],
       "${ calendarsToBeMerged } merged calendar": [
-        "",
-        ""
+        "${ calendarsToBeMerged } calendrier fusionné",
+        "${ calendarsToBeMerged } calendriers fusionnés"
       ],
       "${ calendarsToBeMergedCount } merged calendar": [
-        "",
-        ""
+        "${ calendarsToBeMergedCount } calendrier fusionné",
+        "${ calendarsToBeMergedCount } calendriers fusionnés"
       ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } membre",
@@ -2816,13 +2833,9 @@
         "${ numberOfTrackers } traqueur de courriel bloqué",
         "${ numberOfTrackers } traqueurs de courriel bloqués"
       ],
-      "${ numberOfTrackers } email tracker found": [
-        "${ numberOfTrackers } traqueur de courriel trouvé",
-        "${ numberOfTrackers } traqueurs de courriel trouvés"
-      ],
       "${ numContactGroups } contact group": [
-        "",
-        ""
+        "${ numContactGroups } groupe de contacts",
+        "${ numContactGroups } groupes de contacts"
       ],
       "${ numContacts } contact": [
         "${ numContacts } contact",
@@ -2833,8 +2846,8 @@
         "${ occurrencesInBody } occurrences trouvées"
       ],
       "${ occurrencesInBody } occurrence found in the mail content": [
-        "",
-        ""
+        "${ occurrencesInBody } occurrence trouvée dans le contenu du courrier",
+        "${ occurrencesInBody } occurrences trouvées dans le contenu du courrier"
       ],
       "${ pureAttachmentsCount } file attached": [
         "${ pureAttachmentsCount } fichier joint",
@@ -2850,8 +2863,8 @@
         "${ saveExtra20 } sur VPN et Mail en ajoutant un abonnement VPN."
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
-        "",
-        ""
+        "${ selectedCalendarsTotal } sur ${ providerCalendars.length } calendrier",
+        "${ selectedCalendarsTotal } sur ${ providerCalendars.length } calendriers"
       ],
       "${ selectedFoldersCount } folder selected": [
         "${ selectedFoldersCount } dossier sélectionné",
@@ -3117,8 +3130,8 @@
         "Copié dans le presse-papiers"
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
-        "",
-        ""
+        "Créer ${ calendarsToBeCreated } nouveau calendrier",
+        "Créer ${ calendarsToBeCreated } nouveaux calendriers"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Créez un label pour les messages importés, une plage de temps pour cette importation et les dossiers que vous souhaitez importer."
@@ -3130,10 +3143,13 @@
         "Créer un nouveau groupe de contacts"
       ],
       "Create in": [
-        ""
+        "Créer dans"
       ],
       "Create recovery phrase": [
         "Créer une phrase de récupération"
+      ],
+      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
+        "Les fichiers CSV d'Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora et de certaines autres applications ainsi que les formats vCard 3.1 et 4.0 (encodage UTF-8) sont pris en charge."
       ],
       "Custom": [
         "Personnalisée"
@@ -3205,6 +3221,19 @@
       ],
       "Email address": [
         "Adresse courriel"
+      ],
+      "Email tracker protection is disabled": [
+        "La protection contre les traqueurs dans les courriels est désactivée"
+      ],
+      "Email trackers can violate your privacy. Proton did not find any trackers on this message.": [
+        "Les traqueurs dans les courriels peuvent violer votre vie privée. Proton n'en a pas trouvé dans ce message."
+      ],
+      "Email trackers can violate your privacy. Proton found and blocked ${ numberOfTrackers } tracker.": [
+        "Les traqueurs dans les courriels peuvent violer votre vie privée. Proton a trouvé et bloqué ${ numberOfTrackers } traqueur.",
+        "Les traqueurs dans les courriels peuvent violer votre vie privée. Proton a trouvé et bloqué ${ numberOfTrackers } traqueurs."
+      ],
+      "Email trackers can violate your privacy. Turn on tracker protection to prevent senders from knowing whether and when you have opened a message.": [
+        "Les traqueurs dans les courriels peuvent violer votre vie privée. Activez la protection contre les traqueurs pour empêcher les expéditeurs de savoir si et quand vous avez ouvert un message."
       ],
       "embedded image": [
         "image intégrée",
@@ -3314,14 +3343,14 @@
         "URL de l'image"
       ],
       "Images have been removed because they are not allowed in auto-reply": [
-        ""
+        "Les images ont été supprimées, car elles ne sont pas autorisées dans la réponse automatique"
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
-        ""
+        "Importer ${ contactsFragment } et ${ contactsGroupsFragment }"
       ],
       "Import ${ selectedCalendarsCount } of ${ totalCalendarsCount } calendar": [
-        "",
-        ""
+        "Importer ${ selectedCalendarsCount } de ${ totalCalendarsCount } calendrier",
+        "Importer ${ selectedCalendarsCount } de ${ totalCalendarsCount } calendriers"
       ],
       "Import from": [
         "Importer depuis"
@@ -3330,7 +3359,7 @@
         "Importation en cours"
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
-        ""
+        "Importation de vos données de ${ importedEmailAddress } vers ${ toEmail }."
       ],
       "Included": [
         "Inclus"
@@ -3364,7 +3393,7 @@
         "Connexion Internet rétablie."
       ],
       "Just confirm your selection and we'll do the rest.": [
-        ""
+        "Confirmez simplement votre sélection et nous ferons le reste."
       ],
       "Justify": [
         "Justifier"
@@ -3373,7 +3402,7 @@
         "Empreinte de la clé"
       ],
       "Large imports can take several days.": [
-        ""
+        "Les importations importantes peuvent prendre plusieurs jours."
       ],
       "Learn more": [
         "En savoir plus"
@@ -3421,7 +3450,7 @@
         "Message envoyé"
       ],
       "Message sent.": [
-        ""
+        "Message envoyé."
       ],
       "Message will be sent ${ dateString } at ${ formattedTime }": [
         "Le message va être envoyé le ${ dateString } à ${ formattedTime }"
@@ -3436,7 +3465,7 @@
         "Nouveau"
       ],
       "Next you'll need to log in to your Google account and allow us to access your data.": [
-        ""
+        "Ensuite, vous devrez vous connecter à votre compte Google et nous permettre d'accéder à vos données."
       ],
       "No action selected": [
         "Aucune action sélectionnée"
@@ -3448,7 +3477,7 @@
         "Aucune adresse courriel"
       ],
       "No email trackers found": [
-        ""
+        "Aucun traqueur de courriel trouvé"
       ],
       "No folder found": [
         "Aucun dossier trouvé"
@@ -3576,9 +3605,6 @@
       "Print email": [
         "Imprimer le courriel"
       ],
-      "Protect yourself from trackers. Turn on email tracker protection in settings": [
-        ""
-      ],
       "Proton doesn't make money by abusing privacy.": [
         "Proton ne gagne pas d'argent en abusant de la vie privée."
       ],
@@ -3635,7 +3661,7 @@
         "Programmé"
       ],
       "Scheduled send of this message will be cancelled.": [
-        ""
+        "L'envoi programmé de ce message sera annulé."
       ],
       "Scheduling message...": [
         "Programmation du message..."
@@ -3650,7 +3676,7 @@
         "Sélectionnez le format de message que vous souhaitez utiliser par défaut lors de l'envoi d'un courriel à cette adresse électronique."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20-personal-calendar limit. You can also merge imported calendars with existing Proton calendars.": [
-        ""
+        "Sélectionnez les calendriers à importer. Un nouveau calendrier sera créé pour chaque calendrier importé jusqu'à la limite de 20 calendriers personnels. Vous pouvez également fusionner des calendriers importés avec des calendriers Proton existants."
       ],
       "Sending": [
         "Envoi en cours"
@@ -3710,7 +3736,7 @@
         "Passez à ${ professionalPlan } pour ajouter plus d'utilisateurs."
       ],
       "Taking too long?": [
-        ""
+        "Cela prend trop de temps?"
       ],
       "Test link": [
         "Lien test"
@@ -3762,7 +3788,7 @@
         "Ce navigateur ne prend pas en charge l'aperçu des documents PDF. Veuillez télécharger le fichier."
       ],
       "This conversation contains a scheduled message. Sending of this message will be cancelled.": [
-        ""
+        "Cette conversation contient un message programmé. L'envoi de ce message sera annulé."
       ],
       "This conversation contains non-trashed messages.": [
         "Cette conversation contient des messages non mis à la corbeille."
@@ -3827,9 +3853,6 @@
       "To fight spam and abuse, please verify you are human.": [
         "Pour lutter contre les pourriels et les abus, veuillez vérifier que vous êtes humain."
       ],
-      "To protect your privacy, Proton blocked email trackers in this message": [
-        ""
-      ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "Pour signer une nouvelle fois vos contacts, nous devons vérifier chaque contact à l'aide de la liste des clés de chiffrement disponible dans votre compte. Si aucune correspondance n'est trouvée, votre contact sera de nouveau signé avec la clé de chiffrement principale."
       ],
@@ -3850,6 +3873,9 @@
       ],
       "Turn off content search. Activation progress won't be lost.": [
         "Désactiver la recherche de contenu. La progression d'activation ne sera pas perdue."
+      ],
+      "Turn on to search the content of your messages": [
+        "Activer pour rechercher dans le contenu de vos messages"
       ],
       "Unsupported file": [
         "Fichier non pris en charge"
@@ -3929,9 +3955,6 @@
       "We could not verify the sender's trusted keys.": [
         "Nous n'avons pas pu vérifier les clés approuvées de l'expéditeur·rice."
       ],
-      "We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard 4.0. (UTF-8 encoding).": [
-        "Nous prenons en charge l'importation de fichiers CSV depuis Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora et d'autres applications. Nous prenons également en charge l'importation de vCard 4.0. (codage UTF-8)."
-      ],
       "We use 3-D Secure to protect your payments.": [
         "Nous utilisons 3-D Secure pour protéger vos paiements."
       ],
@@ -3939,7 +3962,7 @@
         "Nous vous redirigerons vers PayPal dans un nouvel onglet du navigateur pour compléter cette transaction. Si vous utilisez des bloqueurs de fenêtres surgissantes, veuillez les désactiver pour continuer."
       ],
       "We'll notify you when the import is done.": [
-        ""
+        "Nous vous informerons lorsque l'importation sera terminée."
       ],
       "Web URL": [
         "URL Web"
@@ -3948,7 +3971,7 @@
         "Semaine"
       ],
       "What do you want to import from your Google account?": [
-        ""
+        "Que voulez-vous importer depuis votre compte Google?"
       ],
       "When do you want your message to be sent?": [
         "Quand souhaitez-vous que votre message soit envoyé?"
@@ -3969,7 +3992,7 @@
         "Vous êtes actuellement connecté·e en tant que ${ user.Name } (${ user.Email }) et avez un accès restreint."
       ],
       "You can check the progress ${ importProgressLink }.": [
-        ""
+        "Vous pouvez vérifier la progression ${ importProgressLink }."
       ],
       "You can either update your search query or ${ button }": [
         "Vous pouvez soit mettre à jour votre recherche soit ${ button }"
@@ -4079,7 +4102,7 @@
         "Pour des raisons de sécurité, votre banque exige une vérification 3-D Secure."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
-        ""
+        "Vos données sont prêtes à être importées de ${ importedEmailAddressStrong } vers votre compte Proton."
       ],
       "Your email will only be used for this one-time verification.": [
         "Votre adresse électronique ne sera utilisée que pour cette vérification unique."
@@ -4538,16 +4561,16 @@
         "Si"
       ],
       "Import all messages": [
-        ""
+        "Importer tous les messages"
       ],
       "Import contacts": [
         "Importer les contacts"
       ],
       "Import interval": [
-        ""
+        "Intervalle d'importation"
       ],
       "Import to email address": [
-        ""
+        "Importer vers une adresse courriel"
       ],
       "Keyboard shortcuts": [
         "Raccourcis clavier"
@@ -4559,19 +4582,19 @@
         "Labelliser comme"
       ],
       "Label messages as": [
-        ""
+        "Labelliser les messages comme"
       ],
       "Labels:": [
         "Labels:"
       ],
       "Last 12 months only": [
-        ""
+        "Seulement les 12 derniers mois"
       ],
       "Last 3 months only": [
-        ""
+        "Seulement les 3 derniers mois"
       ],
       "Last month only": [
-        ""
+        "Le mois dernier seulement"
       ],
       "Mailbox password": [
         "Mot de passe de la messagerie"
@@ -4622,7 +4645,7 @@
         "Payeur"
       ],
       "PGP scheme": [
-        ""
+        "Schéma PGP"
       ],
       "Phone number": [
         "Numéro de téléphone"
@@ -5090,8 +5113,13 @@
       ]
     },
     "Mail import summary": {
-      "${ messagesFragment } since ${ periodFragment } and label them as ${ label }": [
-        "${ messagesFragment } depuis ${ periodFragment } et les labelliser comme ${ label }"
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        "Importer tous les messages de ${ selectedLabelsCount } label sur ${ totalLabelsCount } depuis ${ periodFragment } et les labelliser comme ${ label }",
+        "Importer tous les messages de ${ selectedLabelsCount } labels sur ${ totalLabelsCount } depuis ${ periodFragment } et les labelliser comme ${ label }"
+      ],
+      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+        "Importer tous les messages de ${ totalLabelsCount } label depuis ${ periodFragment } et les labelliser comme ${ label }",
+        "Importer tous les messages de ${ totalLabelsCount } labels depuis ${ periodFragment } et les labelliser comme ${ label }"
       ]
     },
     "Mailbox": {
@@ -5423,10 +5451,10 @@
     },
     "Option group label": {
       "Create new calendar": [
-        ""
+        "Créer un nouveau calendrier"
       ],
       "Merge with calendar": [
-        ""
+        "Fusionner avec le calendrier"
       ]
     },
     "Participant name": {
@@ -5582,21 +5610,7 @@
         "Nom"
       ]
     },
-    "Plan Feature": {
-      "${ n } server": [
-        "${ n } serveur",
-        "${ n } serveurs"
-      ],
-      "${ n } VPN connection": [
-        "${ n } connexion RPV",
-        "${ n } connexions RPV"
-      ]
-    },
     "Plan feature": {
-      "${ freeServers } in ${ freeCountries } country": [
-        "${ freeServers } dans ${ freeCountries } pays",
-        "${ freeServers } dans ${ freeCountries } pays"
-      ],
       "0.5 GB storage": [
         "0,5 Go de stockage"
       ],
@@ -5609,10 +5623,6 @@
       "1 user": [
         "1 utilisateur•rice"
       ],
-      "1200+ servers in ${ plusCountries } country": [
-        "Plus de 1200 serveurs dans ${ plusCountries } pays",
-        "Plus de 1200 serveurs dans ${ plusCountries } pays"
-      ],
       "20 GB storage": [
         "20 Go de stockage"
       ],
@@ -5621,10 +5631,6 @@
       ],
       "3 folders / labels": [
         "3 dossiers/labels"
-      ],
-      "350+ servers in ${ basicCountries } country": [
-        "Plus de 350 serveurs dans ${ basicCountries } pays",
-        "Plus de 350 serveurs dans ${ basicCountries } pays"
       ],
       "5 addresses": [
         "5 adresses"
@@ -6100,7 +6106,7 @@
         "Contacts supprimés"
       ],
       "Conversation added to ${ labelName }.": [
-        ""
+        "Conversation ajoutée à ${ labelName }."
       ],
       "Conversation deleted": [
         "Conversation supprimée"
@@ -6109,7 +6115,7 @@
         "Conversation marquée comme lue."
       ],
       "Conversation marked as Starred.": [
-        ""
+        "Conversation marquée comme favorite."
       ],
       "Conversation marked as unread.": [
         "Conversation marquée comme non lue."
@@ -6124,7 +6130,7 @@
         "Conversation déplacée vers les pourriels et expéditeur·rice ajouté·e à la liste de blocage."
       ],
       "Conversation removed from ${ labelName }.": [
-        ""
+        "Conversation retirée de ${ labelName }."
       ],
       "Draft deleted": [
         "Brouillon supprimé"
@@ -6151,7 +6157,7 @@
         "Désabonné·e de la liste de diffusion"
       ],
       "Message added to ${ labelName }.": [
-        ""
+        "Message ajouté à ${ labelName }."
       ],
       "Message content search activated": [
         "Recherche de contenu de message activée"
@@ -6166,7 +6172,7 @@
         "Message marqué comme lu."
       ],
       "Message marked as Starred.": [
-        ""
+        "Message marqué comme favori."
       ],
       "Message marked as unread.": [
         "Message marqué comme non lu."
@@ -6181,7 +6187,7 @@
         "Message déplacé vers les pourriels et expéditeur ajouté à la liste de blocage."
       ],
       "Message removed from ${ labelName }.": [
-        ""
+        "Message retiré de ${ labelName }."
       ],
       "Move ${ selectionCount } conversation": [
         "Déplacer ${ selectionCount } conversation",
@@ -6462,13 +6468,13 @@
         "Offre actuelle"
       ],
       "Customize and confirm": [
-        ""
+        "Personnaliser et confirmer"
       ],
       "Customize calendar import": [
-        ""
+        "Personnaliser l'importation du calendrier"
       ],
       "Customize your mail import": [
-        ""
+        "Personnalisez votre importation de courrier"
       ],
       "Customize your plan": [
         "Personnalisez votre offre"
@@ -6653,7 +6659,7 @@
         "Déplacer vers la corbeille"
       ],
       "Moving a scheduled message": [
-        ""
+        "Déplacement d'un message programmé"
       ],
       "Network error": [
         "Erreur réseau"
@@ -6755,7 +6761,7 @@
         "Sélectionner le groupe de contacts"
       ],
       "Select what to import": [
-        ""
+        "Sélectionnez ce qu'il faut importer"
       ],
       "Send email": [
         "Envoyer le courriel"
@@ -6842,7 +6848,7 @@
     },
     "Today icon tooltip in mini calendar": {
       "Today": [
-        ""
+        "Aujourd'hui"
       ]
     },
     "Tooltip": {
@@ -6868,7 +6874,7 @@
         "Remise appliquée pour un cycle de facturation bisannuel"
       ],
       "Each imported email will have this label": [
-        ""
+        "Chaque courriel importé aura ce label"
       ],
       "Email encryption forces email signature to help authenticate your sent messages": [
         "Le chiffrement de courriel force la signature des courriers électroniques pour vous aider à authentifier vos messages envoyés"
@@ -6907,10 +6913,10 @@
         "Prise en charge des protocoles de partage de fichiers comme BitTorrent."
       ],
       "System subfolders will show up as separate folders in ProtonMail": [
-        ""
+        "Les sous-dossiers système apparaîtront sous la forme de dossiers séparés dans ProtonMail"
       ],
       "The import will start with the most recent messages.": [
-        ""
+        "L'importation commencera par les messages les plus récents."
       ],
       "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
         "Cette action téléchargera tous les messages afin qu'ils puissent être recherchés localement. Effacer les données de votre navigateur ou vous déconnecter désactivera cette option."
@@ -7040,6 +7046,20 @@
         "Windows, macOS, iOS, Linux, Android, Android TV, Chromebook, Chromecast"
       ]
     },
+    "VPN Plan Feature": {
+      "${ n } server": [
+        "",
+        ""
+      ],
+      "${ n } VPN connection": [
+        "",
+        ""
+      ],
+      "${ numberOfServers } in ${ numberOfCountries } country": [
+        "",
+        ""
+      ]
+    },
     "Warning": {
       "Are you sure you want to permanently delete ${ count } contact group?": [
         "Voulez-vous vraiment supprimer définitivement ${ count } groupe de contacts?",
@@ -7068,7 +7088,7 @@
         "Veuillez noter qu'en choisissant ce mode de paiement, vous ne pourrez avoir accès à votre nouvelle offre immédiatement. Nous mettrons à jour votre compte une fois le paiement effectué."
       ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
-        ""
+        "Proton fusionnera tous les dossiers avec le même nom. Pour éviter cela, changez les noms avant l'importation."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Les rapports d’erreur ne sont pas chiffrés de bout en bout, merci de ne pas envoyer d'informations sensibles."
@@ -7084,7 +7104,7 @@
         "Le chargement du contact a échoué."
       ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
-        ""
+        "Les paramètres de date et heure de votre appareil ne sont pas synchronisés. ${ learnMore }"
       ],
       "The decryption of the encrypted content failed.": [
         "Le déchiffrement du contenu chiffré a échoué."
@@ -7102,7 +7122,7 @@
         "Malheureusement, nous ne sommes pas en ligne pour le moment. Veuillez remplir le formulaire ci-dessous pour décrire votre problème, et nous l'examinerons et vous contacterons lorsque nous serons de nouveau en ligne."
       ],
       "You will lose any customization you made so far.": [
-        ""
+        "Vous perdrez toutes les personnalisations que vous avez faites jusqu'à présent."
       ]
     },
     "Weekly recurring event, frequency": {
