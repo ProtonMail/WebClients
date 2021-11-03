@@ -317,7 +317,6 @@ const HeaderExpanded = ({
                 {messageLoaded && !showDetails && !isNarrow && (
                     <>
                         <div className="flex-item-noshrink flex flex-align-items-center message-header-expanded-label-container">
-                            {feature?.Value && <ItemSpyTrackerIcon message={message} className="mr0-5" />}
                             <ItemLabels
                                 element={message.data}
                                 labelID={labelID}
@@ -326,6 +325,7 @@ const HeaderExpanded = ({
                                 maxNumber={5}
                                 className="on-mobile-pt0-25 ml0-5"
                             />
+                            {feature?.Value && <ItemSpyTrackerIcon message={message} className="ml0-5" />}
                             <ItemAttachmentIcon
                                 onClick={handleAttachmentIconClick}
                                 element={message.data}
