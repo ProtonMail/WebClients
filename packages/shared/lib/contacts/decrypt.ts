@@ -144,7 +144,7 @@ const ACTIONS: { [index: number]: any } = {
 export const prepareContact = async (
     contact: Contact,
     { publicKeys, privateKeys }: KeysPair
-): Promise<{ properties: ContactProperties; errors: CryptoProcessingError[] }> => {
+): Promise<{ properties: ContactProperties; errors: (CryptoProcessingError | Error)[] }> => {
     const { Cards } = contact;
 
     const decryptedCards = await Promise.all(
@@ -177,5 +177,11 @@ export const prepareContact = async (
         { vcards: [], errors: [] }
     );
 
-    return { properties: sanitizeProperties(merge(vcards.map(parse))), errors };
+    try {
+        const properties = sanitizeProperties(merge(vcards.map(parse)));
+        return { properties, errors };
+    } catch (e: any) {
+        const error = e instanceof Error ? e : new Error('Corrupted vcard data');
+        return { properties: [], errors: [error] };
+    }
 };

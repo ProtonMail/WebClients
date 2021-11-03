@@ -22,7 +22,7 @@ interface Props {
     ownAddresses: string[];
     properties: ContactProperties;
     userKeysList: DecryptedKey[];
-    errors?: CryptoProcessingError[];
+    errors?: (CryptoProcessingError | Error)[];
     isModal: boolean;
     onDelete: () => void;
     onReload: () => void;
@@ -54,7 +54,9 @@ const ContactView = ({
 
     const handleExport = () => singleExport(properties);
 
-    const hasError = errors?.some((error) => error.type !== CRYPTO_PROCESSING_TYPES.SIGNATURE_NOT_VERIFIED);
+    const hasError = errors?.some(
+        (error) => error instanceof Error || error.type !== CRYPTO_PROCESSING_TYPES.SIGNATURE_NOT_VERIFIED
+    );
 
     const contactViewPropertiesProps = {
         contactID,
