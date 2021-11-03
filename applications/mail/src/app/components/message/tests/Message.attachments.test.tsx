@@ -78,7 +78,7 @@ describe('Message attachments', () => {
     it('should open preview when clicking', async () => {
         initMessage({ data: { NumAttachments, Attachments } });
 
-        const { getAllByTestId, container } = await setup();
+        const { getAllByTestId } = await setup();
 
         const items = getAllByTestId('attachment-item');
         const itemButton = items[2].querySelectorAll('button')[1];
@@ -86,7 +86,7 @@ describe('Message attachments', () => {
         fireEvent.click(itemButton);
         await tick();
 
-        const preview = container.querySelector('.file-preview');
+        const preview = document.querySelector('.file-preview');
 
         expect(preview).toBeDefined();
         expect(preview?.textContent).toMatch(new RegExp(attachment3.Name));
