@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 import { SettingsPropsShared, OpenVPNCredentialsSection, OpenVPNConfigurationSection } from '@proton/components';
 
-import PrivateMainSettingsAreaWithPermissions from '../../content/PrivateMainSettingsAreaWithPermissions';
+import PrivateMainSettingsAreaWithPermissions from '../../components/PrivateMainSettingsAreaWithPermissions';
 
 export const getOpenVpnIKEv2Page = () => {
     return {

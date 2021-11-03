@@ -18,7 +18,7 @@ import { Calendar } from '@proton/shared/lib/interfaces/calendar';
 
 import { partition } from '@proton/shared/lib/helpers/array';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
-import PrivateMainSettingsAreaWithPermissions from '../../content/PrivateMainSettingsAreaWithPermissions';
+import PrivateMainSettingsAreaWithPermissions from '../../components/PrivateMainSettingsAreaWithPermissions';
 
 const generalSettingsConfig = (hasSubscribedCalendars: boolean) => ({
     to: '/calendar/calendars',
