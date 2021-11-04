@@ -1,18 +1,26 @@
 import { useEffect, useState } from 'react';
-import { c, msgid } from 'ttag';
+import { isBefore, differenceInMilliseconds } from 'date-fns';
 import { DAY, HOUR, MINUTE, SECOND } from '@proton/shared/lib/constants';
-import { isBefore, isAfter, differenceInMilliseconds } from 'date-fns';
 
 const EVERY_SECOND = SECOND;
+
+interface RenderInjection {
+    diff: number;
+    days: number;
+    hours: number;
+    minutes: number;
+    seconds: number;
+    expired: boolean;
+}
 
 interface Props {
     start?: Date;
     end: Date;
-    separator?: string;
+    render: (injection: RenderInjection) => JSX.Element;
 }
 
-const Countdown = ({ start, end, separator = ' | ' }: Props) => {
-    const [now, setNow] = useState(new Date());
+const Countdown = ({ start, end, render }: Props) => {
+    const [now, setNow] = useState(() => new Date());
 
     useEffect(() => {
         const intervalID = setInterval(() => {
@@ -28,26 +36,15 @@ const Countdown = ({ start, end, separator = ' | ' }: Props) => {
         return null;
     }
 
-    if (isAfter(now, end)) {
-        return <>{c('Countdown status').t`Expired`}</>;
-    }
-
     const diff = differenceInMilliseconds(end, now);
-    const days = Math.floor(diff / DAY);
-    const hours = Math.floor((diff % DAY) / HOUR);
-    const minutes = Math.floor((diff % HOUR) / MINUTE);
-    const seconds = Math.floor((diff % MINUTE) / SECOND);
+    const expired = diff < 0;
+    const absoluteDiff = Math.abs(diff);
+    const days = Math.floor(absoluteDiff / DAY);
+    const hours = Math.floor((absoluteDiff % DAY) / HOUR);
+    const minutes = Math.floor((absoluteDiff % HOUR) / MINUTE);
+    const seconds = Math.floor((absoluteDiff % MINUTE) / SECOND);
 
-    return (
-        <>
-            {[
-                c('Countdown unit').ngettext(msgid`${days} day`, `${days} days`, days),
-                c('Countdown unit').ngettext(msgid`${hours} hour`, `${hours} hours`, hours),
-                c('Countdown unit').ngettext(msgid`${minutes} minute`, `${minutes} minutes`, minutes),
-                c('Countdown unit').ngettext(msgid`${seconds} second`, `${seconds} seconds`, seconds),
-            ].join(separator)}
-        </>
-    );
+    return render({ expired, diff, days, hours, minutes, seconds });
 };
 
 export default Countdown;
