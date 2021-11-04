@@ -1,5 +1,5 @@
 import { useEffect, createContext, ReactNode, useContext } from 'react';
-import { DRAFT_ID_PREFIX, isScheduledSend, isSent } from '@proton/shared/lib/mail/messages';
+import { DRAFT_ID_PREFIX, isScheduledSend, isSent, isDraft as testIsDraft } from '@proton/shared/lib/mail/messages';
 import { useInstance, useEventManager } from '@proton/components';
 import createCache, { Cache } from '@proton/shared/lib/helpers/cache';
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
@@ -70,6 +70,7 @@ const messageEventListener =
                 const currentValue = cache.get(localID) as MessageExtended;
                 const isSentDraft = isSent(Message);
                 const isScheduled = isScheduledSend(Message);
+                const isDraft = testIsDraft(Message);
 
                 if (currentValue.data) {
                     const MessageToUpdate = parseLabelIDsInEvent(
@@ -89,6 +90,11 @@ const messageEventListener =
                         if (isSentDraft && !isScheduled) {
                             flags.isSentDraft = true;
                         }
+                    }
+
+                    // If not a draft, numAttachment will never change, but can be calculated client side for PGP messages
+                    if (!isDraft) {
+                        delete (MessageToUpdate as Partial<Message>).NumAttachments;
                     }
 
                     cache.set(localID, {
