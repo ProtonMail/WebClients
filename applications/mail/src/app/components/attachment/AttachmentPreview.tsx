@@ -2,6 +2,7 @@ import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { forwardRef, MutableRefObject, Ref, useEffect, useState, useRef } from 'react';
 import { FilePreview, NavigationControl } from '@proton/components';
 import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
+import Portal from '@proton/components/components/portal/Portal';
 import { MessageExtendedWithData } from '../../models/message';
 import { useDownload, usePreview } from '../../hooks/useDownload';
 
@@ -80,25 +81,27 @@ const AttachmentPreview = (
     };
 
     return (
-        <FilePreview
-            loading={!previewing.contents}
-            contents={previewing.contents}
-            fileName={previewing.attachment?.Name}
-            mimeType={previewing.attachment?.MIMEType}
-            fileSize={previewing.attachment?.Size}
-            onClose={handleClose}
-            onSave={handleDownload}
-            ref={rootRef}
-            navigationControls={
-                <NavigationControl
-                    current={current}
-                    total={total}
-                    rootRef={rootRef}
-                    onNext={handleNext}
-                    onPrev={handlePrevious}
-                />
-            }
-        />
+        <Portal>
+            <FilePreview
+                loading={!previewing.contents}
+                contents={previewing.contents}
+                fileName={previewing.attachment?.Name}
+                mimeType={previewing.attachment?.MIMEType}
+                fileSize={previewing.attachment?.Size}
+                onClose={handleClose}
+                onSave={handleDownload}
+                ref={rootRef}
+                navigationControls={
+                    <NavigationControl
+                        current={current}
+                        total={total}
+                        rootRef={rootRef}
+                        onNext={handleNext}
+                        onPrev={handlePrevious}
+                    />
+                }
+            />
+        </Portal>
     );
 };
 
