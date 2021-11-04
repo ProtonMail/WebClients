@@ -50,11 +50,13 @@ export enum FeatureCode {
     KeyMigration = 'KeyMigration',
     CalendarEmailNotification = 'CalendarEmailNotification',
     Mnemonic = 'Mnemonic',
+    RecoveryFile = 'RecoveryFile',
     SeenMnemonicPrompt = 'SeenMnemonicPrompt',
     SpyTrackerProtection = 'SpyTrackerProtection',
     SpyTrackerProtectionIncorporator = 'SpyTrackerProtectionIncorporator',
     SpotlightSpyTrackerProtection = 'SpotlightSpyTrackerProtection',
     EasySwitch = 'EasySwitch',
+    VisitedRecoveryPage = 'VisitedRecoveryPage',
 }
 
 export interface FeaturesContextValue {

@@ -1,5 +1,10 @@
 import { DENSITY } from '../constants';
 
+export enum SETTINGS_STATUS {
+    VERIFIED = 0,
+    UNVERIFIED = 1,
+}
+
 export enum SETTINGS_PASSWORD_MODE {
     ONE_PASSWORD_MODE = 1,
     TWO_PASSWORD_MODE = 2,
@@ -47,13 +52,13 @@ export interface Flags {
 export interface UserSettings {
     Email: {
         Value: string;
-        Status: number;
+        Status: SETTINGS_STATUS;
         Notify: number;
         Reset: number;
     };
     Phone: {
         Value: string;
-        Status: number;
+        Status: SETTINGS_STATUS;
         Notify: number;
         Reset: number;
     };
