@@ -16,11 +16,19 @@ interface Props {
     user: UserModel;
     organizationKey?: CachedOrganizationKey;
     onSetDefault?: () => Promise<unknown>;
-    isSaving?: boolean;
+    isSavingIndex?: number | null;
     addressIndex?: number;
 }
 
-const AddressActions = ({ address, member, user, organizationKey, onSetDefault, isSaving, addressIndex }: Props) => {
+const AddressActions = ({
+    address,
+    member,
+    user,
+    organizationKey,
+    onSetDefault,
+    isSavingIndex,
+    addressIndex,
+}: Props) => {
     const api = useApi();
     const { call } = useEventManager();
     const [loading, withLoading] = useLoading();
@@ -100,34 +108,42 @@ const AddressActions = ({ address, member, user, organizationKey, onSetDefault, 
     const isDefault = addressIndex === 0;
     const canMakeDefault = !isDefault && !isDisabled && onSetDefault !== undefined;
 
-    const list = isSaving
-        ? [isDefault ? { text: c('Address action').t`Saving` } : null].filter(isTruthy)
-        : [
-              canMakeDefault && {
-                  text: c('Address action').t`Make default`,
-                  onClick: () => onSetDefault(),
-              },
-              canEnable && {
-                  text: c('Address action').t`Enable`,
-                  onClick: () => withLoading(handleEnable()),
-              },
-              canDisable && {
-                  text: c('Address action').t`Disable`,
-                  onClick: () => withLoading(handleDisable()),
-              },
-              canGenerate && {
-                  text: c('Address action').t`Generate missing keys`,
-                  onClick: () => withLoading(handleGenerate()),
-              },
-              canDelete &&
-                  ({
-                      text: c('Address action').t`Delete`,
-                      actionType: 'delete',
-                      onClick: () => withLoading(handleDelete()),
-                  } as const),
-          ].filter(isTruthy);
+    const list =
+        isSavingIndex !== null
+            ? [isSavingIndex === addressIndex ? { text: c('Address action').t`Saving` } : null].filter(isTruthy)
+            : [
+                  canMakeDefault && {
+                      text: c('Address action').t`Make default`,
+                      onClick: () => onSetDefault(),
+                  },
+                  canEnable && {
+                      text: c('Address action').t`Enable`,
+                      onClick: () => withLoading(handleEnable()),
+                  },
+                  canDisable && {
+                      text: c('Address action').t`Disable`,
+                      onClick: () => withLoading(handleDisable()),
+                  },
+                  canGenerate && {
+                      text: c('Address action').t`Generate missing keys`,
+                      onClick: () => withLoading(handleGenerate()),
+                  },
+                  canDelete &&
+                      ({
+                          text: c('Address action').t`Delete`,
+                          actionType: 'delete',
+                          onClick: () => withLoading(handleDelete()),
+                      } as const),
+              ].filter(isTruthy);
 
-    return <DropdownActions size="small" list={list} loading={loading || isSaving} />;
+    return list.length ? (
+        <DropdownActions size="small" list={list} loading={loading || isSavingIndex !== null} />
+    ) : (
+        <div
+            // This is a placeholder to avoid height loss when dropdownActions are not rendered
+            style={{ height: '24px' }}
+        />
+    );
 };
 
 export default AddressActions;
