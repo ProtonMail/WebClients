@@ -19,16 +19,14 @@ const DayButtons = ({ days, now, date, onClickDate, weekdaysLong }: Props) => {
                 onClick={() => onClickDate?.(day)}
             >
                 <span className="calendar-grid-heading-day text-ellipsis block mt0 mb0 text-md">
-                    <span className="calendar-grid-heading-day-fullname">
-                        {weekdaysLong[day.getUTCDay()]}
-                    </span>
+                    <span className="calendar-grid-heading-day-fullname">{weekdaysLong[day.getUTCDay()]}</span>
 
                     <span className="calendar-grid-heading-day-shortname no-desktop no-tablet" aria-hidden="true">
                         {weekdaysLong[day.getUTCDay()][0]}
                     </span>
                 </span>
 
-                <span className="calendar-grid-heading-number mt0-4">
+                <span className="calendar-grid-heading-number">
                     <span className="mauto">{day.getUTCDate()}</span>
                 </span>
             </button>
