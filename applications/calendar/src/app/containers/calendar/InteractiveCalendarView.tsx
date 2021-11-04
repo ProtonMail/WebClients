@@ -368,8 +368,8 @@ const InteractiveCalendarView = ({
 
     const getUpdateModel = (
         { calendarData, eventData, eventReadResult, eventRecurrence }: CalendarViewEventData,
-        partstat?: ICAL_ATTENDEE_STATUS,
-        emailNotificationsEnabled?: boolean
+        emailNotificationsEnabled?: boolean,
+        partstat?: ICAL_ATTENDEE_STATUS
     ): EventModel | undefined => {
         if (
             !eventData ||
@@ -470,7 +470,7 @@ const InteractiveCalendarView = ({
                 }
 
                 if (!newTemporaryModel) {
-                    newTemporaryModel = getUpdateModel(event.data);
+                    newTemporaryModel = getUpdateModel(event.data, emailNotificationsEnabled);
                     if (!newTemporaryModel) {
                         isAllowedToMoveEvent = false;
                         return;
@@ -1241,7 +1241,7 @@ const InteractiveCalendarView = ({
                                 if (!targetEvent) {
                                     return;
                                 }
-                                const newTemporaryModel = getUpdateModel(targetEvent.data);
+                                const newTemporaryModel = getUpdateModel(targetEvent.data, emailNotificationsEnabled);
                                 if (!newTemporaryModel) {
                                     return;
                                 }
@@ -1256,7 +1256,11 @@ const InteractiveCalendarView = ({
                                 if (!targetEvent) {
                                     return;
                                 }
-                                const newTemporaryModel = getUpdateModel(targetEvent.data, partstat);
+                                const newTemporaryModel = getUpdateModel(
+                                    targetEvent.data,
+                                    emailNotificationsEnabled,
+                                    partstat
+                                );
                                 if (!newTemporaryModel) {
                                     return;
                                 }
