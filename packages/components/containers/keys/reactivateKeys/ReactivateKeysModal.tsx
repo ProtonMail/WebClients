@@ -1,7 +1,7 @@
-import { useEffect, useRef, useState } from 'react';
-import { c, msgid } from 'ttag';
+import { useEffect, useState } from 'react';
+import { c } from 'ttag';
 import { KeyReactivationRecord, OnKeyReactivationCallback } from '@proton/shared/lib/keys';
-import { DecryptedKey, KeySalt, MNEMONIC_STATUS } from '@proton/shared/lib/interfaces';
+import { DecryptedKey, KeySalt } from '@proton/shared/lib/interfaces';
 import { getKeySalts } from '@proton/shared/lib/api/keys';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { decryptPrivateKey, OpenPGPKey } from 'pmcrypto';
@@ -10,16 +10,22 @@ import { getMnemonicUserKeys, MnemonicKeyResponse } from '@proton/shared/lib/api
 import { lockSensitiveSettings, unlockPasswordChanges } from '@proton/shared/lib/api/user';
 import { computeKeyPassword } from '@proton/srp';
 import { mnemonicToBase64RandomBytes } from '@proton/shared/lib/mnemonic';
-import { removeItem, uniqueBy } from '@proton/shared/lib/helpers/array';
 import { FormModal, InputFieldTwo, Loader, PasswordInputTwo, Tabs, useFormErrors } from '../../../components';
 import { KeyReactivationRequest, KeyReactivationRequestState, KeyReactivationRequestStateData } from './interface';
-import { useApi, useLoading, useModals, useNotifications, useUser } from '../../../hooks';
+import {
+    useApi,
+    useIsMnemonicAvailable,
+    useLoading,
+    useMnemonicOperationStatus,
+    useModals,
+    useNotifications,
+    useRecoverySecrets,
+} from '../../../hooks';
 import { getInitialStates } from './state';
 import { getReactivatedKeys } from './reactivateHelper';
-import DecryptFileKeyModal from '../shared/DecryptFileKeyModal';
 import { AuthModal } from '../../password';
-import useIsMnemonicAvailable from '../../../hooks/useIsMnemonicAvailable';
 import BackupKeysTabContent from './BackupKeysTabContent';
+import RecoveryFileTabContent from './RecoveryFileTabContent';
 import MnemonicInputField, { useMnemonicInputValidation } from '../../mnemonic/MnemonicInputField';
 
 interface ReactivatedKeysState {
@@ -34,7 +40,7 @@ interface Props {
     onProcess: (keysToReactivate: KeyReactivationRecord[], onReactivation: OnKeyReactivationCallback) => Promise<void>;
 }
 
-type TabId = 'recoveryPhrase' | 'password' | 'backupKey';
+type TabId = 'recoveryPhrase' | 'recoveryFile' | 'password' | 'backupKey';
 
 const ReactivateKeysModal = ({ userKeys, keyReactivationRequests, onProcess, onClose, ...rest }: Props) => {
     const api = useApi();
@@ -42,7 +48,6 @@ const ReactivateKeysModal = ({ userKeys, keyReactivationRequests, onProcess, onC
     const { validator, onFormSubmit } = useFormErrors();
     const { createNotification } = useNotifications();
     const { createModal } = useModals();
-    const [user] = useUser();
 
     const [loading, withLoading] = useLoading(true);
     const [isSubmitting, withIsSubmitting] = useLoading(false);
@@ -52,17 +57,24 @@ const ReactivateKeysModal = ({ userKeys, keyReactivationRequests, onProcess, onC
     const mnemonicValidation = useMnemonicInputValidation(mnemonic);
 
     const [password, setPassword] = useState('');
+    const [uploadedRecoveryFileKeys, setUploadedRecoveryFileKeys] = useState<OpenPGPKey[]>([]);
     const [uploadedBackupKeys, setUploadedBackupKeys] = useState<OpenPGPKey[]>([]);
-    const duplicateBackupKeysRef = useRef<OpenPGPKey[]>([]);
 
-    const isMnemonicAvailable = useIsMnemonicAvailable();
-    const mnemonicDataRecoveryOperational =
-        user.MnemonicStatus === MNEMONIC_STATUS.OUTDATED || user.MnemonicStatus === MNEMONIC_STATUS.SET;
-    const showMnemonicTab = isMnemonicAvailable && mnemonicDataRecoveryOperational;
+    const recoverySecrets = useRecoverySecrets();
+    const showRecoveryFileTab = !!recoverySecrets.length;
 
-    const tabs: TabId[] = [showMnemonicTab ? 'recoveryPhrase' : undefined, 'password', 'backupKey'].filter(
-        isTruthy
-    ) as TabId[];
+    const [isMnemonicAvailable] = useIsMnemonicAvailable();
+    const mnemonicOperationStatus = useMnemonicOperationStatus();
+    const showMnemonicTab = isMnemonicAvailable && mnemonicOperationStatus.dataRecovery;
+
+    const tabs: TabId[] = (
+        [
+            showMnemonicTab ? 'recoveryPhrase' : undefined,
+            showRecoveryFileTab ? 'recoveryFile' : undefined,
+            'password',
+            'backupKey',
+        ] as const
+    ).filter(isTruthy);
     const [tab, setTab] = useState(0);
 
     useEffect(() => {
@@ -182,7 +194,7 @@ const ReactivateKeysModal = ({ userKeys, keyReactivationRequests, onProcess, onC
         if (!newlyDecryptedMnemonicUserKeys.length && decryptedMnemonicUserKeys.length) {
             createNotification({
                 type: 'info',
-                text: c('Info').t`Unable to decrypt. Recovery phrase is not associated with any outdated keys.`,
+                text: c('Info').t`Recovery phrase is not associated with any outdated keys.`,
             });
             return;
         }
@@ -226,9 +238,9 @@ const ReactivateKeysModal = ({ userKeys, keyReactivationRequests, onProcess, onC
         });
     };
 
-    const onBackupKeySubmit = async () => {
+    const processPrivateKeys = async (keys: OpenPGPKey[]) => {
         const mapToUploadedPrivateKey = ({ id, Key, fingerprint }: KeyReactivationRequestStateData) => {
-            const uploadedPrivateKey = uploadedBackupKeys.find((decryptedBackupKey) => {
+            const uploadedPrivateKey = keys.find((decryptedBackupKey) => {
                 return fingerprint === decryptedBackupKey.getFingerprint();
             });
             if (!uploadedPrivateKey) {
@@ -262,128 +274,12 @@ const ReactivateKeysModal = ({ userKeys, keyReactivationRequests, onProcess, onC
         createKeyReactivationNotification(reactivatedKeysState);
     };
 
-    const handleDuplicatedKeysOnUpload = (duplicatedKeys: OpenPGPKey[]) => {
-        const [first, second, third] = duplicatedKeys;
-
-        const createAlreadyUploadedNotification = (key: OpenPGPKey) => {
-            const fingerprint = key.getFingerprint();
-            createNotification({
-                type: 'info',
-                text: c('info').t`Key ${fingerprint} has already been uploaded`,
-            });
-        };
-
-        if (first) {
-            createAlreadyUploadedNotification(first);
-        }
-        if (second) {
-            createAlreadyUploadedNotification(second);
-        }
-        if (third) {
-            createNotification({
-                type: 'info',
-                text: c('info').t`Additional duplicate keys detected. Please upload individually for more information.`,
-            });
-        }
+    const onRecoveryFileSubmit = async () => {
+        await processPrivateKeys(uploadedRecoveryFileKeys);
     };
 
-    const handleUpload = (privateKeys: OpenPGPKey[], acc: OpenPGPKey[]) => {
-        const [currentKey, ...rest] = privateKeys;
-
-        if (privateKeys.length === 0) {
-            setUploadedBackupKeys((keys) => [...keys, ...acc]);
-            const duplicatedKeys = uniqueBy(duplicateBackupKeysRef.current, (key) => key.getFingerprint());
-            handleDuplicatedKeysOnUpload(duplicatedKeys);
-            duplicateBackupKeysRef.current = [];
-            return;
-        }
-
-        const currentKeyFingerprint = currentKey.getFingerprint();
-        const keyAlreadyAdded = acc.find((key) => key.getFingerprint() === currentKeyFingerprint);
-        if (keyAlreadyAdded) {
-            handleUpload(rest, acc);
-            return;
-        }
-
-        const keyAlreadyInList = uploadedBackupKeys.find((key) => key.getFingerprint() === currentKeyFingerprint);
-        if (keyAlreadyInList) {
-            duplicateBackupKeysRef.current.push(keyAlreadyInList);
-
-            handleUpload(rest, acc);
-            return;
-        }
-
-        const handleAddKey = (decryptedPrivateKey: OpenPGPKey) => {
-            const newList = [...acc, decryptedPrivateKey];
-            handleUpload(rest, newList);
-        };
-
-        if (currentKey.isDecrypted()) {
-            currentKey
-                // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-                // @ts-ignore - validate does not exist in the openpgp typings, todo
-                .validate()
-                .then(() => {
-                    handleAddKey(currentKey);
-                })
-                .catch((e: Error) => {
-                    createNotification({
-                        type: 'error',
-                        text: e.message,
-                    });
-                });
-            return;
-        }
-
-        return createModal(
-            <DecryptFileKeyModal
-                privateKey={currentKey}
-                onSuccess={(decryptedPrivateKey) => {
-                    handleAddKey(decryptedPrivateKey);
-                }}
-            />
-        );
-    };
-
-    const handleUploadKeys = (keys: OpenPGPKey[]) => {
-        const privateKeys = keys.filter((key) => key.isPrivate());
-        if (privateKeys.length === 0) {
-            return createNotification({
-                type: 'error',
-                text:
-                    keys.length === 1
-                        ? c('Error').t`Uploaded file is not a valid private key. Please verify and try again.`
-                        : c('Error').t`Uploaded files are not valid private keys. Please verify and try again.`,
-            });
-        }
-
-        const numberOfNonPrivateKeys = keys.length - privateKeys.length;
-        if (numberOfNonPrivateKeys > 0) {
-            createNotification({
-                type: 'info',
-                text:
-                    numberOfNonPrivateKeys === 1
-                        ? c('Info').t`Uploaded file is not a valid private key. Please verify and try again.`
-                        : // translator: the singular version won't be used, it's the string "Uploaded file is not a valid private key. Please verify and try again." that will be used. Please keep the variable inside the singular translation to avoid bugs.
-                          c('Info').ngettext(
-                              msgid`${numberOfNonPrivateKeys} uploaded file is not a valid private key. Please verify and try again.`,
-                              `${numberOfNonPrivateKeys} uploaded files are not valid private keys. Please verify and try again.`,
-                              numberOfNonPrivateKeys
-                          ),
-            });
-        }
-
-        handleUpload(privateKeys, []);
-    };
-
-    const removeUploadedBackupKey = (keyToremove: OpenPGPKey) => {
-        const index = uploadedBackupKeys.indexOf(keyToremove);
-
-        if (index === -1) {
-            return;
-        }
-
-        setUploadedBackupKeys((keys) => removeItem(keys, index));
+    const onBackupKeySubmit = async () => {
+        await processPrivateKeys(uploadedBackupKeys);
     };
 
     return (
@@ -400,6 +296,8 @@ const ReactivateKeysModal = ({ userKeys, keyReactivationRequests, onProcess, onC
                 const submit = async () => {
                     if (tab === tabs.indexOf('recoveryPhrase')) {
                         await onRecoveryPhraseSubmit();
+                    } else if (tab === tabs.indexOf('recoveryFile')) {
+                        await onRecoveryFileSubmit();
                     } else if (tab === tabs.indexOf('password')) {
                         await onPasswordSubmit();
                     } else if (tab === tabs.indexOf('backupKey')) {
@@ -445,6 +343,31 @@ const ReactivateKeysModal = ({ userKeys, keyReactivationRequests, onProcess, onC
                                       ),
                                   }
                                 : undefined,
+                            showRecoveryFileTab
+                                ? {
+                                      // translator: 'File' here refers to the 'Recovery file'
+                                      title: c('Label').t`File`,
+                                      content: (
+                                          <RecoveryFileTabContent
+                                              recoverySecrets={recoverySecrets}
+                                              uploadedKeys={uploadedRecoveryFileKeys}
+                                              setUploadedKeys={setUploadedRecoveryFileKeys}
+                                              disabled={isSubmitting}
+                                              error={validator(
+                                                  tab === tabs.indexOf('recoveryFile')
+                                                      ? [
+                                                            requiredValidator(
+                                                                uploadedRecoveryFileKeys
+                                                                    .map((key) => key.getFingerprint())
+                                                                    .join()
+                                                            ),
+                                                        ]
+                                                      : []
+                                              )}
+                                          />
+                                      ),
+                                  }
+                                : undefined,
                             {
                                 title: c('Label').t`Password`,
                                 content: (
@@ -467,9 +390,8 @@ const ReactivateKeysModal = ({ userKeys, keyReactivationRequests, onProcess, onC
                                 title: c('Label').t`Backup keys`,
                                 content: (
                                     <BackupKeysTabContent
-                                        uploadedBackupKeys={uploadedBackupKeys}
-                                        onRemoveKey={removeUploadedBackupKey}
-                                        handleUploadKeys={handleUploadKeys}
+                                        uploadedKeys={uploadedBackupKeys}
+                                        setUploadedKeys={setUploadedBackupKeys}
                                         disabled={isSubmitting}
                                         error={validator(
                                             tab === tabs.indexOf('backupKey')

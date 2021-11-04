@@ -32,7 +32,7 @@ interface DropdownActionProps extends DropdownMenuButtonProps {
     onClick?: (e: MouseEvent<HTMLButtonElement>) => void;
 }
 
-interface Props extends ButtonProps {
+export interface Props extends ButtonProps {
     loading?: boolean;
     disabled?: boolean;
     list?: DropdownActionProps[];
