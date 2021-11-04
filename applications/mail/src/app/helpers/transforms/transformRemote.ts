@@ -61,10 +61,14 @@ export const transformRemote = (
     const useProxy = hasBit(mailSettings?.ImageProxy, IMAGE_PROXY_FLAGS.PROXY);
 
     const { matchedElements, hasRemoteImages } = getRemoteImageMatches(message);
-
     const remoteImages = getRemoteImages(message);
 
     matchedElements.forEach((match) => {
+        // Avoid duplicating images
+        if (remoteImages.find(({ original }) => original === match)) {
+            return;
+        }
+
         const id = generateUID('remote');
         if (match.tagName === 'IMG') {
             if (draft) {
