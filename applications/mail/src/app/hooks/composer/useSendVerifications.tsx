@@ -17,12 +17,12 @@ import { removeMessageRecipients, uniqueMessageRecipients } from '../../helpers/
 import SendWithWarningsModal from '../../components/composer/addresses/SendWithWarningsModal';
 import SendWithExpirationModal from '../../components/composer/addresses/SendWithExpirationModal';
 import SendWithChangedPreferencesModal from '../../components/composer/addresses/SendWithChangedPreferencesModal';
-import { useContactCache } from '../../containers/ContactProvider';
 import { MapSendInfo } from '../../models/crypto';
 import { locateBlockquote } from '../../helpers/message/messageBlockquote';
 import { MESSAGE_ALREADY_SENT_INTERNAL_ERROR } from '../../constants';
 import { MessageStateWithData } from '../../logic/messages/messagesTypes';
 import { useGetMessage } from '../message/useMessage';
+import { useContactsMap } from '../contact/useContacts';
 
 const FR_REGEX =
     /voir pi\u00e8ce jointe|voir pi\u00e8ces jointes|voir fichier joint|voir fichiers joints|voir fichier associ\u00e9|voir fichiers associ\u00e9s|joint|joints|jointe|jointes|joint \u00e0 cet e-mail|jointe \u00e0 cet e-mail|joints \u00e0 cet e-mail|jointes \u00e0 cet e-mail|joint \u00e0 ce message|jointe \u00e0 ce message|joints \u00e0 ce message|jointes \u00e0 ce message|je joins|j'ai joint|ci-joint|pi\u00e8ce jointe|pi\u00e8ces jointes|fichier joint|fichiers joints|voir le fichier joint|voir les fichiers joints|voir la pi\u00e8ce jointe|voir les pi\u00e8ces jointes/gi;
@@ -52,8 +52,8 @@ export const useSendVerifications = (
     const { createModal } = useModals();
     const { createNotification } = useNotifications();
     const getEncryptionPreferences = useGetEncryptionPreferences();
-    const { contactsMap } = useContactCache();
     const getMessage = useGetMessage();
+    const contactsMap = useContactsMap();
 
     const preliminaryVerifications = useCallback(async (message: MessageStateWithData): Promise<void> => {
         const { draftFlags } = getMessage(message.localID) as MessageStateWithData;
