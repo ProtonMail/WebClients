@@ -1,5 +1,7 @@
-import { contactCache } from '../../../helpers/test/cache';
+import { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts';
 import { clearAll } from '../../../helpers/test/helper';
+import { refresh } from '../../../logic/contacts/contactsActions';
+import { store } from '../../../logic/store';
 import { initMessage, setup } from './Message.test.helpers';
 
 describe('Message recipients rendering', () => {
@@ -27,9 +29,9 @@ describe('Message recipients rendering', () => {
         const ContactEmail = {
             Email: Address,
             Name: 'test-contact',
-        };
+        } as ContactEmail;
 
-        contactCache.contactsMap[Address] = ContactEmail;
+        store.dispatch(refresh({ contacts: [ContactEmail], contactGroups: [] }));
 
         initMessage({ data: { ToList: [{ Name, Address }] } });
 
@@ -50,16 +52,19 @@ describe('Message recipients rendering', () => {
             ID: 'test-group-id',
             Name: 'test-group-name',
             Path: 'test-group-path',
-        };
+        } as ContactGroup;
         const Group = ContactGroup.Path;
-        const contacts = [{}, {}, {}];
+        const contacts = [
+            { Email: '', LabelIDs: [ContactGroup.ID] },
+            { Email: '', LabelIDs: [ContactGroup.ID] },
+            { Email: '', LabelIDs: [ContactGroup.ID] },
+        ] as ContactEmail[];
         const ToList = [
             { Name, Address, Group },
             { Name, Address, Group },
         ];
 
-        contactCache.contactGroupsMap[ContactGroup.Path] = ContactGroup;
-        contactCache.groupsWithContactsMap[ContactGroup.ID] = { group: ContactGroup, contacts };
+        store.dispatch(refresh({ contacts, contactGroups: [ContactGroup] }));
 
         initMessage({ data: { ToList } });
 

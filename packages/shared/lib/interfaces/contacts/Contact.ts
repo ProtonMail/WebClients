@@ -88,10 +88,6 @@ export type ContactEmailModel = Pick<ContactEmail, 'Email' | 'ContactID' | 'Labe
     changes: { [groupID: string]: boolean };
 };
 
-export type ContactCache = Map<string, Contact>;
-
-export type ContactEmailCache = Map<string, ContactEmail>;
-
 export interface ContactMergeModel {
     orderedContacts: ContactFormatted[][];
     isChecked: {

@@ -2,16 +2,17 @@ import { useEffect } from 'react';
 import { OpenPGPKey } from 'pmcrypto';
 import { useDispatch } from 'react-redux';
 import { canonizeEmail } from '@proton/shared/lib/helpers/email';
-import { useEventManager, useUserKeys, useCache } from '@proton/components';
+import { useEventManager, useUserKeys, useCache, useContactEmails, useContactGroups } from '@proton/components';
 import { Cache } from '@proton/shared/lib/helpers/cache';
 import { CONTACT_CARD_TYPE } from '@proton/shared/lib/constants';
 import { readSigned } from '@proton/shared/lib/contacts/decrypt';
 import { parse } from '@proton/shared/lib/contacts/vcard';
-import { Contact } from '@proton/shared/lib/interfaces/contacts';
+import { Contact, ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import { splitKeys } from '@proton/shared/lib/keys/keys';
 import { CACHE_KEY } from '@proton/components/hooks/useGetEncryptionPreferences';
 import { Event } from '../../models/event';
 import { resetVerification } from '../../logic/messages/read/messagesReadActions';
+import { refresh } from '../../logic/contacts/contactsActions';
 
 /**
  * Deal with contact update from the event manager
@@ -55,6 +56,8 @@ export const useContactsListener = () => {
     const dispatch = useDispatch();
     const { subscribe } = useEventManager();
     const [userKeys = []] = useUserKeys();
+    const [contacts = []] = useContactEmails() as [ContactEmail[], boolean, Error];
+    const [contactGroups = []] = useContactGroups();
 
     const { publicKeys } = splitKeys(userKeys);
 
@@ -71,4 +74,8 @@ export const useContactsListener = () => {
             }),
         [publicKeys]
     );
+
+    useEffect(() => {
+        dispatch(refresh({ contacts, contactGroups }));
+    }, [contacts, contactGroups]);
 };
