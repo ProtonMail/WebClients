@@ -8,7 +8,7 @@ import { querySelectorAll } from '../message/messageContent';
 import { hasShowRemote } from '../mailSettings';
 import { getRemoteImages, insertImageAnchor } from '../message/messageImages';
 import { MessageCache } from '../../containers/MessageProvider';
-import { ATTRIBUTES, loadRemoteImages, removeProtonPrefix } from '../message/messageRemotes';
+import { ATTRIBUTES, loadRemoteImages, removeProtonPrefix, loadFakeThroughProxy } from '../message/messageRemotes';
 
 const WHITELIST = ['notify@protonmail.com'];
 
@@ -74,6 +74,8 @@ export const transformRemote = (
 
     if (showRemoteImages) {
         void loadRemoteImages(useProxy, message.localID, remoteImages, messageCache, api, message?.document);
+    } else if (useProxy) {
+        void loadFakeThroughProxy(message.localID, remoteImages, messageCache, api);
     }
 
     return {
