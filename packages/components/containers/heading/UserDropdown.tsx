@@ -109,7 +109,7 @@ const UserDropdown = ({ onOpenChat, ...rest }: Props) => {
     return (
         <>
             <UserDropdownButton
-                data-cy-header="userDropdown"
+                data-testid="heading:userdropdown"
                 {...rest}
                 user={user}
                 ref={anchorRef}
@@ -130,7 +130,11 @@ const UserDropdown = ({ onOpenChat, ...rest }: Props) => {
                 <DropdownMenu>
                     <div className="pr1 pl1 pt0-25 pb0-25">
                         {organizationName && APP_NAME !== APPS.PROTONVPN_SETTINGS ? (
-                            <div className="text-ellipsis-two-lines text-bold" title={organizationName}>
+                            <div
+                                className="text-ellipsis-two-lines text-bold"
+                                title={organizationName}
+                                data-testid="userdropdown:label:org-name"
+                            >
                                 {organizationName}
                             </div>
                         ) : null}
@@ -142,6 +146,7 @@ const UserDropdown = ({ onOpenChat, ...rest }: Props) => {
                                     (!organizationName || APP_NAME === APPS.PROTONVPN_SETTINGS) && 'text-bold',
                                 ])}
                                 title={nameToDisplay}
+                                data-testid="userdropdown:label:display-name"
                             >
                                 {nameToDisplay}
                             </div>
@@ -159,6 +164,7 @@ const UserDropdown = ({ onOpenChat, ...rest }: Props) => {
                                             'color-weak',
                                     ])}
                                     title={Email}
+                                    data-testid="userdropdown:label:email"
                                 >
                                     {Email}
                                 </span>
@@ -169,13 +175,16 @@ const UserDropdown = ({ onOpenChat, ...rest }: Props) => {
                                     tooltipText={c('Action').t`Copy email to clipboard`}
                                     size="small"
                                     shape="ghost"
+                                    data-testid="userdropdown:button:copy-email"
                                 />
                             </div>
                         ) : null}
 
                         {planName ? (
                             <div className="pt0-25">
-                                <span className="badge-label-primary">{planName}</span>
+                                <span className="badge-label-primary" data-testid="userdropdown:label:plan-name">
+                                    {planName}
+                                </span>
                             </div>
                         ) : null}
                     </div>
@@ -186,6 +195,7 @@ const UserDropdown = ({ onOpenChat, ...rest }: Props) => {
                         <DropdownMenuButton
                             className="text-left flex flex-nowrap flex-justify-space-between flex-align-items-center"
                             onClick={handleTourClick}
+                            data-testid="userdropdown:button:introduction"
                         >
                             {c('Action').t`${BRAND_NAME} introduction`}
                             <Icon className="ml1" name="presentation-screen" />
@@ -206,6 +216,7 @@ const UserDropdown = ({ onOpenChat, ...rest }: Props) => {
                                 </span>
                             </span>
                         }
+                        data-testid="userdropdown:button:help"
                     >
                         <DropdownMenu>
                             {onOpenChat && (
@@ -228,6 +239,7 @@ const UserDropdown = ({ onOpenChat, ...rest }: Props) => {
                                 }
                                 // eslint-disable-next-line react/jsx-no-target-blank
                                 target="_blank"
+                                data-testid="userdropdown:help:link:question"
                             >
                                 {c('Action').t`I have a question`}
                                 <Icon className="ml1 on-rtl-mirror" name="arrow-up-right-from-square" />
@@ -237,12 +249,17 @@ const UserDropdown = ({ onOpenChat, ...rest }: Props) => {
                                 className="text-left flex flex-nowrap flex-justify-space-between flex-align-items-center"
                                 href={userVoiceLinks[APP_NAME] || userVoiceLinks[APPS.PROTONMAIL]}
                                 target="_blank"
+                                data-testid="userdropdown:help:link:request-feature"
                             >
                                 {c('Action').t`Request a feature`}
                                 <Icon className="ml1 on-rtl-mirror" name="arrow-up-right-from-square" />
                             </DropdownMenuLink>
 
-                            <DropdownMenuButton className="text-left" onClick={handleBugReportClick}>
+                            <DropdownMenuButton
+                                className="text-left"
+                                onClick={handleBugReportClick}
+                                data-testid="userdropdown:help:button:bugreport"
+                            >
                                 {c('Action').t`Report a problem`}
                             </DropdownMenuButton>
                         </DropdownMenu>
@@ -252,6 +269,7 @@ const UserDropdown = ({ onOpenChat, ...rest }: Props) => {
                         className="text-left flex flex-nowrap flex-justify-space-between flex-align-items-center"
                         href="https://shop.protonmail.com"
                         target="_blank"
+                        data-testid="userdropdown:link:shop"
                     >
                         {c('Action').t`${BRAND_NAME} shop`}
                         <Icon className="ml1 on-rtl-mirror" name="arrow-up-right-from-square" />
@@ -263,6 +281,7 @@ const UserDropdown = ({ onOpenChat, ...rest }: Props) => {
                         <DropdownMenuButton
                             className="flex flex-nowrap flex-justify-space-between flex-align-items-center"
                             onClick={handleSwitchAccount}
+                            data-testid="userdropdown:button:switch-account"
                         >
                             {c('Action').t`Switch account`}
                             <Icon className="ml1 on-rtl-mirror" name="switch" />
@@ -275,7 +294,7 @@ const UserDropdown = ({ onOpenChat, ...rest }: Props) => {
                             color="norm"
                             className="w100 flex flex-justify-center flex-align-items-center"
                             onClick={handleLogout}
-                            data-cy-header-user-dropdown="logout"
+                            data-testid="userdropdown:button:logout"
                         >
                             <span className="mr0-5">{c('Action').t`Sign out`}</span>
                             <Icon name="arrow-right-from-rectangle" className="on-rtl-mirror" />

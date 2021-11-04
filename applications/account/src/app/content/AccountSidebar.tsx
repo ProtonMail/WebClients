@@ -54,6 +54,7 @@ const AccountSidebar = ({ app, appSlug, logo, expanded, onToggleExpand }: Accoun
             expanded={expanded}
             onToggleExpand={onToggleExpand}
             version={<AccountSidebarVersion />}
+            data-testid="account:sidebar"
         >
             <SidebarNav>
                 <SidebarList>

@@ -3,8 +3,9 @@
     "private": true,
     "license": "GPL-3.0",
     "workspaces": [
-        "packages/*",
         "applications/*",
+        "packages/*",
+        "tests",
         "utilities/*"
     ],
     "scripts": {
