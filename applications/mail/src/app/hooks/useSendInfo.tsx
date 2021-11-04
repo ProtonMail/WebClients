@@ -18,8 +18,9 @@ import AskForKeyPinningModal from '../components/composer/addresses/AskForKeyPin
 import ContactResignModal from '../components/message/modals/ContactResignModal';
 import { getSendStatusIcon } from '../helpers/message/icon';
 import { MapSendInfo, STATUS_ICONS_FILLS } from '../models/crypto';
-import { ContactsMap, useContactCache } from '../containers/ContactProvider';
 import { MessageState } from '../logic/messages/messagesTypes';
+import { useContactsMap } from './contact/useContacts';
+import { ContactsMap } from '../logic/contacts/contactsTypes';
 
 const { PRIMARY_NOT_PINNED, CONTACT_SIGNATURE_NOT_VERIFIED } = ENCRYPTION_PREFERENCES_ERROR_TYPES;
 
@@ -55,7 +56,7 @@ export const useUpdateRecipientSendInfo = (
 ) => {
     const { createModal } = useModals();
     const getEncryptionPreferences = useGetEncryptionPreferences();
-    const { contactsMap } = useContactCache();
+    const contactsMap = useContactsMap();
     const emailAddress = recipient.Address;
 
     const handleRemove = () => {
@@ -197,7 +198,7 @@ export const useUpdateGroupSendInfo = (
     onRemove: () => void
 ) => {
     const getEncryptionPreferences = useGetEncryptionPreferences();
-    const { contactsMap } = useContactCache();
+    const contactsMap = useContactsMap();
     const { createModal } = useModals();
     const emailsInGroup = contacts.map(({ Email }) => Email);
 
@@ -395,7 +396,7 @@ const getUpdatedSendInfo = async (
 
 export const useReloadSendInfo = () => {
     const getEncryptionPreferences = useGetEncryptionPreferences();
-    const { contactsMap } = useContactCache();
+    const contactsMap = useContactsMap();
 
     return useCallback(
         async (messageSendInfo: MessageSendInfo | undefined, message: MessageState) => {

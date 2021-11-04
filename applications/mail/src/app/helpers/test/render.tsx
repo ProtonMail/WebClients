@@ -20,9 +20,8 @@ import AuthenticationProvider from '@proton/components/containers/authentication
 import FeaturesProvider from '@proton/components/containers/features/FeaturesProvider';
 import { ConversationCountsModel, MessageCountsModel } from '@proton/shared/lib/models';
 import { Provider as ReduxProvider } from 'react-redux';
-import { minimalCache, cache, contactCache } from './cache';
+import { minimalCache, cache } from './cache';
 import { api, registerFeatureFlagsApiMock, registerMinimalFlags } from './api';
-import ContactProvider from '../../containers/ContactProvider';
 import EncryptedSearchProvider from '../../containers/EncryptedSearchProvider';
 import { MailContentRefProvider } from '../../hooks/useClickMailContent';
 import { ComposeProvider } from '../../containers/ComposeProvider';
@@ -80,15 +79,13 @@ const TestProvider = ({ children }: Props) => {
                                 <EventModelListener models={[ConversationCountsModel, MessageCountsModel]} />
                                 <ReduxProvider store={store}>
                                     <FeaturesProvider>
-                                        <ContactProvider cache={contactCache}>
-                                            <MailContentRefProvider mailContentRef={contentRef}>
-                                                <ComposeProvider onCompose={jest.fn()}>
-                                                    <Router history={history}>
-                                                        <EncryptedSearchProvider>{children}</EncryptedSearchProvider>
-                                                    </Router>
-                                                </ComposeProvider>
-                                            </MailContentRefProvider>
-                                        </ContactProvider>
+                                        <MailContentRefProvider mailContentRef={contentRef}>
+                                            <ComposeProvider onCompose={jest.fn()}>
+                                                <Router history={history}>
+                                                    <EncryptedSearchProvider>{children}</EncryptedSearchProvider>
+                                                </Router>
+                                            </ComposeProvider>
+                                        </MailContentRefProvider>
                                     </FeaturesProvider>
                                 </ReduxProvider>
                             </CacheProvider>

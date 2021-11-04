@@ -6,7 +6,7 @@ import { contactToInput } from '@proton/shared/lib/mail/recipient';
 import { RecipientGroup } from '../../../models/address';
 import { MapStatusIcons, StatusIcon } from '../../../models/crypto';
 import EncryptionStatusIcon from '../EncryptionStatusIcon';
-import { GroupWithContacts } from '../../../containers/ContactProvider';
+import { GroupWithContacts } from '../../../logic/contacts/contactsTypes';
 
 interface Props {
     recipientGroup: RecipientGroup;

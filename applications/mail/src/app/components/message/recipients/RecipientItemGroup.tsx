@@ -17,9 +17,9 @@ import RecipientItemLayout from './RecipientItemLayout';
 import GroupModal from '../modals/GroupModal';
 import { MapStatusIcons, StatusIcon } from '../../../models/crypto';
 import { useRecipientLabel } from '../../../hooks/contact/useRecipientLabel';
-import { useContactCache } from '../../../containers/ContactProvider';
 import { useOnCompose } from '../../../containers/ComposeProvider';
 import { MESSAGE_ACTIONS } from '../../../constants';
+import { useGroupsWithContactsMap } from '../../../hooks/contact/useContacts';
 
 interface Props {
     group: RecipientGroup;
@@ -39,7 +39,7 @@ const RecipientItemGroup = ({
     const { getGroupLabel } = useRecipientLabel();
     const { createModal } = useModals();
     const { createNotification } = useNotifications();
-    const { groupsWithContactsMap } = useContactCache();
+    const groupsWithContactsMap = useGroupsWithContactsMap();
     const [uid] = useState(generateUID('dropdown-group'));
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     const label = getGroupLabel(group);
