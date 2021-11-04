@@ -1,10 +1,10 @@
+import CalendarEventDateHeader from '@proton/components/components/calendarEventDateHeader/CalendarEventDateHeader';
 import { getIsCalendarDisabled } from '@proton/shared/lib/calendar/calendar';
 import { ICAL_ATTENDEE_STATUS } from '@proton/shared/lib/calendar/constants';
 import { getIsSubscribedCalendar } from '@proton/shared/lib/calendar/subscribe/helpers';
 import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 
 import { getTimezonedFrequencyString } from '@proton/shared/lib/calendar/integration/getFrequencyString';
-import { format as formatUTC } from '@proton/shared/lib/date-fns-utc';
 import { noop } from '@proton/shared/lib/helpers/function';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { dateLocale } from '@proton/shared/lib/i18n';
@@ -30,7 +30,6 @@ import {
     DisplayNameEmail,
 } from '../../containers/calendar/interface';
 import { INVITE_ACTION_TYPES, InviteActions } from '../../interfaces/Invite';
-import { EnDash } from '../EnDash';
 import { getEventErrorMessage } from './error';
 import getEventInformation from './getEventInformation';
 import PopoverContainer from './PopoverContainer';
@@ -118,44 +117,19 @@ const EventPopover = ({
         }
     };
 
-    const dateHeader = useMemo(() => {
-        const [dateStart, dateEnd] = [start, end].map((date) => formatUTC(date, 'ccc, PP', { locale: dateLocale }));
-        const timeStart = formatTime(start);
-        const timeEnd = formatTime(end);
-
-        if (isAllDay && !isAllPartDay) {
-            if (dateStart === dateEnd) {
-                return dateStart;
-            }
-            return (
-                <>
-                    {dateStart}
-                    <EnDash />
-                    {dateEnd}
-                </>
-            );
-        }
-        if (dateStart === dateEnd) {
-            return (
-                <>
-                    {dateStart}
-                    {', '}
-                    <span className="inline-block">
-                        {timeStart}
-                        <EnDash />
-                        {timeEnd}
-                    </span>
-                </>
-            );
-        }
-        return (
-            <>
-                {dateStart} {timeStart}
-                <EnDash />
-                {dateEnd} {timeEnd}
-            </>
-        );
-    }, [start, end, isAllDay]);
+    const dateHeader = useMemo(
+        () => (
+            <CalendarEventDateHeader
+                startDate={start}
+                endDate={end}
+                isAllDay={isAllDay && !isAllPartDay}
+                formatTime={formatTime}
+                hasFakeUtcDates
+                className="text-lg m0"
+            />
+        ),
+        [start, end, isAllDay, isAllPartDay, formatTime]
+    );
 
     const editButton = !isCalendarDisabled && (
         <Tooltip title={c('Event edit button tooltip').t`Edit event`}>
@@ -275,7 +249,7 @@ const EventPopover = ({
                     {eventTitleSafe}
                 </h1>
                 <div className="mb1">
-                    <div className="text-lg m0">{dateHeader}</div>
+                    {dateHeader}
                     {!!frequencyString && <div className="color-weak">{frequencyString}</div>}
                 </div>
             </PopoverHeader>
