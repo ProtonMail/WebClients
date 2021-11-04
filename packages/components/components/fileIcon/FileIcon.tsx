@@ -1,4 +1,4 @@
-import { isImage, isSupportedText, isPDF, isICS, isVideo, isFont } from '../../containers/filePreview/helpers';
+import { isImage, isSupportedText, isPDF, isICS, isVideo, isFont, isExcel } from '../../containers/filePreview/helpers';
 import { IconProps } from '../icon/Icon';
 import MimeIcon from '../icon/MimeIcon';
 
@@ -13,9 +13,12 @@ const iconsMap: { [mimeType: string]: { name: string } } = {
     'application/x-debian-package': { name: 'zip' }, // .deb — Debian software package file
     'application/octet-stream': { name: 'zip' }, // .pkg
     'application/x-redhat-package-manager': { name: 'zip' }, // .rpm
+    'application/x-rpm': { name: 'zip' }, // .rpm
     'application/vnd.rar': { name: 'zip' }, // .rar – RAR file
     'application/gzip': { name: 'zip' }, // .tar.gz — Tarball compressed file
+    'application/x-gzip': { name: 'zip' }, // .tar.gz — Tarball compressed file
     'application/x-compress': { name: 'zip' }, // .z — Z compressed file
+    'application/vnd.apple.installer+xml': { name: 'zip' }, // .pkg
 
     'application/msword': { name: 'doc' },
     'application/vnd.openxmlformats-officedocument.wordprocessingml.document': {
@@ -27,7 +30,6 @@ const iconsMap: { [mimeType: string]: { name: string } } = {
         name: 'ppt',
     },
 
-    'application/vnd.ms-excel': { name: 'xls' },
     'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet': { name: 'xls' }, // .xlsm - Microsoft Excel file
     'application/vnd.oasis.opendocument.spreadsheet': { name: 'xls' }, // .ods — OpenOffice Calc spreadsheet file
     'application/vnd.oasis.opendocument.presentation': { name: 'ppt' }, // .ods — OpenOffice Calc presentation file
@@ -45,6 +47,8 @@ const iconsMap: { [mimeType: string]: { name: string } } = {
     'application/vnd.wordperfect': { name: 'text' },
 
     'application/vnd.ms-fontobject': { name: 'font' },
+    'application/font-sfnt': { name: 'font' }, // ttf
+    'application/vnd.oasis.opendocument.formula-template': { name: 'font' }, // otf
 };
 
 const getIconName = (mimeType: string) => {
@@ -67,6 +71,8 @@ const getIconName = (mimeType: string) => {
         name = 'video';
     } else if (isFont(mimeType)) {
         name = 'font';
+    } else if (isExcel(mimeType)) {
+        name = 'xls';
     }
 
     return name;
