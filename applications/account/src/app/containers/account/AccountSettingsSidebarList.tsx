@@ -7,37 +7,40 @@ import {
     SidebarListItemContentIcon,
     SidebarListItemLink,
     useFeature,
+    useShowRecoveryNotification,
     useUser,
 } from '@proton/components';
-import { UserModel } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
+import NotificationDot from '@proton/components/components/notificationDot/NotificationDot';
 
 import { getDashboardPage } from './AccountDashboardSettings';
-import { getPasswordAndRecoveryPage } from './AccountPasswordAndRecoverySettings';
 import { getPaymentPage } from './AccountPaymentSettings';
-import { getSecurityPage } from './AccountSecuritySettings';
 import { getEasySwitchPage } from './AccountEasySwitchSettings';
-
-const getPages = (user: UserModel, isEasySwitchEnabled: boolean): SectionConfig[] =>
-    [
-        getDashboardPage({ user }),
-        getPasswordAndRecoveryPage({ user }),
-        user.canPay && getPaymentPage(),
-        getSecurityPage(),
-        isEasySwitchEnabled && getEasySwitchPage(),
-    ].filter(isTruthy);
+import { getPasswordAndSecurityPage } from './AccountPasswordAndSecuritySettings';
+import { getRecoveryPage, hasRecoverySettings } from './AccountRecoverySettings';
 
 const AccountSettingsSidebarList = ({ appSlug }: { appSlug: string }) => {
     const [user] = useUser();
-
+    const showRecoveryNotification = useShowRecoveryNotification();
     const isEasySwitchEnabled = useFeature(FeatureCode.EasySwitch).feature?.Value;
+
+    const pages: SectionConfig[] = [
+        getDashboardPage({ user }),
+        hasRecoverySettings(user) && getRecoveryPage(showRecoveryNotification),
+        user.canPay && getPaymentPage(),
+        getPasswordAndSecurityPage({ user }),
+        isEasySwitchEnabled && getEasySwitchPage(),
+    ].filter(isTruthy);
 
     return (
         <SidebarList>
-            {getPages(user, isEasySwitchEnabled).map(({ text, to, icon }) => (
+            {pages.map(({ text, to, icon, notification }) => (
                 <SidebarListItem key={to}>
                     <SidebarListItemLink to={`/${appSlug}${to}`}>
-                        <SidebarListItemContent left={<SidebarListItemContentIcon name={icon} />}>
+                        <SidebarListItemContent
+                            left={<SidebarListItemContentIcon name={icon} />}
+                            right={notification && <NotificationDot />}
+                        >
                             {text}
                         </SidebarListItemContent>
                     </SidebarListItemLink>

@@ -7,7 +7,7 @@ import { generateUID } from '../../helpers';
 
 const DEFAULT_IS_EXPANDED = true;
 
-interface Props extends HTMLProps<HTMLDivElement> {
+export interface Props extends HTMLProps<HTMLDivElement> {
     defaultIsExpanded?: boolean;
     children: ReactNode;
     headerContent: ReactNode;
