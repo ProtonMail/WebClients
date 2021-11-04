@@ -64,8 +64,8 @@ const DateTimeRow = ({ model, setModel, displayWeekNumbers, weekStartsOn, endErr
         <IconRow id={DATE_INPUT_ID} icon="clock" title={c('Label').t`Time of the event`}>
             <div className={classnames([isAllDay && 'w50 on-mobile-w100'])}>
                 <div className="flex flex-nowrap on-mobile-flex-column mb0-5">
-                    <div className="flex flex-nowrap flex-item-fluid flex-item-grow-2">
-                        <div className="flex-no-min-children flex-item-fluid flex-column flex-item-grow-2">
+                    <div className="flex flex-nowrap flex-item-fluid flex-item-grow">
+                        <div className="flex-no-min-children flex-item-fluid flex-item-grow-2">
                             <DateInput
                                 id={DATE_INPUT_ID}
                                 className="flex-item-fluid"
@@ -81,13 +81,14 @@ const DateTimeRow = ({ model, setModel, displayWeekNumbers, weekStartsOn, endErr
                         </div>
 
                         {!isAllDay && (
-                            <TimeInput
-                                id="event-startTime"
-                                className="ml0-5 flex-item-fluid"
-                                value={start.time}
-                                onChange={handleChangeStartTime}
-                                title={c('Title').t`Select event start time`}
-                            />
+                            <div className="ml0-5 flex-item-fluid">
+                                <TimeInput
+                                    id="event-startTime"
+                                    value={start.time}
+                                    onChange={handleChangeStartTime}
+                                    title={c('Title').t`Select event start time`}
+                                />
+                            </div>
                         )}
                     </div>
 
@@ -105,8 +106,8 @@ const DateTimeRow = ({ model, setModel, displayWeekNumbers, weekStartsOn, endErr
                 </div>
 
                 <div className="flex flex-nowrap on-mobile-flex-column mb0-5">
-                    <div className="flex flex-nowrap flex-item-fluid flex-item-grow-2">
-                        <div className="flex-no-min-children flex-item-fluid flex-column flex-item-grow-2">
+                    <div className="flex flex-nowrap flex-item-fluid flex-item-grow">
+                        <div className="flex-no-min-children flex-item-fluid flex-item-grow-2">
                             <DateInput
                                 id="event-endDate"
                                 className="flex-item-fluid"
@@ -123,16 +124,17 @@ const DateTimeRow = ({ model, setModel, displayWeekNumbers, weekStartsOn, endErr
                         </div>
 
                         {!isAllDay && (
-                            <TimeInput
-                                id="event-endTime"
-                                className="ml0-5 flex-item-fluid"
-                                value={end.time}
-                                onChange={handleChangeEndTime}
-                                aria-invalid={!!endError}
-                                displayDuration={isDuration}
-                                min={minEndTime}
-                                title={c('Title').t`Select event end time`}
-                            />
+                            <div className="ml0-5 flex-item-fluid">
+                                <TimeInput
+                                    id="event-endTime"
+                                    value={end.time}
+                                    onChange={handleChangeEndTime}
+                                    aria-invalid={!!endError}
+                                    displayDuration={isDuration}
+                                    min={minEndTime}
+                                    title={c('Title').t`Select event end time`}
+                                />
+                            </div>
                         )}
                     </div>
 
