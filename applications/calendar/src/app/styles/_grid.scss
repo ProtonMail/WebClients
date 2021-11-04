@@ -7,6 +7,8 @@
 			border-radius: var(--border-radius-medium);
 
 			@include respond-to($breakpoint-small, 'min') {
+				padding-inline: 0.5em;
+				padding-block: 0.25em;
 				font-size: rem(20);
 				line-height: 1;
 			}
