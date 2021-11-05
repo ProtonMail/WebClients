@@ -141,7 +141,7 @@ type GetTimeZoneOptions = (
  */
 export const getTimeZoneOptions: GetTimeZoneOptions = (
     date = new Date(),
-    { formatter = ({ utcOffset, name }: FormatterProps) => `${name} (${utcOffset})` } = {}
+    { formatter = ({ utcOffset, name }: FormatterProps) => `${utcOffset} • ${name}` } = {}
 ) => {
     return (
         listTimeZones()
