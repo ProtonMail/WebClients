@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef } from 'react';
+import { ReactNode, useEffect, useMemo, useRef } from 'react';
 import { c, msgid } from 'ttag';
 
 import { Folder } from '@proton/shared/lib/interfaces/Folder';
@@ -49,6 +49,23 @@ const {
     CONTACTS,
     // DRIVE,
 } = ImportType;
+
+const LABEL_MARKUP_PLACEHOLDER = '**LABEL**';
+
+// Replace '**LABEL**' by actual Label markup
+const replaceLabelPlaceholder = (text: string, labelMarkup: ReactNode) => {
+    const splitText = text.split(LABEL_MARKUP_PLACEHOLDER);
+
+    if (splitText.length > 1) {
+        return (
+            <>
+                {splitText[0].trim()} {labelMarkup}
+            </>
+        );
+    }
+
+    return text;
+};
 
 const IASelectImportTypeStep = ({
     addresses,
@@ -220,19 +237,22 @@ const IASelectImportTypeStep = ({
 
         // translator: here is an example of a complete sentence: "Import all messages from 12 labels since the last month and label them as ..." followed by the label HTML element
         const summaryAllLabels = c('Mail import summary').ngettext(
-            msgid`Import all messages from ${totalLabelsCount} label since ${periodFragment} and label them as ${label}`,
-            `Import all messages from ${totalLabelsCount} labels since ${periodFragment} and label them as ${label}`,
+            msgid`Import all messages from ${totalLabelsCount} label since ${periodFragment} and label them as ${LABEL_MARKUP_PLACEHOLDER}`,
+            `Import all messages from ${totalLabelsCount} labels since ${periodFragment} and label them as ${LABEL_MARKUP_PLACEHOLDER}`,
             totalLabelsCount
         );
 
         // translator: here is an example of a complete sentence: "Import all messages from 3 out of 5 labels since the last 3 months and label them as ..." followed by the label HTML element
         const summarySelectedLabels = c('Mail import summary').ngettext(
-            msgid`Import all messages from ${selectedLabelsCount} out of ${totalLabelsCount} label since ${periodFragment} and label them as ${label}`,
-            `Import all messages from ${selectedLabelsCount} out of ${totalLabelsCount} labels since ${periodFragment} and label them as ${label}`,
+            msgid`Import all messages from ${selectedLabelsCount} out of ${totalLabelsCount} label since ${periodFragment} and label them as ${LABEL_MARKUP_PLACEHOLDER}`,
+            `Import all messages from ${selectedLabelsCount} out of ${totalLabelsCount} labels since ${periodFragment} and label them as ${LABEL_MARKUP_PLACEHOLDER}`,
             totalLabelsCount
         );
 
-        return totalLabelsCount === selectedLabelsCount ? summaryAllLabels : summarySelectedLabels;
+        return replaceLabelPlaceholder(
+            totalLabelsCount === selectedLabelsCount ? summaryAllLabels : summarySelectedLabels,
+            label
+        );
     };
 
     const mailRowRenderer = () => {
