@@ -21,7 +21,7 @@ const AlertModal = ({ title, subline, buttons, className, children, ...rest }: A
     const [firstButton, secondButton] = Array.isArray(buttons) ? buttons : [buttons];
 
     return (
-        <ModalTwo small {...rest} className={classnames([className, 'alert-modal'])}>
+        <ModalTwo size="small" {...rest} className={classnames([className, 'alert-modal'])}>
             <div className="alert-modal-header">
                 <AlertModalTitle>{title}</AlertModalTitle>
                 {subline && <div className="color-weak">{subline}</div>}

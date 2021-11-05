@@ -2,14 +2,15 @@ import { useState } from 'react';
 
 import {
     ModalTwo,
+    ModalSize,
     ModalTwoHeader,
-    ModalTwoTitle,
     ModalTwoContent,
     ModalTwoFooter,
     Button,
     AlertModal,
     Icon,
     RadioGroup,
+    Tooltip,
 } from '@proton/components';
 
 import { getTitle } from '../../helpers/title';
@@ -28,8 +29,7 @@ export default {
 };
 
 export const Primary = () => {
-    const sizes = ['small', 'medium', 'large', 'full'];
-    const [size, setSize] = useState<null | string>('medium');
+    const [size, setSize] = useState<ModalSize>('medium');
     const [open, setOpen] = useState(false);
 
     return (
@@ -42,13 +42,7 @@ export const Primary = () => {
             >
                 Open size modal
             </Button>
-            <ModalTwo
-                small={size === 'small'}
-                large={size === 'large'}
-                full={size === 'full'}
-                open={open}
-                onClose={() => setOpen(false)}
-            >
+            <ModalTwo size={size} open={open} onClose={() => setOpen(false)}>
                 <ModalTwoHeader title="Size" />
                 <ModalTwoContent>
                     <p>
@@ -63,7 +57,7 @@ export const Primary = () => {
                             name="selected-shape"
                             onChange={setSize}
                             value={size}
-                            options={sizes.map((size) => ({ value: size, label: size }))}
+                            options={['small', 'medium', 'large', 'full'].map((size) => ({ value: size, label: size }))}
                         />
                     </div>
                 </ModalTwoContent>
@@ -91,7 +85,6 @@ export const Header = () => {
             <ModalTwo open={open} onClose={() => setOpen(false)}>
                 <ModalTwoHeader title="Title in ModalHeader" subline="Subline in ModalHeader" />
                 <ModalTwoContent>
-                    <ModalTwoTitle>Title h3 in content</ModalTwoTitle>
                     <p className="m0">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium unde, blanditiis rem
                         accusamus obcaecati enim amet, voluptatibus nemo facilis illum aut itaque in? Deleniti iure amet
@@ -122,16 +115,19 @@ export const HeaderActions = () => {
             <ModalTwo open={open} onClose={() => setOpen(false)}>
                 <ModalTwoHeader
                     actions={[
-                        <Button icon shape="ghost">
-                            <Icon name="circle-question" />
-                        </Button>,
-                        <Button icon shape="ghost">
-                            <Icon name="arrows-rotate" />
-                        </Button>,
+                        <Tooltip title="Get help">
+                            <Button icon shape="ghost">
+                                <Icon name="circle-question" />
+                            </Button>
+                        </Tooltip>,
+                        <Tooltip title="Refresh">
+                            <Button icon shape="ghost">
+                                <Icon name="arrows-rotate" />
+                            </Button>
+                        </Tooltip>,
                     ]}
                 />
                 <ModalTwoContent>
-                    <ModalTwoTitle>Title h3 in content</ModalTwoTitle>
                     <p className="m0">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium unde, blanditiis rem
                         accusamus obcaecati enim amet, voluptatibus nemo facilis illum aut itaque in? Deleniti iure amet
@@ -162,7 +158,6 @@ export const ALotOfContent = () => {
             <ModalTwo open={open} onClose={() => setOpen(false)}>
                 <ModalTwoHeader title="Title in header" />
                 <ModalTwoContent>
-                    <ModalTwoTitle>Title in content</ModalTwoTitle>
                     <p>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, voluptatum deserunt rem amet
                         consectetur perspiciatis placeat error doloribus vero voluptate quisquam numquam expedita, ex
@@ -239,7 +234,6 @@ export const FullscreenOnMobile = () => {
             <ModalTwo fullscreenOnMobile open={open} onClose={() => setOpen(false)}>
                 <ModalTwoHeader />
                 <ModalTwoContent>
-                    <ModalTwoTitle>I&apos;m full screen on mobile</ModalTwoTitle>
                     <p>
                         If I&apos;m not full screen you&apos;ll have to make your screen&apos;s width smaller. If you
                         did that and I&apos;m still not fullscreen that means my developers did a shlopey job.
