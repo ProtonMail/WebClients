@@ -6,7 +6,7 @@ import { OAuthProps, OAUTH_PROVIDER } from '@proton/shared/lib/interfaces/EasySw
 
 import useNotifications from './useNotifications';
 
-import { G_OAUTH_CLIENT_ID, G_OAUTH_REDIRECT_PATH } from '../containers/easySwitch/constants';
+import { G_OAUTH_REDIRECT_PATH } from '../containers/easySwitch/constants';
 
 const WINDOW_WIDTH = 500;
 const WINDOW_HEIGHT = 600;
@@ -18,13 +18,21 @@ const getOAuthRedirectURL = () => {
     return `${protocol}//${host}${G_OAUTH_REDIRECT_PATH}`;
 };
 
-export const getOAuthAuthorizationUrl = ({ scope, login_hint }: { scope: string; login_hint?: string }) => {
+export const getOAuthAuthorizationUrl = ({
+    scope,
+    client_id,
+    login_hint,
+}: {
+    scope: string;
+    client_id: string;
+    login_hint?: string;
+}) => {
     const params = new URLSearchParams();
 
     params.append('redirect_uri', getOAuthRedirectURL());
     params.append('response_type', 'code');
     params.append('access_type', 'offline');
-    params.append('client_id', G_OAUTH_CLIENT_ID);
+    params.append('client_id', client_id);
     params.append('scope', scope);
     params.append('prompt', 'consent');
 
@@ -42,16 +50,18 @@ const useOAuthPopup = () => {
     const triggerOAuthPopup = ({
         provider,
         scope,
+        client_id,
         login_hint,
         callback,
     }: {
         provider: OAUTH_PROVIDER;
         scope: string;
+        client_id: string;
         login_hint?: string;
         callback: (oauthProps: OAuthProps) => void | Promise<void>;
     }) => {
         let interval: number;
-        const authorizationUrl = getOAuthAuthorizationUrl({ scope, login_hint });
+        const authorizationUrl = getOAuthAuthorizationUrl({ scope, client_id, login_hint });
         const RedirectUri = getOAuthRedirectURL();
 
         const uid = generateProtonWebUID();

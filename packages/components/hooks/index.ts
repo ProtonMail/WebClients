@@ -96,6 +96,7 @@ export { default as useProductPayerPeriod } from './useProductPayerPeriod';
 export { default as usePromiseResult } from './usePromiseResult';
 export { default as useRecoverySecrets } from './useRecoverySecrets';
 export { default as useRecoveryStatus } from './useRecoveryStatus';
+export { default as useRemoteConfig } from './useRemoteConfig';
 export { default as useSearch } from './useSearch';
 export { default as useShowRecoveryNotification } from './useShowRecoveryNotification';
 export { default as useSortedList, useSortedListAsync, useMultiSortedList } from './useSortedList';
