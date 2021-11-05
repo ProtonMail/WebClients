@@ -180,7 +180,6 @@ const LiveChatZendesk = ({
         if (!state.loaded) {
             return;
         }
-        console.log(subscription);
         handleRun(['webWidget', 'chat:addTags', subscription]);
     }, [state.loaded, subscription]);
 
