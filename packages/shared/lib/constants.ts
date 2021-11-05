@@ -17,7 +17,7 @@ export const MAX_MEMBER_ADDON = 5000;
 export const MAX_DOMAIN_PRO_ADDON = 99;
 export const MAX_DOMAIN_PLUS_ADDON = 10;
 export const MAX_ADDRESS_ADDON = 10;
-export const MAX_SPACE_ADDON = 16;
+export const MAX_SPACE_ADDON = 20;
 
 export const DOMAIN_PLACEHOLDER = 'example.com';
 export const EMAIL_PLACEHOLDER = 'john.doe@example.com';
