@@ -19,6 +19,7 @@ import {
     optimisticMarkAs,
 } from './elementsActions';
 import {
+    globalReset as globalResetReducer,
     reset as resetReducer,
     updatePage as updatePageReducer,
     loadPending,
@@ -34,6 +35,7 @@ import {
     optimisticDelete as optimisticDeleteReducer,
     optimisticEmptyLabel as optimisticEmptyLabelReducer,
 } from './elementsReducers';
+import { globalReset } from '../actions';
 
 export const newState = ({
     page = 0,
@@ -67,6 +69,7 @@ const elementsSlice = createSlice({
     initialState: newState(),
     reducers: {},
     extraReducers: (builder) => {
+        builder.addCase(globalReset, globalResetReducer);
         builder.addCase(reset, resetReducer);
         builder.addCase(updatePage, updatePageReducer);
         builder.addCase(load.pending, loadPending);

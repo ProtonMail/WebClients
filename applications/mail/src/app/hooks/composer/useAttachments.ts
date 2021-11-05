@@ -5,13 +5,13 @@ import { useApi, useNotifications, useAuthentication, useHandler } from '@proton
 import { c } from 'ttag';
 import { removeAttachment } from '@proton/shared/lib/api/attachments';
 import { readFileAsBuffer } from '@proton/shared/lib/helpers/file';
+import { useDispatch } from 'react-redux';
 import { Upload } from '../../helpers/upload';
 import { UploadResult, ATTACHMENT_ACTION, isSizeExceeded, upload } from '../../helpers/attachment/attachmentUploader';
 import { MessageExtended, MessageExtendedWithData } from '../../models/message';
 import { EditorActionsRef } from '../../components/composer/editor/SquireEditorWrapper';
 import { MessageChange } from '../../components/composer/Composer';
 import { useMessageCache } from '../../containers/MessageProvider';
-import { useAttachmentCache } from '../../containers/AttachmentProvider';
 import { useGetMessageKeys } from '../message/useGetMessageKeys';
 import { useLongLivingState } from '../useLongLivingState';
 import { usePromise } from '../usePromise';
@@ -23,6 +23,7 @@ import {
     readContentIDandLocation,
 } from '../../helpers/message/messageEmbeddeds';
 import { MESSAGE_ALREADY_SENT_INTERNAL_ERROR } from '../../constants';
+import { addAttachment } from '../../logic/attachments/attachmentsActions';
 
 export interface PendingUpload {
     file: File;
@@ -49,7 +50,7 @@ export const useAttachments = ({
     const auth = useAuthentication();
     const messageCache = useMessageCache();
     const getMessageKeys = useGetMessageKeys();
-    const attachmentCache = useAttachmentCache();
+    const dispatch = useDispatch();
 
     // Pending files to upload
     const [pendingFiles, setPendingFiles] = useState<File[]>();
@@ -105,7 +106,12 @@ export const useAttachments = ({
 
             const data = new Uint8Array(await readFileAsBuffer(pendingUpload.file));
             const filename = pendingUpload.file.name;
-            attachmentCache.set(upload.attachment.ID || '', { data, verified: 1, filename, signatures: [] });
+            dispatch(
+                addAttachment({
+                    ID: upload.attachment.ID || '',
+                    attachment: { data, verified: 1, filename, signatures: [] },
+                })
+            );
 
             // Warning, that change function can be called multiple times, don't do any side effect in it
             onChange((message: MessageExtended) => {

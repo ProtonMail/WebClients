@@ -8,7 +8,6 @@ import {
     encryptMessage,
     GeneratedKey,
     api,
-    attachmentsCache,
     addApiKeys,
     addKeysToUserKeysCache,
     assertIcon,
@@ -99,7 +98,8 @@ describe('MessageView encryption', () => {
             const mimeBody = await constructMime(
                 { localID, data: message, document: parseInDiv(body) },
                 toKeys,
-                attachmentsCache,
+                jest.fn(),
+                jest.fn(),
                 api,
                 false
             );
@@ -131,7 +131,8 @@ describe('MessageView encryption', () => {
             const mimeBody = await constructMime(
                 { localID, data: { ...message, MIMEType: MIME_TYPES.PLAINTEXT }, plainText: body },
                 toKeys,
-                attachmentsCache,
+                jest.fn(),
+                jest.fn(),
                 api,
                 false
             );
@@ -212,7 +213,8 @@ describe('MessageView encryption', () => {
             const mimeBody = await constructMime(
                 { localID, data: message, document: parseInDiv(body) },
                 toKeys,
-                attachmentsCache,
+                jest.fn(),
+                jest.fn(),
                 api,
                 false
             );

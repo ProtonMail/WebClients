@@ -3,8 +3,8 @@ import { getEmailParts } from '@proton/shared/lib/helpers/email';
 import generateUID from '@proton/shared/lib/helpers/generateUID';
 import { Api } from '@proton/shared/lib/interfaces';
 import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
+import { DecryptResultPmcrypto } from 'pmcrypto';
 import { ENCRYPTED_STATUS } from '../../constants';
-import { AttachmentsCache } from '../../containers/AttachmentProvider';
 import { MessageCache } from '../../containers/MessageProvider';
 import { MessageEmbeddedImage, MessageKeys, MessageVerification, PartialMessageExtended } from '../../models/message';
 import { get } from '../attachment/attachmentLoader';
@@ -224,7 +224,8 @@ export const decryptEmbeddedImages = (
     messageVerification: MessageVerification | undefined,
     messageKeys: MessageKeys,
     messageCache: MessageCache,
-    attachmentCache: AttachmentsCache,
+    getAttachment: (ID: string) => DecryptResultPmcrypto | undefined,
+    onUpdateAttachment: (ID: string, attachment: DecryptResultPmcrypto) => void,
     api: Api
 ) => {
     const attachments = unique(
@@ -244,7 +245,14 @@ export const decryptEmbeddedImages = (
     const download = async () => {
         const results = await Promise.all(
             attachments.map(async (attachment) => {
-                const buffer = await get(attachment, messageVerification, messageKeys, attachmentCache, api);
+                const buffer = await get(
+                    attachment,
+                    messageVerification,
+                    messageKeys,
+                    getAttachment,
+                    onUpdateAttachment,
+                    api
+                );
                 return {
                     attachment,
                     blob: createBlob(attachment, buffer.data as Uint8Array),

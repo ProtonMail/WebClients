@@ -19,7 +19,7 @@ import { MessageExtended, MessageExtendedWithData, PartialMessageExtended } from
 import { useMessageCache } from '../containers/MessageProvider';
 import { findSender } from '../helpers/addresses';
 import { MESSAGE_ACTIONS } from '../constants';
-import { useAttachmentCache } from '../containers/AttachmentProvider';
+import { useGetAttachment } from './useAttachment';
 
 const CACHE_KEY = 'Draft';
 
@@ -66,14 +66,14 @@ export const useDraft = () => {
     const draftVerifications = useDraftVerifications();
     const [addresses] = useAddresses();
     const [mailSettings] = useMailSettings();
-    const attachmentCache = useAttachmentCache();
+    const getAttachment = useGetAttachment();
 
     useEffect(() => {
         const run = async () => {
             if (!mailSettings || !addresses) {
                 return;
             }
-            const message = createNewDraft(MESSAGE_ACTIONS.NEW, undefined, mailSettings, addresses, attachmentCache);
+            const message = createNewDraft(MESSAGE_ACTIONS.NEW, undefined, mailSettings, addresses, getAttachment);
             cache.set(CACHE_KEY, message);
         };
         void run();
@@ -95,7 +95,7 @@ export const useDraft = () => {
                     referenceMessage,
                     mailSettings,
                     addresses,
-                    attachmentCache
+                    getAttachment
                 ) as MessageExtended;
             }
 
