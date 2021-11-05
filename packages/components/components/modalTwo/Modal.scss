@@ -37,6 +37,13 @@
 		}
 	}
 
+	&--fullscreen-on-mobile &-dialog {
+		@include respond-to($breakpoint-tiny) {
+			flex: 1 0 100%;
+			border-radius: 0;
+		}
+	}
+
 	@keyframes anime-modal-two-in {
 		from {
 			opacity: 0;
@@ -96,13 +103,6 @@
 		&--full {
 			--size: 100%;
 			inline-size: var(--size);
-		}
-
-		&-backdrop--fullscreen-on-mobile & {
-			@include respond-to($breakpoint-tiny) {
-				flex: 1 0 100%;
-				border-radius: 0;
-			}
 		}
 
 		@keyframes anime-modal-two-dialog-in {
