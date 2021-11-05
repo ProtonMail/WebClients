@@ -37,6 +37,10 @@ export interface Props<V>
     onValue?: (value: V) => void;
     onClose?: () => void;
     onOpen?: () => void;
+    /**
+     * @todo check with core team if this shouldn't be the norm, instead of a hacky prop
+     */
+    enableDefaultArrowNavigation?: boolean;
 }
 
 const SelectTwo = <V extends any>({
@@ -51,6 +55,7 @@ const SelectTwo = <V extends any>({
     clearSearchAfter = 500,
     getSearchableValue,
     loading,
+    enableDefaultArrowNavigation = false,
     ...rest
 }: Props<V>) => {
     const anchorRef = useRef<HTMLButtonElement | null>(null);
@@ -183,7 +188,7 @@ const SelectTwo = <V extends any>({
                 noCaret
                 noMaxWidth
                 sameAnchorWidth
-                disableDefaultArrowNavigation
+                disableDefaultArrowNavigation={!enableDefaultArrowNavigation}
             >
                 <SelectOptions selected={selectedIndex} onKeyDown={handleMenuKeydown} onChange={handleChange}>
                     {children}
