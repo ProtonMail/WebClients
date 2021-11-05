@@ -1,6 +1,6 @@
 import { ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
 import { ImportEventError } from '@proton/shared/lib/calendar/icsSurgery/ImportEventError';
-import { processInBatches } from '@proton/shared/lib/calendar/import/encryptAndSubmit';
+import { processWithJails } from '@proton/shared/lib/calendar/import/encryptAndSubmit';
 import {
     extractTotals,
     getSupportedEventsWithRecurrenceId,
@@ -87,7 +87,7 @@ const ImportingModalContent = ({ model, setModel, onFinish }: Props) => {
                     signal,
                     onProgress: handleImportProgress,
                 };
-                const { importedEvents } = await processInBatches(processData);
+                const { importedEvents } = await processWithJails(processData);
                 const formattedEventsWithRecurrenceId = await getSupportedEventsWithRecurrenceId({
                     eventsWithRecurrenceId: withRecurrenceId,
                     parentEvents: importedEvents,
@@ -96,7 +96,7 @@ const ImportingModalContent = ({ model, setModel, onFinish }: Props) => {
                 });
                 const { errors, rest: supportedEventsWithRecurrenceID } = splitErrors(formattedEventsWithRecurrenceId);
                 handleImportProgress([], [], errors);
-                const { importedEvents: recurrenceImportedEvents } = await processInBatches({
+                const { importedEvents: recurrenceImportedEvents } = await processWithJails({
                     ...processData,
                     events: supportedEventsWithRecurrenceID,
                 });
@@ -123,7 +123,7 @@ const ImportingModalContent = ({ model, setModel, onFinish }: Props) => {
             }
         };
 
-        process();
+        void process();
 
         return () => {
             abortController.abort();
