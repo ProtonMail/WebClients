@@ -50,6 +50,7 @@ const localToUtcDate = (date: Date) => new Date(Date.UTC(date.getFullYear(), dat
 
 interface Props {
     calendars?: Calendar[];
+    onCreateCalendarFromSidebar?: (id: string) => void;
     isLoading?: boolean;
     isNarrow?: boolean;
     isBlurred?: boolean;
@@ -75,6 +76,7 @@ interface Props {
 
 const CalendarContainerView = ({
     calendars = [],
+    onCreateCalendarFromSidebar,
     isLoading = false,
     isBlurred = false,
     isNarrow = false,
@@ -391,6 +393,7 @@ const CalendarContainerView = ({
             expanded={expanded}
             onToggleExpand={onToggleExpand}
             onCreateEvent={onCreateEvent ? () => onCreateEvent?.() : undefined}
+            onCreateCalendar={onCreateCalendarFromSidebar}
             miniCalendar={
                 <LocalizedMiniCalendar
                     min={MINIMUM_DATE}
