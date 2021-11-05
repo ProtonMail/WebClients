@@ -28,9 +28,10 @@ import { reportPhishing } from '@proton/shared/lib/api/reports';
 import { deleteMessages } from '@proton/shared/lib/api/messages';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 
+import { useDispatch } from 'react-redux';
+import { DecryptResultPmcrypto } from 'pmcrypto';
 import { MessageExtended, MessageExtendedWithData } from '../../../models/message';
 import MessageHeadersModal from '../modals/MessageHeadersModal';
-import { useAttachmentCache } from '../../../containers/AttachmentProvider';
 import { getDate } from '../../../helpers/elements';
 import { formatFileNameDate } from '../../../helpers/date';
 import MessagePrintModal from '../modals/MessagePrintModal';
@@ -47,6 +48,8 @@ import LabelDropdown from '../../dropdown/LabelDropdown';
 import { useGetMessageKeys } from '../../../hooks/message/useGetMessageKeys';
 import { getDeleteTitle, getModalText, getNotificationText } from '../../../hooks/usePermanentDelete';
 import { isConversationMode } from '../../../helpers/mailSettings';
+import { updateAttachment } from '../../../logic/attachments/attachmentsActions';
+import { useGetAttachment } from '../../../hooks/useAttachment';
 
 const { INBOX, TRASH, SPAM } = MAILBOX_LABEL_IDS;
 
@@ -77,7 +80,8 @@ const HeaderMoreDropdown = ({
 }: Props) => {
     const location = useLocation();
     const api = useApi();
-    const attachmentsCache = useAttachmentCache();
+    const getAttachment = useGetAttachment();
+    const dispatch = useDispatch();
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
     const { createModal } = useModals();
@@ -155,12 +159,16 @@ const HeaderMoreDropdown = ({
         createModal(<MessageHeadersModal message={message.data} />);
     };
 
+    const onUpdateAttachment = (ID: string, attachment: DecryptResultPmcrypto) => {
+        dispatch(updateAttachment({ ID, attachment }));
+    };
+
     const handleExport = async () => {
         // Angular/src/app/message/directives/actionMessage.js
         const messageKeys = await getMessageKeys(message.data as Message);
         const { Subject = '' } = message.data || {};
         const time = formatFileNameDate(getDate(message.data, labelID));
-        const blob = await exportBlob(message, messageKeys, attachmentsCache, api);
+        const blob = await exportBlob(message, messageKeys, getAttachment, onUpdateAttachment, api);
         const filename = `${Subject} ${time}.eml`;
         downloadFile(blob, filename);
     };

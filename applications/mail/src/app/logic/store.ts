@@ -1,15 +1,18 @@
 import { configureStore } from '@reduxjs/toolkit';
 import elements from './elements/elementsSlice';
+import attachments from './attachments/attachmentsSlice';
 
 export const store = configureStore({
     reducer: {
         elements,
+        attachments,
     },
     middleware: (getDefaultMiddleware) =>
         getDefaultMiddleware({
             serializableCheck: {
+                ignoreState: true,
                 // Ignore these field paths in all actions
-                ignoredActionPaths: ['payload.abortController', 'meta.arg.api'],
+                ignoredActionPaths: ['payload.abortController', 'meta.arg.api', 'payload.attachment.data'],
             },
         }),
 });

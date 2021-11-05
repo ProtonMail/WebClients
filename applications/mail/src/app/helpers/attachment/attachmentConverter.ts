@@ -1,7 +1,6 @@
 import { DecryptResultPmcrypto, VERIFICATION_STATUS } from 'pmcrypto';
 import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { ENCRYPTED_STATUS } from '../../constants';
-import { AttachmentsCache } from '../../containers/AttachmentProvider';
 import { AttachmentMime } from '../../models/attachment';
 
 // This prefix is really useful to distinguish 'real' attachments from pgp attachments.
@@ -45,7 +44,7 @@ const convertSingle = (
     parsedAttachment: AttachmentMime,
     number: number,
     verified: number,
-    cache: AttachmentsCache
+    onUpdateAttachment: (ID: string, attachment: DecryptResultPmcrypto) => void
 ): Attachment => {
     const ID = getId(message, parsedAttachment, number);
 
@@ -66,7 +65,7 @@ const convertSingle = (
         verified: VERIFICATION_STATUS.NOT_SIGNED,
     };
 
-    cache.set(ID, attachmentData /* , verified */);
+    onUpdateAttachment(ID, attachmentData /* , verified */);
     // invalidSignature.askAgain(message, attachment, false);
     return attachment;
 };
@@ -78,21 +77,26 @@ export const convert = (
     message: Message,
     attachments: AttachmentMime[],
     verified: number,
-    cache: AttachmentsCache
+    onUpdateAttachment: (ID: string, attachment: DecryptResultPmcrypto) => void
 ): Attachment[] => {
-    return attachments.map((attachment, number) => convertSingle(message, attachment, number, verified, cache));
+    return attachments.map((attachment, number) =>
+        convertSingle(message, attachment, number, verified, onUpdateAttachment)
+    );
 };
 
 /**
  * Considering a Attachment[], will return as is the common attachments
  * But remove from the list and convert the pgp ones by files to upload
  */
-export const convertToFile = (attachments: Attachment[], cache: AttachmentsCache) => {
+export const convertToFile = (
+    attachments: Attachment[],
+    getAttachment: (ID: string) => DecryptResultPmcrypto | undefined
+) => {
     return attachments.reduce<[Attachment[], File[]]>(
         (acc, attachment) => {
             if (attachment.ID?.startsWith(ID_PREFIX)) {
                 acc[1].push(
-                    new File([cache.get(attachment.ID as string)?.data], attachment.Name || '', {
+                    new File([getAttachment(attachment.ID as string)?.data], attachment.Name || '', {
                         type: attachment.MIMEType,
                     })
                 );

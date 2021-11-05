@@ -4,8 +4,8 @@ import { Api } from '@proton/shared/lib/interfaces';
 import { Package, Packages, PackageStatus, SendPreferences } from '@proton/shared/lib/interfaces/mail/crypto';
 import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import { addReceived } from '@proton/shared/lib/mail/messages';
-import { AttachmentsCache } from '../../containers/AttachmentProvider';
 
+import { DecryptResultPmcrypto } from 'pmcrypto';
 import { MessageExtended, MessageKeys } from '../../models/message';
 import { getPlainText } from '../message/messageContent';
 import { prepareExport } from '../message/messageExport';
@@ -23,13 +23,14 @@ const { PLAINTEXT, DEFAULT, MIME } = MIME_TYPES;
 const generateMimePackage = async (
     message: MessageExtended,
     messageKeys: MessageKeys,
-    cache: AttachmentsCache,
+    getAttachment: (ID: string) => DecryptResultPmcrypto | undefined,
+    onUpdateAttachment: (ID: string, attachment: DecryptResultPmcrypto) => void,
     api: Api
 ): Promise<Package> => ({
     Flags: addReceived(message.data?.Flags),
     Addresses: {},
     MIMEType: MIME,
-    Body: await constructMime(message, messageKeys, cache, api),
+    Body: await constructMime(message, messageKeys, getAttachment, onUpdateAttachment, api),
 });
 
 const generatePlainTextPackage = async (message: MessageExtended): Promise<Package> => ({
@@ -56,7 +57,8 @@ export const generateTopPackages = async (
     message: MessageExtended,
     messageKeys: MessageKeys,
     mapSendPrefs: SimpleMap<SendPreferences>,
-    cache: AttachmentsCache,
+    getAttachment: (ID: string) => DecryptResultPmcrypto | undefined,
+    onUpdateAttachment: (ID: string, attachment: DecryptResultPmcrypto) => void,
     api: Api
 ): Promise<Packages> => {
     const packagesStatus: PackageStatus = Object.values(mapSendPrefs)
@@ -85,7 +87,13 @@ export const generateTopPackages = async (
         demandedPackages.map(async (type) => {
             switch (type) {
                 case MIME:
-                    packages[MIME] = await generateMimePackage(message, messageKeys, cache, api);
+                    packages[MIME] = await generateMimePackage(
+                        message,
+                        messageKeys,
+                        getAttachment,
+                        onUpdateAttachment,
+                        api
+                    );
                     return;
                 case PLAINTEXT:
                     packages[PLAINTEXT] = await generatePlainTextPackage(message);

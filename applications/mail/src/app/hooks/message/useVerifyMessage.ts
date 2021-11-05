@@ -1,23 +1,30 @@
-import { getMatchingKey, OpenPGPSignature } from 'pmcrypto';
+import { DecryptResultPmcrypto, getMatchingKey, OpenPGPSignature } from 'pmcrypto';
 import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import { useCallback } from 'react';
 import { useApi, useGetEncryptionPreferences } from '@proton/components';
+import { useDispatch } from 'react-redux';
 import { MessageErrors, MessageExtendedWithData } from '../../models/message';
 import { verifyMessage } from '../../helpers/message/messageDecrypt';
-import { useAttachmentCache } from '../../containers/AttachmentProvider';
 import { updateMessageCache, useMessageCache } from '../../containers/MessageProvider';
 import { useGetMessageKeys } from './useGetMessageKeys';
 import { useContactCache } from '../../containers/ContactProvider';
 import { extractKeysFromAttachments, extractKeysFromAutocrypt } from '../../helpers/message/messageKeys';
 import { isNetworkError } from '../../helpers/errors';
+import { updateAttachment } from '../../logic/attachments/attachmentsActions';
+import { useGetAttachment } from '../useAttachment';
 
 export const useVerifyMessage = (localID: string) => {
     const api = useApi();
     const messageCache = useMessageCache();
-    const attachmentsCache = useAttachmentCache();
+    const getAttachment = useGetAttachment();
+    const dispatch = useDispatch();
     const getEncryptionPreferences = useGetEncryptionPreferences();
     const getMessageKeys = useGetMessageKeys();
     const { contactsMap } = useContactCache();
+
+    const onUpdateAttachment = (ID: string, attachment: DecryptResultPmcrypto) => {
+        dispatch(updateAttachment({ ID, attachment }));
+    };
 
     return useCallback(
         async (decryptedRawContent: Uint8Array = new Uint8Array(), signature?: OpenPGPSignature) => {
@@ -49,7 +56,8 @@ export const useVerifyMessage = (localID: string) => {
                 attachedPublicKeys = await extractKeysFromAttachments(
                     getData().Attachments,
                     messageKeys,
-                    attachmentsCache,
+                    getAttachment,
+                    onUpdateAttachment,
                     api
                 );
                 const autocryptKeys = await extractKeysFromAutocrypt(getData().ParsedHeaders, senderAddress);

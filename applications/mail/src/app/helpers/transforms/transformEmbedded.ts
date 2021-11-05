@@ -1,8 +1,8 @@
 import generateUID from '@proton/shared/lib/helpers/generateUID';
 import { Api, MailSettings } from '@proton/shared/lib/interfaces';
 import { getAttachments, isDraft } from '@proton/shared/lib/mail/messages';
+import { DecryptResultPmcrypto } from 'pmcrypto';
 import { MessageEmbeddedImage, MessageExtended, MessageKeys } from '../../models/message';
-import { AttachmentsCache } from '../../containers/AttachmentProvider';
 import { MessageCache } from '../../containers/MessageProvider';
 import { hasShowEmbedded } from '../mailSettings';
 import { getEmbeddedImages, insertImageAnchor } from '../message/messageImages';
@@ -20,7 +20,8 @@ export const transformEmbedded = async (
     message: MessageExtended,
     messageKeys: MessageKeys,
     messageCache: MessageCache,
-    attachmentsCache: AttachmentsCache,
+    getAttachment: (ID: string) => DecryptResultPmcrypto | undefined,
+    onUpdateAttachment: (ID: string, attachment: DecryptResultPmcrypto) => void,
     api: Api,
     mailSettings: MailSettings | undefined
 ) => {
@@ -79,7 +80,8 @@ export const transformEmbedded = async (
             message.verification,
             messageKeys,
             messageCache,
-            attachmentsCache,
+            getAttachment,
+            onUpdateAttachment,
             api
         );
         embeddedImages = updatedImages;

@@ -142,7 +142,7 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
                 onPage(count - 1);
             }
         }
-    }, [page, partialESSearch, expectingEmpty, loadedEmpty]);
+    }, [page, partialESSearch, expectingEmpty, loadedEmpty, dynamicTotal]);
 
     useEffect(() => {
         if (stateInconsistency) {
