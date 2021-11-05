@@ -2,7 +2,6 @@ import {
     AnimationEvent,
     ComponentPropsWithoutRef,
     createContext,
-    ReactNode,
     useEffect,
     useLayoutEffect,
     useState,
@@ -17,27 +16,23 @@ import useModalPosition from './useModalPosition';
 import Backdrop from './Backdrop';
 import './Modal.scss';
 
+export type ModalSize = 'small' | 'medium' | 'large' | 'full';
+
 /**
  * Omission of id from ModalOwnProps because in ModalOwnProps "id"
  * is optional, wheveas in ModalContextValue it is guaranteed.
+ * Same for size.
  */
-type ModalContextValue = Omit<ModalOwnProps, 'id'> & { id: string };
+type ModalContextValue = ModalOwnProps & { id: string; size: ModalSize };
 
 export const ModalContext = createContext({} as ModalContextValue);
-
-const ModalProvider = ({ children, ...rest }: ModalContextValue & { children: ReactNode }) => {
-    return <ModalContext.Provider value={rest}>{children}</ModalContext.Provider>;
-};
 
 interface ModalOwnProps {
     /**
      * Whether the modal is open or not.
      */
     open?: boolean;
-    small?: boolean;
-    medium?: boolean;
-    large?: boolean;
-    full?: boolean;
+    size?: ModalSize;
     fullscreenOnMobile?: boolean;
     /**
      * Disables closing the modal by pressing the 'Escape' key.
@@ -46,7 +41,7 @@ interface ModalOwnProps {
     /**
      * Optional id to overwrite the internally generated id, which
      * is used for accessibility purposes (e.g.aria-labelledby & id
-     * of the ModalTitle or the Title in ModalHeader)
+     * of the Title in ModalHeader)
      */
     id?: string;
     /**
@@ -65,21 +60,17 @@ type DivProps = ComponentPropsWithoutRef<'div'>;
 
 export type ModalProps = ModalOwnProps & Omit<DivProps, 'id'>;
 
-const Modal = (props: ModalProps) => {
-    const {
-        open,
-        small,
-        large,
-        full,
-        fullscreenOnMobile,
-        onClose,
-        onExit,
-        disableCloseOnEscape,
-        className,
-        children,
-        ...rest
-    } = props;
-
+const Modal = ({
+    open,
+    size = 'medium',
+    fullscreenOnMobile,
+    onClose,
+    onExit,
+    disableCloseOnEscape,
+    className,
+    children,
+    ...rest
+}: ModalProps) => {
     const { first, last } = useModalPosition(open || false);
     const [exiting, setExiting] = useState(false);
     const id = useInstance(() => generateUID('modal'));
@@ -92,9 +83,7 @@ const Modal = (props: ModalProps) => {
     const modalContextValue: ModalContextValue = {
         id,
         open,
-        small,
-        large,
-        full,
+        size,
         onClose,
         disableCloseOnEscape,
     };
@@ -146,9 +135,9 @@ const Modal = (props: ModalProps) => {
     const dialogClassName = classnames([
         'modal-two-dialog',
         className,
-        small && 'modal-two-dialog--small',
-        large && 'modal-two-dialog--large',
-        full && 'modal-two-dialog--full',
+        size === 'small' && 'modal-two-dialog--small',
+        size === 'large' && 'modal-two-dialog--large',
+        size === 'full' && 'modal-two-dialog--full',
     ]);
 
     return (
@@ -167,7 +156,7 @@ const Modal = (props: ModalProps) => {
                     {...rest}
                     {...focusTrapProps}
                 >
-                    <ModalProvider {...modalContextValue}>{children}</ModalProvider>
+                    <ModalContext.Provider value={modalContextValue}>{children}</ModalContext.Provider>
                 </dialog>
             </div>
         </Portal>
