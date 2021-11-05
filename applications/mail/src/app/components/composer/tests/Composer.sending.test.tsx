@@ -20,13 +20,14 @@ import {
     decryptMessageMultipart,
     createDocument,
     createAttachment,
-    attachmentsCache,
     clearAll,
     addApiMock,
     createEmbeddedImage,
     createMessageImages,
 } from '../../../helpers/test/helper';
 import { clickSend, ID, prepareMessage, renderComposer, send, setHTML } from './Composer.test.helpers';
+import { addAttachment } from '../../../logic/attachments/attachmentsActions';
+import { store } from '../../../logic/store';
 
 loudRejection();
 
@@ -395,7 +396,7 @@ describe('Composer sending', () => {
             });
 
             addApiKeys(false, toAddress, [toKeys]);
-            attachmentsCache.set(attachment.ID as string, {} as DecryptResultPmcrypto);
+            store.dispatch(addAttachment({ ID: attachment.ID as string, attachment: {} as DecryptResultPmcrypto }));
 
             const sendRequest = await send(message);
 

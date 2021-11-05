@@ -4,7 +4,7 @@ import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message'
 import { MessageExtended, MessageImage, MessageKeys } from '../../../models/message';
 import { transformEmbedded } from '../transformEmbedded';
 import { createDocument } from '../../test/message';
-import { attachmentsCache, messageCache } from '../../test/cache';
+import { messageCache } from '../../test/cache';
 import { api } from '../../test/api';
 
 const messageKeys = {} as MessageKeys;
@@ -15,7 +15,7 @@ const mailSettings = {
 
 describe('transformEmbedded', () => {
     const setup = (message: MessageExtended) => {
-        return transformEmbedded(message, messageKeys, messageCache, attachmentsCache, api, mailSettings);
+        return transformEmbedded(message, messageKeys, messageCache, jest.fn(), jest.fn(), api, mailSettings);
     };
 
     it('should detect cid embedded images', async () => {
