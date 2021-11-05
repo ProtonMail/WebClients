@@ -35,7 +35,7 @@ const AccountEasySwitchSection = () => {
         <SettingsSectionWide>
             <SettingsParagraph>
                 {c('Info')
-                    .t`Effortlessly and securely move your emails from your current provider to Proton. If you use Google, we also support calendar, and contacts imports.`}
+                    .t`Effortlessly and securely move your emails from your current provider to Proton. If you use Google, we also support calendar and contacts imports.`}
             </SettingsParagraph>
 
             <div className="mb1 text-bold">{c('Info').t`Select a service provider to get started`}</div>
