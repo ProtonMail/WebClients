@@ -56,7 +56,6 @@ export enum FeatureCode {
     SpyTrackerProtectionIncorporator = 'SpyTrackerProtectionIncorporator',
     SpotlightSpyTrackerProtection = 'SpotlightSpyTrackerProtection',
     EasySwitch = 'EasySwitch',
-    VisitedRecoveryPage = 'VisitedRecoveryPage',
 }
 
 export interface FeaturesContextValue {

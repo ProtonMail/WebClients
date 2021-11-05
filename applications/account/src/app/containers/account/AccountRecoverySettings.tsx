@@ -1,11 +1,5 @@
-import { useEffect, useState } from 'react';
-import {
-    FeatureCode,
-    SectionConfig,
-    SettingsPropsShared,
-    useFeature,
-    useIsDataRecoveryAvailable,
-} from '@proton/components';
+import { useState } from 'react';
+import { SectionConfig, SettingsPropsShared, useIsDataRecoveryAvailable } from '@proton/components';
 import { c } from 'ttag';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import { UserModel } from '@proton/shared/lib/interfaces';
@@ -56,16 +50,7 @@ const AccountRecoverySettings = ({ location, setActiveSection }: SettingsPropsSh
         return new URLSearchParams(location.search).get('action');
     });
 
-    const { feature: hasVisitedRecoveryPage, update: setVisitedRecoveryPage } = useFeature(
-        FeatureCode.VisitedRecoveryPage
-    );
     const [isDataRecoveryAvailable] = useIsDataRecoveryAvailable();
-
-    useEffect(() => {
-        if (hasVisitedRecoveryPage?.Value === false) {
-            void setVisitedRecoveryPage(true);
-        }
-    }, [hasVisitedRecoveryPage]);
 
     return (
         <PrivateMainSettingsAreaWithPermissions
