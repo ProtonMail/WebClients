@@ -21,7 +21,8 @@ export const fetchCalendarEvents = (
     calendarEventsCache: CalendarEventsCache,
     api: Api,
     calendarID: string,
-    tzid: string
+    tzid: string,
+    noFetch: boolean
 ) => {
     const existingFetch = getExistingFetch(dateRange, calendarEventsCache);
 
@@ -29,9 +30,12 @@ export const fetchCalendarEvents = (
 
     if (!existingFetch) {
         const fetchId = generateProtonCalendarUID();
-        const promise = getPaginatedEvents(api, calendarID, dateRange, tzid, (Event) =>
-            upsertCalendarApiEvent(Event, calendarEventsCache)
-        )
+        const getEventsPromise = noFetch
+            ? Promise.resolve([])
+            : getPaginatedEvents(api, calendarID, dateRange, tzid, (Event) =>
+                  upsertCalendarApiEvent(Event, calendarEventsCache)
+              );
+        const promise = getEventsPromise
             .then(() => {
                 if (fetchCache.get(fetchId)?.promise !== promise) {
                     return;

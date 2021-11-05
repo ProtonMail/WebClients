@@ -18,6 +18,7 @@ const CALENDAR_URL_MAX_LENGTH = 10000;
 
 interface Props {
     onClose?: () => void;
+    onCreateCalendar?: (id: string) => void;
 }
 
 const SubscribeCalendarModal = ({ ...rest }: Props) => {
@@ -47,6 +48,7 @@ const SubscribeCalendarModal = ({ ...rest }: Props) => {
         setCalendar,
         setError,
         onClose: rest?.onClose,
+        onCreateCalendar: rest?.onCreateCalendar,
         isOtherCalendar: true,
     });
 

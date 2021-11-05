@@ -10,7 +10,9 @@ const useCalendarsEventsFetcher = (
     requestedCalendars: Calendar[],
     utcDateRange: [Date, Date],
     tzid: string,
-    cacheRef: MutableRefObject<CalendarsEventsCache>
+    cacheRef: MutableRefObject<CalendarsEventsCache>,
+    initializeCacheOnlyCalendarsIDs: string[],
+    onCacheInitialized: () => void
 ) => {
     const [loading, setLoading] = useState(false);
     const api = useApi();
@@ -23,7 +25,14 @@ const useCalendarsEventsFetcher = (
                     calendarEventsCache = getCalendarEventsCache();
                     cacheRef.current.calendars[CalendarID] = calendarEventsCache;
                 }
-                return fetchCalendarEvents(utcDateRange, calendarEventsCache, api, CalendarID, tzid);
+                return fetchCalendarEvents(
+                    utcDateRange,
+                    calendarEventsCache,
+                    api,
+                    CalendarID,
+                    tzid,
+                    initializeCacheOnlyCalendarsIDs.includes(CalendarID)
+                );
             })
             .filter(isTruthy);
 
@@ -36,6 +45,8 @@ const useCalendarsEventsFetcher = (
         const done = () => {
             if (isActive) {
                 setLoading(false);
+                // even if some promise is rejected, consider cache initialized
+                onCacheInitialized();
             }
         };
 

@@ -28,6 +28,7 @@ interface Props {
     setError: Dispatch<SetStateAction<boolean>>;
     defaultCalendarID?: string | null;
     onClose?: () => void;
+    onCreateCalendar?: (id: string) => void;
     activeCalendars?: Calendar[];
     isOtherCalendar?: boolean;
 }
@@ -38,6 +39,7 @@ const useGetCalendarActions = ({
     setError,
     defaultCalendarID,
     onClose,
+    onCreateCalendar,
     activeCalendars,
     isOtherCalendar = false,
 }: Props) => {
@@ -84,6 +86,7 @@ const useGetCalendarActions = ({
             throw e;
         });
 
+        onCreateCalendar?.(newCalendarID);
         // Set the calendar in case one of the following calls fails so that it ends up in the update function after this.
         setCalendar(Calendar);
 

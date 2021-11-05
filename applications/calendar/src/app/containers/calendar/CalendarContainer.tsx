@@ -240,11 +240,14 @@ const CalendarContainer = ({
 
     useAppTitle(calendarTitle);
 
+    const [initializeCacheOnlyCalendarsIDs, setInitializeCacheOnlyCalendarsIDs] = useState<string[]>([]);
     const [calendarsEvents, loadingEvents] = useCalendarsEvents(
         visibleCalendars,
         utcDateRangeInTimezone,
         tzid,
-        calendarsEventsCacheRef
+        calendarsEventsCacheRef,
+        initializeCacheOnlyCalendarsIDs,
+        () => setInitializeCacheOnlyCalendarsIDs([])
     );
 
     const scrollToNow = useCallback(() => {
@@ -308,6 +311,7 @@ const CalendarContainer = ({
     return (
         <CalendarContainerView
             calendars={calendars}
+            onCreateCalendarFromSidebar={(id: string) => setInitializeCacheOnlyCalendarsIDs([id])}
             isLoading={isLoading}
             displayWeekNumbers={displayWeekNumbers}
             weekStartsOn={weekStartsOn}
