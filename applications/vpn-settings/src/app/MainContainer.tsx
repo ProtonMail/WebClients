@@ -19,6 +19,7 @@ import {
     AuthenticatedBugModal,
     useModals,
     useUserSettings,
+    useSubscription,
 } from '@proton/components';
 import { hasPermission } from '@proton/shared/lib/helpers/permissions';
 import LiveChatZendesk, {
@@ -38,6 +39,8 @@ import TVContainer from './containers/TVContainer';
 
 const MainContainer = () => {
     const [user] = useUser();
+    const [subscription, loadingSubscription] = useSubscription();
+    const [subscriptionsArray, setSubscriptionsArray] = useState(['']);
     const [userSettings] = useUserSettings();
     const history = useHistory();
     const { state: expanded, toggle: onToggleExpand, set: setExpand } = useToggle();
@@ -52,6 +55,14 @@ const MainContainer = () => {
     const zendeskRef = useRef<ZendeskRef>();
     const [showChat, setShowChat] = useState({ autoToggle: false, render: false });
     const canEnableChat = useCanEnableChat(user);
+
+    useEffect(() => {
+        if (loadingSubscription || !canEnableChat) {
+            return;
+        }
+        const subscriptionUserPaid: string[] = subscription.Plans.map((user) => user.Name);
+        setSubscriptionsArray(subscriptionUserPaid);
+    }, [subscription]);
 
     useEffect(() => {
         const searchParams = new URLSearchParams(location.search);
@@ -164,6 +175,7 @@ const MainContainer = () => {
                     </Switch>
                     {showChat.render && canEnableChat ? (
                         <LiveChatZendesk
+                            subscription={subscriptionsArray}
                             zendeskRef={zendeskRef}
                             zendeskKey="52184d31-aa98-430f-a86c-b5a93235027a"
                             name={user.DisplayName || user.Name}
