@@ -5,13 +5,9 @@ import { ModalContext } from './Modal';
 import './ModalFooter.scss';
 
 const ModalFooter = ({ className: classNameProp, ...rest }: ComponentPropsWithoutRef<'div'>) => {
-    const { full } = useContext(ModalContext);
+    const { size } = useContext(ModalContext);
 
-    const className = classnames([
-        classNameProp,
-        'modal-two-footer flex-item-noshrink flex',
-        full && 'modal-two-footer--full',
-    ]);
+    const className = classnames([classNameProp, 'modal-two-footer', size === 'full' && 'modal-two-footer--full']);
 
     return <div className={className} {...rest} />;
 };
