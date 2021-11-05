@@ -15,7 +15,15 @@ import {
 } from '@proton/shared/lib/interfaces/EasySwitch';
 
 import { Alert, ConfirmModal, DropdownActions, Button } from '../../../components';
-import { useApi, useLoading, useEventManager, useModals, useNotifications, useAddresses } from '../../../hooks';
+import {
+    useApi,
+    useLoading,
+    useEventManager,
+    useModals,
+    useNotifications,
+    useAddresses,
+    useRemoteConfig,
+} from '../../../hooks';
 import useOAuthPopup from '../../../hooks/useOAuthPopup';
 import {
     G_OAUTH_SCOPE_CALENDAR,
@@ -44,6 +52,8 @@ const ActiveImportRowActions = ({ activeImport }: Props) => {
     const [loadingPrimaryAction, withLoadingPrimaryAction] = useLoading();
     const [loadingSecondaryAction, withLoadingSecondaryAction] = useLoading();
 
+    const [config] = useRemoteConfig();
+
     const handleReconnectOAuth = async (ImporterID: string) => {
         const scopes = [
             ...G_OAUTH_SCOPE_DEFAULT,
@@ -57,6 +67,7 @@ const ActiveImportRowActions = ({ activeImport }: Props) => {
 
         triggerOAuthPopup({
             provider: OAUTH_PROVIDER.GOOGLE,
+            client_id: config['importer.google.client_id'],
             scope: scopes.join(' '),
             callback: async ({ Code, Provider, RedirectUri }: OAuthProps) => {
                 const { Token }: { Token: ImportToken } = await api(
