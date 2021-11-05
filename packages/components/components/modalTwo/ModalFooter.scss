@@ -1,9 +1,15 @@
 @import '~@proton/styles/scss/config';
 
 .modal-two-footer {
+	display: flex;
 	margin: 1em var(--margin) calc(var(--margin) - 0.5em) var(--margin);
 	justify-content: space-between;
 	flex-wrap: wrap-reverse;
+
+	@include respond-to($breakpoint-tiny) {
+		flex-direction: column-reverse;
+		align-items: stretch;
+	}
 
 	&--full {
 		@include respond-to($breakpoint-tiny, 'min') {
