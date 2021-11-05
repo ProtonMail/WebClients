@@ -16,3 +16,4 @@ export { CalendarUserSettingsModel } from './calendarSettingsModel';
 export { ConversationCountsModel } from './conversationCountsModel';
 export { MessageCountsModel } from './messageCountsModel';
 export { ImportersModel, ImportReportsModel } from './importersModel';
+export { RemoteConfigModel } from './remoteConfigModel';
