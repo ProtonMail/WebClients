@@ -1,8 +1,10 @@
 import React, { ComponentPropsWithRef, useContext } from 'react';
+import { c } from 'ttag';
 
 import { classnames } from '../../helpers';
 import { Icon } from '../icon';
 import { Button } from '../button';
+import { Tooltip } from '../tooltip';
 import { Vr } from '../vr';
 import { ModalContext } from './Modal';
 import './ModalHeader.scss';
@@ -26,7 +28,7 @@ interface ModalHeaderProps extends Omit<ComponentPropsWithRef<'div'>, 'children'
 }
 
 const ModalHeader = ({ title, subline, actions, ...rest }: ModalHeaderProps) => {
-    const { id, onClose, large, full } = useContext(ModalContext);
+    const { id, onClose, size } = useContext(ModalContext);
 
     const [firstAction, secondAction] = Array.isArray(actions) ? actions : [actions];
 
@@ -40,7 +42,13 @@ const ModalHeader = ({ title, subline, actions, ...rest }: ModalHeaderProps) => 
         >
             {title && (
                 <div className="modal-two-header-title mt0-25">
-                    <h3 id={id} className={classnames(['text-bold', large || full ? 'text-2xl' : 'text-xl'])}>
+                    <h3
+                        id={id}
+                        className={classnames([
+                            'text-bold',
+                            ['large', 'full'].includes(size) ? 'text-4xl' : 'text-2xl',
+                        ])}
+                    >
                         {title}
                     </h3>
                     {subline && <div className="color-weak">{subline}</div>}
@@ -56,9 +64,11 @@ const ModalHeader = ({ title, subline, actions, ...rest }: ModalHeaderProps) => 
                     </>
                 )}
 
-                <Button className="flex-item-noshrink" icon shape="ghost" onClick={onClose}>
-                    <Icon className="modal-close-icon" name="xmark" />
-                </Button>
+                <Tooltip title={c('Action').t`Close modal`}>
+                    <Button className="flex-item-noshrink" icon shape="ghost" onClick={onClose}>
+                        <Icon className="modal-close-icon" name="xmark" />
+                    </Button>
+                </Tooltip>
             </div>
         </div>
     );

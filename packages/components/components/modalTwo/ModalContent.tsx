@@ -10,11 +10,7 @@ const ModalContent = ({ className, ...rest }: ComponentPropsWithoutRef<'div'>) =
 
     return (
         <Scroll className="overflow-hidden">
-            <div
-                id={`${id}-description`}
-                className={classnames([className, 'modal-two-content mt0-5 mb1'])}
-                {...rest}
-            />
+            <div id={`${id}-description`} className={classnames([className, 'modal-two-content'])} {...rest} />
         </Scroll>
     );
 };
