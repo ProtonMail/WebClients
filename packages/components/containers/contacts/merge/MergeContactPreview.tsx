@@ -7,14 +7,15 @@ import { prepareContact } from '@proton/shared/lib/contacts/decrypt';
 import { noop } from '@proton/shared/lib/helpers/function';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { DecryptedKey } from '@proton/shared/lib/interfaces';
-import { ContactProperties, ContactMergeModel } from '@proton/shared/lib/interfaces/contacts';
+import { ContactProperties, ContactMergeModel, ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import { merge } from '@proton/shared/lib/contacts/helpers/merge';
 
-import { useApi, useLoading, useEventManager, useContactEmails, useAddresses, useContactGroups } from '../../../hooks';
+import { useApi, useLoading, useEventManager, useAddresses, useContactGroups } from '../../../hooks';
 import { Loader, FormModal, PrimaryButton, Button } from '../../../components';
 import ContactView from '../ContactView';
 import MergeErrorContent from './MergeErrorContent';
 import MergingModalContent from './MergingModalContent';
+import useContactList from '../useContactList';
 
 interface Props extends ComponentProps<typeof FormModal> {
     userKeysList: DecryptedKey[];
@@ -27,8 +28,6 @@ const MergeContactPreview = ({ userKeysList, beMergedModel, beDeletedModel, upda
     const { call } = useEventManager();
     const api = useApi();
     const { privateKeys, publicKeys } = useMemo(() => splitKeys(userKeysList), []);
-
-    const [contactEmails, loadingContactEmails] = useContactEmails();
 
     const [addresses = [], loadingAddresses] = useAddresses();
     const ownAddresses = useMemo(() => addresses.map(({ Email }) => Email), [addresses]);
@@ -47,6 +46,9 @@ const MergeContactPreview = ({ userKeysList, beMergedModel, beDeletedModel, upda
 
     const [beMergedIDs] = Object.values(beMergedModel);
     const beDeletedIDs = Object.keys(beDeletedModel);
+
+    const { loading: loadingContacts, contactEmailsMap } = useContactList({});
+    const contactEmails = beMergedIDs.flatMap((contactID) => contactEmailsMap[contactID] as ContactEmail[]);
 
     const handleRemoveMerged = () => {
         const beRemovedIDs = beMergedIDs.slice(1).concat(beDeletedIDs);
@@ -89,7 +91,7 @@ const MergeContactPreview = ({ userKeysList, beMergedModel, beDeletedModel, upda
                 </PrimaryButton>
             );
             const content = (() => {
-                if (loadingContactEmails || loadingAddresses || loadingContactGroups || loading) {
+                if (loadingContacts || loadingAddresses || loadingContactGroups || loading) {
                     return <Loader />;
                 }
                 if (model.errorOnLoad || model.errorOnMerge) {
