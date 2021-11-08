@@ -103,7 +103,7 @@ export { default as useSpotlightOnFeature } from './useSpotlightOnFeature';
 export { default as useStep } from './useStep';
 export { default as useSubscription } from './useSubscription';
 export { default as useSvgGraphicsBbox } from './useSvgGraphicsBbox';
-export { default as useSystemConfig } from './useSystemConfig';
+export { default as useApiEnvironmentConfig } from './useApiEnvironmentConfig';
 export { default as useToggle } from './useToggle';
 export { default as useTraceUpdate } from './useTraceUpdate';
 export { default as useUser, useGetUser } from './useUser';

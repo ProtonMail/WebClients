@@ -22,7 +22,7 @@ import {
     useModals,
     useNotifications,
     useAddresses,
-    useSystemConfig,
+    useApiEnvironmentConfig,
 } from '../../../hooks';
 import useOAuthPopup from '../../../hooks/useOAuthPopup';
 import {
@@ -39,7 +39,7 @@ interface Props {
 }
 
 const ActiveImportRowActions = ({ activeImport }: Props) => {
-    const { ID, Active, Product, Sasl } = activeImport;
+    const { ID, Active, Product, Account, Sasl } = activeImport;
     const { State, ErrorCode } = Active || {};
 
     const { triggerOAuthPopup } = useOAuthPopup();
@@ -52,7 +52,7 @@ const ActiveImportRowActions = ({ activeImport }: Props) => {
     const [loadingPrimaryAction, withLoadingPrimaryAction] = useLoading();
     const [loadingSecondaryAction, withLoadingSecondaryAction] = useLoading();
 
-    const [config] = useSystemConfig();
+    const [config, loadingConfig] = useApiEnvironmentConfig();
 
     const handleReconnectOAuth = async (ImporterID: string) => {
         const scopes = [
@@ -67,7 +67,8 @@ const ActiveImportRowActions = ({ activeImport }: Props) => {
 
         triggerOAuthPopup({
             provider: OAUTH_PROVIDER.GOOGLE,
-            client_id: config['importer.google.client_id'],
+            clientID: config['importer.google.client_id'],
+            loginHint: Account,
             scope: scopes.join(' '),
             callback: async ({ Code, Provider, RedirectUri }: OAuthProps) => {
                 const { Token }: { Token: ImportToken } = await api(
@@ -151,7 +152,7 @@ const ActiveImportRowActions = ({ activeImport }: Props) => {
 
                 return withLoadingSecondaryAction(handleResume(ID));
             },
-            loading: loadingSecondaryAction,
+            loading: loadingConfig || loadingSecondaryAction,
             disabled: loadingAddresses,
         });
     }
