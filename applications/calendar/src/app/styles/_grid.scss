@@ -92,6 +92,8 @@
 		inset-inline-start: 0;
 		inset-inline-end: -$calendar-gridcell-margin;
 		border-block-end: 2px solid var(--primary);
+		box-shadow: var(--shadow-norm);
+		pointer-events: none;
 
 		&::before {
 			content: '';
