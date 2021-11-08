@@ -40,7 +40,7 @@ import TVContainer from './containers/TVContainer';
 const MainContainer = () => {
     const [user] = useUser();
     const [subscription, loadingSubscription] = useSubscription();
-    const [subscriptionsArray, setSubscriptionsArray] = useState(['']);
+    const [tagsArray, setTagsArray] = useState<string[]>([]);
     const [userSettings] = useUserSettings();
     const history = useHistory();
     const { state: expanded, toggle: onToggleExpand, set: setExpand } = useToggle();
@@ -60,8 +60,8 @@ const MainContainer = () => {
         if (loadingSubscription || !canEnableChat) {
             return;
         }
-        const subscriptionUserPaid: string[] = subscription.Plans.map((user) => user.Name);
-        setSubscriptionsArray(subscriptionUserPaid);
+        const subscriptionUserPaid: string[] = subscription.Plans.map((plan) => plan.Name);
+        setTagsArray(subscriptionUserPaid);
     }, [subscription]);
 
     useEffect(() => {
@@ -175,7 +175,7 @@ const MainContainer = () => {
                     </Switch>
                     {showChat.render && canEnableChat ? (
                         <LiveChatZendesk
-                            subscription={subscriptionsArray}
+                            tags={tagsArray}
                             zendeskRef={zendeskRef}
                             zendeskKey="52184d31-aa98-430f-a86c-b5a93235027a"
                             name={user.DisplayName || user.Name}
