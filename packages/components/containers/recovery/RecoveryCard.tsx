@@ -88,7 +88,7 @@ const RecoveryCard = ({ ids }: Props) => {
                     {accountRecoveryStatus !== 'complete' && (
                         <ul className="unstyled ml4">
                             <li className="flex flex-align-items-center flex-nowrap">
-                                <span className="mr0-5">{c('Info').t`Add and verify a recovery email address`}</span>
+                                <span className="mr0-5">{c('Info').t`Add a recovery email address`}</span>
                                 <ButtonLike
                                     className="flex-item-noshrink"
                                     as={SettingsLink}
