@@ -1,11 +1,15 @@
-import { MouseEvent } from 'react';
 import { c } from 'ttag';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
-import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import { useNotifications } from '../../hooks';
-import { InputFieldTwo, TextAreaTwo, Button } from '../../components';
+import { Copy, InputFieldTwo, TextAreaTwo, Button } from '../../components';
 
 export const MnemonicPhraseStepContent = ({ mnemonic }: { mnemonic: string }) => {
+    const { createNotification } = useNotifications();
+
+    const onCopy = () => {
+        createNotification({ text: c('Info').t`Recovery phrase copied to clipboard` });
+    };
+
     return (
         <>
             <p className="mt0">{c('Info').t`Your recovery phrase is a series of 12 words in a specific order.`}</p>
@@ -24,23 +28,21 @@ export const MnemonicPhraseStepContent = ({ mnemonic }: { mnemonic: string }) =>
                 placeholder={c('Label').t`Your recovery phrase`}
                 value={mnemonic}
                 autoFocus
+                hint={<Copy value={mnemonic} onCopy={onCopy} />}
             />
         </>
     );
 };
 
-export const MnemonicPhraseStepButtons = ({ mnemonic }: { mnemonic: string }) => {
-    const { createNotification } = useNotifications();
+interface MnemonicPhraseStepButtonsProps {
+    mnemonic: string;
+    onDone: () => void;
+}
 
+export const MnemonicPhraseStepButtons = ({ mnemonic, onDone }: MnemonicPhraseStepButtonsProps) => {
     const handleDownload = async () => {
         const blob = new Blob([mnemonic], { type: 'text/plain;charset=utf-8' });
         downloadFile(blob, `proton_recovery_phrase.txt`);
-    };
-
-    const handleCopy = (event: MouseEvent<HTMLButtonElement>) => {
-        event.stopPropagation();
-        textToClipboard(mnemonic, event.currentTarget);
-        createNotification({ text: c('Info').t`Recovery phrase copied to clipboard` });
     };
 
     return (
@@ -48,8 +50,8 @@ export const MnemonicPhraseStepButtons = ({ mnemonic }: { mnemonic: string }) =>
             <Button onClick={handleDownload} fullWidth color="norm">
                 {c('Action').t`Download`}
             </Button>
-            <Button className="mt1" onClick={handleCopy} fullWidth>
-                {c('Action').t`Copy to clipboard`}
+            <Button className="mt1" onClick={onDone} fullWidth>
+                {c('Action').t`Done`}
             </Button>
         </div>
     );
