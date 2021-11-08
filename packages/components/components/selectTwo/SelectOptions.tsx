@@ -1,6 +1,14 @@
-import { Children, cloneElement, ComponentPropsWithoutRef, KeyboardEvent, ReactElement, useContext } from 'react';
+import {
+    Children,
+    cloneElement,
+    ComponentPropsWithoutRef,
+    isValidElement,
+    KeyboardEvent,
+    ReactElement,
+    useContext,
+} from 'react';
 
-import { Props as OptionProps } from '../option/Option';
+import Option, { Props as OptionProps } from '../option/Option';
 import { SelectChangeEvent } from './select';
 import { SelectContext } from './useSelect';
 
@@ -55,13 +63,23 @@ const SelectOptions = <V,>({
         handleChange({ value, selectedIndex: index });
     };
 
+    const optionIndices = Children.toArray(children).reduce<number[]>((acc, child, index) => {
+        return isValidElement(child) && child.type === Option ? [...acc, index] : acc;
+    }, []);
+
     const items = Children.map(children, (child, index) => {
-        return cloneElement(child, {
-            disableFocusOnActive,
-            selected: selected === index,
-            active: focusedIndex === index,
-            onChange: handleChildChange(index),
-        });
+        const localIndex = optionIndices.indexOf(index);
+
+        if (optionIndices.includes(index)) {
+            return cloneElement(child, {
+                disableFocusOnActive,
+                selected: selected === localIndex,
+                active: focusedIndex === localIndex,
+                onChange: handleChildChange(localIndex),
+            });
+        }
+
+        return child;
     });
 
     return (
