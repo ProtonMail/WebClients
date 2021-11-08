@@ -40,7 +40,6 @@ const CustomizeCalendarImportRow = ({
                     value={value}
                     onChange={({ value }) => updateCalendarMapping(calendar.ID, value)}
                     className={classnames([calendarLimitReached && 'border--danger'])}
-                    enableDefaultArrowNavigation
                 >
                     {[
                         <li className="dropdown-item" key="label-create">
