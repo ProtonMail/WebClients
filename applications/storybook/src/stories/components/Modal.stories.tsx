@@ -49,9 +49,8 @@ export const Primary = () => {
                 open={open}
                 onClose={() => setOpen(false)}
             >
-                <ModalTwoHeader />
+                <ModalTwoHeader title="Size" />
                 <ModalTwoContent>
-                    <ModalTwoTitle>Size</ModalTwoTitle>
                     <p>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium unde, blanditiis rem
                         accusamus obcaecati enim amet, voluptatibus nemo facilis illum aut itaque in? Deleniti iure amet
@@ -90,11 +89,7 @@ export const Header = () => {
                 Open modal with header extras
             </Button>
             <ModalTwo open={open} onClose={() => setOpen(false)}>
-                <ModalTwoHeader
-                    title="Title in ModalHeader"
-                    subline="Subline in ModalHeader"
-                    onBack={() => window.alert('ModalHeader.onBack fired')}
-                />
+                <ModalTwoHeader title="Title in ModalHeader" subline="Subline in ModalHeader" />
                 <ModalTwoContent>
                     <ModalTwoTitle>Title h3 in content</ModalTwoTitle>
                     <p className="m0">

@@ -1,0 +1,32 @@
+.modal-two-backdrop {
+	position: fixed;
+	z-index: 666;
+	inset: 0;
+	background: var(--backdrop-norm);
+	animation: 0.1s ease-out forwards;
+	animation-name: anime-modal-two-backdrop-in;
+
+	&--out {
+		animation-name: anime-modal-two-backdrop-out;
+	}
+
+	@keyframes anime-modal-two-backdrop-in {
+		from {
+			opacity: 0;
+		}
+
+		to {
+			opacity: 1;
+		}
+	}
+
+	@keyframes anime-modal-two-backdrop-out {
+		from {
+			opacity: 1;
+		}
+
+		to {
+			opacity: 0;
+		}
+	}
+}

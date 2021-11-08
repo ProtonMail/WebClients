@@ -6,6 +6,8 @@ import Portal from '../portal/Portal';
 import { classnames } from '../../helpers';
 import { useFocusTrap } from '../focus';
 import { useHotkeys } from '../../hooks';
+import useModalPosition from '../modalTwo/useModalPosition';
+import Backdrop from '../modalTwo/Backdrop';
 
 const CLASSES = {
     MODAL: 'modal',
@@ -30,11 +32,6 @@ const Dialog = ({
     small: isSmall = false,
     tiny: isTiny = false,
     isClosing = false,
-    // eslint-disable-next-line no-unused-vars,@typescript-eslint/no-unused-vars
-    isFirst = false,
-    // eslint-disable-next-line no-unused-vars,@typescript-eslint/no-unused-vars
-    isLast = false,
-    isBehind = false,
     modalTitleID,
     children,
     className: extraClassNames = '',
@@ -45,6 +42,7 @@ const Dialog = ({
     const hasCalledExit = useRef(false);
     const hasCalledClose = useRef(false);
     const focusTrapProps = useFocusTrap({ rootRef });
+    const { first, last } = useModalPosition(true);
 
     useLayoutEffect(() => {
         hasCalledClose.current = isClosing;
@@ -76,7 +74,9 @@ const Dialog = ({
 
     return (
         <Portal>
-            <div className={classnames([dialogRootClassName, isBehind && 'modal-container--in-background'])}>
+            {first && <Backdrop exiting={isClosing} />}
+
+            <div className={classnames([dialogRootClassName])} style={{ '--z-position': last ? 1 : -1 }}>
                 <dialog
                     aria-labelledby={modalTitleID}
                     aria-modal="true"
@@ -119,9 +119,6 @@ Dialog.propTypes = {
     modalTitleID: PropTypes.string.isRequired,
     className: PropTypes.string,
     small: PropTypes.bool,
-    isBehind: PropTypes.bool,
-    isFirst: PropTypes.bool,
-    isLast: PropTypes.bool,
     isClosing: PropTypes.bool,
     disableCloseOnOnEscape: PropTypes.bool,
 };

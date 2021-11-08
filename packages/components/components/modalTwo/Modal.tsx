@@ -13,6 +13,8 @@ import { useChanged, useInstance } from '../../hooks';
 import { classnames, generateUID } from '../../helpers';
 import { useFocusTrap } from '../focus';
 import { Portal } from '../portal';
+import useModalPosition from './useModalPosition';
+import Backdrop from './Backdrop';
 import './Modal.scss';
 
 /**
@@ -78,6 +80,7 @@ const Modal = (props: ModalProps) => {
         ...rest
     } = props;
 
+    const { first, last } = useModalPosition(open || false);
     const [exiting, setExiting] = useState(false);
     const id = useInstance(() => generateUID('modal'));
     const dialogRef = useRef(null);
@@ -127,29 +130,35 @@ const Modal = (props: ModalProps) => {
     }
 
     const handleAnimationEnd = ({ animationName }: AnimationEvent<HTMLDivElement>) => {
-        if (animationName === 'anime-modal-two-backdrop-out') {
+        if (animationName === 'anime-modal-two-out') {
             setExiting(false);
             onExit?.();
         }
     };
 
-    const backdropClassname = classnames([
-        'modal-two-backdrop',
-        exiting && 'modal-two-backdrop--out',
-        fullscreenOnMobile && 'modal-two-backdrop--fullscreen-on-mobile',
+    const rootClassName = classnames([
+        'modal-two',
+        exiting && 'modal-two--out',
+        fullscreenOnMobile && 'modal-two--fullscreen-on-mobile',
+        last && 'modal-two--is-last-opened',
     ]);
 
     const dialogClassName = classnames([
-        'modal-two',
+        'modal-two-dialog',
         className,
-        small && 'modal-two--small',
-        large && 'modal-two--large',
-        full && 'modal-two--full',
+        small && 'modal-two-dialog--small',
+        large && 'modal-two-dialog--large',
+        full && 'modal-two-dialog--full',
     ]);
 
     return (
         <Portal>
-            <div className={backdropClassname} onAnimationEnd={handleAnimationEnd}>
+            {first && <Backdrop exiting={exiting} />}
+            <div
+                className={rootClassName}
+                onAnimationEnd={handleAnimationEnd}
+                style={{ '--z-position': last ? 1 : -1 }}
+            >
                 <dialog
                     ref={dialogRef}
                     className={dialogClassName}
