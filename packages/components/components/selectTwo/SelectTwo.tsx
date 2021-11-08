@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect, useMemo, KeyboardEvent, ReactElement, ComponentPropsWithoutRef } from 'react';
 
 import { Dropdown } from '../dropdown';
-import { Props as OptionProps } from '../option/Option';
+import Option, { Props as OptionProps } from '../option/Option';
 import SelectOptions from './SelectOptions';
 import useSelect, { SelectProvider } from './useSelect';
 import SelectButton from './SelectButton';
@@ -59,12 +59,12 @@ const SelectTwo = <V extends any>({
 
     const searchClearTimeout = useRef<number | undefined>(undefined);
 
-    const allOptionValues = children.map((child) => child.props.value);
+    const optionChildren = children.filter((child) => child.type === Option);
+    const optionValues = optionChildren.map((child) => child.props.value);
 
     const select = useSelect({
         value,
-        options: allOptionValues,
-        numberOfItems: children.length,
+        options: optionValues,
         onChange,
         onValue,
         onOpen,
@@ -101,7 +101,7 @@ const SelectTwo = <V extends any>({
         }
 
         if (getSearchableValue) {
-            return allOptionValues.map(getSearchableValue);
+            return optionValues.map(getSearchableValue);
         }
 
         return [];
@@ -156,7 +156,7 @@ const SelectTwo = <V extends any>({
         }
     };
 
-    const selectedChild = selectedIndex || selectedIndex === 0 ? children[selectedIndex] : null;
+    const selectedChild = selectedIndex || selectedIndex === 0 ? optionChildren[selectedIndex] : null;
 
     const displayedValue = selectedChild?.props?.children || selectedChild?.props?.title || placeholder;
 

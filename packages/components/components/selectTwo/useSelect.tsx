@@ -7,7 +7,6 @@ interface UseSelectOptions<V> {
     value?: V;
     options: V[];
     isOpen?: boolean;
-    numberOfItems: number;
     onChange?: (e: SelectChangeEvent<V>) => void;
     onValue?: (value: V) => void;
     onClose?: () => void;
@@ -30,7 +29,6 @@ const useSelect = <V,>({
     value,
     options,
     isOpen: controlledOpen,
-    numberOfItems,
     onOpen,
     onClose,
     onChange,
@@ -64,7 +62,7 @@ const useSelect = <V,>({
     };
 
     const focusNextIndex = () => {
-        if (focusedIndex !== null && focusedIndex !== numberOfItems) {
+        if (focusedIndex !== null && focusedIndex !== options.length - 1) {
             setFocusedIndex(focusedIndex + 1);
         }
     };
