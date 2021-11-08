@@ -22,7 +22,7 @@ import {
     useModals,
     useNotifications,
     useAddresses,
-    useRemoteConfig,
+    useSystemConfig,
 } from '../../../hooks';
 import useOAuthPopup from '../../../hooks/useOAuthPopup';
 import {
@@ -52,7 +52,7 @@ const ActiveImportRowActions = ({ activeImport }: Props) => {
     const [loadingPrimaryAction, withLoadingPrimaryAction] = useLoading();
     const [loadingSecondaryAction, withLoadingSecondaryAction] = useLoading();
 
-    const [config] = useRemoteConfig();
+    const [config] = useSystemConfig();
 
     const handleReconnectOAuth = async (ImporterID: string) => {
         const scopes = [

@@ -62,7 +62,7 @@ import {
     useFolders,
     useGetAddressKeys,
     useLabels,
-    useRemoteConfig,
+    useSystemConfig,
 } from '../../hooks';
 import IALoadingStep from './steps/IALoadingStep';
 import { dateToTimestamp } from './mail/helpers';
@@ -110,7 +110,7 @@ const ImportAssistantOauthModal = ({ addresses, onClose = noop, defaultCheckedTy
     const [folders = [], loadingFolders] = useFolders();
     const [calendars = [], loadingCalendars] = useCalendars();
 
-    const [config, loadingConfig] = useRemoteConfig();
+    const [config, loadingConfig] = useSystemConfig();
 
     const isInitLoading = loadingLabels || loadingFolders || loadingCalendars || loadingConfig;
 
