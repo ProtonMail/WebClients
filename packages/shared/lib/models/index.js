@@ -1,4 +1,5 @@
 export { AddressesModel } from './addressesModel';
+export { ApiEnvironmentConfigModel } from './apiEnvironmentConfigModel';
 export { ContactEmailsModel } from './contactEmailsModel';
 export { ContactsModel } from './contactsModel';
 export { DomainsModel } from './domainsModel';
@@ -16,4 +17,3 @@ export { CalendarUserSettingsModel } from './calendarSettingsModel';
 export { ConversationCountsModel } from './conversationCountsModel';
 export { MessageCountsModel } from './messageCountsModel';
 export { ImportersModel, ImportReportsModel } from './importersModel';
-export { SystemConfigModel } from './systemConfigModel';
