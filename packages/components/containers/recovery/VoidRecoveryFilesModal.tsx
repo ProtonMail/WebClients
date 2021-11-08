@@ -9,7 +9,6 @@ interface Props {
     onSuccess: () => void;
 }
 
-// TODO: all copy here
 const VoidRecoveryFilesModal = ({ onClose, onSuccess, ...rest }: Props) => {
     const api = useApi();
     const { createNotification } = useNotifications();
