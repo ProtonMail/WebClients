@@ -20,24 +20,24 @@ const getOAuthRedirectURL = () => {
 
 export const getOAuthAuthorizationUrl = ({
     scope,
-    client_id,
-    login_hint,
+    clientID,
+    loginHint,
 }: {
     scope: string;
-    client_id: string;
-    login_hint?: string;
+    clientID: string;
+    loginHint?: string;
 }) => {
     const params = new URLSearchParams();
 
     params.append('redirect_uri', getOAuthRedirectURL());
     params.append('response_type', 'code');
     params.append('access_type', 'offline');
-    params.append('client_id', client_id);
+    params.append('client_id', clientID);
     params.append('scope', scope);
     params.append('prompt', 'consent');
 
-    if (login_hint) {
-        params.append('login_hint', login_hint);
+    if (loginHint) {
+        params.append('login_hint', loginHint);
     }
 
     return `https://accounts.google.com/o/oauth2/v2/auth?${params.toString()}`;
@@ -50,18 +50,18 @@ const useOAuthPopup = () => {
     const triggerOAuthPopup = ({
         provider,
         scope,
-        client_id,
-        login_hint,
+        clientID,
+        loginHint,
         callback,
     }: {
         provider: OAUTH_PROVIDER;
         scope: string;
-        client_id: string;
-        login_hint?: string;
+        clientID: string;
+        loginHint?: string;
         callback: (oauthProps: OAuthProps) => void | Promise<void>;
     }) => {
         let interval: number;
-        const authorizationUrl = getOAuthAuthorizationUrl({ scope, client_id, login_hint });
+        const authorizationUrl = getOAuthAuthorizationUrl({ scope, clientID, loginHint });
         const RedirectUri = getOAuthRedirectURL();
 
         const uid = generateProtonWebUID();

@@ -62,7 +62,7 @@ import {
     useFolders,
     useGetAddressKeys,
     useLabels,
-    useSystemConfig,
+    useApiEnvironmentConfig,
 } from '../../hooks';
 import IALoadingStep from './steps/IALoadingStep';
 import { dateToTimestamp } from './mail/helpers';
@@ -110,7 +110,7 @@ const ImportAssistantOauthModal = ({ addresses, onClose = noop, defaultCheckedTy
     const [folders = [], loadingFolders] = useFolders();
     const [calendars = [], loadingCalendars] = useCalendars();
 
-    const [config, loadingConfig] = useSystemConfig();
+    const [config, loadingConfig] = useApiEnvironmentConfig();
 
     const isInitLoading = loadingLabels || loadingFolders || loadingCalendars || loadingConfig;
 
@@ -228,7 +228,7 @@ const ImportAssistantOauthModal = ({ addresses, onClose = noop, defaultCheckedTy
             triggerOAuthPopup({
                 provider: OAUTH_PROVIDER.GOOGLE,
                 scope: scopes.join(' '),
-                client_id: config['importer.google.client_id'],
+                clientID: config['importer.google.client_id'],
                 callback: async (oauthProps: OAuthProps) => {
                     setIsLoadingOAuth(true);
                     try {

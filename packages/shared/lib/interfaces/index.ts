@@ -1,5 +1,6 @@
 export * from './Address';
 export * from './Api';
+export * from './ApiEnvironmentConfig';
 export * from './Domain';
 export * from './EncryptionPreferences';
 export * from './Hotkeys';
@@ -13,7 +14,6 @@ export * from './OrganizationKey';
 export * from './Payment';
 export * from './SignedKeyList';
 export * from './Subscription';
-export * from './SystemConfig';
 export * from './User';
 export * from './UserSettings';
 export * from './VPN';
