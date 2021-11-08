@@ -100,19 +100,10 @@ interface Props {
     onLoaded: () => void;
     onUnavailable: () => void;
     locale: string;
-    subscription: string[];
+    tags: string[];
 }
 
-const LiveChatZendesk = ({
-    zendeskKey,
-    zendeskRef,
-    name,
-    email,
-    onLoaded,
-    onUnavailable,
-    locale,
-    subscription,
-}: Props) => {
+const LiveChatZendesk = ({ zendeskKey, zendeskRef, name, email, onLoaded, onUnavailable, locale, tags }: Props) => {
     const [style, setStyle] = useState({
         position: 'absolute',
         bottom: 0,
@@ -177,11 +168,14 @@ const LiveChatZendesk = ({
     }, [state.loaded, locale]);
 
     useEffect(() => {
-        if (!state.loaded) {
+        if (!state.loaded || !tags.length) {
             return;
         }
-        handleRun(['webWidget', 'chat:addTags', subscription]);
-    }, [state.loaded, subscription]);
+        handleRun(['webWidget', 'chat:addTags', tags]);
+        return () => {
+            handleRun(['webWidget', 'chat:removeTags', tags]);
+        };
+    }, [state.loaded, tags]);
 
     useEffect(() => {
         if (!state.loaded || !pendingLoadingRef.current) {
