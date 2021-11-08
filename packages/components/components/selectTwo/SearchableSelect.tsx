@@ -75,7 +75,6 @@ const SearchableSelect = <V extends any>({
     const select = useSelect<V>({
         value,
         options: optionValues,
-        numberOfItems: children.length,
         onChange,
         onClose,
         onOpen,
