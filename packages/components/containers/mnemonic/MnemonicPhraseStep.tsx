@@ -1,9 +1,9 @@
 import { c } from 'ttag';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { useNotifications } from '../../hooks';
-import { Copy, InputFieldTwo, TextAreaTwo, Button } from '../../components';
+import { Button, Copy, InputFieldTwo, Loader, TextAreaTwo } from '../../components';
 
-export const MnemonicPhraseStepContent = ({ mnemonic }: { mnemonic: string }) => {
+export const MnemonicPhraseStepContent = ({ mnemonic, loading }: { mnemonic?: string; loading?: boolean }) => {
     const { createNotification } = useNotifications();
 
     const onCopy = () => {
@@ -18,39 +18,47 @@ export const MnemonicPhraseStepContent = ({ mnemonic }: { mnemonic: string }) =>
                     .t`Please write your recovery phrase down in the order it appears and keep it somewhere safe. Your recovery phrase can be used to fully recover access to your account and your encrypted messages.`}
             </p>
 
-            <InputFieldTwo
-                id="mnemonic"
-                bigger
-                as={TextAreaTwo}
-                rows={3}
-                readOnly
-                label={c('Label').t`Recovery phrase`}
-                placeholder={c('Label').t`Your recovery phrase`}
-                value={mnemonic}
-                autoFocus
-                hint={<Copy value={mnemonic} onCopy={onCopy} />}
-            />
+            {!mnemonic || loading ? (
+                <Loader />
+            ) : (
+                <InputFieldTwo
+                    id="mnemonic"
+                    bigger
+                    as={TextAreaTwo}
+                    rows={3}
+                    readOnly
+                    label={c('Label').t`Recovery phrase`}
+                    placeholder={c('Label').t`Your recovery phrase`}
+                    value={mnemonic}
+                    autoFocus
+                    hint={<Copy value={mnemonic} onCopy={onCopy} />}
+                />
+            )}
         </>
     );
 };
 
 interface MnemonicPhraseStepButtonsProps {
-    mnemonic: string;
+    mnemonic?: string;
+    disabled?: boolean;
     onDone: () => void;
 }
-
-export const MnemonicPhraseStepButtons = ({ mnemonic, onDone }: MnemonicPhraseStepButtonsProps) => {
+export const MnemonicPhraseStepButtons = ({ mnemonic, disabled, onDone }: MnemonicPhraseStepButtonsProps) => {
     const handleDownload = async () => {
+        if (!mnemonic) {
+            return;
+        }
+
         const blob = new Blob([mnemonic], { type: 'text/plain;charset=utf-8' });
         downloadFile(blob, `proton_recovery_phrase.txt`);
     };
 
     return (
         <div className="w100">
-            <Button onClick={handleDownload} fullWidth color="norm">
+            <Button disabled={!mnemonic || disabled} onClick={handleDownload} fullWidth color="norm">
                 {c('Action').t`Download`}
             </Button>
-            <Button className="mt1" onClick={onDone} fullWidth>
+            <Button className="mt1" disabled={!mnemonic || disabled} onClick={onDone} fullWidth>
                 {c('Action').t`Done`}
             </Button>
         </div>
