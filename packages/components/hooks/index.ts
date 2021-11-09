@@ -63,7 +63,6 @@ export * from './useHotkeys';
 export * from './useImporters';
 export { default as useInstance } from './useInstance';
 export { default as useIsClosing } from './useIsClosing';
-export { default as useIsMnemonicAvailable } from './useIsMnemonicAvailable';
 export { default as useIsMounted } from './useIsMounted';
 export { default as useKeyPress } from './useKeyPress';
 export { default as useLoad } from './useLoad';
