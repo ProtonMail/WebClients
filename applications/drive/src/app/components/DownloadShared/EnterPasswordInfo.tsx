@@ -29,7 +29,7 @@ const EnterPasswordInfo = ({ submitPassword }: Props) => {
                     id="password"
                     disabled={loading}
                     value={password}
-                    onChange={({ target: { value } }) => setPassword(value)}
+                    onValue={setPassword}
                 />
                 <Button
                     size="large"
