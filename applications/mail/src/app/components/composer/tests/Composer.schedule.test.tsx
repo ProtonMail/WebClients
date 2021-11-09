@@ -61,9 +61,10 @@ describe('Composer scheduled messages', () => {
         setupMessage('Subject', [user as Recipient]);
         setupTest(true, 100);
 
-        const { queryAllByTestId } = await render(<Composer {...props} />, false);
+        const { getByTestId } = await render(<Composer {...props} />, false);
 
-        const dropdownButton = queryAllByTestId('dropdown-button')[0];
+        const sendActions = getByTestId('composer:send-actions');
+        const dropdownButton = getByTestIdDefault(sendActions, 'dropdown-button');
         fireEvent.click(dropdownButton);
 
         const dropdown = await getDropdown();
@@ -81,9 +82,10 @@ describe('Composer scheduled messages', () => {
         setupMessage();
         setupTest(true);
 
-        const { queryAllByTestId } = await render(<Composer {...props} />, false);
+        const { getByTestId } = await render(<Composer {...props} />, false);
 
-        const dropdownButton = queryAllByTestId('dropdown-button')[0];
+        const sendActions = getByTestId('composer:send-actions');
+        const dropdownButton = getByTestIdDefault(sendActions, 'dropdown-button');
         fireEvent.click(dropdownButton);
 
         const dropdown = await getDropdown();
@@ -98,9 +100,10 @@ describe('Composer scheduled messages', () => {
         setupMessage('', [user as Recipient]);
         setupTest(true);
 
-        const { queryAllByTestId } = await render(<Composer {...props} />, false);
+        const { getByTestId } = await render(<Composer {...props} />, false);
 
-        const dropdownButton = queryAllByTestId('dropdown-button')[0];
+        const sendActions = getByTestId('composer:send-actions');
+        const dropdownButton = getByTestIdDefault(sendActions, 'dropdown-button');
         fireEvent.click(dropdownButton);
 
         const dropdown = await getDropdown();
@@ -115,9 +118,10 @@ describe('Composer scheduled messages', () => {
         setupMessage('Subject', [user as Recipient]);
         setupTest(true);
 
-        const { queryAllByTestId, getByTestId, getByText } = await render(<Composer {...props} />, false);
+        const { getByTestId, getByText } = await render(<Composer {...props} />, false);
 
-        const dropdownButton = queryAllByTestId('dropdown-button')[0];
+        const sendActions = getByTestId('composer:send-actions');
+        const dropdownButton = getByTestIdDefault(sendActions, 'dropdown-button');
         fireEvent.click(dropdownButton);
 
         const dropdown = await getDropdown();
@@ -158,9 +162,10 @@ describe('Composer scheduled messages', () => {
         setupMessage('Subject', [user as Recipient]);
         setupTest(true);
 
-        const { getByTestId, queryAllByTestId } = await render(<Composer {...props} />, false);
+        const { getByTestId } = await render(<Composer {...props} />, false);
 
-        const dropdownButton = queryAllByTestId('dropdown-button')[0];
+        const sendActions = getByTestId('composer:send-actions');
+        const dropdownButton = getByTestIdDefault(sendActions, 'dropdown-button');
         fireEvent.click(dropdownButton);
 
         const dropdown = await getDropdown();
