@@ -6,7 +6,7 @@ import { OAuthProps, OAUTH_PROVIDER } from '@proton/shared/lib/interfaces/EasySw
 
 import useNotifications from './useNotifications';
 
-import { G_OAUTH_CLIENT_ID, G_OAUTH_REDIRECT_PATH } from '../containers/easySwitch/constants';
+import { G_OAUTH_REDIRECT_PATH } from '../containers/easySwitch/constants';
 
 const WINDOW_WIDTH = 500;
 const WINDOW_HEIGHT = 600;
@@ -18,18 +18,26 @@ const getOAuthRedirectURL = () => {
     return `${protocol}//${host}${G_OAUTH_REDIRECT_PATH}`;
 };
 
-export const getOAuthAuthorizationUrl = ({ scope, login_hint }: { scope: string; login_hint?: string }) => {
+export const getOAuthAuthorizationUrl = ({
+    scope,
+    clientID,
+    loginHint,
+}: {
+    scope: string;
+    clientID: string;
+    loginHint?: string;
+}) => {
     const params = new URLSearchParams();
 
     params.append('redirect_uri', getOAuthRedirectURL());
     params.append('response_type', 'code');
     params.append('access_type', 'offline');
-    params.append('client_id', G_OAUTH_CLIENT_ID);
+    params.append('client_id', clientID);
     params.append('scope', scope);
     params.append('prompt', 'consent');
 
-    if (login_hint) {
-        params.append('login_hint', login_hint);
+    if (loginHint) {
+        params.append('login_hint', loginHint);
     }
 
     return `https://accounts.google.com/o/oauth2/v2/auth?${params.toString()}`;
@@ -42,16 +50,18 @@ const useOAuthPopup = () => {
     const triggerOAuthPopup = ({
         provider,
         scope,
-        login_hint,
+        clientID,
+        loginHint,
         callback,
     }: {
         provider: OAUTH_PROVIDER;
         scope: string;
-        login_hint?: string;
+        clientID: string;
+        loginHint?: string;
         callback: (oauthProps: OAuthProps) => void | Promise<void>;
     }) => {
         let interval: number;
-        const authorizationUrl = getOAuthAuthorizationUrl({ scope, login_hint });
+        const authorizationUrl = getOAuthAuthorizationUrl({ scope, clientID, loginHint });
         const RedirectUri = getOAuthRedirectURL();
 
         const uid = generateProtonWebUID();
