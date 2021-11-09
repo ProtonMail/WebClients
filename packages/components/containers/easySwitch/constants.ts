@@ -2,8 +2,6 @@ import { c } from 'ttag';
 
 import { OAUTH_PROVIDER, TIME_PERIOD } from '@proton/shared/lib/interfaces/EasySwitch';
 
-export const G_OAUTH_CLIENT_ID = '923746734024-4rggv7tvusv9c0fi9tvh5elnuj5o067b.apps.googleusercontent.com';
-
 export const G_OAUTH_REDIRECT_PATH = '/oauth/callback';
 
 export const G_OAUTH_SCOPE_DEFAULT = ['email', 'openid'];

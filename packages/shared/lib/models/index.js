@@ -1,4 +1,5 @@
 export { AddressesModel } from './addressesModel';
+export { ApiEnvironmentConfigModel } from './apiEnvironmentConfigModel';
 export { ContactEmailsModel } from './contactEmailsModel';
 export { ContactsModel } from './contactsModel';
 export { DomainsModel } from './domainsModel';
