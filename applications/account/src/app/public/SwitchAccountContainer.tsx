@@ -113,6 +113,7 @@ const SwitchAccountContainer = ({ toApp, onLogin, activeSessions, onAddAccount, 
             const validatedSession = await resumeSession(silentApi, localID);
             await onLogin({ ...validatedSession, flow: 'switch' });
         } catch (e: any) {
+            setLoadingMap((old) => ({ ...old, [localID]: false }));
             if (e instanceof InvalidPersistentSessionError) {
                 setLocalActiveSessions((list) => {
                     return list?.filter(({ LocalID: otherLocalID }) => otherLocalID !== localID);
@@ -124,8 +125,6 @@ const SwitchAccountContainer = ({ toApp, onLogin, activeSessions, onAddAccount, 
                 return;
             }
             errorHandler(e);
-        } finally {
-            setLoadingMap((old) => ({ ...old, [localID]: false }));
         }
     };
 
