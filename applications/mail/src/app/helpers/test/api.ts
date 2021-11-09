@@ -1,5 +1,6 @@
 import { matchPath } from 'react-router';
 import { noop } from '@proton/shared/lib/helpers/function';
+import { FeatureCode } from '@proton/components';
 
 type HttpMethod = 'get' | 'post' | 'put' | 'delete';
 
@@ -94,6 +95,11 @@ export const registerFeatureFlagsApiMock = () => {
         },
         'get'
     );
+};
+
+export const registerMinimalFlags = () => {
+    setFeatureFlags(FeatureCode.EnabledEncryptedSearch, true);
+    setFeatureFlags(FeatureCode.SpotlightEncryptedSearch, false);
 };
 
 export const parseFormData = (data: any) => {

@@ -108,7 +108,7 @@ export const getProps = ({
 };
 
 export const baseApiMocks = () => {
-    addApiMock('mail/v4/importers', () => ({ Importers: [] }));
+    addApiMock('importer/v1/importers', () => ({ Importers: [] }));
     addApiMock('settings/calendar', () => ({}));
     addApiMock('calendar/v1', () => ({}));
     addApiMock('payments/plans', () => ({}));

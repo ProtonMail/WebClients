@@ -117,7 +117,6 @@ END:VALARM
 END:VEVENT
 END:VCALENDAR`;
         const parsedInvitation = parseVcalendar(invitation) as VcalVcalendar;
-        console.log(parsedInvitation);
         const message = { Time: Math.round(Date.now() / 1000) } as Message;
         expect(
             await getSupportedEventInvitation({
