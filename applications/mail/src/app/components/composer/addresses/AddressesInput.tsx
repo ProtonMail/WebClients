@@ -232,7 +232,6 @@ const AddressesInput = ({
                             hasEmailPasting
                             hasAddOnBlur
                             data-testid={dataTestId}
-                            hasLighterFieldDesign={hasLighterFieldDesign}
                         />
                     </div>
                 </div>
