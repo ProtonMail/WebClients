@@ -50,6 +50,7 @@ interface Props extends HTMLAttributes<HTMLDivElement> {
     autoCloseOutsideAnchor?: boolean;
     contentProps?: ContentProps;
     disableDefaultArrowNavigation?: boolean;
+    updatePositionOnDOMChange?: boolean;
     UNSTABLE_AUTO_HEIGHT?: boolean;
 }
 
@@ -77,6 +78,7 @@ const Dropdown = ({
     autoCloseOutsideAnchor = true,
     contentProps,
     disableDefaultArrowNavigation = false,
+    updatePositionOnDOMChange = true,
     UNSTABLE_AUTO_HEIGHT,
     ...rest
 }: Props) => {
@@ -86,6 +88,7 @@ const Dropdown = ({
         : originalPlacement.replace('left', 'right');
 
     const [popperEl, setPopperEl] = useState<HTMLDivElement | null>(null);
+
     const { position, placement } = usePopper({
         popperEl,
         anchorEl: anchorRef.current,
@@ -94,6 +97,7 @@ const Dropdown = ({
         availablePlacements,
         originalPosition,
         offset,
+        updatePositionOnDOMChange,
     });
 
     const handleClickContent = (event: ReactMouseEvent<HTMLDivElement>) => {
