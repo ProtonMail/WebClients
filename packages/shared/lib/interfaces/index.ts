@@ -1,5 +1,6 @@
 export * from './Address';
 export * from './Api';
+export * from './ApiEnvironmentConfig';
 export * from './Domain';
 export * from './EncryptionPreferences';
 export * from './Hotkeys';

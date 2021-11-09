@@ -15,7 +15,15 @@ import {
 } from '@proton/shared/lib/interfaces/EasySwitch';
 
 import { Alert, ConfirmModal, DropdownActions, Button } from '../../../components';
-import { useApi, useLoading, useEventManager, useModals, useNotifications, useAddresses } from '../../../hooks';
+import {
+    useApi,
+    useLoading,
+    useEventManager,
+    useModals,
+    useNotifications,
+    useAddresses,
+    useApiEnvironmentConfig,
+} from '../../../hooks';
 import useOAuthPopup from '../../../hooks/useOAuthPopup';
 import {
     G_OAUTH_SCOPE_CALENDAR,
@@ -31,7 +39,7 @@ interface Props {
 }
 
 const ActiveImportRowActions = ({ activeImport }: Props) => {
-    const { ID, Active, Product, Sasl } = activeImport;
+    const { ID, Active, Product, Account, Sasl } = activeImport;
     const { State, ErrorCode } = Active || {};
 
     const { triggerOAuthPopup } = useOAuthPopup();
@@ -43,6 +51,8 @@ const ActiveImportRowActions = ({ activeImport }: Props) => {
     const { createNotification } = useNotifications();
     const [loadingPrimaryAction, withLoadingPrimaryAction] = useLoading();
     const [loadingSecondaryAction, withLoadingSecondaryAction] = useLoading();
+
+    const [config, loadingConfig] = useApiEnvironmentConfig();
 
     const handleReconnectOAuth = async (ImporterID: string) => {
         const scopes = [
@@ -57,6 +67,8 @@ const ActiveImportRowActions = ({ activeImport }: Props) => {
 
         triggerOAuthPopup({
             provider: OAUTH_PROVIDER.GOOGLE,
+            clientID: config['importer.google.client_id'],
+            loginHint: Account,
             scope: scopes.join(' '),
             callback: async ({ Code, Provider, RedirectUri }: OAuthProps) => {
                 const { Token }: { Token: ImportToken } = await api(
@@ -140,7 +152,7 @@ const ActiveImportRowActions = ({ activeImport }: Props) => {
 
                 return withLoadingSecondaryAction(handleResume(ID));
             },
-            loading: loadingSecondaryAction,
+            loading: loadingConfig || loadingSecondaryAction,
             disabled: loadingAddresses,
         });
     }
