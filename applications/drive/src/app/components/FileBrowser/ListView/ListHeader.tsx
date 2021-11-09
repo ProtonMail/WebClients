@@ -70,15 +70,6 @@ const ListHeader = <T extends AllSortKeys>({
                     <TableHeaderCell className={isDesktop ? 'w20' : 'w25'}>{c('TableHeader')
                         .t`Location`}</TableHeaderCell>
                 )}
-                {columns.includes('type') && (
-                    <TableHeaderCell
-                        direction={getSortDirectionForKey('MIMEType')}
-                        onSort={canSort(() => handleSort('MIMEType'))}
-                        className="w15"
-                    >
-                        {c('TableHeader').t`Type`}
-                    </TableHeaderCell>
-                )}
                 {columns.includes('uploaded') && (
                     // On API its called ModifyTime, but its actually time when
                     // the last revision was uploaded. The real modify time is

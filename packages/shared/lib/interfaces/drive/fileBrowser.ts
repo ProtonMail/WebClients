@@ -42,8 +42,7 @@ export type ItemRowColumns =
     | 'share_expires'
     | 'share_num_access'
     | 'size'
-    | 'trashed'
-    | 'type';
+    | 'trashed';
 export type FileBrowserLayouts = 'trash' | 'sharing' | 'drive';
 
 export interface ItemProps {
