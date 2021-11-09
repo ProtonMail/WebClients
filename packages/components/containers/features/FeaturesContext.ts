@@ -50,6 +50,7 @@ export enum FeatureCode {
     Mnemonic = 'Mnemonic',
     RecoveryFile = 'RecoveryFile',
     SeenMnemonicPrompt = 'SeenMnemonicPrompt',
+    VisitedRecoveryPage = 'VisitedRecoveryPage',
     SpyTrackerProtection = 'SpyTrackerProtection',
     SpyTrackerProtectionIncorporator = 'SpyTrackerProtectionIncorporator',
     SpotlightSpyTrackerProtection = 'SpotlightSpyTrackerProtection',
