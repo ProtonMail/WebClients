@@ -18,11 +18,11 @@
 	&-item {
 		max-inline-size: var(--item-wide);
 		margin: 0.125em;
-		background-color: var(--color, currentColor);
+		background-color: var(--background, var(--background-strong));
 
 		&-button,
 		&-delete {
-			color: white;
+			color: var(--foreground, var(--text-norm));
 		}
 
 		&-button {
@@ -43,7 +43,7 @@
 	}
 
 	&-overflow-count {
-		background-color: rgb(0 0 0 / 0.5);
+		background-color: var(--background-strong);
 		margin-inline-start: 0.125em;
 		cursor: pointer;
 
@@ -51,7 +51,7 @@
 			display: block;
 			padding-block: 0.125em;
 			padding-inline: 0.25em 0.375em;
-			color: white;
+			color: var(--foreground, var(--text-norm));
 		}
 	}
 

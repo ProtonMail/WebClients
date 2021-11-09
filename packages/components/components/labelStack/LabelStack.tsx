@@ -1,5 +1,7 @@
 import { MouseEvent } from 'react';
+import tinycolor from 'tinycolor2';
 import { c } from 'ttag';
+import { COLORS } from '@proton/shared/lib/calendar/constants';
 import { classnames } from '../../helpers';
 import Tooltip from '../tooltip/Tooltip';
 import Icon from '../icon/Icon';
@@ -35,7 +37,16 @@ const LabelStack = ({ labels, showDelete = false, isStacked = false, maxNumber, 
             {labelsToShow.map((label: LabelDescription) => (
                 <li
                     className="label-stack-item flex flex-row flex-align-items-center flex-justify-start flex-nowrap"
-                    style={{ '--color': label.color }}
+                    style={{
+                        '--background': label.color,
+                        '--foreground': tinycolor
+                            .mostReadable(label.color, [COLORS.BLACK, COLORS.WHITE], {
+                                includeFallbackColors: false,
+                                level: 'AAA',
+                                size: 'small',
+                            })
+                            .toHexString(),
+                    }}
                     key={label.name}
                 >
                     {label.onClick ? (
