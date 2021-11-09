@@ -1,0 +1,50 @@
+import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import { render, clearAll } from '../../../helpers/test/helper';
+import ExtraExpirationTime from './ExtraExpirationTime';
+
+describe('ExtraExpirationTime', () => {
+    const seconds = 50;
+
+    const setup = async (ExpirationTime: number) => {
+        const result = await render(
+            <ExtraExpirationTime message={{ localID: 'localID', data: { ExpirationTime } as Message }} />
+        );
+        const rerender = async (ExpirationTime: number) => {
+            await result.rerender(
+                <ExtraExpirationTime message={{ localID: 'localID', data: { ExpirationTime } as Message }} />
+            );
+            return result.queryByTestId('expiration-banner');
+        };
+        return { banner: result.queryByTestId('expiration-banner'), rerender };
+    };
+
+    afterEach(() => {
+        jest.clearAllMocks();
+        clearAll();
+    });
+
+    it('should return no expiration if no expiration time', async () => {
+        const { banner } = await setup(0);
+        expect(banner).toBe(null);
+    });
+
+    it('should return the expiration message if there is expiration time', async () => {
+        const ExpirationTime = new Date().getTime() / 1000 + seconds;
+        const { banner } = await setup(ExpirationTime);
+        expect(banner).not.toBe(null);
+
+        const value = Number(/\d+/.exec(banner?.textContent || '')?.[0]);
+        expect(value).toBeLessThanOrEqual(seconds);
+    });
+
+    it('should be able to react to new message', async () => {
+        const ExpirationTime = new Date().getTime() / 1000 + seconds;
+        const result = await setup(0);
+        let { banner } = result;
+        expect(banner).toBe(null);
+        banner = await result.rerender(ExpirationTime);
+        expect(banner).not.toBe(null);
+        banner = await result.rerender(0);
+        expect(banner).toBe(null);
+    });
+});

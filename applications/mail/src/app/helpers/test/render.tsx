@@ -10,7 +10,7 @@ import {
 import { Router } from 'react-router';
 import { createMemoryHistory, MemoryHistory } from 'history';
 import { render as originalRender, RenderResult as OriginalRenderResult, act } from '@testing-library/react';
-import { renderHook as originalRenderHook } from '@testing-library/react-hooks';
+import { renderHook as originalRenderHook, act as actHook } from '@testing-library/react-hooks';
 import ApiContext from '@proton/components/containers/api/apiContext';
 import ConfigProvider from '@proton/components/containers/config/Provider';
 import { wait } from '@proton/shared/lib/helpers/promise';
@@ -23,7 +23,7 @@ import { Provider as ReduxProvider } from 'react-redux';
 import MessageProvider from '../../containers/MessageProvider';
 import ConversationProvider from '../../containers/ConversationProvider';
 import { minimalCache, cache, messageCache, conversationCache, attachmentsCache, contactCache } from './cache';
-import { api, registerFeatureFlagsApiMock } from './api';
+import { api, registerFeatureFlagsApiMock, registerMinimalFlags } from './api';
 import AttachmentProvider from '../../containers/AttachmentProvider';
 import ContactProvider from '../../containers/ContactProvider';
 import EncryptedSearchProvider from '../../containers/EncryptedSearchProvider';
@@ -123,6 +123,7 @@ export const render = async (ui: ReactElement, useMinimalCache = true): Promise<
 
     if (useMinimalCache) {
         minimalCache();
+        registerMinimalFlags();
     }
 
     const result = originalRender(<TestProvider>{ui}</TestProvider>);
@@ -142,9 +143,15 @@ export const render = async (ui: ReactElement, useMinimalCache = true): Promise<
     return { ...result, rerender, unmount };
 };
 
-export const renderHook = (callback: (props: any) => any, useMinimalCache = true) => {
+export const renderHook = async (callback: (props: any) => any, useMinimalCache = true) => {
+    registerFeatureFlagsApiMock();
+
     if (useMinimalCache) {
         minimalCache();
+        registerMinimalFlags();
     }
-    return originalRenderHook<any, any>(callback, { wrapper: TestProvider as any });
+
+    const result = originalRenderHook<any, any>(callback, { wrapper: TestProvider as any });
+    await actHook(() => wait(0));
+    return result;
 };
