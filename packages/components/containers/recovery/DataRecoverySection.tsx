@@ -145,7 +145,7 @@ const DataRecoverySection = ({ openMnemonicModal = false }: Props) => {
 
                             {mnemonicOperationStatus.accountRecovery ? (
                                 <Button shape="outline" onClick={openGenerateMnemonicModal}>
-                                    {c('Action').t`Create new recovery phrase`}
+                                    {c('Action').t`Generate new recovery phrase`}
                                 </Button>
                             ) : null}
                         </SettingsLayoutRight>
