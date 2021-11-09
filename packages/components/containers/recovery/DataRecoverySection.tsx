@@ -134,12 +134,8 @@ const DataRecoverySection = ({ openMnemonicModal = false }: Props) => {
                                         return withLoadingMnemonic(handleMnemonicToggle(checked));
                                     }}
                                 />
-                                <label htmlFor="passwordMnemonicResetToggle" className="mr0-5 flex-item-fluid">
-                                    <span className="pr0-5">{c('Label').t`Allow recovery by recovery phrase`}</span>
-                                    <Info
-                                        title={c('Info')
-                                            .t`Disabling this will prevent your recovery phrase from being used for account recovery.`}
-                                    />
+                                <label htmlFor="passwordMnemonicResetToggle" className="flex-item-fluid">
+                                    {c('Label').t`Allow recovery by recovery phrase`}
                                 </label>
                             </div>
 
