@@ -4,7 +4,9 @@ import { c } from 'ttag';
 import { HumanVerificationMethodType } from '@proton/shared/lib/interfaces';
 import { queryCheckVerificationCode } from '@proton/shared/lib/api/user';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
-
+import { getBrowserLocale, getClosestLocaleCode, getClosestLocaleMatch } from '@proton/shared/lib/i18n/helper';
+import { loadDateLocale, loadLocale } from '@proton/shared/lib/i18n/loadLocale';
+import { initLocales } from '@proton/shared/lib/i18n/locales';
 import {
     HumanVerificationForm,
     HumanVerificationSteps,
@@ -12,11 +14,15 @@ import {
     useTheme,
     useApi,
     useNotifications,
+    useLoading,
+    StandardLoadErrorPage,
 } from '@proton/components';
 
 import broadcast, { MessageType } from './broadcast';
 import { VerificationSearchParameters } from './types';
 import './Verify.scss';
+
+const locales = initLocales(require.context('../../locales', true, /.json$/, 'lazy'));
 
 const windowIsEmbedded = window.location !== window.parent.location;
 
@@ -24,6 +30,8 @@ const parseSearch = (search: string) => Object.fromEntries(new URLSearchParams(s
 
 const Verify = () => {
     const [step, setStep] = useState(HumanVerificationSteps.ENTER_DESTINATION);
+    const [loading, withLoading] = useLoading(true);
+    const [error, setError] = useState(false);
     const [, setTheme] = useTheme();
     const api = useApi();
     const { createNotification } = useNotifications();
@@ -31,7 +39,7 @@ const Verify = () => {
 
     const search = parseSearch(location.search) as VerificationSearchParameters;
 
-    const { methods, embed, theme, token, defaultCountry, defaultEmail, defaultPhone } = search;
+    const { methods, embed, theme, locale, token, defaultCountry, defaultEmail, defaultPhone } = search;
 
     const isEmbedded = windowIsEmbedded || embed;
 
@@ -39,6 +47,14 @@ const Verify = () => {
         if (theme) {
             setTheme(Number(theme));
         }
+
+        const browserLocale = getBrowserLocale();
+
+        const localeCode = getClosestLocaleMatch(locale || '', locales) || getClosestLocaleCode(browserLocale, locales);
+
+        withLoading(Promise.all([loadLocale(localeCode, locales), loadDateLocale(localeCode, browserLocale)])).catch(
+            () => setError(true)
+        );
     }, []);
 
     const sendHeight = (resizes: ResizeObserverEntry[]) => {
@@ -105,6 +121,14 @@ const Verify = () => {
             <div className="hv-container color-norm bg-norm relative no-scroll w100 max-w100 center mw30r">{child}</div>
         </main>
     );
+
+    if (loading) {
+        return null;
+    }
+
+    if (error) {
+        return <StandardLoadErrorPage />;
+    }
 
     if (methods === undefined) {
         return wrapInMain('You need to specify recovery methods');
