@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { c } from 'ttag';
 
-import { Button, Label, PasswordInput, useLoading } from '@proton/components';
+import { Button, Label, PasswordInputTwo, useLoading } from '@proton/components';
 
 interface Props {
     submitPassword: (password: string) => Promise<void>;
@@ -25,7 +25,7 @@ const EnterPasswordInfo = ({ submitPassword }: Props) => {
                     <Label htmlFor="password">{c('Label').t`Password`}</Label>
                 </div>
 
-                <PasswordInput
+                <PasswordInputTwo
                     name="password"
                     className="flex"
                     autoComplete="current-password"
