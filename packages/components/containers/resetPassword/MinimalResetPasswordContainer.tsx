@@ -316,7 +316,7 @@ const MinimalResetPasswordContainer = ({ onLogin }: Props) => {
             {step === STEPS.VALIDATE_RESET_TOKEN && cache && (
                 <ValidateTokenForm
                     onSubmit={(token) => {
-                        return handleValidateResetToken({ api: silentApi, cache, token })
+                        return handleValidateResetToken({ api: silentApi, cache, token, hasDanger: true })
                             .then(handleResult)
                             .catch(handleError);
                     }}
