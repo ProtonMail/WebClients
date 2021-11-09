@@ -1,4 +1,16 @@
-import { CreateNotificationOptions, ModalsChildren, ProtonApp } from '@proton/components';
+import { BrowserRouter as Router } from 'react-router-dom';
+import { noop } from '@proton/shared/lib/helpers/function';
+import {
+    ApiProvider,
+    ConfigProvider,
+    CreateNotificationOptions,
+    ThemeProvider,
+    Icons,
+    ModalsChildren,
+    ModalsProvider,
+    PreventLeaveProvider,
+    RightToLeftProvider,
+} from '@proton/components';
 
 import * as config from './config';
 import Verify from './Verify';
@@ -24,12 +36,25 @@ const App = () => {
     };
 
     return (
-        <ProtonApp config={enhancedConfig}>
-            <NotificationsHijack onCreate={handleNotificationCreate}>
-                <Verify />
-                <ModalsChildren />
-            </NotificationsHijack>
-        </ProtonApp>
+        <ConfigProvider config={enhancedConfig}>
+            <Router>
+                <RightToLeftProvider>
+                    <Icons />
+                    <ThemeProvider>
+                        <PreventLeaveProvider>
+                            <NotificationsHijack onCreate={handleNotificationCreate}>
+                                <ApiProvider config={config} onLogout={noop}>
+                                    <ModalsProvider>
+                                        <Verify />
+                                        <ModalsChildren />
+                                    </ModalsProvider>
+                                </ApiProvider>
+                            </NotificationsHijack>
+                        </PreventLeaveProvider>
+                    </ThemeProvider>
+                </RightToLeftProvider>
+            </Router>
+        </ConfigProvider>
     );
 };
 
