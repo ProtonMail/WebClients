@@ -3,6 +3,7 @@ import { getUIDHeaders } from '@proton/shared/lib/fetch/headers';
 import createListeners from '@proton/shared/lib/helpers/listeners';
 import { getClientID } from '@proton/shared/lib/apps/helper';
 import { APP_VERSION, API_VERSION, API_URL, APP_NAME } from '../config';
+import { createErrorHandler } from './dom';
 
 export type HTTPHeaders = { [key: string]: string };
 
@@ -74,13 +75,14 @@ export const upload = <T>(uid: string, paramsPromise: RequestParams | Promise<Re
         await new Promise<XMLHttpRequest>((resolve, reject) => {
             xhr.upload.onprogress = notify;
             xhr.onload = resolve as any;
-            xhr.upload.onerror = reject;
-            xhr.onerror = reject;
+            xhr.upload.onerror = createErrorHandler(reject);
+            xhr.onerror = createErrorHandler(reject);
             xhr.open(params.method, `${API_URL}/${params.url}`);
             xhr.withCredentials = true;
             Object.keys(headers).forEach((key) => xhr.setRequestHeader(key, headers[key]));
             xhr.send(body);
         });
+        console.log('here', xhr, xhr.responseText);
         return JSON.parse(xhr.responseText);
     };
 
