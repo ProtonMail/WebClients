@@ -81,7 +81,7 @@ const RequestResetTokenForm = ({
                     autoCapitalize="off"
                     autoCorrect="off"
                     id="email"
-                    placeholder={c('Placeholder').t`Recovery email`}
+                    placeholder={c('Placeholder').t`Recovery email address`}
                     value={email}
                     onChange={({ target: { value } }) => setEmail(value)}
                     error={emailError}

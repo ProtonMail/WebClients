@@ -105,7 +105,7 @@ const RecoveryForm = ({ model, hasChallenge, onChange, onSubmit, onSkip, default
         <InputFieldTwo
             id="recovery-email"
             bigger
-            label={c('Label').t`Recovery email`}
+            label={c('Label').t`Recovery email address`}
             error={validator(
                 model.step === RECOVERY_EMAIL
                     ? [requiredValidator(model.recoveryEmail), emailValidator(model.recoveryEmail), emailError]
@@ -185,7 +185,7 @@ const RecoveryForm = ({ model, hasChallenge, onChange, onSubmit, onSkip, default
                                         as={PhoneInput}
                                         id="recovery-phone"
                                         bigger
-                                        label={c('Label').t`Recovery phone`}
+                                        label={c('Label').t`Recovery phone number`}
                                         error={validator(
                                             model.step === RECOVERY_PHONE
                                                 ? [requiredValidator(model.recoveryPhone), phoneError]
