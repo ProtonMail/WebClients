@@ -7,7 +7,6 @@ import { ItemProps } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 
 import SharedURLIcon from '../SharedURLIcon';
 import useFileBrowserItem from '../useFileBrowserItem';
-import ShareButton, { shouldRenderShareButton } from '../ShareButton';
 import { useThumbnailsDownloadProvider } from '../../downloads/ThumbnailDownloadProvider';
 
 export interface Props extends Omit<ItemProps, 'isPreview' | 'showLocation' | 'columns'> {
@@ -109,9 +108,6 @@ function ItemCell({
                             mimeType={item.Type === LinkType.FOLDER ? 'Folder' : item.MIMEType}
                             alt={iconText}
                         />
-                    )}
-                    {shouldRenderShareButton(item) && (
-                        <ShareButton shareId={shareId} item={item} className="file-browser-grid-item--share-button" />
                     )}
                 </div>
                 <div
