@@ -5,6 +5,7 @@ import { APPS } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import percentage from '@proton/shared/lib/helpers/percentage';
 import { hasMailProfessional, hasVisionary } from '@proton/shared/lib/helpers/subscription';
+
 import { SettingsLink } from '../link';
 import { Meter, getMeterColor } from '../progress';
 import { Tooltip } from '../tooltip';
@@ -21,6 +22,7 @@ interface Props extends ComponentPropsWithoutRef<'div'> {
     primary?: ReactNode;
     children?: ReactNode;
     version?: ReactNode;
+    storageGift?: ReactNode;
     hasAppLinks?: boolean;
 }
 
@@ -32,6 +34,7 @@ const Sidebar = ({
     primary,
     children,
     version,
+    storageGift,
     ...rest
 }: Props) => {
     const rootRef = useRef<HTMLDivElement>(null);
@@ -98,19 +101,23 @@ const Sidebar = ({
                         value={Math.ceil(spacePercentage)}
                     />
                     <div className="flex flex-nowrap flex-justify-space-between pt0-5 pr1-5 pb0-5 pl1-5">
-                        {canAddStorage ? (
-                            <Tooltip title={c('Storage').t`Upgrade storage`}>
-                                <SettingsLink
-                                    path="/dashboard"
-                                    className="app-infos-storage text-no-decoration text-xs m0"
-                                >
-                                    {storageText}
-                                </SettingsLink>
-                            </Tooltip>
-                        ) : (
-                            <span className="app-infos-storage text-xs m0">{storageText}</span>
-                        )}
-                        {version}
+                        <span>
+                            {canAddStorage ? (
+                                <Tooltip title={c('Storage').t`Upgrade storage`}>
+                                    <SettingsLink
+                                        path="/dashboard"
+                                        className="app-infos-storage text-no-decoration text-xs m0"
+                                    >
+                                        {storageText}
+                                    </SettingsLink>
+                                </Tooltip>
+                            ) : (
+                                <span className="app-infos-storage text-xs m0">{storageText}</span>
+                            )}
+                            {storageGift}
+                        </span>
+
+                        <span className={classnames([canAddStorage && 'app-infos-compact'])}>{version}</span>
                     </div>
                 </div>
             ) : (
@@ -118,6 +125,7 @@ const Sidebar = ({
                     <div className="text-center pt0-5 pr1 pb0-5 pl1">{version}</div>
                 </div>
             )}
+
             {hasAppLinks ? <MobileAppsLinks /> : null}
         </div>
     );

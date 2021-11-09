@@ -1,0 +1,14 @@
+@import '~@proton/styles/scss/config';
+
+.get-started_root--limited-width {
+	width: em(430);
+	max-width: 100%;
+}
+
+.get-started_completion-text {
+	max-width: em(340);
+}
+
+.get-started_gift {
+	margin-inline-start: 0.25em;
+}

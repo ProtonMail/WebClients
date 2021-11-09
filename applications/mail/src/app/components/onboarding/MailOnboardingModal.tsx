@@ -11,19 +11,21 @@ import {
     useFeature,
     useImporters,
     FeatureCode,
+    useUser,
 } from '@proton/components';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
 
 const MailOnboardingModal = (props: any) => {
     const appName = getAppName(APPS.PROTONMAIL);
+    const [user] = useUser();
     const goToSettings = useSettingsLink();
     const link = <strong key="link">pm.me/app</strong>;
     const [imports, importsLoading] = useImporters();
     const hasAlreadyImported = !importsLoading && imports.length;
-    const { feature } = useFeature(FeatureCode.UsedMailMobileApp);
     const easySwitchFeature = useFeature(FeatureCode.EasySwitch);
     const isEasySwitchEnabled = easySwitchFeature.feature?.Value;
+    const { feature: usedMailMobileAppFeature } = useFeature(FeatureCode.UsedMailMobileApp);
 
     return (
         <OnboardingModal {...props}>
@@ -45,7 +47,7 @@ const MailOnboardingModal = (props: any) => {
                         </OnboardingStep>
                     ),
                 ({ onNext }: OnboardingStepRenderCallback) =>
-                    feature === undefined || feature.Value ? null : (
+                    usedMailMobileAppFeature === undefined || usedMailMobileAppFeature.Value || user.isFree ? null : (
                         <OnboardingStep submit={c('Onboarding').t`Next`} onSubmit={onNext} close={null}>
                             <OnboardingContent
                                 title={c('Onboarding ProtonMail').t`Get the ${appName} mobile app`}
@@ -60,7 +62,7 @@ const MailOnboardingModal = (props: any) => {
                         </OnboardingStep>
                     ),
                 ({ onNext }: OnboardingStepRenderCallback) =>
-                    hasAlreadyImported ? null : (
+                    hasAlreadyImported || user.isFree ? null : (
                         <OnboardingStep
                             submit={c('Action').t`Import messages`}
                             onSubmit={() => {

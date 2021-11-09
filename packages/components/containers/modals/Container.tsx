@@ -10,6 +10,16 @@ interface Props {
     hideModal: (id: string) => void;
 }
 
+export interface ModalPropsInjection {
+    key: string;
+    onClose: () => void;
+    onExit: () => void;
+    isClosing: Modal['isClosing'];
+    isFirst?: Modal['isFirst'];
+    isLast?: Modal['isLast'];
+    isBehind?: Modal['isBehind'];
+}
+
 const ModalsContainer = ({ modals, removeModal, hideModal }: Props) => {
     const [containerIsClosing, setContainerIsClosing] = useState(false);
 
@@ -18,17 +28,17 @@ const ModalsContainer = ({ modals, removeModal, hideModal }: Props) => {
             return null;
         }
 
-        const handleModalExit = () => {
+        const handleModalExit: ModalPropsInjection['onExit'] = () => {
             content.props.onExit?.();
             removeModal(id);
         };
 
-        const handleModalClose = () => {
+        const handleModalClose: ModalPropsInjection['onClose'] = () => {
             content.props.onClose?.();
             hideModal(id);
         };
 
-        const props = {
+        const props: ModalPropsInjection = {
             onClose: handleModalClose,
             onExit: handleModalExit,
             isFirst,

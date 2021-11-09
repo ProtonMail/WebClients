@@ -17,6 +17,7 @@ import PageContainer from './containers/PageContainer';
 import { MAIN_ROUTE_PATH } from './constants';
 import ContactProvider from './containers/ContactProvider';
 import EncryptedSearchProvider from './containers/EncryptedSearchProvider';
+import GetStartedChecklistProvider from './containers/GetStartedChecklistProvider';
 import { MailContentRefProvider } from './hooks/useClickMailContent';
 import { store } from './logic/store';
 
@@ -45,24 +46,28 @@ const MainContainer = () => {
                     <AttachmentProvider>
                         <ContactProvider>
                             <EncryptedSearchProvider>
-                                <ModalsChildren />
                                 <MailContentRefProvider mailContentRef={mailContentRef}>
+                                <GetStartedChecklistProvider>
                                     <ComposerContainer breakpoints={breakpoints}>
                                         {({ isComposerOpened }) => (
-                                            <Switch>
-                                                <Route
-                                                    path={MAIN_ROUTE_PATH}
-                                                    render={() => (
-                                                        <PageContainer
-                                                            ref={mailContentRef}
-                                                            breakpoints={breakpoints}
-                                                            isComposerOpened={isComposerOpened}
-                                                        />
-                                                    )}
-                                                />
-                                            </Switch>
+                                            <>
+                                                <ModalsChildren />
+                                                <Switch>
+                                                    <Route
+                                                        path={MAIN_ROUTE_PATH}
+                                                        render={() => (
+                                                            <PageContainer
+                                                                ref={mailContentRef}
+                                                                breakpoints={breakpoints}
+                                                                isComposerOpened={isComposerOpened}
+                                                            />
+                                                        )}
+                                                    />
+                                                </Switch>
+                                            </>
                                         )}
                                     </ComposerContainer>
+                                    </GetStartedChecklistProvider>
                                 </MailContentRefProvider>
                             </EncryptedSearchProvider>
                         </ContactProvider>
