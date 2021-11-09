@@ -30,12 +30,6 @@
 	object-fit: contain; // To keep original proportion in Safari.
 }
 
-.file-browser-list-item--share-button {
-	display: none;
-	margin-block: -1em;
-	margin-inline: auto 0;
-}
-
 .file-browser-grid-item--share-icon {
 	position: absolute;
 	inset-block-start: 0.2em;
@@ -46,12 +40,6 @@
 
 .file-browser-grid-item--container {
 	position: relative;
-}
-
-.file-browser-grid-item--share-button {
-	display: none;
-	position: absolute;
-	bottom: 0.5em;
 }
 
 .file-browser-grid-item--select {
@@ -72,13 +60,8 @@
 }
 
 @media (hover: hover) and (pointer: fine) {
-	.file-browser-list-item:hover .file-browser-list-item--share-button {
-		display: flex;
-	}
-
 	.file-browser-grid-item:hover {
-		.file-browser-grid-item--select-hover-only,
-		.file-browser-grid-item--share-button {
+		.file-browser-grid-item--select-hover-only {
 			display: flex;
 		}
 	}
