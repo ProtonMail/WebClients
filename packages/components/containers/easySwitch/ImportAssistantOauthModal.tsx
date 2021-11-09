@@ -35,6 +35,7 @@ import {
     CreateImportPayload,
     EASY_SWITCH_SOURCE,
 } from '@proton/shared/lib/interfaces/EasySwitch';
+import { CALENDAR_TYPE } from '@proton/shared/lib/interfaces/calendar';
 import { getActiveAddresses } from '@proton/shared/lib/helpers/address';
 import { PRODUCT_NAMES, LABEL_COLORS } from '@proton/shared/lib/constants';
 import { noop, randomIntFromInterval } from '@proton/shared/lib/helpers/function';
@@ -533,7 +534,7 @@ const ImportAssistantOauthModal = ({ addresses, onClose = noop, defaultCheckedTy
                             updateCheckedTypes={(importTypes) => setCheckedTypes(importTypes)}
                             modalModel={modalModel}
                             toEmail={addressMap[modalModel.AddressID].Email}
-                            calendars={calendars}
+                            calendars={calendars.filter((c) => c.Type === CALENDAR_TYPE.PERSONAL)}
                             addresses={addresses}
                             labels={labels}
                             folders={folders}
