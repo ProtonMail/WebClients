@@ -99,7 +99,7 @@ const getConfigData = ({ api, publicPath }) => {
 
     const appData = {
         appName,
-        version: getVersionNumberFromTag(process.env.CI_COMMIT_TAG || getGitTagVersion(appName)) || '4.9.99',
+        version: getVersionNumberFromTag(process.env.CI_COMMIT_TAG || getGitTagVersion(appName)) || '4.999.999',
         locales: LOCALES,
         api,
         sentryDsn: isProduction ? ENV_CONFIG.app.sentry || '' : '',
