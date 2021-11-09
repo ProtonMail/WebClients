@@ -67,7 +67,7 @@ const ForgotUsernameForm = ({
                                 <InputFieldTwo
                                     id="email"
                                     bigger
-                                    label={c('Label').t`Recovery email`}
+                                    label={c('Label').t`Recovery email address`}
                                     error={validator(method === 'email' ? [requiredValidator(email)] : [])}
                                     autoFocus
                                     disableChange={loading}
@@ -90,7 +90,7 @@ const ForgotUsernameForm = ({
                                     as={PhoneInput}
                                     id="phone"
                                     bigger
-                                    label={c('Label').t`Recovery phone`}
+                                    label={c('Label').t`Recovery phone number`}
                                     error={validator(method === 'phone' ? [requiredValidator(phone)] : [])}
                                     autoFocus
                                     defaultCountry={defaultCountry}
