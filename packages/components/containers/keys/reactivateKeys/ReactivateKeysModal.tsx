@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 import { KeyReactivationRecord, OnKeyReactivationCallback } from '@proton/shared/lib/keys';
-import { DecryptedKey, KeySalt } from '@proton/shared/lib/interfaces';
+import { DecryptedKey, KeySalt, MNEMONIC_STATUS } from '@proton/shared/lib/interfaces';
 import { getKeySalts } from '@proton/shared/lib/api/keys';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { decryptPrivateKey, OpenPGPKey } from 'pmcrypto';
@@ -16,10 +16,10 @@ import {
     useApi,
     useIsMnemonicAvailable,
     useLoading,
-    useMnemonicOperationStatus,
     useModals,
     useNotifications,
     useRecoverySecrets,
+    useUser,
 } from '../../../hooks';
 import { getInitialStates } from './state';
 import { getReactivatedKeys } from './reactivateHelper';
@@ -43,6 +43,7 @@ type TabId = 'phrase' | 'password' | 'file';
 
 const ReactivateKeysModal = ({ userKeys, keyReactivationRequests, onProcess, onClose, ...rest }: Props) => {
     const api = useApi();
+    const [user] = useUser();
 
     const { validator, onFormSubmit } = useFormErrors();
     const { createNotification } = useNotifications();
@@ -66,8 +67,9 @@ const ReactivateKeysModal = ({ userKeys, keyReactivationRequests, onProcess, onC
         : c('Info').t`This is an encryption key you may have previously saved.`;
 
     const [isMnemonicAvailable] = useIsMnemonicAvailable();
-    const mnemonicOperationStatus = useMnemonicOperationStatus();
-    const showMnemonicTab = isMnemonicAvailable && mnemonicOperationStatus.dataRecovery;
+    const showMnemonicTab =
+        isMnemonicAvailable &&
+        (user.MnemonicStatus === MNEMONIC_STATUS.SET || user.MnemonicStatus === MNEMONIC_STATUS.OUTDATED);
 
     const tabs: TabId[] = ([showMnemonicTab ? 'phrase' : undefined, 'password', 'file'] as const).filter(isTruthy);
     const [tab, setTab] = useState(0);

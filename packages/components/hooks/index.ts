@@ -58,6 +58,7 @@ export {
 export { default as useGetEncryptionPreferences } from './useGetEncryptionPreferences';
 export { default as useGetOrganizationKeyRaw } from './useGetOrganizationKeyRaw';
 export { default as useGetPublicKeys } from './useGetPublicKeys';
+export { default as useHasOutdatedRecoveryFile } from './useHasOutdatedRecoveryFile';
 export { default as useHandler, useEventListener, useSubscribeEventManager, useInterval } from './useHandler';
 export { default as useHasSuspendedCounter } from './useHasSuspendedCounter';
 export * from './useHotkeys';
@@ -79,7 +80,6 @@ export * from './useMessageCounts';
 export { default as useModals } from './useModals';
 export { default as useIsDataRecoveryAvailable } from './useIsDataRecoveryAvailable';
 export { default as useIsMnemonicAvailable } from './useIsMnemonicAvailable';
-export { default as useMnemonicOperationStatus } from './useMnemonicOperationStatus';
 export { default as useMyLocation } from './useMyLocation';
 export { default as useNextSubscription } from './useNextSubscription';
 export { default as useNotifications } from './useNotifications';

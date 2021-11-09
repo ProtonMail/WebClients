@@ -1,16 +1,18 @@
 import { useEffect, useRef } from 'react';
 import { c } from 'ttag';
+import { MNEMONIC_STATUS } from '@proton/shared/lib/interfaces';
 
-import { Button, Info, Loader, Toggle } from '../../components';
+import { Button, Icon, Info, Loader, Toggle } from '../../components';
 
 import {
     useEventManager,
+    useHasOutdatedRecoveryFile,
     useIsMnemonicAvailable,
     useLoading,
-    useMnemonicOperationStatus,
     useModals,
     useRecoverySecrets,
     useUserSettings,
+    useUser,
 } from '../../hooks';
 
 import SettingsParagraph from '../account/SettingsParagraph';
@@ -29,6 +31,7 @@ interface Props {
 }
 
 const DataRecoverySection = ({ openMnemonicModal = false }: Props) => {
+    const [user] = useUser();
     const { createModal } = useModals();
     const [userSettings, loadingUserSettings] = useUserSettings();
     const { call } = useEventManager();
@@ -37,9 +40,9 @@ const DataRecoverySection = ({ openMnemonicModal = false }: Props) => {
     const [isRecoveryFileAvailable, loadingIsRecoveryFileAvailable] = useIsRecoveryFileAvailable();
     const [isMnemonicAvailable, loadingIsMnemonicAvailable] = useIsMnemonicAvailable();
 
-    const mnemonicOperationStatus = useMnemonicOperationStatus();
     const [loadingMnemonic, withLoadingMnemonic] = useLoading();
 
+    const hasOutdatedRecoveryFile = useHasOutdatedRecoveryFile();
     const recoverySecrets = useRecoverySecrets();
     const canRevokeRecoveryFiles = recoverySecrets?.length > 0;
 
@@ -72,31 +75,52 @@ const DataRecoverySection = ({ openMnemonicModal = false }: Props) => {
             </SettingsParagraph>
 
             {isRecoveryFileAvailable && (
-                <SettingsLayout>
-                    <SettingsLayoutLeft>
-                        <label className="pt0 on-mobile-mb0-5 text-semibold" htmlFor="recoveryFile">
-                            <span className="mr0-5">{c('Title').t`Recovery file`}</span>
-                            <Info
-                                title={c('Info')
-                                    .t`A recovery file lets you unlock and view your data after an account reset. `}
-                            />
-                        </label>
-                    </SettingsLayoutLeft>
-                    <SettingsLayoutRight>
-                        <ExportRecoveryFileButton
-                            className={classnames(['mr1-5', canRevokeRecoveryFiles && 'mb1'])}
-                            color="norm"
-                        />
-                        {canRevokeRecoveryFiles && (
-                            <VoidRecoveryFilesButton className="mb1" color="danger" shape="link" />
-                        )}
-                    </SettingsLayoutRight>
-                </SettingsLayout>
+                <>
+                    {hasOutdatedRecoveryFile && (
+                        <p className="color-danger">
+                            <Icon className="mr0-5 float-left mt0-25" name="circle-exclamation-filled" size={14} />
+                            {c('Warning')
+                                .t`Your recovery file is outdated and can't recover new data should you reset your account again.`}
+                        </p>
+                    )}
+                    <SettingsLayout>
+                        <SettingsLayoutLeft>
+                            <label className="pt0 on-mobile-mb0-5 text-semibold" htmlFor="recoveryFile">
+                                <span className="mr0-5">{c('Title').t`Recovery file`}</span>
+                                <Info
+                                    title={c('Info')
+                                        .t`A recovery file lets you unlock and view your data after an account reset. `}
+                                />
+                            </label>
+                        </SettingsLayoutLeft>
+                        <SettingsLayoutRight>
+                            <ExportRecoveryFileButton
+                                className={classnames(['mr1-5', canRevokeRecoveryFiles && 'mb1'])}
+                                color="norm"
+                            >
+                                {hasOutdatedRecoveryFile
+                                    ? c('Action').t`Update recovery file`
+                                    : c('Action').t`Download recovery file`}
+                            </ExportRecoveryFileButton>
+                            {canRevokeRecoveryFiles && (
+                                <VoidRecoveryFilesButton className="mb1" color="danger" shape="link" />
+                            )}
+                        </SettingsLayoutRight>
+                    </SettingsLayout>
+                </>
             )}
 
             {isMnemonicAvailable && (
                 <>
                     <hr className="mb2 mt2" />
+
+                    {user.MnemonicStatus === MNEMONIC_STATUS.OUTDATED && (
+                        <p className="color-danger">
+                            <Icon className="mr0-5 float-left mt0-25" name="circle-exclamation-filled" size={14} />
+                            {c('Warning')
+                                .t`Your recovery phrase is outdated and can't recover new data should you reset your account again.`}
+                        </p>
+                    )}
 
                     <SettingsLayout>
                         <SettingsLayoutLeft>
@@ -109,41 +133,55 @@ const DataRecoverySection = ({ openMnemonicModal = false }: Props) => {
                             </label>
                         </SettingsLayoutLeft>
                         <SettingsLayoutRight className="flex-item-fluid pt0-5">
-                            <div className="flex flex-align-items-center mb1-5">
-                                <Toggle
-                                    className="mr0-5"
-                                    loading={loadingMnemonic}
-                                    checked={mnemonicOperationStatus.accountRecovery}
-                                    id="passwordMnemonicResetToggle"
-                                    onChange={({ target: { checked } }) => {
-                                        const handleMnemonicToggle = async (willBeChecked: boolean) => {
-                                            await new Promise<void>((resolve, reject) => {
-                                                if (willBeChecked) {
-                                                    createModal(
-                                                        <GenerateMnemonicModal onClose={reject} onSuccess={resolve} />
-                                                    );
-                                                } else {
-                                                    createModal(
-                                                        <DisableMnemonicModal onClose={reject} onSuccess={resolve} />
-                                                    );
-                                                }
-                                            });
-                                            await call();
-                                        };
-
-                                        return withLoadingMnemonic(handleMnemonicToggle(checked));
-                                    }}
-                                />
-                                <label htmlFor="passwordMnemonicResetToggle" className="flex-item-fluid">
-                                    {c('Label').t`Allow recovery by recovery phrase`}
-                                </label>
-                            </div>
-
-                            {mnemonicOperationStatus.accountRecovery ? (
-                                <Button shape="outline" onClick={openGenerateMnemonicModal}>
-                                    {c('Action').t`Generate new recovery phrase`}
+                            {user.MnemonicStatus === MNEMONIC_STATUS.OUTDATED ? (
+                                <Button color="norm" onClick={openGenerateMnemonicModal}>
+                                    {c('Action').t`Update recovery phrase`}
                                 </Button>
-                            ) : null}
+                            ) : (
+                                <>
+                                    <div className="flex flex-align-items-center mb1-5">
+                                        <Toggle
+                                            className="mr0-5"
+                                            loading={loadingMnemonic}
+                                            checked={user.MnemonicStatus === MNEMONIC_STATUS.SET}
+                                            id="passwordMnemonicResetToggle"
+                                            onChange={({ target: { checked } }) => {
+                                                const handleMnemonicToggle = async (willBeChecked: boolean) => {
+                                                    await new Promise<void>((resolve, reject) => {
+                                                        if (willBeChecked) {
+                                                            createModal(
+                                                                <GenerateMnemonicModal
+                                                                    onClose={reject}
+                                                                    onSuccess={resolve}
+                                                                />
+                                                            );
+                                                        } else {
+                                                            createModal(
+                                                                <DisableMnemonicModal
+                                                                    onClose={reject}
+                                                                    onSuccess={resolve}
+                                                                />
+                                                            );
+                                                        }
+                                                    });
+                                                    await call();
+                                                };
+
+                                                return withLoadingMnemonic(handleMnemonicToggle(checked));
+                                            }}
+                                        />
+                                        <label htmlFor="passwordMnemonicResetToggle" className="flex-item-fluid">
+                                            {c('Label').t`Allow recovery by recovery phrase`}
+                                        </label>
+                                    </div>
+
+                                    {user.MnemonicStatus === MNEMONIC_STATUS.SET && (
+                                        <Button shape="outline" onClick={openGenerateMnemonicModal}>
+                                            {c('Action').t`Generate new recovery phrase`}
+                                        </Button>
+                                    )}
+                                </>
+                            )}
                         </SettingsLayoutRight>
                     </SettingsLayout>
                 </>
