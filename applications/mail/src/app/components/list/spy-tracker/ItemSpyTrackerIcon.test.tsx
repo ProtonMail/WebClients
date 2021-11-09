@@ -157,8 +157,8 @@ describe('ItemSpyTrackerIcon', () => {
         const { modal } = await getModal();
         getByTextDefault(modal, '2 email trackers blocked');
 
-        findByTextDefault(modal, 'Tracker 1');
-        findByTextDefault(modal, 'Tracker 2');
+        await findByTextDefault(modal, 'Tracker 1');
+        await findByTextDefault(modal, 'Tracker 2');
 
         const trackersBubbles = queryAllByTestIdDefault(modal, 'privacy:icon-number-of-trackers');
         trackersBubbles.forEach((trackerBubble) => {
