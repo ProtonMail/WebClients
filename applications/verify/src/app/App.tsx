@@ -43,12 +43,12 @@ const App = () => {
                     <ThemeProvider>
                         <PreventLeaveProvider>
                             <NotificationsHijack onCreate={handleNotificationCreate}>
-                                <ApiProvider config={config} onLogout={noop}>
-                                    <ModalsProvider>
+                                <ModalsProvider>
+                                    <ApiProvider config={config} onLogout={noop}>
                                         <Verify />
                                         <ModalsChildren />
-                                    </ModalsProvider>
-                                </ApiProvider>
+                                    </ApiProvider>
+                                </ModalsProvider>
                             </NotificationsHijack>
                         </PreventLeaveProvider>
                     </ThemeProvider>
