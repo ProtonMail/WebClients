@@ -42,6 +42,7 @@ const AttachingModalContent = ({
             )}
         </Alert>
     );
+
     return (
         <>
             {alert}
