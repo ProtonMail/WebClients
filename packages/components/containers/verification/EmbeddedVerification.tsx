@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
+import { localeCode } from '@proton/shared/lib/i18n';
 import { APPS } from '@proton/shared/lib/constants';
 import { HumanVerificationMethodType } from '@proton/shared/lib/interfaces';
 import { getAppUrlFromApiUrl, getAppUrlRelativeToOrigin, stringifySearchParams } from '@proton/shared/lib/helpers/url';
@@ -82,6 +83,7 @@ const EmbeddedVerification = ({
         defaultCountry: defaultCountry || undefined,
         defaultEmail: defaultEmail || undefined,
         defaultPhone: defaultPhone || undefined,
+        locale: localeCode,
     };
 
     const src = `${embedUrl.toString()}?${stringifySearchParams(params)}`;
