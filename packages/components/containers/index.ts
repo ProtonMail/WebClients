@@ -9,6 +9,7 @@ export * from './calendar';
 export * from './challenge';
 export * from './compatibilityCheck';
 export * from './contacts';
+export * from './config';
 export * from './domains';
 export * from './earlyAccess';
 export * from './easySwitch';
