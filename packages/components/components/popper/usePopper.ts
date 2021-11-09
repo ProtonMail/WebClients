@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { getScrollParent } from '@proton/shared/lib/helpers/dom';
 
+import { debounce } from '@proton/shared/lib/helpers/function';
 import { adjustPosition, computedSize, ALL_PLACEMENTS, Position } from './utils';
 
 const getPosition = (
@@ -65,6 +66,7 @@ interface Props {
     availablePlacements?: string[];
     originalPosition?: Position;
     offset?: number;
+    updatePositionOnDOMChange?: boolean;
 }
 
 const usePopper = ({
@@ -75,6 +77,7 @@ const usePopper = ({
     availablePlacements = ALL_PLACEMENTS,
     originalPosition,
     offset = 10,
+    updatePositionOnDOMChange = true,
 }: Props) => {
     const initialPosition: Position = { top: -1000, left: -1000, '--arrow-offset': 0 };
     const [placement, setPlacement] = useState(originalPlacement);
@@ -109,16 +112,19 @@ const usePopper = ({
 
         updatePosition();
 
-        const observer = new MutationObserver(updatePosition);
-        if (popperEl) {
+        const debouncedUpdatePosition = debounce(updatePosition, 100);
+        const observer = updatePositionOnDOMChange ? new MutationObserver(debouncedUpdatePosition) : undefined;
+        if (observer && popperEl) {
             observer.observe(popperEl, { childList: true, subtree: true });
         }
-        contentArea.addEventListener('scroll', updatePosition);
-        window.addEventListener('resize', updatePosition);
+        contentArea.addEventListener('scroll', debouncedUpdatePosition);
+        window.addEventListener('resize', debouncedUpdatePosition);
         return () => {
-            observer.disconnect();
-            contentArea.removeEventListener('scroll', updatePosition);
-            window.removeEventListener('resize', updatePosition);
+            if (observer) {
+                observer.disconnect();
+            }
+            contentArea.removeEventListener('scroll', debouncedUpdatePosition);
+            window.removeEventListener('resize', debouncedUpdatePosition);
         };
     }, [isOpen, anchorEl, popperEl]);
 
