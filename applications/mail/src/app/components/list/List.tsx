@@ -213,11 +213,7 @@ const List = (
                                                 if (isMnemonicAvailable) {
                                                     createModal(<MnemonicPromptModal />);
                                                 } else {
-                                                    goToSettings(
-                                                        '/authentication#recovery-notification',
-                                                        undefined,
-                                                        true
-                                                    );
+                                                    goToSettings('/recovery', undefined, true);
                                                 }
                                                 break;
                                             }
