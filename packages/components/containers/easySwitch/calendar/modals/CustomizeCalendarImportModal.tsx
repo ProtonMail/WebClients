@@ -167,7 +167,7 @@ const CustomizeCalendarImportModal = ({
             {...rest}
         >
             <div className="mb1">{c('Info')
-                .t`Select which calendars to import. A new calendar will be created for each imported calendar up to the 20-personal-calendar limit. You can also merge imported calendars with existing Proton calendars.`}</div>
+                .t`Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit. You can also merge imported calendars with existing Proton calendars.`}</div>
 
             {calendarLimitReached && errorBox}
 
