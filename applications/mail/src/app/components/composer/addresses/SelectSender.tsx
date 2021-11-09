@@ -1,5 +1,16 @@
 import { useState, MutableRefObject } from 'react';
-import { generateUID, useAddresses, useMailSettings, SelectTwo, Option, Icon } from '@proton/components';
+import {
+    generateUID,
+    useAddresses,
+    useMailSettings,
+    SelectTwo,
+    Option,
+    Icon,
+    SettingsLink,
+    useUser,
+} from '@proton/components';
+import { c } from 'ttag';
+import { APPS } from '@proton/shared/lib/constants';
 import { SelectChangeEvent } from '@proton/components/components/selectTwo/select';
 import { MessageExtended } from '../../../models/message';
 import { getAddressFromEmail, getFromAddresses } from '../../../helpers/addresses';
@@ -17,6 +28,7 @@ interface Props {
 const SelectSender = ({ message, disabled, onChange, onChangeContent, addressesBlurRef }: Props) => {
     const [mailSettings = {}] = useMailSettings();
     const [addresses = []] = useAddresses();
+    const [user] = useUser();
 
     const [uid] = useState(generateUID('select-sender'));
 
@@ -28,6 +40,16 @@ const SelectSender = ({ message, disabled, onChange, onChangeContent, addressesB
             </span>
         </Option>
     ));
+
+    if (user.hasPaidMail) {
+        addressesOptions.push(
+            <div key="create-new-adress" className="pl1 pt0-5 pb0-5 border-top">
+                <SettingsLink path="/identity-addresses" app={APPS.PROTONMAIL}>
+                    {c('Label').t`Create new address`}
+                </SettingsLink>
+            </div>
+        );
+    }
 
     const handleFromChange = (event: SelectChangeEvent<string>) => {
         const email = event.value;
