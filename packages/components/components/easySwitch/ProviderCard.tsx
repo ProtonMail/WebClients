@@ -30,7 +30,7 @@ const ProviderCard = ({ className, provider, ...rest }: Props) => {
             height: 32,
         },
         [OUTLOOK]: {
-            name: 'Outlook',
+            name: 'Outlook.com',
             logo: outlookLogo,
             width: 44,
             height: 44,

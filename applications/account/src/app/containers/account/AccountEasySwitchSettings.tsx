@@ -31,7 +31,7 @@ export const getEasySwitchPage = () => {
             },
             {
                 text: c('Title').t`Import contacts`,
-                id: 'import-contacts',
+                id: 'contacts-import',
             },
         ],
     };
