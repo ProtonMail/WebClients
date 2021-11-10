@@ -11,7 +11,7 @@ import {
 } from '@proton/shared/lib/api/calendars';
 import { loadModels } from '@proton/shared/lib/models/helper';
 import { CalendarsModel } from '@proton/shared/lib/models';
-import { setupCalendarKey } from '../../keys/calendar';
+import { setupCalendarKey } from '@proton/shared/lib/calendar/keys/setupCalendarKeys';
 import {
     useApi,
     useCache,

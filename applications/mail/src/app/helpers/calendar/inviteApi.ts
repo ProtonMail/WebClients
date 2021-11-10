@@ -1,4 +1,5 @@
 import { getLinkedDateTimeProperty } from '@proton/shared/lib/calendar/icsSurgery/vevent';
+import { getIsPersonalCalendar } from '@proton/shared/lib/calendar/subscribe/helpers';
 import { getUnixTime } from 'date-fns';
 import { syncMultipleEvents, updateAttendeePartstat, updatePersonalEventPart } from '@proton/shared/lib/api/calendars';
 import { processApiRequestsSafe } from '@proton/shared/lib/api/helpers/safeApiRequests';
@@ -47,7 +48,7 @@ import {
 } from '@proton/shared/lib/calendar/vcalHelper';
 import { getIsEventCancelled, withDtstamp } from '@proton/shared/lib/calendar/veventHelper';
 import { API_CODES } from '@proton/shared/lib/constants';
-import { noop } from '@proton/shared/lib/helpers/function';
+import { noop, unary } from '@proton/shared/lib/helpers/function';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import { omit, pick } from '@proton/shared/lib/helpers/object';
 import { Address, Api } from '@proton/shared/lib/interfaces';
@@ -55,6 +56,7 @@ import {
     Calendar,
     CalendarEvent,
     CalendarEventWithMetadata,
+    CalendarUserSettings,
     CalendarWidgetData,
     DecryptedPersonalVeventMapResult,
     DecryptedVeventResult,
@@ -74,6 +76,9 @@ import {
     EVENT_INVITATION_ERROR_TYPE,
     EventInvitationError,
 } from '@proton/shared/lib/calendar/icsSurgery/EventInvitationError';
+import { GetAddressKeys } from '@proton/shared/lib/interfaces/hooks/GetAddressKeys';
+import setupCalendarHelper from '@proton/shared/lib/calendar/keys/setupCalendarHelper';
+
 import { MessageExtendedWithData } from '../../models/message';
 import {
     EventInvitation,
@@ -81,6 +86,7 @@ import {
     getInvitationHasAttendee,
     getIsInvitationFromFuture,
     getIsInvitationOutdated,
+    getIsNonSoughtEvent,
     getIsProtonInvite,
     getSingleEditWidgetData,
     processEventInvitation,
@@ -89,6 +95,43 @@ import {
 
 const { CANCELLED } = ICAL_EVENT_STATUS;
 const { NONE, KEEP_PARTSTAT, RESET_PARTSTAT, UPDATE_PARTSTAT, CANCEL } = UPDATE_ACTION;
+
+/**
+ * Get calendars and calendar user settings. If no calendar exists, create one
+ */
+export const getOrCreatePersonalCalendarsAndSettings = async ({
+    api,
+    addresses,
+    getAddressKeys,
+    getCalendars,
+    getCalendarUserSettings,
+}: {
+    api: Api;
+    addresses: Address[];
+    getAddressKeys: GetAddressKeys;
+    getCalendars: () => Promise<Calendar[] | undefined>;
+    getCalendarUserSettings: () => Promise<CalendarUserSettings>;
+}) => {
+    const silentApi = <T>(config: any) => api<T>({ ...config, silence: true });
+    let [calendars = [], calendarUserSettings] = await Promise.all([getCalendars(), getCalendarUserSettings()]);
+    calendars = calendars.filter(unary(getIsPersonalCalendar));
+    if (!calendars.length) {
+        // create a calendar automatically
+        try {
+            const { calendar, updatedCalendarUserSettings } = await setupCalendarHelper({
+                api: silentApi,
+                addresses,
+                getAddressKeys,
+            });
+            calendarUserSettings = { ...calendarUserSettings, ...updatedCalendarUserSettings };
+            calendars = [calendar];
+        } catch {
+            // fail silently
+            noop();
+        }
+    }
+    return { calendars, calendarUserSettings };
+};
 
 interface GetVeventWithAlarmsArgs {
     calendarEvent: CalendarEventWithMetadata;
@@ -112,20 +155,6 @@ const getVeventWithAlarms = async ({
         ...valarms,
         ...vevent,
     };
-};
-
-const getIsNonSoughtEvent = (
-    event: CalendarEventWithMetadata,
-    vevent: VcalVeventComponent,
-    supportedRecurrenceId?: VcalDateOrDateTimeProperty
-) => {
-    if (!event.RecurrenceID) {
-        return false;
-    }
-    if (!getHasRecurrenceId(vevent)) {
-        return true;
-    }
-    return getUnixTime(propertyToUTCDate(supportedRecurrenceId || vevent['recurrence-id'])) !== event.RecurrenceID;
 };
 
 export type FetchAllEventsByUID = ({
