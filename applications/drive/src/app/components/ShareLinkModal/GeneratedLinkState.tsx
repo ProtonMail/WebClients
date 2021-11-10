@@ -11,6 +11,8 @@ import {
     HeaderModal,
     InnerModal,
     InputTwo,
+    InputFieldTwo,
+    PasswordInputTwo,
     Label,
     PrimaryButton,
     Row,
@@ -210,16 +212,16 @@ function GeneratedLinkState({
                                         />
                                     </div>
                                 </Tooltip>
-                                <div className="flex-no-min-children flex-item-fluid flex-align-items-center on-mobile-mb0-5 field-icon-container-empty on-mobile-min-h0">
+                                <div className="flex-no-min-children flex-item-fluid on-mobile-mb0-5 inputform-icon-container-empty on-mobile-min-h0">
                                     {passwordToggledOn && (
                                         <>
-                                            <Label htmlFor="sharing-modal-password" className="sr-only">
-                                                {c('Label').t`Password`}
-                                            </Label>
-                                            <InputTwo
+                                            <InputFieldTwo
                                                 id="sharing-modal-password"
+                                                as={PasswordInputTwo}
                                                 data-testid="sharing-modal-password"
-                                                className="no-scroll text-ellipsis"
+                                                labelContainerClassName="sr-only"
+                                                assistContainerClassName="sr-only"
+                                                label={c('Label').t`Password`}
                                                 disabled={saving}
                                                 maxLength={50}
                                                 value={password}
@@ -243,7 +245,7 @@ function GeneratedLinkState({
                                         data-testid="sharing-modal-expirationTimeModeToggle"
                                     />
                                 </div>
-                                <div className="flex-no-min-children flex-item-fluid flex-align-items-center on-mobile-mb0-5 field-icon-container-empty on-mobile-min-h0">
+                                <div className="flex-no-min-children flex-item-fluid flex-align-items-center on-mobile-mb0-5 inputform-icon-container-empty on-mobile-min-h0">
                                     {expirationToggledOn && (
                                         <ExpirationTimeDatePicker
                                             disabled={saving}
