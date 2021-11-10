@@ -1,0 +1,234 @@
+{
+  "headers": {
+    "plural-forms": "nplurals=1; plural=0;",
+    "language": "zh_CN"
+  },
+  "contexts": {
+    "Action": {
+      "Cancel": [
+        "取消"
+      ],
+      "Close": [
+        "关闭"
+      ],
+      "Close modal": [
+        "关闭"
+      ],
+      "Did not receive the code?": [
+        "未收到验证码？"
+      ],
+      "Edit email address": [
+        "编辑邮箱地址"
+      ],
+      "Edit phone number": [
+        "编辑电话号码"
+      ],
+      "Get verification code": [
+        "获取验证码"
+      ],
+      "refresh the page": [
+        "刷新页面"
+      ],
+      "Request new code": [
+        "请求新的验证码"
+      ],
+      "Submit": [
+        "提交"
+      ],
+      "Try another method": [
+        "更换验证方式"
+      ],
+      "Verify": [
+        "验证"
+      ],
+      "View invoice": [
+        "查看账单"
+      ]
+    },
+    "Delinquent modal title": {
+      "Overdue invoice": [
+        "逾期账单"
+      ]
+    },
+    "Error": {
+      "Can't validate email, try again later": [
+        "无法验证邮箱，请重试"
+      ],
+      "Can't validate phone, try again later": [
+        "无法验证手机，请稍候再重试"
+      ],
+      "Email is not valid": [
+        "无效邮箱"
+      ],
+      "Enter 6 digits": [
+        "输入 6 位代码"
+      ],
+      "Invalid verification code": [
+        "无效的验证码"
+      ],
+      "Not a valid number": [
+        "无效号码"
+      ],
+      "Passwords do not match": [
+        "两次输入的密码不一致"
+      ],
+      "Request timed out.": [
+        "请求超时。"
+      ],
+      "This field is required": [
+        "此字段必填"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "此字段至少需要 ${ minimumLength } 个字符。"
+      ],
+      "Unknown error": [
+        "未知错误"
+      ]
+    },
+    "Error message": {
+      "Brace yourself till we get the error fixed.": [
+        "别担心，我们会解决的。"
+      ],
+      "Error: ${ errorMessage }": [
+        ""
+      ],
+      "Oops, something went wrong": [
+        "糟糕，出错了"
+      ],
+      "Please ${ refresh } or check your connection.": [
+        ""
+      ],
+      "There was a problem connecting to Proton.": [
+        ""
+      ],
+      "You may also ${ refresh } or try again later.": [
+        "您也可以${ refresh }页面或稍后再试"
+      ]
+    },
+    "Human verification method": {
+      "CAPTCHA": [
+        "验证码"
+      ],
+      "Email": [
+        "电子邮件"
+      ],
+      "Manual": [
+        "手动"
+      ],
+      "No verification method available": [
+        "没有可用的验证方法"
+      ],
+      "SMS": [
+        "短信"
+      ]
+    },
+    "Info": {
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
+        "点击“请求新验证码”将发送到 ${ strong }。如果此邮箱地址不正确，请点击“编辑”。"
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
+        "点击“请求新验证码”将发送到 ${ strong }。如果此电话号码不正确，请点击“编辑”。"
+      ],
+      "Enter the verification code that was sent to ${ destinationText }.": [
+        "验证码已发至 ${ destinationText }，请在下方输入。"
+      ],
+      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
+        "若您创建账户存在困难，请提交注册申请，我们将在一个工作日内回复。"
+      ],
+      "If you don't find the email in your inbox, please check your spam folder.": [
+        "若邮件没有出现在收件箱中，请检查其是否被归为垃圾邮件。"
+      ],
+      "Internet connection lost.": [
+        "网络连接断开。"
+      ],
+      "Loading": [
+        "加载中"
+      ],
+      "No results found": [
+        "搜索无结果"
+      ],
+      "Servers are unreachable. Please try again in a few minutes": [
+        "服务器无法访问，请过几分钟后再试"
+      ],
+      "Session timed out.": [
+        "会话已超时。"
+      ],
+      "To fight spam and abuse, please verify you are human.": [
+        "为了防止垃圾邮件和滥用，请验证您是人类。"
+      ],
+      "Would you like to receive a new verification code or use an alternative verification method?": [
+        "您想重新获取验证码还是更换验证方式？"
+      ],
+      "Your email will only be used for this one-time verification.": [
+        "您的邮箱将只会用于此一次性验证"
+      ],
+      "Your phone number will only be used for this one-time verification.": [
+        "您的电话号码将只会用于此一次性验证"
+      ],
+      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
+        "您的 Proton 账户已欠费停用，请先支付逾期账单再继续使用。"
+      ]
+    },
+    "Label": {
+      "Cancel": [
+        "取消"
+      ],
+      "Email address": [
+        "电子邮件地址"
+      ],
+      "Enter the 6-digit code": [
+        "请输入 6 位验证码"
+      ],
+      "Hide password": [
+        "隐藏密码"
+      ],
+      "Password": [
+        "密码"
+      ],
+      "Phone number": [
+        "电话号码"
+      ],
+      "Reveal password": [
+        "显示密码"
+      ],
+      "Submit": [
+        "确定"
+      ],
+      "Verification code": [
+        "验证码"
+      ]
+    },
+    "Link": {
+      "Learn more": [
+        "了解详情"
+      ],
+      "Request an invite": [
+        "请求注册邀请"
+      ]
+    },
+    "Success": {
+      "Code sent to ${ methodTo }": [
+        "代码已发送到 ${ methodTo }"
+      ],
+      "Verification successful": [
+        "验证成功"
+      ]
+    },
+    "Title": {
+      "Human verification": [
+        "人机验证"
+      ],
+      "Invalid verification code": [
+        "无效的验证码"
+      ],
+      "Sign in again to continue": [
+        "再次登录方可继续"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "密码必须至少包含 ${ length } 个字符"
+      ]
+    }
+  }
+}

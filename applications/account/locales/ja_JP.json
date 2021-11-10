@@ -202,9 +202,6 @@
       "Copy link": [
         "リンクをコピー"
       ],
-      "Copy to clipboard": [
-        "クリップボードにコピー"
-      ],
       "Create": [
         "作成"
       ],
@@ -300,6 +297,9 @@
       ],
       "Download all configurations": [
         "すべての設定ファイルをダウンロード"
+      ],
+      "Download recovery file": [
+        ""
       ],
       "Download the Import-Export app": [
         "Import-Export アプリをダウンロード"
@@ -778,6 +778,15 @@
       "View invoice": [
         "請求書を参照"
       ],
+      "Void all recovery files": [
+        ""
+      ],
+      "Void all recovery files?": [
+        ""
+      ],
+      "Void anyway": [
+        ""
+      ],
       "Warning": [
         "警告"
       ],
@@ -1067,87 +1076,98 @@
       ]
     },
     "blackfriday Action": {
-      "Get limited-time deal": [
-        ""
-      ],
-      "Upgrade": [
+      "Get the offer": [
         ""
       ]
     },
     "blackfriday Info": {
-      "Discounts are based on monthly pricing.": [
-        ""
-      ],
-      "early access to": [
-        ""
-      ],
-      "Free": [
-        ""
-      ],
-      "Get early access to our new encrypted drive for FREE by upgrading to a Plus bundle now.": [
-        ""
+      "beta": [
+        "ベータ"
       ],
       "Includes": [
+        "プランには以下が含まれます"
+      ],
+      "Standard price: ${ regularPrice }": [
+        "標準価格: ${ regularPrice }"
+      ],
+      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
+        "このサブスクリプションは、キャンセル処理が行われない限り2年後に同額で自動更新されます。"
+      ]
+    },
+    "blackfriday Title": {
+      "Best deal": [
         ""
       ],
-      "Offer valid only for first-time paid subscriptions.": [
-        ""
+      "Most popular": [
+        "最も人気"
       ],
-      "ProtonDrive": [
+      "Save more when combining Mail and VPN": [
+        ""
+      ]
+    },
+    "blackfriday: VPNspecialoffer Action": {
+      "Get the deal": [
+        "割引を入手"
+      ],
+      "Get the deal now": [
+        "今すぐ割引を入手"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Badge popup": {
+      "${ vpnAppName } Plus Special Offer 2021 discount has been applied": [
+        ""
+      ]
+    },
+    "blackfriday: VPNspecialoffer Info": {
+      "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
         ""
       ],
       "Save ${ percentage }%": [
-        "${ percentage }%"
+        "${ percentage }%割引"
       ],
-      "Standard price: ${ regularPrice }": [
-        ""
-      ],
-      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
+      "Special offer Terms and Conditions": [
         ""
       ]
     },
-    "blackfriday info": {
+    "blackfriday: VPNspecialoffer info": {
       "per month": [
-        ""
+        " / 月"
       ]
     },
-    "blackfriday Promo title, need to be short": {
+    "blackfriday: VPNspecialoffer Promo title, need to be short": {
       "Special offer": [
         "特別オファー"
       ]
     },
-    "blackfriday Title": {
-      "(${ notice }) Renews after 1 year at a discounted annual & bundle price of ${ amount } every year (36% discount).": [
+    "blackfriday: VPNspecialoffer Title": {
+      "(${ notice }) Renews after 1 month at a standard monthly price of ${ amount }": [
         ""
       ],
-      "(${ notice }) Renews after 1 year at a discounted annual price of ${ amount } every year (20% discount).": [
+      "(${ notice }) Renews after 1 year at a standard discounted annual price of ${ amount } (20% discount)": [
         ""
       ],
-      "(${ notice }) Renews after 2 years at a discounted 2-year price of ${ amount } every 2 years (47% discount).": [
+      "(${ notice }) Renews after 2 years at a standard discounted 2-year price of ${ amount } (33% discount)": [
         ""
       ],
-      "Billed as ${ amount } ${ supNotice }": [
+      "1 month": [
+        "1か月"
+      ],
+      "12 months": [
+        "12か月"
+      ],
+      "24 months": [
+        "24か月"
+      ],
+      "Billed at ${ amount } for the first 2 years.${ supNotice }": [
         ""
       ],
-      "Black Friday Sale": [
+      "Billed at ${ amount } for the first month.${ supNotice }": [
         ""
       ],
-      "Cyber Monday Sale": [
+      "Billed at ${ amount } for the first year.${ supNotice }": [
         ""
       ],
-      "for 1 month": [
-        ""
-      ],
-      "for 1 year": [
-        ""
-      ],
-      "for 2 years": [
-        ""
-      ],
-      "Most popular": [
-        ""
-      ],
-      "ProtonDrive early access offer": [
+      "Get the special year-end offer on our Premium VPN PLUS plan": [
         ""
       ]
     },
@@ -1904,6 +1924,9 @@
       "Organization key is not decrypted.": [
         "組織の鍵が復号されていません。"
       ],
+      "Organization not recognized. Try again.": [
+        ""
+      ],
       "Passwords do not match": [
         "パスワードが一致しません"
       ],
@@ -1939,6 +1962,9 @@
       ],
       "Please refresh the page.": [
         "ページを更新してください。"
+      ],
+      "Please set a recovery email first": [
+        ""
       ],
       "Please set a recovery phone number first": [
         "まず回復用の電話番号を設定してください"
@@ -2052,6 +2078,9 @@
         "支払いトークンの状態が不明です。"
       ],
       "Uploaded file is not a valid private key. Please verify and try again.": [
+        ""
+      ],
+      "Uploaded file is not a valid recovery file. Please verify and try again.": [
         ""
       ],
       "Uploaded files are not valid private keys. Please verify and try again.": [
@@ -3099,6 +3128,9 @@
       "A key with the same encryption algorithm is already active for this address. Generating another key will cause slower account loading and deletion of this key can cause issues. If you are generating a new key because your old key is compromised, please mark that key as compromised. Are you sure you want to continue?": [
         "同じ暗号化アルゴリズムを持つ鍵が、このアドレスに対してすでにアクティブです。\n別の鍵を生成すると、アカウントの読み込みが遅くなり、この鍵を削除すると問題が発生する可能性があります。\n古い鍵が侵害されために新しい鍵を生成している場合は、侵害された鍵をマークしてください。\n続行しますか？"
       ],
+      "A recovery file lets you unlock and view your data after an account reset. ": [
+        ""
+      ],
       "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password.": [
         ""
       ],
@@ -3111,11 +3143,26 @@
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "請求書未払いのためにアクセスが制限されています。管理者に問い合わせてください。"
       ],
+      "account recovery and data recovery method": [
+        ""
+      ],
+      "account recovery method": [
+        ""
+      ],
       "Account successfully updated": [
         "アカウントが正常に更新されました。"
       ],
+      "Activate your recovery phrase": [
+        ""
+      ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"ProtonMail me\" or \"Private Message me.\"": [
         "あなたのアカウントに@pm.meメールアドレスを追加します。このシンプルな短縮ドメインは「ProtonMail」または「Private Message me」の略です。"
+      ],
+      "Add a recovery email address": [
+        ""
+      ],
+      "Add a recovery phone number": [
+        ""
       ],
       "Add additional addresses to your account like user2@protonmail.com": [
         "アカウントに user2@protonmail.com のようなさらなるアドレスを追加できます"
@@ -3134,6 +3181,9 @@
       ],
       "Addresses": [
         "アドレス"
+      ],
+      "After a password reset your data is locked in encrypted form to keep it safe. To decrypt and view your emails and other data, you need a recovery file or recovery phrase.": [
+        ""
       ],
       "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
         "ビットコインでのお支払い後は、以下の指示に従ってアップグレードしてください。"
@@ -3417,6 +3467,9 @@
       "Download your PGP keys for use with other PGP-compatible services.": [
         ""
       ],
+      "Download your recovery file": [
+        ""
+      ],
       "Drop the file here to upload": [
         "アップロードするファイルをここにドロップしてください"
       ],
@@ -3426,7 +3479,7 @@
       "Edit label": [
         "ラベルを編集"
       ],
-      "Effortlessly and securely move your emails from your current provider to Proton. If you use Google, we also support calendar, and contacts imports.": [
+      "Effortlessly and securely move your emails from your current provider to Proton. If you use Google, we also support calendar and contacts imports.": [
         ""
       ],
       "Email address": [
@@ -3570,6 +3623,12 @@
       "If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly.": [
         ""
       ],
+      "If you lose your login details and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
+        ""
+      ],
+      "If you lose your login details and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.": [
+        ""
+      ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to log into your account. Each code can only be used once.": [
         "2 要素認証機器を紛失した場合、6桁の2 要素認証パスコード代わりに、以下のコードを使用してアカウントにログインすることができます。 各コードは一度しか使用できません。"
       ],
@@ -3627,6 +3686,12 @@
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         ""
       ],
+      "In case you lose your login details, we’ll send you recovery instructions via email or SMS.": [
+        ""
+      ],
+      "In case you lose your login details, we’ll send you recovery instructions via email.": [
+        ""
+      ],
       "Included": [
         "プランに含む"
       ],
@@ -3659,6 +3724,9 @@
       ],
       "Internet connection restored.": [
         "インターネット接続が回復しました。"
+      ],
+      "it’s imperative": [
+        ""
       ],
       "Just confirm your selection and we'll do the rest.": [
         ""
@@ -3762,6 +3830,9 @@
       "Next you'll need to log in to your Google account and allow us to access your data.": [
         ""
       ],
+      "No account recovery method set, you are at risk of losing access to your account": [
+        ""
+      ],
       "No action selected": [
         ""
       ],
@@ -3769,6 +3840,9 @@
         "アドレスが存在しません"
       ],
       "No contact encryption keys exist": [
+        ""
+      ],
+      "No data recovery method set, you are at risk of losing access to your data": [
         ""
       ],
       "No folder selected": [
@@ -3954,11 +4028,17 @@
       "read our two-factor authentication Guide first": [
         "はじめに2要素認証ガイドをお読みください"
       ],
+      "Recovery files have been voided": [
+        ""
+      ],
       "Recovery phrase copied to clipboard": [
         "リカバリーフレーズはクリップボードへコピーされました"
       ],
       "Recovery phrase has been disabled": [
         "リカバリーフレーズは無効化されました"
+      ],
+      "Recovery phrase is not associated with any outdated keys.": [
+        ""
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "ほとんどの問題は、ページを更新するか、 ${ link } することで解決できます。"
@@ -3990,7 +4070,7 @@
       "Select a service provider to get started": [
         ""
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20-personal-calendar limit. You can also merge imported calendars with existing Proton calendars.": [
+      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit. You can also merge imported calendars with existing Proton calendars.": [
         ""
       ],
       "Server is currently down": [
@@ -4167,7 +4247,7 @@
       "Unable to decrypt. Recovery phrase is not associated with any keys.": [
         ""
       ],
-      "Unable to decrypt. Recovery phrase is not associated with any outdated keys.": [
+      "Unable to verify recovery file signature. Please contact support.": [
         ""
       ],
       "Unfortunately there is no recovery method saved for this account.": [
@@ -4232,12 +4312,6 @@
       ],
       "We advise you to use official ProtonVPN applications when possible.": [
         "公式 ProtonVPN アプリケーションの使用をおすすめします。"
-      ],
-      "We recommend adding a linked email or phone number so you can recover your account if you lose your password.": [
-        "パスワードを忘れた場合にアカウントを復元できるよう、メールアドレスまたは電話番号をリンクすることをおすすめします。"
-      ],
-      "We recommend adding a linked email so you can recover your account if you lose your password.": [
-        "パスワードを忘れた場合、アカウントを復元できるようにするためにリンクされたメールを追加することをおすすめします。"
       ],
       "We use 3-D Secure to protect your payments.": [
         "お支払いを保護するために3Dセキュアを用いています。"
@@ -4383,6 +4457,9 @@
       "You will soon be redirected to PayPal to verify your payment.": [
         "支払いの検証のため、まもなく PayPal のサイトへリダイレクトされます。"
       ],
+      "You won't be able to recover encrypted data after an account reset using your downloaded recovery files.": [
+        ""
+      ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, please create an address.": [
         ""
       ],
@@ -4394,6 +4471,9 @@
       ],
       "Your account is being upgraded, this may take up to 30 seconds.": [
         "アカウントをアップグレード中です。30 秒程お待ち下さい。"
+      ],
+      "Your account recovery method is set": [
+        ""
       ],
       "Your account will be updated once the payment is cleared.": [
         "支払いが完了すると、アカウントは更新されます。"
@@ -4408,6 +4488,9 @@
         "ブロックリストは空です。"
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
+        ""
+      ],
+      "Your data recovery method is set": [
         ""
       ],
       "Your email will only be used for this one-time verification.": [
@@ -5118,6 +5201,9 @@
       "End weekday": [
         ""
       ],
+      "Enter organization name to confirm": [
+        ""
+      ],
       "Enter password": [
         "パスワードを入力"
       ],
@@ -5135,6 +5221,9 @@
       ],
       "extra storage": [
         "追加のストレージ"
+      ],
+      "File": [
+        ""
       ],
       "Filter Name": [
         "フィルター名"
@@ -5367,6 +5456,12 @@
       "Recovery email": [
         "回復用メールアドレス"
       ],
+      "Recovery email address": [
+        ""
+      ],
+      "Recovery file": [
+        ""
+      ],
       "Recovery phone": [
         "回復用電話番号"
       ],
@@ -5481,7 +5576,13 @@
       "Upload your backup key": [
         ""
       ],
+      "Upload your recovery file": [
+        ""
+      ],
       "Uploaded private keys": [
+        ""
+      ],
+      "Uploaded recovery file": [
         ""
       ],
       "URL": [
@@ -5569,6 +5670,9 @@
     "label": {
       "Phone number": [
         "電話番号"
+      ],
+      "Recovery phone number": [
+        ""
       ],
       "Recovery phrase": [
         "リカバリーフレーズ"
@@ -5875,10 +5979,10 @@
       ]
     },
     "Mail import summary": {
-      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         ""
       ],
-      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         ""
       ]
     },
@@ -5915,6 +6019,11 @@
       ],
       "Sign in": [
         "サインイン"
+      ]
+    },
+    "Member downgrade modal": {
+      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
+        ""
       ]
     },
     "Message": {
@@ -6818,6 +6927,9 @@
       ],
       "Upload additional private keys": [
         ""
+      ],
+      "Upload additional recovery files": [
+        ""
       ]
     },
     "Select search results": {
@@ -7309,6 +7421,9 @@
       "3. Select config file and download": [
         "3. 設定ファイルを選択してダウンロード"
       ],
+      "Account recovery": [
+        ""
+      ],
       "Account suspended": [
         "アカウントが停止されました"
       ],
@@ -7371,9 +7486,6 @@
       ],
       "Addresses": [
         "メールアドレス"
-      ],
-      "Advanced": [
-        "拡張"
       ],
       "Allocate storage": [
         "ストレージを割り当てる"
@@ -7546,6 +7658,9 @@
       "Dashboard": [
         "ダッシュボード"
       ],
+      "Data recovery": [
+        ""
+      ],
       "Date": [
         "日付"
       ],
@@ -7578,6 +7693,9 @@
       ],
       "Delete logs": [
         "ログの削除"
+      ],
+      "Delete organization?": [
+        ""
       ],
       "Delete user": [
         "ユーザーを削除"
@@ -7804,8 +7922,8 @@
       "Password & keys": [
         ""
       ],
-      "Password & recovery": [
-        "パスワードと回復"
+      "Password & security": [
+        ""
       ],
       "Passwords": [
         "パスワード"
@@ -7873,8 +7991,11 @@
       "Reconnect your account": [
         "アカウントに再接続"
       ],
-      "Recovery & notification": [
-        "回復と通知"
+      "Recovery": [
+        ""
+      ],
+      "Recovery file": [
+        ""
       ],
       "Remove calendar": [
         ""
@@ -7896,9 +8017,6 @@
       ],
       "Restore administrator privileges": [
         "管理者権限を修復"
-      ],
-      "Security": [
-        "セキュリティ"
       ],
       "Security logs": [
         "セキュリティログ"
@@ -8002,6 +8120,9 @@
       "Switch to two-password mode": [
         "2パスワードモードに切り替える"
       ],
+      "Take precautions to avoid data loss!": [
+        ""
+      ],
       "Theme": [
         "テーマ"
       ],
@@ -8055,6 +8176,9 @@
       ],
       "Your plan": [
         "現在のプラン"
+      ],
+      "Your recovery status": [
+        ""
       ],
       "ZIP / postal code": [
         "郵便番号"
@@ -8444,13 +8568,13 @@
     },
     "VPN Plan Feature": {
       "${ n } server": [
-        ""
+        "${ n } サーバー"
       ],
       "${ n } VPN connection": [
-        ""
+        "${ n } VPN 接続"
       ],
       "${ numberOfServers } in ${ numberOfCountries } country": [
-        ""
+        "${ numberOfCountries } か国で${ numberOfServers } 台"
       ]
     },
     "VPN upsell feature": {

@@ -202,9 +202,6 @@
       "Copy link": [
         "Kopiraj poveznicu"
       ],
-      "Copy to clipboard": [
-        ""
-      ],
       "Create": [
         "Stvori"
       ],
@@ -300,6 +297,9 @@
       ],
       "Download all configurations": [
         "Preuzmite sve konfiguracije"
+      ],
+      "Download recovery file": [
+        ""
       ],
       "Download the Import-Export app": [
         "Preuzmite Import-Export aplikaciju"
@@ -778,6 +778,15 @@
       "View invoice": [
         "Prikaži fakturu"
       ],
+      "Void all recovery files": [
+        ""
+      ],
+      "Void all recovery files?": [
+        ""
+      ],
+      "Void anyway": [
+        ""
+      ],
       "Warning": [
         "Upozorenje"
       ],
@@ -1085,37 +1094,16 @@
       ]
     },
     "blackfriday Action": {
-      "Get limited-time deal": [
-        "Iskoristi vremenski ograničenu ponudu"
-      ],
-      "Upgrade": [
-        "Nadogradi"
+      "Get the offer": [
+        ""
       ]
     },
     "blackfriday Info": {
-      "Discounts are based on monthly pricing.": [
-        "Popusti se zasnivaju na cijeni mjesečne pretplate."
-      ],
-      "early access to": [
-        "rani pristup usluzi"
-      ],
-      "Free": [
-        "Besplatno"
-      ],
-      "Get early access to our new encrypted drive for FREE by upgrading to a Plus bundle now.": [
-        "Ostvarite BESPLATNI rani pristup našem novom šifriranom prostoru za pohranu u oblaku ako sada obavite nadogradnju na kombinirani paket Plus."
+      "beta": [
+        "beta"
       ],
       "Includes": [
         "Uključuje"
-      ],
-      "Offer valid only for first-time paid subscriptions.": [
-        "Ponuda vrijedi samo za pretplatnike koji prvi puta zasnivaju pretplatnički odnos."
-      ],
-      "ProtonDrive": [
-        "ProtonDrive"
-      ],
-      "Save ${ percentage }%": [
-        "${ percentage }%"
       ],
       "Standard price: ${ regularPrice }": [
         "Standardna cijena: ${ regularPrice }"
@@ -1124,49 +1112,81 @@
         "Ovaj se pretplatnički odnos automatski obnavlja nakon dvije godine po istoj cijeni dok se ne otkaže."
       ]
     },
-    "blackfriday info": {
-      "per month": [
-        "mjesečno"
-      ]
-    },
-    "blackfriday Promo title, need to be short": {
-      "Special offer": [
-        "Posebna ponuda"
-      ]
-    },
     "blackfriday Title": {
-      "(${ notice }) Renews after 1 year at a discounted annual & bundle price of ${ amount } every year (36% discount).": [
-        "(${ notice }) Obnavlja se nakon jedne godine po sniženoj cijeni jednogodišnje pretplate i cijeni kombiniranog paketa od ${ amount } svake godine (36 % popusta)."
-      ],
-      "(${ notice }) Renews after 1 year at a discounted annual price of ${ amount } every year (20% discount).": [
-        "(${ notice }) Obnavlja se nakon jedne godine po sniženoj cijeni jednogodišnje pretplate od ${ amount } svake godine (20 % popusta)."
-      ],
-      "(${ notice }) Renews after 2 years at a discounted 2-year price of ${ amount } every 2 years (47% discount).": [
-        "(${ notice }) Obnavlja se nakon dvije godine po sniženoj cijeni dvogodišnje pretplate od ${ amount } svake dvije godine (47 % popusta)."
-      ],
-      "Billed as ${ amount } ${ supNotice }": [
+      "Best deal": [
         ""
-      ],
-      "Black Friday Sale": [
-        "Rasprodaja povodom Crnog petka"
-      ],
-      "Cyber Monday Sale": [
-        "Rasprodaja povodom Kibernetičkog ponedjeljka"
-      ],
-      "for 1 month": [
-        "za mjesec dana"
-      ],
-      "for 1 year": [
-        "za godinu dana"
-      ],
-      "for 2 years": [
-        "za dvije godine"
       ],
       "Most popular": [
         "Najpopularniji odabir"
       ],
-      "ProtonDrive early access offer": [
-        "Rani pristup usluzi ProtonDrive"
+      "Save more when combining Mail and VPN": [
+        ""
+      ]
+    },
+    "blackfriday: VPNspecialoffer Action": {
+      "Get the deal": [
+        "Ugrabite ponudu"
+      ],
+      "Get the deal now": [
+        "Ugrabite ponudu sada"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Badge popup": {
+      "${ vpnAppName } Plus Special Offer 2021 discount has been applied": [
+        ""
+      ]
+    },
+    "blackfriday: VPNspecialoffer Info": {
+      "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
+        ""
+      ],
+      "Save ${ percentage }%": [
+        "- ${ percentage }%"
+      ],
+      "Special offer Terms and Conditions": [
+        ""
+      ]
+    },
+    "blackfriday: VPNspecialoffer info": {
+      "per month": [
+        "mjesečno"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Promo title, need to be short": {
+      "Special offer": [
+        "Posebna ponuda"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Title": {
+      "(${ notice }) Renews after 1 month at a standard monthly price of ${ amount }": [
+        ""
+      ],
+      "(${ notice }) Renews after 1 year at a standard discounted annual price of ${ amount } (20% discount)": [
+        ""
+      ],
+      "(${ notice }) Renews after 2 years at a standard discounted 2-year price of ${ amount } (33% discount)": [
+        ""
+      ],
+      "1 month": [
+        "1 mjesec"
+      ],
+      "12 months": [
+        "12 mjeseci"
+      ],
+      "24 months": [
+        "24 mjeseca"
+      ],
+      "Billed at ${ amount } for the first 2 years.${ supNotice }": [
+        ""
+      ],
+      "Billed at ${ amount } for the first month.${ supNotice }": [
+        ""
+      ],
+      "Billed at ${ amount } for the first year.${ supNotice }": [
+        ""
+      ],
+      "Get the special year-end offer on our Premium VPN PLUS plan": [
+        ""
       ]
     },
     "Bridge version load failed": {
@@ -1944,6 +1964,9 @@
       "Organization key is not decrypted.": [
         "Organizacijski ključ nije dešifriran."
       ],
+      "Organization not recognized. Try again.": [
+        ""
+      ],
       "Passwords do not match": [
         "Lozinke se ne poklapaju"
       ],
@@ -1981,6 +2004,9 @@
       ],
       "Please refresh the page.": [
         "Osvježite stranicu."
+      ],
+      "Please set a recovery email first": [
+        ""
       ],
       "Please set a recovery phone number first": [
         "Prvo postavite broj telefona za oporavak"
@@ -2094,6 +2120,9 @@
         "Nepoznati status tokena za plaćanje"
       ],
       "Uploaded file is not a valid private key. Please verify and try again.": [
+        ""
+      ],
+      "Uploaded file is not a valid recovery file. Please verify and try again.": [
         ""
       ],
       "Uploaded files are not valid private keys. Please verify and try again.": [
@@ -3197,6 +3226,9 @@
       "A key with the same encryption algorithm is already active for this address. Generating another key will cause slower account loading and deletion of this key can cause issues. If you are generating a new key because your old key is compromised, please mark that key as compromised. Are you sure you want to continue?": [
         "Ključ s istim algoritmom za šifriranje već je aktivan za ovu adresu.\nStvaranje drugog ključa uzrokovat će sporije učitavanje računa, a brisanje tog ključa može uzrokovati probleme.\nAko stvarate novi ključ jer je stari ključ ugrožen, označite taj ključ kao ugrožen.\nJeste li sigurni da želite nastaviti?"
       ],
+      "A recovery file lets you unlock and view your data after an account reset. ": [
+        ""
+      ],
       "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password.": [
         ""
       ],
@@ -3209,11 +3241,26 @@
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Pristup računu je ograničen zbog neplaćenih faktura. Molimo kontaktirajte vašeg administratora."
       ],
+      "account recovery and data recovery method": [
+        ""
+      ],
+      "account recovery method": [
+        ""
+      ],
       "Account successfully updated": [
         "Račun je uspješno ažuriran"
       ],
+      "Activate your recovery phrase": [
+        ""
+      ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"ProtonMail me\" or \"Private Message me.\"": [
         "Dodajte @pm.me adresu e-pošte na vaš račun. Ova jednostavna, kratka domena znači \"ProtonMail me\" ili \"Private Message me.\""
+      ],
+      "Add a recovery email address": [
+        ""
+      ],
+      "Add a recovery phone number": [
+        ""
       ],
       "Add additional addresses to your account like user2@protonmail.com": [
         "Dodajte dodatne adrese na svoj račun kao što je korisnik2@protonmail.com"
@@ -3234,6 +3281,9 @@
       ],
       "Addresses": [
         "Adrese"
+      ],
+      "After a password reset your data is locked in encrypted form to keep it safe. To decrypt and view your emails and other data, you need a recovery file or recovery phrase.": [
+        ""
       ],
       "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
         "Nakon što ste izvršili Bitcoin uplatu, molimo slijedite ove upute ispod za nadogradnju."
@@ -3525,6 +3575,9 @@
       "Download your PGP keys for use with other PGP-compatible services.": [
         "Preuzmite vaše PGP ključeve za upotrebu s drugim PGP kompatibilnim uslugama."
       ],
+      "Download your recovery file": [
+        ""
+      ],
       "Drop the file here to upload": [
         "Ispustite datoteku ovdje za prijenos"
       ],
@@ -3534,7 +3587,7 @@
       "Edit label": [
         "Uredi oznaku"
       ],
-      "Effortlessly and securely move your emails from your current provider to Proton. If you use Google, we also support calendar, and contacts imports.": [
+      "Effortlessly and securely move your emails from your current provider to Proton. If you use Google, we also support calendar and contacts imports.": [
         ""
       ],
       "Email address": [
@@ -3678,6 +3731,12 @@
       "If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly.": [
         "Ako ste postavili SPF i DKIM, DMARC vam omogućuje da odredite kako bi drugi pružatelji usluge e-pošte trebali dostaviti e-poštu za vašu domenu, ako SPF i DKIM provjere nisu uspjele. Ovo može otežati pošiljateljima neželjenih poruka koji se pretvaraju da ste vi, ali može uzrokovati i probleme s isporukom ako se ne provede ispravno."
       ],
+      "If you lose your login details and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
+        ""
+      ],
+      "If you lose your login details and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.": [
+        ""
+      ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to log into your account. Each code can only be used once.": [
         "Ukoliko izgubite svoj uređaj za dvofaktorsku autentikaciju, ovi kôdovi se mogu upotrijebiti umjesto 6-znamenkastog kôda dvofaktorske autentikacije da bi se prijavili na vaš račun. Svaki kôd može se upotrijebiti samo jednom."
       ],
@@ -3737,6 +3796,12 @@
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         ""
       ],
+      "In case you lose your login details, we’ll send you recovery instructions via email or SMS.": [
+        ""
+      ],
+      "In case you lose your login details, we’ll send you recovery instructions via email.": [
+        ""
+      ],
       "Included": [
         "Uključeno"
       ],
@@ -3769,6 +3834,9 @@
       ],
       "Internet connection restored.": [
         "Uspostavljena je internetska veza."
+      ],
+      "it’s imperative": [
+        ""
       ],
       "Just confirm your selection and we'll do the rest.": [
         ""
@@ -3872,6 +3940,9 @@
       "Next you'll need to log in to your Google account and allow us to access your data.": [
         ""
       ],
+      "No account recovery method set, you are at risk of losing access to your account": [
+        ""
+      ],
       "No action selected": [
         "Nije odabrana nijedna radnja"
       ],
@@ -3880,6 +3951,9 @@
       ],
       "No contact encryption keys exist": [
         "Ne postoje ključevi za šifriranje kontakata"
+      ],
+      "No data recovery method set, you are at risk of losing access to your data": [
+        ""
       ],
       "No folder selected": [
         "Nije odabrana nijedna mapa"
@@ -4066,10 +4140,16 @@
       "read our two-factor authentication Guide first": [
         ""
       ],
+      "Recovery files have been voided": [
+        ""
+      ],
       "Recovery phrase copied to clipboard": [
         ""
       ],
       "Recovery phrase has been disabled": [
+        ""
+      ],
+      "Recovery phrase is not associated with any outdated keys.": [
         ""
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
@@ -4102,7 +4182,7 @@
       "Select a service provider to get started": [
         ""
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20-personal-calendar limit. You can also merge imported calendars with existing Proton calendars.": [
+      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit. You can also merge imported calendars with existing Proton calendars.": [
         ""
       ],
       "Server is currently down": [
@@ -4279,7 +4359,7 @@
       "Unable to decrypt. Recovery phrase is not associated with any keys.": [
         ""
       ],
-      "Unable to decrypt. Recovery phrase is not associated with any outdated keys.": [
+      "Unable to verify recovery file signature. Please contact support.": [
         ""
       ],
       "Unfortunately there is no recovery method saved for this account.": [
@@ -4344,12 +4424,6 @@
       ],
       "We advise you to use official ProtonVPN applications when possible.": [
         "Savjetujemo vas da koristite službene ProtonVPN aplikacije kada je god moguće."
-      ],
-      "We recommend adding a linked email or phone number so you can recover your account if you lose your password.": [
-        "Preporučujemo dodavanje povezane adrese e-pošte ili broja telefona kako biste mogli oporaviti vaš račun ako izgubite lozinku."
-      ],
-      "We recommend adding a linked email so you can recover your account if you lose your password.": [
-        "Preporučujemo dodavanje povezane adrese e-pošte kako biste mogli oporaviti vaš račun ako izgubite lozinku."
       ],
       "We use 3-D Secure to protect your payments.": [
         "Za zaštitu vaših plaćanja koristimo 3-D Secure."
@@ -4495,6 +4569,9 @@
       "You will soon be redirected to PayPal to verify your payment.": [
         "Uskoro ćete biti preusmjereni na PayPal radi potvrde plaćanja."
       ],
+      "You won't be able to recover encrypted data after an account reset using your downloaded recovery files.": [
+        ""
+      ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, please create an address.": [
         "Vaš ${ BRAND_NAME } račun je povezan s ${ externalEmailAddress }. Za korištenje ${ toAppName }}, stvorite adresu e-pošte."
       ],
@@ -4506,6 +4583,9 @@
       ],
       "Your account is being upgraded, this may take up to 30 seconds.": [
         "Vaš se račun nadograđuje, što može potrajati do 30 sekundi."
+      ],
+      "Your account recovery method is set": [
+        ""
       ],
       "Your account will be updated once the payment is cleared.": [
         "Vaš račun će se ažurirati nakon uspješnog plaćanja."
@@ -4520,6 +4600,9 @@
         "Vaš popis nedopuštenih je prazan."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
+        ""
+      ],
+      "Your data recovery method is set": [
         ""
       ],
       "Your email will only be used for this one-time verification.": [
@@ -5238,6 +5321,9 @@
       "End weekday": [
         "Kraj vikenda"
       ],
+      "Enter organization name to confirm": [
+        ""
+      ],
       "Enter password": [
         "Unesi lozinku"
       ],
@@ -5255,6 +5341,9 @@
       ],
       "extra storage": [
         "dodatni prostor za pohranu"
+      ],
+      "File": [
+        ""
       ],
       "Filter Name": [
         "Naziv filtra"
@@ -5487,6 +5576,12 @@
       "Recovery email": [
         "Adresa e-pošte za oporavak"
       ],
+      "Recovery email address": [
+        ""
+      ],
+      "Recovery file": [
+        ""
+      ],
       "Recovery phone": [
         "Telefon za oporavak"
       ],
@@ -5601,7 +5696,13 @@
       "Upload your backup key": [
         ""
       ],
+      "Upload your recovery file": [
+        ""
+      ],
       "Uploaded private keys": [
+        ""
+      ],
+      "Uploaded recovery file": [
         ""
       ],
       "URL": [
@@ -5689,6 +5790,9 @@
     "label": {
       "Phone number": [
         "Broj telefona"
+      ],
+      "Recovery phone number": [
+        ""
       ],
       "Recovery phrase": [
         ""
@@ -5997,12 +6101,12 @@
       ]
     },
     "Mail import summary": {
-      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "",
         "",
         ""
       ],
-      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "",
         "",
         ""
@@ -6043,6 +6147,11 @@
       ],
       "Sign in": [
         "Prijavite se"
+      ]
+    },
+    "Member downgrade modal": {
+      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
+        ""
       ]
     },
     "Message": {
@@ -6962,6 +7071,9 @@
       ],
       "Upload additional private keys": [
         ""
+      ],
+      "Upload additional recovery files": [
+        ""
       ]
     },
     "Select search results": {
@@ -7457,6 +7569,9 @@
       "3. Select config file and download": [
         "3. Odaberite konfiguracijsku datoteku i preuzmite"
       ],
+      "Account recovery": [
+        ""
+      ],
       "Account suspended": [
         "Račun je suspendiran"
       ],
@@ -7519,9 +7634,6 @@
       ],
       "Addresses": [
         "Adrese"
-      ],
-      "Advanced": [
-        "Napredno"
       ],
       "Allocate storage": [
         "Dodijelite prostor za pohranu"
@@ -7694,6 +7806,9 @@
       "Dashboard": [
         "Upravljačka ploča"
       ],
+      "Data recovery": [
+        ""
+      ],
       "Date": [
         "Datum"
       ],
@@ -7726,6 +7841,9 @@
       ],
       "Delete logs": [
         "Izbriši zapise"
+      ],
+      "Delete organization?": [
+        ""
       ],
       "Delete user": [
         "Izbriši korisnika"
@@ -7954,8 +8072,8 @@
       "Password & keys": [
         "Lozinka i ključevi"
       ],
-      "Password & recovery": [
-        "Lozinka i oporavak"
+      "Password & security": [
+        ""
       ],
       "Passwords": [
         "Lozinke"
@@ -8023,8 +8141,11 @@
       "Reconnect your account": [
         "Ponovno povežite vaš račun"
       ],
-      "Recovery & notification": [
-        "Oporavak i obavijesti"
+      "Recovery": [
+        ""
+      ],
+      "Recovery file": [
+        ""
       ],
       "Remove calendar": [
         "Ukloni kalendar"
@@ -8046,9 +8167,6 @@
       ],
       "Restore administrator privileges": [
         "Vraćanje administratorskih ovlasti"
-      ],
-      "Security": [
-        "Sigurnost"
       ],
       "Security logs": [
         "Sigurnosni zapisi"
@@ -8152,6 +8270,9 @@
       "Switch to two-password mode": [
         "Prijeđite na način rada s dvije lozinke"
       ],
+      "Take precautions to avoid data loss!": [
+        ""
+      ],
       "Theme": [
         "Tema"
       ],
@@ -8205,6 +8326,9 @@
       ],
       "Your plan": [
         "Vaš plan"
+      ],
+      "Your recovery status": [
+        ""
       ],
       "ZIP / postal code": [
         "Poštanski broj"

@@ -112,17 +112,8 @@
       "Copy email to clipboard": [
         "E-postayı panoya kopyala"
       ],
-      "Copy to clipboard": [
-        "Panoya kopyala"
-      ],
       "Create account": [
         "Hesap oluştur"
-      ],
-      "Create new recovery phrase": [
-        "Yeni bir kurtarma anahtar metni oluştur"
-      ],
-      "Create new recovery phrase?": [
-        "Yeni bir kurtarma anahtar metni oluştur?"
       ],
       "Customize": [
         "Özelleştir"
@@ -144,12 +135,6 @@
       ],
       "Did not receive the code?": [
         "Kod almadınız mı?"
-      ],
-      "Disable recovery phrase": [
-        ""
-      ],
-      "Disable recovery phrase?": [
-        ""
       ],
       "Done": [
         "Tamamlandı"
@@ -183,9 +168,6 @@
       ],
       "enable desktop notifications": [
         "masaüstü bildirimlerini etkinleştir"
-      ],
-      "Enter password to continue": [
-        "Devam etmek için şifreyi girin"
       ],
       "Get a new password": [
         "Yeni bir şifre al"
@@ -510,37 +492,16 @@
       ]
     },
     "blackfriday Action": {
-      "Get limited-time deal": [
-        "Sınırlı süreli fırsattan yararlanın"
-      ],
-      "Upgrade": [
-        "Yükselt"
+      "Get the offer": [
+        ""
       ]
     },
     "blackfriday Info": {
-      "Discounts are based on monthly pricing.": [
-        "İndirimler aylık fiyatlandırmaya dayanmaktadır."
-      ],
-      "early access to": [
-        "erken erişim:"
-      ],
-      "Free": [
-        "Ücretsiz"
-      ],
-      "Get early access to our new encrypted drive for FREE by upgrading to a Plus bundle now.": [
-        "Şimdi bir Plus paketine yükselterek yeni şifrelenmiş sürücümüze ÜCRETSİZ olarak erken erişim sağlayın."
+      "beta": [
+        "beta"
       ],
       "Includes": [
         "İçerdikleri"
-      ],
-      "Offer valid only for first-time paid subscriptions.": [
-        "Teklif yalnızca ilk kez ücretli abone olanlar için geçerlidir."
-      ],
-      "ProtonDrive": [
-        ""
-      ],
-      "Save ${ percentage }%": [
-        "${ percentage }%"
       ],
       "Standard price: ${ regularPrice }": [
         "Standart fiyat: ${ regularPrice }"
@@ -549,49 +510,81 @@
         "Bu abonelik, iptal edilene kadar 2 yıllık bir dönem sonrasında aynı fiyattan otomatik olarak yenilenecektir."
       ]
     },
-    "blackfriday info": {
-      "per month": [
-        "aylık"
-      ]
-    },
-    "blackfriday Promo title, need to be short": {
-      "Special offer": [
-        "Özel teklif"
-      ]
-    },
     "blackfriday Title": {
-      "(${ notice }) Renews after 1 year at a discounted annual & bundle price of ${ amount } every year (36% discount).": [
-        "(${ notice }) 1 yıl sonra her yıl, yıllık ${ amount } indirimli paket fiyatıyla yenilenir (%36 indirim)."
-      ],
-      "(${ notice }) Renews after 1 year at a discounted annual price of ${ amount } every year (20% discount).": [
-        "(${ notice }) 1 yıl sonra her yıl, yıllık ${ amount } indirimli fiyatla yenilenir (%20 indirim)."
-      ],
-      "(${ notice }) Renews after 2 years at a discounted 2-year price of ${ amount } every 2 years (47% discount).": [
-        "(${ notice }) 2 yıl sonra her 2 yılda bir, 2 yıllık ${ amount } indirimli fiyatla yenilenir (%47 indirim)."
-      ],
-      "Billed as ${ amount } ${ supNotice }": [
+      "Best deal": [
         ""
-      ],
-      "Black Friday Sale": [
-        "Kara Cuma İndirimi"
-      ],
-      "Cyber Monday Sale": [
-        "Siber Pazartesi İndirimi"
-      ],
-      "for 1 month": [
-        "1 ay için"
-      ],
-      "for 1 year": [
-        "1 yıl için"
-      ],
-      "for 2 years": [
-        "2 yıl için"
       ],
       "Most popular": [
         "En popüler olanlar"
       ],
-      "ProtonDrive early access offer": [
-        "ProtonDrive erken erişim teklifi"
+      "Save more when combining Mail and VPN": [
+        ""
+      ]
+    },
+    "blackfriday: VPNspecialoffer Action": {
+      "Get the deal": [
+        "Tekliften yararlanın"
+      ],
+      "Get the deal now": [
+        "Tekliften şimdi yararlan"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Badge popup": {
+      "${ vpnAppName } Plus Special Offer 2021 discount has been applied": [
+        ""
+      ]
+    },
+    "blackfriday: VPNspecialoffer Info": {
+      "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
+        ""
+      ],
+      "Save ${ percentage }%": [
+        "${ percentage }%"
+      ],
+      "Special offer Terms and Conditions": [
+        ""
+      ]
+    },
+    "blackfriday: VPNspecialoffer info": {
+      "per month": [
+        "aylık"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Promo title, need to be short": {
+      "Special offer": [
+        "Özel teklif"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Title": {
+      "(${ notice }) Renews after 1 month at a standard monthly price of ${ amount }": [
+        ""
+      ],
+      "(${ notice }) Renews after 1 year at a standard discounted annual price of ${ amount } (20% discount)": [
+        ""
+      ],
+      "(${ notice }) Renews after 2 years at a standard discounted 2-year price of ${ amount } (33% discount)": [
+        ""
+      ],
+      "1 month": [
+        "1 ay"
+      ],
+      "12 months": [
+        "12 ay"
+      ],
+      "24 months": [
+        "24 ay"
+      ],
+      "Billed at ${ amount } for the first 2 years.${ supNotice }": [
+        ""
+      ],
+      "Billed at ${ amount } for the first month.${ supNotice }": [
+        ""
+      ],
+      "Billed at ${ amount } for the first year.${ supNotice }": [
+        ""
+      ],
+      "Get the special year-end offer on our Premium VPN PLUS plan": [
+        ""
       ]
     },
     "Bug category": {
@@ -775,7 +768,7 @@
         "Farklı bir Proton hesabı kullanıyorum"
       ],
       "Missing feature(s)": [
-        ""
+        "Eksik nitelik(ler)"
       ],
       "My reason isn't listed, please comment": [
         ""
@@ -887,6 +880,9 @@
       "Not a valid number": [
         "Geçerli bir numara değil"
       ],
+      "Organization not recognized. Try again.": [
+        ""
+      ],
       "Passwords do not match": [
         "Parolalar eşleşmiyor"
       ],
@@ -910,6 +906,9 @@
       ],
       "Please generate keys before you try to change your password": [
         "Lütfen şifrenizi değiştirmeyi denemeden önce anahtarlar oluşturun"
+      ],
+      "Please set a recovery email first": [
+        ""
       ],
       "Please set a recovery phone number first": [
         "Lütfen önce bir kurtarma telefon numarası ayarlayın"
@@ -1206,9 +1205,6 @@
       "A free and uncensored Internet should be available to all.": [
         "Özgür ve sansürsüz bir İnternet herkese açık olmalıdır."
       ],
-      "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password.": [
-        "Kurtarma anahtar metni, şifrenizi unutursanız hesabınıza erişmenizi sağlar ve şifreli iletilerinizi kurtarır."
-      ],
       "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
         "Sosyal medya, haberler, Wikipedia, YouTube ve diğerleri gibi engellenen içeriğe erişin."
       ],
@@ -1241,9 +1237,6 @@
       ],
       "Amount below minimum (${ amount }).": [
         "En düşük tutarın altında (${ amount })."
-      ],
-      "Are you sure you want to continue?": [
-        "Devam etmek istediğinize emin misiniz?"
       ],
       "Basic, Plus or Visionary subscription required": [
         "Temel, Plus veya Vizyoner aboneliği gerekli"
@@ -1296,9 +1289,6 @@
       "Connections": [
         "Bağlantılar"
       ],
-      "Creating a new recovery phrase will deactivate your old one.": [
-        "Yeni bir kurtarma anahtar metni oluşturmak, eskisini devre dışı bırakır."
-      ],
       "Creating your account": [
         "Hesabınız oluşturuluyor"
       ],
@@ -1310,9 +1300,6 @@
       ],
       "Disabling this will prevent this phone number from being used for account recovery.": [
         "Bunu devre dışı bırakmak, bu telefon numarasının hesap kurtarma için kullanılmasını engelleyecektir."
-      ],
-      "Disabling this will prevent your recovery phrase from being used for account recovery.": [
-        "Bunu devre dışı bırakmak, kurtarma anahtar metninizin hesap kurtarması için kullanılmasını engelleyecektir."
       ],
       "Discount applied to your subscription with coupon ${ code }": [
         "${ code } kuponu ile aboneliğinize indirim uygulandı"
@@ -1419,9 +1406,6 @@
       "If you proceed with the downgrade, you will lose access to ProtonVPN paid features.": [
         "Eski sürümü yüklemeye devam ederseniz, ProtonVPN'nin ücretli özelliklerine erişiminizi kaybedeceksiniz."
       ],
-      "If you proceed, you will have to reset your password and will be logged out of any other active sessions.": [
-        "Devam ederseniz, şifrenizi sıfırlamanız gerekecek ve diğer tüm aktif oturumlardan çıkış yapacaksınız."
-      ],
       "If you remember your old password later, you can recover your existing messages.": [
         "Eski şifrenizi daha sonra hatırlarsanız, mevcut mesajlarınızı kurtarabilirsiniz."
       ],
@@ -1433,6 +1417,12 @@
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Önemli: Lütfen kurtarma kodlarını kaydettiğinizden emin olun. Aksi takdirde, iki faktörlü kimlik doğrulama cihazınızı kaybederseniz hesabınıza erişimi kalıcı olarak kaybedebilirsiniz."
+      ],
+      "In case you lose your login details, we’ll send you recovery instructions via email or SMS.": [
+        ""
+      ],
+      "In case you lose your login details, we’ll send you recovery instructions via email.": [
+        ""
       ],
       "Included": [
         "Dahil"
@@ -1545,9 +1535,6 @@
       "Please verify the payment in the new tab.": [
         "Lütfen ödemeyi yeni sekmede doğrulayın."
       ],
-      "Please write your recovery phrase down in the order it appears and keep it somewhere safe. Your recovery phrase can be used to fully recover access to your account and your encrypted messages.": [
-        "Kurtarma anahtar metninizi görünen sırasıyla yazarak güvenli bir yerde tutun. Kurtarma anahtar metniniz, hesabınıza ve şifreli iletilerinize tam kurtarma erişimi yapmak için kullanılabilir."
-      ],
       "Plus or Visionary subscription required": [
         "Plus veya Vizyoner aboneliği gerekli"
       ],
@@ -1575,12 +1562,6 @@
       ],
       "read our two-factor authentication Guide first": [
         ""
-      ],
-      "Recovery phrase copied to clipboard": [
-        "Kurtarma anahtar metni kopyalandı"
-      ],
-      "Recovery phrase has been disabled": [
-        "Kurtarma anahtar metni devre dışı bırakıldı"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Sayfayı yenilemek veya ${ link } çoğu sorunu otomatik olarak çözecektir."
@@ -1663,9 +1644,6 @@
       "This plan is temporarily disabled": [
         "Bu plan geçici olarak devre dışı bırakıldı"
       ],
-      "This will also disable two-factor authentication.": [
-        ""
-      ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
         "Bu, mevcut ücretli aboneliğinizi iptal edecek ve biriktirdiğiniz sadakat avantajlarını kaybetmenize sebep olacaktır. Aboneliğinizin kalan bakiyesi hesap kredisi olarak iade edilecektir."
       ],
@@ -1740,12 +1718,6 @@
       ],
       "We advise you to use official ProtonVPN applications when possible.": [
         "Mümkün oldukça resmi ProtonVPN uygulamalarını kullanmanızı öneririz."
-      ],
-      "We recommend adding a linked email or phone number so you can recover your account if you lose your password.": [
-        "Şifrenizi kaybederseniz hesabınızı kurtarabilmeniz için bağlantılı bir e-posta veya telefon numarası eklemenizi öneriyoruz."
-      ],
-      "We recommend adding a linked email so you can recover your account if you lose your password.": [
-        "Şifrenizi kaybederseniz hesabınızı kurtarabilmeniz için bağlantılı bir e-posta eklemenizi öneririz."
       ],
       "We use 3-D Secure to protect your payments.": [
         "Ödemelerinizi korumak için 3-D Güvenli Ödeme kullanıyoruz."
@@ -1863,12 +1835,6 @@
       ],
       "Your ProtonVPN and ProtonMail accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
         "ProtonVPN ve ProtonMail hesaplarınız birbirine bağlıdır. Her ikisini de silmek için lütfen ${ loginLink } adresinden giriş yapın ve hesabınızı silin."
-      ],
-      "Your recovery phrase": [
-        "Kurtarma anahtar metniniz"
-      ],
-      "Your recovery phrase is a series of 12 words in a specific order.": [
-        "Kurtarma anahtar metniniz özel bir sırayla oluşturulan 12 kelimelik diziden oluşur."
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Aboneliğiniz Mozilla tarafından yönetilmektedir. Lütfen Mozilla desteği ile iletişime geçin."
@@ -1996,9 +1962,6 @@
       "Allow recovery by phone": [
         "Telefon ile kurtarmaya izin ver"
       ],
-      "Allow recovery by recovery phrase": [
-        "Kurtarma anahtar metniyle kurtarma işlemine izin ver"
-      ],
       "Amount": [
         "Tutar"
       ],
@@ -2104,6 +2067,9 @@
       "Email address": [
         "E-posta adresi"
       ],
+      "Enter organization name to confirm": [
+        ""
+      ],
       "Enter the 6-digit code": [
         "6 haneli kodu girin"
       ],
@@ -2197,8 +2163,8 @@
       "ProtonMail address": [
         "ProtonMail adresi"
       ],
-      "Recovery phrase": [
-        "Kurtarma anahtar metni"
+      "Recovery email address": [
+        ""
       ],
       "Reveal password": [
         "Şifreyi göster"
@@ -2284,9 +2250,6 @@
       "Your password (admin)": [
         "Parolanız (yönetici)"
       ],
-      "Your recovery phrase": [
-        "Kurtarma anahtar metniniz"
-      ],
       "ZIP": [
         "ZIP"
       ]
@@ -2295,8 +2258,8 @@
       "Phone number": [
         "Telefon numarası"
       ],
-      "Recovery phrase": [
-        "Kurtarma anahtar metni"
+      "Recovery phone number": [
+        ""
       ]
     },
     "Label for news": {
@@ -2504,6 +2467,11 @@
     "Many Others": {
       "and many others": [
         "ve diğerleri"
+      ]
+    },
+    "Member downgrade modal": {
+      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
+        ""
       ]
     },
     "Message": {
@@ -3217,6 +3185,9 @@
       "Delete account": [
         "Hesabı sil"
       ],
+      "Delete organization?": [
+        ""
+      ],
       "Device connected!": [
         "Cihaz bağlandı!"
       ],
@@ -3364,8 +3335,8 @@
       "Provide payment details": [
         "Ödeme ayrıntılarını sağlayın"
       ],
-      "Recovery & notification": [
-        "Kurtarma ve bildirim"
+      "Recovery": [
+        ""
       ],
       "Redeem coupon": [
         "Kuponu kullan"

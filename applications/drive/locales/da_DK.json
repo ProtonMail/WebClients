@@ -226,6 +226,9 @@
       "Forward as attachment": [
         "Videresend som vedhæftning"
       ],
+      "Get link": [
+        ""
+      ],
       "Get started": [
         "Kom godt i gang"
       ],
@@ -291,6 +294,9 @@
       ],
       "Mailbox layout": [
         "Postkasse layout"
+      ],
+      "Manage link": [
+        ""
       ],
       "Mark for deletion": [
         "Markér til sletning"
@@ -672,37 +678,16 @@
       ]
     },
     "blackfriday Action": {
-      "Get limited-time deal": [
-        ""
-      ],
-      "Upgrade": [
+      "Get the offer": [
         ""
       ]
     },
     "blackfriday Info": {
-      "Discounts are based on monthly pricing.": [
-        ""
-      ],
-      "early access to": [
-        ""
-      ],
-      "Free": [
-        ""
-      ],
-      "Get early access to our new encrypted drive for FREE by upgrading to a Plus bundle now.": [
-        ""
+      "beta": [
+        "beta"
       ],
       "Includes": [
-        ""
-      ],
-      "Offer valid only for first-time paid subscriptions.": [
-        ""
-      ],
-      "ProtonDrive": [
-        ""
-      ],
-      "Save ${ percentage }%": [
-        "Spar ${ percentage }%"
+        "Inkluderer"
       ],
       "Standard price: ${ regularPrice }": [
         ""
@@ -711,48 +696,80 @@
         ""
       ]
     },
-    "blackfriday info": {
-      "per month": [
+    "blackfriday Title": {
+      "Best deal": [
+        ""
+      ],
+      "Most popular": [
+        "Mest populært"
+      ],
+      "Save more when combining Mail and VPN": [
         ""
       ]
     },
-    "blackfriday Promo title, need to be short": {
+    "blackfriday: VPNspecialoffer Action": {
+      "Get the deal": [
+        "Gør brug af tilbuddet"
+      ],
+      "Get the deal now": [
+        "Gør brug af tilduddet nu"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Badge popup": {
+      "${ vpnAppName } Plus Special Offer 2021 discount has been applied": [
+        ""
+      ]
+    },
+    "blackfriday: VPNspecialoffer Info": {
+      "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
+        ""
+      ],
+      "Save ${ percentage }%": [
+        "Spar ${ percentage }%"
+      ],
+      "Special offer Terms and Conditions": [
+        ""
+      ]
+    },
+    "blackfriday: VPNspecialoffer info": {
+      "per month": [
+        "pr. måned"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Promo title, need to be short": {
       "Special offer": [
         "Særtilbud"
       ]
     },
-    "blackfriday Title": {
-      "(${ notice }) Renews after 1 year at a discounted annual & bundle price of ${ amount } every year (36% discount).": [
+    "blackfriday: VPNspecialoffer Title": {
+      "(${ notice }) Renews after 1 month at a standard monthly price of ${ amount }": [
         ""
       ],
-      "(${ notice }) Renews after 1 year at a discounted annual price of ${ amount } every year (20% discount).": [
+      "(${ notice }) Renews after 1 year at a standard discounted annual price of ${ amount } (20% discount)": [
         ""
       ],
-      "(${ notice }) Renews after 2 years at a discounted 2-year price of ${ amount } every 2 years (47% discount).": [
+      "(${ notice }) Renews after 2 years at a standard discounted 2-year price of ${ amount } (33% discount)": [
         ""
       ],
-      "Billed as ${ amount } ${ supNotice }": [
+      "1 month": [
+        "1 måned"
+      ],
+      "12 months": [
+        "12 måneder"
+      ],
+      "24 months": [
+        "24 måneder"
+      ],
+      "Billed at ${ amount } for the first 2 years.${ supNotice }": [
         ""
       ],
-      "Black Friday Sale": [
+      "Billed at ${ amount } for the first month.${ supNotice }": [
         ""
       ],
-      "Cyber Monday Sale": [
+      "Billed at ${ amount } for the first year.${ supNotice }": [
         ""
       ],
-      "for 1 month": [
-        ""
-      ],
-      "for 1 year": [
-        ""
-      ],
-      "for 2 years": [
-        ""
-      ],
-      "Most popular": [
-        ""
-      ],
-      "ProtonDrive early access offer": [
+      "Get the special year-end offer on our Premium VPN PLUS plan": [
         ""
       ]
     },
@@ -1211,6 +1228,9 @@
       "One of the groups has no contacts: ${ noContactGroupList }": [
         "En af grupperne har ingen kontakter: ${ noContactGroupList }",
         "Nogle grupper har ingen kontakter: ${ noContactGroupList } "
+      ],
+      "Organization not recognized. Try again.": [
+        ""
       ],
       "Passwords do not match": [
         "Adgangskoder matcher ikke"
@@ -2203,8 +2223,8 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Vælg det e-mail-format, der som standard skal benyttes, når du sender en e-mail til denne e-mailadresse."
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20-personal-calendar limit. You can also merge imported calendars with existing Proton calendars.": [
-        "Vælg hvilke kalendere der skal importeres. Der oprettes en ny kalender for hver importeret kalender op til grænsen på 20 personlige kalendere. Du kan også flette importerede kalendere med eksisterende Proton-kalendere."
+      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit. You can also merge imported calendars with existing Proton calendars.": [
+        ""
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Servere er utilgængelige. Prøv igen om nogle få minutter"
@@ -2817,6 +2837,9 @@
       "Encrypt emails": [
         "Kryptér e-mails"
       ],
+      "Enter organization name to confirm": [
+        ""
+      ],
       "Enter the 6-digit code": [
         "Indtast den sekscifrede kode"
       ],
@@ -3268,18 +3291,23 @@
       ]
     },
     "Mail import summary": {
-      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
-        "Importer alle beskeder fra ${ selectedLabelsCount } ud af ${ totalLabelsCount } etikette siden ${ periodFragment } og giv dem etiketten ${ label }",
-        "Importer alle beskeder fra ${ selectedLabelsCount } ud af ${ totalLabelsCount } etiketter siden ${ periodFragment } og giv dem etiketten ${ label }"
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "",
+        ""
       ],
-      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
-        "Importer alle beskeder fra ${ totalLabelsCount } etiketten siden ${ periodFragment } og giv dem etiketten ${ label }",
-        "Importer alle beskeder fra ${ totalLabelsCount } etiketter siden ${ periodFragment } og giv dem etiketten ${ label }"
+      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "",
+        ""
       ]
     },
     "Many Others": {
       "and many others": [
         "og mange andre"
+      ]
+    },
+    "Member downgrade modal": {
+      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
+        ""
       ]
     },
     "Message display when a new app version is available": {
@@ -3641,21 +3669,7 @@
         "Navn"
       ]
     },
-    "Plan Feature": {
-      "${ n } server": [
-        "${ n } server",
-        "${ n } servere"
-      ],
-      "${ n } VPN connection": [
-        "${ n } VPN-forbindelse",
-        "${ n } VPN-forbindelser"
-      ]
-    },
     "Plan feature": {
-      "${ freeServers } in ${ freeCountries } country": [
-        "${ freeServers } i ${ freeCountries } land",
-        "${ freeServers } i ${ freeCountries } lande"
-      ],
       "0.5 GB storage": [
         "0,5 GB lagerplads"
       ],
@@ -3668,10 +3682,6 @@
       "1 user": [
         "1 bruger"
       ],
-      "1300+ servers in ${ plusCountries } country": [
-        "",
-        ""
-      ],
       "20 GB storage": [
         "20 GB lagerplads"
       ],
@@ -3680,10 +3690,6 @@
       ],
       "3 folders / labels": [
         "3 mapper / etiketter"
-      ],
-      "350+ servers in ${ basicCountries } country": [
-        "350+ servere i ${ basicCountries } land",
-        "350+ servere i ${ basicCountries } lande"
       ],
       "5 addresses": [
         "5 adresser"
@@ -3971,9 +3977,6 @@
       "Size": [
         "Størrelse"
       ],
-      "Type": [
-        "Type"
-      ],
       "Uploaded": [
         "Uploadet"
       ],
@@ -4143,6 +4146,9 @@
       ],
       "Delete ${ Name }": [
         "Slet ${ Name }"
+      ],
+      "Delete organization?": [
+        ""
       ],
       "Delete permanently": [
         "Slet permanent"
@@ -4680,6 +4686,20 @@
         "Windows, macOS, iOS, Linux, Android, Android TV, Chromebook, Chromecast"
       ]
     },
+    "VPN Plan Feature": {
+      "${ n } server": [
+        "${ n } server",
+        "${ n }+ servere"
+      ],
+      "${ n } VPN connection": [
+        "${ n } VPN-forbindelse",
+        "${ n } VPN-forbindelser"
+      ],
+      "${ numberOfServers } in ${ numberOfCountries } country": [
+        "${ numberOfServers } i ${ numberOfCountries } land",
+        "${ numberOfServers } i ${ numberOfCountries } lande"
+      ]
+    },
     "Warning": {
       "Are you sure you want to permanently delete ${ count } contact group?": [
         "Er du sikker på, at du vil slette ${ count } kontaktgruppe permanent?",
@@ -4715,6 +4735,9 @@
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "Nogle af de kontakter, som skal flettes, udviser fejl. Gennemgå dem individuelt"
+      ],
+      "The contact data is corrupted and cannot be displayed.": [
+        "Kontaktdata er beskadiget og kan ikke vises."
       ],
       "The contact failed to load.": [
         "Kontakten kunne ikke indlæses."

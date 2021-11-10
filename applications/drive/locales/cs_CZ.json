@@ -230,6 +230,9 @@
       "Forward as attachment": [
         "Přeposlat jako přílohu"
       ],
+      "Get link": [
+        ""
+      ],
       "Get started": [
         "Začínáme"
       ],
@@ -295,6 +298,9 @@
       ],
       "Mailbox layout": [
         "Rozvržení mailové schránky"
+      ],
+      "Manage link": [
+        ""
       ],
       "Mark for deletion": [
         "Označit pro odstranění"
@@ -684,87 +690,98 @@
       ]
     },
     "blackfriday Action": {
-      "Get limited-time deal": [
-        ""
-      ],
-      "Upgrade": [
+      "Get the offer": [
         ""
       ]
     },
     "blackfriday Info": {
-      "Discounts are based on monthly pricing.": [
-        ""
-      ],
-      "early access to": [
-        ""
-      ],
-      "Free": [
-        ""
-      ],
-      "Get early access to our new encrypted drive for FREE by upgrading to a Plus bundle now.": [
-        ""
+      "beta": [
+        "beta"
       ],
       "Includes": [
+        "Zahrnuje"
+      ],
+      "Standard price: ${ regularPrice }": [
+        "Běžná cena: ${ regularPrice }"
+      ],
+      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
+        "Předplatné se bude každé dva roky automaticky obnovovat se stejnou cenou, dokud nebude zrušeno."
+      ]
+    },
+    "blackfriday Title": {
+      "Best deal": [
         ""
       ],
-      "Offer valid only for first-time paid subscriptions.": [
-        ""
+      "Most popular": [
+        "Nejoblíbenější"
       ],
-      "ProtonDrive": [
+      "Save more when combining Mail and VPN": [
+        ""
+      ]
+    },
+    "blackfriday: VPNspecialoffer Action": {
+      "Get the deal": [
+        "Využít nabídku"
+      ],
+      "Get the deal now": [
+        "Objednat nyní"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Badge popup": {
+      "${ vpnAppName } Plus Special Offer 2021 discount has been applied": [
+        ""
+      ]
+    },
+    "blackfriday: VPNspecialoffer Info": {
+      "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
         ""
       ],
       "Save ${ percentage }%": [
         "${ percentage }%"
       ],
-      "Standard price: ${ regularPrice }": [
-        ""
-      ],
-      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
+      "Special offer Terms and Conditions": [
         ""
       ]
     },
-    "blackfriday info": {
+    "blackfriday: VPNspecialoffer info": {
       "per month": [
-        ""
+        "za měsíc"
       ]
     },
-    "blackfriday Promo title, need to be short": {
+    "blackfriday: VPNspecialoffer Promo title, need to be short": {
       "Special offer": [
         "Speciální nabídka"
       ]
     },
-    "blackfriday Title": {
-      "(${ notice }) Renews after 1 year at a discounted annual & bundle price of ${ amount } every year (36% discount).": [
+    "blackfriday: VPNspecialoffer Title": {
+      "(${ notice }) Renews after 1 month at a standard monthly price of ${ amount }": [
         ""
       ],
-      "(${ notice }) Renews after 1 year at a discounted annual price of ${ amount } every year (20% discount).": [
+      "(${ notice }) Renews after 1 year at a standard discounted annual price of ${ amount } (20% discount)": [
         ""
       ],
-      "(${ notice }) Renews after 2 years at a discounted 2-year price of ${ amount } every 2 years (47% discount).": [
+      "(${ notice }) Renews after 2 years at a standard discounted 2-year price of ${ amount } (33% discount)": [
         ""
       ],
-      "Billed as ${ amount } ${ supNotice }": [
+      "1 month": [
+        "1 měsíc"
+      ],
+      "12 months": [
+        "12 měsíců"
+      ],
+      "24 months": [
+        "24 měsíců"
+      ],
+      "Billed at ${ amount } for the first 2 years.${ supNotice }": [
         ""
       ],
-      "Black Friday Sale": [
+      "Billed at ${ amount } for the first month.${ supNotice }": [
         ""
       ],
-      "Cyber Monday Sale": [
+      "Billed at ${ amount } for the first year.${ supNotice }": [
         ""
       ],
-      "for 1 month": [
-        ""
-      ],
-      "for 1 year": [
-        ""
-      ],
-      "for 2 years": [
-        ""
-      ],
-      "Most popular": [
-        ""
-      ],
-      "ProtonDrive early access offer": [
+      "Get the special year-end offer on our Premium VPN PLUS plan": [
         ""
       ]
     },
@@ -1237,6 +1254,9 @@
         "Jeden ze skupiny, nemá kontakty: ${ noContactGroupList } ",
         "Některé skupiny nemají kontakty: ${ noContactGroupList } ",
         "Některé skupiny neobsahují kontakty: ${ noContactGroupList } "
+      ],
+      "Organization not recognized. Try again.": [
+        ""
       ],
       "Passwords do not match": [
         "Hesla se neshodují"
@@ -2301,7 +2321,7 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Vyberte formát emailu, který chcete aby byl použit jako výchozí pro zasílání emailu na tuto emailovou adresu."
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20-personal-calendar limit. You can also merge imported calendars with existing Proton calendars.": [
+      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit. You can also merge imported calendars with existing Proton calendars.": [
         ""
       ],
       "Servers are unreachable. Please try again in a few minutes": [
@@ -2919,6 +2939,9 @@
       "Encrypt emails": [
         "Šifrovat e-maily"
       ],
+      "Enter organization name to confirm": [
+        ""
+      ],
       "Enter the 6-digit code": [
         "Zadejte 6-místný kód"
       ],
@@ -3372,13 +3395,13 @@
       ]
     },
     "Mail import summary": {
-      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "",
         "",
         "",
         ""
       ],
-      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "",
         "",
         "",
@@ -3388,6 +3411,11 @@
     "Many Others": {
       "and many others": [
         "a mnoho dalších"
+      ]
+    },
+    "Member downgrade modal": {
+      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
+        ""
       ]
     },
     "Message display when a new app version is available": {
@@ -3797,27 +3825,7 @@
         "Název"
       ]
     },
-    "Plan Feature": {
-      "${ n } server": [
-        "${ n } server",
-        "${ n } servery",
-        "${ n } serverů",
-        "${ n } serverů"
-      ],
-      "${ n } VPN connection": [
-        "${ n } VPN připojení",
-        "${ n } VPN připojení",
-        "${ n } VPN připojení",
-        "${ n } VPN připojení"
-      ]
-    },
     "Plan feature": {
-      "${ freeServers } in ${ freeCountries } country": [
-        "${ freeServers } v ${ freeCountries } zemi",
-        "${ freeServers } v ${ freeCountries } zemích",
-        "${ freeServers } v ${ freeCountries } zemích",
-        "${ freeServers } v ${ freeCountries } zemích"
-      ],
       "0.5 GB storage": [
         "0,5 GB úložiště"
       ],
@@ -3830,12 +3838,6 @@
       "1 user": [
         "1 uživatel"
       ],
-      "1300+ servers in ${ plusCountries } country": [
-        "",
-        "",
-        "",
-        ""
-      ],
       "20 GB storage": [
         "20 GB úložiště"
       ],
@@ -3844,12 +3846,6 @@
       ],
       "3 folders / labels": [
         "3 složky / štítky"
-      ],
-      "350+ servers in ${ basicCountries } country": [
-        "350+ serverů v ${ basicCountries } zemi",
-        "350+ serverů v ${ basicCountries } zemích",
-        "350+ serverů v ${ basicCountries } zemích",
-        "350+ serverů v ${ basicCountries } zemích"
       ],
       "5 addresses": [
         "5 adres"
@@ -4145,9 +4141,6 @@
       "Size": [
         "Velikost"
       ],
-      "Type": [
-        "Typ"
-      ],
       "Uploaded": [
         ""
       ],
@@ -4329,6 +4322,9 @@
       ],
       "Delete ${ Name }": [
         "Odstranit ${ Name }"
+      ],
+      "Delete organization?": [
+        ""
       ],
       "Delete permanently": [
         "Navždy smazat"
@@ -4868,6 +4864,26 @@
         "Windows, macOS, iOS, Linux, Android, Android TV, Chromebook, Chromecast"
       ]
     },
+    "VPN Plan Feature": {
+      "${ n } server": [
+        "${ n } server",
+        "${ n }+ serverů",
+        "${ n }+ serverů",
+        "${ n }+ servery"
+      ],
+      "${ n } VPN connection": [
+        "${ n } VPN připojení",
+        "${ n } VPN připojení",
+        "${ n } VPN připojení",
+        "${ n } VPN připojení"
+      ],
+      "${ numberOfServers } in ${ numberOfCountries } country": [
+        "${ numberOfServers } v ${ numberOfCountries } zemi",
+        "${ numberOfServers } v ${ numberOfCountries } zemích",
+        "${ numberOfServers } v ${ numberOfCountries } zemích",
+        "${ numberOfServers } v ${ numberOfCountries } zemích"
+      ]
+    },
     "Warning": {
       "Are you sure you want to permanently delete ${ count } contact group?": [
         "Jste si jisti, že chcete trvale odstranit skupinu kontaktu ${ count }?",
@@ -4907,6 +4923,9 @@
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "U některých kontaktů, které mají být sloučeny, se zobrazují chyby. Zkontrolujte je prosím jednotlivě"
+      ],
+      "The contact data is corrupted and cannot be displayed.": [
+        "Kontaktní údaje jsou poškozeny a nelze je zobrazit."
       ],
       "The contact failed to load.": [
         "Kontakt se nepodařilo načíst."
