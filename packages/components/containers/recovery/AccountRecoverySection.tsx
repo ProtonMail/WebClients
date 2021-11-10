@@ -108,12 +108,8 @@ const AccountRecoverySection = () => {
                                 withLoadingReset(handleChangePasswordEmailToggle(+checked))
                             }
                         />
-                        <label htmlFor="passwordEmailResetToggle" className="mr0-5 flex-item-fluid">
-                            <span className="mr0-5">{c('Label').t`Allow recovery by email`}</span>
-                            <Info
-                                title={c('Info')
-                                    .t`Disabling this will prevent this email from being used for account recovery.`}
-                            />
+                        <label htmlFor="passwordEmailResetToggle" className="flex-item-fluid">
+                            {c('Label').t`Allow recovery by email`}
                         </label>
                     </div>
                     {APP_NAME !== PROTONVPN_SETTINGS ? (
@@ -167,12 +163,8 @@ const AccountRecoverySection = () => {
                                         withLoadingReset(handleChangePasswordPhoneToggle(+checked))
                                     }
                                 />
-                                <label htmlFor="passwordPhoneResetToggle" className="mr0-5 flex-item-fluid">
-                                    <span className="pr0-5">{c('Label').t`Allow recovery by phone`}</span>
-                                    <Info
-                                        title={c('Info')
-                                            .t`Disabling this will prevent this phone number from being used for account recovery.`}
-                                    />
+                                <label htmlFor="passwordPhoneResetToggle" className="flex-item-fluid">
+                                    {c('Label').t`Allow recovery by phone`}
                                 </label>
                             </div>
                         </SettingsLayoutRight>
