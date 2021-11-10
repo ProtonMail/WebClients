@@ -21,7 +21,7 @@ import {
     TIME_PERIOD,
     MailImportMapping,
     IMPORT_ERROR,
-    PROVIDER_INSTRUCTIONS,
+    NON_OAUTH_PROVIDER,
     ImportedMailFolder,
     ImportType,
     NormalizedImporter,
@@ -49,9 +49,10 @@ import ImportStartedStep from '../../steps/IAImportStartedStep';
 
 import { classnames } from '../../../../helpers';
 
-import './ImportMailModal.scss';
 import { IA_PATHNAME_REGEX, IMAPS } from '../../constants';
 import { dateToTimestamp } from '../helpers';
+
+import './ImportMailModal.scss';
 
 const destinationFoldersFirst = (a: ImportedMailFolder, b: ImportedMailFolder) => {
     if (a.DestinationFolder && b.DestinationFolder) {
@@ -84,7 +85,7 @@ interface Props {
     currentImport?: NormalizedImporter;
     onClose?: () => void;
     addresses: Address[];
-    providerInstructions?: PROVIDER_INSTRUCTIONS;
+    providerInstructions?: NON_OAUTH_PROVIDER;
 }
 
 const ImportMailModal = ({ onClose = noop, currentImport, providerInstructions, addresses, ...rest }: Props) => {
@@ -103,7 +104,11 @@ const ImportMailModal = ({ onClose = noop, currentImport, providerInstructions, 
     const [showPassword, setShowPassword] = useState(false);
 
     const [modalModel, setModalModel] = useState<ImportMailModalModel>({
-        step: providerInstructions ? MailImportStep.INSTRUCTIONS : MailImportStep.START,
+        step:
+            // @todo add instructions for other providers
+            providerInstructions && providerInstructions === NON_OAUTH_PROVIDER.YAHOO
+                ? MailImportStep.INSTRUCTIONS
+                : MailImportStep.START,
         importID: currentImport?.ID || '',
         email: currentImport?.Email || '',
         password: '',
@@ -126,13 +131,13 @@ const ImportMailModal = ({ onClose = noop, currentImport, providerInstructions, 
 
     const debouncedEmail = useDebounceInput(modalModel.email);
 
-    const needAppPassword = useMemo(() => modalModel.imap === IMAPS.YAHOO, [modalModel.imap]);
+    const needAppPassword = useMemo(() => modalModel.imap === IMAPS[NON_OAUTH_PROVIDER.YAHOO], [modalModel.imap]);
     const invalidPortError = useMemo(() => !isNumber(modalModel.port), [modalModel.port]);
 
     const title = useMemo(() => {
         switch (modalModel.step) {
             case MailImportStep.INSTRUCTIONS:
-                if (providerInstructions === PROVIDER_INSTRUCTIONS.YAHOO) {
+                if (providerInstructions === NON_OAUTH_PROVIDER.YAHOO) {
                     return c('Title').t`Prepare Yahoo Mail for import`;
                 }
 
@@ -458,8 +463,9 @@ const ImportMailModal = ({ onClose = noop, currentImport, providerInstructions, 
             ])}
             {...rest}
         >
-            {modalModel.step === MailImportStep.INSTRUCTIONS &&
-                providerInstructions === PROVIDER_INSTRUCTIONS.YAHOO && <YahooMailImportInstructionsStep />}
+            {modalModel.step === MailImportStep.INSTRUCTIONS && providerInstructions === NON_OAUTH_PROVIDER.YAHOO && (
+                <YahooMailImportInstructionsStep />
+            )}
             {modalModel.step === MailImportStep.START && (
                 <ImportStartStep
                     modalModel={modalModel}
@@ -468,6 +474,7 @@ const ImportMailModal = ({ onClose = noop, currentImport, providerInstructions, 
                     showPassword={showPassword}
                     currentImport={currentImport}
                     invalidPortError={invalidPortError}
+                    provider={providerInstructions}
                 />
             )}
             {modalModel.step === MailImportStep.PREPARE && (

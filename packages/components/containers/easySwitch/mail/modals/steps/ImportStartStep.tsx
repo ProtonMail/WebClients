@@ -6,10 +6,11 @@ import {
     IMPORT_ERROR,
     ImportError,
     NormalizedImporter,
+    NON_OAUTH_PROVIDER,
 } from '@proton/shared/lib/interfaces/EasySwitch';
 
 import { Alert, Row, Label, Field, PasswordInput, EmailInput, Input, Href } from '../../../../../components';
-import { IMAPS } from '../../../constants';
+import { EASY_SWITCH_EMAIL_PLACEHOLDER, IMAPS } from '../../../constants';
 
 import { ImportMailModalModel } from '../../interfaces';
 
@@ -20,6 +21,7 @@ interface Props {
     showPassword: boolean;
     currentImport?: NormalizedImporter;
     invalidPortError: boolean;
+    provider?: NON_OAUTH_PROVIDER;
 }
 
 const ImportStartStep = ({
@@ -29,6 +31,7 @@ const ImportStartStep = ({
     showPassword,
     currentImport,
     invalidPortError,
+    provider,
 }: Props) => {
     const { email, password, needIMAPDetails, imap, port, errorCode, errorLabel } = modalModel;
 
@@ -135,7 +138,7 @@ const ImportStartStep = ({
                 }
 
                 break;
-            case IMAPS.YAHOO:
+            case IMAPS[NON_OAUTH_PROVIDER.YAHOO]:
                 if (isReconnect) {
                     // translator: the variable here is a HTML tag, here is the complete sentence: "your app password is correct. Do not use your regular password"
                     const appPasswordIsCorrectMessage = c('Import error')
@@ -278,6 +281,7 @@ const ImportStartStep = ({
                         isSubmitted={!!errorLabel}
                         error={isAuthError ? errorLabel : undefined}
                         errorZoneClassName="hidden"
+                        placeholder={provider && EASY_SWITCH_EMAIL_PLACEHOLDER[provider]}
                     />
                 </Field>
             </Row>
