@@ -163,8 +163,17 @@ select {
 		}
 
 		&-empty {
-			// for drive, to keep the same height
+			// for drive, to keep the same height when not displayed (avoid shifts when appearing)
 			min-block-size: calc(#{rem($default-height-fields-inputforms)} + 2px);
+			.inputform-container {
+				margin-block: auto;
+			}
+			.inputform-field.inputform-field {
+				block-size: auto;
+				/* autoprefixer: ignore next */
+				/* stylelint-disable-next-line */
+				max-inline-size: -webkit-fill-available; // For a crazy bug from Chrome
+			}
 		}
 
 		&:focus-within {
