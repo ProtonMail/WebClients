@@ -1,9 +1,12 @@
 import { PGP_SCHEMES, MIME_TYPES, MIME_TYPES_MORE, PACKAGE_TYPE } from '@proton/shared/lib/constants';
 import getSendPreferences from '@proton/shared/lib/mail/send/getSendPreferences';
 import { EncryptionPreferences } from '@proton/shared/lib/mail/encryptionPreferences';
+import loudRejection from 'loud-rejection';
 import { useSendVerifications } from './useSendVerifications';
 import { renderHook, clearAll } from '../../helpers/test/helper';
 import { SendInfo } from '../../models/crypto';
+
+loudRejection();
 
 const createMessage: (emailAddress: string) => {} = (emailAddress) => ({
     data: {
@@ -135,14 +138,12 @@ jest.mock('@proton/components/hooks/useModals.ts', () => {
 });
 
 describe('useSendVerifications', () => {
-    const setup = () => {
-        return renderHook(() => useSendVerifications());
+    const setup = async () => {
+        const result = await renderHook(() => useSendVerifications());
+        return result.result.current.extendedVerifications;
     };
 
-    afterEach(() => {
-        jest.clearAllMocks();
-        clearAll();
-    });
+    afterEach(clearAll);
 
     describe('extended verifications of last-minute preferences', () => {
         it('should warn user on deletion of contact with pinned keys (internal)', async () => {
@@ -164,7 +165,7 @@ describe('useSendVerifications', () => {
                 loading: false,
                 emailValidation: true,
             };
-            const { extendedVerifications } = setup().result.current;
+            const extendedVerifications = await setup();
             const message = createMessage(recipient);
             const mapSendInfo = { [recipient]: cachedPreferences };
             const { mapSendPrefs } = await extendedVerifications(message, mapSendInfo);
@@ -196,7 +197,7 @@ describe('useSendVerifications', () => {
                 loading: false,
                 emailValidation: true,
             };
-            const { extendedVerifications } = setup().result.current;
+            const extendedVerifications = await setup();
             const message = createMessage(recipient);
             const mapSendInfo = { [recipient]: cachedPreferences };
             const { mapSendPrefs } = await extendedVerifications(message, mapSendInfo);
@@ -228,7 +229,7 @@ describe('useSendVerifications', () => {
                 loading: false,
                 emailValidation: true,
             };
-            const { extendedVerifications } = setup().result.current;
+            const extendedVerifications = await setup();
             const message = createMessage(recipient);
             const mapSendInfo = { [recipient]: cachedPreferences };
             const { mapSendPrefs } = await extendedVerifications(message, mapSendInfo);
@@ -261,7 +262,7 @@ describe('useSendVerifications', () => {
                 loading: false,
                 emailValidation: true,
             };
-            const { extendedVerifications } = setup().result.current;
+            const extendedVerifications = await setup();
             const message = createMessage(recipient);
             const mapSendInfo = { [recipient]: cachedPreferences };
             const { mapSendPrefs } = await extendedVerifications(message, mapSendInfo);
@@ -293,7 +294,7 @@ describe('useSendVerifications', () => {
                 loading: false,
                 emailValidation: true,
             };
-            const { extendedVerifications } = setup().result.current;
+            const extendedVerifications = await setup();
             const message = createMessage(recipient);
             const mapSendInfo = { [recipient]: cachedPreferences };
             const { mapSendPrefs } = await extendedVerifications(message, mapSendInfo);
@@ -325,7 +326,7 @@ describe('useSendVerifications', () => {
                 loading: false,
                 emailValidation: true,
             };
-            const { extendedVerifications } = setup().result.current;
+            const extendedVerifications = await setup();
             const message = createMessage(recipient);
             const mapSendInfo = { [recipient]: cachedPreferences };
             const { mapSendPrefs } = await extendedVerifications(message, mapSendInfo);
@@ -357,7 +358,7 @@ describe('useSendVerifications', () => {
                 loading: false,
                 emailValidation: true,
             };
-            const { extendedVerifications } = setup().result.current;
+            const extendedVerifications = await setup();
             const message = createMessage(recipient);
             const mapSendInfo = { [recipient]: cachedPreferences };
             const { mapSendPrefs } = await extendedVerifications(message, mapSendInfo);
@@ -389,7 +390,7 @@ describe('useSendVerifications', () => {
                 loading: false,
                 emailValidation: true,
             };
-            const { extendedVerifications } = setup().result.current;
+            const extendedVerifications = await setup();
             const message = createMessage(recipient);
             const mapSendInfo = { [recipient]: cachedPreferences };
             const { mapSendPrefs } = await extendedVerifications(message, mapSendInfo);
@@ -421,7 +422,7 @@ describe('useSendVerifications', () => {
                 loading: false,
                 emailValidation: true,
             };
-            const { extendedVerifications } = setup().result.current;
+            const extendedVerifications = await setup();
             const message = createMessage(recipient);
             const mapSendInfo = { [recipient]: cachedPreferences };
             const { mapSendPrefs } = await extendedVerifications(message, mapSendInfo);
@@ -453,7 +454,7 @@ describe('useSendVerifications', () => {
                 loading: false,
                 emailValidation: true,
             };
-            const { extendedVerifications } = setup().result.current;
+            const extendedVerifications = await setup();
             const message = createMessage(recipient);
             const mapSendInfo = { [recipient]: cachedPreferences };
             const { mapSendPrefs } = await extendedVerifications(message, mapSendInfo);
@@ -485,7 +486,7 @@ describe('useSendVerifications', () => {
                 loading: false,
                 emailValidation: true,
             };
-            const { extendedVerifications } = setup().result.current;
+            const extendedVerifications = await setup();
             const message = createMessage(recipient);
             const mapSendInfo = { [recipient]: cachedPreferences };
             const { mapSendPrefs } = await extendedVerifications(message, mapSendInfo);
@@ -501,7 +502,7 @@ describe('useSendVerifications', () => {
             const recipient = 'internal.pinned@test.email';
             const lastMinutePreferences = mockEncryptionPreferences[recipient];
 
-            const { extendedVerifications } = setup().result.current;
+            const extendedVerifications = await setup();
             const message = createMessage(recipient);
             const { mapSendPrefs } = await extendedVerifications(message, {});
 

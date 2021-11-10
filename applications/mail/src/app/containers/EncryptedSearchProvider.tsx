@@ -1057,81 +1057,85 @@ const EncryptedSearchProvider = ({ children }: Props) => {
 
     useEffect(() => {
         const run = async () => {
-            const esFeature = await getESFeature<boolean>();
-            if (
-                welcomeFlags.isWelcomeFlow &&
-                !isMobile() &&
-                !!esFeature.Value &&
-                !indexKeyExists(userID) &&
-                isPaid(user)
-            ) {
-                // Start indexing for new users and prevent showing the spotlight on ES to them
-                await updateSpotlightES(false);
-                return resumeIndexing({ notify: false });
-            }
-
-            // Check all keys that decrypt under the current user's key
-            const indexKeys = await checkNewUserID(getUserKeys);
-
-            // If there is none, the user has never activated ES
-            if (indexKeys.length === 0) {
-                return;
-            }
-
-            // If there is more than one something is off and it's best to remove them all
-            if (indexKeys.length > 1) {
-                await Promise.all(
-                    indexKeys.map(async ({ userID }) => {
-                        await esDelete(userID);
-                    })
-                );
-                return restartIndexing();
-            }
-
-            // At this point there is only one key blob. If the stored user ID does not coincide with the
-            // current one, the old index is removed and a new one is automatically created
-            const { userID: storedUserID, indexKey } = indexKeys[0];
-            if (storedUserID !== userID) {
-                await esDelete(storedUserID);
-                return restartIndexing();
-            }
-
-            const isIDBIntact = await canUseES(userID);
-            if (!indexKey || !isIDBIntact) {
-                return dbCorruptError();
-            }
-
-            setESStatus((esStatus) => {
-                return {
-                    ...esStatus,
-                    dbExists: wasIndexingDone(userID),
-                    esEnabled: getES.Enabled(userID),
-                };
-            });
-
-            // If indexing was not successful, try to recover (unless it was paused).
-            // Otherwise, just set the correct parameters to ESDBStatus
-            if (!isDBReadyAfterBuilding(userID)) {
-                if (!getES.Pause(userID)) {
-                    await resumeIndexing();
+            try {
+                const esFeature = await getESFeature<boolean>();
+                if (
+                    welcomeFlags.isWelcomeFlow &&
+                    !isMobile() &&
+                    !!esFeature.Value &&
+                    !indexKeyExists(userID) &&
+                    isPaid(user)
+                ) {
+                    // Start indexing for new users and prevent showing the spotlight on ES to them
+                    await updateSpotlightES(false);
+                    return resumeIndexing({ notify: false });
                 }
-                return;
+
+                // Check all keys that decrypt under the current user's key
+                const indexKeys = await checkNewUserID(getUserKeys);
+
+                // If there is none, the user has never activated ES
+                if (indexKeys.length === 0) {
+                    return;
+                }
+
+                // If there is more than one something is off and it's best to remove them all
+                if (indexKeys.length > 1) {
+                    await Promise.all(
+                        indexKeys.map(async ({ userID }) => {
+                            await esDelete(userID);
+                        })
+                    );
+                    return restartIndexing();
+                }
+
+                // At this point there is only one key blob. If the stored user ID does not coincide with the
+                // current one, the old index is removed and a new one is automatically created
+                const { userID: storedUserID, indexKey } = indexKeys[0];
+                if (storedUserID !== userID) {
+                    await esDelete(storedUserID);
+                    return restartIndexing();
+                }
+
+                const isIDBIntact = await canUseES(userID);
+                if (!indexKey || !isIDBIntact) {
+                    return dbCorruptError();
+                }
+
+                setESStatus((esStatus) => {
+                    return {
+                        ...esStatus,
+                        dbExists: wasIndexingDone(userID),
+                        esEnabled: getES.Enabled(userID),
+                    };
+                });
+
+                // If indexing was not successful, try to recover (unless it was paused).
+                // Otherwise, just set the correct parameters to ESDBStatus
+                if (!isDBReadyAfterBuilding(userID)) {
+                    if (!getES.Pause(userID)) {
+                        await resumeIndexing();
+                    }
+                    return;
+                }
+
+                // Compare the last event "seen" by the DB (saved in localStorage) and
+                // the present one to check whether any event has happened while offline,
+                // but only if indexing was successful
+                const currentEvent = await getEventFromLS(userID, api);
+
+                if (!currentEvent) {
+                    return dbCorruptError();
+                }
+
+                if (hasBit(currentEvent.Refresh, EVENT_ERRORS.MAIL)) {
+                    return restartIndexing();
+                }
+
+                void addSyncing(() => catchUpFromLS(indexKey, currentEvent));
+            } catch (error) {
+                console.log('ES effect error', error);
             }
-
-            // Compare the last event "seen" by the DB (saved in localStorage) and
-            // the present one to check whether any event has happened while offline,
-            // but only if indexing was successful
-            const currentEvent = await getEventFromLS(userID, api);
-
-            if (!currentEvent) {
-                return dbCorruptError();
-            }
-
-            if (hasBit(currentEvent.Refresh, EVENT_ERRORS.MAIL)) {
-                return restartIndexing();
-            }
-
-            void addSyncing(() => catchUpFromLS(indexKey, currentEvent));
         };
 
         void run();
