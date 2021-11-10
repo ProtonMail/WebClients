@@ -99,7 +99,7 @@
         "Порівняти тарифні плани"
       ],
       "Compose": [
-        "Створити"
+        "Написати"
       ],
       "Composer size": [
         "Розмір редактора"
@@ -156,13 +156,13 @@
         "Видалити групу контактів"
       ],
       "Deselect all": [
-        "Скасувати виділення всіх"
+        "Зняти вибір з усіх"
       ],
       "Did not receive the code?": [
         "Не отримали код?"
       ],
       "Discard": [
-        "Відкинути"
+        "Відхилити"
       ],
       "Done": [
         "Виконано"
@@ -171,7 +171,7 @@
         "Завантажити"
       ],
       "Edit": [
-        "Змінити"
+        "Редагувати"
       ],
       "Edit email address": [
         "Змінити електронну адресу"
@@ -387,7 +387,7 @@
         "Зберегти"
       ],
       "Select all": [
-        "Виділити все"
+        "Вибрати все"
       ],
       "Select plan": [
         "Обрати тарифний план"
@@ -498,7 +498,7 @@
         "Вигляд"
       ],
       "View invoice": [
-        "Переглянути рахунок-фактуру"
+        "Переглянути рахунок"
       ],
       "Yes": [
         "Так"
@@ -520,7 +520,7 @@
         "Результатів не знайдено."
       ],
       "Please try another search term.": [
-        "Спробуйте інший термін пошуку."
+        "Спробуйте інший пошуковий термін."
       ],
       "You don't have any contacts.": [
         "У вас немає контактів."
@@ -651,7 +651,7 @@
     },
     "Beta access description": {
       "Beta Access lets you use the beta version of ProtonMail, Proton Calendar, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "Бета-доступ дозволяє вам користуватися тестовою версією ProtonMail, Proton Calendar та Proton Drive до того, як вони будуть випущені для широкого загалу. Це означає, що ви можете першими випробувати нові продукти та функції."
+        "Бета-доступ дає вам змогу користуватися тестовою версією ProtonMail, Proton Calendar та Proton Drive до того, як вони будуть випущені для широкого загалу. Це означає, що ви можете першими випробувати нові продукти та функції."
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "При виникненні проблем, ви завжди можете вимкнути бета-доступ."
@@ -675,37 +675,16 @@
       ]
     },
     "blackfriday Action": {
-      "Get limited-time deal": [
-        ""
-      ],
-      "Upgrade": [
+      "Get the offer": [
         ""
       ]
     },
     "blackfriday Info": {
-      "Discounts are based on monthly pricing.": [
-        ""
-      ],
-      "early access to": [
-        ""
-      ],
-      "Free": [
-        ""
-      ],
-      "Get early access to our new encrypted drive for FREE by upgrading to a Plus bundle now.": [
+      "beta": [
         ""
       ],
       "Includes": [
-        ""
-      ],
-      "Offer valid only for first-time paid subscriptions.": [
-        ""
-      ],
-      "ProtonDrive": [
-        ""
-      ],
-      "Save ${ percentage }%": [
-        "${ percentage }%"
+        "Включає"
       ],
       "Standard price: ${ regularPrice }": [
         ""
@@ -714,48 +693,80 @@
         ""
       ]
     },
-    "blackfriday info": {
-      "per month": [
+    "blackfriday Title": {
+      "Best deal": [
+        ""
+      ],
+      "Most popular": [
+        "Найпопулярніша"
+      ],
+      "Save more when combining Mail and VPN": [
         ""
       ]
     },
-    "blackfriday Promo title, need to be short": {
+    "blackfriday: VPNspecialoffer Action": {
+      "Get the deal": [
+        "Скористатися пропозицією"
+      ],
+      "Get the deal now": [
+        "Скористатися пропозицією зараз"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Badge popup": {
+      "${ vpnAppName } Plus Special Offer 2021 discount has been applied": [
+        ""
+      ]
+    },
+    "blackfriday: VPNspecialoffer Info": {
+      "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
+        ""
+      ],
+      "Save ${ percentage }%": [
+        "${ percentage }%"
+      ],
+      "Special offer Terms and Conditions": [
+        ""
+      ]
+    },
+    "blackfriday: VPNspecialoffer info": {
+      "per month": [
+        "на місяць"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Promo title, need to be short": {
       "Special offer": [
         ""
       ]
     },
-    "blackfriday Title": {
-      "(${ notice }) Renews after 1 year at a discounted annual & bundle price of ${ amount } every year (36% discount).": [
+    "blackfriday: VPNspecialoffer Title": {
+      "(${ notice }) Renews after 1 month at a standard monthly price of ${ amount }": [
         ""
       ],
-      "(${ notice }) Renews after 1 year at a discounted annual price of ${ amount } every year (20% discount).": [
+      "(${ notice }) Renews after 1 year at a standard discounted annual price of ${ amount } (20% discount)": [
         ""
       ],
-      "(${ notice }) Renews after 2 years at a discounted 2-year price of ${ amount } every 2 years (47% discount).": [
+      "(${ notice }) Renews after 2 years at a standard discounted 2-year price of ${ amount } (33% discount)": [
         ""
       ],
-      "Billed as ${ amount } ${ supNotice }": [
+      "1 month": [
+        "1 місяць"
+      ],
+      "12 months": [
+        "12 місяців"
+      ],
+      "24 months": [
+        "24 місяці"
+      ],
+      "Billed at ${ amount } for the first 2 years.${ supNotice }": [
         ""
       ],
-      "Black Friday Sale": [
+      "Billed at ${ amount } for the first month.${ supNotice }": [
         ""
       ],
-      "Cyber Monday Sale": [
+      "Billed at ${ amount } for the first year.${ supNotice }": [
         ""
       ],
-      "for 1 month": [
-        ""
-      ],
-      "for 1 year": [
-        ""
-      ],
-      "for 2 years": [
-        ""
-      ],
-      "Most popular": [
-        ""
-      ],
-      "ProtonDrive early access offer": [
+      "Get the special year-end offer on our Premium VPN PLUS plan": [
         ""
       ]
     },
@@ -764,7 +775,7 @@
         "Проблема з програмою"
       ],
       "Bridge problem": [
-        "Проблема з мостом"
+        "Проблема з Bridge"
       ],
       "Calendar problem": [
         "Проблема з календарем"
@@ -1513,6 +1524,9 @@
         "В деяких групах немає контактів: ${ noContactGroupList }",
         "В деяких групах немає контактів: ${ noContactGroupList }"
       ],
+      "Organization not recognized. Try again.": [
+        ""
+      ],
       "Passwords do not match": [
         "Паролі відрізняються"
       ],
@@ -1653,7 +1667,7 @@
     },
     "Error importing contact": {
       "Encryption failed": [
-        "Шифрування не вдалося"
+        "Не вдалося зашифрувати"
       ],
       "vCard versions < 3.0 not supported": [
         "vCard версій < 3.0 не підтримуються"
@@ -1690,10 +1704,10 @@
         "Помилка: ${ errorMessage }"
       ],
       "Oops, something went wrong": [
-        "Лишенько, щось пішло не так"
+        "Ой, щось пішло не так"
       ],
       "Please ${ refresh } or check your connection.": [
-        "Будь ласка, ${ refresh } або перевірте ваше з'єднання."
+        "${ refresh } або перевірте своє з'єднання."
       ],
       "There was a problem connecting to Proton.": [
         "Виникла проблема під час з'єднання з Proton."
@@ -1849,7 +1863,7 @@
         "Немає доступних способів перевірки"
       ],
       "SMS": [
-        "СМС"
+        "SMS"
       ]
     },
     "Import calendar": {
@@ -2492,8 +2506,8 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Оберіть формат повідомлення, який ви хочете використовувати при надсиланні на цю адресу е-пошти."
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20-personal-calendar limit. You can also merge imported calendars with existing Proton calendars.": [
-        "Виберіть календарі для імпорту. Новий календар буде створено для кожного імпортованого календаря з обмеженням у 20 особистих календарів. Ви також можете об’єднати імпортовані календарі з наявними календарями Proton."
+      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit. You can also merge imported calendars with existing Proton calendars.": [
+        ""
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Сервери недоступні. Спробуйте знову за кілька хвилин"
@@ -2804,13 +2818,13 @@
     },
     "Key badge": {
       "Expired": [
-        "Протерміновано"
+        "Термін дії минув"
       ],
       "Primary": [
         "Основний"
       ],
       "Revoked": [
-        "Відкликано"
+        "Відкликаний"
       ],
       "Trusted": [
         "Надійний"
@@ -3119,6 +3133,9 @@
       "Ends": [
         "Завершується"
       ],
+      "Enter organization name to confirm": [
+        ""
+      ],
       "Enter the 6-digit code": [
         "Введіть 6-значний код"
       ],
@@ -3422,7 +3439,7 @@
         "Мої календарі"
       ],
       "Pay invoice": [
-        "Сплатити рахунок-фактуру"
+        "Сплатити рахунок"
       ],
       "Request an invite": [
         "Запитати запрошення"
@@ -3542,22 +3559,27 @@
       ]
     },
     "Mail import summary": {
-      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
-        "Імпортувати всі повідомлення з ${ selectedLabelsCount } міткою з усіх ${ totalLabelsCount }, починаючи з ${ periodFragment } та позначити їх міткою ${ label }",
-        "Імпортувати всі повідомлення з ${ selectedLabelsCount } мітками з усіх ${ totalLabelsCount }, починаючи з ${ periodFragment } та позначити їх міткою ${ label }",
-        "Імпортувати всі повідомлення з ${ selectedLabelsCount } мітками з усіх ${ totalLabelsCount }, починаючи з ${ periodFragment } та позначити їх міткою ${ label }",
-        "Імпортувати всі повідомлення з ${ selectedLabelsCount } мітками з усіх ${ totalLabelsCount }, починаючи з ${ periodFragment } та позначити їх міткою ${ label }"
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "",
+        "",
+        "",
+        ""
       ],
-      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
-        "Імпортувати всі повідомлення з ${ totalLabelsCount } міткою, починаючи з ${ periodFragment } та позначити їх міткою ${ label }",
-        "Імпортувати всі повідомлення з ${ totalLabelsCount } мітками, починаючи з ${ periodFragment } та позначити їх міткою ${ label }",
-        "Імпортувати всі повідомлення з ${ totalLabelsCount } мітками, починаючи з ${ periodFragment } та позначити їх міткою ${ label }",
-        "Імпортувати всі повідомлення з ${ totalLabelsCount } мітками, починаючи з ${ periodFragment } та позначити їх міткою ${ label }"
+      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "",
+        "",
+        "",
+        ""
       ]
     },
     "Many Others": {
       "and many others": [
         "та багато інших"
+      ]
+    },
+    "Member downgrade modal": {
+      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
+        ""
       ]
     },
     "Message": {
@@ -3756,7 +3778,7 @@
     },
     "Notification time input": {
       "at": [
-        "о"
+        " "
       ]
     },
     "Notification type": {
@@ -4074,7 +4096,7 @@
         "Версія браузера"
       ],
       "e.g. Julia Smith": [
-        "наприклад, Оксана Пазиненко"
+        "наприклад, Джулія Сміт"
       ],
       "E.g., ": [
         "Наприклад, "
@@ -4104,7 +4126,7 @@
         "Версія ОС"
       ],
       "Please describe the problem and include any error messages": [
-        "Будь ласка опишіть проблему та вкажіть будь-які повідомлення про помилки"
+        "Опишіть проблему та додайте повідомлення про помилки"
       ],
       "Postal code": [
         "Поштовий індекс"
@@ -4135,27 +4157,7 @@
         "(Без назви)"
       ]
     },
-    "Plan Feature": {
-      "${ n } server": [
-        "${ n } сервер",
-        "${ n } сервери",
-        "${ n } серверів",
-        "${ n } серверів"
-      ],
-      "${ n } VPN connection": [
-        "${ n } VPN-з'єднання",
-        "${ n } VPN-з'єднання",
-        "${ n } VPN-з'єднань",
-        "${ n } VPN-з'єднань"
-      ]
-    },
     "Plan feature": {
-      "${ freeServers } in ${ freeCountries } country": [
-        "${ freeServers } у ${ freeCountries } країні",
-        "${ freeServers } у ${ freeCountries } країнах",
-        "${ freeServers } у ${ freeCountries } країнах",
-        "${ freeServers } у ${ freeCountries } країнах"
-      ],
       "0.5 GB storage": [
         "0.5 ГБ сховища"
       ],
@@ -4168,12 +4170,6 @@
       "1 user": [
         "1 користувач"
       ],
-      "1200+ servers in ${ plusCountries } country": [
-        "1200+ серверів у ${ plusCountries } країні",
-        "1200+ серверів у ${ plusCountries } країнах",
-        "1200+ серверів у ${ plusCountries } країнах",
-        "1200+ серверів у ${ plusCountries } країнах"
-      ],
       "20 GB storage": [
         "20 ГБ сховища"
       ],
@@ -4182,12 +4178,6 @@
       ],
       "3 folders / labels": [
         "3 теки / мітки"
-      ],
-      "350+ servers in ${ basicCountries } country": [
-        "350+ серверів у ${ basicCountries } країні",
-        "350+ серверів у ${ basicCountries } країнах",
-        "350+ серверів у ${ basicCountries } країнах",
-        "350+ серверів у ${ basicCountries } країнах"
       ],
       "5 addresses": [
         "5 адрес"
@@ -4325,7 +4315,7 @@
     },
     "Refresh on apply warning": {
       "Note: the service will reload after you click the Apply button.": [
-        "Примітка: Після натискання кнопки Застосувати сервіс перезавантажиться."
+        "Примітка: Після натискання кнопки Застосувати, сторінка перезавантажиться."
       ]
     },
     "Select files": {
@@ -4377,7 +4367,7 @@
         "Відповідь надіслано, а подію видалено"
       ],
       "Bug reported": [
-        "Звіт про ваду надіслано"
+        "Звіт про помилку надіслано"
       ],
       "Calendar added. It might take a few minutes to sync.": [
         "Календар додано. Може знадобитися кілька хвилин для синхронізації."
@@ -4401,7 +4391,7 @@
         "Лист про скасування надіслано, а учасників вилучено з усіх подій"
       ],
       "Code sent to ${ methodTo }": [
-        "Код надісланий до ${ methodTo }"
+        "Код надісланий на ${ methodTo }"
       ],
       "Contact deleted": [
         "Контакт видалено",
@@ -4488,7 +4478,7 @@
         "Налаштування збережено"
       ],
       "Verification successful": [
-        "Перевірка пройшла успішно"
+        "Перевірку виконано успішно"
       ],
       "You have successfully unsubscribed": [
         "Ви успішно відписались"
@@ -4579,8 +4569,8 @@
       "${ hours } hour": [
         "${ hours } година",
         "${ hours } години",
-        "${ hours } годинн",
-        "${ hours } годинн"
+        "${ hours } годин",
+        "${ hours } годин"
       ],
       "${ minutes } minute": [
         "${ minutes } хвилина",
@@ -4671,7 +4661,7 @@
         "Триває перевірка картки"
       ],
       "Change my answer": [
-        "Змінити моє рішення"
+        "Змінити мою відповідь"
       ],
       "Checkout": [
         "Розрахунок"
@@ -4753,6 +4743,9 @@
       ],
       "Delete event": [
         "Видалити подію"
+      ],
+      "Delete organization?": [
+        ""
       ],
       "Delete recurring event": [
         "Видалити повторювану подію"
@@ -5232,6 +5225,26 @@
         "Windows, macOS, iOS, Linux, Android, Android TV, Chromebook, Chromecast"
       ]
     },
+    "VPN Plan Feature": {
+      "${ n } server": [
+        "${ n } сервер",
+        "${ n } сервери",
+        "${ n } серверів",
+        "${ n } серверів"
+      ],
+      "${ n } VPN connection": [
+        "${ n } VPN-з'єднання",
+        "${ n } VPN-з'єднання",
+        "${ n } VPN-з'єднань",
+        "${ n } VPN-з'єднань"
+      ],
+      "${ numberOfServers } in ${ numberOfCountries } country": [
+        "${ numberOfServers } в ${ numberOfCountries } країні",
+        "${ numberOfServers } в ${ numberOfCountries } країнах",
+        "${ numberOfServers } в ${ numberOfCountries } країнах",
+        "${ numberOfServers } в ${ numberOfCountries } країнах"
+      ]
+    },
     "Warning": {
       "Are you sure you want to permanently delete ${ count } contact group?": [
         "Ви дійсно хочете остаточно видалити ${ count } групу контактів?",
@@ -5271,6 +5284,9 @@
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "Деякі об'єднувані контакти мають помилки. Будь ласка, перегляньте їх окремо"
+      ],
+      "The contact data is corrupted and cannot be displayed.": [
+        "Дані контакту пошкоджені, тому їх неможливо показати."
       ],
       "The contact failed to load.": [
         "Не вдалося завантажити контакт."

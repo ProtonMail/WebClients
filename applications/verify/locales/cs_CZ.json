@@ -1,0 +1,237 @@
+{
+  "headers": {
+    "plural-forms": "nplurals=4; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 3;",
+    "language": "cs_CZ"
+  },
+  "contexts": {
+    "Action": {
+      "Cancel": [
+        "Zrušit"
+      ],
+      "Close": [
+        "Zavřít"
+      ],
+      "Close modal": [
+        "Zavřít okno"
+      ],
+      "Did not receive the code?": [
+        "Nedostali jste kód?"
+      ],
+      "Edit email address": [
+        "Upravit e-mailovou adresu"
+      ],
+      "Edit phone number": [
+        "Upravit telefonní číslo"
+      ],
+      "Get verification code": [
+        "Odeslat ověřovací kód"
+      ],
+      "refresh the page": [
+        "aktualizovat stránku"
+      ],
+      "Request new code": [
+        "Vyžádejte si nový kód"
+      ],
+      "Submit": [
+        "Předložit"
+      ],
+      "Try another method": [
+        "Zkuste jinou metodu"
+      ],
+      "Verify": [
+        "Ověřit"
+      ],
+      "View invoice": [
+        "Zobrazit fakturu"
+      ]
+    },
+    "Delinquent modal title": {
+      "Overdue invoice": [
+        "Faktura po splatnosti"
+      ]
+    },
+    "Error": {
+      "Can't validate email, try again later": [
+        "Nelze ověřit e-mail, opakujte akci později"
+      ],
+      "Can't validate phone, try again later": [
+        "Nelze ověřit telefon, opakujte akci později"
+      ],
+      "Email is not valid": [
+        "Emailová adresa není platná"
+      ],
+      "Enter 6 digits": [
+        "Zadejte 6 číslic"
+      ],
+      "Invalid verification code": [
+        "Neplatný ověřovací kód"
+      ],
+      "Not a valid number": [
+        "Neplatné číslo"
+      ],
+      "Passwords do not match": [
+        "Hesla se neshodují"
+      ],
+      "Request timed out.": [
+        "Vypršel časový limit žádosti."
+      ],
+      "This field is required": [
+        "Toto pole je povinné"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Toto pole vyžaduje minimálně ${ minimumLength } znaků."
+      ],
+      "Unknown error": [
+        "Neznámá chyba"
+      ]
+    },
+    "Error message": {
+      "Brace yourself till we get the error fixed.": [
+        "Vyčkejte do doby, než opravíme tuhle chybu."
+      ],
+      "Error: ${ errorMessage }": [
+        ""
+      ],
+      "Oops, something went wrong": [
+        "Jejda, něco se pokazilo"
+      ],
+      "Please ${ refresh } or check your connection.": [
+        ""
+      ],
+      "There was a problem connecting to Proton.": [
+        ""
+      ],
+      "You may also ${ refresh } or try again later.": [
+        "Můžete také ${ refresh } nebo to zkusit později."
+      ]
+    },
+    "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
+      "Email": [
+        "E-mail"
+      ],
+      "Manual": [
+        "Ručně"
+      ],
+      "No verification method available": [
+        "Nejsou k dispozici žádné metody ověřování"
+      ],
+      "SMS": [
+        "SMS"
+      ]
+    },
+    "Info": {
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
+        "Klikněte na \"Požádat o nový kód\" pro zaslání nového ověřovacího kódu na ${ strong }. Pokud je tato e-mailová adresa nesprávná, klikněte na tlačítko \"Upravit\" pro její opravu."
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
+        "Klikněte na \"Požádat o nový kód\" pro zaslání nového ověřovacího kódu na ${ strong }. Pokud je toto telefonní číslo nesprávné, klepněte na tlačítko \"Upravit\" pro jeho opravu."
+      ],
+      "Enter the verification code that was sent to ${ destinationText }.": [
+        "Zadejte ověřovací kód, který byl odeslán na ${ destinationText }."
+      ],
+      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
+        "Pokud máte potíže s vytvořením účtu, požádejte prosím o pozvánku a my odpovíme do jednoho pracovního dne."
+      ],
+      "If you don't find the email in your inbox, please check your spam folder.": [
+        "Pokud jste nenašli e-mail ve vaší schránce, zkontrolujte prosím složku se spamem."
+      ],
+      "Internet connection lost.": [
+        "Připojení k Internetu bylo ztraceno."
+      ],
+      "Loading": [
+        "Načítá se"
+      ],
+      "No results found": [
+        "Nebyly nalezeny žádné výsledky"
+      ],
+      "Servers are unreachable. Please try again in a few minutes": [
+        ""
+      ],
+      "Session timed out.": [
+        "Relace vypršela."
+      ],
+      "To fight spam and abuse, please verify you are human.": [
+        "Z důvodu boje proti spamu a obtěžování, ověřte prosím, že jste člověk."
+      ],
+      "Would you like to receive a new verification code or use an alternative verification method?": [
+        "Chcete získat nový ověřovací kód nebo použít alternativní metodu ověřování?"
+      ],
+      "Your email will only be used for this one-time verification.": [
+        "Váš e-mail bude použit pouze pro toto jednorázové ověření."
+      ],
+      "Your phone number will only be used for this one-time verification.": [
+        "Vaše telefonní číslo bude použito pouze pro toto jednorázové ověření."
+      ],
+      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
+        "Váš Proton účet je momentálně pozastaven. Chcete-li Váš účet nadále používat, zaplaťte prosím všechny faktury po splatnosti."
+      ]
+    },
+    "Label": {
+      "Cancel": [
+        "Zrušit"
+      ],
+      "Email address": [
+        "E-mailová adresa"
+      ],
+      "Enter the 6-digit code": [
+        "Zadejte 6-místný kód"
+      ],
+      "Hide password": [
+        "Skrýt heslo"
+      ],
+      "Password": [
+        "Heslo"
+      ],
+      "Phone number": [
+        "Telefonní číslo"
+      ],
+      "Reveal password": [
+        "Zobrazit heslo"
+      ],
+      "Submit": [
+        "Předložit"
+      ],
+      "Verification code": [
+        "Ověřovací kód"
+      ]
+    },
+    "Link": {
+      "Learn more": [
+        "Více informací"
+      ],
+      "Request an invite": [
+        "Požádat o pozvánku"
+      ]
+    },
+    "Success": {
+      "Code sent to ${ methodTo }": [
+        "Kód zaslán na ${ methodTo }"
+      ],
+      "Verification successful": [
+        "Ověření proběhlo úspěšně"
+      ]
+    },
+    "Title": {
+      "Human verification": [
+        "Ověření totožnosti"
+      ],
+      "Invalid verification code": [
+        "Neplatný ověřovací kód"
+      ],
+      "Sign in again to continue": [
+        "Chcete-li pokračovat, znovu se přihlaste"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "Heslo musí alespoň obsahovat ${ length } znak",
+        "Hesla musí obsahovat alespoň ${ length } znaků",
+        "Hesla musí obsahovat alespoň ${ length } znaků",
+        "Hesla musí obsahovat alespoň ${ length } znaků"
+      ]
+    }
+  }
+}

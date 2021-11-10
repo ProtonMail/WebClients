@@ -1,0 +1,235 @@
+{
+  "headers": {
+    "plural-forms": "nplurals=2; plural=(n != 1);",
+    "language": "hu_HU"
+  },
+  "contexts": {
+    "Action": {
+      "Cancel": [
+        "Mégsem"
+      ],
+      "Close": [
+        "Bezárás"
+      ],
+      "Close modal": [
+        "Ablak bezárása"
+      ],
+      "Did not receive the code?": [
+        "Nem kapta meg a kódot?"
+      ],
+      "Edit email address": [
+        "E-mail cím módosítása"
+      ],
+      "Edit phone number": [
+        "Telefonszám módosítása"
+      ],
+      "Get verification code": [
+        "Ellenőrző kód küldése"
+      ],
+      "refresh the page": [
+        "oldalfrissítés"
+      ],
+      "Request new code": [
+        "Új kód kérése"
+      ],
+      "Submit": [
+        "Küldés"
+      ],
+      "Try another method": [
+        "Másik módszer"
+      ],
+      "Verify": [
+        "Ellenőrzés"
+      ],
+      "View invoice": [
+        "Számla megtekintése"
+      ]
+    },
+    "Delinquent modal title": {
+      "Overdue invoice": [
+        "Lejárt számla"
+      ]
+    },
+    "Error": {
+      "Can't validate email, try again later": [
+        "E-mail ellenőrzése nem sikerült, próbálja meg később"
+      ],
+      "Can't validate phone, try again later": [
+        "Telefonszám ellenőrzése nem sikerült, próbálja meg később"
+      ],
+      "Email is not valid": [
+        "Érvénytelen e-mail cím"
+      ],
+      "Enter 6 digits": [
+        "6 számjegyet írjon be"
+      ],
+      "Invalid verification code": [
+        "Érvénytelen ellenőrző kód"
+      ],
+      "Not a valid number": [
+        "Érvénytelen szám"
+      ],
+      "Passwords do not match": [
+        "A jelszavak nem egyeznek meg"
+      ],
+      "Request timed out.": [
+        "A kérés túllépte az időkorlátot."
+      ],
+      "This field is required": [
+        "Kötelező mező"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Legalább ${ minimumLength } karakter szükséges ebben a mezőben."
+      ],
+      "Unknown error": [
+        "Ismeretlen hiba"
+      ]
+    },
+    "Error message": {
+      "Brace yourself till we get the error fixed.": [
+        "Kérjük vigyázzon magára, amíg a hibát elhárítjuk."
+      ],
+      "Error: ${ errorMessage }": [
+        ""
+      ],
+      "Oops, something went wrong": [
+        "Hoppá, valami hiba történt"
+      ],
+      "Please ${ refresh } or check your connection.": [
+        ""
+      ],
+      "There was a problem connecting to Proton.": [
+        ""
+      ],
+      "You may also ${ refresh } or try again later.": [
+        "Megpróbálhatja ${ refresh } az oldalt vagy később újra próbálni."
+      ]
+    },
+    "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
+      "Email": [
+        "E-mail"
+      ],
+      "Manual": [
+        "Kézi"
+      ],
+      "No verification method available": [
+        "Nincs elérhető ellenőrzési módszer"
+      ],
+      "SMS": [
+        "SMS"
+      ]
+    },
+    "Info": {
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
+        "Kattintson az \"Új kód kérése\" gombra, hogy a ${ strong } címre új ellenőrzési kódot küldjünk. Ha hibás ez a cím, kattintson a Szerkesztés gombra."
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
+        "Kattintson az \"Új kód kérése\" gombra, hogy a ${ strong } számra új ellenőrzési kódot küldjünk. Ha hibás ez a szám, kattintson a Szerkesztés gombra."
+      ],
+      "Enter the verification code that was sent to ${ destinationText }.": [
+        "Írja be a ${ destinationText } címre küldött ellenőrző kódot."
+      ],
+      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
+        "Ha problémába ütközik a fiók létrehozásakor, kérjen egy meghívót és egy munkanapon belül segítséget nyújtunk."
+      ],
+      "If you don't find the email in your inbox, please check your spam folder.": [
+        "Ha nem találja az e-mailt a beérkező leveleknél, ellenőrizze a Levélszemét közt."
+      ],
+      "Internet connection lost.": [
+        "Az internetkapcsolat megszakadt."
+      ],
+      "Loading": [
+        "Betöltés"
+      ],
+      "No results found": [
+        "Nincs találat"
+      ],
+      "Servers are unreachable. Please try again in a few minutes": [
+        "A szerverek nem érhetők el. Próbálja meg egy pár perc múlva"
+      ],
+      "Session timed out.": [
+        "A munkamenet lejárt."
+      ],
+      "To fight spam and abuse, please verify you are human.": [
+        "A visszaélések és a levélszemét megakadályozására kérjük bizonyítsa, hogy nem robot."
+      ],
+      "Would you like to receive a new verification code or use an alternative verification method?": [
+        "Új ellenőrző kódot kér, vagy megpróbál egy másik ellenőrzési módszert?"
+      ],
+      "Your email will only be used for this one-time verification.": [
+        "Az e-mail cím csak erre az egyszeri ellenőrzésre lesz felhasználva."
+      ],
+      "Your phone number will only be used for this one-time verification.": [
+        "A telefonszám csak erre az egyszeri ellenőrzésre lesz felhasználva."
+      ],
+      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
+        "A Proton fiók jelenleg fel van függesztve. A további használatához kérjük, egyenlítse ki a számlatartozását."
+      ]
+    },
+    "Label": {
+      "Cancel": [
+        "Mégsem"
+      ],
+      "Email address": [
+        "E-mail cím"
+      ],
+      "Enter the 6-digit code": [
+        "Írja be a hatjegyű kódot"
+      ],
+      "Hide password": [
+        "A jelszó elrejtése"
+      ],
+      "Password": [
+        "Jelszó"
+      ],
+      "Phone number": [
+        "Telefonszám"
+      ],
+      "Reveal password": [
+        "Jelszó felfedése"
+      ],
+      "Submit": [
+        "Küldés"
+      ],
+      "Verification code": [
+        "Ellenőrző kód"
+      ]
+    },
+    "Link": {
+      "Learn more": [
+        "További információk"
+      ],
+      "Request an invite": [
+        "Meghívó kérése"
+      ]
+    },
+    "Success": {
+      "Code sent to ${ methodTo }": [
+        "Kód elküldve: ${ methodTo }"
+      ],
+      "Verification successful": [
+        "Sikeres ellenőrzés"
+      ]
+    },
+    "Title": {
+      "Human verification": [
+        "Robot ellenőrzés"
+      ],
+      "Invalid verification code": [
+        "Érvénytelen ellenőrző kód"
+      ],
+      "Sign in again to continue": [
+        "Lépjen be újból a folytatáshoz"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "A jelszónak legalább ${ length } karakterből kell állnia",
+        "A jelszónak legalább ${ length } karakterből kell állnia"
+      ]
+    }
+  }
+}

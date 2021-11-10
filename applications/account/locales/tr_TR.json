@@ -202,9 +202,6 @@
       "Copy link": [
         "Linki kopyala"
       ],
-      "Copy to clipboard": [
-        "Panoya kopyala"
-      ],
       "Create": [
         "Oluştur"
       ],
@@ -301,6 +298,9 @@
       "Download all configurations": [
         "Tüm yapılandırmaları indir"
       ],
+      "Download recovery file": [
+        "Kurtarma dosyasını indirin"
+      ],
       "Download the Import-Export app": [
         "Import-Export uygulamasını indir"
       ],
@@ -347,7 +347,7 @@
         "Yazı tipi"
       ],
       "Generate key": [
-        ""
+        "Anahtar oluştur"
       ],
       "Get ProtonVPN Plus": [
         "ProtonVPN Plus edinin"
@@ -389,7 +389,7 @@
         ".csv ya da vCard dosyasından iç aktar"
       ],
       "Import from .ics": [
-        ""
+        ".ics'ten içe aktar"
       ],
       "Import key": [
         "Anahtarı içe aktar"
@@ -778,6 +778,15 @@
       "View invoice": [
         "Faturayı görüntüle"
       ],
+      "Void all recovery files": [
+        ""
+      ],
+      "Void all recovery files?": [
+        ""
+      ],
+      "Void anyway": [
+        ""
+      ],
       "Warning": [
         "Uyarı"
       ],
@@ -1076,37 +1085,16 @@
       ]
     },
     "blackfriday Action": {
-      "Get limited-time deal": [
-        "Sınırlı süreli fırsattan yararlanın"
-      ],
-      "Upgrade": [
-        "Yükselt"
+      "Get the offer": [
+        ""
       ]
     },
     "blackfriday Info": {
-      "Discounts are based on monthly pricing.": [
-        "İndirimler aylık fiyatlandırmaya dayanmaktadır."
-      ],
-      "early access to": [
-        "erken erişim:"
-      ],
-      "Free": [
-        "Ücretsiz"
-      ],
-      "Get early access to our new encrypted drive for FREE by upgrading to a Plus bundle now.": [
-        "Şimdi bir Plus paketine yükselterek yeni şifrelenmiş sürücümüze ÜCRETSİZ olarak erken erişim sağlayın."
+      "beta": [
+        "beta"
       ],
       "Includes": [
         "İçerdikleri"
-      ],
-      "Offer valid only for first-time paid subscriptions.": [
-        "Teklif yalnızca ilk kez ücretli abone olanlar için geçerlidir."
-      ],
-      "ProtonDrive": [
-        "ProtonDrive"
-      ],
-      "Save ${ percentage }%": [
-        "%${ percentage }"
       ],
       "Standard price: ${ regularPrice }": [
         "Standart fiyat: ${ regularPrice }"
@@ -1115,49 +1103,81 @@
         "Bu abonelik, iptal edilene kadar 2 yıllık bir dönem sonrasında aynı fiyattan otomatik olarak yenilenecektir."
       ]
     },
-    "blackfriday info": {
-      "per month": [
-        "aylık"
-      ]
-    },
-    "blackfriday Promo title, need to be short": {
-      "Special offer": [
-        "Özel teklif"
-      ]
-    },
     "blackfriday Title": {
-      "(${ notice }) Renews after 1 year at a discounted annual & bundle price of ${ amount } every year (36% discount).": [
-        "(${ notice }) 1 yıl sonra her yıl, yıllık ${ amount } indirimli paket fiyatıyla yenilenir (%36 indirim)."
-      ],
-      "(${ notice }) Renews after 1 year at a discounted annual price of ${ amount } every year (20% discount).": [
-        "(${ notice }) 1 yıl sonra her yıl, yıllık ${ amount } indirimli fiyatla yenilenir (%20 indirim)."
-      ],
-      "(${ notice }) Renews after 2 years at a discounted 2-year price of ${ amount } every 2 years (47% discount).": [
-        "(${ notice }) 2 yıl sonra her 2 yılda bir, 2 yıllık ${ amount } indirimli fiyatla yenilenir (%47 indirim)."
-      ],
-      "Billed as ${ amount } ${ supNotice }": [
+      "Best deal": [
         ""
-      ],
-      "Black Friday Sale": [
-        "Kara Cuma İndirimi"
-      ],
-      "Cyber Monday Sale": [
-        "Siber Pazartesi İndirimi"
-      ],
-      "for 1 month": [
-        "1 ay için"
-      ],
-      "for 1 year": [
-        "1 yıl için"
-      ],
-      "for 2 years": [
-        "2 yıl için"
       ],
       "Most popular": [
         "En popüler olanlar"
       ],
-      "ProtonDrive early access offer": [
-        "ProtonDrive erken erişim teklifi"
+      "Save more when combining Mail and VPN": [
+        ""
+      ]
+    },
+    "blackfriday: VPNspecialoffer Action": {
+      "Get the deal": [
+        "Tekliften yararlan"
+      ],
+      "Get the deal now": [
+        "Tekliften şimdi yararlan"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Badge popup": {
+      "${ vpnAppName } Plus Special Offer 2021 discount has been applied": [
+        ""
+      ]
+    },
+    "blackfriday: VPNspecialoffer Info": {
+      "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
+        ""
+      ],
+      "Save ${ percentage }%": [
+        "- %${ percentage }"
+      ],
+      "Special offer Terms and Conditions": [
+        ""
+      ]
+    },
+    "blackfriday: VPNspecialoffer info": {
+      "per month": [
+        "aylık"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Promo title, need to be short": {
+      "Special offer": [
+        "Özel teklif"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Title": {
+      "(${ notice }) Renews after 1 month at a standard monthly price of ${ amount }": [
+        ""
+      ],
+      "(${ notice }) Renews after 1 year at a standard discounted annual price of ${ amount } (20% discount)": [
+        ""
+      ],
+      "(${ notice }) Renews after 2 years at a standard discounted 2-year price of ${ amount } (33% discount)": [
+        ""
+      ],
+      "1 month": [
+        "1 ay"
+      ],
+      "12 months": [
+        "12 ay"
+      ],
+      "24 months": [
+        "24 ay"
+      ],
+      "Billed at ${ amount } for the first 2 years.${ supNotice }": [
+        ""
+      ],
+      "Billed at ${ amount } for the first month.${ supNotice }": [
+        ""
+      ],
+      "Billed at ${ amount } for the first year.${ supNotice }": [
+        ""
+      ],
+      "Get the special year-end offer on our Premium VPN PLUS plan": [
+        ""
       ]
     },
     "Bridge version load failed": {
@@ -1617,7 +1637,7 @@
         ""
       ],
       "Missing feature(s)": [
-        ""
+        "Eksik nitelik(ler)"
       ],
       "My reason isn't listed, please comment": [
         ""
@@ -1924,6 +1944,9 @@
       "Organization key is not decrypted.": [
         "Kuruluş anahtarının şifresi çözülmedi."
       ],
+      "Organization not recognized. Try again.": [
+        ""
+      ],
       "Passwords do not match": [
         "Parolalar eşleşmiyor"
       ],
@@ -1960,6 +1983,9 @@
       ],
       "Please refresh the page.": [
         "Lütfen sayfayı yenileyin."
+      ],
+      "Please set a recovery email first": [
+        ""
       ],
       "Please set a recovery phone number first": [
         "Lütfen önce bir kurtarma telefon numarası ayarlayın"
@@ -2073,6 +2099,9 @@
         "Bilinmeyen ödeme belirteci durumu"
       ],
       "Uploaded file is not a valid private key. Please verify and try again.": [
+        ""
+      ],
+      "Uploaded file is not a valid recovery file. Please verify and try again.": [
         ""
       ],
       "Uploaded files are not valid private keys. Please verify and try again.": [
@@ -2965,7 +2994,7 @@
     },
     "Import key": {
       "Are you sure you want to import a private key? Importing an insecurely generated or leaked private key can harm the security of your emails.\n\nPlease also note that the public key corresponding to this private key will be publicly available from our key server. If the key contains personal details (such as your full name) which you do not want to publish, please edit the key before importing it.": [
-        ""
+        "Özel bir anahtarı içe aktarmak istediğinize emin misiniz? Güvensizce üretilmiş ya da sızdırılmış özel anahtarı içe aktarmak e-postalarınızın güvenliğine zarar verebilir.\n\nAyrıca bu özel anahtara karşılık gelen genel anahtarın, anahtar sunucularımızda genel erişimli olacağını da lütfen dikkate alın. Anahtar, paylaşmak istemediğiniz kişisel ayrıntıları içeriyorsa (tam adınız gibi) içe aktarmadan önce lütfen düzenleyiniz."
       ]
     },
     "Import status": {
@@ -3148,6 +3177,9 @@
       "A key with the same encryption algorithm is already active for this address. Generating another key will cause slower account loading and deletion of this key can cause issues. If you are generating a new key because your old key is compromised, please mark that key as compromised. Are you sure you want to continue?": [
         "Bu adres için aynı şifreleme algoritmasına sahip bir anahtar zaten etkin. Başka bir anahtarın oluşturulması, hesabın daha yavaş yüklenmesine ve bu anahtarın silinmesine neden olabilir. Eski anahtarınız tehlikeye girdiğinden yeni bir anahtar oluşturuyorsanız, lütfen bu anahtarı tehlikede olarak işaretleyin. Devam etmek istediğine emin misin?"
       ],
+      "A recovery file lets you unlock and view your data after an account reset. ": [
+        ""
+      ],
       "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password.": [
         "Kurtarma anahtar metni, şifrenizi unutursanız hesabınıza erişmenizi sağlar ve şifreli iletilerinizi kurtarır."
       ],
@@ -3160,11 +3192,26 @@
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Ödenmemiş faturalar nedeniyle hesaba erişim kısıtlandı. Lütfen yöneticinizle iletişime geçin."
       ],
+      "account recovery and data recovery method": [
+        ""
+      ],
+      "account recovery method": [
+        ""
+      ],
       "Account successfully updated": [
         "Hesap başarıyla güncellendi"
       ],
+      "Activate your recovery phrase": [
+        ""
+      ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"ProtonMail me\" or \"Private Message me.\"": [
         "Hesabınıza @pm.me e-posta adresi ekler. Bu basit ve kısa alan adı \"ProtonMail me\" veya \"Private Message me\" anlamına gelir."
+      ],
+      "Add a recovery email address": [
+        ""
+      ],
+      "Add a recovery phone number": [
+        ""
       ],
       "Add additional addresses to your account like user2@protonmail.com": [
         "Hesabınıza kullaniciadi2@protonmail.com gibi ek adresler ekleyin"
@@ -3184,6 +3231,9 @@
       ],
       "Addresses": [
         "Adres"
+      ],
+      "After a password reset your data is locked in encrypted form to keep it safe. To decrypt and view your emails and other data, you need a recovery file or recovery phrase.": [
+        ""
       ],
       "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
         "Bitcoin ödemenizi yaptıktan sonra, yükseltmek için lütfen aşağıdaki talimatları izleyin."
@@ -3390,7 +3440,7 @@
         "Proton hesabınızı oluşturun"
       ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
-        ""
+        "Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora ve diğer bazı uygulamaların CSV dosyalarıyla birlikte vCard 3.1 ve 4.0 biçimli (UTF-8) dosyalar desteklenmektedir."
       ],
       "Currently all available storage is allocated to the administrator account. Please reduce the admin account allocation to free up space for additional users. You can increase the total storage at any time by upgrading your account.": [
         "Şu anda kullanılabilir tüm depolama alanı yönetici hesabına ayrılmıştır. Lütfen ek kullanıcılara yer açmak için yönetici hesabı ayırmasını azaltın. Hesabınızı yükselterek istediğiniz zaman toplam depolama alanını artırabilirsiniz."
@@ -3471,6 +3521,9 @@
       "Download your PGP keys for use with other PGP-compatible services.": [
         "PGP anahtarlarınızı diğer PGP uyumlu hizmetlerle kullanmak için indirin."
       ],
+      "Download your recovery file": [
+        ""
+      ],
       "Drop the file here to upload": [
         "Yüklemek için bir dosyayı buraya bırakın"
       ],
@@ -3480,7 +3533,7 @@
       "Edit label": [
         "Etiketi düzenle"
       ],
-      "Effortlessly and securely move your emails from your current provider to Proton. If you use Google, we also support calendar, and contacts imports.": [
+      "Effortlessly and securely move your emails from your current provider to Proton. If you use Google, we also support calendar and contacts imports.": [
         ""
       ],
       "Email address": [
@@ -3624,6 +3677,12 @@
       "If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly.": [
         "Hem SPF hem de DKIM'i ayarladıysanız, DMARC, iki denetim de başarısız olursa, diğer e-posta hizmetlerinin etki alanınız için nasıl e-posta sunması gerektiğini belirlemenizi sağlar. Bu, gereksiz e-posta gönderenlerin sizin gibi davranmasını zorlaştırabilir, ancak doğru şekilde yapılmazsa teslimat sorunlarına da neden olabilir."
       ],
+      "If you lose your login details and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
+        ""
+      ],
+      "If you lose your login details and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.": [
+        ""
+      ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to log into your account. Each code can only be used once.": [
         "İki adımlı doğrulamanın etkin olduğu cihazınızı kaybederseniz, bu kodlar hesabınıza giriş yapmak için 6 haneli iki faktörlü kimlik doğrulama kodu yerine kullanılabilir. Her kod sadece bir kez kullanılabilir."
       ],
@@ -3682,6 +3741,12 @@
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         ""
       ],
+      "In case you lose your login details, we’ll send you recovery instructions via email or SMS.": [
+        ""
+      ],
+      "In case you lose your login details, we’ll send you recovery instructions via email.": [
+        ""
+      ],
       "Included": [
         "Dahil"
       ],
@@ -3714,6 +3779,9 @@
       ],
       "Internet connection restored.": [
         "İnternet bağlantısı tekrar sağlandı."
+      ],
+      "it’s imperative": [
+        ""
       ],
       "Just confirm your selection and we'll do the rest.": [
         ""
@@ -3817,6 +3885,9 @@
       "Next you'll need to log in to your Google account and allow us to access your data.": [
         ""
       ],
+      "No account recovery method set, you are at risk of losing access to your account": [
+        ""
+      ],
       "No action selected": [
         "İşlem seçilemedi"
       ],
@@ -3825,6 +3896,9 @@
       ],
       "No contact encryption keys exist": [
         "Kişinin şifreleme anahtarları yok"
+      ],
+      "No data recovery method set, you are at risk of losing access to your data": [
+        ""
       ],
       "No folder selected": [
         "Dosya seçilmedi"
@@ -4010,11 +4084,17 @@
       "read our two-factor authentication Guide first": [
         ""
       ],
+      "Recovery files have been voided": [
+        ""
+      ],
       "Recovery phrase copied to clipboard": [
         "Kurtarma anahtar metni panoya kopyalandı"
       ],
       "Recovery phrase has been disabled": [
         "Kurtarma anahtar metni devre dışı bırakıldı"
+      ],
+      "Recovery phrase is not associated with any outdated keys.": [
+        ""
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Sayfayı yenilemek ya da ${ link } çoğu sorunu kendiliğinden çözecektir."
@@ -4046,7 +4126,7 @@
       "Select a service provider to get started": [
         ""
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20-personal-calendar limit. You can also merge imported calendars with existing Proton calendars.": [
+      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit. You can also merge imported calendars with existing Proton calendars.": [
         ""
       ],
       "Server is currently down": [
@@ -4107,7 +4187,7 @@
         "Listenin en üstüne yerleştirdiğiniz e-posta adresi, varsayılan e-posta adresinizdir. Adreslerinizi yeniden sıralamak için sürükleyip bırakın."
       ],
       "The Import-Export app allows you to export messages for local backups and to restore previous backups to your account.": [
-        ""
+        "İçe-Dışa Aktarma uygulaması, yedeklemeler için dışa aktarmanıza ve önceki yedeklemeleri hesabınıza yeniden yüklemenize olanak tanır."
       ],
       "The name will be visible to your users while they are logged in.": [
         "Bu ad, oturum açtıklarında kullanıcılarınız tarafından görünür olacaktır."
@@ -4223,7 +4303,7 @@
       "Unable to decrypt. Recovery phrase is not associated with any keys.": [
         ""
       ],
-      "Unable to decrypt. Recovery phrase is not associated with any outdated keys.": [
+      "Unable to verify recovery file signature. Please contact support.": [
         ""
       ],
       "Unfortunately there is no recovery method saved for this account.": [
@@ -4288,12 +4368,6 @@
       ],
       "We advise you to use official ProtonVPN applications when possible.": [
         "Mümkün oldukça resmi ProtonVPN uygulamalarını kullanmanızı öneririz."
-      ],
-      "We recommend adding a linked email or phone number so you can recover your account if you lose your password.": [
-        "Parolanızı kaybederseniz hesabınızı kurtarabilmeniz için bağlantılı bir e-posta veya telefon numarası eklemenizi öneririz."
-      ],
-      "We recommend adding a linked email so you can recover your account if you lose your password.": [
-        "Şifrenizi kaybederseniz hesabınızı kurtarabilmeniz için bağlantılı bir e-posta eklemenizi öneririz."
       ],
       "We use 3-D Secure to protect your payments.": [
         "Ödemelerinizi korumak için 3-D Güvenli Ödeme kullanıyoruz."
@@ -4439,6 +4513,9 @@
       "You will soon be redirected to PayPal to verify your payment.": [
         "Ödemenizi doğrulamak için kısa süre içinde PayPal'a yönlendirileceksiniz."
       ],
+      "You won't be able to recover encrypted data after an account reset using your downloaded recovery files.": [
+        ""
+      ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, please create an address.": [
         "${ BRAND_NAME } hesabınız ${ externalEmailAddress } ile ilişkilidir. ${ toAppName } kullanmak için lütfen bir adres oluşturun."
       ],
@@ -4450,6 +4527,9 @@
       ],
       "Your account is being upgraded, this may take up to 30 seconds.": [
         "Hesabınız yükseltiliyor, bu 30 saniye sürebilir."
+      ],
+      "Your account recovery method is set": [
+        ""
       ],
       "Your account will be updated once the payment is cleared.": [
         "Ödemeniz onaylandıktan sonra hesabınız güncellenecektir."
@@ -4464,6 +4544,9 @@
         "Engel listeniz boş."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
+        ""
+      ],
+      "Your data recovery method is set": [
         ""
       ],
       "Your email will only be used for this one-time verification.": [
@@ -5178,6 +5261,9 @@
       "End weekday": [
         "Hafta sonu"
       ],
+      "Enter organization name to confirm": [
+        ""
+      ],
       "Enter password": [
         "Parolayı girin"
       ],
@@ -5195,6 +5281,9 @@
       ],
       "extra storage": [
         "fazladan depolama"
+      ],
+      "File": [
+        ""
       ],
       "Filter Name": [
         "Filtre Adı"
@@ -5427,6 +5516,12 @@
       "Recovery email": [
         "Kurtarma e-postası"
       ],
+      "Recovery email address": [
+        ""
+      ],
+      "Recovery file": [
+        ""
+      ],
       "Recovery phone": [
         "Kurtarma telefonu"
       ],
@@ -5541,7 +5636,13 @@
       "Upload your backup key": [
         ""
       ],
+      "Upload your recovery file": [
+        ""
+      ],
       "Uploaded private keys": [
+        ""
+      ],
+      "Uploaded recovery file": [
         ""
       ],
       "URL": [
@@ -5629,6 +5730,9 @@
     "label": {
       "Phone number": [
         "Telefon numarası"
+      ],
+      "Recovery phone number": [
+        ""
       ],
       "Recovery phrase": [
         "Kurtarma anahtar metni"
@@ -5936,11 +6040,11 @@
       ]
     },
     "Mail import summary": {
-      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "",
         ""
       ],
-      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "",
         ""
       ]
@@ -5979,6 +6083,11 @@
       ],
       "Sign in": [
         "Oturum aç"
+      ]
+    },
+    "Member downgrade modal": {
+      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
+        ""
       ]
     },
     "Message": {
@@ -6890,6 +6999,9 @@
       ],
       "Upload additional private keys": [
         ""
+      ],
+      "Upload additional recovery files": [
+        ""
       ]
     },
     "Select search results": {
@@ -7128,7 +7240,7 @@
         "Takvim güncellendi"
       ],
       "Canceling import": [
-        ""
+        "İçe aktarma iptal ediliyor"
       ],
       "Catch-all address updated": [
         "Tümünü yakalama adresi güncellendi"
@@ -7212,7 +7324,7 @@
         "Premium hesap yaratın"
       ],
       "Resuming import": [
-        ""
+        "İçe aktarma devam ediliyor"
       ],
       "Session revoked": [
         "Oturum iptal edildi"
@@ -7383,6 +7495,9 @@
       "3. Select config file and download": [
         "3. Yapılandırma dosyasını seçin ve indirin"
       ],
+      "Account recovery": [
+        ""
+      ],
       "Account suspended": [
         "Hesap askıya alındı"
       ],
@@ -7446,9 +7561,6 @@
       "Addresses": [
         "Adresler"
       ],
-      "Advanced": [
-        "Gelişmiş"
-      ],
       "Allocate storage": [
         "Depolama alanı ayır"
       ],
@@ -7489,7 +7601,7 @@
         "Geri"
       ],
       "Backup & Export": [
-        ""
+        "Yedekle & Dışa aktar"
       ],
       "Billing cycle": [
         "Fatura dönemi"
@@ -7620,6 +7732,9 @@
       "Dashboard": [
         "Kontrol paneli"
       ],
+      "Data recovery": [
+        ""
+      ],
       "Date": [
         "Tarih"
       ],
@@ -7652,6 +7767,9 @@
       ],
       "Delete logs": [
         "Kayıtları Sil"
+      ],
+      "Delete organization?": [
+        ""
       ],
       "Delete user": [
         "Kullanıcıyı sil"
@@ -7879,8 +7997,8 @@
       "Password & keys": [
         "Parolalar ve Anahtarlar"
       ],
-      "Password & recovery": [
-        "Parola ve kurtarma"
+      "Password & security": [
+        ""
       ],
       "Passwords": [
         "Parolalar"
@@ -7948,8 +8066,11 @@
       "Reconnect your account": [
         "Hesabınızı yeniden bağlayın"
       ],
-      "Recovery & notification": [
-        "Kurtarma ve bildirim"
+      "Recovery": [
+        ""
+      ],
+      "Recovery file": [
+        ""
       ],
       "Remove calendar": [
         "Takvimi kaldır"
@@ -7971,9 +8092,6 @@
       ],
       "Restore administrator privileges": [
         "Yönetici ayrıcalıklarını geri yükle"
-      ],
-      "Security": [
-        "Güvenlik"
       ],
       "Security logs": [
         "Güvenlik günlüğü"
@@ -8077,6 +8195,9 @@
       "Switch to two-password mode": [
         "Çift parola moduna geç"
       ],
+      "Take precautions to avoid data loss!": [
+        ""
+      ],
       "Theme": [
         "Tema"
       ],
@@ -8130,6 +8251,9 @@
       ],
       "Your plan": [
         "Tarifeniz"
+      ],
+      "Your recovery status": [
+        ""
       ],
       "ZIP / postal code": [
         "ZIP / posta kodu"

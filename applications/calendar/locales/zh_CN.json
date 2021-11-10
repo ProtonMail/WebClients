@@ -216,7 +216,7 @@
         "隐藏信息"
       ],
       "Hide labels": [
-        ""
+        "隐藏标签"
       ],
       "Hide time zones": [
         "隐藏时区"
@@ -231,7 +231,7 @@
         "导入"
       ],
       "Import from .csv or vCard": [
-        ""
+        "从 .csv 或 vCard 导入"
       ],
       "Increase": [
         "增加"
@@ -333,7 +333,7 @@
         "上一年"
       ],
       "Quit": [
-        ""
+        "退出"
       ],
       "Re-sign": [
         "重新签名"
@@ -363,7 +363,7 @@
         "移除此参与者"
       ],
       "Rename": [
-        ""
+        "重命名"
       ],
       "Report a problem": [
         "反馈问题"
@@ -628,7 +628,7 @@
     },
     "Attendee role": {
       "Optional": [
-        ""
+        "选填"
       ]
     },
     "Beta access description": {
@@ -657,37 +657,16 @@
       ]
     },
     "blackfriday Action": {
-      "Get limited-time deal": [
-        "领取限时优惠"
-      ],
-      "Upgrade": [
-        "升级"
+      "Get the offer": [
+        ""
       ]
     },
     "blackfriday Info": {
-      "Discounts are based on monthly pricing.": [
-        "折扣是以月度定价为基准。"
-      ],
-      "early access to": [
-        "提前体验"
-      ],
-      "Free": [
-        "免费版"
-      ],
-      "Get early access to our new encrypted drive for FREE by upgrading to a Plus bundle now.": [
-        "现在升级到 Plus 套装，即可免费体验我们新的加密网盘服务。"
+      "beta": [
+        ""
       ],
       "Includes": [
         "包含"
-      ],
-      "Offer valid only for first-time paid subscriptions.": [
-        "此优惠仅限于第一次开通付费订阅服务。"
-      ],
-      "ProtonDrive": [
-        "ProtonDrive"
-      ],
-      "Save ${ percentage }%": [
-        "节省 ${ percentage }%"
       ],
       "Standard price: ${ regularPrice }": [
         "原价：${ regularPrice }"
@@ -696,49 +675,81 @@
         "此订阅将在两年后自动续订，价格不变，直至取消。"
       ]
     },
-    "blackfriday info": {
-      "per month": [
-        "每月"
-      ]
-    },
-    "blackfriday Promo title, need to be short": {
-      "Special offer": [
-        "特价"
-      ]
-    },
     "blackfriday Title": {
-      "(${ notice }) Renews after 1 year at a discounted annual & bundle price of ${ amount } every year (36% discount).": [
-        "(${ notice }) 1 年后续订可享受每年 ${ amount } 的套装折扣价格（节省 36%）。"
-      ],
-      "(${ notice }) Renews after 1 year at a discounted annual price of ${ amount } every year (20% discount).": [
-        "(${ notice }) 1 年后续订价 ${ amount }/年（节省 20%）。"
-      ],
-      "(${ notice }) Renews after 2 years at a discounted 2-year price of ${ amount } every 2 years (47% discount).": [
-        "(${ notice }) 两年后续订价 ${ amount }/两年（节省 47%）。"
-      ],
-      "Billed as ${ amount } ${ supNotice }": [
+      "Best deal": [
         ""
-      ],
-      "Black Friday Sale": [
-        "黑色星期五特惠"
-      ],
-      "Cyber Monday Sale": [
-        "剁手星期一特惠"
-      ],
-      "for 1 month": [
-        "按月"
-      ],
-      "for 1 year": [
-        "1 年"
-      ],
-      "for 2 years": [
-        "2 年"
       ],
       "Most popular": [
         "最受欢迎"
       ],
-      "ProtonDrive early access offer": [
-        "提前体验 ProtonDrive"
+      "Save more when combining Mail and VPN": [
+        ""
+      ]
+    },
+    "blackfriday: VPNspecialoffer Action": {
+      "Get the deal": [
+        "立即享受优惠"
+      ],
+      "Get the deal now": [
+        "立即享受优惠"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Badge popup": {
+      "${ vpnAppName } Plus Special Offer 2021 discount has been applied": [
+        ""
+      ]
+    },
+    "blackfriday: VPNspecialoffer Info": {
+      "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
+        ""
+      ],
+      "Save ${ percentage }%": [
+        "${ percentage }%"
+      ],
+      "Special offer Terms and Conditions": [
+        ""
+      ]
+    },
+    "blackfriday: VPNspecialoffer info": {
+      "per month": [
+        "每月"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Promo title, need to be short": {
+      "Special offer": [
+        "特价"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Title": {
+      "(${ notice }) Renews after 1 month at a standard monthly price of ${ amount }": [
+        ""
+      ],
+      "(${ notice }) Renews after 1 year at a standard discounted annual price of ${ amount } (20% discount)": [
+        ""
+      ],
+      "(${ notice }) Renews after 2 years at a standard discounted 2-year price of ${ amount } (33% discount)": [
+        ""
+      ],
+      "1 month": [
+        "1 个月"
+      ],
+      "12 months": [
+        "12 个月"
+      ],
+      "24 months": [
+        "24 个月"
+      ],
+      "Billed at ${ amount } for the first 2 years.${ supNotice }": [
+        ""
+      ],
+      "Billed at ${ amount } for the first month.${ supNotice }": [
+        ""
+      ],
+      "Billed at ${ amount } for the first year.${ supNotice }": [
+        ""
+      ],
+      "Get the special year-end offer on our Premium VPN PLUS plan": [
+        ""
       ]
     },
     "Bug category": {
@@ -881,10 +892,10 @@
     },
     "Calendar subscription not synced error": {
       "Calendar could not be decrypted": [
-        ""
+        "未能解密日历"
       ],
       "Calendar could not be found": [
-        ""
+        "找不到日历"
       ],
       "Calendar is syncing": [
         "日历正在同步中"
@@ -1283,7 +1294,7 @@
         "验证错误"
       ],
       "Calendar limit reached": [
-        ""
+        "日历数量达到上限"
       ],
       "Calendar primary private key is not decrypted": [
         "日历主私钥未解密"
@@ -1447,6 +1458,9 @@
       "One of the groups has no contacts: ${ noContactGroupList }": [
         "某个/些群组没有联系人: ${ noContactGroupList } "
       ],
+      "Organization not recognized. Try again.": [
+        ""
+      ],
       "Passwords do not match": [
         "密码不匹配"
       ],
@@ -1466,7 +1480,7 @@
         "请先创建地址。"
       ],
       "Please fix the highlighted conflict to proceed.": [
-        ""
+        "请修复高亮的冲突以继续。"
       ],
       "Preferences could not be saved": [
         "无法保存偏好设置"
@@ -1499,10 +1513,10 @@
         "部分群组无法删除"
       ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
-        ""
+        "部分标签名称不可用，请自定导入内容并予以更改。"
       ],
       "Some of your label names exceed ProtonMail's maximum character limit. Please customize the import to edit these names.": [
-        ""
+        "部分标签名称超出了 ProtonMail 的长度限制，请自定导入内容并予以更改。"
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "出错了，请${ refresh }以继续。若仍出现此错误，请联系我们的${ supportTeam }"
@@ -1535,7 +1549,7 @@
         "发送密钥无效"
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
-        ""
+        "待导入账户的文件夹过多，请自定义导入内容并删除部分文件夹。"
       ],
       "There was an error when exporting the contacts vCards": [
         "导出联系人 vCards 时出错"
@@ -1713,7 +1727,7 @@
     },
     "Filter notification": {
       "${ Label.Name } updated": [
-        ""
+        "${ Label.Name } 标签已更改"
       ]
     },
     "Free price": {
@@ -1845,13 +1859,13 @@
         "${ calendarAppName } 已被添加到 Proton 套装中，我们很乐意倾听你对其的看法！"
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
-        ""
+        "${ calendarsToBeCreatedCount } 个新日历"
       ],
       "${ calendarsToBeMerged } merged calendar": [
         ""
       ],
       "${ calendarsToBeMergedCount } merged calendar": [
-        ""
+        "${ calendarsToBeMergedCount } 个合并日历"
       ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } 成员"
@@ -1884,10 +1898,10 @@
         "${ namesWithoutLast } 和 ${ nameOfLast }"
       ],
       "${ numContactGroups } contact group": [
-        ""
+        "${ numContactGroups } 个联系人群组"
       ],
       "${ numContacts } contact": [
-        ""
+        "${ numContacts } 名联系人"
       ],
       "${ save20 } on your subscription by switching to ${ annualBilling }": [
         "{ save20 } 订阅，切换到{ annualBilling }"
@@ -1899,13 +1913,13 @@
         "添加 VPN 订阅，可整体享 ${ saveExtra20 } 优惠。"
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
-        ""
+        "已选中 ${ providerCalendars.length } 个日历中的 ${ selectedCalendarsTotal } 个"
       ],
       "${ selectedFoldersCount } folder selected": [
-        ""
+        "已选择 ${ selectedFoldersCount } 个文件夹"
       ],
       "${ selectedFoldersCount } label selected": [
-        ""
+        "已选择 ${ selectedFoldersCount } 个标签"
       ],
       "${ updated } contact updated successfully.": [
         "${ updated } 位联系人更新成功"
@@ -1977,10 +1991,10 @@
         "使用比特币支付后，请按下面的说明升级账户。"
       ],
       "All (${ totalFoldersCount } folder)": [
-        ""
+        "全部（${ totalFoldersCount } 个文件夹）"
       ],
       "All (${ totalFoldersCount } label)": [
-        ""
+        "全部（${ totalFoldersCount } 个标签）"
       ],
       "Allows you to host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
         "允许您在自己的域名下使用${ mailAppName }，例如john.smith@example.com"
@@ -2040,7 +2054,7 @@
         "点击 \"请求新验证码\" 将发送到 ${ strong }。如果此电话号码不正确，请点击 \"编辑\""
       ],
       "Close this screen to exit.": [
-        ""
+        "关闭此窗口以退出。"
       ],
       "Connections": [
         "连接"
@@ -2049,10 +2063,10 @@
         ""
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
-        ""
+        "给导入的邮件加标签，指定导入的时间范围，并选择要导入的文件夹。"
       ],
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
-        ""
+        "给导入的邮件加标签，指定导入的时间范围，并选择要导入的标签。"
       ],
       "Create a new contact group": [
         "创建联系人群组"
@@ -2061,7 +2075,7 @@
         ""
       ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
-        ""
+        "支持来自 Outlook、Outlook Express、雅虎邮箱、Hotmail、Eudora 和其他一些应用程序的 CSV 文件，以及 vCard 3.1 和 4.0 格式（UTF-8 编码）。"
       ],
       "Custom": [
         "自定义"
@@ -2160,25 +2174,25 @@
         "若邮件没有出现在收件箱中，请检查其是否被归为垃圾邮件。"
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
-        ""
+        "导入 ${ contactsFragment }和 ${ contactsGroupsFragment }"
       ],
       "Import ${ selectedCalendarsCount } of ${ totalCalendarsCount } calendar": [
         ""
       ],
       "Import from": [
-        ""
+        "导入自"
       ],
       "Import in progress": [
-        ""
+        "导入进行中"
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
-        ""
+        "正在将您的数据从 ${ importedEmailAddress } 导入到 ${ toEmail }。"
       ],
       "Included": [
         "已包含"
       ],
       "Inherited from parent folder": [
-        ""
+        "继承自父文件夹"
       ],
       "Internet connection lost.": [
         "网络连接断开"
@@ -2190,13 +2204,13 @@
         "互联网连接已恢复。"
       ],
       "Just confirm your selection and we'll do the rest.": [
-        ""
+        "只需确认您的选择，剩下的交由我们！"
       ],
       "Key fingerprint": [
         "指纹码"
       ],
       "Large imports can take several days.": [
-        ""
+        "大批量的导入可能需要几天才能完成。"
       ],
       "Learn more": [
         "了解详情"
@@ -2217,19 +2231,19 @@
         "管理您的日历"
       ],
       "Merged": [
-        ""
+        "已合并"
       ],
       "Monthly ${ onDayString }": [
         "每月 ${ onDayString }"
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
-        ""
+        "设置新文件夹的名称和位置，若不选取父文件夹，则将创建顶层文件夹。"
       ],
       "New": [
         ""
       ],
       "Next you'll need to log in to your Google account and allow us to access your data.": [
-        ""
+        "接下来您需要登录 Google 账户并允许我们访问您的数据。"
       ],
       "No contacts added yet": [
         "尚未添加联系人"
@@ -2292,7 +2306,7 @@
         "请移除重复项后重试"
       ],
       "Please select the folders you would like to import:": [
-        ""
+        "请选择要导入的文件夹："
       ],
       "Please try again, use a different payment method, or call your bank for assistance.": [
         "请用其他方式支付，或联系银行寻求帮助。"
@@ -2345,11 +2359,11 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "选择向该地址发送邮件的首选格式"
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20-personal-calendar limit. You can also merge imported calendars with existing Proton calendars.": [
+      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit. You can also merge imported calendars with existing Proton calendars.": [
         ""
       ],
       "Servers are unreachable. Please try again in a few minutes": [
-        ""
+        "服务器无法访问，请过几分钟后再试"
       ],
       "Session timed out.": [
         "会话已超时。"
@@ -2475,13 +2489,13 @@
         "我们将在新标签页中为您打开 PayPal 完成支付，如果您使用了弹窗屏蔽插件，请将其关闭后再继续。"
       ],
       "We'll notify you when the import is done.": [
-        ""
+        "导入完成时我们将通知您。"
       ],
       "Week": [
         "周"
       ],
       "What do you want to import from your Google account?": [
-        ""
+        "您想从您的 Google 账户中导入哪些内容？"
       ],
       "Which event would you like to delete?": [
         "您要删除哪些日程？"
@@ -2523,13 +2537,13 @@
         "您目前以${ user.Name }的身份登录。 (${ user.Email })，并且访问权限受限。"
       ],
       "You can check the progress ${ importProgressLink }.": [
-        ""
+        "您可以在 ${ importProgressLink } 查看导入进度。"
       ],
       "You can only modify personal event properties as you can't send emails from the organizer address.": [
         "您只能修改个人活动属性，因为您无法从组织者地址发送电子邮件"
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
-        ""
+        "您可以开启通知功能，以便此文件夹有新邮件时收到提醒。"
       ],
       "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
         "您已经关闭了 \"测试版功能\"。请点击 ${ refreshButton } 以使用稳定版的 ${ appName }，应用将重新启动"
@@ -2607,7 +2621,7 @@
         "您的发卡银行要求您进行 3-D Secure 验证以确保安全。"
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
-        ""
+        "从 ${ importedEmailAddressStrong } 到您的 Proton 账户的导入数据已准备就绪。"
       ],
       "Your email will only be used for this one-time verification.": [
         "您的电子邮件将只会用于此一次性验证"
@@ -2895,7 +2909,7 @@
         "比特币金额："
       ],
       "Calendar": [
-        ""
+        "日历"
       ],
       "Cancel": [
         "取消"
@@ -2919,7 +2933,7 @@
         "城市"
       ],
       "Contacts": [
-        ""
+        "通讯录"
       ],
       "Copy": [
         "复制"
@@ -2961,7 +2975,7 @@
         "邮件格式"
       ],
       "Emails": [
-        ""
+        "电子邮件"
       ],
       "Enable Beta Access": [
         "启用测试版功能"
@@ -2971,6 +2985,9 @@
       ],
       "Ends": [
         "结束"
+      ],
+      "Enter organization name to confirm": [
+        ""
       ],
       "Enter the 6-digit code": [
         "请输入 6 位验证码"
@@ -3003,10 +3020,10 @@
         "详细地址"
       ],
       "Folder location": [
-        ""
+        "文件夹位置"
       ],
       "From: ${ importedEmail }": [
-        ""
+        "来自：${ importedEmail }"
       ],
       "Hide password": [
         "隐藏密码"
@@ -3045,10 +3062,10 @@
         "邮箱密码"
       ],
       "Manage folders": [
-        ""
+        "管理文件夹"
       ],
       "Manage labels": [
-        ""
+        "管理标签"
       ],
       "Name": [
         "姓名"
@@ -3057,7 +3074,7 @@
         "持卡人姓名"
       ],
       "Notification": [
-        ""
+        "通知"
       ],
       "Operating system": [
         "操作系统"
@@ -3147,7 +3164,7 @@
         "日程时间"
       ],
       "To: ${ emailAddress }": [
-        ""
+        "导入到：${ emailAddress }"
       ],
       "Total": [
         "合计"
@@ -3224,21 +3241,21 @@
     },
     "Label/folder modal": {
       "Create folder": [
-        ""
+        "创建文件夹"
       ],
       "Create label": [
-        ""
+        "创建标签"
       ],
       "Edit folder": [
         ""
       ],
       "Edit label": [
-        ""
+        "编辑标签"
       ]
     },
     "label/folder notification": {
       "${ Label.Name } created": [
-        ""
+        "${ Label.Name } 标签已创建"
       ]
     },
     "Layout mode": {
@@ -3292,19 +3309,19 @@
         ""
       ],
       "Almost there": [
-        ""
+        "就快好了"
       ],
       "Creating new calendars": [
-        ""
+        "正在创建新日历"
       ],
       "Gathering your data": [
-        ""
+        "正在收集您的数据"
       ],
       "We're gathering your data from your provider": [
         ""
       ],
       "Your import is starting": [
-        ""
+        "您的导入正在开始"
       ]
     },
     "Mail feature": {
@@ -3389,16 +3406,21 @@
       ]
     },
     "Mail import summary": {
-      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         ""
       ],
-      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         ""
       ]
     },
     "Many Others": {
       "and many others": [
         "- 等等"
+      ]
+    },
+    "Member downgrade modal": {
+      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
+        ""
       ]
     },
     "Message": {
@@ -3564,13 +3586,13 @@
     },
     "New Label form": {
       "Color": [
-        ""
+        "颜色"
       ],
       "Folder name": [
-        ""
+        "文件夹名称"
       ],
       "Label name": [
-        ""
+        "标签名称"
       ]
     },
     "Notification": {
@@ -3765,7 +3787,7 @@
     },
     "Option group label": {
       "Create new calendar": [
-        ""
+        "创建新日历"
       ],
       "Merge with calendar": [
         ""
@@ -3895,18 +3917,7 @@
         "(无姓名)"
       ]
     },
-    "Plan Feature": {
-      "${ n } server": [
-        "${ n } 个服务器"
-      ],
-      "${ n } VPN connection": [
-        "${ n } VPN 连接"
-      ]
-    },
     "Plan feature": {
-      "${ freeServers } in ${ freeCountries } country": [
-        "${ freeCountries } 个国家的 ${ freeServers } 台服务器"
-      ],
       "0.5 GB storage": [
         "0.5 GB 存储空间"
       ],
@@ -3919,9 +3930,6 @@
       "1 user": [
         "1 名用户"
       ],
-      "1200+ servers in ${ plusCountries } country": [
-        "1200+ 服务器在 ${ plusCountries } 国家"
-      ],
       "20 GB storage": [
         "20 GB 存储空间"
       ],
@@ -3930,9 +3938,6 @@
       ],
       "3 folders / labels": [
         "3 个文件夹/标签"
-      ],
-      "350+ servers in ${ basicCountries } country": [
-        "${ basicCountries }+ 个国家的 350+ 台服务器"
       ],
       "5 addresses": [
         "5 个邮箱地址"
@@ -4299,13 +4304,13 @@
         ""
       ],
       "the last 12 months": [
-        ""
+        "最近 12 个月"
       ],
       "the last 3 months": [
-        ""
+        "最近 3 个月"
       ],
       "the last month": [
-        ""
+        "上个月"
       ]
     },
     "Time unit": {
@@ -4468,6 +4473,9 @@
       ],
       "Delete event": [
         "删除日程"
+      ],
+      "Delete organization?": [
+        ""
       ],
       "Delete recurring event": [
         "删除周期性活动"
@@ -4753,7 +4761,7 @@
     },
     "Today icon tooltip in mini calendar": {
       "Today": [
-        ""
+        "今天"
       ]
     },
     "Tooltip": {
@@ -4944,6 +4952,17 @@
         "Windows、macOS、iOS、Linux、Android、Android TV、Chromebook、Chromecast"
       ]
     },
+    "VPN Plan Feature": {
+      "${ n } server": [
+        ""
+      ],
+      "${ n } VPN connection": [
+        ""
+      ],
+      "${ numberOfServers } in ${ numberOfCountries } country": [
+        "${ numberOfCountries } 个国家的 ${ numberOfServers }"
+      ]
+    },
     "Warning": {
       "Are you sure you want to permanently delete ${ count } contact group?": [
         "您确定要永久删除 ${ count } 联系人群组吗？"
@@ -4977,6 +4996,9 @@
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "部分需合并的联系人无法显示，请单独查看"
+      ],
+      "The contact data is corrupted and cannot be displayed.": [
+        "联系人数据损坏，无法显示。"
       ],
       "The contact failed to load.": [
         "联系人加载失败"

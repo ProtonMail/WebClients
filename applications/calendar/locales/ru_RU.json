@@ -675,37 +675,16 @@
       ]
     },
     "blackfriday Action": {
-      "Get limited-time deal": [
-        "Воспользоваться предложением"
-      ],
-      "Upgrade": [
-        "Сменить тариф"
+      "Get the offer": [
+        ""
       ]
     },
     "blackfriday Info": {
-      "Discounts are based on monthly pricing.": [
-        "Размер скидки зависит от суммы платежа в месяц."
-      ],
-      "early access to": [
-        "ранний доступ к"
-      ],
-      "Free": [
-        "Бесплатно"
-      ],
-      "Get early access to our new encrypted drive for FREE by upgrading to a Plus bundle now.": [
-        "БЕСПЛАТНО получите ранний доступ к новому облачному хранилищу с шифрованием файлов! Предложение доступно при оформлении комплекта подписок Plus."
+      "beta": [
+        "бета"
       ],
       "Includes": [
         "Включает"
-      ],
-      "Offer valid only for first-time paid subscriptions.": [
-        "Предложение действительно только при первом оформлении платной подписки."
-      ],
-      "ProtonDrive": [
-        "ProtonDrive"
-      ],
-      "Save ${ percentage }%": [
-        "${ percentage } %"
       ],
       "Standard price: ${ regularPrice }": [
         "Обычная цена: ${ regularPrice }"
@@ -714,49 +693,81 @@
         "Через 2 года подписка будет автоматически продлена по той же цене, если вы не отмените ее до этого срока."
       ]
     },
-    "blackfriday info": {
-      "per month": [
-        "в месяц"
-      ]
-    },
-    "blackfriday Promo title, need to be short": {
-      "Special offer": [
-        "Спецпредложение"
-      ]
-    },
     "blackfriday Title": {
-      "(${ notice }) Renews after 1 year at a discounted annual & bundle price of ${ amount } every year (36% discount).": [
-        "(${ notice }) Автопродление через 1 год по сниженной ежегодной цене за комплект подписок — ${ amount } (скидка 36 %)."
-      ],
-      "(${ notice }) Renews after 1 year at a discounted annual price of ${ amount } every year (20% discount).": [
-        "(${ notice }) Автопродление через 1 год по сниженной ежегодной цене ${ amount } (скидка 20 %)."
-      ],
-      "(${ notice }) Renews after 2 years at a discounted 2-year price of ${ amount } every 2 years (47% discount).": [
-        "(${ notice }) Автопродление через 2 года по сниженной цене ${ amount } за 2 года (скидка 47 %)."
-      ],
-      "Billed as ${ amount } ${ supNotice }": [
+      "Best deal": [
         ""
-      ],
-      "Black Friday Sale": [
-        "Скидки «черной пятницы»"
-      ],
-      "Cyber Monday Sale": [
-        "Скидки киберпонедельника"
-      ],
-      "for 1 month": [
-        "за 1 месяц"
-      ],
-      "for 1 year": [
-        "за 1 год"
-      ],
-      "for 2 years": [
-        "за 2 года"
       ],
       "Most popular": [
         "Самое популярное"
       ],
-      "ProtonDrive early access offer": [
-        "Получите ранний доступ к ProtonDrive"
+      "Save more when combining Mail and VPN": [
+        ""
+      ]
+    },
+    "blackfriday: VPNspecialoffer Action": {
+      "Get the deal": [
+        "Получить скидку"
+      ],
+      "Get the deal now": [
+        "Получить скидку"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Badge popup": {
+      "${ vpnAppName } Plus Special Offer 2021 discount has been applied": [
+        ""
+      ]
+    },
+    "blackfriday: VPNspecialoffer Info": {
+      "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
+        ""
+      ],
+      "Save ${ percentage }%": [
+        "– ${ percentage } %"
+      ],
+      "Special offer Terms and Conditions": [
+        ""
+      ]
+    },
+    "blackfriday: VPNspecialoffer info": {
+      "per month": [
+        "в месяц"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Promo title, need to be short": {
+      "Special offer": [
+        "Oсобые условия"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Title": {
+      "(${ notice }) Renews after 1 month at a standard monthly price of ${ amount }": [
+        ""
+      ],
+      "(${ notice }) Renews after 1 year at a standard discounted annual price of ${ amount } (20% discount)": [
+        ""
+      ],
+      "(${ notice }) Renews after 2 years at a standard discounted 2-year price of ${ amount } (33% discount)": [
+        ""
+      ],
+      "1 month": [
+        "1 месяц"
+      ],
+      "12 months": [
+        "12 месяцев"
+      ],
+      "24 months": [
+        "24 месяца"
+      ],
+      "Billed at ${ amount } for the first 2 years.${ supNotice }": [
+        ""
+      ],
+      "Billed at ${ amount } for the first month.${ supNotice }": [
+        ""
+      ],
+      "Billed at ${ amount } for the first year.${ supNotice }": [
+        ""
+      ],
+      "Get the special year-end offer on our Premium VPN PLUS plan": [
+        ""
       ]
     },
     "Bug category": {
@@ -1512,6 +1523,9 @@
         "В нескольких группах нет контактов: ${ noContactGroupList } ",
         "В нескольких группах нет контактов: ${ noContactGroupList } ",
         "В нескольких группах нет контактов: ${ noContactGroupList } "
+      ],
+      "Organization not recognized. Try again.": [
+        ""
       ],
       "Passwords do not match": [
         "Пароли не совпадают"
@@ -2492,8 +2506,8 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Выберите формат письма, который вы хотите использовать по умолчанию при отправке почты на этот адрес."
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20-personal-calendar limit. You can also merge imported calendars with existing Proton calendars.": [
-        "Выберите, какие календари необходимо импортировать. Для каждого импортированного календаря будет создан новый календарь в пределах лимита в 20 личных календарей. Вы также можете объединить импортированные календари с существующими календарями Proton."
+      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit. You can also merge imported calendars with existing Proton calendars.": [
+        ""
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Серверы недоступны. Попробуйте снова через несколько минут"
@@ -3119,6 +3133,9 @@
       "Ends": [
         "Заканчивается"
       ],
+      "Enter organization name to confirm": [
+        ""
+      ],
       "Enter the 6-digit code": [
         "Введите код из шести цифр"
       ],
@@ -3542,22 +3559,27 @@
       ]
     },
     "Mail import summary": {
-      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
-        "Импортируйте все сообщения из ${ selectedLabelsCount } из ${ totalLabelsCount } ярлыка с ${ periodFragment } и пометьте их как ${ label }",
-        "Импортируйте все сообщения из ${ selectedLabelsCount } из ${ totalLabelsCount } ярлыков с ${ periodFragment } и пометьте их как ${ label }",
-        "Импортируйте все сообщения из ${ selectedLabelsCount } из ${ totalLabelsCount } ярлыков с ${ periodFragment } и пометьте их как ${ label }",
-        "Импортируйте все сообщения из ${ selectedLabelsCount } из ${ totalLabelsCount } ярлыков с ${ periodFragment } и пометьте их как ${ label }"
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "",
+        "",
+        "",
+        ""
       ],
-      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
-        "Импортируйте все сообщения из ярлыка ${ totalLabelsCount } с ${ periodFragment } и пометьте их как ${ label }",
-        "Импортируйте все сообщения из ярлыков ${ totalLabelsCount } с ${ periodFragment } и пометьте их как ${ label }",
-        "Импортируйте все сообщения из ярлыков ${ totalLabelsCount } с ${ periodFragment } и пометьте их как ${ label }",
-        "Импортируйте все сообщения из ярлыков ${ totalLabelsCount } с ${ periodFragment } и пометьте их как ${ label }"
+      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "",
+        "",
+        "",
+        ""
       ]
     },
     "Many Others": {
       "and many others": [
         "и многих другие"
+      ]
+    },
+    "Member downgrade modal": {
+      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
+        ""
       ]
     },
     "Message": {
@@ -4135,27 +4157,7 @@
         "(Нет имени)"
       ]
     },
-    "Plan Feature": {
-      "${ n } server": [
-        "${ n } сервер",
-        "${ n } сервера",
-        "${ n } серверов",
-        "${ n } серверов"
-      ],
-      "${ n } VPN connection": [
-        "${ n } VPN-подключение",
-        "${ n } VPN подключения",
-        "${ n } VPN-подключений",
-        "${ n } VPN-подключений"
-      ]
-    },
     "Plan feature": {
-      "${ freeServers } in ${ freeCountries } country": [
-        "${ freeServers } серверов в ${ freeCountries } стране",
-        "${ freeServers } серверов в ${ freeCountries } странах",
-        "${ freeServers } серверов в ${ freeCountries } странах",
-        "${ freeServers } серверов в ${ freeCountries } странах"
-      ],
       "0.5 GB storage": [
         "0.5 ГБ хранилища"
       ],
@@ -4168,12 +4170,6 @@
       "1 user": [
         "1 пользователь"
       ],
-      "1200+ servers in ${ plusCountries } country": [
-        "Более 1200 серверов в ${ plusCountries } стране",
-        "1200 + серверов в ${ plusCountries } странах",
-        "1200 + серверов в ${ plusCountries } странах",
-        "1200 + серверов в ${ plusCountries } странах"
-      ],
       "20 GB storage": [
         "20 ГБ хранилища"
       ],
@@ -4182,12 +4178,6 @@
       ],
       "3 folders / labels": [
         "3 папки / ярлыка"
-      ],
-      "350+ servers in ${ basicCountries } country": [
-        "Более 350 серверов в ${ basicCountries } стране",
-        "Более 350 серверов в ${ basicCountries } странах",
-        "Более 350 серверов в ${ basicCountries } стране(ах)",
-        "350+ серверов в ${ basicCountries } странах(е)"
       ],
       "5 addresses": [
         "5 адресов"
@@ -4754,6 +4744,9 @@
       "Delete event": [
         "Удалить событие"
       ],
+      "Delete organization?": [
+        ""
+      ],
       "Delete recurring event": [
         "Удалить повторяющееся событие"
       ],
@@ -5232,6 +5225,26 @@
         "Windows, macOS, iOS, Linux, Android, Android TV, Chromebook, Chromecast"
       ]
     },
+    "VPN Plan Feature": {
+      "${ n } server": [
+        "${ n } сервер",
+        "${ n } серверов",
+        "${ n } серверов",
+        "${ n } серверов"
+      ],
+      "${ n } VPN connection": [
+        "${ n } подключение VPN",
+        "${ n } подключений VPN",
+        "${ n } подключений VPN",
+        "${ n } подключений VPN"
+      ],
+      "${ numberOfServers } in ${ numberOfCountries } country": [
+        "${ numberOfServers } в ${ numberOfCountries } стране",
+        "${ numberOfServers } в ${ numberOfCountries } странах",
+        "${ numberOfServers } в ${ numberOfCountries } странах",
+        "${ numberOfServers } в ${ numberOfCountries } странах"
+      ]
+    },
     "Warning": {
       "Are you sure you want to permanently delete ${ count } contact group?": [
         "Вы уверены, что хотите удалить ${ count } группу контактов?",
@@ -5271,6 +5284,9 @@
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "Некоторые из планируемых к объединению контактов имеют ошибки. Проверьте каждый их них"
+      ],
+      "The contact data is corrupted and cannot be displayed.": [
+        "Данные контакта повреждены и не могут быть отображены."
       ],
       "The contact failed to load.": [
         "Контакт не загрузился."

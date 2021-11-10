@@ -65,7 +65,7 @@
         "添加域名"
       ],
       "Add filter": [
-        "添加筛选规则"
+        "创建筛选规则"
       ],
       "Add folder": [
         "添加文件夹"
@@ -202,9 +202,6 @@
       "Copy link": [
         "复制链接"
       ],
-      "Copy to clipboard": [
-        "复制到剪贴板"
-      ],
       "Create": [
         "创建"
       ],
@@ -300,6 +297,9 @@
       ],
       "Download all configurations": [
         "下载所有配置"
+      ],
+      "Download recovery file": [
+        ""
       ],
       "Download the Import-Export app": [
         "下载导入导出应用"
@@ -778,6 +778,15 @@
       "View invoice": [
         "查看账单"
       ],
+      "Void all recovery files": [
+        ""
+      ],
+      "Void all recovery files?": [
+        ""
+      ],
+      "Void anyway": [
+        ""
+      ],
       "Warning": [
         "警告"
       ],
@@ -1067,37 +1076,16 @@
       ]
     },
     "blackfriday Action": {
-      "Get limited-time deal": [
-        "领取限时优惠"
-      ],
-      "Upgrade": [
-        "升级"
+      "Get the offer": [
+        ""
       ]
     },
     "blackfriday Info": {
-      "Discounts are based on monthly pricing.": [
-        "折扣是以月度定价为基准。"
-      ],
-      "early access to": [
-        "提前体验"
-      ],
-      "Free": [
-        "免费"
-      ],
-      "Get early access to our new encrypted drive for FREE by upgrading to a Plus bundle now.": [
-        "现在升级到 Plus 套装，即可免费体验我们新的加密网盘服务。"
+      "beta": [
+        ""
       ],
       "Includes": [
         "包含"
-      ],
-      "Offer valid only for first-time paid subscriptions.": [
-        "此优惠仅限于第一次开通付费订阅服务。"
-      ],
-      "ProtonDrive": [
-        "ProtonDrive"
-      ],
-      "Save ${ percentage }%": [
-        "节省 ${ percentage }%"
       ],
       "Standard price: ${ regularPrice }": [
         "原价：${ regularPrice }"
@@ -1106,49 +1094,81 @@
         "此订阅将在两年后自动续订，价格不变，直至取消。"
       ]
     },
-    "blackfriday info": {
-      "per month": [
-        "每月"
-      ]
-    },
-    "blackfriday Promo title, need to be short": {
-      "Special offer": [
-        "特价"
-      ]
-    },
     "blackfriday Title": {
-      "(${ notice }) Renews after 1 year at a discounted annual & bundle price of ${ amount } every year (36% discount).": [
-        "(${ notice }) 1 年后续订可享受每年 ${ amount } 的套装折扣价格（节省 36%）。"
-      ],
-      "(${ notice }) Renews after 1 year at a discounted annual price of ${ amount } every year (20% discount).": [
-        "(${ notice }) 1 年后续订价 ${ amount }/年（节省 20%）。"
-      ],
-      "(${ notice }) Renews after 2 years at a discounted 2-year price of ${ amount } every 2 years (47% discount).": [
-        "(${ notice }) 两年后续订价 ${ amount }/两年（节省 47%）。"
-      ],
-      "Billed as ${ amount } ${ supNotice }": [
+      "Best deal": [
         ""
-      ],
-      "Black Friday Sale": [
-        "黑色星期五特惠"
-      ],
-      "Cyber Monday Sale": [
-        "剁手星期一特惠"
-      ],
-      "for 1 month": [
-        "按月"
-      ],
-      "for 1 year": [
-        "1 年"
-      ],
-      "for 2 years": [
-        "2 年"
       ],
       "Most popular": [
         "最受欢迎"
       ],
-      "ProtonDrive early access offer": [
-        "提前体验 ProtonDrive"
+      "Save more when combining Mail and VPN": [
+        ""
+      ]
+    },
+    "blackfriday: VPNspecialoffer Action": {
+      "Get the deal": [
+        "立即享受优惠"
+      ],
+      "Get the deal now": [
+        "立即享受优惠"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Badge popup": {
+      "${ vpnAppName } Plus Special Offer 2021 discount has been applied": [
+        ""
+      ]
+    },
+    "blackfriday: VPNspecialoffer Info": {
+      "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
+        ""
+      ],
+      "Save ${ percentage }%": [
+        "${ percentage }%"
+      ],
+      "Special offer Terms and Conditions": [
+        ""
+      ]
+    },
+    "blackfriday: VPNspecialoffer info": {
+      "per month": [
+        "每月"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Promo title, need to be short": {
+      "Special offer": [
+        "特价"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Title": {
+      "(${ notice }) Renews after 1 month at a standard monthly price of ${ amount }": [
+        ""
+      ],
+      "(${ notice }) Renews after 1 year at a standard discounted annual price of ${ amount } (20% discount)": [
+        ""
+      ],
+      "(${ notice }) Renews after 2 years at a standard discounted 2-year price of ${ amount } (33% discount)": [
+        ""
+      ],
+      "1 month": [
+        "1 个月"
+      ],
+      "12 months": [
+        "12 个月"
+      ],
+      "24 months": [
+        "24 个月"
+      ],
+      "Billed at ${ amount } for the first 2 years.${ supNotice }": [
+        ""
+      ],
+      "Billed at ${ amount } for the first month.${ supNotice }": [
+        ""
+      ],
+      "Billed at ${ amount } for the first year.${ supNotice }": [
+        ""
+      ],
+      "Get the special year-end offer on our Premium VPN PLUS plan": [
+        ""
       ]
     },
     "Bridge version load failed": {
@@ -1904,6 +1924,9 @@
       "Organization key is not decrypted.": [
         "机构密钥尚未解密。"
       ],
+      "Organization not recognized. Try again.": [
+        ""
+      ],
       "Passwords do not match": [
         "密码不一致"
       ],
@@ -1939,6 +1962,9 @@
       ],
       "Please refresh the page.": [
         "请刷新页面。"
+      ],
+      "Please set a recovery email first": [
+        ""
       ],
       "Please set a recovery phone number first": [
         "请先设置密保手机"
@@ -2031,7 +2057,7 @@
         "待导入账户的文件夹过多，请自定导入内容并删除部分文件夹。"
       ],
       "This field is required": [
-        "此字段必填"
+        "此项必须填写"
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "此字段至少需要 ${ minimumLength } 个字符。"
@@ -2053,6 +2079,9 @@
       ],
       "Uploaded file is not a valid private key. Please verify and try again.": [
         "上传的文件不是有效的私钥。请验证并重试。"
+      ],
+      "Uploaded file is not a valid recovery file. Please verify and try again.": [
+        ""
       ],
       "Uploaded files are not valid private keys. Please verify and try again.": [
         "上传的文件不是有效的私钥。请验证并重试。"
@@ -2446,7 +2475,7 @@
     },
     "Filter Actions": {
       "Archive": [
-        "归档"
+        "存档"
       ],
       "Inbox": [
         "收件箱"
@@ -2488,7 +2517,7 @@
     },
     "Filter notification": {
       "${ Label.Name } updated": [
-        "${ Label.Name } 已更改"
+        "${ Label.Name } 标签已更改"
       ],
       "Filter ${ Filter.Name } updated": [
         "${ Filter.Name } 规则已更改"
@@ -2504,10 +2533,10 @@
     },
     "FilterSettings": {
       "Add a custom filter to automatically perform certain actions, like labeling or archiving messages.": [
-        "添加”自定义过滤器“以自动执行某些操作，例如加标签或归档邮件。"
+        "定制筛选规则可以自动执行某些操作，例如加标签或将邮件存档。"
       ],
       "Apply sender-specific spam rules. Messages from addresses or domains on the Allow List always go to your Inbox while messages from addresses or domains on the Block List always go to Spam. Marking a message as spam adds its address to the Block List. Marking a message as not spam adds it to the Allow List.": [
-        "应用针对发件人的筛选规则。来自白名单地址或域名的邮件会被一律归入收件箱，而来自黑名单的则一律归为垃圾邮件。将邮件标为垃圾邮件后其发件人也会被加入黑名单，而标为非垃圾邮件则会被加入白名单。"
+        "针对发件人的筛选规则可以在这里设置。来自白名单的邮件会被一律归入收件箱，而来自黑名单的则一律归为垃圾邮件。将邮件标为垃圾邮件后其发件人也会被加入黑名单，而标为非垃圾邮件则会被加入白名单。"
       ],
       "Search in Allow List and Block List": [
         "搜索白名单和黑名单"
@@ -3099,6 +3128,9 @@
       "A key with the same encryption algorithm is already active for this address. Generating another key will cause slower account loading and deletion of this key can cause issues. If you are generating a new key because your old key is compromised, please mark that key as compromised. Are you sure you want to continue?": [
         "此地址已有采用此算法的密钥，再创建会减慢账户加载速度，以后删除此密钥也可能出现问题。如果您的旧密钥不慎泄露，请将其标记为“已泄露”。确定要继续创建密钥吗？"
       ],
+      "A recovery file lets you unlock and view your data after an account reset. ": [
+        ""
+      ],
       "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password.": [
         "如果您不小心忘记了密码，恢复密语可让您访问您的账户并恢复加密邮件。"
       ],
@@ -3111,11 +3143,26 @@
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "由于有未支付的账单，账户已受限。请联系您的账户管理员。"
       ],
+      "account recovery and data recovery method": [
+        ""
+      ],
+      "account recovery method": [
+        ""
+      ],
       "Account successfully updated": [
         "账户已成功更新"
       ],
+      "Activate your recovery phrase": [
+        ""
+      ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"ProtonMail me\" or \"Private Message me.\"": [
         "您可以增设一个后缀为 @pm.me 的邮箱地址，这个简短的域名代表 ProtonMail me 或者 Private Message me。"
+      ],
+      "Add a recovery email address": [
+        ""
+      ],
+      "Add a recovery phone number": [
+        ""
       ],
       "Add additional addresses to your account like user2@protonmail.com": [
         "添加其他邮箱地址，如 username2@protonmail.com"
@@ -3134,6 +3181,9 @@
       ],
       "Addresses": [
         "地址"
+      ],
+      "After a password reset your data is locked in encrypted form to keep it safe. To decrypt and view your emails and other data, you need a recovery file or recovery phrase.": [
+        ""
       ],
       "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
         "使用比特币支付后，请按下面的说明升级账户。"
@@ -3352,7 +3402,7 @@
         "个人每日计划。"
       ],
       "Custom filters work on all new emails, including incoming emails as well as sent emails. Filters can be edited and created directly via Sieve programming language.": [
-        "定制筛选规则对往后的所有邮件都有效，既包括收到的，也包括发出的。筛选规则可以使用 Sieve 编程语言直接创建及修改。"
+        "筛选规则对往后的所有邮件都有效，既包括收到的，也包括发出的。使用 Sieve 编程语言可以直接创建或修改规则。"
       ],
       "Custom monthly": [
         "个人月计划。"
@@ -3417,6 +3467,9 @@
       "Download your PGP keys for use with other PGP-compatible services.": [
         "下载您的 PGP 密钥以用于其他 PGP 兼容服务。"
       ],
+      "Download your recovery file": [
+        ""
+      ],
       "Drop the file here to upload": [
         "将文件拖至此处上传"
       ],
@@ -3426,8 +3479,8 @@
       "Edit label": [
         "编辑标签"
       ],
-      "Effortlessly and securely move your emails from your current provider to Proton. If you use Google, we also support calendar, and contacts imports.": [
-        "轻松又安全地将您的电子邮件从您当前的提供商迁移到 Proton。如果您使用 Google，我们还支持日历和联系人导入。"
+      "Effortlessly and securely move your emails from your current provider to Proton. If you use Google, we also support calendar and contacts imports.": [
+        ""
       ],
       "Email address": [
         "邮箱地址"
@@ -3490,10 +3543,10 @@
         "获取日志失败。"
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name and a valid Sieve script.": [
-        "筛选规则对所有邮件都有效，既包括收到的，也包括发出的。每条筛选规则至少应有名称和一段 Sieve 代码。"
+        "筛选规则对所有邮件都有效，既包括收到的，也包括发出的。每条规则包括名称和一段 Sieve 代码。"
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
-        "筛选规则对所有邮件都有效，既包括收到的，也包括发出的。每条筛选规则至少应有名称、一个条件和一项操作。"
+        "筛选规则对所有邮件都有效，既包括收到的，也包括发出的。每条规则包括名称、条件和操作三部分。"
       ],
       "For families and small teams; includes both Mail and VPN.": [
         "适合家庭和小团队；包括邮件和 VPN。"
@@ -3570,6 +3623,12 @@
       "If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly.": [
         "若您同时设定了 SPF 和 DKIM，可以使用 DMARC 来指定其他邮件系统遇到来自您域名的邮件无法通过 SPF 和 DKIM 检查时应采取的措施，这样他人就更难以伪装成您发送垃圾邮件，但如果操作不当也可能导致投递出现问题。"
       ],
+      "If you lose your login details and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
+        ""
+      ],
+      "If you lose your login details and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.": [
+        ""
+      ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to log into your account. Each code can only be used once.": [
         "若您丢失了两步验证设备，这些代码可替代验证码来登录您的账户。每个代码仅可使用一次。"
       ],
@@ -3598,7 +3657,7 @@
         "图片链接"
       ],
       "Images have been removed because they are not allowed in auto-reply": [
-        "自动回复中不能包含图片（已删除）"
+        "自动回复内容不能包含图片，故图片已移除"
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "导入 ${ contactsFragment }和 ${ contactsGroupsFragment }"
@@ -3626,6 +3685,12 @@
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "正在将您的数据从 ${ importedEmailAddress } 导入到 ${ toEmail }。"
+      ],
+      "In case you lose your login details, we’ll send you recovery instructions via email or SMS.": [
+        ""
+      ],
+      "In case you lose your login details, we’ll send you recovery instructions via email.": [
+        ""
       ],
       "Included": [
         "已包含在内"
@@ -3659,6 +3724,9 @@
       ],
       "Internet connection restored.": [
         "互联网连接已恢复。"
+      ],
+      "it’s imperative": [
+        ""
       ],
       "Just confirm your selection and we'll do the rest.": [
         "只需确认您的选择，剩下的交由我们！"
@@ -3762,6 +3830,9 @@
       "Next you'll need to log in to your Google account and allow us to access your data.": [
         "接下来您需要登录 Google 账户并允许我们获取您的数据。"
       ],
+      "No account recovery method set, you are at risk of losing access to your account": [
+        ""
+      ],
       "No action selected": [
         "未选择操作"
       ],
@@ -3770,6 +3841,9 @@
       ],
       "No contact encryption keys exist": [
         "没有联系人加密密钥"
+      ],
+      "No data recovery method set, you are at risk of losing access to your data": [
+        ""
       ],
       "No folder selected": [
         "未选择文件夹"
@@ -3954,11 +4028,17 @@
       "read our two-factor authentication Guide first": [
         "请先阅读我们的双重身份验证指南"
       ],
+      "Recovery files have been voided": [
+        ""
+      ],
       "Recovery phrase copied to clipboard": [
         "恢复短语已复制到剪贴板"
       ],
       "Recovery phrase has been disabled": [
         "恢复密语已被禁用"
+      ],
+      "Recovery phrase is not associated with any outdated keys.": [
+        ""
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "大多数问题都能通过刷新页面或 ${ link } 来解决。"
@@ -3990,8 +4070,8 @@
       "Select a service provider to get started": [
         "请选择一个服务提供商以开始导入"
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20-personal-calendar limit. You can also merge imported calendars with existing Proton calendars.": [
-        "请选择要导入的日历。将会为每个导入的日历创建一个新日历，最多可包含 20 个个人日历。您也可以将导入的日历与现有的 Proton 日历合并。"
+      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit. You can also merge imported calendars with existing Proton calendars.": [
+        ""
       ],
       "Server is currently down": [
         "服务器目前不可用"
@@ -4167,8 +4247,8 @@
       "Unable to decrypt. Recovery phrase is not associated with any keys.": [
         "无法解密，恢复密语与任何密钥不相关。"
       ],
-      "Unable to decrypt. Recovery phrase is not associated with any outdated keys.": [
-        "无法解密，恢复密语与任何过时的密钥不相关。"
+      "Unable to verify recovery file signature. Please contact support.": [
+        ""
       ],
       "Unfortunately there is no recovery method saved for this account.": [
         "很不幸，此账户没有设置恢复密码的方式。"
@@ -4232,12 +4312,6 @@
       ],
       "We advise you to use official ProtonVPN applications when possible.": [
         "我们建议您尽可能使用官方 ProtonVPN 客户端。"
-      ],
-      "We recommend adding a linked email or phone number so you can recover your account if you lose your password.": [
-        "我们建议添加一个链接的电子邮件或电话号码，以便您能够在密码丢失时恢复账户。"
-      ],
-      "We recommend adding a linked email so you can recover your account if you lose your password.": [
-        "我们建议您添加一个密保邮箱，以便您能在密码丢失时找回账户。"
       ],
       "We use 3-D Secure to protect your payments.": [
         "我们使用 3-D Secure 保护您的支付安全。"
@@ -4383,6 +4457,9 @@
       "You will soon be redirected to PayPal to verify your payment.": [
         "即将为您转至 PayPal 确认支付。"
       ],
+      "You won't be able to recover encrypted data after an account reset using your downloaded recovery files.": [
+        ""
+      ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, please create an address.": [
         "您的 ${ BRAND_NAME } 账户已关联至 ${ externalEmailAddress }。要使用 ${ toAppName }，请先创建账户。"
       ],
@@ -4394,6 +4471,9 @@
       ],
       "Your account is being upgraded, this may take up to 30 seconds.": [
         "正在为您升级账户，请稍等半分钟。"
+      ],
+      "Your account recovery method is set": [
+        ""
       ],
       "Your account will be updated once the payment is cleared.": [
         "支付成功后账户将立即完成升级。"
@@ -4409,6 +4489,9 @@
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "从 ${ importedEmailAddressStrong } 到您的 Proton 账户的导入数据已准备就绪。"
+      ],
+      "Your data recovery method is set": [
+        ""
       ],
       "Your email will only be used for this one-time verification.": [
         "您的电子邮件将仅用于此一次性验证。"
@@ -4637,7 +4720,7 @@
         "关闭草稿"
       ],
       "Create filter with...": [
-        "创建过滤器..."
+        "创建筛选规则"
       ],
       "Delete permanently": [
         "永久删除"
@@ -5118,6 +5201,9 @@
       "End weekday": [
         "结束日"
       ],
+      "Enter organization name to confirm": [
+        ""
+      ],
       "Enter password": [
         "输入密码"
       ],
@@ -5135,6 +5221,9 @@
       ],
       "extra storage": [
         "新增存储空间"
+      ],
+      "File": [
+        ""
       ],
       "Filter Name": [
         "筛选规则名称"
@@ -5367,6 +5456,12 @@
       "Recovery email": [
         "密保邮箱"
       ],
+      "Recovery email address": [
+        ""
+      ],
+      "Recovery file": [
+        ""
+      ],
       "Recovery phone": [
         "恢复手机号码"
       ],
@@ -5481,8 +5576,14 @@
       "Upload your backup key": [
         "上传您的备份密钥"
       ],
+      "Upload your recovery file": [
+        ""
+      ],
       "Uploaded private keys": [
         "已上传的私钥"
+      ],
+      "Uploaded recovery file": [
+        ""
       ],
       "URL": [
         "网址"
@@ -5569,6 +5670,9 @@
     "label": {
       "Phone number": [
         "手机号码"
+      ],
+      "Recovery phone number": [
+        ""
       ],
       "Recovery phrase": [
         "恢复密语"
@@ -5875,10 +5979,10 @@
       ]
     },
     "Mail import summary": {
-      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         ""
       ],
-      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         ""
       ]
     },
@@ -5915,6 +6019,11 @@
       ],
       "Sign in": [
         "登录"
+      ]
+    },
+    "Member downgrade modal": {
+      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
+        ""
       ]
     },
     "Message": {
@@ -6122,7 +6231,7 @@
     },
     "Notification": {
       "${ _Filter.Name } created": [
-        "${ _Filter.Name } 已创建"
+        "${ _Filter.Name } 规则已创建"
       ],
       "A disabled address cannot be primary": [
         "已禁用的地址不能为主地址"
@@ -6409,7 +6518,7 @@
         "用户文件夹"
       ],
       "Default folders": [
-        "默认文件夹"
+        "预置文件夹"
       ],
       "Move to...": [
         "移至..."
@@ -6818,6 +6927,9 @@
       ],
       "Upload additional private keys": [
         "上传其他私钥"
+      ],
+      "Upload additional recovery files": [
+        ""
       ]
     },
     "Select search results": {
@@ -7309,6 +7421,9 @@
       "3. Select config file and download": [
         "3. 选择配置文件并下载"
       ],
+      "Account recovery": [
+        ""
+      ],
       "Account suspended": [
         "账户已封禁"
       ],
@@ -7371,9 +7486,6 @@
       ],
       "Addresses": [
         "邮箱地址"
-      ],
-      "Advanced": [
-        "高级"
       ],
       "Allocate storage": [
         "分配存储空间"
@@ -7546,6 +7658,9 @@
       "Dashboard": [
         "总览"
       ],
+      "Data recovery": [
+        ""
+      ],
       "Date": [
         "日期"
       ],
@@ -7578,6 +7693,9 @@
       ],
       "Delete logs": [
         "删除日志"
+      ],
+      "Delete organization?": [
+        ""
       ],
       "Delete user": [
         "删除用户"
@@ -7804,8 +7922,8 @@
       "Password & keys": [
         "密码与密钥"
       ],
-      "Password & recovery": [
-        "密码和恢复"
+      "Password & security": [
+        ""
       ],
       "Passwords": [
         "密码"
@@ -7873,8 +7991,11 @@
       "Reconnect your account": [
         "重新连接账户"
       ],
-      "Recovery & notification": [
-        "密保与通知"
+      "Recovery": [
+        ""
+      ],
+      "Recovery file": [
+        ""
       ],
       "Remove calendar": [
         "删除日历"
@@ -7896,9 +8017,6 @@
       ],
       "Restore administrator privileges": [
         "恢复管理员权限"
-      ],
-      "Security": [
-        "安全"
       ],
       "Security logs": [
         "安全日志"
@@ -8002,6 +8120,9 @@
       "Switch to two-password mode": [
         "切换到双密码模式"
       ],
+      "Take precautions to avoid data loss!": [
+        ""
+      ],
       "Theme": [
         "主題"
       ],
@@ -8055,6 +8176,9 @@
       ],
       "Your plan": [
         "您的套餐"
+      ],
+      "Your recovery status": [
+        ""
       ],
       "ZIP / postal code": [
         "邮编"

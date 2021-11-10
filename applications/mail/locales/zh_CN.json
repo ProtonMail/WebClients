@@ -114,7 +114,7 @@
         "联系我们"
       ],
       "Check import progress": [
-        ""
+        "查看导入进度"
       ],
       "Choose a file or drag it here": [
         "选择一个文件或将其拖动到这里"
@@ -197,9 +197,6 @@
       "Copy email to clipboard": [
         "复制邮箱地址"
       ],
-      "Copy to clipboard": [
-        "复制到剪贴板"
-      ],
       "Create folder": [
         "创建文件夹"
       ],
@@ -216,7 +213,7 @@
         "创建恢复密语"
       ],
       "Custom filter": [
-        "自定义过滤规则"
+        "定制筛选规则"
       ],
       "Customize": [
         ""
@@ -266,8 +263,8 @@
       "Discard": [
         "放弃"
       ],
-      "Don't secure account": [
-        "不保护账户"
+      "Dismiss get started checklist": [
+        ""
       ],
       "Done": [
         "完成"
@@ -291,7 +288,7 @@
         "编辑电子邮件地址"
       ],
       "Edit label": [
-        ""
+        "编辑标签"
       ],
       "Edit phone number": [
         "编辑手机号码"
@@ -375,13 +372,13 @@
         "隐藏详情"
       ],
       "Hide folders": [
-        ""
+        "隐藏文件夹"
       ],
       "Hide info": [
         "隐藏信息"
       ],
       "Hide labels": [
-        ""
+        "隐藏标签"
       ],
       "Hide messages": [
         "隐藏邮件"
@@ -396,7 +393,7 @@
         "导入"
       ],
       "Import from .csv or vCard": [
-        ""
+        "从 .csv 或 vCard 导入"
       ],
       "Import messages": [
         "导入邮件"
@@ -575,6 +572,9 @@
       "Open calendar": [
         "打开日历"
       ],
+      "Open get started checklist modal": [
+        ""
+      ],
       "Open navigation": [
         "打开导航栏"
       ],
@@ -621,7 +621,7 @@
         "打印"
       ],
       "Quit": [
-        ""
+        "退出"
       ],
       "Quote": [
         "引用"
@@ -657,7 +657,7 @@
         "移除此标签"
       ],
       "Rename": [
-        ""
+        "重命名"
       ],
       "Report a problem": [
         "反馈问题"
@@ -744,13 +744,13 @@
         "显示详情"
       ],
       "Show folders": [
-        ""
+        "显示文件夹"
       ],
       "Show info": [
         "显示信息"
       ],
       "Show labels": [
-        ""
+        "显示标签"
       ],
       "Show less": [
         "显示更少"
@@ -786,7 +786,7 @@
         "开始使用 ${ appName }"
       ],
       "Stay": [
-        ""
+        "留在此页"
       ],
       "Submit": [
         "提交"
@@ -844,6 +844,9 @@
       ],
       "Upgrade": [
         "升级"
+      ],
+      "Upgrade now": [
+        ""
       ],
       "Upload picture": [
         "上传图片"
@@ -986,6 +989,11 @@
         "欢迎"
       ]
     },
+    "Amount of completed get started checklist items": {
+      "${ numberOfCompletedItems } of ${ totalNumberOfChecklistItems } complete": [
+        ""
+      ]
+    },
     "Apps dropdown": {
       "Go to ${ title }": [
         "转到 ${ title }"
@@ -1062,37 +1070,16 @@
       ]
     },
     "blackfriday Action": {
-      "Get limited-time deal": [
-        "领取限时优惠"
-      ],
-      "Upgrade": [
-        "升级"
+      "Get the offer": [
+        ""
       ]
     },
     "blackfriday Info": {
-      "Discounts are based on monthly pricing.": [
-        "折扣是以月度定价为基准。"
-      ],
-      "early access to": [
-        "提前体验"
-      ],
-      "Free": [
-        "免费"
-      ],
-      "Get early access to our new encrypted drive for FREE by upgrading to a Plus bundle now.": [
-        "现在升级到 Plus 套装，即可免费体验我们新的加密网盘服务。"
+      "beta": [
+        ""
       ],
       "Includes": [
         "包含"
-      ],
-      "Offer valid only for first-time paid subscriptions.": [
-        "此优惠仅限于第一次开通付费订阅服务。"
-      ],
-      "ProtonDrive": [
-        "ProtonDrive"
-      ],
-      "Save ${ percentage }%": [
-        "节省 ${ percentage }%"
       ],
       "Standard price: ${ regularPrice }": [
         "原价：${ regularPrice }"
@@ -1101,49 +1088,81 @@
         "此订阅将在两年后自动续订，价格不变，直至取消。"
       ]
     },
-    "blackfriday info": {
-      "per month": [
-        "每月"
-      ]
-    },
-    "blackfriday Promo title, need to be short": {
-      "Special offer": [
-        "特价"
-      ]
-    },
     "blackfriday Title": {
-      "(${ notice }) Renews after 1 year at a discounted annual & bundle price of ${ amount } every year (36% discount).": [
-        "(${ notice }) 1 年后续订可享受每年 ${ amount } 的套装折扣价格（节省 36%）。"
-      ],
-      "(${ notice }) Renews after 1 year at a discounted annual price of ${ amount } every year (20% discount).": [
-        "(${ notice }) 1 年后续订价 ${ amount }/年（节省 20%）。"
-      ],
-      "(${ notice }) Renews after 2 years at a discounted 2-year price of ${ amount } every 2 years (47% discount).": [
-        "(${ notice }) 两年后续订价 ${ amount }/两年（节省 47%）。"
-      ],
-      "Billed as ${ amount } ${ supNotice }": [
+      "Best deal": [
         ""
-      ],
-      "Black Friday Sale": [
-        "黑色星期五特惠"
-      ],
-      "Cyber Monday Sale": [
-        "剁手星期一特惠"
-      ],
-      "for 1 month": [
-        "按月"
-      ],
-      "for 1 year": [
-        "1 年"
-      ],
-      "for 2 years": [
-        "2 年"
       ],
       "Most popular": [
         "最受欢迎"
       ],
-      "ProtonDrive early access offer": [
-        "提前体验 ProtonDrive"
+      "Save more when combining Mail and VPN": [
+        ""
+      ]
+    },
+    "blackfriday: VPNspecialoffer Action": {
+      "Get the deal": [
+        "立即享受优惠"
+      ],
+      "Get the deal now": [
+        "立即享受优惠活动"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Badge popup": {
+      "${ vpnAppName } Plus Special Offer 2021 discount has been applied": [
+        ""
+      ]
+    },
+    "blackfriday: VPNspecialoffer Info": {
+      "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
+        ""
+      ],
+      "Save ${ percentage }%": [
+        "${ percentage }%"
+      ],
+      "Special offer Terms and Conditions": [
+        ""
+      ]
+    },
+    "blackfriday: VPNspecialoffer info": {
+      "per month": [
+        "每月"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Promo title, need to be short": {
+      "Special offer": [
+        "特价"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Title": {
+      "(${ notice }) Renews after 1 month at a standard monthly price of ${ amount }": [
+        ""
+      ],
+      "(${ notice }) Renews after 1 year at a standard discounted annual price of ${ amount } (20% discount)": [
+        ""
+      ],
+      "(${ notice }) Renews after 2 years at a standard discounted 2-year price of ${ amount } (33% discount)": [
+        ""
+      ],
+      "1 month": [
+        "1 个月"
+      ],
+      "12 months": [
+        "12 个月"
+      ],
+      "24 months": [
+        "24 个月"
+      ],
+      "Billed at ${ amount } for the first 2 years.${ supNotice }": [
+        ""
+      ],
+      "Billed at ${ amount } for the first month.${ supNotice }": [
+        ""
+      ],
+      "Billed at ${ amount } for the first year.${ supNotice }": [
+        ""
+      ],
+      "Get the special year-end offer on our Premium VPN PLUS plan": [
+        ""
       ]
     },
     "Bug category": {
@@ -1929,7 +1948,7 @@
         "未验证联系人签名"
       ],
       "Contact your organization’s administrator to resolve this": [
-        ""
+        "请联系机构管理员寻求解决办法"
       ],
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "此浏览器无法开启全文搜索，请退出隐私浏览模式或使用其他浏览器。"
@@ -1968,13 +1987,13 @@
         "条件存在错误"
       ],
       "Error while saving draft. Please try again.": [
-        ""
+        "保存草稿失败，请重试。"
       ],
       "Error while sending the message. Message is not sent.": [
-        ""
+        "发送邮件时出错，邮件未能发送。"
       ],
       "Error while uploading attachments. Message is not sent.": [
-        ""
+        "上传附件时出错，邮件未能发送。"
       ],
       "Failed to encrypt attachment. Please try again.": [
         "加密附件失败，请重试。"
@@ -2010,7 +2029,7 @@
         "有效期不正确"
       ],
       "Invalid expiration time": [
-        ""
+        "有效期不正确"
       ],
       "Invalid name": [
         "名称无效"
@@ -2074,6 +2093,9 @@
       ],
       "One of the groups has no contacts: ${ noContactGroupList }": [
         "某个/些群组没有联系人：${ noContactGroupList } "
+      ],
+      "Organization not recognized. Try again.": [
+        ""
       ],
       "Passwords do not match": [
         "密码不匹配"
@@ -2178,7 +2200,7 @@
         "标签名称过长，请重新填写。"
       ],
       "The maximum expiration is 4 weeks": [
-        ""
+        "有效期不能超过 4 周"
       ],
       "The minimum amount of credit that can be added is ${ _price }": [
         "充值金额不能低于 ${ _price }"
@@ -2196,7 +2218,7 @@
         "待导入账户的文件夹过多，请自定义导入内容并删除部分文件夹。"
       ],
       "There has been an issue with content search. Default search has been used instead.": [
-        ""
+        "全文搜索出现问题，已改为使用普通搜索。"
       ],
       "There was an error when exporting the contacts vCards": [
         "导出联系人 vCards 时出错"
@@ -2223,7 +2245,7 @@
         "此邮件含有浏览器不能打开的链接"
       ],
       "Too many active filters. Please upgrade to a paid plan to activate more filters.": [
-        ""
+        "启用的规则数量已达上限，开通付费账户即可使用更多筛选规则。"
       ],
       "Trusted keys are not valid for sending": [
         "已信任的密钥对发送无效"
@@ -2244,7 +2266,7 @@
         "您不能发送超过 10 个联系人的 vCard"
       ],
       "You cannot open more than ${ maxActiveComposer } composer window at a time": [
-        ""
+        "您不能同时打开超过 ${ maxActiveComposer } 个编辑窗口"
       ],
       "You did not provide a file.": [
         "您尚未选择文件。"
@@ -2262,7 +2284,7 @@
         "此次导入将不会进行。"
       ],
       "Your search matched too many results. Please limit your search and try again.": [
-        ""
+        "搜索结果过多，请缩小搜索范围后再试。"
       ]
     },
     "Error display when performing invalid move on message": {
@@ -2501,10 +2523,10 @@
     },
     "Filter modal operators": {
       "All conditions must be fulfilled (AND)": [
-        "所有条件同时满足（且）"
+        "所有条件同时满足"
       ],
       "One condition must be fulfilled (OR)": [
-        "至少一个条件满足（或）"
+        "至少一个条件满足"
       ]
     },
     "Filter modal type": {
@@ -2518,7 +2540,7 @@
         "如果发件人"
       ],
       "If the subject": [
-        "如果标题"
+        "如果主题"
       ],
       "Select…": [
         "选择…"
@@ -2538,7 +2560,7 @@
     },
     "Filter notification": {
       "${ Label.Name } updated": [
-        "${ Label.Name } 已更改"
+        "${ Label.Name } 标签已更改"
       ],
       "Filter ${ Filter.Name } updated": [
         "${ Filter.Name } 规则已更改"
@@ -2549,16 +2571,16 @@
         "全部"
       ],
       "Hide moved message": [
-        "隐藏移动过的消息"
+        "隐藏已移动的邮件"
       ],
       "Read": [
         "已读"
       ],
       "Show moved message": [
-        "显示移动过的消息"
+        "显示已移动的邮件"
       ],
       "Unread": [
-        "未读邮件"
+        "未读"
       ]
     },
     "Filter preview": {
@@ -2582,6 +2604,72 @@
     "Free price": {
       "Free": [
         "免费"
+      ]
+    },
+    "Get started checklist completion": {
+      "We've added 1 GB of bonus storage to your account. Continue to explore ${ BRAND_NAME } and share your ${ protonMailAppName } address with your family, friends, and colleagues.": [
+        ""
+      ],
+      "We've added 1 GB of bonus storage to your account. For even more storage and premium features, upgrade your plan.": [
+        ""
+      ],
+      "You're a privacy champ!": [
+        ""
+      ]
+    },
+    "Get started checklist incentive": {
+      "Complete all steps and get a total of 2 GB on your account": [
+        ""
+      ],
+      "Only ${ days } day left": [
+        ""
+      ]
+    },
+    "Get started checklist instructions": {
+      "Available on iOS and Android.": [
+        ""
+      ],
+      "Get the ${ protonMailAppName } mobile app": [
+        ""
+      ],
+      "Import contacts or emails": [
+        ""
+      ],
+      "Import your contacts or messages": [
+        ""
+      ],
+      "Quickly transfer your contacts or emails from any provider using our Easy Switch import assistant.": [
+        ""
+      ],
+      "Sign into the mobile app to complete the action": [
+        ""
+      ],
+      "Using your mobile device, scan this QR code or visit": [
+        ""
+      ]
+    },
+    "Get started checklist item": {
+      "Get mobile app": [
+        ""
+      ],
+      "Import contacts or emails": [
+        ""
+      ],
+      "Send a message": [
+        ""
+      ],
+      "Set up a recovery method": [
+        ""
+      ]
+    },
+    "Get started checklist spotlight": {
+      "You can access the checklist anytime from here": [
+        ""
+      ]
+    },
+    "Get started checklist title": {
+      "Get started": [
+        ""
       ]
     },
     "Group": {
@@ -3198,10 +3286,10 @@
         "个附件"
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name and a valid Sieve script.": [
-        "筛选规则对所有邮件都有效，既包括收到的，也包括发出的。每条筛选规则至少应有名称和一段 Sieve 代码。"
+        "筛选规则对所有邮件都有效，既包括收到的，也包括发出的。每条规则包括名称和一段 Sieve 代码。"
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
-        "筛选规则对所有邮件都有效，既包括收到的，也包括发出的。每条筛选规则至少应有名称、一个条件和一项操作。"
+        "筛选规则对所有邮件都有效，既包括收到的，也包括发出的。每条规则包括名称、条件和操作三部分。"
       ],
       "For families and small teams; includes both Mail and VPN.": [
         "适合家庭和小团队；包括邮件和 VPN。"
@@ -3270,7 +3358,7 @@
         "图片地址"
       ],
       "Images have been removed because they are not allowed in auto-reply": [
-        ""
+        "自动回复内容不能包含图片，故图片已移除"
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         ""
@@ -3360,7 +3448,7 @@
         "成员"
       ],
       "Merged": [
-        ""
+        "已合并"
       ],
       "Message expiration works out-of-the-box when sending emails to other ProtonMail users. To send expiring emails to non-ProtonMail users, please cancel and add password protection to your email.": [
         "当向其他ProtonMail用户发送邮件时，邮件过期的功能是开箱即用的。如果要向非ProtonMail用户发送过期邮件，请取消并在邮件中添加密码保护。"
@@ -3552,7 +3640,7 @@
         "大多数问题都能通过刷新页面或${ link }来解决。"
       ],
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
-        "检举诈骗电子邮件将发送消息给我们，所以我们可以分析它，并改进我们的过滤器。这意味着我们将能够完全看到消息的内容。"
+        "您举报的邮件会被上传，以便我们分析并改进过滤机制。这意味着我们将得知此邮件的所有内容。"
       ],
       "Request Read Receipt": [
         "请求回执"
@@ -3599,7 +3687,7 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "选择向该地址发送邮件的首选格式。"
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20-personal-calendar limit. You can also merge imported calendars with existing Proton calendars.": [
+      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit. You can also merge imported calendars with existing Proton calendars.": [
         ""
       ],
       "Sending": [
@@ -3813,7 +3901,7 @@
         "升级后可配置假期自动回复。"
       ],
       "Upgrade to create more folders, filters, and addresses.": [
-        "升级后可创建更多文件夹、过滤器和地址。"
+        "升级账户即可创建更多文件夹、筛选规则和邮箱地址。"
       ],
       "Upgrade to host emails from your own domain name.": [
         ""
@@ -4130,7 +4218,7 @@
         "关闭草稿"
       ],
       "Create filter with...": [
-        "创建过滤器..."
+        "创建筛选规则"
       ],
       "Delete permanently": [
         "永久删除"
@@ -4423,13 +4511,16 @@
         "电子邮件格式"
       ],
       "Emails": [
-        ""
+        "电子邮件"
       ],
       "Enable Beta Access": [
         "启用测试版功能"
       ],
       "Encrypt emails": [
         "加密电子邮件"
+      ],
+      "Enter organization name to confirm": [
+        ""
       ],
       "Enter the 6-digit code": [
         "请输入 6 位验证码"
@@ -5025,10 +5116,10 @@
       ]
     },
     "Mail import summary": {
-      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         ""
       ],
-      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         ""
       ]
     },
@@ -5064,6 +5155,11 @@
     "Many Others": {
       "and many others": [
         "- 等等"
+      ]
+    },
+    "Member downgrade modal": {
+      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
+        ""
       ]
     },
     "Message": {
@@ -5425,13 +5521,13 @@
         "填写网址和要显示的文本来测试链接"
       ],
       "Filter folders": [
-        "过滤文件夹"
+        "搜索文件夹"
       ],
       "Filter groups": [
         "查找群组"
       ],
       "Filter labels": [
-        "查找标签"
+        "搜索标签"
       ],
       "Gift code": [
         "礼品码"
@@ -5891,6 +5987,9 @@
       ]
     },
     "Storage": {
+      "Get extra storage for free": [
+        ""
+      ],
       "Release notes": [
         "版本说明"
       ],
@@ -6379,6 +6478,9 @@
       ],
       "Delete message": [
         "删除邮件"
+      ],
+      "Delete organization?": [
+        ""
       ],
       "Deleting contacts": [
         "删除联系人中"
@@ -6954,6 +7056,9 @@
       ],
       "The attachment's signature failed verification.\nYou can still download this attachment but it might have been tampered with.": [
         "该附件的签名验证失败。\n你仍然可以下载这个附件，但它可能被篡改了。"
+      ],
+      "The contact data is corrupted and cannot be displayed.": [
+        ""
       ],
       "The contact failed to load.": [
         "联系人加载失败"

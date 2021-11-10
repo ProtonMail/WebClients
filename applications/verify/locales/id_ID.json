@@ -1,0 +1,234 @@
+{
+  "headers": {
+    "plural-forms": "nplurals=1; plural=0;",
+    "language": "id_ID"
+  },
+  "contexts": {
+    "Action": {
+      "Cancel": [
+        "Batal"
+      ],
+      "Close": [
+        "Tutup"
+      ],
+      "Close modal": [
+        "Tutup jendela"
+      ],
+      "Did not receive the code?": [
+        "Tidak menerima kode?"
+      ],
+      "Edit email address": [
+        "Edit alamat email"
+      ],
+      "Edit phone number": [
+        "Ubah nomor telepon"
+      ],
+      "Get verification code": [
+        "Dapatkan kode verifikasi"
+      ],
+      "refresh the page": [
+        "segarkan halaman"
+      ],
+      "Request new code": [
+        "Minta kode baru"
+      ],
+      "Submit": [
+        "Kirim"
+      ],
+      "Try another method": [
+        "Coba metode lain"
+      ],
+      "Verify": [
+        "Verifikasi"
+      ],
+      "View invoice": [
+        "Lihat tagihan"
+      ]
+    },
+    "Delinquent modal title": {
+      "Overdue invoice": [
+        "Tagihan jatuh tempo"
+      ]
+    },
+    "Error": {
+      "Can't validate email, try again later": [
+        "Tidak dapat memvalidasi surel, coba lagi nanti"
+      ],
+      "Can't validate phone, try again later": [
+        "Tidak dapat memvalidasi telepon, coba lagi nanti"
+      ],
+      "Email is not valid": [
+        "Email tidak valid"
+      ],
+      "Enter 6 digits": [
+        "Masukan 6 digit"
+      ],
+      "Invalid verification code": [
+        "Kode verifikasi tidak valid"
+      ],
+      "Not a valid number": [
+        "Nomor tidak valid"
+      ],
+      "Passwords do not match": [
+        "Kata sandi tidak cocok"
+      ],
+      "Request timed out.": [
+        "Waktu permintaan habis."
+      ],
+      "This field is required": [
+        "Bagian ini wajib isi"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Kolom ini wajib diisi dengan minimal ${ minimumLength } karakter."
+      ],
+      "Unknown error": [
+        "Kesalahan tidak dikenal"
+      ]
+    },
+    "Error message": {
+      "Brace yourself till we get the error fixed.": [
+        "Kami sedang perbaiki. Mohon bersabar."
+      ],
+      "Error: ${ errorMessage }": [
+        ""
+      ],
+      "Oops, something went wrong": [
+        "Aduh, ada yang tidak beres"
+      ],
+      "Please ${ refresh } or check your connection.": [
+        ""
+      ],
+      "There was a problem connecting to Proton.": [
+        ""
+      ],
+      "You may also ${ refresh } or try again later.": [
+        "Anda juga dapat ${ refresh } atau mencoba lagi nanti."
+      ]
+    },
+    "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
+      "Email": [
+        "Surel"
+      ],
+      "Manual": [
+        "Manual"
+      ],
+      "No verification method available": [
+        "Metode verifikasi tidak tersedia"
+      ],
+      "SMS": [
+        "SMS"
+      ]
+    },
+    "Info": {
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
+        "Klik \"Minta kode baru\" untuk mendapatkan kode verifikasi baru yang dikirim ke ${ strong }. Jika alamat surel ini salah, klik \"Edit\" untuk mengoreksi."
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
+        "Klik \"Minta kode baru\" untuk mendapatkan kode verifikasi baru yang dikirim ke ${ strong }. Jika nomor telepon ini salah, klik \"Edit\" untuk mengoreksi."
+      ],
+      "Enter the verification code that was sent to ${ destinationText }.": [
+        "Masukkan kode verifikasi yang dikirim ke ${ destinationText }."
+      ],
+      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
+        "Jika Anda menemui masalah saat membuat akun, silakan minta undangan dan kami akan meresponnya satu hari kerja."
+      ],
+      "If you don't find the email in your inbox, please check your spam folder.": [
+        "Jika Anda tidak menemukan surel di kotak masuk, mohon periksa folder spam Anda."
+      ],
+      "Internet connection lost.": [
+        "Koneksi internet terputus."
+      ],
+      "Loading": [
+        "Memuat"
+      ],
+      "No results found": [
+        "Tidak ada hasil"
+      ],
+      "Servers are unreachable. Please try again in a few minutes": [
+        "Server-server kami sedang tidak dapat dijangkau. Silakan coba lagi dalam beberapa menit"
+      ],
+      "Session timed out.": [
+        "Sesi habis."
+      ],
+      "To fight spam and abuse, please verify you are human.": [
+        "Untuk melawan spam dan penyalahgunaan, mohon verifikasi Anda memang manusia."
+      ],
+      "Would you like to receive a new verification code or use an alternative verification method?": [
+        "Apakah Anda mau menerima kode verifikasi baru atau menggunakan metode verifikasi alternatif?"
+      ],
+      "Your email will only be used for this one-time verification.": [
+        "Email Anda hanya akan digunakan untuk verifikasi satu kali ini saja."
+      ],
+      "Your phone number will only be used for this one-time verification.": [
+        "Nomor telepon Anda hanya akan digunakan untuk verifikasi satu kali ini saja."
+      ],
+      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
+        "Akun Proton Anda sedang dalam masa tenggang. Untuk tetap menggunakan akun Anda, mohon lunasi tagihan yang sudah jatuh tempo."
+      ]
+    },
+    "Label": {
+      "Cancel": [
+        "Batal"
+      ],
+      "Email address": [
+        "Alamat surel"
+      ],
+      "Enter the 6-digit code": [
+        "Masukkan kode 6 digit"
+      ],
+      "Hide password": [
+        "Sembunyikan kata sandi"
+      ],
+      "Password": [
+        "Kata Sandi"
+      ],
+      "Phone number": [
+        "Nomor telepon"
+      ],
+      "Reveal password": [
+        "Tampilkan kata sandi"
+      ],
+      "Submit": [
+        "Kirim"
+      ],
+      "Verification code": [
+        "Kode verifikasi"
+      ]
+    },
+    "Link": {
+      "Learn more": [
+        "Pelajari lebih lanjut"
+      ],
+      "Request an invite": [
+        "Minta undangan"
+      ]
+    },
+    "Success": {
+      "Code sent to ${ methodTo }": [
+        "Kode dikirim ke ${ methodTo }"
+      ],
+      "Verification successful": [
+        "Verifikasi berhasil"
+      ]
+    },
+    "Title": {
+      "Human verification": [
+        "Verifikasi manusia"
+      ],
+      "Invalid verification code": [
+        "Kode verifikasi tidak valid"
+      ],
+      "Sign in again to continue": [
+        "Masuk lagi untuk melanjutkan"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "Kata sandi minimal ${ length } karakter"
+      ]
+    }
+  }
+}

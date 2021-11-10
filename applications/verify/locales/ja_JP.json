@@ -1,0 +1,234 @@
+{
+  "headers": {
+    "plural-forms": "nplurals=1; plural=0;",
+    "language": "ja_JP"
+  },
+  "contexts": {
+    "Action": {
+      "Cancel": [
+        "キャンセル"
+      ],
+      "Close": [
+        "閉じる"
+      ],
+      "Close modal": [
+        "画面を閉じる"
+      ],
+      "Did not receive the code?": [
+        "認証コードを受け取っていませんか?"
+      ],
+      "Edit email address": [
+        "メールアドレスを編集"
+      ],
+      "Edit phone number": [
+        "電話番号を編集"
+      ],
+      "Get verification code": [
+        "検証コードを取得"
+      ],
+      "refresh the page": [
+        "ページを更新"
+      ],
+      "Request new code": [
+        "新しいコードをリクエスト"
+      ],
+      "Submit": [
+        "送信"
+      ],
+      "Try another method": [
+        "別の方法を試してください"
+      ],
+      "Verify": [
+        "検証"
+      ],
+      "View invoice": [
+        "請求書を参照"
+      ]
+    },
+    "Delinquent modal title": {
+      "Overdue invoice": [
+        "未払いの請求"
+      ]
+    },
+    "Error": {
+      "Can't validate email, try again later": [
+        "メールを検証できません。後でもう一度お試しください"
+      ],
+      "Can't validate phone, try again later": [
+        "電話番号の検証ができませんでした。再度お試しください"
+      ],
+      "Email is not valid": [
+        "メールアドレスが無効です"
+      ],
+      "Enter 6 digits": [
+        "6 桁の数字を入力してください"
+      ],
+      "Invalid verification code": [
+        "無効な検証コードです"
+      ],
+      "Not a valid number": [
+        "無効な番号です"
+      ],
+      "Passwords do not match": [
+        "パスワードが一致しません"
+      ],
+      "Request timed out.": [
+        "リクエストがタイムアウトしました。"
+      ],
+      "This field is required": [
+        "この項目の入力は必須です"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "このフィールドには${ minimumLength } 文字以上の入力が必要です。"
+      ],
+      "Unknown error": [
+        "不明なエラー"
+      ]
+    },
+    "Error message": {
+      "Brace yourself till we get the error fixed.": [
+        "エラーが解消されるまでお待ちください。"
+      ],
+      "Error: ${ errorMessage }": [
+        ""
+      ],
+      "Oops, something went wrong": [
+        "エラーが発生しました。"
+      ],
+      "Please ${ refresh } or check your connection.": [
+        ""
+      ],
+      "There was a problem connecting to Proton.": [
+        ""
+      ],
+      "You may also ${ refresh } or try again later.": [
+        "${ refresh } するか再度お試しください。"
+      ]
+    },
+    "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
+      "Email": [
+        "電子メール"
+      ],
+      "Manual": [
+        "マニュアル"
+      ],
+      "No verification method available": [
+        "検証方法がありません"
+      ],
+      "SMS": [
+        "SMS"
+      ]
+    },
+    "Info": {
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
+        "「新しいコードをリクエスト」をクリックすると新しい認証コードが ${ strong } に送信されます。メールアドレスが違う場合、「編集」をクリックして修正します。"
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
+        "「新しいコードをリクエスト」をクリックすると新しい認証コードが ${ strong } に送信されます。電話番号が違う場合、「編集」をクリックして修正します。"
+      ],
+      "Enter the verification code that was sent to ${ destinationText }.": [
+        "${ destinationText } に送信された認証コードを入力してください。"
+      ],
+      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
+        "アカウントの作成に問題がある場合は、招待をリクエストしてください。1営業日以内に対応します。"
+      ],
+      "If you don't find the email in your inbox, please check your spam folder.": [
+        "受信トレイに関連するメッセージを見つけなかった場合、迷惑メールフォルダーを確認してください。"
+      ],
+      "Internet connection lost.": [
+        "インターネット接続切断"
+      ],
+      "Loading": [
+        "読み込み中"
+      ],
+      "No results found": [
+        "該当する項目がありません"
+      ],
+      "Servers are unreachable. Please try again in a few minutes": [
+        "サーバーに接続できません。数分後にもう一度お試しください"
+      ],
+      "Session timed out.": [
+        "セッションがタイムアウトしました。"
+      ],
+      "To fight spam and abuse, please verify you are human.": [
+        "迷惑メールと悪用の防止のため、人間である立証をお願いします。"
+      ],
+      "Would you like to receive a new verification code or use an alternative verification method?": [
+        "新しい確認コードを受け取るか、他の検証方法を使用しますか？"
+      ],
+      "Your email will only be used for this one-time verification.": [
+        "メールアドレスは、この一度限りの認証にのみ使用されます。"
+      ],
+      "Your phone number will only be used for this one-time verification.": [
+        "電話番号は、この一度限りの認証にのみ使用されます。"
+      ],
+      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
+        "あなたの Proton アカウントは現在保留中です。アカウントの使用を続けたい場合は滞納した請求を支払ってください。"
+      ]
+    },
+    "Label": {
+      "Cancel": [
+        "キャンセル"
+      ],
+      "Email address": [
+        "メールアドレス"
+      ],
+      "Enter the 6-digit code": [
+        "6 桁のコードを入力してください"
+      ],
+      "Hide password": [
+        "パスワードを隠す"
+      ],
+      "Password": [
+        "パスワード"
+      ],
+      "Phone number": [
+        "電話番号"
+      ],
+      "Reveal password": [
+        "パスワードを表示する"
+      ],
+      "Submit": [
+        "送信"
+      ],
+      "Verification code": [
+        "認証コード"
+      ]
+    },
+    "Link": {
+      "Learn more": [
+        "より詳しく"
+      ],
+      "Request an invite": [
+        "登録を申請する"
+      ]
+    },
+    "Success": {
+      "Code sent to ${ methodTo }": [
+        "${ methodTo } にコードを送信しました"
+      ],
+      "Verification successful": [
+        "検証に成功しました"
+      ]
+    },
+    "Title": {
+      "Human verification": [
+        "人間であることの検証"
+      ],
+      "Invalid verification code": [
+        "無効な検証コードです"
+      ],
+      "Sign in again to continue": [
+        "再度サインインして続行"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "パスワードは ${ length } 文字以上必要です"
+      ]
+    }
+  }
+}
