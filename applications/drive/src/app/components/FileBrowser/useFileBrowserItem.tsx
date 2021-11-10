@@ -148,7 +148,7 @@ function useFileBrowserItem<T extends HTMLElement>({
     );
 
     const handleContextMenu = useCallback(
-        (e: React.MouseEvent<HTMLTableRowElement>) => {
+        (e: React.MouseEvent<HTMLButtonElement | HTMLDivElement>) => {
             e.stopPropagation();
 
             if (item.Disabled) {
