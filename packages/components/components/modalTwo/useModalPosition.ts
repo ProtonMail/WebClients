@@ -1,65 +1,37 @@
 import { useLayoutEffect, useState } from 'react';
-import { last, remove } from '@proton/shared/lib/helpers/array';
 
-import { useInstance } from '../../hooks';
-
-let id = 0;
-let backdropIds: string[] = [];
-const subscribers: { [id: string]: (() => void)[] } = {};
+const listeners: (() => void)[] = [];
 
 const notify = () => {
-    Object.values(subscribers)
-        .flat()
-        .forEach((subscriber) => subscriber());
+    listeners.forEach((listener) => {
+        listener();
+    });
 };
 
-const register = (id: string) => {
-    backdropIds.push(id);
-    notify();
-    return {
-        unregister() {
-            backdropIds = remove(backdropIds, id);
-            delete subscribers[id];
-            notify();
-        },
-
-        subscribe(fn: () => void) {
-            subscribers[id] = [...(subscribers[id] || []), fn];
-        },
-
-        isFirst() {
-            const [first] = backdropIds;
-            return first === id;
-        },
-
-        isLast() {
-            return last(backdropIds) === id;
-        },
+export const subscribe = (listener: () => void) => {
+    listeners.push(listener);
+    return () => {
+        listeners.splice(listeners.indexOf(listener), 1);
     };
 };
 
-const useModalPosition = (open: boolean) => {
-    const internalId = useInstance(() => String(id++));
+export const getModalsLength = () => listeners.length - 1; // Subtract 1 to remove the persistent backdrop listener
 
+const useModalPosition = (open: boolean) => {
     const [state, setState] = useState({ first: false, last: false });
 
     useLayoutEffect(() => {
         if (!open) {
             return;
         }
-
-        const { subscribe, unregister, isFirst, isLast } = register(internalId);
-
         const sync = () => {
-            setState({ first: isFirst(), last: isLast() });
+            setState({ first: listeners[0] === sync, last: listeners[listeners.length - 1] === sync });
         };
-
-        subscribe(sync);
-
-        sync();
-
+        const unsubscribe = subscribe(sync);
+        notify();
         return () => {
-            unregister();
+            unsubscribe();
+            notify();
         };
     }, [open]);
 

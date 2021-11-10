@@ -4,10 +4,12 @@
 	inset: 0;
 	background: var(--backdrop-norm);
 	animation: 0.1s ease-out forwards;
-	animation-name: anime-modal-two-backdrop-in;
 
 	&--out {
 		animation-name: anime-modal-two-backdrop-out;
+	}
+	&--in {
+		animation-name: anime-modal-two-backdrop-in;
 	}
 
 	@keyframes anime-modal-two-backdrop-in {

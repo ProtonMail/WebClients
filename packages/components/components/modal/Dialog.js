@@ -7,7 +7,6 @@ import { classnames } from '../../helpers';
 import { useFocusTrap } from '../focus';
 import { useHotkeys } from '../../hooks';
 import useModalPosition from '../modalTwo/useModalPosition';
-import Backdrop from '../modalTwo/Backdrop';
 
 const CLASSES = {
     MODAL: 'modal',
@@ -42,7 +41,7 @@ const Dialog = ({
     const hasCalledExit = useRef(false);
     const hasCalledClose = useRef(false);
     const focusTrapProps = useFocusTrap({ rootRef });
-    const { first, last } = useModalPosition(true);
+    const { last } = useModalPosition(true);
 
     useLayoutEffect(() => {
         hasCalledClose.current = isClosing;
@@ -74,8 +73,6 @@ const Dialog = ({
 
     return (
         <Portal>
-            {first && <Backdrop exiting={isClosing} />}
-
             <div className={classnames([dialogRootClassName])} style={!last ? { '--z-position': -1 } : undefined}>
                 <dialog
                     aria-labelledby={modalTitleID}
