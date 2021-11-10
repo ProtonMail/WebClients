@@ -34,27 +34,6 @@ const Modal = ({
     closeProps,
     ...rest
 }) => {
-    // Because we will forget
-    if (!['isClosing', 'isBehind', 'onExit'].every((key) => rest.hasOwnProperty.call(rest, key))) {
-        // eslint-disable-next-line no-console
-        console.warn(`
-You must pass props to <FormModal ...rest>,
-These props contains mandatory keys from the hook.
-Ex: onClose
-
-function DemoModal({ onAdd, ...rest }) {
-
-    const handleSubmit = () => {
-        // XXX
-        onAdd('XXX');
-        rest.onClose();
-    };
-
-    return (<FormModal onSubmit={handleSubmit} ...rest />);
-}
-`);
-    }
-
     const isAlertMode = mode === 'alert';
 
     const getFooter = () => {
