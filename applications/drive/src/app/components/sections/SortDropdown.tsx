@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react';
+import { useState } from 'react';
 import { c } from 'ttag';
 
 import {
@@ -6,65 +6,57 @@ import {
     usePopperAnchor,
     Dropdown,
     DropdownMenu,
-    Icon,
     DropdownMenuButton,
-    ToolbarButton,
+    Button,
     DropdownCaret,
 } from '@proton/components';
+import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import { AllSortKeys, SortParams } from '@proton/shared/lib/interfaces/drive/link';
 
 export interface MenuItem<T extends AllSortKeys> {
     name: string;
     icon: string;
-    sortParams: SortParams<T>;
+    sortField: T;
 }
 
-function SortDropdown<T extends AllSortKeys>({
-    menuItems,
+export default function SortDropdown<T extends AllSortKeys>({
+    sortFields,
     sortParams,
     setSorting,
 }: {
-    menuItems: MenuItem<T>[];
+    sortFields: T[];
     sortParams: SortParams<T>;
     setSorting: (sortParams: SortParams<T>) => void;
 }) {
     const [uid] = useState(generateUID('dropdown'));
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
 
-    const assertSorting = useCallback(
-        (itemSortParams: SortParams<T>) =>
-            sortParams.sortField === itemSortParams.sortField && sortParams.sortOrder === itemSortParams.sortOrder,
-        [sortParams]
-    );
-
-    const toolbarButtonIcon = (
-        <Icon name={menuItems.find((item) => assertSorting(item.sortParams))?.icon || 'sort-old-new'} />
-    );
-    const dropdownMenuButtons = menuItems.map((item) => (
+    const dropdownMenuButtons = sortFields.map((sortField) => (
         <DropdownMenuButton
-            key={item.name}
+            key={sortField}
             className="flex flex-nowrap text-left"
-            onClick={() => setSorting({ sortField: item.sortParams.sortField, sortOrder: item.sortParams.sortOrder })}
-            aria-current={assertSorting(item.sortParams)}
+            onClick={() => setSorting({ sortField, sortOrder: SORT_DIRECTION.ASC })}
+            aria-current={sortParams.sortField === sortField}
         >
-            <Icon className="mt0-25 mr0-5" name={item.icon} />
-            {item.name}
+            {translateSortField(sortField)}
         </DropdownMenuButton>
     ));
 
     return (
         <>
-            <ToolbarButton
+            <Button
                 aria-describedby={uid}
                 ref={anchorRef}
                 aria-expanded={isOpen}
                 onClick={toggle}
-                icon={toolbarButtonIcon}
                 data-testid="toolbar-sort"
                 title={c('Title').t`Sort files/folders`}
+                shape="ghost"
+                size="small"
+                icon
             >
                 <DropdownCaret isOpen={isOpen} className="expand-caret toolbar-icon mtauto mbauto" />
-            </ToolbarButton>
+            </Button>
             <Dropdown
                 id={uid}
                 isOpen={isOpen}
@@ -79,4 +71,20 @@ function SortDropdown<T extends AllSortKeys>({
     );
 }
 
-export default SortDropdown;
+export function translateSortField(sortField: AllSortKeys): string {
+    const translations: Record<AllSortKeys, string> = {
+        Name: c('Label').t`Name`,
+        Size: c('Label').t`Size`,
+        // Type is not used (in UI) at this moment, but users might have set
+        // it, so we keep the code, so it continue to work until user changes
+        // the sorting. Also, we might get it back at some point.
+        MIMEType: c('Label').t`Type`,
+        // On API its called ModifyTime, but its actually time when the last
+        // revision was uploaded. The real modify time is stored in encrypted
+        // extended attributes.
+        ModifyTime: c('Label').t`Uploaded`,
+        CreateTime: c('Label').t`Created`,
+        ExpireTime: c('Label').t`Expires`,
+    };
+    return translations[sortField];
+}
