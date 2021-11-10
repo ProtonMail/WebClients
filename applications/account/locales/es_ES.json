@@ -202,9 +202,6 @@
       "Copy link": [
         "Copiar enlace"
       ],
-      "Copy to clipboard": [
-        "Copiar al portapapeles"
-      ],
       "Create": [
         "Crear"
       ],
@@ -300,6 +297,9 @@
       ],
       "Download all configurations": [
         "Descargar toda la configuración"
+      ],
+      "Download recovery file": [
+        "Descargar archivo de recuperación"
       ],
       "Download the Import-Export app": [
         "Descargar la aplicación Import-Export"
@@ -778,6 +778,15 @@
       "View invoice": [
         "Ver factura"
       ],
+      "Void all recovery files": [
+        "Anular todos los archivos de recuperación"
+      ],
+      "Void all recovery files?": [
+        "¿Anular todos los archivos de recuperación?"
+      ],
+      "Void anyway": [
+        "Anular de todos modos"
+      ],
       "Warning": [
         "Advertencia"
       ],
@@ -1076,87 +1085,98 @@
       ]
     },
     "blackfriday Action": {
-      "Get limited-time deal": [
-        ""
-      ],
-      "Upgrade": [
+      "Get the offer": [
         ""
       ]
     },
     "blackfriday Info": {
-      "Discounts are based on monthly pricing.": [
-        ""
-      ],
-      "early access to": [
-        ""
-      ],
-      "Free": [
-        ""
-      ],
-      "Get early access to our new encrypted drive for FREE by upgrading to a Plus bundle now.": [
-        ""
+      "beta": [
+        "beta"
       ],
       "Includes": [
+        "Incluye"
+      ],
+      "Standard price: ${ regularPrice }": [
+        "Precio habitual: ${ regularPrice }"
+      ],
+      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
+        "Esta suscripción se renovará automáticamente al cabo de 2 años al mismo precio hasta su cancelación."
+      ]
+    },
+    "blackfriday Title": {
+      "Best deal": [
         ""
       ],
-      "Offer valid only for first-time paid subscriptions.": [
-        ""
+      "Most popular": [
+        "Más popular"
       ],
-      "ProtonDrive": [
+      "Save more when combining Mail and VPN": [
+        ""
+      ]
+    },
+    "blackfriday: VPNspecialoffer Action": {
+      "Get the deal": [
+        "Obtener la oferta"
+      ],
+      "Get the deal now": [
+        "Aprovecha la oferta ahora"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Badge popup": {
+      "${ vpnAppName } Plus Special Offer 2021 discount has been applied": [
+        ""
+      ]
+    },
+    "blackfriday: VPNspecialoffer Info": {
+      "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
         ""
       ],
       "Save ${ percentage }%": [
         "${ percentage } %"
       ],
-      "Standard price: ${ regularPrice }": [
-        ""
-      ],
-      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
+      "Special offer Terms and Conditions": [
         ""
       ]
     },
-    "blackfriday info": {
+    "blackfriday: VPNspecialoffer info": {
       "per month": [
-        ""
+        "al mes"
       ]
     },
-    "blackfriday Promo title, need to be short": {
+    "blackfriday: VPNspecialoffer Promo title, need to be short": {
       "Special offer": [
         "Oferta especial"
       ]
     },
-    "blackfriday Title": {
-      "(${ notice }) Renews after 1 year at a discounted annual & bundle price of ${ amount } every year (36% discount).": [
+    "blackfriday: VPNspecialoffer Title": {
+      "(${ notice }) Renews after 1 month at a standard monthly price of ${ amount }": [
         ""
       ],
-      "(${ notice }) Renews after 1 year at a discounted annual price of ${ amount } every year (20% discount).": [
+      "(${ notice }) Renews after 1 year at a standard discounted annual price of ${ amount } (20% discount)": [
         ""
       ],
-      "(${ notice }) Renews after 2 years at a discounted 2-year price of ${ amount } every 2 years (47% discount).": [
+      "(${ notice }) Renews after 2 years at a standard discounted 2-year price of ${ amount } (33% discount)": [
         ""
       ],
-      "Billed as ${ amount } ${ supNotice }": [
+      "1 month": [
+        "1 mes"
+      ],
+      "12 months": [
+        "12 meses"
+      ],
+      "24 months": [
+        "24 meses"
+      ],
+      "Billed at ${ amount } for the first 2 years.${ supNotice }": [
         ""
       ],
-      "Black Friday Sale": [
+      "Billed at ${ amount } for the first month.${ supNotice }": [
         ""
       ],
-      "Cyber Monday Sale": [
+      "Billed at ${ amount } for the first year.${ supNotice }": [
         ""
       ],
-      "for 1 month": [
-        ""
-      ],
-      "for 1 year": [
-        ""
-      ],
-      "for 2 years": [
-        ""
-      ],
-      "Most popular": [
-        ""
-      ],
-      "ProtonDrive early access offer": [
+      "Get the special year-end offer on our Premium VPN PLUS plan": [
         ""
       ]
     },
@@ -1924,6 +1944,9 @@
       "Organization key is not decrypted.": [
         "La clave de organización no está descifrada."
       ],
+      "Organization not recognized. Try again.": [
+        ""
+      ],
       "Passwords do not match": [
         "Las contraseñas no coinciden"
       ],
@@ -1960,6 +1983,9 @@
       ],
       "Please refresh the page.": [
         "Por favor, actualiza la página."
+      ],
+      "Please set a recovery email first": [
+        "Por favor, primero establece un correo electrónico de recuperación"
       ],
       "Please set a recovery phone number first": [
         "Por favor, establece primero un número de teléfono de recuperación"
@@ -2074,6 +2100,9 @@
       ],
       "Uploaded file is not a valid private key. Please verify and try again.": [
         "El archivo cargado no es una clave privada válida. Verifique e inténtelo de nuevo."
+      ],
+      "Uploaded file is not a valid recovery file. Please verify and try again.": [
+        ""
       ],
       "Uploaded files are not valid private keys. Please verify and try again.": [
         "Los archivo cargado no son claves privada válida. Verifique e inténtelo de nuevo."
@@ -3148,6 +3177,9 @@
       "A key with the same encryption algorithm is already active for this address. Generating another key will cause slower account loading and deletion of this key can cause issues. If you are generating a new key because your old key is compromised, please mark that key as compromised. Are you sure you want to continue?": [
         "Una clave con el mismo algoritmo de cifrado ya está activa para esta dirección.\nGenerar otra clave provocará una carga más lenta de la cuenta y el borrado de la misma puede causar problemas. Si estás generando una clave nueva porque tu clave anterior ha sido comprometida, por favor, marca esta clave como comprometida. ¿Estás seguro de continuar?"
       ],
+      "A recovery file lets you unlock and view your data after an account reset. ": [
+        ""
+      ],
       "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password.": [
         ""
       ],
@@ -3160,11 +3192,26 @@
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Acceso restringido a la cuenta por falta de pago. Contacta con tu administrador."
       ],
+      "account recovery and data recovery method": [
+        "método de recuperación de cuentas y recuperación de datos"
+      ],
+      "account recovery method": [
+        "método de recuperación de cuenta"
+      ],
       "Account successfully updated": [
         "Cuenta actualizada con éxito"
       ],
+      "Activate your recovery phrase": [
+        "Activar la frase de recuperación"
+      ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"ProtonMail me\" or \"Private Message me.\"": [
         "Añade una dirección de correo electrónico @pm.me a tu cuenta. Este dominio simple y más corto significa \"ProtonMail me\" o \"Mensaje Privado\"."
+      ],
+      "Add a recovery email address": [
+        ""
+      ],
+      "Add a recovery phone number": [
+        "Agregar un número de teléfono de recuperación"
       ],
       "Add additional addresses to your account like user2@protonmail.com": [
         "Agrega direcciones adicionales a tu cuenta como user2@protonmail.com"
@@ -3184,6 +3231,9 @@
       ],
       "Addresses": [
         "Direcciones"
+      ],
+      "After a password reset your data is locked in encrypted form to keep it safe. To decrypt and view your emails and other data, you need a recovery file or recovery phrase.": [
+        ""
       ],
       "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
         "Después de realizar el pago con Bitcoin, sigue estas instrucciones para actualizar."
@@ -3471,6 +3521,9 @@
       "Download your PGP keys for use with other PGP-compatible services.": [
         "Descarga tus claves PGP para utilizarlas con otros servicios compatibles con PGP."
       ],
+      "Download your recovery file": [
+        "Descargue su archivo de recuperación"
+      ],
       "Drop the file here to upload": [
         "Arrastra el archivo aquí para cargarlo"
       ],
@@ -3480,7 +3533,7 @@
       "Edit label": [
         "Editar etiqueta"
       ],
-      "Effortlessly and securely move your emails from your current provider to Proton. If you use Google, we also support calendar, and contacts imports.": [
+      "Effortlessly and securely move your emails from your current provider to Proton. If you use Google, we also support calendar and contacts imports.": [
         ""
       ],
       "Email address": [
@@ -3624,6 +3677,12 @@
       "If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly.": [
         "Si has configurado tanto SPF como DKIM, DMARC te permite especificar cómo otros servicios de correo electrónico deben entregar el correo electrónico para tu dominio si fallaron las comprobaciones de SPF y DKIM. Esto puede hacer que sea más difícil para los spammers que fingen ser tú, pero también puede causar problemas de entrega si no se hace correctamente."
       ],
+      "If you lose your login details and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
+        ""
+      ],
+      "If you lose your login details and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.": [
+        ""
+      ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to log into your account. Each code can only be used once.": [
         "Si pierdes tu dispositivo habilitado para doble factor, estos códigos pueden utilizarse en lugar del código de autenticación de doble factor de 6 dígitos para iniciar sesión en tu cuenta. Cada código solo se puede utilizar una vez."
       ],
@@ -3682,6 +3741,12 @@
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         ""
       ],
+      "In case you lose your login details, we’ll send you recovery instructions via email or SMS.": [
+        ""
+      ],
+      "In case you lose your login details, we’ll send you recovery instructions via email.": [
+        ""
+      ],
       "Included": [
         "Incluido"
       ],
@@ -3714,6 +3779,9 @@
       ],
       "Internet connection restored.": [
         "Se ha restablecido la conexión a Internet."
+      ],
+      "it’s imperative": [
+        ""
       ],
       "Just confirm your selection and we'll do the rest.": [
         ""
@@ -3817,6 +3885,9 @@
       "Next you'll need to log in to your Google account and allow us to access your data.": [
         ""
       ],
+      "No account recovery method set, you are at risk of losing access to your account": [
+        ""
+      ],
       "No action selected": [
         "Ninguna acción seleccionada"
       ],
@@ -3825,6 +3896,9 @@
       ],
       "No contact encryption keys exist": [
         "No existen claves de cifrado de contactos"
+      ],
+      "No data recovery method set, you are at risk of losing access to your data": [
+        ""
       ],
       "No folder selected": [
         "Ninguna carpeta seleccionada"
@@ -4010,10 +4084,16 @@
       "read our two-factor authentication Guide first": [
         ""
       ],
+      "Recovery files have been voided": [
+        "Los archivos de recuperación han sido anulados"
+      ],
       "Recovery phrase copied to clipboard": [
         ""
       ],
       "Recovery phrase has been disabled": [
+        ""
+      ],
+      "Recovery phrase is not associated with any outdated keys.": [
         ""
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
@@ -4046,7 +4126,7 @@
       "Select a service provider to get started": [
         "Selecciona un proveedor de servicios para comenzar"
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20-personal-calendar limit. You can also merge imported calendars with existing Proton calendars.": [
+      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit. You can also merge imported calendars with existing Proton calendars.": [
         ""
       ],
       "Server is currently down": [
@@ -4223,7 +4303,7 @@
       "Unable to decrypt. Recovery phrase is not associated with any keys.": [
         ""
       ],
-      "Unable to decrypt. Recovery phrase is not associated with any outdated keys.": [
+      "Unable to verify recovery file signature. Please contact support.": [
         ""
       ],
       "Unfortunately there is no recovery method saved for this account.": [
@@ -4288,12 +4368,6 @@
       ],
       "We advise you to use official ProtonVPN applications when possible.": [
         "Te aconsejamos que utilices aplicaciones oficiales de ProtonVPN cuando sea posible."
-      ],
-      "We recommend adding a linked email or phone number so you can recover your account if you lose your password.": [
-        "Recomendamos añadir un correo electrónico o número de teléfono enlazado para que puedas recuperar tu cuenta si pierdes tu contraseña."
-      ],
-      "We recommend adding a linked email so you can recover your account if you lose your password.": [
-        "Recomendamos añadir un correo electrónico vinculado para que puedas recuperar tu cuenta si pierdes tu contraseña."
       ],
       "We use 3-D Secure to protect your payments.": [
         "Utilizamos 3-D Secure para proteger tus pagos."
@@ -4439,6 +4513,9 @@
       "You will soon be redirected to PayPal to verify your payment.": [
         "Pronto serás redirigido a PayPal para verificar tu pago."
       ],
+      "You won't be able to recover encrypted data after an account reset using your downloaded recovery files.": [
+        ""
+      ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, please create an address.": [
         "Tu cuenta de ${ BRAND_NAME } está asociada con ${ externalEmailAddress }. Para utilizar ${ toAppName }, por favor crea una dirección."
       ],
@@ -4450,6 +4527,9 @@
       ],
       "Your account is being upgraded, this may take up to 30 seconds.": [
         "Tu cuenta se está actualizando, esto puede tardar hasta 30 segundos."
+      ],
+      "Your account recovery method is set": [
+        ""
       ],
       "Your account will be updated once the payment is cleared.": [
         "Tu cuenta se actualizará una vez que el pago se haya completado."
@@ -4464,6 +4544,9 @@
         "Tu Lista Negra está vacía."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
+        ""
+      ],
+      "Your data recovery method is set": [
         ""
       ],
       "Your email will only be used for this one-time verification.": [
@@ -5178,6 +5261,9 @@
       "End weekday": [
         "Último día de la semana"
       ],
+      "Enter organization name to confirm": [
+        ""
+      ],
       "Enter password": [
         "Introduce la contraseña"
       ],
@@ -5195,6 +5281,9 @@
       ],
       "extra storage": [
         "almacenamiento adicional"
+      ],
+      "File": [
+        "Archivo"
       ],
       "Filter Name": [
         "Nombre del filtro"
@@ -5427,6 +5516,12 @@
       "Recovery email": [
         "Correo electrónico de recuperación"
       ],
+      "Recovery email address": [
+        ""
+      ],
+      "Recovery file": [
+        "Archivo de recuperación"
+      ],
       "Recovery phone": [
         "Teléfono de recuperación"
       ],
@@ -5541,8 +5636,14 @@
       "Upload your backup key": [
         "Sube tu clave de seguridad"
       ],
+      "Upload your recovery file": [
+        ""
+      ],
       "Uploaded private keys": [
         "Claves privadas subidas"
+      ],
+      "Uploaded recovery file": [
+        ""
       ],
       "URL": [
         "URL"
@@ -5629,6 +5730,9 @@
     "label": {
       "Phone number": [
         "Número de teléfono"
+      ],
+      "Recovery phone number": [
+        "Número de teléfono de recuperación"
       ],
       "Recovery phrase": [
         "Frase de recuperación"
@@ -5936,11 +6040,11 @@
       ]
     },
     "Mail import summary": {
-      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "",
         ""
       ],
-      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "",
         ""
       ]
@@ -5979,6 +6083,11 @@
       ],
       "Sign in": [
         "Iniciar sesión"
+      ]
+    },
+    "Member downgrade modal": {
+      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
+        ""
       ]
     },
     "Message": {
@@ -6890,6 +6999,9 @@
       ],
       "Upload additional private keys": [
         ""
+      ],
+      "Upload additional recovery files": [
+        ""
       ]
     },
     "Select search results": {
@@ -7383,6 +7495,9 @@
       "3. Select config file and download": [
         "3. Seleccionar archivo de configuración y descargar"
       ],
+      "Account recovery": [
+        "Recuperación de cuenta"
+      ],
       "Account suspended": [
         "Cuenta suspendida"
       ],
@@ -7445,9 +7560,6 @@
       ],
       "Addresses": [
         "Direcciones"
-      ],
-      "Advanced": [
-        "Avanzado"
       ],
       "Allocate storage": [
         "Asignar almacenamiento"
@@ -7620,6 +7732,9 @@
       "Dashboard": [
         "Panel de control"
       ],
+      "Data recovery": [
+        "Recuperación de datos"
+      ],
       "Date": [
         "Fecha"
       ],
@@ -7652,6 +7767,9 @@
       ],
       "Delete logs": [
         "Eliminar registros"
+      ],
+      "Delete organization?": [
+        ""
       ],
       "Delete user": [
         "Eliminar usuario"
@@ -7879,8 +7997,8 @@
       "Password & keys": [
         "Contraseña y claves"
       ],
-      "Password & recovery": [
-        "Contraseña y recuperación"
+      "Password & security": [
+        "Contraseña y seguridad"
       ],
       "Passwords": [
         "Contraseñas"
@@ -7948,8 +8066,11 @@
       "Reconnect your account": [
         "Reconectar tu cuenta"
       ],
-      "Recovery & notification": [
-        "Recuperación y notificación"
+      "Recovery": [
+        "Recuperación"
+      ],
+      "Recovery file": [
+        "Archivo de recuperación"
       ],
       "Remove calendar": [
         "Eliminar calendario"
@@ -7971,9 +8092,6 @@
       ],
       "Restore administrator privileges": [
         "Restaurar los privilegios de administrador"
-      ],
-      "Security": [
-        "Seguridad"
       ],
       "Security logs": [
         "Registros de seguridad"
@@ -8077,6 +8195,9 @@
       "Switch to two-password mode": [
         "Cambiar al modo de dos contraseñas"
       ],
+      "Take precautions to avoid data loss!": [
+        "¡Tome precauciones para evitar la pérdida de datos!"
+      ],
       "Theme": [
         "Tema"
       ],
@@ -8130,6 +8251,9 @@
       ],
       "Your plan": [
         "Tu plan"
+      ],
+      "Your recovery status": [
+        "Su estado de recuperación"
       ],
       "ZIP / postal code": [
         "CP / código postal"

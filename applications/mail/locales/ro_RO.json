@@ -197,9 +197,6 @@
       "Copy email to clipboard": [
         "Copiere mesaj în memorie"
       ],
-      "Copy to clipboard": [
-        "Copiere în memorie"
-      ],
       "Create folder": [
         "Creare folder"
       ],
@@ -270,8 +267,8 @@
       "Discard": [
         "Renunțare"
       ],
-      "Don't secure account": [
-        "Fără securizare cont"
+      "Dismiss get started checklist": [
+        "Renunță la lista de verificare pentru început"
       ],
       "Done": [
         "Gata"
@@ -581,6 +578,9 @@
       "Open calendar": [
         "Deschidere calendar"
       ],
+      "Open get started checklist modal": [
+        "Deschideți modalitatea de listă de verificare pentru început"
+      ],
       "Open navigation": [
         "Deschidere navigare"
       ],
@@ -853,6 +853,9 @@
       "Upgrade": [
         "Migrare"
       ],
+      "Upgrade now": [
+        "Upgrade acum"
+      ],
       "Upload picture": [
         "Încărcare imagine"
       ],
@@ -1002,6 +1005,11 @@
         "Bun venit"
       ]
     },
+    "Amount of completed get started checklist items": {
+      "${ numberOfCompletedItems } of ${ totalNumberOfChecklistItems } complete": [
+        "${ numberOfCompletedItems } din ${ totalNumberOfChecklistItems } complete"
+      ]
+    },
     "Apps dropdown": {
       "Go to ${ title }": [
         "Salt la ${ title }"
@@ -1078,37 +1086,16 @@
       ]
     },
     "blackfriday Action": {
-      "Get limited-time deal": [
-        "Beneficiază de promoția limitată"
-      ],
-      "Upgrade": [
-        "Upgrade"
+      "Get the offer": [
+        ""
       ]
     },
     "blackfriday Info": {
-      "Discounts are based on monthly pricing.": [
-        "Reducerile se raportează la prețul lunar."
-      ],
-      "early access to": [
-        "acces timpuriu la"
-      ],
-      "Free": [
-        "Gratis"
-      ],
-      "Get early access to our new encrypted drive for FREE by upgrading to a Plus bundle now.": [
-        "Fiți printre primii care beneficiază de acces GRATUIT la noul nostru drive criptat, printr-un upgrade la pachetul Plus."
+      "beta": [
+        "beta"
       ],
       "Includes": [
         "Include"
-      ],
-      "Offer valid only for first-time paid subscriptions.": [
-        "Ofertă valabilă doar pentru abonamentele noi."
-      ],
-      "ProtonDrive": [
-        "ProtonDrive"
-      ],
-      "Save ${ percentage }%": [
-        "${ percentage }%"
       ],
       "Standard price: ${ regularPrice }": [
         "Preț standard: ${ regularPrice }"
@@ -1117,49 +1104,81 @@
         "Abonamentul se va reînnoi în mod automat peste 2 ani, la același preț, până când este anulat."
       ]
     },
-    "blackfriday info": {
-      "per month": [
-        "pe lună"
-      ]
-    },
-    "blackfriday Promo title, need to be short": {
-      "Special offer": [
-        "Ofertă specială"
-      ]
-    },
     "blackfriday Title": {
-      "(${ notice }) Renews after 1 year at a discounted annual & bundle price of ${ amount } every year (36% discount).": [
-        "(${ notice }) Se reînnoiește anual la prețul redus pe pachet de ${ amount } pe an (reducere 36%)."
-      ],
-      "(${ notice }) Renews after 1 year at a discounted annual price of ${ amount } every year (20% discount).": [
-        "(${ notice }) Se reînnoiește anual la prețul redus de ${ amount } pe an (reducere 20%)."
-      ],
-      "(${ notice }) Renews after 2 years at a discounted 2-year price of ${ amount } every 2 years (47% discount).": [
-        "(${ notice }) Se reînnoiește după 2 ani la prețul redus pe 2 ani, de ${ amount } (reducere 47%)."
-      ],
-      "Billed as ${ amount } ${ supNotice }": [
+      "Best deal": [
         ""
-      ],
-      "Black Friday Sale": [
-        "Promoție de Black Friday"
-      ],
-      "Cyber Monday Sale": [
-        "Promoție de Cyber Monday"
-      ],
-      "for 1 month": [
-        "pentru 1 lună"
-      ],
-      "for 1 year": [
-        "pentru 1 an"
-      ],
-      "for 2 years": [
-        "pentru 2 ani"
       ],
       "Most popular": [
         "Cel mai popular"
       ],
-      "ProtonDrive early access offer": [
-        "Ofertă de acces timpuriu pentru ProtonDrive"
+      "Save more when combining Mail and VPN": [
+        ""
+      ]
+    },
+    "blackfriday: VPNspecialoffer Action": {
+      "Get the deal": [
+        "Obțineți oferta"
+      ],
+      "Get the deal now": [
+        "Obțineți oferta acum"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Badge popup": {
+      "${ vpnAppName } Plus Special Offer 2021 discount has been applied": [
+        ""
+      ]
+    },
+    "blackfriday: VPNspecialoffer Info": {
+      "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
+        ""
+      ],
+      "Save ${ percentage }%": [
+        "- ${ percentage }%"
+      ],
+      "Special offer Terms and Conditions": [
+        ""
+      ]
+    },
+    "blackfriday: VPNspecialoffer info": {
+      "per month": [
+        "pe lună"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Promo title, need to be short": {
+      "Special offer": [
+        "Ofertă specială"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Title": {
+      "(${ notice }) Renews after 1 month at a standard monthly price of ${ amount }": [
+        ""
+      ],
+      "(${ notice }) Renews after 1 year at a standard discounted annual price of ${ amount } (20% discount)": [
+        ""
+      ],
+      "(${ notice }) Renews after 2 years at a standard discounted 2-year price of ${ amount } (33% discount)": [
+        ""
+      ],
+      "1 month": [
+        "1 lună"
+      ],
+      "12 months": [
+        "12 luni"
+      ],
+      "24 months": [
+        "24 luni"
+      ],
+      "Billed at ${ amount } for the first 2 years.${ supNotice }": [
+        ""
+      ],
+      "Billed at ${ amount } for the first month.${ supNotice }": [
+        ""
+      ],
+      "Billed at ${ amount } for the first year.${ supNotice }": [
+        ""
+      ],
+      "Get the special year-end offer on our Premium VPN PLUS plan": [
+        ""
       ]
     },
     "Bug category": {
@@ -2115,6 +2134,9 @@
         "Câteva grupuri nu au contacte: ${ noContactGroupList }",
         "Câteva grupuri nu au contacte: ${ noContactGroupList }"
       ],
+      "Organization not recognized. Try again.": [
+        "Organizație nerecunoscută. Încercați din nou."
+      ],
       "Passwords do not match": [
         "Parolele nu coincid"
       ],
@@ -2630,6 +2652,74 @@
     "Free price": {
       "Free": [
         "Gratis"
+      ]
+    },
+    "Get started checklist completion": {
+      "We've added 1 GB of bonus storage to your account. Continue to explore ${ BRAND_NAME } and share your ${ protonMailAppName } address with your family, friends, and colleagues.": [
+        "Am adăugat 1 GB de spațiu de stocare bonus în contul dumneavoastră. Continuați să explorați ${ BRAND_NAME } și împărtășiți adresa voastră ${ protonMailAppName } cu familia, prietenii și colegii."
+      ],
+      "We've added 1 GB of bonus storage to your account. For even more storage and premium features, upgrade your plan.": [
+        "Am adăugat 1 GB de spațiu de stocare bonus în contul dumneavoastră. Pentru și mai mult spațiu de stocare și caracteristici premium, faceți upgrade la planul dumneavoastră."
+      ],
+      "You're a privacy champ!": [
+        "Ești un campion al intimității!"
+      ]
+    },
+    "Get started checklist incentive": {
+      "Complete all steps and get a total of 2 GB on your account": [
+        "Completați toți pașii și obțineți un total de 2 GB în contul dumneavoastră"
+      ],
+      "Only ${ days } day left": [
+        "Doar ${ days } zi rămasă",
+        "Doar ${ days } zile rămase",
+        "Doar ${ days } de zile rămase"
+      ]
+    },
+    "Get started checklist instructions": {
+      "Available on iOS and Android.": [
+        "Disponibilă pe iOS și Android."
+      ],
+      "Get the ${ protonMailAppName } mobile app": [
+        "Obțineți aplicația mobilă ${ protonMailAppName }"
+      ],
+      "Import contacts or emails": [
+        "Importați contacte sau e-mailuri"
+      ],
+      "Import your contacts or messages": [
+        "Importați contactele sau mesajele dumneavoastră"
+      ],
+      "Quickly transfer your contacts or emails from any provider using our Easy Switch import assistant.": [
+        "Transferă-ți rapid contactele sau e-mailurile de la orice furnizor cu ajutorul asistentului nostru de import Easy Switch."
+      ],
+      "Sign into the mobile app to complete the action": [
+        "Conectați-vă la aplicația mobilă pentru a finaliza acțiunea"
+      ],
+      "Using your mobile device, scan this QR code or visit": [
+        "Folosind un dispozitiv mobil, scanați acest cod QR sau vizitați"
+      ]
+    },
+    "Get started checklist item": {
+      "Get mobile app": [
+        "Obțineți aplicația mobilă"
+      ],
+      "Import contacts or emails": [
+        "Importați contacte sau e-mailuri"
+      ],
+      "Send a message": [
+        "Trimiteți un mesaj"
+      ],
+      "Set up a recovery method": [
+        "Configurați o metodă de recuperare"
+      ]
+    },
+    "Get started checklist spotlight": {
+      "You can access the checklist anytime from here": [
+        "Puteți accesa oricând lista de verificare de aici"
+      ]
+    },
+    "Get started checklist title": {
+      "Get started": [
+        "Începeți"
       ]
     },
     "Group": {
@@ -3751,8 +3841,8 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Selectați formatul de e-mail care doriți să fie folosit implicit când trimiteți mesaje la această adresă."
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20-personal-calendar limit. You can also merge imported calendars with existing Proton calendars.": [
-        "Selectați ce calendare să importați. Se va crea un calendar nou pentru fiecare calendar importat, până la limita de 20 de calendare personale. De asemenea, puteți fuziona calendarele importate cu calendarele Proton existente."
+      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit. You can also merge imported calendars with existing Proton calendars.": [
+        "Selectați ce calendare să importați. Se va crea un calendar nou pentru fiecare calendar importat, până la limita de 20 de calendare. De asemenea, puteți fuziona calendarele importate cu calendarele Proton existente."
       ],
       "Sending": [
         "Se trimite"
@@ -4605,6 +4695,9 @@
       "Encrypt emails": [
         "Criptare mesaje"
       ],
+      "Enter organization name to confirm": [
+        "Introduceți numele organizației pentru a confirma"
+      ],
       "Enter the 6-digit code": [
         "Introduceți codul din 6 cifre"
       ],
@@ -5201,15 +5294,15 @@
       ]
     },
     "Mail import summary": {
-      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
-        "Importați toate mesajele de la ${ selectedLabelsCount } din ${ totalLabelsCount } eticheta de la ${ periodFragment } și etichetați-le ca ${ label }",
-        "Importă toate mesajele din ${ selectedLabelsCount } din ${ totalLabelsCount } etichete de la ${ periodFragment } și le etichetează ca ${ label }",
-        "Importă toate mesajele din ${ selectedLabelsCount } din ${ totalLabelsCount } de etichete de la ${ periodFragment } și le etichetează ca ${ label }"
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importați toate mesajele de la ${ selectedLabelsCount } din ${ totalLabelsCount } eticheta de la ${ periodFragment } și etichetați-le ca ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importați toate mesajele din ${ selectedLabelsCount } din ${ totalLabelsCount } etichete de la ${ periodFragment } și etichetați-le ca ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importați toate mesajele din ${ selectedLabelsCount } din ${ totalLabelsCount } de etichete de la ${ periodFragment } și etichetați-le ca ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
-      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
-        "Importați toate mesajele de la eticheta ${ totalLabelsCount } de la ${ periodFragment } și etichetați-le ca ${ label }",
-        "Importați toate mesajele din ${ totalLabelsCount } etichete de la ${ periodFragment } și etichetați-le ca ${ label }",
-        "Importați toate mesajele din ${ totalLabelsCount } de etichete de la ${ periodFragment } și etichetați-le ca ${ label }"
+      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importați toate mesajele din eticheta ${ totalLabelsCount } de la ${ periodFragment } și etichetați-le ca ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importați toate mesajele din ${ totalLabelsCount } etichete de la ${ periodFragment } și etichetați-le ca ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importați toate mesajele din ${ totalLabelsCount } de etichete de la ${ periodFragment } și etichetați-le ca ${ LABEL_MARKUP_PLACEHOLDER }"
       ]
     },
     "Mailbox": {
@@ -5244,6 +5337,11 @@
     "Many Others": {
       "and many others": [
         "și multe altele"
+      ]
+    },
+    "Member downgrade modal": {
+      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
+        "Acest lucru va șterge definitiv toți subutilizatorii, conturile și datele asociate cu organizația dumneavoastră."
       ]
     },
     "Message": {
@@ -6093,6 +6191,9 @@
       ]
     },
     "Storage": {
+      "Get extra storage for free": [
+        "Obțineți spațiu de stocare suplimentar gratuit"
+      ],
       "Release notes": [
         "Note de lansare"
       ],
@@ -6653,6 +6754,9 @@
       ],
       "Delete message": [
         "Ștergere mesaj"
+      ],
+      "Delete organization?": [
+        "Ștergeți organizația?"
       ],
       "Deleting contacts": [
         "Ștergere contacte"
@@ -7244,6 +7348,9 @@
         "Verificarea semnăturii atașamentului a eșuat.\nÎncă puteți descărca acest atașament, dar este posibil să fi fost modificat.",
         "Unele dintre semnăturile atașamentelor nu au fost verificate.\nPuteți descărca în continuare aceste atașamente, dar este posibil ca acestea să fi fost falsificate.",
         "Unele dintre semnăturile atașamentelor nu au fost verificate.\nPuteți descărca în continuare aceste atașamente, dar este posibil ca acestea să fi fost falsificate."
+      ],
+      "The contact data is corrupted and cannot be displayed.": [
+        "Datele de contact sunt corupte și nu pot fi afișate."
       ],
       "The contact failed to load.": [
         "Nu s-a putut încărca contactul."

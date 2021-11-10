@@ -202,9 +202,6 @@
       "Copy link": [
         "Salin tautan"
       ],
-      "Copy to clipboard": [
-        "Salin ke clipboard"
-      ],
       "Create": [
         "Buat"
       ],
@@ -300,6 +297,9 @@
       ],
       "Download all configurations": [
         "Unduh semua konfigurasi"
+      ],
+      "Download recovery file": [
+        "Unduh berkas pemulihan"
       ],
       "Download the Import-Export app": [
         "Unduh aplikasi Impor-Ekspor"
@@ -778,6 +778,15 @@
       "View invoice": [
         "Lihat tagihan"
       ],
+      "Void all recovery files": [
+        "Anulir seluruh berkas pemulihan"
+      ],
+      "Void all recovery files?": [
+        "Anulir seluruh berkas pemulihan yang ada?"
+      ],
+      "Void anyway": [
+        "Tetap anulir"
+      ],
       "Warning": [
         "Peringatan"
       ],
@@ -1067,37 +1076,16 @@
       ]
     },
     "blackfriday Action": {
-      "Get limited-time deal": [
-        "Dapatkan diskon untuk waktu terbatas"
-      ],
-      "Upgrade": [
-        "Tingkatkan"
+      "Get the offer": [
+        ""
       ]
     },
     "blackfriday Info": {
-      "Discounts are based on monthly pricing.": [
-        "Diskon diberikan berdasarkan tarif bulanan."
-      ],
-      "early access to": [
-        "akses awal ke"
-      ],
-      "Free": [
-        "Gratis"
-      ],
-      "Get early access to our new encrypted drive for FREE by upgrading to a Plus bundle now.": [
-        "Dapatkan akses awal GRATIS ke drive terenkripsi baru kami dengan peningkatan ke bundel Plus sekarang."
+      "beta": [
+        "beta"
       ],
       "Includes": [
         "Termasuk"
-      ],
-      "Offer valid only for first-time paid subscriptions.": [
-        "Penawaran hanya berlaku untuk langganan berbayar pertama kali."
-      ],
-      "ProtonDrive": [
-        "ProtonDrive"
-      ],
-      "Save ${ percentage }%": [
-        "${ percentage } %"
       ],
       "Standard price: ${ regularPrice }": [
         "Harga standar: ${ regularPrice }"
@@ -1106,49 +1094,81 @@
         "Langganan ini akan otomatis diperbarui dengan tarif yang sama setelah 2 tahun hingga dibatalkan."
       ]
     },
-    "blackfriday info": {
-      "per month": [
-        "per bulan"
-      ]
-    },
-    "blackfriday Promo title, need to be short": {
-      "Special offer": [
-        "Penawaran Spesial"
-      ]
-    },
     "blackfriday Title": {
-      "(${ notice }) Renews after 1 year at a discounted annual & bundle price of ${ amount } every year (36% discount).": [
-        "(${ notice }) Perbarui setelah 1 tahun dengan harga diskon tahunan & bundel sebesar ${ amount } per tahun (diskon 36%)."
-      ],
-      "(${ notice }) Renews after 1 year at a discounted annual price of ${ amount } every year (20% discount).": [
-        "(${ notice }) Perbarui setelah 1 tahun dengan harga diskon tahunan sebesar ${ amount } per tahun (diskon 20%)."
-      ],
-      "(${ notice }) Renews after 2 years at a discounted 2-year price of ${ amount } every 2 years (47% discount).": [
-        "(${ notice }) Perbarui setelah 2 tahun dengan harga diskon 2-tahunan sebesar ${ amount } per 2 tahun (diskon 47%)."
-      ],
-      "Billed as ${ amount } ${ supNotice }": [
+      "Best deal": [
         ""
-      ],
-      "Black Friday Sale": [
-        "Obral Black Friday"
-      ],
-      "Cyber Monday Sale": [
-        "Obral Cyber Monday"
-      ],
-      "for 1 month": [
-        "untuk 1 bulan"
-      ],
-      "for 1 year": [
-        "untuk 1 tahun"
-      ],
-      "for 2 years": [
-        "untuk 2 tahun"
       ],
       "Most popular": [
         "Paling populer"
       ],
-      "ProtonDrive early access offer": [
-        "Penawaran akses awal ProtonDrive"
+      "Save more when combining Mail and VPN": [
+        ""
+      ]
+    },
+    "blackfriday: VPNspecialoffer Action": {
+      "Get the deal": [
+        "Dapatkan penawaran"
+      ],
+      "Get the deal now": [
+        "Dapatkan penawaran sekarang"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Badge popup": {
+      "${ vpnAppName } Plus Special Offer 2021 discount has been applied": [
+        ""
+      ]
+    },
+    "blackfriday: VPNspecialoffer Info": {
+      "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
+        ""
+      ],
+      "Save ${ percentage }%": [
+        "${ percentage } %"
+      ],
+      "Special offer Terms and Conditions": [
+        ""
+      ]
+    },
+    "blackfriday: VPNspecialoffer info": {
+      "per month": [
+        "per bulan"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Promo title, need to be short": {
+      "Special offer": [
+        "Penawaran Spesial"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Title": {
+      "(${ notice }) Renews after 1 month at a standard monthly price of ${ amount }": [
+        ""
+      ],
+      "(${ notice }) Renews after 1 year at a standard discounted annual price of ${ amount } (20% discount)": [
+        ""
+      ],
+      "(${ notice }) Renews after 2 years at a standard discounted 2-year price of ${ amount } (33% discount)": [
+        ""
+      ],
+      "1 month": [
+        "1 bulan"
+      ],
+      "12 months": [
+        "12 bulan"
+      ],
+      "24 months": [
+        "24 bulan"
+      ],
+      "Billed at ${ amount } for the first 2 years.${ supNotice }": [
+        ""
+      ],
+      "Billed at ${ amount } for the first month.${ supNotice }": [
+        ""
+      ],
+      "Billed at ${ amount } for the first year.${ supNotice }": [
+        ""
+      ],
+      "Get the special year-end offer on our Premium VPN PLUS plan": [
+        ""
       ]
     },
     "Bridge version load failed": {
@@ -1904,6 +1924,9 @@
       "Organization key is not decrypted.": [
         "Kunci organisasi tidak didekripsi."
       ],
+      "Organization not recognized. Try again.": [
+        "Organisasi tidak dikenal. Silakan coba lagi."
+      ],
       "Passwords do not match": [
         "Kata sandi tidak cocok"
       ],
@@ -1939,6 +1962,9 @@
       ],
       "Please refresh the page.": [
         "Harap muat ulang halaman ini."
+      ],
+      "Please set a recovery email first": [
+        "Harap tentukan alamat email pemulihan terlebih dahulu"
       ],
       "Please set a recovery phone number first": [
         "Harap atur nomor telepon pemulihan terlebih dahulu"
@@ -2053,6 +2079,9 @@
       ],
       "Uploaded file is not a valid private key. Please verify and try again.": [
         "Berkas yang terunggah bukan merupakan kunci privat yang valid. Mohon periksa dan coba lagi."
+      ],
+      "Uploaded file is not a valid recovery file. Please verify and try again.": [
+        "Berkas yang diunggah bukan merupakan berkas pemulihan yang valid. Mohon periksa dan coba lagi."
       ],
       "Uploaded files are not valid private keys. Please verify and try again.": [
         "Berkas-berkas yang terunggah bukan merupakan kunci privat yang valid. Mohon periksa dan coba lagi."
@@ -3099,6 +3128,9 @@
       "A key with the same encryption algorithm is already active for this address. Generating another key will cause slower account loading and deletion of this key can cause issues. If you are generating a new key because your old key is compromised, please mark that key as compromised. Are you sure you want to continue?": [
         "Kunci dengan algoritma enkripsi yang sama sudah aktif untuk alamat ini. Membuat kunci lain akan menyebabkan proses muat akun lebih lambat dan menimbulkan masalah saat kunci ini dihapus. Jika Anda membuat kunci baru karena kunci lama Anda bocor, mohon tandai kunci tersebut sebagai kunci bocor. Yakin ingin melanjutkan?"
       ],
+      "A recovery file lets you unlock and view your data after an account reset. ": [
+        "Berkas pemulihan akan memungkinkan Anda untuk dapat mengakses dan melihat data-data yang ada pada akun yang telah disetel ulang. "
+      ],
       "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password.": [
         "Kalimat pemulihan memungkinkan Anda mengakses akun dan memulihkan pesan terenkripsi seandainya Anda lupa kata sandi."
       ],
@@ -3111,11 +3143,26 @@
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Akses akun dibatasi karena tagihan tidak dibayar. Silakan hubungi administrator Anda."
       ],
+      "account recovery and data recovery method": [
+        "metode pemulihan akun dan data"
+      ],
+      "account recovery method": [
+        "metode pemulihan akun"
+      ],
       "Account successfully updated": [
         "Akun berhasil diperbarui"
       ],
+      "Activate your recovery phrase": [
+        "Aktifkan frasa pemulihan Anda"
+      ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"ProtonMail me\" or \"Private Message me.\"": [
         "Buat alamat surel @pm.me untuk akun Anda. Ini sederhana, kependekan dari \"ProtonMail me\" atau \"Private Message me.\""
+      ],
+      "Add a recovery email address": [
+        "Tambahkan alamat email pemulihan"
+      ],
+      "Add a recovery phone number": [
+        "Tambahkan nomor telepon pemulihan"
       ],
       "Add additional addresses to your account like user2@protonmail.com": [
         "Buat alamat tambahan untuk akun Anda seperti user2@protonmail.com"
@@ -3134,6 +3181,9 @@
       ],
       "Addresses": [
         "Alamat"
+      ],
+      "After a password reset your data is locked in encrypted form to keep it safe. To decrypt and view your emails and other data, you need a recovery file or recovery phrase.": [
+        "Setelah kata sandi Anda disetel ulang, data-data Anda akan secara otomatis terenkripsi agar keamanannya tetap terjaga. Untuk dapat kembali mengakses dan mendekripsi data-data yang ada, Anda perlu untuk mengatur suatu berkas atau frasa pemulihan."
       ],
       "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
         "Usai melakukan pembayaran dengan Bitcoin, harap ikuti instruksi di bawah untuk meningkatkan."
@@ -3417,6 +3467,9 @@
       "Download your PGP keys for use with other PGP-compatible services.": [
         "Unduh kunci PGP Anda untuk menggunakannya dengan layanan PGP lain."
       ],
+      "Download your recovery file": [
+        "Unggah berkas pemulihan Anda"
+      ],
       "Drop the file here to upload": [
         "Taruh berkas di sini untuk mengunggah"
       ],
@@ -3426,7 +3479,7 @@
       "Edit label": [
         "Edit label"
       ],
-      "Effortlessly and securely move your emails from your current provider to Proton. If you use Google, we also support calendar, and contacts imports.": [
+      "Effortlessly and securely move your emails from your current provider to Proton. If you use Google, we also support calendar and contacts imports.": [
         "Pindahkan email-email Anda dari layanan penyedia email yang Anda gunakan sebelumnya ke Proton secara mudah dan aman. Apabila Anda menggunakan Google, Anda juga dapat mengimpor kalender-kalender dan kontak-kontak yang Anda miliki."
       ],
       "Email address": [
@@ -3570,6 +3623,12 @@
       "If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly.": [
         "Jika Anda telah menyetel SPF dan DKIM, DMARC memungkinkan Anda untuk menentukan bagaimana layanan email lain harus mengirimkan email untuk domain Anda jika pemeriksaan SPF dan DKIM gagal. Hal ini dapat mempersulit pelaku spam yang berpura-pura menjadi Anda, tetapi juga dapat menyebabkan masalah pengiriman jika tidak dilakukan dengan benar."
       ],
+      "If you lose your login details and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
+        "Apabila Anda kehilangan rincian login Anda dan perlu untuk menyetel ulang akun, ${ boldImperative } bagi Anda untuk memiliki ${ boldAccountRecovery } yang aktif."
+      ],
+      "If you lose your login details and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.": [
+        "Apabila Anda kehilangan rincian login Anda dan perlu untuk menyetel ulang akun, ${ boldImperative } bagi Anda untuk memiliki ${ boldAccountAndRecovery } yang aktif. Apabila tidak, Anda tidak lagi akan dapat mengakses email-email, kontak-kontak, atau berkas-berkas yang Anda miliki setelah akun Anda disetel ulang."
+      ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to log into your account. Each code can only be used once.": [
         "Jika Anda kehilangan perangkat berkemampuan dua-faktor, kode ini dapat menggantikan kode 6 digit otentikasi dua faktor untuk masuk ke akun Anda. Setiap kode hanya dapat digunakan sekali."
       ],
@@ -3627,6 +3686,12 @@
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Mengimpor data Anda dari ${ importedEmailAddress } menuju ${ toEmail }."
       ],
+      "In case you lose your login details, we’ll send you recovery instructions via email or SMS.": [
+        "Apabila Anda kehilangan rincian login Anda, kami akan memberikan Anda arahan untuk memulihkan akses menuju akun Anda melalui email atau SMS."
+      ],
+      "In case you lose your login details, we’ll send you recovery instructions via email.": [
+        "Apabila Anda kehilangan rincian login Anda, kami akan memberikan Anda arahan untuk memulihkan akses menuju akun Anda melalui email."
+      ],
       "Included": [
         "Disertakan"
       ],
@@ -3659,6 +3724,9 @@
       ],
       "Internet connection restored.": [
         "Koneksi internet telah pulih."
+      ],
+      "it’s imperative": [
+        "sangat penting"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Anda hanya perlu menentukan pilihan Anda -- biarkan kami yang mengurus sisanya."
@@ -3762,6 +3830,9 @@
       "Next you'll need to log in to your Google account and allow us to access your data.": [
         "Selanjutnya, Anda perlu masuk ke akun Google Anda dan memberikan kami izin untuk dapat mengakses data-data Anda."
       ],
+      "No account recovery method set, you are at risk of losing access to your account": [
+        "Tidak ada metode pemulihan akun yang ditentukan. Anda beresiko kehilangan akses menuju akun Anda"
+      ],
       "No action selected": [
         "Tidak ada tindakan yang dipilih"
       ],
@@ -3770,6 +3841,9 @@
       ],
       "No contact encryption keys exist": [
         "Kunci enkripsi kontak tidak ada"
+      ],
+      "No data recovery method set, you are at risk of losing access to your data": [
+        "Tidak ada metode pemulihan data yang ditentukan. Anda beresiko kehilangan akses menuju data-data Anda"
       ],
       "No folder selected": [
         "Tidak ada folder yang dipilih"
@@ -3954,11 +4028,17 @@
       "read our two-factor authentication Guide first": [
         "baca panduan pemeriksaan dua langkah kami"
       ],
+      "Recovery files have been voided": [
+        "Berkas-berkas pemulihan telah dianulir"
+      ],
       "Recovery phrase copied to clipboard": [
         "Kalimat pemulihan disalin"
       ],
       "Recovery phrase has been disabled": [
         "Kalimat pemulihan telah dinonaktifkan"
+      ],
+      "Recovery phrase is not associated with any outdated keys.": [
+        "Frasa pemulihan tidak terhubung dengan kunci yang telah kedaluwarsa."
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Memuat ulang halaman atau ${ link } akan secara otomatis mengatasi sebagian besar masalah."
@@ -3990,8 +4070,8 @@
       "Select a service provider to get started": [
         "Pilih penyedia layanan email yang Anda gunakan untuk memulai"
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20-personal-calendar limit. You can also merge imported calendars with existing Proton calendars.": [
-        "Pilih kalender-kalender mana saja yang akan diimpor. Untuk setiap kalender yang Anda impor, sistem kami akan membuat kalender baru hingga batas maksimum 20 kalender. Anda juga dapat menggabungkan kalender-kalender yang diimpor dengan kalender-kalender Proton yang telah Anda miliki sebelumnya."
+      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit. You can also merge imported calendars with existing Proton calendars.": [
+        "Pilih kalender-kalender mana saja yang akan diimpor. Untuk setiap kalender yang Anda impor, sistem kami akan membuat kalender baru hingga batas maksimum 20 kalender personal. Anda juga dapat menggabungkan kalender-kalender yang diimpor dengan kalender-kalender Proton yang telah Anda miliki sebelumnya."
       ],
       "Server is currently down": [
         "Server sedang tidak aktif"
@@ -4167,8 +4247,8 @@
       "Unable to decrypt. Recovery phrase is not associated with any keys.": [
         "Dekripsi gagal. Kalimat pemulihan tidak tersambung dengan kunci manapun."
       ],
-      "Unable to decrypt. Recovery phrase is not associated with any outdated keys.": [
-        "Dekripsi gagal. Kalimat pemulihan tidak tersambung dengan kunci usang manapun."
+      "Unable to verify recovery file signature. Please contact support.": [
+        "Tidak dapat memverifikasi tanda tangan berkas pemulihan. Silakan hubungi layanan dukungan."
       ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Sayangnya tidak ada metode pemulihan untuk akun ini."
@@ -4232,12 +4312,6 @@
       ],
       "We advise you to use official ProtonVPN applications when possible.": [
         "Kami menyarankan Anda untuk menggunakan aplikasi resmi ProtonVPN jika memungkinkan."
-      ],
-      "We recommend adding a linked email or phone number so you can recover your account if you lose your password.": [
-        "Kami merekomendasikan agar Anda memiliki alamat email atau nomor telepon yang ditautkan agar Anda dapat memulihkan akun Anda apabila suatu saat Anda kehilangan kata sandi Anda."
-      ],
-      "We recommend adding a linked email so you can recover your account if you lose your password.": [
-        "Kami merekomendasikan agar Anda memiliki alamat email yang ditautkan agar Anda dapat memulihkan akun Anda apabila suatu saat Anda kehilangan kata sandi Anda."
       ],
       "We use 3-D Secure to protect your payments.": [
         "Kami menggunakan 3-D Secure untuk melindungi pembayaran anda."
@@ -4383,6 +4457,9 @@
       "You will soon be redirected to PayPal to verify your payment.": [
         "Anda akan segera dialihkan menuju PayPal untuk memverifikasi pembayaran anda."
       ],
+      "You won't be able to recover encrypted data after an account reset using your downloaded recovery files.": [
+        "Anda tidak akan dapat memulihkan data-data yang terenkripsi dengan berkas-berkas pemulihan yang ada pada akun yang telah disetel ulang."
+      ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, please create an address.": [
         "Akun ${ BRAND_NAME } Anda dikaitkan dengan ${ externalEmailAddress }. Untuk menggunakan ${ toAppName }, harap buat alamat email."
       ],
@@ -4394,6 +4471,9 @@
       ],
       "Your account is being upgraded, this may take up to 30 seconds.": [
         "Akun Anda sedang ditingkatkan, ini perlu waktu hingga 30 detik."
+      ],
+      "Your account recovery method is set": [
+        "Metode pemulihan akun Anda telah ditentukan"
       ],
       "Your account will be updated once the payment is cleared.": [
         "Akun anda akan diperbarui setelah pembayaran sah."
@@ -4409,6 +4489,9 @@
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "Data-data Anda telah siap untuk diimpor dari ${ importedEmailAddressStrong } ke akun Proton Anda."
+      ],
+      "Your data recovery method is set": [
+        "Metode pemulihan data Anda telah ditentukan"
       ],
       "Your email will only be used for this one-time verification.": [
         "Email Anda hanya akan digunakan untuk verifikasi satu kali ini."
@@ -5118,6 +5201,9 @@
       "End weekday": [
         "Akhir hari kerja"
       ],
+      "Enter organization name to confirm": [
+        "Masukkan nama organisasi untuk dapat melanjutkan"
+      ],
       "Enter password": [
         "Masukkan kata sandi"
       ],
@@ -5135,6 +5221,9 @@
       ],
       "extra storage": [
         "penyimpanan tambahan"
+      ],
+      "File": [
+        "Berkas"
       ],
       "Filter Name": [
         "Nama Filter"
@@ -5367,6 +5456,12 @@
       "Recovery email": [
         "Alamat email pemulihan"
       ],
+      "Recovery email address": [
+        "Alamat email pemulihan"
+      ],
+      "Recovery file": [
+        "Berkas pemulihan"
+      ],
       "Recovery phone": [
         "Telepon pemulihan"
       ],
@@ -5481,8 +5576,14 @@
       "Upload your backup key": [
         "Unggah kunci cadangan Anda"
       ],
+      "Upload your recovery file": [
+        "Unggah berkas pemulihan Anda"
+      ],
       "Uploaded private keys": [
         "Kunci-kunci privat yang terunggah"
+      ],
+      "Uploaded recovery file": [
+        "Berkas-berkas pemulihan yang terunggah"
       ],
       "URL": [
         "URL"
@@ -5569,6 +5670,9 @@
     "label": {
       "Phone number": [
         "Nomor telepon"
+      ],
+      "Recovery phone number": [
+        "Nomor telepon pemulihan"
       ],
       "Recovery phrase": [
         "Kalimat pemulihan"
@@ -5875,11 +5979,11 @@
       ]
     },
     "Mail import summary": {
-      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
-        "Impor seluruh pesan yang memiliki ${ selectedLabelsCount } label terpilih dari total ${ totalLabelsCount } label yang ada sejak ${ periodFragment } dan labeli pesan-pesan tersebut dengan label ${ label }"
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Impor seluruh pesan yang memiliki ${ selectedLabelsCount } label terpilih dari total ${ totalLabelsCount } label yang ada sejak ${ periodFragment } dan labeli pesan-pesan tersebut dengan label ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
-      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
-        "Impor seluruh pesan yang berlabel dari total ${ totalLabelsCount } label yang ada sejak ${ periodFragment } dan labeli pesan-pesan tersebut dengan label ${ label }"
+      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Impor seluruh pesan yang berlabel dari total ${ totalLabelsCount } label yang ada sejak ${ periodFragment } dan labeli pesan-pesan tersebut dengan label ${ LABEL_MARKUP_PLACEHOLDER }"
       ]
     },
     "Mail upsell feature": {
@@ -5915,6 +6019,11 @@
       ],
       "Sign in": [
         "Masuk"
+      ]
+    },
+    "Member downgrade modal": {
+      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
+        "Tindakan ini akan menghapus seluruh akun, sub-akun, dan data yang terhubung dengan organisasi Anda secara permanen."
       ]
     },
     "Message": {
@@ -6818,6 +6927,9 @@
       ],
       "Upload additional private keys": [
         "Unggah kunci privat lainnya"
+      ],
+      "Upload additional recovery files": [
+        "Unggah berkas-berkas pemulihan tambahan"
       ]
     },
     "Select search results": {
@@ -7309,6 +7421,9 @@
       "3. Select config file and download": [
         "3. Pilih berkas konfigurasi dan unduh"
       ],
+      "Account recovery": [
+        "Pemulihan akun"
+      ],
       "Account suspended": [
         "Akun ditangguhkan"
       ],
@@ -7371,9 +7486,6 @@
       ],
       "Addresses": [
         "Alamat"
-      ],
-      "Advanced": [
-        "Lanjutan"
       ],
       "Allocate storage": [
         "Alokasi penyimpanan"
@@ -7546,6 +7658,9 @@
       "Dashboard": [
         "Dasbor"
       ],
+      "Data recovery": [
+        "Pemulihan data"
+      ],
       "Date": [
         "Tanggal"
       ],
@@ -7578,6 +7693,9 @@
       ],
       "Delete logs": [
         "Hapus log"
+      ],
+      "Delete organization?": [
+        "Hapus organisasi?"
       ],
       "Delete user": [
         "Hapus pengguna"
@@ -7804,8 +7922,8 @@
       "Password & keys": [
         "Kata sandi & kunci"
       ],
-      "Password & recovery": [
-        "Kata sandi & pemulihan"
+      "Password & security": [
+        "Kata sandi & keamanan"
       ],
       "Passwords": [
         "Kata Sandi"
@@ -7873,8 +7991,11 @@
       "Reconnect your account": [
         "Sambung kembali akun Anda"
       ],
-      "Recovery & notification": [
-        "Pemulihan & pemberitahuan"
+      "Recovery": [
+        "Pemulihan"
+      ],
+      "Recovery file": [
+        "Berkas pemulihan"
       ],
       "Remove calendar": [
         "Hapus kalender"
@@ -7896,9 +8017,6 @@
       ],
       "Restore administrator privileges": [
         "Pulihkan hak administrator"
-      ],
-      "Security": [
-        "Keamanan"
       ],
       "Security logs": [
         "Catatan keamanan"
@@ -8002,6 +8120,9 @@
       "Switch to two-password mode": [
         "Beralih ke mode dua kata sandi"
       ],
+      "Take precautions to avoid data loss!": [
+        "Ambil tindakan preventif agar data-data yang ada tidak hilang!"
+      ],
       "Theme": [
         "Tema"
       ],
@@ -8055,6 +8176,9 @@
       ],
       "Your plan": [
         "Paket anda"
+      ],
+      "Your recovery status": [
+        "Status pemulihan Anda"
       ],
       "ZIP / postal code": [
         "Kode pos"

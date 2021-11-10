@@ -112,17 +112,8 @@
       "Copy email to clipboard": [
         "Salin surel ke papan klip"
       ],
-      "Copy to clipboard": [
-        "Salin ke clipboard"
-      ],
       "Create account": [
         "Buat akun"
-      ],
-      "Create new recovery phrase": [
-        "Buat frasa pemulihan baru"
-      ],
-      "Create new recovery phrase?": [
-        "Buat frasa pemulihan baru?"
       ],
       "Customize": [
         "Sesuaikan"
@@ -144,12 +135,6 @@
       ],
       "Did not receive the code?": [
         "Tidak menerima kode?"
-      ],
-      "Disable recovery phrase": [
-        "Nonaktifkan frasa pemulihan"
-      ],
-      "Disable recovery phrase?": [
-        "Nonaktifkan frasa pemulihan?"
       ],
       "Done": [
         "Selesai"
@@ -183,9 +168,6 @@
       ],
       "enable desktop notifications": [
         "mengaktifkan pemberitahuan desktop"
-      ],
-      "Enter password to continue": [
-        "Masukkan kata sandi untuk melanjutkan"
       ],
       "Get a new password": [
         "Buat kata sandi baru"
@@ -501,87 +483,98 @@
       ]
     },
     "blackfriday Action": {
-      "Get limited-time deal": [
-        ""
-      ],
-      "Upgrade": [
+      "Get the offer": [
         ""
       ]
     },
     "blackfriday Info": {
-      "Discounts are based on monthly pricing.": [
-        ""
-      ],
-      "early access to": [
-        ""
-      ],
-      "Free": [
-        ""
-      ],
-      "Get early access to our new encrypted drive for FREE by upgrading to a Plus bundle now.": [
-        ""
+      "beta": [
+        "beta"
       ],
       "Includes": [
+        "Termasuk"
+      ],
+      "Standard price: ${ regularPrice }": [
+        "Harga standar: ${ regularPrice }"
+      ],
+      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
+        "Langganan ini akan otomatis diperbarui dengan tarif yang sama setelah 2 tahun hingga dibatalkan."
+      ]
+    },
+    "blackfriday Title": {
+      "Best deal": [
         ""
       ],
-      "Offer valid only for first-time paid subscriptions.": [
-        ""
+      "Most popular": [
+        "Paling populer"
       ],
-      "ProtonDrive": [
+      "Save more when combining Mail and VPN": [
+        ""
+      ]
+    },
+    "blackfriday: VPNspecialoffer Action": {
+      "Get the deal": [
+        "Dapatkan penawaran"
+      ],
+      "Get the deal now": [
+        "Dapatkan penawaran sekarang"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Badge popup": {
+      "${ vpnAppName } Plus Special Offer 2021 discount has been applied": [
+        ""
+      ]
+    },
+    "blackfriday: VPNspecialoffer Info": {
+      "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
         ""
       ],
       "Save ${ percentage }%": [
         "${ percentage }%"
       ],
-      "Standard price: ${ regularPrice }": [
-        ""
-      ],
-      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
+      "Special offer Terms and Conditions": [
         ""
       ]
     },
-    "blackfriday info": {
+    "blackfriday: VPNspecialoffer info": {
       "per month": [
-        ""
+        "per bulan"
       ]
     },
-    "blackfriday Promo title, need to be short": {
+    "blackfriday: VPNspecialoffer Promo title, need to be short": {
       "Special offer": [
         "Penawaran Spesial"
       ]
     },
-    "blackfriday Title": {
-      "(${ notice }) Renews after 1 year at a discounted annual & bundle price of ${ amount } every year (36% discount).": [
+    "blackfriday: VPNspecialoffer Title": {
+      "(${ notice }) Renews after 1 month at a standard monthly price of ${ amount }": [
         ""
       ],
-      "(${ notice }) Renews after 1 year at a discounted annual price of ${ amount } every year (20% discount).": [
+      "(${ notice }) Renews after 1 year at a standard discounted annual price of ${ amount } (20% discount)": [
         ""
       ],
-      "(${ notice }) Renews after 2 years at a discounted 2-year price of ${ amount } every 2 years (47% discount).": [
+      "(${ notice }) Renews after 2 years at a standard discounted 2-year price of ${ amount } (33% discount)": [
         ""
       ],
-      "Billed as ${ amount } ${ supNotice }": [
+      "1 month": [
+        "1 bulan"
+      ],
+      "12 months": [
+        "12 bulan"
+      ],
+      "24 months": [
+        "24 bulan"
+      ],
+      "Billed at ${ amount } for the first 2 years.${ supNotice }": [
         ""
       ],
-      "Black Friday Sale": [
+      "Billed at ${ amount } for the first month.${ supNotice }": [
         ""
       ],
-      "Cyber Monday Sale": [
+      "Billed at ${ amount } for the first year.${ supNotice }": [
         ""
       ],
-      "for 1 month": [
-        ""
-      ],
-      "for 1 year": [
-        ""
-      ],
-      "for 2 years": [
-        ""
-      ],
-      "Most popular": [
-        ""
-      ],
-      "ProtonDrive early access offer": [
+      "Get the special year-end offer on our Premium VPN PLUS plan": [
         ""
       ]
     },
@@ -876,6 +869,9 @@
       "Not a valid number": [
         "Bukan nomor yang valid"
       ],
+      "Organization not recognized. Try again.": [
+        "Organisasi tidak dikenal. Silakan coba lagi."
+      ],
       "Passwords do not match": [
         "Sandi tidak sama"
       ],
@@ -899,6 +895,9 @@
       ],
       "Please generate keys before you try to change your password": [
         "Harap buat kunci terlebih dahulu sebelum Anda mengubah kata sandi Anda"
+      ],
+      "Please set a recovery email first": [
+        "Harap tentukan alamat email pemulihan terlebih dahulu"
       ],
       "Please set a recovery phone number first": [
         "Harap setel nomor telepon pemulihan terlebih dahulu"
@@ -1191,9 +1190,6 @@
       "A free and uncensored Internet should be available to all.": [
         "Internet yang bebas dan tanpa sensor harus tersedia untuk semua."
       ],
-      "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password.": [
-        "Frasa pemulihan memungkinkan Anda untuk dapat mengakses akun Anda dan memulihkan pesan-pesan terenkripsi yang ada di dalamnya apabila Anda lupa kata sandi."
-      ],
       "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
         "Akses konten terblokir, seperti sosial media, berita, Wikipedia, YouTube, dan masih banyak lagi, di mana pun Anda berada."
       ],
@@ -1226,9 +1222,6 @@
       ],
       "Amount below minimum (${ amount }).": [
         "Di bawah jumlah minimum (${ amount })."
-      ],
-      "Are you sure you want to continue?": [
-        "Apakah Anda yakin untuk melanjutkan?"
       ],
       "Basic, Plus or Visionary subscription required": [
         "Dibutuhkan langganan Basic, Plus atau Visionary"
@@ -1281,9 +1274,6 @@
       "Connections": [
         "Sambungan"
       ],
-      "Creating a new recovery phrase will deactivate your old one.": [
-        "Frasa pemulihan yang baru akan menggantikan frasa pemulihan yang terdahulu."
-      ],
       "Creating your account": [
         "Membuat akun anda"
       ],
@@ -1295,9 +1285,6 @@
       ],
       "Disabling this will prevent this phone number from being used for account recovery.": [
         "Menonaktifkan ini akan mencegah nomor ponsel ini digunakan untuk pemulihan akun."
-      ],
-      "Disabling this will prevent your recovery phrase from being used for account recovery.": [
-        "Menonaktifkan opsi ini akan mencegah Anda untuk dapat memulihkan akun dengan menggunakan frasa pemulihan."
       ],
       "Discount applied to your subscription with coupon ${ code }": [
         "Diskon diterapkan untuk langganan anda dengan kupon ${ code }"
@@ -1404,9 +1391,6 @@
       "If you proceed with the downgrade, you will lose access to ProtonVPN paid features.": [
         "Jika Anda meneruskan penurunan akun, Anda akan kehilangan akses ke fitur-fitur ProtonVPN berbayar."
       ],
-      "If you proceed, you will have to reset your password and will be logged out of any other active sessions.": [
-        "Apabila Anda melanjutkan proses ini, Anda harus mengatur ulang kata sandi Anda dan seluruh sesi aktif yang Anda miliki akan diberhentikan."
-      ],
       "If you remember your old password later, you can recover your existing messages.": [
         "Jika dikemudian hari Anda ingat kata sandi lama Anda, Anda bisa mendapatkan kembali pesan-pesan anda."
       ],
@@ -1418,6 +1402,12 @@
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Penting: Pastikan Anda menyimpan kode-kodea pemulihan yang ada. Apabila tidak, Anda dapat kehilangan akses ke akun Anda secara permanen jika di kala Anda kehilangan daftarkan sebagai perangkat penerima kode otentikasi dua faktor."
+      ],
+      "In case you lose your login details, we’ll send you recovery instructions via email or SMS.": [
+        "Apabila Anda kehilangan rincian login Anda, kami akan memberikan Anda arahan untuk memulihkan akses menuju akun Anda melalui email atau SMS."
+      ],
+      "In case you lose your login details, we’ll send you recovery instructions via email.": [
+        "Apabila Anda kehilangan rincian login Anda, kami akan memberikan Anda arahan untuk memulihkan akses menuju akun Anda melalui email."
       ],
       "Included": [
         "Termasuk"
@@ -1530,9 +1520,6 @@
       "Please verify the payment in the new tab.": [
         "Harap lakukan verifikasi pembayaran di tab baru."
       ],
-      "Please write your recovery phrase down in the order it appears and keep it somewhere safe. Your recovery phrase can be used to fully recover access to your account and your encrypted messages.": [
-        "Harap catat frasa pemulihan Anda sesuai urutan yang tertera dan simpan catatan tersebut di tempat yang aman. Frasa pemulihan ini nantinya akan dapat Anda gunakan untuk memulihkan akses menuju akun Anda beserta pesan-pesan yang terenkripsi di dalamnya apabila terjadi sesuatu yang tidak dikehendaki."
-      ],
       "Plus or Visionary subscription required": [
         "Dibutuhkan langganan Plus atau Visionary"
       ],
@@ -1559,12 +1546,6 @@
       ],
       "read our two-factor authentication Guide first": [
         "terlebih dahulu membaca panduan seputar otentikasi dua faktor berikut"
-      ],
-      "Recovery phrase copied to clipboard": [
-        "Frasa pemulihan disalin ke clipboard"
-      ],
-      "Recovery phrase has been disabled": [
-        "Frasa pemulihan telah dinonaktifkan"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Menyegarkan halaman atau ${ link } akan secara otomatis mengatasi sebagian besar masalah."
@@ -1647,9 +1628,6 @@
       "This plan is temporarily disabled": [
         "Paket berlangganan ini diberhentikan sementara"
       ],
-      "This will also disable two-factor authentication.": [
-        "Tindakan ini akan turut menonaktifkan otentikasi dua faktor."
-      ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
         "Ini akan membatalkan langganan berbayar Anda saat ini dan Anda akan kehilangan keuntungan loyalitas yang telah Anda kumpulkan. Saldo yang tersisa dari langganan Ada akan dikembalikan sebagai kredit akun."
       ],
@@ -1724,12 +1702,6 @@
       ],
       "We advise you to use official ProtonVPN applications when possible.": [
         "Kami menyarankan Anda untuk menggunakan aplikasi resmi ProtonVPN jika memungkinkan."
-      ],
-      "We recommend adding a linked email or phone number so you can recover your account if you lose your password.": [
-        "Kami menyarankan untuk menambahkan email atau nomor telepon yang ditautkan sehingga anda dapat memulihkan akun anda, jika anda kehilangan kata sandi anda."
-      ],
-      "We recommend adding a linked email so you can recover your account if you lose your password.": [
-        "Kami merekomendasikan menambah surel tertaut sehingga Anda dapat memulihkan akun Anda jika Anda kehilangan sandi Anda."
       ],
       "We use 3-D Secure to protect your payments.": [
         "Kami menggunakan 3-D Secure untuk melindungi pembayaran anda."
@@ -1847,12 +1819,6 @@
       ],
       "Your ProtonVPN and ProtonMail accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
         "Akun ProtonVPN dan ProtonMail Anda saling terkait. Untuk menghapus keduanya, harap masuk ke ${ loginLink } dan hapus akun Anda di sana."
-      ],
-      "Your recovery phrase": [
-        "Frasa pemulihan Anda"
-      ],
-      "Your recovery phrase is a series of 12 words in a specific order.": [
-        "Frasa pemulihan Anda tersusun atas 12 kata yang terangkai dalam urutan yang spesifik."
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Langganan Anda dikelola oleh Mozilla.\nHarap hubungi dukungan Mozilla."
@@ -1976,9 +1942,6 @@
       "Allow recovery by phone": [
         "Izinkan pemulihan dengan nomor ponsel"
       ],
-      "Allow recovery by recovery phrase": [
-        "Izinkan pemulihan akun melalui frasa pemulihan"
-      ],
       "Amount": [
         "Jumlah"
       ],
@@ -2084,6 +2047,9 @@
       "Email address": [
         "Alamat surel"
       ],
+      "Enter organization name to confirm": [
+        "Masukkan nama organisasi untuk dapat melanjutkan"
+      ],
       "Enter the 6-digit code": [
         "Masukkan kode 6 digit"
       ],
@@ -2177,8 +2143,8 @@
       "ProtonMail address": [
         "Alamat ProtonMail"
       ],
-      "Recovery phrase": [
-        "Frasa pemulihan"
+      "Recovery email address": [
+        "Alamat email pemulihan"
       ],
       "Reveal password": [
         "Perlihatkan sandi"
@@ -2264,9 +2230,6 @@
       "Your password (admin)": [
         "Kata sandi Anda (admin)"
       ],
-      "Your recovery phrase": [
-        "Frasa pemulihan Anda"
-      ],
       "ZIP": [
         "Kode pos"
       ]
@@ -2275,8 +2238,8 @@
       "Phone number": [
         "Nomor telepon"
       ],
-      "Recovery phrase": [
-        "Frasa pemulihan"
+      "Recovery phone number": [
+        "Nomor telepon pemulihan"
       ]
     },
     "Label for news": {
@@ -2484,6 +2447,11 @@
     "Many Others": {
       "and many others": [
         "dan banyak lainnya"
+      ]
+    },
+    "Member downgrade modal": {
+      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
+        "Tindakan ini akan menghapus seluruh akun, sub-akun, dan data yang terhubung dengan organisasi Anda secara permanen."
       ]
     },
     "Message": {
@@ -3196,6 +3164,9 @@
       "Delete account": [
         "Hapus akun"
       ],
+      "Delete organization?": [
+        "Hapus organisasi?"
+      ],
       "Device connected!": [
         "Perangkat tersambung!"
       ],
@@ -3343,8 +3314,8 @@
       "Provide payment details": [
         "Masukkan informasi pembayaran"
       ],
-      "Recovery & notification": [
-        "Pemulihan & pemberitahuan"
+      "Recovery": [
+        "Pemulihan"
       ],
       "Redeem coupon": [
         "Tukar kupon"

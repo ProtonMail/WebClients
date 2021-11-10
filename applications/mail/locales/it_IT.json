@@ -114,7 +114,7 @@
         "Chatta con noi"
       ],
       "Check import progress": [
-        ""
+        "Controlla l'avanzamento dell'importazione"
       ],
       "Choose a file or drag it here": [
         "Scegli un file o trascinalo qui"
@@ -197,9 +197,6 @@
       "Copy email to clipboard": [
         "Copia email negli appunti"
       ],
-      "Copy to clipboard": [
-        "Copia negli appunti"
-      ],
       "Create folder": [
         "Crea cartella"
       ],
@@ -268,8 +265,8 @@
       "Discard": [
         "Elimina"
       ],
-      "Don't secure account": [
-        "Non proteggere l'account"
+      "Dismiss get started checklist": [
+        ""
       ],
       "Done": [
         "Fatto"
@@ -398,7 +395,7 @@
         "Importa"
       ],
       "Import from .csv or vCard": [
-        ""
+        "Importa da .csv o vCard"
       ],
       "Import messages": [
         "Importa i messaggi"
@@ -577,6 +574,9 @@
       ],
       "Open calendar": [
         "Apri il calendario"
+      ],
+      "Open get started checklist modal": [
+        ""
       ],
       "Open navigation": [
         "Apri navigazione"
@@ -849,6 +849,9 @@
       "Upgrade": [
         "Effettua l'upgrade"
       ],
+      "Upgrade now": [
+        ""
+      ],
       "Upload picture": [
         "Carica immagine"
       ],
@@ -994,6 +997,11 @@
         "Benvenuto"
       ]
     },
+    "Amount of completed get started checklist items": {
+      "${ numberOfCompletedItems } of ${ totalNumberOfChecklistItems } complete": [
+        ""
+      ]
+    },
     "Apps dropdown": {
       "Go to ${ title }": [
         "Vai a ${ title }"
@@ -1070,37 +1078,16 @@
       ]
     },
     "blackfriday Action": {
-      "Get limited-time deal": [
-        "Ottieni offerta lampo"
-      ],
-      "Upgrade": [
-        "Esegui upgrade"
+      "Get the offer": [
+        ""
       ]
     },
     "blackfriday Info": {
-      "Discounts are based on monthly pricing.": [
-        "Gli sconti si basano sui prezzi mensili."
-      ],
-      "early access to": [
-        "accesso anticipato a"
-      ],
-      "Free": [
-        "Gratis"
-      ],
-      "Get early access to our new encrypted drive for FREE by upgrading to a Plus bundle now.": [
-        "Ottieni l’accesso anticipato al nostro nuovo drive crittografato GRATUITAMENTE eseguendo ora l’upgrade a un pacchetto Plus."
+      "beta": [
+        "beta"
       ],
       "Includes": [
         "Include"
-      ],
-      "Offer valid only for first-time paid subscriptions.": [
-        "Offerta valida solo per i nuovi abbonati."
-      ],
-      "ProtonDrive": [
-        "ProtonDrive"
-      ],
-      "Save ${ percentage }%": [
-        "${ percentage } %"
       ],
       "Standard price: ${ regularPrice }": [
         "Prezzo standard: ${ regularPrice }"
@@ -1109,49 +1096,81 @@
         "Questo abbonamento si rinnova automaticamente ogni 2 anni alla stessa tariffa fino a quando non viene annullato."
       ]
     },
-    "blackfriday info": {
-      "per month": [
-        "al mese"
-      ]
-    },
-    "blackfriday Promo title, need to be short": {
-      "Special offer": [
-        "Offerta Speciale"
-      ]
-    },
     "blackfriday Title": {
-      "(${ notice }) Renews after 1 year at a discounted annual & bundle price of ${ amount } every year (36% discount).": [
-        "(${ notice }) Si rinnova dopo 1 anno al prezzo forfettario scontato di ${ amount } ogni anno (36% di sconto)."
-      ],
-      "(${ notice }) Renews after 1 year at a discounted annual price of ${ amount } every year (20% discount).": [
-        "(${ notice }) Si rinnova dopo 1 anno al prezzo scontato di ${ amount } ogni anno (20% di sconto)."
-      ],
-      "(${ notice }) Renews after 2 years at a discounted 2-year price of ${ amount } every 2 years (47% discount).": [
-        "(${ notice }) Si rinnova dopo 2 anni al prezzo scontato di ${ amount } ogni 2 anni (47% di sconto)."
-      ],
-      "Billed as ${ amount } ${ supNotice }": [
+      "Best deal": [
         ""
-      ],
-      "Black Friday Sale": [
-        "Sconto Black Friday"
-      ],
-      "Cyber Monday Sale": [
-        "Sconto Cyber Monday"
-      ],
-      "for 1 month": [
-        "per 1 mese"
-      ],
-      "for 1 year": [
-        "per 1 anno"
-      ],
-      "for 2 years": [
-        "per 2 anni"
       ],
       "Most popular": [
         "Il più richiesto"
       ],
-      "ProtonDrive early access offer": [
-        "Offerta di accesso anticipato a ProtonDrive"
+      "Save more when combining Mail and VPN": [
+        ""
+      ]
+    },
+    "blackfriday: VPNspecialoffer Action": {
+      "Get the deal": [
+        "Ottieni l'offerta"
+      ],
+      "Get the deal now": [
+        "Ottieni la promo ora"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Badge popup": {
+      "${ vpnAppName } Plus Special Offer 2021 discount has been applied": [
+        ""
+      ]
+    },
+    "blackfriday: VPNspecialoffer Info": {
+      "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
+        ""
+      ],
+      "Save ${ percentage }%": [
+        "${ percentage }%"
+      ],
+      "Special offer Terms and Conditions": [
+        ""
+      ]
+    },
+    "blackfriday: VPNspecialoffer info": {
+      "per month": [
+        "al mese"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Promo title, need to be short": {
+      "Special offer": [
+        "Offerta Speciale"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Title": {
+      "(${ notice }) Renews after 1 month at a standard monthly price of ${ amount }": [
+        ""
+      ],
+      "(${ notice }) Renews after 1 year at a standard discounted annual price of ${ amount } (20% discount)": [
+        ""
+      ],
+      "(${ notice }) Renews after 2 years at a standard discounted 2-year price of ${ amount } (33% discount)": [
+        ""
+      ],
+      "1 month": [
+        "1 mese"
+      ],
+      "12 months": [
+        "12 mesi"
+      ],
+      "24 months": [
+        "24 mesi"
+      ],
+      "Billed at ${ amount } for the first 2 years.${ supNotice }": [
+        ""
+      ],
+      "Billed at ${ amount } for the first month.${ supNotice }": [
+        ""
+      ],
+      "Billed at ${ amount } for the first year.${ supNotice }": [
+        ""
+      ],
+      "Get the special year-end offer on our Premium VPN PLUS plan": [
+        ""
       ]
     },
     "Bug category": {
@@ -1456,7 +1475,7 @@
         "Il link del calendario non è accessibile"
       ],
       "Calendar link is temporarily inaccessible": [
-        ""
+        "Il link al calendario è temporaneamente inaccessibile"
       ],
       "Calendar link is wrong": [
         "Il link del calendario è sbagliato"
@@ -1908,7 +1927,7 @@
         "Errore di autenticazione."
       ],
       "Calendar limit reached": [
-        ""
+        "Limite calendario raggiunto"
       ],
       "Calendar primary private key is not decrypted": [
         "La chiave privata primaria del calendario non è decifrata"
@@ -1923,7 +1942,7 @@
         "Impossibile convalidare il telefono, riprova più tardi"
       ],
       "Checkout expired, please try again": [
-        ""
+        "Checkout scaduto, riprova"
       ],
       "Choose a date in the future.": [
         "Scegli una data nel futuro."
@@ -1945,10 +1964,10 @@
         "Firma del contatto non verificata"
       ],
       "Contact your organization’s administrator to resolve this": [
-        ""
+        "Contatta l'amministratore della tua organizzazione per risolverlo"
       ],
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
-        ""
+        "La ricerca del contenuto non può essere abilitata in questo browser. Per favore esci dalla modalità in incognito o usa un altro browser."
       ],
       "Could not find address ${ email }.": [
         "Impossibile trovare l'indirizzo ${ email }."
@@ -2027,7 +2046,7 @@
         "Data di scadenza non valida"
       ],
       "Invalid expiration time": [
-        ""
+        "Data di scadenza non valida"
       ],
       "Invalid name": [
         "Nome non valido"
@@ -2052,7 +2071,7 @@
         "Il messaggio deve essere prima inviato"
       ],
       "Message passwords do not match": [
-        ""
+        "Le password del messaggio non corrispondono"
       ],
       "Message processing error.": [
         "Errore elaborazione messaggio."
@@ -2067,7 +2086,7 @@
         "Errore di rete: per favore controlla la tua connessione e riprova."
       ],
       "No address with keys available to compose a message": [
-        ""
+        "Non c'è un indirizzo con chiavi disponibile per comporre un messaggio"
       ],
       "No key retrieved for internal user is valid for sending": [
         "Nessuna chiave recuperata per l'utente locale è valida per l'invio"
@@ -2094,6 +2113,9 @@
       "One of the groups has no contacts: ${ noContactGroupList }": [
         "Uno dei gruppi non ha contatti: ${ noContactGroupList }",
         "Alcuni gruppi non hanno contatti: ${ noContactGroupList } "
+      ],
+      "Organization not recognized. Try again.": [
+        ""
       ],
       "Passwords do not match": [
         "Le password non corrispondono"
@@ -2201,7 +2223,7 @@
         "Il nome dell'etichetta è troppo lungo. Scegli un nome diverso."
       ],
       "The maximum expiration is 4 weeks": [
-        ""
+        "La scadenza massima è di 4 settimane"
       ],
       "The minimum amount of credit that can be added is ${ _price }": [
         "L'importo minimo di credito aggiungibile è di ${ _price }"
@@ -2216,7 +2238,7 @@
         "La chiave di invio non è valida"
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
-        ""
+        "Ci sono troppe cartelle nel tuo account esterno. Personalizza l'importazione per eliminare alcune cartelle."
       ],
       "There has been an issue with content search. Default search has been used instead.": [
         ""
@@ -2246,7 +2268,7 @@
         "Questo messaggio potrebbe contenere alcuni link URL che non possono essere aperti correttamente dal browser corrente"
       ],
       "Too many active filters. Please upgrade to a paid plan to activate more filters.": [
-        ""
+        "Troppi filtri attivi. Effettua l'upgrade ad un piano a pagamento per attivare più filtri."
       ],
       "Trusted keys are not valid for sending": [
         "Le chiavi attendibili non sono valide per l'invio"
@@ -2267,8 +2289,8 @@
         "Non è possibile inviare vCard con più di 10 contatti"
       ],
       "You cannot open more than ${ maxActiveComposer } composer window at a time": [
-        "",
-        ""
+        "Non puoi aprire più di ${ maxActiveComposer } finestra del compositore per volta",
+        "Non puoi aprire più di ${ maxActiveComposer } finestre del compositore per volta"
       ],
       "You did not provide a file.": [
         "Non hai fornito un file."
@@ -2608,6 +2630,73 @@
         "Gratis"
       ]
     },
+    "Get started checklist completion": {
+      "We've added 1 GB of bonus storage to your account. Continue to explore ${ BRAND_NAME } and share your ${ protonMailAppName } address with your family, friends, and colleagues.": [
+        ""
+      ],
+      "We've added 1 GB of bonus storage to your account. For even more storage and premium features, upgrade your plan.": [
+        ""
+      ],
+      "You're a privacy champ!": [
+        ""
+      ]
+    },
+    "Get started checklist incentive": {
+      "Complete all steps and get a total of 2 GB on your account": [
+        ""
+      ],
+      "Only ${ days } day left": [
+        "",
+        ""
+      ]
+    },
+    "Get started checklist instructions": {
+      "Available on iOS and Android.": [
+        ""
+      ],
+      "Get the ${ protonMailAppName } mobile app": [
+        ""
+      ],
+      "Import contacts or emails": [
+        ""
+      ],
+      "Import your contacts or messages": [
+        ""
+      ],
+      "Quickly transfer your contacts or emails from any provider using our Easy Switch import assistant.": [
+        ""
+      ],
+      "Sign into the mobile app to complete the action": [
+        ""
+      ],
+      "Using your mobile device, scan this QR code or visit": [
+        ""
+      ]
+    },
+    "Get started checklist item": {
+      "Get mobile app": [
+        ""
+      ],
+      "Import contacts or emails": [
+        ""
+      ],
+      "Send a message": [
+        ""
+      ],
+      "Set up a recovery method": [
+        ""
+      ]
+    },
+    "Get started checklist spotlight": {
+      "You can access the checklist anytime from here": [
+        ""
+      ]
+    },
+    "Get started checklist title": {
+      "Get started": [
+        ""
+      ]
+    },
     "Group": {
       "Account": [
         "Account"
@@ -2773,16 +2862,16 @@
         "${ appName } ha bisogno del tuo permesso per ${ enableDesktopNotifications }."
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
-        "",
-        ""
+        "${ calendarsToBeCreatedCount } nuovo calendario",
+        "${ calendarsToBeCreatedCount } nuovi calendari"
       ],
       "${ calendarsToBeMerged } merged calendar": [
-        "",
-        ""
+        "${ calendarsToBeMerged } calendario unito",
+        "${ calendarsToBeMerged } calendari uniti"
       ],
       "${ calendarsToBeMergedCount } merged calendar": [
-        "",
-        ""
+        "${ calendarsToBeMergedCount } calendario unito",
+        "${ calendarsToBeMergedCount } calendari uniti"
       ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } Membro",
@@ -2834,8 +2923,8 @@
         ""
       ],
       "${ numContactGroups } contact group": [
-        "",
-        ""
+        "${ numContactGroups } gruppo di contatto",
+        "${ numContactGroups } gruppi di contatto"
       ],
       "${ numContacts } contact": [
         "${ numContacts } contatto",
@@ -2863,8 +2952,8 @@
         "${ saveExtra20 } sia su VPN che Mail aggiungendo un abbonamento VPN."
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
-        "",
-        ""
+        "${ selectedCalendarsTotal } di ${ providerCalendars.length } calendario",
+        "${ selectedCalendarsTotal } di ${ providerCalendars.length } calendari"
       ],
       "${ selectedFoldersCount } folder selected": [
         "${ selectedFoldersCount } cartella selezionata",
@@ -3115,7 +3204,7 @@
         "Clicca per vedere i dettagli del gruppo"
       ],
       "Close this screen to exit.": [
-        ""
+        "Chiudi questa schermata per uscire."
       ],
       "Confirm Password": [
         "Conferma la password"
@@ -3130,8 +3219,8 @@
         "Copiato negli appunti"
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
-        "",
-        ""
+        "Crea ${ calendarsToBeCreated } nuovo calendario",
+        "Crea ${ calendarsToBeCreated } nuovi calendari"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Crea un'etichetta per i messaggi importati, il periodo di tempo dell'importazione e le cartelle che desideri importare."
@@ -3343,7 +3432,7 @@
         "URL dell'immagine"
       ],
       "Images have been removed because they are not allowed in auto-reply": [
-        ""
+        "Le immagini sono state rimosse perché non sono permesse nella risposta automatica"
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         ""
@@ -3393,7 +3482,7 @@
         "Connessione Internet ripristinata."
       ],
       "Just confirm your selection and we'll do the rest.": [
-        ""
+        "Basta confermare la tua selezione e noi faremo il resto."
       ],
       "Justify": [
         "Giustifica"
@@ -3402,7 +3491,7 @@
         "Impronta digitale della chiave"
       ],
       "Large imports can take several days.": [
-        ""
+        "Importazioni di grandi dimensioni possono richiedere diversi giorni."
       ],
       "Learn more": [
         "Per saperne di più"
@@ -3450,7 +3539,7 @@
         "Messaggio inviato"
       ],
       "Message sent.": [
-        ""
+        "Messaggio inviato."
       ],
       "Message will be sent ${ dateString } at ${ formattedTime }": [
         "Il messaggio verrà inviato ${ dateString } alle ${ formattedTime }"
@@ -3675,7 +3764,7 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Seleziona il formato email che desideri utilizzare per impostazione predefinita quando invii un'email a questo indirizzo email."
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20-personal-calendar limit. You can also merge imported calendars with existing Proton calendars.": [
+      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit. You can also merge imported calendars with existing Proton calendars.": [
         ""
       ],
       "Sending": [
@@ -3962,7 +4051,7 @@
         "Ti reindirizzeremo a PayPal in una nuova scheda del browser per completare questa transazione. Se usi alcun blocco popup, sei pregato di disabilitarlo per continuare."
       ],
       "We'll notify you when the import is done.": [
-        ""
+        "Ti avviseremo quando l'importazione sarà completata."
       ],
       "Web URL": [
         "URL web"
@@ -3971,7 +4060,7 @@
         "Settimana"
       ],
       "What do you want to import from your Google account?": [
-        ""
+        "Cosa vuoi importare dal tuo account Google?"
       ],
       "When do you want your message to be sent?": [
         "Quando vuoi che il tuo messaggio sia inviato?"
@@ -4518,6 +4607,9 @@
       "Encrypt emails": [
         "Email criptate"
       ],
+      "Enter organization name to confirm": [
+        ""
+      ],
       "Enter the 6-digit code": [
         "Inserisci il codice a 6 cifre"
       ],
@@ -5012,23 +5104,23 @@
     },
     "Loading info": {
       "${ createdCalendars } of ${ calendarsToBeCreated } created": [
-        "",
-        ""
+        "${ createdCalendars } di ${ calendarsToBeCreated } creato",
+        "${ createdCalendars } di ${ calendarsToBeCreated } creato"
       ],
       "Almost there": [
         "Già qui"
       ],
       "Creating new calendars": [
-        ""
+        "Creazione nuovi calendari"
       ],
       "Gathering your data": [
-        ""
+        "Raccolta dei tuoi dati"
       ],
       "We're gathering your data from your provider": [
         ""
       ],
       "Your import is starting": [
-        ""
+        "La tua importazione sta iniziando"
       ]
     },
     "Mail feature": {
@@ -5113,11 +5205,11 @@
       ]
     },
     "Mail import summary": {
-      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "",
         ""
       ],
-      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "",
         ""
       ]
@@ -5154,6 +5246,11 @@
     "Many Others": {
       "and many others": [
         "e molti altri"
+      ]
+    },
+    "Member downgrade modal": {
+      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
+        ""
       ]
     },
     "Message": {
@@ -5992,6 +6089,9 @@
       ]
     },
     "Storage": {
+      "Get extra storage for free": [
+        ""
+      ],
       "Release notes": [
         "Note di rilascio"
       ],
@@ -6106,7 +6206,7 @@
         "Contatti eliminati"
       ],
       "Conversation added to ${ labelName }.": [
-        ""
+        "Conversazione aggiunta a ${ labelName }."
       ],
       "Conversation deleted": [
         "Conversazione eliminata"
@@ -6468,13 +6568,13 @@
         "Piano corrente"
       ],
       "Customize and confirm": [
-        ""
+        "Personalizza e conferma"
       ],
       "Customize calendar import": [
-        ""
+        "Personalizza l'importazione del calendario"
       ],
       "Customize your mail import": [
-        ""
+        "Personalizza l'importazione della tua mail"
       ],
       "Customize your plan": [
         "Personalizza il tuo piano"
@@ -6517,11 +6617,14 @@
       "Delete message": [
         "Elimina messaggio"
       ],
+      "Delete organization?": [
+        ""
+      ],
       "Deleting contacts": [
         "Eliminazione dei contatti"
       ],
       "Downgrade account": [
-        ""
+        "Effettua il downgrade dell'account"
       ],
       "Edit contact": [
         "Modifica contatto"
@@ -6761,7 +6864,7 @@
         "Seleziona gruppo di contatti"
       ],
       "Select what to import": [
-        ""
+        "Seleziona cosa importare"
       ],
       "Send email": [
         "Invia email"
@@ -7048,16 +7151,16 @@
     },
     "VPN Plan Feature": {
       "${ n } server": [
-        "",
-        ""
+        "${ n } server",
+        "${ n }+ server"
       ],
       "${ n } VPN connection": [
-        "",
-        ""
+        "${ n } connessione VPN",
+        "${ n } connessioni VPN"
       ],
       "${ numberOfServers } in ${ numberOfCountries } country": [
-        "",
-        ""
+        "${ numberOfServers } in ${ numberOfCountries } paese",
+        "${ numberOfServers } in ${ numberOfCountries } paesi"
       ]
     },
     "Warning": {
@@ -7099,6 +7202,9 @@
       "The attachment's signature failed verification.\nYou can still download this attachment but it might have been tampered with.": [
         "Verifica della firma dell'allegato non riuscita.\nPuoi ancora scaricare questo allegato ma potrebbe essere stato manomesso.",
         "La verifica delle firme degli allegati non è riuscita.\nPuoi ancora scaricare questi allegati ma potrebbero essere stati manomessi."
+      ],
+      "The contact data is corrupted and cannot be displayed.": [
+        ""
       ],
       "The contact failed to load.": [
         "Impossibile caricare il contatto."

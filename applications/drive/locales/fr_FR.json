@@ -188,7 +188,7 @@
         "Télécharger"
       ],
       "Drive Locked": [
-        "Drive verrouillé"
+        "Disque verrouillé"
       ],
       "Edit": [
         "Modifier"
@@ -225,6 +225,9 @@
       ],
       "Forward as attachment": [
         "Transférer en tant que pièce jointe"
+      ],
+      "Get link": [
+        "Obtenir le lien"
       ],
       "Get started": [
         "Commencer"
@@ -291,6 +294,9 @@
       ],
       "Mailbox layout": [
         "Mise en page de la boîte aux lettres"
+      ],
+      "Manage link": [
+        "Gérer le lien"
       ],
       "Mark for deletion": [
         "Marquer pour suppression"
@@ -672,37 +678,16 @@
       ]
     },
     "blackfriday Action": {
-      "Get limited-time deal": [
-        "Profiter de l'offre limitée dans le temps"
-      ],
-      "Upgrade": [
-        "S'abonner"
+      "Get the offer": [
+        ""
       ]
     },
     "blackfriday Info": {
-      "Discounts are based on monthly pricing.": [
-        "Les remises sont calculées sur les prix mensuels."
-      ],
-      "early access to": [
-        "Accès anticipé à"
-      ],
-      "Free": [
-        "Gratuit"
-      ],
-      "Get early access to our new encrypted drive for FREE by upgrading to a Plus bundle now.": [
-        "Obtenez un accès anticipé à notre nouveau service de stockage en ligne chiffré GRATUITEMENT en passant à un abonnement combiné Plus."
+      "beta": [
+        "bêta"
       ],
       "Includes": [
         "Inclut"
-      ],
-      "Offer valid only for first-time paid subscriptions.": [
-        "Offre valable exclusivement pour les nouveaux abonnements payants."
-      ],
-      "ProtonDrive": [
-        "ProtonDrive"
-      ],
-      "Save ${ percentage }%": [
-        "${ percentage }%"
       ],
       "Standard price: ${ regularPrice }": [
         "Prix normal : ${ regularPrice }"
@@ -711,49 +696,81 @@
         "Cet abonnement se renouvellera automatiquement tous les 2 ans au même tarif jusqu'à son annulation."
       ]
     },
-    "blackfriday info": {
-      "per month": [
-        "par mois"
-      ]
-    },
-    "blackfriday Promo title, need to be short": {
-      "Special offer": [
-        "Offre spéciale"
-      ]
-    },
     "blackfriday Title": {
-      "(${ notice }) Renews after 1 year at a discounted annual & bundle price of ${ amount } every year (36% discount).": [
-        "(${ notice }) Renouvellement après 1 an à un prix annuel réduit et forfaitaire de ${ amount } tous les ans (36 % de réduction)."
-      ],
-      "(${ notice }) Renews after 1 year at a discounted annual price of ${ amount } every year (20% discount).": [
-        "(${ notice }) Renouvellement après 1 an à un prix annuel réduit de ${ amount } tous les ans (20 % de réduction)."
-      ],
-      "(${ notice }) Renews after 2 years at a discounted 2-year price of ${ amount } every 2 years (47% discount).": [
-        "(${ notice }) Renouvellement après 2 ans à un prix bisannuel réduit de ${ amount } tous les 2 ans (47 % de réduction)."
-      ],
-      "Billed as ${ amount } ${ supNotice }": [
-        "Facturé ${ amount } ${ supNotice }"
-      ],
-      "Black Friday Sale": [
-        "Offre Black Friday"
-      ],
-      "Cyber Monday Sale": [
-        "Offre Cyber Monday"
-      ],
-      "for 1 month": [
-        "pendant 1 mois"
-      ],
-      "for 1 year": [
-        "pendant 1 an"
-      ],
-      "for 2 years": [
-        "pendant 2 ans"
+      "Best deal": [
+        ""
       ],
       "Most popular": [
         "Le plus populaire"
       ],
-      "ProtonDrive early access offer": [
-        "Offre d'accès anticipé à ProtonDrive"
+      "Save more when combining Mail and VPN": [
+        ""
+      ]
+    },
+    "blackfriday: VPNspecialoffer Action": {
+      "Get the deal": [
+        "Profitez de l'offre"
+      ],
+      "Get the deal now": [
+        "Profitez de l'offre maintenant"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Badge popup": {
+      "${ vpnAppName } Plus Special Offer 2021 discount has been applied": [
+        "La réduction de l'Offre Spéciale ${ vpnAppName } Plus 2021 a été appliquée"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Info": {
+      "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
+        "Les réductions sont basées sur le prix mensuel standard de ${ standardMonthlyPricing }"
+      ],
+      "Save ${ percentage }%": [
+        "${ percentage }%"
+      ],
+      "Special offer Terms and Conditions": [
+        "Conditions générales des offres spéciales"
+      ]
+    },
+    "blackfriday: VPNspecialoffer info": {
+      "per month": [
+        "par mois"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Promo title, need to be short": {
+      "Special offer": [
+        "Offre spéciale"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Title": {
+      "(${ notice }) Renews after 1 month at a standard monthly price of ${ amount }": [
+        "(${ notice }) Renouvellement après 1 moins à un prix standard mensuel de ${ amount }"
+      ],
+      "(${ notice }) Renews after 1 year at a standard discounted annual price of ${ amount } (20% discount)": [
+        "(${ notice }) Renouvellement après 1 an à un prix standard annuel réduit de ${ amount } (20% de réduction)"
+      ],
+      "(${ notice }) Renews after 2 years at a standard discounted 2-year price of ${ amount } (33% discount)": [
+        "(${ notice }) Renouvellement après 2 ans à un prix standard bisannuel réduit de ${ amount } (33% de réduction)"
+      ],
+      "1 month": [
+        "1 mois"
+      ],
+      "12 months": [
+        "12 mois"
+      ],
+      "24 months": [
+        "24 mois"
+      ],
+      "Billed at ${ amount } for the first 2 years.${ supNotice }": [
+        "Facturé ${ amount } pour les 2 premières années.${ supNotice }"
+      ],
+      "Billed at ${ amount } for the first month.${ supNotice }": [
+        "Facturé ${ amount } pour le premier mois.${ supNotice }"
+      ],
+      "Billed at ${ amount } for the first year.${ supNotice }": [
+        "Facturé ${ amount } pour la première année.${ supNotice }"
+      ],
+      "Get the special year-end offer on our Premium VPN PLUS plan": [
+        "Profitez de l'offre spéciale de fin d'année sur notre abonnement premium VPN Plus"
       ]
     },
     "Bug category": {
@@ -1211,6 +1228,9 @@
       "One of the groups has no contacts: ${ noContactGroupList }": [
         "Un des groupes n'a pas de contacts : ${ noContactGroupList }",
         "Certains groupes n'ont pas de contacts : ${ noContactGroupList } "
+      ],
+      "Organization not recognized. Try again.": [
+        "Organisation non reconnue. Réessayez."
       ],
       "Passwords do not match": [
         "Les mots de passe ne correspondent pas"
@@ -1786,7 +1806,7 @@
         "La navigation basique et les actions restent disponibles indépendamment des raccourcis clavier activés ou non dans les paramètres."
       ],
       "Because ${ appName } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
-        "Étant donné que ${ appName } est chiffré de bout en bout, nous ne pouvons pas accéder\nou déchiffrer vos fichiers pour vous. Pour déverrouiller votre lecteur après une réinitialisation de mot de passe,\nvous devez avoir l'un des éléments suivants :"
+        "Étant donné que ${ appName } est chiffré de bout en bout, nous ne pouvons pas accéder\nou déchiffrer vos fichiers pour vous. Pour déverrouiller votre disque après une réinitialisation de mot de passe,\nvous devez avoir l'un des éléments suivants :"
       ],
       "Billed as ${ billedPrice } every 2 years": [
         "Facturé ${ billedPrice } tous les 2 ans"
@@ -1840,7 +1860,7 @@
         "Connexions"
       ],
       "Continue using ${ appName } and unlock drive later": [
-        "Continuez à utiliser ${ appName } et déverrouillez le lecteur plus tard"
+        "Continuez à utiliser ${ appName } et déverrouillez le disque plus tard"
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "Créer ${ calendarsToBeCreated } nouveau calendrier",
@@ -1874,8 +1894,8 @@
         "Les fichiers CSV d'Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora et de certaines autres applications ainsi que les formats vCard 3.1 et 4.0 (encodage UTF-8) sont pris en charge."
       ],
       "Delete drive": [
-        "Supprimer le lecteur",
-        "Supprimer les lecteurs"
+        "Supprimer le disque",
+        "Supprimer les disques"
       ],
       "Discount applied to your subscription with coupon ${ code }": [
         "Remise appliquée à votre abonnement avec le code promo ${ code }"
@@ -2104,7 +2124,7 @@
         "de"
       ],
       "One of your encrypted drives is locked. This is most likely due to a recent password reset.${ BrElement }\n${ BrElement }\n${ questionText }": [
-        "L'un de vos lecteurs chiffrés est verrouillé. Ceci est probablement dû à une récente réinitialisation du mot de passe.${ BrElement }\n${ BrElement }\n${ questionText }"
+        "L'un de vos disques chiffrés est verrouillé. Ceci est probablement dû à une récente réinitialisation du mot de passe.${ BrElement }\n${ BrElement }\n${ questionText }"
       ],
       "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
         "Ne changez ces paramètres que si vous utilisez PGP avec des destinataires qui ne sont pas sur ProtonMail."
@@ -2122,7 +2142,7 @@
         "Les paiements sont protégés par le chiffrement TLS et les lois suisses dédiées à la protection de la vie privée."
       ],
       "Permanently delete all files in your drive": [
-        "Supprimez définitivement tous les fichiers de votre lecteur"
+        "Supprimez définitivement tous les fichiers de votre disque"
       ],
       "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
         "PGP/Inline est uniquement compatible avec le format texte brut. Veuillez noter que ProtonMail signe toujours les messages chiffrés."
@@ -2203,8 +2223,8 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Sélectionnez le format de message que vous souhaitez utiliser par défaut lors de l'envoi d'un courriel à cette adresse électronique."
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20-personal-calendar limit. You can also merge imported calendars with existing Proton calendars.": [
-        "Sélectionnez les calendriers à importer. Un nouveau calendrier sera créé pour chaque calendrier importé jusqu'à la limite de 20 calendriers personnels. Vous pouvez également fusionner des calendriers importés avec des calendriers Proton existants."
+      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit. You can also merge imported calendars with existing Proton calendars.": [
+        ""
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Les serveurs sont inaccessibles. Veuillez réessayer dans quelques minutes"
@@ -2313,7 +2333,7 @@
         "Corbeille"
       ],
       "Unlock drive to recover files": [
-        "Déverrouillez le lecteur pour récupérer des fichiers"
+        "Déverrouillez le disque pour récupérer des fichiers"
       ],
       "Unsupported file": [
         "Fichier non pris en charge"
@@ -2793,8 +2813,8 @@
         "Code CVC"
       ],
       "Delete Drive?": [
-        "Supprimer le lecteur ?",
-        "Supprimer les lecteurs ?"
+        "Supprimer le disque ?",
+        "Supprimer les disques ?"
       ],
       "Display name": [
         "Nom d'affichage"
@@ -2816,6 +2836,9 @@
       ],
       "Encrypt emails": [
         "Chiffrer les courriels"
+      ],
+      "Enter organization name to confirm": [
+        "Saisissez le nom de l'organisation pour confirmer"
       ],
       "Enter the 6-digit code": [
         "Saisissez le code à 6 chiffres"
@@ -3004,7 +3027,7 @@
         "Texte"
       ],
       "This will permanently delete all files in your locked drive.": [
-        "Supprimez définitivement tous les fichiers dans votre lecteur verrouillé."
+        "Supprimez définitivement tous les fichiers dans votre disque verrouillé."
       ],
       "To: ${ emailAddress }": [
         "À : ${ emailAddress }"
@@ -3025,7 +3048,7 @@
         "Déverrouiller Drive"
       ],
       "Unlock drive (recommended)": [
-        "Déverrouiller le lecteur (recommandé)"
+        "Déverrouiller le disque (recommandé)"
       ],
       "Unlock later": [
         "Déverrouiller plus tard"
@@ -3268,11 +3291,11 @@
       ]
     },
     "Mail import summary": {
-      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "",
         ""
       ],
-      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "",
         ""
       ]
@@ -3280,6 +3303,11 @@
     "Many Others": {
       "and many others": [
         "et bien d'autres"
+      ]
+    },
+    "Member downgrade modal": {
+      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
+        "Cela supprimera définitivement tous les sous-utilisateurs, comptes et données associés à votre organisation."
       ]
     },
     "Message display when a new app version is available": {
@@ -3641,21 +3669,7 @@
         "Nom"
       ]
     },
-    "Plan Feature": {
-      "${ n } server": [
-        "${ n } serveur",
-        "${ n } serveurs"
-      ],
-      "${ n } VPN connection": [
-        "${ n } connexion VPN",
-        "${ n } connexions VPN"
-      ]
-    },
     "Plan feature": {
-      "${ freeServers } in ${ freeCountries } country": [
-        "${ freeServers } dans ${ freeCountries } pays",
-        "${ freeServers } dans ${ freeCountries } pays"
-      ],
       "0.5 GB storage": [
         "0,5 Go de stockage"
       ],
@@ -3668,10 +3682,6 @@
       "1 user": [
         "1 utilisateur"
       ],
-      "1300+ servers in ${ plusCountries } country": [
-        "",
-        ""
-      ],
       "20 GB storage": [
         "20 Go de stockage"
       ],
@@ -3680,10 +3690,6 @@
       ],
       "3 folders / labels": [
         "3 dossiers/labels"
-      ],
-      "350+ servers in ${ basicCountries } country": [
-        "Plus de 350 serveurs dans ${ basicCountries } pays",
-        "Plus de 350 serveurs dans ${ basicCountries } pays"
       ],
       "5 addresses": [
         "5 adresses"
@@ -3971,9 +3977,6 @@
       "Size": [
         "Taille"
       ],
-      "Type": [
-        "Type"
-      ],
       "Uploaded": [
         "Importé"
       ],
@@ -4143,6 +4146,9 @@
       ],
       "Delete ${ Name }": [
         "Supprimer ${ Name }"
+      ],
+      "Delete organization?": [
+        "Supprimer l’organisation ?"
       ],
       "Delete permanently": [
         "Supprimer définitivement"
@@ -4680,6 +4686,20 @@
         "Windows, macOS, iOS, Linux, Android, Android TV, Chromebook, Chromecast"
       ]
     },
+    "VPN Plan Feature": {
+      "${ n } server": [
+        "${ n } serveur",
+        "Plus de ${ n } serveurs"
+      ],
+      "${ n } VPN connection": [
+        "${ n } connexion VPN",
+        "${ n } connexions VPN"
+      ],
+      "${ numberOfServers } in ${ numberOfCountries } country": [
+        "${ numberOfServers } dans ${ numberOfCountries } pays",
+        "${ numberOfServers } dans ${ numberOfCountries } pays"
+      ]
+    },
     "Warning": {
       "Are you sure you want to permanently delete ${ count } contact group?": [
         "Voulez-vous vraiment supprimer définitivement ${ count } groupe de contacts ?",
@@ -4715,6 +4735,9 @@
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "Certains contacts à fusionner affichent des erreurs. Veuillez les examiner individuellement"
+      ],
+      "The contact data is corrupted and cannot be displayed.": [
+        "Les données du contact sont corrompues et ne peuvent pas être affichées."
       ],
       "The contact failed to load.": [
         "Le chargement du contact a échoué."
