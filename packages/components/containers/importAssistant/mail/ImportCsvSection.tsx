@@ -3,11 +3,7 @@ import { SettingsParagraph, SettingsSection } from '@proton/components';
 import ImportCsvContactButton from '@proton/components/containers/contacts/widget/ImportCsvContactButton';
 import { EASY_SWITCH_SOURCE } from '@proton/shared/lib/interfaces/EasySwitch';
 
-interface Props {
-    hideEasySwitch?: boolean;
-}
-
-const ImportCsvSection = ({ hideEasySwitch = false }: Props) => (
+const ImportCsvSection = () => (
     <SettingsSection>
         <SettingsParagraph>
             {c('Info')
@@ -15,10 +11,7 @@ const ImportCsvSection = ({ hideEasySwitch = false }: Props) => (
         </SettingsParagraph>
 
         <div>
-            <ImportCsvContactButton
-                easySwitchSource={EASY_SWITCH_SOURCE.IMPORT_CONTACT_SETTINGS}
-                hideEasySwitch={hideEasySwitch}
-            />
+            <ImportCsvContactButton easySwitchSource={EASY_SWITCH_SOURCE.IMPORT_CONTACT_SETTINGS} />
         </div>
     </SettingsSection>
 );

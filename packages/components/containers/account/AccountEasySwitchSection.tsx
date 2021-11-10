@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { EASY_SWITCH_SOURCE, ImportType, PROVIDER_INSTRUCTIONS } from '@proton/shared/lib/interfaces/EasySwitch';
+import { EASY_SWITCH_SOURCE, ImportType, NON_OAUTH_PROVIDER } from '@proton/shared/lib/interfaces/EasySwitch';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 
 import { useAddresses, useFeature, useModals, useUser } from '../../hooks';
@@ -9,8 +9,7 @@ import { ProviderCard } from '../../components';
 import SettingsSectionWide from './SettingsSectionWide';
 import SettingsParagraph from './SettingsParagraph';
 
-import { ImportAssistantOauthModal } from '../easySwitch';
-import ImportMailModal from '../easySwitch/mail/modals/ImportMailModal';
+import { EasySwitchOauthModal, EasySwitchDefaultModal } from '../easySwitch';
 import { ImportProvider } from '../../components/easySwitch/ProviderCard';
 import { FeatureCode } from '../features';
 
@@ -28,7 +27,7 @@ const AccountEasySwitchSection = () => {
 
     const handleOAuthClick = () => {
         createModal(
-            <ImportAssistantOauthModal
+            <EasySwitchOauthModal
                 source={EASY_SWITCH_SOURCE.EASY_SWITCH_SETTINGS}
                 addresses={addresses}
                 defaultCheckedTypes={[
@@ -41,8 +40,8 @@ const AccountEasySwitchSection = () => {
         );
     };
 
-    const handleIMAPClick = (instructions?: PROVIDER_INSTRUCTIONS) =>
-        createModal(<ImportMailModal addresses={addresses} providerInstructions={instructions} />);
+    const handleIMAPClick = (provider?: NON_OAUTH_PROVIDER) =>
+        createModal(<EasySwitchDefaultModal addresses={addresses} provider={provider} />);
 
     const disabled = isLoading || !user.hasNonDelinquentScope;
 
@@ -60,14 +59,14 @@ const AccountEasySwitchSection = () => {
 
                 <ProviderCard
                     provider={YAHOO}
-                    onClick={() => handleIMAPClick(PROVIDER_INSTRUCTIONS.YAHOO)}
+                    onClick={() => handleIMAPClick(NON_OAUTH_PROVIDER.YAHOO)}
                     disabled={disabled}
                     className="mb1 mr1"
                 />
 
                 <ProviderCard
                     provider={OUTLOOK}
-                    onClick={() => handleIMAPClick()}
+                    onClick={() => handleIMAPClick(NON_OAUTH_PROVIDER.OUTLOOK)}
                     disabled={disabled}
                     className="mb1 mr1"
                 />

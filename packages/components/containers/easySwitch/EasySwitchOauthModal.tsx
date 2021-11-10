@@ -101,7 +101,7 @@ const getCheckedProducts = (checkedTypes: CheckedProductMap): ImportType[] =>
         return acc;
     }, []);
 
-const ImportAssistantOauthModal = ({
+const EasySwitchOauthModal = ({
     addresses,
     onClose = noop,
     defaultCheckedTypes = [],
@@ -639,4 +639,4 @@ const ImportAssistantOauthModal = ({
     );
 };
 
-export default ImportAssistantOauthModal;
+export default EasySwitchOauthModal;
