@@ -112,17 +112,8 @@
       "Copy email to clipboard": [
         "Copiar mensagem para a área de transferência"
       ],
-      "Copy to clipboard": [
-        "Copiar para a memória"
-      ],
       "Create account": [
         "Criar conta"
-      ],
-      "Create new recovery phrase": [
-        "Criar nova frase de recuperação"
-      ],
-      "Create new recovery phrase?": [
-        "Criar nova frase de recuperação?"
       ],
       "Customize": [
         "Personalizar"
@@ -144,12 +135,6 @@
       ],
       "Did not receive the code?": [
         "Não recebeu o código?"
-      ],
-      "Disable recovery phrase": [
-        "Desactivar a frase de recuperação"
-      ],
-      "Disable recovery phrase?": [
-        "Desactivar a frase de recuperação?"
       ],
       "Done": [
         "Feito"
@@ -183,9 +168,6 @@
       ],
       "enable desktop notifications": [
         "activar as notificações"
-      ],
-      "Enter password to continue": [
-        "Insira a senha para continuar"
       ],
       "Get a new password": [
         "Obter nova senha"
@@ -510,37 +492,16 @@
       ]
     },
     "blackfriday Action": {
-      "Get limited-time deal": [
-        "Aproveite a oferta por tempo limitado"
-      ],
-      "Upgrade": [
-        "Atualizar"
+      "Get the offer": [
+        ""
       ]
     },
     "blackfriday Info": {
-      "Discounts are based on monthly pricing.": [
-        "Os descontos são baseados nos preços mensais."
-      ],
-      "early access to": [
-        "acesso antecipado a"
-      ],
-      "Free": [
-        "Grátis"
-      ],
-      "Get early access to our new encrypted drive for FREE by upgrading to a Plus bundle now.": [
-        "Obtenha acesso antecipado ao nosso novo drive encriptado GRÁTIS, atualizando para um pacote Plus agora."
+      "beta": [
+        "beta"
       ],
       "Includes": [
         "Inclui"
-      ],
-      "Offer valid only for first-time paid subscriptions.": [
-        "Oferta válida apenas para assinaturas pagas novas."
-      ],
-      "ProtonDrive": [
-        ""
-      ],
-      "Save ${ percentage }%": [
-        "${ percentage }%"
       ],
       "Standard price: ${ regularPrice }": [
         "Preço padrão: ${ regularPrice }"
@@ -549,49 +510,81 @@
         "Esta assinatura será renovada automaticamente após 2 anos com a mesma taxa, até que seja cancelada."
       ]
     },
-    "blackfriday info": {
-      "per month": [
-        "por mês"
-      ]
-    },
-    "blackfriday Promo title, need to be short": {
-      "Special offer": [
-        "Oferta especial"
-      ]
-    },
     "blackfriday Title": {
-      "(${ notice }) Renews after 1 year at a discounted annual & bundle price of ${ amount } every year (36% discount).": [
-        "(${ notice }) renova após 1 ano a um preço anual com desconto e pacote de ${ amount } todos os anos (36% de desconto)."
-      ],
-      "(${ notice }) Renews after 1 year at a discounted annual price of ${ amount } every year (20% discount).": [
-        "(${ notice }) renova após 1 ano a um preço anual com desconto de ${ amount } todos os anos (20% de desconto)."
-      ],
-      "(${ notice }) Renews after 2 years at a discounted 2-year price of ${ amount } every 2 years (47% discount).": [
-        "(${ notice }) renova após 2 anos a um preço com desconto de 2 anos de ${ amount } a cada 2 anos (desconto de 47%)."
-      ],
-      "Billed as ${ amount } ${ supNotice }": [
+      "Best deal": [
         ""
-      ],
-      "Black Friday Sale": [
-        "Promoção Black Friday"
-      ],
-      "Cyber Monday Sale": [
-        "Promoção Cyber Monday"
-      ],
-      "for 1 month": [
-        "durante 1 mês"
-      ],
-      "for 1 year": [
-        "durante 1 ano"
-      ],
-      "for 2 years": [
-        "durante 2 anos"
       ],
       "Most popular": [
         "Mais populares"
       ],
-      "ProtonDrive early access offer": [
-        "Oferta de acesso antecipado ao ProtonDrive"
+      "Save more when combining Mail and VPN": [
+        ""
+      ]
+    },
+    "blackfriday: VPNspecialoffer Action": {
+      "Get the deal": [
+        "Obtenha a promoção"
+      ],
+      "Get the deal now": [
+        "Obtenha a promoção já"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Badge popup": {
+      "${ vpnAppName } Plus Special Offer 2021 discount has been applied": [
+        ""
+      ]
+    },
+    "blackfriday: VPNspecialoffer Info": {
+      "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
+        ""
+      ],
+      "Save ${ percentage }%": [
+        "${ percentage }%"
+      ],
+      "Special offer Terms and Conditions": [
+        ""
+      ]
+    },
+    "blackfriday: VPNspecialoffer info": {
+      "per month": [
+        "por mês"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Promo title, need to be short": {
+      "Special offer": [
+        "Oferta especial"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Title": {
+      "(${ notice }) Renews after 1 month at a standard monthly price of ${ amount }": [
+        ""
+      ],
+      "(${ notice }) Renews after 1 year at a standard discounted annual price of ${ amount } (20% discount)": [
+        ""
+      ],
+      "(${ notice }) Renews after 2 years at a standard discounted 2-year price of ${ amount } (33% discount)": [
+        ""
+      ],
+      "1 month": [
+        "1 mês"
+      ],
+      "12 months": [
+        "12 meses"
+      ],
+      "24 months": [
+        "24 meses"
+      ],
+      "Billed at ${ amount } for the first 2 years.${ supNotice }": [
+        ""
+      ],
+      "Billed at ${ amount } for the first month.${ supNotice }": [
+        ""
+      ],
+      "Billed at ${ amount } for the first year.${ supNotice }": [
+        ""
+      ],
+      "Get the special year-end offer on our Premium VPN PLUS plan": [
+        ""
       ]
     },
     "Bug category": {
@@ -887,6 +880,9 @@
       "Not a valid number": [
         "Número inválido"
       ],
+      "Organization not recognized. Try again.": [
+        ""
+      ],
       "Passwords do not match": [
         "As senhas não correspondem"
       ],
@@ -909,6 +905,9 @@
         "Por favor, insira \"${ dangerWord }\""
       ],
       "Please generate keys before you try to change your password": [
+        ""
+      ],
+      "Please set a recovery email first": [
         ""
       ],
       "Please set a recovery phone number first": [
@@ -1206,9 +1205,6 @@
       "A free and uncensored Internet should be available to all.": [
         "Todos devem dispor de uma Internet livre e não censurada."
       ],
-      "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password.": [
-        "Uma frase de recuperação permite o acesso à conta e recuperação das mensagens encriptadas, caso se esqueça da senha."
-      ],
       "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
         "Acesso a conteúdos bloqueados, como redes sociais, notícias, Wikipedia, YouTube e muitos outros, não importa onde esteja."
       ],
@@ -1241,9 +1237,6 @@
       ],
       "Amount below minimum (${ amount }).": [
         "Quantia abaixo do mínimo (${ amount })."
-      ],
-      "Are you sure you want to continue?": [
-        "Tem a certeza de que deseja continuar?"
       ],
       "Basic, Plus or Visionary subscription required": [
         "Requerida subscrição Basic, Plus ou Visionary"
@@ -1296,9 +1289,6 @@
       "Connections": [
         "Ligações"
       ],
-      "Creating a new recovery phrase will deactivate your old one.": [
-        "Criar uma nova frase de recuperação desactiva a frase antiga."
-      ],
       "Creating your account": [
         "A criar a sua conta"
       ],
@@ -1310,9 +1300,6 @@
       ],
       "Disabling this will prevent this phone number from being used for account recovery.": [
         "Desactivar isto impedirá que este número de telefone seja usado para recuperação da conta."
-      ],
-      "Disabling this will prevent your recovery phrase from being used for account recovery.": [
-        "Desactivar isto impedirá que a frase de recuperação seja usada para recuperação da conta."
       ],
       "Discount applied to your subscription with coupon ${ code }": [
         "Foi aplicado um desconto com o cupão ${ code }"
@@ -1419,9 +1406,6 @@
       "If you proceed with the downgrade, you will lose access to ProtonVPN paid features.": [
         "Se continuar com a regressão, perderá o acesso às funcionalidades pagas do ProtonVPN."
       ],
-      "If you proceed, you will have to reset your password and will be logged out of any other active sessions.": [
-        "Se continuar, terá de repor a senha e serão terminadas todas as sessões activas."
-      ],
       "If you remember your old password later, you can recover your existing messages.": [
         "Se se lembrar da sua senha mais tarde, poderá recuperar as mensagens existentes."
       ],
@@ -1433,6 +1417,12 @@
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Importante: certifique-se de que dispõe dos códigos de recuperação. Senão, se perder o seu dispositivo 2FA, pode perder permanentemente o acesso à sua conta."
+      ],
+      "In case you lose your login details, we’ll send you recovery instructions via email or SMS.": [
+        ""
+      ],
+      "In case you lose your login details, we’ll send you recovery instructions via email.": [
+        ""
       ],
       "Included": [
         "Incluído"
@@ -1545,9 +1535,6 @@
       "Please verify the payment in the new tab.": [
         "Por favor, verifique o pagamento no novo separador."
       ],
-      "Please write your recovery phrase down in the order it appears and keep it somewhere safe. Your recovery phrase can be used to fully recover access to your account and your encrypted messages.": [
-        "Por favor, escreva a frase de recuperação na ordem devida e guarde-a num local seguro. A frase pode ser utilizada para recuperação total do acesso à conta e às mensagens encriptadas."
-      ],
       "Plus or Visionary subscription required": [
         "Requerida subscrição Plus ou Visionary"
       ],
@@ -1575,12 +1562,6 @@
       ],
       "read our two-factor authentication Guide first": [
         ""
-      ],
-      "Recovery phrase copied to clipboard": [
-        "Frase recuperação copiada para a memória"
-      ],
-      "Recovery phrase has been disabled": [
-        "Frase de recuperação desactivada"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Actualizar a página ou ${ link } resolve automaticamente a maioria dos problemas."
@@ -1663,9 +1644,6 @@
       "This plan is temporarily disabled": [
         "Este plano está temporariamente desactivado"
       ],
-      "This will also disable two-factor authentication.": [
-        "Isto também desactiva a autenticação em dois passos."
-      ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
         "Isto cancelará a sua assinatura paga actual e perderá qualquer benefício de fidelidade acumulado. O saldo restante da sua assinatura será devolvido como créditos na conta."
       ],
@@ -1740,12 +1718,6 @@
       ],
       "We advise you to use official ProtonVPN applications when possible.": [
         "Recomendamos o uso das aplicações ProtonVPN oficiais quando possível."
-      ],
-      "We recommend adding a linked email or phone number so you can recover your account if you lose your password.": [
-        "Recomendamos que adicione um email ou número de telefone para que possa recuperar a conta caso perca a senha."
-      ],
-      "We recommend adding a linked email so you can recover your account if you lose your password.": [
-        "Recomendamos adicionar um email vinculado para recuperar a conta caso perca a senha."
       ],
       "We use 3-D Secure to protect your payments.": [
         "Utilizamos 3-D Secure para proteger os seus pagamentos."
@@ -1863,12 +1835,6 @@
       ],
       "Your ProtonVPN and ProtonMail accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
         "As suas contas ProtonVPN e ProtonMail estão interligadas. Para eliminar ambas, por favor inicie sessão em ${ loginLink } e elimine aí a sua conta."
-      ],
-      "Your recovery phrase": [
-        "A sua frase de recuperação"
-      ],
-      "Your recovery phrase is a series of 12 words in a specific order.": [
-        "A sua frase de recuperação é uma série de 12 palavras numa ordem específica."
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "A sua subscrição é gerida pela Mozilla. Por favor, contacte o suporte da Mozilla."
@@ -1996,9 +1962,6 @@
       "Allow recovery by phone": [
         "Permitir recuperação por telefone"
       ],
-      "Allow recovery by recovery phrase": [
-        "Permitir recuperação com frase"
-      ],
       "Amount": [
         "Quantia"
       ],
@@ -2104,6 +2067,9 @@
       "Email address": [
         "Endereço de email"
       ],
+      "Enter organization name to confirm": [
+        ""
+      ],
       "Enter the 6-digit code": [
         "Inserir o código de 6 algarismos"
       ],
@@ -2197,8 +2163,8 @@
       "ProtonMail address": [
         "Endereço ProtonMail"
       ],
-      "Recovery phrase": [
-        "Frase de recuperação"
+      "Recovery email address": [
+        ""
       ],
       "Reveal password": [
         "Mostrar senha"
@@ -2284,9 +2250,6 @@
       "Your password (admin)": [
         "A sua senha (admin)"
       ],
-      "Your recovery phrase": [
-        "A sua frase de recuperação"
-      ],
       "ZIP": [
         "CP"
       ]
@@ -2295,8 +2258,8 @@
       "Phone number": [
         "Número de telefone"
       ],
-      "Recovery phrase": [
-        "Frase de recuperação"
+      "Recovery phone number": [
+        ""
       ]
     },
     "Label for news": {
@@ -2504,6 +2467,11 @@
     "Many Others": {
       "and many others": [
         "e muitos outros"
+      ]
+    },
+    "Member downgrade modal": {
+      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
+        ""
       ]
     },
     "Message": {
@@ -3217,6 +3185,9 @@
       "Delete account": [
         "Eliminar conta"
       ],
+      "Delete organization?": [
+        ""
+      ],
       "Device connected!": [
         "Dispositivo ligado!"
       ],
@@ -3364,8 +3335,8 @@
       "Provide payment details": [
         "Forneça os detalhes de pagamento"
       ],
-      "Recovery & notification": [
-        "Recuperação e notificação"
+      "Recovery": [
+        ""
       ],
       "Redeem coupon": [
         "Resgatar cupão"

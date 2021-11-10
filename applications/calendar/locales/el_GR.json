@@ -663,37 +663,16 @@
       ]
     },
     "blackfriday Action": {
-      "Get limited-time deal": [
-        "Λάβετε προσφορά περιορισμένης διάρκειας"
-      ],
-      "Upgrade": [
-        "Αναβάθμιση"
+      "Get the offer": [
+        ""
       ]
     },
     "blackfriday Info": {
-      "Discounts are based on monthly pricing.": [
-        "Οι εκπτώσεις βασίζονται σε μηνιαία τιμολόγηση."
-      ],
-      "early access to": [
-        "πρώιμη πρόσβαση σε"
-      ],
-      "Free": [
-        "Δωρεάν"
-      ],
-      "Get early access to our new encrypted drive for FREE by upgrading to a Plus bundle now.": [
-        "Αποκτήστε πρώτοι πρόσβαση στον νέο κρυπτογραφημένο χώρο αποθήκευσης ΔΩΡΕΑΝ, κάνοντας τώρα αναβάθμιση σε πακέτο Plus."
+      "beta": [
+        "βήτα"
       ],
       "Includes": [
         "Περιλαμβάνει"
-      ],
-      "Offer valid only for first-time paid subscriptions.": [
-        "Η προσφορά ισχύει μόνο για τις συνδρομές που καταβάλλονται για πρώτη φορά."
-      ],
-      "ProtonDrive": [
-        "ProtonDrive"
-      ],
-      "Save ${ percentage }%": [
-        "${ percentage } %"
       ],
       "Standard price: ${ regularPrice }": [
         "Κανονική τιμή: ${ regularPrice }"
@@ -702,49 +681,81 @@
         "Αυτή η συνδρομή θα ανανεωθεί αυτόματα μετά από 2 χρόνια με την ίδια τιμή μέχρι να ακυρωθεί."
       ]
     },
-    "blackfriday info": {
-      "per month": [
-        "ανά μήνα"
-      ]
-    },
-    "blackfriday Promo title, need to be short": {
-      "Special offer": [
-        "Μοναδική προσφορά"
-      ]
-    },
     "blackfriday Title": {
-      "(${ notice }) Renews after 1 year at a discounted annual & bundle price of ${ amount } every year (36% discount).": [
-        "(${ notice }) Ανανεώνεται μετά από 1 χρόνο με εκπτωτική ετήσια τιμή πακέτου ${ amount } κάθε χρόνο (έκπτωση 36%)."
-      ],
-      "(${ notice }) Renews after 1 year at a discounted annual price of ${ amount } every year (20% discount).": [
-        "(${ notice }) Ανανεώνεται μετά από 1 έτος με ετήσια εκπτωτική τιμή ${ amount } κάθε χρόνο (έκπτωση 20%)."
-      ],
-      "(${ notice }) Renews after 2 years at a discounted 2-year price of ${ amount } every 2 years (47% discount).": [
-        "(${ notice }) Ανανεώνεται μετά από 2 χρόνια με εκπτωτική τιμή διετίας ${ amount } κάθε 2 χρόνια (έκπτωση 47%)."
-      ],
-      "Billed as ${ amount } ${ supNotice }": [
+      "Best deal": [
         ""
-      ],
-      "Black Friday Sale": [
-        "Έκπτωση Black Friday"
-      ],
-      "Cyber Monday Sale": [
-        "Έκπτωση Cyber Monday"
-      ],
-      "for 1 month": [
-        "για 1 μήνα"
-      ],
-      "for 1 year": [
-        "για 1 χρόνο"
-      ],
-      "for 2 years": [
-        "για 2 χρόνια"
       ],
       "Most popular": [
         "Τα πιο δημοφιλή"
       ],
-      "ProtonDrive early access offer": [
-        "Προσφορά πρώιμης πρόσβασης ProtonDrive"
+      "Save more when combining Mail and VPN": [
+        ""
+      ]
+    },
+    "blackfriday: VPNspecialoffer Action": {
+      "Get the deal": [
+        "Αποκτήστε την προσφορά"
+      ],
+      "Get the deal now": [
+        "Αποκτήστε την προσφορά τώρα"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Badge popup": {
+      "${ vpnAppName } Plus Special Offer 2021 discount has been applied": [
+        ""
+      ]
+    },
+    "blackfriday: VPNspecialoffer Info": {
+      "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
+        ""
+      ],
+      "Save ${ percentage }%": [
+        "- ${ percentage }%"
+      ],
+      "Special offer Terms and Conditions": [
+        ""
+      ]
+    },
+    "blackfriday: VPNspecialoffer info": {
+      "per month": [
+        "ανά μήνα"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Promo title, need to be short": {
+      "Special offer": [
+        "Μοναδική προσφορά"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Title": {
+      "(${ notice }) Renews after 1 month at a standard monthly price of ${ amount }": [
+        ""
+      ],
+      "(${ notice }) Renews after 1 year at a standard discounted annual price of ${ amount } (20% discount)": [
+        ""
+      ],
+      "(${ notice }) Renews after 2 years at a standard discounted 2-year price of ${ amount } (33% discount)": [
+        ""
+      ],
+      "1 month": [
+        "1 μήνας"
+      ],
+      "12 months": [
+        "12 μήνες"
+      ],
+      "24 months": [
+        "24 μήνες"
+      ],
+      "Billed at ${ amount } for the first 2 years.${ supNotice }": [
+        ""
+      ],
+      "Billed at ${ amount } for the first month.${ supNotice }": [
+        ""
+      ],
+      "Billed at ${ amount } for the first year.${ supNotice }": [
+        ""
+      ],
+      "Get the special year-end offer on our Premium VPN PLUS plan": [
+        ""
       ]
     },
     "Bug category": {
@@ -1468,6 +1479,9 @@
       "One of the groups has no contacts: ${ noContactGroupList }": [
         "Μία από τις ομάδες δεν έχει επαφές: : ${ noContactGroupList }",
         "Κάποιες ομάδες δεν έχουν επαφές: : ${ noContactGroupList }"
+      ],
+      "Organization not recognized. Try again.": [
+        "Ο οργανισμός δεν αναγνωρίστηκε. Δοκιμάστε ξανά."
       ],
       "Passwords do not match": [
         "Οι κωδικοί πρόσβασης δεν ταιριάζουν"
@@ -2394,8 +2408,8 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Επιλέξτε τη μορφή ηλεκτρονικού ταχυδρομείου που θέλετε να χρησιμοποιηθεί από προεπιλογή κατά την αποστολή ενός E-mail σε αυτό το E-mail."
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20-personal-calendar limit. You can also merge imported calendars with existing Proton calendars.": [
-        "Επιλέξτε ποια ημερολόγια θα εισαγάγετε. Θα δημιουργηθεί ένα νέο ημερολόγιο για κάθε εισαγόμενο ημερολόγιο μέχρι το όριο των 20 προσωπικών ημερολογίων. Μπορείτε επίσης να συγχωνεύσετε εισαγόμενα ημερολόγια με υπάρχοντα ημερολόγια Proton."
+      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit. You can also merge imported calendars with existing Proton calendars.": [
+        ""
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Οι διακομιστές είναι απρόσιτοι. Παρακαλούμε δοκιμάστε ξανά σε λίγα λεπτά"
@@ -3021,6 +3035,9 @@
       "Ends": [
         "Λήξη"
       ],
+      "Enter organization name to confirm": [
+        "Για επιβεβαίωση, εισάγετε το όνομα του οργανισμού"
+      ],
       "Enter the 6-digit code": [
         "Εισάγετε τον 6-ψήφιο κωδικό"
       ],
@@ -3440,11 +3457,11 @@
       ]
     },
     "Mail import summary": {
-      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "",
         ""
       ],
-      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "",
         ""
       ]
@@ -3452,6 +3469,11 @@
     "Many Others": {
       "and many others": [
         "και πολλές άλλες"
+      ]
+    },
+    "Member downgrade modal": {
+      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
+        ""
       ]
     },
     "Message": {
@@ -3975,21 +3997,7 @@
         "(Χωρίς όνομα)"
       ]
     },
-    "Plan Feature": {
-      "${ n } server": [
-        "${ n } διακομιστής",
-        "${ n } διακομιστές"
-      ],
-      "${ n } VPN connection": [
-        "${ n } σύνδεση VPN",
-        "${ n } συνδέσεις VPN"
-      ]
-    },
     "Plan feature": {
-      "${ freeServers } in ${ freeCountries } country": [
-        "${ freeServers } σε ${ freeCountries } χώρα",
-        "${ freeServers } σε ${ freeCountries } χώρες"
-      ],
       "0.5 GB storage": [
         "0.5 GB αποθηκευτικός χώρος"
       ],
@@ -4002,10 +4010,6 @@
       "1 user": [
         "1 χρήστης"
       ],
-      "1200+ servers in ${ plusCountries } country": [
-        "1200+ διακομιστές σε ${ plusCountries } χώρα",
-        "1200+ διακομιστές σε{ plusCountries } χώρες"
-      ],
       "20 GB storage": [
         "20 GB αποθηκευτικός χώρος"
       ],
@@ -4014,10 +4018,6 @@
       ],
       "3 folders / labels": [
         "3 φάκελοι / ετικέτες"
-      ],
-      "350+ servers in ${ basicCountries } country": [
-        "350+ διακομιστές σε ${ basicCountries } χώρα",
-        "350+ διακομιστές σε ${ basicCountries }+ χώρες"
       ],
       "5 addresses": [
         "5 διευθύνσεις"
@@ -4564,6 +4564,9 @@
       "Delete event": [
         "Διαγραφή γεγονότος"
       ],
+      "Delete organization?": [
+        "Διαγραφή οργανισμού;"
+      ],
       "Delete recurring event": [
         "Διαγραφή επαναλαμβανόμενου γεγονότους"
       ],
@@ -5040,6 +5043,20 @@
         "Windows, macOS, iOS, Linux, Android, Android TV, Chromebook, Chromecast"
       ]
     },
+    "VPN Plan Feature": {
+      "${ n } server": [
+        "${ n } διακομιστής",
+        "${ n }+ διακομιστές"
+      ],
+      "${ n } VPN connection": [
+        "${ n } σύνδεση VPN",
+        "${ n } συνδέσεις VPN"
+      ],
+      "${ numberOfServers } in ${ numberOfCountries } country": [
+        "${ numberOfServers } σε ${ numberOfCountries } χώρα",
+        "${ numberOfServers } σε ${ numberOfCountries } χώρες"
+      ]
+    },
     "Warning": {
       "Are you sure you want to permanently delete ${ count } contact group?": [
         "Είστε βέβαιοι ότι θέλετε να διαγράψετε οριστικά ${ count } ομάδα επαφής;",
@@ -5075,6 +5092,9 @@
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "Ορισμένες από τις επαφές που θα συγχωνευθούν, εμφανίζουν σφάλματα. Ελέγξτε τα ξεχωριστά"
+      ],
+      "The contact data is corrupted and cannot be displayed.": [
+        "Τα δεδομένα της επαφής είναι αλλοιωμένα και δεν μπορούν να προβληθούν."
       ],
       "The contact failed to load.": [
         "Η επαφή απέτυχε να φορτωθεί."

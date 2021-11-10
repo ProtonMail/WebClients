@@ -57,7 +57,7 @@
         "Chatten Sie mit uns"
       ],
       "Check import progress": [
-        ""
+        "Importfortschritt prüfen"
       ],
       "Choose a file or drag it here": [
         "Datei auswählen oder hier hinein ziehen"
@@ -129,7 +129,7 @@
         "Ereignis erstellen"
       ],
       "Customize": [
-        ""
+        "Anpassen"
       ],
       "Decrease": [
         "Verkleinern"
@@ -212,13 +212,13 @@
         "Erweiterte PNG-Einstellungen ausblenden"
       ],
       "Hide folders": [
-        ""
+        "Ordner ausblenden"
       ],
       "Hide info": [
         "Info ausblenden"
       ],
       "Hide labels": [
-        ""
+        "Kategorien ausblenden"
       ],
       "Hide time zones": [
         "Zeitzonen ausblenden"
@@ -233,7 +233,7 @@
         "Importieren"
       ],
       "Import from .csv or vCard": [
-        ""
+        "Aus CSV-Datei oder vCard importieren"
       ],
       "Increase": [
         "Vergrößern"
@@ -335,7 +335,7 @@
         "Vorheriges Jahr"
       ],
       "Quit": [
-        ""
+        "Beenden"
       ],
       "Re-sign": [
         "Neu signieren"
@@ -365,7 +365,7 @@
         "Diesen Teilnehmer entfernen"
       ],
       "Rename": [
-        ""
+        "Umbenennen"
       ],
       "Report a problem": [
         "Ein Problem melden"
@@ -401,13 +401,13 @@
         "Erweiterte PNG-Einstellungen anzeigen"
       ],
       "Show folders": [
-        ""
+        "Ordner anzeigen"
       ],
       "Show info": [
         "Info zeigen"
       ],
       "Show labels": [
-        ""
+        "Kategorien anzeigen"
       ],
       "Show less": [
         "Weniger anzeigen"
@@ -434,7 +434,7 @@
         "Einrichtung starten"
       ],
       "Stay": [
-        ""
+        "Nicht schließen"
       ],
       "Submit": [
         "Senden"
@@ -663,37 +663,16 @@
       ]
     },
     "blackfriday Action": {
-      "Get limited-time deal": [
-        "Befristetes Angebot nutzen"
-      ],
-      "Upgrade": [
-        "Wechseln"
+      "Get the offer": [
+        ""
       ]
     },
     "blackfriday Info": {
-      "Discounts are based on monthly pricing.": [
-        "Die Rabatte basieren auf dem Monatspreis."
-      ],
-      "early access to": [
-        "frühzeitigen Zugriff auf"
-      ],
-      "Free": [
-        "Kostenlos"
-      ],
-      "Get early access to our new encrypted drive for FREE by upgrading to a Plus bundle now.": [
-        "Nutzen Sie frühzeitig und KOSTENLOS unseren neuen verschlüsselten Cloud-Speicher, indem Sie jetzt auf ein Plus-Paket wechseln."
+      "beta": [
+        "beta"
       ],
       "Includes": [
         "Umfasst"
-      ],
-      "Offer valid only for first-time paid subscriptions.": [
-        "Das Angebot gilt nur, wenn zum ersten Mal ein kostenpflichtiges Abonnement abgeschlossen wird."
-      ],
-      "ProtonDrive": [
-        "ProtonDrive"
-      ],
-      "Save ${ percentage }%": [
-        "${ percentage } %"
       ],
       "Standard price: ${ regularPrice }": [
         "Regulärer Preis: ${ regularPrice }"
@@ -702,49 +681,81 @@
         "Dieses Abonnement verlängert sich alle zwei Jahre automatisch, bis es gekündigt wird."
       ]
     },
-    "blackfriday info": {
-      "per month": [
-        "pro Monat"
-      ]
-    },
-    "blackfriday Promo title, need to be short": {
-      "Special offer": [
-        "Sonderangebot"
-      ]
-    },
     "blackfriday Title": {
-      "(${ notice }) Renews after 1 year at a discounted annual & bundle price of ${ amount } every year (36% discount).": [
-        "(${ notice }) Verlängert sich nach einem Jahr zu einem reduzierten Paketpreis von ${ amount } pro Jahr (36 % Rabatt)."
-      ],
-      "(${ notice }) Renews after 1 year at a discounted annual price of ${ amount } every year (20% discount).": [
-        "(${ notice }) Verlängert sich nach einem Jahr zu einem reduzierten Preis von ${ amount } pro Jahr (20 % Rabatt)."
-      ],
-      "(${ notice }) Renews after 2 years at a discounted 2-year price of ${ amount } every 2 years (47% discount).": [
-        "(${ notice }) Verlängert sich nach zwei Jahren zu einem reduzierten Preis von ${ amount } für zwei Jahre (47 % Rabatt)."
-      ],
-      "Billed as ${ amount } ${ supNotice }": [
+      "Best deal": [
         ""
-      ],
-      "Black Friday Sale": [
-        "Black-Friday-Angebot"
-      ],
-      "Cyber Monday Sale": [
-        "Cyber-Monday-Angebot"
-      ],
-      "for 1 month": [
-        "für einen Monat"
-      ],
-      "for 1 year": [
-        "für ein Jahr"
-      ],
-      "for 2 years": [
-        "für zwei Jahre"
       ],
       "Most popular": [
         "Am beliebtesten"
       ],
-      "ProtonDrive early access offer": [
-        "Frühzeitiger Zugang zu ProtonDrive"
+      "Save more when combining Mail and VPN": [
+        ""
+      ]
+    },
+    "blackfriday: VPNspecialoffer Action": {
+      "Get the deal": [
+        "Jetzt zugreifen"
+      ],
+      "Get the deal now": [
+        "Jetzt zugreifen"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Badge popup": {
+      "${ vpnAppName } Plus Special Offer 2021 discount has been applied": [
+        ""
+      ]
+    },
+    "blackfriday: VPNspecialoffer Info": {
+      "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
+        ""
+      ],
+      "Save ${ percentage }%": [
+        "${ percentage } %"
+      ],
+      "Special offer Terms and Conditions": [
+        ""
+      ]
+    },
+    "blackfriday: VPNspecialoffer info": {
+      "per month": [
+        "pro Monat"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Promo title, need to be short": {
+      "Special offer": [
+        "Sonderangebot"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Title": {
+      "(${ notice }) Renews after 1 month at a standard monthly price of ${ amount }": [
+        ""
+      ],
+      "(${ notice }) Renews after 1 year at a standard discounted annual price of ${ amount } (20% discount)": [
+        ""
+      ],
+      "(${ notice }) Renews after 2 years at a standard discounted 2-year price of ${ amount } (33% discount)": [
+        ""
+      ],
+      "1 month": [
+        "1 Monat"
+      ],
+      "12 months": [
+        "12 Monate"
+      ],
+      "24 months": [
+        "24 Monate"
+      ],
+      "Billed at ${ amount } for the first 2 years.${ supNotice }": [
+        ""
+      ],
+      "Billed at ${ amount } for the first month.${ supNotice }": [
+        ""
+      ],
+      "Billed at ${ amount } for the first year.${ supNotice }": [
+        ""
+      ],
+      "Get the special year-end offer on our Premium VPN PLUS plan": [
+        "Lassen Sie sich das Jahresend-Sonderangebot für unseren Premium VPN PLUS-Tarif nicht entgehen"
       ]
     },
     "Bug category": {
@@ -943,7 +954,7 @@
     },
     "Confirm modal title": {
       "Quit import customization?": [
-        ""
+        "Importiertanpassungen beenden?"
       ]
     },
     "Contact field label": {
@@ -1301,7 +1312,7 @@
         "Authentifizierungsfehler"
       ],
       "Calendar limit reached": [
-        ""
+        "Max. Anzahl von Kalendern erreicht"
       ],
       "Calendar primary private key is not decrypted": [
         "Privater Hauptschlüssel des Kalenders wird nicht entschlüsselt"
@@ -1428,8 +1439,8 @@
         "Name der Kategorie muss angegeben werden"
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
-        "",
-        ""
+        "Mindestens ${ calendarToFixCount } Kalender mit einem bestehenden Proton-Kalender zusammenführen",
+        "Mindestens ${ calendarToFixCount } Kalender mit bestehenden Proton-Kalendern zusammenführen"
       ],
       "Missing signature": [
         "Signatur fehlt"
@@ -1468,6 +1479,9 @@
       "One of the groups has no contacts: ${ noContactGroupList }": [
         "Eine der Gruppen enthält keine Kontakte: ${ noContactGroupList }",
         "Einige Gruppen enthalten keine Kontakte: ${ noContactGroupList } "
+      ],
+      "Organization not recognized. Try again.": [
+        "Organisation nicht erkannt. Bitte versuchen Sie es erneut."
       ],
       "Passwords do not match": [
         "Die Passwörter stimmen nicht überein"
@@ -1522,10 +1536,10 @@
         "Einige Gruppen konnten nicht gelöscht werden"
       ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
-        ""
+        "Einige Ihrer Kategorienamen sind nicht verfügbar. Bitte passen Sie den Import an, um diese Namen zu bearbeiten."
       ],
       "Some of your label names exceed ProtonMail's maximum character limit. Please customize the import to edit these names.": [
-        ""
+        "Einige Ihrer Kategorienamen überschreiten die maximale von ProtonMail erlaubte Zeichenanzahl . Bitte passen Sie den Import an, um diese Namen zu bearbeiten."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Ein Problem ist aufgetreten. Bitte ${ refresh }, um fortzufahren. Wenn Ihnen diese Fehlermeldung weiterhin angezeigt wird, wenden Sie sich bitte an unser ${ supportTeam }."
@@ -1558,7 +1572,7 @@
         "Der Sendeschlüssel ist ungültig"
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
-        ""
+        "In Ihrem externen Konto gibt es zu viele Ordner. Bitte passen Sie den Import so an, dass einige Ordner gelöscht werden."
       ],
       "There was an error when exporting the contacts vCards": [
         "Es gab einen Fehler beim Exportieren der Kontakte als vCards"
@@ -1737,7 +1751,7 @@
     },
     "Filter notification": {
       "${ Label.Name } updated": [
-        ""
+        "${ Label.Name } aktualisiert"
       ]
     },
     "Free price": {
@@ -1875,16 +1889,16 @@
         "${ calendarAppName } wurde der Proton-Suite hinzugefügt. Wir würden uns freuen zu hören, was Sie davon halten!"
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
-        "",
-        ""
+        "${ calendarsToBeCreatedCount } neuer Kalender",
+        "${ calendarsToBeCreatedCount } neue Kalender"
       ],
       "${ calendarsToBeMerged } merged calendar": [
-        "",
-        ""
+        "${ calendarsToBeMerged } zusammengeführter Kalender",
+        "${ calendarsToBeMerged } zusammengeführte Kalender"
       ],
       "${ calendarsToBeMergedCount } merged calendar": [
-        "",
-        ""
+        "${ calendarsToBeMergedCount } zusammengeführter Kalender",
+        "${ calendarsToBeMergedCount } zusammengeführte Kalender"
       ],
       "${ contactEmailsLength } Member": [
         "{ contactEmailsLength } Mitglied",
@@ -1920,12 +1934,12 @@
         "${ namesWithoutLast } und ${ nameOfLast }"
       ],
       "${ numContactGroups } contact group": [
-        "",
-        ""
+        "${ numContactGroups } Kontaktgruppe",
+        "${ numContactGroups } Kontaktgruppen"
       ],
       "${ numContacts } contact": [
-        "",
-        ""
+        "${ numContacts } Kontakt",
+        "${ numContacts } Kontakte"
       ],
       "${ save20 } on your subscription by switching to ${ annualBilling }": [
         "${ save20 } bei Ihrem Abonnement, durch den Wechsel zu ${ annualBilling }"
@@ -1937,16 +1951,16 @@
         "${ saveExtra20 } sowohl bei VPN und Mail, indem Sie ein VPN-Abonnement hinzufügen."
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
-        "",
-        ""
+        "${ selectedCalendarsTotal }/${ providerCalendars.length } Kalender",
+        "${ selectedCalendarsTotal }/${ providerCalendars.length } Kalender"
       ],
       "${ selectedFoldersCount } folder selected": [
-        "",
-        ""
+        "${ selectedFoldersCount } Ordner ausgewählt",
+        "${ selectedFoldersCount } Ordner ausgewählt"
       ],
       "${ selectedFoldersCount } label selected": [
-        "",
-        ""
+        "${ selectedFoldersCount } Kategorie ausgewählt",
+        "${ selectedFoldersCount } Kategorien ausgewählt"
       ],
       "${ updated } contact updated successfully.": [
         "${ updated } Kontakt erfolgreich aktualisiert.",
@@ -2021,12 +2035,12 @@
         "Nachdem Sie Ihre Bitcoin-Zahlung getätigt haben, folgen Sie bitte den nachfolgenden Anweisungen zum Wechsel."
       ],
       "All (${ totalFoldersCount } folder)": [
-        "",
-        ""
+        "Alle ({ totalFoldersCount } $ Ordner)",
+        "Alle (${ totalFoldersCount } Ordner)"
       ],
       "All (${ totalFoldersCount } label)": [
-        "",
-        ""
+        "Alle (${ totalFoldersCount } Kategorie(n))",
+        "Alle (${ totalFoldersCount } Kategorien)"
       ],
       "Allows you to host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
         "Ermöglicht es Ihnen, E-Mail-Adressen für Ihre eigene(n) Domain(s) unter ${ mailAppName } zu hosten, z. B. max.musterman@beispiel.de"
@@ -2041,7 +2055,7 @@
         "Eine Einladung wird an die Teilnehmer des Ereignisses gesendet."
       ],
       "and": [
-        ""
+        "und"
       ],
       "At most 100 participants are allowed per invitation": [
         "Maximal 100 Teilnehmer sind pro Einladung erlaubt"
@@ -2086,26 +2100,26 @@
         "Klicken Sie auf „Neuen Code anfordern”, um einen neuen Verifizierungscode an ${ strong } senden zu lassen. Wenn diese die falsche Rufnummer ist, klicken Sie auf „Bearbeiten”, um sie zu korrigieren."
       ],
       "Close this screen to exit.": [
-        ""
+        "Schließen Sie dieses Fenster, um den Vorgang zu beenden."
       ],
       "Connections": [
         "Verbindungen"
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
-        "",
-        ""
+        "${ calendarsToBeCreated } neuen Kalender erstellen",
+        "${ calendarsToBeCreated } neue Kalender erstellen"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
-        ""
+        "Erstellen Sie eine Kategorie für die importierten Nachrichten, einen Zeitbereich für diesen Import und die Ordner, die Sie importieren möchten."
       ],
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
-        ""
+        "Erstellen Sie eine Kategorie für die importierten Nachrichten, einen Zeitbereich für diesen Import und die Kategorien (Labels), die Sie importieren möchten."
       ],
       "Create a new contact group": [
         "Neue Kontaktgruppe erstellen"
       ],
       "Create in": [
-        ""
+        "Erstellen in"
       ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "CSV-Dateien aus Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora und einigen anderen Anwendungen sowie die Formate vCard 3.1 und 4.0 (UTF-8-Kodierung) werden unterstützt."
@@ -2207,20 +2221,20 @@
         "Wenn Sie die E-Mail nicht in Ihrem Posteingang finden können, überprüfen Sie bitte Ihren Spam-Ordner."
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
-        ""
+        "${ contactsFragment } und ${ contactsGroupsFragment } importieren"
       ],
       "Import ${ selectedCalendarsCount } of ${ totalCalendarsCount } calendar": [
-        "",
-        ""
+        "${ selectedCalendarsCount }/${ totalCalendarsCount } Kalender importieren",
+        "${ selectedCalendarsCount }/${ totalCalendarsCount } Kalendern importieren"
       ],
       "Import from": [
-        ""
+        "Importieren aus"
       ],
       "Import in progress": [
-        ""
+        "Datenimport wird ausgeführt"
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
-        ""
+        "Ihre Daten werden von ${ importedEmailAddress } nach ${ toEmail } importiert."
       ],
       "Included": [
         "Enthalten"
@@ -2238,13 +2252,13 @@
         "Internetverbindung wiederhergestellt."
       ],
       "Just confirm your selection and we'll do the rest.": [
-        ""
+        "Bestätigen Sie einfach Ihre Auswahl und ProtonCalendar erledigen den Rest."
       ],
       "Key fingerprint": [
         "Fingerabdruck des Schlüssels"
       ],
       "Large imports can take several days.": [
-        ""
+        "Große Importmengen können mehrere Tage dauern."
       ],
       "Learn more": [
         "Mehr erfahren"
@@ -2265,19 +2279,19 @@
         "Kalender verwalten"
       ],
       "Merged": [
-        ""
+        "Zusammengeführt"
       ],
       "Monthly ${ onDayString }": [
         "Monatlich ${ onDayString }"
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
-        ""
+        "Benennen Sie Ihren neuen Ordner und wählen Sie den übergeordneten Ordner, in den Sie ihn einfügen möchten. Wenn Sie keinen übergeordneten Ordner auswählen, wird dieser neue Ordner als Hauptordner erstellt."
       ],
       "New": [
-        ""
+        "Neu"
       ],
       "Next you'll need to log in to your Google account and allow us to access your data.": [
-        ""
+        "Als Nächstes müssen Sie sich bei Ihrem Google-Konto anmelden und ProtonMail den Zugriff auf Ihre Daten erlauben."
       ],
       "No contacts added yet": [
         "Noch keine Kontakte hinzugefügt"
@@ -2340,7 +2354,7 @@
         "Bitte entfernen Sie die Duplikate und versuchen Sie es erneut."
       ],
       "Please select the folders you would like to import:": [
-        ""
+        "Bitte die zu importierenden Ordner auswählen:"
       ],
       "Please try again, use a different payment method, or call your bank for assistance.": [
         "Bitte versuchen Sie es erneut, verwenden Sie eine andere Zahlungsmethode oder wenden Sie sich an Ihre Bank."
@@ -2394,8 +2408,8 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Wählen Sie das Nachrichtenformat, das standardmäßig verwendet werden soll, wenn Sie eine E-Mail an diese E-Mail-Adresse senden."
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20-personal-calendar limit. You can also merge imported calendars with existing Proton calendars.": [
-        ""
+      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit. You can also merge imported calendars with existing Proton calendars.": [
+        "Wählen Sie die zu importierenden Kalender aus. Für jeden importierten Kalender wird ein neuer Kalender erstellt, bis die Grenze von 20 Kalendern erreicht ist. Sie können importierte Kalender auch mit bestehenden Proton-Kalendern zusammenführen."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Die Server sind unerreichbar. Bitte versuche es in ein paar Minuten erneut"
@@ -2524,13 +2538,13 @@
         "Sie werden in einem neuen Browser-Tab zu PayPal weitergeleitet, um diese Zahlung abzuschließen. Wenn Sie einen Popup-Blocker verwenden, deaktivieren Sie diesen bitte, um fortzufahren."
       ],
       "We'll notify you when the import is done.": [
-        ""
+        "Sie werden benachrichtigt, sobald der Datenimport abgeschlossen ist."
       ],
       "Week": [
         "Woche"
       ],
       "What do you want to import from your Google account?": [
-        ""
+        "Was möchten Sie aus Ihrem Google-Konto importieren?"
       ],
       "Which event would you like to delete?": [
         "Welches Ereignis möchten Sie löschen?"
@@ -2572,13 +2586,13 @@
         "Sie sind derzeit als „${ user.Name }” (${ user.Email }) angemeldet und haben nur eingeschränkten Zugang."
       ],
       "You can check the progress ${ importProgressLink }.": [
-        ""
+        "Sie können den Fortschritt hier ${ importProgressLink } überprüfen."
       ],
       "You can only modify personal event properties as you can't send emails from the organizer address.": [
         "Sie können nur Eigenschaften von persönlichen Ereignissen ändern, da Sie keine E-Mails von der Organisatoradresse aus senden können."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
-        ""
+        "Sie können Mitteilungen aktivieren, um Benachrichtigungen zu erhalten, sobald neue E-Mail-Nachrichten in diesem Ordner eingehen."
       ],
       "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
         "Sie haben den Beta-Zugang deaktiviert. Klicken Sie ${ refreshButton }, um die neueste Version von ${ appName } zu verwenden. Die Anwendung wird daraufhin neu heruntergeladen."
@@ -2656,7 +2670,7 @@
         "Ihre Bank benötigt aus Sicherheitsgründen eine „3-D Secure”-Bestätigung."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
-        ""
+        "Ihre Daten können nun von ${ importedEmailAddressStrong } in Ihr Proton-Konto importiert werden."
       ],
       "Your email will only be used for this one-time verification.": [
         "Ihre E-Mail-Adresse wird nur für diese einmalige Überprüfung verwendet."
@@ -2944,7 +2958,7 @@
         "Betrag in Bitcoin:"
       ],
       "Calendar": [
-        ""
+        "Kalender"
       ],
       "Cancel": [
         "Abbrechen"
@@ -2968,7 +2982,7 @@
         "Stadt"
       ],
       "Contacts": [
-        ""
+        "Kontakte"
       ],
       "Copy": [
         "Kopieren"
@@ -3010,7 +3024,7 @@
         "Nachrichtenformat"
       ],
       "Emails": [
-        ""
+        "Nachrichten"
       ],
       "Enable Beta Access": [
         "Beta-Zugang aktivieren"
@@ -3020,6 +3034,9 @@
       ],
       "Ends": [
         "Endet"
+      ],
+      "Enter organization name to confirm": [
+        "Name der Organisation zur Bestätigung eingeben"
       ],
       "Enter the 6-digit code": [
         "6-stelligen Code eingeben"
@@ -3052,10 +3069,10 @@
         "Adresszusatz"
       ],
       "Folder location": [
-        ""
+        "Pfad des Ordners"
       ],
       "From: ${ importedEmail }": [
-        ""
+        "Von: ${ importedEmail }"
       ],
       "Hide password": [
         "Passwort ausblenden"
@@ -3064,40 +3081,40 @@
         "Wie wahrscheinlich ist es, dass Sie ${ calendarAppName } einem Freund oder Kollegen empfehlen?"
       ],
       "Import all messages": [
-        ""
+        "Alle Nachrichten importieren"
       ],
       "Import contacts": [
         "Kontakte importieren"
       ],
       "Import interval": [
-        ""
+        "Importhäufigkeit"
       ],
       "Import to email address": [
-        ""
+        "In E-Mail-Adresse importieren"
       ],
       "Keyboard shortcuts": [
         "Tastaturkürzel"
       ],
       "Label messages as": [
-        ""
+        "Nachrichten kennzeichnen als"
       ],
       "Last 12 months only": [
-        ""
+        "Nur die letzten 12 Monate"
       ],
       "Last 3 months only": [
-        ""
+        "Nur die letzten 3 Monate"
       ],
       "Last month only": [
-        ""
+        "Nur den letzten Monat"
       ],
       "Mailbox password": [
         "Postfach-Passwort"
       ],
       "Manage folders": [
-        ""
+        "Ordner verwalten"
       ],
       "Manage labels": [
-        ""
+        "Kategorien verwalten"
       ],
       "Name": [
         "Name"
@@ -3106,7 +3123,7 @@
         "Karteninhaber"
       ],
       "Notification": [
-        ""
+        "Benachrichtigungen"
       ],
       "Operating system": [
         "Betriebssystem"
@@ -3197,7 +3214,7 @@
         "Zeitpunkt des Ereignisses"
       ],
       "To: ${ emailAddress }": [
-        ""
+        "An: ${ emailAddress }"
       ],
       "Total": [
         "Gesamt"
@@ -3274,21 +3291,21 @@
     },
     "Label/folder modal": {
       "Create folder": [
-        ""
+        "Ordner erstellen"
       ],
       "Create label": [
-        ""
+        "Kategorie erstellen"
       ],
       "Edit folder": [
-        ""
+        "Ordner bearbeiten"
       ],
       "Edit label": [
-        ""
+        "Kategorie bearbeiten"
       ]
     },
     "label/folder notification": {
       "${ Label.Name } created": [
-        ""
+        "${ Label.Name } erstellt"
       ]
     },
     "Layout mode": {
@@ -3343,19 +3360,19 @@
         "${ createdCalendars }/${ calendarsToBeCreated } erstellt"
       ],
       "Almost there": [
-        ""
+        "Fast geschafft"
       ],
       "Creating new calendars": [
-        ""
+        "Neue Kalender werden angelegt"
       ],
       "Gathering your data": [
-        ""
+        "Ihre Daten werden zusammengestellt"
       ],
       "We're gathering your data from your provider": [
-        ""
+        "ProtonCalendar erfasst die Daten bei Ihrem Anbieter"
       ],
       "Your import is starting": [
-        ""
+        "Ihr Datenimport wurde gestartet"
       ]
     },
     "Mail feature": {
@@ -3440,18 +3457,23 @@
       ]
     },
     "Mail import summary": {
-      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
-        "Importiert alle Nachrichten aus ${ selectedLabelsCount }/${ totalLabelsCount } Kategorie seit ${ periodFragment } und kennzeichnet diese als „${ label }”",
-        "Importiert alle Nachrichten aus ${ selectedLabelsCount }/${ totalLabelsCount } Kategorien seit ${ periodFragment } und kennzeichnet diese als „${ label }”"
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importiert alle Nachrichten aus ${ selectedLabelsCount }/${ totalLabelsCount } Kategorie seit ${ periodFragment } und kennzeichnet diese als „${ LABEL_MARKUP_PLACEHOLDER }”",
+        "Importiert alle Nachrichten aus ${ selectedLabelsCount }/${ totalLabelsCount } Kategorien seit ${ periodFragment } und kennzeichnet diese als „${ LABEL_MARKUP_PLACEHOLDER }”"
       ],
-      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
-        "Importiert alle Nachrichten aus ${ totalLabelsCount } Kategorie seit ${ periodFragment } und kennzeichnet sie als „${ label }”",
-        "Importiert alle Nachrichten aus ${ totalLabelsCount } Kategorien seit ${ periodFragment } und kennzeichnet sie als „${ label }”"
+      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importiert alle Nachrichten aus ${ totalLabelsCount } Kategorie seit ${ periodFragment } und kennzeichnet diese als „${ LABEL_MARKUP_PLACEHOLDER }”",
+        "Importiert alle Nachrichten aus ${ totalLabelsCount } Kategorien seit ${ periodFragment } und kennzeichnet diese als „${ LABEL_MARKUP_PLACEHOLDER }”"
       ]
     },
     "Many Others": {
       "and many others": [
         "und viele andere"
+      ]
+    },
+    "Member downgrade modal": {
+      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
+        "Dadurch werden alle Unterbenutzer, Konten und Daten, die mit Ihrer Organisation verknüpft sind, unwiderruflich gelöscht."
       ]
     },
     "Message": {
@@ -3620,13 +3642,13 @@
     },
     "New Label form": {
       "Color": [
-        ""
+        "Farbe"
       ],
       "Folder name": [
-        ""
+        "Ordnername"
       ],
       "Label name": [
-        ""
+        "Name der Kategorie"
       ]
     },
     "Notification": {
@@ -3826,7 +3848,7 @@
         "Monate"
       ],
       "No parent folder": [
-        ""
+        "Kein übergeordneter Ordner"
       ],
       "This and future events": [
         "Dieses und zukünftige Ereignisse"
@@ -3845,10 +3867,10 @@
     },
     "Option group label": {
       "Create new calendar": [
-        ""
+        "Neuen Kalender erstellen"
       ],
       "Merge with calendar": [
-        ""
+        "Zusammenführen mit Kalender"
       ]
     },
     "Participant name": {
@@ -3975,21 +3997,7 @@
         "(Kein Name)"
       ]
     },
-    "Plan Feature": {
-      "${ n } server": [
-        "${ n } Server",
-        "${ n } Server"
-      ],
-      "${ n } VPN connection": [
-        "${ n } VPN-Verbindung",
-        "${ n } VPN-Verbindungen"
-      ]
-    },
     "Plan feature": {
-      "${ freeServers } in ${ freeCountries } country": [
-        "${ freeServers } in ${ freeCountries } Land",
-        "${ freeServers } in ${ freeCountries } Ländern"
-      ],
       "0.5 GB storage": [
         "500 MB Speicherplatz"
       ],
@@ -4002,10 +4010,6 @@
       "1 user": [
         "1 Benutzer"
       ],
-      "1200+ servers in ${ plusCountries } country": [
-        "Mehr als 1.200 Server in ${ plusCountries } Land",
-        "Mehr als 1.200 Server in ${ plusCountries } Ländern"
-      ],
       "20 GB storage": [
         "20 GB Speicherplatz"
       ],
@@ -4014,10 +4018,6 @@
       ],
       "3 folders / labels": [
         "3 Ordner/Kategorien"
-      ],
-      "350+ servers in ${ basicCountries } country": [
-        "Mehr als 350 Server in ${ basicCountries } Land",
-        "Mehr als 350 Server in ${ basicCountries } Ländern"
       ],
       "5 addresses": [
         "5 E-Mail-Adressen"
@@ -4539,13 +4539,13 @@
         "Aktueller Tarif"
       ],
       "Customize and confirm": [
-        ""
+        "Anpassen und Bestätigen"
       ],
       "Customize calendar import": [
-        ""
+        "Kalender-Import anpassen"
       ],
       "Customize your mail import": [
-        ""
+        "E-Mail-Import anpassen"
       ],
       "Customize your plan": [
         "Paket anpassen"
@@ -4563,6 +4563,9 @@
       ],
       "Delete event": [
         "Ereignis löschen"
+      ],
+      "Delete organization?": [
+        "Organisation entfernen?"
       ],
       "Delete recurring event": [
         "Wiederkehrendes Ereignis löschen"
@@ -4778,7 +4781,7 @@
         "Auswählen, wie diese Benachrichtigung gesendet werden soll"
       ],
       "Select what to import": [
-        ""
+        "Auswählen, welche Daten importiert werden sollen"
       ],
       "Select when this event will stop happening": [
         "Auswählen, wann dieses Ereignis beendet ist"
@@ -4874,7 +4877,7 @@
         "Rabatt für zweijährigen Abrechnungszeitraum eingelöst"
       ],
       "Each imported email will have this label": [
-        ""
+        "Alle importierten Nachrichten werden dieser Kategorie zugeordnet"
       ],
       "Email encryption forces email signature to help authenticate your sent messages": [
         "E-Mail-Verschlüsselung erzwingt E-Mail-Signatur zur Authentifizierung Ihrer gesendeten Nachrichten"
@@ -4913,10 +4916,10 @@
         "Unterstützung für Dateiübertragungsprotokolle wie BitTorrent."
       ],
       "System subfolders will show up as separate folders in ProtonMail": [
-        ""
+        "Systemunterordner werden in ProtonMail als separate Ordner angezeigt"
       ],
       "The import will start with the most recent messages.": [
-        ""
+        "Der Importvorgang beginnt mit den neuesten Nachrichten."
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Das Hochladen eines öffentlichen Schlüssels ermöglicht das Senden von Ende-zu-Ende verschlüsselten Nachrichten an diese E-Mail-Adresse"
@@ -5040,6 +5043,20 @@
         "Windows, macOS, iOS, Linux, Android, Android TV, Chromebook, Chromecast"
       ]
     },
+    "VPN Plan Feature": {
+      "${ n } server": [
+        "${ n } Server",
+        "Mehr als ${ n } Server"
+      ],
+      "${ n } VPN connection": [
+        "${ n } VPN-Verbindung",
+        "${ n } VPN-Verbindungen"
+      ],
+      "${ numberOfServers } in ${ numberOfCountries } country": [
+        "${ numberOfServers } in ${ numberOfCountries } Land",
+        "${ numberOfServers } in ${ numberOfCountries } Ländern"
+      ]
+    },
     "Warning": {
       "Are you sure you want to permanently delete ${ count } contact group?": [
         "Möchten Sie wirklich ${ count } Kontaktgruppe dauerhaft löschen?",
@@ -5068,13 +5085,16 @@
         "Bitte beachten Sie, dass Ihr Konto durch die Wahl dieser Zahlungsmethode nicht sofort umgestellt werden kann. Wir werden Ihr Konto aktualisieren, sobald die Zahlung eingegangen ist."
       ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
-        ""
+        "Proton wird alle Ordner mit dem gleichen Namen zusammenführen. Um dies zu vermeiden, ändern Sie vor dem Import deren Namen."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Berichte sind nicht Ende-zu-Ende-verschlüsselt. Bitte senden Sie daher keine sensiblen Informationen."
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "Einige der zusammenzuführenden Kontakte enthalten Fehler. Bitte überprüfen Sie diese einzeln"
+      ],
+      "The contact data is corrupted and cannot be displayed.": [
+        "Die Kontaktdaten sind beschädigt und können nicht angezeigt werden."
       ],
       "The contact failed to load.": [
         "Der Kontakt konnte nicht geladen werden."
@@ -5098,7 +5118,7 @@
         "Leider sind wir derzeit nicht verfügbar. Bitte füllen Sie das nachstehende Formular aus, um Ihr Problem zu beschreiben. Wir werden es prüfen und uns melden, sobald wir wieder online sind."
       ],
       "You will lose any customization you made so far.": [
-        ""
+        "Sie verlieren damit alle bisher vorgenommenen Änderungen."
       ]
     },
     "Weekly recurring event, frequency": {

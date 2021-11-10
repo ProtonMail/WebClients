@@ -66,7 +66,7 @@
         "Converse conosco"
       ],
       "Check import progress": [
-        ""
+        "Conferir o progresso da importação"
       ],
       "Choose a file or drag it here": [
         "Escolha um arquivo ou arraste-o aqui"
@@ -147,7 +147,7 @@
         "Data de criação: antigo para novo"
       ],
       "Customize": [
-        ""
+        "Personalizar"
       ],
       "Decrease": [
         "Diminuir"
@@ -188,7 +188,7 @@
         "Baixar"
       ],
       "Drive Locked": [
-        ""
+        "Unidade bloqueada"
       ],
       "Edit": [
         "Editar"
@@ -197,7 +197,7 @@
         "Editar endereço de e-mail"
       ],
       "Edit label": [
-        ""
+        "Editar marcador"
       ],
       "Edit phone number": [
         "Editar número de telefone"
@@ -225,6 +225,9 @@
       ],
       "Forward as attachment": [
         "Encaminhar como anexo"
+      ],
+      "Get link": [
+        ""
       ],
       "Get started": [
         "Começar"
@@ -291,6 +294,9 @@
       ],
       "Mailbox layout": [
         "Layout da caixa de correio"
+      ],
+      "Manage link": [
+        ""
       ],
       "Mark for deletion": [
         "Marcar para exclusão"
@@ -461,7 +467,7 @@
         "Mostrar configurações PGP avançadas"
       ],
       "Show folders": [
-        ""
+        "Mostrar pastas"
       ],
       "Show info": [
         "Mostrar informação"
@@ -548,10 +554,10 @@
         "Carregar imagem"
       ],
       "Uploaded date: new to old": [
-        ""
+        "Data de upload: novo para antigo"
       ],
       "Uploaded date: old to new": [
-        ""
+        "Data de upload: antigo para novo"
       ],
       "Use ${ label } theme": [
         "Usar o tema ${ label }"
@@ -672,37 +678,16 @@
       ]
     },
     "blackfriday Action": {
-      "Get limited-time deal": [
-        "Obter o desconto por tempo limitado"
-      ],
-      "Upgrade": [
-        "Fazer upgrade"
+      "Get the offer": [
+        ""
       ]
     },
     "blackfriday Info": {
-      "Discounts are based on monthly pricing.": [
-        "Os descontos são baseados nos preços mensais."
-      ],
-      "early access to": [
-        "acesso antecipado ao"
-      ],
-      "Free": [
-        "Grátis"
-      ],
-      "Get early access to our new encrypted drive for FREE by upgrading to a Plus bundle now.": [
-        "Obtenha acesso antecipado ao nosso novo drive criptografado GRATUITAMENTE, fazendo upgrade para um plano Plus agora."
+      "beta": [
+        "beta"
       ],
       "Includes": [
         "Inclui"
-      ],
-      "Offer valid only for first-time paid subscriptions.": [
-        "Oferta válida apenas para novas assinaturas pagas."
-      ],
-      "ProtonDrive": [
-        "ProtonDrive"
-      ],
-      "Save ${ percentage }%": [
-        "${ percentage }%"
       ],
       "Standard price: ${ regularPrice }": [
         "Preço normal: ${ regularPrice }"
@@ -711,49 +696,81 @@
         "Esta assinatura será renovada automaticamente após 2 anos pelo mesmo valor, a menos que seja cancelada."
       ]
     },
-    "blackfriday info": {
-      "per month": [
-        "por mês"
-      ]
-    },
-    "blackfriday Promo title, need to be short": {
-      "Special offer": [
-        "Oferta especial"
-      ]
-    },
     "blackfriday Title": {
-      "(${ notice }) Renews after 1 year at a discounted annual & bundle price of ${ amount } every year (36% discount).": [
-        "(${ notice }) É renovado após 1 ano a um preço anual reduzido e combinado de ${ amount } por ano (36% de desconto)."
-      ],
-      "(${ notice }) Renews after 1 year at a discounted annual price of ${ amount } every year (20% discount).": [
-        "(${ notice }) É renovado após 1 ano a um preço anual reduzido de ${ amount } por ano (20% de desconto)."
-      ],
-      "(${ notice }) Renews after 2 years at a discounted 2-year price of ${ amount } every 2 years (47% discount).": [
-        "(${ notice }) É renovado após 2 anos a um preço reduzido de ${ amount } a cada 2 anos (47% de desconto)."
-      ],
-      "Billed as ${ amount } ${ supNotice }": [
+      "Best deal": [
         ""
-      ],
-      "Black Friday Sale": [
-        "Promoção da Black Friday"
-      ],
-      "Cyber Monday Sale": [
-        "Promoção da Cyber Monday"
-      ],
-      "for 1 month": [
-        "por 1 mês"
-      ],
-      "for 1 year": [
-        "por 1 ano"
-      ],
-      "for 2 years": [
-        "por 2 anos"
       ],
       "Most popular": [
         "Mais popular"
       ],
-      "ProtonDrive early access offer": [
-        "Oferta de acesso antecipado do ProtonDrive"
+      "Save more when combining Mail and VPN": [
+        ""
+      ]
+    },
+    "blackfriday: VPNspecialoffer Action": {
+      "Get the deal": [
+        "Obter oferta"
+      ],
+      "Get the deal now": [
+        "Obter oferta agora"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Badge popup": {
+      "${ vpnAppName } Plus Special Offer 2021 discount has been applied": [
+        ""
+      ]
+    },
+    "blackfriday: VPNspecialoffer Info": {
+      "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
+        ""
+      ],
+      "Save ${ percentage }%": [
+        "${ percentage }%"
+      ],
+      "Special offer Terms and Conditions": [
+        ""
+      ]
+    },
+    "blackfriday: VPNspecialoffer info": {
+      "per month": [
+        "por mês"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Promo title, need to be short": {
+      "Special offer": [
+        "Oferta especial"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Title": {
+      "(${ notice }) Renews after 1 month at a standard monthly price of ${ amount }": [
+        ""
+      ],
+      "(${ notice }) Renews after 1 year at a standard discounted annual price of ${ amount } (20% discount)": [
+        ""
+      ],
+      "(${ notice }) Renews after 2 years at a standard discounted 2-year price of ${ amount } (33% discount)": [
+        ""
+      ],
+      "1 month": [
+        "1 mês"
+      ],
+      "12 months": [
+        "12 meses"
+      ],
+      "24 months": [
+        "24 meses"
+      ],
+      "Billed at ${ amount } for the first 2 years.${ supNotice }": [
+        ""
+      ],
+      "Billed at ${ amount } for the first month.${ supNotice }": [
+        ""
+      ],
+      "Billed at ${ amount } for the first year.${ supNotice }": [
+        ""
+      ],
+      "Get the special year-end offer on our Premium VPN PLUS plan": [
+        ""
       ]
     },
     "Bug category": {
@@ -1095,10 +1112,10 @@
         "Erro de autenticação."
       ],
       "Calendar limit reached": [
-        ""
+        "Limite de calendários atingido"
       ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
-        ""
+        "Não é possível criar novos calendários para todos os calendários importados devido ao limite do calendário pessoal."
       ],
       "Can't validate email, try again later": [
         "Não é possível validar o e-mail, tente novamente mais tarde"
@@ -1107,7 +1124,7 @@
         "Não é possível validar o telefone, tente novamente mais tarde"
       ],
       "Checkout expired, please try again": [
-        ""
+        "Pedido expirado. Por favor, tente novamente"
       ],
       "Contact could not be saved": [
         "O contato não pôde ser salvo"
@@ -1122,8 +1139,8 @@
         "Não foi possível gerar chaves de arquivo"
       ],
       "Deselect at least ${ calendarToFixCount } calendar or": [
-        "",
-        ""
+        "Desmarque ao menos ${ calendarToFixCount } calendário ou",
+        "Desmarque ao menos ${ calendarToFixCount } calendários ou"
       ],
       "Email address invalid": [
         "Endereço de e-mail inválido"
@@ -1141,13 +1158,13 @@
         ""
       ],
       "File cannot be merged with folder": [
-        ""
+        "Arquivo não pode ser mesclado com a pasta"
       ],
       "File has no contents to preview": [
         "O arquivo não tem conteúdo para visualização"
       ],
       "Folder name cannot be empty": [
-        ""
+        "O nome da pasta não pode estar vazio"
       ],
       "Image upload failed": [
         "Falha no carregamento da imagem"
@@ -1186,11 +1203,11 @@
         "Código de verificação inválido"
       ],
       "Label name cannot be empty": [
-        ""
+        "O nome do marcador não pode ser vazio"
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
-        "",
-        ""
+        "Mescle ao menos ${ calendarToFixCount } calendário com um calendário Proton existente",
+        "Mescle ao menos ${ calendarToFixCount } calendários com calendários Proton existente"
       ],
       "Missing signature": [
         "Assinatura ausente"
@@ -1212,6 +1229,9 @@
         "Um dos grupos não tem contatos: ${ noContactGroupList }",
         "Alguns dos grupos não têm contatos: ${ noContactGroupList } "
       ],
+      "Organization not recognized. Try again.": [
+        ""
+      ],
       "Passwords do not match": [
         "As senhas não coincidem"
       ],
@@ -1228,17 +1248,17 @@
         "Processo de pagamento não suportado"
       ],
       "Please fix the highlighted conflict to proceed.": [
-        "",
-        ""
+        "Por favor, corrija o conflito em destaque para prosseguir.",
+        "Por favor, corrija os conflitos em destaque para prosseguir."
       ],
       "Preferences could not be saved": [
         "As preferências não puderam ser salvas"
       ],
       "Primary address key is not decrypted": [
-        ""
+        "O endereço da chave primária não foi descriptografado"
       ],
       "Primary address key is not decrypted.": [
-        ""
+        "O endereço da chave primária não foi descriptografada."
       ],
       "Process aborted": [
         "Processo abortado"
@@ -1259,10 +1279,10 @@
         "Alguns grupos não puderam ser excluídos"
       ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
-        ""
+        "Alguns dos nomes dos seus marcadores estão indisponíveis. Por favor, personalize a importação para editar esses nomes."
       ],
       "Some of your label names exceed ProtonMail's maximum character limit. Please customize the import to edit these names.": [
-        ""
+        "Alguns dos seus nomes de marcadores excederam o limite máximo de caracteres do ProtonMail. Por favor, personalize a importação para editar esses nomes."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Algo deu errado. Por favor, ${ refresh } a página para continuar. Se você continuar vendo esta mensagem de erro, entre em contato com nossa ${ supportTeam }."
@@ -1274,10 +1294,10 @@
         "O navegador que você está usando não permite que o pagamento seja completamente autorizado. Por favor, use um navegador diferente ou inicie a sessão através de um computador."
       ],
       "The folder name is too long. Please choose a different name.": [
-        ""
+        "O nome da pasta é muito longo. Por favor, escolha um nome diferente."
       ],
       "The label name is too long. Please choose a different name.": [
-        ""
+        "Este nome de marcador é muito longo. Por favor, escolha um nome diferente."
       ],
       "The minimum amount of credit that can be added is ${ _price }": [
         "O valor mínimo de crédito que pode ser adicionado é ${ _price }"
@@ -1289,28 +1309,28 @@
         "O pagamento mínimo que aceitamos é ${ _price2 }"
       ],
       "The new revision of original file is not uploaded yet, please try again later": [
-        ""
+        "A nova revisão do arquivo original ainda não foi carregada, por favor tente novamente mais tarde"
       ],
       "The original file has missing active revision": [
-        ""
+        "O arquivo original está faltando uma revisão ativa"
       ],
       "The original file has missing hash key": [
-        ""
+        "O arquivo original falta uma chave hash"
       ],
       "The original file has missing session key": [
-        ""
+        "O arquivo original está faltando uma chave de sessão"
       ],
       "The original file is not uploaded yet, please try again later": [
-        ""
+        "O arquivo original ainda não foi carregado, por favor tente novamente mais tarde"
       ],
       "The original folder not found": [
-        ""
+        "A pasta original não foi encontrada"
       ],
       "The original folder or file not found": [
-        ""
+        "A pasta original ou arquivo não foi encontrado"
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
-        ""
+        "Existem muitas pastas em sua conta externa. Por favor, personalize a importação para excluir algumas pastas."
       ],
       "There was an error when exporting the contacts vCards": [
         "Ocorreu um erro ao exportar os vCards dos contatos"
@@ -1322,10 +1342,10 @@
         "Esse campo requer um mínimo de ${ minimumLength } caracteres."
       ],
       "This folder name is not available. Please choose a different name": [
-        ""
+        "Esta pasta não está disponível. Por favor, escolha outro nome"
       ],
       "This label name is not available. Please choose a different name": [
-        ""
+        "Este nome de marcador não está disponível. Por favor, escolha outro nome"
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "Esta mensagem pode conter algum URL de link que não pode ser aberto corretamente pelo seu navegador atual"
@@ -1346,7 +1366,7 @@
         "Você deve definir um nome"
       ],
       "Your browser does not support uploading folders": [
-        ""
+        "Seu navegador não suporta carregamento de pastas"
       ],
       "Your import will not be processed.": [
         "Sua importação não será processada."
@@ -1847,16 +1867,16 @@
         ""
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
-        ""
+        "Crie um marcador para as mensagens importadas, um intervalo de tempo para esta importação e as pastas que você gostaria de importar."
       ],
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
-        ""
+        "Criar um marcador para as mensagens importadas, um período de tempo para esta importação, e os marcadores que deseja importar."
       ],
       "Create a new contact group": [
         "Crie um novo grupo de contatos"
       ],
       "Create in": [
-        ""
+        "Criar em"
       ],
       "Create links and share your files with others.": [
         "Crie links e compartilhe seus arquivos com outros."
@@ -1871,7 +1891,7 @@
         "Criando compartilhamento"
       ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
-        ""
+        "São suportados os arquivos CSV do Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora e alguns outros apps, assim com os formatos vCard 3.1 e 4.0 (encode UTF-8)."
       ],
       "Delete drive": [
         "",
@@ -1984,7 +2004,7 @@
         ""
       ],
       "Import from": [
-        ""
+        "Importar de"
       ],
       "Import in progress": [
         ""
@@ -1996,7 +2016,7 @@
         "Incluso"
       ],
       "Inherited from parent folder": [
-        ""
+        "Herdado da pasta pai"
       ],
       "Initializing": [
         "Inicializando"
@@ -2011,7 +2031,7 @@
         "Conexão com a internet restaurada."
       ],
       "Just confirm your selection and we'll do the rest.": [
-        ""
+        "Apenas confirme sua seleção e faremos o restante."
       ],
       "Key fingerprint": [
         "Chave de impressão digital"
@@ -2041,7 +2061,7 @@
         "Carregando compartilhamento"
       ],
       "Merged": [
-        ""
+        "Mesclado"
       ],
       "More": [
         "Mais"
@@ -2053,13 +2073,13 @@
         "Meus Links"
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
-        ""
+        "Nomeie sua nova pasta e selecione a pasta pai que deseja colocá-la. Se você não selecionar uma pasta principal, esta nova pasta será criada como uma pasta de nível superior."
       ],
       "Network issue": [
         "Problema na rede"
       ],
       "New": [
-        ""
+        "Novo"
       ],
       "Next you'll need to log in to your Google account and allow us to access your data.": [
         ""
@@ -2140,7 +2160,7 @@
         "Por favor, note que ao clicar no botão Confirmar sua conta terá ${ creditsRemaining } créditos restantes."
       ],
       "Please select the folders you would like to import:": [
-        ""
+        "Por favor, selecione as pastas que você deseja importar:"
       ],
       "Please try again, use a different payment method, or call your bank for assistance.": [
         "Por favor, tente novamente, use um método diferente de pagamento ou entre em contato com seu banco para obter ajuda."
@@ -2203,7 +2223,7 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Selecione o formato de e-mail que você deseja que seja usado por padrão ao enviar um e-mail para este endereço."
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20-personal-calendar limit. You can also merge imported calendars with existing Proton calendars.": [
+      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit. You can also merge imported calendars with existing Proton calendars.": [
         ""
       ],
       "Servers are unreachable. Please try again in a few minutes": [
@@ -2358,7 +2378,7 @@
         "O que você deseja fazer?"
       ],
       "What do you want to import from your Google account?": [
-        ""
+        "O que você deseja importar da sua conta do Google?"
       ],
       "What would you like to do?": [
         ""
@@ -2382,7 +2402,7 @@
         ""
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
-        ""
+        "Você pode ativar as notificações para receber alertas quando novas mensagens chegarem nesta pasta."
       ],
       "You cannot undo this action.": [
         "Você não pode desfazer está ação."
@@ -2433,7 +2453,7 @@
         "Por motivos de segurança, seu banco requer a verificação de segurança 3-D."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
-        ""
+        "Seus dados estão prontos para importação de ${ importedEmailAddressStrong } para sua conta Proton."
       ],
       "Your download has been canceled.": [
         "Seu download foi cancelado."
@@ -2757,7 +2777,7 @@
         "Valor em BTC:"
       ],
       "Calendar": [
-        ""
+        "Calendário"
       ],
       "Cancel": [
         "Cancelar"
@@ -2781,7 +2801,7 @@
         "Concluído"
       ],
       "Contacts": [
-        ""
+        "Contatos"
       ],
       "Copy": [
         "Copiar"
@@ -2809,13 +2829,16 @@
         "Formato do e-mail"
       ],
       "Emails": [
-        ""
+        "E-mails"
       ],
       "Enable Beta Access": [
         "Habilitar acesso beta"
       ],
       "Encrypt emails": [
         "Criptografar e-mails"
+      ],
+      "Enter organization name to confirm": [
+        ""
       ],
       "Enter the 6-digit code": [
         "Digite o código de 6 dígitos"
@@ -2848,13 +2871,13 @@
         "Pasta"
       ],
       "Folder location": [
-        ""
+        "Localização da pasta"
       ],
       "Folder name": [
         "Nome da pasta"
       ],
       "From: ${ importedEmail }": [
-        ""
+        "De: ${ importedEmail }"
       ],
       "Get your own ${ appName }": [
         "Obtenha seu próprio ${ appName }"
@@ -2866,40 +2889,40 @@
         "Imagem"
       ],
       "Import all messages": [
-        ""
+        "Importar todas as mensagens"
       ],
       "Import contacts": [
         "Importar contatos"
       ],
       "Import interval": [
-        ""
+        "Intervalo de importação"
       ],
       "Import to email address": [
-        ""
+        "Importar para o endereço de e-mail"
       ],
       "Keyboard shortcuts": [
         "Atalhos do teclado"
       ],
       "Label messages as": [
-        ""
+        "Marcar mensagens como"
       ],
       "Last 12 months only": [
-        ""
+        "Somente os últimos 12 meses"
       ],
       "Last 3 months only": [
-        ""
+        "Somente os últimos 3 meses"
       ],
       "Last month only": [
-        ""
+        "Apenas no mês passado"
       ],
       "Mailbox password": [
         "Senha da caixa de correio"
       ],
       "Manage folders": [
-        ""
+        "Gerenciar pastas"
       ],
       "Manage labels": [
-        ""
+        "Gerenciar marcadores"
       ],
       "Merge a folder": [
         "Combinar uma pasta"
@@ -2911,7 +2934,7 @@
         "Nunca"
       ],
       "Notification": [
-        ""
+        "Notificação"
       ],
       "Operating system": [
         "Sistema operacional"
@@ -3007,7 +3030,7 @@
         ""
       ],
       "To: ${ emailAddress }": [
-        ""
+        "Para: ${ emailAddress }"
       ],
       "Total": [
         "Total"
@@ -3268,11 +3291,11 @@
       ]
     },
     "Mail import summary": {
-      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "",
         ""
       ],
-      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "",
         ""
       ]
@@ -3280,6 +3303,11 @@
     "Many Others": {
       "and many others": [
         "e muitos outros"
+      ]
+    },
+    "Member downgrade modal": {
+      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
+        ""
       ]
     },
     "Message display when a new app version is available": {
@@ -3641,21 +3669,7 @@
         "Nome"
       ]
     },
-    "Plan Feature": {
-      "${ n } server": [
-        "${ n } servidor",
-        "${ n } servidores"
-      ],
-      "${ n } VPN connection": [
-        "${ n } conexão de VPN",
-        "${ n } conexões de VPN"
-      ]
-    },
     "Plan feature": {
-      "${ freeServers } in ${ freeCountries } country": [
-        "${ freeServers } em ${ freeCountries } país",
-        "${ freeServers } em ${ freeCountries } países"
-      ],
       "0.5 GB storage": [
         "0.5 GB de armazenamento"
       ],
@@ -3668,10 +3682,6 @@
       "1 user": [
         "1 usuário"
       ],
-      "1300+ servers in ${ plusCountries } country": [
-        "",
-        ""
-      ],
       "20 GB storage": [
         "20 GB de armazenamento"
       ],
@@ -3680,10 +3690,6 @@
       ],
       "3 folders / labels": [
         "3 pastas / marcadores"
-      ],
-      "350+ servers in ${ basicCountries } country": [
-        "Mais de 350 servidores em ${ basicCountries } país",
-        "Mais de 350 servidores em mais de ${ basicCountries } países"
       ],
       "5 addresses": [
         "5 endereços *"
@@ -3971,9 +3977,6 @@
       "Size": [
         "Tamanho"
       ],
-      "Type": [
-        "Tipo"
-      ],
       "Uploaded": [
         ""
       ],
@@ -4119,13 +4122,13 @@
         "Plano atual"
       ],
       "Customize and confirm": [
-        ""
+        "Personalize e confirme"
       ],
       "Customize calendar import": [
-        ""
+        "Personalizar importação de calendário"
       ],
       "Customize your mail import": [
-        ""
+        "Personalize sua importação de email"
       ],
       "Customize your plan": [
         "Personalize seu plano"
@@ -4144,6 +4147,9 @@
       "Delete ${ Name }": [
         "Excluir ${ Name }"
       ],
+      "Delete organization?": [
+        ""
+      ],
       "Delete permanently": [
         "Excluir permanentemente"
       ],
@@ -4157,7 +4163,7 @@
         "Descartar alterações?"
       ],
       "Downgrade account": [
-        ""
+        "Downgrade de conta"
       ],
       "Download canceled": [
         "Download cancelado"
@@ -4268,7 +4274,7 @@
         "Gerenciar link seguro"
       ],
       "Manage share": [
-        ""
+        "Gerenciar compartilhados"
       ],
       "Merge contacts": [
         "Mesclar contatos"
@@ -4373,7 +4379,7 @@
         "Selecionar hora de expiração do link"
       ],
       "Select what to import": [
-        ""
+        "Selecione o que importar"
       ],
       "Settings": [
         "Configurações"
@@ -4427,7 +4433,7 @@
         "Atualização necessária"
       ],
       "Uploaded": [
-        ""
+        "Enviado"
       ],
       "Uploaded by": [
         "Enviado por"
@@ -4680,6 +4686,20 @@
         "Windows, macOS, iOS, Linux, Android, Android TV, Chromebook, Chromecast"
       ]
     },
+    "VPN Plan Feature": {
+      "${ n } server": [
+        "${ n } servidor",
+        "${ n }+ servidores"
+      ],
+      "${ n } VPN connection": [
+        "${ n } conexão VPN",
+        "${ n } conexões VPN"
+      ],
+      "${ numberOfServers } in ${ numberOfCountries } country": [
+        "${ numberOfServers } em ${ numberOfCountries } país",
+        "${ numberOfServers } em ${ numberOfCountries } países"
+      ]
+    },
     "Warning": {
       "Are you sure you want to permanently delete ${ count } contact group?": [
         "Você tem certeza de que deseja excluir permanentemente ${ count } grupo de contatos?",
@@ -4715,6 +4735,9 @@
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "Alguns dos contatos a serem mesclados apresentam erro. Verifique-os individualmente"
+      ],
+      "The contact data is corrupted and cannot be displayed.": [
+        "Os dados do contato estão corrompidos e não podem ser exibidos."
       ],
       "The contact failed to load.": [
         "Falha ao carregar o contato."

@@ -1,0 +1,235 @@
+{
+  "headers": {
+    "plural-forms": "nplurals=2; plural=(n != 1);",
+    "language": "da_DK"
+  },
+  "contexts": {
+    "Action": {
+      "Cancel": [
+        "Annuller"
+      ],
+      "Close": [
+        "Luk"
+      ],
+      "Close modal": [
+        "Luk dialogboks"
+      ],
+      "Did not receive the code?": [
+        "Ikke modtaget koden?"
+      ],
+      "Edit email address": [
+        "Rediger e-mailadresse"
+      ],
+      "Edit phone number": [
+        "Rediger telefonnummer"
+      ],
+      "Get verification code": [
+        "Få bekræftelseskode"
+      ],
+      "refresh the page": [
+        "genopfrisk siden"
+      ],
+      "Request new code": [
+        "Anmod om ny kode"
+      ],
+      "Submit": [
+        "Indsend"
+      ],
+      "Try another method": [
+        "Prøv en anden metode"
+      ],
+      "Verify": [
+        "Bekræft"
+      ],
+      "View invoice": [
+        "Vis faktura"
+      ]
+    },
+    "Delinquent modal title": {
+      "Overdue invoice": [
+        "Forfalden faktura"
+      ]
+    },
+    "Error": {
+      "Can't validate email, try again later": [
+        "Kan ikke bekræfte e-mail, prøv igen senere"
+      ],
+      "Can't validate phone, try again later": [
+        "Kan ikke bekræfte telefon, prøv igen senere"
+      ],
+      "Email is not valid": [
+        "E-mail er ikke gyldig"
+      ],
+      "Enter 6 digits": [
+        "Indtast 6 cifre"
+      ],
+      "Invalid verification code": [
+        "Ugyldig bekræftelseskode"
+      ],
+      "Not a valid number": [
+        "Ikke et gyldigt nummer"
+      ],
+      "Passwords do not match": [
+        "Adgangskoderne er ikke ens"
+      ],
+      "Request timed out.": [
+        "Forespørgsel fik timeout."
+      ],
+      "This field is required": [
+        "Dette felt er påkrævet"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Dette felt kræver minimum ${ minimumLength } tegn."
+      ],
+      "Unknown error": [
+        "Ukendt fejl"
+      ]
+    },
+    "Error message": {
+      "Brace yourself till we get the error fixed.": [
+        "Fejlen rettes hurtigst muligt. Tak for din tålmodighed."
+      ],
+      "Error: ${ errorMessage }": [
+        ""
+      ],
+      "Oops, something went wrong": [
+        "Ups, noget gik galt"
+      ],
+      "Please ${ refresh } or check your connection.": [
+        ""
+      ],
+      "There was a problem connecting to Proton.": [
+        ""
+      ],
+      "You may also ${ refresh } or try again later.": [
+        "Du kan også ${ refresh }, eller forsøge igen senere."
+      ]
+    },
+    "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
+      "Email": [
+        "E-mail"
+      ],
+      "Manual": [
+        "Manuel"
+      ],
+      "No verification method available": [
+        "Ingen bekræftelsesmetode tilgængelig"
+      ],
+      "SMS": [
+        "SMS"
+      ]
+    },
+    "Info": {
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
+        "Klik på \"Anmod om ny kode\" for at få en ny bekræftelseskode sendt til ${ strong }. Hvis denne e-mailadresse er forkert, skal du klikke på \"Redigér\" for at rette den."
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
+        "Klik på \"Anmod om ny kode\" for at få en ny bekræftelseskode sendt til ${ strong }. Hvis dette telefonnummer er forkert, skal du klikke på \"Redigér\" for at rette det."
+      ],
+      "Enter the verification code that was sent to ${ destinationText }.": [
+        "Indtast den bekræftelseskode, der blev sendt til ${ destinationText }."
+      ],
+      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
+        "Hvis du har problemer med at oprette din konto, bedes du anmode om en invitation. Så vil vi svare inden for en arbejdsdag."
+      ],
+      "If you don't find the email in your inbox, please check your spam folder.": [
+        "Hvis du ikke kan se mailen i din indbakke, bedes du tjekke din spammappe."
+      ],
+      "Internet connection lost.": [
+        "Internetforbindelse mistet."
+      ],
+      "Loading": [
+        "Indlæser"
+      ],
+      "No results found": [
+        "Ingen resultater fundet"
+      ],
+      "Servers are unreachable. Please try again in a few minutes": [
+        "Servere er utilgængelige. Prøv igen om nogle få minutter"
+      ],
+      "Session timed out.": [
+        "Din session er udløbet."
+      ],
+      "To fight spam and abuse, please verify you are human.": [
+        "For at bekæmpe spam og misbrug bedes du bekræfte, at du er et menneske."
+      ],
+      "Would you like to receive a new verification code or use an alternative verification method?": [
+        "Vil du gerne modtage en ny bekræftelseskode eller bruge en alternativ bekræftelsesmetode?"
+      ],
+      "Your email will only be used for this one-time verification.": [
+        "Din e-mail vil kun blive brugt til denne engangsbekræftelse."
+      ],
+      "Your phone number will only be used for this one-time verification.": [
+        "Dit telefonnummer vil kun blive anvendt til denne engangsbekræftelse."
+      ],
+      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
+        "Din Proton-konto er i øjeblikket suspenderet. For at fortsætte med at bruge din konto bedes du betale eventuelle forfaldne fakturaer."
+      ]
+    },
+    "Label": {
+      "Cancel": [
+        "Annuller"
+      ],
+      "Email address": [
+        "E-mailadresse"
+      ],
+      "Enter the 6-digit code": [
+        "Indtast den sekscifrede kode"
+      ],
+      "Hide password": [
+        "Skjul adgangskode"
+      ],
+      "Password": [
+        "Adgangskode"
+      ],
+      "Phone number": [
+        "Telefonnummer"
+      ],
+      "Reveal password": [
+        "Afslør adgangskode"
+      ],
+      "Submit": [
+        "Indsend"
+      ],
+      "Verification code": [
+        "Bekræftelseskode"
+      ]
+    },
+    "Link": {
+      "Learn more": [
+        "Få yderligere information"
+      ],
+      "Request an invite": [
+        "Anmod om en invitation"
+      ]
+    },
+    "Success": {
+      "Code sent to ${ methodTo }": [
+        "Kode sendt til ${ methodTo }"
+      ],
+      "Verification successful": [
+        "Bekræftelse gennemført"
+      ]
+    },
+    "Title": {
+      "Human verification": [
+        "Menneskelig godkendelse"
+      ],
+      "Invalid verification code": [
+        "Ugyldig bekræftelseskode"
+      ],
+      "Sign in again to continue": [
+        "Log ind igen for at fortsætte"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "Adgangskode skal indeholde mindst ${ length } tegn",
+        "Adgangskode skal indeholde mindst ${ length } tegn"
+      ]
+    }
+  }
+}

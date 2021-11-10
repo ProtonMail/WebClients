@@ -1,0 +1,235 @@
+{
+  "headers": {
+    "plural-forms": "nplurals=2; plural=(n != 1);",
+    "language": "kab_DZ"
+  },
+  "contexts": {
+    "Action": {
+      "Cancel": [
+        "Sefsex"
+      ],
+      "Close": [
+        "Mdel"
+      ],
+      "Close modal": [
+        "Mdel"
+      ],
+      "Did not receive the code?": [
+        "Ur d-teṭṭifeḍ ara tangalt?"
+      ],
+      "Edit email address": [
+        "Ẓreg tansa n yimayl"
+      ],
+      "Edit phone number": [
+        "Ẓreg uṭṭun n tiliɣri"
+      ],
+      "Get verification code": [
+        "Awi tangalt n usentem"
+      ],
+      "refresh the page": [
+        "smiren asebter"
+      ],
+      "Request new code": [
+        "Suter tangalt tamaynut"
+      ],
+      "Submit": [
+        "Azen"
+      ],
+      "Try another method": [
+        "Ɛreḍ tarrayt-nniḍen"
+      ],
+      "Verify": [
+        "Senqed"
+      ],
+      "View invoice": [
+        "Wali tafaṭurt"
+      ]
+    },
+    "Delinquent modal title": {
+      "Overdue invoice": [
+        "Tafaturt ur nettwaxelleṣ ara"
+      ]
+    },
+    "Error": {
+      "Can't validate email, try again later": [
+        "Ulamek aseɣbel n yimayl, ɛreḍ ticki"
+      ],
+      "Can't validate phone, try again later": [
+        "Ulamek aseɣbel n tiliɣri, eɛreḍ areḍqal"
+      ],
+      "Email is not valid": [
+        "Imayl mačči d ameɣtu"
+      ],
+      "Enter 6 digits": [
+        "Sekcem 6 n izwilen"
+      ],
+      "Invalid verification code": [
+        "Tangalt n usentem mačči d tameɣtut"
+      ],
+      "Not a valid number": [
+        "Mačči d uṭṭun ameɣtu"
+      ],
+      "Passwords do not match": [
+        "Awalen n uɛeddi mgraden"
+      ],
+      "Request timed out.": [
+        "Akud n usuter yemmut."
+      ],
+      "This field is required": [
+        "Urti-a ilaq"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Urti-a isra ma drus { minimumLength } n yizamulen."
+      ],
+      "Unknown error": [
+        "Tuccḍa tarussint"
+      ]
+    },
+    "Error message": {
+      "Brace yourself till we get the error fixed.": [
+        "Ttxil rǧu simara ad yefru ugur."
+      ],
+      "Error: ${ errorMessage }": [
+        ""
+      ],
+      "Oops, something went wrong": [
+        "Ihuh, yeḍran-d wugur"
+      ],
+      "Please ${ refresh } or check your connection.": [
+        ""
+      ],
+      "There was a problem connecting to Proton.": [
+        ""
+      ],
+      "You may also ${ refresh } or try again later.": [
+        "Ahat ilaq daɣen ${ refresh } εreḍ ticki."
+      ]
+    },
+    "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
+      "Email": [
+        "Imayl"
+      ],
+      "Manual": [
+        "Awfus"
+      ],
+      "No verification method available": [
+        "Ulac tarrayt n usenqed"
+      ],
+      "SMS": [
+        "SMS"
+      ]
+    },
+    "Info": {
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
+        "Tekki ɣef \"Suter tangalt tamaynut\" akken tangalt n usenqed tamaynut ad tettwaznen ɣer ${ strong }. Ma tansa n imayl-agi ur teɣti ara, tekki ɣef \"Ẓreg\" akken ad tt-tseɣtiḍ."
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
+        "Tekki ɣef \"Suter tangalt tamaynut\" akken tangalt n usenqed tamaynut ad tettwaznen ɣer ${ strong }. Ma uṭṭun-agi n tilifun ur yeɣti ara, tekki ɣef \"Ẓreg\" akken ad t-seɣtiḍ."
+      ],
+      "Enter the verification code that was sent to ${ destinationText }.": [
+        "Sekcem tangalt n usenged i yettwaznen ɣer ${ destinationText }."
+      ],
+      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
+        "Ma tufiḍ ugur deg usnulfu n umiḍan-inek/m, ttxil-k/m suter tinnubga ad d-nerr deg yiwen n wass uxeddim."
+      ],
+      "If you don't find the email in your inbox, please check your spam folder.": [
+        "Ma ur tufiḍ ara imayl deg tnaka n urmas, ttxil-k/m wali deg ukaram n ispamen."
+      ],
+      "Internet connection lost.": [
+        "Tuqqna internet truḥ."
+      ],
+      "Loading": [
+        "Azdam"
+      ],
+      "No results found": [
+        "Ulac igmaḍ yettwafen"
+      ],
+      "Servers are unreachable. Please try again in a few minutes": [
+        ""
+      ],
+      "Session timed out.": [
+        "Yemmed wakud n tɣimit."
+      ],
+      "To fight spam and abuse, please verify you are human.": [
+        "Akken ad nennaɣ mgal ispament, senqed ma yella kečč d amdan."
+      ],
+      "Would you like to receive a new verification code or use an alternative verification method?": [
+        "Tebɣiḍ ad d-teṭṭfeḍ tangalt n usenqed tamaynut neɣ ad tesqedceḍ ttawil n usenqed nniḍen?"
+      ],
+      "Your email will only be used for this one-time verification.": [
+        "Imayl-ik ad yettwaseqdec kan tikkelt deg usenqed-agi."
+      ],
+      "Your phone number will only be used for this one-time verification.": [
+        "Uṭṭun-ik n tiliɣṛi ad yettwaseqdec kan tikkelt deg usenqed-agi."
+      ],
+      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
+        "Amiḍan-inek·inem Proton yettwaḥbes akka tura. Akken ad tkemmleḍ aseqdec n umiḍan-inek·inem, ttxil-k·m xelleṣ tifaturin yellan."
+      ]
+    },
+    "Label": {
+      "Cancel": [
+        "Sefsex"
+      ],
+      "Email address": [
+        "Tansa n l'email"
+      ],
+      "Enter the 6-digit code": [
+        "Sekcem tangalt n 6 n yizwilen"
+      ],
+      "Hide password": [
+        "Ffer awal uffir"
+      ],
+      "Password": [
+        "Awal uffir"
+      ],
+      "Phone number": [
+        "Uṭṭun n tiliɣri"
+      ],
+      "Reveal password": [
+        "Sken-d awal uffir"
+      ],
+      "Submit": [
+        "Azen"
+      ],
+      "Verification code": [
+        "Tangalt n usenqed"
+      ]
+    },
+    "Link": {
+      "Learn more": [
+        "Issin ugar"
+      ],
+      "Request an invite": [
+        "Suter tinubga"
+      ]
+    },
+    "Success": {
+      "Code sent to ${ methodTo }": [
+        "Tangalt tettwazen ɣer ${ methodTo }"
+      ],
+      "Verification successful": [
+        "Asenqed yedda akken iwata"
+      ]
+    },
+    "Title": {
+      "Human verification": [
+        "Asenqed b-umdan"
+      ],
+      "Invalid verification code": [
+        "Tangalt n usentem mačči d tameɣtut"
+      ],
+      "Sign in again to continue": [
+        "Qqen tikelt-nniḍen akken ad tkemmled"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "Awal uffir ilaq ad isɛu ma drus ${ length } n usekkil",
+        "Awal uffir ilaq ad isɛu ma drus ${ length } n yisekkilen"
+      ]
+    }
+  }
+}

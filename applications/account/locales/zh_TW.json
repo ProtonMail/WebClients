@@ -202,9 +202,6 @@
       "Copy link": [
         "複製連結"
       ],
-      "Copy to clipboard": [
-        "複製到剪貼簿"
-      ],
       "Create": [
         "建立"
       ],
@@ -300,6 +297,9 @@
       ],
       "Download all configurations": [
         "下載所有組態設定"
+      ],
+      "Download recovery file": [
+        ""
       ],
       "Download the Import-Export app": [
         "下載 Import-Export 應用程式"
@@ -778,6 +778,15 @@
       "View invoice": [
         "查看帳單"
       ],
+      "Void all recovery files": [
+        ""
+      ],
+      "Void all recovery files?": [
+        ""
+      ],
+      "Void anyway": [
+        ""
+      ],
       "Warning": [
         "警告"
       ],
@@ -1067,87 +1076,98 @@
       ]
     },
     "blackfriday Action": {
-      "Get limited-time deal": [
-        ""
-      ],
-      "Upgrade": [
+      "Get the offer": [
         ""
       ]
     },
     "blackfriday Info": {
-      "Discounts are based on monthly pricing.": [
-        ""
-      ],
-      "early access to": [
-        ""
-      ],
-      "Free": [
-        ""
-      ],
-      "Get early access to our new encrypted drive for FREE by upgrading to a Plus bundle now.": [
-        ""
+      "beta": [
+        "測試版"
       ],
       "Includes": [
+        "包含"
+      ],
+      "Standard price: ${ regularPrice }": [
+        "標準價格：${ regularPrice }"
+      ],
+      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
+        "此訂閱將在 2 年後自動以相同的費用續訂，直到被取消為止。"
+      ]
+    },
+    "blackfriday Title": {
+      "Best deal": [
         ""
       ],
-      "Offer valid only for first-time paid subscriptions.": [
-        ""
+      "Most popular": [
+        "最熱門"
       ],
-      "ProtonDrive": [
+      "Save more when combining Mail and VPN": [
+        ""
+      ]
+    },
+    "blackfriday: VPNspecialoffer Action": {
+      "Get the deal": [
+        "取得優惠"
+      ],
+      "Get the deal now": [
+        "立即取得優惠"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Badge popup": {
+      "${ vpnAppName } Plus Special Offer 2021 discount has been applied": [
+        ""
+      ]
+    },
+    "blackfriday: VPNspecialoffer Info": {
+      "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
         ""
       ],
       "Save ${ percentage }%": [
         "省下 ${ percentage }%"
       ],
-      "Standard price: ${ regularPrice }": [
-        ""
-      ],
-      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
+      "Special offer Terms and Conditions": [
         ""
       ]
     },
-    "blackfriday info": {
+    "blackfriday: VPNspecialoffer info": {
       "per month": [
-        ""
+        "每月"
       ]
     },
-    "blackfriday Promo title, need to be short": {
+    "blackfriday: VPNspecialoffer Promo title, need to be short": {
       "Special offer": [
         "特別優惠"
       ]
     },
-    "blackfriday Title": {
-      "(${ notice }) Renews after 1 year at a discounted annual & bundle price of ${ amount } every year (36% discount).": [
+    "blackfriday: VPNspecialoffer Title": {
+      "(${ notice }) Renews after 1 month at a standard monthly price of ${ amount }": [
         ""
       ],
-      "(${ notice }) Renews after 1 year at a discounted annual price of ${ amount } every year (20% discount).": [
+      "(${ notice }) Renews after 1 year at a standard discounted annual price of ${ amount } (20% discount)": [
         ""
       ],
-      "(${ notice }) Renews after 2 years at a discounted 2-year price of ${ amount } every 2 years (47% discount).": [
+      "(${ notice }) Renews after 2 years at a standard discounted 2-year price of ${ amount } (33% discount)": [
         ""
       ],
-      "Billed as ${ amount } ${ supNotice }": [
+      "1 month": [
+        "一個月"
+      ],
+      "12 months": [
+        "12 個月"
+      ],
+      "24 months": [
+        "24 個月"
+      ],
+      "Billed at ${ amount } for the first 2 years.${ supNotice }": [
         ""
       ],
-      "Black Friday Sale": [
+      "Billed at ${ amount } for the first month.${ supNotice }": [
         ""
       ],
-      "Cyber Monday Sale": [
+      "Billed at ${ amount } for the first year.${ supNotice }": [
         ""
       ],
-      "for 1 month": [
-        ""
-      ],
-      "for 1 year": [
-        ""
-      ],
-      "for 2 years": [
-        ""
-      ],
-      "Most popular": [
-        ""
-      ],
-      "ProtonDrive early access offer": [
+      "Get the special year-end offer on our Premium VPN PLUS plan": [
         ""
       ]
     },
@@ -1904,6 +1924,9 @@
       "Organization key is not decrypted.": [
         "組織金鑰尚未解密。"
       ],
+      "Organization not recognized. Try again.": [
+        ""
+      ],
       "Passwords do not match": [
         "密碼不相符"
       ],
@@ -1939,6 +1962,9 @@
       ],
       "Please refresh the page.": [
         "請重新整理此頁面。"
+      ],
+      "Please set a recovery email first": [
+        ""
       ],
       "Please set a recovery phone number first": [
         "請先設定一個備援電話號碼"
@@ -2053,6 +2079,9 @@
       ],
       "Uploaded file is not a valid private key. Please verify and try again.": [
         "上傳的檔案不是有效的私鑰。請驗證並再試一次。"
+      ],
+      "Uploaded file is not a valid recovery file. Please verify and try again.": [
+        ""
       ],
       "Uploaded files are not valid private keys. Please verify and try again.": [
         "上傳的檔案不是有效的私鑰。請驗證並再試一次。"
@@ -3099,6 +3128,9 @@
       "A key with the same encryption algorithm is already active for this address. Generating another key will cause slower account loading and deletion of this key can cause issues. If you are generating a new key because your old key is compromised, please mark that key as compromised. Are you sure you want to continue?": [
         "此電子郵件地址已在使用一個以相同加密演算法產生的金鑰。再產生另一個金鑰將拖慢帳號載入速度，刪除此金鑰時也可能導致問題。假如您是因為舊金鑰遭到洩漏才要產生新的金鑰，請將舊金鑰標記為已洩漏。您確定要繼續嗎？"
       ],
+      "A recovery file lets you unlock and view your data after an account reset. ": [
+        ""
+      ],
       "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password.": [
         "如果您忘記密碼，復原短語將讓您可以存取您的帳號並復原您的加密訊息。"
       ],
@@ -3111,11 +3143,26 @@
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "由於有帳單未付，因此帳號存取已受限制。請聯絡您的系統管理員。"
       ],
+      "account recovery and data recovery method": [
+        ""
+      ],
+      "account recovery method": [
+        ""
+      ],
       "Account successfully updated": [
         "帳號已成功更新"
       ],
+      "Activate your recovery phrase": [
+        ""
+      ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"ProtonMail me\" or \"Private Message me.\"": [
         "新增一個 @pm.me 的電子郵件地址到您的帳號。此較為簡短的網域代表「ProtonMail me」或「私訊我」。"
+      ],
+      "Add a recovery email address": [
+        ""
+      ],
+      "Add a recovery phone number": [
+        ""
       ],
       "Add additional addresses to your account like user2@protonmail.com": [
         "為您的帳號新增額外的電子郵件地址，例如 user2@protonmail.com"
@@ -3134,6 +3181,9 @@
       ],
       "Addresses": [
         "電子郵件地址"
+      ],
+      "After a password reset your data is locked in encrypted form to keep it safe. To decrypt and view your emails and other data, you need a recovery file or recovery phrase.": [
+        ""
       ],
       "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
         "進行比特幣付款後，請依照下列指示來升級。"
@@ -3417,6 +3467,9 @@
       "Download your PGP keys for use with other PGP-compatible services.": [
         "下載您的 PGP 金鑰以用於其他與 PGP 相容的服務。"
       ],
+      "Download your recovery file": [
+        ""
+      ],
       "Drop the file here to upload": [
         "拖放檔案到此處上載"
       ],
@@ -3426,7 +3479,7 @@
       "Edit label": [
         "編輯標籤"
       ],
-      "Effortlessly and securely move your emails from your current provider to Proton. If you use Google, we also support calendar, and contacts imports.": [
+      "Effortlessly and securely move your emails from your current provider to Proton. If you use Google, we also support calendar and contacts imports.": [
         ""
       ],
       "Email address": [
@@ -3570,6 +3623,12 @@
       "If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly.": [
         "如果您已同時設定 SPF 和 DKIM，DMARC 允許您指定一旦 SPF 和 DKIM 檢查皆失敗時，其他電子郵件服務該如何遞送屬於您的網域的電子郵件。這可以增加別人假扮您寄送垃圾郵件的難度，但若設定不當亦可能導致遞送問題。"
       ],
+      "If you lose your login details and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
+        ""
+      ],
+      "If you lose your login details and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.": [
+        ""
+      ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to log into your account. Each code can only be used once.": [
         "如果您遺失了您的兩步驟驗證裝置，這些代碼可以用來代替 6 位數的兩步驟驗證代碼來登入您的帳號。每個代碼都只能使用一次。"
       ],
@@ -3627,6 +3686,12 @@
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         ""
       ],
+      "In case you lose your login details, we’ll send you recovery instructions via email or SMS.": [
+        ""
+      ],
+      "In case you lose your login details, we’ll send you recovery instructions via email.": [
+        ""
+      ],
       "Included": [
         "已包含"
       ],
@@ -3659,6 +3724,9 @@
       ],
       "Internet connection restored.": [
         "網際網路連線已恢復。"
+      ],
+      "it’s imperative": [
+        ""
       ],
       "Just confirm your selection and we'll do the rest.": [
         ""
@@ -3762,6 +3830,9 @@
       "Next you'll need to log in to your Google account and allow us to access your data.": [
         ""
       ],
+      "No account recovery method set, you are at risk of losing access to your account": [
+        ""
+      ],
       "No action selected": [
         "未選取任何動作"
       ],
@@ -3770,6 +3841,9 @@
       ],
       "No contact encryption keys exist": [
         "聯絡人沒有加密金鑰"
+      ],
+      "No data recovery method set, you are at risk of losing access to your data": [
+        ""
       ],
       "No folder selected": [
         "未選取任何資料夾"
@@ -3954,11 +4028,17 @@
       "read our two-factor authentication Guide first": [
         "先閱讀我們的兩步驟驗證指南"
       ],
+      "Recovery files have been voided": [
+        ""
+      ],
       "Recovery phrase copied to clipboard": [
         "復原短語已複製到剪貼簿"
       ],
       "Recovery phrase has been disabled": [
         "復原短語已被停用"
+      ],
+      "Recovery phrase is not associated with any outdated keys.": [
+        ""
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "重新整理此頁面或${ link }將自動解決大部分問題。"
@@ -3990,7 +4070,7 @@
       "Select a service provider to get started": [
         ""
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20-personal-calendar limit. You can also merge imported calendars with existing Proton calendars.": [
+      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit. You can also merge imported calendars with existing Proton calendars.": [
         ""
       ],
       "Server is currently down": [
@@ -4167,8 +4247,8 @@
       "Unable to decrypt. Recovery phrase is not associated with any keys.": [
         "無法解密。復原短語並不與任何金鑰相關。"
       ],
-      "Unable to decrypt. Recovery phrase is not associated with any outdated keys.": [
-        "無法解密。復原短語並不與任何過期的金鑰相關。"
+      "Unable to verify recovery file signature. Please contact support.": [
+        ""
       ],
       "Unfortunately there is no recovery method saved for this account.": [
         "很遺憾，此帳號未有儲存任何備援方法。"
@@ -4232,12 +4312,6 @@
       ],
       "We advise you to use official ProtonVPN applications when possible.": [
         "我們則建議您儘可能使用官方版 ProtonVPN 應用程式。"
-      ],
-      "We recommend adding a linked email or phone number so you can recover your account if you lose your password.": [
-        "建議新增一個已連結的電子郵件地址或電話號碼，萬一您遺失密碼，也可以恢復您的帳號。"
-      ],
-      "We recommend adding a linked email so you can recover your account if you lose your password.": [
-        "建議新增一個已連結的電子郵件地址，萬一您遺失密碼，也可以恢復您的帳號。"
       ],
       "We use 3-D Secure to protect your payments.": [
         "我們使用 3-D Secure 保障您的付款。"
@@ -4383,6 +4457,9 @@
       "You will soon be redirected to PayPal to verify your payment.": [
         "即將重新導向到 PayPal 驗證您的付款。"
       ],
+      "You won't be able to recover encrypted data after an account reset using your downloaded recovery files.": [
+        ""
+      ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, please create an address.": [
         "您的 ${ BRAND_NAME } 帳號已與 ${ externalEmailAddress } 關聯。如要使用 ${ toAppName }，請建立一個電子郵件地址。"
       ],
@@ -4394,6 +4471,9 @@
       ],
       "Your account is being upgraded, this may take up to 30 seconds.": [
         "您的帳號正在升級，請稍候最多 30 秒。"
+      ],
+      "Your account recovery method is set": [
+        ""
       ],
       "Your account will be updated once the payment is cleared.": [
         "付款一結算完成，您的帳號將會升級。"
@@ -4408,6 +4488,9 @@
         "您的封鎖清單是空的。"
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
+        ""
+      ],
+      "Your data recovery method is set": [
         ""
       ],
       "Your email will only be used for this one-time verification.": [
@@ -5118,6 +5201,9 @@
       "End weekday": [
         "每週的結束日"
       ],
+      "Enter organization name to confirm": [
+        ""
+      ],
       "Enter password": [
         "請輸入密碼"
       ],
@@ -5135,6 +5221,9 @@
       ],
       "extra storage": [
         "額外儲存空間"
+      ],
+      "File": [
+        ""
       ],
       "Filter Name": [
         "篩選器名稱"
@@ -5367,6 +5456,12 @@
       "Recovery email": [
         "備援電子郵件"
       ],
+      "Recovery email address": [
+        ""
+      ],
+      "Recovery file": [
+        ""
+      ],
       "Recovery phone": [
         "備援電話號碼"
       ],
@@ -5481,8 +5576,14 @@
       "Upload your backup key": [
         "上傳您的備份金鑰"
       ],
+      "Upload your recovery file": [
+        ""
+      ],
       "Uploaded private keys": [
         "已上傳私鑰"
+      ],
+      "Uploaded recovery file": [
+        ""
       ],
       "URL": [
         "網址"
@@ -5569,6 +5670,9 @@
     "label": {
       "Phone number": [
         "電話號碼"
+      ],
+      "Recovery phone number": [
+        ""
       ],
       "Recovery phrase": [
         "復原短語"
@@ -5875,10 +5979,10 @@
       ]
     },
     "Mail import summary": {
-      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         ""
       ],
-      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         ""
       ]
     },
@@ -5915,6 +6019,11 @@
       ],
       "Sign in": [
         "登入"
+      ]
+    },
+    "Member downgrade modal": {
+      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
+        ""
       ]
     },
     "Message": {
@@ -6818,6 +6927,9 @@
       ],
       "Upload additional private keys": [
         "上傳額外的私鑰"
+      ],
+      "Upload additional recovery files": [
+        ""
       ]
     },
     "Select search results": {
@@ -7309,6 +7421,9 @@
       "3. Select config file and download": [
         "3. 選取組態設定檔並下載"
       ],
+      "Account recovery": [
+        ""
+      ],
       "Account suspended": [
         "帳號已停用"
       ],
@@ -7371,9 +7486,6 @@
       ],
       "Addresses": [
         "地址"
-      ],
-      "Advanced": [
-        "進階"
       ],
       "Allocate storage": [
         "分配儲存空間"
@@ -7546,6 +7658,9 @@
       "Dashboard": [
         "儀表板"
       ],
+      "Data recovery": [
+        ""
+      ],
       "Date": [
         "日期"
       ],
@@ -7578,6 +7693,9 @@
       ],
       "Delete logs": [
         "刪除記錄檔"
+      ],
+      "Delete organization?": [
+        ""
       ],
       "Delete user": [
         "刪除使用者"
@@ -7804,8 +7922,8 @@
       "Password & keys": [
         "密碼和金鑰"
       ],
-      "Password & recovery": [
-        "密碼與備援"
+      "Password & security": [
+        ""
       ],
       "Passwords": [
         "密碼"
@@ -7873,8 +7991,11 @@
       "Reconnect your account": [
         "重新連線到您的帳號"
       ],
-      "Recovery & notification": [
-        "備援與通知"
+      "Recovery": [
+        ""
+      ],
+      "Recovery file": [
+        ""
       ],
       "Remove calendar": [
         "移除日曆"
@@ -7896,9 +8017,6 @@
       ],
       "Restore administrator privileges": [
         "恢復系統管理員權限"
-      ],
-      "Security": [
-        "安全性"
       ],
       "Security logs": [
         "安全記錄檔"
@@ -8002,6 +8120,9 @@
       "Switch to two-password mode": [
         "切換為雙重密碼模式"
       ],
+      "Take precautions to avoid data loss!": [
+        ""
+      ],
       "Theme": [
         "佈景主題"
       ],
@@ -8055,6 +8176,9 @@
       ],
       "Your plan": [
         "您的方案"
+      ],
+      "Your recovery status": [
+        ""
       ],
       "ZIP / postal code": [
         "郵編 / 郵政代碼"

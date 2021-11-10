@@ -1,0 +1,237 @@
+{
+  "headers": {
+    "plural-forms": "nplurals=4; plural=((n%10==1 && n%100!=11) ? 0 : ((n%10 >= 2 && n%10 <=4 && (n%100 < 12 || n%100 > 14)) ? 1 : ((n%10 == 0 || (n%10 >= 5 && n%10 <=9)) || (n%100 >= 11 && n%100 <= 14)) ? 2 : 3));",
+    "language": "ru_RU"
+  },
+  "contexts": {
+    "Action": {
+      "Cancel": [
+        "Отменить"
+      ],
+      "Close": [
+        "Закрыть"
+      ],
+      "Close modal": [
+        "Закрыть окно"
+      ],
+      "Did not receive the code?": [
+        "Не получили код?"
+      ],
+      "Edit email address": [
+        "Изменить адрес эл. почты"
+      ],
+      "Edit phone number": [
+        "Изменить номер телефона"
+      ],
+      "Get verification code": [
+        "Получить проверочный код"
+      ],
+      "refresh the page": [
+        "обновить страницу"
+      ],
+      "Request new code": [
+        "Запросить новый код"
+      ],
+      "Submit": [
+        "Отправить"
+      ],
+      "Try another method": [
+        "Попробуйте другой способ"
+      ],
+      "Verify": [
+        "Проверить"
+      ],
+      "View invoice": [
+        "Просмотр счета"
+      ]
+    },
+    "Delinquent modal title": {
+      "Overdue invoice": [
+        "Просроченный счёт"
+      ]
+    },
+    "Error": {
+      "Can't validate email, try again later": [
+        "Не удается проверить адрес электронной почты, повторите попытку позже"
+      ],
+      "Can't validate phone, try again later": [
+        "Не удается проверить телефон, повторите попытку позже"
+      ],
+      "Email is not valid": [
+        "Эл. почта недействительна"
+      ],
+      "Enter 6 digits": [
+        "Введите 6 цифр"
+      ],
+      "Invalid verification code": [
+        "Неверный проверочный код"
+      ],
+      "Not a valid number": [
+        "Номер недействителен"
+      ],
+      "Passwords do not match": [
+        "Пароль и его подтверждение не совпадают"
+      ],
+      "Request timed out.": [
+        "Время ожидания запроса истекло."
+      ],
+      "This field is required": [
+        "Это обязательное поле"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Минимальная длина для этого поля: ${ minimumLength }."
+      ],
+      "Unknown error": [
+        "Неизвестная ошибка"
+      ]
+    },
+    "Error message": {
+      "Brace yourself till we get the error fixed.": [
+        "Держитесь, пока мы исправляем ошибку."
+      ],
+      "Error: ${ errorMessage }": [
+        ""
+      ],
+      "Oops, something went wrong": [
+        "Хм. Что-то пошло не так"
+      ],
+      "Please ${ refresh } or check your connection.": [
+        ""
+      ],
+      "There was a problem connecting to Proton.": [
+        ""
+      ],
+      "You may also ${ refresh } or try again later.": [
+        "Вы также можете ${ refresh } или повторить попытку позже."
+      ]
+    },
+    "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
+      "Email": [
+        "Электронная почта"
+      ],
+      "Manual": [
+        "Ручная"
+      ],
+      "No verification method available": [
+        "Нет доступных способов проверки"
+      ],
+      "SMS": [
+        "SMS"
+      ]
+    },
+    "Info": {
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
+        "Нажмите \"Запросить новый код\", и мы отправим новый проверочный код на ${ strong }. Если этот адрес электронной почты неверный, то выберите \"Изменить\" для обновления."
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
+        "Нажмите \"Запросить новый код\", и мы отправим новый проверочный код на ${ strong }. Если этот номер телефона не верный, то выберите \"Изменить\" для обновления."
+      ],
+      "Enter the verification code that was sent to ${ destinationText }.": [
+        "Введите код подтверждения, отправленный на ${ destinationText }."
+      ],
+      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
+        "Если у вас возникли проблемы с созданием учетной записи, пожалуйста, запросите приглашение и мы ответим в течение одного рабочего дня."
+      ],
+      "If you don't find the email in your inbox, please check your spam folder.": [
+        "Если сообщения нет в папке \"Входящие\" - проверьте, не попало ли оно в папку «спам»."
+      ],
+      "Internet connection lost.": [
+        "Соединение с интернетом потеряно."
+      ],
+      "Loading": [
+        "Загружаем"
+      ],
+      "No results found": [
+        "Результатов не найдено"
+      ],
+      "Servers are unreachable. Please try again in a few minutes": [
+        "Серверы недоступны. Попробуйте снова через несколько минут"
+      ],
+      "Session timed out.": [
+        "Время сессии истекло."
+      ],
+      "To fight spam and abuse, please verify you are human.": [
+        "Для предотвращения распространения спама и иных злоупотреблений нашим сервисом, нам нужно убедиться, что вы человек."
+      ],
+      "Would you like to receive a new verification code or use an alternative verification method?": [
+        "Вы хотите получить новый проверочный код или использовать альтернативный метод проверки?"
+      ],
+      "Your email will only be used for this one-time verification.": [
+        "Ваш адрес электронной почты будет использован только для этой разовой проверки."
+      ],
+      "Your phone number will only be used for this one-time verification.": [
+        "Ваш номер телефона будет использован только для этой разовой проверки."
+      ],
+      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
+        "Сейчас Ваш аккаунт Proton приостановлен. Чтобы продолжить использование вашего аккаунта, пожалуйста, оплатите просроченные счета."
+      ]
+    },
+    "Label": {
+      "Cancel": [
+        "Отменить"
+      ],
+      "Email address": [
+        "Адрес эл. почты"
+      ],
+      "Enter the 6-digit code": [
+        "Введите код из 6 цифр"
+      ],
+      "Hide password": [
+        "Скрыть пароль"
+      ],
+      "Password": [
+        "Пароль"
+      ],
+      "Phone number": [
+        "Hомер телефона"
+      ],
+      "Reveal password": [
+        "Показать пароль"
+      ],
+      "Submit": [
+        "Отправить"
+      ],
+      "Verification code": [
+        "Код подтверждения"
+      ]
+    },
+    "Link": {
+      "Learn more": [
+        "Узнать больше"
+      ],
+      "Request an invite": [
+        "Запросить приглашение"
+      ]
+    },
+    "Success": {
+      "Code sent to ${ methodTo }": [
+        "Код отправлен на ${ methodTo }"
+      ],
+      "Verification successful": [
+        "Проверка прошла успешно"
+      ]
+    },
+    "Title": {
+      "Human verification": [
+        "Проверка \"Я не робот\""
+      ],
+      "Invalid verification code": [
+        "Неверный проверочный код"
+      ],
+      "Sign in again to continue": [
+        "Войдите снова, чтобы продолжить"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "Пароль должен содержать хотя бы ${ length } символ",
+        "Пароль должен содержать хотя бы ${ length } символа",
+        "Пароль должен содержать хотя бы ${ length } символов",
+        "Пароль должен содержать хотя бы ${ length } символов"
+      ]
+    }
+  }
+}

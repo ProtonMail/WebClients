@@ -230,6 +230,9 @@
       "Forward as attachment": [
         "Переслати як вкладення"
       ],
+      "Get link": [
+        "Отримати посилання"
+      ],
       "Get started": [
         "Розпочнімо"
       ],
@@ -295,6 +298,9 @@
       ],
       "Mailbox layout": [
         "Макет поштової скриньки"
+      ],
+      "Manage link": [
+        "Управляти посиланням"
       ],
       "Mark for deletion": [
         "Позначити для видалення"
@@ -684,37 +690,16 @@
       ]
     },
     "blackfriday Action": {
-      "Get limited-time deal": [
-        ""
-      ],
-      "Upgrade": [
+      "Get the offer": [
         ""
       ]
     },
     "blackfriday Info": {
-      "Discounts are based on monthly pricing.": [
-        ""
-      ],
-      "early access to": [
-        ""
-      ],
-      "Free": [
-        ""
-      ],
-      "Get early access to our new encrypted drive for FREE by upgrading to a Plus bundle now.": [
+      "beta": [
         ""
       ],
       "Includes": [
-        ""
-      ],
-      "Offer valid only for first-time paid subscriptions.": [
-        ""
-      ],
-      "ProtonDrive": [
-        ""
-      ],
-      "Save ${ percentage }%": [
-        "${ percentage }%"
+        "Включає в себе"
       ],
       "Standard price: ${ regularPrice }": [
         ""
@@ -723,48 +708,80 @@
         ""
       ]
     },
-    "blackfriday info": {
-      "per month": [
+    "blackfriday Title": {
+      "Best deal": [
+        ""
+      ],
+      "Most popular": [
+        "Найпопулярніша"
+      ],
+      "Save more when combining Mail and VPN": [
         ""
       ]
     },
-    "blackfriday Promo title, need to be short": {
+    "blackfriday: VPNspecialoffer Action": {
+      "Get the deal": [
+        "Скористатися пропозицією"
+      ],
+      "Get the deal now": [
+        "Скористатися пропозицією зараз"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Badge popup": {
+      "${ vpnAppName } Plus Special Offer 2021 discount has been applied": [
+        ""
+      ]
+    },
+    "blackfriday: VPNspecialoffer Info": {
+      "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
+        ""
+      ],
+      "Save ${ percentage }%": [
+        "${ percentage }%"
+      ],
+      "Special offer Terms and Conditions": [
+        ""
+      ]
+    },
+    "blackfriday: VPNspecialoffer info": {
+      "per month": [
+        "на місяць"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Promo title, need to be short": {
       "Special offer": [
         ""
       ]
     },
-    "blackfriday Title": {
-      "(${ notice }) Renews after 1 year at a discounted annual & bundle price of ${ amount } every year (36% discount).": [
+    "blackfriday: VPNspecialoffer Title": {
+      "(${ notice }) Renews after 1 month at a standard monthly price of ${ amount }": [
         ""
       ],
-      "(${ notice }) Renews after 1 year at a discounted annual price of ${ amount } every year (20% discount).": [
+      "(${ notice }) Renews after 1 year at a standard discounted annual price of ${ amount } (20% discount)": [
         ""
       ],
-      "(${ notice }) Renews after 2 years at a discounted 2-year price of ${ amount } every 2 years (47% discount).": [
+      "(${ notice }) Renews after 2 years at a standard discounted 2-year price of ${ amount } (33% discount)": [
         ""
       ],
-      "Billed as ${ amount } ${ supNotice }": [
+      "1 month": [
+        "1 місяць"
+      ],
+      "12 months": [
+        "12 місяців"
+      ],
+      "24 months": [
+        "24 місяці"
+      ],
+      "Billed at ${ amount } for the first 2 years.${ supNotice }": [
         ""
       ],
-      "Black Friday Sale": [
+      "Billed at ${ amount } for the first month.${ supNotice }": [
         ""
       ],
-      "Cyber Monday Sale": [
+      "Billed at ${ amount } for the first year.${ supNotice }": [
         ""
       ],
-      "for 1 month": [
-        ""
-      ],
-      "for 1 year": [
-        ""
-      ],
-      "for 2 years": [
-        ""
-      ],
-      "Most popular": [
-        ""
-      ],
-      "ProtonDrive early access offer": [
+      "Get the special year-end offer on our Premium VPN PLUS plan": [
         ""
       ]
     },
@@ -1237,6 +1254,9 @@
         "В деяких групах немає контактів: ${ noContactGroupList }",
         "В деяких групах немає контактів: ${ noContactGroupList }",
         "В деяких групах немає контактів: ${ noContactGroupList }"
+      ],
+      "Organization not recognized. Try again.": [
+        ""
       ],
       "Passwords do not match": [
         "Паролі відрізняються"
@@ -2301,8 +2321,8 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Оберіть формат повідомлення, який ви хочете використовувати при надсиланні на цю адресу е-пошти."
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20-personal-calendar limit. You can also merge imported calendars with existing Proton calendars.": [
-        "Виберіть календарі для імпорту. Новий календар буде створено для кожного імпортованого календаря з обмеженням у 20 особистих календарів. Ви також можете об’єднати імпортовані календарі з наявними календарями Proton."
+      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit. You can also merge imported calendars with existing Proton calendars.": [
+        "Виберіть, які календарі необхідно імпортувати. Для кожного імпортованого календаря буде створений новий календар у межах ліміту в 20 календарів. Ви також можете об'єднати імпортовані календарі з існуючими календарями Proton."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Сервери недоступні. Спробуйте знову за кілька хвилин"
@@ -2919,6 +2939,9 @@
       "Encrypt emails": [
         "Шифрувати листи"
       ],
+      "Enter organization name to confirm": [
+        "Введіть назву організації для підтвердження"
+      ],
       "Enter the 6-digit code": [
         "Введіть 6-значний код"
       ],
@@ -3372,22 +3395,27 @@
       ]
     },
     "Mail import summary": {
-      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
-        "Імпортувати всі повідомлення з ${ selectedLabelsCount } міткою з усіх ${ totalLabelsCount }, починаючи з ${ periodFragment } та позначити їх міткою ${ label }",
-        "Імпортувати всі повідомлення з ${ selectedLabelsCount } мітками з усіх ${ totalLabelsCount }, починаючи з ${ periodFragment } та позначити їх міткою ${ label }",
-        "Імпортувати всі повідомлення з ${ selectedLabelsCount } мітками з усіх ${ totalLabelsCount }, починаючи з ${ periodFragment } та позначити їх міткою ${ label }",
-        "Імпортувати всі повідомлення з ${ selectedLabelsCount } мітками з усіх ${ totalLabelsCount }, починаючи з ${ periodFragment } та позначити їх міткою ${ label }"
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "",
+        "",
+        "",
+        ""
       ],
-      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
-        "Імпортувати всі повідомлення з ${ totalLabelsCount } міткою, починаючи з ${ periodFragment } та позначити їх міткою ${ label }",
-        "Імпортувати всі повідомлення з ${ totalLabelsCount } мітками, починаючи з ${ periodFragment } та позначити їх міткою ${ label }",
-        "Імпортувати всі повідомлення з ${ totalLabelsCount } мітками, починаючи з ${ periodFragment } та позначити їх міткою ${ label }",
-        "Імпортувати всі повідомлення з ${ totalLabelsCount } мітками, починаючи з ${ periodFragment } та позначити їх міткою ${ label }"
+      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "",
+        "",
+        "",
+        ""
       ]
     },
     "Many Others": {
       "and many others": [
         "та багато інших"
+      ]
+    },
+    "Member downgrade modal": {
+      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
+        "Це приведе до остаточного видалення всіх підлеглих користувачів, облікових записів і даних, пов'язаних з вашою організацією."
       ]
     },
     "Message display when a new app version is available": {
@@ -3797,27 +3825,7 @@
         "Назва"
       ]
     },
-    "Plan Feature": {
-      "${ n } server": [
-        "${ n } сервер",
-        "${ n } сервери",
-        "${ n } серверів",
-        "${ n } серверів"
-      ],
-      "${ n } VPN connection": [
-        "${ n } VPN-з'єднання",
-        "${ n } VPN-з'єднання",
-        "${ n } VPN-з'єднань",
-        "${ n } VPN-з'єднань"
-      ]
-    },
     "Plan feature": {
-      "${ freeServers } in ${ freeCountries } country": [
-        "${ freeServers } у ${ freeCountries } країні",
-        "${ freeServers } у ${ freeCountries } країнах",
-        "${ freeServers } у ${ freeCountries } країнах",
-        "${ freeServers } у ${ freeCountries } країнах"
-      ],
       "0.5 GB storage": [
         "0.5 ГБ сховища"
       ],
@@ -3830,12 +3838,6 @@
       "1 user": [
         "1 користувач"
       ],
-      "1300+ servers in ${ plusCountries } country": [
-        "",
-        "",
-        "",
-        ""
-      ],
       "20 GB storage": [
         "20 ГБ сховища"
       ],
@@ -3844,12 +3846,6 @@
       ],
       "3 folders / labels": [
         "3 теки / мітки"
-      ],
-      "350+ servers in ${ basicCountries } country": [
-        "350+ серверів у ${ basicCountries } країні",
-        "350+ серверів у ${ basicCountries } країнах",
-        "350+ серверів у ${ basicCountries } країнах",
-        "350+ серверів у ${ basicCountries } країнах"
       ],
       "5 addresses": [
         "5 адрес"
@@ -4145,9 +4141,6 @@
       "Size": [
         "Розмір"
       ],
-      "Type": [
-        "Тип"
-      ],
       "Uploaded": [
         "Вивантажено"
       ],
@@ -4329,6 +4322,9 @@
       ],
       "Delete ${ Name }": [
         "Видалити ${ Name }"
+      ],
+      "Delete organization?": [
+        "Видалити організацію?"
       ],
       "Delete permanently": [
         "Видалити остаточно"
@@ -4868,6 +4864,26 @@
         "Windows, macOS, iOS, Linux, Android, Android TV, Chromebook, Chromecast"
       ]
     },
+    "VPN Plan Feature": {
+      "${ n } server": [
+        "${ n } сервер",
+        "${ n } сервери",
+        "${ n } серверів",
+        "${ n } серверів"
+      ],
+      "${ n } VPN connection": [
+        "${ n } VPN-з'єднання",
+        "${ n } VPN-з'єднання",
+        "${ n } VPN-з'єднань",
+        "${ n } VPN-з'єднань"
+      ],
+      "${ numberOfServers } in ${ numberOfCountries } country": [
+        "${ numberOfServers } в ${ numberOfCountries } країні",
+        "${ numberOfServers } в ${ numberOfCountries } країнах",
+        "${ numberOfServers } в ${ numberOfCountries } країнах",
+        "${ numberOfServers } в ${ numberOfCountries } країнах"
+      ]
+    },
     "Warning": {
       "Are you sure you want to permanently delete ${ count } contact group?": [
         "Ви дійсно хочете остаточно видалити ${ count } групу контактів?",
@@ -4907,6 +4923,9 @@
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "Деякі об'єднувані контакти мають помилки. Будь ласка, перегляньте їх окремо"
+      ],
+      "The contact data is corrupted and cannot be displayed.": [
+        "Дані контакту пошкоджені, тому їх неможливо показати."
       ],
       "The contact failed to load.": [
         "Не вдалося завантажити контакт."

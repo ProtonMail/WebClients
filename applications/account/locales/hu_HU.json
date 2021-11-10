@@ -202,9 +202,6 @@
       "Copy link": [
         "Hivatkozás másolása"
       ],
-      "Copy to clipboard": [
-        "Másolás a vágólapra"
-      ],
       "Create": [
         "Létrehozás"
       ],
@@ -300,6 +297,9 @@
       ],
       "Download all configurations": [
         "Összes beállítás letöltése"
+      ],
+      "Download recovery file": [
+        ""
       ],
       "Download the Import-Export app": [
         "Export-Import alkalmazás letöltése"
@@ -778,6 +778,15 @@
       "View invoice": [
         "Számla megtekintése"
       ],
+      "Void all recovery files": [
+        ""
+      ],
+      "Void all recovery files?": [
+        ""
+      ],
+      "Void anyway": [
+        ""
+      ],
       "Warning": [
         "Figyelmeztetés"
       ],
@@ -1076,87 +1085,98 @@
       ]
     },
     "blackfriday Action": {
-      "Get limited-time deal": [
-        ""
-      ],
-      "Upgrade": [
+      "Get the offer": [
         ""
       ]
     },
     "blackfriday Info": {
-      "Discounts are based on monthly pricing.": [
-        ""
-      ],
-      "early access to": [
-        ""
-      ],
-      "Free": [
-        ""
-      ],
-      "Get early access to our new encrypted drive for FREE by upgrading to a Plus bundle now.": [
-        ""
+      "beta": [
+        "béta"
       ],
       "Includes": [
-        ""
-      ],
-      "Offer valid only for first-time paid subscriptions.": [
-        ""
-      ],
-      "ProtonDrive": [
-        ""
-      ],
-      "Save ${ percentage }%": [
-        "${ percentage } %"
+        "Tartalmazza"
       ],
       "Standard price: ${ regularPrice }": [
-        ""
+        "Normál ár: ${ regularPrice }"
       ],
       "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
         ""
       ]
     },
-    "blackfriday info": {
-      "per month": [
+    "blackfriday Title": {
+      "Best deal": [
+        ""
+      ],
+      "Most popular": [
+        "Legnépszerűbb"
+      ],
+      "Save more when combining Mail and VPN": [
         ""
       ]
     },
-    "blackfriday Promo title, need to be short": {
+    "blackfriday: VPNspecialoffer Action": {
+      "Get the deal": [
+        "Érdekel az ajánlat"
+      ],
+      "Get the deal now": [
+        "Érdekel az ajánlat"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Badge popup": {
+      "${ vpnAppName } Plus Special Offer 2021 discount has been applied": [
+        ""
+      ]
+    },
+    "blackfriday: VPNspecialoffer Info": {
+      "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
+        ""
+      ],
+      "Save ${ percentage }%": [
+        "${ percentage } %"
+      ],
+      "Special offer Terms and Conditions": [
+        ""
+      ]
+    },
+    "blackfriday: VPNspecialoffer info": {
+      "per month": [
+        "havonta"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Promo title, need to be short": {
       "Special offer": [
         "Különleges ajánlat"
       ]
     },
-    "blackfriday Title": {
-      "(${ notice }) Renews after 1 year at a discounted annual & bundle price of ${ amount } every year (36% discount).": [
+    "blackfriday: VPNspecialoffer Title": {
+      "(${ notice }) Renews after 1 month at a standard monthly price of ${ amount }": [
         ""
       ],
-      "(${ notice }) Renews after 1 year at a discounted annual price of ${ amount } every year (20% discount).": [
+      "(${ notice }) Renews after 1 year at a standard discounted annual price of ${ amount } (20% discount)": [
         ""
       ],
-      "(${ notice }) Renews after 2 years at a discounted 2-year price of ${ amount } every 2 years (47% discount).": [
+      "(${ notice }) Renews after 2 years at a standard discounted 2-year price of ${ amount } (33% discount)": [
         ""
       ],
-      "Billed as ${ amount } ${ supNotice }": [
+      "1 month": [
+        "1 hónap"
+      ],
+      "12 months": [
+        "12 hónap"
+      ],
+      "24 months": [
+        "24 hónap"
+      ],
+      "Billed at ${ amount } for the first 2 years.${ supNotice }": [
         ""
       ],
-      "Black Friday Sale": [
+      "Billed at ${ amount } for the first month.${ supNotice }": [
         ""
       ],
-      "Cyber Monday Sale": [
+      "Billed at ${ amount } for the first year.${ supNotice }": [
         ""
       ],
-      "for 1 month": [
-        ""
-      ],
-      "for 1 year": [
-        ""
-      ],
-      "for 2 years": [
-        ""
-      ],
-      "Most popular": [
-        ""
-      ],
-      "ProtonDrive early access offer": [
+      "Get the special year-end offer on our Premium VPN PLUS plan": [
         ""
       ]
     },
@@ -1924,6 +1944,9 @@
       "Organization key is not decrypted.": [
         "A szervezeti kulcs nincs visszafejtve."
       ],
+      "Organization not recognized. Try again.": [
+        ""
+      ],
       "Passwords do not match": [
         "A jelszavak nem egyeznek"
       ],
@@ -1960,6 +1983,9 @@
       ],
       "Please refresh the page.": [
         "Kérjük frissítse az oldalt."
+      ],
+      "Please set a recovery email first": [
+        ""
       ],
       "Please set a recovery phone number first": [
         "Először adja meg a helyreállítási telefonszámot"
@@ -2074,6 +2100,9 @@
       ],
       "Uploaded file is not a valid private key. Please verify and try again.": [
         "A feltöltött fájl nem egy érvényes titkos kulcs. Ellenőrizze és próbálja újra."
+      ],
+      "Uploaded file is not a valid recovery file. Please verify and try again.": [
+        ""
       ],
       "Uploaded files are not valid private keys. Please verify and try again.": [
         "A feltöltött fájlok nem érvényes titkos kulcsok. Ellenőrizze és próbálja újra."
@@ -3148,6 +3177,9 @@
       "A key with the same encryption algorithm is already active for this address. Generating another key will cause slower account loading and deletion of this key can cause issues. If you are generating a new key because your old key is compromised, please mark that key as compromised. Are you sure you want to continue?": [
         "Ehhez a címhez már vagy egy aktív kulcs ugyanilyen titkosítási algoritmussal. Újabb kulcs létrehozása le fogja lassítani a fiók betöltését és a kulcs törlése problémákat okozhat. Amennyiben azért hoz létre új kulcsot, mert a korábbi kompromittált, akkor jelölje meg azt a kulcsot kompromittáltként.\nBiztos, hogy folytatja?"
       ],
+      "A recovery file lets you unlock and view your data after an account reset. ": [
+        ""
+      ],
       "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password.": [
         "A helyreállító jelmondat segít visszaszerezni ez elérését a fiókjához és helyreállítani a titkosított leveleit, ha elfelejtené a jelszavát."
       ],
@@ -3160,11 +3192,26 @@
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "A fiók hozzáférése korlátozott befizetetlen számla miatt. Lépjen kapcsolatba az adminisztrátorral."
       ],
+      "account recovery and data recovery method": [
+        ""
+      ],
+      "account recovery method": [
+        ""
+      ],
       "Account successfully updated": [
         "A fiók sikeresen frissítve"
       ],
+      "Activate your recovery phrase": [
+        ""
+      ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"ProtonMail me\" or \"Private Message me.\"": [
         "Hozzon létre @pm.me címet a fiókjához. Ez a rövid név a \"ProtonMail nekem\" (ProtonMail me), vagy \"személyes üzenet nekem\" (Private Message me) rövidítésre utal."
+      ],
+      "Add a recovery email address": [
+        ""
+      ],
+      "Add a recovery phone number": [
+        ""
       ],
       "Add additional addresses to your account like user2@protonmail.com": [
         "Adjon hozzá további címeket a fiókjához, mint például felhasznalonev2@protonmail.com"
@@ -3184,6 +3231,9 @@
       ],
       "Addresses": [
         "Címek"
+      ],
+      "After a password reset your data is locked in encrypted form to keep it safe. To decrypt and view your emails and other data, you need a recovery file or recovery phrase.": [
+        ""
       ],
       "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
         "A Bitcoin fizetés után, kövesse a lenti utasításokat a nagyobb csomagra váltáshoz."
@@ -3471,6 +3521,9 @@
       "Download your PGP keys for use with other PGP-compatible services.": [
         "Letöltheti a PGP kulcsát más PGP kompatibilis szolgáltatásokban való használathoz."
       ],
+      "Download your recovery file": [
+        ""
+      ],
       "Drop the file here to upload": [
         "Húzza ide a fájlt a feltöltéshez"
       ],
@@ -3480,8 +3533,8 @@
       "Edit label": [
         "Címke szerkesztése"
       ],
-      "Effortlessly and securely move your emails from your current provider to Proton. If you use Google, we also support calendar, and contacts imports.": [
-        "Könnyedén és biztonságosan költöztesse át leveleit a jelenlegi szolgáltatójától a Protonhoz. Ha Google-t használ, a naptárát és a névjegyeit is áthozhatja."
+      "Effortlessly and securely move your emails from your current provider to Proton. If you use Google, we also support calendar and contacts imports.": [
+        ""
       ],
       "Email address": [
         "E-mail cím"
@@ -3624,6 +3677,12 @@
       "If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly.": [
         "Amennyiben az SPF és a DKIM rekordokat már beállította, a DMARC beállítása lehetőséget biztosít annak szabályozására, hogy más e-mail szolgáltatások hogyan fogadhatnak levelet a domain nevével, ha mind az SPF, mind a DKIM ellenőrzések meghiúsultak. Ez megnehezítheti, hogy spammerek levélszemetet küldjenek a domain nevével, de az ön leveleinek továbbításában is fennakadásokat okozhat, ha hibásan van beállítva."
       ],
+      "If you lose your login details and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
+        ""
+      ],
+      "If you lose your login details and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.": [
+        ""
+      ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to log into your account. Each code can only be used once.": [
         "Ha elveszti a kétlépcsős hitelesítéshez használt eszközét, ezekkel a kódokkal jelentkezhet be fiókjába a 6 számjegyű kód helyett. Minden kód csak egyszer használható."
       ],
@@ -3682,6 +3741,12 @@
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Adatok importálása a(z) ${ importedEmailAddress } címről a(z) ${ toEmail } címre."
       ],
+      "In case you lose your login details, we’ll send you recovery instructions via email or SMS.": [
+        ""
+      ],
+      "In case you lose your login details, we’ll send you recovery instructions via email.": [
+        ""
+      ],
       "Included": [
         "Tartalmazza"
       ],
@@ -3714,6 +3779,9 @@
       ],
       "Internet connection restored.": [
         "Internet kapcsolat helyreállt."
+      ],
+      "it’s imperative": [
+        ""
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Hagyja jóvá a kiválasztást aztán elindul a folyamat."
@@ -3817,6 +3885,9 @@
       "Next you'll need to log in to your Google account and allow us to access your data.": [
         "Következőként be kell jelentkeznie a Google fiókjába, hogy engedélyezze az adatokhoz való hozzáférést."
       ],
+      "No account recovery method set, you are at risk of losing access to your account": [
+        ""
+      ],
       "No action selected": [
         "Nincs kiválasztva művelet"
       ],
@@ -3825,6 +3896,9 @@
       ],
       "No contact encryption keys exist": [
         "Nincs névjegy titkosító kulcs"
+      ],
+      "No data recovery method set, you are at risk of losing access to your data": [
+        ""
       ],
       "No folder selected": [
         "Nincs kiválasztva mappa"
@@ -4010,11 +4084,17 @@
       "read our two-factor authentication Guide first": [
         "először elolvasni a kétlépcsős hitelesítésről szóló útmutatót"
       ],
+      "Recovery files have been voided": [
+        ""
+      ],
       "Recovery phrase copied to clipboard": [
         "A helyreállító jelmondat a vágólapra másolva"
       ],
       "Recovery phrase has been disabled": [
         "A helyreállító jelmondat kikpacsolva"
+      ],
+      "Recovery phrase is not associated with any outdated keys.": [
+        ""
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Az oldal frissítése vagy a ${ link } automatikusan megoldja a legtöbb problémát."
@@ -4046,8 +4126,8 @@
       "Select a service provider to get started": [
         "Válaszon ki egy szolgáltatót a kezdéshez"
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20-personal-calendar limit. You can also merge imported calendars with existing Proton calendars.": [
-        "Válassza ki az importálandó naptárakat. Minden importált naptárhoz egy új naptár fog létrejönni, a 20-as személyes naptár határig. Az importálandó naptárakat egyesítheti a meglévő naptárakkal is."
+      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit. You can also merge imported calendars with existing Proton calendars.": [
+        ""
       ],
       "Server is currently down": [
         "A szerver jelenleg nem működik"
@@ -4223,8 +4303,8 @@
       "Unable to decrypt. Recovery phrase is not associated with any keys.": [
         "Visszafejtés nem sikerült. A helyreállító jelmondat nem kapcsolható egyetlen kulcshoz sem."
       ],
-      "Unable to decrypt. Recovery phrase is not associated with any outdated keys.": [
-        "Visszafejtés nem sikerült. A helyreállító jelmondat nem kapcsolható egyetlen elavult kulcshoz sem."
+      "Unable to verify recovery file signature. Please contact support.": [
+        ""
       ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Sajnos, nincs helyreállítási mód beállítva ehhez a fiókhoz."
@@ -4288,12 +4368,6 @@
       ],
       "We advise you to use official ProtonVPN applications when possible.": [
         "Amikor lehetséges, javasoljuk inkább a hivatalos ProtonVPN alkalmazás használatát."
-      ],
-      "We recommend adding a linked email or phone number so you can recover your account if you lose your password.": [
-        "Javasoljuk, hogy adjon meg egy kapcsolódó e-mail címet vagy telefonszámot, így helyreállíthatja a fiókját ha elfelejtené a jelszavát."
-      ],
-      "We recommend adding a linked email so you can recover your account if you lose your password.": [
-        "Javasoljuk, hogy adjon meg egy kapcsolódó e-mail címet, így helyreállíthatja a fiókját ha elfelejtené a jelszavát."
       ],
       "We use 3-D Secure to protect your payments.": [
         "3D Secure kódot használunk a kifizetések védelme érdekében."
@@ -4439,6 +4513,9 @@
       "You will soon be redirected to PayPal to verify your payment.": [
         "A kifizetés ellenőrzéséhez hamarosan átirányítunk a PayPal oldalára."
       ],
+      "You won't be able to recover encrypted data after an account reset using your downloaded recovery files.": [
+        ""
+      ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, please create an address.": [
         "A ${ BRAND_NAME } fiókja ${ externalEmailAddress } címhez kapcsolódik. A ${ toAppName } használatához hozzon létre egy címet."
       ],
@@ -4450,6 +4527,9 @@
       ],
       "Your account is being upgraded, this may take up to 30 seconds.": [
         "A fiók frissítése folyamatban van, ez akár 30 másodpercig is eltarthat."
+      ],
+      "Your account recovery method is set": [
+        ""
       ],
       "Your account will be updated once the payment is cleared.": [
         "A fiókját frissítjük, mihelyst megérkezik a befizetés."
@@ -4465,6 +4545,9 @@
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "Az adatok a Proton fiókjába importálásra készen állnak a(z) ${ importedEmailAddressStrong } címről."
+      ],
+      "Your data recovery method is set": [
+        ""
       ],
       "Your email will only be used for this one-time verification.": [
         "Az e-mail cím csak erre az egyszeri ellenőrzésre lesz felhasználva."
@@ -5178,6 +5261,9 @@
       "End weekday": [
         "A hét befejező napja"
       ],
+      "Enter organization name to confirm": [
+        ""
+      ],
       "Enter password": [
         "Jelszó megadása"
       ],
@@ -5195,6 +5281,9 @@
       ],
       "extra storage": [
         "további tárhely"
+      ],
+      "File": [
+        ""
       ],
       "Filter Name": [
         "Szűrő neve"
@@ -5427,6 +5516,12 @@
       "Recovery email": [
         "Helyreállítási e-mail"
       ],
+      "Recovery email address": [
+        ""
+      ],
+      "Recovery file": [
+        ""
+      ],
       "Recovery phone": [
         "Helyreállítási telefonszám"
       ],
@@ -5541,8 +5636,14 @@
       "Upload your backup key": [
         "Tartalék kulcs felöltése"
       ],
+      "Upload your recovery file": [
+        ""
+      ],
       "Uploaded private keys": [
         "Feltöltött titkos kulcsok"
+      ],
+      "Uploaded recovery file": [
+        ""
       ],
       "URL": [
         "URL"
@@ -5629,6 +5730,9 @@
     "label": {
       "Phone number": [
         "Telefonszám"
+      ],
+      "Recovery phone number": [
+        ""
       ],
       "Recovery phrase": [
         "Helyreállító jelmondat"
@@ -5936,11 +6040,11 @@
       ]
     },
     "Mail import summary": {
-      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "",
         ""
       ],
-      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "",
         ""
       ]
@@ -5979,6 +6083,11 @@
       ],
       "Sign in": [
         "Bejelentkezés"
+      ]
+    },
+    "Member downgrade modal": {
+      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
+        ""
       ]
     },
     "Message": {
@@ -6890,6 +6999,9 @@
       ],
       "Upload additional private keys": [
         ""
+      ],
+      "Upload additional recovery files": [
+        ""
       ]
     },
     "Select search results": {
@@ -7383,6 +7495,9 @@
       "3. Select config file and download": [
         "3. Beállítási fájl kiválasztása és letöltése"
       ],
+      "Account recovery": [
+        ""
+      ],
       "Account suspended": [
         "Fiók felfüggesztve"
       ],
@@ -7445,9 +7560,6 @@
       ],
       "Addresses": [
         "Címek"
-      ],
-      "Advanced": [
-        "Haladó"
       ],
       "Allocate storage": [
         "Tárhely lefoglalása"
@@ -7620,6 +7732,9 @@
       "Dashboard": [
         "Vezérlőpult"
       ],
+      "Data recovery": [
+        ""
+      ],
       "Date": [
         "Dátum"
       ],
@@ -7652,6 +7767,9 @@
       ],
       "Delete logs": [
         "Naplók törlése"
+      ],
+      "Delete organization?": [
+        ""
       ],
       "Delete user": [
         "Felhasználó törlése"
@@ -7879,8 +7997,8 @@
       "Password & keys": [
         "Jelszó és kulcs"
       ],
-      "Password & recovery": [
-        "Jelszó és helyreállítás"
+      "Password & security": [
+        ""
       ],
       "Passwords": [
         "Jelszavak"
@@ -7948,8 +8066,11 @@
       "Reconnect your account": [
         "Újracsatlakozás a fiókhoz"
       ],
-      "Recovery & notification": [
-        "Helyreállítás és értesítés"
+      "Recovery": [
+        ""
+      ],
+      "Recovery file": [
+        ""
       ],
       "Remove calendar": [
         "Naptár eltávolítása"
@@ -7971,9 +8092,6 @@
       ],
       "Restore administrator privileges": [
         "Adminisztrátori jogok visszaállítása"
-      ],
-      "Security": [
-        "Biztonság"
       ],
       "Security logs": [
         "Biztonsági napló"
@@ -8077,6 +8195,9 @@
       "Switch to two-password mode": [
         "Két jelszavas módra váltás"
       ],
+      "Take precautions to avoid data loss!": [
+        ""
+      ],
       "Theme": [
         "Téma"
       ],
@@ -8130,6 +8251,9 @@
       ],
       "Your plan": [
         "Az ön csomagja"
+      ],
+      "Your recovery status": [
+        ""
       ],
       "ZIP / postal code": [
         "Irányítószám"
