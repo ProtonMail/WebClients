@@ -67,7 +67,12 @@ export const setup = async (specificProps: Partial<MessageViewProps> = {}, useMi
         });
     };
 
-    return { ...renderResult, ref, open, details };
+    const rerender = async (specificProps: Partial<MessageViewProps> = {}) => {
+        const props = { ...defaultProps, ...specificProps };
+        await renderResult.rerender(<MessageView ref={refCallback} {...props} />);
+    };
+
+    return { ...renderResult, ref, open, details, rerender };
 };
 
 export const initMessage = (inputMessage: PartialMessageExtended = {}) => {

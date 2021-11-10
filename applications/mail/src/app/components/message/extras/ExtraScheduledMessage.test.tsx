@@ -1,7 +1,7 @@
 import React from 'react';
 import { addDays, addMinutes } from '@proton/shared/lib/date-fns-utc';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import { addSeconds } from 'date-fns';
+import { addHours, addSeconds } from 'date-fns';
 import { fireEvent } from '@testing-library/dom';
 import { act, getByText as getByTextDefault } from '@testing-library/react';
 import { render } from '../../../helpers/test/render';
@@ -53,7 +53,9 @@ describe('Scheduled messages banner', () => {
     });
 
     it('should have text will be sent today', async () => {
-        const sendingDate = addMinutes(new Date(), 20);
+        const dateSpy = jest.spyOn(Date, 'now').mockImplementation(() => new Date().setHours(12).valueOf());
+
+        const sendingDate = addHours(new Date(Date.now()), 3);
         const message = getMessage(sendingDate);
 
         const { getByTestId, getByText } = await render(<ExtraScheduledMessage message={message} />);
@@ -64,6 +66,8 @@ describe('Scheduled messages banner', () => {
         const scheduledBannerText = getByText(`This message will be sent ${dateString} at ${formattedTime}`);
         expect(scheduledBannerText.innerHTML).toContain('today');
         getByText('Edit');
+
+        dateSpy.mockRestore();
     });
 
     it('should have text will be sent shortly', async () => {
