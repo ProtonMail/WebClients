@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import * as React from 'react';
+import { c } from 'ttag';
 
 import { Button, Icon, FileIcon, Checkbox, classnames, DragMoveContainer, FileNameDisplay } from '@proton/components';
 import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
@@ -136,7 +137,7 @@ function ItemCell({
                         className="file-browser-grid-view--options"
                         onClick={(e) => itemHandlers.onContextMenu(e)}
                     >
-                        <Icon name="ellipsis-vertical" />
+                        <Icon name="ellipsis-vertical" alt={c('Action').t`More options`} />
                     </Button>
                 </div>
             </div>
