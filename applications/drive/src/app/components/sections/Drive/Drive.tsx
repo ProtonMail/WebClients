@@ -12,6 +12,7 @@ import { useDriveContent } from './DriveContentProvider';
 import EmptyFolder from './EmptyFolder';
 import FolderContextMenu from './FolderContextMenu';
 import DriveItemContextMenu from './DriveItemContextMenu';
+import SortDropdown from './SortDropdown';
 
 interface Props {
     activeFolder: DriveFolder;
@@ -75,6 +76,7 @@ function Drive({ activeFolder }: Props) {
             onScrollEnd={handleScrollEnd}
             ItemContextMenu={DriveItemContextMenu}
             FolderContextMenu={FolderContextMenu}
+            SortDropdown={SortDropdown}
         />
     );
 }
