@@ -422,7 +422,7 @@ const IASelectImportTypeStep = ({
                     disabled={disableCalendar}
                 />
                 <div className="flex flex-column flex-item-fluid">
-                    <div className={classnames([showSummary && 'mb0-5'])}>{c('Label').t`Calendar`}</div>
+                    <div className={classnames([showSummary && 'mb0-5'])}>{c('Label').t`Calendars`}</div>
                     {showSummary && (
                         <>
                             {payloadErrors.includes(CalendarImportPayloadError.MAX_CALENDARS_LIMIT_REACHED) ? (

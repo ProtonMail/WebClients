@@ -5,7 +5,7 @@ import { EASY_SWITCH_SOURCE, ImportType } from '@proton/shared/lib/interfaces/Ea
 import { Calendar } from '@proton/shared/lib/interfaces/calendar';
 import { CALENDAR_APP_NAME } from '@proton/shared/lib/calendar/constants';
 
-import { Alert, Button, GoogleButton, Href, PrimaryButton } from '../../../components';
+import { Alert, GoogleButton, Href, PrimaryButton } from '../../../components';
 
 import { useAddresses, useFeature, useModals } from '../../../hooks';
 
@@ -61,11 +61,15 @@ const CalendarImportSection = ({ activeCalendars, defaultCalendar, user }: Props
 
             {isEasySwitchEnabled ? (
                 <>
-                    <GoogleButton onClick={handleOAuthClick} disabled={loadingAddresses} className="mr1" />
+                    <GoogleButton
+                        onClick={handleOAuthClick}
+                        disabled={loadingAddresses || !canImport}
+                        className="mr1"
+                    />
 
-                    <Button onClick={handleImport} disabled={!canImport}>
+                    <PrimaryButton onClick={handleImport} disabled={!canImport}>
                         {c('Action').t`Import from .ics`}
-                    </Button>
+                    </PrimaryButton>
                 </>
             ) : (
                 <PrimaryButton onClick={handleImport} disabled={!canImport}>
