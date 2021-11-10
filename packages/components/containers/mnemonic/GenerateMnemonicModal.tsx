@@ -90,13 +90,13 @@ const GenerateMnemonicModal = ({ confirmStep = false, onClose = () => {}, onSucc
     const { section, ...modalProps } = (() => {
         if (step === STEPS.CONFIRM) {
             return {
-                title: c('Action').t`Create new recovery phrase?`,
+                title: c('Action').t`Generate new recovery phrase?`,
                 tiny: true,
                 hasClose: false,
                 section: (
                     <>
                         <p className="mt0">{c('Info')
-                            .t`Creating a new recovery phrase will deactivate your old one.`}</p>
+                            .t`Generating a new recovery phrase will deactivate your old one.`}</p>
                         <p className="mb0">{c('Info').t`Are you sure you want to continue?`}</p>
                     </>
                 ),
@@ -115,7 +115,7 @@ const GenerateMnemonicModal = ({ confirmStep = false, onClose = () => {}, onSucc
                                 }
                             }}
                         >
-                            {c('Action').t`Create recovery phrase`}
+                            {c('Action').t`Generate recovery phrase`}
                         </Button>
                         <Button className="mt1" fullWidth disabled={reactivating} onClick={onClose}>
                             {c('Action').t`Cancel`}
