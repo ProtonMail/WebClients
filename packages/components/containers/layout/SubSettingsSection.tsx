@@ -28,7 +28,7 @@ const SubSettingsSection = ({ id, observer, title, children, ...rest }: Props) =
             <div className="relative">
                 <div id={id} className="header-height-anchor" />
             </div>
-            <section {...rest} ref={ref} data-target-id={id}>
+            <section {...rest} id={id} ref={ref} data-target-id={id}>
                 {title && <SettingsSectionTitle>{title}</SettingsSectionTitle>}
                 {children}
             </section>

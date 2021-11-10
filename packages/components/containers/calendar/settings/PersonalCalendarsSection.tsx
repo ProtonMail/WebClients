@@ -115,8 +115,8 @@ const PersonalCalendarsSection = ({
             loadingMap={loadingMap}
             add={c('Action').t`Create calendar`}
             calendarLimitReachedText={c('Calendar limit warning').ngettext(
-                msgid`You have reached the maximum of ${calendarsLimit} calendar.`,
-                `You have reached the maximum of ${calendarsLimit} calendars.`,
+                msgid`You have reached the maximum of ${calendarsLimit} personal calendar.`,
+                `You have reached the maximum of ${calendarsLimit} personal calendars.`,
                 calendarsLimit
             )}
             canAdd={activeAddresses.length > 0 && isBelowLimit && user.hasNonDelinquentScope}
