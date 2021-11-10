@@ -1,12 +1,12 @@
-import { Address, Api } from '@proton/shared/lib/interfaces';
-import { Calendar, Member } from '@proton/shared/lib/interfaces/calendar';
-import { useGetAddressKeys } from '@proton/components';
-import { getCalendarGroupReset, queryMembers, resetCalendarGroup } from '@proton/shared/lib/api/calendars';
-import { getPrimaryKey } from '@proton/shared/lib/keys';
-import { c } from 'ttag';
-import { generateCalendarKeyPayload } from '@proton/shared/lib/keys/calendarKeys';
 import { getKeys } from 'pmcrypto';
-import { getMemberAddressWithAdminPermissions } from '@proton/shared/lib/calendar/getMemberWithAdmin';
+import { c } from 'ttag';
+import { useGetAddressKeys } from '@proton/components';
+import { Address, Api } from '../../interfaces';
+import { getCalendarGroupReset, queryMembers, resetCalendarGroup } from '../../api/calendars';
+import { getPrimaryKey } from '../../keys';
+import { generateCalendarKeyPayload } from '../../keys/calendarKeys';
+import { getMemberAddressWithAdminPermissions } from '../getMemberWithAdmin';
+import { Calendar, Member } from '../../interfaces/calendar';
 
 interface ResetCalendarKeysArguments {
     api: Api;

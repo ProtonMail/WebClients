@@ -18,6 +18,8 @@ import {
     MembersModel,
     PaymentMethodsModel,
     ImportersModel,
+    CalendarsModel,
+    CalendarUserSettingsModel,
 } from '@proton/shared/lib/models';
 
 interface Props {
@@ -60,6 +62,8 @@ const PrivateApp = ({ onLogout, locales }: Props) => {
                 MembersModel,
                 PaymentMethodsModel,
                 ImportersModel,
+                CalendarsModel,
+                CalendarUserSettingsModel,
             ]}
             hasPrivateMemberKeyGeneration
             hasReadableMemberKeyActivation

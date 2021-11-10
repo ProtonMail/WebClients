@@ -1,11 +1,11 @@
 import { c } from 'ttag';
-import { Address, Api } from '@proton/shared/lib/interfaces';
-import { Calendar, Member } from '@proton/shared/lib/interfaces/calendar';
-import { queryMembers, setupCalendar } from '@proton/shared/lib/api/calendars';
-import { getPrimaryKey } from '@proton/shared/lib/keys';
-import { generateCalendarKeyPayload, getKeysMemberMap } from '@proton/shared/lib/keys/calendarKeys';
-import { getMemberAddressWithAdminPermissions } from '@proton/shared/lib/calendar/getMemberWithAdmin';
-import { useGetAddressKeys } from '../../../hooks';
+import { useGetAddressKeys } from '@proton/components/hooks';
+import { Address, Api } from '../../interfaces';
+import { Calendar, Member } from '../../interfaces/calendar';
+import { queryMembers, setupCalendar } from '../../api/calendars';
+import { getPrimaryKey } from '../../keys';
+import { generateCalendarKeyPayload, getKeysMemberMap } from '../../keys/calendarKeys';
+import { getMemberAddressWithAdminPermissions } from '../getMemberWithAdmin';
 
 interface SetupCalendarKeysArgumentsShared {
     api: Api;
