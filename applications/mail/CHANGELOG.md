@@ -1,3 +1,21 @@
+## Release 4.0.11 - Nov 24, 2021
+
+### Improvements
+
+-   Improved the error management when trying to view a contact with corrupted data inside
+-   Added some technical improvements related to the State Management of the application
+-   Minor UI improvements and enhancements
+
+### Bug fixes
+
+-   Fixed an issue where sending external, signed, non-encrypted messages would time out due to the message size
+-   Fixed an issue where the width of the advanced search widget would vary depending on the options chosen
+-   Fixed an issue where some attachment file icons would not be displayed properly
+-   Fixed an issue where the sent icon would be missing in header details if the setting "Keep messages in Sent/Drafts" was enabled
+-   Fixed an issue where mailto: links were considered as links if the mail contains a <base> tag
+-   Fixed an issue where it was possible to use the Space key to invisibly select a conversation in Row layout
+-   Fixed an issue where the file preview would not be full screen if clicked on a file from inside the composer
+
 ## Release 4.0.10 - Nov 10, 2021
 
 ### Improvements
@@ -37,6 +55,7 @@
 -   Updated the icon for "Encryption & keys" in settings to match the encryption icon in the message view
 -   Improved the underlying technology for undoing various actions, like sending and moving messages
 -   Implemented various performance improvements to speed up loading times, including but not limited to: composer, sidebar, drag&drop elements, focus management and pagination
+-   Updated the design of email calendar invitations
 
 ### Bug fixes
 
