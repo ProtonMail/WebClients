@@ -41,8 +41,7 @@ const register = (id: string) => {
 const useModalPosition = (open: boolean) => {
     const internalId = useInstance(() => String(id++));
 
-    const [first, setFirst] = useState<boolean>();
-    const [last, setLast] = useState<boolean>();
+    const [state, setState] = useState({ first: false, last: false });
 
     useLayoutEffect(() => {
         if (!open) {
@@ -52,8 +51,7 @@ const useModalPosition = (open: boolean) => {
         const { subscribe, unregister, isFirst, isLast } = register(internalId);
 
         const sync = () => {
-            setFirst(isFirst());
-            setLast(isLast());
+            setState({ first: isFirst(), last: isLast() });
         };
 
         subscribe(sync);
@@ -65,7 +63,7 @@ const useModalPosition = (open: boolean) => {
         };
     }, [open]);
 
-    return { first, last };
+    return state;
 };
 
 export default useModalPosition;
