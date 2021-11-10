@@ -20,7 +20,7 @@ interface MailGetStartedChecklistModalProps extends Partial<ModalPropsInjection>
 
 const MailGetStartedChecklistModal = ({ onClose, onSendMessage, ...rest }: MailGetStartedChecklistModalProps) => {
     const { createModal } = useModals();
-    const isMnemonicAvailable = useIsMnemonicAvailable();
+    const [isMnemonicAvailable] = useIsMnemonicAvailable();
     const goToSettings = useSettingsLink();
 
     return (

@@ -97,7 +97,7 @@ const List = (
 
     const onCompose = useOnCompose();
     const { createModal } = useModals();
-    const isMnemonicAvailable = useIsMnemonicAvailable();
+    const [isMnemonicAvailable] = useIsMnemonicAvailable();
     const goToSettings = useSettingsLink();
     const elements = usePlaceholders(inputElements, loading, placeholderCount);
     const { dismissed: getStartedDismissed, handleDismiss } = useContext(GetStartedChecklistContext);
