@@ -1,5 +1,5 @@
 import { useEffect, useState, MutableRefObject, useRef, useCallback } from 'react';
-import { useHandler } from '@proton/components';
+import { useHandler, useIsMounted } from '@proton/components';
 
 export interface MailboxFocusContext {
     elementIDs: string[];
@@ -10,6 +10,7 @@ export interface MailboxFocusContext {
 }
 
 export const useMailboxFocus = ({ elementIDs, showList, listRef, labelID, isComposerOpened }: MailboxFocusContext) => {
+    const isMounted = useIsMounted();
     const [focusIndex, setFocusIndex] = useState<number>();
 
     const getFocusedId = useCallback(
@@ -69,7 +70,11 @@ export const useMailboxFocus = ({ elementIDs, showList, listRef, labelID, isComp
 
         // keep focus on the same element if new messages are coming in
         if (focusedIDRef.current && elementIDs.includes(focusedIDRef.current)) {
-            setTimeout(() => focusOnElementByID(focusedIDRef.current));
+            setTimeout(() => {
+                if (isMounted()) {
+                    focusOnElementByID(focusedIDRef.current);
+                }
+            });
             return;
         }
 
