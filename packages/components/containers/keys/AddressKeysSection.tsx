@@ -1,7 +1,6 @@
 import { ChangeEvent, useEffect, useState } from 'react';
 import { c } from 'ttag';
 import {
-    reactivateKeysProcess,
     importKeysProcess,
     deleteAddressKey,
     setPrimaryAddressKey,
@@ -10,12 +9,13 @@ import {
 } from '@proton/shared/lib/keys';
 
 import { algorithmInfo } from 'pmcrypto';
-import { Loader, Button } from '../../components';
+import { Loader } from '../../components';
 import {
     useAddresses,
     useAddressesKeys,
     useApi,
     useAuthentication,
+    useCanReactivateKeys,
     useEventManager,
     useModals,
     useUser,
@@ -24,10 +24,8 @@ import {
 
 import { SettingsSectionWide, SettingsParagraph } from '../account';
 
-import { getAllKeysReactivationRequests, getKeysToReactivateCount } from './reactivateKeys/getAllKeysToReactive';
 import AddressKeysHeaderActions from './AddressKeysHeaderActions';
 import KeysTable from './KeysTable';
-import ReactivateKeysModal from './reactivateKeys/ReactivateKeysModal';
 import ExportPublicKeyModal from './exportKey/ExportPublicKeyModal';
 import ExportPrivateKeyModal from './exportKey/ExportPrivateKeyModal';
 import DeleteKeyModal from './deleteKey/DeleteKeyModal';
@@ -36,8 +34,8 @@ import AddKeyModal from './addKey/AddKeyModal';
 import ImportKeyModal from './importKeys/ImportKeyModal';
 import { getNewKeyFlags } from './shared/flags';
 import { FlagAction } from './shared/interface';
-import { KeyReactivationRequest } from './reactivateKeys/interface';
 import { getKeyByID } from './shared/helper';
+import ReactivateKeysButton from './reactivateKeys/ReactivateKeysButton';
 
 const AddressKeysSection = () => {
     const { createModal } = useModals();
@@ -50,6 +48,7 @@ const AddressKeysSection = () => {
     const [addressesKeys, loadingAddressesKeys] = useAddressesKeys();
     const [loadingKeyID, setLoadingKeyID] = useState<string>('');
     const [addressIndex, setAddressIndex] = useState(() => (Array.isArray(Addresses) ? 0 : -1));
+    const canReactivateKeys = useCanReactivateKeys();
 
     const Address = Addresses ? Addresses[addressIndex] : undefined;
     const { ID: addressID = '', Email: addressEmail = '' } = Address || {};
@@ -267,36 +266,8 @@ const AddressKeysSection = () => {
         );
     };
 
-    const handleReactivateKeys = (keyReactivationRequests: KeyReactivationRequest[]) => {
-        if (!userKeys) {
-            return;
-        }
-        createModal(
-            <ReactivateKeysModal
-                userKeys={userKeys}
-                keyReactivationRequests={keyReactivationRequests}
-                onProcess={async (keyReactivationRecords, onReactivation) => {
-                    await reactivateKeysProcess({
-                        api,
-                        user: User,
-                        userKeys,
-                        addresses: Addresses,
-                        keyReactivationRecords,
-                        keyPassword: authentication.getPassword(),
-                        onReactivation,
-                    });
-                    return call();
-                }}
-            />
-        );
-    };
-
-    const allKeysToReactivate = getAllKeysReactivationRequests(addressesKeys, User, userKeys);
-    const numberOfKeysToReactivate = getKeysToReactivateCount(allKeysToReactivate);
-
     const { isSubUser, isPrivate } = User;
     const hasDecryptedUserKeys = userKeys?.length > 0;
-    const canReactivate = !isSubUser && numberOfKeysToReactivate > 0 && hasDecryptedUserKeys;
 
     const canAdd = !isSubUser && isPrivate && hasDecryptedUserKeys;
     const canImport = canAdd;
@@ -306,18 +277,9 @@ const AddressKeysSection = () => {
             <SettingsParagraph>
                 {c('Info').t`Download your PGP keys for use with other PGP-compatible services.`}
             </SettingsParagraph>
-            {canReactivate && (
+            {canReactivateKeys && (
                 <div className="mb1">
-                    <Button
-                        color="norm"
-                        onClick={() => {
-                            if (!isLoadingKey) {
-                                handleReactivateKeys(allKeysToReactivate);
-                            }
-                        }}
-                    >
-                        {c('Action').t`Reactivate keys`}
-                    </Button>
+                    <ReactivateKeysButton disabled={isLoadingKey} />
                 </div>
             )}
             <AddressKeysHeaderActions
