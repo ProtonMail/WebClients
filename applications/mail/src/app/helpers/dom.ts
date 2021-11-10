@@ -105,7 +105,6 @@ export const isHTMLEmpty = (html: string) => !html || html === '<div><br /></div
 // https://github.com/chimurai/http-proxy-middleware/issues/237#issue-294034608
 export const createErrorHandler = (reject: (error: Error) => void) => {
     return (event: any) => {
-        console.log('coucou', event);
         const error = new Error(`Failed to load ${event?.target?.src}`);
         (error as any).event = event;
         reject(error);
