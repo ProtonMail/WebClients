@@ -107,7 +107,7 @@ const RequestResetTokenForm = ({ onSubmit, defaultCountry, methods, defaultMetho
                             <InputFieldTwo
                                 id="email"
                                 bigger
-                                label={c('Label').t`Recovery email`}
+                                label={c('Label').t`Recovery email address`}
                                 error={validator(currentMethod === 'email' ? [requiredValidator(email)] : [])}
                                 disableChange={loading}
                                 type="email"
@@ -124,7 +124,7 @@ const RequestResetTokenForm = ({ onSubmit, defaultCountry, methods, defaultMetho
                                 as={PhoneInput}
                                 id="phone"
                                 bigger
-                                label={c('Label').t`Recovery phone`}
+                                label={c('Label').t`Recovery phone number`}
                                 error={validator(currentMethod === 'sms' ? [requiredValidator(phone)] : [])}
                                 defaultCountry={defaultCountry}
                                 disableChange={loading}
