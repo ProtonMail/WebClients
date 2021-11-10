@@ -60,7 +60,7 @@ const MainContainer = () => {
         if (loadingSubscription || !canEnableChat) {
             return;
         }
-        const subscriptionUserPaid: string[] = subscription.Plans.map((plan) => plan.Name);
+        const subscriptionUserPaid: string[] = subscription?.Plans?.map((plan) => plan.Name) || [];
         setTagsArray(subscriptionUserPaid);
     }, [subscription]);
 
