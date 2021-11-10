@@ -1,14 +1,6 @@
-import {
-    AnimationEvent,
-    ComponentPropsWithoutRef,
-    createContext,
-    useEffect,
-    useLayoutEffect,
-    useState,
-    useRef,
-} from 'react';
+import { AnimationEvent, ComponentPropsWithoutRef, createContext, useLayoutEffect, useState, useRef } from 'react';
 
-import { useChanged, useInstance } from '../../hooks';
+import { useChanged, useHotkeys, useInstance } from '../../hooks';
 import { classnames, generateUID } from '../../helpers';
 import { useFocusTrap } from '../focus';
 import { Portal } from '../portal';
@@ -99,19 +91,24 @@ const Modal = ({
         }
     );
 
-    useEffect(() => {
-        const handleKeyDown = (e: KeyboardEvent) => {
-            if (!disableCloseOnEscape && e.key === 'Escape') {
-                onClose?.();
-            }
-        };
-
-        window.addEventListener('keydown', handleKeyDown);
-
-        return () => {
-            window.removeEventListener('keydown', handleKeyDown);
-        };
-    }, []);
+    useHotkeys(
+        dialogRef,
+        [
+            [
+                'Escape',
+                (e) => {
+                    if (!open) {
+                        return;
+                    }
+                    if (!disableCloseOnEscape) {
+                        e.stopPropagation();
+                        onClose?.();
+                    }
+                },
+            ],
+        ],
+        { dependencies: [open] }
+    );
 
     if (!open && !exiting) {
         return null;
