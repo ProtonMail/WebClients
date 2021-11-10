@@ -15,7 +15,7 @@ const ExtraScheduledMessage = ({ message }: Props) => {
     const api = useApi();
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
-    const [nowDate, setNowDate] = useState(() => new Date());
+    const [nowDate, setNowDate] = useState(() => Date.now());
 
     const onCompose = useOnCompose();
     const { createModal } = useModals();
@@ -24,12 +24,12 @@ const ExtraScheduledMessage = ({ message }: Props) => {
 
     const scheduleDate = isScheduledMessage && message.data ? new Date(message.data.Time * 1000) : new Date();
 
-    const beforeSendInterval = scheduleDate.getTime() - nowDate.getTime();
+    const beforeSendInterval = scheduleDate.getTime() - nowDate;
     // Prevent from cancelling a message that is about to be sent 30s before
     const isScheduleSentShortly = beforeSendInterval < PREVENT_CANCEL_SEND_INTERVAL;
 
     useEffect(() => {
-        const handle = setInterval(() => setNowDate(new Date()), 1000);
+        const handle = setInterval(() => setNowDate(Date.now()), 1000);
         return () => {
             clearInterval(handle);
         };
