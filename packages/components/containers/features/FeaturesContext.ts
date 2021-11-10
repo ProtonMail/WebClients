@@ -31,8 +31,6 @@ export enum FeatureCode {
      * we can remove this comment :)).
      */
     EarlyAccessScope = 'EarlyAccess',
-    EnabledEarlyAccess = 'EnabledEarlyAccess',
-    EnabledEarlyAccessDesynchronization = 'EnabledEarlyAccessDesynchronization',
     WelcomeImportModalShown = 'WelcomeImportModalShown',
     BlackFridayPromoShown = 'BlackFridayPromoShown',
     BundlePromoShown = 'BundlePromoShown',
