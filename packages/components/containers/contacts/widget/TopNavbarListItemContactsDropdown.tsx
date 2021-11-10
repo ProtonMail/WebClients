@@ -84,6 +84,7 @@ const TopNavbarListItemContactsDropdown = ({ className, onCompose, onMailTo, cus
                 noMaxWidth
                 noMaxHeight
                 disableDefaultArrowNavigation
+                updatePositionOnDOMChange={false}
             >
                 {/* Translator: this text is "visually"-hidden, it's for helping blind people */}
                 <h1 className="sr-only">{c('Header').t`Contacts, groups and settings`}</h1>
