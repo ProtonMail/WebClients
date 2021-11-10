@@ -3,7 +3,7 @@ import { SectionConfig, SettingsPropsShared, useIsDataRecoveryAvailable } from '
 import { c } from 'ttag';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import { UserModel } from '@proton/shared/lib/interfaces';
-import { AccountRecoverySection, DataRecoverySection, RecoveryCard } from '@proton/components/containers/recovery';
+import { AccountRecoverySection, DataRecoverySection, OverviewSection } from '@proton/components/containers/recovery';
 import PrivateMainSettingsAreaWithPermissions from '../../components/PrivateMainSettingsAreaWithPermissions';
 
 const ids = {
@@ -58,7 +58,7 @@ const AccountRecoverySettings = ({ location, setActiveSection }: SettingsPropsSh
             config={getRecoveryPageWithSubsections(isDataRecoveryAvailable)}
             setActiveSection={setActiveSection}
         >
-            <RecoveryCard ids={ids} />
+            <OverviewSection ids={ids} />
             <AccountRecoverySection />
             {isDataRecoveryAvailable && (
                 <DataRecoverySection openMnemonicModal={action === 'generate-recovery-phrase'} />
