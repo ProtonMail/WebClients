@@ -11,7 +11,7 @@ import { useAddresses, useFeature, useModals } from '../../../hooks';
 
 import { ImportModal } from '../importModal';
 import { SettingsParagraph, SettingsSection } from '../../account';
-import { ImportAssistantOauthModal } from '../../easySwitch';
+import { EasySwitchOauthModal } from '../../easySwitch';
 import { FeatureCode } from '../../features';
 
 interface Props {
@@ -38,7 +38,7 @@ const CalendarImportSection = ({ activeCalendars, defaultCalendar, user }: Props
 
     const handleOAuthClick = () => {
         createModal(
-            <ImportAssistantOauthModal
+            <EasySwitchOauthModal
                 source={EASY_SWITCH_SOURCE.IMPORT_CALENDAR_SETTINGS}
                 addresses={addresses}
                 defaultCheckedTypes={[ImportType.CALENDAR]}
