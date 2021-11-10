@@ -9,12 +9,12 @@ import { Feature, FeatureCode } from '../containers/features';
 
 export type Environment = 'alpha' | 'beta';
 
-const getVersionCookieIsValid = (
+export const getVersionCookieIsValid = (
     versionCookie: Environment | undefined,
     earlyAccessScope: Feature<Environment> | undefined
 ) => versionCookie === undefined || earlyAccessScope?.Options?.includes(versionCookie);
 
-const getTargetEnvironment = (
+export const getTargetEnvironment = (
     earlyAccessScope: Feature<Environment> | undefined,
     earlyAccessUserSetting: boolean
 ): Environment | undefined => {
@@ -25,41 +25,43 @@ const getTargetEnvironment = (
     return earlyAccessScope.Value;
 };
 
-const versionCookieAtLoad = getCookie('Version') as Environment | undefined;
+export const versionCookieAtLoad = getCookie('Version') as Environment | undefined;
+
+export const updateVersionCookie = (
+    environment: Environment | undefined,
+    earlyAccessScopeFeature: Feature<Environment> | undefined
+) => {
+    if (environment) {
+        setCookie({
+            cookieName: 'Version',
+            cookieValue: environment,
+            expirationDate: 'max',
+            path: '/',
+        });
+    }
+
+    /*
+     * if there is a not-allowed cookie already set in the browser,
+     * leave it be, version will not be treated as set by it
+     */
+    if (!getVersionCookieIsValid(getCookie('Version') as Environment | undefined, earlyAccessScopeFeature)) {
+        return;
+    }
+
+    if (!environment) {
+        deleteCookie('Version');
+    }
+};
 
 const useEarlyAccess = () => {
     const api = useApi();
     const earlyAccessScope = useFeature(FeatureCode.EarlyAccessScope);
-    const enabledEarlyAccess = useFeature(FeatureCode.EnabledEarlyAccess);
     const { feature: { Value: maybeEarlyAccess, DefaultValue } = {} } = earlyAccessScope;
     const [loadingUpdate, withLoadingUpdate] = useLoading();
     const [userSettings, userSettingsLoading] = useUserSettings();
 
     const earlyAccessScopeValue = maybeEarlyAccess || DefaultValue;
     const hasLoaded = !(userSettingsLoading || earlyAccessScope.loading);
-
-    const updateVersionCookie = (environment?: Environment) => {
-        if (environment) {
-            setCookie({
-                cookieName: 'Version',
-                cookieValue: environment,
-                expirationDate: 'max',
-                path: '/',
-            });
-        }
-
-        /*
-         * if there is a not-allowed cookie already set in the browser,
-         * leave it be, version will not be treated as set by it
-         */
-        if (!getVersionCookieIsValid(getCookie('Version') as Environment | undefined, earlyAccessScope.feature)) {
-            return;
-        }
-
-        if (!environment) {
-            deleteCookie('Version');
-        }
-    };
 
     /*
      * Shouldn't be able to call update without the request for the EarlyAccessScope
@@ -75,7 +77,7 @@ const useEarlyAccess = () => {
          * earlyAccessEnabled be true
          */
         if (canUpdate) {
-            updateVersionCookie(earlyAccessEnabled ? earlyAccessScopeValue : undefined);
+            updateVersionCookie(earlyAccessEnabled ? earlyAccessScopeValue : undefined, earlyAccessScope.feature);
         }
 
         await withLoadingUpdate(api(updateEarlyAccess({ EarlyAccess: Number(earlyAccessEnabled) })));
@@ -90,10 +92,8 @@ const useEarlyAccess = () => {
     const currentEnvironmentMatchesTargetEnvironment = normalizedVersionCookieAtLoad === targetEnvironment;
     const environmentIsDesynchronized = hasLoaded && !currentEnvironmentMatchesTargetEnvironment;
     const loading = earlyAccessScope.loading || loadingUpdate;
-    const isEnabled = enabledEarlyAccess.feature?.Value;
 
     return {
-        isEnabled,
         value: Boolean(userSettings.EarlyAccess),
         scope: earlyAccessScopeValue,
         canUpdate,
@@ -101,7 +101,6 @@ const useEarlyAccess = () => {
         loading,
         loadingUpdate,
         environmentIsDesynchronized,
-        updateVersionCookie,
         targetEnvironment,
         currentEnvironment: versionCookieAtLoad,
     };
