@@ -41,7 +41,7 @@ export const useHandler = <T extends Handler>(
 };
 
 /**
- * Listen to the eventNane of the ref element
+ * Listen to the eventName of the ref element
  * Use useHandler to ensure an updated version of the handler
  */
 export const useEventListener = (
@@ -53,8 +53,14 @@ export const useEventListener = (
     const actualHandler = useHandler(handler);
 
     useEffect(() => {
-        ref.current?.addEventListener(eventName, actualHandler);
-        return () => ref.current?.removeEventListener(eventName, actualHandler);
+        const el = ref.current;
+        if (!el) {
+            return;
+        }
+        el.addEventListener(eventName, actualHandler);
+        return () => {
+            el.removeEventListener(eventName, actualHandler);
+        };
     }, dependencies);
 };
 
