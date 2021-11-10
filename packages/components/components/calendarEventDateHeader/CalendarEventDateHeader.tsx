@@ -1,9 +1,10 @@
 import { format } from 'date-fns';
 import formatUTC, { Options } from '@proton/shared/lib/date-fns-utc/format';
 import { dateLocale } from '@proton/shared/lib/i18n';
+import { DetailedHTMLProps, HTMLAttributes } from 'react';
 import { EnDash } from '../text';
 
-interface Props {
+interface Props extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
     startDate: Date;
     endDate: Date;
     isAllDay: boolean;
@@ -12,7 +13,6 @@ interface Props {
     hasFakeUtcDates?: boolean;
     hasAllDayUtcDates?: boolean;
     formatOptions?: Options;
-    className?: string;
 }
 const CalendarEventDateHeader = ({
     startDate,
@@ -23,7 +23,7 @@ const CalendarEventDateHeader = ({
     hasFakeUtcDates = false,
     hasAllDayUtcDates = false,
     formatOptions: maybeFormatOptions,
-    className,
+    ...rest
 }: Props) => {
     const useFormatUTC = hasFakeUtcDates || (isAllDay && hasAllDayUtcDates);
     const formatOptions = maybeFormatOptions || { locale: dateLocale };
@@ -50,10 +50,10 @@ const CalendarEventDateHeader = ({
 
     if (isAllDay) {
         if (dateStart === dateEnd) {
-            return <div className={className}>{dateStart}</div>;
+            return <div {...rest}>{dateStart}</div>;
         }
         return (
-            <div className={className}>
+            <div {...rest}>
                 {dateStart}
                 <EnDash />
                 {dateEnd}
@@ -62,7 +62,7 @@ const CalendarEventDateHeader = ({
     }
     if (dateStart === dateEnd) {
         return (
-            <div className={className}>
+            <div {...rest}>
                 {dateStart}
                 {', '}
                 <span className="inline-block">
@@ -74,7 +74,7 @@ const CalendarEventDateHeader = ({
         );
     }
     return (
-        <div className={className}>
+        <div {...rest}>
             {dateStart} {timeStart}
             <EnDash />
             {dateEnd} {timeEnd}

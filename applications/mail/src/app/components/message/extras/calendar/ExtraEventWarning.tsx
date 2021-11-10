@@ -30,8 +30,8 @@ const ExtraEventWarning = ({ model }: Props) => {
     if (isPartyCrasher && !isImport) {
         const text = isOrganizerMode
             ? c('Calendar invite info')
-                  .t`The sender of this email has not been invited to this event and cannot be added as a participant.`
-            : c('Calendar invite info').t`Your email address is not in the participants list.`;
+                  .t`The sender of this email has not been invited to this event and cannot be added as a participant`
+            : c('Calendar invite info').t`Your email address is not in the participants list`;
         return (
             <Alert className={alertClassName} type="warning">
                 {text}
@@ -49,7 +49,7 @@ const ExtraEventWarning = ({ model }: Props) => {
         if (method === ICAL_METHOD.REFRESH) {
             return (
                 <Alert className={alertClassName} type="warning">
-                    {c('Calendar invite info').t`Event refreshing is not supported for the moment.`}
+                    {c('Calendar invite info').t`Event refreshing is not supported for the moment`}
                 </Alert>
             );
         }
@@ -59,11 +59,11 @@ const ExtraEventWarning = ({ model }: Props) => {
                     {veventIcs['recurrence-id'] && (
                         <Alert className={alertClassName} type="warning">
                             {c('Calendar invite info')
-                                .t`This answer cannot be added to ${calendarAppName} as we only support answers to all events of a series for the moment.`}
+                                .t`This answer cannot be added to ${calendarAppName} as we only support answers to all events of a series for the moment`}
                         </Alert>
                     )}
                     <Alert className={alertClassName} type="warning">
-                        {c('Calendar invite info').t`Event rescheduling is not supported for the moment.`}
+                        {c('Calendar invite info').t`Event rescheduling is not supported for the moment`}
                     </Alert>
                 </>
             );
@@ -72,7 +72,7 @@ const ExtraEventWarning = ({ model }: Props) => {
             return (
                 <Alert className={alertClassName} type="warning">
                     {c('Calendar invite info')
-                        .t`This answer cannot be added to ${calendarAppName} as we only support answers to all events of a series for the moment.`}
+                        .t`This answer cannot be added to ${calendarAppName} as we only support answers to all events of a series for the moment`}
                 </Alert>
             );
         }
@@ -80,7 +80,7 @@ const ExtraEventWarning = ({ model }: Props) => {
     if (method === ICAL_METHOD.ADD && invitationApi) {
         return (
             <Alert className={alertClassName} type="warning">
-                {c('Calendar invite info').t`Adding occurrences to an event is not supported for the moment.`}
+                {c('Calendar invite info').t`Adding occurrences to an event is not supported for the moment`}
             </Alert>
         );
     }
@@ -90,14 +90,14 @@ const ExtraEventWarning = ({ model }: Props) => {
     if (timeStatus === EVENT_TIME_STATUS.PAST) {
         return (
             <Alert className={alertClassName} type="warning">
-                {c('Calendar invite info').t`This event has already happened.`}
+                {c('Calendar invite info').t`This event has already happened`}
             </Alert>
         );
     }
     if (timeStatus === EVENT_TIME_STATUS.HAPPENING) {
         return (
             <Alert className={alertClassName} type="warning">
-                {c('Calendar invite info').t`This event is currently happening.`}
+                {c('Calendar invite info').t`This event is currently happening`}
             </Alert>
         );
     }

@@ -1,3 +1,4 @@
+import { Nullable } from '@proton/shared/lib/interfaces';
 import { fromUnixTime } from 'date-fns';
 import { CalendarEventWithoutBlob } from '@proton/shared/lib/interfaces/calendar';
 import { VcalRrulePropertyValue } from '@proton/shared/lib/interfaces/calendar/VcalModel';
@@ -35,7 +36,7 @@ const getComponentFromCalendarEventWithoutBlob = (eventData: CalendarEventWithou
         };
     };
 
-    const getRruleComponent = (Rrule?: string) => {
+    const getRruleComponent = (Rrule: Nullable<string>) => {
         if (!Rrule) {
             return {};
         }
@@ -46,7 +47,7 @@ const getComponentFromCalendarEventWithoutBlob = (eventData: CalendarEventWithou
         return { rrule: { value: rruleValue } };
     };
 
-    const getRecurrenceIdComponent = (recurrenceId?: number) => {
+    const getRecurrenceIdComponent = (recurrenceId: Nullable<number>) => {
         if (!recurrenceId) {
             return {};
         }
