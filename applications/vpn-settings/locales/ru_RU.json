@@ -112,17 +112,8 @@
       "Copy email to clipboard": [
         "Скопировать адрес эл. почты в буфер обмена"
       ],
-      "Copy to clipboard": [
-        "Скопировать в буфер обмена"
-      ],
       "Create account": [
         "Создать учетную запись"
-      ],
-      "Create new recovery phrase": [
-        "Создать новую фразу для восстановления доступа к учетной записи"
-      ],
-      "Create new recovery phrase?": [
-        "Создать новую фразу для восстановления доступа к учетной записи?"
       ],
       "Customize": [
         "Настроить"
@@ -144,12 +135,6 @@
       ],
       "Did not receive the code?": [
         "Не получили код?"
-      ],
-      "Disable recovery phrase": [
-        "Отключить фразу для восстановления доступа к учетной записи"
-      ],
-      "Disable recovery phrase?": [
-        "Отключить фразу для восстановления доступа к учетной записи?"
       ],
       "Done": [
         "Готово"
@@ -183,9 +168,6 @@
       ],
       "enable desktop notifications": [
         "включить уведомления на рабочем столе"
-      ],
-      "Enter password to continue": [
-        "Введите пароль для продолжения"
       ],
       "Get a new password": [
         "Получить новый пароль"
@@ -528,37 +510,16 @@
       ]
     },
     "blackfriday Action": {
-      "Get limited-time deal": [
-        "Воспользоваться предложением"
-      ],
-      "Upgrade": [
-        "Сменить тариф"
+      "Get the offer": [
+        ""
       ]
     },
     "blackfriday Info": {
-      "Discounts are based on monthly pricing.": [
-        "Размер скидки зависит от суммы платежа в месяц."
-      ],
-      "early access to": [
-        "ранний доступ к"
-      ],
-      "Free": [
-        "Бесплатно"
-      ],
-      "Get early access to our new encrypted drive for FREE by upgrading to a Plus bundle now.": [
-        "БЕСПЛАТНО получите ранний доступ к новому облачному хранилищу с шифрованием файлов! Предложение доступно при оформлении комплекта подписок Plus."
+      "beta": [
+        "бета"
       ],
       "Includes": [
         "Включает"
-      ],
-      "Offer valid only for first-time paid subscriptions.": [
-        "Предложение действительно только при первом оформлении платной подписки."
-      ],
-      "ProtonDrive": [
-        ""
-      ],
-      "Save ${ percentage }%": [
-        "${ percentage }%"
       ],
       "Standard price: ${ regularPrice }": [
         "Обычная цена: ${ regularPrice }"
@@ -567,49 +528,81 @@
         "Через 2 года подписка будет автоматически продлена по той же цене, если вы не отмените ее до этого срока."
       ]
     },
-    "blackfriday info": {
-      "per month": [
-        "в месяц"
-      ]
-    },
-    "blackfriday Promo title, need to be short": {
-      "Special offer": [
-        "Спецпредложение"
-      ]
-    },
     "blackfriday Title": {
-      "(${ notice }) Renews after 1 year at a discounted annual & bundle price of ${ amount } every year (36% discount).": [
-        "(${ notice }) Автопродление через 1 год по сниженной ежегодной цене за комплект подписок — ${ amount } (скидка 36 %)."
-      ],
-      "(${ notice }) Renews after 1 year at a discounted annual price of ${ amount } every year (20% discount).": [
-        "(${ notice }) Автопродление через 1 год по сниженной ежегодной цене ${ amount } (скидка 20 %)."
-      ],
-      "(${ notice }) Renews after 2 years at a discounted 2-year price of ${ amount } every 2 years (47% discount).": [
-        "(${ notice }) Автопродление через 2 года по сниженной цене ${ amount } за 2 года (скидка 47 %)."
-      ],
-      "Billed as ${ amount } ${ supNotice }": [
+      "Best deal": [
         ""
-      ],
-      "Black Friday Sale": [
-        "Скидки «черной пятницы»"
-      ],
-      "Cyber Monday Sale": [
-        "Скидки киберпонедельника"
-      ],
-      "for 1 month": [
-        "за 1 месяц"
-      ],
-      "for 1 year": [
-        "за 1 год"
-      ],
-      "for 2 years": [
-        "за 2 года"
       ],
       "Most popular": [
         "Самое популярное"
       ],
-      "ProtonDrive early access offer": [
-        "Получите ранний доступ к ProtonDrive"
+      "Save more when combining Mail and VPN": [
+        ""
+      ]
+    },
+    "blackfriday: VPNspecialoffer Action": {
+      "Get the deal": [
+        "Получить скидку"
+      ],
+      "Get the deal now": [
+        "Получить скидку"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Badge popup": {
+      "${ vpnAppName } Plus Special Offer 2021 discount has been applied": [
+        ""
+      ]
+    },
+    "blackfriday: VPNspecialoffer Info": {
+      "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
+        ""
+      ],
+      "Save ${ percentage }%": [
+        "${ percentage }%"
+      ],
+      "Special offer Terms and Conditions": [
+        ""
+      ]
+    },
+    "blackfriday: VPNspecialoffer info": {
+      "per month": [
+        "в месяц"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Promo title, need to be short": {
+      "Special offer": [
+        "Oсобые условия"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Title": {
+      "(${ notice }) Renews after 1 month at a standard monthly price of ${ amount }": [
+        ""
+      ],
+      "(${ notice }) Renews after 1 year at a standard discounted annual price of ${ amount } (20% discount)": [
+        ""
+      ],
+      "(${ notice }) Renews after 2 years at a standard discounted 2-year price of ${ amount } (33% discount)": [
+        ""
+      ],
+      "1 month": [
+        "1 месяц"
+      ],
+      "12 months": [
+        "12 месяцев"
+      ],
+      "24 months": [
+        "24 месяца"
+      ],
+      "Billed at ${ amount } for the first 2 years.${ supNotice }": [
+        ""
+      ],
+      "Billed at ${ amount } for the first month.${ supNotice }": [
+        ""
+      ],
+      "Billed at ${ amount } for the first year.${ supNotice }": [
+        ""
+      ],
+      "Get the special year-end offer on our Premium VPN PLUS plan": [
+        ""
       ]
     },
     "Bug category": {
@@ -909,6 +902,9 @@
       "Not a valid number": [
         "Неверный номер"
       ],
+      "Organization not recognized. Try again.": [
+        ""
+      ],
       "Passwords do not match": [
         "Пароли не совпадают"
       ],
@@ -932,6 +928,9 @@
       ],
       "Please generate keys before you try to change your password": [
         "Пожалуйста, сгенерируйте ключи, прежде чем пытаться изменить пароль"
+      ],
+      "Please set a recovery email first": [
+        "Пожалуйста, сначала установите электронную почту для восстановления"
       ],
       "Please set a recovery phone number first": [
         "Пожалуйста, сначала укажите номер телефона для восстановления"
@@ -1236,9 +1235,6 @@
       "A free and uncensored Internet should be available to all.": [
         "Всем должен быть доступен свободный интернет без цензуры."
       ],
-      "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password.": [
-        "Фразу для восстановления доступа к учетной записи позволит вам зайти в ваш аккаунт и восстановить ваши зашифрованные сообщения, если вы забудете ваш пароль."
-      ],
       "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
         "Получите доступ к заблокированному контенту, например социальным сетям, новостям, Википедии, YouTube и многому другому независимо от того, где вы находитесь."
       ],
@@ -1271,9 +1267,6 @@
       ],
       "Amount below minimum (${ amount }).": [
         "Сумма ниже минимальной (${ amount })."
-      ],
-      "Are you sure you want to continue?": [
-        "Вы уверены, что хотите продолжить?"
       ],
       "Basic, Plus or Visionary subscription required": [
         "Требуется подписка Basic, Plus или Visionary"
@@ -1326,9 +1319,6 @@
       "Connections": [
         "Подключения"
       ],
-      "Creating a new recovery phrase will deactivate your old one.": [
-        "Создание новой фразы для восстановления доступа к учетной записи отключит старую."
-      ],
       "Creating your account": [
         "Создание учетной записи"
       ],
@@ -1340,9 +1330,6 @@
       ],
       "Disabling this will prevent this phone number from being used for account recovery.": [
         "Отключение этого параметра не позволит использовать этот номер телефона для восстановления доступа к учётной записи."
-      ],
-      "Disabling this will prevent your recovery phrase from being used for account recovery.": [
-        "Отключение этого параметра не позволит использовать для восстановления доступа к учётной записи эту фразу для восстановления доступа к учетной записи."
       ],
       "Discount applied to your subscription with coupon ${ code }": [
         "К вашей подписке купоном ${ code } применена скидка"
@@ -1449,9 +1436,6 @@
       "If you proceed with the downgrade, you will lose access to ProtonVPN paid features.": [
         "Если вы снизите свой тариф, вы потеряете доступ к платным функциям ProtonVPN."
       ],
-      "If you proceed, you will have to reset your password and will be logged out of any other active sessions.": [
-        "Если вы продолжите, вам придется сбросить свой пароль, и все остальные активные сеансы будут завершены."
-      ],
       "If you remember your old password later, you can recover your existing messages.": [
         "Если позже вы вспомните свой старый пароль, то сможете восстановить свои существующие сообщения."
       ],
@@ -1463,6 +1447,12 @@
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Важно: пожалуйста, убедитесь, что вы сохранили коды восстановления. Иначе вы навсегда потеряете доступ к своей учётной записи при утере вашего устройства двухфакторной аутентификации."
+      ],
+      "In case you lose your login details, we’ll send you recovery instructions via email or SMS.": [
+        "В случае, если вы потеряете информацию для входа, мы отправим вам инструкцию на электронную почту или через SMS."
+      ],
+      "In case you lose your login details, we’ll send you recovery instructions via email.": [
+        "В случае, если вы потеряете информацию для входа, мы отправим вам инструкцию на электронную почту."
       ],
       "Included": [
         "Включено"
@@ -1575,9 +1565,6 @@
       "Please verify the payment in the new tab.": [
         "Пожалуйста, подтвердите платёж в новой вкладке."
       ],
-      "Please write your recovery phrase down in the order it appears and keep it somewhere safe. Your recovery phrase can be used to fully recover access to your account and your encrypted messages.": [
-        "Пожалуйста, запишите свою фразу для восстановления доступа к учетной записи в том виде, как она появляется, и спрячьте где-нибудь. Ваша фраза для восстановления доступа к учетной записи может быть использована для полного восстановления доступа к вашей учетной записи и вашим зашифрованным сообщениям."
-      ],
       "Plus or Visionary subscription required": [
         "Требуется подписка Plus или Visionary"
       ],
@@ -1607,12 +1594,6 @@
       ],
       "read our two-factor authentication Guide first": [
         "сначала прочитайте наше руководство по двухфакторной аутентификации"
-      ],
-      "Recovery phrase copied to clipboard": [
-        "Фраза для восстановления доступа к учетной записи скопирована в буфер обмена"
-      ],
-      "Recovery phrase has been disabled": [
-        "Фраза для восстановления доступа к учетной записи была отключена"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Обновление страницы или ${ link } автоматически решает большинство проблем."
@@ -1695,9 +1676,6 @@
       "This plan is temporarily disabled": [
         "Этот тариф временно отключён"
       ],
-      "This will also disable two-factor authentication.": [
-        "Это также отключит двухфакторную аутентификацию."
-      ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
         "Это действие отменит текущую платную подписку, и вы потеряете все накопленные вами льготы. Остаток вашей подписки будет возвращен в виде кредита по счету."
       ],
@@ -1772,12 +1750,6 @@
       ],
       "We advise you to use official ProtonVPN applications when possible.": [
         "Советуем вам по возможности использовать официальные приложения ProtonVPN."
-      ],
-      "We recommend adding a linked email or phone number so you can recover your account if you lose your password.": [
-        "Мы рекомендуем добавить электронную почту или номер телефона, чтобы вы могли восстановить свою учетную запись, при утрате пароля."
-      ],
-      "We recommend adding a linked email so you can recover your account if you lose your password.": [
-        "Мы рекомендуем добавить связанный адрес электронной почты, чтобы вы могли восстановить свою учетную запись, если вы потеряете пароль."
       ],
       "We use 3-D Secure to protect your payments.": [
         "Мы используем 3-D Secure для защиты ваших платежей."
@@ -1895,12 +1867,6 @@
       ],
       "Your ProtonVPN and ProtonMail accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
         "Ваши аккаунты ProtonVPN и ProtonMail связаны. Чтобы удалить их оба, пожалуйста, войдите через ${ loginLink } и удалите свой аккаунт там."
-      ],
-      "Your recovery phrase": [
-        "Ваша фраза для восстановления доступа к учетной записи"
-      ],
-      "Your recovery phrase is a series of 12 words in a specific order.": [
-        "Ваша фраза для восстановления доступа к учетной записи – это набор из 12 слов в определённом порядке."
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Ваша подписка находится под управлением Mozilla. Пожалуйста, свяжитесь со службой поддержки Mozilla."
@@ -2036,9 +2002,6 @@
       "Allow recovery by phone": [
         "Разрешить восстановление по номеру телефона"
       ],
-      "Allow recovery by recovery phrase": [
-        "Разрешить восстановление доступа к учётной записи с помощью фразы для восстановления доступа к учетной записи"
-      ],
       "Amount": [
         "Сумма"
       ],
@@ -2144,6 +2107,9 @@
       "Email address": [
         "Адрес эл. почты"
       ],
+      "Enter organization name to confirm": [
+        ""
+      ],
       "Enter the 6-digit code": [
         "Введите код из 6 цифр"
       ],
@@ -2237,8 +2203,8 @@
       "ProtonMail address": [
         "Адрес ProtonMail"
       ],
-      "Recovery phrase": [
-        "Фраза для восстановления доступа к учетной записи"
+      "Recovery email address": [
+        "Электронная почта для восстановления"
       ],
       "Reveal password": [
         "Показать пароль"
@@ -2324,9 +2290,6 @@
       "Your password (admin)": [
         "Ваш пароль (admin)"
       ],
-      "Your recovery phrase": [
-        "Ваша фраза для восстановления доступа к учетной записи"
-      ],
       "ZIP": [
         "ZIP"
       ]
@@ -2335,8 +2298,8 @@
       "Phone number": [
         "Телефонный номер"
       ],
-      "Recovery phrase": [
-        "Фраза для восстановления доступа к учетной записи"
+      "Recovery phone number": [
+        "Номер телефона для восстановления"
       ]
     },
     "Label for news": {
@@ -2544,6 +2507,11 @@
     "Many Others": {
       "and many others": [
         "и многих другие"
+      ]
+    },
+    "Member downgrade modal": {
+      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
+        ""
       ]
     },
     "Message": {
@@ -3259,6 +3227,9 @@
       "Delete account": [
         "Удаление аккаунта"
       ],
+      "Delete organization?": [
+        ""
+      ],
       "Device connected!": [
         "Устройство подключено!"
       ],
@@ -3406,8 +3377,8 @@
       "Provide payment details": [
         "Укажите платежные реквизиты"
       ],
-      "Recovery & notification": [
-        "Восстановление и уведомление"
+      "Recovery": [
+        "Восстановление"
       ],
       "Redeem coupon": [
         "Активировать купон"
@@ -3717,21 +3688,21 @@
     "VPN Plan Feature": {
       "${ n } server": [
         "${ n } сервер",
-        "",
+        "${ n }+ серверов",
         "${ n } серверов",
-        ""
+        "${ n }+ серверов"
       ],
       "${ n } VPN connection": [
-        "${ n } VPN-соединение",
-        "",
-        "${ n } VPN-соединений",
-        ""
+        "${ n } подключение VPN",
+        "${ n } подключений VPN",
+        "${ n } подключений VPN",
+        "${ n } подключений VPN"
       ],
       "${ numberOfServers } in ${ numberOfCountries } country": [
-        "${ numberOfServers } серверов в ${ numberOfCountries } стране",
-        "",
-        "${ numberOfServers } серверов в ${ numberOfCountries } странах",
-        ""
+        "${ numberOfServers } в ${ numberOfCountries } стране",
+        "${ numberOfServers } в ${ numberOfCountries } странах",
+        "${ numberOfServers } в ${ numberOfCountries } странах",
+        "${ numberOfServers } в ${ numberOfCountries } странах"
       ]
     },
     "VPN upsell feature": {

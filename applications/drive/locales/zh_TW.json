@@ -224,6 +224,9 @@
       "Forward as attachment": [
         "以附件形式轉寄"
       ],
+      "Get link": [
+        ""
+      ],
       "Get started": [
         "入門指南"
       ],
@@ -289,6 +292,9 @@
       ],
       "Mailbox layout": [
         "收件匣佈局"
+      ],
+      "Manage link": [
+        ""
       ],
       "Mark for deletion": [
         "標記作刪除"
@@ -666,87 +672,98 @@
       ]
     },
     "blackfriday Action": {
-      "Get limited-time deal": [
-        ""
-      ],
-      "Upgrade": [
+      "Get the offer": [
         ""
       ]
     },
     "blackfriday Info": {
-      "Discounts are based on monthly pricing.": [
-        ""
-      ],
-      "early access to": [
-        ""
-      ],
-      "Free": [
-        ""
-      ],
-      "Get early access to our new encrypted drive for FREE by upgrading to a Plus bundle now.": [
-        ""
+      "beta": [
+        "測試版"
       ],
       "Includes": [
+        "包含"
+      ],
+      "Standard price: ${ regularPrice }": [
+        "標準價格：${ regularPrice }"
+      ],
+      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
+        "此訂閱將在 2 年後自動以相同的費用續訂，直到被取消為止。"
+      ]
+    },
+    "blackfriday Title": {
+      "Best deal": [
         ""
       ],
-      "Offer valid only for first-time paid subscriptions.": [
-        ""
+      "Most popular": [
+        "最熱門"
       ],
-      "ProtonDrive": [
+      "Save more when combining Mail and VPN": [
+        ""
+      ]
+    },
+    "blackfriday: VPNspecialoffer Action": {
+      "Get the deal": [
+        "取得優惠"
+      ],
+      "Get the deal now": [
+        "立即取得優惠"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Badge popup": {
+      "${ vpnAppName } Plus Special Offer 2021 discount has been applied": [
+        ""
+      ]
+    },
+    "blackfriday: VPNspecialoffer Info": {
+      "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
         ""
       ],
       "Save ${ percentage }%": [
         "省下 ${ percentage }%"
       ],
-      "Standard price: ${ regularPrice }": [
-        ""
-      ],
-      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
+      "Special offer Terms and Conditions": [
         ""
       ]
     },
-    "blackfriday info": {
+    "blackfriday: VPNspecialoffer info": {
       "per month": [
-        ""
+        "每月"
       ]
     },
-    "blackfriday Promo title, need to be short": {
+    "blackfriday: VPNspecialoffer Promo title, need to be short": {
       "Special offer": [
         "特別優惠"
       ]
     },
-    "blackfriday Title": {
-      "(${ notice }) Renews after 1 year at a discounted annual & bundle price of ${ amount } every year (36% discount).": [
+    "blackfriday: VPNspecialoffer Title": {
+      "(${ notice }) Renews after 1 month at a standard monthly price of ${ amount }": [
         ""
       ],
-      "(${ notice }) Renews after 1 year at a discounted annual price of ${ amount } every year (20% discount).": [
+      "(${ notice }) Renews after 1 year at a standard discounted annual price of ${ amount } (20% discount)": [
         ""
       ],
-      "(${ notice }) Renews after 2 years at a discounted 2-year price of ${ amount } every 2 years (47% discount).": [
+      "(${ notice }) Renews after 2 years at a standard discounted 2-year price of ${ amount } (33% discount)": [
         ""
       ],
-      "Billed as ${ amount } ${ supNotice }": [
+      "1 month": [
+        "一個月"
+      ],
+      "12 months": [
+        "12 個月"
+      ],
+      "24 months": [
+        "24 個月"
+      ],
+      "Billed at ${ amount } for the first 2 years.${ supNotice }": [
         ""
       ],
-      "Black Friday Sale": [
+      "Billed at ${ amount } for the first month.${ supNotice }": [
         ""
       ],
-      "Cyber Monday Sale": [
+      "Billed at ${ amount } for the first year.${ supNotice }": [
         ""
       ],
-      "for 1 month": [
-        ""
-      ],
-      "for 1 year": [
-        ""
-      ],
-      "for 2 years": [
-        ""
-      ],
-      "Most popular": [
-        ""
-      ],
-      "ProtonDrive early access offer": [
+      "Get the special year-end offer on our Premium VPN PLUS plan": [
         ""
       ]
     },
@@ -1198,6 +1215,9 @@
       ],
       "One of the groups has no contacts: ${ noContactGroupList }": [
         "部份群組無聯絡人：${ noContactGroupList }"
+      ],
+      "Organization not recognized. Try again.": [
+        ""
       ],
       "Passwords do not match": [
         "密碼不相符"
@@ -2154,7 +2174,7 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "當寄送電子郵件到此電子郵件地址時，預設使用選取的電子郵件格式。"
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20-personal-calendar limit. You can also merge imported calendars with existing Proton calendars.": [
+      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit. You can also merge imported calendars with existing Proton calendars.": [
         ""
       ],
       "Servers are unreachable. Please try again in a few minutes": [
@@ -2766,6 +2786,9 @@
       "Encrypt emails": [
         "加密電子郵件"
       ],
+      "Enter organization name to confirm": [
+        ""
+      ],
       "Enter the 6-digit code": [
         "請輸入 6 位數代碼"
       ],
@@ -3216,16 +3239,21 @@
       ]
     },
     "Mail import summary": {
-      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         ""
       ],
-      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         ""
       ]
     },
     "Many Others": {
       "and many others": [
         "還有其他更多東西"
+      ]
+    },
+    "Member downgrade modal": {
+      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
+        ""
       ]
     },
     "Message display when a new app version is available": {
@@ -3563,18 +3591,7 @@
         "名稱"
       ]
     },
-    "Plan Feature": {
-      "${ n } server": [
-        "${ n } 伺服器"
-      ],
-      "${ n } VPN connection": [
-        "${ n } 個 VPN 連線"
-      ]
-    },
     "Plan feature": {
-      "${ freeServers } in ${ freeCountries } country": [
-        "有 ${ freeServers } 分布在 ${ freeCountries } 國家地區"
-      ],
       "0.5 GB storage": [
         "0.5 GB 儲存空間"
       ],
@@ -3587,9 +3604,6 @@
       "1 user": [
         "1 個使用者"
       ],
-      "1300+ servers in ${ plusCountries } country": [
-        ""
-      ],
       "20 GB storage": [
         "20 GB 儲存空間"
       ],
@@ -3598,9 +3612,6 @@
       ],
       "3 folders / labels": [
         "3 個資料夾 / 標籤"
-      ],
-      "350+ servers in ${ basicCountries } country": [
-        "350+ 個伺服器，分布於 ${ basicCountries } 個國家"
       ],
       "5 addresses": [
         "5 個電子郵件地址"
@@ -3884,9 +3895,6 @@
       "Size": [
         "大小"
       ],
-      "Type": [
-        "類型"
-      ],
       "Uploaded": [
         "已上傳"
       ],
@@ -4050,6 +4058,9 @@
       ],
       "Delete ${ Name }": [
         "刪除 ${ Name }"
+      ],
+      "Delete organization?": [
+        ""
       ],
       "Delete permanently": [
         "永久刪除"
@@ -4586,6 +4597,17 @@
         "Windows、macOS、iOS、Linux、Android、Android TV、Chromebook、Chromecast"
       ]
     },
+    "VPN Plan Feature": {
+      "${ n } server": [
+        ""
+      ],
+      "${ n } VPN connection": [
+        ""
+      ],
+      "${ numberOfServers } in ${ numberOfCountries } country": [
+        ""
+      ]
+    },
     "Warning": {
       "Are you sure you want to permanently delete ${ count } contact group?": [
         "您確定要永久刪除 ${ count } 個聯絡人群組嗎？"
@@ -4619,6 +4641,9 @@
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "一些欲合併的聯絡人發現錯誤，請逐一複閱"
+      ],
+      "The contact data is corrupted and cannot be displayed.": [
+        ""
       ],
       "The contact failed to load.": [
         "聯絡人載入失敗。"

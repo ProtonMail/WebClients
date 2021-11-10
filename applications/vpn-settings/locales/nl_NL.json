@@ -112,17 +112,8 @@
       "Copy email to clipboard": [
         "E-mailadres kopiëren naar klembord"
       ],
-      "Copy to clipboard": [
-        ""
-      ],
       "Create account": [
         "Account aanmaken"
-      ],
-      "Create new recovery phrase": [
-        ""
-      ],
-      "Create new recovery phrase?": [
-        ""
       ],
       "Customize": [
         "Personaliseer"
@@ -144,12 +135,6 @@
       ],
       "Did not receive the code?": [
         "Code niet ontvangen?"
-      ],
-      "Disable recovery phrase": [
-        ""
-      ],
-      "Disable recovery phrase?": [
-        ""
       ],
       "Done": [
         "Klaar"
@@ -183,9 +168,6 @@
       ],
       "enable desktop notifications": [
         "schakel desktopmeldingen in"
-      ],
-      "Enter password to continue": [
-        ""
       ],
       "Get a new password": [
         "Krijg een nieuw wachtwoord"
@@ -510,37 +492,16 @@
       ]
     },
     "blackfriday Action": {
-      "Get limited-time deal": [
-        "Direct aanvragen"
-      ],
-      "Upgrade": [
-        "Upgraden"
+      "Get the offer": [
+        ""
       ]
     },
     "blackfriday Info": {
-      "Discounts are based on monthly pricing.": [
-        "Kortingen zijn gebaseerd op de prijs per maand."
-      ],
-      "early access to": [
-        "als eerste toegang tot"
-      ],
-      "Free": [
-        "Gratis"
-      ],
-      "Get early access to our new encrypted drive for FREE by upgrading to a Plus bundle now.": [
-        "Krijg als eerste GRATIS toegang tot onze nieuwe versleutelde drive door nu te upgraden naar een Plus-bundel."
+      "beta": [
+        "bètaversie"
       ],
       "Includes": [
         "Inclusief"
-      ],
-      "Offer valid only for first-time paid subscriptions.": [
-        "Aanbieding alleen geldig voor nieuwe betaalde abonnementen."
-      ],
-      "ProtonDrive": [
-        "ProtonDrive"
-      ],
-      "Save ${ percentage }%": [
-        "${ percentage }%"
       ],
       "Standard price: ${ regularPrice }": [
         "Standaardprijs: ${ regularPrice }"
@@ -549,49 +510,81 @@
         "Dit abonnement wordt na twee jaar automatisch verlengd tegen dezelfde prijs totdat het wordt geannuleerd."
       ]
     },
-    "blackfriday info": {
-      "per month": [
-        "per maand"
-      ]
-    },
-    "blackfriday Promo title, need to be short": {
-      "Special offer": [
-        "Speciale aanbieding"
-      ]
-    },
     "blackfriday Title": {
-      "(${ notice }) Renews after 1 year at a discounted annual & bundle price of ${ amount } every year (36% discount).": [
-        "(${ notice }) Verlenging na 1 jaar tegen een gereduceerde prijs voor 1 jaar + bundel van ${ amount } per jaar (36% korting)."
-      ],
-      "(${ notice }) Renews after 1 year at a discounted annual price of ${ amount } every year (20% discount).": [
-        "(${ notice }) Verlenging na 1 jaar tegen een gereduceerde prijs van ${ amount } per jaar (20% korting)."
-      ],
-      "(${ notice }) Renews after 2 years at a discounted 2-year price of ${ amount } every 2 years (47% discount).": [
-        "(${ notice }) Verlenging na 2 jaar tegen een gereduceerde prijs van ${ amount } elke 2 jaar (47% korting)."
-      ],
-      "Billed as ${ amount } ${ supNotice }": [
+      "Best deal": [
         ""
-      ],
-      "Black Friday Sale": [
-        "Black Friday-aanbieding"
-      ],
-      "Cyber Monday Sale": [
-        "Cyber Monday-aanbieding"
-      ],
-      "for 1 month": [
-        "looptijd 1 maand"
-      ],
-      "for 1 year": [
-        "looptijd 1 jaar"
-      ],
-      "for 2 years": [
-        "looptijd 2 jaar"
       ],
       "Most popular": [
         "Populairste keuze"
       ],
-      "ProtonDrive early access offer": [
-        "Aanbieding: als eerste toegang tot ProtonDrive"
+      "Save more when combining Mail and VPN": [
+        ""
+      ]
+    },
+    "blackfriday: VPNspecialoffer Action": {
+      "Get the deal": [
+        "Pak deze deal"
+      ],
+      "Get the deal now": [
+        "Pak nu deze deal"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Badge popup": {
+      "${ vpnAppName } Plus Special Offer 2021 discount has been applied": [
+        ""
+      ]
+    },
+    "blackfriday: VPNspecialoffer Info": {
+      "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
+        ""
+      ],
+      "Save ${ percentage }%": [
+        "${ percentage }%"
+      ],
+      "Special offer Terms and Conditions": [
+        ""
+      ]
+    },
+    "blackfriday: VPNspecialoffer info": {
+      "per month": [
+        "per maand"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Promo title, need to be short": {
+      "Special offer": [
+        "Speciale aanbieding"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Title": {
+      "(${ notice }) Renews after 1 month at a standard monthly price of ${ amount }": [
+        ""
+      ],
+      "(${ notice }) Renews after 1 year at a standard discounted annual price of ${ amount } (20% discount)": [
+        ""
+      ],
+      "(${ notice }) Renews after 2 years at a standard discounted 2-year price of ${ amount } (33% discount)": [
+        ""
+      ],
+      "1 month": [
+        "1 maand"
+      ],
+      "12 months": [
+        "12 maanden"
+      ],
+      "24 months": [
+        "24 maanden"
+      ],
+      "Billed at ${ amount } for the first 2 years.${ supNotice }": [
+        ""
+      ],
+      "Billed at ${ amount } for the first month.${ supNotice }": [
+        ""
+      ],
+      "Billed at ${ amount } for the first year.${ supNotice }": [
+        ""
+      ],
+      "Get the special year-end offer on our Premium VPN PLUS plan": [
+        ""
       ]
     },
     "Bug category": {
@@ -887,6 +880,9 @@
       "Not a valid number": [
         "Geen geldig getal"
       ],
+      "Organization not recognized. Try again.": [
+        ""
+      ],
       "Passwords do not match": [
         "Wachtwoorden komen niet overeen"
       ],
@@ -909,6 +905,9 @@
         "Vul alstublieft '${ dangerWord }' in"
       ],
       "Please generate keys before you try to change your password": [
+        ""
+      ],
+      "Please set a recovery email first": [
         ""
       ],
       "Please set a recovery phone number first": [
@@ -1206,9 +1205,6 @@
       "A free and uncensored Internet should be available to all.": [
         "Iedereen moet kunnen beschikken over een vrij en ongecensureerd internet."
       ],
-      "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password.": [
-        ""
-      ],
       "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
         "Toegang tot geblokkeerde inhoud, zoals sociale media, nieuws, Wikipedia, YouTube, en vele anderen, ongeacht waar u bent."
       ],
@@ -1241,9 +1237,6 @@
       ],
       "Amount below minimum (${ amount }).": [
         "Bedrag onder minimum (${ amount })."
-      ],
-      "Are you sure you want to continue?": [
-        ""
       ],
       "Basic, Plus or Visionary subscription required": [
         "Basic, Plus of Visionary abonnement vereist"
@@ -1296,9 +1289,6 @@
       "Connections": [
         "Verbindingen"
       ],
-      "Creating a new recovery phrase will deactivate your old one.": [
-        ""
-      ],
       "Creating your account": [
         "Account aan het aanmaken"
       ],
@@ -1310,9 +1300,6 @@
       ],
       "Disabling this will prevent this phone number from being used for account recovery.": [
         "Dit uitschakelen zal voorkomen dat dit telefoonnummer wordt gebruikt voor accountherstel."
-      ],
-      "Disabling this will prevent your recovery phrase from being used for account recovery.": [
-        ""
       ],
       "Discount applied to your subscription with coupon ${ code }": [
         "Korting toegepast op je abonnement met coupon ${ code }"
@@ -1419,9 +1406,6 @@
       "If you proceed with the downgrade, you will lose access to ProtonVPN paid features.": [
         "Als u doorgaat met de downgrade, verliest u toegang tot de betaalde functies van ProtonVPN."
       ],
-      "If you proceed, you will have to reset your password and will be logged out of any other active sessions.": [
-        ""
-      ],
       "If you remember your old password later, you can recover your existing messages.": [
         "Als u uw oude wachtwoord later nog herinnert, kunt u uw bestaande berichten herstellen."
       ],
@@ -1433,6 +1417,12 @@
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Belangrijk: Zorg ervoor dat u de herstelcodes opslaat. Anders kunt u permanent toegang tot uw account verliezen als u uw tweestapsverificatieapparaat kwijtraakt."
+      ],
+      "In case you lose your login details, we’ll send you recovery instructions via email or SMS.": [
+        ""
+      ],
+      "In case you lose your login details, we’ll send you recovery instructions via email.": [
+        ""
       ],
       "Included": [
         "Inbegrepen"
@@ -1545,9 +1535,6 @@
       "Please verify the payment in the new tab.": [
         "Controleer de betaling in het nieuwe tabblad."
       ],
-      "Please write your recovery phrase down in the order it appears and keep it somewhere safe. Your recovery phrase can be used to fully recover access to your account and your encrypted messages.": [
-        ""
-      ],
       "Plus or Visionary subscription required": [
         "Plus of Visionary abonnement vereist"
       ],
@@ -1575,12 +1562,6 @@
       ],
       "read our two-factor authentication Guide first": [
         "eerst de instructies over tweestapsverificatie (2FA) te lezen"
-      ],
-      "Recovery phrase copied to clipboard": [
-        ""
-      ],
-      "Recovery phrase has been disabled": [
-        ""
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Vernieuwen van de pagina of ${ link } zal automatisch de meeste problemen oplossen."
@@ -1663,9 +1644,6 @@
       "This plan is temporarily disabled": [
         "Dit abonnement is tijdelijk uitgeschakeld"
       ],
-      "This will also disable two-factor authentication.": [
-        ""
-      ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
         "Dit zal uw huidige betaalde abonnement annuleren en u verliest alle voordelen van loyaliteit die u heeft verzameld. Het resterende saldo van uw abonnement zal worden teruggestuurd als accountcredits."
       ],
@@ -1740,12 +1718,6 @@
       ],
       "We advise you to use official ProtonVPN applications when possible.": [
         "We raden u aan om officiële ProtonVPN-applicaties te gebruiken waar mogelijk."
-      ],
-      "We recommend adding a linked email or phone number so you can recover your account if you lose your password.": [
-        "We raden aan om een gekoppeld e-mailadres of telefoonnummer toe te voegen, zodat u uw account kunt herstellen als u uw wachtwoord kwijtraakt."
-      ],
-      "We recommend adding a linked email so you can recover your account if you lose your password.": [
-        "We raden aan om een gekoppeld e-mailadres toe te voegen, zodat u uw account kunt herstellen als u uw wachtwoord kwijtraakt."
       ],
       "We use 3-D Secure to protect your payments.": [
         "We gebruiken 3-D Secure om je betalingen te beschermen."
@@ -1863,12 +1835,6 @@
       ],
       "Your ProtonVPN and ProtonMail accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
         "Uw ProtonVPN en ProtonMail accounts zijn gekoppeld. Om ze allebei te verwijderen, log in op ${ loginLink } en verwijder daar uw account."
-      ],
-      "Your recovery phrase": [
-        ""
-      ],
-      "Your recovery phrase is a series of 12 words in a specific order.": [
-        ""
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Uw abonnement wordt beheerd door Mozilla. Neem contact op met Mozilla support."
@@ -1996,9 +1962,6 @@
       "Allow recovery by phone": [
         "Herstellen via telefoon toestaan"
       ],
-      "Allow recovery by recovery phrase": [
-        ""
-      ],
       "Amount": [
         "Bedrag"
       ],
@@ -2104,6 +2067,9 @@
       "Email address": [
         "E-mailadres"
       ],
+      "Enter organization name to confirm": [
+        ""
+      ],
       "Enter the 6-digit code": [
         "Voer de 6-cijferige code in"
       ],
@@ -2197,7 +2163,7 @@
       "ProtonMail address": [
         "ProtonMail e-mailadres"
       ],
-      "Recovery phrase": [
+      "Recovery email address": [
         ""
       ],
       "Reveal password": [
@@ -2284,9 +2250,6 @@
       "Your password (admin)": [
         "Uw wachtwoord (admin)"
       ],
-      "Your recovery phrase": [
-        ""
-      ],
       "ZIP": [
         "Postcode"
       ]
@@ -2295,7 +2258,7 @@
       "Phone number": [
         "Telefoonnummer"
       ],
-      "Recovery phrase": [
+      "Recovery phone number": [
         ""
       ]
     },
@@ -2504,6 +2467,11 @@
     "Many Others": {
       "and many others": [
         "en vele andere"
+      ]
+    },
+    "Member downgrade modal": {
+      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
+        ""
       ]
     },
     "Message": {
@@ -3217,6 +3185,9 @@
       "Delete account": [
         "Account verwijderen"
       ],
+      "Delete organization?": [
+        ""
+      ],
       "Device connected!": [
         "Appparaat verbonden!"
       ],
@@ -3364,8 +3335,8 @@
       "Provide payment details": [
         "Geef uw betalingsgegevens op"
       ],
-      "Recovery & notification": [
-        "Herstel & notificaties"
+      "Recovery": [
+        ""
       ],
       "Redeem coupon": [
         "Coupon inwisselen"

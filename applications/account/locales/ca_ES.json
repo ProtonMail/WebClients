@@ -202,9 +202,6 @@
       "Copy link": [
         "Copiar enllaç"
       ],
-      "Copy to clipboard": [
-        "Copiar al porta-retalls"
-      ],
       "Create": [
         "Crear"
       ],
@@ -300,6 +297,9 @@
       ],
       "Download all configurations": [
         "Descarregar totes les preferències"
+      ],
+      "Download recovery file": [
+        ""
       ],
       "Download the Import-Export app": [
         "Descarregar l'aplicació Import-Export"
@@ -778,6 +778,15 @@
       "View invoice": [
         "Veure factura"
       ],
+      "Void all recovery files": [
+        ""
+      ],
+      "Void all recovery files?": [
+        ""
+      ],
+      "Void anyway": [
+        ""
+      ],
       "Warning": [
         "Atenció"
       ],
@@ -1076,37 +1085,16 @@
       ]
     },
     "blackfriday Action": {
-      "Get limited-time deal": [
-        "Obteniu una oferta per temps limitat"
-      ],
-      "Upgrade": [
-        "Actualitzar"
+      "Get the offer": [
+        ""
       ]
     },
     "blackfriday Info": {
-      "Discounts are based on monthly pricing.": [
-        "Els descomptes es basen en els preus mensuals."
-      ],
-      "early access to": [
-        "accés anticipat a"
-      ],
-      "Free": [
-        "Gratuït"
-      ],
-      "Get early access to our new encrypted drive for FREE by upgrading to a Plus bundle now.": [
-        "Aconsegueix un accés anticipat a la nostra nova unitat xifrada de forma GRATUÏTA actualitzant ara a un paquet Plus."
+      "beta": [
+        "beta"
       ],
       "Includes": [
         "Inclou"
-      ],
-      "Offer valid only for first-time paid subscriptions.": [
-        "Oferta vàlida només per a subscripcions de pagament per primera vegada."
-      ],
-      "ProtonDrive": [
-        "ProtonDrive"
-      ],
-      "Save ${ percentage }%": [
-        "${ percentage }%"
       ],
       "Standard price: ${ regularPrice }": [
         "Preu estàndard: ${ regularPrice }"
@@ -1115,49 +1103,81 @@
         "Aquesta subscripció es renovarà automàticament cada 2 anys al mateix percentatge fins que es cancel·li."
       ]
     },
-    "blackfriday info": {
-      "per month": [
-        "al mes"
-      ]
-    },
-    "blackfriday Promo title, need to be short": {
-      "Special offer": [
-        "Oferta especial"
-      ]
-    },
     "blackfriday Title": {
-      "(${ notice }) Renews after 1 year at a discounted annual & bundle price of ${ amount } every year (36% discount).": [
-        "(${ notice }) Renova després d'un any a un preu anual amb descompte i de pack de ${ amount } cada any (36% de descompte)."
-      ],
-      "(${ notice }) Renews after 1 year at a discounted annual price of ${ amount } every year (20% discount).": [
-        "(${ notice }) Renova després d'un any a un preu anual amb descompte de ${ amount } cada any (20% de descompte)."
-      ],
-      "(${ notice }) Renews after 2 years at a discounted 2-year price of ${ amount } every 2 years (47% discount).": [
-        "(${ notice }) Renova després de dos anys a un preu bianual amb descompte de ${ amount } cada dos anys (47% de descompte)."
-      ],
-      "Billed as ${ amount } ${ supNotice }": [
+      "Best deal": [
         ""
-      ],
-      "Black Friday Sale": [
-        "Oferta del Black Friday"
-      ],
-      "Cyber Monday Sale": [
-        "Oferta del Cyber Monday"
-      ],
-      "for 1 month": [
-        "durant 1 mes"
-      ],
-      "for 1 year": [
-        "durant 1 any"
-      ],
-      "for 2 years": [
-        "durant 2 anys"
       ],
       "Most popular": [
         "Més popular"
       ],
-      "ProtonDrive early access offer": [
-        "Oferta d’accés anticipat de ProtonDrive"
+      "Save more when combining Mail and VPN": [
+        ""
+      ]
+    },
+    "blackfriday: VPNspecialoffer Action": {
+      "Get the deal": [
+        "Obteniu l’oferta"
+      ],
+      "Get the deal now": [
+        "Obteniu l’oferta ara"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Badge popup": {
+      "${ vpnAppName } Plus Special Offer 2021 discount has been applied": [
+        ""
+      ]
+    },
+    "blackfriday: VPNspecialoffer Info": {
+      "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
+        ""
+      ],
+      "Save ${ percentage }%": [
+        "${ percentage }%"
+      ],
+      "Special offer Terms and Conditions": [
+        ""
+      ]
+    },
+    "blackfriday: VPNspecialoffer info": {
+      "per month": [
+        "al mes"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Promo title, need to be short": {
+      "Special offer": [
+        "Oferta especial"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Title": {
+      "(${ notice }) Renews after 1 month at a standard monthly price of ${ amount }": [
+        ""
+      ],
+      "(${ notice }) Renews after 1 year at a standard discounted annual price of ${ amount } (20% discount)": [
+        ""
+      ],
+      "(${ notice }) Renews after 2 years at a standard discounted 2-year price of ${ amount } (33% discount)": [
+        ""
+      ],
+      "1 month": [
+        "1 mes"
+      ],
+      "12 months": [
+        "12 mesos"
+      ],
+      "24 months": [
+        "24 mesos"
+      ],
+      "Billed at ${ amount } for the first 2 years.${ supNotice }": [
+        ""
+      ],
+      "Billed at ${ amount } for the first month.${ supNotice }": [
+        ""
+      ],
+      "Billed at ${ amount } for the first year.${ supNotice }": [
+        ""
+      ],
+      "Get the special year-end offer on our Premium VPN PLUS plan": [
+        ""
       ]
     },
     "Bridge version load failed": {
@@ -1924,6 +1944,9 @@
       "Organization key is not decrypted.": [
         "La clau d'organització no está desxifrada."
       ],
+      "Organization not recognized. Try again.": [
+        ""
+      ],
       "Passwords do not match": [
         "Les contrasenyes no coincideixen"
       ],
@@ -1960,6 +1983,9 @@
       ],
       "Please refresh the page.": [
         "Si us plau, refresqueu la pàgina."
+      ],
+      "Please set a recovery email first": [
+        ""
       ],
       "Please set a recovery phone number first": [
         "Si us plau primer establiu un número de telèfon de recuperació"
@@ -2074,6 +2100,9 @@
       ],
       "Uploaded file is not a valid private key. Please verify and try again.": [
         "El fitxer carregat no és una clau privada vàlida. Verifiqueu-la i torneu-ho a provar."
+      ],
+      "Uploaded file is not a valid recovery file. Please verify and try again.": [
+        ""
       ],
       "Uploaded files are not valid private keys. Please verify and try again.": [
         "Els fitxers carregats no són claus privades vàlides. Verifiqueu-les i torneu-ho a provar."
@@ -3148,6 +3177,9 @@
       "A key with the same encryption algorithm is already active for this address. Generating another key will cause slower account loading and deletion of this key can cause issues. If you are generating a new key because your old key is compromised, please mark that key as compromised. Are you sure you want to continue?": [
         "Una clau amb la mateix algoritme de xifratge ja és activa per a aquesta adreça. Generar una altra clau provocarà una càrrega més lenta i l'eliminació d'aquesta clau pot causar problemes.\nSi està generant una nova clau perquè l'antiga clau està compromesa, marqueu aquesta clau com a compromesa.\nEsteu segur que voleu continuar?"
       ],
+      "A recovery file lets you unlock and view your data after an account reset. ": [
+        ""
+      ],
       "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password.": [
         "Una frase de recuperació us permet accedir al compte i recuperar els missatges xifrats si oblideu la contrasenya."
       ],
@@ -3160,11 +3192,26 @@
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Accés al compte restringit degut a factures impagades. Si us plau, contacti amb el teu administrador."
       ],
+      "account recovery and data recovery method": [
+        ""
+      ],
+      "account recovery method": [
+        ""
+      ],
       "Account successfully updated": [
         "El compte s'ha actualitzat correctament"
       ],
+      "Activate your recovery phrase": [
+        ""
+      ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"ProtonMail me\" or \"Private Message me.\"": [
         "Afegiu una adreça de correu electrònic @pm.me al vostre compte. Aquest domini curt i senzill significa \"ProtonMail me\" o \"Private Message me\""
+      ],
+      "Add a recovery email address": [
+        ""
+      ],
+      "Add a recovery phone number": [
+        ""
       ],
       "Add additional addresses to your account like user2@protonmail.com": [
         "Afegiu adreces addicionals al vostre compte com ara usuari2@protonmail.com"
@@ -3184,6 +3231,9 @@
       ],
       "Addresses": [
         "Adreces"
+      ],
+      "After a password reset your data is locked in encrypted form to keep it safe. To decrypt and view your emails and other data, you need a recovery file or recovery phrase.": [
+        ""
       ],
       "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
         "Després de fer el pagament amb Bitcoin, seguiu les següents instruccions per actualitzar."
@@ -3471,6 +3521,9 @@
       "Download your PGP keys for use with other PGP-compatible services.": [
         "Descarregueu les vostres claus PGP per utilitzar amb altres serveis compatibles amb PGP."
       ],
+      "Download your recovery file": [
+        ""
+      ],
       "Drop the file here to upload": [
         "Arrossegueu el fitxer aquí per carregar-lo"
       ],
@@ -3480,8 +3533,8 @@
       "Edit label": [
         "Editar etiqueta"
       ],
-      "Effortlessly and securely move your emails from your current provider to Proton. If you use Google, we also support calendar, and contacts imports.": [
-        "Mogui els seus correus electrònics del seu proveïdor actual a Proton sense esforç i amb seguretat. Si utilitzeu Google, també admetem la importació de calendaris i contactes."
+      "Effortlessly and securely move your emails from your current provider to Proton. If you use Google, we also support calendar and contacts imports.": [
+        ""
       ],
       "Email address": [
         "Adreça de correu electrònic"
@@ -3624,6 +3677,12 @@
       "If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly.": [
         "Si heu definit SPF i DKIM, DMARC us permet especificar com altres serveis de correu electrònic haurien de lliurar el correu electrònic per al vostre domini si han fallat tant les comprovacions SPF com DKIM. Això pot fer que els spammers que facin passar per vosaltres siguin més difícils, però també poden causar problemes de lliurament si no es fan correctament."
       ],
+      "If you lose your login details and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
+        ""
+      ],
+      "If you lose your login details and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.": [
+        ""
+      ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to log into your account. Each code can only be used once.": [
         "Si perdeu el dispositiu habilitat per dos factors, es poden utilitzar aquests codis en lloc del codi d’autenticació de dos factors de 6 dígits per iniciar la sessió al vostre compte. Cada codi només es pot utilitzar una vegada."
       ],
@@ -3682,6 +3741,12 @@
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         ""
       ],
+      "In case you lose your login details, we’ll send you recovery instructions via email or SMS.": [
+        ""
+      ],
+      "In case you lose your login details, we’ll send you recovery instructions via email.": [
+        ""
+      ],
       "Included": [
         "Inclòs"
       ],
@@ -3714,6 +3779,9 @@
       ],
       "Internet connection restored.": [
         "S'ha restaurat la connexió a Internet."
+      ],
+      "it’s imperative": [
+        ""
       ],
       "Just confirm your selection and we'll do the rest.": [
         ""
@@ -3817,6 +3885,9 @@
       "Next you'll need to log in to your Google account and allow us to access your data.": [
         ""
       ],
+      "No account recovery method set, you are at risk of losing access to your account": [
+        ""
+      ],
       "No action selected": [
         "No s'ha seleccionat cap acció"
       ],
@@ -3825,6 +3896,9 @@
       ],
       "No contact encryption keys exist": [
         "No existeixen claus de xifratge de contactes"
+      ],
+      "No data recovery method set, you are at risk of losing access to your data": [
+        ""
       ],
       "No folder selected": [
         "No hi ha carpetes seleccionades"
@@ -4010,11 +4084,17 @@
       "read our two-factor authentication Guide first": [
         "llegir primer la nostra Guia d’autenticació de dos factors"
       ],
+      "Recovery files have been voided": [
+        ""
+      ],
       "Recovery phrase copied to clipboard": [
         "Frase de recuperació copiada al porta-retalls"
       ],
       "Recovery phrase has been disabled": [
         "S'ha desactivat la frase de recuperació"
+      ],
+      "Recovery phrase is not associated with any outdated keys.": [
+        ""
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Actualitzar la pàgina o ${ link } resoldrà automàticament la majoria dels problemes."
@@ -4046,7 +4126,7 @@
       "Select a service provider to get started": [
         ""
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20-personal-calendar limit. You can also merge imported calendars with existing Proton calendars.": [
+      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit. You can also merge imported calendars with existing Proton calendars.": [
         ""
       ],
       "Server is currently down": [
@@ -4223,8 +4303,8 @@
       "Unable to decrypt. Recovery phrase is not associated with any keys.": [
         "No es pot desxifrar. La frase de recuperació no està associada amb cap clau."
       ],
-      "Unable to decrypt. Recovery phrase is not associated with any outdated keys.": [
-        "No es pot desxifrar. La frase de recuperació no està associada amb cap clau antiquada."
+      "Unable to verify recovery file signature. Please contact support.": [
+        ""
       ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Malauradament no hi ha cap mètode de recuperació establert per a aquest compte."
@@ -4288,12 +4368,6 @@
       ],
       "We advise you to use official ProtonVPN applications when possible.": [
         "Us recomanem utilitzar les aplicacions ProtonVPN oficials quan sigui possible."
-      ],
-      "We recommend adding a linked email or phone number so you can recover your account if you lose your password.": [
-        "Recomanem enllaçar un correu electrònic o un número de telèfon per poder recuperar el vostre compte si perdeu la contrasenya."
-      ],
-      "We recommend adding a linked email so you can recover your account if you lose your password.": [
-        "Recomanem enllaçar un correu electrònic per poder recuperar el vostre compte si perdeu la contrasenya."
       ],
       "We use 3-D Secure to protect your payments.": [
         "Utilitzem 3-D Secure per protegir els teus pagaments."
@@ -4439,6 +4513,9 @@
       "You will soon be redirected to PayPal to verify your payment.": [
         "Ben aviat sereu redirigits a PayPal per verificar el pagament."
       ],
+      "You won't be able to recover encrypted data after an account reset using your downloaded recovery files.": [
+        ""
+      ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, please create an address.": [
         "El seu compte ${ BRAND_NAME } està associat amb ${ externalEmailAddress }. Per utilitzar ${ toAppName }, creeu una adreça."
       ],
@@ -4450,6 +4527,9 @@
       ],
       "Your account is being upgraded, this may take up to 30 seconds.": [
         "El seu compte s'està actualitzant, el que pot arribar a trigar fins a 30 segons."
+      ],
+      "Your account recovery method is set": [
+        ""
       ],
       "Your account will be updated once the payment is cleared.": [
         "El vostre compte s’actualitzarà un cop suprimit el pagament."
@@ -4464,6 +4544,9 @@
         "La vostra llista de no desitjats està buida."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
+        ""
+      ],
+      "Your data recovery method is set": [
         ""
       ],
       "Your email will only be used for this one-time verification.": [
@@ -5178,6 +5261,9 @@
       "End weekday": [
         "Dia de finalització de la setmana"
       ],
+      "Enter organization name to confirm": [
+        ""
+      ],
       "Enter password": [
         "Introdueix la contrasenya"
       ],
@@ -5195,6 +5281,9 @@
       ],
       "extra storage": [
         "emmagatzematge addicional"
+      ],
+      "File": [
+        ""
       ],
       "Filter Name": [
         "Nom del filtre"
@@ -5427,6 +5516,12 @@
       "Recovery email": [
         "Correu electrònic de recuperació"
       ],
+      "Recovery email address": [
+        ""
+      ],
+      "Recovery file": [
+        ""
+      ],
       "Recovery phone": [
         "Telèfon de recuperació"
       ],
@@ -5541,8 +5636,14 @@
       "Upload your backup key": [
         "Carregar la còpia de la clau"
       ],
+      "Upload your recovery file": [
+        ""
+      ],
       "Uploaded private keys": [
         "Claus privades carregades"
+      ],
+      "Uploaded recovery file": [
+        ""
       ],
       "URL": [
         "URL"
@@ -5629,6 +5730,9 @@
     "label": {
       "Phone number": [
         "Número de telèfon"
+      ],
+      "Recovery phone number": [
+        ""
       ],
       "Recovery phrase": [
         "Frase de recuperació"
@@ -5936,11 +6040,11 @@
       ]
     },
     "Mail import summary": {
-      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "",
         ""
       ],
-      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "",
         ""
       ]
@@ -5979,6 +6083,11 @@
       ],
       "Sign in": [
         "Inicia la sessió"
+      ]
+    },
+    "Member downgrade modal": {
+      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
+        ""
       ]
     },
     "Message": {
@@ -6890,6 +6999,9 @@
       ],
       "Upload additional private keys": [
         "Carregar claus privades addicionals"
+      ],
+      "Upload additional recovery files": [
+        ""
       ]
     },
     "Select search results": {
@@ -7383,6 +7495,9 @@
       "3. Select config file and download": [
         "3. Seleccionar arxiu de configuració i descarregar"
       ],
+      "Account recovery": [
+        ""
+      ],
       "Account suspended": [
         "Compte suspès"
       ],
@@ -7445,9 +7560,6 @@
       ],
       "Addresses": [
         "Adreces"
-      ],
-      "Advanced": [
-        "Avançades"
       ],
       "Allocate storage": [
         "Assignar espai"
@@ -7620,6 +7732,9 @@
       "Dashboard": [
         "Tauler de control"
       ],
+      "Data recovery": [
+        ""
+      ],
       "Date": [
         "Data"
       ],
@@ -7652,6 +7767,9 @@
       ],
       "Delete logs": [
         "Eliminar registres"
+      ],
+      "Delete organization?": [
+        ""
       ],
       "Delete user": [
         "Eliminar usuari"
@@ -7879,8 +7997,8 @@
       "Password & keys": [
         "Contrasenya i claus"
       ],
-      "Password & recovery": [
-        "Contrasenya i recuperació"
+      "Password & security": [
+        ""
       ],
       "Passwords": [
         "Contrasenyes"
@@ -7948,8 +8066,11 @@
       "Reconnect your account": [
         "Reconnectar el teu compte"
       ],
-      "Recovery & notification": [
-        "Recuperació i notificació"
+      "Recovery": [
+        ""
+      ],
+      "Recovery file": [
+        ""
       ],
       "Remove calendar": [
         "Eliminar calendari"
@@ -7971,9 +8092,6 @@
       ],
       "Restore administrator privileges": [
         "Restaurar els privilegis d'administrador"
-      ],
-      "Security": [
-        "Seguretat"
       ],
       "Security logs": [
         "Registres de seguretat"
@@ -8077,6 +8195,9 @@
       "Switch to two-password mode": [
         "Canviar al mode de dues contrasenyes"
       ],
+      "Take precautions to avoid data loss!": [
+        ""
+      ],
       "Theme": [
         "Tema"
       ],
@@ -8130,6 +8251,9 @@
       ],
       "Your plan": [
         "El vostre pla"
+      ],
+      "Your recovery status": [
+        ""
       ],
       "ZIP / postal code": [
         "Zip/Codi postal"

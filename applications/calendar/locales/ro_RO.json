@@ -669,37 +669,16 @@
       ]
     },
     "blackfriday Action": {
-      "Get limited-time deal": [
-        "Beneficiază de promoția limitată"
-      ],
-      "Upgrade": [
-        "Upgrade"
+      "Get the offer": [
+        ""
       ]
     },
     "blackfriday Info": {
-      "Discounts are based on monthly pricing.": [
-        "Reducerile se raportează la prețul lunar."
-      ],
-      "early access to": [
-        "acces timpuriu la"
-      ],
-      "Free": [
-        "Gratis"
-      ],
-      "Get early access to our new encrypted drive for FREE by upgrading to a Plus bundle now.": [
-        "Fiți printre primii care beneficiază de acces GRATUIT la noul nostru drive criptat, printr-un upgrade la pachetul Plus."
+      "beta": [
+        "beta"
       ],
       "Includes": [
         "Include"
-      ],
-      "Offer valid only for first-time paid subscriptions.": [
-        "Ofertă valabilă doar pentru abonamentele noi."
-      ],
-      "ProtonDrive": [
-        "ProtonDrive"
-      ],
-      "Save ${ percentage }%": [
-        "${ percentage }%"
       ],
       "Standard price: ${ regularPrice }": [
         "Preț standard: ${ regularPrice }"
@@ -708,49 +687,81 @@
         "Abonamentul se va reînnoi în mod automat peste 2 ani, la același preț, până când este anulat."
       ]
     },
-    "blackfriday info": {
-      "per month": [
-        "pe lună"
-      ]
-    },
-    "blackfriday Promo title, need to be short": {
-      "Special offer": [
-        "Ofertă specială"
-      ]
-    },
     "blackfriday Title": {
-      "(${ notice }) Renews after 1 year at a discounted annual & bundle price of ${ amount } every year (36% discount).": [
-        "(${ notice }) Se reînnoiește anual la prețul redus pe pachet de ${ amount } pe an (reducere 36%)."
-      ],
-      "(${ notice }) Renews after 1 year at a discounted annual price of ${ amount } every year (20% discount).": [
-        "(${ notice }) Se reînnoiește anual la prețul redus de ${ amount } pe an (reducere 20%)."
-      ],
-      "(${ notice }) Renews after 2 years at a discounted 2-year price of ${ amount } every 2 years (47% discount).": [
-        "(${ notice }) Se reînnoiește după 2 ani la prețul redus pe 2 ani, de ${ amount } (reducere 47%)."
-      ],
-      "Billed as ${ amount } ${ supNotice }": [
+      "Best deal": [
         ""
-      ],
-      "Black Friday Sale": [
-        "Promoție de Black Friday"
-      ],
-      "Cyber Monday Sale": [
-        "Promoție de Cyber Monday"
-      ],
-      "for 1 month": [
-        "pentru 1 lună"
-      ],
-      "for 1 year": [
-        "pentru 1 an"
-      ],
-      "for 2 years": [
-        "pentru 2 ani"
       ],
       "Most popular": [
         "Cel mai popular"
       ],
-      "ProtonDrive early access offer": [
-        "Ofertă de acces timpuriu pentru ProtonDrive"
+      "Save more when combining Mail and VPN": [
+        ""
+      ]
+    },
+    "blackfriday: VPNspecialoffer Action": {
+      "Get the deal": [
+        "Obțineți oferta"
+      ],
+      "Get the deal now": [
+        "Obțineți oferta"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Badge popup": {
+      "${ vpnAppName } Plus Special Offer 2021 discount has been applied": [
+        ""
+      ]
+    },
+    "blackfriday: VPNspecialoffer Info": {
+      "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
+        ""
+      ],
+      "Save ${ percentage }%": [
+        "- ${ percentage }%"
+      ],
+      "Special offer Terms and Conditions": [
+        ""
+      ]
+    },
+    "blackfriday: VPNspecialoffer info": {
+      "per month": [
+        "pe lună"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Promo title, need to be short": {
+      "Special offer": [
+        "Ofertă specială"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Title": {
+      "(${ notice }) Renews after 1 month at a standard monthly price of ${ amount }": [
+        ""
+      ],
+      "(${ notice }) Renews after 1 year at a standard discounted annual price of ${ amount } (20% discount)": [
+        ""
+      ],
+      "(${ notice }) Renews after 2 years at a standard discounted 2-year price of ${ amount } (33% discount)": [
+        ""
+      ],
+      "1 month": [
+        "1 lună"
+      ],
+      "12 months": [
+        "12 luni"
+      ],
+      "24 months": [
+        "24 luni"
+      ],
+      "Billed at ${ amount } for the first 2 years.${ supNotice }": [
+        ""
+      ],
+      "Billed at ${ amount } for the first month.${ supNotice }": [
+        ""
+      ],
+      "Billed at ${ amount } for the first year.${ supNotice }": [
+        ""
+      ],
+      "Get the special year-end offer on our Premium VPN PLUS plan": [
+        ""
       ]
     },
     "Bug category": {
@@ -1490,6 +1501,9 @@
         "Unul dintre grupuri nu are contacte: ${ noContactGroupList }",
         "Câteva grupuri nu au contacte: ${ noContactGroupList }",
         "Câteva grupuri nu au contacte: ${ noContactGroupList }"
+      ],
+      "Organization not recognized. Try again.": [
+        ""
       ],
       "Passwords do not match": [
         "Parolele nu coincid"
@@ -2443,8 +2457,8 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Selectați formatul de e-mail care doriți să fie folosit implicit când trimiteți mesaje la această adresă."
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20-personal-calendar limit. You can also merge imported calendars with existing Proton calendars.": [
-        "Selectați ce calendare să importați. Se va crea un calendar nou pentru fiecare calendar importat, până la limita de 20 de calendare personale. De asemenea, puteți fuziona calendarele importate cu calendarele Proton existente."
+      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit. You can also merge imported calendars with existing Proton calendars.": [
+        ""
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Serverele sunt inaccesibile. Mai reîncercați peste câteva minute."
@@ -3070,6 +3084,9 @@
       "Ends": [
         "Sfârșit"
       ],
+      "Enter organization name to confirm": [
+        ""
+      ],
       "Enter the 6-digit code": [
         "Introduceți codul din 6 cifre"
       ],
@@ -3491,12 +3508,12 @@
       ]
     },
     "Mail import summary": {
-      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "",
         "",
         ""
       ],
-      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "",
         "",
         ""
@@ -3505,6 +3522,11 @@
     "Many Others": {
       "and many others": [
         "și multe altele"
+      ]
+    },
+    "Member downgrade modal": {
+      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
+        ""
       ]
     },
     "Message": {
@@ -4055,24 +4077,7 @@
         "(Fără nume)"
       ]
     },
-    "Plan Feature": {
-      "${ n } server": [
-        "Un server",
-        "${ n } servere",
-        "${ n } de servere"
-      ],
-      "${ n } VPN connection": [
-        "O conexiune VPN",
-        "${ n } conexiuni VPN",
-        "${ n } de conexiuni VPN"
-      ]
-    },
     "Plan feature": {
-      "${ freeServers } in ${ freeCountries } country": [
-        "${ freeServers } dintr-o țară",
-        "${ freeServers } din ${ freeCountries } țări",
-        "${ freeServers } din ${ freeCountries } de țări"
-      ],
       "0.5 GB storage": [
         "0,5 GB spațiu"
       ],
@@ -4085,11 +4090,6 @@
       "1 user": [
         "Un utilizator"
       ],
-      "1200+ servers in ${ plusCountries } country": [
-        "Peste 1200 de servere într-o țară",
-        "Peste 1200 de servere în ${ plusCountries } țări",
-        "Peste 1200 de servere în ${ plusCountries } de țări"
-      ],
       "20 GB storage": [
         "20 GB spațiu"
       ],
@@ -4098,11 +4098,6 @@
       ],
       "3 folders / labels": [
         "3 foldere / etichete"
-      ],
-      "350+ servers in ${ basicCountries } country": [
-        "Peste 350 de servere într-o țară",
-        "Peste 350 de servere în peste ${ basicCountries } țări",
-        "Peste 350 de servere în peste ${ basicCountries } de țări"
       ],
       "5 addresses": [
         "5 adrese"
@@ -4659,6 +4654,9 @@
       "Delete event": [
         "Ștergere eveniment"
       ],
+      "Delete organization?": [
+        ""
+      ],
       "Delete recurring event": [
         "Ștergere eveniment recurent"
       ],
@@ -5136,6 +5134,23 @@
         "Windows, macOS, iOS, Linux, Android, Android TV, Chromebook, Chromecast"
       ]
     },
+    "VPN Plan Feature": {
+      "${ n } server": [
+        "",
+        "",
+        ""
+      ],
+      "${ n } VPN connection": [
+        "",
+        "",
+        ""
+      ],
+      "${ numberOfServers } in ${ numberOfCountries } country": [
+        "",
+        "",
+        ""
+      ]
+    },
     "Warning": {
       "Are you sure you want to permanently delete ${ count } contact group?": [
         "Sigur doriți să ștergeți definitiv un grup de contacte?",
@@ -5173,6 +5188,9 @@
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "Unele contacte ce trebuie îmbinate prezintă erori. Reexaminați-le individual."
+      ],
+      "The contact data is corrupted and cannot be displayed.": [
+        ""
       ],
       "The contact failed to load.": [
         "Nu s-a putut încărca contactul."
