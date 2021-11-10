@@ -98,12 +98,13 @@ const getConfig = (env) => {
                         onProxyRes: (proxyRes) => {
                             delete proxyRes.headers['content-security-policy'];
                             delete proxyRes.headers['x-frame-options'];
-                            if (proxyRes.headers['set-cookie']) {
-                                const cookies = proxyRes.headers['set-cookie'].map((cookie) =>
-                                    cookie.replace(/; secure/gi, '')
-                                );
-                                proxyRes.headers['set-cookie'] = cookies;
-                            }
+                            // Use that for (and only) Safari
+                            // if (proxyRes.headers['set-cookie']) {
+                            //     const cookies = proxyRes.headers['set-cookie'].map((cookie) =>
+                            //         cookie.replace(/; secure/gi, '')
+                            //     );
+                            //     proxyRes.headers['set-cookie'] = cookies;
+                            // }
                         },
                     },
                 },

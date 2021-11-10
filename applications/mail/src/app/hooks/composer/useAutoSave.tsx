@@ -1,6 +1,7 @@
 import { useHandler } from '@proton/components';
 import { Abortable } from '@proton/components/hooks/useHandler';
 import { useRef } from 'react';
+import { isDecryptionError, isNetworkError } from '../../helpers/errors';
 import { useDeleteDraft, useSaveDraft } from '../message/useSaveDraft';
 import { usePromise } from '../usePromise';
 import { MessageState, MessageStateWithData } from '../../logic/messages/messagesTypes';
@@ -34,6 +35,12 @@ export const useAutoSave = ({ onMessageAlreadySent }: AutoSaveArgs) => {
             lastCall.current = undefined;
             pendingSave.renew();
             await saveDraft(message as MessageStateWithData);
+        } catch (error: any) {
+            if (isNetworkError(error) || isDecryptionError(error)) {
+                console.error(error);
+            } else {
+                throw error;
+            }
         } finally {
             pendingSave.resolver();
             restart();
