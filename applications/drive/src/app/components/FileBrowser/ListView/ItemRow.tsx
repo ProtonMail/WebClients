@@ -20,6 +20,7 @@ import TimeCell from './Cells/TimeCell';
 import SizeCell from './Cells/SizeCell';
 import NameCell from './Cells/NameCell';
 import SharedURLIcon from '../SharedURLIcon';
+import GetLinkIcon from '../GetLinkIcon';
 import { useDriveCache } from '../../DriveCache/DriveCacheProvider';
 import { useThumbnailsDownloadProvider } from '../../downloads/ThumbnailDownloadProvider';
 import { formatAccessCount } from '../../../utils/formatters';
@@ -188,6 +189,12 @@ const ItemRow = ({
                 {columns.includes('size') && (
                     <TableCell className={classnames(['m0', isDesktop ? 'w10' : 'w15'])}>
                         {isFolder ? '-' : <SizeCell size={item.Size} />}
+                    </TableCell>
+                )}
+
+                {columns.includes('share_options') && (
+                    <TableCell className="m0 file-browser-list--share-column">
+                        <GetLinkIcon shareId={shareId} item={item} />
                     </TableCell>
                 )}
             </TableRow>
