@@ -12,9 +12,8 @@ import { traceError } from '@proton/shared/lib/helpers/sentry';
 import { CalendarsModel, CalendarUserSettingsModel } from '@proton/shared/lib/models';
 import { loadModels } from '@proton/shared/lib/models/helper';
 import { Calendar } from '@proton/shared/lib/interfaces/calendar';
-
-import { setupCalendarKeys } from '@proton/components/containers/keys/calendar';
-import setupCalendarHelper from './reset/setupCalendarHelper';
+import { setupCalendarKeys } from '@proton/shared/lib/calendar/keys/setupCalendarKeys';
+import setupCalendarHelper from '@proton/shared/lib/calendar/keys/setupCalendarHelper';
 
 interface Props {
     onDone: () => void;

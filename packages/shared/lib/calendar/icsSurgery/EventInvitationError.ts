@@ -74,7 +74,7 @@ export const getErrorMessage = (errorType: EVENT_INVITATION_ERROR_TYPE, config?:
             : c('Event invitation error').t`Invalid response`;
     }
     if (errorType === PARSING_ERROR) {
-        return c('Event invitation error').t`Attached ICS file could not be parsed`;
+        return c('Event invitation error').t`Attached ICS file could not be read`;
     }
     if (errorType === DECRYPTION_ERROR) {
         return c('Event invitation error').t`Attached ICS file could not be decrypted`;
