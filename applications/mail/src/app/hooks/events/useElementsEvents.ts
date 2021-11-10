@@ -24,7 +24,7 @@ export const useElementsEvents = (conversationMode: boolean, search: SearchParam
     const isLive = useSelector(isLiveSelector);
     const isES = useSelector((state: RootState) => isESSelector(state, { search, esDBStatus }));
 
-    // Listen to event manager and update de cache
+    // Listen to event manager and update the cache
     useSubscribeEventManager(async ({ Conversations = [], Messages = [] }: Event) => {
         const Elements: ElementEvent[] = conversationMode ? Conversations : Messages;
 

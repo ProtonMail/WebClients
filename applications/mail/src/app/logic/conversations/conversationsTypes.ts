@@ -19,6 +19,12 @@ export interface ConversationErrors {
     unknown?: Error[];
 }
 
+export interface ConversationEvent {
+    toCreate: Message[];
+    toUpdate: Message[];
+    toDelete: { [ID: string]: boolean };
+}
+
 export interface ConversationState {
     Conversation: Conversation;
     Messages?: Message[];

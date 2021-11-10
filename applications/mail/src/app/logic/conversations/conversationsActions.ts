@@ -1,7 +1,7 @@
 import { createAction, createAsyncThunk } from '@reduxjs/toolkit';
 import { getConversation } from '@proton/shared/lib/api/conversations';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
-import { ConversationParams, ConversationResult, ConversationState } from './conversationsTypes';
+import { ConversationEvent, ConversationParams, ConversationResult, ConversationState } from './conversationsTypes';
 import { LabelChanges, UnreadStatus } from '../../helpers/labels';
 import { Conversation } from '../../models/conversation';
 import { MarkAsChanges } from '../../hooks/optimistic/useOptimisticMarkAs';
@@ -60,3 +60,10 @@ export const deleteConversation = createAction<string>('conversations/delete');
 
 export const updateConversation =
     createAction<{ ID: string; updates: Partial<ConversationState> }>('conversations/update');
+
+export const eventMessageUpdate = createAction<ConversationEvent>('conversations/event/messages');
+
+export const eventDelete = createAction<string>('conversations/event/delete');
+
+export const eventConversationUpdate =
+    createAction<{ ID: string; updatedConversation: Conversation }>('conversations/event/update');

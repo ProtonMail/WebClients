@@ -11,6 +11,7 @@ import { ConversationErrors, ConversationState } from '../../logic/conversations
 import { allConversations, conversationByID } from '../../logic/conversations/conversationsSelectors';
 import { RootState } from '../../logic/store';
 import { initialize, load as loadAction, retryLoading } from '../../logic/conversations/conversationsActions';
+import { useConversationsEvent } from '../events/useConversationsEvents';
 
 export interface ConversationStateOptional {
     Conversation?: Conversation;
@@ -137,6 +138,8 @@ export const useConversation: UseConversation = (inputConversationID, messageID)
     const loadingConversation = !loadingError && !conversation?.Conversation;
     const loadingMessages = !loadingError && !conversation?.Messages?.length;
     const numMessages = conversation?.Messages?.length || conversation?.Conversation?.NumMessages;
+
+    useConversationsEvent();
 
     return {
         conversationID,

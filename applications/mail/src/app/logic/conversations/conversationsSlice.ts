@@ -13,6 +13,9 @@ import {
     optimisticMarkAsConversationMessages,
     optimisticMarkAsConversation,
     updateConversation,
+    eventDelete,
+    eventMessageUpdate,
+    eventConversationUpdate,
 } from './conversationsActions';
 import {
     globalReset as globalResetReducer,
@@ -29,6 +32,8 @@ import {
     optimisticMarkAsConversationMessages as optimisticMarkAsConversationMessagesReducer,
     optimisticMarkAsConversation as optimisticMarkAsConversationReducer,
     updateConversation as updateConversationReducer,
+    eventMessagesUpdates as eventMessageUpdateReducer,
+    eventConversationUpdate as eventConversationUpdateReducer,
 } from './conversationsReducers';
 import { globalReset } from '../actions';
 
@@ -51,6 +56,9 @@ const conversationSlice = createSlice({
         builder.addCase(optimisticMarkAsConversationMessages, optimisticMarkAsConversationMessagesReducer);
         builder.addCase(optimisticMarkAsConversation, optimisticMarkAsConversationReducer);
         builder.addCase(updateConversation, updateConversationReducer);
+        builder.addCase(eventMessageUpdate, eventMessageUpdateReducer);
+        builder.addCase(eventDelete, deleteConversationReducer);
+        builder.addCase(eventConversationUpdate, eventConversationUpdateReducer);
     },
 });
 
