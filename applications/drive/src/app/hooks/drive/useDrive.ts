@@ -30,7 +30,6 @@ import {
     generateNodeHashKey,
     encryptPassphrase,
     encryptName,
-    // decryptLink,
 } from '@proton/shared/lib/keys/driveKeys';
 
 import {
@@ -210,7 +209,6 @@ function useDrive() {
             // eslint-disable-next-line @typescript-eslint/no-use-before-define
             const { decryptedPassphrase } = await decryptLinkPassphraseWithParentKey(meta, parentPrivateKey);
             const nodePrivateKey = await decryptPrivateKey(meta.NodeKey, decryptedPassphrase);
-            // TODO: decryptLink is now external
             const xattr = await decryptExtendedAttributes(meta.XAttr, nodePrivateKey);
             realModifyTime = xattr.Common.ModificationTime || meta.ModifyTime;
         }
