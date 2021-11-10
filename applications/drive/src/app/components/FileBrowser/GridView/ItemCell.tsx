@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import * as React from 'react';
 
-import { FileIcon, Checkbox, classnames, DragMoveContainer, FileNameDisplay } from '@proton/components';
+import { Button, Icon, FileIcon, Checkbox, classnames, DragMoveContainer, FileNameDisplay } from '@proton/components';
 import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 import { ItemProps } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 
@@ -127,8 +127,17 @@ function ItemCell({
                 {item.SharedUrl && (
                     <SharedURLIcon shareId={shareId} item={item} className="flex file-browser-grid-item--share-icon" />
                 )}
-                <div className="w100 pt0-25 pb0-25 pl0-5 pr0-5 flex" title={item.Name}>
+                <div className="w100 pt0-5 pb0-5 pl3 pr3 flex border-top" title={item.Name}>
                     <FileNameDisplay text={item.Name} className="center" />
+                    <Button
+                        shape="ghost"
+                        size="small"
+                        icon
+                        className="file-browser-grid-view--options"
+                        onClick={(e) => itemHandlers.onContextMenu(e)}
+                    >
+                        <Icon name="ellipsis-vertical" />
+                    </Button>
                 </div>
             </div>
         </div>

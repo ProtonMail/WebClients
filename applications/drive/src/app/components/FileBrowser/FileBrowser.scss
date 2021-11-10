@@ -52,6 +52,13 @@
 	display: none;
 }
 
+.file-browser-grid-view--options {
+	display: none;
+	position: absolute;
+	right: 0.25em;
+	bottom: 0.25em;
+}
+
 .file-browser-list--share-column {
 	width: 50px; // To fit one small icon + spacing around.
 	max-height: 100%;
@@ -68,6 +75,9 @@
 	.file-browser-grid-item:hover {
 		.file-browser-grid-item--select-hover-only {
 			display: flex;
+		}
+		.file-browser-grid-view--options {
+			display: block;
 		}
 	}
 }
