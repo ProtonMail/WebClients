@@ -76,14 +76,22 @@ const UploadDragDrop = ({ children, className, disabled }: UploadDragDropProps) 
                 if (item.isDirectory) {
                     const reader = item.createReader();
 
-                    await new Promise<void>((resolve, reject) => {
+                    const modificationTime = await new Promise<Date | undefined>((resolve, reject) => {
                         item.getMetadata(resolve, reject);
-                    }).then((metadata: any) => {
-                        filesToUpload.push({
-                            path,
-                            folder: item.name,
-                            modificationTime: metadata.modificationTime,
+                    })
+                        .then((metadata: any) => {
+                            return metadata.modificationTime;
+                        })
+                        .catch(() => {
+                            // For example, Firefox does not support `getMetadata`
+                            // and there is no other way to get modification time
+                            // at this moment.
+                            return undefined;
                         });
+                    filesToUpload.push({
+                        path,
+                        folder: item.name,
+                        modificationTime,
                     });
 
                     // Iterates over folders recursively and puts them into filesToUpload list
