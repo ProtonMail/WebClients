@@ -663,37 +663,16 @@
       ]
     },
     "blackfriday Action": {
-      "Get limited-time deal": [
-        ""
-      ],
-      "Upgrade": [
+      "Get the offer": [
         ""
       ]
     },
     "blackfriday Info": {
-      "Discounts are based on monthly pricing.": [
-        ""
-      ],
-      "early access to": [
-        ""
-      ],
-      "Free": [
-        ""
-      ],
-      "Get early access to our new encrypted drive for FREE by upgrading to a Plus bundle now.": [
-        ""
+      "beta": [
+        "bêta"
       ],
       "Includes": [
-        ""
-      ],
-      "Offer valid only for first-time paid subscriptions.": [
-        ""
-      ],
-      "ProtonDrive": [
-        ""
-      ],
-      "Save ${ percentage }%": [
-        ""
+        "Inclut"
       ],
       "Standard price: ${ regularPrice }": [
         ""
@@ -702,48 +681,80 @@
         ""
       ]
     },
-    "blackfriday info": {
-      "per month": [
-        ""
-      ]
-    },
-    "blackfriday Promo title, need to be short": {
-      "Special offer": [
-        ""
-      ]
-    },
     "blackfriday Title": {
-      "(${ notice }) Renews after 1 year at a discounted annual & bundle price of ${ amount } every year (36% discount).": [
-        ""
-      ],
-      "(${ notice }) Renews after 1 year at a discounted annual price of ${ amount } every year (20% discount).": [
-        ""
-      ],
-      "(${ notice }) Renews after 2 years at a discounted 2-year price of ${ amount } every 2 years (47% discount).": [
-        ""
-      ],
-      "Billed as ${ amount } ${ supNotice }": [
-        ""
-      ],
-      "Black Friday Sale": [
-        ""
-      ],
-      "Cyber Monday Sale": [
-        ""
-      ],
-      "for 1 month": [
-        ""
-      ],
-      "for 1 year": [
-        ""
-      ],
-      "for 2 years": [
+      "Best deal": [
         ""
       ],
       "Most popular": [
+        "La plus populaire"
+      ],
+      "Save more when combining Mail and VPN": [
+        ""
+      ]
+    },
+    "blackfriday: VPNspecialoffer Action": {
+      "Get the deal": [
+        "Profitez de l'offre"
+      ],
+      "Get the deal now": [
+        "Obtenez l'offre maintenant"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Badge popup": {
+      "${ vpnAppName } Plus Special Offer 2021 discount has been applied": [
+        ""
+      ]
+    },
+    "blackfriday: VPNspecialoffer Info": {
+      "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
         ""
       ],
-      "ProtonDrive early access offer": [
+      "Save ${ percentage }%": [
+        ""
+      ],
+      "Special offer Terms and Conditions": [
+        ""
+      ]
+    },
+    "blackfriday: VPNspecialoffer info": {
+      "per month": [
+        "par mois"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Promo title, need to be short": {
+      "Special offer": [
+        "Offre spéciale"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Title": {
+      "(${ notice }) Renews after 1 month at a standard monthly price of ${ amount }": [
+        ""
+      ],
+      "(${ notice }) Renews after 1 year at a standard discounted annual price of ${ amount } (20% discount)": [
+        ""
+      ],
+      "(${ notice }) Renews after 2 years at a standard discounted 2-year price of ${ amount } (33% discount)": [
+        ""
+      ],
+      "1 month": [
+        "1 mois"
+      ],
+      "12 months": [
+        "12 mois"
+      ],
+      "24 months": [
+        "24 mois"
+      ],
+      "Billed at ${ amount } for the first 2 years.${ supNotice }": [
+        ""
+      ],
+      "Billed at ${ amount } for the first month.${ supNotice }": [
+        ""
+      ],
+      "Billed at ${ amount } for the first year.${ supNotice }": [
+        ""
+      ],
+      "Get the special year-end offer on our Premium VPN PLUS plan": [
         ""
       ]
     },
@@ -1469,6 +1480,9 @@
         "Un des groupes n'a pas de contacts: ${ noContactGroupList }",
         "Certains groupes n'ont pas de contacts: ${ noContactGroupList } "
       ],
+      "Organization not recognized. Try again.": [
+        ""
+      ],
       "Passwords do not match": [
         "Les mots de passe ne correspondent pas"
       ],
@@ -2041,7 +2055,7 @@
         "Une invitation sera envoyée aux participant·e·s de l'événement."
       ],
       "and": [
-        ""
+        "et"
       ],
       "At most 100 participants are allowed per invitation": [
         "Un maximum de 100 participant·e·s est autorisé par invitation"
@@ -2394,7 +2408,7 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Sélectionnez le format de message que vous souhaitez utiliser par défaut lors de l'envoi d'un courriel à cette adresse électronique."
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20-personal-calendar limit. You can also merge imported calendars with existing Proton calendars.": [
+      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit. You can also merge imported calendars with existing Proton calendars.": [
         ""
       ],
       "Servers are unreachable. Please try again in a few minutes": [
@@ -3021,6 +3035,9 @@
       "Ends": [
         "Se termine"
       ],
+      "Enter organization name to confirm": [
+        ""
+      ],
       "Enter the 6-digit code": [
         "Saisissez le code à 6 chiffres"
       ],
@@ -3440,11 +3457,11 @@
       ]
     },
     "Mail import summary": {
-      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "",
         ""
       ],
-      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "",
         ""
       ]
@@ -3452,6 +3469,11 @@
     "Many Others": {
       "and many others": [
         "et bien d'autres"
+      ]
+    },
+    "Member downgrade modal": {
+      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
+        ""
       ]
     },
     "Message": {
@@ -3975,21 +3997,7 @@
         "(aucun nom)"
       ]
     },
-    "Plan Feature": {
-      "${ n } server": [
-        "${ n } serveur",
-        "${ n } serveurs"
-      ],
-      "${ n } VPN connection": [
-        "${ n } connexion RPV",
-        "${ n } connexions RPV"
-      ]
-    },
     "Plan feature": {
-      "${ freeServers } in ${ freeCountries } country": [
-        "${ freeServers } dans ${ freeCountries } pays",
-        "${ freeServers } dans ${ freeCountries } pays"
-      ],
       "0.5 GB storage": [
         "0,5 Go de stockage"
       ],
@@ -4002,10 +4010,6 @@
       "1 user": [
         "1 utilisateur•rice"
       ],
-      "1200+ servers in ${ plusCountries } country": [
-        "Plus de 1200 serveurs dans ${ plusCountries } pays",
-        "Plus de 1200 serveurs dans ${ plusCountries } pays"
-      ],
       "20 GB storage": [
         "20 Go de stockage"
       ],
@@ -4014,10 +4018,6 @@
       ],
       "3 folders / labels": [
         "3 dossiers/labels"
-      ],
-      "350+ servers in ${ basicCountries } country": [
-        "Plus de 350 serveurs dans ${ basicCountries } pays",
-        "Plus de 350 serveurs dans ${ basicCountries } pays"
       ],
       "5 addresses": [
         "5 adresses"
@@ -4564,6 +4564,9 @@
       "Delete event": [
         "Supprimer l'événement"
       ],
+      "Delete organization?": [
+        ""
+      ],
       "Delete recurring event": [
         "Supprimer l'événement récurrent"
       ],
@@ -5040,6 +5043,20 @@
         "Windows, macOS, iOS, Linux, Android, Android TV, Chromebook, Chromecast"
       ]
     },
+    "VPN Plan Feature": {
+      "${ n } server": [
+        "",
+        ""
+      ],
+      "${ n } VPN connection": [
+        "",
+        ""
+      ],
+      "${ numberOfServers } in ${ numberOfCountries } country": [
+        "",
+        ""
+      ]
+    },
     "Warning": {
       "Are you sure you want to permanently delete ${ count } contact group?": [
         "Voulez-vous vraiment supprimer définitivement ${ count } groupe de contacts ?",
@@ -5075,6 +5092,9 @@
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "Certains contacts à fusionner affichent des erreurs. Veuillez les consulter individuellement"
+      ],
+      "The contact data is corrupted and cannot be displayed.": [
+        ""
       ],
       "The contact failed to load.": [
         "Le chargement du contact a échoué."

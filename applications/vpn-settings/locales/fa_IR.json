@@ -112,17 +112,8 @@
       "Copy email to clipboard": [
         "کپی ایمیل به کلیپ‌بورد"
       ],
-      "Copy to clipboard": [
-        ""
-      ],
       "Create account": [
         "ایجاد حساب‌کاربری"
-      ],
-      "Create new recovery phrase": [
-        ""
-      ],
-      "Create new recovery phrase?": [
-        ""
       ],
       "Customize": [
         "سفارشی"
@@ -144,12 +135,6 @@
       ],
       "Did not receive the code?": [
         "کد را دریافت نکردید؟"
-      ],
-      "Disable recovery phrase": [
-        ""
-      ],
-      "Disable recovery phrase?": [
-        ""
       ],
       "Done": [
         "انجام شد"
@@ -183,9 +168,6 @@
       ],
       "enable desktop notifications": [
         "فعا‌ل‌سازی اعلان‌های دسکتاپ"
-      ],
-      "Enter password to continue": [
-        ""
       ],
       "Get a new password": [
         "دریافت رمزعبور جدید"
@@ -510,37 +492,16 @@
       ]
     },
     "blackfriday Action": {
-      "Get limited-time deal": [
-        "خرید ویژه زمان‌دار"
-      ],
-      "Upgrade": [
-        "ارتقا"
+      "Get the offer": [
+        ""
       ]
     },
     "blackfriday Info": {
-      "Discounts are based on monthly pricing.": [
-        "تخفیف‌ها براساس قیمت‌گذاری ماهانه ارائه می‌شوند."
-      ],
-      "early access to": [
-        "دسترسی زودهنگام به"
-      ],
-      "Free": [
-        "رایگان"
-      ],
-      "Get early access to our new encrypted drive for FREE by upgrading to a Plus bundle now.": [
-        "اکنون با ارتقا به «بسته Plus»، به‌طور رایگان به درایو رمزگذاری‌شده جدید ما دسترسی زودهنگام پیدا کنید."
+      "beta": [
+        "beta"
       ],
       "Includes": [
         "شامل"
-      ],
-      "Offer valid only for first-time paid subscriptions.": [
-        "پیشنهاد صرفاً برای اشتراک‌های پولی در بار اول معتبر است."
-      ],
-      "ProtonDrive": [
-        "ProtonDrive"
-      ],
-      "Save ${ percentage }%": [
-        "${ percentage }%"
       ],
       "Standard price: ${ regularPrice }": [
         "قیمت استاندارد: ${ regularPrice }"
@@ -549,49 +510,81 @@
         "این اشتراک بعد از ۲ سال با همین نرخ به‌طور خودکار تمدید خواهد، مگراینکه آن را لغو کنید."
       ]
     },
-    "blackfriday info": {
-      "per month": [
-        "در ماه"
-      ]
-    },
-    "blackfriday Promo title, need to be short": {
-      "Special offer": [
-        "پیشنهاد ویژه"
-      ]
-    },
     "blackfriday Title": {
-      "(${ notice }) Renews after 1 year at a discounted annual & bundle price of ${ amount } every year (36% discount).": [
-        "(${ notice }) بعد از ۱ سال، هرسال با قیمت بسته‌ای و قیمت سالانه تخفیف‌خورده ${ amount } ‏(٪۳۶ تخفیف) تمدید می‌شود."
-      ],
-      "(${ notice }) Renews after 1 year at a discounted annual price of ${ amount } every year (20% discount).": [
-        "(${ notice }) بعد از ۱ سال، هرسال با قیمت سالانه تخفیف‌خورده ‎${ amount } ‏(٪۲۰ تخفیف) تمدید می‌شود."
-      ],
-      "(${ notice }) Renews after 2 years at a discounted 2-year price of ${ amount } every 2 years (47% discount).": [
-        "(${ notice }) بعد از ۲ سال، هردو سال یک‌بار با قیمت ۲ ساله تخفیف‌خورده ${ amount } ‏(٪۴۷ تخفیف) تمدید می‌شود."
-      ],
-      "Billed as ${ amount } ${ supNotice }": [
+      "Best deal": [
         ""
-      ],
-      "Black Friday Sale": [
-        "فروش ویژه جمعه سیاه"
-      ],
-      "Cyber Monday Sale": [
-        "فروش ویژه دوشنبه مجازی"
-      ],
-      "for 1 month": [
-        "برای ۱ ماه"
-      ],
-      "for 1 year": [
-        "برای ۱ سال"
-      ],
-      "for 2 years": [
-        "برای ۲ سال"
       ],
       "Most popular": [
         "پرطرفدارترین"
       ],
-      "ProtonDrive early access offer": [
-        "پیشنهاد دسترسی زودهنگام ProtonDrive"
+      "Save more when combining Mail and VPN": [
+        ""
+      ]
+    },
+    "blackfriday: VPNspecialoffer Action": {
+      "Get the deal": [
+        "دریافت معامله"
+      ],
+      "Get the deal now": [
+        "الان معامله را بگیر"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Badge popup": {
+      "${ vpnAppName } Plus Special Offer 2021 discount has been applied": [
+        ""
+      ]
+    },
+    "blackfriday: VPNspecialoffer Info": {
+      "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
+        ""
+      ],
+      "Save ${ percentage }%": [
+        "${ percentage }%"
+      ],
+      "Special offer Terms and Conditions": [
+        ""
+      ]
+    },
+    "blackfriday: VPNspecialoffer info": {
+      "per month": [
+        "در هر ماه"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Promo title, need to be short": {
+      "Special offer": [
+        "پیشنهاد ویژه"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Title": {
+      "(${ notice }) Renews after 1 month at a standard monthly price of ${ amount }": [
+        ""
+      ],
+      "(${ notice }) Renews after 1 year at a standard discounted annual price of ${ amount } (20% discount)": [
+        ""
+      ],
+      "(${ notice }) Renews after 2 years at a standard discounted 2-year price of ${ amount } (33% discount)": [
+        ""
+      ],
+      "1 month": [
+        "۱ ماه"
+      ],
+      "12 months": [
+        "۱۲ ماه"
+      ],
+      "24 months": [
+        "۲۴ ماه"
+      ],
+      "Billed at ${ amount } for the first 2 years.${ supNotice }": [
+        ""
+      ],
+      "Billed at ${ amount } for the first month.${ supNotice }": [
+        ""
+      ],
+      "Billed at ${ amount } for the first year.${ supNotice }": [
+        ""
+      ],
+      "Get the special year-end offer on our Premium VPN PLUS plan": [
+        ""
       ]
     },
     "Bug category": {
@@ -887,6 +880,9 @@
       "Not a valid number": [
         "شماره معتبر نیست"
       ],
+      "Organization not recognized. Try again.": [
+        ""
+      ],
       "Passwords do not match": [
         "رمزهای عبور مطابقت ندارند"
       ],
@@ -909,6 +905,9 @@
         "لطفاً ‘${ dangerWord }’ را وارد کنید"
       ],
       "Please generate keys before you try to change your password": [
+        ""
+      ],
+      "Please set a recovery email first": [
         ""
       ],
       "Please set a recovery phone number first": [
@@ -1206,9 +1205,6 @@
       "A free and uncensored Internet should be available to all.": [
         "یک اینترنت رایگان و بدون سانسور باید در دسترس همه باشد."
       ],
-      "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password.": [
-        ""
-      ],
       "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
         "بدون توجه به جایی که هستید به محتوای مسدود شده نظیر شبکه‌های اجتماعی، اخبار، ویکیپدیا، یوتیوب و خیلی موارد دیگر دسترسی پیدا کنید."
       ],
@@ -1241,9 +1237,6 @@
       ],
       "Amount below minimum (${ amount }).": [
         "مقدار کمتر از حداقل (${ amount })."
-      ],
-      "Are you sure you want to continue?": [
-        ""
       ],
       "Basic, Plus or Visionary subscription required": [
         "اشتراک Basic، Plus یا Visionary مورد نیاز است"
@@ -1296,9 +1289,6 @@
       "Connections": [
         "اتصال‌ها"
       ],
-      "Creating a new recovery phrase will deactivate your old one.": [
-        ""
-      ],
       "Creating your account": [
         "ایجاد حساب کاربری خود"
       ],
@@ -1310,9 +1300,6 @@
       ],
       "Disabling this will prevent this phone number from being used for account recovery.": [
         "غیرفعال کردن این گزینه از استفادهٔ این شماره‌تلفن برای بازیابی حساب کاربری جلوگیری می‌کند."
-      ],
-      "Disabling this will prevent your recovery phrase from being used for account recovery.": [
-        ""
       ],
       "Discount applied to your subscription with coupon ${ code }": [
         "تخفیف به اشتراک شما با کوپن ${ code } اعمال شد"
@@ -1419,9 +1406,6 @@
       "If you proceed with the downgrade, you will lose access to ProtonVPN paid features.": [
         "اگر شما با تنزیل درجه ادامه دهید، دسترسی به امکانات پرداختی ProtonVPN را از دست خواهید داد."
       ],
-      "If you proceed, you will have to reset your password and will be logged out of any other active sessions.": [
-        ""
-      ],
       "If you remember your old password later, you can recover your existing messages.": [
         "اگر بعدا رمز عبور قدیمی خود را به خاطر بیاورید، می‌توانید پیام‌های موجود خود را بازیابی کنید."
       ],
@@ -1433,6 +1417,12 @@
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "مهم: لطفاً مطمئن شوید که کدهای بازیابی را ذخیره می‌کنید. در غیر اینصورت شما می‌توانید برای همیشه دسترسی به حساب خود را اگر که دستگاه تأیید هویت دو-مرحله ای خود را گم کنید، از دست دهید."
+      ],
+      "In case you lose your login details, we’ll send you recovery instructions via email or SMS.": [
+        ""
+      ],
+      "In case you lose your login details, we’ll send you recovery instructions via email.": [
+        ""
       ],
       "Included": [
         "شامل شده"
@@ -1545,9 +1535,6 @@
       "Please verify the payment in the new tab.": [
         "لطفا پرداخت را در زبانه جدید تایید کنید."
       ],
-      "Please write your recovery phrase down in the order it appears and keep it somewhere safe. Your recovery phrase can be used to fully recover access to your account and your encrypted messages.": [
-        ""
-      ],
       "Plus or Visionary subscription required": [
         "اشتراک Plus یا Visionary مورد نیاز است"
       ],
@@ -1574,12 +1561,6 @@
         "برای استفاده از ویژگی Core Secure به طرح ProtonVPN پلاس یا رویایی نیاز دارید."
       ],
       "read our two-factor authentication Guide first": [
-        ""
-      ],
-      "Recovery phrase copied to clipboard": [
-        ""
-      ],
-      "Recovery phrase has been disabled": [
         ""
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
@@ -1663,9 +1644,6 @@
       "This plan is temporarily disabled": [
         "این طرح به طور موقت غیرفعال است"
       ],
-      "This will also disable two-factor authentication.": [
-        ""
-      ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
         "این کار اشتراک پرداختی فعلی شما را لغو خواهد کرد و شما هر گونه مزایای وفاداری را که تا کنون کسب کرده‌اید، از دست خواهید داد. موجودی باقی ماندهٔ اشتراک شما به صورت اعتبار حساب به شما بازگردانده می‌شود."
       ],
@@ -1740,12 +1718,6 @@
       ],
       "We advise you to use official ProtonVPN applications when possible.": [
         "ما به شما توصیه می‌کنیم تا حتی‌الامکان از برنامه‌های رسمی ProtonVPN استفاده کنید."
-      ],
-      "We recommend adding a linked email or phone number so you can recover your account if you lose your password.": [
-        "توصیه می‌کنیم یک ایمیل یا شماره‌تلفن پیوند یافته اضافه کنید تا در صورت گم کردن گذرواژه، بتوانید حساب خود را بازیابی کنید."
-      ],
-      "We recommend adding a linked email so you can recover your account if you lose your password.": [
-        "توصیه می‌کنیم یک ایمیل پیوند یافته اضافه کنید تا در صورت گم کردن گذرواژه، بتوانید حساب خود را بازیابی کنید."
       ],
       "We use 3-D Secure to protect your payments.": [
         "ما از 3-D امن استفاده میکنیم تا پرداختهای شما را حفاظت کنیم."
@@ -1863,12 +1835,6 @@
       ],
       "Your ProtonVPN and ProtonMail accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
         "حساب‌های ProtonVPN و ProtonMail شما بهم متصلند. برای پاک کردن هردوی آن‌ها، لطفا به ${ loginLink } وارد شوید و حسابتان را از آنجا پاک کنید."
-      ],
-      "Your recovery phrase": [
-        ""
-      ],
-      "Your recovery phrase is a series of 12 words in a specific order.": [
-        ""
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "اشتراک شما توسط Mozilla اداره می شود. لطفا با پشتیبانی Mozilla تماس بگیرید."
@@ -1996,9 +1962,6 @@
       "Allow recovery by phone": [
         "اجازهٔ بازیابی از طریق تلفن"
       ],
-      "Allow recovery by recovery phrase": [
-        ""
-      ],
       "Amount": [
         "مقدار"
       ],
@@ -2104,6 +2067,9 @@
       "Email address": [
         "آدرس ایمیل"
       ],
+      "Enter organization name to confirm": [
+        ""
+      ],
       "Enter the 6-digit code": [
         "کد ۶-رقمی را وارد کنید"
       ],
@@ -2197,7 +2163,7 @@
       "ProtonMail address": [
         "آدرس ProtonMail"
       ],
-      "Recovery phrase": [
+      "Recovery email address": [
         ""
       ],
       "Reveal password": [
@@ -2284,9 +2250,6 @@
       "Your password (admin)": [
         "رمزعبور شما (مدیر)"
       ],
-      "Your recovery phrase": [
-        ""
-      ],
       "ZIP": [
         "ZIP"
       ]
@@ -2295,7 +2258,7 @@
       "Phone number": [
         "شماره تلفن"
       ],
-      "Recovery phrase": [
+      "Recovery phone number": [
         ""
       ]
     },
@@ -2504,6 +2467,11 @@
     "Many Others": {
       "and many others": [
         "و بسیاری دیگر"
+      ]
+    },
+    "Member downgrade modal": {
+      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
+        ""
       ]
     },
     "Message": {
@@ -3217,6 +3185,9 @@
       "Delete account": [
         "حذف حساب کاربری"
       ],
+      "Delete organization?": [
+        ""
+      ],
       "Device connected!": [
         "دستگاه متصل شد!"
       ],
@@ -3364,8 +3335,8 @@
       "Provide payment details": [
         "جزئیات پرداخت را ارائه دهید"
       ],
-      "Recovery & notification": [
-        "بازیابی و اعلان‌ها"
+      "Recovery": [
+        ""
       ],
       "Redeem coupon": [
         "بازخرید کوپن"

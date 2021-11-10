@@ -657,37 +657,16 @@
       ]
     },
     "blackfriday Action": {
-      "Get limited-time deal": [
-        "Dapatkan diskon untuk waktu terbatas"
-      ],
-      "Upgrade": [
-        "Tingkatkan"
+      "Get the offer": [
+        ""
       ]
     },
     "blackfriday Info": {
-      "Discounts are based on monthly pricing.": [
-        "Diskon diberikan berdasarkan tarif bulanan."
-      ],
-      "early access to": [
-        "akses awal ke"
-      ],
-      "Free": [
-        "Gratis"
-      ],
-      "Get early access to our new encrypted drive for FREE by upgrading to a Plus bundle now.": [
-        "Dapatkan akses awal GRATIS ke drive terenkripsi baru kami dengan peningkatan ke bundel Plus sekarang."
+      "beta": [
+        "beta"
       ],
       "Includes": [
         "Termasuk"
-      ],
-      "Offer valid only for first-time paid subscriptions.": [
-        "Penawaran hanya berlaku untuk langganan berbayar pertama kali."
-      ],
-      "ProtonDrive": [
-        "ProtonDrive"
-      ],
-      "Save ${ percentage }%": [
-        "${ percentage } %"
       ],
       "Standard price: ${ regularPrice }": [
         "Harga standar: ${ regularPrice }"
@@ -696,49 +675,81 @@
         "Langganan ini akan otomatis diperbarui dengan tarif yang sama setelah 2 tahun hingga dibatalkan."
       ]
     },
-    "blackfriday info": {
-      "per month": [
-        "per bulan"
-      ]
-    },
-    "blackfriday Promo title, need to be short": {
-      "Special offer": [
-        "Penawaran Spesial"
-      ]
-    },
     "blackfriday Title": {
-      "(${ notice }) Renews after 1 year at a discounted annual & bundle price of ${ amount } every year (36% discount).": [
-        "(${ notice }) Perbarui setelah 1 tahun dengan harga diskon tahunan & bundel sebesar ${ amount } per tahun (diskon 36%)."
-      ],
-      "(${ notice }) Renews after 1 year at a discounted annual price of ${ amount } every year (20% discount).": [
-        "(${ notice }) Perbarui setelah 1 tahun dengan harga diskon tahunan sebesar ${ amount } per tahun (diskon 20%)."
-      ],
-      "(${ notice }) Renews after 2 years at a discounted 2-year price of ${ amount } every 2 years (47% discount).": [
-        "(${ notice }) Perbarui setelah 2 tahun dengan harga diskon 2-tahunan sebesar ${ amount } per 2 tahun (diskon 47%)."
-      ],
-      "Billed as ${ amount } ${ supNotice }": [
+      "Best deal": [
         ""
-      ],
-      "Black Friday Sale": [
-        "Obral Black Friday"
-      ],
-      "Cyber Monday Sale": [
-        "Obral Cyber Monday"
-      ],
-      "for 1 month": [
-        "untuk 1 bulan"
-      ],
-      "for 1 year": [
-        "untuk 1 tahun"
-      ],
-      "for 2 years": [
-        "untuk 2 tahun"
       ],
       "Most popular": [
         "Paling populer"
       ],
-      "ProtonDrive early access offer": [
-        "Penawaran akses awal ProtonDrive"
+      "Save more when combining Mail and VPN": [
+        ""
+      ]
+    },
+    "blackfriday: VPNspecialoffer Action": {
+      "Get the deal": [
+        "Dapatkan penawaran"
+      ],
+      "Get the deal now": [
+        "Dapatkan penawaran sekarang"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Badge popup": {
+      "${ vpnAppName } Plus Special Offer 2021 discount has been applied": [
+        ""
+      ]
+    },
+    "blackfriday: VPNspecialoffer Info": {
+      "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
+        ""
+      ],
+      "Save ${ percentage }%": [
+        "${ percentage } %"
+      ],
+      "Special offer Terms and Conditions": [
+        ""
+      ]
+    },
+    "blackfriday: VPNspecialoffer info": {
+      "per month": [
+        "per bulan"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Promo title, need to be short": {
+      "Special offer": [
+        "Penawaran Spesial"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Title": {
+      "(${ notice }) Renews after 1 month at a standard monthly price of ${ amount }": [
+        ""
+      ],
+      "(${ notice }) Renews after 1 year at a standard discounted annual price of ${ amount } (20% discount)": [
+        ""
+      ],
+      "(${ notice }) Renews after 2 years at a standard discounted 2-year price of ${ amount } (33% discount)": [
+        ""
+      ],
+      "1 month": [
+        "1 bulan"
+      ],
+      "12 months": [
+        "12 bulan"
+      ],
+      "24 months": [
+        "24 bulan"
+      ],
+      "Billed at ${ amount } for the first 2 years.${ supNotice }": [
+        ""
+      ],
+      "Billed at ${ amount } for the first month.${ supNotice }": [
+        ""
+      ],
+      "Billed at ${ amount } for the first year.${ supNotice }": [
+        ""
+      ],
+      "Get the special year-end offer on our Premium VPN PLUS plan": [
+        ""
       ]
     },
     "Bug category": {
@@ -1446,6 +1457,9 @@
       ],
       "One of the groups has no contacts: ${ noContactGroupList }": [
         "Salah satu grup tidak memiliki kontak: ${ noContactGroupList }\n\nBeberapa grup tidak memiliki kontak: ${ noContactGroupList } "
+      ],
+      "Organization not recognized. Try again.": [
+        ""
       ],
       "Passwords do not match": [
         "Kata sandi tidak cocok"
@@ -2345,7 +2359,7 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Pilih format surel bawaan yang akan Anda gunakan setiap kali mengirim surat ke alamat ini."
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20-personal-calendar limit. You can also merge imported calendars with existing Proton calendars.": [
+      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit. You can also merge imported calendars with existing Proton calendars.": [
         ""
       ],
       "Servers are unreachable. Please try again in a few minutes": [
@@ -2972,6 +2986,9 @@
       "Ends": [
         "Akhir"
       ],
+      "Enter organization name to confirm": [
+        ""
+      ],
       "Enter the 6-digit code": [
         "Masukkan kode 6 digit"
       ],
@@ -3389,16 +3406,21 @@
       ]
     },
     "Mail import summary": {
-      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         ""
       ],
-      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         ""
       ]
     },
     "Many Others": {
       "and many others": [
         "dan banyak lainnya"
+      ]
+    },
+    "Member downgrade modal": {
+      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
+        ""
       ]
     },
     "Message": {
@@ -3895,18 +3917,7 @@
         "(Tanpa nama)"
       ]
     },
-    "Plan Feature": {
-      "${ n } server": [
-        "${ n } server"
-      ],
-      "${ n } VPN connection": [
-        "${ n } Koneksi VPN"
-      ]
-    },
     "Plan feature": {
-      "${ freeServers } in ${ freeCountries } country": [
-        "${ freeServers } di ${ freeCountries } negara"
-      ],
       "0.5 GB storage": [
         "Kapasitas 0,5 GB"
       ],
@@ -3919,9 +3930,6 @@
       "1 user": [
         "1 pengguna"
       ],
-      "1200+ servers in ${ plusCountries } country": [
-        "1200+ server di ${ plusCountries } negara"
-      ],
       "20 GB storage": [
         "Kapasitas 20 GB"
       ],
@@ -3930,9 +3938,6 @@
       ],
       "3 folders / labels": [
         "3 folder / label"
-      ],
-      "350+ servers in ${ basicCountries } country": [
-        ""
       ],
       "5 addresses": [
         "5 alamat"
@@ -4469,6 +4474,9 @@
       "Delete event": [
         "Hapus acara"
       ],
+      "Delete organization?": [
+        ""
+      ],
       "Delete recurring event": [
         "Hapus acara berulang"
       ],
@@ -4944,6 +4952,17 @@
         "Windows, macOS, iOS, Linux, Android, Android TV, Chromebook, Chromecast"
       ]
     },
+    "VPN Plan Feature": {
+      "${ n } server": [
+        ""
+      ],
+      "${ n } VPN connection": [
+        ""
+      ],
+      "${ numberOfServers } in ${ numberOfCountries } country": [
+        ""
+      ]
+    },
     "Warning": {
       "Are you sure you want to permanently delete ${ count } contact group?": [
         "Apakah Anda yakin ingin menghapus ${ count } kontak secara permanen?"
@@ -4977,6 +4996,9 @@
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "Sebagian kontak yang akan digabung rusak. Mohon periksa satu per satu"
+      ],
+      "The contact data is corrupted and cannot be displayed.": [
+        ""
       ],
       "The contact failed to load.": [
         "Kontak gagal dimuat."

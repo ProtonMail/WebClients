@@ -1,0 +1,235 @@
+{
+  "headers": {
+    "plural-forms": "nplurals=2; plural=(n >= 2);",
+    "language": "fr_FR"
+  },
+  "contexts": {
+    "Action": {
+      "Cancel": [
+        "Annuler"
+      ],
+      "Close": [
+        "Fermer"
+      ],
+      "Close modal": [
+        "Fermer"
+      ],
+      "Did not receive the code?": [
+        "Vous n'avez pas reçu le code ?"
+      ],
+      "Edit email address": [
+        "Modifier l’adresse électronique"
+      ],
+      "Edit phone number": [
+        "Modifier le numéro de téléphone"
+      ],
+      "Get verification code": [
+        "Obtenir un code de vérification"
+      ],
+      "refresh the page": [
+        "actualiser la page"
+      ],
+      "Request new code": [
+        "Demander un nouveau code"
+      ],
+      "Submit": [
+        "Envoyer"
+      ],
+      "Try another method": [
+        "Essayer une autre méthode"
+      ],
+      "Verify": [
+        "Vérifier "
+      ],
+      "View invoice": [
+        "Afficher la facture"
+      ]
+    },
+    "Delinquent modal title": {
+      "Overdue invoice": [
+        "Facture impayée"
+      ]
+    },
+    "Error": {
+      "Can't validate email, try again later": [
+        "Impossible de valider l'adresse électronique, veuillez réessayer plus tard"
+      ],
+      "Can't validate phone, try again later": [
+        "Impossible de valider le numéro de téléphone, veuillez réessayer plus tard"
+      ],
+      "Email is not valid": [
+        "L’adresse électronique n’est pas valide"
+      ],
+      "Enter 6 digits": [
+        "Saisissez 6 chiffres"
+      ],
+      "Invalid verification code": [
+        "Code de vérification invalide"
+      ],
+      "Not a valid number": [
+        "Numéro non valide"
+      ],
+      "Passwords do not match": [
+        "Les mots de passe ne correspondent pas"
+      ],
+      "Request timed out.": [
+        "La requête a expiré."
+      ],
+      "This field is required": [
+        "Ce champ est requis"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Ce champ nécessite un minimum de ${ minimumLength } caractères."
+      ],
+      "Unknown error": [
+        "Erreur inconnue"
+      ]
+    },
+    "Error message": {
+      "Brace yourself till we get the error fixed.": [
+        "Merci de patienter jusqu’à ce que nous corrigions l’erreur."
+      ],
+      "Error: ${ errorMessage }": [
+        ""
+      ],
+      "Oops, something went wrong": [
+        "Désolé, une erreur s’est produite"
+      ],
+      "Please ${ refresh } or check your connection.": [
+        ""
+      ],
+      "There was a problem connecting to Proton.": [
+        ""
+      ],
+      "You may also ${ refresh } or try again later.": [
+        "Vous pouvez également ${ refresh } ou réessayer plus tard."
+      ]
+    },
+    "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
+      "Email": [
+        "Courriel"
+      ],
+      "Manual": [
+        "Manuel"
+      ],
+      "No verification method available": [
+        "Aucune méthode de vérification disponible"
+      ],
+      "SMS": [
+        "SMS"
+      ]
+    },
+    "Info": {
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
+        "Cliquez sur « Demander un nouveau code » pour qu'un nouveau code de vérification soit envoyé à ${ strong }. Si cette adresse électronique est incorrecte, cliquez sur « Modifier » pour la corriger."
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
+        "Cliquez sur « Demander un nouveau code » pour qu'un nouveau code de vérification soit envoyé à ${ strong }. Si ce numéro de téléphone est incorrect, cliquez sur « Modifier » pour le corriger."
+      ],
+      "Enter the verification code that was sent to ${ destinationText }.": [
+        "Entrez le code de vérification qui a été envoyé à ${ destinationText }."
+      ],
+      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
+        "Si vous rencontrez des difficultés à créer votre compte, veuillez demander une invitation et nous vous répondrons dans un délai d'un jour ouvrable."
+      ],
+      "If you don't find the email in your inbox, please check your spam folder.": [
+        "Si vous ne trouvez pas le message dans votre boîte de réception, veuillez vérifier votre dossier indésirables."
+      ],
+      "Internet connection lost.": [
+        "Connexion Internet perdue."
+      ],
+      "Loading": [
+        "Chargement"
+      ],
+      "No results found": [
+        "Aucun résultat trouvé"
+      ],
+      "Servers are unreachable. Please try again in a few minutes": [
+        "Les serveurs sont inaccessibles. Veuillez réessayer dans quelques minutes"
+      ],
+      "Session timed out.": [
+        "Session expirée."
+      ],
+      "To fight spam and abuse, please verify you are human.": [
+        "Pour lutter contre les messages indésirables et les abus, veuillez prouver que vous êtes humain."
+      ],
+      "Would you like to receive a new verification code or use an alternative verification method?": [
+        "Souhaitez-vous recevoir un nouveau code de vérification ou utiliser une autre méthode de vérification ?"
+      ],
+      "Your email will only be used for this one-time verification.": [
+        "Votre adresse électronique ne sera utilisée que pour cette vérification unique."
+      ],
+      "Your phone number will only be used for this one-time verification.": [
+        "Votre numéro de téléphone ne sera utilisé que pour cette vérification unique."
+      ],
+      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
+        "Votre compte Proton est actuellement suspendu. Pour continuer à utiliser votre compte, veuillez régler les factures impayées."
+      ]
+    },
+    "Label": {
+      "Cancel": [
+        "Annuler"
+      ],
+      "Email address": [
+        "Adresse électronique"
+      ],
+      "Enter the 6-digit code": [
+        "Saisissez le code à 6 chiffres"
+      ],
+      "Hide password": [
+        "Masquer le mot de passe"
+      ],
+      "Password": [
+        "Mot de passe"
+      ],
+      "Phone number": [
+        "Numéro de téléphone"
+      ],
+      "Reveal password": [
+        "Révéler le mot de passe"
+      ],
+      "Submit": [
+        "Envoyer"
+      ],
+      "Verification code": [
+        "Code de vérification"
+      ]
+    },
+    "Link": {
+      "Learn more": [
+        "En savoir plus"
+      ],
+      "Request an invite": [
+        "Demander une invitation"
+      ]
+    },
+    "Success": {
+      "Code sent to ${ methodTo }": [
+        "Code envoyé à ${ methodTo }"
+      ],
+      "Verification successful": [
+        "Vérification réussie"
+      ]
+    },
+    "Title": {
+      "Human verification": [
+        "Vérification humaine"
+      ],
+      "Invalid verification code": [
+        "Code de vérification invalide"
+      ],
+      "Sign in again to continue": [
+        "Connectez-vous à nouveau pour continuer"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "Le mot de passe doit comporter au moins ${ length } caractère",
+        "Le mot de passe doit comporter au moins ${ length } caractères"
+      ]
+    }
+  }
+}

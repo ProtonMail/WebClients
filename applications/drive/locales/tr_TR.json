@@ -226,6 +226,9 @@
       "Forward as attachment": [
         "Ek olarak ilet"
       ],
+      "Get link": [
+        "Bağlantı alın"
+      ],
       "Get started": [
         "Başlayalım"
       ],
@@ -291,6 +294,9 @@
       ],
       "Mailbox layout": [
         "Posta kutusu düzeni"
+      ],
+      "Manage link": [
+        "Bağlantıyı yönetin"
       ],
       "Mark for deletion": [
         "Silmek için işaretle"
@@ -672,37 +678,16 @@
       ]
     },
     "blackfriday Action": {
-      "Get limited-time deal": [
-        "Sınırlı süreli fırsattan yararlanın"
-      ],
-      "Upgrade": [
-        "Yükselt"
+      "Get the offer": [
+        ""
       ]
     },
     "blackfriday Info": {
-      "Discounts are based on monthly pricing.": [
-        "İndirimler aylık fiyatlandırmaya dayanmaktadır."
-      ],
-      "early access to": [
-        "erken erişim:"
-      ],
-      "Free": [
-        "Ücretsiz"
-      ],
-      "Get early access to our new encrypted drive for FREE by upgrading to a Plus bundle now.": [
-        "Şimdi bir Plus paketine yükselterek yeni şifrelenmiş sürücümüze ÜCRETSİZ olarak erken erişim sağlayın."
+      "beta": [
+        "beta"
       ],
       "Includes": [
         "İçerdikleri"
-      ],
-      "Offer valid only for first-time paid subscriptions.": [
-        "Teklif yalnızca ilk kez ücretli abone olanlar için geçerlidir."
-      ],
-      "ProtonDrive": [
-        "ProtonDrive"
-      ],
-      "Save ${ percentage }%": [
-        "%${ percentage }"
       ],
       "Standard price: ${ regularPrice }": [
         "Standart fiyat: ${ regularPrice }"
@@ -711,49 +696,81 @@
         "Bu abonelik, iptal edilene kadar 2 yıllık bir dönem sonrasında aynı fiyattan otomatik olarak yenilenecektir."
       ]
     },
-    "blackfriday info": {
-      "per month": [
-        "aylık"
-      ]
-    },
-    "blackfriday Promo title, need to be short": {
-      "Special offer": [
-        "Özel teklif"
-      ]
-    },
     "blackfriday Title": {
-      "(${ notice }) Renews after 1 year at a discounted annual & bundle price of ${ amount } every year (36% discount).": [
-        "(${ notice }) 1 yıl sonra her yıl, yıllık ${ amount } indirimli paket fiyatıyla yenilenir (%36 indirim)."
-      ],
-      "(${ notice }) Renews after 1 year at a discounted annual price of ${ amount } every year (20% discount).": [
-        "(${ notice }) 1 yıl sonra her yıl, yıllık ${ amount } indirimli fiyatla yenilenir (%20 indirim)."
-      ],
-      "(${ notice }) Renews after 2 years at a discounted 2-year price of ${ amount } every 2 years (47% discount).": [
-        "(${ notice }) 2 yıl sonra her 2 yılda bir, 2 yıllık ${ amount } indirimli fiyatla yenilenir (%47 indirim)."
-      ],
-      "Billed as ${ amount } ${ supNotice }": [
+      "Best deal": [
         ""
-      ],
-      "Black Friday Sale": [
-        "Kara Cuma İndirimi"
-      ],
-      "Cyber Monday Sale": [
-        "Siber Pazartesi İndirimi"
-      ],
-      "for 1 month": [
-        "1 ay için"
-      ],
-      "for 1 year": [
-        "1 yıl için"
-      ],
-      "for 2 years": [
-        "2 yıl için"
       ],
       "Most popular": [
         "En popüler olanlar"
       ],
-      "ProtonDrive early access offer": [
-        "ProtonDrive erken erişim teklifi"
+      "Save more when combining Mail and VPN": [
+        ""
+      ]
+    },
+    "blackfriday: VPNspecialoffer Action": {
+      "Get the deal": [
+        "Tekliften yararlanın"
+      ],
+      "Get the deal now": [
+        "Tekliften şimdi yararlan"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Badge popup": {
+      "${ vpnAppName } Plus Special Offer 2021 discount has been applied": [
+        ""
+      ]
+    },
+    "blackfriday: VPNspecialoffer Info": {
+      "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
+        ""
+      ],
+      "Save ${ percentage }%": [
+        "${ percentage }%"
+      ],
+      "Special offer Terms and Conditions": [
+        ""
+      ]
+    },
+    "blackfriday: VPNspecialoffer info": {
+      "per month": [
+        "aylık"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Promo title, need to be short": {
+      "Special offer": [
+        "Özel teklif"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Title": {
+      "(${ notice }) Renews after 1 month at a standard monthly price of ${ amount }": [
+        ""
+      ],
+      "(${ notice }) Renews after 1 year at a standard discounted annual price of ${ amount } (20% discount)": [
+        ""
+      ],
+      "(${ notice }) Renews after 2 years at a standard discounted 2-year price of ${ amount } (33% discount)": [
+        ""
+      ],
+      "1 month": [
+        "1 ay"
+      ],
+      "12 months": [
+        "12 ay"
+      ],
+      "24 months": [
+        "24 ay"
+      ],
+      "Billed at ${ amount } for the first 2 years.${ supNotice }": [
+        ""
+      ],
+      "Billed at ${ amount } for the first month.${ supNotice }": [
+        ""
+      ],
+      "Billed at ${ amount } for the first year.${ supNotice }": [
+        ""
+      ],
+      "Get the special year-end offer on our Premium VPN PLUS plan": [
+        ""
       ]
     },
     "Bug category": {
@@ -1211,6 +1228,9 @@
       "One of the groups has no contacts: ${ noContactGroupList }": [
         "Gruplardan birinde kişi yok: ${ noContactGroupList }",
         "Gruplardan bazılarında kişi yok: ${ noContactGroupList }"
+      ],
+      "Organization not recognized. Try again.": [
+        "Kuruluş tanımlı değil. Tekrar deneyin."
       ],
       "Passwords do not match": [
         "Şifreler uyuşmuyor"
@@ -2203,8 +2223,8 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Bu adrese, e-posta gönderirken varsayılan olarak kullanılmasını istediğiniz e-posta biçimini seçin."
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20-personal-calendar limit. You can also merge imported calendars with existing Proton calendars.": [
-        ""
+      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit. You can also merge imported calendars with existing Proton calendars.": [
+        "İçe aktarılacak takvimleri seçin. 20 takvim sınırıyla içe aktarılan her takvim için yeni bir takvim oluşturulacak. Ayrıca varolan Proton takvimleriyle içe aktarılmış takvimleri birleştirebilirsiniz."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         ""
@@ -2817,6 +2837,9 @@
       "Encrypt emails": [
         "Epostaları şifreler"
       ],
+      "Enter organization name to confirm": [
+        "Doğrulamak için kuruluş adını girin"
+      ],
       "Enter the 6-digit code": [
         "6 haneli kodu girin"
       ],
@@ -3268,18 +3291,23 @@
       ]
     },
     "Mail import summary": {
-      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
-        "",
-        ""
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "${ periodFragment } itibaren ${ totalLabelsCount } etiketin ${ selectedLabelsCount } tanesindeki tüm iletileri içe aktarın ve ${ LABEL_MARKUP_PLACEHOLDER } olarak etiketleyin",
+        "${ periodFragment } itibaren ${ totalLabelsCount } etiketin ${ selectedLabelsCount } tanesindeki tüm iletileri içe aktarın ve ${ LABEL_MARKUP_PLACEHOLDER } olarak etiketleyin"
       ],
-      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
-        "",
-        ""
+      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "${ periodFragment } itibaren ${ totalLabelsCount } etiket içindeki tüm iletileri içe aktarın ve ${ LABEL_MARKUP_PLACEHOLDER } olarak etiketleyin",
+        "${ periodFragment } itibaren ${ totalLabelsCount } etiket içindeki tüm iletileri içe aktarın ve ${ LABEL_MARKUP_PLACEHOLDER } olarak etiketleyin"
       ]
     },
     "Many Others": {
       "and many others": [
         "ve diğerleri"
+      ]
+    },
+    "Member downgrade modal": {
+      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
+        "Bu, tüm alt kullanıcıları, hesapları ve kuruluşunuzla ilişkili verileri kalıcı olarak silecek."
       ]
     },
     "Message display when a new app version is available": {
@@ -3641,21 +3669,7 @@
         "Ad"
       ]
     },
-    "Plan Feature": {
-      "${ n } server": [
-        "${ n } sunucusu",
-        "${ n } sunucuları"
-      ],
-      "${ n } VPN connection": [
-        "${ n } VPN bağlantısı",
-        "${ n } VPN bağlantıları"
-      ]
-    },
     "Plan feature": {
-      "${ freeServers } in ${ freeCountries } country": [
-        "${ freeCountries } ülkesinde ${ freeServers }",
-        "${ freeCountries } ülkelerinde ${ freeServers }"
-      ],
       "0.5 GB storage": [
         "0.5 GB depolama alanı"
       ],
@@ -3668,10 +3682,6 @@
       "1 user": [
         "1 kullanıcı"
       ],
-      "1300+ servers in ${ plusCountries } country": [
-        "",
-        ""
-      ],
       "20 GB storage": [
         "20 GB depolama alanı"
       ],
@@ -3680,10 +3690,6 @@
       ],
       "3 folders / labels": [
         "3 klasör / etiket"
-      ],
-      "350+ servers in ${ basicCountries } country": [
-        "${ basicCountries } ülkede 350'den fazla sunucu",
-        "${ basicCountries } ülkede 350'den fazla sunucu"
       ],
       "5 addresses": [
         "5 adres"
@@ -3971,9 +3977,6 @@
       "Size": [
         "Boyut"
       ],
-      "Type": [
-        "Tür"
-      ],
       "Uploaded": [
         ""
       ],
@@ -4143,6 +4146,9 @@
       ],
       "Delete ${ Name }": [
         "${ Name } sil"
+      ],
+      "Delete organization?": [
+        "Kuruluş silinsin mi?"
       ],
       "Delete permanently": [
         "Kalıcı olarak sil"
@@ -4680,6 +4686,20 @@
         "Windows, macOS, iOS, Linux, Android, Android TV, Chromebook, Chromecast"
       ]
     },
+    "VPN Plan Feature": {
+      "${ n } server": [
+        "",
+        ""
+      ],
+      "${ n } VPN connection": [
+        "",
+        ""
+      ],
+      "${ numberOfServers } in ${ numberOfCountries } country": [
+        "",
+        ""
+      ]
+    },
     "Warning": {
       "Are you sure you want to permanently delete ${ count } contact group?": [
         "${ count } adet kişi grubunu kalıcı olarak silmek istediğinize emin misiniz?",
@@ -4715,6 +4735,9 @@
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "Birleştirilecek kişilerden bazıları hata veriyor. Lütfen bunları ayrı ayrı inceleyin"
+      ],
+      "The contact data is corrupted and cannot be displayed.": [
+        ""
       ],
       "The contact failed to load.": [
         "Kişi yüklenemedi."

@@ -197,9 +197,6 @@
       "Copy email to clipboard": [
         "Nɣel imayl ɣef afus"
       ],
-      "Copy to clipboard": [
-        "Nɣel ɣef tecfawt"
-      ],
       "Create folder": [
         "Snulfu-d akaram"
       ],
@@ -268,8 +265,8 @@
       "Discard": [
         "Sefsex"
       ],
-      "Don't secure account": [
-        "Ur ttɣellis ara amiḍan"
+      "Dismiss get started checklist": [
+        ""
       ],
       "Done": [
         "Immed"
@@ -578,6 +575,9 @@
       "Open calendar": [
         "Ldi awitay"
       ],
+      "Open get started checklist modal": [
+        ""
+      ],
       "Open navigation": [
         "Ldi tunigin"
       ],
@@ -849,6 +849,9 @@
       "Upgrade": [
         "Lqem"
       ],
+      "Upgrade now": [
+        ""
+      ],
       "Upload picture": [
         "Sali-d tugna"
       ],
@@ -994,6 +997,11 @@
         "Anṣuf"
       ]
     },
+    "Amount of completed get started checklist items": {
+      "${ numberOfCompletedItems } of ${ totalNumberOfChecklistItems } complete": [
+        ""
+      ]
+    },
     "Apps dropdown": {
       "Go to ${ title }": [
         "Ddu ɣer ${ title }"
@@ -1070,37 +1078,16 @@
       ]
     },
     "blackfriday Action": {
-      "Get limited-time deal": [
-        "Sfaydi-d seg uweẓlu i tallit d timlessest"
-      ],
-      "Upgrade": [
-        "Tararast"
+      "Get the offer": [
+        ""
       ]
     },
     "blackfriday Info": {
-      "Discounts are based on monthly pricing.": [
-        "Asenqes deg watig yettili-d ɣef leḥsab n usiteg amayyur."
-      ],
-      "early access to": [
-        "adaf azikan ɣer"
-      ],
-      "Free": [
-        "Bennan"
-      ],
-      "Get early access to our new encrypted drive for FREE by upgrading to a Plus bundle now.": [
-        "Adef ɣer uḍebsi-nneɣ ungil amaynu BENNAN s tmesɣiwt n Tkemmust izaden imir-a."
+      "beta": [
+        "beta"
       ],
       "Includes": [
         "Yella deg-s"
-      ],
-      "Offer valid only for first-time paid subscriptions.": [
-        "Asumer-a yeṣleḥ kan i unezdi yettwaxellṣen i tikkelt tamezwarut."
-      ],
-      "ProtonDrive": [
-        "ProtonDrive"
-      ],
-      "Save ${ percentage }%": [
-        "${ percentage } %"
       ],
       "Standard price: ${ regularPrice }": [
         "Atig anaway: ${ regularPrice }"
@@ -1109,49 +1096,81 @@
         "Anezdi-a ad yettwales s yimek awurman seg-a ɣef sin n yiseggasen yernu s yiwen n watig arma d asmi ara yettwasemmet."
       ]
     },
-    "blackfriday info": {
-      "per month": [
-        "i wayyur"
-      ]
-    },
-    "blackfriday Promo title, need to be short": {
-      "Special offer": [
-        "Asumer uzzig"
-      ]
-    },
     "blackfriday Title": {
-      "(${ notice }) Renews after 1 year at a discounted annual & bundle price of ${ amount } every year (36% discount).": [
-        "(${ notice }) Ad yettwales deffir 1 n useggas s watig aseggasan yettwasneqsen d watig n tkemmust n ${ amount } yal aseggas (asenqes n 36%)."
-      ],
-      "(${ notice }) Renews after 1 year at a discounted annual price of ${ amount } every year (20% discount).": [
-        "(${ notice }) Ad yettwales deffir useggas s watig aseggasan yettwsneqsen n ${ amount } yal aseggas (asenqes n 20%)."
-      ],
-      "(${ notice }) Renews after 2 years at a discounted 2-year price of ${ amount } every 2 years (47% discount).": [
-        "(${ notice }) Ad yettwales deffir 2 n yiseggasen s watig yettwasneqsen i 2 n yiseggasen s ${ amount } yal 2 n yiseggasen (asenqes n 47%)."
-      ],
-      "Billed as ${ amount } ${ supNotice }": [
+      "Best deal": [
         ""
-      ],
-      "Black Friday Sale": [
-        "Asumer n Black Friday"
-      ],
-      "Cyber Monday Sale": [
-        "Asumer n wass uynas aliktṛunan"
-      ],
-      "for 1 month": [
-        "i 1 n wayyur"
-      ],
-      "for 1 year": [
-        "i 1 n useggas"
-      ],
-      "for 2 years": [
-        "i 2 n yiseggasen"
       ],
       "Most popular": [
         "Aɣerfan akk"
       ],
-      "ProtonDrive early access offer": [
-        "Asumer n wadaf azikan ɣer ProtonDrive"
+      "Save more when combining Mail and VPN": [
+        ""
+      ]
+    },
+    "blackfriday: VPNspecialoffer Action": {
+      "Get the deal": [
+        "Faṛes tagnit"
+      ],
+      "Get the deal now": [
+        "Faṛes tagnit"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Badge popup": {
+      "${ vpnAppName } Plus Special Offer 2021 discount has been applied": [
+        ""
+      ]
+    },
+    "blackfriday: VPNspecialoffer Info": {
+      "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
+        ""
+      ],
+      "Save ${ percentage }%": [
+        "${ percentage } %"
+      ],
+      "Special offer Terms and Conditions": [
+        ""
+      ]
+    },
+    "blackfriday: VPNspecialoffer info": {
+      "per month": [
+        "i wayyur"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Promo title, need to be short": {
+      "Special offer": [
+        "Asumer uzzig"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Title": {
+      "(${ notice }) Renews after 1 month at a standard monthly price of ${ amount }": [
+        ""
+      ],
+      "(${ notice }) Renews after 1 year at a standard discounted annual price of ${ amount } (20% discount)": [
+        ""
+      ],
+      "(${ notice }) Renews after 2 years at a standard discounted 2-year price of ${ amount } (33% discount)": [
+        ""
+      ],
+      "1 month": [
+        "1 wayyur"
+      ],
+      "12 months": [
+        "12 wayyuren"
+      ],
+      "24 months": [
+        "24 wayyuren"
+      ],
+      "Billed at ${ amount } for the first 2 years.${ supNotice }": [
+        ""
+      ],
+      "Billed at ${ amount } for the first month.${ supNotice }": [
+        ""
+      ],
+      "Billed at ${ amount } for the first year.${ supNotice }": [
+        ""
+      ],
+      "Get the special year-end offer on our Premium VPN PLUS plan": [
+        ""
       ]
     },
     "Bug category": {
@@ -2095,6 +2114,9 @@
         "Yiwen seg yigrawen ulac ɣur-s inermisen: ${ noContactGroupList }",
         "Kra n yigrawen ulac ɣur-s inermisen: ${ noContactGroupList } "
       ],
+      "Organization not recognized. Try again.": [
+        ""
+      ],
       "Passwords do not match": [
         "Awalen uffiren ur menṭaḍen ara"
       ],
@@ -2606,6 +2628,73 @@
     "Free price": {
       "Free": [
         "Baṭel"
+      ]
+    },
+    "Get started checklist completion": {
+      "We've added 1 GB of bonus storage to your account. Continue to explore ${ BRAND_NAME } and share your ${ protonMailAppName } address with your family, friends, and colleagues.": [
+        ""
+      ],
+      "We've added 1 GB of bonus storage to your account. For even more storage and premium features, upgrade your plan.": [
+        ""
+      ],
+      "You're a privacy champ!": [
+        ""
+      ]
+    },
+    "Get started checklist incentive": {
+      "Complete all steps and get a total of 2 GB on your account": [
+        ""
+      ],
+      "Only ${ days } day left": [
+        "",
+        ""
+      ]
+    },
+    "Get started checklist instructions": {
+      "Available on iOS and Android.": [
+        ""
+      ],
+      "Get the ${ protonMailAppName } mobile app": [
+        ""
+      ],
+      "Import contacts or emails": [
+        ""
+      ],
+      "Import your contacts or messages": [
+        ""
+      ],
+      "Quickly transfer your contacts or emails from any provider using our Easy Switch import assistant.": [
+        ""
+      ],
+      "Sign into the mobile app to complete the action": [
+        ""
+      ],
+      "Using your mobile device, scan this QR code or visit": [
+        ""
+      ]
+    },
+    "Get started checklist item": {
+      "Get mobile app": [
+        ""
+      ],
+      "Import contacts or emails": [
+        ""
+      ],
+      "Send a message": [
+        ""
+      ],
+      "Set up a recovery method": [
+        ""
+      ]
+    },
+    "Get started checklist spotlight": {
+      "You can access the checklist anytime from here": [
+        ""
+      ]
+    },
+    "Get started checklist title": {
+      "Get started": [
+        ""
       ]
     },
     "Group": {
@@ -3675,7 +3764,7 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Fren amasal n yimayl i tebɣiḍ ad yettwaseqdec d amezwer mi ara tazneḍ imayl ɣer tansa-a imayl."
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20-personal-calendar limit. You can also merge imported calendars with existing Proton calendars.": [
+      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit. You can also merge imported calendars with existing Proton calendars.": [
         ""
       ],
       "Sending": [
@@ -4518,6 +4607,9 @@
       "Encrypt emails": [
         "Wgelhen imaylen"
       ],
+      "Enter organization name to confirm": [
+        ""
+      ],
       "Enter the 6-digit code": [
         "Sekcem tangalt n 6 n yizwilen"
       ],
@@ -5113,11 +5205,11 @@
       ]
     },
     "Mail import summary": {
-      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "",
         ""
       ],
-      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "",
         ""
       ]
@@ -5154,6 +5246,11 @@
     "Many Others": {
       "and many others": [
         "d wayen-nniḍen"
+      ]
+    },
+    "Member downgrade modal": {
+      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
+        ""
       ]
     },
     "Message": {
@@ -5992,6 +6089,9 @@
       ]
     },
     "Storage": {
+      "Get extra storage for free": [
+        ""
+      ],
       "Release notes": [
         "Tizmilin n llqem"
       ],
@@ -6516,6 +6616,9 @@
       ],
       "Delete message": [
         "Kkes ien"
+      ],
+      "Delete organization?": [
+        ""
       ],
       "Deleting contacts": [
         "Tukksa n yinermisen"
@@ -7099,6 +7202,9 @@
       "The attachment's signature failed verification.\nYou can still download this attachment but it might have been tampered with.": [
         "Asenqed n uzmul n tceqquft yeddan.\nMazal tzemreḍ ad d-tsadreḍ taceqquft-a yeddan maca yezmer tettubeddel.",
         "Asenqed n yizmulen n tceqqufin yeddan.\nMazal tzemreḍ ad d-tsadreḍ ticeqqufin-a yeddan maca yezmer ttubeddelent."
+      ],
+      "The contact data is corrupted and cannot be displayed.": [
+        ""
       ],
       "The contact failed to load.": [
         "Asali n unermis ur yeddi ara."

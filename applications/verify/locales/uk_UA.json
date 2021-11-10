@@ -1,0 +1,237 @@
+{
+  "headers": {
+    "plural-forms": "nplurals=4; plural=((n%10==1 && n%100!=11) ? 0 : ((n%10 >= 2 && n%10 <=4 && (n%100 < 12 || n%100 > 14)) ? 1 : ((n%10 == 0 || (n%10 >= 5 && n%10 <=9)) || (n%100 >= 11 && n%100 <= 14)) ? 2 : 3));",
+    "language": "uk_UA"
+  },
+  "contexts": {
+    "Action": {
+      "Cancel": [
+        "Скасувати"
+      ],
+      "Close": [
+        "Закрити"
+      ],
+      "Close modal": [
+        "Закрити вікно"
+      ],
+      "Did not receive the code?": [
+        "Не отримали код?"
+      ],
+      "Edit email address": [
+        "Змінити електронну адресу"
+      ],
+      "Edit phone number": [
+        "Змінити номер телефону"
+      ],
+      "Get verification code": [
+        "Отримати код підтвердження"
+      ],
+      "refresh the page": [
+        "оновити сторінку"
+      ],
+      "Request new code": [
+        "Отримати новий код"
+      ],
+      "Submit": [
+        "Надіслати"
+      ],
+      "Try another method": [
+        "Спробувати інший спосіб"
+      ],
+      "Verify": [
+        "Перевірити"
+      ],
+      "View invoice": [
+        "Переглянути рахунок"
+      ]
+    },
+    "Delinquent modal title": {
+      "Overdue invoice": [
+        "Протермінований рахунок"
+      ]
+    },
+    "Error": {
+      "Can't validate email, try again later": [
+        "Не вдалося перевірити електронну адресу. Повторіть спробу пізніше"
+      ],
+      "Can't validate phone, try again later": [
+        "Не вдалося перевірити номер телефону. Повторіть спробу пізніше"
+      ],
+      "Email is not valid": [
+        "Хибна електронна адреса"
+      ],
+      "Enter 6 digits": [
+        "Введіть 6 цифр"
+      ],
+      "Invalid verification code": [
+        "Хибний код підтвердження"
+      ],
+      "Not a valid number": [
+        "Хибний номер"
+      ],
+      "Passwords do not match": [
+        "Паролі відрізняються"
+      ],
+      "Request timed out.": [
+        "Час очікування запиту завершився."
+      ],
+      "This field is required": [
+        "Це поле обов'язкове"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "В цьому полі повинно бути не менше ${ minimumLength } символів."
+      ],
+      "Unknown error": [
+        "Невідома помилка"
+      ]
+    },
+    "Error message": {
+      "Brace yourself till we get the error fixed.": [
+        "Дочекайтеся, доки ми виправимо помилку."
+      ],
+      "Error: ${ errorMessage }": [
+        ""
+      ],
+      "Oops, something went wrong": [
+        "Лишенько, щось пішло не так"
+      ],
+      "Please ${ refresh } or check your connection.": [
+        ""
+      ],
+      "There was a problem connecting to Proton.": [
+        ""
+      ],
+      "You may also ${ refresh } or try again later.": [
+        "Ви можете також ${ refresh }, або повторити спробу пізніше."
+      ]
+    },
+    "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
+      "Email": [
+        "Електронна пошта"
+      ],
+      "Manual": [
+        "Вручну"
+      ],
+      "No verification method available": [
+        "Немає доступних способів перевірки"
+      ],
+      "SMS": [
+        "SMS"
+      ]
+    },
+    "Info": {
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
+        "Натисніть \"Запитати новий код\", щоб отримати новий код перевірки на ${ strong }. Якщо ця адреса е-пошти неправильна, натисніть \"Змінити\" для її виправлення."
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
+        "Натисніть \"Запитати новий код\", щоб отримати новий код перевірки на ${ strong }. Якщо цей номер телефону неправильний, натисніть \"Змінити\" для його виправлення."
+      ],
+      "Enter the verification code that was sent to ${ destinationText }.": [
+        "Введіть код перевірки, який був надісланий на ${ destinationText }."
+      ],
+      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
+        "Якщо у вас виникли труднощі під час створення облікового запису, подайте запит на запрошення і ми відповімо протягом одного робочого дня."
+      ],
+      "If you don't find the email in your inbox, please check your spam folder.": [
+        "Якщо ви не можете знайти лист у вхідних повідомленнях, перевірте свою теку спаму."
+      ],
+      "Internet connection lost.": [
+        "Втрачено Інтернет-з'єднання."
+      ],
+      "Loading": [
+        "Завантаження"
+      ],
+      "No results found": [
+        "Результатів не знайдено"
+      ],
+      "Servers are unreachable. Please try again in a few minutes": [
+        "Сервери недоступні. Спробуйте знову за кілька хвилин"
+      ],
+      "Session timed out.": [
+        "Сеанс завершився."
+      ],
+      "To fight spam and abuse, please verify you are human.": [
+        "З метою протидії спаму та зловживанням, будь ласка, підтвердьте, що ви людина."
+      ],
+      "Would you like to receive a new verification code or use an alternative verification method?": [
+        "Бажаєте отримати новий код перевірки чи скористатися іншим способом перевірки?"
+      ],
+      "Your email will only be used for this one-time verification.": [
+        "Ваша електронна пошта використається лише для цієї одноразової перевірки."
+      ],
+      "Your phone number will only be used for this one-time verification.": [
+        "Ваш номер телефону використається лише для цієї одноразової перевірки."
+      ],
+      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
+        "Робота вашого облікового запису Proton тимчасово призупинена. Щоб відновити роботу, будь ласка, сплатіть протерміновані рахунки."
+      ]
+    },
+    "Label": {
+      "Cancel": [
+        "Скасувати"
+      ],
+      "Email address": [
+        "Адреса е-пошти"
+      ],
+      "Enter the 6-digit code": [
+        "Введіть 6-значний код"
+      ],
+      "Hide password": [
+        "Сховати пароль"
+      ],
+      "Password": [
+        "Пароль"
+      ],
+      "Phone number": [
+        "Номер телефону"
+      ],
+      "Reveal password": [
+        "Показати пароль"
+      ],
+      "Submit": [
+        "Надіслати"
+      ],
+      "Verification code": [
+        "Код підтвердження"
+      ]
+    },
+    "Link": {
+      "Learn more": [
+        "Докладніше"
+      ],
+      "Request an invite": [
+        "Запитати запрошення"
+      ]
+    },
+    "Success": {
+      "Code sent to ${ methodTo }": [
+        "Код надісланий на ${ methodTo }"
+      ],
+      "Verification successful": [
+        "Перевірку виконано успішно"
+      ]
+    },
+    "Title": {
+      "Human verification": [
+        "Перевірка «Я не робот»"
+      ],
+      "Invalid verification code": [
+        "Недійсний код підтвердження"
+      ],
+      "Sign in again to continue": [
+        "Увійдіть знову для продовження"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "Пароль повинен містити принаймні ${ length } символ",
+        "Пароль повинен містити принаймні ${ length } символи",
+        "Пароль повинен містити принаймні ${ length } символів",
+        "Пароль повинен містити принаймні ${ length } символів"
+      ]
+    }
+  }
+}

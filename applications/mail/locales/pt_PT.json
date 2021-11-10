@@ -197,9 +197,6 @@
       "Copy email to clipboard": [
         "Copiar mensagem para a área de transferência"
       ],
-      "Copy to clipboard": [
-        "Copiar para a memória"
-      ],
       "Create folder": [
         "Criar pasta"
       ],
@@ -268,7 +265,7 @@
       "Discard": [
         "Descartar"
       ],
-      "Don't secure account": [
+      "Dismiss get started checklist": [
         ""
       ],
       "Done": [
@@ -578,6 +575,9 @@
       "Open calendar": [
         ""
       ],
+      "Open get started checklist modal": [
+        ""
+      ],
       "Open navigation": [
         "Abrir navegação"
       ],
@@ -849,6 +849,9 @@
       "Upgrade": [
         "Actualizar"
       ],
+      "Upgrade now": [
+        ""
+      ],
       "Upload picture": [
         "Enviar imagem"
       ],
@@ -994,6 +997,11 @@
         "Boas vindas"
       ]
     },
+    "Amount of completed get started checklist items": {
+      "${ numberOfCompletedItems } of ${ totalNumberOfChecklistItems } complete": [
+        ""
+      ]
+    },
     "Apps dropdown": {
       "Go to ${ title }": [
         "Ir para ${ title }"
@@ -1070,37 +1078,16 @@
       ]
     },
     "blackfriday Action": {
-      "Get limited-time deal": [
-        "Aproveite a oferta por tempo limitado"
-      ],
-      "Upgrade": [
-        "Atualizar"
+      "Get the offer": [
+        ""
       ]
     },
     "blackfriday Info": {
-      "Discounts are based on monthly pricing.": [
-        "Os descontos são baseados nos preços mensais."
-      ],
-      "early access to": [
-        "acesso antecipado a"
-      ],
-      "Free": [
-        "Grátis"
-      ],
-      "Get early access to our new encrypted drive for FREE by upgrading to a Plus bundle now.": [
-        "Obtenha acesso antecipado ao nosso novo drive encriptado GRÁTIS, atualizando para um pacote Plus agora."
+      "beta": [
+        "beta"
       ],
       "Includes": [
         "Inclui"
-      ],
-      "Offer valid only for first-time paid subscriptions.": [
-        "Oferta válida apenas para assinaturas pagas novas."
-      ],
-      "ProtonDrive": [
-        "ProtonDrive"
-      ],
-      "Save ${ percentage }%": [
-        "${ percentage } %"
       ],
       "Standard price: ${ regularPrice }": [
         "Preço padrão: ${ regularPrice }"
@@ -1109,49 +1096,81 @@
         "Esta assinatura será renovada automaticamente após 2 anos com a mesma taxa, até que seja cancelada."
       ]
     },
-    "blackfriday info": {
-      "per month": [
-        "por mês"
-      ]
-    },
-    "blackfriday Promo title, need to be short": {
-      "Special offer": [
-        "Oferta especial"
-      ]
-    },
     "blackfriday Title": {
-      "(${ notice }) Renews after 1 year at a discounted annual & bundle price of ${ amount } every year (36% discount).": [
-        "(${ notice }) renova após 1 ano a um preço anual com desconto e pacote de ${ amount } todos os anos (36% de desconto)."
-      ],
-      "(${ notice }) Renews after 1 year at a discounted annual price of ${ amount } every year (20% discount).": [
-        "(${ notice }) renova após 1 ano a um preço anual com desconto de ${ amount } todos os anos (20% de desconto)."
-      ],
-      "(${ notice }) Renews after 2 years at a discounted 2-year price of ${ amount } every 2 years (47% discount).": [
-        "(${ notice }) renova após 2 anos a um preço com desconto de 2 anos de ${ amount } a cada 2 anos (desconto de 47%)."
-      ],
-      "Billed as ${ amount } ${ supNotice }": [
+      "Best deal": [
         ""
-      ],
-      "Black Friday Sale": [
-        "Promoção Black Friday"
-      ],
-      "Cyber Monday Sale": [
-        "Promoção Cyber Monday"
-      ],
-      "for 1 month": [
-        "durante 1 mês"
-      ],
-      "for 1 year": [
-        "durante 1 ano"
-      ],
-      "for 2 years": [
-        "durante 2 anos"
       ],
       "Most popular": [
         "Mais populares"
       ],
-      "ProtonDrive early access offer": [
-        "Oferta de acesso antecipado ao ProtonDrive"
+      "Save more when combining Mail and VPN": [
+        ""
+      ]
+    },
+    "blackfriday: VPNspecialoffer Action": {
+      "Get the deal": [
+        "Obtenha a promoção"
+      ],
+      "Get the deal now": [
+        "Obtenha a promoção já"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Badge popup": {
+      "${ vpnAppName } Plus Special Offer 2021 discount has been applied": [
+        ""
+      ]
+    },
+    "blackfriday: VPNspecialoffer Info": {
+      "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
+        ""
+      ],
+      "Save ${ percentage }%": [
+        "${ percentage }%"
+      ],
+      "Special offer Terms and Conditions": [
+        ""
+      ]
+    },
+    "blackfriday: VPNspecialoffer info": {
+      "per month": [
+        "por mês"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Promo title, need to be short": {
+      "Special offer": [
+        "Oferta especial"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Title": {
+      "(${ notice }) Renews after 1 month at a standard monthly price of ${ amount }": [
+        ""
+      ],
+      "(${ notice }) Renews after 1 year at a standard discounted annual price of ${ amount } (20% discount)": [
+        ""
+      ],
+      "(${ notice }) Renews after 2 years at a standard discounted 2-year price of ${ amount } (33% discount)": [
+        ""
+      ],
+      "1 month": [
+        "1 mês"
+      ],
+      "12 months": [
+        "12 meses"
+      ],
+      "24 months": [
+        "24 meses"
+      ],
+      "Billed at ${ amount } for the first 2 years.${ supNotice }": [
+        ""
+      ],
+      "Billed at ${ amount } for the first month.${ supNotice }": [
+        ""
+      ],
+      "Billed at ${ amount } for the first year.${ supNotice }": [
+        ""
+      ],
+      "Get the special year-end offer on our Premium VPN PLUS plan": [
+        ""
       ]
     },
     "Bug category": {
@@ -2095,6 +2114,9 @@
         "Um dos grupos não tem contactos: ${ noContactGroupList }",
         "Alguns grupos não têm contactos: ${ noContactGroupList } "
       ],
+      "Organization not recognized. Try again.": [
+        ""
+      ],
       "Passwords do not match": [
         "As senhas não coincidem"
       ],
@@ -2606,6 +2628,73 @@
     "Free price": {
       "Free": [
         "Free"
+      ]
+    },
+    "Get started checklist completion": {
+      "We've added 1 GB of bonus storage to your account. Continue to explore ${ BRAND_NAME } and share your ${ protonMailAppName } address with your family, friends, and colleagues.": [
+        ""
+      ],
+      "We've added 1 GB of bonus storage to your account. For even more storage and premium features, upgrade your plan.": [
+        ""
+      ],
+      "You're a privacy champ!": [
+        ""
+      ]
+    },
+    "Get started checklist incentive": {
+      "Complete all steps and get a total of 2 GB on your account": [
+        ""
+      ],
+      "Only ${ days } day left": [
+        "",
+        ""
+      ]
+    },
+    "Get started checklist instructions": {
+      "Available on iOS and Android.": [
+        ""
+      ],
+      "Get the ${ protonMailAppName } mobile app": [
+        ""
+      ],
+      "Import contacts or emails": [
+        ""
+      ],
+      "Import your contacts or messages": [
+        ""
+      ],
+      "Quickly transfer your contacts or emails from any provider using our Easy Switch import assistant.": [
+        ""
+      ],
+      "Sign into the mobile app to complete the action": [
+        ""
+      ],
+      "Using your mobile device, scan this QR code or visit": [
+        ""
+      ]
+    },
+    "Get started checklist item": {
+      "Get mobile app": [
+        ""
+      ],
+      "Import contacts or emails": [
+        ""
+      ],
+      "Send a message": [
+        ""
+      ],
+      "Set up a recovery method": [
+        ""
+      ]
+    },
+    "Get started checklist spotlight": {
+      "You can access the checklist anytime from here": [
+        ""
+      ]
+    },
+    "Get started checklist title": {
+      "Get started": [
+        ""
       ]
     },
     "Group": {
@@ -3675,7 +3764,7 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Seleccione o formato de email predefinido a utilizar para este endereço de email."
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20-personal-calendar limit. You can also merge imported calendars with existing Proton calendars.": [
+      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit. You can also merge imported calendars with existing Proton calendars.": [
         ""
       ],
       "Sending": [
@@ -4518,6 +4607,9 @@
       "Encrypt emails": [
         "Encriptar emails"
       ],
+      "Enter organization name to confirm": [
+        ""
+      ],
       "Enter the 6-digit code": [
         "Insira o código de 6 algarismos"
       ],
@@ -5113,11 +5205,11 @@
       ]
     },
     "Mail import summary": {
-      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "",
         ""
       ],
-      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "",
         ""
       ]
@@ -5154,6 +5246,11 @@
     "Many Others": {
       "and many others": [
         "e muitos outros"
+      ]
+    },
+    "Member downgrade modal": {
+      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
+        ""
       ]
     },
     "Message": {
@@ -5992,6 +6089,9 @@
       ]
     },
     "Storage": {
+      "Get extra storage for free": [
+        ""
+      ],
       "Release notes": [
         "Notas de lançamento"
       ],
@@ -6516,6 +6616,9 @@
       ],
       "Delete message": [
         "Eliminar mensagem"
+      ],
+      "Delete organization?": [
+        ""
       ],
       "Deleting contacts": [
         "A eliminar contactos"
@@ -7099,6 +7202,9 @@
       "The attachment's signature failed verification.\nYou can still download this attachment but it might have been tampered with.": [
         "A verificação da assinatura do anexo falhou.\nAinda pode transferir-lo, mas pode ter sido adulterado.",
         "A verificação de algumas das assinaturas dos anexos falhou.\nAinda pode transferi-los, mas podem ter sido adulterados."
+      ],
+      "The contact data is corrupted and cannot be displayed.": [
+        ""
       ],
       "The contact failed to load.": [
         "Falha ao carregar o contacto."

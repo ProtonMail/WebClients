@@ -202,9 +202,6 @@
       "Copy link": [
         "Копировать ссылку"
       ],
-      "Copy to clipboard": [
-        "Скопировать в буфер обмена"
-      ],
       "Create": [
         "Создать"
       ],
@@ -300,6 +297,9 @@
       ],
       "Download all configurations": [
         "Скачать все конфигурации"
+      ],
+      "Download recovery file": [
+        "Скачать файл восстановления"
       ],
       "Download the Import-Export app": [
         "Скачать приложение для импорта и экспорта"
@@ -778,6 +778,15 @@
       "View invoice": [
         "Просмотр счёта"
       ],
+      "Void all recovery files": [
+        "Уничтожить все файлы восстановления"
+      ],
+      "Void all recovery files?": [
+        "Уничтожить все файлы восстановления?"
+      ],
+      "Void anyway": [
+        "Все равно уничтожить"
+      ],
       "Warning": [
         "Предупреждение"
       ],
@@ -1094,37 +1103,16 @@
       ]
     },
     "blackfriday Action": {
-      "Get limited-time deal": [
-        "Воспользоваться предложением"
-      ],
-      "Upgrade": [
-        "Сменить тариф"
+      "Get the offer": [
+        ""
       ]
     },
     "blackfriday Info": {
-      "Discounts are based on monthly pricing.": [
-        "Размер скидки зависит от суммы платежа в месяц."
-      ],
-      "early access to": [
-        "ранний доступ к"
-      ],
-      "Free": [
-        "Бесплатно"
-      ],
-      "Get early access to our new encrypted drive for FREE by upgrading to a Plus bundle now.": [
-        "БЕСПЛАТНО получите ранний доступ к новому облачному хранилищу с шифрованием файлов! Предложение доступно при оформлении комплекта подписок Plus."
+      "beta": [
+        "бета"
       ],
       "Includes": [
         "Включает"
-      ],
-      "Offer valid only for first-time paid subscriptions.": [
-        "Предложение действительно только при первом оформлении платной подписки."
-      ],
-      "ProtonDrive": [
-        "ProtonDrive"
-      ],
-      "Save ${ percentage }%": [
-        "${ percentage } %"
       ],
       "Standard price: ${ regularPrice }": [
         "Обычная цена: ${ regularPrice }"
@@ -1133,49 +1121,81 @@
         "Через 2 года подписка будет автоматически продлена по той же цене, если вы не отмените ее до этого срока."
       ]
     },
-    "blackfriday info": {
-      "per month": [
-        "в месяц"
-      ]
-    },
-    "blackfriday Promo title, need to be short": {
-      "Special offer": [
-        "Спецпредложение"
-      ]
-    },
     "blackfriday Title": {
-      "(${ notice }) Renews after 1 year at a discounted annual & bundle price of ${ amount } every year (36% discount).": [
-        "(${ notice }) Автопродление через 1 год по сниженной ежегодной цене за комплект подписок — ${ amount } (скидка 36 %)."
-      ],
-      "(${ notice }) Renews after 1 year at a discounted annual price of ${ amount } every year (20% discount).": [
-        "(${ notice }) Автопродление через 1 год по сниженной ежегодной цене ${ amount } (скидка 20 %)."
-      ],
-      "(${ notice }) Renews after 2 years at a discounted 2-year price of ${ amount } every 2 years (47% discount).": [
-        "(${ notice }) Автопродление через 2 года по сниженной цене ${ amount } за 2 года (скидка 47 %)."
-      ],
-      "Billed as ${ amount } ${ supNotice }": [
+      "Best deal": [
         ""
-      ],
-      "Black Friday Sale": [
-        "Скидки «черной пятницы»"
-      ],
-      "Cyber Monday Sale": [
-        "Скидки киберпонедельника"
-      ],
-      "for 1 month": [
-        "за 1 месяц"
-      ],
-      "for 1 year": [
-        "за 1 год"
-      ],
-      "for 2 years": [
-        "за 2 года"
       ],
       "Most popular": [
         "Самое популярное"
       ],
-      "ProtonDrive early access offer": [
-        "Получите ранний доступ к ProtonDrive"
+      "Save more when combining Mail and VPN": [
+        ""
+      ]
+    },
+    "blackfriday: VPNspecialoffer Action": {
+      "Get the deal": [
+        "Получить скидку"
+      ],
+      "Get the deal now": [
+        "Получить скидку"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Badge popup": {
+      "${ vpnAppName } Plus Special Offer 2021 discount has been applied": [
+        ""
+      ]
+    },
+    "blackfriday: VPNspecialoffer Info": {
+      "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
+        ""
+      ],
+      "Save ${ percentage }%": [
+        "– ${ percentage } %"
+      ],
+      "Special offer Terms and Conditions": [
+        ""
+      ]
+    },
+    "blackfriday: VPNspecialoffer info": {
+      "per month": [
+        "в месяц"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Promo title, need to be short": {
+      "Special offer": [
+        "Oсобые условия"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Title": {
+      "(${ notice }) Renews after 1 month at a standard monthly price of ${ amount }": [
+        ""
+      ],
+      "(${ notice }) Renews after 1 year at a standard discounted annual price of ${ amount } (20% discount)": [
+        ""
+      ],
+      "(${ notice }) Renews after 2 years at a standard discounted 2-year price of ${ amount } (33% discount)": [
+        ""
+      ],
+      "1 month": [
+        "1 месяц"
+      ],
+      "12 months": [
+        "12 месяцев"
+      ],
+      "24 months": [
+        "24 месяца"
+      ],
+      "Billed at ${ amount } for the first 2 years.${ supNotice }": [
+        ""
+      ],
+      "Billed at ${ amount } for the first month.${ supNotice }": [
+        ""
+      ],
+      "Billed at ${ amount } for the first year.${ supNotice }": [
+        ""
+      ],
+      "Get the special year-end offer on our Premium VPN PLUS plan": [
+        ""
       ]
     },
     "Bridge version load failed": {
@@ -1964,6 +1984,9 @@
       "Organization key is not decrypted.": [
         "Ключ организации не расшифрован."
       ],
+      "Organization not recognized. Try again.": [
+        ""
+      ],
       "Passwords do not match": [
         "Пароль и его подтверждение не совпадают"
       ],
@@ -2002,6 +2025,9 @@
       ],
       "Please refresh the page.": [
         "Пожалуйста, обновите страницу."
+      ],
+      "Please set a recovery email first": [
+        "Пожалуйста, сначала установите резервный адрес электронной почты"
       ],
       "Please set a recovery phone number first": [
         "Пожалуйста, сначала задайте резервный номер телефона для восстановления"
@@ -2116,6 +2142,9 @@
       ],
       "Uploaded file is not a valid private key. Please verify and try again.": [
         "Загруженный файл не является действительным закрытым ключом. Пожалуйста, проверьте и повторите попытку."
+      ],
+      "Uploaded file is not a valid recovery file. Please verify and try again.": [
+        "Загруженный файл не является действительным файлом восстановления. Пожалуйста, проверьте и повторите попытку."
       ],
       "Uploaded files are not valid private keys. Please verify and try again.": [
         "Загруженные файлы не являются действительными закрытыми ключами. Пожалуйста, проверьте и повторите попытку."
@@ -3246,6 +3275,9 @@
       "A key with the same encryption algorithm is already active for this address. Generating another key will cause slower account loading and deletion of this key can cause issues. If you are generating a new key because your old key is compromised, please mark that key as compromised. Are you sure you want to continue?": [
         "Для этого адреса уже активен ключ с таким же алгоритмом шифрования. Создание ещё одного ключа вызовет замедление загрузки учётной записи и удаление этого ключа может вызвать проблемы. Если вы создаёте новый ключ по причине компрометации старого, пожалуйста, отметьте тот ключ как скомпрометированный. Вы уверены, что хотите продолжить?"
       ],
+      "A recovery file lets you unlock and view your data after an account reset. ": [
+        "Файл восстановления позволяет разблокировать и просмотреть данные после сброса аккаунта. "
+      ],
       "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password.": [
         "Фразу для восстановления доступа к учетной записи позволит вам зайти в ваш аккаунт и восстановить ваши зашифрованные сообщения, если вы забудете ваш пароль."
       ],
@@ -3258,11 +3290,26 @@
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Доступ к учётной записи ограничен из-за неоплаченных счетов. Пожалуйста, обратитесь к вашему администратору."
       ],
+      "account recovery and data recovery method": [
+        "метод восстановления аккаунта и метод восстановления данных"
+      ],
+      "account recovery method": [
+        "метод восстановления аккаунта"
+      ],
       "Account successfully updated": [
         "Учётная запись успешно обновлена"
       ],
+      "Activate your recovery phrase": [
+        "Активируйте вашу фразу восстановления"
+      ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"ProtonMail me\" or \"Private Message me.\"": [
         "Добавьте адрес электронной почты @pm.me в вашу учетную запись. Этот простой и короткий домен означает \"ProtonMail меня\" или \"Личное сообщение мне\""
+      ],
+      "Add a recovery email address": [
+        ""
+      ],
+      "Add a recovery phone number": [
+        "Обновить номер телефона для восстановления"
       ],
       "Add additional addresses to your account like user2@protonmail.com": [
         "Добавьте дополнительные адреса в свой аккаунт, например user2@protonmail.com"
@@ -3284,6 +3331,9 @@
       ],
       "Addresses": [
         "Адреса"
+      ],
+      "After a password reset your data is locked in encrypted form to keep it safe. To decrypt and view your emails and other data, you need a recovery file or recovery phrase.": [
+        "После сброса пароля ваши данные блокируются в зашифрованном виде для обеспечения их сохранности. Для расшифровки и просмотра писем и других данных необходим файл восстановления или фраза восстановления."
       ],
       "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
         "После внесения оплаты Bitcoin, пожалуйста, следуйте согласно указаниям ниже, чтобы произвести улучшение."
@@ -3579,6 +3629,9 @@
       "Download your PGP keys for use with other PGP-compatible services.": [
         "Загрузите ключи PGP для использования в других PGP-совместимых сервисах."
       ],
+      "Download your recovery file": [
+        "Загрузить ваш файл восстановления"
+      ],
       "Drop the file here to upload": [
         "Для загрузки файла перетащите его сюда"
       ],
@@ -3588,8 +3641,8 @@
       "Edit label": [
         "Изменить ярлык"
       ],
-      "Effortlessly and securely move your emails from your current provider to Proton. If you use Google, we also support calendar, and contacts imports.": [
-        "Легко и безопасно перенесите свою электронную почту от текущего провайдера в Proton. Если вы пользуетесь Google, мы также поддерживаем импорт календаря и контактов."
+      "Effortlessly and securely move your emails from your current provider to Proton. If you use Google, we also support calendar and contacts imports.": [
+        ""
       ],
       "Email address": [
         "Адрес электронной почты"
@@ -3732,6 +3785,12 @@
       "If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly.": [
         "Если у вас настроены и SPF, и DKIM, DMARC позволит вам указать, как другие почтовые службы должны доставлять почту для вашего домена, если проверки и SPF, и DKIM были неудачны. Это может осложнить спамерам возможность притворяться вами, но также может вызвать проблемы доставки в случае ненадлежащей настройки."
       ],
+      "If you lose your login details and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
+        "Если вы потеряете данные для входа в систему и вам необходимо будет сбросить аккаунт, ${ boldImperative } убедитесь, что у вас есть ${ boldAccountRecovery }."
+      ],
+      "If you lose your login details and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.": [
+        "Если вы потеряете данные для входа и вам необходимо будет сбросить аккаунт ${ boldImperative }, что у вас есть ${ boldAccountAndRecovery }, иначе вы не сможете получить доступ к электронной почте, контактам или файлам."
+      ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to log into your account. Each code can only be used once.": [
         "Если вы потеряете своё устройство для 2ФА, то эти коды могут быть использованы вместо 6-значного кода двухфакторной аутентификации, чтобы войти в вашу учётную запись. Каждый код может быть использован только единожды."
       ],
@@ -3792,6 +3851,12 @@
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Импорт ваших данных из ${ importedEmailAddress } в ${ toEmail }."
       ],
+      "In case you lose your login details, we’ll send you recovery instructions via email or SMS.": [
+        "В случае, если вы потеряете информацию для входа, мы отправим вам инструкцию на электронную почту или через SMS."
+      ],
+      "In case you lose your login details, we’ll send you recovery instructions via email.": [
+        "В случае, если вы потеряете информацию для входа, мы отправим вам инструкцию на электронную почту."
+      ],
       "Included": [
         "Включено"
       ],
@@ -3824,6 +3889,9 @@
       ],
       "Internet connection restored.": [
         "Соединение с интернет восстановлено."
+      ],
+      "it’s imperative": [
+        "это обязательно"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Просто подтвердите свой выбор, а остальное мы сделаем сами."
@@ -3927,6 +3995,9 @@
       "Next you'll need to log in to your Google account and allow us to access your data.": [
         "Далее вам нужно будет войти в свой аккаунт Google и разрешить нам доступ к вашим данным."
       ],
+      "No account recovery method set, you are at risk of losing access to your account": [
+        "Не установлен метод восстановления аккаунта, вы рискуете потерять доступ к своим данным"
+      ],
       "No action selected": [
         "Действие не выбрано"
       ],
@@ -3935,6 +4006,9 @@
       ],
       "No contact encryption keys exist": [
         "У контакта нет ключей шифрования"
+      ],
+      "No data recovery method set, you are at risk of losing access to your data": [
+        "Не установлен метод восстановления данных, вы рискуете потерять доступ к своим данным"
       ],
       "No folder selected": [
         "Папка не выбрана"
@@ -4122,11 +4196,17 @@
       "read our two-factor authentication Guide first": [
         "Сначала прочитайте наше Руководство по двухфакторной аутентификации"
       ],
+      "Recovery files have been voided": [
+        "Файлы восстановления были уничтожены"
+      ],
       "Recovery phrase copied to clipboard": [
         "Фраза для восстановления доступа к учетной записи скопирована в буфер обмена"
       ],
       "Recovery phrase has been disabled": [
         "Фраза для восстановления доступа к учетной записи была отключена"
+      ],
+      "Recovery phrase is not associated with any outdated keys.": [
+        "Фраза восстановления не связана ни с одним устаревшим ключем."
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Обновление страницы или ${ link } автоматически решит большинство проблем."
@@ -4158,8 +4238,8 @@
       "Select a service provider to get started": [
         "Выберите поставщика услуг, чтобы начать"
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20-personal-calendar limit. You can also merge imported calendars with existing Proton calendars.": [
-        "Выберите, какие календари необходимо импортировать. Для каждого импортированного календаря будет создан новый календарь в пределах лимита в 20 личных календарей. Вы также можете объединить импортированные календари с существующими календарями Proton."
+      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit. You can also merge imported calendars with existing Proton calendars.": [
+        ""
       ],
       "Server is currently down": [
         "Сервер сейчас не работает"
@@ -4335,8 +4415,8 @@
       "Unable to decrypt. Recovery phrase is not associated with any keys.": [
         "Невозможно расшифровать. Фраза восстановления не связана ни с одним ключем."
       ],
-      "Unable to decrypt. Recovery phrase is not associated with any outdated keys.": [
-        "Невозможно расшифровать. Фраза восстановления не связана ни с одним устаревшим ключем."
+      "Unable to verify recovery file signature. Please contact support.": [
+        "Невозможно проверить подпись файла восстановления. Обратитесь в службу поддержки."
       ],
       "Unfortunately there is no recovery method saved for this account.": [
         "К сожалению, для этой учетной записи не настроен ни один метод для восстановления."
@@ -4400,12 +4480,6 @@
       ],
       "We advise you to use official ProtonVPN applications when possible.": [
         "Мы советуем вам по возможности использовать официальные приложения ProtonVPN."
-      ],
-      "We recommend adding a linked email or phone number so you can recover your account if you lose your password.": [
-        "Мы рекомендуем добавить электронную почту или номер телефона, чтобы вы могли восстановить свою учетную запись, при утрате пароля."
-      ],
-      "We recommend adding a linked email so you can recover your account if you lose your password.": [
-        "Мы рекомендуем добавить адрес электронной почты, чтобы вы могли восстановить свою учетную запись, если вы потеряете пароль."
       ],
       "We use 3-D Secure to protect your payments.": [
         "Мы используем 3-D Secure для защиты ваших платежей."
@@ -4551,6 +4625,9 @@
       "You will soon be redirected to PayPal to verify your payment.": [
         "Скоро вы будете перенаправлены на сайт PayPal для подтверждения вашего платежа."
       ],
+      "You won't be able to recover encrypted data after an account reset using your downloaded recovery files.": [
+        "Вы не сможете восстановить зашифрованные данные после сброса учетной записи с помощью загруженных файлов восстановления."
+      ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, please create an address.": [
         "Ваша учетная запись для ${ BRAND_NAME } связана с ${ externalEmailAddress }. Чтобы использовать ${ toAppName }, пожалуйста, создайте адрес."
       ],
@@ -4562,6 +4639,9 @@
       ],
       "Your account is being upgraded, this may take up to 30 seconds.": [
         "Ваша учётная запись улучшается, это может занять до 30 секунд."
+      ],
+      "Your account recovery method is set": [
+        "Установлен метод восстановления вашего аккаунта"
       ],
       "Your account will be updated once the payment is cleared.": [
         "Ваш аккаунт будет обновлен, когда платеж будет проверен."
@@ -4577,6 +4657,9 @@
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "Ваши данные готовы к импорту из ${ importedEmailAddressStrong } в ваш аккаунт Proton."
+      ],
+      "Your data recovery method is set": [
+        "Установлен метод восстановления ваших данных"
       ],
       "Your email will only be used for this one-time verification.": [
         "Ваш адрес электронной почты будет использован для этой разовой проверки."
@@ -5298,6 +5381,9 @@
       "End weekday": [
         "День недели окончания"
       ],
+      "Enter organization name to confirm": [
+        ""
+      ],
       "Enter password": [
         "Введите пароль"
       ],
@@ -5315,6 +5401,9 @@
       ],
       "extra storage": [
         "доп. хранилище"
+      ],
+      "File": [
+        "Файл"
       ],
       "Filter Name": [
         "Название фильтра"
@@ -5547,6 +5636,12 @@
       "Recovery email": [
         "Адрес эл. почты для восстановления"
       ],
+      "Recovery email address": [
+        "Резервный адрес электронной почты"
+      ],
+      "Recovery file": [
+        "Файл восстановления"
+      ],
       "Recovery phone": [
         "Номер телефона для восстановления"
       ],
@@ -5661,8 +5756,14 @@
       "Upload your backup key": [
         "Загрузка вашего резервного ключа"
       ],
+      "Upload your recovery file": [
+        "Загруженный файл восстановления"
+      ],
       "Uploaded private keys": [
         "Загрузить закрытые ключи"
+      ],
+      "Uploaded recovery file": [
+        "Загруженный файл восстановления"
       ],
       "URL": [
         "Адрес"
@@ -5749,6 +5850,9 @@
     "label": {
       "Phone number": [
         "Телефонный номер"
+      ],
+      "Recovery phone number": [
+        "Номер телефона для восстановления"
       ],
       "Recovery phrase": [
         "Фраза для восстановления доступа к учетной записи"
@@ -6058,17 +6162,17 @@
       ]
     },
     "Mail import summary": {
-      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
-        "Импортируйте все сообщения из ${ selectedLabelsCount } из ${ totalLabelsCount } ярлыка с ${ periodFragment } и пометьте их как ${ label }",
-        "Импортируйте все сообщения из ${ selectedLabelsCount } из ${ totalLabelsCount } ярлыков с ${ periodFragment } и пометьте их как ${ label }",
-        "Импортируйте все сообщения из ${ selectedLabelsCount } из ${ totalLabelsCount } ярлыков с ${ periodFragment } и пометьте их как ${ label }",
-        "Импортируйте все сообщения из ${ selectedLabelsCount } из ${ totalLabelsCount } ярлыков с ${ periodFragment } и пометьте их как ${ label }"
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "",
+        "",
+        "",
+        ""
       ],
-      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
-        "Импортируйте все сообщения из ярлыка ${ totalLabelsCount } с ${ periodFragment } и пометьте их как ${ label }",
-        "Импортируйте все сообщения из ярлыков ${ totalLabelsCount } с ${ periodFragment } и пометьте их как ${ label }",
-        "Импортируйте все сообщения из ярлыков ${ totalLabelsCount } с ${ periodFragment } и пометьте их как ${ label }",
-        "Импортируйте все сообщения из ярлыков ${ totalLabelsCount } с ${ periodFragment } и пометьте их как ${ label }"
+      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "",
+        "",
+        "",
+        ""
       ]
     },
     "Mail upsell feature": {
@@ -6107,6 +6211,11 @@
       ],
       "Sign in": [
         "Войти"
+      ]
+    },
+    "Member downgrade modal": {
+      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
+        ""
       ]
     },
     "Message": {
@@ -7034,6 +7143,9 @@
       ],
       "Upload additional private keys": [
         "Загрузите дополнительные закрытые ключи"
+      ],
+      "Upload additional recovery files": [
+        "Загрузить дополнительный файлы для восстановления"
       ]
     },
     "Select search results": {
@@ -7531,6 +7643,9 @@
       "3. Select config file and download": [
         "3. Выберите файл конфигурации и скачайте"
       ],
+      "Account recovery": [
+        "Восстановление аккаунта"
+      ],
       "Account suspended": [
         "Учетная запись приостановлена"
       ],
@@ -7593,9 +7708,6 @@
       ],
       "Addresses": [
         "Адреса"
-      ],
-      "Advanced": [
-        "Расширенные"
       ],
       "Allocate storage": [
         "Выделение объёма в хранилище"
@@ -7768,6 +7880,9 @@
       "Dashboard": [
         "Личный кабинет"
       ],
+      "Data recovery": [
+        "Восстановление данных"
+      ],
       "Date": [
         "Дата"
       ],
@@ -7800,6 +7915,9 @@
       ],
       "Delete logs": [
         "Удалить записи журнала"
+      ],
+      "Delete organization?": [
+        ""
       ],
       "Delete user": [
         "Удалить пользователя"
@@ -8029,8 +8147,8 @@
       "Password & keys": [
         "Пароль и ключи"
       ],
-      "Password & recovery": [
-        "Пароль и восстановление"
+      "Password & security": [
+        "Пароль и безопасность"
       ],
       "Passwords": [
         "Пароли"
@@ -8098,8 +8216,11 @@
       "Reconnect your account": [
         "Повторно подключить свою учётную запись"
       ],
-      "Recovery & notification": [
-        "Восстановление и уведомление"
+      "Recovery": [
+        "Восстановление"
+      ],
+      "Recovery file": [
+        "Файл восстановления"
       ],
       "Remove calendar": [
         "Удалить календарь"
@@ -8121,9 +8242,6 @@
       ],
       "Restore administrator privileges": [
         "Восстановить права администратора"
-      ],
-      "Security": [
-        "Безопасность"
       ],
       "Security logs": [
         "Журнал безопасности"
@@ -8227,6 +8345,9 @@
       "Switch to two-password mode": [
         "Переключение в режим с двумя паролями"
       ],
+      "Take precautions to avoid data loss!": [
+        "Соблюдайте меры предосторожности, чтобы избежать потери данных!"
+      ],
       "Theme": [
         "Тема"
       ],
@@ -8280,6 +8401,9 @@
       ],
       "Your plan": [
         "Ваш тариф"
+      ],
+      "Your recovery status": [
+        "Ваше состояние восстановления"
       ],
       "ZIP / postal code": [
         "Почтовый индекс"

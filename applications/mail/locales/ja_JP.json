@@ -197,9 +197,6 @@
       "Copy email to clipboard": [
         "メールをクリップボードにコピー"
       ],
-      "Copy to clipboard": [
-        "クリップボードにコピー"
-      ],
       "Create folder": [
         "フォルダーを作成"
       ],
@@ -266,7 +263,7 @@
       "Discard": [
         "破棄"
       ],
-      "Don't secure account": [
+      "Dismiss get started checklist": [
         ""
       ],
       "Done": [
@@ -345,7 +342,7 @@
         "次のページに移動"
       ],
       "Go to page ${ page }": [
-        "パネル ${ page } に移動"
+        "${ page } ページに移動"
       ],
       "Go to panel ${ index }": [
         "パネル ${ index } に移動"
@@ -574,6 +571,9 @@
       ],
       "Open calendar": [
         "カレンダーを開く"
+      ],
+      "Open get started checklist modal": [
+        ""
       ],
       "Open navigation": [
         "ナビゲーションを開く"
@@ -845,6 +845,9 @@
       "Upgrade": [
         "アップグレード"
       ],
+      "Upgrade now": [
+        ""
+      ],
       "Upload picture": [
         "写真をアップロード"
       ],
@@ -864,7 +867,7 @@
         ""
       ],
       "Use “${ label }” setting": [
-        "「{ label }」設定を使用する"
+        "「${ label }」設定を使用する"
       ],
       "Verify": [
         "検証"
@@ -986,6 +989,11 @@
         "ようこそ"
       ]
     },
+    "Amount of completed get started checklist items": {
+      "${ numberOfCompletedItems } of ${ totalNumberOfChecklistItems } complete": [
+        ""
+      ]
+    },
     "Apps dropdown": {
       "Go to ${ title }": [
         "${ title } へ移動"
@@ -1062,87 +1070,98 @@
       ]
     },
     "blackfriday Action": {
-      "Get limited-time deal": [
-        ""
-      ],
-      "Upgrade": [
+      "Get the offer": [
         ""
       ]
     },
     "blackfriday Info": {
-      "Discounts are based on monthly pricing.": [
-        ""
-      ],
-      "early access to": [
-        ""
-      ],
-      "Free": [
-        ""
-      ],
-      "Get early access to our new encrypted drive for FREE by upgrading to a Plus bundle now.": [
-        ""
+      "beta": [
+        "ベータ"
       ],
       "Includes": [
+        "プランには以下が含まれます"
+      ],
+      "Standard price: ${ regularPrice }": [
+        "標準価格: ${ regularPrice }"
+      ],
+      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
+        "このサブスクリプションは、キャンセル処理が行われない限り2年後に同額で自動更新されます。"
+      ]
+    },
+    "blackfriday Title": {
+      "Best deal": [
         ""
       ],
-      "Offer valid only for first-time paid subscriptions.": [
-        ""
+      "Most popular": [
+        "最も人気"
       ],
-      "ProtonDrive": [
+      "Save more when combining Mail and VPN": [
+        ""
+      ]
+    },
+    "blackfriday: VPNspecialoffer Action": {
+      "Get the deal": [
+        "割引価格で入手"
+      ],
+      "Get the deal now": [
+        "今すぐ割引を入手"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Badge popup": {
+      "${ vpnAppName } Plus Special Offer 2021 discount has been applied": [
+        ""
+      ]
+    },
+    "blackfriday: VPNspecialoffer Info": {
+      "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
         ""
       ],
       "Save ${ percentage }%": [
         "${ percentage }%"
       ],
-      "Standard price: ${ regularPrice }": [
-        ""
-      ],
-      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
+      "Special offer Terms and Conditions": [
         ""
       ]
     },
-    "blackfriday info": {
+    "blackfriday: VPNspecialoffer info": {
       "per month": [
-        ""
+        " / 月"
       ]
     },
-    "blackfriday Promo title, need to be short": {
+    "blackfriday: VPNspecialoffer Promo title, need to be short": {
       "Special offer": [
         "特別オファー"
       ]
     },
-    "blackfriday Title": {
-      "(${ notice }) Renews after 1 year at a discounted annual & bundle price of ${ amount } every year (36% discount).": [
+    "blackfriday: VPNspecialoffer Title": {
+      "(${ notice }) Renews after 1 month at a standard monthly price of ${ amount }": [
         ""
       ],
-      "(${ notice }) Renews after 1 year at a discounted annual price of ${ amount } every year (20% discount).": [
+      "(${ notice }) Renews after 1 year at a standard discounted annual price of ${ amount } (20% discount)": [
         ""
       ],
-      "(${ notice }) Renews after 2 years at a discounted 2-year price of ${ amount } every 2 years (47% discount).": [
+      "(${ notice }) Renews after 2 years at a standard discounted 2-year price of ${ amount } (33% discount)": [
         ""
       ],
-      "Billed as ${ amount } ${ supNotice }": [
+      "1 month": [
+        "1か月"
+      ],
+      "12 months": [
+        "12か月"
+      ],
+      "24 months": [
+        "24か月"
+      ],
+      "Billed at ${ amount } for the first 2 years.${ supNotice }": [
         ""
       ],
-      "Black Friday Sale": [
+      "Billed at ${ amount } for the first month.${ supNotice }": [
         ""
       ],
-      "Cyber Monday Sale": [
+      "Billed at ${ amount } for the first year.${ supNotice }": [
         ""
       ],
-      "for 1 month": [
-        ""
-      ],
-      "for 1 year": [
-        ""
-      ],
-      "for 2 years": [
-        ""
-      ],
-      "Most popular": [
-        ""
-      ],
-      "ProtonDrive early access offer": [
+      "Get the special year-end offer on our Premium VPN PLUS plan": [
         ""
       ]
     },
@@ -2075,6 +2094,9 @@
       "One of the groups has no contacts: ${ noContactGroupList }": [
         "次のグループには連絡先が追加されていません: ${ noContactGroupList } "
       ],
+      "Organization not recognized. Try again.": [
+        ""
+      ],
       "Passwords do not match": [
         "パスワードが一致しません"
       ],
@@ -2582,6 +2604,72 @@
     "Free price": {
       "Free": [
         "無料"
+      ]
+    },
+    "Get started checklist completion": {
+      "We've added 1 GB of bonus storage to your account. Continue to explore ${ BRAND_NAME } and share your ${ protonMailAppName } address with your family, friends, and colleagues.": [
+        ""
+      ],
+      "We've added 1 GB of bonus storage to your account. For even more storage and premium features, upgrade your plan.": [
+        ""
+      ],
+      "You're a privacy champ!": [
+        ""
+      ]
+    },
+    "Get started checklist incentive": {
+      "Complete all steps and get a total of 2 GB on your account": [
+        ""
+      ],
+      "Only ${ days } day left": [
+        ""
+      ]
+    },
+    "Get started checklist instructions": {
+      "Available on iOS and Android.": [
+        ""
+      ],
+      "Get the ${ protonMailAppName } mobile app": [
+        ""
+      ],
+      "Import contacts or emails": [
+        ""
+      ],
+      "Import your contacts or messages": [
+        ""
+      ],
+      "Quickly transfer your contacts or emails from any provider using our Easy Switch import assistant.": [
+        ""
+      ],
+      "Sign into the mobile app to complete the action": [
+        ""
+      ],
+      "Using your mobile device, scan this QR code or visit": [
+        ""
+      ]
+    },
+    "Get started checklist item": {
+      "Get mobile app": [
+        ""
+      ],
+      "Import contacts or emails": [
+        ""
+      ],
+      "Send a message": [
+        ""
+      ],
+      "Set up a recovery method": [
+        ""
+      ]
+    },
+    "Get started checklist spotlight": {
+      "You can access the checklist anytime from here": [
+        ""
+      ]
+    },
+    "Get started checklist title": {
+      "Get started": [
+        ""
       ]
     },
     "Group": {
@@ -3599,7 +3687,7 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "このメールアドレスにメールを送信する際に既定で使用するメールの形式を選択できます。"
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20-personal-calendar limit. You can also merge imported calendars with existing Proton calendars.": [
+      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit. You can also merge imported calendars with existing Proton calendars.": [
         ""
       ],
       "Sending": [
@@ -4431,6 +4519,9 @@
       "Encrypt emails": [
         "メールを暗号化"
       ],
+      "Enter organization name to confirm": [
+        ""
+      ],
       "Enter the 6-digit code": [
         "6 桁のコードを入力してください"
       ],
@@ -4465,7 +4556,7 @@
         "グループ"
       ],
       "Hide password": [
-        "パスワードを非表示"
+        "パスワードを隠す"
       ],
       "IF": [
         "もし"
@@ -4591,7 +4682,7 @@
         "都道府県"
       ],
       "Reveal password": [
-        "パスワードを表示"
+        "パスワードを表示する"
       ],
       "Search in": [
         ""
@@ -5025,10 +5116,10 @@
       ]
     },
     "Mail import summary": {
-      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         ""
       ],
-      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         ""
       ]
     },
@@ -5064,6 +5155,11 @@
     "Many Others": {
       "and many others": [
         "など"
+      ]
+    },
+    "Member downgrade modal": {
+      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
+        ""
       ]
     },
     "Message": {
@@ -5891,6 +5987,9 @@
       ]
     },
     "Storage": {
+      "Get extra storage for free": [
+        ""
+      ],
       "Release notes": [
         "更新情報"
       ],
@@ -6379,6 +6478,9 @@
       ],
       "Delete message": [
         "メッセージを削除"
+      ],
+      "Delete organization?": [
+        ""
       ],
       "Deleting contacts": [
         "連絡先を削除しています"
@@ -6909,13 +7011,13 @@
     },
     "VPN Plan Feature": {
       "${ n } server": [
-        ""
+        "${ n } サーバー"
       ],
       "${ n } VPN connection": [
-        ""
+        "${ n } VPN 接続"
       ],
       "${ numberOfServers } in ${ numberOfCountries } country": [
-        ""
+        "${ numberOfCountries } か国で${ numberOfServers } 台"
       ]
     },
     "Warning": {
@@ -6953,6 +7055,9 @@
         ""
       ],
       "The attachment's signature failed verification.\nYou can still download this attachment but it might have been tampered with.": [
+        ""
+      ],
+      "The contact data is corrupted and cannot be displayed.": [
         ""
       ],
       "The contact failed to load.": [

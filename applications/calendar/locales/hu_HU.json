@@ -663,87 +663,98 @@
       ]
     },
     "blackfriday Action": {
-      "Get limited-time deal": [
-        ""
-      ],
-      "Upgrade": [
+      "Get the offer": [
         ""
       ]
     },
     "blackfriday Info": {
-      "Discounts are based on monthly pricing.": [
-        ""
-      ],
-      "early access to": [
-        ""
-      ],
-      "Free": [
-        ""
-      ],
-      "Get early access to our new encrypted drive for FREE by upgrading to a Plus bundle now.": [
-        ""
+      "beta": [
+        "béta"
       ],
       "Includes": [
-        ""
-      ],
-      "Offer valid only for first-time paid subscriptions.": [
-        ""
-      ],
-      "ProtonDrive": [
-        ""
-      ],
-      "Save ${ percentage }%": [
-        "${ percentage } %"
+        "Tartalmazza"
       ],
       "Standard price: ${ regularPrice }": [
-        ""
+        "Normál ár: ${ regularPrice }"
       ],
       "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
         ""
       ]
     },
-    "blackfriday info": {
-      "per month": [
+    "blackfriday Title": {
+      "Best deal": [
+        ""
+      ],
+      "Most popular": [
+        "Legnépszerűbb"
+      ],
+      "Save more when combining Mail and VPN": [
         ""
       ]
     },
-    "blackfriday Promo title, need to be short": {
+    "blackfriday: VPNspecialoffer Action": {
+      "Get the deal": [
+        "Érdekel az ajánlat"
+      ],
+      "Get the deal now": [
+        "Érdekel az ajánlat"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Badge popup": {
+      "${ vpnAppName } Plus Special Offer 2021 discount has been applied": [
+        ""
+      ]
+    },
+    "blackfriday: VPNspecialoffer Info": {
+      "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
+        ""
+      ],
+      "Save ${ percentage }%": [
+        "${ percentage } %"
+      ],
+      "Special offer Terms and Conditions": [
+        ""
+      ]
+    },
+    "blackfriday: VPNspecialoffer info": {
+      "per month": [
+        "havonta"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Promo title, need to be short": {
       "Special offer": [
         "Különleges ajánlat"
       ]
     },
-    "blackfriday Title": {
-      "(${ notice }) Renews after 1 year at a discounted annual & bundle price of ${ amount } every year (36% discount).": [
+    "blackfriday: VPNspecialoffer Title": {
+      "(${ notice }) Renews after 1 month at a standard monthly price of ${ amount }": [
         ""
       ],
-      "(${ notice }) Renews after 1 year at a discounted annual price of ${ amount } every year (20% discount).": [
+      "(${ notice }) Renews after 1 year at a standard discounted annual price of ${ amount } (20% discount)": [
         ""
       ],
-      "(${ notice }) Renews after 2 years at a discounted 2-year price of ${ amount } every 2 years (47% discount).": [
+      "(${ notice }) Renews after 2 years at a standard discounted 2-year price of ${ amount } (33% discount)": [
         ""
       ],
-      "Billed as ${ amount } ${ supNotice }": [
+      "1 month": [
+        "1 hónap"
+      ],
+      "12 months": [
+        "12 hónap"
+      ],
+      "24 months": [
+        "24 hónap"
+      ],
+      "Billed at ${ amount } for the first 2 years.${ supNotice }": [
         ""
       ],
-      "Black Friday Sale": [
+      "Billed at ${ amount } for the first month.${ supNotice }": [
         ""
       ],
-      "Cyber Monday Sale": [
+      "Billed at ${ amount } for the first year.${ supNotice }": [
         ""
       ],
-      "for 1 month": [
-        ""
-      ],
-      "for 1 year": [
-        ""
-      ],
-      "for 2 years": [
-        ""
-      ],
-      "Most popular": [
-        ""
-      ],
-      "ProtonDrive early access offer": [
+      "Get the special year-end offer on our Premium VPN PLUS plan": [
         ""
       ]
     },
@@ -1468,6 +1479,9 @@
       "One of the groups has no contacts: ${ noContactGroupList }": [
         "Az egyik csoportban nincsenek névjegyek: ${ noContactGroupList }",
         "Néhány csoportban nincsenek névjegyek: ${ noContactGroupList } "
+      ],
+      "Organization not recognized. Try again.": [
+        ""
       ],
       "Passwords do not match": [
         "A jelszavak nem egyeznek meg"
@@ -2394,7 +2408,7 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Válassza ki az e-mail alapértelmezett formátumát, erre a címre való küldéshez."
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20-personal-calendar limit. You can also merge imported calendars with existing Proton calendars.": [
+      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit. You can also merge imported calendars with existing Proton calendars.": [
         ""
       ],
       "Servers are unreachable. Please try again in a few minutes": [
@@ -3021,6 +3035,9 @@
       "Ends": [
         "Befejező dátum"
       ],
+      "Enter organization name to confirm": [
+        ""
+      ],
       "Enter the 6-digit code": [
         "Írja be a hatjegyű kódot"
       ],
@@ -3440,11 +3457,11 @@
       ]
     },
     "Mail import summary": {
-      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "",
         ""
       ],
-      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "",
         ""
       ]
@@ -3452,6 +3469,11 @@
     "Many Others": {
       "and many others": [
         "és még sok más"
+      ]
+    },
+    "Member downgrade modal": {
+      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
+        ""
       ]
     },
     "Message": {
@@ -3975,21 +3997,7 @@
         ""
       ]
     },
-    "Plan Feature": {
-      "${ n } server": [
-        "${ n } kiszolgáló",
-        "${ n } kiszolgálók"
-      ],
-      "${ n } VPN connection": [
-        "${ n } VPN kapcsolódás",
-        "${ n } VPN kapcsolódás"
-      ]
-    },
     "Plan feature": {
-      "${ freeServers } in ${ freeCountries } country": [
-        "",
-        ""
-      ],
       "0.5 GB storage": [
         "0.5 GB tárhely"
       ],
@@ -4002,10 +4010,6 @@
       "1 user": [
         "1 felhasználó"
       ],
-      "1200+ servers in ${ plusCountries } country": [
-        "1200+ szerver ${ plusCountries } országban",
-        "1200+ szerver ${ plusCountries } országban"
-      ],
       "20 GB storage": [
         "20 GB tárhely"
       ],
@@ -4014,10 +4018,6 @@
       ],
       "3 folders / labels": [
         "3 mappa és címke"
-      ],
-      "350+ servers in ${ basicCountries } country": [
-        "350+ szerver ${ basicCountries } országban",
-        ""
       ],
       "5 addresses": [
         "5 cím"
@@ -4564,6 +4564,9 @@
       "Delete event": [
         "Esemény törlése"
       ],
+      "Delete organization?": [
+        ""
+      ],
       "Delete recurring event": [
         "Ismétlődő esemény törlése"
       ],
@@ -5040,6 +5043,20 @@
         "Windows, macOS, iOS, Linux, Android, Android TV, Chromebook, Chromecast"
       ]
     },
+    "VPN Plan Feature": {
+      "${ n } server": [
+        "",
+        ""
+      ],
+      "${ n } VPN connection": [
+        "",
+        ""
+      ],
+      "${ numberOfServers } in ${ numberOfCountries } country": [
+        "",
+        ""
+      ]
+    },
     "Warning": {
       "Are you sure you want to permanently delete ${ count } contact group?": [
         "Biztos, hogy véglegesen töröl ${ count } névjegy csoportot?",
@@ -5075,6 +5092,9 @@
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "Némelyik névjegy egyesítése hibát jelez. Vizsgálja meg ezeket"
+      ],
+      "The contact data is corrupted and cannot be displayed.": [
+        ""
       ],
       "The contact failed to load.": [
         "A névjegy betöltése nem sikerült."

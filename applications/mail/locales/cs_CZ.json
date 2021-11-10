@@ -197,9 +197,6 @@
       "Copy email to clipboard": [
         "Zkopírovat e-mail do schránky"
       ],
-      "Copy to clipboard": [
-        "Zkopírovat do schránky"
-      ],
       "Create folder": [
         "Vytvořit složku"
       ],
@@ -272,8 +269,8 @@
       "Discard": [
         "Zahodit"
       ],
-      "Don't secure account": [
-        "Nezabezpečujte účet"
+      "Dismiss get started checklist": [
+        ""
       ],
       "Done": [
         "Hotovo"
@@ -372,7 +369,7 @@
         "Skrýt"
       ],
       "Hide advanced PGP settings": [
-        "Skrýt pokročilá nastavení"
+        ""
       ],
       "Hide attachment details": [
         "Skrýt detaily přílohy"
@@ -417,10 +414,10 @@
         "Vložit"
       ],
       "Insert ${ totalChecked } contact": [
-        "Vložte ${ totalChecked } kontakt",
-        "Vložte ${ totalChecked } kontakty",
-        "Vložte ${ totalChecked } kontaktů",
-        "Vložte{ totalChecked } kontaktů"
+        "",
+        "",
+        "",
+        ""
       ],
       "Insert contact": [
         "Vložit kontakt"
@@ -584,6 +581,9 @@
       "Open calendar": [
         "Otevřít kalendář"
       ],
+      "Open get started checklist modal": [
+        ""
+      ],
       "Open navigation": [
         "Otevřít menu"
       ],
@@ -675,7 +675,7 @@
         "Oznámit phishing"
       ],
       "Request a feature": [
-        "Požádat o vlastnost"
+        ""
       ],
       "Request new code": [
         "Vyžádejte si nový kód"
@@ -857,6 +857,9 @@
       "Upgrade": [
         "Přejít na placený tarif"
       ],
+      "Upgrade now": [
+        ""
+      ],
       "Upload picture": [
         "Nahrát obrázek"
       ],
@@ -1010,6 +1013,11 @@
         "Vítejte"
       ]
     },
+    "Amount of completed get started checklist items": {
+      "${ numberOfCompletedItems } of ${ totalNumberOfChecklistItems } complete": [
+        ""
+      ]
+    },
     "Apps dropdown": {
       "Go to ${ title }": [
         "Přejít na ${ title }"
@@ -1086,87 +1094,98 @@
       ]
     },
     "blackfriday Action": {
-      "Get limited-time deal": [
-        ""
-      ],
-      "Upgrade": [
+      "Get the offer": [
         ""
       ]
     },
     "blackfriday Info": {
-      "Discounts are based on monthly pricing.": [
-        ""
-      ],
-      "early access to": [
-        ""
-      ],
-      "Free": [
-        ""
-      ],
-      "Get early access to our new encrypted drive for FREE by upgrading to a Plus bundle now.": [
-        ""
+      "beta": [
+        "beta"
       ],
       "Includes": [
+        "Zahrnuje"
+      ],
+      "Standard price: ${ regularPrice }": [
+        "Běžná cena: ${ regularPrice }"
+      ],
+      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
+        "Předplatné se bude každé dva roky automaticky obnovovat se stejnou cenou, dokud nebude zrušeno."
+      ]
+    },
+    "blackfriday Title": {
+      "Best deal": [
         ""
       ],
-      "Offer valid only for first-time paid subscriptions.": [
-        ""
+      "Most popular": [
+        "Nejoblíbenější"
       ],
-      "ProtonDrive": [
+      "Save more when combining Mail and VPN": [
+        ""
+      ]
+    },
+    "blackfriday: VPNspecialoffer Action": {
+      "Get the deal": [
+        "Využít nabídku"
+      ],
+      "Get the deal now": [
+        "Objednat nyní"
+      ]
+    },
+    "blackfriday: VPNspecialoffer Badge popup": {
+      "${ vpnAppName } Plus Special Offer 2021 discount has been applied": [
+        ""
+      ]
+    },
+    "blackfriday: VPNspecialoffer Info": {
+      "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
         ""
       ],
       "Save ${ percentage }%": [
         "${ percentage }%"
       ],
-      "Standard price: ${ regularPrice }": [
-        ""
-      ],
-      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
+      "Special offer Terms and Conditions": [
         ""
       ]
     },
-    "blackfriday info": {
+    "blackfriday: VPNspecialoffer info": {
       "per month": [
-        ""
+        "za měsíc"
       ]
     },
-    "blackfriday Promo title, need to be short": {
+    "blackfriday: VPNspecialoffer Promo title, need to be short": {
       "Special offer": [
         "Speciální nabídka"
       ]
     },
-    "blackfriday Title": {
-      "(${ notice }) Renews after 1 year at a discounted annual & bundle price of ${ amount } every year (36% discount).": [
+    "blackfriday: VPNspecialoffer Title": {
+      "(${ notice }) Renews after 1 month at a standard monthly price of ${ amount }": [
         ""
       ],
-      "(${ notice }) Renews after 1 year at a discounted annual price of ${ amount } every year (20% discount).": [
+      "(${ notice }) Renews after 1 year at a standard discounted annual price of ${ amount } (20% discount)": [
         ""
       ],
-      "(${ notice }) Renews after 2 years at a discounted 2-year price of ${ amount } every 2 years (47% discount).": [
+      "(${ notice }) Renews after 2 years at a standard discounted 2-year price of ${ amount } (33% discount)": [
         ""
       ],
-      "Billed as ${ amount } ${ supNotice }": [
+      "1 month": [
+        "1 měsíc"
+      ],
+      "12 months": [
+        "12 měsíců"
+      ],
+      "24 months": [
+        "24 měsíců"
+      ],
+      "Billed at ${ amount } for the first 2 years.${ supNotice }": [
         ""
       ],
-      "Black Friday Sale": [
+      "Billed at ${ amount } for the first month.${ supNotice }": [
         ""
       ],
-      "Cyber Monday Sale": [
+      "Billed at ${ amount } for the first year.${ supNotice }": [
         ""
       ],
-      "for 1 month": [
-        ""
-      ],
-      "for 1 year": [
-        ""
-      ],
-      "for 2 years": [
-        ""
-      ],
-      "Most popular": [
-        ""
-      ],
-      "ProtonDrive early access offer": [
+      "Get the special year-end offer on our Premium VPN PLUS plan": [
         ""
       ]
     },
@@ -1968,7 +1987,7 @@
         "Neúplná podmínka"
       ],
       "Contact could not be saved": [
-        "Uložení kontaktu selhalo"
+        ""
       ],
       "Contact signature could not be verified": [
         "Podpisu kontaktu nebylo možné ověřit"
@@ -2040,7 +2059,7 @@
         ""
       ],
       "Image upload failed": [
-        "Selhalo nahrání obrázku"
+        ""
       ],
       "Incorrect login credentials. Please try again": [
         "Nesprávné přihlašovací údaje. Zkuste to znovu"
@@ -2135,6 +2154,9 @@
         "Některé skupiny nemají kontakty: ${ noContactGroupList } ",
         "Některé skupiny neobsahují žádné kontakty: ${ noContactGroupList } "
       ],
+      "Organization not recognized. Try again.": [
+        ""
+      ],
       "Passwords do not match": [
         "Hesla se neshodují"
       ],
@@ -2142,7 +2164,7 @@
         "Platba byla zrušena"
       ],
       "Payment process consumed": [
-        "Platba byla dokončena"
+        "Platební transakce byla dokončena"
       ],
       "Payment process failed": [
         "Platební transakce selhala"
@@ -2656,6 +2678,75 @@
         "Zdarma"
       ]
     },
+    "Get started checklist completion": {
+      "We've added 1 GB of bonus storage to your account. Continue to explore ${ BRAND_NAME } and share your ${ protonMailAppName } address with your family, friends, and colleagues.": [
+        ""
+      ],
+      "We've added 1 GB of bonus storage to your account. For even more storage and premium features, upgrade your plan.": [
+        ""
+      ],
+      "You're a privacy champ!": [
+        ""
+      ]
+    },
+    "Get started checklist incentive": {
+      "Complete all steps and get a total of 2 GB on your account": [
+        ""
+      ],
+      "Only ${ days } day left": [
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "Get started checklist instructions": {
+      "Available on iOS and Android.": [
+        ""
+      ],
+      "Get the ${ protonMailAppName } mobile app": [
+        ""
+      ],
+      "Import contacts or emails": [
+        ""
+      ],
+      "Import your contacts or messages": [
+        ""
+      ],
+      "Quickly transfer your contacts or emails from any provider using our Easy Switch import assistant.": [
+        ""
+      ],
+      "Sign into the mobile app to complete the action": [
+        ""
+      ],
+      "Using your mobile device, scan this QR code or visit": [
+        ""
+      ]
+    },
+    "Get started checklist item": {
+      "Get mobile app": [
+        ""
+      ],
+      "Import contacts or emails": [
+        ""
+      ],
+      "Send a message": [
+        ""
+      ],
+      "Set up a recovery method": [
+        ""
+      ]
+    },
+    "Get started checklist spotlight": {
+      "You can access the checklist anytime from here": [
+        ""
+      ]
+    },
+    "Get started checklist title": {
+      "Get started": [
+        ""
+      ]
+    },
     "Group": {
       "Account": [
         "Účet"
@@ -2829,7 +2920,7 @@
         "${ addressCount } email adresa",
         "${ addressCount } email adresy",
         "${ addressCount } emailových adres",
-        "${ addressCount } emailové adresy"
+        ""
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "Aplikace ${ appName } potřebuje Váš souhlas, aby mohla ${ enableDesktopNotifications }."
@@ -3827,7 +3918,7 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Vyberte formát emailu, který chcete aby byl použit jako výchozí pro zasílání emailu na tuto emailovou adresu."
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20-personal-calendar limit. You can also merge imported calendars with existing Proton calendars.": [
+      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit. You can also merge imported calendars with existing Proton calendars.": [
         ""
       ],
       "Sending": [
@@ -4692,6 +4783,9 @@
       "Encrypt emails": [
         "Šifrovat e-maily"
       ],
+      "Enter organization name to confirm": [
+        ""
+      ],
       "Enter the 6-digit code": [
         "Zadejte 6-místný kód"
       ],
@@ -5289,13 +5383,13 @@
       ]
     },
     "Mail import summary": {
-      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "",
         "",
         "",
         ""
       ],
-      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ label }": [
+      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "",
         "",
         "",
@@ -5334,6 +5428,11 @@
     "Many Others": {
       "and many others": [
         "a mnoho dalších"
+      ]
+    },
+    "Member downgrade modal": {
+      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
+        ""
       ]
     },
     "Message": {
@@ -6194,6 +6293,9 @@
       ]
     },
     "Storage": {
+      "Get extra storage for free": [
+        ""
+      ],
       "Release notes": [
         "Seznam změn"
       ],
@@ -6791,6 +6893,9 @@
       "Delete message": [
         "Smazat zprávu"
       ],
+      "Delete organization?": [
+        ""
+      ],
       "Deleting contacts": [
         "Mazání kontaktů"
       ],
@@ -6810,7 +6915,7 @@
         "Upravit obrázek"
       ],
       "Email addresses": [
-        "Emailové adresy"
+        ""
       ],
       "Email settings": [
         "Nastavení e-mailu"
@@ -6843,7 +6948,7 @@
         "Exportování kontaktů"
       ],
       "Filter on": [
-        "Filtr zapnut"
+        ""
       ],
       "Forward": [
         "Přeposlat"
@@ -6981,7 +7086,7 @@
         "Ověření platební transakce službou PayPal se nezdařilo"
       ],
       "Phone numbers": [
-        "Telefoní čísla"
+        ""
       ],
       "Plan summary": [
         "Shrnutí předplatného"
@@ -7089,7 +7194,7 @@
         "Důvěřovat novým připnutým klíčům?"
       ],
       "Trust public key?": [
-        "Věříte veřejnému klíči?"
+        ""
       ],
       "Unsubscribe": [
         "Odhlásit odběr"
@@ -7389,6 +7494,9 @@
         "Přílohy podpisu ověřením neprošly.\nStále můžete stáhnout tyto přílohy ale pravděpodobně budou porušené.",
         "Přílohy podpisu ověřením neprošly.\nStále můžete stáhnout tyto přílohy ale pravděpodobně budou porušené.",
         "Přílohy podpisu ověřením neprošly.\nStále můžete stáhnout tyto přílohy ale pravděpodobně budou porušené."
+      ],
+      "The contact data is corrupted and cannot be displayed.": [
+        "Kontaktní údaje jsou poškozeny a nelze je zobrazit."
       ],
       "The contact failed to load.": [
         "Kontakt selhal v načtení."
