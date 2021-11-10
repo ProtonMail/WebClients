@@ -27,12 +27,14 @@ export interface InputFieldOwnProps {
     error?: NodeOrBoolean;
     warning?: NodeOrBoolean;
     rootClassName?: string;
+    labelContainerClassName?: string;
+    assistContainerClassName?: string;
 }
 
 export type InputFieldProps<E extends ElementType> = PolymorphicComponentProps<E, InputFieldOwnProps>;
 
 const defaultElement = Input;
-/* 
+/*
 export because of
 https://github.com/storybookjs/storybook/issues/9511
 https://github.com/styleguidist/react-docgen-typescript/issues/314
@@ -51,6 +53,8 @@ export const InputField: <E extends ElementType = typeof defaultElement>(
             error,
             id: idProp,
             rootClassName,
+            labelContainerClassName,
+            assistContainerClassName,
             warning,
             ...rest
         }: InputFieldProps<E>,
@@ -67,8 +71,12 @@ export const InputField: <E extends ElementType = typeof defaultElement>(
                 !error && Boolean(warning) && 'inputform-container--warning',
                 bigger && 'inputform-container--bigger',
             ]),
-            labelContainer: 'flex inputform-label flex-justify-space-between flex-nowrap flex-align-items-end',
+            labelContainer: classnames([
+                'flex inputform-label flex-justify-space-between flex-nowrap flex-align-items-end',
+                labelContainerClassName,
+            ]),
             inputContainer: 'inputform-field-container relative',
+            assistContainer: classnames(['inputform-assist flex flex-nowrap', assistContainerClassName]),
         };
         const hintElement = hint && <div className="inputform-label-hint flex-item-noshrink">{hint}</div>;
         const labelElement = label && <span className="inputform-label-text">{label}</span>;
@@ -104,7 +112,7 @@ export const InputField: <E extends ElementType = typeof defaultElement>(
                         {...rest}
                     />
                 </div>
-                <div className="inputform-assist flex flex-nowrap" id={assistiveUid}>
+                <div className={classes.assistContainer} id={assistiveUid}>
                     {errorElement || warningElement || (!error && !warning && assistiveText)}
                 </div>
             </label>
