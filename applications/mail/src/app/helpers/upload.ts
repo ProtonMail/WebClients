@@ -82,7 +82,6 @@ export const upload = <T>(uid: string, paramsPromise: RequestParams | Promise<Re
             Object.keys(headers).forEach((key) => xhr.setRequestHeader(key, headers[key]));
             xhr.send(body);
         });
-        console.log('here', xhr, xhr.responseText);
         return JSON.parse(xhr.responseText);
     };
 
