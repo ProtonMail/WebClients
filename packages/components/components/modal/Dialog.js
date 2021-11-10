@@ -76,7 +76,7 @@ const Dialog = ({
         <Portal>
             {first && <Backdrop exiting={isClosing} />}
 
-            <div className={classnames([dialogRootClassName])} style={{ '--z-position': last ? 1 : -1 }}>
+            <div className={classnames([dialogRootClassName])} style={!last ? { '--z-position': -1 } : undefined}>
                 <dialog
                     aria-labelledby={modalTitleID}
                     aria-modal="true"

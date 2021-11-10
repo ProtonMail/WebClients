@@ -146,7 +146,7 @@ const Modal = ({
             <div
                 className={rootClassName}
                 onAnimationEnd={handleAnimationEnd}
-                style={{ '--z-position': last ? 1 : -1 }}
+                style={!last ? { '--z-position': -1 } : undefined}
             >
                 <dialog
                     ref={dialogRef}
