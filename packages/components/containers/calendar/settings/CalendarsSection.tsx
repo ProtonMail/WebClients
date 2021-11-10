@@ -45,8 +45,9 @@ const CalendarsSection = ({
     onExport,
     canUpgradeLimit = true,
     calendarLimitReachedText,
+    ...rest
 }: CalendarsSectionProps) => (
-    <SettingsSection>
+    <SettingsSection {...rest}>
         {!canAdd && !isFeatureUnavailable && user.hasNonDelinquentScope && (
             <Alert className="mb1" type="warning">
                 {calendarLimitReachedText}

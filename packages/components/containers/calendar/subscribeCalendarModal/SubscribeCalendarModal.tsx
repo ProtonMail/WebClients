@@ -108,7 +108,7 @@ const SubscribeCalendarModal = ({ ...rest }: Props) => {
             ) : (
                 <>
                     <p className="mt0 text-pre-wrap">{c('Subscribe to calendar modal')
-                        .jt`You can subscribe to someone else's calendar by pasting its URL below. This will give you access to a read-only version of this calendar.
+                        .jt`To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Subscribed calendars.
 ${kbLink}
 `}</p>
                     <InputFieldTwo

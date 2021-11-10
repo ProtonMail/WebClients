@@ -31,7 +31,7 @@ const generalSettingsConfig = (hasSubscribedCalendars: boolean) => ({
         },
         hasSubscribedCalendars && {
             text: c('Title').t`Subscribed calendars`,
-            id: 'other-calendars',
+            id: 'other-calendars-section',
         },
         {
             text: c('Title').t`Import`,
@@ -102,7 +102,12 @@ const CalendarCalendarsSettings = ({
                     </Card>
                 </SettingsSection>
             ) : (
-                <CalendarShareSection calendars={personalCalendars} defaultCalendar={defaultCalendar} user={user} />
+                <CalendarShareSection
+                    id="calendar-share-section"
+                    calendars={personalCalendars}
+                    defaultCalendar={defaultCalendar}
+                    user={user}
+                />
             )}
         </PrivateMainSettingsAreaWithPermissions>
     );

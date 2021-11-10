@@ -60,7 +60,7 @@ describe('SubscribedCalendarsSection', () => {
         );
 
         const maxReachedCopy = `You have reached the maximum of ${MAX_SUBSCRIBED_CALENDARS_PER_USER} subscribed calendars.`;
-        const createCalendarCopy = 'Subscribe to calendar';
+        const createCalendarCopy = 'Add calendar';
 
         expect(screen.getByText(maxReachedCopy)).toBeInTheDocument();
         expect(screen.getByText(createCalendarCopy)).toBeDisabled();

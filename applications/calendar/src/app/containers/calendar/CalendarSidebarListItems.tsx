@@ -5,33 +5,34 @@ import {
     Checkbox,
     classnames,
     Icon,
+    SettingsLink,
     SidebarListItem,
     SidebarListItemContent,
     SidebarListItemDiv,
     SimpleDropdown,
+    DropdownMenuLink,
     Tooltip,
-    useAppLink,
     useModals,
     useUser,
 } from '@proton/components';
 import { noop } from '@proton/shared/lib/helpers/function';
 import { Calendar, SubscribedCalendar } from '@proton/shared/lib/interfaces/calendar';
-import { getIsCalendarDisabled } from '@proton/shared/lib/calendar/calendar';
+import { getIsCalendarDisabled, getProbablyActiveCalendars } from '@proton/shared/lib/calendar/calendar';
 
 import './CalendarSidebarListItems.scss';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import { CalendarModal } from '@proton/components/containers/calendar/calendarModal/CalendarModal';
-import { APPS } from '@proton/shared/lib/constants';
-import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import {
     getCalendarHasSubscriptionParameters,
     getCalendarIsNotSyncedInfo,
     getIsPersonalCalendar,
 } from '@proton/shared/lib/calendar/subscribe/helpers';
+import { ImportModal } from '@proton/components/containers/calendar/importModal';
+
 import { getContrastingColor } from '../../helpers/color';
 
-interface Props {
+export interface CalendarSidebarListItemsProps {
     calendars?: Calendar[] | SubscribedCalendar[];
     loading?: boolean;
     onChangeVisibility: (id: string, checked: boolean) => void;
@@ -43,16 +44,15 @@ const CalendarSidebarListItems = ({
     loading = false,
     onChangeVisibility = noop,
     actionsDisabled = false,
-}: Props) => {
+}: CalendarSidebarListItemsProps) => {
     const { createModal } = useModals();
-    const goToApp = useAppLink();
     const [user] = useUser();
 
     if (calendars.length === 0) {
         return null;
     }
 
-    const isSharingAllowed = getIsPersonalCalendar(calendars[0]);
+    const isPersonalCalendar = getIsPersonalCalendar(calendars[0]);
 
     const result = calendars.map((calendar, i) => {
         const { ID, Name, Display, Color } = calendar;
@@ -70,19 +70,6 @@ const CalendarSidebarListItems = ({
                 onChange={({ target: { checked } }) => onChangeVisibility(ID, checked)}
             />
         );
-
-        const dropdownItems = [
-            {
-                text: c('Action').t`Edit`,
-                onClick: (calendar: Calendar) => createModal(<CalendarModal calendar={calendar} />),
-            },
-            isSharingAllowed &&
-                !user.isFree && {
-                    text: c('Action').t`Share`,
-                    onClick: (calendar: Calendar) =>
-                        goToApp(`/calendar/calendars?share=${calendar.ID}`, APPS.PROTONACCOUNT),
-                },
-        ].filter(isTruthy);
 
         const isNotSyncedInfo = getCalendarHasSubscriptionParameters(calendar)
             ? getCalendarIsNotSyncedInfo(calendar)
@@ -103,11 +90,10 @@ const CalendarSidebarListItems = ({
                                 </div>
                                 {!isCalendarDisabled && isNotSyncedInfo && (
                                     <div className="flex-item-noshrink">
-                                        &nbsp;(
+                                        &nbsp;
                                         <Tooltip title={isNotSyncedInfo.text}>
-                                            <span>{isNotSyncedInfo.label}</span>
+                                            <span>({isNotSyncedInfo.label})</span>
                                         </Tooltip>
-                                        )
                                     </div>
                                 )}
                                 {isCalendarDisabled && (
@@ -129,17 +115,44 @@ const CalendarSidebarListItems = ({
                                     content={<Icon name="ellipsis" />}
                                 >
                                     <DropdownMenu>
-                                        {dropdownItems.map(({ text, onClick }) => {
-                                            return (
-                                                <DropdownMenuButton
-                                                    className="text-left"
-                                                    key={text}
-                                                    onClick={() => onClick(calendar)}
-                                                >
-                                                    {text}
-                                                </DropdownMenuButton>
-                                            );
-                                        })}
+                                        <DropdownMenuButton
+                                            className="text-left"
+                                            onClick={() => createModal(<CalendarModal calendar={calendar} />)}
+                                        >
+                                            {c('Action').t`Edit`}
+                                        </DropdownMenuButton>
+                                        {isPersonalCalendar && !user.isFree && (
+                                            <DropdownMenuLink
+                                                as={SettingsLink}
+                                                path={`/calendars?share=${calendar.ID}`}
+                                            >
+                                                {c('Action').t`Share`}
+                                            </DropdownMenuLink>
+                                        )}
+                                        {isPersonalCalendar && !isCalendarDisabled && (
+                                            <DropdownMenuButton
+                                                className="text-left"
+                                                onClick={() =>
+                                                    user.hasNonDelinquentScope
+                                                        ? createModal(
+                                                              <ImportModal
+                                                                  defaultCalendar={calendar}
+                                                                  calendars={getProbablyActiveCalendars(calendars)}
+                                                              />
+                                                          )
+                                                        : null
+                                                }
+                                            >
+                                                {c('Action').t`Import events`}
+                                            </DropdownMenuButton>
+                                        )}
+                                        <hr className="mt0-5 mb0-5" />
+                                        <DropdownMenuLink
+                                            as={SettingsLink}
+                                            path={`/calendars${isPersonalCalendar ? '' : '#other-calendars-section'}`}
+                                        >
+                                            {c('Calendar sidebar dropdown item').t`More options`}
+                                        </DropdownMenuLink>
                                     </DropdownMenu>
                                 </SimpleDropdown>
                             </Tooltip>
