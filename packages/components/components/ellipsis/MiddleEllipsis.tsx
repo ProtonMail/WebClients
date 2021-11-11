@@ -39,9 +39,12 @@ const MiddleEllipsis = ({
             dir={direction}
             {...rest}
         >
-            <span className="text-ellipsis text-pre" aria-hidden="true">
-                {start}
-            </span>
+            {start && (
+                <span className="text-ellipsis text-pre" aria-hidden="true">
+                    {start}
+                </span>
+            )}
+
             <span className="flex-item-noshrink text-pre" aria-hidden="true">
                 {end}
             </span>
