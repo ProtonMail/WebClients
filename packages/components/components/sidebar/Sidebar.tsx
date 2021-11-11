@@ -117,7 +117,7 @@ const Sidebar = ({
                             {storageGift}
                         </span>
 
-                        <span className={classnames([canAddStorage && 'app-infos-compact'])}>{version}</span>
+                        <span className="app-infos-compact">{version}</span>
                     </div>
                 </div>
             ) : (
