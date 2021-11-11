@@ -30,7 +30,7 @@ const TrashView = () => {
         <TrashContentProvider shareId={activeShareId}>
             <TrashToolbar shareId={activeShareId} />
             <PrivateMainArea hasToolbar className="flex-no-min-children flex-column flex-nowrap">
-                <div className="p1 text-strong border-bottom">{c('Info').t`Trash`}</div>
+                <div className="p1 text-strong border-bottom section--header">{c('Info').t`Trash`}</div>
                 <Trash shareId={activeShareId} />
             </PrivateMainArea>
         </TrashContentProvider>
