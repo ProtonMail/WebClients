@@ -31,11 +31,12 @@
 }
 
 .file-browser-grid-item--share-icon {
+	padding: 0.25em;
 	position: absolute;
-	inset-block-start: 0.2em;
-	inset-inline-end: 0.2em;
+	inset-block-end: 0.25em;
+	inset-inline-end: 0.25em;
 	background-color: var(--background-norm);
-	border-radius: 25%;
+	border-radius: 50%;
 }
 
 .file-browser-grid-item--container {

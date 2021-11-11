@@ -110,6 +110,13 @@ function ItemCell({
                             alt={iconText}
                         />
                     )}
+                    {item.SharedUrl && (
+                        <SharedURLIcon
+                            shareId={shareId}
+                            item={item}
+                            className="flex file-browser-grid-item--share-icon"
+                        />
+                    )}
                 </div>
                 <div
                     className={classnames([
@@ -125,9 +132,6 @@ function ItemCell({
                         {...checkboxHandlers}
                     />
                 </div>
-                {item.SharedUrl && (
-                    <SharedURLIcon shareId={shareId} item={item} className="flex file-browser-grid-item--share-icon" />
-                )}
                 <div className="w100 pt0-5 pb0-5 pl3 pr3 flex border-top" title={item.Name}>
                     <FileNameDisplay text={item.Name} className="center" />
                     <Button
