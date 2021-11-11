@@ -23,6 +23,7 @@ import NoAccessContainer from './NoAccessContainer';
 import OnboardingContainer from './OnboardingContainer';
 import SharedURLsContainer from './SharedLinksContainer';
 import TrashContainer from './TrashContainer';
+import EncryptedSearchProvider from './EncryptedSearchProvider';
 
 enum ERROR_TYPES {
     STANDARD,
@@ -118,12 +119,14 @@ const InitContainer = () => {
             <ModalsChildren />
             <TransferManager />
             <DriveWindow>
-                <Switch>
-                    <Route path="/trash" component={TrashContainer} />
-                    <Route path="/shared-urls" component={SharedURLsContainer} />
-                    <Route path="/:shareId?/:type/:linkId?" component={FolderContainer} />
-                    <Redirect to={`/${defaultShareRoot?.shareId}/folder/${defaultShareRoot?.linkId}`} />
-                </Switch>
+                <EncryptedSearchProvider>
+                    <Switch>
+                        <Route path="/trash" component={TrashContainer} />
+                        <Route path="/shared-urls" component={SharedURLsContainer} />
+                        <Route path="/:shareId?/:type/:linkId?" component={FolderContainer} />
+                        <Redirect to={`/${defaultShareRoot?.shareId}/folder/${defaultShareRoot?.linkId}`} />
+                    </Switch>
+                </EncryptedSearchProvider>
             </DriveWindow>
         </ActiveShareProvider>
     );

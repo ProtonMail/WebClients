@@ -1,5 +1,7 @@
+import { c } from 'ttag';
+
 import { getDevice } from '@proton/shared/lib/helpers/browser';
-import { ToolbarSeparator, Toolbar, useActiveBreakpoint } from '@proton/components';
+import { ToolbarSeparator, Toolbar, useActiveBreakpoint, Icon, ToolbarButton } from '@proton/components';
 import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 
 import { DriveFolder } from '../../../hooks/drive/useActiveShare';
@@ -21,6 +23,7 @@ import {
     UploadFileButton,
     UploadFolderButton,
 } from './ToolbarButtons';
+import { useEncryptedSearchContext } from '../../../containers/EncryptedSearchProvider';
 
 interface Props {
     activeFolder: DriveFolder;
@@ -32,6 +35,28 @@ const DriveToolbar = ({ activeFolder, selectedItems }: Props) => {
     const { isNarrow } = useActiveBreakpoint();
 
     const { shareId } = activeFolder;
+
+    /* ES PoC */
+    const { getESDBStatus, resumeIndexing, esDelete } = useEncryptedSearchContext();
+    const { esEnabled } = getESDBStatus();
+    const esButtons = (
+        <>
+            <ToolbarSeparator />
+            <ToolbarButton
+                disabled={esEnabled}
+                title={c('Action').t`Index`}
+                icon={<Icon name="arrow-down-to-screen" />}
+                onClick={() => resumeIndexing()}
+            />
+            <ToolbarButton
+                disabled={!esEnabled}
+                title={c('Action').t`Remove index`}
+                icon={<Icon name="xmark" />}
+                onClick={() => esDelete()}
+            />
+        </>
+    );
+    /* ES PoC */
 
     const renderSelectionActions = () => {
         if (!selectedItems.length) {
@@ -47,6 +72,7 @@ const DriveToolbar = ({ activeFolder, selectedItems }: Props) => {
                     )}
                     <ToolbarSeparator />
                     <ShareFileButton shareId={shareId} />
+                    {esButtons}
                 </>
             );
         }
@@ -68,6 +94,7 @@ const DriveToolbar = ({ activeFolder, selectedItems }: Props) => {
                         <DetailsButton shareId={shareId} selectedItems={selectedItems} />
                         <ToolbarSeparator />
                         <MoveToTrashButton sourceFolder={activeFolder} selectedItems={selectedItems} />
+                        {esButtons}
                     </>
                 )}
             </>
