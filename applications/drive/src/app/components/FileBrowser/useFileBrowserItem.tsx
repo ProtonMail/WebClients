@@ -7,6 +7,8 @@ import { CUSTOM_DATA_FORMAT } from '@proton/shared/lib/drive/constants';
 import { FileBrowserItem, DragMoveControls } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 import { selectMessageForItemList } from '../sections/helpers';
 
+const DOUBLE_CLICK_MS = 250;
+
 interface Options {
     item: FileBrowserItem;
     selectedItems: FileBrowserItem[];
@@ -26,6 +28,8 @@ function useFileBrowserItem<T extends HTMLElement>({
     dragMoveControls,
     onClick,
 }: Options) {
+    // Timer for click and double click detection.
+    const clickTimerIdRef = useRef<NodeJS.Timeout | undefined>(undefined);
     const touchStarted = useRef(false);
     const contextMenu = usePopperAnchor<T>();
     const [contextMenuPosition, setContextMenuPosition] = useState<{ top: number; left: number }>();
@@ -64,13 +68,25 @@ function useFileBrowserItem<T extends HTMLElement>({
         useCallback(
             (e: React.MouseEvent<HTMLDivElement>) => {
                 e.stopPropagation();
-
-                if (e.shiftKey) {
-                    onShiftClick?.(item.LinkID);
-                } else if (e.ctrlKey || e.metaKey) {
-                    onToggleSelect(item.LinkID);
-                } else {
+                if (clickTimerIdRef.current) {
+                    clearTimeout(clickTimerIdRef.current);
+                    clickTimerIdRef.current = undefined;
                     onClick?.(item);
+                } else {
+                    // We do selection right away, not in timeout, because then
+                    // would app look like slow. There is no harm to select
+                    // items right away even if we navigate to different folder
+                    // or show file preview in few miliseconds.
+                    if (e.shiftKey) {
+                        onShiftClick?.(item.LinkID);
+                    } else if (e.ctrlKey || e.metaKey) {
+                        onToggleSelect(item.LinkID);
+                    } else {
+                        selectItem(item.LinkID);
+                    }
+                    clickTimerIdRef.current = setTimeout(() => {
+                        clickTimerIdRef.current = undefined;
+                    }, DOUBLE_CLICK_MS);
                 }
             },
             [item, onShiftClick, onToggleSelect, onClick]
