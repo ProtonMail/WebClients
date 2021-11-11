@@ -27,6 +27,7 @@ import MailOnboardingModal from '../components/onboarding/MailOnboardingModal';
 import { MailUrlParams } from '../helpers/mailboxUrl';
 import { useContactsListener } from '../hooks/contact/useContactsListener';
 import { usePageHotkeys } from '../hooks/mailbox/usePageHotkeys';
+import { useConversationsEvent } from '../hooks/events/useConversationsEvents';
 
 interface Props {
     params: MailUrlParams;
@@ -100,6 +101,7 @@ const PageContainer = (
     }, [isMnemonicAvailable, hasSeenMnemonicPrompt]);
 
     useContactsListener();
+    useConversationsEvent();
 
     const handleOpenShortcutsModal = () => {
         createModal(<MailShortcutsModal />, 'shortcuts-modal');
