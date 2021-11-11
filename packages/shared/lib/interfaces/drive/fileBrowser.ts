@@ -83,6 +83,7 @@ export interface FileBrowserProps<T extends AllSortKeys = AllSortKeys> {
     getDragMoveControls?: (item: FileBrowserItem) => DragMoveControls;
     ItemContextMenu?: React.FunctionComponent<ItemContextMenuProps>;
     FolderContextMenu?: React.FunctionComponent<FolderContextMenuProps>;
+    SortDropdown?: React.FunctionComponent;
 }
 
 export interface FolderContextMenuProps {

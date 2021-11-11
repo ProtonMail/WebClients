@@ -33,6 +33,7 @@ const FileBrowser = <T extends AllSortKeys>({
     onScrollEnd,
     ItemContextMenu,
     FolderContextMenu,
+    SortDropdown,
 }: FileBrowserProps<T>) => {
     const { layout } = useUserSettings();
     const scrollAreaRef = useRef<HTMLDivElement>(null);
@@ -47,19 +48,23 @@ const FileBrowser = <T extends AllSortKeys>({
     return layout === LayoutSetting.Grid ? (
         <GridView
             scrollAreaRef={scrollAreaRef}
+            caption={caption}
             shareId={shareId}
             loading={loading}
             contents={contents}
             selectedItems={selectedItems}
+            sortParams={sortParams}
+            setSorting={setSorting}
             onItemClick={onItemClick}
             onToggleItemSelected={onToggleItemSelected}
             clearSelections={clearSelections}
+            onToggleAllSelected={onToggleAllSelected}
             onShiftClick={onShiftClick}
             selectItem={selectItem}
             getDragMoveControls={getDragMoveControls}
-            type={type}
             ItemContextMenu={ItemContextMenu}
             FolderContextMenu={FolderContextMenu}
+            SortDropdown={SortDropdown}
         />
     ) : (
         <ListView

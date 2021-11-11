@@ -20,7 +20,6 @@ import {
 import {
     ActionsDropdown,
     CreateNewFolderButton,
-    SortDropdown,
     MoveToTrashButton,
     MoveToFolderButton,
     UploadFileButton,
@@ -95,7 +94,6 @@ const DriveToolbar = ({ activeFolder }: Props) => {
             {renderSelectionActions()}
             <span className="mlauto flex flex-nowrap">
                 <LayoutDropdown />
-                <SortDropdown />
             </span>
         </Toolbar>
     );
