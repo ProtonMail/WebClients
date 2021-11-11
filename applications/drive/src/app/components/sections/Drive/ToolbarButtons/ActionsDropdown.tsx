@@ -44,6 +44,27 @@ const ActionsDropdown = ({ shareId }: Props) => {
 
     const menuItems = [
         {
+            hidden: isMultiSelect || !MEMBER_SHARING_ENABLED,
+            name: hasShare ? c('Action').t`Share options` : c('Action').t`Share`,
+            icon: 'user-group',
+            testId: 'actions-dropdown-share',
+            action: () => openSharing(shareId, selectedItems[0]),
+        },
+        {
+            hidden: isMultiSelect || hasFoldersSelected,
+            name: hasSharedLink ? c('Action').t`Manage link` : c('Action').t`Get link`,
+            icon: 'link',
+            testId: 'actions-dropdown-share-link',
+            action: () => openLinkSharing(shareId, selectedItems[0]),
+        },
+        {
+            hidden: false,
+            name: c('Action').t`Move to folder`,
+            icon: 'arrows-up-down-left-right',
+            testId: 'actions-dropdown-move',
+            action: () => openMoveToFolder(activeFolder, selectedItems),
+        },
+        {
             hidden: isMultiSelect,
             name: c('Action').t`Rename`,
             icon: 'note-pen',
@@ -66,31 +87,10 @@ const ActionsDropdown = ({ shareId }: Props) => {
         },
         {
             hidden: false,
-            name: c('Action').t`Move to folder`,
-            icon: 'arrows-up-down-left-right',
-            testId: 'actions-dropdown-move',
-            action: () => openMoveToFolder(activeFolder, selectedItems),
-        },
-        {
-            hidden: false,
             name: c('Action').t`Move to trash`,
             icon: 'trash',
             testId: 'actions-dropdown-trash',
             action: () => openMoveToTrash(activeFolder, selectedItems),
-        },
-        {
-            hidden: isMultiSelect || !MEMBER_SHARING_ENABLED,
-            name: hasShare ? c('Action').t`Share options` : c('Action').t`Share`,
-            icon: 'user-group',
-            testId: 'actions-dropdown-share',
-            action: () => openSharing(shareId, selectedItems[0]),
-        },
-        {
-            hidden: isMultiSelect || hasFoldersSelected,
-            name: hasSharedLink ? c('Action').t`Manage link` : c('Action').t`Get link`,
-            icon: 'link',
-            testId: 'actions-dropdown-share-link',
-            action: () => openLinkSharing(shareId, selectedItems[0]),
         },
     ];
 

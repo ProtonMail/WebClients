@@ -19,7 +19,6 @@ import {
 } from '../ToolbarButtons';
 import {
     ActionsDropdown,
-    BackButton,
     CreateNewFolderButton,
     SortDropdown,
     MoveToTrashButton,
@@ -71,20 +70,20 @@ const DriveToolbar = ({ activeFolder }: Props) => {
         return (
             <>
                 <PreviewButton shareId={shareId} selectedItems={selectedItems} />
-                <DownloadButton shareId={shareId} selectedItems={selectedItems} />
                 <ToolbarSeparator />
+                <DownloadButton shareId={shareId} selectedItems={selectedItems} />
                 {isNarrow ? (
                     <ActionsDropdown shareId={shareId} />
                 ) : (
                     <>
+                        <ShareButton shareId={shareId} selectedItems={selectedItems} />
+                        <ShareLinkButton shareId={shareId} selectedItems={selectedItems} />
+                        <ToolbarSeparator />
+                        <MoveToFolderButton sourceFolder={activeFolder} selectedItems={selectedItems} />
                         <RenameButton shareId={shareId} selectedItems={selectedItems} />
                         <DetailsButton shareId={shareId} selectedItems={selectedItems} />
                         <ToolbarSeparator />
                         <MoveToTrashButton sourceFolder={activeFolder} selectedItems={selectedItems} />
-                        <MoveToFolderButton sourceFolder={activeFolder} selectedItems={selectedItems} />
-                        <ToolbarSeparator />
-                        <ShareButton shareId={shareId} selectedItems={selectedItems} />
-                        <ShareLinkButton shareId={shareId} selectedItems={selectedItems} />
                     </>
                 )}
             </>
@@ -93,10 +92,6 @@ const DriveToolbar = ({ activeFolder }: Props) => {
 
     return (
         <Toolbar>
-            <BackButton shareId={shareId} parentLinkId={ParentLinkID} disabled={!ParentLinkID} />
-
-            <ToolbarSeparator />
-
             {renderSelectionActions()}
             <span className="mlauto flex flex-nowrap">
                 <LayoutDropdown />

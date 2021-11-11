@@ -185,6 +185,7 @@ function GridView({
 
             {FolderContextMenu && (
                 <FolderContextMenu
+                    shareId={shareId}
                     isOpen={isContextMenuOpen}
                     open={openContextMenu}
                     close={closeContextMenu}

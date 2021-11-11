@@ -14,7 +14,7 @@ const ShareFileButton = ({ shareId }: Props) => {
     return (
         <ToolbarButton
             disabled={false}
-            title={c('Action').t`Share via link`}
+            title={c('Action').t`Get link`}
             icon={<Icon name="link" />}
             onClick={() => {
                 openFileSharing(shareId);

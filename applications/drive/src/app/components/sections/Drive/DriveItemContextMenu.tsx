@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-import { ContextMenu, isPreviewAvailable } from '@proton/components';
+import { ContextMenu, ContextSeparator, isPreviewAvailable } from '@proton/components';
 import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 import { ItemContextMenuProps } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 
@@ -40,12 +40,15 @@ const DriveItemContextMenu = ({
     return (
         <ContextMenu isOpen={isOpen} close={close} position={position} anchorRef={anchorRef}>
             {hasPreviewAvailable && <PreviewButton shareId={shareId} item={item} close={close} />}
+            {hasPreviewAvailable && <ContextSeparator />}
             <DownloadButton shareId={shareId} items={selectedItems} close={close} />
-            {isOnlyOneItem && <RenameButton shareId={shareId} item={item} close={close} />}
-            <DetailsButton shareId={shareId} items={selectedItems} close={close} />
-            {sourceFolder && <MoveToFolderButton sourceFolder={sourceFolder} items={selectedItems} close={close} />}
             {isOnlyOneItem && <ShareButton shareId={shareId} item={item} close={close} />}
             {isOnlyOneFileItem && <ShareLinkButton shareId={shareId} item={item} close={close} />}
+            <ContextSeparator />
+            {sourceFolder && <MoveToFolderButton sourceFolder={sourceFolder} items={selectedItems} close={close} />}
+            {isOnlyOneItem && <RenameButton shareId={shareId} item={item} close={close} />}
+            <DetailsButton shareId={shareId} items={selectedItems} close={close} />
+            <ContextSeparator />
             {sourceFolder && <MoveToTrashButton sourceFolder={sourceFolder} items={selectedItems} close={close} />}
         </ContextMenu>
     );

@@ -1,6 +1,5 @@
 import { useCallback } from 'react';
 import { c } from 'ttag';
-import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 
 import useToolbarActions from '../../../../hooks/drive/useActions';
@@ -16,7 +15,7 @@ const DetailsButton = ({ shareId, items, close }: Props) => {
     const { openDetails, openFilesDetails } = useToolbarActions();
 
     const action = useCallback(() => {
-        if (items.length === 1 && items[0].Type === LinkType.FILE) {
+        if (items.length === 1) {
             openDetails(shareId, items[0]);
         } else {
             openFilesDetails(items);

@@ -86,6 +86,7 @@ export interface FileBrowserProps<T extends AllSortKeys = AllSortKeys> {
 }
 
 export interface FolderContextMenuProps {
+    shareId: string;
     anchorRef: React.RefObject<HTMLElement>;
     isOpen: boolean;
     position:
