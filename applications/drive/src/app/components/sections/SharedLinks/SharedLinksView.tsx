@@ -17,7 +17,7 @@ const SharedLinksView = () => {
         <SharedLinksContentProvider shareId={activeShareId}>
             <SharedLinksToolbar shareId={activeShareId} />
             <PrivateMainArea hasToolbar className="flex-no-min-children flex-column flex-nowrap">
-                <div className="p1 text-strong border-bottom">{c('Info').t`My Links`}</div>
+                <div className="p1 text-strong border-bottom section--header">{c('Info').t`My Links`}</div>
                 <SharedLinks shareId={activeShareId} />
             </PrivateMainArea>
         </SharedLinksContentProvider>
