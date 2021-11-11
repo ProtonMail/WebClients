@@ -8,8 +8,8 @@ import { FileBrowserItem, FileBrowserProps } from '@proton/shared/lib/interfaces
 import useFileBrowserView from '../useFileBrowserView';
 import ItemCell, { Props as ItemCellProps } from './ItemCell';
 
-const itemWidth = 11.25 * rootFontSize; // 11.25 * 16 = we want 180px by default
-const itemHeight = 10.25 * rootFontSize; // 10.25 * 16 = we want 164px by default
+const itemWidth = 13.5 * rootFontSize; // 13.5 * 16 = we want 216px by default
+const itemHeight = 12.25 * rootFontSize; // 12.25 * 16 = we want 196px by default
 
 const calculateCellDimensions = (areaWidth: number) => {
     const rowItemCount = Math.floor(areaWidth / itemWidth);
