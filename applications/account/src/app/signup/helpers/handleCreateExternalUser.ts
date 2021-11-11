@@ -1,4 +1,4 @@
-import { Api } from '@proton/shared/lib/interfaces';
+import { Api, User } from '@proton/shared/lib/interfaces';
 import { srpVerify } from '@proton/shared/lib/srp';
 import { queryCreateUserExternal } from '@proton/shared/lib/api/user';
 
@@ -14,7 +14,7 @@ export const handleCreateExternalUser = async ({ api, password, email, clientTyp
     if (!email) {
         throw new Error('Missing email');
     }
-    return srpVerify({
+    return srpVerify<{ User: User }>({
         api,
         credentials: { password },
         config: queryCreateUserExternal({
