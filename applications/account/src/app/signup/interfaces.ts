@@ -62,3 +62,8 @@ export class HumanVerificationError extends Error {
         Object.setPrototypeOf(this, HumanVerificationError.prototype);
     }
 }
+
+export interface InviteData {
+    selector: string;
+    token: string;
+}
