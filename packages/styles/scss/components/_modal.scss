@@ -53,10 +53,6 @@ $modal-tiny-width: em(288) !default;
 	}
 }
 
-.modal-container--in-background {
-	z-index: 600;
-}
-
 .modal-overlay--out {
 	animation: anime-modal-overlay-out ease 0.5s 1 normal;
 	animation-fill-mode: forwards;
