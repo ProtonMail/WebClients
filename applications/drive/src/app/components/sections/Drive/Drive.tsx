@@ -54,7 +54,7 @@ function Drive({ activeFolder }: Props) {
     );
 
     return complete && !contents.length && !loading ? (
-        <EmptyFolder />
+        <EmptyFolder shareId={shareId} />
     ) : (
         <FileBrowser
             type="drive"
