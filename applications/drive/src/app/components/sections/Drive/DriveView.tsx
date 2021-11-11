@@ -74,7 +74,7 @@ function DriveView({ match }: RouteComponentProps<DriveSectionRouteProps>) {
         <DriveContentProvider folder={folder}>
             {folder ? <DriveToolbar activeFolder={folder} /> : <Toolbar />}
             <PrivateMainArea hasToolbar className="flex-no-min-children flex-column flex-nowrap">
-                <div className="max-w100 pt0-5 pb0-5 pl0-75 pr0-75 border-bottom">
+                <div className="max-w100 pt0-5 pb0-5 pl0-75 pr0-75 border-bottom section--header">
                     {folder && <DriveBreadcrumbs activeFolder={folder} />}
                 </div>
                 {folder && <Drive activeFolder={folder} />}
