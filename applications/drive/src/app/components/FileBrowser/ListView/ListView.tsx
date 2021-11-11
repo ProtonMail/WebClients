@@ -233,6 +233,7 @@ const ListView = <T extends AllSortKeys>({
             </div>
             {!isPreview && FolderContextMenu && (
                 <FolderContextMenu
+                    shareId={shareId}
                     isOpen={isContextMenuOpen}
                     open={openContextMenu}
                     close={closeContextMenu}
