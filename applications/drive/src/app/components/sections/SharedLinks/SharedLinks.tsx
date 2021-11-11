@@ -10,6 +10,7 @@ import SharedLinksItemContextMenu from './SharedLinksItemContextMenu';
 import useNavigate from '../../../hooks/drive/useNavigate';
 import useDriveEvents from '../../../hooks/drive/useDriveEvents';
 import useDrive from '../../../hooks/drive/useDrive';
+import SortDropdown from './SortDropdown';
 
 type Props = {
     shareId: string;
@@ -64,6 +65,7 @@ const SharedLinks = ({ shareId }: Props) => {
             selectItem={selectItem}
             onScrollEnd={handleScrollEnd}
             ItemContextMenu={SharedLinksItemContextMenu}
+            SortDropdown={SortDropdown}
         />
     );
 };
