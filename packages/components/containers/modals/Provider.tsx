@@ -4,6 +4,7 @@ import ModalsContext from './modalsContext';
 import ModalsChildrenContext from './childrenContext';
 import createManager from './manager';
 import { Modal } from './interface';
+import { ModalPositionsProvider } from '../../components/modalTwo/modalPositions';
 
 interface Props {
     children: ReactNode;
@@ -17,9 +18,11 @@ const ModalsProvider = ({ children }: Props) => {
     }, [modals, setModals]);
 
     return (
-        <ModalsContext.Provider value={manager}>
-            <ModalsChildrenContext.Provider value={modals}>{children}</ModalsChildrenContext.Provider>
-        </ModalsContext.Provider>
+        <ModalPositionsProvider>
+            <ModalsContext.Provider value={manager}>
+                <ModalsChildrenContext.Provider value={modals}>{children}</ModalsChildrenContext.Provider>
+            </ModalsContext.Provider>
+        </ModalPositionsProvider>
     );
 };
 
