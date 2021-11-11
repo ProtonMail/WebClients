@@ -31,11 +31,12 @@
 }
 
 .file-browser-grid-item--share-icon {
+	padding: 0.25em;
 	position: absolute;
-	inset-block-start: 0.2em;
-	inset-inline-end: 0.2em;
+	inset-block-end: 0.25em;
+	inset-inline-end: 0.25em;
 	background-color: var(--background-norm);
-	border-radius: 25%;
+	border-radius: 50%;
 }
 
 .file-browser-grid-item--container {
@@ -52,9 +53,16 @@
 	display: none;
 }
 
+.file-browser-grid-view--options {
+	display: none;
+	position: absolute;
+	inset-inline-end: 0.25em;
+	inset-block-end: 0.35em;
+}
+
 .file-browser-list--share-column {
-	width: 50px; // To fit one small icon + spacing around.
-	max-height: 100%;
+	inline-size: 50px; // To fit one small icon + spacing around.
+	max-block-size: 100%;
 }
 
 .file-browser-list-item--thumbnail {
@@ -64,10 +72,14 @@
 	object-fit: cover;
 }
 
+// To replace when new hover helper is merged
 @media (hover: hover) and (pointer: fine) {
 	.file-browser-grid-item:hover {
 		.file-browser-grid-item--select-hover-only {
 			display: flex;
+		}
+		.file-browser-grid-view--options {
+			display: block;
 		}
 	}
 }
