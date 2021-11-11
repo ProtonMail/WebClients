@@ -11,7 +11,6 @@ import { ConversationErrors, ConversationState } from '../../logic/conversations
 import { allConversations, conversationByID } from '../../logic/conversations/conversationsSelectors';
 import { RootState } from '../../logic/store';
 import { initialize, load as loadAction, retryLoading } from '../../logic/conversations/conversationsActions';
-import { useConversationsEvent } from '../events/useConversationsEvents';
 
 export interface ConversationStateOptional {
     Conversation?: Conversation;
@@ -52,10 +51,7 @@ export const useConversation: UseConversation = (inputConversationID, messageID)
 
     const conversationState = useSelector((state: RootState) => conversationByID(state, { ID: inputConversationID }));
 
-    const init = (
-        conversationID: string,
-        getElementsFromIDs: (IDs: string[]) => Conversation[]
-    ): ConversationStateOptional | undefined => {
+    const init = (conversationID: string): ConversationStateOptional | undefined => {
         if (conversationState) {
             dispatch(initialize(conversationState as ConversationState));
             return conversationState;
@@ -81,9 +77,7 @@ export const useConversation: UseConversation = (inputConversationID, messageID)
 
     const [conversationID, setConversationID] = useState(inputConversationID);
     const [pendingRequest, setPendingRequest] = useState(false);
-    const [conversation, setConversation] = useState<ConversationStateOptional | undefined>(() =>
-        init(conversationID, getElementsFromIDs)
-    );
+    const [conversation, setConversation] = useState<ConversationStateOptional | undefined>(() => init(conversationID));
 
     const load = async (conversationID: string, messageID: string | undefined) => {
         const existingConversation = getConversation(conversationID);
@@ -115,7 +109,7 @@ export const useConversation: UseConversation = (inputConversationID, messageID)
             return;
         }
 
-        const conversationInState = init(inputConversationID, getElementsFromIDs);
+        const conversationInState = init(inputConversationID);
         setConversationID(inputConversationID);
         setConversation(conversationInState);
 
@@ -138,8 +132,6 @@ export const useConversation: UseConversation = (inputConversationID, messageID)
     const loadingConversation = !loadingError && !conversation?.Conversation;
     const loadingMessages = !loadingError && !conversation?.Messages?.length;
     const numMessages = conversation?.Messages?.length || conversation?.Conversation?.NumMessages;
-
-    useConversationsEvent();
 
     return {
         conversationID,

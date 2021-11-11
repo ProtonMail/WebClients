@@ -89,7 +89,9 @@ export const useShouldMoveOut = (
     }, [messageCache, ID]);
 
     useEffect(() => {
-        if (conversationMode) {
+        // If the conversation is not in the state yet, it will move out from it without even loading it
+        // We need to check whether it's the first time we click on it to prevent the unwanted move out
+        if (conversationMode && previousVersionRef.current !== undefined) {
             onChange(conversation);
         }
     }, [conversation]);
