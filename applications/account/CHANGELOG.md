@@ -1,3 +1,18 @@
+## Release: 4.0.8 — November 24, 2021
+
+### New features
+
+-   Allow users to download a recovery file to better safeguard your data in case of an account reset
+
+### Improvements
+
+-   General UI/UX improvements
+-   Reworked the recovery settings structure to allow users to see their account recovery settings and status at a glance
+
+### Fixes
+
+-   Improved error message clarity while downgrading account to prevent unwanted feature loss
+
 ## Release: 4.0.7 — October 20, 2021
 
 ### Improvements
