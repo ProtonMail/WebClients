@@ -1,11 +1,14 @@
 import { useRef } from 'react';
 import { FixedSizeGrid, GridChildComponentProps } from 'react-window';
-import { classnames, Loader, useElementRect, useRightToLeft } from '@proton/components';
+
+import { classnames, Loader, useElementRect, useRightToLeft, Table } from '@proton/components';
 import { buffer } from '@proton/shared/lib/helpers/function';
 import { rootFontSize } from '@proton/shared/lib/helpers/dom';
 import { FileBrowserItem, FileBrowserProps } from '@proton/shared/lib/interfaces/drive/fileBrowser';
+import { AllSortKeys } from '@proton/shared/lib/interfaces/drive/link';
 
 import useFileBrowserView from '../useFileBrowserView';
+import GridHeader from './GridHeader';
 import ItemCell, { Props as ItemCellProps } from './ItemCell';
 
 const itemWidth = 13.5 * rootFontSize; // 13.5 * 16 = we want 216px by default
@@ -33,10 +36,7 @@ const calculateCellDimensions = (areaWidth: number) => {
     };
 };
 
-type Props = Omit<
-    FileBrowserProps,
-    'onScrollEnd' | 'onToggleAllSelected' | 'isPreview' | 'caption' | 'setSorting' | 'sortParams'
-> & {
+type Props<T extends AllSortKeys> = Omit<FileBrowserProps<T>, 'type' | 'onScrollEnd' | 'isPreview'> & {
     scrollAreaRef: React.RefObject<HTMLDivElement>;
 };
 
@@ -83,7 +83,8 @@ const GridItemCell = ({
     );
 };
 
-function GridView({
+function GridView<T extends AllSortKeys>({
+    caption,
     shareId,
     contents,
     onItemClick,
@@ -93,11 +94,15 @@ function GridView({
     getDragMoveControls,
     loading,
     onToggleItemSelected,
+    onToggleAllSelected,
     clearSelections,
     scrollAreaRef,
     ItemContextMenu,
     FolderContextMenu,
-}: Props) {
+    SortDropdown,
+    sortParams,
+    setSorting,
+}: Props<T>) {
     const containerRef = useRef<HTMLDivElement>(null);
     const rect = useElementRect(containerRef, buffer);
     const totalItems = contents.length + (loading ? 1 : 0);
@@ -144,44 +149,60 @@ function GridView({
         <div
             ref={containerRef}
             role="presentation"
-            className="flex-no-min-children flex-item-fluid flex-column no-scroll"
+            className="flex flex-no-min-children flex-item-fluid flex-column no-scroll"
             onContextMenu={handleContextMenu}
             onClick={clearSelections}
         >
-            {rect && (
-                <FixedSizeGrid
-                    style={{ overflowX: 'hidden', '--padding-bottom-custom': '1.5em' }}
-                    direction={isRTL ? 'rtl' : 'ltr'}
-                    itemData={itemData}
-                    columnWidth={cellWidth}
-                    rowHeight={cellHeight}
-                    className="pb-custom"
-                    height={rect.height}
-                    width={rect.width}
-                    columnCount={itemsPerRow}
-                    rowCount={rowCount}
-                    outerRef={scrollAreaRef}
-                    onScroll={() => {
-                        if (isContextMenuOpen) {
-                            closeContextMenu();
-                        }
-                    }}
-                    itemKey={({
-                        columnIndex,
-                        rowIndex,
-                        data: { contents, itemsPerRow },
-                    }: {
-                        columnIndex: number;
-                        rowIndex: number;
-                        data: ItemCellData;
-                    }) => {
-                        const item = contents[columnIndex + rowIndex * itemsPerRow];
-                        return item?.LinkID ?? `${columnIndex}-${rowIndex}`;
-                    }}
-                >
-                    {GridItemCell}
-                </FixedSizeGrid>
-            )}
+            <div>
+                <Table caption={caption} className="file-browser-table m0">
+                    <GridHeader
+                        contents={contents}
+                        onToggleAllSelected={onToggleAllSelected}
+                        scrollAreaRef={scrollAreaRef}
+                        selectedItems={selectedItems}
+                        setSorting={setSorting}
+                        sortParams={sortParams}
+                        SortDropdown={SortDropdown}
+                    />
+                </Table>
+            </div>
+
+            <div className="flex-no-min-children flex-column flex-item-fluid w100 no-scroll" ref={containerRef}>
+                {rect && (
+                    <FixedSizeGrid
+                        style={{ overflowX: 'hidden', '--padding-bottom-custom': '1.5em' }}
+                        direction={isRTL ? 'rtl' : 'ltr'}
+                        itemData={itemData}
+                        columnWidth={cellWidth}
+                        rowHeight={cellHeight}
+                        className="pb-custom"
+                        height={rect.height}
+                        width={rect.width}
+                        columnCount={itemsPerRow}
+                        rowCount={rowCount}
+                        outerRef={scrollAreaRef}
+                        onScroll={() => {
+                            if (isContextMenuOpen) {
+                                closeContextMenu();
+                            }
+                        }}
+                        itemKey={({
+                            columnIndex,
+                            rowIndex,
+                            data: { contents, itemsPerRow },
+                        }: {
+                            columnIndex: number;
+                            rowIndex: number;
+                            data: ItemCellData;
+                        }) => {
+                            const item = contents[columnIndex + rowIndex * itemsPerRow];
+                            return item?.LinkID ?? `${columnIndex}-${rowIndex}`;
+                        }}
+                    >
+                        {GridItemCell}
+                    </FixedSizeGrid>
+                )}
+            </div>
 
             {FolderContextMenu && (
                 <FolderContextMenu
