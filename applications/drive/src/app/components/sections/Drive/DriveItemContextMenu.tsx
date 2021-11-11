@@ -7,6 +7,7 @@ import { ItemContextMenuProps } from '@proton/shared/lib/interfaces/drive/fileBr
 import {
     DetailsButton,
     DownloadButton,
+    CopyLinkButton,
     PreviewButton,
     RenameButton,
     ShareButton,
@@ -30,6 +31,7 @@ const DriveItemContextMenu = ({
     const isOnlyOneItem = selectedItems.length === 1;
     const isOnlyOneFileItem = isOnlyOneItem && item.Type === LinkType.FILE;
     const hasPreviewAvailable = isOnlyOneFileItem && item.MIMEType && isPreviewAvailable(item.MIMEType, item.Size);
+    const hasLink = isOnlyOneFileItem && item.ShareUrlShareID && !item.UrlsExpired && !item.Trashed
 
     useEffect(() => {
         if (position) {
@@ -43,6 +45,9 @@ const DriveItemContextMenu = ({
             {hasPreviewAvailable && <ContextSeparator />}
             <DownloadButton shareId={shareId} items={selectedItems} close={close} />
             {isOnlyOneItem && <ShareButton shareId={shareId} item={item} close={close} />}
+            {hasLink && (
+                <CopyLinkButton shareId={item.ShareUrlShareID as string} close={close} />
+            )}
             {isOnlyOneFileItem && <ShareLinkButton shareId={shareId} item={item} close={close} />}
             <ContextSeparator />
             {sourceFolder && <MoveToFolderButton sourceFolder={sourceFolder} items={selectedItems} close={close} />}

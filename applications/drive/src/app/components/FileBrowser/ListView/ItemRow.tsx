@@ -19,8 +19,7 @@ import LocationCell from './Cells/LocationCell';
 import TimeCell from './Cells/TimeCell';
 import SizeCell from './Cells/SizeCell';
 import NameCell from './Cells/NameCell';
-import SharedURLIcon from '../SharedURLIcon';
-import GetLinkIcon from '../GetLinkIcon';
+import CopyLinkIcon from '../CopyLinkIcon';
 import { useDriveCache } from '../../DriveCache/DriveCacheProvider';
 import { useThumbnailsDownloadProvider } from '../../downloads/ThumbnailDownloadProvider';
 import { formatAccessCount } from '../../../utils/formatters';
@@ -147,7 +146,6 @@ const ItemRow = ({
                         <FileIcon mimeType={item.Type === LinkType.FOLDER ? 'Folder' : item.MIMEType} alt={iconText} />
                     )}
                     <NameCell name={item.Name} />
-                    {item.SharedUrl && <SharedURLIcon shareId={shareId} item={item} />}
                 </TableCell>
 
                 {columns.includes('location') && (
@@ -194,7 +192,7 @@ const ItemRow = ({
 
                 {columns.includes('share_options') && (
                     <TableCell className="m0 file-browser-list--share-column">
-                        <GetLinkIcon shareId={shareId} item={item} />
+                        <CopyLinkIcon shareId={shareId} item={item} />
                     </TableCell>
                 )}
             </TableRow>
