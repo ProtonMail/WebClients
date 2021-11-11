@@ -9,9 +9,6 @@ export interface ModalPropsInjection {
     onClose: () => void;
     onExit: () => void;
     isClosing: Modal['isClosing'];
-    isFirst?: Modal['isFirst'];
-    isLast?: Modal['isLast'];
-    isBehind?: Modal['isBehind'];
 }
 
 interface Props {
@@ -23,7 +20,7 @@ interface Props {
 const ModalsContainer = ({ modals, removeModal, hideModal }: Props) => (
     <>
         <BackdropContainer />
-        {modals.map(({ id, content, isClosing, isFirst, isLast, isBehind }) => {
+        {modals.map(({ id, content, isClosing }) => {
             if (!content) {
                 return null;
             }
@@ -41,9 +38,6 @@ const ModalsContainer = ({ modals, removeModal, hideModal }: Props) => (
             const props: ModalPropsInjection = {
                 onClose: handleModalClose,
                 onExit: handleModalExit,
-                isFirst,
-                isLast,
-                isBehind,
                 isClosing,
                 key: id,
             };

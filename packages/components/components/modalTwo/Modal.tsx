@@ -4,8 +4,8 @@ import { useChanged, useHotkeys, useInstance } from '../../hooks';
 import { classnames, generateUID } from '../../helpers';
 import { useFocusTrap } from '../focus';
 import { Portal } from '../portal';
-import useModalPosition from './useModalPosition';
 import './Modal.scss';
+import { useModalPosition } from './modalPositions';
 
 export type ModalSize = 'small' | 'medium' | 'large' | 'full';
 
@@ -62,7 +62,7 @@ const Modal = ({
     children,
     ...rest
 }: ModalProps) => {
-    const { last } = useModalPosition(open || false);
+    const last = useModalPosition(open || false);
     const [exiting, setExiting] = useState(false);
     const id = useInstance(() => generateUID('modal'));
     const dialogRef = useRef(null);
