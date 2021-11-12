@@ -37,16 +37,20 @@ const LabelStack = ({ labels, showDelete = false, isStacked = false, maxNumber, 
             {labelsToShow.map((label: LabelDescription) => (
                 <li
                     className="label-stack-item flex flex-row flex-align-items-center flex-justify-start flex-nowrap"
-                    style={{
-                        '--background': label.color,
-                        '--foreground': tinycolor
-                            .mostReadable(label.color, [COLORS.BLACK, COLORS.WHITE], {
-                                includeFallbackColors: false,
-                                level: 'AAA',
-                                size: 'small',
-                            })
-                            .toHexString(),
-                    }}
+                    style={
+                        label.color
+                            ? {
+                                  '--background': label.color,
+                                  '--foreground': tinycolor
+                                      .mostReadable(label.color, [COLORS.BLACK, COLORS.WHITE], {
+                                          includeFallbackColors: false,
+                                          level: 'AAA',
+                                          size: 'small',
+                                      })
+                                      .toHexString(),
+                              }
+                            : undefined
+                    }
                     key={label.name}
                 >
                     {label.onClick ? (
