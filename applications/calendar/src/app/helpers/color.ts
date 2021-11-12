@@ -3,20 +3,25 @@ import tinycolor from 'tinycolor2';
 
 import { COLORS } from '@proton/shared/lib/calendar/constants';
 
-export const getContrastingColor = (backgroundColor = '') => {
-    const colorModel = tinycolor(backgroundColor) as any;
-    return colorModel.isLight() ? COLORS.BLACK : COLORS.WHITE;
+export const getMostReadableColor = (backgroundColor = '') => {
+    return tinycolor
+        .mostReadable(backgroundColor, [COLORS.BLACK, COLORS.WHITE], {
+            includeFallbackColors: false,
+            level: 'AAA',
+            size: 'small',
+        })
+        .toHexString();
 };
 
 export const getEventStyle = (backgroundColor = '', style: CSSProperties = {}) => {
-    const colorAlt = (tinycolor(backgroundColor) as any).darken(12);
-    const colorAlpha = (tinycolor(backgroundColor) as any).setAlpha(0.3);
+    const colorAlt = tinycolor(backgroundColor)?.darken(12);
+    const colorAlpha = tinycolor(backgroundColor)?.setAlpha(0.3);
 
     return {
         ...style,
         '--color-main': backgroundColor,
         '--color-alt': colorAlt,
         '--color-alpha': colorAlpha,
-        '--foreground': getContrastingColor(backgroundColor),
+        '--foreground': getMostReadableColor(backgroundColor),
     };
 };
