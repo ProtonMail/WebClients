@@ -49,7 +49,7 @@ const LabelStack = ({ labels, showDelete = false, isStacked = false, maxNumber, 
                                       })
                                       .toHexString(),
                               }
-                            : {}
+                            : undefined
                     }
                     key={label.name}
                 >
