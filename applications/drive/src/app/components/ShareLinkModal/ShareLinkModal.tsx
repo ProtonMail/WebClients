@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { SessionKey } from 'pmcrypto';
-import { getRandomString } from '@proton/shared/lib/helpers/string';
 import { DialogModal, useLoading, useNotifications } from '@proton/components';
 import { SharedURLSessionKeyPayload, ShareURL } from '@proton/shared/lib/interfaces/drive/sharing';
 import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser';
@@ -62,11 +61,9 @@ function ShareLinkModal({ modalTitleID = 'share-link-modal', onClose, shareId, i
             return;
         }
 
-        const generatePassword = (): string => getRandomString(SHARE_GENERATED_PASSWORD_LENGTH);
-
         const getShareMetaAsync = async (shareInfo?: { ID: string; sessionKey: SessionKey }) => {
             return getShareMetaShort(shareId).then(async ({ VolumeID }) => {
-                const result = await createSharedLink(shareId, VolumeID, item.LinkID, generatePassword(), shareInfo);
+                const result = await createSharedLink(shareId, VolumeID, item.LinkID, shareInfo);
                 await driveEvents.call(shareId);
                 return result;
             });
