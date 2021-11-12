@@ -36,6 +36,7 @@ interface Props {
     defaultCalendarID?: string | null;
     defaultColor?: boolean;
     onClose?: () => void;
+    onCreateCalendar?: (id: string) => void;
 }
 
 export const CalendarModal = ({
@@ -71,6 +72,7 @@ export const CalendarModal = ({
         setError,
         defaultCalendarID,
         onClose: rest?.onClose,
+        onCreateCalendar: rest?.onCreateCalendar,
         activeCalendars,
     });
 
