@@ -1,12 +1,15 @@
-import { generateKeySaltAndPassphrase } from '@proton/shared/lib/keys/keys';
 import { encryptSessionKey, splitMessage, decryptSessionKey, getMessage, SessionKey } from 'pmcrypto';
+import { c } from 'ttag';
+
+import { generateKeySaltAndPassphrase } from '@proton/shared/lib/keys/keys';
 import { computeKeyPassword } from '@proton/srp';
 import { srpGetVerify } from '@proton/shared/lib/srp';
 import { base64StringToUint8Array, uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 import { chunk } from '@proton/shared/lib/helpers/array';
 import { decryptUnsigned, encryptUnsigned } from '@proton/shared/lib/keys/driveKeys';
 import runInQueue from '@proton/shared/lib/helpers/runInQueue';
-import { useApi, usePreventLeave } from '@proton/components';
+import { textToClipboard, isSafari } from '@proton/shared/lib/helpers/browser';
+import { useApi, usePreventLeave, useNotifications } from '@proton/components';
 import {
     queryCreateSharedLink,
     querySharedLinks,
@@ -29,12 +32,15 @@ import {
     UpdateSharedURL,
 } from '@proton/shared/lib/interfaces/drive/sharing';
 import { LinkMeta } from '@proton/shared/lib/interfaces/drive/link';
+
+import { getSharedLink } from '../../utils/link';
+import { useDriveCache } from '../../components/DriveCache/DriveCacheProvider';
+import useDebouncedRequest from '../util/useDebouncedRequest';
 import useDrive from './useDrive';
 import useDriveCrypto from './useDriveCrypto';
-import useDebouncedRequest from '../util/useDebouncedRequest';
-import { useDriveCache } from '../../components/DriveCache/DriveCacheProvider';
 
 function useSharing() {
+    const { createNotification } = useNotifications();
     const { getPrimaryAddressKey, getPrimaryAddressKeys } = useDriveCrypto();
     const { createShare, getLinkMeta } = useDrive();
     const cache = useDriveCache();
@@ -369,6 +375,35 @@ function useSharing() {
         return ([] as string[]).concat(...deletedIds);
     };
 
+    // Safari does not allow copy to clipboard outside of the event
+    // (e.g., click). No await or anything does not do the trick.
+    // Clipboard API also doesn't work. Therefore we cannot have this
+    // feature on Safari at this moment.
+    const copyShareLinkToClipboard = isSafari()
+        ? undefined
+        : async (shareId: string) => {
+              return getSharedURLs(shareId)
+                  .then(({ ShareURLs: [sharedUrl] }) => {
+                      return decryptSharedLink(sharedUrl);
+                  })
+                  .then(({ ShareURL }) => {
+                      const url = getSharedLink(ShareURL);
+                      if (url) {
+                          textToClipboard(url);
+                          createNotification({
+                              text: c('Info').t`Link copied to clipboard`,
+                          });
+                      }
+                  })
+                  .catch((err: any) => {
+                      console.error(err);
+                      createNotification({
+                          type: 'error',
+                          text: c('Error').t`Failed to load the link`,
+                      });
+                  });
+          };
+
     return {
         updateSharedLink,
         decryptSharedLink,
@@ -377,6 +412,7 @@ function useSharing() {
         deleteSharedLink,
         fetchNextPage,
         deleteMultipleSharedLinks,
+        copyShareLinkToClipboard,
     };
 }
 
