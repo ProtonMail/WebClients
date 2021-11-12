@@ -98,6 +98,7 @@ export const getCalendarIsNotSyncedInfo = (calendar: SubscribedCalendar) => {
             HTTP_REQUEST_FAILED_UNAUTHORIZED,
             HTTP_REQUEST_FAILED_FORBIDDEN,
             HTTP_REQUEST_FAILED_NOT_FOUND,
+            PROTON_CALENDAR_NOT_FOUND,
         ].includes(Status)
     ) {
         return getNotSyncedInfo(c('Calendar subscription not synced error').t`Calendar link is not accessible`);
@@ -107,10 +108,6 @@ export const getCalendarIsNotSyncedInfo = (calendar: SubscribedCalendar) => {
         return getNotSyncedInfo(
             c('Calendar subscription not synced error').t`Calendar link is temporarily inaccessible`
         );
-    }
-
-    if (Status === PROTON_CALENDAR_NOT_FOUND) {
-        return getNotSyncedInfo(c('Calendar subscription not synced error').t`Calendar could not be found`);
     }
 
     if (Status === PROTON_CALENDAR_NOT_DECRYPTABLE) {
