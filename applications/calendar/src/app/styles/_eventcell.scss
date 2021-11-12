@@ -19,7 +19,6 @@
 	border-radius: var(--border-radius-medium);
 	background-color: var(--background-strong);
 	color: var(--text-norm);
-	font-weight: 500;
 	line-height: 1.25;
 	cursor: pointer;
 	opacity: var(--opacity);
@@ -152,9 +151,18 @@
 	&-circle {
 		color: var(--background-strong);
 	}
+
 	&-inner.isLoaded &-circle {
 		margin-block-start: 0.125em;
 		color: var(--color-main);
+	}
+
+	&-time {
+		margin-inline-end: 0.25em;
+	}
+
+	&-title {
+		font-weight: 500;
 	}
 }
 
@@ -173,6 +181,7 @@
 		-webkit-box-orient: vertical;
 		overflow: hidden;
 		-webkit-line-clamp: max(calc(var(--line-number) - 1), 1);
+		font-weight: 500;
 	}
 
 	@include respond-to($breakpoint-small) {
