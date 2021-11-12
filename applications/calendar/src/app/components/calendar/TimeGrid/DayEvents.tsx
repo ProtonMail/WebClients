@@ -39,6 +39,8 @@ interface Props {
     targetEventRef?: Ref<HTMLDivElement>;
     formatTime: (date: Date) => string;
     dayIndex: number;
+    colHeight?: number;
+    partDayEventViewStyleValues: { lineHeight: number; padding: number };
 }
 const DayEvents = ({
     tzid,
@@ -50,6 +52,8 @@ const DayEvents = ({
     targetEventRef,
     formatTime,
     dayIndex,
+    colHeight,
+    partDayEventViewStyleValues,
 }: Props) => {
     const eventsLaidOut = useMemo(() => {
         return layout(eventsInDay).map(({ column, columns }, i) => {
@@ -62,10 +66,14 @@ const DayEvents = ({
             const left = column * width;
 
             return {
-                top: toPercent(top),
-                left: toPercent(left),
-                height: toPercent(height),
-                width: toPercent(width),
+                height,
+                style: {
+                    top: toPercent(top),
+                    left: toPercent(left),
+                    height: toPercent(height),
+                    width: toPercent(width),
+                    '--line-number': 1,
+                },
             };
         });
     }, [eventsInDay, totalMinutes]);
@@ -79,7 +87,7 @@ const DayEvents = ({
         const event = events[idx];
         const { start, end } = event;
 
-        const style = eventsLaidOut[i];
+        const { style, height: eventHeight } = eventsLaidOut[i];
 
         const isTemporary = event.id === 'tmp';
         const isSelected = targetEventData ? event.id === targetEventData.id : false;
@@ -90,6 +98,18 @@ const DayEvents = ({
 
         const isEventPartLessThanAnHour = getIsEventPartLessThanAnHour({ start, end, colEnd });
         const isBeforeNow = getIsBeforeNow(event, now);
+
+        const lineNumber =
+            colHeight === undefined
+                ? undefined
+                : Math.floor(
+                      (colHeight * eventHeight - partDayEventViewStyleValues.padding) /
+                          partDayEventViewStyleValues.lineHeight
+                  );
+
+        if (lineNumber !== undefined) {
+            style['--line-number'] = lineNumber;
+        }
 
         return (
             <PartDayEvent
