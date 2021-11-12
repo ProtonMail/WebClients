@@ -15,10 +15,19 @@ const useCalendarsEvents = (
     requestedCalendars: tsCalendar[],
     utcDateRange: [Date, Date],
     tzid: string,
-    cacheRef: MutableRefObject<CalendarsEventsCache>
+    cacheRef: MutableRefObject<CalendarsEventsCache>,
+    initializeCacheOnlyCalendarsIDs: string[],
+    onCacheInitialized: () => void
 ): [CalendarViewEvent[], boolean] => {
     const [rerender, setRerender] = useState<any>();
-    const loading = useCalendarsEventsFetcher(requestedCalendars, utcDateRange, tzid, cacheRef);
+    const loading = useCalendarsEventsFetcher(
+        requestedCalendars,
+        utcDateRange,
+        tzid,
+        cacheRef,
+        initializeCacheOnlyCalendarsIDs,
+        onCacheInitialized
+    );
 
     useEffect(() => {
         let isActive = true;
