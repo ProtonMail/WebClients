@@ -32,7 +32,8 @@ $breakpoint-topnav-text-adaptation: 1200 !default; // used to display or not tex
 	}
 }
 
-@include respond-to($breakpoint-topnav-text-adaptation) {
+// code to collapse all elements except upgrade button (topnav-listItem--noCollapse)
+@mixin collapse-all-except-upgrade {
 	.topnav-list--four-elements {
 		.topnav-listItem:not(.topnav-listItem--noCollapse) {
 			// we collapse text as general case
@@ -59,7 +60,8 @@ $breakpoint-topnav-text-adaptation: 1200 !default; // used to display or not tex
 	}
 }
 
-@include respond-to(870) {
+// code to collapse all elements with NO exception
+@mixin collapse-all-no-exception {
 	.topnav-list--four-elements {
 		.topnav-link {
 			padding-inline: rem(5);
@@ -84,6 +86,24 @@ $breakpoint-topnav-text-adaptation: 1200 !default; // used to display or not tex
 			inset-inline-start: calc(#{rem(5)} + #{rem(15)});
 		}
 	}
+}
+
+@include respond-to($breakpoint-topnav-text-adaptation) {
+	@include collapse-all-except-upgrade;
+}
+
+// special fix for Hungarian looooooooong text
+[lang='hu'] {
+	@include respond-to(1550) {
+		@include collapse-all-except-upgrade;
+	}
+	@include respond-to(1050) {
+		@include collapse-all-no-exception;
+	}
+}
+
+@include respond-to(870) {
+	@include collapse-all-no-exception;
 }
 
 @include respond-to($breakpoint-small) {
