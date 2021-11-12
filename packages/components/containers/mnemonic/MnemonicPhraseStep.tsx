@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { useNotifications } from '../../hooks';
-import { Button, Copy, InputFieldTwo, Loader, TextAreaTwo } from '../../components';
+import { Button, Card, Copy, Icon, Loader } from '../../components';
 
 export const MnemonicPhraseStepContent = ({ mnemonic, loading }: { mnemonic?: string; loading?: boolean }) => {
     const { createNotification } = useNotifications();
@@ -13,26 +13,28 @@ export const MnemonicPhraseStepContent = ({ mnemonic, loading }: { mnemonic?: st
     return (
         <>
             <p className="mt0">{c('Info').t`Your recovery phrase is a series of 12 words in a specific order.`}</p>
-            <p>
+
+            <p className="color-danger">
+                <Icon className="mr0-5 float-left mt0-25" name="circle-exclamation-filled" />
+
                 {c('Info')
-                    .t`Please write your recovery phrase down in the order it appears and keep it somewhere safe. Your recovery phrase can be used to fully recover access to your account and your encrypted messages.`}
+                    .t`Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.`}
             </p>
 
             {!mnemonic || loading ? (
                 <Loader />
             ) : (
-                <InputFieldTwo
-                    id="mnemonic"
-                    bigger
-                    as={TextAreaTwo}
-                    rows={3}
-                    readOnly
-                    label={c('Label').t`Recovery phrase`}
-                    placeholder={c('Label').t`Your recovery phrase`}
-                    value={mnemonic}
-                    autoFocus
-                    hint={<Copy value={mnemonic} onCopy={onCopy} />}
-                />
+                <>
+                    <span className="text-semibold">{c('Label').t`Recovery phrase`}</span>
+                    <Card
+                        className="mt0-5 flex flex-justify-space-between flex-align-items-center flex-nowrap"
+                        bordered={false}
+                        rounded
+                    >
+                        <span className="mr0-5">{mnemonic}</span>
+                        <Copy className="bg-norm flex-item-noshrink" value={mnemonic} onCopy={onCopy} />
+                    </Card>
+                </>
             )}
         </>
     );
