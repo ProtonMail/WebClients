@@ -148,6 +148,9 @@ describe('getCalendarIsNotSyncedInfo', () => {
         expect(getCalendarIsNotSyncedInfo(getCommonCalendarWithStatus(HTTP_REQUEST_FAILED_NOT_FOUND))).toEqual(
             getNotSyncedInfo('Calendar link is not accessible')
         );
+        expect(getCalendarIsNotSyncedInfo(getCommonCalendarWithStatus(PROTON_CALENDAR_NOT_FOUND))).toEqual(
+            getNotSyncedInfo('Calendar link is not accessible')
+        );
 
         expect(getCalendarIsNotSyncedInfo(getCommonCalendarWithStatus(HTTP_REQUEST_FAILED_GENERIC))).toEqual(
             getNotSyncedInfo('Calendar link is temporarily inaccessible')
@@ -155,10 +158,6 @@ describe('getCalendarIsNotSyncedInfo', () => {
         expect(
             getCalendarIsNotSyncedInfo(getCommonCalendarWithStatus(HTTP_REQUEST_FAILED_INTERNAL_SERVER_ERROR))
         ).toEqual(getNotSyncedInfo('Calendar link is temporarily inaccessible'));
-
-        expect(getCalendarIsNotSyncedInfo(getCommonCalendarWithStatus(PROTON_CALENDAR_NOT_FOUND))).toEqual(
-            getNotSyncedInfo('Calendar could not be found')
-        );
 
         expect(getCalendarIsNotSyncedInfo(getCommonCalendarWithStatus(PROTON_CALENDAR_NOT_DECRYPTABLE))).toEqual(
             getNotSyncedInfo('Calendar could not be decrypted')
