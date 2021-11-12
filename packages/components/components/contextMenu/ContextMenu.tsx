@@ -14,9 +14,18 @@ interface Props {
     };
     close: () => void;
     autoClose?: boolean;
+    noMaxHeight?: boolean;
 }
 
-const ContextMenu = ({ anchorRef, children, isOpen, position, close, autoClose = true }: Props) => {
+const ContextMenu = ({
+    anchorRef,
+    children,
+    isOpen,
+    position,
+    close,
+    autoClose = true,
+    noMaxHeight = false,
+}: Props) => {
     const [uid] = useState(generateUID('context-menu'));
 
     useEffect(() => {
@@ -53,6 +62,7 @@ const ContextMenu = ({ anchorRef, children, isOpen, position, close, autoClose =
             anchorRef={anchorRef}
             onClose={close}
             onContextMenu={(e) => e.stopPropagation()}
+            noMaxHeight={noMaxHeight}
         >
             {children}
         </Dropdown>
