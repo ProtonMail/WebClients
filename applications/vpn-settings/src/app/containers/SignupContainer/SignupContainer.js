@@ -57,7 +57,7 @@ const SignupContainer = ({ match, history, onLogin }) => {
 
     useEffect(() => {
         // Always start at plans, or account if plan is preselected
-        if (preSelectedPlan && from === 'pricing') {
+        if (preSelectedPlan) {
             history.replace(`/signup/${SignupState.Account}`, {
                 coupon,
                 invite,
