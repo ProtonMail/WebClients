@@ -47,6 +47,7 @@ export interface CalendarSidebarProps {
     calendars: Calendar[];
     miniCalendar: ReactNode;
     onCreateEvent?: () => void;
+    onCreateCalendar?: (id: string) => void;
 }
 
 const CalendarSidebar = ({
@@ -56,6 +57,7 @@ const CalendarSidebar = ({
     calendars = [],
     miniCalendar,
     onCreateEvent,
+    onCreateCalendar,
 }: CalendarSidebarProps) => {
     const { call } = useEventManager();
     const { createModal } = useModals();
@@ -101,6 +103,7 @@ const CalendarSidebar = ({
                   <CalendarModal
                       activeCalendars={personalCalendars.filter(getIsCalendarActive)}
                       defaultCalendarID={calendarUserSettings.DefaultCalendarID}
+                      onCreateCalendar={onCreateCalendar}
                   />
               )
             : createModal(
@@ -116,7 +119,7 @@ const CalendarSidebar = ({
 
     const handleCreateSubscribedCalendar = () =>
         canAddSubscribedCalendars
-            ? createModal(<SubscribeCalendarModal />)
+            ? createModal(<SubscribeCalendarModal onCreateCalendar={onCreateCalendar} />)
             : createModal(
                   <CalendarLimitReachedModal>
                       {c('Subscribed calendar limit reached modal body').ngettext(
