@@ -5,6 +5,7 @@ import { generateKeySaltAndPassphrase } from '@proton/shared/lib/keys/keys';
 import { computeKeyPassword } from '@proton/srp';
 import { srpGetVerify } from '@proton/shared/lib/srp';
 import { base64StringToUint8Array, uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
+import { getRandomString } from '@proton/shared/lib/helpers/string';
 import { chunk } from '@proton/shared/lib/helpers/array';
 import { decryptUnsigned, encryptUnsigned } from '@proton/shared/lib/keys/driveKeys';
 import runInQueue from '@proton/shared/lib/helpers/runInQueue';
@@ -81,7 +82,6 @@ function useSharing() {
         shareId: string,
         volumeId: string,
         linkId: string,
-        password: string,
         shareInfo?: { ID: string; sessionKey: SessionKey }
     ): Promise<{
         ShareURL: ShareURL;
@@ -90,6 +90,7 @@ function useSharing() {
             sharePasswordSalt: string;
         };
     }> => {
+        const password = getRandomString(SHARE_GENERATED_PASSWORD_LENGTH);
         const credentials = { password };
 
         const { ID, sessionKey } = shareInfo
@@ -128,7 +129,7 @@ function useSharing() {
 
         const { ShareURL } = await api(
             queryCreateSharedLink(ID, {
-                Flags: 0,
+                Flags: SharedURLFlags.GeneratedPasswordIncluded,
                 Permissions: 4,
                 MaxAccesses: DEFAULT_SHARE_MAX_ACCESSES,
                 CreatorEmail,
@@ -163,31 +164,31 @@ function useSharing() {
     };
 
     /*
-     * Password can come in several shapes:
-     * - <custom>, flags === 1 – legacy custom password (comes separately from generated)
-     * - <generated>, flags === 3 – empty custom password
+     * `password` can come in several shapes:
+     * - <initial>, flags === 0 – legacy without custom password
+     * - <custom>, flags === 1 – legacy custom password
+     * - <generated>, flags === 2 – without custom password
      * - <generated><custom>, flags === 3, contains both generated and custom paswords
+     * There are four bit array states that can be used as `flags`:
+     * - `0` - legacy shared link without custom password.
+     * - `1` - legacy shared link with custom password. These shares don't
+     *         support password deletion.
+     * - `2` - shared link with generated password without custom password.
+     * - `3` - shared link with both generated and custom passwords.
      */
     const getSharedLinkUpdatedFlags = (password: string, flags: number) => {
-        /*
-         * There are three bit array states that can be returned here:
-         * - `0` – all bits are zero, meaning file's only protected with
-         * generated password. If newPassword's length equals SHARE_GENERATED_PASSWORD_LENGTH
-         * it means no custom password was provided.
-         * - `3` - first and second bits equal one (having both CustomPassword and
-         * GeneratedPasswordIncluded flags active).
-         * - `1` - first bit equals one, meaning we encounter a link protected
-         * with a legacy password. We disable password deletion for these files
-         * and their flags must stay as they were.
-         */
+        // If generated password is included and the password is of the length
+        // of generated password only, then flag should be just that.
         if (password.length === SHARE_GENERATED_PASSWORD_LENGTH && flags & SharedURLFlags.GeneratedPasswordIncluded) {
-            return 0;
+            return SharedURLFlags.GeneratedPasswordIncluded;
         }
-
+        // If the share was not legacy one with custom password, we can upgrade
+        // it to new share. If the share is already with new flag, it keeps it.
         if ((flags & SharedURLFlags.CustomPassword) === 0 || flags & SharedURLFlags.GeneratedPasswordIncluded) {
             return SharedURLFlags.CustomPassword | SharedURLFlags.GeneratedPasswordIncluded;
         }
-
+        // If the share was legacy with custom password, we need to keep it as
+        // is, otherwise links would change due to new logic of gen. password.
         return SharedURLFlags.CustomPassword;
     };
 
