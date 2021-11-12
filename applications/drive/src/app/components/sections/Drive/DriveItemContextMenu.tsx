@@ -31,7 +31,7 @@ const DriveItemContextMenu = ({
     const isOnlyOneItem = selectedItems.length === 1;
     const isOnlyOneFileItem = isOnlyOneItem && item.Type === LinkType.FILE;
     const hasPreviewAvailable = isOnlyOneFileItem && item.MIMEType && isPreviewAvailable(item.MIMEType, item.Size);
-    const hasLink = isOnlyOneFileItem && item.ShareUrlShareID && !item.UrlsExpired && !item.Trashed
+    const hasLink = isOnlyOneFileItem && item.ShareUrlShareID && !item.UrlsExpired && !item.Trashed;
 
     useEffect(() => {
         if (position) {
@@ -40,14 +40,12 @@ const DriveItemContextMenu = ({
     }, [position]);
 
     return (
-        <ContextMenu isOpen={isOpen} close={close} position={position} anchorRef={anchorRef}>
+        <ContextMenu isOpen={isOpen} close={close} position={position} noMaxHeight anchorRef={anchorRef}>
             {hasPreviewAvailable && <PreviewButton shareId={shareId} item={item} close={close} />}
             {hasPreviewAvailable && <ContextSeparator />}
             <DownloadButton shareId={shareId} items={selectedItems} close={close} />
             {isOnlyOneItem && <ShareButton shareId={shareId} item={item} close={close} />}
-            {hasLink && (
-                <CopyLinkButton shareId={item.ShareUrlShareID as string} close={close} />
-            )}
+            {hasLink && <CopyLinkButton shareId={item.ShareUrlShareID as string} close={close} />}
             {isOnlyOneFileItem && <ShareLinkButton shareId={shareId} item={item} close={close} />}
             <ContextSeparator />
             {sourceFolder && <MoveToFolderButton sourceFolder={sourceFolder} items={selectedItems} close={close} />}
