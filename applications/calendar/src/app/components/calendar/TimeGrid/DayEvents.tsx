@@ -72,7 +72,6 @@ const DayEvents = ({
                     left: toPercent(left),
                     height: toPercent(height),
                     width: toPercent(width),
-                    '--line-number': 1,
                 },
             };
         });
@@ -107,15 +106,11 @@ const DayEvents = ({
                           partDayEventViewStyleValues.lineHeight
                   );
 
-        if (lineNumber !== undefined) {
-            style['--line-number'] = lineNumber;
-        }
-
         return (
             <PartDayEvent
                 isEventPartLessThanAnHour={isEventPartLessThanAnHour}
                 event={event}
-                style={style}
+                style={{ ...style, '--line-number': lineNumber || 1 }}
                 key={event.id}
                 formatTime={formatTime}
                 eventRef={eventRef}
