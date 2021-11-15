@@ -1,10 +1,12 @@
 import { ReactNode } from 'react';
 import { c } from 'ttag';
-import { Currency, Cycle } from '@proton/shared/lib/interfaces';
-import { CYCLE } from '@proton/shared/lib/constants';
+import { Audience, Currency, Cycle } from '@proton/shared/lib/interfaces';
+import { CYCLE, PLANS } from '@proton/shared/lib/constants';
 
 import { classnames } from '../../../helpers';
-import { Icon, Price, PrimaryButton } from '../../../components';
+import { Badge, Icon, Price, PrimaryButton } from '../../../components';
+
+import SelectPlan from './SelectPlan';
 
 export interface PlanCardFeature {
     icon?: ReactNode;
@@ -15,90 +17,147 @@ export interface PlanCardFeature {
 }
 
 interface Props {
-    planName: string;
+    target: Audience;
+    planName: PLANS;
+    selectedPlan: PLANS;
+    planTitle: string;
     price: number;
     info: string;
     action: string;
-    onClick: () => void;
-    features: PlanCardFeature[];
+    onSelect: (planName: PLANS) => void;
+    onSelectPlan: (planName: PLANS) => void;
+    features: React.ReactNode;
     currency: Currency;
     cycle: Cycle;
     isCurrentPlan?: boolean;
     disabled?: boolean;
+    recommended?: boolean;
+    canSelect?: boolean;
+    logos?: React.ReactNode;
 }
 
+const getCycleUnit = (planName: PLANS) => {
+    switch (planName) {
+        case PLANS.FREE:
+            return c('Free forever').t`forever`;
+        case PLANS.MAIL_PRO:
+        case PLANS.DRIVE_PRO:
+        case PLANS.BUNDLE_PRO:
+        case PLANS.ENTERPRISE:
+            return c('Cycle').t`per user per month`;
+        default:
+            return c('Cycle').t`per month`;
+    }
+};
+
 const PlanCard = ({
+    target,
+    canSelect,
     planName,
+    planTitle,
     price,
     info,
     action,
-    onClick,
+    selectedPlan,
+    onSelect,
+    onSelectPlan,
     features,
     currency,
     cycle,
     disabled,
     isCurrentPlan,
+    recommended,
+    logos,
 }: Props) => {
-    const billedPrice = (
-        <Price key="price" currency={currency}>
-            {price}
-        </Price>
-    );
+    const badgeMultiUser = planName === PLANS.FAMILY ? <Badge type="success">{c('Badge').t`5 users`}</Badge> : null;
+
+    const vpnRegularPrice = <Price currency={currency}>{699}</Price>; // hardcoded until we have a way to get it.
+    const vpnRegularPriceInfo =
+        planName === PLANS.VPN
+            ? // translator: full sentence is: Billed annually. <Regular price €xxx.> Other billing cycles available at checkout.
+              c('Info').jt`Regular price ${vpnRegularPrice}.`
+            : ``;
+
+    const footerNotesFree = c('Info').t`* No credit card required.`;
+    // translator: full sentence is (the part in the variable might be empty in some cases): Billed annually. <Regular price €xxx.> Other billing cycles available at checkout.
+    const footerNotesYear = c('Info')
+        .jt`* Billed annually. ${vpnRegularPriceInfo} Other billing cycles available at checkout.`;
+    // translator: full sentence is (the part in the variable might be empty in some cases): Billed every 2 years. <Regular price €xxx.> Other billing cycles available at checkout.
+    const footerNotesTwoYears = c('Info')
+        .jt`Billed every 2 years. ${vpnRegularPriceInfo} Other billing cycles available at checkout.`;
+
     return (
         <>
             <div
                 className={classnames([
-                    'border relative h100 plan-selection-plan p2',
+                    'border relative h100 plan-selection-plan p2 pb0 flex flex-column flex-nowrap',
                     isCurrentPlan && 'plan-selection-plan-current-card',
+                    recommended && 'plan-selection-plan-recommended',
                 ])}
             >
-                {isCurrentPlan ? (
-                    <div className="text-xs text-uppercase text-bold text-center absolute m0 plan-selection-plan-current">{c(
-                        'Title'
-                    ).t`Current plan`}</div>
+                {recommended ? (
+                    <div className="plan-selection-plan-recommended-pill-container text-aligncenter flex">
+                        <div className="plan-selection-plan-recommended-pill inline-flex mlauto mrauto flex-items-align-center bg-primary p0-25 pl0-75 pr0-75">
+                            <Icon name="star-filled" className="mtauto mbauto" />
+                            <span className="ml0-25">{c('Title').t`Recommended`}</span>
+                        </div>
+                    </div>
                 ) : null}
-                <h3 className="plan-selection-title text-bold text-capitalize mb0-5" id={`desc_${planName}`}>
-                    {planName}
-                </h3>
-                <span className="plan-selection-main-price">
-                    <Price currency={currency} suffix={c('Suffix for price').t`/ month`}>
-                        {price / cycle}
-                    </Price>
-                </span>
-                {cycle === CYCLE.YEARLY ? (
-                    <p className="text-sm mt0-5 plan-selection-price">{c('Info')
-                        .jt`Billed as ${billedPrice} per year`}</p>
-                ) : null}
-                {cycle === CYCLE.TWO_YEARS ? (
-                    <p className="text-sm mt0-5 plan-selection-price">{c('Info')
-                        .jt`Billed as ${billedPrice} every 2 years`}</p>
-                ) : null}
-                <p className="text-lg plan-selection-info">{info}</p>
+                <div className="flex flex-row flex-align-items-center">
+                    {canSelect ? (
+                        <h3 className="plan-selection-title flex text-bold text-capitalize mb0-5">
+                            <SelectPlan planName={selectedPlan} target={target} onChange={onSelectPlan} />
+                        </h3>
+                    ) : (
+                        <h3
+                            className="plan-selection-title flex text-bold text-capitalize mb0-5"
+                            id={`desc_${planTitle}`}
+                        >
+                            {planTitle}
+                        </h3>
+                    )}
+                    <span className="ml0-5 mb0-5">{badgeMultiUser}</span>
+                </div>
+                <p className="text-lg plan-selection-info color-weak mb1">{info}</p>
+                <div className="mb2 plan-selection-logos on-mobile-mb1">{logos}</div>
+                <div className="plan-selection-main-price mb1">
+                    {planName === PLANS.FREE ? (
+                        // translator: this one should be translated
+                        <span className="amount">{c('Price for free plan').t`Free`}</span>
+                    ) : (
+                        <Price currency={currency}>{price / cycle}</Price>
+                    )}
+                    <div className="color-weak">{getCycleUnit(planName)} *</div>
+                </div>
+
                 <PrimaryButton
-                    onClick={onClick}
+                    onClick={() => onSelect(planName)}
                     disabled={disabled}
                     className="w100"
-                    aria-describedby={`desc_${planName}`}
+                    aria-describedby={`desc_${planTitle}`}
                 >
                     {action}
                 </PrimaryButton>
-                {features.length ? (
-                    <ul className="unstyled mb0">
-                        {features.map((feature, index) => (
-                            <li
-                                key={`${index}`}
-                                className={classnames(['flex flex-nowrap mb0-5', feature.notIncluded && 'color-weak'])}
-                            >
-                                <span className="flex-item-noshrink mr1">
-                                    {feature.notIncluded ? '—' : <Icon name="checkmark" className="color-primary" />}
-                                </span>
-                                <span className="flex-item-fluid">
-                                    {feature.content} {feature.info}
-                                </span>
-                            </li>
-                        ))}
-                    </ul>
-                ) : null}
+                <div className="flex flex-column flex-nowrap flex-item-fluid-auto">
+                    {features}
+                    <div className="pt1 mtauto pb1">
+                        {planName === PLANS.FREE ? (
+                            <p className="text-sm mt0 plan-selection-additionnal-mentions color-weak">
+                                {footerNotesFree}
+                            </p>
+                        ) : null}
+                        {cycle === CYCLE.YEARLY && planName !== PLANS.FREE ? (
+                            <p className="text-sm mt0 plan-selection-additionnal-mentions color-weak">
+                                {footerNotesYear}
+                            </p>
+                        ) : null}
+                        {cycle === CYCLE.TWO_YEARS && planName !== PLANS.FREE ? (
+                            <p className="text-sm mt0 plan-selection-additionnal-mentions color-weak">
+                                {footerNotesTwoYears}
+                            </p>
+                        ) : null}
+                    </div>
+                </div>
             </div>
         </>
     );

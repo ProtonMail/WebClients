@@ -1,13 +1,7 @@
 import { Fragment, ReactNode, useState } from 'react';
 import { c, msgid } from 'ttag';
 import { getDifferenceInDays } from '@proton/shared/lib/date/date';
-import {
-    BRAND_NAME,
-    PLANS,
-    PLAN_NAMES,
-    PLAN_SERVICES,
-    SUBSCRIPTION_CANCELLATION_REASONS,
-} from '@proton/shared/lib/constants';
+import { BRAND_NAME, PLANS, PLAN_NAMES, SUBSCRIPTION_CANCELLATION_REASONS } from '@proton/shared/lib/constants';
 import { shuffle } from '@proton/shared/lib/helpers/array';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { Plan } from '@proton/shared/lib/interfaces';
@@ -32,24 +26,17 @@ import { useConfig, useSubscription, useUser, useVPNCountriesCount, useVPNServer
 
 import { formatPlans } from './helpers';
 import SubscriptionCancelPlan from './SubscriptionCancelPlan';
-import { getPlanFeatures, getPlanInfo } from './PlanSelection';
+import { getPlanFeatures } from './PlanCardFeatures';
+import { getPlansInfo } from './PlanSelection';
 
 const NAMES = {
-    free_mail: 'Free',
-    free_vpn: 'Free',
+    [PLANS.FREE]: 'Free',
     [PLANS.VPNBASIC]: 'Basic',
     [PLANS.VPNPLUS]: 'Plus',
     [PLANS.PLUS]: 'Plus',
     [PLANS.PROFESSIONAL]: 'Professional',
     [PLANS.VISIONARY]: 'Visionary',
 } as const;
-
-const usePlanFeatures = (plan: Plan, service: PLAN_SERVICES) => {
-    const [vpnCountries] = useVPNCountriesCount();
-    const [vpnServers] = useVPNServersCount();
-
-    return getPlanFeatures(plan, service, vpnCountries, vpnServers);
-};
 
 interface ReasonOption {
     title: string;
@@ -114,7 +101,10 @@ const SubscriptionCancelModal = ({ onSubmit, onClose, ...rest }: Props) => {
     const isVpnPlan = getIsVpnPlan();
 
     const currentPlan = isVpnPlan ? (vpnPlan as Plan) : (mailPlan as Plan);
-    const planFeatures = usePlanFeatures(currentPlan, isVpnPlan ? PLAN_SERVICES.VPN : PLAN_SERVICES.MAIL);
+    const [vpnCountries] = useVPNCountriesCount();
+    const [vpnServers] = useVPNServersCount();
+
+    const planFeatures = getPlanFeatures(currentPlan.Name as PLANS, vpnCountries, vpnServers);
 
     const [step, setStep] = useState<STEPS>(STEPS.CONFIRM);
     const [model, setModel] = useState<SubscriptionCancelModel>({
@@ -178,11 +168,11 @@ const SubscriptionCancelModal = ({ onSubmit, onClose, ...rest }: Props) => {
         size?: ModalProps['size'];
     } = (() => {
         if (step === STEPS.CONFIRM) {
-            const planInfo = getPlanInfo(isVpnPlan);
+            const planInfo = getPlansInfo();
 
             const daysRemaining = getDifferenceInDays(new Date(), new Date(PeriodEnd * 1000));
 
-            const downgradedPlanNameKey = isVpnPlan ? 'free_vpn' : 'free_mail';
+            const downgradedPlanNameKey = PLANS.FREE;
             const downgradedPlanName = NAMES[downgradedPlanNameKey];
 
             const currentPlanName = PLAN_NAMES[currentPlan.Name as PLANS];

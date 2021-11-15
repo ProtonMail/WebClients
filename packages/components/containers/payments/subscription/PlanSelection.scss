@@ -24,43 +24,78 @@
 		// specificity ^^
 		border-radius: var(--border-radius-lg);
 	}
+	// dirty, but to avoid inserting content in tabs
+	&-currency-selector {
+		margin-block-end: -2.5em;
+	}
 
 	.plan-selection {
-		&-plan-current {
-			background-color: var(--primary);
-			color: var(--primary-contrast);
-			position: absolute;
-			inset-block-end: 100%;
-			inset-inline: -1px;
-			border-start-start-radius: var(--border-radius-lg);
-			border-start-end-radius: var(--border-radius-lg);
-			border-end-end-radius: 0;
-			border-end-start-radius: 0;
-			padding: 0.35em; // Design wants 28px height ^^
-			&-card {
-				border-color: var(--primary);
-				border-radius: 0 0 var(--border-radius-lg) var(--border-radius-lg);
-				border-start-start-radius: 0;
-				border-start-end-radius: 0;
-				border-end-end-radius: var(--border-radius-lg);
-				border-end-start-radius: var(--border-radius-lg);
+		&-plan-recommended {
+			border-color: var(--primary);
+			&-pill {
+				&-container {
+					position: absolute;
+					inset-block-end: calc(100% - 1em);
+					inset-inline: 0;
+				}
+
+				border-radius: 5em;
 			}
+		}
+
+		&-title {
+			.select {
+				border: 0;
+				padding: 0;
+				display: inline-block;
+				text-align: start;
+				block-size: auto;
+				background: transparent;
+				svg {
+					inline-size: rem(16);
+					block-size: rem(16);
+				}
+			}
+		}
+
+		&-logos {
+			min-block-size: rem(60);
+			display: inline-grid;
+			gap: 0.25em;
+			grid-template-columns: repeat(4, 52px);
+			@include respond-to(1230) {
+				grid-template-columns: repeat(2, 52px);
+				min-block-size: rem(120);
+			}
+			@include respond-to($breakpoint-small) {
+				min-block-size: 0;
+				&:empty {
+					margin: 0;
+				}
+			}
+		}
+		&-product-logo {
+			border-radius: var(--border-radius-lg);
 		}
 
 		&-info {
 			min-block-size: 4em;
-			@include respond-to(1100) {
-				min-block-size: 5.5em;
+			@include respond-to(1290) {
+				min-block-size: 6em;
 			}
 			@include respond-to(1000) {
-				min-block-size: 6.5em;
+				min-block-size: 9em;
 			}
 			@include respond-to($breakpoint-medium) {
+				min-block-size: 6em;
+			}
+			@include respond-to($breakpoint-small) {
 				min-block-size: 0;
 			}
 		}
 
 		&-main-price {
+			font-weight: bold;
 			.amount,
 			.currency {
 				font-size: 2em;
@@ -76,7 +111,7 @@
 				line-height: 1.2; // font only takes the place for characters ^^
 			}
 			.suffix {
-				opacity: 0.5; // while waiting for new taxonomy
+				color: var(--text-weak);
 			}
 		}
 	}
@@ -87,15 +122,56 @@
 	@include respond-to($breakpoint-small) {
 		grid-template-columns: repeat(1, 1fr);
 	}
+
+	// special case for b2b
+	&--b2b &-info {
+		min-block-size: 6em;
+		@include respond-to(1250) {
+			min-block-size: 7.5em;
+		}
+		@include respond-to(1110) {
+			min-block-size: 8em;
+		}
+		@include respond-to(960) {
+			min-block-size: 10em;
+		}
+		@include respond-to($breakpoint-small) {
+			min-block-size: 0;
+		}
+	}
 }
 
-.subscriptionCheckout-column {
-	inline-size: 22em;
-	@include respond-to($breakpoint-medium) {
-		inline-size: 18em;
-	}
-	@include respond-to($breakpoint-small) {
-		inline-size: 100%;
+.subscriptionCheckout {
+	&-column {
+		inline-size: 22em;
+
+		@include respond-to($breakpoint-medium) {
+			inline-size: 18em;
+		}
+		@include respond-to($breakpoint-small) {
+			inline-size: 100%;
+		}
+
+		.subscriptionCheckout-currencySelect {
+			.select {
+				border: 0;
+				padding: 0;
+				display: inline-block;
+				text-align: end;
+				block-size: auto;
+				background: transparent;
+				color: var(--interaction-norm);
+
+				&:hover,
+				&:focus {
+					color: var(--interaction-norm-hover);
+				}
+
+				&:active {
+					color: var(--interaction-norm-active);
+				}
+			}
+		}
 	}
 }
 

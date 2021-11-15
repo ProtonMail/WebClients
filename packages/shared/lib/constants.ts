@@ -527,6 +527,12 @@ export enum ADDON_NAMES {
     DOMAIN = '1domain',
     SPACE = '1gb',
     VPN = '1vpn',
+    MEMBER_DRIVE_PRO = '1member-drivepro2022',
+    MEMBER_MAIL_PRO = '1member-mailpro2022',
+    MEMBER_BUNDLE_PRO = '1member-bundlepro2022',
+    DOMAIN_BUNDLE_PRO = '1domain-bundlepro2022',
+    MEMBER_ENTERPRISE = '1member-enterprise2022',
+    DOMAIN_ENTERPRISE = '1domain-enterprise2022',
 }
 
 export enum PLAN_TYPES {
@@ -536,6 +542,7 @@ export enum PLAN_TYPES {
 
 export enum PLAN_SERVICES {
     MAIL = 1,
+    DRIVE = 2,
     VPN = 4,
 }
 
@@ -543,19 +550,41 @@ export const FREE_SUBSCRIPTION = {}; // You don't need more, use `user.isPaid`
 export const FREE_ORGANIZATION = {}; // You don't need more, use `user.isPaid`
 
 export enum PLANS {
+    FREE = 'free',
     PLUS = 'plus',
     PROFESSIONAL = 'professional',
     VISIONARY = 'visionary',
     VPNBASIC = 'vpnbasic',
     VPNPLUS = 'vpnplus',
+    DRIVE = 'drive2022',
+    DRIVE_PRO = 'drivepro2022',
+    MAIL = 'mail2022',
+    MAIL_PRO = 'mailpro2022',
+    VPN = 'vpn2022',
+    BUNDLE = 'bundle2022',
+    BUNDLE_PRO = 'bundlepro2022',
+    ENTERPRISE = 'enterprise2022',
+    FAMILY = 'family2022',
+    NEW_VISIONARY = 'visionary2022',
 }
 
 export const PLAN_NAMES = {
+    [PLANS.FREE]: 'Free',
     [PLANS.PLUS]: 'Plus',
     [PLANS.PROFESSIONAL]: 'Professional',
     [PLANS.VISIONARY]: 'Visionary',
     [PLANS.VPNBASIC]: 'Basic',
     [PLANS.VPNPLUS]: 'Plus',
+    [PLANS.DRIVE]: 'Drive Plus',
+    [PLANS.DRIVE_PRO]: 'Drive Essentials',
+    [PLANS.MAIL]: 'Mail Plus',
+    [PLANS.MAIL_PRO]: 'Mail Essentials',
+    [PLANS.VPN]: 'VPN Plus',
+    [PLANS.BUNDLE]: 'Proton Unlimited',
+    [PLANS.BUNDLE_PRO]: 'Business',
+    [PLANS.ENTERPRISE]: 'Enterprise',
+    [PLANS.FAMILY]: 'Proton Family',
+    [PLANS.NEW_VISIONARY]: 'Visionary',
 };
 
 export enum COUPON_CODES {

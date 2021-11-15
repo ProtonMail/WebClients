@@ -1,168 +1,151 @@
 import { c } from 'ttag';
-import { APPS, PLANS } from '@proton/shared/lib/constants';
-
+import { PLANS, APPS } from '@proton/shared/lib/constants';
+import { Audience } from '@proton/shared/lib/interfaces';
+import isTruthy from '@proton/shared/lib/helpers/isTruthy';
+import { getAppName } from '@proton/shared/lib/apps/helper';
 import { Icon } from '../../../components';
-import { MailFeature } from './interface';
+import { Feature, PlanLabel, Tier } from './interface';
 import Features from './Features';
 
 const CheckIcon = () => <Icon className="color-primary" name="checkmark" alt={c('Info').t`Included`} />;
 const EmDash = '—';
+const mailAppName = getAppName(APPS.PROTONMAIL);
 
-const getFeatures = (): MailFeature[] => {
+const getFeatures = (audience: Audience): Feature[] => {
     return [
-        {
-            name: 'users',
-            label: c('Mail feature').t`Users`,
-            free: '1',
-            [PLANS.PLUS]: '1',
-            [PLANS.PROFESSIONAL]: '1 - 5000 *',
-            [PLANS.VISIONARY]: '6',
-        },
-        {
-            name: 'storage',
-            label: c('Mail feature').t`Storage`,
-            free: c('Mail feature').t`0.5 GB`,
-            [PLANS.PLUS]: c('Mail feature option').t`5 GB *`,
-            [PLANS.PROFESSIONAL]: c('Mail feature option').t`5 GB / user *`,
-            [PLANS.VISIONARY]: c('Mail feature').t`20 GB`,
-        },
-        {
-            name: 'addresses',
-            label: c('Mail feature').t`Addresses`,
+        audience === Audience.B2B && {
+            name: 'e2e',
+            label: c('Mail feature').t`End-to-end encryption`,
             tooltip: c('Tooltip')
-                .t`Use multiple addresses / aliases linked to your account, e.g. username2@protonmail.com`,
-            free: '1',
-            [PLANS.PLUS]: '5',
-            [PLANS.PROFESSIONAL]: c('Mail feature option: 5 email addresses / user').t`5 / user *`,
-            [PLANS.VISIONARY]: '50',
+                .t`PGP and SSL/TLS cryptographic technology ensure all messages sent to and from Proton addresses are encrypted. In addition, messages sent via SSL/TLS are stored on Proton's servers with zero-access encryption.`,
+            [Tier.free]: <CheckIcon />,
+            [Tier.first]: <CheckIcon />,
+            [Tier.second]: <CheckIcon />,
+            [Tier.third]: <CheckIcon />,
+        },
+        audience === Audience.B2B && {
+            name: 'encryption-to-non-pm',
+            label: c('Mail feature').t`Encryption to non-${mailAppName} users`,
+            tooltip: c('Tooltip')
+                .t`Encryption is automatic between ${mailAppName} addresses. To encrypt a message to a non-Proton address, just set a password prior to sending.`,
+            [Tier.free]: <CheckIcon />,
+            [Tier.first]: <CheckIcon />,
+            [Tier.second]: <CheckIcon />,
+            [Tier.third]: <CheckIcon />,
         },
         {
-            name: 'custom domains',
-            label: c('Mail feature').t`Custom domains`,
-            tooltip: c('Tooltip').t`Use your own custom email domain addresses, e.g., you@yourname.com`,
-            free: EmDash,
-            [PLANS.PLUS]: '1 *',
-            [PLANS.PROFESSIONAL]: '2 *',
-            [PLANS.VISIONARY]: '10',
-        },
-        {
-            name: 'messages per day',
+            name: 'messages',
             label: c('Mail feature').t`Messages per day`,
-            free: '150',
-            [PLANS.PLUS]: c('Mail feature option').t`Unlimited **`,
-            [PLANS.PROFESSIONAL]: c('Mail feature option').t`Unlimited **`,
-            [PLANS.VISIONARY]: c('Mail feature option').t`Unlimited **`,
+            [Tier.free]: '150',
+            [Tier.first]: c('Mail feature option').t`Unlimited`,
+            [Tier.second]: c('Mail feature option').t`Unlimited`,
+            [Tier.third]: c('Mail feature option').t`Unlimited`,
         },
         {
-            name: 'folders / labels',
-            label: c('Mail feature').t`Folders / labels`,
-            free: '3',
-            [PLANS.PLUS]: '200',
-            [PLANS.PROFESSIONAL]: c('Mail feature option').t`Unlimited`,
-            [PLANS.VISIONARY]: c('Mail feature option').t`Unlimited`,
+            name: 'labels',
+            label: c('Mail feature').t`Folders/labels`,
+            tooltip: c('Tooltip').t`Keep your inbox organized with folders, subfolders, and labels.`,
+            [Tier.free]: '3/3',
+            [Tier.first]: c('Mail feature option').t`Unlimited`,
+            [Tier.second]: c('Mail feature option').t`Unlimited`,
+            [Tier.third]: c('Mail feature option').t`Unlimited`,
         },
         {
-            name: 'support',
-            label: c('Mail feature').t`Support`,
-            free: c('Mail feature').t`Limited`,
-            [PLANS.PLUS]: c('Mail feature').t`Priority`,
-            [PLANS.PROFESSIONAL]: c('Mail feature').t`Priority`,
-            [PLANS.VISIONARY]: c('Mail feature').t`Priority`,
-        },
-        {
-            name: 'encrypted contacts',
-            label: c('Mail feature').t`Encrypted contacts`,
-            free: <CheckIcon />,
-            [PLANS.PLUS]: <CheckIcon />,
-            [PLANS.PROFESSIONAL]: <CheckIcon />,
-            [PLANS.VISIONARY]: <CheckIcon />,
-        },
-        {
-            name: 'contact groups',
-            label: c('Mail feature').t`Contact groups`,
-            free: EmDash,
-            [PLANS.PLUS]: <CheckIcon />,
-            [PLANS.PROFESSIONAL]: <CheckIcon />,
-            [PLANS.VISIONARY]: <CheckIcon />,
-        },
-        {
-            name: 'address verification',
-            label: c('Mail feature').t`Address verification`,
-            free: EmDash,
-            [PLANS.PLUS]: <CheckIcon />,
-            [PLANS.PROFESSIONAL]: <CheckIcon />,
-            [PLANS.VISIONARY]: <CheckIcon />,
-        },
-        {
-            name: 'custom filters',
+            name: 'filters',
             label: c('Mail feature').t`Custom filters`,
-            free: EmDash,
-            [PLANS.PLUS]: <CheckIcon />,
-            [PLANS.PROFESSIONAL]: <CheckIcon />,
-            [PLANS.VISIONARY]: <CheckIcon />,
+            tooltip: c('Tooltip').t`Set up filters to automatically filter emails that fit specified rules.`,
+            [Tier.free]: '1',
+            [Tier.first]: c('Mail feature option').t`Unlimited`,
+            [Tier.second]: c('Mail feature option').t`Unlimited`,
+            [Tier.third]: c('Mail feature option').t`Unlimited`,
         },
-        {
-            name: 'IMAP/SMTP',
-            label: c('Mail feature').t`IMAP / SMTP`,
-            free: EmDash,
-            [PLANS.PLUS]: <CheckIcon />,
-            [PLANS.PROFESSIONAL]: <CheckIcon />,
-            [PLANS.VISIONARY]: <CheckIcon />,
-        },
-        {
+        audience === Audience.B2B && {
             name: 'autoresponder',
-            label: c('Mail feature').t`Autoresponder`,
-            free: EmDash,
-            [PLANS.PLUS]: <CheckIcon />,
-            [PLANS.PROFESSIONAL]: <CheckIcon />,
-            [PLANS.VISIONARY]: <CheckIcon />,
+            label: c('Mail feature').t`Auto-reply`,
+            tooltip: c('Tooltip').t`Allows you to set up automatic responses (auto-reply) for your incoming messages.`,
+            [Tier.free]: c('Mail feature option').t`Limited`,
+            [Tier.first]: c('Mail feature option').t`Priority`,
+            [Tier.second]: c('Mail feature option').t`Priority`,
+            [Tier.third]: c('Mail feature option').t`Priority`,
         },
         {
-            name: 'short domain',
-            label: c('Mail feature').t`Use @pm.me address`,
-            tooltip: c('Tooltip').t`Use the personal address username@pm.me to send emails`,
-            free: EmDash,
-            [PLANS.PLUS]: <CheckIcon />,
-            [PLANS.PROFESSIONAL]: <CheckIcon />,
-            [PLANS.VISIONARY]: <CheckIcon />,
+            name: 'attachment',
+            label: c('Mail feature').t`Attachment size`,
+            tooltip: c('Tooltip').t`Attachments are encrypted by default.`,
+            [Tier.free]: c('Mail feature option').t`25 MB`,
+            [Tier.first]: c('Mail feature option').t`25 MB`,
+            [Tier.second]: c('Mail feature option').t`25 MB`,
+            [Tier.third]: c('Mail feature option').t`25 MB`,
+        },
+        audience === Audience.B2B && {
+            name: 'bulk',
+            label: c('Mail feature').t`Bulk sending`,
+            tooltip: c('Tooltip')
+                .t`Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.`,
+            [Tier.free]: c('Mail feature option').t`Not supported`,
+            [Tier.first]: c('Mail feature option').t`Not supported`,
+            [Tier.second]: c('Mail feature option').t`Not supported`,
+            [Tier.third]: c('Mail feature option').t`Not supported`,
         },
         {
-            name: 'catch all email',
-            label: c('Mail feature').t`Catch-All email`,
-            free: EmDash,
-            [PLANS.PLUS]: EmDash,
-            [PLANS.PROFESSIONAL]: <CheckIcon />,
-            [PLANS.VISIONARY]: <CheckIcon />,
+            name: 'signature',
+            label: c('Mail feature').t`HTML signatures`,
+            tooltip: c('Tooltip')
+                .t`Customize your signatures with clickable images, logos, contact details, social media buttons, and more.`,
+            [Tier.free]: <CheckIcon />,
+            [Tier.first]: <CheckIcon />,
+            [Tier.second]: <CheckIcon />,
+            [Tier.third]: <CheckIcon />,
         },
         {
-            name: 'multi user support',
-            label: c('Mail feature').t`Multi-user support`,
-            tooltip: c('Tooltip').t`Multi-user support is only applicable to plans with 2 or more users`,
-            free: EmDash,
-            [PLANS.PLUS]: EmDash,
-            [PLANS.PROFESSIONAL]: <CheckIcon />,
-            [PLANS.VISIONARY]: <CheckIcon />,
+            name: 'imap',
+            label: c('Mail feature').t`IMAP/SMTP & 3rd-party apps integration`,
+            tooltip: c('Tooltip')
+                .t`IMAP support is limited to desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${mailAppName} Bridge. Cloud-based IMAP integrations are currently not supported.`,
+            [Tier.free]: EmDash,
+            [Tier.first]: <CheckIcon />,
+            [Tier.second]: <CheckIcon />,
+            [Tier.third]: <CheckIcon />,
         },
-    ];
+        audience === Audience.B2C && {
+            name: 'autoresponder',
+            label: c('Mail feature').t`Auto-reply`,
+            tooltip: c('Tooltip').t`Allows you to set up automatic responses (auto-reply) for your incoming messages.`,
+            [Tier.free]: EmDash,
+            [Tier.first]: <CheckIcon />,
+            [Tier.second]: <CheckIcon />,
+            [Tier.third]: <CheckIcon />,
+        },
+        {
+            name: 'catch-all',
+            label: c('Mail feature').t`Catch-all email`,
+            tooltip:
+                audience === Audience.B2B
+                    ? c('Tooltip')
+                          .t`A mailbox set up to receive redirected emails sent to your custom email domain. This ensures your organization receives, e.g., emails with typos in the address or those addressed to former employees.`
+                    : c('Tooltip')
+                          .t`A mailbox set up to receive redirected emails sent to your custom domain. This ensures your organization receives, e.g., emails with typos in the address.`,
+            [Tier.free]: EmDash,
+            [Tier.first]: <CheckIcon />,
+            [Tier.second]: <CheckIcon />,
+            [Tier.third]: <CheckIcon />,
+        },
+    ].filter(isTruthy);
 };
 
 interface Props {
-    onSelect: (planName: PLANS | 'free') => void;
+    onSelect: (planName: PLANS) => void;
     activeTab: number;
     onSetActiveTab: (activeTab: number) => void;
+    planLabels: PlanLabel[];
+    audience: Audience;
 }
 
-const MailFeatures = ({ onSelect, activeTab, onSetActiveTab }: Props) => {
-    const features = getFeatures();
-    const planLabels = [
-        { label: 'Free', key: 'free' } as const,
-        { label: 'Plus', key: PLANS.PLUS },
-        { label: 'Professional', key: PLANS.PROFESSIONAL },
-        { label: 'Visionary', key: PLANS.VISIONARY },
-    ];
+const MailFeatures = ({ audience, planLabels, onSelect, activeTab, onSetActiveTab }: Props) => {
+    const features = getFeatures(audience);
     return (
         <Features
-            appName={APPS.PROTONMAIL}
+            title={c('Title').t`Mail features`}
             onSelect={onSelect}
             planLabels={planLabels}
             features={features}

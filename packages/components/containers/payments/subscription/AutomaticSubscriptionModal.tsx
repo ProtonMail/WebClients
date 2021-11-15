@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
-import { useLoad, useOrganization, usePlans, useSubscription, useUser, useSubscriptionModal } from '@proton/components';
+import { useLoad, usePlans, useSubscription, useUser, useSubscriptionModal } from '@proton/components';
 import { Currency, Plan, PlanIDs, Subscription } from '@proton/shared/lib/interfaces';
-import { CURRENCIES, CYCLE, DEFAULT_CYCLE, PLAN_SERVICES } from '@proton/shared/lib/constants';
+import { CURRENCIES, CYCLE, DEFAULT_CYCLE } from '@proton/shared/lib/constants';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import { getPlanIDs } from '@proton/shared/lib/helpers/subscription';
@@ -43,7 +43,7 @@ const getParameters = (search: string, plans: Plan[], subscription: Subscription
         if (!plansMap[name]) {
             return acc;
         }
-        acc[plansMap[name].ID] = 1;
+        acc[plansMap[name].Name] = 1;
         return acc;
     }, {});
 
@@ -65,12 +65,11 @@ const AutomaticSubscriptionModal = () => {
     const [open, loadingModal] = useSubscriptionModal();
     const [plans, loadingPlans] = usePlans();
     const [subscription, loadingSubscription] = useSubscription();
-    const [organization, loadingOrganization] = useOrganization();
 
     useLoad();
 
     useEffect(() => {
-        if (!plans || !subscription || loadingPlans || loadingSubscription || loadingOrganization || loadingModal) {
+        if (!plans || !subscription || loadingPlans || loadingSubscription || loadingModal) {
             return;
         }
 
@@ -104,10 +103,7 @@ const AutomaticSubscriptionModal = () => {
             newPlanIDs = Object.keys(planIDs).reduce((acc, planID) => {
                 return switchPlan({
                     planIDs: getPlanIDs(subscription),
-                    plans,
-                    planID,
-                    service: PLAN_SERVICES.MAIL,
-                    organization,
+                    planID: planID as keyof PlanIDs,
                 });
             }, getPlanIDs(subscription));
         }
@@ -120,7 +116,7 @@ const AutomaticSubscriptionModal = () => {
             step,
             disableBackButton,
         });
-    }, [loadingPlans, loadingSubscription, loadingOrganization, loadingModal, location.search]);
+    }, [loadingPlans, loadingSubscription, loadingModal, location.search]);
 
     return null;
 };

@@ -55,7 +55,7 @@
 		// coordinates
 		(m, mt, mr, mb, ml),
 		// margin sizes
-		(0, 1, 2),
+		(0, 0.5, 1, 2),
 		// prefix
 		'on-tablet-'
 	);
@@ -331,6 +331,13 @@
 			& > * {
 				inline-size: 100%;
 				flex-basis: auto;
+			}
+		}
+		&-flex-column-no-stretch {
+			flex-direction: column;
+
+			& > * {
+				align-self: center;
 			}
 		}
 

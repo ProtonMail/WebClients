@@ -1,6 +1,13 @@
-import { Currency, Cycle, HumanVerificationMethodType, SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
+import {
+    Audience,
+    Currency,
+    Cycle,
+    HumanVerificationMethodType,
+    SubscriptionCheckResponse,
+} from '@proton/shared/lib/interfaces';
 import { APPS } from '@proton/shared/lib/constants';
 import { PayPalHook } from '@proton/components/containers/payments/usePayPal';
+import { SelectedProductPlans } from '@proton/components/containers/payments/subscription/PlanSelection';
 
 export enum SIGNUP_STEPS {
     NO_SIGNUP = 'no-signup',
@@ -47,6 +54,8 @@ export interface SignupModel {
     humanVerificationMethods: HumanVerificationMethodType[];
     humanVerificationToken: string;
     checkResult: SubscriptionCheckResponse;
+    audience: Audience;
+    selectedProductPlans: SelectedProductPlans;
     isReferred: boolean;
     referrerID: string;
 }

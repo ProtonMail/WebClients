@@ -9,7 +9,6 @@ import {
     APP_NAMES,
     CYCLE,
     PAYMENT_METHOD_TYPES,
-    PLAN_SERVICES,
     PLAN_TYPES,
     PLANS,
     TOKEN_TYPES,
@@ -56,7 +55,6 @@ import {
     useMyLocation,
     usePayment,
     usePlans,
-    useVPNCountriesCount,
     useLocalState,
     useFeature,
     ReferralFeaturesList,
@@ -224,7 +222,6 @@ const SignupContainer = ({ toApp, toAppName = getToAppName(toApp), onLogin, onBa
     const [plans = []] = usePlans();
     const [myLocation] = useMyLocation();
     const [loading, withLoading] = useLoading();
-    const [vpnCountries] = useVPNCountriesCount();
     const externalSignupFeature = useFeature(FeatureCode.ExternalSignup);
     const mailAppName = getAppName(APPS.PROTONMAIL);
 
@@ -397,8 +394,8 @@ const SignupContainer = ({ toApp, toAppName = getToAppName(toApp), onLogin, onBa
                     : { Payment: actualPayment };
                 await authApi.api(
                     subscribe({
+                        Plans: planIDs,
                         Amount: checkResult.AmountDue,
-                        PlanIDs: planIDs,
                         Currency: currency,
                         Cycle: cycle,
                         ...paymentProps, // Overriding Amount
@@ -450,7 +447,7 @@ const SignupContainer = ({ toApp, toAppName = getToAppName(toApp), onLogin, onBa
         }
         return humanApi.api<SubscriptionCheckResponse>(
             checkSubscription({
-                PlanIDs: planIDs,
+                Plans: planIDs,
                 Currency: currency,
                 Cycle: cycle,
                 CouponCode: couponCode,
@@ -584,13 +581,6 @@ const SignupContainer = ({ toApp, toAppName = getToAppName(toApp), onLogin, onBa
         void withLoading(updateCheckResultTogether(model.planIDs, currency, model.cycle));
     };
 
-    const handleChangeCycle = (cycle: Cycle) => {
-        setModelDiff({
-            cycle,
-        });
-        void withLoading(updateCheckResultTogether(model.planIDs, model.currency, cycle));
-    };
-
     const handleChangePlanIDs = (planIDs: PlanIDs) => {
         setModelDiff({
             planIDs,
@@ -659,12 +649,10 @@ const SignupContainer = ({ toApp, toAppName = getToAppName(toApp), onLogin, onBa
                     plans={plans}
                     checkResult={model.checkResult}
                     loading={loading}
-                    service={PLAN_SERVICES.MAIL}
                     currency={model.currency}
                     cycle={model.cycle}
                     planIDs={model.planIDs}
                     onChangeCurrency={handleChangeCurrency}
-                    onChangeCycle={handleChangeCycle}
                 />
             </div>
         </div>
@@ -793,8 +781,14 @@ const SignupContainer = ({ toApp, toAppName = getToAppName(toApp), onLogin, onBa
                             currency={model.currency}
                             cycle={model.cycle}
                             planIDs={model.planIDs}
-                            service={PLAN_SERVICES.MAIL}
-                            vpnCountries={vpnCountries}
+                            audience={model.audience}
+                            onChangeAudience={(audience) => {
+                                setModelDiff({ audience });
+                            }}
+                            selectedProductPlans={model.selectedProductPlans}
+                            onChangeSelectedProductPlans={(selectedProductPlans) => {
+                                setModelDiff({ selectedProductPlans });
+                            }}
                             onChangePlanIDs={async (planIDs) => {
                                 if (!hasPlanIDs(planIDs)) {
                                     setModelDiff({
@@ -812,7 +806,6 @@ const SignupContainer = ({ toApp, toAppName = getToAppName(toApp), onLogin, onBa
                                 );
                             }}
                             onChangeCurrency={handleChangeCurrency}
-                            onChangeCycle={handleChangeCycle}
                         />
                     </Content>
                 </>
@@ -855,10 +848,7 @@ const SignupContainer = ({ toApp, toAppName = getToAppName(toApp), onLogin, onBa
                                         currency={model.currency}
                                         cycle={model.cycle}
                                         planIDs={model.planIDs}
-                                        service={PLAN_SERVICES.MAIL}
-                                        hasMailPlanPicker={false}
                                         onChangePlanIDs={handleChangePlanIDs}
-                                        onChangeCycle={handleChangeCycle}
                                     />
                                 </div>
                             </div>

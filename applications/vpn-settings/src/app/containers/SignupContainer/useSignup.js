@@ -100,7 +100,7 @@ const useSignup = (onLogin, { coupon, invite, availablePlans = VPN_PLANS } = {},
                     CouponCode: coupon.code,
                     Currency: model.currency,
                     Cycle: model.cycle,
-                    PlanIDs: toPlanMap(plans),
+                    Plans: toPlanMap(plans),
                 })
             );
             const sum = (a = 0, b = 0) => a + b;
@@ -243,7 +243,7 @@ const useSignup = (onLogin, { coupon, invite, availablePlans = VPN_PLANS } = {},
             const bundle = PLAN_BUNDLES[selectedPlan.planName];
             const plans = bundle ? bundle.map((name) => getPlanByName(name)) : [selectedPlan];
             const subscription = {
-                PlanIDs: toPlanMap(plans),
+                Plans: toPlanMap(plans),
                 Amount: selectedPlan.price.total,
                 Currency: currency,
                 Cycle: cycle,
