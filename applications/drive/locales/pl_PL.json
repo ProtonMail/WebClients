@@ -140,12 +140,6 @@
       "Create new folder": [
         "Utwórz nowy folder"
       ],
-      "Created date: new to old": [
-        "Data utworzenia: od nowych do starych"
-      ],
-      "Created date: old to new": [
-        "Data utworzenia: od starych do nowych"
-      ],
       "Customize": [
         "Dostosuj"
       ],
@@ -215,12 +209,6 @@
       "enable desktop notifications": [
         "włączyć powiadomienia na pulpicie"
       ],
-      "Expires: new to old": [
-        "Data wygaśnięcia: od nowych do starych"
-      ],
-      "Expires: old to new": [
-        "Data wygaśnięcia: od starych do nowych"
-      ],
       "Export": [
         "Eksportuj"
       ],
@@ -231,7 +219,7 @@
         "Przekaż jako załącznik"
       ],
       "Get link": [
-        ""
+        "Uzyskaj link"
       ],
       "Get started": [
         "Rozpocznij"
@@ -300,7 +288,7 @@
         "Widok skrzynki pocztowej"
       ],
       "Manage link": [
-        ""
+        "Zarządzaj linkiem"
       ],
       "Mark for deletion": [
         "Oznacz do usunięcia"
@@ -320,6 +308,9 @@
       "More info: ${ safeTitle }": [
         "Więcej informacji: ${ safeTitle }"
       ],
+      "More options": [
+        "Więcej opcji"
+      ],
       "Move": [
         "Przenieś"
       ],
@@ -328,12 +319,6 @@
       ],
       "Move to trash": [
         "Przenieś do Kosza"
-      ],
-      "Name: A to Z": [
-        "Nazwa: od A do Z"
-      ],
-      "Name: Z to A": [
-        "Nazwa: od Z do A"
       ],
       "New upload": [
         "Prześlij"
@@ -488,12 +473,6 @@
       "Signing out": [
         "Wylogowywanie"
       ],
-      "Size: large to small": [
-        "Rozmiar: od dużych do małych"
-      ],
-      "Size: small to large": [
-        "Rozmiar: od małych do dużych"
-      ],
       "Skip": [
         "Pomiń"
       ],
@@ -530,12 +509,6 @@
       "Try another method": [
         "Użyj innej metody"
       ],
-      "Type: A to Z": [
-        "Typ: od A do Z"
-      ],
-      "Type: Z to A": [
-        "Typ: od Z do A"
-      ],
       "Undo": [
         "Cofnij"
       ],
@@ -556,12 +529,6 @@
       ],
       "Upload picture": [
         "Prześlij zdjęcie"
-      ],
-      "Uploaded date: new to old": [
-        "Data przesłania: od nowych do starych"
-      ],
-      "Uploaded date: old to new": [
-        "Data przesłania: od starych do nowych"
       ],
       "Use ${ label } theme": [
         "Użyj motywu ${ label }"
@@ -893,9 +860,6 @@
       "Calendar could not be decrypted": [
         "Kalendarz nie może zostać odszyfrowany"
       ],
-      "Calendar could not be found": [
-        "Kalendarz nie został znaleziony"
-      ],
       "Calendar is syncing": [
         "Kalendarz jest synchronizowany"
       ],
@@ -1174,6 +1138,9 @@
       "Error connecting to the Bitcoin API.": [
         "Wystąpił błąd podczas łączenia z interfejsem API Bitcoina."
       ],
+      "Failed to load the link": [
+        "Nie udało się załadować linku"
+      ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "Plik \"${ item.name }\" nie może zostać przesłany z powodu błędu: ${ error }"
       ],
@@ -1256,7 +1223,7 @@
         "Niektóre grupy nie posiadają kontaktów: ${ noContactGroupList } "
       ],
       "Organization not recognized. Try again.": [
-        ""
+        "Organizacja nie została rozpoznana. Spróbuj ponownie."
       ],
       "Passwords do not match": [
         "Hasła nie pasują do siebie"
@@ -1427,7 +1394,7 @@
         "Wystąpił błąd podczas przesyłania pliku. Nie został wybrany żaden plik."
       ],
       "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
-        "Plik ${ formattedFilename } posiada więcej niż ${ MAX_IMPORT_CONTACTS_STRING } kontaktów."
+        "Plik ${ formattedFilename } zawiera więcej niż ${ MAX_IMPORT_CONTACTS_STRING } kontaktów."
       ],
       "Your file ${ formattedFilename } has no contacts to be imported.": [
         "Plik ${ formattedFilename } nie posiada kontaktów do zaimportowania."
@@ -1602,7 +1569,7 @@
     },
     "Import contacts": {
       "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
-        "Wystąpił błąd podczas szyfrowania i dodawania kontaktów. Liczba zaimportowanych kontaktów: ${ totalImported } na ${ totalToImport }."
+        "Wystąpił błąd podczas szyfrowania i dodawania kontaktów. Pomyślnie zaimportowano ${ totalImported } z ${ totalToImport } kontaktów."
       ],
       "Contact successfully imported. The imported contact will now appear in your contact list.": [
         "Kontakt został zaimportowany i pojawi się w Twojej liście kontaktów.",
@@ -2138,6 +2105,9 @@
       "Learn more": [
         "Dowiedz się więcej"
       ],
+      "Link copied to clipboard": [
+        "Link został skopiowany do schowka"
+      ],
       "Link expires: ": [
         "Link wygasa: "
       ],
@@ -2322,7 +2292,7 @@
         "Wybierz domyślny format wiadomości, który ma zostać użyty podczas wysyłania wiadomości na ten adres e-mail."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit. You can also merge imported calendars with existing Proton calendars.": [
-        ""
+        "Wybierz, które kalendarze chcesz zaimportować. Dla każdego importowanego kalendarza zostanie utworzony nowy kalendarz, aż do osiągnięcia limitu 20 kalendarzy. Możesz również scalić importowane kalendarze z obecnymi kalendarzami Proton."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Serwery są nieosiągalne. Spróbuj ponownie za kilka minut"
@@ -2909,6 +2879,9 @@
       "Country": [
         "Kraj"
       ],
+      "Created": [
+        "Utworzono"
+      ],
       "CVV code": [
         "Kod CVV"
       ],
@@ -2940,7 +2913,7 @@
         "Zaszyfruj wiadomości"
       ],
       "Enter organization name to confirm": [
-        ""
+        "Wpisz nazwę organizacji, aby potwierdzić"
       ],
       "Enter the 6-digit code": [
         "Wpisz 6-cyfrowy kod"
@@ -3029,6 +3002,9 @@
       "Merge a folder": [
         "Scal folder"
       ],
+      "Name": [
+        "Nazwa"
+      ],
       "Name on card": [
         "Właściciel karty"
       ],
@@ -3110,6 +3086,9 @@
       "Sign emails": [
         "Podpisz wiadomości"
       ],
+      "Size": [
+        "Rozmiar"
+      ],
       "Skip file": [
         "Pomiń plik"
       ],
@@ -3143,6 +3122,9 @@
       "Two-factor authentication code": [
         "Kod uwierzytelniający"
       ],
+      "Type": [
+        "Typ"
+      ],
       "Unknown file": [
         "Nieznany plik"
       ],
@@ -3155,17 +3137,14 @@
       "Unlock later": [
         "Odblokuj później"
       ],
-      "Up to ${ parentLinkName }": [
-        "Przejdź do ${ parentLinkName }"
-      ],
-      "Up to the parent folder": [
-        "Przejdź do folderu nadrzędnego"
-      ],
       "Upload anyway": [
         "Prześlij mimo to"
       ],
       "Upload picture": [
         "Prześlij zdjęcie"
+      ],
+      "Uploaded": [
+        "Przesłano"
       ],
       "Username or ProtonMail address": [
         "Nazwa użytkownika lub adres ProtonMail"
@@ -3396,16 +3375,16 @@
     },
     "Mail import summary": {
       "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "",
-        "",
-        "",
-        ""
+        "Importuj wiadomości z niektórymi etykietami (${ selectedLabelsCount }/${ totalLabelsCount }) od ${ periodFragment } i oznacz je etykietą ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importuj wiadomości z niektórymi etykietami (${ selectedLabelsCount }/${ totalLabelsCount }) od ${ periodFragment } i oznacz je etykietą ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importuj wiadomości z niektórymi etykietami (${ selectedLabelsCount }/${ totalLabelsCount }) od ${ periodFragment } i oznacz je etykietą ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importuj wiadomości z niektórymi etykietami (${ selectedLabelsCount }/${ totalLabelsCount }) od ${ periodFragment } i oznacz je etykietą ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
       "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "",
-        "",
-        "",
-        ""
+        "Importuj wiadomości z ${ totalLabelsCount } etykietą od ${ periodFragment } i oznacz je etykietą ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importuj wiadomości z ${ totalLabelsCount } etykiet od ${ periodFragment } i oznacz je etykietą ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importuj wiadomości z ${ totalLabelsCount } etykiet od ${ periodFragment } i oznacz je etykietą ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importuj wiadomości z ${ totalLabelsCount } etykiet od ${ periodFragment } i oznacz je etykietą ${ LABEL_MARKUP_PLACEHOLDER }"
       ]
     },
     "Many Others": {
@@ -3415,7 +3394,7 @@
     },
     "Member downgrade modal": {
       "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        ""
+        "Spowoduje to trwałe usunięcie wszystkich użytkowników, kont i danych powiązanych z organizacją."
       ]
     },
     "Message display when a new app version is available": {
@@ -4324,7 +4303,7 @@
         "Usuń ${ Name }"
       ],
       "Delete organization?": [
-        ""
+        "Usunąć organizację?"
       ],
       "Delete permanently": [
         "Usuń trwale"

@@ -31,11 +31,11 @@
       "${ BRAND_NAME } shop": [
         "магазин ${ BRAND_NAME }"
       ],
-      "Activate": [
-        "Активировать"
-      ],
       "activate": [
         "включить"
+      ],
+      "Activate": [
+        "Активировать"
       ],
       "Activate ${ Name }@pm.me": [
         "Активировать ${ Name }@pm.me"
@@ -51,6 +51,9 @@
       ],
       "Add address": [
         "Добавить адрес"
+      ],
+      "Add calendar": [
+        "Добавить календарь"
       ],
       "Add condition": [
         "Добавить условие"
@@ -223,12 +226,6 @@
       "Create link": [
         "Создать ссылку"
       ],
-      "Create new recovery phrase": [
-        "Создать новую фразу для восстановления доступа к учетной записи"
-      ],
-      "Create new recovery phrase?": [
-        "Создать новую фразу для восстановления доступа к учетной записи?"
-      ],
       "Customize": [
         "Настроить"
       ],
@@ -348,6 +345,15 @@
       ],
       "Generate key": [
         "Сгенерировать ключ"
+      ],
+      "Generate new recovery phrase": [
+        "Создать новую фразу для восстановления"
+      ],
+      "Generate new recovery phrase?": [
+        "Создать новую фразу для восстановления?"
+      ],
+      "Generate recovery phrase": [
+        "Создать фразу для восстановления"
       ],
       "Get ProtonVPN Plus": [
         "Перейти на ProtonVPN Plus"
@@ -501,6 +507,9 @@
       ],
       "Reconnect": [
         "Переподключиться"
+      ],
+      "Recover data": [
+        "Восстановить данные"
       ],
       "Refresh status": [
         "Обновить статус"
@@ -696,9 +705,6 @@
       ],
       "Submit": [
         "Отправить"
-      ],
-      "Subscribe to calendar": [
-        "Подписаться на календарь"
       ],
       "Support": [
         "Поддержка"
@@ -1104,7 +1110,7 @@
     },
     "blackfriday Action": {
       "Get the offer": [
-        ""
+        "Воспользоваться"
       ]
     },
     "blackfriday Info": {
@@ -1123,13 +1129,13 @@
     },
     "blackfriday Title": {
       "Best deal": [
-        ""
+        "Лучшее предложение"
       ],
       "Most popular": [
         "Самое популярное"
       ],
       "Save more when combining Mail and VPN": [
-        ""
+        "Сэкономьте больше, оплачивая Mail и VPN вместе"
       ]
     },
     "blackfriday: VPNspecialoffer Action": {
@@ -1142,18 +1148,18 @@
     },
     "blackfriday: VPNspecialoffer Badge popup": {
       "${ vpnAppName } Plus Special Offer 2021 discount has been applied": [
-        ""
+        "Применена скидка за спецпредложение ${ vpnAppName } Plus 2021 года"
       ]
     },
     "blackfriday: VPNspecialoffer Info": {
       "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
-        ""
+        "Скидки рассчитываются исходя из стандартной платы за 1 месяц в размере ${ standardMonthlyPricing }"
       ],
       "Save ${ percentage }%": [
-        "– ${ percentage } %"
+        "Экономия ${ percentage }%"
       ],
       "Special offer Terms and Conditions": [
-        ""
+        "Условия специального предложения"
       ]
     },
     "blackfriday: VPNspecialoffer info": {
@@ -1168,13 +1174,13 @@
     },
     "blackfriday: VPNspecialoffer Title": {
       "(${ notice }) Renews after 1 month at a standard monthly price of ${ amount }": [
-        ""
+        "(${ notice }) Автопродление через 1 месяц по стандартной цене ${ amount } на 1 месяц"
       ],
       "(${ notice }) Renews after 1 year at a standard discounted annual price of ${ amount } (20% discount)": [
-        ""
+        "(${ notice }) Автопродление через 1 год по сниженной цене ${ amount } на 1 год (скидка 20%)"
       ],
       "(${ notice }) Renews after 2 years at a standard discounted 2-year price of ${ amount } (33% discount)": [
-        ""
+        "(${ notice }) Автопродление через 2 года по сниженной цене ${ amount } на 2 года (скидка 33%)"
       ],
       "1 month": [
         "1 месяц"
@@ -1186,16 +1192,16 @@
         "24 месяца"
       ],
       "Billed at ${ amount } for the first 2 years.${ supNotice }": [
-        ""
+        "Оплата в размере ${ amount } за первые 2 года.${ supNotice }"
       ],
       "Billed at ${ amount } for the first month.${ supNotice }": [
-        ""
+        "Оплата в размере ${ amount } за первый месяц.${ supNotice }"
       ],
       "Billed at ${ amount } for the first year.${ supNotice }": [
-        ""
+        "Оплата в размере ${ amount } за первый год.${ supNotice }"
       ],
       "Get the special year-end offer on our Premium VPN PLUS plan": [
-        ""
+        "Воспользуйтесь специальным предложением в конце года для премиум-тарифа VPN PLUS"
       ]
     },
     "Bridge version load failed": {
@@ -1305,11 +1311,11 @@
       ]
     },
     "Calendar limit warning": {
-      "You have reached the maximum of ${ calendarsLimit } calendar.": [
-        "Вы достигли максимума из ${ calendarsLimit } календаря.",
-        "Вы достигли максимума из ${ calendarsLimit } календарея(ей).",
-        "Вы достигли максимума из ${ calendarsLimit } календарей.",
-        "Вы достигли максимума из ${ calendarsLimit } календарея(ей)."
+      "You have reached the maximum of ${ calendarsLimit } personal calendar.": [
+        "Вы достигли максимума из ${ calendarsLimit } личного календаря.",
+        "Вы достигли максимума из ${ calendarsLimit } личных календарей.",
+        "Вы достигли максимума из ${ calendarsLimit } личных календарей.",
+        "Вы достигли максимума из ${ calendarsLimit } личных календарей."
       ],
       "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } subscribed calendar.": [
         "Вы достигли максимума из ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } подписанного календаря.",
@@ -1338,9 +1344,6 @@
     "Calendar subscription not synced error": {
       "Calendar could not be decrypted": [
         "Невозможно было расшифровать календарь"
-      ],
-      "Calendar could not be found": [
-        "Невозможно было найти Календарь"
       ],
       "Calendar is syncing": [
         "Календарь синхронизируется"
@@ -1985,7 +1988,7 @@
         "Ключ организации не расшифрован."
       ],
       "Organization not recognized. Try again.": [
-        ""
+        "Организация не распознана. Попробуйте еще."
       ],
       "Passwords do not match": [
         "Пароль и его подтверждение не совпадают"
@@ -3306,7 +3309,7 @@
         "Добавьте адрес электронной почты @pm.me в вашу учетную запись. Этот простой и короткий домен означает \"ProtonMail меня\" или \"Личное сообщение мне\""
       ],
       "Add a recovery email address": [
-        ""
+        "Добавить адрес эл. почты для восстановления доступа"
       ],
       "Add a recovery phone number": [
         "Обновить номер телефона для восстановления"
@@ -3539,9 +3542,6 @@
       "Create in": [
         "Создать в"
       ],
-      "Creating a new recovery phrase will deactivate your old one.": [
-        "Создание новой фразы для восстановления доступа к учетной записи отключит старую."
-      ],
       "Creating your Proton account": [
         "Создание учётной записи Proton"
       ],
@@ -3580,15 +3580,6 @@
       ],
       "Delete link?": [
         "Удалить ссылку?"
-      ],
-      "Disabling this will prevent this email from being used for account recovery.": [
-        "Отключение этого параметра не позволит использовать этот адрес почты для восстановления доступа к аккаунту."
-      ],
-      "Disabling this will prevent this phone number from being used for account recovery.": [
-        "Отключение этого параметра не позволит использовать этот номер телефона для восстановления доступа к учетной записи."
-      ],
-      "Disabling this will prevent your recovery phrase from being used for account recovery.": [
-        "Отключение этого параметра не позволит использовать для восстановления доступа к учетной записи эту фразу для восстановления доступа к учетной записи."
       ],
       "Discount applied to your subscription with coupon ${ code }": [
         "Скидка применена к вашей подписке с купоном ${ code }"
@@ -3642,7 +3633,7 @@
         "Изменить ярлык"
       ],
       "Effortlessly and securely move your emails from your current provider to Proton. If you use Google, we also support calendar and contacts imports.": [
-        ""
+        "Легко и безопасно перенесите свою электронную почту от текущего провайдера в Proton. Если вы пользуетесь Google, мы также поддерживаем импорт календаря и контактов."
       ],
       "Email address": [
         "Адрес электронной почты"
@@ -3739,6 +3730,9 @@
       ],
       "Full-featured VPN with speed up to 10 Gbps.": [
         "Полнофункциональный VPN со скоростью до 10 Гбит/с."
+      ],
+      "Generating a new recovery phrase will deactivate your old one.": [
+        "Генерирование новой фразы восстановления приведет к деактивации старой."
       ],
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
         "Поделитесь своим публичным ключом с друзьями или опубликуйте его в Интернете, чтобы каждый мог отправлять вам письма со сквозным шифрованием!"
@@ -4239,7 +4233,7 @@
         "Выберите поставщика услуг, чтобы начать"
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit. You can also merge imported calendars with existing Proton calendars.": [
-        ""
+        "Выберите, какие календари необходимо импортировать. Для каждого импортированного календаря будет создан новый календарь в пределах лимита в 20 личных календарей. Вы также можете объединить импортированные календари с существующими календарями Proton."
       ],
       "Server is currently down": [
         "Сервер сейчас не работает"
@@ -4654,6 +4648,9 @@
       ],
       "Your Block List is empty.": [
         "Список блокируемых пуст."
+      ],
+      "Your data is encrypted, you can recover your data by reactivating your keys.": [
+        "Ваши данные зашифрованы, вы можете восстановить их, повторно активировав ключи."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "Ваши данные готовы к импорту из ${ importedEmailAddressStrong } в ваш аккаунт Proton."
@@ -5382,7 +5379,7 @@
         "День недели окончания"
       ],
       "Enter organization name to confirm": [
-        ""
+        "Введите название организации для подтверждения"
       ],
       "Enter password": [
         "Введите пароль"
@@ -5633,16 +5630,13 @@
       "Recovery code": [
         "Код восстановления"
       ],
-      "Recovery email": [
-        "Адрес эл. почты для восстановления"
-      ],
       "Recovery email address": [
         "Резервный адрес электронной почты"
       ],
       "Recovery file": [
         "Файл восстановления"
       ],
-      "Recovery phone": [
+      "Recovery phone number": [
         "Номер телефона для восстановления"
       ],
       "Recovery phrase": [
@@ -5848,9 +5842,6 @@
       ]
     },
     "label": {
-      "Phone number": [
-        "Телефонный номер"
-      ],
       "Recovery phone number": [
         "Номер телефона для восстановления"
       ],
@@ -6163,16 +6154,16 @@
     },
     "Mail import summary": {
       "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "",
-        "",
-        "",
-        ""
+        "Импортировать все сообщения с ${ selectedLabelsCount } из ${ totalLabelsCount } метки до ${ periodFragment } и пометить их как ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Импортировать все сообщения с ${ selectedLabelsCount } из ${ totalLabelsCount } меток до ${ periodFragment } и пометить их как ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Импортировать все сообщения с ${ selectedLabelsCount } из ${ totalLabelsCount } меток до ${ periodFragment } и пометить их как ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Импортировать все сообщения с ${ selectedLabelsCount } из ${ totalLabelsCount } меток до ${ periodFragment } и пометить их как ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
       "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "",
-        "",
-        "",
-        ""
+        "Импортируйте все сообщения из ${ totalLabelsCount } метки до ${ periodFragment } и пометьте их как ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Импортируйте все сообщения из ${ totalLabelsCount } меток до ${ periodFragment } и пометьте их как ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Импортируйте все сообщения из ${ totalLabelsCount } меток до ${ periodFragment } и пометьте их как ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Импортируйте все сообщения из ${ totalLabelsCount } меток до ${ periodFragment } и пометьте их как ${ LABEL_MARKUP_PLACEHOLDER }"
       ]
     },
     "Mail upsell feature": {
@@ -6215,7 +6206,7 @@
     },
     "Member downgrade modal": {
       "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        ""
+        "Это приведет к окончательному удалению всех подпользователей, учетных записей и данных, связанных с вашей организацией."
       ]
     },
     "Message": {
@@ -7327,8 +7318,8 @@
       "Calendar URL": [
         "Адрес календаря"
       ],
-      "You can subscribe to someone else's calendar by pasting its URL below. This will give you access to a read-only version of this calendar.\n${ kbLink }": [
-        "Вы можете подписаться на чей-то календарь, вставив его адрес ниже. Это предоставит вам доступ к версии календаря только для чтения. ${ kbLink }"
+      "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Subscribed calendars.\n${ kbLink }": [
+        "Чтобы подписаться на внешний или публичный календарь и его обновления, введите URL-адрес. Версия календаря, доступная только для чтения, будет добавлена в список подписанных календарей.\n${ kbLink }"
       ]
     },
     "Subscribe to calendar modal description": {
@@ -7917,7 +7908,7 @@
         "Удалить записи журнала"
       ],
       "Delete organization?": [
-        ""
+        "Удалить оргнизацию?"
       ],
       "Delete user": [
         "Удалить пользователя"
@@ -7969,6 +7960,9 @@
       ],
       "Enable keyboard shortcuts": [
         "Включить сочетания клавиш"
+      ],
+      "Encrypted data": [
+        "Зашифрованные данные"
       ],
       "Encryption & keys": [
         "Шифрование и ключи"

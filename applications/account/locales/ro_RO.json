@@ -31,11 +31,11 @@
       "${ BRAND_NAME } shop": [
         "Magazin ${ BRAND_NAME }"
       ],
-      "Activate": [
-        "Activare"
-      ],
       "activate": [
         "activare"
+      ],
+      "Activate": [
+        "Activare"
       ],
       "Activate ${ Name }@pm.me": [
         "Activare ${ Name }@pm.me"
@@ -51,6 +51,9 @@
       ],
       "Add address": [
         "Adăugare adresă"
+      ],
+      "Add calendar": [
+        "Adăugare calendar"
       ],
       "Add condition": [
         "Adăugare condiție"
@@ -223,12 +226,6 @@
       "Create link": [
         "Creare legătură"
       ],
-      "Create new recovery phrase": [
-        "Creare frază de recuperare"
-      ],
-      "Create new recovery phrase?": [
-        "Creați o frază de recuperare?"
-      ],
       "Customize": [
         "Personalizare"
       ],
@@ -348,6 +345,15 @@
       ],
       "Generate key": [
         "Generare cheie"
+      ],
+      "Generate new recovery phrase": [
+        "Generarea unei noi fraze de recuperare"
+      ],
+      "Generate new recovery phrase?": [
+        "Generarea unei noi fraze de recuperare?"
+      ],
+      "Generate recovery phrase": [
+        "Generarea frazei de recuperare"
       ],
       "Get ProtonVPN Plus": [
         "Obțineți „ProtonVPN Plus”"
@@ -501,6 +507,9 @@
       ],
       "Reconnect": [
         "Reconectare"
+      ],
+      "Recover data": [
+        "Recuperarea datelor"
       ],
       "Refresh status": [
         "Actualizare stare"
@@ -696,9 +705,6 @@
       ],
       "Submit": [
         "Trimitere"
-      ],
-      "Subscribe to calendar": [
-        "Abonare la calendar"
       ],
       "Support": [
         "Asistenţă"
@@ -1296,10 +1302,10 @@
       ]
     },
     "Calendar limit warning": {
-      "You have reached the maximum of ${ calendarsLimit } calendar.": [
-        "Ați atins numărul maxim de un calendar.",
-        "Ați atins numărul maxim de ${ calendarsLimit } calendare.",
-        "Ați atins numărul maxim de ${ calendarsLimit } de calendare."
+      "You have reached the maximum of ${ calendarsLimit } personal calendar.": [
+        "Ați atins limita maximă a calendarului personal ${ calendarsLimit }.",
+        "Ați atins numărul maxim de calendare personale ${ calendarsLimit }.",
+        "Ați atins numărul maxim de ${ calendarsLimit } de calendare personale."
       ],
       "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } subscribed calendar.": [
         "Ați atins numărul maxim de un calendar abonat.",
@@ -1327,9 +1333,6 @@
     "Calendar subscription not synced error": {
       "Calendar could not be decrypted": [
         "Calendarul nu a putut fi decriptat"
-      ],
-      "Calendar could not be found": [
-        "Calendarul nu a putut fi găsit"
       ],
       "Calendar is syncing": [
         "Calendarul se sincronizează."
@@ -3486,9 +3489,6 @@
       "Create in": [
         "Creare în"
       ],
-      "Creating a new recovery phrase will deactivate your old one.": [
-        "Crearea unei fraze noi de recuperare o va dezactiva pe cea veche."
-      ],
       "Creating your Proton account": [
         "Crearea contului tău Proton"
       ],
@@ -3527,15 +3527,6 @@
       ],
       "Delete link?": [
         "Ștergeți legătura?"
-      ],
-      "Disabling this will prevent this email from being used for account recovery.": [
-        "Dezactivarea acestei opțiuni va împiedica utilizarea acestui e-mail pentru recuperarea contului."
-      ],
-      "Disabling this will prevent this phone number from being used for account recovery.": [
-        "Dezactivarea acestei opțiuni va împiedica utilizarea acestui număr de telefon pentru recuperarea contului."
-      ],
-      "Disabling this will prevent your recovery phrase from being used for account recovery.": [
-        "Dezactivarea acestei opțiuni va împiedica utilizarea frazei de recuperare pentru recuperarea contului."
       ],
       "Discount applied to your subscription with coupon ${ code }": [
         "Cuponul ${ code } a aplicat o reducere de 20% la abonament"
@@ -3685,6 +3676,9 @@
       ],
       "Full-featured VPN with speed up to 10 Gbps.": [
         "VPN complet cu viteză de până la 10 Gbps."
+      ],
+      "Generating a new recovery phrase will deactivate your old one.": [
+        "Generarea unei noi fraze de recuperare o va dezactiva pe cea veche."
       ],
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
         "Partajați cheia publică prietenilor sau publicați-o online, astfel încât oricine să vă poată trimite mesaje criptate la ambele capete!"
@@ -4598,6 +4592,9 @@
       ],
       "Your Block List is empty.": [
         "Lista de adrese blocate este goală."
+      ],
+      "Your data is encrypted, you can recover your data by reactivating your keys.": [
+        "Datele dumneavoastră sunt criptate, vă puteți recupera datele prin reactivarea cheilor."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "Datele vă sunt pregătite pentru importare din ${ importedEmailAddressStrong } în contul Proton."
@@ -5573,17 +5570,14 @@
       "Recovery code": [
         "Cod de recuperare"
       ],
-      "Recovery email": [
-        "E-mail de recuperare"
-      ],
       "Recovery email address": [
         "Adresa de e-mail de recuperare"
       ],
       "Recovery file": [
         "Fișier de recuperare"
       ],
-      "Recovery phone": [
-        "Telefon recuperare"
+      "Recovery phone number": [
+        "Numărul de telefon pentru recuperare"
       ],
       "Recovery phrase": [
         "Fraza de recuperare"
@@ -5788,9 +5782,6 @@
       ]
     },
     "label": {
-      "Phone number": [
-        "Număr de telefon"
-      ],
       "Recovery phone number": [
         "Numărul de telefon pentru recuperare"
       ],
@@ -7255,8 +7246,8 @@
       "Calendar URL": [
         "URL calendar"
       ],
-      "You can subscribe to someone else's calendar by pasting its URL below. This will give you access to a read-only version of this calendar.\n${ kbLink }": [
-        "Vă puteți abona la calendarul altcuiva prin inserarea adresei URL mai jos. Astfel veți avea acces la o versiune doar în mod consultare a acestui calendar. ${ kbLink }"
+      "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Subscribed calendars.\n${ kbLink }": [
+        "Pentru a vă abona la un calendar extern sau public și la actualizările acestuia, introduceți adresa URL. O versiune doar pentru citire a calendarului va fi adăugată la Calendarele abonate.\n${ kbLink }"
       ]
     },
     "Subscribe to calendar modal description": {
@@ -7895,6 +7886,9 @@
       ],
       "Enable keyboard shortcuts": [
         "Activare combinații de taste"
+      ],
+      "Encrypted data": [
+        "Date criptate"
       ],
       "Encryption & keys": [
         "Criptare și chei"

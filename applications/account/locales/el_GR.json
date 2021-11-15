@@ -31,11 +31,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } κατάστημα"
       ],
-      "Activate": [
-        "Ενεργοποίηση"
-      ],
       "activate": [
         "ενεργοποιήστε"
+      ],
+      "Activate": [
+        "Ενεργοποίηση"
       ],
       "Activate ${ Name }@pm.me": [
         "Ενεργοποίηση ${ Name }@pm.me"
@@ -51,6 +51,9 @@
       ],
       "Add address": [
         "Προσθήκη διεύθυνσης"
+      ],
+      "Add calendar": [
+        "Προσθήκη ημερολογίου"
       ],
       "Add condition": [
         "Προσθήκη συνθήκης"
@@ -223,12 +226,6 @@
       "Create link": [
         "Δημιουργία συνδέσμου"
       ],
-      "Create new recovery phrase": [
-        "Δημιουργία νέας φράσης ανάκτησης"
-      ],
-      "Create new recovery phrase?": [
-        "Δημιουργία νέας φράσης ανάκτησης;"
-      ],
       "Customize": [
         "Προσαρμογή"
       ],
@@ -348,6 +345,15 @@
       ],
       "Generate key": [
         "Δημιουργία κλειδιού"
+      ],
+      "Generate new recovery phrase": [
+        "Παραγωγή νέας φράσης ανάκτησης"
+      ],
+      "Generate new recovery phrase?": [
+        "Παραγωγή νέας φράσης ανάκτησης;"
+      ],
+      "Generate recovery phrase": [
+        "Παραγωγή φράσης ανάκτησης"
       ],
       "Get ProtonVPN Plus": [
         "Αποκτήστε ProtonVPN Plus"
@@ -501,6 +507,9 @@
       ],
       "Reconnect": [
         "Επανασύνδεση"
+      ],
+      "Recover data": [
+        "Ανάκτηση δεδομένων"
       ],
       "Refresh status": [
         "Ανανέωση κατάστασης"
@@ -696,9 +705,6 @@
       ],
       "Submit": [
         "Υποβολή"
-      ],
-      "Subscribe to calendar": [
-        "Εγγραφή στο ημερολόγιο"
       ],
       "Support": [
         "Υποστήριξη"
@@ -1191,9 +1197,9 @@
       ]
     },
     "Calendar limit warning": {
-      "You have reached the maximum of ${ calendarsLimit } calendar.": [
-        "Έχετε φτάσει τον μέγιστο αριθμό του ${ calendarsLimit } ημερολογίου.",
-        "Έχετε φτάσει τον μέγιστο αριθμό των ${ calendarsLimit } ημερολογίων."
+      "You have reached the maximum of ${ calendarsLimit } personal calendar.": [
+        "Έχετε φτάσει τον μέγιστο αριθμό του ${ calendarsLimit } προσωπικού ημερολογίου.",
+        "Έχετε φτάσει τον μέγιστο αριθμό των ${ calendarsLimit } προσωπικών ημερολογίων."
       ],
       "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } subscribed calendar.": [
         "Έχετε φτάσει τον μέγιστο αριθμό του ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } συνδρομητικού ημερολογίου.",
@@ -1220,9 +1226,6 @@
     "Calendar subscription not synced error": {
       "Calendar could not be decrypted": [
         "Αδυναμία αποκρυπτογράφησης ημερολογίου"
-      ],
-      "Calendar could not be found": [
-        "Αδυναμία εύρεσης ημερολογίου"
       ],
       "Calendar is syncing": [
         "Το ημερολόγιο συγχρονίζεται"
@@ -3337,9 +3340,6 @@
       "Create in": [
         "Δημιουργία εντός"
       ],
-      "Creating a new recovery phrase will deactivate your old one.": [
-        "Η δημιουργία μιας νέας φράσης ανάκτησης θα απενεργοποιήσει την παλιά σας."
-      ],
       "Creating your Proton account": [
         "Γίνεται δημιουργία του λογαριασμού σας Proton"
       ],
@@ -3378,15 +3378,6 @@
       ],
       "Delete link?": [
         "Διαγραφή συνδέσμου;"
-      ],
-      "Disabling this will prevent this email from being used for account recovery.": [
-        "Η απενεργοποίηση του θα αποτρέψει τη χρήση αυτού του email για την ανάκτηση λογαριασμού."
-      ],
-      "Disabling this will prevent this phone number from being used for account recovery.": [
-        "Η απενεργοποίηση του θα αποτρέψει τη χρήση αυτού του τηλεφώνου για την ανάκτηση λογαριασμού."
-      ],
-      "Disabling this will prevent your recovery phrase from being used for account recovery.": [
-        "Η απενεργοποίηση του θα αποτρέψει τη χρήση αυτής της φράσης ανάκτησης για την ανάκτηση λογαριασμού."
       ],
       "Discount applied to your subscription with coupon ${ code }": [
         "Εφαρμόστηκε έκπτωση στη συνδρομή σας, με το κουπόνι ${ code }"
@@ -3438,7 +3429,7 @@
         "Επεξεργασία ετικέτας"
       ],
       "Effortlessly and securely move your emails from your current provider to Proton. If you use Google, we also support calendar and contacts imports.": [
-        ""
+        "Ασφαλή και ξεκούραστη μετακίνηση των μηνυμάτων σας από τον τρέχοντα πάροχό σας στο Proton. Αν χρησιμοποιείτε το Google, υποστηρίζουμε επίσης εισαγωγή ημερολογίου και επαφών."
       ],
       "Email address": [
         "Διεύθυνση email"
@@ -3535,6 +3526,9 @@
       ],
       "Full-featured VPN with speed up to 10 Gbps.": [
         "Πλήρως εξοπλισμένο VPN με ταχύτητα έως και 10 Gbps."
+      ],
+      "Generating a new recovery phrase will deactivate your old one.": [
+        "Η παραγωγή μιας νέας φράσης ανάκτησης θα απενεργοποιήσει την παλιά σας."
       ],
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
         "Δώστε το δημόσιο κλειδί στους φίλους σας ή δημοσιεύστε το ηλεκτρονικά, έτσι ώστε όλοι να μπορούν να σας στέλνουν κρυπτογραφημένα ηλεκτρονικά μηνύματα!"
@@ -3646,10 +3640,10 @@
         "Γίνεται εισαγωγή δεδομένων από ${ importedEmailAddress } προς ${ toEmail }."
       ],
       "In case you lose your login details, we’ll send you recovery instructions via email or SMS.": [
-        ""
+        "Σε περίπτωση που χάσετε τα στοιχεία σύνδεσής σας, θα σας στείλουμε οδηγίες ανάκτησης μέσω email ή SMS."
       ],
       "In case you lose your login details, we’ll send you recovery instructions via email.": [
-        ""
+        "Σε περίπτωση που χάσετε τα στοιχεία σύνδεσής σας, θα σας στείλουμε οδηγίες ανάκτησης μέσω email."
       ],
       "Included": [
         "Περιλαμβάνεται"
@@ -4031,7 +4025,7 @@
         "Επιλογή υπηρεσίας παροχής για να ξεκινήσετε"
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit. You can also merge imported calendars with existing Proton calendars.": [
-        ""
+        "Επιλέξτε ποια ημερολόγια θα εισαγάγετε. Ενα νέο ημερολόγιο θα δημιουργηθεί για κάθε εισαγόμενο ημερολόγιο μέχρι το όριο των 20 ημερολογίων. Μπορείτε επίσης να συγχωνεύσετε εισαγόμενα ημερολόγια με υπάρχοντα ημερολόγια Proton."
       ],
       "Server is currently down": [
         "Ο διακομιστής είναι προσωρινά εκτός"
@@ -4446,6 +4440,9 @@
       ],
       "Your Block List is empty.": [
         "Η Λίστα Αποκλεισμού είναι κενή."
+      ],
+      "Your data is encrypted, you can recover your data by reactivating your keys.": [
+        "Τα δεδομένα σας είναι κρυπτογραφημένα, μπορείτε να ανακτήσετε τα δεδομένα σας ενεργοποιώντας ξανά τα κλειδιά σας."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "Τα δεδομένα σας είναι έτοιμα για εισαγωγή από ${ importedEmailAddressStrong } στο λογαριασμό σας στο Proton."
@@ -5417,17 +5414,14 @@
       "Recovery code": [
         "Κωδικός ανάκτησης"
       ],
-      "Recovery email": [
-        "Email ανάκτησης"
-      ],
       "Recovery email address": [
         "Email Ανάκτησης"
       ],
       "Recovery file": [
         "Αρχείο ανάκτησης"
       ],
-      "Recovery phone": [
-        "Τηλέφωνο αποκατάστασης"
+      "Recovery phone number": [
+        "Τηλεφωνικός αριθμός ανάκτησης"
       ],
       "Recovery phrase": [
         "Φράση αποκατάστασης"
@@ -5632,9 +5626,6 @@
       ]
     },
     "label": {
-      "Phone number": [
-        "Αριθμός τηλεφώνου"
-      ],
       "Recovery phone number": [
         "Τηλεφωνικός αριθμός ανάκτησης"
       ],
@@ -5945,12 +5936,12 @@
     },
     "Mail import summary": {
       "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "",
-        ""
+        "Εισαγάγετε όλα τα μηνύματα από ${ selectedLabelsCount } από ${ totalLabelsCount } ετικέτα από ${ periodFragment } και επισημάνετε τα με ετικέτα ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Εισαγάγετε όλα τα μηνύματα από ${ selectedLabelsCount } από ${ totalLabelsCount } ετικέτες από ${ periodFragment } και επισημάνετε τα με ετικέτα ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
       "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "",
-        ""
+        "Εισαγάγετε όλα τα μηνύματα από ${ totalLabelsCount } ετικέτα από ${ periodFragment } και επισημάνετε τα με ετικέτα ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Εισαγάγετε όλα τα μηνύματα από ${ totalLabelsCount } ετικέτες από ${ periodFragment } και επισημάνετε τα με ετικέτα ${ LABEL_MARKUP_PLACEHOLDER }"
       ]
     },
     "Mail upsell feature": {
@@ -5991,7 +5982,7 @@
     },
     "Member downgrade modal": {
       "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        ""
+        "Αυτό θα διαγράψει οριστικά όλους τους υπο-χρήστες, τους λογαριασμούς και τα δεδομένα που σχετίζονται με τον οργανισμό σας."
       ]
     },
     "Message": {
@@ -7087,8 +7078,8 @@
       "Calendar URL": [
         "URL Ημερολογίου"
       ],
-      "You can subscribe to someone else's calendar by pasting its URL below. This will give you access to a read-only version of this calendar.\n${ kbLink }": [
-        "Μπορείτε να εγγραφείτε στο ημερολόγιο κάποιου άλλου, με την επικόλληση της διεύθυνση URL παρακάτω. Αυτό θα σας δώσει πρόσβαση σε μια έκδοση αυτού του ημερολογίου μόνο για ανάγνωση.\n${ kbLink }"
+      "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Subscribed calendars.\n${ kbLink }": [
+        "Για να εγγραφείτε σε ένα εξωτερικό ή δημόσιο ημερολόγιο και τις ενημερώσεις του, εισαγάγετε τη διεύθυνση URL. Μια έκδοση μόνο για ανάγνωση του ημερολογίου θα προστεθεί στα Εγγεγραμμένα ημερολόγιά σας.\n${ kbLink }"
       ]
     },
     "Subscribe to calendar modal description": {
@@ -7725,6 +7716,9 @@
       ],
       "Enable keyboard shortcuts": [
         "Ενεργοποίηση συντομεύσεων πληκτρολογίου"
+      ],
+      "Encrypted data": [
+        "Κρυπτογραφημένα δεδομένα"
       ],
       "Encryption & keys": [
         "Κρυπτογράφηση & κλειδιά"

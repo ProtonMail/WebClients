@@ -31,11 +31,11 @@
       "${ BRAND_NAME } shop": [
         "Botiga de ${ BRAND_NAME }"
       ],
-      "Activate": [
-        "Activar"
-      ],
       "activate": [
         "activar"
+      ],
+      "Activate": [
+        "Activar"
       ],
       "Activate ${ Name }@pm.me": [
         "Activar ${ Name }@pm.me"
@@ -51,6 +51,9 @@
       ],
       "Add address": [
         "Afegir adreça"
+      ],
+      "Add calendar": [
+        ""
       ],
       "Add condition": [
         "Afegir condició"
@@ -223,12 +226,6 @@
       "Create link": [
         "Crear enllaç"
       ],
-      "Create new recovery phrase": [
-        "Creeu una frase de recuperació nova"
-      ],
-      "Create new recovery phrase?": [
-        "Voleu crear una frase de recuperació nova?"
-      ],
       "Customize": [
         "Personalitzar"
       ],
@@ -347,6 +344,15 @@
         "Font"
       ],
       "Generate key": [
+        ""
+      ],
+      "Generate new recovery phrase": [
+        ""
+      ],
+      "Generate new recovery phrase?": [
+        ""
+      ],
+      "Generate recovery phrase": [
         ""
       ],
       "Get ProtonVPN Plus": [
@@ -501,6 +507,9 @@
       ],
       "Reconnect": [
         "Reconnectar"
+      ],
+      "Recover data": [
+        ""
       ],
       "Refresh status": [
         "Refresca l'estat"
@@ -696,9 +705,6 @@
       ],
       "Submit": [
         "Enviar"
-      ],
-      "Subscribe to calendar": [
-        "Subscriure's al calendari"
       ],
       "Support": [
         "Assistència"
@@ -1287,9 +1293,9 @@
       ]
     },
     "Calendar limit warning": {
-      "You have reached the maximum of ${ calendarsLimit } calendar.": [
-        "Heu assolit el nombre màxim d'${ calendarsLimit } calendari.",
-        "Heu assolit el nombre màxim de ${ calendarsLimit } calendaris."
+      "You have reached the maximum of ${ calendarsLimit } personal calendar.": [
+        "",
+        ""
       ],
       "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } subscribed calendar.": [
         "Heu assolit el nombre màxim d'${ MAX_SUBSCRIBED_CALENDARS_PER_USER } calendari subscrit.",
@@ -1315,9 +1321,6 @@
     },
     "Calendar subscription not synced error": {
       "Calendar could not be decrypted": [
-        ""
-      ],
-      "Calendar could not be found": [
         ""
       ],
       "Calendar is syncing": [
@@ -3433,9 +3436,6 @@
       "Create in": [
         ""
       ],
-      "Creating a new recovery phrase will deactivate your old one.": [
-        "La creació d’una nova frase de recuperació desactivarà la vostra antiga."
-      ],
       "Creating your Proton account": [
         "Creant el teu compte Proton"
       ],
@@ -3474,15 +3474,6 @@
       ],
       "Delete link?": [
         "Eliminar enllaç?"
-      ],
-      "Disabling this will prevent this email from being used for account recovery.": [
-        "Deshabilitant-ho s'evitarà que aquest correu electrònic s'utilitzi per a la recuperació del compte."
-      ],
-      "Disabling this will prevent this phone number from being used for account recovery.": [
-        "Deshabilitant-ho s'evitarà que aquest número de telèfon s'utilitzi per a la recuperació del compte."
-      ],
-      "Disabling this will prevent your recovery phrase from being used for account recovery.": [
-        "Deshabilitant-ho s'evitarà que la seva frase de recuperació s'utilitzi per a la recuperació del compte."
       ],
       "Discount applied to your subscription with coupon ${ code }": [
         "Descompte aplicat a la vostra subscripció amb un cupó ${ code }"
@@ -3631,6 +3622,9 @@
       ],
       "Full-featured VPN with speed up to 10 Gbps.": [
         "VPN completa amb velocitat de fins a 10 Gbps."
+      ],
+      "Generating a new recovery phrase will deactivate your old one.": [
+        ""
       ],
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
         "Dóna la teva clau pública als teus amics o publica-la en línia perquè tothom et pugui enviar un missatge de correu electrònic xifrat de punta a punta!"
@@ -4542,6 +4536,9 @@
       ],
       "Your Block List is empty.": [
         "La vostra llista de no desitjats està buida."
+      ],
+      "Your data is encrypted, you can recover your data by reactivating your keys.": [
+        ""
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         ""
@@ -5513,17 +5510,14 @@
       "Recovery code": [
         "Codi de recuperació"
       ],
-      "Recovery email": [
-        "Correu electrònic de recuperació"
-      ],
       "Recovery email address": [
         ""
       ],
       "Recovery file": [
         ""
       ],
-      "Recovery phone": [
-        "Telèfon de recuperació"
+      "Recovery phone number": [
+        ""
       ],
       "Recovery phrase": [
         "Frase de recuperació"
@@ -5728,9 +5722,6 @@
       ]
     },
     "label": {
-      "Phone number": [
-        "Número de telèfon"
-      ],
       "Recovery phone number": [
         ""
       ],
@@ -7183,8 +7174,8 @@
       "Calendar URL": [
         "Enllaç del calendari"
       ],
-      "You can subscribe to someone else's calendar by pasting its URL below. This will give you access to a read-only version of this calendar.\n${ kbLink }": [
-        "Us podeu subscriure al calendari d'algú altre enganxant la seva URL a sota. Això us donarà accés a una versió de només lectura d'aquest calendari.\n${ kbLink }"
+      "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Subscribed calendars.\n${ kbLink }": [
+        ""
       ]
     },
     "Subscribe to calendar modal description": {
@@ -7821,6 +7812,9 @@
       ],
       "Enable keyboard shortcuts": [
         "Activar les dreceres de teclat"
+      ],
+      "Encrypted data": [
+        ""
       ],
       "Encryption & keys": [
         "Xifratge i claus"

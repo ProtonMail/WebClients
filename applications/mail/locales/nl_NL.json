@@ -209,9 +209,6 @@
       "Create new message": [
         ""
       ],
-      "Create recovery phrase": [
-        ""
-      ],
       "Custom filter": [
         "Aangepaste filter"
       ],
@@ -327,6 +324,9 @@
       ],
       "Forward as attachment": [
         "Doorsturen als bijlage"
+      ],
+      "Generate recovery phrase": [
+        ""
       ],
       "Get started": [
         "Aan de slag"
@@ -1389,26 +1389,26 @@
       "(Attendance optional)": [
         ""
       ],
-      "Adding occurrences to an event is not supported for the moment.": [
-        "Herhalingen toevoegen aan een afspraak wordt momenteel niet ondersteund."
+      "Adding occurrences to an event is not supported for the moment": [
+        ""
       ],
       "An occurrence has been added to the event ${ veventIcsTitle }": [
         "Een herhaling is toegevoegd aan de afspraak ${ veventIcsTitle }"
       ],
-      "Event refreshing is not supported for the moment.": [
-        "Afspraak verversen wordt momenteel niet ondersteund."
+      "Event refreshing is not supported for the moment": [
+        ""
       ],
-      "Event rescheduling is not supported for the moment.": [
-        "Afspraakherplanning wordt momenteel niet ondersteund."
+      "Event rescheduling is not supported for the moment": [
+        ""
       ],
-      "The sender of this email has not been invited to this event and cannot be added as a participant.": [
-        "De afzender van deze e-mail is niet uitgenodigd voor deze afspraak en kan niet worden toegevoegd als deelnemer."
+      "The sender of this email has not been invited to this event and cannot be added as a participant": [
+        ""
       ],
-      "This answer cannot be added to ${ calendarAppName } as we only support answers to all events of a series for the moment.": [
-        "Dit antwoord kan niet worden toegevoegd aan ${ calendarAppName } , omdat we alleen antwoorden op alle gebeurtenissen van een serie ondersteunen op dit moment."
+      "This answer cannot be added to ${ calendarAppName } as we only support answers to all events of a series for the moment": [
+        ""
       ],
-      "This event has already happened.": [
-        "Deze afspraak is al gebeurd."
+      "This event has already happened": [
+        ""
       ],
       "This event has been cancelled.": [
         "Deze afspraak is geannuleerd."
@@ -1416,8 +1416,8 @@
       "This event has been updated.": [
         "Dit event werd geüpdatet."
       ],
-      "This event is currently happening.": [
-        "Deze afspraak is momenteel bezig."
+      "This event is currently happening": [
+        ""
       ],
       "This invitation is out of date. The event has been cancelled.": [
         "Deze uitnodiging is verouderd. De afspraak is geannuleerd."
@@ -1446,8 +1446,8 @@
       "You already tentatively accepted this invitation.": [
         ""
       ],
-      "Your email address is not in the participants list.": [
-        "Het e-mailadres staat niet in de lijst met deelnemers."
+      "Your email address is not in the participants list": [
+        ""
       ]
     },
     "Calendar status": {
@@ -1460,9 +1460,6 @@
     },
     "Calendar subscription not synced error": {
       "Calendar could not be decrypted": [
-        ""
-      ],
-      "Calendar could not be found": [
         ""
       ],
       "Calendar is syncing": [
@@ -3234,9 +3231,6 @@
       "Create in": [
         ""
       ],
-      "Create recovery phrase": [
-        ""
-      ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         ""
       ],
@@ -3395,6 +3389,9 @@
       ],
       "Full-featured VPN with speed up to 10 Gbps.": [
         "Volledige VPN met snelheid tot 10 Gbps."
+      ],
+      "Generate recovery phrase": [
+        ""
       ],
       "Get more storage and premium features.": [
         ""

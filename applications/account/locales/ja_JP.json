@@ -31,11 +31,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } ショップ"
       ],
-      "Activate": [
-        "有効化"
-      ],
       "activate": [
         "アクティベート"
+      ],
+      "Activate": [
+        "有効化"
       ],
       "Activate ${ Name }@pm.me": [
         "${ Name }@pm.me を有効化"
@@ -51,6 +51,9 @@
       ],
       "Add address": [
         "アドレスを追加"
+      ],
+      "Add calendar": [
+        ""
       ],
       "Add condition": [
         "条件を追加"
@@ -223,12 +226,6 @@
       "Create link": [
         "リンクを作成"
       ],
-      "Create new recovery phrase": [
-        "リカバリーフレーズを新規作成"
-      ],
-      "Create new recovery phrase?": [
-        "リカバリーフレーズを新規作成しますか？"
-      ],
       "Customize": [
         "カスタマイズ"
       ],
@@ -347,6 +344,15 @@
         "フォント"
       ],
       "Generate key": [
+        ""
+      ],
+      "Generate new recovery phrase": [
+        ""
+      ],
+      "Generate new recovery phrase?": [
+        ""
+      ],
+      "Generate recovery phrase": [
         ""
       ],
       "Get ProtonVPN Plus": [
@@ -501,6 +507,9 @@
       ],
       "Reconnect": [
         "再接続"
+      ],
+      "Recover data": [
+        ""
       ],
       "Refresh status": [
         "ステータスを更新"
@@ -696,9 +705,6 @@
       ],
       "Submit": [
         "送信"
-      ],
-      "Subscribe to calendar": [
-        "カレンダーに登録"
       ],
       "Support": [
         "サポート"
@@ -1278,7 +1284,7 @@
       ]
     },
     "Calendar limit warning": {
-      "You have reached the maximum of ${ calendarsLimit } calendar.": [
+      "You have reached the maximum of ${ calendarsLimit } personal calendar.": [
         ""
       ],
       "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } subscribed calendar.": [
@@ -1304,9 +1310,6 @@
     },
     "Calendar subscription not synced error": {
       "Calendar could not be decrypted": [
-        ""
-      ],
-      "Calendar could not be found": [
         ""
       ],
       "Calendar is syncing": [
@@ -3294,7 +3297,7 @@
         "ProtonMail で独自ドメイン宛のメールを受信するには、まず次の MX レコードを DNS に追加する必要があります。 これは通常、ドメイン名登録のコントロールパネルから行うことができます。"
       ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
-        "あなたの新しいアドレスからメールの送受信を開始する前に、それらの暗号化キーを作成する必要があります。"
+        "新しいアドレスからメールの送受信を開始する前に、暗号化キーを作成する必要があります。"
       ],
       "Billed as ${ billedPrice } every 2 years": [
         "2年ごとに ${ billedPrice } のお支払い"
@@ -3380,9 +3383,6 @@
       "Create in": [
         ""
       ],
-      "Creating a new recovery phrase will deactivate your old one.": [
-        "新たなリカバリーフレーズを作成すると古いものは無効化されます。"
-      ],
       "Creating your Proton account": [
         "Proton アカウントを作成中"
       ],
@@ -3421,15 +3421,6 @@
       ],
       "Delete link?": [
         "リンクを削除"
-      ],
-      "Disabling this will prevent this email from being used for account recovery.": [
-        "これを無効にするとアカウントの回復用にメールが使用されなくなります."
-      ],
-      "Disabling this will prevent this phone number from being used for account recovery.": [
-        "これを無効にするとアカウントの回復用に電話番号が使用されなくなります."
-      ],
-      "Disabling this will prevent your recovery phrase from being used for account recovery.": [
-        "これを無効にするとアカウントの回復用にリカバリーフレーズが使用されなくなります。"
       ],
       "Discount applied to your subscription with coupon ${ code }": [
         "クーポン ${ code } 付きのサブスクリプションに割引が適用されます"
@@ -3578,6 +3569,9 @@
       "Full-featured VPN with speed up to 10 Gbps.": [
         "最大 10 Gbps を備えたフル機能の VPN。"
       ],
+      "Generating a new recovery phrase will deactivate your old one.": [
+        ""
+      ],
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
         "あなたの公開鍵を友達に渡すか、誰もがあなたにエンドツーエンドの暗号化メールを送れるようにオンラインで公開しましょう！"
       ],
@@ -3630,7 +3624,7 @@
         ""
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to log into your account. Each code can only be used once.": [
-        "2 要素認証機器を紛失した場合、6桁の2 要素認証パスコード代わりに、以下のコードを使用してアカウントにログインすることができます。 各コードは一度しか使用できません。"
+        "2 要素認証機器を紛失した場合、6 桁の2 要素認証パスコード代わりに、以下のコードを使用してアカウントにログインすることができます。各コードは一度しか使用できません。"
       ],
       "If you proceed with the downgrade, you will lose access to ProtonMail and ProtonVPN paid features.": [
         "ダウングレードすると、ProtonMail と ProtonVPN の有料機能が使えなくなります。"
@@ -3678,7 +3672,7 @@
         "重要：ダウンロードした秘密鍵の送信や、安全でないメディアに保存して盗まれる等すると、アカウントのセキュリティが危険にさらされる可能性があります。"
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
-        "重要：回復用コードの保存を確認してください。 そうしないと、2 要素認証機器を紛失した場合、アカウントへのアクセスが永久に失われます。"
+        "重要: 回復用コードを確実に保存してください。適切に保存されていない場合、2 要素認証デバイスを紛失した場合、アカウントへのアクセスが永久に失われます。"
       ],
       "IMPORTANT: Some registrars do not accept CNAME values with a period at the end (while others require it). If your registrar does not accept your CNAME records, please delete the period at the end of each CNAME value and try again.": [
         ""
@@ -4486,6 +4480,9 @@
       ],
       "Your Block List is empty.": [
         "ブロックリストは空です。"
+      ],
+      "Your data is encrypted, you can recover your data by reactivating your keys.": [
+        ""
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         ""
@@ -5453,17 +5450,14 @@
       "Recovery code": [
         "回復用コード"
       ],
-      "Recovery email": [
-        "回復用メールアドレス"
-      ],
       "Recovery email address": [
         ""
       ],
       "Recovery file": [
         ""
       ],
-      "Recovery phone": [
-        "回復用電話番号"
+      "Recovery phone number": [
+        ""
       ],
       "Recovery phrase": [
         "リカバリーフレーズ"
@@ -5668,9 +5662,6 @@
       ]
     },
     "label": {
-      "Phone number": [
-        "電話番号"
-      ],
       "Recovery phone number": [
         ""
       ],
@@ -7111,7 +7102,7 @@
       "Calendar URL": [
         ""
       ],
-      "You can subscribe to someone else's calendar by pasting its URL below. This will give you access to a read-only version of this calendar.\n${ kbLink }": [
+      "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Subscribed calendars.\n${ kbLink }": [
         ""
       ]
     },
@@ -7747,6 +7738,9 @@
       ],
       "Enable keyboard shortcuts": [
         "キーボードショートカットを有効にする"
+      ],
+      "Encrypted data": [
+        ""
       ],
       "Encryption & keys": [
         ""

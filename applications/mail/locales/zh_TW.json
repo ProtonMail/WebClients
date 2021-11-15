@@ -209,9 +209,6 @@
       "Create new message": [
         "建立新訊息"
       ],
-      "Create recovery phrase": [
-        "建立復原短語"
-      ],
       "Custom filter": [
         "自訂篩選器"
       ],
@@ -325,6 +322,9 @@
       ],
       "Forward as attachment": [
         "以附件形式轉寄"
+      ],
+      "Generate recovery phrase": [
+        ""
       ],
       "Get started": [
         "入門指南"
@@ -1381,26 +1381,26 @@
       "(Attendance optional)": [
         "（出席可選）"
       ],
-      "Adding occurrences to an event is not supported for the moment.": [
-        "新增重複次數到一個事件暫時未受支援。"
+      "Adding occurrences to an event is not supported for the moment": [
+        ""
       ],
       "An occurrence has been added to the event ${ veventIcsTitle }": [
         "事件 ${ veventIcsTitle } 已新增一次"
       ],
-      "Event refreshing is not supported for the moment.": [
-        "事件重新整理暫時未受支援。"
+      "Event refreshing is not supported for the moment": [
+        ""
       ],
-      "Event rescheduling is not supported for the moment.": [
-        "事件重新排程暫時未受支援。"
+      "Event rescheduling is not supported for the moment": [
+        ""
       ],
-      "The sender of this email has not been invited to this event and cannot be added as a participant.": [
-        "此電子郵件的寄件人未獲邀出席此事件，因此無法新增為參與者。"
+      "The sender of this email has not been invited to this event and cannot be added as a participant": [
+        ""
       ],
-      "This answer cannot be added to ${ calendarAppName } as we only support answers to all events of a series for the moment.": [
-        "此回答未能新增至 ${ calendarAppName }，因為我們暫時僅支援回答一系列中的全部事件。"
+      "This answer cannot be added to ${ calendarAppName } as we only support answers to all events of a series for the moment": [
+        ""
       ],
-      "This event has already happened.": [
-        "此事件已過去。"
+      "This event has already happened": [
+        ""
       ],
       "This event has been cancelled.": [
         "此事件已取消。"
@@ -1408,8 +1408,8 @@
       "This event has been updated.": [
         "此事件已更新。"
       ],
-      "This event is currently happening.": [
-        "此事件正值進行。"
+      "This event is currently happening": [
+        ""
       ],
       "This invitation is out of date. The event has been cancelled.": [
         "此邀請已過時。此事件已取消。"
@@ -1438,8 +1438,8 @@
       "You already tentatively accepted this invitation.": [
         "您已暫時接受此邀請。"
       ],
-      "Your email address is not in the participants list.": [
-        "您的電子郵件地址不在參與者清單中。"
+      "Your email address is not in the participants list": [
+        ""
       ]
     },
     "Calendar status": {
@@ -1452,9 +1452,6 @@
     },
     "Calendar subscription not synced error": {
       "Calendar could not be decrypted": [
-        ""
-      ],
-      "Calendar could not be found": [
         ""
       ],
       "Calendar is syncing": [
@@ -3168,9 +3165,6 @@
       "Create in": [
         ""
       ],
-      "Create recovery phrase": [
-        "建立復原短語"
-      ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         ""
       ],
@@ -3323,6 +3317,9 @@
       ],
       "Full-featured VPN with speed up to 10 Gbps.": [
         "全功能的 VPN，速度高達 10 Gbps。"
+      ],
+      "Generate recovery phrase": [
+        ""
       ],
       "Get more storage and premium features.": [
         "取得更多儲存空間與進階功能。"

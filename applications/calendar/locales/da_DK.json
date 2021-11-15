@@ -116,6 +116,9 @@
       "Continue": [
         "Fortsæt"
       ],
+      "Continue import": [
+        "Fortsæt import"
+      ],
       "Continue with Google": [
         "Fortsæt med Google"
       ],
@@ -124,6 +127,9 @@
       ],
       "Create": [
         "Opret"
+      ],
+      "Create calendar": [
+        "Opret kalender"
       ],
       "Create event": [
         "Opret begivenhed"
@@ -231,6 +237,9 @@
       ],
       "Import": [
         "Importér"
+      ],
+      "Import events": [
+        "Importer begivenheder"
       ],
       "Import from .csv or vCard": [
         "Importer fra .csv eller vCard"
@@ -525,11 +534,6 @@
         "Du har ikke nogen grupper."
       ]
     },
-    "Add calendar icon tooltip": {
-      "Create calendar": [
-        "Opret kalender"
-      ]
-    },
     "Addon": {
       "+ ${ addresses } email address": [
         "+ ${ addresses } e-mailadresse",
@@ -617,6 +621,9 @@
       "By leaving now, some contacts may not be imported": [
         "Ved at afslutte nu vil nogle kontakter måske ikke blive importeret"
       ],
+      "By leaving now, some events may not be imported": [
+        "Ved at forlade nu, vil nogle begivenheder måske ikke blive importeret"
+      ],
       "By leaving now, you will lose your event.": [
         "Ved at forlade nu, mister du din begivenhed."
       ]
@@ -630,6 +637,26 @@
       ],
       "Proton applications": [
         "Proton-applikationer"
+      ]
+    },
+    "Attached ics file error": {
+      "Empty ICS file": [
+        "Tom ICS-fil"
+      ],
+      "Invalid event": [
+        "Ugyldig begivenhed"
+      ],
+      "Invalid ICS file": [
+        "Ugyldig ICS-fil"
+      ],
+      "Invalid method": [
+        "Ugyldig metode"
+      ],
+      "Unsupported calendar component": [
+        "Ikke-understøttet kalender-komponent"
+      ],
+      "Unsupported event": [
+        "Ikke-understøttet begivenhed"
       ]
     },
     "Attendee role": {
@@ -888,6 +915,14 @@
         "Du har foreløbigt accepteret invitationen"
       ]
     },
+    "Calendar sidebar dropdown item": {
+      "Add calendar from URL": [
+        "Tilføj kalender fra URL"
+      ],
+      "More options": [
+        "Flere muligheder"
+      ]
+    },
     "Calendar status": {
       "Not synced": [
         "Ikke synkroniseret"
@@ -899,9 +934,6 @@
     "Calendar subscription not synced error": {
       "Calendar could not be decrypted": [
         "Kalender kunne ikke dekrypteres"
-      ],
-      "Calendar could not be found": [
-        "Kalender kunne ikke findes"
       ],
       "Calendar is syncing": [
         "Kalender synkroniserer"
@@ -1140,6 +1172,9 @@
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Benyt Træk og Slip for at rangordne fletningsprioritet mellem kontakter. Afmarkér de kontakter du ikke vil sammenflette."
       ],
+      "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
+        "Du kan importere begivenheder i iCal format (ICS-fil). Denne fil skal have en maksimal størrelse på ${ MAX_IMPORT_FILE_SIZE_STRING } og have op til ${ MAX_IMPORT_EVENTS_STRING } begivenheder. Hvis din fil er større, skal du opdele den i mindre filer."
+      ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Du kan markere de kontakter til sletning, som du hverken ønsker at flette eller beholde.\nSletning vil kun ske, når der er klikket på fletningsknappen"
       ]
@@ -1181,6 +1216,11 @@
       ],
       "Upload / download files": [
         "Upload / download filer"
+      ]
+    },
+    "Dropwdown action icon tooltip": {
+      "Add calendar": [
+        "Tilføj kalender"
       ]
     },
     "Duration": {
@@ -1481,7 +1521,7 @@
         "Nogle grupper har ingen kontakter: ${ noContactGroupList } "
       ],
       "Organization not recognized. Try again.": [
-        ""
+        "Organisation ikke genkendt. Prøv igen."
       ],
       "Passwords do not match": [
         "Adgangskoder matcher ikke"
@@ -1615,8 +1655,38 @@
       ]
     },
     "Error importing calendar": {
+      "${ CALENDAR_APP_NAME } only supports importing calendars with iCal version 2.0.": [
+        "${ CALENDAR_APP_NAME } understøtter kun import af kalendere med iCal version 2.0."
+      ],
+      "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
+        "Der opstod en fejl ved læsning af din fil ${ formattedFilename }. Filen har ikke det rigtige format."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
+        "Der opstod en fejl under upload af din fil ${ formattedFilename }. Maksimal filstørrelse er ${ MAX_IMPORT_FILE_SIZE_STRING }."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Only ICS file formats are allowed.": [
+        "Der opstod en fejl under upload af din fil ${ formattedFilename }. Kun ICS-filformater er tilladt."
+      ],
+      "An error occurred uploading your file. No file has been selected.": [
+        "Der opstod en fejl under upload af din fil. Ingen fil er blevet valgt."
+      ],
       "An unexpected error occurred. Import must be restarted.": [
         "En uventet fejl opstod. Import skal genstartes."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } events.": [
+        "Din fil ${ formattedFilename } indeholder mere end ${ MAX_IMPORT_EVENTS_STRING } begivenheder."
+      ],
+      "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
+        "Din fil ${ formattedFilename } har en ugyldig metode og kan ikke importeres."
+      ],
+      "Your file ${ formattedFilename } has no events to be imported.": [
+        "Din fil ${ formattedFilename } har ingen begivenheder til import."
+      ],
+      "Your file ${ formattedFilename } is empty.": [
+        "Din fil ${ formattedFilename } er tom."
+      ],
+      "Your file ${ formattedFilename } is not a calendar.": [
+        "Din fil ${ formattedFilename } er ikke en kalender."
       ]
     },
     "Error importing contact": {
@@ -1650,12 +1720,113 @@
         "Din fil ${ formattedFilename } er tom."
       ]
     },
+    "Error importing event": {
+      "Bad format. Component cannot be read.": [
+        "Forkert format. Komponent kan ikke læses."
+      ],
+      "Calendar": [
+        "Kalender"
+      ],
+      "Calendar timezone not supported": [
+        "Kalendertidszone understøttes ikke"
+      ],
+      "Component with wrong format": [
+        "Komponent med forkert format"
+      ],
+      "Custom timezone": [
+        "Brugerdefineret tidszone"
+      ],
+      "Edited event not supported": [
+        "Redigeret begivenhed understøttes ikke"
+      ],
+      "Element": [
+        "Element"
+      ],
+      "Encryption failed": [
+        "Kryptering mislykkedes"
+      ],
+      "End time out of bounds": [
+        "Sluttid uden for grænserne"
+      ],
+      "Event": [
+        "Begivenhed"
+      ],
+      "Event validation failed": [
+        "Validering af begivenhed mislykkedes"
+      ],
+      "Floating times not supported": [
+        "Flydende tider understøttes ikke"
+      ],
+      "Free-busy time information": [
+        "Fri-optaget tidsinformation"
+      ],
+      "Invalid event": [
+        "Ugyldig begivenhed"
+      ],
+      "Journal entry": [
+        "Journaloptegnelse"
+      ],
+      "Malformed all-day event": [
+        "Forkert udformet heldagsbegivenhed"
+      ],
+      "Malformed end time": [
+        "Forkert udformet sluttidspunkt"
+      ],
+      "Malformed recurring event": [
+        "Forkert udformet tilbagevendende begivenhed"
+      ],
+      "Malformed start time": [
+        "Forkert udformet starttid"
+      ],
+      "Missing start time": [
+        "Manglende starttidspunkt"
+      ],
+      "no UID, title or start time": [
+        "ingen UID, titel eller starttid"
+      ],
+      "Non-Gregorian": [
+        "Ikke-gregoriansk"
+      ],
+      "Notification out of bounds": [
+        "Notifikation uden for grænserne"
+      ],
+      "Original recurring event could not be found": [
+        "Oprindelig tilbagevendende begivenhed kunne ikke findes"
+      ],
+      "Recurring event has no occurrences": [
+        "Tilbagevendende begivenhed har ingen forekomster"
+      ],
+      "Recurring rule not supported": [
+        "Tilbagevendende regel understøttes ikke"
+      ],
+      "Start time out of bounds": [
+        "Starttiden uden for grænserne"
+      ],
+      "Timezone": [
+        "Tidszone"
+      ],
+      "Timezone not supported": [
+        "Tidszone understøttes ikke"
+      ],
+      "To-do entry": [
+        "Opgavepunkt"
+      ],
+      "Unknown": [
+        "Ukendt"
+      ],
+      "Unsupported event": [
+        "Ikke-understøttet begivenhed"
+      ]
+    },
     "Error message": {
       "Brace yourself till we get the error fixed.": [
         "Fejlen rettes hurtigst muligt. Tak for din tålmodighed."
       ],
       "Error: ${ errorMessage }": [
         "Fejl: ${ errorMessage }"
+      ],
+      "Invalid URL": [
+        "Ugyldig URL"
       ],
       "Oops, something went wrong": [
         "Ups, noget gik galt"
@@ -1709,6 +1880,44 @@
     "Event info. Organizer name": {
       "You": [
         "Dig"
+      ]
+    },
+    "Event invitation error": {
+      "Attached ICS file could not be decrypted": [
+        "Vedhæftet ICS-fil kunne ikke dekrypteres"
+      ],
+      "Attached ICS file could not be parsed": [
+        "Vedhæftet ICS-fil kunne ikke fortolkes"
+      ],
+      "Invalid invitation": [
+        "Ugyldig invitation"
+      ],
+      "Invalid response": [
+        "Ugyldigt svar"
+      ],
+      "Unexpected error": [
+        "Uventet fejl"
+      ],
+      "Unsupported invitation": [
+        "Ikke-understøttet invitation"
+      ],
+      "Unsupported response": [
+        "Ikke-understøttet svar"
+      ],
+      "We could not cancel the event in your calendar": [
+        "Vi kunne ikke annullere begivenheden i din kalender"
+      ],
+      "We could not retrieve the event from your calendar": [
+        "Vi kunne ikke hente begivenheden fra din kalender"
+      ],
+      "We could not update the event in your calendar": [
+        "Vi kunne ikke opdatere begivenheden i din kalender"
+      ],
+      "Your answer was sent, but the event could not be added to your calendar": [
+        "Dit svar blev sendt, men begivenheden kunne ikke tilføjes til din kalender"
+      ],
+      "Your answer was sent, but the event could not be updated in your calendar": [
+        "Dit svar blev sendt, men begivenheden kunne ikke opdateres i din kalender"
       ]
     },
     "Event popover close button": {
@@ -1817,13 +2026,53 @@
       ]
     },
     "Import calendar": {
+      "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
+        "${ totalImported }/${ totalToImport } begivenhed krypteret og føjet til din kalender",
+        "${ totalImported }/${ totalToImport } begivenheder krypteret og føjet til din kalender"
+      ],
+      "An error occurred while encrypting and adding your event. No event could be imported.": [
+        "Der opstod en fejl under kryptering og tilføjelse af din begivenhed. Ingen begivenhed kunne importeres.",
+        "Der opstod en fejl under kryptering og tilføjelse af dine begivenheder. Ingen begivenheder kunne importeres."
+      ],
+      "An error occurred while encrypting and adding your events. ${ totalImported } out of ${ totalToImport } events successfully imported.": [
+        "Der opstod en fejl under kryptering og tilføjelse af dine begivenheder. ${ totalImported } ud af ${ totalToImport } begivenheder blev importeret."
+      ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "Kryptering og tilføjelse af kontakter: ${ totalImported }/${ totalToImport }"
+      ],
+      "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
+        "Kryptering og tilføjelse af begivenheder til din kalender: ${ totalImported }/${ totalToImport }"
+      ],
+      "Event successfully imported. The imported event will now appear in your calendar.": [
+        "Begivenhed importeret. Den importerede begivenhed vises nu i din kalender.",
+        "Begivenheder importeret. De importerede begivenheder vises nu i din kalender."
+      ],
+      "Please don't close the tab before the importing process is finished.": [
+        "Luk ikke fanen før importprocessen er afsluttet."
       ]
     },
     "Import calendar warning": {
+      "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
+        "${ CALENDAR_APP_NAME } understøtter i øjeblikket ikke visse begivenhedstyper, detaljer og formater."
+      ],
       "vCard versions < 3.0": [
         "vCard versioner < 3.0"
+      ]
+    },
+    "Import calendar; import invitation": {
+      "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your Proton email address.": [
+        "Importerede invitationer vises i ${ CALENDAR_APP_NAME } som simple begivenheder uden oplysninger om arrangør og deltagere. Hvis du vil have opdateringer om begivenhederne og se deltagerne, skal du bede arrangørerne om at invitere dig med din Proton-e-mailadresse."
+      ],
+      "This file contains an event invitation:": [
+        "Denne fil indeholder en invitation til en begivenhed:",
+        "Denne fil indeholder invitationer til begivenhed:"
+      ],
+      "This file contains an invitation response:": [
+        "Denne fil indeholder et svar på en invitation:",
+        "Denne fil indeholder svar på en invitation:"
+      ],
+      "This file contains some data that we cannot import:": [
+        "Denne fil indeholder nogle data, som vi ikke kan importere:"
       ]
     },
     "Import contact": {
@@ -1873,8 +2122,17 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } ud af ${ totalContacts } kontakter vil ikke blive importeret. Klik for detaljer"
       ],
+      "${ totalEventsDiscarded } out of ${ totalEvents } events will not be imported. Expand for details.": [
+        "${ totalEventsDiscarded } ud af ${ totalEvents } begivenheder vil ikke blive importeret. Udvid for detajler."
+      ],
       "No contact can be imported. Click for details": [
         "Ingen kontakt kan importeres. Klik for detaljer"
+      ],
+      "No event can be imported. Expand for details.": [
+        "Ingen begivenhed kan importeres. Klik for detaljer."
+      ],
+      "Part of your calendar content is not supported and will not be imported.": [
+        "En del af dit kalenderindhold er ikke understøttet og vil ikke blive importeret."
       ]
     },
     "Info": {
@@ -2409,7 +2667,7 @@
         "Vælg det e-mail-format der som standard skal benyttes, når du sender en e-mail til denne e-mailadresse."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit. You can also merge imported calendars with existing Proton calendars.": [
-        ""
+        "Vælg, hvilke kalendere der skal importeres. Der oprettes en ny kalender for hver importeret kalender op til grænsen på 20 kalendere. Du kan også flette importerede kalendere med eksisterende Proton-kalendere."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Servere er utilgængelige. Prøv igen om nogle få minutter"
@@ -3036,7 +3294,7 @@
         "Slutter"
       ],
       "Enter organization name to confirm": [
-        ""
+        "Indtast organisationsnavn for at bekræfte"
       ],
       "Enter the 6-digit code": [
         "Indtast den sekscifrede kode"
@@ -3091,6 +3349,9 @@
       ],
       "Import to email address": [
         "Importer til e-mailadresse"
+      ],
+      "Import to:": [
+        "Importer til:"
       ],
       "Keyboard shortcuts": [
         "Tastaturgenveje"
@@ -3458,12 +3719,12 @@
     },
     "Mail import summary": {
       "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "",
-        ""
+        "Importer alle beskeder fra ${ selectedLabelsCount } ud af ${ totalLabelsCount } etikette siden ${ periodFragment } og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importer alle beskeder fra ${ selectedLabelsCount } ud af ${ totalLabelsCount } etiketter siden ${ periodFragment } og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
       "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "",
-        ""
+        "Importer alle beskeder fra ${ totalLabelsCount } etiketten siden ${ periodFragment } og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importer alle beskeder fra ${ totalLabelsCount } etiketter siden ${ periodFragment } og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }"
       ]
     },
     "Many Others": {
@@ -3473,7 +3734,7 @@
     },
     "Member downgrade modal": {
       "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        ""
+        "Dette vil permanent slette alle underbrugere, konti og data, der er knyttet til din organisation."
       ]
     },
     "Message": {
@@ -3497,9 +3758,25 @@
         "Almindelig tekst"
       ]
     },
+    "Modal action": {
+      "Close": [
+        "Luk"
+      ],
+      "Manage calendars": [
+        "Administrer kalendere"
+      ]
+    },
     "Modal title": {
       "Time zone changed": [
         "Tidszone ændret"
+      ],
+      "Unable to add more calendars": [
+        "Kan ikke tilføje flere kalendere"
+      ]
+    },
+    "Modal title and action": {
+      "Add calendar": [
+        "Tilføj kalender"
       ]
     },
     "Monthly recurring event, frequency": {
@@ -4180,6 +4457,42 @@
         "Din aktuelle lagerplads:"
       ]
     },
+    "Subscribe to calendar modal": {
+      "Calendar URL": [
+        "Kalender-URL"
+      ],
+      "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Subscribed calendars.\n${ kbLink }": [
+        "Hvis du vil abonnere på en ekstern eller offentlig kalender og dens opdateringer, skal du indtaste URL-adressen. En skrivebeskyttet version af kalenderen vil blive tilføjet til dine kalenderabonnementer.\n${ kbLink }"
+      ]
+    },
+    "Subscribe to calendar modal description": {
+      "Learn how to get a private calendar link.": [
+        "Få mere at vide om, hvordan du får et privat kalenderlink."
+      ]
+    },
+    "Subscribed calendar extension warning": {
+      "By using this link, Google will make the calendar you are subscribing to public": [
+        "Bruger du dette link, vil Google offentliggøre den kalender du abonnerer på"
+      ],
+      "This link might be wrong": [
+        "Dette link er muligvis forkert"
+      ]
+    },
+    "Subscribed calendar feature unavailable error": {
+      "Subscribing to a calendar is unavailable at the moment": [
+        "Abonnering på en kalender er ikke tilgængelig i øjeblikket"
+      ]
+    },
+    "Subscribed calendar limit reached modal body": {
+      "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } subscribed calendar.": [
+        "Du har nået det maksimale antal på ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } kalenderabonnement.",
+        "Du har nået det maksimale antal på ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } kalenderabonnementer."
+      ],
+      "You have reached the maximum of ${ personalCalendarLimit } personal calendar.": [
+        "Du har nået det maksimale antal på ${ personalCalendarLimit } personlig kalender.",
+        "Du har nået det maksimale antal på ${ personalCalendarLimit } personlige kalendere."
+      ]
+    },
     "Success": {
       "A cancellation email will be sent to removed participants for all the events in this series.": [
         "En aflysningsmail vil blive sendt til fjernede deltagerne for alle begivenheder i denne serie."
@@ -4514,6 +4827,9 @@
       "Contacts": [
         "Kontakter"
       ],
+      "Continue with partial import?": [
+        "Fortsæt med delvis import?"
+      ],
       "Coupon discount": [
         "Rabatkupon"
       ],
@@ -4565,7 +4881,7 @@
         "Slet begivenhed"
       ],
       "Delete organization?": [
-        ""
+        "Slet organisation?"
       ],
       "Delete recurring event": [
         "Slet tilbagevendende begivenhed"
@@ -4633,8 +4949,18 @@
       "Human verification": [
         "Menneskelig bekræftelse"
       ],
+      "Import as simple event?": [
+        "Importer som simpel begivenhed?",
+        "Importer som simple begivenheder?"
+      ],
       "Import contacts": [
         "Importér kontakter"
+      ],
+      "Import events": [
+        "Importer begivenheder"
+      ],
+      "Import failed": [
+        "Import mislykkedes"
       ],
       "Import groups": [
         "Importer grupper"
@@ -5045,16 +5371,16 @@
     },
     "VPN Plan Feature": {
       "${ n } server": [
-        "",
-        ""
+        "${ n } server",
+        "${ n }+ servere"
       ],
       "${ n } VPN connection": [
-        "",
-        ""
+        "${ n } VPN-forbindelse",
+        "${ n } VPN-forbindelser"
       ],
       "${ numberOfServers } in ${ numberOfCountries } country": [
-        "",
-        ""
+        "${ numberOfServers } i ${ numberOfCountries } land",
+        "${ numberOfServers } i ${ numberOfCountries } lande"
       ]
     },
     "Warning": {
@@ -5094,7 +5420,7 @@
         "Nogle af de kontakter, som skal flettes, udviser fejl. Gennemgå dem individuelt"
       ],
       "The contact data is corrupted and cannot be displayed.": [
-        ""
+        "Kontaktdata er beskadiget og kan ikke vises."
       ],
       "The contact failed to load.": [
         "Kontakten kunne ikke indlæses."

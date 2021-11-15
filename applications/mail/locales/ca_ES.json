@@ -209,9 +209,6 @@
       "Create new message": [
         "Crear un missatge nou"
       ],
-      "Create recovery phrase": [
-        "Crear una frase de recuperació"
-      ],
       "Custom filter": [
         "Filtre personalitzat"
       ],
@@ -266,7 +263,7 @@
         "Descarta"
       ],
       "Dismiss get started checklist": [
-        ""
+        "Descartar la llista de verificació per començar"
       ],
       "Done": [
         "Fet"
@@ -327,6 +324,9 @@
       ],
       "Forward as attachment": [
         "Reenviar com a adjunt"
+      ],
+      "Generate recovery phrase": [
+        "Generar una frase de recuperació"
       ],
       "Get started": [
         "Començar"
@@ -576,7 +576,7 @@
         "Obrir el calendari"
       ],
       "Open get started checklist modal": [
-        ""
+        "Obrir la finestra de llista de comprovació per a començar"
       ],
       "Open navigation": [
         "Obre la navegació"
@@ -823,7 +823,7 @@
         "Proveu amb un altre mètode"
       ],
       "Turn on tracker protection": [
-        ""
+        "Activar la protecció de rastreig"
       ],
       "Underline": [
         "Subratllat"
@@ -850,7 +850,7 @@
         "Actualitzar"
       ],
       "Upgrade now": [
-        ""
+        "Actualitzar ara"
       ],
       "Upload picture": [
         "Carregar imatge"
@@ -1389,26 +1389,26 @@
       "(Attendance optional)": [
         "(Assistència opcional)"
       ],
-      "Adding occurrences to an event is not supported for the moment.": [
-        "Actualment no s’admet afegir ocurrències a un esdeveniment."
+      "Adding occurrences to an event is not supported for the moment": [
+        ""
       ],
       "An occurrence has been added to the event ${ veventIcsTitle }": [
         "S'ha afegit una ocurrència a l'esdeveniment ${ veventIcsTitle }"
       ],
-      "Event refreshing is not supported for the moment.": [
-        "L'actualització d'esdeveniments no és compatible de moment."
+      "Event refreshing is not supported for the moment": [
+        ""
       ],
-      "Event rescheduling is not supported for the moment.": [
-        "La reprogramació d'esdeveniments no és compatible de moment."
+      "Event rescheduling is not supported for the moment": [
+        ""
       ],
-      "The sender of this email has not been invited to this event and cannot be added as a participant.": [
-        "El remitent d'aquest correu electrònic no ha estat convidat a aquest esdeveniment i no es pot afegir com a participant."
+      "The sender of this email has not been invited to this event and cannot be added as a participant": [
+        ""
       ],
-      "This answer cannot be added to ${ calendarAppName } as we only support answers to all events of a series for the moment.": [
-        "Aquesta resposta no es pot afegir a ${ calendarAppName } perquè per ara només admetem respostes per a tots els esdeveniments d'una sèrie."
+      "This answer cannot be added to ${ calendarAppName } as we only support answers to all events of a series for the moment": [
+        ""
       ],
-      "This event has already happened.": [
-        "Aquest esdeveniment ja ha ocorregut."
+      "This event has already happened": [
+        ""
       ],
       "This event has been cancelled.": [
         "Aquest esdeveniment ha estat cancel·lat."
@@ -1416,8 +1416,8 @@
       "This event has been updated.": [
         "Aquest esdeveniment ha estat actualitzat."
       ],
-      "This event is currently happening.": [
-        "Aquest esdeveniment està succeint actualment."
+      "This event is currently happening": [
+        ""
       ],
       "This invitation is out of date. The event has been cancelled.": [
         "Aquesta invitació no està actualitzada. L'esdeveniment s'ha cancel·lat."
@@ -1446,8 +1446,8 @@
       "You already tentatively accepted this invitation.": [
         "Ja heu acceptat provisionalment aquesta invitació."
       ],
-      "Your email address is not in the participants list.": [
-        "La vostra adreça de correu electrònic no es troba a la llista de participants."
+      "Your email address is not in the participants list": [
+        ""
       ]
     },
     "Calendar status": {
@@ -1460,9 +1460,6 @@
     },
     "Calendar subscription not synced error": {
       "Calendar could not be decrypted": [
-        ""
-      ],
-      "Calendar could not be found": [
         ""
       ],
       "Calendar is syncing": [
@@ -2115,7 +2112,7 @@
         "Alguns grups no tenen contactes: ${ noContactGroupList } "
       ],
       "Organization not recognized. Try again.": [
-        ""
+        "Organització no reconeguda. Torneu a intentar-ho."
       ],
       "Passwords do not match": [
         "Les contrasenyes no coincideixen"
@@ -2646,55 +2643,55 @@
         ""
       ],
       "Only ${ days } day left": [
-        "",
-        ""
+        "Només queda ${ days } dia",
+        "Només queden ${ days } dies"
       ]
     },
     "Get started checklist instructions": {
       "Available on iOS and Android.": [
-        ""
+        "Disponible per iOS i Android."
       ],
       "Get the ${ protonMailAppName } mobile app": [
-        ""
+        "Obteniu l'aplicació mòbil de ${ protonMailAppName }"
       ],
       "Import contacts or emails": [
-        ""
+        "Importeu contactes o correus electrònics"
       ],
       "Import your contacts or messages": [
-        ""
+        "Importeu els vostres contactes o missatges"
       ],
       "Quickly transfer your contacts or emails from any provider using our Easy Switch import assistant.": [
-        ""
+        "Transferiu ràpidament els vostres contactes o correus electrònics de qualsevol proveïdor utilitzant el nostre assistent d'importació Easy Switch."
       ],
       "Sign into the mobile app to complete the action": [
-        ""
+        "Inicieu sessió a l'aplicació mòbil per completar aquesta acció"
       ],
       "Using your mobile device, scan this QR code or visit": [
-        ""
+        "Utilitzant el vostre dispositiu mòbil, escanegeu aquest codi QR o visiteu"
       ]
     },
     "Get started checklist item": {
       "Get mobile app": [
-        ""
+        "Obtenir l'aplicació mòbil"
       ],
       "Import contacts or emails": [
         ""
       ],
       "Send a message": [
-        ""
+        "Enviar un missatge"
       ],
       "Set up a recovery method": [
-        ""
+        "Configurar un mètode de recuperació"
       ]
     },
     "Get started checklist spotlight": {
       "You can access the checklist anytime from here": [
-        ""
+        "Podeu accedir a la llista de comprovació en qualsevol moment des d'aquí"
       ]
     },
     "Get started checklist title": {
       "Get started": [
-        ""
+        "Començar"
       ]
     },
     "Group": {
@@ -3234,9 +3231,6 @@
       "Create in": [
         "Crear a"
       ],
-      "Create recovery phrase": [
-        "Crear una frase de recuperació"
-      ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "S'admeten fitxers CSV d'Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora i algunes altres aplicacions així com els formats vCard 3.1 i 4.0 (codificació UTF-8)."
       ],
@@ -3395,6 +3389,9 @@
       ],
       "Full-featured VPN with speed up to 10 Gbps.": [
         "VPN completa amb velocitat de fins a 10 Gbps."
+      ],
+      "Generate recovery phrase": [
+        ""
       ],
       "Get more storage and premium features.": [
         "Obteniu més emmagatzematge i funcionalitats premium."
@@ -5108,7 +5105,7 @@
         ""
       ],
       "Almost there": [
-        ""
+        "Ja gairebé està"
       ],
       "Creating new calendars": [
         ""
@@ -6391,16 +6388,16 @@
     },
     "Time period": {
       "account creation date": [
-        ""
+        "data de creació del compte"
       ],
       "the last 12 months": [
-        ""
+        "els darrers 12 mesos"
       ],
       "the last 3 months": [
-        ""
+        "els darrers 3 mesos"
       ],
       "the last month": [
-        ""
+        "el darrer mes"
       ]
     },
     "Time unit": {
@@ -6618,7 +6615,7 @@
         "Eliminar missatge"
       ],
       "Delete organization?": [
-        ""
+        "Eliminar l'organització?"
       ],
       "Deleting contacts": [
         "Eliminant contactes"
