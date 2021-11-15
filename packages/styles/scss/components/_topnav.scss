@@ -1,4 +1,4 @@
-$breakpoint-topnav-text-adaptation: 1200 !default; // used to display or not text in top navigation
+$breakpoint-topnav-text-adaptation: 1320 !default; // used to display or not text in top navigation
 
 .topnav-link {
 	&--blackfriday::before {
@@ -102,7 +102,7 @@ $breakpoint-topnav-text-adaptation: 1200 !default; // used to display or not tex
 	}
 }
 
-@include respond-to(870) {
+@include respond-to(940) {
 	@include collapse-all-no-exception;
 }
 
