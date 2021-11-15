@@ -31,11 +31,11 @@
       "${ BRAND_NAME } shop": [
         "$ Loja { BRAND_NAME }"
       ],
-      "Activate": [
-        "Activar"
-      ],
       "activate": [
         "activar"
+      ],
+      "Activate": [
+        "Activar"
       ],
       "Activate ${ Name }@pm.me": [
         "Activar ${ Name }@pm.me"
@@ -51,6 +51,9 @@
       ],
       "Add address": [
         "Adicionar endereço"
+      ],
+      "Add calendar": [
+        ""
       ],
       "Add condition": [
         "Adicionar condição"
@@ -223,12 +226,6 @@
       "Create link": [
         "Criar ligação"
       ],
-      "Create new recovery phrase": [
-        "Criar nova frase de recuperação"
-      ],
-      "Create new recovery phrase?": [
-        "Criar nova frase de recuperação?"
-      ],
       "Customize": [
         "Personalizar"
       ],
@@ -347,6 +344,15 @@
         "Letra"
       ],
       "Generate key": [
+        ""
+      ],
+      "Generate new recovery phrase": [
+        ""
+      ],
+      "Generate new recovery phrase?": [
+        ""
+      ],
+      "Generate recovery phrase": [
         ""
       ],
       "Get ProtonVPN Plus": [
@@ -501,6 +507,9 @@
       ],
       "Reconnect": [
         "Religar"
+      ],
+      "Recover data": [
+        ""
       ],
       "Refresh status": [
         "Actualizar estado"
@@ -696,9 +705,6 @@
       ],
       "Submit": [
         "Submeter"
-      ],
-      "Subscribe to calendar": [
-        "Subscrever a agenda"
       ],
       "Support": [
         "Apoio ao cliente"
@@ -1287,7 +1293,7 @@
       ]
     },
     "Calendar limit warning": {
-      "You have reached the maximum of ${ calendarsLimit } calendar.": [
+      "You have reached the maximum of ${ calendarsLimit } personal calendar.": [
         "",
         ""
       ],
@@ -1315,9 +1321,6 @@
     },
     "Calendar subscription not synced error": {
       "Calendar could not be decrypted": [
-        ""
-      ],
-      "Calendar could not be found": [
         ""
       ],
       "Calendar is syncing": [
@@ -3433,9 +3436,6 @@
       "Create in": [
         ""
       ],
-      "Creating a new recovery phrase will deactivate your old one.": [
-        "Criar uma nova frase de recuperação desactiva a frase antiga."
-      ],
       "Creating your Proton account": [
         "Criar a sua conta Proton"
       ],
@@ -3474,15 +3474,6 @@
       ],
       "Delete link?": [
         "Eliminar ligação?"
-      ],
-      "Disabling this will prevent this email from being used for account recovery.": [
-        "Desactivar isto impedirá que este endereço seja usado para recuperação da conta."
-      ],
-      "Disabling this will prevent this phone number from being used for account recovery.": [
-        "Desactivar isto impedirá que este número de telefone seja usado para recuperação da conta."
-      ],
-      "Disabling this will prevent your recovery phrase from being used for account recovery.": [
-        "Desactivar isto impedirá que a frase de recuperação seja usada para recuperação da conta."
       ],
       "Discount applied to your subscription with coupon ${ code }": [
         "Foi aplicado um desconto com o cupão ${ code }"
@@ -3631,6 +3622,9 @@
       ],
       "Full-featured VPN with speed up to 10 Gbps.": [
         "VPN completa com velocidade de até 10 Gbps."
+      ],
+      "Generating a new recovery phrase will deactivate your old one.": [
+        ""
       ],
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
         "Dê a sua chave pública aos seus amigos, ou publique-a online para que todos lhe possam enviar emails encriptados de ponta-a-ponta!"
@@ -4542,6 +4536,9 @@
       ],
       "Your Block List is empty.": [
         "A sua lista de bloqueios está vazia."
+      ],
+      "Your data is encrypted, you can recover your data by reactivating your keys.": [
+        ""
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         ""
@@ -5513,17 +5510,14 @@
       "Recovery code": [
         "Código de recuperação"
       ],
-      "Recovery email": [
-        "Endereço de recuperação"
-      ],
       "Recovery email address": [
         ""
       ],
       "Recovery file": [
         ""
       ],
-      "Recovery phone": [
-        "Telefone de recuperação"
+      "Recovery phone number": [
+        ""
       ],
       "Recovery phrase": [
         "Frase de recuperação"
@@ -5728,9 +5722,6 @@
       ]
     },
     "label": {
-      "Phone number": [
-        "Número de telefone"
-      ],
       "Recovery phone number": [
         ""
       ],
@@ -7183,7 +7174,7 @@
       "Calendar URL": [
         "URL da agenda"
       ],
-      "You can subscribe to someone else's calendar by pasting its URL below. This will give you access to a read-only version of this calendar.\n${ kbLink }": [
+      "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Subscribed calendars.\n${ kbLink }": [
         ""
       ]
     },
@@ -7821,6 +7812,9 @@
       ],
       "Enable keyboard shortcuts": [
         "Activar atalhos de teclado"
+      ],
+      "Encrypted data": [
+        ""
       ],
       "Encryption & keys": [
         "Encriptação e chaves"

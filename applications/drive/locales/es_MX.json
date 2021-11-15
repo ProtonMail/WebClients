@@ -140,12 +140,6 @@
       "Create new folder": [
         "Crear carpeta nueva"
       ],
-      "Created date: new to old": [
-        "Fecha de creación: nuevo a viejo"
-      ],
-      "Created date: old to new": [
-        "Fecha de creación: viejo a nuevo"
-      ],
       "Customize": [
         "Personalizar"
       ],
@@ -210,12 +204,6 @@
       ],
       "enable desktop notifications": [
         "habilitar las notificaciones de escritorio"
-      ],
-      "Expires: new to old": [
-        "Expira: nuevo a viejo"
-      ],
-      "Expires: old to new": [
-        "Expira: viejo a nuevo"
       ],
       "Export": [
         "Exportar"
@@ -316,6 +304,9 @@
       "More info: ${ safeTitle }": [
         "Más información: ${ safeTitle }"
       ],
+      "More options": [
+        "Más opciones"
+      ],
       "Move": [
         "Mover"
       ],
@@ -324,12 +315,6 @@
       ],
       "Move to trash": [
         "Mover a la papelera"
-      ],
-      "Name: A to Z": [
-        "Nombre: A-Z"
-      ],
-      "Name: Z to A": [
-        "Nombre: Z-A"
       ],
       "New upload": [
         "Cargar archivo"
@@ -484,12 +469,6 @@
       "Signing out": [
         "Cerrando sesión"
       ],
-      "Size: large to small": [
-        "Tamaño: grande a pequeño"
-      ],
-      "Size: small to large": [
-        "Tamaño: pequeño a grande"
-      ],
       "Skip": [
         "Omitir"
       ],
@@ -526,12 +505,6 @@
       "Try another method": [
         "Intente otro método"
       ],
-      "Type: A to Z": [
-        "Tipo: A-Z"
-      ],
-      "Type: Z to A": [
-        "Tipo: Z-A"
-      ],
       "Undo": [
         "Deshacer"
       ],
@@ -552,12 +525,6 @@
       ],
       "Upload picture": [
         "Cargar imagen"
-      ],
-      "Uploaded date: new to old": [
-        "Fecha de carga: nuevo a antiguo"
-      ],
-      "Uploaded date: old to new": [
-        "Fecha de carga: antiguo a nuevo"
       ],
       "Use ${ label } theme": [
         "Usar tema ${ label }"
@@ -881,9 +848,6 @@
       "Calendar could not be decrypted": [
         "No se pudo descifrar el calendario"
       ],
-      "Calendar could not be found": [
-        "No se pudo encontrar el calendario"
-      ],
       "Calendar is syncing": [
         "El calendario se está sincronizando"
       ],
@@ -1153,6 +1117,9 @@
       ],
       "Error connecting to the Bitcoin API.": [
         "Error al conectar a la API de Bitcoin."
+      ],
+      "Failed to load the link": [
+        "Error al cargar el enlace"
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "El archivo \"${ item.name }\" no puede cargarse debido a un error de \"${ error }\""
@@ -2042,6 +2009,9 @@
       "Learn more": [
         "Más información"
       ],
+      "Link copied to clipboard": [
+        "Enlace copiado al portapapeles"
+      ],
       "Link expires: ": [
         "El enlace expira en: "
       ],
@@ -2809,6 +2779,9 @@
       "Country": [
         "País"
       ],
+      "Created": [
+        "Creado"
+      ],
       "CVV code": [
         "Código CVV"
       ],
@@ -2927,6 +2900,9 @@
       "Merge a folder": [
         "Combinar una carpeta"
       ],
+      "Name": [
+        "Name"
+      ],
       "Name on card": [
         "Nombre en la tarjeta"
       ],
@@ -3008,6 +2984,9 @@
       "Sign emails": [
         "Firmar correos"
       ],
+      "Size": [
+        "Tamaño"
+      ],
       "Skip file": [
         "Omitir archivo"
       ],
@@ -3041,6 +3020,9 @@
       "Two-factor authentication code": [
         "Código de autenticación de dos factores"
       ],
+      "Type": [
+        "Tipo"
+      ],
       "Unknown file": [
         "Archivo desconocido"
       ],
@@ -3053,17 +3035,14 @@
       "Unlock later": [
         "Desbloquear después"
       ],
-      "Up to ${ parentLinkName }": [
-        "Hasta ${ parentLinkName }"
-      ],
-      "Up to the parent folder": [
-        "Hasta la carpeta principal"
-      ],
       "Upload anyway": [
         "Cargar de todos modos"
       ],
       "Upload picture": [
         "Cargar imagen"
+      ],
+      "Uploaded": [
+        "Cargado"
       ],
       "Username or ProtonMail address": [
         "Nombre de usuario o dirección de ProtonMail"

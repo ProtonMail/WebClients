@@ -209,9 +209,6 @@
       "Create new message": [
         ""
       ],
-      "Create recovery phrase": [
-        ""
-      ],
       "Custom filter": [
         "Filtro personalizado"
       ],
@@ -327,6 +324,9 @@
       ],
       "Forward as attachment": [
         "Encaminhar como anexo"
+      ],
+      "Generate recovery phrase": [
+        ""
       ],
       "Get started": [
         "Começar"
@@ -1389,26 +1389,26 @@
       "(Attendance optional)": [
         ""
       ],
-      "Adding occurrences to an event is not supported for the moment.": [
-        "A adição de ocorrências a um evento não é suportada no momento."
+      "Adding occurrences to an event is not supported for the moment": [
+        ""
       ],
       "An occurrence has been added to the event ${ veventIcsTitle }": [
         "Foi adicionada uma ocorrência ao evento ${ veventIcsTitle }"
       ],
-      "Event refreshing is not supported for the moment.": [
-        "A actualização do evento não é suportada no momento."
+      "Event refreshing is not supported for the moment": [
+        ""
       ],
-      "Event rescheduling is not supported for the moment.": [
-        "O reagendamento do evento não é suportado no momento."
+      "Event rescheduling is not supported for the moment": [
+        ""
       ],
-      "The sender of this email has not been invited to this event and cannot be added as a participant.": [
-        "O remetente deste email não foi convidado para este evento e não pode ser adicionado como participante."
+      "The sender of this email has not been invited to this event and cannot be added as a participant": [
+        ""
       ],
-      "This answer cannot be added to ${ calendarAppName } as we only support answers to all events of a series for the moment.": [
-        "Esta resposta não pode ser adicionada ao ${ calendarAppName }, de momento só suportamos respostas a todos os eventos de uma série."
+      "This answer cannot be added to ${ calendarAppName } as we only support answers to all events of a series for the moment": [
+        ""
       ],
-      "This event has already happened.": [
-        "Este evento já aconteceu."
+      "This event has already happened": [
+        ""
       ],
       "This event has been cancelled.": [
         "Este evento foi cancelado."
@@ -1416,8 +1416,8 @@
       "This event has been updated.": [
         "Este evento foi actualizado."
       ],
-      "This event is currently happening.": [
-        "Este evento está a acontecer agora."
+      "This event is currently happening": [
+        ""
       ],
       "This invitation is out of date. The event has been cancelled.": [
         "Este convite está fora de prazo. O evento foi cancelado."
@@ -1446,8 +1446,8 @@
       "You already tentatively accepted this invitation.": [
         ""
       ],
-      "Your email address is not in the participants list.": [
-        "O seu endereço de email não está na lista de participantes."
+      "Your email address is not in the participants list": [
+        ""
       ]
     },
     "Calendar status": {
@@ -1460,9 +1460,6 @@
     },
     "Calendar subscription not synced error": {
       "Calendar could not be decrypted": [
-        ""
-      ],
-      "Calendar could not be found": [
         ""
       ],
       "Calendar is syncing": [
@@ -3234,9 +3231,6 @@
       "Create in": [
         ""
       ],
-      "Create recovery phrase": [
-        ""
-      ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         ""
       ],
@@ -3395,6 +3389,9 @@
       ],
       "Full-featured VPN with speed up to 10 Gbps.": [
         "VPN completa com velocidade até 10 Gbps."
+      ],
+      "Generate recovery phrase": [
+        ""
       ],
       "Get more storage and premium features.": [
         ""

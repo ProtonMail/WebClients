@@ -209,9 +209,6 @@
       "Create new message": [
         "Neue Nachricht erstellen"
       ],
-      "Create recovery phrase": [
-        "Wiederherstellungsphrase erstellen"
-      ],
       "Custom filter": [
         "Benutzerderfinierter Filter"
       ],
@@ -327,6 +324,9 @@
       ],
       "Forward as attachment": [
         "Als Anhang weiterleiten"
+      ],
+      "Generate recovery phrase": [
+        "Wiederherstellungsphrase erstellen"
       ],
       "Get started": [
         "Erste Schritte"
@@ -1079,7 +1079,7 @@
     },
     "blackfriday Action": {
       "Get the offer": [
-        ""
+        "Zum Angebot"
       ]
     },
     "blackfriday Info": {
@@ -1098,13 +1098,13 @@
     },
     "blackfriday Title": {
       "Best deal": [
-        ""
+        "Bester Preis"
       ],
       "Most popular": [
         "Am beliebtesten"
       ],
       "Save more when combining Mail and VPN": [
-        ""
+        "Spare weitere % durch die Kombination von Mail und VPN"
       ]
     },
     "blackfriday: VPNspecialoffer Action": {
@@ -1117,18 +1117,18 @@
     },
     "blackfriday: VPNspecialoffer Badge popup": {
       "${ vpnAppName } Plus Special Offer 2021 discount has been applied": [
-        ""
+        "${ vpnAppName } Plus Sonderangebot 2021 Rabatt wurde angerechnet"
       ]
     },
     "blackfriday: VPNspecialoffer Info": {
       "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
-        ""
+        "Rabatte werden auf Grundlage des monatlichen Standardpreises von { standardMonthlyPricing } $ berechnet"
       ],
       "Save ${ percentage }%": [
-        "${ percentage }%"
+        "${ percentage } %"
       ],
       "Special offer Terms and Conditions": [
-        ""
+        "Allgemeine Geschäftsbedingungen des Sonderangebots"
       ]
     },
     "blackfriday: VPNspecialoffer info": {
@@ -1143,13 +1143,13 @@
     },
     "blackfriday: VPNspecialoffer Title": {
       "(${ notice }) Renews after 1 month at a standard monthly price of ${ amount }": [
-        ""
+        "(${ notice }) Verlängert sich nach einem Monat zum monatlichen Standardpreis von { amount } $"
       ],
       "(${ notice }) Renews after 1 year at a standard discounted annual price of ${ amount } (20% discount)": [
-        ""
+        "(${ notice }) Verlängert sich nach einem Jahr zum ermäßigten Standardpreis von { amount } $ (20 % Rabatt)"
       ],
       "(${ notice }) Renews after 2 years at a standard discounted 2-year price of ${ amount } (33% discount)": [
-        ""
+        "(${ notice }) Verlängert sich nach 2 Jahren zum ermäßigten 2-Jahrespreis von { amount } $ (33 % Rabatt)"
       ],
       "1 month": [
         "1 Monat"
@@ -1161,16 +1161,16 @@
         "24 Monate"
       ],
       "Billed at ${ amount } for the first 2 years.${ supNotice }": [
-        ""
+        "Zum Preis von { amount } $ in den ersten zwei Jahren.${ supNotice }"
       ],
       "Billed at ${ amount } for the first month.${ supNotice }": [
-        ""
+        "Zum Preis von { amount } $ im ersten Monat.${ supNotice }"
       ],
       "Billed at ${ amount } for the first year.${ supNotice }": [
-        ""
+        "Zum Preis von { amount } $ im ersten Jahr.${ supNotice }"
       ],
       "Get the special year-end offer on our Premium VPN PLUS plan": [
-        "Lassen Sie sich das Jahresend-Sonderangebot für unseren Premium VPN PLUS-Tarif nicht entgehen"
+        "Lass dir das Jahresend-Sonderangebot für unseren Premium VPN PLUS-Tarif nicht entgehen"
       ]
     },
     "Bug category": {
@@ -1389,26 +1389,26 @@
       "(Attendance optional)": [
         "(Teilnahme freiwillig)"
       ],
-      "Adding occurrences to an event is not supported for the moment.": [
-        "Das Hinzufügen von Terminen zu einem Ereignis wird derzeit nicht unterstützt."
+      "Adding occurrences to an event is not supported for the moment": [
+        "Das Hinzufügen von Serienelementen zu einem Ereignis wird derzeit nicht unterstützt"
       ],
       "An occurrence has been added to the event ${ veventIcsTitle }": [
         "Dem Ereignis „${ veventIcsTitle }” wurde ein Termin hinzugefügt"
       ],
-      "Event refreshing is not supported for the moment.": [
-        "Das Aktualisieren von Ereignissen wird derzeit nicht unterstützt."
+      "Event refreshing is not supported for the moment": [
+        "Das Aktualisieren von Ereignissen wird derzeit nicht unterstützt"
       ],
-      "Event rescheduling is not supported for the moment.": [
-        "Das Umplanen von Ereignissen wird derzeit nicht unterstützt."
+      "Event rescheduling is not supported for the moment": [
+        "Das Umplanen von Ereignissen wird derzeit nicht unterstützt"
       ],
-      "The sender of this email has not been invited to this event and cannot be added as a participant.": [
-        "Der Absender dieser E-Mail wurde nicht zu dieser Veranstaltung eingeladen und kann nicht als Teilnehmer hinzugefügt werden."
+      "The sender of this email has not been invited to this event and cannot be added as a participant": [
+        "Der Absender dieser E-Mail wurde nicht zu dieser Veranstaltung eingeladen und kann nicht als Teilnehmer hinzugefügt werden"
       ],
-      "This answer cannot be added to ${ calendarAppName } as we only support answers to all events of a series for the moment.": [
-        "Diese Antwort konnte nicht zu ${ calendarAppName } hinzugefügt werden, da derzeit nur Antworten auf alle Ereignisse einer Serie unterstützt werden."
+      "This answer cannot be added to ${ calendarAppName } as we only support answers to all events of a series for the moment": [
+        "Diese Antwort konnte nicht zu „${ calendarAppName }” hinzugefügt werden, da derzeit nur Antworten auf alle Ereignisse einer Serie unterstützt werden"
       ],
-      "This event has already happened.": [
-        "Dieses Ereignis hat bereits stattgefunden."
+      "This event has already happened": [
+        "Dieses Ereignis hat bereits stattgefunden"
       ],
       "This event has been cancelled.": [
         "Dieses Ereignis wurde abgesagt."
@@ -1416,8 +1416,8 @@
       "This event has been updated.": [
         "Dieses Ereignis wurde aktualisiert."
       ],
-      "This event is currently happening.": [
-        "Dieses Ereignis hat bereits begonnen."
+      "This event is currently happening": [
+        "Dieses Ereignis hat bereits begonnen"
       ],
       "This invitation is out of date. The event has been cancelled.": [
         "Diese Einladung ist nicht mehr gültig. Das Ereignis wurde abgesagt."
@@ -1446,8 +1446,8 @@
       "You already tentatively accepted this invitation.": [
         "Sie haben diese Einladung unter Vorbehalt angenommen."
       ],
-      "Your email address is not in the participants list.": [
-        "Ihre E-Mail-Adresse ist nicht in der Teilnehmerliste enthalten."
+      "Your email address is not in the participants list": [
+        "Ihre E-Mail-Adresse ist nicht in der Teilnehmerliste enthalten"
       ]
     },
     "Calendar status": {
@@ -1461,9 +1461,6 @@
     "Calendar subscription not synced error": {
       "Calendar could not be decrypted": [
         "Kalender konnte nicht entschlüsselt werden"
-      ],
-      "Calendar could not be found": [
-        "Kalender konnte nicht gefunden werden"
       ],
       "Calendar is syncing": [
         "Kalender wird synchronisiert"
@@ -3234,9 +3231,6 @@
       "Create in": [
         "Erstellen in"
       ],
-      "Create recovery phrase": [
-        "Wiederherstellungsphrase erstellen"
-      ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "CSV-Dateien aus Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora und einigen anderen Anwendungen sowie die Formate vCard 3.1 und 4.0 (UTF-8-Kodierung) werden unterstützt."
       ],
@@ -3395,6 +3389,9 @@
       ],
       "Full-featured VPN with speed up to 10 Gbps.": [
         "Voll funktionales VPN mit einer Geschwindigkeit von bis zu 10 Gbit/s."
+      ],
+      "Generate recovery phrase": [
+        "Wiederherstellungsphrase erstellen"
       ],
       "Get more storage and premium features.": [
         "Holen Sie sich mehr Speicherplatz und Premium-Funktionen."

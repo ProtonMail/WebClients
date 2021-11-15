@@ -31,11 +31,11 @@
       "${ BRAND_NAME } shop": [
         "Taḥanut ${ BRAND_NAME }"
       ],
-      "Activate": [
-        "Rmed"
-      ],
       "activate": [
         "rmed"
+      ],
+      "Activate": [
+        "Rmed"
       ],
       "Activate ${ Name }@pm.me": [
         "Rmed ${ Name }@pm.me"
@@ -51,6 +51,9 @@
       ],
       "Add address": [
         "Rnu tansa"
+      ],
+      "Add calendar": [
+        ""
       ],
       "Add condition": [
         "Rnu tawtilt"
@@ -223,12 +226,6 @@
       "Create link": [
         "Rnu aseɣwen"
       ],
-      "Create new recovery phrase": [
-        "Rnu tafyirt n tririt tamaynut"
-      ],
-      "Create new recovery phrase?": [
-        "Ad ternuḍ tafyirt n tririt tamaynut?"
-      ],
       "Customize": [
         "Sagen"
       ],
@@ -348,6 +345,15 @@
       ],
       "Generate key": [
         "Sirew tasarut"
+      ],
+      "Generate new recovery phrase": [
+        ""
+      ],
+      "Generate new recovery phrase?": [
+        ""
+      ],
+      "Generate recovery phrase": [
+        ""
       ],
       "Get ProtonVPN Plus": [
         "Awi ProtonVPN Plus"
@@ -501,6 +507,9 @@
       ],
       "Reconnect": [
         "Ales tuqqna"
+      ],
+      "Recover data": [
+        "Err-d isefka"
       ],
       "Refresh status": [
         "Smiren addaden"
@@ -696,9 +705,6 @@
       ],
       "Submit": [
         "Azen"
-      ],
-      "Subscribe to calendar": [
-        "Jerred s awitay"
       ],
       "Support": [
         "Tallelt"
@@ -1287,9 +1293,9 @@
       ]
     },
     "Calendar limit warning": {
-      "You have reached the maximum of ${ calendarsLimit } calendar.": [
-        "Tessawḍeḍ amḍan afellay n ${ calendarsLimit } n uwitay.",
-        "Tessawḍeḍ amḍan afellay n ${ calendarsLimit } n yiwitayen."
+      "You have reached the maximum of ${ calendarsLimit } personal calendar.": [
+        "",
+        ""
       ],
       "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } subscribed calendar.": [
         "Tessawḍeḍ amḍan afellay n ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } n uwitay iɣer tjerrdeḍ.",
@@ -1315,9 +1321,6 @@
     },
     "Calendar subscription not synced error": {
       "Calendar could not be decrypted": [
-        ""
-      ],
-      "Calendar could not be found": [
         ""
       ],
       "Calendar is syncing": [
@@ -3433,9 +3436,6 @@
       "Create in": [
         "Snulfu-d di"
       ],
-      "Creating a new recovery phrase will deactivate your old one.": [
-        "Timerna n tefyirt n tririt tamaynut ad tsens tafyirt-ik·im taqburt."
-      ],
       "Creating your Proton account": [
         "Timerna n umiḍan-ik·im n Proton"
       ],
@@ -3474,15 +3474,6 @@
       ],
       "Delete link?": [
         "Kkes aseɣwen?"
-      ],
-      "Disabling this will prevent this email from being used for account recovery.": [
-        "Asensi n waya ad isewḥel aseqdec n tansa-a n yimayl i tririt n umiḍan."
-      ],
-      "Disabling this will prevent this phone number from being used for account recovery.": [
-        "Asensi n waya ad isewḥel aseqdec n wuṭṭun-a n tilifun i tririt n umiḍan."
-      ],
-      "Disabling this will prevent your recovery phrase from being used for account recovery.": [
-        "Asensi n waya ad isewḥel tafyirt-ik·im n tririt ad tettuseqdec i tririt n umiḍan."
       ],
       "Discount applied to your subscription with coupon ${ code }": [
         "Yettwag usenqes ɣef umulteɣ-inek·inem s ukupun ${ code }"
@@ -3631,6 +3622,9 @@
       ],
       "Full-featured VPN with speed up to 10 Gbps.": [
         "VPN ummid s urured alamma 10 Gbps."
+      ],
+      "Generating a new recovery phrase will deactivate your old one.": [
+        ""
       ],
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
         "Mudd tasarut-ik·im tazayazt i yimeddukkal-ik·im, neɣ suffeɣ-t-id srid, akka yal yiwen ad yizmir ad ak·am-d-yazen imayl yettwawgelhen seg yixef ɣer yixef!"
@@ -4543,6 +4537,9 @@
       "Your Block List is empty.": [
         "Tabdart n usewḥel d tilemt."
       ],
+      "Your data is encrypted, you can recover your data by reactivating your keys.": [
+        ""
+      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         ""
       ],
@@ -5088,7 +5085,7 @@
         "Azal BTC:"
       ],
       "Calendar": [
-        ""
+        "Awitay"
       ],
       "Cancel": [
         "Sefsex"
@@ -5142,7 +5139,7 @@
         "Sentem awal uffir"
       ],
       "Contacts": [
-        ""
+        "Inermisen"
       ],
       "Conversation grouping": [
         "Asdukkel n udiwenni"
@@ -5247,7 +5244,7 @@
         "Imayl neɣ isem n useqdac"
       ],
       "Emails": [
-        ""
+        "Imaylen"
       ],
       "End date": [
         "Azemz n tagara"
@@ -5283,7 +5280,7 @@
         "ugar n tallunt n uḥraz"
       ],
       "File": [
-        ""
+        "Afaylu"
       ],
       "Filter Name": [
         "Isem n imsizdeg"
@@ -5513,17 +5510,14 @@
       "Recovery code": [
         "Tangalt n tririt"
       ],
-      "Recovery email": [
-        "Imayl n tririt"
-      ],
       "Recovery email address": [
         ""
       ],
       "Recovery file": [
         ""
       ],
-      "Recovery phone": [
-        "Uṭṭun n tilifun n tririt"
+      "Recovery phone number": [
+        ""
       ],
       "Recovery phrase": [
         "Tafyirt n tririt"
@@ -5728,9 +5722,6 @@
       ]
     },
     "label": {
-      "Phone number": [
-        "Uṭṭun n tiliɣri"
-      ],
       "Recovery phone number": [
         ""
       ],
@@ -7183,8 +7174,8 @@
       "Calendar URL": [
         "URL n uwitay"
       ],
-      "You can subscribe to someone else's calendar by pasting its URL below. This will give you access to a read-only version of this calendar.\n${ kbLink }": [
-        "Tzemreḍ ad tjerrdeḍ deg uwitay n ḥedd-nniḍen s usenṭeḍ n tansa-as URL seddaw. Aya ad k·kem-yeǧǧ ad tkecmeḍ ɣer lqem n tɣuri kan n uwitay-a. \n${ kbLink }"
+      "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Subscribed calendars.\n${ kbLink }": [
+        ""
       ]
     },
     "Subscribe to calendar modal description": {
@@ -7258,7 +7249,7 @@
         "Tukksa n yiznan inaṣliyen"
       ],
       "DMARC value copied to clipboard": [
-        ""
+        "Azal DMARC yettwanɣel ɣef afus"
       ],
       "Domain verified": [
         "Isem n taɣult yettasenqed"
@@ -7333,7 +7324,7 @@
         "Tiɣimitin ttwaḥwint"
       ],
       "SPF value copied to clipboard": [
-        ""
+        "Azal SPF yettwanɣel ɣef afus"
       ],
       "User created": [
         "Aseqdac yettwarna"
@@ -7342,7 +7333,7 @@
         "Aseqdac yettwaleqqem"
       ],
       "Value copied to clipboard": [
-        ""
+        "Azal yettwanɣel ɣef afus"
       ],
       "Verification code copied to clipboard": [
         "Tangalt n usenqed tettwaneɣlen ɣer tecfawit"
@@ -7821,6 +7812,9 @@
       ],
       "Enable keyboard shortcuts": [
         "Fren inegzumen n unasiw"
+      ],
+      "Encrypted data": [
+        ""
       ],
       "Encryption & keys": [
         "Awgelhen & Tisura"

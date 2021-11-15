@@ -31,11 +31,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } bolt"
       ],
-      "Activate": [
-        "Aktiválás"
-      ],
       "activate": [
         "aktiválás"
+      ],
+      "Activate": [
+        "Aktiválás"
       ],
       "Activate ${ Name }@pm.me": [
         "${ Name }@pm.me aktiválása"
@@ -51,6 +51,9 @@
       ],
       "Add address": [
         "Cím hozzáadása"
+      ],
+      "Add calendar": [
+        ""
       ],
       "Add condition": [
         "Új feltétel"
@@ -223,12 +226,6 @@
       "Create link": [
         "Hivatkozás létrehozása"
       ],
-      "Create new recovery phrase": [
-        "Új helyreállító jelmondat létrehozása"
-      ],
-      "Create new recovery phrase?": [
-        "Új helyreállító jelmondat létrehozása?"
-      ],
       "Customize": [
         "Testreszabás"
       ],
@@ -348,6 +345,15 @@
       ],
       "Generate key": [
         "Kulcs generálása"
+      ],
+      "Generate new recovery phrase": [
+        ""
+      ],
+      "Generate new recovery phrase?": [
+        ""
+      ],
+      "Generate recovery phrase": [
+        ""
       ],
       "Get ProtonVPN Plus": [
         "ProtonVPN Plus választása"
@@ -501,6 +507,9 @@
       ],
       "Reconnect": [
         "Újrakapcsolódás"
+      ],
+      "Recover data": [
+        ""
       ],
       "Refresh status": [
         "Állapot frissítése"
@@ -696,9 +705,6 @@
       ],
       "Submit": [
         "Küldés"
-      ],
-      "Subscribe to calendar": [
-        "Feliratkozás naptárra"
       ],
       "Support": [
         "Ügyfélszolgálat"
@@ -1287,9 +1293,9 @@
       ]
     },
     "Calendar limit warning": {
-      "You have reached the maximum of ${ calendarsLimit } calendar.": [
-        "Elérte a maximálisan lehetséges ${ calendarsLimit } naptárat.",
-        "Elérte a maximálisan lehetséges ${ calendarsLimit } naptárat."
+      "You have reached the maximum of ${ calendarsLimit } personal calendar.": [
+        "",
+        ""
       ],
       "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } subscribed calendar.": [
         "Elérte a maximálisan lehetséges ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } feliratkozott naptárat.",
@@ -1316,9 +1322,6 @@
     "Calendar subscription not synced error": {
       "Calendar could not be decrypted": [
         "A naptár visszafejtése nem sikerült"
-      ],
-      "Calendar could not be found": [
-        "A naptár nem található"
       ],
       "Calendar is syncing": [
         "A naptár szinkronizál"
@@ -3433,9 +3436,6 @@
       "Create in": [
         "Létrehozás itt"
       ],
-      "Creating a new recovery phrase will deactivate your old one.": [
-        "Új helyreállító jelmondat létrehozása érvényteleníti a korábbit."
-      ],
       "Creating your Proton account": [
         "Proton fiók létrehozása"
       ],
@@ -3474,15 +3474,6 @@
       ],
       "Delete link?": [
         "Link törlése?"
-      ],
-      "Disabling this will prevent this email from being used for account recovery.": [
-        "Ennek kikapcsolása megakadályozza, hogy ez a e-mail cím használható legyen a fiók helyreállítására."
-      ],
-      "Disabling this will prevent this phone number from being used for account recovery.": [
-        "Ennek kikapcsolása megakadályozza, hogy ez a telefonszám használható legyen a fiók helyreállítására."
-      ],
-      "Disabling this will prevent your recovery phrase from being used for account recovery.": [
-        "Ennek kikapcsolása megakadályozza, hogy a helyreállító jelmondat használható legyen a fiók helyreállítására."
       ],
       "Discount applied to your subscription with coupon ${ code }": [
         "Az előfizetésre érvényes árengedmény a kuponnal ${ code }"
@@ -3631,6 +3622,9 @@
       ],
       "Full-featured VPN with speed up to 10 Gbps.": [
         "Teljes VPN csomag, akár 10Gbps sebességgel."
+      ],
+      "Generating a new recovery phrase will deactivate your old one.": [
+        ""
       ],
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
         "Adja meg a publikus kulcsát a barátainak vagy tegye közzé az interneten, hogy mindenki tudjon magának végpontok között titkosított email-t küldeni!"
@@ -4542,6 +4536,9 @@
       ],
       "Your Block List is empty.": [
         "A tiltott lista üres."
+      ],
+      "Your data is encrypted, you can recover your data by reactivating your keys.": [
+        ""
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "Az adatok a Proton fiókjába importálásra készen állnak a(z) ${ importedEmailAddressStrong } címről."
@@ -5513,17 +5510,14 @@
       "Recovery code": [
         "Helyreállítási kód"
       ],
-      "Recovery email": [
-        "Helyreállítási e-mail"
-      ],
       "Recovery email address": [
         ""
       ],
       "Recovery file": [
         ""
       ],
-      "Recovery phone": [
-        "Helyreállítási telefonszám"
+      "Recovery phone number": [
+        ""
       ],
       "Recovery phrase": [
         "Helyreállító jelmondat"
@@ -5728,9 +5722,6 @@
       ]
     },
     "label": {
-      "Phone number": [
-        "Telefonszám"
-      ],
       "Recovery phone number": [
         ""
       ],
@@ -7183,7 +7174,7 @@
       "Calendar URL": [
         "Naptár URL"
       ],
-      "You can subscribe to someone else's calendar by pasting its URL below. This will give you access to a read-only version of this calendar.\n${ kbLink }": [
+      "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Subscribed calendars.\n${ kbLink }": [
         ""
       ]
     },
@@ -7821,6 +7812,9 @@
       ],
       "Enable keyboard shortcuts": [
         "Gyorsbillentyűk engedélyezése"
+      ],
+      "Encrypted data": [
+        ""
       ],
       "Encryption & keys": [
         "Titkosítás és kulcsok"

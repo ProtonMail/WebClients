@@ -209,9 +209,6 @@
       "Create new message": [
         "Buat pesan baru"
       ],
-      "Create recovery phrase": [
-        "Buat kalimat pemulihan"
-      ],
       "Custom filter": [
         "Filter kustom"
       ],
@@ -264,7 +261,7 @@
         "Buang"
       ],
       "Dismiss get started checklist": [
-        ""
+        "Tutup daftar orientasi pengguna baru"
       ],
       "Done": [
         "Selesai"
@@ -325,6 +322,9 @@
       ],
       "Forward as attachment": [
         "Teruskan sebagai lampiran"
+      ],
+      "Generate recovery phrase": [
+        "Buat frasa pemulihan"
       ],
       "Get started": [
         "Mulai"
@@ -573,7 +573,7 @@
         "Buka kalender"
       ],
       "Open get started checklist modal": [
-        ""
+        "Tampilkan daftar orientasi pengguna baru"
       ],
       "Open navigation": [
         "Buka navigasi"
@@ -846,7 +846,7 @@
         "Tingkatkan"
       ],
       "Upgrade now": [
-        ""
+        "Tingkatkan sekarang"
       ],
       "Upload picture": [
         "Unggah gambar"
@@ -991,7 +991,7 @@
     },
     "Amount of completed get started checklist items": {
       "${ numberOfCompletedItems } of ${ totalNumberOfChecklistItems } complete": [
-        ""
+        "${ numberOfCompletedItems } dari ${ totalNumberOfChecklistItems } langkah telah rampung"
       ]
     },
     "Apps dropdown": {
@@ -1381,26 +1381,26 @@
       "(Attendance optional)": [
         "(Kehadiran tidak diwajibkan)"
       ],
-      "Adding occurrences to an event is not supported for the moment.": [
-        "Menambahkan kegiatan ke acara tidak didukung untuk saat ini."
+      "Adding occurrences to an event is not supported for the moment": [
+        "Menambahkan kegiatan ke dalam suatu acara tidak didukung untuk saat ini"
       ],
       "An occurrence has been added to the event ${ veventIcsTitle }": [
         "Kegiatan sudah ditambahkan ke acara ${ veventIcsTitle }"
       ],
-      "Event refreshing is not supported for the moment.": [
-        "Penyegaran acara belum didukung untuk saat ini."
+      "Event refreshing is not supported for the moment": [
+        "Pemuatan ulang acara belum didukung untuk saat ini"
       ],
-      "Event rescheduling is not supported for the moment.": [
-        "Penjadwalan ulang acara tidak didukung untuk saat ini."
+      "Event rescheduling is not supported for the moment": [
+        "Penjadwalan ulang acara tidak didukung untuk saat ini"
       ],
-      "The sender of this email has not been invited to this event and cannot be added as a participant.": [
-        "Pengirim surel ini belum diundang ke acara ini dan tidak dapat ditambahkan sebagai peserta."
+      "The sender of this email has not been invited to this event and cannot be added as a participant": [
+        "Pengirim email ini belum diundang ke acara yang bersangkutan dan tidak dapat ditambahkan sebagai peserta"
       ],
-      "This answer cannot be added to ${ calendarAppName } as we only support answers to all events of a series for the moment.": [
-        "Jawaban ini tidak dapat ditambahkan ke ${ calendarAppName } karena kami hanya mendukung jawaban untuk semua rangkaian acara untuk saat ini."
+      "This answer cannot be added to ${ calendarAppName } as we only support answers to all events of a series for the moment": [
+        "Jawaban ini tidak dapat ditambahkan ke dalam ${ calendarAppName } karena pada saat ini kami hanya mendukung jawaban yang berlaku untuk seluruh rangkaian acara"
       ],
-      "This event has already happened.": [
-        "Acara ini telah berlangsung."
+      "This event has already happened": [
+        "Acara ini telah berlangsung"
       ],
       "This event has been cancelled.": [
         "Kegiatan ini dibatalkan."
@@ -1408,8 +1408,8 @@
       "This event has been updated.": [
         "Acara ini telah diperbarui."
       ],
-      "This event is currently happening.": [
-        "Acara ini sedang berlangsung."
+      "This event is currently happening": [
+        "Acara ini sedang berlangsung"
       ],
       "This invitation is out of date. The event has been cancelled.": [
         "Undangan ini kedaluwarsa. Acara telah dibatalkan."
@@ -1438,8 +1438,8 @@
       "You already tentatively accepted this invitation.": [
         "Anda telah secara tentatif menyetujui undangan ini."
       ],
-      "Your email address is not in the participants list.": [
-        "Alamat surel Anda tidak ada di daftar peserta."
+      "Your email address is not in the participants list": [
+        "Alamat email Anda tidak ada di dalam daftar peserta"
       ]
     },
     "Calendar status": {
@@ -1453,9 +1453,6 @@
     "Calendar subscription not synced error": {
       "Calendar could not be decrypted": [
         "Kalender tidak dapat didekripsi"
-      ],
-      "Calendar could not be found": [
-        "Kalender tidak ditemukan"
       ],
       "Calendar is syncing": [
         "Kalender sedang menyinkronkan data"
@@ -2095,7 +2092,7 @@
         "Grup tidak memiliki kontak: ${ noContactGroupList } "
       ],
       "Organization not recognized. Try again.": [
-        ""
+        "Organisasi tidak dikenal. Silakan coba lagi."
       ],
       "Passwords do not match": [
         "Kata sandi tidak cocok"
@@ -2164,7 +2161,7 @@
         "Beberapa kontak tidak dapat dihapus"
       ],
       "Some groups could not be deleted": [
-        "Beberapa grup tidak dapat dihapus"
+        "Sebagian grup tidak dapat dihapus"
       ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         "Sebagian nama label Anda tidak dapat digunakan. Mohon ubah nama-nama ini dengan menyesuaikan parameter impor Anda."
@@ -2608,68 +2605,68 @@
     },
     "Get started checklist completion": {
       "We've added 1 GB of bonus storage to your account. Continue to explore ${ BRAND_NAME } and share your ${ protonMailAppName } address with your family, friends, and colleagues.": [
-        ""
+        "Kami telah menghadiahkan Anda kapasitas penyimpanan tambahan sebesar 1GB. Anda kini dapat menjelajahi ${ BRAND_NAME } lebih jauh dan membagikan alamat ${ protonMailAppName } Anda kepada para anggota keluarga, kerabat, dan kolega Anda."
       ],
       "We've added 1 GB of bonus storage to your account. For even more storage and premium features, upgrade your plan.": [
-        ""
+        "Kami telah menghadiahkan Anda kapasitas penyimpanan tambahan sebesar 1GB. Untuk dapat memperoleh kapasitas penyimpanan yang jauh lebih besar dan berbagai fitur premium lainnya, silakan tingkatkan jenis akun Anda."
       ],
       "You're a privacy champ!": [
-        ""
+        "Anda kini telah menjadi seorang pahlawan privasi!"
       ]
     },
     "Get started checklist incentive": {
       "Complete all steps and get a total of 2 GB on your account": [
-        ""
+        "Rampungkan seluruh langkah yang ada dan dapatkan kapasitas penyimpanan tambahan hingga 2 GB"
       ],
       "Only ${ days } day left": [
-        ""
+        "Hanya ${ days } hari tersisa"
       ]
     },
     "Get started checklist instructions": {
       "Available on iOS and Android.": [
-        ""
+        "Tersedia di iOS dan Android."
       ],
       "Get the ${ protonMailAppName } mobile app": [
-        ""
+        "Dapatkan aplikasi ${ protonMailAppName } mobile"
       ],
       "Import contacts or emails": [
-        ""
+        "Impor kontak atau email"
       ],
       "Import your contacts or messages": [
-        ""
+        "Impor kontak-kontak atau pesan-pesan Anda"
       ],
       "Quickly transfer your contacts or emails from any provider using our Easy Switch import assistant.": [
-        ""
+        "Pindahkan kontak-kontak dan email-email Anda dari layanan penyedia email lainnya secara mudah dan cepat dengan alat bantu impor Easy Switch kami."
       ],
       "Sign into the mobile app to complete the action": [
-        ""
+        "Harap masuk ke aplikasi mobile Anda untuk merampungkan tindakan ini"
       ],
       "Using your mobile device, scan this QR code or visit": [
-        ""
+        "Dengan menggunakan perangkat mobile Anda, pindai QR code ini atau kunjungi"
       ]
     },
     "Get started checklist item": {
       "Get mobile app": [
-        ""
+        "Dapatkan aplikasi mobile"
       ],
       "Import contacts or emails": [
-        ""
+        "Impor kontak atau email"
       ],
       "Send a message": [
-        ""
+        "Kirim pesan"
       ],
       "Set up a recovery method": [
-        ""
+        "Tentukan metode pemulihan"
       ]
     },
     "Get started checklist spotlight": {
       "You can access the checklist anytime from here": [
-        ""
+        "Anda dapat mengakses kembali daftar ini di sini"
       ]
     },
     "Get started checklist title": {
       "Get started": [
-        ""
+        "Mulai"
       ]
     },
     "Group": {
@@ -3168,9 +3165,6 @@
       "Create in": [
         "Buat di"
       ],
-      "Create recovery phrase": [
-        "Buat kalimat pemulihan"
-      ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "Anda dapat mengimpor berkas-berkas CSV dari Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora, dan beberapa aplikasi lainnya serta berkas-berkas vCard versi 3.1 dan 4.0 (dengan encoding UTF-8)."
       ],
@@ -3211,7 +3205,7 @@
         "Domain"
       ],
       "Download our mobile application from your favorite app store to communicate securely on-the-go.": [
-        "Unduh aplikasi seluler kami dari app store favorit Anda untuk berkomunikasi dengan aman saat bepergian."
+        "Unduh aplikasi mobile kami dari app store favorit Anda untuk dapat berkomunikasi dengan aman saat bepergian."
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Unduh aplikasi favorit anda hari ini dan bawa privasi kemana pun anda pergi."
@@ -3323,6 +3317,9 @@
       ],
       "Full-featured VPN with speed up to 10 Gbps.": [
         "VPN berfitur lengkap dengan kecepatan hingga 10 Gbps."
+      ],
+      "Generate recovery phrase": [
+        "Buat frasa pemulihan"
       ],
       "Get more storage and premium features.": [
         "Dapatkan kuota penyimpanan tambahan dan fitur-fitur premium lainnya."
@@ -3688,7 +3685,7 @@
         "Pilih format surel bawaan yang akan Anda gunakan setiap kali mengirim surat ke alamat ini."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit. You can also merge imported calendars with existing Proton calendars.": [
-        ""
+        "Pilih kalender-kalender mana saja yang akan diimpor. Untuk setiap kalender yang Anda impor, sistem kami akan membuat kalender baru hingga batas maksimum 20 kalender personal. Anda juga dapat menggabungkan kalender-kalender yang diimpor dengan kalender-kalender Proton yang telah Anda miliki sebelumnya."
       ],
       "Sending": [
         "Mengirim"
@@ -4520,7 +4517,7 @@
         "Enkripsi surel"
       ],
       "Enter organization name to confirm": [
-        ""
+        "Masukkan nama organisasi untuk dapat melanjutkan"
       ],
       "Enter the 6-digit code": [
         "Masukkan kode 6 digit"
@@ -5117,10 +5114,10 @@
     },
     "Mail import summary": {
       "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        ""
+        "Impor seluruh pesan yang memiliki ${ selectedLabelsCount } label terpilih dari total ${ totalLabelsCount } label yang ada sejak ${ periodFragment } dan labeli pesan-pesan tersebut dengan label ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
       "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        ""
+        "Impor seluruh pesan yang berlabel dari total ${ totalLabelsCount } label yang ada sejak ${ periodFragment } dan labeli pesan-pesan tersebut dengan label ${ LABEL_MARKUP_PLACEHOLDER }"
       ]
     },
     "Mailbox": {
@@ -5159,7 +5156,7 @@
     },
     "Member downgrade modal": {
       "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        ""
+        "Tindakan ini akan menghapus seluruh akun, sub-pengguna, dan data yang terhubung dengan organisasi Anda secara permanen."
       ]
     },
     "Message": {
@@ -5988,7 +5985,7 @@
     },
     "Storage": {
       "Get extra storage for free": [
-        ""
+        "Dapatkan kapasitas penyimpanan tambahan secara gratis"
       ],
       "Release notes": [
         "Catatan rilis"
@@ -6480,7 +6477,7 @@
         "Hapus pesan"
       ],
       "Delete organization?": [
-        ""
+        "Hapus organisasi?"
       ],
       "Deleting contacts": [
         "Menghapus kontak"
