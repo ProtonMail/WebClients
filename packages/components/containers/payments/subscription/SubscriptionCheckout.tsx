@@ -1,23 +1,29 @@
 import { Fragment, ReactNode } from 'react';
 import { c, msgid } from 'ttag';
 import { toMap } from '@proton/shared/lib/helpers/object';
-import { orderBy } from '@proton/shared/lib/helpers/array';
-import { hasBit } from '@proton/shared/lib/helpers/bitset';
-import { ADDON_NAMES, APPS, BLACK_FRIDAY, CYCLE, PLAN_SERVICES, PLAN_TYPES, PLANS } from '@proton/shared/lib/constants';
-import humanSize from '@proton/shared/lib/helpers/humanSize';
+import { compare } from '@proton/shared/lib/helpers/array';
+import { ADDON_NAMES, APPS, BLACK_FRIDAY, CYCLE, PLAN_TYPES, PLANS } from '@proton/shared/lib/constants';
 import { getTimeRemaining } from '@proton/shared/lib/date/date';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
-import { Currency, Cycle, Plan, PlanIDs, SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
+import {
+    Additions,
+    Currency,
+    Cycle,
+    Plan,
+    PlanIDs,
+    PlansMap,
+    SubscriptionCheckResponse,
+} from '@proton/shared/lib/interfaces';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 
 import { Badge, Info, Time } from '../../../components';
 import { useConfig } from '../../../hooks';
-import { getSubTotal } from './helpers';
 import CycleDiscountBadge from '../CycleDiscountBadge';
 import DiscountBadge from '../DiscountBadge';
 import CheckoutRow from './CheckoutRow';
 import Checkout from '../Checkout';
 import PaymentGiftCode from '../PaymentGiftCode';
+import { getSubTotal } from './getSubTotal';
 
 interface Props {
     submit?: ReactNode;
@@ -28,14 +34,225 @@ interface Props {
     cycle: Cycle;
     coupon?: string | null;
     gift?: string;
-    onChangeCycle: (cycle: Cycle) => void;
     onChangeCurrency: (currency: Currency) => void;
     onChangeGift?: (gift: string) => void;
     planIDs: PlanIDs;
-    hideCurrency?: boolean;
-    hideCycle?: boolean;
-    service: PLAN_SERVICES;
 }
+
+const getTitle = (planName: PLANS | ADDON_NAMES, plansMap: PlansMap, quantity: number) => {
+    if (
+        [ADDON_NAMES.DOMAIN, ADDON_NAMES.DOMAIN_BUNDLE_PRO, ADDON_NAMES.DOMAIN_ENTERPRISE].includes(
+            planName as ADDON_NAMES
+        )
+    ) {
+        const addon = plansMap[planName];
+        const domains = quantity * (addon?.MaxDomains ?? 0);
+        return c('Addon').ngettext(msgid`+ ${domains} custom domain`, `+ ${domains} custom domains`, domains);
+    }
+
+    if (
+        [
+            ADDON_NAMES.MEMBER,
+            ADDON_NAMES.MEMBER_DRIVE_PRO,
+            ADDON_NAMES.MEMBER_MAIL_PRO,
+            ADDON_NAMES.MEMBER_BUNDLE_PRO,
+            ADDON_NAMES.MEMBER_ENTERPRISE,
+        ].includes(planName as ADDON_NAMES)
+    ) {
+        const addon = plansMap[planName];
+        const users = quantity * (addon?.MaxMembers ?? 0);
+        return c('Addon').ngettext(msgid`+ ${users} user`, `+ ${users} users`, users);
+    }
+
+    return '';
+};
+
+const CheckoutPlanIDs = ({
+    planIDs,
+    plansMap,
+    currency,
+    cycle,
+    isUpdating,
+    additions,
+}: {
+    planIDs: PlanIDs;
+    plansMap: PlansMap;
+    currency: Currency;
+    cycle: Cycle;
+    isUpdating: boolean;
+    additions?: Additions | null;
+}) => {
+    const collection = Object.entries(planIDs)
+        .map(([planName, quantity]) => {
+            const plan = plansMap[planName as keyof PlansMap];
+            if (!plan) {
+                return;
+            }
+            return { ...plan, quantity };
+        })
+        .filter((x): x is Plan & { quantity: number } => !!x && x.quantity > 0)
+        .sort((a, b) => {
+            const first = compare(a.Type, b.Type);
+            // First compare by type, second by the name
+            if (first !== 0) {
+                return first;
+            }
+            return a.Name.localeCompare(b.Name);
+        })
+        .reverse();
+
+    const rows = collection.map(({ ID, Title, Pricing, Type, Name, quantity }) => {
+        const update = (isUpdating && additions?.[Name as ADDON_NAMES]) || 0;
+        const diff = quantity - update;
+        // translator: Visionary (Mail + VPN)
+        const displayTitle = Title === 'Visionary' ? `${Title} ${c('Info').t`(Mail + VPN)`}` : Title;
+
+        return (
+            <Fragment key={ID}>
+                {diff ? (
+                    <CheckoutRow
+                        className={Type === PLAN_TYPES.PLAN ? 'text-bold' : ''}
+                        title={
+                            <>
+                                <span className="mr0-5 pr0-5">
+                                    {Type === PLAN_TYPES.PLAN ? displayTitle : getTitle(Name, plansMap, diff)}
+                                </span>
+                                {!isUpdating && [CYCLE.YEARLY, CYCLE.TWO_YEARS].includes(cycle) && (
+                                    <span className="text-no-bold">
+                                        <CycleDiscountBadge cycle={cycle} />
+                                    </span>
+                                )}
+                            </>
+                        }
+                        amount={isUpdating ? 0 : (diff * Pricing[cycle]) / cycle}
+                        currency={currency}
+                    />
+                ) : null}
+                {update ? (
+                    <CheckoutRow
+                        title={
+                            <>
+                                <span className="mr0-5 pr0-5">{getTitle(Name, plansMap, update)}</span>
+                                {[CYCLE.YEARLY, CYCLE.TWO_YEARS].includes(cycle) && (
+                                    <span className="text-no-bold">
+                                        <CycleDiscountBadge cycle={cycle} />
+                                    </span>
+                                )}
+                            </>
+                        }
+                        amount={(update * Pricing[cycle]) / cycle}
+                        currency={currency}
+                    />
+                ) : null}
+            </Fragment>
+        );
+    });
+
+    if (!rows.length) {
+        return <CheckoutRow className="text-bold" title={c('Info').t`Free`} amount={0} />;
+    }
+
+    return <>{rows}</>;
+};
+
+const TotalPeriodEndTitle = ({ PeriodEnd }: { PeriodEnd?: number }) => {
+    const { years, months, days } = getTimeRemaining(new Date(), PeriodEnd ? new Date(PeriodEnd * 1000) : new Date());
+    const monthsWithYears = months + years * 12;
+    const countdown = [
+        monthsWithYears &&
+            c('Countdown unit').ngettext(msgid`${monthsWithYears} month`, `${monthsWithYears} months`, monthsWithYears),
+        days && c('Countdown unit').ngettext(msgid`${days} day`, `${days} days`, days),
+    ]
+        .filter(isTruthy)
+        .join(', ');
+    const renewalDate = <Time key="renewal-date">{PeriodEnd}</Time>;
+
+    return (
+        <>
+            <span className="mr0-5">{c('Label').t`Total (${countdown})`}</span>
+            <Info
+                buttonClass="mb0-5"
+                title={c('Info').jt`Billed at the end of your current billing cycle (renews on ${renewalDate})`}
+            />
+        </>
+    );
+};
+
+const DriveCheckoutRow = ({ planIDs, cycle, coupon }: { planIDs: PlanIDs; cycle: Cycle; coupon?: string | null }) => {
+    const driveAppName = getAppName(APPS.PROTONDRIVE);
+
+    const hasVisionary = !!planIDs[PLANS.VISIONARY];
+    const hasMailPlus = !!planIDs[PLANS.PLUS];
+    const hasVpnPlus = !!planIDs[PLANS.VPNPLUS];
+
+    if (
+        hasVisionary ||
+        (hasMailPlus && hasVpnPlus && cycle === CYCLE.TWO_YEARS) ||
+        (coupon === BLACK_FRIDAY.COUPON_CODE &&
+            hasMailPlus &&
+            hasVpnPlus &&
+            [CYCLE.YEARLY, CYCLE.TWO_YEARS].includes(cycle))
+    ) {
+        return (
+            <div className="border-top pt0-5">
+                <CheckoutRow className="text-bold" title={driveAppName} amount={0} />
+            </div>
+        );
+    }
+
+    return null;
+};
+
+export const SubscriptionCheckoutLocal = ({
+    loading,
+    plans,
+    currency,
+    planIDs,
+    cycle,
+    onChangeCurrency,
+    submit,
+}: {
+    plans: Plan[];
+    loading?: boolean;
+    currency: Currency;
+    planIDs: PlanIDs;
+    cycle: Cycle;
+    onChangeCurrency: (currency: Currency) => void;
+    submit: ReactNode;
+}) => {
+    const plansMap = toMap(plans, 'Name');
+    const subTotal = getSubTotal(planIDs, plansMap, cycle);
+    return (
+        <Checkout
+            currency={currency}
+            onChangeCurrency={onChangeCurrency}
+            loading={loading}
+            hasGuarantee={!!planIDs[PLANS.VPN]}
+            hasPayments={false}
+        >
+            <CheckoutPlanIDs
+                planIDs={planIDs}
+                plansMap={plansMap}
+                currency={currency}
+                cycle={cycle}
+                isUpdating={false}
+                additions={null}
+            />
+            <div className="border-top pt0-5">
+                {[CYCLE.YEARLY, CYCLE.TWO_YEARS].includes(cycle) ? (
+                    <CheckoutRow
+                        title={c('Title').t`Total (monthly)`}
+                        amount={subTotal / cycle}
+                        currency={currency}
+                        className="mt0 mb0"
+                    />
+                ) : null}
+                <CheckoutRow className="m0" title={c('Label').t`Total`} amount={subTotal} currency={currency} />
+            </div>
+            <div className="mt1 mb1">{submit}</div>
+        </Checkout>
+    );
+};
 
 const SubscriptionCheckout = ({
     submit = c('Action').t`Pay`,
@@ -45,201 +262,56 @@ const SubscriptionCheckout = ({
     coupon,
     gift,
     onChangeCurrency,
-    onChangeCycle,
     onChangeGift,
     planIDs,
     checkResult = {},
     loading,
-    hideCurrency,
-    hideCycle,
-    service,
 }: Props) => {
     const { APP_NAME } = useConfig();
     const isVPN = APP_NAME === APPS.PROTONVPN_SETTINGS;
-    const mailAppName = getAppName(APPS.PROTONMAIL);
-    const vpnAppName = getAppName(APPS.PROTONVPN_SETTINGS);
-    const driveAppName = getAppName(APPS.PROTONDRIVE);
     const isUpdating = !!checkResult.Additions; // Additions is present if the user is updating his current configuration by adding add-ons
-    const plansMap = toMap(plans);
-    const storageAddon = plans.find(({ Name }) => Name === ADDON_NAMES.SPACE);
-    const addressAddon = plans.find(({ Name }) => Name === ADDON_NAMES.ADDRESS);
-    const domainAddon = plans.find(({ Name }) => Name === ADDON_NAMES.DOMAIN);
-    const memberAddon = plans.find(({ Name }) => Name === ADDON_NAMES.MEMBER);
-    const vpnAddon = plans.find(({ Name }) => Name === ADDON_NAMES.VPN);
-    const { years, months, days } = getTimeRemaining(
-        new Date(),
-        checkResult.PeriodEnd ? new Date(checkResult.PeriodEnd * 1000) : new Date()
-    );
-    const monthsWithYears = months + years * 12;
-    const countdown = [
-        monthsWithYears &&
-            c('Countdown unit').ngettext(msgid`${monthsWithYears} month`, `${monthsWithYears} months`, monthsWithYears),
-        days && c('Countdown unit').ngettext(msgid`${days} day`, `${days} days`, days),
-    ]
-        .filter(isTruthy)
-        .join(', ');
-    const renewalDate = <Time key="renewal-date">{checkResult.PeriodEnd}</Time>;
-    const totalLabel = isUpdating ? c('Label').t`Total (${countdown})` : c('Label').t`Total`;
+    const plansMap = toMap(plans, 'Name');
+
     const getQuantity = (name: PLANS | ADDON_NAMES, quantity: number) => {
         if (isUpdating) {
             return checkResult?.Additions?.[name as ADDON_NAMES] || 0;
         }
         return quantity;
     };
-    const plansConfigurationMap = Object.entries(planIDs).reduce<{ [key: string]: number }>(
-        (acc, [planID, quantity]) => {
-            const { Name } = plansMap[planID];
-            acc[Name] = getQuantity(Name, quantity);
-            return acc;
-        },
-        {}
-    );
-    const subTotal =
-        getSubTotal({
-            cycle,
-            plans,
-            plansMap: plansConfigurationMap,
-        }) / cycle;
+    const plansConfigurationMap = Object.entries(planIDs).reduce<PlanIDs>((acc, [planID, quantity]) => {
+        const plan = plansMap[planID as PLANS | ADDON_NAMES];
+        if (plan?.Name) {
+            acc[plan.Name] = getQuantity(plan.Name, quantity);
+        }
+        return acc;
+    }, {});
+
+    const subTotal = getSubTotal(plansConfigurationMap, plansMap, cycle) / cycle;
+    const totalWithoutAnyDiscount = getSubTotal(plansConfigurationMap, plansMap, CYCLE.MONTHLY) / cycle;
 
     const total = isUpdating
         ? (checkResult.AmountDue || 0) - (checkResult.Credit || 0)
         : (checkResult.Amount || 0) + (checkResult.CouponDiscount || 0);
-
-    const totalWithoutAnyDiscount =
-        getSubTotal({
-            cycle: CYCLE.MONTHLY,
-            plans,
-            plansMap: plansConfigurationMap,
-        }) * cycle;
-
-    const totalDiscount = 100 - Math.round((total * 100) / totalWithoutAnyDiscount);
-
     const monthlyTotal = ((checkResult.Amount || 0) + (checkResult.CouponDiscount || 0)) / cycle;
     const discount = monthlyTotal - subTotal;
-    const collection = orderBy(
-        Object.entries(planIDs).map(([planID, quantity]) => ({ ...plansMap[planID], quantity })),
-        'Type'
-    ).reverse(); // We need to reverse because: plan type = 1, addon type = 0
-    const hasMailPlan = collection.some(
-        ({ Type, Services }) => Type === PLAN_TYPES.PLAN && hasBit(Services, PLAN_SERVICES.MAIL)
-    );
-    const hasVpnPlan = collection.some(
-        ({ Type, Services }) => Type === PLAN_TYPES.PLAN && hasBit(Services, PLAN_SERVICES.VPN)
-    );
-    const hasVisionary = collection.some(({ Name }) => Name === PLANS.VISIONARY);
-    const hasMailPlus = collection.some(({ Name }) => Name === PLANS.PLUS);
-    const hasVpnPlus = collection.some(({ Name }) => Name === PLANS.VPNPLUS);
-
-    const getTitle = (planName: ADDON_NAMES | PLANS, quantity: number) => {
-        const addresses = quantity * (addressAddon?.MaxAddresses ?? 0);
-        const storage = humanSize(quantity * (storageAddon?.MaxSpace ?? 0), 'GB');
-        const domains = quantity * (domainAddon?.MaxDomains ?? 0);
-        const members = quantity * (memberAddon?.MaxMembers ?? 0);
-        const vpn = quantity * (vpnAddon?.MaxVPN ?? 0);
-        const result = {
-            [ADDON_NAMES.ADDRESS]: c('Addon').ngettext(
-                msgid`+ ${addresses} email address`,
-                `+ ${addresses} email addresses`,
-                addresses
-            ),
-            [ADDON_NAMES.SPACE]: c('Addon').t`+ ${storage} storage`,
-            [ADDON_NAMES.DOMAIN]: c('Addon').ngettext(
-                msgid`+ ${domains} custom domain`,
-                `+ ${domains} custom domains`,
-                domains
-            ),
-            [ADDON_NAMES.MEMBER]: c('Addon').ngettext(msgid`+ ${members} user`, `+ ${members} users`, members),
-            [ADDON_NAMES.VPN]: c('Addon').ngettext(msgid`+ ${vpn} connection`, `+ ${vpn} connections`, vpn),
-        }[planName as ADDON_NAMES];
-        return result || '';
-    };
-
-    const printSummary = (service = PLAN_SERVICES.MAIL) => {
-        return collection
-            .filter(({ Services, quantity }) => hasBit(Services, service) && quantity)
-            .map(({ ID, Title, Pricing, Type, Name, quantity }) => {
-                const update = (isUpdating && checkResult?.Additions?.[Name as ADDON_NAMES]) || 0;
-                const diff = quantity - update;
-                // translator: Visionary (Mail + VPN)
-                const displayTitle = Title === 'Visionary' ? `${Title} ${c('Info').t`(Mail + VPN)`}` : Title;
-
-                return (
-                    <Fragment key={ID}>
-                        {diff ? (
-                            <CheckoutRow
-                                className={Type === PLAN_TYPES.PLAN ? 'text-bold' : ''}
-                                title={
-                                    <>
-                                        <span className="mr0-5 pr0-5">
-                                            {Type === PLAN_TYPES.PLAN ? displayTitle : getTitle(Name, diff)}
-                                        </span>
-                                        {!isUpdating && [CYCLE.YEARLY, CYCLE.TWO_YEARS].includes(cycle) && (
-                                            <span className="text-no-bold">
-                                                <CycleDiscountBadge cycle={cycle} />
-                                            </span>
-                                        )}
-                                    </>
-                                }
-                                amount={isUpdating ? 0 : (diff * Pricing[cycle]) / cycle}
-                                currency={currency}
-                            />
-                        ) : null}
-                        {update ? (
-                            <CheckoutRow
-                                title={
-                                    <>
-                                        <span className="mr0-5 pr0-5">{getTitle(Name, update)}</span>
-                                        {[CYCLE.YEARLY, CYCLE.TWO_YEARS].includes(cycle) && (
-                                            <span className="text-no-bold">
-                                                <CycleDiscountBadge cycle={cycle} />
-                                            </span>
-                                        )}
-                                    </>
-                                }
-                                amount={(update * Pricing[cycle]) / cycle}
-                                currency={currency}
-                            />
-                        ) : null}
-                    </Fragment>
-                );
-            });
-    };
+    const totalDiscount = 100 - Math.round((total * 100) / totalWithoutAnyDiscount);
 
     return (
         <Checkout
-            cycle={cycle}
             currency={currency}
-            onChangeCycle={onChangeCycle}
             onChangeCurrency={onChangeCurrency}
             loading={loading}
-            hideCurrency={hideCurrency}
-            hideCycle={hideCycle}
-            service={service}
+            hasGuarantee={!!planIDs[PLANS.VPN]}
         >
-            {hasMailPlan ? (
-                printSummary(PLAN_SERVICES.MAIL)
-            ) : (
-                <CheckoutRow className="text-bold" title={c('Info').t`${mailAppName} Free`} amount={0} />
-            )}
-            {hasVisionary ? null : (
-                <div className="border-top pt0-5">
-                    {hasVpnPlan ? (
-                        printSummary(PLAN_SERVICES.VPN)
-                    ) : (
-                        <CheckoutRow className="text-bold" title={c('Info').t`${vpnAppName} Free`} amount={0} />
-                    )}
-                </div>
-            )}
-            {hasVisionary ||
-            (hasMailPlus && hasVpnPlus && cycle === CYCLE.TWO_YEARS) ||
-            (coupon === BLACK_FRIDAY.COUPON_CODE &&
-                hasMailPlus &&
-                hasVpnPlus &&
-                [CYCLE.YEARLY, CYCLE.TWO_YEARS].includes(cycle)) ? (
-                <div className="border-top pt0-5">
-                    <CheckoutRow className="text-bold" title={driveAppName} amount={0} />
-                </div>
-            ) : null}
+            <CheckoutPlanIDs
+                planIDs={planIDs}
+                plansMap={plansMap}
+                currency={currency}
+                cycle={cycle}
+                isUpdating={isUpdating}
+                additions={checkResult?.Additions}
+            />
+            <DriveCheckoutRow planIDs={planIDs} cycle={cycle} coupon={coupon} />
             {checkResult.Amount ? (
                 <>
                     {coupon ? (
@@ -263,7 +335,7 @@ const SubscriptionCheckout = ({
                             />
                         </div>
                     ) : null}
-                    <div className="border-bottom mb0-5">
+                    <div className="border-top pt0-5">
                         {[CYCLE.YEARLY, CYCLE.TWO_YEARS].includes(cycle) ? (
                             <CheckoutRow
                                 title={c('Title').t`Total (monthly)`}
@@ -276,17 +348,14 @@ const SubscriptionCheckout = ({
                             className="m0"
                             title={
                                 <>
-                                    <span className="mr0-5">{totalLabel}</span>
+                                    {isUpdating ? (
+                                        <TotalPeriodEndTitle PeriodEnd={checkResult?.PeriodEnd} />
+                                    ) : (
+                                        <span className="mr0-5">{c('Label').t`Total`}</span>
+                                    )}
                                     {!loading && coupon === BLACK_FRIDAY.COUPON_CODE && totalDiscount > 0 && (
                                         <Badge type="success">-{totalDiscount}%</Badge>
                                     )}
-                                    {isUpdating ? (
-                                        <Info
-                                            buttonClass="mb0-5"
-                                            title={c('Info')
-                                                .jt`Billed at the end of your current billing cycle (renews on ${renewalDate})`}
-                                        />
-                                    ) : null}
                                 </>
                             }
                             amount={total}

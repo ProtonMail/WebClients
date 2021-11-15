@@ -1,59 +1,57 @@
 import { c } from 'ttag';
-import { APPS, PLANS } from '@proton/shared/lib/constants';
+import { PLANS } from '@proton/shared/lib/constants';
 
 import { Icon } from '../../../components';
-import { DriveFeature } from './interface';
+import { Feature, PlanLabel, Tier } from './interface';
 import Features from './Features';
 
 const CheckIcon = () => <Icon className="color-primary" name="checkmark" alt={c('Info').t`Included`} />;
-const EmDash = '—';
+// const EmDash = '—';
 
-const getFeatures = (): DriveFeature[] => {
+const getFeatures = (): Feature[] => {
     return [
         {
             name: 'webaccess',
-            label: c('Drive feature').t`Access via Web`,
-            free: EmDash,
-            [PLANS.PLUS]: <CheckIcon />,
-            [PLANS.PROFESSIONAL]: <CheckIcon />,
-            [PLANS.VISIONARY]: <CheckIcon />,
+            label: c('Drive feature').t`Upload & download files`,
+            [Tier.free]: <CheckIcon />,
+            [Tier.first]: <CheckIcon />,
+            [Tier.second]: <CheckIcon />,
+            [Tier.third]: <CheckIcon />,
         },
         {
             name: 'uploadDownloadFiles',
-            label: c('Drive feature').t`Upload / download files`,
-            free: EmDash,
-            [PLANS.PLUS]: <CheckIcon />,
-            [PLANS.PROFESSIONAL]: <CheckIcon />,
-            [PLANS.VISIONARY]: <CheckIcon />,
+            label: c('Drive feature').t`Share files via link`,
+            tooltip: c('Drive feature tooltip').t`Generate a public link to give anyone access to your selected files.`,
+            [Tier.free]: <CheckIcon />,
+            [Tier.first]: <CheckIcon />,
+            [Tier.second]: <CheckIcon />,
+            [Tier.third]: <CheckIcon />,
         },
         {
             name: 'shareFiles',
-            label: c('Drive feature').t`Share files via link`,
-            free: EmDash,
-            [PLANS.PLUS]: <CheckIcon />,
-            [PLANS.PROFESSIONAL]: <CheckIcon />,
-            [PLANS.VISIONARY]: <CheckIcon />,
+            label: c('Drive feature').t`Advanced sharing security`,
+            tooltip: c('Drive feature tooltip')
+                .t`Keep control over who has access to files shared by adding password protection and/or link expiration.`,
+            [Tier.free]: <CheckIcon />,
+            [Tier.first]: <CheckIcon />,
+            [Tier.second]: <CheckIcon />,
+            [Tier.third]: <CheckIcon />,
         },
     ];
 };
 
 interface Props {
-    onSelect: (planName: PLANS | 'free') => void;
+    onSelect: (planName: PLANS) => void;
     activeTab: number;
     onSetActiveTab: (activeTab: number) => void;
+    planLabels: PlanLabel[];
 }
 
-const DriveFeatures = ({ onSelect, activeTab, onSetActiveTab }: Props) => {
+const DriveFeatures = ({ planLabels, onSelect, activeTab, onSetActiveTab }: Props) => {
     const features = getFeatures();
-    const planLabels = [
-        { label: 'Free', key: 'free' } as const,
-        { label: 'Plus', key: PLANS.PLUS },
-        { label: 'Professional', key: PLANS.PROFESSIONAL },
-        { label: 'Visionary', key: PLANS.VISIONARY },
-    ];
     return (
         <Features
-            appName={APPS.PROTONDRIVE}
+            title={c('Title').t`Drive features (beta)`}
             onSelect={onSelect}
             planLabels={planLabels}
             features={features}

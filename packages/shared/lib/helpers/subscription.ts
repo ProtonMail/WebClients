@@ -3,10 +3,24 @@ import { PLAN_TYPES, PLAN_SERVICES, PLANS, CYCLE, ADDON_NAMES, COUPON_CODES } fr
 import { Subscription, Plan, PlanIDs } from '../interfaces';
 
 const { PLAN, ADDON } = PLAN_TYPES;
-const { MAIL } = PLAN_SERVICES;
-const { PLUS, VPNPLUS, VPNBASIC, VISIONARY, PROFESSIONAL } = PLANS;
+const {
+    PLUS,
+    VPNPLUS,
+    VPNBASIC,
+    PROFESSIONAL,
+    VISIONARY,
+    NEW_VISIONARY,
+    MAIL,
+    MAIL_PRO,
+    DRIVE,
+    DRIVE_PRO,
+    VPN,
+    ENTERPRISE,
+    BUNDLE,
+    BUNDLE_PRO,
+} = PLANS;
 
-export const getPlan = (subscription: Subscription | undefined, service: PLAN_SERVICES = MAIL) => {
+export const getPlan = (subscription: Subscription | undefined, service: PLAN_SERVICES) => {
     return (subscription?.Plans || []).find(({ Services, Type }) => Type === PLAN && Services & service);
 };
 
@@ -15,7 +29,7 @@ export const getAddons = (subscription: Subscription | undefined) =>
 export const hasAddons = (subscription: Subscription | undefined) =>
     (subscription?.Plans || []).some(({ Type }) => Type === ADDON);
 
-export const getPlanName = (subscription: Subscription | undefined, service: PLAN_SERVICES = MAIL) => {
+export const getPlanName = (subscription: Subscription | undefined, service: PLAN_SERVICES) => {
     const plan = getPlan(subscription, service);
     return plan?.Name;
 };
@@ -28,24 +42,31 @@ export const hasLifetime = (subscription: Subscription | undefined) => {
     return subscription?.CouponCode === COUPON_CODES.LIFETIME;
 };
 
-export const hasVisionary = (subscription: Subscription | undefined) => {
-    return hasSomePlan(subscription, VISIONARY);
+export const hasVisionary = (subscription: Subscription | undefined) => hasSomePlan(subscription, NEW_VISIONARY);
+export const hasVPN = (subscription: Subscription | undefined) => hasSomePlan(subscription, VPN);
+export const hasMail = (subscription: Subscription | undefined) => hasSomePlan(subscription, MAIL);
+export const hasMailPro = (subscription: Subscription | undefined) => hasSomePlan(subscription, MAIL_PRO);
+export const hasDrive = (subscription: Subscription | undefined) => hasSomePlan(subscription, DRIVE);
+export const hasDrivePro = (subscription: Subscription | undefined) => hasSomePlan(subscription, DRIVE_PRO);
+export const hasEnterprise = (subscription: Subscription | undefined) => hasSomePlan(subscription, ENTERPRISE);
+export const hasBundle = (subscription: Subscription | undefined) => hasSomePlan(subscription, BUNDLE);
+export const hasBundlePro = (subscription: Subscription | undefined) => hasSomePlan(subscription, BUNDLE_PRO);
+export const hasMailPlus = (subscription: Subscription | undefined) => hasSomePlan(subscription, PLUS);
+export const hasMailProfessional = (subscription: Subscription | undefined) => hasSomePlan(subscription, PROFESSIONAL);
+export const hasVpnBasic = (subscription: Subscription | undefined) => hasSomePlan(subscription, VPNBASIC);
+export const hasVpnPlus = (subscription: Subscription | undefined) => hasSomePlan(subscription, VPNPLUS);
+
+export const getHasB2BPlan = (subscription: Subscription) => {
+    return subscription?.Plans?.some(
+        ({ Name }) => Name === PLANS.MAIL_PRO || Name === PLANS.DRIVE_PRO || Name === PLANS.BUNDLE_PRO
+    );
 };
 
-export const hasMailPlus = (subscription: Subscription | undefined) => {
-    return hasSomePlan(subscription, PLUS);
-};
-
-export const hasMailProfessional = (subscription: Subscription | undefined) => {
-    return hasSomePlan(subscription, PROFESSIONAL);
-};
-
-export const hasVpnBasic = (subscription: Subscription | undefined) => {
-    return hasSomePlan(subscription, VPNBASIC);
-};
-
-export const hasVpnPlus = (subscription: Subscription | undefined) => {
-    return hasSomePlan(subscription, VPNPLUS);
+export const getHasLegacyPlans = (subscription: Subscription) => {
+    return subscription?.Plans?.some(
+        ({ Name }) =>
+            Name === VPNBASIC || Name === VPNPLUS || Name === PLUS || Name === PROFESSIONAL || Name === VISIONARY
+    );
 };
 
 export const getMonthlyBaseAmount = (
@@ -63,9 +84,8 @@ export const getMonthlyBaseAmount = (
 };
 
 export const getPlanIDs = (subscription: Subscription | undefined) => {
-    return (subscription?.Plans || []).reduce<PlanIDs>((acc, { ID, Quantity }) => {
-        acc[ID] = acc[ID] || 0;
-        acc[ID] += Quantity;
+    return (subscription?.Plans || []).reduce<PlanIDs>((acc, { Name, Quantity }) => {
+        acc[Name] = (acc[Name] || 0) + Quantity;
         return acc;
     }, {});
 };
