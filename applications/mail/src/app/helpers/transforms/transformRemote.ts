@@ -6,7 +6,7 @@ import { IMAGE_PROXY_FLAGS } from '@proton/shared/lib/constants';
 import { querySelectorAll } from '../message/messageContent';
 import { hasShowRemote } from '../mailSettings';
 import { getRemoteImages, insertImageAnchor } from '../message/messageImages';
-import { ATTRIBUTES, loadRemoteImages, removeProtonPrefix } from '../message/messageRemotes';
+import { ATTRIBUTES, loadFakeImages, loadRemoteImages, removeProtonPrefix } from '../message/messageRemotes';
 import { MessageRemoteImage, MessageState } from '../../logic/messages/messagesTypes';
 
 const WHITELIST = ['notify@protonmail.com'];
@@ -108,7 +108,7 @@ export const transformRemote = (
     if (showRemoteImages) {
         void loadRemoteImages(useProxy, remoteImages, onLoadRemoteImagesProxy, onLoadRemoteImagesDirect);
     } else if (useProxy) {
-        void onLoadFakeImagesProxy(remoteImages);
+        void loadFakeImages(remoteImages, onLoadFakeImagesProxy);
     }
 
     return {

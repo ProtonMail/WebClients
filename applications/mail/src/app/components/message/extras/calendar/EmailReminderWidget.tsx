@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { c } from 'ttag';
 import { getUnixTime } from 'date-fns';
-
 import { getParsedHeadersFirstValue } from '@proton/shared/lib/mail/messages';
 import {
     AppLink,
@@ -34,15 +33,14 @@ import { restrictedCalendarSanitize } from '@proton/shared/lib/calendar/sanitize
 import urlify from '@proton/shared/lib/calendar/urlify';
 import { toUTCDate } from '@proton/shared/lib/date/timezone';
 import { getOccurrencesBetween } from '@proton/shared/lib/calendar/recurring';
-
 import getPaginatedEventsByUID from '@proton/shared/lib/calendar/integration/getPaginatedEventsByUID';
 import { getEventLocalStartEndDates } from '../../../../helpers/calendar/emailReminder';
 import EventReminderBanner from './EventReminderBanner';
 import ExtraEventParticipants from './ExtraEventParticipants';
 import { getParticipantsList } from '../../../../helpers/calendar/invite';
-import { MessageExtended } from '../../../../models/message';
 import EmailReminderWidgetSkeleton from './EmailReminderWidgetSkeleton';
 import { getMessageHasData } from '../../../../helpers/message/messages';
+import { MessageState } from '../../../../logic/messages/messagesTypes';
 
 import './CalendarWidget.scss';
 
@@ -50,7 +48,7 @@ const EVENT_NOT_FOUND_ERROR = 'EVENT_NOT_FOUND';
 const DECRYPTION_ERROR = 'DECRYPTION_ERROR';
 
 interface EmailReminderWidgetProps {
-    message: MessageExtended;
+    message: MessageState;
 }
 
 const EmailReminderWidget = ({ message }: EmailReminderWidgetProps) => {

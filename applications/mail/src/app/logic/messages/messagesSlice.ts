@@ -51,6 +51,7 @@ import {
     loadRemoteDirectFulFilled,
     loadFakeProxyFulFilled,
     loadRemoteProxyFulFilled,
+    loadFakeProxyPending,
 } from './images/messagesImagesReducers';
 import {
     optimisticApplyLabels as optimisticApplyLabelsReducer,
@@ -74,7 +75,7 @@ import {
     updateExpires as updateExpiresReducer,
 } from './draft/messagesDraftReducers';
 import { MessagesState } from './messagesTypes';
-import { resetAction as globalReset } from '../actions';
+import { globalReset } from '../actions';
 
 const messagesSlice = createSlice({
     name: 'messages',
@@ -97,7 +98,7 @@ const messagesSlice = createSlice({
         builder.addCase(loadEmbedded.fulfilled, loadEmbeddedFulfilled);
         builder.addCase(loadRemoteProxy.pending, loadRemotePending);
         builder.addCase(loadRemoteProxy.fulfilled, loadRemoteProxyFulFilled);
-        builder.addCase(loadFakeProxy.pending, loadRemotePending);
+        builder.addCase(loadFakeProxy.pending, loadFakeProxyPending);
         builder.addCase(loadFakeProxy.fulfilled, loadFakeProxyFulFilled);
         builder.addCase(loadRemoteDirect.pending, loadRemotePending);
         builder.addCase(loadRemoteDirect.fulfilled, loadRemoteDirectFulFilled);
