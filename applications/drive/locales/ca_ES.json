@@ -140,12 +140,6 @@
       "Create new folder": [
         "Crea una carpeta nova"
       ],
-      "Created date: new to old": [
-        "Data de creació: de nou a vell"
-      ],
-      "Created date: old to new": [
-        "Data de creació: de vell a nou"
-      ],
       "Customize": [
         ""
       ],
@@ -210,12 +204,6 @@
       ],
       "enable desktop notifications": [
         "activar les notificacions d'escriptori"
-      ],
-      "Expires: new to old": [
-        "Expira: de nou a vell"
-      ],
-      "Expires: old to new": [
-        "Expira: de vell a nou"
       ],
       "Export": [
         "Exportar"
@@ -316,6 +304,9 @@
       "More info: ${ safeTitle }": [
         "Més informació: ${ safeTitle }"
       ],
+      "More options": [
+        ""
+      ],
       "Move": [
         "Mou"
       ],
@@ -324,12 +315,6 @@
       ],
       "Move to trash": [
         "Moure a la paperera"
-      ],
-      "Name: A to Z": [
-        "Nom: A - Z"
-      ],
-      "Name: Z to A": [
-        "Nom: Z - A"
       ],
       "New upload": [
         "Càrrega nova"
@@ -484,12 +469,6 @@
       "Signing out": [
         "Tancant la sessió"
       ],
-      "Size: large to small": [
-        "Tamany: De gran a petit"
-      ],
-      "Size: small to large": [
-        "Tamany: de petit a gran"
-      ],
       "Skip": [
         "Ometre"
       ],
@@ -526,12 +505,6 @@
       "Try another method": [
         "Proveu amb un altre mètode"
       ],
-      "Type: A to Z": [
-        "Tipus: A - Z"
-      ],
-      "Type: Z to A": [
-        "Tipus: Z - A"
-      ],
       "Undo": [
         "Desfer"
       ],
@@ -552,12 +525,6 @@
       ],
       "Upload picture": [
         "Carregar imatge"
-      ],
-      "Uploaded date: new to old": [
-        ""
-      ],
-      "Uploaded date: old to new": [
-        ""
       ],
       "Use ${ label } theme": [
         "Utilitzar el tema ${ label }"
@@ -881,9 +848,6 @@
       "Calendar could not be decrypted": [
         ""
       ],
-      "Calendar could not be found": [
-        ""
-      ],
       "Calendar is syncing": [
         "El calendari s'està sincronitzant"
       ],
@@ -1124,7 +1088,7 @@
         "No es pot validar el telèfon, torneu-ho a provar més tard"
       ],
       "Checkout expired, please try again": [
-        ""
+        "El pagament ha expirat. Torneu-ho a provar"
       ],
       "Contact could not be saved": [
         "El contacte no s'ha pogut desar"
@@ -1154,6 +1118,9 @@
       "Error connecting to the Bitcoin API.": [
         "Error en connectar-se a l'API de Bitcoin."
       ],
+      "Failed to load the link": [
+        ""
+      ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         ""
       ],
@@ -1164,7 +1131,7 @@
         "L'arxiu no té contingut per previsualitzar"
       ],
       "Folder name cannot be empty": [
-        ""
+        "El nom de la carpeta no pot estar buit"
       ],
       "Image upload failed": [
         "La càrrega de la imatge ha fallat"
@@ -1203,7 +1170,7 @@
         "Codi de verificació no vàlid"
       ],
       "Label name cannot be empty": [
-        ""
+        "El nom de l'etiqueta no es pot deixar buit"
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "",
@@ -1230,7 +1197,7 @@
         "Alguns grups no tenen contactes: ${ noContactGroupList } "
       ],
       "Organization not recognized. Try again.": [
-        ""
+        "Organització no reconeguda. Torneu-ho a provar."
       ],
       "Passwords do not match": [
         "Les contrasenyes no coincideixen"
@@ -1255,7 +1222,7 @@
         "No s'han pogut desar les preferències"
       ],
       "Primary address key is not decrypted": [
-        ""
+        "La clau de l'adreça primària no està desxifrada"
       ],
       "Primary address key is not decrypted.": [
         ""
@@ -1294,10 +1261,10 @@
         "El navegador que utilitzeu no permet l'autorització total del pagament. Si us plau, utilitzeu un navegador diferent o inicieu la sessió mitjançant un ordinador."
       ],
       "The folder name is too long. Please choose a different name.": [
-        ""
+        "El nom de la carpeta és massa llarg. Escolliu-ne un de diferent."
       ],
       "The label name is too long. Please choose a different name.": [
-        ""
+        "El nom de l'etiqueta és massa llarg. Escolliu-ne un de diferent."
       ],
       "The minimum amount of credit that can be added is ${ _price }": [
         "La quantitat mínima de crèdit que es pot afegir és ${ _price }"
@@ -2041,6 +2008,9 @@
       ],
       "Learn more": [
         "Saber-ne més"
+      ],
+      "Link copied to clipboard": [
+        ""
       ],
       "Link expires: ": [
         "L'enllaç caduca el: "
@@ -2809,6 +2779,9 @@
       "Country": [
         "País"
       ],
+      "Created": [
+        ""
+      ],
       "CVV code": [
         "Codi CVV"
       ],
@@ -2927,6 +2900,9 @@
       "Merge a folder": [
         "Fusionar una carpeta"
       ],
+      "Name": [
+        ""
+      ],
       "Name on card": [
         "Titular de la targeta"
       ],
@@ -3008,6 +2984,9 @@
       "Sign emails": [
         "Signar correu electrònics"
       ],
+      "Size": [
+        ""
+      ],
       "Skip file": [
         "Ometre fitxer"
       ],
@@ -3041,6 +3020,9 @@
       "Two-factor authentication code": [
         "Codi d'autenticació de dos factors"
       ],
+      "Type": [
+        ""
+      ],
       "Unknown file": [
         "Fitxer desconegut"
       ],
@@ -3053,17 +3035,14 @@
       "Unlock later": [
         ""
       ],
-      "Up to ${ parentLinkName }": [
-        "Pujar a ${ parentLinkName }"
-      ],
-      "Up to the parent folder": [
-        "Pujar a la carpeta pare"
-      ],
       "Upload anyway": [
         "Carregar de totes maneres"
       ],
       "Upload picture": [
         "Carregar imatge"
+      ],
+      "Uploaded": [
+        ""
       ],
       "Username or ProtonMail address": [
         "Nom d'usuari o adreça ProtonMail"

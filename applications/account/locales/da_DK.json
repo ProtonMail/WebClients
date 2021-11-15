@@ -31,11 +31,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } butik"
       ],
-      "Activate": [
-        "Aktivér"
-      ],
       "activate": [
         "aktivér"
+      ],
+      "Activate": [
+        "Aktivér"
       ],
       "Activate ${ Name }@pm.me": [
         "Aktiver ${ Name }@pm.me"
@@ -51,6 +51,9 @@
       ],
       "Add address": [
         "Tilføj adresse"
+      ],
+      "Add calendar": [
+        "Tilføj kalender"
       ],
       "Add condition": [
         "Tilføj betingelse"
@@ -223,12 +226,6 @@
       "Create link": [
         "Opret link"
       ],
-      "Create new recovery phrase": [
-        "Opret ny gendannelsesfrase"
-      ],
-      "Create new recovery phrase?": [
-        "Opret ny gendannelsesfrase?"
-      ],
       "Customize": [
         "Tilpas"
       ],
@@ -272,10 +269,10 @@
         "Ikke modtaget koden?"
       ],
       "Disable recovery phrase": [
-        "Deaktiver gendannelsesfrase"
+        "Deaktiver gendannelsessætning"
       ],
       "Disable recovery phrase?": [
-        "Deaktiver gendannelsesfrase?"
+        "Deaktiver gendannelsessætning?"
       ],
       "Discard": [
         "Kassér"
@@ -348,6 +345,15 @@
       ],
       "Generate key": [
         "Generér nøgle"
+      ],
+      "Generate new recovery phrase": [
+        "Opret ny gendannelsessætning"
+      ],
+      "Generate new recovery phrase?": [
+        "Opret ny gendannelsessætning?"
+      ],
+      "Generate recovery phrase": [
+        "Opret gendannelsessætning"
       ],
       "Get ProtonVPN Plus": [
         "Få ProtonVPN Plus"
@@ -501,6 +507,9 @@
       ],
       "Reconnect": [
         "Tilslut igen"
+      ],
+      "Recover data": [
+        "Gendan data"
       ],
       "Refresh status": [
         "Opdater status"
@@ -696,9 +705,6 @@
       ],
       "Submit": [
         "Indsend"
-      ],
-      "Subscribe to calendar": [
-        "Abonnér på kalender"
       ],
       "Support": [
         "Support"
@@ -1287,9 +1293,9 @@
       ]
     },
     "Calendar limit warning": {
-      "You have reached the maximum of ${ calendarsLimit } calendar.": [
-        "Du har nået det maksimale antal på ${ calendarsLimit } kalender.",
-        "Du har nået det maksimale antal på ${ calendarsLimit } kalendere."
+      "You have reached the maximum of ${ calendarsLimit } personal calendar.": [
+        "Du har nået det maksimale antal på ${ calendarsLimit } personlig kalender.",
+        "Du har nået det maksimale antal på ${ calendarsLimit } personlige kalendere."
       ],
       "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } subscribed calendar.": [
         "Du har nået det maksimale antal på ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } kalender.",
@@ -1316,9 +1322,6 @@
     "Calendar subscription not synced error": {
       "Calendar could not be decrypted": [
         "Kalender kunne ikke dekrypteres"
-      ],
-      "Calendar could not be found": [
-        "Kalender kunne ikke findes"
       ],
       "Calendar is syncing": [
         "Kalender synkroniserer"
@@ -1945,7 +1948,7 @@
         "Organisationsnøgle er ikke dekrypteret."
       ],
       "Organization not recognized. Try again.": [
-        ""
+        "Organisation ikke genkendt. Prøv igen."
       ],
       "Passwords do not match": [
         "Adgangskoderne er ikke ens"
@@ -1985,7 +1988,7 @@
         "Genopfrisk venligst siden."
       ],
       "Please set a recovery email first": [
-        ""
+        "Angiv først en gendannelsesmail"
       ],
       "Please set a recovery phone number first": [
         "Angiv først et gendannelsestelefonnummer"
@@ -2102,7 +2105,7 @@
         "Uploadet fil er ikke en gyldig privat nøgle. Kontrollér og prøv igen."
       ],
       "Uploaded file is not a valid recovery file. Please verify and try again.": [
-        ""
+        "Den uploadede fil er ikke en gyldig gendannelsesfil. Kontroller den og prøv igen."
       ],
       "Uploaded files are not valid private keys. Please verify and try again.": [
         "Uploadede filer er ikke gyldige private nøgle. Kontrollér og prøv igen."
@@ -2117,7 +2120,7 @@
         "Vi kunne ikke oprette forbindelse til din tjenesteudbyder."
       ],
       "Wrong recovery phrase. Try again or use another recovery method.": [
-        "Forkert gendannelsesfrase. Prøv igen eller brug en anden gendannelsesmetode."
+        "Forkert gendannelsessætning. Prøv igen eller brug en anden gendannelsesmetode."
       ],
       "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.": [
         "Forkert bekræftelseskode. Sørg for, at du har kopieret bekræftelseskoden korrekt og forsøg igen. Det kan tage op til 24 timer, før ændringerne effektueres."
@@ -3178,10 +3181,10 @@
         "En nøgle med den samme krypteringsalgoritme er allerede aktiv på denne adresse.\nGenerering af en anden nøgle vil medføre langsommere kontoindlæsning, og sletning af denne nøgle kan forårsage problemer. Genererer du en ny nøgle, fordi den gamle er kompromitteret, så markér venligst din gamle nøgle som kompromitteret. Sikker på, at du vil fortsætte?"
       ],
       "A recovery file lets you unlock and view your data after an account reset. ": [
-        ""
+        "Med en gendannelsesfil kan du låse op for og se dine data efter en kontonulstilling. "
       ],
       "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password.": [
-        "Med en gendannelsesfrase kan du få adgang til din konto igen og gendanne dine krypterede beskeder, hvis du glemmer din adgangskode."
+        "Med en gendannelsessætning kan du få adgang til din konto igen og gendanne dine krypterede beskeder, hvis du glemmer din adgangskode."
       ],
       "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
         "Få adgang til blokeret indhold såsom sociale medier, nyheder, Wikipedia, YouTube og mange andre, uanset hvor du er."
@@ -3202,13 +3205,13 @@
         "Opdatering af konto lykkedes"
       ],
       "Activate your recovery phrase": [
-        "Aktiver din gendannelsesfrase"
+        "Aktiver din gendannelsessætning"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"ProtonMail me\" or \"Private Message me.\"": [
         "Tilføj en @pm.me-adresse til din konto. Dette enkle, kortere domæne står for \"ProtonMail me\" eller \"Privat Message me.\""
       ],
       "Add a recovery email address": [
-        ""
+        "Tilføj en e-mailadresse til gendannelse"
       ],
       "Add a recovery phone number": [
         "Tilføj telefonnummer til gendannelse"
@@ -3233,7 +3236,7 @@
         "Adresser"
       ],
       "After a password reset your data is locked in encrypted form to keep it safe. To decrypt and view your emails and other data, you need a recovery file or recovery phrase.": [
-        ""
+        "Efter en nulstilling af adgangskoden låses dine data i krypteret form for at holde dem sikre. Hvis du vil dekryptere og se dine e-mails og andre data, skal du bruge en gendannelsesfil eller gendannelsessætning."
       ],
       "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
         "Når du har foretaget din Bitcoin-betaling, så følg anvisningerne nedenfor for at opgradere."
@@ -3433,9 +3436,6 @@
       "Create in": [
         "Opret i"
       ],
-      "Creating a new recovery phrase will deactivate your old one.": [
-        "Oprettelse af en ny gendannelsesfrase vil deaktivere din gamle."
-      ],
       "Creating your Proton account": [
         "Opretter din Proton-konto"
       ],
@@ -3474,15 +3474,6 @@
       ],
       "Delete link?": [
         "Slet link?"
-      ],
-      "Disabling this will prevent this email from being used for account recovery.": [
-        "Deaktivering af dette vil forhindre denne e-mail i at blive brugt til kontogendannelse."
-      ],
-      "Disabling this will prevent this phone number from being used for account recovery.": [
-        "Deaktivering af dette vil forhindre dette telefonnummer i at blive brugt til kontogendannelse."
-      ],
-      "Disabling this will prevent your recovery phrase from being used for account recovery.": [
-        "Deaktivering af dette vil forhindre din gendannelsesfrase i at blive brugt til kontogendannelse."
       ],
       "Discount applied to your subscription with coupon ${ code }": [
         "Rabat anvendt på dit abonnement med rabatkupon ${ code }"
@@ -3534,7 +3525,7 @@
         "Redigér etiket"
       ],
       "Effortlessly and securely move your emails from your current provider to Proton. If you use Google, we also support calendar and contacts imports.": [
-        ""
+        "Flyt nemt og sikkert dine e-mails fra din nuværende udbyder til Proton. Hvis du bruger Google, understøtter vi også import af kalendere og kontakter."
       ],
       "Email address": [
         "E-mailadresse"
@@ -3570,7 +3561,7 @@
         "Indtast gendannelses${ recoveryMethodText } tilknyttet din ${ BRAND_NAME } konto. Vi sender dig en kode for at bekræfte nulstilling af adgangskoden."
       ],
       "Enter the recovery phrase associated with your ${ BRAND_NAME } Account.": [
-        "Indtast gendannelsesfrasen der er knyttet til din ${ BRAND_NAME } konto."
+        "Indtast gendannelsessætningen der er knyttet til din ${ BRAND_NAME } konto."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Indtast den bekræftelseskode, der blev sendt til ${ destinationText }."
@@ -3631,6 +3622,9 @@
       ],
       "Full-featured VPN with speed up to 10 Gbps.": [
         "Fuldt udstyret VPN med hastighed på op til 10 Gbps."
+      ],
+      "Generating a new recovery phrase will deactivate your old one.": [
+        "Oprettelse af en ny gendannelsessætning vil deaktivere din gamle."
       ],
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
         "Giv din offentlige nøgle til dine venner, eller offentliggør den online, så alle kan sende dig end-to-end krypterede e-mails!"
@@ -4030,7 +4024,7 @@
         "Vent venligst..."
       ],
       "Please write your recovery phrase down in the order it appears and keep it somewhere safe. Your recovery phrase can be used to fully recover access to your account and your encrypted messages.": [
-        "Skriv din gendannelsesfrase ned i den rækkefølge, den vises, og opbevar den et sikkert sted. Din gendannelsesfrase kan bruges til igen at få fuld adgang til din konto og dine krypterede meddelelser."
+        "Skriv din gendannelsessætning ned i den rækkefølge, den vises, og opbevar den et sikkert sted. Din gendannelsessætning kan bruges til igen at få fuld adgang til din konto og dine krypterede meddelelser."
       ],
       "Plus or Visionary subscription required": [
         "Plus- eller Visionary abonnement påkrævet"
@@ -4088,13 +4082,13 @@
         "Genoprettelsesfiler er blevet ugyldiggjort"
       ],
       "Recovery phrase copied to clipboard": [
-        "Gendannelsesfrase kopieret til udklipsholderen"
+        "Gendannelsessætning kopieret til udklipsholderen"
       ],
       "Recovery phrase has been disabled": [
-        "Gendannelsesfrase er blevet deaktiveret"
+        "Gendannelsessætning er blevet deaktiveret"
       ],
       "Recovery phrase is not associated with any outdated keys.": [
-        "Gendannelsesfrase er ikke tilknyttet nogen forældede nøgler."
+        "Gendannelsessætning er ikke tilknyttet nogen forældede nøgler."
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Opfriskning af siden eller ${ link } vil automatisk løse de fleste problemer."
@@ -4127,7 +4121,7 @@
         "Vælg en tjenesteudbyder for at komme i gang"
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit. You can also merge imported calendars with existing Proton calendars.": [
-        ""
+        "Vælg, hvilke kalendere der skal importeres. Der oprettes en ny kalender for hver importeret kalender op til grænsen på 20 kalendere. Du kan også flette importerede kalendere med eksisterende Proton-kalendere."
       ],
       "Server is currently down": [
         "Serveren er i øjeblikket nede"
@@ -4301,7 +4295,7 @@
         "To-adgangskodetilstand benytter separate adgangskoder til indlogning og postkassedekryptering. Dette giver en lille sikkerhedsfordel i visse situationer, men brug af en-adgangskodetilstand anbefales til de fleste brugere. Angiv først én adgangskode til indlogning og dernæst én til postkassen for at skifte til to-adgangskodtilstand."
       ],
       "Unable to decrypt. Recovery phrase is not associated with any keys.": [
-        "Kan ikke dekryptere. Gendannelsesfrase er ikke forbundet med nogen nøgler."
+        "Kan ikke dekryptere. Gendannelsessætning er ikke forbundet med nogen nøgler."
       ],
       "Unable to verify recovery file signature. Please contact support.": [
         "Kan ikke verificere signaturen for genoprettelsesfilen. Kontakt venligst support."
@@ -4543,6 +4537,9 @@
       "Your Block List is empty.": [
         "Din blokeringsliste er tom."
       ],
+      "Your data is encrypted, you can recover your data by reactivating your keys.": [
+        "Dine data er krypteret, og du kan gendanne dine data ved at genaktivere dine nøgler."
+      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "Dine data er klar til at blive importeret fra ${ importedEmailAddressStrong } til din Proton-konto."
       ],
@@ -4592,10 +4589,10 @@
         "Din e-mailadresse til gendannelse:"
       ],
       "Your recovery phrase": [
-        "Din gendannelsesfrase"
+        "Din gendannelsessætning"
       ],
       "Your recovery phrase is a series of 12 words in a specific order.": [
-        "Din gendannelsesfrase er en serie af 12 ord i en specifik rækkefølge."
+        "Din gendannelsessætning er en serie af 12 ord i en bestemt rækkefølge."
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Dit abonnement håndteres af Mozilla. Kontakt venligst Mozilla-support."
@@ -5022,7 +5019,7 @@
         "Tillad gendannelse via telefon"
       ],
       "Allow recovery by recovery phrase": [
-        "Tillad gendannelse med gendannelsesfrase"
+        "Tillad gendannelse med gendannelsessætning"
       ],
       "Amount": [
         "Beløb"
@@ -5262,7 +5259,7 @@
         "Slutdag"
       ],
       "Enter organization name to confirm": [
-        ""
+        "Indtast organisationsnavn for at bekræfte"
       ],
       "Enter password": [
         "Angiv adgangskode"
@@ -5283,7 +5280,7 @@
         "ekstra lagerplads"
       ],
       "File": [
-        ""
+        "Fil"
       ],
       "Filter Name": [
         "Filternavn"
@@ -5469,7 +5466,7 @@
         "Telefonnummer"
       ],
       "Phrase": [
-        "Frase"
+        "Sætning"
       ],
       "Please add all 3 of the following CNAME records. Note, DNS records can take several hours to update.": [
         "Tilføj følgende 3 CNAME-poster. Bemærk, at DNS-poster kan tage flere timer om at opdatere."
@@ -5513,23 +5510,20 @@
       "Recovery code": [
         "Gendannelseskode"
       ],
-      "Recovery email": [
-        "E-mail til gendanelse"
-      ],
       "Recovery email address": [
-        ""
+        "E-mailadresse til gendannelse"
       ],
       "Recovery file": [
-        ""
+        "Gendannelsesfil"
       ],
-      "Recovery phone": [
-        "Gendannelsestelefon"
+      "Recovery phone number": [
+        "Telefonnummer til gendannelse"
       ],
       "Recovery phrase": [
-        "Gendannelsesfrase"
+        "Gendannelsessætning"
       ],
       "Recovery phrase contains 12 words": [
-        "Gendannelsesfrase indeholder 12 ord"
+        "Gendannelsessætning indeholder 12 ord"
       ],
       "Repeat password": [
         "Gentag kodeord"
@@ -5637,13 +5631,13 @@
         "Upload din backup-nøgle"
       ],
       "Upload your recovery file": [
-        ""
+        "Upload din gendannelsesfil"
       ],
       "Uploaded private keys": [
         "Uploadet private nøgler"
       ],
       "Uploaded recovery file": [
-        ""
+        "Uploadet genoprettelsesfil"
       ],
       "URL": [
         "URL"
@@ -5721,21 +5715,18 @@
         "Din adgangskode (admin)"
       ],
       "Your recovery phrase": [
-        "Din gendannelsesfrase"
+        "Din gendannelsessætning"
       ],
       "ZIP": [
         "Postnummer"
       ]
     },
     "label": {
-      "Phone number": [
-        "Telefonnummer"
-      ],
       "Recovery phone number": [
-        ""
+        "Telefonnummer til gendannelse"
       ],
       "Recovery phrase": [
-        "Gendannelsesfrase"
+        "Gendannelsessætning"
       ]
     },
     "Label for adding a new custom domain": {
@@ -6041,12 +6032,12 @@
     },
     "Mail import summary": {
       "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "",
-        ""
+        "Importer alle beskeder fra ${ selectedLabelsCount } ud af ${ totalLabelsCount } etikette siden ${ periodFragment } og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importer alle beskeder fra ${ selectedLabelsCount } ud af ${ totalLabelsCount } etiketter siden ${ periodFragment } og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
       "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "",
-        ""
+        "Importer alle beskeder fra ${ totalLabelsCount } etiketten siden ${ periodFragment } og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importer alle beskeder fra ${ totalLabelsCount } etiketter siden ${ periodFragment } og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }"
       ]
     },
     "Mail upsell feature": {
@@ -6087,7 +6078,7 @@
     },
     "Member downgrade modal": {
       "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        ""
+        "Dette vil permanent slette alle underbrugere, konti og data, der er knyttet til din organisation."
       ]
     },
     "Message": {
@@ -6957,7 +6948,7 @@
         "Telefonnummer"
       ],
       "Recovery phrase": [
-        "Gendannelsesfrase"
+        "Gendannelsessætning"
       ]
     },
     "Remark about a key type option": {
@@ -7001,7 +6992,7 @@
         "Upload yderligere private nøgler"
       ],
       "Upload additional recovery files": [
-        ""
+        "Upload yderligere gendannelsesfiler"
       ]
     },
     "Select search results": {
@@ -7183,8 +7174,8 @@
       "Calendar URL": [
         "Kalender-URL"
       ],
-      "You can subscribe to someone else's calendar by pasting its URL below. This will give you access to a read-only version of this calendar.\n${ kbLink }": [
-        "Du kan abonnere på en andens kalender ved at indsætte dens URL nedenfor. Dette vil give dig adgang til en skrivebeskyttet version af denne kalender.\n${ kbLink }"
+      "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Subscribed calendars.\n${ kbLink }": [
+        "Hvis du vil abonnere på en ekstern eller offentlig kalender og dens opdateringer, skal du indtaste URL-adressen. En skrivebeskyttet version af kalenderen vil blive tilføjet til dine kalenderabonnementer.\n${ kbLink }"
       ]
     },
     "Subscribe to calendar modal description": {
@@ -7496,7 +7487,7 @@
         "3. Vælg konfigurationsfil og download"
       ],
       "Account recovery": [
-        ""
+        "Kontogendannelse"
       ],
       "Account suspended": [
         "Konto suspenderet"
@@ -7733,7 +7724,7 @@
         "Kontrolpanel"
       ],
       "Data recovery": [
-        ""
+        "Datagendannelse"
       ],
       "Date": [
         "Dato"
@@ -7769,7 +7760,7 @@
         "Slet logs"
       ],
       "Delete organization?": [
-        ""
+        "Slet organisation?"
       ],
       "Delete user": [
         "Slet bruger"
@@ -7821,6 +7812,9 @@
       ],
       "Enable keyboard shortcuts": [
         "Aktiver tastaturgenveje"
+      ],
+      "Encrypted data": [
+        "Krypterede data"
       ],
       "Encryption & keys": [
         "Kryptering & nøgler"
@@ -7998,7 +7992,7 @@
         "Adgangskode & nøgler"
       ],
       "Password & security": [
-        ""
+        "Adgangskode & sikkerhed"
       ],
       "Passwords": [
         "Adgangskoder"
@@ -8067,10 +8061,10 @@
         "Genopret forbindelse til din konto"
       ],
       "Recovery": [
-        ""
+        "Gendannelse"
       ],
       "Recovery file": [
-        ""
+        "Gendannelsesfil"
       ],
       "Remove calendar": [
         "Fjern kalender"
@@ -8181,7 +8175,7 @@
         "Status"
       ],
       "Subscribed calendars": [
-        "Tilmeldte kalendere"
+        "Kalenderabonnementer"
       ],
       "Subtotal": [
         "Subtotal"
@@ -8196,7 +8190,7 @@
         "Skift til to-adgangskode-tilstand"
       ],
       "Take precautions to avoid data loss!": [
-        ""
+        "Tag forholdsregler for at undgå tab af data!"
       ],
       "Theme": [
         "Tema"
@@ -8253,7 +8247,7 @@
         "Dit abonnement"
       ],
       "Your recovery status": [
-        ""
+        "Din gendannelsesstatus"
       ],
       "ZIP / postal code": [
         "Postnummer"

@@ -140,12 +140,6 @@
       "Create new folder": [
         "Crear nueva carpeta"
       ],
-      "Created date: new to old": [
-        ""
-      ],
-      "Created date: old to new": [
-        ""
-      ],
       "Customize": [
         "Personalizar"
       ],
@@ -211,12 +205,6 @@
       "enable desktop notifications": [
         "habilitar las notificaciones de escritorio"
       ],
-      "Expires: new to old": [
-        ""
-      ],
-      "Expires: old to new": [
-        ""
-      ],
       "Export": [
         "Exportar"
       ],
@@ -269,7 +257,7 @@
         "Importar"
       ],
       "Import from .csv or vCard": [
-        ""
+        "Importar desde .csv o vCard"
       ],
       "Increase": [
         "Aumentar"
@@ -316,6 +304,9 @@
       "More info: ${ safeTitle }": [
         "Más información: ${ safeTitle }"
       ],
+      "More options": [
+        ""
+      ],
       "Move": [
         "Mover"
       ],
@@ -324,12 +315,6 @@
       ],
       "Move to trash": [
         "Mover a la papelera"
-      ],
-      "Name: A to Z": [
-        "Nombre: A - Z"
-      ],
-      "Name: Z to A": [
-        "Nombre: Z - A"
       ],
       "New upload": [
         "Cargar archivo"
@@ -467,13 +452,13 @@
         "Mostrar ajustes PGP avanzados"
       ],
       "Show folders": [
-        ""
+        "Mostrar carpetas"
       ],
       "Show info": [
         "Mostrar información"
       ],
       "Show labels": [
-        ""
+        "Mostrar etiquetas"
       ],
       "Show shared link details": [
         ""
@@ -483,12 +468,6 @@
       ],
       "Signing out": [
         "Cerrando sesión"
-      ],
-      "Size: large to small": [
-        "Tamaño: grande a pequeño"
-      ],
-      "Size: small to large": [
-        "Tamaño: pequeño a grande"
       ],
       "Skip": [
         "Omitir"
@@ -526,12 +505,6 @@
       "Try another method": [
         "Prueba con otro método"
       ],
-      "Type: A to Z": [
-        "Tipo: A a Z"
-      ],
-      "Type: Z to A": [
-        "Tipo: Z a A"
-      ],
       "Undo": [
         "Deshacer"
       ],
@@ -552,12 +525,6 @@
       ],
       "Upload picture": [
         "Cargar imagen"
-      ],
-      "Uploaded date: new to old": [
-        "Fecha de subida: nueva a vieja"
-      ],
-      "Uploaded date: old to new": [
-        "Fecha de subida: vieja a nueva"
       ],
       "Use ${ label } theme": [
         "Utilizar tema ${ label }"
@@ -881,9 +848,6 @@
       "Calendar could not be decrypted": [
         ""
       ],
-      "Calendar could not be found": [
-        ""
-      ],
       "Calendar is syncing": [
         "El calendario se está sincronizando"
       ],
@@ -1153,6 +1117,9 @@
       ],
       "Error connecting to the Bitcoin API.": [
         "Error al conectar a la API de Bitcoin."
+      ],
+      "Failed to load the link": [
+        ""
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         ""
@@ -1692,8 +1659,8 @@
         "${ saveExtra20 } tanto en VPN como en correo añadiendo una suscripción VPN."
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
-        "",
-        ""
+        "${ selectedCalendarsTotal } de ${ providerCalendars.length } calendario",
+        "${ selectedCalendarsTotal } de ${ providerCalendars.length } calendarios"
       ],
       "${ selectedFoldersCount } folder selected": [
         "${ selectedFoldersCount } carpeta seleccionada",
@@ -2004,7 +1971,7 @@
         ""
       ],
       "Import from": [
-        ""
+        "Importar desde"
       ],
       "Import in progress": [
         ""
@@ -2041,6 +2008,9 @@
       ],
       "Learn more": [
         "Más información"
+      ],
+      "Link copied to clipboard": [
+        ""
       ],
       "Link expires: ": [
         "El enlace expira el: "
@@ -2809,6 +2779,9 @@
       "Country": [
         "País"
       ],
+      "Created": [
+        ""
+      ],
       "CVV code": [
         "Código CVV"
       ],
@@ -2829,7 +2802,7 @@
         "Formato de correo"
       ],
       "Emails": [
-        ""
+        "Correos electrónicos"
       ],
       "Enable Beta Access": [
         "Habilitar acceso beta"
@@ -2871,7 +2844,7 @@
         "Carpeta"
       ],
       "Folder location": [
-        ""
+        "Ubicación de la carpeta"
       ],
       "Folder name": [
         "Nombre de la carpeta"
@@ -2889,16 +2862,16 @@
         "Imagen"
       ],
       "Import all messages": [
-        ""
+        "Importar todos los mensajes"
       ],
       "Import contacts": [
         "Importar contactos"
       ],
       "Import interval": [
-        ""
+        "Intervalo de importación"
       ],
       "Import to email address": [
-        ""
+        "Importar a la dirección de correo electrónico"
       ],
       "Keyboard shortcuts": [
         "Atajos de teclado"
@@ -2927,14 +2900,17 @@
       "Merge a folder": [
         ""
       ],
+      "Name": [
+        ""
+      ],
       "Name on card": [
-        "Nombre en la tarjeta"
+        "Titular de la tarjeta"
       ],
       "Never": [
         "Nunca"
       ],
       "Notification": [
-        ""
+        "Notificación"
       ],
       "Operating system": [
         "Sistema operativo"
@@ -3008,6 +2984,9 @@
       "Sign emails": [
         "Firmar correos electrónicos"
       ],
+      "Size": [
+        ""
+      ],
       "Skip file": [
         ""
       ],
@@ -3030,7 +3009,7 @@
         "Esto eliminará permanentemente todos los archivos en su unidad bloqueada."
       ],
       "To: ${ emailAddress }": [
-        ""
+        "Para: ${ emailAddress }"
       ],
       "Total": [
         "Total"
@@ -3040,6 +3019,9 @@
       ],
       "Two-factor authentication code": [
         "Código de autenticación de doble factor"
+      ],
+      "Type": [
+        ""
       ],
       "Unknown file": [
         "Archivo desconocido"
@@ -3053,17 +3035,14 @@
       "Unlock later": [
         "Desbloquear más tarde"
       ],
-      "Up to ${ parentLinkName }": [
-        ""
-      ],
-      "Up to the parent folder": [
-        "Hasta la carpeta principal"
-      ],
       "Upload anyway": [
         ""
       ],
       "Upload picture": [
         "Cargar imagen"
+      ],
+      "Uploaded": [
+        ""
       ],
       "Username or ProtonMail address": [
         "Nombre de usuario o dirección de ProtonMail"
@@ -3330,7 +3309,7 @@
     },
     "New Label form": {
       "Color": [
-        ""
+        "Color"
       ],
       "Folder name": [
         "Nombre de la carpeta"
@@ -4688,16 +4667,16 @@
     },
     "VPN Plan Feature": {
       "${ n } server": [
-        "",
-        "${ n }+ servidores"
+        "${ n } servidor",
+        "${ n } servidores"
       ],
       "${ n } VPN connection": [
-        "",
+        "${ n } conexión VPN",
         "${ n } conexiones VPN"
       ],
       "${ numberOfServers } in ${ numberOfCountries } country": [
-        "",
-        "${ numberOfServers } servidores en ${ numberOfCountries } países"
+        "${ numberOfServers } en ${ numberOfCountries } país",
+        "${ numberOfServers } en ${ numberOfCountries } países"
       ]
     },
     "Warning": {

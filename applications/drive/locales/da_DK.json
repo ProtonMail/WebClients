@@ -140,12 +140,6 @@
       "Create new folder": [
         "Opret ny mappe"
       ],
-      "Created date: new to old": [
-        "Oprettelsesdato: ny til gammel"
-      ],
-      "Created date: old to new": [
-        "Oprettelsesdato: gammel til ny"
-      ],
       "Customize": [
         "Tilpas"
       ],
@@ -211,12 +205,6 @@
       "enable desktop notifications": [
         "aktivér skrivebordsmeddelelser"
       ],
-      "Expires: new to old": [
-        "Udløber: ny til gammel"
-      ],
-      "Expires: old to new": [
-        "Udløber: gammel til ny"
-      ],
       "Export": [
         "Exportér"
       ],
@@ -227,7 +215,7 @@
         "Videresend som vedhæftning"
       ],
       "Get link": [
-        ""
+        "Få link"
       ],
       "Get started": [
         "Kom godt i gang"
@@ -296,7 +284,7 @@
         "Postkasse layout"
       ],
       "Manage link": [
-        ""
+        "Håndter link"
       ],
       "Mark for deletion": [
         "Markér til sletning"
@@ -316,6 +304,9 @@
       "More info: ${ safeTitle }": [
         "Mere information: ${ safeTitle }"
       ],
+      "More options": [
+        "Flere muligheder"
+      ],
       "Move": [
         "Flyt"
       ],
@@ -324,12 +315,6 @@
       ],
       "Move to trash": [
         "Flyt til papirkurv"
-      ],
-      "Name: A to Z": [
-        "Navn: A til Å"
-      ],
-      "Name: Z to A": [
-        "Navn: Å til A"
       ],
       "New upload": [
         "Nyt upload"
@@ -484,12 +469,6 @@
       "Signing out": [
         "Logger ud"
       ],
-      "Size: large to small": [
-        "Størrelse: Stor til lille"
-      ],
-      "Size: small to large": [
-        "Størrelse: Lille til stor"
-      ],
       "Skip": [
         "Spring over"
       ],
@@ -526,12 +505,6 @@
       "Try another method": [
         "Prøv en anden metode"
       ],
-      "Type: A to Z": [
-        "Type: A til Å"
-      ],
-      "Type: Z to A": [
-        "Type: Å til A"
-      ],
       "Undo": [
         "Fortryd"
       ],
@@ -552,12 +525,6 @@
       ],
       "Upload picture": [
         "Overfør billede"
-      ],
-      "Uploaded date: new to old": [
-        "Overførselsdato: ny til gammel"
-      ],
-      "Uploaded date: old to new": [
-        "Overførselsdato: gammel til ny"
       ],
       "Use ${ label } theme": [
         "Brug temaet “${ label }”"
@@ -881,9 +848,6 @@
       "Calendar could not be decrypted": [
         "Kalender kunne ikke dekrypteres"
       ],
-      "Calendar could not be found": [
-        "Kalender kunne ikke findes"
-      ],
       "Calendar is syncing": [
         "Kalender synkroniserer"
       ],
@@ -1154,6 +1118,9 @@
       "Error connecting to the Bitcoin API.": [
         "Fejl under oprettelse af forbindelse til Bitcoin-API."
       ],
+      "Failed to load the link": [
+        "Linket kunne ikke indlæses"
+      ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "Filen \"${ item.name }\" kan ikke uploades på grund af \"${ error }\" fejl"
       ],
@@ -1230,7 +1197,7 @@
         "Nogle grupper har ingen kontakter: ${ noContactGroupList } "
       ],
       "Organization not recognized. Try again.": [
-        ""
+        "Organisation ikke genkendt. Prøv igen."
       ],
       "Passwords do not match": [
         "Adgangskoder matcher ikke"
@@ -2042,6 +2009,9 @@
       "Learn more": [
         "Få mere at vide"
       ],
+      "Link copied to clipboard": [
+        "Link kopieret til udklipsholder"
+      ],
       "Link expires: ": [
         "Link udløber: "
       ],
@@ -2224,7 +2194,7 @@
         "Vælg det e-mail-format, der som standard skal benyttes, når du sender en e-mail til denne e-mailadresse."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit. You can also merge imported calendars with existing Proton calendars.": [
-        ""
+        "Vælg, hvilke kalendere der skal importeres. Der oprettes en ny kalender for hver importeret kalender op til grænsen på 20 kalendere. Du kan også flette importerede kalendere med eksisterende Proton-kalendere."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Servere er utilgængelige. Prøv igen om nogle få minutter"
@@ -2809,6 +2779,9 @@
       "Country": [
         "Land"
       ],
+      "Created": [
+        "Oprettet"
+      ],
       "CVV code": [
         "CVV-kode"
       ],
@@ -2838,7 +2811,7 @@
         "Kryptér e-mails"
       ],
       "Enter organization name to confirm": [
-        ""
+        "Indtast organisationsnavn for at bekræfte"
       ],
       "Enter the 6-digit code": [
         "Indtast den sekscifrede kode"
@@ -2927,6 +2900,9 @@
       "Merge a folder": [
         "Flet en mappe"
       ],
+      "Name": [
+        "Navn"
+      ],
       "Name on card": [
         "Navn på kort"
       ],
@@ -3008,6 +2984,9 @@
       "Sign emails": [
         "Signér e-mails"
       ],
+      "Size": [
+        "Størrelse"
+      ],
       "Skip file": [
         "Spring fil over"
       ],
@@ -3041,6 +3020,9 @@
       "Two-factor authentication code": [
         "To-faktorgodkendelseskode"
       ],
+      "Type": [
+        "Type"
+      ],
       "Unknown file": [
         "Ukendt fil"
       ],
@@ -3053,17 +3035,14 @@
       "Unlock later": [
         "Lås op senere"
       ],
-      "Up to ${ parentLinkName }": [
-        "Op til ${ parentLinkName }"
-      ],
-      "Up to the parent folder": [
-        "Op til overordnet mappe"
-      ],
       "Upload anyway": [
         "Upload alligevel"
       ],
       "Upload picture": [
         "Upload billed"
+      ],
+      "Uploaded": [
+        "Uploadet"
       ],
       "Username or ProtonMail address": [
         "Brugernavn eller ProtonMail-adresse"
@@ -3292,12 +3271,12 @@
     },
     "Mail import summary": {
       "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "",
-        ""
+        "Importer alle beskeder fra ${ selectedLabelsCount } ud af ${ totalLabelsCount } etikette siden ${ periodFragment } og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importer alle beskeder fra ${ selectedLabelsCount } ud af ${ totalLabelsCount } etiketter siden ${ periodFragment } og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
       "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "",
-        ""
+        "Importer alle beskeder fra ${ totalLabelsCount } etiketten siden ${ periodFragment } og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importer alle beskeder fra ${ totalLabelsCount } etiketter siden ${ periodFragment } og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }"
       ]
     },
     "Many Others": {
@@ -3307,7 +3286,7 @@
     },
     "Member downgrade modal": {
       "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        ""
+        "Dette vil permanent slette alle underbrugere, konti og data, der er knyttet til din organisation."
       ]
     },
     "Message display when a new app version is available": {
@@ -4148,7 +4127,7 @@
         "Slet ${ Name }"
       ],
       "Delete organization?": [
-        ""
+        "Slet organisation?"
       ],
       "Delete permanently": [
         "Slet permanent"

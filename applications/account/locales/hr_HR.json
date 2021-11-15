@@ -31,11 +31,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } dućan"
       ],
-      "Activate": [
-        "Aktiviraj"
-      ],
       "activate": [
         "aktiviraj"
+      ],
+      "Activate": [
+        "Aktiviraj"
       ],
       "Activate ${ Name }@pm.me": [
         "Aktiviraj ${ Name }@pm.me"
@@ -51,6 +51,9 @@
       ],
       "Add address": [
         "Dodaj adresu"
+      ],
+      "Add calendar": [
+        ""
       ],
       "Add condition": [
         "Dodaj uvjet"
@@ -223,12 +226,6 @@
       "Create link": [
         "Stvori poveznicu"
       ],
-      "Create new recovery phrase": [
-        ""
-      ],
-      "Create new recovery phrase?": [
-        ""
-      ],
       "Customize": [
         "Prilagodi"
       ],
@@ -347,6 +344,15 @@
         "Font"
       ],
       "Generate key": [
+        ""
+      ],
+      "Generate new recovery phrase": [
+        ""
+      ],
+      "Generate new recovery phrase?": [
+        ""
+      ],
+      "Generate recovery phrase": [
         ""
       ],
       "Get ProtonVPN Plus": [
@@ -501,6 +507,9 @@
       ],
       "Reconnect": [
         "Ponovno poveži"
+      ],
+      "Recover data": [
+        ""
       ],
       "Refresh status": [
         "Osvježi status"
@@ -696,9 +705,6 @@
       ],
       "Submit": [
         "Pošalji"
-      ],
-      "Subscribe to calendar": [
-        "Pretplatite se na kalendar"
       ],
       "Support": [
         "Podrška"
@@ -1296,7 +1302,7 @@
       ]
     },
     "Calendar limit warning": {
-      "You have reached the maximum of ${ calendarsLimit } calendar.": [
+      "You have reached the maximum of ${ calendarsLimit } personal calendar.": [
         "",
         "",
         ""
@@ -1326,9 +1332,6 @@
     },
     "Calendar subscription not synced error": {
       "Calendar could not be decrypted": [
-        ""
-      ],
-      "Calendar could not be found": [
         ""
       ],
       "Calendar is syncing": [
@@ -3486,9 +3489,6 @@
       "Create in": [
         ""
       ],
-      "Creating a new recovery phrase will deactivate your old one.": [
-        ""
-      ],
       "Creating your Proton account": [
         "Stvaranje vašeg Proton računa"
       ],
@@ -3527,15 +3527,6 @@
       ],
       "Delete link?": [
         "Izbrisati poveznicu?"
-      ],
-      "Disabling this will prevent this email from being used for account recovery.": [
-        "Ako onemogućite, ova e-pošta se neće koristiti za oporavak računa."
-      ],
-      "Disabling this will prevent this phone number from being used for account recovery.": [
-        "Ako onemogućite, ovaj broj telefona se neće koristiti za oporavak računa."
-      ],
-      "Disabling this will prevent your recovery phrase from being used for account recovery.": [
-        ""
       ],
       "Discount applied to your subscription with coupon ${ code }": [
         "Popust je primjenjen na vašu pretplatu s kuponom ${ code }"
@@ -3685,6 +3676,9 @@
       ],
       "Full-featured VPN with speed up to 10 Gbps.": [
         "VPN s puno značajki i brzinom do 10 Gbps."
+      ],
+      "Generating a new recovery phrase will deactivate your old one.": [
+        ""
       ],
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
         "Podijelite svoj javni ključ s prijateljima ili ga objavite na mreži kako bi vam svi mogli slati end-to-end šifrirane e-poruke!"
@@ -4598,6 +4592,9 @@
       ],
       "Your Block List is empty.": [
         "Vaš popis nedopuštenih je prazan."
+      ],
+      "Your data is encrypted, you can recover your data by reactivating your keys.": [
+        ""
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         ""
@@ -5573,17 +5570,14 @@
       "Recovery code": [
         "Kôd za oporavak"
       ],
-      "Recovery email": [
-        "Adresa e-pošte za oporavak"
-      ],
       "Recovery email address": [
         ""
       ],
       "Recovery file": [
         ""
       ],
-      "Recovery phone": [
-        "Telefon za oporavak"
+      "Recovery phone number": [
+        ""
       ],
       "Recovery phrase": [
         ""
@@ -5788,9 +5782,6 @@
       ]
     },
     "label": {
-      "Phone number": [
-        "Broj telefona"
-      ],
       "Recovery phone number": [
         ""
       ],
@@ -7255,7 +7246,7 @@
       "Calendar URL": [
         "URL kalendara"
       ],
-      "You can subscribe to someone else's calendar by pasting its URL below. This will give you access to a read-only version of this calendar.\n${ kbLink }": [
+      "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Subscribed calendars.\n${ kbLink }": [
         ""
       ]
     },
@@ -7895,6 +7886,9 @@
       ],
       "Enable keyboard shortcuts": [
         "Omogući tipkovne prečace"
+      ],
+      "Encrypted data": [
+        ""
       ],
       "Encryption & keys": [
         "Šifriranje i ključevi"

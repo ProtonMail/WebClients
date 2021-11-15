@@ -209,9 +209,6 @@
       "Create new message": [
         ""
       ],
-      "Create recovery phrase": [
-        ""
-      ],
       "Custom filter": [
         "Saját szűrő"
       ],
@@ -327,6 +324,9 @@
       ],
       "Forward as attachment": [
         "Továbbítás mellékletként"
+      ],
+      "Generate recovery phrase": [
+        ""
       ],
       "Get started": [
         "Kezdés"
@@ -1389,26 +1389,26 @@
       "(Attendance optional)": [
         ""
       ],
-      "Adding occurrences to an event is not supported for the moment.": [
-        "További alkalmak hozzáadása egy eseményhez jelenleg nem támogatott."
+      "Adding occurrences to an event is not supported for the moment": [
+        ""
       ],
       "An occurrence has been added to the event ${ veventIcsTitle }": [
         "Egy alkalom került hozzáadásra az eseményéhez: ${ veventIcsTitle }"
       ],
-      "Event refreshing is not supported for the moment.": [
-        "Eseményt frissítés jelenleg nem támogatott."
+      "Event refreshing is not supported for the moment": [
+        ""
       ],
-      "Event rescheduling is not supported for the moment.": [
-        "Az esemény újraidőzítés jelenleg nem támogatott."
+      "Event rescheduling is not supported for the moment": [
+        ""
       ],
-      "The sender of this email has not been invited to this event and cannot be added as a participant.": [
-        "Az e-mail feladója nincs meghívva az eseményre, ezért nem adható hozzá résztvevőként."
+      "The sender of this email has not been invited to this event and cannot be added as a participant": [
+        ""
       ],
-      "This answer cannot be added to ${ calendarAppName } as we only support answers to all events of a series for the moment.": [
-        "A válasz nem adható a ${ calendarAppName }-hoz, mert jelenleg csak a sorozat összes eseményéhez való válasz támogatott."
+      "This answer cannot be added to ${ calendarAppName } as we only support answers to all events of a series for the moment": [
+        ""
       ],
-      "This event has already happened.": [
-        "Ez az esemény már elmúlt."
+      "This event has already happened": [
+        ""
       ],
       "This event has been cancelled.": [
         "Ezt az eseményt törölték."
@@ -1416,8 +1416,8 @@
       "This event has been updated.": [
         "Ez eseményt frissítették."
       ],
-      "This event is currently happening.": [
-        "Ez az esemény jelenleg tart."
+      "This event is currently happening": [
+        ""
       ],
       "This invitation is out of date. The event has been cancelled.": [
         "A meghívó elavult. Az eseményt törölték."
@@ -1446,8 +1446,8 @@
       "You already tentatively accepted this invitation.": [
         ""
       ],
-      "Your email address is not in the participants list.": [
-        "Az ön e-mail címe nem szerepel a résztvevők listáján."
+      "Your email address is not in the participants list": [
+        ""
       ]
     },
     "Calendar status": {
@@ -1460,9 +1460,6 @@
     },
     "Calendar subscription not synced error": {
       "Calendar could not be decrypted": [
-        ""
-      ],
-      "Calendar could not be found": [
         ""
       ],
       "Calendar is syncing": [
@@ -3234,9 +3231,6 @@
       "Create in": [
         ""
       ],
-      "Create recovery phrase": [
-        ""
-      ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         ""
       ],
@@ -3395,6 +3389,9 @@
       ],
       "Full-featured VPN with speed up to 10 Gbps.": [
         "Teljes VPN csomag, akár 10Gbps sebességgel."
+      ],
+      "Generate recovery phrase": [
+        ""
       ],
       "Get more storage and premium features.": [
         ""

@@ -140,12 +140,6 @@
       "Create new folder": [
         "Új mappa létrehozása"
       ],
-      "Created date: new to old": [
-        ""
-      ],
-      "Created date: old to new": [
-        ""
-      ],
       "Customize": [
         ""
       ],
@@ -210,12 +204,6 @@
       ],
       "enable desktop notifications": [
         "asztali értesítések engedélyezése"
-      ],
-      "Expires: new to old": [
-        ""
-      ],
-      "Expires: old to new": [
-        ""
       ],
       "Export": [
         "Exportálás"
@@ -316,6 +304,9 @@
       "More info: ${ safeTitle }": [
         "További információk: ${ safeTitle }"
       ],
+      "More options": [
+        ""
+      ],
       "Move": [
         "Áthelyezés"
       ],
@@ -324,12 +315,6 @@
       ],
       "Move to trash": [
         "Áthelyezés a lomtárba"
-      ],
-      "Name: A to Z": [
-        "Név: A-Z"
-      ],
-      "Name: Z to A": [
-        "Név: Z-A"
       ],
       "New upload": [
         "Új feltöltés"
@@ -484,12 +469,6 @@
       "Signing out": [
         "Kijelentkezés"
       ],
-      "Size: large to small": [
-        "Méret: csökkenő"
-      ],
-      "Size: small to large": [
-        "Méret: növekvő"
-      ],
       "Skip": [
         "Kihagyás"
       ],
@@ -526,12 +505,6 @@
       "Try another method": [
         "Másik módszer"
       ],
-      "Type: A to Z": [
-        "Típus: A-Z"
-      ],
-      "Type: Z to A": [
-        "Típus: Z-A"
-      ],
       "Undo": [
         "Visszavonás"
       ],
@@ -552,12 +525,6 @@
       ],
       "Upload picture": [
         "Kép feltöltése"
-      ],
-      "Uploaded date: new to old": [
-        ""
-      ],
-      "Uploaded date: old to new": [
-        ""
       ],
       "Use ${ label } theme": [
         "${ label } téma használata"
@@ -881,9 +848,6 @@
       "Calendar could not be decrypted": [
         ""
       ],
-      "Calendar could not be found": [
-        ""
-      ],
       "Calendar is syncing": [
         ""
       ],
@@ -1153,6 +1117,9 @@
       ],
       "Error connecting to the Bitcoin API.": [
         "Hiba a Bitcoin API-ra csatlakozás közben."
+      ],
+      "Failed to load the link": [
+        ""
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         ""
@@ -2042,6 +2009,9 @@
       "Learn more": [
         "További információk"
       ],
+      "Link copied to clipboard": [
+        ""
+      ],
       "Link expires: ": [
         "A link lejár: "
       ],
@@ -2809,6 +2779,9 @@
       "Country": [
         "Ország"
       ],
+      "Created": [
+        ""
+      ],
       "CVV code": [
         "CVV kód"
       ],
@@ -2927,6 +2900,9 @@
       "Merge a folder": [
         ""
       ],
+      "Name": [
+        ""
+      ],
       "Name on card": [
         "Kártyán megjelenített név"
       ],
@@ -3008,6 +2984,9 @@
       "Sign emails": [
         "Üzenetek aláírása"
       ],
+      "Size": [
+        ""
+      ],
       "Skip file": [
         ""
       ],
@@ -3041,6 +3020,9 @@
       "Two-factor authentication code": [
         "Kétlépcsős hitelesítő kód"
       ],
+      "Type": [
+        ""
+      ],
       "Unknown file": [
         "Ismeretlen fájl"
       ],
@@ -3053,17 +3035,14 @@
       "Unlock later": [
         ""
       ],
-      "Up to ${ parentLinkName }": [
-        ""
-      ],
-      "Up to the parent folder": [
-        ""
-      ],
       "Upload anyway": [
         ""
       ],
       "Upload picture": [
         "Kép feltöltése"
+      ],
+      "Uploaded": [
+        ""
       ],
       "Username or ProtonMail address": [
         "Felhasználónév vagy ProtonMail cím"

@@ -116,6 +116,9 @@
       "Continue": [
         "Συνέχεια"
       ],
+      "Continue import": [
+        ""
+      ],
       "Continue with Google": [
         "Συνεχίστε με Google"
       ],
@@ -124,6 +127,9 @@
       ],
       "Create": [
         "Δημιουργία"
+      ],
+      "Create calendar": [
+        ""
       ],
       "Create event": [
         "Δημιουργία εκδήλωσης"
@@ -231,6 +237,9 @@
       ],
       "Import": [
         "Εισαγωγή"
+      ],
+      "Import events": [
+        ""
       ],
       "Import from .csv or vCard": [
         "Εισαγωγή από αρχείο .csv ή vCard"
@@ -525,11 +534,6 @@
         "Δεν έχετε καμία ομάδα."
       ]
     },
-    "Add calendar icon tooltip": {
-      "Create calendar": [
-        "Δημιουργία ημερολογίου"
-      ]
-    },
     "Addon": {
       "+ ${ addresses } email address": [
         "+ ${ addresses } διεύθυνση email",
@@ -617,6 +621,9 @@
       "By leaving now, some contacts may not be imported": [
         "Αφήνοντας τώρα, ορισμένες επαφές ενδέχεται να μην εισαχθούν"
       ],
+      "By leaving now, some events may not be imported": [
+        ""
+      ],
       "By leaving now, you will lose your event.": [
         "Αποχωρώντας τώρα, θα χάσετε το γεγονός σας."
       ]
@@ -630,6 +637,26 @@
       ],
       "Proton applications": [
         "Εφαρμογές Proton"
+      ]
+    },
+    "Attached ics file error": {
+      "Empty ICS file": [
+        ""
+      ],
+      "Invalid event": [
+        ""
+      ],
+      "Invalid ICS file": [
+        ""
+      ],
+      "Invalid method": [
+        ""
+      ],
+      "Unsupported calendar component": [
+        ""
+      ],
+      "Unsupported event": [
+        ""
       ]
     },
     "Attendee role": {
@@ -888,6 +915,14 @@
         "Αποδεχθήκατε προσωρινά την πρόσκληση"
       ]
     },
+    "Calendar sidebar dropdown item": {
+      "Add calendar from URL": [
+        ""
+      ],
+      "More options": [
+        ""
+      ]
+    },
     "Calendar status": {
       "Not synced": [
         "Δεν συγχρονίστηκαν"
@@ -899,9 +934,6 @@
     "Calendar subscription not synced error": {
       "Calendar could not be decrypted": [
         "Αδυναμία αποκρυπτογράφησης ημερολογίου"
-      ],
-      "Calendar could not be found": [
-        "Αδυναμία εύρεσης ημερολογίου"
       ],
       "Calendar is syncing": [
         "Το ημερολόγιο συγχρονίζεται"
@@ -1140,6 +1172,9 @@
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Χρησιμοποιήστε την επιλογή \"Drag and Drop\" για να ταξινομήσετε τη προτεραιότητα συγχώνευσης μεταξύ των επαφών. Καταργήστε την επιλογή των επαφών που δεν θέλετε να συγχωνεύσετε."
       ],
+      "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
+        ""
+      ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Μπορείτε να επισημάνετε για διαγραφή τις επαφές που δεν θέλετε να συγχωνεύσετε ούτε να διατηρήσετε. Η διαγραφή θα πραγματοποιηθεί μόνο αφού πατηθεί το κουμπί συγχώνευσης"
       ]
@@ -1181,6 +1216,11 @@
       ],
       "Upload / download files": [
         "Ανέβασμα / λήψη αρχείων"
+      ]
+    },
+    "Dropwdown action icon tooltip": {
+      "Add calendar": [
+        ""
       ]
     },
     "Duration": {
@@ -1615,8 +1655,38 @@
       ]
     },
     "Error importing calendar": {
+      "${ CALENDAR_APP_NAME } only supports importing calendars with iCal version 2.0.": [
+        ""
+      ],
+      "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
+        ""
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
+        ""
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Only ICS file formats are allowed.": [
+        ""
+      ],
+      "An error occurred uploading your file. No file has been selected.": [
+        ""
+      ],
       "An unexpected error occurred. Import must be restarted.": [
         "Παρουσιάστηκε μη αναμενόμενο σφάλμα. Πρέπει να γίνει επανεκκίνηση της εισαγωγής."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } events.": [
+        ""
+      ],
+      "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
+        ""
+      ],
+      "Your file ${ formattedFilename } has no events to be imported.": [
+        ""
+      ],
+      "Your file ${ formattedFilename } is empty.": [
+        ""
+      ],
+      "Your file ${ formattedFilename } is not a calendar.": [
+        ""
       ]
     },
     "Error importing contact": {
@@ -1650,12 +1720,113 @@
         "Το αρχείο σας ${ formattedFilename } είναι άδειο."
       ]
     },
+    "Error importing event": {
+      "Bad format. Component cannot be read.": [
+        ""
+      ],
+      "Calendar": [
+        ""
+      ],
+      "Calendar timezone not supported": [
+        ""
+      ],
+      "Component with wrong format": [
+        ""
+      ],
+      "Custom timezone": [
+        ""
+      ],
+      "Edited event not supported": [
+        ""
+      ],
+      "Element": [
+        ""
+      ],
+      "Encryption failed": [
+        ""
+      ],
+      "End time out of bounds": [
+        ""
+      ],
+      "Event": [
+        ""
+      ],
+      "Event validation failed": [
+        ""
+      ],
+      "Floating times not supported": [
+        ""
+      ],
+      "Free-busy time information": [
+        ""
+      ],
+      "Invalid event": [
+        ""
+      ],
+      "Journal entry": [
+        ""
+      ],
+      "Malformed all-day event": [
+        ""
+      ],
+      "Malformed end time": [
+        ""
+      ],
+      "Malformed recurring event": [
+        ""
+      ],
+      "Malformed start time": [
+        ""
+      ],
+      "Missing start time": [
+        ""
+      ],
+      "no UID, title or start time": [
+        ""
+      ],
+      "Non-Gregorian": [
+        ""
+      ],
+      "Notification out of bounds": [
+        ""
+      ],
+      "Original recurring event could not be found": [
+        ""
+      ],
+      "Recurring event has no occurrences": [
+        ""
+      ],
+      "Recurring rule not supported": [
+        ""
+      ],
+      "Start time out of bounds": [
+        ""
+      ],
+      "Timezone": [
+        ""
+      ],
+      "Timezone not supported": [
+        ""
+      ],
+      "To-do entry": [
+        ""
+      ],
+      "Unknown": [
+        ""
+      ],
+      "Unsupported event": [
+        ""
+      ]
+    },
     "Error message": {
       "Brace yourself till we get the error fixed.": [
         "Φροντίστε τον εαυτό σας μέχρι να επιδιορθώσουμε το πρόβλημα."
       ],
       "Error: ${ errorMessage }": [
         "Σφάλμα: ${ errorMessage }"
+      ],
+      "Invalid URL": [
+        ""
       ],
       "Oops, something went wrong": [
         "Ωχ, κάτι πήγε στραβά"
@@ -1709,6 +1880,44 @@
     "Event info. Organizer name": {
       "You": [
         "Εσείς"
+      ]
+    },
+    "Event invitation error": {
+      "Attached ICS file could not be decrypted": [
+        ""
+      ],
+      "Attached ICS file could not be parsed": [
+        ""
+      ],
+      "Invalid invitation": [
+        ""
+      ],
+      "Invalid response": [
+        ""
+      ],
+      "Unexpected error": [
+        ""
+      ],
+      "Unsupported invitation": [
+        ""
+      ],
+      "Unsupported response": [
+        ""
+      ],
+      "We could not cancel the event in your calendar": [
+        ""
+      ],
+      "We could not retrieve the event from your calendar": [
+        ""
+      ],
+      "We could not update the event in your calendar": [
+        ""
+      ],
+      "Your answer was sent, but the event could not be added to your calendar": [
+        ""
+      ],
+      "Your answer was sent, but the event could not be updated in your calendar": [
+        ""
       ]
     },
     "Event popover close button": {
@@ -1817,13 +2026,53 @@
       ]
     },
     "Import calendar": {
+      "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
+        "",
+        ""
+      ],
+      "An error occurred while encrypting and adding your event. No event could be imported.": [
+        "",
+        ""
+      ],
+      "An error occurred while encrypting and adding your events. ${ totalImported } out of ${ totalToImport } events successfully imported.": [
+        ""
+      ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "Κρυπτογράφηση και προσθήκη επαφών: ${ totalImported }/${ totalToImport }"
+      ],
+      "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
+        ""
+      ],
+      "Event successfully imported. The imported event will now appear in your calendar.": [
+        "",
+        ""
+      ],
+      "Please don't close the tab before the importing process is finished.": [
+        ""
       ]
     },
     "Import calendar warning": {
+      "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
+        ""
+      ],
       "vCard versions < 3.0": [
         "εκδόσεις vCard < 3.0"
+      ]
+    },
+    "Import calendar; import invitation": {
+      "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your Proton email address.": [
+        ""
+      ],
+      "This file contains an event invitation:": [
+        "",
+        ""
+      ],
+      "This file contains an invitation response:": [
+        "",
+        ""
+      ],
+      "This file contains some data that we cannot import:": [
+        ""
       ]
     },
     "Import contact": {
@@ -1873,8 +2122,17 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } από ${ totalContacts } επαφές δεν θα εισαχθούν. Κάντε κλικ για λεπτομέρειες"
       ],
+      "${ totalEventsDiscarded } out of ${ totalEvents } events will not be imported. Expand for details.": [
+        ""
+      ],
       "No contact can be imported. Click for details": [
         "Δεν είναι δυνατή η εισαγωγή καμίας επαφής. Κάντε κλικ για λεπτομέρειες"
+      ],
+      "No event can be imported. Expand for details.": [
+        ""
+      ],
+      "Part of your calendar content is not supported and will not be imported.": [
+        ""
       ]
     },
     "Info": {
@@ -3092,6 +3350,9 @@
       "Import to email address": [
         "Εισαγωγή σε διεύθυνση email"
       ],
+      "Import to:": [
+        ""
+      ],
       "Keyboard shortcuts": [
         "Συντομεύσεις πληκτρολογίου"
       ],
@@ -3497,9 +3758,25 @@
         "Απλό κείμενο"
       ]
     },
+    "Modal action": {
+      "Close": [
+        ""
+      ],
+      "Manage calendars": [
+        ""
+      ]
+    },
     "Modal title": {
       "Time zone changed": [
         "Η ζώνη ώρας άλλαξε"
+      ],
+      "Unable to add more calendars": [
+        ""
+      ]
+    },
+    "Modal title and action": {
+      "Add calendar": [
+        ""
       ]
     },
     "Monthly recurring event, frequency": {
@@ -4180,6 +4457,42 @@
         "Ο τρέχων χώρος αποθήκευσης:"
       ]
     },
+    "Subscribe to calendar modal": {
+      "Calendar URL": [
+        ""
+      ],
+      "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Subscribed calendars.\n${ kbLink }": [
+        ""
+      ]
+    },
+    "Subscribe to calendar modal description": {
+      "Learn how to get a private calendar link.": [
+        ""
+      ]
+    },
+    "Subscribed calendar extension warning": {
+      "By using this link, Google will make the calendar you are subscribing to public": [
+        ""
+      ],
+      "This link might be wrong": [
+        ""
+      ]
+    },
+    "Subscribed calendar feature unavailable error": {
+      "Subscribing to a calendar is unavailable at the moment": [
+        ""
+      ]
+    },
+    "Subscribed calendar limit reached modal body": {
+      "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } subscribed calendar.": [
+        "",
+        ""
+      ],
+      "You have reached the maximum of ${ personalCalendarLimit } personal calendar.": [
+        "",
+        ""
+      ]
+    },
     "Success": {
       "A cancellation email will be sent to removed participants for all the events in this series.": [
         "Ένα email ακύρωσης θα αποσταλεί στους καταργημένους συμμετέχοντες για όλες τις εκδηλώσεις αυτής της σειράς."
@@ -4514,6 +4827,9 @@
       "Contacts": [
         "Επαφές"
       ],
+      "Continue with partial import?": [
+        ""
+      ],
       "Coupon discount": [
         "Έκπτωση κουπονιού"
       ],
@@ -4633,8 +4949,18 @@
       "Human verification": [
         "Ανθρώπινη Επαλήθευση"
       ],
+      "Import as simple event?": [
+        "",
+        ""
+      ],
       "Import contacts": [
         "Εισαγωγή επαφών"
+      ],
+      "Import events": [
+        ""
+      ],
+      "Import failed": [
+        "Αποτυχία εισαγωγής"
       ],
       "Import groups": [
         "Εισαγωγή ομάδων"

@@ -209,9 +209,6 @@
       "Create new message": [
         "Creare mesaj"
       ],
-      "Create recovery phrase": [
-        "Creare frază de recuperare"
-      ],
       "Custom filter": [
         "Filtru personal"
       ],
@@ -329,6 +326,9 @@
       ],
       "Forward as attachment": [
         "Redirecționare ca atașament"
+      ],
+      "Generate recovery phrase": [
+        "Generarea frazei de recuperare"
       ],
       "Get started": [
         "Să începem"
@@ -1397,26 +1397,26 @@
       "(Attendance optional)": [
         "(Prezență opțională)"
       ],
-      "Adding occurrences to an event is not supported for the moment.": [
-        "Adăugarea de noi manifestări ale unui eveniment nu este suportată momentan."
+      "Adding occurrences to an event is not supported for the moment": [
+        "Adăugarea de noi manifestări ale unui eveniment nu este suportată momentan"
       ],
       "An occurrence has been added to the event ${ veventIcsTitle }": [
         "A fost adăugată o manifestare la evenimentul ${ veventIcsTitle }"
       ],
-      "Event refreshing is not supported for the moment.": [
-        "Reîmprospătarea evenimentului nu este momentan suportată."
+      "Event refreshing is not supported for the moment": [
+        "Reîmprospătarea evenimentului nu este momentan suportată"
       ],
-      "Event rescheduling is not supported for the moment.": [
-        "Reprogramarea evenimentului nu este momentan suportată."
+      "Event rescheduling is not supported for the moment": [
+        "Reprogramarea evenimentului nu este momentan suportată"
       ],
-      "The sender of this email has not been invited to this event and cannot be added as a participant.": [
-        "Expeditorul acestui e-mail nu a fost invitat la acest eveniment și nu poate fi adăugat ca participant."
+      "The sender of this email has not been invited to this event and cannot be added as a participant": [
+        "Expeditorul acestui e-mail nu a fost invitat la acest eveniment și nu poate fi adăugat ca participant"
       ],
-      "This answer cannot be added to ${ calendarAppName } as we only support answers to all events of a series for the moment.": [
-        "Acest răspuns nu poate fi adăugat la ${ calendarAppName } deoarece momentan sunt suportate doar răspunsuri la toate evenimentele dintr-o serie."
+      "This answer cannot be added to ${ calendarAppName } as we only support answers to all events of a series for the moment": [
+        "Acest răspuns nu poate fi adăugat la ${ calendarAppName } deoarece momentan sunt suportate doar răspunsuri la toate evenimentele dintr-o serie"
       ],
-      "This event has already happened.": [
-        "Acest eveniment s-a întâmplat deja."
+      "This event has already happened": [
+        "Acest eveniment a avut deja loc"
       ],
       "This event has been cancelled.": [
         "Acest eveniment a fost anulat."
@@ -1424,8 +1424,8 @@
       "This event has been updated.": [
         "Acest eveniment a fost actualizat."
       ],
-      "This event is currently happening.": [
-        "Acest eveniment este în desfășurare."
+      "This event is currently happening": [
+        "Acest eveniment este în desfășurare"
       ],
       "This invitation is out of date. The event has been cancelled.": [
         "Această invitație este veche. Evenimentul a fost anulat."
@@ -1454,8 +1454,8 @@
       "You already tentatively accepted this invitation.": [
         "Deja ați acceptat această invitație în mod provizoriu."
       ],
-      "Your email address is not in the participants list.": [
-        "Adresa dvs. de e-mail nu se află în lista de participanţi."
+      "Your email address is not in the participants list": [
+        "Adresa dumneavoastră de e-mail nu se află în lista de participanți"
       ]
     },
     "Calendar status": {
@@ -1469,9 +1469,6 @@
     "Calendar subscription not synced error": {
       "Calendar could not be decrypted": [
         "Calendarul nu a putut fi decriptat"
-      ],
-      "Calendar could not be found": [
-        "Calendarul nu a putut fi găsit"
       ],
       "Calendar is syncing": [
         "Calendarul se sincronizează."
@@ -3300,9 +3297,6 @@
       "Create in": [
         "Creare în"
       ],
-      "Create recovery phrase": [
-        "Creare frază de recuperare"
-      ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "Sunt acceptate fișierele CSV din Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora și alte aplicații, precum și formatele vCard 3.1 și 4.0 (codificare UTF-8)."
       ],
@@ -3467,6 +3461,9 @@
       ],
       "Full-featured VPN with speed up to 10 Gbps.": [
         "VPN complet cu viteză de până la 10 Gbps."
+      ],
+      "Generate recovery phrase": [
+        "Generarea frazei de recuperare"
       ],
       "Get more storage and premium features.": [
         "Obțineți mai mult spațiu de stocare și funcții premium."

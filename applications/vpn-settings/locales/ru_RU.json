@@ -511,7 +511,7 @@
     },
     "blackfriday Action": {
       "Get the offer": [
-        ""
+        "Воспользоваться"
       ]
     },
     "blackfriday Info": {
@@ -530,13 +530,13 @@
     },
     "blackfriday Title": {
       "Best deal": [
-        ""
+        "Лучшее предложение"
       ],
       "Most popular": [
         "Самое популярное"
       ],
       "Save more when combining Mail and VPN": [
-        ""
+        "Сэкономьте больше, оплачивая Mail и VPN вместе"
       ]
     },
     "blackfriday: VPNspecialoffer Action": {
@@ -549,18 +549,18 @@
     },
     "blackfriday: VPNspecialoffer Badge popup": {
       "${ vpnAppName } Plus Special Offer 2021 discount has been applied": [
-        ""
+        "Применена скидка за спецпредложение ${ vpnAppName } Plus 2021 года"
       ]
     },
     "blackfriday: VPNspecialoffer Info": {
       "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
-        ""
+        "Скидки рассчитываются исходя из стандартной платы за 1 месяц в размере ${ standardMonthlyPricing }"
       ],
       "Save ${ percentage }%": [
-        "${ percentage }%"
+        "Экономия ${ percentage }%"
       ],
       "Special offer Terms and Conditions": [
-        ""
+        "Условия специального предложения"
       ]
     },
     "blackfriday: VPNspecialoffer info": {
@@ -575,13 +575,13 @@
     },
     "blackfriday: VPNspecialoffer Title": {
       "(${ notice }) Renews after 1 month at a standard monthly price of ${ amount }": [
-        ""
+        "(${ notice }) Автопродление через 1 месяц по стандартной цене ${ amount } на 1 месяц"
       ],
       "(${ notice }) Renews after 1 year at a standard discounted annual price of ${ amount } (20% discount)": [
-        ""
+        "(${ notice }) Автопродление через 1 год по сниженной цене ${ amount } на 1 год (скидка 20%)"
       ],
       "(${ notice }) Renews after 2 years at a standard discounted 2-year price of ${ amount } (33% discount)": [
-        ""
+        "(${ notice }) Автопродление через 2 года по сниженной цене ${ amount } на 2 года (скидка 33%)"
       ],
       "1 month": [
         "1 месяц"
@@ -593,16 +593,16 @@
         "24 месяца"
       ],
       "Billed at ${ amount } for the first 2 years.${ supNotice }": [
-        ""
+        "Оплата в размере ${ amount } за первые 2 года.${ supNotice }"
       ],
       "Billed at ${ amount } for the first month.${ supNotice }": [
-        ""
+        "Оплата в размере ${ amount } за первый месяц.${ supNotice }"
       ],
       "Billed at ${ amount } for the first year.${ supNotice }": [
-        ""
+        "Оплата в размере ${ amount } за первый год.${ supNotice }"
       ],
       "Get the special year-end offer on our Premium VPN PLUS plan": [
-        ""
+        "Воспользуйтесь специальным предложением в конце года для премиум-тарифа VPN PLUS"
       ]
     },
     "Bug category": {
@@ -712,9 +712,6 @@
     "Calendar subscription not synced error": {
       "Calendar could not be decrypted": [
         "Невозможно было расшифровать календарь"
-      ],
-      "Calendar could not be found": [
-        "Невозможно было найти Календарь"
       ],
       "Calendar is syncing": [
         "Календарь синхронизируется"
@@ -903,7 +900,7 @@
         "Неверный номер"
       ],
       "Organization not recognized. Try again.": [
-        ""
+        "Организация не распознана. Попробуйте еще."
       ],
       "Passwords do not match": [
         "Пароли не совпадают"
@@ -1324,12 +1321,6 @@
       ],
       "Defends against threats to VPN privacy by passing your Internet traffic through multiple servers.": [
         "Защищает от угроз конфиденциальности VPN, передавая ваш интернет-трафик через несколько серверов."
-      ],
-      "Disabling this will prevent this email from being used for account recovery.": [
-        "Отключение этого параметра не позволит использовать этот адрес почты для восстановления доступа к аккаунту."
-      ],
-      "Disabling this will prevent this phone number from being used for account recovery.": [
-        "Отключение этого параметра не позволит использовать этот номер телефона для восстановления доступа к учётной записи."
       ],
       "Discount applied to your subscription with coupon ${ code }": [
         "К вашей подписке купоном ${ code } применена скидка"
@@ -2108,7 +2099,7 @@
         "Адрес эл. почты"
       ],
       "Enter organization name to confirm": [
-        ""
+        "Введите название организации для подтверждения"
       ],
       "Enter the 6-digit code": [
         "Введите код из 6 цифр"
@@ -2295,9 +2286,6 @@
       ]
     },
     "label": {
-      "Phone number": [
-        "Телефонный номер"
-      ],
       "Recovery phone number": [
         "Номер телефона для восстановления"
       ]
@@ -2511,7 +2499,7 @@
     },
     "Member downgrade modal": {
       "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        ""
+        "Это приведет к окончательному удалению всех подпользователей, учетных записей и данных, связанных с вашей организацией."
       ]
     },
     "Message": {
@@ -2731,8 +2719,8 @@
       "Proton username": [
         "Имя пользователя Proton"
       ],
-      "Recovery email": [
-        "Резервная эл. почта"
+      "Recovery email address": [
+        "Электронная почта для восстановления"
       ],
       "Reset code": [
         "Код для сброса"
@@ -3228,7 +3216,7 @@
         "Удаление аккаунта"
       ],
       "Delete organization?": [
-        ""
+        "Удалить организацию?"
       ],
       "Device connected!": [
         "Устройство подключено!"

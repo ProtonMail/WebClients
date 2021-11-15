@@ -209,9 +209,6 @@
       "Create new message": [
         "Crear un mensaje nuevo"
       ],
-      "Create recovery phrase": [
-        "Crear una frase de recuperación"
-      ],
       "Custom filter": [
         "Filtro personalizado"
       ],
@@ -327,6 +324,9 @@
       ],
       "Forward as attachment": [
         "Reenviar como adjunto"
+      ],
+      "Generate recovery phrase": [
+        ""
       ],
       "Get started": [
         "Comenzar"
@@ -892,7 +892,7 @@
         "Visualizar las claves"
       ],
       "View message": [
-        ""
+        "Ver mensaje"
       ],
       "View recipients": [
         "Ver destinatarios"
@@ -999,7 +999,7 @@
     },
     "Amount of completed get started checklist items": {
       "${ numberOfCompletedItems } of ${ totalNumberOfChecklistItems } complete": [
-        ""
+        "${ numberOfCompletedItems } de ${ totalNumberOfChecklistItems } completado"
       ]
     },
     "Apps dropdown": {
@@ -1389,26 +1389,26 @@
       "(Attendance optional)": [
         "(Asistencia opcional)"
       ],
-      "Adding occurrences to an event is not supported for the moment.": [
-        "Agregar ocurrencias a un evento no es compatible por el momento."
+      "Adding occurrences to an event is not supported for the moment": [
+        ""
       ],
       "An occurrence has been added to the event ${ veventIcsTitle }": [
         "Se ha añadido una ocurrencia al evento ${ veventIcsTitle }"
       ],
-      "Event refreshing is not supported for the moment.": [
-        "La actualización de eventos no es compatible por el momento."
+      "Event refreshing is not supported for the moment": [
+        ""
       ],
-      "Event rescheduling is not supported for the moment.": [
-        "La reprogramación de eventos no es compatible por el momento."
+      "Event rescheduling is not supported for the moment": [
+        ""
       ],
-      "The sender of this email has not been invited to this event and cannot be added as a participant.": [
-        "El remitente de este correo no ha sido invitado a este evento y no puede ser agregado como participante."
+      "The sender of this email has not been invited to this event and cannot be added as a participant": [
+        ""
       ],
-      "This answer cannot be added to ${ calendarAppName } as we only support answers to all events of a series for the moment.": [
-        "Esta respuesta no puede añadirse a ${ calendarAppName } ya que por el momento, solo admitimos respuestas a todos los eventos de una serie."
+      "This answer cannot be added to ${ calendarAppName } as we only support answers to all events of a series for the moment": [
+        ""
       ],
-      "This event has already happened.": [
-        "Este evento ya ha sucedido."
+      "This event has already happened": [
+        ""
       ],
       "This event has been cancelled.": [
         "Este evento ha sido cancelado."
@@ -1416,8 +1416,8 @@
       "This event has been updated.": [
         "Este evento ha sido actualizado."
       ],
-      "This event is currently happening.": [
-        "Este evento está sucediendo actualmente."
+      "This event is currently happening": [
+        ""
       ],
       "This invitation is out of date. The event has been cancelled.": [
         "La invitación está desactualizada. El evento se ha cancelado."
@@ -1446,8 +1446,8 @@
       "You already tentatively accepted this invitation.": [
         "Has aceptado provisionalmente la invitación."
       ],
-      "Your email address is not in the participants list.": [
-        "Tu dirección de correo electrónico no está en la lista de participantes."
+      "Your email address is not in the participants list": [
+        ""
       ]
     },
     "Calendar status": {
@@ -1460,9 +1460,6 @@
     },
     "Calendar subscription not synced error": {
       "Calendar could not be decrypted": [
-        ""
-      ],
-      "Calendar could not be found": [
         ""
       ],
       "Calendar is syncing": [
@@ -2931,12 +2928,12 @@
         "${ numContacts } contactos"
       ],
       "${ occurrencesInBody } occurrence found": [
-        "",
-        ""
+        "${ occurrencesInBody } ocurrencia encontrada",
+        "${ occurrencesInBody } ocurrencias encontradas"
       ],
       "${ occurrencesInBody } occurrence found in the mail content": [
-        "",
-        ""
+        "${ occurrencesInBody } ocurrencia encontrada en el contenido del correo",
+        "${ occurrencesInBody } ocurrencias encontradas en el contenido del correo"
       ],
       "${ pureAttachmentsCount } file attached": [
         "${ pureAttachmentsCount } archivo adjunto",
@@ -2952,8 +2949,8 @@
         "${ saveExtra20 } tanto en VPN como en correo añadiendo una suscripción VPN."
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
-        "",
-        ""
+        "${ selectedCalendarsTotal } de ${ providerCalendars.length } calendario",
+        "${ selectedCalendarsTotal } de ${ providerCalendars.length } calendarios"
       ],
       "${ selectedFoldersCount } folder selected": [
         "${ selectedFoldersCount } carpeta seleccionada",
@@ -3234,9 +3231,6 @@
       "Create in": [
         "Crear en"
       ],
-      "Create recovery phrase": [
-        "Crear una frase de recuperación"
-      ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         ""
       ],
@@ -3395,6 +3389,9 @@
       ],
       "Full-featured VPN with speed up to 10 Gbps.": [
         "VPN completa con velocidad de hasta 10 Gbps."
+      ],
+      "Generate recovery phrase": [
+        ""
       ],
       "Get more storage and premium features.": [
         ""
@@ -5104,8 +5101,8 @@
     },
     "Loading info": {
       "${ createdCalendars } of ${ calendarsToBeCreated } created": [
-        "",
-        ""
+        "${ createdCalendars } de ${ calendarsToBeCreated } creado",
+        "${ createdCalendars } de ${ calendarsToBeCreated } creados"
       ],
       "Almost there": [
         "Ya casi está"
@@ -5282,7 +5279,7 @@
         "Programación cancelada. El mensaje se ha movido a Borradores."
       ],
       "Sending undone": [
-        "Envío deshecho"
+        "Envío anulado"
       ]
     },
     "MIME type": {
@@ -5810,8 +5807,8 @@
         "${ contactsExported.length } de ${ countContacts } contactos fueron exportados con éxito."
       ],
       "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
-        "",
-        ""
+        "${ model.deleted.length } de ${ totalBeDeleted } contacto eliminado con éxito.",
+        "${ model.deleted.length } de ${ totalBeDeleted } contactos eliminados con éxito."
       ],
       "${ model.submitted.length } out of ${ totalBeMerged } contact successfully merged.": [
         "${ model.submitted.length } de ${ totalBeMerged } contacto combinado con éxito.",
@@ -6206,7 +6203,7 @@
         "Contactos eliminados"
       ],
       "Conversation added to ${ labelName }.": [
-        ""
+        "Conversación añadida a ${ labelName }."
       ],
       "Conversation deleted": [
         "Conversación eliminada"
@@ -6215,7 +6212,7 @@
         "Conversación marcada como leída."
       ],
       "Conversation marked as Starred.": [
-        ""
+        "Conversación marcada como destacada."
       ],
       "Conversation marked as unread.": [
         "Conversación marcada como no leída."
@@ -6977,7 +6974,7 @@
         "Descuento aplicado para el ciclo de facturación de dos años"
       ],
       "Each imported email will have this label": [
-        ""
+        "Cada correo electrónico importado tendrá esta etiqueta"
       ],
       "Email encryption forces email signature to help authenticate your sent messages": [
         "El cifrado del correo electrónico obliga a la firma del correo electrónico a ayudar a autenticar tus mensajes enviados"
@@ -7016,7 +7013,7 @@
         "Soporte para protocolos de intercambio de archivos como BitTorrent."
       ],
       "System subfolders will show up as separate folders in ProtonMail": [
-        ""
+        "Las subcarpetas del sistema se mostrarán como carpetas separadas en ProtonMail"
       ],
       "The import will start with the most recent messages.": [
         "La importación comenzará con los mensajes más recientes."
@@ -7140,7 +7137,7 @@
         "Media"
       ],
       "None": [
-        "Ninguno"
+        "Ninguna"
       ],
       "Switzerland": [
         "Suiza"
@@ -7151,16 +7148,16 @@
     },
     "VPN Plan Feature": {
       "${ n } server": [
-        "",
-        ""
+        "${ n } servidor",
+        "${ n } servidores"
       ],
       "${ n } VPN connection": [
-        "",
-        ""
+        "${ n } conexión VPN",
+        "${ n } conexiones VPN"
       ],
       "${ numberOfServers } in ${ numberOfCountries } country": [
-        "",
-        ""
+        "${ numberOfServers } en ${ numberOfCountries } país",
+        "${ numberOfServers } en ${ numberOfCountries } países"
       ]
     },
     "Warning": {

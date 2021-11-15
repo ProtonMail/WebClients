@@ -140,12 +140,6 @@
       "Create new folder": [
         "Neuen Ordner erstellen"
       ],
-      "Created date: new to old": [
-        "Erstellungsdatum: Neueste zuerst"
-      ],
-      "Created date: old to new": [
-        "Erstellungsdatum: Älteste zuerst"
-      ],
       "Customize": [
         "Anpassen"
       ],
@@ -210,12 +204,6 @@
       ],
       "enable desktop notifications": [
         "Desktop-Benachrichtigungen aktivieren"
-      ],
-      "Expires: new to old": [
-        "Ablaufdatum: Neueste zuerst"
-      ],
-      "Expires: old to new": [
-        "Ablaufdatum: Älteste zuerst"
       ],
       "Export": [
         "Exportieren"
@@ -316,6 +304,9 @@
       "More info: ${ safeTitle }": [
         "Weitere Informationen: ${ safeTitle }"
       ],
+      "More options": [
+        "Weitere Optionen"
+      ],
       "Move": [
         "Verschieben"
       ],
@@ -324,12 +315,6 @@
       ],
       "Move to trash": [
         "In Papierkorb verschieben"
-      ],
-      "Name: A to Z": [
-        "Typ: A ➜ Z"
-      ],
-      "Name: Z to A": [
-        "Typ: Z ➜ A"
       ],
       "New upload": [
         "Neu hochgeladen"
@@ -484,12 +469,6 @@
       "Signing out": [
         "Abmelden"
       ],
-      "Size: large to small": [
-        "Größe: Absteigend"
-      ],
-      "Size: small to large": [
-        "Größe: Aufsteigend"
-      ],
       "Skip": [
         "Überspringen"
       ],
@@ -526,12 +505,6 @@
       "Try another method": [
         "Eine weitere Methode verwenden"
       ],
-      "Type: A to Z": [
-        "Typ: A ➜ Z"
-      ],
-      "Type: Z to A": [
-        "Typ: Z ➜ A"
-      ],
       "Undo": [
         "Widerrufen"
       ],
@@ -552,12 +525,6 @@
       ],
       "Upload picture": [
         "Foto hochladen"
-      ],
-      "Uploaded date: new to old": [
-        "Hochladedatum: Neueste zuerst"
-      ],
-      "Uploaded date: old to new": [
-        "Hochladedatum: Älteste zuerst"
       ],
       "Use ${ label } theme": [
         "Farbschema „${ label }” verwenden"
@@ -679,7 +646,7 @@
     },
     "blackfriday Action": {
       "Get the offer": [
-        ""
+        "Zum Angebot"
       ]
     },
     "blackfriday Info": {
@@ -698,13 +665,13 @@
     },
     "blackfriday Title": {
       "Best deal": [
-        ""
+        "Bester Preis"
       ],
       "Most popular": [
         "Am beliebtesten"
       ],
       "Save more when combining Mail and VPN": [
-        ""
+        "Spare noch mehr durch die Kombination von Mail und VPN"
       ]
     },
     "blackfriday: VPNspecialoffer Action": {
@@ -717,18 +684,18 @@
     },
     "blackfriday: VPNspecialoffer Badge popup": {
       "${ vpnAppName } Plus Special Offer 2021 discount has been applied": [
-        ""
+        "${ vpnAppName } Plus Sonderangebot 2021 Rabatt wurde angerechnet"
       ]
     },
     "blackfriday: VPNspecialoffer Info": {
       "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
-        ""
+        "Rabatte werden auf Grundlage des monatlichen Standardpreises von { standardMonthlyPricing } $ berechnet"
       ],
       "Save ${ percentage }%": [
-        "${ percentage }%"
+        "${ percentage } %"
       ],
       "Special offer Terms and Conditions": [
-        ""
+        "Allgemeine Geschäftsbedingungen des Sonderangebots"
       ]
     },
     "blackfriday: VPNspecialoffer info": {
@@ -743,13 +710,13 @@
     },
     "blackfriday: VPNspecialoffer Title": {
       "(${ notice }) Renews after 1 month at a standard monthly price of ${ amount }": [
-        ""
+        "(${ notice }) Verlängert sich nach einem Monat zum monatlichen Standardpreis von { amount } $"
       ],
       "(${ notice }) Renews after 1 year at a standard discounted annual price of ${ amount } (20% discount)": [
-        ""
+        "(${ notice }) Verlängert sich nach einem Jahr zum ermäßigten Standardpreis von { amount } $ (20 % Rabatt)"
       ],
       "(${ notice }) Renews after 2 years at a standard discounted 2-year price of ${ amount } (33% discount)": [
-        ""
+        "(${ notice }) Verlängert sich nach 2 Jahren zum ermäßigten 2-Jahrespreis von { amount } $ (33 % Rabatt)"
       ],
       "1 month": [
         "1 Monat"
@@ -761,16 +728,16 @@
         "24 Monate"
       ],
       "Billed at ${ amount } for the first 2 years.${ supNotice }": [
-        ""
+        "Zum Preis von { amount } $ in den ersten zwei Jahren.${ supNotice }"
       ],
       "Billed at ${ amount } for the first month.${ supNotice }": [
-        ""
+        "Zum Preis von { amount } $ im ersten Monat.${ supNotice }"
       ],
       "Billed at ${ amount } for the first year.${ supNotice }": [
-        ""
+        "Zum Preis von { amount } $ im ersten Jahr.${ supNotice }"
       ],
       "Get the special year-end offer on our Premium VPN PLUS plan": [
-        "Lassen Sie sich das Jahresend-Sonderangebot für unseren Premium VPN PLUS-Tarif nicht entgehen"
+        "Lass dir das Jahresend-Sonderangebot für unseren Premium VPN PLUS-Tarif nicht entgehen"
       ]
     },
     "Bug category": {
@@ -880,9 +847,6 @@
     "Calendar subscription not synced error": {
       "Calendar could not be decrypted": [
         "Kalender konnte nicht entschlüsselt werden"
-      ],
-      "Calendar could not be found": [
-        "Kalender konnte nicht gefunden werden"
       ],
       "Calendar is syncing": [
         "Kalender wird synchronisiert"
@@ -1153,6 +1117,9 @@
       ],
       "Error connecting to the Bitcoin API.": [
         "Fehler beim Verbinden mit der Bitcoin-API."
+      ],
+      "Failed to load the link": [
+        "Link konnte nicht geladen werden"
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "Datei „${ item.name }” kann aufgrund des Fehlers „${ error }” nicht hochgeladen werden"
@@ -2042,6 +2009,9 @@
       "Learn more": [
         "Mehr erfahren"
       ],
+      "Link copied to clipboard": [
+        "Link in die Zwischenablage kopiert"
+      ],
       "Link expires: ": [
         "Link gültig bis: "
       ],
@@ -2809,6 +2779,9 @@
       "Country": [
         "Land"
       ],
+      "Created": [
+        "Erstellt"
+      ],
       "CVV code": [
         "CVV-Code (Sicherheitsnummer)"
       ],
@@ -2927,6 +2900,9 @@
       "Merge a folder": [
         "Ordner zusammenführen"
       ],
+      "Name": [
+        "Name"
+      ],
       "Name on card": [
         "Karteninhaber"
       ],
@@ -3008,6 +2984,9 @@
       "Sign emails": [
         "E-Mails signieren"
       ],
+      "Size": [
+        "Größe"
+      ],
       "Skip file": [
         "Datei überspringen"
       ],
@@ -3041,6 +3020,9 @@
       "Two-factor authentication code": [
         "Zwei-Faktor-Authentifizierungsschlüssel"
       ],
+      "Type": [
+        "Typ"
+      ],
       "Unknown file": [
         "Unbekannte Datei"
       ],
@@ -3053,17 +3035,14 @@
       "Unlock later": [
         "Später entsperren"
       ],
-      "Up to ${ parentLinkName }": [
-        "is zu ${ parentLinkName }"
-      ],
-      "Up to the parent folder": [
-        "Bis zum übergeordneten Ordner"
-      ],
       "Upload anyway": [
         "Trotzdem hochladen"
       ],
       "Upload picture": [
         "Foto hochladen"
+      ],
+      "Uploaded": [
+        "Hochgeladen"
       ],
       "Username or ProtonMail address": [
         "Benutzername oder ProtonMail-E-Mail-Adresse"

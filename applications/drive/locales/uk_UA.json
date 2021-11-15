@@ -140,12 +140,6 @@
       "Create new folder": [
         "Створити нову теку"
       ],
-      "Created date: new to old": [
-        "Дата створення: від новіших до давніших"
-      ],
-      "Created date: old to new": [
-        "Дата створення: від давніших до новіших"
-      ],
       "Customize": [
         "Налаштувати"
       ],
@@ -214,12 +208,6 @@
       ],
       "enable desktop notifications": [
         "увімкнути сповіщення на робочому столі"
-      ],
-      "Expires: new to old": [
-        "Термін дії: від новіших до давніших"
-      ],
-      "Expires: old to new": [
-        "Термін дії: від новіших до давніших"
       ],
       "Export": [
         "Експорт"
@@ -300,7 +288,7 @@
         "Макет поштової скриньки"
       ],
       "Manage link": [
-        "Управляти посиланням"
+        "Керувати посиланням"
       ],
       "Mark for deletion": [
         "Позначити для видалення"
@@ -320,6 +308,9 @@
       "More info: ${ safeTitle }": [
         "Докладніше: ${ safeTitle }"
       ],
+      "More options": [
+        "Додаткові параметри"
+      ],
       "Move": [
         "Перемістити"
       ],
@@ -328,12 +319,6 @@
       ],
       "Move to trash": [
         "Перемістити до смітника"
-      ],
-      "Name: A to Z": [
-        "Назва: від А до Я"
-      ],
-      "Name: Z to A": [
-        "Назва: від Я до А"
       ],
       "New upload": [
         "Нове вивантаження"
@@ -488,12 +473,6 @@
       "Signing out": [
         "Вихід"
       ],
-      "Size: large to small": [
-        "Розмір: від більших до менших"
-      ],
-      "Size: small to large": [
-        "Розмір: від менших до більших"
-      ],
       "Skip": [
         "Пропустити"
       ],
@@ -530,12 +509,6 @@
       "Try another method": [
         "Спробувати інший метод"
       ],
-      "Type: A to Z": [
-        "Тип: від А до Я"
-      ],
-      "Type: Z to A": [
-        "Тип: від Я до А"
-      ],
       "Undo": [
         "Відновити"
       ],
@@ -556,12 +529,6 @@
       ],
       "Upload picture": [
         "Вивантажити зображення"
-      ],
-      "Uploaded date: new to old": [
-        "Дата вивантаження: від новіших до давніших"
-      ],
-      "Uploaded date: old to new": [
-        "Дата вивантаження: від давніших до новіших"
       ],
       "Use ${ label } theme": [
         "Використовувати тему ${ label }"
@@ -893,9 +860,6 @@
       "Calendar could not be decrypted": [
         "Не вдалося розшифрувати календар"
       ],
-      "Calendar could not be found": [
-        "Не вдалося знайти календар"
-      ],
       "Calendar is syncing": [
         "Календар синхронізується"
       ],
@@ -1174,6 +1138,9 @@
       "Error connecting to the Bitcoin API.": [
         "Помилка підключення до Bitcoin API."
       ],
+      "Failed to load the link": [
+        "Не вдалося завантажити посилання"
+      ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "Не вдалося вивантажити файл \"${ item.name }\" через помилку \"${ error }\""
       ],
@@ -1256,7 +1223,7 @@
         "В деяких групах немає контактів: ${ noContactGroupList }"
       ],
       "Organization not recognized. Try again.": [
-        ""
+        "Організацію не розпізнано. Спробуйте знову."
       ],
       "Passwords do not match": [
         "Паролі відрізняються"
@@ -2138,6 +2105,9 @@
       "Learn more": [
         "Докладніше"
       ],
+      "Link copied to clipboard": [
+        "Посилання скопійовано в буфер обміну"
+      ],
       "Link expires: ": [
         "Термін дії посилання: "
       ],
@@ -2322,7 +2292,7 @@
         "Оберіть формат повідомлення, який ви хочете використовувати при надсиланні на цю адресу е-пошти."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit. You can also merge imported calendars with existing Proton calendars.": [
-        "Виберіть, які календарі необхідно імпортувати. Для кожного імпортованого календаря буде створений новий календар у межах ліміту в 20 календарів. Ви також можете об'єднати імпортовані календарі з існуючими календарями Proton."
+        "Виберіть, які календарі необхідно імпортувати. Для кожного імпортованого календаря буде створено новий календар у межах ліміту до 20 календарів. Ви також можете об'єднати імпортовані календарі з наявними календарями Proton."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Сервери недоступні. Спробуйте знову за кілька хвилин"
@@ -2909,6 +2879,9 @@
       "Country": [
         "Країна"
       ],
+      "Created": [
+        "Створено"
+      ],
       "CVV code": [
         "Код CVV"
       ],
@@ -3029,6 +3002,9 @@
       "Merge a folder": [
         "Об'єднати теку"
       ],
+      "Name": [
+        "Назва"
+      ],
       "Name on card": [
         "Ім'я на картці"
       ],
@@ -3110,6 +3086,9 @@
       "Sign emails": [
         "Підписувати листи"
       ],
+      "Size": [
+        "Розмір"
+      ],
       "Skip file": [
         "Пропустити файл"
       ],
@@ -3143,6 +3122,9 @@
       "Two-factor authentication code": [
         "Код двоетапної перевірки"
       ],
+      "Type": [
+        "Тип"
+      ],
       "Unknown file": [
         "Невідомий файл"
       ],
@@ -3155,17 +3137,14 @@
       "Unlock later": [
         "Розблокувати пізніше"
       ],
-      "Up to ${ parentLinkName }": [
-        "Повернутися до ${ parentLinkName }"
-      ],
-      "Up to the parent folder": [
-        "Повернутися до теки верхнього рівня"
-      ],
       "Upload anyway": [
         "Все одно вивантажити"
       ],
       "Upload picture": [
         "Вивантажити зображення"
+      ],
+      "Uploaded": [
+        "Вивантажено"
       ],
       "Username or ProtonMail address": [
         "Ім'я користувача або адреса ProtonMail"
@@ -3396,16 +3375,16 @@
     },
     "Mail import summary": {
       "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "",
-        "",
-        "",
-        ""
+        "Імпортувати всі повідомлення з ${ selectedLabelsCount } міткою з усіх ${ totalLabelsCount }, починаючи з ${ periodFragment } та позначити їх міткою ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Імпортувати всі повідомлення з ${ selectedLabelsCount } мітками з усіх ${ totalLabelsCount }, починаючи з ${ periodFragment } та позначити їх міткою ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Імпортувати всі повідомлення з ${ selectedLabelsCount } мітками з усіх ${ totalLabelsCount }, починаючи з ${ periodFragment } та позначити їх міткою ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Імпортувати всі повідомлення з ${ selectedLabelsCount } мітками з усіх ${ totalLabelsCount }, починаючи з ${ periodFragment } та позначити їх міткою ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
       "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "",
-        "",
-        "",
-        ""
+        "Імпортувати всі повідомлення з ${ totalLabelsCount } міткою, починаючи з ${ periodFragment } та позначити їх міткою ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Імпортувати всі повідомлення з ${ totalLabelsCount } мітками, починаючи з ${ periodFragment } та позначити їх міткою ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Імпортувати всі повідомлення з ${ totalLabelsCount } мітками, починаючи з ${ periodFragment } та позначити їх міткою ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Імпортувати всі повідомлення з ${ totalLabelsCount } мітками, починаючи з ${ periodFragment } та позначити їх міткою ${ LABEL_MARKUP_PLACEHOLDER }"
       ]
     },
     "Many Others": {
@@ -3415,7 +3394,7 @@
     },
     "Member downgrade modal": {
       "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        "Це приведе до остаточного видалення всіх підлеглих користувачів, облікових записів і даних, пов'язаних з вашою організацією."
+        "Це призведе до остаточного видалення всіх підлеглих користувачів, облікових записів і даних, пов'язаних з вашою організацією."
       ]
     },
     "Message display when a new app version is available": {

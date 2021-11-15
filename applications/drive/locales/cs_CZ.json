@@ -140,12 +140,6 @@
       "Create new folder": [
         "Vytvořit novou složku"
       ],
-      "Created date: new to old": [
-        ""
-      ],
-      "Created date: old to new": [
-        ""
-      ],
       "Customize": [
         ""
       ],
@@ -214,12 +208,6 @@
       ],
       "enable desktop notifications": [
         "povolit oznámení na ploše"
-      ],
-      "Expires: new to old": [
-        ""
-      ],
-      "Expires: old to new": [
-        ""
       ],
       "Export": [
         "Exportovat"
@@ -320,6 +308,9 @@
       "More info: ${ safeTitle }": [
         "Více informací: ${ safeTitle }"
       ],
+      "More options": [
+        "Více možností"
+      ],
       "Move": [
         "Přesunout"
       ],
@@ -328,12 +319,6 @@
       ],
       "Move to trash": [
         "Přesunout do koše"
-      ],
-      "Name: A to Z": [
-        "Jméno: A až Z"
-      ],
-      "Name: Z to A": [
-        "Jméno: Z až A"
       ],
       "New upload": [
         "Nové nahrávání"
@@ -488,12 +473,6 @@
       "Signing out": [
         "Odhlásit se"
       ],
-      "Size: large to small": [
-        "Velikost: Sestupně"
-      ],
-      "Size: small to large": [
-        "Velikost: Vzestupně"
-      ],
       "Skip": [
         "Přeskočít"
       ],
@@ -530,12 +509,6 @@
       "Try another method": [
         "Zkuste jinou metodu"
       ],
-      "Type: A to Z": [
-        "Jméno: A až Z"
-      ],
-      "Type: Z to A": [
-        "Jméno: Z až A"
-      ],
       "Undo": [
         "Zpět"
       ],
@@ -556,12 +529,6 @@
       ],
       "Upload picture": [
         "Nahrát obrázek"
-      ],
-      "Uploaded date: new to old": [
-        ""
-      ],
-      "Uploaded date: old to new": [
-        ""
       ],
       "Use ${ label } theme": [
         "Použít ${ label } motiv"
@@ -893,9 +860,6 @@
       "Calendar could not be decrypted": [
         ""
       ],
-      "Calendar could not be found": [
-        ""
-      ],
       "Calendar is syncing": [
         "Kalendář se synchronizuje"
       ],
@@ -1130,7 +1094,7 @@
         "Ověření selhalo."
       ],
       "Calendar limit reached": [
-        ""
+        "Dosažen limit kalendářů"
       ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
         ""
@@ -1154,7 +1118,7 @@
         "Nelze najít adresu ${ email }."
       ],
       "Could not generate file keys": [
-        ""
+        "Nepodařilo se vygenerovat klíče"
       ],
       "Deselect at least ${ calendarToFixCount } calendar or": [
         "",
@@ -1174,6 +1138,9 @@
       "Error connecting to the Bitcoin API.": [
         "Chyba při připojování k Bitcoin API."
       ],
+      "Failed to load the link": [
+        "Nepodařilo se načíst odkaz"
+      ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         ""
       ],
@@ -1184,7 +1151,7 @@
         "Soubor nemá žádný obsah k náhledu"
       ],
       "Folder name cannot be empty": [
-        ""
+        "Název složky nemůže být prázdné"
       ],
       "Image upload failed": [
         "Nahrání obrázku se nezdařilo"
@@ -1223,7 +1190,7 @@
         "Neplatný ověřovací kód"
       ],
       "Label name cannot be empty": [
-        ""
+        "Název štítku nemůže být prázdné"
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "",
@@ -1283,10 +1250,10 @@
         "Zvýhodnění Preference nebylo možné uložit"
       ],
       "Primary address key is not decrypted": [
-        ""
+        "Klíč hlavní adresy není dešifrován"
       ],
       "Primary address key is not decrypted.": [
-        ""
+        "Klíč hlavní adresy není dešifrován."
       ],
       "Process aborted": [
         "Platební transakce byla přerušena"
@@ -1322,10 +1289,10 @@
         "Prohlížeč, který využíváte, nepodporuje úplnou autorizaci platby. Použijte jiný prohlížeč nebo se přihlaste pomocí počítače."
       ],
       "The folder name is too long. Please choose a different name.": [
-        ""
+        "Název složky je příliš dlouhý. Zvolte jiný název."
       ],
       "The label name is too long. Please choose a different name.": [
-        ""
+        "Název štítku je příliš dlouhý. Zvolte prosím jiný název."
       ],
       "The minimum amount of credit that can be added is ${ _price }": [
         "Minimální objem úvěrů, který lze přidat, je ${ _price }"
@@ -1370,10 +1337,10 @@
         "Toto pole vyžaduje minimálně ${ minimumLength } znaků."
       ],
       "This folder name is not available. Please choose a different name": [
-        ""
+        "Tento název složky není k dispozici. Zvolte prosím jiný název"
       ],
       "This label name is not available. Please choose a different name": [
-        ""
+        "Tento název štítku není k dispozici. Zvolte prosím jiný název"
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "Tato zpráva může obsahovat některé URL odkazy, které nelze otevřít Vaším současným prohlížečem"
@@ -1394,7 +1361,7 @@
         "Musíte nastavit jméno"
       ],
       "Your browser does not support uploading folders": [
-        ""
+        "Váš prohlížeč nepodporuje nahrávání složek"
       ],
       "Your import will not be processed.": [
         "Váš import nebude zpracován."
@@ -1797,10 +1764,10 @@
         "${ vpnAppName } zdarma"
       ],
       "(${ memberCount } member)": [
-        "",
-        "",
-        "",
-        ""
+        "(${ memberCount } člen)",
+        "(${ memberCount } členové)",
+        "(${ memberCount } členů)",
+        "(${ memberCount } členů)"
       ],
       "(Mail + VPN)": [
         "(E-mail + VPN)"
@@ -1959,10 +1926,10 @@
         ""
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
-        ""
+        "Vytvořte štítek pro importované zprávy, vyberte období, za které chcete provést import a složky, které chcete importovat."
       ],
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
-        ""
+        "Vytvořte štítek pro importované zprávy, časový rozsah pro tento import a štítky, které chcete importovat."
       ],
       "Create a new contact group": [
         "Vytvořit novou skupinu kontaktů"
@@ -2100,7 +2067,7 @@
         ""
       ],
       "Import from": [
-        ""
+        "Importovat z"
       ],
       "Import in progress": [
         ""
@@ -2112,7 +2079,7 @@
         "Zahrnuto"
       ],
       "Inherited from parent folder": [
-        ""
+        "Přebráno z nadřazené složky"
       ],
       "Initializing": [
         "Inicializace"
@@ -2137,6 +2104,9 @@
       ],
       "Learn more": [
         "Dozvědět se více"
+      ],
+      "Link copied to clipboard": [
+        ""
       ],
       "Link expires: ": [
         "Expirace odkazového řádku: "
@@ -2169,13 +2139,13 @@
         "Mé odkazové řádky"
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
-        ""
+        "Pojmenujte svoji novou složku a vyberte nadřazenou složku, do které ji chcete vložit. Pokud nevyberete nadřazenou složku, bude tato nová složka vytvořena v kořenové složce."
       ],
       "Network issue": [
         "Síťový problém"
       ],
       "New": [
-        ""
+        "Nové"
       ],
       "Next you'll need to log in to your Google account and allow us to access your data.": [
         ""
@@ -2256,7 +2226,7 @@
         "Vezměte prosím na vědomí, že po kliknutí na tlačítko Potvrdit vám na účtu zbudou kredity ve výši ${ creditsRemaining }."
       ],
       "Please select the folders you would like to import:": [
-        ""
+        "Prosím vyberte složky, které chcete importovat:"
       ],
       "Please try again, use a different payment method, or call your bank for assistance.": [
         "Zkuste to znovu prosím, použijte jinou platební metodu nebo kontaktujte svoji banku."
@@ -2325,7 +2295,7 @@
         ""
       ],
       "Servers are unreachable. Please try again in a few minutes": [
-        ""
+        "Servery nejsou dostupné. Prosím zkuste to znovu za pár minut"
       ],
       "Session timed out.": [
         "Relace vypršela."
@@ -2502,7 +2472,7 @@
         ""
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
-        ""
+        "Můžete zapnout upozornění abyste obdrželi oznámení v případě, že do této složky přijde nový email."
       ],
       "You cannot undo this action.": [
         "Nemůžete vrátit zpět tuto akci."
@@ -2909,6 +2879,9 @@
       "Country": [
         "Země"
       ],
+      "Created": [
+        "Vytvořeno"
+      ],
       "CVV code": [
         "Kód CVV"
       ],
@@ -3029,6 +3002,9 @@
       "Merge a folder": [
         "Sloučit složku"
       ],
+      "Name": [
+        "Název"
+      ],
       "Name on card": [
         "Jméno na kartě"
       ],
@@ -3110,6 +3086,9 @@
       "Sign emails": [
         "Podepsat e-maily"
       ],
+      "Size": [
+        "Velikost"
+      ],
       "Skip file": [
         "Přeskočit soubor"
       ],
@@ -3143,6 +3122,9 @@
       "Two-factor authentication code": [
         "Kód dvoufaktorového ověření"
       ],
+      "Type": [
+        "Typ"
+      ],
       "Unknown file": [
         "Neznámý soubor"
       ],
@@ -3155,17 +3137,14 @@
       "Unlock later": [
         ""
       ],
-      "Up to ${ parentLinkName }": [
-        ""
-      ],
-      "Up to the parent folder": [
-        ""
-      ],
       "Upload anyway": [
         "Přesto nahrát"
       ],
       "Upload picture": [
         "Nahrát obrázek"
+      ],
+      "Uploaded": [
+        "Nahráno"
       ],
       "Username or ProtonMail address": [
         "Uživatelské jméno nebo e-mailová adresa ProtonMail"

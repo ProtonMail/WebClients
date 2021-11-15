@@ -140,12 +140,6 @@
       "Create new folder": [
         "Criar nova pasta"
       ],
-      "Created date: new to old": [
-        ""
-      ],
-      "Created date: old to new": [
-        ""
-      ],
       "Customize": [
         ""
       ],
@@ -210,12 +204,6 @@
       ],
       "enable desktop notifications": [
         "activar as notificações"
-      ],
-      "Expires: new to old": [
-        ""
-      ],
-      "Expires: old to new": [
-        ""
       ],
       "Export": [
         "Exportar"
@@ -316,6 +304,9 @@
       "More info: ${ safeTitle }": [
         "Mais informações: ${ safeTitle }"
       ],
+      "More options": [
+        ""
+      ],
       "Move": [
         "Mover"
       ],
@@ -324,12 +315,6 @@
       ],
       "Move to trash": [
         "Mover para o lixo"
-      ],
-      "Name: A to Z": [
-        "Nome: de A a Z"
-      ],
-      "Name: Z to A": [
-        "Nome: de Z a A"
       ],
       "New upload": [
         "Novo envio"
@@ -484,12 +469,6 @@
       "Signing out": [
         "A terminar sessão"
       ],
-      "Size: large to small": [
-        "Tamanho: maior para menor"
-      ],
-      "Size: small to large": [
-        "Tamanho: menor para maior"
-      ],
       "Skip": [
         "Ignorar"
       ],
@@ -526,12 +505,6 @@
       "Try another method": [
         "Tentar outro método"
       ],
-      "Type: A to Z": [
-        "Tipo: A a Z"
-      ],
-      "Type: Z to A": [
-        "Tipo: Z a A"
-      ],
       "Undo": [
         "Desfazer"
       ],
@@ -552,12 +525,6 @@
       ],
       "Upload picture": [
         "Enviar imagem"
-      ],
-      "Uploaded date: new to old": [
-        ""
-      ],
-      "Uploaded date: old to new": [
-        ""
       ],
       "Use ${ label } theme": [
         "Usar o tema ${ label }"
@@ -881,9 +848,6 @@
       "Calendar could not be decrypted": [
         ""
       ],
-      "Calendar could not be found": [
-        ""
-      ],
       "Calendar is syncing": [
         ""
       ],
@@ -1153,6 +1117,9 @@
       ],
       "Error connecting to the Bitcoin API.": [
         "Erro ao ligar à API do Bitcoin."
+      ],
+      "Failed to load the link": [
+        ""
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         ""
@@ -2042,6 +2009,9 @@
       "Learn more": [
         "Saiba mais"
       ],
+      "Link copied to clipboard": [
+        ""
+      ],
       "Link expires: ": [
         "A ligação expira em: "
       ],
@@ -2809,6 +2779,9 @@
       "Country": [
         "País"
       ],
+      "Created": [
+        ""
+      ],
       "CVV code": [
         "Código CVV"
       ],
@@ -2927,6 +2900,9 @@
       "Merge a folder": [
         "Unir uma pasta"
       ],
+      "Name": [
+        ""
+      ],
       "Name on card": [
         "Nome no cartão"
       ],
@@ -3008,6 +2984,9 @@
       "Sign emails": [
         "Assinar emails"
       ],
+      "Size": [
+        ""
+      ],
       "Skip file": [
         "Saltar ficheiro"
       ],
@@ -3041,6 +3020,9 @@
       "Two-factor authentication code": [
         "Código de autenticação em dois passos"
       ],
+      "Type": [
+        ""
+      ],
       "Unknown file": [
         "Ficheiro desconhecido"
       ],
@@ -3053,17 +3035,14 @@
       "Unlock later": [
         ""
       ],
-      "Up to ${ parentLinkName }": [
-        ""
-      ],
-      "Up to the parent folder": [
-        ""
-      ],
       "Upload anyway": [
         "Enviar mesmo assim"
       ],
       "Upload picture": [
         "Enviar imagem"
+      ],
+      "Uploaded": [
+        ""
       ],
       "Username or ProtonMail address": [
         "Utilizador ou endereço ProtonMail"
