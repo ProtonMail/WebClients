@@ -140,12 +140,6 @@
       "Create new folder": [
         "创建文件夹"
       ],
-      "Created date: new to old": [
-        "创建日期：降序"
-      ],
-      "Created date: old to new": [
-        "创建日期：升序"
-      ],
       "Customize": [
         "定制"
       ],
@@ -209,12 +203,6 @@
       "enable desktop notifications": [
         "启用桌面通知"
       ],
-      "Expires: new to old": [
-        "有效期：降序"
-      ],
-      "Expires: old to new": [
-        "有效期：升序"
-      ],
       "Export": [
         "导出"
       ],
@@ -267,7 +255,7 @@
         "导入"
       ],
       "Import from .csv or vCard": [
-        ""
+        "从 .csv 或 vCard 导入"
       ],
       "Increase": [
         "增加"
@@ -314,6 +302,9 @@
       "More info: ${ safeTitle }": [
         "更多信息：${ safeTitle }"
       ],
+      "More options": [
+        ""
+      ],
       "Move": [
         "移动"
       ],
@@ -322,12 +313,6 @@
       ],
       "Move to trash": [
         "移至回收站"
-      ],
-      "Name: A to Z": [
-        "名称: A 到 Z"
-      ],
-      "Name: Z to A": [
-        "名称: Z 到 A"
       ],
       "New upload": [
         "新上传"
@@ -482,12 +467,6 @@
       "Signing out": [
         "正在退出账户"
       ],
-      "Size: large to small": [
-        "大小：从大到小"
-      ],
-      "Size: small to large": [
-        "大小：从小到大"
-      ],
       "Skip": [
         "跳过"
       ],
@@ -524,12 +503,6 @@
       "Try another method": [
         "更换验证方式"
       ],
-      "Type: A to Z": [
-        "类型：A 到 Z"
-      ],
-      "Type: Z to A": [
-        "类型：Z 到 A"
-      ],
       "Undo": [
         "撤销"
       ],
@@ -550,12 +523,6 @@
       ],
       "Upload picture": [
         "上传图片"
-      ],
-      "Uploaded date: new to old": [
-        "上传日期：降序"
-      ],
-      "Uploaded date: old to new": [
-        "上传日期：升序"
       ],
       "Use ${ label } theme": [
         "使用 ${ label } 主题"
@@ -875,9 +842,6 @@
       "Calendar could not be decrypted": [
         ""
       ],
-      "Calendar could not be found": [
-        ""
-      ],
       "Calendar is syncing": [
         "日历正在同步中"
       ],
@@ -1143,6 +1107,9 @@
       ],
       "Error connecting to the Bitcoin API.": [
         "连接比特币 API 失败。"
+      ],
+      "Failed to load the link": [
+        "加载链接失败"
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "由于“${ error }”错误，文件“${ item.name }”无法上传"
@@ -1848,7 +1815,7 @@
         "支持来自 Outlook、Outlook Express、雅虎邮箱、Hotmail、Eudora 和其他一些应用程序的 CSV 文件，以及 vCard 3.1 和 4.0 格式（UTF-8 编码）。"
       ],
       "Delete drive": [
-        ""
+        "删除网盘"
       ],
       "Discount applied to your subscription with coupon ${ code }": [
         "优惠券 ${ code } 折扣已计入"
@@ -1993,6 +1960,9 @@
       ],
       "Learn more": [
         "了解详情"
+      ],
+      "Link copied to clipboard": [
+        "链接已复制到剪贴板"
       ],
       "Link expires: ": [
         "链接有效期："
@@ -2759,11 +2729,14 @@
       "Country": [
         "国家"
       ],
+      "Created": [
+        ""
+      ],
       "CVV code": [
         "CVV 码"
       ],
       "Delete Drive?": [
-        ""
+        "删除网盘？"
       ],
       "Display name": [
         "显示名称"
@@ -2876,6 +2849,9 @@
       "Merge a folder": [
         "合并文件夹"
       ],
+      "Name": [
+        ""
+      ],
       "Name on card": [
         "持卡人姓名"
       ],
@@ -2957,6 +2933,9 @@
       "Sign emails": [
         "发信附带数字签名"
       ],
+      "Size": [
+        ""
+      ],
       "Skip file": [
         "跳过文件"
       ],
@@ -2976,7 +2955,7 @@
         "文本"
       ],
       "This will permanently delete all files in your locked drive.": [
-        ""
+        "这将永久删除您的锁定网盘中的所有文件。"
       ],
       "To: ${ emailAddress }": [
         "导入到：${ emailAddress }"
@@ -2990,29 +2969,29 @@
       "Two-factor authentication code": [
         "双重验证码"
       ],
+      "Type": [
+        ""
+      ],
       "Unknown file": [
         "未知文件格式"
       ],
       "Unlock Drive": [
-        ""
+        "解锁网盘"
       ],
       "Unlock drive (recommended)": [
-        ""
+        "解锁网盘（推荐）"
       ],
       "Unlock later": [
-        ""
-      ],
-      "Up to ${ parentLinkName }": [
-        ""
-      ],
-      "Up to the parent folder": [
-        ""
+        "稍后解锁"
       ],
       "Upload anyway": [
         "仍然上传"
       ],
       "Upload picture": [
         "上传图片"
+      ],
+      "Uploaded": [
+        ""
       ],
       "Username or ProtonMail address": [
         "用户名或 ProtonMail 地址"
@@ -3027,7 +3006,7 @@
         "发生了什么？"
       ],
       "Yes, I want to permanently delete\nmy old files": [
-        ""
+        "是的，我想永久删除\n我的旧文件"
       ],
       "ZIP": [
         "邮编"
@@ -4377,7 +4356,7 @@
     },
     "Today icon tooltip in mini calendar": {
       "Today": [
-        ""
+        "今天"
       ]
     },
     "Tooltip": {

@@ -140,12 +140,6 @@
       "Create new folder": [
         "Crea nuova cartella"
       ],
-      "Created date: new to old": [
-        ""
-      ],
-      "Created date: old to new": [
-        ""
-      ],
       "Customize": [
         "Personalizza"
       ],
@@ -188,7 +182,7 @@
         "Scarica"
       ],
       "Drive Locked": [
-        ""
+        "Spazio Bloccato"
       ],
       "Edit": [
         "Modifica"
@@ -211,12 +205,6 @@
       "enable desktop notifications": [
         "abilitare le notifiche desktop"
       ],
-      "Expires: new to old": [
-        ""
-      ],
-      "Expires: old to new": [
-        ""
-      ],
       "Export": [
         "Esporta"
       ],
@@ -227,7 +215,7 @@
         "Inoltra come allegato"
       ],
       "Get link": [
-        ""
+        "Ottieni link"
       ],
       "Get started": [
         "Per iniziare"
@@ -296,7 +284,7 @@
         "Layout casella mail"
       ],
       "Manage link": [
-        ""
+        "Gestisci link"
       ],
       "Mark for deletion": [
         "Seleziona per la cancellazione"
@@ -316,6 +304,9 @@
       "More info: ${ safeTitle }": [
         "Maggiori informazioni: ${ safeTitle }"
       ],
+      "More options": [
+        "Altre opzioni"
+      ],
       "Move": [
         "Sposta"
       ],
@@ -324,12 +315,6 @@
       ],
       "Move to trash": [
         "Sposta nel cestino"
-      ],
-      "Name: A to Z": [
-        "Nome: A-Z"
-      ],
-      "Name: Z to A": [
-        "Nome: Z-A"
       ],
       "New upload": [
         "Nuovo caricamento"
@@ -484,12 +469,6 @@
       "Signing out": [
         "Logout in corso"
       ],
-      "Size: large to small": [
-        "Dimensioni: da grande a piccolo"
-      ],
-      "Size: small to large": [
-        "Dimensioni: da piccolo a grande"
-      ],
       "Skip": [
         "Salta"
       ],
@@ -526,12 +505,6 @@
       "Try another method": [
         "Prova un altro metodo"
       ],
-      "Type: A to Z": [
-        "Tipo: A-Z"
-      ],
-      "Type: Z to A": [
-        "Tipo: Z-A"
-      ],
       "Undo": [
         "Annulla"
       ],
@@ -552,12 +525,6 @@
       ],
       "Upload picture": [
         "Carica immagine"
-      ],
-      "Uploaded date: new to old": [
-        ""
-      ],
-      "Uploaded date: old to new": [
-        ""
       ],
       "Use ${ label } theme": [
         "Usa il tema ${ label }"
@@ -879,10 +846,7 @@
     },
     "Calendar subscription not synced error": {
       "Calendar could not be decrypted": [
-        ""
-      ],
-      "Calendar could not be found": [
-        ""
+        "Impossibile decifrare il calendario"
       ],
       "Calendar is syncing": [
         "Il calendario si sta sincronizzando"
@@ -894,7 +858,7 @@
         "Il link del calendario non è accessibile"
       ],
       "Calendar link is temporarily inaccessible": [
-        ""
+        "Il link al calendario è temporaneamente inaccessibile"
       ],
       "Calendar link is wrong": [
         "Il link del calendario è sbagliato"
@@ -1115,7 +1079,7 @@
         "Limite calendario raggiunto"
       ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
-        ""
+        "Impossibile creare nuovi calendari per tutti i calendari importati a causa del limite del calendario personale."
       ],
       "Can't validate email, try again later": [
         "Impossibile convalidare l'email, riprova più tardi"
@@ -1139,8 +1103,8 @@
         "Impossibile generare chiavi di file"
       ],
       "Deselect at least ${ calendarToFixCount } calendar or": [
-        "",
-        ""
+        "Deseleziona almeno ${ calendarToFixCount } calendario o",
+        "Deseleziona almeno ${ calendarToFixCount } calendari o"
       ],
       "Email address invalid": [
         "Indirizzo email non valido"
@@ -1153,6 +1117,9 @@
       ],
       "Error connecting to the Bitcoin API.": [
         "Errore di connessione alle API di Bitcoin."
+      ],
+      "Failed to load the link": [
+        "Impossibile caricare il collegamento"
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         ""
@@ -1206,8 +1173,8 @@
         "Il nome dell'etichetta non può essere vuoto"
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
-        "",
-        ""
+        "Unisci almeno ${ calendarToFixCount } calendario con un calendario Proton esistente",
+        "Unisci almeno ${ calendarToFixCount } calendari con calendari Proton esistenti"
       ],
       "Missing signature": [
         "Firma mancante"
@@ -1230,7 +1197,7 @@
         "Alcuni gruppi non hanno contatti: ${ noContactGroupList } "
       ],
       "Organization not recognized. Try again.": [
-        ""
+        "Organizzazione non riconosciuta. Riprova."
       ],
       "Passwords do not match": [
         "Le password non corrispondono"
@@ -1248,8 +1215,8 @@
         "Processo di pagamento non supportato"
       ],
       "Please fix the highlighted conflict to proceed.": [
-        "",
-        ""
+        "Correggi il conflitto evidenziato per procedere.",
+        "Correggi i conflitti evidenziati per procedere."
       ],
       "Preferences could not be saved": [
         "Le preferenze non possono essere salvate"
@@ -1309,19 +1276,19 @@
         "Il pagamento minimo che accettiamo è di ${ _price2 }"
       ],
       "The new revision of original file is not uploaded yet, please try again later": [
-        ""
+        "La nuova revisione del file originale non è ancora stata caricata, riprova più tardi"
       ],
       "The original file has missing active revision": [
         "Il file originale ha una revisione attiva mancante"
       ],
       "The original file has missing hash key": [
-        ""
+        "Il file originale ha una chiave hash mancante"
       ],
       "The original file has missing session key": [
         "Il file originale ha una chiave di sessione mancante"
       ],
       "The original file is not uploaded yet, please try again later": [
-        ""
+        "Il file originale non è ancora stato caricato, riprova più tardi"
       ],
       "The original folder not found": [
         "La cartella originale non è stata trovata"
@@ -1366,7 +1333,7 @@
         "È necessario impostare un nome"
       ],
       "Your browser does not support uploading folders": [
-        ""
+        "Il tuo browser non supporta il caricamento di cartelle"
       ],
       "Your import will not be processed.": [
         "La tua importazione non verrà elaborata."
@@ -1787,7 +1754,7 @@
         "Importo inferiore al minimo (${ amount })."
       ],
       "An active recovery file": [
-        ""
+        "Un file di ripristino attivo"
       ],
       "and": [
         "e"
@@ -1848,7 +1815,7 @@
         "Clicca \"Richiedi nuovo codice\" per ricevere un nuovo codice di verifica al ${ strong }. Se questo numero telefonico è incorretto, clicca su \"Modifica\" per correggerlo."
       ],
       "Close this screen to exit.": [
-        ""
+        "Chiudi questa schermata per uscire."
       ],
       "Closing transfer manager will cancel all active transfers, are you sure?": [
         "La chiusura del gestore dei trasferimenti annullerà tutti i trasferimenti attivi, sei sicuro?"
@@ -1891,11 +1858,11 @@
         "Creazione condivisione"
       ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
-        ""
+        "File CSV da Outlook, Outlook Express, Yahoo! Sono supportati Mail, Hotmail, Eudora e alcune altre app, nonché i formati vCard 3.1 e 4.0 (codifica UTF-8)."
       ],
       "Delete drive": [
-        "",
-        ""
+        "Elimina spazio",
+        "Elimina spazi"
       ],
       "Discount applied to your subscription with coupon ${ code }": [
         "Sconto applicato al tuo abbonamento con coupon ${ code }"
@@ -1994,14 +1961,14 @@
         "Se non trovi l'email nella tua casella di posta, controlla la cartella spam."
       ],
       "If you have one of these, continue to Proton account setting to\ncontinue the unblock process.": [
-        ""
+        "Se disponi di uno di questi, passa alle impostazioni dell'account Proton per\ncontinuare il processo di sblocco."
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
-        ""
+        "Importa ${ contactsFragment } e ${ contactsGroupsFragment }"
       ],
       "Import ${ selectedCalendarsCount } of ${ totalCalendarsCount } calendar": [
-        "",
-        ""
+        "Importa ${ selectedCalendarsCount } of ${ totalCalendarsCount } calendario",
+        "Importa ${ selectedCalendarsCount } of ${ totalCalendarsCount } calendari"
       ],
       "Import from": [
         "Importa da"
@@ -2010,7 +1977,7 @@
         "Importazione in corso"
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
-        ""
+        "Importazione dei tuoi dati da ${ importedEmailAddress } a ${ toEmail }."
       ],
       "Included": [
         "Incluso"
@@ -2037,10 +2004,13 @@
         "Impronta digitale della chiave"
       ],
       "Large imports can take several days.": [
-        ""
+        "Importazioni di grandi dimensioni possono richiedere diversi giorni."
       ],
       "Learn more": [
         "Per saperne di più"
+      ],
+      "Link copied to clipboard": [
+        "Link copiato negli appunti"
       ],
       "Link expires: ": [
         "Scadenza link: "
@@ -2082,7 +2052,7 @@
         "Nuovo"
       ],
       "Next you'll need to log in to your Google account and allow us to access your data.": [
-        ""
+        "Successivamente dovrai accedere al tuo account Google e consentirci di accedere ai tuoi dati."
       ],
       "No": [
         "No"
@@ -2142,7 +2112,7 @@
         "I pagamenti sono protetti con crittografia TLS e leggi sulla privacy svizzere."
       ],
       "Permanently delete all files in your drive": [
-        ""
+        "Elimina definitivamente tutti i file nello spazio"
       ],
       "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
         "PGP/Inline è compatibile solo nel formato Testo Semplice. Per favore nota che ProtonMail firma sempre i messaggi crittografati."
@@ -2224,10 +2194,10 @@
         "Seleziona il formato email che desideri utilizzare per impostazione predefinita quando invii un'email a questo indirizzo email."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit. You can also merge imported calendars with existing Proton calendars.": [
-        ""
+        "Seleziona quali calendari importare. Verrà creato un nuovo calendario per ogni calendario importato fino al limite di 20 calendari. Puoi anche unire i calendari importati con i calendari Proton esistenti."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
-        ""
+        "I server sono irraggiungibili. Riprova tra qualche minuto"
       ],
       "Session timed out.": [
         "Sessione scaduta."
@@ -2287,7 +2257,7 @@
         "Questo link potrebbe essere un attacco omografo. Verifica che questo sia il link che desideri visitare o non aprirlo."
       ],
       "This link was created in\na previous version and can not be modified. Delete this link and create a\nnew one to change the settings.": [
-        ""
+        "Questo collegamento è stato creato in\nuna versione precedente e non può essere modificata. Elimina questo collegamento e crea un\nnuovo per modificare le impostazioni."
       ],
       "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
         "Questo link sarà permanentemente disabilitato. Nessuno con questo link sarà in grado di accedere al file. Per ricondividere il file, avrai bisogno di un nuovo link."
@@ -2318,22 +2288,22 @@
         "Per utilizzare la verifica dell'indirizzo, devi fidarti di una o più chiavi pubbliche disponibili, compresa quella che vuoi utilizzare per l'invio. In questo modo si evita che le chiavi di cifratura vengano falsificate."
       ],
       "Transfer canceled for file \"${ name }\"": [
-        ""
+        "Trasferimento annullato per il file \"${ name }\""
       ],
       "Transfer canceled for folder \"${ name }\"": [
-        ""
+        "Trasferimento annullato per la cartella \"${ name }\""
       ],
       "Transfer skipped for file \"${ file.name }\"": [
-        ""
+        "Trasferimento saltato per il file \"${ file.name }\""
       ],
       "Transfer skipped for folder \"${ folderName }\"": [
-        ""
+        "Trasferimento saltato per la cartella \"${ folderName }\""
       ],
       "Trash": [
         "Cestino"
       ],
       "Unlock drive to recover files": [
-        ""
+        "Sblocca lo spazio per recuperare i file"
       ],
       "Unsupported file": [
         "File non supportato"
@@ -2381,7 +2351,7 @@
         "Cosa vuoi importare dal tuo account Google?"
       ],
       "What would you like to do?": [
-        ""
+        "Cosa ti piacerebbe fare?"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Vuoi ricevere un nuovo codice di verifica o utilizzare un metodo alternativo?"
@@ -2399,7 +2369,7 @@
         "Al momento hai effettuato l'accesso come ${ user.Name } (${ user.Email }) e hai un accesso limitato."
       ],
       "You can check the progress ${ importProgressLink }.": [
-        ""
+        "Puoi controllare lo stato di avanzamento ${ importProgressLink }."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Puoi attivare le notifiche per ricevere avvisi quando arrivano nuovi messaggi email in questa cartella."
@@ -2453,7 +2423,7 @@
         "La tua banca richiede una verifica 3-D Secure per scopi di sicurezza."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
-        ""
+        "I tuoi dati sono pronti per essere importati da ${ importedEmailAddressStrong } al tuo account Proton."
       ],
       "Your download has been canceled.": [
         "Il download è stato annullato."
@@ -2471,7 +2441,7 @@
         "Il tuo file sta venendo scaricato."
       ],
       "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ KeyReactivationButton }": [
-        ""
+        "I tuoi file non sono più accessibili a causa di un reset della password. Ricarica la vecchia chiave di crittografia per recuperare l'accesso. ${ KeyReactivationButton }"
       ],
       "Your files will be encrypted and then saved.": [
         "I tuoi file verranno crittografati e poi salvati."
@@ -2480,10 +2450,10 @@
         "Il tuo numero di telefono sarà utilizzato solo per questa verifica una tantum."
       ],
       "Your previous password": [
-        ""
+        "La tua password precedente"
       ],
       "Your previous recovery phrase": [
-        ""
+        "La tua frase di recupero precedente"
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "Il tuo account Proton è attualmente in attesa. Per continuare a utilizzare il tuo account, paga le fatture scadute."
@@ -2809,12 +2779,15 @@
       "Country": [
         "Paese"
       ],
+      "Created": [
+        "Creato"
+      ],
       "CVV code": [
         "Codice CVV"
       ],
       "Delete Drive?": [
-        "",
-        ""
+        "Eliminare spazio?",
+        "Eliminare gli spazi?"
       ],
       "Display name": [
         "Nome visualizzato"
@@ -2838,7 +2811,7 @@
         "Email criptate"
       ],
       "Enter organization name to confirm": [
-        ""
+        "Inserisci il nome dell'organizzazione per confermare"
       ],
       "Enter the 6-digit code": [
         "Inserisci il codice a 6 cifre"
@@ -2927,6 +2900,9 @@
       "Merge a folder": [
         "Unisci una cartella"
       ],
+      "Name": [
+        "Nome"
+      ],
       "Name on card": [
         "Nome sulla carta"
       ],
@@ -3008,6 +2984,9 @@
       "Sign emails": [
         "Firma email"
       ],
+      "Size": [
+        "Dimensione"
+      ],
       "Skip file": [
         "Salta file"
       ],
@@ -3027,7 +3006,7 @@
         "Testo"
       ],
       "This will permanently delete all files in your locked drive.": [
-        ""
+        "Questo eliminerà definitivamente tutti i file nello spazio bloccato."
       ],
       "To: ${ emailAddress }": [
         "A: ${ emailAddress }"
@@ -3041,29 +3020,29 @@
       "Two-factor authentication code": [
         "Codice di autenticazione a due fattori"
       ],
+      "Type": [
+        "Tipo"
+      ],
       "Unknown file": [
         "File sconosciuto"
       ],
       "Unlock Drive": [
-        ""
+        "Sblocca Spazio"
       ],
       "Unlock drive (recommended)": [
-        ""
+        "Sblocca spazio (consigliato)"
       ],
       "Unlock later": [
-        ""
-      ],
-      "Up to ${ parentLinkName }": [
-        ""
-      ],
-      "Up to the parent folder": [
-        ""
+        "Sblocca dopo"
       ],
       "Upload anyway": [
         "Carica comunque"
       ],
       "Upload picture": [
         "Carica immagine"
+      ],
+      "Uploaded": [
+        "Caricato"
       ],
       "Username or ProtonMail address": [
         "Nome utente o indirizzo ProtonMail"
@@ -3078,7 +3057,7 @@
         "Cos'è successo?"
       ],
       "Yes, I want to permanently delete\nmy old files": [
-        ""
+        "Sì, voglio eliminare definitivamente\ni miei vecchi file"
       ],
       "ZIP": [
         "CAP"
@@ -3190,23 +3169,23 @@
     },
     "Loading info": {
       "${ createdCalendars } of ${ calendarsToBeCreated } created": [
-        "",
-        ""
+        "${ createdCalendars } di ${ calendarsToBeCreated } creato",
+        "${ createdCalendars } di ${ calendarsToBeCreated } creato"
       ],
       "Almost there": [
-        ""
+        "Già qui"
       ],
       "Creating new calendars": [
-        ""
+        "Creazione nuovi calendari"
       ],
       "Gathering your data": [
-        ""
+        "Raccolta dei tuoi dati"
       ],
       "We're gathering your data from your provider": [
-        ""
+        "Stiamo raccogliendo i tuoi dati dal tuo provider"
       ],
       "Your import is starting": [
-        ""
+        "La tua importazione sta iniziando"
       ]
     },
     "Mail feature": {
@@ -3307,7 +3286,7 @@
     },
     "Member downgrade modal": {
       "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        ""
+        "Verranno eliminati definitivamente tutti i sub-utenti, gli account e i dati associati alla tua organizzazione."
       ]
     },
     "Message display when a new app version is available": {
@@ -3439,7 +3418,7 @@
         "Impossibile rimuovere, riprova"
       ],
       "Failed to upload files: ${ err }": [
-        ""
+        "Impossibile caricare i file: ${ err }"
       ],
       "File or folder \"${ filename }\" and ${ count } other are already uploading": [
         "",
@@ -3449,7 +3428,7 @@
         ""
       ],
       "File or folder is missing a name": [
-        ""
+        "Al file o alla cartella manca un nome"
       ],
       "Move ${ itemsToMoveCount } file": [
         "Sposta ${ itemsToMoveCount } file",
@@ -3485,7 +3464,7 @@
         "Il collegamento al file è stato eliminato"
       ],
       "Your old files will be deleted in 72 hours": [
-        ""
+        "I tuoi vecchi file verranno eliminati entro 72 ore"
       ],
       "Your settings have been changed successfully": [
         "Le impostazioni sono state modificate con successo"
@@ -4148,7 +4127,7 @@
         "Elimina ${ Name }"
       ],
       "Delete organization?": [
-        ""
+        "Eliminare l'organizzazione?"
       ],
       "Delete permanently": [
         "Elimina definitivamente"
@@ -4737,13 +4716,13 @@
         "Alcuni dei contatti da unire presentano errori. Si prega di rivederli singolarmente"
       ],
       "The contact data is corrupted and cannot be displayed.": [
-        ""
+        "I dati del contatto sono danneggiati e non possono essere visualizzati."
       ],
       "The contact failed to load.": [
         "Impossibile caricare il contatto."
       ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
-        ""
+        "Le impostazioni di data e ora sul dispositivo non sono sincronizzate. ${ learnMore }"
       ],
       "The decryption of the encrypted content failed.": [
         "Decifratura del contenuto cifrato non riuscita."

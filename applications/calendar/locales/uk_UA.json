@@ -116,6 +116,9 @@
       "Continue": [
         "Продовжити"
       ],
+      "Continue import": [
+        "Продовжити імпорт"
+      ],
       "Continue with Google": [
         "Продовжити з Google"
       ],
@@ -124,6 +127,9 @@
       ],
       "Create": [
         "Створити"
+      ],
+      "Create calendar": [
+        "Створити календар"
       ],
       "Create event": [
         "Створити подію"
@@ -235,6 +241,9 @@
       ],
       "Import": [
         "Імпорт"
+      ],
+      "Import events": [
+        "Імпорт подій"
       ],
       "Import from .csv or vCard": [
         "Імпортувати з .csv або vCard"
@@ -529,11 +538,6 @@
         "У вас немає жодної групи."
       ]
     },
-    "Add calendar icon tooltip": {
-      "Create calendar": [
-        "Створити календар"
-      ]
-    },
     "Addon": {
       "+ ${ addresses } email address": [
         "+ ${ addresses } адреса електронної пошти",
@@ -629,6 +633,9 @@
       "By leaving now, some contacts may not be imported": [
         "Якщо ви зараз вийдете, деякі контакти можуть не імпортуватися"
       ],
+      "By leaving now, some events may not be imported": [
+        "Якщо ви зараз вийдете, деякі події можуть не імпортуватися"
+      ],
       "By leaving now, you will lose your event.": [
         "Якщо ви зараз вийдете, подія не збережеться."
       ]
@@ -642,6 +649,26 @@
       ],
       "Proton applications": [
         "Програми Proton"
+      ]
+    },
+    "Attached ics file error": {
+      "Empty ICS file": [
+        "Порожній файл ICS"
+      ],
+      "Invalid event": [
+        "Недійсна подія"
+      ],
+      "Invalid ICS file": [
+        "Недійсний файл ICS"
+      ],
+      "Invalid method": [
+        "Недійсний спосіб"
+      ],
+      "Unsupported calendar component": [
+        "Непідтримуваний компонент календаря"
+      ],
+      "Unsupported event": [
+        "Непідтримувана подія"
       ]
     },
     "Attendee role": {
@@ -900,6 +927,14 @@
         "Ви попередньо прийняли запрошення"
       ]
     },
+    "Calendar sidebar dropdown item": {
+      "Add calendar from URL": [
+        "Додати календар з URL-адреси"
+      ],
+      "More options": [
+        "Додаткові параметри"
+      ]
+    },
     "Calendar status": {
       "Not synced": [
         "Не синхронізовано"
@@ -911,9 +946,6 @@
     "Calendar subscription not synced error": {
       "Calendar could not be decrypted": [
         "Календар неможливо розшифрувати"
-      ],
-      "Calendar could not be found": [
-        "Календар неможливо знайти"
       ],
       "Calendar is syncing": [
         "Календар синхронізується"
@@ -1168,6 +1200,9 @@
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Використовуйте перетягування для пріоритету об'єднання між контактами. Приберіть позначку з тих контактів, які ви не хочете об'єднувати."
       ],
+      "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
+        "Ви можете імпортувати події в форматі iCal (файл ICS). Максимальний розмір файлу повинен бути ${ MAX_IMPORT_FILE_SIZE_STRING } та містити до ${ MAX_IMPORT_EVENTS_STRING } подій. Якщо ваш файл більший, розділіть його на менші файли."
+      ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Ви можете позначити ті контакти, які ви не хочете ані об’єднувати, ані зберігати. Видалення відбудеться лише після натискання кнопки об'єднання"
       ]
@@ -1209,6 +1244,11 @@
       ],
       "Upload / download files": [
         "Вивантажуйте та завантажуйте файли"
+      ]
+    },
+    "Dropwdown action icon tooltip": {
+      "Add calendar": [
+        "Додати календар"
       ]
     },
     "Duration": {
@@ -1525,7 +1565,7 @@
         "В деяких групах немає контактів: ${ noContactGroupList }"
       ],
       "Organization not recognized. Try again.": [
-        ""
+        "Організація не розпізнана. Спробуйте ще раз."
       ],
       "Passwords do not match": [
         "Паролі відрізняються"
@@ -1661,8 +1701,38 @@
       ]
     },
     "Error importing calendar": {
+      "${ CALENDAR_APP_NAME } only supports importing calendars with iCal version 2.0.": [
+        "${ CALENDAR_APP_NAME } підтримує імпортування календарів лише з iCal версії 2.0."
+      ],
+      "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
+        "Виникла помилка під час прочитання вашого файлу ${ formattedFilename }. Файл має неправильний формат."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
+        "Виникла помилка під час вивантаження вашого файлу ${ formattedFilename }. Максимальний розмір файлу ${ MAX_IMPORT_FILE_SIZE_STRING }."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Only ICS file formats are allowed.": [
+        "Виникла помилка під час вивантаження вашого файлу ${ formattedFilename }. Дозволяються лише файли у форматі ICS."
+      ],
+      "An error occurred uploading your file. No file has been selected.": [
+        "Помилка під час вивантаження вашого файлу. Файл не вибрано."
+      ],
       "An unexpected error occurred. Import must be restarted.": [
         "Сталася неочікувана помилка. Необхідно перезапустити імпорт."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } events.": [
+        "Ваш файл ${ formattedFilename } містить понад ${ MAX_IMPORT_EVENTS_STRING } подій."
+      ],
+      "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
+        "Ваш файл ${ formattedFilename } має недійсний метод і його неможливо імпортувати."
+      ],
+      "Your file ${ formattedFilename } has no events to be imported.": [
+        "Ваш файл ${ formattedFilename } не містить подій для імпортування."
+      ],
+      "Your file ${ formattedFilename } is empty.": [
+        "Ваш файл ${ formattedFilename } порожній."
+      ],
+      "Your file ${ formattedFilename } is not a calendar.": [
+        "Ваш файл ${ formattedFilename } не є календарем."
       ]
     },
     "Error importing contact": {
@@ -1696,12 +1766,113 @@
         "Ваш файл ${ formattedFilename } порожній."
       ]
     },
+    "Error importing event": {
+      "Bad format. Component cannot be read.": [
+        "Неправильний формат. Не вдалося прочитати."
+      ],
+      "Calendar": [
+        "Календар"
+      ],
+      "Calendar timezone not supported": [
+        "Часовий пояс календаря не підтримується"
+      ],
+      "Component with wrong format": [
+        "Компонент з неправильним форматом"
+      ],
+      "Custom timezone": [
+        "Власний часовий пояс"
+      ],
+      "Edited event not supported": [
+        "Відредагована подія не підтримується"
+      ],
+      "Element": [
+        "Елемент"
+      ],
+      "Encryption failed": [
+        "Не вдалося зашифрувати"
+      ],
+      "End time out of bounds": [
+        "Час завершення поза припустимими межами"
+      ],
+      "Event": [
+        "Подія"
+      ],
+      "Event validation failed": [
+        "Не вдалося перевірити подію"
+      ],
+      "Floating times not supported": [
+        "Гнучкий час не підтримується"
+      ],
+      "Free-busy time information": [
+        "Відомості про доступність та зайнятість"
+      ],
+      "Invalid event": [
+        "Недійсна подія"
+      ],
+      "Journal entry": [
+        "Запис журналу"
+      ],
+      "Malformed all-day event": [
+        "Неправильна подія на цілий день"
+      ],
+      "Malformed end time": [
+        "Неправильний час завершення"
+      ],
+      "Malformed recurring event": [
+        "Неправильна повторювана подія"
+      ],
+      "Malformed start time": [
+        "Неправильний час початку"
+      ],
+      "Missing start time": [
+        "Відсутній час початку"
+      ],
+      "no UID, title or start time": [
+        "немає UID, заголовка або часу початку"
+      ],
+      "Non-Gregorian": [
+        "Не григоріанський"
+      ],
+      "Notification out of bounds": [
+        "Сповіщення поза межами"
+      ],
+      "Original recurring event could not be found": [
+        "Не вдалося знайти оригінальну повторювану подію"
+      ],
+      "Recurring event has no occurrences": [
+        "Повторювана подія не має випадків"
+      ],
+      "Recurring rule not supported": [
+        "Правило повторення не підтримується"
+      ],
+      "Start time out of bounds": [
+        "Час початку поза припустимим діапазоном"
+      ],
+      "Timezone": [
+        "Часовий пояс"
+      ],
+      "Timezone not supported": [
+        "Часовий пояс не підтримується"
+      ],
+      "To-do entry": [
+        "Запис завдання"
+      ],
+      "Unknown": [
+        "Невідомо"
+      ],
+      "Unsupported event": [
+        "Непідтримувана подія"
+      ]
+    },
     "Error message": {
       "Brace yourself till we get the error fixed.": [
         "Дочекайтеся, доки ми виправимо помилку."
       ],
       "Error: ${ errorMessage }": [
         "Помилка: ${ errorMessage }"
+      ],
+      "Invalid URL": [
+        "Неправильна URL-адреса"
       ],
       "Oops, something went wrong": [
         "Ой, щось пішло не так"
@@ -1757,6 +1928,44 @@
     "Event info. Organizer name": {
       "You": [
         "Ви"
+      ]
+    },
+    "Event invitation error": {
+      "Attached ICS file could not be decrypted": [
+        "Не вдалося розшифрувати вкладений ICS-файл"
+      ],
+      "Attached ICS file could not be parsed": [
+        "Не вдалося обробити вкладений ICS-файл"
+      ],
+      "Invalid invitation": [
+        "Недійсне запрошення"
+      ],
+      "Invalid response": [
+        "Недійсна відповідь"
+      ],
+      "Unexpected error": [
+        "Неочікувана помилка"
+      ],
+      "Unsupported invitation": [
+        "Непідтримуване запрошення"
+      ],
+      "Unsupported response": [
+        "Непідтримувана відповідь"
+      ],
+      "We could not cancel the event in your calendar": [
+        "Не вдалося скасувати подію у вашому календарі"
+      ],
+      "We could not retrieve the event from your calendar": [
+        "Не вдалося видобути подію з вашого календаря"
+      ],
+      "We could not update the event in your calendar": [
+        "Не вдалося оновити подію у вашому календарі"
+      ],
+      "Your answer was sent, but the event could not be added to your calendar": [
+        "Вашу відповідь надіслано, але подію не вдалося додати до вашого календаря"
+      ],
+      "Your answer was sent, but the event could not be updated in your calendar": [
+        "Вашу відповідь надіслано, але подію не вдалося оновити у вашому календарі"
       ]
     },
     "Event popover close button": {
@@ -1867,13 +2076,63 @@
       ]
     },
     "Import calendar": {
+      "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
+        "${ totalImported }/${ totalToImport } подію зашифровано та додано до вашого календаря",
+        "${ totalImported }/${ totalToImport } події зашифровано та додано до вашого календаря",
+        "${ totalImported }/${ totalToImport } подій зашифровано та додано до вашого календаря",
+        "${ totalImported }/${ totalToImport } події зашифровано та додано до вашого календаря"
+      ],
+      "An error occurred while encrypting and adding your event. No event could be imported.": [
+        "При шифруванні та додаванні вашої події сталася помилка. Неможливо імпортувати подію.",
+        "При шифруванні та додаванні ваших подій сталася помилка. Неможливо імпортувати події.",
+        "При шифруванні та додаванні ваших подій сталася помилка. Неможливо імпортувати події.",
+        "При шифруванні та додаванні ваших подій сталася помилка. Неможливо імпортувати події."
+      ],
+      "An error occurred while encrypting and adding your events. ${ totalImported } out of ${ totalToImport } events successfully imported.": [
+        "При шифруванні та додаванні ваших подій сталася помилка. ${ totalImported } із ${ totalToImport } подій успішно імпортовано."
+      ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "Шифрування та додавання контактів: ${ totalImported }/${ totalToImport }"
+      ],
+      "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
+        "Шифрування та додавання подій до вашого календаря: ${ totalImported }/${ totalToImport }"
+      ],
+      "Event successfully imported. The imported event will now appear in your calendar.": [
+        "Подію успішно імпортовано. Тепер вона з'явиться у вашому календарі.",
+        "Події успішно імпортовано. Тепер вони з'являться у вашому календарі.",
+        "Події успішно імпортовано. Тепер вони з'являться у вашому календарі.",
+        "Події успішно імпортовано. Тепер вони з'являться у вашому календарі."
+      ],
+      "Please don't close the tab before the importing process is finished.": [
+        "Не закривайте цю вкладку доки не завершиться процес імпортування."
       ]
     },
     "Import calendar warning": {
+      "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
+        "${ CALENDAR_APP_NAME } наразі не підтримує певні типи подій, подробиць та форматів."
+      ],
       "vCard versions < 3.0": [
         "vCard версії < 3.0"
+      ]
+    },
+    "Import calendar; import invitation": {
+      "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your Proton email address.": [
+        "Імпортовані запрошення з'являються в ${ CALENDAR_APP_NAME } як прості події без подробиць про організаторів та учасників. Для отримання оновлень подій та перегляду учасників попросіть організаторів запросити вас з використанням вашої адреси електронної пошти Proton."
+      ],
+      "This file contains an event invitation:": [
+        "Цей файл містить запрошення на подію:",
+        "Цей файл містить запрошення на події:",
+        "Цей файл містить запрошення на події:",
+        "Цей файл містить запрошення на події:"
+      ],
+      "This file contains an invitation response:": [
+        "Цей файл містить відповідь на запрошення:",
+        "Цей файл містить відповіді на запрошення:",
+        "Цей файл містить відповіді на запрошення:",
+        "Цей файл містить відповіді на запрошення:"
+      ],
+      "This file contains some data that we cannot import:": [
+        "Цей файл містить деякі дані, які ми не можемо імпортувати:"
       ]
     },
     "Import contact": {
@@ -1931,8 +2190,17 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } із ${ totalContacts } контактів не будуть імпортовані. Натисніть для подробиць"
       ],
+      "${ totalEventsDiscarded } out of ${ totalEvents } events will not be imported. Expand for details.": [
+        "${ totalEventsDiscarded } із ${ totalEvents } подій не буде імпортовано. Розгорніть для подробиць."
+      ],
       "No contact can be imported. Click for details": [
         "Неможливо імпортувати контакти. Натисніть для подробиць"
+      ],
+      "No event can be imported. Expand for details.": [
+        "Неможливо імпортувати події. Розгорніть для подробиць."
+      ],
+      "Part of your calendar content is not supported and will not be imported.": [
+        "Частина вмісту вашого календаря не підтримується і не буде імпортована."
       ]
     },
     "Info": {
@@ -2507,7 +2775,7 @@
         "Оберіть формат повідомлення, який ви хочете використовувати при надсиланні на цю адресу е-пошти."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit. You can also merge imported calendars with existing Proton calendars.": [
-        ""
+        "Виберіть, які календарі необхідно імпортувати. Для кожного імпортованого календаря буде створений новий календар у межах ліміту в 20 календарів. Ви також можете об'єднати імпортовані календарі з існуючими календарями Proton."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Сервери недоступні. Спробуйте знову за кілька хвилин"
@@ -3134,7 +3402,7 @@
         "Завершується"
       ],
       "Enter organization name to confirm": [
-        ""
+        "Введіть назву організації для підтвердження"
       ],
       "Enter the 6-digit code": [
         "Введіть 6-значний код"
@@ -3189,6 +3457,9 @@
       ],
       "Import to email address": [
         "Електронна адреса для імпорту"
+      ],
+      "Import to:": [
+        "Імпортувати до:"
       ],
       "Keyboard shortcuts": [
         "Комбінації клавіш"
@@ -3560,16 +3831,16 @@
     },
     "Mail import summary": {
       "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "",
-        "",
-        "",
-        ""
+        "Імпортувати всі повідомлення з ${ selectedLabelsCount } міткою з усіх ${ totalLabelsCount }, починаючи з ${ periodFragment } та позначити їх міткою ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Імпортувати всі повідомлення з ${ selectedLabelsCount } мітками з усіх ${ totalLabelsCount }, починаючи з ${ periodFragment } та позначити їх міткою ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Імпортувати всі повідомлення з ${ selectedLabelsCount } мітками з усіх ${ totalLabelsCount }, починаючи з ${ periodFragment } та позначити їх міткою ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Імпортувати всі повідомлення з ${ selectedLabelsCount } мітками з усіх ${ totalLabelsCount }, починаючи з ${ periodFragment } та позначити їх міткою ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
       "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "",
-        "",
-        "",
-        ""
+        "Імпортувати всі повідомлення з ${ totalLabelsCount } міткою, починаючи з ${ periodFragment } та позначити їх міткою ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Імпортувати всі повідомлення з ${ totalLabelsCount } мітками, починаючи з ${ periodFragment } та позначити їх міткою ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Імпортувати всі повідомлення з ${ totalLabelsCount } мітками, починаючи з ${ periodFragment } та позначити їх міткою ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Імпортувати всі повідомлення з ${ totalLabelsCount } мітками, починаючи з ${ periodFragment } та позначити їх міткою ${ LABEL_MARKUP_PLACEHOLDER }"
       ]
     },
     "Many Others": {
@@ -3579,7 +3850,7 @@
     },
     "Member downgrade modal": {
       "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        ""
+        "Це приведе до остаточного видалення всіх підлеглих користувачів, облікових записів і даних, пов'язаних з вашою організацією."
       ]
     },
     "Message": {
@@ -3603,9 +3874,25 @@
         "Звичайний текст"
       ]
     },
+    "Modal action": {
+      "Close": [
+        "Закрити"
+      ],
+      "Manage calendars": [
+        "Керувати календарями"
+      ]
+    },
     "Modal title": {
       "Time zone changed": [
         "Часовий пояс змінено"
+      ],
+      "Unable to add more calendars": [
+        "Не вдалося додати інші календарі"
+      ]
+    },
+    "Modal title and action": {
+      "Add calendar": [
+        "Додати календар"
       ]
     },
     "Monthly recurring event, frequency": {
@@ -4344,6 +4631,46 @@
         "Ваше поточне сховище:"
       ]
     },
+    "Subscribe to calendar modal": {
+      "Calendar URL": [
+        "URL календаря"
+      ],
+      "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Subscribed calendars.\n${ kbLink }": [
+        "Щоб підписатися на зовнішній або загальнодоступний календар і його оновлення, введіть URL-адресу. Версія календаря лише для читання буде додана до ваших підписок на календарі.\n${ kbLink }"
+      ]
+    },
+    "Subscribe to calendar modal description": {
+      "Learn how to get a private calendar link.": [
+        "Дізнайтеся, як отримати приватне посилання для календаря."
+      ]
+    },
+    "Subscribed calendar extension warning": {
+      "By using this link, Google will make the calendar you are subscribing to public": [
+        "Використовуючи це посилання, Google зробить календар, на який ви підписуєтесь, загальнодоступним"
+      ],
+      "This link might be wrong": [
+        "Це посилання може бути помилковим"
+      ]
+    },
+    "Subscribed calendar feature unavailable error": {
+      "Subscribing to a calendar is unavailable at the moment": [
+        "Підписка на календар на разі недоступна"
+      ]
+    },
+    "Subscribed calendar limit reached modal body": {
+      "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } subscribed calendar.": [
+        "Ви досягли максимальної кількості з ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } підписного календаря.",
+        "Ви досягли максимальної кількості з ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } підписних календарів.",
+        "Ви досягли максимальної кількості з ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } підписних календарів.",
+        "Ви досягли максимальної кількості з ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } підписних календарів."
+      ],
+      "You have reached the maximum of ${ personalCalendarLimit } personal calendar.": [
+        "Ви досягли максимальної кількості з ${ personalCalendarLimit } особистого календаря.",
+        "Ви досягли максимальної кількості з ${ personalCalendarLimit } особистих календарів.",
+        "Ви досягли максимальної кількості з ${ personalCalendarLimit } особистих календарів.",
+        "Ви досягли максимальної кількості з ${ personalCalendarLimit } особистих календарів."
+      ]
+    },
     "Success": {
       "A cancellation email will be sent to removed participants for all the events in this series.": [
         "Лист про скасування буде надіслано вилученим учасникам для всіх подій в цій серії."
@@ -4690,6 +5017,9 @@
       "Contacts": [
         "Контакти"
       ],
+      "Continue with partial import?": [
+        "Продовжити частковий імпорт?"
+      ],
       "Coupon discount": [
         "Знижка за купоном"
       ],
@@ -4745,7 +5075,7 @@
         "Видалити подію"
       ],
       "Delete organization?": [
-        ""
+        "Видалити організацію?"
       ],
       "Delete recurring event": [
         "Видалити повторювану подію"
@@ -4813,8 +5143,20 @@
       "Human verification": [
         "Перевірка \"Я не робот\""
       ],
+      "Import as simple event?": [
+        "Імпортувати як просту подію?",
+        "Імпортувати як прості події?",
+        "Імпортувати як прості події?",
+        "Імпортувати як прості події?"
+      ],
       "Import contacts": [
         "Імпортувати контакти"
+      ],
+      "Import events": [
+        "Імпорт подій"
+      ],
+      "Import failed": [
+        "Імпорт не вдався"
       ],
       "Import groups": [
         "Імпортувати групи"

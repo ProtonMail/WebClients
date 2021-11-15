@@ -31,10 +31,10 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } 商店"
       ],
-      "Activate": [
+      "activate": [
         "啟用"
       ],
-      "activate": [
+      "Activate": [
         "啟用"
       ],
       "Activate ${ Name }@pm.me": [
@@ -51,6 +51,9 @@
       ],
       "Add address": [
         "新增電子郵件地址"
+      ],
+      "Add calendar": [
+        ""
       ],
       "Add condition": [
         "新增條件"
@@ -223,12 +226,6 @@
       "Create link": [
         "建立連結"
       ],
-      "Create new recovery phrase": [
-        "建立新復原短語"
-      ],
-      "Create new recovery phrase?": [
-        "建立新的復原短語？"
-      ],
       "Customize": [
         "自訂"
       ],
@@ -347,6 +344,15 @@
         "字型"
       ],
       "Generate key": [
+        ""
+      ],
+      "Generate new recovery phrase": [
+        ""
+      ],
+      "Generate new recovery phrase?": [
+        ""
+      ],
+      "Generate recovery phrase": [
         ""
       ],
       "Get ProtonVPN Plus": [
@@ -501,6 +507,9 @@
       ],
       "Reconnect": [
         "重新連線"
+      ],
+      "Recover data": [
+        ""
       ],
       "Refresh status": [
         "重新整理狀態"
@@ -696,9 +705,6 @@
       ],
       "Submit": [
         "提交"
-      ],
-      "Subscribe to calendar": [
-        "訂閱日曆"
       ],
       "Support": [
         "支援"
@@ -1278,8 +1284,8 @@
       ]
     },
     "Calendar limit warning": {
-      "You have reached the maximum of ${ calendarsLimit } calendar.": [
-        "您已達到 ${ calendarsLimit } 個行事曆的最大數量。"
+      "You have reached the maximum of ${ calendarsLimit } personal calendar.": [
+        ""
       ],
       "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } subscribed calendar.": [
         "您已達到 ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } 個訂閱行事曆的最大數量。"
@@ -1304,9 +1310,6 @@
     },
     "Calendar subscription not synced error": {
       "Calendar could not be decrypted": [
-        ""
-      ],
-      "Calendar could not be found": [
         ""
       ],
       "Calendar is syncing": [
@@ -3380,9 +3383,6 @@
       "Create in": [
         ""
       ],
-      "Creating a new recovery phrase will deactivate your old one.": [
-        "建立新的復原短語將停用舊的。"
-      ],
       "Creating your Proton account": [
         "正在建立您的 Proton 帳號"
       ],
@@ -3421,15 +3421,6 @@
       ],
       "Delete link?": [
         "刪除連結?"
-      ],
-      "Disabling this will prevent this email from being used for account recovery.": [
-        "停用將防止此電子郵件用作帳號備援。"
-      ],
-      "Disabling this will prevent this phone number from being used for account recovery.": [
-        "停用將阻止此電話號碼用作帳號備援。"
-      ],
-      "Disabling this will prevent your recovery phrase from being used for account recovery.": [
-        "停用將阻止您的復原短語用作帳號備援。"
       ],
       "Discount applied to your subscription with coupon ${ code }": [
         "您使用優惠券 ${ code } 的訂閱已享用折扣"
@@ -3577,6 +3568,9 @@
       ],
       "Full-featured VPN with speed up to 10 Gbps.": [
         "全功能的 VPN，速度高達 10 Gbps。"
+      ],
+      "Generating a new recovery phrase will deactivate your old one.": [
+        ""
       ],
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
         "將公開金鑰給您的朋友們，或是在線上發佈，這樣每個人都可以向您寄送端到端加密電子郵件！"
@@ -4486,6 +4480,9 @@
       ],
       "Your Block List is empty.": [
         "您的封鎖清單是空的。"
+      ],
+      "Your data is encrypted, you can recover your data by reactivating your keys.": [
+        ""
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         ""
@@ -5453,17 +5450,14 @@
       "Recovery code": [
         "備援代碼"
       ],
-      "Recovery email": [
-        "備援電子郵件"
-      ],
       "Recovery email address": [
         ""
       ],
       "Recovery file": [
         ""
       ],
-      "Recovery phone": [
-        "備援電話號碼"
+      "Recovery phone number": [
+        ""
       ],
       "Recovery phrase": [
         "復原短語"
@@ -5668,9 +5662,6 @@
       ]
     },
     "label": {
-      "Phone number": [
-        "電話號碼"
-      ],
       "Recovery phone number": [
         ""
       ],
@@ -7111,8 +7102,8 @@
       "Calendar URL": [
         "行事曆 URL"
       ],
-      "You can subscribe to someone else's calendar by pasting its URL below. This will give you access to a read-only version of this calendar.\n${ kbLink }": [
-        "您可以透過在下方貼上 URL 來訂閱其他某人的行事曆。這讓您可以存取此日曆的唯讀版本。${ kbLink }"
+      "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Subscribed calendars.\n${ kbLink }": [
+        ""
       ]
     },
     "Subscribe to calendar modal description": {
@@ -7747,6 +7738,9 @@
       ],
       "Enable keyboard shortcuts": [
         "啟用鍵盤快捷鍵"
+      ],
+      "Encrypted data": [
+        ""
       ],
       "Encryption & keys": [
         "加密和金鑰"

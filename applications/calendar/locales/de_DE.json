@@ -116,6 +116,9 @@
       "Continue": [
         "Weiter"
       ],
+      "Continue import": [
+        ""
+      ],
       "Continue with Google": [
         "Mit Google anmelden"
       ],
@@ -124,6 +127,9 @@
       ],
       "Create": [
         "Erstellen"
+      ],
+      "Create calendar": [
+        ""
       ],
       "Create event": [
         "Ereignis erstellen"
@@ -231,6 +237,9 @@
       ],
       "Import": [
         "Importieren"
+      ],
+      "Import events": [
+        ""
       ],
       "Import from .csv or vCard": [
         "Aus CSV-Datei oder vCard importieren"
@@ -525,11 +534,6 @@
         "Es wurden noch keine Gruppen angelegt."
       ]
     },
-    "Add calendar icon tooltip": {
-      "Create calendar": [
-        "Kalender erstellen"
-      ]
-    },
     "Addon": {
       "+ ${ addresses } email address": [
         "${ addresses } zusätzliche E-Mail-Adresse",
@@ -617,6 +621,9 @@
       "By leaving now, some contacts may not be imported": [
         "Wenn Sie jetzt beenden, können einige Kontakte nicht importiert werden."
       ],
+      "By leaving now, some events may not be imported": [
+        ""
+      ],
       "By leaving now, you will lose your event.": [
         "Wenn Sie jetzt beenden, wird dieses Ereignis verworfen."
       ]
@@ -630,6 +637,26 @@
       ],
       "Proton applications": [
         "Proton-Anwendungen"
+      ]
+    },
+    "Attached ics file error": {
+      "Empty ICS file": [
+        ""
+      ],
+      "Invalid event": [
+        ""
+      ],
+      "Invalid ICS file": [
+        ""
+      ],
+      "Invalid method": [
+        ""
+      ],
+      "Unsupported calendar component": [
+        ""
+      ],
+      "Unsupported event": [
+        ""
       ]
     },
     "Attendee role": {
@@ -664,7 +691,7 @@
     },
     "blackfriday Action": {
       "Get the offer": [
-        ""
+        "Zum Angebot"
       ]
     },
     "blackfriday Info": {
@@ -683,13 +710,13 @@
     },
     "blackfriday Title": {
       "Best deal": [
-        ""
+        "Bester Preis"
       ],
       "Most popular": [
         "Am beliebtesten"
       ],
       "Save more when combining Mail and VPN": [
-        ""
+        "Spare noch mehr durch die Kombination von Mail und VPN"
       ]
     },
     "blackfriday: VPNspecialoffer Action": {
@@ -702,18 +729,18 @@
     },
     "blackfriday: VPNspecialoffer Badge popup": {
       "${ vpnAppName } Plus Special Offer 2021 discount has been applied": [
-        ""
+        "${ vpnAppName } Plus Sonderangebot 2021 Rabatt wurde angerechnet"
       ]
     },
     "blackfriday: VPNspecialoffer Info": {
       "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
-        ""
+        "Rabatte werden auf Grundlage des monatlichen Standardpreises von { standardMonthlyPricing } $ berechnet"
       ],
       "Save ${ percentage }%": [
-        "${ percentage } %"
+        "Spare ${ percentage } %"
       ],
       "Special offer Terms and Conditions": [
-        ""
+        "Allgemeine Geschäftsbedingungen des Sonderangebots"
       ]
     },
     "blackfriday: VPNspecialoffer info": {
@@ -728,13 +755,13 @@
     },
     "blackfriday: VPNspecialoffer Title": {
       "(${ notice }) Renews after 1 month at a standard monthly price of ${ amount }": [
-        ""
+        "(${ notice }) Verlängert sich nach einem Monat zum monatlichen Standardpreis von { amount } $"
       ],
       "(${ notice }) Renews after 1 year at a standard discounted annual price of ${ amount } (20% discount)": [
-        ""
+        "(${ notice }) Verlängert sich nach einem Jahr zum ermäßigten Standardpreis von { amount } $ (20 % Rabatt)"
       ],
       "(${ notice }) Renews after 2 years at a standard discounted 2-year price of ${ amount } (33% discount)": [
-        ""
+        "(${ notice }) Verlängert sich nach 2 Jahren zum ermäßigten 2-Jahrespreis von { amount } $ (33 % Rabatt)"
       ],
       "1 month": [
         "1 Monat"
@@ -746,16 +773,16 @@
         "24 Monate"
       ],
       "Billed at ${ amount } for the first 2 years.${ supNotice }": [
-        ""
+        "Zum Preis von { amount } $ in den ersten zwei Jahren.${ supNotice }"
       ],
       "Billed at ${ amount } for the first month.${ supNotice }": [
-        ""
+        "Zum Preis von { amount } $ im ersten Monat.${ supNotice }"
       ],
       "Billed at ${ amount } for the first year.${ supNotice }": [
-        ""
+        "Zum Preis von { amount } $ im ersten Jahr.${ supNotice }"
       ],
       "Get the special year-end offer on our Premium VPN PLUS plan": [
-        "Lassen Sie sich das Jahresend-Sonderangebot für unseren Premium VPN PLUS-Tarif nicht entgehen"
+        "Lass dir das Jahresend-Sonderangebot für unseren Premium VPN PLUS-Tarif nicht entgehen"
       ]
     },
     "Bug category": {
@@ -888,6 +915,14 @@
         "Sie haben die Einladung unter Vorbehalt angenommen"
       ]
     },
+    "Calendar sidebar dropdown item": {
+      "Add calendar from URL": [
+        ""
+      ],
+      "More options": [
+        ""
+      ]
+    },
     "Calendar status": {
       "Not synced": [
         "Nicht synchronisiert"
@@ -899,9 +934,6 @@
     "Calendar subscription not synced error": {
       "Calendar could not be decrypted": [
         "Kalender konnte nicht entschlüsselt werden"
-      ],
-      "Calendar could not be found": [
-        "Kalender konnte nicht gefunden werden"
       ],
       "Calendar is syncing": [
         "Kalender wird synchronisiert"
@@ -1140,6 +1172,9 @@
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Verwenden Sie Ziehen und Ablegen, um die Zusammenführungspriorität zwischen den Kontakten zu bewerten. Deaktivieren Sie jene Kontakte, die Sie nicht zusammenführen möchten."
       ],
+      "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
+        ""
+      ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Sie können die Kontakte, die Sie weder zusammenführen noch behalten möchten, zum Löschen vormerken. Das Löschen erfolgt erst, nachdem Sie auf die Schaltfläche „Zusammenführen” geklickt haben"
       ]
@@ -1181,6 +1216,11 @@
       ],
       "Upload / download files": [
         "Dateien hoch-/herunterladen"
+      ]
+    },
+    "Dropwdown action icon tooltip": {
+      "Add calendar": [
+        ""
       ]
     },
     "Duration": {
@@ -1615,8 +1655,38 @@
       ]
     },
     "Error importing calendar": {
+      "${ CALENDAR_APP_NAME } only supports importing calendars with iCal version 2.0.": [
+        ""
+      ],
+      "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
+        ""
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
+        ""
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Only ICS file formats are allowed.": [
+        ""
+      ],
+      "An error occurred uploading your file. No file has been selected.": [
+        ""
+      ],
       "An unexpected error occurred. Import must be restarted.": [
         "Ein unerwarteter Fehler ist aufgetreten. Der Import muss neu ausgeführt werden."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } events.": [
+        ""
+      ],
+      "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
+        ""
+      ],
+      "Your file ${ formattedFilename } has no events to be imported.": [
+        ""
+      ],
+      "Your file ${ formattedFilename } is empty.": [
+        ""
+      ],
+      "Your file ${ formattedFilename } is not a calendar.": [
+        ""
       ]
     },
     "Error importing contact": {
@@ -1650,12 +1720,113 @@
         "Die Datei „${ formattedFilename }” ist leer."
       ]
     },
+    "Error importing event": {
+      "Bad format. Component cannot be read.": [
+        ""
+      ],
+      "Calendar": [
+        ""
+      ],
+      "Calendar timezone not supported": [
+        ""
+      ],
+      "Component with wrong format": [
+        ""
+      ],
+      "Custom timezone": [
+        ""
+      ],
+      "Edited event not supported": [
+        ""
+      ],
+      "Element": [
+        ""
+      ],
+      "Encryption failed": [
+        ""
+      ],
+      "End time out of bounds": [
+        ""
+      ],
+      "Event": [
+        ""
+      ],
+      "Event validation failed": [
+        ""
+      ],
+      "Floating times not supported": [
+        ""
+      ],
+      "Free-busy time information": [
+        ""
+      ],
+      "Invalid event": [
+        ""
+      ],
+      "Journal entry": [
+        ""
+      ],
+      "Malformed all-day event": [
+        ""
+      ],
+      "Malformed end time": [
+        ""
+      ],
+      "Malformed recurring event": [
+        ""
+      ],
+      "Malformed start time": [
+        ""
+      ],
+      "Missing start time": [
+        ""
+      ],
+      "no UID, title or start time": [
+        "UID, Titel oder Startzeit fehlt"
+      ],
+      "Non-Gregorian": [
+        ""
+      ],
+      "Notification out of bounds": [
+        ""
+      ],
+      "Original recurring event could not be found": [
+        ""
+      ],
+      "Recurring event has no occurrences": [
+        ""
+      ],
+      "Recurring rule not supported": [
+        ""
+      ],
+      "Start time out of bounds": [
+        ""
+      ],
+      "Timezone": [
+        ""
+      ],
+      "Timezone not supported": [
+        ""
+      ],
+      "To-do entry": [
+        ""
+      ],
+      "Unknown": [
+        ""
+      ],
+      "Unsupported event": [
+        ""
+      ]
+    },
     "Error message": {
       "Brace yourself till we get the error fixed.": [
         "Bitte gedulden Sie sich, bis der Fehler behoben wurde."
       ],
       "Error: ${ errorMessage }": [
         "Fehler: ${ errorMessage }"
+      ],
+      "Invalid URL": [
+        ""
       ],
       "Oops, something went wrong": [
         "Leider ist ein Problem aufgetreten"
@@ -1709,6 +1880,44 @@
     "Event info. Organizer name": {
       "You": [
         "Sie"
+      ]
+    },
+    "Event invitation error": {
+      "Attached ICS file could not be decrypted": [
+        ""
+      ],
+      "Attached ICS file could not be parsed": [
+        ""
+      ],
+      "Invalid invitation": [
+        ""
+      ],
+      "Invalid response": [
+        ""
+      ],
+      "Unexpected error": [
+        ""
+      ],
+      "Unsupported invitation": [
+        ""
+      ],
+      "Unsupported response": [
+        ""
+      ],
+      "We could not cancel the event in your calendar": [
+        ""
+      ],
+      "We could not retrieve the event from your calendar": [
+        ""
+      ],
+      "We could not update the event in your calendar": [
+        ""
+      ],
+      "Your answer was sent, but the event could not be added to your calendar": [
+        ""
+      ],
+      "Your answer was sent, but the event could not be updated in your calendar": [
+        ""
       ]
     },
     "Event popover close button": {
@@ -1817,13 +2026,53 @@
       ]
     },
     "Import calendar": {
+      "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
+        "",
+        ""
+      ],
+      "An error occurred while encrypting and adding your event. No event could be imported.": [
+        "",
+        ""
+      ],
+      "An error occurred while encrypting and adding your events. ${ totalImported } out of ${ totalToImport } events successfully imported.": [
+        ""
+      ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "Kontakte werden verschlüsselt und hinzugefügt: ${ totalImported }/${ totalToImport }"
+      ],
+      "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
+        ""
+      ],
+      "Event successfully imported. The imported event will now appear in your calendar.": [
+        "",
+        ""
+      ],
+      "Please don't close the tab before the importing process is finished.": [
+        ""
       ]
     },
     "Import calendar warning": {
+      "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
+        ""
+      ],
       "vCard versions < 3.0": [
         "vCard • Versionen < 3.0"
+      ]
+    },
+    "Import calendar; import invitation": {
+      "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your Proton email address.": [
+        ""
+      ],
+      "This file contains an event invitation:": [
+        "",
+        ""
+      ],
+      "This file contains an invitation response:": [
+        "",
+        ""
+      ],
+      "This file contains some data that we cannot import:": [
+        ""
       ]
     },
     "Import contact": {
@@ -1873,8 +2122,17 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } von ${ totalContacts } Kontakt(en) werden nicht importiert. Anklicken, um Details anzuzeigen"
       ],
+      "${ totalEventsDiscarded } out of ${ totalEvents } events will not be imported. Expand for details.": [
+        ""
+      ],
       "No contact can be imported. Click for details": [
         "Kontakt(e) konnten nicht importiert werden. Anklicken, um Details anzuzeigen"
+      ],
+      "No event can be imported. Expand for details.": [
+        ""
+      ],
+      "Part of your calendar content is not supported and will not be imported.": [
+        ""
       ]
     },
     "Info": {
@@ -3092,6 +3350,9 @@
       "Import to email address": [
         "In E-Mail-Adresse importieren"
       ],
+      "Import to:": [
+        ""
+      ],
       "Keyboard shortcuts": [
         "Tastaturkürzel"
       ],
@@ -3497,9 +3758,25 @@
         "Unformatierter Reintext"
       ]
     },
+    "Modal action": {
+      "Close": [
+        ""
+      ],
+      "Manage calendars": [
+        ""
+      ]
+    },
     "Modal title": {
       "Time zone changed": [
         "Zeitzone geändert"
+      ],
+      "Unable to add more calendars": [
+        ""
+      ]
+    },
+    "Modal title and action": {
+      "Add calendar": [
+        ""
       ]
     },
     "Monthly recurring event, frequency": {
@@ -4180,6 +4457,42 @@
         "Ihr aktueller Speicherplatz:"
       ]
     },
+    "Subscribe to calendar modal": {
+      "Calendar URL": [
+        ""
+      ],
+      "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Subscribed calendars.\n${ kbLink }": [
+        ""
+      ]
+    },
+    "Subscribe to calendar modal description": {
+      "Learn how to get a private calendar link.": [
+        ""
+      ]
+    },
+    "Subscribed calendar extension warning": {
+      "By using this link, Google will make the calendar you are subscribing to public": [
+        ""
+      ],
+      "This link might be wrong": [
+        ""
+      ]
+    },
+    "Subscribed calendar feature unavailable error": {
+      "Subscribing to a calendar is unavailable at the moment": [
+        ""
+      ]
+    },
+    "Subscribed calendar limit reached modal body": {
+      "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } subscribed calendar.": [
+        "",
+        ""
+      ],
+      "You have reached the maximum of ${ personalCalendarLimit } personal calendar.": [
+        "",
+        ""
+      ]
+    },
     "Success": {
       "A cancellation email will be sent to removed participants for all the events in this series.": [
         "Für alle Termine dieser Serie wird eine Absage-E-Mail an die entfernten Teilnehmer gesendet."
@@ -4514,6 +4827,9 @@
       "Contacts": [
         "Kontakte"
       ],
+      "Continue with partial import?": [
+        ""
+      ],
       "Coupon discount": [
         "Gutscheinrabatt"
       ],
@@ -4633,8 +4949,18 @@
       "Human verification": [
         "Captcha"
       ],
+      "Import as simple event?": [
+        "",
+        ""
+      ],
       "Import contacts": [
         "Kontakte importieren"
+      ],
+      "Import events": [
+        ""
+      ],
+      "Import failed": [
+        "Import fehlgeschlagen"
       ],
       "Import groups": [
         "Gruppen importieren"

@@ -31,11 +31,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } 商店"
       ],
-      "Activate": [
-        "启用"
-      ],
       "activate": [
         "激活"
+      ],
+      "Activate": [
+        "启用"
       ],
       "Activate ${ Name }@pm.me": [
         "激活 ${ Name }@pm.me"
@@ -51,6 +51,9 @@
       ],
       "Add address": [
         "添加地址"
+      ],
+      "Add calendar": [
+        "新建日历"
       ],
       "Add condition": [
         "添加条件"
@@ -223,12 +226,6 @@
       "Create link": [
         "创建链接"
       ],
-      "Create new recovery phrase": [
-        "新建恢复密语"
-      ],
-      "Create new recovery phrase?": [
-        "新建恢复密语吗？"
-      ],
       "Customize": [
         "自定义"
       ],
@@ -299,7 +296,7 @@
         "下载所有配置"
       ],
       "Download recovery file": [
-        ""
+        "下载恢复文件"
       ],
       "Download the Import-Export app": [
         "下载导入导出应用"
@@ -348,6 +345,15 @@
       ],
       "Generate key": [
         "生成密钥"
+      ],
+      "Generate new recovery phrase": [
+        "生成新的恢复密语"
+      ],
+      "Generate new recovery phrase?": [
+        "生成新的恢复密语吗?"
+      ],
+      "Generate recovery phrase": [
+        "生成恢复密语"
       ],
       "Get ProtonVPN Plus": [
         "开通 ProtonVPN 高级版"
@@ -501,6 +507,9 @@
       ],
       "Reconnect": [
         "重新连接"
+      ],
+      "Recover data": [
+        "恢复数据"
       ],
       "Refresh status": [
         "刷新状态"
@@ -696,9 +705,6 @@
       ],
       "Submit": [
         "提交"
-      ],
-      "Subscribe to calendar": [
-        "订阅日历"
       ],
       "Support": [
         "帮助"
@@ -1278,8 +1284,8 @@
       ]
     },
     "Calendar limit warning": {
-      "You have reached the maximum of ${ calendarsLimit } calendar.": [
-        "您已达到创建日历的最大值 ${ calendarsLimit } 个。"
+      "You have reached the maximum of ${ calendarsLimit } personal calendar.": [
+        ""
       ],
       "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } subscribed calendar.": [
         "您已达到订阅日历的最大值 ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } 个。"
@@ -1304,10 +1310,7 @@
     },
     "Calendar subscription not synced error": {
       "Calendar could not be decrypted": [
-        ""
-      ],
-      "Calendar could not be found": [
-        ""
+        "未能解密日历"
       ],
       "Calendar is syncing": [
         "日历正在同步中"
@@ -3144,10 +3147,10 @@
         "由于有未支付的账单，账户已受限。请联系您的账户管理员。"
       ],
       "account recovery and data recovery method": [
-        ""
+        "账户恢复和数据恢复方法"
       ],
       "account recovery method": [
-        ""
+        "账户恢复方法"
       ],
       "Account successfully updated": [
         "账户已成功更新"
@@ -3159,10 +3162,10 @@
         "您可以增设一个后缀为 @pm.me 的邮箱地址，这个简短的域名代表 ProtonMail me 或者 Private Message me。"
       ],
       "Add a recovery email address": [
-        ""
+        "添加密保邮箱"
       ],
       "Add a recovery phone number": [
-        ""
+        "添加密保手机"
       ],
       "Add additional addresses to your account like user2@protonmail.com": [
         "添加其他邮箱地址，如 username2@protonmail.com"
@@ -3380,9 +3383,6 @@
       "Create in": [
         "在此创建"
       ],
-      "Creating a new recovery phrase will deactivate your old one.": [
-        "新的恢复密语将取代旧的"
-      ],
       "Creating your Proton account": [
         "正在为您创建 Proton 账户"
       ],
@@ -3421,15 +3421,6 @@
       ],
       "Delete link?": [
         "要删除链接吗？"
-      ],
-      "Disabling this will prevent this email from being used for account recovery.": [
-        "禁用此功能以阻止此密保邮箱用于账户恢复。"
-      ],
-      "Disabling this will prevent this phone number from being used for account recovery.": [
-        "禁用此功能以阻止此密保手机号用于账户恢复。"
-      ],
-      "Disabling this will prevent your recovery phrase from being used for account recovery.": [
-        "禁用此功能以阻止恢复密语用于账户恢复。"
       ],
       "Discount applied to your subscription with coupon ${ code }": [
         "优惠码 ${ code } 已计入，可用于您本次的结算。"
@@ -3480,7 +3471,7 @@
         "编辑标签"
       ],
       "Effortlessly and securely move your emails from your current provider to Proton. If you use Google, we also support calendar and contacts imports.": [
-        ""
+        "轻松又安全地将您的电子邮件从您当前的提供商迁移到 Proton。如果您使用 Google，我们还支持日历和联系人导入。"
       ],
       "Email address": [
         "邮箱地址"
@@ -3577,6 +3568,9 @@
       ],
       "Full-featured VPN with speed up to 10 Gbps.": [
         "速度高达 10 Gbps 的全功能 VPN。"
+      ],
+      "Generating a new recovery phrase will deactivate your old one.": [
+        ""
       ],
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
         "把公钥发给亲朋好友，或者挂到网上，这样大家就都能给你发端到端加密的邮件了！"
@@ -3831,7 +3825,7 @@
         "接下来您需要登录 Google 账户并允许我们获取您的数据。"
       ],
       "No account recovery method set, you are at risk of losing access to your account": [
-        ""
+        "未设置账户恢复方法，您存在失去账户访问权限的风险"
       ],
       "No action selected": [
         "未选择操作"
@@ -3843,7 +3837,7 @@
         "没有联系人加密密钥"
       ],
       "No data recovery method set, you are at risk of losing access to your data": [
-        ""
+        "未设置数据恢复方法，您存在失去数据访问权限的风险"
       ],
       "No folder selected": [
         "未选择文件夹"
@@ -4038,7 +4032,7 @@
         "恢复密语已被禁用"
       ],
       "Recovery phrase is not associated with any outdated keys.": [
-        ""
+        "恢复密语与任何过时的密钥不相关。"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "大多数问题都能通过刷新页面或 ${ link } 来解决。"
@@ -4071,7 +4065,7 @@
         "请选择一个服务提供商以开始导入"
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit. You can also merge imported calendars with existing Proton calendars.": [
-        ""
+        "请选择要导入的日历。将会为每个导入的日历创建一个新日历，最多可包含 20 个日历。您也可以将导入的日历与现有的 Proton 日历合并。"
       ],
       "Server is currently down": [
         "服务器目前不可用"
@@ -4473,7 +4467,7 @@
         "正在为您升级账户，请稍等半分钟。"
       ],
       "Your account recovery method is set": [
-        ""
+        "账户恢复方法已设置"
       ],
       "Your account will be updated once the payment is cleared.": [
         "支付成功后账户将立即完成升级。"
@@ -4487,11 +4481,14 @@
       "Your Block List is empty.": [
         "您的黑名单列表为空。"
       ],
+      "Your data is encrypted, you can recover your data by reactivating your keys.": [
+        "您的数据已加密，您可以通过重新激活密钥来恢复数据。"
+      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "从 ${ importedEmailAddressStrong } 到您的 Proton 账户的导入数据已准备就绪。"
       ],
       "Your data recovery method is set": [
-        ""
+        "数据恢复方法已设置"
       ],
       "Your email will only be used for this one-time verification.": [
         "您的电子邮件将仅用于此一次性验证。"
@@ -5202,7 +5199,7 @@
         "结束日"
       ],
       "Enter organization name to confirm": [
-        ""
+        "请输入机构名称进行确认"
       ],
       "Enter password": [
         "输入密码"
@@ -5223,7 +5220,7 @@
         "新增存储空间"
       ],
       "File": [
-        ""
+        "文件"
       ],
       "Filter Name": [
         "筛选规则名称"
@@ -5453,17 +5450,14 @@
       "Recovery code": [
         "恢复代码"
       ],
-      "Recovery email": [
+      "Recovery email address": [
         "密保邮箱"
       ],
-      "Recovery email address": [
-        ""
-      ],
       "Recovery file": [
-        ""
+        "恢复文件"
       ],
-      "Recovery phone": [
-        "恢复手机号码"
+      "Recovery phone number": [
+        "密保手机"
       ],
       "Recovery phrase": [
         "恢复密语"
@@ -5668,11 +5662,8 @@
       ]
     },
     "label": {
-      "Phone number": [
-        "手机号码"
-      ],
       "Recovery phone number": [
-        ""
+        "密保手机"
       ],
       "Recovery phrase": [
         "恢复密语"
@@ -6953,7 +6944,7 @@
         "自动回复"
       ],
       "Backup & Export": [
-        ""
+        "备份和导出"
       ],
       "Calendars": [
         "日历"
@@ -7111,8 +7102,8 @@
       "Calendar URL": [
         "日历链接"
       ],
-      "You can subscribe to someone else's calendar by pasting its URL below. This will give you access to a read-only version of this calendar.\n${ kbLink }": [
-        "您可以通过在下方粘贴相应链接来订阅其他人的日历，这将使您可以访问此日历的只读版本。\n${ kbLink }"
+      "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Subscribed calendars.\n${ kbLink }": [
+        ""
       ]
     },
     "Subscribe to calendar modal description": {
@@ -7422,7 +7413,7 @@
         "3. 选择配置文件并下载"
       ],
       "Account recovery": [
-        ""
+        "账户恢复"
       ],
       "Account suspended": [
         "账户已封禁"
@@ -7659,7 +7650,7 @@
         "总览"
       ],
       "Data recovery": [
-        ""
+        "数据恢复"
       ],
       "Date": [
         "日期"
@@ -7695,7 +7686,7 @@
         "删除日志"
       ],
       "Delete organization?": [
-        ""
+        "删除机构?"
       ],
       "Delete user": [
         "删除用户"
@@ -7747,6 +7738,9 @@
       ],
       "Enable keyboard shortcuts": [
         "启用快捷键"
+      ],
+      "Encrypted data": [
+        ""
       ],
       "Encryption & keys": [
         "加密与密钥"
@@ -7923,7 +7917,7 @@
         "密码与密钥"
       ],
       "Password & security": [
-        ""
+        "密码与安全"
       ],
       "Passwords": [
         "密码"
@@ -7992,10 +7986,10 @@
         "重新连接账户"
       ],
       "Recovery": [
-        ""
+        "恢复"
       ],
       "Recovery file": [
-        ""
+        "恢复文件"
       ],
       "Remove calendar": [
         "删除日历"

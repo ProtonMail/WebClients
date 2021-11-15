@@ -209,9 +209,6 @@
       "Create new message": [
         "Stvori novu poruku"
       ],
-      "Create recovery phrase": [
-        ""
-      ],
       "Custom filter": [
         "Prilagođeni filtri"
       ],
@@ -329,6 +326,9 @@
       ],
       "Forward as attachment": [
         "Proslijedi kao privitak"
+      ],
+      "Generate recovery phrase": [
+        ""
       ],
       "Get started": [
         "Započnite"
@@ -1397,26 +1397,26 @@
       "(Attendance optional)": [
         ""
       ],
-      "Adding occurrences to an event is not supported for the moment.": [
-        "Dodavanje ponavljanja događaju trenutno nije podržano."
+      "Adding occurrences to an event is not supported for the moment": [
+        ""
       ],
       "An occurrence has been added to the event ${ veventIcsTitle }": [
         "Ponavljanje je dodano događaju ${ veventIcsTitle }"
       ],
-      "Event refreshing is not supported for the moment.": [
-        "Osvježavanje događaja trenutno nije podržano."
+      "Event refreshing is not supported for the moment": [
+        ""
       ],
-      "Event rescheduling is not supported for the moment.": [
-        "Promjena termina događaja trenutno nije podržana."
+      "Event rescheduling is not supported for the moment": [
+        ""
       ],
-      "The sender of this email has not been invited to this event and cannot be added as a participant.": [
-        "Pošiljatelj ove e-poruke nije pozvan na ovaj događaj i ne može se dodati kao sudionik."
+      "The sender of this email has not been invited to this event and cannot be added as a participant": [
+        ""
       ],
-      "This answer cannot be added to ${ calendarAppName } as we only support answers to all events of a series for the moment.": [
-        "Ovaj se odgovor ne može dodati u ${ calendarAppName }, jer trenutno podržavamo odgovore na sva ponavljanja u nizu."
+      "This answer cannot be added to ${ calendarAppName } as we only support answers to all events of a series for the moment": [
+        ""
       ],
-      "This event has already happened.": [
-        "Ovaj se događaj već dogodio."
+      "This event has already happened": [
+        ""
       ],
       "This event has been cancelled.": [
         "Događaj je otkazan."
@@ -1424,8 +1424,8 @@
       "This event has been updated.": [
         "Događaj je ažuriran."
       ],
-      "This event is currently happening.": [
-        "Ovaj događaj je u tijeku."
+      "This event is currently happening": [
+        ""
       ],
       "This invitation is out of date. The event has been cancelled.": [
         "Ova pozivnica je zastarjela. Događaj je otkazan."
@@ -1454,8 +1454,8 @@
       "You already tentatively accepted this invitation.": [
         ""
       ],
-      "Your email address is not in the participants list.": [
-        "Vaša adresa e-pošte nije na popisu sudionika."
+      "Your email address is not in the participants list": [
+        ""
       ]
     },
     "Calendar status": {
@@ -1468,9 +1468,6 @@
     },
     "Calendar subscription not synced error": {
       "Calendar could not be decrypted": [
-        ""
-      ],
-      "Calendar could not be found": [
         ""
       ],
       "Calendar is syncing": [
@@ -3300,9 +3297,6 @@
       "Create in": [
         ""
       ],
-      "Create recovery phrase": [
-        ""
-      ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         ""
       ],
@@ -3467,6 +3461,9 @@
       ],
       "Full-featured VPN with speed up to 10 Gbps.": [
         "VPN s puno značajki i brzinom do 10 Gbps."
+      ],
+      "Generate recovery phrase": [
+        ""
       ],
       "Get more storage and premium features.": [
         ""

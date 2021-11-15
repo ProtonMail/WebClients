@@ -695,9 +695,6 @@
       "Calendar could not be decrypted": [
         "No se pudo descifrar el calendario"
       ],
-      "Calendar could not be found": [
-        "No se pudo encontrar el calendario"
-      ],
       "Calendar is syncing": [
         "El calendario se está sincronizando"
       ],
@@ -1294,12 +1291,6 @@
       ],
       "Defends against threats to VPN privacy by passing your Internet traffic through multiple servers.": [
         "Defiende contra amenazas a la privacidad VPN pasando su tráfico de internet a través de servidores múltiples."
-      ],
-      "Disabling this will prevent this email from being used for account recovery.": [
-        "Deshabilitar esto evitará que este correo electrónico se use para recuperar la cuenta."
-      ],
-      "Disabling this will prevent this phone number from being used for account recovery.": [
-        "Deshabilitar esto evitará que este número de teléfono sea usado para la recuperación de la cuenta."
       ],
       "Discount applied to your subscription with coupon ${ code }": [
         "Descuento aplicado a su suscripción con el cupón ${ code }"
@@ -2255,9 +2246,6 @@
       ]
     },
     "label": {
-      "Phone number": [
-        "Número de teléfono"
-      ],
       "Recovery phone number": [
         "Número telefónico de recuperación"
       ]
@@ -2691,8 +2679,8 @@
       "Proton username": [
         "Nombre de usuario de Proton"
       ],
-      "Recovery email": [
-        "Correo electrónico de recuperación"
+      "Recovery email address": [
+        "Dirección de correo de recuperación"
       ],
       "Reset code": [
         "Restablecer código"

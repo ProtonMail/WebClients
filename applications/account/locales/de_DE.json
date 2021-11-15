@@ -31,11 +31,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } - Shop"
       ],
-      "Activate": [
-        "Aktivieren"
-      ],
       "activate": [
         "aktivieren"
+      ],
+      "Activate": [
+        "Aktivieren"
       ],
       "Activate ${ Name }@pm.me": [
         "${ Name }@pm.me aktivieren"
@@ -51,6 +51,9 @@
       ],
       "Add address": [
         "Adresse hinzufügen"
+      ],
+      "Add calendar": [
+        "Kalender hinzufügen"
       ],
       "Add condition": [
         "Bedingung hinzufügen"
@@ -143,7 +146,7 @@
         "Chatten Sie mit uns"
       ],
       "Check import progress": [
-        "Importfortschritt prüfen"
+        "Fortschritt der Importierung prüfen"
       ],
       "Choose a file or drag it here": [
         "Datei auswählen oder hier hinein ziehen"
@@ -209,7 +212,7 @@
         "Erstellen Sie stattdessen eine sichere ProtonMail-Adresse"
       ],
       "Create address": [
-        "Neue E-Mail-Adresse"
+        "Adresse erstellen"
       ],
       "Create calendar": [
         "Kalender erstellen"
@@ -222,12 +225,6 @@
       ],
       "Create link": [
         "Link erstellen"
-      ],
-      "Create new recovery phrase": [
-        "Neue Wiederherstellungsphrase erstellen"
-      ],
-      "Create new recovery phrase?": [
-        "Neue Wiederherstellungsphrase erstellen?"
       ],
       "Customize": [
         "Anpassen"
@@ -349,6 +346,15 @@
       "Generate key": [
         "Schlüssel generieren"
       ],
+      "Generate new recovery phrase": [
+        "Neue Wiederherstellungsphrase erstellen"
+      ],
+      "Generate new recovery phrase?": [
+        "Neue Wiederherstellungsphrase erstellen?"
+      ],
+      "Generate recovery phrase": [
+        "Wiederherstellungsphrase erstellen"
+      ],
       "Get ProtonVPN Plus": [
         "Holen Sie sich ProtonVPN Plus"
       ],
@@ -386,10 +392,10 @@
         "Kontakte importieren"
       ],
       "Import from .csv or vCard": [
-        "Aus CSV-Datei oder vCard importieren"
+        "Aus .csv oder vCard importieren"
       ],
       "Import from .ics": [
-        "Aus .ICS-Datei importieren"
+        "Aus .ics importieren"
       ],
       "Import key": [
         "Schlüssel import."
@@ -501,6 +507,9 @@
       ],
       "Reconnect": [
         "Erneut verbinden"
+      ],
+      "Recover data": [
+        "Daten wiederherstellen"
       ],
       "Refresh status": [
         "Status aktualisieren"
@@ -650,7 +659,7 @@
         "Tastaturkürzel anzeigen"
       ],
       "sign in": [
-        "melden Sie sich an"
+        "anmelden"
       ],
       "Sign in": [
         "Anmelden"
@@ -662,7 +671,7 @@
         "Von allen Konten abmelden"
       ],
       "Signing in": [
-        "Anmelden …"
+        "Anmelden"
       ],
       "Signing out": [
         "Abmelden"
@@ -696,9 +705,6 @@
       ],
       "Submit": [
         "Senden"
-      ],
-      "Subscribe to calendar": [
-        "Kalender abonnieren"
       ],
       "Support": [
         "Support"
@@ -1086,7 +1092,7 @@
     },
     "blackfriday Action": {
       "Get the offer": [
-        ""
+        "Zum Angebot"
       ]
     },
     "blackfriday Info": {
@@ -1105,13 +1111,13 @@
     },
     "blackfriday Title": {
       "Best deal": [
-        ""
+        "Bester Preis"
       ],
       "Most popular": [
         "Am beliebtesten"
       ],
       "Save more when combining Mail and VPN": [
-        ""
+        "Spare noch mehr durch die Kombination von Mail und VPN"
       ]
     },
     "blackfriday: VPNspecialoffer Action": {
@@ -1124,18 +1130,18 @@
     },
     "blackfriday: VPNspecialoffer Badge popup": {
       "${ vpnAppName } Plus Special Offer 2021 discount has been applied": [
-        ""
+        "${ vpnAppName } Plus Sonderangebot 2021 Rabatt wurde angerechnet"
       ]
     },
     "blackfriday: VPNspecialoffer Info": {
       "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
-        ""
+        "Rabatte werden auf Grundlage des monatlichen Standardpreises von { standardMonthlyPricing } $ berechnet"
       ],
       "Save ${ percentage }%": [
-        "${ percentage } %"
+        "Spare ${ percentage } %"
       ],
       "Special offer Terms and Conditions": [
-        ""
+        "Allgemeine Geschäftsbedingungen des Sonderangebots"
       ]
     },
     "blackfriday: VPNspecialoffer info": {
@@ -1150,13 +1156,13 @@
     },
     "blackfriday: VPNspecialoffer Title": {
       "(${ notice }) Renews after 1 month at a standard monthly price of ${ amount }": [
-        ""
+        "(${ notice }) Verlängert sich nach einem Monat zum monatlichen Standardpreis von { amount } $"
       ],
       "(${ notice }) Renews after 1 year at a standard discounted annual price of ${ amount } (20% discount)": [
-        ""
+        "(${ notice }) Verlängert sich nach einem Jahr zum ermäßigten Standardpreis von { amount } $ (20 % Rabatt)"
       ],
       "(${ notice }) Renews after 2 years at a standard discounted 2-year price of ${ amount } (33% discount)": [
-        ""
+        "(${ notice }) Verlängert sich nach 2 Jahren zum ermäßigten 2-Jahrespreis von { amount } $ (33 % Rabatt)"
       ],
       "1 month": [
         "1 Monat"
@@ -1168,16 +1174,16 @@
         "24 Monate"
       ],
       "Billed at ${ amount } for the first 2 years.${ supNotice }": [
-        ""
+        "Zum Preis von { amount } $ in den ersten zwei Jahren.${ supNotice }"
       ],
       "Billed at ${ amount } for the first month.${ supNotice }": [
-        ""
+        "Zum Preis von { amount } $ im ersten Monat.${ supNotice }"
       ],
       "Billed at ${ amount } for the first year.${ supNotice }": [
-        ""
+        "Zum Preis von { amount } $ im ersten Jahr.${ supNotice }"
       ],
       "Get the special year-end offer on our Premium VPN PLUS plan": [
-        "Lassen Sie sich das Jahresend-Sonderangebot für unseren Premium VPN PLUS-Tarif nicht entgehen"
+        "Lass dir das Jahresend-Sonderangebot für unseren Premium VPN PLUS-Tarif nicht entgehen"
       ]
     },
     "Bridge version load failed": {
@@ -1287,9 +1293,9 @@
       ]
     },
     "Calendar limit warning": {
-      "You have reached the maximum of ${ calendarsLimit } calendar.": [
-        "Sie haben die maximale Anzahl von ${ calendarsLimit } Kalender erreicht.",
-        "Sie haben die maximale Anzahl von ${ calendarsLimit } Kalendern erreicht."
+      "You have reached the maximum of ${ calendarsLimit } personal calendar.": [
+        "Sie haben die maximale Anzahl von ${ calendarsLimit } eigenen Kalender erreicht.",
+        "Sie haben die maximale Anzahl von ${ calendarsLimit } eigenen Kalendern erreicht."
       ],
       "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } subscribed calendar.": [
         "Sie haben die maximale Anzahl von ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } abonnierter Kalender erreicht.",
@@ -1316,9 +1322,6 @@
     "Calendar subscription not synced error": {
       "Calendar could not be decrypted": [
         "Kalender konnte nicht entschlüsselt werden"
-      ],
-      "Calendar could not be found": [
-        "Kalender konnte nicht gefunden werden"
       ],
       "Calendar is syncing": [
         "Kalender wird synchronisiert"
@@ -3208,7 +3211,7 @@
         "Fügen Sie Ihrem Konto eine @pm.me-E-Mail-Adresse hinzu. Diese einfache, kürzere Domain steht für \"ProtonMail me\" oder \"Private Message me\"."
       ],
       "Add a recovery email address": [
-        "Ihre Wiederherstellungs-E-Mail-Adresse"
+        "Emailadresse zur Wiederherstellung hinzufügen"
       ],
       "Add a recovery phone number": [
         "Rufnummer für die Wiederherstellung hinzufügen"
@@ -3334,7 +3337,7 @@
         "Hintergrundfarbe"
       ],
       "Based in Switzerland, available globally": [
-        "In der Schweiz ansässig und weltweit verfügbar"
+        "In der Schweiz ansässig, verfügbar weltweit"
       ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Grundlegende Navigation und Aktionen bleiben verfügbar, unabhängig davon, ob in den Einstellungen Tastaturkürzel aktiviert sind oder nicht."
@@ -3433,9 +3436,6 @@
       "Create in": [
         "Erstellen in"
       ],
-      "Creating a new recovery phrase will deactivate your old one.": [
-        "Durch das Erstellen einer neuen Wiederherstellungsphrase wird Ihre alte Phrase deaktiviert."
-      ],
       "Creating your Proton account": [
         "Ihr Proton-Konto wird erstellt"
       ],
@@ -3474,15 +3474,6 @@
       ],
       "Delete link?": [
         "Link löschen?"
-      ],
-      "Disabling this will prevent this email from being used for account recovery.": [
-        "Durch das Deaktivieren kann diese E-Mail-Adresse nicht mehr für die Kontowiederherstellung verwendet werden."
-      ],
-      "Disabling this will prevent this phone number from being used for account recovery.": [
-        "Durch das Deaktivieren kann diese Telefonnummer nicht mehr für die Kontowiederherstellung verwendet werden."
-      ],
-      "Disabling this will prevent your recovery phrase from being used for account recovery.": [
-        "Durch das Deaktivieren kann diese Wiederherstellungsphrase nicht mehr für die Kontowiederherstellung verwendet werden."
       ],
       "Discount applied to your subscription with coupon ${ code }": [
         "Rabatt auf Ihr Abonnement mit Gutschein ${ code } eingelöst"
@@ -3534,7 +3525,7 @@
         "Kategorie bearbeiten"
       ],
       "Effortlessly and securely move your emails from your current provider to Proton. If you use Google, we also support calendar and contacts imports.": [
-        "Verschieben Sie Ihre E-Mails mühelos und sicher von Ihrem derzeitigen Anbieter zu Proton. Wenn Sie Google (gmail) verwenden, unterstützt ProtonMail auch den Import von Kalendern und Kontakten."
+        "Verschieben Sie Ihre E-Mails mühelos und sicher von Ihrem derzeitigen Anbieter zu Proton. Wenn Sie Google verwenden, unterstützen wir auch den Import von Kalendern und Kontakten."
       ],
       "Email address": [
         "E-Mail-Adresse"
@@ -3567,7 +3558,7 @@
         "Geben Sie das Organisationspasswort ein, um die Administratorrechte wiederherzustellen. ${ learnMore }"
       ],
       "Enter the recovery ${ recoveryMethodText } associated with your ${ BRAND_NAME } Account. We will send you a code to confirm the password reset.": [
-        "Geben Sie die Wiederherstellungs-${ recoveryMethodText } ein, die Ihrem ${ BRAND_NAME }-Konto zugewiesen wurde. Sie Sie erhalten anschließend einen Code zur Bestätigung zum Zurücksetzen Ihres Passworts."
+        "Geben Sie die Wiederherstellungs-${ recoveryMethodText } ein, die Ihrem ${ BRAND_NAME }-Konto zugewiesen wurde. Sie erhalten anschließend einen Code zur Bestätigung zum Zurücksetzen Ihres Passworts."
       ],
       "Enter the recovery phrase associated with your ${ BRAND_NAME } Account.": [
         "Geben Sie die Wiederherstellungsphrase ein, die Ihrem ${ BRAND_NAME }-Konto zugewiesen wurde."
@@ -3615,7 +3606,7 @@
         "Für Geschäftsleute, die eine sichere Geschäftskommunikation benötigen."
       ],
       "For security reasons, please verify that you are not a robot.": [
-        "Aus Sicherheitsgründen — Bitte bestätigen Sie, dass Sie ein Mensch sind."
+        "Aus Sicherheitsgründen — Bitte bestätigen Sie, dass Sie kein Roboter sind."
       ],
       "For Visa and MasterCard, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
         "Bei Visa und MasterCard — die 3-stellige Sicherheitsnummer auf der Rückseite Ihrer Karte. Bei American Express — die 4-stellige Sicherheitsnummer auf der Vorderseite Ihrer Karte."
@@ -3631,6 +3622,9 @@
       ],
       "Full-featured VPN with speed up to 10 Gbps.": [
         "Voll funktionales VPN mit einer Geschwindigkeit von bis zu 10 Gbit/s."
+      ],
+      "Generating a new recovery phrase will deactivate your old one.": [
+        "Wenn Sie eine neue Wiederherstellungsphrase erstellen, wird damit Ihre bisherige Phrase deaktiviert."
       ],
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
         "Geben Sie Ihren öffentlichen Schlüssel an Ihre Freunde weiter oder veröffentlichen Sie ihn online, so dass Ihnen jeder Ende-zu-Ende verschlüsselte E-Mails senden kann!"
@@ -3718,13 +3712,13 @@
       ],
       "Import ${ selectedCalendarsCount } of ${ totalCalendarsCount } calendar": [
         "${ selectedCalendarsCount }/${ totalCalendarsCount } Kalender importieren",
-        "${ selectedCalendarsCount }/${ totalCalendarsCount } Kalendern importieren"
+        "${ selectedCalendarsCount }/${ totalCalendarsCount } Kalender importieren"
       ],
       "Import from": [
         "Importieren aus"
       ],
       "Import in progress": [
-        "Importvorgang wird ausgeführt"
+        "Import wird ausgeführt"
       ],
       "Import mailbox": [
         "Postfach importieren"
@@ -3805,7 +3799,7 @@
         "Große Importvorgänge können mehrere Tage dauern."
       ],
       "Large imports can take several days.": [
-        "Große Importmengen können mehrere Tage dauern."
+        "Große Importe können mehrere Tage dauern."
       ],
       "Learn how to log in to ProtonVPN with third-party VPN applications.": [
         "Erfahren Sie, wie Sie sich mit VPN-Anwendungen von Drittanbietern bei ProtonVPN anmelden können."
@@ -3847,7 +3841,7 @@
         "Die Protokolle enthalten Authentifizierungsversuche für alle Proton-Dienste, welche Ihre Proton-Anmeldedaten verwenden."
       ],
       "lose access to all current encrypted data": [
-        "den Zugriff auf alle derzeit verschlüsselten Daten"
+        "den Zugriff auf alle derzeit verschlüsselten Daten verlieren"
       ],
       "Mail.ru reads your personal data in order to provide access for advertisers, Russian government agencies and other third parties. For better privacy, create a secure email address.": [
         "Mail.ru liest Ihre persönlichen Daten, um Werbetreibenden, russischen Regierungsbehörden und anderen Dritten Zugang zu gewähren. Für einen besseren Datenschutz sollten Sie eine sichere E-Mail-Adresse einrichten."
@@ -3868,7 +3862,7 @@
         "mehr"
       ],
       "More Info": [
-        "Weitere Informationen"
+        "Mehr Informationen"
       ],
       "Multi-user support not enabled.": [
         "Mehrbenutzerunterstützung nicht aktiviert."
@@ -3886,7 +3880,7 @@
         "Als Nächstes müssen Sie sich bei Ihrem Google-Konto anmelden und ProtonMail den Zugriff auf Ihre Daten erlauben."
       ],
       "No account recovery method set, you are at risk of losing access to your account": [
-        "Wenn keine Methode zur Wiederherstellung des Kontos festgelegt wurde, besteht die Gefahr, dass Sie den Zugriff auf Ihr Konto unwiderruflich verlieren könnten."
+        "Wenn keine Methode zur Wiederherstellung des Kontos festgelegt wurde, besteht die Gefahr, dass Sie den Zugriff auf Ihr Konto unwiderruflich verlieren könnten"
       ],
       "No action selected": [
         "Keine Aktion ausgewählt"
@@ -3898,7 +3892,7 @@
         "Keine Kontaktverschlüsselungsschlüssel vorhanden"
       ],
       "No data recovery method set, you are at risk of losing access to your data": [
-        "Wenn Sie keine Methode zur Datenwiederherstellung festgelegt haben, besteht die Gefahr, dass Sie Ihre Daten unwiderruflich verlieren könnten."
+        "Wenn Sie keine Methode zur Datenwiederherstellung festgelegt haben, besteht die Gefahr, dass Sie den Zugriff auf ihre Daten verlieren"
       ],
       "No folder selected": [
         "Kein Ordner ausgewählt"
@@ -4027,7 +4021,7 @@
         "Bitte überprüfen Sie die Zahlung im neu geöffneten Tab."
       ],
       "Please wait...": [
-        "Bitte warten …"
+        "Bitte warten..."
       ],
       "Please write your recovery phrase down in the order it appears and keep it somewhere safe. Your recovery phrase can be used to fully recover access to your account and your encrypted messages.": [
         "Bitte notieren Sie Ihre Wiederherstellungsphrase in der Reihenfolge, in der sie angezeigt wird, und bewahren Sie sie an einem sicheren Ort auf. Ihre Wiederherstellungsphrase kann verwendet werden, um den Zugang zu Ihrem Konto und Ihren verschlüsselten Nachrichten vollständig wiederherzustellen."
@@ -4094,7 +4088,7 @@
         "Die Wiederherstellungsphrase wurde deaktiviert"
       ],
       "Recovery phrase is not associated with any outdated keys.": [
-        "Keine Wiederherstellungsphrase ist an veraltete Schlüssel gebunden."
+        "Wiederherstellungsphrase ist nicht an einen veralteten Schlüssel gebunden."
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Durch das Aktualisieren der Seite oder des ${ link } werden die meisten Probleme automatisch gelöst."
@@ -4505,7 +4499,7 @@
         "Sie haben 100% Ihrer Speicherkapazität aufgebraucht. Sie können keine neuen E-Mails senden oder empfangen. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You will ${ loseAllData } in your ${ BRAND_NAME } Account. To restore it, you will need to enter your old password.": [
-        "Sie werden ${ loseAllData } Ihrem Konto „${ BRAND_NAME }” verlieren. Um dies wiederherzustellen, müssen Sie Ihr altes Passwort eingeben."
+        "Sie werden ${ loseAllData } Ihrem Konto „${ BRAND_NAME }” verlieren. Um diese wiederherzustellen, müssen Sie Ihr altes Passwort eingeben."
       ],
       "You will be soon redirected to your bank to verify your payment.": [
         "Sie werden in Kürze zu Ihrer Bank weitergeleitet, um Ihre Zahlung zu bestätigen."
@@ -4542,6 +4536,9 @@
       ],
       "Your Block List is empty.": [
         "Ihre Sperrliste ist leer."
+      ],
+      "Your data is encrypted, you can recover your data by reactivating your keys.": [
+        "Ihre Daten sind verschlüsselt, Sie können Ihre Daten wiederherstellen, indem Sie Ihre Schlüssel reaktivieren."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "Ihre Daten von ${ importedEmailAddressStrong } können nun in Ihr Proton-Konto übertragen werden."
@@ -4990,7 +4987,7 @@
         "${ UsedAddresses }/${ MaxAddresses } E-Mail-Adressen"
       ],
       "${ UsedDomains } of ${ MaxDomains } custom domain": [
-        "${ UsedDomains }/${ MaxDomains } eigenen Domain",
+        "${ UsedDomains }/${ MaxDomains } eigene Domain",
         "${ UsedDomains }/${ MaxDomains } eigene Domains"
       ],
       "${ UsedMembers } of ${ MaxMembers } user": [
@@ -5247,7 +5244,7 @@
         "E‐Mail‐Adresse oder Benutzername"
       ],
       "Emails": [
-        "Nachrichten"
+        "Emails"
       ],
       "End date": [
         "Enddatum"
@@ -5513,17 +5510,14 @@
       "Recovery code": [
         "Wiederherstellungscode"
       ],
-      "Recovery email": [
-        "Wiederherstellungs‐E‐Mail‐Adresse"
-      ],
       "Recovery email address": [
         "Wiederherstellungs-E-Mail-Adresse"
       ],
       "Recovery file": [
         "Wiederherstellungsdatei"
       ],
-      "Recovery phone": [
-        "Telefon zur Wiederherstellung"
+      "Recovery phone number": [
+        "Rufnummer für die Wiederherstellung"
       ],
       "Recovery phrase": [
         "Wiederherstellungsphrase"
@@ -5532,7 +5526,7 @@
         "Wiederherstellungsphrase enthält 12 Wörter"
       ],
       "Repeat password": [
-        "Passwort erneut eingeben"
+        "Passwort wiederholen"
       ],
       "Reveal password": [
         "Passwort anzeigen"
@@ -5728,9 +5722,6 @@
       ]
     },
     "label": {
-      "Phone number": [
-        "Telefonnummer"
-      ],
       "Recovery phone number": [
         "Rufnummer für die Wiederherstellung"
       ],
@@ -7183,8 +7174,8 @@
       "Calendar URL": [
         "Kalender-Adresse"
       ],
-      "You can subscribe to someone else's calendar by pasting its URL below. This will give you access to a read-only version of this calendar.\n${ kbLink }": [
-        "Sie können den Kalender einer anderen Person abonnieren, indem Sie dessen URL unten einfügen. Dadurch erhalten Sie Zugang zu einer schreibgeschützten Version dieses Kalenders.\n${ kbLink }"
+      "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Subscribed calendars.\n${ kbLink }": [
+        "Um einen externen oder öffentlichen Kalender und dessen Aktualisierungen zu abonnieren, geben Sie die entsprechende Internetadresse ein. Eine schreibgeschützte Version des Kalenders wird zu Ihren abonnierten Kalendern hinzugefügt.\n${ kbLink }"
       ]
     },
     "Subscribe to calendar modal description": {
@@ -7273,7 +7264,7 @@
         "Gutscheincode eingelöst"
       ],
       "If you entered a valid recovery email we will send you an email with your usernames in the next minute.": [
-        "Wenn Sie eine gültige Wiederherstellungs-E-Mail-Adresse eingegeben haben, erhalten Sie in Kürze eine E-Mail mit Ihren Benutzernamen."
+        "Wenn Sie eine gültige Wiederherstellungs-E-Mail-Adresse eingegeben haben, wird Ihnen in Kürze eine E-Mail mit Ihren Benutzernamen zugesendet."
       ],
       "If you entered a valid recovery phone we will send you an sms with your usernames in the next minute.": [
         "Wenn Sie eine gültige Wiederherstellungs-Rufnummer eingegeben haben, erhalten Sie in Kürze eine SMS mit Ihren Benutzernamen."
@@ -7345,7 +7336,7 @@
         "Wert wurde in die Zwischenablage kopiert"
       ],
       "Verification code copied to clipboard": [
-        "Bestätigungscode wurde in die Zwischenablage kopiert"
+        "Bestätigungscode in die Zwischenablage kopiert"
       ],
       "Verification successful": [
         "Erfolgreich bestätigt"
@@ -7592,7 +7583,7 @@
         "Wirklich schließen?"
       ],
       "Auto reply": [
-        "Automatisch antworten"
+        "Automatische Antwort"
       ],
       "Automatically sign outgoing messages?": [
         "Ausgehende Nachrichten automatisch signieren?"
@@ -7822,6 +7813,9 @@
       "Enable keyboard shortcuts": [
         "Tastaturkürzel aktivieren"
       ],
+      "Encrypted data": [
+        "Verschlüsselte Daten"
+      ],
       "Encryption & keys": [
         "Verschlüsselung und Schlüssel"
       ],
@@ -7889,7 +7883,7 @@
         "Importieren"
       ],
       "Import & export": [
-        "Im-/Export"
+        "Import & Export"
       ],
       "Import as simple event?": [
         "Als einzelnes Ereignis importieren?",
@@ -7980,7 +7974,7 @@
         "OpenVPN/IKEv2"
       ],
       "OpenVPN configuration files": [
-        "OpenVPN-Konfigurationsdateien"
+        "OpenVPN Konfigurationsdateien"
       ],
       "Organization": [
         "Organisation"
