@@ -109,6 +109,8 @@ const createHumanApi = ({ api, createModal }: { api: Api; createModal: (node: JS
         api: humanApiCaller,
         setToken,
         clearToken,
+        getTokenType: () => verificationsTokens?.verificationTokenType,
+        hasToken: () => verificationsTokens !== undefined,
     };
 };
 

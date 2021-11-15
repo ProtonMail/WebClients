@@ -13,7 +13,7 @@ export const getApiError = (e?: any) => {
         };
     }
 
-    const { Error: errorMessage, Code: errorCode } = data;
+    const { Error: errorMessage, Code: errorCode, Details: errorDetails } = data;
 
     if (!errorMessage) {
         return {
@@ -25,6 +25,7 @@ export const getApiError = (e?: any) => {
         status,
         code: errorCode,
         message: errorMessage,
+        details: errorDetails,
     };
 };
 

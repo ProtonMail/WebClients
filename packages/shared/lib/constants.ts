@@ -119,6 +119,7 @@ export const SSO_PATHS = {
     RESET_PASSWORD: '/reset-password',
     FORGOT_USERNAME: '/forgot-username',
     SIGNUP: '/signup',
+    INVITE: '/pre-invite',
 } as const;
 
 export const VPN_HOSTNAME = 'account.protonvpn.com';
