@@ -24,6 +24,7 @@ import ResetPasswordContainer from '../reset/ResetPasswordContainer';
 import ForgotUsernameContainer from '../public/ForgotUsernameContainer';
 import LoginContainer from '../login/LoginContainer';
 import Layout from '../public/Layout';
+import SignupInviteContainer from '../signup/SignupInviteContainer';
 
 const getPathFromLocation = (location: H.Location) => {
     return [location.pathname, location.search, location.hash].join('');
@@ -159,9 +160,13 @@ const PublicApp = ({ onLogin, locales }: Props) => {
         // Ignore the automatic login
         if (
             ignoreAutoRef.current ||
-            [SSO_PATHS.SWITCH, SSO_PATHS.SIGNUP, SSO_PATHS.RESET_PASSWORD, SSO_PATHS.FORGOT_USERNAME].includes(
-                location.pathname as any
-            )
+            [
+                SSO_PATHS.SWITCH,
+                SSO_PATHS.SIGNUP,
+                SSO_PATHS.RESET_PASSWORD,
+                SSO_PATHS.FORGOT_USERNAME,
+                SSO_PATHS.INVITE,
+            ].includes(location.pathname as any)
         ) {
             setActiveSessions(sessions);
             if (sessions.length >= 1) {
@@ -215,6 +220,17 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                 </Route>
                 <Route path={SSO_PATHS.AUTHORIZE}>
                     <SSOForkProducer onInvalidFork={handleInvalidFork} onActiveSessions={handleActiveSessionsFork} />
+                </Route>
+                <Route path={`${SSO_PATHS.INVITE}/:selector/:token`}>
+                    <SignupInviteContainer
+                        onValid={(inviteData) =>
+                            history.replace({
+                                pathname: '/signup',
+                                state: { invite: inviteData },
+                            })
+                        }
+                        onInvalid={() => history.push('/signup')}
+                    />
                 </Route>
                 <Route path="*">
                     <AccountPublicApp
