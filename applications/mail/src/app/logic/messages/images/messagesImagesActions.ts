@@ -46,9 +46,7 @@ export const loadRemoteProxy = createAsyncThunk<LoadRemoteResults[], LoadRemoteP
                     return {
                         image,
                         blob: await response.blob(),
-                        // Warning: in local dev it will not work due to CORS limitations
-                        // https://stackoverflow.com/questions/43344819/reading-response-headers-with-fetch-api#44816592
-                        tracker: response.headers.get('x-pm-tracker-provider') || undefined,
+                        tracker: response.headers.get('x-pm-tracker-provider') || '',
                     };
                 } catch (error) {
                     return { image, error };
@@ -78,7 +76,7 @@ export const loadFakeProxy = createAsyncThunk<LoadRemoteResults[], LoadRemotePar
 
                         return {
                             image,
-                            tracker: response.headers.get('x-pm-tracker-provider') || undefined,
+                            tracker: response.headers.get('x-pm-tracker-provider') || '',
                         };
                     } catch (error) {
                         return { image, error };

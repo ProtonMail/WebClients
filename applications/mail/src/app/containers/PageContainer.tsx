@@ -28,6 +28,7 @@ import { MailUrlParams } from '../helpers/mailboxUrl';
 import { useContactsListener } from '../hooks/contact/useContactsListener';
 import { usePageHotkeys } from '../hooks/mailbox/usePageHotkeys';
 import { useConversationsEvent } from '../hooks/events/useConversationsEvents';
+import { useMessagesEvents } from '../hooks/events/useMessagesEvents';
 
 interface Props {
     params: MailUrlParams;
@@ -102,6 +103,7 @@ const PageContainer = (
 
     useContactsListener();
     useConversationsEvent();
+    useMessagesEvents();
 
     const handleOpenShortcutsModal = () => {
         createModal(<MailShortcutsModal />, 'shortcuts-modal');

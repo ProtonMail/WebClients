@@ -46,7 +46,7 @@ export const loadEmbeddedFulfilled = (
 
         messageState.messageImages = updateImages(
             messageState.messageImages,
-            undefined,
+            { showEmbeddedImages: true },
             undefined,
             updatedEmbeddedImages
         );
@@ -85,7 +85,7 @@ export const loadRemoteProxyFulFilled = (
 ) => {
     const messageState = getMessage(state, ID);
 
-    if (messageState) {
+    if (messageState && messageState.messageImages) {
         const imagesLoaded = getStateImages(payload, messageState);
 
         imagesLoaded.forEach(({ image, blob, tracker, error }) => {
@@ -95,11 +95,33 @@ export const loadRemoteProxyFulFilled = (
             image.status = 'loaded';
         });
 
+        messageState.messageImages.showRemoteImages = true;
+
         const images = payload.map(({ image }) => image);
 
         loadElementOtherThanImages(images, messageState.messageDocument?.document);
 
         loadBackgroundImages({ document: messageState.messageDocument?.document, images });
+    }
+};
+
+export const loadFakeProxyPending = (
+    state: Draft<MessagesState>,
+    {
+        meta: {
+            arg: { ID, imagesToLoad },
+        },
+    }: PayloadAction<undefined, string, { arg: LoadRemoteParams }>
+) => {
+    const messageState = getMessage(state, ID);
+
+    if (messageState) {
+        const imagesToLoadIDs = imagesToLoad.map((image) => image.id);
+        getRemoteImages(messageState).forEach((image) => {
+            if (imagesToLoadIDs.includes(image.id)) {
+                image.originalURL = image.url;
+            }
+        });
     }
 };
 
@@ -135,7 +157,7 @@ export const loadRemoteDirectFulFilled = (
 ) => {
     const messageState = getMessage(state, ID);
 
-    if (messageState) {
+    if (messageState && messageState.messageImages) {
         const imagesLoaded = getStateImages(payload, messageState);
 
         imagesLoaded.forEach(({ image, error }) => {
@@ -145,6 +167,8 @@ export const loadRemoteDirectFulFilled = (
                 image.status = 'loaded';
             }
         });
+
+        messageState.messageImages.showRemoteImages = true;
 
         const images = payload.map(({ image }) => image);
 
