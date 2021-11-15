@@ -30,8 +30,9 @@ const AccountRecoverySection = () => {
     const api = useApi();
     const { createModal } = useModals();
     const [userSettings, loadingUserSettings] = useUserSettings();
-    const [loadingReset, withLoadingReset] = useLoading();
-    const [loadingNotify, withLoadingNotify] = useLoading();
+    const [loadingEmailReset, withLoadingEmailReset] = useLoading();
+    const [loadingEmailNotify, withLoadingEmailNotify] = useLoading();
+    const [loadingPhoneReset, withLoadingPhoneReset] = useLoading();
     const { createNotification } = useNotifications();
     const { call } = useEventManager();
     const { APP_NAME } = useConfig();
@@ -101,11 +102,11 @@ const AccountRecoverySection = () => {
                     <div className="mb1 flex flex-align-items-center">
                         <Toggle
                             className="mr0-5"
-                            loading={loadingReset}
+                            loading={loadingEmailReset}
                             checked={!!userSettings.Email.Reset && !!userSettings.Email.Value}
                             id="passwordEmailResetToggle"
                             onChange={({ target: { checked } }) =>
-                                withLoadingReset(handleChangePasswordEmailToggle(+checked))
+                                withLoadingEmailReset(handleChangePasswordEmailToggle(+checked))
                             }
                         />
                         <label htmlFor="passwordEmailResetToggle" className="flex-item-fluid">
@@ -116,11 +117,11 @@ const AccountRecoverySection = () => {
                         <div className="flex flex-align-items-center">
                             <Toggle
                                 className="mr0-5"
-                                loading={loadingNotify}
+                                loading={loadingEmailNotify}
                                 checked={!!userSettings.Email.Notify && !!userSettings.Email.Value}
                                 id="dailyNotificationsToggle"
                                 onChange={({ target: { checked } }) =>
-                                    withLoadingNotify(handleChangeEmailNotify(+checked))
+                                    withLoadingEmailNotify(handleChangeEmailNotify(+checked))
                                 }
                             />
                             <label htmlFor="dailyNotificationsToggle" className="mr0-5 flex-item-fluid">
@@ -156,11 +157,11 @@ const AccountRecoverySection = () => {
                             <div className="flex flex-align-items-center">
                                 <Toggle
                                     className="mr0-5"
-                                    loading={loadingReset}
+                                    loading={loadingPhoneReset}
                                     checked={!!userSettings.Phone.Reset && !!userSettings.Phone.Value}
                                     id="passwordPhoneResetToggle"
                                     onChange={({ target: { checked } }) =>
-                                        withLoadingReset(handleChangePasswordPhoneToggle(+checked))
+                                        withLoadingPhoneReset(handleChangePasswordPhoneToggle(+checked))
                                     }
                                 />
                                 <label htmlFor="passwordPhoneResetToggle" className="flex-item-fluid">
