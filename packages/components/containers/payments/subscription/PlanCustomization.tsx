@@ -1,101 +1,52 @@
-import { Fragment } from 'react';
-import { PLAN_SERVICES, PLAN_TYPES, PLANS } from '@proton/shared/lib/constants';
+import { PLAN_TYPES, PLANS } from '@proton/shared/lib/constants';
 import { toMap } from '@proton/shared/lib/helpers/object';
-import { hasBit } from '@proton/shared/lib/helpers/bitset';
-import { Currency, Cycle, Organization, Plan, PlanIDs, Subscription } from '@proton/shared/lib/interfaces';
+import { Currency, Cycle, Organization, Plan, PlanIDs, PlansMap } from '@proton/shared/lib/interfaces';
 
-import ProtonPlanPicker from '../ProtonPlanPicker';
 import ProtonPlanCustomizer from '../ProtonPlanCustomizer';
 
 interface Props {
     loading: boolean;
-    hasMailPlanPicker?: boolean;
     cycle: Cycle;
     currency: Currency;
     onChangePlanIDs: (planIDs: PlanIDs) => void;
-    onChangeCycle: (cycle: Cycle) => void;
     planIDs: PlanIDs;
     plans: Plan[];
     organization?: Organization;
-    service: PLAN_SERVICES;
-    subscription?: Subscription;
 }
 
-const PlanCustomization = ({
-    plans,
-    planIDs,
-    cycle,
-    currency,
-    service,
-    hasMailPlanPicker = true,
-    onChangePlanIDs,
-    onChangeCycle,
-    loading,
-    organization,
-    subscription,
-}: Props) => {
-    const services =
-        service === PLAN_SERVICES.MAIL
-            ? [PLAN_SERVICES.MAIL, PLAN_SERVICES.VPN]
-            : [PLAN_SERVICES.VPN, PLAN_SERVICES.MAIL];
+const PlanCustomization = ({ plans, planIDs, cycle, currency, onChangePlanIDs, loading, organization }: Props) => {
+    const plansMap = toMap(plans, 'Name') as PlansMap;
+    const [currentPlanName] =
+        Object.entries(planIDs).find(([planName, planQuantity]) => {
+            if (planQuantity) {
+                const plan = plansMap[planName as keyof PlansMap];
+                return plan?.Type === PLAN_TYPES.PLAN;
+            }
+            return false;
+        }) || [];
+    const currentPlan = plansMap?.[currentPlanName as keyof PlansMap];
+    const hasPlanCustomiser =
+        currentPlan &&
+        [PLANS.MAIL_PRO, PLANS.DRIVE_PRO, PLANS.BUNDLE_PRO, PLANS.ENTERPRISE].includes(currentPlan.Name as PLANS);
 
-    const plansMap = toMap(plans, 'ID');
-    const plansNameMap = toMap(plans, 'Name');
-
-    return <>
-        {services.map((service, index) => {
-            const [currentPlanID] =
-                Object.entries(planIDs).find(([planID, planQuantity]) => {
-                    if (planQuantity) {
-                        const { Services, Type } = plansMap[planID];
-                        return hasBit(Services, service) && Type === PLAN_TYPES.PLAN;
-                    }
-                    return false;
-                }) || [];
-            const currentPlan = currentPlanID ? plansMap[currentPlanID] : undefined;
-
-            const hasPlanCustomiser =
-                currentPlan && ![PLANS.VPNBASIC, PLANS.VISIONARY].includes(currentPlan.Name as PLANS);
-
-            return (
-                <Fragment key={service}>
-                    {service === PLAN_SERVICES.MAIL && !hasMailPlanPicker ? null : (
-                        <ProtonPlanPicker
-                            index={index}
-                            subscription={subscription}
-                            organization={organization}
-                            plans={plans}
-                            plansMap={plansMap}
-                            plansNameMap={plansNameMap}
-                            service={service}
-                            planIDs={planIDs}
-                            cycle={cycle}
-                            currency={currency}
-                            onChangeCycle={onChangeCycle}
-                            onChangePlanIDs={onChangePlanIDs}
-                            className="pb2 mb2"
-                        />
-                    )}
-                    {currentPlan && hasPlanCustomiser && (
-                        <ProtonPlanCustomizer
-                            loading={loading}
-                            cycle={cycle}
-                            currency={currency}
-                            plans={plans}
-                            planIDs={planIDs}
-                            plansMap={plansMap}
-                            plansNameMap={plansNameMap}
-                            currentPlan={currentPlan}
-                            service={service}
-                            organization={organization}
-                            onChangePlanIDs={onChangePlanIDs}
-                            className="pb2 mb2"
-                        />
-                    )}
-                </Fragment>
-            );
-        })}
-    </>;
+    return (
+        <>
+            {currentPlan && hasPlanCustomiser && (
+                <ProtonPlanCustomizer
+                    loading={loading}
+                    cycle={cycle}
+                    currency={currency}
+                    plans={plans}
+                    planIDs={planIDs}
+                    plansMap={plansMap}
+                    currentPlan={currentPlan}
+                    organization={organization}
+                    onChangePlanIDs={onChangePlanIDs}
+                    className="pb2 mb2"
+                />
+            )}
+        </>
+    );
 };
 
 export default PlanCustomization;

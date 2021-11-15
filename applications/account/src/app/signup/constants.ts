@@ -1,4 +1,6 @@
 import { getFreeCheckResult } from '@proton/shared/lib/subscription/freePlans';
+import { Audience } from '@proton/shared/lib/interfaces';
+import { PLANS } from '@proton/shared/lib/constants';
 import { SIGNUP_STEPS, SignupModel } from './interfaces';
 
 export const YANDEX_DOMAINS = ['yandex.ru', 'yandex.ua'];
@@ -107,6 +109,11 @@ export const DEFAULT_SIGNUP_MODEL: SignupModel = {
     humanVerificationMethods: [],
     humanVerificationToken: '',
     checkResult: getFreeCheckResult(),
+    audience: Audience.B2C,
+    selectedProductPlans: {
+        [Audience.B2C]: PLANS.MAIL,
+        [Audience.B2B]: PLANS.MAIL_PRO,
+    },
     isReferred: false,
     referrerID: '',
 };

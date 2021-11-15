@@ -19,7 +19,7 @@ const PlanUpsell = ({ selectedPlan, getPlanByName, cycle, currency, onExtendCycl
     const handleUpgrade = () => onUpgrade(upsell.planName);
 
     const totalMonthlyText = upsellPlan && (
-        <Price key="upgrade-price" currency={currency} suffix={c('Suffix').t`/ month`}>
+        <Price key="upgrade-price" currency={currency} suffix={c('Suffix').t`per month`}>
             {upsellPlan.price.totalMonthly}
         </Price>
     );
@@ -37,14 +37,14 @@ const PlanUpsell = ({ selectedPlan, getPlanByName, cycle, currency, onExtendCycl
                         <div className="flex flex-justify-space-between">
                             <span className="mr0-25">{c('Plan upsell').t`Monthly plan`}</span>
                             <s>
-                                <Price className="text-strike" currency={currency} suffix={c('Suffix').t`/ month`}>
+                                <Price className="text-strike" currency={currency} suffix={c('Suffix').t`per month`}>
                                     {selectedPlan.price.totalMonthly}
                                 </Price>
                             </s>
                         </div>
                         <div className="flex flex-justify-space-between">
                             <span className="mr0-25">{c('Plan upsell').t`Yearly plan`}</span>
-                            <Price currency={currency} suffix={c('Suffix').t`/ month`}>
+                            <Price currency={currency} suffix={c('Suffix').t`per month`}>
                                 {yearlyPlan.price.totalMonthly}
                             </Price>
                         </div>

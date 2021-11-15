@@ -1,296 +1,171 @@
 import { c } from 'ttag';
-import { APPS, MAIL_APP_NAME, PLANS, VPN_APP_NAME } from '@proton/shared/lib/constants';
-import { Plan, VPNCountries, VPNServers } from '@proton/shared/lib/interfaces';
-import { FREE_VPN_PLAN } from '@proton/shared/lib/subscription/freePlans';
+
+import isTruthy from '@proton/shared/lib/helpers/isTruthy';
+import { Audience, VPNCountries, VPNServers } from '@proton/shared/lib/interfaces';
+import { PLANS } from '@proton/shared/lib/constants';
+import { getBasicServers, getFreeServers, getPlusServers } from '@proton/shared/lib/vpn/features';
 
 import { useVPNCountriesCount, useVPNServersCount } from '../../../hooks';
 import { Icon } from '../../../components';
-import { VPNFeature } from './interface';
+import { Feature, PlanLabel, Tier } from './interface';
 import Features from './Features';
 
 const CheckIcon = () => <Icon className="color-primary" name="checkmark" alt={c('information').t`Included`} />;
 const EmDash = '—';
 
-const getFeatures = (
-    vpnCountries: VPNCountries,
-    planNamesMap: { [key: string]: Plan },
-    serversCount: VPNServers
-): VPNFeature[] => {
+const getFeatures = (vpnCountries: VPNCountries, serversCount: VPNServers, audience: Audience): Feature[] => {
     return [
         {
-            name: 'connections',
-            label: c('VPN feature').t`VPN Connections`,
-            free: `${FREE_VPN_PLAN.MaxVPN}`,
-            [PLANS.VPNBASIC]: `${planNamesMap[PLANS.VPNBASIC].MaxVPN}`,
-            [PLANS.VPNPLUS]: `${planNamesMap[PLANS.VPNPLUS].MaxVPN}`,
-            [PLANS.VISIONARY]: `${planNamesMap[PLANS.VISIONARY].MaxVPN}`,
-        },
-        {
-            name: 'speed',
-            label: c('VPN feature').t`Speed`,
-            free: c('VPN feature option').t`Medium`,
-            [PLANS.VPNBASIC]: c('VPN feature option').t`High`,
-            [PLANS.VPNPLUS]: c('VPN feature option').t`Highest (up to 10 Gbps)`,
-            [PLANS.VISIONARY]: c('VPN feature option').t`Highest (up to 10 Gbps)`,
-        },
-        {
             name: 'servers',
-            label: c('VPN feature').t`VPN servers`,
-            free: serversCount.free_vpn,
-            [PLANS.VPNBASIC]: `${serversCount[PLANS.VPNBASIC]}+`,
-            [PLANS.VPNPLUS]: `${serversCount[PLANS.VPNPLUS]}+`,
-            [PLANS.VISIONARY]: `${serversCount[PLANS.VPNPLUS]}+`,
+            label: c('VPN feature').t`Servers around the world`,
+            [Tier.free]: getFreeServers(serversCount.free_vpn, vpnCountries.free_vpn.count),
+            [Tier.first]: getBasicServers(serversCount[PLANS.VPNBASIC], vpnCountries[PLANS.VPNBASIC].count),
+            [Tier.second]: getPlusServers(serversCount[PLANS.VPNPLUS], vpnCountries[PLANS.VPNPLUS].count),
+            [Tier.third]: getPlusServers(serversCount[PLANS.VPNPLUS], vpnCountries[PLANS.VPNPLUS].count),
         },
-        {
-            name: 'countries',
-            label: c('VPN feature').t`Locations/Countries`,
-            free: `${vpnCountries.free_vpn.count} (US, NL, JP)`,
-            [PLANS.VPNBASIC]: `${vpnCountries[PLANS.VPNBASIC].count}+`,
-            [PLANS.VPNPLUS]: vpnCountries[PLANS.VPNPLUS].count,
-            [PLANS.VISIONARY]: vpnCountries[PLANS.VPNPLUS].count,
-        },
-        {
-            name: 'netshield',
-            label: c('VPN feature').t`Adblocker (NetShield)`,
-            tooltip: c('Tooltip')
-                .t`NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware.`,
-            free: EmDash,
-            [PLANS.VPNBASIC]: <CheckIcon />,
-            [PLANS.VPNPLUS]: <CheckIcon />,
-            [PLANS.VISIONARY]: <CheckIcon />,
-        },
-        {
-            name: 'filesharing',
-            label: c('VPN feature').t`P2P/BitTorrent`,
-            tooltip: c('Tooltip').t`Support for file sharing protocols such as BitTorrent.`,
-            free: EmDash,
-            [PLANS.VPNBASIC]: <CheckIcon />,
-            [PLANS.VPNPLUS]: <CheckIcon />,
-            [PLANS.VISIONARY]: <CheckIcon />,
-        },
-        {
-            name: 'streaming',
-            label: c('VPN feature').t`Streaming service support`,
-            tooltip: c('Tooltip')
-                .t`Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.`,
-            free: EmDash,
-            [PLANS.VPNBASIC]: EmDash,
-            [PLANS.VPNPLUS]: <CheckIcon />,
-            [PLANS.VISIONARY]: <CheckIcon />,
-        },
-        {
-            name: 'tor',
-            label: c('VPN feature').t`Tor over VPN`,
-            tooltip: c('Tooltip').t`Route your Internet traffic through the Tor network with a single click.`,
-            free: EmDash,
-            [PLANS.VPNBASIC]: EmDash,
-            [PLANS.VPNPLUS]: <CheckIcon />,
-            [PLANS.VISIONARY]: <CheckIcon />,
-        },
-        {
-            name: 'secure-core',
-            label: c('VPN feature').t`Secure Core servers`,
-            tooltip: c('Tooltip')
-                .t`Defends against threats to VPN privacy by passing your Internet traffic through multiple servers.`,
-            free: EmDash,
-            [PLANS.VPNBASIC]: EmDash,
-            [PLANS.VPNPLUS]: <CheckIcon />,
-            [PLANS.VISIONARY]: <CheckIcon />,
-        },
-        {
-            name: 'visionary',
-            label: `${MAIL_APP_NAME} Visionary`,
-            tooltip: c('Tooltip')
-                .t`Get access to all the paid features for both ${VPN_APP_NAME} and ${MAIL_APP_NAME} (the encrypted email service that millions use to protect their data) with one plan.`,
-            free: EmDash,
-            [PLANS.VPNBASIC]: EmDash,
-            [PLANS.VPNPLUS]: EmDash,
-            [PLANS.VISIONARY]: <CheckIcon />,
-        },
-        {
-            name: 'juridiction',
-            label: c('VPN feature').t`Jurisdiction`,
-            free: c('VPN feature option').t`Switzerland`,
-            [PLANS.VPNBASIC]: c('VPN feature option').t`Switzerland`,
-            [PLANS.VPNPLUS]: c('VPN feature option').t`Switzerland`,
-            [PLANS.VISIONARY]: c('VPN feature option').t`Switzerland`,
-        },
-        {
-            name: 'audited',
-            label: c('VPN feature').t`Open Source & audited apps`,
-            free: <CheckIcon />,
-            [PLANS.VPNBASIC]: <CheckIcon />,
-            [PLANS.VPNPLUS]: <CheckIcon />,
-            [PLANS.VISIONARY]: <CheckIcon />,
-        },
-        {
-            name: 'access blocked content',
-            label: c('VPN feature').t`Access blocked content`,
-            free: <CheckIcon />,
-            [PLANS.VPNBASIC]: <CheckIcon />,
-            [PLANS.VPNPLUS]: <CheckIcon />,
-            [PLANS.VISIONARY]: <CheckIcon />,
+        audience === Audience.B2B && {
+            name: 'no-logs',
+            label: c('VPN feature').t`Connect anywhere`,
+            tooltip: c('VPN feature tooltip')
+                .t`Connect to the internet securely from all your devices (iOS, Android, macOS, Windows, Linux) wherever you are, whether at a local cafe or on a business trip abroad.`,
+            [Tier.free]: <CheckIcon />,
+            [Tier.first]: <CheckIcon />,
+            [Tier.second]: <CheckIcon />,
+            [Tier.third]: <CheckIcon />,
         },
         {
             name: 'no-logs',
             label: c('VPN feature').t`Strict no-logs policy`,
-            free: <CheckIcon />,
-            [PLANS.VPNBASIC]: <CheckIcon />,
-            [PLANS.VPNPLUS]: <CheckIcon />,
-            [PLANS.VISIONARY]: <CheckIcon />,
+            [Tier.free]: <CheckIcon />,
+            [Tier.first]: <CheckIcon />,
+            [Tier.second]: <CheckIcon />,
+            [Tier.third]: <CheckIcon />,
         },
-        {
+        audience === Audience.B2C && {
             name: 'bandwidth',
-            label: c('VPN feature').t`Volume/bandwidth cap`,
-            free: EmDash,
-            [PLANS.VPNBASIC]: EmDash,
-            [PLANS.VPNPLUS]: EmDash,
-            [PLANS.VISIONARY]: EmDash,
+            label: c('VPN feature').t`Unlimited volume/bandwidth`,
+            [Tier.free]: <CheckIcon />,
+            [Tier.first]: <CheckIcon />,
+            [Tier.second]: <CheckIcon />,
+            [Tier.third]: <CheckIcon />,
         },
-        {
-            name: 'data',
-            label: c('VPN feature').t`User data monetization`,
-            free: c('VPN feature option').t`None`,
-            [PLANS.VPNBASIC]: c('VPN feature option').t`None`,
-            [PLANS.VPNPLUS]: c('VPN feature option').t`None`,
-            [PLANS.VISIONARY]: c('VPN feature option').t`None`,
-        },
-        {
-            name: 'platform',
-            label: c('VPN feature').t`Platforms supported`,
-            free: c('VPN feature option').t`Windows, macOS, iOS, Linux, Android, Android TV, Chromebook, Chromecast`,
-            [PLANS.VPNBASIC]: c('VPN feature option')
-                .t`Windows, macOS, iOS, Linux, Android, Android TV, Chromebook, Chromecast`,
-            [PLANS.VPNPLUS]: c('VPN feature option')
-                .t`Windows, macOS, iOS, Linux, Android, Android TV, Chromebook, Chromecast`,
-            [PLANS.VISIONARY]: c('VPN feature option')
-                .t`Windows, macOS, iOS, Linux, Android, Android TV, Chromebook, Chromecast`,
-        },
-        {
-            name: 'language',
-            label: c('VPN feature').t`Languages supported`,
-            free: 12,
-            [PLANS.VPNBASIC]: 12,
-            [PLANS.VPNPLUS]: 12,
-            [PLANS.VISIONARY]: 12,
-        },
-        {
-            name: 'DNS',
+        audience === Audience.B2C && {
+            name: 'dns-leak',
             label: c('VPN feature').t`DNS leak prevention`,
-            free: <CheckIcon />,
-            [PLANS.VPNBASIC]: <CheckIcon />,
-            [PLANS.VPNPLUS]: <CheckIcon />,
-            [PLANS.VISIONARY]: <CheckIcon />,
+            tooltip: c('VPN feature tooltip')
+                .t`We use our own DNS servers and run your requests through our encrypted VPN tunnel to prevent any DNS leaks that could expose your online activity.`,
+            [Tier.free]: <CheckIcon />,
+            [Tier.first]: <CheckIcon />,
+            [Tier.second]: <CheckIcon />,
+            [Tier.third]: <CheckIcon />,
         },
-        {
-            name: 'kill switch',
-            label: c('VPN feature').t`Kill Switch / Always-on VPN`,
-            free: <CheckIcon />,
-            [PLANS.VPNBASIC]: <CheckIcon />,
-            [PLANS.VPNPLUS]: <CheckIcon />,
-            [PLANS.VISIONARY]: <CheckIcon />,
+        audience === Audience.B2C && {
+            name: 'kill-switch',
+            label: c('VPN feature').t`Kill switch/always-on VPN`,
+            tooltip: c('VPN feature tooltip')
+                .t`Keeps you protected by blocking all network connections when you are accidentally disconnected from our VPN server.`,
+            [Tier.free]: <CheckIcon />,
+            [Tier.first]: <CheckIcon />,
+            [Tier.second]: <CheckIcon />,
+            [Tier.third]: <CheckIcon />,
         },
-        {
-            name: 'PFS',
-            label: c('VPN feature').t`Perfect Forward Secrecy (PFS)`,
-            free: <CheckIcon />,
-            [PLANS.VPNBASIC]: <CheckIcon />,
-            [PLANS.VPNPLUS]: <CheckIcon />,
-            [PLANS.VISIONARY]: <CheckIcon />,
-        },
-        {
+        audience === Audience.B2C && {
             name: 'encryption',
-            label: c('VPN feature').t`Full Disk Encryption on Servers`,
-            free: <CheckIcon />,
-            [PLANS.VPNBASIC]: <CheckIcon />,
-            [PLANS.VPNPLUS]: <CheckIcon />,
-            [PLANS.VISIONARY]: <CheckIcon />,
+            label: c('VPN feature').t`Full-disk encryption on servers`,
+            [Tier.free]: <CheckIcon />,
+            [Tier.first]: <CheckIcon />,
+            [Tier.second]: <CheckIcon />,
+            [Tier.third]: <CheckIcon />,
         },
-        {
-            name: 'split tunneling',
-            label: c('VPN feature').t`Split tunneling`,
-            free: (
-                <span className="inline-flex flex-nowrap">
-                    <span className="flex-item-noshrink mr0-5">
-                        <CheckIcon />
-                    </span>
-                    <span>{c('VPN feature option').t`(Android & Windows only)`}</span>
-                </span>
-            ),
-            [PLANS.VPNBASIC]: (
-                <span className="inline-flex flex-nowrap">
-                    <span className="flex-item-noshrink mr0-5">
-                        <CheckIcon />
-                    </span>
-                    <span>{c('VPN feature option').t`(Android & Windows only)`}</span>
-                </span>
-            ),
-            [PLANS.VPNPLUS]: (
-                <span className="inline-flex flex-nowrap">
-                    <span className="flex-item-noshrink mr0-5">
-                        <CheckIcon />
-                    </span>
-                    <span>{c('VPN feature option').t`(Android & Windows only)`}</span>
-                </span>
-            ),
-            [PLANS.VISIONARY]: (
-                <span className="inline-flex flex-nowrap">
-                    <span className="flex-item-noshrink mr0-5">
-                        <CheckIcon />
-                    </span>
-                    <span>{c('VPN feature option').t`(Android & Windows only)`}</span>
-                </span>
-            ),
-        },
-        {
-            name: 'profiles',
-            label: c('VPN feature').t`Custom connection profiles`,
-            free: <CheckIcon />,
-            [PLANS.VPNBASIC]: <CheckIcon />,
-            [PLANS.VPNPLUS]: <CheckIcon />,
-            [PLANS.VISIONARY]: <CheckIcon />,
-        },
-        {
+        audience === Audience.B2C && {
             name: 'router',
             label: c('VPN feature').t`Router support`,
-            free: <CheckIcon />,
-            [PLANS.VPNBASIC]: <CheckIcon />,
-            [PLANS.VPNPLUS]: <CheckIcon />,
-            [PLANS.VISIONARY]: <CheckIcon />,
+            [Tier.free]: <CheckIcon />,
+            [Tier.first]: <CheckIcon />,
+            [Tier.second]: <CheckIcon />,
+            [Tier.third]: <CheckIcon />,
         },
         {
-            name: 'money-back',
-            label: c('VPN feature').t`30-days money-back guarantee`,
-            free: 'N/A',
-            [PLANS.VPNBASIC]: <CheckIcon />,
-            [PLANS.VPNPLUS]: <CheckIcon />,
-            [PLANS.VISIONARY]: <CheckIcon />,
+            name: 'netshield',
+            label:
+                audience === Audience.B2B
+                    ? c('VPN feature').t`Malware blocker`
+                    : c('VPN feature').t`Built-in ad-blocker (NetShield)`,
+            tooltip: c('VPN feature tooltip')
+                .t`Specially designed NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware.`,
+            [Tier.free]: EmDash,
+            [Tier.first]: EmDash,
+            [Tier.second]: <CheckIcon />,
+            [Tier.third]: <CheckIcon />,
         },
-    ];
+        audience === Audience.B2C && {
+            name: 'streaming',
+            label: c('VPN feature').t`Access to streaming services globally`,
+            tooltip: c('VPN feature tooltip')
+                .t`Access top shows and other digital content, including geographically blocked content, with VPN and a streaming service like Netflix, Disney+, and Prime Video.`,
+            [Tier.free]: EmDash,
+            [Tier.first]: EmDash,
+            [Tier.second]: <CheckIcon />,
+            [Tier.third]: <CheckIcon />,
+        },
+        audience === Audience.B2C && {
+            name: 'p2p',
+            label: c('VPN feature').t`P2P/BitTorrent`,
+            tooltip: c('VPN feature tooltip').t`Support for file sharing protocols like BitTorrent.`,
+            [Tier.free]: EmDash,
+            [Tier.first]: EmDash,
+            [Tier.second]: <CheckIcon />,
+            [Tier.third]: <CheckIcon />,
+        },
+        audience === Audience.B2C && {
+            name: 'tor',
+            label: c('VPN feature').t`Tor over VPN`,
+            tooltip: c('VPN feature tooltip')
+                .t`Route your internet traffic through the Tor network with a single click.`,
+            [Tier.free]: EmDash,
+            [Tier.first]: EmDash,
+            [Tier.second]: <CheckIcon />,
+            [Tier.third]: <CheckIcon />,
+        },
+        audience === Audience.B2C && {
+            name: 'secure-core',
+            label: c('VPN feature').t`Secure Core servers`,
+            tooltip: c('VPN feature tooltip')
+                .t`Defends against threats to VPN privacy by passing your internet traffic through multiple servers.`,
+            [Tier.free]: EmDash,
+            [Tier.first]: EmDash,
+            [Tier.second]: <CheckIcon />,
+            [Tier.third]: <CheckIcon />,
+        },
+        audience === Audience.B2C && {
+            name: 'tunneling',
+            label: c('VPN feature').t`Split tunneling`,
+            tooltip: c('VPN feature tooltip')
+                .t`Allows you to access more than one network at the same time, e.g. stream a film from another country while still getting local search results.`,
+            [Tier.free]: c('VPN feature').t`Android and Windows only`,
+            [Tier.first]: c('VPN feature').t`Android and Windows only`,
+            [Tier.second]: c('VPN feature').t`Android and Windows only`,
+            [Tier.third]: c('VPN feature').t`Android and Windows only`,
+        },
+    ].filter(isTruthy);
 };
 
 interface Props {
-    onSelect: (planName: PLANS | 'free') => void;
-    planNamesMap: { [key: string]: Plan };
+    onSelect: (planName: PLANS) => void;
     activeTab: number;
     onSetActiveTab: (activeTab: number) => void;
+    planLabels: PlanLabel[];
+    audience: Audience;
 }
 
-const VPNFeatures = ({ onSelect, planNamesMap, activeTab, onSetActiveTab }: Props) => {
+const VPNFeatures = ({ audience, planLabels, onSelect, activeTab, onSetActiveTab }: Props) => {
     const [vpnCountries] = useVPNCountriesCount();
     const [vpnServersCount] = useVPNServersCount();
-
-    const features = getFeatures(vpnCountries, planNamesMap, vpnServersCount);
-    const planLabels = [
-        { label: 'Free', key: 'free' } as const,
-        { label: 'Basic', key: PLANS.VPNBASIC },
-        { label: 'Plus', key: PLANS.VPNPLUS },
-        { label: 'Visionary', key: PLANS.VISIONARY },
-    ];
+    const features = getFeatures(vpnCountries, vpnServersCount, audience);
 
     return (
         <Features
-            appName={APPS.PROTONVPN_SETTINGS}
+            title={c('Title').t`VPN features`}
             onSelect={onSelect}
             planLabels={planLabels}
             features={features}

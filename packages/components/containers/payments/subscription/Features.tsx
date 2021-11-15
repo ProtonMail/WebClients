@@ -1,77 +1,65 @@
 import { Fragment } from 'react';
 import { c } from 'ttag';
-
-import { PLANS, APP_NAMES, APPS_CONFIGURATION, DRIVE_APP_NAME } from '@proton/shared/lib/constants';
+import { toMap } from '@proton/shared/lib/helpers/object';
+import { PLANS } from '@proton/shared/lib/constants';
 
 import { useActiveBreakpoint } from '../../../hooks';
-import { MailFeature, VPNFeature, CalendarFeature, DriveFeature, PlanLabel } from './interface';
-import { PrimaryButton, Tabs, Icon, Info } from '../../../components';
+import { PlanLabel, Feature } from './interface';
+import { PrimaryButton, Tabs, Info } from '../../../components';
 
 interface Props {
-    appName: APP_NAMES;
+    title: string;
     planLabels: PlanLabel[];
-    features: (MailFeature | VPNFeature | CalendarFeature | DriveFeature)[];
-    onSelect: (planName: PLANS | 'free') => void;
+    features: Feature[];
+    onSelect: (planName: PLANS) => void;
     activeTab: number;
     onSetActiveTab: (activeTab: number) => void;
 }
 
-type UghRest = keyof Omit<MailFeature | VPNFeature | CalendarFeature | DriveFeature, 'name' | 'label' | 'tooltip'>;
+type Tiers = keyof Omit<Feature, 'name' | 'label' | 'tooltip'>;
 
-const Features = ({ appName, onSelect, planLabels, features, activeTab, onSetActiveTab }: Props) => {
+const Features = ({ title, onSelect, planLabels, features, activeTab, onSetActiveTab }: Props) => {
     const { isNarrow } = useActiveBreakpoint();
-    const { icon, name } = APPS_CONFIGURATION[appName];
-
-    // translator: <ProtonDrive> (beta)
-    const displayName = `${name} ${name === DRIVE_APP_NAME ? c('info').t`(beta)` : ''}`;
+    const allowedPlans = toMap(planLabels, 'tier');
 
     if (isNarrow) {
         return (
             <Tabs value={activeTab} onChange={onSetActiveTab}>
-                {planLabels.map(({ label, key }) => ({
+                {planLabels.map(({ label, tier, plan }) => ({
                     title: label,
                     content: (
-                        <Fragment key={key}>
+                        <Fragment key={tier}>
                             <div className="mb1">
-                                <PrimaryButton onClick={() => onSelect(key)}>{c('Action')
+                                <PrimaryButton onClick={() => onSelect(plan)}>{c('Action')
                                     .t`Select plan`}</PrimaryButton>
                             </div>
-                            <table key={key} className="text-cut alternate-table-bg-row-rounded w100">
+                            <table key={tier} className="text-cut alternate-table-bg-row-rounded w100">
                                 <thead>
-                                    <tr>
-                                        <th scope="col" className="text-left">
+                                <tr>
+                                    <th scope="col" className="text-left">
                                             <span className="flex flex-nowrap flex-items-align-center">
-                                                <Icon
-                                                    name={icon}
-                                                    alt=""
-                                                    size={20}
-                                                    className="color-primary flex-item-noshrink"
-                                                />
-                                                <strong
-                                                    className="ml0-5 flex-item-fluid text-ellipsis"
-                                                    title={displayName}
-                                                >
-                                                    {displayName}
+                                                <strong className="flex-item-fluid text-ellipsis" title={title}>
+                                                    {title}
                                                 </strong>
                                             </span>
-                                        </th>
-                                        <th scope="col" className="text-left">
-                                            {label}
-                                        </th>
-                                    </tr>
+                                    </th>
+                                    <th scope="col" className="text-left">
+                                        {label}
+                                    </th>
+                                </tr>
                                 </thead>
                                 <tbody>
-                                    {features.map(({ name, label, tooltip, ...rest }) => {
-                                        return (
-                                            <tr key={name}>
-                                                <th scope="row" className="text-left">
-                                                    {label}
-                                                    {tooltip ? <Info className="ml0-5" title={tooltip} /> : null}
-                                                </th>
-                                                <td key={key}>{rest[key as UghRest]}</td>
-                                            </tr>
-                                        );
-                                    })}
+                                {features.map(({ name, label, tooltip, ...rest }) => {
+                                    return (
+                                        <tr key={name}>
+                                            <th scope="row" className="text-left">
+                                                {label}
+                                                {tooltip ? <Info className="ml0-5" title={tooltip} /> : null}
+                                            </th>
+                                            <td key={tier}>{rest[tier as Tiers]}</td>
+                                        </tr>
+                                    );
+                                })}
                                 </tbody>
                             </table>
                         </Fragment>
@@ -84,41 +72,42 @@ const Features = ({ appName, onSelect, planLabels, features, activeTab, onSetAct
     return (
         <table className="alternate-table-bg-row-rounded text-cut w100">
             <thead>
-                <tr>
-                    <th scope="col" className="text-left">
+            <tr>
+                <th scope="col" className="text-left">
                         <span className="flex flex-nowrap flex-items-align-center">
-                            <Icon name={icon} alt="" size={20} className="color-primary flex-item-noshrink" />
-                            <strong className="ml0-5 flex-item-fluid text-ellipsis" title={displayName}>
-                                {displayName}
+                            <strong className="flex-item-fluid text-ellipsis text-lg m0" title={title}>
+                                {title}
                             </strong>
                         </span>
+                </th>
+                {planLabels.map(({ label, tier }) => (
+                    <th scope="col" className="text-left" key={tier}>
+                        {label}
                     </th>
-                    {planLabels.map(({ label, key }) => (
-                        <th scope="col" className="text-left" key={key}>
-                            {label}
-                        </th>
-                    ))}
-                </tr>
+                ))}
+            </tr>
             </thead>
             <tbody>
-                {features.map(({ name, label, tooltip, ...rest }) => {
-                    const restKeys = Object.keys(rest) as UghRest[];
-                    return (
-                        <tr key={name}>
-                            <th scope="row" className="text-left">
-                                {label}
-                                {tooltip ? <Info className="ml0-5" title={tooltip} /> : null}
-                            </th>
-                            {restKeys.map((key) => {
+            {features.map(({ name, label, tooltip, ...rest }) => {
+                const restKeys = Object.keys(rest) as Tiers[];
+                return (
+                    <tr key={name}>
+                        <th scope="row" className="text-left">
+                            {label}
+                            {tooltip ? <Info className="ml0-5" title={tooltip} /> : null}
+                        </th>
+                        {restKeys
+                            .filter((key) => allowedPlans[key])
+                            .map((key) => {
                                 return (
                                     <td className="border-none" key={key}>
                                         {rest[key]}
                                     </td>
                                 );
                             })}
-                        </tr>
-                    );
-                })}
+                    </tr>
+                );
+            })}
             </tbody>
         </table>
     );

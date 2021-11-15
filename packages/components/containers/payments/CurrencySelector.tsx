@@ -2,7 +2,7 @@ import { CURRENCIES, DEFAULT_CURRENCY } from '@proton/shared/lib/constants';
 import { c } from 'ttag';
 import { Currency } from '@proton/shared/lib/interfaces';
 
-import { Select, ButtonGroup, Button } from '../../components';
+import { Select, ButtonGroup, Button, SelectTwo, Option } from '../../components';
 import { classnames } from '../../helpers';
 
 const addSymbol = (currency: Currency) => {
@@ -18,7 +18,7 @@ const addSymbol = (currency: Currency) => {
 };
 
 interface Props {
-    mode?: 'select' | 'buttons';
+    mode?: 'select' | 'buttons' | 'select-two';
     currency?: Currency;
     onSelect: (newCurrency: Currency) => void;
     loading?: boolean;
@@ -59,6 +59,21 @@ const CurrencySelector = ({ currency = DEFAULT_CURRENCY, onSelect, mode = 'selec
                 loading={loading}
                 {...rest}
             />
+        );
+    }
+
+    if (mode === 'select-two') {
+        const handleChange = ({ value }: { value: Currency }) => onSelect(value);
+        return (
+            <SelectTwo value={currency} onChange={handleChange} loading={loading}>
+                {options.map(({ text, value }) => {
+                    return (
+                        <Option value={value} title={text} key={value}>
+                            {text}
+                        </Option>
+                    );
+                })}
+            </SelectTwo>
         );
     }
 

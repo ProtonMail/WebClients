@@ -1,80 +1,112 @@
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 import { c } from 'ttag';
-import { MAIL_APP_NAME, PLANS, PLAN_SERVICES } from '@proton/shared/lib/constants';
+import { PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
 import { switchPlan } from '@proton/shared/lib/helpers/planIDs';
-import { Organization, Plan, PlanIDs } from '@proton/shared/lib/interfaces';
-import { Button, Icon } from '../../../components';
+import { Audience, Plan, PlanIDs } from '@proton/shared/lib/interfaces';
+import isTruthy from '@proton/shared/lib/helpers/isTruthy';
+
+import { Tier } from './interface';
 import MailFeatures from './MailFeatures';
+import ContactFeatures from './ContactFeatures';
 import VPNFeatures from './VPNFeatures';
 import CalendarFeatures from './CalendarFeatures';
 import DriveFeatures from './DriveFeatures';
+import HighlightFeatures from './HighlightFeatures';
+import TeamFeatures from './TeamFeatures';
+import SupportFeatures from './SupportFeatures';
 
 interface Props {
-    service: PLAN_SERVICES;
     onChangePlanIDs: (newPlanIDs: PlanIDs) => void;
     plans: Plan[];
     planIDs: PlanIDs;
-    planNamesMap: { [key in PLANS]: Plan };
-    organization?: Organization;
+    audience: Audience;
+    hasFreePlan?: boolean;
+    selectedPlan: PLANS;
 }
 
-const PlanSelectionComparison = ({ service, onChangePlanIDs, plans, planNamesMap, organization, planIDs }: Props) => {
-    const featuresRef = useRef<HTMLDivElement>(null);
+const PlanSelectionComparison = ({ selectedPlan, hasFreePlan, audience, onChangePlanIDs, plans, planIDs }: Props) => {
+    const [tab, setTab] = useState(0);
+    const hasVisionary = !!planIDs[PLANS.NEW_VISIONARY];
+    const isB2C = audience === Audience.B2C;
 
-    const handleSelect = (planName: PLANS | 'free') => {
+    const planLabels = [
+        hasFreePlan && { label: PLAN_NAMES[PLANS.FREE], tier: Tier.free, plan: PLANS.FREE },
+        { label: PLAN_NAMES[selectedPlan], tier: Tier.first, plan: selectedPlan },
+        {
+            label: isB2C ? PLAN_NAMES[PLANS.BUNDLE] : PLAN_NAMES[PLANS.BUNDLE_PRO],
+            tier: Tier.second,
+            plan: isB2C ? PLANS.BUNDLE : PLANS.BUNDLE_PRO,
+        },
+        isB2C && {
+            label: hasVisionary ? PLAN_NAMES[PLANS.NEW_VISIONARY] : PLAN_NAMES[PLANS.FAMILY],
+            tier: Tier.third,
+            plan: hasVisionary ? PLANS.NEW_VISIONARY : PLANS.FAMILY,
+        },
+    ].filter(isTruthy);
+
+    const handleSelect = (planName: PLANS) => {
         const plan = plans.find(({ Name }) => Name === planName);
         onChangePlanIDs(
             switchPlan({
                 planIDs,
-                plans,
-                planID: plan?.ID,
-                service,
-                organization,
+                planID: plan?.Name,
             })
         );
     };
 
-    const [tab, setTab] = useState(0);
-
     return (
         <>
-            <p className="text-sm">{c('Info').t`* Customizable features`}</p>
-            <Button
-                color="norm"
-                shape="ghost"
-                className="flex flex-align-items-center center mb1"
-                onClick={() => {
-                    featuresRef.current?.scrollIntoView({ behavior: 'smooth' });
-                }}
-            >
-                <span className="mr0-5">{c('Action').t`Compare all features`}</span>
-                <Icon name="arrow-down" className="align-sub" />
-            </Button>
-            <div ref={featuresRef}>
-                {service === PLAN_SERVICES.MAIL ? (
-                    <>
-                        <MailFeatures onSelect={handleSelect} activeTab={tab} onSetActiveTab={setTab} />
-                        <CalendarFeatures onSelect={handleSelect} activeTab={tab} onSetActiveTab={setTab} />
-                        <DriveFeatures onSelect={handleSelect} activeTab={tab} onSetActiveTab={setTab} />
-                        <p className="text-sm mt1 mb0-5 color-weak">
-                            * {c('Info concerning plan features').t`Customizable features`}
-                        </p>
-                        <p className="text-sm mt0 mb1 color-weak">
-                            **{' '}
-                            {c('Info concerning plan features')
-                                .t`${MAIL_APP_NAME} cannot be used for mass emailing or spamming. Legitimate emails are unlimited.`}
-                        </p>
-                    </>
-                ) : null}
-                {service === PLAN_SERVICES.VPN ? (
-                    <VPNFeatures
-                        planNamesMap={planNamesMap}
+            <HighlightFeatures
+                planLabels={planLabels}
+                audience={audience}
+                onSelect={handleSelect}
+                activeTab={tab}
+                onSetActiveTab={setTab}
+            />
+            <MailFeatures
+                planLabels={planLabels}
+                audience={audience}
+                onSelect={handleSelect}
+                activeTab={tab}
+                onSetActiveTab={setTab}
+            />
+            <ContactFeatures planLabels={planLabels} onSelect={handleSelect} activeTab={tab} onSetActiveTab={setTab} />
+            <CalendarFeatures
+                planLabels={planLabels}
+                audience={audience}
+                onSelect={handleSelect}
+                activeTab={tab}
+                onSetActiveTab={setTab}
+            />
+            <DriveFeatures planLabels={planLabels} onSelect={handleSelect} activeTab={tab} onSetActiveTab={setTab} />
+            <VPNFeatures
+                planLabels={planLabels}
+                audience={audience}
+                onSelect={handleSelect}
+                activeTab={tab}
+                onSetActiveTab={setTab}
+            />
+            {audience === Audience.B2B ? (
+                <>
+                    <TeamFeatures
+                        planLabels={planLabels}
                         onSelect={handleSelect}
                         activeTab={tab}
                         onSetActiveTab={setTab}
                     />
-                ) : null}
-            </div>
+                    <SupportFeatures
+                        planLabels={planLabels}
+                        onSelect={handleSelect}
+                        activeTab={tab}
+                        onSetActiveTab={setTab}
+                    />
+                </>
+            ) : null}
+            <p className="text-sm mt1 mb0-5 color-weak">
+                *{' '}
+                {c('Info concerning plan features')
+                    .t`Get started with 1 GB total storage, with incentives to unlock up to 1 additional GB.`}
+            </p>
         </>
     );
 };

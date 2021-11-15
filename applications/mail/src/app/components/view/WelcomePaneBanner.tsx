@@ -68,7 +68,7 @@ const WelcomePaneBanner = ({ plans, theme, userSettings, calendars = [] }: Props
                 <Price
                     currency={Currency}
                     prefix={c('Info').t`Support privacy by upgrading for`}
-                    suffix={c('Info').t`/month.`}
+                    suffix={c('Info').t`per month.`}
                     isDisplayedInSentence
                 >
                     {getPrice()}
@@ -173,7 +173,7 @@ const WelcomePaneBanner = ({ plans, theme, userSettings, calendars = [] }: Props
                 <Price
                     currency={Currency}
                     prefix={c('Info').t`Increase storage space starting at`}
-                    suffix={c('Info').t`/month.`}
+                    suffix={c('Info').t`per month.`}
                     isDisplayedInSentence
                 >
                     {getPrice()}
