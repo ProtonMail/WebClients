@@ -713,9 +713,6 @@
       "Calendar could not be decrypted": [
         "Kalendarz nie może zostać odszyfrowany"
       ],
-      "Calendar could not be found": [
-        "Kalendarz nie został znaleziony"
-      ],
       "Calendar is syncing": [
         "Kalendarz jest synchronizowany"
       ],
@@ -903,7 +900,7 @@
         "Numer telefonu nie jest prawidłowy"
       ],
       "Organization not recognized. Try again.": [
-        ""
+        "Organizacja nie została rozpoznana. Spróbuj ponownie."
       ],
       "Passwords do not match": [
         "Hasła nie pasują do siebie"
@@ -1324,12 +1321,6 @@
       ],
       "Defends against threats to VPN privacy by passing your Internet traffic through multiple servers.": [
         "Chroni przed zagrożeniami prywatności połączenia VPN poprzez przekierowanie ruchu sieciowego przez wiele serwerów."
-      ],
-      "Disabling this will prevent this email from being used for account recovery.": [
-        "Wyłączając tę opcję nie będziesz mógł używać tego adresu e-mail do odzyskiwania konta."
-      ],
-      "Disabling this will prevent this phone number from being used for account recovery.": [
-        "Wyłączając tę opcję nie będziesz mógł używać tego numeru telefonu do odzyskiwania konta."
       ],
       "Discount applied to your subscription with coupon ${ code }": [
         "Zniżka za kupon ${ code } została wliczona do Twojej subskrypcji"
@@ -2108,7 +2099,7 @@
         "Adres e-mail"
       ],
       "Enter organization name to confirm": [
-        ""
+        "Wpisz nazwę organizacji, aby potwierdzić"
       ],
       "Enter the 6-digit code": [
         "Wpisz 6-cyfrowy kod"
@@ -2295,9 +2286,6 @@
       ]
     },
     "label": {
-      "Phone number": [
-        "Numer telefonu"
-      ],
       "Recovery phone number": [
         "Numer pomocniczy"
       ]
@@ -2511,7 +2499,7 @@
     },
     "Member downgrade modal": {
       "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        ""
+        "Spowoduje to trwałe usunięcie wszystkich użytkowników, kont i danych powiązanych z organizacją."
       ]
     },
     "Message": {
@@ -2731,7 +2719,7 @@
       "Proton username": [
         "Nazwa użytkownika Proton"
       ],
-      "Recovery email": [
+      "Recovery email address": [
         "Adres pomocniczy"
       ],
       "Reset code": [
@@ -3228,7 +3216,7 @@
         "Usuń konto"
       ],
       "Delete organization?": [
-        ""
+        "Usunąć organizację?"
       ],
       "Device connected!": [
         "Urządzenie jest podłączone!"

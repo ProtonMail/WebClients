@@ -31,11 +31,11 @@
       "${ BRAND_NAME } shop": [
         "Крамниця ${ BRAND_NAME }"
       ],
-      "Activate": [
-        "Активувати"
-      ],
       "activate": [
         "активувати"
+      ],
+      "Activate": [
+        "Активувати"
       ],
       "Activate ${ Name }@pm.me": [
         "Активувати ${ Name }@pm.me"
@@ -51,6 +51,9 @@
       ],
       "Add address": [
         "Додати адресу"
+      ],
+      "Add calendar": [
+        "Додати календар"
       ],
       "Add condition": [
         "Додати умову"
@@ -223,12 +226,6 @@
       "Create link": [
         "Створити посилання"
       ],
-      "Create new recovery phrase": [
-        "Створити нову фразу відновлення"
-      ],
-      "Create new recovery phrase?": [
-        "Створити нову фразу відновлення?"
-      ],
       "Customize": [
         "Налаштувати"
       ],
@@ -348,6 +345,15 @@
       ],
       "Generate key": [
         "Генерувати ключ"
+      ],
+      "Generate new recovery phrase": [
+        "Згенерувати нову фразу відновлення"
+      ],
+      "Generate new recovery phrase?": [
+        "Згенерувати нову фразу відновлення?"
+      ],
+      "Generate recovery phrase": [
+        "Згенерувати фразу відновлення"
       ],
       "Get ProtonVPN Plus": [
         "Отримати ProtonVPN Plus"
@@ -501,6 +507,9 @@
       ],
       "Reconnect": [
         "Відновити з'єднання"
+      ],
+      "Recover data": [
+        "Відновити дані"
       ],
       "Refresh status": [
         "Оновити стан"
@@ -696,9 +705,6 @@
       ],
       "Submit": [
         "Відправити"
-      ],
-      "Subscribe to calendar": [
-        "Підписатися на календар"
       ],
       "Support": [
         "Підтримка"
@@ -1305,11 +1311,11 @@
       ]
     },
     "Calendar limit warning": {
-      "You have reached the maximum of ${ calendarsLimit } calendar.": [
-        "Ви досягли максимальної кількості ${ calendarsLimit } календаря.",
-        "Ви досягли максимальної кількості ${ calendarsLimit } календаря.",
-        "Ви досягли максимальної кількості ${ calendarsLimit } календарів.",
-        "Ви досягли максимальної кількості ${ calendarsLimit } календарів."
+      "You have reached the maximum of ${ calendarsLimit } personal calendar.": [
+        "Ви досягли максимальної кількості з ${ calendarsLimit } особистого календаря.",
+        "Ви досягли максимальної кількості з ${ calendarsLimit } особистих календарів.",
+        "Ви досягли максимальної кількості з ${ calendarsLimit } особистих календарів.",
+        "Ви досягли максимальної кількості з ${ calendarsLimit } особистих календарів."
       ],
       "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } subscribed calendar.": [
         "Ви досягли максимальної кількості ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } підписного календаря.",
@@ -1338,9 +1344,6 @@
     "Calendar subscription not synced error": {
       "Calendar could not be decrypted": [
         "Не вдалося розшифрувати календар"
-      ],
-      "Calendar could not be found": [
-        "Не вдалося знайти календар"
       ],
       "Calendar is syncing": [
         "Календар синхронізується"
@@ -3539,9 +3542,6 @@
       "Create in": [
         "Створити у"
       ],
-      "Creating a new recovery phrase will deactivate your old one.": [
-        "Створення нової фрази відновлення деактивує попередню."
-      ],
       "Creating your Proton account": [
         "Створення вашого облікового запису Proton"
       ],
@@ -3580,15 +3580,6 @@
       ],
       "Delete link?": [
         "Видалити посилання?"
-      ],
-      "Disabling this will prevent this email from being used for account recovery.": [
-        "Вимкнення цієї опції не дозволить використовувати цю електронну адресу для відновлення доступу до облікового запису."
-      ],
-      "Disabling this will prevent this phone number from being used for account recovery.": [
-        "Вимкнення цієї опції не дозволить використовувати цей номер телефону для відновлення доступу до облікового запису."
-      ],
-      "Disabling this will prevent your recovery phrase from being used for account recovery.": [
-        "Вимкнення цієї опції не дозволить використовувати фразу відновлення для доступу до облікового запису."
       ],
       "Discount applied to your subscription with coupon ${ code }": [
         "До вашої передплати застосовано знижку за кодом купона ${ code }"
@@ -3739,6 +3730,9 @@
       ],
       "Full-featured VPN with speed up to 10 Gbps.": [
         "Повнофункціональний VPN зі швидкістю до 10 Гбіт/с."
+      ],
+      "Generating a new recovery phrase will deactivate your old one.": [
+        "Генерування нової фрази відновлення деактивує попередню."
       ],
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
         "Надайте свій відкритий ключ друзям, або оприлюдніть його в інтернеті, щоб кожен зміг надіслати вам наскрізно зашифроване повідомлення!"
@@ -4654,6 +4648,9 @@
       ],
       "Your Block List is empty.": [
         "Ваш список блокувань порожній."
+      ],
+      "Your data is encrypted, you can recover your data by reactivating your keys.": [
+        "Ваші дані зашифровано. Ви можете відновити їх, повторно активувавши ключі."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "Ваші дані для імпорту з ${ importedEmailAddressStrong } до облікового запису Proton готові."
@@ -5633,17 +5630,14 @@
       "Recovery code": [
         "Код відновлення"
       ],
-      "Recovery email": [
-        "Пошта для відновлення доступу"
-      ],
       "Recovery email address": [
         "Електронна пошта для відновлення"
       ],
       "Recovery file": [
         "Файл відновлення"
       ],
-      "Recovery phone": [
-        "Номер телефону"
+      "Recovery phone number": [
+        "Номер телефону для відновлення"
       ],
       "Recovery phrase": [
         "Фраза відновлення"
@@ -5848,9 +5842,6 @@
       ]
     },
     "label": {
-      "Phone number": [
-        "Номер телефону"
-      ],
       "Recovery phone number": [
         "Номер телефону для відновлення"
       ],
@@ -7327,8 +7318,8 @@
       "Calendar URL": [
         "URL календаря"
       ],
-      "You can subscribe to someone else's calendar by pasting its URL below. This will give you access to a read-only version of this calendar.\n${ kbLink }": [
-        "Ви можете підписатися на сторонній календар, вставивши його URL-адресу внизу. Це надасть вам доступ до цього календаря лише для читання.\n${ kbLink }"
+      "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Subscribed calendars.\n${ kbLink }": [
+        "Щоб підписатися на зовнішній або загальнодоступний календар і його оновлення, введіть URL-адресу. Версія календаря лише для читання буде додана до ваших підписок на календарі.\n${ kbLink }"
       ]
     },
     "Subscribe to calendar modal description": {
@@ -7969,6 +7960,9 @@
       ],
       "Enable keyboard shortcuts": [
         "Увімкнути комбінації клавіш"
+      ],
+      "Encrypted data": [
+        "Зашифровані дані"
       ],
       "Encryption & keys": [
         "Шифрування та ключі"

@@ -209,9 +209,6 @@
       "Create new message": [
         "Opret ny besked"
       ],
-      "Create recovery phrase": [
-        "Opret gendannelsesfrase"
-      ],
       "Custom filter": [
         "Brugerfilter"
       ],
@@ -266,7 +263,7 @@
         "Kassér"
       ],
       "Dismiss get started checklist": [
-        ""
+        "Afvis tjekliste for at komme i gang"
       ],
       "Done": [
         "Udført"
@@ -327,6 +324,9 @@
       ],
       "Forward as attachment": [
         "Videresend som vedhæftning"
+      ],
+      "Generate recovery phrase": [
+        "Opret gendannelsessætning"
       ],
       "Get started": [
         "Kom godt i gang"
@@ -576,7 +576,7 @@
         "Åbn kalender"
       ],
       "Open get started checklist modal": [
-        ""
+        "Åbn vindue med tjekliste for at komme i gang"
       ],
       "Open navigation": [
         "Åbn navigation"
@@ -850,7 +850,7 @@
         "Opgradér"
       ],
       "Upgrade now": [
-        ""
+        "Opgradér nu"
       ],
       "Upload picture": [
         "Upload billede"
@@ -999,7 +999,7 @@
     },
     "Amount of completed get started checklist items": {
       "${ numberOfCompletedItems } of ${ totalNumberOfChecklistItems } complete": [
-        ""
+        "${ numberOfCompletedItems } af ${ totalNumberOfChecklistItems } udført"
       ]
     },
     "Apps dropdown": {
@@ -1389,26 +1389,26 @@
       "(Attendance optional)": [
         "(Deltagelse valgfri)"
       ],
-      "Adding occurrences to an event is not supported for the moment.": [
-        "Tilføjelse af forekomster til en begivenhed understøttes ikke i øjeblikket."
+      "Adding occurrences to an event is not supported for the moment": [
+        "Tilføjelse af forekomster til en begivenhed understøttes ikke i øjeblikket"
       ],
       "An occurrence has been added to the event ${ veventIcsTitle }": [
         "En forekomst er blevet tilføjet begivenheden ${ veventIcsTitle }"
       ],
-      "Event refreshing is not supported for the moment.": [
-        "Opfriskning af begivenheder understøttes ikke i øjeblikket."
+      "Event refreshing is not supported for the moment": [
+        "Opdatering af begivenheder understøttes ikke i øjeblikket"
       ],
-      "Event rescheduling is not supported for the moment.": [
-        "Flytning af begivenheder understøttes ikke i øjeblikket."
+      "Event rescheduling is not supported for the moment": [
+        "Flytning af begivenheder understøttes ikke i øjeblikket"
       ],
-      "The sender of this email has not been invited to this event and cannot be added as a participant.": [
-        "Afsenderen af denne e-mail er ikke blevet inviteret til denne begivenhed og kan ikke tilføjes som deltager."
+      "The sender of this email has not been invited to this event and cannot be added as a participant": [
+        "Afsenderen af denne e-mail er ikke blevet inviteret til denne begivenhed og kan ikke tilføjes som deltager"
       ],
-      "This answer cannot be added to ${ calendarAppName } as we only support answers to all events of a series for the moment.": [
-        "Dette svar kan ikke tilføjes til ${ calendarAppName } , da vi kun understøtter svar på alle begivenheder i en serie i øjeblikket."
+      "This answer cannot be added to ${ calendarAppName } as we only support answers to all events of a series for the moment": [
+        "Dette svar kan ikke tilføjes til ${ calendarAppName } , da vi i øjeblikket kun understøtter svar på alle begivenheder i en serie"
       ],
-      "This event has already happened.": [
-        "Denne begivenhed er allerede sket."
+      "This event has already happened": [
+        "Denne begivenhed har allerede fundet sted"
       ],
       "This event has been cancelled.": [
         "Denne begivenhed er blevet aflyst."
@@ -1416,8 +1416,8 @@
       "This event has been updated.": [
         "Denne begivenhed er blevet opdateret."
       ],
-      "This event is currently happening.": [
-        "Denne begivenhed finder sted i øjeblikket."
+      "This event is currently happening": [
+        "Denne begivenhed finder sted i øjeblikket"
       ],
       "This invitation is out of date. The event has been cancelled.": [
         "Denne invitation er forældet. Begivenheden er blevet annulleret."
@@ -1446,8 +1446,8 @@
       "You already tentatively accepted this invitation.": [
         "Du har allerede med forbehold accepteret denne invitation."
       ],
-      "Your email address is not in the participants list.": [
-        "Din e-mailadresse er ikke på deltagerlisten."
+      "Your email address is not in the participants list": [
+        "Din e-mailadresse er ikke på deltagerlisten"
       ]
     },
     "Calendar status": {
@@ -1461,9 +1461,6 @@
     "Calendar subscription not synced error": {
       "Calendar could not be decrypted": [
         "Kalender kunne ikke dekrypteres"
-      ],
-      "Calendar could not be found": [
-        "Kalender kunne ikke findes"
       ],
       "Calendar is syncing": [
         "Kalender synkroniserer"
@@ -2115,7 +2112,7 @@
         "Nogle grupper har ingen kontakter: ${ noContactGroupList } "
       ],
       "Organization not recognized. Try again.": [
-        ""
+        "Organisation ikke genkendt. Prøv igen."
       ],
       "Passwords do not match": [
         "Adgangskoder matcher ikke"
@@ -2632,69 +2629,69 @@
     },
     "Get started checklist completion": {
       "We've added 1 GB of bonus storage to your account. Continue to explore ${ BRAND_NAME } and share your ${ protonMailAppName } address with your family, friends, and colleagues.": [
-        ""
+        "Vi har tilføjet 1 GB bonuslagerplads til din konto. Fortsæt med at udforske ${ BRAND_NAME } og del din ${ protonMailAppName }-adresse med din familie, venner og kolleger."
       ],
       "We've added 1 GB of bonus storage to your account. For even more storage and premium features, upgrade your plan.": [
-        ""
+        "Vi har tilføjet 1 GB bonuslagerplads til din konto. Opgrader dit abonnement for at få endnu mere lagerplads og premium-funktioner."
       ],
       "You're a privacy champ!": [
-        ""
+        "Du er mester i privatliv!"
       ]
     },
     "Get started checklist incentive": {
       "Complete all steps and get a total of 2 GB on your account": [
-        ""
+        "Udfør alle trin, og få i alt 2 GB på din konto"
       ],
       "Only ${ days } day left": [
-        "",
-        ""
+        "Kun ${ days } dag tilbage",
+        "Kun ${ days } dage tilbage"
       ]
     },
     "Get started checklist instructions": {
       "Available on iOS and Android.": [
-        ""
+        "Tilgængelig på iOS og Android."
       ],
       "Get the ${ protonMailAppName } mobile app": [
-        ""
+        "Hent ${ protonMailAppName } mobilappen"
       ],
       "Import contacts or emails": [
-        ""
+        "Importer kontakter eller e-mails"
       ],
       "Import your contacts or messages": [
-        ""
+        "Importer dine kontakter eller beskeder"
       ],
       "Quickly transfer your contacts or emails from any provider using our Easy Switch import assistant.": [
-        ""
+        "Overfør hurtigt dine kontakter eller e-mails fra en hvilken som helst udbyder ved hjælp af vores Easy Switch-importassistent."
       ],
       "Sign into the mobile app to complete the action": [
-        ""
+        "Log på mobilappen for at fuldføre handlingen"
       ],
       "Using your mobile device, scan this QR code or visit": [
-        ""
+        "Brug din mobilenhed til at scanne denne QR-kode eller besøg"
       ]
     },
     "Get started checklist item": {
       "Get mobile app": [
-        ""
+        "Hent mobilapp"
       ],
       "Import contacts or emails": [
-        ""
+        "Importer kontakter eller e-mails"
       ],
       "Send a message": [
-        ""
+        "Send en besked"
       ],
       "Set up a recovery method": [
-        ""
+        "Indstil gendannelsesmetode"
       ]
     },
     "Get started checklist spotlight": {
       "You can access the checklist anytime from here": [
-        ""
+        "Du kan til enhver tid få adgang til tjeklisten her"
       ]
     },
     "Get started checklist title": {
       "Get started": [
-        ""
+        "Kom godt i gang"
       ]
     },
     "Group": {
@@ -3037,7 +3034,7 @@
         "Et frit og ucensureret internet bør være tilgængeligt for alle."
       ],
       "A recovery phrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.": [
-        "En gendannelsesfrase er en af de sikreste måder at beskytte adgangen til din konto. Du kan bruge den til at få adgang til din konto og gendanne dine krypterede data, hvis du nogensinde glemmer din adgangskode."
+        "En gendannelsessætning er en af de sikreste måder at beskytte adgangen til din konto. Du kan bruge den til at få adgang til din konto og gendanne dine krypterede data, hvis du nogensinde glemmer din adgangskode."
       ],
       "A request to unsubscribe from this mailing list will be sent to the sender of the newsletter and automatically processed.": [
         "En anmodning om at afmelde fra denne mailingliste vil blive sendt til afsenderen af nyhedsbrevet og automatisk behandlet."
@@ -3234,9 +3231,6 @@
       "Create in": [
         "Opret i"
       ],
-      "Create recovery phrase": [
-        "Opret gendannelsesfrase"
-      ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "CSV-filer fra Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora og nogle andre apps samt vCard 3.1 og 4.0-formater (UTF-8-kodning) understøttes."
       ],
@@ -3395,6 +3389,9 @@
       ],
       "Full-featured VPN with speed up to 10 Gbps.": [
         "Fuldt udstyret VPN med hastighed på op til 10 Gbps."
+      ],
+      "Generate recovery phrase": [
+        "Opret gendannelsessætning"
       ],
       "Get more storage and premium features.": [
         "Få mere lagerplads og premium-funktioner."
@@ -3683,7 +3680,7 @@
         "Vent venligst mens vi leder efter kontakter, der indeholder data krypteret med den inaktive nøgle."
       ],
       "Please write your recovery phrase down in the order it appears and keep it somewhere safe. Your recovery phrase can be used to fully recover access to your account and your encrypted messages.": [
-        "Skriv din gendannelsesfrase ned i den rækkefølge, den vises, og opbevar den et sikkert sted. Din gendannelsesfrase kan bruges til igen at få fuld adgang til din konto og dine krypterede meddelelser."
+        "Skriv din gendannelsessætning ned i den rækkefølge, den vises, og opbevar den et sikkert sted. Din gendannelsessætning kan bruges til igen at få fuld adgang til din konto og dine krypterede meddelelser."
       ],
       "Preview": [
         "Forhåndsvisning"
@@ -3711,7 +3708,7 @@
         "Modtager: "
       ],
       "Recovery phrase copied to clipboard": [
-        "Gendannelsesfrase kopieret til udklipsholderen"
+        "Gendannelsessætning kopieret til udklipsholderen"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Opfriskning af siden eller ${ link } vil automatisk løse de fleste problemer."
@@ -3765,7 +3762,7 @@
         "Vælg det e-mail-format, der som standard skal benyttes, når du sender en e-mail til denne e-mailadresse."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit. You can also merge imported calendars with existing Proton calendars.": [
-        ""
+        "Vælg, hvilke kalendere der skal importeres. Der oprettes en ny kalender for hver importeret kalender op til grænsen på 20 kalendere. Du kan også flette importerede kalendere med eksisterende Proton-kalendere."
       ],
       "Sending": [
         "Afsender"
@@ -4203,10 +4200,10 @@
         "Din Proton-konto er suspenderet. For at fortsætte med at bruge din konto skal du betale eventuelle forfaldne fakturaer."
       ],
       "Your recovery phrase": [
-        "Din gendannelsesfrase"
+        "Din gendannelsessætning"
       ],
       "Your recovery phrase is a series of 12 words in a specific order.": [
-        "Din gendannelsesfrase er en serie af 12 ord i en specifik rækkefølge."
+        "Din gendannelsessætning er en serie af 12 ord i en bestemt rækkefølge."
       ]
     },
     "info": {
@@ -4608,7 +4605,7 @@
         "Kryptér e-mails"
       ],
       "Enter organization name to confirm": [
-        ""
+        "Indtast organisationsnavn for at bekræfte"
       ],
       "Enter the 6-digit code": [
         "Indtast den sekscifrede kode"
@@ -4764,7 +4761,7 @@
         "Adressat"
       ],
       "Recovery phrase": [
-        "Gendannelsesfrase"
+        "Gendannelsessætning"
       ],
       "Region": [
         "Region"
@@ -4884,7 +4881,7 @@
         "uden vedhæftninger"
       ],
       "Your recovery phrase": [
-        "Din gendannelsesfrase"
+        "Din gendannelsessætning"
       ],
       "ZIP": [
         "Postnummer"
@@ -5206,12 +5203,12 @@
     },
     "Mail import summary": {
       "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "",
-        ""
+        "Importer alle beskeder fra ${ selectedLabelsCount } ud af ${ totalLabelsCount } etikette siden ${ periodFragment } og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importer alle beskeder fra ${ selectedLabelsCount } ud af ${ totalLabelsCount } etiketter siden ${ periodFragment } og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
       "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "",
-        ""
+        "Importer alle beskeder fra ${ totalLabelsCount } etiketten siden ${ periodFragment } og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importer alle beskeder fra ${ totalLabelsCount } etiketter siden ${ periodFragment } og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }"
       ]
     },
     "Mailbox": {
@@ -5250,7 +5247,7 @@
     },
     "Member downgrade modal": {
       "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        ""
+        "Dette vil permanent slette alle underbrugere, konti og data, der er knyttet til din organisation."
       ]
     },
     "Message": {
@@ -6090,7 +6087,7 @@
     },
     "Storage": {
       "Get extra storage for free": [
-        ""
+        "Få ekstra lagerplads gratis"
       ],
       "Release notes": [
         "Udgivelsesnoter"
@@ -6618,7 +6615,7 @@
         "Slet besked"
       ],
       "Delete organization?": [
-        ""
+        "Slet organisation?"
       ],
       "Deleting contacts": [
         "Sletter kontakter"

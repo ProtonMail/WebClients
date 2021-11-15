@@ -140,12 +140,6 @@
       "Create new folder": [
         "Créer un nouveau dossier"
       ],
-      "Created date: new to old": [
-        "Date de création: du plus récent au plus ancien"
-      ],
-      "Created date: old to new": [
-        "Date de création: du plus ancien au plus récent"
-      ],
       "Customize": [
         "Personnaliser"
       ],
@@ -211,12 +205,6 @@
       "enable desktop notifications": [
         "activer les notifications de bureau"
       ],
-      "Expires: new to old": [
-        "Date d’expiration: du plus récent au plus ancien"
-      ],
-      "Expires: old to new": [
-        "Date d’expiration: du plus ancien au plus récent"
-      ],
       "Export": [
         "Exporter"
       ],
@@ -227,7 +215,7 @@
         "Transférer en tant que pièce jointe"
       ],
       "Get link": [
-        ""
+        "Obtenir le lien"
       ],
       "Get started": [
         "Commencer"
@@ -296,7 +284,7 @@
         "Mise en page de la boîte aux lettres"
       ],
       "Manage link": [
-        ""
+        "Gérer le lien"
       ],
       "Mark for deletion": [
         "Marquer pour suppression"
@@ -316,6 +304,9 @@
       "More info: ${ safeTitle }": [
         "Plus d'infos: ${ safeTitle }"
       ],
+      "More options": [
+        "Plus d'options"
+      ],
       "Move": [
         "Déplacer"
       ],
@@ -324,12 +315,6 @@
       ],
       "Move to trash": [
         "Déplacer vers la corbeille"
-      ],
-      "Name: A to Z": [
-        "Nom: de A à Z"
-      ],
-      "Name: Z to A": [
-        "Nom: de Z à A"
       ],
       "New upload": [
         "Nouveau téléversement"
@@ -484,12 +469,6 @@
       "Signing out": [
         "Déconnexion"
       ],
-      "Size: large to small": [
-        "Taille: du plus grand au plus petit"
-      ],
-      "Size: small to large": [
-        "Taille: du plus petit au plus grand"
-      ],
       "Skip": [
         "Ignorer"
       ],
@@ -526,12 +505,6 @@
       "Try another method": [
         "Essayer une autre méthode"
       ],
-      "Type: A to Z": [
-        "Type: de A à Z"
-      ],
-      "Type: Z to A": [
-        "Type: de Z à A"
-      ],
       "Undo": [
         "Annuler"
       ],
@@ -552,12 +525,6 @@
       ],
       "Upload picture": [
         "Téléverser une image"
-      ],
-      "Uploaded date: new to old": [
-        "Date de modification: du plus récent au plus ancien"
-      ],
-      "Uploaded date: old to new": [
-        "Date de modification: du plus ancien au plus récent"
       ],
       "Use ${ label } theme": [
         "Utiliser le thème « ${ label } »"
@@ -881,9 +848,6 @@
       "Calendar could not be decrypted": [
         "Le calendrier n'a pas pu être déchiffré"
       ],
-      "Calendar could not be found": [
-        "Le calendrier n'a pas pu être trouvé"
-      ],
       "Calendar is syncing": [
         "Synchronisation du calendrier"
       ],
@@ -1154,6 +1118,9 @@
       "Error connecting to the Bitcoin API.": [
         "Erreur de connexion à l’API Bitcoin."
       ],
+      "Failed to load the link": [
+        "Échec du chargement du lien"
+      ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "Le fichier « ${ item.name } » ne peut pas être téléversé à cause d'une erreur « ${ error } »"
       ],
@@ -1230,7 +1197,7 @@
         "Certains groupes n'ont pas de contacts: ${ noContactGroupList } "
       ],
       "Organization not recognized. Try again.": [
-        ""
+        "Organisation non reconnue. Réessayez."
       ],
       "Passwords do not match": [
         "Les mots de passe ne correspondent pas"
@@ -2042,6 +2009,9 @@
       "Learn more": [
         "En savoir plus"
       ],
+      "Link copied to clipboard": [
+        "Lien copié dans le presse-papier"
+      ],
       "Link expires: ": [
         "Le lien expire le: "
       ],
@@ -2224,7 +2194,7 @@
         "Sélectionnez le format de message que vous souhaitez utiliser par défaut lors de l'envoi d'un courriel à cette adresse électronique."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit. You can also merge imported calendars with existing Proton calendars.": [
-        ""
+        "Sélectionnez les calendriers à importer. Un nouveau calendrier sera créé pour chaque calendrier importé jusqu'à la limite de 20 calendriers personnels. Vous pouvez également fusionner des calendriers importés avec des calendriers Proton existants."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Les serveurs sont inaccessibles. Veuillez réessayer dans quelques minutes"
@@ -2809,6 +2779,9 @@
       "Country": [
         "Pays"
       ],
+      "Created": [
+        "Créé"
+      ],
       "CVV code": [
         "Code CVC"
       ],
@@ -2838,7 +2811,7 @@
         "Chiffrer les courriels"
       ],
       "Enter organization name to confirm": [
-        ""
+        "Saisissez le nom de l'organisation pour confirmer"
       ],
       "Enter the 6-digit code": [
         "Saisissez le code à 6 chiffres"
@@ -2927,6 +2900,9 @@
       "Merge a folder": [
         "Fusionner un dossier"
       ],
+      "Name": [
+        "Nom"
+      ],
       "Name on card": [
         "Nom sur la carte"
       ],
@@ -3008,6 +2984,9 @@
       "Sign emails": [
         "Signer les courriels"
       ],
+      "Size": [
+        "Taille"
+      ],
       "Skip file": [
         "Ignorer le fichier"
       ],
@@ -3041,6 +3020,9 @@
       "Two-factor authentication code": [
         "Code d'authentification à deux facteurs"
       ],
+      "Type": [
+        "Type"
+      ],
       "Unknown file": [
         "Fichier inconnu"
       ],
@@ -3053,17 +3035,14 @@
       "Unlock later": [
         "Déverrouiller plus tard"
       ],
-      "Up to ${ parentLinkName }": [
-        "Vers ${ parentLinkName }"
-      ],
-      "Up to the parent folder": [
-        "Vers le dossier parent"
-      ],
       "Upload anyway": [
         "Téléverser quand même"
       ],
       "Upload picture": [
         "Téléverser une image"
+      ],
+      "Uploaded": [
+        "Téléversé"
       ],
       "Username or ProtonMail address": [
         "Nom d'utilisateur ou adresse ProtonMail"
@@ -3292,12 +3271,12 @@
     },
     "Mail import summary": {
       "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "",
-        ""
+        "Importer tous les messages de ${ selectedLabelsCount } sur ${ totalLabelsCount } label depuis ${ periodFragment } et les labelliser comme ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importer tous les messages de ${ selectedLabelsCount } sur ${ totalLabelsCount } labels depuis ${ periodFragment } et les labelliser comme ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
       "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "",
-        ""
+        "Importer tous les messages depuis ${ totalLabelsCount } label depuis ${ periodFragment } et les labelliser comme ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importer tous les messages depuis ${ totalLabelsCount } labels depuis ${ periodFragment } et les labelliser comme ${ LABEL_MARKUP_PLACEHOLDER }"
       ]
     },
     "Many Others": {
@@ -3307,7 +3286,7 @@
     },
     "Member downgrade modal": {
       "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        ""
+        "Cela supprimera définitivement tous les sous-utilisateur·rice·s, comptes et données associés à votre organisation."
       ]
     },
     "Message display when a new app version is available": {
@@ -4148,7 +4127,7 @@
         "Supprimer ${ Name }"
       ],
       "Delete organization?": [
-        ""
+        "Supprimer l’organisation?"
       ],
       "Delete permanently": [
         "Supprimer définitivement"

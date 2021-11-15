@@ -31,11 +31,11 @@
       "${ BRAND_NAME } shop": [
         "Tienda ${ BRAND_NAME }"
       ],
-      "Activate": [
-        "Activar"
-      ],
       "activate": [
         "activar"
+      ],
+      "Activate": [
+        "Activar"
       ],
       "Activate ${ Name }@pm.me": [
         "Activar ${ Name }@pm.me"
@@ -51,6 +51,9 @@
       ],
       "Add address": [
         "Añadir dirección"
+      ],
+      "Add calendar": [
+        "Añadir calendario"
       ],
       "Add condition": [
         "Añadir condición"
@@ -223,12 +226,6 @@
       "Create link": [
         "Crear enlace"
       ],
-      "Create new recovery phrase": [
-        "Crear una frase de recuperación nueva"
-      ],
-      "Create new recovery phrase?": [
-        "¿Crear una frase de recuperación nueva?"
-      ],
       "Customize": [
         "Personalizar"
       ],
@@ -348,6 +345,15 @@
       ],
       "Generate key": [
         "Generar clave"
+      ],
+      "Generate new recovery phrase": [
+        "Generar frase de recuperación nueva"
+      ],
+      "Generate new recovery phrase?": [
+        "¿Generar frase de recuperación nueva?"
+      ],
+      "Generate recovery phrase": [
+        "Generar frase de recuperación"
       ],
       "Get ProtonVPN Plus": [
         "Obtener ProtonVPN Plus"
@@ -501,6 +507,9 @@
       ],
       "Reconnect": [
         "Reconectar"
+      ],
+      "Recover data": [
+        "Recuperar datos"
       ],
       "Refresh status": [
         "Actualizar estado"
@@ -696,9 +705,6 @@
       ],
       "Submit": [
         "Enviar"
-      ],
-      "Subscribe to calendar": [
-        "Suscribirse al calendario"
       ],
       "Support": [
         "Soporte"
@@ -1287,9 +1293,9 @@
       ]
     },
     "Calendar limit warning": {
-      "You have reached the maximum of ${ calendarsLimit } calendar.": [
-        "Ha alcanzado el máximo de ${ calendarsLimit } calendario.",
-        "Ha alcanzado el máximo de ${ calendarsLimit } calendarios."
+      "You have reached the maximum of ${ calendarsLimit } personal calendar.": [
+        "Ha alcanzado el máximo de ${ calendarsLimit } calendario personal.",
+        "Ha alcanzado el máximo de ${ calendarsLimit } calendarios personales."
       ],
       "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } subscribed calendar.": [
         "Ha alcanzado el máximo de ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } calendario suscrito.",
@@ -1316,9 +1322,6 @@
     "Calendar subscription not synced error": {
       "Calendar could not be decrypted": [
         "No se pudo descifrar el calendario"
-      ],
-      "Calendar could not be found": [
-        "No se pudo encontrar el calendario"
       ],
       "Calendar is syncing": [
         "El calendario se está sincronizando"
@@ -3433,9 +3436,6 @@
       "Create in": [
         "Crear en"
       ],
-      "Creating a new recovery phrase will deactivate your old one.": [
-        "Crear una frase de recuperación nueva deshabilitará la anterior."
-      ],
       "Creating your Proton account": [
         "Creando su cuenta de Proton"
       ],
@@ -3474,15 +3474,6 @@
       ],
       "Delete link?": [
         "¿Eliminar enlace?"
-      ],
-      "Disabling this will prevent this email from being used for account recovery.": [
-        "Deshabilitar esto evitará que este correo electrónico se use para recuperar la cuenta."
-      ],
-      "Disabling this will prevent this phone number from being used for account recovery.": [
-        "Deshabilitar esto evitará que este número de teléfono sea usado para la recuperación de la cuenta."
-      ],
-      "Disabling this will prevent your recovery phrase from being used for account recovery.": [
-        "Deshabilitar esto evitará que su frase de recuperación se use para recuperar la cuenta."
       ],
       "Discount applied to your subscription with coupon ${ code }": [
         "Descuento aplicado a su suscripción con el cupón ${ code }"
@@ -3631,6 +3622,9 @@
       ],
       "Full-featured VPN with speed up to 10 Gbps.": [
         "VPN completa con velocidad de hasta 10 Gbps."
+      ],
+      "Generating a new recovery phrase will deactivate your old one.": [
+        "Generar una frase de recuperación nueva deshabilitará la anterior."
       ],
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
         "¡Dele su clave pública a sus amigos, o publíquela en línea, para que todo el mundo pueda enviarle un correo electrónico cifrado de extremo a extremo!"
@@ -4542,6 +4536,9 @@
       ],
       "Your Block List is empty.": [
         "Su Lista no Deseada está vacía."
+      ],
+      "Your data is encrypted, you can recover your data by reactivating your keys.": [
+        "Sus datos están cifrados, puede recuperar sus datos al reactivar sus claves."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "Sus datos están listos para importar desde ${ importedEmailAddressStrong } a su cuenta de Proton."
@@ -5513,17 +5510,14 @@
       "Recovery code": [
         "Código de recuperación"
       ],
-      "Recovery email": [
-        "Correo de recuperación"
-      ],
       "Recovery email address": [
         "Dirección de correo de recuperación"
       ],
       "Recovery file": [
         "Archivo de recuperación"
       ],
-      "Recovery phone": [
-        "Teléfono de recuperación"
+      "Recovery phone number": [
+        "Número telefónico de recuperación"
       ],
       "Recovery phrase": [
         "Frase de recuperación"
@@ -5728,9 +5722,6 @@
       ]
     },
     "label": {
-      "Phone number": [
-        "Número de teléfono"
-      ],
       "Recovery phone number": [
         "Número telefónico de recuperación"
       ],
@@ -7183,8 +7174,8 @@
       "Calendar URL": [
         "URL del calendario"
       ],
-      "You can subscribe to someone else's calendar by pasting its URL below. This will give you access to a read-only version of this calendar.\n${ kbLink }": [
-        "Puede suscribirse al calendario de otra persona pegando su URL a continuación. Esto le dará acceso a una versión de solo lectura de este calendario.\n${ kbLink }"
+      "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Subscribed calendars.\n${ kbLink }": [
+        "Para suscribirse a un calendario externo o público y sus actualizaciones, ingrese la URL. Se añadirá una versión de solo lectura del calendario a sus calendarios suscritos.\n${ kbLink }"
       ]
     },
     "Subscribe to calendar modal description": {
@@ -7821,6 +7812,9 @@
       ],
       "Enable keyboard shortcuts": [
         "Habilitar atajos de teclado"
+      ],
+      "Encrypted data": [
+        "Datos cifrados"
       ],
       "Encryption & keys": [
         "Cifrado y claves"

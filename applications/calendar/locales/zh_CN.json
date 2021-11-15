@@ -116,6 +116,9 @@
       "Continue": [
         "继续"
       ],
+      "Continue import": [
+        "继续导入"
+      ],
       "Continue with Google": [
         "使用 Google 帐号登录"
       ],
@@ -124,6 +127,9 @@
       ],
       "Create": [
         "创建"
+      ],
+      "Create calendar": [
+        "创建日历"
       ],
       "Create event": [
         "创建事件"
@@ -229,6 +235,9 @@
       ],
       "Import": [
         "导入"
+      ],
+      "Import events": [
+        "导入事件"
       ],
       "Import from .csv or vCard": [
         "从 .csv 或 vCard 导入"
@@ -523,11 +532,6 @@
         "您没有任何群组"
       ]
     },
-    "Add calendar icon tooltip": {
-      "Create calendar": [
-        "创建日历"
-      ]
-    },
     "Addon": {
       "+ ${ addresses } email address": [
         "+ ${ addresses } 个邮箱地址"
@@ -611,6 +615,9 @@
       "By leaving now, some contacts may not be imported": [
         "如果现在离开，一些联系人可能无法导入"
       ],
+      "By leaving now, some events may not be imported": [
+        ""
+      ],
       "By leaving now, you will lose your event.": [
         "如果现在退出，该日程将不会被保存。"
       ]
@@ -624,6 +631,26 @@
       ],
       "Proton applications": [
         "Proton 应用"
+      ]
+    },
+    "Attached ics file error": {
+      "Empty ICS file": [
+        "ICS 文件为空"
+      ],
+      "Invalid event": [
+        "无效的日程"
+      ],
+      "Invalid ICS file": [
+        "无效的 ICS 文件"
+      ],
+      "Invalid method": [
+        ""
+      ],
+      "Unsupported calendar component": [
+        "不受支持的日历组件"
+      ],
+      "Unsupported event": [
+        "不支持的日程"
       ]
     },
     "Attendee role": {
@@ -882,6 +909,14 @@
         "您暂时接受了邀请"
       ]
     },
+    "Calendar sidebar dropdown item": {
+      "Add calendar from URL": [
+        "通过链接添加日历"
+      ],
+      "More options": [
+        "更多选项"
+      ]
+    },
     "Calendar status": {
       "Not synced": [
         "未同步"
@@ -893,9 +928,6 @@
     "Calendar subscription not synced error": {
       "Calendar could not be decrypted": [
         "未能解密日历"
-      ],
-      "Calendar could not be found": [
-        "找不到日历"
       ],
       "Calendar is syncing": [
         "日历正在同步中"
@@ -1126,6 +1158,9 @@
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "通过拖放可调整联系人合并优先级，未勾选的联系人不会被合并"
       ],
+      "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
+        ""
+      ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "您可以选择稍后删除既不想合并也不想保留的联系人，点击合并按钮后他们就会被删除"
       ]
@@ -1167,6 +1202,11 @@
       ],
       "Upload / download files": [
         "上传/下载文件"
+      ]
+    },
+    "Dropwdown action icon tooltip": {
+      "Add calendar": [
+        "新建日历"
       ]
     },
     "Duration": {
@@ -1592,8 +1632,38 @@
       ]
     },
     "Error importing calendar": {
+      "${ CALENDAR_APP_NAME } only supports importing calendars with iCal version 2.0.": [
+        ""
+      ],
+      "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
+        ""
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
+        ""
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Only ICS file formats are allowed.": [
+        "文件 ${ formattedFilename } 上传失败，我们只接受 ICS 文件格式。"
+      ],
+      "An error occurred uploading your file. No file has been selected.": [
+        "文件上传失败，尚未选择文件。"
+      ],
       "An unexpected error occurred. Import must be restarted.": [
         "发生未知错误，需重新导入"
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } events.": [
+        ""
+      ],
+      "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
+        ""
+      ],
+      "Your file ${ formattedFilename } has no events to be imported.": [
+        ""
+      ],
+      "Your file ${ formattedFilename } is empty.": [
+        "文件 ${ formattedFilename } 为空。"
+      ],
+      "Your file ${ formattedFilename } is not a calendar.": [
+        ""
       ]
     },
     "Error importing contact": {
@@ -1627,12 +1697,113 @@
         "文件 ${ formattedFilename } 为空"
       ]
     },
+    "Error importing event": {
+      "Bad format. Component cannot be read.": [
+        "格式错误，组件无法读取。"
+      ],
+      "Calendar": [
+        "日历"
+      ],
+      "Calendar timezone not supported": [
+        ""
+      ],
+      "Component with wrong format": [
+        ""
+      ],
+      "Custom timezone": [
+        "自定义时区"
+      ],
+      "Edited event not supported": [
+        ""
+      ],
+      "Element": [
+        "元素"
+      ],
+      "Encryption failed": [
+        ""
+      ],
+      "End time out of bounds": [
+        ""
+      ],
+      "Event": [
+        "事件"
+      ],
+      "Event validation failed": [
+        ""
+      ],
+      "Floating times not supported": [
+        ""
+      ],
+      "Free-busy time information": [
+        ""
+      ],
+      "Invalid event": [
+        ""
+      ],
+      "Journal entry": [
+        ""
+      ],
+      "Malformed all-day event": [
+        ""
+      ],
+      "Malformed end time": [
+        ""
+      ],
+      "Malformed recurring event": [
+        ""
+      ],
+      "Malformed start time": [
+        ""
+      ],
+      "Missing start time": [
+        ""
+      ],
+      "no UID, title or start time": [
+        ""
+      ],
+      "Non-Gregorian": [
+        ""
+      ],
+      "Notification out of bounds": [
+        ""
+      ],
+      "Original recurring event could not be found": [
+        ""
+      ],
+      "Recurring event has no occurrences": [
+        ""
+      ],
+      "Recurring rule not supported": [
+        ""
+      ],
+      "Start time out of bounds": [
+        ""
+      ],
+      "Timezone": [
+        "时区"
+      ],
+      "Timezone not supported": [
+        ""
+      ],
+      "To-do entry": [
+        ""
+      ],
+      "Unknown": [
+        "未知"
+      ],
+      "Unsupported event": [
+        ""
+      ]
+    },
     "Error message": {
       "Brace yourself till we get the error fixed.": [
         "别担心，我们会解决的。"
       ],
       "Error: ${ errorMessage }": [
         "错误：${ errorMessage }"
+      ],
+      "Invalid URL": [
+        ""
       ],
       "Oops, something went wrong": [
         "糟糕，出错了"
@@ -1685,6 +1856,44 @@
     "Event info. Organizer name": {
       "You": [
         "你"
+      ]
+    },
+    "Event invitation error": {
+      "Attached ICS file could not be decrypted": [
+        ""
+      ],
+      "Attached ICS file could not be parsed": [
+        ""
+      ],
+      "Invalid invitation": [
+        ""
+      ],
+      "Invalid response": [
+        ""
+      ],
+      "Unexpected error": [
+        "发生意外错误"
+      ],
+      "Unsupported invitation": [
+        ""
+      ],
+      "Unsupported response": [
+        ""
+      ],
+      "We could not cancel the event in your calendar": [
+        ""
+      ],
+      "We could not retrieve the event from your calendar": [
+        ""
+      ],
+      "We could not update the event in your calendar": [
+        ""
+      ],
+      "Your answer was sent, but the event could not be added to your calendar": [
+        ""
+      ],
+      "Your answer was sent, but the event could not be updated in your calendar": [
+        ""
       ]
     },
     "Event popover close button": {
@@ -1792,13 +2001,48 @@
       ]
     },
     "Import calendar": {
+      "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
+        ""
+      ],
+      "An error occurred while encrypting and adding your event. No event could be imported.": [
+        ""
+      ],
+      "An error occurred while encrypting and adding your events. ${ totalImported } out of ${ totalToImport } events successfully imported.": [
+        ""
+      ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "正在加密并添加联系人：已完成 ${ totalImported }/${ totalToImport }"
+      ],
+      "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
+        ""
+      ],
+      "Event successfully imported. The imported event will now appear in your calendar.": [
+        ""
+      ],
+      "Please don't close the tab before the importing process is finished.": [
+        ""
       ]
     },
     "Import calendar warning": {
+      "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
+        ""
+      ],
       "vCard versions < 3.0": [
         "vCard 版本低于 3.0"
+      ]
+    },
+    "Import calendar; import invitation": {
+      "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your Proton email address.": [
+        ""
+      ],
+      "This file contains an event invitation:": [
+        ""
+      ],
+      "This file contains an invitation response:": [
+        ""
+      ],
+      "This file contains some data that we cannot import:": [
+        ""
       ]
     },
     "Import contact": {
@@ -1844,8 +2088,17 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded }/${ totalContacts } 联系人将不会被导入，点击查看详情"
       ],
+      "${ totalEventsDiscarded } out of ${ totalEvents } events will not be imported. Expand for details.": [
+        ""
+      ],
       "No contact can be imported. Click for details": [
         "没有联系人可供导入，点击查看详情"
+      ],
+      "No event can be imported. Expand for details.": [
+        ""
+      ],
+      "Part of your calendar content is not supported and will not be imported.": [
+        ""
       ]
     },
     "Info": {
@@ -2060,7 +2313,7 @@
         "连接"
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
-        ""
+        "新建 ${ calendarsToBeCreated } 个日历"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "给导入的邮件加标签，指定导入的时间范围，并选择要导入的文件夹。"
@@ -2177,7 +2430,7 @@
         "导入 ${ contactsFragment }和 ${ contactsGroupsFragment }"
       ],
       "Import ${ selectedCalendarsCount } of ${ totalCalendarsCount } calendar": [
-        ""
+        "导入 ${ selectedCalendarsCount }/${ totalCalendarsCount } 个日历"
       ],
       "Import from": [
         "导入自"
@@ -2360,7 +2613,7 @@
         "选择向该地址发送邮件的首选格式"
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit. You can also merge imported calendars with existing Proton calendars.": [
-        ""
+        "请选择要导入的日历。将会为每个导入的日历创建一个新日历，最多可包含 20 个日历。您也可以将导入的日历与现有的 Proton 日历合并。"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "服务器无法访问，请过几分钟后再试"
@@ -2987,7 +3240,7 @@
         "结束"
       ],
       "Enter organization name to confirm": [
-        ""
+        "请输入机构名称进行确认"
       ],
       "Enter the 6-digit code": [
         "请输入 6 位验证码"
@@ -3038,9 +3291,12 @@
         "导入联系人"
       ],
       "Import interval": [
-        ""
+        "导入间隔"
       ],
       "Import to email address": [
+        "导入到邮箱地址"
+      ],
+      "Import to:": [
         ""
       ],
       "Keyboard shortcuts": [
@@ -3247,7 +3503,7 @@
         "创建标签"
       ],
       "Edit folder": [
-        ""
+        "编辑文件夹"
       ],
       "Edit label": [
         "编辑标签"
@@ -3444,9 +3700,25 @@
         "纯文本"
       ]
     },
+    "Modal action": {
+      "Close": [
+        "关闭"
+      ],
+      "Manage calendars": [
+        "管理日历"
+      ]
+    },
     "Modal title": {
       "Time zone changed": [
         "时区已更改"
+      ],
+      "Unable to add more calendars": [
+        "无法添加更多日历"
+      ]
+    },
+    "Modal title and action": {
+      "Add calendar": [
+        "新建日历"
       ]
     },
     "Monthly recurring event, frequency": {
@@ -4098,6 +4370,40 @@
         "您当前的存储空间："
       ]
     },
+    "Subscribe to calendar modal": {
+      "Calendar URL": [
+        "日历链接"
+      ],
+      "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Subscribed calendars.\n${ kbLink }": [
+        "要订阅外部或公共日历及其更新，请输入相应链接。一个只读版日历将添加到您订阅的日历中。\n${ kbLink }"
+      ]
+    },
+    "Subscribe to calendar modal description": {
+      "Learn how to get a private calendar link.": [
+        "了解如何获取私人日历链接。"
+      ]
+    },
+    "Subscribed calendar extension warning": {
+      "By using this link, Google will make the calendar you are subscribing to public": [
+        "通过使用此链接，Google 会将您订阅的日历设为公开"
+      ],
+      "This link might be wrong": [
+        "此链接可能有误"
+      ]
+    },
+    "Subscribed calendar feature unavailable error": {
+      "Subscribing to a calendar is unavailable at the moment": [
+        ""
+      ]
+    },
+    "Subscribed calendar limit reached modal body": {
+      "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } subscribed calendar.": [
+        "您已达到最多 ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } 个订阅日历的上限。"
+      ],
+      "You have reached the maximum of ${ personalCalendarLimit } personal calendar.": [
+        "您已达到最多 ${ personalCalendarLimit } 个个人日历的上限。"
+      ]
+    },
     "Success": {
       "A cancellation email will be sent to removed participants for all the events in this series.": [
         "将向该系列活动中的所有活动删除的参与者发送取消邮件"
@@ -4426,6 +4732,9 @@
       "Contacts": [
         "联系人"
       ],
+      "Continue with partial import?": [
+        "继续以部分导入进行吗？"
+      ],
       "Coupon discount": [
         "优惠券折扣"
       ],
@@ -4451,7 +4760,7 @@
         "当前等级"
       ],
       "Customize and confirm": [
-        ""
+        "自定义并确认"
       ],
       "Customize calendar import": [
         "自定义日历导入"
@@ -4475,7 +4784,7 @@
         "删除日程"
       ],
       "Delete organization?": [
-        ""
+        "删除机构?"
       ],
       "Delete recurring event": [
         "删除周期性活动"
@@ -4543,8 +4852,17 @@
       "Human verification": [
         "身份验证"
       ],
+      "Import as simple event?": [
+        "导入为简单活动？"
+      ],
       "Import contacts": [
         "导入联系人"
+      ],
+      "Import events": [
+        "导入事件"
+      ],
+      "Import failed": [
+        "导入失败"
       ],
       "Import groups": [
         "导入群组"

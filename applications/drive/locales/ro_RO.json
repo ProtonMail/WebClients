@@ -140,12 +140,6 @@
       "Create new folder": [
         "Creare folder"
       ],
-      "Created date: new to old": [
-        "Data creării: de la noi la vechi"
-      ],
-      "Created date: old to new": [
-        "Data creării: de la noi la vechi"
-      ],
       "Customize": [
         "Personalizare"
       ],
@@ -212,12 +206,6 @@
       ],
       "enable desktop notifications": [
         "activare notificări pe desktop"
-      ],
-      "Expires: new to old": [
-        "Expirare: de la noi la vechi"
-      ],
-      "Expires: old to new": [
-        "Expirare: de la vechi la noi"
       ],
       "Export": [
         "Exportare"
@@ -318,6 +306,9 @@
       "More info: ${ safeTitle }": [
         "Mai multe informații: ${ safeTitle }"
       ],
+      "More options": [
+        "Mai multe opțiuni"
+      ],
       "Move": [
         "Mutare"
       ],
@@ -326,12 +317,6 @@
       ],
       "Move to trash": [
         "Mutare în gunoi"
-      ],
-      "Name: A to Z": [
-        "Nume: de la A la Z"
-      ],
-      "Name: Z to A": [
-        "Nume: de la Z la A"
       ],
       "New upload": [
         "Încărcare nouă"
@@ -486,12 +471,6 @@
       "Signing out": [
         "Deconectare"
       ],
-      "Size: large to small": [
-        "Mărime: mare la început"
-      ],
-      "Size: small to large": [
-        "Mărime: mică la început"
-      ],
       "Skip": [
         "Omitere"
       ],
@@ -528,12 +507,6 @@
       "Try another method": [
         "Încercaţi o altă metodă"
       ],
-      "Type: A to Z": [
-        "Tip: de la A la Z"
-      ],
-      "Type: Z to A": [
-        "Tip: de la Z la A"
-      ],
       "Undo": [
         "Anulare"
       ],
@@ -554,12 +527,6 @@
       ],
       "Upload picture": [
         "Încărcare imagine"
-      ],
-      "Uploaded date: new to old": [
-        "Data încărcării: de la noi la vechi"
-      ],
-      "Uploaded date: old to new": [
-        "Data încărcării: de la vechi la noi"
       ],
       "Use ${ label } theme": [
         "Folosire tema ${ label }"
@@ -887,9 +854,6 @@
       "Calendar could not be decrypted": [
         "Calendarul nu a putut fi decriptat"
       ],
-      "Calendar could not be found": [
-        "Calendarul nu a putut fi găsit"
-      ],
       "Calendar is syncing": [
         "Calendarul se sincronizează."
       ],
@@ -1163,6 +1127,9 @@
       ],
       "Error connecting to the Bitcoin API.": [
         "Eroare de conectare la Bitcoin API."
+      ],
+      "Failed to load the link": [
+        "Nu s-a reușit încărcarea linkului"
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "Fișierul „${ item.name }” nu poate fi încărcat din cauza erorii „${ error }”."
@@ -2090,6 +2057,9 @@
       "Learn more": [
         "Detalii"
       ],
+      "Link copied to clipboard": [
+        "Link copiat în clipboard"
+      ],
       "Link expires: ": [
         "Expirare legătură: "
       ],
@@ -2859,6 +2829,9 @@
       "Country": [
         "Țara"
       ],
+      "Created": [
+        "Creat la"
+      ],
       "CVV code": [
         "Cod CVV"
       ],
@@ -2978,6 +2951,9 @@
       "Merge a folder": [
         "Îmbinare folder"
       ],
+      "Name": [
+        "Nume"
+      ],
       "Name on card": [
         "Titular card"
       ],
@@ -3059,6 +3035,9 @@
       "Sign emails": [
         "Semnare mesaje"
       ],
+      "Size": [
+        "Mărime"
+      ],
       "Skip file": [
         "Omitere fișier"
       ],
@@ -3092,6 +3071,9 @@
       "Two-factor authentication code": [
         "Cod autentificare cu doi factori"
       ],
+      "Type": [
+        "Tip"
+      ],
       "Unknown file": [
         "Fișier necunoscut"
       ],
@@ -3104,17 +3086,14 @@
       "Unlock later": [
         "Deblocați mai târziu"
       ],
-      "Up to ${ parentLinkName }": [
-        "Până la ${ parentLinkName }"
-      ],
-      "Up to the parent folder": [
-        "Până la folderul principal"
-      ],
       "Upload anyway": [
         "Încărcare așa"
       ],
       "Upload picture": [
         "Încărcare imagine"
+      ],
+      "Uploaded": [
+        "Încărcat"
       ],
       "Username or ProtonMail address": [
         "Nume de utilizator sau e-mail ProtonMail"

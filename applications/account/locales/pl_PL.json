@@ -31,11 +31,11 @@
       "${ BRAND_NAME } shop": [
         "Sklep ${ BRAND_NAME }"
       ],
-      "Activate": [
-        "Aktywuj"
-      ],
       "activate": [
         "aktywować"
+      ],
+      "Activate": [
+        "Aktywuj"
       ],
       "Activate ${ Name }@pm.me": [
         "Aktywuj adres ${ Name }@pm.me"
@@ -51,6 +51,9 @@
       ],
       "Add address": [
         "Dodaj adres"
+      ],
+      "Add calendar": [
+        "Dodaj kalendarz"
       ],
       "Add condition": [
         "Dodaj warunek"
@@ -223,12 +226,6 @@
       "Create link": [
         "Utwórz link"
       ],
-      "Create new recovery phrase": [
-        "Utwórz nowe hasło odzyskiwania"
-      ],
-      "Create new recovery phrase?": [
-        "Utworzyć nowe hasło odzyskiwania?"
-      ],
       "Customize": [
         "Dostosuj"
       ],
@@ -348,6 +345,15 @@
       ],
       "Generate key": [
         "Generuj klucz"
+      ],
+      "Generate new recovery phrase": [
+        "Generuj nowe hasło odzyskiwania"
+      ],
+      "Generate new recovery phrase?": [
+        "Wygenerować nowe hasło odzyskiwania?"
+      ],
+      "Generate recovery phrase": [
+        "Generuj hasło odzyskiwania"
       ],
       "Get ProtonVPN Plus": [
         "Wybierz plan ProtonVPN Plus"
@@ -501,6 +507,9 @@
       ],
       "Reconnect": [
         "Połącz ponownie"
+      ],
+      "Recover data": [
+        "Odzyskaj dane"
       ],
       "Refresh status": [
         "Odśwież status"
@@ -696,9 +705,6 @@
       ],
       "Submit": [
         "Wyślij"
-      ],
-      "Subscribe to calendar": [
-        "Subskrybuj kalendarz"
       ],
       "Support": [
         "Wsparcie"
@@ -1305,11 +1311,11 @@
       ]
     },
     "Calendar limit warning": {
-      "You have reached the maximum of ${ calendarsLimit } calendar.": [
-        "Osiągnąłeś maksymalną liczbę kalendarzy (${ calendarsLimit }).",
-        "Osiągnąłeś maksymalną liczbę kalendarzy (${ calendarsLimit }).",
-        "Osiągnąłeś maksymalną liczbę kalendarzy (${ calendarsLimit }).",
-        "Osiągnąłeś maksymalną liczbę kalendarzy (${ calendarsLimit })."
+      "You have reached the maximum of ${ calendarsLimit } personal calendar.": [
+        "Osiągnąłeś maksymalną liczbę osobistych kalendarzy (${ calendarsLimit }).",
+        "Osiągnąłeś maksymalną liczbę osobistych kalendarzy (${ calendarsLimit }).",
+        "Osiągnąłeś maksymalną liczbę osobistych kalendarzy (${ calendarsLimit }).",
+        "Osiągnąłeś maksymalną liczbę osobistych kalendarzy (${ calendarsLimit })."
       ],
       "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } subscribed calendar.": [
         "Osiągnąłeś maksymalną liczbę subskrybowanych kalendarzy (${ MAX_SUBSCRIBED_CALENDARS_PER_USER }).",
@@ -1338,9 +1344,6 @@
     "Calendar subscription not synced error": {
       "Calendar could not be decrypted": [
         "Kalendarz nie może zostać odszyfrowany"
-      ],
-      "Calendar could not be found": [
-        "Kalendarz nie został znaleziony"
       ],
       "Calendar is syncing": [
         "Kalendarz jest synchronizowany"
@@ -1985,7 +1988,7 @@
         "Klucz organizacji nie został odszyfrowany."
       ],
       "Organization not recognized. Try again.": [
-        ""
+        "Organizacja nie została rozpoznana. Spróbuj ponownie."
       ],
       "Passwords do not match": [
         "Hasła nie pasują do siebie"
@@ -2215,7 +2218,7 @@
         "Wystąpił nieoczekiwany błąd. Importowanie musi zostać ponownie uruchomione."
       ],
       "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } events.": [
-        "Plik ${ formattedFilename } posiada więcej niż ${ MAX_IMPORT_EVENTS_STRING } wydarzeń."
+        "Plik ${ formattedFilename } zawiera więcej niż ${ MAX_IMPORT_EVENTS_STRING } wydarzeń."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "Plik ${ formattedFilename } jest nieprawidłowy i nie może zostać zaimportowany."
@@ -2252,7 +2255,7 @@
         "Wystąpił błąd podczas przesyłania pliku. Nie został wybrany żaden plik."
       ],
       "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
-        "Plik ${ formattedFilename } posiada więcej niż ${ MAX_IMPORT_CONTACTS_STRING } kontaktów."
+        "Plik ${ formattedFilename } zawiera więcej niż ${ MAX_IMPORT_CONTACTS_STRING } kontaktów."
       ],
       "Your file ${ formattedFilename } has no contacts to be imported.": [
         "Plik ${ formattedFilename } nie posiada kontaktów do zaimportowania."
@@ -2840,7 +2843,7 @@
     },
     "Import contacts": {
       "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
-        "Wystąpił błąd podczas szyfrowania i dodawania kontaktów. Liczba zaimportowanych kontaktów: ${ totalImported } na ${ totalToImport }."
+        "Wystąpił błąd podczas szyfrowania i dodawania kontaktów. Pomyślnie zaimportowano ${ totalImported } z ${ totalToImport } kontaktów."
       ],
       "Contact successfully imported. The imported contact will now appear in your contact list.": [
         "Kontakt został zaimportowany i pojawi się w Twojej liście kontaktów.",
@@ -3306,7 +3309,7 @@
         "Dodaj adres @pm.me do swojego konta. To prostsza i krótsza domena dla skrótu \"ProtonMail me\" lub \"Private Message me\"."
       ],
       "Add a recovery email address": [
-        ""
+        "Dodaj adres pomocniczy"
       ],
       "Add a recovery phone number": [
         "Dodaj numer pomocniczy"
@@ -3333,7 +3336,7 @@
         "Adresy"
       ],
       "After a password reset your data is locked in encrypted form to keep it safe. To decrypt and view your emails and other data, you need a recovery file or recovery phrase.": [
-        ""
+        "Po zresetowaniu hasła, dla bezpieczeństwa, dane zostaną zablokowane w zaszyfrowanym formacie. Aby odszyfrować wiadomości i inne dane, będziesz potrzebować pliku odzyskiwania lub hasła odzyskiwania."
       ],
       "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
         "Po dokonaniu płatności w Bitcoinach wykonaj tę instrukcję, aby ulepszyć konto."
@@ -3539,9 +3542,6 @@
       "Create in": [
         "Utwórz w"
       ],
-      "Creating a new recovery phrase will deactivate your old one.": [
-        "Nowe hasło odzyskiwania zastąpi stare."
-      ],
       "Creating your Proton account": [
         "Tworzenie konta Proton"
       ],
@@ -3580,15 +3580,6 @@
       ],
       "Delete link?": [
         "Usunąć link?"
-      ],
-      "Disabling this will prevent this email from being used for account recovery.": [
-        "Wyłączając tę opcję nie będziesz mógł używać tego adresu e-mail do odzyskiwania konta."
-      ],
-      "Disabling this will prevent this phone number from being used for account recovery.": [
-        "Wyłączając tę opcję nie będziesz mógł używać tego numeru telefonu do odzyskiwania konta."
-      ],
-      "Disabling this will prevent your recovery phrase from being used for account recovery.": [
-        "Wyłączając tę opcję nie będziesz mógł używać hasła odzyskiwania do odzyskiwania konta."
       ],
       "Discount applied to your subscription with coupon ${ code }": [
         "Zniżka za kupon ${ code } została wliczona do Twojej subskrypcji"
@@ -3642,7 +3633,7 @@
         "Edytuj etykietę"
       ],
       "Effortlessly and securely move your emails from your current provider to Proton. If you use Google, we also support calendar and contacts imports.": [
-        ""
+        "Przenieś do Proton bezpiecznie i bezproblemowo swoje wiadomości od obecnego dostawy. Jeśli używasz konta Google, obsługujemy również importowanie kalendarza i kontaktów."
       ],
       "Email address": [
         "Adres e-mail"
@@ -3739,6 +3730,9 @@
       ],
       "Full-featured VPN with speed up to 10 Gbps.": [
         "W pełni funkcjonalna usługa VPN z serwerami do 10 Gb/s."
+      ],
+      "Generating a new recovery phrase will deactivate your old one.": [
+        "Nowe hasło odzyskiwania zastąpi stare."
       ],
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
         "Podaj swój klucz publiczny znajomym lub opublikuj go online, aby każdy mógł wysyłać do Ciebie zaszyfrowane wiadomości e-mail!"
@@ -4239,7 +4233,7 @@
         "Aby rozpocząć, wybierz dostawcę usługi"
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit. You can also merge imported calendars with existing Proton calendars.": [
-        ""
+        "Wybierz, które kalendarze chcesz zaimportować. Dla każdego importowanego kalendarza zostanie utworzony nowy kalendarz, aż do osiągnięcia limitu 20 kalendarzy. Możesz również scalić importowane kalendarze z obecnymi kalendarzami Proton."
       ],
       "Server is currently down": [
         "Serwer jest obecnie wyłączony"
@@ -4626,7 +4620,7 @@
         "W celu zweryfikowania płatności, wkrótce zostaniesz przekierowany na stronę firmy PayPal."
       ],
       "You won't be able to recover encrypted data after an account reset using your downloaded recovery files.": [
-        ""
+        "Po zresetowaniu konta za pomocą plików odzyskiwania nie będziesz mógł odzyskać zaszyfrowanych danych."
       ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, please create an address.": [
         "Twoje konto ${ BRAND_NAME } jest powiązane z adresem ${ externalEmailAddress }. Utwórz adres, aby korzystać z usługi ${ toAppName }."
@@ -4654,6 +4648,9 @@
       ],
       "Your Block List is empty.": [
         "Lista odrzuconych jest pusta."
+      ],
+      "Your data is encrypted, you can recover your data by reactivating your keys.": [
+        "Twoje dane są zaszyfrowane. Możesz odzyskać dane reaktywując klucze."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "Dane z konta ${ importedEmailAddressStrong } są gotowe do zaimportowania do konta Proton."
@@ -5382,7 +5379,7 @@
         "Dzień zakończenia"
       ],
       "Enter organization name to confirm": [
-        ""
+        "Wpisz nazwę organizacji, aby potwierdzić"
       ],
       "Enter password": [
         "Wpisz hasło"
@@ -5633,16 +5630,13 @@
       "Recovery code": [
         "Kod odzyskiwania"
       ],
-      "Recovery email": [
-        "Adres pomocniczy"
-      ],
       "Recovery email address": [
         "Adres pomocniczy"
       ],
       "Recovery file": [
         "Plik odzyskiwania"
       ],
-      "Recovery phone": [
+      "Recovery phone number": [
         "Numer pomocniczy"
       ],
       "Recovery phrase": [
@@ -5848,9 +5842,6 @@
       ]
     },
     "label": {
-      "Phone number": [
-        "Numer telefonu"
-      ],
       "Recovery phone number": [
         "Numer pomocniczy"
       ],
@@ -6163,16 +6154,16 @@
     },
     "Mail import summary": {
       "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "",
-        "",
-        "",
-        ""
+        "Importuj wiadomości z niektórymi etykietami (${ selectedLabelsCount }/${ totalLabelsCount }) od ${ periodFragment } i oznacz je etykietą ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importuj wiadomości z niektórymi etykietami (${ selectedLabelsCount }/${ totalLabelsCount }) od ${ periodFragment } i oznacz je etykietą ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importuj wiadomości z niektórymi etykietami (${ selectedLabelsCount }/${ totalLabelsCount }) od ${ periodFragment } i oznacz je etykietą ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importuj wiadomości z niektórymi etykietami (${ selectedLabelsCount }/${ totalLabelsCount }) od ${ periodFragment } i oznacz je etykietą ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
       "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "",
-        "",
-        "",
-        ""
+        "Importuj wiadomości z ${ totalLabelsCount } etykietą od ${ periodFragment } i oznacz je etykietą ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importuj wiadomości z ${ totalLabelsCount } etykiet od ${ periodFragment } i oznacz je etykietą ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importuj wiadomości z ${ totalLabelsCount } etykiet od ${ periodFragment } i oznacz je etykietą ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importuj wiadomości z ${ totalLabelsCount } etykiet od ${ periodFragment } i oznacz je etykietą ${ LABEL_MARKUP_PLACEHOLDER }"
       ]
     },
     "Mail upsell feature": {
@@ -6215,7 +6206,7 @@
     },
     "Member downgrade modal": {
       "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        ""
+        "Spowoduje to trwałe usunięcie wszystkich użytkowników, kont i danych powiązanych z organizacją."
       ]
     },
     "Message": {
@@ -7327,8 +7318,8 @@
       "Calendar URL": [
         "Adres URL kalendarza"
       ],
-      "You can subscribe to someone else's calendar by pasting its URL below. This will give you access to a read-only version of this calendar.\n${ kbLink }": [
-        "Możesz subskrybować kalendarz kogoś innego, wklejając jego adres URL. Uzyskasz dostęp do tego kalendarza w wersji tylko do odczytu.\n${ kbLink }"
+      "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Subscribed calendars.\n${ kbLink }": [
+        "Wpisz adres URL zewnętrznego lub publicznego kalendarza, aby go zasubskrybować. Kalendarz w wersji tylko do odczytu zostanie dodany do subskrybowanych kalendarzy.\n${ kbLink }"
       ]
     },
     "Subscribe to calendar modal description": {
@@ -7917,7 +7908,7 @@
         "Usuń logi"
       ],
       "Delete organization?": [
-        ""
+        "Usunąć organizację?"
       ],
       "Delete user": [
         "Usuń użytkownika"
@@ -7969,6 +7960,9 @@
       ],
       "Enable keyboard shortcuts": [
         "Włącz skróty klawiszowe"
+      ],
+      "Encrypted data": [
+        "Zaszyfrowane dane"
       ],
       "Encryption & keys": [
         "Szyfrowanie i klucze"

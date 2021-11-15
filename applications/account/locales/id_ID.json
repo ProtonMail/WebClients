@@ -31,11 +31,11 @@
       "${ BRAND_NAME } shop": [
         "Toko ${ BRAND_NAME }"
       ],
-      "Activate": [
-        "Aktifkan"
-      ],
       "activate": [
         "aktifkan"
+      ],
+      "Activate": [
+        "Aktifkan"
       ],
       "Activate ${ Name }@pm.me": [
         "Aktifkan ${ Name }@pm.me"
@@ -51,6 +51,9 @@
       ],
       "Add address": [
         "Tambah alamat"
+      ],
+      "Add calendar": [
+        "Tambah kalender"
       ],
       "Add condition": [
         "Tambahkan syarat"
@@ -223,12 +226,6 @@
       "Create link": [
         "Buat tautan"
       ],
-      "Create new recovery phrase": [
-        "Buat sandi pemulihan baru"
-      ],
-      "Create new recovery phrase?": [
-        "Buat sandi pemulihan baru?"
-      ],
       "Customize": [
         "Sesuaikan"
       ],
@@ -348,6 +345,15 @@
       ],
       "Generate key": [
         "Hasilkan kunci"
+      ],
+      "Generate new recovery phrase": [
+        "Buat frasa pemulihan baru"
+      ],
+      "Generate new recovery phrase?": [
+        "Buat frasa pemulihan baru?"
+      ],
+      "Generate recovery phrase": [
+        "Buat frasa pemulihan"
       ],
       "Get ProtonVPN Plus": [
         "Dapatkan ProtonVPN Plus"
@@ -501,6 +507,9 @@
       ],
       "Reconnect": [
         "Sambungkan kembali"
+      ],
+      "Recover data": [
+        "Pulihkan data"
       ],
       "Refresh status": [
         "Muat ulang status"
@@ -696,9 +705,6 @@
       ],
       "Submit": [
         "Kirim"
-      ],
-      "Subscribe to calendar": [
-        "Langganan ke kalender"
       ],
       "Support": [
         "Mendukung"
@@ -1278,8 +1284,8 @@
       ]
     },
     "Calendar limit warning": {
-      "You have reached the maximum of ${ calendarsLimit } calendar.": [
-        "Anda mencapai batas maksimal ${ calendarsLimit } kalender."
+      "You have reached the maximum of ${ calendarsLimit } personal calendar.": [
+        "Anda telah mencapai batas ${ calendarsLimit } kalender personal yang diperkenankan."
       ],
       "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } subscribed calendar.": [
         "Anda mencapai batas langganan maksimal ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } kalender."
@@ -1305,9 +1311,6 @@
     "Calendar subscription not synced error": {
       "Calendar could not be decrypted": [
         "Kalender tidak dapat didekripsi"
-      ],
-      "Calendar could not be found": [
-        "Kalender tidak ditemukan"
       ],
       "Calendar is syncing": [
         "Sedang sinkronisasi kalender"
@@ -3380,9 +3383,6 @@
       "Create in": [
         "Buat di"
       ],
-      "Creating a new recovery phrase will deactivate your old one.": [
-        "Kalimat pemulihan baru akan menggantikan yang lama."
-      ],
       "Creating your Proton account": [
         "Buat akun Proton Anda"
       ],
@@ -3421,15 +3421,6 @@
       ],
       "Delete link?": [
         "Hapus tautan?"
-      ],
-      "Disabling this will prevent this email from being used for account recovery.": [
-        "Menonaktifkan ini akan mencegah email ini digunakan untuk pemulihan akun."
-      ],
-      "Disabling this will prevent this phone number from being used for account recovery.": [
-        "Menonaktifkan ini akan mencegah nomor ponsel ini digunakan untuk pemulihan akun."
-      ],
-      "Disabling this will prevent your recovery phrase from being used for account recovery.": [
-        "Bila dinonaktifkan, kalimat pemulihan Anda tidak bisa dipakai untuk pemulihan akun."
       ],
       "Discount applied to your subscription with coupon ${ code }": [
         "Diskon diterapkan untuk langganan anda dengan kupon ${ code }"
@@ -3577,6 +3568,9 @@
       ],
       "Full-featured VPN with speed up to 10 Gbps.": [
         "VPN berfitur penuh dengan kecepatan hingga 10 Gbps."
+      ],
+      "Generating a new recovery phrase will deactivate your old one.": [
+        "Frasa pemulihan yang baru akan menggantikan frasa pemulihan yang terdahulu."
       ],
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
         "Berikan kunci publik Anda kepada teman, atau sebarkan secara daring, sehingga setiap orang dapat mengirimi Anda dengan pesan terenkripsi end-to-end!"
@@ -4486,6 +4480,9 @@
       ],
       "Your Block List is empty.": [
         "Daftar Blokir Anda kosong."
+      ],
+      "Your data is encrypted, you can recover your data by reactivating your keys.": [
+        "Data-data Anda terenkripsi. Anda dapat memulihkan data-data Anda dengan mengaktifkan kunci-kunci Anda kembali."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "Data-data Anda telah siap untuk diimpor dari ${ importedEmailAddressStrong } ke akun Proton Anda."
@@ -5453,17 +5450,14 @@
       "Recovery code": [
         "Kode pemulihan"
       ],
-      "Recovery email": [
-        "Alamat email pemulihan"
-      ],
       "Recovery email address": [
         "Alamat email pemulihan"
       ],
       "Recovery file": [
         "Berkas pemulihan"
       ],
-      "Recovery phone": [
-        "Telepon pemulihan"
+      "Recovery phone number": [
+        "Nomor telepon pemulihan"
       ],
       "Recovery phrase": [
         "Kalimat pemulihan"
@@ -5668,9 +5662,6 @@
       ]
     },
     "label": {
-      "Phone number": [
-        "Nomor telepon"
-      ],
       "Recovery phone number": [
         "Nomor telepon pemulihan"
       ],
@@ -6023,7 +6014,7 @@
     },
     "Member downgrade modal": {
       "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        "Tindakan ini akan menghapus seluruh akun, sub-akun, dan data yang terhubung dengan organisasi Anda secara permanen."
+        "Tindakan ini akan menghapus seluruh akun, sub-pengguna, dan data yang terhubung dengan organisasi Anda secara permanen."
       ]
     },
     "Message": {
@@ -7111,8 +7102,8 @@
       "Calendar URL": [
         "URL Kalender"
       ],
-      "You can subscribe to someone else's calendar by pasting its URL below. This will give you access to a read-only version of this calendar.\n${ kbLink }": [
-        "Anda dapat berlangganan ke kalender orang lain dengan menempelkan URLnya di bawah. Anda akan memiliki akses ke versi baca-saja dari kalender itu"
+      "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Subscribed calendars.\n${ kbLink }": [
+        "Untuk dapat berlangganan kalender-kalender eksternal atau publik beserta pembaharuannya, masukkan URL kalender-kalender yang bersangkutan. Kalender-kalender tersebut akan ditambahkan ke dalam daftar kalender yang Anda langgan dengan status read-only.\n${ kbLink }"
       ]
     },
     "Subscribe to calendar modal description": {
@@ -7747,6 +7738,9 @@
       ],
       "Enable keyboard shortcuts": [
         "Aktifkan pintasan papan ketik"
+      ],
+      "Encrypted data": [
+        "Data-data terenkripsi"
       ],
       "Encryption & keys": [
         "Enkripsi & kunci"

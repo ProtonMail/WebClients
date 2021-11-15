@@ -31,11 +31,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } mağazası"
       ],
-      "Activate": [
-        "Etkinleştir"
-      ],
       "activate": [
         "etkinleştir"
+      ],
+      "Activate": [
+        "Etkinleştir"
       ],
       "Activate ${ Name }@pm.me": [
         "${ Name }@pm.me adresini etkinleştir"
@@ -51,6 +51,9 @@
       ],
       "Add address": [
         "Adres ekle"
+      ],
+      "Add calendar": [
+        ""
       ],
       "Add condition": [
         "Koşul ekle"
@@ -223,12 +226,6 @@
       "Create link": [
         "Bağlantı oluştur"
       ],
-      "Create new recovery phrase": [
-        "Yeni bir kurtarma anahtar metni oluştur"
-      ],
-      "Create new recovery phrase?": [
-        "Yeni bir kurtarma anahtar metni oluştur?"
-      ],
       "Customize": [
         "Özelleştir"
       ],
@@ -348,6 +345,15 @@
       ],
       "Generate key": [
         "Anahtar oluştur"
+      ],
+      "Generate new recovery phrase": [
+        ""
+      ],
+      "Generate new recovery phrase?": [
+        ""
+      ],
+      "Generate recovery phrase": [
+        ""
       ],
       "Get ProtonVPN Plus": [
         "ProtonVPN Plus edinin"
@@ -501,6 +507,9 @@
       ],
       "Reconnect": [
         "Yeniden bağlan"
+      ],
+      "Recover data": [
+        ""
       ],
       "Refresh status": [
         "Durumu yenile"
@@ -696,9 +705,6 @@
       ],
       "Submit": [
         "Gönder"
-      ],
-      "Subscribe to calendar": [
-        "Takvime abone ol"
       ],
       "Support": [
         "Destek"
@@ -1287,9 +1293,9 @@
       ]
     },
     "Calendar limit warning": {
-      "You have reached the maximum of ${ calendarsLimit } calendar.": [
-        "${ calendarsLimit } takvim üst sınır sayısına eriştiniz.",
-        "${ calendarsLimit } takvim üst sınır sayısına eriştiniz."
+      "You have reached the maximum of ${ calendarsLimit } personal calendar.": [
+        "",
+        ""
       ],
       "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } subscribed calendar.": [
         "Kullanıcı başına abone olunan takvim sayısında ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } üst sınırına eriştiniz.",
@@ -1316,9 +1322,6 @@
     "Calendar subscription not synced error": {
       "Calendar could not be decrypted": [
         "Takvimin şifresi çözülemedi"
-      ],
-      "Calendar could not be found": [
-        "Takvim bulunamadı"
       ],
       "Calendar is syncing": [
         "Takvim senkronize ediliyor"
@@ -3433,9 +3436,6 @@
       "Create in": [
         ""
       ],
-      "Creating a new recovery phrase will deactivate your old one.": [
-        "Yeni bir kurtarma anahtar metni oluşturmak, eskisini devre dışı bırakır."
-      ],
       "Creating your Proton account": [
         "Proton hesabınızı oluşturun"
       ],
@@ -3474,15 +3474,6 @@
       ],
       "Delete link?": [
         "Bağlantı silinsin mi?"
-      ],
-      "Disabling this will prevent this email from being used for account recovery.": [
-        "Bunu devre dışı bırakmak, bu e-postanın hesap kurtarma için kullanılmasını önleyecektir."
-      ],
-      "Disabling this will prevent this phone number from being used for account recovery.": [
-        "Bunu devre dışı bırakmak, bu telefon numarasının hesap kurtarma için kullanılmasını engelleyecektir."
-      ],
-      "Disabling this will prevent your recovery phrase from being used for account recovery.": [
-        "Bunu devre dışı bırakmak, kurtarma anahtar metninizin hesap kurtarması için kullanılmasını engelleyecektir."
       ],
       "Discount applied to your subscription with coupon ${ code }": [
         "${ code } kuponu ile aboneliğinize indirim uygulandı"
@@ -3631,6 +3622,9 @@
       ],
       "Full-featured VPN with speed up to 10 Gbps.": [
         "10 Gbps'ye kadar hıza sahip tam özellikli VPN."
+      ],
+      "Generating a new recovery phrase will deactivate your old one.": [
+        ""
       ],
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
         "Açık anahtarınızı arkadaşlarınıza verin ya da çevrimiçi yayınlayın, böylece herkes size uçtan uca şifreli e-posta gönderebilir!"
@@ -4542,6 +4536,9 @@
       ],
       "Your Block List is empty.": [
         "Engel listeniz boş."
+      ],
+      "Your data is encrypted, you can recover your data by reactivating your keys.": [
+        ""
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         ""
@@ -5513,17 +5510,14 @@
       "Recovery code": [
         "Kurtarma kodu"
       ],
-      "Recovery email": [
-        "Kurtarma e-postası"
-      ],
       "Recovery email address": [
         ""
       ],
       "Recovery file": [
         ""
       ],
-      "Recovery phone": [
-        "Kurtarma telefonu"
+      "Recovery phone number": [
+        ""
       ],
       "Recovery phrase": [
         "Kurtarma anahtar metni"
@@ -5728,9 +5722,6 @@
       ]
     },
     "label": {
-      "Phone number": [
-        "Telefon numarası"
-      ],
       "Recovery phone number": [
         ""
       ],
@@ -7183,8 +7174,8 @@
       "Calendar URL": [
         "Takvim URL'si"
       ],
-      "You can subscribe to someone else's calendar by pasting its URL below. This will give you access to a read-only version of this calendar.\n${ kbLink }": [
-        "URL 'sini yapıştırarak bir başkasının takvimine abone olabilirsiniz. Abone olduüunuz takvimin sat okunur bir versiyonuna erişmenizi sağlar\n${ kbLink }"
+      "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Subscribed calendars.\n${ kbLink }": [
+        ""
       ]
     },
     "Subscribe to calendar modal description": {
@@ -7821,6 +7812,9 @@
       ],
       "Enable keyboard shortcuts": [
         "Klavye kısayollarını etkinleştir"
+      ],
+      "Encrypted data": [
+        ""
       ],
       "Encryption & keys": [
         "Şifreleme ve anahtarlar"

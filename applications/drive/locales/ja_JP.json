@@ -140,12 +140,6 @@
       "Create new folder": [
         "新規フォルダーを作成"
       ],
-      "Created date: new to old": [
-        ""
-      ],
-      "Created date: old to new": [
-        ""
-      ],
       "Customize": [
         ""
       ],
@@ -208,12 +202,6 @@
       ],
       "enable desktop notifications": [
         "デスクトップ通知を有効化する"
-      ],
-      "Expires: new to old": [
-        ""
-      ],
-      "Expires: old to new": [
-        ""
       ],
       "Export": [
         "エクスポート"
@@ -314,6 +302,9 @@
       "More info: ${ safeTitle }": [
         "詳細: ${ safeTitle }"
       ],
+      "More options": [
+        ""
+      ],
       "Move": [
         "移動"
       ],
@@ -322,12 +313,6 @@
       ],
       "Move to trash": [
         "ごみ箱に移動"
-      ],
-      "Name: A to Z": [
-        "名前: 昇順 （A〜Z）"
-      ],
-      "Name: Z to A": [
-        "名前: 降順 （Z〜A）"
       ],
       "New upload": [
         "新規アップロード"
@@ -482,12 +467,6 @@
       "Signing out": [
         "サインアウトしています"
       ],
-      "Size: large to small": [
-        "サイズ: 大きい順"
-      ],
-      "Size: small to large": [
-        "サイズ: 小さい順"
-      ],
       "Skip": [
         "スキップ"
       ],
@@ -524,12 +503,6 @@
       "Try another method": [
         "別の方法を試してください"
       ],
-      "Type: A to Z": [
-        "種類: 昇順 （A〜Z）"
-      ],
-      "Type: Z to A": [
-        "種類: 降順 （Z〜A）"
-      ],
       "Undo": [
         "取り消し"
       ],
@@ -550,12 +523,6 @@
       ],
       "Upload picture": [
         "写真をアップロード"
-      ],
-      "Uploaded date: new to old": [
-        ""
-      ],
-      "Uploaded date: old to new": [
-        ""
       ],
       "Use ${ label } theme": [
         "${ label } テーマを使用"
@@ -875,9 +842,6 @@
       "Calendar could not be decrypted": [
         ""
       ],
-      "Calendar could not be found": [
-        ""
-      ],
       "Calendar is syncing": [
         "カレンダーの同期中"
       ],
@@ -1143,6 +1107,9 @@
       ],
       "Error connecting to the Bitcoin API.": [
         "ビットコインAPIへの接続中にエラーが発生しました。"
+      ],
+      "Failed to load the link": [
+        ""
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         ""
@@ -1994,6 +1961,9 @@
       "Learn more": [
         "より詳しく"
       ],
+      "Link copied to clipboard": [
+        ""
+      ],
       "Link expires: ": [
         "リンクの有効期限: "
       ],
@@ -2759,6 +2729,9 @@
       "Country": [
         "国"
       ],
+      "Created": [
+        ""
+      ],
       "CVV code": [
         "CVV コード"
       ],
@@ -2876,6 +2849,9 @@
       "Merge a folder": [
         "フォルダーを統合"
       ],
+      "Name": [
+        ""
+      ],
       "Name on card": [
         "クレジットカードの名義人"
       ],
@@ -2957,6 +2933,9 @@
       "Sign emails": [
         "メールに署名"
       ],
+      "Size": [
+        ""
+      ],
       "Skip file": [
         "ファイルをスキップ"
       ],
@@ -2990,6 +2969,9 @@
       "Two-factor authentication code": [
         "2要素認証コード"
       ],
+      "Type": [
+        ""
+      ],
       "Unknown file": [
         "不明なファイル"
       ],
@@ -3002,17 +2984,14 @@
       "Unlock later": [
         ""
       ],
-      "Up to ${ parentLinkName }": [
-        "${ parentLinkName } へ"
-      ],
-      "Up to the parent folder": [
-        "親フォルダーへ"
-      ],
       "Upload anyway": [
         "とにかくアップロード"
       ],
       "Upload picture": [
         "写真をアップロード"
+      ],
+      "Uploaded": [
+        ""
       ],
       "Username or ProtonMail address": [
         "ユーザー名または ProtonMail アドレス"

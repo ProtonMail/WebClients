@@ -209,9 +209,6 @@
       "Create new message": [
         "Створити повідомлення"
       ],
-      "Create recovery phrase": [
-        "Створити фразу відновлення"
-      ],
       "Custom filter": [
         "Власний фільтр"
       ],
@@ -331,6 +328,9 @@
       ],
       "Forward as attachment": [
         "Переслати як вкладення"
+      ],
+      "Generate recovery phrase": [
+        "Згенерувати фразу відновлення"
       ],
       "Get started": [
         "Розпочнімо"
@@ -858,7 +858,7 @@
         "Покращити"
       ],
       "Upgrade now": [
-        "Покращити зараз"
+        "Покращити"
       ],
       "Upload picture": [
         "Вивантажити зображення"
@@ -1015,7 +1015,7 @@
     },
     "Amount of completed get started checklist items": {
       "${ numberOfCompletedItems } of ${ totalNumberOfChecklistItems } complete": [
-        ""
+        "${ numberOfCompletedItems } з ${ totalNumberOfChecklistItems } виконано"
       ]
     },
     "Apps dropdown": {
@@ -1405,26 +1405,26 @@
       "(Attendance optional)": [
         "(Участь необов'язкова)"
       ],
-      "Adding occurrences to an event is not supported for the moment.": [
-        "Додавання повторень для події наразі не підтримується."
+      "Adding occurrences to an event is not supported for the moment": [
+        "Додавання повторень для події наразі не підтримується"
       ],
       "An occurrence has been added to the event ${ veventIcsTitle }": [
         "Додано повторення для події ${ veventIcsTitle }"
       ],
-      "Event refreshing is not supported for the moment.": [
-        "Оновлення події наразі не підтримується."
+      "Event refreshing is not supported for the moment": [
+        "Оновлення події наразі не підтримується"
       ],
-      "Event rescheduling is not supported for the moment.": [
-        "Повторне планування події наразі не підтримується."
+      "Event rescheduling is not supported for the moment": [
+        "Повторне планування події наразі не підтримується"
       ],
-      "The sender of this email has not been invited to this event and cannot be added as a participant.": [
-        "Відправника цього листа не запрошено на цю подію, тому його неможливо додати учасником."
+      "The sender of this email has not been invited to this event and cannot be added as a participant": [
+        "Відправника цього листа не запрошено на цю подію, тому його неможливо додати учасником"
       ],
-      "This answer cannot be added to ${ calendarAppName } as we only support answers to all events of a series for the moment.": [
-        "Цю відповідь не можна додати до ${ calendarAppName }, тому що наразі підтримуються лише відповіді на всі події в серії."
+      "This answer cannot be added to ${ calendarAppName } as we only support answers to all events of a series for the moment": [
+        "Цю відповідь не можна додати до ${ calendarAppName }, тому що наразі підтримуються лише відповіді на всі події в серії"
       ],
-      "This event has already happened.": [
-        "Ця подія вже відбулася."
+      "This event has already happened": [
+        "Ця подія вже відбулася"
       ],
       "This event has been cancelled.": [
         "Цю подію було скасовано."
@@ -1432,8 +1432,8 @@
       "This event has been updated.": [
         "Цю подію було оновлено."
       ],
-      "This event is currently happening.": [
-        "Ця подія зараз відбувається."
+      "This event is currently happening": [
+        "Ця подія зараз відбувається"
       ],
       "This invitation is out of date. The event has been cancelled.": [
         "Це запрошення застаріло. Подію було скасовано."
@@ -1462,8 +1462,8 @@
       "You already tentatively accepted this invitation.": [
         "Ви вже із сумнівом прийняли це запрошення."
       ],
-      "Your email address is not in the participants list.": [
-        "Ваша адреса електронної пошти відсутня в переліку учасників."
+      "Your email address is not in the participants list": [
+        "Ваша адреса електронної пошти відсутня в переліку учасників"
       ]
     },
     "Calendar status": {
@@ -1477,9 +1477,6 @@
     "Calendar subscription not synced error": {
       "Calendar could not be decrypted": [
         "Не вдалося розшифрувати календар"
-      ],
-      "Calendar could not be found": [
-        "Не вдалося знайти календар"
       ],
       "Calendar is syncing": [
         "Календар синхронізується"
@@ -2155,7 +2152,7 @@
         "В деяких групах немає контактів: ${ noContactGroupList }"
       ],
       "Organization not recognized. Try again.": [
-        "Організація не розпізнана. Спробуйте ще раз."
+        "Організацію не розпізнано. Спробуйте знову."
       ],
       "Passwords do not match": [
         "Паролі відрізняються"
@@ -2680,10 +2677,10 @@
     },
     "Get started checklist completion": {
       "We've added 1 GB of bonus storage to your account. Continue to explore ${ BRAND_NAME } and share your ${ protonMailAppName } address with your family, friends, and colleagues.": [
-        ""
+        "Ми додали 1 ГБ бонусного сховища до вашого облікового запису. Продовжуйте досліджувати ${ BRAND_NAME } та поділіться ${ protonMailAppName } зі своєю сім'єю, друзями та колегами."
       ],
       "We've added 1 GB of bonus storage to your account. For even more storage and premium features, upgrade your plan.": [
-        ""
+        "Ми додали 1 ГБ бонусного сховища до вашого облікового запису. Для збільшення сховища та отримання преміум функцій, оновіть свій план."
       ],
       "You're a privacy champ!": [
         "Ви - захисник приватного життя!"
@@ -2691,44 +2688,44 @@
     },
     "Get started checklist incentive": {
       "Complete all steps and get a total of 2 GB on your account": [
-        ""
+        "Виконайте всі кроки та отримайте загалом 2 ГБ для свого облікового запису"
       ],
       "Only ${ days } day left": [
-        "",
-        "",
-        "",
-        ""
+        "Лишився всього ${ days } день",
+        "Лишилося всього ${ days } дні",
+        "Лишилося всього ${ days } днів",
+        "Лишилося всього ${ days } дні"
       ]
     },
     "Get started checklist instructions": {
       "Available on iOS and Android.": [
-        ""
+        "Доступний на iOS та Android."
       ],
       "Get the ${ protonMailAppName } mobile app": [
-        ""
+        "Отримайте мобільний застосунок ${ protonMailAppName }"
       ],
       "Import contacts or emails": [
-        ""
+        "Імпорт контактів чи е-пошти"
       ],
       "Import your contacts or messages": [
-        ""
+        "Імпортуйте свої контакти чи повідомлення"
       ],
       "Quickly transfer your contacts or emails from any provider using our Easy Switch import assistant.": [
-        ""
+        "Швидко передавайте свої контакти або електронні листи від будь-якого постачальника послуг за допомогою нашого помічника для імпорту Easy Switch."
       ],
       "Sign into the mobile app to complete the action": [
-        ""
+        "Увійдіть у мобільний застосунок, щоб завершити дію"
       ],
       "Using your mobile device, scan this QR code or visit": [
-        ""
+        "Скануйте цей QR-код за допомогою свого мобільного пристрою, або відвідайте"
       ]
     },
     "Get started checklist item": {
       "Get mobile app": [
-        "Отримати мобільний додаток"
+        "Отримати мобільний застосунок"
       ],
       "Import contacts or emails": [
-        ""
+        "Імпорт контактів чи е-пошти"
       ],
       "Send a message": [
         "Надіслати повідомлення"
@@ -2739,12 +2736,12 @@
     },
     "Get started checklist spotlight": {
       "You can access the checklist anytime from here": [
-        ""
+        "Ви можете повернутися до контрольного списку в будь-який час звідси"
       ]
     },
     "Get started checklist title": {
       "Get started": [
-        "Розпочати"
+        "Розпочнімо"
       ]
     },
     "Group": {
@@ -3366,9 +3363,6 @@
       "Create in": [
         "Створити у"
       ],
-      "Create recovery phrase": [
-        "Створити фразу відновлення"
-      ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "Підтримуються файли CSV з Outlook, Outlook Express, Yahoo! Maіl, Hotmaіl, Eudora і деяких інших додатків, а також формати vCard 3.1 і 4.0 (кодування UTF- 8)."
       ],
@@ -3539,6 +3533,9 @@
       ],
       "Full-featured VPN with speed up to 10 Gbps.": [
         "Повнофункціональний VPN зі швидкістю до 10 Гбіт/с."
+      ],
+      "Generate recovery phrase": [
+        "Згенерувати фразу відновлення"
       ],
       "Get more storage and premium features.": [
         "Отримайте більше місця у сховищі та преміальних можливостей."
@@ -3919,7 +3916,7 @@
         "Оберіть формат повідомлення, який ви хочете використовувати при надсиланні на цю адресу е-пошти."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit. You can also merge imported calendars with existing Proton calendars.": [
-        "Виберіть, які календарі необхідно імпортувати. Для кожного імпортованого календаря буде створений новий календар у межах ліміту у 20 календарів. Ви також можете об'єднати імпортовані календарі з існуючими календарями Proton."
+        "Виберіть, які календарі необхідно імпортувати. Для кожного імпортованого календаря буде створено новий календар у межах ліміту до 20 календарів. Ви також можете об'єднати імпортовані календарі з наявними календарями Proton."
       ],
       "Sending": [
         "Надсилається"
@@ -5384,16 +5381,16 @@
     },
     "Mail import summary": {
       "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "",
-        "",
-        "",
-        ""
+        "Імпортувати всі повідомлення з ${ selectedLabelsCount } міткою з усіх ${ totalLabelsCount }, починаючи з ${ periodFragment } та позначити їх міткою ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Імпортувати всі повідомлення з ${ selectedLabelsCount } мітками з усіх ${ totalLabelsCount }, починаючи з ${ periodFragment } та позначити їх міткою ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Імпортувати всі повідомлення з ${ selectedLabelsCount } мітками з усіх ${ totalLabelsCount }, починаючи з ${ periodFragment } та позначити їх міткою ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Імпортувати всі повідомлення з ${ selectedLabelsCount } мітками з усіх ${ totalLabelsCount }, починаючи з ${ periodFragment } та позначити їх міткою ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
       "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "",
-        "",
-        "",
-        ""
+        "Імпортувати всі повідомлення з ${ totalLabelsCount } міткою, починаючи з ${ periodFragment } та позначити їх міткою ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Імпортувати всі повідомлення з ${ totalLabelsCount } мітками, починаючи з ${ periodFragment } та позначити їх міткою ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Імпортувати всі повідомлення з ${ totalLabelsCount } мітками, починаючи з ${ periodFragment } та позначити їх міткою ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Імпортувати всі повідомлення з ${ totalLabelsCount } мітками, починаючи з ${ periodFragment } та позначити їх міткою ${ LABEL_MARKUP_PLACEHOLDER }"
       ]
     },
     "Mailbox": {
@@ -5432,7 +5429,7 @@
     },
     "Member downgrade modal": {
       "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        "Це приведе до остаточного видалення всіх підлеглих користувачів, облікових записів і даних, пов'язаних з вашою організацією."
+        "Це призведе до остаточного видалення всіх підлеглих користувачів, облікових записів і даних, пов'язаних з вашою організацією."
       ]
     },
     "Message": {
@@ -6294,7 +6291,7 @@
     },
     "Storage": {
       "Get extra storage for free": [
-        "Одержите додаткове сховище безкоштовно"
+        "Отримайте додаткове сховище безплатно"
       ],
       "Release notes": [
         "Примітки до випуску"

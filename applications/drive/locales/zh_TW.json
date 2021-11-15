@@ -140,12 +140,6 @@
       "Create new folder": [
         "建立新資料夾"
       ],
-      "Created date: new to old": [
-        "按建立日期排序：最新到最舊"
-      ],
-      "Created date: old to new": [
-        "按建立日期排序：最舊到最新"
-      ],
       "Customize": [
         "自訂"
       ],
@@ -208,12 +202,6 @@
       ],
       "enable desktop notifications": [
         "啟用桌面通知"
-      ],
-      "Expires: new to old": [
-        "按過期時間排序：最新到最舊"
-      ],
-      "Expires: old to new": [
-        "按過期時間排序：最舊到最新"
       ],
       "Export": [
         "匯出"
@@ -314,6 +302,9 @@
       "More info: ${ safeTitle }": [
         "更多資訊：${ safeTitle }"
       ],
+      "More options": [
+        ""
+      ],
       "Move": [
         "移動"
       ],
@@ -322,12 +313,6 @@
       ],
       "Move to trash": [
         "移至垃圾桶"
-      ],
-      "Name: A to Z": [
-        "按名稱順序：A 到 Z"
-      ],
-      "Name: Z to A": [
-        "按名稱倒序：Z 到 A"
       ],
       "New upload": [
         "新增上載"
@@ -482,12 +467,6 @@
       "Signing out": [
         "正在登出"
       ],
-      "Size: large to small": [
-        "按大小倒序：最大到最小"
-      ],
-      "Size: small to large": [
-        "按大小順序：最小到最大"
-      ],
       "Skip": [
         "略過"
       ],
@@ -524,12 +503,6 @@
       "Try another method": [
         "換另一個方法試試"
       ],
-      "Type: A to Z": [
-        "按類型順序：A 到 Z"
-      ],
-      "Type: Z to A": [
-        "按類型倒序：Z 到 A"
-      ],
       "Undo": [
         "復原"
       ],
@@ -550,12 +523,6 @@
       ],
       "Upload picture": [
         "上傳圖片"
-      ],
-      "Uploaded date: new to old": [
-        ""
-      ],
-      "Uploaded date: old to new": [
-        ""
       ],
       "Use ${ label } theme": [
         "使用 ${ label } 佈景主題"
@@ -875,9 +842,6 @@
       "Calendar could not be decrypted": [
         ""
       ],
-      "Calendar could not be found": [
-        ""
-      ],
       "Calendar is syncing": [
         "日曆正在同步"
       ],
@@ -1143,6 +1107,9 @@
       ],
       "Error connecting to the Bitcoin API.": [
         "連接比特幣 API 時出錯。"
+      ],
+      "Failed to load the link": [
+        ""
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         ""
@@ -1994,6 +1961,9 @@
       "Learn more": [
         "瞭解更多"
       ],
+      "Link copied to clipboard": [
+        ""
+      ],
       "Link expires: ": [
         "連結有效期至： "
       ],
@@ -2759,6 +2729,9 @@
       "Country": [
         "國家"
       ],
+      "Created": [
+        ""
+      ],
       "CVV code": [
         "信用卡安全碼"
       ],
@@ -2876,6 +2849,9 @@
       "Merge a folder": [
         "合併資料夾"
       ],
+      "Name": [
+        ""
+      ],
       "Name on card": [
         "持卡人姓名"
       ],
@@ -2957,6 +2933,9 @@
       "Sign emails": [
         "簽署電子郵件"
       ],
+      "Size": [
+        ""
+      ],
       "Skip file": [
         "略過檔案"
       ],
@@ -2990,6 +2969,9 @@
       "Two-factor authentication code": [
         "兩步驟驗證代碼"
       ],
+      "Type": [
+        ""
+      ],
       "Unknown file": [
         "未知的檔案"
       ],
@@ -3002,17 +2984,14 @@
       "Unlock later": [
         ""
       ],
-      "Up to ${ parentLinkName }": [
-        "直到 ${ parentLinkName }"
-      ],
-      "Up to the parent folder": [
-        "直到上層資料夾"
-      ],
       "Upload anyway": [
         "仍要上傳"
       ],
       "Upload picture": [
         "上載圖片"
+      ],
+      "Uploaded": [
+        ""
       ],
       "Username or ProtonMail address": [
         "使用者名稱或 ProtonMail 電子郵件地址"

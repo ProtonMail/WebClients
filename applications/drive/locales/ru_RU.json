@@ -140,12 +140,6 @@
       "Create new folder": [
         "Создать новую папку"
       ],
-      "Created date: new to old": [
-        "Дата создания: от новых к старым"
-      ],
-      "Created date: old to new": [
-        "Дата создания: от старых к новым"
-      ],
       "Customize": [
         "Настроить"
       ],
@@ -215,12 +209,6 @@
       "enable desktop notifications": [
         "включить уведомления на рабочем столе"
       ],
-      "Expires: new to old": [
-        "Истекает: от новых к старым"
-      ],
-      "Expires: old to new": [
-        "Истекает: от старых к новым"
-      ],
       "Export": [
         "Экспорт"
       ],
@@ -231,7 +219,7 @@
         "Переслать как вложение"
       ],
       "Get link": [
-        ""
+        "Получить ссылку"
       ],
       "Get started": [
         "Приступить к работе"
@@ -300,7 +288,7 @@
         "Схема отображения для почты"
       ],
       "Manage link": [
-        ""
+        "Управлять ссылкой"
       ],
       "Mark for deletion": [
         "Пометить для удаления"
@@ -320,6 +308,9 @@
       "More info: ${ safeTitle }": [
         "Больше информации: ${ safeTitle }"
       ],
+      "More options": [
+        "Больше настроек"
+      ],
       "Move": [
         "Переместить"
       ],
@@ -328,12 +319,6 @@
       ],
       "Move to trash": [
         "Переместить в Корзину"
-      ],
-      "Name: A to Z": [
-        "Название: от А к Я"
-      ],
-      "Name: Z to A": [
-        "Название: от Я к А"
       ],
       "New upload": [
         "Новая загрузка"
@@ -488,12 +473,6 @@
       "Signing out": [
         "Выход"
       ],
-      "Size: large to small": [
-        "Размер: от большого к малому"
-      ],
-      "Size: small to large": [
-        "Размер: от малого к большому"
-      ],
       "Skip": [
         "Пропустить"
       ],
@@ -530,12 +509,6 @@
       "Try another method": [
         "Попробуйте другой способ"
       ],
-      "Type: A to Z": [
-        "Сортировка по алфавиту от A до Z"
-      ],
-      "Type: Z to A": [
-        "Сортировка по алфавиту от Z до A"
-      ],
       "Undo": [
         "Отменить"
       ],
@@ -556,12 +529,6 @@
       ],
       "Upload picture": [
         "Загрузить картинку"
-      ],
-      "Uploaded date: new to old": [
-        "Дата загрузки: от новых к старым"
-      ],
-      "Uploaded date: old to new": [
-        "Дата загрузки: от старых к новым"
       ],
       "Use ${ label } theme": [
         "Использовать тему ${ label }"
@@ -691,7 +658,7 @@
     },
     "blackfriday Action": {
       "Get the offer": [
-        ""
+        "Воспользоваться"
       ]
     },
     "blackfriday Info": {
@@ -710,13 +677,13 @@
     },
     "blackfriday Title": {
       "Best deal": [
-        ""
+        "Лучшее предложение"
       ],
       "Most popular": [
         "Самое популярное"
       ],
       "Save more when combining Mail and VPN": [
-        ""
+        "Сэкономьте больше, оплачивая Mail и VPN вместе"
       ]
     },
     "blackfriday: VPNspecialoffer Action": {
@@ -729,18 +696,18 @@
     },
     "blackfriday: VPNspecialoffer Badge popup": {
       "${ vpnAppName } Plus Special Offer 2021 discount has been applied": [
-        ""
+        "Применена скидка за спецпредложение ${ vpnAppName } Plus 2021 года"
       ]
     },
     "blackfriday: VPNspecialoffer Info": {
       "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
-        ""
+        "Скидки рассчитываются исходя из стандартной платы за 1 месяц в размере ${ standardMonthlyPricing }"
       ],
       "Save ${ percentage }%": [
-        "${ percentage }%"
+        "Экономия ${ percentage }%"
       ],
       "Special offer Terms and Conditions": [
-        ""
+        "Условия специального предложения"
       ]
     },
     "blackfriday: VPNspecialoffer info": {
@@ -755,13 +722,13 @@
     },
     "blackfriday: VPNspecialoffer Title": {
       "(${ notice }) Renews after 1 month at a standard monthly price of ${ amount }": [
-        ""
+        "(${ notice }) Автопродление через 1 месяц по стандартной цене ${ amount } на 1 месяц"
       ],
       "(${ notice }) Renews after 1 year at a standard discounted annual price of ${ amount } (20% discount)": [
-        ""
+        "(${ notice }) Автопродление через 1 год по сниженной цене ${ amount } на 1 год (скидка 20%)"
       ],
       "(${ notice }) Renews after 2 years at a standard discounted 2-year price of ${ amount } (33% discount)": [
-        ""
+        "(${ notice }) Автопродление через 2 года по сниженной цене ${ amount } на 2 года (скидка 33%)"
       ],
       "1 month": [
         "1 месяц"
@@ -773,16 +740,16 @@
         "24 месяца"
       ],
       "Billed at ${ amount } for the first 2 years.${ supNotice }": [
-        ""
+        "Оплата в размере ${ amount } за первые 2 года.${ supNotice }"
       ],
       "Billed at ${ amount } for the first month.${ supNotice }": [
-        ""
+        "Оплата в размере ${ amount } за первый месяц.${ supNotice }"
       ],
       "Billed at ${ amount } for the first year.${ supNotice }": [
-        ""
+        "Оплата в размере ${ amount } за первый год.${ supNotice }"
       ],
       "Get the special year-end offer on our Premium VPN PLUS plan": [
-        ""
+        "Воспользуйтесь специальным предложением в конце года для премиум-тарифа VPN PLUS"
       ]
     },
     "Bug category": {
@@ -892,9 +859,6 @@
     "Calendar subscription not synced error": {
       "Calendar could not be decrypted": [
         "Невозможно было расшифровать Календарь"
-      ],
-      "Calendar could not be found": [
-        "Невозможно было найти Календарь"
       ],
       "Calendar is syncing": [
         "Календарь синхронизируется"
@@ -1174,6 +1138,9 @@
       "Error connecting to the Bitcoin API.": [
         "Ошибка при подключении к Bitcoin API."
       ],
+      "Failed to load the link": [
+        "Не удалось загрузить ссылку"
+      ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "Файл \"${ item.name }\" не может быть загружен из-за \"${ error }\" ошибки"
       ],
@@ -1256,7 +1223,7 @@
         "В следующих группах нет контактов: ${ noContactGroupList } "
       ],
       "Organization not recognized. Try again.": [
-        ""
+        "Организация не распознана. Попробуйте еще."
       ],
       "Passwords do not match": [
         "Пароли не совпадают"
@@ -2138,6 +2105,9 @@
       "Learn more": [
         "Подробнее"
       ],
+      "Link copied to clipboard": [
+        "Ссылка скопирована в буфер обмена"
+      ],
       "Link expires: ": [
         "Срок действия ссылки: "
       ],
@@ -2909,6 +2879,9 @@
       "Country": [
         "Страна"
       ],
+      "Created": [
+        "Создано"
+      ],
       "CVV code": [
         "Код CVV"
       ],
@@ -2940,7 +2913,7 @@
         "Шифровать письма"
       ],
       "Enter organization name to confirm": [
-        ""
+        "Введите название организации для подтверждения"
       ],
       "Enter the 6-digit code": [
         "Введите код из шести цифр"
@@ -3029,6 +3002,9 @@
       "Merge a folder": [
         "Объединить папку"
       ],
+      "Name": [
+        "Имя"
+      ],
       "Name on card": [
         "Имя на карте"
       ],
@@ -3110,6 +3086,9 @@
       "Sign emails": [
         "Подписывать письма"
       ],
+      "Size": [
+        "Размер"
+      ],
       "Skip file": [
         "Пропустить файл"
       ],
@@ -3143,6 +3122,9 @@
       "Two-factor authentication code": [
         "Код двухфакторной аутентификации"
       ],
+      "Type": [
+        "Тип"
+      ],
       "Unknown file": [
         "Неизвестный файл"
       ],
@@ -3155,17 +3137,14 @@
       "Unlock later": [
         "Разблокировать позже"
       ],
-      "Up to ${ parentLinkName }": [
-        "Вверх к ${ parentLinkName }"
-      ],
-      "Up to the parent folder": [
-        "Вверх к родительской папке"
-      ],
       "Upload anyway": [
         "Всё равно загрузить"
       ],
       "Upload picture": [
         "Загрузить картинку"
+      ],
+      "Uploaded": [
+        "Выгружено"
       ],
       "Username or ProtonMail address": [
         "Имя пользователя или адрес ProtonMail"
@@ -3415,7 +3394,7 @@
     },
     "Member downgrade modal": {
       "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        ""
+        "Это приведет к окончательному удалению всех подпользователей, учетных записей и данных, связанных с вашей организацией."
       ]
     },
     "Message display when a new app version is available": {
@@ -4324,7 +4303,7 @@
         "Удаление группы «${ Name }»"
       ],
       "Delete organization?": [
-        ""
+        "Удалить оргнизацию?"
       ],
       "Delete permanently": [
         "Удалить безвозвратно"

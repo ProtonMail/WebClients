@@ -31,11 +31,11 @@
       "${ BRAND_NAME } shop": [
         "Tienda ${ BRAND_NAME }"
       ],
-      "Activate": [
-        "Activar"
-      ],
       "activate": [
         "activar"
+      ],
+      "Activate": [
+        "Activar"
       ],
       "Activate ${ Name }@pm.me": [
         "Activar ${ Name }@pm.me"
@@ -51,6 +51,9 @@
       ],
       "Add address": [
         "Añadir dirección"
+      ],
+      "Add calendar": [
+        ""
       ],
       "Add condition": [
         "Añadir condición"
@@ -223,12 +226,6 @@
       "Create link": [
         "Crear enlace"
       ],
-      "Create new recovery phrase": [
-        "Crear una nueva frase de recuperación"
-      ],
-      "Create new recovery phrase?": [
-        "¿Crear una nueva frase de recuperación?"
-      ],
       "Customize": [
         "Personalizar"
       ],
@@ -349,6 +346,15 @@
       "Generate key": [
         "Generar clave"
       ],
+      "Generate new recovery phrase": [
+        ""
+      ],
+      "Generate new recovery phrase?": [
+        ""
+      ],
+      "Generate recovery phrase": [
+        ""
+      ],
       "Get ProtonVPN Plus": [
         "Obtener ProtonVPN Plus"
       ],
@@ -446,7 +452,7 @@
         "Mover a la Lista Negra"
       ],
       "Need help?": [
-        "¿Necesita ayuda?"
+        "¿Necesitas ayuda?"
       ],
       "Next": [
         "Siguiente"
@@ -501,6 +507,9 @@
       ],
       "Reconnect": [
         "Reconectar"
+      ],
+      "Recover data": [
+        ""
       ],
       "Refresh status": [
         "Actualizar estado"
@@ -696,9 +705,6 @@
       ],
       "Submit": [
         "Enviar"
-      ],
-      "Subscribe to calendar": [
-        "Suscribir el calendario"
       ],
       "Support": [
         "Soporte"
@@ -1287,7 +1293,7 @@
       ]
     },
     "Calendar limit warning": {
-      "You have reached the maximum of ${ calendarsLimit } calendar.": [
+      "You have reached the maximum of ${ calendarsLimit } personal calendar.": [
         "",
         ""
       ],
@@ -1315,9 +1321,6 @@
     },
     "Calendar subscription not synced error": {
       "Calendar could not be decrypted": [
-        ""
-      ],
-      "Calendar could not be found": [
         ""
       ],
       "Calendar is syncing": [
@@ -3121,8 +3124,8 @@
         "${ saveExtra20 } tanto en VPN como en correo agregando una suscripción VPN."
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
-        "",
-        ""
+        "${ selectedCalendarsTotal } de ${ providerCalendars.length } calendario",
+        "${ selectedCalendarsTotal } de ${ providerCalendars.length } calendarios"
       ],
       "${ selectedFoldersCount } folder selected": [
         "${ selectedFoldersCount } carpeta seleccionada",
@@ -3433,9 +3436,6 @@
       "Create in": [
         ""
       ],
-      "Creating a new recovery phrase will deactivate your old one.": [
-        ""
-      ],
       "Creating your Proton account": [
         "Creando tu cuenta Proton"
       ],
@@ -3474,15 +3474,6 @@
       ],
       "Delete link?": [
         "¿Eliminar enlace?"
-      ],
-      "Disabling this will prevent this email from being used for account recovery.": [
-        "Desactivar esto evitará que este correo electrónico se utilice para recuperar la cuenta."
-      ],
-      "Disabling this will prevent this phone number from being used for account recovery.": [
-        "Deshabilitar esto evitará que este número de teléfono sea utilizado para la recuperación de la cuenta."
-      ],
-      "Disabling this will prevent your recovery phrase from being used for account recovery.": [
-        ""
       ],
       "Discount applied to your subscription with coupon ${ code }": [
         "Descuento aplicado a tu suscripción con el cupón ${ code }"
@@ -3632,6 +3623,9 @@
       "Full-featured VPN with speed up to 10 Gbps.": [
         "VPN completa con velocidad de hasta 10 Gbps."
       ],
+      "Generating a new recovery phrase will deactivate your old one.": [
+        ""
+      ],
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
         "¡Dale tu clave pública a tus amigos o publícala en línea para que todos puedan enviarte correos electrónicos cifrados de extremo a extremo!"
       ],
@@ -3721,7 +3715,7 @@
         ""
       ],
       "Import from": [
-        ""
+        "Importar desde"
       ],
       "Import in progress": [
         ""
@@ -4542,6 +4536,9 @@
       ],
       "Your Block List is empty.": [
         "Tu Lista Negra está vacía."
+      ],
+      "Your data is encrypted, you can recover your data by reactivating your keys.": [
+        ""
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         ""
@@ -5513,17 +5510,14 @@
       "Recovery code": [
         "Código de recuperación"
       ],
-      "Recovery email": [
-        "Correo electrónico de recuperación"
-      ],
       "Recovery email address": [
         ""
       ],
       "Recovery file": [
         "Archivo de recuperación"
       ],
-      "Recovery phone": [
-        "Teléfono de recuperación"
+      "Recovery phone number": [
+        ""
       ],
       "Recovery phrase": [
         "Frase de recuperación"
@@ -5649,7 +5643,7 @@
         "URL"
       ],
       "Use folder colors": [
-        "Utilizar colores de carpeta"
+        "Utilizar colores de carpetas"
       ],
       "Use sticky labels": [
         "Utilizar etiquetas fijas"
@@ -5728,9 +5722,6 @@
       ]
     },
     "label": {
-      "Phone number": [
-        "Número de teléfono"
-      ],
       "Recovery phone number": [
         "Número de teléfono de recuperación"
       ],
@@ -5929,7 +5920,7 @@
     "Loading info": {
       "${ createdCalendars } of ${ calendarsToBeCreated } created": [
         "${ createdCalendars } de ${ calendarsToBeCreated } creado",
-        "${ createdCalendars } de ${ calendarsToBeCreated } creado"
+        "${ createdCalendars } de ${ calendarsToBeCreated } creados"
       ],
       "Almost there": [
         ""
@@ -6962,7 +6953,7 @@
     },
     "Remark about a key type option": {
       "Compatibility": [
-        ""
+        "Compatibilidad"
       ],
       "State of the art": [
         ""
@@ -7183,7 +7174,7 @@
       "Calendar URL": [
         "URL del calendario"
       ],
-      "You can subscribe to someone else's calendar by pasting its URL below. This will give you access to a read-only version of this calendar.\n${ kbLink }": [
+      "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Subscribed calendars.\n${ kbLink }": [
         ""
       ]
     },
@@ -7821,6 +7812,9 @@
       ],
       "Enable keyboard shortcuts": [
         "Habilitar atajos de teclado"
+      ],
+      "Encrypted data": [
+        ""
       ],
       "Encryption & keys": [
         "Cifrado y claves"
@@ -8646,16 +8640,16 @@
     },
     "VPN Plan Feature": {
       "${ n } server": [
-        "",
-        ""
+        "${ n } servidor",
+        "${ n } servidores"
       ],
       "${ n } VPN connection": [
-        "",
-        ""
+        "${ n } conexión VPN",
+        "${ n } conexiones VPN"
       ],
       "${ numberOfServers } in ${ numberOfCountries } country": [
-        "",
-        ""
+        "${ numberOfServers } en ${ numberOfCountries } país",
+        "${ numberOfServers } en ${ numberOfCountries } países"
       ]
     },
     "VPN upsell feature": {
