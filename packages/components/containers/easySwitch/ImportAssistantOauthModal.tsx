@@ -7,6 +7,7 @@ import { Address } from '@proton/shared/lib/interfaces';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { createCalendar, removeCalendar } from '@proton/shared/lib/api/calendars';
 import { setupCalendarKey } from '@proton/components/containers/keys/calendar';
+import { getIsCalendarDisabled } from '@proton/shared/lib/calendar/calendar';
 import { getPrimaryKey } from '@proton/shared/lib/keys';
 import {
     createImport,
@@ -39,6 +40,7 @@ import { CALENDAR_TYPE } from '@proton/shared/lib/interfaces/calendar';
 import { getActiveAddresses } from '@proton/shared/lib/helpers/address';
 import { PRODUCT_NAMES, LABEL_COLORS } from '@proton/shared/lib/constants';
 import { noop, randomIntFromInterval } from '@proton/shared/lib/helpers/function';
+import { MAX_LENGTHS_API } from '@proton/shared/lib/calendar/constants';
 
 import { Button, FormModal, PrimaryButton, useSettingsLink } from '../../components';
 
@@ -187,9 +189,14 @@ const ImportAssistantOauthModal = ({ addresses, onClose = noop, defaultCheckedTy
 
         const newMapping = await Promise.all(
             calendarsToBeCreated.map(async ({ Source, Destination }) => {
+                const Name = Destination.replace(CALENDAR_TO_BE_CREATED_PREFIX, '').slice(
+                    0,
+                    MAX_LENGTHS_API.CALENDAR_NAME
+                );
+
                 const { Calendar } = await api(
                     createCalendar({
-                        Name: Destination.replace(CALENDAR_TO_BE_CREATED_PREFIX, ''),
+                        Name,
                         Color: LABEL_COLORS[randomIntFromInterval(0, LABEL_COLORS.length - 1)],
                         Description: '',
                         Display: 1,
@@ -534,7 +541,9 @@ const ImportAssistantOauthModal = ({ addresses, onClose = noop, defaultCheckedTy
                             updateCheckedTypes={(importTypes) => setCheckedTypes(importTypes)}
                             modalModel={modalModel}
                             toEmail={addressMap[modalModel.AddressID].Email}
-                            calendars={calendars.filter((c) => c.Type === CALENDAR_TYPE.PERSONAL)}
+                            calendars={calendars.filter(
+                                (c) => c.Type === CALENDAR_TYPE.PERSONAL && !getIsCalendarDisabled(c)
+                            )}
                             addresses={addresses}
                             labels={labels}
                             folders={folders}
