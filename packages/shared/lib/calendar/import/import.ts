@@ -106,7 +106,7 @@ export const getComponentIdentifier = (
             const format = getIsPropertyAllDay(dtstart) ? 'PP' : 'PPpp';
             return formatUTC(toUTCDate(dtstart.value), format, options);
         }
-        return c('Error importing event').t`no UID, title or start time`;
+        return c('Error importing event').t`No UID, title or start time`;
     }
     return '';
 };
