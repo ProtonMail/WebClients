@@ -45,6 +45,7 @@ export const newState = ({
 }: NewStateParams = {}): ElementsState => {
     const defaultParams: ElementsStateParams = {
         labelID: MAILBOX_LABEL_IDS.INBOX,
+        conversationMode: true,
         filter: {},
         sort: { sort: 'Time', desc: true },
         search: {},
