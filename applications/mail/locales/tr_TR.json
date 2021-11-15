@@ -209,9 +209,6 @@
       "Create new message": [
         "Yeni ileti oluştur"
       ],
-      "Create recovery phrase": [
-        "Kurtarma anahtar metni oluştur"
-      ],
       "Custom filter": [
         "Özel filtre"
       ],
@@ -327,6 +324,9 @@
       ],
       "Forward as attachment": [
         "Ek olarak ilet"
+      ],
+      "Generate recovery phrase": [
+        ""
       ],
       "Get started": [
         "Başlayalım"
@@ -1389,26 +1389,26 @@
       "(Attendance optional)": [
         ""
       ],
-      "Adding occurrences to an event is not supported for the moment.": [
-        "Bir etkinliğe, gerçekleşme bilgisini eklemek şu anda desteklenmiyor."
+      "Adding occurrences to an event is not supported for the moment": [
+        ""
       ],
       "An occurrence has been added to the event ${ veventIcsTitle }": [
         "${ veventIcsTitle } etkinliğine bir olay eklendi"
       ],
-      "Event refreshing is not supported for the moment.": [
-        "Etkinlik yenileme şu anda desteklenmiyor."
+      "Event refreshing is not supported for the moment": [
+        ""
       ],
-      "Event rescheduling is not supported for the moment.": [
-        "Etkinliği yeniden planlama şu an için desteklenmiyor."
+      "Event rescheduling is not supported for the moment": [
+        ""
       ],
-      "The sender of this email has not been invited to this event and cannot be added as a participant.": [
-        "Bu e-postayı gönderen kişi bu etkinliğe davet edilmediğinden katılımcı olarak eklenemez."
+      "The sender of this email has not been invited to this event and cannot be added as a participant": [
+        ""
       ],
-      "This answer cannot be added to ${ calendarAppName } as we only support answers to all events of a series for the moment.": [
-        "Bu yanıt, şu an sadece dizi etkinliklerin tamamına olan yanıtlara destek verildiği için ${ calendarAppName } takvimine eklenemez."
+      "This answer cannot be added to ${ calendarAppName } as we only support answers to all events of a series for the moment": [
+        ""
       ],
-      "This event has already happened.": [
-        "Bu etkinlik zaten gerçekleşti."
+      "This event has already happened": [
+        ""
       ],
       "This event has been cancelled.": [
         "Bu etkinlik iptal edildi."
@@ -1416,8 +1416,8 @@
       "This event has been updated.": [
         "Bu etkinlik güncellendi."
       ],
-      "This event is currently happening.": [
-        "Bu etkinlik şu anda gerçekleşiyor."
+      "This event is currently happening": [
+        ""
       ],
       "This invitation is out of date. The event has been cancelled.": [
         "Bu davetin süresi doldu. Etkinlik iptal edildi."
@@ -1446,8 +1446,8 @@
       "You already tentatively accepted this invitation.": [
         ""
       ],
-      "Your email address is not in the participants list.": [
-        "E-posta adresiniz katılımcılar listesinde yok."
+      "Your email address is not in the participants list": [
+        ""
       ]
     },
     "Calendar status": {
@@ -1461,9 +1461,6 @@
     "Calendar subscription not synced error": {
       "Calendar could not be decrypted": [
         "Takvimin şifresi çözülemedi"
-      ],
-      "Calendar could not be found": [
-        "Takvim bulunamadı"
       ],
       "Calendar is syncing": [
         ""
@@ -3234,9 +3231,6 @@
       "Create in": [
         ""
       ],
-      "Create recovery phrase": [
-        "Kurtarma anahtar metni oluştur"
-      ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora ve diğer bazı uygulamaların CSV dosyalarıyla birlikte vCard 3.1 ve 4.0 biçimli (UTF-8) dosyalar desteklenmektedir."
       ],
@@ -3395,6 +3389,9 @@
       ],
       "Full-featured VPN with speed up to 10 Gbps.": [
         "10 Gbps'ye kadar hıza sahip tam özellikli VPN."
+      ],
+      "Generate recovery phrase": [
+        ""
       ],
       "Get more storage and premium features.": [
         "Daha fazla depolama alanından ve ayrıcalıklı özelliklerden yararlanın."

@@ -116,6 +116,9 @@
       "Continue": [
         "Продолжить"
       ],
+      "Continue import": [
+        "Продолжить импорт"
+      ],
       "Continue with Google": [
         "Продолжить с Google"
       ],
@@ -124,6 +127,9 @@
       ],
       "Create": [
         "Создать"
+      ],
+      "Create calendar": [
+        "Создать календарь"
       ],
       "Create event": [
         "Создать событие"
@@ -235,6 +241,9 @@
       ],
       "Import": [
         "Импорт"
+      ],
+      "Import events": [
+        "Импортировать события"
       ],
       "Import from .csv or vCard": [
         "Импорт из .csv или vCard"
@@ -529,11 +538,6 @@
         "У вас нет групп."
       ]
     },
-    "Add calendar icon tooltip": {
-      "Create calendar": [
-        "Создание календаря"
-      ]
-    },
     "Addon": {
       "+ ${ addresses } email address": [
         "+ ${ addresses } адрес электронной почты",
@@ -629,6 +633,9 @@
       "By leaving now, some contacts may not be imported": [
         "Если выйти сейчас, импорт некоторых контактов не завершится"
       ],
+      "By leaving now, some events may not be imported": [
+        "Если выйти сейчас, импорт некоторых событий не завершится"
+      ],
       "By leaving now, you will lose your event.": [
         "Если выйти сейчас, вы потеряете событие."
       ]
@@ -642,6 +649,26 @@
       ],
       "Proton applications": [
         "Приложения Proton"
+      ]
+    },
+    "Attached ics file error": {
+      "Empty ICS file": [
+        "Пустой файл ICS"
+      ],
+      "Invalid event": [
+        "Недействительное событие"
+      ],
+      "Invalid ICS file": [
+        ""
+      ],
+      "Invalid method": [
+        "Недействительный метод"
+      ],
+      "Unsupported calendar component": [
+        "Неподдерживаемый компонент календаря"
+      ],
+      "Unsupported event": [
+        "Неподдерживаемое событие"
       ]
     },
     "Attendee role": {
@@ -676,7 +703,7 @@
     },
     "blackfriday Action": {
       "Get the offer": [
-        ""
+        "Воспользоваться"
       ]
     },
     "blackfriday Info": {
@@ -695,13 +722,13 @@
     },
     "blackfriday Title": {
       "Best deal": [
-        ""
+        "Лучшее предложение"
       ],
       "Most popular": [
         "Самое популярное"
       ],
       "Save more when combining Mail and VPN": [
-        ""
+        "Сэкономьте больше, оплачивая Mail и VPN вместе"
       ]
     },
     "blackfriday: VPNspecialoffer Action": {
@@ -714,18 +741,18 @@
     },
     "blackfriday: VPNspecialoffer Badge popup": {
       "${ vpnAppName } Plus Special Offer 2021 discount has been applied": [
-        ""
+        "Применена скидка за спецпредложение ${ vpnAppName } Plus 2021 года"
       ]
     },
     "blackfriday: VPNspecialoffer Info": {
       "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
-        ""
+        "Скидки рассчитываются исходя из стандартной платы за 1 месяц в размере ${ standardMonthlyPricing }"
       ],
       "Save ${ percentage }%": [
-        "– ${ percentage } %"
+        "Экономия ${ percentage }%"
       ],
       "Special offer Terms and Conditions": [
-        ""
+        "Условия специального предложения"
       ]
     },
     "blackfriday: VPNspecialoffer info": {
@@ -740,13 +767,13 @@
     },
     "blackfriday: VPNspecialoffer Title": {
       "(${ notice }) Renews after 1 month at a standard monthly price of ${ amount }": [
-        ""
+        "(${ notice }) Автопродление через 1 месяц по стандартной цене ${ amount } на 1 месяц"
       ],
       "(${ notice }) Renews after 1 year at a standard discounted annual price of ${ amount } (20% discount)": [
-        ""
+        "(${ notice }) Автопродление через 1 год по сниженной цене ${ amount } на 1 год (скидка 20%)"
       ],
       "(${ notice }) Renews after 2 years at a standard discounted 2-year price of ${ amount } (33% discount)": [
-        ""
+        "(${ notice }) Автопродление через 2 года по сниженной цене ${ amount } на 2 года (скидка 33%)"
       ],
       "1 month": [
         "1 месяц"
@@ -758,16 +785,16 @@
         "24 месяца"
       ],
       "Billed at ${ amount } for the first 2 years.${ supNotice }": [
-        ""
+        "Оплата в размере ${ amount } за первые 2 года.${ supNotice }"
       ],
       "Billed at ${ amount } for the first month.${ supNotice }": [
-        ""
+        "Оплата в размере ${ amount } за первый месяц.${ supNotice }"
       ],
       "Billed at ${ amount } for the first year.${ supNotice }": [
-        ""
+        "Оплата в размере ${ amount } за первый год.${ supNotice }"
       ],
       "Get the special year-end offer on our Premium VPN PLUS plan": [
-        ""
+        "Воспользуйтесь специальным предложением в конце года для премиум-тарифа VPN PLUS"
       ]
     },
     "Bug category": {
@@ -900,6 +927,14 @@
         "Вы предварительно приняли приглашение"
       ]
     },
+    "Calendar sidebar dropdown item": {
+      "Add calendar from URL": [
+        ""
+      ],
+      "More options": [
+        "Дополнительные параметры"
+      ]
+    },
     "Calendar status": {
       "Not synced": [
         "Не синхронизировано"
@@ -911,9 +946,6 @@
     "Calendar subscription not synced error": {
       "Calendar could not be decrypted": [
         "Невозможно было расшифровать Календарь"
-      ],
-      "Calendar could not be found": [
-        "Невозможно было найти Календарь"
       ],
       "Calendar is syncing": [
         "Календарь синхронизируется"
@@ -1168,6 +1200,9 @@
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Перетаскивайте контакты, чтобы задавать им приоритет при объединении. Снимайте галочки с контактов, которые вы не хотите объединять."
       ],
+      "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
+        "Вы можете импортировать события в формате iCal (ICS файл). Размер файла не должен быть более ${ MAX_IMPORT_FILE_SIZE_STRING } и иметь не более ${ MAX_IMPORT_EVENTS_STRING } событий. Если ваш файл больше, разделите его на меньшие файлы."
+      ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Вы можете отметить для удаления те контакты, которые не хотите ни объединять, ни оставлять. Удаление произойдет только после нажатия кнопки «Объединить»."
       ]
@@ -1209,6 +1244,11 @@
       ],
       "Upload / download files": [
         "Отправка / скачивание файлов"
+      ]
+    },
+    "Dropwdown action icon tooltip": {
+      "Add calendar": [
+        "Добавить календарь"
       ]
     },
     "Duration": {
@@ -1661,8 +1701,38 @@
       ]
     },
     "Error importing calendar": {
+      "${ CALENDAR_APP_NAME } only supports importing calendars with iCal version 2.0.": [
+        ""
+      ],
+      "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
+        ""
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
+        ""
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Only ICS file formats are allowed.": [
+        ""
+      ],
+      "An error occurred uploading your file. No file has been selected.": [
+        ""
+      ],
       "An unexpected error occurred. Import must be restarted.": [
         "Произошла непредвиденная ошибка. Необходимо начать импорт заново."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } events.": [
+        ""
+      ],
+      "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
+        ""
+      ],
+      "Your file ${ formattedFilename } has no events to be imported.": [
+        ""
+      ],
+      "Your file ${ formattedFilename } is empty.": [
+        ""
+      ],
+      "Your file ${ formattedFilename } is not a calendar.": [
+        ""
       ]
     },
     "Error importing contact": {
@@ -1696,12 +1766,113 @@
         "Файл ${ formattedFilename } пуст."
       ]
     },
+    "Error importing event": {
+      "Bad format. Component cannot be read.": [
+        "Неверный формат. Компонент не может быть прочитан."
+      ],
+      "Calendar": [
+        "Календарь"
+      ],
+      "Calendar timezone not supported": [
+        "Часовой пояс календаря не поддерживается"
+      ],
+      "Component with wrong format": [
+        "Компонент с неправильным форматом"
+      ],
+      "Custom timezone": [
+        "Настроить часовой пояс"
+      ],
+      "Edited event not supported": [
+        ""
+      ],
+      "Element": [
+        "Элемент"
+      ],
+      "Encryption failed": [
+        "Ошибка шифрования"
+      ],
+      "End time out of bounds": [
+        "Время окончания находится вне границ"
+      ],
+      "Event": [
+        "Событие"
+      ],
+      "Event validation failed": [
+        "Проверка события не удалась"
+      ],
+      "Floating times not supported": [
+        ""
+      ],
+      "Free-busy time information": [
+        "Информация о свободном и занятом времени"
+      ],
+      "Invalid event": [
+        "Недействительное событие"
+      ],
+      "Journal entry": [
+        "Запись журнала"
+      ],
+      "Malformed all-day event": [
+        ""
+      ],
+      "Malformed end time": [
+        "Неправильный формат времени окончания"
+      ],
+      "Malformed recurring event": [
+        "Неправильное повторяющееся событие"
+      ],
+      "Malformed start time": [
+        "Неправильный формат времени начала"
+      ],
+      "Missing start time": [
+        ""
+      ],
+      "no UID, title or start time": [
+        "нет UID, названия или времени начала"
+      ],
+      "Non-Gregorian": [
+        ""
+      ],
+      "Notification out of bounds": [
+        "Уведомление вне границ"
+      ],
+      "Original recurring event could not be found": [
+        "Исходное повторяющееся событие не найдено"
+      ],
+      "Recurring event has no occurrences": [
+        ""
+      ],
+      "Recurring rule not supported": [
+        "Правило для повторения не поддерживается"
+      ],
+      "Start time out of bounds": [
+        "Время начала находится вне границ"
+      ],
+      "Timezone": [
+        "Часовой пояс"
+      ],
+      "Timezone not supported": [
+        "Часовой пояс не поддерживается"
+      ],
+      "To-do entry": [
+        "Запись списка задач"
+      ],
+      "Unknown": [
+        ""
+      ],
+      "Unsupported event": [
+        "Неподдерживаемое событие"
+      ]
+    },
     "Error message": {
       "Brace yourself till we get the error fixed.": [
         "Держитесь, пока мы исправляем ошибку."
       ],
       "Error: ${ errorMessage }": [
         "Ошибка: ${ errorMessage }"
+      ],
+      "Invalid URL": [
+        "Недействительный адрес"
       ],
       "Oops, something went wrong": [
         "Хм. Что-то пошло не так"
@@ -1757,6 +1928,44 @@
     "Event info. Organizer name": {
       "You": [
         "Вы"
+      ]
+    },
+    "Event invitation error": {
+      "Attached ICS file could not be decrypted": [
+        "Вложенный файл ICS невозможно расшифровать"
+      ],
+      "Attached ICS file could not be parsed": [
+        ""
+      ],
+      "Invalid invitation": [
+        ""
+      ],
+      "Invalid response": [
+        ""
+      ],
+      "Unexpected error": [
+        "Непредвиденная ошибка"
+      ],
+      "Unsupported invitation": [
+        "Неподдерживаемое приглашение"
+      ],
+      "Unsupported response": [
+        "Неподдерживаемый ответ"
+      ],
+      "We could not cancel the event in your calendar": [
+        ""
+      ],
+      "We could not retrieve the event from your calendar": [
+        ""
+      ],
+      "We could not update the event in your calendar": [
+        ""
+      ],
+      "Your answer was sent, but the event could not be added to your calendar": [
+        ""
+      ],
+      "Your answer was sent, but the event could not be updated in your calendar": [
+        ""
       ]
     },
     "Event popover close button": {
@@ -1867,13 +2076,63 @@
       ]
     },
     "Import calendar": {
+      "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
+        "${ totalImported }/${ totalToImport } событие зашифровано и импортировано в ваш календарь",
+        "${ totalImported }/${ totalToImport } события зашифрованы и импортированы в ваш календарь",
+        "${ totalImported }/${ totalToImport } событий зашифровано и импортировано в ваш календарь",
+        "${ totalImported }/${ totalToImport } событий зашифрованы и импортированы в ваш календарь"
+      ],
+      "An error occurred while encrypting and adding your event. No event could be imported.": [
+        "Произошла ошибка при шифровании и добавлении вашего события. Событие не может быть импортировано.",
+        "Произошла ошибка при шифровании и добавлении ваших событий. События не могут быть импортированы.",
+        "Произошла ошибка при шифровании и добавлении ваших событий. События не могут быть импортированы.",
+        "Произошла ошибка при шифровании и добавлении ваших событий. События не могут быть импортированы."
+      ],
+      "An error occurred while encrypting and adding your events. ${ totalImported } out of ${ totalToImport } events successfully imported.": [
+        "При шифровании и добавлении событий произошла ошибка. ${ totalImported } событий из ${ totalToImport } были успешно импортированы."
+      ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "Шифрование и добавление контактов: ${ totalImported }/${ totalToImport }"
+      ],
+      "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
+        "Шифруем и добавляем события в ваш календарь: ${ totalImported }/${ totalToImport }"
+      ],
+      "Event successfully imported. The imported event will now appear in your calendar.": [
+        "Событие успешно импортировано. Импортированное событие теперь появится в вашем календаре.",
+        "События успешно импортированы. Импортированные события теперь появятся в вашем календаре.",
+        "События успешно импортированы. Импортированные события теперь появятся в вашем календаре.",
+        "События успешно импортированы. Импортированные события теперь появятся в вашем календаре."
+      ],
+      "Please don't close the tab before the importing process is finished.": [
+        "Пожалуйста, не закрывайте вкладку до завершения импорта."
       ]
     },
     "Import calendar warning": {
+      "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
+        "${ CALENDAR_APP_NAME } в настоящее время не поддерживает определенные типы, детали и форматы событий."
+      ],
       "vCard versions < 3.0": [
         "Версии vCard < 3.0"
+      ]
+    },
+    "Import calendar; import invitation": {
+      "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your Proton email address.": [
+        ""
+      ],
+      "This file contains an event invitation:": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "This file contains an invitation response:": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "This file contains some data that we cannot import:": [
+        "Этот файл содержит некоторые данные, которые мы не можем импортировать:"
       ]
     },
     "Import contact": {
@@ -1931,8 +2190,17 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } из ${ totalContacts } контактов не будут импортированы. Нажмите, чтобы узнать подробности."
       ],
+      "${ totalEventsDiscarded } out of ${ totalEvents } events will not be imported. Expand for details.": [
+        "${ totalEventsDiscarded } из ${ totalEvents } событий не будут импортированы. Разверните для получения подробной информации."
+      ],
       "No contact can be imported. Click for details": [
         "Не удалось импортировать контакты. Нажмите, чтобы узнать подробности."
+      ],
+      "No event can be imported. Expand for details.": [
+        "Ни одно событие не может быть импортировано. Разверните для получения подробной информации."
+      ],
+      "Part of your calendar content is not supported and will not be imported.": [
+        "Часть содержимого вашего календаря не поддерживается и не будет импортирована."
       ]
     },
     "Info": {
@@ -3134,7 +3402,7 @@
         "Заканчивается"
       ],
       "Enter organization name to confirm": [
-        ""
+        "Введите название организации для подтверждения"
       ],
       "Enter the 6-digit code": [
         "Введите код из шести цифр"
@@ -3189,6 +3457,9 @@
       ],
       "Import to email address": [
         "Импортировать в адреса электронной почты"
+      ],
+      "Import to:": [
+        "Импортировать в:"
       ],
       "Keyboard shortcuts": [
         "Сочетания клавиш"
@@ -3579,7 +3850,7 @@
     },
     "Member downgrade modal": {
       "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        ""
+        "Это приведет к окончательному удалению всех подпользователей, учетных записей и данных, связанных с вашей организацией."
       ]
     },
     "Message": {
@@ -3603,9 +3874,25 @@
         "Простой текст"
       ]
     },
+    "Modal action": {
+      "Close": [
+        "Закрыть"
+      ],
+      "Manage calendars": [
+        "Управление календарями"
+      ]
+    },
     "Modal title": {
       "Time zone changed": [
         "Часовой пояс изменен"
+      ],
+      "Unable to add more calendars": [
+        ""
+      ]
+    },
+    "Modal title and action": {
+      "Add calendar": [
+        "Добавить календарь"
       ]
     },
     "Monthly recurring event, frequency": {
@@ -4344,6 +4631,46 @@
         "Текущее хранилище:"
       ]
     },
+    "Subscribe to calendar modal": {
+      "Calendar URL": [
+        "Адрес календаря"
+      ],
+      "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Subscribed calendars.\n${ kbLink }": [
+        ""
+      ]
+    },
+    "Subscribe to calendar modal description": {
+      "Learn how to get a private calendar link.": [
+        "Узнайте как создать приватную ссылку на календарь."
+      ]
+    },
+    "Subscribed calendar extension warning": {
+      "By using this link, Google will make the calendar you are subscribing to public": [
+        ""
+      ],
+      "This link might be wrong": [
+        ""
+      ]
+    },
+    "Subscribed calendar feature unavailable error": {
+      "Subscribing to a calendar is unavailable at the moment": [
+        ""
+      ]
+    },
+    "Subscribed calendar limit reached modal body": {
+      "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } subscribed calendar.": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "You have reached the maximum of ${ personalCalendarLimit } personal calendar.": [
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
     "Success": {
       "A cancellation email will be sent to removed participants for all the events in this series.": [
         "Сообщение об отмене будет отправлено удаленным участникам всех событий этой серии."
@@ -4690,6 +5017,9 @@
       "Contacts": [
         "Контакты"
       ],
+      "Continue with partial import?": [
+        "Продолжить частичный импорт?"
+      ],
       "Coupon discount": [
         "Скидка по купону"
       ],
@@ -4745,7 +5075,7 @@
         "Удалить событие"
       ],
       "Delete organization?": [
-        ""
+        "Удалить оргнизацию?"
       ],
       "Delete recurring event": [
         "Удалить повторяющееся событие"
@@ -4813,8 +5143,20 @@
       "Human verification": [
         "Проверка \"Я не робот\""
       ],
+      "Import as simple event?": [
+        "Импортировать как простое событие?",
+        "Импортировать как простые события?",
+        "Импортировать как простые события?",
+        "Импортировать как простые события?"
+      ],
       "Import contacts": [
         "Импорт контактов"
+      ],
+      "Import events": [
+        "Импортировать события"
+      ],
+      "Import failed": [
+        "Импорт не удался"
       ],
       "Import groups": [
         "Импорт групп"

@@ -116,6 +116,9 @@
       "Continue": [
         "Kontynuuj"
       ],
+      "Continue import": [
+        "Kontynuuj importowanie"
+      ],
       "Continue with Google": [
         "Kontynuuj z Google"
       ],
@@ -124,6 +127,9 @@
       ],
       "Create": [
         "Utwórz"
+      ],
+      "Create calendar": [
+        "Utwórz kalendarz"
       ],
       "Create event": [
         "Utwórz wydarzenie"
@@ -235,6 +241,9 @@
       ],
       "Import": [
         "Importuj"
+      ],
+      "Import events": [
+        "Importuj wydarzenia"
       ],
       "Import from .csv or vCard": [
         "Importuj z pliku CSV lub vCard"
@@ -529,11 +538,6 @@
         "Nie posiadasz żadnych grup."
       ]
     },
-    "Add calendar icon tooltip": {
-      "Create calendar": [
-        "Utwórz kalendarz"
-      ]
-    },
     "Addon": {
       "+ ${ addresses } email address": [
         "+ ${ addresses } adres e-mail",
@@ -629,6 +633,9 @@
       "By leaving now, some contacts may not be imported": [
         "Jeśli wyjdziesz teraz, niektóre kontakty nie zostaną zaimportowane"
       ],
+      "By leaving now, some events may not be imported": [
+        "Jeśli wyjdziesz teraz, niektóre wydarzenia nie zostaną zaimportowane"
+      ],
       "By leaving now, you will lose your event.": [
         "Jeśli wyjdziesz teraz, stracisz zawartość wydarzenia."
       ]
@@ -642,6 +649,26 @@
       ],
       "Proton applications": [
         "Aplikacje Proton"
+      ]
+    },
+    "Attached ics file error": {
+      "Empty ICS file": [
+        "Plik ICS jest pusty"
+      ],
+      "Invalid event": [
+        "Wydarzenie jest nieprawidłowe"
+      ],
+      "Invalid ICS file": [
+        "Plik ICS jest nieprawidłowy"
+      ],
+      "Invalid method": [
+        "Metoda jest nieprawidłowa"
+      ],
+      "Unsupported calendar component": [
+        "Komponent kalendarza jest nieobsługiwany"
+      ],
+      "Unsupported event": [
+        "Wydarzenie jest nieobsługiwane"
       ]
     },
     "Attendee role": {
@@ -900,6 +927,14 @@
         "Wstępnie zaakceptowałeś zaproszenie"
       ]
     },
+    "Calendar sidebar dropdown item": {
+      "Add calendar from URL": [
+        "Dodaj kalendarz z adresu URL"
+      ],
+      "More options": [
+        "Więcej opcji"
+      ]
+    },
     "Calendar status": {
       "Not synced": [
         "Niezsynchronizowany"
@@ -911,9 +946,6 @@
     "Calendar subscription not synced error": {
       "Calendar could not be decrypted": [
         "Kalendarz nie może zostać odszyfrowany"
-      ],
-      "Calendar could not be found": [
-        "Kalendarz nie został znaleziony"
       ],
       "Calendar is syncing": [
         "Kalendarz jest synchronizowany"
@@ -1160,13 +1192,16 @@
         "Trwa scalanie kontaktów... Proces może potrwać kilka minut. Kiedy się zakończy, możesz zamknąć okno."
       ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "Maksymalny dopuszczalny rozmiar pliku to ${ MAX_IMPORT_FILE_SIZE_STRING } i nie może posiadać więcej niż ${ MAX_IMPORT_CONTACTS_STRING } kontakt. Podziel swój plik na mniejsze, jeśli jest zbyt duży.",
-        "Maksymalny dopuszczalny rozmiar pliku to ${ MAX_IMPORT_FILE_SIZE_STRING } i nie może posiadać więcej niż ${ MAX_IMPORT_CONTACTS_STRING } kontakty. Podziel swój plik na mniejsze, jeśli jest zbyt duży.",
-        "Maksymalny dopuszczalny rozmiar pliku to ${ MAX_IMPORT_FILE_SIZE_STRING } i nie może posiadać więcej niż ${ MAX_IMPORT_CONTACTS_STRING } kontaktów. Podziel swój plik na mniejsze, jeśli jest zbyt duży.",
-        "Maksymalny dopuszczalny rozmiar pliku to ${ MAX_IMPORT_FILE_SIZE_STRING } i nie może posiadać więcej niż ${ MAX_IMPORT_CONTACTS_STRING } kontaktów. Podziel swój plik na mniejsze, jeśli jest zbyt duży."
+        "Maksymalny dopuszczalny rozmiar pliku to ${ MAX_IMPORT_FILE_SIZE_STRING } i nie może zawierać więcej niż ${ MAX_IMPORT_CONTACTS_STRING } kontakt. Podziel swój plik na mniejsze, jeśli jest zbyt duży.",
+        "Maksymalny dopuszczalny rozmiar pliku to ${ MAX_IMPORT_FILE_SIZE_STRING } i nie może zawierać więcej niż ${ MAX_IMPORT_CONTACTS_STRING } kontakty. Podziel swój plik na mniejsze, jeśli jest zbyt duży.",
+        "Maksymalny dopuszczalny rozmiar pliku to ${ MAX_IMPORT_FILE_SIZE_STRING } i nie może zawierać więcej niż ${ MAX_IMPORT_CONTACTS_STRING } kontaktów. Podziel swój plik na mniejsze, jeśli jest zbyt duży.",
+        "Maksymalny dopuszczalny rozmiar pliku to ${ MAX_IMPORT_FILE_SIZE_STRING } i nie może zawierać więcej niż ${ MAX_IMPORT_CONTACTS_STRING } kontaktów. Podziel swój plik na mniejsze, jeśli jest zbyt duży."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Przeciągnij i upuść, aby ustalić priorytet scalania kontaktów. Odznacz kontakty, których nie chcesz scalić."
+      ],
+      "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
+        "Możesz importować wydarzenia w formacie iCal (plik ICS). Maksymalny dopuszczalny rozmiar pliku to ${ MAX_IMPORT_FILE_SIZE_STRING } i nie może zawierać więcej niż ${ MAX_IMPORT_EVENTS_STRING } wydarzeń. Podziel swój plik na mniejsze, jeśli jest zbyt duży."
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Możesz oznaczyć do usunięcia te kontakty, których nie chcesz scalić ani zachować. Usunięcie nastąpi dopiero po kliknięciu przycisku Scal"
@@ -1209,6 +1244,11 @@
       ],
       "Upload / download files": [
         "Prześlij / pobierz pliki"
+      ]
+    },
+    "Dropwdown action icon tooltip": {
+      "Add calendar": [
+        "Dodaj kalendarz"
       ]
     },
     "Duration": {
@@ -1525,7 +1565,7 @@
         "Niektóre grupy nie posiadają kontaktów: ${ noContactGroupList } "
       ],
       "Organization not recognized. Try again.": [
-        ""
+        "Organizacja nie została rozpoznana. Spróbuj ponownie."
       ],
       "Passwords do not match": [
         "Hasła nie pasują do siebie"
@@ -1661,8 +1701,38 @@
       ]
     },
     "Error importing calendar": {
+      "${ CALENDAR_APP_NAME } only supports importing calendars with iCal version 2.0.": [
+        "${ CALENDAR_APP_NAME } obsługuje importowanie kalendarzy tylko w wersji iCal 2.0."
+      ],
+      "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
+        "Wystąpił błąd podczas odczytywania pliku ${ formattedFilename }. Plik nie posiada odpowiedniego formatu."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
+        "Wystąpił błąd podczas przesyłania pliku ${ formattedFilename }. Maksymalny rozmiar pliku wynosi ${ MAX_IMPORT_FILE_SIZE_STRING }."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Only ICS file formats are allowed.": [
+        "Wystąpił błąd podczas przesyłania pliku ${ formattedFilename }. Dozwolony jest tylko plik ICS."
+      ],
+      "An error occurred uploading your file. No file has been selected.": [
+        "Wystąpił błąd podczas przesyłania pliku. Nie został wybrany żaden plik."
+      ],
       "An unexpected error occurred. Import must be restarted.": [
         "Wystąpił nieoczekiwany błąd. Importowanie musi zostać ponownie uruchomione."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } events.": [
+        "Plik ${ formattedFilename } zawiera więcej niż ${ MAX_IMPORT_EVENTS_STRING } kontaktów."
+      ],
+      "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
+        "Plik ${ formattedFilename } jest nieprawidłowy i nie może zostać zaimportowany."
+      ],
+      "Your file ${ formattedFilename } has no events to be imported.": [
+        "Plik ${ formattedFilename } nie posiada wydarzeń do zaimportowania."
+      ],
+      "Your file ${ formattedFilename } is empty.": [
+        "Plik ${ formattedFilename } jest pusty."
+      ],
+      "Your file ${ formattedFilename } is not a calendar.": [
+        "Plik ${ formattedFilename } nie jest plikiem kalendarza."
       ]
     },
     "Error importing contact": {
@@ -1687,7 +1757,7 @@
         "Wystąpił błąd podczas przesyłania pliku. Nie został wybrany żaden plik."
       ],
       "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
-        "Plik ${ formattedFilename } posiada więcej niż ${ MAX_IMPORT_CONTACTS_STRING } kontaktów."
+        "Plik ${ formattedFilename } zawiera więcej niż ${ MAX_IMPORT_CONTACTS_STRING } kontaktów."
       ],
       "Your file ${ formattedFilename } has no contacts to be imported.": [
         "Plik ${ formattedFilename } nie posiada kontaktów do zaimportowania."
@@ -1696,12 +1766,113 @@
         "Plik ${ formattedFilename } jest pusty."
       ]
     },
+    "Error importing event": {
+      "Bad format. Component cannot be read.": [
+        "Plik jest w złym formacie. Komponent nie może zostać odczytany."
+      ],
+      "Calendar": [
+        "Kalendarz"
+      ],
+      "Calendar timezone not supported": [
+        "Strefa czasowa kalendarza nie jest obsługiwana"
+      ],
+      "Component with wrong format": [
+        "Komponent posiada niewłaściwy format"
+      ],
+      "Custom timezone": [
+        "Strefa czasowa jest niestandardowa"
+      ],
+      "Edited event not supported": [
+        "Edytowane wydarzenie nie jest obsługiwane"
+      ],
+      "Element": [
+        "Element"
+      ],
+      "Encryption failed": [
+        "Szyfrowanie nie powiodło się"
+      ],
+      "End time out of bounds": [
+        "Czas zakończenia jest poza zakresem"
+      ],
+      "Event": [
+        "Wydarzenie"
+      ],
+      "Event validation failed": [
+        "Weryfikacja wydarzenia nie powiodła się"
+      ],
+      "Floating times not supported": [
+        "Czas w formacie \"floating\" nie jest obsługiwany"
+      ],
+      "Free-busy time information": [
+        "Kalendarz zawiera informację o stanie wolny/zajęty"
+      ],
+      "Invalid event": [
+        "Wydarzenie jest nieprawidłowe"
+      ],
+      "Journal entry": [
+        "Wpis w formacie dziennika"
+      ],
+      "Malformed all-day event": [
+        "Czas wydarzenia całodniowego posiada nieprawidłowy format"
+      ],
+      "Malformed end time": [
+        "Czas zakończenia posiada nieprawidłowy format"
+      ],
+      "Malformed recurring event": [
+        "Wydarzenie cykliczne posiada nieprawidłowy format"
+      ],
+      "Malformed start time": [
+        "Czas rozpoczęcia posiada nieprawidłowy format"
+      ],
+      "Missing start time": [
+        "Brak czasu rozpoczęcia"
+      ],
+      "no UID, title or start time": [
+        "Brak identyfikatora użytkownika, tytułu lub czasu rozpoczęcia"
+      ],
+      "Non-Gregorian": [
+        "Kalendarz jest w formacie innym niż gregoriański"
+      ],
+      "Notification out of bounds": [
+        "Czas powiadomienia jest poza zakresem"
+      ],
+      "Original recurring event could not be found": [
+        "Oryginalne wydarzenie cykliczne nie zostało znalezione"
+      ],
+      "Recurring event has no occurrences": [
+        "Wydarzenie cykliczne nie posiada powtórzeń"
+      ],
+      "Recurring rule not supported": [
+        "Reguła powtórzeń nie jest obsługiwana"
+      ],
+      "Start time out of bounds": [
+        "Czas rozpoczęcia jest poza zakresem"
+      ],
+      "Timezone": [
+        "Strefa czasowa"
+      ],
+      "Timezone not supported": [
+        "Strefa czasowa nie jest obsługiwana"
+      ],
+      "To-do entry": [
+        "Wpis w formacie listy zadań"
+      ],
+      "Unknown": [
+        "Wystąpił nieznany błąd"
+      ],
+      "Unsupported event": [
+        "Wydarzenie jest nieobsługiwane"
+      ]
+    },
     "Error message": {
       "Brace yourself till we get the error fixed.": [
         "Poczekaj chwilę, naprawiamy ten błąd."
       ],
       "Error: ${ errorMessage }": [
         "Błąd: ${ errorMessage }"
+      ],
+      "Invalid URL": [
+        "Adres URL jest nieprawidłowy"
       ],
       "Oops, something went wrong": [
         "Ups, coś poszło nie tak"
@@ -1757,6 +1928,44 @@
     "Event info. Organizer name": {
       "You": [
         "Ty"
+      ]
+    },
+    "Event invitation error": {
+      "Attached ICS file could not be decrypted": [
+        "Dołączony plik ICS nie może zostać odszyfrowany"
+      ],
+      "Attached ICS file could not be parsed": [
+        "Dołączony plik ICS nie może zostać przetworzony"
+      ],
+      "Invalid invitation": [
+        "Zaproszenie jest nieprawidłowe"
+      ],
+      "Invalid response": [
+        "Odpowiedź jest nieprawidłowa"
+      ],
+      "Unexpected error": [
+        "Wystąpił nieoczekiwany błąd"
+      ],
+      "Unsupported invitation": [
+        "Zaproszenie jest nieobsługiwane"
+      ],
+      "Unsupported response": [
+        "Odpowiedź jest nieobsługiwana"
+      ],
+      "We could not cancel the event in your calendar": [
+        "Nie możemy anulować wydarzenia"
+      ],
+      "We could not retrieve the event from your calendar": [
+        "Nie możemy pobrać wydarzenia z Twojego kalendarza"
+      ],
+      "We could not update the event in your calendar": [
+        "Nie możemy zaktualizować wydarzenia"
+      ],
+      "Your answer was sent, but the event could not be added to your calendar": [
+        "Twoja odpowiedź została wysłana, ale wydarzenie nie może zostać dodane do kalendarza"
+      ],
+      "Your answer was sent, but the event could not be updated in your calendar": [
+        "Twoja odpowiedź została wysłana, ale wydarzenie nie może zostać zaktualizowane"
       ]
     },
     "Event popover close button": {
@@ -1867,13 +2076,63 @@
       ]
     },
     "Import calendar": {
+      "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
+        "Zaszyfrowanych i dodanych wydarzeń do kalendarza: ${ totalImported }/${ totalToImport }",
+        "Zaszyfrowanych i dodanych wydarzeń do kalendarza: ${ totalImported }/${ totalToImport }",
+        "Zaszyfrowanych i dodanych wydarzeń do kalendarza: ${ totalImported }/${ totalToImport }",
+        "Zaszyfrowanych i dodanych wydarzeń do kalendarza: ${ totalImported }/${ totalToImport }"
+      ],
+      "An error occurred while encrypting and adding your event. No event could be imported.": [
+        "Wystąpił błąd podczas szyfrowania i dodawania wydarzenia. Wydarzenie nie może zostać zaimportowane.",
+        "Wystąpił błąd podczas szyfrowania i dodawania wydarzeń. Wydarzenia nie mogą zostać zaimportowane.",
+        "Wystąpił błąd podczas szyfrowania i dodawania wydarzeń. Wydarzenia nie mogą zostać zaimportowane.",
+        "Wystąpił błąd podczas szyfrowania i dodawania wydarzeń. Wydarzenia nie mogą zostać zaimportowane."
+      ],
+      "An error occurred while encrypting and adding your events. ${ totalImported } out of ${ totalToImport } events successfully imported.": [
+        "Wystąpił błąd podczas szyfrowania i dodawania wydarzeń. Liczba zaimportowanych wydarzeń: ${ totalImported } na ${ totalToImport }."
+      ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "Szyfrowanie i dodawanie kontaktów: ${ totalImported }/${ totalToImport }"
+      ],
+      "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
+        "Szyfrowanie i dodawanie wydarzeń do kalendarza: ${ totalImported }/${ totalToImport }"
+      ],
+      "Event successfully imported. The imported event will now appear in your calendar.": [
+        "Wydarzenie zostało zaimportowane i pojawi się w Twoim kalendarzu.",
+        "Wydarzenia zostały zaimportowane i pojawią się w Twoim kalendarzu.",
+        "Wydarzenia zostały zaimportowane i pojawią się w Twoim kalendarzu.",
+        "Wydarzenia zostały zaimportowane i pojawią się w Twoim kalendarzu."
+      ],
+      "Please don't close the tab before the importing process is finished.": [
+        "Nie zamykaj karty przed zaimportowaniem danych."
       ]
     },
     "Import calendar warning": {
+      "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
+        "{ CALENDAR_APP_NAME } nie obsługuje niektórych typów wydarzeń, szczegółów i formatów."
+      ],
       "vCard versions < 3.0": [
         "Wersja vCard jest starsza niż 3.0"
+      ]
+    },
+    "Import calendar; import invitation": {
+      "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your Proton email address.": [
+        "Zaimportowane zaproszenia pojawiają się w ${ CALENDAR_APP_NAME } jako zwykłe wydarzenia bez szczegółów organizatora i uczestników. Aby otrzymywać aktualizacje wydarzeń i zobaczyć listę uczestników, poproś organizatorów o zaproszenie, używając swojego adresu e-mail Proton."
+      ],
+      "This file contains an event invitation:": [
+        "Plik zawiera zaproszenie do wydarzenia:",
+        "Plik zawiera zaproszenia do wydarzeń:",
+        "Plik zawiera zaproszenia do wydarzeń:",
+        "Plik zawiera zaproszenia do wydarzeń:"
+      ],
+      "This file contains an invitation response:": [
+        "Plik zawiera odpowiedź na zaproszenie:",
+        "Plik zawiera odpowiedzi na zaproszenia:",
+        "Plik zawiera odpowiedzi na zaproszenia:",
+        "Plik zawiera odpowiedzi na zaproszenia:"
+      ],
+      "This file contains some data that we cannot import:": [
+        "Plik zawiera dane, których nie możemy zaimportować:"
       ]
     },
     "Import contact": {
@@ -1910,7 +2169,7 @@
     },
     "Import contacts": {
       "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
-        "Wystąpił błąd podczas szyfrowania i dodawania kontaktów. Liczba zaimportowanych kontaktów: ${ totalImported } na ${ totalToImport }."
+        "Wystąpił błąd podczas szyfrowania i dodawania kontaktów. Pomyślnie zaimportowano ${ totalImported } z ${ totalToImport } kontaktów."
       ],
       "Contact successfully imported. The imported contact will now appear in your contact list.": [
         "Kontakt został zaimportowany i pojawi się w Twojej liście kontaktów.",
@@ -1931,8 +2190,17 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "Niektóre kontakty (${ totalContactsDiscarded }/${ totalContacts }) nie mogą zostać zaimportowane. Kliknij po szczegóły"
       ],
+      "${ totalEventsDiscarded } out of ${ totalEvents } events will not be imported. Expand for details.": [
+        "Niektóre wydarzenia (${ totalEventsDiscarded }/${ totalEvents }) nie mogą zostać zaimportowane. Rozwiń szczegóły."
+      ],
       "No contact can be imported. Click for details": [
         "Żaden kontakt nie może zostać zaimportowany. Kliknij po szczegóły"
+      ],
+      "No event can be imported. Expand for details.": [
+        "Żadne wydarzenie nie może zostać zaimportowane. Rozwiń szczegóły."
+      ],
+      "Part of your calendar content is not supported and will not be imported.": [
+        "Część zawartości kalendarza nie jest obsługiwana i nie zostanie zaimportowana."
       ]
     },
     "Info": {
@@ -2507,7 +2775,7 @@
         "Wybierz domyślny format wiadomości, który ma zostać użyty podczas wysyłania wiadomości na ten adres e-mail."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit. You can also merge imported calendars with existing Proton calendars.": [
-        ""
+        "Wybierz, które kalendarze chcesz zaimportować. Dla każdego importowanego kalendarza zostanie utworzony nowy kalendarz, aż do osiągnięcia limitu 20 kalendarzy. Możesz również scalić importowane kalendarze z obecnymi kalendarzami Proton."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Serwery są nieosiągalne. Spróbuj ponownie za kilka minut"
@@ -3134,7 +3402,7 @@
         "Data zakończenia"
       ],
       "Enter organization name to confirm": [
-        ""
+        "Wpisz nazwę organizacji, aby potwierdzić"
       ],
       "Enter the 6-digit code": [
         "Wpisz 6-cyfrowy kod"
@@ -3189,6 +3457,9 @@
       ],
       "Import to email address": [
         "Importuj do adresu e-mail"
+      ],
+      "Import to:": [
+        "Importuj do:"
       ],
       "Keyboard shortcuts": [
         "Skróty klawiszowe"
@@ -3560,16 +3831,16 @@
     },
     "Mail import summary": {
       "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "",
-        "",
-        "",
-        ""
+        "Importuj wiadomości z niektórymi etykietami (${ selectedLabelsCount }/${ totalLabelsCount }) od ${ periodFragment } i oznacz je etykietą ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importuj wiadomości z niektórymi etykietami (${ selectedLabelsCount }/${ totalLabelsCount }) od ${ periodFragment } i oznacz je etykietą ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importuj wiadomości z niektórymi etykietami (${ selectedLabelsCount }/${ totalLabelsCount }) od ${ periodFragment } i oznacz je etykietą ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importuj wiadomości z niektórymi etykietami (${ selectedLabelsCount }/${ totalLabelsCount }) od ${ periodFragment } i oznacz je etykietą ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
       "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "",
-        "",
-        "",
-        ""
+        "Importuj wiadomości z ${ totalLabelsCount } etykietą od ${ periodFragment } i oznacz je etykietą ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importuj wiadomości z ${ totalLabelsCount } etykiet od ${ periodFragment } i oznacz je etykietą ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importuj wiadomości z ${ totalLabelsCount } etykiet od ${ periodFragment } i oznacz je etykietą ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importuj wiadomości z ${ totalLabelsCount } etykiet od ${ periodFragment } i oznacz je etykietą ${ LABEL_MARKUP_PLACEHOLDER }"
       ]
     },
     "Many Others": {
@@ -3579,7 +3850,7 @@
     },
     "Member downgrade modal": {
       "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        ""
+        "Spowoduje to trwałe usunięcie wszystkich użytkowników, kont i danych powiązanych z organizacją."
       ]
     },
     "Message": {
@@ -3603,9 +3874,25 @@
         "Zwykły tekst"
       ]
     },
+    "Modal action": {
+      "Close": [
+        "Zamknij"
+      ],
+      "Manage calendars": [
+        "Zarządzaj kalendarzami"
+      ]
+    },
     "Modal title": {
       "Time zone changed": [
         "Strefa czasowa została zmieniona"
+      ],
+      "Unable to add more calendars": [
+        "Nie można dodać więcej kalendarzy"
+      ]
+    },
+    "Modal title and action": {
+      "Add calendar": [
+        "Dodaj kalendarz"
       ]
     },
     "Monthly recurring event, frequency": {
@@ -4344,6 +4631,46 @@
         "Obecna przestrzeń dyskowa:"
       ]
     },
+    "Subscribe to calendar modal": {
+      "Calendar URL": [
+        "Adres URL kalendarza"
+      ],
+      "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Subscribed calendars.\n${ kbLink }": [
+        "Wpisz adres URL zewnętrznego lub publicznego kalendarza, aby go zasubskrybować. Kalendarz w wersji tylko do odczytu zostanie dodany do subskrybowanych kalendarzy.\n${ kbLink }"
+      ]
+    },
+    "Subscribe to calendar modal description": {
+      "Learn how to get a private calendar link.": [
+        "Dowiedz się, jak uzyskać prywatny link kalendarza."
+      ]
+    },
+    "Subscribed calendar extension warning": {
+      "By using this link, Google will make the calendar you are subscribing to public": [
+        "Używając tego linku, Google upubliczni kalendarz, który subskrybujesz"
+      ],
+      "This link might be wrong": [
+        "Link może być nieprawidłowy"
+      ]
+    },
+    "Subscribed calendar feature unavailable error": {
+      "Subscribing to a calendar is unavailable at the moment": [
+        "Funkcja subskrybowania kalendarza jest obecnie niedostępna"
+      ]
+    },
+    "Subscribed calendar limit reached modal body": {
+      "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } subscribed calendar.": [
+        "Osiągnąłeś maksymalną liczbę subskrybowanych kalendarzy (${ MAX_SUBSCRIBED_CALENDARS_PER_USER }).",
+        "Osiągnąłeś maksymalną liczbę subskrybowanych kalendarzy (${ MAX_SUBSCRIBED_CALENDARS_PER_USER }).",
+        "Osiągnąłeś maksymalną liczbę subskrybowanych kalendarzy (${ MAX_SUBSCRIBED_CALENDARS_PER_USER }).",
+        "Osiągnąłeś maksymalną liczbę subskrybowanych kalendarzy (${ MAX_SUBSCRIBED_CALENDARS_PER_USER })."
+      ],
+      "You have reached the maximum of ${ personalCalendarLimit } personal calendar.": [
+        "Osiągnąłeś maksymalną liczbę subskrybowanych osobistych kalendarzy (${ personalCalendarLimit }).",
+        "Osiągnąłeś maksymalną liczbę subskrybowanych osobistych kalendarzy (${ personalCalendarLimit }).",
+        "Osiągnąłeś maksymalną liczbę subskrybowanych osobistych kalendarzy (${ personalCalendarLimit }).",
+        "Osiągnąłeś maksymalną liczbę subskrybowanych osobistych kalendarzy (${ personalCalendarLimit })."
+      ]
+    },
     "Success": {
       "A cancellation email will be sent to removed participants for all the events in this series.": [
         "Wiadomość o anulowaniu wydarzenia zostanie wysłana do usuniętych uczestników wydarzeń w tej serii."
@@ -4690,6 +5017,9 @@
       "Contacts": [
         "Kontakty"
       ],
+      "Continue with partial import?": [
+        "Kontynuować częściowe importowanie?"
+      ],
       "Coupon discount": [
         "Kupon zniżkowy"
       ],
@@ -4745,7 +5075,7 @@
         "Usuń wydarzenie"
       ],
       "Delete organization?": [
-        ""
+        "Usunąć organizację?"
       ],
       "Delete recurring event": [
         "Usuń wydarzenie cykliczne"
@@ -4813,8 +5143,20 @@
       "Human verification": [
         "Weryfikacja antyspamowa"
       ],
+      "Import as simple event?": [
+        "Importować jako zwykłe wydarzenie?",
+        "Importować jako zwykłe wydarzenia?",
+        "Importować jako zwykłe wydarzenia?",
+        "Importować jako zwykłe wydarzenia?"
+      ],
       "Import contacts": [
         "Importuj kontakty"
+      ],
+      "Import events": [
+        "Importuj wydarzenia"
+      ],
+      "Import failed": [
+        "Importowanie nie powiodło się"
       ],
       "Import groups": [
         "Importuj grupy"

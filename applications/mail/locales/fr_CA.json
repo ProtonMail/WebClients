@@ -209,9 +209,6 @@
       "Create new message": [
         "Créer un nouveau message"
       ],
-      "Create recovery phrase": [
-        "Créer une phrase de récupération"
-      ],
       "Custom filter": [
         "Filtre personnalisé"
       ],
@@ -266,7 +263,7 @@
         "Abandonner"
       ],
       "Dismiss get started checklist": [
-        ""
+        "Fermer la liste de vérification de démarrage"
       ],
       "Done": [
         "Fait"
@@ -327,6 +324,9 @@
       ],
       "Forward as attachment": [
         "Transférer en tant que pièce jointe"
+      ],
+      "Generate recovery phrase": [
+        "Générer une phrase de récupération"
       ],
       "Get started": [
         "Commencer"
@@ -576,7 +576,7 @@
         "Ouvrir le calendrier"
       ],
       "Open get started checklist modal": [
-        ""
+        "Ouvrir la liste de vérification de démarrage"
       ],
       "Open navigation": [
         "Ouvrir la navigation"
@@ -850,7 +850,7 @@
         "Changer d'offre"
       ],
       "Upgrade now": [
-        ""
+        "Mettre à niveau maintenant"
       ],
       "Upload picture": [
         "Téléverser une image"
@@ -999,7 +999,7 @@
     },
     "Amount of completed get started checklist items": {
       "${ numberOfCompletedItems } of ${ totalNumberOfChecklistItems } complete": [
-        ""
+        "${ numberOfCompletedItems } sur ${ totalNumberOfChecklistItems } complété(s)"
       ]
     },
     "Apps dropdown": {
@@ -1389,26 +1389,26 @@
       "(Attendance optional)": [
         "(présence facultative)"
       ],
-      "Adding occurrences to an event is not supported for the moment.": [
-        "L'ajout d'occurrences à un événement n'est pas pris en charge pour le moment."
+      "Adding occurrences to an event is not supported for the moment": [
+        "L'ajout d'occurrences à un événement n'est pas pris en charge pour le moment"
       ],
       "An occurrence has been added to the event ${ veventIcsTitle }": [
         "Une occurrence a été ajoutée à l'événement ${ veventIcsTitle }"
       ],
-      "Event refreshing is not supported for the moment.": [
-        "L'actualisation de l'événement n'est pas prise en charge pour le moment."
+      "Event refreshing is not supported for the moment": [
+        "L'actualisation de l'événement n'est pas prise en charge pour le moment"
       ],
-      "Event rescheduling is not supported for the moment.": [
-        "La replanification des événements n'est pas prise en charge pour le moment."
+      "Event rescheduling is not supported for the moment": [
+        "La replanification des événements n'est pas prise en charge pour le moment"
       ],
-      "The sender of this email has not been invited to this event and cannot be added as a participant.": [
-        "L'expéditeur·rice de ce courriel n'a pas été invité·e à cet événement et ne peut pas être ajouté·e en tant que participant·e."
+      "The sender of this email has not been invited to this event and cannot be added as a participant": [
+        "L'expéditeur·rice de ce courriel n'a pas été invité·e à cet événement et ne peut pas être ajouté·e en tant que participant·e"
       ],
-      "This answer cannot be added to ${ calendarAppName } as we only support answers to all events of a series for the moment.": [
-        "Cette réponse ne peut pas être ajoutée à ${ calendarAppName } car nous prenons seulement en charge les réponses à tous les évènements d'une série pour l'instant."
+      "This answer cannot be added to ${ calendarAppName } as we only support answers to all events of a series for the moment": [
+        "Cette réponse ne peut pas être ajoutée à ${ calendarAppName }, car pour le moment nous ne prenons en charge que les réponses à tous les événements d'une série"
       ],
-      "This event has already happened.": [
-        "Cet événement s'est déjà produit."
+      "This event has already happened": [
+        "Cet événement s'est déjà produit"
       ],
       "This event has been cancelled.": [
         "Cet événement a été annulé."
@@ -1416,8 +1416,8 @@
       "This event has been updated.": [
         "Cet événement a été mis à jour."
       ],
-      "This event is currently happening.": [
-        "Cet événement se produit actuellement."
+      "This event is currently happening": [
+        "Cet événement se produit actuellement"
       ],
       "This invitation is out of date. The event has been cancelled.": [
         "Cette invitation est obsolète. L'événement a été annulé."
@@ -1446,8 +1446,8 @@
       "You already tentatively accepted this invitation.": [
         "Vous avez déjà provisoirement accepté cette invitation."
       ],
-      "Your email address is not in the participants list.": [
-        "Votre adresse courriel n'est pas dans la liste des participants."
+      "Your email address is not in the participants list": [
+        "Votre adresse courriel n'est pas dans la liste des participants"
       ]
     },
     "Calendar status": {
@@ -1461,9 +1461,6 @@
     "Calendar subscription not synced error": {
       "Calendar could not be decrypted": [
         "Le calendrier n'a pas pu être déchiffré"
-      ],
-      "Calendar could not be found": [
-        "Le calendrier n'a pas pu être trouvé"
       ],
       "Calendar is syncing": [
         "Synchronisation du calendrier"
@@ -2115,7 +2112,7 @@
         "Certains groupes n'ont pas de contacts: ${ noContactGroupList } "
       ],
       "Organization not recognized. Try again.": [
-        ""
+        "Organisation non reconnue. Réessayez."
       ],
       "Passwords do not match": [
         "Les mots de passe ne correspondent pas"
@@ -2632,69 +2629,69 @@
     },
     "Get started checklist completion": {
       "We've added 1 GB of bonus storage to your account. Continue to explore ${ BRAND_NAME } and share your ${ protonMailAppName } address with your family, friends, and colleagues.": [
-        ""
+        "Nous avons ajouté 1 Go de stockage bonus à votre compte. Continuez à explorer ${ BRAND_NAME } et partagez votre adresse ${ protonMailAppName } avec votre famille, vos amis et vos collègues."
       ],
       "We've added 1 GB of bonus storage to your account. For even more storage and premium features, upgrade your plan.": [
-        ""
+        "Nous avons ajouté 1 Go de stockage bonus à votre compte. Pour obtenir encore plus de stockage et de fonctionnalités haut de gamme, passez à l’offre supérieure."
       ],
       "You're a privacy champ!": [
-        ""
+        "Vous êtes un·e champion·ne de la protection de la vie privée!"
       ]
     },
     "Get started checklist incentive": {
       "Complete all steps and get a total of 2 GB on your account": [
-        ""
+        "Complétez toutes les étapes et obtenez un total de 2 Go sur votre compte"
       ],
       "Only ${ days } day left": [
-        "",
-        ""
+        "Plus que ${ days } jour restant",
+        "Plus que ${ days } jours restants"
       ]
     },
     "Get started checklist instructions": {
       "Available on iOS and Android.": [
-        ""
+        "Disponible sur iOS et Android."
       ],
       "Get the ${ protonMailAppName } mobile app": [
-        ""
+        "Obtenir l'application mobile ${ protonMailAppName }"
       ],
       "Import contacts or emails": [
-        ""
+        "Importer des contacts ou des courriels"
       ],
       "Import your contacts or messages": [
-        ""
+        "Importez vos contacts ou messages"
       ],
       "Quickly transfer your contacts or emails from any provider using our Easy Switch import assistant.": [
-        ""
+        "Transférez rapidement vos contacts ou courriels depuis n'importe quel fournisseur à l'aide de notre assistant d'importation Easy Switch."
       ],
       "Sign into the mobile app to complete the action": [
-        ""
+        "Connectez-vous à l'application mobile pour terminer l'action"
       ],
       "Using your mobile device, scan this QR code or visit": [
-        ""
+        "Avec votre appareil mobile, scannez ce code QR ou visitez"
       ]
     },
     "Get started checklist item": {
       "Get mobile app": [
-        ""
+        "Obtenir l'application mobile"
       ],
       "Import contacts or emails": [
-        ""
+        "Importer des contacts ou des courriels"
       ],
       "Send a message": [
-        ""
+        "Envoyer un message"
       ],
       "Set up a recovery method": [
-        ""
+        "Définir une méthode de récupération"
       ]
     },
     "Get started checklist spotlight": {
       "You can access the checklist anytime from here": [
-        ""
+        "Vous pouvez accéder à la liste de vérification à tout moment depuis ici"
       ]
     },
     "Get started checklist title": {
       "Get started": [
-        ""
+        "Commencer"
       ]
     },
     "Group": {
@@ -3234,9 +3231,6 @@
       "Create in": [
         "Créer dans"
       ],
-      "Create recovery phrase": [
-        "Créer une phrase de récupération"
-      ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "Les fichiers CSV d'Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora et de certaines autres applications ainsi que les formats vCard 3.1 et 4.0 (encodage UTF-8) sont pris en charge."
       ],
@@ -3395,6 +3389,9 @@
       ],
       "Full-featured VPN with speed up to 10 Gbps.": [
         "RPV complet avec une vitesse maximale de 10 Gbit/s."
+      ],
+      "Generate recovery phrase": [
+        "Générer une phrase de récupération"
       ],
       "Get more storage and premium features.": [
         "Obtenez plus de stockage et des fonctionnalités haut de gamme."
@@ -3765,7 +3762,7 @@
         "Sélectionnez le format de message que vous souhaitez utiliser par défaut lors de l'envoi d'un courriel à cette adresse électronique."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit. You can also merge imported calendars with existing Proton calendars.": [
-        ""
+        "Sélectionnez les calendriers à importer. Un nouveau calendrier sera créé pour chaque calendrier importé jusqu'à la limite de 20 calendriers personnels. Vous pouvez également fusionner des calendriers importés avec des calendriers Proton existants."
       ],
       "Sending": [
         "Envoi en cours"
@@ -4608,7 +4605,7 @@
         "Chiffrer les courriels"
       ],
       "Enter organization name to confirm": [
-        ""
+        "Saisissez le nom de l'organisation pour confirmer"
       ],
       "Enter the 6-digit code": [
         "Saisissez le code à 6 chiffres"
@@ -5206,12 +5203,12 @@
     },
     "Mail import summary": {
       "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "",
-        ""
+        "Importer tous les messages de ${ selectedLabelsCount } sur ${ totalLabelsCount } label depuis ${ periodFragment } et les labelliser comme ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importer tous les messages de ${ selectedLabelsCount } sur ${ totalLabelsCount } labels depuis ${ periodFragment } et les labelliser comme ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
       "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "",
-        ""
+        "Importer tous les messages depuis ${ totalLabelsCount } label depuis ${ periodFragment } et les labelliser comme ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importer tous les messages depuis ${ totalLabelsCount } labels depuis ${ periodFragment } et les labelliser comme ${ LABEL_MARKUP_PLACEHOLDER }"
       ]
     },
     "Mailbox": {
@@ -5250,7 +5247,7 @@
     },
     "Member downgrade modal": {
       "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        ""
+        "Cela supprimera définitivement tous les sous-utilisateur·rice·s, comptes et données associés à votre organisation."
       ]
     },
     "Message": {
@@ -6090,7 +6087,7 @@
     },
     "Storage": {
       "Get extra storage for free": [
-        ""
+        "Obtenez de l'espace de stockage supplémentaire gratuitement"
       ],
       "Release notes": [
         "Notes de mise à jour"
@@ -6618,7 +6615,7 @@
         "Supprimer le message"
       ],
       "Delete organization?": [
-        ""
+        "Supprimer l’organisation?"
       ],
       "Deleting contacts": [
         "Suppression des contacts"

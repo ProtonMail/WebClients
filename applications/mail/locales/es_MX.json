@@ -209,9 +209,6 @@
       "Create new message": [
         "Crear mensaje nuevo"
       ],
-      "Create recovery phrase": [
-        "Crear frase de recuperación"
-      ],
       "Custom filter": [
         "Filtro personalizado"
       ],
@@ -327,6 +324,9 @@
       ],
       "Forward as attachment": [
         "Reenviar como adjunto"
+      ],
+      "Generate recovery phrase": [
+        "Generar frase de recuperación"
       ],
       "Get started": [
         "Comenzar"
@@ -1389,26 +1389,26 @@
       "(Attendance optional)": [
         "(Asistencia opcional)"
       ],
-      "Adding occurrences to an event is not supported for the moment.": [
-        "Añadir ocurrencias a un evento no es compatible por el momento."
+      "Adding occurrences to an event is not supported for the moment": [
+        "Añadir ocurrencias a un evento no es compatible por el momento"
       ],
       "An occurrence has been added to the event ${ veventIcsTitle }": [
         "Se añadió una ocurrencia al evento ${ veventIcsTitle }"
       ],
-      "Event refreshing is not supported for the moment.": [
-        "La actualización de eventos no es compatible por el momento."
+      "Event refreshing is not supported for the moment": [
+        "La actualización de eventos no es compatible por el momento"
       ],
-      "Event rescheduling is not supported for the moment.": [
-        "La reprogramación de eventos no es compatible por el momento."
+      "Event rescheduling is not supported for the moment": [
+        "La reprogramación de eventos no es compatible por el momento"
       ],
-      "The sender of this email has not been invited to this event and cannot be added as a participant.": [
-        "El remitente de este correo no ha sido invitado a este evento y no puede ser añadido como participante."
+      "The sender of this email has not been invited to this event and cannot be added as a participant": [
+        "El remitente de este correo no ha sido invitado a este evento y no puede ser añadido como participante"
       ],
-      "This answer cannot be added to ${ calendarAppName } as we only support answers to all events of a series for the moment.": [
-        "Esta respuesta no puede añadirse a ${ calendarAppName } ya que solo admitimos respuestas a todos los eventos de una serie por el momento."
+      "This answer cannot be added to ${ calendarAppName } as we only support answers to all events of a series for the moment": [
+        "Esta respuesta no puede añadirse a ${ calendarAppName } ya que solo admitimos respuestas a todos los eventos de una serie por el momento"
       ],
-      "This event has already happened.": [
-        "Este evento ya ha sucedido."
+      "This event has already happened": [
+        "Este evento ya ha sucedido"
       ],
       "This event has been cancelled.": [
         "Este evento fue cancelado."
@@ -1416,8 +1416,8 @@
       "This event has been updated.": [
         "Este evento ha sido actualizado."
       ],
-      "This event is currently happening.": [
-        "Este evento está sucediendo."
+      "This event is currently happening": [
+        "Este evento está sucediendo"
       ],
       "This invitation is out of date. The event has been cancelled.": [
         "La invitación está desactualizada. El evento fue cancelado."
@@ -1446,8 +1446,8 @@
       "You already tentatively accepted this invitation.": [
         "Ya ha aceptado tentativamente esta invitación."
       ],
-      "Your email address is not in the participants list.": [
-        "Su dirección de correo electrónico no está en la lista de participantes."
+      "Your email address is not in the participants list": [
+        "Su dirección de correo electrónico no está en la lista de participantes"
       ]
     },
     "Calendar status": {
@@ -1461,9 +1461,6 @@
     "Calendar subscription not synced error": {
       "Calendar could not be decrypted": [
         "No se pudo descifrar el calendario"
-      ],
-      "Calendar could not be found": [
-        "No se pudo encontrar el calendario"
       ],
       "Calendar is syncing": [
         "El calendario se está sincronizando"
@@ -3234,9 +3231,6 @@
       "Create in": [
         "Crear en"
       ],
-      "Create recovery phrase": [
-        "Crear frase de recuperación"
-      ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "Se admiten archivos CSV de Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora y algunas otras aplicaciones, así como los formatos vCard 3.1 y 4.0 (codificación UTF-8)."
       ],
@@ -3395,6 +3389,9 @@
       ],
       "Full-featured VPN with speed up to 10 Gbps.": [
         "VPN completa con velocidad de hasta 10 Gbps."
+      ],
+      "Generate recovery phrase": [
+        "Generar frase de recuperación"
       ],
       "Get more storage and premium features.": [
         "Obtener más almacenamiento y funciones premium."

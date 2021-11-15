@@ -209,9 +209,6 @@
       "Create new message": [
         ""
       ],
-      "Create recovery phrase": [
-        ""
-      ],
       "Custom filter": [
         "カスタムフィルター"
       ],
@@ -325,6 +322,9 @@
       ],
       "Forward as attachment": [
         "添付ファイルとして送信"
+      ],
+      "Generate recovery phrase": [
+        ""
       ],
       "Get started": [
         "はじめましょう"
@@ -1381,25 +1381,25 @@
       "(Attendance optional)": [
         ""
       ],
-      "Adding occurrences to an event is not supported for the moment.": [
+      "Adding occurrences to an event is not supported for the moment": [
         ""
       ],
       "An occurrence has been added to the event ${ veventIcsTitle }": [
         ""
       ],
-      "Event refreshing is not supported for the moment.": [
+      "Event refreshing is not supported for the moment": [
         ""
       ],
-      "Event rescheduling is not supported for the moment.": [
+      "Event rescheduling is not supported for the moment": [
         ""
       ],
-      "The sender of this email has not been invited to this event and cannot be added as a participant.": [
+      "The sender of this email has not been invited to this event and cannot be added as a participant": [
         ""
       ],
-      "This answer cannot be added to ${ calendarAppName } as we only support answers to all events of a series for the moment.": [
+      "This answer cannot be added to ${ calendarAppName } as we only support answers to all events of a series for the moment": [
         ""
       ],
-      "This event has already happened.": [
+      "This event has already happened": [
         ""
       ],
       "This event has been cancelled.": [
@@ -1408,7 +1408,7 @@
       "This event has been updated.": [
         "イベントが更新されました。"
       ],
-      "This event is currently happening.": [
+      "This event is currently happening": [
         ""
       ],
       "This invitation is out of date. The event has been cancelled.": [
@@ -1438,8 +1438,8 @@
       "You already tentatively accepted this invitation.": [
         ""
       ],
-      "Your email address is not in the participants list.": [
-        "あなたのメールアドレスは参加者リストにありません。"
+      "Your email address is not in the participants list": [
+        ""
       ]
     },
     "Calendar status": {
@@ -1452,9 +1452,6 @@
     },
     "Calendar subscription not synced error": {
       "Calendar could not be decrypted": [
-        ""
-      ],
-      "Calendar could not be found": [
         ""
       ],
       "Calendar is syncing": [
@@ -3168,9 +3165,6 @@
       "Create in": [
         ""
       ],
-      "Create recovery phrase": [
-        "回復フレーズを作成"
-      ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         ""
       ],
@@ -3323,6 +3317,9 @@
       ],
       "Full-featured VPN with speed up to 10 Gbps.": [
         "最大 10 Gbps を備えたフル機能の VPN。"
+      ],
+      "Generate recovery phrase": [
+        ""
       ],
       "Get more storage and premium features.": [
         ""

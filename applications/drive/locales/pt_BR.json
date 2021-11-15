@@ -140,12 +140,6 @@
       "Create new folder": [
         "Criar nova pasta"
       ],
-      "Created date: new to old": [
-        "Data de criação: novo para antigo"
-      ],
-      "Created date: old to new": [
-        "Data de criação: antigo para novo"
-      ],
       "Customize": [
         "Personalizar"
       ],
@@ -211,12 +205,6 @@
       "enable desktop notifications": [
         "ativar notificações na área de trabalho"
       ],
-      "Expires: new to old": [
-        "Expira em: novo para antigo"
-      ],
-      "Expires: old to new": [
-        "Expira em: antigo para novo"
-      ],
       "Export": [
         "Exportar"
       ],
@@ -227,7 +215,7 @@
         "Encaminhar como anexo"
       ],
       "Get link": [
-        ""
+        "Obter link"
       ],
       "Get started": [
         "Começar"
@@ -296,7 +284,7 @@
         "Layout da caixa de correio"
       ],
       "Manage link": [
-        ""
+        "Gerenciar link"
       ],
       "Mark for deletion": [
         "Marcar para exclusão"
@@ -316,6 +304,9 @@
       "More info: ${ safeTitle }": [
         "Mais informações: ${ safeTitle }"
       ],
+      "More options": [
+        ""
+      ],
       "Move": [
         "Mover"
       ],
@@ -324,12 +315,6 @@
       ],
       "Move to trash": [
         "Mover para lixeira"
-      ],
-      "Name: A to Z": [
-        "Nome: A a Z"
-      ],
-      "Name: Z to A": [
-        "Nome: Z a A"
       ],
       "New upload": [
         "Novo envio"
@@ -484,12 +469,6 @@
       "Signing out": [
         "Encerrando a sessão"
       ],
-      "Size: large to small": [
-        "Tamanho: maior para menor"
-      ],
-      "Size: small to large": [
-        "Tamanho: menor para maior"
-      ],
       "Skip": [
         "Pular"
       ],
@@ -526,12 +505,6 @@
       "Try another method": [
         "Tentar outro método"
       ],
-      "Type: A to Z": [
-        "Tipo: A a Z"
-      ],
-      "Type: Z to A": [
-        "Tipo: Z a A"
-      ],
       "Undo": [
         "Desfazer"
       ],
@@ -552,12 +525,6 @@
       ],
       "Upload picture": [
         "Carregar imagem"
-      ],
-      "Uploaded date: new to old": [
-        "Data de upload: novo para antigo"
-      ],
-      "Uploaded date: old to new": [
-        "Data de upload: antigo para novo"
       ],
       "Use ${ label } theme": [
         "Usar o tema ${ label }"
@@ -881,9 +848,6 @@
       "Calendar could not be decrypted": [
         ""
       ],
-      "Calendar could not be found": [
-        ""
-      ],
       "Calendar is syncing": [
         "Calendário está sincronizando"
       ],
@@ -1154,6 +1118,9 @@
       "Error connecting to the Bitcoin API.": [
         "Erro ao conectar com a API do Bitcoin."
       ],
+      "Failed to load the link": [
+        "Falha ao carregar o link"
+      ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         ""
       ],
@@ -1230,7 +1197,7 @@
         "Alguns dos grupos não têm contatos: ${ noContactGroupList } "
       ],
       "Organization not recognized. Try again.": [
-        ""
+        "Organização não reconhecida. Tente novamente."
       ],
       "Passwords do not match": [
         "As senhas não coincidem"
@@ -1671,12 +1638,12 @@
         "${ namesWithoutLast } e ${ nameOfLast }"
       ],
       "${ numContactGroups } contact group": [
-        "",
-        ""
+        "${ numContactGroups } grupo de contato",
+        "${ numContactGroups } grupos de contatos"
       ],
       "${ numContacts } contact": [
-        "",
-        ""
+        "${ numContacts } contato",
+        "${ numContacts } contatos"
       ],
       "${ pausedCount } Paused": [
         "${ pausedCount } Em pausa",
@@ -1790,7 +1757,7 @@
         ""
       ],
       "and": [
-        ""
+        "e"
       ],
       "Anyone with this link can access your file.": [
         "Qualquer um com este link pode acessar seu arquivo."
@@ -1848,7 +1815,7 @@
         "Clique em \"Solicitar novo código\" para que um novo código seja enviado para ${ strong }. Se esse número de telefone estiver incorreto, clique em \"Editar\" para corrigir isso."
       ],
       "Close this screen to exit.": [
-        ""
+        "Feche esta tela para sair."
       ],
       "Closing transfer manager will cancel all active transfers, are you sure?": [
         "Fechar o gerenciador de transferências cancelará todas as transferências ativas. Tem certeza?"
@@ -2007,7 +1974,7 @@
         "Importar de"
       ],
       "Import in progress": [
-        ""
+        "Importação em progresso"
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         ""
@@ -2037,10 +2004,13 @@
         "Chave de impressão digital"
       ],
       "Large imports can take several days.": [
-        ""
+        "Grandes importações podem levar vários dias."
       ],
       "Learn more": [
         "Saiba mais"
+      ],
+      "Link copied to clipboard": [
+        "Link copiado para área de transferência"
       ],
       "Link expires: ": [
         "O link expira em: "
@@ -2224,7 +2194,7 @@
         "Selecione o formato de e-mail que você deseja que seja usado por padrão ao enviar um e-mail para este endereço."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit. You can also merge imported calendars with existing Proton calendars.": [
-        ""
+        "Selecione quais calendários importar. Um novo calendário será criado para cada calendário importado, até o limite de 20 calendários. Você também pode mesclar os calendários importados com os calendários Proton existentes."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Os servidores estão inacessíveis. Por favor, tente novamente em alguns minutos"
@@ -2809,6 +2779,9 @@
       "Country": [
         "País"
       ],
+      "Created": [
+        ""
+      ],
       "CVV code": [
         "Código CVV"
       ],
@@ -2927,6 +2900,9 @@
       "Merge a folder": [
         "Combinar uma pasta"
       ],
+      "Name": [
+        ""
+      ],
       "Name on card": [
         "Nome no cartão"
       ],
@@ -3008,6 +2984,9 @@
       "Sign emails": [
         "Assinar e-mails"
       ],
+      "Size": [
+        ""
+      ],
       "Skip file": [
         "Ignorar arquivo"
       ],
@@ -3041,6 +3020,9 @@
       "Two-factor authentication code": [
         "Autenticação de dois fatores"
       ],
+      "Type": [
+        ""
+      ],
       "Unknown file": [
         "Arquivo desconhecido"
       ],
@@ -3053,17 +3035,14 @@
       "Unlock later": [
         ""
       ],
-      "Up to ${ parentLinkName }": [
-        ""
-      ],
-      "Up to the parent folder": [
-        "Subir para a pasta superior"
-      ],
       "Upload anyway": [
         "Enviar assim mesmo"
       ],
       "Upload picture": [
         "Carregar imagem"
+      ],
+      "Uploaded": [
+        ""
       ],
       "Username or ProtonMail address": [
         "Nome de usuário ou endereço do ProtonMail"
@@ -3307,7 +3286,7 @@
     },
     "Member downgrade modal": {
       "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        ""
+        "Isso excluirá permanentemente todos os subusuários, contas e dados associados à sua organização."
       ]
     },
     "Message display when a new app version is available": {
@@ -4148,7 +4127,7 @@
         "Excluir ${ Name }"
       ],
       "Delete organization?": [
-        ""
+        "Excluir organização?"
       ],
       "Delete permanently": [
         "Excluir permanentemente"

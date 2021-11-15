@@ -209,9 +209,6 @@
       "Create new message": [
         "Δημιουργία νέου μηνύματος"
       ],
-      "Create recovery phrase": [
-        "Δημιουργία φράσης ανάκτησης"
-      ],
       "Custom filter": [
         "Προσαρμοσμένο φίλτρο"
       ],
@@ -266,7 +263,7 @@
         "Απόρριψη"
       ],
       "Dismiss get started checklist": [
-        ""
+        "Παράβλεψη λίστας ελέγχου εκκίνησης"
       ],
       "Done": [
         "Ολοκληρώθηκε"
@@ -328,8 +325,11 @@
       "Forward as attachment": [
         "Προώθηση ως συνημμένο"
       ],
+      "Generate recovery phrase": [
+        "Παραγωγή φράσης ανάκτησης"
+      ],
       "Get started": [
-        "Ξεκινήστε"
+        "Εκκίνηση"
       ],
       "Get verification code": [
         "Απόκτηση κωδικού επαλήθευσης"
@@ -576,7 +576,7 @@
         "Άνοιγμα ημερολόγιου"
       ],
       "Open get started checklist modal": [
-        ""
+        "Άνοιγμα παραθύρου λίστας ελέγχου εκκίνησης"
       ],
       "Open navigation": [
         "Άνοιγμα μενού πλοήγησης"
@@ -850,7 +850,7 @@
         "Αναβάθμιση"
       ],
       "Upgrade now": [
-        ""
+        "Αναβάθμιση τώρα"
       ],
       "Upload picture": [
         "Ανέβασμα εικόνας"
@@ -999,7 +999,7 @@
     },
     "Amount of completed get started checklist items": {
       "${ numberOfCompletedItems } of ${ totalNumberOfChecklistItems } complete": [
-        ""
+        "${ numberOfCompletedItems } από ${ totalNumberOfChecklistItems } ολοκληρώθηκαν"
       ]
     },
     "Apps dropdown": {
@@ -1389,26 +1389,26 @@
       "(Attendance optional)": [
         "(Συμμετοχή προαιρετική)"
       ],
-      "Adding occurrences to an event is not supported for the moment.": [
-        "Προς το παρόν δεν υποστηρίζεται η προσθήκη διοργανώσεων σε μια εκδήλωση."
+      "Adding occurrences to an event is not supported for the moment": [
+        "Για την ώρα δεν υποστηρίζεται προσθήκη διοργανώσεων σε εκδήλωση"
       ],
       "An occurrence has been added to the event ${ veventIcsTitle }": [
         "Προστέθηκε μια διοργάνωση στην εκδήλωση ${ veventIcsTitle }"
       ],
-      "Event refreshing is not supported for the moment.": [
-        "Η ανανέωση της εκδήλωσης δεν υποστηρίζεται προς το παρόν."
+      "Event refreshing is not supported for the moment": [
+        "Για την ώρα δεν υποστηρίζεται ανανέωση εκδήλωσης"
       ],
-      "Event rescheduling is not supported for the moment.": [
-        "Η αναδιάρθρωση συμβάντων δεν υποστηρίζεται προς το παρόν."
+      "Event rescheduling is not supported for the moment": [
+        "Για την ώρα δεν υποστηρίζεται επαναπρογραμματισμός εκδήλωσης"
       ],
-      "The sender of this email has not been invited to this event and cannot be added as a participant.": [
-        "Ο αποστολέας αυτού του μηνύματος δεν έχει προσκληθεί σε αυτήν την εκδήλωση και δεν μπορεί να προστεθεί ως συμμετέχων."
+      "The sender of this email has not been invited to this event and cannot be added as a participant": [
+        "Ο αποστολέας αυτού του μηνύματος δεν έχει προσκληθεί σε αυτήν την εκδήλωση και δεν μπορεί να προστεθεί ως συμμετέχων"
       ],
-      "This answer cannot be added to ${ calendarAppName } as we only support answers to all events of a series for the moment.": [
-        "Αυτή η απάντηση δεν μπορεί να προστεθεί στο ${ calendarAppName } καθώς προς το παρόν υποστηρίζουμε μόνο τις απαντήσεις σε όλα τα γεγονότα μιας σειράς."
+      "This answer cannot be added to ${ calendarAppName } as we only support answers to all events of a series for the moment": [
+        "Αυτή η απάντηση δεν μπορεί να προστεθεί στο ${ calendarAppName }, καθώς για την ώρα υποστηρίζουμε απαντήσεις μόνο σε όλες τις εκδηλώσεις μιας σειράς"
       ],
-      "This event has already happened.": [
-        "Αυτή η εκδήλωση έχει ήδη λάβει χώρα."
+      "This event has already happened": [
+        "Αυτή η εκδήλωση έχει ήδη λάβει χώρα"
       ],
       "This event has been cancelled.": [
         "Αυτή η εκδήλωση έχει ακυρωθεί."
@@ -1416,8 +1416,8 @@
       "This event has been updated.": [
         "Αυτή η εκδήλωση έχει ενημερωθεί."
       ],
-      "This event is currently happening.": [
-        "Αυτή η εκδήλωση λαμβάνει χώρα αυτήν τη στιγμή."
+      "This event is currently happening": [
+        "Αυτή η εκδήλωση λαμβάνει χώρα αυτήν τη στιγμή"
       ],
       "This invitation is out of date. The event has been cancelled.": [
         "Αυτή η πρόσκληση είναι ξεπερασμένη. Το γεγονός έχει ακυρωθεί."
@@ -1446,8 +1446,8 @@
       "You already tentatively accepted this invitation.": [
         "Αποδεχθήκατε ήδη προσωρινά αυτή την πρόσκληση."
       ],
-      "Your email address is not in the participants list.": [
-        "Η διεύθυνση email σας δεν είναι στη λίστα συμμετεχόντων."
+      "Your email address is not in the participants list": [
+        "Η ηλ. διεύθυνσή σας δεν βρίσκεται στη λίστα συμμετεχόντων"
       ]
     },
     "Calendar status": {
@@ -1461,9 +1461,6 @@
     "Calendar subscription not synced error": {
       "Calendar could not be decrypted": [
         "Αδυναμία αποκρυπτογράφησης ημερολογίου"
-      ],
-      "Calendar could not be found": [
-        "Αδυναμία εύρεσης ημερολογίου"
       ],
       "Calendar is syncing": [
         "Το ημερολόγιο συγχρονίζεται"
@@ -2632,22 +2629,22 @@
     },
     "Get started checklist completion": {
       "We've added 1 GB of bonus storage to your account. Continue to explore ${ BRAND_NAME } and share your ${ protonMailAppName } address with your family, friends, and colleagues.": [
-        ""
+        "Έχουμε προσθέσει δώρο 1 GB χώρου αποθήκευσης στον λογαριασμό σας. Συνεχίστε να εξερευνάτε ${ BRAND_NAME } και μοιραστείτε τη διεύθυνση ${ protonMailAppName } με την οικογένεια, τους φίλους και τους συναδέλφους σας."
       ],
       "We've added 1 GB of bonus storage to your account. For even more storage and premium features, upgrade your plan.": [
-        ""
+        "Έχουμε προσθέσει δώρο 1 GB χώρου αποθήκευσης στον λογαριασμό σας. Για ακόμα περισσότερο χώρο αποθήκευσης και premium χαρακτηριστικά, αναβαθμίστε το πλάνο σας."
       ],
       "You're a privacy champ!": [
-        ""
+        "Είστε πρωταθλητής ιδιωτικότητας!"
       ]
     },
     "Get started checklist incentive": {
       "Complete all steps and get a total of 2 GB on your account": [
-        ""
+        "Ολοκληρώστε όλα τα βήματα και αποκτήστε συνολικά 2 GB στο λογαριασμό σας"
       ],
       "Only ${ days } day left": [
-        "",
-        ""
+        "Απομένει μόνο ${ days } ημέρα",
+        "Απομένουν μόνο ${ days } ημέρες"
       ]
     },
     "Get started checklist instructions": {
@@ -2655,33 +2652,33 @@
         "Διατίθεται σε iOS και Android."
       ],
       "Get the ${ protonMailAppName } mobile app": [
-        ""
+        "Αποκτήστε την εφαρμογή ${ protonMailAppName } για κινητά"
       ],
       "Import contacts or emails": [
-        ""
+        "Εισαγωγή επαφών ή μηνυμάτων"
       ],
       "Import your contacts or messages": [
-        ""
+        "Εισάγετε τις επαφές ή τα μηνύματά σας"
       ],
       "Quickly transfer your contacts or emails from any provider using our Easy Switch import assistant.": [
-        ""
+        "Μεταφέρετε γρήγορα τις επαφές ή τα μηνύματα ηλεκτρονικού ταχυδρομείου σας από οποιονδήποτε πάροχο χρησιμοποιώντας τον βοηθό εισαγωγής μας Easy Switch."
       ],
       "Sign into the mobile app to complete the action": [
-        ""
+        "Συνδεθείτε στην εφαρμογή για κινητά για να ολοκληρώσετε την ενέργεια"
       ],
       "Using your mobile device, scan this QR code or visit": [
-        ""
+        "Χρησιμοποιώντας την κινητή συσκευή σας, σαρώστε αυτόν τον κωδικό QR ή επισκεφθείτε το σύνδεσμο"
       ]
     },
     "Get started checklist item": {
       "Get mobile app": [
-        ""
+        "Αποκτήστε την εφαρμογή για κινητά"
       ],
       "Import contacts or emails": [
-        ""
+        "Εισαγωγή επαφών ή μηνυμάτων"
       ],
       "Send a message": [
-        ""
+        "Αποστολή μηνύματος"
       ],
       "Set up a recovery method": [
         "Ορισμός μεθόδου ανάκτησης"
@@ -2689,12 +2686,12 @@
     },
     "Get started checklist spotlight": {
       "You can access the checklist anytime from here": [
-        ""
+        "Μπορείτε να έχετε πρόσβαση στη λίστα ελέγχου οποιαδήποτε στιγμή από εδώ"
       ]
     },
     "Get started checklist title": {
       "Get started": [
-        ""
+        "Εκκίνηση"
       ]
     },
     "Group": {
@@ -3234,9 +3231,6 @@
       "Create in": [
         "Δημιουργία εντός"
       ],
-      "Create recovery phrase": [
-        "Δημιουργία φράσης ανάκτησης"
-      ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "Υποστηρίζονται αρχεία CSV από Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora και κάποιες άλλες εφαρμογές, καθώς και μορφές vCard 3.1 και 4.0 (κωδικοποίηση UTF-8)."
       ],
@@ -3395,6 +3389,9 @@
       ],
       "Full-featured VPN with speed up to 10 Gbps.": [
         "Πλήρως εξοπλισμένο VPN με ταχύτητα έως και 10 Gbps."
+      ],
+      "Generate recovery phrase": [
+        "Παραγωγή φράσης ανάκτησης"
       ],
       "Get more storage and premium features.": [
         "Αποκτήστε περισσότερο χώρο αποθήκευσης και premium δυνατότητες."
@@ -3765,7 +3762,7 @@
         "Επιλέξτε τη μορφή ηλεκτρονικού ταχυδρομείου που θέλετε να χρησιμοποιηθεί από προεπιλογή κατά την αποστολή ενός E-mail σε αυτό το E-mail."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit. You can also merge imported calendars with existing Proton calendars.": [
-        ""
+        "Επιλέξτε ποια ημερολόγια θα εισαγάγετε. Ενα νέο ημερολόγιο θα δημιουργηθεί για κάθε εισαγόμενο ημερολόγιο μέχρι το όριο των 20 ημερολογίων. Μπορείτε επίσης να συγχωνεύσετε εισαγόμενα ημερολόγια με υπάρχοντα ημερολόγια Proton."
       ],
       "Sending": [
         "Γίνεται αποστολή"
@@ -5206,12 +5203,12 @@
     },
     "Mail import summary": {
       "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "",
-        ""
+        "Εισαγάγετε όλα τα μηνύματα από ${ selectedLabelsCount } από ${ totalLabelsCount } ετικέτα από ${ periodFragment } και επισημάνετε τα με ετικέτα ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Εισαγάγετε όλα τα μηνύματα από ${ selectedLabelsCount } από ${ totalLabelsCount } ετικέτες από ${ periodFragment } και επισημάνετε τα με ετικέτα ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
       "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "",
-        ""
+        "Εισαγάγετε όλα τα μηνύματα από ${ totalLabelsCount } ετικέτα από ${ periodFragment } και επισημάνετε τα με ετικέτα ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Εισαγάγετε όλα τα μηνύματα από ${ totalLabelsCount } ετικέτες από ${ periodFragment } και επισημάνετε τα με ετικέτα ${ LABEL_MARKUP_PLACEHOLDER }"
       ]
     },
     "Mailbox": {
@@ -5250,7 +5247,7 @@
     },
     "Member downgrade modal": {
       "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        ""
+        "Αυτό θα διαγράψει οριστικά όλους τους υπο-χρήστες, τους λογαριασμούς και τα δεδομένα που σχετίζονται με τον οργανισμό σας."
       ]
     },
     "Message": {
@@ -6090,7 +6087,7 @@
     },
     "Storage": {
       "Get extra storage for free": [
-        ""
+        "Αποκτήστε επιπλέον χώρο αποθήκευσης δωρεάν"
       ],
       "Release notes": [
         "Σημειώσεις έκδοσης"

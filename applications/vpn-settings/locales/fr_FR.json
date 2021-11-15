@@ -531,7 +531,7 @@
     },
     "blackfriday: VPNspecialoffer Badge popup": {
       "${ vpnAppName } Plus Special Offer 2021 discount has been applied": [
-        "La réduction de l'Offre Spéciale ${ vpnAppName } Plus 2021 a été appliquée"
+        "La réduction de l'offre spéciale ${ vpnAppName } Plus 2021 a été appliquée"
       ]
     },
     "blackfriday: VPNspecialoffer Info": {
@@ -539,7 +539,7 @@
         "Les réductions sont basées sur le prix mensuel standard de ${ standardMonthlyPricing }"
       ],
       "Save ${ percentage }%": [
-        "${ percentage }%"
+        "-${ percentage }%"
       ],
       "Special offer Terms and Conditions": [
         "Conditions générales des offres spéciales"
@@ -557,7 +557,7 @@
     },
     "blackfriday: VPNspecialoffer Title": {
       "(${ notice }) Renews after 1 month at a standard monthly price of ${ amount }": [
-        "(${ notice }) Renouvellement après 1 moins à un prix standard mensuel de ${ amount }"
+        "(${ notice }) Renouvellement après 1 mois à un prix standard mensuel de ${ amount }"
       ],
       "(${ notice }) Renews after 1 year at a standard discounted annual price of ${ amount } (20% discount)": [
         "(${ notice }) Renouvellement après 1 an à un prix standard annuel réduit de ${ amount } (20% de réduction)"
@@ -584,7 +584,7 @@
         "Facturé ${ amount } pour la première année.${ supNotice }"
       ],
       "Get the special year-end offer on our Premium VPN PLUS plan": [
-        "Profitez de l'offre spéciale de fin d'année sur notre abonnement premium VPN Plus"
+        "Profitez de l'offre spéciale de fin d'année sur notre abonnement premium VPN PLUS"
       ]
     },
     "Bug category": {
@@ -694,9 +694,6 @@
     "Calendar subscription not synced error": {
       "Calendar could not be decrypted": [
         "Le calendrier n'a pas pu être déchiffré"
-      ],
-      "Calendar could not be found": [
-        "Le calendrier n'a pas pu être trouvé"
       ],
       "Calendar is syncing": [
         "Synchronisation du calendrier"
@@ -1294,12 +1291,6 @@
       ],
       "Defends against threats to VPN privacy by passing your Internet traffic through multiple servers.": [
         "Protège contre les menaces qui pèsent sur la confidentialité du VPN en transmettant votre trafic Internet à travers plusieurs serveurs."
-      ],
-      "Disabling this will prevent this email from being used for account recovery.": [
-        "Désactiver ceci empêchera l'utilisation de cette adresse électronique pour la récupération du compte."
-      ],
-      "Disabling this will prevent this phone number from being used for account recovery.": [
-        "Désactiver ceci empêchera l'utilisation de ce numéro de téléphone pour la récupération du compte."
       ],
       "Discount applied to your subscription with coupon ${ code }": [
         "Remise appliquée à votre abonnement avec un bon de ${ code }"
@@ -2255,9 +2246,6 @@
       ]
     },
     "label": {
-      "Phone number": [
-        "Numéro de téléphone"
-      ],
       "Recovery phone number": [
         "Numéro de téléphone de récupération"
       ]
@@ -2691,7 +2679,7 @@
       "Proton username": [
         "Nom d'utilisateur Proton"
       ],
-      "Recovery email": [
+      "Recovery email address": [
         "Adresse électronique de récupération"
       ],
       "Reset code": [

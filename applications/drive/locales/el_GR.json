@@ -140,12 +140,6 @@
       "Create new folder": [
         "Δημιουργία νέου φακέλου"
       ],
-      "Created date: new to old": [
-        "Ημ/νία δημιουργίας: νέα προς παλαιά"
-      ],
-      "Created date: old to new": [
-        "Ημ/νία δημιουργίας: παλαιά προς νέα"
-      ],
       "Customize": [
         "Προσαρμογή"
       ],
@@ -211,12 +205,6 @@
       "enable desktop notifications": [
         "ενεργοποίηση ειδοποιήσεων επιφάνειας εργασίας"
       ],
-      "Expires: new to old": [
-        "Λήξη: νέα προς παλαιά"
-      ],
-      "Expires: old to new": [
-        "Λήξη: παλαιά προς νέα"
-      ],
       "Export": [
         "Εξαγωγή"
       ],
@@ -227,7 +215,7 @@
         "Προώθηση ως συνημμένο"
       ],
       "Get link": [
-        ""
+        "Λάβετε σύνδεσμο"
       ],
       "Get started": [
         "Ξεκινήστε"
@@ -296,7 +284,7 @@
         "Διάταξη θυρίδας"
       ],
       "Manage link": [
-        ""
+        "Διαχείριση συνδέσμου"
       ],
       "Mark for deletion": [
         "Σήμανση για διαγραφή"
@@ -316,6 +304,9 @@
       "More info: ${ safeTitle }": [
         "Περισσότερες πληροφορίες: ${ safeTitle }"
       ],
+      "More options": [
+        "Περισσότερες επιλογές"
+      ],
       "Move": [
         "Μετακίνηση"
       ],
@@ -324,12 +315,6 @@
       ],
       "Move to trash": [
         "Μετακίνηση στον κάδο απορριμμάτων"
-      ],
-      "Name: A to Z": [
-        "Όνομα: Α προς Ω"
-      ],
-      "Name: Z to A": [
-        "Όνομα: Ω προς Α"
       ],
       "New upload": [
         "Νέο ανέβασμα"
@@ -484,12 +469,6 @@
       "Signing out": [
         "Αποσύνδεση"
       ],
-      "Size: large to small": [
-        "Μέγεθος: μεγάλο σε μικρό"
-      ],
-      "Size: small to large": [
-        "Μέγεθος: μικρό σε μεγάλο"
-      ],
       "Skip": [
         "Παράλειψη"
       ],
@@ -526,12 +505,6 @@
       "Try another method": [
         "Δοκιμάστε μια άλλη μέθοδο"
       ],
-      "Type: A to Z": [
-        "Τύπος: Α έως το Ω"
-      ],
-      "Type: Z to A": [
-        "Τύπος: Ω ως Α"
-      ],
       "Undo": [
         "Αναίρεση"
       ],
@@ -552,12 +525,6 @@
       ],
       "Upload picture": [
         "Ανέβασμα εικόνας"
-      ],
-      "Uploaded date: new to old": [
-        "Ημ/νία ανεβάσματος: νέα προς παλαιά"
-      ],
-      "Uploaded date: old to new": [
-        "Ημ/νία ανεβάσματος: παλαιά προς νέα"
       ],
       "Use ${ label } theme": [
         "Χρήση ${ label } θέματος"
@@ -881,9 +848,6 @@
       "Calendar could not be decrypted": [
         "Αδυναμία αποκρυπτογράφησης ημερολογίου"
       ],
-      "Calendar could not be found": [
-        "Αδυναμία εύρεσης ημερολογίου"
-      ],
       "Calendar is syncing": [
         "Το ημερολόγιο συγχρονίζεται"
       ],
@@ -1153,6 +1117,9 @@
       ],
       "Error connecting to the Bitcoin API.": [
         "Σφάλμα σύνδεσης στο Bitcoin API."
+      ],
+      "Failed to load the link": [
+        "Αποτυχία φόρτωσης συνδέσμου"
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "Αδυναμία ανεβάσματος αρχείου \"${ item.name }\", λόγω σφάλματος \"${ error }\""
@@ -2042,6 +2009,9 @@
       "Learn more": [
         "Μάθετε περισσότερα"
       ],
+      "Link copied to clipboard": [
+        "Ο σύνδεσμος αντιγράφηκε στο πρόχειρο"
+      ],
       "Link expires: ": [
         "Ο σύνδεσμος λήγει: "
       ],
@@ -2224,7 +2194,7 @@
         "Ορίστε την προεπιλεγμένη μορφή των μηνυμάτων που αποστέλλονται προς αυτήν την ηλ. διεύθυνση."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit. You can also merge imported calendars with existing Proton calendars.": [
-        ""
+        "Επιλέξτε ποια ημερολόγια θα εισαγάγετε. Ενα νέο ημερολόγιο θα δημιουργηθεί για κάθε εισαγόμενο ημερολόγιο μέχρι το όριο των 20 ημερολογίων. Μπορείτε επίσης να συγχωνεύσετε εισαγόμενα ημερολόγια με υπάρχοντα ημερολόγια Proton."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Οι διακομιστές είναι απρόσιτοι. Παρακαλούμε δοκιμάστε ξανά σε λίγα λεπτά"
@@ -2809,6 +2779,9 @@
       "Country": [
         "Χώρα"
       ],
+      "Created": [
+        "Δημιουργήθηκε"
+      ],
       "CVV code": [
         "Κωδικός CVV"
       ],
@@ -2927,6 +2900,9 @@
       "Merge a folder": [
         "Συγχώνευση φακέλου"
       ],
+      "Name": [
+        "Όνομα"
+      ],
       "Name on card": [
         "Όνομα πάνω στην κάρτα"
       ],
@@ -3008,6 +2984,9 @@
       "Sign emails": [
         "Υπογραφή ηλεκτρονικών ταχυδρομείων"
       ],
+      "Size": [
+        "Μέγεθος"
+      ],
       "Skip file": [
         "Παράλειψη αρχείου"
       ],
@@ -3041,6 +3020,9 @@
       "Two-factor authentication code": [
         "Κωδικός ελέγχου ταυτότητας δύο παραγόντων"
       ],
+      "Type": [
+        "Τύπος"
+      ],
       "Unknown file": [
         "Άγνωστο αρχείο"
       ],
@@ -3053,17 +3035,14 @@
       "Unlock later": [
         "Ξεκλείδωμα αργότερα"
       ],
-      "Up to ${ parentLinkName }": [
-        "Πίσω στο ${ parentLinkName }"
-      ],
-      "Up to the parent folder": [
-        "Πίσω στο γονικό φάκελο"
-      ],
       "Upload anyway": [
         "Ανέβασμα οπωσδήποτε"
       ],
       "Upload picture": [
         "Ανέβασμα εικόνας"
+      ],
+      "Uploaded": [
+        "Ανέβηκε"
       ],
       "Username or ProtonMail address": [
         "Όνομα χρήστη ή διεύθυνση ProtonMail"
@@ -3292,12 +3271,12 @@
     },
     "Mail import summary": {
       "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "",
-        ""
+        "Εισαγάγετε όλα τα μηνύματα από ${ selectedLabelsCount } από ${ totalLabelsCount } ετικέτα από ${ periodFragment } και επισημάνετε τα με ετικέτα ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Εισαγάγετε όλα τα μηνύματα από ${ selectedLabelsCount } από ${ totalLabelsCount } ετικέτες από ${ periodFragment } και επισημάνετε τα με ετικέτα ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
       "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "",
-        ""
+        "Εισαγάγετε όλα τα μηνύματα από ${ totalLabelsCount } ετικέτα από ${ periodFragment } και επισημάνετε τα με ετικέτα ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Εισαγάγετε όλα τα μηνύματα από ${ totalLabelsCount } ετικέτες από ${ periodFragment } και επισημάνετε τα με ετικέτα ${ LABEL_MARKUP_PLACEHOLDER }"
       ]
     },
     "Many Others": {
@@ -3307,7 +3286,7 @@
     },
     "Member downgrade modal": {
       "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        ""
+        "Αυτό θα διαγράψει οριστικά όλους τους υπο-χρήστες, τους λογαριασμούς και τα δεδομένα που σχετίζονται με τον οργανισμό σας."
       ]
     },
     "Message display when a new app version is available": {

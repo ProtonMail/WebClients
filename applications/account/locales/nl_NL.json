@@ -31,11 +31,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } winkel"
       ],
-      "Activate": [
-        "Activeren"
-      ],
       "activate": [
         "activeer"
+      ],
+      "Activate": [
+        "Activeren"
       ],
       "Activate ${ Name }@pm.me": [
         "Activeer ${ Name }@pm.me"
@@ -51,6 +51,9 @@
       ],
       "Add address": [
         "E-mailadres toevoegen"
+      ],
+      "Add calendar": [
+        ""
       ],
       "Add condition": [
         "Voorwaarde toevoegen"
@@ -223,12 +226,6 @@
       "Create link": [
         "Link aanmaken"
       ],
-      "Create new recovery phrase": [
-        "Maak een nieuwe herstelzin"
-      ],
-      "Create new recovery phrase?": [
-        "Een nieuwe herstelzin maken?"
-      ],
       "Customize": [
         "Personaliseren"
       ],
@@ -348,6 +345,15 @@
       ],
       "Generate key": [
         "Genereer sleutel"
+      ],
+      "Generate new recovery phrase": [
+        ""
+      ],
+      "Generate new recovery phrase?": [
+        ""
+      ],
+      "Generate recovery phrase": [
+        ""
       ],
       "Get ProtonVPN Plus": [
         "Neem ProtonVPN Plus"
@@ -501,6 +507,9 @@
       ],
       "Reconnect": [
         "Opnieuw verbinden"
+      ],
+      "Recover data": [
+        ""
       ],
       "Refresh status": [
         "Status vernieuwen"
@@ -696,9 +705,6 @@
       ],
       "Submit": [
         "Versturen"
-      ],
-      "Subscribe to calendar": [
-        "Abonneer op agenda"
       ],
       "Support": [
         "Ondersteuning"
@@ -1287,9 +1293,9 @@
       ]
     },
     "Calendar limit warning": {
-      "You have reached the maximum of ${ calendarsLimit } calendar.": [
-        "U hebt het maximum van één agenda bereikt.",
-        "U hebt het maximum van ${ calendarsLimit } agenda's bereikt."
+      "You have reached the maximum of ${ calendarsLimit } personal calendar.": [
+        "",
+        ""
       ],
       "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } subscribed calendar.": [
         "U hebt het maximum van één geabonneerde agenda bereikt.",
@@ -1315,9 +1321,6 @@
     },
     "Calendar subscription not synced error": {
       "Calendar could not be decrypted": [
-        ""
-      ],
-      "Calendar could not be found": [
         ""
       ],
       "Calendar is syncing": [
@@ -3433,9 +3436,6 @@
       "Create in": [
         ""
       ],
-      "Creating a new recovery phrase will deactivate your old one.": [
-        "Als u een nieuwe herstelzin aanmaakt, wordt uw oude zin gedeactiveerd."
-      ],
       "Creating your Proton account": [
         "Uw Proton account aanmaken"
       ],
@@ -3474,15 +3474,6 @@
       ],
       "Delete link?": [
         "Link verwijderen?"
-      ],
-      "Disabling this will prevent this email from being used for account recovery.": [
-        "Dit uitschakelen zal voorkomen dat dit e-mailadres gebruikt zal worden voor accountherstel."
-      ],
-      "Disabling this will prevent this phone number from being used for account recovery.": [
-        "Dit uitschakelen zal voorkomen dat dit telefoonnummer wordt gebruikt voor accountherstel."
-      ],
-      "Disabling this will prevent your recovery phrase from being used for account recovery.": [
-        "Als u dit uitschakelt, kan uw herstelzin niet worden gebruikt voor het herstel van uw account."
       ],
       "Discount applied to your subscription with coupon ${ code }": [
         "Korting toegepast op uw abonnement met kortingscode ${ code }"
@@ -3631,6 +3622,9 @@
       ],
       "Full-featured VPN with speed up to 10 Gbps.": [
         "Volledige VPN met snelheid tot 10 Gbps."
+      ],
+      "Generating a new recovery phrase will deactivate your old one.": [
+        ""
       ],
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
         "Geef uw publieke sleutel aan uw vrienden, of publiceer deze online, zodat iedereen u end-to-end versleutelde e-mail kan sturen!"
@@ -4542,6 +4536,9 @@
       ],
       "Your Block List is empty.": [
         "Uw Bloklijst is leeg."
+      ],
+      "Your data is encrypted, you can recover your data by reactivating your keys.": [
+        ""
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         ""
@@ -5513,17 +5510,14 @@
       "Recovery code": [
         "Herstelcode"
       ],
-      "Recovery email": [
-        "Herstel-e-mailadres"
-      ],
       "Recovery email address": [
         ""
       ],
       "Recovery file": [
         ""
       ],
-      "Recovery phone": [
-        "Herstel telefoonnummer"
+      "Recovery phone number": [
+        ""
       ],
       "Recovery phrase": [
         "Herstelzin"
@@ -5728,9 +5722,6 @@
       ]
     },
     "label": {
-      "Phone number": [
-        "Telefoonnummer"
-      ],
       "Recovery phone number": [
         ""
       ],
@@ -7183,8 +7174,8 @@
       "Calendar URL": [
         "Agenda-URL"
       ],
-      "You can subscribe to someone else's calendar by pasting its URL below. This will give you access to a read-only version of this calendar.\n${ kbLink }": [
-        "U kunt zich abonneren op iemand anders kalender door de URL hieronder te plakken. Dit geeft u toegang tot een alleen-lezen versie van deze kalender.\n${ kbLink }"
+      "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Subscribed calendars.\n${ kbLink }": [
+        ""
       ]
     },
     "Subscribe to calendar modal description": {
@@ -7821,6 +7812,9 @@
       ],
       "Enable keyboard shortcuts": [
         "Sneltoetsen inschakelen"
+      ],
+      "Encrypted data": [
+        ""
       ],
       "Encryption & keys": [
         "Versleuteling & sleutels"

@@ -493,7 +493,7 @@
     },
     "blackfriday Action": {
       "Get the offer": [
-        ""
+        "Zum Angebot"
       ]
     },
     "blackfriday Info": {
@@ -512,13 +512,13 @@
     },
     "blackfriday Title": {
       "Best deal": [
-        ""
+        "Bester Preis"
       ],
       "Most popular": [
         "Am beliebtesten"
       ],
       "Save more when combining Mail and VPN": [
-        ""
+        "Spare weitere % durch die Kombination von Mail und VPN"
       ]
     },
     "blackfriday: VPNspecialoffer Action": {
@@ -531,18 +531,18 @@
     },
     "blackfriday: VPNspecialoffer Badge popup": {
       "${ vpnAppName } Plus Special Offer 2021 discount has been applied": [
-        ""
+        "${ vpnAppName } Plus Sonderangebot 2021 Rabatt wurde angerechnet"
       ]
     },
     "blackfriday: VPNspecialoffer Info": {
       "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
-        ""
+        "Rabatte werden auf Grundlage des monatlichen Standardpreises von { standardMonthlyPricing } $ berechnet"
       ],
       "Save ${ percentage }%": [
-        "${ percentage }%"
+        "Spare ${ percentage } %"
       ],
       "Special offer Terms and Conditions": [
-        ""
+        "Allgemeine Geschäftsbedingungen des Sonderangebots"
       ]
     },
     "blackfriday: VPNspecialoffer info": {
@@ -557,13 +557,13 @@
     },
     "blackfriday: VPNspecialoffer Title": {
       "(${ notice }) Renews after 1 month at a standard monthly price of ${ amount }": [
-        ""
+        "(${ notice }) Verlängert sich nach einem Monat zum monatlichen Standardpreis von { amount } $"
       ],
       "(${ notice }) Renews after 1 year at a standard discounted annual price of ${ amount } (20% discount)": [
-        ""
+        "(${ notice }) Verlängert sich nach einem Jahr zum ermäßigten Standardpreis von { amount } $ (20 % Rabatt)"
       ],
       "(${ notice }) Renews after 2 years at a standard discounted 2-year price of ${ amount } (33% discount)": [
-        ""
+        "(${ notice }) Verlängert sich nach 2 Jahren zum ermäßigten 2-Jahrespreis von { amount } $ (33 % Rabatt)"
       ],
       "1 month": [
         "1 Monat"
@@ -575,16 +575,16 @@
         "24 Monate"
       ],
       "Billed at ${ amount } for the first 2 years.${ supNotice }": [
-        ""
+        "Zum Preis von { amount } $ in den ersten zwei Jahren.${ supNotice }"
       ],
       "Billed at ${ amount } for the first month.${ supNotice }": [
-        ""
+        "Zum Preis von { amount } $ im ersten Monat.${ supNotice }"
       ],
       "Billed at ${ amount } for the first year.${ supNotice }": [
-        ""
+        "Zum Preis von { amount } $ im ersten Jahr.${ supNotice }"
       ],
       "Get the special year-end offer on our Premium VPN PLUS plan": [
-        "Lassen Sie sich das Jahresend-Sonderangebot für unseren Premium VPN PLUS-Tarif nicht entgehen"
+        "Lass dir das Jahresend-Sonderangebot für unseren Premium VPN PLUS-Tarif nicht entgehen"
       ]
     },
     "Bug category": {
@@ -694,9 +694,6 @@
     "Calendar subscription not synced error": {
       "Calendar could not be decrypted": [
         "Kalender konnte nicht entschlüsselt werden"
-      ],
-      "Calendar could not be found": [
-        "Kalender konnte nicht gefunden werden"
       ],
       "Calendar is syncing": [
         "Kalender wird synchronisiert"
@@ -1294,12 +1291,6 @@
       ],
       "Defends against threats to VPN privacy by passing your Internet traffic through multiple servers.": [
         "Schützt vor Bedrohungen der VPN-Privatsphäre, indem Ihr Internet-Verkehr über mehrere Server geleitet wird."
-      ],
-      "Disabling this will prevent this email from being used for account recovery.": [
-        "Durch das Deaktivieren kann diese E-Mail-Adresse nicht mehr für die Kontowiederherstellung verwendet werden."
-      ],
-      "Disabling this will prevent this phone number from being used for account recovery.": [
-        "Durch das Deaktivieren kann diese Telefonnummer nicht mehr für die Kontowiederherstellung verwendet werden."
       ],
       "Discount applied to your subscription with coupon ${ code }": [
         "Rabatt auf Ihr Abonnement mit Gutschein ${ code }"
@@ -2255,9 +2246,6 @@
       ]
     },
     "label": {
-      "Phone number": [
-        "Rufnummer"
-      ],
       "Recovery phone number": [
         "Rufnummer für die Wiederherstellung"
       ]
@@ -2691,8 +2679,8 @@
       "Proton username": [
         "Proton‐Benutzername"
       ],
-      "Recovery email": [
-        "Wiederherstellungs‐E‐Mail‐Adresse"
+      "Recovery email address": [
+        "Wiederherstellungs-E-Mail-Adresse"
       ],
       "Reset code": [
         "Zurücksetzungscode"
