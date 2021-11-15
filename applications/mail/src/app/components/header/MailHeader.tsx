@@ -87,8 +87,8 @@ const MailHeader = ({ labelID, elementID, breakpoints, expanded, onToggleExpand,
         createModal(
             <ConfirmModal
                 onConfirm={esDelete}
-                title={c(`Info`).t`Disable message content search`}
-                confirm={c(`Info`).t`Clear data`}
+                title={c('Info').t`Disable message content search`}
+                confirm={c('Info').t`Clear data`}
                 mode="alert"
             >
                 {c('Info')
