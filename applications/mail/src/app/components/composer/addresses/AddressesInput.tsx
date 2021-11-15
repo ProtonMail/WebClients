@@ -190,7 +190,7 @@ const AddressesInput = ({
                 onClick={handleClick}
                 {...containerDragHandlers}
             >
-                <div className="flex-item-fluid flex max-w100 max-h100">
+                <div className="flex-item-fluid flex max-w100 max-h100 relative">
                     {recipientsOrGroups.map((recipientOrGroup, index) => (
                         <Fragment key={getRecipientOrGroupKey(recipientOrGroup)}>
                             {index === placeholderPosition && dragPlaceholder}
