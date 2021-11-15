@@ -223,9 +223,8 @@ export const useOptimisticMarkAs = () => {
             // We want them to stay on the current filter even if it doesn't match the filter anymore
             // So we manually update the elements cache to mark these ids to bypass the filter logic
             // This will last as long as the cache is not reset (cf useElements shouldResetCache)
-            const isMessage = testIsMessage(elements[0]);
             const conversationMode = isConversationMode(labelID, mailSettings, history.location);
-            dispatch(optimisticMarkAsAction({ elements: updatedElements, bypass: true, isMessage, conversationMode }));
+            dispatch(optimisticMarkAsAction({ elements: updatedElements, bypass: true, conversationMode }));
         }
 
         globalCache.set(MessageCountsModel.key, { value: messageCounters, status: STATUS.RESOLVED });
