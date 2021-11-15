@@ -1,6 +1,9 @@
 import { useEffect, useRef, useState } from 'react';
+import { useHistory, useLocation } from 'react-router-dom';
 import * as History from 'history';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
+import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import {
     APP_NAMES,
     CYCLE,
@@ -20,6 +23,7 @@ import {
     HumanVerificationMethodType,
     Plan,
     SubscriptionCheckResponse,
+    User,
     User as tsUser,
 } from '@proton/shared/lib/interfaces';
 import { getAllAddresses } from '@proton/shared/lib/api/addresses';
@@ -59,7 +63,15 @@ import { getFreeCheckResult } from '@proton/shared/lib/subscription/freePlans';
 import BackButton from '../public/BackButton';
 import CreateAccountForm from './CreateAccountForm';
 import RecoveryForm from './RecoveryForm';
-import { HumanVerificationError, PlanIDs, SERVICES, SERVICES_KEYS, SIGNUP_STEPS, SignupModel } from './interfaces';
+import {
+    HumanVerificationError,
+    InviteData,
+    PlanIDs,
+    SERVICES,
+    SERVICES_KEYS,
+    SIGNUP_STEPS,
+    SignupModel,
+} from './interfaces';
 import { DEFAULT_SIGNUP_MODEL } from './constants';
 import { getToAppName } from '../public/helper';
 import createHumanApi from './helpers/humanApi';
@@ -191,6 +203,9 @@ interface Props {
 
 const SignupContainer = ({ toApp, onLogin, onBack, signupParameters }: Props) => {
     const api = useApi();
+    const location = useLocation<{ invite?: InviteData }>();
+    const history = useHistory();
+    const inviteRef = useRef(location.state?.invite);
     const { createModal } = useModals();
     const { CLIENT_TYPE } = useConfig();
     const [plans = []] = usePlans();
@@ -296,18 +311,48 @@ const SignupContainer = ({ toApp, onLogin, onBack, signupParameters }: Props) =>
             actualPayment = Payment;
         }
 
-        try {
+        const invite = inviteRef.current;
+        if (isInternalSignup && !humanApi.hasToken() && invite) {
+            humanApi.setToken(`${invite.selector}:${invite.token}`, 'invite');
+        }
+
+        const handleCreate = async (): Promise<{ User: User }> => {
             const sharedCreationProps = {
                 api: humanApi.api,
                 clientType: CLIENT_TYPE,
                 payload: cacheRef.current.payload,
                 password,
             };
-            if (isInternalSignup) {
-                await handleCreateUser({ ...sharedCreationProps, username, recoveryEmail, recoveryPhone });
-            } else {
-                await handleCreateExternalUser({ ...sharedCreationProps, email });
+            if (!isInternalSignup) {
+                return handleCreateExternalUser({ ...sharedCreationProps, email });
             }
+            try {
+                return await handleCreateUser({
+                    ...sharedCreationProps,
+                    username,
+                    recoveryEmail,
+                    recoveryPhone,
+                });
+            } catch (error) {
+                const { code, details } = getApiError(error);
+                if (code === API_CUSTOM_ERROR_CODES.USER_CREATE_TOKEN_INVALID && humanApi.getTokenType() === 'invite') {
+                    inviteRef.current = undefined;
+                    humanApi.clearToken();
+                    // Remove state from history
+                    history.replace(location.pathname);
+                    // Retry the creation without the invite tokens
+                    return handleCreate();
+                }
+                if (code === API_CUSTOM_ERROR_CODES.HUMAN_VERIFICATION_REQUIRED) {
+                    const { HumanVerificationMethods = [], HumanVerificationToken = '' } = details || {};
+                    throw new HumanVerificationError(HumanVerificationMethods, HumanVerificationToken);
+                }
+                throw error;
+            }
+        };
+
+        try {
+            await handleCreate();
         } catch (error: any) {
             if (error instanceof HumanVerificationError) {
                 return setModelDiff({
