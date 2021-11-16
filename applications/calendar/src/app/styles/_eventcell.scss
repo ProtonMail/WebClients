@@ -15,10 +15,12 @@
 	border-inline-start-width: 5px;
 	border-inline-end-width: 1px;
 
+	padding-block: 0.125em;
+	padding-inline: 0.25em;
 	border-radius: var(--border-radius-medium);
 	background-color: var(--background-strong);
 	color: var(--text-norm);
-	font-weight: 500;
+	line-height: 1.25;
 	cursor: pointer;
 	opacity: var(--opacity);
 	transition: all 0.1s ease-out, opacity 0.5s ease-out, background-color 0.15s ease-in-out;
@@ -26,6 +28,13 @@
 
 	& > * {
 		transition: opacity 0.1s ease-out;
+	}
+
+	&.isHidden {
+		z-index: 4;
+		opacity: 0;
+		visibility: hidden;
+		pointer-events: none;
 	}
 
 	&.isLoaded {
@@ -143,9 +152,18 @@
 	&-circle {
 		color: var(--background-strong);
 	}
+
 	&-inner.isLoaded &-circle {
 		margin-block-start: 0.125em;
 		color: var(--color-main);
+	}
+
+	&-time {
+		margin-inline-end: 0.25em;
+	}
+
+	&-title {
+		font-weight: 500;
 	}
 }
 
@@ -156,6 +174,17 @@
 .calendar-eventcell {
 	position: absolute;
 	z-index: 5;
+
+	&-title {
+		/* stylelint-disable-next-line */
+		display: -webkit-box;
+		/* stylelint-disable-next-line */
+		-webkit-box-orient: vertical;
+		overflow: hidden;
+		-webkit-line-clamp: max(calc(var(--line-number) - 1), 1);
+		font-weight: 500;
+		word-break: break-word;
+	}
 
 	@include respond-to($breakpoint-small) {
 		&-title,
