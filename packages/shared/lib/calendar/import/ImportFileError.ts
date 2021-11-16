@@ -5,7 +5,6 @@ import {
     MAX_FILENAME_CHARS_DISPLAY,
     MAX_IMPORT_EVENTS_STRING,
     MAX_IMPORT_FILE_SIZE_STRING,
-    CALENDAR_APP_NAME,
 } from '../constants';
 import { truncate } from '../../helpers/string';
 
@@ -27,10 +26,6 @@ const getErrorMessage = (errorType: IMPORT_ERROR_TYPE, filename = '') => {
     }
     if (errorType === IMPORT_ERROR_TYPE.INVALID_CALENDAR) {
         return c('Error importing calendar').t`Your file ${formattedFilename} is not a calendar.`;
-    }
-    if (errorType === IMPORT_ERROR_TYPE.INVALID_VERSION) {
-        return c('Error importing calendar')
-            .t`${CALENDAR_APP_NAME} only supports importing calendars with iCal version 2.0.`;
     }
     if (errorType === IMPORT_ERROR_TYPE.INVALID_METHOD) {
         return c('Error importing calendar')
