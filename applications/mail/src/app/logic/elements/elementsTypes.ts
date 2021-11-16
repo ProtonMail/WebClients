@@ -5,6 +5,7 @@ import { Filter, SearchParameters, Sort } from '../../models/tools';
 
 export interface ElementsStateParams {
     labelID: string;
+    conversationMode: boolean;
     sort: Sort;
     filter: Filter;
     search: SearchParameters;
