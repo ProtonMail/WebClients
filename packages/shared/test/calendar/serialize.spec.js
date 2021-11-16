@@ -1,6 +1,7 @@
 import { decryptPrivateKey } from 'pmcrypto';
 import { createCalendarEvent } from '../../lib/calendar/serialize';
 import { readCalendarEvent, readPersonalPart, readSessionKeys } from '../../lib/calendar/deserialize';
+import { setVcalProdId } from '../../lib/calendar/vcalConfig';
 import { DecryptableKey, DecryptableKey2 } from '../keys/keys.data';
 import { unwrap, wrap } from '../../lib/calendar/helper';
 import { ATTENDEE_STATUS_API, EVENT_VERIFICATION_STATUS } from '../../lib/calendar/constants';
@@ -93,6 +94,8 @@ describe('calendar encryption', () => {
     beforeAll(initRandomMock);
     afterAll(disableRandomMock);
     it('should encrypt and sign calendar events', async () => {
+        const dummyProdId = 'Proton Calendar';
+        setVcalProdId(dummyProdId);
         const primaryCalendarKey = await decryptPrivateKey(DecryptableKey.PrivateKey, '123');
         const data = await createCalendarEvent({
             eventComponent: veventComponent,
@@ -109,7 +112,8 @@ describe('calendar encryption', () => {
                 {
                     Type: 2,
                     Data: wrap(
-                        'BEGIN:VEVENT\r\nUID:123\r\nDTSTAMP:20191211T121212Z\r\nDTSTART:20191211T121212Z\r\nDTEND:20191212T121212Z\r\nEND:VEVENT'
+                        'BEGIN:VEVENT\r\nUID:123\r\nDTSTAMP:20191211T121212Z\r\nDTSTART:20191211T121212Z\r\nDTEND:20191212T121212Z\r\nEND:VEVENT',
+                        dummyProdId
                     ),
                     Signature: jasmine.stringMatching(/-----BEGIN PGP SIGNATURE-----.*/),
                 },
@@ -117,7 +121,7 @@ describe('calendar encryption', () => {
                     Type: 3,
                     // the following check is just to ensure some stability in the process generating the signatures
                     // i.e. given the same input, we produce the same encrypted data
-                    Data: jasmine.stringMatching(/0rIB8pECtS5Mmdeh\+pBh0SN5j5TqWA.*/g),
+                    Data: jasmine.stringMatching(/0sAKAfKRArUuTJnXofqQYdEjeY\+U6lg.*/g),
                     Signature: jasmine.stringMatching(/-----BEGIN PGP SIGNATURE-----.*/g),
                 },
             ],
@@ -128,14 +132,15 @@ describe('calendar encryption', () => {
                     Type: 3,
                     // the following check is just to ensure some stability in the process generating the signatures
                     // i.e. given the same input, we produce the same encrypted data
-                    Data: jasmine.stringMatching(/0rAB8pECtS5Mmdeh\+pBh0SN5.*/g),
+                    Data: jasmine.stringMatching(/0sAIAfKRArUuTJnXofqQYdEjeY\+U6lg.*/g),
                     Signature: jasmine.stringMatching(/-----BEGIN PGP SIGNATURE-----.*/g),
                 },
             ],
             PersonalEventContent: {
                 Type: 2,
                 Data: wrap(
-                    'BEGIN:VEVENT\r\nUID:123\r\nDTSTAMP:20191211T121212Z\r\nBEGIN:VALARM\r\nTRIGGER:-PT15H\r\nEND:VALARM\r\nEND:VEVENT'
+                    'BEGIN:VEVENT\r\nUID:123\r\nDTSTAMP:20191211T121212Z\r\nBEGIN:VALARM\r\nTRIGGER:-PT15H\r\nEND:VALARM\r\nEND:VEVENT',
+                    dummyProdId
                 ),
                 Signature: jasmine.stringMatching(/-----BEGIN PGP SIGNATURE-----.*/g),
             },
@@ -144,7 +149,7 @@ describe('calendar encryption', () => {
                     Type: 3,
                     // the following check is just to ensure some stability in the process generating the signatures
                     // i.e. given the same input, we produce the same encrypted data
-                    Data: jasmine.stringMatching(/0sErAfKRArUuTJnXofqQYdEjeY\+U6.*/g),
+                    Data: jasmine.stringMatching(/0sFDAfKRArUuTJnXofqQYdEjeY\+U6lhOwi.*/g),
                     Signature: jasmine.stringMatching(/-----BEGIN PGP SIGNATURE-----.*/g),
                 },
             ],
@@ -165,6 +170,7 @@ describe('calendar encryption', () => {
 
         const data = await createCalendarEvent({
             eventComponent: veventComponent,
+            prodId: 'Proton Calendar',
             privateKey: primaryCalendarKey,
             publicKey,
             signingKey: addressKey,
@@ -197,8 +203,15 @@ VERSION:2.0
 asd
 END:VCALENDAR`)
         );
+        expect(wrap('asd', 'gfd')).toEqual(
+            toCRLF(`BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:gfd
+asd
+END:VCALENDAR`)
+        );
     });
     it('should remove wrapping', () => {
-        expect(unwrap(wrap('BEGIN:VEVENT asd END:VEVENT'))).toEqual('BEGIN:VEVENT asd END:VEVENT');
+        expect(unwrap(wrap('BEGIN:VEVENT asd END:VEVENT', 'gfd'))).toEqual('BEGIN:VEVENT asd END:VEVENT');
     });
 });
