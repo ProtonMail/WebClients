@@ -182,6 +182,7 @@
 		overflow: hidden;
 		-webkit-line-clamp: max(calc(var(--line-number) - 1), 1);
 		font-weight: 500;
+		word-break: break-word;
 	}
 
 	@include respond-to($breakpoint-small) {
