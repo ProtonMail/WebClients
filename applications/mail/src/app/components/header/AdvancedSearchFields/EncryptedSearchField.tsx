@@ -166,8 +166,8 @@ const EncryptedSearchField = ({ showMore, toggleShowMore, esState }: Props) => {
     );
 
     // Button to show advanced search options
-    const showMoreTitle = showMore ? c('Action').t`Show less search options` : c('Action').t`Show more search options`;
-    const showMoreText = showMore ? c('Action').t`Less search options` : c('Action').t`More search options`;
+    const showMoreTitle = showMore ? c('Action').t`Show fewer search options` : c('Action').t`Show more search options`;
+    const showMoreText = showMore ? c('Action').t`Fewer search options` : c('Action').t`More search options`;
     const showMoreButton = (
         <div className="flex mb1">
             <LinkButton onClick={toggleShowMore} aria-expanded={showMore} title={showMoreTitle}>
