@@ -3,7 +3,6 @@ import { APPS, PLANS } from '@proton/shared/lib/constants';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { Plan, VPNCountries, VPNServers } from '@proton/shared/lib/interfaces';
 import { FREE_VPN_PLAN } from '@proton/shared/lib/subscription/freePlans';
-import { allServers, basicServers } from '@proton/shared/lib/vpn/features';
 
 import { useVPNCountriesCount, useVPNServersCount } from '../../../hooks';
 import { Icon } from '../../../components';
@@ -41,9 +40,9 @@ const getFeatures = (
             name: 'servers',
             label: c('VPN feature').t`VPN servers`,
             free: serversCount.free_vpn,
-            [PLANS.VPNBASIC]: `${basicServers}+`,
-            [PLANS.VPNPLUS]: `${allServers}+`,
-            [PLANS.VISIONARY]: `${allServers}+`,
+            [PLANS.VPNBASIC]: `${serversCount[PLANS.VPNBASIC]}+`,
+            [PLANS.VPNPLUS]: `${serversCount[PLANS.VPNPLUS]}+`,
+            [PLANS.VISIONARY]: `${serversCount[PLANS.VPNPLUS]}+`,
         },
         {
             name: 'countries',
