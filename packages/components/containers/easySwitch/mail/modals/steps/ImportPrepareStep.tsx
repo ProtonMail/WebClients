@@ -213,11 +213,16 @@ const ImportPrepareStep = ({ modalModel, updateModalModel, addresses }: Props) =
 
     const addressToDisplay = addresses.find((addr) => addr.ID === modalModel.payload.AddressID);
 
-    const importedEmailAddress = <strong key="importedEmailAddress">{modalModel.email}</strong>;
-    const PMEmailAddress = <strong key="PMEmailAddress">{addressToDisplay?.Email}</strong>;
+    const emailFrom = modalModel.email;
+    const emailTo = addressToDisplay?.Email;
+
+    const importedEmailAddress = <strong key="importedEmailAddress">{emailFrom}</strong>;
+    const PMEmailAddress = <strong key="PMEmailAddress">{emailTo}</strong>;
 
     const from = c('Label').jt`From: ${importedEmailAddress}`;
     const to = c('Label').jt`To: ${PMEmailAddress}`;
+    const fromLabel = c('Label').t`From: ${emailFrom}`;
+    const toLabel = c('Label').t`To: ${emailTo}`;
 
     return (
         <>
@@ -260,8 +265,12 @@ const ImportPrepareStep = ({ modalModel, updateModalModel, addresses }: Props) =
             )}
 
             <div className="flex pb1 mb1 border-bottom">
-                <div className="flex-item-fluid text-ellipsis mr0-5">{from}</div>
-                <div className="flex-item-fluid text-ellipsis ml0-5 text-right">{to}</div>
+                <div className="flex-item-fluid text-ellipsis mr0-5" title={fromLabel}>
+                    {from}
+                </div>
+                <div className="flex-item-fluid text-ellipsis ml0-5 text-right" title={toLabel}>
+                    {to}
+                </div>
             </div>
 
             <div className="pb1 mb1 border-bottom">

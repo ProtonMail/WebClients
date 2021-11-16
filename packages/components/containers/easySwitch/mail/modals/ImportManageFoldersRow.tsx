@@ -471,7 +471,9 @@ const ImportManageFoldersRow = ({
                             ])}
                             title={destinationName}
                         >
-                            <div className="flex-item-fluid text-ellipsis">{destinationName}</div>
+                            <div className="flex-item-fluid text-ellipsis" title={destinationName}>
+                                {destinationName}
+                            </div>
 
                             {warnings && (
                                 <div className="flex-item-noshrink inline-flex flex-align-self-center flex-item-noshrink ml0-5">

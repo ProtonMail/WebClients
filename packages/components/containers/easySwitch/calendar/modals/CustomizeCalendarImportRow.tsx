@@ -45,6 +45,9 @@ const CustomizeCalendarImportRow = ({
         />
     );
 
+    const createNewCalendarLabel = c('Option group label').t`Create new calendar`;
+    const mergeCalendarLabel = c('Option group label').t`Merge with calendar`;
+
     const rightColMappingRenderer = (
         <div className="flex flex-nowrap">
             {options.length > 0 ? (
@@ -57,8 +60,11 @@ const CustomizeCalendarImportRow = ({
                         >
                             {[
                                 <li className="dropdown-item" key="label-create">
-                                    <span className="w100 pr1 pl1 pt0-5 pb0-5 block text-ellipsis text-left no-outline text-semibold">
-                                        {c('Option group label').t`Create new calendar`}
+                                    <span
+                                        className="w100 pr1 pl1 pt0-5 pb0-5 block text-ellipsis text-left no-outline text-semibold"
+                                        title={createNewCalendarLabel}
+                                    >
+                                        {createNewCalendarLabel}
                                     </span>
                                 </li>,
 
@@ -71,8 +77,11 @@ const CustomizeCalendarImportRow = ({
                                 <hr key="separator" className="mt0-5 mb0-5" />,
 
                                 <li className="dropdown-item" key="label-merge">
-                                    <span className="w100 pr1 pl1 pt0-5 pb0-5 block text-ellipsis text-left no-outline text-semibold">
-                                        {c('Option group label').t`Merge with calendar`}
+                                    <span
+                                        className="w100 pr1 pl1 pt0-5 pb0-5 block text-ellipsis text-left no-outline text-semibold"
+                                        title={mergeCalendarLabel}
+                                    >
+                                        {mergeCalendarLabel}
                                     </span>
                                 </li>,
                                 ...options,

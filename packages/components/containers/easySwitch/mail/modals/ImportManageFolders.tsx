@@ -223,18 +223,20 @@ const ImportManageFolders = ({
     }, [checkedFoldersMap, labelsMap, folderNamesMap]);
 
     const emailAddress = addresses.find((addr) => addr.ID === payload.AddressID)?.Email;
+    const fromLabel = c('Label').t`From: ${importedEmail}`;
+    const toLabel = c('Label').t`To: ${emailAddress}`;
 
     return (
         <>
             <Alert className="mb1 mt2">{c('Info').t`Please select the folders you would like to import:`}</Alert>
 
             <div className="flex pt1">
-                <div className="flex-item-fluid text-ellipsis pr0-5">
-                    <strong>{c('Label').t`From: ${importedEmail}`}</strong>
+                <div className="flex-item-fluid text-ellipsis pr0-5" title={fromLabel}>
+                    <strong>{fromLabel}</strong>
                 </div>
 
-                <div className="flex-item-fluid text-ellipsis pl0-5">
-                    <strong>{c('Label').t`To: ${emailAddress}`}</strong>
+                <div className="flex-item-fluid text-ellipsis pl0-5" title={toLabel}>
+                    <strong>{toLabel}</strong>
                 </div>
             </div>
 
