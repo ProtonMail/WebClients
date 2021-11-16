@@ -595,12 +595,12 @@ export const getSupportedEventInvitation = async ({
     icsBinaryString: string;
     icsFileName: string;
 }): Promise<EventInvitation | undefined> => {
-    const { version, calscale, 'x-wr-timezone': xWrTimezone, method } = vcalComponent;
+    const { calscale, 'x-wr-timezone': xWrTimezone, method } = vcalComponent;
     const supportedMethod = getIcalMethod(method);
     if (!supportedMethod) {
         throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVALID_METHOD);
     }
-    if ((calscale && calscale.value.toLowerCase() !== 'gregorian') || version?.value !== '2.0') {
+    if (calscale && calscale.value.toLowerCase() !== 'gregorian') {
         throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_UNSUPPORTED, { method: supportedMethod });
     }
     if (!vcalComponent.components?.length) {
