@@ -58,9 +58,6 @@ const FullDayEvent = ({
         if (isEventReadLoading) {
             return '…';
         }
-        if (startTimeString) {
-            return `${startTimeString} ${eventTitleSafe}`;
-        }
         return eventTitleSafe;
     })();
 
@@ -79,7 +76,7 @@ const FullDayEvent = ({
             {!isAllDay ? (
                 <Icon
                     className="mr0-5 flex-item-noshrink calendar-dayeventcell-circle"
-                    size={12}
+                    size={10}
                     name="circle-filled"
                 />
             ) : null}
@@ -89,7 +86,8 @@ const FullDayEvent = ({
             {eventReadError ? <Icon name="lock-filled" className="calendar-dayeventcell-lock-icon" /> : null}
 
             <span data-test-id="calendar-view:all-day-event" className="flex-item-fluid text-ellipsis">
-                {titleString}
+                {startTimeString && <span className="calendar-dayeventcell-time">{startTimeString}</span>}
+                <span className="calendar-dayeventcell-title">{titleString}</span>
             </span>
 
             {isOutsideEnd ? <Icon name="angle-down" size={12} className="flex-item-noshrink rotateZ-270" /> : null}

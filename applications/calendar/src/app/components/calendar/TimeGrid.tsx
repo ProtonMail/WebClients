@@ -10,7 +10,7 @@ import {
     RefObject,
 } from 'react';
 import { eachDayOfInterval, format, isSameDay } from '@proton/shared/lib/date-fns-utc';
-import { classnames } from '@proton/components';
+import { classnames, useElementRect } from '@proton/components';
 
 import handleTimeGridMouseDown from './interactions/timeGridMouseHandler';
 import handleDayGridMouseDown from './interactions/dayGridMouseHandler';
@@ -25,6 +25,7 @@ import DayLines from './TimeGrid/DayLines';
 import DayButtons from './TimeGrid/DayButtons';
 import DayEvents from './TimeGrid/DayEvents';
 import RowEvents from './DayGrid/RowEvents';
+import { PartDayEventView } from '../events/PartDayEvent';
 import { disableScroll, enableScroll } from './mouseHelpers/scrollHelper';
 import { CalendarViewEvent, TargetEventData, TargetMoreData } from '../../containers/calendar/interface';
 
@@ -93,6 +94,13 @@ const TimeGrid = ({
     const nowRef = useRef<HTMLDivElement>(null);
     const titleRef = useRef<HTMLDivElement>(null);
     const scrollRef = useRef<HTMLDivElement>(null);
+    const partDayEventViewRef = useRef<HTMLDivElement>(null);
+
+    const rect = useElementRect(timeGridRef);
+    const [partDayEventViewStyleValues, setPartDayEventViewStyleValues] = useState(() => ({
+        padding: 0,
+        lineHeight: 0,
+    }));
 
     const [scrollTop, setScrollTop] = useState<number>();
 
@@ -252,6 +260,15 @@ const TimeGrid = ({
 
     useLayoutEffect(() => {
         actionRef.current?.scrollToNow();
+
+        const partDayEventViewElement = partDayEventViewRef.current;
+        if (partDayEventViewElement) {
+            const computedStyle = window.getComputedStyle(partDayEventViewElement);
+            setPartDayEventViewStyleValues({
+                lineHeight: parseFloat(computedStyle.lineHeight),
+                padding: parseFloat(computedStyle.paddingTop) + parseFloat(computedStyle.paddingBottom),
+            });
+        }
     }, []);
 
     return (
@@ -351,6 +368,8 @@ const TimeGrid = ({
                                         targetEventRef={targetEventRef}
                                         formatTime={formatTime}
                                         now={now}
+                                        colHeight={rect?.height}
+                                        partDayEventViewStyleValues={partDayEventViewStyleValues}
                                     />
                                     {isSameDay(day, now) ? (
                                         <div
@@ -362,6 +381,8 @@ const TimeGrid = ({
                                 </div>
                             );
                         })}
+                        {/* Renders the part day event view to get CSS values  */}
+                        <PartDayEventView className="isHidden" ref={partDayEventViewRef} />
                     </div>
                 </div>
             </div>
