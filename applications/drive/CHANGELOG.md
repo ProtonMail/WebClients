@@ -1,3 +1,15 @@
+# [4.0.0-beta.22] - 2021-11-24
+
+## Improved
+
+-   List view design tweaks
+-   Grid view design tweaks
+-   New navigation interactions
+
+## Fixed
+
+-   Folder upload via drag&drop on Firefox
+
 # [4.0.0-beta.21] - 2021-10-27
 
 ## Improved
