@@ -17,7 +17,7 @@ import {
     RetryData,
 } from './elementsTypes';
 import { Element } from '../../models/element';
-import { parseLabelIDsInEvent } from '../../helpers/elements';
+import { isMessage as testIsMessage, parseLabelIDsInEvent } from '../../helpers/elements';
 import { newRetry } from './helpers/elementQuery';
 import { MAX_ELEMENT_LIST_LOAD_RETRIES, PAGE_SIZE } from '../../constants';
 
@@ -140,8 +140,10 @@ export const optimisticUpdates = (state: Draft<ElementsState>, action: PayloadAc
         state.bypassFilter = diff(state.bypassFilter, elementIDs);
     }
     if (action.payload.bypass) {
-        const { isMessage, conversationMode } = action.payload;
+        const { conversationMode } = action.payload;
+        console.log('optimisticUpdates bypassFilter', action.payload);
         action.payload.elements.forEach((element) => {
+            const isMessage = testIsMessage(element);
             const id = (isMessage && conversationMode ? (element as Message).ConversationID : element.ID) || '';
             if (!state.bypassFilter.includes(id)) {
                 state.bypassFilter.push(id);
