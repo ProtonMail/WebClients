@@ -8,16 +8,27 @@ import { DropdownActions, Alert, ErrorButton, ConfirmModal } from '../../compone
 import { useModals, useApi, useEventManager, useLoading, useNotifications } from '../../hooks';
 
 import CreateMissingKeysAddressModal from './missingKeys/CreateMissingKeysAddressModal';
-import { getPermissions } from './helper';
+import { getPermissions, getStatus } from './helper';
 
 interface Props {
     address: Address;
     member?: Member; // undefined if self
     user: UserModel;
     organizationKey?: CachedOrganizationKey;
+    onSetDefault?: () => Promise<unknown>;
+    isSavingIndex?: number | null;
+    addressIndex?: number;
 }
 
-const AddressActions = ({ address, member, user, organizationKey }: Props) => {
+const AddressActions = ({
+    address,
+    member,
+    user,
+    organizationKey,
+    onSetDefault,
+    isSavingIndex,
+    addressIndex,
+}: Props) => {
     const api = useApi();
     const { call } = useEventManager();
     const [loading, withLoading] = useLoading();
@@ -93,28 +104,46 @@ const AddressActions = ({ address, member, user, organizationKey }: Props) => {
         organizationKey,
     });
 
-    const list = [
-        canEnable && {
-            text: c('Address action').t`Enable`,
-            onClick: () => withLoading(handleEnable()),
-        },
-        canDisable && {
-            text: c('Address action').t`Disable`,
-            onClick: () => withLoading(handleDisable()),
-        },
-        canGenerate && {
-            text: c('Address action').t`Generate missing keys`,
-            onClick: () => withLoading(handleGenerate()),
-        },
-        canDelete &&
-            ({
-                text: c('Address action').t`Delete`,
-                actionType: 'delete',
-                onClick: () => withLoading(handleDelete()),
-            } as const),
-    ].filter(isTruthy);
+    const { isDisabled } = getStatus(address, 0);
+    const isDefault = addressIndex === 0;
+    const canMakeDefault = !isDefault && !isDisabled && onSetDefault !== undefined;
 
-    return <DropdownActions size="small" list={list} loading={loading} />;
+    const list =
+        isSavingIndex !== null
+            ? [isSavingIndex === addressIndex ? { text: c('Address action').t`Saving` } : null].filter(isTruthy)
+            : [
+                  canMakeDefault && {
+                      text: c('Address action').t`Make default`,
+                      onClick: () => onSetDefault(),
+                  },
+                  canEnable && {
+                      text: c('Address action').t`Enable`,
+                      onClick: () => withLoading(handleEnable()),
+                  },
+                  canDisable && {
+                      text: c('Address action').t`Disable`,
+                      onClick: () => withLoading(handleDisable()),
+                  },
+                  canGenerate && {
+                      text: c('Address action').t`Generate missing keys`,
+                      onClick: () => withLoading(handleGenerate()),
+                  },
+                  canDelete &&
+                      ({
+                          text: c('Address action').t`Delete`,
+                          actionType: 'delete',
+                          onClick: () => withLoading(handleDelete()),
+                      } as const),
+              ].filter(isTruthy);
+
+    return list.length ? (
+        <DropdownActions size="small" list={list} loading={loading || isSavingIndex !== null} />
+    ) : (
+        <div
+            // This is a placeholder to avoid height loss when dropdownActions are not rendered
+            style={{ height: '24px' }}
+        />
+    );
 };
 
 export default AddressActions;
