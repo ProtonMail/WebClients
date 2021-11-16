@@ -1,11 +1,6 @@
 import { getAttendeeEmail } from '@proton/shared/lib/calendar/attendees';
-import { getIsCalendarDisabled } from '@proton/shared/lib/calendar/calendar';
-import {
-    CALENDAR_FLAGS,
-    ICAL_EXTENSIONS,
-    ICAL_METHOD,
-    ICAL_METHODS_ATTENDEE,
-} from '@proton/shared/lib/calendar/constants';
+import { getDoesCalendarNeedUserAction, getIsCalendarDisabled } from '@proton/shared/lib/calendar/calendar';
+import { ICAL_EXTENSIONS, ICAL_METHOD, ICAL_METHODS_ATTENDEE } from '@proton/shared/lib/calendar/constants';
 import { generateVeventHashUID } from '@proton/shared/lib/calendar/helper';
 import {
     EVENT_INVITATION_ERROR_TYPE,
@@ -42,7 +37,6 @@ import { getIsEventCancelled, withDtstamp } from '@proton/shared/lib/calendar/ve
 import { SECOND } from '@proton/shared/lib/constants';
 import { fromUTCDate, getSupportedTimezone } from '@proton/shared/lib/date/timezone';
 import { getIsAddressActive, getIsAddressDisabled } from '@proton/shared/lib/helpers/address';
-import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { canonizeEmailByGuess, canonizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import { splitExtension } from '@proton/shared/lib/helpers/file';
 import { unary } from '@proton/shared/lib/helpers/function';
@@ -543,9 +537,7 @@ export const getInitialInvitationModel = ({
         result.calendarData = {
             calendar,
             isCalendarDisabled: getIsCalendarDisabled(calendar),
-            calendarNeedsUserAction:
-                hasBit(calendar.Flags, CALENDAR_FLAGS.RESET_NEEDED) ||
-                hasBit(calendar.Flags, CALENDAR_FLAGS.UPDATE_PASSPHRASE),
+            calendarNeedsUserAction: getDoesCalendarNeedUserAction(calendar),
         };
     }
     if (!isImport && !getIsValidMethod(invitation.method, isOrganizerMode)) {

@@ -2,7 +2,7 @@ import { getIsAllDay, getPropertyTzid } from '@proton/shared/lib/calendar/vcalHe
 import { fromUTCDate } from '@proton/shared/lib/date/timezone';
 import { omit } from '@proton/shared/lib/helpers/object';
 import { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
-import { toExdate } from './helper';
+import { toExdate } from '@proton/shared/lib/calendar/exdate';
 
 const createSingleRecurrence = (
     component: VcalVeventComponent,

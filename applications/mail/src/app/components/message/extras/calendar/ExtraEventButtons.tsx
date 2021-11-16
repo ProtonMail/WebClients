@@ -27,11 +27,11 @@ const ExtraEventButtons = ({ model, setModel, message }: Props) => {
     const link = getCalendarEventLink(model);
 
     return (
-        <div className="mb0-5">
+        <>
             <ExtraEventAlert model={model} />
             {link && <div className="mb0-5">{link}</div>}
             {displayButtons}
-        </div>
+        </>
     );
 };
 
