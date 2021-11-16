@@ -112,7 +112,7 @@ export const useMessageTrackers = ({ message, isDetails = false }: Props) => {
 
         if (needsMoreProtection) {
             createModal(
-                <ConfirmModal title={title} confirm={c('Action').t`OK`} cancel={null}>
+                <ConfirmModal title={title} confirm={c('Action').t`OK`} cancel={null} small={false}>
                     {modalText}
                     <div>{learnMoreLink}</div>
                     <div className="mt1">
@@ -127,7 +127,7 @@ export const useMessageTrackers = ({ message, isDetails = false }: Props) => {
             );
         } else if (hasProtection && numberOfTrackers === 0) {
             createModal(
-                <ConfirmModal title={title} confirm={c('Action').t`Got it`} cancel={null}>
+                <ConfirmModal title={title} confirm={c('Action').t`Got it`} cancel={null} small={false}>
                     {modalText}
                     <div>{learnMoreLink}</div>
                 </ConfirmModal>
@@ -136,7 +136,7 @@ export const useMessageTrackers = ({ message, isDetails = false }: Props) => {
             const trackers = getTrackers();
 
             createModal(
-                <ConfirmModal title={title} confirm={c('Action').t`Got it`} cancel={null}>
+                <ConfirmModal title={title} confirm={c('Action').t`Got it`} cancel={null} small={false}>
                     {modalText}
                     <div className="mb1">{learnMoreLink}</div>
                     {trackers.map((tracker, index) => {
@@ -149,8 +149,7 @@ export const useMessageTrackers = ({ message, isDetails = false }: Props) => {
                             >
                                 {tracker.urls.map((url, index) => (
                                     <p
-                                        className="color-weak text-ellipsis mb0-5 mt0-5"
-                                        title={url}
+                                        className="color-weak text-break mb0-5 mt0-5"
                                         key={`${tracker.name}-${index}-tracker`} // eslint-disable-line react/no-array-index-key
                                     >
                                         {url}
