@@ -6,7 +6,6 @@ import { MessageExtended } from '../../models/message';
 import { Base64Cache } from '../../hooks/useBase64Cache';
 import { ConversationCacheEntry } from '../../models/conversation';
 import { addKeysToAddressKeysCache } from './crypto';
-import { ElementsState } from '../../logic/elements/elementsTypes';
 
 export interface ResolvedRequest<T> {
     status: STATUS;
@@ -28,19 +27,6 @@ export const messageCache = createCache<string, MessageExtended>();
 export const conversationCache = createCache<string, ConversationCacheEntry>();
 export const addressKeysCache = createCache<string, { status: number; value: Partial<DecryptedKey>[] }>();
 export const base64Cache = createCache<string, string>() as Base64Cache;
-
-export const elementsCache: ElementsState = {
-    beforeFirstLoad: true,
-    invalidated: false,
-    pendingRequest: false,
-    elements: {},
-    params: { labelID: '', sort: { sort: 'Time', desc: true }, filter: {}, search: {}, esEnabled: false },
-    pages: [],
-    page: 0,
-    total: 0,
-    bypassFilter: [],
-    retry: { payload: undefined, count: 0, error: undefined },
-};
 
 export const contactCache = {
     contactsMap: {} as { [email: string]: any },
