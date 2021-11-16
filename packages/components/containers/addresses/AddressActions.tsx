@@ -16,19 +16,11 @@ interface Props {
     user: UserModel;
     organizationKey?: CachedOrganizationKey;
     onSetDefault?: () => Promise<unknown>;
-    isSavingIndex?: number | null;
+    savingIndex?: number;
     addressIndex?: number;
 }
 
-const AddressActions = ({
-    address,
-    member,
-    user,
-    organizationKey,
-    onSetDefault,
-    isSavingIndex,
-    addressIndex,
-}: Props) => {
+const AddressActions = ({ address, member, user, organizationKey, onSetDefault, savingIndex, addressIndex }: Props) => {
     const api = useApi();
     const { call } = useEventManager();
     const [loading, withLoading] = useLoading();
@@ -109,8 +101,8 @@ const AddressActions = ({
     const canMakeDefault = !isDefault && !isDisabled && onSetDefault !== undefined;
 
     const list =
-        isSavingIndex !== null
-            ? [isSavingIndex === addressIndex ? { text: c('Address action').t`Saving` } : null].filter(isTruthy)
+        savingIndex !== undefined
+            ? [savingIndex === addressIndex ? { text: c('Address action').t`Saving` } : null].filter(isTruthy)
             : [
                   canMakeDefault && {
                       text: c('Address action').t`Make default`,
@@ -137,7 +129,7 @@ const AddressActions = ({
               ].filter(isTruthy);
 
     return list.length ? (
-        <DropdownActions size="small" list={list} loading={loading || isSavingIndex !== null} />
+        <DropdownActions size="small" list={list} loading={loading || savingIndex !== undefined} />
     ) : (
         <div
             // This is a placeholder to avoid height loss when dropdownActions are not rendered

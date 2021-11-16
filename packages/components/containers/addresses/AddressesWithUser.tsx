@@ -29,7 +29,7 @@ const formatAddresses = (addresses?: Address[]) => {
 const AddressesUser = ({ user, member, organizationKey }: Props) => {
     const api = useApi();
     const { createNotification } = useNotifications();
-    const [savingIndex, setSavingIndex] = useState(null);
+    const [savingIndex, setSavingIndex] = useState();
     const { call } = useEventManager();
     const [addresses, loadingAddresses] = useAddresses();
     const [list, setAddresses] = useState<Address[]>(formatAddresses(addresses));
@@ -63,9 +63,9 @@ const AddressesUser = ({ user, member, organizationKey }: Props) => {
                 await api(orderAddress(newList.map(({ ID }) => ID)));
                 await call();
 
-                setSavingIndex(null);
+                setSavingIndex(undefined);
             } catch (e: any) {
-                setSavingIndex(null);
+                setSavingIndex(undefined);
                 setAddresses(formatAddresses(addresses));
             }
         },
@@ -117,7 +117,7 @@ const AddressesUser = ({ user, member, organizationKey }: Props) => {
                                         member={member}
                                         organizationKey={organizationKey}
                                         onSetDefault={setDefaultAddress(i)}
-                                        isSavingIndex={savingIndex}
+                                        savingIndex={savingIndex}
                                         addressIndex={i}
                                     />,
                                 ]}
