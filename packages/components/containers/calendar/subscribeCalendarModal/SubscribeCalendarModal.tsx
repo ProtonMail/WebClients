@@ -30,10 +30,10 @@ const SubscribeCalendarModal = ({ ...rest }: Props) => {
 
     const [loadingAction, withLoadingAction] = useLoading();
 
-    const isGoogle = calendarURL.match(/^https?:\/\/calendar.google.com/);
-    const isOutlook = calendarURL.match(/^https?:\/\/outlook.live.com/);
+    const isGoogle = calendarURL.match(/^https?:\/\/calendar\.google\.com/);
+    const isOutlook = calendarURL.match(/^https?:\/\/outlook\.live\.com/);
     const shouldProbablyHaveIcsExtension = (isGoogle || isOutlook) && !calendarURL.endsWith('.ics');
-    const googleWillPossiblyBeMakePublic = calendarURL.match(/\/public\/\w+.ics/);
+    const googleWillPossiblyBeMakePublic = calendarURL.match(/\/public\/\w+\.ics/);
     const warning = shouldProbablyHaveIcsExtension
         ? c('Subscribed calendar extension warning').t`This link might be wrong`
         : isGoogle && googleWillPossiblyBeMakePublic
