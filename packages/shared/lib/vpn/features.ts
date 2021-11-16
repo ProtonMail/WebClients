@@ -1,19 +1,5 @@
-import { useState, useEffect } from 'react';
-
 import { c, msgid } from 'ttag';
-import { useVPNServersCount } from '@proton/components';
-import { PLANS } from '../constants';
 
-export const GetServersNumber = () => {
-    const [result, setResult] = useState({ allServers: 1300, basicServers: 350 });
-    const [vpnServersCount] = useVPNServersCount();
-
-    useEffect(() => {
-        setResult({ allServers: vpnServersCount[PLANS.VPNPLUS], basicServers: vpnServersCount[PLANS.VPNBASIC] });
-    }, [vpnServersCount]);
-
-    return [result];
-};
 export const getServersInWithoutPlus = (numberOfServers: string, numberOfCountries: number) => {
     // translator: numberOfServers is a string that looks like `20 servers`. It has been pluralized earlier.
     return c('VPN Plan Feature').ngettext(
@@ -44,14 +30,12 @@ export const getVpnServersWithoutPlus = (n = 0) => {
     return c('VPN Plan Feature').ngettext(msgid`${n} server`, `${n} servers`, n);
 };
 
-export const getPlusServers = (countries = 0) => {
-    const [result] = GetServersNumber();
-    return getServersInWithoutPlus(getVpnServers(result.allServers), countries);
+export const getPlusServers = (servers = 1300, countries = 0) => {
+    return getServersInWithoutPlus(getVpnServers(servers), countries);
 };
 
-export const getBasicServers = (countries = 0) => {
-    const [result] = GetServersNumber();
-    return getServersIn(getVpnServers(result.basicServers), countries);
+export const getBasicServers = (servers = 350, countries = 0) => {
+    return getServersIn(getVpnServers(servers), countries);
 };
 
 export const getFreeServers = (servers = 0, countries = 0) => {
