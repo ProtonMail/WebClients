@@ -1,5 +1,11 @@
 import { addDays, isNextDay } from '../date-fns-utc';
-import { convertUTCDateTimeToZone, convertZonedDateTimeToUTC, fromUTCDate, toUTCDate } from '../date/timezone';
+import {
+    convertUTCDateTimeToZone,
+    convertZonedDateTimeToUTC,
+    fromUTCDate,
+    toLocalDate,
+    toUTCDate,
+} from '../date/timezone';
 import { buildMailTo, canonizeEmail, getEmailTo } from '../helpers/email';
 import { mod } from '../helpers/math';
 import {
@@ -67,6 +73,14 @@ export const getDateOrDateTimeProperty = (property: VcalDateOrDateTimeProperty, 
         return getDateProperty(fromUTCDate(start));
     }
     return getDateTimeProperty(fromUTCDate(start), getPropertyTzid(property));
+};
+
+export const propertyToLocalDate = (property: VcalDateOrDateTimeProperty) => {
+    if (getIsPropertyAllDay(property) || property.value.isUTC || !property.parameters?.tzid) {
+        return toLocalDate(property.value);
+    }
+    // For dates with a timezone, convert the relative date time to UTC time
+    return toUTCDate(convertZonedDateTimeToUTC(property.value, property.parameters.tzid));
 };
 
 export const propertyToUTCDate = (property: VcalDateOrDateTimeProperty) => {

@@ -1,26 +1,7 @@
-import {
-    getDateProperty,
-    getDateTimeProperty,
-    getUntilProperty,
-    propertyToUTCDate,
-} from '@proton/shared/lib/calendar/vcalConverter';
+import { getUntilProperty, propertyToUTCDate } from '@proton/shared/lib/calendar/vcalConverter';
 import { getIsAllDay, getPropertyTzid } from '@proton/shared/lib/calendar/vcalHelper';
 import { toUTCDate } from '@proton/shared/lib/date/timezone';
-import {
-    VcalDateOrDateTimeProperty,
-    VcalDateProperty,
-    VcalDateTimeProperty,
-    VcalRruleProperty,
-    VcalVeventComponent,
-} from '@proton/shared/lib/interfaces/calendar/VcalModel';
-import { DateTimeValue } from '@proton/shared/lib/interfaces/calendar';
-
-export const toExdate = (dateObject: DateTimeValue, isAllDay: boolean, tzid = 'UTC'): VcalDateOrDateTimeProperty => {
-    if (isAllDay) {
-        return getDateProperty(dateObject) as VcalDateProperty;
-    }
-    return getDateTimeProperty(dateObject, tzid) as VcalDateTimeProperty;
-};
+import { VcalRruleProperty, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
 
 export const getSafeRruleCount = (rrule: VcalRruleProperty, newCount: number) => {
     if (newCount < 1) {

@@ -25,12 +25,12 @@ import {
     Notifications,
     TextArea,
     useCalendarEmailNotificationsFeature,
+    MemoizedIconRow as IconRow,
 } from '@proton/components';
 import { isEmailNotification } from '@proton/shared/lib/calendar/alarms';
 
 import CalendarSelectIcon from '@proton/components/components/calendarSelect/CalendarSelectIcon';
 import createHandlers from './eventForm/createPropFactory';
-import IconRow from './IconRow';
 import CreateEventCalendarSelect from './inputs/CreateEventCalendarSelect';
 import CustomFrequencySelector from './inputs/CustomFrequencySelector';
 import FrequencyInput from './inputs/FrequencyInput';
