@@ -6,7 +6,7 @@ import {
     generateVtimezonesComponents,
     getParticipantHasAddressID,
 } from '@proton/shared/lib/calendar/integration/invite';
-import { getProdId } from '@proton/shared/lib/calendar/vcalHelper';
+import { prodId } from '@proton/shared/lib/calendar/vcalConfig';
 import { withDtstamp } from '@proton/shared/lib/calendar/veventHelper';
 import { SECOND } from '@proton/shared/lib/constants';
 import { omit } from '@proton/shared/lib/helpers/object';
@@ -96,7 +96,6 @@ const useInviteButtons = ({
                 return false;
             }
             try {
-                const prodId = getProdId(config);
                 const attendeeWithPartstat = {
                     ...attendee.vcalComponent,
                     parameters: {
