@@ -80,7 +80,8 @@ export interface LastEmail {
     Order: number;
 }
 
-export interface NormalisedSearchParams extends Omit<ElementsStateParams, 'wildcard' | 'keyword' | 'esEnabled'> {
+export interface NormalisedSearchParams
+    extends Omit<ElementsStateParams, 'wildcard' | 'keyword' | 'esEnabled' | 'conversationMode'> {
     normalisedKeywords: string[] | undefined;
     decryptionError?: boolean;
 }

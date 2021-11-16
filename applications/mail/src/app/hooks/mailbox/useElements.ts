@@ -81,7 +81,7 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
 
     const globalCache = useCache();
 
-    const params = { labelID, page, sort, filter, search, esEnabled };
+    const params = { labelID, conversationMode, page, sort, filter, search, esEnabled };
     const counts = { counts: countValues, loading: countsLoading };
 
     const stateParams = useSelector(paramsSelector);
@@ -116,7 +116,7 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
     // Main effect watching all inputs and responsible to trigger actions on the cache
     useEffect(() => {
         if (shouldResetCache) {
-            dispatch(reset({ page, params: { labelID, sort, filter, esEnabled, search } }));
+            dispatch(reset({ page, params: { labelID, conversationMode, sort, filter, esEnabled, search } }));
         }
         if (shouldSendRequest && !isSearch(search)) {
             void dispatch(

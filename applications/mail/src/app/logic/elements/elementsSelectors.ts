@@ -82,15 +82,16 @@ export const needsMoreElements = createSelector([total, page, elementsLength], (
     return elementsLength < PAGE_SIZE && howManyElementsAhead > ELEMENTS_CACHE_REQUEST_SIZE;
 });
 
-export const paramsChanged = createSelector(
-    [params, currentParams],
-    (params, currentParams) =>
+export const paramsChanged = createSelector([params, currentParams], (params, currentParams) => {
+    const paramsChanged =
         currentParams.labelID !== params.labelID ||
+        currentParams.conversationMode !== params.conversationMode ||
         currentParams.sort !== params.sort ||
         currentParams.filter !== params.filter ||
         currentParams.search !== params.search ||
-        (currentParams.esEnabled !== params.esEnabled && isSearch(currentParams.search))
-);
+        (currentParams.esEnabled !== params.esEnabled && isSearch(currentParams.search));
+    return paramsChanged;
+});
 
 export const pageCached = createSelector([pages, currentPage], (pages, currentPage) => pages.includes(currentPage));
 
