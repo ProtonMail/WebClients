@@ -1,4 +1,4 @@
-import { CSSProperties, Ref, useMemo } from 'react';
+import { CSSProperties, Ref, useMemo, forwardRef, ComponentPropsWithoutRef } from 'react';
 import { classnames, Icon } from '@proton/components';
 
 import { getEventStatusTraits } from '../../helpers/event';
@@ -8,6 +8,37 @@ import { getEventStyle } from '../../helpers/color';
 import { getEventErrorMessage, getEventLoadingMessage } from './error';
 import { CalendarViewEvent, CalendarViewEventTemporaryEvent } from '../../containers/calendar/interface';
 import getEventInformation from './getEventInformation';
+
+interface PartDayEventViewProps extends ComponentPropsWithoutRef<'div'> {
+    isSelected?: boolean;
+    isUnanswered?: boolean;
+    isCancelled?: boolean;
+    isPast?: boolean;
+    isLoaded?: boolean;
+}
+export const PartDayEventView = forwardRef<HTMLDivElement, PartDayEventViewProps>(
+    ({ isSelected, isUnanswered, isCancelled, isPast, isLoaded, className, children, ...rest }, ref) => {
+        return (
+            <div
+                role="button"
+                tabIndex={0}
+                className={classnames([
+                    'calendar-eventcell no-scroll',
+                    isLoaded && 'isLoaded',
+                    isPast && 'isPast',
+                    isSelected && 'isSelected',
+                    isUnanswered && 'isUnanswered',
+                    isCancelled && 'isCancelled',
+                    className,
+                ])}
+                ref={ref}
+                {...rest}
+            >
+                {children}
+            </div>
+        );
+    }
+);
 
 interface Props {
     style: CSSProperties;
@@ -78,10 +109,7 @@ const PartDayEvent = ({
 
         return (
             <>
-                <div
-                    data-test-id="calendar-day-week-view:part-day-event"
-                    className="text-ellipsis calendar-eventcell-title"
-                >
+                <div data-test-id="calendar-day-week-view:part-day-event" className="calendar-eventcell-title">
                     {titleString}
                 </div>
                 <div
@@ -94,23 +122,18 @@ const PartDayEvent = ({
     })();
 
     return (
-        <div
-            role="button"
-            tabIndex={0}
+        <PartDayEventView
             style={eventStyle}
-            className={classnames([
-                'calendar-eventcell no-scroll pl0-5 pr0-5',
-                !isEventReadLoading && 'isLoaded',
-                !isEventReadLoading && isBeforeNow && 'isPast',
-                isSelected && 'isSelected',
-                isUnanswered && 'isUnanswered',
-                isCancelled && 'isCancelled',
-            ])}
+            isLoaded={!isEventReadLoading}
+            isPast={!isEventReadLoading && isBeforeNow}
+            isSelected={isSelected}
+            isUnanswered={isUnanswered}
+            isCancelled={isCancelled}
             ref={eventRef}
             title={expandableTitleString}
         >
             {content}
-        </div>
+        </PartDayEventView>
     );
 };
 
