@@ -1,16 +1,11 @@
-import { Address, Api } from '@proton/shared/lib/interfaces';
-import { useGetAddressKeys } from '@proton/components';
-import {
-    getAllCalendarKeys,
-    getPassphrases,
-    queryMembers,
-    reactivateCalendarKey,
-} from '@proton/shared/lib/api/calendars';
-import { splitKeys } from '@proton/shared/lib/keys/keys';
-import { decryptPassphrase } from '@proton/shared/lib/keys/calendarKeys';
-import { Calendar, CalendarKey, Member, Passphrase } from '@proton/shared/lib/interfaces/calendar';
 import { decryptPrivateKey, encryptPrivateKey } from 'pmcrypto';
-import { getMemberAddressWithAdminPermissions } from '@proton/shared/lib/calendar/getMemberWithAdmin';
+import { useGetAddressKeys } from '@proton/components';
+import { Address, Api } from '../../interfaces';
+import { getAllCalendarKeys, getPassphrases, queryMembers, reactivateCalendarKey } from '../../api/calendars';
+import { splitKeys } from '../../keys';
+import { decryptPassphrase } from '../../keys/calendarKeys';
+import { Calendar, CalendarKey, Member, Passphrase } from '../../interfaces/calendar';
+import { getMemberAddressWithAdminPermissions } from '../getMemberWithAdmin';
 
 interface ReactivateCalendarsKeysArgumentsShared {
     api: Api;
@@ -86,7 +81,7 @@ const reactivateCalendarKeys = async ({
                 const armoredEncryptedKey = await encryptPrivateKey(privateKey, decryptedPrimaryPassphrase);
                 await api(reactivateCalendarKey(CalendarID, KeyID, { PrivateKey: armoredEncryptedKey }));
             } catch (e: any) {
-                console.log(e);
+                console.error(e);
             }
         })
     );
