@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import { Address } from '@proton/shared/lib/interfaces';
 import { toMap } from '@proton/shared/lib/helpers/object';
-import { createCalendar, removeCalendar } from '@proton/shared/lib/api/calendars';
+import { createCalendar, removeCalendar, updateCalendarUserSettings } from '@proton/shared/lib/api/calendars';
 import { setupCalendarKey } from '@proton/components/containers/keys/calendar';
 import { getIsCalendarDisabled } from '@proton/shared/lib/calendar/calendar';
 import { getPrimaryKey } from '@proton/shared/lib/keys';
@@ -40,6 +40,7 @@ import { CALENDAR_TYPE } from '@proton/shared/lib/interfaces/calendar';
 import { getActiveAddresses } from '@proton/shared/lib/helpers/address';
 import { PRODUCT_NAMES, LABEL_COLORS } from '@proton/shared/lib/constants';
 import { noop, randomIntFromInterval } from '@proton/shared/lib/helpers/function';
+import { getTimezone } from '@proton/shared/lib/date/timezone';
 import { MAX_LENGTHS_API } from '@proton/shared/lib/calendar/constants';
 
 import { Button, FormModal, PrimaryButton, useSettingsLink } from '../../components';
@@ -173,7 +174,7 @@ const ImportAssistantOauthModal = ({ addresses, onClose = noop, defaultCheckedTy
         return acc;
     }, []);
 
-    const createCalendars = async (calendarsToBeCreated: CalendarImportMapping[]) => {
+    const createCalendars = async (calendarsToBeCreated: CalendarImportMapping[], hasNoCalendar: boolean) => {
         if (!activeAddresses.length) {
             throw new Error(c('Error').t`No valid address found`);
         }
@@ -217,6 +218,15 @@ const ImportAssistantOauthModal = ({ addresses, onClose = noop, defaultCheckedTy
                 return { Source, Destination: Calendar.ID };
             })
         );
+
+        if (hasNoCalendar) {
+            await api(
+                updateCalendarUserSettings({
+                    PrimaryTimezone: getTimezone(),
+                    AutoDetectPrimaryTimezone: 1,
+                })
+            );
+        }
 
         return newMapping;
     };
@@ -372,7 +382,7 @@ const ImportAssistantOauthModal = ({ addresses, onClose = noop, defaultCheckedTy
             if (payloads[ImportType.CALENDAR] && calendarsToBeCreated.length) {
                 setIsLoadingCreateCalendars(true);
                 try {
-                    createdCalendarMapping = await createCalendars(calendarsToBeCreated);
+                    createdCalendarMapping = await createCalendars(calendarsToBeCreated, !calendars.length);
                     await call();
                     calendarPayload.Mapping = [
                         ...calendarPayload.Mapping.filter(
