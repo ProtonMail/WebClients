@@ -15,7 +15,8 @@
 	border-inline-start-width: 5px;
 	border-inline-end-width: 1px;
 
-	padding: 0.125em 0.25em;
+	padding-block: 0.125em;
+        padding-inline: 0.25em;
 	border-radius: var(--border-radius-medium);
 	background-color: var(--background-strong);
 	color: var(--text-norm);
