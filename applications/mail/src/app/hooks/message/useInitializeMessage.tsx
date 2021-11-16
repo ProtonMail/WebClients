@@ -3,6 +3,8 @@ import { isDraft, isPlainText } from '@proton/shared/lib/mail/messages';
 import { useCallback } from 'react';
 import { useApi, useMailSettings } from '@proton/components';
 import { wait } from '@proton/shared/lib/helpers/promise';
+import { useDispatch } from 'react-redux';
+import { DecryptResultPmcrypto } from 'pmcrypto';
 import {
     MessageExtended,
     MessageErrors,
@@ -13,7 +15,6 @@ import {
 import { loadMessage } from '../../helpers/message/messageRead';
 import { useGetMessageKeys } from './useGetMessageKeys';
 import { decryptMessage } from '../../helpers/message/messageDecrypt';
-import { useAttachmentCache } from '../../containers/AttachmentProvider';
 import { updateMessageCache, useMessageCache } from '../../containers/MessageProvider';
 import { prepareHtml, preparePlainText } from '../../helpers/transforms/transforms';
 import { isNetworkError } from '../../helpers/errors';
@@ -22,6 +23,8 @@ import { useMarkAs, MARK_AS_STATUS } from '../useMarkAs';
 import { isUnreadMessage } from '../../helpers/elements';
 import { LOAD_RETRY_COUNT, LOAD_RETRY_DELAY } from '../../constants';
 import { useKeyVerification } from './useKeyVerification';
+import { updateAttachment } from '../../logic/attachments/attachmentsActions';
+import { useGetAttachment } from '../useAttachment';
 
 interface Preparation {
     plainText?: string;
@@ -39,10 +42,15 @@ export const useInitializeMessage = (localID: string, labelID?: string) => {
     const markAs = useMarkAs();
     const messageCache = useMessageCache();
     const getMessageKeys = useGetMessageKeys();
-    const attachmentsCache = useAttachmentCache();
+    const getAttachment = useGetAttachment();
+    const dispatch = useDispatch();
     const base64Cache = useBase64Cache();
     const [mailSettings] = useMailSettings();
     const { verifyKeys } = useKeyVerification();
+
+    const onUpdateAttachment = (ID: string, attachment: DecryptResultPmcrypto) => {
+        dispatch(updateAttachment({ ID, attachment }));
+    };
 
     return useCallback(async () => {
         // Message can change during the whole initilization sequence
@@ -76,7 +84,7 @@ export const useInitializeMessage = (localID: string, labelID?: string) => {
 
             const messageKeys = await getMessageKeys(message.data);
 
-            decryption = await decryptMessage(getData(), messageKeys.privateKeys, attachmentsCache);
+            decryption = await decryptMessage(getData(), messageKeys.privateKeys, getAttachment, onUpdateAttachment);
 
             if (decryption.mimetype) {
                 dataChanges = { ...dataChanges, MIMEType: decryption.mimetype };
@@ -110,7 +118,8 @@ export const useInitializeMessage = (localID: string, labelID?: string) => {
                       messageKeys,
                       messageCache,
                       base64Cache,
-                      attachmentsCache,
+                      getAttachment,
+                      onUpdateAttachment,
                       api,
                       mailSettings
                   );

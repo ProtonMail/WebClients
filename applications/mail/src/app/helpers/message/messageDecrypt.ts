@@ -20,7 +20,6 @@ import { utf8ArrayToString } from 'pmcrypto/lib/utils';
 import { MessageErrors, MessageExtendedWithData } from '../../models/message';
 import { AttachmentMime } from '../../models/attachment';
 import { convert } from '../attachment/attachmentConverter';
-import { AttachmentsCache } from '../../containers/AttachmentProvider';
 
 const { NOT_VERIFIED, NOT_SIGNED } = VERIFICATION_STATUS;
 
@@ -61,7 +60,8 @@ export interface DecryptMessageResult {
 const decryptMimeMessage = async (
     message: Message,
     privateKeys: OpenPGPKey[],
-    attachmentsCache: AttachmentsCache | undefined
+    getAttachment?: (ID: string) => DecryptResultPmcrypto | undefined,
+    onUpdateAttachment?: (ID: string, attachment: DecryptResultPmcrypto) => void
 ): Promise<DecryptMessageResult> => {
     const headerFilename = c('Encrypted Headers').t`Encrypted Headers filename`;
     const sender = getSender(message)?.Address;
@@ -99,7 +99,7 @@ const decryptMimeMessage = async (
     return {
         decryptedBody: processing.body,
         decryptedRawContent: decryption.data,
-        attachments: !attachmentsCache ? undefined : convert(message, processing.attachments, 0, attachmentsCache),
+        attachments: !onUpdateAttachment ? undefined : convert(message, processing.attachments, 0, onUpdateAttachment),
         decryptedSubject: processing.encryptedSubject,
         signature: decryption.signatures[0],
         mimetype: processing.mimetype,
@@ -144,10 +144,11 @@ const decryptLegacyMessage = async (message: Message, privateKeys: OpenPGPKey[])
 export const decryptMessage = async (
     message: Message,
     privateKeys: OpenPGPKey[],
-    attachmentsCache: AttachmentsCache | undefined
+    getAttachment?: (ID: string) => DecryptResultPmcrypto | undefined,
+    onUpdateAttachment?: (ID: string, attachment: DecryptResultPmcrypto) => void
 ): Promise<DecryptMessageResult> => {
     if (isMIME(message)) {
-        return decryptMimeMessage(message, privateKeys, attachmentsCache);
+        return decryptMimeMessage(message, privateKeys, getAttachment, onUpdateAttachment);
     }
     return decryptLegacyMessage(message, privateKeys);
 };

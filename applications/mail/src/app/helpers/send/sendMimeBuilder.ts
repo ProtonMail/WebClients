@@ -1,10 +1,9 @@
 import mimemessage from 'mimemessage';
-import { arrayToBinaryString } from 'pmcrypto';
+import { arrayToBinaryString, DecryptResultPmcrypto } from 'pmcrypto';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import { Api } from '@proton/shared/lib/interfaces';
 import { getAttachments, isPlainText as testIsPlainText } from '@proton/shared/lib/mail/messages';
 import { MessageEmbeddedImage, MessageExtended, MessageImages, MessageKeys } from '../../models/message';
-import { AttachmentsCache } from '../../containers/AttachmentProvider';
 import { getPlainText } from '../message/messageContent';
 import { prepareExport } from '../message/messageExport';
 import { Download, formatDownload } from '../attachment/attachmentDownloader';
@@ -153,12 +152,13 @@ const build = (
 const fetchMimeDependencies = async (
     message: MessageExtended,
     messageKeys: MessageKeys,
-    cache: AttachmentsCache,
+    getAttachment: (ID: string) => DecryptResultPmcrypto | undefined,
+    onUpdateAttachment: (ID: string, attachment: DecryptResultPmcrypto) => void,
     api: Api
 ): Promise<Download[]> => {
     return Promise.all(
         getAttachments(message.data).map(async (attachment) =>
-            formatDownload(attachment, message.verification, messageKeys, cache, api)
+            formatDownload(attachment, message.verification, messageKeys, getAttachment, onUpdateAttachment, api)
         )
     );
 };
@@ -166,13 +166,14 @@ const fetchMimeDependencies = async (
 export const constructMime = async (
     message: MessageExtended,
     messageKeys: MessageKeys,
-    cache: AttachmentsCache,
+    getAttachment: (ID: string) => DecryptResultPmcrypto | undefined,
+    onUpdateAttachment: (ID: string, attachment: DecryptResultPmcrypto) => void,
     api: Api,
     downconvert = true
 ) => {
     const plaintext = getPlainText(message, downconvert);
     const html = message.data?.MIMEType !== MIME_TYPES.PLAINTEXT ? prepareExport(message) : undefined;
-    const attachments = await fetchMimeDependencies(message, messageKeys, cache, api);
+    const attachments = await fetchMimeDependencies(message, messageKeys, getAttachment, onUpdateAttachment, api);
 
     return build(plaintext, html, attachments, message.messageImages);
 };
@@ -180,7 +181,8 @@ export const constructMime = async (
 export const constructMimeFromSource = async (
     message: MessageExtended,
     messageKeys: MessageKeys,
-    cache: AttachmentsCache,
+    getAttachment: (ID: string) => DecryptResultPmcrypto | undefined,
+    onUpdateAttachment: (ID: string, attachment: DecryptResultPmcrypto) => void,
     api: Api
 ) => {
     const isDecryptionError = !!message.errors?.decryption?.length;
@@ -195,7 +197,7 @@ export const constructMimeFromSource = async (
         html = isPlainText ? undefined : message.decryptedBody;
     }
 
-    const attachments = await fetchMimeDependencies(message, messageKeys, cache, api);
+    const attachments = await fetchMimeDependencies(message, messageKeys, getAttachment, onUpdateAttachment, api);
 
     return build(plaintext, html, attachments, message.messageImages);
 };

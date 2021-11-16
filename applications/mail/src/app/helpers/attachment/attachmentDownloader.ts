@@ -1,10 +1,10 @@
 import JSZip from 'jszip';
+import { DecryptResultPmcrypto } from 'pmcrypto';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { splitExtension } from '@proton/shared/lib/helpers/file';
 import { Api } from '@proton/shared/lib/interfaces';
 import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
-import { AttachmentsCache } from '../../containers/AttachmentProvider';
 
 import { MessageKeys, MessageVerification } from '../../models/message';
 import { getAndVerify } from './attachmentLoader';
@@ -23,12 +23,21 @@ export const formatDownload = async (
     attachment: Attachment,
     verification: MessageVerification | undefined,
     messageKeys: MessageKeys,
-    cache: AttachmentsCache,
+    getAttachment: (ID: string) => DecryptResultPmcrypto | undefined,
+    onUpdateAttachment: (ID: string, attachment: DecryptResultPmcrypto) => void,
     api: Api
 ): Promise<Download> => {
     try {
         const reverify = !!(verification?.senderVerified && verification.senderPinnedKeys?.length);
-        const { data, verified } = await getAndVerify(attachment, verification, messageKeys, reverify, cache, api);
+        const { data, verified } = await getAndVerify(
+            attachment,
+            verification,
+            messageKeys,
+            reverify,
+            getAttachment,
+            onUpdateAttachment,
+            api
+        );
         return {
             attachment,
             data: data as Uint8Array,
@@ -76,7 +85,8 @@ export const formatDownloadAll = async (
     attachments: Attachment[],
     verification: MessageVerification | undefined,
     messageKeys: MessageKeys,
-    cache: AttachmentsCache,
+    getAttachment: (ID: string) => DecryptResultPmcrypto | undefined,
+    onUpdateAttachment: (ID: string, attachment: DecryptResultPmcrypto) => void,
     api: Api
 ): Promise<Download[]> => {
     const { list }: { list: Attachment[] } = attachments.reduce(
@@ -96,7 +106,9 @@ export const formatDownloadAll = async (
         { list: [], map: {} }
     );
 
-    return Promise.all(list.map((att) => formatDownload(att, verification, messageKeys, cache, api)));
+    return Promise.all(
+        list.map((att) => formatDownload(att, verification, messageKeys, getAttachment, onUpdateAttachment, api))
+    );
 };
 
 const getZipAttachmentName = (message: Message) => `Attachments-${message.Subject}.zip`;

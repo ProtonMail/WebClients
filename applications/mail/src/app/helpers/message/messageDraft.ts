@@ -20,6 +20,7 @@ import {
 import { generateUID } from '@proton/components';
 import { c } from 'ttag';
 import { DEFAULT_FONT_FACE, DEFAULT_FONT_SIZE } from '@proton/components/components/editor/squireConfig';
+import { DecryptResultPmcrypto } from 'pmcrypto';
 import { MessageExtendedWithData, PartialMessageExtended } from '../../models/message';
 import { MESSAGE_ACTIONS } from '../../constants';
 import { getFromAddress } from '../addresses';
@@ -30,7 +31,6 @@ import { exportPlainText, getDocumentContent, plainTextToHTML } from './messageC
 import { getEmbeddedImages, restoreImages, updateImages } from './messageImages';
 import { insertSignature } from './messageSignature';
 import { convertToFile } from '../attachment/attachmentConverter';
-import { AttachmentsCache } from '../../containers/AttachmentProvider';
 
 // Reference: Angular/src/app/message/services/messageBuilder.js
 
@@ -182,7 +182,7 @@ export const createNewDraft = (
     referenceMessage: PartialMessageExtended | undefined,
     mailSettings: MailSettings,
     addresses: Address[],
-    attachmentsCache: AttachmentsCache
+    getAttachment: (ID: string) => DecryptResultPmcrypto | undefined
 ): PartialMessageExtended => {
     const MIMEType = referenceMessage?.data?.MIMEType || (mailSettings.DraftMIMEType as unknown as MIME_TYPES);
     const { FontFace, FontSize, RightToLeft } = mailSettings;
@@ -201,7 +201,7 @@ export const createNewDraft = (
     } = handleActions(action, referenceMessage, addresses);
 
     // If there were some pgp attachments, need to upload them as "initialAttachments"
-    const [Attachments, pgpAttachments] = convertToFile(reusedAttachments, attachmentsCache);
+    const [Attachments, pgpAttachments] = convertToFile(reusedAttachments, getAttachment);
 
     const originalTo = getOriginalTo(referenceMessage?.data);
     const originalAddressID = referenceMessage?.data?.AddressID;

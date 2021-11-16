@@ -12,12 +12,13 @@ import { wait } from '@proton/shared/lib/helpers/promise';
 import { MAILBOX_LABEL_IDS, MIME_TYPES } from '@proton/shared/lib/constants';
 import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
+import { useDispatch } from 'react-redux';
+import { DecryptResultPmcrypto } from 'pmcrypto';
 import { MessageExtendedWithData } from '../../models/message';
 import { generateTopPackages } from '../../helpers/send/sendTopPackages';
 import { attachSubPackages } from '../../helpers/send/sendSubPackages';
 import { sendFormatter } from '../../helpers/send/sendFormatter';
 import { encryptPackages } from '../../helpers/send/sendEncrypt';
-import { useAttachmentCache } from '../../containers/AttachmentProvider';
 import { updateMessageCache, useMessageCache } from '../../containers/MessageProvider';
 import { SendingMessageNotificationManager } from '../../components/notifications/SendingMessageNotification';
 import { OnCompose } from './useCompose';
@@ -26,6 +27,8 @@ import { useGetMessageKeys } from '../message/useGetMessageKeys';
 import { getParamsFromPathname, setParamsInLocation } from '../../helpers/mailboxUrl';
 import { useSendMoficiations } from './useSendModifications';
 import { SAVE_DRAFT_ERROR_CODES, SEND_EMAIL_ERROR_CODES } from '../../constants';
+import { updateAttachment } from '../../logic/attachments/attachmentsActions';
+import { useGetAttachment } from '../useAttachment';
 
 const MIN_DELAY_SENT_NOTIFICATION = 2500;
 
@@ -43,13 +46,18 @@ interface UseSendMessageParameters {
 export const useSendMessage = () => {
     const api = useApi();
     const getMessageKeys = useGetMessageKeys();
-    const attachmentCache = useAttachmentCache();
+    const getAttachment = useGetAttachment();
+    const dispatch = useDispatch();
     const { call } = useEventManager();
     const messageCache = useMessageCache();
     const history = useHistory<any>();
     const delaySendSeconds = useDelaySendSeconds();
     const { createNotification, hideNotification } = useNotifications();
     const sendModification = useSendMoficiations();
+
+    const onUpdateAttachment = (ID: string, attachment: DecryptResultPmcrypto) => {
+        dispatch(updateAttachment({ ID, attachment }));
+    };
 
     return useCallback(
         async ({
@@ -99,7 +107,14 @@ export const useSendMessage = () => {
                     throw new Error(errorMessage);
                 }
 
-                let packages = await generateTopPackages(message, messageKeys, mapSendPrefs, attachmentCache, api);
+                let packages = await generateTopPackages(
+                    message,
+                    messageKeys,
+                    mapSendPrefs,
+                    getAttachment,
+                    onUpdateAttachment,
+                    api
+                );
                 packages = await attachSubPackages(packages, message, emails, mapSendPrefs, api);
                 packages = await encryptPackages(message, messageKeys, packages);
 
@@ -198,6 +213,6 @@ export const useSendMessage = () => {
                 throw error;
             }
         },
-        [delaySendSeconds, messageCache, attachmentCache]
+        [delaySendSeconds, messageCache]
     );
 };
