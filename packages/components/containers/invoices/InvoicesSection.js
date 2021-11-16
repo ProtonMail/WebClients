@@ -31,7 +31,7 @@ import InvoiceActions from './InvoiceActions';
 import InvoiceTextModal from './InvoiceTextModal';
 import InvoicesPreview from './InvoicesPreview';
 
-import { SettingsParagraph, SettingsSection, SettingsSectionWide } from '../account';
+import { SettingsParagraph, SettingsSectionWide } from '../account';
 
 const InvoicesSection = () => {
     const previewRef = useRef();
@@ -69,14 +69,6 @@ const InvoicesSection = () => {
         createModal(<InvoiceTextModal />);
     };
 
-    if (page === 1 && !loading && invoices.length === 0) {
-        return (
-            <SettingsSection>
-                <SettingsParagraph>{c('Error').t`You have no invoices.`}</SettingsParagraph>
-            </SettingsSection>
-        );
-    }
-
     const getFilename = (invoice) => `${c('Title for PDF file').t`ProtonMail invoice`} ${invoice.ID}.pdf`;
 
     const handleDownload = async (invoice) => {
@@ -84,6 +76,8 @@ const InvoicesSection = () => {
         const blob = new Blob([buffer], { type: 'application/pdf' });
         downloadFile(blob, getFilename(invoice));
     };
+
+    const isEmpty = page === 1 && !loading && invoices.length === 0;
 
     return (
         <>
@@ -122,44 +116,48 @@ const InvoicesSection = () => {
                         onSelect={onSelect}
                     />
                 </Block>
-                <div style={{ overflow: 'auto' }}>
-                    <Table className="simple-table--has-actions">
-                        <TableHeader>
-                            <TableRow>
-                                <TableCell type="header">ID</TableCell>
-                                <TableCell type="header">{c('Title').t`Amount`}</TableCell>
-                                <TableCell type="header">{c('Title').t`Type`}</TableCell>
-                                <TableCell type="header">{c('Title').t`Status`}</TableCell>
-                                <TableCell type="header">{c('Title').t`Date`}</TableCell>
-                                <TableCell type="header">{c('Title').t`Action`}</TableCell>
-                            </TableRow>
-                        </TableHeader>
-                        <TableBody loading={loading} colSpan={6}>
-                            {invoices.map((invoice, index) => {
-                                const key = index.toString();
-                                return (
-                                    <TableRow
-                                        key={key}
-                                        cells={[
-                                            invoice.ID,
-                                            <InvoiceAmount key={key} invoice={invoice} />,
-                                            <InvoiceType key={key} invoice={invoice} />,
-                                            <InvoiceState key={key} invoice={invoice} />,
-                                            <Time key={key}>{invoice.CreateTime}</Time>,
-                                            <InvoiceActions
-                                                key={key}
-                                                invoice={invoice}
-                                                fetchInvoices={request}
-                                                onPreview={previewRef.current.preview}
-                                                onDownload={handleDownload}
-                                            />,
-                                        ]}
-                                    />
-                                );
-                            })}
-                        </TableBody>
-                    </Table>
-                </div>
+                {isEmpty ? (
+                    c('Error').t`You have no invoices.`
+                ) : (
+                    <div style={{ overflow: 'auto' }}>
+                        <Table className="simple-table--has-actions">
+                            <TableHeader>
+                                <TableRow>
+                                    <TableCell type="header">ID</TableCell>
+                                    <TableCell type="header">{c('Title').t`Amount`}</TableCell>
+                                    <TableCell type="header">{c('Title').t`Type`}</TableCell>
+                                    <TableCell type="header">{c('Title').t`Status`}</TableCell>
+                                    <TableCell type="header">{c('Title').t`Date`}</TableCell>
+                                    <TableCell type="header">{c('Title').t`Action`}</TableCell>
+                                </TableRow>
+                            </TableHeader>
+                            <TableBody loading={loading} colSpan={6}>
+                                {invoices.map((invoice, index) => {
+                                    const key = index.toString();
+                                    return (
+                                        <TableRow
+                                            key={key}
+                                            cells={[
+                                                invoice.ID,
+                                                <InvoiceAmount key={key} invoice={invoice} />,
+                                                <InvoiceType key={key} invoice={invoice} />,
+                                                <InvoiceState key={key} invoice={invoice} />,
+                                                <Time key={key}>{invoice.CreateTime}</Time>,
+                                                <InvoiceActions
+                                                    key={key}
+                                                    invoice={invoice}
+                                                    fetchInvoices={request}
+                                                    onPreview={previewRef.current.preview}
+                                                    onDownload={handleDownload}
+                                                />,
+                                            ]}
+                                        />
+                                    );
+                                })}
+                            </TableBody>
+                        </Table>
+                    </div>
+                )}
             </SettingsSectionWide>
             <InvoicesPreview
                 ref={previewRef}
