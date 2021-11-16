@@ -43,7 +43,7 @@ const getPlanFeatures = (plan, maxConnections, countries, serversCount) => {
             upsell: {
                 planName: PLAN.BASIC,
                 features: [
-                    getBasicServers(countries[PLANS.VPNBASIC].count),
+                    getBasicServers(serversCount[PLANS.VPNBASIC], countries[PLANS.VPNBASIC].count),
                     c('Plan Feature').t`High speed`,
                     c('Plan Feature').t`Filesharing/P2P support`,
                 ],
@@ -75,7 +75,7 @@ const getPlanFeatures = (plan, maxConnections, countries, serversCount) => {
                 ],
             },
             features: [
-                getBasicServers(countries[PLANS.VPNBASIC].count),
+                getBasicServers(serversCount[PLANS.VPNBASIC], countries[PLANS.VPNBASIC].count),
                 getVpnConnections(maxConnections),
 
                 c('Plan Feature').t`High speed`,
@@ -109,7 +109,7 @@ const getPlanFeatures = (plan, maxConnections, countries, serversCount) => {
             isBest: true,
             description: c('Plan Description').t`Advanced security features`,
             features: [
-                getPlusServers(countries[PLANS.VPNPLUS].count),
+                getPlusServers(serversCount[PLANS.VPNPLUS], countries[PLANS.VPNPLUS].count),
                 getVpnConnections(maxConnections),
                 c('Plan Feature').t`Highest speed (up to 10 Gbps)`,
                 c('Plan Feature').t`Strict no-logs policy`,
@@ -179,7 +179,7 @@ const getPlanFeatures = (plan, maxConnections, countries, serversCount) => {
             image: <img width={100} src={visionaryPlanSvg} alt={`${PLAN_NAMES[PLAN.VISIONARY]} plan`} />,
             description: c('Plan Description').t`Bundle plan`,
             features: [
-                getPlusServers(countries[PLANS.VPNPLUS].count),
+                getPlusServers(serversCount[PLANS.VPNPLUS], countries[PLANS.VPNPLUS].count),
                 getVpnConnections(maxConnections),
                 c('Plan Feature').t`Highest speed (10 Gbps)`,
                 c('Plan Feature').t`Strict no-logs policy`,
