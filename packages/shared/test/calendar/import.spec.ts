@@ -960,10 +960,9 @@ END:VEVENT`;
 });
 
 describe('parseIcs', () => {
-    it('should parse an ics with no method', async () => {
+    it('should parse an ics with no method or version', async () => {
         const icsString = `BEGIN:VCALENDAR
 PRODID:-//github.com/rianjs/ical.net//NONSGML ical.net 4.0//EN
-VERSION:2.0
 BEGIN:VTIMEZONE
 TZID:UTC
 X-LIC-LOCATION:UTC

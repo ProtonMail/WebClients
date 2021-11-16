@@ -273,4 +273,27 @@ END:VCALENDAR`;
             fileName: 'test.ics',
         });
     });
+
+    test('should not throw without version', async () => {
+        const invitation = `BEGIN:VCALENDAR
+CALSCALE:GREGORIAN
+PRODID:-//Apple Inc.//Mac OS X 10.13.6//EN
+BEGIN:VEVENT
+UID:test-event
+DTSTAMP:19980309T231000Z
+DTSTART;TZID=Europe/Brussels:20021231T203000
+END:VEVENT
+END:VCALENDAR`;
+        const parsedInvitation = parseVcalendar(invitation) as VcalVcalendar;
+        const message = { Time: Math.round(Date.now() / 1000) } as Message;
+
+        void expect(() =>
+            getSupportedEventInvitation({
+                vcalComponent: parsedInvitation,
+                message,
+                icsBinaryString: invitation,
+                icsFileName: 'test.ics',
+            })
+        ).not.toThrow();
+    });
 });

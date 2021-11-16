@@ -55,11 +55,9 @@ export const parseIcs = async (ics: File) => {
         if (!getIsCalendar(parsedVcalendar)) {
             throw new ImportFileError(IMPORT_ERROR_TYPE.INVALID_CALENDAR, filename);
         }
-        const { method, version, components, calscale, 'x-wr-timezone': xWrTimezone } = parsedVcalendar;
+        const { method, components, calscale, 'x-wr-timezone': xWrTimezone } = parsedVcalendar;
         const supportedMethod = getIcalMethod(method);
-        if (version?.value !== '2.0') {
-            throw new ImportFileError(IMPORT_ERROR_TYPE.INVALID_VERSION, filename);
-        }
+
         if (!supportedMethod) {
             throw new ImportFileError(IMPORT_ERROR_TYPE.INVALID_METHOD, filename);
         }
