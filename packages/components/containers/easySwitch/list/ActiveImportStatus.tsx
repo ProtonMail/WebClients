@@ -12,7 +12,7 @@ interface Props {
 }
 
 const ActiveImportStatus = ({ processed, total, state, errorCode }: Props) => {
-    const percentage = (processed * 100) / total;
+    const percentage = total === 0 ? 0 : (processed * 100) / total;
     const percentageValue = Number.isNaN(percentage) ? 0 : Math.floor(percentage);
 
     switch (state) {
