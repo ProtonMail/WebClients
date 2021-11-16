@@ -117,8 +117,8 @@ export const CalendarModal = ({
 
         const isEdit = !!initialCalendar;
         return {
-            title: isEdit ? c('Title').t`Update calendar` : c('Title').t`Create calendar`,
-            submit: isEdit ? c('Action').t`Update` : c('Action').t`Create`,
+            title: isEdit ? c('Title').t`Edit calendar` : c('Title').t`Create calendar`,
+            submit: c('Action').t`Save`,
             close: c('Action').t`Cancel`,
             loading: loadingSetup || loadingAction,
             hasClose: true,
@@ -156,7 +156,7 @@ export const CalendarModal = ({
                         </Field>
                     </Row>
                     <Row>
-                        <Label htmlFor="calendar-color">{c('Label').t`Choose a color`}</Label>
+                        <Label htmlFor="calendar-color">{c('Label').t`Color`}</Label>
                         <Field>
                             <ColorPicker
                                 id="calendar-color"
@@ -166,7 +166,7 @@ export const CalendarModal = ({
                         </Field>
                     </Row>
                     <Row>
-                        <Label htmlFor="calendar-address-select">{c('Label').t`Default email`}</Label>
+                        <Label htmlFor="calendar-address-select">{c('Label').t`Email address`}</Label>
                         <Field className="flex flex-align-items-center">
                             {model.calendarID ? (
                                 <span className="pt0-5">{addressText}</span>
@@ -214,7 +214,7 @@ export const CalendarModal = ({
                     </Row>
                     {!isSubscribedCalendar && (
                         <Row>
-                            <Label htmlFor="duration-select">{c('Label').t`Default event duration`}</Label>
+                            <Label htmlFor="duration-select">{c('Label').t`Event duration`}</Label>
                             <Field>
                                 <SelectTwo
                                     id="duration-select"
@@ -248,7 +248,7 @@ export const CalendarModal = ({
                     {!isSubscribedCalendar && (
                         <>
                             <Row>
-                                <Label>{c('Label').t`Default notifications`}</Label>
+                                <Label>{c('Label').t`Event notifications`}</Label>
                                 <div
                                     data-test-id="create-calendar/event-settings:default-notification"
                                     className="flex-item-fluid"
@@ -268,7 +268,7 @@ export const CalendarModal = ({
                                 </div>
                             </Row>
                             <Row>
-                                <Label>{c('Label').t`Default full day notifications`}</Label>
+                                <Label>{c('Label').t`All-day event notifications`}</Label>
                                 <div
                                     data-test-id="create-calendar/event-settings:default-full-day-notification"
                                     className="flex-item-fluid"
