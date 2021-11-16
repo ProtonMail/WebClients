@@ -554,7 +554,7 @@ ${eventDetailsText}`;
 ${eventDetailsText}`;
     }
     if (method === ICAL_METHOD.CANCEL) {
-        return c('Email body for invitation').t`${eventTitle} has been cancelled.`;
+        return c('Email body for invitation').t`${eventTitle} has been canceled.`;
     }
     if (method === ICAL_METHOD.REPLY) {
         if (!partstat || !emailAddress) {

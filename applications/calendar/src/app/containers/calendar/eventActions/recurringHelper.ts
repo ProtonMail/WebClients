@@ -5,10 +5,10 @@ import { getOccurrences } from '@proton/shared/lib/calendar/recurring';
 import { fromUTCDate, toUTCDate } from '@proton/shared/lib/date/timezone';
 import { VcalDateOrDateTimeProperty, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
 import { getIsAllDay, getPropertyTzid, getRecurrenceId } from '@proton/shared/lib/calendar/vcalHelper';
+import { toExdate } from '@proton/shared/lib/calendar/exdate';
 
 import parseMainEventData from '../event/parseMainEventData';
 import deleteFutureRecurrence from '../recurrence/deleteFutureRecurrence';
-import { toExdate } from '../recurrence/helper';
 import { CalendarEventRecurring } from '../../../interfaces/CalendarEvents';
 
 export const getOriginalEvent = (recurrences: CalendarEvent[]) => {

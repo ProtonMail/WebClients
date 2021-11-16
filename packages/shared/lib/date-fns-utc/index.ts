@@ -90,6 +90,13 @@ export const isSameDay = (dateLeft: Date, dateRight: Date) => {
     return dateLeft.getUTCDate() === dateRight.getUTCDate();
 };
 
+export const isSameHour = (dateLeft: Date, dateRight: Date) => {
+    if (!isSameDay(dateLeft, dateRight)) {
+        return false;
+    }
+    return dateLeft.getUTCHours() === dateRight.getUTCHours();
+};
+
 /**
  * Check if a later date happens on the following day to an earlier date
  * @param {Date} dateLeft       Earlier date

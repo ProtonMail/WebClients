@@ -1,11 +1,12 @@
+import { c } from 'ttag';
+
 import CalendarEventDateHeader from '@proton/components/components/calendarEventDateHeader/CalendarEventDateHeader';
 import { getIsPropertyAllDay } from '@proton/shared/lib/calendar/vcalHelper';
-import { c } from 'ttag';
 import { ICAL_ATTENDEE_ROLE, ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
 import { getDisplayTitle } from '@proton/shared/lib/calendar/helper';
-import { getDtendProperty, propertyToUTCDate } from '@proton/shared/lib/calendar/vcalConverter';
+import { getDtendProperty, propertyToLocalDate } from '@proton/shared/lib/calendar/vcalConverter';
 import { RequireSome } from '@proton/shared/lib/interfaces';
-import { addDays } from 'date-fns';
+
 import { InvitationModel } from '../../../../helpers/calendar/invite';
 
 const { DECLINECOUNTER, REPLY, REFRESH } = ICAL_METHOD;
@@ -30,8 +31,8 @@ const ExtraEventHeader = ({ model }: Props) => {
     const { dtstart, summary } = vevent;
     const dtend = getDtendProperty(vevent);
     const isAllDay = getIsPropertyAllDay(dtstart);
-    const startDate = propertyToUTCDate(dtstart);
-    const endDate = isAllDay ? addDays(propertyToUTCDate(dtend), -1) : propertyToUTCDate(dtend);
+    const startDate = propertyToLocalDate(dtstart);
+    const endDate = propertyToLocalDate(dtend);
     const title = isImport && hasMultipleVevents ? invitationIcs?.fileName || '' : getDisplayTitle(summary?.value);
 
     const canShowOptionalHeader = method === ICAL_METHOD.REQUEST && !isOutdated && !isPartyCrasher && !isImport;
@@ -41,18 +42,15 @@ const ExtraEventHeader = ({ model }: Props) => {
             : null;
 
     return (
-        <div className="mb0-5">
-            <div className="text-2xl text-ellipsis text-strong" title={title}>
-                {title}
-            </div>
+        <div className="mb0-75">
+            <div className="h3 mb0-25 text-bold">{title}</div>
             {!hasMultipleVevents && (
                 <>
                     <CalendarEventDateHeader
-                        className="text-lg mb0-25"
+                        className="text-lg"
                         startDate={startDate}
                         endDate={endDate}
                         isAllDay={isAllDay}
-                        hasAllDayUtcDates
                         data-testid="extra-event-date-header"
                     />
                     {optionalHeader && <div className="text-sm color-weak">{optionalHeader}</div>}

@@ -90,14 +90,14 @@ const ExtraEventWarning = ({ model }: Props) => {
     if (timeStatus === EVENT_TIME_STATUS.PAST) {
         return (
             <Alert className={alertClassName} type="warning">
-                {c('Calendar invite info').t`This event has already happened`}
+                {c('Calendar invite info').t`Event already ended`}
             </Alert>
         );
     }
     if (timeStatus === EVENT_TIME_STATUS.HAPPENING) {
         return (
             <Alert className={alertClassName} type="warning">
-                {c('Calendar invite info').t`This event is currently happening`}
+                {c('Calendar invite info').t`Event in progress`}
             </Alert>
         );
     }

@@ -125,6 +125,7 @@ const EventPopover = ({
                 isAllDay={isAllDay && !isAllPartDay}
                 formatTime={formatTime}
                 hasFakeUtcDates
+                hasModifiedAllDayEndDate
                 className="text-lg m0"
             />
         ),
@@ -239,10 +240,10 @@ const EventPopover = ({
                 {isCancelled && (
                     <Badge
                         type="light"
-                        tooltip={c('Calendar invite info').t`This event has been cancelled`}
+                        tooltip={c('Calendar invite info').t`This event has been canceled`}
                         className="mb0-4"
                     >
-                        <span className="text-uppercase">{c('Event cancelled status badge').t`cancelled`}</span>
+                        <span className="text-uppercase">{c('Event canceled status badge').t`canceled`}</span>
                     </Badge>
                 )}
                 <h1 className="eventpopover-title lh-rg text-hyphens scroll-if-needed mb0-25" title={eventTitleSafe}>

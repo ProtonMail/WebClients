@@ -1,11 +1,10 @@
 import { MAXIMUM_DATE, MINIMUM_DATE, DATE_INPUT_ID } from '@proton/shared/lib/calendar/constants';
 import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
-import { DateInput, TimeInput } from '@proton/components';
+import { DateInput, TimeInput, MemoizedIconRow as IconRow } from '@proton/components';
 import { c } from 'ttag';
 import { EventModel } from '@proton/shared/lib/interfaces/calendar';
 import { getAllDayCheck } from '../eventForm/stateActions';
 import useDateTimeFormHandlers from '../hooks/useDateTimeFormHandlers';
-import IconRow from '../IconRow';
 import AllDayCheckbox from '../inputs/AllDayCheckbox';
 
 interface Props {

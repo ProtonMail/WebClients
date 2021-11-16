@@ -487,7 +487,7 @@ Description: I am a good description`;
     });
 
     it('should return the expected body for a cancellation of a part-day event with both location and description', () => {
-        const expected = '(no title) has been cancelled.';
+        const expected = '(no title) has been canceled.';
         expect(
             generateEmailBody({
                 vevent: exampleVevent,

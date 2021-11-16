@@ -1,3 +1,4 @@
+import { addDays } from '@proton/shared/lib/date-fns-utc';
 import { format } from 'date-fns';
 import formatUTC, { Options } from '@proton/shared/lib/date-fns-utc/format';
 import { dateLocale } from '@proton/shared/lib/i18n';
@@ -11,7 +12,7 @@ interface Props extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDi
     formatDate?: (date: Date) => string;
     formatTime?: (date: Date) => string;
     hasFakeUtcDates?: boolean;
-    hasAllDayUtcDates?: boolean;
+    hasModifiedAllDayEndDate?: boolean;
     formatOptions?: Options;
 }
 const CalendarEventDateHeader = ({
@@ -21,17 +22,16 @@ const CalendarEventDateHeader = ({
     formatDate: maybeFormatDate,
     formatTime: maybeFormatTime,
     hasFakeUtcDates = false,
-    hasAllDayUtcDates = false,
+    hasModifiedAllDayEndDate = false,
     formatOptions: maybeFormatOptions,
     ...rest
 }: Props) => {
-    const useFormatUTC = hasFakeUtcDates || (isAllDay && hasAllDayUtcDates);
     const formatOptions = maybeFormatOptions || { locale: dateLocale };
     const formatDate = (date: Date) => {
         if (maybeFormatDate) {
             return maybeFormatDate(date);
         }
-        if (useFormatUTC) {
+        if (hasFakeUtcDates) {
             return formatUTC(date, 'ccc, PP', formatOptions);
         }
         return format(date, 'ccc, PP', formatOptions);
@@ -40,13 +40,13 @@ const CalendarEventDateHeader = ({
         if (maybeFormatTime) {
             return maybeFormatTime(date);
         }
-        if (useFormatUTC) {
+        if (hasFakeUtcDates) {
             return formatUTC(date, 'p', formatOptions);
         }
         return format(date, 'p', formatOptions);
     };
-    const [dateStart, dateEnd] = [startDate, endDate].map((date) => formatDate(date));
-    const [timeStart, timeEnd] = [startDate, endDate].map((date) => formatTime(date));
+    const dateStart = formatDate(startDate);
+    const dateEnd = formatDate(isAllDay && !hasModifiedAllDayEndDate ? addDays(endDate, -1) : endDate);
 
     if (isAllDay) {
         if (dateStart === dateEnd) {
@@ -60,6 +60,9 @@ const CalendarEventDateHeader = ({
             </div>
         );
     }
+
+    const [timeStart, timeEnd] = [startDate, endDate].map((date) => formatTime(date));
+
     if (dateStart === dateEnd) {
         return (
             <div {...rest}>
