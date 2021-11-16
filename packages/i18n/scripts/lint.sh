@@ -13,9 +13,11 @@ TOTAL=0;
 # ex: c('Action').c('Salut')
 # ex: c('Action').`Salut`
 # ex: c('Action').c`Salut`
+# ex: c(`Action`).c`Salut` (ttag-cli unable to extract a context for backtick -> so no string)
 function testInvalidFunctionFormat {
     local TEST=$(awk '/c\(\x27.+\x27\)\.(t|c)\(/ {print NR":"$0}' "$1");
     local TEST_2=$(awk '/c\(\x27.+\x27\)\.(c\x60|\x60)/ {print NR":"$0}' "$1");
+    local TEST_3=$(awk '/c\(\x60.+\x60\)\./ {print NR":"$0}' "$1");
 
     if [[ -n "$TEST" ]]; then
         LIST+=("$1");
@@ -39,6 +41,20 @@ function testInvalidFunctionFormat {
         echo
         echo -e '👉 You should not use - c(<context>).c`<string>` or c(<context>).`<string>`'
         echo -e '   but c(<context>).t`<string>` '
+        echo
+
+        local total=$(echo -e "$TEST_2" | wc -l | xargs);
+        TOTAL=$(expr $TOTAL + $total)
+    fi
+
+    if [[ -n "$TEST_3" ]]; then
+        LIST+=("$1");
+
+        echo -e "\e[00;31m[Error] $1 \e[00m"
+        echo -e "$TEST_2";
+        echo
+        echo -e '👉 You should not use backticks for the context definition. It is a static string'
+        echo -e '   best to use c(\x27<context>\x27).t`<string>` '
         echo
 
         local total=$(echo -e "$TEST_2" | wc -l | xargs);
