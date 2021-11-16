@@ -11,7 +11,7 @@ interface Props {
     calendar: ImportedCalendar;
     toggleChecked: (calendarID: string) => void;
     checked: boolean;
-    calendars: Calendar[];
+    activeCalendars: Calendar[];
     updateCalendarMapping: (calendarID: string, destination: string) => void;
     value: string;
     isLast: boolean;
@@ -22,13 +22,13 @@ const CustomizeCalendarImportRow = ({
     calendar,
     checked,
     toggleChecked,
-    calendars,
+    activeCalendars,
     updateCalendarMapping,
     value,
     isLast,
     calendarLimitReached,
 }: Props) => {
-    const options = calendars.map(({ ID, Name }) => <Option key={ID} value={ID} title={Name} />);
+    const options = activeCalendars.map(({ ID, Name }) => <Option key={ID} value={ID} title={Name} />);
 
     const calendarToBeCreatedValue = `${CALENDAR_TO_BE_CREATED_PREFIX}${calendar.Source}`;
 
