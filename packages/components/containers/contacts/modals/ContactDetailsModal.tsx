@@ -61,7 +61,7 @@ const ContactDetailsModal = ({ contactID, onClose = noop, onMailTo, ...rest }: P
 
     return (
         <FormModal
-            title={c(`Title`).t`Contact details`}
+            title={c('Title').t`Contact details`}
             loading={isLoading}
             close={c('Action').t`Close`}
             submit={<PrimaryButton onClick={openContactModal}>{c('Action').t`Edit`}</PrimaryButton>}
