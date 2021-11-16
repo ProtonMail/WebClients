@@ -23,7 +23,7 @@ export const getStatus = (address: Address, i: number) => {
 
 export const getPermissions = ({
     member,
-    address: { Status, HasKeys, Type, Order },
+    address: { Status, HasKeys, Type },
     user: { isAdmin },
     organizationKey,
 }: {
@@ -33,7 +33,6 @@ export const getPermissions = ({
     organizationKey?: CachedOrganizationKey;
 }) => {
     const isSpecialAddress = Type === TYPE_ORIGINAL || Type === TYPE_PREMIUM;
-    const isPrimaryAddress = Order === 1;
 
     const isSelf = !member || !!member.Self;
     const isMemberReadable = member?.Private === READABLE;
@@ -41,7 +40,7 @@ export const getPermissions = ({
     const canGenerateMember = organizationKey && isAdmin && isMemberReadable;
     return {
         canGenerate: !HasKeys && (canGenerateMember || isSelf),
-        canDisable: Status === ADDRESS_STATUS.STATUS_ENABLED && isAdmin && !isSpecialAddress && !isPrimaryAddress,
+        canDisable: Status === ADDRESS_STATUS.STATUS_ENABLED && isAdmin && !isSpecialAddress,
         canEnable: Status === ADDRESS_STATUS.STATUS_DISABLED && isAdmin && !isSpecialAddress,
         canDelete: Type === TYPE_CUSTOM_DOMAIN && isAdmin,
         canEdit: isSelf,
