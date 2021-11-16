@@ -235,6 +235,9 @@ export const createNewDraft = (
             ? insertSignature(content, senderAddress?.Signature, action, mailSettings, fontStyle, true)
             : insertSignature(content, senderAddress?.Signature, action, mailSettings, fontStyle);
 
+    // Adding a surrounding div helps Squire dealing with HTML pasting
+    content = fontStyle ? `<div style="${fontStyle}">${content}</div>` : `<div>${content}</div>`;
+
     const plain = isPlainText({ MIMEType });
     const document = plain ? undefined : parseInDiv(content);
     const plainText = plain ? `\n\n${exportPlainText(content)}` : undefined;
