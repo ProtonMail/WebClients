@@ -12,7 +12,7 @@ interface Props {
 }
 
 const ActiveImportStatus = ({ processed, total, state, errorCode }: Props) => {
-    const percentage = (processed * 100) / total;
+    const percentage = total === 0 ? 0 : (processed * 100) / total;
     const percentageValue = Number.isNaN(percentage) ? 0 : Math.floor(percentage);
 
     switch (state) {
@@ -49,8 +49,12 @@ const ActiveImportStatus = ({ processed, total, state, errorCode }: Props) => {
                     </Tooltip>
                 </>
             );
+        /*
+         * Default case is "in progress", if we have a total for the percentage
+         * we can show a progress bar, otherwise just show "in progress"
+         */
         default:
-            return (
+            return total !== 0 ? (
                 <span className="inline-flex flex-align-items-center w100">
                     <Progress
                         aria-labelledby="progressLabel"
@@ -59,6 +63,8 @@ const ActiveImportStatus = ({ processed, total, state, errorCode }: Props) => {
                     />
                     <span id="progressLabel" className="ml0-5">{`${percentageValue}%`}</span>
                 </span>
+            ) : (
+                <Badge type="primary">{c('Import status').t`In progress`}</Badge>
             );
     }
 };
