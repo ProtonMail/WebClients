@@ -1,6 +1,12 @@
 import { useState } from 'react';
 import { c } from 'ttag';
-import { DEFAULT_ENCRYPTION_CONFIG, ENCRYPTION_CONFIGS, GIGA, MEMBER_ROLE } from '@proton/shared/lib/constants';
+import {
+    ADDRESS_STATUS,
+    DEFAULT_ENCRYPTION_CONFIG,
+    ENCRYPTION_CONFIGS,
+    GIGA,
+    MEMBER_ROLE,
+} from '@proton/shared/lib/constants';
 import { createMember, createMemberAddress, updateRole } from '@proton/shared/lib/api/members';
 import { srpVerify } from '@proton/shared/lib/srp';
 import { Domain, Organization, Address, CachedOrganizationKey } from '@proton/shared/lib/interfaces';
@@ -19,7 +25,7 @@ interface Props {
     organization: Organization;
     organizationKey: CachedOrganizationKey;
     domains: Domain[];
-    domainsAddressesMap: any; // TODO: better typing
+    domainsAddressesMap: { [domainID: string]: Address[] };
 }
 
 const MemberModal = ({ onClose, organization, organizationKey, domains, domainsAddressesMap, ...rest }: Props) => {
@@ -113,11 +119,17 @@ const MemberModal = ({ onClose, organization, organizationKey, domains, domainsA
         }
 
         const domain = domains.find(({ DomainName }) => DomainName === model.domain);
-        const address = (domainsAddressesMap[domain?.ID || ''] || []).find(
-            ({ Email }: Address) => Email === `${model.address}@${model.domain}`
-        );
+        const nonDisabledCustomAddressExists = domainsAddressesMap[domain?.ID || ''].some?.((address) => {
+            return (
+                address.Email === `${model.address}@${model.domain}` &&
+                address.Status !== ADDRESS_STATUS.STATUS_DISABLED
+            );
+        });
 
-        if (address) {
+        // A non disabled custom address is validated to not exist because the user and address creation are in 2
+        // different calls. So while the user creation may succeed, the address creation could fail leading to
+        // creating the user in an inconsistent state.
+        if (nonDisabledCustomAddressExists) {
             return c('Error').t`Address already associated to a user`;
         }
 
