@@ -4,7 +4,8 @@ import { getAttachments } from '@proton/shared/lib/mail/messages';
 import { useCallback } from 'react';
 import { Alert, ConfirmModal, useApi, useModals } from '@proton/components';
 import { c, msgid } from 'ttag';
-import { useAttachmentCache } from '../containers/AttachmentProvider';
+import { useDispatch } from 'react-redux';
+import { DecryptResultPmcrypto } from 'pmcrypto';
 import { useMessageCache } from '../containers/MessageProvider';
 import {
     Download,
@@ -15,6 +16,8 @@ import {
 } from '../helpers/attachment/attachmentDownloader';
 import { MessageExtendedWithData } from '../models/message';
 import { useGetMessageKeys } from './message/useGetMessageKeys';
+import { updateAttachment } from '../logic/attachments/attachmentsActions';
+import { useGetAttachment } from './useAttachment';
 
 const useShowConfirmModal = () => {
     const { createModal } = useModals();
@@ -90,14 +93,26 @@ const useSyncedMessageKeys = () => {
 
 export const useDownload = () => {
     const api = useApi();
-    const cache = useAttachmentCache();
+    const getAttachment = useGetAttachment();
+    const dispatch = useDispatch();
     const showConfirmModal = useShowConfirmModal();
     const getMessageKeys = useSyncedMessageKeys();
+
+    const onUpdateAttachment = (ID: string, attachment: DecryptResultPmcrypto) => {
+        dispatch(updateAttachment({ ID, attachment }));
+    };
 
     return useCallback(
         async (message: MessageExtendedWithData, attachment: Attachment) => {
             const messageKeys = await getMessageKeys(message.localID);
-            const download = await formatDownload(attachment, message.verification, messageKeys, cache, api);
+            const download = await formatDownload(
+                attachment,
+                message.verification,
+                messageKeys,
+                getAttachment,
+                onUpdateAttachment,
+                api
+            );
 
             if (download.isError || download.verified === VERIFICATION_STATUS.SIGNED_AND_INVALID) {
                 await showConfirmModal([download]);
@@ -106,21 +121,33 @@ export const useDownload = () => {
             await generateDownload(download);
             return download.verified;
         },
-        [api, cache]
+        [api]
     );
 };
 
 export const useDownloadAll = () => {
     const api = useApi();
-    const cache = useAttachmentCache();
+    const getAttachment = useGetAttachment();
+    const dispatch = useDispatch();
     const showConfirmModal = useShowConfirmModal();
     const getMessageKeys = useSyncedMessageKeys();
+
+    const onUpdateAttachment = (ID: string, attachment: DecryptResultPmcrypto) => {
+        dispatch(updateAttachment({ ID, attachment }));
+    };
 
     return useCallback(
         async (message: MessageExtendedWithData) => {
             const messageKeys = await getMessageKeys(message.localID);
             const attachments = getAttachments(message.data);
-            const list = await formatDownloadAll(attachments, message.verification, messageKeys, cache, api);
+            const list = await formatDownloadAll(
+                attachments,
+                message.verification,
+                messageKeys,
+                getAttachment,
+                onUpdateAttachment,
+                api
+            );
             const isError = list.some(({ isError }) => isError);
             const senderVerificationFailed = list.some(
                 ({ verified }) => verified === VERIFICATION_STATUS.SIGNED_AND_INVALID
@@ -132,20 +159,32 @@ export const useDownloadAll = () => {
 
             await generateDownloadAll(message.data, list);
         },
-        [api, cache]
+        [api]
     );
 };
 
 export const usePreview = () => {
     const api = useApi();
-    const cache = useAttachmentCache();
+    const getAttachment = useGetAttachment();
+    const dispatch = useDispatch();
     const getMessageKeys = useSyncedMessageKeys();
     const showConfirmModal = useShowConfirmModal();
+
+    const onUpdateAttachment = (ID: string, attachment: DecryptResultPmcrypto) => {
+        dispatch(updateAttachment({ ID, attachment }));
+    };
 
     return useCallback(
         async (message: MessageExtendedWithData, attachment: Attachment) => {
             const messageKeys = await getMessageKeys(message.localID);
-            const download = await formatDownload(attachment, message.verification, messageKeys, cache, api);
+            const download = await formatDownload(
+                attachment,
+                message.verification,
+                messageKeys,
+                getAttachment,
+                onUpdateAttachment,
+                api
+            );
 
             if (download.isError || download.verified === VERIFICATION_STATUS.SIGNED_AND_INVALID) {
                 const handleError = async () => {
@@ -158,6 +197,6 @@ export const usePreview = () => {
 
             return download;
         },
-        [api, cache]
+        [api]
     );
 };

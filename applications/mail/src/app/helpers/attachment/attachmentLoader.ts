@@ -14,7 +14,6 @@ import { decodeBase64 } from '@proton/shared/lib/helpers/base64';
 import { Api } from '@proton/shared/lib/interfaces';
 import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { getSessionKey } from '@proton/shared/lib/mail/send/attachments';
-import { AttachmentsCache } from '../../containers/AttachmentProvider';
 import { MessageKeys, MessageVerification } from '../../models/message';
 
 // Reference: Angular/src/app/attachments/services/AttachmentLoader.js
@@ -74,7 +73,8 @@ export const getAndVerify = async (
     verification: MessageVerification | undefined,
     messageKeys: MessageKeys,
     reverify = false,
-    cache: AttachmentsCache,
+    getAttachment: (ID: string) => DecryptResultPmcrypto | undefined,
+    onUpdateAttachment: (ID: string, attachment: DecryptResultPmcrypto) => void,
     api: Api
 ): Promise<DecryptResultPmcrypto> => {
     let attachmentdata: DecryptResultPmcrypto;
@@ -90,17 +90,19 @@ export const getAndVerify = async (
         };
     }
 
-    if (!reverify && cache.has(attachmentID)) {
-        attachmentdata = cache.get(attachmentID) as DecryptResultPmcrypto;
+    const attachmentInState = getAttachment(attachmentID);
+
+    if (!reverify && attachmentInState) {
+        attachmentdata = attachmentInState;
     } else {
         const isMIMEAttachment = !attachment.KeyPackets;
         // TODO: implement reverification of MIME attachment
         attachmentdata = isMIMEAttachment
-            ? (cache.get(attachmentID) as DecryptResultPmcrypto)
+            ? (attachmentInState as DecryptResultPmcrypto)
             : await getDecryptedAttachment(attachment, verification, messageKeys, api);
     }
 
-    cache.set(attachmentID, attachmentdata);
+    onUpdateAttachment(attachmentID, attachmentdata);
 
     return attachmentdata;
 };
@@ -109,20 +111,22 @@ export const get = (
     attachment: Attachment = {},
     verification: MessageVerification | undefined,
     messageKeys: MessageKeys,
-    cache: AttachmentsCache,
+    getAttachment: (ID: string) => DecryptResultPmcrypto | undefined,
+    onUpdateAttachment: (ID: string, attachment: DecryptResultPmcrypto) => void,
     api: Api
 ): Promise<DecryptResultPmcrypto> => {
     const reverify = false;
-    return getAndVerify(attachment, verification, messageKeys, reverify, cache, api);
+    return getAndVerify(attachment, verification, messageKeys, reverify, getAttachment, onUpdateAttachment, api);
 };
 
 export const reverify = (
     attachment: Attachment = {},
     verification: MessageVerification | undefined,
     messageKeys: MessageKeys,
-    cache: AttachmentsCache,
+    getAttachment: (ID: string) => DecryptResultPmcrypto | undefined,
+    onUpdateAttachment: (ID: string, attachment: DecryptResultPmcrypto) => void,
     api: Api
 ): Promise<DecryptResultPmcrypto> => {
     const reverify = true;
-    return getAndVerify(attachment, verification, messageKeys, reverify, cache, api);
+    return getAndVerify(attachment, verification, messageKeys, reverify, getAttachment, onUpdateAttachment, api);
 };

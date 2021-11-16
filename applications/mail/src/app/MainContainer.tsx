@@ -11,7 +11,6 @@ import {
 } from '@proton/components';
 import MessageProvider from './containers/MessageProvider';
 import ConversationProvider from './containers/ConversationProvider';
-import AttachmentProvider from './containers/AttachmentProvider';
 import ComposerContainer from './containers/ComposerContainer';
 import PageContainer from './containers/PageContainer';
 import { MAIN_ROUTE_PATH } from './constants';
@@ -43,7 +42,6 @@ const MainContainer = () => {
         <ReduxProvider store={store}>
             <MessageProvider>
                 <ConversationProvider>
-                    <AttachmentProvider>
                         <ContactProvider>
                             <EncryptedSearchProvider>
                                 <MailContentRefProvider mailContentRef={mailContentRef}>
@@ -71,7 +69,6 @@ const MainContainer = () => {
                                 </MailContentRefProvider>
                             </EncryptedSearchProvider>
                         </ContactProvider>
-                    </AttachmentProvider>
                 </ConversationProvider>
             </MessageProvider>
         </ReduxProvider>

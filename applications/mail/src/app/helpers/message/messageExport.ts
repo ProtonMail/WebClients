@@ -1,4 +1,11 @@
-import { encryptSessionKey, encryptMessage, OpenPGPKey, encodeBase64, arrayToBinaryString } from 'pmcrypto';
+import {
+    encryptSessionKey,
+    encryptMessage,
+    OpenPGPKey,
+    encodeBase64,
+    arrayToBinaryString,
+    DecryptResultPmcrypto,
+} from 'pmcrypto';
 import { createDraft, updateDraft } from '@proton/shared/lib/api/messages';
 import { Api } from '@proton/shared/lib/interfaces';
 import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
@@ -8,7 +15,6 @@ import { MessageExtended, MessageExtendedWithData, MessageKeys } from '../../mod
 import { getDocumentContent, getPlainTextContent } from './messageContent';
 import { constructMimeFromSource } from '../send/sendMimeBuilder';
 import { splitMail, combineHeaders } from '../mail';
-import { AttachmentsCache } from '../../containers/AttachmentProvider';
 import { GetMessageKeys } from '../../hooks/message/useGetMessageKeys';
 import { MESSAGE_ACTIONS } from '../../constants';
 import { restoreAllPrefixedAttributes } from './messageImages';
@@ -156,10 +162,11 @@ export const updateMessage = async (
 export const exportBlob = async (
     message: MessageExtended,
     messageKeys: MessageKeys,
-    attachmentsCache: AttachmentsCache,
+    getAttachment: (ID: string) => DecryptResultPmcrypto | undefined,
+    onUpdateAttachment: (ID: string, attachment: DecryptResultPmcrypto) => void,
     api: Api
 ) => {
-    const mimeMessage = await constructMimeFromSource(message, messageKeys, attachmentsCache, api);
+    const mimeMessage = await constructMimeFromSource(message, messageKeys, getAttachment, onUpdateAttachment, api);
     const { body, headers: mimeHeaders } = splitMail(mimeMessage);
     const headers = await combineHeaders(message.data?.Header || '', mimeHeaders);
 

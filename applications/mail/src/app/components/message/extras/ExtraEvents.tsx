@@ -1,4 +1,4 @@
-import { arrayToBinaryString, decodeUtf8 } from 'pmcrypto';
+import { arrayToBinaryString, decodeUtf8, DecryptResultPmcrypto } from 'pmcrypto';
 import {
     getCanCreateCalendar,
     getDefaultCalendar,
@@ -29,7 +29,7 @@ import {
     useUser,
     useUserSettings,
 } from '@proton/components';
-import { useAttachmentCache } from '../../../containers/AttachmentProvider';
+import { useDispatch } from 'react-redux';
 import { updateMessageCache, useMessageCache } from '../../../containers/MessageProvider';
 import { formatDownload } from '../../../helpers/attachment/attachmentDownloader';
 import {
@@ -43,6 +43,8 @@ import { getMessageHasData } from '../../../helpers/message/messages';
 import { useGetMessageKeys } from '../../../hooks/message/useGetMessageKeys';
 import { MessageErrors, MessageExtended } from '../../../models/message';
 import ExtraEvent from './calendar/ExtraEvent';
+import { updateAttachment } from '../../../logic/attachments/attachmentsActions';
+import { useGetAttachment } from '../../../hooks/useAttachment';
 import { getOrCreatePersonalCalendarsAndSettings } from '../../../helpers/calendar/inviteApi';
 
 interface Props {
@@ -52,7 +54,8 @@ const ExtraEvents = ({ message }: Props) => {
     const api = useApi();
     const isMounted = useIsMounted();
     const getMessageKeys = useGetMessageKeys();
-    const attachmentCache = useAttachmentCache();
+    const getAttachment = useGetAttachment();
+    const dispatch = useDispatch();
     const messageCache = useMessageCache();
     const getCalendars = useGetCalendars();
     const [contactEmails = [], loadingContactEmails] = useContactEmails();
@@ -131,6 +134,11 @@ const ExtraEvents = ({ message }: Props) => {
                         }
                         return 0;
                     });
+
+                const onUpdateAttachment = (ID: string, attachment: DecryptResultPmcrypto) => {
+                    dispatch(updateAttachment({ ID, attachment }));
+                };
+
                     const invitations = (
                         await Promise.all(
                             sortedEventAttachments.map(async (attachment: Attachment) => {
@@ -140,7 +148,8 @@ const ExtraEvents = ({ message }: Props) => {
                                         attachment,
                                         message.verification,
                                         messageKeys,
-                                        attachmentCache,
+                                        getAttachment,
+                                        onUpdateAttachment,
                                         api
                                     );
                                     if (download.isError) {
