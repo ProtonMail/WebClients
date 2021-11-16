@@ -1,9 +1,9 @@
 import { c } from 'ttag';
-import { loadModels } from '@proton/shared/lib/models/helper';
-import { CalendarsModel } from '@proton/shared/lib/models';
-import { Api } from '@proton/shared/lib/interfaces';
-import { Calendar } from '@proton/shared/lib/interfaces/calendar';
 import { useGetAddresses, useGetAddressKeys } from '@proton/components';
+import { loadModels } from '../../models/helper';
+import { CalendarsModel } from '../../models';
+import { Api } from '../../interfaces';
+import { Calendar } from '../../interfaces/calendar';
 import { resetCalendarKeys } from './resetCalendarKeys';
 import { reactivateCalendarsKeys } from './reactivateCalendarKeys';
 
