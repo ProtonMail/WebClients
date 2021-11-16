@@ -19,17 +19,17 @@ const CalendarOnboardingModal = (props: any) => {
             {({ onNext }: OnboardingStepRenderCallback) => {
                 return (
                     <OnboardingStep
-                        submit={c(`Onboarding ProtonCalendar`).t`Import events`}
+                        submit={c('Onboarding ProtonCalendar').t`Import events`}
                         onSubmit={() => {
                             goToSettings('/calendars#import', APPS.PROTONCALENDAR, true);
                             onNext?.();
                         }}
-                        close={c(`Onboarding ProtonCalendar`).t`Start using ${appName}`}
+                        close={c('Onboarding ProtonCalendar').t`Start using ${appName}`}
                         onClose={onNext}
                     >
                         <OnboardingContent
-                            title={c(`Onboarding ProtonCalendar`).t`Meet your new encrypted calendar`}
-                            description={c(`Onboarding ProtonCalendar`)
+                            title={c('Onboarding ProtonCalendar').t`Meet your new encrypted calendar`}
+                            description={c('Onboarding ProtonCalendar')
                                 .t`A calendar is a record of your life. Keep your life secure and private with ${appName}.`}
                             img={<img src={onboardingWelcome} alt={appName} />}
                         />
