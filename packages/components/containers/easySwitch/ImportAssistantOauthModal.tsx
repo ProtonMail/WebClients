@@ -6,7 +6,7 @@ import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import { Address } from '@proton/shared/lib/interfaces';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { createCalendar, removeCalendar, updateCalendarUserSettings } from '@proton/shared/lib/api/calendars';
-import { setupCalendarKey } from '@proton/components/containers/keys/calendar';
+import { setupCalendarKey } from '@proton/shared/lib/calendar/keys/setupCalendarKeys';
 import { getIsCalendarDisabled } from '@proton/shared/lib/calendar/calendar';
 import { getPrimaryKey } from '@proton/shared/lib/keys';
 import {

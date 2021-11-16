@@ -49,15 +49,14 @@ import {
     CalendarWidgetData,
     Participant,
     PmInviteData,
+    VcalDateOrDateTimeProperty,
     VcalNumberProperty,
     VcalStringProperty,
-} from '@proton/shared/lib/interfaces/calendar';
-import {
-    VcalVcalendar,
     VcalVeventComponent,
+    VcalVcalendar,
     VcalVtimezoneComponent,
     VcalXOrIanaComponent,
-} from '@proton/shared/lib/interfaces/calendar/VcalModel';
+} from '@proton/shared/lib/interfaces/calendar';
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { RequireSome, Unwrap } from '@proton/shared/lib/interfaces/utils';
@@ -327,6 +326,20 @@ export const getIsReinvite = ({
     }
     const { calendarEvent } = invitationApi;
     return getIsEventCancelled(calendarEvent);
+};
+
+export const getIsNonSoughtEvent = (
+    event: CalendarEventWithMetadata,
+    vevent: VcalVeventComponent,
+    supportedRecurrenceId?: VcalDateOrDateTimeProperty
+) => {
+    if (!event.RecurrenceID) {
+        return false;
+    }
+    if (!getHasRecurrenceId(vevent)) {
+        return true;
+    }
+    return getUnixTime(propertyToUTCDate(supportedRecurrenceId || vevent['recurrence-id'])) !== event.RecurrenceID;
 };
 
 /**

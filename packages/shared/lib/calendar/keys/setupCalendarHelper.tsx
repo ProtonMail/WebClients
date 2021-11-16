@@ -1,16 +1,16 @@
 import { c } from 'ttag';
 import { useGetAddressKeys } from '@proton/components';
-import { Address, Api } from '@proton/shared/lib/interfaces';
-import { createCalendar, updateCalendarUserSettings } from '@proton/shared/lib/api/calendars';
-import { Calendar as tsCalendar } from '@proton/shared/lib/interfaces/calendar';
-import { getTimezone } from '@proton/shared/lib/date/timezone';
-import { getPrimaryKey } from '@proton/shared/lib/keys';
+import { setupCalendarKey } from './setupCalendarKeys';
+import { Address, Api } from '../../interfaces';
+import { createCalendar, updateCalendarUserSettings } from '../../api/calendars';
+import { Calendar as tsCalendar } from '../../interfaces/calendar';
+import { getTimezone } from '../../date/timezone';
+import { getPrimaryKey } from '../../keys';
 
-import { getActiveAddresses } from '@proton/shared/lib/helpers/address';
-import { DEFAULT_CALENDAR } from '@proton/shared/lib/calendar/constants';
-import { setupCalendarKey } from '@proton/components/containers/keys/calendar';
-import { LABEL_COLORS } from '@proton/shared/lib/constants';
-import { randomIntFromInterval } from '@proton/shared/lib/helpers/function';
+import { getActiveAddresses } from '../../helpers/address';
+import { DEFAULT_CALENDAR } from '../constants';
+import { LABEL_COLORS } from '../../constants';
+import { randomIntFromInterval } from '../../helpers/function';
 
 interface Args {
     addresses: Address[];
@@ -39,14 +39,13 @@ const setupCalendarHelper = async ({ addresses, api, getAddressKeys }: Args) => 
             AddressID: addressID,
         })
     );
+    const updatedCalendarUserSettings = {
+        PrimaryTimezone: getTimezone(),
+        AutoDetectPrimaryTimezone: 1,
+    };
 
     await Promise.all([
-        api(
-            updateCalendarUserSettings({
-                PrimaryTimezone: getTimezone(),
-                AutoDetectPrimaryTimezone: 1,
-            })
-        ),
+        api(updateCalendarUserSettings(updatedCalendarUserSettings)),
         setupCalendarKey({
             api,
             calendarID: Calendar.ID,
@@ -54,6 +53,11 @@ const setupCalendarHelper = async ({ addresses, api, getAddressKeys }: Args) => 
             getAddressKeys,
         }),
     ]);
+
+    return {
+        calendar: Calendar,
+        updatedCalendarUserSettings,
+    };
 };
 
 export default setupCalendarHelper;
