@@ -9,7 +9,7 @@ import {
 } from '@proton/shared/lib/calendar/constants';
 import { ImportCalendarModel } from '@proton/shared/lib/interfaces/calendar/Import';
 
-import { Bordered, FileInput, Alert, Label, Field, AttachedFile, Dropzone } from '../../../components';
+import { Bordered, FileInput, Alert, Label, Field, Row, AttachedFile, Dropzone } from '../../../components';
 import CalendarSelect from '../../../components/calendarSelect/CalendarSelect';
 import { classnames } from '../../../helpers';
 
@@ -82,8 +82,10 @@ const AttachingModalContent = ({
                 )}
             </Bordered>
             {calendars.length > 1 && (
-                <div className="flex-nowrap mb1 onmobile-flex-column">
-                    <Label className="pt0 mr1" htmlFor="import-calendar-select">{c('Label').t`Import to:`}</Label>
+                <Row>
+                    <Label style={{ '--label-width': 'auto' }} htmlFor="import-calendar-select">
+                        {c('Label').t`Import to:`}
+                    </Label>
                     <Field>
                         <CalendarSelect
                             id="import-calendar-select"
@@ -92,7 +94,7 @@ const AttachingModalContent = ({
                             onChange={handleChange}
                         />
                     </Field>
-                </div>
+                </Row>
             )}
         </>
     );
