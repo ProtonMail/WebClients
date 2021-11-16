@@ -231,14 +231,13 @@ const SendWithErrorsConfirmationModal = ({
         const error = errorMap[email];
         return (
             <li key={email}>
-                <span className="flex max-w100 flex-nowrap on-mobile-flex-column">
-                    <strong className="mr0-25 text-ellipsis" title={email}>
-                        {`${email}:`}
-                    </strong>
-                    <span className="text-ellipsis inline-block max-w100" title={error}>
-                        {`${error}`}
-                    </span>
-                </span>
+                <strong className="text-break">
+                    {
+                        // translator: the colon character needs to be translated as well because of grammar differences between languages. Example: mail@cdn.com: error (english) and mail@ndd.fr : erreur (french)
+                        `${email}${c('colon').t`: `}`
+                    }
+                </strong>
+                {error}
             </li>
         );
     };
@@ -253,9 +252,7 @@ const SendWithErrorsConfirmationModal = ({
             <Alert className="mb1" type="warning">
                 {warningText}
             </Alert>
-            <div>
-                <ul>{Object.keys(errorMap).map(renderEmailRow)}</ul>
-            </div>
+            <ul>{Object.keys(errorMap).map(renderEmailRow)}</ul>
             {alertText && (
                 <Alert className="mb1" type={alertType}>
                     {alertText}
