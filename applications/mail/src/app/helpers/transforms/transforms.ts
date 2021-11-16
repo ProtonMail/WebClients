@@ -1,11 +1,11 @@
 import { Api, MailSettings } from '@proton/shared/lib/interfaces';
+import { DecryptResultPmcrypto } from 'pmcrypto';
 import { transformEscape, attachBase64 } from './transformEscape';
 import { Base64Cache } from '../../hooks/useBase64Cache';
 import { transformBase } from './transformBase';
 import { transformLinks } from './transformLinks';
 import { transformEmbedded } from './transformEmbedded';
 import { MessageExtended, MessageKeys } from '../../models/message';
-import { AttachmentsCache } from '../../containers/AttachmentProvider';
 import { transformWelcome } from './transformWelcome';
 import { transformStylesheet } from './transformStylesheet';
 import { transformRemote } from './transformRemote';
@@ -17,7 +17,8 @@ export const prepareHtml = async (
     messageKeys: MessageKeys,
     messageCache: MessageCache,
     base64Cache: Base64Cache,
-    attachmentsCache: AttachmentsCache,
+    getAttachment: (ID: string) => DecryptResultPmcrypto | undefined,
+    onUpdateAttachment: (ID: string, attachment: DecryptResultPmcrypto) => void,
     api: Api,
     mailSettings: MailSettings | undefined
 ) => {
@@ -31,7 +32,8 @@ export const prepareHtml = async (
         { ...message, document },
         messageKeys,
         messageCache,
-        attachmentsCache,
+        getAttachment,
+        onUpdateAttachment,
         api,
         mailSettings
     );

@@ -21,6 +21,10 @@ import { parseLabelIDsInEvent } from '../../helpers/elements';
 import { newRetry } from './helpers/elementQuery';
 import { MAX_ELEMENT_LIST_LOAD_RETRIES, PAGE_SIZE } from '../../constants';
 
+export const globalReset = (state: Draft<ElementsState>) => {
+    Object.assign(state, newState());
+};
+
 export const reset = (state: Draft<ElementsState>, action: PayloadAction<NewStateParams>) => {
     Object.assign(state, newState(action.payload));
 };

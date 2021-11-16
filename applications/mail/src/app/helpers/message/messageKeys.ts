@@ -1,11 +1,10 @@
-import { getKeys, arrayToBinaryString } from 'pmcrypto';
+import { getKeys, arrayToBinaryString, DecryptResultPmcrypto } from 'pmcrypto';
 import { splitExtension } from '@proton/shared/lib/helpers/file';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import { Api } from '@proton/shared/lib/interfaces';
 import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { getParsedAutocryptHeader } from '@proton/shared/lib/mail/autocrypt';
 import { LARGE_KEY_SIZE } from '../../constants';
-import { AttachmentsCache } from '../../containers/AttachmentProvider';
 import { MessageKeys } from '../../models/message';
 import { get } from '../attachment/attachmentLoader';
 
@@ -15,7 +14,8 @@ import { get } from '../attachment/attachmentLoader';
 export const extractKeysFromAttachments = async (
     attachments: Attachment[] | undefined = [],
     messageKeys: MessageKeys,
-    attachmentsCache: AttachmentsCache,
+    getAttachment: (ID: string) => DecryptResultPmcrypto | undefined,
+    onUpdateAttachment: (ID: string, attachment: DecryptResultPmcrypto) => void,
     api: Api
 ) => {
     const keyAttachments =
@@ -25,7 +25,14 @@ export const extractKeysFromAttachments = async (
         await Promise.all(
             keyAttachments.map(async (attachment) => {
                 try {
-                    const { data } = await get(attachment, undefined, messageKeys, attachmentsCache, api);
+                    const { data } = await get(
+                        attachment,
+                        undefined,
+                        messageKeys,
+                        getAttachment,
+                        onUpdateAttachment,
+                        api
+                    );
                     const [key] = await getKeys(arrayToBinaryString(data));
                     return key;
                 } catch (e: any) {
