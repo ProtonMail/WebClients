@@ -141,7 +141,6 @@ export const optimisticUpdates = (state: Draft<ElementsState>, action: PayloadAc
     }
     if (action.payload.bypass) {
         const { conversationMode } = action.payload;
-        console.log('optimisticUpdates bypassFilter', action.payload);
         action.payload.elements.forEach((element) => {
             const isMessage = testIsMessage(element);
             const id = (isMessage && conversationMode ? (element as Message).ConversationID : element.ID) || '';
