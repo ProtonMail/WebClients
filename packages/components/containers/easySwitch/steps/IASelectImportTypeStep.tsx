@@ -20,6 +20,7 @@ import {
 import { Calendar } from '@proton/shared/lib/interfaces/calendar';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import { MAX_CALENDARS_PER_USER } from '@proton/shared/lib/calendar/constants';
+import { getProbablyActiveCalendars } from '@proton/shared/lib/calendar/calendar';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 
 import { Checkbox, Icon, Label as FormLabel, LabelStack, LinkButton } from '../../../components';
@@ -441,6 +442,7 @@ const IASelectImportTypeStep = ({
                                         <CustomizeCalendarImportModal
                                             providerCalendars={modalModel.data[CALENDAR].providerCalendars}
                                             calendars={calendars}
+                                            activeCalendars={getProbablyActiveCalendars(calendars)}
                                             importedEmailAddress={modalModel.importedEmail}
                                             toEmail={toEmail}
                                             payload={modalModel.payload[CALENDAR] as CalendarImporterPayload}

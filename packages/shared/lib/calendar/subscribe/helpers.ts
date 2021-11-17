@@ -43,6 +43,10 @@ export const getIsPersonalCalendar = (calendar: Calendar | SubscribedCalendar): 
     return calendar.Type === CALENDAR_TYPE.PERSONAL;
 };
 
+export const getPersonalCalendars = (calendars: Calendar[]): Calendar[] => {
+    return calendars.filter(getIsPersonalCalendar);
+};
+
 export const getIsSubscribedCalendar = (calendar: Calendar | SubscribedCalendar): calendar is SubscribedCalendar => {
     return calendar.Type === CALENDAR_TYPE.SUBSCRIPTION;
 };
