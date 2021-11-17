@@ -158,7 +158,7 @@ const Verify = () => {
 
     if (isEmbedded) {
         return (
-            <main className="p2" ref={registerRootRef}>
+            <main className="p1-5" ref={registerRootRef}>
                 {hv}
             </main>
         );
