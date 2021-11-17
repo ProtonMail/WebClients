@@ -11,8 +11,8 @@ interface Props {
     onClick?: () => void;
 }
 
-const ItemAttachmentIcon = ({ element = {}, className, onClick }: Props) => {
-    const numAttachments = getNumAttachments(element);
+const ItemAttachmentIcon = ({ element, className, onClick }: Props) => {
+    const numAttachments = element ? getNumAttachments(element) : 0;
     const isButton = onClick !== undefined;
 
     if (numAttachments === 0) {

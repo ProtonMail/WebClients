@@ -176,10 +176,15 @@ export const isAutoRead = (labelID: MAILBOX_LABEL_IDS | string) =>
 export const isUnmodifiableByUser = (labelID: MAILBOX_LABEL_IDS | string) =>
     LABELS_UNMODIFIABLE_BY_USER.includes(labelID as MAILBOX_LABEL_IDS);
 
+export interface UnreadStatus {
+    id: string;
+    unread: number;
+}
+
 export const applyLabelChangesOnMessage = (
     message: Message,
     changes: LabelChanges,
-    unreadStatuses?: { id: string; unread: number }[]
+    unreadStatuses?: UnreadStatus[]
 ): Message => {
     const { LabelIDs: inputLabelIDs } = message;
     const LabelIDs = [...inputLabelIDs];
@@ -208,7 +213,7 @@ export const applyLabelChangesOnMessage = (
 export const applyLabelChangesOnConversation = (
     conversation: Conversation,
     changes: LabelChanges,
-    unreadStatuses?: { id: string; unread: number }[]
+    unreadStatuses?: UnreadStatus[]
 ): Conversation => {
     const Labels = [...(conversation.Labels || [])];
     Object.keys(changes).forEach((labelID) => {

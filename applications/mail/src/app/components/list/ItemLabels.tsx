@@ -20,7 +20,7 @@ interface Props {
 }
 
 const ItemLabels = ({
-    element = {},
+    element,
     labelID,
     showUnlabel = false,
     labels = [],
@@ -43,7 +43,7 @@ const ItemLabels = ({
 
     const handleGo = (label: Label) => () => history.push(`/${label.ID}`);
 
-    const handleUnlabel = (labelID: string) => () => applyLabels([element], { [labelID]: false });
+    const handleUnlabel = (labelID: string) => () => applyLabels([element || ({} as Element)], { [labelID]: false });
     const labelsDescription = labelsSorted.map((label) => ({
         name: label.Name,
         color: label.Color,

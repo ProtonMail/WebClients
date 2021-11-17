@@ -1,62 +1,37 @@
 import { useCallback, useEffect, useState } from 'react';
 import { wait } from '@proton/shared/lib/helpers/promise';
-import { Conversation, ConversationCacheEntry } from '../../models/conversation';
-import {
-    ConversationCache,
-    useConversationCache,
-    useUpdateConversationCache,
-} from '../../containers/ConversationProvider';
+import { useDispatch, useSelector, useStore } from 'react-redux';
+import { useApi } from '@proton/components';
+import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import { Conversation } from '../../models/conversation';
 import { useGetElementsFromIDs } from '../mailbox/useElements';
-import { LoadConversation, useLoadConversation } from './useLoadConversation';
 import { LOAD_RETRY_COUNT, LOAD_RETRY_DELAY } from '../../constants';
 import { hasError, hasErrorType } from '../../helpers/errors';
+import { ConversationErrors, ConversationState } from '../../logic/conversations/conversationsTypes';
+import { allConversations, conversationByID } from '../../logic/conversations/conversationsSelectors';
+import { RootState } from '../../logic/store';
+import { initialize, load as loadAction, retryLoading } from '../../logic/conversations/conversationsActions';
 
-const init = (
-    conversationID: string,
-    cache: ConversationCache,
-    getElementsFromIDs: (IDs: string[]) => Conversation[]
-): ConversationCacheEntry | undefined => {
-    if (cache.has(conversationID)) {
-        return cache.get(conversationID) as ConversationCacheEntry;
-    }
+export interface ConversationStateOptional {
+    Conversation?: Conversation;
+    Messages?: Message[];
+    loadRetry: number;
+    errors: ConversationErrors;
+}
 
-    const [conversationFromElementsCache] = getElementsFromIDs([conversationID]);
-
-    if (conversationFromElementsCache) {
-        return { Conversation: conversationFromElementsCache, Messages: undefined, loadRetry: 0, errors: {} };
-    }
-
-    return { Conversation: undefined, Messages: undefined, loadRetry: 0, errors: {} };
+export const useGetConversation = () => {
+    const store = useStore<RootState>();
+    return useCallback((ID: string) => conversationByID(store.getState(), { ID }), []);
 };
 
-const load = async (
-    conversationID: string,
-    messageID: string | undefined,
-    cache: ConversationCache,
-    setPendingRequest: (value: boolean) => void,
-    loadConversation: LoadConversation
-) => {
-    const existingEntry = cache.get(conversationID);
-    if ((existingEntry?.loadRetry || 0) > LOAD_RETRY_COUNT) {
-        // Max retries reach, aborting
-        return;
-    }
-    if (hasErrorType(existingEntry?.errors, 'notExist')) {
-        // Conversation not exist or invalid id, retrying will not help, aborting
-        return;
-    }
-
-    setPendingRequest(true);
-    const entry = await loadConversation(conversationID, messageID);
-    if (hasError(entry.errors) && !hasErrorType(entry.errors, 'notExist')) {
-        await wait(LOAD_RETRY_DELAY);
-    }
-    setPendingRequest(false);
+export const useGetAllConversations = () => {
+    const store = useStore<RootState>();
+    return useCallback(() => allConversations(store.getState()), []);
 };
 
 interface ReturnValue {
     conversationID: string;
-    conversation: ConversationCacheEntry | undefined;
+    conversation: ConversationStateOptional | undefined;
     pendingRequest: boolean;
     loadingConversation: boolean;
     loadingMessages: boolean;
@@ -69,43 +44,88 @@ interface UseConversation {
 }
 
 export const useConversation: UseConversation = (inputConversationID, messageID) => {
-    const cache = useConversationCache();
+    const dispatch = useDispatch();
+    const api = useApi();
     const getElementsFromIDs = useGetElementsFromIDs();
-    const loadConversation = useLoadConversation();
-    const updateConversation = useUpdateConversationCache();
+    const getConversation = useGetConversation();
+
+    const conversationState = useSelector((state: RootState) => conversationByID(state, { ID: inputConversationID }));
+
+    const init = (conversationID: string): ConversationStateOptional | undefined => {
+        if (conversationState) {
+            dispatch(initialize(conversationState as ConversationState));
+            return conversationState;
+        }
+
+        const [conversationFromElementsState] = getElementsFromIDs([conversationID]);
+
+        if (conversationFromElementsState) {
+            dispatch(
+                initialize({
+                    Conversation: conversationFromElementsState,
+                    Messages: undefined,
+                    loadRetry: 0,
+                    errors: {},
+                } as ConversationState)
+            );
+
+            return { Conversation: conversationFromElementsState, Messages: undefined, loadRetry: 0, errors: {} };
+        }
+
+        return { Conversation: undefined, Messages: undefined, loadRetry: 0, errors: {} };
+    };
 
     const [conversationID, setConversationID] = useState(inputConversationID);
     const [pendingRequest, setPendingRequest] = useState(false);
-    const [conversation, setConversation] = useState<ConversationCacheEntry | undefined>(() =>
-        init(conversationID, cache, getElementsFromIDs)
-    );
+    const [conversation, setConversation] = useState<ConversationStateOptional | undefined>(() => init(conversationID));
+
+    const load = async (conversationID: string, messageID: string | undefined) => {
+        const existingConversation = getConversation(conversationID);
+        if ((existingConversation?.loadRetry || 0) > LOAD_RETRY_COUNT) {
+            // Max retries reach, aborting
+            return;
+        }
+        if (hasErrorType(existingConversation?.errors, 'notExist')) {
+            // Conversation not exist or invalid id, retrying will not help, aborting
+            return;
+        }
+
+        setPendingRequest(true);
+        (await dispatch(loadAction({ api, conversationID, messageID }))) as any as Promise<any>;
+
+        const updatedConversation = getConversation(conversationID);
+        if (
+            updatedConversation &&
+            hasError(updatedConversation.errors) &&
+            !hasErrorType(updatedConversation.errors, 'notExist')
+        ) {
+            await wait(LOAD_RETRY_DELAY);
+        }
+        setPendingRequest(false);
+    };
 
     useEffect(() => {
         if (pendingRequest) {
             return;
         }
 
-        const conversationCacheEntry = init(inputConversationID, cache, getElementsFromIDs);
+        const conversationInState = init(inputConversationID);
         setConversationID(inputConversationID);
-        setConversation(conversationCacheEntry);
+        setConversation(conversationInState);
 
-        if (conversationCacheEntry) {
-            cache.set(inputConversationID, conversationCacheEntry);
+        if (!conversationInState || !conversationInState.Messages || !conversationInState.Messages.length) {
+            void load(inputConversationID, messageID);
         }
+    }, [inputConversationID, messageID, pendingRequest]);
 
-        if (!conversationCacheEntry || !conversationCacheEntry.Messages || !conversationCacheEntry.Messages.length) {
-            void load(inputConversationID, messageID, cache, setPendingRequest, loadConversation);
+    useEffect(() => {
+        if (conversationState) {
+            setConversation(conversationState);
         }
-
-        return cache.subscribe((changedId: string) => {
-            if (inputConversationID === changedId) {
-                setConversation(cache.get(inputConversationID));
-            }
-        });
-    }, [inputConversationID, messageID, cache, pendingRequest]);
+    }, [conversationState]);
 
     const handleRetry = useCallback(() => {
-        updateConversation(conversationID, () => ({ loadRetry: 0, errors: {} }));
+        dispatch(retryLoading({ ID: conversationID }));
     }, [conversationID]);
 
     const loadingError = hasError(conversation?.errors) && (conversation?.loadRetry || 0) > LOAD_RETRY_COUNT;

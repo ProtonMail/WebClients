@@ -120,7 +120,11 @@ describe('addresses', () => {
             const recipient1: Recipient = { Name: 'Panda', Address: 'panda@pm.me' };
             const recipient2: Recipient = { Name: 'Panda', Address: 'p.an.da@pm.me' };
             const recipient3: Recipient = { Name: 'Panda', Address: 'panda+panda@pm.me' };
-            const conversation: Element = { Senders: [sender], Recipients: [recipient1, recipient2, recipient3] };
+            const conversation: Element = {
+                ID: 'conversationID',
+                Senders: [sender],
+                Recipients: [recipient1, recipient2, recipient3],
+            };
             const result = getNumParticipants(conversation);
             expect(result).toEqual(1);
         });

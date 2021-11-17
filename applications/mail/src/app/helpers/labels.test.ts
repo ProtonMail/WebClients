@@ -48,6 +48,7 @@ describe('labels', () => {
 
         it('should add a label for a conversation', () => {
             const input = {
+                ID: 'conversationID',
                 Labels: [],
             } as Conversation;
             const changes = { [labelID]: true };
@@ -85,6 +86,7 @@ describe('labels', () => {
 
         it('should add a label to a conversation when adding the label to the first message having it', () => {
             const input = {
+                ID: 'conversationID',
                 Labels: [],
             } as Conversation;
             const changes = { [labelID]: true };

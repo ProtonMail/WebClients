@@ -1,3 +1,4 @@
+import { useDispatch } from 'react-redux';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { useCallback } from 'react';
 import { useApi, useEventManager, useFolders, useMailSettings, useNotifications } from '@proton/components';
@@ -10,12 +11,13 @@ import { MessageExtended, MessageExtendedWithData } from '../../models/message';
 import { useGetMessageKeys } from './useGetMessageKeys';
 import { mergeMessages } from '../../helpers/message/messages';
 import { useMessageCache, updateMessageCache } from '../../containers/MessageProvider';
-import { useConversationCache } from '../../containers/ConversationProvider';
 import { createMessage, updateMessage } from '../../helpers/message/messageExport';
 import { replaceEmbeddedAttachments } from '../../helpers/message/messageEmbeddeds';
 import { SAVE_DRAFT_ERROR_CODES } from '../../constants';
 import { isNetworkError } from '../../helpers/errors';
 import { getCurrentFolderID } from '../../helpers/labels';
+import { deleteConversation } from '../../logic/conversations/conversationsActions';
+import { useGetConversation } from '../conversation/useConversation';
 
 const { ALL_DRAFTS } = MAILBOX_LABEL_IDS;
 
@@ -133,10 +135,11 @@ export const useDeleteDraft = () => {
     const api = useApi();
     const [mailSettings] = useMailSettings();
     const [folders = []] = useFolders();
+    const dispatch = useDispatch();
     const messageCache = useMessageCache();
-    const conversationCache = useConversationCache();
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
+    const getConversation = useGetConversation();
 
     return useCallback(
         async (message: MessageExtended) => {
@@ -158,9 +161,9 @@ export const useDeleteDraft = () => {
             messageCache.delete(message.localID || '');
 
             const conversationID = message.data?.ConversationID || '';
-            const conversationInCache = conversationCache.get(conversationID);
-            if (conversationInCache && conversationInCache.Messages?.length === 1) {
-                conversationCache.delete(conversationID);
+            const conversationFromConversationState = getConversation(conversationID);
+            if (conversationFromConversationState && conversationFromConversationState.Messages?.length === 1) {
+                dispatch(deleteConversation(conversationID));
             }
 
             await call();
