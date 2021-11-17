@@ -85,6 +85,12 @@ const beforeSanitizeElements = (node: Node) => {
 
     const element = node as HTMLElement;
 
+    // Manage styles element
+    if (element.tagName === 'STYLE') {
+        const escaped = escapeURLinStyle(element.innerHTML || '');
+        element.innerHTML = escaped;
+    }
+
     Array.from(element.attributes).forEach((type) => {
         const item = type.name;
 
@@ -93,6 +99,7 @@ const beforeSanitizeElements = (node: Node) => {
             element.removeAttribute(item);
         }
 
+        // Manage element styles tag
         if (item === 'style') {
             const escaped = escapeURLinStyle(element.getAttribute('style') || '');
             element.setAttribute('style', escaped);
