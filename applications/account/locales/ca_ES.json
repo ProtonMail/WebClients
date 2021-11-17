@@ -31,11 +31,11 @@
       "${ BRAND_NAME } shop": [
         "Botiga de ${ BRAND_NAME }"
       ],
-      "activate": [
-        "activar"
-      ],
       "Activate": [
         "Activar"
+      ],
+      "activate": [
+        "activar"
       ],
       "Activate ${ Name }@pm.me": [
         "Activar ${ Name }@pm.me"
@@ -874,6 +874,12 @@
       ],
       "Generate missing keys": [
         "Generar claus perdudes"
+      ],
+      "Make default": [
+        ""
+      ],
+      "Saving": [
+        ""
       ]
     },
     "Address status": {
@@ -1694,8 +1700,8 @@
       ]
     },
     "Email body for invitation": {
-      "${ eventTitle } has been cancelled.": [
-        "${ eventTitle } s'ha cancel·lat."
+      "${ eventTitle } has been canceled.": [
+        ""
       ],
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
         "${ eventTitle } s'ha actualitzat.\n${ eventDetailsText }"
@@ -1897,6 +1903,9 @@
       ],
       "Invalid expiration date": [
         "Data de caducitat invàlida"
+      ],
+      "Invalid invitation link": [
+        ""
       ],
       "Invalid name": [
         "Nom no vàlid"
@@ -2283,8 +2292,8 @@
       "Missing start time": [
         "Falta l’hora d’inici"
       ],
-      "no UID, title or start time": [
-        "sense UID, títol o hora d'inici"
+      "No UID, title or start time": [
+        ""
       ],
       "Non-Gregorian": [
         "No-Gregorià"
@@ -2374,8 +2383,8 @@
       "Attached ICS file could not be decrypted": [
         "No es pot desxifrar l'arxiu ICS adjuntat"
       ],
-      "Attached ICS file could not be parsed": [
-        "No es pot analitzar l'arxiu ICS adjuntat"
+      "Attached ICS file could not be read": [
+        ""
       ],
       "Invalid invitation": [
         "Invitació no vàlida"
@@ -3018,6 +3027,9 @@
       ],
       "Failed": [
         "Error"
+      ],
+      "In progress": [
+        ""
       ],
       "Paused": [
         "Pausat"
@@ -3984,6 +3996,9 @@
       "Please enter a password to encrypt your private key with before exporting.": [
         "Si us plau, introduïu una contrasenya per encriptar la vostra clau privada abans d'exportar."
       ],
+      "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
+        ""
+      ],
       "Please note that if you delete this address, you will no longer be able to send or receive emails using this address.": [
         "Tingueu en compte que si suprimiu aquesta adreça, ja no podreu enviar ni rebre correus electrònics mitjançant aquesta adreça."
       ],
@@ -4022,9 +4037,6 @@
       ],
       "Please wait...": [
         "Si us plau, espera..."
-      ],
-      "Please write your recovery phrase down in the order it appears and keep it somewhere safe. Your recovery phrase can be used to fully recover access to your account and your encrypted messages.": [
-        "Escriviu la frase de recuperació en l’ordre en què apareix i guardeu-la en algun lloc segur. La vostra frase de recuperació es pot utilitzar per recuperar completament l'accés al vostre compte i als vostres missatges xifrats."
       ],
       "Plus or Visionary subscription required": [
         "Es requereix una subscripció Plus o Visionary"
@@ -5084,7 +5096,7 @@
       "BTC amount:": [
         "Import de BTC:"
       ],
-      "Calendar": [
+      "Calendars": [
         ""
       ],
       "Cancel": [

@@ -140,6 +140,9 @@
       "Decrease": [
         "Зменшити"
       ],
+      "Default mail handler": [
+        ""
+      ],
       "Delete": [
         "Видалити"
       ],
@@ -346,6 +349,9 @@
       ],
       "Previous year": [
         "Минулий рік"
+      ],
+      "Prompt browser setting": [
+        ""
       ],
       "Quit": [
         "Вийти"
@@ -911,7 +917,7 @@
       "${ name } tentatively accepted the invitation": [
         "${ name } попередньо приймає запрошення"
       ],
-      "This event has been cancelled": [
+      "This event has been canceled": [
         "Цю подію було скасовано"
       ],
       "You accepted the invitation": [
@@ -986,6 +992,11 @@
       ],
       "Open": [
         "Відкрити"
+      ]
+    },
+    "colon": {
+      ": ": [
+        ""
       ]
     },
     "Composer size": {
@@ -1281,7 +1292,7 @@
       ]
     },
     "Email body for invitation": {
-      "${ eventTitle } has been cancelled.": [
+      "${ eventTitle } has been canceled.": [
         "${ eventTitle } було скасовано."
       ],
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
@@ -1827,8 +1838,8 @@
       "Missing start time": [
         "Відсутній час початку"
       ],
-      "no UID, title or start time": [
-        "немає UID, заголовка або часу початку"
+      "No UID, title or start time": [
+        "Немає UID, заголовка або часу початку"
       ],
       "Non-Gregorian": [
         "Не григоріанський"
@@ -1902,8 +1913,8 @@
         "Оцінка обов'язкова"
       ]
     },
-    "Event cancelled status badge": {
-      "cancelled": [
+    "Event canceled status badge": {
+      "canceled": [
         "скасовано"
       ]
     },
@@ -1934,8 +1945,8 @@
       "Attached ICS file could not be decrypted": [
         "Не вдалося розшифрувати вкладений ICS-файл"
       ],
-      "Attached ICS file could not be parsed": [
-        "Не вдалося обробити вкладений ICS-файл"
+      "Attached ICS file could not be read": [
+        ""
       ],
       "Invalid invitation": [
         "Недійсне запрошення"
@@ -2372,6 +2383,9 @@
       "Account successfully updated": [
         "Обліковий запис успішно оновлено"
       ],
+      "Activating this option will open a new composer each time you click on a mailto: link.": [
+        ""
+      ],
       "Add additional addresses to your account like user2@protonmail.com": [
         "Додати інші адреси до свого облікового запису, наприклад user2@protonmail.com"
       ],
@@ -2782,6 +2796,9 @@
       ],
       "Session timed out.": [
         "Сеанс завершився."
+      ],
+      "Set ProtonMail as your default mail handler": [
+        ""
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
         "Встановлення PGP дозволяє вам надсилати наскрізно зашифровані повідомлення користувачам за межами ProtonMail, які використовують PGP-сумісний сервіс."
@@ -3323,8 +3340,8 @@
       "BTC amount:": [
         "Сума в BTC:"
       ],
-      "Calendar": [
-        "Календар"
+      "Calendars": [
+        "Календарі"
       ],
       "Cancel": [
         "Скасувати"
@@ -3691,6 +3708,12 @@
       "Add a gift code": [
         "Додати подарунковий код"
       ],
+      "All mail": [
+        ""
+      ],
+      "Archive": [
+        ""
+      ],
       "Calendars": [
         "Календарі"
       ],
@@ -3700,8 +3723,14 @@
       "click here": [
         "натисніть тут"
       ],
+      "Drafts": [
+        ""
+      ],
       "Go to subscription plans": [
         "Перейти до тарифних планів"
+      ],
+      "Inbox": [
+        ""
       ],
       "Learn more": [
         "Докладніше"
@@ -3709,14 +3738,32 @@
       "My calendars": [
         "Мої календарі"
       ],
+      "Outbox": [
+        ""
+      ],
       "Pay invoice": [
         "Сплатити рахунок"
       ],
       "Request an invite": [
         "Запитати запрошення"
       ],
+      "Scheduled": [
+        ""
+      ],
+      "Sent": [
+        ""
+      ],
+      "Spam": [
+        ""
+      ],
+      "Starred": [
+        ""
+      ],
       "Subscribed calendars": [
         "Підписки на календарі"
+      ],
+      "Trash": [
+        ""
       ],
       "Upgrade": [
         "Покращити"
@@ -4245,6 +4292,20 @@
       ],
       "You can change this anytime in your settings.": [
         "Ви можете змінити це будь-коли в налаштуваннях."
+      ]
+    },
+    "Onboarding ProtonCalendar": {
+      "A calendar is a record of your life. Keep your life secure and private with ${ appName }.": [
+        "Календар - це щоденник вашого життя. Зберігайте його в безпеці та приватності з ${ appName }."
+      ],
+      "Import events": [
+        "Імпортувати події"
+      ],
+      "Meet your new encrypted calendar": [
+        "Зустрічайте свій новий зашифрований календар"
+      ],
+      "Start using ${ appName }": [
+        "Розпочніть використання ${ appName }"
       ]
     },
     "Option": {
@@ -5008,6 +5069,9 @@
       "Confirm loss of Proton bonuses": [
         "Підтвердити втрату бонусів Proton"
       ],
+      "Contact details": [
+        "Подробиці контакту"
+      ],
       "Contact Details": [
         "Подробиці контакту"
       ],
@@ -5156,7 +5220,7 @@
         "Імпорт подій"
       ],
       "Import failed": [
-        "Імпорт не вдався"
+        "Не вдалося імпортувати"
       ],
       "Import groups": [
         "Імпортувати групи"

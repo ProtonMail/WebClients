@@ -140,6 +140,9 @@
       "Decrease": [
         "Reducere"
       ],
+      "Default mail handler": [
+        ""
+      ],
       "Delete": [
         "Ștergere"
       ],
@@ -344,6 +347,9 @@
       ],
       "Previous year": [
         "Anul trecut"
+      ],
+      "Prompt browser setting": [
+        ""
       ],
       "Quit": [
         "Ieșire"
@@ -905,8 +911,8 @@
       "${ name } tentatively accepted the invitation": [
         "${ name } a acceptat invitația provizoriu."
       ],
-      "This event has been cancelled": [
-        "Acest eveniment a fost anulat."
+      "This event has been canceled": [
+        ""
       ],
       "You accepted the invitation": [
         "Ați acceptat invitația."
@@ -980,6 +986,11 @@
       ],
       "Open": [
         "Deschidere"
+      ]
+    },
+    "colon": {
+      ": ": [
+        ""
       ]
     },
     "Composer size": {
@@ -1267,8 +1278,8 @@
       ]
     },
     "Email body for invitation": {
-      "${ eventTitle } has been cancelled.": [
-        "${ eventTitle } a fost anulat."
+      "${ eventTitle } has been canceled.": [
+        ""
       ],
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
         "${ eventTitle } a fost actualizat.\n${ eventDetailsText }"
@@ -1804,7 +1815,7 @@
       "Missing start time": [
         ""
       ],
-      "no UID, title or start time": [
+      "No UID, title or start time": [
         ""
       ],
       "Non-Gregorian": [
@@ -1879,9 +1890,9 @@
         "Scorul este obligatoriu"
       ]
     },
-    "Event cancelled status badge": {
-      "cancelled": [
-        "anulat"
+    "Event canceled status badge": {
+      "canceled": [
+        ""
       ]
     },
     "Event delete button tooltip": {
@@ -1910,7 +1921,7 @@
       "Attached ICS file could not be decrypted": [
         ""
       ],
-      "Attached ICS file could not be parsed": [
+      "Attached ICS file could not be read": [
         ""
       ],
       "Invalid invitation": [
@@ -2323,6 +2334,9 @@
       "Account successfully updated": [
         "Contul a fost actualizat."
       ],
+      "Activating this option will open a new composer each time you click on a mailto: link.": [
+        ""
+      ],
       "Add additional addresses to your account like user2@protonmail.com": [
         "Adăugați adrese suplimentare în cont precum utilizator2@protonmail.com."
       ],
@@ -2728,6 +2742,9 @@
       ],
       "Session timed out.": [
         "Sesiune expirată."
+      ],
+      "Set ProtonMail as your default mail handler": [
+        ""
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
         "Setând criptarea PGP veți putea cripta mesajele în ambele părți cu un utilizator fără cont la ProtonMail care folosește un serviciu PGP compatibil."
@@ -3269,8 +3286,8 @@
       "BTC amount:": [
         "Suma BTC:"
       ],
-      "Calendar": [
-        "Calendar"
+      "Calendars": [
+        ""
       ],
       "Cancel": [
         "Anulare"
@@ -3636,6 +3653,12 @@
       "Add a gift code": [
         "Adăugare cod cadou"
       ],
+      "All mail": [
+        ""
+      ],
+      "Archive": [
+        ""
+      ],
       "Calendars": [
         "Calendare"
       ],
@@ -3645,8 +3668,14 @@
       "click here": [
         "apăsați aici"
       ],
+      "Drafts": [
+        ""
+      ],
       "Go to subscription plans": [
         "Accesare planuri abonamente"
+      ],
+      "Inbox": [
+        ""
       ],
       "Learn more": [
         "Detalii"
@@ -3654,14 +3683,32 @@
       "My calendars": [
         "Calendarele mele"
       ],
+      "Outbox": [
+        ""
+      ],
       "Pay invoice": [
         "Plată factură"
       ],
       "Request an invite": [
         "Solicitați o invitație"
       ],
+      "Scheduled": [
+        ""
+      ],
+      "Sent": [
+        ""
+      ],
+      "Spam": [
+        ""
+      ],
+      "Starred": [
+        ""
+      ],
       "Subscribed calendars": [
         "Calendare abonate"
+      ],
+      "Trash": [
+        ""
       ],
       "Upgrade": [
         "Migrare"
@@ -4164,6 +4211,20 @@
       ],
       "You can change this anytime in your settings.": [
         "Puteți modifica oricând aceasta în setări."
+      ]
+    },
+    "Onboarding ProtonCalendar": {
+      "A calendar is a record of your life. Keep your life secure and private with ${ appName }.": [
+        ""
+      ],
+      "Import events": [
+        ""
+      ],
+      "Meet your new encrypted calendar": [
+        ""
+      ],
+      "Start using ${ appName }": [
+        ""
       ]
     },
     "Option": {
@@ -4912,6 +4973,9 @@
       ],
       "Confirm loss of Proton bonuses": [
         "Confirmare pierdere bonusuri Proton"
+      ],
+      "Contact details": [
+        ""
       ],
       "Contact Details": [
         "Detalii contact"

@@ -140,6 +140,9 @@
       "Decrease": [
         "Verlaag"
       ],
+      "Default mail handler": [
+        ""
+      ],
       "Delete": [
         "Verwijderen"
       ],
@@ -342,6 +345,9 @@
       ],
       "Previous year": [
         "Vorig jaar"
+      ],
+      "Prompt browser setting": [
+        ""
       ],
       "Quit": [
         ""
@@ -899,8 +905,8 @@
       "${ name } tentatively accepted the invitation": [
         "${ name } heeft de uitnodiging voorlopig geaccepteerd"
       ],
-      "This event has been cancelled": [
-        "Deze afspraak is geannuleerd"
+      "This event has been canceled": [
+        ""
       ],
       "You accepted the invitation": [
         "U heeft de uitnodiging geaccepteerd"
@@ -973,6 +979,11 @@
         ""
       ],
       "Open": [
+        ""
+      ]
+    },
+    "colon": {
+      ": ": [
         ""
       ]
     },
@@ -1253,8 +1264,8 @@
       ]
     },
     "Email body for invitation": {
-      "${ eventTitle } has been cancelled.": [
-        "${ eventTitle } is geannuleerd."
+      "${ eventTitle } has been canceled.": [
+        ""
       ],
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
         "${ eventTitle } is bijgewerkt.\n${ eventDetailsText }"
@@ -1781,7 +1792,7 @@
       "Missing start time": [
         ""
       ],
-      "no UID, title or start time": [
+      "No UID, title or start time": [
         ""
       ],
       "Non-Gregorian": [
@@ -1856,8 +1867,8 @@
         "Score is vereist"
       ]
     },
-    "Event cancelled status badge": {
-      "cancelled": [
+    "Event canceled status badge": {
+      "canceled": [
         ""
       ]
     },
@@ -1886,7 +1897,7 @@
       "Attached ICS file could not be decrypted": [
         ""
       ],
-      "Attached ICS file could not be parsed": [
+      "Attached ICS file could not be read": [
         ""
       ],
       "Invalid invitation": [
@@ -2273,6 +2284,9 @@
       ],
       "Account successfully updated": [
         "Account succesvol bijgewerkt"
+      ],
+      "Activating this option will open a new composer each time you click on a mailto: link.": [
+        ""
       ],
       "Add additional addresses to your account like user2@protonmail.com": [
         "Extra adressen toevoegen aan uw account, zoals gebruiker2@protonmail.com"
@@ -2674,6 +2688,9 @@
       ],
       "Session timed out.": [
         "Sessie verlopen."
+      ],
+      "Set ProtonMail as your default mail handler": [
+        ""
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
         "Met het instellen van PGP kunt u versleutelde e-mails verzenden met een niet-ProtonMail gebruiker die een PGP compatibele dienst gebruikt."
@@ -3215,7 +3232,7 @@
       "BTC amount:": [
         "BTC-bedrag:"
       ],
-      "Calendar": [
+      "Calendars": [
         ""
       ],
       "Cancel": [
@@ -3581,6 +3598,12 @@
       "Add a gift code": [
         "Voeg een geschenkcode toe"
       ],
+      "All mail": [
+        ""
+      ],
+      "Archive": [
+        ""
+      ],
       "Calendars": [
         "Agenda's"
       ],
@@ -3590,8 +3613,14 @@
       "click here": [
         "klik hier"
       ],
+      "Drafts": [
+        ""
+      ],
       "Go to subscription plans": [
         "Ga naar abonnementen"
+      ],
+      "Inbox": [
+        ""
       ],
       "Learn more": [
         "Meer informatie"
@@ -3599,13 +3628,31 @@
       "My calendars": [
         "Mijn agenda"
       ],
+      "Outbox": [
+        ""
+      ],
       "Pay invoice": [
         "Factuur betalen"
       ],
       "Request an invite": [
         "Uitnodiging aanvragen"
       ],
+      "Scheduled": [
+        ""
+      ],
+      "Sent": [
+        ""
+      ],
+      "Spam": [
+        ""
+      ],
+      "Starred": [
+        ""
+      ],
       "Subscribed calendars": [
+        ""
+      ],
+      "Trash": [
         ""
       ],
       "Upgrade": [
@@ -4083,6 +4130,20 @@
       ],
       "You can change this anytime in your settings.": [
         "U kunt dit op elk gewenst moment wijzigen in uw instellingen."
+      ]
+    },
+    "Onboarding ProtonCalendar": {
+      "A calendar is a record of your life. Keep your life secure and private with ${ appName }.": [
+        ""
+      ],
+      "Import events": [
+        ""
+      ],
+      "Meet your new encrypted calendar": [
+        ""
+      ],
+      "Start using ${ appName }": [
+        ""
       ]
     },
     "Option": {
@@ -4817,6 +4878,9 @@
       ],
       "Confirm loss of Proton bonuses": [
         "Bevestig verlies van Proton bonussen"
+      ],
+      "Contact details": [
+        ""
       ],
       "Contact Details": [
         "Contactgegevens"

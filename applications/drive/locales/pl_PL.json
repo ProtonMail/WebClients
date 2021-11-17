@@ -146,6 +146,9 @@
       "Decrease": [
         "Zmniejsz"
       ],
+      "Default mail handler": [
+        "Domyślna aplikacja pocztowa"
+      ],
       "Delete": [
         "Usuń"
       ],
@@ -361,6 +364,9 @@
       ],
       "Previous month": [
         "Poprzedni miesiąc"
+      ],
+      "Prompt browser setting": [
+        ""
       ],
       "Quit": [
         "Zakończ"
@@ -1811,6 +1817,9 @@
       "Account successfully updated": [
         "Konto zostało zaktualizowane"
       ],
+      "Activating this option will open a new composer each time you click on a mailto: link.": [
+        "Włączenie tej opcji spowoduje otwarcie nowego edytora za każdym razem, kiedy klikniesz na link mailto:."
+      ],
       "Add additional addresses to your account like user2@protonmail.com": [
         "Dodaj dodatkowe adresy e-mail do swojego konta, takie jak uzytkownik2@protonmail.com"
       ],
@@ -2299,6 +2308,9 @@
       ],
       "Session timed out.": [
         "Upłynął limit czasu sesji."
+      ],
+      "Set ProtonMail as your default mail handler": [
+        "Ustaw ProtonMail jako domyślną aplikację pocztową"
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
         "Konfiguracja PGP pozwala na wysyłanie wiadomości zaszyfrowanych end-to-end do użytkowników spoza ProtonMaila, używających kompatybilnej usługi PGP."
@@ -2846,8 +2858,8 @@
       "BTC amount:": [
         "Kwota BTC:"
       ],
-      "Calendar": [
-        "Kalendarz"
+      "Calendars": [
+        "Kalendarze"
       ],
       "Cancel": [
         "Anuluj"
@@ -3235,14 +3247,26 @@
       "Add a gift code": [
         "Dodaj kod podarunkowy"
       ],
+      "All mail": [
+        "Wszystkie wiadomości"
+      ],
+      "Archive": [
+        "Archiwum"
+      ],
       "clearing your browser cache": [
         "wyczyszczenie pamięci podręcznej przeglądarki"
       ],
       "click here": [
         "kliknij tutaj"
       ],
+      "Drafts": [
+        "Szkice"
+      ],
       "Go to subscription plans": [
         "Przejdź do subskrypcji planów"
+      ],
+      "Inbox": [
+        "Odebrane"
       ],
       "Learn more": [
         "Dowiedz się więcej"
@@ -3250,14 +3274,29 @@
       "My files": [
         "Moje pliki"
       ],
+      "Outbox": [
+        "Skrzynka nadawcza"
+      ],
       "Pay invoice": [
         "Zapłać fakturę"
       ],
       "Request an invite": [
         "Poproś o zaproszenie"
       ],
+      "Scheduled": [
+        "Zaplanowane"
+      ],
+      "Sent": [
+        "Wysłane"
+      ],
       "Shared": [
         "Udostępnione"
+      ],
+      "Spam": [
+        "Spam"
+      ],
+      "Starred": [
+        "Wyróżnione"
       ],
       "Trash": [
         "Kosz"
@@ -4241,6 +4280,9 @@
       ],
       "Confirm loss of Proton bonuses": [
         "Potwierdź utratę Proton bonusów"
+      ],
+      "Contact details": [
+        "Szczegóły kontaktu"
       ],
       "Contact Details": [
         "Szczegóły kontaktu"

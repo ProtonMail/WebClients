@@ -218,6 +218,9 @@
       "Decrease": [
         "Senqes"
       ],
+      "Default mail handler": [
+        ""
+      ],
       "Delete": [
         "Kkes"
       ],
@@ -569,6 +572,9 @@
       "OK": [
         "Ih"
       ],
+      "Open ${ CALENDAR_APP_NAME }": [
+        ""
+      ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Ldi iɣewwaren n ${ CALENDAR_APP_NAME }"
       ],
@@ -622,6 +628,9 @@
       ],
       "Print": [
         "Siggez"
+      ],
+      "Prompt browser setting": [
+        ""
       ],
       "Quit": [
         ""
@@ -902,6 +911,9 @@
       ],
       "View source code": [
         "Wali tangalt taɣbalut"
+      ],
+      "Why not?": [
+        ""
       ],
       "Yes": [
         "Ih"
@@ -1395,6 +1407,12 @@
       "An occurrence has been added to the event ${ veventIcsTitle }": [
         "Terna-d tmeḍriwt ɣer tedyant ${ veventIcsTitle }"
       ],
+      "Event already ended": [
+        ""
+      ],
+      "Event in progress": [
+        ""
+      ],
       "Event refreshing is not supported for the moment": [
         ""
       ],
@@ -1407,20 +1425,14 @@
       "This answer cannot be added to ${ calendarAppName } as we only support answers to all events of a series for the moment": [
         ""
       ],
-      "This event has already happened": [
+      "This event has been canceled.": [
         ""
-      ],
-      "This event has been cancelled.": [
-        "Aneḍru-a yettwasefsex."
       ],
       "This event has been updated.": [
         "Aneḍru-a yettwaleqqem."
       ],
-      "This event is currently happening": [
+      "This invitation is out of date. The event has been canceled.": [
         ""
-      ],
-      "This invitation is out of date. The event has been cancelled.": [
-        "Tinubga-a d taqburt. Tadyant-a tettusefsex."
       ],
       "This invitation is out of date. The event has been deleted.": [
         "Tinubga-a d taqburt. Tadyant-a tettwakkes."
@@ -1833,8 +1845,8 @@
       ]
     },
     "Email body for invitation": {
-      "${ eventTitle } has been cancelled.": [
-        "${ eventTitle } yettwasefsex."
+      "${ eventTitle } has been canceled.": [
+        ""
       ],
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
         "${ eventTitle } yettwaleqqem.\n${ eventDetailsText }"
@@ -1868,6 +1880,48 @@
       ],
       "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
         "${ emailAddress } yeqbel bizmant tinubga-inek·inem ɣer ${ eventTitle }"
+      ]
+    },
+    "Email reminder banner": {
+      "Event already ended": [
+        ""
+      ],
+      "Event in progress": [
+        ""
+      ],
+      "Event is tomorrow": [
+        ""
+      ],
+      "Event starting now": [
+        ""
+      ],
+      "Event starts in ${ minutesUntilEvent } minute": [
+        "",
+        ""
+      ],
+      "Event starts tomorrow": [
+        ""
+      ]
+    },
+    "Email reminder decryption error": {
+      "Event details are encrypted. Sign in again to restore Calendar and decrypt your data. ${ learnMoreLink }": [
+        ""
+      ],
+      "Event details cannot be decrypted. ${ whyNotLink }": [
+        ""
+      ]
+    },
+    "Email reminder error": {
+      "Event is no longer in your calendar": [
+        ""
+      ]
+    },
+    "Email reminder out of date alert": {
+      "Event was canceled": [
+        ""
+      ],
+      "Event was updated. This reminder is out-of-date.": [
+        ""
       ]
     },
     "Email subject": {
@@ -2398,8 +2452,8 @@
       "Missing start time": [
         "Akud n beddu yexxuṣ"
       ],
-      "no UID, title or start time": [
-        "ulac UID, azwel neɣ akud n beddu"
+      "No UID, title or start time": [
+        ""
       ],
       "Non-Gregorian": [
         "Mačči d agriguryan"
@@ -2472,8 +2526,8 @@
       "Attached ICS file could not be decrypted": [
         "Afaylu ICS yeddan ulamek ad yettwawgelhen"
       ],
-      "Attached ICS file could not be parsed": [
-        "Afaylu ICS yeddan ulamek yettusleḍ"
+      "Attached ICS file could not be read": [
+        ""
       ],
       "Invalid invitation": [
         "Tinubga mačči d tameɣtut"
@@ -2765,19 +2819,7 @@
         "",
         ""
       ],
-      "Calendar": [
-        ""
-      ],
-      "Location": [
-        ""
-      ],
       "Organizer:": [
-        ""
-      ],
-      "Participants": [
-        ""
-      ],
-      "Repeats": [
         ""
       ]
     },
@@ -3051,6 +3093,9 @@
       "Account successfully updated": [
         "Aleqqem n umiḍan yemmed"
       ],
+      "Activating this option will open a new composer each time you click on a mailto: link.": [
+        ""
+      ],
       "Activation in progress": [
         "Asermed itteddu"
       ],
@@ -3185,6 +3230,9 @@
       "Checking contact ${ progress } of ${ max }...": [
         "Anadi ɣef yinermisen ${ progress } seg ${ max }..."
       ],
+      "Clear data": [
+        ""
+      ],
       "Clearing browser data also deactivates message content search on this device. All messages will need to be downloaded again to search within them.": [
         ""
       ],
@@ -3255,6 +3303,9 @@
       "Day": [
         "Ass",
         "Ussan"
+      ],
+      "Disable message content search": [
+        ""
       ],
       "Discount applied to your subscription with coupon ${ code }": [
         "Yettwag usenqes ɣef umulteɣ-inek·inem s ukupun ${ code }"
@@ -3643,6 +3694,9 @@
       "Please add at least one recipient before sending.": [
         "Ttxil rnu xersum yiwen n uɣerwaḍ send tuzzna."
       ],
+      "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
+        ""
+      ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Ttxil-k·m ẓer belli tansiwin yettunefken i ugraw-a ur ttwakkasent ara."
       ],
@@ -3678,9 +3732,6 @@
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Ttxil-k•m arǧu ad nwali ma llan yinermisen igebren isefka ittuwgelhenen s tsarut tarurmidt."
-      ],
-      "Please write your recovery phrase down in the order it appears and keep it somewhere safe. Your recovery phrase can be used to fully recover access to your account and your encrypted messages.": [
-        "Ma ulac aɣilif, aru tafyirt-ik·im n tririt s umizwer i d-yettbanen., terreḍ-tt deg wadeg aɣellsan. Tafyirt-ik·im n tririt tezmer ad tettuseqdec i tririt yemmden n umiḍan-ik·im d yiznan-ik·im yettwawgelhen."
       ],
       "Preview": [
         "Taskant"
@@ -3778,6 +3829,9 @@
       ],
       "Session timed out.": [
         "Yemmed wakud n tɣimit."
+      ],
+      "Set ProtonMail as your default mail handler": [
+        ""
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
         "Asesteb n PGP ad ak·am-imudd tisirag i wakken ad tazneḍ imaylen yettwawgelhen seg yixef ɣer yixef i useqdac ur nesɛi ara Protonmail i iseqdacen ameẓlu yemṣadan d PGP."
@@ -4532,7 +4586,7 @@
       "BTC amount:": [
         "Azal BTC:"
       ],
-      "Calendar": [
+      "Calendars": [
         ""
       ],
       "Cancel": [
@@ -4880,9 +4934,6 @@
       "without attachments": [
         "war ifuyla yeddan"
       ],
-      "Your recovery phrase": [
-        "Tafyirt-ik·im n tririt"
-      ],
       "ZIP": [
         "Tangalt n lpusṭa"
       ]
@@ -5097,6 +5148,11 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Ilaq ad talseḍ armad n tsura-inek·inem iwakken ad twaliḍ tinubga yettwaleqqmen"
+      ]
+    },
+    "Link to calendar event": {
+      "Open in ${ CALENDAR_APP_NAME }": [
+        ""
       ]
     },
     "Loading info": {
@@ -6521,6 +6577,9 @@
       ],
       "Confirm recipient address?": [
         "Sentem tansa n uɣerwaḍ?"
+      ],
+      "Contact details": [
+        ""
       ],
       "Contact Details": [
         "Talqayt unermis"

@@ -31,11 +31,11 @@
       "${ BRAND_NAME } shop": [
         "Крамниця ${ BRAND_NAME }"
       ],
-      "activate": [
-        "активувати"
-      ],
       "Activate": [
         "Активувати"
+      ],
+      "activate": [
+        "активувати"
       ],
       "Activate ${ Name }@pm.me": [
         "Активувати ${ Name }@pm.me"
@@ -892,6 +892,12 @@
       ],
       "Generate missing keys": [
         "Генерувати відсутні ключі"
+      ],
+      "Make default": [
+        ""
+      ],
+      "Saving": [
+        ""
       ]
     },
     "Address status": {
@@ -1730,8 +1736,8 @@
       ]
     },
     "Email body for invitation": {
-      "${ eventTitle } has been cancelled.": [
-        "${ eventTitle } було скасовано."
+      "${ eventTitle } has been canceled.": [
+        ""
       ],
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
         "${ eventTitle } було оновлено.\n${ eventDetailsText }"
@@ -1935,6 +1941,9 @@
       ],
       "Invalid expiration date": [
         "Недійсний термін дії картки"
+      ],
+      "Invalid invitation link": [
+        "Недійсне запрошувальне посилання"
       ],
       "Invalid name": [
         "Неприпустима назва"
@@ -2325,8 +2334,8 @@
       "Missing start time": [
         "Відсутній час початку"
       ],
-      "no UID, title or start time": [
-        "немає UID, заголовка або часу початку"
+      "No UID, title or start time": [
+        "Немає UID, заголовка або часу початку"
       ],
       "Non-Gregorian": [
         "Не григоріанський"
@@ -2416,8 +2425,8 @@
       "Attached ICS file could not be decrypted": [
         "Не вдається розшифрувати вкладений ICS-файл"
       ],
-      "Attached ICS file could not be parsed": [
-        "Не вдається обробити вкладений ICS-файл"
+      "Attached ICS file could not be read": [
+        ""
       ],
       "Invalid invitation": [
         "Недійсне запрошення"
@@ -3082,6 +3091,9 @@
       ],
       "Failed": [
         "Не вдалося"
+      ],
+      "In progress": [
+        ""
       ],
       "Paused": [
         "Зупинено"
@@ -4094,6 +4106,9 @@
       "Please enter a password to encrypt your private key with before exporting.": [
         "Введіть пароль, щоб зашифрувати свій приватний ключ перед експортом."
       ],
+      "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
+        ""
+      ],
       "Please note that if you delete this address, you will no longer be able to send or receive emails using this address.": [
         "Зверніть увагу, якщо ви видалите цю адресу, ви більше не зможете надсилати чи отримувати листи з цією адресою."
       ],
@@ -4132,9 +4147,6 @@
       ],
       "Please wait...": [
         "Будь ласка, зачекайте..."
-      ],
-      "Please write your recovery phrase down in the order it appears and keep it somewhere safe. Your recovery phrase can be used to fully recover access to your account and your encrypted messages.": [
-        "Запишіть свою фразу відновлення, коли вона з'явиться, та збережіть в надійному місці. Цю фразу відновлення можна використати для повного доступу до вашого облікового запису та зашифрованих повідомлень."
       ],
       "Plus or Visionary subscription required": [
         "Необхідна передплата Plus або Visionary"
@@ -5204,8 +5216,8 @@
       "BTC amount:": [
         "Сума в BTC:"
       ],
-      "Calendar": [
-        "Календар"
+      "Calendars": [
+        "Календарі"
       ],
       "Cancel": [
         "Скасувати"

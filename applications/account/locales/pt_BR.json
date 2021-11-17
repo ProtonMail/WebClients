@@ -31,11 +31,11 @@
       "${ BRAND_NAME } shop": [
         "Loja ${ BRAND_NAME }"
       ],
-      "activate": [
-        "ativar"
-      ],
       "Activate": [
         "Ativar"
+      ],
+      "activate": [
+        "ativar"
       ],
       "Activate ${ Name }@pm.me": [
         "Ativar ${ Name }@pm.me"
@@ -874,6 +874,12 @@
       ],
       "Generate missing keys": [
         "Gerar chaves ausentes"
+      ],
+      "Make default": [
+        "Tornar padrão"
+      ],
+      "Saving": [
+        "Salvando"
       ]
     },
     "Address status": {
@@ -1694,7 +1700,7 @@
       ]
     },
     "Email body for invitation": {
-      "${ eventTitle } has been cancelled.": [
+      "${ eventTitle } has been canceled.": [
         "${ eventTitle } foi cancelado."
       ],
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
@@ -1897,6 +1903,9 @@
       ],
       "Invalid expiration date": [
         "Data de validade inválida"
+      ],
+      "Invalid invitation link": [
+        "Link de convite inválido"
       ],
       "Invalid name": [
         "Nome inválido"
@@ -2283,8 +2292,8 @@
       "Missing start time": [
         "Horário de início ausente"
       ],
-      "no UID, title or start time": [
-        "sem UID, título ou hora de início"
+      "No UID, title or start time": [
+        "Sem UID, título ou hora de início"
       ],
       "Non-Gregorian": [
         "Não gregoriano"
@@ -2374,8 +2383,8 @@
       "Attached ICS file could not be decrypted": [
         "Arquivo ICS anexado não pôde ser descriptografado"
       ],
-      "Attached ICS file could not be parsed": [
-        "Arquivo ICS anexado não pôde ser analisado"
+      "Attached ICS file could not be read": [
+        "Arquivo ICS anexado não pôde ser lido"
       ],
       "Invalid invitation": [
         "Convite inválido"
@@ -3018,6 +3027,9 @@
       ],
       "Failed": [
         "Falhou"
+      ],
+      "In progress": [
+        "Em progresso"
       ],
       "Paused": [
         "Em pausa"
@@ -3984,6 +3996,9 @@
       "Please enter a password to encrypt your private key with before exporting.": [
         "Por favor, digite uma senha para criptografar sua chave privada antes de exportar."
       ],
+      "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
+        "Por favor, mantenha-o seguro. Você precisará dele para acessar sua conta e descriptografar seus dados em caso de redefinição de senha."
+      ],
       "Please note that if you delete this address, you will no longer be able to send or receive emails using this address.": [
         "Observe que se você excluir este endereço, você não poderá mais enviar ou receber e-mails usando este endereço."
       ],
@@ -4022,9 +4037,6 @@
       ],
       "Please wait...": [
         "Por favor, aguarde..."
-      ],
-      "Please write your recovery phrase down in the order it appears and keep it somewhere safe. Your recovery phrase can be used to fully recover access to your account and your encrypted messages.": [
-        "Por favor anote sua frase de recuperação na ordem em que aparece e a mantenha em local seguro. Sua frase de recuperação pode ser usada para acessar sua conta e suas mensagens criptografadas."
       ],
       "Plus or Visionary subscription required": [
         "É necessária a assinatura Plus ou Visionária"
@@ -5084,8 +5096,8 @@
       "BTC amount:": [
         "Valor em BTC:"
       ],
-      "Calendar": [
-        ""
+      "Calendars": [
+        "Calendários"
       ],
       "Cancel": [
         "Cancelar"

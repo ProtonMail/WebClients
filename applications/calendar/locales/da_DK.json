@@ -140,6 +140,9 @@
       "Decrease": [
         "Formindsk"
       ],
+      "Default mail handler": [
+        ""
+      ],
       "Delete": [
         "Slet"
       ],
@@ -342,6 +345,9 @@
       ],
       "Previous year": [
         "Sidste år"
+      ],
+      "Prompt browser setting": [
+        ""
       ],
       "Quit": [
         "Afslut"
@@ -899,8 +905,8 @@
       "${ name } tentatively accepted the invitation": [
         "${ name } accepterede foreløbigt invitationen"
       ],
-      "This event has been cancelled": [
-        "Denne begivenhed er blevet aflyst"
+      "This event has been canceled": [
+        ""
       ],
       "You accepted the invitation": [
         "Du accepterede invitationen"
@@ -974,6 +980,11 @@
       ],
       "Open": [
         "Åbn"
+      ]
+    },
+    "colon": {
+      ": ": [
+        ""
       ]
     },
     "Composer size": {
@@ -1253,8 +1264,8 @@
       ]
     },
     "Email body for invitation": {
-      "${ eventTitle } has been cancelled.": [
-        "${ eventTitle } er blevet annulleret."
+      "${ eventTitle } has been canceled.": [
+        ""
       ],
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
         "${ eventTitle } er blevet opdateret.\n${ eventDetailsText }"
@@ -1781,8 +1792,8 @@
       "Missing start time": [
         "Manglende starttidspunkt"
       ],
-      "no UID, title or start time": [
-        "ingen UID, titel eller starttid"
+      "No UID, title or start time": [
+        ""
       ],
       "Non-Gregorian": [
         "Ikke-gregoriansk"
@@ -1856,9 +1867,9 @@
         "Bedømmelse er påkrævet"
       ]
     },
-    "Event cancelled status badge": {
-      "cancelled": [
-        "annulleret"
+    "Event canceled status badge": {
+      "canceled": [
+        ""
       ]
     },
     "Event delete button tooltip": {
@@ -1886,8 +1897,8 @@
       "Attached ICS file could not be decrypted": [
         "Vedhæftet ICS-fil kunne ikke dekrypteres"
       ],
-      "Attached ICS file could not be parsed": [
-        "Vedhæftet ICS-fil kunne ikke fortolkes"
+      "Attached ICS file could not be read": [
+        ""
       ],
       "Invalid invitation": [
         "Ugyldig invitation"
@@ -2273,6 +2284,9 @@
       ],
       "Account successfully updated": [
         "Opdatering af konto lykkedes"
+      ],
+      "Activating this option will open a new composer each time you click on a mailto: link.": [
+        ""
       ],
       "Add additional addresses to your account like user2@protonmail.com": [
         "Tilføj yderligere adresser til din konto såsom bruger2@protonmail.com"
@@ -2674,6 +2688,9 @@
       ],
       "Session timed out.": [
         "Session er udløbet."
+      ],
+      "Set ProtonMail as your default mail handler": [
+        ""
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
         "Opsætning af PGP giver dig mulighed for at sende end-to-end krypterede e-mails til en ikke-Protonmail bruger, der benytter en PGP-kompatibel tjeneste."
@@ -3215,8 +3232,8 @@
       "BTC amount:": [
         "BTC-beløb:"
       ],
-      "Calendar": [
-        "Kalender"
+      "Calendars": [
+        ""
       ],
       "Cancel": [
         "Afbryd"
@@ -3581,6 +3598,12 @@
       "Add a gift code": [
         "Tilføj en gavekode"
       ],
+      "All mail": [
+        ""
+      ],
+      "Archive": [
+        ""
+      ],
       "Calendars": [
         "Kalendere"
       ],
@@ -3590,8 +3613,14 @@
       "click here": [
         "klik hér"
       ],
+      "Drafts": [
+        ""
+      ],
       "Go to subscription plans": [
         "Gå til abonnementer"
+      ],
+      "Inbox": [
+        ""
       ],
       "Learn more": [
         "Få mere at vide"
@@ -3599,14 +3628,32 @@
       "My calendars": [
         "Mine kalendere"
       ],
+      "Outbox": [
+        ""
+      ],
       "Pay invoice": [
         "Betal faktura"
       ],
       "Request an invite": [
         "Anmod om invitation"
       ],
+      "Scheduled": [
+        ""
+      ],
+      "Sent": [
+        ""
+      ],
+      "Spam": [
+        ""
+      ],
+      "Starred": [
+        ""
+      ],
       "Subscribed calendars": [
         "Tilmeldte kalendere"
+      ],
+      "Trash": [
+        ""
       ],
       "Upgrade": [
         "Opgradere"
@@ -4083,6 +4130,20 @@
       ],
       "You can change this anytime in your settings.": [
         "Du kan altid ændre dette i dine indstillingerne."
+      ]
+    },
+    "Onboarding ProtonCalendar": {
+      "A calendar is a record of your life. Keep your life secure and private with ${ appName }.": [
+        ""
+      ],
+      "Import events": [
+        ""
+      ],
+      "Meet your new encrypted calendar": [
+        ""
+      ],
+      "Start using ${ appName }": [
+        ""
       ]
     },
     "Option": {
@@ -4817,6 +4878,9 @@
       ],
       "Confirm loss of Proton bonuses": [
         "Bekræft tab af Proton-bonusser"
+      ],
+      "Contact details": [
+        ""
       ],
       "Contact Details": [
         "Kontaktoplysninger"

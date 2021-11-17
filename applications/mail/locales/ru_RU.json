@@ -218,6 +218,9 @@
       "Decrease": [
         "Уменьшить"
       ],
+      "Default mail handler": [
+        ""
+      ],
       "Delete": [
         "Удалить"
       ],
@@ -575,6 +578,9 @@
       "OK": [
         "OK"
       ],
+      "Open ${ CALENDAR_APP_NAME }": [
+        ""
+      ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Открыть настройки ${ CALENDAR_APP_NAME }"
       ],
@@ -628,6 +634,9 @@
       ],
       "Print": [
         "Печать"
+      ],
+      "Prompt browser setting": [
+        ""
       ],
       "Quit": [
         "Выход"
@@ -910,6 +919,9 @@
       ],
       "View source code": [
         "Показать исходный код"
+      ],
+      "Why not?": [
+        ""
       ],
       "Yes": [
         "Да"
@@ -1411,6 +1423,12 @@
       "An occurrence has been added to the event ${ veventIcsTitle }": [
         "К событию «${ veventIcsTitle }» был добавлен повтор"
       ],
+      "Event already ended": [
+        ""
+      ],
+      "Event in progress": [
+        ""
+      ],
       "Event refreshing is not supported for the moment": [
         "Обновление события в настоящее время не поддерживается"
       ],
@@ -1423,20 +1441,14 @@
       "This answer cannot be added to ${ calendarAppName } as we only support answers to all events of a series for the moment": [
         ""
       ],
-      "This event has already happened": [
+      "This event has been canceled.": [
         ""
-      ],
-      "This event has been cancelled.": [
-        "Это событие было отменено."
       ],
       "This event has been updated.": [
         "Это событие было обновлено."
       ],
-      "This event is currently happening": [
+      "This invitation is out of date. The event has been canceled.": [
         ""
-      ],
-      "This invitation is out of date. The event has been cancelled.": [
-        "Приглашение устарело. Событие было отменено."
       ],
       "This invitation is out of date. The event has been deleted.": [
         "Приглашение устарело. Событие было удалено."
@@ -1863,8 +1875,8 @@
       ]
     },
     "Email body for invitation": {
-      "${ eventTitle } has been cancelled.": [
-        "Событие «${ eventTitle }» было отменено."
+      "${ eventTitle } has been canceled.": [
+        ""
       ],
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
         "Событие «${ eventTitle }» было обновлено.\n${ eventDetailsText }"
@@ -1898,6 +1910,50 @@
       ],
       "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
         "${ emailAddress } предварительно принял ваше приглашение на ${ eventTitle }"
+      ]
+    },
+    "Email reminder banner": {
+      "Event already ended": [
+        ""
+      ],
+      "Event in progress": [
+        ""
+      ],
+      "Event is tomorrow": [
+        ""
+      ],
+      "Event starting now": [
+        ""
+      ],
+      "Event starts in ${ minutesUntilEvent } minute": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "Event starts tomorrow": [
+        ""
+      ]
+    },
+    "Email reminder decryption error": {
+      "Event details are encrypted. Sign in again to restore Calendar and decrypt your data. ${ learnMoreLink }": [
+        ""
+      ],
+      "Event details cannot be decrypted. ${ whyNotLink }": [
+        ""
+      ]
+    },
+    "Email reminder error": {
+      "Event is no longer in your calendar": [
+        ""
+      ]
+    },
+    "Email reminder out of date alert": {
+      "Event was canceled": [
+        ""
+      ],
+      "Event was updated. This reminder is out-of-date.": [
+        ""
       ]
     },
     "Email subject": {
@@ -2446,8 +2502,8 @@
       "Missing start time": [
         "Отсутствует время начала импорта"
       ],
-      "no UID, title or start time": [
-        "нет UID, названия или времени начала"
+      "No UID, title or start time": [
+        ""
       ],
       "Non-Gregorian": [
         "Не Грегорианский"
@@ -2520,8 +2576,8 @@
       "Attached ICS file could not be decrypted": [
         "Вложенный файл ICS невозможно расшифровать"
       ],
-      "Attached ICS file could not be parsed": [
-        "Вложенный файл ICS невозможно проанализировать"
+      "Attached ICS file could not be read": [
+        ""
       ],
       "Invalid invitation": [
         "Приглашение недействительно"
@@ -2819,20 +2875,8 @@
         "${ totalAttendees } участников",
         "${ totalAttendees } участник(ов)"
       ],
-      "Calendar": [
-        "Календарь"
-      ],
-      "Location": [
-        "Местоположение"
-      ],
       "Organizer:": [
         "Организатор:"
-      ],
-      "Participants": [
-        "Участники"
-      ],
-      "Repeats": [
-        "Повторы"
       ]
     },
     "Import calendar": {
@@ -3171,6 +3215,9 @@
       "Account successfully updated": [
         "Аккаунт успешно обновлен"
       ],
+      "Activating this option will open a new composer each time you click on a mailto: link.": [
+        ""
+      ],
       "Activation in progress": [
         "Осуществляется активация"
       ],
@@ -3315,6 +3362,9 @@
       "Checking contact ${ progress } of ${ max }...": [
         "Проверка контакта ${ progress } из ${ max }..."
       ],
+      "Clear data": [
+        ""
+      ],
       "Clearing browser data also deactivates message content search on this device. All messages will need to be downloaded again to search within them.": [
         "Очистка данных браузера также отключает поиск содержимого сообщений на этом устройстве. Для поиска в сообщениях необходимо будет снова загрузить все сообщения."
       ],
@@ -3389,6 +3439,9 @@
         "Дня",
         "Дня",
         "Дня(ей)"
+      ],
+      "Disable message content search": [
+        ""
       ],
       "Discount applied to your subscription with coupon ${ code }": [
         "Скидка применена к вашей подписке с купоном ${ code }"
@@ -3795,6 +3848,9 @@
       "Please add at least one recipient before sending.": [
         "Пожалуйста, добавьте хотя бы одного получателя перед отправкой."
       ],
+      "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
+        ""
+      ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Пожалуйста, обратите внимание, что адреса, назначенные этой группе, НЕ будут удалены."
       ],
@@ -3830,9 +3886,6 @@
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Пожалуйста, подождите, пока мы ищем контакты с зашифрованными неактивным ключом данными."
-      ],
-      "Please write your recovery phrase down in the order it appears and keep it somewhere safe. Your recovery phrase can be used to fully recover access to your account and your encrypted messages.": [
-        "Пожалуйста, запишите свою фразу для восстановления доступа к аккаунту в том виде, как она появляется, и спрячьте где-нибудь. Ваша фраза для восстановления доступа к аккаунту может быть использована для полного восстановления доступа к вашему аккаунту и вашим зашифрованным сообщениям."
       ],
       "Preview": [
         "Предварительный просмотр"
@@ -3932,6 +3985,9 @@
       ],
       "Session timed out.": [
         "Время сессии истекло."
+      ],
+      "Set ProtonMail as your default mail handler": [
+        ""
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
         "Настройка PGP позволяет вам отправлять зашифрованные письма пользователям вне ProtonMail, которые пользуются совместимыми с PGP сервисами."
@@ -4708,8 +4764,8 @@
       "BTC amount:": [
         "Сумма в биткоинах:"
       ],
-      "Calendar": [
-        "Календарь"
+      "Calendars": [
+        ""
       ],
       "Cancel": [
         "Отменить"
@@ -5056,9 +5112,6 @@
       "without attachments": [
         "без вложений"
       ],
-      "Your recovery phrase": [
-        "Фраза для восстановления доступа"
-      ],
       "ZIP": [
         "ZIP-код"
       ]
@@ -5273,6 +5326,11 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Вам нужно повторно активировать ключи, чтобы увидеть обновленное приглашение"
+      ]
+    },
+    "Link to calendar event": {
+      "Open in ${ CALENDAR_APP_NAME }": [
+        ""
       ]
     },
     "Loading info": {
@@ -6787,6 +6845,9 @@
       ],
       "Confirm recipient address?": [
         "Подтвердить адрес получателя?"
+      ],
+      "Contact details": [
+        ""
       ],
       "Contact Details": [
         "Контактные данные"
