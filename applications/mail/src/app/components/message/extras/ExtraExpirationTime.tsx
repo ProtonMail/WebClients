@@ -1,6 +1,5 @@
 import { classnames, Icon } from '@proton/components';
 
-import { Element } from '../../../models/element';
 import { MessageExtended } from '../../../models/message';
 import { useExpiration } from '../../../hooks/useExpiration';
 
