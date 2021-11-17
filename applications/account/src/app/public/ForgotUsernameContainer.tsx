@@ -60,7 +60,7 @@ const ForgotUsernameForm = ({
                         title: c('Title').t`Email`,
                         content: (
                             <>
-                                <div className="mb1-75">
+                                <div className="mb1">
                                     {c('Info')
                                         .t`Enter your recovery email address and we will send you your username or email address.`}
                                 </div>
@@ -82,7 +82,7 @@ const ForgotUsernameForm = ({
                         title: c('Title').t`Phone`,
                         content: (
                             <>
-                                <div className="mb1-75">
+                                <div className="mb1">
                                     {c('Info')
                                         .t`Enter your recovery phone number and we will send you your username or email address.`}
                                 </div>

@@ -22,12 +22,10 @@ interface Props {
     setUploadedKeys: Dispatch<SetStateAction<OpenPGPKey[]>>;
     disabled?: boolean;
     error?: string;
-    parseKeysOnUpload?: (keys: OpenPGPKey[]) => OpenPGPKey[] | undefined;
     id: string;
     label: string;
-    placeholder: string;
+    placeholder?: string;
     assistiveText: string;
-    additionalUploadText: string;
     selectFilesComponent: ComponentType<FileInputProps>;
 }
 
@@ -36,12 +34,10 @@ const KeyUploadContent = ({
     setUploadedKeys,
     disabled,
     error,
-    parseKeysOnUpload = (keys) => keys,
     id,
     label,
     placeholder,
     assistiveText,
-    additionalUploadText,
     selectFilesComponent: SelectFilesComponent,
 }: Props) => {
     const { createNotification } = useNotifications();
@@ -132,13 +128,7 @@ const KeyUploadContent = ({
     };
 
     const handleUploadKeys = (keys: OpenPGPKey[]) => {
-        const keysToUpload = parseKeysOnUpload(keys);
-
-        if (keysToUpload === undefined) {
-            return;
-        }
-
-        handleUpload(keysToUpload, []);
+        handleUpload(keys, []);
     };
 
     const removeUploadedKey = (keyToRemove: OpenPGPKey) => {
@@ -193,7 +183,7 @@ const KeyUploadContent = ({
                     </TableBody>
                 </Table>
                 <SelectFiles shape="link" color="norm">
-                    {additionalUploadText}
+                    {c('Select files').t`Upload additional files`}
                 </SelectFiles>
             </>
         );

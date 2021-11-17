@@ -162,7 +162,7 @@ const RecoveryForm = ({ model, hasChallenge, onChange, onSubmit, onSkip, default
                             title: c('Label').t`Email`,
                             content: (
                                 <>
-                                    <div className="mb1-75">
+                                    <div className="mb1">
                                         {c('Info')
                                             .t`We will send you a recovery link to this email address if you forget your password or get locked out of your account.`}
                                         <br />
@@ -175,7 +175,7 @@ const RecoveryForm = ({ model, hasChallenge, onChange, onSubmit, onSkip, default
                             title: c('Label').t`Phone`,
                             content: (
                                 <>
-                                    <div className="mb1-75">
+                                    <div className="mb1">
                                         {c('Info')
                                             .t`We will send a code to this phone number if you forget your password or get locked out of your account.`}
                                         <br />
