@@ -218,6 +218,9 @@
       "Decrease": [
         "Kurangi"
       ],
+      "Default mail handler": [
+        ""
+      ],
       "Delete": [
         "Hapus"
       ],
@@ -566,6 +569,9 @@
       "OK": [
         "OK"
       ],
+      "Open ${ CALENDAR_APP_NAME }": [
+        "Buka ${ CALENDAR_APP_NAME }"
+      ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Buka pengaturan ${ CALENDAR_APP_NAME }"
       ],
@@ -619,6 +625,9 @@
       ],
       "Print": [
         "Mencetak"
+      ],
+      "Prompt browser setting": [
+        ""
       ],
       "Quit": [
         "Keluar"
@@ -898,6 +907,9 @@
       ],
       "View source code": [
         "Lihat kode sumber"
+      ],
+      "Why not?": [
+        "Mengapa tidak?"
       ],
       "Yes": [
         "Ya"
@@ -1387,6 +1399,12 @@
       "An occurrence has been added to the event ${ veventIcsTitle }": [
         "Kegiatan sudah ditambahkan ke acara ${ veventIcsTitle }"
       ],
+      "Event already ended": [
+        "Acara telah berakhir"
+      ],
+      "Event in progress": [
+        "Acara sedang berlangsung"
+      ],
       "Event refreshing is not supported for the moment": [
         "Pemuatan ulang acara belum didukung untuk saat ini"
       ],
@@ -1399,20 +1417,14 @@
       "This answer cannot be added to ${ calendarAppName } as we only support answers to all events of a series for the moment": [
         "Jawaban ini tidak dapat ditambahkan ke dalam ${ calendarAppName } karena pada saat ini kami hanya mendukung jawaban yang berlaku untuk seluruh rangkaian acara"
       ],
-      "This event has already happened": [
-        "Acara ini telah berlangsung"
-      ],
-      "This event has been cancelled.": [
-        "Kegiatan ini dibatalkan."
+      "This event has been canceled.": [
+        "Acara ini telah dibatalkan."
       ],
       "This event has been updated.": [
         "Acara ini telah diperbarui."
       ],
-      "This event is currently happening": [
-        "Acara ini sedang berlangsung"
-      ],
-      "This invitation is out of date. The event has been cancelled.": [
-        "Undangan ini kedaluwarsa. Acara telah dibatalkan."
+      "This invitation is out of date. The event has been canceled.": [
+        "Undangan ini telah kedaluwarsa. Acara telah dibatalkan."
       ],
       "This invitation is out of date. The event has been deleted.": [
         "Undangan ini kedaluwarsa. Acara sudah dihapus."
@@ -1818,7 +1830,7 @@
       ]
     },
     "Email body for invitation": {
-      "${ eventTitle } has been cancelled.": [
+      "${ eventTitle } has been canceled.": [
         "${ eventTitle } telah dibatalkan."
       ],
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
@@ -1853,6 +1865,47 @@
       ],
       "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
         "${ emailAddress } telah sementara menerima undangan Anda ke ${ eventTitle }"
+      ]
+    },
+    "Email reminder banner": {
+      "Event already ended": [
+        "Acara telah berakhir"
+      ],
+      "Event in progress": [
+        "Acara sedang berlangsung"
+      ],
+      "Event is tomorrow": [
+        "Acara akan berlangsung besok"
+      ],
+      "Event starting now": [
+        "Acara dimulai sekarang"
+      ],
+      "Event starts in ${ minutesUntilEvent } minute": [
+        "Acara akan dimulai dalam ${ minutesUntilEvent } menit"
+      ],
+      "Event starts tomorrow": [
+        "Acara akan dimulai besok"
+      ]
+    },
+    "Email reminder decryption error": {
+      "Event details are encrypted. Sign in again to restore Calendar and decrypt your data. ${ learnMoreLink }": [
+        "Rincian acara ini terenkripsi. Silakan masuk kembali untuk dapat memulihkan Kalender dan mendekripsi data-data yang ada di dalamnya. ${ learnMoreLink }"
+      ],
+      "Event details cannot be decrypted. ${ whyNotLink }": [
+        "Rincian acara tidak dapat didekripsi. ${ whyNotLink }"
+      ]
+    },
+    "Email reminder error": {
+      "Event is no longer in your calendar": [
+        "Acara tidak lagi ada pada kalender Anda"
+      ]
+    },
+    "Email reminder out of date alert": {
+      "Event was canceled": [
+        "Acara dibatalkan"
+      ],
+      "Event was updated. This reminder is out-of-date.": [
+        "Waktu acara telah diperbaharui. Pengingat ini sudah tidak lagi sesuai jadwal."
       ]
     },
     "Email subject": {
@@ -2374,8 +2427,8 @@
       "Missing start time": [
         "Waktu mulai hilang"
       ],
-      "no UID, title or start time": [
-        "tidak ada UID, judul atau waktu mulai"
+      "No UID, title or start time": [
+        "Tidak ada UID, judul atau waktu mulai"
       ],
       "Non-Gregorian": [
         "Non-Gregorian"
@@ -2448,8 +2501,8 @@
       "Attached ICS file could not be decrypted": [
         "Berkas ICS terlampir tidak dapat didekripsi"
       ],
-      "Attached ICS file could not be parsed": [
-        "Berkas ICS terlampir tidak dapat diurai"
+      "Attached ICS file could not be read": [
+        "Berkas ICS yang terlampir tidak dapat dibaca"
       ],
       "Invalid invitation": [
         "Undangan tidak valid"
@@ -2738,20 +2791,8 @@
       "${ totalAttendees } participant": [
         "${ totalAttendees } peserta"
       ],
-      "Calendar": [
-        "Kalender"
-      ],
-      "Location": [
-        "Lokasi"
-      ],
       "Organizer:": [
         "Penyelenggara:"
-      ],
-      "Participants": [
-        "Peserta"
-      ],
-      "Repeats": [
-        "Ulangan"
       ]
     },
     "Import calendar": {
@@ -2991,6 +3032,9 @@
       "Account successfully updated": [
         "Akun berhasil diperbarui"
       ],
+      "Activating this option will open a new composer each time you click on a mailto: link.": [
+        ""
+      ],
       "Activation in progress": [
         "Aktivasi sedang dalam proses"
       ],
@@ -3120,6 +3164,9 @@
       "Checking contact ${ progress } of ${ max }...": [
         "Memeriksa kontak ${ progress } dari ${ max }..."
       ],
+      "Clear data": [
+        "Bersihkan data"
+      ],
       "Clearing browser data also deactivates message content search on this device. All messages will need to be downloaded again to search within them.": [
         "Membersihkan data peramban akan menonaktikan pencarian konten pesan di perangkat ini. Semua pesan perlu dimuat lagi bila ingin dicari."
       ],
@@ -3188,6 +3235,9 @@
       ],
       "Day": [
         "Hari"
+      ],
+      "Disable message content search": [
+        "Nonaktifkan pencarian konten pesan"
       ],
       "Discount applied to your subscription with coupon ${ code }": [
         "Diskon diterapkan untuk langganan anda dengan kupon ${ code }"
@@ -3567,6 +3617,9 @@
       "Please add at least one recipient before sending.": [
         "Silakan tambahkan setidaknya satu penerima sebelum mengirim."
       ],
+      "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
+        "Harap simpan frasa keamanan ini sebaik-baiknya. Anda akan memerlukan frasa keamanan ini untuk dapat mengakses akun Anda apabila karena satu dan lain hal Anda harus mengatur ulang kata sandi Anda."
+      ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Harap diperhatikan, alamat yang ditugaskan di grup ini TIDAK akan dihapus."
       ],
@@ -3602,9 +3655,6 @@
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Mohon tunggu saat kami sedang memeriksa kontak yang berisi data terenkripsi dengan kunci tidak aktif."
-      ],
-      "Please write your recovery phrase down in the order it appears and keep it somewhere safe. Your recovery phrase can be used to fully recover access to your account and your encrypted messages.": [
-        "Mohon tulis kalimat pemulihan Anda sesuai urutan, lalu simpan di tempat yang aman. Kalimat ini dapat dipakai untuk memulihkan akses akun dan pesan terenkripsi Anda."
       ],
       "Preview": [
         "Pratinjau"
@@ -3702,6 +3752,9 @@
       "Session timed out.": [
         "Sesi habis."
       ],
+      "Set ProtonMail as your default mail handler": [
+        ""
+      ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
         "PGP memungkinkan Anda mengirim surel terenkripsi ke penerima non-ProtonMail yang memiliki fitur PGP."
       ],
@@ -3787,7 +3840,7 @@
         "Akun ini telah ditangguhkan karena kemungkinan pelanggaran kebijakan."
       ],
       "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        "Tindakan ini akan mengunduh semua pesan agar pesan tersebut dapat dicari secara lokal. Menbersihkan data peramban web atau keluar dari mail Anda akan menonaktifkan opsi ini."
+        "Tindakan ini akan mengunduh semua pesan agar pesan tersebut dapat dicari secara lokal. Membersihkan data peramban web atau keluar dari mail Anda akan menonaktifkan opsi ini."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Alamat ini nonaktif. Agar dapat mengirim ke alamat ini, pemiliknya harus mengaktifkan dulu alamat tersebut."
@@ -4444,7 +4497,7 @@
       "BTC amount:": [
         "Jumlah BTC:"
       ],
-      "Calendar": [
+      "Calendars": [
         "Kalender"
       ],
       "Cancel": [
@@ -4792,9 +4845,6 @@
       "without attachments": [
         "tanpa lampiran"
       ],
-      "Your recovery phrase": [
-        "Frasa pemulihan Anda"
-      ],
       "ZIP": [
         "Kode pos"
       ]
@@ -5009,6 +5059,11 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Anda perlu mengaktifkan ulang kunci Anda untuk melihat undangan yang diperbarui"
+      ]
+    },
+    "Link to calendar event": {
+      "Open in ${ CALENDAR_APP_NAME }": [
+        "Buka di ${ CALENDAR_APP_NAME }"
       ]
     },
     "Loading info": {
@@ -6389,6 +6444,9 @@
       "Confirm recipient address?": [
         "Konfirmasi alamat penerima?"
       ],
+      "Contact details": [
+        "Rincian kontak"
+      ],
       "Contact Details": [
         "Rincian Kontak"
       ],
@@ -6880,7 +6938,7 @@
         "Proses impor akan dimulai dari pesan-pesan Anda yang paling baru."
       ],
       "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        "Tindakan ini akan mengunduh semua pesan agar pesan tersebut dapat dicari secara lokal. Menbersihkan data peramban web atau keluar dari mail Anda akan menonaktifkan opsi ini."
+        "Tindakan ini akan mengunduh semua pesan agar pesan tersebut dapat dicari secara lokal. Membersihkan data peramban web atau keluar dari mail Anda akan menonaktifkan opsi ini."
       ],
       "This feature is only available for paid users": [
         "Fitur ini hanya tersedia untuk pengguna berbayar"

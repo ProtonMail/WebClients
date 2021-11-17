@@ -31,11 +31,11 @@
       "${ BRAND_NAME } shop": [
         "Taḥanut ${ BRAND_NAME }"
       ],
-      "activate": [
-        "rmed"
-      ],
       "Activate": [
         "Rmed"
+      ],
+      "activate": [
+        "rmed"
       ],
       "Activate ${ Name }@pm.me": [
         "Rmed ${ Name }@pm.me"
@@ -874,6 +874,12 @@
       ],
       "Generate missing keys": [
         "Sirew tisura ixuṣṣen"
+      ],
+      "Make default": [
+        ""
+      ],
+      "Saving": [
+        ""
       ]
     },
     "Address status": {
@@ -1694,8 +1700,8 @@
       ]
     },
     "Email body for invitation": {
-      "${ eventTitle } has been cancelled.": [
-        "${ eventTitle } yettwasefsex."
+      "${ eventTitle } has been canceled.": [
+        ""
       ],
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
         "${ eventTitle } yettwaleqqem.\n${ eventDetailsText }"
@@ -1897,6 +1903,9 @@
       ],
       "Invalid expiration date": [
         "Yir azemz n taggara"
+      ],
+      "Invalid invitation link": [
+        ""
       ],
       "Invalid name": [
         "Isem arameɣtu"
@@ -2283,8 +2292,8 @@
       "Missing start time": [
         "Akud n beddu yexxuṣ"
       ],
-      "no UID, title or start time": [
-        "ulac UID, azwel neɣ akud n beddu"
+      "No UID, title or start time": [
+        ""
       ],
       "Non-Gregorian": [
         "Mačči grigurya"
@@ -2374,8 +2383,8 @@
       "Attached ICS file could not be decrypted": [
         "Afaylu ICS yeddan ulamek yettwawgelhen"
       ],
-      "Attached ICS file could not be parsed": [
-        "Afaylu ICS yeddan ulamek yettusleḍ"
+      "Attached ICS file could not be read": [
+        ""
       ],
       "Invalid invitation": [
         "Tinubga tarameɣtut"
@@ -3018,6 +3027,9 @@
       ],
       "Failed": [
         "Yecceḍ"
+      ],
+      "In progress": [
+        ""
       ],
       "Paused": [
         "Tarist"
@@ -3984,6 +3996,9 @@
       "Please enter a password to encrypt your private key with before exporting.": [
         "Sekcem awal n uɛeddi iwakken ad tewglehneḍ tasarut-ik tusligt send ad tt-tsifḍeḍ."
       ],
+      "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
+        ""
+      ],
       "Please note that if you delete this address, you will no longer be able to send or receive emails using this address.": [
         "Ttxil-k·m ẓer belli ma tekkseḍ tansa-a, ur tettuɣaleḍ ara ad tizmireḍ ad tazneḍ neɣ ad d-tremseḍ imaylen s useqdec n tansa-a."
       ],
@@ -4022,9 +4037,6 @@
       ],
       "Please wait...": [
         "Ttxilek ggani..."
-      ],
-      "Please write your recovery phrase down in the order it appears and keep it somewhere safe. Your recovery phrase can be used to fully recover access to your account and your encrypted messages.": [
-        "Ma ulac aɣilif, aru tafyirt-ik·im n tririt s umizwer i d-yettbanen., terreḍ-tt deg wadeg aɣellsan. Tafyirt-ik·im n tririt tezmer ad tettuseqdec i tririt yemmden n umiḍan-ik·im d yiznan-ik·im yettwawgelhen."
       ],
       "Plus or Visionary subscription required": [
         "Ajerred ɣer Plus neɣ Visionary yettusra"
@@ -5084,8 +5096,8 @@
       "BTC amount:": [
         "Azal BTC:"
       ],
-      "Calendar": [
-        "Awitay"
+      "Calendars": [
+        ""
       ],
       "Cancel": [
         "Sefsex"

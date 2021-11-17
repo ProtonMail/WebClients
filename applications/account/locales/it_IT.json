@@ -31,11 +31,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } negozio"
       ],
-      "activate": [
-        "attiva"
-      ],
       "Activate": [
         "Attiva"
+      ],
+      "activate": [
+        "attiva"
       ],
       "Activate ${ Name }@pm.me": [
         "Attiva ${ Name }@pm.me"
@@ -874,6 +874,12 @@
       ],
       "Generate missing keys": [
         "Genera chiavi mancanti"
+      ],
+      "Make default": [
+        "Rendi predefinito"
+      ],
+      "Saving": [
+        "Salvataggio"
       ]
     },
     "Address status": {
@@ -1694,8 +1700,8 @@
       ]
     },
     "Email body for invitation": {
-      "${ eventTitle } has been cancelled.": [
-        "${ eventTitle } è stato annullato."
+      "${ eventTitle } has been canceled.": [
+        "${ eventTitle } è stato cancellato."
       ],
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
         "${ eventTitle } è stato aggiornato.\n${ eventDetailsText }"
@@ -1897,6 +1903,9 @@
       ],
       "Invalid expiration date": [
         "Data di scadenza non valida"
+      ],
+      "Invalid invitation link": [
+        "Link di invito non valido"
       ],
       "Invalid name": [
         "Nome non valido"
@@ -2283,8 +2292,8 @@
       "Missing start time": [
         "Ora di inizio mancante"
       ],
-      "no UID, title or start time": [
-        "nessun UID, titolo o ora di inizio"
+      "No UID, title or start time": [
+        "Nessun UID, titolo o ora di inizio"
       ],
       "Non-Gregorian": [
         "Non-gregoriano"
@@ -2374,8 +2383,8 @@
       "Attached ICS file could not be decrypted": [
         "Il file ICS allegato non può essere decifrato"
       ],
-      "Attached ICS file could not be parsed": [
-        "Impossibile analizzare il file ICS allegato"
+      "Attached ICS file could not be read": [
+        "Impossibile leggere il file ICS allegato"
       ],
       "Invalid invitation": [
         "Invito non valido"
@@ -3018,6 +3027,9 @@
       ],
       "Failed": [
         "Non riuscito"
+      ],
+      "In progress": [
+        "In corso"
       ],
       "Paused": [
         "In pausa"
@@ -3984,6 +3996,9 @@
       "Please enter a password to encrypt your private key with before exporting.": [
         "Per favore inserisci una password per criptare la tua chiave privata prima di esportarla."
       ],
+      "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
+        ""
+      ],
       "Please note that if you delete this address, you will no longer be able to send or receive emails using this address.": [
         "Nota che se elimini questo indirizzo, non sarai più in grado di inviare o ricevere email utilizzando questo indirizzo."
       ],
@@ -4022,9 +4037,6 @@
       ],
       "Please wait...": [
         "Attendere prego..."
-      ],
-      "Please write your recovery phrase down in the order it appears and keep it somewhere safe. Your recovery phrase can be used to fully recover access to your account and your encrypted messages.": [
-        "Si prega di annotare la frase di recupero nell'ordine in cui appare e conservarla in un luogo sicuro. La tua frase di recupero può essere utilizzata per recuperare completamente l'accesso al tuo account e ai tuoi messaggi crittografati."
       ],
       "Plus or Visionary subscription required": [
         "Abbonamento Plus o Visionary richiesto"
@@ -5084,8 +5096,8 @@
       "BTC amount:": [
         "Importo BTC:"
       ],
-      "Calendar": [
-        "Calendario"
+      "Calendars": [
+        "Calendari"
       ],
       "Cancel": [
         "Annulla"

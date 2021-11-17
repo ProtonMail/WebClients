@@ -218,6 +218,9 @@
       "Decrease": [
         "減少"
       ],
+      "Default mail handler": [
+        ""
+      ],
       "Delete": [
         "刪除"
       ],
@@ -566,6 +569,9 @@
       "OK": [
         "確定"
       ],
+      "Open ${ CALENDAR_APP_NAME }": [
+        ""
+      ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "開啟 ${ CALENDAR_APP_NAME } 設定"
       ],
@@ -619,6 +625,9 @@
       ],
       "Print": [
         "列印"
+      ],
+      "Prompt browser setting": [
+        ""
       ],
       "Quit": [
         ""
@@ -898,6 +907,9 @@
       ],
       "View source code": [
         "檢視原始碼"
+      ],
+      "Why not?": [
+        ""
       ],
       "Yes": [
         "是"
@@ -1387,6 +1399,12 @@
       "An occurrence has been added to the event ${ veventIcsTitle }": [
         "事件 ${ veventIcsTitle } 已新增一次"
       ],
+      "Event already ended": [
+        ""
+      ],
+      "Event in progress": [
+        ""
+      ],
       "Event refreshing is not supported for the moment": [
         ""
       ],
@@ -1399,20 +1417,14 @@
       "This answer cannot be added to ${ calendarAppName } as we only support answers to all events of a series for the moment": [
         ""
       ],
-      "This event has already happened": [
+      "This event has been canceled.": [
         ""
-      ],
-      "This event has been cancelled.": [
-        "此事件已取消。"
       ],
       "This event has been updated.": [
         "此事件已更新。"
       ],
-      "This event is currently happening": [
+      "This invitation is out of date. The event has been canceled.": [
         ""
-      ],
-      "This invitation is out of date. The event has been cancelled.": [
-        "此邀請已過時。此事件已取消。"
       ],
       "This invitation is out of date. The event has been deleted.": [
         "此邀請已過時。此事件已刪除。"
@@ -1818,8 +1830,8 @@
       ]
     },
     "Email body for invitation": {
-      "${ eventTitle } has been cancelled.": [
-        "${ eventTitle } 已告取消，特此通知。"
+      "${ eventTitle } has been canceled.": [
+        ""
       ],
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
         "${ eventTitle } 已修訂詳情：\n${ eventDetailsText }"
@@ -1853,6 +1865,47 @@
       ],
       "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
         "您邀請 ${ emailAddress } 出席 ${ eventTitle }，已獲暫訂接受"
+      ]
+    },
+    "Email reminder banner": {
+      "Event already ended": [
+        ""
+      ],
+      "Event in progress": [
+        ""
+      ],
+      "Event is tomorrow": [
+        ""
+      ],
+      "Event starting now": [
+        ""
+      ],
+      "Event starts in ${ minutesUntilEvent } minute": [
+        ""
+      ],
+      "Event starts tomorrow": [
+        ""
+      ]
+    },
+    "Email reminder decryption error": {
+      "Event details are encrypted. Sign in again to restore Calendar and decrypt your data. ${ learnMoreLink }": [
+        ""
+      ],
+      "Event details cannot be decrypted. ${ whyNotLink }": [
+        ""
+      ]
+    },
+    "Email reminder error": {
+      "Event is no longer in your calendar": [
+        ""
+      ]
+    },
+    "Email reminder out of date alert": {
+      "Event was canceled": [
+        ""
+      ],
+      "Event was updated. This reminder is out-of-date.": [
+        ""
       ]
     },
     "Email subject": {
@@ -2374,8 +2427,8 @@
       "Missing start time": [
         "漏掉了開始時間"
       ],
-      "no UID, title or start time": [
-        "無 UID、標題或開始時間"
+      "No UID, title or start time": [
+        ""
       ],
       "Non-Gregorian": [
         "非西曆"
@@ -2448,8 +2501,8 @@
       "Attached ICS file could not be decrypted": [
         "附件的 ICS 檔案無法解密"
       ],
-      "Attached ICS file could not be parsed": [
-        "附件的 ICS 檔案無法解析"
+      "Attached ICS file could not be read": [
+        ""
       ],
       "Invalid invitation": [
         "邀請無效"
@@ -2738,20 +2791,8 @@
       "${ totalAttendees } participant": [
         "${ totalAttendees } 個參與者"
       ],
-      "Calendar": [
-        "行事曆"
-      ],
-      "Location": [
-        "位置"
-      ],
       "Organizer:": [
         "召集人："
-      ],
-      "Participants": [
-        "參與者"
-      ],
-      "Repeats": [
-        "重複"
       ]
     },
     "Import calendar": {
@@ -2991,6 +3032,9 @@
       "Account successfully updated": [
         "帳號已成功更新"
       ],
+      "Activating this option will open a new composer each time you click on a mailto: link.": [
+        ""
+      ],
       "Activation in progress": [
         "啟動中"
       ],
@@ -3120,6 +3164,9 @@
       "Checking contact ${ progress } of ${ max }...": [
         "正在檢查 ${ progress } 個 (共 ${ max } 個) 聯絡人..."
       ],
+      "Clear data": [
+        ""
+      ],
       "Clearing browser data also deactivates message content search on this device. All messages will need to be downloaded again to search within them.": [
         "清除瀏覽器資料也會停用此裝置上的訊息內容搜尋。所有訊息都將必須再次下載才能搜尋。"
       ],
@@ -3188,6 +3235,9 @@
       ],
       "Day": [
         "天"
+      ],
+      "Disable message content search": [
+        ""
       ],
       "Discount applied to your subscription with coupon ${ code }": [
         "您使用優惠券 ${ code } 的訂閱已享用折扣"
@@ -3567,6 +3617,9 @@
       "Please add at least one recipient before sending.": [
         "請新增至少一個收件人，然後才傳送。"
       ],
+      "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
+        ""
+      ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "請注意：指派到此群組中的電子郵件地址不會被刪除。"
       ],
@@ -3602,9 +3655,6 @@
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "請稍候，我們正查找聯絡人中有沒有包含以非使用中金鑰加密的資料。"
-      ],
-      "Please write your recovery phrase down in the order it appears and keep it somewhere safe. Your recovery phrase can be used to fully recover access to your account and your encrypted messages.": [
-        "請按照出現的順序寫下您的復原短語，並將其儲存在安全的地方。您的復原短語可用於完全恢復對您帳號與加密訊息的存取權限。"
       ],
       "Preview": [
         "預覽"
@@ -3701,6 +3751,9 @@
       ],
       "Session timed out.": [
         "工作階段已逾時。"
+      ],
+      "Set ProtonMail as your default mail handler": [
+        ""
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
         "設定 PGP 後，您將能夠向使用與 PGP 相容服務的非 ProtonMail 使用者寄送端對端加密的電子郵件。"
@@ -4444,7 +4497,7 @@
       "BTC amount:": [
         "BTC 數量："
       ],
-      "Calendar": [
+      "Calendars": [
         ""
       ],
       "Cancel": [
@@ -4792,9 +4845,6 @@
       "without attachments": [
         "不帶附件"
       ],
-      "Your recovery phrase": [
-        "您的復原短語"
-      ],
       "ZIP": [
         "美國郵區編號"
       ]
@@ -5009,6 +5059,11 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "您需要先重新啟用您的金鑰，才可查看已更新的邀請"
+      ]
+    },
+    "Link to calendar event": {
+      "Open in ${ CALENDAR_APP_NAME }": [
+        ""
       ]
     },
     "Loading info": {
@@ -6388,6 +6443,9 @@
       ],
       "Confirm recipient address?": [
         "確認收件人電子郵件地址？"
+      ],
+      "Contact details": [
+        ""
       ],
       "Contact Details": [
         "聯絡人詳細資料"

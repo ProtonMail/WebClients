@@ -218,6 +218,9 @@
       "Decrease": [
         "Smanji"
       ],
+      "Default mail handler": [
+        ""
+      ],
       "Delete": [
         "Izbriši"
       ],
@@ -572,6 +575,9 @@
       "OK": [
         "U redu"
       ],
+      "Open ${ CALENDAR_APP_NAME }": [
+        ""
+      ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Otvori ${ CALENDAR_APP_NAME } postavke"
       ],
@@ -625,6 +631,9 @@
       ],
       "Print": [
         "Ispis"
+      ],
+      "Prompt browser setting": [
+        ""
       ],
       "Quit": [
         ""
@@ -906,6 +915,9 @@
       ],
       "View source code": [
         "Prikaz izvornog koda"
+      ],
+      "Why not?": [
+        ""
       ],
       "Yes": [
         "Da"
@@ -1403,6 +1415,12 @@
       "An occurrence has been added to the event ${ veventIcsTitle }": [
         "Ponavljanje je dodano događaju ${ veventIcsTitle }"
       ],
+      "Event already ended": [
+        ""
+      ],
+      "Event in progress": [
+        ""
+      ],
       "Event refreshing is not supported for the moment": [
         ""
       ],
@@ -1415,20 +1433,14 @@
       "This answer cannot be added to ${ calendarAppName } as we only support answers to all events of a series for the moment": [
         ""
       ],
-      "This event has already happened": [
+      "This event has been canceled.": [
         ""
-      ],
-      "This event has been cancelled.": [
-        "Događaj je otkazan."
       ],
       "This event has been updated.": [
         "Događaj je ažuriran."
       ],
-      "This event is currently happening": [
+      "This invitation is out of date. The event has been canceled.": [
         ""
-      ],
-      "This invitation is out of date. The event has been cancelled.": [
-        "Ova pozivnica je zastarjela. Događaj je otkazan."
       ],
       "This invitation is out of date. The event has been deleted.": [
         "Ova pozivnica je zastarjela. Događaj je izbrisan."
@@ -1848,8 +1860,8 @@
       ]
     },
     "Email body for invitation": {
-      "${ eventTitle } has been cancelled.": [
-        "${ eventTitle } je otkazan."
+      "${ eventTitle } has been canceled.": [
+        ""
       ],
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
         "${ eventTitle } je ažuriran.\n${ eventDetailsText }"
@@ -1883,6 +1895,49 @@
       ],
       "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
         "${ emailAddress } je uvjetno prihvatio vašu pozivnicu za ${ eventTitle }"
+      ]
+    },
+    "Email reminder banner": {
+      "Event already ended": [
+        ""
+      ],
+      "Event in progress": [
+        ""
+      ],
+      "Event is tomorrow": [
+        ""
+      ],
+      "Event starting now": [
+        ""
+      ],
+      "Event starts in ${ minutesUntilEvent } minute": [
+        "",
+        "",
+        ""
+      ],
+      "Event starts tomorrow": [
+        ""
+      ]
+    },
+    "Email reminder decryption error": {
+      "Event details are encrypted. Sign in again to restore Calendar and decrypt your data. ${ learnMoreLink }": [
+        ""
+      ],
+      "Event details cannot be decrypted. ${ whyNotLink }": [
+        ""
+      ]
+    },
+    "Email reminder error": {
+      "Event is no longer in your calendar": [
+        ""
+      ]
+    },
+    "Email reminder out of date alert": {
+      "Event was canceled": [
+        ""
+      ],
+      "Event was updated. This reminder is out-of-date.": [
+        ""
       ]
     },
     "Email subject": {
@@ -2422,8 +2477,8 @@
       "Missing start time": [
         "Nedostaje početno vrijeme"
       ],
-      "no UID, title or start time": [
-        "nema UID, naslov ili početno vrijeme"
+      "No UID, title or start time": [
+        ""
       ],
       "Non-Gregorian": [
         "Ne gregorijanski"
@@ -2496,8 +2551,8 @@
       "Attached ICS file could not be decrypted": [
         ""
       ],
-      "Attached ICS file could not be parsed": [
-        "Priloženu ICS datoteku nije moguće parsirati"
+      "Attached ICS file could not be read": [
+        ""
       ],
       "Invalid invitation": [
         "Nevažeća pozivnica"
@@ -2792,19 +2847,7 @@
         "",
         ""
       ],
-      "Calendar": [
-        ""
-      ],
-      "Location": [
-        ""
-      ],
       "Organizer:": [
-        ""
-      ],
-      "Participants": [
-        ""
-      ],
-      "Repeats": [
         ""
       ]
     },
@@ -3111,6 +3154,9 @@
       "Account successfully updated": [
         "Račun je uspješno ažuriran"
       ],
+      "Activating this option will open a new composer each time you click on a mailto: link.": [
+        ""
+      ],
       "Activation in progress": [
         "Aktiviranje u tijeku"
       ],
@@ -3250,6 +3296,9 @@
       "Checking contact ${ progress } of ${ max }...": [
         "Provjera kontakta ${ progress } od ${ max }..."
       ],
+      "Clear data": [
+        ""
+      ],
       "Clearing browser data also deactivates message content search on this device. All messages will need to be downloaded again to search within them.": [
         ""
       ],
@@ -3322,6 +3371,9 @@
         "Dan",
         "Dani",
         "Dani"
+      ],
+      "Disable message content search": [
+        ""
       ],
       "Discount applied to your subscription with coupon ${ code }": [
         "Popust je primjenjen na vašu pretplatu s kuponom ${ code }"
@@ -3719,6 +3771,9 @@
       "Please add at least one recipient before sending.": [
         "Dodajte barem jednom primatelja prije slanja."
       ],
+      "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
+        ""
+      ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Imajte na umu da adrese dodijeljene ovoj grupi NEĆE biti izbrisane."
       ],
@@ -3754,9 +3809,6 @@
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Pričekajte dok potražimo kontakte koji sadrže podatke šifrirane neaktivnim ključem."
-      ],
-      "Please write your recovery phrase down in the order it appears and keep it somewhere safe. Your recovery phrase can be used to fully recover access to your account and your encrypted messages.": [
-        ""
       ],
       "Preview": [
         "Pregled"
@@ -3855,6 +3907,9 @@
       ],
       "Session timed out.": [
         "Sesija je istekla."
+      ],
+      "Set ProtonMail as your default mail handler": [
+        ""
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
         "Postavljanje PGP-a omogućuje vam slanje end-to-end šifriranih e-poruka korisnicima koji nisu dio ProtonMaila, ali koriste PGP kompatibilne usluge."
@@ -4620,7 +4675,7 @@
       "BTC amount:": [
         "BTC iznos:"
       ],
-      "Calendar": [
+      "Calendars": [
         ""
       ],
       "Cancel": [
@@ -4968,9 +5023,6 @@
       "without attachments": [
         "bez privitaka"
       ],
-      "Your recovery phrase": [
-        ""
-      ],
       "ZIP": [
         "Poštanski broj"
       ]
@@ -5185,6 +5237,11 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Morate ponovno aktivirati vaše ključeve da biste vidjeli ažuriranu pozivnicu"
+      ]
+    },
+    "Link to calendar event": {
+      "Open in ${ CALENDAR_APP_NAME }": [
+        ""
       ]
     },
     "Loading info": {
@@ -6654,6 +6711,9 @@
       ],
       "Confirm recipient address?": [
         "Potvrdite adresu primatelja?"
+      ],
+      "Contact details": [
+        ""
       ],
       "Contact Details": [
         "Detalji o kontaktu"
