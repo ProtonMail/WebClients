@@ -1,6 +1,8 @@
 import { hasBit } from '../helpers/bitset';
+import { unary } from '../helpers/function';
 import { CALENDAR_FLAGS, MAX_CALENDARS_PER_FREE_USER, MAX_CALENDARS_PER_USER, SETTINGS_VIEW } from './constants';
 import { Calendar, CalendarUserSettings } from '../interfaces/calendar';
+import { getIsPersonalCalendar } from './subscribe/helpers';
 
 export const getDoesCalendarNeedUserAction = ({ Flags }: Calendar) => {
     return hasBit(Flags, CALENDAR_FLAGS.RESET_NEEDED) || hasBit(Flags, CALENDAR_FLAGS.UPDATE_PASSPHRASE);
@@ -21,14 +23,20 @@ export const getIsCalendarProbablyActive = (calendar = { Flags: 0 }) => {
 };
 
 export const getProbablyActiveCalendars = (calendars: Calendar[] = []) => {
-    return calendars.filter(getIsCalendarProbablyActive);
+    return calendars.filter(unary(getIsCalendarProbablyActive));
+};
+
+export const getPersonalCalendars = (calendars: Calendar[] = []) => {
+    return calendars.filter(unary(getIsPersonalCalendar));
 };
 
 export const getDefaultCalendar = (calendars: Calendar[] = [], defaultCalendarID: string | null = '') => {
-    if (!calendars.length) {
+    // only personal calendars can be default
+    const personalCalendars = getPersonalCalendars(calendars);
+    if (!personalCalendars.length) {
         return;
     }
-    return calendars.find(({ ID }) => ID === defaultCalendarID) || calendars[0];
+    return personalCalendars.find(({ ID }) => ID === defaultCalendarID) || personalCalendars[0];
 };
 
 export const getCanCreateCalendar = (

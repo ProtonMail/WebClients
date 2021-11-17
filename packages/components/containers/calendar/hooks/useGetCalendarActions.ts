@@ -1,3 +1,4 @@
+import { getPersonalCalendars } from '@proton/shared/lib/calendar/calendar';
 import { Dispatch, SetStateAction } from 'react';
 import { CalendarCreateData } from '@proton/shared/lib/interfaces/calendar/Api';
 import { Calendar, CalendarSettings, SubscribedCalendar } from '@proton/shared/lib/interfaces/calendar';
@@ -30,7 +31,7 @@ interface Props {
     onClose?: () => void;
     onCreateCalendar?: (id: string) => void;
     activeCalendars?: Calendar[];
-    isOtherCalendar?: boolean;
+    isSubscribedCalendar?: boolean;
 }
 
 const useGetCalendarActions = ({
@@ -41,7 +42,7 @@ const useGetCalendarActions = ({
     onClose,
     onCreateCalendar,
     activeCalendars,
-    isOtherCalendar = false,
+    isSubscribedCalendar = false,
 }: Props) => {
     const api = useApi();
     const { call } = useEventManager();
@@ -90,14 +91,17 @@ const useGetCalendarActions = ({
         // Set the calendar in case one of the following calls fails so that it ends up in the update function after this.
         setCalendar(Calendar);
 
-        if (!isOtherCalendar) {
+        if (!isSubscribedCalendar) {
             await Promise.all([
                 api(updateCalendarSettings(newCalendarID, calendarSettingsPayload)),
                 (() => {
                     if (defaultCalendarID) {
                         return;
                     }
-                    const newDefaultCalendarID = activeCalendars?.length ? activeCalendars[0].ID : newCalendarID;
+                    const personalActiveCalendars = getPersonalCalendars(activeCalendars);
+                    const newDefaultCalendarID = personalActiveCalendars?.length
+                        ? personalActiveCalendars[0].ID
+                        : newCalendarID;
                     return api(updateCalendarUserSettings({ DefaultCalendarID: newDefaultCalendarID }));
                 })(),
             ]);
@@ -110,7 +114,7 @@ const useGetCalendarActions = ({
         onClose?.();
 
         createNotification({
-            text: isOtherCalendar
+            text: isSubscribedCalendar
                 ? c('Success').t`Calendar added. It might take a few minutes to sync.`
                 : c('Success').t`Calendar created`,
         });
