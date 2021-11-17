@@ -1,10 +1,12 @@
+import { IMG_SRC_BASE_64_PREFIX } from './transformEscape';
+
 const ELEMENTS = [
     {
         selector: 'a:not([href^="http"]):not([href^="mailto:"])',
         attribute: 'href',
     },
     {
-        selector: 'img:not([src^="http"]):not([proton-src^="cid"])',
+        selector: `img:not([src^="http"]):not([proton-src^="cid"]):not([${IMG_SRC_BASE_64_PREFIX}])`,
         attribute: 'src',
     },
 ];
