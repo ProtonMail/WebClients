@@ -1,7 +1,7 @@
-import { PLAN_SERVICES, PLAN_TYPES, ADDON_NAMES } from '@proton/shared/lib/constants';
+import { CYCLE, PLAN_SERVICES, PLAN_TYPES, ADDON_NAMES } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { getUnixTime } from 'date-fns';
-import { hasVpnBasic } from '@proton/shared/lib/helpers/subscription';
+import { hasVpnBasic, hasVpnPlus } from '@proton/shared/lib/helpers/subscription';
 import { Cycle, LatestSubscription, Plan, Subscription } from '@proton/shared/lib/interfaces';
 
 const { PLAN, ADDON } = PLAN_TYPES;
@@ -112,13 +112,25 @@ export const formatPlans = (plans: Plan[] = []) => {
  * Check if the current user is eligible to Black Friday discount
  */
 export const getBlackFridayEligibility = (subscription: Subscription, latestSubscription?: LatestSubscription) => {
-    // Anyone who had a paid plan at any point in time after Oct 2021 is not eligible
+    if (subscription?.Plans?.length === 1) {
+        // Eligible if you are on a vpn plus and monthly cycle
+        if (hasVpnPlus(subscription) && subscription.Plans[0]?.Cycle === CYCLE.MONTHLY) {
+            return true;
+        }
+
+        // Eligible if you are on a vpn basic
+        if (hasVpnBasic(subscription)) {
+            return true;
+        }
+    }
+
+    // Anyone else who had a paid plan at any point in time after Oct 2021 is not eligible
     if ((latestSubscription?.LastSubscriptionEnd ?? 0) > OCTOBER_01) {
         return false;
     }
 
-    // Eligible if you are on a vpn basic or free plan
-    if ((hasVpnBasic(subscription) && subscription?.Plans?.length === 1) || !subscription?.Plans?.length) {
+    // Eligible if free plan
+    if (!subscription?.Plans?.length) {
         return true;
     }
 
