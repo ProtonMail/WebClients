@@ -31,11 +31,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } κατάστημα"
       ],
-      "activate": [
-        "ενεργοποιήστε"
-      ],
       "Activate": [
         "Ενεργοποίηση"
+      ],
+      "activate": [
+        "ενεργοποιήστε"
       ],
       "Activate ${ Name }@pm.me": [
         "Ενεργοποίηση ${ Name }@pm.me"
@@ -874,6 +874,12 @@
       ],
       "Generate missing keys": [
         "Δημιουργία των κλειδιών που λείπουν"
+      ],
+      "Make default": [
+        ""
+      ],
+      "Saving": [
+        ""
       ]
     },
     "Address status": {
@@ -1598,8 +1604,8 @@
       ]
     },
     "Email body for invitation": {
-      "${ eventTitle } has been cancelled.": [
-        "${ eventTitle } έχει ακυρωθεί."
+      "${ eventTitle } has been canceled.": [
+        ""
       ],
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
         "${ eventTitle } έχει ενημερωθεί.\n${ eventDetailsText }"
@@ -1801,6 +1807,9 @@
       ],
       "Invalid expiration date": [
         "Μη έγκυρη ημερομηνία λήξης"
+      ],
+      "Invalid invitation link": [
+        ""
       ],
       "Invalid name": [
         "Μη έγκυρο όνομα"
@@ -2187,8 +2196,8 @@
       "Missing start time": [
         "Λείπει η ώρα έναρξης"
       ],
-      "no UID, title or start time": [
-        "δεν υπάρχει UID, τίτλος ή ώρα έναρξης"
+      "No UID, title or start time": [
+        ""
       ],
       "Non-Gregorian": [
         "Μη-Γρηγοριανό"
@@ -2278,8 +2287,8 @@
       "Attached ICS file could not be decrypted": [
         "Αδυναμία αποκρυπτογράφησης προσαρτημένου φακέλου ICS"
       ],
-      "Attached ICS file could not be parsed": [
-        "Αδυναμία ανάλυσης επισυναπτόμενου φακέλου ICS"
+      "Attached ICS file could not be read": [
+        ""
       ],
       "Invalid invitation": [
         "Μη έγκυρη πρόσκληση"
@@ -2922,6 +2931,9 @@
       ],
       "Failed": [
         "Απέτυχε"
+      ],
+      "In progress": [
+        ""
       ],
       "Paused": [
         "Σε παύση"
@@ -3888,6 +3900,9 @@
       "Please enter a password to encrypt your private key with before exporting.": [
         "Παρακαλώ πληκτρολογήστε έναν κωδικό πρόσβασης για την κρυπτογράφηση του ιδιωτικού κλειδιού σας πριν από την εξαγωγή."
       ],
+      "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
+        ""
+      ],
       "Please note that if you delete this address, you will no longer be able to send or receive emails using this address.": [
         "Λάβετε υπόψη ότι αν διαγράψετε αυτήν τη διεύθυνση, δεν θα μπορείτε πλέον να στέλνετε ή να λαμβάνετε μηνύματα ηλεκτρονικού ταχυδρομείου χρησιμοποιώντας αυτήν τη διεύθυνση."
       ],
@@ -3926,9 +3941,6 @@
       ],
       "Please wait...": [
         "Παρακαλώ περιμένετε..."
-      ],
-      "Please write your recovery phrase down in the order it appears and keep it somewhere safe. Your recovery phrase can be used to fully recover access to your account and your encrypted messages.": [
-        "Παρακαλούμε γράψτε τη φράση ανάκτησης σας με τη σειρά που εμφανίζεται και κρατήστε την κάπου ασφαλή. Η φράση ανάκτησης μπορεί να χρησιμοποιηθεί για την πλήρη ανάκτηση της πρόσβασης στον λογαριασμό σας και στα κρυπτογραφημένα μηνύματά σας."
       ],
       "Plus or Visionary subscription required": [
         "Απαιτείται συνδρομή Plus ή Visionary"
@@ -4988,8 +5000,8 @@
       "BTC amount:": [
         "Ποσό BTC:"
       ],
-      "Calendar": [
-        "Ημερολόγιο"
+      "Calendars": [
+        ""
       ],
       "Cancel": [
         "Ακύρωση"

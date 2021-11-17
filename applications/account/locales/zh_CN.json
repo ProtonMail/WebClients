@@ -31,11 +31,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } 商店"
       ],
-      "activate": [
-        "激活"
-      ],
       "Activate": [
         "启用"
+      ],
+      "activate": [
+        "激活"
       ],
       "Activate ${ Name }@pm.me": [
         "激活 ${ Name }@pm.me"
@@ -865,6 +865,12 @@
       ],
       "Generate missing keys": [
         "生成缺失的密钥"
+      ],
+      "Make default": [
+        ""
+      ],
+      "Saving": [
+        ""
       ]
     },
     "Address status": {
@@ -1676,8 +1682,8 @@
       ]
     },
     "Email body for invitation": {
-      "${ eventTitle } has been cancelled.": [
-        "${ eventTitle } 已被取消。"
+      "${ eventTitle } has been canceled.": [
+        ""
       ],
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
         "${ eventTitle } 已更新。\n${ eventDetailsText }"
@@ -1878,6 +1884,9 @@
       ],
       "Invalid expiration date": [
         "有效期不正确"
+      ],
+      "Invalid invitation link": [
+        ""
       ],
       "Invalid name": [
         "无效的名称"
@@ -2262,8 +2271,8 @@
       "Missing start time": [
         "缺少启动时间"
       ],
-      "no UID, title or start time": [
-        "没有UID、标题或开始时间"
+      "No UID, title or start time": [
+        ""
       ],
       "Non-Gregorian": [
         "非格里历"
@@ -2353,8 +2362,8 @@
       "Attached ICS file could not be decrypted": [
         "无法解密附加的 ICS 文件"
       ],
-      "Attached ICS file could not be parsed": [
-        "无法解析附加的 ICS 文件"
+      "Attached ICS file could not be read": [
+        ""
       ],
       "Invalid invitation": [
         "邀请无效"
@@ -2986,6 +2995,9 @@
       ],
       "Failed": [
         "失败"
+      ],
+      "In progress": [
+        ""
       ],
       "Paused": [
         "已暂停"
@@ -3929,6 +3941,9 @@
       "Please enter a password to encrypt your private key with before exporting.": [
         "导出私钥前请先设置一个密码将其加密。"
       ],
+      "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
+        ""
+      ],
       "Please note that if you delete this address, you will no longer be able to send or receive emails using this address.": [
         "请注意，如果删除此地址，您将无法再用其收发邮件。"
       ],
@@ -3967,9 +3982,6 @@
       ],
       "Please wait...": [
         "请等待..."
-      ],
-      "Please write your recovery phrase down in the order it appears and keep it somewhere safe. Your recovery phrase can be used to fully recover access to your account and your encrypted messages.": [
-        "请按照出现的顺序记下您的恢复密语并另存他处，恢复密语可用于完全恢复对您的账户和加密邮件的访问权限。"
       ],
       "Plus or Visionary subscription required": [
         "需要订阅 Plus 或 Visionary 套餐"
@@ -5024,8 +5036,8 @@
       "BTC amount:": [
         "比特币金额："
       ],
-      "Calendar": [
-        "日历"
+      "Calendars": [
+        ""
       ],
       "Cancel": [
         "取消"

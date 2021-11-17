@@ -140,6 +140,9 @@
       "Decrease": [
         "減"
       ],
+      "Default mail handler": [
+        ""
+      ],
       "Delete": [
         "刪除"
       ],
@@ -340,6 +343,9 @@
       ],
       "Previous year": [
         "去年"
+      ],
+      "Prompt browser setting": [
+        ""
       ],
       "Quit": [
         "退出"
@@ -893,8 +899,8 @@
       "${ name } tentatively accepted the invitation": [
         "${ name } 暫訂已接受邀請"
       ],
-      "This event has been cancelled": [
-        "此事件已取消"
+      "This event has been canceled": [
+        ""
       ],
       "You accepted the invitation": [
         "您已接受此邀請"
@@ -968,6 +974,11 @@
       ],
       "Open": [
         "開啟"
+      ]
+    },
+    "colon": {
+      ": ": [
+        ""
       ]
     },
     "Composer size": {
@@ -1239,8 +1250,8 @@
       ]
     },
     "Email body for invitation": {
-      "${ eventTitle } has been cancelled.": [
-        "${ eventTitle } 已告取消，特此通知。"
+      "${ eventTitle } has been canceled.": [
+        ""
       ],
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
         "${ eventTitle } 已修訂詳情：\n${ eventDetailsText }"
@@ -1758,7 +1769,7 @@
       "Missing start time": [
         ""
       ],
-      "no UID, title or start time": [
+      "No UID, title or start time": [
         ""
       ],
       "Non-Gregorian": [
@@ -1833,9 +1844,9 @@
         "有待評分"
       ]
     },
-    "Event cancelled status badge": {
-      "cancelled": [
-        "已取消"
+    "Event canceled status badge": {
+      "canceled": [
+        ""
       ]
     },
     "Event delete button tooltip": {
@@ -1862,7 +1873,7 @@
       "Attached ICS file could not be decrypted": [
         ""
       ],
-      "Attached ICS file could not be parsed": [
+      "Attached ICS file could not be read": [
         ""
       ],
       "Invalid invitation": [
@@ -2224,6 +2235,9 @@
       ],
       "Account successfully updated": [
         "帳號已成功更新"
+      ],
+      "Activating this option will open a new composer each time you click on a mailto: link.": [
+        ""
       ],
       "Add additional addresses to your account like user2@protonmail.com": [
         "為您的帳號新增額外的電子郵件地址，例如 user2@protonmail.com"
@@ -2620,6 +2634,9 @@
       ],
       "Session timed out.": [
         "工作階段已逾時。"
+      ],
+      "Set ProtonMail as your default mail handler": [
+        ""
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
         "設定 PGP 後，您將能夠向使用與 PGP 相容服務的非 ProtonMail 使用者寄送端對端加密的電子郵件。"
@@ -3161,7 +3178,7 @@
       "BTC amount:": [
         "BTC 數量："
       ],
-      "Calendar": [
+      "Calendars": [
         ""
       ],
       "Cancel": [
@@ -3526,6 +3543,12 @@
       "Add a gift code": [
         "新增禮品代碼"
       ],
+      "All mail": [
+        ""
+      ],
+      "Archive": [
+        ""
+      ],
       "Calendars": [
         "行事曆"
       ],
@@ -3535,8 +3558,14 @@
       "click here": [
         "按一下此處"
       ],
+      "Drafts": [
+        ""
+      ],
       "Go to subscription plans": [
         "前往訂閱方案"
+      ],
+      "Inbox": [
+        ""
       ],
       "Learn more": [
         "了解更多"
@@ -3544,14 +3573,32 @@
       "My calendars": [
         "我的行事曆"
       ],
+      "Outbox": [
+        ""
+      ],
       "Pay invoice": [
         "付款發票"
       ],
       "Request an invite": [
         "請求一個邀請"
       ],
+      "Scheduled": [
+        ""
+      ],
+      "Sent": [
+        ""
+      ],
+      "Spam": [
+        ""
+      ],
+      "Starred": [
+        ""
+      ],
       "Subscribed calendars": [
         "已訂閱日曆"
+      ],
+      "Trash": [
+        ""
       ],
       "Upgrade": [
         "升級"
@@ -4002,6 +4049,20 @@
       ],
       "You can change this anytime in your settings.": [
         "您可以隨時在設定中變更。"
+      ]
+    },
+    "Onboarding ProtonCalendar": {
+      "A calendar is a record of your life. Keep your life secure and private with ${ appName }.": [
+        ""
+      ],
+      "Import events": [
+        ""
+      ],
+      "Meet your new encrypted calendar": [
+        ""
+      ],
+      "Start using ${ appName }": [
+        ""
       ]
     },
     "Option": {
@@ -4722,6 +4783,9 @@
       ],
       "Confirm loss of Proton bonuses": [
         "確認失去 Proton 獎勵"
+      ],
+      "Contact details": [
+        ""
       ],
       "Contact Details": [
         "聯絡人詳細資料"

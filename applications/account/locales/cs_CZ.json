@@ -31,11 +31,11 @@
       "${ BRAND_NAME } shop": [
         "Obchod ${ BRAND_NAME }"
       ],
-      "activate": [
-        "aktivovat"
-      ],
       "Activate": [
         "Aktivovat"
+      ],
+      "activate": [
+        "aktivovat"
       ],
       "Activate ${ Name }@pm.me": [
         "Aktivovat ${ Name }@pm.me"
@@ -892,6 +892,12 @@
       ],
       "Generate missing keys": [
         "Vygenerovat chybějící klíče"
+      ],
+      "Make default": [
+        ""
+      ],
+      "Saving": [
+        ""
       ]
     },
     "Address status": {
@@ -1730,8 +1736,8 @@
       ]
     },
     "Email body for invitation": {
-      "${ eventTitle } has been cancelled.": [
-        "${ eventTitle } byl zrušen."
+      "${ eventTitle } has been canceled.": [
+        ""
       ],
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
         "${ eventTitle } bylo doplněno.\n${ eventDetailsText }"
@@ -1935,6 +1941,9 @@
       ],
       "Invalid expiration date": [
         "Neplatné datum expirace"
+      ],
+      "Invalid invitation link": [
+        ""
       ],
       "Invalid name": [
         "Neplatné jméno"
@@ -2325,8 +2334,8 @@
       "Missing start time": [
         "Chybějící počáteční čas"
       ],
-      "no UID, title or start time": [
-        "žádný UID, název nebo čas zahájení"
+      "No UID, title or start time": [
+        ""
       ],
       "Non-Gregorian": [
         "Ne-Gregoriánský"
@@ -2416,8 +2425,8 @@
       "Attached ICS file could not be decrypted": [
         "Přiložený ICS soubor nelze dešifrovat"
       ],
-      "Attached ICS file could not be parsed": [
-        "Přiložený ICS soubor nelze zpracovat"
+      "Attached ICS file could not be read": [
+        ""
       ],
       "Invalid invitation": [
         "Neplatná pozvánka"
@@ -3082,6 +3091,9 @@
       ],
       "Failed": [
         "Selhalo"
+      ],
+      "In progress": [
+        ""
       ],
       "Paused": [
         "Pozastaveno"
@@ -4094,6 +4106,9 @@
       "Please enter a password to encrypt your private key with before exporting.": [
         "Před exportem prosím zadejte heslo k zašifrování Vašeho soukromého klíče."
       ],
+      "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
+        ""
+      ],
       "Please note that if you delete this address, you will no longer be able to send or receive emails using this address.": [
         "Vezměte prosím na vědomí, že pokud odstraníte tuto adresu, již nebudete moci odesílat ani přijímat e-maily pomocí této adresy."
       ],
@@ -4132,9 +4147,6 @@
       ],
       "Please wait...": [
         "Počkejte prosím..."
-      ],
-      "Please write your recovery phrase down in the order it appears and keep it somewhere safe. Your recovery phrase can be used to fully recover access to your account and your encrypted messages.": [
-        "Prosím, zapiště si Vaši obnovovací frázi, aby byla možnost ji najít a uložte si ji na bezpečné místo. Vaše obnovovací fráze bude použita pro plnou obnovu přístupu účtu a zašifrovaných zpráv."
       ],
       "Plus or Visionary subscription required": [
         "Je vyžadováno předplatné Plus nebo Visionary"
@@ -5204,7 +5216,7 @@
       "BTC amount:": [
         "Částka BTC:"
       ],
-      "Calendar": [
+      "Calendars": [
         ""
       ],
       "Cancel": [

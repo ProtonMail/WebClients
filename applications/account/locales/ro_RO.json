@@ -31,11 +31,11 @@
       "${ BRAND_NAME } shop": [
         "Magazin ${ BRAND_NAME }"
       ],
-      "activate": [
-        "activare"
-      ],
       "Activate": [
         "Activare"
+      ],
+      "activate": [
+        "activare"
       ],
       "Activate ${ Name }@pm.me": [
         "Activare ${ Name }@pm.me"
@@ -883,6 +883,12 @@
       ],
       "Generate missing keys": [
         "Generare chei lipsă"
+      ],
+      "Make default": [
+        "Implicită"
+      ],
+      "Saving": [
+        "Salvez"
       ]
     },
     "Address status": {
@@ -1712,7 +1718,7 @@
       ]
     },
     "Email body for invitation": {
-      "${ eventTitle } has been cancelled.": [
+      "${ eventTitle } has been canceled.": [
         "${ eventTitle } a fost anulat."
       ],
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
@@ -1916,6 +1922,9 @@
       ],
       "Invalid expiration date": [
         "Data expirării nu este validă."
+      ],
+      "Invalid invitation link": [
+        "Link de invitație invalid"
       ],
       "Invalid name": [
         "Nume nevalid"
@@ -2304,8 +2313,8 @@
       "Missing start time": [
         "Ora de începere lipsă"
       ],
-      "no UID, title or start time": [
-        "Nu există UID, titlu sau timp de pornire"
+      "No UID, title or start time": [
+        "Fără UID, titlu sau oră de începere"
       ],
       "Non-Gregorian": [
         "Nu este Gregorian"
@@ -2395,8 +2404,8 @@
       "Attached ICS file could not be decrypted": [
         "Fișierul ICS atașat nu a putut fi decriptat"
       ],
-      "Attached ICS file could not be parsed": [
-        "Fișierul ICS atașat nu a putut fi analizat"
+      "Attached ICS file could not be read": [
+        "Fișierul ICS atașat nu a putut fi citit"
       ],
       "Invalid invitation": [
         "Invitație nevalidă"
@@ -3050,6 +3059,9 @@
       ],
       "Failed": [
         "Eșuată"
+      ],
+      "In progress": [
+        "În progres"
       ],
       "Paused": [
         "Suspendat"
@@ -4039,6 +4051,9 @@
       "Please enter a password to encrypt your private key with before exporting.": [
         "Introduceți o parolă de criptare a cheii private înainte de exportare."
       ],
+      "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
+        "Vă rugăm să o păstrați în siguranță. Veți avea nevoie de ea pentru a vă accesa contul și pentru a vă decripta datele în cazul unei resetări a parolei."
+      ],
       "Please note that if you delete this address, you will no longer be able to send or receive emails using this address.": [
         "Dacă ștergeți această adresă, nu veți mai putea trimite sau primi mesaje folosind această adresă."
       ],
@@ -4077,9 +4092,6 @@
       ],
       "Please wait...": [
         "Așteptați..."
-      ],
-      "Please write your recovery phrase down in the order it appears and keep it somewhere safe. Your recovery phrase can be used to fully recover access to your account and your encrypted messages.": [
-        "Notați fraza de recuperare în ordinea în care apare și să păstrați-o într-un loc sigur. Fraza de recuperare poate fi utilizată pentru a recupera complet accesul la cont și la mesajele criptate."
       ],
       "Plus or Visionary subscription required": [
         "Este necesar abonamentul „Plus” sau „Visionary”"
@@ -5144,8 +5156,8 @@
       "BTC amount:": [
         "Suma BTC:"
       ],
-      "Calendar": [
-        "Calendar"
+      "Calendars": [
+        "Calendare"
       ],
       "Cancel": [
         "Anulare"
