@@ -91,7 +91,11 @@ export const useInitializeMessage = (localID: string, labelID?: string) => {
             }
             const mimeAttachments = decryption.attachments || [];
             const allAttachments = [...getData().Attachments, ...mimeAttachments];
-            dataChanges = { ...dataChanges, Attachments: allAttachments, NumAttachments: allAttachments.length };
+            dataChanges = {
+                ...dataChanges,
+                Attachments: allAttachments,
+                NumAttachments: getData().NumAttachments + mimeAttachments.length,
+            };
 
             if (decryption.errors) {
                 Object.assign(errors, decryption.errors);
