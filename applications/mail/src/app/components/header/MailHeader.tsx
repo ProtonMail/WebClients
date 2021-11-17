@@ -49,7 +49,7 @@ const MailHeader = ({ labelID, elementID, breakpoints, expanded, onToggleExpand,
     const onCompose = useOnCompose();
     const onMailTo = useOnMailTo();
 
-    // Update the search input field when the keyword in the url is changed
+    // Update the search input field when the keyword in the URL is changed
     useEffect(() => updateValue(keyword), [keyword]);
 
     const searchDropdown = <AdvancedSearchDropdown keyword={value} isNarrow={breakpoints.isNarrow} />;
