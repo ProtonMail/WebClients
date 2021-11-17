@@ -1,92 +1,119 @@
 import { createDocument } from '../test/message';
 import { MessageRemoteImage } from '../../models/message';
-import { loadElementOtherThanImages } from './messageRemotes';
+import { loadElementOtherThanImages, loadBackgroundImages } from './messageRemotes';
 
-const imageURL = 'ImageURL';
+describe('messageRemote', () => {
+    describe('loadElementOtherThanImages', () => {
+        const imageURL = 'ImageURL';
 
-const backgroundContent = `<div>
-                                <table>
-                                      <tbody>
-                                      <tr>
-                                        <td proton-background='${imageURL}'>Element1</td>
-                                       </tr>
-                                      </tbody>
-                                 </table>
+        const backgroundContent = `<div>
+                                  <table>
+                                        <tbody>
+                                        <tr>
+                                          <td proton-background='${imageURL}'>Element1</td>
+                                         </tr>
+                                        </tbody>
+                                   </table>
+                              </div>`;
+
+        const backgroundExpectedContent = `<div>
+                                  <table>
+                                        <tbody>
+                                        <tr>
+                                          <td background='${imageURL}'>Element1</td>
+                                         </tr>
+                                        </tbody>
+                                   </table>
+                              </div>`;
+
+        const posterContent = `<div>
+                        <video proton-poster='${imageURL}'>
+                              <source src="" type="video/mp4">
+                        </video>
+                  </div>`;
+
+        const posterExpectedContent = `<div>
+                        <video poster='${imageURL}'>
+                              <source src="" type="video/mp4">
+                        </video>
+                  </div>`;
+
+        const srcsetContent = `<div>
+                              <picture>
+                                <source media="(min-width:650px)" proton-srcset='${imageURL}' >
+                                <img src='${imageURL}' >
+                              </picture>
                             </div>`;
 
-const backgroundExpectedContent = `<div>
-                                <table>
-                                      <tbody>
-                                      <tr>
-                                        <td background='${imageURL}'>Element1</td>
-                                       </tr>
-                                      </tbody>
-                                 </table>
+        const srcsetExpectedContent = `<div>
+                              <picture>
+                                <source media="(min-width:650px)" srcset='${imageURL}' >
+                                <img src='${imageURL}' >
+                              </picture>
                             </div>`;
 
-const posterContent = `<div>
-                      <video proton-poster='${imageURL}'>
-                            <source src="" type="video/mp4">
-                      </video>
-                </div>`;
+        const xlinkhrefContent = `<div>
+                              <svg width="90" height="90">
+                               <image proton-xlink:href='${imageURL}'/>
+                              </svg>
+                            </div>`;
 
-const posterExpectedContent = `<div>
-                      <video poster='${imageURL}'>
-                            <source src="" type="video/mp4">
-                      </video>
-                </div>`;
+        const xlinkhrefExpectedContent = `<div>
+                              <svg width="90" height="90">
+                               <image xlink:href='${imageURL}'/>
+                              </svg>
+                            </div>`;
 
-const srcsetContent = `<div>
-                            <picture>
-                              <source media="(min-width:650px)" proton-srcset='${imageURL}' >
-                              <img src='${imageURL}' >
-                            </picture>
-                          </div>`;
+        it.each`
+            content              | expectedContent
+            ${backgroundContent} | ${backgroundExpectedContent}
+            ${posterContent}     | ${posterExpectedContent}
+            ${srcsetContent}     | ${srcsetExpectedContent}
+            ${xlinkhrefContent}  | ${xlinkhrefExpectedContent}
+        `('should load elements other than images', async ({ content, expectedContent }) => {
+            const messageDocument = createDocument(content);
 
-const srcsetExpectedContent = `<div>
-                            <picture>
-                              <source media="(min-width:650px)" srcset='${imageURL}' >
-                              <img src='${imageURL}' >
-                            </picture>
-                          </div>`;
+            const remoteImages = [
+                {
+                    type: 'remote',
+                    url: imageURL,
+                    originalURL: imageURL,
+                    id: 'remote-0',
+                    tracker: undefined,
+                    status: 'loaded',
+                },
+            ] as MessageRemoteImage[];
 
-const xlinkhrefContent = `<div>
-                            <svg width="90" height="90">
-                             <image proton-xlink:href='${imageURL}'/>
-                            </svg>
-                          </div>`;
+            loadElementOtherThanImages(remoteImages, messageDocument);
 
-const xlinkhrefExpectedContent = `<div>
-                            <svg width="90" height="90">
-                             <image xlink:href='${imageURL}'/>
-                            </svg>
-                          </div>`;
+            const expectedDocument = createDocument(expectedContent);
 
-describe('messageRemotes', () => {
-    it.each`
-        content              | expectedContent
-        ${backgroundContent} | ${backgroundExpectedContent}
-        ${posterContent}     | ${posterExpectedContent}
-        ${srcsetContent}     | ${srcsetExpectedContent}
-        ${xlinkhrefContent}  | ${xlinkhrefExpectedContent}
-    `('should load elements other than images', async ({ content, expectedContent }) => {
-        const messageDocument = createDocument(content);
+            expect(messageDocument.innerHTML).toEqual(expectedDocument.innerHTML);
+        });
+    });
 
-        const remoteImages = [
-            {
-                type: 'remote',
-                url: imageURL,
-                originalURL: imageURL,
-                id: 'remote-0',
-                tracker: undefined,
-                status: 'loaded',
-            },
-        ] as MessageRemoteImage[];
+    describe('loadBackgroundImages', () => {
+        const imageURL = 'http://test.fr/img.jpg';
+        const content = `<div style="background: proton-url(${imageURL})">Element1</div>`;
+        const expectedContent = `<div style="background: url(${imageURL})">Element1</div>`;
 
-        loadElementOtherThanImages(remoteImages, messageDocument);
+        it('should load elements other than images', async () => {
+            const messageDocument = createDocument(content);
+            const expectedDocument = createDocument(expectedContent);
 
-        const expectedDocument = createDocument(expectedContent);
+            const remoteImages = [
+                {
+                    type: 'remote',
+                    url: imageURL,
+                    originalURL: imageURL,
+                    id: 'remote-0',
+                    tracker: undefined,
+                    status: 'loaded',
+                },
+            ] as MessageRemoteImage[];
 
-        expect(messageDocument.innerHTML).toEqual(expectedDocument.innerHTML);
+            loadBackgroundImages({ images: remoteImages, document: messageDocument });
+            expect(messageDocument.innerHTML).toEqual(expectedDocument.innerHTML);
+        });
     });
 });
