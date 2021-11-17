@@ -1,8 +1,5 @@
 import { c, msgid } from 'ttag';
 
-export const allServers = 1300;
-export const basicServers = 350;
-
 export const getServersInWithoutPlus = (numberOfServers: string, numberOfCountries: number) => {
     // translator: numberOfServers is a string that looks like `20 servers`. It has been pluralized earlier.
     return c('VPN Plan Feature').ngettext(
@@ -33,12 +30,12 @@ export const getVpnServersWithoutPlus = (n = 0) => {
     return c('VPN Plan Feature').ngettext(msgid`${n} server`, `${n} servers`, n);
 };
 
-export const getPlusServers = (countries = 0) => {
-    return getServersInWithoutPlus(getVpnServers(allServers), countries);
+export const getPlusServers = (servers = 1300, countries = 0) => {
+    return getServersInWithoutPlus(getVpnServers(servers), countries);
 };
 
-export const getBasicServers = (countries = 0) => {
-    return getServersIn(getVpnServers(basicServers), countries);
+export const getBasicServers = (servers = 350, countries = 0) => {
+    return getServersIn(getVpnServers(servers), countries);
 };
 
 export const getFreeServers = (servers = 0, countries = 0) => {

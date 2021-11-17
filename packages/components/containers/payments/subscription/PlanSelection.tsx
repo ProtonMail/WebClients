@@ -139,7 +139,7 @@ export const getPlanFeatures = (
 
     if (planName === PLANS.VPNBASIC) {
         return [
-            { content: getBasicServers(basicCountries) },
+            { content: getBasicServers(serversCount[PLANS.VPNBASIC], basicCountries) },
             vpnConnections,
             { content: c('Plan feature').t`High speed` },
             accessBlocked,
@@ -149,7 +149,7 @@ export const getPlanFeatures = (
 
     if (planName === PLANS.VPNPLUS) {
         return [
-            { content: getPlusServers(plusCountries) },
+            { content: getPlusServers(serversCount[PLANS.VPNPLUS], plusCountries) },
             vpnConnections,
             { content: c('Plan feature').t`Highest speed (up to 10 Gbps)` },
             streamingService,
