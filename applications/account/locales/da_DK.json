@@ -31,11 +31,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } butik"
       ],
-      "activate": [
-        "aktivér"
-      ],
       "Activate": [
         "Aktivér"
+      ],
+      "activate": [
+        "aktivér"
       ],
       "Activate ${ Name }@pm.me": [
         "Aktiver ${ Name }@pm.me"
@@ -874,6 +874,12 @@
       ],
       "Generate missing keys": [
         "Generér manglende nøgler"
+      ],
+      "Make default": [
+        ""
+      ],
+      "Saving": [
+        ""
       ]
     },
     "Address status": {
@@ -1694,8 +1700,8 @@
       ]
     },
     "Email body for invitation": {
-      "${ eventTitle } has been cancelled.": [
-        "${ eventTitle } er blevet annulleret."
+      "${ eventTitle } has been canceled.": [
+        ""
       ],
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
         "${ eventTitle } er blevet opdateret.\n${ eventDetailsText }"
@@ -1897,6 +1903,9 @@
       ],
       "Invalid expiration date": [
         "Ugyldig udløbsdato"
+      ],
+      "Invalid invitation link": [
+        "Ugyldigt invitationslink"
       ],
       "Invalid name": [
         "Ugyldigt navn"
@@ -2283,8 +2292,8 @@
       "Missing start time": [
         "Manglende starttidspunkt"
       ],
-      "no UID, title or start time": [
-        "ingen UID, titel eller starttid"
+      "No UID, title or start time": [
+        "Ingen UID, titel eller starttid"
       ],
       "Non-Gregorian": [
         "Ikke-gregoriansk"
@@ -2374,8 +2383,8 @@
       "Attached ICS file could not be decrypted": [
         "Vedhæftet ICS-fil kunne ikke dekrypteres"
       ],
-      "Attached ICS file could not be parsed": [
-        "Vedhæftet ICS-fil kunne ikke fortolkes"
+      "Attached ICS file could not be read": [
+        ""
       ],
       "Invalid invitation": [
         "Ugyldig invitation"
@@ -3018,6 +3027,9 @@
       ],
       "Failed": [
         "Mislykkedes"
+      ],
+      "In progress": [
+        ""
       ],
       "Paused": [
         "Sat på pause"
@@ -3984,6 +3996,9 @@
       "Please enter a password to encrypt your private key with before exporting.": [
         "Angiv en adgangskode til kryptering af din private nøgle inden du eksporterer."
       ],
+      "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
+        ""
+      ],
       "Please note that if you delete this address, you will no longer be able to send or receive emails using this address.": [
         "Bemærk, at hvis du sletter denne adresse, vil du ikke længere kunne sende eller modtage e-mails via denne adresse."
       ],
@@ -4022,9 +4037,6 @@
       ],
       "Please wait...": [
         "Vent venligst..."
-      ],
-      "Please write your recovery phrase down in the order it appears and keep it somewhere safe. Your recovery phrase can be used to fully recover access to your account and your encrypted messages.": [
-        "Skriv din gendannelsessætning ned i den rækkefølge, den vises, og opbevar den et sikkert sted. Din gendannelsessætning kan bruges til igen at få fuld adgang til din konto og dine krypterede meddelelser."
       ],
       "Plus or Visionary subscription required": [
         "Plus- eller Visionary abonnement påkrævet"
@@ -5084,8 +5096,8 @@
       "BTC amount:": [
         "BTC-beløb:"
       ],
-      "Calendar": [
-        "Kalender"
+      "Calendars": [
+        "Kalendere"
       ],
       "Cancel": [
         "Annullér"

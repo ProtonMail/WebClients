@@ -31,11 +31,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } dućan"
       ],
-      "activate": [
-        "aktiviraj"
-      ],
       "Activate": [
         "Aktiviraj"
+      ],
+      "activate": [
+        "aktiviraj"
       ],
       "Activate ${ Name }@pm.me": [
         "Aktiviraj ${ Name }@pm.me"
@@ -883,6 +883,12 @@
       ],
       "Generate missing keys": [
         "Generiraj ključeve koji nedostaju"
+      ],
+      "Make default": [
+        ""
+      ],
+      "Saving": [
+        ""
       ]
     },
     "Address status": {
@@ -1712,8 +1718,8 @@
       ]
     },
     "Email body for invitation": {
-      "${ eventTitle } has been cancelled.": [
-        "${ eventTitle } je otkazan."
+      "${ eventTitle } has been canceled.": [
+        ""
       ],
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
         "${ eventTitle } je ažuriran.\n${ eventDetailsText }"
@@ -1916,6 +1922,9 @@
       ],
       "Invalid expiration date": [
         "Nevažeći datum isteka"
+      ],
+      "Invalid invitation link": [
+        ""
       ],
       "Invalid name": [
         "Nevažeći naziv"
@@ -2304,8 +2313,8 @@
       "Missing start time": [
         "Nedostaje početno vrijeme"
       ],
-      "no UID, title or start time": [
-        "nema UID, naslov ili početno vrijeme"
+      "No UID, title or start time": [
+        ""
       ],
       "Non-Gregorian": [
         "Ne gregorijanski"
@@ -2395,8 +2404,8 @@
       "Attached ICS file could not be decrypted": [
         ""
       ],
-      "Attached ICS file could not be parsed": [
-        "Priloženu ICS datoteku nije moguće parsirati"
+      "Attached ICS file could not be read": [
+        ""
       ],
       "Invalid invitation": [
         "Nevažeća pozivnica"
@@ -3050,6 +3059,9 @@
       ],
       "Failed": [
         "Neuspješno"
+      ],
+      "In progress": [
+        ""
       ],
       "Paused": [
         "Pauzirano"
@@ -4039,6 +4051,9 @@
       "Please enter a password to encrypt your private key with before exporting.": [
         "Unesite lozinku za šifriranje vašeg privatnog ključa prije izvoza."
       ],
+      "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
+        ""
+      ],
       "Please note that if you delete this address, you will no longer be able to send or receive emails using this address.": [
         "Imajte na umu da ako izbrišete ovu adresu, više nećete moći slati ni primati e-poštu putem ove adrese."
       ],
@@ -4077,9 +4092,6 @@
       ],
       "Please wait...": [
         "Molimo pričekajte..."
-      ],
-      "Please write your recovery phrase down in the order it appears and keep it somewhere safe. Your recovery phrase can be used to fully recover access to your account and your encrypted messages.": [
-        ""
       ],
       "Plus or Visionary subscription required": [
         "Plus ili Visionary pretplata je potrebna"
@@ -5144,7 +5156,7 @@
       "BTC amount:": [
         "BTC iznos:"
       ],
-      "Calendar": [
+      "Calendars": [
         ""
       ],
       "Cancel": [

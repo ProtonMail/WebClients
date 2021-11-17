@@ -218,6 +218,9 @@
       "Decrease": [
         "Csökkent"
       ],
+      "Default mail handler": [
+        ""
+      ],
       "Delete": [
         "Törlés"
       ],
@@ -569,6 +572,9 @@
       "OK": [
         "OK"
       ],
+      "Open ${ CALENDAR_APP_NAME }": [
+        ""
+      ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "${ CALENDAR_APP_NAME } beállításainak megnyitása"
       ],
@@ -622,6 +628,9 @@
       ],
       "Print": [
         "Nyomtatás"
+      ],
+      "Prompt browser setting": [
+        ""
       ],
       "Quit": [
         ""
@@ -902,6 +911,9 @@
       ],
       "View source code": [
         "Forráskód megtekintése"
+      ],
+      "Why not?": [
+        ""
       ],
       "Yes": [
         "Igen"
@@ -1395,6 +1407,12 @@
       "An occurrence has been added to the event ${ veventIcsTitle }": [
         "Egy alkalom került hozzáadásra az eseményéhez: ${ veventIcsTitle }"
       ],
+      "Event already ended": [
+        ""
+      ],
+      "Event in progress": [
+        ""
+      ],
       "Event refreshing is not supported for the moment": [
         ""
       ],
@@ -1407,20 +1425,14 @@
       "This answer cannot be added to ${ calendarAppName } as we only support answers to all events of a series for the moment": [
         ""
       ],
-      "This event has already happened": [
+      "This event has been canceled.": [
         ""
-      ],
-      "This event has been cancelled.": [
-        "Ezt az eseményt törölték."
       ],
       "This event has been updated.": [
         "Ez eseményt frissítették."
       ],
-      "This event is currently happening": [
+      "This invitation is out of date. The event has been canceled.": [
         ""
-      ],
-      "This invitation is out of date. The event has been cancelled.": [
-        "A meghívó elavult. Az eseményt törölték."
       ],
       "This invitation is out of date. The event has been deleted.": [
         "A meghívó elavult. Az eseményt törölték."
@@ -1833,8 +1845,8 @@
       ]
     },
     "Email body for invitation": {
-      "${ eventTitle } has been cancelled.": [
-        "${ eventTitle } törlésre került."
+      "${ eventTitle } has been canceled.": [
+        ""
       ],
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
         "${ eventTitle } frissítve.\n${ eventDetailsText }"
@@ -1868,6 +1880,48 @@
       ],
       "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
         "${ emailAddress } feltételesen elfogadta a meghívást az eseményre: ${ eventTitle }"
+      ]
+    },
+    "Email reminder banner": {
+      "Event already ended": [
+        ""
+      ],
+      "Event in progress": [
+        ""
+      ],
+      "Event is tomorrow": [
+        ""
+      ],
+      "Event starting now": [
+        ""
+      ],
+      "Event starts in ${ minutesUntilEvent } minute": [
+        "",
+        ""
+      ],
+      "Event starts tomorrow": [
+        ""
+      ]
+    },
+    "Email reminder decryption error": {
+      "Event details are encrypted. Sign in again to restore Calendar and decrypt your data. ${ learnMoreLink }": [
+        ""
+      ],
+      "Event details cannot be decrypted. ${ whyNotLink }": [
+        ""
+      ]
+    },
+    "Email reminder error": {
+      "Event is no longer in your calendar": [
+        ""
+      ]
+    },
+    "Email reminder out of date alert": {
+      "Event was canceled": [
+        ""
+      ],
+      "Event was updated. This reminder is out-of-date.": [
+        ""
       ]
     },
     "Email subject": {
@@ -2398,8 +2452,8 @@
       "Missing start time": [
         "Hiányzó kezdő időpont"
       ],
-      "no UID, title or start time": [
-        "nincs UID, cím vagy kezdési időpont"
+      "No UID, title or start time": [
+        ""
       ],
       "Non-Gregorian": [
         "Nem gergely-naptár"
@@ -2472,7 +2526,7 @@
       "Attached ICS file could not be decrypted": [
         ""
       ],
-      "Attached ICS file could not be parsed": [
+      "Attached ICS file could not be read": [
         ""
       ],
       "Invalid invitation": [
@@ -2765,19 +2819,7 @@
         "",
         ""
       ],
-      "Calendar": [
-        ""
-      ],
-      "Location": [
-        ""
-      ],
       "Organizer:": [
-        ""
-      ],
-      "Participants": [
-        ""
-      ],
-      "Repeats": [
         ""
       ]
     },
@@ -3051,6 +3093,9 @@
       "Account successfully updated": [
         "A fiók sikeresen frissítve"
       ],
+      "Activating this option will open a new composer each time you click on a mailto: link.": [
+        ""
+      ],
       "Activation in progress": [
         ""
       ],
@@ -3185,6 +3230,9 @@
       "Checking contact ${ progress } of ${ max }...": [
         "Névjegy ellenőrzése ${ progress }/${ max }..."
       ],
+      "Clear data": [
+        ""
+      ],
       "Clearing browser data also deactivates message content search on this device. All messages will need to be downloaded again to search within them.": [
         ""
       ],
@@ -3255,6 +3303,9 @@
       "Day": [
         "Nap",
         "Nap"
+      ],
+      "Disable message content search": [
+        ""
       ],
       "Discount applied to your subscription with coupon ${ code }": [
         "Az előfizetésre érvényes árengedmény a kuponnal ${ code }"
@@ -3643,6 +3694,9 @@
       "Please add at least one recipient before sending.": [
         "Küldés előtt adjon meg legalább egy címzettet."
       ],
+      "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
+        ""
+      ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "A csoporthoz rendelt címek NEM kerülnek törlésre."
       ],
@@ -3678,9 +3732,6 @@
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Kérjük várjon amíg megkeressük a névjegyeket amik az inaktív kulccsal titkosított adatokat tárolnak."
-      ],
-      "Please write your recovery phrase down in the order it appears and keep it somewhere safe. Your recovery phrase can be used to fully recover access to your account and your encrypted messages.": [
-        ""
       ],
       "Preview": [
         "Előnézet"
@@ -3778,6 +3829,9 @@
       ],
       "Session timed out.": [
         "A munkamenet lejárt."
+      ],
+      "Set ProtonMail as your default mail handler": [
+        ""
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
         "A PGP beállítása lehetővé teszi végpontok közt titkosított e-mail küldését olyan nem-ProtonMail felhasználónak, aki PGP-kompatibilis szolgáltatást használ."
@@ -4532,7 +4586,7 @@
       "BTC amount:": [
         "BTC összeg:"
       ],
-      "Calendar": [
+      "Calendars": [
         ""
       ],
       "Cancel": [
@@ -4880,9 +4934,6 @@
       "without attachments": [
         "nem tartalmaz mellékletet"
       ],
-      "Your recovery phrase": [
-        ""
-      ],
       "ZIP": [
         "Irányítószám"
       ]
@@ -5097,6 +5148,11 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "A frissített meghívó megtekintéséhez előbb újra kell aktiválnia a kulcsait"
+      ]
+    },
+    "Link to calendar event": {
+      "Open in ${ CALENDAR_APP_NAME }": [
+        ""
       ]
     },
     "Loading info": {
@@ -6521,6 +6577,9 @@
       ],
       "Confirm recipient address?": [
         "Elfogadja a címzett címét?"
+      ],
+      "Contact details": [
+        ""
       ],
       "Contact Details": [
         "Névjegy részletei"

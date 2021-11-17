@@ -31,11 +31,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } bolt"
       ],
-      "activate": [
-        "aktiválás"
-      ],
       "Activate": [
         "Aktiválás"
+      ],
+      "activate": [
+        "aktiválás"
       ],
       "Activate ${ Name }@pm.me": [
         "${ Name }@pm.me aktiválása"
@@ -874,6 +874,12 @@
       ],
       "Generate missing keys": [
         "Hiányzó kulcsok generálása"
+      ],
+      "Make default": [
+        ""
+      ],
+      "Saving": [
+        ""
       ]
     },
     "Address status": {
@@ -1694,8 +1700,8 @@
       ]
     },
     "Email body for invitation": {
-      "${ eventTitle } has been cancelled.": [
-        "${ eventTitle } törlésre került."
+      "${ eventTitle } has been canceled.": [
+        ""
       ],
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
         "${ eventTitle } frissítve.\n${ eventDetailsText }"
@@ -1897,6 +1903,9 @@
       ],
       "Invalid expiration date": [
         "Érvénytelen lejárati dátum"
+      ],
+      "Invalid invitation link": [
+        ""
       ],
       "Invalid name": [
         "Érvénytelen név"
@@ -2283,8 +2292,8 @@
       "Missing start time": [
         "Hiányzó kezdő időpont"
       ],
-      "no UID, title or start time": [
-        "nincs UID, cím vagy kezdési időpont"
+      "No UID, title or start time": [
+        ""
       ],
       "Non-Gregorian": [
         "Nem gergely-naptár"
@@ -2374,8 +2383,8 @@
       "Attached ICS file could not be decrypted": [
         "Nem sikerült a csatolt ICS fájl visszafejtése"
       ],
-      "Attached ICS file could not be parsed": [
-        "Nem sikerült a csatolt ICS fájl értelmezése"
+      "Attached ICS file could not be read": [
+        ""
       ],
       "Invalid invitation": [
         "Érvénytelen meghívó"
@@ -3018,6 +3027,9 @@
       ],
       "Failed": [
         "Sikertelen"
+      ],
+      "In progress": [
+        ""
       ],
       "Paused": [
         "Felfüggesztve"
@@ -3984,6 +3996,9 @@
       "Please enter a password to encrypt your private key with before exporting.": [
         "Adjon meg egy jelszót a titkos kulcs exportálás előtti titkosításához."
       ],
+      "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
+        ""
+      ],
       "Please note that if you delete this address, you will no longer be able to send or receive emails using this address.": [
         "Amennyiben törli ezt a címet, a továbbiakban nem fogadhat és nem küldhet leveleket ezzel a címmel."
       ],
@@ -4022,9 +4037,6 @@
       ],
       "Please wait...": [
         "Kérjük, várjon..."
-      ],
-      "Please write your recovery phrase down in the order it appears and keep it somewhere safe. Your recovery phrase can be used to fully recover access to your account and your encrypted messages.": [
-        "Írja le a helyreállító jelmondatot az eredeti sorrendjében és tárolja biztonságos helyen. A helyreállító jelmondat használható a fiók és titkosított üzenetek teljes helyreállításához."
       ],
       "Plus or Visionary subscription required": [
         "Plus vagy Visionary előfizetés szükséges"
@@ -5084,8 +5096,8 @@
       "BTC amount:": [
         "BTC összeg:"
       ],
-      "Calendar": [
-        "Naptár"
+      "Calendars": [
+        ""
       ],
       "Cancel": [
         "Mégsem"

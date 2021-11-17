@@ -218,6 +218,9 @@
       "Decrease": [
         "Μείωση"
       ],
+      "Default mail handler": [
+        ""
+      ],
       "Delete": [
         "Διαγραφή"
       ],
@@ -569,6 +572,9 @@
       "OK": [
         "ΟΚ"
       ],
+      "Open ${ CALENDAR_APP_NAME }": [
+        ""
+      ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Ανοίξτε τις ρυθμίσεις του ${ CALENDAR_APP_NAME }"
       ],
@@ -622,6 +628,9 @@
       ],
       "Print": [
         "Εκτύπωση"
+      ],
+      "Prompt browser setting": [
+        ""
       ],
       "Quit": [
         "Έξοδος"
@@ -902,6 +911,9 @@
       ],
       "View source code": [
         "Προβολή πηγαίου κώδικα"
+      ],
+      "Why not?": [
+        ""
       ],
       "Yes": [
         "Ναι"
@@ -1395,6 +1407,12 @@
       "An occurrence has been added to the event ${ veventIcsTitle }": [
         "Προστέθηκε μια διοργάνωση στην εκδήλωση ${ veventIcsTitle }"
       ],
+      "Event already ended": [
+        ""
+      ],
+      "Event in progress": [
+        ""
+      ],
       "Event refreshing is not supported for the moment": [
         "Για την ώρα δεν υποστηρίζεται ανανέωση εκδήλωσης"
       ],
@@ -1407,20 +1425,14 @@
       "This answer cannot be added to ${ calendarAppName } as we only support answers to all events of a series for the moment": [
         "Αυτή η απάντηση δεν μπορεί να προστεθεί στο ${ calendarAppName }, καθώς για την ώρα υποστηρίζουμε απαντήσεις μόνο σε όλες τις εκδηλώσεις μιας σειράς"
       ],
-      "This event has already happened": [
-        "Αυτή η εκδήλωση έχει ήδη λάβει χώρα"
-      ],
-      "This event has been cancelled.": [
-        "Αυτή η εκδήλωση έχει ακυρωθεί."
+      "This event has been canceled.": [
+        ""
       ],
       "This event has been updated.": [
         "Αυτή η εκδήλωση έχει ενημερωθεί."
       ],
-      "This event is currently happening": [
-        "Αυτή η εκδήλωση λαμβάνει χώρα αυτήν τη στιγμή"
-      ],
-      "This invitation is out of date. The event has been cancelled.": [
-        "Αυτή η πρόσκληση είναι ξεπερασμένη. Το γεγονός έχει ακυρωθεί."
+      "This invitation is out of date. The event has been canceled.": [
+        ""
       ],
       "This invitation is out of date. The event has been deleted.": [
         "Αυτή η πρόσκληση είναι παρωχημένη. Η εκδήλωση έχει διαγραφεί."
@@ -1833,8 +1845,8 @@
       ]
     },
     "Email body for invitation": {
-      "${ eventTitle } has been cancelled.": [
-        "${ eventTitle } έχει ακυρωθεί."
+      "${ eventTitle } has been canceled.": [
+        ""
       ],
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
         "${ eventTitle } έχει ενημερωθεί.\n${ eventDetailsText }"
@@ -1868,6 +1880,48 @@
       ],
       "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
         "${ emailAddress } έχει αποδεχτεί προσωρινά την πρόσκληση σας στο ${ eventTitle }"
+      ]
+    },
+    "Email reminder banner": {
+      "Event already ended": [
+        ""
+      ],
+      "Event in progress": [
+        ""
+      ],
+      "Event is tomorrow": [
+        ""
+      ],
+      "Event starting now": [
+        ""
+      ],
+      "Event starts in ${ minutesUntilEvent } minute": [
+        "",
+        ""
+      ],
+      "Event starts tomorrow": [
+        ""
+      ]
+    },
+    "Email reminder decryption error": {
+      "Event details are encrypted. Sign in again to restore Calendar and decrypt your data. ${ learnMoreLink }": [
+        ""
+      ],
+      "Event details cannot be decrypted. ${ whyNotLink }": [
+        ""
+      ]
+    },
+    "Email reminder error": {
+      "Event is no longer in your calendar": [
+        ""
+      ]
+    },
+    "Email reminder out of date alert": {
+      "Event was canceled": [
+        ""
+      ],
+      "Event was updated. This reminder is out-of-date.": [
+        ""
       ]
     },
     "Email subject": {
@@ -2398,8 +2452,8 @@
       "Missing start time": [
         "Λείπει η ώρα έναρξης"
       ],
-      "no UID, title or start time": [
-        "δεν υπάρχει UID, τίτλος ή ώρα έναρξης"
+      "No UID, title or start time": [
+        ""
       ],
       "Non-Gregorian": [
         "Μη-Γρηγοριανό"
@@ -2472,8 +2526,8 @@
       "Attached ICS file could not be decrypted": [
         "Αδυναμία αποκρυπτογράφησης προσαρτημένου φακέλου ICS"
       ],
-      "Attached ICS file could not be parsed": [
-        "Αδυναμία ανάλυσης επισυναπτόμενου φακέλου ICS"
+      "Attached ICS file could not be read": [
+        ""
       ],
       "Invalid invitation": [
         "Μη έγκυρη πρόσκληση"
@@ -2765,20 +2819,8 @@
         "${ totalAttendees } συμμετέχων",
         "${ totalAttendees } συμμετέχοντες"
       ],
-      "Calendar": [
-        "Ημερολόγιο"
-      ],
-      "Location": [
-        "Τοποθεσία"
-      ],
       "Organizer:": [
         "Διοργανωτής:"
-      ],
-      "Participants": [
-        "Συμμετέχοντες"
-      ],
-      "Repeats": [
-        "Επαναλήψεις"
       ]
     },
     "Import calendar": {
@@ -3051,6 +3093,9 @@
       "Account successfully updated": [
         "Ο λογαριασμός ενημερώθηκε επιτυχώς"
       ],
+      "Activating this option will open a new composer each time you click on a mailto: link.": [
+        ""
+      ],
       "Activation in progress": [
         "Ενεργοποίηση σε εξέλιξη"
       ],
@@ -3185,6 +3230,9 @@
       "Checking contact ${ progress } of ${ max }...": [
         "Έλεγχος επαφής ${ progress } από ${ max }..."
       ],
+      "Clear data": [
+        ""
+      ],
       "Clearing browser data also deactivates message content search on this device. All messages will need to be downloaded again to search within them.": [
         "Η εκκαθάριση των δεδομένων του προγράμματος περιήγησης απενεργοποιεί επίσης την αναζήτηση περιεχομένου μηνυμάτων σε αυτήν τη συσκευή. Όλα τα μηνύματα θα πρέπει να μεταφορτωθούν ξανά για να μπορείτε να αναζητήσετε σε αυτά."
       ],
@@ -3255,6 +3303,9 @@
       "Day": [
         "Ημέρα",
         "Ημέρες"
+      ],
+      "Disable message content search": [
+        ""
       ],
       "Discount applied to your subscription with coupon ${ code }": [
         "Εφαρμόστηκε έκπτωση στη συνδρομή σας, με το κουπόνι ${ code }"
@@ -3643,6 +3694,9 @@
       "Please add at least one recipient before sending.": [
         "Παρακαλούμε ορίστε τουλάχιστον έναν παραλήπτη πριν την αποστολή."
       ],
+      "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
+        ""
+      ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Σημειώστε ότι οι διευθύνσεις που έχουν αντιστοιχιστεί σε αυτήν την ομάδα ΔΕ θα διαγραφούν."
       ],
@@ -3678,9 +3732,6 @@
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Παρακαλώ περιμένετε όσο ψάχνουμε για επαφές που περιέχουν δεδομένα κρυπτογραφημένα με το ανενεργό κλειδί."
-      ],
-      "Please write your recovery phrase down in the order it appears and keep it somewhere safe. Your recovery phrase can be used to fully recover access to your account and your encrypted messages.": [
-        "Παρακαλούμε γράψτε τη φράση ανάκτησης σας με τη σειρά που εμφανίζεται και κρατήστε την κάπου ασφαλή. Η φράση ανάκτησης μπορεί να χρησιμοποιηθεί για την πλήρη ανάκτηση της πρόσβασης στον λογαριασμό σας και στα κρυπτογραφημένα μηνύματά σας."
       ],
       "Preview": [
         "Προεπισκόπηση"
@@ -3778,6 +3829,9 @@
       ],
       "Session timed out.": [
         "Η χρονική περίοδος σύνδεσης έληξε."
+      ],
+      "Set ProtonMail as your default mail handler": [
+        ""
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
         "Ρυθμίζοντας το PGP, σάς επιτρέπει να στέλνετε κρυπτογραφημένα μηνύματα ηλεκτρονικού ταχυδρομείου σε έναν χρήστη που δεν ανήκει στο ProtonMail αλλά όμως χρησιμοποιεί και ο ίδιος PGP."
@@ -4532,8 +4586,8 @@
       "BTC amount:": [
         "Ποσό BTC:"
       ],
-      "Calendar": [
-        "Ημερολόγιο"
+      "Calendars": [
+        ""
       ],
       "Cancel": [
         "Ακύρωση"
@@ -4880,9 +4934,6 @@
       "without attachments": [
         "χωρίς συνημμένα"
       ],
-      "Your recovery phrase": [
-        "Η φράση ανάκτησής σας"
-      ],
       "ZIP": [
         "T.K"
       ]
@@ -5097,6 +5148,11 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Πρέπει να επανενεργοποιήσετε τα κλειδιά σας για να δείτε την ενημερωμένη πρόσκληση"
+      ]
+    },
+    "Link to calendar event": {
+      "Open in ${ CALENDAR_APP_NAME }": [
+        ""
       ]
     },
     "Loading info": {
@@ -6521,6 +6577,9 @@
       ],
       "Confirm recipient address?": [
         "Επιβεβαίωση διεύθυνσης παραλήπτη;"
+      ],
+      "Contact details": [
+        ""
       ],
       "Contact Details": [
         "Λεπτομέρειες Επαφής"

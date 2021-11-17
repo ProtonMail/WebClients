@@ -140,6 +140,9 @@
       "Decrease": [
         "Riduci"
       ],
+      "Default mail handler": [
+        ""
+      ],
       "Delete": [
         "Elimina"
       ],
@@ -342,6 +345,9 @@
       ],
       "Previous year": [
         "Anno precedente"
+      ],
+      "Prompt browser setting": [
+        ""
       ],
       "Quit": [
         "Chiudi"
@@ -899,7 +905,7 @@
       "${ name } tentatively accepted the invitation": [
         "${ name } ha accettato provvisoriamente l'invito"
       ],
-      "This event has been cancelled": [
+      "This event has been canceled": [
         "Questo evento è stato cancellato"
       ],
       "You accepted the invitation": [
@@ -974,6 +980,11 @@
       ],
       "Open": [
         "Apri"
+      ]
+    },
+    "colon": {
+      ": ": [
+        ""
       ]
     },
     "Composer size": {
@@ -1253,8 +1264,8 @@
       ]
     },
     "Email body for invitation": {
-      "${ eventTitle } has been cancelled.": [
-        "${ eventTitle } è stato annullato."
+      "${ eventTitle } has been canceled.": [
+        "${ eventTitle } è stato cancellato."
       ],
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
         "${ eventTitle } è stato aggiornato.\n${ eventDetailsText }"
@@ -1781,8 +1792,8 @@
       "Missing start time": [
         "Ora di inizio mancante"
       ],
-      "no UID, title or start time": [
-        "nessun UID, titolo o ora di inizio"
+      "No UID, title or start time": [
+        "Nessun UID, titolo o ora di inizio"
       ],
       "Non-Gregorian": [
         "Non-gregoriano"
@@ -1856,8 +1867,8 @@
         "Il punteggio è necessario"
       ]
     },
-    "Event cancelled status badge": {
-      "cancelled": [
+    "Event canceled status badge": {
+      "canceled": [
         "annullato"
       ]
     },
@@ -1886,8 +1897,8 @@
       "Attached ICS file could not be decrypted": [
         "Il file ICS allegato non può essere decifrato"
       ],
-      "Attached ICS file could not be parsed": [
-        "Impossibile analizzare il file ICS allegato"
+      "Attached ICS file could not be read": [
+        "Impossibile leggere il file ICS allegato"
       ],
       "Invalid invitation": [
         "Invito non valido"
@@ -2273,6 +2284,9 @@
       ],
       "Account successfully updated": [
         "Account aggiornato con successo"
+      ],
+      "Activating this option will open a new composer each time you click on a mailto: link.": [
+        ""
       ],
       "Add additional addresses to your account like user2@protonmail.com": [
         "Aggiungi indirizzi aggiuntivi al tuo account come utente2@protonmail.com"
@@ -2674,6 +2688,9 @@
       ],
       "Session timed out.": [
         "Sessione scaduta."
+      ],
+      "Set ProtonMail as your default mail handler": [
+        ""
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
         "L'impostazione di PGP consente di inviare email crittografate end-to-end con un utente non ProtonMail che utilizza un servizio compatibile PGP."
@@ -3215,8 +3232,8 @@
       "BTC amount:": [
         "Importo BTC:"
       ],
-      "Calendar": [
-        "Calendario"
+      "Calendars": [
+        "Calendari"
       ],
       "Cancel": [
         "Annulla"
@@ -3581,6 +3598,12 @@
       "Add a gift code": [
         "Aggiungi un codice regalo"
       ],
+      "All mail": [
+        ""
+      ],
+      "Archive": [
+        ""
+      ],
       "Calendars": [
         "Calendari"
       ],
@@ -3590,8 +3613,14 @@
       "click here": [
         "clicca qui"
       ],
+      "Drafts": [
+        ""
+      ],
       "Go to subscription plans": [
         "Vai ai piani di abbonamento"
+      ],
+      "Inbox": [
+        ""
       ],
       "Learn more": [
         "Per saperne di più"
@@ -3599,14 +3628,32 @@
       "My calendars": [
         "Miei calendari"
       ],
+      "Outbox": [
+        ""
+      ],
       "Pay invoice": [
         "Pagamento della fattura"
       ],
       "Request an invite": [
         "Richiedi un invito"
       ],
+      "Scheduled": [
+        ""
+      ],
+      "Sent": [
+        ""
+      ],
+      "Spam": [
+        ""
+      ],
+      "Starred": [
+        ""
+      ],
       "Subscribed calendars": [
         "Calendari registrati"
+      ],
+      "Trash": [
+        ""
       ],
       "Upgrade": [
         "Effettua l'upgrade"
@@ -4083,6 +4130,20 @@
       ],
       "You can change this anytime in your settings.": [
         "Puoi cambiarlo in qualunque momento nelle impostazioni."
+      ]
+    },
+    "Onboarding ProtonCalendar": {
+      "A calendar is a record of your life. Keep your life secure and private with ${ appName }.": [
+        ""
+      ],
+      "Import events": [
+        "Importa eventi"
+      ],
+      "Meet your new encrypted calendar": [
+        "Scopri il tuo nuovo calendario criptato"
+      ],
+      "Start using ${ appName }": [
+        "Inizia ad usare ${ appName }"
       ]
     },
     "Option": {
@@ -4817,6 +4878,9 @@
       ],
       "Confirm loss of Proton bonuses": [
         "Conferma la perdita dei bonus di Proton"
+      ],
+      "Contact details": [
+        "Dettagli contatto"
       ],
       "Contact Details": [
         "Dettagli contatto"

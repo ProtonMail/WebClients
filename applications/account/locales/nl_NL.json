@@ -31,11 +31,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } winkel"
       ],
-      "activate": [
-        "activeer"
-      ],
       "Activate": [
         "Activeren"
+      ],
+      "activate": [
+        "activeer"
       ],
       "Activate ${ Name }@pm.me": [
         "Activeer ${ Name }@pm.me"
@@ -53,7 +53,7 @@
         "E-mailadres toevoegen"
       ],
       "Add calendar": [
-        ""
+        "Kalender toevoegen"
       ],
       "Add condition": [
         "Voorwaarde toevoegen"
@@ -146,7 +146,7 @@
         "Chat met ons"
       ],
       "Check import progress": [
-        ""
+        "Import-voortgang checken"
       ],
       "Choose a file or drag it here": [
         "Kies een bestand of sleep deze hier"
@@ -284,10 +284,10 @@
         "Downgraden"
       ],
       "Downgrade account": [
-        ""
+        "Account downgraden"
       ],
       "Downgrade to ${ BRAND_NAME } ${ downgradedPlanName }": [
-        ""
+        "Downgrade naar ${ BRAND_NAME } ${ downgradedPlanName }"
       ],
       "Download": [
         "Downloaden"
@@ -296,7 +296,7 @@
         "Download alle configuraties"
       ],
       "Download recovery file": [
-        ""
+        "Herstelbestand downloaden"
       ],
       "Download the Import-Export app": [
         "Download de Import-Export app"
@@ -347,13 +347,13 @@
         "Genereer sleutel"
       ],
       "Generate new recovery phrase": [
-        ""
+        "Genereer nieuwe herstelzin"
       ],
       "Generate new recovery phrase?": [
-        ""
+        "Nieuwe herstelzin genereren?"
       ],
       "Generate recovery phrase": [
-        ""
+        "Genereer herstelzin"
       ],
       "Get ProtonVPN Plus": [
         "Neem ProtonVPN Plus"
@@ -422,7 +422,7 @@
         "Behouden"
       ],
       "Keep my ${ BRAND_NAME } ${ currentPlanName } account": [
-        ""
+        "Houd mijn ${ BRAND_NAME } ${ currentPlanName } account"
       ],
       "label emails as": [
         "e-mail labellen als"
@@ -509,7 +509,7 @@
         "Opnieuw verbinden"
       ],
       "Recover data": [
-        ""
+        "Gegevens herstellen"
       ],
       "Refresh status": [
         "Status vernieuwen"
@@ -671,7 +671,7 @@
         "Alle accounts uitloggen"
       ],
       "Signing in": [
-        ""
+        "Aanmelden"
       ],
       "Signing out": [
         "Uitloggen"
@@ -689,7 +689,7 @@
         "Sorteer"
       ],
       "Start ${ PRODUCT_NAMES.EASY_SWITCH }": [
-        ""
+        "{ PRODUCT_NAMES.EASY_SWITCH } downgraden"
       ],
       "Start import": [
         "Begin met importeren"
@@ -785,10 +785,10 @@
         "Factuur bekijken"
       ],
       "Void all recovery files": [
-        ""
+        "Alle herstelbestanden ongeldig maken"
       ],
       "Void all recovery files?": [
-        ""
+        "Alle herstelbestanden ongeldig maken?"
       ],
       "Void anyway": [
         ""
@@ -874,6 +874,12 @@
       ],
       "Generate missing keys": [
         "Ontbrekende sleutels genereren"
+      ],
+      "Make default": [
+        ""
+      ],
+      "Saving": [
+        ""
       ]
     },
     "Address status": {
@@ -1694,8 +1700,8 @@
       ]
     },
     "Email body for invitation": {
-      "${ eventTitle } has been cancelled.": [
-        "${ eventTitle } is geannuleerd."
+      "${ eventTitle } has been canceled.": [
+        ""
       ],
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
         "${ eventTitle } is bijgewerkt.\n${ eventDetailsText }"
@@ -1897,6 +1903,9 @@
       ],
       "Invalid expiration date": [
         "Ongeldige vervaldatum"
+      ],
+      "Invalid invitation link": [
+        ""
       ],
       "Invalid name": [
         "Ongeldige naam"
@@ -2283,8 +2292,8 @@
       "Missing start time": [
         "Begintijd ontbreekt"
       ],
-      "no UID, title or start time": [
-        "geen UID, titel of starttijd"
+      "No UID, title or start time": [
+        ""
       ],
       "Non-Gregorian": [
         "Niet-Gregoriaanse"
@@ -2374,8 +2383,8 @@
       "Attached ICS file could not be decrypted": [
         "Bijgevoegd ICS-bestand kon niet worden gedecodeerd"
       ],
-      "Attached ICS file could not be parsed": [
-        "Bijgevoegd ICS-bestand kon niet worden verwerkt"
+      "Attached ICS file could not be read": [
+        ""
       ],
       "Invalid invitation": [
         "Ongeldige uitnodiging"
@@ -3019,6 +3028,9 @@
       "Failed": [
         "Mislukt"
       ],
+      "In progress": [
+        ""
+      ],
       "Paused": [
         "Gepauzeerd"
       ],
@@ -3062,16 +3074,16 @@
         "${ calendarName } zal worden ingesteld als standaardagenda."
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
-        "",
-        ""
+        "${ calendarsToBeCreatedCount } nieuwe kalender",
+        "${ calendarsToBeCreatedCount } nieuwe kalenders"
       ],
       "${ calendarsToBeMerged } merged calendar": [
         "",
         ""
       ],
       "${ calendarsToBeMergedCount } merged calendar": [
-        "",
-        ""
+        "${ calendarsToBeMergedCount } samengevoegde kalender",
+        "${ calendarsToBeMergedCount } samengevoegde kalenders"
       ],
       "${ mailAppName } Free": [
         "${ mailAppName } Gratis"
@@ -3124,8 +3136,8 @@
         "${ saveExtra20 } op zowel VPN als Mail door een VPN-abonnement toe te voegen."
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
-        "",
-        ""
+        "${ selectedCalendarsTotal } van ${ providerCalendars.length } kalender",
+        "${ selectedCalendarsTotal } van ${ providerCalendars.length } kalenders"
       ],
       "${ selectedFoldersCount } folder selected": [
         "${ selectedFoldersCount } map geselecteerd",
@@ -3196,10 +3208,10 @@
         "Account toegang beperkt vanwege onbetaalde facturen. Neem contact op met uw beheerder."
       ],
       "account recovery and data recovery method": [
-        ""
+        "account recovery en data recovery methode"
       ],
       "account recovery method": [
-        ""
+        "account herstel methode"
       ],
       "Account successfully updated": [
         "Account succesvol bijgewerkt"
@@ -3271,7 +3283,7 @@
         "Bedrag onder minimum (${ amount })."
       ],
       "and": [
-        ""
+        "en"
       ],
       "Anyone with this link can see all the event details of this calendar such as title, location or participants.": [
         "Iedereen met deze link kan alle details van deze agenda zien, zoals titel, locatie of deelnemers."
@@ -3406,7 +3418,7 @@
         "Klik op \"Vraag nieuwe code aan\" om een nieuwe verificatiecode te sturen naar ${ strong }. Als dit telefoonnummer onjuist is, klik op \"Bewerken\" om het te corrigeren."
       ],
       "Close this screen to exit.": [
-        ""
+        "Sluit dit scherm om af te sluiten."
       ],
       "Connections": [
         "Verbindingen"
@@ -3715,7 +3727,7 @@
         ""
       ],
       "Import from": [
-        ""
+        "Importeren van"
       ],
       "Import in progress": [
         ""
@@ -3775,7 +3787,7 @@
         "Internetverbinding hersteld."
       ],
       "it’s imperative": [
-        ""
+        "het is noodzakelijk"
       ],
       "Just confirm your selection and we'll do the rest.": [
         ""
@@ -3853,7 +3865,7 @@
         "Vul deze informatie handmatig in op uw tweestapsverificatieapparaat om uw account te configureren. ${ _switchButton }."
       ],
       "Merged": [
-        ""
+        "Samengevoegd"
       ],
       "Monthly ${ onDayString }": [
         "Maandelijks ${ onDayString }"
@@ -3871,7 +3883,7 @@
         "Benoem uw nieuwe map en selecteer de bovenliggende map waarin u deze wilt plaatsen. Als u geen bovenliggende map selecteert, wordt deze als hoofdmap gemaakt."
       ],
       "New": [
-        ""
+        "Nieuw"
       ],
       "New to ${ BRAND_NAME }? ${ signupLink }": [
         "Nieuw bij ${ BRAND_NAME }? ${ signupLink }"
@@ -3880,7 +3892,7 @@
         ""
       ],
       "No account recovery method set, you are at risk of losing access to your account": [
-        ""
+        "Geen account herstel methode ingesteld, loopt u het risico de toegang tot uw account te verliezen"
       ],
       "No action selected": [
         "Geen actie geselecteerd"
@@ -3984,6 +3996,9 @@
       "Please enter a password to encrypt your private key with before exporting.": [
         "Voer een wachtwoord in voor het versleutelen van uw geheime sleutel voordat u deze exporteert."
       ],
+      "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
+        ""
+      ],
       "Please note that if you delete this address, you will no longer be able to send or receive emails using this address.": [
         "Let op: als u dit adres verwijdert, kunt u geen e-mails meer verzenden of ontvangen met behulp van dit adres."
       ],
@@ -4022,9 +4037,6 @@
       ],
       "Please wait...": [
         "Een ogenblik geduld..."
-      ],
-      "Please write your recovery phrase down in the order it appears and keep it somewhere safe. Your recovery phrase can be used to fully recover access to your account and your encrypted messages.": [
-        "Schrijf uw herstelzin op in de volgorde waarin deze verschijnt en bewaar deze ergens veilig. Uw herstelzin kan worden gebruikt om de toegang tot uw account en uw gecodeerde berichten volledig te herstellen."
       ],
       "Plus or Visionary subscription required": [
         "Plus- of Visionary-abonnement vereist"
@@ -4445,7 +4457,7 @@
         "U kunt een nieuwe versleutelingssleutel genereren als u denkt dat uw vorige sleutel uitgelekt is."
       ],
       "You can now receive messages to your @pm.me address. Upgrade to a paid plan to also send emails using your @pm.me address and create additional @pm.me addresses.": [
-        "U kunt nu berichten ontvangen op uw @pm.me-adres. Upgrade naar een betaald abonnement om ook e-mails te versturen met behulp van uw @pm.me-adres en maak additionele @pm.me-adressen."
+        "U kunt nu berichten ontvangen op uw @pm.me-adres. Upgrade naar een betaald abonnement om ook e-mails te versturen via uw @pm.me-adres en meerdere @pm.me-adressen te maken."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "U kunt meldingen inschakelen om meldingen te krijgen wanneer nieuwe e-mailberichten in deze map binnenkomen."
@@ -4499,7 +4511,7 @@
         "U heeft 100% van uw opslagruimte bereikt. U kunt geen nieuwe e-mails verzenden of ontvangen. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You will ${ loseAllData } in your ${ BRAND_NAME } Account. To restore it, you will need to enter your old password.": [
-        "U zult ${ loseAllData } in uw ${ BRAND_NAME } account moeten invoeren. Om dit te herstellen moet u uw oude wachtwoord invoeren."
+        "U zult ${ loseAllData } in uw ${ BRAND_NAME }-account moeten invoeren. Om dit te herstellen moet u uw oude wachtwoord invoeren."
       ],
       "You will be soon redirected to your bank to verify your payment.": [
         "U wordt doorgestuurd naar uw bank om uw betaling te controleren."
@@ -4523,7 +4535,7 @@
         "Uw account wordt geüpgraded, dit kan tot 30 seconden duren."
       ],
       "Your account recovery method is set": [
-        ""
+        "Uw account herstel methode is ingesteld"
       ],
       "Your account will be updated once the payment is cleared.": [
         "Uw account zal worden bijgewerkt zodra de betaling is gewist."
@@ -4538,13 +4550,13 @@
         "Uw Bloklijst is leeg."
       ],
       "Your data is encrypted, you can recover your data by reactivating your keys.": [
-        ""
+        "Uw gegevens zijn gecodeerd, u kunt uw gegevens herstellen door uw sleutels opnieuw te activeren."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         ""
       ],
       "Your data recovery method is set": [
-        ""
+        "Uw methode voor gegevensherstel is ingesteld"
       ],
       "Your email will only be used for this one-time verification.": [
         "Uw e-mailadres wordt alleen gebruikt voor deze eenmalige verificatie."
@@ -5084,8 +5096,8 @@
       "BTC amount:": [
         "BTC bedrag:"
       ],
-      "Calendar": [
-        "Agenda"
+      "Calendars": [
+        ""
       ],
       "Cancel": [
         "Annuleren"
@@ -7249,7 +7261,7 @@
         "Originele berichten verwijderen"
       ],
       "DMARC value copied to clipboard": [
-        ""
+        "DMARC-waarde gekopieerd naar klembord"
       ],
       "Domain verified": [
         "Domeinnaam geverifieerd"
@@ -7324,7 +7336,7 @@
         "Sessies ingetrokken"
       ],
       "SPF value copied to clipboard": [
-        ""
+        "SPF-waarde gekopieerd naar klembord"
       ],
       "User created": [
         "Gebruiker aangemaakt"
@@ -7333,10 +7345,10 @@
         "Gebruiker bijgewerkt"
       ],
       "Value copied to clipboard": [
-        ""
+        "Waarde gekopieerd naar klembord"
       ],
       "Verification code copied to clipboard": [
-        ""
+        "Verificatiecode gekopieerd naar klembord"
       ],
       "Verification successful": [
         "Verificatie gelukt"

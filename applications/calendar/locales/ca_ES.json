@@ -140,6 +140,9 @@
       "Decrease": [
         "Reduir"
       ],
+      "Default mail handler": [
+        ""
+      ],
       "Delete": [
         "Eliminar"
       ],
@@ -342,6 +345,9 @@
       ],
       "Previous year": [
         "Any anterior"
+      ],
+      "Prompt browser setting": [
+        ""
       ],
       "Quit": [
         ""
@@ -899,8 +905,8 @@
       "${ name } tentatively accepted the invitation": [
         "${ name } ha acceptat provisionalment la invitació"
       ],
-      "This event has been cancelled": [
-        "Aquest esdeveniment ha estat cancel·lat"
+      "This event has been canceled": [
+        ""
       ],
       "You accepted the invitation": [
         "Heu acceptat la invitació"
@@ -974,6 +980,11 @@
       ],
       "Open": [
         "Obrir"
+      ]
+    },
+    "colon": {
+      ": ": [
+        ""
       ]
     },
     "Composer size": {
@@ -1253,8 +1264,8 @@
       ]
     },
     "Email body for invitation": {
-      "${ eventTitle } has been cancelled.": [
-        "${ eventTitle } s'ha cancel·lat."
+      "${ eventTitle } has been canceled.": [
+        ""
       ],
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
         "${ eventTitle } s'ha actualitzat.\n${ eventDetailsText }"
@@ -1781,7 +1792,7 @@
       "Missing start time": [
         ""
       ],
-      "no UID, title or start time": [
+      "No UID, title or start time": [
         ""
       ],
       "Non-Gregorian": [
@@ -1856,9 +1867,9 @@
         "Es requereix la valoració"
       ]
     },
-    "Event cancelled status badge": {
-      "cancelled": [
-        "cancel·lat"
+    "Event canceled status badge": {
+      "canceled": [
+        ""
       ]
     },
     "Event delete button tooltip": {
@@ -1886,7 +1897,7 @@
       "Attached ICS file could not be decrypted": [
         ""
       ],
-      "Attached ICS file could not be parsed": [
+      "Attached ICS file could not be read": [
         ""
       ],
       "Invalid invitation": [
@@ -2273,6 +2284,9 @@
       ],
       "Account successfully updated": [
         "El compte s'ha actualitzat correctament"
+      ],
+      "Activating this option will open a new composer each time you click on a mailto: link.": [
+        ""
       ],
       "Add additional addresses to your account like user2@protonmail.com": [
         "Afegiu adreces addicionals al vostre compte com ara usuari2@protonmail.com"
@@ -2674,6 +2688,9 @@
       ],
       "Session timed out.": [
         "Temps de sessió esgotat."
+      ],
+      "Set ProtonMail as your default mail handler": [
+        ""
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
         "La configuració de PGP permet enviar correus electrònics xifrats de punta a extrem amb un usuari que no és ProtonMail i que utilitza un servei compatible amb PGP."
@@ -3215,7 +3232,7 @@
       "BTC amount:": [
         "Import de BTC:"
       ],
-      "Calendar": [
+      "Calendars": [
         ""
       ],
       "Cancel": [
@@ -3581,6 +3598,12 @@
       "Add a gift code": [
         "Afegiu un codi regal"
       ],
+      "All mail": [
+        ""
+      ],
+      "Archive": [
+        ""
+      ],
       "Calendars": [
         "Calendaris"
       ],
@@ -3590,8 +3613,14 @@
       "click here": [
         "feu clic aquí"
       ],
+      "Drafts": [
+        ""
+      ],
       "Go to subscription plans": [
         "Anar als plans de subscripció"
+      ],
+      "Inbox": [
+        ""
       ],
       "Learn more": [
         "Més informació"
@@ -3599,14 +3628,32 @@
       "My calendars": [
         "Els meus calendaris"
       ],
+      "Outbox": [
+        ""
+      ],
       "Pay invoice": [
         "Factura de pagament"
       ],
       "Request an invite": [
         "Demana una invitació"
       ],
+      "Scheduled": [
+        ""
+      ],
+      "Sent": [
+        ""
+      ],
+      "Spam": [
+        ""
+      ],
+      "Starred": [
+        ""
+      ],
       "Subscribed calendars": [
         "Calendaris subscrits"
+      ],
+      "Trash": [
+        ""
       ],
       "Upgrade": [
         "Actualitzar"
@@ -4083,6 +4130,20 @@
       ],
       "You can change this anytime in your settings.": [
         "Podeu canviar-ho en qualsevol moment a les preferències."
+      ]
+    },
+    "Onboarding ProtonCalendar": {
+      "A calendar is a record of your life. Keep your life secure and private with ${ appName }.": [
+        ""
+      ],
+      "Import events": [
+        ""
+      ],
+      "Meet your new encrypted calendar": [
+        ""
+      ],
+      "Start using ${ appName }": [
+        ""
       ]
     },
     "Option": {
@@ -4817,6 +4878,9 @@
       ],
       "Confirm loss of Proton bonuses": [
         "Confirmeu la pèrdua dels beneficis de Proton"
+      ],
+      "Contact details": [
+        ""
       ],
       "Contact Details": [
         "Dades de contacte"

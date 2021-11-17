@@ -31,10 +31,10 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } 商店"
       ],
-      "activate": [
+      "Activate": [
         "啟用"
       ],
-      "Activate": [
+      "activate": [
         "啟用"
       ],
       "Activate ${ Name }@pm.me": [
@@ -865,6 +865,12 @@
       ],
       "Generate missing keys": [
         "產生遺漏的金鑰"
+      ],
+      "Make default": [
+        ""
+      ],
+      "Saving": [
+        ""
       ]
     },
     "Address status": {
@@ -1676,8 +1682,8 @@
       ]
     },
     "Email body for invitation": {
-      "${ eventTitle } has been cancelled.": [
-        "${ eventTitle } 已告取消，特此通知。"
+      "${ eventTitle } has been canceled.": [
+        ""
       ],
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
         "${ eventTitle } 已修訂詳情：\n${ eventDetailsText }"
@@ -1878,6 +1884,9 @@
       ],
       "Invalid expiration date": [
         "到期日無效"
+      ],
+      "Invalid invitation link": [
+        "無效的邀請連結"
       ],
       "Invalid name": [
         "名稱無效"
@@ -2262,8 +2271,8 @@
       "Missing start time": [
         "遺漏開始時間"
       ],
-      "no UID, title or start time": [
-        "無 UID、標題或開始時間"
+      "No UID, title or start time": [
+        ""
       ],
       "Non-Gregorian": [
         "非西曆"
@@ -2353,8 +2362,8 @@
       "Attached ICS file could not be decrypted": [
         "附件的 ICS 檔案無法解密"
       ],
-      "Attached ICS file could not be parsed": [
-        "附件的 ICS 檔案無法解析"
+      "Attached ICS file could not be read": [
+        ""
       ],
       "Invalid invitation": [
         "邀請無效"
@@ -2986,6 +2995,9 @@
       ],
       "Failed": [
         "已失敗"
+      ],
+      "In progress": [
+        ""
       ],
       "Paused": [
         "已暫停"
@@ -3929,6 +3941,9 @@
       "Please enter a password to encrypt your private key with before exporting.": [
         "匯出前，請先輸入一個用來加密私密金鑰的密碼。"
       ],
+      "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
+        ""
+      ],
       "Please note that if you delete this address, you will no longer be able to send or receive emails using this address.": [
         "請注意：假如您刪除此電子郵件地址，將無法再以此電子郵件地址傳送或接收電子郵件。"
       ],
@@ -3967,9 +3982,6 @@
       ],
       "Please wait...": [
         "請稍候……"
-      ],
-      "Please write your recovery phrase down in the order it appears and keep it somewhere safe. Your recovery phrase can be used to fully recover access to your account and your encrypted messages.": [
-        "請按照出現的順序寫下您的復原短語，並將其儲存在安全的地方。您的復原短語可用於完全恢復對您帳號與加密訊息的存取權限。"
       ],
       "Plus or Visionary subscription required": [
         "需為 Plus 或 Visionary 訂閱方案"
@@ -5024,7 +5036,7 @@
       "BTC amount:": [
         "BTC 數量："
       ],
-      "Calendar": [
+      "Calendars": [
         ""
       ],
       "Cancel": [
