@@ -124,6 +124,17 @@ describe('transformEscape', () => {
         <span>dew style="content: \\"a": url(</span>
     `;
 
+    const STYLE_TAG = `
+        <style>
+            .img-url { background: no-repeat url('https://i.imgur.com/WScAnHr.jpg'); }
+        </style>
+        <div class="img-url"></div>
+    `;
+
+    const STYLE_TAG_CLEAN = `
+        <div style="background: no-repeat proton-url('https://i.imgur.com/WScAnHr.jpg');"></div>
+    `;
+
     // TODO: Fix those 2
     // <div style="inline-size: 500px; block-size: 500px; content: &quot; background:url(test)&quot;">ddewdwed</div>
     // <div style="inline-size: 500px; block-size: 500px; content: &apos; background:url(test)&apos;">ddewdwed</div>
@@ -366,6 +377,11 @@ describe('transformEscape', () => {
         it('should not break the HTML', () => {
             const { querySelector } = setup(EX_URL);
             expect(querySelector('body')?.innerHTML).toEqual(EX_URL_CLEAN);
+        });
+
+        it('should escape url in style tag', () => {
+            const { querySelector } = setup(STYLE_TAG);
+            expect(querySelector('body')?.innerHTML).toEqual(STYLE_TAG_CLEAN);
         });
     });
 
