@@ -19,6 +19,7 @@ import { CALENDAR_TO_BE_CREATED_PREFIX } from '../../constants';
 interface Props {
     providerCalendars: ImportedCalendar[];
     calendars: Calendar[];
+    activeCalendars: Calendar[];
     importedEmailAddress: string;
     toEmail: string;
     payload: CalendarImporterPayload;
@@ -37,6 +38,7 @@ type CalendarMapping = {
 const CustomizeCalendarImportModal = ({
     providerCalendars,
     calendars,
+    activeCalendars,
     importedEmailAddress,
     toEmail,
     payload,
@@ -131,24 +133,34 @@ const CustomizeCalendarImportModal = ({
     const disabled = calendarLimitReached || selectedCalendarsTotal === 0;
     const calendarToFixCount = Math.abs(MAX_CALENDARS_PER_USER - calendars.length - calendarsToBeCreatedCount);
 
+    const canMerge = activeCalendars.length > 0;
+
     const errorBox = (
         <div className="rounded-bigger p1 mb1 bg-danger color-white text-semibold no-border">
             {c('Error').t`Can't create new calendars for all imported calendars due to the personal calendar limit.`}
             <ul className="m0">
                 <li>
-                    {c('Error').ngettext(
-                        msgid`Deselect at least ${calendarToFixCount} calendar or`,
-                        `Deselect at least ${calendarToFixCount} calendars or`,
-                        calendarToFixCount
-                    )}
+                    {canMerge
+                        ? c('Error').ngettext(
+                              msgid`Deselect at least ${calendarToFixCount} calendar or`,
+                              `Deselect at least ${calendarToFixCount} calendars or`,
+                              calendarToFixCount
+                          )
+                        : c('Error').ngettext(
+                              msgid`Deselect at least ${calendarToFixCount} calendar`,
+                              `Deselect at least ${calendarToFixCount} calendars`,
+                              calendarToFixCount
+                          )}
                 </li>
-                <li>
-                    {c('Error').ngettext(
-                        msgid`Merge at least ${calendarToFixCount} calendar with an existing Proton calendar`,
-                        `Merge at least ${calendarToFixCount} calendars with existing Proton calendars`,
-                        calendarToFixCount
-                    )}
-                </li>
+                {canMerge && (
+                    <li>
+                        {c('Error').ngettext(
+                            msgid`Merge at least ${calendarToFixCount} calendar with an existing Proton calendar`,
+                            `Merge at least ${calendarToFixCount} calendars with existing Proton calendars`,
+                            calendarToFixCount
+                        )}
+                    </li>
+                )}
             </ul>
         </div>
     );
@@ -166,8 +178,11 @@ const CustomizeCalendarImportModal = ({
             }
             {...rest}
         >
-            <div className="mb1">{c('Info')
-                .t`Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit. You can also merge imported calendars with existing Proton calendars.`}</div>
+            <div className="mb1">
+                {c('Info')
+                    .t`Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.`}
+                {canMerge && ` ${c('Info').t`You can also merge imported calendars with existing Proton calendars.`}`}
+            </div>
 
             {calendarLimitReached && errorBox}
 
@@ -201,7 +216,7 @@ const CustomizeCalendarImportModal = ({
                     checked={checkedMap[calendar.ID]}
                     toggleChecked={toggleChecked}
                     isLast={i + 1 === providerCalendars.length}
-                    calendars={calendars}
+                    activeCalendars={activeCalendars}
                     value={calendarMapping[calendar.ID]}
                     updateCalendarMapping={updateCalendarMapping}
                     calendarLimitReached={calendarLimitReached}
