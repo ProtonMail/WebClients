@@ -3,6 +3,8 @@ import { uniqID } from '../string';
 import { Base64Cache } from '../../hooks/useBase64Cache';
 import { inlineCss } from '../dom';
 
+export const IMG_SRC_BASE_64_PREFIX = 'data-proton-replace-base';
+
 /**
  * Parsing base64 is expensive and can create a crash.
  * Here we can reduce input string from many Mb to less than 100kb, which is way easier to escape.
@@ -23,7 +25,7 @@ const removeBase64 = (input: string, cache?: Base64Cache): string => {
         if (cache) {
             cache.set(hash, match);
         }
-        return `data-proton-replace-base="${hash}"`;
+        return `${IMG_SRC_BASE_64_PREFIX}="${hash}"`;
     });
 };
 
@@ -33,9 +35,9 @@ const removeBase64 = (input: string, cache?: Base64Cache): string => {
  * @return HTML
  */
 export const attachBase64 = (element: Element, cache: Base64Cache) => {
-    const nodes = [...element.querySelectorAll('[data-proton-replace-base]')];
+    const nodes = [...element.querySelectorAll(`[${IMG_SRC_BASE_64_PREFIX}]`)];
     nodes.forEach((node) => {
-        const hash = node.getAttribute('data-proton-replace-base');
+        const hash = node.getAttribute(IMG_SRC_BASE_64_PREFIX);
 
         // Clean the string and remove \n else it won't load inside the browser
         const src = (cache.get(hash || '') || '')
@@ -45,7 +47,7 @@ export const attachBase64 = (element: Element, cache: Base64Cache) => {
         if (src) {
             node.setAttribute('src', src);
         }
-        node.removeAttribute('data-proton-replace-base');
+        node.removeAttribute(IMG_SRC_BASE_64_PREFIX);
     });
 };
 
