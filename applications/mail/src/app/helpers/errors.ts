@@ -1,5 +1,5 @@
-import { ConversationErrors } from '../models/conversation';
 import { MessageErrors } from '../models/message';
+import { ConversationErrors } from '../logic/conversations/conversationsTypes';
 
 /**
  * Define wether or not the error comes from a network error

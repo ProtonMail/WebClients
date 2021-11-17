@@ -10,7 +10,7 @@ interface Props {
     className?: string;
 }
 
-const ItemAction = ({ element = {}, className }: Props) => {
+const ItemAction = ({ element, className }: Props) => {
     if (!isMessage(element)) {
         return null;
     }

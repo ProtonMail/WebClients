@@ -1,11 +1,12 @@
 import { MailSettings } from '@proton/shared/lib/interfaces';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
-import { act } from '@testing-library/react';
-import { render, clearAll, conversationCache, messageCache, addApiMock } from '../../helpers/test/helper';
+import { render, clearAll, messageCache, addApiMock } from '../../helpers/test/helper';
 import { Breakpoints } from '../../models/utils';
 import ConversationView from './ConversationView';
-import { Conversation, ConversationCacheEntry } from '../../models/conversation';
-import { mergeConversations } from '../../helpers/conversation';
+import { Conversation } from '../../models/conversation';
+import { ConversationState } from '../../logic/conversations/conversationsTypes';
+import { store } from '../../logic/store';
+import { initialize, updateConversation } from '../../logic/conversations/conversationsActions';
 
 describe('ConversationView', () => {
     const props = {
@@ -35,7 +36,7 @@ describe('ConversationView', () => {
         Messages: [message],
         loadRetry: 0,
         errors: {},
-    } as ConversationCacheEntry;
+    } as ConversationState;
 
     const setup = async () => {
         const result = await render(<ConversationView {...props} />);
@@ -46,26 +47,27 @@ describe('ConversationView', () => {
 
     beforeEach(clearAll);
 
-    it('should return cache value', async () => {
-        conversationCache.set(props.conversationID, conversationCacheEntry);
+    it('should return store value', async () => {
+        store.dispatch(initialize(conversationCacheEntry));
         messageCache.set(message.ID, { localID: message.ID, data: message });
         const { getByText } = await setup();
         getByText(conversation.Subject as string);
     });
 
-    it('should update value if cache is updated', async () => {
-        conversationCache.set(props.conversationID, conversationCacheEntry);
+    it('should update value if store is updated', async () => {
+        store.dispatch(initialize(conversationCacheEntry));
         messageCache.set(message.ID, { localID: message.ID, data: message });
         const { getByText, rerender } = await setup();
         getByText(conversation.Subject as string);
 
         const newSubject = 'other subject';
-        const newConversation = mergeConversations(conversationCacheEntry, {
-            Conversation: { Subject: newSubject },
-        });
-        act(() => {
-            conversationCache.set(props.conversationID, newConversation);
-        });
+
+        store.dispatch(
+            updateConversation({
+                ID: conversation.ID,
+                updates: { Conversation: { Subject: newSubject, ID: conversation.ID } },
+            })
+        );
 
         await rerender();
         getByText(newSubject);
@@ -85,10 +87,11 @@ describe('ConversationView', () => {
             Messages: [message],
             loadRetry: 0,
             errors: {},
-        } as ConversationCacheEntry;
+        } as ConversationState;
 
-        conversationCache.set(props.conversationID, conversationCacheEntry);
-        conversationCache.set(conversation2.ID as string, conversationCacheEntry2);
+        store.dispatch(initialize(conversationCacheEntry));
+        store.dispatch(initialize(conversationCacheEntry2));
+
         const { getByText, rerender } = await setup();
         getByText(conversation.Subject as string);
 

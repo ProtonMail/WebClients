@@ -11,12 +11,12 @@ interface Props {
     size?: IconSize;
 }
 
-const ItemStar = ({ element = {}, size }: Props) => {
+const ItemStar = ({ element, size }: Props) => {
     const [loading, withLoading] = useLoading();
     const star = useStar();
     const [{ Shortcuts = 0 } = {}] = useMailSettings();
 
-    const isStarred = testIsStarred(element);
+    const isStarred = testIsStarred(element || ({} as Element));
 
     const title = isMessage(element)
         ? isStarred
@@ -31,7 +31,7 @@ const ItemStar = ({ element = {}, size }: Props) => {
         // Programmatically block the action instead of disabling the action
         // Perhaps a bit less accessible but prevent to collapse a message on a second click
         if (!loading) {
-            void withLoading(star([element], !isStarred));
+            void withLoading(star([element || ({} as Element)], !isStarred));
         }
     };
 

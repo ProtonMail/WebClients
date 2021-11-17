@@ -4,7 +4,6 @@ import { Address, DecryptedKey, Key } from '@proton/shared/lib/interfaces';
 import { ADDRESS_STATUS } from '@proton/shared/lib/constants';
 import { MessageExtended } from '../../models/message';
 import { Base64Cache } from '../../hooks/useBase64Cache';
-import { ConversationCacheEntry } from '../../models/conversation';
 import { addKeysToAddressKeysCache } from './crypto';
 
 export interface ResolvedRequest<T> {
@@ -24,7 +23,6 @@ export const getInstance = () => {
 
 export const cache = createCache();
 export const messageCache = createCache<string, MessageExtended>();
-export const conversationCache = createCache<string, ConversationCacheEntry>();
 export const addressKeysCache = createCache<string, { status: number; value: Partial<DecryptedKey>[] }>();
 export const base64Cache = createCache<string, string>() as Base64Cache;
 

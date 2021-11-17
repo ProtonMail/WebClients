@@ -1,8 +1,7 @@
 import { Recipient } from '@proton/shared/lib/interfaces/Address';
-import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
 export interface Conversation {
-    ID?: string;
+    ID: string;
     Subject?: string;
     Size?: number;
     Time?: number;
@@ -27,22 +26,4 @@ export interface ConversationLabel {
     ContextTime?: number;
     ContextSize?: number;
     ContextNumAttachments?: number;
-}
-
-export interface ConversationResult {
-    Conversation: Conversation;
-    Messages?: Message[];
-}
-
-export interface ConversationErrors {
-    network?: Error[];
-    notExist?: Error[];
-    unknown?: Error[];
-}
-
-export interface ConversationCacheEntry {
-    Conversation?: Conversation;
-    Messages?: Message[];
-    loadRetry: number;
-    errors: ConversationErrors;
 }

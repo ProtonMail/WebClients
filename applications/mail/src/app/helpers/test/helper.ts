@@ -1,14 +1,14 @@
 import { act } from '@testing-library/react';
 import { waitFor } from '@testing-library/dom';
 import { useEventManager } from '@proton/components';
-import { clearCache, messageCache, conversationCache, addressKeysCache, base64Cache, clearContactCache } from './cache';
+import { clearCache, messageCache, addressKeysCache, base64Cache, clearContactCache } from './cache';
 import { api, clearApiMocks } from './api';
 import { eventManagerListeners } from './event-manager';
 import { clearApiKeys } from './crypto';
 import { clearApiContacts } from './contact';
 import { resetHistory } from './render';
-import { globalReset } from '../../logic/actions';
 import { store } from '../../logic/store';
+import { globalReset } from '../../logic/actions';
 
 export * from './cache';
 export * from './crypto';
@@ -27,7 +27,6 @@ export const clearAll = () => {
     clearApiKeys();
     clearApiContacts();
     messageCache.clear();
-    conversationCache.clear();
     addressKeysCache.clear();
     base64Cache.clear();
     eventManagerListeners.splice(0, eventManagerListeners.length);
