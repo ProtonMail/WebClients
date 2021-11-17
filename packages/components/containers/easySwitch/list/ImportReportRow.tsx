@@ -49,7 +49,9 @@ const ImportReportRow = ({ report }: Props) => {
                 <Icon name={importTypeIcon()} className="color-weak" />
             </div>
             <div className="flex-item-fluid">
-                <div className="w100 text-ellipsis">{Account}</div>
+                <div className="w100 text-ellipsis" title={Account}>
+                    {Account}
+                </div>
                 <div className="flex color-weak">
                     <Icon name={importTypeIcon()} className="flex-align-self-center mr0-5 no-desktop no-tablet" />
                     {importType()}
