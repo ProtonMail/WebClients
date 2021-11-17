@@ -25,9 +25,25 @@ const useVPNServersCount = (): [VPNServers, boolean] => {
                 (server: { Tier: number }) => server.Tier === 0
             ).length;
 
+            const countBasicVPNServers = resultLogicalServerInfo.filter(
+                (server: { Tier: number }) => server.Tier === 1
+            ).length;
+
+            const countPlusVPNServers = resultLogicalServerInfo.filter(
+                (server: { Tier: number }) => server.Tier === 2
+            ).length;
+
+            let countBasicVpnServersShow = countBasicVPNServers + countFreeVPNServers;
+            let countPlusVpnServersShow = countPlusVPNServers + countBasicVPNServers + countFreeVPNServers;
+
+            countBasicVpnServersShow = Math.floor(countBasicVpnServersShow / 50) * 50;
+            countPlusVpnServersShow = Math.floor(countPlusVpnServersShow / 100) * 100;
+
             const updatedResult = {
                 ...DEFAULT_RESULT,
                 free_vpn: countFreeVPNServers,
+                [PLANS.VPNBASIC]: countBasicVpnServersShow,
+                [PLANS.VPNPLUS]: countPlusVpnServersShow,
             };
 
             setResult(updatedResult);
