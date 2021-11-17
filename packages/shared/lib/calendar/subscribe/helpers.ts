@@ -39,7 +39,7 @@ export const getIsCalendarSubscriptionEventManagerUpdate = (
     return event.Action === EVENT_ACTIONS.UPDATE;
 };
 
-export const getIsPersonalCalendar = (calendar: Calendar | SubscribedCalendar): calendar is SubscribedCalendar => {
+export const getIsPersonalCalendar = (calendar: Calendar | SubscribedCalendar): calendar is Calendar => {
     return calendar.Type === CALENDAR_TYPE.PERSONAL;
 };
 

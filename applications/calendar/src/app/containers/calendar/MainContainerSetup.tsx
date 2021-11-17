@@ -1,5 +1,3 @@
-import { getIsPersonalCalendar } from '@proton/shared/lib/calendar/subscribe/helpers';
-import { unary } from '@proton/shared/lib/helpers/function';
 import { useMemo, useRef, useState } from 'react';
 import { Redirect, Route, Switch } from 'react-router';
 import {
@@ -62,10 +60,7 @@ const MainContainerSetup = ({ user, addresses, calendars }: Props) => {
         return getActiveAddresses(addresses);
     }, [addresses]);
 
-    const defaultCalendar = getDefaultCalendar(
-        activeCalendars.filter(unary(getIsPersonalCalendar)),
-        calendarUserSettings.DefaultCalendarID
-    );
+    const defaultCalendar = getDefaultCalendar(activeCalendars, calendarUserSettings.DefaultCalendarID);
 
     const [localTzid] = useState(() => getTimezone());
     const [customTzid, setCustomTzid] = useState('');
