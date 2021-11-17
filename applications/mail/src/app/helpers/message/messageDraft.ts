@@ -158,7 +158,7 @@ const generateBlockquote = (
     mailSettings: MailSettings,
     addresses: Address[]
 ) => {
-    const date = formatFullDate(getDate(referenceMessage?.data, ''));
+    const date = formatFullDate(getDate(referenceMessage?.data as Message, ''));
     const name = referenceMessage?.data?.Sender?.Name;
     const address = `&lt;${referenceMessage?.data?.Sender?.Address}&gt;`;
     const previously = c('Message').t`On ${date}, ${name} ${address} wrote:`;

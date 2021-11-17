@@ -1,5 +1,6 @@
 import { Icon } from '@proton/components';
 
+import { Element } from '../../../models/element';
 import { MessageExtended } from '../../../models/message';
 import { useExpiration } from '../../../hooks/useExpiration';
 
@@ -8,7 +9,7 @@ interface Props {
 }
 
 const ExtraExpirationTime = ({ message }: Props) => {
-    const [isExpiration, delayMessage] = useExpiration(message.data || {});
+    const [isExpiration, delayMessage] = useExpiration(message.data || ({} as Element));
 
     if (!isExpiration) {
         return null;

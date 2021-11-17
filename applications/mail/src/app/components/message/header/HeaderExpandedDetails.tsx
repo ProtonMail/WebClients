@@ -4,6 +4,7 @@ import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { Label } from '@proton/shared/lib/interfaces/Label';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 import { getAttachments } from '@proton/shared/lib/mail/messages';
+import { Element } from '../../../models/element';
 import ItemDate from '../../list/ItemDate';
 import ItemLabels from '../../list/ItemLabels';
 import { MessageExtended } from '../../../models/message';
@@ -41,7 +42,7 @@ const HeaderExpandedDetails = ({
     const folders = getCurrentFolders(message.data, labelID, customFolders, mailSettings);
     const locationText = folders.map((folder) => folder.name).join(', ');
 
-    const sizeText = humanSize(getSize(message.data || {}));
+    const sizeText = humanSize(getSize(message.data || ({} as Element)));
 
     const { hasProtection, hasShowImage, numberOfTrackers, needsMoreProtection, title, openSpyTrackerModal } =
         useMessageTrackers({

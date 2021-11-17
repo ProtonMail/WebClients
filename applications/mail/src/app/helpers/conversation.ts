@@ -1,4 +1,5 @@
-import { Conversation, ConversationCacheEntry } from '../models/conversation';
+import { Conversation } from '../models/conversation';
+import { ConversationState } from '../logic/conversations/conversationsTypes';
 
 type LabelValue = 'NumMessages' | 'NumUnread' | 'Time' | 'Size' | 'NumAttachments';
 type LabelContextValue =
@@ -8,7 +9,7 @@ type LabelContextValue =
     | 'ContextSize'
     | 'ContextNumAttachments';
 
-export const getSenders = ({ Senders = [] }: Conversation = {}) => Senders;
+export const getSenders = ({ Senders = [] }: Conversation) => Senders;
 
 export const getRecipients = ({ Recipients = [] }: Conversation) => Recipients;
 
@@ -30,14 +31,14 @@ export const getConversationContextValue = (
     return 0;
 };
 
-export const getNumAttachments = (conversation: Conversation = {}) => conversation.NumAttachments || 0;
+export const getNumAttachments = (conversation: Conversation | undefined) => conversation?.NumAttachments || 0;
 
-export const hasAttachments = (conversation: Conversation = {}) => getNumAttachments(conversation) > 0;
+export const hasAttachments = (conversation: Conversation | undefined) => getNumAttachments(conversation) > 0;
 
-export const getNumUnread = (conversation: Conversation = {}, labelID: string | undefined) =>
+export const getNumUnread = (conversation: Conversation | undefined, labelID: string | undefined) =>
     getConversationContextValue(conversation, 'NumUnread', labelID);
 
-export const isUnread = (conversation: Conversation = {}, labelID: string | undefined) =>
+export const isUnread = (conversation: Conversation | undefined, labelID: string | undefined) =>
     getNumUnread(conversation, labelID) !== 0;
 
 export const getNumMessages = (conversation: Conversation | undefined, labelID: string | undefined) =>
@@ -64,9 +65,9 @@ export const getLabelIDs = (conversation: Conversation | undefined, contextLabel
 };
 
 export const mergeConversations = (
-    reference: ConversationCacheEntry | undefined,
-    data: Partial<ConversationCacheEntry>
-): ConversationCacheEntry => {
+    reference: ConversationState | undefined,
+    data: Partial<ConversationState>
+): ConversationState => {
     return {
         ...reference,
         ...data,
@@ -75,5 +76,5 @@ export const mergeConversations = (
                 ? ({ ...reference?.Conversation, ...data.Conversation } as Conversation)
                 : undefined,
         errors: { ...reference?.errors, ...data.errors },
-    } as ConversationCacheEntry;
+    } as ConversationState;
 };

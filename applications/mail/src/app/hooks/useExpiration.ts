@@ -47,13 +47,15 @@ export const formatDelay = (nowDate: Date, expirationDate: Date): string => {
         .join(', ');
 };
 
-export const useExpiration = ({ ExpirationTime }: Element): [boolean, string] => {
+export const useExpiration = (element: Element): [boolean, string] => {
     const [delayMessage, setDelayMessage] = useState('');
 
-    const expirationDate = useMemo(() => fromUnixTime(ExpirationTime || 0), [ExpirationTime]);
+    const expirationTime = element.ExpirationTime;
+
+    const expirationDate = useMemo(() => fromUnixTime(expirationTime || 0), [expirationTime]);
 
     const handler = useHandler(() => {
-        if (!ExpirationTime) {
+        if (!expirationTime) {
             setDelayMessage('');
             return;
         }
@@ -72,11 +74,11 @@ export const useExpiration = ({ ExpirationTime }: Element): [boolean, string] =>
     useEffect(() => {
         handler();
 
-        if (ExpirationTime) {
+        if (expirationTime) {
             const intervalID = window.setInterval(handler, 1000); // eslint-disable-line @typescript-eslint/no-implied-eval
             return () => clearInterval(intervalID);
         }
-    }, [ExpirationTime]);
+    }, [expirationTime]);
 
     return [delayMessage !== '', delayMessage];
 };

@@ -61,7 +61,7 @@ const ConversationView = ({
     const [labels = []] = useLabels();
     const {
         conversationID,
-        conversation: conversationCacheEntry,
+        conversation: conversationState,
         pendingRequest,
         loadingConversation,
         loadingMessages,
@@ -76,7 +76,7 @@ const ConversationView = ({
 
     useLinkHandler(wrapperRef, onMailTo);
 
-    const { Conversation: conversation = {}, Messages: inputMessages = [] } = conversationCacheEntry || {};
+    const { Conversation: conversation, Messages: inputMessages = [] } = conversationState || {};
     const messages = usePlaceholders(inputMessages, loadingMessages, conversation?.NumMessages || 1) as Message[];
 
     const inTrash = labelID === TRASH;
@@ -85,10 +85,10 @@ const ConversationView = ({
     );
     const messagesToShow = !loadingMessages && filter ? filteredMessages : messages;
     const showTrashWarning = !loadingMessages && filteredMessages.length !== messages.length;
-    const messageInUrl = conversationCacheEntry?.Messages?.find((message) => message.ID === messageID);
+    const messageInUrl = conversationState?.Messages?.find((message) => message.ID === messageID);
     const loading = loadingConversation || loadingMessages;
-    const showConversationError = !loading && !conversationCacheEntry?.Conversation;
-    const showMessagesError = !loading && !showConversationError && !conversationCacheEntry?.Messages;
+    const showConversationError = !loading && !conversationState?.Conversation;
+    const showMessagesError = !loading && !showConversationError && !conversationState?.Messages;
 
     const expandMessage = (messageID: string | undefined) => {
         messageViewsRefs.current[messageID || '']?.expand();
@@ -137,7 +137,7 @@ const ConversationView = ({
     }, [onlyTrashInConversation, conversationID, columnLayout]);
 
     return showConversationError ? (
-        <ConversationErrorBanner errors={conversationCacheEntry?.errors} onRetry={handleRetry} />
+        <ConversationErrorBanner errors={conversationState?.errors} onRetry={handleRetry} />
     ) : (
         <>
             <ConversationHeader
@@ -150,7 +150,7 @@ const ConversationView = ({
             <div ref={wrapperRef} className="flex-item-fluid pt0-5 pr1 pl1">
                 <div className={classnames(['no-outline', hidden && 'hidden'])} ref={elementRef} tabIndex={-1}>
                     {showMessagesError ? (
-                        <ConversationErrorBanner errors={conversationCacheEntry?.errors} onRetry={handleRetry} />
+                        <ConversationErrorBanner errors={conversationState?.errors} onRetry={handleRetry} />
                     ) : null}
                     {showTrashWarning && (
                         <TrashWarning ref={trashWarningRef} inTrash={inTrash} filter={filter} onToggle={toggleFilter} />
@@ -184,7 +184,7 @@ const ConversationView = ({
             </div>
             <UnreadMessages
                 conversationID={conversationID}
-                messages={conversationCacheEntry?.Messages}
+                messages={conversationState?.Messages}
                 onClick={handleClickUnread}
             />
         </>
