@@ -146,6 +146,9 @@
       "Decrease": [
         "Уменьшить"
       ],
+      "Default mail handler": [
+        ""
+      ],
       "Delete": [
         "Удалить"
       ],
@@ -361,6 +364,9 @@
       ],
       "Previous month": [
         "Предыдущий месяц"
+      ],
+      "Prompt browser setting": [
+        ""
       ],
       "Quit": [
         "Выйти"
@@ -1811,6 +1817,9 @@
       "Account successfully updated": [
         "Учетная запись успешно обновлена"
       ],
+      "Activating this option will open a new composer each time you click on a mailto: link.": [
+        ""
+      ],
       "Add additional addresses to your account like user2@protonmail.com": [
         "Добавьте дополнительные адреса в свою учетную запись, например user2@protonmail.com"
       ],
@@ -2299,6 +2308,9 @@
       ],
       "Session timed out.": [
         "Время сессии истекло."
+      ],
+      "Set ProtonMail as your default mail handler": [
+        ""
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
         "Настройка PGP позволяет вам отправлять зашифрованные письма пользователям вне ProtonMail, которые пользуются совместимыми с PGP сервисами."
@@ -2846,8 +2858,8 @@
       "BTC amount:": [
         "Сумма в биткоинах:"
       ],
-      "Calendar": [
-        "Календарь"
+      "Calendars": [
+        ""
       ],
       "Cancel": [
         "Отменить"
@@ -3235,14 +3247,26 @@
       "Add a gift code": [
         "Добавить подарочный код"
       ],
+      "All mail": [
+        ""
+      ],
+      "Archive": [
+        ""
+      ],
       "clearing your browser cache": [
         "очистка кэша браузера"
       ],
       "click here": [
         "нажмите здесь"
       ],
+      "Drafts": [
+        ""
+      ],
       "Go to subscription plans": [
         "Перейти на страницу подписки"
+      ],
+      "Inbox": [
+        ""
       ],
       "Learn more": [
         "Узнать больше"
@@ -3250,14 +3274,29 @@
       "My files": [
         "Мои файлы"
       ],
+      "Outbox": [
+        ""
+      ],
       "Pay invoice": [
         "Оплатить счёт"
       ],
       "Request an invite": [
         "Запросить приглашение"
       ],
+      "Scheduled": [
+        ""
+      ],
+      "Sent": [
+        ""
+      ],
       "Shared": [
         "В общем доступе"
+      ],
+      "Spam": [
+        ""
+      ],
+      "Starred": [
+        ""
       ],
       "Trash": [
         "Корзина"
@@ -4241,6 +4280,9 @@
       ],
       "Confirm loss of Proton bonuses": [
         "Подтвердите потерю бонусов Proton"
+      ],
+      "Contact details": [
+        ""
       ],
       "Contact Details": [
         "Контактные данные"

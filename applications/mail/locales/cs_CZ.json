@@ -218,6 +218,9 @@
       "Decrease": [
         "Snížit"
       ],
+      "Default mail handler": [
+        ""
+      ],
       "Delete": [
         "Smazat"
       ],
@@ -575,6 +578,9 @@
       "OK": [
         "OK"
       ],
+      "Open ${ CALENDAR_APP_NAME }": [
+        ""
+      ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Otevřít nastavení ${ CALENDAR_APP_NAME }"
       ],
@@ -628,6 +634,9 @@
       ],
       "Print": [
         "Vytisknout"
+      ],
+      "Prompt browser setting": [
+        ""
       ],
       "Quit": [
         ""
@@ -910,6 +919,9 @@
       ],
       "View source code": [
         "Zobrazit zdrojový kód"
+      ],
+      "Why not?": [
+        ""
       ],
       "Yes": [
         "Ano"
@@ -1411,6 +1423,12 @@
       "An occurrence has been added to the event ${ veventIcsTitle }": [
         "Výskyt byl přidán k události ${ veventIcsTitle }"
       ],
+      "Event already ended": [
+        ""
+      ],
+      "Event in progress": [
+        ""
+      ],
       "Event refreshing is not supported for the moment": [
         ""
       ],
@@ -1423,20 +1441,14 @@
       "This answer cannot be added to ${ calendarAppName } as we only support answers to all events of a series for the moment": [
         ""
       ],
-      "This event has already happened": [
+      "This event has been canceled.": [
         ""
-      ],
-      "This event has been cancelled.": [
-        "Tato událost byla zrušena."
       ],
       "This event has been updated.": [
         "Tato událost byla aktualizována."
       ],
-      "This event is currently happening": [
+      "This invitation is out of date. The event has been canceled.": [
         ""
-      ],
-      "This invitation is out of date. The event has been cancelled.": [
-        "Tato pozvánka je zastaralá. Událost byla zrušena."
       ],
       "This invitation is out of date. The event has been deleted.": [
         "Tato pozvánka je zastaralá. Událost byla odstraněna."
@@ -1863,8 +1875,8 @@
       ]
     },
     "Email body for invitation": {
-      "${ eventTitle } has been cancelled.": [
-        "${ eventTitle } byl zrušen."
+      "${ eventTitle } has been canceled.": [
+        ""
       ],
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
         "${ eventTitle } bylo doplněno.\n${ eventDetailsText }"
@@ -1898,6 +1910,50 @@
       ],
       "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
         "${ emailAddress } bylo předběžně přijmuto pozvání na ${ eventTitle }"
+      ]
+    },
+    "Email reminder banner": {
+      "Event already ended": [
+        ""
+      ],
+      "Event in progress": [
+        ""
+      ],
+      "Event is tomorrow": [
+        ""
+      ],
+      "Event starting now": [
+        ""
+      ],
+      "Event starts in ${ minutesUntilEvent } minute": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "Event starts tomorrow": [
+        ""
+      ]
+    },
+    "Email reminder decryption error": {
+      "Event details are encrypted. Sign in again to restore Calendar and decrypt your data. ${ learnMoreLink }": [
+        ""
+      ],
+      "Event details cannot be decrypted. ${ whyNotLink }": [
+        ""
+      ]
+    },
+    "Email reminder error": {
+      "Event is no longer in your calendar": [
+        ""
+      ]
+    },
+    "Email reminder out of date alert": {
+      "Event was canceled": [
+        ""
+      ],
+      "Event was updated. This reminder is out-of-date.": [
+        ""
       ]
     },
     "Email subject": {
@@ -2446,8 +2502,8 @@
       "Missing start time": [
         "Chybějící počáteční čas"
       ],
-      "no UID, title or start time": [
-        "ne UID, titulek nebo doba spuštění"
+      "No UID, title or start time": [
+        ""
       ],
       "Non-Gregorian": [
         "Ne-Gregoriánský"
@@ -2520,8 +2576,8 @@
       "Attached ICS file could not be decrypted": [
         "Přiložený ICS soubor nelze dešifrovat"
       ],
-      "Attached ICS file could not be parsed": [
-        "Přiložený ICS soubor nelze zpracovat"
+      "Attached ICS file could not be read": [
+        ""
       ],
       "Invalid invitation": [
         "Neplatná pozvánka"
@@ -2819,19 +2875,7 @@
         "",
         ""
       ],
-      "Calendar": [
-        ""
-      ],
-      "Location": [
-        ""
-      ],
       "Organizer:": [
-        ""
-      ],
-      "Participants": [
-        ""
-      ],
-      "Repeats": [
         ""
       ]
     },
@@ -3171,6 +3215,9 @@
       "Account successfully updated": [
         "Účet byl úspěšně aktualizován"
       ],
+      "Activating this option will open a new composer each time you click on a mailto: link.": [
+        ""
+      ],
       "Activation in progress": [
         "Aktivace probíhá"
       ],
@@ -3315,6 +3362,9 @@
       "Checking contact ${ progress } of ${ max }...": [
         "Vyhledávání kontaktu ${ progress } o ${ max }..."
       ],
+      "Clear data": [
+        ""
+      ],
       "Clearing browser data also deactivates message content search on this device. All messages will need to be downloaded again to search within them.": [
         ""
       ],
@@ -3389,6 +3439,9 @@
         "dny",
         "dny",
         "dny"
+      ],
+      "Disable message content search": [
+        ""
       ],
       "Discount applied to your subscription with coupon ${ code }": [
         "Sleva na Vaše předplatné s kupónem{ code }$"
@@ -3795,6 +3848,9 @@
       "Please add at least one recipient before sending.": [
         "Zadejte alespoň jednoho příjemce, prosím."
       ],
+      "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
+        ""
+      ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Vezměte na vědomí, že adresy přiřazené k této skupině NEBUDOU smazány."
       ],
@@ -3830,9 +3886,6 @@
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Prosím, vyčkejte zatímco zjistíme kontakty, které zahrnují šifrovaná data s neaktivním klíčem."
-      ],
-      "Please write your recovery phrase down in the order it appears and keep it somewhere safe. Your recovery phrase can be used to fully recover access to your account and your encrypted messages.": [
-        "Zapište si frázi pro obnovení v pořadí, v jakém se objeví, a uložte si tuto frázi na bezpečné místo. Vaši frázi pro obnovení lze použít k úplnému obnovení účtu a zašifrovaným zprávám."
       ],
       "Preview": [
         "Náhled"
@@ -3932,6 +3985,9 @@
       ],
       "Session timed out.": [
         "Relace vypršela."
+      ],
+      "Set ProtonMail as your default mail handler": [
+        ""
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
         "Vytvořením PGP Vám poskytuje zasílat end-to-end šifrované emailové korespondence i s uživateli, kteří nejsou klientem ProtonMail a používají kompatibilní PGP službu."
@@ -4708,7 +4764,7 @@
       "BTC amount:": [
         "Částka BTC:"
       ],
-      "Calendar": [
+      "Calendars": [
         ""
       ],
       "Cancel": [
@@ -5056,9 +5112,6 @@
       "without attachments": [
         "bez příloh"
       ],
-      "Your recovery phrase": [
-        "Vaše obnovovací fráze"
-      ],
       "ZIP": [
         "PSČ"
       ]
@@ -5273,6 +5326,11 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Pro zobrazení upravené pozvánky musíte reaktivovat vaše klíče"
+      ]
+    },
+    "Link to calendar event": {
+      "Open in ${ CALENDAR_APP_NAME }": [
+        ""
       ]
     },
     "Loading info": {
@@ -6787,6 +6845,9 @@
       ],
       "Confirm recipient address?": [
         "Potvrdit adresu příjemce?"
+      ],
+      "Contact details": [
+        ""
       ],
       "Contact Details": [
         "Kontaktní údaje"

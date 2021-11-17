@@ -218,6 +218,9 @@
       "Decrease": [
         "Reducere"
       ],
+      "Default mail handler": [
+        ""
+      ],
       "Delete": [
         "Ștergere"
       ],
@@ -572,6 +575,9 @@
       "OK": [
         "OK"
       ],
+      "Open ${ CALENDAR_APP_NAME }": [
+        "Deschideți ${ CALENDAR_APP_NAME }"
+      ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Deschidere setări ${ CALENDAR_APP_NAME }"
       ],
@@ -625,6 +631,9 @@
       ],
       "Print": [
         "Tipărire"
+      ],
+      "Prompt browser setting": [
+        ""
       ],
       "Quit": [
         "Ieșire"
@@ -906,6 +915,9 @@
       ],
       "View source code": [
         "Afișare cod sursă"
+      ],
+      "Why not?": [
+        "De ce nu?"
       ],
       "Yes": [
         "Da"
@@ -1403,6 +1415,12 @@
       "An occurrence has been added to the event ${ veventIcsTitle }": [
         "A fost adăugată o manifestare la evenimentul ${ veventIcsTitle }"
       ],
+      "Event already ended": [
+        "Evenimentul s-a încheiat deja"
+      ],
+      "Event in progress": [
+        "Eveniment în desfășurare"
+      ],
       "Event refreshing is not supported for the moment": [
         "Reîmprospătarea evenimentului nu este momentan suportată"
       ],
@@ -1415,20 +1433,14 @@
       "This answer cannot be added to ${ calendarAppName } as we only support answers to all events of a series for the moment": [
         "Acest răspuns nu poate fi adăugat la ${ calendarAppName } deoarece momentan sunt suportate doar răspunsuri la toate evenimentele dintr-o serie"
       ],
-      "This event has already happened": [
-        "Acest eveniment a avut deja loc"
-      ],
-      "This event has been cancelled.": [
+      "This event has been canceled.": [
         "Acest eveniment a fost anulat."
       ],
       "This event has been updated.": [
         "Acest eveniment a fost actualizat."
       ],
-      "This event is currently happening": [
-        "Acest eveniment este în desfășurare"
-      ],
-      "This invitation is out of date. The event has been cancelled.": [
-        "Această invitație este veche. Evenimentul a fost anulat."
+      "This invitation is out of date. The event has been canceled.": [
+        "Această invitație nu mai este valabilă. Evenimentul a fost anulat."
       ],
       "This invitation is out of date. The event has been deleted.": [
         "Această invitație este veche. Evenimentul a fost șters."
@@ -1848,7 +1860,7 @@
       ]
     },
     "Email body for invitation": {
-      "${ eventTitle } has been cancelled.": [
+      "${ eventTitle } has been canceled.": [
         "${ eventTitle } a fost anulat."
       ],
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
@@ -1883,6 +1895,49 @@
       ],
       "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
         "${ emailAddress } v-a acceptat provizoriu invitația la ${ eventTitle }"
+      ]
+    },
+    "Email reminder banner": {
+      "Event already ended": [
+        "Evenimentul s-a încheiat deja"
+      ],
+      "Event in progress": [
+        "Eveniment în desfășurare"
+      ],
+      "Event is tomorrow": [
+        "Evenimentul este mâine"
+      ],
+      "Event starting now": [
+        "Evenimentul începe acum"
+      ],
+      "Event starts in ${ minutesUntilEvent } minute": [
+        "Evenimentul începe în ${ minutesUntilEvent } minut",
+        "Evenimentul începe în ${ minutesUntilEvent } minute",
+        "Evenimentul începe în ${ minutesUntilEvent } de minute"
+      ],
+      "Event starts tomorrow": [
+        "Evenimentul începe mâine"
+      ]
+    },
+    "Email reminder decryption error": {
+      "Event details are encrypted. Sign in again to restore Calendar and decrypt your data. ${ learnMoreLink }": [
+        "Detaliile evenimentului sunt criptate. Conectați-vă din nou pentru a restabili Calendarul și a decripta datele. ${ learnMoreLink }"
+      ],
+      "Event details cannot be decrypted. ${ whyNotLink }": [
+        "Detaliile evenimentului nu pot fi decriptate. ${ whyNotLink }"
+      ]
+    },
+    "Email reminder error": {
+      "Event is no longer in your calendar": [
+        "Evenimentul nu mai este în calendarul dumneavoastră"
+      ]
+    },
+    "Email reminder out of date alert": {
+      "Event was canceled": [
+        "Evenimentul a fost anulat"
+      ],
+      "Event was updated. This reminder is out-of-date.": [
+        "Evenimentul a fost actualizat. Acest memento este depășit."
       ]
     },
     "Email subject": {
@@ -2422,8 +2477,8 @@
       "Missing start time": [
         "Lipsește ora de pornire"
       ],
-      "no UID, title or start time": [
-        "Nu există UID, titlu sau timp de pornire"
+      "No UID, title or start time": [
+        "Fără UID, titlu sau oră de începere"
       ],
       "Non-Gregorian": [
         "Non-Gregorian"
@@ -2496,8 +2551,8 @@
       "Attached ICS file could not be decrypted": [
         "Fișierul ICS atașat nu a putut fi decriptat"
       ],
-      "Attached ICS file could not be parsed": [
-        "Fișierul ICS atașat nu a putut fi analizat"
+      "Attached ICS file could not be read": [
+        "Fișierul ICS atașat nu a putut fi citit"
       ],
       "Invalid invitation": [
         "Invitație nevalidă"
@@ -2792,20 +2847,8 @@
         "${ totalAttendees } participanți",
         "${ totalAttendees } de participanți"
       ],
-      "Calendar": [
-        "Calendar"
-      ],
-      "Location": [
-        "Loc"
-      ],
       "Organizer:": [
         "Organizator:"
-      ],
-      "Participants": [
-        "Participanţi"
-      ],
-      "Repeats": [
-        "Repetări"
       ]
     },
     "Import calendar": {
@@ -3111,6 +3154,9 @@
       "Account successfully updated": [
         "Cont actualizat cu succes"
       ],
+      "Activating this option will open a new composer each time you click on a mailto: link.": [
+        ""
+      ],
       "Activation in progress": [
         "Activare în curs"
       ],
@@ -3250,6 +3296,9 @@
       "Checking contact ${ progress } of ${ max }...": [
         "Se verifică contactul ${ progress } din ${ max }..."
       ],
+      "Clear data": [
+        "Ștergere date"
+      ],
       "Clearing browser data also deactivates message content search on this device. All messages will need to be downloaded again to search within them.": [
         "Ștergerea datelor din navigator dezactivează şi căutarea conținutului din mesaje pe acest dispozitiv. Toate mesajele vor trebui să fie descărcate din nou pentru a căuta în ele."
       ],
@@ -3322,6 +3371,9 @@
         "zi",
         "zile",
         "de zile"
+      ],
+      "Disable message content search": [
+        "Dezactivarea căutării conținutului mesajelor"
       ],
       "Discount applied to your subscription with coupon ${ code }": [
         "Cuponul ${ code } a aplicat o reducere de 20% la abonament"
@@ -3719,6 +3771,9 @@
       "Please add at least one recipient before sending.": [
         "Adăugați cel puțin un destinatar înainte de a trimite."
       ],
+      "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
+        "Vă rugăm să o păstrați în siguranță. Veți avea nevoie de ea pentru a vă accesa contul și pentru a vă decripta datele în cazul unei resetări a parolei."
+      ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Rețineți că adresele atribuite acestui grup NU vor fi șterse."
       ],
@@ -3754,9 +3809,6 @@
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Așteptați pănă se caută contactele care conțin date criptate cu cheia inactivă."
-      ],
-      "Please write your recovery phrase down in the order it appears and keep it somewhere safe. Your recovery phrase can be used to fully recover access to your account and your encrypted messages.": [
-        "Notați fraza de recuperare în ordinea în care apare și să păstrați-o într-un loc sigur. Fraza de recuperare poate fi utilizată pentru a recupera complet accesul la cont și la mesajele criptate."
       ],
       "Preview": [
         "Examinare"
@@ -3855,6 +3907,9 @@
       ],
       "Session timed out.": [
         "Sesiune expirată."
+      ],
+      "Set ProtonMail as your default mail handler": [
+        ""
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
         "Setând criptarea PGP veți putea cripta mesajele în ambele părți cu un utilizator fără cont la ProtonMail care folosește un serviciu PGP compatibil."
@@ -4620,8 +4675,8 @@
       "BTC amount:": [
         "Suma BTC:"
       ],
-      "Calendar": [
-        "Calendar"
+      "Calendars": [
+        "Calendare"
       ],
       "Cancel": [
         "Anulare"
@@ -4968,9 +5023,6 @@
       "without attachments": [
         "fără atașamente"
       ],
-      "Your recovery phrase": [
-        "Fraza de recuperare"
-      ],
       "ZIP": [
         "ZIP"
       ]
@@ -5185,6 +5237,11 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Trebuie să activați cheile pentru a vedea invitația actualizată"
+      ]
+    },
+    "Link to calendar event": {
+      "Open in ${ CALENDAR_APP_NAME }": [
+        "Deschideți în ${ CALENDAR_APP_NAME }"
       ]
     },
     "Loading info": {
@@ -6654,6 +6711,9 @@
       ],
       "Confirm recipient address?": [
         "Confirmați adresa destinatarului?"
+      ],
+      "Contact details": [
+        "Detalii de contact"
       ],
       "Contact Details": [
         "Detalii contact"

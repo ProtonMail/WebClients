@@ -140,6 +140,9 @@
       "Decrease": [
         "Уменьшить"
       ],
+      "Default mail handler": [
+        ""
+      ],
       "Delete": [
         "Удалить"
       ],
@@ -346,6 +349,9 @@
       ],
       "Previous year": [
         "Предыдущий год"
+      ],
+      "Prompt browser setting": [
+        ""
       ],
       "Quit": [
         "Выйти"
@@ -659,7 +665,7 @@
         "Недействительное событие"
       ],
       "Invalid ICS file": [
-        ""
+        "Недействительный файл ICS"
       ],
       "Invalid method": [
         "Недействительный метод"
@@ -911,8 +917,8 @@
       "${ name } tentatively accepted the invitation": [
         "${ name } предварительно принял приглашение"
       ],
-      "This event has been cancelled": [
-        "Это событие было отменено"
+      "This event has been canceled": [
+        ""
       ],
       "You accepted the invitation": [
         "Вы приняли приглашение"
@@ -986,6 +992,11 @@
       ],
       "Open": [
         "Открыть"
+      ]
+    },
+    "colon": {
+      ": ": [
+        ""
       ]
     },
     "Composer size": {
@@ -1281,8 +1292,8 @@
       ]
     },
     "Email body for invitation": {
-      "${ eventTitle } has been cancelled.": [
-        "Событие «${ eventTitle }» было отменено."
+      "${ eventTitle } has been canceled.": [
+        ""
       ],
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
         "Событие «${ eventTitle }» было обновлено.\n${ eventDetailsText }"
@@ -1783,7 +1794,7 @@
         "Настроить часовой пояс"
       ],
       "Edited event not supported": [
-        ""
+        "Отредактированное событие не поддерживается"
       ],
       "Element": [
         "Элемент"
@@ -1801,7 +1812,7 @@
         "Проверка события не удалась"
       ],
       "Floating times not supported": [
-        ""
+        "Плавающий график не поддерживается"
       ],
       "Free-busy time information": [
         "Информация о свободном и занятом времени"
@@ -1825,10 +1836,10 @@
         "Неправильный формат времени начала"
       ],
       "Missing start time": [
-        ""
+        "Не установлено время начала"
       ],
-      "no UID, title or start time": [
-        "нет UID, названия или времени начала"
+      "No UID, title or start time": [
+        "Нет UID, названия или времени начала"
       ],
       "Non-Gregorian": [
         ""
@@ -1902,9 +1913,9 @@
         "Поставьте оценку"
       ]
     },
-    "Event cancelled status badge": {
-      "cancelled": [
-        "отменено"
+    "Event canceled status badge": {
+      "canceled": [
+        ""
       ]
     },
     "Event delete button tooltip": {
@@ -1934,14 +1945,14 @@
       "Attached ICS file could not be decrypted": [
         "Вложенный файл ICS невозможно расшифровать"
       ],
-      "Attached ICS file could not be parsed": [
+      "Attached ICS file could not be read": [
         ""
       ],
       "Invalid invitation": [
-        ""
+        "Недействительное приглашение"
       ],
       "Invalid response": [
-        ""
+        "Недействительный ответ"
       ],
       "Unexpected error": [
         "Непредвиденная ошибка"
@@ -2372,6 +2383,9 @@
       "Account successfully updated": [
         "Учётная запись успешно обновлена"
       ],
+      "Activating this option will open a new composer each time you click on a mailto: link.": [
+        ""
+      ],
       "Add additional addresses to your account like user2@protonmail.com": [
         "Добавьте дополнительные адреса в свой аккаунт, например user2@protonmail.com"
       ],
@@ -2782,6 +2796,9 @@
       ],
       "Session timed out.": [
         "Время сессии истекло."
+      ],
+      "Set ProtonMail as your default mail handler": [
+        ""
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
         "Настройка PGP позволяет вам отправлять зашифрованные письма пользователям вне ProtonMail, которые пользуются совместимыми с PGP сервисами."
@@ -3323,8 +3340,8 @@
       "BTC amount:": [
         "Сумма BTC:"
       ],
-      "Calendar": [
-        "Календарь"
+      "Calendars": [
+        "Календари"
       ],
       "Cancel": [
         "Отменить"
@@ -3691,6 +3708,12 @@
       "Add a gift code": [
         "Добавить подарочный код"
       ],
+      "All mail": [
+        ""
+      ],
+      "Archive": [
+        ""
+      ],
       "Calendars": [
         "Календари"
       ],
@@ -3700,8 +3723,14 @@
       "click here": [
         "нажмите здесь"
       ],
+      "Drafts": [
+        ""
+      ],
       "Go to subscription plans": [
         "Перейти на страницу подписки"
+      ],
+      "Inbox": [
+        ""
       ],
       "Learn more": [
         "Подробнее"
@@ -3709,14 +3738,32 @@
       "My calendars": [
         "Мои календари"
       ],
+      "Outbox": [
+        ""
+      ],
       "Pay invoice": [
         "Оплатить счёт"
       ],
       "Request an invite": [
         "Запросить приглашение"
       ],
+      "Scheduled": [
+        ""
+      ],
+      "Sent": [
+        ""
+      ],
+      "Spam": [
+        ""
+      ],
+      "Starred": [
+        ""
+      ],
       "Subscribed calendars": [
         "Подписанные на календари"
+      ],
+      "Trash": [
+        ""
       ],
       "Upgrade": [
         "Повысить"
@@ -4247,6 +4294,20 @@
         "Вы можете изменить это в любой момент в настройках."
       ]
     },
+    "Onboarding ProtonCalendar": {
+      "A calendar is a record of your life. Keep your life secure and private with ${ appName }.": [
+        ""
+      ],
+      "Import events": [
+        ""
+      ],
+      "Meet your new encrypted calendar": [
+        ""
+      ],
+      "Start using ${ appName }": [
+        ""
+      ]
+    },
     "Option": {
       "Add to existing group": [
         "Добавить в существующую группу"
@@ -4649,7 +4710,7 @@
         ""
       ],
       "This link might be wrong": [
-        ""
+        "Ссылка может быть нерабочей"
       ]
     },
     "Subscribed calendar feature unavailable error": {
@@ -5007,6 +5068,9 @@
       ],
       "Confirm loss of Proton bonuses": [
         "Подтвердите потерю бонусов Proton"
+      ],
+      "Contact details": [
+        ""
       ],
       "Contact Details": [
         "Контактные данные"

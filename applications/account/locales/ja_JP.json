@@ -31,11 +31,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } ショップ"
       ],
-      "activate": [
-        "アクティベート"
-      ],
       "Activate": [
         "有効化"
+      ],
+      "activate": [
+        "アクティベート"
       ],
       "Activate ${ Name }@pm.me": [
         "${ Name }@pm.me を有効化"
@@ -865,6 +865,12 @@
       ],
       "Generate missing keys": [
         "紛失した鍵の生成"
+      ],
+      "Make default": [
+        ""
+      ],
+      "Saving": [
+        ""
       ]
     },
     "Address status": {
@@ -1676,8 +1682,8 @@
       ]
     },
     "Email body for invitation": {
-      "${ eventTitle } has been cancelled.": [
-        "${ eventTitle } はキャンセルされました。"
+      "${ eventTitle } has been canceled.": [
+        ""
       ],
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
         "${ eventTitle } が更新されました。\n${ eventDetailsText }"
@@ -1878,6 +1884,9 @@
       ],
       "Invalid expiration date": [
         "無効な有効期限"
+      ],
+      "Invalid invitation link": [
+        ""
       ],
       "Invalid name": [
         "無効な名前です"
@@ -2262,8 +2271,8 @@
       "Missing start time": [
         "開始日時が存在しません"
       ],
-      "no UID, title or start time": [
-        "UID、タイトルまたは開始日時が存在しません"
+      "No UID, title or start time": [
+        ""
       ],
       "Non-Gregorian": [
         "グレゴリオ暦ではありません"
@@ -2353,7 +2362,7 @@
       "Attached ICS file could not be decrypted": [
         ""
       ],
-      "Attached ICS file could not be parsed": [
+      "Attached ICS file could not be read": [
         ""
       ],
       "Invalid invitation": [
@@ -2986,6 +2995,9 @@
       ],
       "Failed": [
         "失敗"
+      ],
+      "In progress": [
+        ""
       ],
       "Paused": [
         "一時停止"
@@ -3929,6 +3941,9 @@
       "Please enter a password to encrypt your private key with before exporting.": [
         "エクスポートする前に、秘密鍵を暗号化するためのパスワードを入力してください。"
       ],
+      "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
+        ""
+      ],
       "Please note that if you delete this address, you will no longer be able to send or receive emails using this address.": [
         ""
       ],
@@ -3967,9 +3982,6 @@
       ],
       "Please wait...": [
         "お待ちください…"
-      ],
-      "Please write your recovery phrase down in the order it appears and keep it somewhere safe. Your recovery phrase can be used to fully recover access to your account and your encrypted messages.": [
-        ""
       ],
       "Plus or Visionary subscription required": [
         "PLUS または VISIONARY プランが必要です"
@@ -5024,7 +5036,7 @@
       "BTC amount:": [
         "BTC 金額:"
       ],
-      "Calendar": [
+      "Calendars": [
         ""
       ],
       "Cancel": [
