@@ -13,7 +13,6 @@ import {
 import getRandomValues from '@proton/get-random-values';
 import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 import { VERIFICATION_STATUS } from '@proton/srp/lib/constants';
-import { readFileAsString } from '../helpers/file';
 import isTruthy from '../helpers/isTruthy';
 import { DecryptedKey, KeyWithRecoverySecret } from '../interfaces';
 import downloadFile from '../helpers/downloadFile';
@@ -37,8 +36,7 @@ const decryptRecoveryFile = (recoverySecrets: KeyWithRecoverySecret[]) => async 
     }
 };
 
-export const parseRecoveryFiles = async (files: File[] = [], recoverySecrets: KeyWithRecoverySecret[]) => {
-    const filesAsStrings = await Promise.all(files.map((file) => readFileAsString(file))).catch(() => []);
+export const parseRecoveryFiles = async (filesAsStrings: string[] = [], recoverySecrets: KeyWithRecoverySecret[]) => {
     const decryptedFiles = (await Promise.all(filesAsStrings.map(decryptRecoveryFile(recoverySecrets)))).filter(
         isTruthy
     );
