@@ -10,18 +10,18 @@ import {
     SettingsLink,
     useApi,
     Loader,
-    useUser,
     classnames,
 } from '@proton/components';
 import { seenCompletedChecklist } from '@proton/shared/lib/api/checklist';
-import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
+import { APPS } from '@proton/shared/lib/constants';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
-import { getAppName } from '@proton/shared/lib/apps/helper';
 import gift from '@proton/styles/assets/img/get-started/gift.svg';
 import { GetStartedChecklistKey } from '@proton/shared/lib/interfaces';
 
 import { GetStartedChecklistContext } from '../../containers/GetStartedChecklistProvider';
 import './GetStartedChecklist.scss';
+
+const totalGBStorageAfterCompletion = 1;
 
 /*
  * This component is separated out so that a "seen" request can be sent
@@ -29,10 +29,8 @@ import './GetStartedChecklist.scss';
  * of the larger checklist component as it is only rendered conditionally,
  * mainly when the checklist is complete.
  */
-const GetStartedChecklistComplete = ({ userIsFreeOrMailOnly }: { userIsFreeOrMailOnly: boolean }) => {
+const GetStartedChecklistComplete = () => {
     const api = useApi();
-
-    const protonMailAppName = getAppName(APPS.PROTONMAIL);
 
     useEffect(() => {
         api({ ...seenCompletedChecklist('get-started'), silence: true });
@@ -41,14 +39,11 @@ const GetStartedChecklistComplete = ({ userIsFreeOrMailOnly }: { userIsFreeOrMai
     return (
         <div className="p1 text-center">
             <img className="mb1-5 mt1-5" src={gift} width={48} />
-            <p className="h3 mb0 text-bold">{c('Get started checklist completion').t`You're a privacy champ!`}</p>
+            <p className="h3 mb0 text-bold">{c('Get started checklist completion').t`You're all set!`}</p>
             <p className="color-weak mt0-5 mb1-5">
                 <span className="get-started_completion-text inline-block">
-                    {!userIsFreeOrMailOnly
-                        ? c('Get started checklist completion')
-                              .t`We've added 1 GB of bonus storage to your account. For even more storage and premium features, upgrade your plan.`
-                        : c('Get started checklist completion')
-                              .t`We've added 1 GB of bonus storage to your account. Continue to explore ${BRAND_NAME} and share your ${protonMailAppName} address with your family, friends, and colleagues.`}
+                    {c('Get started checklist completion')
+                        .t`We've increased the total storage of your account to ${totalGBStorageAfterCompletion} GB. Get additional storage and unlock premium features today.`}
                 </span>
             </p>
             <ButtonLike
@@ -77,7 +72,6 @@ const GetStartedChecklist = ({
     onDismiss,
     onItemSelection,
 }: GetStartedChecklistProps) => {
-    const [user] = useUser();
     const { expires, checklist, loading } = useContext(GetStartedChecklistContext);
 
     const checklistItems = [
@@ -121,9 +115,7 @@ const GetStartedChecklist = ({
     }
 
     if (checklistItems.every(({ complete }) => complete)) {
-        const { hasPaidMail, hasPaidVpn, isFree } = user;
-
-        return <GetStartedChecklistComplete userIsFreeOrMailOnly={isFree || (hasPaidMail && !hasPaidVpn)} />;
+        return <GetStartedChecklistComplete />;
     }
 
     const { length: totalNumberOfChecklistItems } = checklistItems;
@@ -182,7 +174,8 @@ const GetStartedChecklist = ({
 
             <div className="flex">
                 <div className="text-bold">
-                    {c('Get started checklist incentive').t`Complete all steps and get a total of 2 GB on your account`}
+                    {c('Get started checklist incentive')
+                        .t`Complete all steps and get a total of ${totalGBStorageAfterCompletion} GB on your account`}
                 </div>
             </div>
             <div>
