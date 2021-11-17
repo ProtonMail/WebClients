@@ -32,6 +32,38 @@ export const removeProtonPrefix = (match: HTMLElement) => {
     });
 };
 
+interface LoadBackgroundImagesProps {
+    images?: MessageRemoteImage[];
+    document?: Element;
+}
+
+export const loadBackgroundImages = ({ images, document }: LoadBackgroundImagesProps) => {
+    if (!document || !images) {
+        return;
+    }
+    const elementWithStyleTag = document?.querySelectorAll('[style]');
+
+    elementWithStyleTag?.forEach((element) => {
+        const styleAttribute = element.getAttribute('style');
+
+        if (styleAttribute && styleAttribute.includes('proton-url')) {
+            const rawUrlMatch = styleAttribute.match(/proton-url\((.*?)\)/)?.[1];
+            const cleanUrlMatch = rawUrlMatch?.replace(/('|")/g, '');
+
+            // Find the corresponding image to get its url (same url if loading without proxy, or blob if loading through proxy)
+            const preLoadedImage = images.find((img) => cleanUrlMatch === img.originalURL);
+
+            // Set attribute with the right URL (normal or blob depending on the setting)
+            if (preLoadedImage && preLoadedImage.url && rawUrlMatch) {
+                element.setAttribute(
+                    'style',
+                    styleAttribute.replace(rawUrlMatch, preLoadedImage.url).replace('proton-url', 'url')
+                );
+            }
+        }
+    });
+};
+
 export const loadElementOtherThanImages = (images: MessageRemoteImage[], messageDocument?: Element) => {
     const elementOtherThanImages = images.filter((image) => image.original?.tagName !== 'IMG');
 
@@ -107,6 +139,8 @@ const loadImagesWithoutProxy = async (
 
     loadElementOtherThanImages(imagesLoaded, messageDocument);
 
+    loadBackgroundImages({ document: messageDocument, images: imagesLoaded });
+
     updateMessageCache(messageCache, localID, { document: messageDocument });
 
     updateRemoteImages(messageCache, localID, imagesLoaded);
@@ -161,6 +195,8 @@ const loadImagesThroughProxy = async (
     }));
 
     loadElementOtherThanImages(imagesLoaded, messageDocument);
+
+    loadBackgroundImages({ document: messageDocument, images: imagesLoaded });
 
     updateMessageCache(messageCache, localID, { document: messageDocument });
 
