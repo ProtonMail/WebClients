@@ -31,11 +31,11 @@
       "${ BRAND_NAME } shop": [
         "магазин ${ BRAND_NAME }"
       ],
-      "activate": [
-        "включить"
-      ],
       "Activate": [
         "Активировать"
+      ],
+      "activate": [
+        "включить"
       ],
       "Activate ${ Name }@pm.me": [
         "Активировать ${ Name }@pm.me"
@@ -892,6 +892,12 @@
       ],
       "Generate missing keys": [
         "Создать недостающие ключи"
+      ],
+      "Make default": [
+        ""
+      ],
+      "Saving": [
+        ""
       ]
     },
     "Address status": {
@@ -1730,8 +1736,8 @@
       ]
     },
     "Email body for invitation": {
-      "${ eventTitle } has been cancelled.": [
-        "Отменено ${ eventTitle }."
+      "${ eventTitle } has been canceled.": [
+        ""
       ],
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
         "${ eventTitle } обновлено.\n${ eventDetailsText }"
@@ -1935,6 +1941,9 @@
       ],
       "Invalid expiration date": [
         "Неверная дата окончания срока действия карты"
+      ],
+      "Invalid invitation link": [
+        ""
       ],
       "Invalid name": [
         "Недействительное имя"
@@ -2325,8 +2334,8 @@
       "Missing start time": [
         "Не установлено время начала"
       ],
-      "no UID, title or start time": [
-        "нет UID, названия или времени начала"
+      "No UID, title or start time": [
+        ""
       ],
       "Non-Gregorian": [
         "Не Грегорианский"
@@ -2416,8 +2425,8 @@
       "Attached ICS file could not be decrypted": [
         "Вложенный файл ICS невозможно расшифровать"
       ],
-      "Attached ICS file could not be parsed": [
-        "Вложенный файл ICS невозможно проанализировать"
+      "Attached ICS file could not be read": [
+        ""
       ],
       "Invalid invitation": [
         "Недопустимое приглашение"
@@ -3082,6 +3091,9 @@
       ],
       "Failed": [
         "Сбой"
+      ],
+      "In progress": [
+        ""
       ],
       "Paused": [
         "Приостановлено"
@@ -4094,6 +4106,9 @@
       "Please enter a password to encrypt your private key with before exporting.": [
         "Пожалуйста, введите пароль, которым будет зашифрован ваш закрытый ключ перед экспортом."
       ],
+      "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
+        ""
+      ],
       "Please note that if you delete this address, you will no longer be able to send or receive emails using this address.": [
         "Обратите внимание, что если вы удалите этот адрес, вы больше не сможете отправлять или получать письма, используя этот адрес."
       ],
@@ -4132,9 +4147,6 @@
       ],
       "Please wait...": [
         "Пожалуйста, подождите..."
-      ],
-      "Please write your recovery phrase down in the order it appears and keep it somewhere safe. Your recovery phrase can be used to fully recover access to your account and your encrypted messages.": [
-        "Пожалуйста, запишите свою фразу для восстановления доступа к учетной записи в том виде, как она появляется, и спрячьте где-нибудь. Ваша фраза для восстановления доступа к учетной записи может быть использована для полного восстановления доступа к вашей учетной записи и вашим зашифрованным сообщениям."
       ],
       "Plus or Visionary subscription required": [
         "Требуется подписка Plus или Visionary"
@@ -5204,8 +5216,8 @@
       "BTC amount:": [
         "Сумма в биткоинах:"
       ],
-      "Calendar": [
-        "Календарь"
+      "Calendars": [
+        ""
       ],
       "Cancel": [
         "Отменить"

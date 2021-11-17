@@ -140,6 +140,9 @@
       "Decrease": [
         "Snížit"
       ],
+      "Default mail handler": [
+        ""
+      ],
       "Delete": [
         "Odstranit"
       ],
@@ -346,6 +349,9 @@
       ],
       "Previous year": [
         "Předchozí rok"
+      ],
+      "Prompt browser setting": [
+        ""
       ],
       "Quit": [
         ""
@@ -911,8 +917,8 @@
       "${ name } tentatively accepted the invitation": [
         ""
       ],
-      "This event has been cancelled": [
-        "Tato událost byla zrušena"
+      "This event has been canceled": [
+        ""
       ],
       "You accepted the invitation": [
         "Přijal(a) jste pozvání"
@@ -985,6 +991,11 @@
         ""
       ],
       "Open": [
+        ""
+      ]
+    },
+    "colon": {
+      ": ": [
         ""
       ]
     },
@@ -1281,8 +1292,8 @@
       ]
     },
     "Email body for invitation": {
-      "${ eventTitle } has been cancelled.": [
-        "${ eventTitle } byl zrušen."
+      "${ eventTitle } has been canceled.": [
+        ""
       ],
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
         "${ eventTitle } bylo doplněno.\n${ eventDetailsText }"
@@ -1827,7 +1838,7 @@
       "Missing start time": [
         ""
       ],
-      "no UID, title or start time": [
+      "No UID, title or start time": [
         ""
       ],
       "Non-Gregorian": [
@@ -1902,8 +1913,8 @@
         "Výsledek je požadován"
       ]
     },
-    "Event cancelled status badge": {
-      "cancelled": [
+    "Event canceled status badge": {
+      "canceled": [
         ""
       ]
     },
@@ -1934,7 +1945,7 @@
       "Attached ICS file could not be decrypted": [
         ""
       ],
-      "Attached ICS file could not be parsed": [
+      "Attached ICS file could not be read": [
         ""
       ],
       "Invalid invitation": [
@@ -2372,6 +2383,9 @@
       "Account successfully updated": [
         "Účet byl úspěšně aktualizován"
       ],
+      "Activating this option will open a new composer each time you click on a mailto: link.": [
+        ""
+      ],
       "Add additional addresses to your account like user2@protonmail.com": [
         "Přidejte ke svému účtu další adresy, například user2@protonmail.com"
       ],
@@ -2782,6 +2796,9 @@
       ],
       "Session timed out.": [
         "Relace vypršela."
+      ],
+      "Set ProtonMail as your default mail handler": [
+        ""
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
         "Vytvořením PGP Vám poskytuje zasílat end-to-end šifrované emailové korespondence i s uživateli, kteří nejsou klientem ProtonMail a používají kompatibilní PGP službu."
@@ -3323,7 +3340,7 @@
       "BTC amount:": [
         "Částka BTC:"
       ],
-      "Calendar": [
+      "Calendars": [
         ""
       ],
       "Cancel": [
@@ -3691,6 +3708,12 @@
       "Add a gift code": [
         "Přidat dárkový kód"
       ],
+      "All mail": [
+        ""
+      ],
+      "Archive": [
+        ""
+      ],
       "Calendars": [
         "Kalendáře"
       ],
@@ -3700,8 +3723,14 @@
       "click here": [
         "klikněte zde"
       ],
+      "Drafts": [
+        ""
+      ],
       "Go to subscription plans": [
         "Prohlédněte si plány předplatného"
+      ],
+      "Inbox": [
+        ""
       ],
       "Learn more": [
         "Zjistit více"
@@ -3709,14 +3738,32 @@
       "My calendars": [
         "Mé kalendáře"
       ],
+      "Outbox": [
+        ""
+      ],
       "Pay invoice": [
         "Zaplatit fakturu"
       ],
       "Request an invite": [
         "Požádat o pozvánku"
       ],
+      "Scheduled": [
+        ""
+      ],
+      "Sent": [
+        ""
+      ],
+      "Spam": [
+        ""
+      ],
+      "Starred": [
+        ""
+      ],
       "Subscribed calendars": [
         "Odběr kalendářů"
+      ],
+      "Trash": [
+        ""
       ],
       "Upgrade": [
         "Upgradovat"
@@ -4245,6 +4292,20 @@
       ],
       "You can change this anytime in your settings.": [
         "Toto můžete později změnit v nastavení."
+      ]
+    },
+    "Onboarding ProtonCalendar": {
+      "A calendar is a record of your life. Keep your life secure and private with ${ appName }.": [
+        ""
+      ],
+      "Import events": [
+        ""
+      ],
+      "Meet your new encrypted calendar": [
+        ""
+      ],
+      "Start using ${ appName }": [
+        ""
       ]
     },
     "Option": {
@@ -5007,6 +5068,9 @@
       ],
       "Confirm loss of Proton bonuses": [
         "Potvrďte odebrání bonusů Proton"
+      ],
+      "Contact details": [
+        ""
       ],
       "Contact Details": [
         "Detaily kontaktu"

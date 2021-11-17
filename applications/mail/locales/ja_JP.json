@@ -218,6 +218,9 @@
       "Decrease": [
         "減少"
       ],
+      "Default mail handler": [
+        ""
+      ],
       "Delete": [
         "削除"
       ],
@@ -566,6 +569,9 @@
       "OK": [
         "OK"
       ],
+      "Open ${ CALENDAR_APP_NAME }": [
+        ""
+      ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "${ CALENDAR_APP_NAME } の設定を開く"
       ],
@@ -619,6 +625,9 @@
       ],
       "Print": [
         "印刷"
+      ],
+      "Prompt browser setting": [
+        ""
       ],
       "Quit": [
         ""
@@ -898,6 +907,9 @@
       ],
       "View source code": [
         "ソースコードを表示する"
+      ],
+      "Why not?": [
+        ""
       ],
       "Yes": [
         "はい"
@@ -1387,6 +1399,12 @@
       "An occurrence has been added to the event ${ veventIcsTitle }": [
         ""
       ],
+      "Event already ended": [
+        ""
+      ],
+      "Event in progress": [
+        ""
+      ],
       "Event refreshing is not supported for the moment": [
         ""
       ],
@@ -1399,19 +1417,13 @@
       "This answer cannot be added to ${ calendarAppName } as we only support answers to all events of a series for the moment": [
         ""
       ],
-      "This event has already happened": [
+      "This event has been canceled.": [
         ""
-      ],
-      "This event has been cancelled.": [
-        "この予定はキャンセルされました."
       ],
       "This event has been updated.": [
         "イベントが更新されました。"
       ],
-      "This event is currently happening": [
-        ""
-      ],
-      "This invitation is out of date. The event has been cancelled.": [
+      "This invitation is out of date. The event has been canceled.": [
         ""
       ],
       "This invitation is out of date. The event has been deleted.": [
@@ -1818,8 +1830,8 @@
       ]
     },
     "Email body for invitation": {
-      "${ eventTitle } has been cancelled.": [
-        "${ eventTitle } はキャンセルされました。"
+      "${ eventTitle } has been canceled.": [
+        ""
       ],
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
         "${ eventTitle } が更新されました。\n${ eventDetailsText }"
@@ -1853,6 +1865,47 @@
       ],
       "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
         "${ emailAddress } は、${ eventTitle } への招待を暫定的に承認しました"
+      ]
+    },
+    "Email reminder banner": {
+      "Event already ended": [
+        ""
+      ],
+      "Event in progress": [
+        ""
+      ],
+      "Event is tomorrow": [
+        ""
+      ],
+      "Event starting now": [
+        ""
+      ],
+      "Event starts in ${ minutesUntilEvent } minute": [
+        ""
+      ],
+      "Event starts tomorrow": [
+        ""
+      ]
+    },
+    "Email reminder decryption error": {
+      "Event details are encrypted. Sign in again to restore Calendar and decrypt your data. ${ learnMoreLink }": [
+        ""
+      ],
+      "Event details cannot be decrypted. ${ whyNotLink }": [
+        ""
+      ]
+    },
+    "Email reminder error": {
+      "Event is no longer in your calendar": [
+        ""
+      ]
+    },
+    "Email reminder out of date alert": {
+      "Event was canceled": [
+        ""
+      ],
+      "Event was updated. This reminder is out-of-date.": [
+        ""
       ]
     },
     "Email subject": {
@@ -2374,8 +2427,8 @@
       "Missing start time": [
         "開始日時が存在しません"
       ],
-      "no UID, title or start time": [
-        "UID、タイトルまたは開始日時が存在しません"
+      "No UID, title or start time": [
+        ""
       ],
       "Non-Gregorian": [
         "グレゴリオ暦ではありません"
@@ -2448,7 +2501,7 @@
       "Attached ICS file could not be decrypted": [
         ""
       ],
-      "Attached ICS file could not be parsed": [
+      "Attached ICS file could not be read": [
         ""
       ],
       "Invalid invitation": [
@@ -2738,19 +2791,7 @@
       "${ totalAttendees } participant": [
         ""
       ],
-      "Calendar": [
-        ""
-      ],
-      "Location": [
-        ""
-      ],
       "Organizer:": [
-        ""
-      ],
-      "Participants": [
-        ""
-      ],
-      "Repeats": [
         ""
       ]
     },
@@ -2991,6 +3032,9 @@
       "Account successfully updated": [
         "アカウントが正常に更新されました"
       ],
+      "Activating this option will open a new composer each time you click on a mailto: link.": [
+        ""
+      ],
       "Activation in progress": [
         "アクティベーションが進行中です"
       ],
@@ -3120,6 +3164,9 @@
       "Checking contact ${ progress } of ${ max }...": [
         "${ max } のうち ${ progress } の連絡先を確認しています..."
       ],
+      "Clear data": [
+        ""
+      ],
       "Clearing browser data also deactivates message content search on this device. All messages will need to be downloaded again to search within them.": [
         ""
       ],
@@ -3188,6 +3235,9 @@
       ],
       "Day": [
         "日"
+      ],
+      "Disable message content search": [
+        ""
       ],
       "Discount applied to your subscription with coupon ${ code }": [
         "クーポン ${ code } 付きのサブスクリプションに割引が適用されます"
@@ -3567,6 +3617,9 @@
       "Please add at least one recipient before sending.": [
         "送信する前に少なくとも一つの受信者を追加してください。"
       ],
+      "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
+        ""
+      ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         ""
       ],
@@ -3602,9 +3655,6 @@
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "非アクティブなキーで暗号化されたデータが含まれている連絡先を探すまでお待ちください。"
-      ],
-      "Please write your recovery phrase down in the order it appears and keep it somewhere safe. Your recovery phrase can be used to fully recover access to your account and your encrypted messages.": [
-        ""
       ],
       "Preview": [
         "プレビュー"
@@ -3701,6 +3751,9 @@
       ],
       "Session timed out.": [
         "セッションがタイムアウトしました。"
+      ],
+      "Set ProtonMail as your default mail handler": [
+        ""
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
         "PGP を設定すると、PGP 対応のサービスを使用する ProtonMail 以外のユーザー宛に、エンドツーエンド暗号化された電子メールを送信できます。"
@@ -4444,7 +4497,7 @@
       "BTC amount:": [
         "BTC 金額:"
       ],
-      "Calendar": [
+      "Calendars": [
         ""
       ],
       "Cancel": [
@@ -4792,9 +4845,6 @@
       "without attachments": [
         ""
       ],
-      "Your recovery phrase": [
-        "あなたのリカバリーフレーズ"
-      ],
       "ZIP": [
         "郵便番号"
       ]
@@ -5009,6 +5059,11 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "更新された招待を表示するには、鍵を再度有効にする必要があります"
+      ]
+    },
+    "Link to calendar event": {
+      "Open in ${ CALENDAR_APP_NAME }": [
+        ""
       ]
     },
     "Loading info": {
@@ -6387,6 +6442,9 @@
         "Protonボーナスの取り消しを確認"
       ],
       "Confirm recipient address?": [
+        ""
+      ],
+      "Contact details": [
         ""
       ],
       "Contact Details": [

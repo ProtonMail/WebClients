@@ -31,11 +31,11 @@
       "${ BRAND_NAME } shop": [
         "Toko ${ BRAND_NAME }"
       ],
-      "activate": [
-        "aktifkan"
-      ],
       "Activate": [
         "Aktifkan"
+      ],
+      "activate": [
+        "aktifkan"
       ],
       "Activate ${ Name }@pm.me": [
         "Aktifkan ${ Name }@pm.me"
@@ -865,6 +865,12 @@
       ],
       "Generate missing keys": [
         "Buat kunci yang hilang"
+      ],
+      "Make default": [
+        ""
+      ],
+      "Saving": [
+        ""
       ]
     },
     "Address status": {
@@ -1676,8 +1682,8 @@
       ]
     },
     "Email body for invitation": {
-      "${ eventTitle } has been cancelled.": [
-        "${ eventTitle } telah dibatalkan."
+      "${ eventTitle } has been canceled.": [
+        ""
       ],
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
         "${ eventTitle } telah diperbarui.\n${ eventDetailsText }"
@@ -1878,6 +1884,9 @@
       ],
       "Invalid expiration date": [
         "Tanggal kedaluwarsa tidak valid"
+      ],
+      "Invalid invitation link": [
+        "Tautan undangan tidak valid"
       ],
       "Invalid name": [
         "Nama tidak valid"
@@ -2262,8 +2271,8 @@
       "Missing start time": [
         "Waktu mulai hilang"
       ],
-      "no UID, title or start time": [
-        "tidak ada UID, judul atau waktu mulai"
+      "No UID, title or start time": [
+        "Tidak ada UID, judul atau waktu mulai"
       ],
       "Non-Gregorian": [
         "Non-Gregorian"
@@ -2353,8 +2362,8 @@
       "Attached ICS file could not be decrypted": [
         "Berkas ICS terlampir tidak dapat didekripsi"
       ],
-      "Attached ICS file could not be parsed": [
-        "Berkas ICS terlampir tidak dapat diurai"
+      "Attached ICS file could not be read": [
+        ""
       ],
       "Invalid invitation": [
         "Undangan tidak valid"
@@ -2986,6 +2995,9 @@
       ],
       "Failed": [
         "Gagal"
+      ],
+      "In progress": [
+        ""
       ],
       "Paused": [
         "Dijeda"
@@ -3929,6 +3941,9 @@
       "Please enter a password to encrypt your private key with before exporting.": [
         "Silakan masukkan kata sandi untuk mengenkripsi kunci pribadi Anda sebelum mengekspor."
       ],
+      "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
+        ""
+      ],
       "Please note that if you delete this address, you will no longer be able to send or receive emails using this address.": [
         "Harap perhatikan bahwa jika Anda menghapus alamat ini, Anda tidak dapat lagi mengirim atau menerima email menggunakan alamat ini."
       ],
@@ -3967,9 +3982,6 @@
       ],
       "Please wait...": [
         "Mohon tunggu..."
-      ],
-      "Please write your recovery phrase down in the order it appears and keep it somewhere safe. Your recovery phrase can be used to fully recover access to your account and your encrypted messages.": [
-        "Mohon tulis kalimat pemulihan Anda sesuai urutan, lalu simpan di tempat yang aman. Kalimat ini dapat dipakai untuk memulihkan akses akun dan pesan terenkripsi Anda."
       ],
       "Plus or Visionary subscription required": [
         "Dibutuhkan langganan Plus atau Visionary"
@@ -5024,7 +5036,7 @@
       "BTC amount:": [
         "Jumlah BTC:"
       ],
-      "Calendar": [
+      "Calendars": [
         "Kalender"
       ],
       "Cancel": [

@@ -140,6 +140,9 @@
       "Decrease": [
         "Senqes"
       ],
+      "Default mail handler": [
+        ""
+      ],
       "Delete": [
         "Ekkes"
       ],
@@ -342,6 +345,9 @@
       ],
       "Previous year": [
         "Aseggas yezrin"
+      ],
+      "Prompt browser setting": [
+        ""
       ],
       "Quit": [
         ""
@@ -899,8 +905,8 @@
       "${ name } tentatively accepted the invitation": [
         "${ name } yeqbel kan akka tinubga-inek·inem"
       ],
-      "This event has been cancelled": [
-        "Tadyant-a yettusefsex"
+      "This event has been canceled": [
+        ""
       ],
       "You accepted the invitation": [
         "Tqebleḍ tinnubga"
@@ -974,6 +980,11 @@
       ],
       "Open": [
         "Ldi"
+      ]
+    },
+    "colon": {
+      ": ": [
+        ""
       ]
     },
     "Composer size": {
@@ -1253,8 +1264,8 @@
       ]
     },
     "Email body for invitation": {
-      "${ eventTitle } has been cancelled.": [
-        "${ eventTitle } yettwasefsex."
+      "${ eventTitle } has been canceled.": [
+        ""
       ],
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
         "${ eventTitle } yettwaleqqem.\n${ eventDetailsText }"
@@ -1781,7 +1792,7 @@
       "Missing start time": [
         ""
       ],
-      "no UID, title or start time": [
+      "No UID, title or start time": [
         ""
       ],
       "Non-Gregorian": [
@@ -1856,9 +1867,9 @@
         "Agmuḍ yettwasra"
       ]
     },
-    "Event cancelled status badge": {
-      "cancelled": [
-        "yettwasefsex"
+    "Event canceled status badge": {
+      "canceled": [
+        ""
       ]
     },
     "Event delete button tooltip": {
@@ -1886,7 +1897,7 @@
       "Attached ICS file could not be decrypted": [
         ""
       ],
-      "Attached ICS file could not be parsed": [
+      "Attached ICS file could not be read": [
         ""
       ],
       "Invalid invitation": [
@@ -2273,6 +2284,9 @@
       ],
       "Account successfully updated": [
         "Aleqqem n umiḍan yemmed"
+      ],
+      "Activating this option will open a new composer each time you click on a mailto: link.": [
+        ""
       ],
       "Add additional addresses to your account like user2@protonmail.com": [
         "Rnu tansiwin-nniḍen n wanaw am useqdac2@protonmail.com ar umiḍan-ik"
@@ -2674,6 +2688,9 @@
       ],
       "Session timed out.": [
         "Yemmed wakud n tɣimit."
+      ],
+      "Set ProtonMail as your default mail handler": [
+        ""
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
         "Asesteb n PGP ad ak·am-imudd tisirag i wakken ad tazneḍ imaylen yettwawgelhen seg yixef ɣer yixef i useqdac ur nesɛi ara Protonmail i iseqdacen ameẓlu yemṣadan d PGP."
@@ -3215,7 +3232,7 @@
       "BTC amount:": [
         "Azal BTC:"
       ],
-      "Calendar": [
+      "Calendars": [
         ""
       ],
       "Cancel": [
@@ -3581,6 +3598,12 @@
       "Add a gift code": [
         "Rnu tangalt n usefk"
       ],
+      "All mail": [
+        ""
+      ],
+      "Archive": [
+        ""
+      ],
       "Calendars": [
         "Iwitayen"
       ],
@@ -3590,8 +3613,14 @@
       "click here": [
         "sit dagi"
       ],
+      "Drafts": [
+        ""
+      ],
       "Go to subscription plans": [
         "Rzu ɣer yiɣawasen n ujerred"
+      ],
+      "Inbox": [
+        ""
       ],
       "Learn more": [
         "Issin ugar"
@@ -3599,14 +3628,32 @@
       "My calendars": [
         "Iwitayen-inu"
       ],
+      "Outbox": [
+        ""
+      ],
       "Pay invoice": [
         "Xelleṣ tafaturt"
       ],
       "Request an invite": [
         "Suter tinubga"
       ],
+      "Scheduled": [
+        ""
+      ],
+      "Sent": [
+        ""
+      ],
+      "Spam": [
+        ""
+      ],
+      "Starred": [
+        ""
+      ],
       "Subscribed calendars": [
         "Jerred s iwitayen"
+      ],
+      "Trash": [
+        ""
       ],
       "Upgrade": [
         "Lqem"
@@ -4083,6 +4130,20 @@
       ],
       "You can change this anytime in your settings.": [
         "Tzemreḍ ad tbeddeleḍ aya melmi tebɣiḍ deg yiɣewwaren."
+      ]
+    },
+    "Onboarding ProtonCalendar": {
+      "A calendar is a record of your life. Keep your life secure and private with ${ appName }.": [
+        ""
+      ],
+      "Import events": [
+        ""
+      ],
+      "Meet your new encrypted calendar": [
+        ""
+      ],
+      "Start using ${ appName }": [
+        ""
       ]
     },
     "Option": {
@@ -4817,6 +4878,9 @@
       ],
       "Confirm loss of Proton bonuses": [
         "Sentem lexṣara n yibunusen n Proton"
+      ],
+      "Contact details": [
+        ""
       ],
       "Contact Details": [
         "Talqayt unermis"

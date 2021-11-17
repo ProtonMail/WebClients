@@ -218,6 +218,9 @@
       "Decrease": [
         "Diminuir"
       ],
+      "Default mail handler": [
+        ""
+      ],
       "Delete": [
         "Excluir"
       ],
@@ -395,7 +398,7 @@
         "Importar"
       ],
       "Import from .csv or vCard": [
-        ""
+        "Importar de .csv ou vCard"
       ],
       "Import messages": [
         "Importar mensagens"
@@ -569,6 +572,9 @@
       "OK": [
         "OK"
       ],
+      "Open ${ CALENDAR_APP_NAME }": [
+        ""
+      ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Abrir configurações do ${ CALENDAR_APP_NAME }"
       ],
@@ -622,6 +628,9 @@
       ],
       "Print": [
         "Imprimir"
+      ],
+      "Prompt browser setting": [
+        ""
       ],
       "Quit": [
         "Sair"
@@ -902,6 +911,9 @@
       ],
       "View source code": [
         "Ver código de fonte"
+      ],
+      "Why not?": [
+        ""
       ],
       "Yes": [
         "Sim"
@@ -1395,6 +1407,12 @@
       "An occurrence has been added to the event ${ veventIcsTitle }": [
         "Foi adicionada uma ocorrência ao evento ${ veventIcsTitle }"
       ],
+      "Event already ended": [
+        ""
+      ],
+      "Event in progress": [
+        ""
+      ],
       "Event refreshing is not supported for the moment": [
         "A atualização de eventos não é suportada no momento"
       ],
@@ -1407,20 +1425,14 @@
       "This answer cannot be added to ${ calendarAppName } as we only support answers to all events of a series for the moment": [
         "Esta resposta não pode ser adicionada a ${ calendarAppName } pois apenas aceitamos respostas para todos os eventos de uma série, no momento"
       ],
-      "This event has already happened": [
-        "Esse evento já aconteceu"
-      ],
-      "This event has been cancelled.": [
-        "Este evento foi cancelado."
+      "This event has been canceled.": [
+        ""
       ],
       "This event has been updated.": [
         "Este evento foi atualizado."
       ],
-      "This event is currently happening": [
-        "Este evento está ocorrendo no momento"
-      ],
-      "This invitation is out of date. The event has been cancelled.": [
-        "Este convite está desatualizado. O evento foi cancelado."
+      "This invitation is out of date. The event has been canceled.": [
+        ""
       ],
       "This invitation is out of date. The event has been deleted.": [
         "Este convite está desatualizado. O evento foi cancelado."
@@ -1833,8 +1845,8 @@
       ]
     },
     "Email body for invitation": {
-      "${ eventTitle } has been cancelled.": [
-        "${ eventTitle } foi cancelado."
+      "${ eventTitle } has been canceled.": [
+        ""
       ],
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
         "${ eventTitle } foi atualizado.\n${ eventDetailsText }"
@@ -1868,6 +1880,48 @@
       ],
       "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
         "${ emailAddress } aceitou provisoriamente seu convite para ${ eventTitle }"
+      ]
+    },
+    "Email reminder banner": {
+      "Event already ended": [
+        ""
+      ],
+      "Event in progress": [
+        ""
+      ],
+      "Event is tomorrow": [
+        ""
+      ],
+      "Event starting now": [
+        ""
+      ],
+      "Event starts in ${ minutesUntilEvent } minute": [
+        "",
+        ""
+      ],
+      "Event starts tomorrow": [
+        ""
+      ]
+    },
+    "Email reminder decryption error": {
+      "Event details are encrypted. Sign in again to restore Calendar and decrypt your data. ${ learnMoreLink }": [
+        ""
+      ],
+      "Event details cannot be decrypted. ${ whyNotLink }": [
+        ""
+      ]
+    },
+    "Email reminder error": {
+      "Event is no longer in your calendar": [
+        ""
+      ]
+    },
+    "Email reminder out of date alert": {
+      "Event was canceled": [
+        ""
+      ],
+      "Event was updated. This reminder is out-of-date.": [
+        ""
       ]
     },
     "Email subject": {
@@ -1939,7 +1993,7 @@
         "Não foi possível validar o telefone, tente novamente mais tarde"
       ],
       "Checkout expired, please try again": [
-        ""
+        "Pedido expirado. Por favor, tente novamente"
       ],
       "Choose a date in the future.": [
         "Escolha uma data futura."
@@ -1961,7 +2015,7 @@
         "Assinatura do contato não foi verificada"
       ],
       "Contact your organization’s administrator to resolve this": [
-        ""
+        "Entre em contato com o administrador da sua organização para resolver isso"
       ],
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "A pesquisa de conteúdo não pode ser ativada neste navegador. Por favor, saia do modo de navegação privada ou use outro navegador."
@@ -1973,8 +2027,8 @@
         "Erro ao descriptografar: a decodificação do conteúdo criptografado desta mensagem falhou."
       ],
       "Deselect at least ${ calendarToFixCount } calendar or": [
-        "",
-        ""
+        "Desmarque ao menos ${ calendarToFixCount } calendário ou",
+        "Desmarque ao menos ${ calendarToFixCount } calendários ou"
       ],
       "Draft could not be saved. Try again.": [
         "O rascunho não pôde ser salvo. Tente novamente."
@@ -2061,8 +2115,8 @@
         "O nome do marcador não pode ser vazio"
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
-        "",
-        ""
+        "Mescle ao menos ${ calendarToFixCount } calendário com um calendário Proton existente",
+        "Mescle ao menos ${ calendarToFixCount } calendários com calendários Proton existentes"
       ],
       "Message needs to be sent first": [
         "A mensagem precisa ser enviada primeiro"
@@ -2083,7 +2137,7 @@
         "Erro de conexão: Por favor, verifique sua conexão com a internet e tente novamente."
       ],
       "No address with keys available to compose a message": [
-        ""
+        "Sem endereços com chaves disponíveis para compor uma mensagem"
       ],
       "No key retrieved for internal user is valid for sending": [
         "Nenhuma chave recuperada para o usuário interno é válida para o envio"
@@ -2220,7 +2274,7 @@
         "O nome do marcador é muito longo. Por favor, escolha um nome diferente."
       ],
       "The maximum expiration is 4 weeks": [
-        ""
+        "A validade máxima é de 4 semanas"
       ],
       "The minimum amount of credit that can be added is ${ _price }": [
         "O valor mínimo de crédito que pode ser adicionado é ${ _price }"
@@ -2235,7 +2289,7 @@
         "A chave de envio não é válida"
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
-        ""
+        "Existem muitas pastas em sua conta externa. Por favor, personalize a importação para excluir algumas pastas."
       ],
       "There has been an issue with content search. Default search has been used instead.": [
         "Houve um problema com a pesquisa de conteúdo. Portanto, a pesquisa padrão foi usada."
@@ -2265,7 +2319,7 @@
         "Esta mensagem pode conter algum link que pode não ser aberto corretamente pelo seu navegador"
       ],
       "Too many active filters. Please upgrade to a paid plan to activate more filters.": [
-        ""
+        "Muitos filtros ativos. Por favor, atualize para um plano pago para ativar mais filtros."
       ],
       "Trusted keys are not valid for sending": [
         "As chaves confiáveis não são válidas para o envio"
@@ -2286,8 +2340,8 @@
         "Você não pode enviar vCards de mais de 10 contatos"
       ],
       "You cannot open more than ${ maxActiveComposer } composer window at a time": [
-        "",
-        ""
+        "Você não pode abrir mais de ${ maxActiveComposer } janela do compositor por vez",
+        "Você não pode abrir mais de ${ maxActiveComposer } janelas do compositor por vez"
       ],
       "You did not provide a file.": [
         "Você não escolheu um arquivo."
@@ -2305,7 +2359,7 @@
         "Sua importação não será processada."
       ],
       "Your search matched too many results. Please limit your search and try again.": [
-        ""
+        "A sua pesquisa correspondeu a muitos resultados. Limite sua busca e tente novamente."
       ]
     },
     "Error display when performing invalid move on message": {
@@ -2398,8 +2452,8 @@
       "Missing start time": [
         "Falta o horário de início"
       ],
-      "no UID, title or start time": [
-        "sem UID, título ou hora de início"
+      "No UID, title or start time": [
+        "Sem UID, título ou hora de início"
       ],
       "Non-Gregorian": [
         "Não gregoriano"
@@ -2472,8 +2526,8 @@
       "Attached ICS file could not be decrypted": [
         "Arquivo ICS anexado não pôde ser descriptografado"
       ],
-      "Attached ICS file could not be parsed": [
-        "Arquivo ICS anexado não pôde ser analisado"
+      "Attached ICS file could not be read": [
+        "Arquivo ICS anexado não pôde ser lido"
       ],
       "Invalid invitation": [
         "Convite inválido"
@@ -2643,8 +2697,8 @@
         "Complete todas as etapas e obtenha um total de 2 GB em sua conta"
       ],
       "Only ${ days } day left": [
-        "",
-        ""
+        "Resta apenas ${ days } dia",
+        "Resta apenas ${ days } dias"
       ]
     },
     "Get started checklist instructions": {
@@ -2765,20 +2819,8 @@
         "${ totalAttendees } participante",
         "${ totalAttendees } participantes"
       ],
-      "Calendar": [
-        "Calendário"
-      ],
-      "Location": [
-        "Local"
-      ],
       "Organizer:": [
         "Organizador:"
-      ],
-      "Participants": [
-        "Participantes"
-      ],
-      "Repeats": [
-        "Repetir"
       ]
     },
     "Import calendar": {
@@ -3051,6 +3093,9 @@
       "Account successfully updated": [
         "Conta atualizada com sucesso"
       ],
+      "Activating this option will open a new composer each time you click on a mailto: link.": [
+        "Ativar esta opção abrirá um novo compositor cada vez que você clicar em um link mailto: ."
+      ],
       "Activation in progress": [
         "Ativação em progresso"
       ],
@@ -3185,6 +3230,9 @@
       "Checking contact ${ progress } of ${ max }...": [
         "Verificando contato ${ progress } de ${ max }..."
       ],
+      "Clear data": [
+        "Limpar dados"
+      ],
       "Clearing browser data also deactivates message content search on this device. All messages will need to be downloaded again to search within them.": [
         "Limpar os dados do navegador também desativar a busca no conteúdo das mensagens neste dispositivo. Todas as mensagens precisarão ser baixadas novamente para que se possa pesquisá-las."
       ],
@@ -3220,10 +3268,10 @@
         ""
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
-        ""
+        "Crie um marcador para as mensagens importadas, um intervalo de tempo para esta importação e as pastas que deseja de importar."
       ],
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
-        ""
+        "Criar um marcador para as mensagens importadas, um período de tempo para esta importação, e os marcadores que deseja importar."
       ],
       "Create a new contact group": [
         "Crie um novo grupo de contatos"
@@ -3232,7 +3280,7 @@
         ""
       ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
-        ""
+        "São suportados os arquivos CSV do Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora e alguns outros apps, assim com os formatos vCard 3.1 e 4.0 (encode UTF-8)."
       ],
       "Custom": [
         "Personalizado"
@@ -3255,6 +3303,9 @@
       "Day": [
         "Dia",
         "dias"
+      ],
+      "Disable message content search": [
+        "Ativar a pesquisa no conteúdo de mensagens"
       ],
       "Discount applied to your subscription with coupon ${ code }": [
         "Foi aplicado um desconto em sua assinatura com o cupom ${ code }"
@@ -3521,7 +3572,7 @@
         "Membros"
       ],
       "Merged": [
-        ""
+        "Mesclado"
       ],
       "Message expiration works out-of-the-box when sending emails to other ProtonMail users. To send expiring emails to non-ProtonMail users, please cancel and add password protection to your email.": [
         "A expiração da mensagem funciona fora da caixa ao enviar e-mails para outros usuários do ProtonMail. Para enviar e-mails que expiram para usuários que não são usuários do ProtonMail, cancele e adicione a proteção por senha a seu e-mail."
@@ -3548,7 +3599,7 @@
         "Nomeie sua nova pasta e selecione a pasta pai que deseja colocá-la. Se você não selecionar uma pasta principal, esta nova pasta será criada como uma pasta de nível superior."
       ],
       "New": [
-        ""
+        "Novo"
       ],
       "Next you'll need to log in to your Google account and allow us to access your data.": [
         ""
@@ -3643,6 +3694,9 @@
       "Please add at least one recipient before sending.": [
         "Adicione pelo menos um destinatário antes de enviar."
       ],
+      "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
+        "Por favor, mantenha-o seguro. Você precisará dele para acessar sua conta e descriptografar seus dados em caso de redefinição de senha."
+      ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Note que os endereços atribuídos a este grupo NÃO serão excluídos."
       ],
@@ -3653,7 +3707,7 @@
         "Por favor, note que ao clicar no botão Confirmar sua conta terá ${ creditsRemaining } créditos restantes."
       ],
       "Please select the folders you would like to import:": [
-        ""
+        "Por favor, selecione as pastas que deseja importar:"
       ],
       "Please select the type of link you want to insert and fill in all the fields.": [
         "Por favor, selecione o tipo de link que você deseja inserir e preencha em todos os campos."
@@ -3678,9 +3732,6 @@
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Aguarde enquanto procuramos contatos que contenham dados criptografados com a chave inativa."
-      ],
-      "Please write your recovery phrase down in the order it appears and keep it somewhere safe. Your recovery phrase can be used to fully recover access to your account and your encrypted messages.": [
-        "Por favor anote sua frase de recuperação na ordem em que aparece e a mantenha em local seguro. Sua frase de recuperação pode ser usada para acessar sua conta e suas mensagens criptografadas."
       ],
       "Preview": [
         "Pré-visualização"
@@ -3778,6 +3829,9 @@
       ],
       "Session timed out.": [
         "Sessão expirada."
+      ],
+      "Set ProtonMail as your default mail handler": [
+        "Defina ProtonMail como seu gerenciador de e-mail padrão"
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
         "Configurar o PGP permite o envio de e-mails com criptografia de ponta-a-ponta com um usuário não-ProtonMail que usa um serviço compatível com PGP."
@@ -4532,8 +4586,8 @@
       "BTC amount:": [
         "Valor em BTC:"
       ],
-      "Calendar": [
-        "Calendário"
+      "Calendars": [
+        "Calendários"
       ],
       "Cancel": [
         "Cancelar"
@@ -4880,9 +4934,6 @@
       "without attachments": [
         "sem anexos"
       ],
-      "Your recovery phrase": [
-        "Sua frase de recuperação"
-      ],
       "ZIP": [
         "CEP"
       ]
@@ -5099,6 +5150,11 @@
         "Você precisa reativar suas chaves para ver o convite atualizado"
       ]
     },
+    "Link to calendar event": {
+      "Open in ${ CALENDAR_APP_NAME }": [
+        ""
+      ]
+    },
     "Loading info": {
       "${ createdCalendars } of ${ calendarsToBeCreated } created": [
         "",
@@ -5108,10 +5164,10 @@
         "Quase lá"
       ],
       "Creating new calendars": [
-        ""
+        "Criando novos calendários"
       ],
       "Gathering your data": [
-        ""
+        "Coletando seus dados"
       ],
       "We're gathering your data from your provider": [
         ""
@@ -5545,7 +5601,7 @@
     },
     "Option group label": {
       "Create new calendar": [
-        ""
+        "Criar novo calendário"
       ],
       "Merge with calendar": [
         ""
@@ -6051,7 +6107,7 @@
     },
     "Spotlight": {
       "Message Content Search": [
-        ""
+        "Busca no conteúdo das mensagens"
       ],
       "To protect your privacy, Proton blocked email trackers in this message": [
         ""
@@ -6521,6 +6577,9 @@
       ],
       "Confirm recipient address?": [
         "Confirmar o endereço do destinatário?"
+      ],
+      "Contact details": [
+        ""
       ],
       "Contact Details": [
         "Detalhes do contato"

@@ -218,6 +218,9 @@
       "Decrease": [
         "Azaltın"
       ],
+      "Default mail handler": [
+        ""
+      ],
       "Delete": [
         "Sil"
       ],
@@ -569,6 +572,9 @@
       "OK": [
         "Tamam"
       ],
+      "Open ${ CALENDAR_APP_NAME }": [
+        ""
+      ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "${ CALENDAR_APP_NAME } ayarlarını açın"
       ],
@@ -622,6 +628,9 @@
       ],
       "Print": [
         "Yazdır"
+      ],
+      "Prompt browser setting": [
+        ""
       ],
       "Quit": [
         ""
@@ -902,6 +911,9 @@
       ],
       "View source code": [
         "Kaynak kodu görüntüle"
+      ],
+      "Why not?": [
+        ""
       ],
       "Yes": [
         "Evet"
@@ -1395,6 +1407,12 @@
       "An occurrence has been added to the event ${ veventIcsTitle }": [
         "${ veventIcsTitle } etkinliğine bir olay eklendi"
       ],
+      "Event already ended": [
+        ""
+      ],
+      "Event in progress": [
+        ""
+      ],
       "Event refreshing is not supported for the moment": [
         ""
       ],
@@ -1407,20 +1425,14 @@
       "This answer cannot be added to ${ calendarAppName } as we only support answers to all events of a series for the moment": [
         ""
       ],
-      "This event has already happened": [
+      "This event has been canceled.": [
         ""
-      ],
-      "This event has been cancelled.": [
-        "Bu etkinlik iptal edildi."
       ],
       "This event has been updated.": [
         "Bu etkinlik güncellendi."
       ],
-      "This event is currently happening": [
+      "This invitation is out of date. The event has been canceled.": [
         ""
-      ],
-      "This invitation is out of date. The event has been cancelled.": [
-        "Bu davetin süresi doldu. Etkinlik iptal edildi."
       ],
       "This invitation is out of date. The event has been deleted.": [
         "Bu davetiye güncel değil. Etkinlik silindi."
@@ -1833,8 +1845,8 @@
       ]
     },
     "Email body for invitation": {
-      "${ eventTitle } has been cancelled.": [
-        "${ eventTitle } etkinliği iptal edildi."
+      "${ eventTitle } has been canceled.": [
+        ""
       ],
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
         "${ eventTitle } güncellendi.\n${ eventDetailsText }"
@@ -1868,6 +1880,48 @@
       ],
       "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
         "${ emailAddress }, ${ eventTitle } davetinizi geçici olarak kabul etti"
+      ]
+    },
+    "Email reminder banner": {
+      "Event already ended": [
+        ""
+      ],
+      "Event in progress": [
+        ""
+      ],
+      "Event is tomorrow": [
+        ""
+      ],
+      "Event starting now": [
+        ""
+      ],
+      "Event starts in ${ minutesUntilEvent } minute": [
+        "",
+        ""
+      ],
+      "Event starts tomorrow": [
+        ""
+      ]
+    },
+    "Email reminder decryption error": {
+      "Event details are encrypted. Sign in again to restore Calendar and decrypt your data. ${ learnMoreLink }": [
+        ""
+      ],
+      "Event details cannot be decrypted. ${ whyNotLink }": [
+        ""
+      ]
+    },
+    "Email reminder error": {
+      "Event is no longer in your calendar": [
+        ""
+      ]
+    },
+    "Email reminder out of date alert": {
+      "Event was canceled": [
+        ""
+      ],
+      "Event was updated. This reminder is out-of-date.": [
+        ""
       ]
     },
     "Email subject": {
@@ -2398,8 +2452,8 @@
       "Missing start time": [
         "Başlama zamanı eksik"
       ],
-      "no UID, title or start time": [
-        "UID, başlık veya başlangıç zamanı yok"
+      "No UID, title or start time": [
+        ""
       ],
       "Non-Gregorian": [
         "Miladi değil"
@@ -2472,8 +2526,8 @@
       "Attached ICS file could not be decrypted": [
         "Eklenen ICS dosyasının şifresi çözülemedi"
       ],
-      "Attached ICS file could not be parsed": [
-        "Eklenen ICS dosyası ayrıştırılamadı"
+      "Attached ICS file could not be read": [
+        ""
       ],
       "Invalid invitation": [
         "Geçersiz davetiye"
@@ -2765,19 +2819,7 @@
         "",
         ""
       ],
-      "Calendar": [
-        "Takvim"
-      ],
-      "Location": [
-        "Konum"
-      ],
       "Organizer:": [
-        ""
-      ],
-      "Participants": [
-        "Katılımcılar"
-      ],
-      "Repeats": [
         ""
       ]
     },
@@ -3051,6 +3093,9 @@
       "Account successfully updated": [
         "Hesap başarıyla güncellendi"
       ],
+      "Activating this option will open a new composer each time you click on a mailto: link.": [
+        ""
+      ],
       "Activation in progress": [
         "Etkinleştirme devam ediyor"
       ],
@@ -3185,6 +3230,9 @@
       "Checking contact ${ progress } of ${ max }...": [
         "Kişi kontrol ediliyor ${ progress }/${ max }..."
       ],
+      "Clear data": [
+        ""
+      ],
       "Clearing browser data also deactivates message content search on this device. All messages will need to be downloaded again to search within them.": [
         "Tarayıcı verilerinin temizlenmesi, bu cihazda ileti içeriği aramasını da devre dışı bırakır. İçlerinde arama yapmak için tüm iletilerin yeniden indirilmesi gerekir."
       ],
@@ -3255,6 +3303,9 @@
       "Day": [
         "Gün",
         "gün"
+      ],
+      "Disable message content search": [
+        ""
       ],
       "Discount applied to your subscription with coupon ${ code }": [
         "${ code } kuponu ile aboneliğinize indirim uygulandı"
@@ -3643,6 +3694,9 @@
       "Please add at least one recipient before sending.": [
         "Lütfen göndermeden önce en az bir alıcı ekleyin."
       ],
+      "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
+        ""
+      ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Bu gruba atanan adreslerin silinmeyeceğini lütfen unutmayın."
       ],
@@ -3678,9 +3732,6 @@
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Etkin olmayan anahtarla şifrelenmiş verileri içeren kişileri ararken lütfen bekleyin."
-      ],
-      "Please write your recovery phrase down in the order it appears and keep it somewhere safe. Your recovery phrase can be used to fully recover access to your account and your encrypted messages.": [
-        "Kurtarma anahtar metninizi görünen sırasıyla yazarak güvenli bir yerde tutun. Kurtarma anahtar metniniz, hesabınıza ve şifreli iletilerinize tam kurtarma erişimi yapmak için kullanılabilir."
       ],
       "Preview": [
         "Önizle"
@@ -3778,6 +3829,9 @@
       ],
       "Session timed out.": [
         "Oturum zaman aşımına uğradı."
+      ],
+      "Set ProtonMail as your default mail handler": [
+        ""
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
         "PGP'yi ayarlamak, PGP uyumlu bir hizmet kullanan ve ProtonMail kullanmayan bir kullanıcıyla uçtan uca şifreli e-postalar göndermenizi sağlar."
@@ -4532,7 +4586,7 @@
       "BTC amount:": [
         "BTC miktarı:"
       ],
-      "Calendar": [
+      "Calendars": [
         ""
       ],
       "Cancel": [
@@ -4880,9 +4934,6 @@
       "without attachments": [
         "ekler olmadan"
       ],
-      "Your recovery phrase": [
-        "Kurtarma anahtar metniniz"
-      ],
       "ZIP": [
         "Posta Kodu"
       ]
@@ -5097,6 +5148,11 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Güncellenen daveti görmek için anahtarlarınızı yeniden etkinleştirmeniz gerekiyor"
+      ]
+    },
+    "Link to calendar event": {
+      "Open in ${ CALENDAR_APP_NAME }": [
+        ""
       ]
     },
     "Loading info": {
@@ -6521,6 +6577,9 @@
       ],
       "Confirm recipient address?": [
         "Alıcı adresi onaylansın mı?"
+      ],
+      "Contact details": [
+        ""
       ],
       "Contact Details": [
         "Kişi Ayrıntıları"

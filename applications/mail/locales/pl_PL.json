@@ -218,6 +218,9 @@
       "Decrease": [
         "Zmniejsz"
       ],
+      "Default mail handler": [
+        "Domyślna aplikacja pocztowa"
+      ],
       "Delete": [
         "Usuń"
       ],
@@ -575,6 +578,9 @@
       "OK": [
         "OK"
       ],
+      "Open ${ CALENDAR_APP_NAME }": [
+        "Otwórz ${ CALENDAR_APP_NAME }"
+      ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Otwórz ustawienia ${ CALENDAR_APP_NAME }"
       ],
@@ -628,6 +634,9 @@
       ],
       "Print": [
         "Drukuj"
+      ],
+      "Prompt browser setting": [
+        ""
       ],
       "Quit": [
         "Zakończ"
@@ -910,6 +919,9 @@
       ],
       "View source code": [
         "Pokaż kod źródłowy"
+      ],
+      "Why not?": [
+        "Dlaczego?"
       ],
       "Yes": [
         "Tak"
@@ -1411,6 +1423,12 @@
       "An occurrence has been added to the event ${ veventIcsTitle }": [
         "Do wydarzenia ${ veventIcsTitle } zostało dodane powtórzenie"
       ],
+      "Event already ended": [
+        ""
+      ],
+      "Event in progress": [
+        "Wydarzenie jest w toku"
+      ],
       "Event refreshing is not supported for the moment": [
         "Odświeżanie wydarzenia nie jest obecnie obsługiwane"
       ],
@@ -1423,19 +1441,13 @@
       "This answer cannot be added to ${ calendarAppName } as we only support answers to all events of a series for the moment": [
         "Ta odpowiedź nie może zostać dodana do usługi ${ calendarAppName }, ponieważ obecnie obsługiwane są tylko odpowiedzi na wszystkie wydarzenia w tej samej serii"
       ],
-      "This event has already happened": [
-        "Wydarzenie już się odbyło"
-      ],
-      "This event has been cancelled.": [
+      "This event has been canceled.": [
         "Wydarzenie zostało anulowane."
       ],
       "This event has been updated.": [
         "Wydarzenie zostało zaktualizowane."
       ],
-      "This event is currently happening": [
-        "Wydarzenie obecnie się odbywa"
-      ],
-      "This invitation is out of date. The event has been cancelled.": [
+      "This invitation is out of date. The event has been canceled.": [
         "Zaproszenie jest nieaktualne. Wydarzenie zostało anulowane."
       ],
       "This invitation is out of date. The event has been deleted.": [
@@ -1863,7 +1875,7 @@
       ]
     },
     "Email body for invitation": {
-      "${ eventTitle } has been cancelled.": [
+      "${ eventTitle } has been canceled.": [
         "Wydarzenie ${ eventTitle } zostało anulowane."
       ],
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
@@ -1898,6 +1910,50 @@
       ],
       "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
         "Uczestnik ${ emailAddress } wstępnie zaakceptował zaproszenie do wydarzenia ${ eventTitle }"
+      ]
+    },
+    "Email reminder banner": {
+      "Event already ended": [
+        ""
+      ],
+      "Event in progress": [
+        "Wydarzenie jest w toku"
+      ],
+      "Event is tomorrow": [
+        "Wydarzenie rozpocznie się jutro"
+      ],
+      "Event starting now": [
+        "Wydarzenie rozpoczyna się teraz"
+      ],
+      "Event starts in ${ minutesUntilEvent } minute": [
+        "Wydarzenie rozpocznie się za minutę",
+        "Wydarzenie rozpocznie się za ${ minutesUntilEvent } minuty",
+        "Wydarzenie rozpocznie się za ${ minutesUntilEvent } minut",
+        "Wydarzenie rozpocznie się za ${ minutesUntilEvent } minuty"
+      ],
+      "Event starts tomorrow": [
+        "Wydarzenie rozpocznie się jutro"
+      ]
+    },
+    "Email reminder decryption error": {
+      "Event details are encrypted. Sign in again to restore Calendar and decrypt your data. ${ learnMoreLink }": [
+        "Szczegóły wydarzenia są zaszyfrowane. Zaloguj się ponownie, aby przywrócić kalendarz i odszyfrować dane. ${ learnMoreLink }"
+      ],
+      "Event details cannot be decrypted. ${ whyNotLink }": [
+        "Szczegóły wydarzenia nie mogą zostać odszyfrowane. ${ whyNotLink }"
+      ]
+    },
+    "Email reminder error": {
+      "Event is no longer in your calendar": [
+        ""
+      ]
+    },
+    "Email reminder out of date alert": {
+      "Event was canceled": [
+        "Wydarzenie zostało anulowane"
+      ],
+      "Event was updated. This reminder is out-of-date.": [
+        "Wydarzenie zostało zaktualizowane. Przypomnienie jest nieaktualne."
       ]
     },
     "Email subject": {
@@ -2446,7 +2502,7 @@
       "Missing start time": [
         "Brak czasu rozpoczęcia"
       ],
-      "no UID, title or start time": [
+      "No UID, title or start time": [
         "Brak identyfikatora użytkownika, tytułu lub czasu rozpoczęcia"
       ],
       "Non-Gregorian": [
@@ -2520,8 +2576,8 @@
       "Attached ICS file could not be decrypted": [
         "Dołączony plik ICS nie może zostać odszyfrowany"
       ],
-      "Attached ICS file could not be parsed": [
-        "Dołączony plik ICS nie może zostać przetworzony"
+      "Attached ICS file could not be read": [
+        "Dołączony plik ICS nie może zostać odczytany"
       ],
       "Invalid invitation": [
         "Zaproszenie jest nieprawidłowe"
@@ -2819,20 +2875,8 @@
         "${ totalAttendees } uczestników",
         "${ totalAttendees } uczestników"
       ],
-      "Calendar": [
-        "Kalendarz"
-      ],
-      "Location": [
-        "Lokalizacja"
-      ],
       "Organizer:": [
         "Organizator:"
-      ],
-      "Participants": [
-        "Uczestnicy"
-      ],
-      "Repeats": [
-        "Powtarzaj"
       ]
     },
     "Import calendar": {
@@ -3171,6 +3215,9 @@
       "Account successfully updated": [
         "Konto zostało zaktualizowane"
       ],
+      "Activating this option will open a new composer each time you click on a mailto: link.": [
+        "Włączenie tej opcji spowoduje otwarcie nowego edytora za każdym razem, kiedy klikniesz na link mailto:."
+      ],
       "Activation in progress": [
         "Aktywacja jest w toku"
       ],
@@ -3315,6 +3362,9 @@
       "Checking contact ${ progress } of ${ max }...": [
         "Sprawdzanie kontaktów... (${ progress }/${ max })"
       ],
+      "Clear data": [
+        "Usuń dane"
+      ],
       "Clearing browser data also deactivates message content search on this device. All messages will need to be downloaded again to search within them.": [
         "Wyczyszczenie pamięci podręczną przeglądarki spowodowuje wyłączenie wyszukiwania zawartości wiadomości na tym urządzeniu. Aby włączyć tę opcję, będziesz musiał ponownie pobrać wszystkie wiadomości."
       ],
@@ -3389,6 +3439,9 @@
         "dni",
         "dni",
         "dnia"
+      ],
+      "Disable message content search": [
+        "Wyłącz wyszukiwanie zawartości wiadomości"
       ],
       "Discount applied to your subscription with coupon ${ code }": [
         "Zniżka za kupon ${ code } została wliczona do Twojej subskrypcji"
@@ -3795,6 +3848,9 @@
       "Please add at least one recipient before sending.": [
         "Wpisz co najmniej jednego odbiorcę przed wysłaniem."
       ],
+      "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
+        "Zachowaj to hasło. Jeśli zresetujesz hasło, będziesz go potrzebować do odzyskania dostępu do konta i odszyfrowania danych."
+      ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Pamiętaj, że adresy przypisane do tej grupy NIE zostaną usunięte."
       ],
@@ -3830,9 +3886,6 @@
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Poczekaj na sprawdzenie kontaktów, które zawierają zaszyfrowane dane za pomocą nieaktywnego klucza."
-      ],
-      "Please write your recovery phrase down in the order it appears and keep it somewhere safe. Your recovery phrase can be used to fully recover access to your account and your encrypted messages.": [
-        "Zapisz w bezpiecznym miejscu hasło odzyskiwania w określonej kolejności. To hasło może zostać użyte do odzyskania dostępu do konta i zaszyfrowanych wiadomości."
       ],
       "Preview": [
         "Podgląd"
@@ -3932,6 +3985,9 @@
       ],
       "Session timed out.": [
         "Upłynął limit czasu sesji."
+      ],
+      "Set ProtonMail as your default mail handler": [
+        "Ustaw ProtonMail jako domyślną aplikację pocztową"
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
         "Konfiguracja PGP pozwala na wysyłanie wiadomości zaszyfrowanych end-to-end do użytkowników spoza ProtonMaila, używających kompatybilnej usługi PGP."
@@ -4708,8 +4764,8 @@
       "BTC amount:": [
         "Kwota BTC:"
       ],
-      "Calendar": [
-        "Kalendarz"
+      "Calendars": [
+        "Kalendarze"
       ],
       "Cancel": [
         "Anuluj"
@@ -5056,9 +5112,6 @@
       "without attachments": [
         "bez załączników"
       ],
-      "Your recovery phrase": [
-        "Twoje hasło odzyskiwania"
-      ],
       "ZIP": [
         "Kod pocztowy"
       ]
@@ -5273,6 +5326,11 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Musisz reaktywować klucze, aby zobaczyć zaktualizowane zaproszenie"
+      ]
+    },
+    "Link to calendar event": {
+      "Open in ${ CALENDAR_APP_NAME }": [
+        "Otwórz w aplikacji ${ CALENDAR_APP_NAME }"
       ]
     },
     "Loading info": {
@@ -6787,6 +6845,9 @@
       ],
       "Confirm recipient address?": [
         "Potwierdzasz adres odbiorcy?"
+      ],
+      "Contact details": [
+        "Szczegóły kontaktu"
       ],
       "Contact Details": [
         "Szczegóły kontaktu"
