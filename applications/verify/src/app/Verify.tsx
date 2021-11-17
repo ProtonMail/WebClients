@@ -55,6 +55,10 @@ const Verify = () => {
         withLoading(Promise.all([loadLocale(localeCode, locales), loadDateLocale(localeCode, browserLocale)])).catch(
             () => setError(true)
         );
+
+        if (!isEmbedded) {
+            document.body.classList.remove('embedded');
+        }
     }, []);
 
     const sendHeight = (resizes: ResizeObserverEntry[]) => {

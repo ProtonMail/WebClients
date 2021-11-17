@@ -1,5 +1,10 @@
 @import '~@proton/styles/scss/config';
 
+body.embedded {
+	font-size: 1em;
+	background: none;
+}
+
 .hv {
 	background: url(./mountains.svg) 0 0 no-repeat;
 	background-size: cover;

@@ -275,7 +275,7 @@ const HumanVerificationForm = ({
         );
     }
 
-    return <Tabs tabs={tabs} value={index} onChange={setIndex} />;
+    return <Tabs fullWidth tabs={tabs} value={index} onChange={setIndex} />;
 };
 
 export default HumanVerificationForm;
