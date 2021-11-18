@@ -348,6 +348,14 @@ const ImportAssistantOauthModal = ({ addresses, onClose = noop, defaultCheckedTy
                             }
                         );
 
+                        const mailData = data[MAIL].providerFolders.length;
+                        const calendarData = data[CALENDAR].providerCalendars.length;
+                        const contactsData = data[CONTACTS].numContacts || data[CONTACTS].numContactGroups;
+
+                        if (!mailData && !calendarData && !contactsData) {
+                            throw new Error(c('Error').t`No data to import`);
+                        }
+
                         setModalModel({
                             ...modalModel,
                             step: SELECT_IMPORT_TYPE,
