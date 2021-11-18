@@ -13,8 +13,8 @@ import { MapSendInfo } from '../../models/crypto';
 import { SAVE_DRAFT_ERROR_CODES, SEND_EMAIL_ERROR_CODES, MESSAGE_ALREADY_SENT_INTERNAL_ERROR } from '../../constants';
 import { PromiseHandlers } from '../usePromise';
 import { MessageState, MessageStateWithData } from '../../logic/messages/messagesTypes';
-import { useGetMessage } from '../message/useMessage';
 import { endSending, startSending } from '../../logic/messages/draft/messagesDraftActions';
+import { useGetMessage } from '../message/useMessage';
 
 export interface UseSendHandlerParameters {
     modelMessage: MessageState;
@@ -50,6 +50,7 @@ export const useSendHandler = ({
     const { createNotification, hideNotification } = useNotifications();
     const { call } = useEventManager();
     const dispatch = useDispatch();
+    const getMessage = useGetMessage();
 
     const { preliminaryVerifications, extendedVerifications } = useSendVerifications(
         handleNoRecipients,
@@ -60,8 +61,6 @@ export const useSendHandler = ({
     const [mailSettings] = useMailSettings();
 
     const onCompose = useOnCompose();
-
-    const getMessage = useGetMessage();
 
     const handleSendAfterUploads = useHandler(async (notifManager: SendingMessageNotificationManager) => {
         let verificationResults;
@@ -74,19 +73,20 @@ export const useSendHandler = ({
 
             verificationResults = await extendedVerifications(modelMessage as MessageStateWithData, mapSendInfo);
             mapSendPrefs = verificationResults.mapSendPrefs;
+            inputMessage = verificationResults.cleanMessage;
 
-            // const messageFromCache = messageCache.get(modelMessage.localID);
-            const messageFromCache = getMessage(modelMessage.localID);
-            alreadySaved =
-                !!messageFromCache?.data?.ID && !pendingAutoSave.isPending && !verificationResults.hasChanged;
-            autoSave.abort?.(); // Save will take place in the send process
-            inputMessage = alreadySaved ? (messageFromCache as MessageStateWithData) : verificationResults.cleanMessage;
+            alreadySaved = !!inputMessage.data.ID && !pendingAutoSave.isPending && !verificationResults.hasChanged;
+            autoSave.abort?.();
 
             // sendMessage expect a saved and up to date message
             // If there is anything new or pending, we have to make a last save
             if (!alreadySaved) {
                 await saveNow(inputMessage);
                 await call();
+
+                if (!inputMessage.data.ID) {
+                    inputMessage.data = (getMessage(inputMessage.localID) as MessageStateWithData).data;
+                }
             }
         } catch {
             hideNotification(notifManager.ID);

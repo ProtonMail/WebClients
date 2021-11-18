@@ -94,8 +94,6 @@ export const useSendMessage = () => {
                 // Last minute modifications on the message before sending
                 const message = (await sendModification(inputMessage)) as MessageStateWithData;
 
-                // TODO: handleAttachmentSigs ?
-
                 const emails = unique(getRecipientsAddresses(inputMessage.data));
 
                 const hasHtml = Object.values(mapSendPrefs).some(

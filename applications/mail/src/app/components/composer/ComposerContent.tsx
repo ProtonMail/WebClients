@@ -10,6 +10,7 @@ import { PendingUpload } from '../../hooks/composer/useAttachments';
 import { MessageChange } from './Composer';
 import { Breakpoints } from '../../models/utils';
 import { MessageState, MessageStateWithData } from '../../logic/messages/messagesTypes';
+import AttachmentList, { AttachmentAction } from '../attachment/AttachmentList';
 
 interface Props {
     message: MessageState;

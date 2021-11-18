@@ -20,7 +20,7 @@ import { canonizeEmail } from '@proton/shared/lib/helpers/email';
 import { useDispatch } from 'react-redux';
 import { mergeMessages } from '../../helpers/message/messages';
 import { getContent, setContent } from '../../helpers/message/messageContent';
-import { useMessage } from '../../hooks/message/useMessage';
+import { useMessage, useGetMessage } from '../../hooks/message/useMessage';
 import { useInitializeMessage } from '../../hooks/message/useInitializeMessage';
 import { isNewDraft } from '../../helpers/message/messageDraft';
 import { useAttachments } from '../../hooks/composer/useAttachments';
@@ -90,6 +90,7 @@ const Composer = (
     ref: Ref<ComposerAction>
 ) => {
     const dispatch = useDispatch();
+    const getMessage = useGetMessage();
     const { createNotification } = useNotifications();
 
     const bodyRef = useRef<HTMLDivElement>(null);
@@ -413,8 +414,10 @@ const Composer = (
     }, [uploadInProgress]);
 
     const handleDiscard = async () => {
-        if (syncedMessage.data?.ID) {
-            await deleteDraft(syncedMessage);
+        // syncedMessage can be a render late
+        const message = getMessage(messageID);
+        if (message?.data?.ID) {
+            await deleteDraft(message);
         }
         createNotification({ text: c('Info').t`Draft discarded` });
     };
@@ -436,7 +439,7 @@ const Composer = (
         autoSave,
         saveNow,
         onClose,
-        onDicard: handleDiscard,
+        onDiscard: handleDiscard,
         pendingAutoSave,
         promiseUpload,
         uploadInProgress,

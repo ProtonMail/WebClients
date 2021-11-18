@@ -5,15 +5,15 @@ import ComposerPasswordModal from './ComposerPasswordModal';
 import ComposerExpirationModal from './ComposerExpirationModal';
 import ComposerScheduleSendModal from './ComposerScheduleSendModal';
 import ComposerInsertImageModal from './ComposerInsertImageModal';
-import { MessageExtended } from '../../../models/message';
 import ComposerInnerModal from './ComposerInnerModal';
 import { MessageChange } from '../Composer';
 import { ATTACHMENT_ACTION } from '../../../helpers/attachment/attachmentUploader';
 import { ComposerInnerModalStates } from '../../../hooks/composer/useComposerInnerModals';
+import { MessageState } from '../../../logic/messages/messagesTypes';
 
 interface Props {
     innerModal: ComposerInnerModalStates;
-    message: MessageExtended;
+    message: MessageState;
     handleChange: MessageChange;
     pendingFiles?: File[];
     handleCloseInnerModal: () => void;
@@ -52,7 +52,7 @@ const ComposerInnerModals = ({
                 <ComposerScheduleSendModal
                     onClose={handleCloseInnerModal}
                     onSubmit={handleScheduleSend}
-                    messageLocalID={message.localID}
+                    message={message}
                 />
             )}
             {innerModal === ComposerInnerModalStates.InsertImage && pendingFiles && (
