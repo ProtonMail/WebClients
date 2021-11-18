@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Select } from '../../components';
+import { Select } from '../../components/select';
 import { DEFAULT_FONT_SIZE, FONT_SIZES } from '../../components/editor/squireConfig';
 
 interface Props {
