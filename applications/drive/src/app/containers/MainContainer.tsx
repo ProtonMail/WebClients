@@ -85,8 +85,8 @@ const InitContainer = () => {
         );
     }
 
-    // isEnabled means global features is enabled, and value whether user has early access.
-    if (earlyAccess.isEnabled && earlyAccess.value === false) {
+    // user does not have early access.
+    if (earlyAccess.value === false) {
         return (
             <ActiveShareProvider defaultShareRoot={defaultShareRoot}>
                 <NoAccessContainer reason="notbeta" />

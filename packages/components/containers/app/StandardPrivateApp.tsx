@@ -7,12 +7,13 @@ import createEventManager from '@proton/shared/lib/eventManager/eventManager';
 import { loadModels } from '@proton/shared/lib/models/helper';
 import { destroyOpenPGP, loadOpenPGP } from '@proton/shared/lib/openpgp';
 import { Model } from '@proton/shared/lib/interfaces/Model';
-import { Address, User as tsUser, UserSettings as tsUserSettings } from '@proton/shared/lib/interfaces';
+import { Address, User, UserSettings } from '@proton/shared/lib/interfaces';
 import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 import { getApiErrorMessage, getIs401Error } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getBrowserLocale, getClosestLocaleCode } from '@proton/shared/lib/i18n/helper';
 import { APPS, REQUIRES_INTERNAL_EMAIL_ADDRESS, REQUIRES_NONDELINQUENT } from '@proton/shared/lib/constants';
 import { getHasOnlyExternalAddresses } from '@proton/shared/lib/helpers/address';
+import { getFeatures } from '@proton/shared/lib/api/features';
 
 import { useApi, useCache, useConfig, useErrorHandler } from '../../hooks';
 
@@ -34,8 +35,9 @@ import StandardLoadErrorPage from './StandardLoadErrorPage';
 import KeyBackgroundManager from './KeyBackgroundManager';
 import StorageListener from './StorageListener';
 import DelinquentContainer from './DelinquentContainer';
-import { FeaturesProvider } from '../features';
+import { FeaturesProvider, FeatureCode, Feature } from '../features';
 import { useAppLink } from '../../components';
+import { handleEarlyAccessDesynchronization } from '../../helpers/earlyAccessDesynchronization';
 
 interface Props<T, M extends Model<T>, E, EvtM extends Model<E>> {
     locales?: TtagLocaleMap;
@@ -99,11 +101,13 @@ const StandardPrivateApp = <T, M extends Model<T>, E, EvtM extends Model<E>>({
             return hasInternalEmailAddressRequirement && Addresses?.length && getHasOnlyExternalAddresses(Addresses);
         });
 
+        const featuresPromise = silentApi<{ Features: Feature[] }>(getFeatures([FeatureCode.EarlyAccessScope]));
+
         const models = unique([UserSettingsModel, UserModel, ...preloadModels]);
         const filteredModels = addressesPromise ? models.filter((model) => model !== AddressesModel) : models;
 
         const modelsPromise = loadModels(filteredModels, loadModelsArgs).then((result: any) => {
-            const [userSettings, user] = result as [tsUserSettings, tsUser];
+            const [userSettings, user] = result as [UserSettings, User];
 
             const hasNonDelinquentRequirement = REQUIRES_NONDELINQUENT.includes(APP_NAME);
             const hasNonDelinquentScope = getHasNonDelinquentScope(user);
@@ -112,6 +116,12 @@ const StandardPrivateApp = <T, M extends Model<T>, E, EvtM extends Model<E>>({
             const browserLocale = getBrowserLocale();
             const localeCode = getClosestLocaleCode(userSettings.Locale, locales);
             return Promise.all([
+                featuresPromise.then(async ({ Features }) => {
+                    const [earlyAccessScope] = Features;
+
+                    // The await prevents setLoading being set to false if page is about to reload
+                    await handleEarlyAccessDesynchronization({ userSettings, earlyAccessScope, appName: APP_NAME });
+                }),
                 loadLocale(localeCode, locales),
                 loadDateLocale(localeCode, browserLocale, userSettings),
             ]);

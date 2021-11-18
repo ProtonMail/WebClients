@@ -106,3 +106,7 @@ export const openNewTab = (url: string) => {
 
     return anchor.click();
 };
+
+// On safari < 14 the Version cookie is sent for index.html file but
+// not sent for asset requests due to https://bugs.webkit.org/show_bug.cgi?id=171566
+export const doesNotSupportEarlyAccessVersion = () => isSafari() && Number(ua.browser.major) < 14;
