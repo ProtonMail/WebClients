@@ -9,7 +9,7 @@ describe('convert utc', () => {
         day,
         hours,
         minutes,
-        seconds
+        seconds,
     });
 
     it('should convert a zoned time (Australia/Sydney) to utc', () => {
@@ -64,6 +64,24 @@ describe('convert utc', () => {
 });
 
 describe('getSupportedTimezone', () => {
+    it('should remove extra slashes', () => {
+        expect(getSupportedTimezone('/Europe/London/')).toEqual('Europe/London');
+    });
+
+    it('should support the bluejeans format', () => {
+        expect(getSupportedTimezone('/tzurl.org/2020b/America/Chicago')).toEqual('America/Chicago');
+    });
+
+    it('should support the mozilla format', () => {
+        expect(getSupportedTimezone('/mozilla.org/20050126_1/America/Argentina/Ushuaia')).toEqual(
+            'America/Argentina/Ushuaia'
+        );
+    });
+
+    it('should be robust for capturing globally defined timezones (for which no specification exists)', () => {
+        expect(getSupportedTimezone('/IANA-db:Asia/Seoul--custom.format')).toEqual('Asia/Seoul');
+    });
+
     it('should filter non-supported canonical timezones', () => {
         const canonical = listTimeZones();
         const results = canonical.map((tzid) => getSupportedTimezone(tzid));
@@ -80,7 +98,7 @@ describe('getSupportedTimezone', () => {
             'Asia/Macao',
             'Asia/Istanbul',
             'Europe/Skopje',
-            'GB-Eire'
+            'GB-Eire',
         ];
         const canonical = [
             'Africa/Maputo',
@@ -90,7 +108,7 @@ describe('getSupportedTimezone', () => {
             'Asia/Macau',
             'Europe/Istanbul',
             'Europe/Belgrade',
-            'Europe/London'
+            'Europe/London',
         ];
         const results = alias.map((tzid) => getSupportedTimezone(tzid));
         expect(results).toEqual(canonical);
