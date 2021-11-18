@@ -35,7 +35,7 @@ const AttachmentsButton = (
                 role="button"
                 as="label"
                 color={isAttachments ? 'norm' : 'weak'}
-                shape="outline"
+                shape="ghost"
                 className={classnames(['inline-flex', disabled && 'is-disabled'])}
                 ref={ref}
                 {...rest}

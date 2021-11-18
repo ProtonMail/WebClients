@@ -79,14 +79,14 @@ const AddressesGroupItem = ({
     };
 
     const handleCloseGroupModal = () => {
-        if (modalID === undefined){
+        if (modalID === undefined) {
             return;
         }
         hideModal(modalID);
     };
 
     const handleRemoveGroupModal = () => {
-        if (modalID === undefined){
+        if (modalID === undefined) {
             return;
         }
         removeModal(modalID);
@@ -108,7 +108,7 @@ const AddressesGroupItem = ({
         <>
             <div
                 className={classnames([
-                    'composer-addresses-item mt0-25 mb0-25 mr0-5 bordered flex flex-nowrap flex-row max-w100 stop-propagation cursor-grab',
+                    'composer-addresses-item mt0-25 mb0-25 mr0-5 flex flex-nowrap flex-row max-w100 stop-propagation cursor-grab rounded',
                     dragged && 'composer-addresses-item-dragged',
                 ])}
                 draggable
@@ -117,22 +117,25 @@ const AddressesGroupItem = ({
                 ref={itemRef}
                 {...dragHandlers}
             >
-                <span className="inline-flex composer-addresses-item-icon pl0-25 ml0-1 pr0-25 no-pointer-events-children h100">
-                    <Icon name="user-group" size={12} color={recipientGroup?.group?.Color} className="mauto" />
-                </span>
-                <Tooltip title={c('Info').t`Click to view group details`}>
-                    <span
-                        className="composer-addresses-item-label mtauto mbauto pl0-25 text-ellipsis pr0-5"
-                        onClick={handleOpenGroupModal}
-                        onContextMenu={handleContextMenu}
-                    >
-                        {label}
+                <span className="interactive flex flex-row flex-nowrap">
+                    <span className="inline-flex composer-addresses-item-icon pl0-5 ml0-1 pr0-25 no-pointer-events-children h100">
+                        <Icon name="user-group" size={12} color={recipientGroup?.group?.Color} className="mauto" />
                     </span>
-                </Tooltip>
+                    <Tooltip title={c('Info').t`Click to view group details`}>
+                        <span
+                            className="composer-addresses-item-label mtauto mbauto pl0-25 text-ellipsis pr0-5"
+                            onClick={handleOpenGroupModal}
+                            onContextMenu={handleContextMenu}
+                        >
+                            {label}
+                        </span>
+                    </Tooltip>
+                </span>
+
                 <Tooltip title={c('Action').t`Remove`}>
                     <button
                         type="button"
-                        className="composer-addresses-item-remove inline-flex border-left pl0-25 pr0-25 no-pointer-events-children h100"
+                        className="composer-addresses-item-remove inline-flex p0-5 no-pointer-events-children h100 interactive"
                         onClick={handleRemove}
                     >
                         <Icon name="xmark" size={12} className="mauto" />

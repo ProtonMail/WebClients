@@ -6,6 +6,7 @@ import { MessageExtended } from '../../models/message';
 import { MessageChange } from './Composer';
 import { MessageSendInfo } from '../../hooks/useSendInfo';
 import SelectSender from './addresses/SelectSender';
+import ExtraExpirationTime from '../message/extras/ExtraExpirationTime';
 
 interface Props {
     message: MessageExtended;
@@ -33,12 +34,13 @@ const ComposerMeta = ({
         onChange({ data: { Subject: input.value } });
     };
 
+    //
     return (
-        <div className="composer-meta w100 flex-item-noshrink">
-            <div className="flex flex-row flex-nowrap flex-align-items-center m0-5 pl0-5 pr0-5">
+        <div className="composer-meta flex-item-noshrink ml0-5 mr1-5 pl1-25 pr0-25">
+            <div className="flex flex-row flex-nowrap on-mobile-flex-column flex-align-items-center w100">
                 <Label
                     htmlFor={`from-${uid}`}
-                    className={classnames(['composer-meta-label pt0 text-bold', disabled && 'placeholder'])}
+                    className={classnames(['composer-meta-label pt0 text-semibold', disabled && 'placeholder'])}
                 >
                     {c('Info').t`From`}
                 </Label>
@@ -58,10 +60,10 @@ const ComposerMeta = ({
                 addressesBlurRef={addressesBlurRef}
                 addressesFocusRef={addressesFocusRef}
             />
-            <div className="flex flex-row flex-nowrap flex-align-items-center m0-5 pl0-5 pr0-5">
+            <div className="flex flex-row flex-nowrap on-mobile-flex-column flex-align-items-center mt0 mb0-5">
                 <Label
                     htmlFor={`subject-${uid}`}
-                    className={classnames(['composer-meta-label pt0 text-bold', disabled && 'placeholder'])}
+                    className={classnames(['composer-meta-label pt0 text-semibold', disabled && 'placeholder'])}
                 >
                     {c('Info').t`Subject`}
                 </Label>
@@ -73,8 +75,10 @@ const ComposerMeta = ({
                     onChange={handleSubjectChange}
                     onFocus={addressesBlurRef.current}
                     data-testid="composer:subject"
+                    className="field-lighter composer-meta-input-subject"
                 />
             </div>
+            <ExtraExpirationTime marginBottom={false} message={message} />
         </div>
     );
 };

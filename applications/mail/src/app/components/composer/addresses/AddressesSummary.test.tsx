@@ -5,7 +5,15 @@ import AddressesSummary from './AddressesSummary';
 import { getRecipientLabel } from '../../../helpers/addresses';
 
 const message = {} as Message;
-const props = { message, contacts: [], contactGroups: [], onFocus: noop, toggleExpanded: noop, disabled: false };
+const props = {
+    message,
+    contacts: [],
+    contactGroups: [],
+    onFocus: noop,
+    toggleExpanded: noop,
+    disabled: false,
+    handleContactModal: jest.fn(),
+};
 const recipient = { Name: 'RecipientName', Address: 'Address' };
 const recipientLabel = getRecipientLabel(recipient, {}) || '';
 const recipientGroup = { Name: 'RecipientName', Address: 'Address', Group: 'GroupPath' };

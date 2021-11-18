@@ -7,7 +7,7 @@ import { act, getByText as getByTextDefault } from '@testing-library/react';
 import { render } from '../../../helpers/test/render';
 import ExtraScheduledMessage from './ExtraScheduledMessage';
 import { MessageExtended } from '../../../models/message';
-import { formatScheduledDate } from '../../../helpers/date';
+import { formatDateToHuman } from '../../../helpers/date';
 import { addApiMock, clearAll, getModal } from '../../../helpers/test/helper';
 
 const getMessage = (sendingDate: Date) => {
@@ -31,7 +31,7 @@ describe('Scheduled messages banner', () => {
 
         const { getByTestId, getByText } = await render(<ExtraScheduledMessage message={message} />);
 
-        const { dateString, formattedTime } = formatScheduledDate(sendingDate);
+        const { dateString, formattedTime } = formatDateToHuman(sendingDate);
 
         getByTestId('message:schedule-banner');
         getByText(`This message will be sent ${dateString} at ${formattedTime}`);
@@ -44,7 +44,7 @@ describe('Scheduled messages banner', () => {
 
         const { getByTestId, getByText } = await render(<ExtraScheduledMessage message={message} />);
 
-        const { dateString, formattedTime } = formatScheduledDate(sendingDate);
+        const { dateString, formattedTime } = formatDateToHuman(sendingDate);
 
         getByTestId('message:schedule-banner');
         const scheduledBannerText = getByText(`This message will be sent ${dateString} at ${formattedTime}`);
@@ -60,7 +60,7 @@ describe('Scheduled messages banner', () => {
 
         const { getByTestId, getByText } = await render(<ExtraScheduledMessage message={message} />);
 
-        const { dateString, formattedTime } = formatScheduledDate(sendingDate);
+        const { dateString, formattedTime } = formatDateToHuman(sendingDate);
 
         getByTestId('message:schedule-banner');
         const scheduledBannerText = getByText(`This message will be sent ${dateString} at ${formattedTime}`);
@@ -90,7 +90,7 @@ describe('Scheduled messages banner', () => {
 
         const { getByTestId, getByText } = await render(<ExtraScheduledMessage message={message} />);
 
-        const { dateString, formattedTime } = formatScheduledDate(sendingDate);
+        const { dateString, formattedTime } = formatDateToHuman(sendingDate);
 
         getByTestId('message:schedule-banner');
         getByText(`This message will be sent ${dateString} at ${formattedTime}`);

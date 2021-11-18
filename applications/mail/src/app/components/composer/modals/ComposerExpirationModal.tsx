@@ -1,13 +1,13 @@
 import { useState, ChangeEvent } from 'react';
 import { c, msgid } from 'ttag';
-import { Alert, Href, generateUID, useNotifications, Label } from '@proton/components';
+import { Href, generateUID, useNotifications } from '@proton/components';
 import { range } from '@proton/shared/lib/helpers/array';
 
-import { MessageExtended } from '../../models/message';
+import { MessageExtended } from '../../../models/message';
 import ComposerInnerModal from './ComposerInnerModal';
-import { MAX_EXPIRATION_TIME } from '../../constants';
-import { MessageChange } from './Composer';
-import { useMessageCache } from '../../containers/MessageProvider';
+import { MAX_EXPIRATION_TIME } from '../../../constants';
+import { MessageChange } from '../Composer';
+import { useMessageCache } from '../../../containers/MessageProvider';
 
 // expiresIn value is in seconds and default is 7 days
 const ONE_WEEK = 3600 * 24 * 7;
@@ -96,6 +96,9 @@ const ComposerExpirationModal = ({ message, onClose, onChange }: Props) => {
 
     const disabled = Number.isNaN(valueInHours);
 
+    // translator: this is a hidden text, only for screen reader, to complete a label
+    const descriptionExpirationTime = c('Info').t`Expiration time`;
+
     return (
         <ComposerInnerModal
             title={c('Info').t`Expiration Time`}
@@ -103,48 +106,56 @@ const ComposerExpirationModal = ({ message, onClose, onChange }: Props) => {
             onSubmit={handleSubmit}
             onCancel={handleCancel}
         >
-            <Alert className="mb1">
+            <p className="mt0 color-weak">
                 {c('Info')
                     .t`If you are sending this message to a non ProtonMail user, please be sure to set a password for your message.`}
                 <br />
                 <Href url="https://protonmail.com/support/knowledge-base/expiration/">{c('Info').t`Learn more`}</Href>
-            </Alert>
-            <div className="flex flex-nowrap mt2 flex-align-items-center on-mobile-flex-column">
-                <Label>{c('Info').t`This message will expire in`}</Label>
-                <span>
-                    <select
-                        id={`composer-expiration-days-${uid}`}
-                        className="field mr0-25"
-                        value={days}
-                        onChange={handleChange(setDays)}
-                        placeholder={c('Info').ngettext(msgid`Day`, `Days`, days)}
-                        data-testid="composer:expiration-days"
-                    >
-                        {optionRange(7 * 4 + 1)}
-                    </select>
-                    <label htmlFor={`composer-expiration-days-${uid}`} className="mr0-5">
-                        {
-                            // translator: the word is preceded by the number of days, between 0 and 28
-                            c('Info').ngettext(msgid`Day`, `Days`, days)
-                        }
-                    </label>
-                    <select
-                        id={`composer-expiration-hours-${uid}`}
-                        className="field mr0-25"
-                        value={hours}
-                        onChange={handleChange(setHours)}
-                        disabled={days === 28}
-                        data-testid="composer:expiration-hours"
-                    >
-                        {optionRange(24)}
-                    </select>
-                    <label htmlFor={`composer-expiration-hours-${uid}`}>
-                        {
-                            // translator: the word is preceded by the number of hours, between 0 and 23
-                            c('Info').ngettext(msgid`Hour`, `Hours`, hours)
-                        }
-                    </label>
-                </span>{' '}
+            </p>
+            <div className="flex flex-column flex-nowrap mt1 mb1">
+                <span className="sr-only" id={`composer-expiration-string-${uid}`}>
+                    {descriptionExpirationTime}
+                </span>
+                <div className="flex flex-gap-0-5 flex-row flex">
+                    <div className="flex-item-fluid flex flex-column flex-nowrap">
+                        <label htmlFor={`composer-expiration-days-${uid}`} className="mr0-5 text-semibold">
+                            {
+                                // translator: the word is preceded by the number of days, between 0 and 28
+                                c('Info').ngettext(msgid`Day`, `Days`, days)
+                            }
+                        </label>
+                        <select
+                            id={`composer-expiration-days-${uid}`}
+                            className="field mr0-25"
+                            value={days}
+                            onChange={handleChange(setDays)}
+                            placeholder={c('Info').ngettext(msgid`Day`, `Days`, days)}
+                            aria-describedby={`composer-expiration-string-${uid}`}
+                            data-testid="composer:expiration-days"
+                        >
+                            {optionRange(7 * 4 + 1)}
+                        </select>
+                    </div>
+                    <div className="flex-item-fluid flex flex-column flex-nowrap">
+                        <label htmlFor={`composer-expiration-hours-${uid}`} className="text-semibold">
+                            {
+                                // translator: the word is preceded by the number of hours, between 0 and 23
+                                c('Info').ngettext(msgid`Hour`, `Hours`, hours)
+                            }
+                        </label>
+                        <select
+                            id={`composer-expiration-hours-${uid}`}
+                            className="field mr0-25"
+                            value={hours}
+                            onChange={handleChange(setHours)}
+                            disabled={days === 28}
+                            aria-describedby={`composer-expiration-string-${uid}`}
+                            data-testid="composer:expiration-hours"
+                        >
+                            {optionRange(24)}
+                        </select>
+                    </div>
+                </div>
             </div>
         </ComposerInnerModal>
     );

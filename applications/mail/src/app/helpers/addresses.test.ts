@@ -105,12 +105,12 @@ describe('addresses', () => {
 
         it('should return group label', () => {
             const result = getRecipientGroupLabel({ group: group1, recipients: [] }, 0);
-            expect(result).toEqual('GroupName1 (0/0 Members)');
+            expect(result).toEqual('GroupName1 (0/0 members)');
         });
 
         it('should compute group size with contact list', () => {
             const result = getRecipientGroupLabel({ group: group1, recipients: [recipient3, recipient4] }, 8);
-            expect(result).toEqual('GroupName1 (2/8 Members)');
+            expect(result).toEqual('GroupName1 (2/8 members)');
         });
     });
 

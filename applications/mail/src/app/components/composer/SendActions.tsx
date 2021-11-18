@@ -23,7 +23,7 @@ const SendActions = (
     ref: Ref<HTMLDivElement>
 ) => {
     return (
-        <ButtonGroup ref={ref} shape={shape} color={color}>
+        <ButtonGroup ref={ref} shape={shape} color={color} data-testid="composer:send-actions">
             {mainAction}
 
             {secondAction && (
