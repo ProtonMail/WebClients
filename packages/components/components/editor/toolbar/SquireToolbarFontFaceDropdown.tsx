@@ -1,35 +1,42 @@
-import { MutableRefObject, useState, useEffect } from 'react';
+import { MutableRefObject, useEffect } from 'react';
 import { c } from 'ttag';
-import { APPS } from '@proton/shared/lib/constants';
 import { DropdownMenu, DropdownMenuContainer } from '../../dropdown';
-import { DEFAULT_FONT_FACE, FONT_FACE } from '../squireConfig';
+import { FONT_FACE } from '../squireConfig';
 import SquireToolbarDropdown from './SquireToolbarDropdown';
 import { listenToCursor, getFontFaceAtCursor, getFontLabel } from '../squireActions';
 import { SquireType } from '../interface';
 import { Badge } from '../../badge';
-import { SettingsLink } from '../../link';
+import { Button } from '../../button';
 import { classnames } from '../../../helpers';
 
 interface Props {
     squireRef: MutableRefObject<SquireType>;
     editorReady: boolean;
-    defaultFontFace?: string;
+    defaultValue: string;
+    value: string;
+    update: (nextFontSize: string) => void;
+    onDefaultClick: () => void;
 }
 
-const SquireToolbarFontFaceDropdown = ({ squireRef, editorReady, defaultFontFace }: Props) => {
-    const [value, setValue] = useState<string>(defaultFontFace || DEFAULT_FONT_FACE);
-
+const SquireToolbarFontFaceDropdown = ({
+    squireRef,
+    editorReady,
+    defaultValue,
+    value,
+    update,
+    onDefaultClick,
+}: Props) => {
     useEffect(
         () =>
             listenToCursor(squireRef.current, () => {
                 const fontAtCursor = getFontFaceAtCursor(squireRef.current);
-                setValue(fontAtCursor || defaultFontFace || DEFAULT_FONT_FACE);
+                update(fontAtCursor || defaultValue);
             }),
         [editorReady]
     );
 
     const handleClick = (font: FONT_FACE) => () => {
-        setValue(font);
+        update(font);
         squireRef.current.setFontFace(font.toString());
     };
 
@@ -59,20 +66,16 @@ const SquireToolbarFontFaceDropdown = ({ squireRef, editorReady, defaultFontFace
                         style={{ fontFamily: font.toString() }}
                         buttonContent={<span className="pr0-5">{getFontLabel(font)}</span>}
                         extraContent={
-                            font === defaultFontFace ? (
+                            font === defaultValue ? (
                                 <div className="flex pl0-5 pr0-5 flex-item-noshrink">
-                                    <SettingsLink
-                                        path="/appearance#other"
-                                        app={APPS.PROTONMAIL}
+                                    <Button
+                                        color="weak"
+                                        shape="ghost"
                                         className="inline-flex flex-align-self-center text-no-decoration relative"
+                                        onClick={onDefaultClick}
                                     >
-                                        <Badge
-                                            className="color-info"
-                                            tooltip={c('Info').t`Change your default in settings`}
-                                        >
-                                            {c('Font Face Default').t`Default`}
-                                        </Badge>
-                                    </SettingsLink>
+                                        <Badge className="color-info">{c('Font Face Default').t`Default`}</Badge>
+                                    </Button>
                                 </div>
                             ) : null
                         }
