@@ -24,8 +24,6 @@ const MainContainer = () => {
     const mailContentRef = useRef<HTMLDivElement>(null);
     useFeatures([
         FeatureCode.EarlyAccessScope,
-        FeatureCode.EnabledEarlyAccessDesynchronization,
-        FeatureCode.EnabledEarlyAccess,
         FeatureCode.ScheduledSend,
         FeatureCode.SpotlightScheduledSend,
         FeatureCode.BundlePromoShown,
@@ -43,26 +41,26 @@ const MainContainer = () => {
                         <ContactProvider>
                             <EncryptedSearchProvider>
                                 <MailContentRefProvider mailContentRef={mailContentRef}>
-                                <GetStartedChecklistProvider>
-                                    <ComposerContainer breakpoints={breakpoints}>
-                                        {({ isComposerOpened }) => (
-                                            <>
-                                                <ModalsChildren />
-                                                <Switch>
-                                                    <Route
-                                                        path={MAIN_ROUTE_PATH}
-                                                        render={() => (
-                                                            <PageContainer
-                                                                ref={mailContentRef}
-                                                                breakpoints={breakpoints}
-                                                                isComposerOpened={isComposerOpened}
-                                                            />
-                                                        )}
-                                                    />
-                                                </Switch>
-                                            </>
-                                        )}
-                                    </ComposerContainer>
+                                    <GetStartedChecklistProvider>
+                                        <ComposerContainer breakpoints={breakpoints}>
+                                            {({ isComposerOpened }) => (
+                                                <>
+                                                    <ModalsChildren />
+                                                    <Switch>
+                                                        <Route
+                                                            path={MAIN_ROUTE_PATH}
+                                                            render={() => (
+                                                                <PageContainer
+                                                                    ref={mailContentRef}
+                                                                    breakpoints={breakpoints}
+                                                                    isComposerOpened={isComposerOpened}
+                                                                />
+                                                            )}
+                                                        />
+                                                    </Switch>
+                                                </>
+                                            )}
+                                        </ComposerContainer>
                                     </GetStartedChecklistProvider>
                                 </MailContentRefProvider>
                             </EncryptedSearchProvider>
