@@ -2,25 +2,33 @@ import { c } from 'ttag';
 import { deleteAddress, enableAddress, disableAddress } from '@proton/shared/lib/api/addresses';
 import { ADDRESS_STATUS } from '@proton/shared/lib/constants';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
-import { Address, UserModel, Member, CachedOrganizationKey } from '@proton/shared/lib/interfaces';
+import { Address, Member, CachedOrganizationKey } from '@proton/shared/lib/interfaces';
 
 import { DropdownActions, Alert, ErrorButton, ConfirmModal } from '../../components';
 import { useModals, useApi, useEventManager, useLoading, useNotifications } from '../../hooks';
 
 import CreateMissingKeysAddressModal from './missingKeys/CreateMissingKeysAddressModal';
-import { getPermissions, getStatus } from './helper';
+import { AddressPermissions } from './helper';
 
 interface Props {
     address: Address;
     member?: Member; // undefined if self
-    user: UserModel;
     organizationKey?: CachedOrganizationKey;
     onSetDefault?: () => Promise<unknown>;
     savingIndex?: number;
     addressIndex?: number;
+    permissions: AddressPermissions;
 }
 
-const AddressActions = ({ address, member, user, organizationKey, onSetDefault, savingIndex, addressIndex }: Props) => {
+const AddressActions = ({
+    address,
+    member,
+    organizationKey,
+    onSetDefault,
+    savingIndex,
+    addressIndex,
+    permissions,
+}: Props) => {
     const api = useApi();
     const { call } = useEventManager();
     const [loading, withLoading] = useLoading();
@@ -89,38 +97,28 @@ const AddressActions = ({ address, member, user, organizationKey, onSetDefault, 
         );
     };
 
-    const { canEnable, canDisable, canGenerate, canDelete } = getPermissions({
-        member,
-        address,
-        user,
-        organizationKey,
-    });
-
-    const { isDisabled } = getStatus(address, 0);
-    const isDefault = addressIndex === 0;
-    const canMakeDefault = !isDefault && !isDisabled && onSetDefault !== undefined;
-
     const list =
         savingIndex !== undefined
             ? [savingIndex === addressIndex ? { text: c('Address action').t`Saving` } : null].filter(isTruthy)
             : [
-                  canMakeDefault && {
-                      text: c('Address action').t`Make default`,
-                      onClick: () => onSetDefault(),
-                  },
-                  canEnable && {
+                  permissions.canMakeDefault &&
+                      onSetDefault && {
+                          text: c('Address action').t`Make default`,
+                          onClick: () => onSetDefault(),
+                      },
+                  permissions.canEnable && {
                       text: c('Address action').t`Enable`,
                       onClick: () => withLoading(handleEnable()),
                   },
-                  canDisable && {
+                  permissions.canDisable && {
                       text: c('Address action').t`Disable`,
                       onClick: () => withLoading(handleDisable()),
                   },
-                  canGenerate && {
+                  permissions.canGenerate && {
                       text: c('Address action').t`Generate missing keys`,
                       onClick: () => withLoading(handleGenerate()),
                   },
-                  canDelete &&
+                  permissions.canDelete &&
                       ({
                           text: c('Address action').t`Delete`,
                           actionType: 'delete',
