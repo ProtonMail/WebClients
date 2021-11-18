@@ -13,7 +13,7 @@ const RecoveryStatusText = ({ status, className, ...rest }: Props) => {
 
     if (status === 'intermediate' || status === 'incomplete') {
         config = {
-            className: 'color-warning',
+            className: 'color-danger',
         };
     }
 
