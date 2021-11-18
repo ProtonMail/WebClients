@@ -106,17 +106,17 @@
 		}
 	}
 
+	// the + 0.5px is just to avoid a glitch
 	&--top-left,
 	&--bottom-left {
 		&::before {
-			inset-inline-start: max(calc(var(--arrow-offset, 0) - #{math.div($arrow-width, 2)}), 0px);
+			inset-inline-start: max(calc(var(--arrow-offset, 0) - #{math.div($arrow-width, 2)}) + 0.5px, 0px);
 		}
 	}
-
 	&--top-right,
 	&--bottom-right {
 		&::before {
-			inset-inline-end: max(calc(var(--arrow-offset, 0) - #{math.div($arrow-width, 2)}), 0px);
+			inset-inline-end: max(calc(var(--arrow-offset, 0) - #{math.div($arrow-width, 2)}) + 0.5px, 0px);
 		}
 	}
 
@@ -146,5 +146,59 @@
 		inset-block-start: 0.5em;
 		inset-inline-end: 0.5em;
 		z-index: 1;
+	}
+
+	&--no-side-radius {
+		// remove glitches caused by border-radiuses when arrow is in edges ^^
+		&.spotlight {
+			&--top,
+			&--top-left,
+			&--top-right {
+				&::before {
+					border-block-start: 0;
+					border-inline-start: 0;
+				}
+			}
+			&--bottom,
+			&--bottom-left,
+			&--bottom-right {
+				&::before {
+					border-block-end: 0;
+					border-inline-end: 0;
+				}
+			}
+
+			&--top-right,
+			&--left-bottom {
+				&,
+				& .spotlight-inner {
+					border-end-end-radius: 0;
+				}
+			}
+
+			&--top-left,
+			&--right-bottom {
+				&,
+				& .spotlight-inner {
+					border-end-start-radius: 0;
+				}
+			}
+
+			&--bottom-left,
+			&--right-top {
+				&,
+				& .spotlight-inner {
+					border-start-start-radius: 0;
+				}
+			}
+
+			&--bottom-right,
+			&--left-top {
+				&,
+				& .spotlight-inner {
+					border-start-end-radius: 0;
+				}
+			}
+		}
 	}
 }

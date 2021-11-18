@@ -208,3 +208,9 @@ export const computedSize = (stylePixels: string, boundsSize: number) => {
     const computedStyleSize = Number(stylePixels.replace('px', ''));
     return Number.isNaN(computedStyleSize) ? boundsSize : computedStyleSize;
 };
+
+export const shouldShowSideRadius = (position: Position, placement: string, radiusSize = 8, arrowSize = 10) => {
+    const arrowOffset = position['--arrow-offset'];
+    const offset = arrowOffset === 0 ? arrowOffset : Number(arrowOffset.replace('px', ''));
+    return !CORNERS_ONLY_PLACEMENTS.includes(placement) || offset > radiusSize + arrowSize;
+};
