@@ -603,13 +603,15 @@ const EncryptedSearchProvider = ({ children }: Props) => {
         setES.Enabled(userID);
 
         const showError = (notSupported?: boolean) => {
-            createNotification({
-                text: notSupported
-                    ? c('Error')
-                          .t`Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.`
-                    : c('Error').t`A problem occurred, please try again`,
-                type: 'error',
-            });
+            if (notify) {
+                createNotification({
+                    text: notSupported
+                        ? c('Error')
+                              .t`Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.`
+                        : c('Error').t`A problem occurred, please try again`,
+                    type: 'error',
+                });
+            }
             setESStatus(() => defaultESStatus);
         };
 
