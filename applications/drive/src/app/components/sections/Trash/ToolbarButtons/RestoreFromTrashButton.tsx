@@ -7,10 +7,9 @@ import useToolbarActions from '../../../../hooks/drive/useActions';
 
 interface Props {
     shareId: string;
-    disabled?: boolean;
 }
 
-const RestoreFromTrashButton = ({ shareId, disabled }: Props) => {
+const RestoreFromTrashButton = ({ shareId }: Props) => {
     const [restoreLoading, withRestoreLoading] = useLoading();
     const { restoreFromTrash } = useToolbarActions();
     const { fileBrowserControls } = useTrashContent();
@@ -18,7 +17,7 @@ const RestoreFromTrashButton = ({ shareId, disabled }: Props) => {
 
     return (
         <ToolbarButton
-            disabled={disabled || restoreLoading}
+            disabled={restoreLoading}
             title={c('Action').t`Restore from trash`}
             icon={<Icon name="arrow-rotate-right" />}
             onClick={() => withRestoreLoading(restoreFromTrash(shareId, selectedItems))}
