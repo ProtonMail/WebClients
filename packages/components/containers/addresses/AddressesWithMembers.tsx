@@ -29,6 +29,7 @@ const getMemberIndex = (members: Member[] = [], memberID?: string, isOnlySelf?: 
     }
     return newMemberIndex;
 };
+
 interface Props {
     user: UserModel;
     organization: Organization;
