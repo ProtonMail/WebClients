@@ -55,7 +55,10 @@ const DriveBreadcrumbs = ({ activeFolder }: Props) => {
                                 </span>
                             </>
                         ),
-                        onClick: () => navigateToLink(activeFolder.shareId, linkMeta.LinkID, LinkType.FOLDER),
+                        onClick:
+                            linkMeta.LinkID === activeFolder.linkId
+                                ? undefined
+                                : () => navigateToLink(activeFolder.shareId, linkMeta.LinkID, LinkType.FOLDER),
                         onDragLeave: () => {
                             setDropTarget(undefined);
                         },
