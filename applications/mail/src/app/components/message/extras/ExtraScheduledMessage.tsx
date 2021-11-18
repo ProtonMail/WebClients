@@ -3,6 +3,7 @@ import { Button, ConfirmModal, Icon, useApi, useEventManager, useModals, useNoti
 import { c } from 'ttag';
 import { cancelSend } from '@proton/shared/lib/api/messages';
 import { isScheduled } from '@proton/shared/lib/mail/messages';
+import { isToday, isTomorrow } from 'date-fns';
 import { PREVENT_CANCEL_SEND_INTERVAL } from '../../../constants';
 import { formatDateToHuman } from '../../../helpers/date';
 import { useOnCompose } from '../../../containers/ComposeProvider';
@@ -73,13 +74,29 @@ const ExtraScheduledMessage = ({ message }: Props) => {
 
         const { dateString, formattedTime } = formatDateToHuman(scheduleDate);
 
+        if (isToday(scheduleDate)) {
+            /*
+             * ${formattedTime} is the date formatted in user's locale (e.g. 11:00 PM)
+             * Full sentence for reference: "This message will be sent today at 12:30 PM"
+             */
+            return c('Info').t`This message will be sent today at ${formattedTime}`;
+        }
+
+        if (isTomorrow(scheduleDate)) {
+            /*
+             * ${formattedTime} is the date formatted in user's locale (e.g. 11:00 PM)
+             * Full sentence for reference: "This message will be sent tomorrow at 12:30 PM"
+             */
+            return c('Info').t`This message will be sent tomorrow at ${formattedTime}`;
+        }
+
         /*
          * translator: The variables here are the following.
-         * ${dateString} can be either "on Tuesday, May 11", for example, or "today" or "tomorrow"
+         * ${dateString} can be "on Tuesday, May 11" for example
          * ${formattedTime} is the date formatted in user's locale (e.g. 11:00 PM)
-         * Full sentence for reference: "Message will be sent on Tuesday, May 11 at 12:30 PM"
+         * Full sentence for reference: "This message will be sent on Tuesday, May 11 at 12:30 PM"
          */
-        return c('Info').t`This message will be sent ${dateString} at ${formattedTime}`;
+        return c('Info').t`This message will be sent on ${dateString} at ${formattedTime}`;
     };
 
     return (
