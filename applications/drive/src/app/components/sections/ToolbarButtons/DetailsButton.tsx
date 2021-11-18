@@ -14,9 +14,12 @@ interface Props {
 const DetailsButton = ({ shareId, selectedItems }: Props) => {
     const { openDetails, openFilesDetails } = useToolbarActions();
 
+    if (noSelection(selectedItems)) {
+        return <></>;
+    }
+
     return (
         <ToolbarButton
-            disabled={noSelection(selectedItems)}
             title={c('Action').t`Details`}
             icon={<Icon name="circle-info" />}
             onClick={() => {
