@@ -14,7 +14,7 @@ export const store = configureStore({
             serializableCheck: {
                 ignoreState: true,
                 // Ignore these field paths in all actions
-                ignoredActionPaths: ['payload.abortController', 'meta.arg.api', 'payload.attachment.data'],
+                ignoredActionPaths: ['payload.abortController', 'meta.arg.api', 'payload.attachment'],
             },
         }),
 });
