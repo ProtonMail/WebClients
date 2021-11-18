@@ -1,21 +1,22 @@
+import { MNEMONIC_STATUS } from '@proton/shared/lib/interfaces';
 import useUserSettings from './useUserSettings';
-import useMnemonicOperationStatus from './useMnemonicOperationStatus';
 import RecoveryStatus from '../containers/recovery/RecoveryStatus';
 import usePrimaryRecoverySecret from './usePrimaryRecoverySecret';
+import { useUser } from './useUser';
 
 const useRecoveryStatus = () => {
+    const [user] = useUser();
     const [userSettings, loadingUserSettings] = useUserSettings();
     const hasVerifiedRecoveryEmailAddress = !!userSettings?.Email?.Reset && !!userSettings?.Email?.Value;
     const hasRecoveryPhoneNumber = !!userSettings?.Phone?.Reset && !!userSettings?.Phone?.Value;
 
     const primaryRecoverySecret = usePrimaryRecoverySecret();
     const hasCurrentRecoveryFile = primaryRecoverySecret !== undefined;
-    const mnemonicOperationStatus = useMnemonicOperationStatus();
 
     const accountRecoveryStatus: RecoveryStatus =
         hasVerifiedRecoveryEmailAddress || hasRecoveryPhoneNumber ? 'complete' : 'incomplete';
     const dataRecoveryStatus: RecoveryStatus =
-        mnemonicOperationStatus.accountRecovery || hasCurrentRecoveryFile ? 'complete' : 'incomplete';
+        user.MnemonicStatus === MNEMONIC_STATUS.SET || hasCurrentRecoveryFile ? 'complete' : 'incomplete';
 
     return [
         {

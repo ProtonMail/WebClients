@@ -6,15 +6,18 @@ import { requestFork } from '@proton/shared/lib/authentication/sessionForking';
 import { FORK_TYPE } from '@proton/shared/lib/authentication/ForkInterface';
 import { getPlanName, hasLifetime } from '@proton/shared/lib/helpers/subscription';
 import { getAppFromPathnameSafe, getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
-
+import { MNEMONIC_STATUS } from '@proton/shared/lib/interfaces';
 import {
     useAuthentication,
     useConfig,
-    useUser,
-    useOrganization,
-    useSubscription,
-    useNotifications,
+    useFeature,
+    useHasOutdatedRecoveryFile,
     useModals,
+    useNotifications,
+    useOrganization,
+    useShowRecoveryNotification,
+    useSubscription,
+    useUser,
 } from '../../hooks';
 import {
     usePopperAnchor,
@@ -24,6 +27,7 @@ import {
     DropdownMenuButton,
     Button,
     SimpleDropdown,
+    SettingsLink,
     DropdownMenuLink,
     Copy,
 } from '../../components';
@@ -31,6 +35,8 @@ import { classnames, generateUID } from '../../helpers';
 import UserDropdownButton, { Props as UserDropdownButtonProps } from './UserDropdownButton';
 import { OnboardingModal } from '../onboarding';
 import { AuthenticatedBugModal, BugModal } from '../support';
+import NotificationDot from '../../components/notificationDot/NotificationDot';
+import { FeatureCode } from '../features';
 
 interface Props extends Omit<UserDropdownButtonProps, 'user' | 'isOpen' | 'onClick'> {
     onOpenChat?: () => void;
@@ -48,6 +54,15 @@ const UserDropdown = ({ onOpenChat, ...rest }: Props) => {
     const [uid] = useState(generateUID('dropdown'));
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     const { createModal } = useModals();
+
+    const showRecoveryNotification = useShowRecoveryNotification();
+    const { feature: hasVisitedRecoveryPage } = useFeature(FeatureCode.VisitedRecoveryPage);
+
+    const hasOutdatedRecoveryFile = useHasOutdatedRecoveryFile();
+    const hasOutdatedRecoveryMethod = user.MnemonicStatus === MNEMONIC_STATUS.OUTDATED || hasOutdatedRecoveryFile;
+
+    const showRecoveryDropdownItem =
+        (showRecoveryNotification && hasVisitedRecoveryPage?.Value === false) || hasOutdatedRecoveryMethod;
 
     const { createNotification } = useNotifications();
     const handleCopyEmail = () => {
@@ -106,6 +121,34 @@ const UserDropdown = ({ onOpenChat, ...rest }: Props) => {
         [APPS.PROTONVPN_SETTINGS]: 'https://protonmail.uservoice.com/forums/932836-protonvpn',
     };
 
+    const recoveryDropdownItem = (() => {
+        if (user.MnemonicStatus === MNEMONIC_STATUS.SET) {
+            return {
+                path: '/recovery',
+                text: c('Action').t`Activate recovery`,
+            };
+        }
+
+        if (user.MnemonicStatus === MNEMONIC_STATUS.OUTDATED) {
+            return {
+                path: '/recovery#data',
+                text: c('Action').t`Update recovery phrase`,
+            };
+        }
+
+        if (hasOutdatedRecoveryFile) {
+            return {
+                path: '/recovery#data',
+                text: c('Action').t`Update recovery file`,
+            };
+        }
+
+        return {
+            path: '/recovery?action=generate-recovery-phrase',
+            text: c('Action').t`Set recovery phrase`,
+        };
+    })();
+
     return (
         <>
             <UserDropdownButton
@@ -115,6 +158,7 @@ const UserDropdown = ({ onOpenChat, ...rest }: Props) => {
                 ref={anchorRef}
                 isOpen={isOpen}
                 onClick={toggle}
+                showNotification={showRecoveryDropdownItem}
             />
             <Dropdown
                 id={uid}
@@ -188,6 +232,21 @@ const UserDropdown = ({ onOpenChat, ...rest }: Props) => {
                             </div>
                         ) : null}
                     </div>
+
+                    {showRecoveryDropdownItem && (
+                        <>
+                            <hr className="mt0-5 mb0-5" />
+                            <DropdownMenuLink
+                                as={SettingsLink}
+                                className="text-left flex flex-nowrap flex-justify-space-between flex-align-items-center"
+                                path={recoveryDropdownItem.path}
+                                onClick={close}
+                            >
+                                {recoveryDropdownItem.text}
+                                <NotificationDot />
+                            </DropdownMenuLink>
+                        </>
+                    )}
 
                     <hr className="mt0-5 mb0-5" />
 
