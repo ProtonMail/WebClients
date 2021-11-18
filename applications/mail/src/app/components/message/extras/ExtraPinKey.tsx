@@ -142,7 +142,7 @@ const ExtraPinKey = ({ message, messageVerification }: Props) => {
             return undefined;
         }
         return getPromptKeyPinningType({ messageVerification, mailSettings, addresses, senderAddress });
-    }, [message, mailSettings, addresses, senderAddress]);
+    }, [messageVerification, mailSettings, addresses, senderAddress]);
     const isPinUnseen = promptKeyPinningType === PROMPT_KEY_PINNING_TYPE.PIN_UNSEEN;
     const firstAttachedPublicKey = messageVerification?.attachedPublicKeys?.length
         ? messageVerification.attachedPublicKeys[0]

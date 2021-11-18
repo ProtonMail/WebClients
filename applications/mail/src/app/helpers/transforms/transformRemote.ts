@@ -24,7 +24,7 @@ const SELECTOR = ATTRIBUTES.map((name) => {
     return `[proton-${name}]`;
 }).join(',');
 
-const getRemoteImageMatches = (message: MessageExtended) => {
+const getRemoteImageMatches = (message: MessageState) => {
     const imageElements = querySelectorAll(message, SELECTOR);
 
     const elementsWithStyleTag = querySelectorAll(message, '[style]').reduce<HTMLElement[]>((acc, elWithStyleTag) => {

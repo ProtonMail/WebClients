@@ -21,7 +21,7 @@ export interface UseCloseHandlerParameters {
     autoSave: ((message: MessageState) => Promise<void>) & Abortable;
     saveNow: (message: MessageState) => Promise<void>;
     onClose: () => void;
-    onDicard: () => void;
+    onDiscard: () => void;
     onMessageAlreadySent: () => void;
 }
 
@@ -35,7 +35,7 @@ export const useCloseHandler = ({
     pendingAutoSave,
     promiseUpload,
     onClose,
-    onDicard,
+    onDiscard,
     onMessageAlreadySent,
 }: UseCloseHandlerParameters) => {
     const { createNotification, hideNotification } = useNotifications();
@@ -80,7 +80,7 @@ export const useCloseHandler = ({
                         if (notificationID) {
                             hideNotification(notificationID);
                         }
-                        void onDicard();
+                        void onDiscard();
                     }}
                 />
             ),

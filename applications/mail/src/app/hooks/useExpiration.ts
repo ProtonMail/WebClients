@@ -2,11 +2,10 @@ import { useState, useMemo, useEffect } from 'react';
 import { c, msgid } from 'ttag';
 import { useInterval, useHandler } from '@proton/components';
 import { fromUnixTime, isAfter, differenceInSeconds, addSeconds } from 'date-fns';
-
 import { Element } from '../models/element';
 import { EXPIRATION_CHECK_FREQUENCY } from '../constants';
-import { MessageExtended } from '../models/message';
 import { formatDateToHuman } from '../helpers/date';
+import { MessageState } from '../logic/messages/messagesTypes';
 
 export const formatDelay = (nowDate: Date, expirationDate: Date): string => {
     let delta = differenceInSeconds(expirationDate, nowDate);
@@ -49,8 +48,10 @@ export const formatDelay = (nowDate: Date, expirationDate: Date): string => {
         .join(', ');
 };
 
-export const useExpiration = (message: MessageExtended): [boolean, string] => {
-    const draftExpirationTime = message.expiresIn ? addSeconds(new Date(), message.expiresIn).getTime() / 1000 : 0;
+export const useExpiration = (message: MessageState): [boolean, string] => {
+    const draftExpirationTime = message.draftFlags?.expiresIn
+        ? addSeconds(new Date(), message.draftFlags?.expiresIn).getTime() / 1000
+        : 0;
     const expirationTime = message.data?.ExpirationTime || draftExpirationTime || 0;
     const [delayMessage, setDelayMessage] = useState('');
 

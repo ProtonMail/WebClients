@@ -41,14 +41,13 @@ export const useShouldMoveOut = (
 
     const previousVersionRef = useRef<MessageState | ConversationState | undefined>();
 
-    // const ID = useMemo(() => (conversationMode ? inputID : getLocalID(inputID || '')), [inputID]);
-
     const message = useSelector((state: RootState) => messageByID(state, { ID: ID || '' }));
     const conversation = useSelector((state: RootState) => conversationByID(state, { ID: ID || '' }));
 
     const onChange = (cacheEntry: MessageState | ConversationState | undefined) => {
         // Move out of a deleted element
         if (!cacheEntry) {
+            console.log('onBack', cacheEntry);
             onBack();
             return;
         }
@@ -82,15 +81,15 @@ export const useShouldMoveOut = (
 
     useEffect(() => {
         if (!conversationMode) {
-            onChange(message);
+            // Not sure why, but message from the selector can be a render late here
+            onChange(getMessage(ID || ''));
         }
     }, [message]);
 
     useEffect(() => {
-        // If the conversation is not in the state yet, it will move out from it without even loading it
-        // We need to check whether it's the first time we click on it to prevent the unwanted move out
-        if (conversationMode && previousVersionRef.current !== undefined) {
-            onChange(conversation);
+        if (conversationMode) {
+            // Not sure why, but message from the selector can be a render late here
+            onChange(getConversation(ID || ''));
         }
     }, [conversation]);
 
