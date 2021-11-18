@@ -16,20 +16,26 @@ const ActiveImportRow = ({ activeImport }: Props) => {
     const { Account, Product, Active } = activeImport;
     const { State, ErrorCode, CreateTime = Date.now(), Mapping = [] } = Active || {};
 
-    const { total, processed } = Mapping.reduce(
-        (
-            acc: {
-                total: number;
-                processed: number;
-            },
-            { Total = 0, Processed = 0 }
-        ) => {
-            acc.total += Total;
-            acc.processed += Processed;
-            return acc;
-        },
-        { total: 0, processed: 0 }
-    );
+    const getProcessState = () => {
+        if (Product === ImportType.MAIL) {
+            return Mapping.reduce<{ total: number; processed: number }>(
+                (acc, { Total = 0, Processed = 0 }) => {
+                    acc.total += Total;
+                    acc.processed += Processed;
+                    return acc;
+                },
+                { total: 0, processed: 0 }
+            );
+        }
+
+        if (Product === ImportType.CONTACTS) {
+            return { total: Active.Total || 0, processed: Active.Processed || 0 };
+        }
+
+        return { total: 0, processed: 0 };
+    };
+
+    const { total, processed } = getProcessState();
 
     const importType = () => {
         switch (Product) {
