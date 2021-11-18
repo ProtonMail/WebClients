@@ -22,7 +22,7 @@ import {
     useNotifications,
     useCalendarSubscribeFeature,
 } from '@proton/components';
-import { c, msgid } from 'ttag';
+import { c } from 'ttag';
 import { updateCalendar } from '@proton/shared/lib/api/calendars';
 import { Calendar } from '@proton/shared/lib/interfaces/calendar';
 import { partition } from '@proton/shared/lib/helpers/array';
@@ -32,11 +32,6 @@ import SubscribeCalendarModal from '@proton/components/containers/calendar/subsc
 import CalendarLimitReachedModal from '@proton/components/containers/calendar/CalendarLimitReachedModal';
 import { getIsCalendarActive } from '@proton/shared/lib/calendar/calendar';
 import getHasUserReachedCalendarLimit from '@proton/shared/lib/calendar/getHasUserReachedCalendarLimit';
-import {
-    MAX_CALENDARS_PER_FREE_USER,
-    MAX_CALENDARS_PER_USER,
-    MAX_SUBSCRIBED_CALENDARS_PER_USER,
-} from '@proton/shared/lib/calendar/constants';
 import CalendarSidebarListItems from './CalendarSidebarListItems';
 import CalendarSidebarVersion from './CalendarSidebarVersion';
 
@@ -96,7 +91,6 @@ const CalendarSidebar = ({
 
     const handleCreatePersonalCalendar = async () => {
         const calendarUserSettings = await getCalendarUserSettings();
-        const personalCalendarLimit = user.isFree ? MAX_CALENDARS_PER_FREE_USER : MAX_CALENDARS_PER_USER;
 
         return canAddPersonalCalendars
             ? createModal(
@@ -108,11 +102,8 @@ const CalendarSidebar = ({
               )
             : createModal(
                   <CalendarLimitReachedModal>
-                      {c('Subscribed calendar limit reached modal body').ngettext(
-                          msgid`You have reached the maximum of ${personalCalendarLimit} personal calendar.`,
-                          `You have reached the maximum of ${personalCalendarLimit} personal calendars.`,
-                          personalCalendarLimit
-                      )}
+                      {c('Personal calendar limit reached modal body')
+                          .t`Unable to create more calendars. You have reached the maximum of personal calendars within your plan.`}
                   </CalendarLimitReachedModal>
               );
     };
@@ -122,11 +113,8 @@ const CalendarSidebar = ({
             ? createModal(<SubscribeCalendarModal onCreateCalendar={onCreateCalendar} />)
             : createModal(
                   <CalendarLimitReachedModal>
-                      {c('Subscribed calendar limit reached modal body').ngettext(
-                          msgid`You have reached the maximum of ${MAX_SUBSCRIBED_CALENDARS_PER_USER} subscribed calendar.`,
-                          `You have reached the maximum of ${MAX_SUBSCRIBED_CALENDARS_PER_USER} subscribed calendars.`,
-                          MAX_SUBSCRIBED_CALENDARS_PER_USER
-                      )}
+                      {c('Subscribed calendar limit reached modal body')
+                          .t`Unable to add more calendars. You have reached the maximum of subscribed calendars within your plan.`}
                   </CalendarLimitReachedModal>
               );
 
