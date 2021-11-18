@@ -31,7 +31,7 @@ describe('Unsubscribe banner', () => {
 
     const defaultMessage = {
         localID: messageID,
-        data: { ID: messageID, Subject: 'test', ParsedHeaders: { 'X-Original-To': toAddress } } as any,
+        data: { ID: messageID, Subject: 'test', ParsedHeaders: { 'X-Original-To': toAddress }, Attachments: [] } as any,
         messageDocument: { initialized: true },
         verification: {},
     } as MessageState;

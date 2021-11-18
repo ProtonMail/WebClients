@@ -32,16 +32,20 @@ export const useMessage: UseMessage = (inputLocalID: string, conversationID = ''
     const dispatch = useDispatch();
     const getLocalID = useGetLocalID();
     const getElementsFromIDs = useGetElementsFromIDs();
+    const getMessage = useGetMessage();
     const getConversationFromState = useGetConversation();
 
     const messageState = useSelector((state: RootState) => messageByID(state, { ID: inputLocalID }));
 
     const initMessage = () => {
+        const localID = getLocalID(inputLocalID);
+
+        // Selector may be late
+        const messageState = getMessage(inputLocalID);
+
         if (messageState) {
             return messageState;
         }
-
-        const localID = getLocalID(inputLocalID);
 
         const [messageFromElementsCache] = getElementsFromIDs([localID]) as Message[];
         const conversationState = getConversationFromState(conversationID);
@@ -62,7 +66,7 @@ export const useMessage: UseMessage = (inputLocalID: string, conversationID = ''
     // Update message state and listen to cache for updates on the current message
     useEffect(() => {
         setMessage(initMessage());
-    }, [localID]); // The hook can be re-used for a different message
+    }, [inputLocalID]); // The hook can be re-used for a different message
 
     useEffect(() => {
         if (messageState) {

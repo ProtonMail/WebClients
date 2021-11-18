@@ -1,6 +1,7 @@
 import { IMAGE_PROXY_FLAGS, SHOW_IMAGES } from '@proton/shared/lib/constants';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import { wait } from '@proton/shared/lib/helpers/promise';
 import { transformRemote } from '../transformRemote';
 import { createDocument } from '../../test/message';
 import { MessageState } from '../../../logic/messages/messagesTypes';
@@ -84,6 +85,10 @@ describe('transformRemote', () => {
         expect(remoteImages[0].url).toEqual(imageURL);
         expect(remoteImages[1].type).toEqual('remote');
         expect(remoteImages[1].url).toEqual(imageBackgroundURL);
+
+        // There is a wait 0 inside the loadRemoteImages helper
+        await wait(0);
+
         expect(onLoadRemoteImagesProxy).toHaveBeenCalled();
     });
 });
