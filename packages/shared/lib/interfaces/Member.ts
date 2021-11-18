@@ -14,4 +14,5 @@ export interface Member {
     Subscriber: number;
     Keys: Key[];
     PublicKey: string;
+    BrokenSKL: 0 | 1;
 }
