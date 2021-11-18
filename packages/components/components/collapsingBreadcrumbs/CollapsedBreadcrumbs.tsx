@@ -55,6 +55,7 @@ function CollapsedBreadcrumb({ breadcrumbs }: Props) {
                 id={uid}
                 isOpen={isOpen}
                 anchorRef={anchorRef}
+                originalPlacement="bottom-left"
                 onClose={close}
                 onDragLeave={handleDragLeave}
                 onDragEnter={handleDragEnter}
