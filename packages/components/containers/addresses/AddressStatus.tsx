@@ -1,16 +1,9 @@
 import { c } from 'ttag';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import { Badge } from '../../components';
+import { AddressStatuses } from './helper';
 
-interface Props {
-    isDefault: boolean;
-    isActive: boolean;
-    isDisabled: boolean;
-    isOrphan: boolean;
-    isMissingKeys: boolean;
-}
-
-const AddressStatus = ({ isDefault, isActive, isDisabled, isOrphan, isMissingKeys }: Props) => {
+const AddressStatus = ({ isDefault, isActive, isDisabled, isOrphan, isMissingKeys }: AddressStatuses) => {
     const list = [
         isDefault &&
             ({
