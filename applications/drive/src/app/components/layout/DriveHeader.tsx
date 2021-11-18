@@ -24,6 +24,7 @@ const DriveHeader = ({
     title = c('Title').t`Drive`,
 }: Props) => {
     const { isNarrow } = useActiveBreakpoint();
+
     return (
         <PrivateHeader
             logo={logo}
