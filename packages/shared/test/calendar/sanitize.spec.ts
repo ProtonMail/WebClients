@@ -1,4 +1,4 @@
-import { restrictedCalendarSanitize } from './sanitize';
+import { restrictedCalendarSanitize } from '../../lib/calendar/sanitize';
 
 describe('sanitize description', () => {
     it('should drop disallowed tags', () => {
