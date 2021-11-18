@@ -12,6 +12,7 @@ import {
     VcalValarmRelativeComponent,
     VcalVeventComponent,
     NotificationModel,
+    DateTime,
 } from '../../lib/interfaces/calendar';
 
 import {
@@ -23,11 +24,12 @@ import {
 } from '../../lib/calendar/alarms';
 
 const formatOptions = { locale: enUS };
+const tzidEurope = 'Europe/Zurich';
+const tzidAsia = 'Asia/Seoul';
+
+const getNow = (fakeZonedNow: DateTime, tzid = tzidEurope) => toUTCDate(convertZonedDateTimeToUTC(fakeZonedNow, tzid));
 
 describe('getAlarmMessage', () => {
-    const tzidEurope = 'Europe/Zurich';
-    const tzidAsia = 'Asia/Seoul';
-
     const testFakeZonedDate = { year: 2019, month: 10, day: 13, hours: 20, minutes: 0, seconds: 0 };
     const testComponent = {
         dtstart: {
@@ -44,6 +46,43 @@ describe('getAlarmMessage', () => {
         summary: { value: 'test alarm' },
     } as VcalVeventComponent;
     const start = toUTCDate(convertZonedDateTimeToUTC(testFakeZonedDate, tzidEurope));
+
+    it('treats the part day event as "starts now" when within 30 seconds of the beginning', () => {
+        const commonProps = {
+            component: testComponent,
+            start,
+            tzid: tzidEurope,
+            formatOptions,
+        };
+
+        expect(
+            getAlarmMessage({
+                ...commonProps,
+                now: getNow({ ...testFakeZonedDate, minutes: testFakeZonedDate.minutes - 1, seconds: 29 }),
+            })
+        ).toEqual('test alarm will start at 8:00 PM');
+
+        expect(
+            getAlarmMessage({
+                ...commonProps,
+                now: getNow({ ...testFakeZonedDate, seconds: 31 }),
+            })
+        ).toEqual('test alarm started at 8:00 PM');
+
+        expect(
+            getAlarmMessage({
+                ...commonProps,
+                now: getNow({ ...testFakeZonedDate, minutes: testFakeZonedDate.minutes - 1, seconds: 39 }),
+            })
+        ).toEqual('test alarm starts now');
+
+        expect(
+            getAlarmMessage({
+                ...commonProps,
+                now: getNow({ ...testFakeZonedDate, seconds: 30 }),
+            })
+        ).toEqual('test alarm starts now');
+    });
 
     it('it should display the right notification for events happening today', () => {
         const fakeZonedNow = { ...testFakeZonedDate, hours: 1 };
