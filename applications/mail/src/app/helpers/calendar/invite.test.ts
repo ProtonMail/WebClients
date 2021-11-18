@@ -73,7 +73,7 @@ VERSION:2.0
 METHOD:REQUEST
 PRODID:-//Apple Inc.//Mac OS X 10.13.6//EN
 BEGIN:VTIMEZONE
-TZID:Europe/Vilnius
+TZID:/Europe/Vilnius
 BEGIN:DAYLIGHT
 TZOFFSETFROM:+0200
 RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU
@@ -219,8 +219,8 @@ PRODID:-//Apple Inc.//Mac OS X 10.13.6//EN
 BEGIN:VEVENT
 UID:test-event
 DTSTAMP:19980309T231000Z
-DTSTART;TZID=Europe/Brussels:20021231T203000
-DTEND;TZID=Europe/Brussels:20030101T003000
+DTSTART;TZID=/mozilla.org/20050126_1/Europe/Brussels:20021231T203000
+DTEND;TZID=/mozilla.org/20050126_1/Europe/Brussels:20030101T003000
 RECURRENCE-ID;TZID=Europe/Brussels:20121231T203000
 LOCATION:1CP Conference Room 4350
 ATTENDEE;CUTYPE=INDIVIDUAL;EMAIL="testme@pm.me";PARTSTAT=NEED
@@ -252,7 +252,7 @@ END:VCALENDAR`;
             method: 'PUBLISH',
             vevent: {
                 component: 'vevent',
-                uid: { value: 'sha1-uid-290c9343c2438d2d7e0cd716e0d5d66c3b7e0716-original-uid-test-event' },
+                uid: { value: 'sha1-uid-cba317c4bb79e20bdca567bf6dc80dfce145712b-original-uid-test-event' },
                 dtstamp: {
                     value: { year: 1998, month: 3, day: 9, hours: 23, minutes: 10, seconds: 0, isUTC: true },
                 },
