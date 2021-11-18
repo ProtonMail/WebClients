@@ -334,7 +334,7 @@ const ImportMailModal = ({ onClose = noop, currentImport, providerInstructions, 
                 cancel={c('Action').t`Continue import`}
                 confirm={<Button color="danger" type="submit">{c('Action').t`Discard`}</Button>}
             >
-                <Alert className="mb1">{c('Info').t`Your import will not be processed.`}</Alert>
+                <div className="mb1">{c('Info').t`Your import will not be processed.`}</div>
                 <Alert className="mb1" type="error">{c('Warning')
                     .t`Are you sure you want to discard your import?`}</Alert>
             </ConfirmModal>

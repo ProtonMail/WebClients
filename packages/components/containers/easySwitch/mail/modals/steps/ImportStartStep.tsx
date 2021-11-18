@@ -259,11 +259,11 @@ const ImportStartStep = ({
             ].includes(errorCode) ? (
                 renderError()
             ) : (
-                <Alert className="mb1">
+                <div className="mb1">
                     {c('Info').t`Enter the credentials of the email account you want to import from.`}
                     <br />
                     {c('Info').t`Your login information will not be saved after the import is completed.`}
-                </Alert>
+                </div>
             )}
 
             <Row>
