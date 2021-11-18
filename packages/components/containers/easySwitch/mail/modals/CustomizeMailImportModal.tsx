@@ -221,13 +221,13 @@ const CustomizeMailImportModal = ({
             className="customize-import-modal"
             {...rest}
         >
-            <Alert className="mb1">
+            <div className="mb1">
                 {isLabelMapping
                     ? c('Info')
                           .t`Create a label for the imported messages, a time range for this import, and the labels you would like to import.`
                     : c('Info')
                           .t`Create a label for the imported messages, a time range for this import, and the folders you would like to import.`}
-            </Alert>
+            </div>
 
             <div className="mb1 border-bottom flex-align-items-center">
                 <Row>
