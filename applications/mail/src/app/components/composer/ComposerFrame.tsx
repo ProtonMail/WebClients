@@ -100,7 +100,7 @@ const ComposerFrame = ({
         <div
             ref={composerFrameRef}
             className={classnames([
-                `composer flex flex-column no-outline ${customClassnames}`,
+                `composer rounded-xl flex flex-column no-outline ${customClassnames}`,
                 !focus && 'composer--is-blur',
                 minimized && 'composer--is-minimized',
                 maximized && 'composer--is-maximized',

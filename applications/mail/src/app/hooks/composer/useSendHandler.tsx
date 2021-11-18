@@ -25,6 +25,9 @@ export interface UseSendHandlerParameters {
     saveNow: (message: MessageExtended) => Promise<void>;
     onClose: () => void;
     onMessageAlreadySent: () => void;
+    handleNoRecipients?: () => void;
+    handleNoSubjects?: () => void;
+    handleNoAttachments?: (keyword: string) => void;
 }
 
 export const useSendHandler = ({
@@ -38,11 +41,18 @@ export const useSendHandler = ({
     saveNow,
     onClose,
     onMessageAlreadySent,
+    handleNoRecipients,
+    handleNoSubjects,
+    handleNoAttachments,
 }: UseSendHandlerParameters) => {
     const { createNotification, hideNotification } = useNotifications();
     const { call } = useEventManager();
 
-    const { preliminaryVerifications, extendedVerifications } = useSendVerifications();
+    const { preliminaryVerifications, extendedVerifications } = useSendVerifications(
+        handleNoRecipients,
+        handleNoSubjects,
+        handleNoAttachments
+    );
     const sendMessage = useSendMessage();
     const [mailSettings] = useMailSettings();
 

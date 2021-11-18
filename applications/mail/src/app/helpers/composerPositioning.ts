@@ -3,9 +3,9 @@ import { WindowSize } from '../models/utils';
 export const MAX_ACTIVE_COMPOSER_DESKTOP = 3;
 export const MAX_ACTIVE_COMPOSER_MOBILE = 1;
 
-export const COMPOSER_WIDTH = 600;
-export const COMPOSER_GUTTER = 20;
-const COMPOSER_HEIGHT = 520;
+export const COMPOSER_WIDTH = 640;
+export const COMPOSER_GUTTER = 15;
+const COMPOSER_HEIGHT = 640;
 const COMPOSER_VERTICAL_GUTTER = 10;
 const COMPOSER_ZINDEX = 300;
 const COMPOSER_SWITCH_MODE = 20;

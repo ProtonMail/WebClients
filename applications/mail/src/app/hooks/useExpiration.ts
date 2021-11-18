@@ -1,10 +1,12 @@
 import { useState, useMemo, useEffect } from 'react';
 import { c, msgid } from 'ttag';
 import { useInterval, useHandler } from '@proton/components';
-import { fromUnixTime, isAfter, differenceInSeconds } from 'date-fns';
+import { fromUnixTime, isAfter, differenceInSeconds, addSeconds } from 'date-fns';
 
 import { Element } from '../models/element';
 import { EXPIRATION_CHECK_FREQUENCY } from '../constants';
+import { MessageExtended } from '../models/message';
+import { formatDateToHuman } from '../helpers/date';
 
 export const formatDelay = (nowDate: Date, expirationDate: Date): string => {
     let delta = differenceInSeconds(expirationDate, nowDate);
@@ -47,12 +49,12 @@ export const formatDelay = (nowDate: Date, expirationDate: Date): string => {
         .join(', ');
 };
 
-export const useExpiration = (element: Element): [boolean, string] => {
+export const useExpiration = (message: MessageExtended): [boolean, string] => {
+    const draftExpirationTime = message.expiresIn ? addSeconds(new Date(), message.expiresIn).getTime() / 1000 : 0;
+    const expirationTime = message.data?.ExpirationTime || draftExpirationTime || 0;
     const [delayMessage, setDelayMessage] = useState('');
 
-    const expirationTime = element.ExpirationTime;
-
-    const expirationDate = useMemo(() => fromUnixTime(expirationTime || 0), [expirationTime]);
+    const expirationDate = useMemo(() => fromUnixTime(expirationTime), [expirationTime]);
 
     const handler = useHandler(() => {
         if (!expirationTime) {
@@ -66,15 +68,25 @@ export const useExpiration = (element: Element): [boolean, string] => {
             setDelayMessage(c('Info').t`This message is expired!`);
             return;
         }
-        const formattedDelay = formatDelay(nowDate, expirationDate);
-
-        setDelayMessage(c('Info').t`This message will expire in ${formattedDelay}`);
+        if (draftExpirationTime > 0) {
+            const { dateString, formattedTime } = formatDateToHuman(draftExpirationTime * 1000);
+            /*
+             * translator: The variables here are the following.
+             * ${dateString} can be either "on Tuesday, May 11", for example, or "today" or "tomorrow"
+             * ${formattedTime} is the date formatted in user's locale (e.g. 11:00 PM)
+             * Full sentence for reference: "This message will expire on Tuesday, May 11 at 12:30 PM"
+             */
+            setDelayMessage(c('Info').t`This message will expire ${dateString} at ${formattedTime}`);
+        } else {
+            const formattedDelay = formatDelay(nowDate, expirationDate);
+            setDelayMessage(c('Info').t`This message will expire in ${formattedDelay}`);
+        }
     });
 
     useEffect(() => {
         handler();
 
-        if (expirationTime) {
+        if (expirationTime && !(draftExpirationTime > 0)) {
             const intervalID = window.setInterval(handler, 1000); // eslint-disable-line @typescript-eslint/no-implied-eval
             return () => clearInterval(intervalID);
         }

@@ -1,3 +1,5 @@
-const SquireToolbarSeparator = () => <span className="editor-toolbar-separator" />;
+import { Vr } from '../../vr';
+
+const SquireToolbarSeparator = () => <Vr />;
 
 export default SquireToolbarSeparator;

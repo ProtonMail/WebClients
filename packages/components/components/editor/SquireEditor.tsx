@@ -1,15 +1,4 @@
-import {
-    MutableRefObject,
-    useRef,
-    useEffect,
-    useState,
-    ChangeEvent,
-    forwardRef,
-    Ref,
-    ReactNode,
-    useMemo,
-    memo,
-} from 'react';
+import { MutableRefObject, useRef, useEffect, useState, ChangeEvent, forwardRef, Ref, useMemo, memo } from 'react';
 import { RIGHT_TO_LEFT } from '@proton/shared/lib/constants';
 import { noop } from '@proton/shared/lib/helpers/function';
 import { classnames } from '../../helpers';
@@ -53,7 +42,6 @@ interface Props {
     onReady?: () => void;
     onFocus?: () => void;
     onAddImages?: (files: File[]) => void;
-    toolbarMoreDropdownExtension?: ReactNode;
     keydownHandler?: (e: KeyboardEvent) => void;
     defaultFont?: FontData;
 }
@@ -80,7 +68,6 @@ const SquireEditor = (
         onReady = noop,
         onFocus = noop,
         onAddImages = noop,
-        toolbarMoreDropdownExtension = null,
         keydownHandler,
         defaultFont,
     }: Props,
@@ -159,11 +146,11 @@ const SquireEditor = (
 
     return (
         <div className={classnames([className, 'editor w100 h100 rounded flex flex-column-reverse'])}>
-            <div className={classnames(['w100 h100 flex-item-fluid relative', disabled && 'editor--disabled'])}>
+            <div className={classnames(['w100 h100 flex-item-fluid relative mt0-5', disabled && 'editor--disabled'])}>
                 {metadata.isPlainText ? (
                     <textarea
                         id={id}
-                        className="covered-absolute w100 h100 pt1 pb1 pl0-5 pr0-5"
+                        className="covered-absolute w100 h100 pt0-5 pb1 pl0-5 pr0-5"
                         ref={textareaRef}
                         onFocus={onFocus}
                         onChange={handlePlainTextChange}
@@ -195,7 +182,6 @@ const SquireEditor = (
                 isNarrow={isNarrow}
                 editorReady={editorReady}
                 onAddImages={onAddImages}
-                moreDropdownExtension={toolbarMoreDropdownExtension}
                 defaultFont={defaultFont}
             />
         </div>

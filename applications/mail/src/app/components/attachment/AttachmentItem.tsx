@@ -7,9 +7,9 @@ import {
     useLoading,
     FileIcon,
     useIsMounted,
-    useRightToLeft,
     CircleLoader,
     FileNameDisplay,
+    CircularProgress,
 } from '@proton/components';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
@@ -80,7 +80,6 @@ const AttachmentItem = ({
     const [loading, withLoading] = useLoading();
     const [progression, setProgression] = useState<number>(0);
     const isMounted = useIsMounted();
-    const [isRTL] = useRightToLeft();
 
     useEffect(() => {
         if (pendingUpload) {
@@ -95,13 +94,8 @@ const AttachmentItem = ({
     const nameRaw = `${attachment ? attachment.Name || '' : pendingUpload?.file.name || ''}`;
     const name = rtlSanitize(nameRaw);
     const value = Math.round(progression * 100);
-    const progressionHappening = progression !== 0;
-    const directionLoadingProgress = isRTL ? 'left' : 'right';
-    const backgroundImage =
-        progression === 0
-            ? 'none'
-            : `linear-gradient(to ${directionLoadingProgress}, var(--signal-info) 0%, var(--signal-info) ${value}%, transparent ${value}%)`;
-    const humanAttachmentSize = progressionHappening === false ? `(${humanSize(attachment?.Size)})` : ``;
+    const progressionHappening = progression !== 0 || !!pendingUpload;
+    const humanAttachmentSize = progressionHappening ? `` : `(${humanSize(attachment?.Size)})`;
 
     const primaryTitle = `${name} ${humanAttachmentSize}${getSenderVerificationString(attachmentVerified)}`;
     const primaryActionTitle = getActionTitle(primaryAction, primaryTitle);
@@ -129,10 +123,8 @@ const AttachmentItem = ({
     return (
         <div className="message-attachmentList-item-container" data-testid="attachment-item">
             <div
-                style={{ backgroundImage }}
                 className={classnames([
-                    'message-attachmentList-item flex bordered flex-nowrap pm_button p0',
-                    progressionHappening && 'message-attachmentList-item--uploadInProgress',
+                    'message-attachmentList-item flex bordered flex-nowrap pm_button p0 rounded',
                     loading && 'message-attachmentList-item--loading',
                 ])}
             >
@@ -143,7 +135,11 @@ const AttachmentItem = ({
                         onClick={handleAction(true)}
                         tabIndex={-1}
                     >
-                        <FileIcon mimeType={attachment?.MIMEType || pendingUpload?.file?.type || 'unknown'} size={20} />
+                        {progressionHappening ? (
+                            <CircularProgress progress={value} size={20} className="mr0-5" />
+                        ) : (
+                            <FileIcon mimeType={attachment?.MIMEType || 'unknown'} size={20} />
+                        )}
                     </button>
                     <button
                         className="flex-item-fluid flex flex-nowrap pr0-5"
@@ -151,7 +147,7 @@ const AttachmentItem = ({
                         type="button"
                         onClick={handleAction(true)}
                     >
-                        <span className="mtauto mbauto flex flex-align-items-center flex-nowrap">
+                        <span className="mtauto mbauto flex flex-align-items-baseline flex-nowrap">
                             <span className="text-ellipsis pr0-25 align-baseline inline-block">
                                 <FileNameDisplay text={name} />
                             </span>
@@ -164,7 +160,7 @@ const AttachmentItem = ({
                 {showSecondaryAction && (
                     <button
                         type="button"
-                        className="inline-flex p0-5 no-pointer-events-children flex-item-noshrink border-left message-attachmentSecondaryAction interactive"
+                        className="inline-flex p0-5 no-pointer-events-children flex-item-noshrink message-attachmentSecondaryAction interactive"
                         onClick={handleAction(false)}
                         title={secondaryActionTitle}
                         disabled={loading}

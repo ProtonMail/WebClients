@@ -51,6 +51,7 @@ export const usePromise = <P>() => {
         if (isMounted()) {
             setFakeState({});
         }
+        return promise;
     };
 
     if (promiseRef.current === initializingValue) {
