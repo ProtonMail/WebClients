@@ -238,6 +238,8 @@ export interface ImporterActiveProps {
     State: ImportStatus;
     ErrorCode?: ImportError;
     Mapping: ImportedFolder[];
+    Processed?: number;
+    Total?: number;
 }
 
 export interface Importer {
