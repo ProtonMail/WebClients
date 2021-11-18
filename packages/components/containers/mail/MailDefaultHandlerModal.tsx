@@ -22,6 +22,7 @@ const MailDefaultHandlerModal = ({ ...rest }: Props) => {
             confirm={c('Action').t`Prompt browser setting`}
             onConfirm={handleAskForPermission}
             onClose={rest.onClose}
+            mode="alert"
             {...rest}
         >
             <span>{c('Info')
