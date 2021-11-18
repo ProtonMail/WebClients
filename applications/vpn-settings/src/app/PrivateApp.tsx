@@ -16,6 +16,7 @@ interface Props {
     onLogout: () => void;
     locales: TtagLocaleMap;
 }
+
 const PrivateApp = ({ onLogout, locales }: Props) => {
     return (
         <StandardPrivateApp
