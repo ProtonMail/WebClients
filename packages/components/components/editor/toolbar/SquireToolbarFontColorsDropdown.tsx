@@ -6,6 +6,7 @@ import { DEFAULT_FONT_COLOR, DEFAULT_BACKGROUND, FONT_COLORS } from '../squireCo
 import { getColorsAtCursor, listenToCursor } from '../squireActions';
 import SquireToolbarDropdown from './SquireToolbarDropdown';
 import { SquireType } from '../interface';
+import { Tabs } from '../../tabs';
 
 interface Props {
     squireRef: MutableRefObject<SquireType>;
@@ -15,6 +16,7 @@ interface Props {
 const SquireToolbarFontColorsDropdown = ({ squireRef, editorReady }: Props) => {
     const [fontColor, setFontColor] = useState(DEFAULT_FONT_COLOR());
     const [bgColor, setBgColor] = useState(DEFAULT_BACKGROUND());
+    const [tabIndex, setTabIndex] = useState(0);
 
     useEffect(
         () =>
@@ -36,22 +38,35 @@ const SquireToolbarFontColorsDropdown = ({ squireRef, editorReady }: Props) => {
         squireRef.current.setHighlightColour(color);
     };
 
+    const tabs = [
+        {
+            title: c('Info').t`Text color`,
+            content: (
+                <>
+                    <ColorSelector selected={fontColor} onChange={handleFontChange} colors={FONT_COLORS} />
+                </>
+            ),
+        },
+        {
+            title: c('Info').t`Background color`,
+            content: (
+                <>
+                    <ColorSelector selected={bgColor} onChange={handleBgChange} colors={FONT_COLORS} />
+                </>
+            ),
+        },
+    ];
+
     return (
         <SquireToolbarDropdown
             noMaxSize
-            content={<Icon name="font" alt={c('Action').t`Color`} />}
+            autoClose={false}
+            content={<Icon name="color" alt={c('Action').t`Color`} />}
             className="flex-item-noshrink"
             title={c('Action').t`Color`}
         >
-            <div className="flex flex-row flex-nowrap">
-                <div className="flex flex-column m0-5">
-                    <p className="m0 mb0-5">{c('Info').t`Text color`}</p>
-                    <ColorSelector selected={fontColor} onChange={handleFontChange} colors={FONT_COLORS} />
-                </div>
-                <div className="flex flex-column m0-5">
-                    <p className="m0 mb0-5">{c('Info').t`Background color`}</p>
-                    <ColorSelector selected={bgColor} onChange={handleBgChange} colors={FONT_COLORS} />
-                </div>
+            <div className="p1">
+                <Tabs tabs={tabs} value={tabIndex} onChange={setTabIndex} />
             </div>
         </SquireToolbarDropdown>
     );

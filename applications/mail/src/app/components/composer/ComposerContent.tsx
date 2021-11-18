@@ -4,11 +4,10 @@ import { MutableRefObject, DragEvent, useState, DragEventHandler } from 'react';
 import { c } from 'ttag';
 import { classnames, EllipsisLoader } from '@proton/components';
 
+import dragAndDrop from '@proton/styles/assets/img/placeholders/drag-and-drop-img.svg';
 import { MessageExtended, MessageExtendedWithData } from '../../models/message';
 import AttachmentList, { AttachmentAction } from '../attachment/AttachmentList';
 import SquireEditorWrapper, { EditorActionsRef } from './editor/SquireEditorWrapper';
-import { ATTACHMENT_ACTION } from '../../helpers/attachment/attachmentUploader';
-import EditorEmbeddedModal from './editor/EditorEmbeddedModal';
 import { isDragFile } from '../../helpers/dom';
 import { PendingUpload } from '../../hooks/composer/useAttachments';
 import { MessageChange } from './Composer';
@@ -21,15 +20,11 @@ interface Props {
     onEditorReady: () => void;
     onChange: MessageChange;
     onChangeContent: (content: string) => void;
-    onChangeFlag: (changes: Map<number, boolean>) => void;
     onFocus: () => void;
     onAddAttachments: (files: File[]) => void;
-    onCancelAddAttachment: () => void;
     onRemoveAttachment: (attachment: Attachment) => Promise<void>;
     onRemoveUpload: (pendingUpload: PendingUpload) => Promise<void>;
-    pendingFiles?: File[];
     pendingUploads?: PendingUpload[];
-    onSelectEmbedded: (action: ATTACHMENT_ACTION) => void;
     contentFocusRef: MutableRefObject<() => void>;
     editorActionsRef: EditorActionsRef;
     squireKeydownHandler: (e: KeyboardEvent) => void;
@@ -42,15 +37,11 @@ const ComposerContent = ({
     onEditorReady,
     onChange,
     onChangeContent,
-    onChangeFlag,
     onFocus,
     onAddAttachments,
-    onCancelAddAttachment,
     onRemoveAttachment,
     onRemoveUpload,
-    pendingFiles,
     pendingUploads,
-    onSelectEmbedded,
     contentFocusRef,
     editorActionsRef,
     squireKeydownHandler,
@@ -92,21 +83,24 @@ const ComposerContent = ({
     return (
         <section
             className={classnames([
-                'flex-item-fluid mb0-5 ml1 mr1 flex flex-column flex-nowrap relative composer-content',
+                'flex-item-fluid mb0-5 flex flex-column flex-nowrap relative composer-content pt0-5',
                 attachments?.length > 0 && 'composer-content--has-attachments',
             ])}
             onDragOver={handleDragOver}
         >
             {disabled && (
                 <>
-                    <div className="absolute covered-absolute placeholder opacity-50 bg-norm" />
+                    <div className="absolute covered-absolute placeholder opacity-50" />
                     <div className="absolute covered-absolute color-weak flex flex-justify-center flex-align-items-center">
                         {c('Info').t`Loading message`}
                         <EllipsisLoader />
                     </div>
                 </>
             )}
-            <div className="flex-item-fluid w100 flex flex-column flex-nowrap relative" data-testid="composer-content">
+            <div
+                className="flex-item-fluid mb0-5 pl1-75 pr1-75 w100 flex flex-column flex-nowrap relative"
+                data-testid="composer-content"
+            >
                 <SquireEditorWrapper
                     message={message}
                     disabled={disabled}
@@ -114,7 +108,6 @@ const ComposerContent = ({
                     onReady={onEditorReady}
                     onChange={onChange}
                     onChangeContent={onChangeContent}
-                    onChangeFlag={onChangeFlag}
                     onFocus={onFocus}
                     onAddAttachments={onAddAttachments}
                     onRemoveAttachment={onRemoveAttachment}
@@ -122,20 +115,15 @@ const ComposerContent = ({
                     editorActionsRef={editorActionsRef}
                     keydownHandler={squireKeydownHandler}
                 />
-                {pendingFiles && (
-                    <EditorEmbeddedModal
-                        files={pendingFiles}
-                        onClose={onCancelAddAttachment}
-                        onSelect={onSelectEmbedded}
-                    />
-                )}
                 {fileHover && (
                     <div
                         onDragLeave={handleDragLeave}
                         onDropCapture={handleDrop}
-                        className="composer-editor-dropzone covered-absolute flex flex-justify-center flex-align-items-center"
+                        className="composer-editor-dropzone covered-absolute flex flex-justify-center flex-align-items-center rounded-xl"
                     >
-                        <span className="composer-editor-dropzone-text no-pointer-events">
+                        <span className="composer-editor-dropzone-text no-pointer-events text-center color-weak">
+                            <img src={dragAndDrop} alt="" className="mb1" />
+                            <br />
                             {c('Info').t`Drop a file here to upload`}
                         </span>
                     </div>
@@ -159,7 +147,7 @@ const ComposerContent = ({
                         showDownloadAll={false}
                         onRemoveAttachment={onRemoveAttachment}
                         onRemoveUpload={onRemoveUpload}
-                        className="composer-attachments-list bg-weak"
+                        className="composer-attachments-list"
                     />
                 </div>
             )}

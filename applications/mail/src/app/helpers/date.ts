@@ -47,7 +47,7 @@ export const formatScheduledTimeString = (date: Date | number) => {
     return format(date, 'p', { locale: dateLocale });
 };
 
-export const formatScheduledDate = (date: Date | number) => {
+export const formatDateToHuman = (date: Date | number) => {
     return {
         dateString: formatScheduledDateString(date),
         formattedTime: formatScheduledTimeString(date),

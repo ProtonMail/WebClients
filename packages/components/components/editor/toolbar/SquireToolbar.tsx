@@ -1,4 +1,4 @@
-import { MutableRefObject, useEffect, useState, ReactNode, useMemo, useCallback, memo } from 'react';
+import { MutableRefObject, useEffect, useState, useMemo, useCallback, memo } from 'react';
 import { c } from 'ttag';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { classnames } from '../../../helpers';
@@ -28,6 +28,7 @@ import SquireToolbarAlignmentDropdown from './SquireToolbarAlignmentDropdown';
 import SquireToolbarMoreDropdown from './SquireToolbarMoreDropdown';
 import { ALIGNMENT, FontData, LinkData, SquireEditorMetadata, SquireType } from '../interface';
 import { DEFAULT_FONT_FACE, DEFAULT_FONT_SIZE } from '../squireConfig';
+import { Button, ButtonGroup } from '../../button';
 
 interface Props {
     metadata: SquireEditorMetadata;
@@ -37,7 +38,6 @@ interface Props {
     editorReady: boolean;
     onAddImages: (files: File[]) => void;
     defaultFont?: FontData;
-    moreDropdownExtension: ReactNode;
 }
 
 const SquireToolbar = ({
@@ -48,7 +48,6 @@ const SquireToolbar = ({
     editorReady,
     onAddImages,
     defaultFont,
-    moreDropdownExtension,
 }: Props) => {
     const isMounted = useIsMounted();
     const [squireInfos, setSquireInfos] = useState<{ [test: string]: boolean }>({});
@@ -157,128 +156,119 @@ const SquireToolbar = ({
         ]
     );
 
+    const switchToPlainText = () => {
+        onChangeMetadata({ isPlainText: false });
+    };
+
+    if (metadata.isPlainText) {
+        return (
+            <Button className="mlauto" onClick={switchToPlainText} data-testid="squire-to-html">{c('Action')
+                .t`Switch to rich text`}</Button>
+        );
+    }
+
     return (
-        <div className="editor-toolbar flex flex-nowrap">
-            {metadata.isPlainText ? (
-                <div className="flex-item-fluid" />
-            ) : (
-                <>
-                    <SquireToolbarFontFaceDropdown
-                        squireRef={squireRef}
-                        editorReady={editorReady}
-                        defaultFontFace={defaultFont ? defaultFont.FontFace || DEFAULT_FONT_FACE : undefined}
-                    />
-                    <SquireToolbarSeparator />
-                    <SquireToolbarFontSizeDropdown
-                        squireRef={squireRef}
-                        editorReady={editorReady}
-                        defaultFontSize={defaultFont ? defaultFont.FontSize || DEFAULT_FONT_SIZE : undefined}
-                    />
-                    <SquireToolbarSeparator />
-                    <SquireToolbarFontColorsDropdown squireRef={squireRef} editorReady={editorReady} />
-                    <SquireToolbarSeparator />
-                    <SquireToolbarButton
-                        onClick={handleBold}
-                        aria-pressed={squireInfos.bold}
-                        className={classnames(['flex-item-noshrink', squireInfos.bold && 'is-active'])}
-                        title={c('Action').t`Bold`}
-                        tabIndex={-1}
-                    >
-                        <Icon name="bold" className="mauto" alt={c('Action').t`Bold`} />
-                    </SquireToolbarButton>
-                    <SquireToolbarButton
-                        onClick={handleItalic}
-                        aria-pressed={squireInfos.italic}
-                        className={classnames(['flex-item-noshrink', squireInfos.italic && 'is-active'])}
-                        title={c('Action').t`Italic`}
-                        tabIndex={-1}
-                    >
-                        <Icon name="italic" className="mauto" alt={c('Action').t`Italic`} />
-                    </SquireToolbarButton>
-                    <SquireToolbarButton
-                        onClick={handleUnderline}
-                        aria-pressed={squireInfos.underline}
-                        className={classnames(['flex-item-noshrink', squireInfos.underline && 'is-active'])}
-                        title={c('Action').t`Underline`}
-                        tabIndex={-1}
-                    >
-                        <Icon name="underline" className="mauto" alt={c('Action').t`Underline`} />
-                    </SquireToolbarButton>
-                    <SquireToolbarSeparator />
-                    {!isNarrow && (
-                        <>
-                            <SquireToolbarButton
-                                onClick={handleUnorderedList}
-                                aria-pressed={squireInfos.unorderedList}
-                                className={classnames(['flex-item-noshrink', squireInfos.unorderedList && 'is-active'])}
-                                title={c('Action').t`Unordered list`}
-                                tabIndex={-1}
-                            >
-                                <Icon name="list" className="mauto on-rtl-mirror" alt={c('Action').t`Unordered list`} />
-                            </SquireToolbarButton>
-                            <SquireToolbarButton
-                                onClick={handleOrderedList}
-                                aria-pressed={squireInfos.orderedList}
-                                className={classnames(['flex-item-noshrink', squireInfos.orderedList && 'is-active'])}
-                                title={c('Action').t`Ordered list`}
-                                tabIndex={-1}
-                            >
-                                <Icon
-                                    name="list-numbers"
-                                    className="mauto on-rtl-mirror"
-                                    alt={c('Action').t`Ordered list`}
-                                />
-                            </SquireToolbarButton>
-                            <SquireToolbarSeparator />
-                            <SquireToolbarAlignmentDropdown
-                                handleAlignment={handleAlignment}
-                                squireInfos={squireInfos}
+        // <div className="editor-toolbar flex flex-nowrap p0-25">
+        <ButtonGroup className="rounded-xl editor-toolbar">
+            <>
+                <SquireToolbarFontFaceDropdown
+                    squireRef={squireRef}
+                    editorReady={editorReady}
+                    defaultFontFace={defaultFont ? defaultFont.FontFace || DEFAULT_FONT_FACE : undefined}
+                />
+                <SquireToolbarSeparator />
+                <SquireToolbarFontSizeDropdown
+                    squireRef={squireRef}
+                    editorReady={editorReady}
+                    defaultFontSize={defaultFont ? defaultFont.FontSize || DEFAULT_FONT_SIZE : undefined}
+                />
+                <SquireToolbarSeparator />
+                <SquireToolbarFontColorsDropdown squireRef={squireRef} editorReady={editorReady} />
+                <SquireToolbarSeparator />
+                <SquireToolbarButton
+                    onClick={handleBold}
+                    aria-pressed={squireInfos.bold}
+                    className={classnames(['flex-item-noshrink', squireInfos.bold && 'is-active'])}
+                    title={c('Action').t`Bold`}
+                    tabIndex={-1}
+                >
+                    <Icon name="bold" className="mauto" alt={c('Action').t`Bold`} />
+                </SquireToolbarButton>
+                <SquireToolbarButton
+                    onClick={handleItalic}
+                    aria-pressed={squireInfos.italic}
+                    className={classnames(['flex-item-noshrink', squireInfos.italic && 'is-active'])}
+                    title={c('Action').t`Italic`}
+                    tabIndex={-1}
+                >
+                    <Icon name="italic" className="mauto" alt={c('Action').t`Italic`} />
+                </SquireToolbarButton>
+                <SquireToolbarButton
+                    onClick={handleUnderline}
+                    aria-pressed={squireInfos.underline}
+                    className={classnames(['flex-item-noshrink', squireInfos.underline && 'is-active'])}
+                    title={c('Action').t`Underline`}
+                    tabIndex={-1}
+                >
+                    <Icon name="underline" className="mauto" alt={c('Action').t`Underline`} />
+                </SquireToolbarButton>
+                {!isNarrow && (
+                    <>
+                        <SquireToolbarSeparator />
+                        <SquireToolbarButton
+                            onClick={handleUnorderedList}
+                            aria-pressed={squireInfos.unorderedList}
+                            className={classnames(['flex-item-noshrink', squireInfos.unorderedList && 'is-active'])}
+                            title={c('Action').t`Unordered list`}
+                            tabIndex={-1}
+                        >
+                            <Icon name="list" className="mauto on-rtl-mirror" alt={c('Action').t`Unordered list`} />
+                        </SquireToolbarButton>
+                        <SquireToolbarButton
+                            onClick={handleOrderedList}
+                            aria-pressed={squireInfos.orderedList}
+                            className={classnames(['flex-item-noshrink', squireInfos.orderedList && 'is-active'])}
+                            title={c('Action').t`Ordered list`}
+                            tabIndex={-1}
+                        >
+                            <Icon
+                                name="list-numbers"
+                                className="mauto on-rtl-mirror"
+                                alt={c('Action').t`Ordered list`}
                             />
-                            <SquireToolbarSeparator />
-                            <SquireToolbarButton
-                                onClick={handleBlockquote}
-                                aria-pressed={squireInfos.blockquote}
-                                className={classnames(['flex-item-noshrink', squireInfos.blockquote && 'is-active'])}
-                                title={c('Action').t`Quote`}
-                                tabIndex={-1}
-                            >
-                                <Icon name="quote-right" className="mauto" alt={c('Action').t`Quote`} />
-                            </SquireToolbarButton>
-                            <SquireToolbarButton
-                                onClick={handleLink}
-                                className="flex-item-noshrink"
-                                title={c('Action').t`Insert link`}
-                                tabIndex={-1}
-                            >
-                                <Icon name="link" className="mauto" alt={c('Action').t`Insert link`} />
-                            </SquireToolbarButton>
-                            <SquireToolbarButton
-                                onClick={handleClearFormatting}
-                                className="flex-item-noshrink"
-                                title={c('Action').t`Clear all formatting`}
-                                tabIndex={-1}
-                            >
-                                <Icon name="eraser" className="mauto" alt={c('Action').t`Clear all formatting`} />
-                            </SquireToolbarButton>
-                            <SquireToolbarSeparator />
-                            {metadata.supportImages && (
-                                <>
-                                    <SquireToolbarButton
-                                        onClick={handleImage}
-                                        className="flex-item-noshrink"
-                                        title={c('Action').t`Insert image`}
-                                        tabIndex={-1}
-                                    >
-                                        <Icon name="file-image" className="mauto" alt={c('Action').t`Insert image`} />
-                                    </SquireToolbarButton>
-                                    <SquireToolbarSeparator />
-                                </>
-                            )}
-                        </>
-                    )}
-                </>
-            )}
-            {(metadata.supportRightToLeft || metadata.supportPlainText || moreDropdownExtension || isNarrow) && (
+                        </SquireToolbarButton>
+                        <SquireToolbarSeparator />
+                        <SquireToolbarAlignmentDropdown handleAlignment={handleAlignment} squireInfos={squireInfos} />
+                        <SquireToolbarSeparator />
+                        <SquireToolbarButton
+                            onClick={handleBlockquote}
+                            aria-pressed={squireInfos.blockquote}
+                            className={classnames(['flex-item-noshrink', squireInfos.blockquote && 'is-active'])}
+                            title={c('Action').t`Quote`}
+                            tabIndex={-1}
+                        >
+                            <Icon name="quote-right" className="mauto" alt={c('Action').t`Quote`} />
+                        </SquireToolbarButton>
+                        <SquireToolbarButton
+                            onClick={handleLink}
+                            className="flex-item-noshrink"
+                            title={c('Action').t`Insert link`}
+                            tabIndex={-1}
+                        >
+                            <Icon name="link" className="mauto" alt={c('Action').t`Insert link`} />
+                        </SquireToolbarButton>
+                        <SquireToolbarButton
+                            onClick={handleClearFormatting}
+                            className="flex-item-noshrink"
+                            title={c('Action').t`Clear all formatting`}
+                            tabIndex={-1}
+                        >
+                            <Icon name="eraser" className="mauto" alt={c('Action').t`Clear all formatting`} />
+                        </SquireToolbarButton>
+                    </>
+                )}
+            </>
+            {(metadata.supportRightToLeft || metadata.supportPlainText || isNarrow) && (
                 <SquireToolbarMoreDropdown
                     metadata={metadata}
                     squireRef={squireRef}
@@ -286,11 +276,9 @@ const SquireToolbar = ({
                     isNarrow={isNarrow}
                     squireInfos={squireInfos}
                     squireActions={squireActions}
-                >
-                    {moreDropdownExtension}
-                </SquireToolbarMoreDropdown>
+                />
             )}
-        </div>
+        </ButtonGroup>
     );
 };
 

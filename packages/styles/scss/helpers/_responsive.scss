@@ -311,6 +311,9 @@
 		&-w100 {
 			inline-size: 100%;
 		}
+		&-max-w50 {
+			max-inline-size: 50%;
+		}
 		&-text-left {
 			text-align: start;
 		}

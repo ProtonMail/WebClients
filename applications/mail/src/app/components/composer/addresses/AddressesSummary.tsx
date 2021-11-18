@@ -2,10 +2,10 @@ import { memo, Fragment, MouseEvent, FocusEvent } from 'react';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { getRecipients } from '@proton/shared/lib/mail/messages';
 import { c } from 'ttag';
-import { Label, LinkButton, classnames } from '@proton/components';
+import { Label, classnames, Button, Icon } from '@proton/components';
 import { Recipient } from '@proton/shared/lib/interfaces/Address';
 import { MapSendInfo, STATUS_ICONS_FILLS } from '../../../models/crypto';
-import { recipientTypes } from '../../../models/address';
+import { RecipientType, recipientTypes } from '../../../models/address';
 import EncryptionStatusIcon from '../../message/EncryptionStatusIcon';
 import { useRecipientLabel } from '../../../hooks/contact/useRecipientLabel';
 
@@ -15,26 +15,27 @@ interface Props {
     mapSendInfo?: MapSendInfo;
     onFocus: () => void;
     toggleExpanded: (e: MouseEvent<HTMLButtonElement>) => void;
+    handleContactModal: (type: RecipientType) => () => Promise<void>;
 }
 
-const AddressesSummary = ({ message, disabled, mapSendInfo, toggleExpanded, onFocus }: Props) => {
+const AddressesSummary = ({ message, disabled, mapSendInfo, toggleExpanded, onFocus, handleContactModal }: Props) => {
     const { getRecipientsOrGroups, getRecipientsOrGroupsLabels, getRecipientOrGroupLabel } = useRecipientLabel();
     const title = getRecipientsOrGroupsLabels(getRecipientsOrGroups(getRecipients(message))).join(', ');
 
     // Fakefield onFocus takes precedence on the CcBcc button onClick which is not really logic
     // By catching and stoping the focus event propagation on that button, we restore the click handler
-    const handleFocusCcBcc = (event: FocusEvent) => {
+    const handleFocuButton = (event: FocusEvent) => {
         event.stopPropagation();
     };
 
     return (
-        <div className="flex flex-row flex-nowrap flex-align-items-center m0-5 pl0-5 pr0-5 relative">
-            <Label className={classnames(['composer-meta-label pr0-5 pt0 text-bold', disabled && 'placeholder'])}>
+        <div className="flex flex-row flex-nowrap on-mobile-flex-column flex-align-items-center relative mt0 mb0">
+            <Label className={classnames(['composer-meta-label pr0-5 pt0 text-semibold', disabled && 'placeholder'])}>
                 {c('Title').t`To`}
             </Label>
             <div
                 className={classnames([
-                    'field flex composer-addresses-fakefield flex-row flex-align-items-center flex-nowrap flex-item-fluid w100',
+                    'field flex composer-addresses-fakefield composer-meta-fakefield-summary field-lighter flex-row flex-align-items-center flex-nowrap flex-item-fluid w100',
                     disabled && 'disabled',
                 ])}
                 onClick={onFocus}
@@ -95,15 +96,33 @@ const AddressesSummary = ({ message, disabled, mapSendInfo, toggleExpanded, onFo
                         );
                     })}
                 </span>
-                <LinkButton
-                    className="composer-addresses-ccbcc on-mobile-max-w33 text-ellipsis composer-addresses-ccbcc-fakefield text-no-decoration flex-item-noshrink text-strong relative"
-                    title={c('Action').t`Carbon Copy, Blind Carbon Copy`}
-                    onClick={toggleExpanded}
-                    onFocus={handleFocusCcBcc}
-                    disabled={disabled}
-                >
-                    {c('Action').t`CC, BCC`}
-                </LinkButton>
+                <span className="flex flex-nowrap flex-item-noshrink on-mobile-max-w33 on-tiny-mobile-max-w50">
+                    <Button
+                        color="norm"
+                        shape="ghost"
+                        size="small"
+                        icon
+                        title={c('Action').t`Carbon Copy, Blind Carbon Copy`}
+                        onClick={toggleExpanded}
+                        onFocus={handleFocuButton}
+                        disabled={disabled}
+                        className="composer-addresses-ccbcc text-left text-ellipsis composer-addresses-ccbcc-fakefield text-no-decoration flex-item-noshrink text-strong relative rounded-xl"
+                    >
+                        {c('Action').t`CC, BCC`}
+                    </Button>
+                    <Button
+                        type="button"
+                        onClick={handleContactModal('ToList')}
+                        onFocus={handleFocuButton}
+                        color="weak"
+                        className="pt0-25 pb0-25 flex-item-noshrink"
+                        shape="ghost"
+                        icon
+                        data-testid="composer:to-button"
+                    >
+                        <Icon name="user-plus" size={16} alt={c('Title').t`To`} />
+                    </Button>
+                </span>
             </div>
         </div>
     );

@@ -92,6 +92,10 @@ $breakpoint-2-columns: 1180 !default;
 	border-radius: var(--border-radius-large);
 }
 
+.rounded-xl {
+	border-radius: var(--border-radius-xl);
+}
+
 .rounded50 {
 	border-radius: 50%;
 }

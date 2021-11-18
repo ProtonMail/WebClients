@@ -5,7 +5,7 @@ import { wait } from '@proton/shared/lib/helpers/promise';
 import { AppLink, useIsMounted } from '@proton/components';
 import { VIEW_MODE } from '@proton/shared/lib/constants';
 import UndoButton from './UndoButton';
-import { formatScheduledDate } from '../../helpers/date';
+import { formatDateToHuman } from '../../helpers/date';
 import { MessageCache } from '../../containers/MessageProvider';
 
 export const createSendingMessageNotificationManager = () => {
@@ -48,7 +48,7 @@ const SendingMessageNotification = ({
     const getScheduledNotification = (scheduledAt: number, onUndo: (() => Promise<void> | undefined) | undefined) => {
         const scheduleDate = scheduledAt * 1000;
 
-        const { dateString, formattedTime } = formatScheduledDate(scheduleDate);
+        const { dateString, formattedTime } = formatDateToHuman(scheduleDate);
 
         /*
          * translator: The variables here are the following.
