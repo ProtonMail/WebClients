@@ -49,7 +49,7 @@ const SubscribeCalendarModal = ({ ...rest }: Props) => {
         setError,
         onClose: rest?.onClose,
         onCreateCalendar: rest?.onCreateCalendar,
-        isOtherCalendar: true,
+        isSubscribedCalendar: true,
     });
 
     const handleProcessCalendar = async () => {
