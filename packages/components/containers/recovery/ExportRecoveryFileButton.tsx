@@ -15,9 +15,13 @@ import {
 } from '../../hooks';
 import Button, { ButtonProps } from '../../components/button/Button';
 
-interface Props extends Omit<ButtonProps, 'onClick' | 'children'> {}
+interface Props extends Omit<ButtonProps, 'onClick'> {}
 
-const ExportRecoveryFileButton = ({ loading: loadingProp, ...rest }: Props) => {
+const ExportRecoveryFileButton = ({
+    loading: loadingProp,
+    children = c('Action').t`Download recovery file`,
+    ...rest
+}: Props) => {
     const api = useApi();
     const { createNotification } = useNotifications();
     const { call } = useEventManager();
@@ -65,7 +69,7 @@ const ExportRecoveryFileButton = ({ loading: loadingProp, ...rest }: Props) => {
             loading={loadingUserKeys || loading || loadingProp}
             {...rest}
         >
-            {c('Action').t`Download recovery file`}
+            {children}
         </Button>
     );
 };
