@@ -1,35 +1,42 @@
-import { MutableRefObject, useState, useEffect } from 'react';
+import { MutableRefObject, useEffect } from 'react';
 import { c } from 'ttag';
-import { APPS } from '@proton/shared/lib/constants';
-import { DEFAULT_FONT_SIZE, FONT_SIZES } from '../squireConfig';
+import { FONT_SIZES } from '../squireConfig';
 import SquireToolbarDropdown from './SquireToolbarDropdown';
 import { listenToCursor, getFontSizeAtCursor } from '../squireActions';
 import { SquireType } from '../interface';
 import { Badge } from '../../badge';
 import { classnames } from '../../../helpers';
-import { SettingsLink } from '../../link';
 import { DropdownMenu, DropdownMenuContainer } from '../../dropdown';
+import { Button } from '../../button';
 
 interface Props {
     squireRef: MutableRefObject<SquireType>;
     editorReady: boolean;
-    defaultFontSize?: number;
+    defaultValue: number;
+    value: number;
+    update: (nextFontSize: number) => void;
+    onDefaultClick: () => void;
 }
 
-const EditorToolbarFontSizeDropdown = ({ squireRef, editorReady, defaultFontSize }: Props) => {
-    const [value, setValue] = useState(defaultFontSize || DEFAULT_FONT_SIZE);
-
+const EditorToolbarFontSizeDropdown = ({
+    squireRef,
+    editorReady,
+    defaultValue,
+    value,
+    update,
+    onDefaultClick,
+}: Props) => {
     useEffect(
         () =>
             listenToCursor(squireRef.current, () => {
                 const sizeAtCursor = getFontSizeAtCursor(squireRef.current);
-                setValue(sizeAtCursor || defaultFontSize || DEFAULT_FONT_SIZE);
+                update(sizeAtCursor || value);
             }),
         [editorReady]
     );
 
     const handleClick = (size: number) => () => {
-        setValue(size);
+        update(size);
         squireRef.current.setFontSize(`${size}px`);
     };
 
@@ -51,20 +58,16 @@ const EditorToolbarFontSizeDropdown = ({ squireRef, editorReady, defaultFontSize
                         onClick={handleClick(size)}
                         buttonContent={<span>{size}</span>}
                         extraContent={
-                            size === defaultFontSize ? (
+                            size === defaultValue ? (
                                 <div className="flex pl0-5 pr0-5 flex-item-noshrink">
-                                    <SettingsLink
-                                        path="/appearance#other"
-                                        app={APPS.PROTONMAIL}
+                                    <Button
+                                        color="weak"
+                                        shape="ghost"
                                         className="inline-flex flex-align-self-center text-no-decoration relative"
+                                        onClick={onDefaultClick}
                                     >
-                                        <Badge
-                                            className="color-info"
-                                            tooltip={c('Info').t`Change your default in settings`}
-                                        >
-                                            {c('Font Size Default').t`Default`}
-                                        </Badge>
-                                    </SettingsLink>
+                                        <Badge className="color-info">{c('Font Size Default').t`Default`}</Badge>
+                                    </Button>
                                 </div>
                             ) : null
                         }

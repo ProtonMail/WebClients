@@ -29,6 +29,7 @@ import SquireToolbarMoreDropdown from './SquireToolbarMoreDropdown';
 import { ALIGNMENT, FontData, LinkData, SquireEditorMetadata, SquireType } from '../interface';
 import { DEFAULT_FONT_FACE, DEFAULT_FONT_SIZE } from '../squireConfig';
 import { Button, ButtonGroup } from '../../button';
+import UpdateFontModal from '../modals/UpdateFontModal';
 
 interface Props {
     metadata: SquireEditorMetadata;
@@ -51,8 +52,24 @@ const SquireToolbar = ({
 }: Props) => {
     const isMounted = useIsMounted();
     const [squireInfos, setSquireInfos] = useState<{ [test: string]: boolean }>({});
-
     const { createModal } = useModals();
+
+    const defaultFontSize = defaultFont?.FontSize || DEFAULT_FONT_SIZE;
+    const defaultFontFace = defaultFont?.FontFace || DEFAULT_FONT_FACE;
+    const [fontSize, setFontSize] = useState(defaultFontSize);
+    const [fontFace, setFontFace] = useState(defaultFontFace);
+
+    const handleClickUpdateFont = useCallback(() => {
+        createModal(
+            <UpdateFontModal
+                squireRef={squireRef}
+                onChange={(fontFace: string, fontSize: number) => {
+                    setFontFace(fontFace);
+                    setFontSize(fontSize);
+                }}
+            />
+        );
+    }, []);
 
     const handleCursor = useHandler(() => {
         if (isMounted()) {
@@ -174,13 +191,19 @@ const SquireToolbar = ({
                 <SquireToolbarFontFaceDropdown
                     squireRef={squireRef}
                     editorReady={editorReady}
-                    defaultFontFace={defaultFont ? defaultFont.FontFace || DEFAULT_FONT_FACE : undefined}
+                    defaultValue={defaultFontFace}
+                    value={fontFace}
+                    update={setFontFace}
+                    onDefaultClick={handleClickUpdateFont}
                 />
                 <SquireToolbarSeparator />
                 <SquireToolbarFontSizeDropdown
                     squireRef={squireRef}
                     editorReady={editorReady}
-                    defaultFontSize={defaultFont ? defaultFont.FontSize || DEFAULT_FONT_SIZE : undefined}
+                    defaultValue={defaultFontSize}
+                    value={fontSize}
+                    update={setFontSize}
+                    onDefaultClick={handleClickUpdateFont}
                 />
                 <SquireToolbarSeparator />
                 <SquireToolbarFontColorsDropdown squireRef={squireRef} editorReady={editorReady} />
