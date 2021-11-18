@@ -1,3 +1,17 @@
+## Release: 4.0.6 — Dec 1, 2021
+
+### New features
+
+-   Email reminders
+
+### Improvements
+
+-   Add shortcuts in the sidebar to import and subscribe to calendars
+-   Support ICS files with no version
+-   Fit more text in event cells for events with long duration
+-   Reduce width of event popover to block less space in the UI
+-   Other minor UI and accessibility improvements
+
 ## Release: 4.0.5 — November 3, 2021
 
 ### Improvements
