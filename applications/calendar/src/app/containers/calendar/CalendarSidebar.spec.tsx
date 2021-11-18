@@ -189,7 +189,8 @@ describe('CalendarSidebar', () => {
         await waitFor(() => {
             expect(mockCreateModal).toHaveBeenCalledWith(
                 <CalendarLimitReachedModal>
-                    You have reached the maximum of 1 personal calendar.
+                    Unable to create more calendars. You have reached the maximum of personal calendars within your
+                    plan.
                 </CalendarLimitReachedModal>
             );
         });
@@ -201,7 +202,7 @@ describe('CalendarSidebar', () => {
         await waitFor(() => {
             expect(mockCreateModal).toHaveBeenCalledWith(
                 <CalendarLimitReachedModal>
-                    You have reached the maximum of 5 subscribed calendars.
+                    Unable to add more calendars. You have reached the maximum of subscribed calendars within your plan.
                 </CalendarLimitReachedModal>
             );
         });

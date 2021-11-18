@@ -105,6 +105,14 @@ const PersonalCalendarsSection = ({
     const handleExport = (calendar: Calendar) => createModal(<ExportModal calendar={calendar} />);
 
     const calendarsLimit = user.isFree ? MAX_CALENDARS_PER_FREE_USER : MAX_CALENDARS_PER_USER;
+    const calendarLimitReachedText = user.isFree
+        ? c('Calendar limit warning')
+              .t`You have reached the maximum number of calendars you can create within your plan.`
+        : c('Calendar limit warning').ngettext(
+              msgid`You have reached the maximum of ${calendarsLimit} personal calendar.`,
+              `You have reached the maximum of ${calendarsLimit} personal calendars.`,
+              calendarsLimit
+          );
     const isBelowLimit = calendars.length < calendarsLimit;
 
     return (
@@ -114,11 +122,7 @@ const PersonalCalendarsSection = ({
             defaultCalendarID={defaultCalendar?.ID}
             loadingMap={loadingMap}
             add={c('Action').t`Create calendar`}
-            calendarLimitReachedText={c('Calendar limit warning').ngettext(
-                msgid`You have reached the maximum of ${calendarsLimit} personal calendar.`,
-                `You have reached the maximum of ${calendarsLimit} personal calendars.`,
-                calendarsLimit
-            )}
+            calendarLimitReachedText={calendarLimitReachedText}
             canAdd={activeAddresses.length > 0 && isBelowLimit && user.hasNonDelinquentScope}
             onAdd={handleCreate}
             onSetDefault={handleSetDefault}

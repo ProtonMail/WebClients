@@ -67,7 +67,9 @@ describe('PersonalCalendarsSection', () => {
         const createCalendarCopy = 'Create calendar';
 
         // Free user reached limit
-        expect(screen.getByText(`You have reached the maximum of 1 personal calendar.`)).toBeInTheDocument();
+        expect(
+            screen.getByText(/You have reached the maximum number of calendars you can create within your plan./)
+        ).toBeInTheDocument();
         expect(
             screen.getByText(
                 `Upgrade to a paid plan to create up to ${MAX_CALENDARS_PER_USER} calendars, allowing you to make calendars for work, to share with friends, and just for yourself.`
