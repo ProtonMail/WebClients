@@ -226,16 +226,24 @@ const ImportPrepareStep = ({ modalModel, updateModalModel, addresses }: Props) =
 
     return (
         <>
-            <Alert className="mb1 mt1" type={showSizeWarning ? 'warning' : 'info'}>
-                {showSizeWarning && (
+            {showSizeWarning ? (
+                <Alert className="mb1 mt1" type="warning">
                     <div className="mb1">
                         {c('Warning')
                             .t`This import may exceed the storage capacity currently available in your Proton account. Please consider customizing your import.`}
                     </div>
-                )}
-                {c('Warning')
-                    .t`Proton will transfer as much data as possible, starting with your most recent messages.`}
-            </Alert>
+
+                    <div>
+                        {c('Warning')
+                            .t`Proton will transfer as much data as possible, starting with your most recent messages.`}
+                    </div>
+                </Alert>
+            ) : (
+                <div>
+                    {c('Warning')
+                        .t`Proton will transfer as much data as possible, starting with your most recent messages.`}
+                </div>
+            )}
 
             {showMaxFoldersError && (
                 <Alert className="mb1 mt1" type="error">
