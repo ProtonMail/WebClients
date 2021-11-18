@@ -41,12 +41,23 @@ const PaginationRow = ({
     return (
         <ButtonGroup className={className}>
             <Tooltip title={c('Action').t`Go to first page`}>
-                <Button className="on-rtl-mirror" icon disabled={disabled || disablePrevious} onClick={() => onStart()}>
+                <Button
+                    className="on-rtl-mirror"
+                    icon
+                    disabled={disabled || disablePrevious}
+                    onClick={() => onStart()}
+                    data-testid="pagination-row:go-to-first-page"
+                >
                     <Icon name="angles-left" className="block" alt={c('Action').t`Go to first page`} />
                 </Button>
             </Tooltip>
             <Tooltip title={c('Action').t`Go to previous page`}>
-                <Button className="on-rtl-mirror" disabled={disabled || disablePrevious} onClick={() => onPrevious()}>
+                <Button
+                    className="on-rtl-mirror"
+                    disabled={disabled || disablePrevious}
+                    onClick={() => onPrevious()}
+                    data-testid="pagination-row:go-to-previous-page"
+                >
                     <Icon name="angle-down" className="block rotateZ-90" alt={c('Action').t`Go to previous page`} />
                 </Button>
             </Tooltip>
@@ -59,6 +70,7 @@ const PaginationRow = ({
                             className={classnames([isActive && 'text-bold', isActive && 'no-pointer-events'])}
                             disabled={disabled}
                             onClick={() => onPage(pageNumber)}
+                            data-testid={`pagination-row:go-to-page-${pageNumber}`}
                         >
                             <span className="sr-only">{goToPageTitle(pageNumber)}</span>
                             <span aria-hidden="true">{pageNumber}</span>
@@ -67,12 +79,23 @@ const PaginationRow = ({
                 );
             })}
             <Tooltip title={c('Action').t`Go to next page`}>
-                <Button className="on-rtl-mirror" icon disabled={disabled || disableNext} onClick={() => onNext()}>
+                <Button
+                    className="on-rtl-mirror"
+                    icon
+                    disabled={disabled || disableNext}
+                    onClick={() => onNext()}
+                    data-testid="pagination-row:go-to-next-page"
+                >
                     <Icon name="angle-down" className="block rotateZ-270" alt={c('Action').t`Go to next page`} />
                 </Button>
             </Tooltip>
             <Tooltip title={c('Action').t`Go to last page`}>
-                <Button icon disabled={disabled || disableNext || disableGoToLast} onClick={() => onEnd()}>
+                <Button
+                    icon
+                    disabled={disabled || disableNext || disableGoToLast}
+                    onClick={() => onEnd()}
+                    data-testid="pagination-row:go-to-last-page"
+                >
                     <Icon name="angles-left" className="block mirror" alt={c('Action').t`Go to last page`} />
                 </Button>
             </Tooltip>
