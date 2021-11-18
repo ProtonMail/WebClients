@@ -62,7 +62,7 @@ export default function SortDropdown<T extends AllSortKeys>({
                 isOpen={isOpen}
                 anchorRef={anchorRef}
                 onClose={close}
-                originalPlacement="bottom"
+                originalPlacement="bottom-left"
                 className="dropdown--no-max-size"
             >
                 <DropdownMenu>{dropdownMenuButtons}</DropdownMenu>
