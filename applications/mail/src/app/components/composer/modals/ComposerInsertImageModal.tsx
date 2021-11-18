@@ -37,7 +37,7 @@ const ComposerInsertImageModal = ({ files, onSelect, onClose }: Props) => {
             submitActions={actions}
         >
             <p className="text-left">{c('Info')
-                .t`You can add it as an attachement or displaying it inline in your mail body.`}</p>
+                .t`You can add it as an attachment or display it inline in your mail body.`}</p>
         </ComposerInnerModal>
     );
 };
