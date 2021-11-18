@@ -2,7 +2,7 @@ import { c } from 'ttag';
 import { Address, CachedOrganizationKey, Member, UserModel } from '@proton/shared/lib/interfaces';
 
 import { Table, TableHeader, TableBody, TableRow } from '../../components';
-import { getStatus } from './helper';
+import { formatAddresses, getPermissions, getStatus } from './helper';
 import AddressActions from './AddressActions';
 import AddressStatus from './AddressStatus';
 
@@ -34,8 +34,9 @@ const AddressesTable = ({
                 ].filter(Boolean)}
             />
             <TableBody colSpan={hasUsername ? 4 : 3} loading={loading}>
-                {members.flatMap((member) =>
-                    (memberAddresses?.[member.ID] || []).map((address: Address, i: number) => (
+                {members.flatMap((member) => {
+                    const formattedAddresses = formatAddresses(memberAddresses?.[member.ID] || []);
+                    return formattedAddresses.map((address, i) => (
                         <TableRow
                             key={address.ID}
                             cells={[
@@ -47,13 +48,20 @@ const AddressesTable = ({
                                 <AddressActions
                                     member={member}
                                     address={address}
-                                    user={user}
                                     organizationKey={organizationKey}
+                                    permissions={getPermissions({
+                                        addressIndex: i,
+                                        member,
+                                        address,
+                                        addresses: formattedAddresses,
+                                        user,
+                                        organizationKey,
+                                    })}
                                 />,
                             ].filter(Boolean)}
                         />
-                    ))
-                )}
+                    ));
+                })}
             </TableBody>
         </Table>
     );

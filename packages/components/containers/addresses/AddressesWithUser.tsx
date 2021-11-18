@@ -3,7 +3,6 @@ import { c } from 'ttag';
 import { move } from '@proton/shared/lib/helpers/array';
 import { orderAddress } from '@proton/shared/lib/api/addresses';
 import { Address, CachedOrganizationKey, Member, UserModel } from '@proton/shared/lib/interfaces';
-import { ADDRESS_TYPE } from '@proton/shared/lib/constants';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 
 import { Alert, OrderableTable, OrderableTableHeader, OrderableTableBody, OrderableTableRow } from '../../components';
@@ -11,20 +10,13 @@ import { useApi, useEventManager, useAddresses, useNotifications } from '../../h
 
 import AddressStatus from './AddressStatus';
 import AddressActions from './AddressActions';
-import { getStatus } from './helper';
+import { formatAddresses, getPermissions, getStatus } from './helper';
 
 interface Props {
     user: UserModel;
     member?: Member;
     organizationKey?: CachedOrganizationKey;
 }
-
-const formatAddresses = (addresses?: Address[]) => {
-    if (Array.isArray(addresses)) {
-        return addresses.filter(({ Type }) => Type !== ADDRESS_TYPE.TYPE_EXTERNAL);
-    }
-    return [];
-};
 
 const AddressesUser = ({ user, member, organizationKey }: Props) => {
     const api = useApi();
@@ -101,28 +93,39 @@ const AddressesUser = ({ user, member, organizationKey }: Props) => {
                 />
                 <OrderableTableBody colSpan={3} loading={loadingAddresses}>
                     {list &&
-                        list.map((address, i) => (
-                            <OrderableTableRow
-                                key={i}
-                                index={i}
-                                cells={[
-                                    <div key={0} className="text-ellipsis" title={address.Email}>
-                                        {address.Email}
-                                    </div>,
-                                    <AddressStatus key={1} {...getStatus(address, i)} />,
-                                    <AddressActions
-                                        key={2}
-                                        address={address}
-                                        user={user}
-                                        member={member}
-                                        organizationKey={organizationKey}
-                                        onSetDefault={setDefaultAddress(i)}
-                                        savingIndex={savingIndex}
-                                        addressIndex={i}
-                                    />,
-                                ]}
-                            />
-                        ))}
+                        list.map((address, i) => {
+                            const addressStatuses = getStatus(address, i);
+                            return (
+                                <OrderableTableRow
+                                    disableSort={addressStatuses.isDisabled}
+                                    key={i}
+                                    index={i}
+                                    cells={[
+                                        <div key={0} className="text-ellipsis" title={address.Email}>
+                                            {address.Email}
+                                        </div>,
+                                        <AddressStatus key={1} {...addressStatuses} />,
+                                        <AddressActions
+                                            key={2}
+                                            address={address}
+                                            member={member}
+                                            organizationKey={organizationKey}
+                                            onSetDefault={setDefaultAddress(i)}
+                                            savingIndex={savingIndex}
+                                            addressIndex={i}
+                                            permissions={getPermissions({
+                                                addressIndex: i,
+                                                member,
+                                                address,
+                                                addresses: list,
+                                                user,
+                                                organizationKey,
+                                            })}
+                                        />,
+                                    ]}
+                                />
+                            );
+                        })}
                 </OrderableTableBody>
             </OrderableTable>
         </>
