@@ -1,7 +1,8 @@
 import { useState, useMemo, useEffect } from 'react';
 import { c, msgid } from 'ttag';
 import { useInterval, useHandler } from '@proton/components';
-import { fromUnixTime, isAfter, differenceInSeconds, addSeconds } from 'date-fns';
+import { fromUnixTime, isAfter, differenceInSeconds, addSeconds, isToday, isTomorrow } from 'date-fns';
+
 import { Element } from '../models/element';
 import { EXPIRATION_CHECK_FREQUENCY } from '../constants';
 import { formatDateToHuman } from '../helpers/date';
@@ -70,14 +71,30 @@ export const useExpiration = (message: MessageState): [boolean, string] => {
             return;
         }
         if (draftExpirationTime > 0) {
-            const { dateString, formattedTime } = formatDateToHuman(draftExpirationTime * 1000);
-            /*
-             * translator: The variables here are the following.
-             * ${dateString} can be either "on Tuesday, May 11", for example, or "today" or "tomorrow"
-             * ${formattedTime} is the date formatted in user's locale (e.g. 11:00 PM)
-             * Full sentence for reference: "This message will expire on Tuesday, May 11 at 12:30 PM"
-             */
-            setDelayMessage(c('Info').t`This message will expire ${dateString} at ${formattedTime}`);
+            const expirationDate = draftExpirationTime * 1000;
+            const { dateString, formattedTime } = formatDateToHuman(expirationDate);
+
+            if (isToday(expirationDate)) {
+                /*
+                 * ${formattedTime} is the date formatted in user's locale (e.g. 11:00 PM)
+                 * Full sentence for reference: "This message will expire today at 12:30 PM"
+                 */
+                setDelayMessage(c('Info').t`This message will expire today at ${formattedTime}`);
+            } else if (isTomorrow(expirationDate)) {
+                /*
+                 * ${formattedTime} is the date formatted in user's locale (e.g. 11:00 PM)
+                 * Full sentence for reference: "This message will expire tomorrow at 12:30 PM"
+                 */
+                setDelayMessage(c('Info').t`This message will expire tomorrow at ${formattedTime}`);
+            } else {
+                /*
+                 * translator: The variables here are the following.
+                 * ${dateString} can be either "on Tuesday, May 11", for example, or "today" or "tomorrow"
+                 * ${formattedTime} is the date formatted in user's locale (e.g. 11:00 PM)
+                 * Full sentence for reference: "This message will expire on Tuesday, May 11 at 12:30 PM"
+                 */
+                setDelayMessage(c('Info').t`This message will expire on ${dateString} at ${formattedTime}`);
+            }
         } else {
             const formattedDelay = formatDelay(nowDate, expirationDate);
             setDelayMessage(c('Info').t`This message will expire in ${formattedDelay}`);

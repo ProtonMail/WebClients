@@ -4,6 +4,7 @@ import createListeners from '@proton/shared/lib/helpers/listeners';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { AppLink, useIsMounted } from '@proton/components';
 import { VIEW_MODE } from '@proton/shared/lib/constants';
+import { isToday, isTomorrow } from 'date-fns';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import UndoButton from './UndoButton';
 import { formatDateToHuman } from '../../helpers/date';
@@ -43,13 +44,33 @@ const SendingMessageNotification = ({ manager, scheduledAt, viewMode, message }:
 
         const { dateString, formattedTime } = formatDateToHuman(scheduleDate);
 
-        /*
-         * translator: The variables here are the following.
-         * ${dateString} can be either "on Tuesday, May 11", for example, or "today" or "tomorrow"
-         * ${formattedTime} is the date formatted in user's locale (e.g. 11:00 PM)
-         * Full sentence for reference: "Message will be sent on Tuesday, May 11 at 12:30 PM"
-         */
-        const notification = c('Info').t`Message will be sent ${dateString} at ${formattedTime}`;
+        const getNotificationText = () => {
+            if (isToday(scheduleDate)) {
+                /*
+                 * ${formattedTime} is the date formatted in user's locale (e.g. 11:00 PM)
+                 * Full sentence for reference: "Message will be sent today at 12:30 PM"
+                 */
+                return c('Info').t`Message will be sent today at ${formattedTime}`;
+            }
+
+            if (isTomorrow(scheduleDate)) {
+                /*
+                 * ${formattedTime} is the date formatted in user's locale (e.g. 11:00 PM)
+                 * Full sentence for reference: "Message will be sent tomorrow at 12:30 PM"
+                 */
+                return c('Info').t`Message will be sent tomorrow at ${formattedTime}`;
+            }
+
+            /*
+             * translator: The variables here are the following.
+             * ${dateString} can be "on Tuesday, May 11" for example
+             * ${formattedTime} is the date formatted in user's locale (e.g. 11:00 PM)
+             * Full sentence for reference: "Message will be sent on Tuesday, May 11 at 12:30 PM"
+             */
+            return c('Info').t`Message will be sent on ${dateString} at ${formattedTime}`;
+        };
+
+        const notification = getNotificationText();
 
         const linkID = viewMode === VIEW_MODE.GROUP ? message?.ConversationID : message?.ID;
 
