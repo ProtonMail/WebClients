@@ -1,5 +1,5 @@
 import { Recipient } from '@proton/shared/lib/interfaces';
-import { message as purifyMessage, sanitizeString } from '@proton/shared/lib/sanitize';
+import { protonizer, sanitizeString } from '@proton/shared/lib/sanitize';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { PartialMessageExtended } from '../models/message';
 import { MAILTO_PROTOCOL_HANDLER_PATH } from '../constants';
@@ -61,7 +61,8 @@ export const mailtoParser = (mailto: string): PartialMessageExtended => {
     }
 
     if (searchObject.body) {
-        decryptedBody = decodeURIComponent(purifyMessage(searchObject.body));
+        // use protonizer to replace src attributes to proton-src so that images are not loading without user approval
+        decryptedBody = decodeURIComponent(protonizer(searchObject.body, true).innerHTML);
     }
 
     return { data: message, decryptedBody };
