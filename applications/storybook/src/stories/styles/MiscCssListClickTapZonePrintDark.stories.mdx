@@ -109,9 +109,37 @@ import { Meta, Source } from '@storybook/addon-docs';
   code={`
 <button className="button-show-on-hover">
   hover me, pikaaaaa…
-  <span 
+  <span
     className="visibility-hidden button-show-on-hover-element">
   CHU</span>
+`}
+/>
+
+  </div>
+</div>
+
+This version below make an element with `className="opacity-on-hover"` appearing when hovering its container or when focus is inside its container (container needs `className="opacity-on-hover-container"`).
+
+<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+  <div class="w49 flex-align-self-center relative">
+    <div class="opacity-on-hover-container" tabIndex="0">
+      hover or focus me, pikaaaaa…
+      <button type="button" class="button button-outline-weak opacity-on-hover">CHU</button>
+      </div>
+      <br /><br />
+    Careful when using this, is appropriated for non-critical actions, and for actions related to the container (not to hide everything).
+
+  </div>
+  <div class="w49">
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<div class="opacity-on-hover-container">
+  hover or focus inside me, pikaaaaa…
+  <button className="opacity-on-hover">CHU</button>
+</div>
 `}
 />
 

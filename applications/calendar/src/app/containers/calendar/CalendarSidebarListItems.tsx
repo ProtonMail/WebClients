@@ -19,7 +19,6 @@ import { noop } from '@proton/shared/lib/helpers/function';
 import { Calendar, SubscribedCalendar } from '@proton/shared/lib/interfaces/calendar';
 import { getIsCalendarDisabled, getProbablyActiveCalendars } from '@proton/shared/lib/calendar/calendar';
 
-import './CalendarSidebarListItems.scss';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import { CalendarModal } from '@proton/components/containers/calendar/calendarModal/CalendarModal';
@@ -77,7 +76,7 @@ const CalendarSidebarListItems = ({
 
         return (
             <SidebarListItem key={ID}>
-                <SidebarListItemDiv className="calendar-sidebar-list-item pt0-5 pb0-5 pr0-5">
+                <SidebarListItemDiv className="calendar-sidebar-list-item opacity-on-hover-container pt0-5 pb0-5 pr0-5">
                     <SidebarListItemContent
                         data-test-id="calendar-sidebar:user-calendars"
                         left={left}
@@ -110,7 +109,7 @@ const CalendarSidebarListItems = ({
                                     hasCaret={false}
                                     shape="ghost"
                                     size="small"
-                                    className="calendar-sidebar-list-item-action no-border flex cursor-pointer flex-item-noshrink no-mobile"
+                                    className="calendar-sidebar-list-item-action opacity-on-hover flex-item-noshrink no-mobile"
                                     loading={actionsDisabled}
                                     content={<Icon name="ellipsis" />}
                                 >
