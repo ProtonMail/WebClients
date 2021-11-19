@@ -1,6 +1,8 @@
 import { memo, useEffect } from 'react';
 
 import {
+    Button,
+    Icon,
     TableRow,
     Checkbox,
     useActiveBreakpoint,
@@ -198,10 +200,25 @@ const ItemRow = ({
                 )}
 
                 {columns.includes('share_options') && (
-                    <TableCell className="m0 file-browser-list--share-column">
+                    <TableCell className="m0 file-browser-list--icon-column">
                         <CopyLinkIcon shareId={shareId} item={item} />
                     </TableCell>
                 )}
+
+                <TableCell className="m0 file-browser-list--icon-column">
+                    <Button
+                        shape="ghost"
+                        size="small"
+                        icon
+                        className={classnames([
+                            'file-browser--options',
+                            contextMenu.isOpen && 'file-browser--options-focus',
+                        ])}
+                        onClick={(e) => itemHandlers.onContextMenu(e)}
+                    >
+                        <Icon name="ellipsis-vertical" alt={c('Action').t`More options`} />
+                    </Button>
+                </TableCell>
             </TableRow>
             {!isPreview && !item.Disabled && ItemContextMenu && (
                 <ItemContextMenu
