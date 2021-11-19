@@ -47,7 +47,7 @@ const InputTwo = (props: InputTwoProps, ref: Ref<HTMLInputElement>) => {
 
     if (icon) {
         return (
-            <div className="inputform-icon-container relative">
+            <div className="inputform-icon-container text-left relative">
                 {inputElement}
                 <span className="right-icon absolute flex">{icon}</span>
             </div>

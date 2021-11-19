@@ -1,5 +1,5 @@
 import { useState, ChangeEvent, FocusEvent } from 'react';
-import { FormModal, Input, Row, Label, Field, useLoading, useNotifications } from '@proton/components';
+import { FormModal, InputTwo, Row, Label, Field, useLoading, useNotifications } from '@proton/components';
 import { c } from 'ttag';
 import { noop } from '@proton/shared/lib/helpers/function';
 import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
@@ -82,7 +82,7 @@ const RenameModal = ({ shareId, item, onClose, ...rest }: Props) => {
             <Row className="mt1 mb1">
                 <Label>{isFolder ? c('Label').t`Folder name` : c('Label').t`File name`}</Label>
                 <Field>
-                    <Input
+                    <InputTwo
                         id="link-name"
                         value={name}
                         autoFocus
