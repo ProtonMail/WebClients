@@ -23,7 +23,7 @@ const ShareLinkButton = ({ shareId, selectedItems }: Props) => {
     return (
         <ToolbarButton
             title={hasSharedLink ? c('Action').t`Manage link` : c('Action').t`Get link`}
-            icon={<Icon name="link" />}
+            icon={<Icon name={hasSharedLink ? 'link-pen' : 'link'} />}
             onClick={() => openLinkSharing(shareId, selectedItems[0])}
             data-testid="toolbar-share-link"
         />
