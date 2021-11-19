@@ -6,9 +6,10 @@ import {
     useModals,
     useIsMnemonicAvailable,
     useSettingsLink,
+    useUser,
 } from '@proton/components';
 import { MnemonicPromptModal } from '@proton/components/containers/mnemonic';
-import { GetStartedChecklistKey } from '@proton/shared/lib/interfaces';
+import { GetStartedChecklistKey, MNEMONIC_STATUS } from '@proton/shared/lib/interfaces';
 
 import GetStartedChecklist from './GetStartedChecklist';
 import ModalGetMobileApp from './ModalGetMobileApp';
@@ -19,9 +20,16 @@ interface MailGetStartedChecklistModalProps extends Partial<ModalPropsInjection>
 }
 
 const MailGetStartedChecklistModal = ({ onClose, onSendMessage, ...rest }: MailGetStartedChecklistModalProps) => {
+    const [user] = useUser();
     const { createModal } = useModals();
-    const [isMnemonicAvailable] = useIsMnemonicAvailable();
     const goToSettings = useSettingsLink();
+
+    const [isMnemonicAvailable] = useIsMnemonicAvailable();
+    const canReactivateMnemonic =
+        user.MnemonicStatus === MNEMONIC_STATUS.PROMPT ||
+        user.MnemonicStatus === MNEMONIC_STATUS.ENABLED ||
+        user.MnemonicStatus === MNEMONIC_STATUS.OUTDATED;
+    const displayMnemonicPrompt = isMnemonicAvailable && canReactivateMnemonic;
 
     return (
         <DialogModal intermediate onClose={onClose} {...rest}>
@@ -45,7 +53,7 @@ const MailGetStartedChecklistModal = ({ onClose, onSendMessage, ...rest }: MailG
                             }
 
                             case GetStartedChecklistKey.RecoveryMethod: {
-                                if (isMnemonicAvailable) {
+                                if (displayMnemonicPrompt) {
                                     createModal(<MnemonicPromptModal />);
                                 } else {
                                     goToSettings('/recovery', undefined, true);
