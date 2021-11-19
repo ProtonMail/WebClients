@@ -16,12 +16,13 @@ enum STEPS {
 }
 
 interface Props {
+    type: 'user' | 'address';
     onClose?: () => void;
     existingAlgorithms: algorithmInfo[];
     onAdd: (config: EncryptionConfig) => Promise<string>;
 }
 
-const AddKeyModal = ({ onClose, existingAlgorithms, onAdd, ...rest }: Props) => {
+const AddKeyModal = ({ onClose, existingAlgorithms, type, onAdd, ...rest }: Props) => {
     const [step, setStep] = useState(STEPS.SELECT_ENCRYPTION);
     const [encryptionType, setEncryptionType] = useState<ENCRYPTION_TYPES>(DEFAULT_ENCRYPTION_CONFIG);
     const [newKeyFingerprint, setNewKeyFingerprint] = useState<string>();
@@ -53,7 +54,7 @@ const AddKeyModal = ({ onClose, existingAlgorithms, onAdd, ...rest }: Props) => 
                 children: (
                     <>
                         <Alert className="mb1">
-                            {c('Info')
+                            {c('Key generation')
                                 .t`You can generate a new encryption key if you think your previous key has been compromised.`}
                         </Alert>
                         <SelectEncryption encryptionType={encryptionType} setEncryptionType={setEncryptionType} />
@@ -72,8 +73,11 @@ const AddKeyModal = ({ onClose, existingAlgorithms, onAdd, ...rest }: Props) => 
                 submit: c('Action').t`Continue`,
                 children: (
                     <Alert className="mb1" type="warning">
-                        {c('Info')
-                            .t`A key with the same encryption algorithm is already active for this address. Generating another key will cause slower account loading and deletion of this key can cause issues. If you are generating a new key because your old key is compromised, please mark that key as compromised. Are you sure you want to continue?`}
+                        {type === 'user'
+                            ? c('Key generation')
+                                  .t`A key with the same encryption algorithm already exists. Generating another key will cause slower account loading. Are you sure you want to continue?`
+                            : c('Key generation')
+                                  .t`A key with the same encryption algorithm is already active for this address. Generating another key will cause slower account loading and deletion of this key can cause issues. If you are generating a new key because your old key is compromised, please mark that key as compromised. Are you sure you want to continue?`}
                     </Alert>
                 ),
             };
@@ -85,8 +89,12 @@ const AddKeyModal = ({ onClose, existingAlgorithms, onAdd, ...rest }: Props) => 
                 submit: c('Action').t`Continue`,
                 children: (
                     <Alert className="mb1">
-                        {c('alert')
-                            .t`The encryption keys for your address are being generated. This may take several minutes and temporarily freeze your browser.`}
+                        {type === 'user'
+                            ? // Translator: encryption keys are referred to "contact encryption keys"
+                              c('Key generation')
+                                  .t`The encryption keys are being generated. This may take several minutes and temporarily freeze your browser.`
+                            : c('Key generation')
+                                  .t`The encryption keys for your address are being generated. This may take several minutes and temporarily freeze your browser.`}
                     </Alert>
                 ),
             };
@@ -97,7 +105,8 @@ const AddKeyModal = ({ onClose, existingAlgorithms, onAdd, ...rest }: Props) => 
             return {
                 submit: null,
                 children: (
-                    <Alert className="mb1">{c('Info').jt`Key with fingerprint ${fp} successfully created.`}</Alert>
+                    <Alert className="mb1">{c('Key generation')
+                        .jt`Key with fingerprint ${fp} successfully created.`}</Alert>
                 ),
             };
         }
@@ -107,7 +116,7 @@ const AddKeyModal = ({ onClose, existingAlgorithms, onAdd, ...rest }: Props) => 
 
     return (
         <FormModal
-            title={c('Title').t`Generate key`}
+            title={c('Key generation').t`Generate key`}
             close={c('Action').t`Close`}
             onClose={onClose}
             onSubmit={onClose}
