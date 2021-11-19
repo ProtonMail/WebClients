@@ -105,7 +105,7 @@ function ItemCell({
                         />
                     ) : (
                         <FileIcon
-                            size={56}
+                            size={48}
                             mimeType={item.Type === LinkType.FOLDER ? 'Folder' : item.MIMEType}
                             alt={iconText}
                         />
