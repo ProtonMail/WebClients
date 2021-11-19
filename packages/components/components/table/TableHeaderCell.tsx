@@ -2,6 +2,8 @@ import { ReactNode, ThHTMLAttributes } from 'react';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import { Icon } from '../icon';
 
+import './TableHeaderCell.scss';
+
 interface Props extends ThHTMLAttributes<HTMLTableCellElement> {
     children?: ReactNode;
     direction?: SORT_DIRECTION;
@@ -10,12 +12,12 @@ interface Props extends ThHTMLAttributes<HTMLTableCellElement> {
 
 const TableHeaderCell = ({ children, direction, onSort, ...rest }: Props) => {
     const content = onSort ? (
-        <div className="flex-nowrap inline-flex-vcenter cursor-pointer" onClick={onSort}>
+        <div className="flex-nowrap inline-flex-vcenter cursor-pointer table-header-cell-hover" onClick={onSort}>
             <span className="mr0-25">{children}</span>
             {direction && (
                 <Icon
                     name="arrow-up"
-                    size={12}
+                    size={16}
                     className={`flex-item-noshrink ${direction === SORT_DIRECTION.DESC ? '' : 'rotateX-180'}`}
                 />
             )}
