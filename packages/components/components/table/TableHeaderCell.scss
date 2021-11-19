@@ -1,0 +1,10 @@
+.table-header-cell-hover {
+	// Make the background hover fill the header row nicely.
+	padding: 0.5em;
+	margin: -0.5em;
+
+	&:hover {
+		background-color: var(--interaction-default-hover);
+		border-radius: var(--border-radius-medium);
+	}
+}
