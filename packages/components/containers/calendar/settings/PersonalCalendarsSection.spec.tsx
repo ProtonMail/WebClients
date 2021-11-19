@@ -68,7 +68,9 @@ describe('PersonalCalendarsSection', () => {
 
         // Free user reached limit
         expect(
-            screen.getByText(/You have reached the maximum number of calendars you can create within your plan./)
+            screen.getByText(
+                /You have reached the maximum number of personal calendars you can create within your plan./
+            )
         ).toBeInTheDocument();
         expect(
             screen.getByText(
@@ -86,7 +88,9 @@ describe('PersonalCalendarsSection', () => {
         );
 
         expect(
-            screen.getByText(`You have reached the maximum of ${MAX_CALENDARS_PER_USER} personal calendars.`)
+            screen.getByText(
+                `You have reached the maximum number of personal calendars you can create within your plan.`
+            )
         ).toBeInTheDocument();
         expect(screen.getByText(createCalendarCopy)).toBeDisabled();
 
@@ -99,7 +103,9 @@ describe('PersonalCalendarsSection', () => {
         );
 
         expect(
-            screen.queryByText(`You have reached the maximum of ${MAX_CALENDARS_PER_USER} personal calendars.`)
+            screen.queryByText(
+                `You have reached the maximum number of personal calendars you can create within your plan.`
+            )
         ).not.toBeInTheDocument();
 
         expect(screen.getByText(createCalendarCopy)).toBeDisabled();
@@ -107,7 +113,11 @@ describe('PersonalCalendarsSection', () => {
         // Free user without calendars
         rerender(renderComponent());
 
-        expect(screen.queryByText(`You have reached the maximum of 1 personal calendar.`)).not.toBeInTheDocument();
+        expect(
+            screen.queryByText(
+                `You have reached the maximum number of personal calendars you can create within your plan.`
+            )
+        ).not.toBeInTheDocument();
         expect(screen.queryByText(createCalendarCopy)).not.toBeDisabled();
     });
 });
