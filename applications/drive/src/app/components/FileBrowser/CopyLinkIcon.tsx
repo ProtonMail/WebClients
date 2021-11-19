@@ -12,7 +12,7 @@ interface Props {
     className?: string;
 }
 
-const GetLinkIcon = ({ shareId, item, className }: Props) => {
+const CopyLinkIcon = ({ shareId, item, className }: Props) => {
     const [isLoading, setIsLoading] = useState(false);
     const { copyShareLinkToClipboard } = useSharing();
 
@@ -44,7 +44,7 @@ const GetLinkIcon = ({ shareId, item, className }: Props) => {
                 icon
                 shape="ghost"
                 size="small"
-                className={className || 'flex flex-item-noshrink'}
+                className={className}
                 onClick={handleGetLink}
                 onKeyDown={(e) => {
                     if (e.key === 'Enter' || e.key === ' ') {
@@ -58,4 +58,4 @@ const GetLinkIcon = ({ shareId, item, className }: Props) => {
     );
 };
 
-export default GetLinkIcon;
+export default CopyLinkIcon;

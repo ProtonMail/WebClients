@@ -132,8 +132,8 @@ function ItemCell({
                         size="small"
                         icon
                         className={classnames([
-                            'file-browser-grid-view--options',
-                            contextMenu.isOpen && 'file-browser-grid-view--options-focus',
+                            'file-browser-grid-view--options file-browser--options',
+                            contextMenu.isOpen && 'file-browser--options-focus',
                         ])}
                         onClick={(e) => itemHandlers.onContextMenu(e)}
                     >

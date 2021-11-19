@@ -14,6 +14,16 @@
 	display: none;
 }
 
+.file-browser--options {
+	display: none;
+}
+
+.file-browser--options-focus {
+	display: block;
+	background-color: var(--button-hover-background-color);
+	color: var(--button-hover-text-color);
+}
+
 .file-browser-grid-item {
 	position: relative;
 	background-color: var(--background-norm);
@@ -53,20 +63,13 @@
 }
 
 .file-browser-grid-view--options {
-	display: none;
 	position: absolute;
 	inset-inline-end: 4px;
 	inset-block-end: 8px;
 }
 
-.file-browser-grid-view--options-focus {
-	display: block;
-	background-color: var(--button-hover-background-color);
-	color: var(--button-hover-text-color);
-}
-
-.file-browser-list--share-column {
-	inline-size: 50px; // To fit one small icon + spacing around.
+.file-browser-list--icon-column {
+	inline-size: 48px; // To fit one small icon + spacing around.
 	max-block-size: 100%;
 }
 
@@ -84,10 +87,8 @@
 		.file-browser--select-hover-only {
 			display: flex;
 		}
-	}
 
-	.file-browser-grid-item:hover {
-		.file-browser-grid-view--options {
+		.file-browser--options {
 			display: block;
 		}
 	}
