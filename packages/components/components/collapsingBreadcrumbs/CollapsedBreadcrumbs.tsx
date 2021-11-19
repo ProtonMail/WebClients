@@ -48,7 +48,13 @@ function CollapsedBreadcrumb({ breadcrumbs }: Props) {
 
     return (
         <>
-            <Breadcrumb ref={anchorRef} onClick={toggle} onDragEnter={handleDragEnter} onDragLeave={handleDragLeave}>
+            <Breadcrumb
+                ref={anchorRef}
+                onClick={toggle}
+                onDragEnter={handleDragEnter}
+                onDragLeave={handleDragLeave}
+                className={isOpen ? 'collapsed-breadcrumb-active' : ''}
+            >
                 ...
             </Breadcrumb>
             <Dropdown
