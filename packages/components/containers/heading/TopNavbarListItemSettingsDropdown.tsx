@@ -162,7 +162,8 @@ const TopNavbarListItemSettingsDropdown = (props: Props) => {
                                 onClick={handleDefaultMailHandlerClick}
                                 className="flex flex-nowrap flex-justify-space-between flex-align-items-center no-mobile"
                             >
-                                <span className="flex-item-fluid text-left">{c('Action').t`Default mail handler`}</span>
+                                <span className="flex-item-fluid text-left">{c('Action')
+                                    .t`Default email application`}</span>
                             </DropdownMenuButton>
                         )}
                     </>
