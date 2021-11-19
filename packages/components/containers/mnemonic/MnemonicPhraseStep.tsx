@@ -31,7 +31,9 @@ export const MnemonicPhraseStepContent = ({ mnemonic, loading }: { mnemonic?: st
                         bordered={false}
                         rounded
                     >
-                        <span className="mr0-5">{mnemonic}</span>
+                        <span className="mr0-5" data-testid="account:recovery:generatedRecoveryPhrase">
+                            {mnemonic}
+                        </span>
                         <Copy className="bg-norm flex-item-noshrink" value={mnemonic} onCopy={onCopy} />
                     </Card>
                 </>

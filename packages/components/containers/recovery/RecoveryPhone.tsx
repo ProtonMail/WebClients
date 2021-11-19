@@ -69,7 +69,13 @@ const RecoveryPhone = ({ phone, hasReset, defaultCountry, className }: Props) =>
                 />
             </div>
             <div className="mb0-5">
-                <Button shape="outline" type="submit" disabled={(phone || '') === input} loading={loading}>
+                <Button
+                    shape="outline"
+                    type="submit"
+                    disabled={(phone || '') === input}
+                    loading={loading}
+                    data-testid="account:recovery:phoneSubmit"
+                >
                     {c('Action').t`Save`}
                 </Button>
             </div>

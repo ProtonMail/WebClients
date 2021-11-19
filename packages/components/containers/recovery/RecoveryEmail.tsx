@@ -84,7 +84,13 @@ const RecoveryEmail = ({ email, hasReset, hasNotify, className }: Props) => {
                 />
             </div>
             <div className="mb0-5">
-                <Button type="submit" shape="outline" disabled={(email || '') === input} loading={loading}>
+                <Button
+                    type="submit"
+                    shape="outline"
+                    disabled={(email || '') === input}
+                    loading={loading}
+                    data-testid="account:recovery:emailSubmit"
+                >
                     {c('Action').t`Save`}
                 </Button>
             </div>
