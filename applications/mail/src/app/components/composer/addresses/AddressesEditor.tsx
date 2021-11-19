@@ -73,7 +73,7 @@ const AddressesEditor = ({
                                 expanded && 'is-active',
                             ])}
                         >
-                            {c('Action').t`CC, BCC`}
+                            {c('Action').t`CC BCC`}
                         </Button>
                         <Button
                             type="button"
