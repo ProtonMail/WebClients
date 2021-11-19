@@ -18,7 +18,7 @@ import ImportMailModal from './mail/modals/ImportMailModal';
 import { ImportModal as ImportCalendarModal } from '../calendar/importModal';
 import ImportContactsModal from '../contacts/import/ImportModal';
 
-import { Button, ButtonProps, FormModal, Loader } from '../../components';
+import { Button, ButtonProps, FormModal, Loader, Tooltip } from '../../components';
 import { useCalendars, useCalendarUserSettings, useModals, useUser } from '../../hooks';
 
 import './EasySwitchModal.scss';
@@ -122,6 +122,14 @@ const EasySwitchDefaultModal = ({
         onClose();
     };
 
+    const calendarButton = (
+        <ImportTypeButton
+            importType={ImportType.CALENDAR}
+            onClick={handleClickCalendar}
+            disabled={!canImportCalendars}
+        />
+    );
+
     return (
         <FormModal
             title={titleRenderer()}
@@ -138,11 +146,15 @@ const EasySwitchDefaultModal = ({
                     <div className="mb2">{c('Info').t`What do you want to import?`}</div>
                     <div className="import-buttons mb1">
                         <ImportTypeButton importType={ImportType.MAIL} onClick={handleClickMail} />
-                        <ImportTypeButton
-                            importType={ImportType.CALENDAR}
-                            onClick={handleClickCalendar}
-                            disabled={!canImportCalendars}
-                        />
+                        {!activeCalendars.length ? (
+                            <Tooltip
+                                title={c('Info').t`You need to have an active personal calendar to import your events.`}
+                            >
+                                <span>{calendarButton}</span>
+                            </Tooltip>
+                        ) : (
+                            calendarButton
+                        )}
                         <ImportTypeButton importType={ImportType.CONTACTS} onClick={handleClickContacts} />
                     </div>
                 </>
