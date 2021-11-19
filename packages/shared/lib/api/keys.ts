@@ -16,6 +16,17 @@ export const getKeySalts = () => ({
     method: 'get',
 });
 
+interface CreateUserKeyPayload {
+    Primary: number;
+    PrivateKey: string;
+}
+
+export const createUserKeyRoute = (data: CreateUserKeyPayload) => ({
+    url: 'core/v4/keys/user',
+    method: 'post',
+    data,
+});
+
 interface CreateAddressKeyPayload {
     AddressID: string;
     Primary: number;

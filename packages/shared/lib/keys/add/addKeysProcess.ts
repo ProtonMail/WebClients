@@ -3,6 +3,9 @@ import { getHasMigratedAddressKeys } from '../keyMigration';
 import { Address, Api, DecryptedKey, EncryptionConfig } from '../../interfaces';
 import { getActiveKeys } from '../getActiveKeys';
 import { getPrimaryKey } from '../getPrimaryKey';
+import { DEFAULT_ENCRYPTION_CONFIG, ENCRYPTION_CONFIGS } from '../../constants';
+import { generateUserKey } from '../userKeys';
+import { createUserKeyRoute } from '../../api/keys';
 
 interface AddAddressKeysProcessArguments {
     api: Api;
@@ -48,4 +51,30 @@ export const addAddressKeysProcess = async ({
         passphrase: keyPassword,
         activeKeys,
     });
+};
+
+interface CreateAddressKeyLegacyArguments {
+    api: Api;
+    encryptionConfig?: EncryptionConfig;
+    passphrase: string;
+}
+
+export const addUserKeysProcess = async ({
+    api,
+    encryptionConfig = ENCRYPTION_CONFIGS[DEFAULT_ENCRYPTION_CONFIG],
+    passphrase,
+}: CreateAddressKeyLegacyArguments) => {
+    const { privateKey, privateKeyArmored } = await generateUserKey({
+        passphrase,
+        encryptionConfig,
+    });
+
+    await api(
+        createUserKeyRoute({
+            Primary: 1,
+            PrivateKey: privateKeyArmored,
+        })
+    );
+
+    return privateKey;
 };
