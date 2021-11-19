@@ -6,7 +6,6 @@ import { Button, Icon, FileIcon, Checkbox, classnames, DragMoveContainer, FileNa
 import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 import { ItemProps } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 
-import SharedURLIcon from '../SharedURLIcon';
 import useFileBrowserItem from '../useFileBrowserItem';
 import { useThumbnailsDownloadProvider } from '../../downloads/ThumbnailDownloadProvider';
 
@@ -109,13 +108,6 @@ function ItemCell({
                             size={48}
                             mimeType={item.Type === LinkType.FOLDER ? 'Folder' : item.MIMEType}
                             alt={iconText}
-                        />
-                    )}
-                    {item.SharedUrl && (
-                        <SharedURLIcon
-                            shareId={shareId}
-                            item={item}
-                            className="flex file-browser-grid-item--share-icon"
                         />
                     )}
                 </div>

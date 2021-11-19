@@ -34,15 +34,6 @@
 	object-fit: contain; // To keep original proportion in Safari.
 }
 
-.file-browser-grid-item--share-icon {
-	padding: 0.25em;
-	position: absolute;
-	inset-block-end: 0.25em;
-	inset-inline-end: 0.25em;
-	background-color: var(--background-norm);
-	border-radius: 50%;
-}
-
 .file-browser-grid-item--container {
 	position: relative;
 }
