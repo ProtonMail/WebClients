@@ -8,11 +8,16 @@ const getHasUserReachedCalendarLimit = ({
     calendarsLength: number;
     isFreeUser: boolean;
     isSubscribedCalendar: boolean;
-}) =>
-    isSubscribedCalendar
-        ? calendarsLength === MAX_SUBSCRIBED_CALENDARS_PER_USER
-        : isFreeUser
-        ? calendarsLength === MAX_CALENDARS_PER_FREE_USER
-        : calendarsLength === MAX_CALENDARS_PER_USER;
+}) => {
+    if (isSubscribedCalendar) {
+        return calendarsLength >= MAX_SUBSCRIBED_CALENDARS_PER_USER;
+    }
+
+    if (isFreeUser) {
+        return calendarsLength >= MAX_CALENDARS_PER_FREE_USER;
+    }
+
+    return calendarsLength >= MAX_CALENDARS_PER_USER;
+};
 
 export default getHasUserReachedCalendarLimit;
