@@ -9,9 +9,9 @@ interface Props {
     startDate: Date;
     endDate: Date;
     isOutdated?: boolean;
-    isCancelled?: boolean;
+    isCanceled?: boolean;
 }
-const EventReminderBanner = ({ isAllDay, startDate, endDate, isOutdated, isCancelled }: Props) => {
+const EventReminderBanner = ({ isAllDay, startDate, endDate, isOutdated, isCanceled }: Props) => {
     if (isOutdated) {
         return (
             <Banner icon="circle-exclamation" backgroundColor={BannerBackgroundColor.DANGER}>
@@ -20,7 +20,7 @@ const EventReminderBanner = ({ isAllDay, startDate, endDate, isOutdated, isCance
         );
     }
 
-    if (isCancelled) {
+    if (isCanceled) {
         return (
             <Banner icon="circle-exclamation" backgroundColor={BannerBackgroundColor.WARNING}>
                 {c('Email reminder out of date alert').t`Event was canceled`}
