@@ -90,6 +90,7 @@ function ItemCell({
                 className={classnames([
                     'file-browser-grid-item m0-5 flex flex-column w100 rounded bordered cursor-pointer text-align-left no-outline',
                     (onClick || secondaryActionActive) && !item.Disabled && 'cursor-pointer',
+                    isSelected && 'border--primary',
                     (isSelected || dragMoveControls?.isActiveDropTarget || item.Disabled) &&
                         'file-browser-grid-item--highlight',
                     (dragging || item.Disabled) && 'opacity-50',
