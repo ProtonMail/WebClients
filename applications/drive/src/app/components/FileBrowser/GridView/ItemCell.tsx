@@ -139,7 +139,10 @@ function ItemCell({
                         shape="ghost"
                         size="small"
                         icon
-                        className="file-browser-grid-view--options"
+                        className={classnames([
+                            'file-browser-grid-view--options',
+                            contextMenu.isOpen && 'file-browser-grid-view--options-focus',
+                        ])}
                         onClick={(e) => itemHandlers.onContextMenu(e)}
                     >
                         <Icon name="ellipsis-vertical" alt={c('Action').t`More options`} />
