@@ -1,10 +1,11 @@
 import { c } from 'ttag';
 import { FeatureCode, useFeature, useFolders, useLabels, useMailSettings } from '@proton/components';
 import { MAILBOX_LABEL_IDS, SHOW_MOVED } from '@proton/shared/lib/constants';
-import { formatFolderName, buildTreeview } from '@proton/shared/lib/helpers/folder';
+import { buildTreeview, formatFolderName } from '@proton/shared/lib/helpers/folder';
 import { FolderWithSubFolders } from '@proton/shared/lib/interfaces/Folder';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { getStandardFolders } from '../../../helpers/labels';
+import { getLabelIDsToI18N } from '../../../constants';
 
 interface ItemBase {
     text: string;
@@ -82,12 +83,13 @@ export function useLocationFieldOptions(): UseLocationFieldOptionsReturn {
     const { feature: scheduledFeature } = useFeature(FeatureCode.ScheduledSend);
 
     const DRAFT_TYPE = hasBit(mailSettings?.ShowMoved || 0, SHOW_MOVED.DRAFTS) ? ALL_DRAFTS : DRAFTS;
+    const SENT_TYPE = hasBit(mailSettings?.ShowMoved || 0, SHOW_MOVED.SENT) ? ALL_SENT : SENT;
     const defaultFolders: ItemDefaultFolder[] = [
-        { value: ALL_MAIL, text: c('Mailbox').t`All mail`, url: '/all-mail', icon: 'envelopes' },
-        { value: INBOX, text: STANDARD_FOLDERS[INBOX].name, url: STANDARD_FOLDERS[INBOX].to, icon: 'inbox' },
+        { value: ALL_MAIL, text: getLabelIDsToI18N()[ALL_MAIL], url: '/all-mail', icon: 'envelopes' },
+        { value: INBOX, text: getLabelIDsToI18N()[INBOX], url: STANDARD_FOLDERS[INBOX].to, icon: 'inbox' },
         {
             value: DRAFT_TYPE,
-            text: STANDARD_FOLDERS[DRAFT_TYPE].name,
+            text: DRAFT_TYPE === ALL_DRAFTS ? getLabelIDsToI18N()[ALL_DRAFTS] : getLabelIDsToI18N()[DRAFTS],
             url: STANDARD_FOLDERS[DRAFT_TYPE].to,
             icon: 'file-lines',
         },
@@ -95,27 +97,27 @@ export function useLocationFieldOptions(): UseLocationFieldOptionsReturn {
             ? [
                   {
                       value: SCHEDULED,
-                      text: STANDARD_FOLDERS[SCHEDULED].name,
+                      text: getLabelIDsToI18N()[SCHEDULED],
                       url: STANDARD_FOLDERS[SCHEDULED].to,
                       icon: 'clock',
                   },
               ]
             : []),
         {
-            value: hasBit(mailSettings?.ShowMoved || 0, SHOW_MOVED.SENT) ? ALL_SENT : SENT,
-            text: c('Mailbox').t`Sent`,
+            value: SENT_TYPE,
+            text: SENT_TYPE === ALL_SENT ? getLabelIDsToI18N()[ALL_SENT] : getLabelIDsToI18N()[SENT],
             url: '/sent',
             icon: 'paper-plane',
         },
-        { value: STARRED, text: c('Mailbox').t`Starred`, url: '/starred', icon: 'star' },
+        { value: STARRED, text: getLabelIDsToI18N()[STARRED], url: '/starred', icon: 'star' },
         {
             value: ARCHIVE,
-            text: STANDARD_FOLDERS[ARCHIVE].name,
+            text: getLabelIDsToI18N()[ARCHIVE],
             url: STANDARD_FOLDERS[ARCHIVE].to,
             icon: 'box-archive',
         },
-        { value: SPAM, text: STANDARD_FOLDERS[SPAM].name, url: STANDARD_FOLDERS[SPAM].to, icon: 'fire' },
-        { value: TRASH, text: STANDARD_FOLDERS[TRASH].name, url: STANDARD_FOLDERS[TRASH].to, icon: 'trash' },
+        { value: SPAM, text: getLabelIDsToI18N()[SPAM], url: STANDARD_FOLDERS[SPAM].to, icon: 'fire' },
+        { value: TRASH, text: getLabelIDsToI18N()[TRASH], url: STANDARD_FOLDERS[TRASH].to, icon: 'trash' },
     ];
 
     const customFolders: ItemCustomFolder[] = treeview.reduce(
