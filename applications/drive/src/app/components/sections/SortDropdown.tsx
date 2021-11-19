@@ -55,7 +55,7 @@ export default function SortDropdown<T extends AllSortKeys>({
                 size="small"
                 icon
             >
-                <DropdownCaret isOpen={isOpen} className="expand-caret toolbar-icon mtauto mbauto" />
+                <DropdownCaret isOpen={isOpen} className="expand-caret toolbar-icon mtauto mbauto" size={16} />
             </Button>
             <Dropdown
                 id={uid}
