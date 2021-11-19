@@ -1,6 +1,6 @@
 import { Toolbar, ToolbarSeparator } from '@proton/components';
 
-import { DetailsButton, DownloadButton, LayoutDropdown, PreviewButton } from '../ToolbarButtons';
+import { DetailsButton, DownloadButton, LayoutButton, PreviewButton } from '../ToolbarButtons';
 import { DeletePermanentlyButton, RestoreFromTrashButton } from './ToolbarButtons';
 import { useTrashContent } from './TrashContentProvider';
 
@@ -34,7 +34,7 @@ const TrashToolbar = ({ shareId }: Props) => {
         <Toolbar>
             {renderSelectionActions()}
             <span className="mlauto flex">
-                <LayoutDropdown />
+                <LayoutButton />
             </span>
         </Toolbar>
     );
