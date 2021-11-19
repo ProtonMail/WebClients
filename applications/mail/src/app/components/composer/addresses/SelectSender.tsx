@@ -44,8 +44,8 @@ const SelectSender = ({ message, disabled, onChange, onChangeContent, addressesB
     if (user.hasPaidMail) {
         addressesOptions.push(
             <div key="create-new-adress" className="pl1 pt0-5 pb0-5 border-top">
-                <SettingsLink path="/identity-addresses" app={APPS.PROTONMAIL}>
-                    {c('Label').t`Create new address`}
+                <SettingsLink path="/identity-addresses#addresses" app={APPS.PROTONMAIL}>
+                    {c('Label').t`Manage my addresses`}
                 </SettingsLink>
             </div>
         );
