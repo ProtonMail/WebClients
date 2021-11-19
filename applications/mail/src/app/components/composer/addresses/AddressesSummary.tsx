@@ -108,7 +108,7 @@ const AddressesSummary = ({ message, disabled, mapSendInfo, toggleExpanded, onFo
                         disabled={disabled}
                         className="composer-addresses-ccbcc text-left text-ellipsis composer-addresses-ccbcc-fakefield text-no-decoration flex-item-noshrink text-strong relative rounded-xl"
                     >
-                        {c('Action').t`CC, BCC`}
+                        {c('Action').t`CC BCC`}
                     </Button>
                     <Button
                         type="button"
