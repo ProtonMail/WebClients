@@ -89,7 +89,7 @@ const UpdateFontModal = ({ onChange, squireRef, onClose, ...rest }: Props) => {
                     <br />
                     <span className="mt0" style={{ fontFamily: fontFace, fontSize: `${fontSize}px` }}>{c(
                         'Update font modal'
-                    ).t`Today is a good day to write an e-mail`}</span>
+                    ).t`Today is a good day to write an email`}</span>
                 </p>
             </div>
         </FormModal>
