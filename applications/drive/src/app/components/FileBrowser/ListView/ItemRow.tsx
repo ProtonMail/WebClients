@@ -125,7 +125,14 @@ const ItemRow = ({
                 {...itemHandlers}
             >
                 <TableCell className="m0 flex">
-                    <div role="presentation" className="flex flex-align-items-center" {...checkboxWrapperHandlers}>
+                    <div
+                        role="presentation"
+                        className={classnames([
+                            'flex flex-align-items-center',
+                            selectedItems.length ? null : 'file-browser--select-hover-only',
+                        ])}
+                        {...checkboxWrapperHandlers}
+                    >
                         <Checkbox
                             disabled={item.Disabled}
                             className="increase-click-surface"
