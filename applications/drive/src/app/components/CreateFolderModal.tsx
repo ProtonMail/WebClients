@@ -1,5 +1,5 @@
 import { useState, ChangeEvent, FocusEvent } from 'react';
-import { FormModal, Input, Row, Label, Field, useLoading, useNotifications } from '@proton/components';
+import { FormModal, InputTwo, Row, Label, Field, useLoading, useNotifications } from '@proton/components';
 import { c } from 'ttag';
 import { MAX_NAME_LENGTH } from '@proton/shared/lib/drive/constants';
 import { validateLinkNameField } from '../utils/validation';
@@ -78,7 +78,7 @@ const CreateFolderModal = ({ onClose, folder, onCreateDone, ...rest }: Props) =>
             <Row className="mt1 mb1">
                 <Label>{c('Label').t`Folder name`}</Label>
                 <Field>
-                    <Input
+                    <InputTwo
                         id="folder-name"
                         autoFocus
                         maxLength={MAX_NAME_LENGTH}
