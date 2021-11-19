@@ -121,7 +121,7 @@ function ItemCell({
                 <div
                     className={classnames([
                         'flex file-browser-grid-item--select',
-                        selectedItems.length ? null : 'file-browser-grid-item--select-hover-only',
+                        selectedItems.length ? null : 'file-browser--select-hover-only',
                     ])}
                     {...checkboxWrapperHandlers}
                 >
