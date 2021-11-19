@@ -101,17 +101,6 @@ const ComposerActions = ({
     ) : (
         c('Title').t`Attachments`
     );
-    /* TODO: Do we want to display the expiration shortcut to the user ?
-    const titleExpiration = Shortcuts ? (
-        <>
-            {c('Title').t`Expiration time`}
-            <br />
-            <kbd className="no-border">{metaKey}</kbd> + <kbd className="no-border">{shiftKey}</kbd> +{' '}
-            <kbd className="no-border">X</kbd>
-        </>
-    ) : (
-        c('Title').t`Expiration time`
-    ); */
     const titleEncryption = Shortcuts ? (
         <>
             {c('Title').t`Encryption`}
