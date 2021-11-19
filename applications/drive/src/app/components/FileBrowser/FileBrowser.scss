@@ -53,11 +53,19 @@
 	inset-inline-start: 0.2em;
 }
 
+.file-browser-grid-item--file-name {
+	position: relative;
+	width: 100%;
+	height: 42px;
+	line-height: 42px;
+	padding: 0 40px; // On the side is small options button.
+}
+
 .file-browser-grid-view--options {
-	display: none;
+	display: block;
 	position: absolute;
-	inset-inline-end: 0.25em;
-	inset-block-end: 0.35em;
+	inset-inline-end: 4px;
+	inset-block-end: 8px;
 }
 
 .file-browser-list--share-column {
