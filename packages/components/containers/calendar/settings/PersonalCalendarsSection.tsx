@@ -3,7 +3,7 @@ import { MAX_CALENDARS_PER_FREE_USER, MAX_CALENDARS_PER_USER } from '@proton/sha
 import { Address, UserModel } from '@proton/shared/lib/interfaces';
 import { Calendar } from '@proton/shared/lib/interfaces/calendar';
 import { useState } from 'react';
-import { c, msgid } from 'ttag';
+import { c } from 'ttag';
 import { Alert, ConfirmModal, ErrorButton } from '../../../components';
 import { useApi, useEventManager, useModals, useNotifications } from '../../../hooks';
 import { CalendarModal } from '../calendarModal/CalendarModal';
@@ -105,14 +105,8 @@ const PersonalCalendarsSection = ({
     const handleExport = (calendar: Calendar) => createModal(<ExportModal calendar={calendar} />);
 
     const calendarsLimit = user.isFree ? MAX_CALENDARS_PER_FREE_USER : MAX_CALENDARS_PER_USER;
-    const calendarLimitReachedText = user.isFree
-        ? c('Calendar limit warning')
-              .t`You have reached the maximum number of calendars you can create within your plan.`
-        : c('Calendar limit warning').ngettext(
-              msgid`You have reached the maximum of ${calendarsLimit} personal calendar.`,
-              `You have reached the maximum of ${calendarsLimit} personal calendars.`,
-              calendarsLimit
-          );
+    const calendarLimitReachedText = c('Calendar limit warning')
+        .t`You have reached the maximum number of personal calendars you can create within your plan.`;
     const isBelowLimit = calendars.length < calendarsLimit;
 
     return (
