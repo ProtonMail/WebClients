@@ -132,7 +132,7 @@ function ItemCell({
                         {...checkboxHandlers}
                     />
                 </div>
-                <div className="w100 pt0-5 pb0-5 pl3 pr3 flex border-top" title={item.Name}>
+                <div className="file-browser-grid-item--file-name flex border-top" title={item.Name}>
                     <FileNameDisplay text={item.Name} className="center" />
                     <Button
                         shape="ghost"
