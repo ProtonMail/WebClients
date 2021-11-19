@@ -10,6 +10,10 @@
 	border-color: var(--signal-danger);
 }
 
+.border--primary {
+	border-color: var(--primary);
+}
+
 .border--currentColor {
 	border: 1px solid currentColor;
 }
