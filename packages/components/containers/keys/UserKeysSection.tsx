@@ -1,8 +1,9 @@
 import { c } from 'ttag';
-import { getPrimaryKey } from '@proton/shared/lib/keys';
+import { addUserKeysProcess } from '@proton/shared/lib/keys';
+import { algorithmInfo } from 'pmcrypto';
 
 import { Button, Loader } from '../../components';
-import { useUser, useModals, useUserKeys } from '../../hooks';
+import { useUser, useModals, useUserKeys, useApi, useEventManager, useAuthentication } from '../../hooks';
 
 import { SettingsParagraph, SettingsSectionWide } from '../account';
 
@@ -11,14 +12,18 @@ import ExportPrivateKeyModal from './exportKey/ExportPrivateKeyModal';
 import KeysTable from './KeysTable';
 import useDisplayKeys from './shared/useDisplayKeys';
 import { getKeyByID } from './shared/helper';
+import AddKeyModal from './addKey/AddKeyModal';
 
 const UserKeysSections = () => {
     const { createModal } = useModals();
     const [User] = useUser();
+    const api = useApi();
+    const { call } = useEventManager();
+    const authentication = useAuthentication();
     const [userKeys, loadingUserKeys] = useUserKeys();
     const userKeysDisplay = useDisplayKeys({ keys: userKeys, User });
 
-    if (loadingUserKeys || !Array.isArray(userKeys)) {
+    if (loadingUserKeys && !Array.isArray(userKeys)) {
         return (
             <SettingsSectionWide>
                 <Loader />
@@ -52,25 +57,40 @@ const UserKeysSections = () => {
         );
     };
 
-    const primaryPrivateKey = getPrimaryKey(userKeys);
-    const canExportPrimaryPrivateKey = !!primaryPrivateKey?.privateKey;
+    const handleAddKey = () => {
+        if (!userKeys) {
+            return;
+        }
+
+        const existingAlgorithms = userKeysDisplay.reduce<algorithmInfo[]>(
+            (acc, { algorithmInfos }) => acc.concat(algorithmInfos),
+            []
+        );
+        createModal(
+            <AddKeyModal
+                type="user"
+                existingAlgorithms={existingAlgorithms}
+                onAdd={async (encryptionConfig) => {
+                    const newKey = await addUserKeysProcess({
+                        api,
+                        encryptionConfig,
+                        passphrase: authentication.getPassword(),
+                    });
+                    await call();
+                    return newKey.getFingerprint();
+                }}
+            />
+        );
+    };
+
+    const canGenerateUserKey = userKeysDisplay.length < 20;
 
     return (
         <SettingsSectionWide>
-            {canExportPrimaryPrivateKey && (
+            {canGenerateUserKey && (
                 <div className="mb1">
-                    <Button
-                        shape="outline"
-                        onClick={() => {
-                            if (!primaryPrivateKey?.privateKey) {
-                                return;
-                            }
-                            createModal(
-                                <ExportPrivateKeyModal name={userName} privateKey={primaryPrivateKey.privateKey} />
-                            );
-                        }}
-                    >
-                        {c('Action').t`Export private key`}
+                    <Button shape="outline" onClick={handleAddKey}>
+                        {c('Action').t`Generate key`}
                     </Button>
                 </div>
             )}
