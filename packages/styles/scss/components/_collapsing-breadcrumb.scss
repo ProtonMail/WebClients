@@ -18,3 +18,8 @@
 		min-inline-size: 1.5em;
 	}
 }
+
+.collapsed-breadcrumb-active button {
+	background-color: var(--button-hover-background-color);
+	color: var(--button-hover-text-color);
+}
