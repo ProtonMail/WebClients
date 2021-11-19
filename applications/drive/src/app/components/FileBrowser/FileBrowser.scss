@@ -62,10 +62,16 @@
 }
 
 .file-browser-grid-view--options {
-	display: block;
+	display: none;
 	position: absolute;
 	inset-inline-end: 4px;
 	inset-block-end: 8px;
+}
+
+.file-browser-grid-view--options-focus {
+	display: block;
+	background-color: var(--button-hover-background-color);
+	color: var(--button-hover-text-color);
 }
 
 .file-browser-list--share-column {
