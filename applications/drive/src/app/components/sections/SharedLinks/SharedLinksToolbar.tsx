@@ -3,7 +3,7 @@ import { Toolbar, ToolbarSeparator } from '@proton/components';
 import {
     DetailsButton,
     DownloadButton,
-    LayoutDropdown,
+    LayoutButton,
     PreviewButton,
     RenameButton,
     ShareFileButton,
@@ -47,7 +47,7 @@ const SharedLinksToolbar = ({ shareId }: Props) => {
         <Toolbar>
             {renderSelectionActions()}
             <span className="mlauto flex">
-                <LayoutDropdown />
+                <LayoutButton />
             </span>
         </Toolbar>
     );
