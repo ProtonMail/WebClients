@@ -2,7 +2,7 @@ import { memo, Fragment, MouseEvent, FocusEvent } from 'react';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { getRecipients } from '@proton/shared/lib/mail/messages';
 import { c } from 'ttag';
-import { Label, classnames, Button, Icon } from '@proton/components';
+import { Label, classnames, Button, Icon, Tooltip } from '@proton/components';
 import { Recipient } from '@proton/shared/lib/interfaces/Address';
 import { MapSendInfo, STATUS_ICONS_FILLS } from '../../../models/crypto';
 import { RecipientType, recipientTypes } from '../../../models/address';
@@ -110,18 +110,20 @@ const AddressesSummary = ({ message, disabled, mapSendInfo, toggleExpanded, onFo
                     >
                         {c('Action').t`CC BCC`}
                     </Button>
-                    <Button
-                        type="button"
-                        onClick={handleContactModal('ToList')}
-                        onFocus={handleFocuButton}
-                        color="weak"
-                        className="pt0-25 pb0-25 flex-item-noshrink"
-                        shape="ghost"
-                        icon
-                        data-testid="composer:to-button"
-                    >
-                        <Icon name="user-plus" size={16} alt={c('Title').t`To`} />
-                    </Button>
+                    <Tooltip title={c('Action').t`Insert contacts`}>
+                        <Button
+                            type="button"
+                            onClick={handleContactModal('ToList')}
+                            onFocus={handleFocuButton}
+                            color="weak"
+                            className="pt0-25 pb0-25 flex-item-noshrink"
+                            shape="ghost"
+                            icon
+                            data-testid="composer:to-button"
+                        >
+                            <Icon name="user-plus" size={16} alt={c('Title').t`To`} />
+                        </Button>
+                    </Tooltip>
                 </span>
             </div>
         </div>
