@@ -212,3 +212,7 @@ export const shuffle = <T>(array: T[]): T[] => {
 
     return arrayCopy;
 };
+
+export const last = <T>(array: T[]): T | undefined => {
+    return array[array.length - 1];
+};

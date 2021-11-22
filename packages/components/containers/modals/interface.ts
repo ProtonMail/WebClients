@@ -2,9 +2,6 @@ export interface Modal {
     id: string;
     content: JSX.Element | undefined;
     isClosing: boolean;
-    isFirst?: boolean;
-    isLast?: boolean;
-    isBehind?: boolean;
 }
 
 export interface ModalManager {

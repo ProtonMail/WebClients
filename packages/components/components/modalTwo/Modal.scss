@@ -1,0 +1,128 @@
+@import '~@proton/styles/scss/config';
+
+.modal-two {
+	position: fixed;
+	inset: 0;
+	z-index: calc(666 + var(--z-position, 0));
+	display: flex;
+	padding: 3.5em;
+	overflow: hidden;
+	flex-flow: column nowrap;
+	align-items: center;
+	justify-content: center;
+	animation: 0.1s ease-out forwards;
+	animation-name: anime-modal-two-in;
+
+	@include respond-to($breakpoint-small) {
+		padding: 2em;
+	}
+
+	@include respond-to($breakpoint-tiny) {
+		padding: 1em;
+	}
+
+	&--out {
+		animation-name: anime-modal-two-out;
+	}
+
+	&--out &-dialog {
+		animation-name: anime-modal-two-dialog-out;
+	}
+
+	&--fullscreen-on-mobile {
+		@include respond-to($breakpoint-tiny) {
+			padding: 0;
+			align-items: stretch;
+			background: none;
+		}
+	}
+
+	&--fullscreen-on-mobile &-dialog {
+		@include respond-to($breakpoint-tiny) {
+			flex: 1 0 100%;
+			border-radius: 0;
+		}
+	}
+
+	@keyframes anime-modal-two-in {
+		from {
+			opacity: 0;
+		}
+
+		to {
+			opacity: 1;
+		}
+	}
+
+	@keyframes anime-modal-two-out {
+		from {
+			opacity: 1;
+		}
+
+		to {
+			opacity: 0;
+		}
+	}
+
+	&-dialog {
+		--size: #{rem(480)}; // medium
+		--margin: #{rem(32)};
+
+		@include respond-to($breakpoint-small) {
+			--margin: #{rem(24)};
+		}
+
+		position: relative;
+		z-index: 1;
+		display: flex;
+		max-inline-size: var(--size);
+		overflow: hidden;
+		padding: 0;
+		margin: auto;
+		transform-origin: center top;
+		flex: 0 1 auto;
+		flex-flow: column nowrap;
+		justify-content: flex-start;
+		align-items: stretch;
+		border-radius: var(--border-radius-large);
+		box-shadow: var(--shadow-lifted);
+		background: var(--background-norm);
+		color: var(--text-norm);
+		animation: 0.25s easing(easeOutCubic) both;
+		animation-name: anime-modal-two-dialog-in;
+
+		&--small {
+			--size: #{rem(392)};
+			--margin: #{rem(24)};
+		}
+
+		&--large {
+			--size: #{rem(600)};
+		}
+
+		&--full {
+			--size: 100%;
+			inline-size: var(--size);
+		}
+
+		@keyframes anime-modal-two-dialog-in {
+			0% {
+				transform: scale(0.9);
+			}
+
+			100% {
+				transform: scale(1);
+			}
+		}
+
+		@keyframes anime-modal-two-dialog-out {
+			0% {
+				transform: scale(1);
+			}
+
+			100% {
+				transform: scale(0.9);
+			}
+		}
+	}
+}
