@@ -10,16 +10,7 @@
 	}
 }
 
-.file-browser--select-hover-only {
-	display: none;
-}
-
-.file-browser--options {
-	display: none;
-}
-
 .file-browser--options-focus {
-	display: block;
 	background-color: var(--button-hover-background-color);
 	color: var(--button-hover-text-color);
 }
@@ -56,16 +47,18 @@
 
 .file-browser-grid-item--file-name {
 	position: relative;
-	width: 100%;
-	height: 42px;
-	line-height: 42px;
-	padding: 0 40px; // On the side is small options button.
+	inline-size: 100%;
+	block-size: rem(42);
+	line-height: rem(42);
+	// On the side is small options button.
+	padding-block: 0;
+	padding-inline: rem(40);
 }
 
 .file-browser-grid-view--options {
 	position: absolute;
-	inset-inline-end: 4px;
-	inset-block-end: 8px;
+	inset-inline-end: rem(4);
+	inset-block-end: rem(8);
 }
 
 .file-browser-list--icon-column {
@@ -78,18 +71,4 @@
 	inline-size: 1rem;
 	border-radius: 25%;
 	object-fit: cover;
-}
-
-// To replace when new hover helper is merged
-@media (hover: hover) and (pointer: fine) {
-	.file-browser-list-item:hover,
-	.file-browser-grid-item:hover {
-		.file-browser--select-hover-only {
-			display: flex;
-		}
-
-		.file-browser--options {
-			display: block;
-		}
-	}
 }

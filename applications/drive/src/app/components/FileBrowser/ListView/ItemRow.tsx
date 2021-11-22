@@ -119,7 +119,7 @@ const ItemRow = ({
                 ref={contextMenu.anchorRef}
                 aria-disabled={item.Disabled}
                 className={classnames([
-                    'file-browser-list-item no-outline flex user-select-none',
+                    'file-browser-list-item no-outline flex user-select-none opacity-on-hover-container',
                     (onClick || secondaryActionActive) && !item.Disabled && 'cursor-pointer',
                     (isSelected || dragMoveControls?.isActiveDropTarget || item.Disabled) && 'bg-strong',
                     (dragging || item.Disabled) && 'opacity-50',
@@ -131,7 +131,7 @@ const ItemRow = ({
                         role="presentation"
                         className={classnames([
                             'flex flex-align-items-center',
-                            selectedItems.length ? null : 'file-browser--select-hover-only',
+                            selectedItems.length ? null : 'opacity-on-hover',
                         ])}
                         {...checkboxWrapperHandlers}
                     >
@@ -210,10 +210,7 @@ const ItemRow = ({
                         shape="ghost"
                         size="small"
                         icon
-                        className={classnames([
-                            'file-browser--options',
-                            contextMenu.isOpen && 'file-browser--options-focus',
-                        ])}
+                        className={contextMenu.isOpen ? 'file-browser--options-focus' : 'opacity-on-hover'}
                         onClick={(e) => itemHandlers.onContextMenu(e)}
                     >
                         <Icon name="ellipsis-vertical" alt={c('Action').t`More options`} />

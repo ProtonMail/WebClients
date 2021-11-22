@@ -65,7 +65,7 @@ function ItemCell({
     }, [item.ModifyTime]); // Reload thumbnail when file changes.
 
     return (
-        <div className={classnames(['flex flex-col', className])} style={style}>
+        <div className={classnames(['flex flex-col opacity-on-hover-container', className])} style={style}>
             {draggable && (
                 <DragMoveContent dragging={dragging} data={dragMoveItems}>
                     <DragMoveContainer>{moveText}</DragMoveContainer>
@@ -114,7 +114,7 @@ function ItemCell({
                 <div
                     className={classnames([
                         'flex file-browser-grid-item--select',
-                        selectedItems.length ? null : 'file-browser--select-hover-only',
+                        selectedItems.length ? null : 'opacity-on-hover',
                     ])}
                     {...checkboxWrapperHandlers}
                 >
@@ -132,8 +132,8 @@ function ItemCell({
                         size="small"
                         icon
                         className={classnames([
-                            'file-browser-grid-view--options file-browser--options',
-                            contextMenu.isOpen && 'file-browser--options-focus',
+                            'file-browser-grid-view--options',
+                            contextMenu.isOpen ? 'file-browser--options-focus' : 'opacity-on-hover',
                         ])}
                         onClick={(e) => itemHandlers.onContextMenu(e)}
                     >
