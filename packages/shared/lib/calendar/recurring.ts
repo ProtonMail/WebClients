@@ -61,7 +61,6 @@ interface FillOccurrencesBetween {
     originalDtend: VcalDateOrDateTimeProperty;
     isAllDay: boolean;
     exdateMap: { [key: number]: boolean };
-    maxCount?: number;
 }
 const fillOccurrencesBetween = ({
     interval: [start, end],
@@ -71,7 +70,6 @@ const fillOccurrencesBetween = ({
     originalDtend,
     isAllDay,
     exdateMap,
-    maxCount,
 }: FillOccurrencesBetween) => {
     const result = [];
     let next;
@@ -81,9 +79,6 @@ const fillOccurrencesBetween = ({
 
     // eslint-disable-next-line no-cond-assign
     while ((next = iterator.next())) {
-        if (maxCount !== undefined && result.length > maxCount) {
-            break;
-        }
         const localStart = toUTCDate(getInternalDateTimeValue(next));
         if (exdateMap[+localStart]) {
             continue;
@@ -243,8 +238,7 @@ export const getOccurrencesBetween = (
     component: Pick<VcalVeventComponent, 'dtstart' | 'rrule' | 'exdate'>,
     start: number,
     end: number,
-    cache: Partial<OccurrenceIterationCache> = {},
-    maxCount?: number
+    cache: Partial<OccurrenceIterationCache> = {}
 ): RecurringResult[] => {
     // ICAL.js ignores COUNT=0, so we have to deal with it by hand
     if (component?.rrule?.value.count === 0) {
@@ -280,7 +274,6 @@ export const getOccurrencesBetween = (
                 originalDtend,
                 isAllDay,
                 exdateMap,
-                maxCount,
             });
 
             cache.iteration = {
