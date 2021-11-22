@@ -22,7 +22,7 @@ import { ImportModal as ImportCalendarModal } from '../calendar/importModal';
 import ImportContactsModal from '../contacts/import/ImportModal';
 
 import { Button, ButtonProps, FormModal, Loader, Tooltip } from '../../components';
-import { useCalendars, useCalendarUserSettings, useModals, useUser } from '../../hooks';
+import { useCalendars, useCalendarUserSettings, useModals } from '../../hooks';
 
 import './EasySwitchModal.scss';
 
@@ -82,7 +82,6 @@ const EasySwitchDefaultModal = ({
 }: Props) => {
     const { createModal } = useModals();
 
-    const [user, loadingUser] = useUser();
     const [calendars, loadingCalendars] = useCalendars();
     const [calendarUserSettings = DEFAULT_CALENDAR_USER_SETTINGS, loadingCalendarUserSettings] =
         useCalendarUserSettings();
@@ -100,7 +99,7 @@ const EasySwitchDefaultModal = ({
 
     const defaultCalendar = getDefaultCalendar(personalActiveCalendars, calendarUserSettings.DefaultCalendarID);
 
-    const canImportCalendars = !!personalActiveCalendars.length && user.hasNonDelinquentScope;
+    const canImportCalendars = !!personalActiveCalendars.length;
 
     const handleCancel = () => onClose();
 
@@ -108,7 +107,7 @@ const EasySwitchDefaultModal = ({
         return c('Title').t`Select what to import`;
     };
 
-    const isLoading = loadingUser || loadingCalendars || loadingCalendarUserSettings;
+    const isLoading = loadingCalendars || loadingCalendarUserSettings;
 
     const handleClickMail = () => {
         createModal(<ImportMailModal addresses={addresses} providerInstructions={provider} />);
