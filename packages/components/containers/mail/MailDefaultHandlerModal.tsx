@@ -18,15 +18,15 @@ const MailDefaultHandlerModal = ({ ...rest }: Props) => {
 
     return (
         <ConfirmModal
-            title={c('Info').t`Set ProtonMail as your default mail handler`}
-            confirm={c('Action').t`Prompt browser setting`}
+            title={c('Info').t`Default email application`}
+            confirm={c('Action').t`Set as default`}
             onConfirm={handleAskForPermission}
             onClose={rest.onClose}
             mode="alert"
             {...rest}
         >
             <span>{c('Info')
-                .t`Activating this option will open a new composer each time you click on a mailto: link.`}</span>
+                .t`Set ProtonMail as your default email application for this browser. ProtonMail will open automatically when you click an email link.`}</span>
             <Href
                 className="ml0-5"
                 url="https://protonmail.com/support/knowledge-base/set-default-email-handler/"
