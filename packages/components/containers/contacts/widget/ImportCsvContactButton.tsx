@@ -8,7 +8,7 @@ import {
     ImportAssistantOauthModal,
     Loader,
 } from '@proton/components';
-import { useAddresses, useFeature, useModals } from '@proton/components/hooks';
+import { useAddresses, useFeature, useModals, useUser } from '@proton/components/hooks';
 import ImportModal from '@proton/components/containers/contacts/import/ImportModal';
 
 interface Props {
@@ -23,6 +23,7 @@ const ImportCsvContactButton = ({
     onImportButtonClick,
 }: Props) => {
     const { createModal } = useModals();
+    const [user, loadingUser] = useUser();
     const [addresses, loadingAddresses] = useAddresses();
 
     const easySwitchFeature = useFeature(FeatureCode.EasySwitch);
@@ -35,9 +36,13 @@ const ImportCsvContactButton = ({
         }
     };
 
-    if (loadingAddresses || easySwitchFeature.loading) {
+    const isLoading = loadingUser || loadingAddresses || easySwitchFeature.loading;
+
+    if (isLoading) {
         return <Loader />;
     }
+
+    const disabled = isLoading || !user.hasNonDelinquentScope;
 
     return isEasySwitchEnabled && !hideEasySwitch ? (
         <>
@@ -51,15 +56,15 @@ const ImportCsvContactButton = ({
                         />
                     );
                 }}
-                disabled={loadingAddresses}
+                disabled={disabled}
                 className="mr1"
             />
-            <Button id="import-contacts-button" onClick={handleClick}>
+            <Button id="import-contacts-button" disabled={disabled} onClick={handleClick}>
                 {c('Action').t`Import from .csv or vCard`}
             </Button>
         </>
     ) : (
-        <PrimaryButton id="import-contacts-button" onClick={handleClick}>
+        <PrimaryButton id="import-contacts-button" disabled={disabled} onClick={handleClick}>
             {c('Action').t`Import from .csv or vCard`}
         </PrimaryButton>
     );
