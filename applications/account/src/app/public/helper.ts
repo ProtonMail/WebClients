@@ -4,5 +4,6 @@ export const getToAppName = (toApp?: APP_NAMES) => {
     if (!toApp || toApp === APPS.PROTONACCOUNT) {
         return '';
     }
+
     return APPS_CONFIGURATION[toApp]?.name || '';
 };
