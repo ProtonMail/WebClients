@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { c, msgid } from 'ttag';
 import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
-import { Icon, classnames, CircleLoader } from '@proton/components';
+import { Icon, classnames, CircleLoader, useFeature, FeatureCode } from '@proton/components';
 import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import AttachmentItem from './AttachmentItem';
@@ -59,26 +59,30 @@ const AttachmentList = ({
 
     const previewRef = useRef<AttachmentPreviewControls>();
 
-    const { size, sizeLabel, pureAttachments, pureAttachmentsCount, embeddedAttachmentsCount } = getAttachmentCounts(
-        attachments,
-        message.messageImages
-    );
+    const isNumAttachmentsWithoutEmbedded = useFeature(FeatureCode.NumAttachmentsWithoutEmbedded).feature?.Value;
+
+    const { size, sizeLabel, pureAttachments, pureAttachmentsCount, embeddedAttachmentsCount, attachmentsCount } =
+        getAttachmentCounts(attachments, message.messageImages);
 
     useEffect(() => {
         const dontCloseAfterUploadsWhenExpandedManually = manuallyExpanded && pendingUploads.length === 0;
 
-        /*
-            Dont close the attachment list when manually expanded AND there are pure attachment left.
-            Otherwise, if we still have attachment, but which are not pureAttachment (embedded images), the list will remain open.
-            But in reality, the attachment list to display is empty because we do not display embedded images in the list anymore.
-         */
-        if ((dontCloseAfterUploadsWhenExpandedManually || collapsable === false) && pureAttachmentsCount > 0) {
-            return;
-        }
+        if (isNumAttachmentsWithoutEmbedded) {
+            /*
+                Dont close the attachment list when manually expanded AND there are pure attachment left.
+                Otherwise, if we still have attachment, but which are not pureAttachment (embedded images), the list will remain open.
+                But in reality, the attachment list to display is empty because we do not display embedded images in the list anymore.
+            */
+            if ((dontCloseAfterUploadsWhenExpandedManually || collapsable === false) && pureAttachmentsCount > 0) {
+                return;
+            }
 
-        if (pureAttachmentsCount <= 0 && !(pendingUploads.length > 0)) {
-            // If attachment length is changing, and we don't have pure attachments anymore, close the attachment list
-            setExpanded(false);
+            if (pureAttachmentsCount <= 0 && !(pendingUploads.length > 0)) {
+                // If attachment length is changing, and we don't have pure attachments anymore, close the attachment list
+                setExpanded(false);
+                return;
+            }
+        } else if (dontCloseAfterUploadsWhenExpandedManually || collapsable === false) {
             return;
         }
 
@@ -86,11 +90,13 @@ const AttachmentList = ({
     }, [pendingUploads, attachments]);
 
     // We want to show the collapse button while uploading files. When all files are uploaded, we don't want to see it if attachments are embedded images only
-    const showCollapseButton =
-        collapsable && (pureAttachmentsCount > 0 || (pendingUploads?.length ? pendingUploads.length : 0) > 0);
+    const showCollapseButton = isNumAttachmentsWithoutEmbedded
+        ? collapsable && (pureAttachmentsCount > 0 || (pendingUploads?.length ? pendingUploads.length : 0) > 0)
+        : collapsable;
 
     const handleToggleExpand = () => {
-        if (collapsable && pureAttachmentsCount > 0) {
+        const canToggleExpand = isNumAttachmentsWithoutEmbedded ? collapsable && pureAttachmentsCount > 0 : collapsable;
+        if (canToggleExpand) {
             setExpanded(!expanded);
             setManuallyExpanded(!expanded);
         }
@@ -146,13 +152,19 @@ const AttachmentList = ({
         : undefined;
     const TagButton = collapsable ? 'button' : 'div';
 
+    const canShowDownloadAll = isNumAttachmentsWithoutEmbedded
+        ? showDownloadAll && pureAttachmentsCount > 0
+        : showDownloadAll && attachmentsCount > 0;
+
+    const attachmentsToShow = isNumAttachmentsWithoutEmbedded ? pureAttachments : attachments;
+
     return (
         <div
             className={classnames(['flex flex-column relative w100 flex-nowrap', className, expanded && 'border-top'])}
         >
             <AttachmentPreview
                 ref={previewRef}
-                attachments={pureAttachments}
+                attachments={attachmentsToShow}
                 message={message}
                 onDownload={handlePreviewDownload}
             />
@@ -183,13 +195,13 @@ const AttachmentList = ({
                             </span>
                         </span>
                     )}
-                    {collapsable && (
+                    {showCollapseButton && (
                         <span className="link align-baseline text-left mr0-5">
                             {expanded ? c('Action').t`Hide` : c('Action').t`Show`}
                         </span>
                     )}
                 </TagButton>
-                {showDownloadAll && pureAttachmentsCount > 0 && (
+                {canShowDownloadAll && (
                     <div>
                         <button
                             type="button"
@@ -206,7 +218,7 @@ const AttachmentList = ({
             </div>
             {expanded && ( // composer-attachments-expand pt1 pb0-5
                 <div tabIndex={-1} className="flex flex-row flex-wrap message-attachmentList pl0-5 pr0-5 pb0-5">
-                    {pureAttachments.map((attachment) => (
+                    {attachmentsToShow.map((attachment) => (
                         <AttachmentItem
                             key={attachment.ID}
                             attachment={attachment}

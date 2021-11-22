@@ -10,12 +10,12 @@ import {
     Icon,
     EllipsisLoader,
     useMailSettings,
-    useFeature,
     FeatureCode,
     useUser,
     Spotlight,
     Href,
     useSpotlightOnFeature,
+    useFeatures,
 } from '@proton/components';
 import { metaKey, shiftKey, altKey } from '@proton/shared/lib/helpers/browser';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
@@ -65,9 +65,16 @@ const ComposerActions = ({
     loadingScheduleCount,
     onChangeFlag,
 }: Props) => {
-    const { pureAttachmentsCount } = message.data?.Attachments
+    const [
+        { feature: scheduleSendFeature, loading: loadingScheduleSendFeature },
+        { feature: numAttachmentsWithoutEmbeddedFeature },
+    ] = useFeatures([FeatureCode.ScheduledSend, FeatureCode.NumAttachmentsWithoutEmbedded]);
+
+    const { pureAttachmentsCount, attachmentsCount } = message.data?.Attachments
         ? getAttachmentCounts(message.data?.Attachments, message.messageImages)
-        : { pureAttachmentsCount: 0 };
+        : { pureAttachmentsCount: 0, attachmentsCount: 0 };
+
+    const isAttachments = numAttachmentsWithoutEmbeddedFeature?.Value ? pureAttachmentsCount > 0 : attachmentsCount > 0;
     const isPassword = hasFlag(MESSAGE_FLAGS.FLAG_INTERNAL)(message.data) && !!message.data?.Password;
     const isExpiration = !!message.draftFlags?.expiresIn;
     const sendDisabled = lock;
@@ -133,8 +140,7 @@ const ComposerActions = ({
         </>
     ) : null;
 
-    const { feature, loading: loadingFeature } = useFeature(FeatureCode.ScheduledSend);
-    const hasScheduleSendAccess = !loadingFeature && feature?.Value && hasPaidMail;
+    const hasScheduleSendAccess = !loadingScheduleSendFeature && scheduleSendFeature?.Value && hasPaidMail;
 
     const dropdownRef = useRef(null);
     const {
@@ -179,14 +185,14 @@ const ComposerActions = ({
                     }
                 >
                     <SendActions
-                        disabled={loadingFeature || loadingScheduleCount}
-                        loading={loadingFeature || loadingScheduleCount}
+                        disabled={loadingScheduleSendFeature || loadingScheduleCount}
+                        loading={loadingScheduleSendFeature || loadingScheduleCount}
                         shape="solid"
                         color="norm"
                         mainAction={
                             <Tooltip title={titleSendButton}>
                                 <Button
-                                    loading={loadingFeature}
+                                    loading={loadingScheduleSendFeature}
                                     onClick={onSend}
                                     disabled={sendDisabled}
                                     className="composer-send-button"
@@ -275,7 +281,7 @@ const ComposerActions = ({
                         <span className="mr0-5 mauto no-mobile color-weak">{dateMessage}</span>
                         <Tooltip title={titleAttachment}>
                             <AttachmentsButton
-                                isAttachments={pureAttachmentsCount > 0}
+                                isAttachments={isAttachments}
                                 disabled={lock}
                                 onAddAttachments={onAddAttachments}
                                 attachmentTriggerRef={attachmentTriggerRef}
