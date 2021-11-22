@@ -4,8 +4,8 @@
 	$arrow-width: 0.5em;
 
 	position: fixed;
-	z-index: 666;
-  min-inline-size: $arrow-width;
+	z-index: 777;
+	min-inline-size: $arrow-width;
 	max-inline-size: $tooltip-width;
 	border-radius: var(--border-radius-medium);
 	background-color: var(--tooltip-background-color);

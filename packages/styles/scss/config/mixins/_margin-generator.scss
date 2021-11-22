@@ -21,6 +21,10 @@
 				$property: margin-block-end;
 			} @else if $temp_t==l {
 				$property: margin-inline-start;
+			} @else if $temp_t==x {
+				$property: margin-inline;
+			} @else if $temp_t==y {
+				$property: margin-block;
 			}
 
 			$value: $margin + 0em;

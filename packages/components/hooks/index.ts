@@ -18,6 +18,7 @@ export { default as useCalendarSubscribeFeature } from './useCalendarSubscribeFe
 export { default as useCalendarEmailNotificationsFeature } from './useCalendarEmailNotificationsFeature';
 export * from './useCalendarUserSettings';
 export { default as useCanReactivateKeys } from './useCanReactivateKeys';
+export { default as useChanged } from './useChanged';
 export { useLabels, useFolders, useContactGroups } from './useCategories';
 export { default as useClickOutside } from './useClickOutside';
 export { default as useCombinedRefs } from './useCombinedRefs';
@@ -25,6 +26,7 @@ export { default as useConfig } from './useConfig';
 export { default as useContactEmails } from './useContactEmails';
 export { default as useContactEmailsSortedByName } from './useContactEmailsSortedByName';
 export { default as useContacts } from './useContacts';
+export { default as useControlled } from './useControlled';
 export * from './useConversationCounts';
 export { default as useCookieState } from './useCookieState';
 export { default as useCyberMondayPeriod } from './useCyberMondayPeriod';
