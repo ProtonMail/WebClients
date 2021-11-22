@@ -17,7 +17,7 @@ import { registerMailToProtocolHandler } from './helpers/url';
 const locales = initLocales(require.context('../../locales', true, /.json$/, 'lazy'));
 
 const enhancedConfig = {
-    APP_VERSION_DISPLAY: '4.0.11',
+    APP_VERSION_DISPLAY: '4.0.12',
     ...config,
 };
 
