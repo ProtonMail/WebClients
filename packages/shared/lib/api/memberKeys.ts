@@ -89,3 +89,13 @@ export const migrateMembersAddressKeysRoute = ({ MemberID, ...data }: MigrateMem
     method: 'post',
     data,
 });
+
+interface RestoreBrokenSKLPayload {
+    MemberID: string;
+    SignedKeyLists: { [key: string]: SignedKeyList };
+}
+export const restoreBrokenSKLRoute = ({ MemberID, ...data }: RestoreBrokenSKLPayload) => ({
+    url: `members/${MemberID}/keys/signedkeylists`,
+    method: 'post',
+    data,
+});

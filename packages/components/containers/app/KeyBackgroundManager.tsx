@@ -10,6 +10,7 @@ import {
     getHasMigratedAddressKeys,
     getDecryptedUserKeysHelper,
     migrateUser,
+    restoreBrokenSKL,
 } from '@proton/shared/lib/keys';
 import { captureMessage, traceError } from '@proton/shared/lib/helpers/sentry';
 import { User } from '@proton/shared/lib/interfaces';
@@ -135,6 +136,20 @@ const KeyBackgroundManager = ({
             }
         };
 
+        const runBrokenSKLRestoration = async () => {
+            const [user, organization] = await Promise.all([getUser(), getOrganization()]);
+
+            if (!organization.BrokenSKL) {
+                return;
+            }
+
+            await restoreBrokenSKL({
+                api: silentApi,
+                user,
+                keyPassword: authentication.getPassword(),
+            });
+        };
+
         if (!(hasMemberKeyMigration || hasPrivateMemberKeyGeneration || hasReadableMemberKeyActivation)) {
             return;
         }
@@ -142,9 +157,14 @@ const KeyBackgroundManager = ({
         run()
             .then(() =>
                 hasMemberKeyMigration
-                    ? runMigration().catch((e) => {
-                          captureMessage('Key migration error', { extra: { error: e } });
-                      })
+                    ? runMigration()
+                          .catch((e) => {
+                              captureMessage('Key migration error', { extra: { error: e } });
+                          })
+                          .then(runBrokenSKLRestoration)
+                          .catch((e) => {
+                              captureMessage('Key SKL restoration error', { extra: { error: e } });
+                          })
                     : undefined
             )
             .catch(noop);

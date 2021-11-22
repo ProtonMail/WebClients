@@ -6,6 +6,7 @@ export interface Organization {
     TwoFactorGracePeriod: number; // If non-null, number of seconds until 2FA setup enforced
     Theme: string;
     ToMigrate: 0 | 1;
+    BrokenSKL: 0 | 1;
     Email: string;
     MaxDomains: number;
     MaxAddresses: number;
