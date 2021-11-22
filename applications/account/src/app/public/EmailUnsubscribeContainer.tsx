@@ -48,6 +48,7 @@ const EmailUnsubscribeContainer = () => {
         [NEWS.BUSINESS]: c('Label for news').t`Proton for business`,
         [NEWS.NEWSLETTER]: c('Label for news').t`Proton newsletter`,
         [NEWS.BETA]: c('Label for news').t`Proton Beta`,
+        [NEWS.OFFERS]: c('Label for news').t`Proton offers and promotions`,
     };
 
     const categories = subscriptionBits.map((bit) => newsTypeToWording[bit]);
