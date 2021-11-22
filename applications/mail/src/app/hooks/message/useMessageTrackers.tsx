@@ -146,6 +146,7 @@ export const useMessageTrackers = ({ message, isDetails = false }: Props) => {
                                 defaultIsExpanded={false}
                                 key={tracker.name}
                                 className={classnames(['border-bottom border---weak', index === 0 && 'border-top'])}
+                                openText={c('Action').t`Expand URL`}
                             >
                                 {tracker.urls.map((url, index) => (
                                     <p
