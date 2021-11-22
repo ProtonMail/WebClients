@@ -92,7 +92,8 @@ const ComposerPasswordModal = ({ message, onClose, onChange }: Props) => {
                 return c('Error').t`Please repeat the password`;
             }
             return c('Error').t`Please set a password`;
-        } if (isMatching !== undefined && !isMatching) {
+        }
+        if (isMatching !== undefined && !isMatching) {
             return c('Error').t`Passwords do not match`;
         }
         return '';
@@ -115,7 +116,7 @@ const ComposerPasswordModal = ({ message, onClose, onChange }: Props) => {
 
             <InputFieldTwo
                 id={`composer-password-${uid}`}
-                label={c('Label').t`Message Password`}
+                label={c('Label').t`Message password`}
                 data-testid="encryption-modal:password-input"
                 value={password}
                 as={PasswordInputTwo}
@@ -125,18 +126,18 @@ const ComposerPasswordModal = ({ message, onClose, onChange }: Props) => {
             />
             <InputFieldTwo
                 id={`composer-password-verif-${uid}`}
-                label={c('Label').t`Confirm Password`}
+                label={c('Label').t`Confirm password`}
                 data-testid="encryption-modal:confirm-password-input"
                 value={passwordVerif}
                 as={PasswordInputTwo}
-                placeholder={c('Placeholder').t`Confirm Password`}
+                placeholder={c('Placeholder').t`Confirm password`}
                 onChange={handleChange(setPasswordVerif)}
                 autoComplete="off"
                 error={validator([getErrorText(true)])}
             />
             <InputFieldTwo
                 id={`composer-password-hint-${uid}`}
-                label={c('Label').t`Password Hint`}
+                label={c('Label').t`Password hint`}
                 hint={c('info').t`Optional`}
                 data-testid="encryption-modal:password-hint"
                 value={passwordHint}
