@@ -1,5 +1,5 @@
 import { c, msgid } from 'ttag';
-import { FeatureCode, Icon, useFeature, useFolders } from '@proton/components';
+import { FeatureCode, Icon, useFeatures, useFolders } from '@proton/components';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { Label } from '@proton/shared/lib/interfaces/Label';
 import { MailSettings } from '@proton/shared/lib/interfaces';
@@ -35,7 +35,10 @@ const HeaderExpandedDetails = ({
     mailSettings,
     onAttachmentIconClick,
 }: Props) => {
-    const { feature: spyTrackerFeature } = useFeature(FeatureCode.SpyTrackerProtection);
+    const [{ feature: spyTrackerFeature }, { feature: numAttachmentsWithoutEmbeddedFeature }] = useFeatures([
+        FeatureCode.SpyTrackerProtection,
+        FeatureCode.NumAttachmentsWithoutEmbedded,
+    ]);
     const icon = messageViewIcons.globalIcon;
 
     const [customFolders = []] = useFolders();
@@ -51,12 +54,34 @@ const HeaderExpandedDetails = ({
         });
     const displayTrackerIcon = !(!hasProtection && hasShowImage && numberOfTrackers === 0) && spyTrackerFeature?.Value;
 
-    const { pureAttachmentsCount } = getAttachmentCounts(getAttachments(message.data), message.messageImages);
-    const attachmentsText = c('Info').ngettext(
-        msgid`${pureAttachmentsCount} file attached`,
-        `${pureAttachmentsCount} files attached`,
-        pureAttachmentsCount
+    const { pureAttachmentsCount, embeddedAttachmentsCount } = getAttachmentCounts(
+        getAttachments(message.data),
+        message.messageImages
     );
+    const attachmentsTexts = [];
+    if (pureAttachmentsCount) {
+        attachmentsTexts.push(
+            c('Info').ngettext(
+                msgid`${pureAttachmentsCount} file attached`,
+                `${pureAttachmentsCount} files attached`,
+                pureAttachmentsCount
+            )
+        );
+    }
+    if (embeddedAttachmentsCount && !numAttachmentsWithoutEmbeddedFeature?.Value) {
+        attachmentsTexts.push(
+            c('Info').ngettext(
+                msgid`${embeddedAttachmentsCount} embedded image`,
+                `${embeddedAttachmentsCount} embedded images`,
+                embeddedAttachmentsCount
+            )
+        );
+    }
+    const attachmentsText = attachmentsTexts.join(', ');
+
+    const showAttachmentsDetails = numAttachmentsWithoutEmbeddedFeature?.Value
+        ? pureAttachmentsCount > 0
+        : attachmentsText;
 
     const labelIDs = (message.data?.LabelIDs || []).filter((labelID) => isCustomLabel(labelID, labels));
 
@@ -108,7 +133,7 @@ const HeaderExpandedDetails = ({
                     {sizeText}
                 </span>
             </div>
-            {pureAttachmentsCount > 0 && (
+            {showAttachmentsDetails && (
                 <div className="mb0-5 flex flex-nowrap">
                     <span className="container-to flex flex-justify-center flex-align-items-center">
                         <ItemAttachmentIcon element={message.data} onClick={onAttachmentIconClick} />
