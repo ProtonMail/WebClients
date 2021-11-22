@@ -39,6 +39,7 @@ import ExtraEventParticipants from './ExtraEventParticipants';
 import { getParticipantsList } from '../../../../helpers/calendar/invite';
 import { MessageExtended } from '../../../../models/message';
 import EmailReminderWidgetSkeleton from './EmailReminderWidgetSkeleton';
+import { getMessageHasData } from '../../../../helpers/message/messages';
 
 import './CalendarWidget.scss';
 
@@ -65,6 +66,7 @@ const EmailReminderWidget = ({ message }: EmailReminderWidgetProps) => {
 
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState<React.ReactNode>(null);
+    const [loadedWidget, setLoadedWidget] = useState('');
 
     const { createNotification } = useNotifications();
     const api = useApi();
@@ -83,8 +85,14 @@ const EmailReminderWidget = ({ message }: EmailReminderWidgetProps) => {
         void (async () => {
             let calendarData;
 
+            if (!getMessageHasData(message) || loadedWidget === message.data.ID) {
+                return;
+            }
+
             try {
                 setIsLoading(true);
+                // React might have not unmounted the widget of a previous email reminder. Clean-up possible previous error states
+                setError(null);
 
                 const fetchEvent = async (
                     byUID = eventIsRecurringHeader === '1'
@@ -152,6 +160,8 @@ const EmailReminderWidget = ({ message }: EmailReminderWidgetProps) => {
                 if (!isMounted()) {
                     return;
                 }
+
+                setLoadedWidget(message.data.ID);
                 setVevent(veventComponent);
             } catch (error: any) {
                 if (!(error instanceof Error)) {
@@ -238,7 +248,7 @@ const EmailReminderWidget = ({ message }: EmailReminderWidgetProps) => {
                 }
             }
         })();
-    }, [calendarIdHeader, eventIdHeader, messageHasDecryptionError]);
+    }, [calendarIdHeader, eventIdHeader, messageHasDecryptionError, message.data?.ID]);
 
     const sanitizedAndUrlifiedLocation = useMemo(() => {
         const trimmedLocation = vevent?.location?.value?.trim();
