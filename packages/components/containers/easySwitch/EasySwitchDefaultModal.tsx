@@ -9,6 +9,9 @@ import {
     getDefaultCalendar,
     getProbablyActiveCalendars,
 } from '@proton/shared/lib/calendar/calendar';
+import { partition } from '@proton/shared/lib/helpers/array';
+import { Calendar } from '@proton/shared/lib/interfaces/calendar';
+import { getIsPersonalCalendar } from '@proton/shared/lib/calendar/subscribe/helpers';
 
 import mailIllu from '@proton/styles/assets/img/import/importTypes/mail.svg';
 import calendarIllu from '@proton/styles/assets/img/import/importTypes/calendar.svg';
@@ -93,8 +96,11 @@ const EasySwitchDefaultModal = ({
         };
     }, [calendars]);
 
-    const defaultCalendar = getDefaultCalendar(activeCalendars, calendarUserSettings.DefaultCalendarID);
-    const canImportCalendars = !!activeCalendars.length && user.hasNonDelinquentScope;
+    const [personalActiveCalendars] = partition<Calendar>(activeCalendars, getIsPersonalCalendar);
+
+    const defaultCalendar = getDefaultCalendar(personalActiveCalendars, calendarUserSettings.DefaultCalendarID);
+
+    const canImportCalendars = !!personalActiveCalendars.length && user.hasNonDelinquentScope;
 
     const handleCancel = () => onClose();
 
@@ -146,7 +152,7 @@ const EasySwitchDefaultModal = ({
                     <div className="mb2">{c('Info').t`What do you want to import?`}</div>
                     <div className="import-buttons mb1">
                         <ImportTypeButton importType={ImportType.MAIL} onClick={handleClickMail} />
-                        {!activeCalendars.length ? (
+                        {!canImportCalendars ? (
                             <Tooltip
                                 title={c('Info').t`You need to have an active personal calendar to import your events.`}
                             >
