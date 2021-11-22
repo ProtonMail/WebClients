@@ -448,6 +448,7 @@ export enum NEWS {
     NEWSLETTER = 4,
     BETA = 8,
     BUSINESS = 16,
+    OFFERS = 32,
 }
 
 export const CONTACT_EMAILS_LIMIT = 1000;
