@@ -1,3 +1,21 @@
+## Release 4.0.12 - Dec 8, 2021
+
+### Improvements
+
+-   Updated the User Interface of the composer
+-   Added support for images loaded via CSS style attributes
+-   Added the ability to jump to My addresses directly from the composer "To" field
+-   Added the ability to prompt the default handler browser setting from the UI for Firefox users, eliminating the prompt on each page load
+-   Added the ability to change the default font from the Mail interface without the need to navigate to Settings
+-   Added automatic calendar creation for cases when an invite is received but no calendar exists yet
+-   Various minor UI improvements
+
+### Bug fixes
+
+-   Fixed an issue where some base64-encoded message bodies would not be displayed correctly
+-   Fixed an issue where on rare occasions, attachments in external PGP-encrypted messages would only display on page reload
+-   Fixed an issue where the contacts widget would flash rapidly for some particular screen resolutions
+
 ## Release 4.0.11 - Nov 24, 2021
 
 ### Improvements
