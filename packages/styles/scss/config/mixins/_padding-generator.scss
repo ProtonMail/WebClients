@@ -21,6 +21,10 @@
 				$property: padding-block-end;
 			} @else if $temp_t==l {
 				$property: padding-inline-start;
+			} @else if $temp_t==x {
+				$property: padding-inline;
+			} @else if $temp_t==y {
+				$property: padding-block;
 			}
 
 			$value: $padding + 0em;

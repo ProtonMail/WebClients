@@ -1,13 +1,6 @@
 import { Dispatch, SetStateAction } from 'react';
 import { Modal, ModalManager } from './interface';
 
-const updatePosition = (modal: Modal, i: number, arr: Modal[]): Modal => ({
-    ...modal,
-    isFirst: i === 0,
-    isLast: i === arr.length - 1,
-    isBehind: i !== arr.length - 1,
-});
-
 export default (modals: Modal[], setModals: Dispatch<SetStateAction<Modal[]>>): ModalManager => {
     const hideModal = (id: string) => {
         return setModals((oldModals: Modal[]) => {
@@ -25,7 +18,7 @@ export default (modals: Modal[], setModals: Dispatch<SetStateAction<Modal[]>>): 
 
     const removeModal = (id: string) => {
         return setModals((oldModals) => {
-            return oldModals.filter(({ id: otherId }) => id !== otherId).map(updatePosition);
+            return oldModals.filter(({ id: otherId }) => id !== otherId);
         });
     };
 
@@ -40,7 +33,7 @@ export default (modals: Modal[], setModals: Dispatch<SetStateAction<Modal[]>>): 
                           content,
                           isClosing: false,
                       },
-                  ].map(updatePosition);
+                  ];
         });
 
         return id;

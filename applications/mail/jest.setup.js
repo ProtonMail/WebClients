@@ -34,3 +34,9 @@ global.MutationObserver = class {
     disconnect() {} // eslint-disable-line
     observe() {} // eslint-disable-line
 };
+
+// Mock backdrop container because it's always rendered, and it's rendered in a portal which causes issues with the hook renderer
+jest.mock('@proton/components/components/modalTwo/BackdropContainer', () => ({
+    __esModule: true,
+    default: () => null,
+}));

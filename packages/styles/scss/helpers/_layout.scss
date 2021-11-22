@@ -1,14 +1,17 @@
 .mod,
-.scroll-if-needed {
+.scroll-if-needed,
+.overflow-auto {
 	overflow: auto;
 }
 
-.scroll-horizontal-if-needed {
+.scroll-horizontal-if-needed,
+.overflow-x-auto {
 	overflow-x: auto;
 }
 
 .mod--hidden,
-.no-scroll {
+.no-scroll,
+.overflow-hidden {
 	overflow: hidden;
 }
 
