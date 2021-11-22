@@ -4,7 +4,7 @@ import { toggleBit, hasBit } from '@proton/shared/lib/helpers/bitset';
 
 import { Toggle } from '../../components';
 
-const { ANNOUNCEMENTS, FEATURES, NEWSLETTER, BETA, BUSINESS } = NEWS;
+const { ANNOUNCEMENTS, FEATURES, NEWSLETTER, BETA, BUSINESS, OFFERS } = NEWS;
 
 export interface EmailSubscriptionCheckboxesProps {
     disabled: boolean;
@@ -47,6 +47,12 @@ const EmailSubscriptionCheckboxes = ({ disabled, News, onChange }: EmailSubscrip
             flag: BETA,
             text: c('Label for news').t`Proton beta announcements`,
             frequency: c('Frequency of news').t`(1-2 emails per month)`,
+        },
+        {
+            id: 'offers',
+            flag: OFFERS,
+            text: c('Label for news').t`Proton offers and promotions`,
+            frequency: c('Frequency of news').t`(1 email per quarter)`,
         },
     ];
 
