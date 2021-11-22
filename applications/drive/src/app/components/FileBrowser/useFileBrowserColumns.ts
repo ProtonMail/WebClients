@@ -8,7 +8,7 @@ const COLUMNS_DESKTOP: Record<FileBrowserLayouts, ItemRowColumns[]> = {
 };
 
 const COLUMNS_MOBILE: Record<FileBrowserLayouts, ItemRowColumns[]> = {
-    drive: ['size'],
+    drive: ['share_options'],
     trash: ['location', 'size'],
     sharing: ['location', 'share_expires'],
 };
