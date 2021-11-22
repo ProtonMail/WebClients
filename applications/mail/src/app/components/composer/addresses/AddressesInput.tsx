@@ -9,6 +9,7 @@ import {
     useNotifications,
     Button,
     Icon,
+    Tooltip,
 } from '@proton/components';
 import { noop } from '@proton/shared/lib/helpers/function';
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
@@ -237,16 +238,18 @@ const AddressesInput = ({
                 </div>
                 {addContactButton ? (
                     <span className="flex-item-noshrink flex-align-self-start sticky-top">
-                        <Button
-                            type="button"
-                            onClick={addContactAction}
-                            color="weak"
-                            shape="ghost"
-                            icon
-                            data-testid="composer:to-button"
-                        >
-                            <Icon name="user-plus" size={16} alt={addContactButton} />
-                        </Button>
+                        <Tooltip title={c('Action').t`Insert contacts`}>
+                            <Button
+                                type="button"
+                                onClick={addContactAction}
+                                color="weak"
+                                shape="ghost"
+                                icon
+                                data-testid="composer:to-button"
+                            >
+                                <Icon name="user-plus" size={16} alt={addContactButton} />
+                            </Button>
+                        </Tooltip>
                     </span>
                 ) : null}
             </div>

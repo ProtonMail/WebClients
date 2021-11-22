@@ -1,6 +1,6 @@
 import { useState, MutableRefObject, MouseEvent } from 'react';
 import { c } from 'ttag';
-import { Label, generateUID, classnames, Button, Icon } from '@proton/components';
+import { Label, generateUID, classnames, Button, Icon, Tooltip } from '@proton/components';
 import { Recipient } from '@proton/shared/lib/interfaces/Address';
 import { MessageExtended } from '../../../models/message';
 import { RecipientType } from '../../../models/address';
@@ -75,17 +75,19 @@ const AddressesEditor = ({
                         >
                             {c('Action').t`CC BCC`}
                         </Button>
-                        <Button
-                            type="button"
-                            onClick={handleContactModal('ToList')}
-                            color="weak"
-                            className="pt0-25 pb0-25 flex-item-noshrink"
-                            shape="ghost"
-                            icon
-                            data-testid="composer:to-button"
-                        >
-                            <Icon name="user-plus" size={16} alt={c('Title').t`To`} />
-                        </Button>
+                        <Tooltip title={c('Action').t`Insert contacts`}>
+                            <Button
+                                type="button"
+                                onClick={handleContactModal('ToList')}
+                                color="weak"
+                                className="pt0-25 pb0-25 flex-item-noshrink"
+                                shape="ghost"
+                                icon
+                                data-testid="composer:to-button"
+                            >
+                                <Icon name="user-plus" size={16} alt={c('Title').t`To`} />
+                            </Button>
+                        </Tooltip>
                     </span>
                 </div>
             </div>

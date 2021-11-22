@@ -288,6 +288,15 @@ const SquireToolbar = ({
                         >
                             <Icon name="eraser" className="mauto" alt={c('Action').t`Clear all formatting`} />
                         </SquireToolbarButton>
+                        <SquireToolbarSeparator />
+                        <SquireToolbarButton
+                            onClick={handleImage}
+                            className="flex-item-noshrink"
+                            title={c('Action').t`Insert image`}
+                            tabIndex={-1}
+                        >
+                            <Icon name="file-image" className="mauto" alt={c('Action').t`Insert image`} />
+                        </SquireToolbarButton>
                     </>
                 )}
             </>
