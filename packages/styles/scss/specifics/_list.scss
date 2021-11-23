@@ -7,11 +7,9 @@
 $container-to-width: 3em !default;
 
 .items-column-list {
-	inline-size: var(
-		--width-conversation-column,
-		calc((100% + var(--width-sidebar, #{rem($width-sidebar)})) * #{math.div($conversations-column-width, 100%)})
-	);
-	transition: inline-size 100ms;
+	inline-size: var(--width-conversation-column, calc(100vw * #{math.div($conversations-column-width, 100%)}));
+	min-inline-size: 320px; // Subjective value
+	max-inline-size: calc(100% - 400px); // Subjective value
 }
 
 // trick to have proper direction on react virtual lists
