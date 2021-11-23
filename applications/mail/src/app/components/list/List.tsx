@@ -65,6 +65,8 @@ interface Props {
     resizeAreaRef: Ref<HTMLButtonElement>;
     enableResize: () => void;
     resetWidth: () => void;
+    showContentPanel: boolean;
+    scrollBarWidth: number;
 }
 
 const List = (
@@ -95,6 +97,8 @@ const List = (
         resizeAreaRef,
         enableResize,
         resetWidth,
+        showContentPanel,
+        scrollBarWidth,
     }: Props,
     ref: Ref<HTMLDivElement>
 ) => {
@@ -155,13 +159,10 @@ const List = (
     );
 
     return (
-        <div className="flex flex-row">
+        <div className="relative items-column-list relative">
             <div
                 ref={ref}
-                className={classnames([
-                    'items-column-list scroll-if-needed scroll-smooth-touch',
-                    isCompactView && 'list-compact',
-                ])}
+                className={classnames(['h100 scroll-if-needed scroll-smooth-touch', isCompactView && 'list-compact'])}
             >
                 <h1 className="sr-only">
                     {conversationMode ? c('Title').t`Conversation list` : c('Title').t`Message list`}
@@ -258,7 +259,14 @@ const List = (
                     )}
                 </div>
             </div>
-            <ResizeHandle resizeAreaRef={resizeAreaRef} enableResize={enableResize} resetWidth={resetWidth} />
+            {elements.length !== 0 && showContentPanel && (
+                <ResizeHandle
+                    resizeAreaRef={resizeAreaRef}
+                    enableResize={enableResize}
+                    resetWidth={resetWidth}
+                    scrollBarWidth={scrollBarWidth}
+                />
+            )}
         </div>
     );
 };

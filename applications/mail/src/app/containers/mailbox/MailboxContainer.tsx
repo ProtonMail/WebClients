@@ -77,7 +77,7 @@ const MailboxContainer = ({
 
     const onMailTo = useOnMailTo();
 
-    const { enableResize, resetWidth } = useResizeMessageView(mainAreaRef, resizeAreaRef, listRef);
+    const { enableResize, resetWidth, scrollBarWidth } = useResizeMessageView(mainAreaRef, resizeAreaRef, listRef);
 
     const page = pageFromUrl(location);
     const searchParams = getSearchParams(location.hash);
@@ -281,6 +281,8 @@ const MailboxContainer = ({
                         resizeAreaRef={resizeAreaRef}
                         enableResize={enableResize}
                         resetWidth={resetWidth}
+                        showContentPanel={showContentPanel}
+                        scrollBarWidth={scrollBarWidth}
                     />
                 )}
                 {showContentPanel && (
