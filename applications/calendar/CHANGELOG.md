@@ -2,7 +2,7 @@
 
 ### New features
 
--   Email reminders
+-   Enable email notifications option for events and calendar default settings
 
 ### Improvements
 
