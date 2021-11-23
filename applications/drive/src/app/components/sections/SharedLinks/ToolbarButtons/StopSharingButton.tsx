@@ -15,7 +15,7 @@ const StopSharingButton = ({ shareId, selectedItems }: Props) => {
     const { openStopSharing } = useToolbarActions();
 
     if (noSelection(selectedItems)) {
-        return <></>;
+        return null;
     }
 
     return (

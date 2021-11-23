@@ -20,7 +20,7 @@ const PreviewButton = ({ shareId, selectedItems }: Props) => {
         !selectedItems[0]?.MIMEType ||
         !isPreviewAvailable(selectedItems[0].MIMEType, selectedItems[0].Size);
     if (disabled) {
-        return <></>;
+        return null;
     }
 
     return (

@@ -12,7 +12,7 @@ const CopyLinkButton = ({ shareId, close }: Props) => {
     const { copyShareLinkToClipboard } = useSharing();
 
     if (!copyShareLinkToClipboard) {
-        return <></>;
+        return null;
     }
 
     return (

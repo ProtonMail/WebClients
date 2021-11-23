@@ -14,7 +14,7 @@ const TrashToolbar = ({ shareId }: Props) => {
 
     const renderSelectionActions = () => {
         if (!selectedItems.length) {
-            return <></>;
+            return null;
         }
 
         return (

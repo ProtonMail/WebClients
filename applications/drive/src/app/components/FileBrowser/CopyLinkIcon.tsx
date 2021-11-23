@@ -34,7 +34,7 @@ const CopyLinkIcon = ({ shareId, item, className }: Props) => {
     );
 
     if (!copyShareLinkToClipboard || !item.SharedUrl || !item.ShareUrlShareID || item.UrlsExpired || item.Trashed) {
-        return <></>;
+        return null;
     }
 
     return (

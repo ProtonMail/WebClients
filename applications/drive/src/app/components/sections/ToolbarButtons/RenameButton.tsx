@@ -15,7 +15,7 @@ const RenameButton = ({ shareId, selectedItems }: Props) => {
     const { openRename } = useToolbarActions();
 
     if (noSelection(selectedItems) || isMultiSelect(selectedItems)) {
-        return <></>;
+        return null;
     }
 
     return (

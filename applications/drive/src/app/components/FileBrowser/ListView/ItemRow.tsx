@@ -54,6 +54,7 @@ const ItemRow = ({
         itemHandlers,
         checkboxHandlers,
         checkboxWrapperHandlers,
+        optionsHandlers,
     } = useFileBrowserItem<HTMLTableRowElement>({
         item,
         onToggleSelect,
@@ -131,7 +132,7 @@ const ItemRow = ({
                         role="presentation"
                         className={classnames([
                             'flex flex-align-items-center',
-                            selectedItems.length ? null : 'opacity-on-hover',
+                            selectedItems.length ? null : 'opacity-on-hover-only-desktop',
                         ])}
                         {...checkboxWrapperHandlers}
                     >
@@ -210,8 +211,8 @@ const ItemRow = ({
                         shape="ghost"
                         size="small"
                         icon
-                        className={contextMenu.isOpen ? 'file-browser--options-focus' : 'opacity-on-hover'}
-                        onClick={(e) => itemHandlers.onContextMenu(e)}
+                        className={contextMenu.isOpen ? 'file-browser--options-focus' : 'opacity-on-hover-only-desktop'}
+                        {...optionsHandlers}
                     >
                         <Icon name="ellipsis-vertical" alt={c('Action').t`More options`} />
                     </Button>
