@@ -39,7 +39,7 @@ const Verify = () => {
 
     const search = parseSearch(location.search) as VerificationSearchParameters;
 
-    const { methods, embed, theme, locale, token, defaultCountry, defaultEmail, defaultPhone } = search;
+    const { methods, embed, theme, locale, token, vpn, defaultCountry, defaultEmail, defaultPhone } = search;
 
     const isEmbedded = windowIsEmbedded || embed;
 
@@ -58,6 +58,10 @@ const Verify = () => {
 
         if (!isEmbedded) {
             document.body.classList.remove('embedded');
+        }
+
+        if (vpn) {
+            document.body.classList.add('vpn');
         }
     }, []);
 
