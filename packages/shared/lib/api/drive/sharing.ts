@@ -45,25 +45,15 @@ export const querySharedURLFileRevision = (
     return query;
 };
 
-export const querySharedURLChildren = (
-    token: string,
-    linkID: string,
-    pagination?: {
-        FromBlockIndex: number;
-        PageSize: number;
-    }
-) => {
-    const query = {
+export const querySharedURLChildren = (token: string, linkID: string, Page: number, PageSize: number) => {
+    return {
         method: 'get',
         url: `drive/urls/${token}/folders/${linkID}/children`,
+        params: {
+            Page,
+            PageSize,
+        },
     };
-    if (pagination) {
-        return {
-            ...query,
-            params: pagination,
-        };
-    }
-    return query;
 };
 
 export const queryCreateSharedLink = (shareId: string, data: CreateSharedURL) => {
