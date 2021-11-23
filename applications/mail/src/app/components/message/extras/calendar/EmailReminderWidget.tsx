@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { c } from 'ttag';
+import { getUnixTime } from 'date-fns';
 
 import { getParsedHeadersFirstValue } from '@proton/shared/lib/mail/messages';
 import {
@@ -25,12 +26,14 @@ import CalendarSelectIcon from '@proton/components/components/calendarSelect/Cal
 import { CALENDAR_APP_NAME } from '@proton/shared/lib/calendar/constants';
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import { getParticipant, getSelfAddressData } from '@proton/shared/lib/calendar/integration/invite';
-import { APPS } from '@proton/shared/lib/constants';
+import { APPS, SECOND } from '@proton/shared/lib/constants';
 import { getIsEventCancelled } from '@proton/shared/lib/calendar/veventHelper';
 import { getDoesCalendarNeedUserAction } from '@proton/shared/lib/calendar/calendar';
 import { BannerBackgroundColor } from '@proton/components/components/banner/Banner';
 import { restrictedCalendarSanitize } from '@proton/shared/lib/calendar/sanitize';
 import urlify from '@proton/shared/lib/calendar/urlify';
+import { toUTCDate } from '@proton/shared/lib/date/timezone';
+import { getOccurrencesBetween } from '@proton/shared/lib/calendar/recurring';
 
 import getPaginatedEventsByUID from '@proton/shared/lib/calendar/integration/getPaginatedEventsByUID';
 import { getEventLocalStartEndDates } from '../../../../helpers/calendar/emailReminder';
@@ -94,6 +97,8 @@ const EmailReminderWidget = ({ message }: EmailReminderWidgetProps) => {
                 // React might have not unmounted the widget of a previous email reminder. Clean-up possible previous error states
                 setError(null);
 
+                const occurrence = parseInt(`${occurrenceHeader}`, 10);
+
                 const fetchEvent = async (
                     byUID = eventIsRecurringHeader === '1'
                 ): Promise<{ Event: CalendarEventWithMetadata }> => {
@@ -110,8 +115,6 @@ const EmailReminderWidget = ({ message }: EmailReminderWidgetProps) => {
                         if (!events.length) {
                             throw new Error(EVENT_NOT_FOUND_ERROR);
                         }
-
-                        const occurrence = parseInt(`${occurrenceHeader}`, 10);
 
                         if (events.find(({ Exdates }) => Exdates.includes(occurrence))) {
                             throw new Error(EVENT_NOT_FOUND_ERROR);
@@ -161,7 +164,20 @@ const EmailReminderWidget = ({ message }: EmailReminderWidgetProps) => {
                     return;
                 }
 
-                setLoadedWidget(message.data.ID);
+                const { until, count } = veventComponent.rrule?.value || {};
+
+                const jsOccurrence = occurrence * SECOND;
+
+                const isUntilExpired = until ? occurrence > getUnixTime(toUTCDate(until)) : false;
+                const isCountExpired =
+                    count !== undefined
+                        ? !getOccurrencesBetween(veventComponent, jsOccurrence, jsOccurrence).length
+                        : false;
+
+                if (isUntilExpired || isCountExpired) {
+                    throw new Error(EVENT_NOT_FOUND_ERROR);
+                }
+
                 setVevent(veventComponent);
             } catch (error: any) {
                 if (!(error instanceof Error)) {
@@ -245,6 +261,7 @@ const EmailReminderWidget = ({ message }: EmailReminderWidgetProps) => {
             } finally {
                 if (isMounted()) {
                     setIsLoading(false);
+                    setLoadedWidget(message.data.ID);
                 }
             }
         })();
@@ -316,7 +333,7 @@ const EmailReminderWidget = ({ message }: EmailReminderWidgetProps) => {
                 startDate={startDate}
                 endDate={endDate}
                 isAllDay={!!FullDay}
-                isCancelled={getIsEventCancelled(calendarEvent)}
+                isCanceled={getIsEventCancelled(calendarEvent)}
                 isOutdated={isOutdated}
             />
             {!isOutdated && (
