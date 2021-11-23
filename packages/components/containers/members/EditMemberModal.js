@@ -48,15 +48,19 @@ const EditMemberModal = ({ onClose, member, ...rest }) => {
     const handleChangeAdmin = ({ target: { checked } }) => updatePartialModel({ admin: checked });
 
     const handleSubmit = async () => {
-        await api(updateName(member.ID, model.name));
+        if (initialModel.name !== model.name) {
+            await api(updateName(member.ID, model.name));
+        }
 
-        await api(updateQuota(member.ID, +model.storage));
+        if (initialModel.storage !== model.storage) {
+            await api(updateQuota(member.ID, +model.storage));
+        }
 
         if (hasVPN) {
             await api(updateVPN(member.ID, +model.vpn));
         }
 
-        if (canMakePrivate && model.private && model.private !== initialModel.Private) {
+        if (canMakePrivate && model.private && model.private !== initialModel.private) {
             await api(privatizeMember(member.ID));
         }
 
