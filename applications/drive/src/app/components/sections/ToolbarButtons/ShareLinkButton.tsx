@@ -15,7 +15,7 @@ const ShareLinkButton = ({ shareId, selectedItems }: Props) => {
     const { openLinkSharing } = useToolbarActions();
 
     if (noSelection(selectedItems) || isMultiSelect(selectedItems) || hasFoldersSelected(selectedItems)) {
-        return <></>;
+        return null;
     }
 
     const hasSharedLink = !!selectedItems[0]?.SharedUrl;

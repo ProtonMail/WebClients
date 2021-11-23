@@ -40,6 +40,7 @@ function ItemCell({
         itemHandlers,
         checkboxHandlers,
         checkboxWrapperHandlers,
+        optionsHandlers,
     } = useFileBrowserItem<HTMLDivElement>({
         item,
         onToggleSelect,
@@ -114,7 +115,7 @@ function ItemCell({
                 <div
                     className={classnames([
                         'flex file-browser-grid-item--select',
-                        selectedItems.length ? null : 'opacity-on-hover',
+                        selectedItems.length ? null : 'opacity-on-hover-only-desktop',
                     ])}
                     {...checkboxWrapperHandlers}
                 >
@@ -133,9 +134,9 @@ function ItemCell({
                         icon
                         className={classnames([
                             'file-browser-grid-view--options',
-                            contextMenu.isOpen ? 'file-browser--options-focus' : 'opacity-on-hover',
+                            contextMenu.isOpen ? 'file-browser--options-focus' : 'opacity-on-hover-only-desktop',
                         ])}
-                        onClick={(e) => itemHandlers.onContextMenu(e)}
+                        {...optionsHandlers}
                     >
                         <Icon name="ellipsis-vertical" alt={c('Action').t`More options`} />
                     </Button>

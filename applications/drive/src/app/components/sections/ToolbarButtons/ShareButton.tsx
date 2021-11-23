@@ -16,7 +16,7 @@ const ShareButton = ({ shareId, selectedItems }: Props) => {
     const { openSharing } = useToolbarActions();
 
     if (!MEMBER_SHARING_ENABLED || noSelection(selectedItems) || isMultiSelect(selectedItems)) {
-        return <></>;
+        return null;
     }
 
     const hasShare = !!selectedItems[0]?.ShareUrlShareID;

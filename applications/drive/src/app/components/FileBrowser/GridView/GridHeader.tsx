@@ -47,7 +47,7 @@ const GridHeader = <T extends AllSortKeys>({
     const allSelected = !!contents.length && contents.length === selectedItems.length;
 
     if (!SortDropdown || !sortParams || !setSorting) {
-        return <></>;
+        return null;
     }
 
     return (

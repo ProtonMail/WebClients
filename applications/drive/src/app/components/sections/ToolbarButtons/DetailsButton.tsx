@@ -15,7 +15,7 @@ const DetailsButton = ({ shareId, selectedItems }: Props) => {
     const { openDetails, openFilesDetails } = useToolbarActions();
 
     if (noSelection(selectedItems)) {
-        return <></>;
+        return null;
     }
 
     return (
