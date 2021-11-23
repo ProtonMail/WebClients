@@ -5,11 +5,12 @@ interface Props {
     resizeAreaRef: Ref<HTMLButtonElement>;
     enableResize: () => void;
     resetWidth: () => void;
+    scrollBarWidth: number;
 }
 
-export const ResizeHandle = ({ resizeAreaRef, enableResize, resetWidth }: Props) => {
+export const ResizeHandle = ({ resizeAreaRef, enableResize, resetWidth, scrollBarWidth }: Props) => {
     return (
-        <div className="resize-area-container">
+        <div className="resize-area-container" style={{ '--scrollbar-width': scrollBarWidth }}>
             <button
                 type="button"
                 ref={resizeAreaRef}

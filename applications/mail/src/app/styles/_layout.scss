@@ -1,33 +1,46 @@
 .resize-area {
 	&-container {
-		position: relative;
+		position: absolute;
+		inset-block: 0;
+		inset-inline-end: 0;
 		z-index: 10; // same as toolbar, change as soon as possible
 		width: 0;
 		overflow: visible;
 	}
 
 	&-button {
+		--grip-size: 8px;
+		--indicator-size: 2px;
+
 		position: absolute;
 		inset-block: 0;
-		inset-inline-start: -5px;
-		width: 10px;
+		inset-inline-end: calc((var(--scrollbar-width, 0) * 1px) - (var(--grip-size) / 2));
+		width: var(--grip-size);
 
 		&::before {
 			content: '';
 			position: absolute;
 			inset-block: 0;
-			inset-inline-start: 4px;
-			width: 2px;
+			inset-inline-start: calc((var(--grip-size) - var(--indicator-size)) / 2);
+			width: var(--indicator-size);
 			background-color: var(--interaction-norm-hover);
 			opacity: 0;
-			transition: opacity 0.15s easing(easeOutQuint);
+			transition: opacity 0.25s easing(easeOutQuint);
 		}
 
 		&:hover,
-		&:focus,
 		&:active {
 			&::before {
 				opacity: 1;
+				transition-delay: 0.25s;
+			}
+		}
+
+		// Separate this to make the other states working on Safari -_-v
+		&:focus-visible {
+			&::before {
+				opacity: 1;
+				transition-delay: 0.25s;
 			}
 		}
 	}
