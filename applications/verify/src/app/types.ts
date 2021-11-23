@@ -33,4 +33,6 @@ export interface VerificationSearchParameters {
     defaultEmail?: string;
     /* Default phone number, used in the phone input display */
     defaultPhone?: string;
+    /* Whether the embedder requires the verify app to display in vpn-branding mode */
+    vpn?: boolean;
 }
