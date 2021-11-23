@@ -29,15 +29,22 @@ const usePreviousValue = <T,>(value: T) => {
 export interface Props extends Omit<InputTwoProps, 'type' | 'value' | 'onChange'> {
     value: string;
     defaultCountry?: string;
-    compact?: boolean;
+    embedded?: boolean;
     onChange: (value: string) => void;
 }
 
-const PhoneInput = ({ value: actualValue = '', defaultCountry = 'US', compact, onChange, onValue, ...rest }: Props) => {
+const PhoneInput = ({
+    value: actualValue = '',
+    defaultCountry = 'US',
+    embedded,
+    onChange,
+    onValue,
+    ...rest
+}: Props) => {
     const inputRef = useRef<HTMLInputElement>(null);
     const selectionRef = useRef<number | null>(null);
     const oldSpecificCountryLengthRef = useRef<number>(0);
-    const [isCountryCallingCodeMode, setIsCountryCallingCodeMode] = useState(Boolean(compact));
+    const [isCountryCallingCodeMode, setIsCountryCallingCodeMode] = useState(false);
     const [oldCountry, setOldCountry] = useState(defaultCountry);
 
     const trimmedValue = getTrimmedString(actualValue);
@@ -127,7 +134,7 @@ const PhoneInput = ({ value: actualValue = '', defaultCountry = 'US', compact, o
             className={classnames([isRTL ? 'text-right' : null])}
             prefix={
                 <CountrySelect
-                    compact={compact}
+                    embedded={embedded}
                     value={selectedValue}
                     options={countries}
                     onChange={(newSelectedValue) => {
