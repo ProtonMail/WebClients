@@ -43,7 +43,7 @@ const SelectedFileToShareModal = ({ shareId, onClose, ...rest }: Props) => {
         await fetchNextFolderContents(shareId, linkId);
         const contents = cache.get.childLinkMetas(shareId, linkId) || [];
         const list = contents
-            .filter((meta) => !meta.Shared)
+            .filter((meta) => !meta.Shared || meta.Type === LinkType.FOLDER)
             .map((item) => ({
                 linkId: item.LinkID,
                 name: item.Name,

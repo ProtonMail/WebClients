@@ -15,6 +15,7 @@ import { ThumbnailURLInfo, SharedURLRevision, SharedURLInfo } from '@proton/shar
 import { getDecryptedSessionKey } from '@proton/shared/lib/keys/drivePassphrase';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { LinkMeta, LinkType } from '@proton/shared/lib/interfaces/drive/link';
+import { FOLDER_PAGE_SIZE } from '@proton/shared/lib/drive/constants';
 
 import usePublicSession from '../../components/DownloadShared/usePublicSession';
 import {
@@ -142,15 +143,12 @@ function usePublicSharing() {
         token: string,
         password: string,
         linkID: string,
-        pagination?: {
-            FromBlockIndex: number;
-            PageSize: number;
-        }
+        page: number = 0
     ): Promise<{ Links: LinkMeta[] }> => {
         const fetchChildren = () =>
             api<{ Links: LinkMeta[] }>(
                 publicSession.queryWithSessionInfo({
-                    ...querySharedURLChildren(token, linkID, pagination),
+                    ...querySharedURLChildren(token, linkID, page, FOLDER_PAGE_SIZE),
                     silence: true,
                 })
             );
@@ -163,6 +161,25 @@ function usePublicSharing() {
         })().catch(() => {
             throw new Error(c('Error').t`Failed to download a folder`);
         });
+    };
+
+    const getAllSharedUrlChildren = async (token: string, password: string, linkID: string): Promise<LinkMeta[]> => {
+        const links: LinkMeta[] = [];
+        let isChildrenListComplete = false;
+        let page = 0;
+
+        while (!isChildrenListComplete) {
+            const { Links } = await getSharedUrlChildren(token, password, linkID, page);
+            Links.forEach((linkMeta) => links.push(linkMeta));
+
+            if (Links.length < FOLDER_PAGE_SIZE) {
+                isChildrenListComplete = true;
+            } else {
+                page += 1;
+            }
+        }
+
+        return links;
     };
 
     const getSharedURLPayload = async (
@@ -228,10 +245,10 @@ function usePublicSharing() {
     };
 
     const getChildren = async (token: string, password: string, linkId: string) => {
-        const response = await getSharedUrlChildren(token, password, linkId);
+        const sharedURLChildren = await getAllSharedUrlChildren(token, password, linkId);
 
         return Promise.all(
-            response.Links.map(async (linkMeta: LinkMeta) => {
+            sharedURLChildren.map(async (linkMeta: LinkMeta) => {
                 const { privateKey } = cache[linkMeta.ParentLinkID];
 
                 const nodeKey = await getNodeKey(linkMeta, privateKey);

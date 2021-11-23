@@ -189,8 +189,8 @@ function useActions() {
             title: c('Title').t`Stop sharing`,
             confirm: c('Title').t`Stop sharing`,
             message: c('Info').ngettext(
-                msgid`This will delete the link and remove access to your file for anyone with the link.`,
-                `This will delete the links and remove access to your files for anyone with the links.`,
+                msgid`This will delete the link and remove access to your file or folder for anyone with the link.`,
+                `This will delete the links and remove access to your files or folders for anyone with the links.`,
                 itemsToStopSharing.length
             ),
             onConfirm: async () => {
