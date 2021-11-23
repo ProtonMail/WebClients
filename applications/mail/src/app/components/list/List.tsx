@@ -33,6 +33,7 @@ import { useOnCompose } from '../../containers/ComposeProvider';
 import { GetStartedChecklistContext } from '../../containers/GetStartedChecklistProvider';
 import ModalImportEmails from '../checklist/ModalImportEmails';
 import ModalGetMobileApp from '../checklist/ModalGetMobileApp';
+import { ResizeHandle } from './ResizeHandle';
 
 const defaultCheckedIDs: string[] = [];
 const defaultElements: Element[] = [];
@@ -61,6 +62,9 @@ interface Props {
     onSort: (sort: Sort) => void;
     filter: Filter;
     onFilter: (filter: Filter) => void;
+    resizeAreaRef: Ref<HTMLButtonElement>;
+    enableResize: () => void;
+    resetWidth: () => void;
 }
 
 const List = (
@@ -88,6 +92,9 @@ const List = (
         onSort,
         filter,
         onFilter,
+        resizeAreaRef,
+        enableResize,
+        resetWidth,
     }: Props,
     ref: Ref<HTMLDivElement>
 ) => {
@@ -148,107 +155,110 @@ const List = (
     );
 
     return (
-        <div
-            ref={ref}
-            className={classnames([
-                'items-column-list scroll-if-needed scroll-smooth-touch',
-                isCompactView && 'list-compact',
-            ])}
-        >
-            <h1 className="sr-only">
-                {conversationMode ? c('Title').t`Conversation list` : c('Title').t`Message list`}
-            </h1>
-            <div className="items-column-list-inner flex flex-nowrap flex-column relative">
-                <ListSettings
-                    sort={sort}
-                    onSort={onSort}
-                    onFilter={onFilter}
-                    filter={filter}
-                    conversationMode={conversationMode}
-                    mailSettings={mailSettings}
-                    isSearch={isSearch}
-                    labelID={labelID}
-                />
-                {showESSlowToolbar && <ESSlowToolbar />}
-                {elements.length === 0 ? (
-                    <EmptyView labelID={labelID} isSearch={isSearch} />
-                ) : (
-                    <>
-                        {elements.map((element, index) => (
-                            <Item
-                                key={element.ID}
-                                conversationMode={conversationMode}
-                                labels={labels}
-                                labelID={labelID}
-                                loading={loading}
-                                columnLayout={columnLayout}
-                                elementID={elementID}
-                                element={element}
-                                checked={checkedIDs.includes(element.ID || '')}
-                                onCheck={onCheckOne}
-                                onClick={onClick}
-                                mailSettings={mailSettings}
-                                onDragStart={handleDragStart}
-                                onDragEnd={handleDragEnd}
-                                dragged={draggedIDs.includes(element.ID || '')}
-                                index={index}
-                                breakpoints={breakpoints}
-                                onFocus={onFocus}
-                            />
-                        ))}
+        <div className="flex flex-row">
+            <div
+                ref={ref}
+                className={classnames([
+                    'items-column-list scroll-if-needed scroll-smooth-touch',
+                    isCompactView && 'list-compact',
+                ])}
+            >
+                <h1 className="sr-only">
+                    {conversationMode ? c('Title').t`Conversation list` : c('Title').t`Message list`}
+                </h1>
+                <div className="items-column-list-inner flex flex-nowrap flex-column relative">
+                    <ListSettings
+                        sort={sort}
+                        onSort={onSort}
+                        onFilter={onFilter}
+                        filter={filter}
+                        conversationMode={conversationMode}
+                        mailSettings={mailSettings}
+                        isSearch={isSearch}
+                        labelID={labelID}
+                    />
+                    {showESSlowToolbar && <ESSlowToolbar />}
+                    {elements.length === 0 ? (
+                        <EmptyView labelID={labelID} isSearch={isSearch} />
+                    ) : (
+                        <>
+                            {elements.map((element, index) => (
+                                <Item
+                                    key={element.ID}
+                                    conversationMode={conversationMode}
+                                    labels={labels}
+                                    labelID={labelID}
+                                    loading={loading}
+                                    columnLayout={columnLayout}
+                                    elementID={elementID}
+                                    element={element}
+                                    checked={checkedIDs.includes(element.ID || '')}
+                                    onCheck={onCheckOne}
+                                    onClick={onClick}
+                                    mailSettings={mailSettings}
+                                    onDragStart={handleDragStart}
+                                    onDragEnd={handleDragEnd}
+                                    dragged={draggedIDs.includes(element.ID || '')}
+                                    index={index}
+                                    breakpoints={breakpoints}
+                                    onFocus={onFocus}
+                                />
+                            ))}
 
-                        {userSettings.Checklists?.includes('get-started') &&
-                            !loading &&
-                            !(total > 1) &&
-                            !getStartedDismissed && (
-                                <GetStartedChecklist
-                                    limitedMaxWidth={!isColumnMode(mailSettings)}
-                                    onDismiss={handleDismiss}
-                                    onItemSelection={(key: GetStartedChecklistKey) => () => {
-                                        /* eslint-disable default-case */
-                                        switch (key) {
-                                            case GetStartedChecklistKey.SendMessage: {
-                                                onCompose({ action: MESSAGE_ACTIONS.NEW });
-                                                break;
-                                            }
-
-                                            case GetStartedChecklistKey.MobileApp: {
-                                                createModal(<ModalGetMobileApp />);
-                                                break;
-                                            }
-
-                                            case GetStartedChecklistKey.RecoveryMethod: {
-                                                if (displayMnemonicPrompt) {
-                                                    createModal(<MnemonicPromptModal />);
-                                                } else {
-                                                    goToSettings('/recovery', undefined, true);
+                            {userSettings.Checklists?.includes('get-started') &&
+                                !loading &&
+                                !(total > 1) &&
+                                !getStartedDismissed && (
+                                    <GetStartedChecklist
+                                        limitedMaxWidth={!isColumnMode(mailSettings)}
+                                        onDismiss={handleDismiss}
+                                        onItemSelection={(key: GetStartedChecklistKey) => () => {
+                                            /* eslint-disable default-case */
+                                            switch (key) {
+                                                case GetStartedChecklistKey.SendMessage: {
+                                                    onCompose({ action: MESSAGE_ACTIONS.NEW });
+                                                    break;
                                                 }
-                                                break;
-                                            }
 
-                                            case GetStartedChecklistKey.Import: {
-                                                createModal(<ModalImportEmails />);
-                                                break;
+                                                case GetStartedChecklistKey.MobileApp: {
+                                                    createModal(<ModalGetMobileApp />);
+                                                    break;
+                                                }
+
+                                                case GetStartedChecklistKey.RecoveryMethod: {
+                                                    if (displayMnemonicPrompt) {
+                                                        createModal(<MnemonicPromptModal />);
+                                                    } else {
+                                                        goToSettings('/recovery', undefined, true);
+                                                    }
+                                                    break;
+                                                }
+
+                                                case GetStartedChecklistKey.Import: {
+                                                    createModal(<ModalImportEmails />);
+                                                    break;
+                                                }
                                             }
-                                        }
-                                    }}
-                                />
+                                        }}
+                                    />
+                                )}
+
+                            {useLoadingElement && loadingElement}
+
+                            {!loading && total > 1 && (
+                                <div className="p1-5 flex flex-column flex-align-items-center">
+                                    <PaginationRow
+                                        {...pagingHandlers}
+                                        disabled={loading}
+                                        disableGoToLast={disableGoToLast}
+                                    />
+                                </div>
                             )}
-
-                        {useLoadingElement && loadingElement}
-
-                        {!loading && total > 1 && (
-                            <div className="p1-5 flex flex-column flex-align-items-center">
-                                <PaginationRow
-                                    {...pagingHandlers}
-                                    disabled={loading}
-                                    disableGoToLast={disableGoToLast}
-                                />
-                            </div>
-                        )}
-                    </>
-                )}
+                        </>
+                    )}
+                </div>
             </div>
+            <ResizeHandle resizeAreaRef={resizeAreaRef} enableResize={enableResize} resetWidth={resetWidth} />
         </div>
     );
 };
