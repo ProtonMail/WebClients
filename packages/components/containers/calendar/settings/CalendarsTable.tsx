@@ -118,7 +118,7 @@ const CalendarsTable = ({
                                 <div data-test-id="calendar-settings-page:calendar-status" key="status">
                                     {isDefault && <Badge type="primary">{c('Calendar status').t`Default`}</Badge>}
                                     {isActive && <Badge type="success">{c('Calendar status').t`Active`}</Badge>}
-                                    {isDisabled && <Badge type="warning">{c('Calendar status').t`Disabled`}</Badge>}
+                                    {isDisabled && <Badge type="light">{c('Calendar status').t`Disabled`}</Badge>}
                                     {isSubscribed && isNotSyncedInfo && (
                                         <Tooltip title={isNotSyncedInfo.text}>
                                             <span>
