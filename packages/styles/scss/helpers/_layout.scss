@@ -179,13 +179,19 @@
 	*/
 
 	// Need a container to manage with focus-within
-	&-container:focus-within & {
+	&-container:focus-within &,
+	&-container:focus-within &-only-desktop {
 		opacity: 1;
 	}
 
 	@media (hover: hover) and (pointer: fine) {
-		&-container:hover & {
+		&-container:hover &,
+		&-container:hover &-only-desktop {
 			opacity: 1;
+		}
+
+		&-only-desktop {
+			opacity: 0;
 		}
 	}
 }

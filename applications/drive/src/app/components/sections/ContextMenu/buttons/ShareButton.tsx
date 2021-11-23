@@ -16,7 +16,7 @@ const ShareButton = ({ shareId, item, close }: Props) => {
     const { openSharing } = useToolbarActions();
 
     if (!MEMBER_SHARING_ENABLED) {
-        return <></>;
+        return null;
     }
 
     const hasShare = !!item.ShareUrlShareID;

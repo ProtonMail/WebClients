@@ -16,7 +16,7 @@ const DownloadButton = ({ shareId, selectedItems, disabledFolders }: Props) => {
     const { download } = useToolbarActions();
 
     if (noSelection(selectedItems) || (disabledFolders && hasFoldersSelected(selectedItems))) {
-        return <></>;
+        return null;
     }
 
     return (
