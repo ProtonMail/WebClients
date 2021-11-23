@@ -22,6 +22,15 @@ import { hasCustomPassword, hasGeneratedPasswordIncluded } from '../../utils/lin
 const REPORT_ABUSE_EMAIL = 'abuse@protonmail.com';
 const ERROR_CODE_COULD_NOT_IDENTIFY_TARGET = 2000;
 const ERROR_CODE_INVALID_TOKEN = 2501;
+const ERROR_CODE_INVALID_SRP_PARAMETER = 2026;
+
+const calcTransferProgressPercentage = (progressInBytes?: number, transferSize?: number) => {
+    if (progressInBytes === undefined || transferSize === undefined) {
+        return 0;
+    }
+
+    return Math.round((progressInBytes / transferSize) * 100);
+};
 
 const DownloadSharedContainer = () => {
     const [notFoundError, setNotFoundError] = useState<Error | undefined>();
@@ -35,7 +44,7 @@ const DownloadSharedContainer = () => {
     const appName = getAppName(APPS.PROTONDRIVE);
 
     const [progress, setProgress] = useState<number>();
-    const [transferSize, setTransferSize] = useState<number>(0);
+    const [transferSize, setTransferSize] = useState<number | undefined>(undefined);
     const [transferState, setTransferState] = useState<TransferStatePublic>();
 
     const token = useMemo(() => pathname.replace(/\/urls\/?/, ''), [pathname]);
@@ -167,6 +176,11 @@ const DownloadSharedContainer = () => {
                 })
                 .catch((error) => {
                     const apiError = getApiError(error);
+                    if (apiError.code === ERROR_CODE_INVALID_SRP_PARAMETER) {
+                        setWithCustomPassword(true);
+                        return;
+                    }
+
                     if (apiError.code === 404 || apiError.code === ERROR_CODE_INVALID_TOKEN) {
                         setNotFoundError(error as Error);
                     }
@@ -182,7 +196,8 @@ const DownloadSharedContainer = () => {
     if (notFoundError || (!token && !password)) {
         content = <LinkDoesNotExistInfo />;
     } else if (linkInfo) {
-        const transferProgressPercentage = progress !== undefined ? Math.round((progress / transferSize) * 100) : 0;
+        const transferProgressPercentage = calcTransferProgressPercentage(progress, transferSize);
+
         content = (
             <DownloadSharedInfo
                 name={linkInfo.name}

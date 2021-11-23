@@ -20,6 +20,34 @@ interface Props {
     transferState: TransferStatePublic | undefined;
 }
 
+const getFileI18nDict = () => ({
+    windowTitle: c('Title').t`Your file is ready to be downloaded`,
+    transferTitleProgress: c('Title').t`Downloading`,
+    transferInfoProgress: c('Info').t`Your file is being downloaded.`,
+    transferTitleDone: c('Title').t`Download completed`,
+    transferInfoDone: c('Info').t`Your file has finished downloading.`,
+    transferTitleError: c('Title').t`Download failed`,
+    transferInfoError: c('Info').t`Your file failed to download.`,
+    transferTitleCancelled: c('Title').t`Download canceled`,
+    transferInfoCancelled: c('Info').t`Your download has been canceled.`,
+});
+
+const getFolderI18nDict = () => ({
+    windowTitle: c('Title').t`Your folder is ready to be downloaded`,
+    transferTitleProgress: c('Title').t`Downloading`,
+    transferInfoProgress: c('Info').t`Your folder is being downloaded.`,
+    transferTitleDone: c('Title').t`Download completed`,
+    transferInfoDone: c('Info').t`Your folder has finished downloading.`,
+    transferTitleError: c('Title').t`Download failed`,
+    transferInfoError: c('Info').t`Your folder failed to download.`,
+    transferTitleCancelled: c('Title').t`Download canceled`,
+    transferInfoCancelled: c('Info').t`Your download has been canceled.`,
+});
+
+const getI18nDict = (isFile: boolean) => {
+    return isFile ? getFileI18nDict() : getFolderI18nDict();
+};
+
 const DownloadSharedInfo = ({
     name,
     size,
@@ -41,8 +69,10 @@ const DownloadSharedInfo = ({
         downloadThumbnail.then(setThumbnail).catch(console.warn);
     }, [downloadThumbnail]);
 
+    const i18nDict = getI18nDict(MIMEType !== 'Folder');
+
     const contents: { title: string; info: ReactNode; content: ReactNode } = {
-        title: c('Title').t`Your file is ready to be downloaded`,
+        title: i18nDict.windowTitle,
         info: expirationDate ? (
             <>
                 {c('Info').t`Link expires: `}
@@ -61,8 +91,8 @@ const DownloadSharedInfo = ({
     if (transferState) {
         switch (transferState) {
             case TransferStatePublic.Progress:
-                contents.title = c('Title').t`Downloading`;
-                contents.info = c('Info').t`Your file is being downloaded.`;
+                contents.title = i18nDict.transferTitleProgress;
+                contents.info = i18nDict.transferInfoProgress;
                 contents.content = (
                     <div className="w100">
                         <DownloadProgressBar value={progress} status={TransferStatePublic.Progress} />
@@ -70,18 +100,18 @@ const DownloadSharedInfo = ({
                 );
                 break;
             case TransferStatePublic.Done:
-                contents.title = c('Title').t`Download completed`;
-                contents.info = c('Info').t`Your file has finished downloading.`;
+                contents.title = i18nDict.transferTitleDone;
+                contents.info = i18nDict.transferInfoDone;
                 contents.content = <Icon name="circle-check" size={100} className="fill-primary" />;
                 break;
             case TransferStatePublic.Error:
-                contents.title = c('Title').t`Download failed`;
-                contents.info = c('Info').t`Your file failed to download.`;
+                contents.title = i18nDict.transferTitleError;
+                contents.info = i18nDict.transferInfoError;
                 contents.content = <Icon name="circle-exclamation" size={100} className="fill-primary" />;
                 break;
             case TransferStatePublic.Canceled:
-                contents.title = c('Title').t`Download canceled`;
-                contents.info = c('Info').t`Your download has been canceled.`;
+                contents.title = i18nDict.transferTitleCancelled;
+                contents.info = i18nDict.transferInfoCancelled;
                 contents.content = <Icon name="xmark" size={100} className="fill-primary" />;
                 break;
             default:

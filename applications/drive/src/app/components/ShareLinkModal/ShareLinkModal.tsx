@@ -6,6 +6,7 @@ import { DialogModal, useLoading, useNotifications } from '@proton/components';
 import { SharedURLSessionKeyPayload, ShareURL } from '@proton/shared/lib/interfaces/drive/sharing';
 import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 import { SHARE_GENERATED_PASSWORD_LENGTH } from '@proton/shared/lib/drive/constants';
+import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 
 import useDrive from '../../hooks/drive/useDrive';
 import useSharing from '../../hooks/drive/useSharing';
@@ -21,6 +22,24 @@ import {
 } from '../../utils/link';
 import ModalContentLoader from '../ModalContentLoader';
 import useDriveEvents from '../../hooks/drive/useDriveEvents';
+
+const getLoadingMessage = (item: FileBrowserItem) => {
+    if (item.SharedUrl) {
+        return item.Type === LinkType.FILE
+            ? c('Info').t`Preparing link to file`
+            : c('Info').t`Preparing link to folder`;
+    }
+
+    return item.Type === LinkType.FILE ? c('Info').t`Creating link to file` : c('Info').t`Creating link to folder`;
+};
+
+const getConfirmationMessage = (isFile: boolean) => {
+    return isFile
+        ? c('Info')
+              .t`This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.`
+        : c('Info')
+              .t`This link will be permanently disabled. No one with this link will be able to access your folder. To reshare the folder, you will need a new link.`;
+};
 
 interface Props {
     onClose?: () => void;
@@ -165,6 +184,8 @@ function ShareLinkModal({ modalTitleID = 'share-link-modal', onClose, shareId, i
         setExpirationToggledOn((expirationToggledOn) => !expirationToggledOn);
     };
 
+    const isFile = item.Type === LinkType.FILE;
+
     const handleDeleteLinkClick = () => {
         if (!shareUrlInfo) {
             return;
@@ -184,8 +205,7 @@ function ShareLinkModal({ modalTitleID = 'share-link-modal', onClose, shareId, i
         openConfirmModal({
             title: c('Title').t`Stop sharing with everyone?`,
             confirm: c('Action').t`Stop sharing`,
-            message: c('Info')
-                .t`This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.`,
+            message: getConfirmationMessage(isFile),
             canUndo: true,
             onConfirm: () => withDeleting(deleteLink()),
         });
@@ -218,9 +238,7 @@ function ShareLinkModal({ modalTitleID = 'share-link-modal', onClose, shareId, i
 
     const renderModalState = () => {
         if (loading) {
-            const loadingMessage = item.SharedUrl
-                ? c('Info').t`Preparing link to file`
-                : c('Info').t`Creating link to file`;
+            const loadingMessage = getLoadingMessage(item);
             return <ModalContentLoader>{loadingMessage}</ModalContentLoader>;
         }
 
@@ -238,6 +256,7 @@ function ShareLinkModal({ modalTitleID = 'share-link-modal', onClose, shareId, i
                     passwordToggledOn={passwordToggledOn}
                     expirationToggledOn={expirationToggledOn}
                     itemName={item.Name}
+                    itemType={item.Type}
                     onClose={handleClose}
                     onIncludePasswordToggle={handleToggleIncludePassword}
                     onIncludeExpirationTimeToogle={handleToggleIncludeExpirationTime}
