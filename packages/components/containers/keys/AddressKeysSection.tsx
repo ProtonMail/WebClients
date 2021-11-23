@@ -193,6 +193,7 @@ const AddressKeysSection = () => {
         );
         createModal(
             <AddKeyModal
+                type="address"
                 existingAlgorithms={existingAlgorithms}
                 onAdd={async (encryptionConfig) => {
                     const [newKey] = await addAddressKeysProcess({

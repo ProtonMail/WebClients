@@ -3,7 +3,7 @@ import { ActiveKey, Address, Api, EncryptionConfig } from '../../interfaces';
 import { createAddressKeyRoute, createAddressKeyRouteV2 } from '../../api/keys';
 import { DEFAULT_ENCRYPTION_CONFIG, ENCRYPTION_CONFIGS } from '../../constants';
 import { generateAddressKey, generateAddressKeyTokens } from '../addressKeys';
-import { getActiveKeyObject, getPrimaryFlag } from '../getActiveKeys';
+import { getActiveKeyObject } from '../getActiveKeys';
 import { getSignedKeyList } from '../signedKeyList';
 
 interface CreateAddressKeyLegacyArguments {
@@ -13,6 +13,16 @@ interface CreateAddressKeyLegacyArguments {
     passphrase: string;
     activeKeys: ActiveKey[];
 }
+
+const removePrimary = (activeKey: ActiveKey): ActiveKey => {
+    if (activeKey.primary) {
+        return {
+            ...activeKey,
+            primary: 0,
+        };
+    }
+    return activeKey;
+};
 
 export const createAddressKeyLegacy = async ({
     api,
@@ -26,8 +36,8 @@ export const createAddressKeyLegacy = async ({
         passphrase,
         encryptionConfig,
     });
-    const newActiveKey = await getActiveKeyObject(privateKey, { ID: 'tmp', primary: getPrimaryFlag(activeKeys) });
-    const updatedActiveKeys = [...activeKeys, newActiveKey];
+    const newActiveKey = await getActiveKeyObject(privateKey, { ID: 'tmp', primary: 1 });
+    const updatedActiveKeys = [newActiveKey, ...activeKeys.map(removePrimary)];
     const SignedKeyList = await getSignedKeyList(updatedActiveKeys);
 
     const { Key } = await api(
@@ -64,8 +74,8 @@ export const createAddressKeyV2 = async ({
         passphrase: token,
         encryptionConfig,
     });
-    const newActiveKey = await getActiveKeyObject(privateKey, { ID: 'tmp', primary: getPrimaryFlag(activeKeys) });
-    const updatedActiveKeys = [...activeKeys, newActiveKey];
+    const newActiveKey = await getActiveKeyObject(privateKey, { ID: 'tmp', primary: 1 });
+    const updatedActiveKeys = [newActiveKey, ...activeKeys.map(removePrimary)];
     const SignedKeyList = await getSignedKeyList(updatedActiveKeys);
 
     const { Key } = await api(
