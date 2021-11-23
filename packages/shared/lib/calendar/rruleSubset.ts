@@ -53,7 +53,7 @@ export const getIsRruleSubset = (newVevent: VcalVeventComponent, oldVevent: Vcal
     // but for performance we use the same trick as above and check max 10
     const maxCount = newCount ? Math.min(newCount, 10) : 10;
     const newOccurrences = newUntil
-        ? getOccurrencesBetween(newVevent, +propertyToUTCDate(newDtstart), +toUTCDate(newUntil), {}, 10)
+        ? getOccurrencesBetween(newVevent, +propertyToUTCDate(newDtstart), +toUTCDate(newUntil)).slice(0, 10)
         : getOccurrences({ component: newVevent, maxCount });
 
     return getAreOccurrencesSubset(newOccurrences, oldVevent);
