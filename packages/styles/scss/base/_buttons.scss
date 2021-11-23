@@ -193,21 +193,6 @@
 	}
 }
 
-.resize-area-container {
-	&:hover,
-	&:focus,
-	&:active {
-		background: linear-gradient(
-			90deg,
-			transparent 0%,
-			transparent 3px,
-			var(--interaction-norm-hover) 3px,
-			var(--interaction-norm-hover) 6px,
-			transparent 6px
-		);
-	}
-}
-
 /*
  * Modifiers
  */
@@ -346,8 +331,4 @@
 			opacity: 0.5;
 		}
 	}
-}
-
-.outline-offset-2p {
-	outline-offset: -2px;
 }

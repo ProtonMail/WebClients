@@ -74,7 +74,7 @@ const MailboxContainer = ({
 
     const messageContainerRef = useRef<HTMLElement>(null);
     const mainAreaRef = useRef<HTMLDivElement>(null);
-    const resizeAreaRef = useRef<HTMLDivElement>(null);
+    const resizeAreaRef = useRef<HTMLButtonElement>(null);
 
     const onMailTo = useOnMailTo();
 
@@ -284,10 +284,11 @@ const MailboxContainer = ({
                 {showContentPanel && (
                     <>
                         {columnMode && (
-                            <div className="relative w10p resize-area-container" ref={resizeAreaRef}>
+                            <div className="resize-area-container">
                                 <button
                                     type="button"
-                                    className="cursor-col-resize w100 h100"
+                                    ref={resizeAreaRef}
+                                    className="resize-area-button cursor-col-resize"
                                     onMouseDown={enableResize}
                                     onDoubleClick={resetWidth}
                                 >

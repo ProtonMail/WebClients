@@ -5,7 +5,7 @@ import { getItem, setItem } from '@proton/shared/lib/helpers/storage';
 
 export const useResizeMessageView = (
     containerRef: RefObject<HTMLDivElement>,
-    resizeAreaRef: RefObject<HTMLDivElement>,
+    resizeAreaRef: RefObject<HTMLButtonElement>,
     listRef: RefObject<HTMLDivElement>
 ) => {
     const [isResizing, setIsResizing] = useState(false);
