@@ -1,0 +1,34 @@
+.resize-area {
+	&-container {
+		position: relative;
+		z-index: 10; // same as toolbar, change as soon as possible
+		width: 0;
+		overflow: visible;
+	}
+
+	&-button {
+		position: absolute;
+		inset-block: 0;
+		inset-inline-start: -5px;
+		width: 10px;
+
+		&::before {
+			content: '';
+			position: absolute;
+			inset-block: 0;
+			inset-inline-start: 4px;
+			width: 2px;
+			background-color: var(--interaction-norm-hover);
+			opacity: 0;
+			transition: opacity 0.15s easing(easeOutQuint);
+		}
+
+		&:hover,
+		&:focus,
+		&:active {
+			&::before {
+				opacity: 1;
+			}
+		}
+	}
+}
