@@ -16,7 +16,6 @@ import { noop } from '@proton/shared/lib/helpers/function';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import { isNumber } from '@proton/shared/lib/helpers/validators';
 import { Address } from '@proton/shared/lib/interfaces';
-import { PRODUCT_NAMES } from '@proton/shared/lib/constants';
 import {
     TIME_PERIOD,
     MailImportMapping,
@@ -42,12 +41,9 @@ import {
 
 import { MailImportStep, ImportMailModalModel, AuthenticationMethod } from '../interfaces';
 
-import YahooMailImportInstructionsStep from './steps/YahooMailImportInstructionsStep';
 import ImportStartStep from './steps/ImportStartStep';
 import ImportPrepareStep from './steps/ImportPrepareStep';
 import ImportStartedStep from '../../steps/IAImportStartedStep';
-
-import { classnames } from '../../../../helpers';
 
 import { IA_PATHNAME_REGEX, IMAPS } from '../../constants';
 import { dateToTimestamp } from '../helpers';
@@ -85,10 +81,10 @@ interface Props {
     currentImport?: NormalizedImporter;
     onClose?: () => void;
     addresses: Address[];
-    providerInstructions?: NON_OAUTH_PROVIDER;
+    provider?: NON_OAUTH_PROVIDER;
 }
 
-const ImportMailModal = ({ onClose = noop, currentImport, providerInstructions, addresses, ...rest }: Props) => {
+const ImportMailModal = ({ onClose = noop, currentImport, provider, addresses, ...rest }: Props) => {
     const settingsLink = useSettingsLink();
     const addressMap = toMap(addresses);
     const isReconnectMode = !!currentImport;
@@ -104,11 +100,7 @@ const ImportMailModal = ({ onClose = noop, currentImport, providerInstructions, 
     const [showPassword, setShowPassword] = useState(false);
 
     const [modalModel, setModalModel] = useState<ImportMailModalModel>({
-        step:
-            // @todo add instructions for other providers
-            providerInstructions && providerInstructions === NON_OAUTH_PROVIDER.YAHOO
-                ? MailImportStep.INSTRUCTIONS
-                : MailImportStep.START,
+        step: MailImportStep.START,
         importID: currentImport?.ID || '',
         email: currentImport?.Email || '',
         password: '',
@@ -136,12 +128,6 @@ const ImportMailModal = ({ onClose = noop, currentImport, providerInstructions, 
 
     const title = useMemo(() => {
         switch (modalModel.step) {
-            case MailImportStep.INSTRUCTIONS:
-                if (providerInstructions === NON_OAUTH_PROVIDER.YAHOO) {
-                    return c('Title').t`Prepare Yahoo Mail for import`;
-                }
-
-                return null;
             case MailImportStep.START:
                 return isReconnectMode ? c('Title').t`Reconnect your account` : c('Title').t`Start a new import`;
             case MailImportStep.PREPARE:
@@ -150,7 +136,7 @@ const ImportMailModal = ({ onClose = noop, currentImport, providerInstructions, 
             default:
                 return null;
         }
-    }, [modalModel.step, providerInstructions]);
+    }, [modalModel.step]);
 
     const checkAuth = async () => {
         const { Authentication } = await api(getAuthenticationMethod({ Email: modalModel.email }));
@@ -352,12 +338,6 @@ const ImportMailModal = ({ onClose = noop, currentImport, providerInstructions, 
                 }
                 await withLoading(submitAuthentication(modalModel.needIMAPDetails));
                 break;
-            case MailImportStep.INSTRUCTIONS:
-                setModalModel({
-                    ...modalModel,
-                    step: MailImportStep.START,
-                });
-                break;
             case MailImportStep.PREPARE:
                 await withLoading(launchImport());
                 break;
@@ -385,14 +365,6 @@ const ImportMailModal = ({ onClose = noop, currentImport, providerInstructions, 
             : !email || !password;
 
         switch (step) {
-            case MailImportStep.INSTRUCTIONS:
-                return providerInstructions ? (
-                    <div>
-                        <PrimaryButton type="submit">{c('Action').t`Start ${PRODUCT_NAMES.EASY_SWITCH}`}</PrimaryButton>
-                    </div>
-                ) : (
-                    <PrimaryButton type="submit">{c('Action').t`Skip to import`}</PrimaryButton>
-                );
             case MailImportStep.START:
                 return (
                     <PrimaryButton type="submit" disabled={disabledStartStep} loading={loading}>
@@ -420,7 +392,6 @@ const ImportMailModal = ({ onClose = noop, currentImport, providerInstructions, 
                 return null;
         }
     }, [
-        providerInstructions,
         modalModel.step,
         modalModel.email,
         modalModel.password,
@@ -458,14 +429,8 @@ const ImportMailModal = ({ onClose = noop, currentImport, providerInstructions, 
             close={cancelRenderer}
             onSubmit={handleSubmit}
             onClose={handleCancel}
-            className={classnames([
-                modalModel.step === MailImportStep.INSTRUCTIONS && providerInstructions && 'import-modal',
-            ])}
             {...rest}
         >
-            {modalModel.step === MailImportStep.INSTRUCTIONS && providerInstructions === NON_OAUTH_PROVIDER.YAHOO && (
-                <YahooMailImportInstructionsStep />
-            )}
             {modalModel.step === MailImportStep.START && (
                 <ImportStartStep
                     modalModel={modalModel}
@@ -474,7 +439,7 @@ const ImportMailModal = ({ onClose = noop, currentImport, providerInstructions, 
                     showPassword={showPassword}
                     currentImport={currentImport}
                     invalidPortError={invalidPortError}
-                    provider={providerInstructions}
+                    provider={provider}
                 />
             )}
             {modalModel.step === MailImportStep.PREPARE && (
