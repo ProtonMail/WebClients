@@ -14,6 +14,9 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } mağazası"
       ],
+      "Activate recovery": [
+        "Kurtarmayı etkinleştirin"
+      ],
       "Add": [
         "Ekle"
       ],
@@ -146,7 +149,7 @@
       "Decrease": [
         "Azaltın"
       ],
-      "Default mail handler": [
+      "Default email application": [
         ""
       ],
       "Delete": [
@@ -234,9 +237,6 @@
       ],
       "Grid layout": [
         "Izgara düzeni"
-      ],
-      "here": [
-        "buraya"
       ],
       "Hide advanced PGP settings": [
         "Gelişmiş PGP ayarlarını gizle"
@@ -361,9 +361,6 @@
       "Previous month": [
         "Önceki ay"
       ],
-      "Prompt browser setting": [
-        ""
-      ],
       "Quit": [
         ""
       ],
@@ -438,6 +435,12 @@
       ],
       "Select plan": [
         "Plan seçin"
+      ],
+      "Set as default": [
+        ""
+      ],
+      "Set recovery phrase": [
+        "Kurtarma anahtar metni oluşturun"
       ],
       "Share": [
         "Paylaş"
@@ -519,6 +522,12 @@
       ],
       "Untrust": [
         "Güvenme"
+      ],
+      "Update recovery file": [
+        "Kurtarma dosyasını güncelleyin"
+      ],
+      "Update recovery phrase": [
+        "Kurtarma anahtar metnini güncelleyin"
       ],
       "Upgrade": [
         "Yükselt"
@@ -1108,6 +1117,10 @@
       "Could not generate file keys": [
         ""
       ],
+      "Deselect at least ${ calendarToFixCount } calendar": [
+        "",
+        ""
+      ],
       "Deselect at least ${ calendarToFixCount } calendar or": [
         "",
         ""
@@ -1187,6 +1200,9 @@
       ],
       "Name on card required": [
         "Kart üzerindeki ad gerekli"
+      ],
+      "No data to import": [
+        "İçe aktarılacak veri yok"
       ],
       "No valid address found": [
         "Geçerli bir adres bulunamadı"
@@ -1733,9 +1749,6 @@
       "Account successfully updated": [
         "Hesap başarı ile güncellendi"
       ],
-      "Activating this option will open a new composer each time you click on a mailto: link.": [
-        ""
-      ],
       "Add additional addresses to your account like user2@protonmail.com": [
         "Hesabınıza kullanıcı2@protonmail.com gibi ek adresler ekleyin"
       ],
@@ -1867,6 +1880,9 @@
         ""
       ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
+        ""
+      ],
+      "Default email application": [
         ""
       ],
       "Delete drive": [
@@ -2202,8 +2218,8 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Bu adrese, e-posta gönderirken varsayılan olarak kullanılmasını istediğiniz e-posta biçimini seçin."
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit. You can also merge imported calendars with existing Proton calendars.": [
-        "İçe aktarılacak takvimleri seçin. 20 takvim sınırıyla içe aktarılan her takvim için yeni bir takvim oluşturulacak. Ayrıca varolan Proton takvimleriyle içe aktarılmış takvimleri birleştirebilirsiniz."
+      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
+        ""
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         ""
@@ -2211,7 +2227,7 @@
       "Session timed out.": [
         "Oturum zaman aşımına uğradı."
       ],
-      "Set ProtonMail as your default mail handler": [
+      "Set ProtonMail as your default email application for this browser. ProtonMail will open automatically when you click an email link.": [
         ""
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
@@ -2380,6 +2396,9 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
         "Şu anda ${ user.Name } (${ user.Email }) olarak oturum açmış durumdasınız ve erişiminiz kısıtlı."
       ],
+      "You can also merge imported calendars with existing Proton calendars.": [
+        ""
+      ],
       "You can check the progress ${ importProgressLink }.": [
         ""
       ],
@@ -2388,12 +2407,6 @@
       ],
       "You cannot undo this action.": [
         "Bu eylemi geri alamazsınız."
-      ],
-      "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
-        "Beta Erişimini devre dışı bıraktınız. ${ appName } uygulamasının stabil sürümünü kullanmak için ${ refreshButton }. Uygulama yenilenecektir."
-      ],
-      "You have enabled Beta Access. Click ${ refreshButton } to use the latest version of ${ appName }. The application will be reloaded.": [
-        "Beta Erişimini etkinleştirdiniz. ${ appName } uygulamasının son sürümünü kullanmak için ${ refreshButton } tıklayın. Uygulama yenilenecektir."
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "Onu, bir ödeme yöntemi olarak eklemek için PayPal hesabınıza bağlı bir kredi kartınız ya da banka hesabınızın olması gerekir."

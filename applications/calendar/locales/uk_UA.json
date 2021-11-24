@@ -14,6 +14,9 @@
       "${ BRAND_NAME } shop": [
         "Крамниця ${ BRAND_NAME }"
       ],
+      "Activate recovery": [
+        "Активувати відновлення"
+      ],
       "Add": [
         "Додати"
       ],
@@ -125,9 +128,6 @@
       "Copy email to clipboard": [
         "Копіювати е-пошту в буфер обміну"
       ],
-      "Create": [
-        "Створити"
-      ],
       "Create calendar": [
         "Створити календар"
       ],
@@ -140,8 +140,8 @@
       "Decrease": [
         "Зменшити"
       ],
-      "Default mail handler": [
-        ""
+      "Default email application": [
+        "Додаток електронної пошти за замовчуванням"
       ],
       "Delete": [
         "Видалити"
@@ -217,9 +217,6 @@
       ],
       "Go to settings": [
         "Перейти до налаштувань"
-      ],
-      "here": [
-        "тут"
       ],
       "Hide advanced PGP settings": [
         "Приховати розширені налаштування PGP"
@@ -350,9 +347,6 @@
       "Previous year": [
         "Минулий рік"
       ],
-      "Prompt browser setting": [
-        ""
-      ],
       "Quit": [
         "Вийти"
       ],
@@ -412,6 +406,12 @@
       ],
       "Send": [
         "Надіслати"
+      ],
+      "Set as default": [
+        "Встановити за замовчуванням"
+      ],
+      "Set recovery phrase": [
+        "Встановити фразу відновлення"
       ],
       "Share": [
         "Поділитися"
@@ -484,6 +484,12 @@
       ],
       "Update": [
         "Оновити"
+      ],
+      "Update recovery file": [
+        "Оновити файл відновлення"
+      ],
+      "Update recovery phrase": [
+        "Оновити фразу відновлення"
       ],
       "Upgrade": [
         "Покращити"
@@ -996,7 +1002,7 @@
     },
     "colon": {
       ": ": [
-        ""
+        ": "
       ]
     },
     "Composer size": {
@@ -1434,6 +1440,12 @@
       "Decryption error: Decryption of this event's content failed.": [
         "Помилка розшифрування: Не вдалося розшифрувати вміст цієї події."
       ],
+      "Deselect at least ${ calendarToFixCount } calendar": [
+        "Приберіть принаймні ${ calendarToFixCount } календар",
+        "Приберіть принаймні ${ calendarToFixCount } календарі",
+        "Приберіть принаймні ${ calendarToFixCount } календарів",
+        "Приберіть принаймні ${ calendarToFixCount } календаря"
+      ],
       "Deselect at least ${ calendarToFixCount } calendar or": [
         "Приберіть принаймні ${ calendarToFixCount } календар або",
         "Приберіть принаймні ${ calendarToFixCount } календарі або",
@@ -1541,6 +1553,9 @@
       ],
       "Name required": [
         "Назва обов'язкова"
+      ],
+      "No data to import": [
+        "Немає даних для імпорту"
       ],
       "No key retrieved for internal user is valid for sending": [
         "Для внутрішнього користувача не отримано жодного дійсного ключа для надсилання"
@@ -1712,9 +1727,6 @@
       ]
     },
     "Error importing calendar": {
-      "${ CALENDAR_APP_NAME } only supports importing calendars with iCal version 2.0.": [
-        "${ CALENDAR_APP_NAME } підтримує імпортування календарів лише з iCal версії 2.0."
-      ],
       "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
         "Виникла помилка під час прочитання вашого файлу ${ formattedFilename }. Файл має неправильний формат."
       ],
@@ -1946,7 +1958,7 @@
         "Не вдалося розшифрувати вкладений ICS-файл"
       ],
       "Attached ICS file could not be read": [
-        ""
+        "Не вдалося прочитати вкладений файл ICS"
       ],
       "Invalid invitation": [
         "Недійсне запрошення"
@@ -2383,9 +2395,6 @@
       "Account successfully updated": [
         "Обліковий запис успішно оновлено"
       ],
-      "Activating this option will open a new composer each time you click on a mailto: link.": [
-        ""
-      ],
       "Add additional addresses to your account like user2@protonmail.com": [
         "Додати інші адреси до свого облікового запису, наприклад user2@protonmail.com"
       ],
@@ -2517,6 +2526,9 @@
       ],
       "Daily": [
         "Щодня"
+      ],
+      "Default email application": [
+        "Додаток електронної пошти за замовчуванням"
       ],
       "Discard changes?": [
         "Відхилити зміни?"
@@ -2788,8 +2800,8 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Оберіть формат повідомлення, який ви хочете використовувати при надсиланні на цю адресу е-пошти."
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit. You can also merge imported calendars with existing Proton calendars.": [
-        "Виберіть, які календарі необхідно імпортувати. Для кожного імпортованого календаря буде створений новий календар у межах ліміту в 20 календарів. Ви також можете об'єднати імпортовані календарі з існуючими календарями Proton."
+      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
+        "Виберіть, які календарі імпортувати. Для кожного імпортованого календаря буде створено новий календар з обмеженням у 20 календарів."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Сервери недоступні. Спробуйте знову за кілька хвилин"
@@ -2797,8 +2809,8 @@
       "Session timed out.": [
         "Сеанс завершився."
       ],
-      "Set ProtonMail as your default mail handler": [
-        ""
+      "Set ProtonMail as your default email application for this browser. ProtonMail will open automatically when you click an email link.": [
+        "Встановите ProtonMail як додаток електронної пошти за замовчуванням для цього браузера. ProtonMail відкриється автоматично після натискання на поштове посилання."
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
         "Встановлення PGP дозволяє вам надсилати наскрізно зашифровані повідомлення користувачам за межами ProtonMail, які використовують PGP-сумісний сервіс."
@@ -2968,6 +2980,9 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
         "Ви зараз увійшли як ${ user.Name } (${ user.Email }) і маєте обмежений доступ."
       ],
+      "You can also merge imported calendars with existing Proton calendars.": [
+        "Ви також можете об'єднати імпортовані календарі з наявними календарями Proton."
+      ],
       "You can check the progress ${ importProgressLink }.": [
         "Ви можете переглянути поступ ${ importProgressLink }."
       ],
@@ -2976,12 +2991,6 @@
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Ви можете увімкнути сповіщення про надходження нових повідомлень до цієї теки."
-      ],
-      "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
-        "Ви вимкнули бета-доступ. Натисніть ${ refreshButton }, щоб використовувати стабільну версію ${ appName }. Програму буде перезавантажено."
-      ],
-      "You have enabled Beta Access. Click ${ refreshButton } to use the latest version of ${ appName }. The application will be reloaded.": [
-        "Ви увімкнули бета-доступ. Натисніть ${ refreshButton }, щоб використовувати найновішу версію ${ appName }. Програму буде перезавантажено."
       ],
       "You have reactivated your keys and events linked to the following calendars can now be decrypted.": [
         "Ви повторно активували свої ключі, тому тепер можна розшифрувати події, пов'язані з указаними календарями."
@@ -3325,6 +3334,9 @@
       "All day": [
         "Весь день"
       ],
+      "All-day event notifications": [
+        "Сповіщення події на цілий день"
+      ],
       "Automatically save contacts": [
         "Автоматично зберігати контакти"
       ],
@@ -3358,11 +3370,11 @@
       "Category": [
         "Категорія"
       ],
-      "Choose a color": [
-        "Вибрати колір"
-      ],
       "City": [
         "Місто"
+      ],
+      "Color": [
+        "Колір"
       ],
       "Contacts": [
         "Контакти"
@@ -3375,18 +3387,6 @@
       ],
       "CVV code": [
         "Код CVV"
-      ],
-      "Default email": [
-        "Типова електронна пошта"
-      ],
-      "Default event duration": [
-        "Типова тривалість події"
-      ],
-      "Default full day notifications": [
-        "Типові сповіщення на весь день"
-      ],
-      "Default notifications": [
-        "Типові сповіщення"
       ],
       "Description": [
         "Опис"
@@ -3423,6 +3423,9 @@
       ],
       "Enter the 6-digit code": [
         "Введіть 6-значний код"
+      ],
+      "Event duration": [
+        "Тривалість події"
       ],
       "Event frequency": [
         "Повторюваність події"
@@ -3709,10 +3712,10 @@
         "Додати подарунковий код"
       ],
       "All mail": [
-        ""
+        "Уся пошта"
       ],
       "Archive": [
-        ""
+        "Архів"
       ],
       "Calendars": [
         "Календарі"
@@ -3724,13 +3727,13 @@
         "натисніть тут"
       ],
       "Drafts": [
-        ""
+        "Чернетки"
       ],
       "Go to subscription plans": [
         "Перейти до тарифних планів"
       ],
       "Inbox": [
-        ""
+        "Вхідні"
       ],
       "Learn more": [
         "Докладніше"
@@ -3739,7 +3742,7 @@
         "Мої календарі"
       ],
       "Outbox": [
-        ""
+        "Вихідні"
       ],
       "Pay invoice": [
         "Сплатити рахунок"
@@ -3748,22 +3751,22 @@
         "Запитати запрошення"
       ],
       "Scheduled": [
-        ""
+        "Заплановано"
       ],
       "Sent": [
-        ""
+        "Надіслані"
       ],
       "Spam": [
-        ""
+        "Спам"
       ],
       "Starred": [
-        ""
+        "Із зірочкою"
       ],
       "Subscribed calendars": [
         "Підписки на календарі"
       ],
       "Trash": [
-        ""
+        "Смітник"
       ],
       "Upgrade": [
         "Покращити"
@@ -4405,6 +4408,11 @@
         "PayPal"
       ]
     },
+    "Personal calendar limit reached modal body": {
+      "Unable to create more calendars. You have reached the maximum of personal calendars within your plan.": [
+        "Не вдається створити інші календарі. Ви досягли обмеження особистих календарів для свого тарифного плану."
+      ]
+    },
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "Ключ не можна застосовувати для шифрування"
@@ -4719,17 +4727,8 @@
       ]
     },
     "Subscribed calendar limit reached modal body": {
-      "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } subscribed calendar.": [
-        "Ви досягли максимальної кількості з ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } підписного календаря.",
-        "Ви досягли максимальної кількості з ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } підписних календарів.",
-        "Ви досягли максимальної кількості з ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } підписних календарів.",
-        "Ви досягли максимальної кількості з ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } підписних календарів."
-      ],
-      "You have reached the maximum of ${ personalCalendarLimit } personal calendar.": [
-        "Ви досягли максимальної кількості з ${ personalCalendarLimit } особистого календаря.",
-        "Ви досягли максимальної кількості з ${ personalCalendarLimit } особистих календарів.",
-        "Ви досягли максимальної кількості з ${ personalCalendarLimit } особистих календарів.",
-        "Ви досягли максимальної кількості з ${ personalCalendarLimit } особистих календарів."
+      "Unable to add more calendars. You have reached the maximum of subscribed calendars within your plan.": [
+        "Не вдається додати інші календарі. Ви досягли обмеження підписних календарів для свого тарифного плану."
       ]
     },
     "Success": {
@@ -5150,6 +5149,9 @@
       "Downgrade account": [
         "Понизити тарифний план"
       ],
+      "Edit calendar": [
+        "Редагувати календар"
+      ],
       "Edit contact": [
         "Редагувати контакт"
       ],
@@ -5401,9 +5403,6 @@
       ],
       "Unsupported browser": [
         "Браузер не підтримується"
-      ],
-      "Update calendar": [
-        "Оновити календар"
       ],
       "Update event": [
         "Оновити подію"

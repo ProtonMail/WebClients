@@ -40,6 +40,9 @@
       "Activate my coupon": [
         "Kuponumu etkinleştir"
       ],
+      "Activate recovery": [
+        ""
+      ],
       "Add credit / debit card": [
         "Kredi / banka kartı ekle"
       ],
@@ -187,9 +190,6 @@
       "Go to panel ${ index }": [
         "${ index } paneline git"
       ],
-      "here": [
-        "buraya"
-      ],
       "Hide": [
         "Gizle"
       ],
@@ -304,6 +304,9 @@
       "Send": [
         "Gönder"
       ],
+      "Set recovery phrase": [
+        ""
+      ],
       "Share via link": [
         "Bağlantı yoluyla paylaş"
       ],
@@ -348,6 +351,12 @@
       ],
       "Update": [
         "Güncelle"
+      ],
+      "Update recovery file": [
+        ""
+      ],
+      "Update recovery phrase": [
+        ""
       ],
       "Upgrade": [
         "Yükselt"
@@ -1755,12 +1764,6 @@
       "You cannot use the OpenVPN / IKEv2 credentials to log in to ProtonVPN applications or the ProtonVPN dashboard. ${ learnMore }": [
         "ProtonVPN uygulamalarına veya ProtonVPN kontrol paneline giriş yapmak için OpenVPN / IKEv2 kimlik bilgilerini kullanamazsınız. ${ learnMore }"
       ],
-      "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
-        "Beta Erişimini devre dışı bıraktınız. ${ appName } uygulamasının stabil sürümünü kullanmak için ${ refreshButton } tıklayın. Uygulama yeniden yüklenecektir."
-      ],
-      "You have enabled Beta Access. Click ${ refreshButton } to use the latest version of ${ appName }. The application will be reloaded.": [
-        "Beta Erişimini etkinleştirdiniz. ${ appName } uygulamasının en son sürümünü kullanmak için ${ refreshButton } tıklayın. Uygulama yeniden yüklenecektir."
-      ],
       "You have no saved payment methods.": [
         "Kayıtlı ödeme yönteminiz yok."
       ],
@@ -2262,6 +2265,9 @@
       ],
       "Proton newsletter": [
         "Proton bülteni"
+      ],
+      "Proton offers and promotions": [
+        "Proton önerileri ve tanıtımları"
       ],
       "Proton product announcements": [
         "Proton ürün duyuruları"

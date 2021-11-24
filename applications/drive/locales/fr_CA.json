@@ -14,6 +14,9 @@
       "${ BRAND_NAME } shop": [
         "Boutique ${ BRAND_NAME }"
       ],
+      "Activate recovery": [
+        "Activer la récupération"
+      ],
       "Add": [
         "Ajouter"
       ],
@@ -146,8 +149,8 @@
       "Decrease": [
         "Diminuer"
       ],
-      "Default mail handler": [
-        ""
+      "Default email application": [
+        "Application de messagerie par défaut"
       ],
       "Delete": [
         "Supprimer"
@@ -234,9 +237,6 @@
       ],
       "Grid layout": [
         "Affichage en grille"
-      ],
-      "here": [
-        "ici"
       ],
       "Hide advanced PGP settings": [
         "Masquer les paramètres PGP avancés"
@@ -361,9 +361,6 @@
       "Previous month": [
         "Mois précédent"
       ],
-      "Prompt browser setting": [
-        ""
-      ],
       "Quit": [
         "Quitter"
       ],
@@ -438,6 +435,12 @@
       ],
       "Select plan": [
         "Choisissez une offre"
+      ],
+      "Set as default": [
+        "Définir par défaut"
+      ],
+      "Set recovery phrase": [
+        "Créer une phrase de récupération"
       ],
       "Share": [
         "Partager"
@@ -519,6 +522,12 @@
       ],
       "Untrust": [
         "Ne plus faire confiance"
+      ],
+      "Update recovery file": [
+        "Mettre à jour le fichier de récupération"
+      ],
+      "Update recovery phrase": [
+        "Mettre à jour la phrase de récupération"
       ],
       "Upgrade": [
         "Changer d'offre"
@@ -1108,6 +1117,10 @@
       "Could not generate file keys": [
         "Impossible de générer les clés de fichier"
       ],
+      "Deselect at least ${ calendarToFixCount } calendar": [
+        "Désélectionnez au moins ${ calendarToFixCount } calendrier",
+        "Désélectionnez au moins ${ calendarToFixCount } calendriers"
+      ],
       "Deselect at least ${ calendarToFixCount } calendar or": [
         "Désélectionnez au moins ${ calendarToFixCount } calendrier ou",
         "Désélectionnez au moins ${ calendarToFixCount } calendriers ou"
@@ -1187,6 +1200,9 @@
       ],
       "Name on card required": [
         "Nom du titulaire de la carte requis"
+      ],
+      "No data to import": [
+        "Aucune donnée à importer"
       ],
       "No valid address found": [
         "Aucune adresse valide trouvée"
@@ -1733,9 +1749,6 @@
       "Account successfully updated": [
         "Compte correctement mis à jour"
       ],
-      "Activating this option will open a new composer each time you click on a mailto: link.": [
-        ""
-      ],
       "Add additional addresses to your account like user2@protonmail.com": [
         "Ajoutez des adresses supplémentaires à votre compte comme utilisateur2@protonmail.com"
       ],
@@ -1868,6 +1881,9 @@
       ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "Les fichiers CSV d'Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora et de certaines autres applications ainsi que les formats vCard 3.1 et 4.0 (encodage UTF-8) sont pris en charge."
+      ],
+      "Default email application": [
+        "Application de messagerie par défaut"
       ],
       "Delete drive": [
         "Supprimer le disque",
@@ -2202,8 +2218,8 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Sélectionnez le format de message que vous souhaitez utiliser par défaut lors de l'envoi d'un courriel à cette adresse électronique."
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit. You can also merge imported calendars with existing Proton calendars.": [
-        "Sélectionnez les calendriers à importer. Un nouveau calendrier sera créé pour chaque calendrier importé jusqu'à la limite de 20 calendriers personnels. Vous pouvez également fusionner des calendriers importés avec des calendriers Proton existants."
+      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
+        "Sélectionnez les calendriers à importer. Un nouveau calendrier sera créé pour chaque calendrier importé dans la limite de 20 calendriers."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Les serveurs sont inaccessibles. Veuillez réessayer dans quelques minutes"
@@ -2211,8 +2227,8 @@
       "Session timed out.": [
         "Session expirée."
       ],
-      "Set ProtonMail as your default mail handler": [
-        ""
+      "Set ProtonMail as your default email application for this browser. ProtonMail will open automatically when you click an email link.": [
+        "Définissez ProtonMail comme application de messagerie par défaut pour ce navigateur. ProtonMail s'ouvrira automatiquement lorsque vous cliquerez sur un lien de courrier électronique."
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
         "La configuration de PGP vous permet d'envoyer des courriels chiffrés de bout en bout à un utilisateur qui n'utilise pas ProtonMail et qui utilise un service compatible PGP."
@@ -2380,6 +2396,9 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
         "Vous êtes actuellement connecté·e en tant que ${ user.Name } (${ user.Email }) et avez un accès restreint."
       ],
+      "You can also merge imported calendars with existing Proton calendars.": [
+        "Vous pouvez également fusionner des calendriers importés avec des calendriers Proton existants."
+      ],
       "You can check the progress ${ importProgressLink }.": [
         "Vous pouvez vérifier la progression ${ importProgressLink }."
       ],
@@ -2388,12 +2407,6 @@
       ],
       "You cannot undo this action.": [
         "Vous ne pouvez pas annuler cette action."
-      ],
-      "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
-        "Vous avez désactivé l'accès à la version bêta. Cliquez ${ refreshButton } pour utiliser la version stable de ${ appName }. L'application sera rechargée."
-      ],
-      "You have enabled Beta Access. Click ${ refreshButton } to use the latest version of ${ appName }. The application will be reloaded.": [
-        "Vous avez activé l'accès à la version bêta. Cliquez ${ refreshButton } pour utiliser la dernière version de ${ appName }. L'application sera rechargée."
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "Vous devez avoir une carte de crédit ou un compte bancaire lié à votre compte PayPal afin de l'ajouter comme mode de paiement."
@@ -3146,10 +3159,10 @@
         "Ajouter un code cadeau"
       ],
       "All mail": [
-        ""
+        "Tous les messages"
       ],
       "Archive": [
-        ""
+        "Archives"
       ],
       "clearing your browser cache": [
         "vider le cache de votre navigateur"
@@ -3158,13 +3171,13 @@
         "cliquez ici"
       ],
       "Drafts": [
-        ""
+        "Brouillons"
       ],
       "Go to subscription plans": [
         "Aller aux abonnements"
       ],
       "Inbox": [
-        ""
+        "Boîte de réception"
       ],
       "Learn more": [
         "En savoir plus"
@@ -3173,7 +3186,7 @@
         "Mes fichiers"
       ],
       "Outbox": [
-        ""
+        "Boîte d'envoi"
       ],
       "Pay invoice": [
         "Payer la facture"
@@ -3182,19 +3195,19 @@
         "Demander une invitation"
       ],
       "Scheduled": [
-        ""
+        "Programmés"
       ],
       "Sent": [
-        ""
+        "Envoyés"
       ],
       "Shared": [
         "Partagé"
       ],
       "Spam": [
-        ""
+        "Indésirables"
       ],
       "Starred": [
-        ""
+        "Favoris"
       ],
       "Trash": [
         "Corbeille"
@@ -4110,7 +4123,7 @@
         "Confirmer la perte des bonus Proton"
       ],
       "Contact details": [
-        ""
+        "Détails du contact"
       ],
       "Contact Details": [
         "Détails du contact"

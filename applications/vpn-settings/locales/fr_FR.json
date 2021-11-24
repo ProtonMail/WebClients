@@ -40,6 +40,9 @@
       "Activate my coupon": [
         "Activer mon code promotionnel"
       ],
+      "Activate recovery": [
+        "Activer la récupération"
+      ],
       "Add credit / debit card": [
         "Ajouter une carte de crédit/débit"
       ],
@@ -164,7 +167,7 @@
         "Modifier le numéro de téléphone"
       ],
       "Email me my username(s)": [
-        "M'envoyer mon/mes nom(s) d'utilisateur par courriel"
+        "M'envoyer mon/mes nom(s) d'utilisateur par e-mail"
       ],
       "enable desktop notifications": [
         "activer les notifications de bureau"
@@ -186,9 +189,6 @@
       ],
       "Go to panel ${ index }": [
         "Aller au panneau ${ index }"
-      ],
-      "here": [
-        "ici"
       ],
       "Hide": [
         "Masquer"
@@ -304,6 +304,9 @@
       "Send": [
         "Envoyer"
       ],
+      "Set recovery phrase": [
+        "Créer une phrase de récupération"
+      ],
       "Share via link": [
         "Partager avec un lien"
       ],
@@ -348,6 +351,12 @@
       ],
       "Update": [
         "Ajuster"
+      ],
+      "Update recovery file": [
+        "Mettre à jour le fichier de récupération"
+      ],
+      "Update recovery phrase": [
+        "Mettre à jour la phrase de récupération"
       ],
       "Upgrade": [
         "Changer d'offre"
@@ -1031,13 +1040,13 @@
     },
     "Frequency of news": {
       "(1 email per month)": [
-        "(1 courriel par mois)"
+        "(1 e-mail par mois)"
       ],
       "(1 email per quarter)": [
-        "(1 courriel par trimestre)"
+        "(1 e-mail par trimestre)"
       ],
       "(1-2 emails per month)": [
-        "(1 à 2 courriels par mois)"
+        "(1 à 2 e-mails par mois)"
       ]
     },
     "Group": {
@@ -1112,7 +1121,7 @@
         "CAPTCHA"
       ],
       "Email": [
-        "Adresse électronique"
+        "E-mail"
       ],
       "Manual": [
         "Manuel"
@@ -1230,7 +1239,7 @@
         "TOUTES VOS DONNÉES SERONT PERDUES !"
       ],
       "Allows you to host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
-        "Vous permet d'héberger des courriels pour votre/vos propre(s) domaine(s) dans ${ mailAppName }, par exemple john.smith@exemple.com"
+        "Vous permet d'héberger des e-mails pour votre/vos propre(s) domaine(s) dans ${ mailAppName }, par exemple john.smith@exemple.com"
       ],
       "Amount below minimum (${ amount }).": [
         "Montant inférieur au minimum requis (${ amount })."
@@ -1341,7 +1350,7 @@
         "Pour les familles et les équipes réduites ; Mail et VPN inclus."
       ],
       "For getting started with private and secure emailing.": [
-        "Pour commencer avec des courriels privés et sécurisés."
+        "Pour commencer avec des e-mails privés et sécurisés."
       ],
       "For individuals that need a fully-featured mailbox with advanced protection.": [
         "Pour les personnes qui ont besoin d'une messagerie complète avec une protection avancée."
@@ -1410,10 +1419,10 @@
         "Important : veuillez vous assurer de sauvegarder les codes de récupération. Sinon, vous pouvez perdre définitivement l'accès à votre compte si vous égarez votre appareil d'authentification à deux facteurs."
       ],
       "In case you lose your login details, we’ll send you recovery instructions via email or SMS.": [
-        "En cas de perte de vos données de connexion, nous vous enverrons des instructions de récupération par courriel ou par SMS."
+        "En cas de perte de vos données de connexion, nous vous enverrons des instructions de récupération par e-mail ou par SMS."
       ],
       "In case you lose your login details, we’ll send you recovery instructions via email.": [
-        "En cas de perte de vos données de connexion, nous vous enverrons des instructions de récupération par courriel."
+        "En cas de perte de vos données de connexion, nous vous enverrons des instructions de récupération par e-mail."
       ],
       "Included": [
         "Inclus"
@@ -1458,7 +1467,7 @@
         "Connectez-vous à ProtonMail pour activer votre adresse"
       ],
       "Make sure you remember the password to log in and decrypt emails. ${ boldAlert }. We recommend adding a recovery email first.": [
-        "Assurez-vous que vous vous souvenez du mot de passe pour vous connecter et déchiffrer les courriels. ${ boldAlert }. Nous vous recommandons d'ajouter d'abord une adresse électronique de récupération."
+        "Assurez-vous que vous vous souvenez du mot de passe pour vous connecter et déchiffrer les e-mails. ${ boldAlert }. Nous vous recommandons d'ajouter d'abord une adresse e-mail de récupération."
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
         "Veuillez saisir cette information manuellement dans votre appareil d'authentification à deux facteurs afin de configurer votre compte. ${ _switchButton }."
@@ -1755,12 +1764,6 @@
       "You cannot use the OpenVPN / IKEv2 credentials to log in to ProtonVPN applications or the ProtonVPN dashboard. ${ learnMore }": [
         "Vous ne pouvez pas utiliser les identifiants OpenVPN/IKEv2 pour vous connecter aux applications ProtonVPN ou au tableau de bord ProtonVPN. ${ learnMore }"
       ],
-      "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
-        "Vous avez désactivé l'accès à la version bêta. Cliquez ${ refreshButton } pour utiliser la version stable de ${ appName }. L'application sera rechargée."
-      ],
-      "You have enabled Beta Access. Click ${ refreshButton } to use the latest version of ${ appName }. The application will be reloaded.": [
-        "Vous avez activé l'accès à la version bêta. Cliquez ${ refreshButton } pour utiliser la dernière version de ${ appName }. L'application sera rechargée."
-      ],
       "You have no saved payment methods.": [
         "Vous n'avez aucun mode de paiement enregistré."
       ],
@@ -1948,7 +1951,7 @@
         "Code à 6 chiffres"
       ],
       "Allow recovery by email": [
-        "Autoriser la récupération par courriel"
+        "Autoriser la récupération par e-mail"
       ],
       "Allow recovery by phone": [
         "Autoriser la récupération par téléphone"
@@ -2032,7 +2035,7 @@
         "Code CVV"
       ],
       "Daily email notifications": [
-        "Notifications quotidiennes par courriel"
+        "Notifications quotidiennes par e-mail"
       ],
       "Danger": [
         "Danger"
@@ -2053,7 +2056,7 @@
         "Avez-vous des suggestions pour notre équipe ?"
       ],
       "Email": [
-        "Adresse électronique"
+        "Adresse e-mail"
       ],
       "Email address": [
         "Adresse électronique"
@@ -2263,6 +2266,9 @@
       "Proton newsletter": [
         "Newsletter Proton"
       ],
+      "Proton offers and promotions": [
+        "Offres et promotions Proton"
+      ],
       "Proton product announcements": [
         "Annonces de produits Proton"
       ]
@@ -2377,7 +2383,7 @@
         "Réponses automatiques"
       ],
       "Catch-All email": [
-        "Collecteur de courriels (catch-all)"
+        "Collecteur d’e-mails (catch-all)"
       ],
       "Contact groups": [
         "Groupes de contact"
@@ -2449,7 +2455,7 @@
         "Obtenir le support multiutilisateur"
       ],
       "Host emails for your organization": [
-        "Héberger des courriels pour votre organisation"
+        "Héberger des e-mails pour votre organisation"
       ]
     },
     "Many Others": {
@@ -2522,7 +2528,7 @@
         "Configurez votre organisation"
       ],
       "This is what people will see when you send them an email, invite them to an event, or share a file with them.": [
-        "C'est ce que les gens verront quand vous leur enverrez un courriel, les inviterez à un événement ou partagerez un fichier avec eux."
+        "C'est ce que les gens verront quand vous leur enverrez un e-mail, les inviterez à un événement ou partagerez un fichier avec eux."
       ],
       "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
         "Utilisez le sélecteur d'application en haut à gauche pour accéder à d'autres services Proton, y compris VPN, Calendar et Drive."
@@ -2638,7 +2644,7 @@
         "p. ex. Julia Smith"
       ],
       "Email": [
-        "Adresse électronique"
+        "Adresse e-mail"
       ],
       "Email address": [
         "Adresse électronique"
@@ -2968,7 +2974,7 @@
         "Code cadeau appliqué"
       ],
       "If you entered a valid notification email we will send you an email with your usernames in the next minute": [
-        "Si vous avez saisi une adresse électronique de notification correcte, nous vous enverrons un courriel avec vos noms d'utilisateurs dans la prochaine minute"
+        "Si vous avez saisi une adresse e-mail de notification correcte, nous vous enverrons un e-mail avec vos noms d'utilisateurs dans la prochaine minute"
       ],
       "Invoice customized": [
         "Facture personnalisée"
@@ -3195,7 +3201,7 @@
         "Modifier la carte de crédit/débit"
       ],
       "Email subscriptions": [
-        "Abonnements par courriel"
+        "Abonnements par e-mail"
       ],
       "Enter verification code": [
         "Saisir le code de vérification"
@@ -3462,10 +3468,10 @@
         "Accédez à toutes les fonctionnalités payantes de ProtonVPN et ProtonMail (le service de messagerie chiffrée que des millions de personnes utilisent pour protéger leurs données) avec une seule offre."
       ],
       "Host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
-        "Hébergez des courriels pour votre/vos propre(s) domaine(s) sur ${ mailAppName }, par exemple john.smith@example.com"
+        "Hébergez des e-mails pour votre/vos propre(s) domaine(s) sur ${ mailAppName }, par exemple john.smith@example.com"
       ],
       "Host emails for your own domain(s) at ProtonMail, e.g. john.smith@example.com": [
-        "Hébergez des courriels pour votre/vos propre(s) domaine(s) sur ProtonMail, par exemple john.smith@example.com"
+        "Hébergez des e-mails pour votre/vos propre(s) domaine(s) sur ProtonMail, par exemple john.smith@example.com"
       ],
       "If you forget your password, you will no longer have access to your account or your data. Please save it someplace safe.": [
         "Si vous oubliez votre mot de passe, vous n'aurez plus accès à votre compte ou à vos données. Veuillez l'enregistrer dans un endroit sûr."
@@ -3498,7 +3504,7 @@
         "Utilisez plusieurs adresses/alias liés à votre compte, par exemple username2@protonmail.com"
       ],
       "Use the personal address username@pm.me to send emails": [
-        "Utilisez l'adresse personnelle nomdutilisateur@pm.me pour envoyer des courriels"
+        "Utilisez l'adresse personnelle nomdutilisateur@pm.me pour envoyer des e-mails"
       ],
       "Username which is used for all Proton services. This can also be used later to create a secure ProtonMail account.": [
         "Nom d'utilisateur utilisé pour tous les services Proton. Cela peut également être utilisé plus tard pour créer un compte sécurisé ProtonMail."
@@ -3685,10 +3691,10 @@
         "Êtes-vous sûr de vouloir supprimer ce numéro de téléphone?"
       ],
       "By deleting this address, you will no longer be able to receive daily email notifications.": [
-        "En supprimant cette adresse, vous ne pourrez plus recevoir de notifications quotidiennes par courriel."
+        "En supprimant cette adresse, vous ne pourrez plus recevoir de notifications quotidiennes par e-mail."
       ],
       "By deleting this address, you will no longer be able to recover your account or receive daily email notifications.": [
-        "En supprimant cette adresse, vous ne pourrez plus récupérer votre compte ou recevoir de notifications quotidiennes par courriel."
+        "En supprimant cette adresse, vous ne pourrez plus récupérer votre compte ou recevoir de notifications quotidiennes par e-mail."
       ],
       "By deleting this address, you will no longer be able to recover your account.": [
         "En supprimant cette adresse, vous ne pourrez plus récupérer votre compte."

@@ -14,6 +14,9 @@
       "${ BRAND_NAME } shop": [
         "магазин ${ BRAND_NAME }"
       ],
+      "Activate recovery": [
+        "Активировать восстановление"
+      ],
       "Add": [
         "Добавить"
       ],
@@ -125,9 +128,6 @@
       "Copy email to clipboard": [
         "Скопировать адрес эл. почты в буфер обмена"
       ],
-      "Create": [
-        "Создать"
-      ],
       "Create calendar": [
         "Создать календарь"
       ],
@@ -140,8 +140,8 @@
       "Decrease": [
         "Уменьшить"
       ],
-      "Default mail handler": [
-        ""
+      "Default email application": [
+        "Приложение электронной почты по умолчанию"
       ],
       "Delete": [
         "Удалить"
@@ -217,9 +217,6 @@
       ],
       "Go to settings": [
         "Перейти в настройки"
-      ],
-      "here": [
-        "здесь"
       ],
       "Hide advanced PGP settings": [
         "Скрыть расширенные настройки PGP"
@@ -350,9 +347,6 @@
       "Previous year": [
         "Предыдущий год"
       ],
-      "Prompt browser setting": [
-        ""
-      ],
       "Quit": [
         "Выйти"
       ],
@@ -412,6 +406,12 @@
       ],
       "Send": [
         "Отправить"
+      ],
+      "Set as default": [
+        "Установить по умолчанию"
+      ],
+      "Set recovery phrase": [
+        "Установить фразу для восстановления"
       ],
       "Share": [
         "Поделиться"
@@ -484,6 +484,12 @@
       ],
       "Update": [
         "Обновить"
+      ],
+      "Update recovery file": [
+        "Обновить файл восстановления"
+      ],
+      "Update recovery phrase": [
+        "Обновить фразу для восстановления"
       ],
       "Upgrade": [
         "Повысить"
@@ -918,7 +924,7 @@
         "${ name } предварительно принял приглашение"
       ],
       "This event has been canceled": [
-        ""
+        "Это событие было отменено"
       ],
       "You accepted the invitation": [
         "Вы приняли приглашение"
@@ -996,7 +1002,7 @@
     },
     "colon": {
       ": ": [
-        ""
+        ": "
       ]
     },
     "Composer size": {
@@ -1293,7 +1299,7 @@
     },
     "Email body for invitation": {
       "${ eventTitle } has been canceled.": [
-        ""
+        "Событие «${ eventTitle }» было отменено."
       ],
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
         "Событие «${ eventTitle }» было обновлено.\n${ eventDetailsText }"
@@ -1434,6 +1440,12 @@
       "Decryption error: Decryption of this event's content failed.": [
         "Ошибка расшифровки: не удалось расшифровать содержимое этого события."
       ],
+      "Deselect at least ${ calendarToFixCount } calendar": [
+        "",
+        "",
+        "",
+        ""
+      ],
       "Deselect at least ${ calendarToFixCount } calendar or": [
         "Отмените выбор по крайней мере ${ calendarToFixCount } календарь или",
         "Отмените выбор по крайней мере ${ calendarToFixCount } календарей или",
@@ -1542,6 +1554,9 @@
       "Name required": [
         "Требуется имя"
       ],
+      "No data to import": [
+        ""
+      ],
       "No key retrieved for internal user is valid for sending": [
         "Ни один их полученных ключей внутреннего пользователя не годен для отправки"
       ],
@@ -1576,7 +1591,7 @@
         "В нескольких группах нет контактов: ${ noContactGroupList } "
       ],
       "Organization not recognized. Try again.": [
-        ""
+        "Организация не распознана. Попробуйте еще."
       ],
       "Passwords do not match": [
         "Пароли не совпадают"
@@ -1712,9 +1727,6 @@
       ]
     },
     "Error importing calendar": {
-      "${ CALENDAR_APP_NAME } only supports importing calendars with iCal version 2.0.": [
-        ""
-      ],
       "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
         ""
       ],
@@ -1915,7 +1927,7 @@
     },
     "Event canceled status badge": {
       "canceled": [
-        ""
+        "отменено"
       ]
     },
     "Event delete button tooltip": {
@@ -1946,7 +1958,7 @@
         "Вложенный файл ICS невозможно расшифровать"
       ],
       "Attached ICS file could not be read": [
-        ""
+        "Невозможно прочитать вложенный файл ICS"
       ],
       "Invalid invitation": [
         "Недействительное приглашение"
@@ -2383,9 +2395,6 @@
       "Account successfully updated": [
         "Учётная запись успешно обновлена"
       ],
-      "Activating this option will open a new composer each time you click on a mailto: link.": [
-        ""
-      ],
       "Add additional addresses to your account like user2@protonmail.com": [
         "Добавьте дополнительные адреса в свой аккаунт, например user2@protonmail.com"
       ],
@@ -2517,6 +2526,9 @@
       ],
       "Daily": [
         "Ежедневно"
+      ],
+      "Default email application": [
+        "Приложение электронной почты по умолчанию"
       ],
       "Discard changes?": [
         "Отменить изменения?"
@@ -2788,7 +2800,7 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Выберите формат письма, который вы хотите использовать по умолчанию при отправке почты на этот адрес."
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit. You can also merge imported calendars with existing Proton calendars.": [
+      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         ""
       ],
       "Servers are unreachable. Please try again in a few minutes": [
@@ -2797,8 +2809,8 @@
       "Session timed out.": [
         "Время сессии истекло."
       ],
-      "Set ProtonMail as your default mail handler": [
-        ""
+      "Set ProtonMail as your default email application for this browser. ProtonMail will open automatically when you click an email link.": [
+        "Установить ProtonMail в качестве почтового клиента по умолчанию для этого браузера. ProtonMail будет открываться автоматически после нажатия на почтовую ссылку."
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
         "Настройка PGP позволяет вам отправлять зашифрованные письма пользователям вне ProtonMail, которые пользуются совместимыми с PGP сервисами."
@@ -2968,6 +2980,9 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
         "В настоящее время вы вошли как ${ user.Name } (${ user.Email }), и Ваш доступ ограничен."
       ],
+      "You can also merge imported calendars with existing Proton calendars.": [
+        ""
+      ],
       "You can check the progress ${ importProgressLink }.": [
         "Вы можете проверить процесс ${ importProgressLink }."
       ],
@@ -2976,12 +2991,6 @@
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Вы можете включить уведомления, чтобы получать оповещения при появлении новых сообщений в этой папке."
-      ],
-      "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
-        "Вы выключили доступ к Beta. Нажмите ${ refreshButton }, чтобы использовать стабильную версию ${ appName }. Приложение будет перезагружено."
-      ],
-      "You have enabled Beta Access. Click ${ refreshButton } to use the latest version of ${ appName }. The application will be reloaded.": [
-        "Вы включили доступ к Beta. Нажмите ${ refreshButton }, чтобы использовать последнюю версию ${ appName }. Приложение будет перезагружено."
       ],
       "You have reactivated your keys and events linked to the following calendars can now be decrypted.": [
         "Вы повторно активировали свои ключи, и события, связанные со следующими календарями, теперь могут быть расшифрованы."
@@ -3325,6 +3334,9 @@
       "All day": [
         "Весь день"
       ],
+      "All-day event notifications": [
+        "Уведомления о событии в течение всего дня"
+      ],
       "Automatically save contacts": [
         "Автоматически сохранять контакты"
       ],
@@ -3358,11 +3370,11 @@
       "Category": [
         "Категория"
       ],
-      "Choose a color": [
-        "Выберите цвет"
-      ],
       "City": [
         "Город"
+      ],
+      "Color": [
+        "Цвет"
       ],
       "Contacts": [
         "Контакты"
@@ -3375,18 +3387,6 @@
       ],
       "CVV code": [
         "CVV-код"
-      ],
-      "Default email": [
-        "Эл. почта по умолчанию"
-      ],
-      "Default event duration": [
-        "Длительность события по умолчанию"
-      ],
-      "Default full day notifications": [
-        "Стандартные уведомления для событий на весь день"
-      ],
-      "Default notifications": [
-        "Уведомления по умолчанию"
       ],
       "Description": [
         "Описание"
@@ -3423,6 +3423,9 @@
       ],
       "Enter the 6-digit code": [
         "Введите код из шести цифр"
+      ],
+      "Event duration": [
+        "Длительность события"
       ],
       "Event frequency": [
         "Частота события"
@@ -3709,10 +3712,10 @@
         "Добавить подарочный код"
       ],
       "All mail": [
-        ""
+        "Вся почта"
       ],
       "Archive": [
-        ""
+        "Архив"
       ],
       "Calendars": [
         "Календари"
@@ -3724,13 +3727,13 @@
         "нажмите здесь"
       ],
       "Drafts": [
-        ""
+        "Черновики"
       ],
       "Go to subscription plans": [
         "Перейти на страницу подписки"
       ],
       "Inbox": [
-        ""
+        "Входящие"
       ],
       "Learn more": [
         "Подробнее"
@@ -3739,7 +3742,7 @@
         "Мои календари"
       ],
       "Outbox": [
-        ""
+        "Исходящие"
       ],
       "Pay invoice": [
         "Оплатить счёт"
@@ -3748,13 +3751,13 @@
         "Запросить приглашение"
       ],
       "Scheduled": [
-        ""
+        "Запланировано"
       ],
       "Sent": [
-        ""
+        "Отправленные"
       ],
       "Spam": [
-        ""
+        "Спам"
       ],
       "Starred": [
         ""
@@ -3763,7 +3766,7 @@
         "Подписанные на календари"
       ],
       "Trash": [
-        ""
+        "Корзина"
       ],
       "Upgrade": [
         "Повысить"
@@ -4296,16 +4299,16 @@
     },
     "Onboarding ProtonCalendar": {
       "A calendar is a record of your life. Keep your life secure and private with ${ appName }.": [
-        ""
+        "Календарь - это запись вашей жизни. Сохраните свою жизнь в безопасности и конфиденциальности с помощью ${ appName }."
       ],
       "Import events": [
-        ""
+        "Импортировать события"
       ],
       "Meet your new encrypted calendar": [
-        ""
+        "Познакомьтесь с вашим новым зашифрованным календарем"
       ],
       "Start using ${ appName }": [
-        ""
+        "Начать использовать ${ appName }"
       ]
     },
     "Option": {
@@ -4403,6 +4406,11 @@
       ],
       "PayPal": [
         "PayPal"
+      ]
+    },
+    "Personal calendar limit reached modal body": {
+      "Unable to create more calendars. You have reached the maximum of personal calendars within your plan.": [
+        ""
       ]
     },
     "PGP key encryption warning": {
@@ -4719,16 +4727,7 @@
       ]
     },
     "Subscribed calendar limit reached modal body": {
-      "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } subscribed calendar.": [
-        "",
-        "",
-        "",
-        ""
-      ],
-      "You have reached the maximum of ${ personalCalendarLimit } personal calendar.": [
-        "",
-        "",
-        "",
+      "Unable to add more calendars. You have reached the maximum of subscribed calendars within your plan.": [
         ""
       ]
     },
@@ -5070,7 +5069,7 @@
         "Подтвердите потерю бонусов Proton"
       ],
       "Contact details": [
-        ""
+        "Информация контакта"
       ],
       "Contact Details": [
         "Контактные данные"
@@ -5149,6 +5148,9 @@
       ],
       "Downgrade account": [
         "Понизить учетную запись"
+      ],
+      "Edit calendar": [
+        "Редактировать календарь"
       ],
       "Edit contact": [
         "Изменение контакта"
@@ -5401,9 +5403,6 @@
       ],
       "Unsupported browser": [
         "Неподдерживаемый браузер"
-      ],
-      "Update calendar": [
-        "Обновление календаря"
       ],
       "Update event": [
         "Обновление события"

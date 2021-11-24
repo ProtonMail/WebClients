@@ -20,6 +20,9 @@
       "Activate": [
         "Attiva"
       ],
+      "Activate recovery": [
+        "Attiva il ripristino"
+      ],
       "Add": [
         "Aggiungi"
       ],
@@ -98,14 +101,11 @@
       "Cancel": [
         "Annulla"
       ],
-      "Cancel action": [
-        "Annulla azione"
-      ],
       "Carbon Copy, Blind Carbon Copy": [
         "Copia conoscenza, Copia conoscenza nascosta"
       ],
-      "CC, BCC": [
-        "CC, CCN"
+      "CC BCC": [
+        "CC CCN"
       ],
       "Change page": [
         "Cambia pagina"
@@ -218,7 +218,7 @@
       "Decrease": [
         "Riduci"
       ],
-      "Default mail handler": [
+      "Default email application": [
         ""
       ],
       "Delete": [
@@ -310,14 +310,14 @@
       "Expand composer": [
         "Espandi il compositore"
       ],
-      "Expiration time": [
-        "Orario di scadenza"
-      ],
       "Export": [
         "Esporta"
       ],
       "Export contacts": [
         "Esporta contatti"
+      ],
+      "Fewer search options": [
+        ""
       ],
       "Filter on...": [
         "Filtra per..."
@@ -360,9 +360,6 @@
       ],
       "Got it": [
         "Capito"
-      ],
-      "here": [
-        "qui"
       ],
       "Hide": [
         "Nascondi"
@@ -419,6 +416,9 @@
       "Insert contact": [
         "Inserisci un contatto"
       ],
+      "Insert contacts": [
+        "Inserisci dei contatti"
+      ],
       "Insert image": [
         "Inserisci immagine"
       ],
@@ -445,9 +445,6 @@
       ],
       "Learn more": [
         "Scopri di più"
-      ],
-      "Less search options": [
-        "Meno opzioni di ricerca"
       ],
       "Load": [
         "Carica"
@@ -629,9 +626,6 @@
       "Print": [
         "Stampa"
       ],
-      "Prompt browser setting": [
-        ""
-      ],
       "Quit": [
         "Chiudi"
       ],
@@ -737,6 +731,15 @@
       "Set": [
         "Imposta"
       ],
+      "Set as default": [
+        "Imposta come predefinito"
+      ],
+      "Set expiration time": [
+        ""
+      ],
+      "Set recovery phrase": [
+        "Imposta frase di recupero"
+      ],
       "Share via link": [
         "Condividi con link"
       ],
@@ -755,6 +758,9 @@
       "Show details": [
         "Mostra i dettagli"
       ],
+      "Show fewer search options": [
+        ""
+      ],
       "Show folders": [
         "Mostra cartelle"
       ],
@@ -766,9 +772,6 @@
       ],
       "Show less": [
         "Mostra meno"
-      ],
-      "Show less search options": [
-        "Mostra meno opzioni di ricerca"
       ],
       "Show messages": [
         "Mostra i messaggi"
@@ -805,6 +808,9 @@
       ],
       "Switch account": [
         "Cambia account"
+      ],
+      "Switch to rich text": [
+        ""
       ],
       "Theme": [
         "Tema"
@@ -854,6 +860,15 @@
       ],
       "Untrust": [
         "Non ritenere attendibile"
+      ],
+      "Update": [
+        "Aggiorna"
+      ],
+      "Update recovery file": [
+        "Aggiorna il file di ripristino"
+      ],
+      "Update recovery phrase": [
+        "Aggiorna frase di recupero"
       ],
       "Upgrade": [
         "Effettua l'upgrade"
@@ -913,7 +928,7 @@
         "Visualizza codice sorgente"
       ],
       "Why not?": [
-        "Perchè no?"
+        "Perché no?"
       ],
       "Yes": [
         "Sì"
@@ -1426,13 +1441,13 @@
         "Questa risposta non può essere aggiunta a${ calendarAppName } in quanto al momento supportiamo solo le risposte a tutti gli eventi di una serie"
       ],
       "This event has been canceled.": [
-        ""
+        "Questo evento è stato cancellato."
       ],
       "This event has been updated.": [
         "Questo evento è stato aggiornato."
       ],
       "This invitation is out of date. The event has been canceled.": [
-        ""
+        "Questo invito è scaduto. L'evento è stato annullato."
       ],
       "This invitation is out of date. The event has been deleted.": [
         "Quest'invito è scaduto. L'evento è stato eliminato."
@@ -1846,7 +1861,7 @@
     },
     "Email body for invitation": {
       "${ eventTitle } has been canceled.": [
-        ""
+        "${ eventTitle } è stato cancellato."
       ],
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
         "${ eventTitle } è stato aggiornato.\n${ eventDetailsText }"
@@ -1908,7 +1923,7 @@
         ""
       ],
       "Event details cannot be decrypted. ${ whyNotLink }": [
-        ""
+        "I dettagli dell'evento non possono essere decifrati. ${ whyNotLink }"
       ]
     },
     "Email reminder error": {
@@ -1921,7 +1936,7 @@
         "Evento cancellato"
       ],
       "Event was updated. This reminder is out-of-date.": [
-        ""
+        "L'evento è stato aggiornato. Questo promemoria non è aggiornato."
       ]
     },
     "Email subject": {
@@ -2026,6 +2041,10 @@
       "Decryption error: decryption of this message's encrypted content failed.": [
         "Errore di decriptazione: decriptazione del contenuto cifrato di questo messaggio fallita."
       ],
+      "Deselect at least ${ calendarToFixCount } calendar": [
+        "Deseleziona almeno ${ calendarToFixCount } calendario",
+        "Deseleziona almeno ${ calendarToFixCount } calendari"
+      ],
       "Deselect at least ${ calendarToFixCount } calendar or": [
         "Deseleziona almeno ${ calendarToFixCount } calendario o",
         "Deseleziona almeno ${ calendarToFixCount } calendari o"
@@ -2121,9 +2140,6 @@
       "Message needs to be sent first": [
         "Il messaggio deve essere prima inviato"
       ],
-      "Message passwords do not match": [
-        "Le password del messaggio non corrispondono"
-      ],
       "Message processing error.": [
         "Errore elaborazione messaggio."
       ],
@@ -2138,6 +2154,9 @@
       ],
       "No address with keys available to compose a message": [
         "Non c'è un indirizzo con chiavi disponibile per comporre un messaggio"
+      ],
+      "No data to import": [
+        "Nessun dato da importare"
       ],
       "No key retrieved for internal user is valid for sending": [
         "Nessuna chiave recuperata per l'utente locale è valida per l'invio"
@@ -2192,6 +2211,12 @@
       ],
       "Please refresh the page.": [
         "Per favore ricarica la pagina."
+      ],
+      "Please repeat the password": [
+        ""
+      ],
+      "Please set a password": [
+        "Si prega di impostare una password"
       ],
       "Preferences could not be saved": [
         "Le preferenze non possono essere salvate"
@@ -2527,7 +2552,7 @@
         "Il file ICS allegato non può essere decifrato"
       ],
       "Attached ICS file could not be read": [
-        ""
+        "Impossibile leggere il file ICS allegato"
       ],
       "Invalid invitation": [
         "Invito non valido"
@@ -2682,19 +2707,16 @@
       ]
     },
     "Get started checklist completion": {
-      "We've added 1 GB of bonus storage to your account. Continue to explore ${ BRAND_NAME } and share your ${ protonMailAppName } address with your family, friends, and colleagues.": [
+      "We've increased the total storage of your account to ${ totalGBStorageAfterCompletion } GB. Get additional storage and unlock premium features today.": [
         ""
       ],
-      "We've added 1 GB of bonus storage to your account. For even more storage and premium features, upgrade your plan.": [
-        "Abbiamo aggiunto 1 GB di spazio di archiviazione bonus al tuo account. Per ancora più spazio di archiviazione e funzionalità premium, aggiorna il tuo piano."
-      ],
-      "You're a privacy champ!": [
-        "Sei un campione della privacy!"
+      "You're all set!": [
+        ""
       ]
     },
     "Get started checklist incentive": {
-      "Complete all steps and get a total of 2 GB on your account": [
-        "Completa tutti i passaggi e ottieni un totale di 2 GB sul tuo account"
+      "Complete all steps and get a total of ${ totalGBStorageAfterCompletion } GB on your account": [
+        ""
       ],
       "Only ${ days } day left": [
         "Solo ${ days } giorno rimasto",
@@ -3093,9 +3115,6 @@
       "Account successfully updated": [
         "Profilo aggiornato correttamente"
       ],
-      "Activating this option will open a new composer each time you click on a mailto: link.": [
-        ""
-      ],
       "Activation in progress": [
         "Attivazione in corso"
       ],
@@ -3224,9 +3243,6 @@
       "Center": [
         "Centra"
       ],
-      "Change your default in settings": [
-        "Cambia il predefinito nelle impostazioni"
-      ],
       "Checking contact ${ progress } of ${ max }...": [
         "Controllo contatto ${ progress } di ${ max }..."
       ],
@@ -3250,9 +3266,6 @@
       ],
       "Close this screen to exit.": [
         "Chiudi questa schermata per uscire."
-      ],
-      "Confirm Password": [
-        "Conferma la password"
       ],
       "Confirm phishing report": [
         "Conferma segnalazione di phishing"
@@ -3303,6 +3316,9 @@
       "Day": [
         "Giorno",
         "Giorni"
+      ],
+      "Default email application": [
+        ""
       ],
       "Disable message content search": [
         "Disabilita la ricerca del contenuto del messaggio"
@@ -3392,6 +3408,9 @@
       "Estimating time remaining...": [
         "Stimando il tempo rimanente..."
       ],
+      "Expiration time": [
+        "Data di scadenza"
+      ],
       "Expiration Time": [
         "Orario di scadenza"
       ],
@@ -3440,9 +3459,6 @@
       ],
       "Full-featured VPN with speed up to 10 Gbps.": [
         "VPN completa con velocità fino a 10 Gbps."
-      ],
-      "Generate recovery phrase": [
-        "Genera frase di recupero"
       ],
       "Get more storage and premium features.": [
         "Ottieni ulteriore archiviazione e funzionalità premium."
@@ -3513,10 +3529,6 @@
       "Insert image": [
         "Inserisci immagine"
       ],
-      "Insert image as": [
-        "Inserisci immagine come",
-        "Inserisci immagini come"
-      ],
       "Insert link": [
         "Inserisci link"
       ],
@@ -3568,6 +3580,9 @@
       "Manage your labels": [
         "Gestisci le tue etichette"
       ],
+      "members": [
+        "membri"
+      ],
       "Members": [
         "Membri"
       ],
@@ -3579,9 +3594,6 @@
       ],
       "Message headers": [
         "Intestazioni del messaggio"
-      ],
-      "Message Password": [
-        "Password del messaggio"
       ],
       "Message sent": [
         "Messaggio inviato"
@@ -3664,14 +3676,8 @@
       "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
         "Cambia queste impostazioni solo se stai usando PGP con destinatari non-ProtonMail."
       ],
-      "or": [
-        "o"
-      ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Il nostro sistema ha contrassegnato questo messaggio come un tentativo di phishing. Sei pregato di verificare che sia legittimo."
-      ],
-      "Password Hint (Optional)": [
-        "Suggerimento della Password (Facoltativo)"
       ],
       "Payment can take a few minutes to fully verify.": [
         "Il pagamento può impiegare alcuni minuti per la verifica completa."
@@ -3691,11 +3697,11 @@
       "Plain text": [
         "Testo normale"
       ],
-      "Please add at least one recipient before sending.": [
-        "Aggiungi almeno un destinatario prima dell'invio."
+      "Please add at least one recipient.": [
+        "Per favore, inserisci almeno un destinatario."
       ],
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
-        ""
+        "Per favore, tienilo al sicuro. Ti servirà per accedere al tuo account e decrittografare i tuoi dati in caso di reimpostazione della password."
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Nota che gli indirizzi assegnati a questo gruppo NON verranno eliminati."
@@ -3812,8 +3818,8 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Seleziona il formato email che desideri utilizzare per impostazione predefinita quando invii un'email a questo indirizzo email."
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit. You can also merge imported calendars with existing Proton calendars.": [
-        "Seleziona quali calendari importare. Verrà creato un nuovo calendario per ogni calendario importato fino al limite di 20 calendari. Puoi anche unire i calendari importati con i calendari Proton esistenti."
+      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
+        "Seleziona quali calendari importare. Verrà creato un nuovo calendario per ogni calendario importato fino al limite di 20 calendari."
       ],
       "Sending": [
         "Invio in corso"
@@ -3830,7 +3836,10 @@
       "Session timed out.": [
         "Sessione scaduta."
       ],
-      "Set ProtonMail as your default mail handler": [
+      "Set a recovery phrase": [
+        ""
+      ],
+      "Set ProtonMail as your default email application for this browser. ProtonMail will open automatically when you click an email link.": [
         ""
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
@@ -3972,11 +3981,11 @@
       "This message will be sent shortly": [
         "Questo messaggio sarà inviato a breve"
       ],
+      "This message will expire ${ dateString } at ${ formattedTime }": [
+        ""
+      ],
       "This message will expire ${ formattedDate }": [
         "Questo messaggio scadrà ${ formattedDate }"
-      ],
-      "This message will expire in": [
-        "Questo messaggio scadrà tra"
       ],
       "This message will expire in ${ formattedDelay }": [
         "Questo messaggio scadrà in ${ formattedDelay }"
@@ -4131,6 +4140,12 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
         "Al momento hai effettuato l'accesso come ${ user.Name } (${ user.Email }) e hai un accesso limitato."
       ],
+      "You can add it as an attachment or display it inline in your mail body.": [
+        ""
+      ],
+      "You can also merge imported calendars with existing Proton calendars.": [
+        "Puoi anche unire i calendari importati con i calendari Proton esistenti."
+      ],
       "You can check the progress ${ importProgressLink }.": [
         "Puoi controllare lo stato di avanzamento ${ importProgressLink }."
       ],
@@ -4173,12 +4188,6 @@
       "You have **${ count } message** tagged with this label": [
         "",
         ""
-      ],
-      "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
-        "Hai disabilitato l'Accesso Beta. Clicca ${ refreshButton } per usare la versione stabile di ${ appName }. L'applicazione sarà ricaricata."
-      ],
-      "You have enabled Beta Access. Click ${ refreshButton } to use the latest version of ${ appName }. The application will be reloaded.": [
-        "Hai abilitato l'Accesso Beta. Clicca ${ refreshButton } per usare l'ultima versione di ${ appName }. L'applicazione sarà ricaricata."
       ],
       "You have not given your email any subject. Do you want to send the message anyway?": [
         "Non hai inserito alcun oggetto nella email. Vuoi comunque inviare il messaggio?"
@@ -4223,8 +4232,8 @@
       "You will soon be redirected to PayPal to verify your payment.": [
         "Sarai presto reindirizzato a PayPal per verificare il tuo pagamento."
       ],
-      "You wrote \"${ keyword }\", but no attachment has been added. Do you want to send your message anyway?": [
-        "Hai scritto \"${ keyword }\", ma nessun allegato è stato aggiunto. Vuoi comunque inviare il tuo messaggio?"
+      "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
+        ""
       ],
       "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
         "Il tuo account ha almeno una fattura scaduta. Il tuo accesso è stato limitato. ${ payInvoiceLink }"
@@ -4263,6 +4272,9 @@
     "info": {
       "(beta)": [
         "(beta)"
+      ],
+      "Optional": [
+        ""
       ]
     },
     "Info concerning plan features": {
@@ -4616,6 +4628,9 @@
       "Conditions": [
         "Condizioni"
       ],
+      "Confirm Password": [
+        "Conferma Password"
+      ],
       "Contacts": [
         "Contatti"
       ],
@@ -4748,8 +4763,14 @@
       "Manage labels": [
         "Gestisci le etichette"
       ],
+      "Manage my addresses": [
+        "Gestisci i miei indirizzi"
+      ],
       "Mark as": [
         "Segna come"
+      ],
+      "Message Password": [
+        "Messaggio Password"
       ],
       "Move to": [
         "Sposta in"
@@ -4783,6 +4804,9 @@
       ],
       "Password": [
         "Password"
+      ],
+      "Password Hint": [
+        "Suggerimento password"
       ],
       "Payer": [
         "Pagante"
@@ -5504,6 +5528,9 @@
       ],
       "Contact group updated": [
         "Gruppo di contatto aggiornato"
+      ],
+      "Password has been set successfully": [
+        ""
       ]
     },
     "Onboarding": {
@@ -6502,9 +6529,6 @@
       "Add contact group name": [
         "Aggiungi nome gruppo di contatti"
       ],
-      "Add contacts": [
-        "Aggiungi contatti"
-      ],
       "Add filter": [
         "Aggiungi filtro"
       ],
@@ -6721,9 +6745,6 @@
       "Expand content": [
         "Espandi contenuto"
       ],
-      "Expiration time": [
-        "Data di scadenza"
-      ],
       "Exporting contacts": [
         "Esportazione contatti"
       ],
@@ -6793,9 +6814,6 @@
       "Message list": [
         "Elenco messaggi"
       ],
-      "Message without subject?": [
-        "Messaggio senza oggetto?"
-      ],
       "More": [
         "Altro"
       ],
@@ -6834,9 +6852,6 @@
       ],
       "No attachment found": [
         "Nessun allegato trovato"
-      ],
-      "No recipient": [
-        "Nessun destinatario"
       ],
       "Open actions dropdown": [
         "Apri menu a discesa delle azioni"
@@ -6891,6 +6906,9 @@
       ],
       "Re-signing contacts": [
         "Ri-firma contatti"
+      ],
+      "Recipient missing": [
+        ""
       ],
       "Recover data": [
         "Recupera dati"
@@ -6954,6 +6972,9 @@
       ],
       "Storage capacity warning": [
         "Avviso capacità di archiviazione"
+      ],
+      "Subject missing": [
+        ""
       ],
       "Subtotal": [
         "Subtotale"
@@ -7094,6 +7115,17 @@
       ],
       "You do not have any contacts to export": [
         "Non hai alcun contatto da esportare"
+      ]
+    },
+    "Update font modal": {
+      "Today is a good day to write an email": [
+        ""
+      ],
+      "Update default font and size": [
+        ""
+      ],
+      "Your default font will look like following:": [
+        ""
       ]
     },
     "Validation": {

@@ -40,6 +40,9 @@
       "Activate my coupon": [
         "Aktywuj mój kupon"
       ],
+      "Activate recovery": [
+        "Aktywuj odzyskiwanie"
+      ],
       "Add credit / debit card": [
         "Dodaj kartę płatniczą"
       ],
@@ -134,7 +137,7 @@
         "Szczegóły"
       ],
       "Did not receive the code?": [
-        "Nie otrzymałeś kodu?"
+        "Nie otrzymano kodu?"
       ],
       "Done": [
         "Gotowe"
@@ -186,9 +189,6 @@
       ],
       "Go to panel ${ index }": [
         "Przejdź do panelu ${ index }"
-      ],
-      "here": [
-        "tutaj"
       ],
       "Hide": [
         "Ukryj"
@@ -304,6 +304,9 @@
       "Send": [
         "Wyślij"
       ],
+      "Set recovery phrase": [
+        "Ustaw hasło odzyskiwania"
+      ],
       "Share via link": [
         "Udostępnij przez link"
       ],
@@ -348,6 +351,12 @@
       ],
       "Update": [
         "Zaktualizuj"
+      ],
+      "Update recovery file": [
+        "Zaktualizuj plik odzyskiwania"
+      ],
+      "Update recovery phrase": [
+        "Zaktualizuj hasło odzyskiwania"
       ],
       "Upgrade": [
         "Ulepsz"
@@ -1003,7 +1012,7 @@
     },
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
-        "Nie wybrałeś obrazu"
+        "Nie wybrano obrazu"
       ]
     },
     "Feature": {
@@ -1787,12 +1796,6 @@
       "You cannot use the OpenVPN / IKEv2 credentials to log in to ProtonVPN applications or the ProtonVPN dashboard. ${ learnMore }": [
         "Nie możesz używać danych logowania OpenVPN / IKEv2 do logowania się w aplikacjach lub panelu ProtonVPN. ${ learnMore }"
       ],
-      "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
-        "Dostęp beta został wyłączony. Kliknij ${ refreshButton }, aby użyć stabilnej wersji ${ appName }. Aplikacja zostanie odświeżona."
-      ],
-      "You have enabled Beta Access. Click ${ refreshButton } to use the latest version of ${ appName }. The application will be reloaded.": [
-        "Dostęp beta został włączony. Kliknij ${ refreshButton }, aby użyć najnowszej wersji ${ appName }. Aplikacja zostanie odświeżona."
-      ],
       "You have no saved payment methods.": [
         "Nie posiadasz zapisanych metod płatności."
       ],
@@ -2302,6 +2305,9 @@
       ],
       "Proton newsletter": [
         "Newsletter Proton"
+      ],
+      "Proton offers and promotions": [
+        ""
       ],
       "Proton product announcements": [
         "Ogłoszenia usługi Proton"

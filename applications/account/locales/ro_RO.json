@@ -31,17 +31,20 @@
       "${ BRAND_NAME } shop": [
         "Magazin ${ BRAND_NAME }"
       ],
-      "Activate": [
-        "Activare"
-      ],
       "activate": [
         "activare"
+      ],
+      "Activate": [
+        "Activare"
       ],
       "Activate ${ Name }@pm.me": [
         "Activare ${ Name }@pm.me"
       ],
       "Activate organization key": [
         "Activare chei organizație"
+      ],
+      "Activate recovery": [
+        "Activare recuperare"
       ],
       "Add": [
         "Adăugare"
@@ -167,7 +170,7 @@
         "Închidere navigare"
       ],
       "Close this banner": [
-        "Închidere acet banner"
+        "Închidere norificare"
       ],
       "Color": [
         "Culoare"
@@ -204,9 +207,6 @@
       ],
       "Copy link": [
         "Copiere legătură"
-      ],
-      "Create": [
-        "Creare"
       ],
       "Create a secure ProtonMail address instead": [
         "Creare adresă securizată ProtonMail"
@@ -296,7 +296,7 @@
         "Descărcare toate configurațiile"
       ],
       "Download recovery file": [
-        "Descărcați fișierul de recuperare"
+        "Descărcare fișier de recuperare"
       ],
       "Download the Import-Export app": [
         "Descărcare aplicație „Import-Export”"
@@ -337,9 +337,6 @@
       "Export key": [
         "Exportare cheie"
       ],
-      "Export private key": [
-        "Exportare cheie privată"
-      ],
       "Font": [
         "Font"
       ],
@@ -347,13 +344,13 @@
         "Generare cheie"
       ],
       "Generate new recovery phrase": [
-        "Generarea unei noi fraze de recuperare"
+        "Generare frază de recuperare"
       ],
       "Generate new recovery phrase?": [
-        "Generarea unei noi fraze de recuperare?"
+        "Generare frază nouă de recuperare?"
       ],
       "Generate recovery phrase": [
-        "Generarea frazei de recuperare"
+        "Generare frază de recuperare"
       ],
       "Get ProtonVPN Plus": [
         "Obțineți „ProtonVPN Plus”"
@@ -366,9 +363,6 @@
       ],
       "Go to panel ${ index }": [
         "Salt la panoul ${ index }"
-      ],
-      "here": [
-        "aici"
       ],
       "Hide": [
         "Ascundere"
@@ -509,7 +503,7 @@
         "Reconectare"
       ],
       "Recover data": [
-        "Recuperarea datelor"
+        "Recuperare date"
       ],
       "Refresh status": [
         "Actualizare stare"
@@ -631,6 +625,9 @@
       "Set catch-all": [
         "Setare adresă colectoare"
       ],
+      "Set recovery phrase": [
+        "Setare frază de recuperare"
+      ],
       "Share via link": [
         "Partajare prin legătură"
       ],
@@ -671,7 +668,7 @@
         "Deconectare toate conturile"
       ],
       "Signing in": [
-        "Conectarea"
+        "Conectare"
       ],
       "Signing out": [
         "Deconectare"
@@ -712,6 +709,9 @@
       "Switch account": [
         "Comutare cont"
       ],
+      "Switch to rich text": [
+        "Comutare la text formatat"
+      ],
       "Top up": [
         "Alimentare"
       ],
@@ -727,6 +727,9 @@
       "Unlock": [
         "Deblocare"
       ],
+      "Unlock data": [
+        "Deblocare date"
+      ],
       "Unordered list": [
         "Listă neordonată"
       ],
@@ -735,6 +738,12 @@
       ],
       "Update": [
         "Actualizare"
+      ],
+      "Update recovery file": [
+        "Actualizare fișier de recuperare"
+      ],
+      "Update recovery phrase": [
+        "Actualizare frază de recuperare"
       ],
       "Upgrade": [
         "Migrare"
@@ -785,13 +794,13 @@
         "Afișare factură"
       ],
       "Void all recovery files": [
-        "Anulează toate fișierele de recuperare"
+        "Anulare toate fișierele de recuperare"
       ],
       "Void all recovery files?": [
-        "Anulează toate fișierele de recuperare?"
+        "Anulați toate fișierele de recuperare?"
       ],
       "Void anyway": [
-        "Oricum, gol"
+        "Continuare anulare"
       ],
       "Warning": [
         "Avertizare"
@@ -885,10 +894,10 @@
         "Generare chei lipsă"
       ],
       "Make default": [
-        "Implicită"
+        "Setare ca implicită"
       ],
       "Saving": [
-        "Salvez"
+        "Se salvează"
       ]
     },
     "Address status": {
@@ -923,9 +932,6 @@
       ]
     },
     "alert": {
-      "The encryption keys for your address are being generated. This may take several minutes and temporarily freeze your browser.": [
-        "Acum se generează cheia de criptare pentru adresă. Aceasta ar putea dura câteva minute și ar putea îngheța navigatorul."
-      ],
       "The key for your address is now being deleted.": [
         "Acum se șterge cheia pentru adresă."
       ]
@@ -1308,10 +1314,8 @@
       ]
     },
     "Calendar limit warning": {
-      "You have reached the maximum of ${ calendarsLimit } personal calendar.": [
-        "Ați atins limita maximă a calendarului personal ${ calendarsLimit }.",
-        "Ați atins numărul maxim de calendare personale ${ calendarsLimit }.",
-        "Ați atins numărul maxim de ${ calendarsLimit } de calendare personale."
+      "You have reached the maximum number of personal calendars you can create within your plan.": [
+        "Ați atins numărul maxim de calendare personale pe care le puteți crea în cadrul planului actual."
       ],
       "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } subscribed calendar.": [
         "Ați atins numărul maxim de un calendar abonat.",
@@ -1338,7 +1342,7 @@
     },
     "Calendar subscription not synced error": {
       "Calendar could not be decrypted": [
-        "Calendarul nu a putut fi decriptat"
+        "Calendarul nu a putut fi decriptat."
       ],
       "Calendar is syncing": [
         "Calendarul se sincronizează."
@@ -1664,7 +1668,7 @@
         "Folosesc un alt cont Proton."
       ],
       "Missing feature(s)": [
-        "Funcție (funcții) lipsă"
+        "Funcție (funcții) lipsă."
       ],
       "My reason isn't listed, please comment": [
         "Motivul meu nu este afişat. Vă rugăm să comentați."
@@ -1841,7 +1845,7 @@
         "Nu se poate valida telefonul, reîncercați mai târziu."
       ],
       "Checkout expired, please try again": [
-        "Finalizarea comenzii a expirat, reîncercați"
+        "Finalizarea comenzii a expirat, mai reîncercați."
       ],
       "Condition incomplete": [
         "Condiție incompletă"
@@ -1851,6 +1855,11 @@
       ],
       "Could not find address ${ email }.": [
         "Nu s-a putut găsi adresa ${ email }."
+      ],
+      "Deselect at least ${ calendarToFixCount } calendar": [
+        "Deselectați cel puțin un calendar.",
+        "Deselectați cel puțin ${ calendarToFixCount } calendare.",
+        "Deselectați cel puțin ${ calendarToFixCount } de calendare."
       ],
       "Deselect at least ${ calendarToFixCount } calendar or": [
         "Deselectați cel puțin un calendar sau",
@@ -1924,7 +1933,7 @@
         "Data expirării nu este validă."
       ],
       "Invalid invitation link": [
-        "Link de invitație invalid"
+        "Legătura de invitație nu este validă."
       ],
       "Invalid name": [
         "Nume nevalid"
@@ -1964,6 +1973,9 @@
       "No active sessions": [
         "Nu sunt sesiuni active."
       ],
+      "No data to import": [
+        "Nu sunt date de importat."
+      ],
       "No valid address found": [
         "Nu s-a găsit o adresă de e-mail validă."
       ],
@@ -1971,13 +1983,13 @@
         "Nu este un număr valid"
       ],
       "Organization key is not decrypted": [
-        "Cheia organizației nu este decriptată"
+        "Cheia organizației nu este decriptată."
       ],
       "Organization key is not decrypted.": [
         "Cheia organizației nu este decriptată."
       ],
       "Organization not recognized. Try again.": [
-        "Organizație nerecunoscută. Încercați din nou."
+        "Organizația nu e recunoscută. Mai încercaţi."
       ],
       "Passwords do not match": [
         "Parolele nu coincid."
@@ -2012,13 +2024,13 @@
         "Remediați conflictele evidențiate pentru a continua."
       ],
       "Please generate keys before you try to change your password": [
-        "Generați cheile înainte de a vă schimba parola"
+        "Generați cheile înainte de a vă schimba parola."
       ],
       "Please refresh the page.": [
         "Reîmprospătați pagina."
       ],
       "Please set a recovery email first": [
-        "Vă rugăm să setați mai întâi un e-mail de recuperare"
+        "Setați mai întâi un e-mail de recuperare."
       ],
       "Please set a recovery phone number first": [
         "Setați mai întâi un număr de telefon de recuperare"
@@ -2030,7 +2042,7 @@
         "Încercați să vă reautentificați și asigurați-vă că permisiunile sunt setate corect."
       ],
       "Please upgrade to a Professional plan with more than 1 user, or a Visionary account, to get multi-user support": [
-        "Treceți la planul Professional cu mai mult de un utilizator sau la cel Visionary, pentru a avea suport pentru multiutilizatori"
+        "Treceți la planul Professional cu mai mult de un utilizator sau la cel Visionary, pentru a avea suport pentru utilizatori multipli."
       ],
       "Please upgrade to a Professional plan with more than 1 user, or a Visionary account, to manage multiple users.": [
         "Pentru a putea gestiona utilizatori multipli trebuie să treceți la planul Professional cu mai mult de un utilizator sau la cel Visionary."
@@ -2086,6 +2098,12 @@
       "The folder name is too long. Please choose a different name.": [
         "Numele folderului este prea lung. Alegeți alt nume."
       ],
+      "The keys in your recovery file can't be validated. Please contact support.": [
+        "Cheile din fișierul de recuperare nu pot fi validate. Contactați serviciul de asistență."
+      ],
+      "The keys in your recovery files can't be validated. Please upload individually for more information.": [
+        "Cheile din fișierele de recuperare nu pot fi validate. Încărcați-le individual pentru mai multe informații."
+      ],
       "The label name is too long. Please choose a different name.": [
         "Numele etichetei este prea lung. Alegeți alt nume."
       ],
@@ -2099,7 +2117,7 @@
         "Plata minimă acceptată este de ${ _price2 }."
       ],
       "The organization key must be activated first": [
-        "Cheia organizației trebuie mai întâi activată"
+        "Cheia organizației trebuie mai întâi activată."
       ],
       "The organization key must be activated first.": [
         "Cheia organizației trebuie mai întâi activată."
@@ -2133,9 +2151,6 @@
       ],
       "Uploaded file is not a valid private key. Please verify and try again.": [
         "Fișierul încărcat nu este o cheie privată validă. Verificați și reîncercați."
-      ],
-      "Uploaded file is not a valid recovery file. Please verify and try again.": [
-        "Fișierul încărcat nu este un fișier de recuperare valid. Vă rugăm să verificați și să încercați din nou."
       ],
       "Uploaded files are not valid private keys. Please verify and try again.": [
         "Fișierele încărcate nu sunt chei private valide. Verificați și reîncercați."
@@ -2187,9 +2202,6 @@
       ]
     },
     "Error importing calendar": {
-      "${ CALENDAR_APP_NAME } only supports importing calendars with iCal version 2.0.": [
-        "${ CALENDAR_APP_NAME } suportă numai importarea calendarelor cu versiunea iCal 2.0."
-      ],
       "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
         "A apărut o eroare la citirea fișierului ${ formattedFilename }. Fișierul nu are formatul corect."
       ],
@@ -2209,7 +2221,7 @@
         "Fișierul ${ formattedFilename } conține mai mult de ${ MAX_IMPORT_EVENTS_STRING } evenimente."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
-        "Fișierul vostru ${ formattedFilename } are o metodă invalidă și nu poate fi importat."
+        "Fișierul ${ formattedFilename } are o metodă nevalidă și nu poate fi importat."
       ],
       "Your file ${ formattedFilename } has no events to be imported.": [
         "Fișierul ${ formattedFilename } nu are evenimente de importat."
@@ -2314,7 +2326,7 @@
         "Ora de începere lipsă"
       ],
       "No UID, title or start time": [
-        "Fără UID, titlu sau oră de începere"
+        "Lipseşte UID, titlu sau ora de începere."
       ],
       "Non-Gregorian": [
         "Nu este Gregorian"
@@ -2358,7 +2370,7 @@
         "Eroare: ${ errorMessage }"
       ],
       "Invalid URL": [
-        "Adresă URL nevalidă"
+        "Adresă URL nevalidă."
       ],
       "Oops, something went wrong": [
         "Hopa, ceva nu a mers bine!"
@@ -2405,7 +2417,7 @@
         "Fișierul ICS atașat nu a putut fi decriptat"
       ],
       "Attached ICS file could not be read": [
-        "Fișierul ICS atașat nu a putut fi citit"
+        "Fișierul ICS atașat nu a putut fi citit."
       ],
       "Invalid invitation": [
         "Invitație nevalidă"
@@ -2634,7 +2646,7 @@
         "Aplicaţii"
       ],
       "Network": [
-        "Reţea"
+        "Rețea"
       ],
       "Other category": [
         "Altă categorie"
@@ -2774,7 +2786,7 @@
     },
     "Import calendar; import invitation": {
       "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your Proton email address.": [
-        "Invitațiile importate apar în ${ CALENDAR_APP_NAME } ca evenimente simple, fără detalii despre organizator și participant. Pentru a primi actualizări ale evenimentelor și a vedea participanții, solicitați organizatorilor să vă invite folosind adresa dvs. de e-mail Proton."
+        "Invitațiile importate apar în ${ CALENDAR_APP_NAME } ca evenimente simple, fără detalii despre organizator și participant. Pentru a primi actualizări ale evenimentelor și a vedea participanții, solicitați organizatorilor să vă invite folosind adresa dvs. de e-mail din Proton."
       ],
       "This file contains an event invitation:": [
         "Acest fișier conține o invitație la un eveniment:",
@@ -2787,7 +2799,7 @@
         "Acest fișier conține răspunsurile la invitații:"
       ],
       "This file contains some data that we cannot import:": [
-        "Acest fișier conține unele date pe care nu le putem importa:"
+        "Acest fișier conține unele date care nu se pot importa:"
       ]
     },
     "Import contact": {
@@ -3038,7 +3050,7 @@
     },
     "Import key": {
       "Are you sure you want to import a private key? Importing an insecurely generated or leaked private key can harm the security of your emails.\n\nPlease also note that the public key corresponding to this private key will be publicly available from our key server. If the key contains personal details (such as your full name) which you do not want to publish, please edit the key before importing it.": [
-        "Sunteți sigur că doriți să importați o cheie privată? Importul unei chei private generate în mod nesigur sau care a avut scurgeri de informații poate afecta securitatea mesajelor dumneavoastră de e-mail.\n\nRețineți, de asemenea, că cheia publică corespunzătoare acestei chei private va fi disponibilă public pe serverul nostru de chei. Dacă cheia conține detalii personale (cum ar fi numele dumneavoastră complet) pe care nu doriți să le publicați, vă rugăm să editați cheia înainte de a o importa."
+        "Sigur doriți să importați o cheie privată? Importarea unei chei private generate în mod nesigur sau care a fost compromisă poate afecta securitatea mesajelor.\n\nÎn plus, cheia publică corespunzătoare acestei chei private va fi disponibilă public pe serverul nostru de chei. Dacă cheia conține detalii personale (cum ar fi numele complet) pe care nu doriți să le publicați, vă recomandăm să editați cheia înainte de a o importa."
       ]
     },
     "Import status": {
@@ -3061,7 +3073,7 @@
         "Eșuată"
       ],
       "In progress": [
-        "În progres"
+        "În desfășurare"
       ],
       "Paused": [
         "Suspendat"
@@ -3086,7 +3098,7 @@
         "${ totalContactsDiscarded } din ${ totalContacts } contacte nu vor fi importate. Faceți clic pentru detalii."
       ],
       "${ totalEventsDiscarded } out of ${ totalEvents } events will not be imported. Expand for details.": [
-        "${ totalEventsDiscarded } din ${ totalEvents } evenimentele nu vor fi importate. Extindeți pentru detalii."
+        "${ totalEventsDiscarded } din ${ totalEvents } evenimente nu vor fi importate. Extindeți pentru detalii."
       ],
       "No contact can be imported. Click for details": [
         "Nu se pot importa contacte. Faceți clic pentru detalii."
@@ -3095,12 +3107,15 @@
         "Nu poate fi importat niciun eveniment. Extindeți pentru detalii."
       ],
       "Part of your calendar content is not supported and will not be imported.": [
-        "O parte din conținutul calendarului dvs. nu este acceptat și nu va fi importat."
+        "O parte din conținutul calendarului nu este acceptat și nu va fi importat."
       ]
     },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } are nevoie de permisiunea dvs. pentru ${ enableDesktopNotifications }."
+      ],
+      "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
+        "${ boldWarning } Veți pierde accesul la toate datele actuale criptate din cont dacă continuați."
       ],
       "${ calendarName } will be set as default calendar.": [
         "Calendarul ${ calendarName } va fi setat ca implicit."
@@ -3238,11 +3253,8 @@
       "A free and uncensored Internet should be available to all.": [
         "Un internet gratuit și necenzurat ce ar trebui să fie disponibil tuturor."
       ],
-      "A key with the same encryption algorithm is already active for this address. Generating another key will cause slower account loading and deletion of this key can cause issues. If you are generating a new key because your old key is compromised, please mark that key as compromised. Are you sure you want to continue?": [
-        "O cheie cu același algoritm este deja activă pentru această adresă. Generarea unei alte chei va duce la încărcarea mai lentă a contului, iar ștergerea acestei chei poate provoca probleme. Dacă generați o cheie nouă deoarece cheia veche vă este compromisă, marcați mai întâi cheia respectivă ca fiind compromisă. Sigur doriți să continuați?"
-      ],
       "A recovery file lets you unlock and view your data after an account reset. ": [
-        "Un fișier de recuperare vă permite să vă deblocați și să vă vizualizați datele după o resetare a contului. "
+        "Un fișier de recuperare vă permite să vă deblocați și să vă accesaţi datele după o resetare a contului. "
       ],
       "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password.": [
         "O frază de recuperare vă permite să vă accesați contul și să vă recuperați mesajele criptate dacă vă uitați parola."
@@ -3257,10 +3269,10 @@
         "Accesul la cont a fost restricționat datorită facturilor neplătite. Vă rugăm contactați administratorul."
       ],
       "account recovery and data recovery method": [
-        "metoda de recuperare a contului și de recuperare a datelor"
+        "metodă de recuperare a contului cât şi a datelor"
       ],
       "account recovery method": [
-        "metoda de recuperare a contului"
+        "metodă de recuperare a contului"
       ],
       "Account successfully updated": [
         "Cont actualizat cu succes"
@@ -3298,7 +3310,7 @@
         "Adrese"
       ],
       "After a password reset your data is locked in encrypted form to keep it safe. To decrypt and view your emails and other data, you need a recovery file or recovery phrase.": [
-        "După resetarea parolei, datele dumneavoastră sunt blocate în formă criptată pentru a fi păstrate în siguranță. Pentru a decripta și a vizualiza e-mailurile și alte date, aveți nevoie de un fișier de recuperare sau de o frază de recuperare."
+        "După resetarea parolei, datele vă sunt blocate în formă criptată pentru a fi păstrate în siguranță. Pentru a decripta și a vizualiza e-mailurile și alte date, aveți nevoie de un fișier de recuperare sau de o frază de recuperare."
       ],
       "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
         "După efectuarea plății cu Bitcoin, urmați instrucțiunile de mai jos pentru migrare."
@@ -3348,9 +3360,6 @@
       ],
       "AOL reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
         "AOL vă citeşte datele personale pentru a oferi acces agenţilor de publicitate, agenţiilor de informaţii americane şi altor terţe părți. Pentru o confidențialitate mai bună, creați o adresă de e-mail securizată."
-      ],
-      "Are you sure you want to continue?": [
-        "Sigur doriți să continuați?"
       ],
       "Are you sure you want to delete this address?": [
         "Sigur doriți ștergerea acestei adrese?"
@@ -3454,9 +3463,6 @@
       "Center": [
         "Centrare"
       ],
-      "Change your default in settings": [
-        "Puteţi modifica setările implicite în setări."
-      ],
       "Check the status of current and previous imports.": [
         "Verificați starea importărilor curente și anterioare."
       ],
@@ -3464,10 +3470,10 @@
         "Alegeți aspectul și organizarea aplicației."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
-        "Faceți clic pe „Solicitare cod nou” pentru a primi un cod nou de verificare trimis la ${ strong }. Dacă această adresă de e-mail nu este corectă, apăsați pe «Editare» pentru a o corecta."
+        "Faceți clic pe «Solicitare cod nou» pentru a primi un cod nou de verificare trimis la ${ strong }. Dacă această adresă de e-mail nu este corectă, apăsați pe «Editare» pentru a o corecta."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
-        "Faceți clic pe „Solicitare cod nou” pentru a primi un cod nou de verificare trimis la ${ strong }. Dacă această acest număr de telefon nu este corect, apăsați pe «Editare» pentru a-l corecta."
+        "Faceți clic pe «Solicitare cod nou» pentru a primi un cod nou de verificare trimis la $ { strong }. Dacă această acest număr de telefon nu este corect, apăsați pe «Editare» pentru a-l corecta."
       ],
       "Close this screen to exit.": [
         "Închideți această fereastră pentru a ieși."
@@ -3567,7 +3573,7 @@
         "Gata"
       ],
       "Done! We sent a code to ${ destination }.": [
-        "Gata! Am trimis un cod către ${ destination }."
+        "Gata! S-a trimis un cod către ${ destination }."
       ],
       "Downgrading will terminate any connections to paid ProtonVPN servers.": [
         "Retrogradarea va opri orice conexiune către serverele ProtonVPN cu plată."
@@ -3591,7 +3597,7 @@
         "Editare etichetă"
       ],
       "Effortlessly and securely move your emails from your current provider to Proton. If you use Google, we also support calendar and contacts imports.": [
-        "Mutați fără efort și în siguranță e-mailurile de la furnizorul dumneavoastră actual la Proton. Dacă folosiți Google, putem importa calendarul și contactele."
+        "Mutați fără efort și în siguranță e-mailurile de la furnizorul actual la Proton. Dacă folosiți Google, puteţi importa calendarul și contactele."
       ],
       "Email address": [
         "Adresă e-mail"
@@ -3604,6 +3610,9 @@
       ],
       "Emails tagged with this label will not be deleted and can still be found in the respective folder.": [
         "Mesajele primite etichetate cu această etichetă nu vor fi șterse și pot fi găsite în continuare în folderul respectiv."
+      ],
+      "Enabling recovery by phrase again will generate a new recovery phrase.": [
+        "Activând din nou fraza de recuperare se va genera o nouă fraza de recuperare."
       ],
       "Encryption setting updated": [
         "Setări criptare actualizate"
@@ -3622,12 +3631,6 @@
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
         "Introduceți parola organizației pentru a restaura privilegiile administratorului. ${ learnMore }"
-      ],
-      "Enter the recovery ${ recoveryMethodText } associated with your ${ BRAND_NAME } Account. We will send you a code to confirm the password reset.": [
-        "Introduceți ${ recoveryMethodText } asociat cu contul ${ BRAND_NAME } . Veți primi un cod pentru a confirma resetarea parolei."
-      ],
-      "Enter the recovery phrase associated with your ${ BRAND_NAME } Account.": [
-        "Introduceți fraza de recuperare asociată cu contul ${ BRAND_NAME }."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Introduceți codul de verificare care a fost trimis la ${ destinationText }."
@@ -3690,7 +3693,7 @@
         "VPN complet cu viteză de până la 10 Gbps."
       ],
       "Generating a new recovery phrase will deactivate your old one.": [
-        "Generarea unei noi fraze de recuperare o va dezactiva pe cea veche."
+        "Generarea unei fraze de recuperare o va dezactiva pe cea veche."
       ],
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
         "Partajați cheia publică prietenilor sau publicați-o online, astfel încât oricine să vă poată trimite mesaje criptate la ambele capete!"
@@ -3738,10 +3741,10 @@
         "Dacă aveți setate atât SPF cât și DKIM, DMARC vă permite să specificați felul în care celelalte servicii de e-mail ar trebui să livreze mesajele pentru domeniul dvs. dacă verificarea SPF și DKIM a eșuat. Aceasta va îngreuna acțiunile celor care trimit spam de a pretinde că sunteți dvs., dar ar putea și cauza probleme de livrare dacă nu e executată corect."
       ],
       "If you lose your login details and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
-        "Dacă vă pierdeți datele de conectare și trebuie să vă resetați contul, ${ boldImperative } să aveți un ${ boldAccountRecovery }."
+        "Dacă vă pierdeți datele de conectare și trebuie să vă resetați contul, ${ boldImperative } să aveți o ${ boldAccountRecovery }."
       ],
       "If you lose your login details and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.": [
-        "Dacă vă pierdeți datele de conectare și trebuie să vă resetați contul, ${ boldImperative } trebuie să aveți un ${ boldAccountAndRecovery }, altfel s-ar putea să nu mai puteți accesa niciunul dintre e-mailurile, contactele sau fișierele dumneavoastră."
+        "Dacă vă pierdeți datele de conectare și trebuie să vă resetați contul, ${ boldImperative } să aveți atât o ${ boldAccountAndRecovery }, altfel s-ar putea să nu mai puteți accesa niciunul dintre e-mailurile, contactele sau fișierele personale."
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to log into your account. Each code can only be used once.": [
         "Dacă vă pierdeți dispozitivul pentru autentificarea cu doi factori (A2F), puteți folosi aceste coduri în locul celor 6 cifre pentru autentificarea cu doi factori pentru a vă conecta la cont. Fiecare cod e de unică folosință."
@@ -3755,12 +3758,6 @@
       "If you proceed with the downgrade, you will lose access to ProtonVPN paid features.": [
         "Dacă continuați cu retrogradarea, veți pierde accesul la funcțiile cu plată din ProtonMail."
       ],
-      "If you proceed, you will be required to reset your password and you will be logged out of all other active sessions.": [
-        "Dacă continuați, vi se va cere să vă resetați parola și toate celelalte sesiuni active vor fi deconectate."
-      ],
-      "If you proceed, you will have to reset your password and will be logged out of any other active sessions.": [
-        "Dacă continuați, va trebui să vă resetați parola și orice altă sesiune activă va fi deconectată."
-      ],
       "If you want to keep an existing SPF record, you can just add ${ spf } to it after the ${ spfValue }. Do not create multiple SPF records.": [
         "Dacă doriți să păstrați o înregistrare SPF existentă, puteți adăuga ${ spf } la sfârșit după ${ spfValue }. Nu creați multiple înregistrări SPF."
       ],
@@ -3771,7 +3768,7 @@
         "URL imagine"
       ],
       "Images have been removed because they are not allowed in auto-reply": [
-        "Imaginile au fost eliminate deoarece nu sunt permise în răspunsurile automate"
+        "Imaginile au fost eliminate deoarece nu sunt permise în răspunsurile automate."
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Importare ${ contactsFragment } și ${ contactsGroupsFragment }"
@@ -3803,10 +3800,10 @@
         "Se importă datele de la ${ importedEmailAddress } la ${ toEmail }."
       ],
       "In case you lose your login details, we’ll send you recovery instructions via email or SMS.": [
-        "În cazul în care vă pierdeți datele de conectare, vă vom trimite instrucțiuni de recuperare prin e-mail sau SMS."
+        "În cazul în care vă pierdeți datele de conectare, veţi primi instrucțiuni de recuperare prin e-mail sau SMS."
       ],
       "In case you lose your login details, we’ll send you recovery instructions via email.": [
-        "În cazul în care vă pierdeți datele de conectare, vă vom trimite instrucțiuni de recuperare prin e-mail."
+        "În cazul în care vă pierdeți datele de conectare, veţi primi instrucțiuni de recuperare prin e-mail."
       ],
       "Included": [
         "Inclus"
@@ -3855,9 +3852,6 @@
       ],
       "Key with fingerprint ${ fp } has been deleted.": [
         "Cheia cu amprenta ${ fp } a fost ștearsă."
-      ],
-      "Key with fingerprint ${ fp } successfully created.": [
-        "Cheia cu amprenta ${ fp } a fost creată cu succes."
       ],
       "Label all imported messages as": [
         "Etichetare toate mesajele importate cu"
@@ -3946,8 +3940,8 @@
       "Next you'll need to log in to your Google account and allow us to access your data.": [
         "În continuare, va trebui să vă conectați la contul Google personal și să ne permiteți să vă accesăm datele."
       ],
-      "No account recovery method set, you are at risk of losing access to your account": [
-        "Dacă nu este setată nicio metodă de recuperare a contului, riscați să pierdeți accesul la contul dumneavoastră"
+      "No account recovery method set; you are at risk of losing access to your account": [
+        "Nu este setată o metodă de recuperare a contului; există riscul să vă pierdeți accesul la cont."
       ],
       "No action selected": [
         "Nicio acțiune selectată"
@@ -3958,8 +3952,8 @@
       "No contact encryption keys exist": [
         "Nu există chei de criptare contacte"
       ],
-      "No data recovery method set, you are at risk of losing access to your data": [
-        "Nu setați nicio metodă de recuperare a datelor, riscați să pierdeți accesul la datele dumneavoastră"
+      "No data recovery method set; you are at risk of losing access to your data": [
+        "Nu este setată o metodă de recuperare adatelor; există riscul de a vă pierde accesul la date."
       ],
       "No folder selected": [
         "Niciun folder selectat"
@@ -4007,7 +4001,7 @@
         "din"
       ],
       "Once you click \"Downgrade\", it may take a few minutes to downgrade your account to a Free plan. ": [
-        "După ce faceți clic pe \"Retrogradare\", ar putea dura câteva minute până la retrogradarea contului la unul gratuit. "
+        "După ce faceți clic pe «Retrogradare», ar putea dura câteva minute până la retrogradarea contului la unul gratuit. "
       ],
       "One account for all Proton services": [
         "Un singur cont pentru toate serviciile Proton"
@@ -4050,6 +4044,9 @@
       ],
       "Please enter a password to encrypt your private key with before exporting.": [
         "Introduceți o parolă de criptare a cheii private înainte de exportare."
+      ],
+      "Please enter the 12-word recovery phrase associated with your account.": [
+        "Vă rugăm să introduceți fraza de recuperare de 12 cuvinte asociată acestui cont."
       ],
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
         "Vă rugăm să o păstrați în siguranță. Veți avea nevoie de ea pentru a vă accesa contul și pentru a vă decripta datele în cazul unei resetări a parolei."
@@ -4147,13 +4144,16 @@
         "citiți mai întâi ghidul nostru de autentificare cu doi factori"
       ],
       "Recovery files have been voided": [
-        "Fișierele de recuperare au fost anulate"
+        "Fișierele de recuperare au fost anulate."
       ],
       "Recovery phrase copied to clipboard": [
         "Fraza de recuperare a fost copiată în memorie."
       ],
       "Recovery phrase has been disabled": [
         "Fraza de recuperare a fost dezactivată."
+      ],
+      "Recovery phrase is not associated with any keys.": [
+        "Fraza de recuperare nu este asociată cu nici o cheie."
       ],
       "Recovery phrase is not associated with any outdated keys.": [
         "Fraza de recuperare nu este asociată cu nicio cheie învechită."
@@ -4188,8 +4188,8 @@
       "Select a service provider to get started": [
         "Selectați un furnizor de servicii pentru a începe"
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit. You can also merge imported calendars with existing Proton calendars.": [
-        "Selectați ce calendare să importați. Se va crea un calendar nou pentru fiecare calendar importat, până la limita de 20 de calendare. De asemenea, puteți fuziona calendarele importate cu calendarele Proton existente."
+      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
+        "Selectați care calendar să fie importat. Va fi creat un nou calendar pentru fiecare calendar importat până la limita de 20 de calendare."
       ],
       "Server is currently down": [
         "Serverul este în prezent inactiv"
@@ -4198,7 +4198,7 @@
         "Încărcare server"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
-        "Serverele sunt inaccesibile. Mai reîncercați peste câteva minute."
+        "Serverele nu sunt accesibile. Mai reîncercați peste câteva minute."
       ],
       "Session timed out.": [
         "Sesiune expirată."
@@ -4219,7 +4219,7 @@
         "GB stocare"
       ],
       "support team": [
-        "echipa de suport"
+        "echipa de asistență"
       ],
       "Switch to ${ professionalPlan } to add more connections.": [
         "Comutați la ${ professionalPlan } pentru a adăuga mai multe conexiuni."
@@ -4249,7 +4249,7 @@
         "Adresa de e-mail pe care o plasați în partea de sus a listei este adresa de e-mail implicită. Pentru a le reordona, trageți și plasați adresele în poziția dorită."
       ],
       "The Import-Export app allows you to export messages for local backups and to restore previous backups to your account.": [
-        "Aplicația Import-Export vă permite să exportați mesaje pentru copiile de rezervă locale și să restaurați copiile de rezervă anterioare în contul dumneavoastră."
+        "Aplicația Import-Export vă permite să exportați mesajele pentru conservare locală și să restaurați datele anterioare în cont."
       ],
       "The name will be visible to your users while they are logged in.": [
         "Numele va fi vizibil utilizatorilor când sunt conectați."
@@ -4275,6 +4275,18 @@
       "This feature is intended for advanced users only. After deleting this key, you will NOT be able to decrypt any message that has been encrypted with it. It may lead to data loss.": [
         "Această funcție este destinată doar utilizatorilor avansaţi. După ștergerea acestei chei, NU veți putea decripta niciun mesaj care a fost criptat cu ea. Acest lucru poate duce la pierderea datelor."
       ],
+      "This is a 12-word phrase that you were prompted to set.": [
+        "Aceasta este o frază de 12 cuvinte care vi s-a solicitat să o setați."
+      ],
+      "This is a recovery file or encryption key you may have previously saved.": [
+        "Acesta este un fișier de recuperare sau o cheie de criptare pe care ați salvat-o anterior."
+      ],
+      "This is an encryption key you may have previously saved.": [
+        "Acesta este o cheie de criptare pe care ați salvat-o anterior."
+      ],
+      "This is the password you used before the password reset.": [
+        "Aceasta este parola pe care ați utilizat-o înainte de resetarea parolei."
+      ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Această legătură ar putea fi un atac omoglific (caractere asemănătoare dar cu cod diferit de caracter) și nu poate fi deschisă de către navigatoarele Internet Explorer și Edge. Dacă aveţi siguranţa că legătura este legitimă, folosiți un alt navigator pentru a o deschide."
       ],
@@ -4290,14 +4302,14 @@
       "This will also disable any two-factor authentication method associated with this account.": [
         "Aceasta va dezactiva și orice metodă de autentificare cu doi factori asociată acestui cont."
       ],
-      "This will also disable two-factor authentication.": [
-        "Acesta va dezactiva și autentificarea cu doi factori."
-      ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
         "Acesta vă va anula abonamentul plătit și veți pierde orice beneficii de loialitate acumulate. Soldul rămas din abonament va fi returnat ca și credit în cont."
       ],
       "This will create an encryption key for your organization. 4096-bit keys only work on high performance computers, for most users, we recommend using 2048-bit keys.": [
         "Aceasta va crea o cheie de criptare pentru organizație. Cheile de 4096 de biți funcționează doar pe calculatoare foarte performante. Pentru majoritatea utilizatorilor recomandăm utilizarea cheilor de 2048 de biți."
+      ],
+      "This will disable your current recovery phrase. You won't be able to use it to access your account or decrypt your data.": [
+        "Aceasta va dezactiva fraza actuală de recuperare. Nu o veți putea folosi pentru a vă accesa contul sau să decriptați datele."
       ],
       "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Aceasta va activa PayPal ca metodă de plată pentru abonamentul la Proton. Se va deschide o fereastră noră spre PayPal. Dacă folosiți module sau programe de blocare a ferestrelor flotante, trebuie să le dezactivați înainte de a continua."
@@ -4311,14 +4323,14 @@
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "Aceasta vă va înlocui parola temporară. O veți folosi pentru a vă accesa contul ${ BRAND_NAME } în viitor."
       ],
+      "This will sign you out of any active sessions and disable 2-factor authentication.": [
+        "Aceasta vă va deconecta de la orice sesiune activă și va dezactiva autentificarea cu doi factori."
+      ],
       "This wizard will enable Two-Factor Authentication (2FA) on your Proton account. Two-factor authentication will make your Proton account more secure so we recommend enabling it.": [
         "Acest asistent va activa „autentificarea cu doi factori” (A2F) pentru acest cont ProtonMail. A2F va face contul ProtonMail mai sigur astfel încât vă recomandăm s-o activați."
       ],
       "to": [
         "la"
-      ],
-      "To access your old messages, you will need to reactivate your old encryption keys using one of the following recovery methods.": [
-        "Pentru a accesa mesajele vechi, va trebui să reactivați vechile chei de criptare utilizând una dintre următoarele metode de recuperare."
       ],
       "To confirm, please enter the name of the user you wish to delete.": [
         "Pentru a confirma, introduceţi numele utilizatorului pe care doriţi să-l ştergeţi."
@@ -4326,14 +4338,20 @@
       "to continue to ${ toAppName }": [
         "pentru a continua cu ${ toAppName }"
       ],
+      "To decrypt and view your locked data after a password reset, select a recovery method.": [
+        "Pentru a decripta și vedea datele blocate după resetarea parolei, selectați o metodă de recuperare."
+      ],
       "To fight spam and abuse, please verify you are human.": [
-        "Pentru a combate mesajele nedorite, dovediți că sunteți o persoană."
+        "Pentru a combate abuzurile, dovediți că sunteți o persoană."
       ],
       "To keep up with the latest development at Proton products, you can subscribe to our various emails and visit our blog from time to time.": [
         "Pentru a fi la curent cu ultimele actualizări ale produselor Proton, puteți să vă abonați la diferitele noastre adrese de e-mail sau să ne vizitați periodic blogul."
       ],
       "To prepare your external account for import, please follow the instructions for:": [
         "Pentru a pregăti contul extern pentru importare, urmați instrucțiunile pentru:"
+      ],
+      "To proceed, select an account recovery method so we can verify the request.": [
+        "Pentru a continua, selectați o metodă de recuperare a contului pentru a putea verifica solicitarea."
       ],
       "To secure your internet connection, download and install the ProtonVPN application for your device and connect to a ProtonVPN server.": [
         "Pentru a vă securiza conexiunea la internet, descărcați și instalați aplicația ProtonVPN pentru propriul dispozitiv și conectați-vă la un server ProtonVPN."
@@ -4362,11 +4380,8 @@
       "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
         "Modul cu două parole folosește parole separate pentru conectare și pentru decriptarea mesajelor. Aceasta furnizează un beneficiu minor de securitate în unele situații. Totuși recomandăm parola unică la majoritatea utilizatorilor. Pentru a comuta la modul cu două parole, mai întâi creați o parolă de conectare și apoi una pentru mesaje."
       ],
-      "Unable to decrypt. Recovery phrase is not associated with any keys.": [
-        "Nu se poate decripta. Fraza de recuperare nu este asociată cu nicio cheie."
-      ],
       "Unable to verify recovery file signature. Please contact support.": [
-        "Nu se poate verifica semnătura fișierului de recuperare. Vă rugăm să contactați serviciul de asistență."
+        "Nu se poate verifica semnătura fișierului de recuperare. Contactați serviciul de asistență."
       ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Din păcate nu există nicio metodă de recuperare salvată pentru acest cont."
@@ -4425,11 +4440,17 @@
       "VPN + ${ mailAppName } bundle for families and small businesses.": [
         "VPN + ${ mailAppName } pachet pentru familii și întreprinderi mici."
       ],
+      "Warning:": [
+        "Avertizare:"
+      ],
       "Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts.": [
         "Atenție: ștergerea este permanentă. Se elimină și accesul la toate serviciile conectate și se șterg toate contactele dvs."
       ],
       "We advise you to use official ProtonVPN applications when possible.": [
         "Vă sfătuim să utilizați aplicațiile ProtonVPN oficiale atunci când este posibil."
+      ],
+      "We recommend using your recovery phrase instead.": [
+        "Vă recomandăm să folosiți în schimb fraza de recuperare."
       ],
       "We use 3-D Secure to protect your payments.": [
         "Folosim 3-D Secure pentru a proteja plățile."
@@ -4457,6 +4478,12 @@
       ],
       "Week and month views only apply to desktop.": [
         "Afișarea săptămânii și lunii se aplică doar pentru desktop."
+      ],
+      "We’ll send a reset code to the email address you provided for account recovery.": [
+        "Veți primi un cod de resetare la adresa de e-mail pe care ați furnizat-o pentru recuperarea contului."
+      ],
+      "We’ll send a reset code to the phone number you provided for account recovery.": [
+        "Veți primi un cod de resetare la numărul de telefon pe care l-ați furnizat pentru recuperarea contului."
       ],
       "What do you want to import from your Google account?": [
         "Ce doriți să importați din contul Google personal?"
@@ -4494,6 +4521,9 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
         "Sunteți conectat(ă) cu ${ user.Name } (${ user.Email }) și aveți acces restricționat."
       ],
+      "You can also merge imported calendars with existing Proton calendars.": [
+        "Puteți și să îmbinați calendarele importate cu calendarele Proton existente."
+      ],
       "You can check the progress ${ importProgressLink }.": [
         "Puteți verifica progresul ${ importProgressLink }."
       ],
@@ -4508,9 +4538,6 @@
       ],
       "You can enable authentication logging to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
         "Puteți activa înregistrarea conectărilor pentru a vedea când a fost accesat contul și de la care IP. Vom înregistra adresa IP care accesează contul, ora și încercările eșuate de accesare."
-      ],
-      "You can generate a new encryption key if you think your previous key has been compromised.": [
-        "Puteți genera o nouă cheie de criptare dacă credeți că cea anterioară a fost compromisă."
       ],
       "You can now receive messages to your @pm.me address. Upgrade to a paid plan to also send emails using your @pm.me address and create additional @pm.me addresses.": [
         "Acum puteți primi mesaje la adresa @pm.me. Treceți la un plan cu plată pentru a trimite, de asemenea, e-mailuri folosind adresa dvs. @pm.me și pentru a crea adrese @pm.me suplimentare."
@@ -4529,12 +4556,6 @@
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Nu ați setat o metodă de recuperare a contului, deci recuperea contului nu va fi posibilă dacă vă uitați parola. Continuați fără metodă de recuperare?"
-      ],
-      "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
-        "Ați dezactivat accesul la versiunea Beta. Faceți clic ${ refreshButton } pentru a utiliza versiunea stabilă de ${ appName }. Aplicația va fi reîncărcată."
-      ],
-      "You have enabled Beta Access. Click ${ refreshButton } to use the latest version of ${ appName }. The application will be reloaded.": [
-        "Ați activat accesul la versiunea Beta. Faceți clic ${ refreshButton } pentru a utiliza cea mai recentă versiune de ${ appName }. Aplicația va fi reîncărcată."
       ],
       "You have no saved payment methods.": [
         "Nu aveți metode de plată salvate."
@@ -4591,7 +4612,7 @@
         "Contul este convertit, ar putea dura până la 30 de secunde."
       ],
       "Your account recovery method is set": [
-        "Metoda de recuperare a contului dumneavoastră este setată"
+        "Metoda de recuperare a contului este setată"
       ],
       "Your account will be updated once the payment is cleared.": [
         "Contul va fi modificat după verificarea plății."
@@ -4605,17 +4626,17 @@
       "Your Block List is empty.": [
         "Lista de adrese blocate este goală."
       ],
-      "Your data is encrypted, you can recover your data by reactivating your keys.": [
-        "Datele dumneavoastră sunt criptate, vă puteți recupera datele prin reactivarea cheilor."
+      "Your data is encrypted and locked. You can recover access with a data recovery method.": [
+        "Datele vă sunt criptate și blocate. Puteți obține accesul cu o metodă de recuperare a datelor."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "Datele vă sunt pregătite pentru importare din ${ importedEmailAddressStrong } în contul Proton."
       ],
       "Your data recovery method is set": [
-        "Metoda dumneavoastră de recuperare a datelor este setată"
+        "Metoda de recuperare a datelor este setată"
       ],
       "Your email will only be used for this one-time verification.": [
-        "E-mailul va fi folosit doar pentru această verificare unică."
+        "Adresa va fi folosită doar pentru această verificare unică."
       ],
       "Your import from ${ delayedImport.Account } is temporarily delayed.": [
         "Importarea din ${ delayedImport.Account } este temporar întârziată."
@@ -4791,6 +4812,29 @@
       ],
       "Subscription": [
         "Abonament"
+      ]
+    },
+    "Key generation": {
+      "A key with the same encryption algorithm already exists. Generating another key will cause slower account loading. Are you sure you want to continue?": [
+        "Există deja o cheie cu același algoritm de criptare. Generarea unei alte chei va cauza o încărcare mai lentă a contului. Sigur doriți să continuați?"
+      ],
+      "A key with the same encryption algorithm is already active for this address. Generating another key will cause slower account loading and deletion of this key can cause issues. If you are generating a new key because your old key is compromised, please mark that key as compromised. Are you sure you want to continue?": [
+        "O cheie cu același algoritm este deja activă pentru această adresă. Generarea unei alte chei va duce la încărcarea mai lentă a contului, iar ștergerea acestei chei poate provoca probleme. Dacă generați o cheie nouă deoarece cheia veche vă este compromisă, marcați mai întâi cheia respectivă ca fiind compromisă. Sigur doriți să continuați?"
+      ],
+      "Generate key": [
+        "Generare cheie"
+      ],
+      "Key with fingerprint ${ fp } successfully created.": [
+        "Cheia cu amprenta ${ fp } a fost creată cu succes."
+      ],
+      "The encryption keys are being generated. This may take several minutes and temporarily freeze your browser.": [
+        "Cheile de criptare sunt în curs de generare. Acest lucru poate dura câteva minute și vă poate bloca temporar navigatorul."
+      ],
+      "The encryption keys for your address are being generated. This may take several minutes and temporarily freeze your browser.": [
+        "Cheile de criptare pentru adresă sunt în curs de generare. Acest lucru poate dura câteva minute și vă poate bloca temporar navigatorul."
+      ],
+      "You can generate a new encryption key if you think your previous key has been compromised.": [
+        "Puteți genera o nouă cheie de criptare dacă credeți că cea anterioară a fost compromisă."
       ]
     },
     "Key state badge": {
@@ -5084,6 +5128,9 @@
       "ALL": [
         "TOATE"
       ],
+      "All-day event notifications": [
+        "Notificări evenimente toată ziua"
+      ],
       "Allow recovery by email": [
         "Permitere recuperare prin e-mail"
       ],
@@ -5132,12 +5179,6 @@
       "Automatically save contacts": [
         "Salvare automată contacte"
       ],
-      "Backup key": [
-        "Cheie de rezervă"
-      ],
-      "Backup keys": [
-        "Chei de rezervă"
-      ],
       "Block email tracking": [
         "Blocare urmărire e-mailuri"
       ],
@@ -5174,11 +5215,11 @@
       "Category": [
         "Categoria"
       ],
-      "Choose a color": [
-        "Alegere culoare"
-      ],
       "Code": [
         "Cod"
+      ],
+      "Color": [
+        "Culoare"
       ],
       "Composer": [
         "Compunere mesaje"
@@ -5249,20 +5290,8 @@
       "Days of the week": [
         "Ziua săptămânii"
       ],
-      "Default email": [
-        "E-mail implicit"
-      ],
-      "Default event duration": [
-        "Durată implicită eveniment"
-      ],
-      "Default full day notifications": [
-        "Notificări întreaga zi implicite"
-      ],
       "Default language": [
         "Limba implicită"
-      ],
-      "Default notifications": [
-        "Notificări implicite"
       ],
       "Default PGP scheme": [
         "Schema PGP implicită"
@@ -5310,7 +5339,7 @@
         "E-mail"
       ],
       "Email address": [
-        "Adresa de email"
+        "Adresa de e-mail"
       ],
       "Email or username": [
         "E-mail sau utilizator"
@@ -5342,6 +5371,12 @@
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Introduceți parola pentru cheia cu amprenta: ${ fingerprintCode }"
       ],
+      "Event duration": [
+        "Durată eveniment"
+      ],
+      "Event notifications": [
+        "Notificări eveniment"
+      ],
       "Expires": [
         "Expirare"
       ],
@@ -5359,6 +5394,9 @@
       ],
       "Folder location": [
         "Amplasare folder"
+      ],
+      "From: ${ emailFrom }": [
+        "De la: ${ emailFrom }"
       ],
       "From: ${ fromEmailAddress }": [
         "De la: ${ fromEmailAddress }"
@@ -5540,6 +5578,9 @@
       "Phrase": [
         "Fraza"
       ],
+      "Phrase consists of 12 unique words in a specific order": [
+        "Fraza conține 12 cuvinte unice într-o anumită ordine"
+      ],
       "Please add all 3 of the following CNAME records. Note, DNS records can take several hours to update.": [
         "Adăugați toate 3 câmpurile CNAME. Atenție, înregistrările DNS au nevoie de câteva ore pentru a se actualiza."
       ],
@@ -5557,6 +5598,9 @@
       ],
       "Postal code": [
         "Cod poştal"
+      ],
+      "Previous password": [
+        "Parola anterioară"
       ],
       "Private User": [
         "Utilizator privat"
@@ -5593,9 +5637,6 @@
       ],
       "Recovery phrase": [
         "Fraza de recuperare"
-      ],
-      "Recovery phrase contains 12 words": [
-        "Fraza de recuperare conține 12 cuvinte"
       ],
       "Repeat password": [
         "Repetare parolă"
@@ -5675,6 +5716,9 @@
       "To: ${ emailAddress }": [
         "Către: ${ emailAddress }"
       ],
+      "To: ${ emailTo }": [
+        "Către: ${ emailTo }"
+      ],
       "To: ${ PMEmailAddress }": [
         "Către: ${ PMEmailAddress }"
       ],
@@ -5699,17 +5743,11 @@
       "Undo send": [
         "Anulare trimitere"
       ],
-      "Upload your backup key": [
-        "Încărcați cheia de rezervă"
+      "Upload 1 or more encryption keys": [
+        "Încărcare una sau mai multe chei de criptare"
       ],
-      "Upload your recovery file": [
-        "Încărcați fișierul de recuperare"
-      ],
-      "Uploaded private keys": [
-        "Chei private încărcate"
-      ],
-      "Uploaded recovery file": [
-        "Fișier de recuperare încărcat"
+      "Upload 1 or more recovery files or encryption keys": [
+        "Încărcare una sau mai multe fișiere de recuperare sau chei de criptare"
       ],
       "URL": [
         "Adresa URL"
@@ -5786,9 +5824,6 @@
       "Your password (admin)": [
         "Parola dvs. (administrator)"
       ],
-      "Your recovery phrase": [
-        "Fraza de recuperare"
-      ],
       "ZIP": [
         "ZIP"
       ]
@@ -5843,6 +5878,9 @@
       ],
       "Proton newsletter": [
         "Buletin informativ Proton"
+      ],
+      "Proton offers and promotions": [
+        "Oferte şi promoţii Proton"
       ],
       "Proton product announcements": [
         "Anunțuri despre produsele Proton"
@@ -6105,14 +6143,14 @@
     },
     "Mail import summary": {
       "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importați toate mesajele de la ${ selectedLabelsCount } din ${ totalLabelsCount } eticheta de la ${ periodFragment } și etichetați-le ca ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importați toate mesajele din ${ selectedLabelsCount } din ${ totalLabelsCount } etichete de la ${ periodFragment } și etichetați-le ca ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importați toate mesajele din ${ selectedLabelsCount } din ${ totalLabelsCount } de etichete de la ${ periodFragment } și etichetați-le ca ${ LABEL_MARKUP_PLACEHOLDER }"
+        "Importare toate mesajele de la ${ selectedLabelsCount } din ${ totalLabelsCount } etichete începând cu ${ periodFragment } și etichetare cu ${ LABEL_MARKUP_PLACEHOLDER }.",
+        "Importare toate mesajele de la ${ selectedLabelsCount } din ${ totalLabelsCount } etichete începând cu ${ periodFragment } și etichetare cu ${ LABEL_MARKUP_PLACEHOLDER }.",
+        "Importare toate mesajele de la ${ selectedLabelsCount } din ${ totalLabelsCount } de etichete începând cu ${ periodFragment } și etichetare cu ${ LABEL_MARKUP_PLACEHOLDER }."
       ],
       "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importați toate mesajele din eticheta ${ totalLabelsCount } de la ${ periodFragment } și etichetați-le ca ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importați toate mesajele din ${ totalLabelsCount } etichete de la ${ periodFragment } și etichetați-le ca ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importați toate mesajele din ${ totalLabelsCount } de etichete de la ${ periodFragment } și etichetați-le ca ${ LABEL_MARKUP_PLACEHOLDER }"
+        "Importare toate mesajele de la o etichetă începând cu ${ periodFragment } și etichetare cu ${ LABEL_MARKUP_PLACEHOLDER }.",
+        "Importare toate mesajele de la ${ totalLabelsCount } etichete începând cu ${ periodFragment } și etichetare cu ${ LABEL_MARKUP_PLACEHOLDER }.",
+        "Importare toate mesajele de la ${ totalLabelsCount } de etichete începând cu ${ periodFragment } și etichetare cu ${ LABEL_MARKUP_PLACEHOLDER }."
       ]
     },
     "Mail upsell feature": {
@@ -6154,7 +6192,7 @@
     },
     "Member downgrade modal": {
       "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        "Acest lucru va șterge definitiv toți subutilizatorii, conturile și datele asociate cu organizația dumneavoastră."
+        "Aceasta va șterge definitiv toți subutilizatorii, conturile și datele asociate cu organizația personală."
       ]
     },
     "Message": {
@@ -6767,7 +6805,7 @@
         "Ex.: "
       ],
       "Email address": [
-        "Adresa de email"
+        "Adresa de e-mail"
       ],
       "Feedback": [
         "Feedback"
@@ -7022,17 +7060,11 @@
       "Email": [
         "E-mail"
       ],
-      "email address": [
-        "adresă de e-mail"
-      ],
-      "phone number": [
-        "număr de telefon"
-      ],
       "Phone number": [
         "Număr de telefon"
       ],
-      "Recovery phrase": [
-        "Fraza de recuperare"
+      "Phrase": [
+        "Frază"
       ]
     },
     "Remark about a key type option": {
@@ -7072,11 +7104,8 @@
       "Upload": [
         "Încărcare"
       ],
-      "Upload additional private keys": [
-        "Încărcare chei private suplimentare"
-      ],
-      "Upload additional recovery files": [
-        "Încărcați fișiere de recuperare suplimentare"
+      "Upload additional files": [
+        "Încărcare fișiere adiționale"
       ]
     },
     "Select search results": {
@@ -7100,7 +7129,7 @@
         "Auto răspuns"
       ],
       "Backup & Export": [
-        "Copie de rezervă și Export"
+        "Conservare și exportare"
       ],
       "Calendars": [
         "Calendare"
@@ -7259,7 +7288,7 @@
         "URL calendar"
       ],
       "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Subscribed calendars.\n${ kbLink }": [
-        "Pentru a vă abona la un calendar extern sau public și la actualizările acestuia, introduceți adresa URL. O versiune doar pentru citire a calendarului va fi adăugată la Calendarele abonate.\n${ kbLink }"
+        "Pentru a vă abona la un calendar extern sau public și la actualizările acestuia, introduceți adresa URL. O versiune doar pentru citire a calendarului va fi adăugată la «Abonări calendare».\n${ kbLink }"
       ]
     },
     "Subscribe to calendar modal description": {
@@ -7333,7 +7362,7 @@
         "Se șterg mesajele originale"
       ],
       "DMARC value copied to clipboard": [
-        "Valoare DMARC copiată în memorie"
+        "Valoarea DMARC a fost copiată în memorie"
       ],
       "Domain verified": [
         "Domeniu verificat"
@@ -7408,7 +7437,7 @@
         "Sesiuni anulate"
       ],
       "SPF value copied to clipboard": [
-        "Valoare SPF copiată în memorie"
+        "Valoarea SPF a fost copiată în memorie"
       ],
       "User created": [
         "Utilizator creat"
@@ -7417,10 +7446,10 @@
         "Utilizator actualizat"
       ],
       "Value copied to clipboard": [
-        "Valoare copiată în memorie"
+        "Valoarea a fost copiată în memorie"
       ],
       "Verification code copied to clipboard": [
-        "Cod de verificare copiat în memorie"
+        "Codul de verificare a fost copiat în memorie"
       ],
       "Verification successful": [
         "Verificare reușită"
@@ -7573,7 +7602,7 @@
         "3. Selectați fișierul de configurare și descărcați-l"
       ],
       "Account recovery": [
-        "Recuperarea contului"
+        "Recuperare cont"
       ],
       "Account suspended": [
         "Cont suspendat"
@@ -7678,7 +7707,7 @@
         "Înapoi"
       ],
       "Backup & Export": [
-        "Copie de rezervă și Export"
+        "Conservare şi exportare"
       ],
       "Billing cycle": [
         "Ciclu de facturare"
@@ -7756,7 +7785,7 @@
         "Contacte"
       ],
       "Continue with partial import?": [
-        "Continuați cu importul parțial?"
+        "Continuați cu importarea parțială?"
       ],
       "Coupon discount": [
         "Cupon reducere"
@@ -7809,8 +7838,11 @@
       "Dashboard": [
         "Panou general"
       ],
+      "Data locked": [
+        "Date blocate"
+      ],
       "Data recovery": [
-        "Recuperarea datelor"
+        "Recuperare date"
       ],
       "Date": [
         "Data"
@@ -7869,6 +7901,9 @@
       "Edit Block List": [
         "Editare adrese blocate"
       ],
+      "Edit calendar": [
+        "Editare calendar"
+      ],
       "Edit credit/debit card": [
         "Editare card de credit/debit"
       ],
@@ -7898,9 +7933,6 @@
       ],
       "Enable keyboard shortcuts": [
         "Activare combinații de taste"
-      ],
-      "Encrypted data": [
-        "Date criptate"
       ],
       "Encryption & keys": [
         "Criptare și chei"
@@ -7944,14 +7976,11 @@
       "General": [
         "Generale"
       ],
-      "Generate key": [
-        "Generare cheie"
-      ],
       "Generate missing keys": [
         "Generare chei lipsă"
       ],
       "Get ProtonVPN Plus to access all servers": [
-        "Obțineți „ProtonVPN Plus” pentru a accesa toate serverele"
+        "Luați „ProtonVPN Plus” pentru a accesa toate serverele"
       ],
       "Gift code": [
         "Cod cadou"
@@ -7972,9 +8001,9 @@
         "Importare și exportare"
       ],
       "Import as simple event?": [
-        "Importați ca simplu eveniment?",
-        "Importați ca simple evenimente?",
-        "Importați ca simple evenimente?"
+        "Importați ca eveniment simplu?",
+        "Importați ca evenimente simple?",
+        "Importați ca evenimente simple?"
       ],
       "Import Assistant": [
         "Asistent importare"
@@ -7986,7 +8015,7 @@
         "Importare evenimente"
       ],
       "Import failed": [
-        "Importul a eșuat"
+        "Importare eșuată"
       ],
       "Import groups": [
         "Import grupuri"
@@ -8079,7 +8108,7 @@
         "Parole și chei"
       ],
       "Password & security": [
-        "Parolă & securitate"
+        "Parolă şi securitate"
       ],
       "Passwords": [
         "Parole"
@@ -8141,11 +8170,11 @@
       "ProtonVPN": [
         "ProtonVPN"
       ],
-      "Reactivate keys": [
-        "Reactivare chei"
-      ],
       "Reconnect your account": [
         "Reconectați-vă contul"
+      ],
+      "Recover data": [
+        "Recuperare date"
       ],
       "Recovery": [
         "Recuperare"
@@ -8262,7 +8291,7 @@
         "Stare"
       ],
       "Subscribed calendars": [
-        "Calendare abonate"
+        "Abonări la calendare"
       ],
       "Subtotal": [
         "Subtotal"
@@ -8303,9 +8332,6 @@
       "Unsupported browser": [
         "Navigator nesuportat"
       ],
-      "Update calendar": [
-        "Actualizare calendar"
-      ],
       "Upgrade": [
         "Migrare"
       ],
@@ -8334,7 +8360,7 @@
         "Plan actual"
       ],
       "Your recovery status": [
-        "Starea dumneavoastră de recuperare"
+        "Starea actuală de recuperare"
       ],
       "ZIP / postal code": [
         "ZIP/Cod poștal"
@@ -8478,7 +8504,7 @@
         "Găzduiți e-mailuri pentru domeniu(ii) personal(e) la ProtonmMail, ex.: ion.vasile@exemplu.com"
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
-        "Dacă ați cumpărat un cod cadou sau ați primit unul de la echipa de suport, îl puteți folosi aici."
+        "Dacă ați cumpărat un cod cadou sau ați primit unul de la echipa de asistență, îl puteți folosi aici."
       ],
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "Mesajele din folderul «Trimise» sau «Ciorne» vor continua să apară în acel folder, chiar dacă le mutați în altul."
@@ -8583,6 +8609,17 @@
     "Tooltip sign external messages": {
       "Automatically sign all your outgoing messages so users can verify the authenticity of your messages. This is done in combination with the default PGP settings which can be configured below.": [
         "Semnare automată toate mesajele trimise, astfel încât utilizatorii să vă poată verifica autenticitatea mesajelor. Aceasta se poate face în combinație cu setările implicite PGP care pot fi configurate mai jos."
+      ]
+    },
+    "Update font modal": {
+      "Today is a good day to write an email": [
+        "Astăzi este o zi bună pentru a scrie un e-mail."
+      ],
+      "Update default font and size": [
+        "Actualizare font implicit și mărime"
+      ],
+      "Your default font will look like following:": [
+        "Fontul implicit va arăta ca următorul:"
       ]
     },
     "Upgrade": {
@@ -8730,17 +8767,17 @@
     },
     "VPN Plan Feature": {
       "${ n } server": [
-        "${ n } un server",
-        "${ n }+ servere",
-        "${ n }+ de servere"
+        "Un server",
+        "Peste ${ n } servere",
+        "Peste ${ n } de servere"
       ],
       "${ n } VPN connection": [
-        "${ n } conectare VPN",
-        "${ n } conectări VPN",
-        "${ n } de conectări VPN"
+        "O conexiune VPN",
+        "${ n } conexiuni VPN",
+        "${ n } de conexiuni VPN"
       ],
       "${ numberOfServers } in ${ numberOfCountries } country": [
-        "${ numberOfServers } în ${ numberOfCountries } țară",
+        "${ numberOfServers } într-o țară",
         "${ numberOfServers } în ${ numberOfCountries } țări",
         "${ numberOfServers } în ${ numberOfCountries } de țări"
       ]
@@ -8790,7 +8827,7 @@
         "Sigur doriți să anulați importarea?"
       ],
       "By deleting this address, you will no longer be able to receive daily email notifications.": [
-        "Ștergând această adresă, nu veți mai putea să primiți notificările zilnice."
+        "Ștergând această adresă, nu veți mai putea primi notificările zilnice."
       ],
       "By deleting this address, you will no longer be able to recover your account or receive daily email notifications.": [
         "Ștergând această adresă, nu veți mai putea să vă recuperați contul și să primiți notificările zilnice."
@@ -8811,7 +8848,7 @@
         "Dacă anulați această importare, nu o veți putea relua. Proton a salvat tot progresul din cont. Anulați acum?"
       ],
       "Live chat is a premium feature available only to those with paid ProtonVPN plans. Please open a ticket instead.": [
-        "Chat-ul live este o funcție premium disponibilă doar pentru cei care au planuri ProtonVPN plătite. În schimb, vă rugăm să deschideți un tichet."
+        "Discuția live este o funcție premium disponibilă doar pentru cei care au planuri ProtonVPN cu plată. În schimb, vă rugăm să deschideți un tichet."
       ],
       "permanently delete all messages on ${ email }": [
         "șterge toate mesajele din ${ email }"
@@ -8854,6 +8891,12 @@
       ],
       "You will not see this import record in the list anymore.": [
         "Nu veți mai vedea această înregistrare importată în listă."
+      ],
+      "Your recovery file is outdated and can't recover new data should you reset your account again.": [
+        "Fișierul de recuperare este expirat și nu vă poate recupera datele dacă vă veți reseta contul."
+      ],
+      "Your recovery phrase is outdated and can't recover new data should you reset your account again.": [
+        "Fraza de recuperare este expirată și nu vă poate recupera datele dacă vă veți reseta contul."
       ]
     },
     "Warning for domain modal": {

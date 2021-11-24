@@ -31,17 +31,20 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } butik"
       ],
-      "Activate": [
-        "Aktivér"
-      ],
       "activate": [
         "aktivér"
+      ],
+      "Activate": [
+        "Aktivér"
       ],
       "Activate ${ Name }@pm.me": [
         "Aktiver ${ Name }@pm.me"
       ],
       "Activate organization key": [
         "Aktivér organisationsnøgle"
+      ],
+      "Activate recovery": [
+        "Aktiver gendannelse"
       ],
       "Add": [
         "Tilføj"
@@ -205,9 +208,6 @@
       "Copy link": [
         "Kopiér link"
       ],
-      "Create": [
-        "Opret"
-      ],
       "Create a secure ProtonMail address instead": [
         "Opret en sikker ProtonMail-adresse i stedet"
       ],
@@ -337,9 +337,6 @@
       "Export key": [
         "Eksportér nøgle"
       ],
-      "Export private key": [
-        "Eksportér privat nøgle"
-      ],
       "Font": [
         "Skrifttype"
       ],
@@ -366,9 +363,6 @@
       ],
       "Go to panel ${ index }": [
         "Gå til panel ${ index }"
-      ],
-      "here": [
-        "her"
       ],
       "Hide": [
         "Skjul"
@@ -631,6 +625,9 @@
       "Set catch-all": [
         "Indstil fang-alle"
       ],
+      "Set recovery phrase": [
+        "Indstil gendannelsessætning"
+      ],
       "Share via link": [
         "Del via link"
       ],
@@ -712,6 +709,9 @@
       "Switch account": [
         "Skift konto"
       ],
+      "Switch to rich text": [
+        "Skift til rich text format"
+      ],
       "Top up": [
         "Genopfyld"
       ],
@@ -727,6 +727,9 @@
       "Unlock": [
         "Lås op"
       ],
+      "Unlock data": [
+        "Lås op for data"
+      ],
       "Unordered list": [
         "Usorteret liste"
       ],
@@ -735,6 +738,12 @@
       ],
       "Update": [
         "Opdatér"
+      ],
+      "Update recovery file": [
+        "Opdater gendannelsesfil"
+      ],
+      "Update recovery phrase": [
+        "Opdater gendannelsessætning"
       ],
       "Upgrade": [
         "Opgradér"
@@ -764,7 +773,7 @@
         "Brug gendannelseskode"
       ],
       "Use two-factor authentication code": [
-        "Brug tofaktorgodkendelseskode"
+        "Brug to-faktor-godkendelseskode"
       ],
       "Use your current email address instead": [
         "Brug i stedet din aktuelle e-mailadresse"
@@ -876,10 +885,10 @@
         "Generér manglende nøgler"
       ],
       "Make default": [
-        ""
+        "Vælg som standard"
       ],
       "Saving": [
-        ""
+        "Gemmer"
       ]
     },
     "Address status": {
@@ -914,9 +923,6 @@
       ]
     },
     "alert": {
-      "The encryption keys for your address are being generated. This may take several minutes and temporarily freeze your browser.": [
-        "Krypteringsnøglerne til din adresse genereres. Dette kan tage flere minutter og fryse din browser midlertidigt."
-      ],
       "The key for your address is now being deleted.": [
         "Nøglen til din adresse bliver nu slettet."
       ]
@@ -1299,9 +1305,8 @@
       ]
     },
     "Calendar limit warning": {
-      "You have reached the maximum of ${ calendarsLimit } personal calendar.": [
-        "Du har nået det maksimale antal på ${ calendarsLimit } personlig kalender.",
-        "Du har nået det maksimale antal på ${ calendarsLimit } personlige kalendere."
+      "You have reached the maximum number of personal calendars you can create within your plan.": [
+        "Du har nået det maksimale antal personlige kalendere, du kan oprette med dit abonnement."
       ],
       "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } subscribed calendar.": [
         "Du har nået det maksimale antal på ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } kalender.",
@@ -1701,7 +1706,7 @@
     },
     "Email body for invitation": {
       "${ eventTitle } has been canceled.": [
-        ""
+        "${ eventTitle } er blevet annulleret."
       ],
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
         "${ eventTitle } er blevet opdateret.\n${ eventDetailsText }"
@@ -1834,6 +1839,10 @@
       "Could not find address ${ email }.": [
         "Kunne ikke finde adresse ${ email }."
       ],
+      "Deselect at least ${ calendarToFixCount } calendar": [
+        "Fravælg mindst ${ calendarToFixCount } kalender",
+        "Fravælg mindst ${ calendarToFixCount } kalendere"
+      ],
       "Deselect at least ${ calendarToFixCount } calendar or": [
         "Fravælg mindst ${ calendarToFixCount } kalender eller",
         "Fravælg mindst ${ calendarToFixCount } kalendere eller"
@@ -1943,6 +1952,9 @@
       ],
       "No active sessions": [
         "Ingen aktive sessioner"
+      ],
+      "No data to import": [
+        "Ingen data at importere"
       ],
       "No valid address found": [
         "Ingen gyldig adresse fundet"
@@ -2065,6 +2077,12 @@
       "The folder name is too long. Please choose a different name.": [
         "Filnavnet er for langt. Vælg venligst et andet."
       ],
+      "The keys in your recovery file can't be validated. Please contact support.": [
+        "Nøglerne i din gendannelsesfil kan ikke valideres. Kontakt venligst support."
+      ],
+      "The keys in your recovery files can't be validated. Please upload individually for more information.": [
+        "Nøglerne i dine gendannelsesfiler kan ikke valideres. Upload enkeltvis for at få flere oplysninger."
+      ],
       "The label name is too long. Please choose a different name.": [
         "Etikettenavnet er for langt. Vælg venligst et andet navn."
       ],
@@ -2112,9 +2130,6 @@
       ],
       "Uploaded file is not a valid private key. Please verify and try again.": [
         "Uploadet fil er ikke en gyldig privat nøgle. Kontrollér og prøv igen."
-      ],
-      "Uploaded file is not a valid recovery file. Please verify and try again.": [
-        "Den uploadede fil er ikke en gyldig gendannelsesfil. Kontroller den og prøv igen."
       ],
       "Uploaded files are not valid private keys. Please verify and try again.": [
         "Uploadede filer er ikke gyldige private nøgle. Kontrollér og prøv igen."
@@ -2166,9 +2181,6 @@
       ]
     },
     "Error importing calendar": {
-      "${ CALENDAR_APP_NAME } only supports importing calendars with iCal version 2.0.": [
-        "${ CALENDAR_APP_NAME } understøtter kun import af kalendere med iCal version 2.0."
-      ],
       "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
         "Der opstod en fejl ved læsning af din fil ${ formattedFilename }. Filen har ikke det rigtige format."
       ],
@@ -2384,7 +2396,7 @@
         "Vedhæftet ICS-fil kunne ikke dekrypteres"
       ],
       "Attached ICS file could not be read": [
-        ""
+        "Vedhæftet ICS-fil kunne ikke læses"
       ],
       "Invalid invitation": [
         "Ugyldig invitation"
@@ -3029,7 +3041,7 @@
         "Mislykkedes"
       ],
       "In progress": [
-        ""
+        "Er i gang"
       ],
       "Paused": [
         "Sat på pause"
@@ -3069,6 +3081,9 @@
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } har brug for din tilladelse til ${ enableDesktopNotifications }."
+      ],
+      "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
+        "${ boldWarning } Du mister adgangen til alle nuværende krypterede data på din konto, hvis du fortsætter."
       ],
       "${ calendarName } will be set as default calendar.": [
         "${ calendarName } vil blive sat som standardkalender."
@@ -3189,9 +3204,6 @@
       "A free and uncensored Internet should be available to all.": [
         "Et gratis og ucensureret internet bør være tilgængeligt for alle."
       ],
-      "A key with the same encryption algorithm is already active for this address. Generating another key will cause slower account loading and deletion of this key can cause issues. If you are generating a new key because your old key is compromised, please mark that key as compromised. Are you sure you want to continue?": [
-        "En nøgle med den samme krypteringsalgoritme er allerede aktiv på denne adresse.\nGenerering af en anden nøgle vil medføre langsommere kontoindlæsning, og sletning af denne nøgle kan forårsage problemer. Genererer du en ny nøgle, fordi den gamle er kompromitteret, så markér venligst din gamle nøgle som kompromitteret. Sikker på, at du vil fortsætte?"
-      ],
       "A recovery file lets you unlock and view your data after an account reset. ": [
         "Med en gendannelsesfil kan du låse op for og se dine data efter en kontonulstilling. "
       ],
@@ -3297,9 +3309,6 @@
       "AOL reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
         "AOL læser dine personlige data for at give adgang for annoncører og andre tredjeparter. Opret en sikker e-mailadresse for bedre beskyttelse af personlige oplysninger."
       ],
-      "Are you sure you want to continue?": [
-        "Er du sikker på at du vil fortsætte?"
-      ],
       "Are you sure you want to delete this address?": [
         "Er du sikker på, at du vil slette denne adresse?"
       ],
@@ -3401,9 +3410,6 @@
       ],
       "Center": [
         "Centrér"
-      ],
-      "Change your default in settings": [
-        "Ændr din standard i indstillinger"
       ],
       "Check the status of current and previous imports.": [
         "Tjek status for nuværende og tidligere importer."
@@ -3551,6 +3557,9 @@
       "Emails tagged with this label will not be deleted and can still be found in the respective folder.": [
         "E-mails med denne etikette vil ikke blive slettet og kan stadig findes i den respektive mappe."
       ],
+      "Enabling recovery by phrase again will generate a new recovery phrase.": [
+        "Hvis du aktiverer gendannelse ved hjælp af en sætning igen, genereres der en ny gendannelsessætning."
+      ],
       "Encryption setting updated": [
         "Krypteringsindstilling opdateret"
       ],
@@ -3568,12 +3577,6 @@
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
         "Indtast Organisationsadgangskoden for at gendanne administratorprivilegier. ${ learnMore }"
-      ],
-      "Enter the recovery ${ recoveryMethodText } associated with your ${ BRAND_NAME } Account. We will send you a code to confirm the password reset.": [
-        "Indtast gendannelses${ recoveryMethodText } tilknyttet din ${ BRAND_NAME } konto. Vi sender dig en kode for at bekræfte nulstilling af adgangskoden."
-      ],
-      "Enter the recovery phrase associated with your ${ BRAND_NAME } Account.": [
-        "Indtast gendannelsessætningen der er knyttet til din ${ BRAND_NAME } konto."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Indtast den bekræftelseskode, der blev sendt til ${ destinationText }."
@@ -3701,12 +3704,6 @@
       "If you proceed with the downgrade, you will lose access to ProtonVPN paid features.": [
         "Hvis du fortsætter med nedgraderingen, vil du miste adgang til ProtonVPN betalte funktioner."
       ],
-      "If you proceed, you will be required to reset your password and you will be logged out of all other active sessions.": [
-        "Hvis du fortsætter, er du nødt til at nulstille din adgangskode og du vil blive logget ud af alle andre aktive sessioner."
-      ],
-      "If you proceed, you will have to reset your password and will be logged out of any other active sessions.": [
-        "Hvis du fortsætter, er du nødt til at nulstille din adgangskode og vil blive logget ud af alle andre aktive sessioner."
-      ],
       "If you want to keep an existing SPF record, you can just add ${ spf } to it after the ${ spfValue }. Do not create multiple SPF records.": [
         "Hvis du ønsker at beholde en existerende SPF optegnelse, så tilføj ${ spf } efter ${ spfValue }. Skab ikke mere end en SPF optegnelse."
       ],
@@ -3801,9 +3798,6 @@
       "Key with fingerprint ${ fp } has been deleted.": [
         "Nøgle med fingeraftryk ${ fp } slettet."
       ],
-      "Key with fingerprint ${ fp } successfully created.": [
-        "Nøgle med fingeraftryk ${ fp } er nu oprettet."
-      ],
       "Label all imported messages as": [
         "Mærk alle importerede beskeder som"
       ],
@@ -3891,8 +3885,8 @@
       "Next you'll need to log in to your Google account and allow us to access your data.": [
         "Derefter skal du logge ind på din Google-konto og give os adgang til dine data."
       ],
-      "No account recovery method set, you are at risk of losing access to your account": [
-        "Ingen metode til kontogenoprettelse indstillet. Du risikerer at miste adgang til din konto"
+      "No account recovery method set; you are at risk of losing access to your account": [
+        "Ingen metode til genoprettelse indstillet. Du risikerer at miste adgang til din konto"
       ],
       "No action selected": [
         "Ingen handling valgt"
@@ -3903,7 +3897,7 @@
       "No contact encryption keys exist": [
         "Ingen kontaktkrypteringsnøgler findes"
       ],
-      "No data recovery method set, you are at risk of losing access to your data": [
+      "No data recovery method set; you are at risk of losing access to your data": [
         "Ingen metode til datagendannelse indstillet. Du risikerer at miste adgang til dine data"
       ],
       "No folder selected": [
@@ -3996,8 +3990,11 @@
       "Please enter a password to encrypt your private key with before exporting.": [
         "Angiv en adgangskode til kryptering af din private nøgle inden du eksporterer."
       ],
+      "Please enter the 12-word recovery phrase associated with your account.": [
+        "Indtast 12-ords gendannelsessætningen, der er knyttet til din konto."
+      ],
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
-        ""
+        "Sørg for at gemme den sikkert. Du skal bruge den til at få adgang til din konto og dekryptere dine data i tilfælde af en nulstilling af adgangskoden."
       ],
       "Please note that if you delete this address, you will no longer be able to send or receive emails using this address.": [
         "Bemærk, at hvis du sletter denne adresse, vil du ikke længere kunne sende eller modtage e-mails via denne adresse."
@@ -4099,6 +4096,9 @@
       "Recovery phrase has been disabled": [
         "Gendannelsessætning er blevet deaktiveret"
       ],
+      "Recovery phrase is not associated with any keys.": [
+        "Gendannelsessætning er ikke tilknyttet nogen nøgler."
+      ],
       "Recovery phrase is not associated with any outdated keys.": [
         "Gendannelsessætning er ikke tilknyttet nogen forældede nøgler."
       ],
@@ -4132,8 +4132,8 @@
       "Select a service provider to get started": [
         "Vælg en tjenesteudbyder for at komme i gang"
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit. You can also merge imported calendars with existing Proton calendars.": [
-        "Vælg, hvilke kalendere der skal importeres. Der oprettes en ny kalender for hver importeret kalender op til grænsen på 20 kalendere. Du kan også flette importerede kalendere med eksisterende Proton-kalendere."
+      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
+        "Vælg, hvilke kalendere der skal importeres. Der oprettes en ny kalender for hver importeret kalender op til grænsen på 20 kalendere."
       ],
       "Server is currently down": [
         "Serveren er i øjeblikket nede"
@@ -4219,6 +4219,18 @@
       "This feature is intended for advanced users only. After deleting this key, you will NOT be able to decrypt any message that has been encrypted with it. It may lead to data loss.": [
         "Denne funktion er kun tilsigtet avancerede brugere! Efter sletning af denne nøgle vil du IKKE længere kunne dekryptere en besked, som er krypteret med denne nøgle. Dette kan medføre datatab."
       ],
+      "This is a 12-word phrase that you were prompted to set.": [
+        "Dette er en 12-ords sætning, som du blev bedt om at indstille."
+      ],
+      "This is a recovery file or encryption key you may have previously saved.": [
+        "Dette er en gendannelsesfil eller krypteringsnøgle, som du måske tidligere har gemt."
+      ],
+      "This is an encryption key you may have previously saved.": [
+        "Dette er en krypteringsnøgle, som du måske tidligere har gemt."
+      ],
+      "This is the password you used before the password reset.": [
+        "Dette er den adgangskode, du brugte før adgangskodenulstillingen."
+      ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Dette link kan være et homografisk angreb og kan ikke åbnes af Internet Explorer og Edge browsere. Er du sikker på, at linket er legitimt, så benyt en anden browser til at åbne det."
       ],
@@ -4234,14 +4246,14 @@
       "This will also disable any two-factor authentication method associated with this account.": [
         "Dette vil også deaktivere enhver to-faktor-godkendelsesmetode tilknyttet denne konto."
       ],
-      "This will also disable two-factor authentication.": [
-        "Dette vil også deaktivere tofaktorgodkendelse."
-      ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
         "Dette vil annullere dit nuværende betalte abonnement, og du vil miste alle loyalitetsfordele, du har akkumuleret. Den resterende saldo for dit abonnement vil blive returneret som kontokreditter."
       ],
       "This will create an encryption key for your organization. 4096-bit keys only work on high performance computers, for most users, we recommend using 2048-bit keys.": [
         "Dette vil oprette en krypteringsnøgle til din organisation. 4.096-bit nøgler fungerer kun på højtydende computere. Til de fleste brugere anbefales brugen af 2.048-bit nøgler."
+      ],
+      "This will disable your current recovery phrase. You won't be able to use it to access your account or decrypt your data.": [
+        "Dette deaktiverer din nuværende gendannelsessætning. Du vil ikke kunne bruge den til at få adgang til din konto eller dekryptere dine data."
       ],
       "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Dette gør det muligt at benytte PayPal til betaling af dit Proton-abonnement. Du omdirigeres til PayPal i en ny browserfane. Benytter du pop-up blockers, så deaktivér disse for at fortsætte."
@@ -4255,20 +4267,23 @@
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "Dette vil erstatte din midlertidige adgangskode. Du vil bruge den til at tilgå din ${ BRAND_NAME } konto i fremtiden."
       ],
+      "This will sign you out of any active sessions and disable 2-factor authentication.": [
+        "Dette vil logge dig ud af alle aktive sessioner og deaktivere to-faktor-godkendelse."
+      ],
       "This wizard will enable Two-Factor Authentication (2FA) on your Proton account. Two-factor authentication will make your Proton account more secure so we recommend enabling it.": [
-        "Denne hjælper aktiverer To-faktor-godkendelse (2FA) på din ProtonMail-konto. 2FA vil gøre din ProtonMail-konto mere sikker, så du anbefales at aktivere den."
+        "Denne hjælper aktiverer to-faktor-godkendelse (2FA) på din ProtonMail-konto. 2FA vil gøre din ProtonMail-konto mere sikker, så du anbefales at aktivere det."
       ],
       "to": [
         "til"
-      ],
-      "To access your old messages, you will need to reactivate your old encryption keys using one of the following recovery methods.": [
-        "For at få adgang til dine gamle beskeder, er du nødt til at genaktivere dine gamle krypteringsnøgler ved hjælpe af en af de følgende gendannelsesmetoder."
       ],
       "To confirm, please enter the name of the user you wish to delete.": [
         "For at bekræfte, skal du indtaste navnet på den bruger, du ønsker at slette."
       ],
       "to continue to ${ toAppName }": [
         "for at fortsætte til ${ toAppName }"
+      ],
+      "To decrypt and view your locked data after a password reset, select a recovery method.": [
+        "Vælg en gendannelsesmetode for at dekryptere eller se dine låste data efter en adgangskodenulstilling."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "For at bekæmpe spam og misbrug bedes du bekræfte, at du er et menneske."
@@ -4278,6 +4293,9 @@
       ],
       "To prepare your external account for import, please follow the instructions for:": [
         "Følg instruktionerne for at forberede importen af din eksterne konto:"
+      ],
+      "To proceed, select an account recovery method so we can verify the request.": [
+        "For at fortsætte skal du vælge en metode til kontogenoprettelse, så vi kan bekræfte anmodningen."
       ],
       "To secure your internet connection, download and install the ProtonVPN application for your device and connect to a ProtonVPN server.": [
         "For at sikre din internetforbindelse, skal du downloade og installere ProtonVPN-applikationen til din enhed og oprette forbindelse til en ProtonVPN-server."
@@ -4292,7 +4310,7 @@
         "Overfør dine data sikkert til Proton. Importassistenten forbinder til din eksterne e-mail-udbyder og importerer dine valgte beskeder og mapper."
       ],
       "Two-factor authentication adds an extra layer of security to your account in case your password is compromised.": [
-        "To-faktorgodkendelse tilføjer et ekstra lag af sikkerhed til din konto, hvis din adgangskode er kompromitteret."
+        "To-faktor-godkendelse tilføjer et ekstra lag af sikkerhed til din konto, hvis din adgangskode er kompromitteret."
       ],
       "Two-factor authentication disabled": [
         "To-faktor-godkendelse deaktiveret"
@@ -4305,9 +4323,6 @@
       ],
       "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
         "To-adgangskodetilstand benytter separate adgangskoder til indlogning og postkassedekryptering. Dette giver en lille sikkerhedsfordel i visse situationer, men brug af en-adgangskodetilstand anbefales til de fleste brugere. Angiv først én adgangskode til indlogning og dernæst én til postkassen for at skifte til to-adgangskodtilstand."
-      ],
-      "Unable to decrypt. Recovery phrase is not associated with any keys.": [
-        "Kan ikke dekryptere. Gendannelsessætning er ikke forbundet med nogen nøgler."
       ],
       "Unable to verify recovery file signature. Please contact support.": [
         "Kan ikke verificere signaturen for genoprettelsesfilen. Kontakt venligst support."
@@ -4369,11 +4384,17 @@
       "VPN + ${ mailAppName } bundle for families and small businesses.": [
         "VPN + ${ mailAppName } pakke for familier og små virksomheder."
       ],
+      "Warning:": [
+        "Advarsel:"
+      ],
       "Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts.": [
         "Advarsel: Sletning er permanent. Dette fjerner også adgang til alle tilknyttede tjenester og sletter alle dine kontakter."
       ],
       "We advise you to use official ProtonVPN applications when possible.": [
         "Vi råder dig til at bruge officielle ProtonVPN-programmer, når det er muligt."
+      ],
+      "We recommend using your recovery phrase instead.": [
+        "Vi anbefaler, at du i stedet bruger din gendannelsessætning."
       ],
       "We use 3-D Secure to protect your payments.": [
         "Vi bruger 3-D Secure til at beskytte dine betalinger."
@@ -4401,6 +4422,12 @@
       ],
       "Week and month views only apply to desktop.": [
         "Uge- og månedsvisninger gælder kun på computeren."
+      ],
+      "We’ll send a reset code to the email address you provided for account recovery.": [
+        "Vi sender en nulstillingskode til den e-mailadresse, du angav til kontogendannelse."
+      ],
+      "We’ll send a reset code to the phone number you provided for account recovery.": [
+        "Vi sender en nulstillingskode til det telefonnummer, du angav til kontogendannelse."
       ],
       "What do you want to import from your Google account?": [
         "Hvad ønsker du at importere fra din Google-konto?"
@@ -4438,6 +4465,9 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
         "Du er i øjeblikket logget ind som ${ user.Name } (${ user.Email }) og har begrænset adgang."
       ],
+      "You can also merge imported calendars with existing Proton calendars.": [
+        "Du kan også flette importerede kalendere med eksisterende Proton-kalendere."
+      ],
       "You can check the progress ${ importProgressLink }.": [
         "Du kan tjekke fremskridtet ${ importProgressLink }."
       ],
@@ -4452,9 +4482,6 @@
       ],
       "You can enable authentication logging to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
         "Godkendelseslogning kan aktiveres for at se, hvornår din konto bliver tilgået. Følgende realtidstilgangsdata logges: IP-adresse, der tilgår kontoen, klokkeslæt samt mislykkede forsøg."
-      ],
-      "You can generate a new encryption key if you think your previous key has been compromised.": [
-        "Du kan generere en ny krypteringsnøgle, hvis du mener, at din tidligere nøgle er blevet kompromitteret."
       ],
       "You can now receive messages to your @pm.me address. Upgrade to a paid plan to also send emails using your @pm.me address and create additional @pm.me addresses.": [
         "Du kan nu modtage beskeder til din @pm.me-adresse. Opgrader til et betalt abonnement for også at kunne sende e-mails ved hjælp af din @pm.me-adresse og oprette yderligere @pm.me-adresser."
@@ -4473,12 +4500,6 @@
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Du har ikke angivet en metode til gendannelse, derfor er kontogendannelse umulig, hvis du glemmer din adgangskode. Fortsæt uden en metode til gendannelse?"
-      ],
-      "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
-        "Du har deaktiveret Beta-adgang. Klik på ${ refreshButton } for at bruge den stabile version af ${ appName }. Applikationen vil blive genindlæst."
-      ],
-      "You have enabled Beta Access. Click ${ refreshButton } to use the latest version of ${ appName }. The application will be reloaded.": [
-        "Du har aktiveret Beta-adgang. Klik på ${ refreshButton } for at bruge den nyeste version af ${ appName }. Applikationen vil blive genindlæst."
       ],
       "You have no saved payment methods.": [
         "Du har ingen gemte betalingsmetoder."
@@ -4549,8 +4570,8 @@
       "Your Block List is empty.": [
         "Din blokeringsliste er tom."
       ],
-      "Your data is encrypted, you can recover your data by reactivating your keys.": [
-        "Dine data er krypteret, og du kan gendanne dine data ved at genaktivere dine nøgler."
+      "Your data is encrypted and locked. You can recover access with a data recovery method.": [
+        "Dine data er krypteret og låst. Du kan genoprette adgang med en datagendannelsesmetode."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "Dine data er klar til at blive importeret fra ${ importedEmailAddressStrong } til din Proton-konto."
@@ -4735,6 +4756,29 @@
       ],
       "Subscription": [
         "Abonnement"
+      ]
+    },
+    "Key generation": {
+      "A key with the same encryption algorithm already exists. Generating another key will cause slower account loading. Are you sure you want to continue?": [
+        ""
+      ],
+      "A key with the same encryption algorithm is already active for this address. Generating another key will cause slower account loading and deletion of this key can cause issues. If you are generating a new key because your old key is compromised, please mark that key as compromised. Are you sure you want to continue?": [
+        ""
+      ],
+      "Generate key": [
+        ""
+      ],
+      "Key with fingerprint ${ fp } successfully created.": [
+        ""
+      ],
+      "The encryption keys are being generated. This may take several minutes and temporarily freeze your browser.": [
+        ""
+      ],
+      "The encryption keys for your address are being generated. This may take several minutes and temporarily freeze your browser.": [
+        ""
+      ],
+      "You can generate a new encryption key if you think your previous key has been compromised.": [
+        ""
       ]
     },
     "Key state badge": {
@@ -5024,6 +5068,9 @@
       "ALL": [
         "ALL"
       ],
+      "All-day event notifications": [
+        "Notifikationer for heldagsbegivenheder"
+      ],
       "Allow recovery by email": [
         "Tillad gendannelse via e-mail"
       ],
@@ -5072,12 +5119,6 @@
       "Automatically save contacts": [
         "Gem automatisk kontakter"
       ],
-      "Backup key": [
-        "Backup-nøgle"
-      ],
-      "Backup keys": [
-        "Backup-nøgler"
-      ],
       "Block email tracking": [
         "Bloker sporing af e-mail"
       ],
@@ -5114,11 +5155,11 @@
       "Category": [
         "Kategori"
       ],
-      "Choose a color": [
-        "Vælg en farve"
-      ],
       "Code": [
         "Kode"
+      ],
+      "Color": [
+        "Farve"
       ],
       "Composer": [
         "Skrivevindue"
@@ -5189,20 +5230,8 @@
       "Days of the week": [
         "Ugedage"
       ],
-      "Default email": [
-        "Standard e-mail"
-      ],
-      "Default event duration": [
-        "Standardvarighed for begivenheder"
-      ],
-      "Default full day notifications": [
-        "Standard heldagsnotifikationer"
-      ],
       "Default language": [
         "Standardsporg"
-      ],
-      "Default notifications": [
-        "Standardnotifikationer"
       ],
       "Default PGP scheme": [
         "Standard PGP-metode"
@@ -5282,6 +5311,12 @@
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Angiv adgangskoden til nøgle med fingeraftryk: ${ fingerprintCode }"
       ],
+      "Event duration": [
+        "Begivenhedsvarighed"
+      ],
+      "Event notifications": [
+        "Begivenhedsnotifikationer"
+      ],
       "Expires": [
         "Udløber"
       ],
@@ -5299,6 +5334,9 @@
       ],
       "Folder location": [
         "Mappeplacering"
+      ],
+      "From: ${ emailFrom }": [
+        "Fra: ${ emailFrom }"
       ],
       "From: ${ fromEmailAddress }": [
         "Fra: ${ fromEmailAddress }"
@@ -5480,6 +5518,9 @@
       "Phrase": [
         "Sætning"
       ],
+      "Phrase consists of 12 unique words in a specific order": [
+        "Sætning består af 12 unikke ord i en bestemt rækkefølge"
+      ],
       "Please add all 3 of the following CNAME records. Note, DNS records can take several hours to update.": [
         "Tilføj følgende 3 CNAME-poster. Bemærk, at DNS-poster kan tage flere timer om at opdatere."
       ],
@@ -5497,6 +5538,9 @@
       ],
       "Postal code": [
         "Postnummer"
+      ],
+      "Previous password": [
+        "Tidligere adgangskode"
       ],
       "Private User": [
         "Privatbruger"
@@ -5533,9 +5577,6 @@
       ],
       "Recovery phrase": [
         "Gendannelsessætning"
-      ],
-      "Recovery phrase contains 12 words": [
-        "Gendannelsessætning indeholder 12 ord"
       ],
       "Repeat password": [
         "Gentag kodeord"
@@ -5615,6 +5656,9 @@
       "To: ${ emailAddress }": [
         "Til: ${ emailAddress }"
       ],
+      "To: ${ emailTo }": [
+        "Til: ${ emailTo }"
+      ],
       "To: ${ PMEmailAddress }": [
         "Til: ${ PMEmailAddress }"
       ],
@@ -5628,7 +5672,7 @@
         "Total (${ countdown })"
       ],
       "Two-factor authentication": [
-        "To-faktorgodkendelse"
+        "To-faktor-godkendelse"
       ],
       "Two-factor authentication code": [
         "To-faktorgodkendelseskode"
@@ -5639,17 +5683,11 @@
       "Undo send": [
         "Fortryd send"
       ],
-      "Upload your backup key": [
-        "Upload din backup-nøgle"
+      "Upload 1 or more encryption keys": [
+        "Upload 1 eller flere krypteringsnøgler"
       ],
-      "Upload your recovery file": [
-        "Upload din gendannelsesfil"
-      ],
-      "Uploaded private keys": [
-        "Uploadet private nøgler"
-      ],
-      "Uploaded recovery file": [
-        "Uploadet genoprettelsesfil"
+      "Upload 1 or more recovery files or encryption keys": [
+        "Upload 1 eller flere gendannelsesfiler eller krypteringsnøgler"
       ],
       "URL": [
         "URL"
@@ -5726,9 +5764,6 @@
       "Your password (admin)": [
         "Din adgangskode (admin)"
       ],
-      "Your recovery phrase": [
-        "Din gendannelsessætning"
-      ],
       "ZIP": [
         "Postnummer"
       ]
@@ -5783,6 +5818,9 @@
       ],
       "Proton newsletter": [
         "Proton-nyhedsbrev"
+      ],
+      "Proton offers and promotions": [
+        "Proton-tilbud og kampagner"
       ],
       "Proton product announcements": [
         "Proton-produktannonceringer"
@@ -6095,7 +6133,7 @@
     },
     "Message": {
       "Are you sure you want to disable two-factor authentication?": [
-        "Sikker på, at du vil deaktivere to-faktorgodkendelse?"
+        "Sikker på, at du vil deaktivere to-faktor-godkendelse?"
       ],
       "Set up a custom domain email address (e.g., you@yourcompany.com). It only takes a few minutes, and our wizard will guide you through the process.": [
         "Opsæt en brugerdefineret domænemailadresse (f.eks. dig@ditfirma.com). Det tager kun et par minutter, og vores guide vil føre dig gennem processen."
@@ -6753,7 +6791,7 @@
         "Tekst"
       ],
       "Two-factor authentication code": [
-        "To-faktorgodkendelseskode"
+        "To-faktor-godkendelseskode"
       ],
       "Type text or keyword": [
         "Indtast tekst eller nøgleord"
@@ -6950,17 +6988,11 @@
       "Email": [
         "E-mail"
       ],
-      "email address": [
-        "e-mailadresse"
-      ],
-      "phone number": [
-        "telefonnummer"
-      ],
       "Phone number": [
         "Telefonnummer"
       ],
-      "Recovery phrase": [
-        "Gendannelsessætning"
+      "Phrase": [
+        "Sætning"
       ]
     },
     "Remark about a key type option": {
@@ -7000,11 +7032,8 @@
       "Upload": [
         "Overfør"
       ],
-      "Upload additional private keys": [
-        "Upload yderligere private nøgler"
-      ],
-      "Upload additional recovery files": [
-        "Upload yderligere gendannelsesfiler"
+      "Upload additional files": [
+        "Upload yderligere filer"
       ]
     },
     "Select search results": {
@@ -7735,6 +7764,9 @@
       "Dashboard": [
         "Kontrolpanel"
       ],
+      "Data locked": [
+        "Data låst"
+      ],
       "Data recovery": [
         "Datagendannelse"
       ],
@@ -7778,7 +7810,7 @@
         "Slet bruger"
       ],
       "Disable two-factor authentication": [
-        "Deaktivér Tofaktorgodkendelse"
+        "Deaktivér to-faktor-godkendelse"
       ],
       "Display name & signature": [
         "Visningsnavn og signatur"
@@ -7794,6 +7826,9 @@
       ],
       "Edit Block List": [
         "Rediger blokeringsliste"
+      ],
+      "Edit calendar": [
+        "Rediger kalender"
       ],
       "Edit credit/debit card": [
         "Redigér kredit / betalingskort"
@@ -7824,9 +7859,6 @@
       ],
       "Enable keyboard shortcuts": [
         "Aktiver tastaturgenveje"
-      ],
-      "Encrypted data": [
-        "Krypterede data"
       ],
       "Encryption & keys": [
         "Kryptering & nøgler"
@@ -7869,9 +7901,6 @@
       ],
       "General": [
         "Generelt"
-      ],
-      "Generate key": [
-        "Generér nøgle"
       ],
       "Generate missing keys": [
         "Generér manglende nøgler"
@@ -8066,11 +8095,11 @@
       "ProtonVPN": [
         "ProtonVPN"
       ],
-      "Reactivate keys": [
-        "Genaktivér nøgler"
-      ],
       "Reconnect your account": [
         "Genopret forbindelse til din konto"
+      ],
+      "Recover data": [
+        "Gendan data"
       ],
       "Recovery": [
         "Gendannelse"
@@ -8142,7 +8171,7 @@
         "Angiv organisationsadgangskode"
       ],
       "Set up two-factor authentication": [
-        "Opsæt Tofaktorgodkendelse"
+        "Opsæt to-faktor-godkendelse"
       ],
       "Settings": [
         "Indstillonger"
@@ -8217,7 +8246,7 @@
         "Total (månedlig)"
       ],
       "Two-factor authentication": [
-        "To-faktorgodkendelse"
+        "To-faktor-godkendelse"
       ],
       "Type": [
         "Type"
@@ -8227,9 +8256,6 @@
       ],
       "Unsupported browser": [
         "Ikke understøttet browser"
-      ],
-      "Update calendar": [
-        "Opdater kalender"
       ],
       "Upgrade": [
         "Opgradér"
@@ -8510,6 +8536,17 @@
         "Signér automatisk alle dine udgående beskeder, så brugerne kan bekræfte ægtheden af dine beskeder. Dette gøres i kombination med den standard PGP-konfiguration, der kan vælges nedenfor."
       ]
     },
+    "Update font modal": {
+      "Today is a good day to write an email": [
+        "I dag er en god dag til at skrive en e-mail"
+      ],
+      "Update default font and size": [
+        "Opdater standardskrifttype og -størrelse"
+      ],
+      "Your default font will look like following:": [
+        "Din standardskrifttype vil se ud som følger:"
+      ]
+    },
     "Upgrade": {
       "Upgrade to ${ protonVpnName } ${ PLAN_NAMES[PLANS.VPNPLUS] } to connect up to ${ plusVpnConnections } device to the VPN at once": [
         "Opgrader til ${ protonVpnName } ${ PLAN_NAMES[PLANS.VPNPLUS] } for at forbinde op til ${ plusVpnConnections } enhed til VPN på én gang",
@@ -8773,6 +8810,12 @@
       ],
       "You will not see this import record in the list anymore.": [
         "Du vil ikke længere se denne import-postering på listen."
+      ],
+      "Your recovery file is outdated and can't recover new data should you reset your account again.": [
+        "Din gendannelsesfil er forældet og kan ikke gendanne nye data, hvis du nulstiller din konto igen."
+      ],
+      "Your recovery phrase is outdated and can't recover new data should you reset your account again.": [
+        "Din gendannelsessætning er forældet og kan ikke gendanne nye data, hvis du nulstiller din konto igen."
       ]
     },
     "Warning for domain modal": {

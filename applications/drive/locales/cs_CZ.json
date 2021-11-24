@@ -14,6 +14,9 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } obchod"
       ],
+      "Activate recovery": [
+        ""
+      ],
       "Add": [
         "Přidat"
       ],
@@ -146,7 +149,7 @@
       "Decrease": [
         "Snížit"
       ],
-      "Default mail handler": [
+      "Default email application": [
         ""
       ],
       "Delete": [
@@ -238,9 +241,6 @@
       ],
       "Grid layout": [
         "Rozložení mřížky"
-      ],
-      "here": [
-        "zde"
       ],
       "Hide advanced PGP settings": [
         "Skrýt pokročilé nastavení PGP"
@@ -365,9 +365,6 @@
       "Previous month": [
         "Předchozí měsíc"
       ],
-      "Prompt browser setting": [
-        ""
-      ],
       "Quit": [
         ""
       ],
@@ -442,6 +439,12 @@
       ],
       "Select plan": [
         "Vybrat plán"
+      ],
+      "Set as default": [
+        ""
+      ],
+      "Set recovery phrase": [
+        ""
       ],
       "Share": [
         "Sdílet"
@@ -523,6 +526,12 @@
       ],
       "Untrust": [
         "Nedůvěřovat"
+      ],
+      "Update recovery file": [
+        ""
+      ],
+      "Update recovery phrase": [
+        ""
       ],
       "Upgrade": [
         "Rozšířit"
@@ -1126,6 +1135,12 @@
       "Could not generate file keys": [
         "Nepodařilo se vygenerovat klíče"
       ],
+      "Deselect at least ${ calendarToFixCount } calendar": [
+        "",
+        "",
+        "",
+        ""
+      ],
       "Deselect at least ${ calendarToFixCount } calendar or": [
         "",
         "",
@@ -1209,6 +1224,9 @@
       ],
       "Name on card required": [
         "Jméno držitele karty je povinná položka"
+      ],
+      "No data to import": [
+        ""
       ],
       "No valid address found": [
         "Nebyla nalezena žádná platná adresa"
@@ -1817,9 +1835,6 @@
       "Account successfully updated": [
         "Účet byl úspěšně obnoven"
       ],
-      "Activating this option will open a new composer each time you click on a mailto: link.": [
-        ""
-      ],
       "Add additional addresses to your account like user2@protonmail.com": [
         "Přidat ke svému účtu další adresy, například user2@protonmail.com"
       ],
@@ -1959,6 +1974,9 @@
         "Vytvářím sdílení"
       ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
+        ""
+      ],
+      "Default email application": [
         ""
       ],
       "Delete drive": [
@@ -2300,7 +2318,7 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Vyberte formát emailu, který chcete aby byl použit jako výchozí pro zasílání emailu na tuto emailovou adresu."
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit. You can also merge imported calendars with existing Proton calendars.": [
+      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         ""
       ],
       "Servers are unreachable. Please try again in a few minutes": [
@@ -2309,7 +2327,7 @@
       "Session timed out.": [
         "Relace vypršela."
       ],
-      "Set ProtonMail as your default mail handler": [
+      "Set ProtonMail as your default email application for this browser. ProtonMail will open automatically when you click an email link.": [
         ""
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
@@ -2480,6 +2498,9 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
         "Aktuálně jste přihlášeni jako ${ user.Name } (${ user.Email }) a máte omezený přístup."
       ],
+      "You can also merge imported calendars with existing Proton calendars.": [
+        ""
+      ],
       "You can check the progress ${ importProgressLink }.": [
         ""
       ],
@@ -2488,12 +2509,6 @@
       ],
       "You cannot undo this action.": [
         "Nemůžete vrátit zpět tuto akci."
-      ],
-      "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
-        "Zakázali jste Beta Přístup. Klikněte na ${ refreshButton } pro použití stabilní verze ${ appName }. Aplikace bude znovu načtena."
-      ],
-      "You have enabled Beta Access. Click ${ refreshButton } to use the latest version of ${ appName }. The application will be reloaded.": [
-        "Povolili jste Beta Přístup. Klikněte na ${ refreshButton } pro použití nejnovější verze ${ appName }. Aplikace bude znovu načtena."
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "Abyste mohli přidat PayPal jako platební metodu, musíte jej mít propojený s kreditní kartou nebo bankovním účtem."

@@ -40,6 +40,9 @@
       "Activate my coupon": [
         "Gutschein aktivieren"
       ],
+      "Activate recovery": [
+        "Wiederherstellung aktivieren"
+      ],
       "Add credit / debit card": [
         "Kredit‐/Debitkarte hinzufügen"
       ],
@@ -187,9 +190,6 @@
       "Go to panel ${ index }": [
         "Seitenleiste ${ index } öffnen"
       ],
-      "here": [
-        "hier"
-      ],
       "Hide": [
         "Ausblenden"
       ],
@@ -304,6 +304,9 @@
       "Send": [
         "Senden"
       ],
+      "Set recovery phrase": [
+        "Wiederherstellungsphrase einrichten"
+      ],
       "Share via link": [
         "Als Link teilen"
       ],
@@ -348,6 +351,12 @@
       ],
       "Update": [
         "Aktualisieren"
+      ],
+      "Update recovery file": [
+        "Wiederherstellungsdatei aktualisieren"
+      ],
+      "Update recovery phrase": [
+        "Wiederherstellungsphrase aktualisieren"
       ],
       "Upgrade": [
         "Umsteigen"
@@ -1755,12 +1764,6 @@
       "You cannot use the OpenVPN / IKEv2 credentials to log in to ProtonVPN applications or the ProtonVPN dashboard. ${ learnMore }": [
         "Sie können keine OpenVPN/IKEv2-Zugangsdaten verwenden, um sich an ProtonVPN-Anwendungen oder der ProtonVPN-Übersicht anzumelden. ${ learnMore }"
       ],
-      "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
-        "Sie haben den Beta-Zugang deaktiviert. Klicken Sie ${ refreshButton }, um die neueste Version von ${ appName } zu verwenden. Die Anwendung wird daraufhin neu heruntergeladen."
-      ],
-      "You have enabled Beta Access. Click ${ refreshButton } to use the latest version of ${ appName }. The application will be reloaded.": [
-        "Sie haben den Beta-Zugang aktiviert. Klicken Sie ${ refreshButton }, um die neueste Version von ${ appName } zu verwenden. Die Anwendung wird daraufhin neu heruntergeladen."
-      ],
       "You have no saved payment methods.": [
         "Sie haben keine gespeicherten Zahlungsmethoden."
       ],
@@ -2262,6 +2265,9 @@
       ],
       "Proton newsletter": [
         "Proton Newsletter"
+      ],
+      "Proton offers and promotions": [
+        "Proton Angebote und Sonderaktionen"
       ],
       "Proton product announcements": [
         "Proton • Produktankündigungen"

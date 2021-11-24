@@ -14,6 +14,9 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } butik"
       ],
+      "Activate recovery": [
+        "Aktiver gendannelse"
+      ],
       "Add": [
         "Tilføj"
       ],
@@ -146,8 +149,8 @@
       "Decrease": [
         "Formindsk"
       ],
-      "Default mail handler": [
-        ""
+      "Default email application": [
+        "Standardprogram til mails"
       ],
       "Delete": [
         "Slet"
@@ -234,9 +237,6 @@
       ],
       "Grid layout": [
         "Gitter-layout"
-      ],
-      "here": [
-        "her"
       ],
       "Hide advanced PGP settings": [
         "Skjul avancerede PGP-indstillinger"
@@ -361,9 +361,6 @@
       "Previous month": [
         "Forrige måned"
       ],
-      "Prompt browser setting": [
-        ""
-      ],
       "Quit": [
         "Afslut"
       ],
@@ -438,6 +435,12 @@
       ],
       "Select plan": [
         "Vælg abonnement"
+      ],
+      "Set as default": [
+        "Angiv som standard"
+      ],
+      "Set recovery phrase": [
+        "Opsæt gendannelsessætning"
       ],
       "Share": [
         "Del"
@@ -519,6 +522,12 @@
       ],
       "Untrust": [
         "Ikke længere betroet"
+      ],
+      "Update recovery file": [
+        "Opdater gendannelsesfil"
+      ],
+      "Update recovery phrase": [
+        "Opdater gendannelsessætning"
       ],
       "Upgrade": [
         "Opgradér"
@@ -1108,6 +1117,10 @@
       "Could not generate file keys": [
         "Kunne ikke generere filnøgler"
       ],
+      "Deselect at least ${ calendarToFixCount } calendar": [
+        "Fravælg mindst ${ calendarToFixCount } kalender",
+        "Fravælg mindst ${ calendarToFixCount } kalendere"
+      ],
       "Deselect at least ${ calendarToFixCount } calendar or": [
         "Fravælg mindst ${ calendarToFixCount } kalender eller",
         "Fravælg mindst ${ calendarToFixCount } kalendere eller"
@@ -1187,6 +1200,9 @@
       ],
       "Name on card required": [
         "Navn på kort er obligatorisk"
+      ],
+      "No data to import": [
+        "Ingen data at importere"
       ],
       "No valid address found": [
         "Ingen gyldig adresse fundet"
@@ -1733,9 +1749,6 @@
       "Account successfully updated": [
         "Opdatering af konto lykkedes"
       ],
-      "Activating this option will open a new composer each time you click on a mailto: link.": [
-        ""
-      ],
       "Add additional addresses to your account like user2@protonmail.com": [
         "Tilføj yderligere adresser til din konto såsom bruger2@protonmail.com"
       ],
@@ -1868,6 +1881,9 @@
       ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "CSV-filer fra Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora og nogle andre apps samt vCard 3.1 og 4.0-formater (UTF-8-kodning) understøttes."
+      ],
+      "Default email application": [
+        "Standardprogram til mails"
       ],
       "Delete drive": [
         "Slet drev",
@@ -2202,8 +2218,8 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Vælg det e-mail-format, der som standard skal benyttes, når du sender en e-mail til denne e-mailadresse."
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit. You can also merge imported calendars with existing Proton calendars.": [
-        "Vælg, hvilke kalendere der skal importeres. Der oprettes en ny kalender for hver importeret kalender op til grænsen på 20 kalendere. Du kan også flette importerede kalendere med eksisterende Proton-kalendere."
+      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
+        "Vælg, hvilke kalendere der skal importeres. Der oprettes en ny kalender for hver importeret kalender op til grænsen på 20 kalendere."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Servere er utilgængelige. Prøv igen om nogle få minutter"
@@ -2211,8 +2227,8 @@
       "Session timed out.": [
         "Session er udløbet."
       ],
-      "Set ProtonMail as your default mail handler": [
-        ""
+      "Set ProtonMail as your default email application for this browser. ProtonMail will open automatically when you click an email link.": [
+        "Angiv ProtonMail som standardprogram til mails for denne browser. ProtonMail vil åbne automatisk, når du klikker på et maillink."
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
         "Opsætning af PGP giver dig mulighed for at sende end-to-end krypterede e-mails til en ikke-Protonmail-bruger, der benytter en PGP-kompatibel tjeneste."
@@ -2380,6 +2396,9 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
         "Du er i øjeblikket logget ind som ${ user.Name } (${ user.Email }) og har begrænset adgang."
       ],
+      "You can also merge imported calendars with existing Proton calendars.": [
+        "Du kan også flette importerede kalendere med eksisterende Proton-kalendere."
+      ],
       "You can check the progress ${ importProgressLink }.": [
         "Du kan tjekke fremskridtet ${ importProgressLink }."
       ],
@@ -2388,12 +2407,6 @@
       ],
       "You cannot undo this action.": [
         "Du kan ikke fortryde denne handling."
-      ],
-      "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
-        "Du har deaktiveret Beta-adgang. Klik på ${ refreshButton } for at bruge den stabile version af ${ appName }. Applikationen vil blive genindlæst."
-      ],
-      "You have enabled Beta Access. Click ${ refreshButton } to use the latest version of ${ appName }. The application will be reloaded.": [
-        "Du har aktiveret Beta-adgang. Klik på ${ refreshButton } for at bruge den nyeste version af ${ appName }. Applikationen vil blive genindlæst."
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "Du skal have et kreditkort eller en bankkonto tilknyttet din PayPal-konto for at tilføje den som en betalingsmetode."
@@ -3030,7 +3043,7 @@
         "I alt (${ countdown })"
       ],
       "Two-factor authentication code": [
-        "To-faktorgodkendelseskode"
+        "To-faktor-godkendelseskode"
       ],
       "Type": [
         "Type"
@@ -3146,10 +3159,10 @@
         "Tilføj en gavekode"
       ],
       "All mail": [
-        ""
+        "Alle e-mails"
       ],
       "Archive": [
-        ""
+        "Arkiv"
       ],
       "clearing your browser cache": [
         "rydder din browser-cache"
@@ -3158,13 +3171,13 @@
         "klik hér"
       ],
       "Drafts": [
-        ""
+        "Kladder"
       ],
       "Go to subscription plans": [
         "Gå til abonnementer"
       ],
       "Inbox": [
-        ""
+        "Indbakke"
       ],
       "Learn more": [
         "Få mere at vide"
@@ -3173,7 +3186,7 @@
         "Mine filer"
       ],
       "Outbox": [
-        ""
+        "Udbakke"
       ],
       "Pay invoice": [
         "Betal faktura"
@@ -3182,19 +3195,19 @@
         "Anmod om en invitation"
       ],
       "Scheduled": [
-        ""
+        "Planlagt"
       ],
       "Sent": [
-        ""
+        "Sendt"
       ],
       "Shared": [
         "Delt"
       ],
       "Spam": [
-        ""
+        "Spam"
       ],
       "Starred": [
-        ""
+        "Stjernemarkeret"
       ],
       "Trash": [
         "Papirkurv"
@@ -4110,7 +4123,7 @@
         "Bekræft tab af Proton-bonusser"
       ],
       "Contact details": [
-        ""
+        "Kontaktdetaljer"
       ],
       "Contact Details": [
         "Kontaktoplysninger"
