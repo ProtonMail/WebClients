@@ -13,6 +13,8 @@ import {
     useFeature,
     useHasOutdatedRecoveryFile,
     useIsDataRecoveryAvailable,
+    useIsMnemonicAvailable,
+    useIsRecoveryFileAvailable,
     useModals,
     useNotifications,
     useOrganization,
@@ -60,14 +62,16 @@ const UserDropdown = ({ onOpenChat, ...rest }: Props) => {
     const showRecoveryNotification = useShowRecoveryNotification();
     const { feature: hasVisitedRecoveryPage } = useFeature(FeatureCode.VisitedRecoveryPage);
 
+    const [isRecoveryFileAvailable] = useIsRecoveryFileAvailable();
+    const [isMnemonicAvailable] = useIsMnemonicAvailable();
     const [isDataRecoveryAvailable] = useIsDataRecoveryAvailable();
     const hasOutdatedRecoveryFile = useHasOutdatedRecoveryFile();
     const hasOutdatedRecoveryMethod = user.MnemonicStatus === MNEMONIC_STATUS.OUTDATED || hasOutdatedRecoveryFile;
 
+    const hasntVisitedRecoveryPageNotification = hasVisitedRecoveryPage?.Value === false && showRecoveryNotification;
+    const showOutdatedRecoveryNotification = isDataRecoveryAvailable && hasOutdatedRecoveryMethod;
     const showRecoveryDropdownItem =
-        user.isPrivate &&
-        ((showRecoveryNotification && hasVisitedRecoveryPage?.Value === false) ||
-            (isDataRecoveryAvailable && hasOutdatedRecoveryMethod));
+        user.isPrivate && (hasntVisitedRecoveryPageNotification || showOutdatedRecoveryNotification);
 
     const { createNotification } = useNotifications();
     const handleCopyEmail = () => {
@@ -127,21 +131,23 @@ const UserDropdown = ({ onOpenChat, ...rest }: Props) => {
     };
 
     const recoveryDropdownItem = (() => {
-        if (user.MnemonicStatus === MNEMONIC_STATUS.SET) {
-            return {
-                path: '/recovery',
-                text: c('Action').t`Activate recovery`,
-            };
+        if (isMnemonicAvailable) {
+            if (user.MnemonicStatus === MNEMONIC_STATUS.OUTDATED) {
+                return {
+                    path: '/recovery#data',
+                    text: c('Action').t`Update recovery phrase`,
+                };
+            }
+
+            if (user.MnemonicStatus === MNEMONIC_STATUS.ENABLED || user.MnemonicStatus === MNEMONIC_STATUS.PROMPT) {
+                return {
+                    path: '/recovery?action=generate-recovery-phrase',
+                    text: c('Action').t`Set recovery phrase`,
+                };
+            }
         }
 
-        if (user.MnemonicStatus === MNEMONIC_STATUS.OUTDATED) {
-            return {
-                path: '/recovery#data',
-                text: c('Action').t`Update recovery phrase`,
-            };
-        }
-
-        if (hasOutdatedRecoveryFile) {
+        if (isRecoveryFileAvailable && hasOutdatedRecoveryFile) {
             return {
                 path: '/recovery#data',
                 text: c('Action').t`Update recovery file`,
@@ -149,8 +155,8 @@ const UserDropdown = ({ onOpenChat, ...rest }: Props) => {
         }
 
         return {
-            path: '/recovery?action=generate-recovery-phrase',
-            text: c('Action').t`Set recovery phrase`,
+            path: '/recovery',
+            text: c('Action').t`Activate recovery`,
         };
     })();
 
