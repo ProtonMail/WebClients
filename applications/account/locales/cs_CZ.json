@@ -31,17 +31,20 @@
       "${ BRAND_NAME } shop": [
         "Obchod ${ BRAND_NAME }"
       ],
-      "Activate": [
-        "Aktivovat"
-      ],
       "activate": [
         "aktivovat"
+      ],
+      "Activate": [
+        "Aktivovat"
       ],
       "Activate ${ Name }@pm.me": [
         "Aktivovat ${ Name }@pm.me"
       ],
       "Activate organization key": [
         "Aktivovat klíč organizace"
+      ],
+      "Activate recovery": [
+        ""
       ],
       "Add": [
         "Přidat"
@@ -205,9 +208,6 @@
       "Copy link": [
         "Kopírovat odkaz"
       ],
-      "Create": [
-        "Vytvořit"
-      ],
       "Create a secure ProtonMail address instead": [
         "Namísto toho vytvořit zabezpečenou ProtonMail adresu"
       ],
@@ -337,9 +337,6 @@
       "Export key": [
         "Exportovat klíč"
       ],
-      "Export private key": [
-        "Exportovat soukromý klíč"
-      ],
       "Font": [
         "Písmo"
       ],
@@ -366,9 +363,6 @@
       ],
       "Go to panel ${ index }": [
         "Přejít na panel ${ index }"
-      ],
-      "here": [
-        "zde"
       ],
       "Hide": [
         "Skrýt"
@@ -631,6 +625,9 @@
       "Set catch-all": [
         "Nastavení doménového koše"
       ],
+      "Set recovery phrase": [
+        ""
+      ],
       "Share via link": [
         "Sdílet přes odkaz"
       ],
@@ -712,6 +709,9 @@
       "Switch account": [
         "Přepnout účet"
       ],
+      "Switch to rich text": [
+        "Přepnout na formátovaný text"
+      ],
       "Top up": [
         "Dobít"
       ],
@@ -727,6 +727,9 @@
       "Unlock": [
         "Odemknout"
       ],
+      "Unlock data": [
+        ""
+      ],
       "Unordered list": [
         "Neseřazený seznam"
       ],
@@ -735,6 +738,12 @@
       ],
       "Update": [
         "Aktualizovat"
+      ],
+      "Update recovery file": [
+        ""
+      ],
+      "Update recovery phrase": [
+        ""
       ],
       "Upgrade": [
         "Vylepšit"
@@ -785,13 +794,13 @@
         "Zobrazit fakturu"
       ],
       "Void all recovery files": [
-        ""
+        "Zrušit všechny soubory pro obnovení"
       ],
       "Void all recovery files?": [
-        ""
+        "Zrušit všechny soubory pro obnovení?"
       ],
       "Void anyway": [
-        ""
+        "Přesto zrušit"
       ],
       "Warning": [
         "Upozornění"
@@ -932,9 +941,6 @@
       ]
     },
     "alert": {
-      "The encryption keys for your address are being generated. This may take several minutes and temporarily freeze your browser.": [
-        "Šifrovací klíče pro vaši adresu jsou generovány. Může to trvat několik minut a váš prohlížeč může dočasně zamrznout."
-      ],
       "The key for your address is now being deleted.": [
         "Klíč pro vaši adresu se nyní odstraňuje."
       ]
@@ -1317,10 +1323,7 @@
       ]
     },
     "Calendar limit warning": {
-      "You have reached the maximum of ${ calendarsLimit } personal calendar.": [
-        "",
-        "",
-        "",
+      "You have reached the maximum number of personal calendars you can create within your plan.": [
         ""
       ],
       "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } subscribed calendar.": [
@@ -1870,6 +1873,12 @@
       "Could not find address ${ email }.": [
         "Nelze najít adresu ${ email }."
       ],
+      "Deselect at least ${ calendarToFixCount } calendar": [
+        "",
+        "",
+        "",
+        ""
+      ],
       "Deselect at least ${ calendarToFixCount } calendar or": [
         "",
         "",
@@ -1983,6 +1992,9 @@
       ],
       "No active sessions": [
         "Žádné aktivní relace"
+      ],
+      "No data to import": [
+        ""
       ],
       "No valid address found": [
         "Nebyla nalezena žádná platná adresa"
@@ -2107,6 +2119,12 @@
       "The folder name is too long. Please choose a different name.": [
         "Název složky je příliš dlouhý. Zvolte prosím jiný název."
       ],
+      "The keys in your recovery file can't be validated. Please contact support.": [
+        ""
+      ],
+      "The keys in your recovery files can't be validated. Please upload individually for more information.": [
+        ""
+      ],
       "The label name is too long. Please choose a different name.": [
         "Název štítku je příliš dlouhý. Zvolte prosím jiný název."
       ],
@@ -2153,9 +2171,6 @@
         "Neznámý stav platebního tokenu"
       ],
       "Uploaded file is not a valid private key. Please verify and try again.": [
-        ""
-      ],
-      "Uploaded file is not a valid recovery file. Please verify and try again.": [
         ""
       ],
       "Uploaded files are not valid private keys. Please verify and try again.": [
@@ -2208,9 +2223,6 @@
       ]
     },
     "Error importing calendar": {
-      "${ CALENDAR_APP_NAME } only supports importing calendars with iCal version 2.0.": [
-        "${ CALENDAR_APP_NAME } podporuje pouze import kalendářů s iCal verze 2.0."
-      ],
       "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
         "Došlo k chybě při čtení souboru ${ formattedFilename }. Soubor nemá správný formát."
       ],
@@ -3134,6 +3146,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } potřebuje Vaše oprávnění k ${ enableDesktopNotifications }."
       ],
+      "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
+        ""
+      ],
       "${ calendarName } will be set as default calendar.": [
         "${ calendarName } bude nastaven jako výchozí kalendář."
       ],
@@ -3287,9 +3302,6 @@
       "A free and uncensored Internet should be available to all.": [
         "Svobodný a necenzurovaný internet by měl být přístupný všem."
       ],
-      "A key with the same encryption algorithm is already active for this address. Generating another key will cause slower account loading and deletion of this key can cause issues. If you are generating a new key because your old key is compromised, please mark that key as compromised. Are you sure you want to continue?": [
-        "Klíč se stejným šifrovacím algoritmem je již pro tuto adresu aktivní. Vygenerování dalšího klíče zpomalí načítání účtu, a následné smazání tohoto klíče může způsobit problémy. Pokud generujete nový klíč, protože starý již není bezpečný, označte tento klíč jako ohrožený/nebezpečný. Opravdu chcete pokračovat?"
-      ],
       "A recovery file lets you unlock and view your data after an account reset. ": [
         ""
       ],
@@ -3401,9 +3413,6 @@
       "AOL reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
         "AOL čte Vaše osobní údaje s cílem poskytnout přístup inzerentům a dalším třetím stranám. Pro lepší soukromí vytvořte bezpečnou e-mailovou adresu."
       ],
-      "Are you sure you want to continue?": [
-        "Opravdu chcete pokračovat?"
-      ],
       "Are you sure you want to delete this address?": [
         "Opravdu chcete smazat tuto adresu?"
       ],
@@ -3505,9 +3514,6 @@
       ],
       "Center": [
         "Zarovnat na střed"
-      ],
-      "Change your default in settings": [
-        ""
       ],
       "Check the status of current and previous imports.": [
         "Zkontrolovat stav aktuálních a předchozích importů."
@@ -3659,6 +3665,9 @@
       "Emails tagged with this label will not be deleted and can still be found in the respective folder.": [
         "Označený email s touto složkou nebude vymazán a je možné jej nalézt v příslušném souboru."
       ],
+      "Enabling recovery by phrase again will generate a new recovery phrase.": [
+        ""
+      ],
       "Encryption setting updated": [
         "Nastavení šifrování bylo aktualizováno"
       ],
@@ -3676,12 +3685,6 @@
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
         "Zadejte heslo organizace pro obnovení oprávnění správce. ${ learnMore }"
-      ],
-      "Enter the recovery ${ recoveryMethodText } associated with your ${ BRAND_NAME } Account. We will send you a code to confirm the password reset.": [
-        "Zadejte obnovovací ${ recoveryMethodText } přidružený k Vašemu ${ BRAND_NAME } účtu. Pošleme Vám kód pro potvrzení obnovení hesla."
-      ],
-      "Enter the recovery phrase associated with your ${ BRAND_NAME } Account.": [
-        "Zadejte obnovovací frázi přidružené s Vaším ${ BRAND_NAME } účtem."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Zadejte ověřovací kód, který byl odeslán na ${ destinationText }."
@@ -3809,12 +3812,6 @@
       "If you proceed with the downgrade, you will lose access to ProtonVPN paid features.": [
         "Pokud budete pokračovat s downgradem, ztratíte přístup k placeným funkcím účtu ProtonMail a ProtonVPN."
       ],
-      "If you proceed, you will be required to reset your password and you will be logged out of all other active sessions.": [
-        "Pokud budete pokračovat, budete požádáni o změnu hesla a budete odhlášen od dalších aktivních relací."
-      ],
-      "If you proceed, you will have to reset your password and will be logged out of any other active sessions.": [
-        "Pokud budete pokračovat, budete muset změnit heslo a budete odhlášen od dalších aktivních relací."
-      ],
       "If you want to keep an existing SPF record, you can just add ${ spf } to it after the ${ spfValue }. Do not create multiple SPF records.": [
         "Chcete-li zachovat existující SPF záznam, jednoduše k němu přidejte ${ spf } a potom ${ spfValue }. Nevytvářejte více SPF záznamů."
       ],
@@ -3911,9 +3908,6 @@
       "Key with fingerprint ${ fp } has been deleted.": [
         "Klíč s otiskem ${ fp } byl odstraněn."
       ],
-      "Key with fingerprint ${ fp } successfully created.": [
-        "Klíč s otiskem ${ fp } úspěšně vytvořen."
-      ],
       "Label all imported messages as": [
         "Označit všechny importované zprávy jako"
       ],
@@ -4001,8 +3995,8 @@
       "Next you'll need to log in to your Google account and allow us to access your data.": [
         ""
       ],
-      "No account recovery method set, you are at risk of losing access to your account": [
-        "Není nastavena žádná metoda obnovení účtu, riskujete ztrátu přístupu k Vašemu účtu"
+      "No account recovery method set; you are at risk of losing access to your account": [
+        ""
       ],
       "No action selected": [
         "Není vybrána žádná akce"
@@ -4013,7 +4007,7 @@
       "No contact encryption keys exist": [
         "Neexistuje žádný klíč pro šifrování kontaktů"
       ],
-      "No data recovery method set, you are at risk of losing access to your data": [
+      "No data recovery method set; you are at risk of losing access to your data": [
         ""
       ],
       "No folder selected": [
@@ -4105,6 +4099,9 @@
       ],
       "Please enter a password to encrypt your private key with before exporting.": [
         "Před exportem prosím zadejte heslo k zašifrování Vašeho soukromého klíče."
+      ],
+      "Please enter the 12-word recovery phrase associated with your account.": [
+        ""
       ],
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
         ""
@@ -4211,6 +4208,9 @@
       "Recovery phrase has been disabled": [
         "Obnovovací fráze bude deaktivována"
       ],
+      "Recovery phrase is not associated with any keys.": [
+        ""
+      ],
       "Recovery phrase is not associated with any outdated keys.": [
         "Fráze pro obnovení není spojena s žádnými zastaralými klíči."
       ],
@@ -4244,7 +4244,7 @@
       "Select a service provider to get started": [
         ""
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit. You can also merge imported calendars with existing Proton calendars.": [
+      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         ""
       ],
       "Server is currently down": [
@@ -4331,6 +4331,18 @@
       "This feature is intended for advanced users only. After deleting this key, you will NOT be able to decrypt any message that has been encrypted with it. It may lead to data loss.": [
         "Tato funkce je určena pouze pro pokročilé uživatele. Po odstranění tohoto klíče nebudete moci dešifrovat žádnou zprávu, která s ním byla zašifrována. Může to vést ke ztrátě dat."
       ],
+      "This is a 12-word phrase that you were prompted to set.": [
+        ""
+      ],
+      "This is a recovery file or encryption key you may have previously saved.": [
+        ""
+      ],
+      "This is an encryption key you may have previously saved.": [
+        ""
+      ],
+      "This is the password you used before the password reset.": [
+        ""
+      ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Tento odkaz může být homografickým útokem a nelze ho otevřít pomocí prohlížeče Internet Explorer nebo Edge. Pokud jste si jisti, že je odkaz v pořádku, otevřete ho v jiném prohlížeči."
       ],
@@ -4346,14 +4358,14 @@
       "This will also disable any two-factor authentication method associated with this account.": [
         "Tímto také zakážete dvoufázovou metodu ověření, spojenou s tímto účtem."
       ],
-      "This will also disable two-factor authentication.": [
-        "Tím také deaktivujete dvoufaktorové ověřování."
-      ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
         "Tímto úkonem zrušíte aktuální placené předplatné a ztratíte všechny věrnostní výhody, které jste nashromáždili. Zbývající zůstatek předplatného bude vrácen jako kredit na účet."
       ],
       "This will create an encryption key for your organization. 4096-bit keys only work on high performance computers, for most users, we recommend using 2048-bit keys.": [
         "Tento proces vytvoří pro vaši organizaci nový šifrovací klíč. 4096-bitové klíče fungují pouze na vysoce výkonných počítačích, pro většinu uživatelů doporučujeme používat 2048-bitové klíče."
+      ],
+      "This will disable your current recovery phrase. You won't be able to use it to access your account or decrypt your data.": [
+        ""
       ],
       "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Toto umožní použít Paypal pro platby Proton předplatného. Přesměrujeme vás na Váš PayPal v nové záložce prohlížeče. Pokud máte nastaveno blokování vyskakovacích oken, vypněte jej prosím pro než budete pokračovat."
@@ -4367,20 +4379,23 @@
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "Toto nahradí Vaše dočasné heslo. V budoucnu jej použijete pro přístup k Vašemu ${ BRAND_NAME } účtu."
       ],
+      "This will sign you out of any active sessions and disable 2-factor authentication.": [
+        ""
+      ],
       "This wizard will enable Two-Factor Authentication (2FA) on your Proton account. Two-factor authentication will make your Proton account more secure so we recommend enabling it.": [
         "Tento průvodce zapne dvoufázové ověřování (2FA) na vašem Proton účtu. Doporučujeme 2FA zapnout, zajistí vám bezpečnější Proton účet."
       ],
       "to": [
         "do"
       ],
-      "To access your old messages, you will need to reactivate your old encryption keys using one of the following recovery methods.": [
-        ""
-      ],
       "To confirm, please enter the name of the user you wish to delete.": [
         "Chcete-li potvrdit, zadejte jméno uživatele, kterého chcete odstranit."
       ],
       "to continue to ${ toAppName }": [
         "pokračovat do ${ toAppName }"
+      ],
+      "To decrypt and view your locked data after a password reset, select a recovery method.": [
+        ""
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Z důvodu boje proti spamu a obtěžování, ověřte prosím, že jste člověk."
@@ -4390,6 +4405,9 @@
       ],
       "To prepare your external account for import, please follow the instructions for:": [
         "Chcete-li připravit svůj externí účet pro import, postupujte podle pokynů pro:"
+      ],
+      "To proceed, select an account recovery method so we can verify the request.": [
+        ""
       ],
       "To secure your internet connection, download and install the ProtonVPN application for your device and connect to a ProtonVPN server.": [
         "Chcete-li zabezpečit své připojení k internetu, stáhněte a nainstalujte si do svého zařízení aplikaci ProtonVPN a připojte se k serveru ProtonVPN."
@@ -4417,9 +4435,6 @@
       ],
       "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
         "Režim se dvěma hesly využívá dvě samostatná hesla pro přihlášení a dešifrování e-mailové schránky. V určitých situacích to zvyšuje bezpečnost, nicméně pro většinu uživatelů je vhodné používat režim jednoho hesla. Chcete-li přepnout do režimu se dvěma hesly, nejprve zadejte své přihlašovací heslo, a poté heslo k e-mailové schránce."
-      ],
-      "Unable to decrypt. Recovery phrase is not associated with any keys.": [
-        ""
       ],
       "Unable to verify recovery file signature. Please contact support.": [
         "Nelze ověřit podpis souboru pro obnovení. Kontaktujte podporu."
@@ -4481,11 +4496,17 @@
       "VPN + ${ mailAppName } bundle for families and small businesses.": [
         "VPN + ${ mailAppName } balíček pro rodiny a malé podniky."
       ],
+      "Warning:": [
+        "Upozornění:"
+      ],
       "Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts.": [
         "Upozornění: Odstranění nelze vrátit zpět. Tímto úkonem také odeberete přístup ke všem připojeným službám a odstraníte všechny své kontakty."
       ],
       "We advise you to use official ProtonVPN applications when possible.": [
         "Doporučujeme používat jen oficiální aplikace ProtonVPN, pokud je to možné."
+      ],
+      "We recommend using your recovery phrase instead.": [
+        ""
       ],
       "We use 3-D Secure to protect your payments.": [
         "K zabezpečení Vašich plateb používáme 3-D Secure."
@@ -4513,6 +4534,12 @@
       ],
       "Week and month views only apply to desktop.": [
         "Zobrazení týdne a měsíce platí pouze pro stolní počítače."
+      ],
+      "We’ll send a reset code to the email address you provided for account recovery.": [
+        ""
+      ],
+      "We’ll send a reset code to the phone number you provided for account recovery.": [
+        ""
       ],
       "What do you want to import from your Google account?": [
         ""
@@ -4550,6 +4577,9 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
         "Aktuálně jste přihlášeni jako ${ user.Name } (${ user.Email }) a máte omezený přístup."
       ],
+      "You can also merge imported calendars with existing Proton calendars.": [
+        ""
+      ],
       "You can check the progress ${ importProgressLink }.": [
         ""
       ],
@@ -4564,9 +4594,6 @@
       ],
       "You can enable authentication logging to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
         "Můžete zapnout zaznamenávání přihlášení, aby jste měli přehled kdy a ze které IP adresy bylo přistoupeno k Vašemu účtu. Budeme zaznamenávat IP adresu a čas přístupu k Vašemu účtu, stejně jako nepovedená přihlášení."
-      ],
-      "You can generate a new encryption key if you think your previous key has been compromised.": [
-        "Můžete vytvořit nový šifrovací klíč, pokud si myslíte, že byl Váš stávající prolomen."
       ],
       "You can now receive messages to your @pm.me address. Upgrade to a paid plan to also send emails using your @pm.me address and create additional @pm.me addresses.": [
         ""
@@ -4585,12 +4612,6 @@
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Nenastavili jste e-mail pro obnovení, takže v případě ztráty hesla nebude možné účet obnovit. Pokračovat bez sekundárního e-mailu?"
-      ],
-      "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
-        "Zakázali jste Beta Přístup. Klikněte na ${ refreshButton } pro použití stabilní verze ${ appName }. Aplikace bude znovu načtena."
-      ],
-      "You have enabled Beta Access. Click ${ refreshButton } to use the latest version of ${ appName }. The application will be reloaded.": [
-        "Povolili jste Beta Přístup. Klikněte na ${ refreshButton } pro použití nejnovější verze ${ appName }. Aplikace bude znovu načtena."
       ],
       "You have no saved payment methods.": [
         "Nemáte žádné uložené způsoby platby."
@@ -4661,7 +4682,7 @@
       "Your Block List is empty.": [
         ""
       ],
-      "Your data is encrypted, you can recover your data by reactivating your keys.": [
+      "Your data is encrypted and locked. You can recover access with a data recovery method.": [
         ""
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
@@ -4847,6 +4868,29 @@
       ],
       "Subscription": [
         "Předplatné"
+      ]
+    },
+    "Key generation": {
+      "A key with the same encryption algorithm already exists. Generating another key will cause slower account loading. Are you sure you want to continue?": [
+        ""
+      ],
+      "A key with the same encryption algorithm is already active for this address. Generating another key will cause slower account loading and deletion of this key can cause issues. If you are generating a new key because your old key is compromised, please mark that key as compromised. Are you sure you want to continue?": [
+        ""
+      ],
+      "Generate key": [
+        ""
+      ],
+      "Key with fingerprint ${ fp } successfully created.": [
+        ""
+      ],
+      "The encryption keys are being generated. This may take several minutes and temporarily freeze your browser.": [
+        ""
+      ],
+      "The encryption keys for your address are being generated. This may take several minutes and temporarily freeze your browser.": [
+        ""
+      ],
+      "You can generate a new encryption key if you think your previous key has been compromised.": [
+        ""
       ]
     },
     "Key state badge": {
@@ -5144,6 +5188,9 @@
       "ALL": [
         "VŠE"
       ],
+      "All-day event notifications": [
+        ""
+      ],
       "Allow recovery by email": [
         "Povolit obnovení e-mailem"
       ],
@@ -5192,12 +5239,6 @@
       "Automatically save contacts": [
         "Automaticky ukládat kontakty"
       ],
-      "Backup key": [
-        ""
-      ],
-      "Backup keys": [
-        "Záložní klíče"
-      ],
       "Block email tracking": [
         ""
       ],
@@ -5217,7 +5258,7 @@
         "Částka BTC:"
       ],
       "Calendars": [
-        ""
+        "Kalendáře"
       ],
       "Cancel": [
         "Zrušit"
@@ -5234,11 +5275,11 @@
       "Category": [
         "Kategorie"
       ],
-      "Choose a color": [
-        "Zvolit barvu"
-      ],
       "Code": [
         "Kód"
+      ],
+      "Color": [
+        "Barva"
       ],
       "Composer": [
         "Editor"
@@ -5271,7 +5312,7 @@
         "Potvrdit heslo"
       ],
       "Contacts": [
-        ""
+        "Kontakty"
       ],
       "Conversation grouping": [
         "Seskupování konverzací"
@@ -5309,23 +5350,11 @@
       "Days of the week": [
         "Dny v týdnu"
       ],
-      "Default email": [
-        "Výchozí e-mail"
-      ],
-      "Default event duration": [
-        "Výchozí doba trvání události"
-      ],
-      "Default full day notifications": [
-        "Výchozí oznámení na celý den"
-      ],
       "Default language": [
         "Výchozí jazyk"
       ],
-      "Default notifications": [
-        "Výchozí upozornění"
-      ],
       "Default PGP scheme": [
-        ""
+        "Výchozí schéma PGP"
       ],
       "Default view": [
         "Výchozí zobrazení"
@@ -5376,7 +5405,7 @@
         "E-mail nebo uživatelské jméno"
       ],
       "Emails": [
-        ""
+        "E-maily"
       ],
       "End date": [
         "Datum ukončení"
@@ -5402,6 +5431,12 @@
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Zadejte heslo pro klíč s otiskem: ${ fingerprintCode }"
       ],
+      "Event duration": [
+        ""
+      ],
+      "Event notifications": [
+        ""
+      ],
       "Expires": [
         "Expiruje"
       ],
@@ -5420,14 +5455,17 @@
       "Folder location": [
         "Umístění složky"
       ],
+      "From: ${ emailFrom }": [
+        "Od: ${ emailFrom }"
+      ],
       "From: ${ fromEmailAddress }": [
         "Od: ${ fromEmailAddress }"
       ],
       "From: ${ importedEmail }": [
-        ""
+        "Od: ${ importedEmail }"
       ],
       "From: ${ importedEmailAddress }": [
-        ""
+        "Od: ${ importedEmailAddress }"
       ],
       "From: ${ modalModel.email }": [
         "Od: ${ modalModel.email }"
@@ -5600,6 +5638,9 @@
       "Phrase": [
         "Fráze"
       ],
+      "Phrase consists of 12 unique words in a specific order": [
+        ""
+      ],
       "Please add all 3 of the following CNAME records. Note, DNS records can take several hours to update.": [
         "Přidejte prosím všechny 3 následující CNAME záznamy. Pamatujte, že změna v DNS záznamech se může projevit až za několik hodin."
       ],
@@ -5617,6 +5658,9 @@
       ],
       "Postal code": [
         "Poštovní směrovací číslo"
+      ],
+      "Previous password": [
+        "Předchozí heslo"
       ],
       "Private User": [
         "Soukromý uživatel"
@@ -5643,7 +5687,7 @@
         "Kód pro obnovení"
       ],
       "Recovery email address": [
-        ""
+        "E-mailová adresa pro obnovení"
       ],
       "Recovery file": [
         "Soubor pro obnovení"
@@ -5653,9 +5697,6 @@
       ],
       "Recovery phrase": [
         "Obnovovací fráze"
-      ],
-      "Recovery phrase contains 12 words": [
-        "Obnovovací fráze zahrnuje 12 slov"
       ],
       "Repeat password": [
         "Zopakujte heslo"
@@ -5735,8 +5776,11 @@
       "To: ${ emailAddress }": [
         "Pro: ${ emailAddress }"
       ],
+      "To: ${ emailTo }": [
+        "Komu: ${ emailTo }"
+      ],
       "To: ${ PMEmailAddress }": [
-        ""
+        "Komu: ${ PMEmailAddress }"
       ],
       "To: ${ toEmailAddress }": [
         "Komu: ${ toEmailAddress }"
@@ -5759,17 +5803,11 @@
       "Undo send": [
         "Zrušit odeslání"
       ],
-      "Upload your backup key": [
+      "Upload 1 or more encryption keys": [
         ""
       ],
-      "Upload your recovery file": [
-        "Nahrát soubor pro obnovení"
-      ],
-      "Uploaded private keys": [
+      "Upload 1 or more recovery files or encryption keys": [
         ""
-      ],
-      "Uploaded recovery file": [
-        "Soubor pro obnovení byl nahrán"
       ],
       "URL": [
         "Adresa URL"
@@ -5846,16 +5884,13 @@
       "Your password (admin)": [
         "Vaše heslo (admin)"
       ],
-      "Your recovery phrase": [
-        "Vaše obnovovací fráze"
-      ],
       "ZIP": [
         "PSČ"
       ]
     },
     "label": {
       "Recovery phone number": [
-        ""
+        "Telefonní číslo pro obnovení"
       ],
       "Recovery phrase": [
         "Obnovovací fráze"
@@ -5903,6 +5938,9 @@
       ],
       "Proton newsletter": [
         "Proton zpravodaj"
+      ],
+      "Proton offers and promotions": [
+        "Nabídky a akce Protonu"
       ],
       "Proton product announcements": [
         "Oznámení společnosti o produktech"
@@ -7094,17 +7132,11 @@
       "Email": [
         "E-mail"
       ],
-      "email address": [
-        "emailová adresa"
-      ],
-      "phone number": [
-        "telefonní číslo"
-      ],
       "Phone number": [
         "Telefonní číslo"
       ],
-      "Recovery phrase": [
-        "Obnovovací fráze"
+      "Phrase": [
+        ""
       ]
     },
     "Remark about a key type option": {
@@ -7144,10 +7176,7 @@
       "Upload": [
         "Nahrát"
       ],
-      "Upload additional private keys": [
-        ""
-      ],
-      "Upload additional recovery files": [
+      "Upload additional files": [
         ""
       ]
     },
@@ -7866,22 +7895,25 @@
         "Vlastní filtry"
       ],
       "Customize and confirm": [
-        ""
+        "Přizpůsobit a potvrdit"
       ],
       "Customize calendar import": [
-        ""
+        "Přizpůsobit proces importování kalendáře"
       ],
       "Customize import": [
         "Přizpůsobit import"
       ],
       "Customize your mail import": [
-        ""
+        "Přizpůsobte si proces importování e-mailů"
       ],
       "Customize your plan": [
         "Přizpůsobte si svůj plán"
       ],
       "Dashboard": [
         "Přehled"
+      ],
+      "Data locked": [
+        ""
       ],
       "Data recovery": [
         "Obnovení dat"
@@ -7943,6 +7975,9 @@
       "Edit Block List": [
         "Upravit block list"
       ],
+      "Edit calendar": [
+        "Upravit kalendář"
+      ],
       "Edit credit/debit card": [
         "Editovat kreditní/debetní kartu"
       ],
@@ -7972,9 +8007,6 @@
       ],
       "Enable keyboard shortcuts": [
         "Povolit klávesové zkratky"
-      ],
-      "Encrypted data": [
-        "Zašifrovaná data"
       ],
       "Encryption & keys": [
         "Šifrování & klíče"
@@ -8017,9 +8049,6 @@
       ],
       "General": [
         "Obecné"
-      ],
-      "Generate key": [
-        ""
       ],
       "Generate missing keys": [
         "Generovat chybějící klíče"
@@ -8073,7 +8102,7 @@
         "Importovat klíč"
       ],
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
-        ""
+        "Importovat přes ${ PRODUCT_NAMES.EASY_SWITCH }"
       ],
       "Import-Export app": [
         "Import-export aplikace"
@@ -8216,11 +8245,11 @@
       "ProtonVPN": [
         "ProtonVPN"
       ],
-      "Reactivate keys": [
-        ""
-      ],
       "Reconnect your account": [
         "Znovu připojit svůj účet"
+      ],
+      "Recover data": [
+        "Obnovit data"
       ],
       "Recovery": [
         "Obnovení"
@@ -8331,7 +8360,7 @@
         "Zahájit proces importu"
       ],
       "Start new import": [
-        ""
+        "Zahájit nový import"
       ],
       "Status": [
         "Stav"
@@ -8352,7 +8381,7 @@
         "Přepnout do režimu se dvěma hesly"
       ],
       "Take precautions to avoid data loss!": [
-        ""
+        "Buďte opatrní, aby nedošlo ke ztrátě dat!"
       ],
       "Theme": [
         "Vzhled"
@@ -8377,9 +8406,6 @@
       ],
       "Unsupported browser": [
         "Nepodporovaný prohlížeč"
-      ],
-      "Update calendar": [
-        "Aktualizovat kalendář"
       ],
       "Upgrade": [
         "Rozšířit"
@@ -8409,7 +8435,7 @@
         "Váš plán"
       ],
       "Your recovery status": [
-        ""
+        "Stav obnovy"
       ],
       "ZIP / postal code": [
         "ZIP / PSČ"
@@ -8658,6 +8684,17 @@
     "Tooltip sign external messages": {
       "Automatically sign all your outgoing messages so users can verify the authenticity of your messages. This is done in combination with the default PGP settings which can be configured below.": [
         "Automatické nastavení podpisu všech odchodzích zpráv tak, že uživatelé mohou ověřit autentičnost Vašich zpráv. Tato metoda je provedena s výchozím nastavením PGP, které může být nakonfigurováno, jak je uvedeno níže."
+      ]
+    },
+    "Update font modal": {
+      "Today is a good day to write an email": [
+        ""
+      ],
+      "Update default font and size": [
+        ""
+      ],
+      "Your default font will look like following:": [
+        ""
       ]
     },
     "Upgrade": {
@@ -8935,6 +8972,12 @@
       ],
       "You will not see this import record in the list anymore.": [
         "Tento záznam o importu již v seznamu neuvidíte."
+      ],
+      "Your recovery file is outdated and can't recover new data should you reset your account again.": [
+        ""
+      ],
+      "Your recovery phrase is outdated and can't recover new data should you reset your account again.": [
+        ""
       ]
     },
     "Warning for domain modal": {

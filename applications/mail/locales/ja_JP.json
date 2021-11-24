@@ -20,6 +20,9 @@
       "Activate": [
         "有効化"
       ],
+      "Activate recovery": [
+        ""
+      ],
       "Add": [
         "追加"
       ],
@@ -98,14 +101,11 @@
       "Cancel": [
         "キャンセル"
       ],
-      "Cancel action": [
-        "キャンセル"
-      ],
       "Carbon Copy, Blind Carbon Copy": [
         "CC, BCC"
       ],
-      "CC, BCC": [
-        "CC, BCC"
+      "CC BCC": [
+        ""
       ],
       "Change page": [
         "ページの変更"
@@ -218,7 +218,7 @@
       "Decrease": [
         "減少"
       ],
-      "Default mail handler": [
+      "Default email application": [
         ""
       ],
       "Delete": [
@@ -308,14 +308,14 @@
       "Expand composer": [
         "広げる"
       ],
-      "Expiration time": [
-        "有効期限"
-      ],
       "Export": [
         "エクスポート"
       ],
       "Export contacts": [
         "連絡先のエクスポート"
+      ],
+      "Fewer search options": [
+        ""
       ],
       "Filter on...": [
         "仕分け対象..."
@@ -358,9 +358,6 @@
       ],
       "Got it": [
         "了承"
-      ],
-      "here": [
-        "こちら"
       ],
       "Hide": [
         "非表示"
@@ -416,6 +413,9 @@
       "Insert contact": [
         "連絡先を挿入"
       ],
+      "Insert contacts": [
+        ""
+      ],
       "Insert image": [
         "画像の挿入"
       ],
@@ -442,9 +442,6 @@
       ],
       "Learn more": [
         "より詳しく"
-      ],
-      "Less search options": [
-        ""
       ],
       "Load": [
         "読み込む"
@@ -626,9 +623,6 @@
       "Print": [
         "印刷"
       ],
-      "Prompt browser setting": [
-        ""
-      ],
       "Quit": [
         ""
       ],
@@ -734,6 +728,15 @@
       "Set": [
         "設定"
       ],
+      "Set as default": [
+        ""
+      ],
+      "Set expiration time": [
+        ""
+      ],
+      "Set recovery phrase": [
+        ""
+      ],
       "Share via link": [
         "リンクを共有"
       ],
@@ -752,6 +755,9 @@
       "Show details": [
         "詳細を表示"
       ],
+      "Show fewer search options": [
+        ""
+      ],
       "Show folders": [
         ""
       ],
@@ -763,9 +769,6 @@
       ],
       "Show less": [
         ""
-      ],
-      "Show less search options": [
-        "検索オプションの詳細を閉じる"
       ],
       "Show messages": [
         "メッセージを表示"
@@ -802,6 +805,9 @@
       ],
       "Switch account": [
         "アカウントの切り替え"
+      ],
+      "Switch to rich text": [
+        ""
       ],
       "Theme": [
         "テーマ"
@@ -850,6 +856,15 @@
       ],
       "Untrust": [
         "信頼しない"
+      ],
+      "Update": [
+        ""
+      ],
+      "Update recovery file": [
+        ""
+      ],
+      "Update recovery phrase": [
+        ""
       ],
       "Upgrade": [
         "アップグレード"
@@ -2009,6 +2024,9 @@
       "Decryption error: decryption of this message's encrypted content failed.": [
         ""
       ],
+      "Deselect at least ${ calendarToFixCount } calendar": [
+        ""
+      ],
       "Deselect at least ${ calendarToFixCount } calendar or": [
         ""
       ],
@@ -2102,9 +2120,6 @@
       "Message needs to be sent first": [
         "メッセージを最初に送信する必要があります"
       ],
-      "Message passwords do not match": [
-        ""
-      ],
       "Message processing error.": [
         "メッセージの処理にエラーが発生しました。"
       ],
@@ -2118,6 +2133,9 @@
         "ネットワークエラー：インターネット接続を確認し、もう一度やり直してください。"
       ],
       "No address with keys available to compose a message": [
+        ""
+      ],
+      "No data to import": [
         ""
       ],
       "No key retrieved for internal user is valid for sending": [
@@ -2170,6 +2188,12 @@
       ],
       "Please refresh the page.": [
         "ページを更新してください。"
+      ],
+      "Please repeat the password": [
+        ""
+      ],
+      "Please set a password": [
+        ""
       ],
       "Preferences could not be saved": [
         "設定が保存できませんでした"
@@ -2657,18 +2681,15 @@
       ]
     },
     "Get started checklist completion": {
-      "We've added 1 GB of bonus storage to your account. Continue to explore ${ BRAND_NAME } and share your ${ protonMailAppName } address with your family, friends, and colleagues.": [
+      "We've increased the total storage of your account to ${ totalGBStorageAfterCompletion } GB. Get additional storage and unlock premium features today.": [
         ""
       ],
-      "We've added 1 GB of bonus storage to your account. For even more storage and premium features, upgrade your plan.": [
-        ""
-      ],
-      "You're a privacy champ!": [
+      "You're all set!": [
         ""
       ]
     },
     "Get started checklist incentive": {
-      "Complete all steps and get a total of 2 GB on your account": [
+      "Complete all steps and get a total of ${ totalGBStorageAfterCompletion } GB on your account": [
         ""
       ],
       "Only ${ days } day left": [
@@ -3032,9 +3053,6 @@
       "Account successfully updated": [
         "アカウントが正常に更新されました"
       ],
-      "Activating this option will open a new composer each time you click on a mailto: link.": [
-        ""
-      ],
       "Activation in progress": [
         "アクティベーションが進行中です"
       ],
@@ -3158,9 +3176,6 @@
       "Center": [
         "中央揃え"
       ],
-      "Change your default in settings": [
-        "既定の設定を変更"
-      ],
       "Checking contact ${ progress } of ${ max }...": [
         "${ max } のうち ${ progress } の連絡先を確認しています..."
       ],
@@ -3184,9 +3199,6 @@
       ],
       "Close this screen to exit.": [
         ""
-      ],
-      "Confirm Password": [
-        "パスワードの確認"
       ],
       "Confirm phishing report": [
         "フィッシング報告の確認"
@@ -3235,6 +3247,9 @@
       ],
       "Day": [
         "日"
+      ],
+      "Default email application": [
+        ""
       ],
       "Disable message content search": [
         ""
@@ -3320,6 +3335,9 @@
       "Estimating time remaining...": [
         "残り時間..."
       ],
+      "Expiration time": [
+        ""
+      ],
       "Expiration Time": [
         "有効期限"
       ],
@@ -3367,9 +3385,6 @@
       ],
       "Full-featured VPN with speed up to 10 Gbps.": [
         "最大 10 Gbps を備えたフル機能の VPN。"
-      ],
-      "Generate recovery phrase": [
-        ""
       ],
       "Get more storage and premium features.": [
         ""
@@ -3437,9 +3452,6 @@
       "Insert image": [
         "画像の挿入"
       ],
-      "Insert image as": [
-        "画像を次の形式で挿入"
-      ],
       "Insert link": [
         "リンクを挿入"
       ],
@@ -3491,6 +3503,9 @@
       "Manage your labels": [
         "ラベルを管理"
       ],
+      "members": [
+        ""
+      ],
       "Members": [
         "メンバー"
       ],
@@ -3502,9 +3517,6 @@
       ],
       "Message headers": [
         "メッセージヘッダー"
-      ],
-      "Message Password": [
-        "メッセージのパスワード"
       ],
       "Message sent": [
         "メッセージが送信されました"
@@ -3587,14 +3599,8 @@
       "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
         "この設定は、メールの宛先に PGP を使用している非 ProtonMail ユーザーがいる場合にのみ変更してください。"
       ],
-      "or": [
-        "または"
-      ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         ""
-      ],
-      "Password Hint (Optional)": [
-        "パスワードのヒント (任意)"
       ],
       "Payment can take a few minutes to fully verify.": [
         "お支払いの検証完了に数分かかる場合があります。"
@@ -3614,8 +3620,8 @@
       "Plain text": [
         "プレーンテキスト"
       ],
-      "Please add at least one recipient before sending.": [
-        "送信する前に少なくとも一つの受信者を追加してください。"
+      "Please add at least one recipient.": [
+        ""
       ],
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
         ""
@@ -3734,7 +3740,7 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "このメールアドレスにメールを送信する際に既定で使用するメールの形式を選択できます。"
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit. You can also merge imported calendars with existing Proton calendars.": [
+      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         ""
       ],
       "Sending": [
@@ -3752,7 +3758,10 @@
       "Session timed out.": [
         "セッションがタイムアウトしました。"
       ],
-      "Set ProtonMail as your default mail handler": [
+      "Set a recovery phrase": [
+        ""
+      ],
+      "Set ProtonMail as your default email application for this browser. ProtonMail will open automatically when you click an email link.": [
         ""
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
@@ -3893,11 +3902,11 @@
       "This message will be sent shortly": [
         ""
       ],
+      "This message will expire ${ dateString } at ${ formattedTime }": [
+        ""
+      ],
       "This message will expire ${ formattedDate }": [
         "このメッセージの期限は ${ formattedDate } までです"
-      ],
-      "This message will expire in": [
-        "このメッセージの有効期限："
       ],
       "This message will expire in ${ formattedDelay }": [
         "このメッセージの期限は ${ formattedDelay } までです"
@@ -4052,6 +4061,12 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
         "現在 ${ user.Name } (${ user.Email }) としてサインインしていてアクセスが制限されています。"
       ],
+      "You can add it as an attachment or display it inline in your mail body.": [
+        ""
+      ],
+      "You can also merge imported calendars with existing Proton calendars.": [
+        ""
+      ],
       "You can check the progress ${ importProgressLink }.": [
         ""
       ],
@@ -4090,12 +4105,6 @@
       ],
       "You have **${ count } message** tagged with this label": [
         ""
-      ],
-      "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
-        "ベータ版アクセスは無効です。安定版の ${ appName } を使用するには、${ refreshButton } をクリックしてください。クリックするとアプリケーションは再起動されます。"
-      ],
-      "You have enabled Beta Access. Click ${ refreshButton } to use the latest version of ${ appName }. The application will be reloaded.": [
-        "ベータ版アクセスは有効です。最新版の ${ appName } を使用するには、${ refreshButton } をクリックしてください。クリックするとアプリケーションは再起動されます。"
       ],
       "You have not given your email any subject. Do you want to send the message anyway?": [
         "この電子メールには件名がありません。このままメッセージを送信しますか？"
@@ -4136,8 +4145,8 @@
       "You will soon be redirected to PayPal to verify your payment.": [
         "支払いの検証のため、まもなく PayPal のサイトへリダイレクトされます。"
       ],
-      "You wrote \"${ keyword }\", but no attachment has been added. Do you want to send your message anyway?": [
-        "「${ keyword }」という記述がありますが、添付ファイルが追加されていません。メッセージを送信してよろしいですか？"
+      "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
+        ""
       ],
       "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
         "アカウントに少なくとも1つの期限切れの請求書があるため、アクセスが制限されています。${ payInvoiceLink }"
@@ -4176,6 +4185,9 @@
     "info": {
       "(beta)": [
         "(ベータ)"
+      ],
+      "Optional": [
+        ""
       ]
     },
     "Info concerning plan features": {
@@ -4527,6 +4539,9 @@
       "Conditions": [
         "条件"
       ],
+      "Confirm Password": [
+        ""
+      ],
       "Contacts": [
         ""
       ],
@@ -4659,8 +4674,14 @@
       "Manage labels": [
         ""
       ],
+      "Manage my addresses": [
+        ""
+      ],
       "Mark as": [
         "印をつける"
+      ],
+      "Message Password": [
+        ""
       ],
       "Move to": [
         "移動先"
@@ -4694,6 +4715,9 @@
       ],
       "Password": [
         "パスワード"
+      ],
+      "Password Hint": [
+        ""
       ],
       "Payer": [
         "支払人"
@@ -5409,6 +5433,9 @@
       ],
       "Contact group updated": [
         "連絡先グループが更新されました"
+      ],
+      "Password has been set successfully": [
+        ""
       ]
     },
     "Onboarding": {
@@ -6369,9 +6396,6 @@
       "Add contact group name": [
         ""
       ],
-      "Add contacts": [
-        "連絡先を追加"
-      ],
       "Add filter": [
         "フィルターの追加"
       ],
@@ -6582,9 +6606,6 @@
       "Expand content": [
         "コンテンツを展開"
       ],
-      "Expiration time": [
-        "有効期限"
-      ],
       "Exporting contacts": [
         "連絡先のエクスポート中"
       ],
@@ -6654,9 +6675,6 @@
       "Message list": [
         ""
       ],
-      "Message without subject?": [
-        "件名なしでメッセージを送信しますか？"
-      ],
       "More": [
         "その他"
       ],
@@ -6695,9 +6713,6 @@
       ],
       "No attachment found": [
         ""
-      ],
-      "No recipient": [
-        "受信者がいません"
       ],
       "Open actions dropdown": [
         "アクションのドロップダウンを開く"
@@ -6752,6 +6767,9 @@
       ],
       "Re-signing contacts": [
         "連絡先を再署名する"
+      ],
+      "Recipient missing": [
+        ""
       ],
       "Recover data": [
         "データを復元する"
@@ -6815,6 +6833,9 @@
       ],
       "Storage capacity warning": [
         "ストレージ容量の警告"
+      ],
+      "Subject missing": [
+        ""
       ],
       "Subtotal": [
         "小計"
@@ -6954,6 +6975,17 @@
       ],
       "You do not have any contacts to export": [
         "エクスポートする連絡先がありません"
+      ]
+    },
+    "Update font modal": {
+      "Today is a good day to write an email": [
+        ""
+      ],
+      "Update default font and size": [
+        ""
+      ],
+      "Your default font will look like following:": [
+        ""
       ]
     },
     "Validation": {

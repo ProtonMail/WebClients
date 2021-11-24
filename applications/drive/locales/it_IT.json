@@ -14,6 +14,9 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } negozio"
       ],
+      "Activate recovery": [
+        ""
+      ],
       "Add": [
         "Aggiungi"
       ],
@@ -146,7 +149,7 @@
       "Decrease": [
         "Riduci"
       ],
-      "Default mail handler": [
+      "Default email application": [
         ""
       ],
       "Delete": [
@@ -234,9 +237,6 @@
       ],
       "Grid layout": [
         "Layout a griglia"
-      ],
-      "here": [
-        "qui"
       ],
       "Hide advanced PGP settings": [
         "Nascondi impostazioni PGP avanzate"
@@ -361,9 +361,6 @@
       "Previous month": [
         "Mese precedente"
       ],
-      "Prompt browser setting": [
-        ""
-      ],
       "Quit": [
         "Chiudi"
       ],
@@ -438,6 +435,12 @@
       ],
       "Select plan": [
         "Seleziona piano"
+      ],
+      "Set as default": [
+        ""
+      ],
+      "Set recovery phrase": [
+        ""
       ],
       "Share": [
         "Condividi"
@@ -519,6 +522,12 @@
       ],
       "Untrust": [
         "Non ritenere attendibile"
+      ],
+      "Update recovery file": [
+        ""
+      ],
+      "Update recovery phrase": [
+        ""
       ],
       "Upgrade": [
         "Esecuzione dell'upgrade"
@@ -1108,6 +1117,10 @@
       "Could not generate file keys": [
         "Impossibile generare chiavi di file"
       ],
+      "Deselect at least ${ calendarToFixCount } calendar": [
+        "",
+        ""
+      ],
       "Deselect at least ${ calendarToFixCount } calendar or": [
         "Deseleziona almeno ${ calendarToFixCount } calendario o",
         "Deseleziona almeno ${ calendarToFixCount } calendari o"
@@ -1187,6 +1200,9 @@
       ],
       "Name on card required": [
         "Nome sulla carta richiesto"
+      ],
+      "No data to import": [
+        ""
       ],
       "No valid address found": [
         "Nessun indirizzo valido trovato"
@@ -1733,9 +1749,6 @@
       "Account successfully updated": [
         "Profilo aggiornato correttamente"
       ],
-      "Activating this option will open a new composer each time you click on a mailto: link.": [
-        ""
-      ],
       "Add additional addresses to your account like user2@protonmail.com": [
         "Aggiungi indirizzi aggiuntivi al tuo profilo come user2@protonmail.com"
       ],
@@ -1868,6 +1881,9 @@
       ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "File CSV da Outlook, Outlook Express, Yahoo! Sono supportati Mail, Hotmail, Eudora e alcune altre app, nonché i formati vCard 3.1 e 4.0 (codifica UTF-8)."
+      ],
+      "Default email application": [
+        ""
       ],
       "Delete drive": [
         "Elimina spazio",
@@ -2202,8 +2218,8 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Seleziona il formato email che desideri utilizzare per impostazione predefinita quando invii un'email a questo indirizzo email."
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit. You can also merge imported calendars with existing Proton calendars.": [
-        "Seleziona quali calendari importare. Verrà creato un nuovo calendario per ogni calendario importato fino al limite di 20 calendari. Puoi anche unire i calendari importati con i calendari Proton esistenti."
+      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
+        ""
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "I server sono irraggiungibili. Riprova tra qualche minuto"
@@ -2211,7 +2227,7 @@
       "Session timed out.": [
         "Sessione scaduta."
       ],
-      "Set ProtonMail as your default mail handler": [
+      "Set ProtonMail as your default email application for this browser. ProtonMail will open automatically when you click an email link.": [
         ""
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
@@ -2380,6 +2396,9 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
         "Al momento hai effettuato l'accesso come ${ user.Name } (${ user.Email }) e hai un accesso limitato."
       ],
+      "You can also merge imported calendars with existing Proton calendars.": [
+        ""
+      ],
       "You can check the progress ${ importProgressLink }.": [
         "Puoi controllare lo stato di avanzamento ${ importProgressLink }."
       ],
@@ -2388,12 +2407,6 @@
       ],
       "You cannot undo this action.": [
         "Non puoi annullare questa azione."
-      ],
-      "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
-        "Hai disabilitato l'Accesso Beta. Clicca ${ refreshButton } per usare la versione stabile di ${ appName }. L'applicazione sarà ricaricata."
-      ],
-      "You have enabled Beta Access. Click ${ refreshButton } to use the latest version of ${ appName }. The application will be reloaded.": [
-        "Hai abilitato l'Accesso Beta. Clicca ${ refreshButton } per usare l'ultima versione di ${ appName }. L'applicazione sarà ricaricata."
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "Devi avere una carta di credito o un conto bancario collegato al tuo account PayPal per aggiungerlo come metodo di pagamento."
@@ -3146,10 +3159,10 @@
         "Aggiungi un codice regalo"
       ],
       "All mail": [
-        ""
+        "Tutte le mail"
       ],
       "Archive": [
-        ""
+        "Archivio"
       ],
       "clearing your browser cache": [
         "pulendo la cache del browser"
@@ -3158,13 +3171,13 @@
         "clicca qui"
       ],
       "Drafts": [
-        ""
+        "Bozze"
       ],
       "Go to subscription plans": [
         "Vai ai piani di abbonamento"
       ],
       "Inbox": [
-        ""
+        "Posta in arrivo"
       ],
       "Learn more": [
         "Per saperne di più"
@@ -3173,7 +3186,7 @@
         "I miei file"
       ],
       "Outbox": [
-        ""
+        "Posta in uscita"
       ],
       "Pay invoice": [
         "Pagamento della fattura"
@@ -3182,19 +3195,19 @@
         "Richiedi un invito"
       ],
       "Scheduled": [
-        ""
+        "Programmato"
       ],
       "Sent": [
-        ""
+        "Inviata"
       ],
       "Shared": [
         "Condivisi"
       ],
       "Spam": [
-        ""
+        "Spam"
       ],
       "Starred": [
-        ""
+        "Preferito"
       ],
       "Trash": [
         "Cestina"

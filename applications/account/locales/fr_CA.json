@@ -31,17 +31,20 @@
       "${ BRAND_NAME } shop": [
         "Boutique ${ BRAND_NAME }"
       ],
-      "Activate": [
-        "Activer"
-      ],
       "activate": [
         "activer"
+      ],
+      "Activate": [
+        "Activer"
       ],
       "Activate ${ Name }@pm.me": [
         "Activer ${ Name }@pm.me"
       ],
       "Activate organization key": [
         "Activer la clé de l'organisation"
+      ],
+      "Activate recovery": [
+        "Activer la récupération"
       ],
       "Add": [
         "Ajouter"
@@ -205,9 +208,6 @@
       "Copy link": [
         "Copier le lien"
       ],
-      "Create": [
-        "Créer"
-      ],
       "Create a secure ProtonMail address instead": [
         "Créer une adresse ProtonMail sécurisée à la place"
       ],
@@ -337,9 +337,6 @@
       "Export key": [
         "Exporter une clé"
       ],
-      "Export private key": [
-        "Exporter la clé privée"
-      ],
       "Font": [
         "Police"
       ],
@@ -366,9 +363,6 @@
       ],
       "Go to panel ${ index }": [
         "Aller au panneau ${ index }"
-      ],
-      "here": [
-        "ici"
       ],
       "Hide": [
         "Masquer"
@@ -631,6 +625,9 @@
       "Set catch-all": [
         "Configurer catch-all"
       ],
+      "Set recovery phrase": [
+        "Créer une phrase de récupération"
+      ],
       "Share via link": [
         "Partager avec un lien"
       ],
@@ -712,6 +709,9 @@
       "Switch account": [
         "Changer de compte"
       ],
+      "Switch to rich text": [
+        "Passer au texte enrichi"
+      ],
       "Top up": [
         "Recharger"
       ],
@@ -727,6 +727,9 @@
       "Unlock": [
         "Déverrouiller"
       ],
+      "Unlock data": [
+        "Déverrouiller les données"
+      ],
       "Unordered list": [
         "Liste non ordonnée"
       ],
@@ -735,6 +738,12 @@
       ],
       "Update": [
         "Actualiser"
+      ],
+      "Update recovery file": [
+        "Mettre à jour le fichier de récupération"
+      ],
+      "Update recovery phrase": [
+        "Mettre à jour la phrase de récupération"
       ],
       "Upgrade": [
         "Changer d'offre"
@@ -876,10 +885,10 @@
         "Générer les clés manquantes"
       ],
       "Make default": [
-        ""
+        "Définir par défaut"
       ],
       "Saving": [
-        ""
+        "Enregistrement"
       ]
     },
     "Address status": {
@@ -914,9 +923,6 @@
       ]
     },
     "alert": {
-      "The encryption keys for your address are being generated. This may take several minutes and temporarily freeze your browser.": [
-        "Les clés de chiffrement de votre adresse sont en cours de génération. Ceci peut prendre plusieurs minutes et geler temporairement votre navigateur."
-      ],
       "The key for your address is now being deleted.": [
         "La clé de votre adresse est en cours de suppression."
       ]
@@ -1299,9 +1305,8 @@
       ]
     },
     "Calendar limit warning": {
-      "You have reached the maximum of ${ calendarsLimit } personal calendar.": [
-        "Vous avez atteint le maximum de ${ calendarsLimit } calendrier personnel.",
-        "Vous avez atteint le maximum de ${ calendarsLimit } calendriers personnels."
+      "You have reached the maximum number of personal calendars you can create within your plan.": [
+        "Vous avez atteint le nombre maximum de calendriers personnels que vous pouvez créer dans votre abonnement."
       ],
       "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } subscribed calendar.": [
         "Vous avez atteint le maximum de ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } calendrier souscrit.",
@@ -1701,7 +1706,7 @@
     },
     "Email body for invitation": {
       "${ eventTitle } has been canceled.": [
-        ""
+        "${ eventTitle } a été annulé."
       ],
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
         "${ eventTitle } a été mis à jour.\n${ eventDetailsText }"
@@ -1834,6 +1839,10 @@
       "Could not find address ${ email }.": [
         "Impossible de trouver l'adresse ${ email }."
       ],
+      "Deselect at least ${ calendarToFixCount } calendar": [
+        "Désélectionnez au moins ${ calendarToFixCount } calendrier",
+        "Désélectionnez au moins ${ calendarToFixCount } calendriers"
+      ],
       "Deselect at least ${ calendarToFixCount } calendar or": [
         "Désélectionnez au moins ${ calendarToFixCount } calendrier ou",
         "Désélectionnez au moins ${ calendarToFixCount } calendriers ou"
@@ -1943,6 +1952,9 @@
       ],
       "No active sessions": [
         "Aucune session active"
+      ],
+      "No data to import": [
+        "Aucune donnée à importer"
       ],
       "No valid address found": [
         "Aucune adresse valide trouvée"
@@ -2065,6 +2077,12 @@
       "The folder name is too long. Please choose a different name.": [
         "Le nom du dossier est trop long. Veuillez en choisir un autre."
       ],
+      "The keys in your recovery file can't be validated. Please contact support.": [
+        "Les clés dans votre fichier de récupération ne peuvent pas être validées. Veuillez contacter l'assistance."
+      ],
+      "The keys in your recovery files can't be validated. Please upload individually for more information.": [
+        "Les clés de votre fichier de récupération ne peuvent pas être validées. Veuillez les téléverser individuellement pour obtenir plus d'informations."
+      ],
       "The label name is too long. Please choose a different name.": [
         "Le nom du label est trop long. Veuillez choisir un nom différent."
       ],
@@ -2112,9 +2130,6 @@
       ],
       "Uploaded file is not a valid private key. Please verify and try again.": [
         "Le fichier téléversé n'est pas une clé privée valide. Veuillez vérifier et réessayer."
-      ],
-      "Uploaded file is not a valid recovery file. Please verify and try again.": [
-        "Le fichier téléchargé n'est pas un fichier de récupération valide. Veuillez vérifier et réessayer."
       ],
       "Uploaded files are not valid private keys. Please verify and try again.": [
         "Les fichiers téléversés ne sont pas des clés privées valides. Veuillez vérifier et réessayer."
@@ -2166,9 +2181,6 @@
       ]
     },
     "Error importing calendar": {
-      "${ CALENDAR_APP_NAME } only supports importing calendars with iCal version 2.0.": [
-        "${ CALENDAR_APP_NAME } prend en charge l'importation de calendriers uniquement avec iCal version 2.0."
-      ],
       "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
         "Une erreur s'est produite lors de la lecture de votre fichier ${ formattedFilename }. Le fichier n'a pas le bon format."
       ],
@@ -2384,7 +2396,7 @@
         "Le fichier ICS joint n'a pas pu être déchiffré"
       ],
       "Attached ICS file could not be read": [
-        ""
+        "Le fichier ICS joint n'a pas pu être lu"
       ],
       "Invalid invitation": [
         "Invitation non valide"
@@ -3029,7 +3041,7 @@
         "Échec"
       ],
       "In progress": [
-        ""
+        "En cours"
       ],
       "Paused": [
         "En pause"
@@ -3069,6 +3081,9 @@
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } a besoin de votre permission pour ${ enableDesktopNotifications }."
+      ],
+      "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
+        "${ boldWarning } si vous continuez, vous perdrez l'accès à toutes les données actuellement chiffrées de votre compte."
       ],
       "${ calendarName } will be set as default calendar.": [
         "${ calendarName } sera défini comme calendrier par défaut."
@@ -3189,9 +3204,6 @@
       "A free and uncensored Internet should be available to all.": [
         "Un Internet libre et non censuré devrait être disponible pour tous."
       ],
-      "A key with the same encryption algorithm is already active for this address. Generating another key will cause slower account loading and deletion of this key can cause issues. If you are generating a new key because your old key is compromised, please mark that key as compromised. Are you sure you want to continue?": [
-        "Une clé avec le même algorithme de chiffrement est déjà active pour cette adresse. Générer une autre clé ralentira le chargement du compte et la suppression de cette clé peut occasionner des problèmes. Si vous générez une nouvelle clé parce que votre ancienne clé a été compromise, veuillez marquer cette clé comme compromise. Êtes-vous sûr·e de vouloir continuer?"
-      ],
       "A recovery file lets you unlock and view your data after an account reset. ": [
         "Un fichier de récupération vous permet de déverrouiller et d'afficher vos données après une réinitialisation de compte. "
       ],
@@ -3297,9 +3309,6 @@
       "AOL reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
         "AOL lit vos données personnelles afin de permettre aux annonceurs et autres tiers d'y accéder. Pour une meilleure protection de la vie privée, créez une adresse électronique sécurisée."
       ],
-      "Are you sure you want to continue?": [
-        "Êtes-vous sûr·e de vouloir continuer?"
-      ],
       "Are you sure you want to delete this address?": [
         "Êtes-vous sûr·e de vouloir supprimer cette adresse?"
       ],
@@ -3401,9 +3410,6 @@
       ],
       "Center": [
         "Centrer"
-      ],
-      "Change your default in settings": [
-        "Changez votre valeur par défaut dans les paramètres"
       ],
       "Check the status of current and previous imports.": [
         "Vérifier l'état des importations actuelles et précédentes."
@@ -3551,6 +3557,9 @@
       "Emails tagged with this label will not be deleted and can still be found in the respective folder.": [
         "Les messages marqués avec ce label ne seront pas effacés et pourront toujours être retrouvés dans leurs dossiers respectifs."
       ],
+      "Enabling recovery by phrase again will generate a new recovery phrase.": [
+        "Réactiver la récupération par phrase générera une nouvelle phrase de récupération."
+      ],
       "Encryption setting updated": [
         "Paramètre de chiffrement mis à jour"
       ],
@@ -3568,12 +3577,6 @@
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
         "Entrez le mot de passe de l'organisation pour restaurer les privilèges administrateur. ${ learnMore }"
-      ],
-      "Enter the recovery ${ recoveryMethodText } associated with your ${ BRAND_NAME } Account. We will send you a code to confirm the password reset.": [
-        "Saisissez la méthode de récupération associée à votre compte ${ BRAND_NAME }: ${ recoveryMethodText }. Nous vous enverrons un code pour confirmer la réinitialisation du mot de passe."
-      ],
-      "Enter the recovery phrase associated with your ${ BRAND_NAME } Account.": [
-        "Saisissez la phrase de récupération associée à votre compte ${ BRAND_NAME }."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Entrez le code de vérification qui a été envoyé à ${ destinationText }."
@@ -3701,12 +3704,6 @@
       "If you proceed with the downgrade, you will lose access to ProtonVPN paid features.": [
         "Si vous procédez à la rétrogradation, vous perdrez l'accès aux fonctionnalités payantes de ProtonVPN."
       ],
-      "If you proceed, you will be required to reset your password and you will be logged out of all other active sessions.": [
-        "Si vous poursuivez, il vous sera demandé de réinitialiser votre mot de passe et vous serez déconnecté de toutes les sessions actives."
-      ],
-      "If you proceed, you will have to reset your password and will be logged out of any other active sessions.": [
-        "Si vous poursuivez, vous devrez réinitialiser votre mot de passe et serez déconnecté·e de toute session active."
-      ],
       "If you want to keep an existing SPF record, you can just add ${ spf } to it after the ${ spfValue }. Do not create multiple SPF records.": [
         "Si vous voulez sauvegarder un enregistrement SPF existant, vous pouvez simplement lui ajouter ${ spf } après le ${ spfValue }. Veuillez ne pas créer d'enregistrements SPF multiples."
       ],
@@ -3801,9 +3798,6 @@
       "Key with fingerprint ${ fp } has been deleted.": [
         "La clé avec l'empreinte ${ fp } a été supprimée."
       ],
-      "Key with fingerprint ${ fp } successfully created.": [
-        "La clé avec l’empreinte ${ fp } a été créée correctement."
-      ],
       "Label all imported messages as": [
         "Labelliser tous les messages importés comme"
       ],
@@ -3891,7 +3885,7 @@
       "Next you'll need to log in to your Google account and allow us to access your data.": [
         "Ensuite, vous devrez vous connecter à votre compte Google et nous permettre d'accéder à vos données."
       ],
-      "No account recovery method set, you are at risk of losing access to your account": [
+      "No account recovery method set; you are at risk of losing access to your account": [
         "Aucune méthode de récupération de compte n’est définie, vous risquez de perdre l'accès à votre compte"
       ],
       "No action selected": [
@@ -3903,7 +3897,7 @@
       "No contact encryption keys exist": [
         "Aucune clé de chiffrement de contact n'existe"
       ],
-      "No data recovery method set, you are at risk of losing access to your data": [
+      "No data recovery method set; you are at risk of losing access to your data": [
         "Aucune méthode de récupération de données n’est définie, vous risquez de perdre l'accès à vos données"
       ],
       "No folder selected": [
@@ -3996,8 +3990,11 @@
       "Please enter a password to encrypt your private key with before exporting.": [
         "Veuillez saisir un mot de passe pour chiffrer votre clé privée avant d'exporter."
       ],
+      "Please enter the 12-word recovery phrase associated with your account.": [
+        "Veuillez saisir la phrase de récupération de 12 mots associée à votre compte."
+      ],
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
-        ""
+        "Veuillez le garder en sécurité. Vous en aurez besoin pour accéder à votre compte et déchiffrer vos données en cas de réinitialisation du mot de passe."
       ],
       "Please note that if you delete this address, you will no longer be able to send or receive emails using this address.": [
         "Veuillez noter que si vous supprimez cette adresse, vous ne serez plus en mesure d'envoyer ou de recevoir des courriels à l'aide de celle-ci."
@@ -4099,6 +4096,9 @@
       "Recovery phrase has been disabled": [
         "La phrase de récupération a été désactivée"
       ],
+      "Recovery phrase is not associated with any keys.": [
+        "La phrase de récupération n'est associée à aucune clé."
+      ],
       "Recovery phrase is not associated with any outdated keys.": [
         "La phrase de récupération n'est associée à aucune des clés obsolètes."
       ],
@@ -4132,8 +4132,8 @@
       "Select a service provider to get started": [
         "Sélectionnez un fournisseur de services pour commencer"
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit. You can also merge imported calendars with existing Proton calendars.": [
-        "Sélectionnez les calendriers à importer. Un nouveau calendrier sera créé pour chaque calendrier importé jusqu'à la limite de 20 calendriers personnels. Vous pouvez également fusionner des calendriers importés avec des calendriers Proton existants."
+      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
+        "Sélectionnez les calendriers à importer. Un nouveau calendrier sera créé pour chaque calendrier importé dans la limite de 20 calendriers."
       ],
       "Server is currently down": [
         "Ce serveur est actuellement indisponible"
@@ -4219,6 +4219,18 @@
       "This feature is intended for advanced users only. After deleting this key, you will NOT be able to decrypt any message that has been encrypted with it. It may lead to data loss.": [
         "Cette fonctionnalité est réservée aux utilisateur·rice·s expérimenté·e·s. Après la suppression de cette clé, vous NE pourrez PAS déchiffrer de message chiffré avec elle. Cela peut entraîner une perte de données."
       ],
+      "This is a 12-word phrase that you were prompted to set.": [
+        "Il s'agit d'une phrase de 12 mots que vous avez été invité·e à définir."
+      ],
+      "This is a recovery file or encryption key you may have previously saved.": [
+        "Il s'agit d'un fichier de récupération ou d'une clé de chiffrement que vous avez peut-être précédemment enregistré."
+      ],
+      "This is an encryption key you may have previously saved.": [
+        "Il s'agit d’une clé de chiffrement que vous avez peut-être précédemment enregistrée."
+      ],
+      "This is the password you used before the password reset.": [
+        "Il s'agit du mot de passe que vous avez utilisé avant la réinitialisation du mot de passe."
+      ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Ce lien pourrait être une attaque homographique et ne peut pas être ouvert avec les navigateurs Internet Explorer et Edge. Si vous êtes certain de la légitimité de ce lien, veuillez utiliser un autre navigateur pour l'ouvrir."
       ],
@@ -4234,14 +4246,14 @@
       "This will also disable any two-factor authentication method associated with this account.": [
         "Ceci désactivera également toute méthode d'authentification à deux facteurs associée à ce compte."
       ],
-      "This will also disable two-factor authentication.": [
-        "Ceci désactivera également l’authentification à deux facteurs."
-      ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
         "Ceci annulera votre abonnement payant actuel et vous perdrez tous les avantages de fidélité que vous avez accumulés. Le solde restant de votre abonnement sera retourné sous forme de crédits de compte."
       ],
       "This will create an encryption key for your organization. 4096-bit keys only work on high performance computers, for most users, we recommend using 2048-bit keys.": [
         "Une clé de chiffrement sera créée pour votre organisation. Les clés 4096 bits ne fonctionnent que sur des ordinateurs performants. Pour la plupart des utilisateurs, nous vous recommandons d'utiliser les clés 2048 bits."
+      ],
+      "This will disable your current recovery phrase. You won't be able to use it to access your account or decrypt your data.": [
+        "Cela désactivera votre phrase de récupération actuelle. Vous ne pourrez pas l'utiliser pour accéder à votre compte ou déchiffrer vos données."
       ],
       "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Ceci permettra à PayPal d'être utilisé pour payer votre abonnement Proton. Nous vous redirigerons vers PayPal dans un nouvel onglet du navigateur. Si vous utilisez des bloqueurs de fenêtres surgissantes, veuillez les désactiver pour continuer."
@@ -4255,20 +4267,23 @@
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "Cela remplacera votre mot de passe temporaire. Vous l'utiliserez pour accéder prochainement à votre compte ${ BRAND_NAME }."
       ],
+      "This will sign you out of any active sessions and disable 2-factor authentication.": [
+        "Cela vous déconnectera de toutes les sessions actives et désactivera l'authentification à 2 facteurs."
+      ],
       "This wizard will enable Two-Factor Authentication (2FA) on your Proton account. Two-factor authentication will make your Proton account more secure so we recommend enabling it.": [
         "Cet assistant activera l'authentification à deux facteurs (A2F) sur votre compte Proton. L'authentification à deux facteurs rendra votre compte Proton plus sécurisé. Nous vous recommandons donc de l'activer."
       ],
       "to": [
         "à"
       ],
-      "To access your old messages, you will need to reactivate your old encryption keys using one of the following recovery methods.": [
-        "Pour accéder à vos anciens messages, vous devrez réactiver vos anciennes clés de chiffrement en utilisant l'une des méthodes de récupération suivantes."
-      ],
       "To confirm, please enter the name of the user you wish to delete.": [
         "Pour confirmer, veuillez saisir le nom de l'utilisateur que vous souhaitez supprimer."
       ],
       "to continue to ${ toAppName }": [
         "pour continuer vers ${ toAppName }"
+      ],
+      "To decrypt and view your locked data after a password reset, select a recovery method.": [
+        "Pour déchiffrer et afficher vos données verrouillées après une réinitialisation de mot de passe, sélectionnez une méthode de récupération."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Pour lutter contre les messages indésirables et les abus, veuillez prouver que vous êtes humain."
@@ -4278,6 +4293,9 @@
       ],
       "To prepare your external account for import, please follow the instructions for:": [
         "Pour préparer l'importation depuis votre compte externe, veuillez suivre les instructions:"
+      ],
+      "To proceed, select an account recovery method so we can verify the request.": [
+        "Pour continuer, sélectionnez une méthode de récupération de compte afin que nous puissions vérifier la demande."
       ],
       "To secure your internet connection, download and install the ProtonVPN application for your device and connect to a ProtonVPN server.": [
         "Pour sécuriser votre connexion Internet, téléchargez et installez l'application ProtonVPN pour votre appareil et connectez-vous à un serveur ProtonVPN."
@@ -4305,9 +4323,6 @@
       ],
       "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
         "Le mode à deux mots de passe utilise des mots de passe distincts pour la connexion à votre compte et pour le déchiffrement de votre messagerie. Ce mode fournit un léger avantage en terme de sécurité dans certains cas cependant, nous recommandons le mode à mot de passe unique pour la plupart des utilisateurs. Pour passer en mode à deux mots de passe, définissez d’abord un mot de passe de connexion à votre compte, puis choisissez un mot de passe pour votre messagerie."
-      ],
-      "Unable to decrypt. Recovery phrase is not associated with any keys.": [
-        "Impossible de déchiffrer. La phrase de récupération n'est associée à aucune clé."
       ],
       "Unable to verify recovery file signature. Please contact support.": [
         "Impossible de vérifier la signature du fichier de récupération. Veuillez contacter l'assistance."
@@ -4369,11 +4384,17 @@
       "VPN + ${ mailAppName } bundle for families and small businesses.": [
         "Offre groupée RPV + ${ mailAppName } pour les familles et les petites entreprises."
       ],
+      "Warning:": [
+        "Attention:"
+      ],
       "Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts.": [
         "Attention: la suppression est définitive. Ceci supprime également l'accès à tous les services connectés et supprime tous vos contacts."
       ],
       "We advise you to use official ProtonVPN applications when possible.": [
         "Nous vous conseillons d'utiliser les applications officielles ProtonVPN lorsque c'est possible."
+      ],
+      "We recommend using your recovery phrase instead.": [
+        "Nous vous suggérons d'utiliser une phrase de récupération à la place."
       ],
       "We use 3-D Secure to protect your payments.": [
         "Nous utilisons 3-D Secure pour protéger vos paiements."
@@ -4401,6 +4422,12 @@
       ],
       "Week and month views only apply to desktop.": [
         "Les vues hebdomadaires et mensuelles ne s'appliquent qu’à la version de bureau."
+      ],
+      "We’ll send a reset code to the email address you provided for account recovery.": [
+        "Nous enverrons un code de réinitialisation à l'adresse email que vous nous avez fournie pour la récupération de compte."
+      ],
+      "We’ll send a reset code to the phone number you provided for account recovery.": [
+        "Nous enverrons un code de réinitialisation au numéro de téléphone que vous nous avez fourni pour la récupération de compte."
       ],
       "What do you want to import from your Google account?": [
         "Que voulez-vous importer depuis votre compte Google?"
@@ -4438,6 +4465,9 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
         "Vous êtes actuellement connecté·e en tant que ${ user.Name } (${ user.Email }) et avez un accès restreint."
       ],
+      "You can also merge imported calendars with existing Proton calendars.": [
+        "Vous pouvez également fusionner des calendriers importés avec des calendriers Proton existants."
+      ],
       "You can check the progress ${ importProgressLink }.": [
         "Vous pouvez vérifier la progression ${ importProgressLink }."
       ],
@@ -4452,9 +4482,6 @@
       ],
       "You can enable authentication logging to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
         "Vous pouvez activer la journalisation des connexions à votre compte afin de visualiser les accès à celui-ci ainsi que les adresses IP à l'origine de la connexion. Pour chaque tentative de connexion, nous enregistrons l’adresse IP source, la date et l'heure, ainsi que les connexions ayant échoué."
-      ],
-      "You can generate a new encryption key if you think your previous key has been compromised.": [
-        "Vous pouvez générer une nouvelle clé de chiffrement si vous pensez que votre clé précédente a été compromise."
       ],
       "You can now receive messages to your @pm.me address. Upgrade to a paid plan to also send emails using your @pm.me address and create additional @pm.me addresses.": [
         "Vous pouvez maintenant recevoir des messages sur votre adresse @pm.me. Passez à une offre payante afin de pouvoir également envoyer des courriels en utilisant votre adresse @pm.me et créer des adresses @pm.me supplémentaires."
@@ -4473,12 +4500,6 @@
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Vous n'avez pas configuré de méthode de récupération, si vous oubliez votre mot de passe la récupération du compte sera donc impossible. Voulez-vous poursuivre sans méthode de récupération?"
-      ],
-      "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
-        "Vous avez désactivé l'accès à la version bêta. Cliquez ${ refreshButton } pour utiliser la version stable de ${ appName }. L'application sera rechargée."
-      ],
-      "You have enabled Beta Access. Click ${ refreshButton } to use the latest version of ${ appName }. The application will be reloaded.": [
-        "Vous avez activé l'accès à la version bêta. Cliquez ${ refreshButton } pour utiliser la dernière version de ${ appName }. L'application sera rechargée."
       ],
       "You have no saved payment methods.": [
         "Vous n'avez actuellement aucun mode de paiement enregistré."
@@ -4549,8 +4570,8 @@
       "Your Block List is empty.": [
         "Votre liste de blocage est vide."
       ],
-      "Your data is encrypted, you can recover your data by reactivating your keys.": [
-        "Vos données sont chiffrées, vous pouvez récupérer vos données en réactivant vos clés."
+      "Your data is encrypted and locked. You can recover access with a data recovery method.": [
+        "Vos données sont chiffrées et verrouillées. Vous pouvez en récupérer l'accès avec une méthode de récupération de données."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "Vos données sont prêtes à être importées de ${ importedEmailAddressStrong } vers votre compte Proton."
@@ -4735,6 +4756,29 @@
       ],
       "Subscription": [
         "Abonnement"
+      ]
+    },
+    "Key generation": {
+      "A key with the same encryption algorithm already exists. Generating another key will cause slower account loading. Are you sure you want to continue?": [
+        "Une clé avec le même algorithme de chiffrement existe déjà. La génération d'une autre clé entraînera un chargement plus lent du compte. Êtes-vous sûr·e de vouloir continuer?"
+      ],
+      "A key with the same encryption algorithm is already active for this address. Generating another key will cause slower account loading and deletion of this key can cause issues. If you are generating a new key because your old key is compromised, please mark that key as compromised. Are you sure you want to continue?": [
+        "Une clé avec le même algorithme de chiffrement est déjà active pour cette adresse. La génération d'une autre clé entraînera un chargement plus lent du compte et la suppression de cette clé peut entraîner des problèmes. Si vous générez une nouvelle clé parce que votre ancienne clé est compromise, veuillez marquer cette clé comme compromise. Êtes-vous sûr·e de vouloir continuer?"
+      ],
+      "Generate key": [
+        "Générer une clé"
+      ],
+      "Key with fingerprint ${ fp } successfully created.": [
+        "La clé avec l’empreinte ${ fp } a été créée correctement."
+      ],
+      "The encryption keys are being generated. This may take several minutes and temporarily freeze your browser.": [
+        "Les clés de chiffrement sont en cours de génération. Ceci peut prendre plusieurs minutes et geler temporairement votre navigateur."
+      ],
+      "The encryption keys for your address are being generated. This may take several minutes and temporarily freeze your browser.": [
+        "Les clés de chiffrement de votre adresse sont en cours de génération. Ceci peut prendre plusieurs minutes et geler temporairement votre navigateur."
+      ],
+      "You can generate a new encryption key if you think your previous key has been compromised.": [
+        "Vous pouvez générer une nouvelle clé de chiffrement si vous pensez que votre clé précédente a été compromise."
       ]
     },
     "Key state badge": {
@@ -5024,6 +5068,9 @@
       "ALL": [
         "TOUT"
       ],
+      "All-day event notifications": [
+        "Notifications d'événement sur journée complète"
+      ],
       "Allow recovery by email": [
         "Autoriser la récupération par courriel"
       ],
@@ -5072,12 +5119,6 @@
       "Automatically save contacts": [
         "Enregistrer automatiquement les contacts"
       ],
-      "Backup key": [
-        "Clé de sauvegarde"
-      ],
-      "Backup keys": [
-        "Clés de sauvegarde"
-      ],
       "Block email tracking": [
         "Bloquer le suivi des courriels"
       ],
@@ -5114,11 +5155,11 @@
       "Category": [
         "Catégorie"
       ],
-      "Choose a color": [
-        "Choisir une couleur"
-      ],
       "Code": [
         "Code"
+      ],
+      "Color": [
+        "Couleur"
       ],
       "Composer": [
         "Éditeur"
@@ -5189,20 +5230,8 @@
       "Days of the week": [
         "Jours de la semaine"
       ],
-      "Default email": [
-        "Courriel par défaut"
-      ],
-      "Default event duration": [
-        "Durée d'événement par défaut"
-      ],
-      "Default full day notifications": [
-        "Notifications par défaut pour la journée complète"
-      ],
       "Default language": [
         "Langue par défaut"
-      ],
-      "Default notifications": [
-        "Notifications par défaut"
       ],
       "Default PGP scheme": [
         "Protocole PGP par défaut"
@@ -5282,6 +5311,12 @@
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Veuillez saisir le mot de passe pour la clé à empreinte: ${ fingerprintCode }"
       ],
+      "Event duration": [
+        "Durée de l’événement"
+      ],
+      "Event notifications": [
+        "Notifications de l’événement"
+      ],
       "Expires": [
         "Expire le"
       ],
@@ -5299,6 +5334,9 @@
       ],
       "Folder location": [
         "Emplacement du dossier"
+      ],
+      "From: ${ emailFrom }": [
+        "De: ${ emailFrom }"
       ],
       "From: ${ fromEmailAddress }": [
         "De: ${ fromEmailAddress }"
@@ -5480,6 +5518,9 @@
       "Phrase": [
         "Phrase"
       ],
+      "Phrase consists of 12 unique words in a specific order": [
+        "La phrase se compose de 12 mots uniques dans un ordre spécifique"
+      ],
       "Please add all 3 of the following CNAME records. Note, DNS records can take several hours to update.": [
         "Veuillez ajouter les 3 enregistrements CNAME suivants. Notez que la mise à jour des enregistrements DNS peut prendre plusieurs heures."
       ],
@@ -5497,6 +5538,9 @@
       ],
       "Postal code": [
         "Code postal"
+      ],
+      "Previous password": [
+        "Mot de passe précédent"
       ],
       "Private User": [
         "Utilisateur privé"
@@ -5533,9 +5577,6 @@
       ],
       "Recovery phrase": [
         "Phrase de récupération"
-      ],
-      "Recovery phrase contains 12 words": [
-        "La phrase de récupération contient 12 mots"
       ],
       "Repeat password": [
         "Confirmer le mot de passe"
@@ -5615,6 +5656,9 @@
       "To: ${ emailAddress }": [
         "À: ${ emailAddress }"
       ],
+      "To: ${ emailTo }": [
+        "À: ${ emailTo }"
+      ],
       "To: ${ PMEmailAddress }": [
         "À: ${ PMEmailAddress }"
       ],
@@ -5639,17 +5683,11 @@
       "Undo send": [
         "Annuler l'envoi"
       ],
-      "Upload your backup key": [
-        "Téléversez votre clé de sauvegarde"
+      "Upload 1 or more encryption keys": [
+        "Téléversez 1 ou plusieurs clés de chiffrement"
       ],
-      "Upload your recovery file": [
-        "Téléverser votre fichier de récupération"
-      ],
-      "Uploaded private keys": [
-        "Clés privées téléversées"
-      ],
-      "Uploaded recovery file": [
-        "Fichier de récupération téléversé"
+      "Upload 1 or more recovery files or encryption keys": [
+        "Téléversez 1 ou plusieurs fichiers de récupération ou clés de chiffrement"
       ],
       "URL": [
         "URL"
@@ -5726,9 +5764,6 @@
       "Your password (admin)": [
         "Votre mot de passe (admin)"
       ],
-      "Your recovery phrase": [
-        "Votre phrase de récupération"
-      ],
       "ZIP": [
         "Code postal"
       ]
@@ -5783,6 +5818,9 @@
       ],
       "Proton newsletter": [
         "Infolettre Proton"
+      ],
+      "Proton offers and promotions": [
+        "Offres et promotions Proton"
       ],
       "Proton product announcements": [
         "Annonces de produits Proton"
@@ -6950,17 +6988,11 @@
       "Email": [
         "Courriel"
       ],
-      "email address": [
-        "adresse courriel"
-      ],
-      "phone number": [
-        "numéro de téléphone"
-      ],
       "Phone number": [
         "Numéro de téléphone"
       ],
-      "Recovery phrase": [
-        "Phrase de récupération"
+      "Phrase": [
+        "Phrase"
       ]
     },
     "Remark about a key type option": {
@@ -7000,11 +7032,8 @@
       "Upload": [
         "Téléverser"
       ],
-      "Upload additional private keys": [
-        "Téléverser des clés privées supplémentaires"
-      ],
-      "Upload additional recovery files": [
-        "Téléverser des fichiers de récupération supplémentaires"
+      "Upload additional files": [
+        "Importer des fichiers supplémentaires"
       ]
     },
     "Select search results": {
@@ -7735,6 +7764,9 @@
       "Dashboard": [
         "Tableau de bord"
       ],
+      "Data locked": [
+        "Données verrouillées"
+      ],
       "Data recovery": [
         "Récupération de données"
       ],
@@ -7795,6 +7827,9 @@
       "Edit Block List": [
         "Modifier la liste de blocage"
       ],
+      "Edit calendar": [
+        "Modifier le calendrier"
+      ],
       "Edit credit/debit card": [
         "Modifier la carte de crédit / débit"
       ],
@@ -7824,9 +7859,6 @@
       ],
       "Enable keyboard shortcuts": [
         "Activer les raccourcis clavier"
-      ],
-      "Encrypted data": [
-        "Données chiffrées"
       ],
       "Encryption & keys": [
         "Chiffrement & clés"
@@ -7869,9 +7901,6 @@
       ],
       "General": [
         "Général"
-      ],
-      "Generate key": [
-        "Générer une clé"
       ],
       "Generate missing keys": [
         "Générer les clés manquantes"
@@ -8066,11 +8095,11 @@
       "ProtonVPN": [
         "ProtonVPN"
       ],
-      "Reactivate keys": [
-        "Réactiver les clés"
-      ],
       "Reconnect your account": [
         "Reconnecter votre compte"
+      ],
+      "Recover data": [
+        "Récupérer des données"
       ],
       "Recovery": [
         "Récupération"
@@ -8227,9 +8256,6 @@
       ],
       "Unsupported browser": [
         "Navigateur non supporté"
-      ],
-      "Update calendar": [
-        "Mettre le calendrier à jour"
       ],
       "Upgrade": [
         "Changer d'offre"
@@ -8510,6 +8536,17 @@
         "Signer automatiquement tous vos messages sortants permet aux utilisateurs de vérifier l'authenticité de vos messages. Ceci se fait en association avec les paramètres PGP par défaut qui peuvent être configurés ci-dessous."
       ]
     },
+    "Update font modal": {
+      "Today is a good day to write an email": [
+        "Aujourd'hui est un bon jour pour écrire un courriel"
+      ],
+      "Update default font and size": [
+        "Mettre à jour la police et la taille par défaut"
+      ],
+      "Your default font will look like following:": [
+        "Votre police par défaut ressemblera à ceci:"
+      ]
+    },
     "Upgrade": {
       "Upgrade to ${ protonVpnName } ${ PLAN_NAMES[PLANS.VPNPLUS] } to connect up to ${ plusVpnConnections } device to the VPN at once": [
         "Mettez à niveau vers ${ protonVpnName } ${ PLAN_NAMES[PLANS.VPNPLUS] } pour connecter jusqu'à ${ plusVpnConnections } appareil au RPV à la fois",
@@ -8773,6 +8810,12 @@
       ],
       "You will not see this import record in the list anymore.": [
         "Vous ne verrez plus cet enregistrement d'importation dans la liste."
+      ],
+      "Your recovery file is outdated and can't recover new data should you reset your account again.": [
+        "Votre fichier de récupération est obsolète et ne peut pas récupérer de nouvelles données si vous réinitialisez votre compte à nouveau."
+      ],
+      "Your recovery phrase is outdated and can't recover new data should you reset your account again.": [
+        "Votre phrase de récupération est obsolète et ne peut pas récupérer de nouvelles données si vous réinitialisez votre compte à nouveau."
       ]
     },
     "Warning for domain modal": {

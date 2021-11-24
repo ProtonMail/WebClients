@@ -20,6 +20,9 @@
       "Activate": [
         "Активувати"
       ],
+      "Activate recovery": [
+        "Активувати відновлення"
+      ],
       "Add": [
         "Додати"
       ],
@@ -98,14 +101,11 @@
       "Cancel": [
         "Скасувати"
       ],
-      "Cancel action": [
-        "Скасувати дію"
-      ],
       "Carbon Copy, Blind Carbon Copy": [
         "Копія, Прихована копія"
       ],
-      "CC, BCC": [
-        "Копія, Прихована копія"
+      "CC BCC": [
+        "Копія/Прихована копія"
       ],
       "Change page": [
         "Змінити сторінку"
@@ -218,8 +218,8 @@
       "Decrease": [
         "Зменшити"
       ],
-      "Default mail handler": [
-        ""
+      "Default email application": [
+        "Додаток електронної пошти за замовчуванням"
       ],
       "Delete": [
         "Видалити"
@@ -314,14 +314,14 @@
       "Expand composer": [
         "Розгорнути редактор"
       ],
-      "Expiration time": [
-        "Термін дії"
-      ],
       "Export": [
         "Експорт"
       ],
       "Export contacts": [
         "Експортувати контакти"
+      ],
+      "Fewer search options": [
+        "Менше варіантів пошуку"
       ],
       "Filter on...": [
         "Фільтр..."
@@ -364,9 +364,6 @@
       ],
       "Got it": [
         "Зрозуміло"
-      ],
-      "here": [
-        "тут"
       ],
       "Hide": [
         "Приховати"
@@ -425,6 +422,9 @@
       "Insert contact": [
         "Вставити контакт"
       ],
+      "Insert contacts": [
+        "Вставити контакти"
+      ],
       "Insert image": [
         "Вставити зображення"
       ],
@@ -451,9 +451,6 @@
       ],
       "Learn more": [
         "Докладніше"
-      ],
-      "Less search options": [
-        "Менше варіантів пошуку"
       ],
       "Load": [
         "Завантажити"
@@ -579,7 +576,7 @@
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
-        ""
+        "Відкрити ${ CALENDAR_APP_NAME }"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Відкрити налаштування ${ CALENDAR_APP_NAME }"
@@ -634,9 +631,6 @@
       ],
       "Print": [
         "Друкувати"
-      ],
-      "Prompt browser setting": [
-        ""
       ],
       "Quit": [
         "Вийти"
@@ -743,6 +737,15 @@
       "Set": [
         "Встановити"
       ],
+      "Set as default": [
+        "Встановити за замовчуванням"
+      ],
+      "Set expiration time": [
+        "Вказати термін дії"
+      ],
+      "Set recovery phrase": [
+        "Встановити фразу відновлення"
+      ],
       "Share via link": [
         "Спільний доступ за посиланням"
       ],
@@ -761,6 +764,9 @@
       "Show details": [
         "Показати подробиці"
       ],
+      "Show fewer search options": [
+        "Менше варіантів пошуку"
+      ],
       "Show folders": [
         "Показати теки"
       ],
@@ -772,9 +778,6 @@
       ],
       "Show less": [
         "Згорнути"
-      ],
-      "Show less search options": [
-        "Менше варіантів пошуку"
       ],
       "Show messages": [
         "Показати повідомлення"
@@ -811,6 +814,9 @@
       ],
       "Switch account": [
         "Перемкнути обліковий запис"
+      ],
+      "Switch to rich text": [
+        "Перемкнути в Rich Text Format (RTF)"
       ],
       "Theme": [
         "Тема"
@@ -862,6 +868,15 @@
       ],
       "Untrust": [
         "Не довіряти"
+      ],
+      "Update": [
+        "Оновити"
+      ],
+      "Update recovery file": [
+        "Оновити файл відновлення"
+      ],
+      "Update recovery phrase": [
+        "Оновити фразу відновлення"
       ],
       "Upgrade": [
         "Покращити"
@@ -921,7 +936,7 @@
         "Переглянути програмний код"
       ],
       "Why not?": [
-        ""
+        "Чому б ні?"
       ],
       "Yes": [
         "Так"
@@ -1424,10 +1439,10 @@
         "Додано повторення для події ${ veventIcsTitle }"
       ],
       "Event already ended": [
-        ""
+        "Подія вже завершилася"
       ],
       "Event in progress": [
-        ""
+        "Подія триває"
       ],
       "Event refreshing is not supported for the moment": [
         "Оновлення події наразі не підтримується"
@@ -1442,13 +1457,13 @@
         "Цю відповідь не можна додати до ${ calendarAppName }, тому що наразі підтримуються лише відповіді на всі події в серії"
       ],
       "This event has been canceled.": [
-        ""
+        "Цю подію було скасовано."
       ],
       "This event has been updated.": [
         "Цю подію було оновлено."
       ],
       "This invitation is out of date. The event has been canceled.": [
-        ""
+        "Це запрошення застаріло. Подію було скасовано."
       ],
       "This invitation is out of date. The event has been deleted.": [
         "Це запрошення застаріло. Подію було видалено."
@@ -1876,7 +1891,7 @@
     },
     "Email body for invitation": {
       "${ eventTitle } has been canceled.": [
-        ""
+        "${ eventTitle } було скасовано."
       ],
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
         "${ eventTitle } було оновлено.\n${ eventDetailsText }"
@@ -1914,46 +1929,46 @@
     },
     "Email reminder banner": {
       "Event already ended": [
-        ""
+        "Подія вже завершилася"
       ],
       "Event in progress": [
-        ""
+        "Подія триває"
       ],
       "Event is tomorrow": [
-        ""
+        "Подія на завтра"
       ],
       "Event starting now": [
-        ""
+        "Подія зараз починається"
       ],
       "Event starts in ${ minutesUntilEvent } minute": [
-        "",
-        "",
-        "",
-        ""
+        "Подія починається через ${ minutesUntilEvent } хвилину",
+        "Подія починається через ${ minutesUntilEvent } хвилини",
+        "Подія починається через ${ minutesUntilEvent } хвилин",
+        "Подія починається через ${ minutesUntilEvent } хвилини"
       ],
       "Event starts tomorrow": [
-        ""
+        "Подія починається завтра"
       ]
     },
     "Email reminder decryption error": {
       "Event details are encrypted. Sign in again to restore Calendar and decrypt your data. ${ learnMoreLink }": [
-        ""
+        "Подробиці події зашифровано. Увійдіть знову, щоб відновити календар та розшифрувати свої дані. ${ learnMoreLink }"
       ],
       "Event details cannot be decrypted. ${ whyNotLink }": [
-        ""
+        "Неможливо розшифрувати подробиці події. ${ whyNotLink }"
       ]
     },
     "Email reminder error": {
       "Event is no longer in your calendar": [
-        ""
+        "Події більше немає у вашому календарі"
       ]
     },
     "Email reminder out of date alert": {
       "Event was canceled": [
-        ""
+        "Подію було скасовано"
       ],
       "Event was updated. This reminder is out-of-date.": [
-        ""
+        "Подую було оновлено. Це нагадування застаріло."
       ]
     },
     "Email subject": {
@@ -2060,6 +2075,12 @@
       "Decryption error: decryption of this message's encrypted content failed.": [
         "Помилка розшифрування: не вдалося розшифрувати вміст цього повідомлення."
       ],
+      "Deselect at least ${ calendarToFixCount } calendar": [
+        "Приберіть принаймні ${ calendarToFixCount } календар",
+        "Приберіть принаймні ${ calendarToFixCount } календарі",
+        "Приберіть принаймні ${ calendarToFixCount } календарів",
+        "Приберіть принаймні ${ calendarToFixCount } календаря"
+      ],
       "Deselect at least ${ calendarToFixCount } calendar or": [
         "Приберіть принаймні ${ calendarToFixCount } календар або",
         "Приберіть принаймні ${ calendarToFixCount } календарі або",
@@ -2159,9 +2180,6 @@
       "Message needs to be sent first": [
         "Спершу необхідно надіслати повідомлення"
       ],
-      "Message passwords do not match": [
-        "Паролі повідомлення відрізняються"
-      ],
       "Message processing error.": [
         "Помилка обробки повідомлення."
       ],
@@ -2176,6 +2194,9 @@
       ],
       "No address with keys available to compose a message": [
         "Немає адреси з доступними ключами, щоб створити повідомлення"
+      ],
+      "No data to import": [
+        "Немає даних для імпорту"
       ],
       "No key retrieved for internal user is valid for sending": [
         "Для внутрішнього користувача не отримано жодного дійсного ключа для надсилання"
@@ -2236,6 +2257,12 @@
       ],
       "Please refresh the page.": [
         "Будь ласка, оновіть сторінку."
+      ],
+      "Please repeat the password": [
+        "Будь ласка, повторіть пароль"
+      ],
+      "Please set a password": [
+        "Будь ласка, встановіть пароль"
       ],
       "Preferences could not be saved": [
         "Не вдалося зберегти налаштування"
@@ -2577,7 +2604,7 @@
         "Не вдається розшифрувати вкладений ICS-файл"
       ],
       "Attached ICS file could not be read": [
-        ""
+        "Не вдалося прочитати вкладений файл ICS"
       ],
       "Invalid invitation": [
         "Недійсне запрошення"
@@ -2732,19 +2759,16 @@
       ]
     },
     "Get started checklist completion": {
-      "We've added 1 GB of bonus storage to your account. Continue to explore ${ BRAND_NAME } and share your ${ protonMailAppName } address with your family, friends, and colleagues.": [
-        "Ми додали 1 ГБ бонусного сховища до вашого облікового запису. Продовжуйте досліджувати ${ BRAND_NAME } та поділіться ${ protonMailAppName } зі своєю сім'єю, друзями та колегами."
+      "We've increased the total storage of your account to ${ totalGBStorageAfterCompletion } GB. Get additional storage and unlock premium features today.": [
+        "Ми збільшили загальний обсяг сховища вашого облікового запису до ${ totalGBStorageAfterCompletion } ГБ. Отримайте додатковий обсяг та доступ до можливостей преміум."
       ],
-      "We've added 1 GB of bonus storage to your account. For even more storage and premium features, upgrade your plan.": [
-        "Ми додали 1 ГБ бонусного сховища до вашого облікового запису. Для збільшення сховища та отримання преміум функцій, оновіть свій план."
-      ],
-      "You're a privacy champ!": [
-        "Ви - захисник приватного життя!"
+      "You're all set!": [
+        "Все готово!"
       ]
     },
     "Get started checklist incentive": {
-      "Complete all steps and get a total of 2 GB on your account": [
-        "Виконайте всі кроки та отримайте загалом 2 ГБ для свого облікового запису"
+      "Complete all steps and get a total of ${ totalGBStorageAfterCompletion } GB on your account": [
+        "Завершіть усі кроки та отримайте всього ${ totalGBStorageAfterCompletion } ГБ для свого облікового запису"
       ],
       "Only ${ days } day left": [
         "Лишився всього ${ days } день",
@@ -3215,9 +3239,6 @@
       "Account successfully updated": [
         "Обліковий запис успішно оновлено"
       ],
-      "Activating this option will open a new composer each time you click on a mailto: link.": [
-        ""
-      ],
       "Activation in progress": [
         "Триває активація"
       ],
@@ -3356,9 +3377,6 @@
       "Center": [
         "По центру"
       ],
-      "Change your default in settings": [
-        "Змінити типовий шрифт у налаштуваннях"
-      ],
       "Checking contact ${ progress } of ${ max }...": [
         "Перевірка контактів ${ progress } з ${ max }..."
       ],
@@ -3382,9 +3400,6 @@
       ],
       "Close this screen to exit.": [
         "Закрийте це вікно, щоб вийти."
-      ],
-      "Confirm Password": [
-        "Підтвердити пароль"
       ],
       "Confirm phishing report": [
         "Підтвердити звіт про шахрайство"
@@ -3439,6 +3454,9 @@
         "Дні",
         "Днів",
         "Днів"
+      ],
+      "Default email application": [
+        "Додаток електронної пошти за замовчуванням"
       ],
       "Disable message content search": [
         "Вимкнути пошук вмісту повідомлення"
@@ -3536,6 +3554,9 @@
       "Estimating time remaining...": [
         "Приблизний залишок часу..."
       ],
+      "Expiration time": [
+        "Час завершення"
+      ],
       "Expiration Time": [
         "Час завершення"
       ],
@@ -3586,9 +3607,6 @@
       ],
       "Full-featured VPN with speed up to 10 Gbps.": [
         "Повнофункціональний VPN зі швидкістю до 10 Гбіт/с."
-      ],
-      "Generate recovery phrase": [
-        "Згенерувати фразу відновлення"
       ],
       "Get more storage and premium features.": [
         "Отримайте більше місця у сховищі та преміальних можливостей."
@@ -3665,12 +3683,6 @@
       "Insert image": [
         "Вставити зображення"
       ],
-      "Insert image as": [
-        "Вставити зображення як",
-        "Вставити зображення як",
-        "Вставити зображення як",
-        "Вставити зображення як"
-      ],
       "Insert link": [
         "Вставити посилання"
       ],
@@ -3722,6 +3734,9 @@
       "Manage your labels": [
         "Керувати мітками"
       ],
+      "members": [
+        "учасники"
+      ],
       "Members": [
         "Учасники"
       ],
@@ -3733,9 +3748,6 @@
       ],
       "Message headers": [
         "Заголовки повідомлень"
-      ],
-      "Message Password": [
-        "Пароль повідомлення"
       ],
       "Message sent": [
         "Повідомлення надіслано"
@@ -3818,14 +3830,8 @@
       "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
         "Змінюйте ці налаштування лише якщо ви використовуєте PGP з отримувачами поза ProtonMail."
       ],
-      "or": [
-        "або"
-      ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Наша система позначила це повідомлення спробою шахрайства. Переконайтеся, що воно надійне."
-      ],
-      "Password Hint (Optional)": [
-        "Підказка пароля (Необов'язково)"
       ],
       "Payment can take a few minutes to fully verify.": [
         "Перевірка платежу може тривати кілька хвилин."
@@ -3845,11 +3851,11 @@
       "Plain text": [
         "Звичайний текст"
       ],
-      "Please add at least one recipient before sending.": [
-        "Будь ласка, додайте принаймні одного отримувача."
+      "Please add at least one recipient.": [
+        "Додайте принаймні одного отримувача."
       ],
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
-        ""
+        "Будь ласка, надійно збережіть його. Він знадобиться вам для доступу до облікового запису та розшифрування ваших даних у разі скидання пароля."
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Зауважте, що адреси, призначені цій групі, не будуть видалені."
@@ -3968,8 +3974,8 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Оберіть формат повідомлення, який ви хочете використовувати при надсиланні на цю адресу е-пошти."
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit. You can also merge imported calendars with existing Proton calendars.": [
-        "Виберіть, які календарі необхідно імпортувати. Для кожного імпортованого календаря буде створено новий календар у межах ліміту до 20 календарів. Ви також можете об'єднати імпортовані календарі з наявними календарями Proton."
+      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
+        "Виберіть, які календарі імпортувати. Для кожного імпортованого календаря буде створено новий календар з обмеженням у 20 календарів."
       ],
       "Sending": [
         "Надсилається"
@@ -3986,8 +3992,11 @@
       "Session timed out.": [
         "Сеанс завершився."
       ],
-      "Set ProtonMail as your default mail handler": [
-        ""
+      "Set a recovery phrase": [
+        "Встановити фразу відновлення"
+      ],
+      "Set ProtonMail as your default email application for this browser. ProtonMail will open automatically when you click an email link.": [
+        "Встановите ProtonMail як додаток електронної пошти за замовчуванням для цього браузера. ProtonMail відкриється автоматично після натискання на поштове посилання."
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
         "Встановлення PGP дозволяє вам надсилати наскрізно зашифровані повідомлення користувачам за межами ProtonMail, які використовують PGP-сумісний сервіс."
@@ -4130,11 +4139,11 @@
       "This message will be sent shortly": [
         "Це повідомлення невдовзі буде надіслано"
       ],
+      "This message will expire ${ dateString } at ${ formattedTime }": [
+        "Термін дії цього повідомлення завершиться ${ dateString }, ${ formattedTime }"
+      ],
       "This message will expire ${ formattedDate }": [
         "Термін дії цього повідомлення завершиться ${ formattedDate }"
-      ],
-      "This message will expire in": [
-        "Термін дії цього повідомлення завершиться через"
       ],
       "This message will expire in ${ formattedDelay }": [
         "Термін дії цього повідомлення завершиться через ${ formattedDelay }"
@@ -4289,6 +4298,12 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
         "Ви зараз увійшли як ${ user.Name } (${ user.Email }) і маєте обмежений доступ."
       ],
+      "You can add it as an attachment or display it inline in your mail body.": [
+        "Ви можете додати його як вкладення, або показати в тілі листа."
+      ],
+      "You can also merge imported calendars with existing Proton calendars.": [
+        "Ви також можете об'єднати імпортовані календарі з наявними календарями Proton."
+      ],
       "You can check the progress ${ importProgressLink }.": [
         "Ви можете переглянути поступ ${ importProgressLink }."
       ],
@@ -4339,12 +4354,6 @@
         "**${ count } повідомлення** позначені цією міткою",
         "**${ count } повідомлень** позначені цією міткою",
         "**${ count } повідомлень** позначені цією міткою"
-      ],
-      "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
-        "Ви вимкнули бета-доступ. Натисніть ${ refreshButton }, щоб використовувати стабільну версію ${ appName }. Програму буде перезавантажено."
-      ],
-      "You have enabled Beta Access. Click ${ refreshButton } to use the latest version of ${ appName }. The application will be reloaded.": [
-        "Ви увімкнули бета-доступ. Натисніть ${ refreshButton }, щоб використовувати найновішу версію ${ appName }. Програму буде перезавантажено."
       ],
       "You have not given your email any subject. Do you want to send the message anyway?": [
         "Ви не вказали тему для свого листа. Хочете все одно надіслати лист без теми?"
@@ -4397,8 +4406,8 @@
       "You will soon be redirected to PayPal to verify your payment.": [
         "Вас невдовзі буде перенаправлено до PayPal для підтвердження платежу."
       ],
-      "You wrote \"${ keyword }\", but no attachment has been added. Do you want to send your message anyway?": [
-        "Ви вказали \"${ keyword }\", але вкладення не було додано. Ви все одно хочете надіслати повідомлення?"
+      "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
+        "Ви вказали “${ attachmentsFoundKeyword }”, але вкладення не було додано. Ви все одно хочете надіслати повідомлення?"
       ],
       "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
         "Ваш обліковий запис має принаймні один протермінований рахунок. Ваш доступ було обмежено. ${ payInvoiceLink }"
@@ -4437,6 +4446,9 @@
     "info": {
       "(beta)": [
         "(бета)"
+      ],
+      "Optional": [
+        "Необов'язково"
       ]
     },
     "Info concerning plan features": {
@@ -4794,6 +4806,9 @@
       "Conditions": [
         "Умови"
       ],
+      "Confirm Password": [
+        "Підтвердити пароль"
+      ],
       "Contacts": [
         "Контакти"
       ],
@@ -4926,8 +4941,14 @@
       "Manage labels": [
         "Керувати мітками"
       ],
+      "Manage my addresses": [
+        "Керувати моїми адресами"
+      ],
       "Mark as": [
         "Позначити як"
+      ],
+      "Message Password": [
+        "Пароль повідомлення"
       ],
       "Move to": [
         "Перемістити до"
@@ -4961,6 +4982,9 @@
       ],
       "Password": [
         "Пароль"
+      ],
+      "Password Hint": [
+        "Підказка для пароля"
       ],
       "Payer": [
         "Платник"
@@ -5330,7 +5354,7 @@
     },
     "Link to calendar event": {
       "Open in ${ CALENDAR_APP_NAME }": [
-        ""
+        "Відкрити в ${ CALENDAR_APP_NAME }"
       ]
     },
     "Loading info": {
@@ -5694,6 +5718,9 @@
       ],
       "Contact group updated": [
         "Групу контактів оновлено"
+      ],
+      "Password has been set successfully": [
+        "Пароль успішно встановлено"
       ]
     },
     "Onboarding": {
@@ -6768,9 +6795,6 @@
       "Add contact group name": [
         "Додати назву групи контактів"
       ],
-      "Add contacts": [
-        "Додати контакти"
-      ],
       "Add filter": [
         "Додати фільтр"
       ],
@@ -6847,7 +6871,7 @@
         "Підтвердити адресу отримувача?"
       ],
       "Contact details": [
-        ""
+        "Подробиці контакту"
       ],
       "Contact Details": [
         "Подробиці контакту"
@@ -6999,9 +7023,6 @@
       "Expand content": [
         "Розгорнути вміст"
       ],
-      "Expiration time": [
-        "Час завершення"
-      ],
       "Exporting contacts": [
         "Експортування контактів"
       ],
@@ -7071,9 +7092,6 @@
       "Message list": [
         "Список повідомлень"
       ],
-      "Message without subject?": [
-        "Повідомлення без теми?"
-      ],
       "More": [
         "Більше"
       ],
@@ -7112,9 +7130,6 @@
       ],
       "No attachment found": [
         "Вкладення не знайдено"
-      ],
-      "No recipient": [
-        "Немає отримувача"
       ],
       "Open actions dropdown": [
         "Випадне меню дій"
@@ -7169,6 +7184,9 @@
       ],
       "Re-signing contacts": [
         "Повторне підписання контактів"
+      ],
+      "Recipient missing": [
+        "Немає отримувача"
       ],
       "Recover data": [
         "Відновити дані"
@@ -7232,6 +7250,9 @@
       ],
       "Storage capacity warning": [
         "Попередження про обсяг сховища"
+      ],
+      "Subject missing": [
+        "Немає теми"
       ],
       "Subtotal": [
         "Попередній підсумок"
@@ -7374,6 +7395,17 @@
       ],
       "You do not have any contacts to export": [
         "У вас немає контактів для експорту"
+      ]
+    },
+    "Update font modal": {
+      "Today is a good day to write an email": [
+        "Сьогодні хороший день, щоб написати електронного листа"
+      ],
+      "Update default font and size": [
+        "Оновити типовий шрифт і розмір"
+      ],
+      "Your default font will look like following:": [
+        "Ваш типовий шрифт виглядатиме так:"
       ]
     },
     "Validation": {

@@ -31,17 +31,20 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } mağazası"
       ],
-      "Activate": [
-        "Etkinleştir"
-      ],
       "activate": [
         "etkinleştir"
+      ],
+      "Activate": [
+        "Etkinleştir"
       ],
       "Activate ${ Name }@pm.me": [
         "${ Name }@pm.me adresini etkinleştir"
       ],
       "Activate organization key": [
         "Kuruluş anahtarını etkinleştir"
+      ],
+      "Activate recovery": [
+        "Kurtarmayı etkinleştirin"
       ],
       "Add": [
         "Ekle"
@@ -205,9 +208,6 @@
       "Copy link": [
         "Linki kopyala"
       ],
-      "Create": [
-        "Oluştur"
-      ],
       "Create a secure ProtonMail address instead": [
         "Bunun yerine güvenli bir ProtonMail adresi oluşturun"
       ],
@@ -337,9 +337,6 @@
       "Export key": [
         "Anahtarı dışa aktar"
       ],
-      "Export private key": [
-        "Özel anahtarı dışa aktar"
-      ],
       "Font": [
         "Yazı tipi"
       ],
@@ -366,9 +363,6 @@
       ],
       "Go to panel ${ index }": [
         "${ index } paneline git"
-      ],
-      "here": [
-        "buraya"
       ],
       "Hide": [
         "Gizle"
@@ -631,6 +625,9 @@
       "Set catch-all": [
         "Tümünü yakalamayı ayarla"
       ],
+      "Set recovery phrase": [
+        "Kurtarma anahtar metni oluşturun"
+      ],
       "Share via link": [
         "Bağlantı yoluyla paylaş"
       ],
@@ -712,6 +709,9 @@
       "Switch account": [
         "Hesap değiştir"
       ],
+      "Switch to rich text": [
+        "Zengin metin biçimine geçin"
+      ],
       "Top up": [
         "Tamamla"
       ],
@@ -727,6 +727,9 @@
       "Unlock": [
         "Kilidi aç"
       ],
+      "Unlock data": [
+        ""
+      ],
       "Unordered list": [
         "Sırasız liste"
       ],
@@ -735,6 +738,12 @@
       ],
       "Update": [
         "Güncelle"
+      ],
+      "Update recovery file": [
+        "Kurtarma dosyasını güncelleyin"
+      ],
+      "Update recovery phrase": [
+        "Kurtarma anahtar metnini güncelleyin"
       ],
       "Upgrade": [
         "Yükselt"
@@ -914,9 +923,6 @@
       ]
     },
     "alert": {
-      "The encryption keys for your address are being generated. This may take several minutes and temporarily freeze your browser.": [
-        "Adresiniz için şifreleme anahtarları üretiliyor. Bu birkaç dakika sürebilir ve tarayıcınızı geçici olarak dondurur."
-      ],
       "The key for your address is now being deleted.": [
         "Adresinizin anahtarı şimdi siliniyor."
       ]
@@ -1299,9 +1305,8 @@
       ]
     },
     "Calendar limit warning": {
-      "You have reached the maximum of ${ calendarsLimit } personal calendar.": [
-        "",
-        ""
+      "You have reached the maximum number of personal calendars you can create within your plan.": [
+        "Planınız içinde oluşturabileceğiniz en fazla kişisel takvim sayısına ulaştınız."
       ],
       "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } subscribed calendar.": [
         "Kullanıcı başına abone olunan takvim sayısında ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } üst sınırına eriştiniz.",
@@ -1834,6 +1839,10 @@
       "Could not find address ${ email }.": [
         "${ email } adresi bulunamadı."
       ],
+      "Deselect at least ${ calendarToFixCount } calendar": [
+        "",
+        ""
+      ],
       "Deselect at least ${ calendarToFixCount } calendar or": [
         "",
         ""
@@ -1943,6 +1952,9 @@
       ],
       "No active sessions": [
         "Başka bir etkin oturum yok"
+      ],
+      "No data to import": [
+        "İçe aktarılacak veri yok"
       ],
       "No valid address found": [
         "Geçerli bir adres bulunamadı"
@@ -2065,6 +2077,12 @@
       "The folder name is too long. Please choose a different name.": [
         "Klasör adı çok uzun. Lütfen farklı bir isim seçin."
       ],
+      "The keys in your recovery file can't be validated. Please contact support.": [
+        ""
+      ],
+      "The keys in your recovery files can't be validated. Please upload individually for more information.": [
+        ""
+      ],
       "The label name is too long. Please choose a different name.": [
         "Etiket adı çok uzun. Lütfen farklı bir isim seçin."
       ],
@@ -2111,9 +2129,6 @@
         "Bilinmeyen ödeme belirteci durumu"
       ],
       "Uploaded file is not a valid private key. Please verify and try again.": [
-        ""
-      ],
-      "Uploaded file is not a valid recovery file. Please verify and try again.": [
         ""
       ],
       "Uploaded files are not valid private keys. Please verify and try again.": [
@@ -2166,9 +2181,6 @@
       ]
     },
     "Error importing calendar": {
-      "${ CALENDAR_APP_NAME } only supports importing calendars with iCal version 2.0.": [
-        "${ CALENDAR_APP_NAME } sadece iCal sürüm 2.0 ile takvimleri içe aktarmayı destekler."
-      ],
       "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
         "${ formattedFilename } dosyanızı okurken bir hata oluştu. Dosya doğru formata sahip değil."
       ],
@@ -3070,6 +3082,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName }, ${ enableDesktopNotifications } için izninize ihtiyaç duyuyor."
       ],
+      "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
+        ""
+      ],
       "${ calendarName } will be set as default calendar.": [
         "${ calendarName } varsayılan takvim olarak ayarlanacaktır."
       ],
@@ -3189,9 +3204,6 @@
       "A free and uncensored Internet should be available to all.": [
         "Özgür ve sansürsüz bir İnternet herkese açık olmalıdır."
       ],
-      "A key with the same encryption algorithm is already active for this address. Generating another key will cause slower account loading and deletion of this key can cause issues. If you are generating a new key because your old key is compromised, please mark that key as compromised. Are you sure you want to continue?": [
-        "Bu adres için aynı şifreleme algoritmasına sahip bir anahtar zaten etkin. Başka bir anahtarın oluşturulması, hesabın daha yavaş yüklenmesine ve bu anahtarın silinmesine neden olabilir. Eski anahtarınız tehlikeye girdiğinden yeni bir anahtar oluşturuyorsanız, lütfen bu anahtarı tehlikede olarak işaretleyin. Devam etmek istediğine emin misin?"
-      ],
       "A recovery file lets you unlock and view your data after an account reset. ": [
         ""
       ],
@@ -3223,10 +3235,10 @@
         "Hesabınıza @pm.me e-posta adresi ekler. Bu basit ve kısa alan adı \"ProtonMail me\" veya \"Private Message me\" anlamına gelir."
       ],
       "Add a recovery email address": [
-        ""
+        "Kurtarma e-posta adresi ekleyin"
       ],
       "Add a recovery phone number": [
-        ""
+        "Kurtarma telefon numarası ekleyin"
       ],
       "Add additional addresses to your account like user2@protonmail.com": [
         "Hesabınıza kullaniciadi2@protonmail.com gibi ek adresler ekleyin"
@@ -3268,7 +3280,7 @@
         "Tümü (${ totalFoldersCount } etiket)"
       ],
       "All keys successfully reactivated": [
-        ""
+        "Tüm anahtarlar başarıyla yeniden etkinleştirildi"
       ],
       "All your changes will be lost.": [
         "Tüm değişiklikleriniz kaybolacak."
@@ -3283,7 +3295,7 @@
         "En düşük tutarın altında (${ amount })."
       ],
       "and": [
-        ""
+        "ve"
       ],
       "Anyone with this link can see all the event details of this calendar such as title, location or participants.": [
         "Bu bağlantıya sahip olan herkes başlık, yer veya katılımcılar gibi bu takvimin tüm etkinlik ayrıntılarını görebilir."
@@ -3296,9 +3308,6 @@
       ],
       "AOL reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
         "AOL, reklamcılara ve diğer üçüncü taraflara erişim sağlamak için kişisel verilerinizi okur. Daha iyi gizlilik için güvenli bir e-posta adresi oluşturun."
-      ],
-      "Are you sure you want to continue?": [
-        "Devam etmek istediğinize emin misiniz?"
       ],
       "Are you sure you want to delete this address?": [
         "Bu adresi silmek istediğinizden emin misiniz?"
@@ -3401,9 +3410,6 @@
       ],
       "Center": [
         "Merkez"
-      ],
-      "Change your default in settings": [
-        ""
       ],
       "Check the status of current and previous imports.": [
         "Mevcut ve önceki içe aktarmaların durumunu kontrol edin."
@@ -3551,6 +3557,9 @@
       "Emails tagged with this label will not be deleted and can still be found in the respective folder.": [
         "Bu etiket ile işaretlenmiş e-postalar silinmeyecek ve hala ilgili klasörde bulunabilecek."
       ],
+      "Enabling recovery by phrase again will generate a new recovery phrase.": [
+        ""
+      ],
       "Encryption setting updated": [
         "Şifreleme ayarları güncellendi"
       ],
@@ -3568,12 +3577,6 @@
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
         "Yönetici ayrıcalıklarını geri yüklemek için Kuruluş Parolasını girin. ${ learnMore }"
-      ],
-      "Enter the recovery ${ recoveryMethodText } associated with your ${ BRAND_NAME } Account. We will send you a code to confirm the password reset.": [
-        "{ BRAND_NAME } hesabınla ilişkili ${ recoveryMethodText } kurtarma işlemini girin. Şifrenizi sıfırlamanız için size bir kod göndereceğiz."
-      ],
-      "Enter the recovery phrase associated with your ${ BRAND_NAME } Account.": [
-        ""
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "${ destinationText } adresine gönderilen doğrulama kodunu girin."
@@ -3701,12 +3704,6 @@
       "If you proceed with the downgrade, you will lose access to ProtonVPN paid features.": [
         "Düşürmeye devam ederseniz, ProtonVPN'in ücretli özelliklerine erişiminizi kaybedeceksiniz."
       ],
-      "If you proceed, you will be required to reset your password and you will be logged out of all other active sessions.": [
-        ""
-      ],
-      "If you proceed, you will have to reset your password and will be logged out of any other active sessions.": [
-        "Devam ederseniz, şifrenizi sıfırlamanız gerekecek ve diğer tüm aktif oturumlardan çıkış yapacaksınız."
-      ],
       "If you want to keep an existing SPF record, you can just add ${ spf } to it after the ${ spfValue }. Do not create multiple SPF records.": [
         "Mevcut bir SPF kaydını tutmak istiyorsanız, ${ spfValue } sonrasına sadece ${ spf } ekleyebilirsiniz. Birden çok SPF kaydı oluşturmayınız."
       ],
@@ -3801,9 +3798,6 @@
       "Key with fingerprint ${ fp } has been deleted.": [
         "Anahtar, ${ fp } parmak iziyle silindi."
       ],
-      "Key with fingerprint ${ fp } successfully created.": [
-        "Anahtar, ${ fp } parmak izi ile başarıyla oluşturuldu."
-      ],
       "Label all imported messages as": [
         "İçe aktarılan tüm iletileri şu şekilde etiketle"
       ],
@@ -3883,7 +3877,7 @@
         "Yeni klasörünüzü adlandırın ve koymak istediğiniz üst klasörü seçin. Bir üst klasör seçmezseniz, bu yeni klasör üst düzey bir klasör olarak oluşturulur."
       ],
       "New": [
-        ""
+        "Yeni"
       ],
       "New to ${ BRAND_NAME }? ${ signupLink }": [
         "İlk defa mı ${ BRAND_NAME } kullanıyorsunuz? ${ signupLink }"
@@ -3891,7 +3885,7 @@
       "Next you'll need to log in to your Google account and allow us to access your data.": [
         ""
       ],
-      "No account recovery method set, you are at risk of losing access to your account": [
+      "No account recovery method set; you are at risk of losing access to your account": [
         ""
       ],
       "No action selected": [
@@ -3903,7 +3897,7 @@
       "No contact encryption keys exist": [
         "Kişinin şifreleme anahtarları yok"
       ],
-      "No data recovery method set, you are at risk of losing access to your data": [
+      "No data recovery method set; you are at risk of losing access to your data": [
         ""
       ],
       "No folder selected": [
@@ -3995,6 +3989,9 @@
       ],
       "Please enter a password to encrypt your private key with before exporting.": [
         "Lütfen dışa aktarmadan önce özel anahtarınızı şifrelemek için bir parola girin."
+      ],
+      "Please enter the 12-word recovery phrase associated with your account.": [
+        ""
       ],
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
         ""
@@ -4091,13 +4088,16 @@
         ""
       ],
       "Recovery files have been voided": [
-        ""
+        "Kurtarma dosyaları iptal edildi"
       ],
       "Recovery phrase copied to clipboard": [
         "Kurtarma anahtar metni panoya kopyalandı"
       ],
       "Recovery phrase has been disabled": [
         "Kurtarma anahtar metni devre dışı bırakıldı"
+      ],
+      "Recovery phrase is not associated with any keys.": [
+        ""
       ],
       "Recovery phrase is not associated with any outdated keys.": [
         ""
@@ -4132,7 +4132,7 @@
       "Select a service provider to get started": [
         ""
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit. You can also merge imported calendars with existing Proton calendars.": [
+      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         ""
       ],
       "Server is currently down": [
@@ -4151,7 +4151,7 @@
         "Sadık bir kullanıcı olduğunuz için, hesabınızda ek özellikler etkinleştirildi."
       ],
       "Some keys successfully reactivated": [
-        ""
+        "Bazı anahtarlar başarıyla yeniden etkinleştirildi"
       ],
       "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ProtonMail in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
         "SPF alan adı kimin e-posta göndermesine izin verildiğini belirtmek için kullanılır, bu nedenle SPF kaydınıza ProtonMail'i dahil etmenizi şiddetle tavsiye ederiz. Lütfen aşağıdaki TXT kaydını DNS'nize ekleyin. Bu genellikle alan adı kayıt kuruluşunuzun kontrol panelinden yapılabilir."
@@ -4219,6 +4219,18 @@
       "This feature is intended for advanced users only. After deleting this key, you will NOT be able to decrypt any message that has been encrypted with it. It may lead to data loss.": [
         "Bu özellik sadece ileri düzey kullanıcılar içindir! Bu anahtarı sildikten sonra, bu anahtarla şifrelenmiş herhangi bir iletinin şifresini çözemezsiniz. Veri kaybına neden olabilir. Devam etmek istediğine emin misin."
       ],
+      "This is a 12-word phrase that you were prompted to set.": [
+        ""
+      ],
+      "This is a recovery file or encryption key you may have previously saved.": [
+        ""
+      ],
+      "This is an encryption key you may have previously saved.": [
+        ""
+      ],
+      "This is the password you used before the password reset.": [
+        ""
+      ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Bu bağlantı bir eşyazım saldırısı olabilir ve Internet Explorer ve Edge tarayıcıları tarafından açılamaz. Bağlantının yasal olduğundan eminseniz, lütfen açmak için farklı bir tarayıcı kullanın."
       ],
@@ -4234,14 +4246,14 @@
       "This will also disable any two-factor authentication method associated with this account.": [
         "Bu ayrıca, bu hesapla ilişkili iki faktörlü kimlik doğrulama yöntemlerini de devre dışı bırakacaktır."
       ],
-      "This will also disable two-factor authentication.": [
-        ""
-      ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
         "Bu, mevcut ücretli aboneliğinizi iptal edecek ve biriktirdiğiniz sadakat avantajlarını kaybetmenize sebep olacaktır. Aboneliğinizin kalan bakiyesi hesap kredisi olarak iade edilecektir."
       ],
       "This will create an encryption key for your organization. 4096-bit keys only work on high performance computers, for most users, we recommend using 2048-bit keys.": [
         "Bu, kuruluşunuz için bir şifreleme anahtarı oluşturur. 4096 bit anahtarlar yalnızca yüksek performanslı bilgisayarlarda çalışır, çoğu kullanıcı için 2048 bit anahtarları kullanmanızı öneririz."
+      ],
+      "This will disable your current recovery phrase. You won't be able to use it to access your account or decrypt your data.": [
+        ""
       ],
       "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Bu, PayPal'ın Proton aboneliğiniz için ödeme yapmasını sağlayacaktır. Sizi yeni bir tarayıcı sekmesinde PayPal'a yönlendireceğiz. Herhangi bir açılır pencere engelleyicisi kullanıyorsanız, lütfen devam etmek için bunları devre dışı bırakın."
@@ -4255,20 +4267,23 @@
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "Bu, geçici parolanızın yerini alacaktır. Gelecekte ${ BRAND_NAME } hesabınıza erişmek için bunu kullanacaksınız."
       ],
+      "This will sign you out of any active sessions and disable 2-factor authentication.": [
+        ""
+      ],
       "This wizard will enable Two-Factor Authentication (2FA) on your Proton account. Two-factor authentication will make your Proton account more secure so we recommend enabling it.": [
         "Bu sihirbaz, Proton hesabınızda İki Adımlı Kimlik Doğrulamayı (2FA) etkinleştirir. İki adımlı kimlik doğrulama, Proton hesabınızı daha güvenli duruma getireceğinden, etkinleştirmenizi öneririz."
       ],
       "to": [
         "kime"
       ],
-      "To access your old messages, you will need to reactivate your old encryption keys using one of the following recovery methods.": [
-        ""
-      ],
       "To confirm, please enter the name of the user you wish to delete.": [
         "Onaylayın, lütfen silmek istediğiniz kullanıncın adını giriniz."
       ],
       "to continue to ${ toAppName }": [
         "${ toAppName } uygulamasına devam etmek için"
+      ],
+      "To decrypt and view your locked data after a password reset, select a recovery method.": [
+        ""
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Spam ve kötüye kullanımla mücadele etmek için lütfen insan olduğunuzu doğrulayın."
@@ -4278,6 +4293,9 @@
       ],
       "To prepare your external account for import, please follow the instructions for:": [
         "Harici hesabınızı içe aktarmaya hazırlamak için lütfen aşağıdaki talimatları izleyin:"
+      ],
+      "To proceed, select an account recovery method so we can verify the request.": [
+        ""
       ],
       "To secure your internet connection, download and install the ProtonVPN application for your device and connect to a ProtonVPN server.": [
         "İnternet bağlantınızı güvence altına almak için cihazınıza ProtonVPN uygulamasını indirip yükleyin ve bir ProtonVPN sunucusuna bağlanın."
@@ -4305,9 +4323,6 @@
       ],
       "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
         "Çift şifre modu giriş ve posta kutusu için ayrı şifreler kullanır. Bu bazı durumlarda küçük bir güvenlik yararı sağlasa da çoğu kullanıcı için tek şifre modunu öneririz. Çift şifre moduna geçmek için önce bir oturum açma şifresi belirleyin ve ardından da bir posta kutusu şifresi belirleyin."
-      ],
-      "Unable to decrypt. Recovery phrase is not associated with any keys.": [
-        ""
       ],
       "Unable to verify recovery file signature. Please contact support.": [
         ""
@@ -4369,11 +4384,17 @@
       "VPN + ${ mailAppName } bundle for families and small businesses.": [
         "VPN + ${ mailAppName } aileler ve küçük işletmeler için paket."
       ],
+      "Warning:": [
+        ""
+      ],
       "Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts.": [
         "Uyarı: Silme işlemi kalıcıdır. Bu işlem ayrıca, tüm bağlı hizmetlere erişimi keser ve tüm kişilerinizi siler."
       ],
       "We advise you to use official ProtonVPN applications when possible.": [
         "Mümkün oldukça resmi ProtonVPN uygulamalarını kullanmanızı öneririz."
+      ],
+      "We recommend using your recovery phrase instead.": [
+        ""
       ],
       "We use 3-D Secure to protect your payments.": [
         "Ödemelerinizi korumak için 3-D Güvenli Ödeme kullanıyoruz."
@@ -4401,6 +4422,12 @@
       ],
       "Week and month views only apply to desktop.": [
         "Hafta ve ay görünümleri yalnızca masaüstü için geçerlidir."
+      ],
+      "We’ll send a reset code to the email address you provided for account recovery.": [
+        ""
+      ],
+      "We’ll send a reset code to the phone number you provided for account recovery.": [
+        ""
       ],
       "What do you want to import from your Google account?": [
         ""
@@ -4438,6 +4465,9 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
         "Şu anda ${ user.Name } (${ user.Email }) olarak oturum açmış durumdasınız ve erişiminiz kısıtlı."
       ],
+      "You can also merge imported calendars with existing Proton calendars.": [
+        ""
+      ],
       "You can check the progress ${ importProgressLink }.": [
         ""
       ],
@@ -4452,9 +4482,6 @@
       ],
       "You can enable authentication logging to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
         "Hesabınıza ne zaman ve hangi IP'den erişildiğini görmek için kimlik doğrulama günlüğünü etkinleştirebilirsiniz. Başarısız denemelerin yanı sıra hesaba erişen IP adresini ve saati de kaydedeceğiz."
-      ],
-      "You can generate a new encryption key if you think your previous key has been compromised.": [
-        "Önceki anahtarınızın tehlikede olduğunu düşünüyorsanız, yeni bir şifreleme anahtarı oluşturabilirsiniz."
       ],
       "You can now receive messages to your @pm.me address. Upgrade to a paid plan to also send emails using your @pm.me address and create additional @pm.me addresses.": [
         "Artık, @pm.me adresine iletilerinizi alabilirsiniz. @pm.me adresinizi kullanarak e-postalar göndermek ve ek olarak @pm.me adresleri oluşturmak için paralı bir plana yükseltin."
@@ -4473,12 +4500,6 @@
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Bir kurtarma yöntemi belirlemediniz, bu nedenle parolanızı unutursanız hesap kurtarma işlemi yapılamaz. Kurtarma yöntemi olmadan devam edilsin mi?"
-      ],
-      "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
-        "Beta Erişimini devre dışı bıraktınız. ${ appName } uygulamasının stabil sürümünü kullanmak için ${ refreshButton } tıklayın. Uygulama yeniden yüklenecektir."
-      ],
-      "You have enabled Beta Access. Click ${ refreshButton } to use the latest version of ${ appName }. The application will be reloaded.": [
-        "Beta Erişimini etkinleştirdiniz. ${ appName } uygulamasının en son sürümünü kullanmak için ${ refreshButton } tıklayın. Uygulama yeniden yüklenecektir."
       ],
       "You have no saved payment methods.": [
         "Kayıtlı ödeme yöntemleriniz yok."
@@ -4549,7 +4570,7 @@
       "Your Block List is empty.": [
         "Engel listeniz boş."
       ],
-      "Your data is encrypted, you can recover your data by reactivating your keys.": [
+      "Your data is encrypted and locked. You can recover access with a data recovery method.": [
         ""
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
@@ -4735,6 +4756,29 @@
       ],
       "Subscription": [
         "Abonelik"
+      ]
+    },
+    "Key generation": {
+      "A key with the same encryption algorithm already exists. Generating another key will cause slower account loading. Are you sure you want to continue?": [
+        "Aynı şifreleme algoritmasını kullanan bir anahtar zaten mevcut. Başka bir anahtar oluşturmak hesap yüklemesini yavaşlatacaktır. Devam etmek istediğinize emin misiniz?"
+      ],
+      "A key with the same encryption algorithm is already active for this address. Generating another key will cause slower account loading and deletion of this key can cause issues. If you are generating a new key because your old key is compromised, please mark that key as compromised. Are you sure you want to continue?": [
+        "Bu adres için aynı şifreleme algoritmasına sahip bir anahtar zaten etkin. Başka bir anahtar oluşturmak, hesabın daha yavaş yüklenmesine neden olur ve bu anahtarın silinmesi sorunlara neden olabilir. Eğer eski anahtarınızın güvenliği ihlal edildiğinden yeni bir anahtar oluşturuyorsanız, lütfen bu anahtarı güvenliği ihlal edilmiş olarak işaretleyin. Devam etmek istediğinize emin misiniz?"
+      ],
+      "Generate key": [
+        "Anahtar oluştur"
+      ],
+      "Key with fingerprint ${ fp } successfully created.": [
+        "${ fp } parmak izli anahtar başarılı bir şekilde oluşturuldu."
+      ],
+      "The encryption keys are being generated. This may take several minutes and temporarily freeze your browser.": [
+        "Şifreleme anahtarları oluşturuluyor. Bu birkaç dakika sürebilir ve tarayıcınızı geçici olarak dondurabilir."
+      ],
+      "The encryption keys for your address are being generated. This may take several minutes and temporarily freeze your browser.": [
+        "Adresiniz için şifreleme anahtarları oluşturuluyor. Bu işlem birkaç dakika sürebilir ve tarayıcınızı geçici olarak dondurabilir."
+      ],
+      "You can generate a new encryption key if you think your previous key has been compromised.": [
+        "Eğer önceki anahtarınızın güvenliğinin ihlal edildiğini düşünüyorsanız yeni bir şifreleme anahtarı oluşturabilirsiniz."
       ]
     },
     "Key state badge": {
@@ -5024,6 +5068,9 @@
       "ALL": [
         "TÜMÜ"
       ],
+      "All-day event notifications": [
+        ""
+      ],
       "Allow recovery by email": [
         "E-posta ile kurtarmaya izin ver"
       ],
@@ -5072,12 +5119,6 @@
       "Automatically save contacts": [
         "Kişileri otomatik olarak kaydet"
       ],
-      "Backup key": [
-        ""
-      ],
-      "Backup keys": [
-        ""
-      ],
       "Block email tracking": [
         ""
       ],
@@ -5114,11 +5155,11 @@
       "Category": [
         "Kategori"
       ],
-      "Choose a color": [
-        "Bir renk seçin"
-      ],
       "Code": [
         "Kod"
+      ],
+      "Color": [
+        ""
       ],
       "Composer": [
         "Oluşturucu"
@@ -5189,20 +5230,8 @@
       "Days of the week": [
         "Haftanın günleri"
       ],
-      "Default email": [
-        "Varsayılan e-posta"
-      ],
-      "Default event duration": [
-        "Varsayılan etkinlik süresi"
-      ],
-      "Default full day notifications": [
-        "Varsayılan tam gün bildirimleri"
-      ],
       "Default language": [
         "Varsayılan dil"
-      ],
-      "Default notifications": [
-        "Varsayılan bildirimler"
       ],
       "Default PGP scheme": [
         ""
@@ -5282,6 +5311,12 @@
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Anahtar için parmak iziyle parolayı girin: ${ fingerprintCode }"
       ],
+      "Event duration": [
+        ""
+      ],
+      "Event notifications": [
+        ""
+      ],
       "Expires": [
         "Bitiş tarihi"
       ],
@@ -5292,13 +5327,16 @@
         "fazladan depolama"
       ],
       "File": [
-        ""
+        "Dosya"
       ],
       "Filter Name": [
         "Filtre Adı"
       ],
       "Folder location": [
         "Klasör konumu"
+      ],
+      "From: ${ emailFrom }": [
+        ""
       ],
       "From: ${ fromEmailAddress }": [
         "Kimden: ${ fromEmailAddress }"
@@ -5307,7 +5345,7 @@
         ""
       ],
       "From: ${ importedEmailAddress }": [
-        ""
+        "Gönderen: ${ importedEmailAddress }"
       ],
       "From: ${ modalModel.email }": [
         "Kimden: ${ modalModel.email }"
@@ -5480,6 +5518,9 @@
       "Phrase": [
         ""
       ],
+      "Phrase consists of 12 unique words in a specific order": [
+        ""
+      ],
       "Please add all 3 of the following CNAME records. Note, DNS records can take several hours to update.": [
         "Lütfen aşağıdaki CNAME kayıtlarının 3'ünü de ekleyin. DNS kayıtlarının güncellenmesi birkaç saat sürebilir."
       ],
@@ -5497,6 +5538,9 @@
       ],
       "Postal code": [
         "Posta kodu"
+      ],
+      "Previous password": [
+        ""
       ],
       "Private User": [
         "Özel Kullanıcı"
@@ -5533,9 +5577,6 @@
       ],
       "Recovery phrase": [
         "Kurtarma anahtar metni"
-      ],
-      "Recovery phrase contains 12 words": [
-        ""
       ],
       "Repeat password": [
         "Şifreyi tekrarla"
@@ -5615,8 +5656,11 @@
       "To: ${ emailAddress }": [
         "Alıcı: ${ emailAddress }"
       ],
-      "To: ${ PMEmailAddress }": [
+      "To: ${ emailTo }": [
         ""
+      ],
+      "To: ${ PMEmailAddress }": [
+        "Alıcı: ${ PMEmailAddress }"
       ],
       "To: ${ toEmailAddress }": [
         "Alıcı: ${ toEmailAddress }"
@@ -5639,16 +5683,10 @@
       "Undo send": [
         "Göndermeyi geri al"
       ],
-      "Upload your backup key": [
+      "Upload 1 or more encryption keys": [
         ""
       ],
-      "Upload your recovery file": [
-        ""
-      ],
-      "Uploaded private keys": [
-        ""
-      ],
-      "Uploaded recovery file": [
+      "Upload 1 or more recovery files or encryption keys": [
         ""
       ],
       "URL": [
@@ -5726,9 +5764,6 @@
       "Your password (admin)": [
         "Parolanız (yönetici)"
       ],
-      "Your recovery phrase": [
-        "Kurtarma anahtar metniniz"
-      ],
       "ZIP": [
         "ZIP"
       ]
@@ -5783,6 +5818,9 @@
       ],
       "Proton newsletter": [
         "Proton bülteni"
+      ],
+      "Proton offers and promotions": [
+        "Proton önerileri ve tanıtımları"
       ],
       "Proton product announcements": [
         "Proton ürün duyuruları"
@@ -6950,17 +6988,11 @@
       "Email": [
         "E-posta"
       ],
-      "email address": [
-        "e-Posta Adresi"
-      ],
-      "phone number": [
-        "telefon numarası"
-      ],
       "Phone number": [
         "Telefon numarası"
       ],
-      "Recovery phrase": [
-        "Kurtarma anahtar metni"
+      "Phrase": [
+        ""
       ]
     },
     "Remark about a key type option": {
@@ -7000,10 +7032,7 @@
       "Upload": [
         "Yükle"
       ],
-      "Upload additional private keys": [
-        ""
-      ],
-      "Upload additional recovery files": [
+      "Upload additional files": [
         ""
       ]
     },
@@ -7735,6 +7764,9 @@
       "Dashboard": [
         "Kontrol paneli"
       ],
+      "Data locked": [
+        ""
+      ],
       "Data recovery": [
         ""
       ],
@@ -7795,6 +7827,9 @@
       "Edit Block List": [
         "Engellenen listesini düzenle"
       ],
+      "Edit calendar": [
+        ""
+      ],
       "Edit credit/debit card": [
         "Kredi/banka kartını düzenleyin"
       ],
@@ -7824,9 +7859,6 @@
       ],
       "Enable keyboard shortcuts": [
         "Klavye kısayollarını etkinleştir"
-      ],
-      "Encrypted data": [
-        ""
       ],
       "Encryption & keys": [
         "Şifreleme ve anahtarlar"
@@ -7869,9 +7901,6 @@
       ],
       "General": [
         "Genel"
-      ],
-      "Generate key": [
-        ""
       ],
       "Generate missing keys": [
         "Eksik anahtarları oluştur"
@@ -8066,11 +8095,11 @@
       "ProtonVPN": [
         "ProtonVPN"
       ],
-      "Reactivate keys": [
-        ""
-      ],
       "Reconnect your account": [
         "Hesabınızı yeniden bağlayın"
+      ],
+      "Recover data": [
+        ""
       ],
       "Recovery": [
         ""
@@ -8227,9 +8256,6 @@
       ],
       "Unsupported browser": [
         "Desteklenmeyen tarayıcı"
-      ],
-      "Update calendar": [
-        "Takvimi güncelle"
       ],
       "Upgrade": [
         "Yükselt"
@@ -8510,6 +8536,17 @@
         "Tüm giden iletilerinizi otomatik olarak imzalayın, böylece kullanıcılar mesajlarınızın orijinalliğini doğrulayabilir. Bu, aşağıda yapılandırılabilen varsayılan PGP ayarları ile birlikte yapılır."
       ]
     },
+    "Update font modal": {
+      "Today is a good day to write an email": [
+        "Bugün e-posta yazmak için güzel bir gün"
+      ],
+      "Update default font and size": [
+        "Varsayılan yazı tipini ve boyutunu güncelleyin"
+      ],
+      "Your default font will look like following:": [
+        "Varsayılan yazı tipi aşağıdaki gibi görünecek:"
+      ]
+    },
     "Upgrade": {
       "Upgrade to ${ protonVpnName } ${ PLAN_NAMES[PLANS.VPNPLUS] } to connect up to ${ plusVpnConnections } device to the VPN at once": [
         "Aynı anda ${ plusVpnConnections } cihaza kadar bağlantı sağlamak için ${ protonVpnName } ${ PLAN_NAMES[PLANS.VPNPLUS] } planına yükseltin",
@@ -8773,6 +8810,12 @@
       ],
       "You will not see this import record in the list anymore.": [
         "Bu içe aktarma kaydını artık listede görmeyeceksiniz."
+      ],
+      "Your recovery file is outdated and can't recover new data should you reset your account again.": [
+        ""
+      ],
+      "Your recovery phrase is outdated and can't recover new data should you reset your account again.": [
+        ""
       ]
     },
     "Warning for domain modal": {

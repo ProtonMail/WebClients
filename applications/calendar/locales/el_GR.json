@@ -14,6 +14,9 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } κατάστημα"
       ],
+      "Activate recovery": [
+        "Ενεργοποίηση ανάκτησης"
+      ],
       "Add": [
         "Προσθήκη"
       ],
@@ -48,7 +51,7 @@
         "Πίσω"
       ],
       "Beta Access": [
-        "Beta Πρόσβαση"
+        "Πρόσβαση Beta"
       ],
       "Cancel": [
         "Ακύρωση"
@@ -117,7 +120,7 @@
         "Συνέχεια"
       ],
       "Continue import": [
-        ""
+        "Συνεχίστε την εισαγωγή"
       ],
       "Continue with Google": [
         "Συνεχίστε με Google"
@@ -125,11 +128,8 @@
       "Copy email to clipboard": [
         "Αντιγραφή μηνύματος στο πρόχειρο"
       ],
-      "Create": [
-        "Δημιουργία"
-      ],
       "Create calendar": [
-        ""
+        "Δημιουργία ημερολογίου"
       ],
       "Create event": [
         "Δημιουργία εκδήλωσης"
@@ -140,7 +140,7 @@
       "Decrease": [
         "Μείωση"
       ],
-      "Default mail handler": [
+      "Default email application": [
         ""
       ],
       "Delete": [
@@ -214,9 +214,6 @@
       "Go to settings": [
         "Μετάβαση στις ρυθμίσεις"
       ],
-      "here": [
-        "εδώ"
-      ],
       "Hide advanced PGP settings": [
         "Απόκρυψη προηγμένων ρυθμίσεων PGP"
       ],
@@ -242,7 +239,7 @@
         "Εισαγωγή"
       ],
       "Import events": [
-        ""
+        "Εισαγωγή εκδηλώσεων"
       ],
       "Import from .csv or vCard": [
         "Εισαγωγή από αρχείο .csv ή vCard"
@@ -346,9 +343,6 @@
       "Previous year": [
         "Προηγούμενη ημέρα"
       ],
-      "Prompt browser setting": [
-        ""
-      ],
       "Quit": [
         "Έξοδος"
       ],
@@ -409,6 +403,12 @@
       "Send": [
         "Αποστολή"
       ],
+      "Set as default": [
+        ""
+      ],
+      "Set recovery phrase": [
+        "Ορισμός φράσης ανάκτησης"
+      ],
       "Share": [
         "Κοινοποίηση"
       ],
@@ -446,7 +446,7 @@
         ""
       ],
       "Start setup": [
-        "Ρύθμιση εκκίνησης"
+        "Ορισμός έναρξης"
       ],
       "Stay": [
         "Παραμονή"
@@ -480,6 +480,12 @@
       ],
       "Update": [
         "Αναβάθμιση"
+      ],
+      "Update recovery file": [
+        "Ενημέρωση αρχείου ανάκτησης"
+      ],
+      "Update recovery phrase": [
+        "Ενημέρωση φράσης ανάκτησης"
       ],
       "Upgrade": [
         "Αναβάθμιση"
@@ -628,7 +634,7 @@
         "Αφήνοντας τώρα, ορισμένες επαφές ενδέχεται να μην εισαχθούν"
       ],
       "By leaving now, some events may not be imported": [
-        ""
+        "Φεύγοντας τώρα, κάποια γεγονότα μπορεί να μην εισαχθούν"
       ],
       "By leaving now, you will lose your event.": [
         "Αποχωρώντας τώρα, θα χάσετε το γεγονός σας."
@@ -647,22 +653,22 @@
     },
     "Attached ics file error": {
       "Empty ICS file": [
-        ""
+        "Άδειο αρχείο ICS"
       ],
       "Invalid event": [
-        ""
+        "Μη έγκυρο γεγονός"
       ],
       "Invalid ICS file": [
-        ""
+        "Μη έγκυρο αρχείο ICS"
       ],
       "Invalid method": [
-        ""
+        "Μη έγκυρη μέθοδος"
       ],
       "Unsupported calendar component": [
-        ""
+        "Μη υποστηριζόμενο συνθετικό ημερολογίου"
       ],
       "Unsupported event": [
-        ""
+        "Μη υποστηριζόμενη εκδήλωση"
       ]
     },
     "Attendee role": {
@@ -906,7 +912,7 @@
         "${ name } προσωρινά αποδέχθηκε την πρόσκληση"
       ],
       "This event has been canceled": [
-        ""
+        "Αυτή η εκδήλωση έχει ακυρωθεί"
       ],
       "You accepted the invitation": [
         "Αποδεχθήκατε την πρόσκληση"
@@ -923,10 +929,10 @@
     },
     "Calendar sidebar dropdown item": {
       "Add calendar from URL": [
-        ""
+        "Προσθήκη ημερολογίου από URL"
       ],
       "More options": [
-        ""
+        "Περισσότερες επιλογές"
       ]
     },
     "Calendar status": {
@@ -984,7 +990,7 @@
     },
     "colon": {
       ": ": [
-        ""
+        ": "
       ]
     },
     "Composer size": {
@@ -1184,7 +1190,7 @@
         "Χρησιμοποιήστε την επιλογή \"Drag and Drop\" για να ταξινομήσετε τη προτεραιότητα συγχώνευσης μεταξύ των επαφών. Καταργήστε την επιλογή των επαφών που δεν θέλετε να συγχωνεύσετε."
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
-        ""
+        "Μπορείτε να εισάγετε γεγονότα σε μορφή iCal (ICS αρχείο).\nΤο αρχείο θα πρέπει να έχει μέγιστο μέγεθος ${ MAX_IMPORT_FILE_SIZE_STRING } και να έχει μέχρι ${ MAX_IMPORT_EVENTS_STRING } γεγονότα.\nΑν το αρχείο σας είναι μεγαλύτερο, παρακαλούμε να το χωρίσετε σε μικρότερα αρχεία."
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Μπορείτε να επισημάνετε για διαγραφή τις επαφές που δεν θέλετε να συγχωνεύσετε ούτε να διατηρήσετε. Η διαγραφή θα πραγματοποιηθεί μόνο αφού πατηθεί το κουμπί συγχώνευσης"
@@ -1231,7 +1237,7 @@
     },
     "Dropwdown action icon tooltip": {
       "Add calendar": [
-        ""
+        "Προσθήκη ημερολογίου"
       ]
     },
     "Duration": {
@@ -1265,7 +1271,7 @@
     },
     "Email body for invitation": {
       "${ eventTitle } has been canceled.": [
-        ""
+        "${ eventTitle } έχει ακυρωθεί."
       ],
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
         "${ eventTitle } έχει ενημερωθεί.\n${ eventDetailsText }"
@@ -1398,6 +1404,10 @@
       "Decryption error: Decryption of this event's content failed.": [
         "Σφάλμα αποκρυπτογράφησης: Αποτυχία αποκρυπτογράφησης του περιεχομένου γεγονότος."
       ],
+      "Deselect at least ${ calendarToFixCount } calendar": [
+        "Αποεπιλέξτε τουλάχιστον ${ calendarToFixCount } ημερολόγιο",
+        "Αποεπιλέξτε τουλάχιστον ${ calendarToFixCount } ημερολόγια"
+      ],
       "Deselect at least ${ calendarToFixCount } calendar or": [
         "Αποεπιλέξτε τουλάχιστον ${ calendarToFixCount } ημερολόγιο ή",
         "Αποεπιλέξτε τουλάχιστον ${ calendarToFixCount } ημερολόγια ή"
@@ -1501,6 +1511,9 @@
       ],
       "Name required": [
         "Απαιτείται όνομα"
+      ],
+      "No data to import": [
+        "Κανένα δεδομένο προς εισαγωγή"
       ],
       "No key retrieved for internal user is valid for sending": [
         "Κανένα κλειδί που ανακτήθηκε για τον εσωτερικό χρήστη δεν είναι έγκυρο για την αποστολή"
@@ -1666,38 +1679,35 @@
       ]
     },
     "Error importing calendar": {
-      "${ CALENDAR_APP_NAME } only supports importing calendars with iCal version 2.0.": [
-        ""
-      ],
       "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        ""
+        "Παρουσιάστηκε σφάλμα κατά την ανάγνωση του αρχείου σας ${ formattedFilename }. Το αρχείο δεν έχει τη σωστή μορφή."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
-        ""
+        "Παρουσιάστηκε σφάλμα κατά την μεταφόρτωση του αρχείου ${ formattedFilename }. Το μέγιστο μέγεθος αρχείου είναι ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Only ICS file formats are allowed.": [
-        ""
+        "Παρουσιάστηκε σφάλμα κατά το ανέβασμα του αρχείου σας ${ formattedFilename }. Επιτρέπονται μόνο αρχεία μορφής ICS."
       ],
       "An error occurred uploading your file. No file has been selected.": [
-        ""
+        "Παρουσιάστηκε σφάλμα κατά την μεταφόρτωση του αρχείου σας. Δεν έχει επιλεγεί αρχείο."
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "Παρουσιάστηκε μη αναμενόμενο σφάλμα. Πρέπει να γίνει επανεκκίνηση της εισαγωγής."
       ],
       "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } events.": [
-        ""
+        "Το αρχείο ${ formattedFilename } περιέχει περισσότερα από ${ MAX_IMPORT_EVENTS_STRING } γεγονότα."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
-        ""
+        "Το αρχείο σας ${ formattedFilename } έχει μη έγκυρη μέθοδο και δεν μπορεί να εισαχθεί."
       ],
       "Your file ${ formattedFilename } has no events to be imported.": [
-        ""
+        "Το αρχείο σας ${ formattedFilename } δεν έχει κανένα συμβάν για εισαγωγή."
       ],
       "Your file ${ formattedFilename } is empty.": [
-        ""
+        "Το αρχείο σας ${ formattedFilename } είναι άδειο."
       ],
       "Your file ${ formattedFilename } is not a calendar.": [
-        ""
+        "Το αρχείο σας ${ formattedFilename } δεν είναι ημερολόγιο."
       ]
     },
     "Error importing contact": {
@@ -1733,100 +1743,100 @@
     },
     "Error importing event": {
       "Bad format. Component cannot be read.": [
-        ""
+        "Κακή μορφή. Αδυναμία ανάγνωσης στοιχείου."
       ],
       "Calendar": [
-        ""
+        "Ημερολόγιο"
       ],
       "Calendar timezone not supported": [
-        ""
+        "Δεν υποστηρίζεται η ζώνη ώρας ημερολογίου"
       ],
       "Component with wrong format": [
-        ""
+        "Συνθετικό λανθασμένης μορφής"
       ],
       "Custom timezone": [
-        ""
+        "Προσαρμοσμένη ζώνη ώρας"
       ],
       "Edited event not supported": [
-        ""
+        "Η επεξεργασμένη εκδήλωση δεν υποστηρίζεται"
       ],
       "Element": [
-        ""
+        "Στοιχείο"
       ],
       "Encryption failed": [
-        ""
+        "Η ενεργοποίηση της κρυπτογράφησης απέτυχε"
       ],
       "End time out of bounds": [
-        ""
+        "Ώρα λήξης εκτός ορίων"
       ],
       "Event": [
-        ""
+        "Γεγονός"
       ],
       "Event validation failed": [
-        ""
+        "Η επικύρωση συμβάντος απέτυχε"
       ],
       "Floating times not supported": [
-        ""
+        "Οι κυμαινόμενοι χρόνοι δεν υποστηρίζονται"
       ],
       "Free-busy time information": [
-        ""
+        "Πληροφορίες χρόνου Free-busy"
       ],
       "Invalid event": [
-        ""
+        "Μη έγκυρο γεγονός"
       ],
       "Journal entry": [
-        ""
+        "Καταχώρηση χρονικού"
       ],
       "Malformed all-day event": [
-        ""
+        "Λάθος ολοήμερο συμβάν"
       ],
       "Malformed end time": [
-        ""
+        "Δύσμορφη ώρα λήξης"
       ],
       "Malformed recurring event": [
-        ""
+        "Λάθος επαναλαμβανόμενο συμβάν"
       ],
       "Malformed start time": [
-        ""
+        "Δύσμορφη ώρα έναρξης"
       ],
       "Missing start time": [
-        ""
+        "Λείπει η ώρα έναρξης"
       ],
       "No UID, title or start time": [
-        ""
+        "Λείπει UID, τίτλος ή ώρα έναρξης"
       ],
       "Non-Gregorian": [
-        ""
+        "Μη Γρηγοριανό"
       ],
       "Notification out of bounds": [
-        ""
+        "Ειδοποίηση εκτός ορίων"
       ],
       "Original recurring event could not be found": [
-        ""
+        "Δεν βρέθηκε το αρχικό επαναλαμβανόμενο συμβάν"
       ],
       "Recurring event has no occurrences": [
-        ""
+        "Η επαναλαμβανόμενη εκδήλωση δεν έχει διοργανώσεις"
       ],
       "Recurring rule not supported": [
-        ""
+        "Ο επαναλαμβανόμενος κανόνας δεν υποστηρίζεται"
       ],
       "Start time out of bounds": [
-        ""
+        "Ώρα έναρξης εκτός ορίων"
       ],
       "Timezone": [
-        ""
+        "Ζώνη ώρας"
       ],
       "Timezone not supported": [
-        ""
+        "Μη υποστηριζόμενη ζώνη ώρας"
       ],
       "To-do entry": [
-        ""
+        "Εγγραφή προς υλοποίηση"
       ],
       "Unknown": [
-        ""
+        "Άγνωστο"
       ],
       "Unsupported event": [
-        ""
+        "Μη υποστηριζόμενη εκδήλωση"
       ]
     },
     "Error message": {
@@ -1837,7 +1847,7 @@
         "Σφάλμα: ${ errorMessage }"
       ],
       "Invalid URL": [
-        ""
+        "Μη έγκυρη διεύθυνση URL"
       ],
       "Oops, something went wrong": [
         "Ωχ, κάτι πήγε στραβά"
@@ -1869,7 +1879,7 @@
     },
     "Event canceled status badge": {
       "canceled": [
-        ""
+        "ακυρωμένες"
       ]
     },
     "Event delete button tooltip": {
@@ -1895,40 +1905,40 @@
     },
     "Event invitation error": {
       "Attached ICS file could not be decrypted": [
-        ""
+        "Αδυναμία αποκρυπτογράφησης συνημμένου αρχείου ICS"
       ],
       "Attached ICS file could not be read": [
-        ""
+        "Αδυναμία ανάγνωσης συνημμένου αρχείου ICS"
       ],
       "Invalid invitation": [
-        ""
+        "Μη έγκυρη πρόσκληση"
       ],
       "Invalid response": [
-        ""
+        "Μη έγκυρη απάντηση"
       ],
       "Unexpected error": [
-        ""
+        "Απροσδόκητο σφάλμα"
       ],
       "Unsupported invitation": [
-        ""
+        "Μη υποστηριζόμενη πρόσκληση"
       ],
       "Unsupported response": [
-        ""
+        "Μη υποστηριζόμενη απάντηση"
       ],
       "We could not cancel the event in your calendar": [
-        ""
+        "Δεν ήταν δυνατή η ακύρωση του συμβάντος στο ημερολόγιό σας"
       ],
       "We could not retrieve the event from your calendar": [
-        ""
+        "Δεν ήταν δυνατή η ανάκτηση της εκδήλωσης από το ημερολόγιο σας"
       ],
       "We could not update the event in your calendar": [
-        ""
+        "Δεν ήταν δυνατή η ενημέρωση του συμβάντος στο ημερολόγιο σας"
       ],
       "Your answer was sent, but the event could not be added to your calendar": [
-        ""
+        "Η απάντησή σας στάλθηκε, αλλά το γεγονός δεν μπόρεσε να προστεθεί στο ημερολόγιό σας"
       ],
       "Your answer was sent, but the event could not be updated in your calendar": [
-        ""
+        "Η απάντησή σας στάλθηκε, αλλά το γεγονός δεν μπόρεσε να ενημερωθεί στο ημερολόγιό σας"
       ]
     },
     "Event popover close button": {
@@ -2038,33 +2048,33 @@
     },
     "Import calendar": {
       "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
-        "",
-        ""
+        "${ totalImported }/${ totalToImport } γεγονός κρυπτογραφήθηκε και προστέθηκε στο ημερολόγιό σας",
+        "${ totalImported }/${ totalToImport } εκδηλώσεις κρυπτογραφήθηκαν και προστέθηκαν στο ημερολόγιό σας"
       ],
       "An error occurred while encrypting and adding your event. No event could be imported.": [
-        "",
-        ""
+        "Παρουσιάστηκε σφάλμα κατά την κρυπτογράφηση και την προσθήκη της εκδήλωσής σας. Δεν ήταν δυνατή η εισαγωγή συμβάντος.",
+        "Παρουσιάστηκε σφάλμα κατά την κρυπτογράφηση και προσθήκη των συμβάντων σας. Δεν ήταν δυνατή η εισαγωγή συμβάντος."
       ],
       "An error occurred while encrypting and adding your events. ${ totalImported } out of ${ totalToImport } events successfully imported.": [
-        ""
+        "Παρουσιάστηκε σφάλμα κατά την κρυπτογράφηση και την προσθήκη των συμβάντων σας. ${ totalImported } από ${ totalToImport } γεγονότα εισήχθησαν επιτυχώς."
       ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "Κρυπτογράφηση και προσθήκη επαφών: ${ totalImported }/${ totalToImport }"
       ],
       "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
-        ""
+        "Κρυπτογράφηση και προσθήκη γεγονότων στο ημερολόγιό σας: ${ totalImported }/${ totalToImport }"
       ],
       "Event successfully imported. The imported event will now appear in your calendar.": [
-        "",
-        ""
+        "Το συμβάν εισήχθη επιτυχώς. Το εισαγόμενο γεγονός θα εμφανιστεί τώρα στο ημερολόγιό σας.",
+        "Τα γεγονότα εισήχθησαν επιτυχώς. Τα εισαγόμενα γεγονότα θα εμφανιστούν τώρα στο ημερολόγιό σας."
       ],
       "Please don't close the tab before the importing process is finished.": [
-        ""
+        "Παρακαλώ μην κλείσετε την καρτέλα πριν ολοκληρωθεί η διαδικασία εισαγωγής."
       ]
     },
     "Import calendar warning": {
       "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
-        ""
+        "Η ${ CALENDAR_APP_NAME } δεν υποστηρίζει προς το παρόν συγκεκριμένους τύπους συμβάντων, λεπτομέρειες και μορφές."
       ],
       "vCard versions < 3.0": [
         "εκδόσεις vCard < 3.0"
@@ -2072,18 +2082,18 @@
     },
     "Import calendar; import invitation": {
       "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your Proton email address.": [
-        ""
+        "Οι εισαγόμενες προσκλήσεις εμφανίζονται στο ${ CALENDAR_APP_NAME } ως απλές εκδηλώσεις χωρίς στοιχεία διοργανωτή και συμμετέχοντα. Για να λαμβάνετε ενημερώσεις για την εκδήλωση και να δείτε τους συμμετέχοντες, ζητήστε από τους διοργανωτές να σας προσκαλέσουν χρησιμοποιώντας τη διεύθυνση email της Proton."
       ],
       "This file contains an event invitation:": [
-        "",
-        ""
+        "Αυτό το αρχείο περιέχει μια πρόσκληση σε εκδήλωση:",
+        "Αυτό το αρχείο περιέχει προσκλήσεις σε εκδηλώσεις:"
       ],
       "This file contains an invitation response:": [
-        "",
-        ""
+        "Αυτό το αρχείο περιέχει μια απάντηση πρόσκλησης:",
+        "Αυτό το αρχείο περιέχει απαντήσεις πρόσκλησης:"
       ],
       "This file contains some data that we cannot import:": [
-        ""
+        "Το αρχείο περιέχει κάποια δεδομένα που δεν μπορούμε να εισάγουμε:"
       ]
     },
     "Import contact": {
@@ -2134,16 +2144,16 @@
         "${ totalContactsDiscarded } από ${ totalContacts } επαφές δεν θα εισαχθούν. Κάντε κλικ για λεπτομέρειες"
       ],
       "${ totalEventsDiscarded } out of ${ totalEvents } events will not be imported. Expand for details.": [
-        ""
+        "${ totalEventsDiscarded } από ${ totalEvents } συμβάντα δεν θα εισαχθούν. Αναπτύξτε το για λεπτομέρειες."
       ],
       "No contact can be imported. Click for details": [
         "Δεν είναι δυνατή η εισαγωγή καμίας επαφής. Κάντε κλικ για λεπτομέρειες"
       ],
       "No event can be imported. Expand for details.": [
-        ""
+        "Δεν μπορεί να εισαχθεί κανένα γεγονός. Αναπτύξτε το για λεπτομέρειες."
       ],
       "Part of your calendar content is not supported and will not be imported.": [
-        ""
+        "Μέρος του περιεχομένου του ημερολογίου σας δεν υποστηρίζεται και δεν θα εισαχθεί."
       ]
     },
     "Info": {
@@ -2197,7 +2207,7 @@
         "${ mailAppName } Δωρεάν"
       ],
       "${ mailAppName } Professional starts with one user, and each user adds 5 GB and 5 email addresses to the organization’s pool.": [
-        "${ mailAppName } Professional ξεκινά με έναν χρήστη, και κάθε χρήστης προσθέτει 5 GB και 5 διευθύνσεις ηλεκτρονικού ταχυδρομείου στην πισίνα του οργανισμού."
+        "Το ${ mailAppName } Professional ξεκινά με έναν χρήστη, και κάθε χρήστης προσθέτει 5 GB και 5 ηλ. διευθύνσεις στο απόθεμα του οργανισμού."
       ],
       "${ namesWithoutLast } and ${ nameOfLast }": [
         "${ namesWithoutLast } και ${ nameOfLast }"
@@ -2284,9 +2294,6 @@
       ],
       "Account successfully updated": [
         "Ο λογαριασμός ενημερώθηκε επιτυχώς"
-      ],
-      "Activating this option will open a new composer each time you click on a mailto: link.": [
-        ""
       ],
       "Add additional addresses to your account like user2@protonmail.com": [
         "Προσθέστε επιπλέον διευθύνσεις στο λογαριασμό σας, όπως user2@protonmail.com"
@@ -2413,6 +2420,9 @@
       ],
       "Daily": [
         "Καθημερινά"
+      ],
+      "Default email application": [
+        ""
       ],
       "Discard changes?": [
         "Απόρριψη αλλαγών;"
@@ -2656,7 +2666,7 @@
         "Κύριο"
       ],
       "ProtonMail Plus is limited to one user and starts with 5 GB of storage.": [
-        "Το ProtonMail Plus περιορίζεται σε έναν χρήστη και ξεκινά με 5 GB αποθήκευσης."
+        "Το ProtonMail Plus περιορίζεται σε έναν χρήστη και ξεκινά με 5 GB αποθηκευτικού χώρου."
       ],
       "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } includes ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } VPN connection.": [
         "Το ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } περιλαμβάνει ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } VPN σύνδεση.",
@@ -2680,8 +2690,8 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Επιλέξτε τη μορφή ηλεκτρονικού ταχυδρομείου που θέλετε να χρησιμοποιηθεί από προεπιλογή κατά την αποστολή ενός E-mail σε αυτό το E-mail."
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit. You can also merge imported calendars with existing Proton calendars.": [
-        ""
+      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
+        "Επιλέξτε ποια ημερολόγια θα εισαχθούν. Για κάθε εισαγόμενο, ένα νέο ημερολόγιο θα δημιουργηθεί, μέχρι το όριο των 20."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Οι διακομιστές είναι απρόσιτοι. Παρακαλούμε δοκιμάστε ξανά σε λίγα λεπτά"
@@ -2689,7 +2699,7 @@
       "Session timed out.": [
         "Η χρονική περίοδος σύνδεσης έληξε."
       ],
-      "Set ProtonMail as your default mail handler": [
+      "Set ProtonMail as your default email application for this browser. ProtonMail will open automatically when you click an email link.": [
         ""
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.": [
@@ -2702,7 +2712,7 @@
         "Μερικές από τις απαντήσεις σας σε περιστατικά που ενημερώθηκαν προηγουμένως από τον διοργανωτή θα χαθούν."
       ],
       "Starter VPN service with P2P support.": [
-        "Εκκίνηση υπηρεσίας VPN με υποστήριξη P2P."
+        "Εισαγωγική υπηρεσία VPN με υποστήριξη P2P."
       ],
       "Storage GB": [
         "Αποθηκευτικός χώρος GB"
@@ -2860,6 +2870,9 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
         "Αυτήν τη στιγμή είστε συνδεδεμένοι ως χρήστης ${ user.Name } (${ user.Email }) και έχετε περιορισμένη πρόσβαση."
       ],
+      "You can also merge imported calendars with existing Proton calendars.": [
+        "Μπορείτε επίσης να συγχωνεύσετε εισαγόμενα ημερολόγια με υπάρχοντα ημερολόγια του Proton."
+      ],
       "You can check the progress ${ importProgressLink }.": [
         "Μπορείτε να δείτε την πρόοδο ${ importProgressLink }."
       ],
@@ -2868,12 +2881,6 @@
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Μπορείτε να ενεργοποιήσετε τις ειδοποιήσεις, για να λαμβάνετε ειδοποιήσεις όταν φτάνουν νέα email σε αυτόν το φάκελο."
-      ],
-      "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
-        "Έχετε απενεργοποιήσει την πρόσβαση Beta. Πατήστε ${ refreshButton } για χρήση της σταθερής έκδοσης του ${ appName }. Η εφαρμογή θα ανανεωθεί."
-      ],
-      "You have enabled Beta Access. Click ${ refreshButton } to use the latest version of ${ appName }. The application will be reloaded.": [
-        "Έχετε ενεργοποιήσει την πρόσβαση Beta. Πατήστε ${ refreshButton } για χρήση της νέας έκδοσης του ${ appName }. Η εφαρμογή θα ανανεωθεί."
       ],
       "You have reactivated your keys and events linked to the following calendars can now be decrypted.": [
         "Έχετε επανενεργοποιήσει τα κλειδιά και τα συμβάντα που συνδέονται με τα ακόλουθα ημερολόγια μπορούν τώρα να αποκρυπτογραφηθούν."
@@ -3217,6 +3224,9 @@
       "All day": [
         "Όλη την ημέρα"
       ],
+      "All-day event notifications": [
+        "Ολοήμερες ειδοποιήσεις εκδήλωσης"
+      ],
       "Automatically save contacts": [
         "Αυτόματη αποθήκευση επαφών"
       ],
@@ -3233,7 +3243,7 @@
         "Ποσό BTC:"
       ],
       "Calendars": [
-        ""
+        "Ημερολόγια"
       ],
       "Cancel": [
         "Ακύρωση"
@@ -3250,11 +3260,11 @@
       "Category": [
         "Κατηγορία"
       ],
-      "Choose a color": [
-        "Επιλέξτε χρώμα"
-      ],
       "City": [
         "Πόλη"
+      ],
+      "Color": [
+        "Χρώμα"
       ],
       "Contacts": [
         "Επαφές"
@@ -3267,18 +3277,6 @@
       ],
       "CVV code": [
         "Κωδικός CVV"
-      ],
-      "Default email": [
-        "Προεπιλεγμένη διεύθυνση email"
-      ],
-      "Default event duration": [
-        "Προεπιλεγμένη διάρκεια γεγονότος"
-      ],
-      "Default full day notifications": [
-        "Προεπιλεγμένες ολοήμερες ειδοποιήσεις"
-      ],
-      "Default notifications": [
-        "Προεπιλεγμένες ειδοποιήσεις"
       ],
       "Description": [
         "Περιγραφή"
@@ -3315,6 +3313,9 @@
       ],
       "Enter the 6-digit code": [
         "Εισάγετε τον 6-ψήφιο κωδικό"
+      ],
+      "Event duration": [
+        "Διάρκεια εκδήλωσης"
       ],
       "Event frequency": [
         "Συχνότητα συμβάντος"
@@ -3368,7 +3369,7 @@
         "Εισαγωγή σε διεύθυνση email"
       ],
       "Import to:": [
-        ""
+        "Εισαγωγή σε:"
       ],
       "Keyboard shortcuts": [
         "Συντομεύσεις πληκτρολογίου"
@@ -3599,10 +3600,10 @@
         "Προσθήκη κωδικού δώρου"
       ],
       "All mail": [
-        ""
+        "Όλα τα μηνύματα"
       ],
       "Archive": [
-        ""
+        "Αρχειοθετημένα"
       ],
       "Calendars": [
         "Ημερολόγιο"
@@ -3614,13 +3615,13 @@
         "κάντε κλικ εδώ"
       ],
       "Drafts": [
-        ""
+        "Πρόχειρα"
       ],
       "Go to subscription plans": [
         "Μεταβείτε στα προγράμματα συνδρομής"
       ],
       "Inbox": [
-        ""
+        "Εισερχόμενα"
       ],
       "Learn more": [
         "Μάθετε περισσότερα"
@@ -3629,7 +3630,7 @@
         "Τα ημερολόγια μου"
       ],
       "Outbox": [
-        ""
+        "Εξερχόμενα"
       ],
       "Pay invoice": [
         "Πληρωμή υπολοίπου"
@@ -3638,22 +3639,22 @@
         "Ζητήστε μια πρόσκληση"
       ],
       "Scheduled": [
-        ""
+        "Προγραμματισμένα"
       ],
       "Sent": [
-        ""
+        "Απεσταλμένα"
       ],
       "Spam": [
-        ""
+        "Ανεπιθύμητα"
       ],
       "Starred": [
-        ""
+        "Με αστέρι"
       ],
       "Subscribed calendars": [
         "Εγγεγραμμένα ημερολόγια"
       ],
       "Trash": [
-        ""
+        "Διαγραμμένα"
       ],
       "Upgrade": [
         "Αναβάθμιση"
@@ -3766,12 +3767,12 @@
     },
     "Mail import summary": {
       "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "",
-        ""
+        "Εισαγάγετε όλα τα μηνύματα από ${ selectedLabelsCount } από ${ totalLabelsCount } ετικέτα από ${ periodFragment } και επισημάνετε τα με ετικέτα ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Εισαγάγετε όλα τα μηνύματα από ${ selectedLabelsCount } από ${ totalLabelsCount } ετικέτες από ${ periodFragment } και επισημάνετε τα με ετικέτα ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
       "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "",
-        ""
+        "Εισαγάγετε όλα τα μηνύματα από ${ totalLabelsCount } ετικέτα από ${ periodFragment } και επισημάνετε τα με ετικέτα ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Εισαγάγετε όλα τα μηνύματα από ${ totalLabelsCount } ετικέτες από ${ periodFragment } και επισημάνετε τα με ετικέτα ${ LABEL_MARKUP_PLACEHOLDER }"
       ]
     },
     "Many Others": {
@@ -3781,7 +3782,7 @@
     },
     "Member downgrade modal": {
       "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        ""
+        "Αυτό θα διαγράψει οριστικά όλους τους υπο-χρήστες, τους λογαριασμούς και τα δεδομένα που σχετίζονται με τον οργανισμό σας."
       ]
     },
     "Message": {
@@ -3807,10 +3808,10 @@
     },
     "Modal action": {
       "Close": [
-        ""
+        "Κλείσιμο"
       ],
       "Manage calendars": [
-        ""
+        "Διαχείριση ημερολογίων"
       ]
     },
     "Modal title": {
@@ -3818,12 +3819,12 @@
         "Η ζώνη ώρας άλλαξε"
       ],
       "Unable to add more calendars": [
-        ""
+        "Δεν είναι δυνατή η προσθήκη περισσότερων ημερολογίων"
       ]
     },
     "Modal title and action": {
       "Add calendar": [
-        ""
+        "Προσθήκη ημερολογίου"
       ]
     },
     "Monthly recurring event, frequency": {
@@ -4134,16 +4135,16 @@
     },
     "Onboarding ProtonCalendar": {
       "A calendar is a record of your life. Keep your life secure and private with ${ appName }.": [
-        ""
+        "Ένα ημερολόγιο είναι μια καταγραφή της ζωής σας. Κρατήστε τη ζωή σας διασφαλισμένη και απόρρητη με το ${ appName }."
       ],
       "Import events": [
-        ""
+        "Εισαγωγή εκδηλώσεων"
       ],
       "Meet your new encrypted calendar": [
-        ""
+        "Υποδεχτείτε το νέο σας κρυπτογραφημένο ημερολόγιο"
       ],
       "Start using ${ appName }": [
-        ""
+        "Αρχίστε τη χρήση του ${ appName }"
       ]
     },
     "Option": {
@@ -4235,6 +4236,11 @@
         "PayPal"
       ]
     },
+    "Personal calendar limit reached modal body": {
+      "Unable to create more calendars. You have reached the maximum of personal calendars within your plan.": [
+        "Δεν είναι δυνατή η δημιουργία περισσότερων ημερολογίων. Έχετε φτάσει στο μέγιστο των προσωπικών ημερολογίων εντός του σχεδίου σας."
+      ]
+    },
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "Το κλειδί δεν μπορεί να χρησιμοποιηθεί για κρυπτογράφηση"
@@ -4319,7 +4325,7 @@
         "Αναζήτηση βάσει ονόματος ή e-mail"
       ],
       "Start typing an email address": [
-        "Έναρξη πληκτρολόγησης διεύθυνσης ηλεκτρονικού ταχυδρομείου"
+        "Αρχίστε την πληκτρολόγηση μιας ηλ. διεύθυνσης"
       ],
       "ZIP": [
         "Ταχυδρομικός Κώδικας (ZIP)"
@@ -4520,38 +4526,33 @@
     },
     "Subscribe to calendar modal": {
       "Calendar URL": [
-        ""
+        "URL Ημερολογίου"
       ],
       "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Subscribed calendars.\n${ kbLink }": [
-        ""
+        "Για να εγγραφείτε σε ένα εξωτερικό ή δημόσιο ημερολόγιο και τις ενημερώσεις του, εισαγάγετε τη διεύθυνση URL. Μια έκδοση μόνο για ανάγνωση του ημερολογίου θα προστεθεί στα Εγγεγραμμένα ημερολόγιά σας.\n${ kbLink }"
       ]
     },
     "Subscribe to calendar modal description": {
       "Learn how to get a private calendar link.": [
-        ""
+        "Μάθετε πώς μπορείτε να αποκτήσετε ένα σύνδεσμο ιδιωτικού ημερολογίου."
       ]
     },
     "Subscribed calendar extension warning": {
       "By using this link, Google will make the calendar you are subscribing to public": [
-        ""
+        "Χρησιμοποιώντας αυτόν τον σύνδεσμο, η Google θα αλλάξει το ημερολόγιο που εγγράφεστε σε κοινό"
       ],
       "This link might be wrong": [
-        ""
+        "Αυτός ο σύνδεσμος ενδέχεται να είναι λανθασμένος"
       ]
     },
     "Subscribed calendar feature unavailable error": {
       "Subscribing to a calendar is unavailable at the moment": [
-        ""
+        "Η εγγραφή σε ένα ημερολόγιο δεν είναι διαθέσιμη προς το παρόν"
       ]
     },
     "Subscribed calendar limit reached modal body": {
-      "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } subscribed calendar.": [
-        "",
-        ""
-      ],
-      "You have reached the maximum of ${ personalCalendarLimit } personal calendar.": [
-        "",
-        ""
+      "Unable to add more calendars. You have reached the maximum of subscribed calendars within your plan.": [
+        "Δεν είναι δυνατή η προσθήκη περισσότερων ημερολογίων. Έχετε φτάσει στο μέγιστο των εγγεγραμμένων ημερολογίων στο πρόγραμμά σας."
       ]
     },
     "Success": {
@@ -4841,7 +4842,7 @@
         "Πίσω"
       ],
       "Beta Access": [
-        "Beta Πρόσβαση"
+        "Πρόσβαση Beta"
       ],
       "Billing cycle": [
         "Κύκλος χρέωσης"
@@ -4880,7 +4881,7 @@
         "Επιβεβαιώστε την απώλεια μπόνους Proton"
       ],
       "Contact details": [
-        ""
+        "Στοιχεία επαφής"
       ],
       "Contact Details": [
         "Λεπτομέρειες Επαφής"
@@ -4892,7 +4893,7 @@
         "Επαφές"
       ],
       "Continue with partial import?": [
-        ""
+        "Συνέχιση με μερική εισαγωγή;"
       ],
       "Coupon discount": [
         "Έκπτωση κουπονιού"
@@ -4956,6 +4957,9 @@
       "Downgrade account": [
         "Υποβάθμιση λογαριασμού"
       ],
+      "Edit calendar": [
+        "Επεξεργασία ημερολογίου"
+      ],
       "Edit contact": [
         "Επεξεργασία επαφής"
       ],
@@ -5008,20 +5012,20 @@
         "Ομάδες"
       ],
       "Hide time zones for event start and end times": [
-        "Απόκρυψη ζωνών ώρας για ώρες έναρξης και λήξης του συμβάντος"
+        "Απόκρυψη ζωνών ώρας για τις ώρες έναρξης και λήξης εκδήλωσης"
       ],
       "Human verification": [
         "Ανθρώπινη Επαλήθευση"
       ],
       "Import as simple event?": [
-        "",
-        ""
+        "Εισαγωγή ως απλή εκδήλωση;",
+        "Εισαγωγή ως απλές εκδηλώσεις;"
       ],
       "Import contacts": [
         "Εισαγωγή επαφών"
       ],
       "Import events": [
-        ""
+        "Εισαγωγή εκδηλώσεων"
       ],
       "Import failed": [
         "Αποτυχία εισαγωγής"
@@ -5150,10 +5154,10 @@
         "Επιλέξτε τη συχνότητας των συμβάντων"
       ],
       "Select event start date": [
-        "Επιλέξτε την ημερομηνία έναρξης του συμβάντος"
+        "Επιλέξτε ημερομηνία έναρξης εκδήλωσης"
       ],
       "Select event start time": [
-        "Επιλέξτε την ώρα έναρξης του συμβάντος"
+        "Επιλέξτε ώρα έναρξης εκδήλωσης"
       ],
       "Select event's last date": [
         "Επιλέξτε την τελευταία ημερομηνία του συμβάντος"
@@ -5165,7 +5169,7 @@
         "Επιλέξτε τη ζώνη ώρας, για την ώρα λήξης του συμβάντος"
       ],
       "Select the time zone for the event start time": [
-        "Επιλέξτε τη ζώνη ώρας για την ώρα έναρξης του συμβάντος"
+        "Επιλέξτε τη ζώνη ώρας για την ώρα έναρξης εκδήλωσης"
       ],
       "Select the way to send this notification": [
         "Επιλέξτε τον τρόπο αποστολής αυτής της ειδοποίησης"
@@ -5192,7 +5196,7 @@
         "Ρυθμίσεις"
       ],
       "Show time zones for event start and end times": [
-        "Εμφάνιση ζωνών ώρας για ώρες έναρξης και λήξης του συμβάντος"
+        "Εμφάνιση ζωνών ώρας για τις ώρες έναρξης και λήξης εκδήλωσης"
       ],
       "Sign in again to continue": [
         "Συνδεθείτε ξανά για να συνεχίσετε"
@@ -5205,9 +5209,6 @@
       ],
       "Unsupported browser": [
         "Μη υποστηριζόμενο πρόγραμμα περιήγησης"
-      ],
-      "Update calendar": [
-        "Ενημέρωση του ημερολογίου"
       ],
       "Update event": [
         "Ενημερωση γεγονοτος"
