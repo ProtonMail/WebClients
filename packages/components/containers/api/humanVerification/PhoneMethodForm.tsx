@@ -43,7 +43,7 @@ const PhoneMethodForm = ({ api, onSubmit, defaultPhone = '', defaultCountry, isE
             <InputFieldTwo
                 as={PhoneInput}
                 id="phone"
-                compact={isEmbedded}
+                embedded={isEmbedded}
                 bigger
                 label={c('Label').t`Phone number`}
                 error={validator([requiredValidator(phone), phoneError])}

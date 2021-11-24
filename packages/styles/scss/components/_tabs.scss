@@ -5,6 +5,21 @@
 	@extend .flex;
 	@extend .relative;
 	white-space: nowrap;
+
+	&--fullWidth {
+		width: 100%;
+
+		.tabs-list-item {
+			margin: 0;
+			flex: 1 1 0;
+
+			.tabs-list-link {
+				display: inline-block;
+				width: 100%;
+				margin: auto;
+			}
+		}
+	}
 }
 
 .tabs-list-item {

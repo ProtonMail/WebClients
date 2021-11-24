@@ -39,7 +39,7 @@ const Verify = () => {
 
     const search = parseSearch(location.search) as VerificationSearchParameters;
 
-    const { methods, embed, theme, locale, token, defaultCountry, defaultEmail, defaultPhone } = search;
+    const { methods, embed, theme, locale, token, vpn, defaultCountry, defaultEmail, defaultPhone } = search;
 
     const isEmbedded = windowIsEmbedded || embed;
 
@@ -55,6 +55,14 @@ const Verify = () => {
         withLoading(Promise.all([loadLocale(localeCode, locales), loadDateLocale(localeCode, browserLocale)])).catch(
             () => setError(true)
         );
+
+        if (!isEmbedded) {
+            document.body.classList.remove('embedded');
+        }
+
+        if (vpn) {
+            document.body.classList.add('vpn');
+        }
     }, []);
 
     const sendHeight = (resizes: ResizeObserverEntry[]) => {
@@ -154,7 +162,7 @@ const Verify = () => {
 
     if (isEmbedded) {
         return (
-            <main className="p2" ref={registerRootRef}>
+            <main className="p1-5" ref={registerRootRef}>
                 {hv}
             </main>
         );
