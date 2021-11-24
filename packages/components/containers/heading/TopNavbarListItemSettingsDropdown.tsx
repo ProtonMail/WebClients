@@ -3,7 +3,6 @@ import { c } from 'ttag';
 import { PROTON_THEMES_MAP } from '@proton/shared/lib/themes/themes';
 import { APPS, COMPOSER_MODE, DENSITY, VIEW_LAYOUT } from '@proton/shared/lib/constants';
 
-import { isFirefox } from '@proton/shared/lib/helpers/browser';
 import { AppLink, DropdownMenu, DropdownMenuButton, DropdownMenuLink, Icon } from '../../components';
 import SimpleDropdown from '../../components/dropdown/SimpleDropdown';
 import TopNavbarListItemButton, {
@@ -17,7 +16,6 @@ import { useTheme } from '../themes';
 import MailDensityModal from '../mail/MailDensityModal';
 import MailViewLayoutModal from '../mail/MailViewLayoutModal';
 import MailComposerModeModal from '../mail/MailComposerModeModal';
-import MailDefaultHandlerModal from '../mail/MailDefaultHandlerModal';
 
 const TopNavbarListItemSettingsButton = forwardRef(
     (props: Omit<TopNavbarListItemButtonProps<'button'>, 'icon' | 'text' | 'as'>, ref: typeof props.ref) => {
@@ -71,10 +69,6 @@ const TopNavbarListItemSettingsDropdown = (props: Props) => {
 
     const handleComposerModeClick = () => {
         createModal(<MailComposerModeModal />);
-    };
-
-    const handleDefaultMailHandlerClick = () => {
-        createModal(<MailDefaultHandlerModal />);
     };
 
     const { to, toApp, children } = props;
@@ -157,15 +151,6 @@ const TopNavbarListItemSettingsDropdown = (props: Props) => {
                                     : c('Composer size').t`Normal`}
                             </span>
                         </DropdownMenuButton>
-                        {isFirefox() && (
-                            <DropdownMenuButton
-                                onClick={handleDefaultMailHandlerClick}
-                                className="flex flex-nowrap flex-justify-space-between flex-align-items-center no-mobile"
-                            >
-                                <span className="flex-item-fluid text-left">{c('Action')
-                                    .t`Default email application`}</span>
-                            </DropdownMenuButton>
-                        )}
                     </>
                 )}
 

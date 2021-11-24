@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import { HotkeyTuple, useHotkeys } from '@proton/components';
+import { HotkeyTuple, useHotkeys } from './index';
 
 export interface ContactHotkeysContext {
     elementIDs: string[];

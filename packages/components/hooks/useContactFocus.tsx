@@ -1,5 +1,5 @@
 import { MutableRefObject, useEffect, useRef, useState } from 'react';
-import { useHandler } from '@proton/components';
+import { useHandler } from './index';
 
 export interface ContactFocusContext {
     elementIDs: string[];
